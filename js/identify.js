@@ -550,7 +550,7 @@ export function renderTaxonPage(box, key) {
       ${traitStrip(null, t)}
       ${t.check_before_picking?.length ? `<ol class="keys">${t.check_before_picking.map((x) => `<li>${esc(x)}</li>`).join('')}</ol>` : ''}
       ${look.length ? `<h3>Si confonde con</h3><ul class="tx-look">${look.map(({ id, o }) => { const op = photoOf(o); return `<li>
-        <a class="tx-look-main" href="#/riconosci/confronta/${esc(o.key)}/${esc(t.key)}">${op ? `<img src="${ASSET(op.thumb || op.file)}" alt="" loading="lazy" decoding="async">` : ''}<span><b>${esc(o.name)}</b><i>${esc(o.latin)}</i><small class="tx-cmp">Confrontali carattere per carattere ›</small></span></a>
+        <a class="tx-look-main" href="#/riconosci/confronta/${esc(t.key)}/${esc(o.key)}">${op ? `<img src="${ASSET(op.thumb || op.file)}" alt="" loading="lazy" decoding="async">` : ''}<span><b>${esc(o.name)}</b><i>${esc(o.latin)}</i><small class="tx-cmp">Confrontali carattere per carattere ›</small></span></a>
         <a class="tx-sheet" href="#/specie/${esc(id)}">Scheda di ${esc(o.name.toLowerCase())} ›</a></li>`; }).join('')}</ul>` : ''}
       <h3>Dove e quando</h3>
       <dl class="sci-params">
@@ -628,14 +628,19 @@ function cmpRows(ref, t) {
   }).filter(Boolean);
 }
 
+// i commestibili con cui si confonde un velenoso (o un sosia): per il confronto visto dalla sua parte
+const mimicsOf = (ref) => (ref.lookalike_of || []).map(refOf).filter((o) => o && o !== ref)
+  .sort((a, b) => similarity(b, ref) - similarity(a, ref));
 function renderCompare(box, ref, pick) {
-  const list = sosiaOf(ref);
+  // fungo fisso a sinistra: un commestibile con i suoi sosia, oppure un velenoso con i commestibili con cui si confonde
+  const fromToxic = !!ref.lookalike_of?.length;
+  const list = fromToxic ? mimicsOf(ref) : sosiaOf(ref);
   const pic = (t, small = false) => { const ph = photoOf(t); return ph ? `<img src="${ASSET(small ? ph.thumb || ph.file : ph.file)}" alt="" loading="lazy" decoding="async">` : '<span class="look-ph">senza foto</span>'; };
   const toxCls = (t) => `tox-${String(t.toxicity || '').replace(/\s/g, '-')}`;
   const nameBtn = (t) => (t.edible_id && !t.lookalike_of?.length ? `<a href="#/specie/${t.edible_id}">${esc(t.name || t.latin)}</a>` : `<button type="button" data-taxon="${esc(t.key)}">${esc(t.name || t.latin)}</button>`);
   const slide = (t, k) => {
     const rows = cmpRows(ref, t), diff = rows.filter((r) => r.kind === 'diff'), part = rows.filter((r) => r.kind === 'part'), same = rows.filter((r) => r.kind === 'same');
-    const how = HOWTO(ref.edible_id, t.latin);
+    const how = fromToxic ? HOWTO(t.edible_id, ref.latin) : HOWTO(ref.edible_id, t.latin);
     return `<section class="cmp-slide" id="cmp-${esc(t.key)}" data-i="${k}" aria-label="${esc(ref.name)} e ${esc(t.name || t.latin)}">
       <div class="cmp-pair">
         ${[ref, t].map((x) => `<div class="cmp-side">
@@ -649,13 +654,16 @@ function renderCompare(box, ref, pick) {
         : '<p class="cmp-none"><b>Nessuna domanda di Riconosci li separa con certezza.</b> Contano i dettagli: leggi "Come distinguerlo" e, nel dubbio, fallo vedere all\'Ispettorato micologico.</p>'}
       ${part.length ? `<h4 class="cmp-h part">A volte simili</h4><ul class="cmp-rows">${part.map((r) => r.html).join('')}</ul>` : ''}
       ${same.length ? `<details class="cmp-same"><summary>Uguali in: ${esc(same.map((r) => r.k.toLowerCase()).join(', '))}</summary><ul class="cmp-rows">${same.map((r) => r.html).join('')}</ul></details>` : ''}
-      ${['mortale', 'tossico'].includes(t.toxicity) ? `<p class="cmp-verdict">Se il tuo fungo ha anche uno solo dei caratteri a destra, <b>non è ${esc(ref.name.toLowerCase())}</b>: lascialo dov'è.</p>` : ''}
+      ${!fromToxic && ['mortale', 'tossico'].includes(t.toxicity) ? `<p class="cmp-verdict">Se il tuo fungo ha anche uno solo dei caratteri a destra, <b>non è ${esc(ref.name.toLowerCase())}</b>: lascialo dov'è.</p>`
+        : fromToxic && ['mortale', 'tossico'].includes(ref.toxicity) ? `<p class="cmp-verdict">Se il tuo fungo ha anche uno solo dei caratteri a sinistra, <b>non è ${esc((t.name || t.latin).toLowerCase())}</b>: lascialo dov'è.</p>` : ''}
     </section>`;
   };
   const start = Math.max(0, list.findIndex((t) => t.key === pick));
   box.innerHTML = `
-    <h2 class="sec-title cmp-title">${esc(ref.name)} o sosia?</h2>
-    <p class="small muted cmp-lede">${list.length} ${list.length === 1 ? 'fungo che gli somiglia' : 'funghi che gli somigliano'}. Scorri di lato per confrontarli uno alla volta: a sinistra ${esc(ref.name.toLowerCase())}, a destra il sosia.</p>
+    <h2 class="sec-title cmp-title">${fromToxic ? `${esc(ref.name || ref.latin)}: con cosa si confonde` : `${esc(ref.name)} o sosia?`}</h2>
+    <p class="small muted cmp-lede">${fromToxic
+      ? `Si confonde con ${list.length === 1 ? 'un fungo commestibile' : `${list.length} funghi commestibili`}. A sinistra ${esc((ref.name || ref.latin).toLowerCase())}, a destra il fungo con cui si scambia${list.length > 1 ? ': scorri di lato per vederli tutti' : ''}.`
+      : `${list.length} ${list.length === 1 ? 'fungo che gli somiglia' : 'funghi che gli somigliano'}. Scorri di lato per confrontarli uno alla volta: a sinistra ${esc(ref.name.toLowerCase())}, a destra il sosia.`}</p>
     <div class="cmp-pickbar"><span class="cmp-chip cmp-chip-ref ${toxCls(ref)}"><span class="cmp-chip-img">${pic(ref, true)}</span><span>${esc(ref.name || ref.latin)}</span></span><span class="cmp-pvs" aria-hidden="true">vs</span>
     <div class="cmp-pick" role="tablist" aria-label="Scegli il sosia">${list.map((t, k) => `<button type="button" role="tab" class="cmp-chip ${toxCls(t)}" data-go="${k}" aria-selected="${k === start}"><span class="cmp-chip-img">${pic(t, true)}</span><span>${esc(t.name || t.latin)}</span></button>`).join('')}</div></div>
     <div class="cmp-track">${list.map(slide).join('')}</div>
@@ -718,7 +726,7 @@ export function openTaxon(key) {
   // "si confonde con": porta dritto al confronto affiancato (la scheda della commestibile e' a un tocco da li')
   const look = (t.lookalike_of || []).map((id) => TAXA.find((x) => x.edible_id === id && !x.lookalike_of?.length))
     .sort((x, y) => (y ? similarity(y, t) : 0) - (x ? similarity(x, t) : 0)).map((o) => {
-    return o ? `<a class="tx-vs" href="#/riconosci/confronta/${esc(o.key)}/${esc(t.key)}">${esc(o.name)}<span aria-hidden="true">›</span></a>` : '';
+    return o ? `<a class="tx-vs" href="#/riconosci/confronta/${esc(t.key)}/${esc(o.key)}">${esc(o.name)}<span aria-hidden="true">›</span></a>` : '';
   }).filter(Boolean);
   dlg.dataset.expand = `#/fungo/${t.key}`;
   dlg.innerHTML = `<button type="button" class="wiz-close" aria-label="Chiudi">✕</button>

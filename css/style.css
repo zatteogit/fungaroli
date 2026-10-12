@@ -1937,3 +1937,6 @@ html[data-cmp-dir="prev"]::view-transition-new(cmp-pick) { animation-name: cmp-i
 @keyframes cmp-in { from { opacity: 0; transform: translateX(32px); } }
 @keyframes cmp-out-r { to { opacity: 0; transform: translateX(24px); } }
 @keyframes cmp-in-l { from { opacity: 0; transform: translateX(-32px); } }
+.cmp-chip-ref.tox-mortale .cmp-chip-img { box-shadow: 0 0 0 2px var(--bg), 0 0 0 3.5px var(--crit); }
+.cmp-chip-ref.tox-tossico .cmp-chip-img { box-shadow: 0 0 0 2px var(--bg), 0 0 0 3.5px var(--warn-ink); }
+.cmp-chip-ref:is(.tox-non-commestibile) .cmp-chip-img { box-shadow: 0 0 0 2px var(--bg), 0 0 0 3.5px var(--border); }
