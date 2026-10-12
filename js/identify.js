@@ -352,8 +352,8 @@ export function traitStrip(edibleId, t = refOf(edibleId)) {
   const Q = (k) => QUESTIONS.find((q) => q.key === k);
   // cappello: la sua forma, nei suoi colori, con le verruche se ci sono; sotto forma e diametro
   if (tr.cap_color || tr.cap_shape) {
-    const shape = [].concat(tr.cap_shape || ['convesso'])[0], cols = [].concat(tr.cap_color || ['bruno']).slice(0, 3);
-    out.push(tile(capArt(shape, cols, tr.cap_veil === true), 'Cappello', orList([].concat(tr.cap_color || []).map((v) => one(Q('cap_color'), v))) || '',
+    const shapes = [].concat(tr.cap_shape || ['convesso']), cols = [].concat(tr.cap_color || ['bruno']);
+    out.push(tile(capArt(shapes, cols, tr.cap_veil === true), 'Cappello', orList([].concat(tr.cap_color || []).map((v) => one(Q('cap_color'), v))) || '',
       [orList([].concat(tr.cap_shape || []).slice(0, 2).map((v) => optLabel(Q('cap_shape'), v))), sizeTxt(tr.cap_size)].filter(Boolean).join(' · ')));
   }
   // sotto il cappello e il suo colore in una sola tessera: "Lamelle · bianche o crema"
@@ -408,20 +408,25 @@ const gid = () => `ta-${++capN}`;
 const lin = (id, [l, m, d], x2 = 0, y2 = 1) => `<linearGradient id="${id}" x1="0" y1="0" x2="${x2}" y2="${y2}"><stop offset="0" stop-color="${l}"/><stop offset=".55" stop-color="${m}"/><stop offset="1" stop-color="${d}"/></linearGradient>`;
 const rad = (id, [l, m, d]) => `<radialGradient id="${id}" cx="36%" cy="18%" r="90%"><stop offset="0" stop-color="${l}"/><stop offset=".5" stop-color="${m}"/><stop offset="1" stop-color="${d}"/></radialGradient>`;
 const svgA = (vb, w, h, body) => `<svg class="ta" viewBox="${vb}" width="${w}" height="${h}">${body}</svg>`;
-// un fungo intero di profilo: cappello della forma della specie, nel suo colore, sul gambo
-function mushroom(shape, col, veil, tf) {
-  const d = SHAPE_D[shape] || SHAPE_D.convesso, C = COLORS[col] || COLORS.bruno, a = gid(), b = gid();
-  const whole = shape === 'trombetta'; // la trombetta non ha un gambo separato
-  return `<g transform="${tf}"><defs>${rad(a, C)}${lin(b, STEMC, 1, 0)}</defs>
-    ${whole ? '' : `<path d="M26 31 C25 42 24.5 50 23.5 56 H40.5 C39.5 50 39 42 38 31 Z" fill="url(#${b})" stroke="${STEMC[2]}" stroke-width="1.1"/>`}
-    <path d="${d}" fill="url(#${a})" stroke="${C[2]}" stroke-opacity=".7" stroke-width="1.3" stroke-linejoin="round"/>
-    ${veil ? [[22, 22], [31, 17], [41, 19], [47, 26], [27, 28], [37, 25], [16, 29]].map(([x, y]) => `<circle cx="${x}" cy="${y}" r="2.3" fill="#fff" stroke="rgb(0 0 0 / .2)" stroke-width=".7"/>`).join('') : ''}</g>`;
-}
-function capArt(shape, cols, veil) {
-  // un fungo per colore possibile (al massimo due): quello davanti col primo colore
-  const two = cols.length > 1;
-  return svgA('0 0 84 60', 84, 60, `<ellipse cx="${two ? 40 : 42}" cy="57" rx="${two ? 34 : 22}" ry="2.6" fill="currentColor" opacity=".12"/>
-    ${two ? mushroom(shape, cols[1], veil, 'translate(38 13) scale(.74)') : ''}${mushroom(shape, cols[0], veil, two ? 'translate(2 1)' : 'translate(10 1)')}`);
+function capArt(shapes, cols, veil) {
+  // solo il cappello, di profilo: una sagoma per ogni forma e colore possibile (al massimo due), affiancate
+  const n = Math.min(2, Math.max(shapes.length, cols.length, 1));
+  let hMax = 0;
+  const one = (i) => {
+    const sh = shapes[Math.min(i, shapes.length - 1)] || 'convesso', c = cols[Math.min(i, cols.length - 1)] || 'bruno';
+    const C = COLORS[c] || COLORS.bruno, a = gid(), d = SHAPE_D[sh] || SHAPE_D.convesso;
+    const bottom = sh === 'trombetta' ? 54 : 34, top = sh === 'trombetta' ? 10 : sh === 'piano' ? 22 : 8;
+    const k = n > 1 ? Math.min(.62, 30 / (bottom - top)) : Math.min(1, 40 / (bottom - top));
+    const x = n > 1 ? (i ? 44 : 1) : 10, y = 44 - bottom * k;
+    hMax = Math.max(hMax, (bottom - top) * k);
+    return `<g transform="translate(${x} ${y.toFixed(1)}) scale(${k.toFixed(3)})"><defs>${rad(a, C)}</defs>
+      <path d="${d}" fill="url(#${a})" stroke="${C[2]}" stroke-opacity=".75" stroke-width="${(1.3 / k).toFixed(2)}" stroke-linejoin="round"/>
+      ${veil ? [[22, 22], [31, 17], [41, 19], [47, 26], [27, 28], [37, 25], [16, 29]].map(([px, py]) => `<circle cx="${px}" cy="${py}" r="2.3" fill="#fff" stroke="rgb(0 0 0 / .2)" stroke-width=".7"/>`).join('') : ''}</g>`;
+  };
+  const body = Array.from({ length: n }, (_, i) => one(i)).join('');
+  // riquadro stretto attorno ai cappelli: cosi' riempiono la tessera invece di restare piccoli in basso
+  const h = Math.max(22, hMax + 4);
+  return svgA(`0 ${(45 - h).toFixed(1)} 84 ${h.toFixed(1)}`, 84, Math.round(h), body);
 }
 // il sotto del cappello visto dal basso: un disco con la trama vera (lamelle, pori, aculei, pliche),
 // uno spicchio per ogni colore possibile, al centro il gambo in sezione

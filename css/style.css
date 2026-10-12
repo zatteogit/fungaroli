@@ -1588,3 +1588,5 @@ html:has(dialog[open]:modal) body { overflow: hidden; }
 .trait-strip .ts-art > svg.ta { height: 60px; width: auto; max-width: 100%; flex: none; color: var(--text-2); }
 .trait-strip .ts-art > svg.ta + svg { display: none; }
 .trait-strip .ts-v, .trait-strip .ts-sub { overflow-wrap: anywhere; max-width: 100%; }
+.trait-strip .ts-art > svg.ta { max-height: 60px; height: auto; width: 100%; max-width: 104px; }
+.trait-strip .ts-art { width: 100%; }
