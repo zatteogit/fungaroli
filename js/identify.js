@@ -199,9 +199,9 @@ function photoOf(t) {
 const QK = (k) => QUESTIONS.find((q) => q.key === k);
 const traitOf = (t, q) => (q.get ? q.get(t) : t.traits?.[q.key]);
 const hitOf = (q, tv, v) => (q.match ? q.match([].concat(tv), v) : Array.isArray(tv) ? tv.includes(v) : tv === v);
-function matches(t) {
+function matches(t, ans = state.ans) {
   let ok = 0, tot = 0, contra = [];
-  for (const [k, v] of Object.entries(state.ans)) {
+  for (const [k, v] of Object.entries(ans)) {
     if (v == null) continue;
     const q = QK(k), tv = q && traitOf(t, q);
     if (tv == null || (Array.isArray(tv) && !tv.length)) continue; // carattere ignoto per il taxon: non penalizza
@@ -217,9 +217,9 @@ function textHit(t) {
   return norm(state.q).split(/\s+/).every((w) => hay.includes(w));
 }
 
-function candidates() {
+function candidates(ans = state.ans) {
   return TAXA.filter(textHit).map((t) => {
-    const m = matches(t);
+    const m = matches(t, ans);
     let prior = 1;
     if (state.zone && t.edible_id) prior = 0.4 + 0.6 * (POTENTIAL(t.edible_id, state.zone)?.score ?? 0.5);
     const fit = m.tot ? m.ok / m.tot : 1;
@@ -721,6 +721,67 @@ export function openTaxon(key) {
   dlg.scrollTop = 0;
 }
 
+// --- Modo "Filtri": i caratteri come filtro avanzato (gruppi per parte del fungo, chip con il conteggio) ---
+const FGROUPS = [
+  ['Sotto il cappello', ['hymenophore', 'hymenophore_color', 'gill_attachment', 'latex']],
+  ['Cappello', ['cap_color', 'cap_shape', 'cap_size', 'cap_surface', 'cap_veil']],
+  ['Gambo', ['stem_ring', 'stem_volva', 'stem_reticulum', 'stem_base', 'flesh_texture']],
+  ['Carne e odore', ['flesh_change', 'smell', 'spore_print']],
+  ['Dove e quando', ['habitat', 'trees', 'growth', 'season']],
+];
+const shortOpt = (q, v) => (q.bool ? cap1(withOut(q.key, v)) : cap1(String(optLabel(q, v)).split(/,| \(/)[0]));
+function facetsHtml() {
+  // per ogni carattere, quanti candidati restano scegliendo ciascun valore (contando gli altri filtri, non il suo)
+  return FGROUPS.map(([title, keys]) => {
+    const rows = keys.map(QK).filter((q) => q && (!q.when || q.when() || state.ans[q.key] !== undefined)).map((q) => {
+      const others = { ...state.ans }; delete others[q.key];
+      const pool = candidates(others);
+      const vals = q.bool ? [true, false] : q.values;
+      const cur = state.ans[q.key];
+      const chips = vals.map((v) => {
+        const n = pool.filter((c) => { const tv = traitOf(c.t, q); return tv != null && !(Array.isArray(tv) && !tv.length) && hitOf(q, tv, v); }).length;
+        const on = cur === v;
+        if (!n && !on) return '';
+        return `<button type="button" class="fo${q.color || q.flesh ? ' fo-sw' : ''}" data-fk="${q.key}" data-fv="${esc(String(v))}" aria-pressed="${on}"><span class="fo-art" aria-hidden="true">${artFor(q, v)}</span><span class="fo-l">${esc(shortOpt(q, v))}</span><span class="fo-n">${n}</span></button>`;
+      }).join('');
+      if (!chips) return '';
+      return `<div class="facet${cur !== undefined ? ' on' : ''}"><div class="facet-h"><span>${esc(qShort(q))}</span>${cur !== undefined ? `<button type="button" class="facet-x" data-fclear="${q.key}">Togli</button>` : ''}</div><div class="facet-o">${chips}</div></div>`;
+    }).join('');
+    return rows ? `<section class="fgroup"><h3 class="fgroup-h">${esc(title)}</h3>${rows}</section>` : '';
+  }).join('');
+}
+const activeChips = () => QUESTIONS.filter((q) => state.ans[q.key] != null).map((q) => `<button type="button" class="chip chip-x" data-fclear="${q.key}"><span>${esc(q.bool ? cap1(withOut(q.key, state.ans[q.key])) : `${qShort(q)}: ${shortOpt(q, state.ans[q.key]).toLowerCase()}`)}</span>${X_IC}</button>`).join('');
+let idfSheet = null;
+function openFilterSheet(box) {
+  if (!idfSheet) {
+    idfSheet = document.createElement('dialog');
+    idfSheet.className = 'sheet-dlg idf-sheet';
+    idfSheet.addEventListener('click', (e) => { if (e.target === idfSheet || e.target.closest('[data-idf-close]')) idfSheet.close(); });
+    document.body.append(idfSheet);
+  }
+  const paint = () => {
+    const n = candidates().length;
+    idfSheet.innerHTML = `<div class="tx-handle" data-drag aria-hidden="true"><span class="sheet-grip"></span></div>
+      <div class="idf-sh-h"><h2>Filtri</h2>${Object.keys(state.ans).length ? '<button type="button" class="af-add" data-fall>Azzera</button>' : ''}</div>
+      <div class="idf-sh-b">${facetsHtml()}</div>
+      <div class="idf-sh-f"><button type="button" class="btn primary big" data-idf-close>Mostra ${n} ${n === 1 ? 'candidato' : 'candidati'}</button></div>`;
+    wireFacets(idfSheet, () => { renderIdentify(box); paint(); });
+  };
+  idfSheet._paint = paint;
+  paint();
+  if (!idfSheet.open) idfSheet.showModal();
+}
+function wireFacets(root, after) {
+  root.querySelectorAll('[data-fk]').forEach((b) => b.addEventListener('click', () => {
+    const q = QK(b.dataset.fk), v = q.bool ? b.dataset.fv === 'true' : b.dataset.fv;
+    if (state.ans[q.key] === v) delete state.ans[q.key]; else state.ans[q.key] = v;
+    if (q.key === 'hymenophore') { delete state.ans.hymenophore_color; delete state.ans.gill_attachment; }
+    tick(); after();
+  }));
+  root.querySelectorAll('[data-fclear]').forEach((b) => b.addEventListener('click', () => { delete state.ans[b.dataset.fclear]; tick(); after(); }));
+  root.querySelector('[data-fall]')?.addEventListener('click', () => { state.ans = {}; tick(); after(); });
+}
+
 export function renderIdentify(box) {
   if (!TAXA.length) { box.innerHTML = '<p class="notice">I caratteri delle specie sono in preparazione: la ricerca sarà disponibile a breve.</p>'; return; }
   const ref = state.compare && TAXA.find((t) => t.key === state.compare);
@@ -730,18 +791,6 @@ export function renderIdentify(box) {
   const deadly = list.filter((c) => c.t.toxicity === 'mortale');
   const given = QUESTIONS.filter((q) => state.ans[q.key] != null);
   const answered = QUESTIONS.filter((q) => state.ans[q.key] !== undefined);
-  // tutti i caratteri: le domande risposte si chiudono in righe, raggruppate quando sono di seguito
-  const allMode = () => {
-    const out = []; let run = [];
-    const flush = () => { if (run.length) out.push(`<ul class="id-answers">${run.join('')}</ul>`); run = []; };
-    for (const q of QUESTIONS) {
-      if (q.when && !q.when() && state.ans[q.key] === undefined) continue;
-      if (state.ans[q.key] !== undefined && state.editing !== q.key) run.push(answerRow(q));
-      else { flush(); out.push(questionCard(q)); }
-    }
-    flush();
-    return out.join('');
-  };
   const guidedMode = () => {
     const rows = answered.map((q) => (state.editing === q.key ? `</ul>${questionCard(q, { big: true })}<ul class="id-answers">` : answerRow(q))).join('');
     const head = answered.length ? `<div class="id-answers-head"><span>${answered.length === 1 ? 'La tua risposta' : `Le tue ${answered.length} risposte`}</span><button type="button" class="af-add" id="id-reset">Ricomincia</button></div><ul class="id-answers">${rows}</ul>`.replaceAll('<ul class="id-answers"></ul>', '') : '';
@@ -753,21 +802,26 @@ export function renderIdentify(box) {
     <details class="id-warn"><summary><b>Non è un'identificazione.</b> Restringe i candidati, velenosi compresi.</summary><p>${BANNER ? esc(BANNER) : "Prima di mangiare qualunque fungo: controllo gratuito all'Ispettorato Micologico ASL."} <a href="#/info">Emergenza</a></p></details>
     <div class="seg-tabs" role="tablist" aria-label="Modo">
       <button type="button" role="tab" data-mode="guided" aria-selected="${state.guided}">Guidata</button>
-      <button type="button" role="tab" data-mode="all" aria-selected="${!state.guided}">Tutti i caratteri</button>
+      <button type="button" role="tab" data-mode="all" aria-selected="${!state.guided}">Filtri</button>
     </div>
     ${ZONES.length ? `<div class="filter-rail id-zones" role="group" aria-label="Dove l'hai trovato"><span class="af-label">Zona</span><button type="button" class="chip" data-zone="" aria-pressed="${!state.zone}">Ovunque</button>${ZONES.map((z) => `<button type="button" class="chip" data-zone="${z.id}" aria-pressed="${state.zone === z.id}">${esc(z.title || z.name)}</button>`).join('')}</div>` : ''}
-    ${!state.guided && answered.length ? '<div class="id-answers-head"><span></span><button type="button" class="af-add" id="id-reset">Ricomincia</button></div>' : ''}
-    ${state.guided ? guidedMode() : allMode()}
+    ${state.guided ? guidedMode() : `<div class="idf-bar"><button type="button" class="btn idf-open" data-idf-open><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M7 12h10M10 18h4"/></svg>Filtri${given.length ? ` <b>${given.length}</b>` : ''}</button>${activeChips()}${given.length ? '<button type="button" class="af-add" data-fall>Azzera</button>' : ''}</div>`}
+    ${state.guided ? '' : `<div class="idf"><aside class="idf-side" aria-label="Filtri">${facetsHtml()}</aside><div class="idf-main">`}
     <div class="id-head"><h2 class="sec-title">${list.length} ${list.length === 1 ? 'candidato' : 'candidati'}</h2></div>
     <label class="search-box id-search id-filter"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M7 12h10M10 18h4"/></svg><input id="id-q" type="search" placeholder="Filtra i candidati: anello, blu, castagno…" value="${esc(state.q)}" autocomplete="off" aria-label="Filtra i candidati per parola"></label>
     ${deadly.length ? `<p class="id-deadly"><b>${deadly.length} ${deadly.length === 1 ? 'specie mortale compatibile' : 'specie mortali compatibili'}</b> con quello che hai indicato. Non raccogliere e non assaggiare nulla di cui non sei certo.</p>` : ''}
     <ul class="id-cards">${list.slice(0, 40).map(resultCard).join('')}</ul>
+    ${state.guided ? '' : '</div></div>'}
     ${RULES.length ? `<details class="sec"><summary>Regole generali di sicurezza</summary><div class="sec-body"><ul class="reasons">${RULES.map((r) => `<li${r.severity === 'critico' ? ' class="crit"' : ''}>${esc(r.text)}</li>`).join('')}</ul></div></details>` : ''}`;
 
   const rerender = () => renderIdentify(box);
   const rerenderSoft = () => { tick(); soft(() => renderIdentify(box)); };
   box.querySelector('#id-q').addEventListener('input', (e) => { state.q = e.target.value; clearTimeout(box._t); box._t = setTimeout(() => { rerender(); const i = box.querySelector('#id-q'); i.focus(); i.setSelectionRange(i.value.length, i.value.length); }, 250); });
   box.querySelectorAll('[data-mode]').forEach((b) => b.addEventListener('click', () => { state.guided = b.dataset.mode === 'guided'; rerender(); }));
+  if (!state.guided) {
+    wireFacets(box, () => soft(() => renderIdentify(box)));
+    box.querySelector('[data-idf-open]')?.addEventListener('click', () => openFilterSheet(box));
+  }
   box.querySelectorAll('[data-zone]').forEach((b) => b.addEventListener('click', () => { state.zone = b.dataset.zone; rerender(); }));
   box.querySelector('#id-reset')?.addEventListener('click', () => { state.ans = {}; state.q = ''; state.editing = ''; rerenderSoft(); });
   // scegli un valore: la domanda si chiude nella sua riga (anche quando la stavi cambiando)
