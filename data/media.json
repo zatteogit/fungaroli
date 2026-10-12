@@ -489,7 +489,8 @@
     "source": "Wikimedia Commons",
     "page": "https://commons.wikimedia.org/wiki/File:Macrolepiota-procera.jpg",
     "author": "Chrumps",
-    "license": "CC BY-SA 4.0"
+    "license": "CC BY-SA 4.0",
+    "file_hd": "assets/species/procera-ref-hd.jpg"
    },
    "inat": [
     {
@@ -499,7 +500,8 @@
      "author": "Davide",
      "license": "CC-BY-NC",
      "place": "Subiaco RM",
-     "date": "2016-09-13"
+     "date": "2016-09-13",
+     "file_hd": "assets/species/procera-inat1-hd.jpg"
     },
     {
      "file": "assets/species/procera-inat2.jpg",
@@ -508,7 +510,8 @@
      "author": "Giorgio",
      "license": "CC-BY-NC",
      "place": "60044 Fabriano AN, Italia",
-     "date": "2022-10-15"
+     "date": "2022-10-15",
+     "file_hd": "assets/species/procera-inat2-hd.jpg"
     },
     {
      "file": "assets/species/procera-inat3.jpg",
@@ -517,7 +520,8 @@
      "author": "giorgio_fabrizi",
      "license": "CC-BY-NC",
      "place": "Manziana, Lazio, IT",
-     "date": "2023-11-04"
+     "date": "2023-11-04",
+     "file_hd": "assets/species/procera-inat3-hd.jpg"
     }
    ],
    "gbif": {
@@ -556,7 +560,8 @@
     "source": "Wikimedia Commons",
     "page": "https://commons.wikimedia.org/wiki/File:Armillaria_mellea_(1).jpg",
     "author": "tomasz przechlewski from Sopot, Poland",
-    "license": "CC BY 2.0"
+    "license": "CC BY 2.0",
+    "file_hd": "assets/species/mellea-ref-hd.jpg"
    },
    "inat": [
     {
@@ -566,7 +571,8 @@
      "author": "lucapassalacqua",
      "license": "CC-BY-NC",
      "place": "Provincia di Grosseto, Italia",
-     "date": "2020-11-07"
+     "date": "2020-11-07",
+     "file_hd": "assets/species/mellea-inat1-hd.jpg"
     },
     {
      "file": "assets/species/mellea-inat2.jpg",
@@ -575,7 +581,8 @@
      "author": "Alessandra Florea e Andrea Boiani",
      "license": "CC-BY-NC",
      "place": "Provincia di Viterbo, Italia",
-     "date": "2024-10-20"
+     "date": "2024-10-20",
+     "file_hd": "assets/species/mellea-inat2-hd.jpg"
     },
     {
      "file": "assets/species/mellea-inat3.jpg",
@@ -584,7 +591,8 @@
      "author": "diegoreggianti",
      "license": "CC-BY-NC",
      "place": "Crocco- Olivi, 00148 Roma RM, Italia",
-     "date": "2021-11-15"
+     "date": "2021-11-15",
+     "file_hd": "assets/species/mellea-inat3-hd.jpg"
     }
    ],
    "gbif": {
@@ -623,7 +631,8 @@
     "source": "Wikimedia Commons",
     "page": "https://commons.wikimedia.org/wiki/File:Russula_virescens3.JPG",
     "author": "Paffka",
-    "license": "CC BY-SA 3.0"
+    "license": "CC BY-SA 3.0",
+    "file_hd": "assets/species/virescens-ref-hd.jpg"
    },
    "inat": [
     {
@@ -633,7 +642,8 @@
      "author": "Luca Pilia",
      "license": "CC-BY-NC",
      "place": "00066 Manziana, Metropolitan City of Rome Capital, Italy",
-     "date": "2024-06-08"
+     "date": "2024-06-08",
+     "file_hd": "assets/species/virescens-inat1-hd.jpg"
     },
     {
      "file": "assets/species/virescens-inat2.jpg",
@@ -642,7 +652,8 @@
      "author": "adcam",
      "license": "CC-BY-NC",
      "place": "Vetralla, Lazio, IT",
-     "date": "2025-06-25"
+     "date": "2025-06-25",
+     "file_hd": "assets/species/virescens-inat2-hd.jpg"
     },
     {
      "file": "assets/species/virescens-inat3.jpg",
@@ -651,7 +662,8 @@
      "author": "Anonimous Pug",
      "license": "CC-BY-NC",
      "place": "Province of Viterbo, Italy",
-     "date": "2025-09-27"
+     "date": "2025-09-27",
+     "file_hd": "assets/species/virescens-inat3-hd.jpg"
     }
    ],
    "gbif": {
@@ -690,7 +702,8 @@
     "source": "Wikimedia Commons",
     "page": "https://commons.wikimedia.org/wiki/File:Ruhland,_Grenzstra%C3%9Fe_bei_Hausnr._1,_Butterpilz_am_Parkplatzrand,_Entwicklungsreihe,_Herbst,_02.jpg",
     "author": "Wilhelm Zimmerling PAR",
-    "license": "CC BY-SA 4.0"
+    "license": "CC BY-SA 4.0",
+    "file_hd": "assets/species/suillus-ref-hd.jpg"
    },
    "inat": [
     {
@@ -700,7 +713,8 @@
      "author": "Oliver Stöhr",
      "license": "CC-BY-NC",
      "place": "Gračišče, Gračišče, Koper, SI",
-     "date": "2025-10-31"
+     "date": "2025-10-31",
+     "file_hd": "assets/species/suillus-inat1-hd.jpg"
     },
     {
      "file": "assets/species/suillus-inat2.jpg",
@@ -709,7 +723,8 @@
      "author": "Marco Floriani",
      "license": "CC-BY-NC",
      "place": "Maderlina, Cembra-Lisignago, IT-TN, Italy",
-     "date": "2022-10-10"
+     "date": "2022-10-10",
+     "file_hd": "assets/species/suillus-inat2-hd.jpg"
     },
     {
      "file": "assets/species/suillus-inat3.jpg",
@@ -718,7 +733,8 @@
      "author": "krezga",
      "license": "CC-BY-NC",
      "place": "Őrségi Nemzeti Park, Apátistvánfalva, VA, HU",
-     "date": "2023-11-07"
+     "date": "2023-11-07",
+     "file_hd": "assets/species/suillus-inat3-hd.jpg"
     }
    ],
    "gbif": {
