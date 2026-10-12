@@ -1,0 +1,85 @@
+{
+ "version": 1,
+ "verified_on": "2026-10-12",
+ "onboarding": {
+  "title": "Prima di cominciare",
+  "points": [
+   "Le previsioni sono stime basate su meteo e boschi: non garantiscono che troverai funghi.",
+   "Schede, foto e ricerca aiutano a orientarsi ma non identificano un fungo: prima di mangiarlo fallo controllare all'Ispettorato Micologico ASL, che per i privati è gratuito.",
+   "Nel Lazio si raccoglie solo con attestato micologico, ricevuta del contributo annuale e documento, fino a 3 kg a persona al giorno (L.R. 32/1998).",
+   "Parchi e riserve hanno regole proprie, e in montagna la sicurezza tua e di chi è con te dipende da te.",
+   "Se temi di aver mangiato un fungo tossico non aspettare i sintomi: chiama un Centro Antiveleni o il 112."
+  ],
+  "accept": "Ho capito"
+ },
+ "home_strip": "Nel Lazio si raccoglie con attestato micologico, ricevuta del contributo regionale annuale e documento d'identità (L.R. 32/1998).",
+ "zone_legal": [
+  "Massimo 3 kg a persona al giorno, salvo un solo esemplare o un solo cespo.",
+  "Vietato raccogliere da un'ora dopo il tramonto a un'ora prima dell'alba.",
+  "Porta con te attestato micologico (o vecchio tesserino), ricevuta del contributo e documento.",
+  "Contributo annuale: 25 € residenti nel Lazio, 40 € non residenti; esenti i residenti che hanno compiuto 65 anni."
+ ],
+ "protected_area_note": "Quest'area ricade in tutto o in parte in un'area protetta: l'ente gestore può vietare o limitare la raccolta in alcune zone, e nelle riserve integrali è sempre vietata. Controlla regole e cartografia dell'ente prima di uscire.",
+ "identify_banner": "Non è un'identificazione. La ricerca restringe i candidati, velenosi compresi, ma non può confermare una specie: foto e caratteri non bastano. Prima di mangiare qualunque fungo fallo controllare all'Ispettorato Micologico ASL, che per i privati è gratuito.",
+ "species_footer": "Scheda informativa, non uno strumento di identificazione: foto e descrizioni non bastano a distinguere un fungo dai suoi sosia. Prima del consumo fai controllare il raccolto all'Ispettorato Micologico ASL (gratuito per i privati). Nel dubbio non si raccoglie e non si mangia.",
+ "forecast_note": "L'indice è una stima delle condizioni favorevoli, calcolata da dati meteo di modello e dalla Carta Forestale: non garantisce che troverai funghi e non dice dove sono. Orari, affollamento e accessi sono indicazioni di massima: sul posto valgono cartelli, divieti e condizioni reali di strade e meteo.",
+ "emergency": {
+  "title": "Sospetto avvelenamento da funghi",
+  "steps": [
+   "Se hai mangiato funghi non controllati e temi che siano tossici, non aspettare i sintomi: chiama subito un Centro Antiveleni (attivi 24 ore su 24) e segui le indicazioni.",
+   "Se compaiono nausea, vomito, diarrea o dolori addominali, anche molte ore dopo il pasto, chiama il 112 o vai subito al Pronto Soccorso. I sintomi che arrivano dopo 6-8 ore sono i più allarmanti.",
+   "Porta con te gli avanzi crudi e cotti, gli scarti di pulizia, i funghi rimasti del raccolto e le eventuali foto.",
+   "Avvisa tutte le persone che hanno mangiato gli stessi funghi, anche se stanno bene.",
+   "Non tentare cure da solo: il latte non è un antidoto."
+  ],
+  "numbers": [
+   {
+    "label": "Numero unico di emergenza",
+    "number": "112",
+    "source": "https://salutelazio.it/it/emergenza"
+   },
+   {
+    "label": "Centro Antiveleni Policlinico Gemelli, Roma",
+    "number": "06 3054343",
+    "source": "https://www.policlinicogemelli.it/centri-specializzati/centro-antiveleni/"
+   },
+   {
+    "label": "Centro Antiveleni Policlinico Umberto I, Roma",
+    "number": "06 49978000",
+    "source": "https://salutelazio.it/it/emergenza"
+   },
+   {
+    "label": "Centro Antiveleni pediatrico Bambino Gesù, Roma",
+    "number": "06 68593726",
+    "source": "https://salutelazio.it/it/emergenza"
+   },
+   {
+    "label": "Centro Antiveleni di Milano, Niguarda (riferimento nazionale)",
+    "number": "02 66101029",
+    "source": "https://www.centroantiveleni.org/"
+   }
+  ]
+ },
+ "info_sections": [
+  {
+   "id": "normativa",
+   "title": "Regole di raccolta nel Lazio",
+   "html": "<p>La raccolta è disciplinata dalla <strong>L.R. Lazio 5 agosto 1998, n. 32</strong>, modificata da ultimo dalla L.R. 27 febbraio 2020, n. 1 (art. 9) e dalla L.R. 10 dicembre 2024, n. 20 (art. 21), nel quadro della legge 23 agosto 1993, n. 352. Testo verificato il 12 ottobre 2026.</p><ul><li><strong>Cosa portare:</strong> attestato di un corso micologico di almeno 14 ore (o il vecchio tesserino regionale), ricevuta del contributo annuale e documento d'identità. Il corso non serve ai laureati in scienze naturali, agrarie e forestali, in biologia e ai micologi.</li><li><strong>Contributo:</strong> 25 € per i residenti nel Lazio, 40 € per i non residenti, valido un anno dalla data del versamento. Sono esenti i residenti nel Lazio che hanno compiuto 65 anni, che devono comunque avere attestato e documento.</li><li><strong>Minori di 14 anni:</strong> solo se accompagnati da chi ha i titoli. I residenti senza attestato possono chiedere alla Regione fino a cinque autorizzazioni gratuite giornaliere l'anno, valide solo se accompagnati.</li><li><strong>Giorni e orari:</strong> tutti i giorni, salvo diverse decisioni della Giunta regionale. Vietato da un'ora dopo il tramonto a un'ora prima dell'alba.</li><li><strong>Quantità:</strong> 3 kg a persona al giorno, salvo un unico esemplare o un solo cespo concresciuto.</li><li><strong>Cappello minimo:</strong> 4 cm per porcini, ovolo buono, verdone, agarico geotropo e prataiolo; 5 cm per la mazza di tamburo; 3 cm per le altre specie. Nessun minimo per chiodini, pioppini, finferli e gallinacci, trombette dei morti, steccherini e gambesecche.</li><li><strong>Vietato:</strong> raccogliere ovoli chiusi; usare rastrelli, uncini o attrezzi che danneggiano il terreno; distruggere funghi, anche non commestibili; usare sacchetti di plastica. I funghi vanno puliti sommariamente sul posto e trasportati in contenitori rigidi e aerati.</li><li><strong>Dove non si raccoglie:</strong> riserve naturali integrali e aree vietate dagli enti di parchi e riserve; giardini e parchi privati; terreni di pertinenza delle abitazioni per almeno 100 m, salvo i proprietari; verde pubblico urbano; fascia di 10 m dalle strade pubbliche; ex discariche e zone industriali.</li><li><strong>Sanzioni:</strong> da 50 a 600 € secondo la violazione (per esempio da 200 a 600 € senza titoli o in un'area vietata), più la confisca del raccolto.</li></ul><p><strong>Aree protette.</strong> Nel <strong>Parco Nazionale del Gran Sasso e Monti della Laga</strong> il Piano del Parco esclude il prelievo di risorse naturali nelle zone «a» di riserva integrale. Per le altre zone chiedi all'Ente Parco quali regole valgono. Nella <strong>Riserva Monte Navegna e Monte Cervia</strong> la legge istitutiva (L.R. 56/1988) consente la raccolta dei funghi secondo le norme regionali finché non c'è un regolamento della riserva. Nella <strong>Riserva Montagne della Duchessa</strong> vale il piano approvato nel 2021. Prima di uscire controlla cartografia e divieti sul sito dell'ente gestore.</p><p><strong>Controllo gratuito.</strong> Ispettorato Micologico della ASL Rieti, Igiene Alimenti e Nutrizione, via del Terminillo 42 (blocco 4), Rieti, tel. 0746 279801. Secondo l'elenco del Ministero della Salute (marzo 2024) apre lunedì, mercoledì e venerdì 8:00-9:30, e c'è uno sportello ad Antrodoco il lunedì. Verifica gli orari prima di andare. Porta i funghi interi, freschi, puliti solo sommariamente. Le app di riconoscimento non hanno valore: lo ricorda anche il Ministero della Salute.</p><p>Fonti: <a href=\"https://www.consiglio.regione.lazio.it/consiglio-regionale/?vw=leggiregionalidettaglio&amp;id=8275&amp;sv=vigente\" target=\"_blank\" rel=\"noopener\">testo coordinato della L.R. 32/1998</a> (Consiglio regionale del Lazio); <a href=\"https://regione.lazio.it/cittadini/agricoltura/Funghi\" target=\"_blank\" rel=\"noopener\">Regione Lazio, pagina Funghi</a>; <a href=\"https://www.salute.gov.it/new/sites/default/files/imported/C_17_pagineAree_1178_0_file.pdf\" target=\"_blank\" rel=\"noopener\">Ministero della Salute, elenco degli Ispettorati micologici</a>; <a href=\"https://www.salute.gov.it/new/it/tema/sistema-di-controllo-della-sicurezza-alimentare/funghi-consumiamoli-sicurezza/\" target=\"_blank\" rel=\"noopener\">Ministero della Salute, regole per consumare funghi in sicurezza</a>. Questa è una sintesi: fa fede il testo pubblicato sul Bollettino ufficiale.</p>"
+  },
+  {
+   "id": "responsabilita",
+   "title": "Responsabilità e limiti dell'app",
+   "html": "<p>Fungaroli Rieti è uno strumento gratuito, personale e senza scopo di lucro, realizzato da un privato (Matteo Sgambato) per sé, la famiglia e chi ne riceve il link. Ha scopo solo informativo ed è offerto così com'è, senza garanzia di esattezza, completezza o disponibilità continua.</p><ul><li><strong>Le previsioni sono stime.</strong> L'indice combina dati meteo di modello (non misure a terra), la Carta Forestale e ipotesi sulle specie in parte non ancora verificate nel Reatino. Non garantisce che troverai funghi e non indica dove sono.</li><li><strong>Schede e ricerca non sono un'identificazione.</strong> Foto, caratteri e sosia servono a orientarsi e a riconoscere i pericoli, non a stabilire che un fungo è commestibile. Solo il controllo di un micologo dell'Ispettorato ASL lo stabilisce.</li><li><strong>Orari, affollamento, accessi e sentieri</strong> sono indicazioni di massima, calcolate da dati pubblici (OpenStreetMap e altri) che possono essere incompleti o non aggiornati. Sul posto valgono la segnaletica, i divieti di transito e le proprietà private.</li><li><strong>Le regole sono un promemoria.</strong> Sono verificate alla data indicata ma possono cambiare. Chi raccoglie deve conoscere e rispettare le norme vigenti e le regole di parchi, riserve e comuni.</li><li><strong>Sicurezza in montagna.</strong> Valuta meteo, terreno, attrezzatura, orari di rientro e le tue capacità. In caso di emergenza chiama il 112.</li></ul><p>Nei limiti consentiti dalla legge, l'autore non risponde dei danni che derivino da un uso dell'app diverso da quello descritto qui o dal mancato rispetto di queste avvertenze, per esempio dal consumo di funghi non controllati dall'Ispettorato o dalla raccolta in violazione delle norme. Restano in ogni caso salve la responsabilità per dolo o colpa grave (art. 1229 del Codice civile) e ogni altra responsabilità che la legge non consente di escludere o limitare.</p>"
+  },
+  {
+   "id": "privacy",
+   "title": "Privacy e dati",
+   "html": "<p>L'app non ha account, non chiede la tua posizione, non usa strumenti di statistica o pubblicità e non imposta cookie propri.</p><ul><li><strong>Nel tuo browser</strong> (memoria locale del sito) restano le preferenze, una copia del meteo valida un'ora, il diario delle uscite, il codice diario se lo inserisci e la conferma di questo avviso. Servono solo a far funzionare le funzioni che usi e non vengono inviati all'autore. Per cancellarli elimina i dati del sito dalle impostazioni del browser; prima esporta il diario se vuoi conservarlo.</li><li><strong>Diario sincronizzato.</strong> Se inserisci il codice diario, le uscite (data, zona, quota, specie trovate, nota e indice previsto) vengono salvate su Cloudflare Workers KV, nell'account dell'autore. Chiunque abbia lo stesso codice può leggerle, modificarle e cancellarle tutte: condividilo solo con chi deve vedere il diario e non scrivere nelle note dati personali tuoi o di altri. «Scollega questo dispositivo» toglie il codice dal browser; per eliminare uscite già sincronizzate cancellale dal diario o chiedilo all'autore.</li><li><strong>Servizi esterni.</strong> Per mostrarti mappe, meteo e grafica il browser contatta direttamente altri server, che ricevono il tuo indirizzo IP e i dati tecnici della richiesta: Cloudflare (che ospita il sito e la libreria Leaflet), Google Fonts (caratteri), Open-Meteo (meteo delle zone, non della tua posizione), OpenTopoMap e OpenStreetMap (mappe), Regione Lazio (Carta Forestale). Sketchfab viene contattato solo se apri un modello 3D; Google Maps, iNaturalist, Wikipedia, GBIF e Waymarked Trails solo se segui un link. Ognuno tratta questi dati secondo la propria informativa.</li></ul><p>L'app è pensata per un uso personale e familiare. Per domande o per cancellare dati sincronizzati contatta Matteo Sgambato tramite il canale con cui hai ricevuto il link.</p>"
+  },
+  {
+   "id": "licenze",
+   "title": "Fonti dei dati, licenze e crediti",
+   "html": "<ul><li><strong>Mappe:</strong> dati © <a href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\" rel=\"noopener\">contributori di OpenStreetMap</a>, licenza ODbL; stile topografico © <a href=\"https://opentopomap.org/about\" target=\"_blank\" rel=\"noopener\">OpenTopoMap</a> (<a href=\"https://creativecommons.org/licenses/by-sa/3.0/\" target=\"_blank\" rel=\"noopener\">CC BY-SA</a>), con dati SRTM.</li><li><strong>Meteo e quote:</strong> <a href=\"https://open-meteo.com/\" target=\"_blank\" rel=\"noopener\">Open-Meteo.com</a>, dati con licenza <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC BY 4.0</a>, rielaborati dall'app per calcolare l'indice; quote dal modello digitale del terreno Copernicus.</li><li><strong>Boschi:</strong> Carta Forestale su base tipologica © Regione Lazio, Direzione regionale Capitale naturale, parchi e aree protette, da <a href=\"https://dati.lazio.it/dataset/carta-forestale-su-base-tipologica-della-regione-lazio\" target=\"_blank\" rel=\"noopener\">dati.lazio.it</a> (CC BY 4.0), campionata ed elaborata dall'app.</li><li><strong>Percorsi e sentieri:</strong> calcolati su dati OpenStreetMap con Valhalla (server pubblico FOSSGIS) e <a href=\"https://hiking.waymarkedtrails.org/\" target=\"_blank\" rel=\"noopener\">Waymarked Trails</a>.</li><li><strong>Osservazioni:</strong> conteggi per mese da <a href=\"https://www.gbif.org/\" target=\"_blank\" rel=\"noopener\">GBIF.org</a> (osservazioni in Italia, dati consultati a ottobre 2026); nomi e identificativi da Wikidata (CC0).</li><li><strong>Foto e modelli 3D:</strong> di autori terzi da Wikimedia Commons, iNaturalist e Sketchfab, ciascuno con la propria licenza Creative Commons (BY, BY-SA, BY-NC, BY-NC-SA, BY-NC-ND, CC0 o pubblico dominio), indicata accanto all'immagine con autore e link all'originale. Le foto sono ridimensionate, senza altre modifiche. Le opere con clausola NC sono usate solo perché l'app non ha alcuno scopo commerciale. Le foto di iNaturalist sono identificazioni della comunità, non di un micologo.</li><li><strong>Software:</strong> Leaflet (BSD-2-Clause).</li></ul><p>I dati di terzi sono forniti dai rispettivi titolari senza garanzie. Errori nell'elaborazione sono responsabilità dell'app, non delle fonti.</p>"
+  }
+ ]
+}

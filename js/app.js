@@ -662,7 +662,7 @@ function renderDetail() {
     <a class="btn ghost map-link" href="#/mappa/${z.id}">Vedi sentieri e accesso sulla mappa</a>
     ${zoneLegal(z, d)}
     ${z.protection ? `<div class="notice">${esc(z.protection)}</div>` : ''}
-    ${section('meteo', 'Perché questo indice', `<ul class="why">${reasons.map((x) => `<li>${esc(x)}</li>`).join('')}</ul><div id="charts"></div>`)}
+    ${section('meteo', 'Perché questo indice', `<ul class="why">${reasons.map((x) => `<li>${esc(x)}</li>`).join('')}</ul><div id="charts"></div>${legal?.forecast_note ? `<p class="small muted">${esc(legal.forecast_note)}</p>` : ''}`)}
     ${section('quando', 'Quando andare e affollamento', renderHuman(z, d))}
     ${section('accesso', 'Accesso in auto e a piedi', renderAccess(z, d))}
     ${section('sentieri', 'Sentieri della zona', renderTrails(z, d))}
@@ -842,7 +842,7 @@ function zoneLegal(z) {
   const L = legal || {};
   const items = L.zone_legal || ['Max 3 kg a persona al giorno', 'Raccolta da un\'ora prima dell\'alba a un\'ora dopo il tramonto', 'Attestato micologico e contributo regionale con te'];
   return `<div class="zone-legal"><ul>${items.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>
-    ${z.protection ? `<p><b>Area protetta.</b> ${esc(z.protection)}</p>` : ''}<a class="small" href="#/info">Regole complete e note legali</a></div>`;
+    ${z.protection ? `<p><b>Area protetta.</b> ${esc(z.protection)}${L.protected_area_note ? ` <span class="muted">${esc(L.protected_area_note)}</span>` : ''}</p>` : ''}<a class="small" href="#/info">Regole complete e note legali</a></div>`;
 }
 
 // Dove trovare una specie: idoneita' dell'habitat per zona + indice di oggi (se il meteo e' caricato).

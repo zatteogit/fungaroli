@@ -17,7 +17,7 @@
 // topt/tsd: media e tolleranza (°C) della T media aria dei 20 giorni precedenti.
 // lag: [min, max] giorni tra pioggia efficace e nascita.
 // eref: mm di pioggia efficace che portano il fattore pioggia a ~63%.
-// minCap: diametro minimo cappello per legge (L.R. Lazio 32/98), cm.
+// minCap: diametro minimo cappello per legge (L.R. Lazio 32/98, art. 3), cm; 0 = nessuna taglia minima (art. 3 c. 2 bis).
 
 export const FOREST = {
   FAG: 'Faggeta',
@@ -79,7 +79,7 @@ export const SPECIES = [
     id: 'cibarius', group: 'finferli', name: 'Finferlo / gallinaccio', latin: 'Cantharellus cibarius',
     forest: { [F.FAG]: 1, [F.CAS]: 0.9, [F.CER]: 0.8, [F.CON]: 0.6, [F.ROV]: 0.5 },
     months: m(0, 0, 0, 0, 0.1, 0.7, 1, 0.9, 0.9, 0.6, 0.2, 0),
-    elev: [400, 1700], topt: 15, tsd: 4, lag: [7, 24], eref: 30, minCap: 3,
+    elev: [400, 1700], topt: 15, tsd: 4, lag: [7, 24], eref: 30, minCap: 0,
     warning: 'Attenzione a Omphalotus olearius (tossico, cespitoso su ceppaie).',
     evidence: 'Euristica.',
   },
@@ -87,14 +87,14 @@ export const SPECIES = [
     id: 'cornucopioides', group: 'altri', name: 'Trombetta dei morti', latin: 'Craterellus cornucopioides',
     forest: { [F.FAG]: 1, [F.CER]: 0.8, [F.FOR]: 0.8, [F.CAS]: 0.7, [F.ROV]: 0.6, [F.OST]: 0.5 },
     months: m(0, 0, 0, 0, 0, 0, 0.1, 0.4, 0.8, 1, 0.8, 0.1),
-    elev: [400, 1500], topt: 12, tsd: 4, lag: [7, 21], eref: 30, minCap: 3,
+    elev: [400, 1500], topt: 12, tsd: 4, lag: [7, 21], eref: 30, minCap: 0,
     evidence: 'Euristica.',
   },
   {
     id: 'repandum', group: 'altri', name: 'Steccherino dorato', latin: 'Hydnum repandum',
     forest: { [F.FAG]: 0.9, [F.CER]: 0.9, [F.CAS]: 0.8, [F.CON]: 0.7, [F.ROV]: 0.6 },
     months: m(0, 0, 0, 0, 0, 0, 0.1, 0.4, 0.8, 1, 0.8, 0.2),
-    elev: [400, 1600], topt: 11, tsd: 4, lag: [7, 21], eref: 30, minCap: 3,
+    elev: [400, 1600], topt: 11, tsd: 4, lag: [7, 21], eref: 30, minCap: 0,
     evidence: 'Euristica.',
   },
   {
@@ -109,7 +109,7 @@ export const SPECIES = [
     id: 'mellea', group: 'altri', name: 'Chiodino', latin: 'Armillaria mellea',
     forest: { [F.CAS]: 1, [F.CER]: 0.9, [F.ROV]: 0.9, [F.OST]: 0.8, [F.FAG]: 0.8, [F.RIP]: 0.6, [F.LEC]: 0.5 },
     months: m(0, 0, 0, 0, 0, 0, 0, 0.1, 0.5, 1, 0.9, 0.2),
-    elev: [200, 1500], topt: 11, tsd: 3.5, lag: [5, 15], eref: 25, minCap: 3, shockWeight: 3,
+    elev: [200, 1500], topt: 11, tsd: 3.5, lag: [5, 15], eref: 25, minCap: 0, shockWeight: 3,
     warning: 'Tossico crudo o poco cotto: sbollentare e scartare l\'acqua prima della cottura.',
     evidence: 'Euristica; buttate legate al primo freddo.',
   },

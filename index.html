@@ -11,8 +11,7 @@
   <meta name="description" content="Dove e quando andare a funghi intorno a Rieti: indice di fruttificazione da meteo, Carta Forestale e calendario delle specie.">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><path d='M4 15a12 9 0 0 1 24 0z' fill='%238a4b25'/><rect x='12' y='15' width='8' height='12' rx='3' fill='%23e9dcc2'/></svg>">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&family=Literata:opsz,wght@7..72,600;7..72,700&display=swap">
+  <link rel="stylesheet" href="css/fonts.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -111,18 +110,6 @@
       <h1 id="info-h" class="view-title">Regole e metodo</h1>
       <div id="emergency" class="emergency"></div>
     <details>
-      <summary><h2>Regole di raccolta nel Lazio</h2></summary>
-      <ul class="rules">
-        <li><strong>Titolo:</strong> attestato del corso micologico (min. 14 h) o vecchio tesserino + ricevuta del contributo regionale annuale (25 € residenti, 40 € non residenti; esenti i residenti over 65) + documento d'identità. L.R. 32/98, mod. L.R. 1/2020.</li>
-        <li><strong>Giorni:</strong> tutti i giorni (L.R. 20/2024, art. 21). <strong>Orari:</strong> da un'ora prima dell'alba a un'ora dopo il tramonto.</li>
-        <li><strong>Limite:</strong> 3 kg a persona al giorno. Cesti rigidi e aerati; vietati rastrelli e uncini.</li>
-        <li><strong>Taglie minime cappello:</strong> porcini, ovolo e verdone 4 cm, mazza di tamburo 5 cm, altre specie 3 cm.</li>
-        <li><strong>Divieti:</strong> entro 10 m dalle strade carrabili, entro 100 m da fabbricati abitati, Zone A delle riserve; nel Parco Gran Sasso-Laga valgono le regole dell'Ente Parco.</li>
-        <li><strong>Controllo gratuito:</strong> Ispettorato Micologico ASL Rieti (SIAN). Porta i funghi interi e puliti solo sommariamente. Le app di riconoscimento non hanno valore diagnostico.</li>
-      </ul>
-      <p class="muted small">Sintesi dal documento di partenza (fonte AMER, 2025). Verifica sempre il testo vigente prima di uscire.</p>
-    </details>
-    <details>
       <summary><h2>Come funziona l'indice</h2></summary>
       <div class="method">
         <p>Per ogni zona l'app scarica il meteo a <strong>tre quote</strong> (Open-Meteo, correzione altimetrica) e calcola per ogni specie un indice 0–100 come prodotto di fattori:</p>
@@ -146,7 +133,7 @@
   <div id="legal-sections"></div>
   <footer class="foot muted small">
     Strumento di supporto, non di identificazione. Nessun fungo va consumato senza certezza: in caso di dubbio, Ispettorato Micologico ASL.
-    Mappe © OpenStreetMap, OpenTopoMap (CC-BY-SA). Meteo: Open-Meteo.com (CC BY 4.0). Carta Forestale: Regione Lazio.
+    Mappe © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">contributori OpenStreetMap</a> (ODbL), stile <a href="https://opentopomap.org/about" target="_blank" rel="noopener">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC BY-SA</a>). Meteo: <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo.com</a> (<a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>). Carta Forestale su base tipologica: Regione Lazio. Dettagli in "Fonti dei dati, licenze e crediti".
   </footer>
     </section>
   </main>

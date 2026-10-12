@@ -183,7 +183,7 @@ La raccolta è regolata dalla L.R. Lazio 5 agosto 1998, n. 32 e dalle sue modifi
 
 ### Aree protette
 
-- **Riserva Monte Navegna e Monte Cervia** (nel Cicolano) e **Riserva Montagne della Duchessa**: valgono i piani di assetto. Raccolta vietata nelle Zone A, consentita nelle altre secondo la L.R. 32/98. La scheda del Cicolano lo ricorda.
+- **Riserva Monte Navegna e Monte Cervia** (nel Cicolano) e **Riserva Montagne della Duchessa**: per Navegna-Cervia la legge istitutiva consente la raccolta secondo la L.R. 32/98 finché la riserva non ha un regolamento; per la Duchessa vale il piano della riserva (DCR 16/2021). In ogni riserva integrale la raccolta è vietata. Verifica sempre con l'ente gestore. Dettagli in `docs/legale.md`.
 - **Parco Nazionale del Gran Sasso e Monti della Laga** (zona Laga): valgono le regole dell'Ente Parco, che possono limitare zone, periodi e chi può raccogliere. Controllale prima di uscire.
 
 Questi due punti vengono dal documento di partenza e da AMER (che conferma il principio generale: in un parco si legge prima il suo regolamento). Non ho verificato i singoli regolamenti delle riserve e del parco.

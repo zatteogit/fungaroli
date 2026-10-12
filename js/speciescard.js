@@ -119,7 +119,7 @@ export function renderSpeciesDetail(body, id) {
     <header class="sp-head">
       <h1 class="zone-title">${esc(d.name || sp.name)}</h1>
       <p class="sp-latin">${esc(d.latin || sp.latin)}</p>
-      <p class="sp-badges">${d.edibility ? `<span class="badge">${esc(d.edibility)}</span>` : ''}${sp.minCap ? `<span class="badge">cappello ≥ ${sp.minCap} cm</span>` : ''}</p>
+      <p class="sp-badges">${d.edibility ? `<span class="badge">${esc(d.edibility)}</span>` : ''}${sp.minCap ? `<span class="badge">cappello ≥ ${sp.minCap} cm</span>` : sp.minCap === 0 ? '<span class="badge">nessuna taglia minima</span>' : ''}</p>
     </header>
     ${attention(id, warn)}
     ${d.key_features?.length ? `<h3>Come riconoscerlo</h3><ol class="keys">${d.key_features.map((k) => `<li>${esc(k)}</li>`).join('')}</ol>` : '<p class="notice">Scheda di riconoscimento in preparazione.</p>'}
