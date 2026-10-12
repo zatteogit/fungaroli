@@ -611,6 +611,114 @@
      "file_hd": "assets/species/tree-acero-campestre-inat3-hd.jpg"
     }
    ]
+  },
+  "pioppo": {
+   "latin": "Populus spp.",
+   "photo_taxon": "Populus nigra",
+   "inat": [
+    {
+     "file": "assets/species/tree-pioppo-inat1.jpg",
+     "source": "iNaturalist (research grade)",
+     "page": "https://www.inaturalist.org/observations/370106232",
+     "author": "elenben",
+     "license": "CC-BY-NC",
+     "place": "Via Tespi, Roma, Lazio, IT",
+     "date": "2026-06-09",
+     "file_hd": "assets/species/tree-pioppo-inat1-hd.jpg"
+    },
+    {
+     "file": "assets/species/tree-pioppo-inat2.jpg",
+     "source": "iNaturalist (research grade)",
+     "page": "https://www.inaturalist.org/observations/213181144",
+     "author": "Andrea Bonifazi",
+     "license": "CC-BY-NC",
+     "place": "00139 Roma RM, Italia",
+     "date": "2024-05-03",
+     "file_hd": "assets/species/tree-pioppo-inat2-hd.jpg"
+    },
+    {
+     "file": "assets/species/tree-pioppo-inat3.jpg",
+     "source": "iNaturalist (research grade)",
+     "page": "https://www.inaturalist.org/observations/238568635",
+     "author": "Andrea Bonifazi",
+     "license": "CC-BY-NC",
+     "place": "Giardinetti, 00133 Roma RM, Italia",
+     "date": "2024-08-29",
+     "file_hd": "assets/species/tree-pioppo-inat3-hd.jpg"
+    }
+   ]
+  },
+  "salice": {
+   "latin": "Salix spp.",
+   "photo_taxon": "Salix alba",
+   "inat": [
+    {
+     "file": "assets/species/tree-salice-inat1.jpg",
+     "source": "iNaturalist (research grade)",
+     "page": "https://www.inaturalist.org/observations/3341186",
+     "author": "Dino Biancolini",
+     "license": "CC-BY-NC",
+     "place": "Frosinone, Lazio, IT",
+     "date": "2016-05-30",
+     "file_hd": "assets/species/tree-salice-inat1-hd.jpg"
+    },
+    {
+     "file": "assets/species/tree-salice-inat2.jpg",
+     "source": "iNaturalist (research grade)",
+     "page": "https://www.inaturalist.org/observations/166778754",
+     "author": "Marco Gasponi",
+     "license": "CC-BY-NC",
+     "place": "05025 Guardea TR, Italia",
+     "date": "2023-06-11",
+     "file_hd": "assets/species/tree-salice-inat2-hd.jpg"
+    },
+    {
+     "file": "assets/species/tree-salice-inat3.jpg",
+     "source": "iNaturalist (research grade)",
+     "page": "https://www.inaturalist.org/observations/159279271",
+     "author": "Valerio Viglioglia",
+     "license": "CC-BY-NC",
+     "place": "00179 Roma RM, Italia",
+     "date": "2023-05-01",
+     "file_hd": "assets/species/tree-salice-inat3-hd.jpg"
+    }
+   ]
+  },
+  "ontano": {
+   "latin": "Alnus glutinosa",
+   "photo_taxon": "Alnus glutinosa",
+   "inat": [
+    {
+     "file": "assets/species/tree-ontano-inat1.jpg",
+     "source": "iNaturalist (research grade)",
+     "page": "https://www.inaturalist.org/observations/302850359",
+     "author": "Marco Gasponi",
+     "license": "CC-BY-NC",
+     "place": "05100 Terni TR, Italia",
+     "date": "2025-08-01",
+     "file_hd": "assets/species/tree-ontano-inat1-hd.jpg"
+    },
+    {
+     "file": "assets/species/tree-ontano-inat2.jpg",
+     "source": "iNaturalist (research grade)",
+     "page": "https://www.inaturalist.org/observations/158768549",
+     "author": "umbertopessolano",
+     "license": "CC-BY-NC",
+     "place": "Riserva Naturale di Nazzano, Tevere-Farfa, Nazzano, Lazio, IT",
+     "date": "2023-05-01",
+     "file_hd": "assets/species/tree-ontano-inat2-hd.jpg"
+    },
+    {
+     "file": "assets/species/tree-ontano-inat3.jpg",
+     "source": "iNaturalist (research grade)",
+     "page": "https://www.inaturalist.org/observations/140383103",
+     "author": "stefanocim",
+     "license": "CC-BY-NC",
+     "place": "Porta Cartara - Bar Mediterraneo, 63100 Ascoli Piceno AP, Italia",
+     "date": "2022-10-29",
+     "file_hd": "assets/species/tree-ontano-inat3-hd.jpg"
+    }
+   ]
   }
  }
 }
