@@ -1,7 +1,7 @@
 // Scheda dettagliata di una specie: foto reali, riconoscimento, sosia pericolosi,
 // calendario delle osservazioni (GBIF) a confronto con il modello, modello 3D.
 
-import { traitStrip, compareCta, taxonKeyByLatin, openTaxon, attentionBox } from './identify.js';
+import { traitStrip, compareCta, taxonKeyByLatin, openTaxon, attentionBox, compareHref } from './identify.js';
 import { tick } from './motion.js';
 import { SPECIES } from './species.js';
 import { openLightbox, captionHtml } from './lightbox.js';
@@ -68,7 +68,7 @@ function traitsTable(d) {
   return `<dl class="traits">${rows.map(([k, v]) => `<dt>${k}</dt><dd>${linkTrees(v.filter(Boolean).join(' · '))}</dd>`).join('')}</dl>`;
 }
 
-function lookalikes(d) {
+function lookalikes(d, sid) {
   if (!d.lookalikes?.length) return '';
   const order = { mortale: 0, tossico: 1, 'non commestibile': 2, commestibile: 3 };
   const list = [...d.lookalikes].sort((a, b) => (order[a.toxicity] ?? 9) - (order[b.toxicity] ?? 9));
@@ -80,7 +80,7 @@ function lookalikes(d) {
     return `<li class="${TOX[l.toxicity] || ''}${tk ? ' look-link' : ''}">
       <span class="look-btn">${m ? `<img src="${ASSET(m.file)}" alt="" loading="lazy">` : '<span class="look-ph">senza foto</span>'}
         ${m ? `<button type="button" class="id-zoom" data-look="${esc(key || '')}" aria-label="${esc(l.name || l.latin)}: ingrandisci la foto"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6"/><path d="m20 20-5-5M10.5 8v5M8 10.5h5"/></svg></button>` : ''}</span>
-      <div><div class="look-name"><span class="tox">${esc(l.toxicity)}</span> ${tk ? `<button type="button" class="look-open" data-taxon="${esc(tk)}">${esc(l.name || '')} <i>${esc(l.latin)}</i><span aria-hidden="true"> ›</span></button>` : `${esc(l.name || '')} <i>${esc(l.latin)}</i>`}</div>
+      <div><div class="look-name"><span class="tox">${esc(l.toxicity)}</span> ${tk && compareHref(sid, tk) ? `<a class="look-open" href="${compareHref(sid, tk)}">${esc(l.name || '')} <i>${esc(l.latin)}</i><span aria-hidden="true"> ›</span></a>` : tk ? `<button type="button" class="look-open" data-taxon="${esc(tk)}">${esc(l.name || '')} <i>${esc(l.latin)}</i><span aria-hidden="true"> ›</span></button>` : `${esc(l.name || '')} <i>${esc(l.latin)}</i>`}</div>
       <div class="look-diff">${esc(l.how_to_tell)}</div></div></li>`;
   }).join('')}</ul>`;
 }
@@ -186,7 +186,7 @@ export function renderSpeciesDetail(body, id) {
     <header class="phero phero-tall">
       ${photos[0] ? `<button type="button" class="phero-img" data-photo="0" aria-label="Ingrandisci la foto"><img src="${hd(photos[0])}" alt="${esc(sp.name)}"></button>` : ''}
       <span class="shade"></span>
-      <div class="phero-bar"><button type="button" class="fab" data-back aria-label="Indietro"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5 8 12l7 7"/></svg></button>
+      <div class="phero-bar">
         ${photos[0] ? '<button type="button" class="fab" data-photo="0" aria-label="Foto a schermo intero"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7"/></svg></button>' : ''}</div>
       <div class="phero-body">
         <p class="sp-badges">${(() => {
@@ -208,7 +208,7 @@ export function renderSpeciesDetail(body, id) {
     ${compareCta(id)}
     ${kitchen(id)}
     ${whereToLook(id)}
-    ${lookalikes(d)}
+    ${lookalikes(d, id)}
     ${INFO[id]?.file ? `<h3>Infografica</h3><button type="button" class="zoomable sp-info" data-info="1" aria-label="Apri l'infografica"><img src="${ASSET(INFO[id].file)}" alt="Infografica di riconoscimento: ${esc(sp.name)}" loading="lazy"><span class="zoom-ic" aria-hidden="true">⤢</span></button>` : ''}
     <div class="sp-more">
       ${sec('Dove trovarlo nelle zone', WHERE(id))}

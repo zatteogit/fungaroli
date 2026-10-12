@@ -8,7 +8,7 @@ import { initSpeciesCards, thumb, renderSpeciesDetail, whereSummary, criticalRul
 import { openLightbox, captionHtml } from './lightbox.js';
 import { initInstall } from './install.js';
 import { loadOuting, outingFor, OUTING_LABEL, OUTING_SHORT, OUTING_RANK } from './outing.js';
-import { initIdentify, renderIdentify, setCompare, searchTaxa, openTaxon, renderTaxonPage } from './identify.js';
+import { initIdentify, renderIdentify, setCompare, searchTaxa, openTaxon, renderTaxonPage, taxonName } from './identify.js';
 import { initSearch, openSearch } from './search.js';
 import { renderWhy, renderMethod } from './science.js';
 import { navigate, soft } from './motion.js';
@@ -101,6 +101,7 @@ async function init() {
   applyLegal();
   initTrees({ trees: trj, media: mj, assetUrl: embedded ? (f) => embedded.assets?.[f] || '' : (f) => f, zones, habitat, thumb });
   renderTreeGrid($('#tree-grid'));
+  treesData = trj;
   buildSearch(idj, trj, embedded);
   initMap();
   initShell();
@@ -122,7 +123,8 @@ function initShell() {
   addEventListener('hashchange', () => { navDepth++; route(); });
   document.addEventListener('click', (e) => {
     if (!e.target.closest('[data-back]')) return;
-    if (navDepth > 0) history.back(); else location.hash = '#/';
+    // indietro vero se la pagina precedente e' nell'app, altrimenti la pagina "madre"
+    if (navStack.length > 1) history.back(); else location.hash = parentOf(prev);
   });
   renderFilterSummary();
 }
@@ -162,6 +164,53 @@ function navKind(a, b) {
   return 'none';
 }
 
+// sulle pagine con la foto in testata la barra diventa piena solo dopo la foto
+function onScrollBar() {
+  const h = document.querySelector('.view:not([hidden]) .phero');
+  document.documentElement.classList.toggle('scrolled', !h || scrollY > h.offsetHeight - 70);
+}
+addEventListener('scroll', onScrollBar, { passive: true });
+
+// tasto indietro in alto a sinistra: freccia + nome della pagina a cui torni
+const navStack = [];
+const TITLES = { uscite: 'Uscite', mappa: 'Mappa', specie: 'Specie', alberi: 'Alberi', riconosci: 'Riconosci', diario: 'Diario', info: 'Regole e metodo', metodo: 'Come funziona' };
+function titleOf(r) {
+  if (!r) return '';
+  if (r.view === 'zona') { const z = zones.find((x) => x.id === r.zoneId); return z ? splitName(z)[0] : 'Zona'; }
+  if (r.view === 'specie-dettaglio') return SPECIES.find((x) => x.id === r.speciesId)?.name || 'Specie';
+  if (r.view === 'fungo') return taxonName(r.taxonId) || 'Specie';
+  if (r.view === 'albero') return treesData?.trees?.[r.treeId]?.name || 'Albero';
+  if (r.view === 'riconosci' && r.compare) return 'Confronto';
+  return TITLES[r.view] || '';
+}
+function parentOf(r) {
+  if (!r) return '#/';
+  if (r.view === 'specie-dettaglio' || r.view === 'fungo') return '#/specie';
+  if (r.view === 'albero') return '#/alberi';
+  if (r.view === 'riconosci' && r.compare) return '#/riconosci';
+  return '#/';
+}
+const PARENT_TITLE = (r) => ({ '#/specie': 'Specie', '#/alberi': 'Alberi', '#/riconosci': 'Riconosci', '#/': 'Uscite' }[parentOf(r)]);
+function updateBack(r, nav) {
+  if (nav === 'pop') { while (navStack.length && navStack[navStack.length - 1].hash !== r.hash) navStack.pop(); }
+  if (navStack[navStack.length - 1]?.hash !== r.hash) {
+    if (nav === 'left' || nav === 'right') navStack.length = 0; // cambio di scheda: si riparte
+    navStack.push({ hash: r.hash, title: titleOf(r) });
+  }
+  const deep = (LEVEL[r.view] || 0) + (r.compare ? 2 : 0) > 0;
+  const b = $('.appbar-back');
+  if (b) {
+    b.hidden = !deep;
+    const back = navStack.length > 1 ? navStack[navStack.length - 2].title : PARENT_TITLE(r);
+    b.querySelector('span').textContent = back || 'Indietro';
+    b.setAttribute('aria-label', `Indietro: ${back || 'pagina precedente'}`);
+  }
+  // il logo solo in home
+  onScrollBar();
+  const brand = $('.brand');
+  if (brand) brand.hidden = r.view !== 'uscite';
+}
+
 function route() {
   const r = parseRoute();
   r.tab = { zona: 'uscite', 'specie-dettaglio': 'specie', alberi: 'specie', albero: 'specie', riconosci: 'specie', info: '', metodo: '', fungo: 'specie' }[r.view] ?? r.view;
@@ -169,7 +218,7 @@ function route() {
   const nav = navKind(prev, r), back = prev?.hash || '';
   if (prev) scrollMem.set(prev.hash, scrollY);
   prev = r;
-  navigate(() => routeNow(r, nav), { nav, back });
+  navigate(() => { routeNow(r, nav); updateBack(r, nav); }, { nav, back });
 }
 
 function routeNow(r, nav) {
@@ -320,7 +369,7 @@ const dayEntry = (zid, offset) => {
 };
 // indice "opportunita'": l'indice di fruttificazione corretto con le preferenze attive
 // le stesse correzioni di adjusted(), una per una, per spiegarle
-let prep = null, trailheads = {};
+let prep = null, trailheads = {}, treesData = null;
 const srcLinks = (src) => (src || []).map((x) => `<a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.title)}</a>`).join(' · ');
 function prepGeneralHtml(rules) {
   const ord = [...rules].sort((a, b) => (a.level === 'obbligatorio' ? 0 : 1) - (b.level === 'obbligatorio' ? 0 : 1));
@@ -1059,7 +1108,7 @@ function renderDetail() {
     <header class="phero">
       ${cov ? `<button type="button" class="phero-img" data-cover aria-label="Ingrandisci la foto"><img src="${cov.hd}" alt="${esc(cov.alt)}"></button>` : ''}
       <span class="shade"></span>
-      <div class="phero-bar"><button type="button" class="fab" data-back aria-label="Indietro">${IC.back}</button><a class="fab" href="#/mappa/${z.id}" aria-label="Mappa della zona">${IC.map}</a></div>
+      <div class="phero-bar"><a class="fab" href="#/mappa/${z.id}" aria-label="Mappa della zona">${IC.map}</a></div>
       <div class="phero-body"><span class="pill glass">${esc(dayLabel)}</span><h1 class="phero-title">${esc(title)}</h1>${sub ? `<p class="phero-sub">${esc(sub)}</p>` : ''}</div>
       ${ring(s)}
     </header>

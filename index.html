@@ -21,6 +21,7 @@
 </head>
 <body>
   <header class="appbar">
+    <button type="button" class="appbar-back" data-back hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5 8 12l7 7"/></svg><span></span></button>
     <a class="brand" href="#/" aria-label="Fungaroli Rieti, home"><span class="brand-name">Fungaroli</span> <span class="brand-place">Rieti</span></a>
     <div class="appbar-actions">
       <button id="refresh" class="icon-btn" type="button" aria-label="Aggiorna meteo" title="Aggiorna meteo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11a8 8 0 1 0-2.3 5.7"/><path d="M20 4v7h-7"/></svg></button>
@@ -114,7 +115,6 @@
     </section>
 
     <section class="view metodo" data-view="metodo" hidden aria-labelledby="metodo-h">
-      <div class="subbar"><button type="button" class="back" data-back>‹ Indietro</button></div>
       <p class="eyebrow">Per chi vuole approfondire</p>
       <h1 id="metodo-h" class="view-title">Come funziona l'indice</h1>
       <p class="view-sub">Le formule, i parametri di ogni specie, da dove vengono i dati e quanto ci si può fidare. Ogni pezzo porta un'etichetta: letteratura, dato ufficiale o euristica.</p>
@@ -122,7 +122,6 @@
     </section>
 
     <section class="view info" data-view="info" hidden aria-labelledby="info-h">
-      <div class="subbar"><button type="button" class="back" data-back>‹ Indietro</button></div>
       <h1 id="info-h" class="view-title">Regole e metodo</h1>
       <a class="ts-cta method-cta" href="#/metodo"><span class="ts-cta-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 19h16M6 16V9M10 16V5M14 16v-6M18 16V7"/></svg></span><span><b>Come funziona l'indice</b><small>Formule, parametri, fonti e limiti, per chi vuole approfondire</small></span><span class="ts-cta-go" aria-hidden="true">›</span></a>
       <div id="emergency" class="emergency"></div>

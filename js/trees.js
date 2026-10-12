@@ -71,7 +71,7 @@ export function renderTreePage(body, id) {
     <header class="phero phero-tall">
       ${photos[0] ? `<button type="button" class="phero-img" data-photo="0" aria-label="Ingrandisci la foto"><img src="${ASSET(photos[0].file_hd || photos[0].file)}" alt="${esc(t.name)}"></button>` : ''}
       <span class="shade"></span>
-      <div class="phero-bar"><button type="button" class="fab" data-back aria-label="Indietro"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5 8 12l7 7"/></svg></button></div>
+      <div class="phero-bar"></div>
       <div class="phero-body">
         <p class="sp-badges">${t.type ? `<span class="pill glass">${esc(t.type)}</span>` : ''}${t.altitude_m ? `<span class="pill glass">${t.altitude_m[0]}–${t.altitude_m[1]} m</span>` : ''}</p>
         <h1 class="phero-title">${esc(t.name)}</h1>

@@ -435,6 +435,7 @@ const photosOf = (t) => {
   const m = L[b]; const first = photoOf(t);
   return [first, ...(m?.inat || [])].filter((x, i, a) => x && a.findIndex((y) => y?.file === x.file) === i);
 };
+export const taxonName = (key) => { const t = TAXA.find((x) => x.key === key); return t?.name || t?.latin || ''; };
 export const hasTaxonPage = (key) => { const t = TAXA.find((x) => x.key === key); return !!t && !(t.edible_id && !t.lookalike_of?.length); };
 export function renderTaxonPage(box, key) {
   const t = TAXA.find((x) => x.key === key);
@@ -447,7 +448,7 @@ export function renderTaxonPage(box, key) {
     <header class="phero phero-tall">
       ${ph[0] ? `<button type="button" class="phero-img" data-photo="0" aria-label="Ingrandisci la foto"><img src="${ASSET(ph[0].file_hd || ph[0].file)}" alt="${esc(t.name || t.latin)}"></button>` : ''}
       <span class="shade"></span>
-      <div class="phero-bar"><button type="button" class="fab" data-back aria-label="Indietro"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5 8 12l7 7"/></svg></button></div>
+      <div class="phero-bar"></div>
       <div class="phero-body"><span class="pill glass tx-pill tox-${tox.replace(/\s/g, '-')}">${toxL}</span>
         <h1 class="phero-title">${esc(t.name || t.latin)}</h1>${t.name !== t.latin ? `<p class="phero-sub"><i>${esc(t.latin)}</i></p>` : ''}</div>
     </header>
@@ -474,9 +475,19 @@ export function renderTaxonPage(box, key) {
   box.querySelectorAll('[data-photo]').forEach((b) => b.addEventListener('click', () => openLightbox(lb, +b.dataset.photo)));
 }
 export function compareCta(edibleId) {
-  const t = refOf(edibleId), n = t ? sosiaOf(t).length : 0;
-  return n ? `<a class="ts-cta" href="#/riconosci/confronta/${esc(t.key)}"><span class="ts-cta-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 6h7v12H4zM13 6h7v12h-7z"/><path d="M7.5 10v4M16.5 10v4"/></svg></span><span><b>Confrontalo con ${n === 1 ? 'il sosia' : `i ${n} sosia`}</b><small>Solo i caratteri che li distinguono, in Riconosci</small></span><span class="ts-cta-go" aria-hidden="true">›</span></a>` : '';
+  const t = refOf(edibleId);
+  const list = t ? sosiaOf(t) : [];
+  if (!list.length) return '';
+  // fotografico: lui e i sosia in miniatura (oltre 4, un "+N")
+  const th = (x, cls = '') => { const ph = photoOf(x); return `<span class="cc-th ${cls} tox-${String(x.toxicity || '').replace(/\s/g, '-')}">${ph ? `<img src="${ASSET(ph.file)}" alt="" loading="lazy">` : ''}</span>`; };
+  const shown = list.slice(0, 4), more = list.length - shown.length;
+  return `<a class="cmp-cta" href="#/riconosci/confronta/${esc(t.key)}">
+    <span class="cc-row" aria-hidden="true">${th(t, 'ref')}<span class="cc-vs">vs</span><span class="cc-stack">${shown.map((x) => th(x)).join('')}${more > 0 ? `<span class="cc-th cc-more">+${more}</span>` : ''}</span></span>
+    <span class="cc-txt"><b>Confrontalo con ${list.length === 1 ? 'il sosia' : `i ${list.length} sosia`}</b><small>${esc(list.slice(0, 3).map((x) => x.name || x.latin).join(', '))}${list.length > 3 ? '…' : ''} · solo i caratteri che li distinguono</small></span>
+    <span class="ts-cta-go" aria-hidden="true">›</span></a>`;
 }
+// la card di un sosia porta al confronto con la specie della scheda
+export const compareHref = (edibleId, taxonKey) => { const t = refOf(edibleId); return t && taxonKey ? `#/riconosci/confronta/${t.key}/${taxonKey}` : ''; };
 // per la ricerca generale: le specie senza pagina propria (velenose e sosia), con la foto
 export const taxonKeyByLatin = (latin) => { const b = String(latin || '').match(/[A-Z][a-z]+ [a-z]+/)?.[0]; return b ? TAXA.find((t) => t.latin?.includes(b))?.key || '' : ''; };
 export const searchTaxa = () => TAXA.filter((t) => !t.edible_id || t.lookalike_of?.length).map((t) => ({ key: t.key, name: t.name, latin: t.latin, toxicity: t.toxicity, photo: photoOf(t), look: t.lookalike_of || [] }));
@@ -549,7 +560,6 @@ function renderCompare(box, ref, pick) {
   };
   const start = Math.max(0, list.findIndex((t) => t.key === pick));
   box.innerHTML = `
-    <a class="cmp-back" href="#/specie/${esc(ref.edible_id)}">‹ Scheda di ${esc(ref.name)}</a>
     <h2 class="sec-title cmp-title">${esc(ref.name)} o sosia?</h2>
     <p class="small muted cmp-lede">${list.length} ${list.length === 1 ? 'fungo che gli somiglia' : 'funghi che gli somigliano'}. Scorri di lato per confrontarli uno alla volta: a sinistra ${esc(ref.name.toLowerCase())}, a destra il sosia.</p>
     <div class="cmp-pick" role="tablist" aria-label="Scegli il sosia">${list.map((t, k) => `<button type="button" role="tab" class="cmp-chip ${toxCls(t)}" data-go="${k}" aria-selected="${k === start}"><span class="cmp-chip-img">${pic(t)}</span><span>${esc(t.name || t.latin)}</span></button>`).join('')}</div>
