@@ -12,12 +12,10 @@ let ID = null, MEDIA = null, ASSET = (f) => f, EMBED_3D = true;
 
 export function initSpeciesCards({ idData, media, assetUrl, allow3d = true }) {
   ID = idData; MEDIA = media; if (assetUrl) ASSET = assetUrl; EMBED_3D = allow3d;
-  const dlg = document.getElementById('species-dialog');
-  dlg.querySelector('.sp-close').addEventListener('click', () => dlg.close());
-  dlg.addEventListener('click', (e) => { if (e.target === dlg) dlg.close(); });
+  // ogni elemento con data-species apre la pagina della specie
   document.addEventListener('click', (e) => {
     const t = e.target.closest('[data-species]');
-    if (t) { e.preventDefault(); openSpeciesCard(t.dataset.species); }
+    if (t) { e.preventDefault(); location.hash = `#/specie/${t.dataset.species}`; }
   });
 }
 
@@ -72,14 +70,13 @@ function lookalikes(d) {
   }).join('')}</ul>`;
 }
 
-export function openSpeciesCard(id) {
-  const dlg = document.getElementById('species-dialog');
+export function renderSpeciesDetail(body, id) {
   const sp = SPECIES.find((s) => s.id === id);
+  if (!sp) { body.innerHTML = '<p class="muted">Specie non trovata.</p>'; return; }
   const d = ID?.species?.[id] || {};
   const m = MEDIA?.species?.[id] || {};
   const photos = [m.ref, ...(m.inat || [])].filter(Boolean);
   const model = m.model3d;
-  const body = dlg.querySelector('.sp-body');
   body.innerHTML = `
     <div class="sp-hero">
       ${photos[0] ? `<figure class="sp-main"><img src="${ASSET(photos[0].file)}" alt="${esc(sp.name)}">${credit(photos[0])}</figure>` : ''}
@@ -105,6 +102,4 @@ export function openSpeciesCard(id) {
     const box = e.target.closest('.sp-3d');
     box.innerHTML = `<iframe title="Modello 3D ${esc(sp.name)}" src="${esc(box.dataset.embed)}" allow="autoplay; fullscreen; xr-spatial-tracking" loading="lazy"></iframe>`;
   });
-  dlg.showModal();
-  body.scrollTop = 0;
 }

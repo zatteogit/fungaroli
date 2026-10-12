@@ -4,7 +4,7 @@ import { loadWeather } from './weather.js';
 import { renderCharts } from './chart.js';
 import { initJournal } from './journal.js';
 import { renderSvgMap } from './svgmap.js';
-import { initSpeciesCards, thumb } from './speciescard.js';
+import { initSpeciesCards, thumb, renderSpeciesDetail } from './speciescard.js';
 import { crowding, comfortScore, timingAdvice, fmtTime, holidayName } from './human.js';
 
 const HISTORY_DAYS = 30;   // giorni passati mostrati nel grafico
@@ -43,6 +43,8 @@ const state = {
   distancePenalty: false,
   avoidCrowd: false,
   preferComfort: false,
+  homeDay: null,   // null = tutti i prossimi giorni
+  view: 'uscite',
 };
 try {
   const p = JSON.parse(localStorage.getItem(PREFS_KEY) || 'null');
@@ -56,7 +58,6 @@ let zones, origin, habitat, access, trails, series, results, map, zoneLayers = {
 const hasLeaflet = () => typeof globalThis.L !== 'undefined';
 
 async function init() {
-  $('#detail').innerHTML = '<div class="loading">Carico meteo e dati forestali…</div>';
   // versione Artifact: dati incorporati nella pagina (niente fetch esterni)
   const embedded = globalThis.FUNGAROLI_DATA;
   const load = (f) => fetch(`data/${f}.json`).then((r) => (r.ok ? r.json() : null)).catch(() => null);
@@ -75,6 +76,7 @@ async function init() {
   habitat = hj.zones;
   initMap();
   renderFilters();
+  initShell();
   initJournal({ zones, predict, getZoneId: () => state.zoneId || zones[0].id });
   await refreshWeather(false);
   if (embedded) $('#refresh').hidden = true;
@@ -86,7 +88,67 @@ async function init() {
   }
   matchMedia('(prefers-color-scheme: dark)').addEventListener('change', renderAll);
   let rt;
-  addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(() => results && renderDetail(), 200); });
+  addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(() => results && state.view === 'zona' && renderDetail(), 200); });
+  route();
+}
+
+// ---------------------------------------------------------------------------
+// Navigazione: viste con hash (#/, #/zona/<id>/<giorno>, #/mappa[/<id>], #/specie[/<id>], #/diario, #/info)
+// Il tasto indietro del telefono funziona perche' ogni passo e' una voce di cronologia.
+let navDepth = 0;
+function initShell() {
+  addEventListener('hashchange', () => { navDepth++; route(); });
+  document.querySelectorAll('[data-back]').forEach((b) => b.addEventListener('click', () => {
+    if (navDepth > 0) history.back(); else location.hash = '#/';
+  }));
+  const fd = $('#filters-dialog');
+  $('#open-filters').addEventListener('click', () => fd.showModal());
+  $('#filters-done').addEventListener('click', () => fd.close());
+  fd.addEventListener('click', (e) => { if (e.target === fd) fd.close(); });
+  renderFilterSummary();
+}
+
+function parseRoute() {
+  const parts = location.hash.replace(/^#\/?/, '').split('/').filter(Boolean);
+  const [a, b, c] = parts;
+  if (a === 'zona' && zones.some((z) => z.id === b)) return { view: 'zona', zoneId: b, offset: Math.max(0, Math.min(AHEAD_DAYS, +c || 0)) };
+  if (a === 'mappa') return { view: 'mappa', zoneId: b };
+  if (a === 'specie' && b) return { view: 'specie-dettaglio', speciesId: b };
+  if (a === 'specie') return { view: 'specie' };
+  if (a === 'diario') return { view: 'diario' };
+  if (a === 'info') return { view: 'info' };
+  return { view: 'uscite' };
+}
+
+function route() {
+  const r = parseRoute();
+  state.view = r.view;
+  if (r.zoneId) state.zoneId = r.zoneId;
+  if (r.view === 'zona') state.dayOffset = r.offset;
+  document.querySelectorAll('[data-view]').forEach((v) => { v.hidden = v.dataset.view !== r.view; });
+  const tab = { zona: 'uscite', 'specie-dettaglio': 'specie', info: '' }[r.view] ?? r.view;
+  document.querySelectorAll('[data-tab]').forEach((t) => {
+    if (t.dataset.tab === tab) t.setAttribute('aria-current', 'page'); else t.removeAttribute('aria-current');
+  });
+  document.body.dataset.page = r.view;
+  if (r.view !== 'mappa') scrollTo(0, 0);
+  if (r.view === 'specie-dettaglio') renderSpeciesDetail($('#species-detail'), r.speciesId);
+  if (r.view === 'mappa') {
+    requestAnimationFrame(() => {
+      map?.invalidateSize();
+      const z = zones.find((x) => x.id === r.zoneId);
+      if (z && map) { map.flyToBounds(L.latLng(z.lat, z.lon).toBounds(z.radius_m * 2.6), { duration: 0.5 }); openSheet(z.id); }
+    });
+  }
+  renderAll();
+}
+
+const go = (hash) => { location.hash = hash; };
+
+function renderFilterSummary() {
+  const g = GROUPS.filter((x) => state.groups.has(x.id)).map((x) => x.label);
+  const prefs = [state.avoidCrowd && 'poca gente', state.preferComfort && 'comodo', state.distancePenalty && 'vicino'].filter(Boolean);
+  $('#filter-summary').textContent = (g.length > 2 ? `${g.length} gruppi` : g.join(', ')) + (prefs.length ? ` · ${prefs.join(', ')}` : '');
 }
 
 async function refreshWeather(force) {
@@ -102,7 +164,9 @@ async function refreshWeather(force) {
     renderAll();
   } catch (err) {
     $('#updated').textContent = '';
-    $('#detail').innerHTML = `<div class="error">Non riesco a scaricare il meteo (${esc(err.message)}). Controlla la connessione e riprova.</div>`;
+    const msg = `<div class="error">Non riesco a scaricare il meteo (${esc(err.message)}). Controlla la connessione e tocca ↻ in alto per riprovare.</div>`;
+    $('#hero').innerHTML = msg;
+    $('#detail').innerHTML = msg;
   }
 }
 
@@ -229,6 +293,7 @@ function renderFilters() {
       if (state.groups.has(g.id) && state.groups.size > 1) state.groups.delete(g.id); else state.groups.add(g.id);
       savePrefs();
       renderFilters();
+      renderFilterSummary();
       if (series) { compute(); renderAll(); }
     });
     box.appendChild(b);
@@ -237,73 +302,121 @@ function renderFilters() {
 
 function renderAll() {
   if (!results) return;
-  renderDays();
-  renderRanking();
-  renderMap();
-  renderDetail();
-  renderLegend();
+  if (state.view === 'uscite') { renderDays(); renderHome(); }
+  if (state.view === 'zona') renderDetail();
+  if (state.view === 'mappa') { renderMapDays(); renderMap(); renderLegend(); if (sheetZone) openSheet(sheetZone); }
 }
 
-function renderDays() {
-  const box = $('#days');
+function bestOfDay(o) {
+  let best = null;
+  for (const z of zones) {
+    const d = dayEntry(z.id, o);
+    if (!d?.best) continue;
+    const sc = adjusted(z, d.score, d);
+    if (!best || sc > best.s) best = { s: sc, z, d, o };
+  }
+  return best;
+}
+
+const dayLabel = (o, date, long = false) => (o === 0 ? 'Oggi' : o === 1 ? 'Domani'
+  : fmtDate(date, long ? { weekday: 'long', day: 'numeric' } : { weekday: 'short' }));
+
+function dayChips(box, selected, onPick, { withAll = false } = {}) {
   box.innerHTML = '';
-  for (let o = 0; o <= AHEAD_DAYS; o++) {
-    let best = null;
-    for (const z of zones) {
-      const d = dayEntry(z.id, o);
-      if (!d) continue;
-      const s = adjusted(z, d.score, d);
-      if (!best || s > best.s) best = { s, z, d };
-    }
-    if (!best) continue;
+  const mk = (label, sub, o, sc) => {
     const b = document.createElement('button');
     b.type = 'button';
     b.className = 'day';
     b.setAttribute('role', 'tab');
-    b.setAttribute('aria-selected', o === state.dayOffset);
-    const label = o === 0 ? 'Oggi' : o === 1 ? 'Domani' : fmtDate(best.d.date, { weekday: 'short' });
-    b.innerHTML = `<span class="d1">${label}</span><span class="d2">${fmtDate(best.d.date, { day: 'numeric', month: 'short' })}</span>
-      <span class="d3"><span class="dot" style="background:var(${scoreVar(best.s)})"></span><b>${best.s}</b> ${esc(best.z.name.split(/[/–(]/)[0].trim())}</span>`;
-    b.addEventListener('click', () => { state.dayOffset = o; renderAll(); });
+    b.setAttribute('aria-selected', String(selected === o));
+    b.innerHTML = `<span class="d1">${label}</span>${sc != null ? `<span class="d3"><span class="dot" style="background:var(${scoreVar(sc)})"></span><b>${sc}</b></span>` : `<span class="d3">${sub}</span>`}`;
+    b.addEventListener('click', () => onPick(o));
     box.appendChild(b);
+  };
+  if (withAll) mk('Prossimi', '8 giorni', null, null);
+  for (let o = 0; o <= AHEAD_DAYS; o++) {
+    const best = bestOfDay(o);
+    if (best) mk(dayLabel(o, best.d.date), '', o, best.s);
   }
 }
 
-function renderRanking() {
+function renderDays() {
+  dayChips($('#days'), state.homeDay, (o) => { state.homeDay = o; renderAll(); }, { withAll: true });
+}
+
+function combosList() {
   const combos = [];
   for (const z of zones) {
     for (let o = 0; o <= AHEAD_DAYS; o++) {
+      if (state.homeDay != null && o !== state.homeDay) continue;
       const d = dayEntry(z.id, o);
       if (d?.best) combos.push({ z, o, d, s: adjusted(z, d.score, d) });
     }
   }
   combos.sort((a, b) => b.s - a.s || a.o - b.o);
-  // al massimo 2 giorni per zona, per dare varieta'
   const perZone = {};
-  const top = combos.filter((c) => (perZone[c.z.id] = (perZone[c.z.id] || 0) + 1) <= 2).slice(0, 8);
+  return combos.filter((c) => (perZone[c.z.id] = (perZone[c.z.id] || 0) + 1) <= (state.homeDay == null ? 2 : 1));
+}
+
+function renderHome() {
+  const list = combosList();
+  const hero = list[0];
+  const box = $('#hero');
+  if (!hero) { box.innerHTML = '<p class="muted">Nessuna uscita calcolabile per questi filtri.</p>'; $('#ranking').innerHTML = ''; return; }
+  const t = hero.d.crowd ? timingAdvice({ dateStr: hero.d.date, lat: hero.z.lat, lon: hero.z.lon, crowd: hero.d.crowd }) : null;
+  const a0 = access[hero.z.id]?.[0];
+  box.innerHTML = `
+    <a class="hero" href="#/zona/${hero.z.id}/${hero.o}">
+      <div class="hero-top">
+        <p class="eyebrow">${state.homeDay == null ? 'La migliore uscita' : 'Il posto migliore'} · ${esc(dayLabel(hero.o, hero.d.date, true))}</p>
+        <div class="big-score" style="--c:var(${scoreVar(hero.s)})"><span>${hero.s}</span><small>${CLASSES[classOf(hero.s)].label}</small></div>
+      </div>
+      <h2 class="hero-zone">${esc(hero.z.name)}</h2>
+      <div class="hero-what">${thumb(hero.d.best.species.id, 44)}<div><b>${esc(hero.d.best.species.name)}</b> intorno ai <b>${hero.d.best.band} m</b>
+        <div class="muted small">${hero.d.perSpecies.slice(1, 3).filter((p) => p.score >= 25).map((p) => `${esc(p.species.name)} ${p.score}`).join(' · ')}</div></div></div>
+      <ul class="hero-facts">
+        ${t ? `<li><span class="k">Arrivo</span><b>entro le ${fmtTime(t.arrive)}</b></li>` : ''}
+        ${hero.d.crowd ? `<li><span class="k">Folla</span><span class="badge crowd-${hero.d.crowd.level}">${hero.d.crowd.level}</span></li>` : ''}
+        <li><span class="k">Auto</span><b>${a0?.minutes ?? hero.z.drive_min} min</b></li>
+        ${hero.d.comfort ? `<li><span class="k">Accesso</span><span class="badge comfort-${hero.d.comfort.level}">${hero.d.comfort.level}</span></li>` : ''}
+      </ul>
+      <span class="hero-cta">Vedi il piano dell'uscita <span aria-hidden="true">›</span></span>
+    </a>`;
   const ol = $('#ranking');
-  ol.innerHTML = '';
-  for (const c of top) {
-    const li = document.createElement('li');
-    li.className = 'rank-item' + (c.z.id === state.zoneId && c.o === state.dayOffset ? ' active' : '');
-    li.tabIndex = 0;
-    const day = c.o === 0 ? 'oggi' : c.o === 1 ? 'domani' : fmtDate(c.d.date, { weekday: 'long', day: 'numeric' });
-    const conf = c.d.best.confidence;
-    li.innerHTML = `<span class="score-pill"><span class="dot" style="background:var(${scoreVar(c.s)})"></span>${c.s}</span>
-      <div><div class="t1">${esc(c.z.name)} · ${day}</div>
-      <div class="t2">${esc(c.d.best.species.name)} intorno ai ${c.d.best.band} m · ${access[c.z.id]?.[0]?.minutes ?? c.z.drive_min} min da Rieti</div>
-      <div class="badges">${c.d.crowd ? `<span class="badge crowd-${c.d.crowd.level}">folla ${c.d.crowd.level}</span>` : ''}${c.d.comfort ? `<span class="badge comfort-${c.d.comfort.level}">accesso ${c.d.comfort.level}</span>` : ''}</div></div>
-      <span class="conf">affidabilità<br>${conf >= 0.8 ? 'alta' : conf >= 0.55 ? 'media' : 'bassa'}</span>`;
-    const go = () => {
-      state.zoneId = c.z.id; state.dayOffset = c.o; renderAll();
-      map?.flyTo([c.z.lat, c.z.lon], 12, { duration: 0.6 });
-      if (matchMedia('(max-width: 900px)').matches) $('#detail').scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
-    };
-    li.addEventListener('click', go);
-    li.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); } });
-    ol.appendChild(li);
-  }
-  if (!state.zoneId && top[0]) state.zoneId = top[0].z.id;
+  ol.innerHTML = list.slice(1, 7).map((c) => `
+    <li><a class="rank-item" href="#/zona/${c.z.id}/${c.o}">
+      <span class="score-pill"><span class="dot" style="background:var(${scoreVar(c.s)})"></span>${c.s}</span>
+      <div class="rank-body"><div class="t1">${esc(shortName(c.z))} <span class="muted">· ${esc(dayLabel(c.o, c.d.date, true).toLowerCase())}</span></div>
+        <div class="t2">${esc(c.d.best.species.name)} ~${c.d.best.band} m · ${access[c.z.id]?.[0]?.minutes ?? c.z.drive_min} min${c.d.crowd ? ` · folla ${c.d.crowd.level}` : ''}</div></div>
+      <span class="chev" aria-hidden="true">›</span>
+    </a></li>`).join('');
+  $('#others-h').hidden = list.length < 2;
+}
+
+function renderMapDays() {
+  dayChips($('#map-days'), state.dayOffset, (o) => { state.dayOffset = o; renderAll(); });
+}
+
+// Riquadro dal basso sulla mappa: riassunto della zona e accesso alla scheda
+let sheetZone = null;
+function openSheet(zid) {
+  sheetZone = zid;
+  const z = zones.find((x) => x.id === zid);
+  const d = dayEntry(zid, state.dayOffset);
+  const sh = $('#map-sheet');
+  if (!z || !d?.best) { sh.hidden = true; return; }
+  const sc = adjusted(z, d.score, d);
+  sh.innerHTML = `
+    <button type="button" class="sheet-close" aria-label="Chiudi">✕</button>
+    <div class="sheet-row">
+      <div class="big-score small-score" style="--c:var(${scoreVar(sc)})"><span>${sc}</span></div>
+      <div><p class="eyebrow">${esc(dayLabel(state.dayOffset, d.date, true))}</p><h2>${esc(z.name)}</h2>
+        <p class="small">${esc(d.best.species.name)} ~${d.best.band} m${d.crowd ? ` · folla ${d.crowd.level}` : ''} · ${access[zid]?.[0]?.minutes ?? z.drive_min} min</p></div>
+    </div>
+    <a class="btn primary big" href="#/zona/${zid}/${state.dayOffset}">Apri il piano dell'uscita</a>`;
+  sh.hidden = false;
+  sh.querySelector('.sheet-close').addEventListener('click', () => { sh.hidden = true; sheetZone = null; state.zoneId = null; renderMap(); });
+  if (state.zoneId !== zid) { state.zoneId = zid; renderMap(); }
 }
 
 function initMap() {
@@ -320,7 +433,7 @@ function initMap() {
     attribution: 'Carta Forestale © Regione Lazio',
   });
   L.control.layers({ 'Topografica': topo, 'OpenStreetMap': osm }, { 'Carta Forestale (Regione Lazio)': forest }, { collapsed: true }).addTo(map);
-  map.on('zoomend', () => results && renderMap());
+  map.on('zoomend', () => results && state.view === 'mappa' && renderMap());
   map.on('overlayadd', (e) => { if (e.layer === forest) $('#legend .wms').hidden = false; });
   map.on('overlayremove', (e) => { if (e.layer === forest) $('#legend .wms').hidden = true; });
 }
@@ -349,7 +462,7 @@ function initEmbeddedMap(bm) {
     },
   });
   new Toggle({ position: 'topright' }).addTo(map);
-  map.on('zoomend', () => results && renderMap());
+  map.on('zoomend', () => results && state.view === 'mappa' && renderMap());
 }
 
 const shortName = (z) => z.name.split(/[/–(]/)[0].trim();
@@ -366,7 +479,7 @@ function renderMap() {
           tooltip: `${z.name} · indice ${s}${d?.best ? ` · ${d.best.species.name} ~${d.best.band} m` : ''}`,
         };
       }),
-      onSelect: (id) => { state.zoneId = id; renderAll(); },
+      onSelect: (id) => openSheet(id),
     });
     return;
   }
@@ -393,7 +506,7 @@ function renderMap() {
     L.circle([z.lat, z.lon], {
       radius: z.radius_m, color: selected ? cssVar('--text') : color, weight: selected ? 3 : 2,
       fillColor: color, fillOpacity: 0.5,
-    }).addTo(g).on('click', () => { state.zoneId = z.id; renderAll(); })
+    }).addTo(g).on('click', () => openSheet(z.id))
       .bindTooltip(`<b>${esc(z.name)}</b><br>Indice ${s} · ${d?.best ? esc(d.best.species.name) + ' ~' + d.best.band + ' m' : '—'}`, { className: 'zone-tt', sticky: true });
     L.marker(labelPos[z.id], {
       icon: L.divIcon({ className: '', html: `<span class="zone-label"><span class="dot" style="background:${color}"></span> ${s} <span class="zone-name">${esc(shortName(z))}</span></span>`, iconSize: null }),
@@ -453,18 +566,18 @@ const ICON = {
 function planCard(z, d) {
   const best = d.best;
   const rows = [];
-  rows.push({ icon: 'find', thumb: best.species.id, k: 'Cosa cercare', v: `<button type="button" class="sp-inline" data-species="${best.species.id}">${esc(best.species.name)}</button> intorno ai <b>${best.band} m</b>`,
+  rows.push({ sec: 'specie', icon: 'find', thumb: best.species.id, k: 'Cosa cercare', v: `<button type="button" class="sp-inline" data-species="${best.species.id}">${esc(best.species.name)}</button> intorno ai <b>${best.band} m</b>`,
     sub: d.perSpecies.slice(1, 3).filter((p) => p.score >= 20).map((p) => `${esc(p.species.name)} ${p.score}`).join(' · ') || esc(best.species.latin) });
   if (d.crowd) {
     const t = timingAdvice({ dateStr: d.date, lat: z.lat, lon: z.lon, crowd: d.crowd });
-    rows.push({ icon: 'when', k: 'Quando', v: `Arriva <b>entro le ${fmtTime(t.arrive)}</b> <span class="badge crowd-${d.crowd.level}">folla ${d.crowd.level}</span>`,
+    rows.push({ sec: 'quando', icon: 'when', k: 'Quando', v: `Arriva <b>entro le ${fmtTime(t.arrive)}</b> <span class="badge crowd-${d.crowd.level}">folla ${d.crowd.level}</span>`,
       sub: `alba ${fmtTime(t.sunrise)} · raccolta dalle ${fmtTime(t.legal)}` });
   }
   const a0 = access[z.id]?.[0];
   const ax = d.access;
   if (a0 || ax) {
     const unp = a0?.unpaved_tail_km > 0.2 ? `, ultimi ${fmtKm(a0.unpaved_tail_km)} km su strada bianca` : '';
-    rows.push({ icon: 'car', k: 'Come arrivare',
+    rows.push({ sec: 'accesso', icon: 'car', k: 'Come arrivare',
       v: ax ? `In auto ${ax.road ? `su ${esc(ax.road)}` : 'fino al punto più vicino'}, poi <b>${fmtM(ax.walkM)} a piedi</b>` : `${a0.minutes} min fino a ${esc(a0.parking)}`,
       sub: `${a0 ? `${a0.minutes} min da Rieti${unp}` : ''}${ax ? ` · <a href="${gmaps(ax.rlat, ax.rlon)}" target="_blank" rel="noopener">navigatore</a>` : ''}`,
       badge: d.comfort ? `<span class="badge comfort-${d.comfort.level}">${d.comfort.level}</span>` : '' });
@@ -472,19 +585,19 @@ function planCard(z, d) {
   const tl = trailsFor(z, best.species, best.band);
   if (tl[0]) {
     const t = tl[0];
-    rows.push({ icon: 'trail', k: 'Sentiero', v: `${t.ref ? `<span class="ref">${esc(t.ref)}</span> ` : ''}${esc(t.name || t.itinerary.join(' – ') || 'Sentiero')}`,
+    rows.push({ sec: 'sentieri', icon: 'trail', k: 'Sentiero', v: `${t.ref ? `<span class="ref">${esc(t.ref)}</span> ` : ''}${esc(t.name || t.itinerary.join(' – ') || 'Sentiero')}`,
       sub: `${fmtKm(t.goodKm)} km in bosco adatto tra ${t.lo} e ${t.hi} m` });
   }
   return `<ul class="plan">${rows.map((r) => `
-    <li><span class="plan-ic${r.thumb ? ' has-thumb' : ''}">${r.thumb ? `<button type="button" class="thumb-btn" data-species="${r.thumb}" aria-label="Scheda specie">${thumb(r.thumb, 32)}</button>` : ICON[r.icon]}</span>
-      <div class="plan-body"><div class="plan-k">${r.k}${r.badge ? ' ' + r.badge : ''}</div><div class="plan-v">${r.v}</div>${r.sub ? `<div class="plan-sub">${r.sub}</div>` : ''}</div></li>`).join('')}</ul>`;
+    <li data-sec-open="${r.sec}" tabindex="0" role="button" aria-label="${r.k}: dettagli"><span class="plan-ic${r.thumb ? ' has-thumb' : ''}">${r.thumb ? `<button type="button" class="thumb-btn" data-species="${r.thumb}" aria-label="Scheda specie">${thumb(r.thumb, 32)}</button>` : ICON[r.icon]}</span>
+      <div class="plan-body"><div class="plan-k">${r.k}${r.badge ? ' ' + r.badge : ''}</div><div class="plan-v">${r.v}</div>${r.sub ? `<div class="plan-sub">${r.sub}</div>` : ''}</div><span class="chev" aria-hidden="true">›</span></li>`).join('')}</ul>`;
 }
 
 const section = (id, title, body, open = false) => body ? `
   <details class="sec" data-sec="${id}"${open || openSecs.has(id) ? ' open' : ''}>
     <summary>${title}</summary><div class="sec-body">${body}</div>
   </details>` : '';
-const openSecs = new Set(['meteo']);
+const openSecs = new Set();
 
 function renderDetail() {
   const z = zones.find((x) => x.id === state.zoneId) || zones[0];
@@ -515,14 +628,15 @@ function renderDetail() {
     <header class="zone-head">
       <div>
         <p class="eyebrow">${esc(dayLabel)}</p>
-        <h2>${esc(z.name)}</h2>
+        <h1 class="zone-title">${esc(z.name)}</h1>
       </div>
       <div class="big-score" style="--c:var(${scoreVar(s)})"><span>${s}</span><small>${CLASSES[classOf(s)].label}</small></div>
     </header>
+    <div id="zone-days" class="days compact" role="tablist" aria-label="Giorno"></div>
     ${planCard(z, d)}
-    <ul class="why">${reasons.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>
+    <a class="btn ghost map-link" href="#/mappa/${z.id}">Vedi sentieri e accesso sulla mappa</a>
     ${z.protection ? `<div class="notice">${esc(z.protection)}</div>` : ''}
-    ${section('meteo', 'Pioggia e indice degli ultimi 30 giorni', '<div id="charts"></div>', true)}
+    ${section('meteo', 'Perché questo indice', `<ul class="why">${reasons.map((x) => `<li>${esc(x)}</li>`).join('')}</ul><div id="charts"></div>`)}
     ${section('quando', 'Quando andare e affollamento', renderHuman(z, d))}
     ${section('accesso', 'Accesso in auto e a piedi', renderAccess(z, d))}
     ${section('sentieri', 'Sentieri della zona', renderTrails(z, d))}
@@ -534,6 +648,32 @@ function renderDetail() {
         <dt>Soste</dt><dd>${z.parking.map((p) => `<a href="https://www.google.com/maps/dir/?api=1&destination=${p.lat},${p.lon}" target="_blank" rel="noopener">${esc(p.name)}</a>`).join(' · ')}</dd>
         <dt>Quote</dt><dd>${habitat[z.id].elevation.min}–${habitat[z.id].elevation.max} m (mediana ${habitat[z.id].elevation.median})</dd>
       </dl>`)}`;
+  // giorni della zona: cambiano il giorno senza aggiungere voci di cronologia
+  const zd = $('#zone-days');
+  zd.innerHTML = '';
+  for (let o = 0; o <= AHEAD_DAYS; o++) {
+    const x = dayEntry(z.id, o);
+    if (!x?.best) continue;
+    const sc = adjusted(z, x.score, x);
+    const b = document.createElement('button');
+    b.type = 'button'; b.className = 'day'; b.setAttribute('role', 'tab'); b.setAttribute('aria-selected', String(o === state.dayOffset));
+    b.innerHTML = `<span class="d1">${o === 0 ? 'Oggi' : o === 1 ? 'Dom.' : fmtDate(x.date, { weekday: 'short' })}</span><span class="d3"><span class="dot" style="background:var(${scoreVar(sc)})"></span><b>${sc}</b></span>`;
+    b.addEventListener('click', () => { history.replaceState(null, '', `#/zona/${z.id}/${o}`); state.dayOffset = o; renderDetail(); });
+    zd.appendChild(b);
+  }
+  zd.querySelector('[aria-selected="true"]')?.scrollIntoView({ block: 'nearest', inline: 'center' });
+  // ogni riga del piano apre la sezione di dettaglio corrispondente
+  box.querySelectorAll('[data-sec-open]').forEach((row) => {
+    const open = (e) => {
+      if (e.target.closest('a, button')) return;
+      const sec = box.querySelector(`details.sec[data-sec="${row.dataset.secOpen}"]`);
+      if (!sec) return;
+      sec.open = true;
+      sec.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
+    };
+    row.addEventListener('click', open);
+    row.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(e); } });
+  });
   box.querySelectorAll('details.sec').forEach((el) => el.addEventListener('toggle', () => {
     if (el.open) openSecs.add(el.dataset.sec); else openSecs.delete(el.dataset.sec);
     if (el.dataset.sec === 'meteo' && el.open) drawCharts();
