@@ -110,6 +110,486 @@
     "page": "https://www.gbif.org/occurrence/search?taxon_key=5954949&country=IT"
    },
    "model3d": null
+  },
+  "aereus": {
+   "latin": "Boletus aereus",
+   "wikidata": "Q757127",
+   "ref": {
+    "file": "assets/species/aereus-ref.jpg",
+    "source": "Wikimedia Commons",
+    "page": "https://commons.wikimedia.org/wiki/File:Bronze_Roehrling.jpg",
+    "author": "Achim Bollmann",
+    "license": "Copyrighted free use"
+   },
+   "inat": [
+    {
+     "file": "assets/species/aereus-inat1.jpg",
+     "source": "iNaturalist (research grade)",
+     "page": "https://www.inaturalist.org/observations/190488055",
+     "author": "Marco Gasponi",
+     "license": "CC-BY-NC",
+     "place": "00060 Canale Monterano RM, Italia",
+     "date": "2023-11-09"
+    },
+    {
+     "file": "assets/species/aereus-inat2.jpg",
+     "source": "iNaturalist (research grade)",
+     "page": "https://www.inaturalist.org/observations/311013942",
+     "author": "lucapassalacqua",
+     "license": "CC-BY-NC",
+     "place": "Provincia di Grosseto, Italia",
+     "date": "2025-09-01"
+    },
+    {
+     "file": "assets/species/aereus-inat3.jpg",
+     "source": "iNaturalist (research grade)",
+     "page": "https://www.inaturalist.org/observations/312250946",
+     "author": "Manuela Fiorini",
+     "license": "CC-BY",
+     "place": "Marche, IT",
+     "date": "2025-09-07"
+    }
+   ],
+   "gbif": {
+    "taxonKey": 8733688,
+    "total": 167,
+    "months": [
+     0,
+     0,
+     0,
+     2,
+     7,
+     2,
+     7,
+     7,
+     45,
+     59,
+     24,
+     0
+    ],
+    "page": "https://www.gbif.org/occurrence/search?taxon_key=8733688&country=IT"
+   },
+   "model3d": null
+  },
+  "aestivalis": {
+   "latin": "Boletus aestivalis",
+   "wikidata": "Q26203726",
+   "ref": {
+    "file": "assets/species/aestivalis-ref.jpg",
+    "source": "Wikimedia Commons",
+    "page": "https://commons.wikimedia.org/wiki/File:2006-10-07_Boletus_aestivalis_cropped.jpg",
+    "author": "BoletusAestivalis.JPG: Archenzo\nderivative work: Ak ccm (talk)",
+    "license": "CC BY-SA 3.0"
+   },
+   "inat": [],
+   "gbif": {
+    "taxonKey": 5954988,
+    "total": 9,
+    "months": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     3,
+     0,
+     0,
+     0
+    ],
+    "page": "https://www.gbif.org/occurrence/search?taxon_key=5954988&country=IT"
+   },
+   "model3d": null
+  },
+  "caesarea": {
+   "latin": "Amanita caesarea",
+   "wikidata": "Q220662",
+   "ref": {
+    "file": "assets/species/caesarea-ref.jpg",
+    "source": "Wikimedia Commons",
+    "page": "https://commons.wikimedia.org/wiki/File:Oronges.jpg",
+    "author": "Yaqui",
+    "license": "CC BY-SA 3.0"
+   },
+   "inat": [
+    {
+     "file": "assets/species/caesarea-inat1.jpg",
+     "source": "iNaturalist (research grade)",
+     "page": "https://www.inaturalist.org/observations/314994060",
+     "author": "Manuela Fiorini",
+     "license": "CC-BY",
+     "place": "Marche, IT",
+     "date": "2025-09-19"
+    },
+    {
+     "file": "assets/species/caesarea-inat2.jpg",
+     "source": "iNaturalist (research grade)",
+     "page": "https://www.inaturalist.org/observations/52141009",
+     "author": "lucapassalacqua",
+     "license": "CC-BY-NC",
+     "place": "Provincia di Grosseto, Italia",
+     "date": "2020-07-05"
+    },
+    {
+     "file": "assets/species/caesarea-inat3.jpg",
+     "source": "iNaturalist (research grade)",
+     "page": "https://www.inaturalist.org/observations/316707903",
+     "author": "Leonardo Ancillotto",
+     "license": "CC-BY",
+     "place": "01010 Farnese VT, Italia",
+     "date": "2025-09-26"
+    }
+   ],
+   "gbif": {
+    "taxonKey": 5240269,
+    "total": 221,
+    "months": [
+     1,
+     0,
+     1,
+     0,
+     2,
+     5,
+     6,
+     25,
+     80,
+     58,
+     19,
+     0
+    ],
+    "page": "https://www.gbif.org/occurrence/search?taxon_key=5240269&country=IT"
+   },
+   "model3d": {
+    "uid": "2b9f531098804b569929417ccc80d704",
+    "name": "Amanita caesarea (NHMW-AFW-DING-0091-001)",
+    "author": "Natural History Museum Vienna",
+    "license": "CC Attribution-NonCommercial",
+    "page": "https://sketchfab.com/3d-models/none-2b9f531098804b569929417ccc80d704",
+    "embed": "https://sketchfab.com/models/2b9f531098804b569929417ccc80d704/embed?autostart=0&ui_infos=0&ui_watermark=0"
+   }
+  },
+  "cibarius": {
+   "latin": "Cantharellus cibarius",
+   "wikidata": "Q188749",
+   "ref": {
+    "file": "assets/species/cibarius-ref.jpg",
+    "source": "Wikimedia Commons",
+    "page": "https://commons.wikimedia.org/wiki/File:Chanterelle_Cantharellus_cibarius.jpg",
+    "author": "autore su Commons",
+    "license": "CC BY-SA 3.0"
+   },
+   "inat": [
+    {
+     "file": "assets/species/cibarius-inat1.jpg",
+     "source": "iNaturalist (research grade)",
+     "page": "https://www.inaturalist.org/observations/248471568",
+     "author": "Andrea Benocci",
+     "license": "CC-BY-NC",
+     "place": "58037 Santa Fiora GR, Italia",
+     "date": "2024-10-20"
+    },
+    {
+     "file": "assets/species/cibarius-inat2.jpg",
+     "source": "iNaturalist (research grade)",
+     "page": "https://www.inaturalist.org/observations/41530979",
+     "author": "Rino",
+     "license": "CC-BY-NC",
+     "place": "Provincia di Isernia, Italia",
+     "date": "2009-07-02"
+    },
+    {
+     "file": "assets/species/cibarius-inat3.jpg",
+     "source": "iNaturalist (research grade)",
+     "page": "https://www.inaturalist.org/observations/184823584",
+     "author": "Marco Panik",
+     "license": "CC-BY-NC",
+     "place": "Busso, Molise, IT",
+     "date": "2023-06-06"
+    }
+   ],
+   "gbif": {
+    "taxonKey": 5249504,
+    "total": 328,
+    "months": [
+     3,
+     1,
+     1,
+     0,
+     3,
+     11,
+     67,
+     79,
+     60,
+     65,
+     22,
+     3
+    ],
+    "page": "https://www.gbif.org/occurrence/search?taxon_key=5249504&country=IT"
+   },
+   "model3d": {
+    "uid": "49540b02812f4473bd39579e4d4948cc",
+    "name": "Cantharellus cibarius  - Real fungus 3D scan",
+    "author": "Vincent Lagardère",
+    "license": "CC Attribution-NonCommercial-NoDerivs",
+    "page": "https://sketchfab.com/3d-models/none-49540b02812f4473bd39579e4d4948cc",
+    "embed": "https://sketchfab.com/models/49540b02812f4473bd39579e4d4948cc/embed?autostart=0&ui_infos=0&ui_watermark=0"
+   }
+  },
+  "cornucopioides": {
+   "latin": "Craterellus cornucopioides",
+   "wikidata": "Q857903",
+   "ref": {
+    "file": "assets/species/cornucopioides-ref.jpg",
+    "source": "Wikimedia Commons",
+    "page": "https://commons.wikimedia.org/wiki/File:Craterellus_cornucopioides_JPG1.jpg",
+    "author": "Jean-Pol GRANDMONT",
+    "license": "CC BY 3.0"
+   },
+   "inat": [
+    {
+     "file": "assets/species/cornucopioides-inat1.jpg",
+     "source": "iNaturalist (research grade)",
+     "page": "https://www.inaturalist.org/observations/194010261",
+     "author": "Manuela Fiorini",
+     "license": "CC-BY",
+     "place": "Marche, IT",
+     "date": "2023-11-25"
+    },
+    {
+     "file": "assets/species/cornucopioides-inat2.jpg",
+     "source": "iNaturalist (research grade)",
+     "page": "https://www.inaturalist.org/observations/63689919",
+     "author": "Alessandro Ariosti",
+     "license": "CC-BY-SA",
+     "place": "64010 Rocca Santa Maria, Province of Teramo, Italy",
+     "date": "2020-10-27"
+    },
+    {
+     "file": "assets/species/cornucopioides-inat3.jpg",
+     "source": "iNaturalist (research grade)",
+     "page": "https://www.inaturalist.org/observations/249367365",
+     "author": "gretezzz",
+     "license": "CC-BY-NC",
+     "place": "52100 Arezzo AR, Italia",
+     "date": "2024-10-27"
+    }
+   ],
+   "gbif": {
+    "taxonKey": 2554662,
+    "total": 199,
+    "months": [
+     2,
+     4,
+     0,
+     0,
+     0,
+     2,
+     5,
+     8,
+     38,
+     96,
+     33,
+     7
+    ],
+    "page": "https://www.gbif.org/occurrence/search?taxon_key=2554662&country=IT"
+   },
+   "model3d": null
+  },
+  "repandum": {
+   "latin": "Hydnum repandum",
+   "wikidata": "Q13684",
+   "ref": {
+    "file": "assets/species/repandum-ref.jpg",
+    "source": "Wikimedia Commons",
+    "page": "https://commons.wikimedia.org/wiki/File:Hedgehog_fungi2.jpg",
+    "author": "D J Kelly",
+    "license": "Public domain"
+   },
+   "inat": [
+    {
+     "file": "assets/species/repandum-inat1.jpg",
+     "source": "iNaturalist (research grade)",
+     "page": "https://www.inaturalist.org/observations/325588243",
+     "author": "symcyto",
+     "license": "CC-BY-NC",
+     "place": "Province of Viterbo, Italy",
+     "date": "2025-10-25"
+    },
+    {
+     "file": "assets/species/repandum-inat2.jpg",
+     "source": "iNaturalist (research grade)",
+     "page": "https://www.inaturalist.org/observations/336730257",
+     "author": "Manuela Fiorini",
+     "license": "CC-BY",
+     "place": "San Severino Marche, Marche, IT",
+     "date": "2026-01-30"
+    },
+    {
+     "file": "assets/species/repandum-inat3.jpg",
+     "source": "iNaturalist (research grade)",
+     "page": "https://www.inaturalist.org/observations/64606585",
+     "author": "Rino",
+     "license": "CC-BY-NC",
+     "place": "Provincia di Chieti, Italia",
+     "date": "2020-11-10"
+    }
+   ],
+   "gbif": {
+    "taxonKey": 2554716,
+    "total": 131,
+    "months": [
+     4,
+     3,
+     0,
+     0,
+     0,
+     1,
+     1,
+     9,
+     21,
+     61,
+     20,
+     7
+    ],
+    "page": "https://www.gbif.org/occurrence/search?taxon_key=2554716&country=IT"
+   },
+   "model3d": null
+  },
+  "procera": {
+   "latin": "Macrolepiota procera",
+   "wikidata": "Q243381",
+   "ref": {
+    "file": "assets/species/procera-ref.jpg",
+    "source": "Wikimedia Commons",
+    "page": "https://commons.wikimedia.org/wiki/File:Macrolepiota-procera.jpg",
+    "author": "Chrumps",
+    "license": "CC BY-SA 4.0"
+   },
+   "inat": [
+    {
+     "file": "assets/species/procera-inat1.jpg",
+     "source": "iNaturalist (research grade)",
+     "page": "https://www.inaturalist.org/observations/4111137",
+     "author": "Davide",
+     "license": "CC-BY-NC",
+     "place": "Subiaco RM",
+     "date": "2016-09-13"
+    },
+    {
+     "file": "assets/species/procera-inat2.jpg",
+     "source": "iNaturalist (research grade)",
+     "page": "https://www.inaturalist.org/observations/138820295",
+     "author": "Giorgio",
+     "license": "CC-BY-NC",
+     "place": "60044 Fabriano AN, Italia",
+     "date": "2022-10-15"
+    },
+    {
+     "file": "assets/species/procera-inat3.jpg",
+     "source": "iNaturalist (research grade)",
+     "page": "https://www.inaturalist.org/observations/206244861",
+     "author": "giorgio_fabrizi",
+     "license": "CC-BY-NC",
+     "place": "Manziana, Lazio, IT",
+     "date": "2023-11-04"
+    }
+   ],
+   "gbif": {
+    "taxonKey": 8914748,
+    "total": 1323,
+    "months": [
+     4,
+     1,
+     5,
+     10,
+     37,
+     36,
+     71,
+     168,
+     393,
+     397,
+     180,
+     14
+    ],
+    "page": "https://www.gbif.org/occurrence/search?taxon_key=8914748&country=IT"
+   },
+   "model3d": {
+    "uid": "80edb9e8104f4995aac3dd0dcd3fc4d6",
+    "name": "Macrolepiota procera",
+    "author": "Tadeas Kribek",
+    "license": "CC Attribution",
+    "page": "https://sketchfab.com/3d-models/none-80edb9e8104f4995aac3dd0dcd3fc4d6",
+    "embed": "https://sketchfab.com/models/80edb9e8104f4995aac3dd0dcd3fc4d6/embed?autostart=0&ui_infos=0&ui_watermark=0"
+   }
+  },
+  "mellea": {
+   "latin": "Armillaria mellea",
+   "wikidata": "Q473745",
+   "ref": {
+    "file": "assets/species/mellea-ref.jpg",
+    "source": "Wikimedia Commons",
+    "page": "https://commons.wikimedia.org/wiki/File:Armillaria_mellea_(1).jpg",
+    "author": "tomasz przechlewski from Sopot, Poland",
+    "license": "CC BY 2.0"
+   },
+   "inat": [
+    {
+     "file": "assets/species/mellea-inat1.jpg",
+     "source": "iNaturalist (research grade)",
+     "page": "https://www.inaturalist.org/observations/64431559",
+     "author": "lucapassalacqua",
+     "license": "CC-BY-NC",
+     "place": "Provincia di Grosseto, Italia",
+     "date": "2020-11-07"
+    },
+    {
+     "file": "assets/species/mellea-inat2.jpg",
+     "source": "iNaturalist (research grade)",
+     "page": "https://www.inaturalist.org/observations/277155542",
+     "author": "Alessandra Florea e Andrea Boiani",
+     "license": "CC-BY-NC",
+     "place": "Provincia di Viterbo, Italia",
+     "date": "2024-10-20"
+    },
+    {
+     "file": "assets/species/mellea-inat3.jpg",
+     "source": "iNaturalist (research grade)",
+     "page": "https://www.inaturalist.org/observations/101284231",
+     "author": "diegoreggianti",
+     "license": "CC-BY-NC",
+     "place": "Crocco- Olivi, 00148 Roma RM, Italia",
+     "date": "2021-11-15"
+    }
+   ],
+   "gbif": {
+    "taxonKey": 2536891,
+    "total": 411,
+    "months": [
+     2,
+     1,
+     0,
+     1,
+     2,
+     0,
+     0,
+     1,
+     14,
+     185,
+     166,
+     15
+    ],
+    "page": "https://www.gbif.org/occurrence/search?taxon_key=2536891&country=IT"
+   },
+   "model3d": {
+    "uid": "2bb23136394a4362a061f8a6d8b1cd8e",
+    "name": "Honey Agaric (Armillaria Mellea)",
+    "author": "3D_UTPL",
+    "license": "CC Attribution-NonCommercial-ShareAlike",
+    "page": "https://sketchfab.com/3d-models/none-2bb23136394a4362a061f8a6d8b1cd8e",
+    "embed": "https://sketchfab.com/models/2bb23136394a4362a061f8a6d8b1cd8e/embed?autostart=0&ui_infos=0&ui_watermark=0"
+   }
   }
  },
  "lookalikes": {
@@ -175,6 +655,281 @@
   },
   "Neoboletus luridiformis": {
    "wikidata": "Q26203718",
+   "ref": null,
+   "inat": []
+  },
+  "Imleria badia": {
+   "wikidata": "Q752497",
+   "ref": null,
+   "inat": [
+    {
+     "file": "assets/species/imleria-badia-inat1.jpg",
+     "source": "iNaturalist (research grade)",
+     "page": "https://www.inaturalist.org/observations/216337372",
+     "author": "matteo_bevilacqua",
+     "license": "CC-BY-NC",
+     "place": "00066 Manziana RM, Italia",
+     "date": "2024-05-12"
+    }
+   ]
+  },
+  "Amanita phalloides": {
+   "wikidata": "Q188643",
+   "ref": null,
+   "inat": [
+    {
+     "file": "assets/species/amanita-phalloides-inat1.jpg",
+     "source": "iNaturalist (research grade)",
+     "page": "https://www.inaturalist.org/observations/159190531",
+     "author": "Luca Pilia",
+     "license": "CC-BY-NC",
+     "place": "Città metropolitana di Roma Capitale, Italia",
+     "date": "2022-10-01"
+    }
+   ]
+  },
+  "Amanita verna": {
+   "wikidata": "Q571885",
+   "ref": null,
+   "inat": [
+    {
+     "file": "assets/species/amanita-verna-inat1.jpg",
+     "source": "iNaturalist (research grade)",
+     "page": "https://www.inaturalist.org/observations/48049610",
+     "author": "Danny Cicchetti",
+     "license": "CC0",
+     "place": "Provincia di Arezzo, Italia",
+     "date": "2020-05-31"
+    }
+   ]
+  },
+  "Amanita virosa": {
+   "wikidata": "Q472817",
+   "ref": null,
+   "inat": []
+  },
+  "Amanita muscaria": {
+   "wikidata": "Q131227",
+   "ref": null,
+   "inat": [
+    {
+     "file": "assets/species/amanita-muscaria-inat1.jpg",
+     "source": "iNaturalist (research grade)",
+     "page": "https://www.inaturalist.org/observations/31544820",
+     "author": "rengarob",
+     "license": "CC-BY-NC",
+     "place": "Abbadia San Salvatore",
+     "date": "2018-09-18"
+    }
+   ]
+  },
+  "Amanita crocea": {
+   "wikidata": "Q1574920",
+   "ref": null,
+   "inat": []
+  },
+  "Omphalotus olearius": {
+   "wikidata": "Q1043730",
+   "ref": null,
+   "inat": [
+    {
+     "file": "assets/species/omphalotus-olearius-inat1.jpg",
+     "source": "iNaturalist (research grade)",
+     "page": "https://www.inaturalist.org/observations/100143017",
+     "author": "Edoardo Gesuelli",
+     "license": "CC-BY-NC",
+     "place": "San Michele, Mogliano, Marche, IT",
+     "date": "2021-11-03"
+    }
+   ]
+  },
+  "Hygrophoropsis aurantiaca": {
+   "wikidata": "Q1265541",
+   "ref": null,
+   "inat": [
+    {
+     "file": "assets/species/hygrophoropsis-aurantiaca-inat1.jpg",
+     "source": "iNaturalist (research grade)",
+     "page": "https://www.inaturalist.org/observations/190086977",
+     "author": "Manuela Fiorini",
+     "license": "CC-BY",
+     "place": "Esanatoglia, Marche, IT",
+     "date": "2023-11-05"
+    }
+   ]
+  },
+  "Cortinarius orellanus": {
+   "wikidata": "Q1367003",
+   "ref": null,
+   "inat": []
+  },
+  "Craterellus cinereus": {
+   "wikidata": "Q12236668",
+   "ref": null,
+   "inat": [
+    {
+     "file": "assets/species/craterellus-cinereus-inat1.jpg",
+     "source": "iNaturalist (research grade)",
+     "page": "https://www.inaturalist.org/observations/243675622",
+     "author": "Manuela Fiorini",
+     "license": "CC-BY",
+     "place": "Perugia, Umbria, IT",
+     "date": "2024-09-23"
+    }
+   ]
+  },
+  "Pseudocraterellus undulatus": {
+   "wikidata": "Q107866831",
+   "ref": null,
+   "inat": []
+  },
+  "Urnula craterium": {
+   "wikidata": "Q1738729",
+   "ref": null,
+   "inat": []
+  },
+  "Hydnum rufescens": {
+   "wikidata": "Q2475470",
+   "ref": null,
+   "inat": [
+    {
+     "file": "assets/species/hydnum-rufescens-inat1.jpg",
+     "source": "iNaturalist (research grade)",
+     "page": "https://www.inaturalist.org/observations/246583722",
+     "author": "Rino",
+     "license": "CC-BY-NC",
+     "place": "Provincia di Isernia, Italia",
+     "date": "2024-10-09"
+    }
+   ]
+  },
+  "Sarcodon imbricatus": {
+   "wikidata": "Q262105",
+   "ref": null,
+   "inat": []
+  },
+  "Sarcodon scabrosus": {
+   "wikidata": "Q10670604",
+   "ref": null,
+   "inat": []
+  },
+  "Hydnellum peckii": {
+   "wikidata": "Q1908340",
+   "ref": null,
+   "inat": []
+  },
+  "Lepiota brunneoincarnata": {
+   "wikidata": "Q2375450",
+   "ref": null,
+   "inat": []
+  },
+  "Lepiota subincarnata": {
+   "wikidata": "Q4259141",
+   "ref": null,
+   "inat": [
+    {
+     "file": "assets/species/lepiota-subincarnata-inat1.jpg",
+     "source": "iNaturalist (research grade)",
+     "page": "https://www.inaturalist.org/observations/189276892",
+     "author": "Alea",
+     "license": "CC-BY-NC",
+     "place": "00066 Manziana RM, Italia",
+     "date": "2023-10-28"
+    }
+   ]
+  },
+  "Lepiota cristata": {
+   "wikidata": "Q855482",
+   "ref": null,
+   "inat": [
+    {
+     "file": "assets/species/lepiota-cristata-inat1.jpg",
+     "source": "iNaturalist (research grade)",
+     "page": "https://www.inaturalist.org/observations/62179738",
+     "author": "RICCARDO MATTEA",
+     "license": "CC-BY-NC",
+     "place": "Fiume Tronto, Arquata del Tronto, Marche, IT",
+     "date": "2020-10-10"
+    }
+   ]
+  },
+  "Chlorophyllum rhacodes": {
+   "wikidata": "Q757119",
+   "ref": null,
+   "inat": []
+  },
+  "Chlorophyllum venenatum": {
+   "wikidata": "Q1523559",
+   "ref": null,
+   "inat": []
+  },
+  "Galerina marginata": {
+   "wikidata": "Q248829",
+   "ref": null,
+   "inat": [
+    {
+     "file": "assets/species/galerina-marginata-inat1.jpg",
+     "source": "iNaturalist (research grade)",
+     "page": "https://www.inaturalist.org/observations/332323711",
+     "author": "Manuela Fiorini",
+     "license": "CC-BY",
+     "place": "San Severino Marche, Marche, IT",
+     "date": "2025-12-27"
+    }
+   ]
+  },
+  "Hypholoma fasciculare": {
+   "wikidata": "Q752507",
+   "ref": null,
+   "inat": [
+    {
+     "file": "assets/species/hypholoma-fasciculare-inat1.jpg",
+     "source": "iNaturalist (research grade)",
+     "page": "https://www.inaturalist.org/observations/140583438",
+     "author": "Riccardo Molajoli",
+     "license": "CC-BY-NC",
+     "place": "67029 Secinaro AQ, Italia",
+     "date": "2022-10-29"
+    }
+   ]
+  },
+  "Cortinarius rubellus": {
+   "wikidata": "Q944328",
+   "ref": null,
+   "inat": []
+  },
+  "Gymnopilus junonius": {
+   "wikidata": "Q1830008",
+   "ref": null,
+   "inat": [
+    {
+     "file": "assets/species/gymnopilus-junonius-inat1.jpg",
+     "source": "iNaturalist (research grade)",
+     "page": "https://www.inaturalist.org/observations/190450489",
+     "author": "Manuela Fiorini",
+     "license": "CC-BY",
+     "place": "Parco Naturale Regionale della Gola della Rossa e di Frasassi, Fabriano, Marche, IT",
+     "date": "2023-10-08"
+    }
+   ]
+  },
+  "Pholiota squarrosa": {
+   "wikidata": "Q1574926",
+   "ref": null,
+   "inat": [
+    {
+     "file": "assets/species/pholiota-squarrosa-inat1.jpg",
+     "source": "iNaturalist (research grade)",
+     "page": "https://www.inaturalist.org/observations/237271149",
+     "author": "Alessandro Vitale",
+     "license": "CC-BY-NC",
+     "place": "03040 Picinisco FR, Italia",
+     "date": "2023-10-03"
+    }
+   ]
+  },
+  "Armillaria tabescens": {
+   "wikidata": "Q2449977",
    "ref": null,
    "inat": []
   }
