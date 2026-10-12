@@ -155,7 +155,7 @@ export function initJournal({ zones, predict, getZoneId, zoneImage = () => '' })
       const b = document.createElement('button');
       b.type = 'button';
       b.className = 'wiz-choice' + (it.value === current ? ' sel' : '') + (it.img ? ' has-img' : '');
-      b.innerHTML = `${it.img ? `<img src="${it.img}" alt="" loading="lazy">` : ''}<span>${esc(it.label)}</span>${it.sub ? `<small>${esc(it.sub)}</small>` : ''}`;
+      b.innerHTML = `${it.img ? `<img src="${it.img}" alt="" loading="lazy" decoding="async">` : ''}<span>${esc(it.label)}</span>${it.sub ? `<small>${esc(it.sub)}</small>` : ''}`;
       b.addEventListener('click', () => onPick(it.value));
       wrap.appendChild(b);
     }
@@ -266,7 +266,7 @@ export function initJournal({ zones, predict, getZoneId, zoneImage = () => '' })
     const head = entries.length
       ? `<p class="j-sum">${sm.total} ${sm.total === 1 ? 'uscita' : 'uscite'}${sm.judged ? ` · il modello ci ha preso <b>${sm.ok} su ${sm.judged}</b>` : ''}
          ${sm.falseAlarm ? ` · ${sm.falseAlarm} volte ha promesso troppo` : ''}${sm.missed ? ` · ${sm.missed} volte è stato troppo pessimista` : ''}</p>`
-      : `<div class="j-empty">${zoneImage('laga') ? `<img src="${zoneImage('laga')}" alt="" loading="lazy">` : ''}<span class="shade"></span>
+      : `<div class="j-empty">${zoneImage('laga') ? `<img src="${zoneImage('laga')}" alt="" loading="lazy" decoding="async">` : ''}<span class="shade"></span>
           <div class="j-empty-body"><b>Il primo giro è il più utile</b><span>Dopo ogni uscita segna cosa hai trovato, anche niente: in pochi tocchi capisci se il modello funziona nei tuoi boschi.</span>
           <button type="button" class="btn light big" data-open-journal-inline>＋ Registra un'uscita</button></div></div>`;
     const rows = entries.map((e) => {
@@ -277,7 +277,7 @@ export function initJournal({ zones, predict, getZoneId, zoneImage = () => '' })
       const badge = a ? `<span class="tag ${a.ok ? 'ok' : 'warn'}">${a.ok ? 'previsione giusta' : a.said ? 'previsione ottimista' : 'previsione pessimista'}</span>` : '<span class="tag">fuori dal periodo meteo</span>';
       const img = zoneImage(e.zoneId);
       return `<li class="j-item">
-        <span class="j-img">${img ? `<img src="${img}" alt="" loading="lazy">` : ''}</span>
+        <span class="j-img">${img ? `<img src="${img}" alt="" loading="lazy" decoding="async">` : ''}</span>
         <div class="j-body">
           <div class="j-top"><b>${esc(z?.title ?? z?.name ?? e.zoneId)}</b><span class="muted small">${fmt(e.date)}${e.band ? ` · ${e.band} m` : ''}</span></div>
           <div class="small">Trovato: ${esc(found)}${top ? ` · previsto ${top[1]} (${esc(SPECIES.find((x) => x.id === top[0])?.name ?? '')})` : ''}</div>

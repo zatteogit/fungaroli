@@ -3,8 +3,8 @@
  "note": "Foto dei luoghi da Wikimedia Commons: solo paesaggi o boschi della zona (niente centri abitati), scelte a mano tra le foto georeferenziate vicine (tools/build_media_zones.py). Dove non c'e' niente di adatto si vede la foto del fungo.",
  "zones": {
   "vallonina": {
-   "file": "assets/zones/vallonina.jpg",
-   "file_hd": "assets/zones/vallonina-hd.jpg",
+   "file": "assets/zones/vallonina.webp",
+   "file_hd": "assets/zones/vallonina-hd.webp",
    "source": "Wikimedia Commons",
    "page": "https://commons.wikimedia.org/wiki/File:SelladiLeonessa001.jpg",
    "author": "Idéfix",
@@ -12,11 +12,12 @@
    "size": [
     600,
     450
-   ]
+   ],
+   "thumb": "assets/zones/vallonina-t.webp"
   },
   "poggio-cantalice": {
-   "file": "assets/zones/poggio-cantalice.jpg",
-   "file_hd": "assets/zones/poggio-cantalice-hd.jpg",
+   "file": "assets/zones/poggio-cantalice.webp",
+   "file_hd": "assets/zones/poggio-cantalice-hd.webp",
    "source": "Wikimedia Commons",
    "page": "https://commons.wikimedia.org/wiki/File:Terminillo.JPG",
    "author": "Li vioandronico2013",
@@ -24,11 +25,12 @@
    "size": [
     1600,
     1200
-   ]
+   ],
+   "thumb": "assets/zones/poggio-cantalice-t.webp"
   },
   "antrodoco": {
-   "file": "assets/zones/antrodoco.jpg",
-   "file_hd": "assets/zones/antrodoco-hd.jpg",
+   "file": "assets/zones/antrodoco.webp",
+   "file_hd": "assets/zones/antrodoco-hd.webp",
    "source": "Wikimedia Commons",
    "page": "https://commons.wikimedia.org/wiki/File:Monte_Giano_DVX.JPG",
    "author": "DVX (Wikimedia Commons)",
@@ -36,11 +38,12 @@
    "size": [
     1600,
     1199
-   ]
+   ],
+   "thumb": "assets/zones/antrodoco-t.webp"
   },
   "cicolano": {
-   "file": "assets/zones/cicolano.jpg",
-   "file_hd": "assets/zones/cicolano-hd.jpg",
+   "file": "assets/zones/cicolano.webp",
+   "file_hd": "assets/zones/cicolano-hd.webp",
    "source": "Wikimedia Commons",
    "page": "https://commons.wikimedia.org/wiki/File:Lago_del_Salto%21%21_%287447648144%29.jpg",
    "author": "Alessandro Blasi from Rieti, Italy",
@@ -48,11 +51,12 @@
    "size": [
     1600,
     482
-   ]
+   ],
+   "thumb": "assets/zones/cicolano-t.webp"
   },
   "laga": {
-   "file": "assets/zones/laga.jpg",
-   "file_hd": "assets/zones/laga-hd.jpg",
+   "file": "assets/zones/laga.webp",
+   "file_hd": "assets/zones/laga-hd.webp",
    "source": "Wikimedia Commons",
    "page": "https://commons.wikimedia.org/wiki/File:Pizzo_di_Sevo.jpg",
    "author": "Mario1952",
@@ -60,11 +64,12 @@
    "size": [
     1600,
     1200
-   ]
+   ],
+   "thumb": "assets/zones/laga-t.webp"
   },
   "rascino": {
-   "file": "assets/zones/rascino.jpg",
-   "file_hd": "assets/zones/rascino-hd.jpg",
+   "file": "assets/zones/rascino.webp",
+   "file_hd": "assets/zones/rascino-hd.webp",
    "source": "Wikimedia Commons",
    "page": "https://commons.wikimedia.org/wiki/File:Rascino.jpg",
    "author": "Sabina Trekking ASD",
@@ -72,11 +77,12 @@
    "size": [
     1200,
     1600
-   ]
+   ],
+   "thumb": "assets/zones/rascino-t.webp"
   },
   "tancia": {
-   "file": "assets/zones/tancia.jpg",
-   "file_hd": "assets/zones/tancia-hd.jpg",
+   "file": "assets/zones/tancia.webp",
+   "file_hd": "assets/zones/tancia-hd.webp",
    "source": "Wikimedia Commons",
    "page": "https://commons.wikimedia.org/wiki/File%3ABeech_Forest_in_the_Sabina_Hills%2C_Latium%2C_Italy_-_52993979506.jpg",
    "author": "Christoph Strässler",
@@ -84,7 +90,8 @@
    "size": [
     2000,
     1125
-   ]
+   ],
+   "thumb": "assets/zones/tancia-t.webp"
   }
  }
 }

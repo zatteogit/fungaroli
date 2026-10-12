@@ -30,7 +30,9 @@ const speciesId = readOpt('data/species-id.json');
 const media = readOpt('data/media.json');
 // foto delle specie incorporate come data URI (l'Artifact non carica immagini esterne)
 const assets = {};
-const collect = (m) => { if (m?.file && fs.existsSync(path.join(ROOT, m.file))) assets[m.file] = `data:image/jpeg;base64,${fs.readFileSync(path.join(ROOT, m.file)).toString('base64')}`; };
+const mime = (f) => (f.endsWith('.webp') ? 'image/webp' : f.endsWith('.png') ? 'image/png' : 'image/jpeg');
+const put = (f) => { if (f && fs.existsSync(path.join(ROOT, f))) assets[f] = `data:${mime(f)};base64,${fs.readFileSync(path.join(ROOT, f)).toString('base64')}`; };
+const collect = (m) => { put(m?.file); put(m?.thumb); };
 for (const v of Object.values(media?.species || {})) { collect(v.ref); (v.inat || []).forEach(collect); }
 for (const v of Object.values(media?.lookalikes || {})) { collect(v.ref); (v.inat || []).forEach(collect); }
 const { loadWeather } = await import(path.join(ROOT, 'js/weather.js'));

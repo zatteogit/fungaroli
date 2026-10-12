@@ -319,7 +319,7 @@ function resultCard(c) {
   // tutta la card porta alla scheda (link "allungato"); la foto si ingrandisce dal suo pulsante
   return `<li class="id-card vtn tox-${tox.replace(/\s/g, '-')}" style="--vtn:c-${t.key.replace(/[^a-z0-9-]/gi, '')}">
     <div class="id-card-img">
-      ${ph ? `<img src="${ASSET(ph.file)}" alt="" loading="lazy">` : ''}<span class="tox">${toxL}</span>
+      ${ph ? `<img src="${ASSET(ph.thumb || ph.file)}" alt="" loading="lazy" decoding="async">` : ''}<span class="tox">${toxL}</span>
       ${ph ? `<button type="button" class="id-zoom" data-photo="${esc(t.key)}" aria-label="${name}: ingrandisci la foto"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6"/><path d="m20 20-5-5M10.5 8v5M8 10.5h5"/></svg></button>` : ''}
       ${c.tot ? `<span class="id-fit${c.contra.length ? ' warn' : ''}">${c.ok}/${c.tot}</span>` : ''}</div>
     <div class="id-card-body">
@@ -510,7 +510,7 @@ function stemArt2(base, ring, volva, ret, capCol, shape) {
     <ellipse cx="32" cy="58" rx="20" ry="2.4" fill="currentColor" opacity=".12"/>
     <path d="${stem}" fill="url(#${b})" stroke="${STEMC[2]}" stroke-width="1.1" stroke-linejoin="round"/>
     ${ret ? '<path d="M28 26 l4 4 4-4 M28 32 l4 4 4-4 M28 38 l4 4 4-4 M32 26 v18" stroke="#8a6a3e" stroke-width=".9" fill="none" opacity=".8"/>' : ''}
-    <g transform="translate(0 -11) scale(1 .95)" opacity=".9"><path d="${cap}" fill="url(#${a})" stroke="${C[2]}" stroke-opacity=".6" stroke-width="1.2"/></g>
+    <g transform="translate(0 -11) scale(1 .95)" opacity=".32"><path d="${cap}" fill="url(#${a})" stroke="${C[2]}" stroke-opacity=".6" stroke-width="1.2"/></g>
     ${ring === true ? '<path d="M23.5 28 Q32 35 40.5 28 L38.5 33 Q32 38.5 25.5 33 Z" fill="#fbf7ec" stroke="#a8977a" stroke-width=".9"/>' : ring == null ? '<path d="M25 30 Q32 35 39 30" stroke="#a8977a" stroke-width="1.2" stroke-dasharray="2 2" fill="none"/>' : ''}
     ${volva === true ? '<path d="M19 47 C18 59 46 59 45 47 L40 51 Q32 49 24 51 Z" fill="#f4eee0" stroke="#a8977a" stroke-width="1"/><path d="M19 47 Q21 44 25 46 M45 47 Q43 44 39 46" stroke="#a8977a" stroke-width="1.1" fill="none"/>' : ''}`);
 }
@@ -540,14 +540,14 @@ export function renderTaxonPage(box, key) {
         <h1 class="phero-title">${esc(t.name || t.latin)}</h1>${t.name !== t.latin ? `<p class="phero-sub"><i>${esc(t.latin)}</i></p>` : ''}</div>
     </header>
     <div class="pbody">
-      ${ph.length > 1 ? `<div class="sp-strip">${ph.slice(1, 6).map((p, k) => `<button type="button" class="zoomable" data-photo="${k + 1}" aria-label="Foto ${k + 2}: ingrandisci"><img src="${ASSET(p.file)}" alt="" loading="lazy"></button>`).join('')}</div>` : ''}
+      ${ph.length > 1 ? `<div class="sp-strip">${ph.slice(1, 6).map((p, k) => `<button type="button" class="zoomable" data-photo="${k + 1}" aria-label="Foto ${k + 2}: ingrandisci"><img src="${ASSET(p.file)}" alt="" loading="lazy" decoding="async"></button>`).join('')}</div>` : ''}
       ${attentionBox(t.field_rules)}
       ${t.caution ? `<p class="id-why"><b>Come si mangia:</b> ${esc(t.caution)}</p>` : ''}
       <h3>Come riconoscerla</h3>
       ${traitStrip(null, t)}
       ${t.check_before_picking?.length ? `<ol class="keys">${t.check_before_picking.map((x) => `<li>${esc(x)}</li>`).join('')}</ol>` : ''}
       ${look.length ? `<h3>Si confonde con</h3><ul class="tx-look">${look.map(({ id, o }) => { const op = photoOf(o); return `<li>
-        <a class="tx-look-main" href="#/riconosci/confronta/${esc(o.key)}/${esc(t.key)}">${op ? `<img src="${ASSET(op.file)}" alt="" loading="lazy">` : ''}<span><b>${esc(o.name)}</b><i>${esc(o.latin)}</i><small class="tx-cmp">Confrontali carattere per carattere ›</small></span></a>
+        <a class="tx-look-main" href="#/riconosci/confronta/${esc(o.key)}/${esc(t.key)}">${op ? `<img src="${ASSET(op.thumb || op.file)}" alt="" loading="lazy" decoding="async">` : ''}<span><b>${esc(o.name)}</b><i>${esc(o.latin)}</i><small class="tx-cmp">Confrontali carattere per carattere ›</small></span></a>
         <a class="tx-sheet" href="#/specie/${esc(id)}">Scheda di ${esc(o.name.toLowerCase())} ›</a></li>`; }).join('')}</ul>` : ''}
       <h3>Dove e quando</h3>
       <dl class="sci-params">
@@ -566,7 +566,7 @@ export function compareCta(edibleId) {
   const list = t ? sosiaOf(t) : [];
   if (!list.length) return '';
   // fotografico: lui e i sosia in miniatura (oltre 4, un "+N")
-  const th = (x, cls = '') => { const ph = photoOf(x); return `<span class="cc-th ${cls} tox-${String(x.toxicity || '').replace(/\s/g, '-')}">${ph ? `<img src="${ASSET(ph.file)}" alt="" loading="lazy">` : ''}</span>`; };
+  const th = (x, cls = '') => { const ph = photoOf(x); return `<span class="cc-th ${cls} tox-${String(x.toxicity || '').replace(/\s/g, '-')}">${ph ? `<img src="${ASSET(ph.thumb || ph.file)}" alt="" loading="lazy" decoding="async">` : ''}</span>`; };
   const shown = list.slice(0, 4), more = list.length - shown.length;
   return `<a class="cmp-cta" href="#/riconosci/confronta/${esc(t.key)}">
     <span class="cc-row" aria-hidden="true">${th(t, 'ref')}<span class="cc-vs">vs</span><span class="cc-stack">${shown.map((x) => th(x)).join('')}${more > 0 ? `<span class="cc-th cc-more">+${more}</span>` : ''}</span></span>
@@ -627,7 +627,7 @@ function cmpRows(ref, t) {
 
 function renderCompare(box, ref, pick) {
   const list = sosiaOf(ref);
-  const pic = (t) => { const ph = photoOf(t); return ph ? `<img src="${ASSET(ph.file)}" alt="" loading="lazy">` : '<span class="look-ph">senza foto</span>'; };
+  const pic = (t, small = false) => { const ph = photoOf(t); return ph ? `<img src="${ASSET(small ? ph.thumb || ph.file : ph.file)}" alt="" loading="lazy" decoding="async">` : '<span class="look-ph">senza foto</span>'; };
   const toxCls = (t) => `tox-${String(t.toxicity || '').replace(/\s/g, '-')}`;
   const nameBtn = (t) => (t.edible_id && !t.lookalike_of?.length ? `<a href="#/specie/${t.edible_id}">${esc(t.name || t.latin)}</a>` : `<button type="button" data-taxon="${esc(t.key)}">${esc(t.name || t.latin)}</button>`);
   const slide = (t, k) => {
@@ -653,8 +653,8 @@ function renderCompare(box, ref, pick) {
   box.innerHTML = `
     <h2 class="sec-title cmp-title">${esc(ref.name)} o sosia?</h2>
     <p class="small muted cmp-lede">${list.length} ${list.length === 1 ? 'fungo che gli somiglia' : 'funghi che gli somigliano'}. Scorri di lato per confrontarli uno alla volta: a sinistra ${esc(ref.name.toLowerCase())}, a destra il sosia.</p>
-    <div class="cmp-pickbar"><span class="cmp-chip cmp-chip-ref ${toxCls(ref)}"><span class="cmp-chip-img">${pic(ref)}</span><span>${esc(ref.name || ref.latin)}</span></span><span class="cmp-pvs" aria-hidden="true">vs</span>
-    <div class="cmp-pick" role="tablist" aria-label="Scegli il sosia">${list.map((t, k) => `<button type="button" role="tab" class="cmp-chip ${toxCls(t)}" data-go="${k}" aria-selected="${k === start}"><span class="cmp-chip-img">${pic(t)}</span><span>${esc(t.name || t.latin)}</span></button>`).join('')}</div></div>
+    <div class="cmp-pickbar"><span class="cmp-chip cmp-chip-ref ${toxCls(ref)}"><span class="cmp-chip-img">${pic(ref, true)}</span><span>${esc(ref.name || ref.latin)}</span></span><span class="cmp-pvs" aria-hidden="true">vs</span>
+    <div class="cmp-pick" role="tablist" aria-label="Scegli il sosia">${list.map((t, k) => `<button type="button" role="tab" class="cmp-chip ${toxCls(t)}" data-go="${k}" aria-selected="${k === start}"><span class="cmp-chip-img">${pic(t, true)}</span><span>${esc(t.name || t.latin)}</span></button>`).join('')}</div></div>
     <div class="cmp-track">${list.map(slide).join('')}</div>
     <p class="cmp-dots" aria-hidden="true">${list.map((_, k) => `<i${k === start ? ' class="on"' : ''}></i>`).join('')}</p>
     <p><a class="btn" href="#/riconosci">Riconosci un altro fungo</a></p>`;

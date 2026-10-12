@@ -31,7 +31,7 @@ export function initSpeciesCards({ idData, media, assetUrl, allow3d = true, info
 export function thumb(id, size = 36) {
   const m = MEDIA?.species?.[id]?.ref || MEDIA?.species?.[id]?.inat?.[0];
   const sp = SPECIES.find((s) => s.id === id);
-  if (m) return `<img class="thumb" src="${ASSET(m.file)}" width="${size}" height="${size}" alt="" loading="lazy">`;
+  if (m) return `<img class="thumb" src="${ASSET(m.thumb || m.file)}" width="${size}" height="${size}" alt="" loading="lazy" decoding="async">`;
   return `<span class="thumb thumb-ph" style="width:${size}px;height:${size}px">${esc((sp?.name || '?').slice(0, 2))}</span>`;
 }
 
@@ -79,7 +79,7 @@ function lookalikes(d, sid) {
     // tutta la riga apre la scheda del sosia; la lente ingrandisce la foto
     const tk = taxonKeyByLatin(l.latin);
     return `<li class="${TOX[l.toxicity] || ''}${tk ? ' look-link' : ''}">
-      <span class="look-btn">${m ? `<img src="${ASSET(m.file)}" alt="" loading="lazy">` : '<span class="look-ph">senza foto</span>'}
+      <span class="look-btn">${m ? `<img src="${ASSET(m.file)}" alt="" loading="lazy" decoding="async">` : '<span class="look-ph">senza foto</span>'}
         ${m ? `<button type="button" class="id-zoom" data-look="${esc(key || '')}" aria-label="${esc(l.name || l.latin)}: ingrandisci la foto"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6"/><path d="m20 20-5-5M10.5 8v5M8 10.5h5"/></svg></button>` : ''}</span>
       <div><div class="look-name"><span class="tox">${esc(l.toxicity)}</span> ${tk && compareHref(sid, tk) ? `<a class="look-open" href="${compareHref(sid, tk)}">${esc(l.name || '')} <i>${esc(l.latin)}</i><span aria-hidden="true"> ›</span></a>` : tk ? `<button type="button" class="look-open" data-taxon="${esc(tk)}">${esc(l.name || '')} <i>${esc(l.latin)}</i><span aria-hidden="true"> ›</span></button>` : `${esc(l.name || '')} <i>${esc(l.latin)}</i>`}</div>
       <div class="look-diff">${esc(l.how_to_tell)}</div></div></li>`;
@@ -201,7 +201,7 @@ export function renderSpeciesDetail(body, id) {
       </div>
     </header>
     <div class="pbody">
-    ${photos.length > 1 ? `<div class="sp-strip">${photos.slice(1).map((p, k) => `<button type="button" class="zoomable" data-photo="${k + 1}" aria-label="Foto ${k + 2}: ingrandisci"><img src="${ASSET(p.file)}" alt="" loading="lazy"></button>`).join('')}</div>` : ''}
+    ${photos.length > 1 ? `<div class="sp-strip">${photos.slice(1).map((p, k) => `<button type="button" class="zoomable" data-photo="${k + 1}" aria-label="Foto ${k + 2}: ingrandisci"><img src="${ASSET(p.file)}" alt="" loading="lazy" decoding="async"></button>`).join('')}</div>` : ''}
     ${attention(id, warn)}
     ${d.key_features?.length ? `<h3>Come riconoscerlo</h3>${traitStrip(id)}<ol class="keys">${d.key_features.map((k) => `<li>${esc(k)}</li>`).join('')}</ol>` : '<p class="notice">Scheda di riconoscimento in preparazione.</p>'}
     ${TRAITS[id] ? '' : (warn.length ? `<div class="notice">${esc(warn.join(' '))}</div>` : '')}
@@ -210,7 +210,7 @@ export function renderSpeciesDetail(body, id) {
     ${kitchen(id)}
     ${whereToLook(id)}
     ${lookalikes(d, id)}
-    ${INFO[id]?.file ? `<h3>Infografica</h3><button type="button" class="zoomable sp-info" data-info="1" aria-label="Apri l'infografica"><img src="${ASSET(INFO[id].file)}" alt="Infografica di riconoscimento: ${esc(sp.name)}" loading="lazy"><span class="zoom-ic" aria-hidden="true">⤢</span></button>` : ''}
+    ${INFO[id]?.file ? `<h3>Infografica</h3><button type="button" class="zoomable sp-info" data-info="1" aria-label="Apri l'infografica"><img src="${ASSET(INFO[id].file)}" alt="Infografica di riconoscimento: ${esc(sp.name)}" loading="lazy" decoding="async"><span class="zoom-ic" aria-hidden="true">⤢</span></button>` : ''}
     <div class="sp-more">
       ${sec('Dove trovarlo nelle zone', WHERE(id))}
       ${sec('Tutti i caratteri', d.cap ? traitsTable(d) + (d.aka?.length ? `<p class="small"><b>Nomi locali:</b> ${esc(d.aka.join(', '))}</p>` : '') : '')}

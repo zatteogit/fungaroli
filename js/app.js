@@ -546,7 +546,7 @@ function fillSpecies() {
     const ph = speciesPhoto(sp.id);
     const inSeason = sp.months[month] >= 0.6;
     return `<button type="button" class="sp-card" data-species="${sp.id}" aria-label="${esc(sp.name)}">
-      ${ph ? `<img src="${ph.file}" alt="" loading="lazy">` : ''}<span class="shade"></span>
+      ${ph ? `<img src="${ph.file}" alt="" loading="lazy" decoding="async">` : ''}<span class="shade"></span>
       ${inSeason ? '<span class="pill glass sm">in stagione</span>' : ''}
       <span class="sp-card-body"><b>${esc(sp.name)}</b><i>${esc(sp.latin)}</i></span></button>`;
   }).join('') || `<p class="muted empty-note">Nessuna specie commestibile con "${esc(spQuery)}". Se cerchi un fungo che hai trovato, anche velenoso, prova <a href="#/riconosci">Riconosci</a>.</p>`;
@@ -636,7 +636,7 @@ const splitName = (z) => {
 // indice della ricerca generale: tutto quello che l'app sa, in voci semplici
 function buildSearch(idj, trj, embedded) {
   const A = embedded ? (f) => embedded.assets?.[f] || '' : (f) => f;
-  const img = (src) => (src ? `<img class="thumb" src="${src}" width="44" height="44" alt="" loading="lazy">` : '');
+  const img = (src) => (src ? `<img class="thumb" src="${src}" width="44" height="44" alt="" loading="lazy" decoding="async">` : '');
   const items = [];
   for (const z of zones) {
     const tip = Object.keys(habitat?.[z.id]?.forest?.tipologie_ha || {}).join(' ');
@@ -652,7 +652,7 @@ function buildSearch(idj, trj, embedded) {
   }
   for (const t of searchTaxa()) {
     const look = t.look.map((id) => SPECIES.find((x) => x.id === id)?.name).filter(Boolean);
-    items.push({ kind: 'velenoso', title: t.name || t.latin, sub: `${t.name !== t.latin ? t.latin : ''}${look.length ? `${t.name !== t.latin ? ' · ' : ''}si confonde con ${look.slice(0, 2).join(', ').toLowerCase()}` : ''}`, hay: look.join(' '), href: `#/fungo/${t.key}`, img: t.photo ? img(A(t.photo.file)) : '', badge: t.toxicity, badgeCls: `tox-${String(t.toxicity).replace(/\s/g, '-')}` });
+    items.push({ kind: 'velenoso', title: t.name || t.latin, sub: `${t.name !== t.latin ? t.latin : ''}${look.length ? `${t.name !== t.latin ? ' · ' : ''}si confonde con ${look.slice(0, 2).join(', ').toLowerCase()}` : ''}`, hay: look.join(' '), href: `#/fungo/${t.key}`, img: t.photo ? img(A(t.photo.thumb || t.photo.file)) : '', badge: t.toxicity, badgeCls: `tox-${String(t.toxicity).replace(/\s/g, '-')}` });
   }
   for (const [id, t] of Object.entries(trj?.trees || {})) {
     items.push({ kind: 'albero', title: t.name, sub: t.latin, hay: `${(t.aliases || []).join(' ')} ${t.type || ''}`, href: `#/albero/${encodeURIComponent(id)}`, img: treeThumb(id, 44) });
@@ -744,7 +744,7 @@ function renderHome() {
   ol.innerHTML = list.slice(1, 8).map((c) => {
     const cv = coverOf(c.z, c.d.best.species.id);
     return `<li class="vtn" style="--vtn:t-${c.z.id}-${c.o}"><a class="tile" href="#/zona/${c.z.id}/${c.o}">
-      ${cv ? `<img src="${cv.small}" alt="" loading="lazy">` : ''}<span class="shade"></span>${ring(c.s, false)}${(() => { const w = wxOf(c.z, c.d); return w && w.level !== 'ok' ? `<span class="tile-wx wx-${w.level}" title="${esc(w.text)}">${wxi(w)}${esc(OUTING_LABEL[w.level])}</span>` : ''; })()}
+      ${cv ? `<img src="${cv.small}" alt="" loading="lazy" decoding="async">` : ''}<span class="shade"></span>${ring(c.s, false)}${(() => { const w = wxOf(c.z, c.d); return w && w.level !== 'ok' ? `<span class="tile-wx wx-${w.level}" title="${esc(w.text)}">${wxi(w)}${esc(OUTING_LABEL[w.level])}</span>` : ''; })()}
       <span class="tile-body"><span class="tile-day">${esc(dayLabel(c.o, c.d.date, true))}</span><b>${esc(splitName(c.z)[0])}</b><small>${esc(c.d.best.species.name)} · ${c.d.best.band} m · ${access[c.z.id]?.[0]?.minutes ?? c.z.drive_min} min</small></span>
     </a></li>`;
   }).join('');
@@ -804,7 +804,7 @@ function renderSeason() {
   box.innerHTML = arr.map((p) => {
     const ph = speciesPhoto(p.species.id);
     return `<li><button type="button" class="portrait" data-species="${p.species.id}">
-      ${ph ? `<img src="${ph.file}" alt="" loading="lazy">` : ''}<span class="shade"></span>${ring(p.score, false)}
+      ${ph ? `<img src="${ph.file}" alt="" loading="lazy" decoding="async">` : ''}<span class="shade"></span>${ring(p.score, false)}
       <span class="portrait-body"><b>${esc(p.species.name)}</b><small>${esc(splitName(p.z)[0])}</small></span></button></li>`;
   }).join('');
 }
@@ -827,7 +827,7 @@ function openSheet(zid) {
   sh.innerHTML = `
     <button type="button" class="sheet-close" aria-label="Chiudi">✕</button>
     <a class="sheet-row" href="#/zona/${zid}/${state.dayOffset}">
-      <span class="sheet-img">${cv ? `<img src="${cv.small}" alt="">` : ''}${ring(sc, false)}</span>
+      <span class="sheet-img">${cv ? `<img src="${cv.small}" alt="" loading="lazy" decoding="async">` : ''}${ring(sc, false)}</span>
       <span class="sheet-txt"><span class="eyebrow">${esc(dayLabel(state.dayOffset, d.date, true))}</span><b class="sheet-title">${esc(splitName(z)[0])}</b>
         <span class="small">${esc(d.best.species.name)} ~${d.best.band} m · ${access[zid]?.[0]?.minutes ?? z.drive_min} min${d.crowd ? ` · ${crowdText(d.crowd)}` : ''}</span>${wxOf(z, d) ? `<span class="small wx-line wx-${wxOf(z, d).level}">${wxi(wxOf(z, d))}${esc(wxOf(z, d).text)}</span>` : ''}</span>
     </a>

@@ -40,7 +40,7 @@ const credit = (m) => m ? `Foto: ${esc(m.author)}${m.license ? `, ${esc(m.licens
 
 export function treeThumb(id, size = 56) {
   const m = MEDIA[id]?.ref || MEDIA[id]?.inat?.[0];
-  return m ? `<img class="thumb" src="${ASSET(m.file)}" width="${size}" height="${size}" alt="" loading="lazy">`
+  return m ? `<img class="thumb" src="${ASSET(m.thumb || m.file)}" width="${size}" height="${size}" alt="" loading="lazy" decoding="async">`
     : `<span class="thumb thumb-ph" style="width:${size}px;height:${size}px">${esc((T[id]?.name || '?').slice(0, 2))}</span>`;
 }
 
@@ -48,7 +48,7 @@ export function renderTreeGrid(box) {
   const html = Object.entries(T).map(([id, t]) => {
     const m = MEDIA[id]?.ref || MEDIA[id]?.inat?.[0];
     return `<a class="sp-card" href="#/albero/${encodeURIComponent(id)}" aria-label="${esc(t.name)}">
-      ${m ? `<img src="${ASSET(m.file)}" alt="" loading="lazy">` : ''}<span class="shade"></span>
+      ${m ? `<img src="${ASSET(m.file)}" alt="" loading="lazy" decoding="async">` : ''}<span class="shade"></span>
       <span class="sp-card-body"><b>${esc(t.name)}</b><i>${esc(t.latin)}</i></span></a>`;
   }).join('');
   box.innerHTML = html ? `<div class="card-grid">${html}</div>` : '<p class="muted">Schede degli alberi in preparazione.</p>';
@@ -79,7 +79,7 @@ export function renderTreePage(body, id) {
       </div>
     </header>
     <div class="pbody">
-    ${photos.length > 1 ? `<div class="sp-strip">${photos.slice(1).map((p, k) => `<button type="button" class="zoomable" data-photo="${k + 1}" aria-label="Foto ${k + 2}: ingrandisci"><img src="${ASSET(p.file)}" alt="" loading="lazy"></button>`).join('')}</div>` : ''}
+    ${photos.length > 1 ? `<div class="sp-strip">${photos.slice(1).map((p, k) => `<button type="button" class="zoomable" data-photo="${k + 1}" aria-label="Foto ${k + 2}: ingrandisci"><img src="${ASSET(p.file)}" alt="" loading="lazy" decoding="async"></button>`).join('')}</div>` : ''}
     ${t.recognize?.length ? `<h3>Come riconoscerlo</h3><ol class="keys">${t.recognize.map((k) => `<li>${esc(k)}</li>`).join('')}</ol>` : ''}
     ${fungi.length ? `<h3>Funghi che ci crescono</h3><div class="tree-fungi">${fungi.map((s) => `<a href="#/specie/${s.id}" class="tf">${THUMB(s.id, 52)}<span>${esc(s.name)}</span></a>`).join('')}</div>${t.fungi_note ? `<p class="small muted">${esc(t.fungi_note)}</p>` : ''}` : ''}
     <div class="sp-more">
