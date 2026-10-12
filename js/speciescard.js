@@ -1,7 +1,7 @@
 // Scheda dettagliata di una specie: foto reali, riconoscimento, sosia pericolosi,
 // calendario delle osservazioni (GBIF) a confronto con il modello, modello 3D.
 
-import { traitStrip, compareCta, taxonKeyByLatin, openTaxon, attentionBox, compareHref } from './identify.js';
+import { traitStrip, compareCta, taxonKeyByLatin, openTaxon, attentionBox, compareHref, lookalikeRank } from './identify.js';
 import { tick } from './motion.js';
 import { SPECIES } from './species.js';
 import { openLightbox, captionHtml } from './lightbox.js';
@@ -71,7 +71,8 @@ function traitsTable(d) {
 function lookalikes(d, sid) {
   if (!d.lookalikes?.length) return '';
   const order = { mortale: 0, tossico: 1, 'non commestibile': 2, commestibile: 3 };
-  const list = [...d.lookalikes].sort((a, b) => (order[a.toxicity] ?? 9) - (order[b.toxicity] ?? 9));
+  // i piu' somiglianti per primi (stesso ordine del confronto), a pari merito i piu' pericolosi
+  const list = [...d.lookalikes].sort((a, b) => (lookalikeRank(sid, b.latin) - lookalikeRank(sid, a.latin)) || ((order[a.toxicity] ?? 9) - (order[b.toxicity] ?? 9)));
   return `<h3>Non confonderlo con</h3><ul class="look">${list.map((l) => {
     const key = (l.latin || '').match(/[A-Z][a-z]+ [a-z]+/)?.[0];
     const m = MEDIA?.lookalikes?.[key]?.ref || MEDIA?.lookalikes?.[key]?.inat?.[0];

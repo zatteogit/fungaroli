@@ -329,8 +329,33 @@ function resultCard(c) {
 
 // --- confronto con i sosia (dalla scheda della specie) ---
 const refOf = (edibleId) => TAXA.find((t) => t.edible_id === edibleId && !t.lookalike_of?.length) || TAXA.find((t) => t.edible_id === edibleId);
+// quanto due funghi si somigliano (0-1), non mostrato: per ogni carattere noto a entrambi la sovrapposizione dei valori
+// (intersezione su unione), pesata come le domande di Riconosci. Con pochi caratteri noti resta vicino a meta'.
+const simMemo = new Map();
+function similarity(a, b) {
+  const id = `${a.key}|${b.key}`;
+  if (simMemo.has(id)) return simMemo.get(id);
+  let s = 0, w = 0;
+  for (const q of QUESTIONS) {
+    let A = traitOf(a, q), B = traitOf(b, q);
+    if (A == null || B == null) continue;
+    A = [].concat(A); B = [].concat(B);
+    if (!A.length || !B.length) continue;
+    if (q.match && q.values) { A = q.values.filter((v) => q.match(A, v)); B = q.values.filter((v) => q.match(B, v)); }
+    const U = new Set([...A, ...B]);
+    if (!U.size) continue;
+    const wq = q.weight ?? 1;
+    s += (wq * A.filter((v) => B.includes(v)).length) / U.size; w += wq;
+  }
+  const r = (s + 1) / (w + 2);
+  simMemo.set(id, r);
+  return r;
+}
+// i sosia piu' somiglianti per primi; a pari somiglianza il piu' pericoloso
 const sosiaOf = (ref) => TAXA.filter((t) => t !== ref && ref.edible_id && t.lookalike_of?.includes(ref.edible_id))
-  .sort((a, b) => (TOX_ORDER[a.toxicity] ?? 9) - (TOX_ORDER[b.toxicity] ?? 9));
+  .sort((a, b) => (similarity(ref, b) - similarity(ref, a)) || ((TOX_ORDER[a.toxicity] ?? 9) - (TOX_ORDER[b.toxicity] ?? 9)));
+// per la scheda della specie: lo stesso ordine dei sosia, dato il nome latino
+export const lookalikeRank = (edibleId, latin) => { const ref = refOf(edibleId), k = taxonKeyByLatin(latin), t = k && TAXA.find((x) => x.key === k); return ref && t ? similarity(ref, t) : 0; };
 // caratteri che non si sovrappongono: sono quelli che li distinguono davvero
 function diffs(ref, t) {
   return QUESTIONS.map((q) => {
@@ -499,7 +524,7 @@ export function renderTaxonPage(box, key) {
   const t = TAXA.find((x) => x.key === key);
   if (!t) { box.innerHTML = '<p class="muted">Specie non trovata.</p>'; return; }
   const ph = photosOf(t), tox = esc(t.toxicity || ''), toxL = esc(t.tox_label || t.toxicity || '');
-  const look = (t.lookalike_of || []).map((id) => ({ id, o: TAXA.find((x) => x.edible_id === id && !x.lookalike_of?.length) })).filter((x) => x.o);
+  const look = (t.lookalike_of || []).map((id) => ({ id, o: TAXA.find((x) => x.edible_id === id && !x.lookalike_of?.length) })).filter((x) => x.o).sort((x, y) => similarity(y.o, t) - similarity(x.o, t));
   const months = t.traits?.season?.length ? monthsTxt(t.traits.season) : '';
   const habitat = [].concat(t.traits?.habitat || []).map((v) => optLabel(QK('habitat'), v));
   box.innerHTML = `
@@ -547,7 +572,11 @@ export function compareCta(edibleId) {
 // la card di un sosia porta al confronto con la specie della scheda
 export const compareHref = (edibleId, taxonKey) => { const t = refOf(edibleId); return t && taxonKey ? `#/riconosci/confronta/${t.key}/${taxonKey}` : ''; };
 // per la ricerca generale: le specie senza pagina propria (velenose e sosia), con la foto
-export const taxonKeyByLatin = (latin) => { const b = String(latin || '').match(/[A-Z][a-z]+ [a-z]+/)?.[0]; return b ? TAXA.find((t) => t.latin?.includes(b))?.key || '' : ''; };
+// prova tutti i binomi del nome (anche i sinonimi tra parentesi, es. "Armillaria tabescens (= Desarmillaria tabescens)")
+export const taxonKeyByLatin = (latin) => {
+  for (const b of String(latin || '').match(/[A-Z][a-z]+ [a-z]+/g) || []) { const t = TAXA.find((x) => x.latin?.includes(b)); if (t) return t.key; }
+  return '';
+};
 export const searchTaxa = () => TAXA.filter((t) => !t.edible_id || t.lookalike_of?.length).map((t) => ({ key: t.key, name: t.name, latin: t.latin, toxicity: t.toxicity, photo: photoOf(t), look: t.lookalike_of || [] }));
 export function setCompare(key, pick) { state.compare = key || ''; state.pick = pick || ''; }
 
@@ -664,8 +693,8 @@ export function openTaxon(key) {
   }
   const ph = photoOf(t), tox = esc(t.toxicity || ''), toxL = esc(t.tox_label || t.toxicity || '');
   // "si confonde con": porta dritto al confronto affiancato (la scheda della commestibile e' a un tocco da li')
-  const look = (t.lookalike_of || []).map((id) => {
-    const o = TAXA.find((x) => x.edible_id === id && !x.lookalike_of?.length);
+  const look = (t.lookalike_of || []).map((id) => TAXA.find((x) => x.edible_id === id && !x.lookalike_of?.length))
+    .sort((x, y) => (y ? similarity(y, t) : 0) - (x ? similarity(x, t) : 0)).map((o) => {
     return o ? `<a class="tx-vs" href="#/riconosci/confronta/${esc(o.key)}/${esc(t.key)}"><span class="tx-vs-ic" aria-hidden="true">vs</span>${esc(o.name)}<span aria-hidden="true">›</span></a>` : '';
   }).filter(Boolean);
   dlg.dataset.expand = `#/fungo/${t.key}`;

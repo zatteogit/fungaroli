@@ -1594,7 +1594,9 @@ html:has(dialog[open]:modal) body { overflow: hidden; }
 .cmp-pickbar { display: flex; align-items: center; gap: 8px; margin-right: calc(var(--gutter, 16px) * -1); padding-bottom: 10px; }
 .cmp-pickbar .cmp-pick { flex: 1; min-width: 0; margin: 0; padding: 2px var(--gutter, 16px) 0 2px; scroll-padding-inline: 2px var(--gutter, 16px);
   -webkit-mask: linear-gradient(90deg, transparent, #000 10px); mask: linear-gradient(90deg, transparent, #000 10px); }
-.cmp-chip-ref { cursor: default; background: var(--ok-bg); border-color: color-mix(in srgb, var(--ok-ink) 30%, transparent); color: var(--ok-ink); }
-.cmp-chip-ref.tox-commestibile .cmp-chip-img, .cmp-chip-ref .cmp-chip-img { box-shadow: 0 0 0 2px var(--ok-bg), 0 0 0 3.5px var(--ok-ink); }
+/* non si sceglie: un'etichetta, non un chip (niente fondo ne' bordo); l'anello verde dice solo "commestibile", come quelli rossi dei sosia */
+.cmp-chip-ref { cursor: default; background: none; border-color: transparent; padding-left: 0; padding-right: 2px; color: var(--text); font-weight: 700; }
+.cmp-chip-ref:active { transform: none; }
+.cmp-chip-ref .cmp-chip-img { box-shadow: 0 0 0 2px var(--bg), 0 0 0 3.5px var(--ok-ink); }
 .cmp-pvs { flex: none; font-family: var(--font-display); font-style: italic; font-weight: 700; font-size: 15px; color: var(--muted); }
 @media (max-width: 420px) { .cmp-chip-ref > span:last-child { max-width: 9ch; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; } }
