@@ -8,7 +8,7 @@ import { initSpeciesCards, thumb, renderSpeciesDetail, whereSummary, criticalRul
 import { openLightbox, captionHtml } from './lightbox.js';
 import { initIdentify, renderIdentify } from './identify.js';
 import { initTrees, renderTreeGrid, renderTreePage, linkTrees, treeForCategory } from './trees.js';
-import { crowding, comfortScore, timingAdvice, fmtTime, holidayName } from './human.js';
+import { crowding, comfortScore, timingAdvice, fmtTime, holidayName, intornoA } from './human.js';
 
 const HISTORY_DAYS = 30;   // giorni passati mostrati nel grafico
 const AHEAD_DAYS = 7;      // giorni futuri valutati
@@ -434,7 +434,7 @@ function renderHome() {
       <span class="cover-top"><span class="pill glass">${state.homeDay == null ? 'La migliore uscita' : 'Il posto migliore'} · ${esc(dayLabel(hero.o, hero.d.date, true))}</span>${ring(hero.s)}</span>
       <span class="cover-body">
         <span class="cover-title">${esc(title)}</span>${sub ? `<span class="cover-sub">${esc(sub)}</span>` : ''}
-        <span class="cover-sp">${thumb(hero.d.best.species.id, 44)}<span><b>${esc(hero.d.best.species.name)}</b> intorno ai ${hero.d.best.band} m${also.length ? `<small>e anche ${also.join(', ')}</small>` : ''}</span></span>
+        <span class="cover-sp">${thumb(hero.d.best.species.id, 44)}<span><b>${esc(hero.d.best.species.name)}</b> ${intornoA(hero.d.best.band)} ${hero.d.best.band} m${also.length ? `<small>e anche ${also.join(', ')}</small>` : ''}</span></span>
         <span class="facts">${t ? fact('clock', `entro le <b>${fmtTime(t.arrive)}</b>`) : ''}${fact('car', `<b>${a0?.minutes ?? hero.z.drive_min}</b> min`)}${hero.d.crowd ? fact('people', `folla ${hero.d.crowd.level}`) : ''}</span>
         <span class="cover-cta">Il piano dell'uscita <span aria-hidden="true">→</span></span>
       </span>
@@ -652,7 +652,7 @@ const ICON = {
 function planCard(z, d) {
   const best = d.best;
   const rows = [];
-  rows.push({ sec: 'specie', icon: 'find', thumb: best.species.id, k: 'Cosa cercare', v: `<button type="button" class="sp-inline" data-species="${best.species.id}">${esc(best.species.name)}</button> intorno ai <b>${best.band} m</b>`,
+  rows.push({ sec: 'specie', icon: 'find', thumb: best.species.id, k: 'Cosa cercare', v: `<button type="button" class="sp-inline" data-species="${best.species.id}">${esc(best.species.name)}</button> ${intornoA(best.band)} <b>${best.band} m</b>`,
     sub: [whereSummary(best.species.id) && `<span class="plan-where">${linkTrees(whereSummary(best.species.id))}</span>`,
       criticalRule(best.species.id) && `<span class="plan-crit">⚠ ${esc(criticalRule(best.species.id))}</span>`,
       d.perSpecies.slice(1, 3).filter((p) => p.score >= 20).map((p) => `${esc(p.species.name)} ${p.score}`).join(' · ')].filter(Boolean).join('<br>') || esc(best.species.latin) });

@@ -103,3 +103,7 @@ export function timingAdvice({ dateStr, lat, lon, crowd }) {
   }
   return { sunrise, sunset, legal, end, arrive, why };
 }
+
+// "intorno ai 1100 m" ma "intorno agli 800 m": l'articolo segue la pronuncia del numero
+// (otto-, ottanta, ottocento, ottomila e undici iniziano per vocale).
+export const intornoA = (m) => `intorno ${/^8/.test(String(Math.round(m))) || Math.round(m) === 11 ? 'agli' : 'ai'}`;

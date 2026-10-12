@@ -3,6 +3,7 @@
 // da Claude per la taratura); altrove localStorage del browser, da esportare ogni tanto.
 
 import { SPECIES } from './species.js';
+import { intornoA } from './human.js';
 
 const KEY = 'fungaroli:diario:v1';
 export const LEVELS = ['', 'Pochi', 'Discreti', 'Tanti'];
@@ -196,7 +197,7 @@ export function initJournal({ zones, predict, getZoneId, zoneImage = () => '' })
     if (s === 'quota') {
       shell('A che quota, più o meno?', 'Se non lo sai va bene lo stesso.', '', { canNext: false });
       body.querySelector('.wiz-content').appendChild(choices(
-        [...zone.bands.map((b) => ({ value: b, label: `Intorno ai ${b} m` })), { value: null, label: 'Non lo so' }],
+        [...zone.bands.map((b) => ({ value: b, label: `${intornoA(b).replace('i', 'I')} ${b} m` })), { value: null, label: 'Non lo so' }],
         draft.band, (v) => { draft.band = v; next(); }));
     }
 
