@@ -301,18 +301,18 @@ function contraText(c) {
 
 function resultCard(c) {
   const t = c.t, ph = photoOf(t);
-  const tox = esc(t.toxicity || '');
+  const tox = esc(t.toxicity || ''), toxL = esc(t.tox_short || t.tox_label || t.toxicity || '');
   const href = t.edible_id ? `#/specie/${t.edible_id}` : '';
   const name = esc(t.name || t.latin);
   // tutta la card porta alla scheda (link "allungato"); la foto si ingrandisce dal suo pulsante
   return `<li class="id-card vtn tox-${tox.replace(/\s/g, '-')}" style="--vtn:c-${t.key.replace(/[^a-z0-9-]/gi, '')}">
     <div class="id-card-img">
-      ${ph ? `<img src="${ASSET(ph.file)}" alt="" loading="lazy">` : ''}<span class="tox">${tox}</span>
+      ${ph ? `<img src="${ASSET(ph.file)}" alt="" loading="lazy">` : ''}<span class="tox">${toxL}</span>
       ${ph ? `<button type="button" class="id-zoom" data-photo="${esc(t.key)}" aria-label="${name}: ingrandisci la foto"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6"/><path d="m20 20-5-5M10.5 8v5M8 10.5h5"/></svg></button>` : ''}
       ${c.tot ? `<span class="id-fit${c.contra.length ? ' warn' : ''}">${c.ok}/${c.tot}</span>` : ''}</div>
     <div class="id-card-body">
       ${href ? `<a class="id-link" href="${href}">${name}</a>` : `<button type="button" class="id-link" data-taxon="${esc(t.key)}">${name}</button>`}${t.name && t.name !== t.latin ? `<i>${esc(t.latin)}</i>` : ''}
-      ${t.caution ? `<span class="small id-why"><b>Perché con cautela:</b> ${esc(t.caution)}</span>` : ''}
+      ${t.caution ? `<span class="small id-why"><b>Come si mangia:</b> ${esc(t.caution)}</span>` : ''}
       ${c.contra.length ? `<span class="small id-contra">${contraText(c)}</span>` : ''}
       ${t.check_before_picking?.length ? `<details><summary>Cosa controllare</summary><ul class="reasons small">${t.check_before_picking.map((x) => `<li>${esc(x)}</li>`).join('')}</ul></details>` : ''}
       <span class="small id-more" aria-hidden="true">Scheda ›</span>
@@ -366,7 +366,7 @@ export const hasTaxonPage = (key) => { const t = TAXA.find((x) => x.key === key)
 export function renderTaxonPage(box, key) {
   const t = TAXA.find((x) => x.key === key);
   if (!t) { box.innerHTML = '<p class="muted">Specie non trovata.</p>'; return; }
-  const ph = photosOf(t), tox = esc(t.toxicity || '');
+  const ph = photosOf(t), tox = esc(t.toxicity || ''), toxL = esc(t.tox_label || t.toxicity || '');
   const look = (t.lookalike_of || []).map((id) => ({ id, o: TAXA.find((x) => x.edible_id === id && !x.lookalike_of?.length) })).filter((x) => x.o);
   const months = t.traits?.season?.length ? monthsTxt(t.traits.season) : '';
   const habitat = [].concat(t.traits?.habitat || []).map((v) => optLabel(QK('habitat'), v));
@@ -375,13 +375,13 @@ export function renderTaxonPage(box, key) {
       ${ph[0] ? `<button type="button" class="phero-img" data-photo="0" aria-label="Ingrandisci la foto"><img src="${ASSET(ph[0].file_hd || ph[0].file)}" alt="${esc(t.name || t.latin)}"></button>` : ''}
       <span class="shade"></span>
       <div class="phero-bar"><button type="button" class="fab" data-back aria-label="Indietro"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5 8 12l7 7"/></svg></button></div>
-      <div class="phero-body"><span class="pill glass tx-pill tox-${tox.replace(/\s/g, '-')}">${tox}</span>
+      <div class="phero-body"><span class="pill glass tx-pill tox-${tox.replace(/\s/g, '-')}">${toxL}</span>
         <h1 class="phero-title">${esc(t.name || t.latin)}</h1>${t.name !== t.latin ? `<p class="phero-sub"><i>${esc(t.latin)}</i></p>` : ''}</div>
     </header>
     <div class="pbody">
       ${ph.length > 1 ? `<div class="sp-strip">${ph.slice(1, 6).map((p, k) => `<button type="button" class="zoomable" data-photo="${k + 1}" aria-label="Foto ${k + 2}: ingrandisci"><img src="${ASSET(p.file)}" alt="" loading="lazy"></button>`).join('')}</div>` : ''}
       ${t.field_rules?.length ? `<div class="attention" role="note"><h3>Attenzione</h3><ul>${[...t.field_rules].sort((a, b) => (a.severity === 'critico' ? 0 : 1) - (b.severity === 'critico' ? 0 : 1)).map((r) => `<li class="${r.severity === 'critico' ? 'crit' : ''}">${esc(r.text)}</li>`).join('')}</ul></div>` : ''}
-      ${t.caution ? `<p class="id-why"><b>Perché con cautela:</b> ${esc(t.caution)}</p>` : ''}
+      ${t.caution ? `<p class="id-why"><b>Come si mangia:</b> ${esc(t.caution)}</p>` : ''}
       <h3>Come riconoscerla</h3>
       ${traitStrip(null, t)}
       ${t.check_before_picking?.length ? `<ol class="keys">${t.check_before_picking.map((x) => `<li>${esc(x)}</li>`).join('')}</ol>` : ''}
@@ -397,7 +397,7 @@ export function renderTaxonPage(box, key) {
       <p class="small muted">Riconoscerla non basta per mangiare nulla: fai controllare tutto il raccolto all'Ispettorato micologico dell'ASL. È gratuito.</p>
       ${t.sources?.length ? `<details class="sec"><summary>Fonti</summary><div class="sec-body"><ul class="small sources">${t.sources.map((x) => `<li><a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.title)}</a></li>`).join('')}</ul></div></details>` : ''}
     </div>`;
-  const lb = ph.map((p) => ({ src: ASSET(p.file_hd || p.file), alt: t.name, caption: captionHtml({ title: `<span class="tox">${tox}</span> ${esc(t.name || '')} <i>${esc(t.latin)}</i>`, credit: `Foto: ${esc(p.author || '')}${p.license ? `, ${esc(p.license)}` : ''}` }) }));
+  const lb = ph.map((p) => ({ src: ASSET(p.file_hd || p.file), alt: t.name, caption: captionHtml({ title: `<span class="tox">${toxL}</span> ${esc(t.name || '')} <i>${esc(t.latin)}</i>`, credit: `Foto: ${esc(p.author || '')}${p.license ? `, ${esc(p.license)}` : ''}` }) }));
   box.querySelectorAll('[data-photo]').forEach((b) => b.addEventListener('click', () => openLightbox(lb, +b.dataset.photo)));
 }
 export function compareCta(edibleId) {
@@ -461,7 +461,7 @@ function renderCompare(box, ref, pick) {
     return `<section class="cmp-slide" id="cmp-${esc(t.key)}" data-i="${k}" aria-label="${esc(ref.name)} e ${esc(t.name || t.latin)}">
       <div class="cmp-pair">
         ${[ref, t].map((x) => `<div class="cmp-side">
-          <figure class="cmp-fig ${toxCls(x)}"><span class="cmp-zoom">${pic(x)}</span><span class="tox">${esc(x.toxicity)}</span>
+          <figure class="cmp-fig ${toxCls(x)}"><span class="cmp-zoom">${pic(x)}</span><span class="tox">${esc(x.tox_label || x.toxicity)}</span>
             ${photoOf(x) ? `<button type="button" class="id-zoom" data-photo="${esc(x.key)}" aria-label="Ingrandisci la foto di ${esc(x.name || x.latin)}"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6"/><path d="m20 20-5-5M10.5 8v5M8 10.5h5"/></svg></button>` : ''}</figure>
           <div class="cmp-name">${nameBtn(x)}${x.name !== x.latin ? `<i>${esc(x.latin)}</i>` : ''}</div></div>`).join('')}
         <span class="cmp-vs" aria-hidden="true">vs</span>
@@ -520,7 +520,7 @@ export function openTaxon(key) {
     addEventListener('hashchange', () => { if (dlg.open) dlg.close(); });
     document.body.append(dlg);
   }
-  const ph = photoOf(t), tox = esc(t.toxicity || '');
+  const ph = photoOf(t), tox = esc(t.toxicity || ''), toxL = esc(t.tox_label || t.toxicity || '');
   // "si confonde con": porta dritto al confronto affiancato (la scheda della commestibile e' a un tocco da li')
   const look = (t.lookalike_of || []).map((id) => {
     const o = TAXA.find((x) => x.edible_id === id && !x.lookalike_of?.length);
@@ -530,9 +530,9 @@ export function openTaxon(key) {
   dlg.innerHTML = `<button type="button" class="wiz-close" aria-label="Chiudi">✕</button>
     <div class="tx-handle" data-drag aria-hidden="true"><span class="sheet-grip"></span></div>
     ${ph ? `<figure class="tx-img" data-drag><img src="${ASSET(ph.file_hd || ph.file)}" alt=""><figcaption>Foto: ${esc(ph.author)}, ${esc(ph.license)}</figcaption></figure>` : ''}
-    <div class="tx-body tox-${tox.replace(/\s/g, '-')}"><span class="tox">${tox}</span>
+    <div class="tx-body tox-${tox.replace(/\s/g, '-')}"><span class="tox">${toxL}</span>
     <h2>${esc(t.name || t.latin)}</h2>${t.name && t.name !== t.latin ? `<p class="tx-latin">${esc(t.latin)}</p>` : ''}
-    ${t.caution ? `<p class="id-why"><b>Perché con cautela:</b> ${esc(t.caution)}</p>` : ''}
+    ${t.caution ? `<p class="id-why"><b>Come si mangia:</b> ${esc(t.caution)}</p>` : ''}
     ${look.length ? `<p class="tx-vs-row"><b>Si confonde con</b>${look.join('')}</p>` : ''}
     ${t.field_rules?.length ? `<h3>Da sapere</h3><ul class="reasons">${t.field_rules.map((r) => `<li${r.severity === 'critico' ? ' class="crit"' : ''}>${esc(r.text)}</li>`).join('')}</ul>` : ''}
     ${t.check_before_picking?.length ? `<h3>Come riconoscerla</h3><ul class="reasons">${t.check_before_picking.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>` : ''}

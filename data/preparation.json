@@ -877,7 +877,8 @@
           "url": "https://it.wikipedia.org/wiki/Armillaria_mellea"
         }
       ],
-      "notes": "Tempi di prebollitura divergenti: ATS Milano e Regione Piemonte (rapporto ASL 2018-2020) dicono almeno 20 minuti; AUSL Valle d'Aosta 15-20 minuti; AUSL Bologna (pagina web) 5-10 minuti di prebollitura oppure almeno 30 minuti di cottura; ASL Biella (poster, non leggibile: server 503) secondo i risultati di ricerca 5 minuti più 15-20 di cottura. Ho scelto il più prudente: 20 minuti a pentola scoperta, acqua buttata, poi cottura completa. Essiccazione: nessuna fonte ufficiale trovata, lasciato null. La Regione Piemonte classifica Armillaria spp. come 'commestibile dopo trattamenti (commestibilità condizionata)'."
+      "notes": "Tempi di prebollitura divergenti: ATS Milano e Regione Piemonte (rapporto ASL 2018-2020) dicono almeno 20 minuti; AUSL Valle d'Aosta 15-20 minuti; AUSL Bologna (pagina web) 5-10 minuti di prebollitura oppure almeno 30 minuti di cottura; ASL Biella (poster, non leggibile: server 503) secondo i risultati di ricerca 5 minuti più 15-20 di cottura. Ho scelto il più prudente: 20 minuti a pentola scoperta, acqua buttata, poi cottura completa. Essiccazione: nessuna fonte ufficiale trovata, lasciato null. La Regione Piemonte classifica Armillaria spp. come 'commestibile dopo trattamenti (commestibilità condizionata)'.",
+      "label": "commestibile solo prebollito"
     },
     "suillus": {
       "raw": "sconsigliato",
@@ -944,7 +945,8 @@
           "url": "https://www.iris.sssup.it/retrieve/dd9e0b31-bbe7-709e-e053-3705fe0a83fd/214_vqr_Funghi.pdf"
         }
       ],
-      "notes": "ATS Milano dà la regola a livello di genere (Suillus – pinarello: la cuticola 'devè essere scartata); AUSL Bologna (scheda S. granulatus) dice 'si consiglià e avverte dell'effetto lassativo anche da cotto; Sant'Anna (S. luteus) collega alcune intossicazioni al fungo non decorticato. Per S. collinitus nessuna fonte specifica: applicata la regola di genere. Essiccazione: solo uso tradizionale (Sant'Anna), non una raccomandazione sanitaria; la parte 'dopo aver tolto la cuticolà è una mia deduzione dalla regola principale."
+      "notes": "ATS Milano dà la regola a livello di genere (Suillus – pinarello: la cuticola 'devè essere scartata); AUSL Bologna (scheda S. granulatus) dice 'si consiglià e avverte dell'effetto lassativo anche da cotto; Sant'Anna (S. luteus) collega alcune intossicazioni al fungo non decorticato. Per S. collinitus nessuna fonte specifica: applicata la regola di genere. Essiccazione: solo uso tradizionale (Sant'Anna), non una raccomandazione sanitaria; la parte 'dopo aver tolto la cuticolà è una mia deduzione dalla regola principale.",
+      "label": "commestibile senza cuticola"
     },
     "nuda": {
       "raw": "mai crudo",
@@ -1023,7 +1025,8 @@
           "url": "https://www.ausl.bologna.it/servt/dipt/dsp/uo/ian/ia/funghi/ouscoli/occhio-al-fungo-1/occhio-al-fungo/files/opuscolo-funghi-2018-ok-1.pdf"
         }
       ],
-      "notes": "Nessuna fonte ASL/Ministero trovata che nomini Lepista nuda; le fonti specifiche sono un gruppo micologico (GM Castellano: tossine termolabili, cottura completa di almeno 15 minuti a 70-80 °C), AMINT ('lievemente tossico da crudò, almeno 15 minuti dal primo bollore), Scuola Sant'Anna (intossicazioni documentate se crudo o poco cotto) e Wikipedia ('commestibile dopo completa cotturà). Ho scelto i 30 minuti, più prudenti, dell'AUSL Valle d'Aosta, che li indica in generale per le specie con tossine sensibili al calore e sconsiglia griglia/frittura. Congelamento: regola generale (AUSL Bologna opuscolo 'prima di congelarli è bene cucinarlì; GM Castellano 'cuocere sempre preventivamentè), non specifica per la specie. Nota fuori tema: si confonde con Cortinarius violacei, va fatta controllare."
+      "notes": "Nessuna fonte ASL/Ministero trovata che nomini Lepista nuda; le fonti specifiche sono un gruppo micologico (GM Castellano: tossine termolabili, cottura completa di almeno 15 minuti a 70-80 °C), AMINT ('lievemente tossico da crudò, almeno 15 minuti dal primo bollore), Scuola Sant'Anna (intossicazioni documentate se crudo o poco cotto) e Wikipedia ('commestibile dopo completa cotturà). Ho scelto i 30 minuti, più prudenti, dell'AUSL Valle d'Aosta, che li indica in generale per le specie con tossine sensibili al calore e sconsiglia griglia/frittura. Congelamento: regola generale (AUSL Bologna opuscolo 'prima di congelarli è bene cucinarlì; GM Castellano 'cuocere sempre preventivamentè), non specifica per la specie. Nota fuori tema: si confonde con Cortinarius violacei, va fatta controllare.",
+      "label": "commestibile solo ben cotto"
     },
     "procera": {
       "raw": "mai crudo",

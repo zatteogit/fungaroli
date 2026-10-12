@@ -1912,7 +1912,9 @@
         "ceppaie e legno morto di latifoglie"
       ],
       "caution": "tossico crudo o poco cotto: va prebollito, buttando l'acqua, e poi cotto a lungo.",
-      "traits_notes": "Sporata bianca (it/en wiki, MushroomExpert), bianco crema molto pallido (FN). Cappello con squamette brune fitte al centro che spariscono con l'eta' (parte della cuticola, non velo asportabile -> cap_veil false); asciutta o leggermente vischiosa/appiccicosa col bagnato (MushroomExpert, en.wiki). Lamelle adnate o leggermente decorrenti. Base del gambo: assottigliata e fusa nel cespo (en.wiki, MushroomExpert), ma 'bulboso alla base' (ER) e 'ingrossato' (it.wiki) -> tutti i valori. Carne del gambo tenace, fibrosa, coriaceo-fibrosa."
+      "traits_notes": "Sporata bianca (it/en wiki, MushroomExpert), bianco crema molto pallido (FN). Cappello con squamette brune fitte al centro che spariscono con l'eta' (parte della cuticola, non velo asportabile -> cap_veil false); asciutta o leggermente vischiosa/appiccicosa col bagnato (MushroomExpert, en.wiki). Lamelle adnate o leggermente decorrenti. Base del gambo: assottigliata e fusa nel cespo (en.wiki, MushroomExpert), ma 'bulboso alla base' (ER) e 'ingrossato' (it.wiki) -> tutti i valori. Carne del gambo tenace, fibrosa, coriaceo-fibrosa.",
+      "tox_label": "commestibile solo prebollito",
+      "tox_short": "solo prebollito"
     },
     "virescens": {
       "latin": "Russula virescens; Russula cyanoxantha",
@@ -2251,7 +2253,9 @@
         "pino d'aleppo"
       ],
       "caution": "la pellicina vischiosa del cappello è lassativa: va tolta. Solo esemplari sodi, cotti.",
-      "traits_notes": "Sporata: ocra (luteus), ocra/bruno-siena (granulatus), bruno-oliva (collinitus) -> unione ocra/bruno/verde-oliva. Cappello viscido da umido, liscio/semiopaco da secco in tutte e tre. cap_veil null: S. luteus ha spesso lembi di velo pendenti dal margine (first-nature) mentre granulatus e collinitus hanno velo nudo; il gruppo e' misto. Carne: soda (luteus, gambo sodo in granulatus) ma tenera/molle nel cappello; gambo di luteus descritto anche fibroso. Base: leggermente allargata (luteus, granulatus) = normale; attenuata con micelio rosa in collinitus."
+      "traits_notes": "Sporata: ocra (luteus), ocra/bruno-siena (granulatus), bruno-oliva (collinitus) -> unione ocra/bruno/verde-oliva. Cappello viscido da umido, liscio/semiopaco da secco in tutte e tre. cap_veil null: S. luteus ha spesso lembi di velo pendenti dal margine (first-nature) mentre granulatus e collinitus hanno velo nudo; il gruppo e' misto. Carne: soda (luteus, gambo sodo in granulatus) ma tenera/molle nel cappello; gambo di luteus descritto anche fibroso. Base: leggermente allargata (luteus, granulatus) = normale; attenuata con micelio rosa in collinitus.",
+      "tox_label": "commestibile senza cuticola",
+      "tox_short": "senza cuticola"
     },
     "terreum": {
       "latin": "Tricholoma terreum",
@@ -2560,7 +2564,9 @@
         "cerro"
       ],
       "caution": "tossica cruda o poco cotta: va cotta a lungo. Si confonde con cortinari violetti.",
-      "traits_notes": "Sporata rosa pallido / rosa-camoscio ('pale pinkish-buff') -> aggiunto anche crema perche' in strato sottile puo' sembrare crema. Cappello liscio, glabro, 'slightly tacky when moist' (mushroomexpert) -> anche viscida. Nessun resto di velo/cortina (importante distinzione da Cortinarius viola). Lamelle adnato-uncinate/smarginate. Gambo uguale o ingrossato-clavato alla base (non un bulbo marginato come nei Cortinarius). Carne elastica nel gambo, fragile nel cappello; gambo fibroso/fibrilloso."
+      "traits_notes": "Sporata rosa pallido / rosa-camoscio ('pale pinkish-buff') -> aggiunto anche crema perche' in strato sottile puo' sembrare crema. Cappello liscio, glabro, 'slightly tacky when moist' (mushroomexpert) -> anche viscida. Nessun resto di velo/cortina (importante distinzione da Cortinarius viola). Lamelle adnato-uncinate/smarginate. Gambo uguale o ingrossato-clavato alla base (non un bulbo marginato come nei Cortinarius). Carne elastica nel gambo, fragile nel cappello; gambo fibroso/fibrilloso.",
+      "tox_label": "commestibile solo ben cotto",
+      "tox_short": "solo ben cotto"
     },
     "tylopilus-felleus": {
       "latin": "Tylopilus felleus",
@@ -3129,7 +3135,9 @@
         "aereus"
       ],
       "caution": "tossico crudo o poco cotto: commestibile solo dopo cottura prolungata.",
-      "traits_notes": "Sporata bruno-oliva (mykoweb: bruno-ocracea). Cappello inizialmente vellutato/feltrato, poi liscio e lucido (first-nature); mykoweb: superficie asciutta. Nessuna fonte letta lo dice viscido, quindi 'viscida' non inclusa (dubbio: alcuni autori lo descrivono leggermente untuoso da umido). Gambo piu' o meno cilindrico (first-nature) o clavato/subclavato (mykoweb) -> normale + bulbosa. Carne soda, compatta, solida. La pagina it.wiki della specie non esiste (404); la scheda mykoweb si riferisce al concetto americano di B. erythropus, usata solo come conferma."
+      "traits_notes": "Sporata bruno-oliva (mykoweb: bruno-ocracea). Cappello inizialmente vellutato/feltrato, poi liscio e lucido (first-nature); mykoweb: superficie asciutta. Nessuna fonte letta lo dice viscido, quindi 'viscida' non inclusa (dubbio: alcuni autori lo descrivono leggermente untuoso da umido). Gambo piu' o meno cilindrico (first-nature) o clavato/subclavato (mykoweb) -> normale + bulbosa. Carne soda, compatta, solida. La pagina it.wiki della specie non esiste (404); la scheda mykoweb si riferisce al concetto americano di B. erythropus, usata solo come conferma.",
+      "tox_label": "commestibile solo ben cotto",
+      "tox_short": "solo ben cotto"
     },
     "imleria-badia": {
       "latin": "Imleria badia",
@@ -6317,7 +6325,9 @@
         "mellea"
       ],
       "caution": "come il chiodino: tossico crudo, va prebollito e cotto a lungo.",
-      "traits_notes": "Sporata bianca (MushroomExpert) o bianca/crema pallido (Wikipedia IT). Cappello asciutto con squamette più scure. Niente anello e velo nudo, quindi cap_veil false. La carne è fragile nel cappello ed elastica-coriacea, quasi legnosa, nel gambo, che è fibroso. Lamelle appena decorrenti o quasi (adnate-decorrenti). Gambo assottigliato alla base, con basi saldate nel cespo."
+      "traits_notes": "Sporata bianca (MushroomExpert) o bianca/crema pallido (Wikipedia IT). Cappello asciutto con squamette più scure. Niente anello e velo nudo, quindi cap_veil false. La carne è fragile nel cappello ed elastica-coriacea, quasi legnosa, nel gambo, che è fibroso. Lamelle appena decorrenti o quasi (adnate-decorrenti). Gambo assottigliato alla base, con basi saldate nel cespo.",
+      "tox_label": "commestibile solo prebollito",
+      "tox_short": "solo prebollito"
     },
     "russula-heterophylla": {
       "latin": "Russula heterophylla",
@@ -8038,7 +8048,9 @@
         "nuda"
       ],
       "caution": "accumula arsenico dal suolo: poca, e mai da zone contaminate.",
-      "traits_notes": "Cappello igrofano, quasi glabro o finemente forforaceo/squamuloso al centro ('finely hairy-scaly, or nearly bald'). Lamelle spaziate, sinuate (en.wiki) o adnate, raramente decorrenti (mushroomexpert). Gambo fibroso, cavo, tenace, base uguale o appena ingrossata con fibrille/micelio lilla: 'normale'. Sporata bianca. Pagina it.wiki non disponibile (404)."
+      "traits_notes": "Cappello igrofano, quasi glabro o finemente forforaceo/squamuloso al centro ('finely hairy-scaly, or nearly bald'). Lamelle spaziate, sinuate (en.wiki) o adnate, raramente decorrenti (mushroomexpert). Gambo fibroso, cavo, tenace, base uguale o appena ingrossata con fibrille/micelio lilla: 'normale'. Sporata bianca. Pagina it.wiki non disponibile (404).",
+      "tox_label": "commestibile con cautela",
+      "tox_short": "con cautela"
     }
   },
   "_note_traits_2": "Caratteri aggiunti il 2026-10-12 (sporata, velo, lattice, consistenza, superficie, attaccatura, base): ogni valore verificato su fonti lette, elencate in sources; dubbi e scelte in traits_notes. Taxa tossici e mortali: valori larghi per non escluderli; commestibili: solo valori con fonte."

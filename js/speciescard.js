@@ -114,6 +114,34 @@ function kitchen(id) {
   </section>`;
 }
 
+// Modello 3D: Viewer API di Sketchfab per sostituire lo sfondo scelto dall'autore con il fondo dell'app.
+// Il colore pieno e' consentito a tutti; il trasparente richiede un account Pro (docs Viewer API, setBackground).
+const SKETCHFAB_API = 'https://static.sketchfab.com/api/sketchfab-viewer-1.12.1.js';
+let sfLoading = null;
+const loadSketchfab = () => sfLoading || (sfLoading = new Promise((ok, ko) => {
+  if (globalThis.Sketchfab) return ok();
+  const sc = document.createElement('script'); sc.src = SKETCHFAB_API; sc.onload = () => ok(); sc.onerror = ko; document.head.append(sc);
+}));
+function open3d(box, model, name) {
+  const rgb = (getComputedStyle(box).backgroundColor.match(/[\d.]+/g) || [243, 239, 231]).slice(0, 3).map((x) => +x / 255);
+  box.classList.add('loading');
+  box.innerHTML = `<iframe title="Modello 3D ${esc(name)}" allow="autoplay; fullscreen; xr-spatial-tracking" allowfullscreen></iframe><span class="sp-3d-wait">Carico il modello…</span>`;
+  const frame = box.querySelector('iframe');
+  const show = () => box.classList.remove('loading');
+  const fallback = () => { frame.src = model.embed.replace('autostart=0', 'autostart=1'); frame.addEventListener('load', show, { once: true }); };
+  loadSketchfab().then(() => {
+    new globalThis.Sketchfab('1.12.1', frame).init(model.uid, {
+      autostart: 1, ui_infos: 0, ui_watermark: 0, ui_stop: 0, ui_help: 0, ui_settings: 0, ui_vr: 0, ui_inspector: 0, ui_annotations: 0, transparent: 0,
+      success: (api) => {
+        api.start();
+        api.addEventListener('viewerready', () => api.setBackground({ color: rgb }, () => setTimeout(show, 150)));
+        setTimeout(show, 6000); // se lo sfondo non si puo' cambiare, il modello si mostra comunque
+      },
+      error: fallback,
+    });
+  }).catch(fallback);
+}
+
 // lista di controllo: si spunta toccando (o con spazio/invio)
 function toggleCheck(li) { li.setAttribute('aria-checked', li.getAttribute('aria-checked') !== 'true'); tick(); }
 document.addEventListener('keydown', (e) => {
@@ -163,7 +191,12 @@ export function renderSpeciesDetail(body, id) {
       <div class="phero-bar"><button type="button" class="fab" data-back aria-label="Indietro"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5 8 12l7 7"/></svg></button>
         ${photos[0] ? '<button type="button" class="fab" data-photo="0" aria-label="Foto a schermo intero"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7"/></svg></button>' : ''}</div>
       <div class="phero-body">
-        <p class="sp-badges">${d.edibility ? `<span class="pill glass">${esc(d.edibility)}</span>` : ''}${sp.minCap ? `<span class="pill glass">cappello ≥ ${sp.minCap} cm</span>` : sp.minCap === 0 ? '<span class="pill glass">nessuna taglia minima</span>' : ''}</p>
+        <p class="sp-badges">${(() => {
+          // "con cautela" non dice cosa fare: l'etichetta dice la condizione e porta alla sezione In cucina
+          const lab = PREP?.species?.[id]?.label;
+          if (lab) return `<button type="button" class="pill caution" data-jump-k="k-h-${id}"><i aria-hidden="true">!</i>${esc(lab)}</button>`;
+          return d.edibility ? `<span class="pill glass">${esc(d.edibility)}</span>` : '';
+        })()}${sp.minCap ? `<span class="pill glass">cappello ≥ ${sp.minCap} cm</span>` : sp.minCap === 0 ? '<span class="pill glass">nessuna taglia minima</span>' : ''}</p>
         <h1 class="phero-title">${esc(d.name || sp.name)}</h1>
         <p class="phero-sub"><i>${esc(d.latin || sp.latin)}</i></p>
       </div>
@@ -193,7 +226,7 @@ export function renderSpeciesDetail(body, id) {
     </div>`;
   body.querySelector('.sp-3d button')?.addEventListener('click', (e) => {
     const box = e.target.closest('.sp-3d');
-    box.innerHTML = `<iframe title="Modello 3D ${esc(sp.name)}" src="${esc(box.dataset.embed.replace('autostart=0', 'autostart=1'))}" allow="autoplay; fullscreen; xr-spatial-tracking" allowfullscreen></iframe>`;
+    open3d(box, model, sp.name);
     const full = body.querySelector('.sp-3d-full');
     if (full && box.requestFullscreen) {
       full.hidden = false;
@@ -215,6 +248,7 @@ export function renderSpeciesDetail(body, id) {
     caption: captionHtml({ title: `<span class="tox tox-${esc(x.l.toxicity).replace(/\s/g, '-')}">${esc(x.l.toxicity)}</span> ${esc(x.l.name || '')} <i>${esc(x.l.latin)}</i>`, text: `Differenza: ${esc(x.l.how_to_tell)}`,
       credit: `${creditText(p)} · <a href="https://www.inaturalist.org/taxa/search?q=${encodeURIComponent(x.key)}" target="_blank" rel="noopener">altre foto</a> · <a href="https://it.wikipedia.org/w/index.php?search=${encodeURIComponent(x.key)}" target="_blank" rel="noopener">Wikipedia</a>` }),
   })));
+  body.querySelector('[data-jump-k]')?.addEventListener('click', (e) => document.getElementById(e.currentTarget.dataset.jumpK)?.closest('.kitchen')?.scrollIntoView({ behavior: 'smooth', block: 'start' }));
   body.querySelectorAll('.look-open[data-taxon]').forEach((b) => b.addEventListener('click', () => openTaxon(b.dataset.taxon)));
   body.querySelectorAll('[data-look]').forEach((b) => b.addEventListener('click', () => {
     const i = lookItems.findIndex((it) => it.key === b.dataset.look);

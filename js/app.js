@@ -460,7 +460,7 @@ function dayChips(box, selected, onPick, { withAll = false } = {}) {
     b.className = 'day';
     b.setAttribute('role', 'tab');
     b.setAttribute('aria-selected', String(selected === o));
-    b.innerHTML = `<span class="d1">${top}</span><span class="d2">${mid}</span>${sc != null ? `<span class="d3"><span class="dot" style="--dc:var(${scoreVar(sc)});--dcs:var(${scoreVar(sc).replace('--s', '--ps')})"></span>${sc}</span>` : '<span class="d3">giorni</span>'}`;
+    b.innerHTML = `<span class="d1">${top}</span><span class="d2">${mid}</span>${sc != null ? `<span class="d3"><span class="dot" style="--dc:var(${scoreVar(sc)});--dcs:var(${scoreVar(sc).replace('--s', '--ps')})"></span><b class="pc">${sc}</b></span>` : '<span class="d3">giorni</span>'}`;
     b.addEventListener('click', () => onPick(o));
     box.appendChild(b);
   };
@@ -1027,7 +1027,7 @@ function renderDetail() {
         ${p.species.warning ? `<div class="warnline">⚠ ${esc(p.species.warning)}</div>` : ''}</td>
       <td class="num">${p.band} m</td>
       <td><div class="bar"><i style="width:${p.score}%;background:var(${scoreVar(p.score)})"></i></div></td>
-      <td class="num"><b>${p.score}</b></td>
+      <td class="num"><b class="pc">${p.score}</b></td>
     </tr>`).join('');
 
   const sb = series[z.id][bandIndex(z, best.band)];
@@ -1074,7 +1074,7 @@ function renderDetail() {
     const sc = adjusted(z, x.score, x);
     const b = document.createElement('button');
     b.type = 'button'; b.className = 'day'; b.setAttribute('role', 'tab'); b.setAttribute('aria-selected', String(o === state.dayOffset));
-    b.innerHTML = `<span class="d1">${o === 0 ? 'Oggi' : o === 1 ? 'Dom' : fmtDate(x.date, { weekday: 'short' }).replace('.', '')}</span><span class="d2">${fmtDate(x.date, { day: 'numeric' })}</span><span class="d3"><span class="dot" style="--dc:var(${scoreVar(sc)});--dcs:var(${scoreVar(sc).replace('--s', '--ps')})"></span>${sc}</span>`;
+    b.innerHTML = `<span class="d1">${o === 0 ? 'Oggi' : o === 1 ? 'Dom' : fmtDate(x.date, { weekday: 'short' }).replace('.', '')}</span><span class="d2">${fmtDate(x.date, { day: 'numeric' })}</span><span class="d3"><span class="dot" style="--dc:var(${scoreVar(sc)});--dcs:var(${scoreVar(sc).replace('--s', '--ps')})"></span><b class="pc">${sc}</b></span>`;
     b.addEventListener('click', () => soft(() => { history.replaceState(null, '', `#/zona/${z.id}/${o}`); state.dayOffset = o; renderDetail(); }));
     zd.appendChild(b);
   }

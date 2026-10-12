@@ -1375,3 +1375,26 @@ html:has(dialog[open]:modal) body { overflow: hidden; }
 .tx-vs-ic { width: 26px; height: 26px; border-radius: 50%; display: grid; place-items: center; background: var(--surface); font: italic 700 12px/1 var(--font-display); color: var(--text); }
 .tx-look-main small { display: block; margin-top: 4px; }
 .tx-sheet { font-size: 13px; color: var(--text-2); text-decoration: none; padding-left: 76px; }
+
+/* commestibile a condizione (solo cotto, solo prebollito, senza cuticola): base verde dei commestibili + anello e "!" ambra.
+   Non neutro, ma nemmeno coi colori dei velenosi */
+:root { --caution: #b26b00; --caution-bg: #eef3dc; --caution-ink: #3a4a12; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --caution: #f0b04a; --caution-bg: #26301a; --caution-ink: #dfe9c4; } }
+:root[data-theme="dark"] { --caution: #f0b04a; --caution-bg: #26301a; --caution-ink: #dfe9c4; }
+.id-card.tox-commestibile-con-cautela .tox, .cmp-fig.tox-commestibile-con-cautela .tox, .tx-body.tox-commestibile-con-cautela .tox, .tx-pill.tox-commestibile-con-cautela, .sr-badge.tox-commestibile-con-cautela {
+  background: var(--caution-bg); color: var(--caution-ink); box-shadow: inset 0 0 0 1.5px var(--caution);
+}
+.pill.caution { display: inline-flex; align-items: center; gap: 7px; border: 0; font: inherit; font-size: 13px; font-weight: 700; cursor: pointer; padding: 6px 12px 6px 6px; border-radius: 999px; background: var(--caution-bg); color: var(--caution-ink); box-shadow: inset 0 0 0 1.5px var(--caution), 0 2px 8px rgb(0 0 0 / .25); }
+.pill.caution i { width: 20px; height: 20px; border-radius: 50%; display: grid; place-items: center; background: var(--caution); color: #fff; font: 800 12px/1 var(--font-body); font-style: normal; }
+.pill.caution::after { content: '↓'; font-weight: 700; opacity: .7; }
+.phero-body .pill.caution, .sp-badges .pill.caution { pointer-events: auto; position: relative; z-index: 3; }
+.kitchen { scroll-margin-top: calc(var(--appbar-h) + env(safe-area-inset-top, 0px) + 12px); }
+.sp-3d.loading iframe { opacity: 0; }
+.sp-3d iframe { transition: opacity .35s; }
+.sp-3d-wait { position: absolute; inset: 0; display: none; place-items: center; font-size: 13px; color: var(--muted); }
+.sp-3d.loading .sp-3d-wait { display: grid; }
+
+/* indice sempre con il "%": aggiunto in CSS, cosi' il numero resta leggibile dal conteggio animato */
+.ring b::after, .sp-pill b::after, .pc::after { content: '%'; font-size: .55em; font-weight: 700; margin-left: 1px; opacity: .85; }
+.ring-sm b::after { font-size: .6em; }
+.d3 .pc { font-weight: inherit; }
