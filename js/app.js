@@ -108,8 +108,9 @@ async function init() {
   initJournal({ zones, predict, getZoneId: () => state.zoneId || zones[0].id, zoneImage: (zid) => zoneMedia[zid]?.file || speciesPhoto(SPECIES[0].id)?.file });
   route(); // le pagine che non dipendono dal meteo (specie, diario, info) compaiono subito
   await refreshWeather(false);
-  if (embedded || review) $('#refresh').hidden = true;
-  else $('#refresh').addEventListener('click', () => refreshWeather(true));
+  // ricaricare il meteo e' raro (si aggiorna da solo dopo un'ora): sta sulla scritta dell'aggiornamento, non nella barra
+  if (embedded || review) $('#refresh').disabled = true;
+  else $('#refresh').addEventListener('click', () => { $('#refresh').classList.add('spin'); refreshWeather(true).finally(() => $('#refresh').classList.remove('spin')); });
   matchMedia('(prefers-color-scheme: dark)').addEventListener('change', renderAll);
   let rt;
   addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(() => results && state.view === 'zona' && renderDetail(), 200); });

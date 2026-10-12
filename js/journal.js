@@ -343,45 +343,86 @@ export function initJournal({ zones, predict, getZoneId, zoneImage = () => '' })
   renderList();
   const storageBox = document.getElementById('journal-storage');
 
+  // collega questo dispositivo con il codice di famiglia (dal campo o dal QR di un altro dispositivo)
+  async function connect(code, msg) {
+    if (msg) msg.textContent = 'Collego…';
+    const rs = remoteStore(code);
+    try {
+      const remoteEntries = await rs.list();
+      // carica online le uscite salvate finora solo in questo browser
+      const ids = new Set(remoteEntries.map((e) => e.id));
+      for (const e of entries) if (!ids.has(e.id)) await rs.put(e);
+      setToken(code);
+      store = rs;
+      entries = await rs.list();
+      sortEntries();
+      renderStorage();
+      renderList(`Diario collegato: ${entries.length} uscite sincronizzate.`);
+      return true;
+    } catch (e) {
+      if (msg) msg.textContent = e.status === 401 ? 'Codice non valido: controlla di averlo copiato tutto.' : 'Collegamento non riuscito, riprova tra poco.';
+      return false;
+    }
+  }
+  const PHONES = '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="8" height="14" rx="2"/><rect x="13" y="3" width="8" height="16" rx="2"/><path d="M6.5 16h1M16.5 14h1"/></svg>';
+  const linkFor = (code) => `${location.origin}${location.pathname}#/diario/collega/${encodeURIComponent(code)}`;
+  let qrLib = null;
+  const loadQr = () => qrLib || (qrLib = new Promise((ok, ko) => { if (globalThis.qrcode) return ok(); const sc = document.createElement('script'); sc.src = 'https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js'; sc.onload = ok; sc.onerror = ko; document.head.append(sc); }));
+
   function renderStorage(remote) {
     if (store.kind === 'db') {
       storageBox.innerHTML = 'Il diario è salvato nel tuo spazio privato di questa pagina: lo ritrovi da qualsiasi dispositivo.';
     } else if (store.kind === 'remote') {
-      storageBox.innerHTML = `${store.offline ? 'Sei offline: vedi l\'ultima copia scaricata. ' : ''}Diario sincronizzato: lo ritrovi su tutti i dispositivi collegati con lo stesso codice. <button type="button" class="link-btn small" id="j-disconnect">Scollega questo dispositivo</button>`;
+      storageBox.innerHTML = `<div class="sync-card ok"><span class="sync-ic">${PHONES}</span><div><b>Diario sincronizzato</b><p class="small">${store.offline ? 'Sei offline: vedi l\'ultima copia scaricata. ' : ''}Lo ritrovi su tutti i dispositivi collegati.</p></div></div>
+        <button type="button" class="btn primary" id="j-share">Collega un altro dispositivo</button>
+        <div class="sync-qr" id="j-qr" hidden></div>
+        <button type="button" class="link-btn small" id="j-disconnect">Scollega questo dispositivo</button>`;
       storageBox.querySelector('#j-disconnect').addEventListener('click', () => { setToken(''); location.reload(); });
+      storageBox.querySelector('#j-share').addEventListener('click', async (e) => {
+        const box = storageBox.querySelector('#j-qr'), url = linkFor(getToken());
+        e.currentTarget.hidden = true; box.hidden = false;
+        box.innerHTML = `<p><b>Sull'altro telefono inquadra il codice con la fotocamera</b> e apri il link: si collega da solo.</p><div class="qr-img" aria-label="Codice QR per collegare un altro dispositivo"></div>
+          <button type="button" class="btn ghost" id="j-copy">Oppure copia il link</button>
+          <p class="small muted">Chi ha questo codice può leggere e scrivere il diario: mostralo solo ai tuoi.</p>`;
+        box.querySelector('#j-copy').addEventListener('click', (ev) => navigator.clipboard?.writeText(url).then(() => { ev.target.textContent = 'Link copiato'; }));
+        try { await loadQr(); const q = globalThis.qrcode(0, 'M'); q.addData(url); q.make(); box.querySelector('.qr-img').innerHTML = q.createSvgTag({ cellSize: 6, margin: 2, scalable: true }); }
+        catch { box.querySelector('.qr-img').innerHTML = '<p class="small">Senza rete non posso disegnare il QR: usa "copia il link".</p>'; }
+      });
     } else if (remote === 'needs_code') {
       storageBox.innerHTML = `
-        <form class="j-connect" id="j-connect">
-          <label for="j-code">Il diario ora è solo in questo browser. Inserisci il codice diario per sincronizzarlo su tutti i dispositivi:</label>
-          <div class="j-connect-row"><input id="j-code" type="password" autocomplete="current-password" class="wiz-input" placeholder="Codice diario" required>
-          <button type="submit" class="btn primary">Collega</button></div>
-          <p class="j-connect-msg small" role="status"></p>
-        </form>`;
+        <div class="sync-card"><span class="sync-ic">${PHONES}</span><div><b>Ritrova il diario su tutti i dispositivi</b>
+          <p class="small">Ora le uscite sono salvate solo su questo dispositivo.</p></div></div>
+        <ol class="sync-steps">
+          <li>Sul telefono dove il diario è già collegato apri <b>Diario › Collega un altro dispositivo</b>.</li>
+          <li>Inquadra il codice QR con la fotocamera di questo telefono e apri il link. Fatto.</li>
+        </ol>
+        <details class="sync-code"><summary>Non hai l'altro telefono a portata di mano? Inserisci il codice</summary>
+          <form class="j-connect" id="j-connect">
+            <div class="j-connect-row"><span class="pw"><input id="j-code" type="password" autocomplete="current-password" class="wiz-input" placeholder="Codice di famiglia" required><button type="button" class="pw-eye" aria-label="Mostra il codice">👁</button></span>
+            <button type="submit" class="btn primary">Collega</button></div>
+            <p class="j-connect-msg small" role="status"></p>
+          </form></details>`;
+      const inp = storageBox.querySelector('#j-code');
+      storageBox.querySelector('.pw-eye').addEventListener('click', (e) => { const show = inp.type === 'password'; inp.type = show ? 'text' : 'password'; e.currentTarget.setAttribute('aria-label', show ? 'Nascondi il codice' : 'Mostra il codice'); });
       storageBox.querySelector('#j-connect').addEventListener('submit', async (ev) => {
         ev.preventDefault();
-        const code = storageBox.querySelector('#j-code').value.trim();
-        const msg = storageBox.querySelector('.j-connect-msg');
-        msg.textContent = 'Collego…';
-        const rs = remoteStore(code);
-        try {
-          const remoteEntries = await rs.list();
-          // carica online le uscite salvate finora solo in questo browser
-          const ids = new Set(remoteEntries.map((e) => e.id));
-          for (const e of entries) if (!ids.has(e.id)) await rs.put(e);
-          setToken(code);
-          store = rs;
-          entries = await rs.list();
-          sortEntries();
-          renderStorage();
-          renderList(`Diario collegato: ${entries.length} uscite sincronizzate.`);
-        } catch (e) {
-          msg.textContent = e.status === 401 ? 'Codice non valido.' : 'Collegamento non riuscito, riprova tra poco.';
-        }
+        await connect(inp.value.trim(), storageBox.querySelector('.j-connect-msg'));
       });
     } else {
       storageBox.innerHTML = 'Il diario resta solo in questo browser. Esporta ogni tanto il file per non perderlo o per spostarlo su un altro dispositivo.';
     }
   }
+
+  // link dal QR: #/diario/collega/<codice>. Il codice esce subito dalla barra degli indirizzi e dalla cronologia
+  const fromLink = () => {
+    const m = location.hash.match(/^#\/diario\/collega\/(.+)$/);
+    if (!m) return;
+    let code = ''; try { code = decodeURIComponent(m[1]); } catch { return; }
+    history.replaceState(null, '', '#/diario');
+    connect(code, null).then((ok) => { if (!ok) renderList('Il link non ha funzionato: inserisci il codice a mano.'); });
+  };
+  addEventListener('hashchange', fromLink);
+
 
   (async () => {
     let st = await openStore();
@@ -399,6 +440,7 @@ export function initJournal({ zones, predict, getZoneId, zoneImage = () => '' })
     sortEntries();
     renderStorage(remote);
     renderList();
+    fromLink(); // dopo l'avvio: il collegamento dal QR non deve essere sovrascritto
   })();
   return { refresh: renderList };
 }
