@@ -1,7 +1,7 @@
 // Scheda dettagliata di una specie: foto reali, riconoscimento, sosia pericolosi,
 // calendario delle osservazioni (GBIF) a confronto con il modello, modello 3D.
 
-import { traitStrip, compareCta } from './identify.js';
+import { traitStrip, compareCta, taxonKeyByLatin, openTaxon } from './identify.js';
 import { tick } from './motion.js';
 import { SPECIES } from './species.js';
 import { openLightbox, captionHtml } from './lightbox.js';
@@ -75,11 +75,12 @@ function lookalikes(d) {
   return `<h3>Non confonderlo con</h3><ul class="look">${list.map((l) => {
     const key = (l.latin || '').match(/[A-Z][a-z]+ [a-z]+/)?.[0];
     const m = MEDIA?.lookalikes?.[key]?.ref || MEDIA?.lookalikes?.[key]?.inat?.[0];
-    return `<li class="${TOX[l.toxicity] || ''}">
-      <button type="button" class="look-btn" data-look="${esc(key || '')}" ${m ? '' : 'disabled'} aria-label="${esc(l.name || l.latin)}: ingrandisci la foto">
-        ${m ? `<img src="${ASSET(m.file)}" alt="" loading="lazy"><span class="zoom-ic" aria-hidden="true">⤢</span>` : '<span class="look-ph">senza foto</span>'}
-      </button>
-      <div><div class="look-name"><span class="tox">${esc(l.toxicity)}</span> ${esc(l.name || '')} <i>${esc(l.latin)}</i></div>
+    // tutta la riga apre la scheda del sosia; la lente ingrandisce la foto
+    const tk = taxonKeyByLatin(l.latin);
+    return `<li class="${TOX[l.toxicity] || ''}${tk ? ' look-link' : ''}">
+      <span class="look-btn">${m ? `<img src="${ASSET(m.file)}" alt="" loading="lazy">` : '<span class="look-ph">senza foto</span>'}
+        ${m ? `<button type="button" class="id-zoom" data-look="${esc(key || '')}" aria-label="${esc(l.name || l.latin)}: ingrandisci la foto"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6"/><path d="m20 20-5-5M10.5 8v5M8 10.5h5"/></svg></button>` : ''}</span>
+      <div><div class="look-name"><span class="tox">${esc(l.toxicity)}</span> ${tk ? `<button type="button" class="look-open" data-taxon="${esc(tk)}">${esc(l.name || '')} <i>${esc(l.latin)}</i><span aria-hidden="true"> ›</span></button>` : `${esc(l.name || '')} <i>${esc(l.latin)}</i>`}</div>
       <div class="look-diff">${esc(l.how_to_tell)}</div></div></li>`;
   }).join('')}</ul>`;
 }
@@ -214,6 +215,7 @@ export function renderSpeciesDetail(body, id) {
     caption: captionHtml({ title: `<span class="tox tox-${esc(x.l.toxicity).replace(/\s/g, '-')}">${esc(x.l.toxicity)}</span> ${esc(x.l.name || '')} <i>${esc(x.l.latin)}</i>`, text: `Differenza: ${esc(x.l.how_to_tell)}`,
       credit: `${creditText(p)} · <a href="https://www.inaturalist.org/taxa/search?q=${encodeURIComponent(x.key)}" target="_blank" rel="noopener">altre foto</a> · <a href="https://it.wikipedia.org/w/index.php?search=${encodeURIComponent(x.key)}" target="_blank" rel="noopener">Wikipedia</a>` }),
   })));
+  body.querySelectorAll('.look-open[data-taxon]').forEach((b) => b.addEventListener('click', () => openTaxon(b.dataset.taxon)));
   body.querySelectorAll('[data-look]').forEach((b) => b.addEventListener('click', () => {
     const i = lookItems.findIndex((it) => it.key === b.dataset.look);
     if (i >= 0) openLightbox(lookItems, i);

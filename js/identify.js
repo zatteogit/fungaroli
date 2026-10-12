@@ -335,8 +335,7 @@ function diffs(ref, t) {
   }).filter(Boolean);
 }
 // tessere dei caratteri, con gli stessi disegni di Riconosci
-export function traitStrip(edibleId) {
-  const t = refOf(edibleId);
+export function traitStrip(edibleId, t = refOf(edibleId)) {
   if (!t) return '';
   const tr = t.traits || {};
   const tile = (art, k, v) => `<li><span class="ts-art" aria-hidden="true">${art}</span><span class="ts-k">${esc(k)}</span><span class="ts-v">${esc(v)}</span></li>`;
@@ -350,13 +349,63 @@ export function traitStrip(edibleId) {
   if (tr.stem_volva != null) out.push(tile(ART[`volva_${tr.stem_volva}`], 'Volva', tr.stem_volva ? 'sì' : 'no'));
   if (tr.stem_reticulum) out.push(tile(ART.ret_true, 'Reticolo', 'sì'));
   if (tr.flesh_change) { const f = [].concat(tr.flesh_change); out.push(tile(`<span class="id-flesh" style="background:linear-gradient(100deg, #f4ecd8 30%, ${FLESH[f[0]]} 85%)"></span>`, 'Al taglio', orList(f.map((v) => (v === 'nessuno' ? 'non cambia' : `vira al ${v}`))))); }
+  if (tr.cap_veil) out.push(tile(VEIL.true, 'Verruche', 'sì'));
+  if (tr.stem_base?.length) out.push(tile(BASE[tr.stem_base[0]], 'Base', orList(tr.stem_base.map((v) => optLabel(Q('stem_base'), v)))));
+  if (tr.spore_print?.length) out.push(tile(sporeArt(tr.spore_print[0]), 'Sporata', orList(tr.spore_print.map((v) => optLabel(Q('spore_print'), v)))));
   return `<ul class="trait-strip" aria-label="Caratteri principali">${out.join('')}</ul>`;
+}
+
+// pagina completa di un velenoso o di un sosia (le commestibili hanno la loro scheda)
+const photosOf = (t) => {
+  if (t.edible_id && !t.lookalike_of?.length) { const m = MEDIA.species?.[t.edible_id]; return [m?.ref, ...(m?.inat || [])].filter(Boolean); }
+  const L = MEDIA.lookalikes || {}, b = t.latin?.match(/[A-Z][a-z]+ [a-z]+/)?.[0];
+  const m = L[b]; const first = photoOf(t);
+  return [first, ...(m?.inat || [])].filter((x, i, a) => x && a.findIndex((y) => y?.file === x.file) === i);
+};
+export const hasTaxonPage = (key) => { const t = TAXA.find((x) => x.key === key); return !!t && !(t.edible_id && !t.lookalike_of?.length); };
+export function renderTaxonPage(box, key) {
+  const t = TAXA.find((x) => x.key === key);
+  if (!t) { box.innerHTML = '<p class="muted">Specie non trovata.</p>'; return; }
+  const ph = photosOf(t), tox = esc(t.toxicity || '');
+  const look = (t.lookalike_of || []).map((id) => ({ id, o: TAXA.find((x) => x.edible_id === id && !x.lookalike_of?.length) })).filter((x) => x.o);
+  const months = t.traits?.season?.length ? monthsTxt(t.traits.season) : '';
+  const habitat = [].concat(t.traits?.habitat || []).map((v) => optLabel(QK('habitat'), v));
+  box.innerHTML = `
+    <header class="phero phero-tall">
+      ${ph[0] ? `<button type="button" class="phero-img" data-photo="0" aria-label="Ingrandisci la foto"><img src="${ASSET(ph[0].file_hd || ph[0].file)}" alt="${esc(t.name || t.latin)}"></button>` : ''}
+      <span class="shade"></span>
+      <div class="phero-bar"><button type="button" class="fab" data-back aria-label="Indietro"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5 8 12l7 7"/></svg></button></div>
+      <div class="phero-body"><span class="pill glass tx-pill tox-${tox.replace(/\s/g, '-')}">${tox}</span>
+        <h1 class="phero-title">${esc(t.name || t.latin)}</h1>${t.name !== t.latin ? `<p class="phero-sub"><i>${esc(t.latin)}</i></p>` : ''}</div>
+    </header>
+    <div class="pbody">
+      ${ph.length > 1 ? `<div class="sp-strip">${ph.slice(1, 6).map((p, k) => `<button type="button" class="zoomable" data-photo="${k + 1}" aria-label="Foto ${k + 2}: ingrandisci"><img src="${ASSET(p.file)}" alt="" loading="lazy"></button>`).join('')}</div>` : ''}
+      ${t.field_rules?.length ? `<div class="attention" role="note"><h3>Attenzione</h3><ul>${[...t.field_rules].sort((a, b) => (a.severity === 'critico' ? 0 : 1) - (b.severity === 'critico' ? 0 : 1)).map((r) => `<li class="${r.severity === 'critico' ? 'crit' : ''}">${esc(r.text)}</li>`).join('')}</ul></div>` : ''}
+      ${t.caution ? `<p class="id-why"><b>Perché con cautela:</b> ${esc(t.caution)}</p>` : ''}
+      <h3>Come riconoscerla</h3>
+      ${traitStrip(null, t)}
+      ${t.check_before_picking?.length ? `<ol class="keys">${t.check_before_picking.map((x) => `<li>${esc(x)}</li>`).join('')}</ol>` : ''}
+      ${look.length ? `<h3>Si confonde con</h3><ul class="tx-look">${look.map(({ id, o }) => { const op = photoOf(o); return `<li>
+        <a class="tx-look-main" href="#/riconosci/confronta/${esc(o.key)}/${esc(t.key)}">${op ? `<img src="${ASSET(op.file)}" alt="" loading="lazy">` : ''}<span><b>${esc(o.name)}</b><i>${esc(o.latin)}</i><small class="tx-cmp">Confrontali carattere per carattere ›</small></span></a>
+        <a class="tx-sheet" href="#/specie/${esc(id)}">Scheda di ${esc(o.name.toLowerCase())} ›</a></li>`; }).join('')}</ul>` : ''}
+      <h3>Dove e quando</h3>
+      <dl class="sci-params">
+        ${habitat.length ? `<div><dt>Dove</dt><dd>${esc(orList(habitat))}</dd></div>` : ''}
+        ${t.trees?.length ? `<div><dt>Alberi</dt><dd>${esc(t.trees.join(', '))}</dd></div>` : ''}
+        ${months ? `<div><dt>Quando</dt><dd>${esc(months)}</dd></div>` : ''}
+      </dl>
+      <p class="small muted">Riconoscerla non basta per mangiare nulla: fai controllare tutto il raccolto all'Ispettorato micologico dell'ASL. È gratuito.</p>
+      ${t.sources?.length ? `<details class="sec"><summary>Fonti</summary><div class="sec-body"><ul class="small sources">${t.sources.map((x) => `<li><a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.title)}</a></li>`).join('')}</ul></div></details>` : ''}
+    </div>`;
+  const lb = ph.map((p) => ({ src: ASSET(p.file_hd || p.file), alt: t.name, caption: captionHtml({ title: `<span class="tox">${tox}</span> ${esc(t.name || '')} <i>${esc(t.latin)}</i>`, credit: `Foto: ${esc(p.author || '')}${p.license ? `, ${esc(p.license)}` : ''}` }) }));
+  box.querySelectorAll('[data-photo]').forEach((b) => b.addEventListener('click', () => openLightbox(lb, +b.dataset.photo)));
 }
 export function compareCta(edibleId) {
   const t = refOf(edibleId), n = t ? sosiaOf(t).length : 0;
   return n ? `<a class="ts-cta" href="#/riconosci/confronta/${esc(t.key)}"><span class="ts-cta-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 6h7v12H4zM13 6h7v12h-7z"/><path d="M7.5 10v4M16.5 10v4"/></svg></span><span><b>Confrontalo con ${n === 1 ? 'il sosia' : `i ${n} sosia`}</b><small>Solo i caratteri che li distinguono, in Riconosci</small></span><span class="ts-cta-go" aria-hidden="true">›</span></a>` : '';
 }
 // per la ricerca generale: le specie senza pagina propria (velenose e sosia), con la foto
+export const taxonKeyByLatin = (latin) => { const b = String(latin || '').match(/[A-Z][a-z]+ [a-z]+/)?.[0]; return b ? TAXA.find((t) => t.latin?.includes(b))?.key || '' : ''; };
 export const searchTaxa = () => TAXA.filter((t) => !t.edible_id || t.lookalike_of?.length).map((t) => ({ key: t.key, name: t.name, latin: t.latin, toxicity: t.toxicity, photo: photoOf(t), look: t.lookalike_of || [] }));
 export function setCompare(key, pick) { state.compare = key || ''; state.pick = pick || ''; }
 
@@ -411,11 +460,11 @@ function renderCompare(box, ref, pick) {
     const how = HOWTO(ref.edible_id, t.latin);
     return `<section class="cmp-slide" id="cmp-${esc(t.key)}" data-i="${k}" aria-label="${esc(ref.name)} e ${esc(t.name || t.latin)}">
       <div class="cmp-pair">
-        <figure class="cmp-fig ${toxCls(ref)}"><button type="button" class="cmp-zoom" data-photo="${esc(ref.key)}" aria-label="Ingrandisci la foto di ${esc(ref.name)}">${pic(ref)}</button><span class="tox">${esc(ref.toxicity)}</span></figure>
-        <figure class="cmp-fig ${toxCls(t)}"><button type="button" class="cmp-zoom" data-photo="${esc(t.key)}" aria-label="Ingrandisci la foto di ${esc(t.name || t.latin)}">${pic(t)}</button><span class="tox">${esc(t.toxicity)}</span></figure>
+        ${[ref, t].map((x) => `<div class="cmp-side">
+          <figure class="cmp-fig ${toxCls(x)}"><span class="cmp-zoom">${pic(x)}</span><span class="tox">${esc(x.toxicity)}</span>
+            ${photoOf(x) ? `<button type="button" class="id-zoom" data-photo="${esc(x.key)}" aria-label="Ingrandisci la foto di ${esc(x.name || x.latin)}"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6"/><path d="m20 20-5-5M10.5 8v5M8 10.5h5"/></svg></button>` : ''}</figure>
+          <div class="cmp-name">${nameBtn(x)}${x.name !== x.latin ? `<i>${esc(x.latin)}</i>` : ''}</div></div>`).join('')}
         <span class="cmp-vs" aria-hidden="true">vs</span>
-        <div class="cmp-name">${nameBtn(ref)}<i>${esc(ref.latin)}</i></div>
-        <div class="cmp-name">${nameBtn(t)}${t.name !== t.latin ? `<i>${esc(t.latin)}</i>` : ''}</div>
       </div>
       ${how ? `<p class="cmp-how"><b>Come distinguerlo.</b> ${esc(how)}</p>` : ''}
       ${diff.length ? `<h4 class="cmp-h diff">Qui li distingui</h4><ul class="cmp-rows">${diff.map((r) => r.html).join('')}</ul>`
@@ -468,23 +517,27 @@ export function openTaxon(key) {
   if (!dlg) {
     dlg = document.createElement('dialog'); dlg.id = 'taxon-dlg'; dlg.className = 'sheet-dlg taxon-dlg';
     dlg.addEventListener('click', (e) => { if (e.target === dlg || e.target.closest('.wiz-close')) dlg.close(); });
+    addEventListener('hashchange', () => { if (dlg.open) dlg.close(); });
     document.body.append(dlg);
   }
   const ph = photoOf(t), tox = esc(t.toxicity || '');
+  // "si confonde con": porta dritto al confronto affiancato (la scheda della commestibile e' a un tocco da li')
   const look = (t.lookalike_of || []).map((id) => {
-    const o = TAXA.find((x) => x.edible_id === id);
-    return `<a class="tree-link" href="#/specie/${esc(id)}">${esc(o?.name || id)}</a>`;
-  });
+    const o = TAXA.find((x) => x.edible_id === id && !x.lookalike_of?.length);
+    return o ? `<a class="tx-vs" href="#/riconosci/confronta/${esc(o.key)}/${esc(t.key)}"><span class="tx-vs-ic" aria-hidden="true">vs</span>${esc(o.name)}<span aria-hidden="true">›</span></a>` : '';
+  }).filter(Boolean);
+  dlg.dataset.expand = `#/fungo/${t.key}`;
   dlg.innerHTML = `<button type="button" class="wiz-close" aria-label="Chiudi">✕</button>
-    ${ph ? `<figure class="tx-img"><img src="${ASSET(ph.file_hd || ph.file)}" alt=""><figcaption>Foto: ${esc(ph.author)}, ${esc(ph.license)}</figcaption></figure>` : ''}
+    <div class="tx-handle" data-drag aria-hidden="true"><span class="sheet-grip"></span></div>
+    ${ph ? `<figure class="tx-img" data-drag><img src="${ASSET(ph.file_hd || ph.file)}" alt=""><figcaption>Foto: ${esc(ph.author)}, ${esc(ph.license)}</figcaption></figure>` : ''}
     <div class="tx-body tox-${tox.replace(/\s/g, '-')}"><span class="tox">${tox}</span>
     <h2>${esc(t.name || t.latin)}</h2>${t.name && t.name !== t.latin ? `<p class="tx-latin">${esc(t.latin)}</p>` : ''}
     ${t.caution ? `<p class="id-why"><b>Perché con cautela:</b> ${esc(t.caution)}</p>` : ''}
-    ${look.length ? `<p><b>Si confonde con</b> ${look.join(', ')}</p>` : ''}
+    ${look.length ? `<p class="tx-vs-row"><b>Si confonde con</b>${look.join('')}</p>` : ''}
     ${t.field_rules?.length ? `<h3>Da sapere</h3><ul class="reasons">${t.field_rules.map((r) => `<li${r.severity === 'critico' ? ' class="crit"' : ''}>${esc(r.text)}</li>`).join('')}</ul>` : ''}
     ${t.check_before_picking?.length ? `<h3>Come riconoscerla</h3><ul class="reasons">${t.check_before_picking.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>` : ''}
-    ${t.sources?.length ? `<p class="small muted">Fonti: ${t.sources.map((x) => `<a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.title)}</a>`).join(' · ')}</p>` : ''}
-    </div>`;
+    </div>
+    <div class="tx-foot"><a class="btn primary big" href="#/fungo/${esc(t.key)}">Scheda completa <span aria-hidden="true">›</span></a></div>`;
   dlg.showModal();
   dlg.scrollTop = 0;
 }

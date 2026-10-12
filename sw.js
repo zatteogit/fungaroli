@@ -10,7 +10,7 @@ const MAX_TILES = 1500;
 const PRECACHE = [
   './', 'index.html', 'manifest.webmanifest', 'css/style.css', 'css/fonts.css',
   'js/app.js', 'js/model.js', 'js/species.js', 'js/weather.js', 'js/chart.js', 'js/journal.js', 'js/svgmap.js',
-  'js/speciescard.js', 'js/identify.js', 'js/trees.js', 'js/human.js', 'js/lightbox.js', 'js/install.js', 'js/outing.js', 'js/motion.js', 'js/forest-legend.js', 'js/search.js', 'js/science.js', 'docs/metodo-scientifico.md',
+  'js/speciescard.js', 'js/identify.js', 'js/trees.js', 'js/human.js', 'js/lightbox.js', 'js/install.js', 'js/outing.js', 'js/motion.js', 'js/forest-legend.js', 'js/search.js', 'js/science.js', 'data/preparation.json', 'docs/metodo-scientifico.md',
   'data/zones.json', 'data/habitat.json', 'data/access.json', 'data/trails.json', 'data/species-id.json', 'data/media.json',
   'data/infografiche.json', 'data/trees.json', 'data/species-traits.json', 'data/media-trees.json', 'data/media-zones.json', 'data/legal.json', 'data/preparation.json',
   'assets/icon-192.png', 'assets/icon.svg', 'assets/map-thumb-topo.jpg', 'assets/map-thumb-osm.jpg', 'assets/map-thumb-forest.jpg',

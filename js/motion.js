@@ -83,15 +83,18 @@ function countUp() {
 function sheetDrag(dlg) {
   let y0 = null, dy = 0, t0 = 0;
   dlg.addEventListener('pointerdown', (e) => {
-    if (e.pointerType === 'mouse' || e.clientY - dlg.getBoundingClientRect().top > 56 || dlg.scrollTop > 0) return;
+    const handle = e.target.closest('[data-drag]');
+    if (e.pointerType === 'mouse' || (!handle && e.clientY - dlg.getBoundingClientRect().top > 56) || dlg.scrollTop > 0) return;
     if (e.target.closest('button, a, input, select, textarea, summary')) return;
     y0 = e.clientY; dy = 0; t0 = performance.now();
     dlg.classList.add('dragging');
   });
   dlg.addEventListener('pointermove', (e) => {
     if (y0 == null) return;
-    dy = Math.max(0, e.clientY - y0);
-    dlg.style.transform = `translateY(${dy}px)`;
+    // giu' chiude; su (se il pannello ha una scheda completa) la apre, con un po' di resistenza
+    dy = e.clientY - y0;
+    if (dy < 0 && !dlg.dataset.expand) dy = 0;
+    dlg.style.transform = `translateY(${dy < 0 ? dy * 0.45 : dy}px)`;
   });
   const end = () => {
     if (y0 == null) return;
@@ -100,6 +103,7 @@ function sheetDrag(dlg) {
     dlg.classList.remove('dragging');
     dlg.style.transform = '';
     if (dy > 110 || v > 0.6) dlg.close();
+    else if (dlg.dataset.expand && (dy < -70 || v < -0.6)) { const to = dlg.dataset.expand; dlg.close(); location.hash = to; }
   };
   dlg.addEventListener('pointerup', end);
   dlg.addEventListener('pointercancel', end);

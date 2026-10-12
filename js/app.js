@@ -8,7 +8,7 @@ import { initSpeciesCards, thumb, renderSpeciesDetail, whereSummary, criticalRul
 import { openLightbox, captionHtml } from './lightbox.js';
 import { initInstall } from './install.js';
 import { loadOuting, outingFor, OUTING_LABEL, OUTING_SHORT, OUTING_RANK } from './outing.js';
-import { initIdentify, renderIdentify, setCompare, searchTaxa, openTaxon } from './identify.js';
+import { initIdentify, renderIdentify, setCompare, searchTaxa, openTaxon, renderTaxonPage } from './identify.js';
 import { initSearch, openSearch } from './search.js';
 import { renderWhy, renderMethod } from './science.js';
 import { navigate, soft } from './motion.js';
@@ -139,11 +139,12 @@ function parseRoute() {
   if (a === 'diario') return { view: 'diario' };
   if (a === 'info') return { view: 'info' };
   if (a === 'metodo') return { view: 'metodo' };
+  if (a === 'fungo' && b) return { view: 'fungo', taxonId: b };
   return { view: 'uscite' };
 }
 
 // profondita' e posizione delle viste: decidono la direzione della transizione
-const LEVEL = { zona: 1, 'specie-dettaglio': 1, albero: 1, info: 1, metodo: 2 };
+const LEVEL = { zona: 1, 'specie-dettaglio': 1, albero: 1, info: 1, metodo: 2, fungo: 1 };
 const TABS = ['uscite', 'mappa', 'specie', 'diario'];
 const SUB = { specie: 0, alberi: 1, riconosci: 2 };
 const scrollMem = new Map();
@@ -162,7 +163,7 @@ function navKind(a, b) {
 
 function route() {
   const r = parseRoute();
-  r.tab = { zona: 'uscite', 'specie-dettaglio': 'specie', alberi: 'specie', albero: 'specie', riconosci: 'specie', info: '', metodo: '' }[r.view] ?? r.view;
+  r.tab = { zona: 'uscite', 'specie-dettaglio': 'specie', alberi: 'specie', albero: 'specie', riconosci: 'specie', info: '', metodo: '', fungo: 'specie' }[r.view] ?? r.view;
   r.hash = location.hash || '#/';
   const nav = navKind(prev, r), back = prev?.hash || '';
   if (prev) scrollMem.set(prev.hash, scrollY);
@@ -184,6 +185,7 @@ function routeNow(r, nav) {
   if (r.view === 'specie-dettaglio') renderSpeciesDetail($('#species-detail'), r.speciesId);
   if (r.view === 'albero') renderTreePage($('#tree-detail'), r.treeId);
   if (r.view === 'metodo') renderMethod($('#method-body'));
+  if (r.view === 'fungo') renderTaxonPage($('#taxon-detail'), r.taxonId);
   if (r.view === 'riconosci') { setCompare(r.compare, r.pick); renderIdentify($('#identify')); }
   if (r.view === 'mappa') {
     requestAnimationFrame(() => {
@@ -526,7 +528,7 @@ function buildSearch(idj, trj, embedded) {
   }
   for (const t of searchTaxa()) {
     const look = t.look.map((id) => SPECIES.find((x) => x.id === id)?.name).filter(Boolean);
-    items.push({ kind: 'velenoso', title: t.name || t.latin, sub: `${t.name !== t.latin ? t.latin : ''}${look.length ? `${t.name !== t.latin ? ' · ' : ''}si confonde con ${look.slice(0, 2).join(', ').toLowerCase()}` : ''}`, hay: look.join(' '), action: () => openTaxon(t.key), img: t.photo ? img(A(t.photo.file)) : '', badge: t.toxicity, badgeCls: `tox-${String(t.toxicity).replace(/\s/g, '-')}` });
+    items.push({ kind: 'velenoso', title: t.name || t.latin, sub: `${t.name !== t.latin ? t.latin : ''}${look.length ? `${t.name !== t.latin ? ' · ' : ''}si confonde con ${look.slice(0, 2).join(', ').toLowerCase()}` : ''}`, hay: look.join(' '), href: `#/fungo/${t.key}`, img: t.photo ? img(A(t.photo.file)) : '', badge: t.toxicity, badgeCls: `tox-${String(t.toxicity).replace(/\s/g, '-')}` });
   }
   for (const [id, t] of Object.entries(trj?.trees || {})) {
     items.push({ kind: 'albero', title: t.name, sub: t.latin, hay: `${(t.aliases || []).join(' ')} ${t.type || ''}`, href: `#/albero/${encodeURIComponent(id)}`, img: treeThumb(id, 44) });
