@@ -1,0 +1,462 @@
+{
+ "generated": "2026-10-12",
+ "note": "Foto reali con autore e licenza. Le foto iNaturalist sono 'research grade': identificazione confermata da piu' utenti, non da un micologo ufficiale.",
+ "species": {
+  "edulis": {
+   "latin": "Boletus edulis",
+   "wikidata": "Q19740",
+   "ref": {
+    "file": "assets/species/edulis-ref.jpg",
+    "source": "Wikimedia Commons",
+    "page": "https://commons.wikimedia.org/wiki/File:(Gemeine_Steinpilz)_Boletus_edulis.jpg",
+    "author": "Holger Krisp",
+    "license": "CC BY 3.0"
+   },
+   "inat": [
+    {
+     "file": "assets/species/edulis-inat1.jpg",
+     "source": "iNaturalist (research grade)",
+     "page": "https://www.inaturalist.org/observations/135049529",
+     "author": "Rino",
+     "license": "CC-BY-NC",
+     "place": "Provincia di Teramo, Italia",
+     "date": "2022-09-11"
+    },
+    {
+     "file": "assets/species/edulis-inat2.jpg",
+     "source": "iNaturalist (research grade)",
+     "page": "https://www.inaturalist.org/observations/62918419",
+     "author": "Rino",
+     "license": "CC-BY-NC",
+     "place": "Provincia di Chieti, Italia",
+     "date": "2020-10-18"
+    },
+    {
+     "file": "assets/species/edulis-inat3.jpg",
+     "source": "iNaturalist (research grade)",
+     "page": "https://www.inaturalist.org/observations/63767817",
+     "author": "danix",
+     "license": "CC-BY-NC",
+     "place": "Norma",
+     "date": "2020-10-13"
+    }
+   ],
+   "gbif": {
+    "taxonKey": 5954958,
+    "total": 706,
+    "months": [
+     0,
+     2,
+     0,
+     0,
+     4,
+     11,
+     106,
+     239,
+     237,
+     86,
+     9,
+     3
+    ],
+    "page": "https://www.gbif.org/occurrence/search?taxon_key=5954958&country=IT"
+   },
+   "model3d": {
+    "uid": "e1e8e767f3ec4ed288426392e2f83baf",
+    "name": "Boletus edulis (NHMW-AFW-DING-0135-008)",
+    "author": "Natural History Museum Vienna",
+    "license": "CC Attribution-NonCommercial",
+    "page": "https://sketchfab.com/3d-models/none-e1e8e767f3ec4ed288426392e2f83baf",
+    "embed": "https://sketchfab.com/models/e1e8e767f3ec4ed288426392e2f83baf/embed?autostart=0&ui_infos=0&ui_watermark=0"
+   }
+  },
+  "pinophilus": {
+   "latin": "Boletus pinophilus",
+   "wikidata": "Q1415435",
+   "ref": {
+    "file": "assets/species/pinophilus-ref.jpg",
+    "source": "Wikimedia Commons",
+    "page": "https://commons.wikimedia.org/wiki/File:Boletus_pinophilus_14.jpg",
+    "author": "Jukka Vauras",
+    "license": "CC BY-SA 4.0"
+   },
+   "inat": [
+    {
+     "file": "assets/species/pinophilus-inat1.jpg",
+     "source": "iNaturalist (research grade)",
+     "page": "https://www.inaturalist.org/observations/302886287",
+     "author": "Dr. Fabio Mao Valletta",
+     "license": "CC-BY-NC",
+     "place": "Parco Nazionale del Gran Sasso e Monti della Laga, Valle Castellana, Abruzzo, IT",
+     "date": "2025-07-28"
+    }
+   ],
+   "gbif": {
+    "taxonKey": 5954949,
+    "total": 57,
+    "months": [
+     0,
+     0,
+     0,
+     0,
+     1,
+     4,
+     8,
+     11,
+     13,
+     14,
+     5,
+     0
+    ],
+    "page": "https://www.gbif.org/occurrence/search?taxon_key=5954949&country=IT"
+   },
+   "model3d": null
+  },
+  "aereus": {
+   "latin": "Boletus aereus",
+   "wikidata": "Q757127",
+   "ref": {
+    "file": "assets/species/aereus-ref.jpg",
+    "source": "Wikimedia Commons",
+    "page": "https://commons.wikimedia.org/wiki/File:Bronze_Roehrling.jpg",
+    "author": "Achim Bollmann",
+    "license": "Copyrighted free use"
+   },
+   "inat": [
+    {
+     "file": "assets/species/aereus-inat1.jpg",
+     "source": "iNaturalist (research grade)",
+     "page": "https://www.inaturalist.org/observations/190488055",
+     "author": "Marco Gasponi",
+     "license": "CC-BY-NC",
+     "place": "00060 Canale Monterano RM, Italia",
+     "date": "2023-11-09"
+    },
+    {
+     "file": "assets/species/aereus-inat2.jpg",
+     "source": "iNaturalist (research grade)",
+     "page": "https://www.inaturalist.org/observations/311013942",
+     "author": "lucapassalacqua",
+     "license": "CC-BY-NC",
+     "place": "Provincia di Grosseto, Italia",
+     "date": "2025-09-01"
+    },
+    {
+     "file": "assets/species/aereus-inat3.jpg",
+     "source": "iNaturalist (research grade)",
+     "page": "https://www.inaturalist.org/observations/312250946",
+     "author": "Manuela Fiorini",
+     "license": "CC-BY",
+     "place": "Marche, IT",
+     "date": "2025-09-07"
+    }
+   ],
+   "gbif": {
+    "taxonKey": 8733688,
+    "total": 167,
+    "months": [
+     0,
+     0,
+     0,
+     2,
+     7,
+     2,
+     7,
+     7,
+     45,
+     59,
+     24,
+     0
+    ],
+    "page": "https://www.gbif.org/occurrence/search?taxon_key=8733688&country=IT"
+   },
+   "model3d": null
+  },
+  "aestivalis": {
+   "latin": "Boletus aestivalis",
+   "wikidata": "Q301495",
+   "ref": {
+    "file": "assets/species/aestivalis-ref.jpg",
+    "source": "Wikimedia Commons",
+    "page": "https://commons.wikimedia.org/wiki/File:Boletus_aestivalis.jpg",
+    "author": "Dezidor",
+    "license": "CC BY 3.0"
+   },
+   "inat": [],
+   "gbif": {
+    "taxonKey": 5954988,
+    "total": 9,
+    "months": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     3,
+     0,
+     0,
+     0
+    ],
+    "page": "https://www.gbif.org/occurrence/search?taxon_key=5954988&country=IT"
+   },
+   "model3d": null
+  },
+  "caesarea": {
+   "latin": "Amanita caesarea",
+   "wikidata": "Q220662",
+   "ref": {
+    "file": "assets/species/caesarea-ref.jpg",
+    "source": "Wikimedia Commons",
+    "page": "https://commons.wikimedia.org/wiki/File:Oronges.jpg",
+    "author": "Yaqui",
+    "license": "CC BY-SA 3.0"
+   },
+   "inat": [
+    {
+     "file": "assets/species/caesarea-inat1.jpg",
+     "source": "iNaturalist (research grade)",
+     "page": "https://www.inaturalist.org/observations/314994060",
+     "author": "Manuela Fiorini",
+     "license": "CC-BY",
+     "place": "Marche, IT",
+     "date": "2025-09-19"
+    },
+    {
+     "file": "assets/species/caesarea-inat2.jpg",
+     "source": "iNaturalist (research grade)",
+     "page": "https://www.inaturalist.org/observations/52141009",
+     "author": "lucapassalacqua",
+     "license": "CC-BY-NC",
+     "place": "Provincia di Grosseto, Italia",
+     "date": "2020-07-05"
+    },
+    {
+     "file": "assets/species/caesarea-inat3.jpg",
+     "source": "iNaturalist (research grade)",
+     "page": "https://www.inaturalist.org/observations/316707903",
+     "author": "Leonardo Ancillotto",
+     "license": "CC-BY",
+     "place": "01010 Farnese VT, Italia",
+     "date": "2025-09-26"
+    }
+   ],
+   "gbif": {
+    "taxonKey": 5240269,
+    "total": 221,
+    "months": [
+     1,
+     0,
+     1,
+     0,
+     2,
+     5,
+     6,
+     25,
+     80,
+     58,
+     19,
+     0
+    ],
+    "page": "https://www.gbif.org/occurrence/search?taxon_key=5240269&country=IT"
+   },
+   "model3d": {
+    "uid": "2b9f531098804b569929417ccc80d704",
+    "name": "Amanita caesarea (NHMW-AFW-DING-0091-001)",
+    "author": "Natural History Museum Vienna",
+    "license": "CC Attribution-NonCommercial",
+    "page": "https://sketchfab.com/3d-models/none-2b9f531098804b569929417ccc80d704",
+    "embed": "https://sketchfab.com/models/2b9f531098804b569929417ccc80d704/embed?autostart=0&ui_infos=0&ui_watermark=0"
+   }
+  },
+  "cibarius": {
+   "latin": "Cantharellus cibarius",
+   "wikidata": "Q188749",
+   "ref": {
+    "file": "assets/species/cibarius-ref.jpg",
+    "source": "Wikimedia Commons",
+    "page": "https://commons.wikimedia.org/wiki/File:Chanterelle_Cantharellus_cibarius.jpg",
+    "author": "autore su Commons",
+    "license": "CC BY-SA 3.0"
+   },
+   "inat": [
+    {
+     "file": "assets/species/cibarius-inat1.jpg",
+     "source": "iNaturalist (research grade)",
+     "page": "https://www.inaturalist.org/observations/248471568",
+     "author": "Andrea Benocci",
+     "license": "CC-BY-NC",
+     "place": "58037 Santa Fiora GR, Italia",
+     "date": "2024-10-20"
+    },
+    {
+     "file": "assets/species/cibarius-inat2.jpg",
+     "source": "iNaturalist (research grade)",
+     "page": "https://www.inaturalist.org/observations/41530979",
+     "author": "Rino",
+     "license": "CC-BY-NC",
+     "place": "Provincia di Isernia, Italia",
+     "date": "2009-07-02"
+    },
+    {
+     "file": "assets/species/cibarius-inat3.jpg",
+     "source": "iNaturalist (research grade)",
+     "page": "https://www.inaturalist.org/observations/184823584",
+     "author": "Marco Panik",
+     "license": "CC-BY-NC",
+     "place": "Busso, Molise, IT",
+     "date": "2023-06-06"
+    }
+   ],
+   "gbif": {
+    "taxonKey": 5249504,
+    "total": 328,
+    "months": [
+     3,
+     1,
+     1,
+     0,
+     3,
+     11,
+     67,
+     79,
+     60,
+     65,
+     22,
+     3
+    ],
+    "page": "https://www.gbif.org/occurrence/search?taxon_key=5249504&country=IT"
+   },
+   "model3d": {
+    "uid": "49540b02812f4473bd39579e4d4948cc",
+    "name": "Cantharellus cibarius  - Real fungus 3D scan",
+    "author": "Vincent Lagardère",
+    "license": "CC Attribution-NonCommercial-NoDerivs",
+    "page": "https://sketchfab.com/3d-models/none-49540b02812f4473bd39579e4d4948cc",
+    "embed": "https://sketchfab.com/models/49540b02812f4473bd39579e4d4948cc/embed?autostart=0&ui_infos=0&ui_watermark=0"
+   }
+  },
+  "cornucopioides": {
+   "latin": "Craterellus cornucopioides",
+   "wikidata": "Q857903",
+   "ref": {
+    "file": "assets/species/cornucopioides-ref.jpg",
+    "source": "Wikimedia Commons",
+    "page": "https://commons.wikimedia.org/wiki/File:Craterellus_cornucopioides_JPG1.jpg",
+    "author": "Jean-Pol GRANDMONT",
+    "license": "CC BY 3.0"
+   },
+   "inat": [
+    {
+     "file": "assets/species/cornucopioides-inat1.jpg",
+     "source": "iNaturalist (research grade)",
+     "page": "https://www.inaturalist.org/observations/194010261",
+     "author": "Manuela Fiorini",
+     "license": "CC-BY",
+     "place": "Marche, IT",
+     "date": "2023-11-25"
+    },
+    {
+     "file": "assets/species/cornucopioides-inat2.jpg",
+     "source": "iNaturalist (research grade)",
+     "page": "https://www.inaturalist.org/observations/63689919",
+     "author": "Alessandro Ariosti",
+     "license": "CC-BY-SA",
+     "place": "64010 Rocca Santa Maria, Province of Teramo, Italy",
+     "date": "2020-10-27"
+    },
+    {
+     "file": "assets/species/cornucopioides-inat3.jpg",
+     "source": "iNaturalist (research grade)",
+     "page": "https://www.inaturalist.org/observations/249367365",
+     "author": "gretezzz",
+     "license": "CC-BY-NC",
+     "place": "52100 Arezzo AR, Italia",
+     "date": "2024-10-27"
+    }
+   ],
+   "gbif": {
+    "taxonKey": 2554662,
+    "total": 199,
+    "months": [
+     2,
+     4,
+     0,
+     0,
+     0,
+     2,
+     5,
+     8,
+     38,
+     96,
+     33,
+     7
+    ],
+    "page": "https://www.gbif.org/occurrence/search?taxon_key=2554662&country=IT"
+   },
+   "model3d": null
+  },
+  "repandum": {
+   "latin": "Hydnum repandum",
+   "wikidata": "Q13684",
+   "ref": {
+    "file": "assets/species/repandum-ref.jpg",
+    "source": "Wikimedia Commons",
+    "page": "https://commons.wikimedia.org/wiki/File:Hedgehog_fungi2.jpg",
+    "author": "D J Kelly",
+    "license": "Public domain"
+   },
+   "inat": [
+    {
+     "file": "assets/species/repandum-inat1.jpg",
+     "source": "iNaturalist (research grade)",
+     "page": "https://www.inaturalist.org/observations/325588243",
+     "author": "symcyto",
+     "license": "CC-BY-NC",
+     "place": "Province of Viterbo, Italy",
+     "date": "2025-10-25"
+    },
+    {
+     "file": "assets/species/repandum-inat2.jpg",
+     "source": "iNaturalist (research grade)",
+     "page": "https://www.inaturalist.org/observations/336730257",
+     "author": "Manuela Fiorini",
+     "license": "CC-BY",
+     "place": "San Severino Marche, Marche, IT",
+     "date": "2026-01-30"
+    },
+    {
+     "file": "assets/species/repandum-inat3.jpg",
+     "source": "iNaturalist (research grade)",
+     "page": "https://www.inaturalist.org/observations/64606585",
+     "author": "Rino",
+     "license": "CC-BY-NC",
+     "place": "Provincia di Chieti, Italia",
+     "date": "2020-11-10"
+    }
+   ],
+   "gbif": {
+    "taxonKey": 2554716,
+    "total": 131,
+    "months": [
+     4,
+     3,
+     0,
+     0,
+     0,
+     1,
+     1,
+     9,
+     21,
+     61,
+     20,
+     7
+    ],
+    "page": "https://www.gbif.org/occurrence/search?taxon_key=2554716&country=IT"
+   },
+   "model3d": null
+  }
+ },
+ "lookalikes": {}
+}
