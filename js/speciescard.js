@@ -3,16 +3,18 @@
 
 import { SPECIES } from './species.js';
 import { openLightbox, captionHtml } from './lightbox.js';
+import { linkTrees } from './trees.js';
 
 const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const MONTHS = ['G', 'F', 'M', 'A', 'M', 'G', 'L', 'A', 'S', 'O', 'N', 'D'];
 const MONTHS_LONG = ['gennaio', 'febbraio', 'marzo', 'aprile', 'maggio', 'giugno', 'luglio', 'agosto', 'settembre', 'ottobre', 'novembre', 'dicembre'];
 const TOX = { mortale: 'tox-deadly', tossico: 'tox-toxic', 'non commestibile': 'tox-no', commestibile: 'tox-ok' };
 
-let ID = null, MEDIA = null, ASSET = (f) => f, EMBED_3D = true, INFO = {}, WHERE = () => '';
+let ID = null, MEDIA = null, ASSET = (f) => f, EMBED_3D = true, INFO = {}, WHERE = () => '', TRAITS = {}, FOOTER = '';
 
-export function initSpeciesCards({ idData, media, assetUrl, allow3d = true, infographics = {}, whereSection }) {
+export function initSpeciesCards({ idData, media, assetUrl, allow3d = true, infographics = {}, whereSection, traits, footer }) {
   ID = idData; MEDIA = media; if (assetUrl) ASSET = assetUrl; EMBED_3D = allow3d; INFO = infographics || {}; if (whereSection) WHERE = whereSection;
+  TRAITS = traits?.taxa || {}; FOOTER = footer || '';
   // ogni elemento con data-species apre la pagina della specie
   document.addEventListener('click', (e) => {
     const t = e.target.closest('[data-species]');
@@ -55,7 +57,7 @@ function traitsTable(d) {
     ['Habitat', d.habitat && [d.habitat]],
     ['Stagione', d.season && [d.season]],
   ].filter(([, v]) => v);
-  return `<dl class="traits">${rows.map(([k, v]) => `<dt>${k}</dt><dd>${esc(v.filter(Boolean).join(' · '))}</dd>`).join('')}</dl>`;
+  return `<dl class="traits">${rows.map(([k, v]) => `<dt>${k}</dt><dd>${linkTrees(v.filter(Boolean).join(' · '))}</dd>`).join('')}</dl>`;
 }
 
 function lookalikes(d) {
@@ -73,6 +75,27 @@ function lookalikes(d) {
       <div class="look-diff">${esc(l.how_to_tell)}</div></div></li>`;
   }).join('')}</ul>`;
 }
+
+// Regole di comportamento sul campo (prima di tutto il resto)
+function attention(id, warn) {
+  const rules = TRAITS[id]?.field_rules || [];
+  if (!rules.length) return '';
+  const sorted = [...rules].sort((a, b) => (a.severity === 'critico' ? 0 : 1) - (b.severity === 'critico' ? 0 : 1));
+  return `<div class="attention" role="note"><h3>Attenzione</h3><ul>${sorted.map((r) => `<li class="${r.severity === 'critico' ? 'crit' : ''}">${esc(r.text)}</li>`).join('')}</ul>${warn.length ? `<p class="small">${esc(warn.join(' '))}</p>` : ''}</div>`;
+}
+function checks(id) {
+  const c = TRAITS[id]?.check_before_picking || [];
+  return c.length ? `<h3>Prima di raccoglierlo controlla</h3><ul class="checks">${c.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>` : '';
+}
+function whereToLook(id) {
+  const w = TRAITS[id]?.where_to_look;
+  if (!w) return '';
+  return `<h3>Dove guardare</h3><p>${linkTrees(w.summary || '')}</p>
+    ${w.tips?.length ? `<ul class="reasons">${w.tips.map((t) => `<li>${linkTrees(t)}</li>`).join('')}</ul>` : ''}
+    ${w.trees?.length ? `<p class="tree-chips">${w.trees.map((t) => linkTrees(t)).join(' ')}</p>` : ''}`;
+}
+export const whereSummary = (id) => TRAITS[id]?.where_to_look?.summary || '';
+export const criticalRule = (id) => (TRAITS[id]?.field_rules || []).find((r) => r.severity === 'critico')?.text || '';
 
 export function renderSpeciesDetail(body, id) {
   const sp = SPECIES.find((s) => s.id === id);
@@ -98,8 +121,11 @@ export function renderSpeciesDetail(body, id) {
       <p class="sp-latin">${esc(d.latin || sp.latin)}</p>
       <p class="sp-badges">${d.edibility ? `<span class="badge">${esc(d.edibility)}</span>` : ''}${sp.minCap ? `<span class="badge">cappello ≥ ${sp.minCap} cm</span>` : ''}</p>
     </header>
+    ${attention(id, warn)}
     ${d.key_features?.length ? `<h3>Come riconoscerlo</h3><ol class="keys">${d.key_features.map((k) => `<li>${esc(k)}</li>`).join('')}</ol>` : '<p class="notice">Scheda di riconoscimento in preparazione.</p>'}
-    ${warn.length ? `<div class="notice">${esc(warn.join(' '))}</div>` : ''}
+    ${TRAITS[id] ? '' : (warn.length ? `<div class="notice">${esc(warn.join(' '))}</div>` : '')}
+    ${checks(id)}
+    ${whereToLook(id)}
     ${lookalikes(d)}
     ${INFO[id]?.file ? `<h3>Infografica</h3><button type="button" class="zoomable sp-info" data-info="1" aria-label="Apri l'infografica"><img src="${ASSET(INFO[id].file)}" alt="Infografica di riconoscimento: ${esc(sp.name)}" loading="lazy"><span class="zoom-ic" aria-hidden="true">⤢</span></button>` : ''}
     <div class="sp-more">
@@ -112,7 +138,7 @@ export function renderSpeciesDetail(body, id) {
         : ''}<p class="small muted">${esc(model.name)} · ${esc(model.author)} · ${esc(model.license)} · <a href="${esc(model.page)}" target="_blank" rel="noopener">apri su Sketchfab</a></p>`) : ''}
       ${sec('Fonti e crediti delle foto', `${d.sources?.length ? `<ul class="small sources">${d.sources.map((x) => `<li><a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.title)}</a></li>`).join('')}</ul>` : ''}${credits.length ? `<ul class="small sources">${credits.map((c) => `<li>${c}</li>`).join('')}</ul>` : ''}`)}
     </div>
-    <p class="small muted">Scheda di supporto: non sostituisce il controllo dell'Ispettorato Micologico ASL. Nel dubbio non si raccoglie e non si mangia.</p>`;
+    <p class="small muted">${esc(FOOTER || 'Scheda di supporto: non sostituisce il controllo dell\'Ispettorato Micologico ASL. Nel dubbio non si raccoglie e non si mangia.')} <a href="#/info">Emergenza e note legali</a></p>`;
   body.querySelector('.sp-3d button')?.addEventListener('click', (e) => {
     const box = e.target.closest('.sp-3d');
     box.innerHTML = `<iframe title="Modello 3D ${esc(sp.name)}" src="${esc(box.dataset.embed.replace('autostart=0', 'autostart=1'))}" allow="autoplay; fullscreen; xr-spatial-tracking" allowfullscreen></iframe>`;

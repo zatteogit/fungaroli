@@ -46,6 +46,7 @@
       </div>
       <div id="days" class="days" role="tablist" aria-label="Giorno di uscita"></div>
       <div id="hero" aria-live="polite"><div class="loading">Carico meteo e dati forestali…</div></div>
+      <p class="legal-strip small" id="home-legal"><span>Per raccogliere servono l'attestato micologico e il contributo regionale annuale.</span> <a href="#/info">Regole</a></p>
       <h2 class="sec-title" id="others-h">Altre buone uscite</h2>
       <ol id="ranking" class="ranking" aria-labelledby="others-h"></ol>
     </section>
@@ -65,7 +66,27 @@
     <section class="view" data-view="specie" hidden aria-labelledby="sp-h">
       <div class="view-head"><div><h1 id="sp-h" class="view-title">Le specie</h1>
         <p class="view-sub">Tocca una specie: come riconoscerla, i sosia pericolosi, quando si trova.</p></div></div>
+      <nav class="seg-nav" aria-label="Sezioni specie"><a href="#/specie" aria-current="page">Funghi</a><a href="#/alberi">Alberi</a><a href="#/riconosci">Riconosci</a></nav>
       <div id="species-grid" class="species-grid"></div>
+    </section>
+
+    <section class="view" data-view="alberi" hidden aria-labelledby="tr-h">
+      <div class="view-head"><div><h1 id="tr-h" class="view-title">Gli alberi</h1>
+        <p class="view-sub">Riconoscere l'albero giusto è metà del lavoro: ogni fungo ha i suoi.</p></div></div>
+      <nav class="seg-nav" aria-label="Sezioni specie"><a href="#/specie">Funghi</a><a href="#/alberi" aria-current="page">Alberi</a><a href="#/riconosci">Riconosci</a></nav>
+      <div id="tree-grid" class="species-grid"></div>
+    </section>
+
+    <section class="view" data-view="riconosci" hidden aria-labelledby="id-h">
+      <div class="view-head"><div><h1 id="id-h" class="view-title">Riconosci</h1>
+        <p class="view-sub">Descrivi quello che vedi: restringo i candidati e ti dico cosa controllare.</p></div></div>
+      <nav class="seg-nav" aria-label="Sezioni specie"><a href="#/specie">Funghi</a><a href="#/alberi">Alberi</a><a href="#/riconosci" aria-current="page">Riconosci</a></nav>
+      <div id="identify"></div>
+    </section>
+
+    <section class="view" data-view="albero" hidden>
+      <div class="subbar"><button type="button" class="back" data-back>‹ Indietro</button></div>
+      <div id="tree-detail" class="sp-page"></div>
     </section>
 
     <section class="view" data-view="specie-dettaglio" hidden>
@@ -88,6 +109,7 @@
     <section class="view info" data-view="info" hidden aria-labelledby="info-h">
       <div class="subbar"><button type="button" class="back" data-back>‹ Indietro</button></div>
       <h1 id="info-h" class="view-title">Regole e metodo</h1>
+      <div id="emergency" class="emergency"></div>
     <details>
       <summary><h2>Regole di raccolta nel Lazio</h2></summary>
       <ul class="rules">
@@ -121,12 +143,20 @@
       </div>
     </details>
 
+  <div id="legal-sections"></div>
   <footer class="foot muted small">
     Strumento di supporto, non di identificazione. Nessun fungo va consumato senza certezza: in caso di dubbio, Ispettorato Micologico ASL.
     Mappe © OpenStreetMap, OpenTopoMap (CC-BY-SA). Meteo: Open-Meteo.com (CC BY 4.0). Carta Forestale: Regione Lazio.
   </footer>
     </section>
   </main>
+
+  <dialog id="onboarding" class="sheet-dlg onboarding" aria-labelledby="ob-h">
+    <h2 id="ob-h">Prima di usare l'app</h2>
+    <ul class="ob-points"></ul>
+    <button type="button" class="btn primary big" id="ob-accept">Ho capito</button>
+    <p class="small muted"><a href="#/info" id="ob-more">Leggi regole e note legali</a></p>
+  </dialog>
 
   <dialog id="filters-dialog" class="sheet-dlg" aria-labelledby="filters-h">
     <div class="sheet-grip" aria-hidden="true"></div>

@@ -186,6 +186,17 @@ def main():
             media["lookalikes"][ll.group(0)] = {"wikidata": lq, "ref": lref, "inat": safe(inat_photos, ll.group(0), slug, 1, default=[])}
         # salvataggio progressivo: si puo' rilanciare e riprende dalla cache
         (ROOT / "data" / "media.json").write_text(json.dumps(media, ensure_ascii=False, indent=1))
+    # alberi (data/trees.json): foto iNaturalist research grade
+    tp = ROOT / "data" / "trees.json"
+    if tp.exists():
+        media["trees"] = media.get("trees", {})
+        for tid, t in json.loads(tp.read_text()).get("trees", {}).items():
+            latin = re.match(r"[A-Z][a-z]+ [a-z]+", t.get("latin", "") or "")
+            if not latin:
+                continue
+            print("albero", tid, file=sys.stderr)
+            media["trees"][tid] = {"latin": latin.group(0), "inat": safe(inat_photos, latin.group(0), f"tree-{tid.replace(' ', '-')}", 3, default=[])}
+            (ROOT / "data" / "media.json").write_text(json.dumps(media, ensure_ascii=False, indent=1))
     optimize()
 
 

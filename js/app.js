@@ -4,7 +4,9 @@ import { loadWeather } from './weather.js';
 import { renderCharts } from './chart.js';
 import { initJournal } from './journal.js';
 import { renderSvgMap } from './svgmap.js';
-import { initSpeciesCards, thumb, renderSpeciesDetail } from './speciescard.js';
+import { initSpeciesCards, thumb, renderSpeciesDetail, whereSummary, criticalRule } from './speciescard.js';
+import { initIdentify, renderIdentify } from './identify.js';
+import { initTrees, renderTreeGrid, renderTreePage, linkTrees, treeForCategory } from './trees.js';
 import { crowding, comfortScore, timingAdvice, fmtTime, holidayName } from './human.js';
 
 const HISTORY_DAYS = 30;   // giorni passati mostrati nel grafico
@@ -54,19 +56,22 @@ const savePrefs = () => {
   try { localStorage.setItem(PREFS_KEY, JSON.stringify({ groups: [...state.groups], distancePenalty: state.distancePenalty, avoidCrowd: state.avoidCrowd, preferComfort: state.preferComfort })); } catch { /* ignora */ }
 };
 
-let zones, origin, habitat, access, trails, series, results, map, zoneLayers = {};
+let zones, origin, habitat, access, trails, traits, legal, series, results, map, zoneLayers = {};
 const hasLeaflet = () => typeof globalThis.L !== 'undefined';
 
 async function init() {
   // versione Artifact: dati incorporati nella pagina (niente fetch esterni)
   const embedded = globalThis.FUNGAROLI_DATA;
   const load = (f) => fetch(`data/${f}.json`).then((r) => (r.ok ? r.json() : null)).catch(() => null);
-  const [zj, hj, aj, tj, idj, mj, ij] = embedded
-    ? [embedded.zones, embedded.habitat, embedded.access, embedded.trails, embedded.speciesId, embedded.media, embedded.infographics]
-    : await Promise.all(['zones', 'habitat', 'access', 'trails', 'species-id', 'media', 'infografiche'].map(load));
+  legal = embedded ? embedded.legal : await load('legal');
+  const [zj, hj, aj, tj, idj, mj, ij, trj, stj] = embedded
+    ? [embedded.zones, embedded.habitat, embedded.access, embedded.trails, embedded.speciesId, embedded.media, embedded.infographics, embedded.trees, embedded.traits]
+    : await Promise.all(['zones', 'habitat', 'access', 'trails', 'species-id', 'media', 'infografiche', 'trees', 'species-traits'].map(load));
+  traits = stj;
   initSpeciesCards({
     idData: idj, media: mj, allow3d: !embedded, infographics: ij?.species,
     whereSection: (id) => whereToFind(id),
+    traits: stj, footer: legal?.species_footer,
     assetUrl: embedded ? (f) => embedded.assets?.[f] || '' : (f) => f,
   });
   renderSpeciesGrid();
@@ -75,6 +80,13 @@ async function init() {
   zones = zj.zones;
   origin = zj.origin;
   habitat = hj.zones;
+  initIdentify({
+    traits: stj, media: mj, assetUrl: embedded ? (f) => embedded.assets?.[f] || '' : (f) => f, thumb, zones, banner: legal?.identify_banner,
+    potential: (sid, zid) => { const sp = SPECIES.find((x) => x.id === sid); const z = zones.find((x) => x.id === zid); return sp && z ? potentialOf(sp, z) : null; },
+  });
+  applyLegal();
+  initTrees({ trees: trj, media: mj, assetUrl: embedded ? (f) => embedded.assets?.[f] || '' : (f) => f, zones, habitat, thumb });
+  renderTreeGrid($('#tree-grid'));
   initMap();
   renderFilters();
   initShell();
@@ -116,6 +128,9 @@ function parseRoute() {
   if (a === 'mappa') return { view: 'mappa', zoneId: b };
   if (a === 'specie' && b) return { view: 'specie-dettaglio', speciesId: b };
   if (a === 'specie') return { view: 'specie' };
+  if (a === 'albero' && b) return { view: 'albero', treeId: b };
+  if (a === 'alberi') return { view: 'alberi' };
+  if (a === 'riconosci') return { view: 'riconosci' };
   if (a === 'diario') return { view: 'diario' };
   if (a === 'info') return { view: 'info' };
   return { view: 'uscite' };
@@ -127,13 +142,15 @@ function route() {
   if (r.zoneId) state.zoneId = r.zoneId;
   if (r.view === 'zona') state.dayOffset = r.offset;
   document.querySelectorAll('[data-view]').forEach((v) => { v.hidden = v.dataset.view !== r.view; });
-  const tab = { zona: 'uscite', 'specie-dettaglio': 'specie', info: '' }[r.view] ?? r.view;
+  const tab = { zona: 'uscite', 'specie-dettaglio': 'specie', alberi: 'specie', albero: 'specie', riconosci: 'specie', info: '' }[r.view] ?? r.view;
   document.querySelectorAll('[data-tab]').forEach((t) => {
     if (t.dataset.tab === tab) t.setAttribute('aria-current', 'page'); else t.removeAttribute('aria-current');
   });
   document.body.dataset.page = r.view;
   if (r.view !== 'mappa') scrollTo(0, 0);
   if (r.view === 'specie-dettaglio') renderSpeciesDetail($('#species-detail'), r.speciesId);
+  if (r.view === 'albero') renderTreePage($('#tree-detail'), r.treeId);
+  if (r.view === 'riconosci') renderIdentify($('#identify'));
   if (r.view === 'mappa') {
     requestAnimationFrame(() => {
       map?.invalidateSize();
@@ -553,7 +570,11 @@ function forestBar(frac) {
   if (other > 0) named.push(['Altro bosco/arbusteto', other]);
   named.sort((a, b) => (a[0] === 'non bosco') - (b[0] === 'non bosco') || b[1] - a[1]);
   const bar = named.map(([k, v]) => `<span style="flex:${v};background:${forestColor(k)}" title="${esc(k)} ${Math.round(v * 100)}%"></span>`).join('');
-  const leg = named.filter(([, v]) => v >= 0.03).map(([k, v]) => `<span><span class="dot" style="background:${forestColor(k)};border-radius:3px"></span> ${esc(SHORT[k] || k)} ${Math.round(v * 100)}%</span>`).join('');
+  const leg = named.filter(([, v]) => v >= 0.03).map(([k, v]) => {
+    const tid = treeForCategory(k);
+    const label = esc(SHORT[k] || k);
+    return `<span><span class="dot" style="background:${forestColor(k)};border-radius:3px"></span> ${tid ? `<a class="tree-link" href="#/albero/${tid}">${label}</a>` : label} ${Math.round(v * 100)}%</span>`;
+  }).join('');
   return `<div class="forest">${bar}</div><div class="forest-legend">${leg}</div>`;
 }
 
@@ -568,7 +589,9 @@ function planCard(z, d) {
   const best = d.best;
   const rows = [];
   rows.push({ sec: 'specie', icon: 'find', thumb: best.species.id, k: 'Cosa cercare', v: `<button type="button" class="sp-inline" data-species="${best.species.id}">${esc(best.species.name)}</button> intorno ai <b>${best.band} m</b>`,
-    sub: d.perSpecies.slice(1, 3).filter((p) => p.score >= 20).map((p) => `${esc(p.species.name)} ${p.score}`).join(' · ') || esc(best.species.latin) });
+    sub: [whereSummary(best.species.id) && `<span class="plan-where">${linkTrees(whereSummary(best.species.id))}</span>`,
+      criticalRule(best.species.id) && `<span class="plan-crit">⚠ ${esc(criticalRule(best.species.id))}</span>`,
+      d.perSpecies.slice(1, 3).filter((p) => p.score >= 20).map((p) => `${esc(p.species.name)} ${p.score}`).join(' · ')].filter(Boolean).join('<br>') || esc(best.species.latin) });
   if (d.crowd) {
     const t = timingAdvice({ dateStr: d.date, lat: z.lat, lon: z.lon, crowd: d.crowd });
     rows.push({ sec: 'quando', icon: 'when', k: 'Quando', v: `Arriva <b>entro le ${fmtTime(t.arrive)}</b> <span class="badge crowd-${d.crowd.level}">folla ${d.crowd.level}</span>`,
@@ -636,6 +659,7 @@ function renderDetail() {
     <div id="zone-days" class="days compact" role="tablist" aria-label="Giorno"></div>
     ${planCard(z, d)}
     <a class="btn ghost map-link" href="#/mappa/${z.id}">Vedi sentieri e accesso sulla mappa</a>
+    ${zoneLegal(z, d)}
     ${z.protection ? `<div class="notice">${esc(z.protection)}</div>` : ''}
     ${section('meteo', 'Perché questo indice', `<ul class="why">${reasons.map((x) => `<li>${esc(x)}</li>`).join('')}</ul><div id="charts"></div>`)}
     ${section('quando', 'Quando andare e affollamento', renderHuman(z, d))}
@@ -643,7 +667,7 @@ function renderDetail() {
     ${section('sentieri', 'Sentieri della zona', renderTrails(z, d))}
     ${section('specie', 'Cosa può nascere qui', zoneSpecies(z, d))}
     ${section('bosco', `Bosco a ${best.band} m (Carta Forestale)`, forestBar(hab.frac))}
-    ${section('zona', 'La zona', `<p class="small">${esc(z.description)}</p>
+    ${section('zona', 'La zona', `<p class="small">${linkTrees(z.description)}</p>
       <dl class="kv">
         <dt>Accesso</dt><dd>${esc(z.access)}</dd>
         <dt>Soste</dt><dd>${z.parking.map((p) => `<a href="https://www.google.com/maps/dir/?api=1&destination=${p.lat},${p.lon}" target="_blank" rel="noopener">${esc(p.name)}</a>`).join(' · ')}</dd>
@@ -757,6 +781,45 @@ function renderTrails(z, d) {
         <a class="small" href="https://hiking.waymarkedtrails.org/#route?id=${t.id}" target="_blank" rel="noopener">Tracciato e profilo</a>
       </li>`).join('')}</ol>
     <p class="muted small">Sentieri OpenStreetMap (rete CAI). I km "adatti" incrociano tracciato, Carta Forestale e quota della specie.</p>`;
+}
+
+// --- testi legali e di sicurezza (data/legal.json, con ripiego prudente) ------
+const LEGAL_KEY = 'fungaroli:legal-accepted';
+function applyLegal() {
+  const L = legal || {};
+  if (L.home_strip) $('#home-legal span').textContent = L.home_strip;
+  // emergenza e sezioni legali nella pagina Info
+  const em = L.emergency;
+  $('#emergency').innerHTML = `<h2>${esc(em?.title || 'Sospetto avvelenamento')}</h2>
+    <ul class="reasons">${(em?.steps || ['Chiama subito il 112, anche senza sintomi.', 'Conserva i funghi avanzati, gli scarti e il resto del raccolto per i medici.']).map((x) => `<li>${esc(x)}</li>`).join('')}</ul>
+    <div class="em-numbers">${(em?.numbers || [{ label: 'Numero unico di emergenza', number: '112' }]).map((n) => `<a class="btn ${n.number === '112' ? 'primary' : 'ghost'}" href="tel:${esc(n.number.replace(/\s/g, ''))}">${esc(n.label)} · <b>${esc(n.number)}</b></a>`).join('')}</div>`;
+  $('#legal-sections').innerHTML = (L.info_sections || []).map((x) => `<details><summary><h2>${esc(x.title)}</h2></summary><div class="method">${x.html}</div></details>`).join('');
+  // primo avvio: avviso da confermare (si ripresenta se cambia la versione dei testi)
+  const ver = String(L.version || 0) + (L.verified_on || '');
+  let accepted = null;
+  try { accepted = localStorage.getItem(LEGAL_KEY); } catch { /* ignora */ }
+  if (accepted !== ver) {
+    const dlg = $('#onboarding');
+    dlg.querySelector('h2').textContent = L.onboarding?.title || 'Prima di usare l\'app';
+    dlg.querySelector('.ob-points').innerHTML = (L.onboarding?.points || [
+      'Le previsioni sono stime: non garantiscono che troverai funghi.',
+      'Schede e ricerca aiutano a orientarsi ma non sono un\'identificazione: prima di mangiare fai controllare i funghi all\'Ispettorato Micologico ASL.',
+      'Per raccogliere nel Lazio servono attestato micologico e contributo regionale, nel rispetto della L.R. 32/1998.',
+      'In montagna la sicurezza e il rispetto delle regole di parchi e riserve sono tua responsabilità.',
+    ]).map((x) => `<li>${esc(x)}</li>`).join('');
+    $('#ob-accept').textContent = L.onboarding?.accept || 'Ho capito';
+    $('#ob-accept').onclick = () => { try { localStorage.setItem(LEGAL_KEY, ver); } catch { /* ignora */ } dlg.close(); };
+    $('#ob-more').onclick = () => dlg.close();
+    dlg.addEventListener('cancel', (e) => e.preventDefault());
+    dlg.showModal();
+  }
+}
+
+function zoneLegal(z) {
+  const L = legal || {};
+  const items = L.zone_legal || ['Max 3 kg a persona al giorno', 'Raccolta da un\'ora prima dell\'alba a un\'ora dopo il tramonto', 'Attestato micologico e contributo regionale con te'];
+  return `<div class="zone-legal"><ul>${items.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>
+    ${z.protection ? `<p><b>Area protetta.</b> ${esc(z.protection)}</p>` : ''}<a class="small" href="#/info">Regole complete e note legali</a></div>`;
 }
 
 // Dove trovare una specie: idoneita' dell'habitat per zona + indice di oggi (se il meteo e' caricato).

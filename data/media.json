@@ -134,7 +134,8 @@
      "author": "Marco Gasponi",
      "license": "CC-BY-NC",
      "place": "00060 Canale Monterano RM, Italia",
-     "date": "2023-11-09"
+     "date": "2023-11-09",
+     "file_hd": "assets/species/aereus-inat1-hd.jpg"
     },
     {
      "file": "assets/species/aereus-inat2.jpg",
@@ -143,7 +144,8 @@
      "author": "lucapassalacqua",
      "license": "CC-BY-NC",
      "place": "Provincia di Grosseto, Italia",
-     "date": "2025-09-01"
+     "date": "2025-09-01",
+     "file_hd": "assets/species/aereus-inat2-hd.jpg"
     },
     {
      "file": "assets/species/aereus-inat3.jpg",
@@ -152,7 +154,8 @@
      "author": "Manuela Fiorini",
      "license": "CC-BY",
      "place": "Marche, IT",
-     "date": "2025-09-07"
+     "date": "2025-09-07",
+     "file_hd": "assets/species/aereus-inat3-hd.jpg"
     }
    ],
    "gbif": {
