@@ -317,20 +317,20 @@ function contraText(c) {
 function resultCard(c) {
   const t = c.t, ph = photoOf(t);
   const tox = esc(t.toxicity || ''), toxL = esc(t.tox_short || t.tox_label || t.toxicity || '');
-  const href = t.edible_id ? `#/specie/${t.edible_id}` : '';
   const name = esc(t.name || t.latin);
-  // tutta la card porta alla scheda (link "allungato"); la foto si ingrandisce dal suo pulsante
+  // regola: dentro Riconosci la card apre l'anteprima nel pannello (non perdi la ricerca), per tutti i funghi;
+  // dal pannello "Scheda completa". La lente apre la foto.
   return `<li class="id-card vtn tox-${tox.replace(/\s/g, '-')}" style="--vtn:c-${t.key.replace(/[^a-z0-9-]/gi, '')}">
     <div class="id-card-img">
       ${ph ? `<img src="${ASSET(ph.file)}" alt="" loading="lazy" decoding="async">` : ''}<span class="tox">${toxL}</span>
       ${ph ? `<button type="button" class="id-zoom" data-photo="${esc(t.key)}" aria-label="${name}: ingrandisci la foto"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6"/><path d="m20 20-5-5M10.5 8v5M8 10.5h5"/></svg></button>` : ''}
       ${c.tot ? `<span class="id-fit${c.contra.length ? ' warn' : ''}">${c.ok}/${c.tot}</span>` : ''}</div>
     <div class="id-card-body">
-      ${href ? `<a class="id-link" href="${href}">${name}</a>` : `<button type="button" class="id-link" data-taxon="${esc(t.key)}">${name}</button>`}${t.name && t.name !== t.latin ? `<i>${esc(t.latin)}</i>` : ''}
+      <button type="button" class="id-link" data-taxon="${esc(t.key)}">${name}</button>${t.name && t.name !== t.latin ? `<i>${esc(t.latin)}</i>` : ''}
       ${t.caution ? `<span class="small id-why"><b>Come si mangia:</b> ${esc(t.caution)}</span>` : ''}
       ${c.contra.length ? `<span class="small id-contra">${contraText(c)}</span>` : ''}
       ${t.check_before_picking?.length ? `<details><summary>Cosa controllare</summary><ul class="reasons small">${t.check_before_picking.map((x) => `<li>${esc(x)}</li>`).join('')}</ul></details>` : ''}
-      <span class="small id-more" aria-hidden="true">Scheda ›</span>
+      <span class="small id-more" aria-hidden="true">Dettagli ›</span>
     </div></li>`;
 }
 
@@ -637,7 +637,7 @@ function renderCompare(box, ref, pick) {
   const list = fromToxic ? mimicsOf(ref) : sosiaOf(ref);
   const pic = (t, small = false) => { const ph = photoOf(t); return ph ? `<img src="${ASSET(small ? ph.thumb || ph.file : ph.file)}" alt="" loading="lazy" decoding="async">` : '<span class="look-ph">senza foto</span>'; };
   const toxCls = (t) => `tox-${String(t.toxicity || '').replace(/\s/g, '-')}`;
-  const nameBtn = (t) => (t.edible_id && !t.lookalike_of?.length ? `<a href="#/specie/${t.edible_id}">${esc(t.name || t.latin)}</a>` : `<button type="button" data-taxon="${esc(t.key)}">${esc(t.name || t.latin)}</button>`);
+  const nameBtn = (t) => `<button type="button" data-taxon="${esc(t.key)}">${esc(t.name || t.latin)}</button>`; // nel confronto: anteprima, per tutti
   const slide = (t, k) => {
     const rows = cmpRows(ref, t), diff = rows.filter((r) => r.kind === 'diff'), part = rows.filter((r) => r.kind === 'part'), same = rows.filter((r) => r.kind === 'same');
     const how = fromToxic ? HOWTO(t.edible_id, ref.latin) : HOWTO(ref.edible_id, t.latin);
@@ -680,6 +680,9 @@ function renderCompare(box, ref, pick) {
   const slides = [...track.children];
   // l'altezza segue la slide visibile: niente vuoto sotto i confronti corti
   const fit = () => { const h = slides[cur]?.offsetHeight; if (h) track.style.height = `${h}px`; };
+  // l'altezza segue la slide visibile anche quando cresce dopo (foto caricate, sezioni aperte): mai uno scroll dentro lo scroll
+  const ro = new ResizeObserver(() => fit());
+  slides.forEach((sl) => ro.observe(sl));
   track.addEventListener('scroll', () => {
     const i = Math.round(track.scrollLeft / track.clientWidth);
     if (i !== cur && list[i]) { cur = i; mark(i); fit(); }
@@ -728,7 +731,9 @@ export function openTaxon(key) {
     .sort((x, y) => (y ? similarity(y, t) : 0) - (x ? similarity(x, t) : 0)).map((o) => {
     return o ? `<a class="tx-vs" href="#/riconosci/confronta/${esc(t.key)}/${esc(o.key)}">${esc(o.name)}<span aria-hidden="true">›</span></a>` : '';
   }).filter(Boolean);
-  dlg.dataset.expand = `#/fungo/${t.key}`;
+  const full = t.edible_id && !t.lookalike_of?.length ? `#/specie/${t.edible_id}` : `#/fungo/${t.key}`;
+  const sos = !t.lookalike_of?.length && t.edible_id ? sosiaOf(t) : [];
+  dlg.dataset.expand = full;
   dlg.innerHTML = `<button type="button" class="wiz-close" aria-label="Chiudi">✕</button>
     <div class="tx-handle" data-drag aria-hidden="true"><span class="sheet-grip"></span></div>
     ${ph ? `<figure class="tx-img" data-drag><img src="${ASSET(ph.file_hd || ph.file)}" alt=""><figcaption>Foto: ${esc(ph.author)}, ${esc(ph.license)}</figcaption></figure>` : ''}
@@ -736,10 +741,11 @@ export function openTaxon(key) {
     <h2>${esc(t.name || t.latin)}</h2>${t.name && t.name !== t.latin ? `<p class="tx-latin">${esc(t.latin)}</p>` : ''}
     ${t.caution ? `<p class="id-why"><b>Come si mangia:</b> ${esc(t.caution)}</p>` : ''}
     ${look.length ? `<p class="tx-vs-row"><b>Si confonde con</b>${look.join('')}</p>` : ''}
+    ${sos.length && state.compare !== t.key ? `<p class="tx-vs-row"><b>Sosia</b><a class="tx-vs" href="#/riconosci/confronta/${esc(t.key)}">Confrontalo con ${sos.length === 1 ? 'il sosia' : `i ${sos.length} sosia`}<span aria-hidden="true">›</span></a></p>` : ''}
     ${t.field_rules?.length ? `<h3>Da sapere</h3><ul class="reasons">${t.field_rules.map((r) => `<li${r.severity === 'critico' ? ' class="crit"' : ''}>${esc(r.text)}</li>`).join('')}</ul>` : ''}
     ${t.check_before_picking?.length ? `<h3>Come riconoscerla</h3><ul class="reasons">${t.check_before_picking.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>` : ''}
     </div>
-    <div class="tx-foot"><a class="btn primary big" href="#/fungo/${esc(t.key)}">Scheda completa <span aria-hidden="true">›</span></a></div>`;
+    <div class="tx-foot"><a class="btn primary big" href="${full}">Scheda completa <span aria-hidden="true">›</span></a></div>`;
   dlg.showModal();
   dlg.scrollTop = 0;
 }

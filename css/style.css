@@ -983,7 +983,7 @@ html.is-offline #updated { color: var(--warn-ink); font-weight: 600; }
 .cmp-chip.tox-tossico .cmp-chip-img { box-shadow: 0 0 0 2px var(--surface), 0 0 0 3.5px var(--warn-ink); }
 .cmp-chip-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .cmp-chip[aria-selected="true"] { background: var(--text); color: var(--bg); border-color: var(--text); }
-.cmp-track { transition: height .35s cubic-bezier(.2, .8, .2, 1); display: grid; grid-auto-flow: column; grid-auto-columns: 100%; align-items: start; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; overscroll-behavior-x: contain; }
+.cmp-track { transition: height .35s cubic-bezier(.2, .8, .2, 1); display: grid; grid-auto-flow: column; grid-auto-columns: 100%; align-items: start; overflow-x: auto; overflow-y: clip; touch-action: pan-x pan-y; scroll-snap-type: x mandatory; scrollbar-width: none; overscroll-behavior-x: contain; }
 .cmp-track::-webkit-scrollbar { display: none; }
 .cmp-slide { scroll-snap-align: start; scroll-snap-stop: always; min-width: 0; padding: 0 1px; }
 .cmp-pair { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 6px 10px; }
@@ -1940,3 +1940,7 @@ html[data-cmp-dir="prev"]::view-transition-new(cmp-pick) { animation-name: cmp-i
 .cmp-chip-ref.tox-mortale .cmp-chip-img { box-shadow: 0 0 0 2px var(--bg), 0 0 0 3.5px var(--crit); }
 .cmp-chip-ref.tox-tossico .cmp-chip-img { box-shadow: 0 0 0 2px var(--bg), 0 0 0 3.5px var(--warn-ink); }
 .cmp-chip-ref:is(.tox-non-commestibile) .cmp-chip-img { box-shadow: 0 0 0 2px var(--bg), 0 0 0 3.5px var(--border); }
+/* le pillole dei sosia si agganciano sotto la barra in alto solo quando ci arrivano scorrendo */
+.cmp-pickbar { position: sticky; top: calc(var(--appbar-h) + env(safe-area-inset-top, 0px)); z-index: 20; margin-left: calc(var(--gutter, 16px) * -1); padding: 8px 0 10px var(--gutter, 16px);
+  background: color-mix(in srgb, var(--bg) 92%, transparent); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+@media (min-width: 761px) { .cmp-pickbar { top: var(--appbar-h); } }
