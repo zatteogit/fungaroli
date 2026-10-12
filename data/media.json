@@ -219,7 +219,8 @@
     "source": "Wikimedia Commons",
     "page": "https://commons.wikimedia.org/wiki/File:Oronges.jpg",
     "author": "Yaqui",
-    "license": "CC BY-SA 3.0"
+    "license": "CC BY-SA 3.0",
+    "file_hd": "assets/species/caesarea-ref-hd.jpg"
    },
    "inat": [
     {
@@ -229,7 +230,8 @@
      "author": "Manuela Fiorini",
      "license": "CC-BY",
      "place": "Marche, IT",
-     "date": "2025-09-19"
+     "date": "2025-09-19",
+     "file_hd": "assets/species/caesarea-inat1-hd.jpg"
     },
     {
      "file": "assets/species/caesarea-inat2.jpg",
@@ -238,7 +240,8 @@
      "author": "lucapassalacqua",
      "license": "CC-BY-NC",
      "place": "Provincia di Grosseto, Italia",
-     "date": "2020-07-05"
+     "date": "2020-07-05",
+     "file_hd": "assets/species/caesarea-inat2-hd.jpg"
     },
     {
      "file": "assets/species/caesarea-inat3.jpg",
@@ -247,7 +250,8 @@
      "author": "Leonardo Ancillotto",
      "license": "CC-BY",
      "place": "01010 Farnese VT, Italia",
-     "date": "2025-09-26"
+     "date": "2025-09-26",
+     "file_hd": "assets/species/caesarea-inat3-hd.jpg"
     }
    ],
    "gbif": {
@@ -286,7 +290,8 @@
     "source": "Wikimedia Commons",
     "page": "https://commons.wikimedia.org/wiki/File:Chanterelle_Cantharellus_cibarius.jpg",
     "author": "autore su Commons",
-    "license": "CC BY-SA 3.0"
+    "license": "CC BY-SA 3.0",
+    "file_hd": "assets/species/cibarius-ref-hd.jpg"
    },
    "inat": [
     {
@@ -296,7 +301,8 @@
      "author": "Andrea Benocci",
      "license": "CC-BY-NC",
      "place": "58037 Santa Fiora GR, Italia",
-     "date": "2024-10-20"
+     "date": "2024-10-20",
+     "file_hd": "assets/species/cibarius-inat1-hd.jpg"
     },
     {
      "file": "assets/species/cibarius-inat2.jpg",
@@ -305,7 +311,8 @@
      "author": "Rino",
      "license": "CC-BY-NC",
      "place": "Provincia di Isernia, Italia",
-     "date": "2009-07-02"
+     "date": "2009-07-02",
+     "file_hd": "assets/species/cibarius-inat2-hd.jpg"
     },
     {
      "file": "assets/species/cibarius-inat3.jpg",
@@ -314,7 +321,8 @@
      "author": "Marco Panik",
      "license": "CC-BY-NC",
      "place": "Busso, Molise, IT",
-     "date": "2023-06-06"
+     "date": "2023-06-06",
+     "file_hd": "assets/species/cibarius-inat3-hd.jpg"
     }
    ],
    "gbif": {
@@ -353,7 +361,8 @@
     "source": "Wikimedia Commons",
     "page": "https://commons.wikimedia.org/wiki/File:Craterellus_cornucopioides_JPG1.jpg",
     "author": "Jean-Pol GRANDMONT",
-    "license": "CC BY 3.0"
+    "license": "CC BY 3.0",
+    "file_hd": "assets/species/cornucopioides-ref-hd.jpg"
    },
    "inat": [
     {
@@ -363,7 +372,8 @@
      "author": "Manuela Fiorini",
      "license": "CC-BY",
      "place": "Marche, IT",
-     "date": "2023-11-25"
+     "date": "2023-11-25",
+     "file_hd": "assets/species/cornucopioides-inat1-hd.jpg"
     },
     {
      "file": "assets/species/cornucopioides-inat2.jpg",
@@ -372,7 +382,8 @@
      "author": "Alessandro Ariosti",
      "license": "CC-BY-SA",
      "place": "64010 Rocca Santa Maria, Province of Teramo, Italy",
-     "date": "2020-10-27"
+     "date": "2020-10-27",
+     "file_hd": "assets/species/cornucopioides-inat2-hd.jpg"
     },
     {
      "file": "assets/species/cornucopioides-inat3.jpg",
@@ -381,7 +392,8 @@
      "author": "gretezzz",
      "license": "CC-BY-NC",
      "place": "52100 Arezzo AR, Italia",
-     "date": "2024-10-27"
+     "date": "2024-10-27",
+     "file_hd": "assets/species/cornucopioides-inat3-hd.jpg"
     }
    ],
    "gbif": {
@@ -413,7 +425,8 @@
     "source": "Wikimedia Commons",
     "page": "https://commons.wikimedia.org/wiki/File:Hedgehog_fungi2.jpg",
     "author": "D J Kelly",
-    "license": "Public domain"
+    "license": "Public domain",
+    "file_hd": "assets/species/repandum-ref-hd.jpg"
    },
    "inat": [
     {
@@ -423,7 +436,8 @@
      "author": "symcyto",
      "license": "CC-BY-NC",
      "place": "Province of Viterbo, Italy",
-     "date": "2025-10-25"
+     "date": "2025-10-25",
+     "file_hd": "assets/species/repandum-inat1-hd.jpg"
     },
     {
      "file": "assets/species/repandum-inat2.jpg",
@@ -432,7 +446,8 @@
      "author": "Manuela Fiorini",
      "license": "CC-BY",
      "place": "San Severino Marche, Marche, IT",
-     "date": "2026-01-30"
+     "date": "2026-01-30",
+     "file_hd": "assets/species/repandum-inat2-hd.jpg"
     },
     {
      "file": "assets/species/repandum-inat3.jpg",
@@ -441,7 +456,8 @@
      "author": "Rino",
      "license": "CC-BY-NC",
      "place": "Provincia di Chieti, Italia",
-     "date": "2020-11-10"
+     "date": "2020-11-10",
+     "file_hd": "assets/species/repandum-inat3-hd.jpg"
     }
    ],
    "gbif": {
