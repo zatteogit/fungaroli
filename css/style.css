@@ -1735,3 +1735,10 @@ html.theme-swap, html.theme-swap *, html.theme-swap *::before, html.theme-swap *
   #hero .cover .facts { background: rgb(255 255 255 / .08); border-color: rgb(255 255 255 / .14); backdrop-filter: none; -webkit-backdrop-filter: none; }
   #hero .cover-cta { display: none; }
 }
+/* avvisi brevi (ricarica, versione nuova) */
+.app-toast { position: fixed; left: 50%; bottom: calc(96px + env(safe-area-inset-bottom)); z-index: 60; display: flex; align-items: center; gap: 10px; max-width: calc(100vw - 32px); padding: 10px 16px; border-radius: 999px; background: var(--text); color: var(--bg); font-size: 14px; font-weight: 600; box-shadow: var(--shadow-2);
+  transform: translate(-50%, 20px); opacity: 0; pointer-events: none; transition: transform .3s var(--ease-out, ease), opacity .2s; }
+.app-toast.on { transform: translate(-50%, 0); opacity: 1; pointer-events: auto; }
+.app-toast .link-btn { color: inherit; font-weight: 800; }
+.app-toast .spin { width: 14px; height: 14px; border-radius: 50%; border: 2px solid currentColor; border-right-color: transparent; animation: ld-spin .8s linear infinite; }
+@media (min-width: 761px) { .app-toast { bottom: 24px; } }

@@ -1,16 +1,17 @@
 // Service worker di Fungaroli: l'app si apre anche senza campo.
-// - file dell'app (stessa origine): subito dalla cache, aggiornati in background (vale al prossimo avvio)
+// - codice e dati dell'app (stessa origine): prima la rete (max 3 s), poi la cache: una nuova versione si vede subito
+// - immagini (assets/): subito dalla cache, aggiornate in background
 // - meteo Open-Meteo: prima la rete, senza rete l'ultima risposta salvata
 // - mappe: dalla cache se gia' viste, con un limite di tessere
 // - diario (/api/): mai in cache
-const SHELL = 'fungaroli-shell-v2';
+const SHELL = 'fungaroli-shell-v3';
 const RUNTIME = 'fungaroli-runtime-v1';
 const TILES = 'fungaroli-tiles-v1';
 const MAX_TILES = 1500;
 const PRECACHE = [
   './', 'index.html', 'manifest.webmanifest', 'css/style.css', 'css/fonts.css',
   'js/app.js', 'js/model.js', 'js/species.js', 'js/weather.js', 'js/chart.js', 'js/journal.js', 'js/svgmap.js',
-  'js/speciescard.js', 'js/identify.js', 'js/trees.js', 'js/human.js', 'js/lightbox.js', 'js/install.js', 'js/outing.js', 'js/motion.js', 'js/rails.js', 'js/theme.js', 'js/forest-legend.js', 'js/search.js', 'js/science.js', 'docs/metodo-scientifico.md',
+  'js/speciescard.js', 'js/identify.js', 'js/trees.js', 'js/human.js', 'js/lightbox.js', 'js/install.js', 'js/outing.js', 'js/motion.js', 'js/rails.js', 'js/theme.js', 'js/refresh.js', 'js/forest-legend.js', 'js/search.js', 'js/science.js', 'docs/metodo-scientifico.md',
   'data/zones.json', 'data/habitat.json', 'data/access.json', 'data/trails.json', 'data/species-id.json', 'data/media.json',
   'data/infografiche.json', 'data/trees.json', 'data/species-traits.json', 'data/media-trees.json', 'data/media-zones.json', 'data/legal.json', 'data/preparation.json', 'data/trailheads.json',
   'assets/icon-192.png', 'assets/icon.svg', 'assets/map-thumb-topo.jpg', 'assets/map-thumb-osm.jpg', 'assets/map-thumb-forest.jpg',
@@ -42,6 +43,19 @@ async function networkFirst(req, cacheName) {
     return (await cache.match(req)) || Response.error();
   }
 }
+// rete con un tempo massimo: se non risponde in fretta (campo scarso) si usa la copia salvata
+async function networkFirstFast(req, cacheName, ms = 3000) {
+  const cache = await caches.open(cacheName);
+  const net = fetch(req).then((res) => { if (res.ok) cache.put(req, res.clone()); return res; });
+  const timeout = new Promise((r) => setTimeout(r, ms, null));
+  try {
+    const res = await Promise.race([net, timeout]);
+    if (res) return res;
+  } catch { /* senza rete */ }
+  const hit = await cache.match(req, { ignoreSearch: req.mode === 'navigate' });
+  if (hit) return hit;
+  try { return await net; } catch { return (req.mode === 'navigate' && await cache.match('index.html')) || Response.error(); }
+}
 async function tile(req) {
   const cache = await caches.open(TILES);
   const hit = await cache.match(req);
@@ -62,7 +76,7 @@ self.addEventListener('fetch', (e) => {
   const url = new URL(req.url);
   if (url.origin === location.origin) {
     if (url.pathname.startsWith('/api/')) return;
-    e.respondWith(staleWhileRevalidate(req, url.pathname.startsWith('/assets/') ? RUNTIME : SHELL));
+    e.respondWith(url.pathname.startsWith('/assets/') ? staleWhileRevalidate(req, RUNTIME) : networkFirstFast(req, SHELL));
   } else if (url.hostname === 'api.open-meteo.com') {
     e.respondWith(networkFirst(req, RUNTIME));
   } else if (/tile\.opentopomap\.org$|tile\.openstreetmap\.org$/.test(url.hostname)) {

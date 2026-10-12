@@ -1,5 +1,6 @@
 import './rails.js';
 import './theme.js';
+import { consumeFresh, freshDone } from './refresh.js';
 import { SPECIES, GROUPS, FOREST } from './species.js';
 import { scoreZoneDay, scoreSpecies, habitatAtBand, habitatPotential, classOf, CLASSES } from './model.js';
 import { loadWeather } from './weather.js';
@@ -118,7 +119,9 @@ async function init() {
   initShell();
   initJournal({ zones, predict, getZoneId: () => state.zoneId || zones[0].id, zoneImage: (zid) => zoneMedia[zid]?.file || speciesPhoto(SPECIES[0].id)?.file });
   route(); // le pagine che non dipendono dal meteo (specie, diario, info) compaiono subito
-  await refreshWeather(false);
+  const fresh = consumeFresh(); // ricarica pulita dal logo: anche il meteo da capo
+  await refreshWeather(fresh);
+  if (fresh) freshDone();
   // ricaricare il meteo e' raro (si aggiorna da solo dopo un'ora): sta sulla scritta dell'aggiornamento, non nella barra
   if (embedded || review) $('#refresh').disabled = true;
   else $('#refresh').addEventListener('click', () => { $('#refresh').classList.add('spin'); refreshWeather(true).finally(() => $('#refresh').classList.remove('spin')); });
