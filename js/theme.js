@@ -1,15 +1,19 @@
-// Tema: automatico (segue il telefono), chiaro o scuro. Un bottone piccolo nella barra in alto passa dall'uno all'altro.
+// Tema: chiaro (predefinito), scuro ("notte nel bosco") o automatico (segue il telefono).
+// Un bottone piccolo nella barra in alto passa dall'uno all'altro e dice a quale sei passato.
+import { toast } from './refresh.js';
 const KEY = 'fungaroli:theme';
 const root = document.documentElement;
-const MODES = ['auto', 'light', 'dark'];
+const MODES = ['light', 'dark', 'auto'];
 const LABEL = { auto: 'Tema automatico, come il telefono', light: 'Tema chiaro', dark: 'Tema scuro' };
+const systemDark = () => matchMedia('(prefers-color-scheme: dark)').matches;
 const ICON = {
   auto: '<circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 0 1 0 16z" fill="currentColor" stroke="none"/>',
   light: '<circle cx="12" cy="12" r="4"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6l1.4 1.4M17 17l1.4 1.4M5.6 18.4 7 17M17 7l1.4-1.4"/>',
   dark: '<path d="M19.5 14.5A8 8 0 0 1 9.5 4.5a8 8 0 1 0 10 10z"/>',
 };
-const BG = { light: '#f3efe7', dark: '#0f110d' };
-const read = () => { try { return localStorage.getItem(KEY) || 'auto'; } catch { return 'auto'; } };
+const BG = { light: '#f3efe7', dark: '#0a1310' };
+// chi non ha mai scelto parte dal chiaro
+const read = () => { try { return localStorage.getItem(KEY) || 'light'; } catch { return 'light'; } };
 
 function apply(mode) {
   if (mode === 'auto') delete root.dataset.theme; else root.dataset.theme = mode;
@@ -28,5 +32,8 @@ document.getElementById('theme-btn')?.addEventListener('click', () => {
   try { localStorage.setItem(KEY, next); } catch { /* resta per questa sessione */ }
   root.classList.add('theme-swap');
   apply(next);
+  const b = document.getElementById('theme-btn');
+  b?.classList.add('spin'); setTimeout(() => b?.classList.remove('spin'), 460);
+  toast(`${b?.innerHTML || ''}<span>${next === 'auto' ? `Automatico (ora ${systemDark() ? 'scuro' : 'chiaro'})` : next === 'dark' ? 'Tema scuro' : 'Tema chiaro'}</span>`, 1800);
   setTimeout(() => root.classList.remove('theme-swap'), 400);
 });

@@ -52,26 +52,26 @@
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     color-scheme: dark;
-    --bg: #0f110d; --surface: #181b15; --surface-2: #20241c; --surface-3: #2a2f25; --border: #353b2f; --hair: #262b21;
-    --text: #f0ede5; --text-2: #c7c1b4; --muted: #978f82;
-    --accent: #e09a64; --accent-ink: #1a1208; --accent-soft: #3a2616; --forest: #16261b;
-    --rain: #3987e5; --rain-fc: #1c5cab; --line: #9fd07a; --grid: #2a2f25;
-    --s0: #4a4d45; --s1: #4e6b40; --s2: #5b8c3c; --s3: #6daa3f; --s4: #82c845; --s5: #9be34c;
-    --warn-bg: #362c15; --warn-ink: #f2d59a; --ok-bg: #20301a; --ok-ink: #c4e3ad;
-    --crit: #f0786c; --crit-bg: #361612; --crit-ink: #f8d0ca;
-    --shadow-1: 0 1px 2px rgb(0 0 0 / .4); --shadow-2: 0 18px 44px rgb(0 0 0 / .5);
+    --bg: #0a1310; --surface: #101c17; --surface-2: #16251e; --surface-3: #1e3128; --border: #2a4136; --hair: #1a2b23;
+    --text: #e9efe7; --text-2: #b9c8bc; --muted: #86998c;
+    --accent: #f0b46a; --accent-ink: #1a1206; --accent-soft: #2f2414; --forest: #0f2219;
+    --rain: #4a93e8; --rain-fc: #1c5cab; --line: #9fd07a; --grid: #1e3128;
+    --s0: #3c4a42; --s1: #3f6a43; --s2: #4f8c45; --s3: #64aa49; --s4: #7fc84e; --s5: #9be34c;
+    --warn-bg: #2f2812; --warn-ink: #f2d59a; --ok-bg: #142a1c; --ok-ink: #bfe6b0;
+    --crit: #f0786c; --crit-bg: #33130f; --crit-ink: #f8d0ca;
+    --shadow-1: 0 1px 2px rgb(0 0 0 / .45); --shadow-2: 0 18px 44px rgb(0 0 0 / .55);
   }
 }
 :root[data-theme="dark"] {
   color-scheme: dark;
-  --bg: #0f110d; --surface: #181b15; --surface-2: #20241c; --surface-3: #2a2f25; --border: #353b2f; --hair: #262b21;
-  --text: #f0ede5; --text-2: #c7c1b4; --muted: #978f82;
-  --accent: #e09a64; --accent-ink: #1a1208; --accent-soft: #3a2616; --forest: #16261b;
-  --rain: #3987e5; --rain-fc: #1c5cab; --line: #9fd07a; --grid: #2a2f25;
-  --s0: #4a4d45; --s1: #4e6b40; --s2: #5b8c3c; --s3: #6daa3f; --s4: #82c845; --s5: #9be34c;
-  --warn-bg: #362c15; --warn-ink: #f2d59a; --ok-bg: #20301a; --ok-ink: #c4e3ad;
-  --crit: #f0786c; --crit-bg: #361612; --crit-ink: #f8d0ca;
-  --shadow-1: 0 1px 2px rgb(0 0 0 / .4); --shadow-2: 0 18px 44px rgb(0 0 0 / .5);
+  --bg: #0a1310; --surface: #101c17; --surface-2: #16251e; --surface-3: #1e3128; --border: #2a4136; --hair: #1a2b23;
+  --text: #e9efe7; --text-2: #b9c8bc; --muted: #86998c;
+  --accent: #f0b46a; --accent-ink: #1a1206; --accent-soft: #2f2414; --forest: #0f2219;
+  --rain: #4a93e8; --rain-fc: #1c5cab; --line: #9fd07a; --grid: #1e3128;
+  --s0: #3c4a42; --s1: #3f6a43; --s2: #4f8c45; --s3: #64aa49; --s4: #7fc84e; --s5: #9be34c;
+  --warn-bg: #2f2812; --warn-ink: #f2d59a; --ok-bg: #142a1c; --ok-ink: #bfe6b0;
+  --crit: #f0786c; --crit-bg: #33130f; --crit-ink: #f8d0ca;
+  --shadow-1: 0 1px 2px rgb(0 0 0 / .45); --shadow-2: 0 18px 44px rgb(0 0 0 / .55);
 }
 
 /* ------------------------------------------------------------------- base */
@@ -1949,3 +1949,12 @@ html[data-cmp-dir="prev"]::view-transition-new(cmp-pick) { animation-name: cmp-i
 .cmp-ref-l b { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-weight: 700; }
 .cmp-ref-l i { flex: none; font-family: var(--font-display); font-style: italic; font-weight: 700; font-size: 14px; color: var(--muted); }
 #map.no-anim .leaflet-tile-pane, #map.no-anim .basemap, #map.no-anim .zone-c, #map.no-anim .leaflet-cells-pane { transition: none !important; }
+/* notte nel bosco: un bagliore di luna in alto, appena percettibile */
+:root[data-theme="dark"] body::before { content: ''; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+  background: radial-gradient(90% 45% at 85% -8%, rgb(120 170 150 / .13), transparent 70%), radial-gradient(70% 40% at 0% 105%, rgb(40 90 60 / .18), transparent 70%); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme]) body::before { content: ''; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+  background: radial-gradient(90% 45% at 85% -8%, rgb(120 170 150 / .13), transparent 70%), radial-gradient(70% 40% at 0% 105%, rgb(40 90 60 / .18), transparent 70%); } }
+.theme-btn svg { transition: transform .45s cubic-bezier(.2, .8, .2, 1); }
+.theme-btn.spin svg { transform: rotate(180deg); }
+.app-toast svg { width: 18px; height: 18px; flex: none; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.app-toast { white-space: nowrap; }
