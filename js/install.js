@@ -156,7 +156,8 @@ function render() {
 
 // Invito a tutto schermo: a ogni nuova sessione finche' non e' installata, ma non piu' di una volta al giorno
 export function maybeInvite() {
-  if (!canOffer()) return;
+  // solo su telefono e tablet: sul computer si propone dal banner e da Info, senza interrompere
+  if (!canOffer() || !(isIOS || isAndroid)) return;
   try {
     if (sessionStorage.getItem(LATER)) return;
     if (Date.now() - (+localStorage.getItem(LATER) || 0) < 20 * 3600e3) return;

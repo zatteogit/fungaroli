@@ -1780,7 +1780,7 @@ html.theme-swap, html.theme-swap *, html.theme-swap *::before, html.theme-swap *
 @keyframes iv-bob-up { 0%, 100% { transform: rotate(180deg); } 50% { transform: rotate(180deg) translateY(8px); } }
 @media (prefers-reduced-motion: reduce) { .install-invite[open], .iv-point { animation: none; } }
 @media (min-width: 761px) {
-  .install-invite { width: min(520px, calc(100vw - 48px)); height: auto; max-height: calc(100vh - 48px); margin: auto; border-radius: 28px; box-shadow: var(--shadow-2); }
+  .install-invite { width: min(520px, calc(100vw - 48px)); height: fit-content; max-height: calc(100vh - 48px); margin: auto; border-radius: 28px; box-shadow: var(--shadow-2); }
   .iv-in { min-height: 0; padding: 32px 28px 20px; }
   .iv-point { display: none; }
 }
