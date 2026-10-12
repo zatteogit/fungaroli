@@ -14,7 +14,7 @@ import { renderWhy, renderMethod } from './science.js';
 import { navigate, soft } from './motion.js';
 import { FOREST_LEGEND } from './forest-legend.js';
 import { initTrees, renderTreeGrid, renderTreePage, linkTrees, treeForCategory, treeThumb } from './trees.js';
-import { crowding, comfortScore, timingAdvice, fmtTime, holidayName, intornoA } from './human.js';
+import { crowding, comfortScore, timingAdvice, fmtTime, fmtRough, holidayName, intornoA } from './human.js';
 
 const HISTORY_DAYS = 30;   // giorni passati mostrati nel grafico
 const AHEAD_DAYS = 7;      // giorni futuri valutati
@@ -605,7 +605,7 @@ function renderHome() {
         <span class="cover-title">${esc(title)}</span>${sub ? `<span class="cover-sub">${esc(sub)}</span>` : ''}
         <span class="cover-sp">${thumb(hero.d.best.species.id, 44)}<span><b>${esc(hero.d.best.species.name)}</b> ${intornoA(hero.d.best.band)} ${hero.d.best.band} m</span></span>
         ${also.length ? `<span class="sp-pills" aria-label="Altre specie possibili"><span class="sp-pills-k">anche</span>${also.join('')}</span>` : ''}
-        <span class="facts">${t ? fact('clock', `entro le <b>${fmtTime(t.arrive)}</b>`) : ''}${fact('car', `<b>${a0?.minutes ?? hero.z.drive_min}</b> min`)}${hero.d.crowd ? fact('people', crowdText(hero.d.crowd)) : ''}${wxOf(hero.z, hero.d) ? `<span class="fact wx-${wxOf(hero.z, hero.d).level}">${IC[wxIcon(wxOf(hero.z, hero.d))]}${esc(wxOf(hero.z, hero.d).main)}</span>` : ''}</span>
+        <span class="facts">${t ? fact('clock', `entro le <b>${fmtRough(t.arrive, 15, 'floor')}</b>`) : ''}${fact('car', `<b>${a0?.minutes ?? hero.z.drive_min}</b> min`)}${hero.d.crowd ? fact('people', crowdText(hero.d.crowd)) : ''}${wxOf(hero.z, hero.d) ? `<span class="fact wx-${wxOf(hero.z, hero.d).level}">${IC[wxIcon(wxOf(hero.z, hero.d))]}${esc(wxOf(hero.z, hero.d).main)}</span>` : ''}</span>
         ${(() => { const g = list.filter((c) => c.o === hero.o).sort((a, b) => b.s - a.s)[0]; const wg = g && wxOf(g.z, g.d); return g && g.z.id !== hero.z.id && wg && wg.level !== 'ok' ? `<span class="cover-note">${esc(splitName(g.z)[0])} avrebbe un indice più alto (${g.s}), ma ${esc(dayLabel(hero.o, hero.d.date, true).toLowerCase())} mattina: ${esc(wg.main)}.</span>` : ''; })()}
         <span class="cover-cta">Il piano dell'uscita <span aria-hidden="true">→</span></span>
       </span>
@@ -974,8 +974,8 @@ function planCard(z, d) {
       d.perSpecies.slice(1, 3).filter((p) => p.score >= 20).map((p) => `${esc(p.species.name)} ${p.score}`).join(' · ')].filter(Boolean).join('<br>') || esc(best.species.latin) });
   if (d.crowd) {
     const t = timingAdvice({ dateStr: d.date, lat: z.lat, lon: z.lon, crowd: d.crowd });
-    rows.push({ sec: 'quando', icon: 'when', k: 'Quando', v: `Arriva <b>entro le ${fmtTime(t.arrive)}</b> <span class="badge crowd-${d.crowd.level}">${crowdText(d.crowd)}</span>`,
-      sub: `alba ${fmtTime(t.sunrise)} · raccolta dalle ${fmtTime(t.legal)}` });
+    rows.push({ sec: 'quando', icon: 'when', k: 'Quando', v: `Arriva <b>entro le ${fmtRough(t.arrive, 15, 'floor')}</b> <span class="badge crowd-${d.crowd.level}">${crowdText(d.crowd)}</span>`,
+      sub: `alba verso le ${fmtRough(t.sunrise, 5)} · raccolta dalle ${fmtRough(t.legal, 5, 'ceil')}` });
   }  const w = wxOf(z, d);
   if (w) {
     const alt = alternativeFor(z, state.dayOffset, d);
@@ -1133,9 +1133,9 @@ function renderHuman(z, d) {
     <div class="human">
       <p><span class="badge crowd-${d.crowd.level}">${crowdText(d.crowd).replace(/^./, (c) => c.toUpperCase())}</span> <span class="muted small">${esc(hol || d.crowd.day.label)}</span></p>
       <dl class="kv">
-        <dt>Alba</dt><dd>${fmtTime(t.sunrise)} · raccolta consentita dalle <b>${fmtTime(t.legal)}</b> alle ${fmtTime(t.end)}</dd>
-        <dt>Arrivo consigliato</dt><dd><b>entro le ${fmtTime(t.arrive)}</b>. ${esc(t.why)}</dd>
-        ${(() => { const dep = new Date(t.arrive.getTime() - ((access[z.id]?.[0]?.minutes ?? z.drive_min) + 10) * 6e4); return `<dt>Partenza da Rieti</dt><dd>verso le ${fmtTime(dep)}</dd>`; })()}
+        <dt>Alba</dt><dd>verso le ${fmtRough(t.sunrise, 5)} · raccolta consentita dalle <b>${fmtRough(t.legal, 5, 'ceil')}</b> alle ${fmtRough(t.end, 5, 'floor')}</dd>
+        <dt>Arrivo consigliato</dt><dd><b>entro le ${fmtRough(t.arrive, 15, 'floor')}</b>. ${esc(t.why)}</dd>
+        ${(() => { const dep = new Date(t.arrive.getTime() - ((access[z.id]?.[0]?.minutes ?? z.drive_min) + 10) * 6e4); return `<dt>Partenza da Rieti</dt><dd>verso le ${fmtRough(dep, 15, 'floor')}</dd>`; })()}
       </dl>
       ${tips.length ? `<ul class="reasons">${tips.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>` : ''}
       <p class="muted small">Stima euristica: giorno della settimana e festivi, notorietà della zona, da quanti giorni l'indice è alto, facilità d'accesso, pioggia.</p>

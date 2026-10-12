@@ -23,7 +23,13 @@ export function sunTimes(dateStr, lat, lon) {
   return { sunrise: new Date(mid + rise * 6e4), sunset: new Date(mid + set * 6e4) };
 }
 
-export const fmtTime = (date) => date.toLocaleTimeString('it-IT', { hour: '2-digit', minute: '2-digit', timeZone: 'Europe/Rome' });
+export const fmtTime = (date) => date.toLocaleTimeString('it-IT', { hour: 'numeric', minute: '2-digit', timeZone: 'Europe/Rome' });
+// orari "umani": nessuno va a funghi alle 06:22. step in minuti; mode 'floor' (prima), 'ceil' (dopo), 'round'
+export function roundTime(date, step = 15, mode = 'round') {
+  const ms = step * 6e4, f = mode === 'floor' ? Math.floor : mode === 'ceil' ? Math.ceil : Math.round;
+  return new Date(f(date.getTime() / ms) * ms);
+}
+export const fmtRough = (date, step = 15, mode = 'round') => fmtTime(roundTime(date, step, mode));
 
 // Pasqua (algoritmo di Meeus/Jones/Butcher)
 function easter(y) {
