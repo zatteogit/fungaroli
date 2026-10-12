@@ -778,9 +778,31 @@ function renderTrails(z, d) {
       <li${k === 0 ? ' class="top"' : ''}>
         <div class="t1">${t.ref ? `<span class="ref">${esc(t.ref)}</span> ` : ''}${esc(t.name || t.itinerary.join(' – ') || 'Sentiero')}${t.long ? ' <span class="badge">itinerario lungo</span>' : ''}</div>
         <div class="t2"><b>${fmtKm(t.goodKm)} km</b> in ${esc((SHORT[t.mainCat] || t.mainCat || 'bosco').toLowerCase())} adatto tra ${t.lo} e ${t.hi} m · ${fmtKm(t.in_zone_km)} km nella zona${t.difficulty ? ` · ${DIFF[t.difficulty] || t.difficulty}` : ''}${t.duration ? ` · intero ${t.duration.replace(/^0/, '')} h` : ''}</div>
-        <a class="small" href="https://hiking.waymarkedtrails.org/#route?id=${t.id}" target="_blank" rel="noopener">Tracciato e profilo</a>
+        ${trailLinks(z, t)}
       </li>`).join('')}</ol>
-    <p class="muted small">Sentieri OpenStreetMap (rete CAI). I km "adatti" incrociano tracciato, Carta Forestale e quota della specie.</p>`;
+    <p class="muted small">Sentieri OpenStreetMap (rete CAI). I km "adatti" incrociano tracciato, Carta Forestale e quota della specie. Google Maps di norma non mostra i sentieri CAI: per seguirli sul posto importa il GPX in un'app con mappe OpenStreetMap (OsmAnd, Organic Maps, Komoot, Locus).</p>`;
+}
+
+// Link di un sentiero: mappa centrata sul tratto nella zona, OSM, navigazione all'imbocco, GPX del tratto
+function trailLinks(z, t) {
+  const pts = (t.lines || []).flat();
+  if (!pts.length) return `<a class="small" href="https://www.openstreetmap.org/relation/${t.id}" target="_blank" rel="noopener">Tracciato su OpenStreetMap</a>`;
+  const lats = pts.map((p) => p[0]), lons = pts.map((p) => p[1]);
+  const c = [(Math.min(...lats) + Math.max(...lats)) / 2, (Math.min(...lons) + Math.max(...lons)) / 2];
+  const span = Math.max(Math.max(...lats) - Math.min(...lats), (Math.max(...lons) - Math.min(...lons)) * 0.74);
+  const zoom = Math.max(11, Math.min(15, Math.round(Math.log2(0.9 / Math.max(span, 0.005)) + 8)));
+  // imbocco: punto del tratto piu' vicino alla sosta principale della zona
+  const park = access[z.id]?.[0] || z;
+  const d2 = (p) => (p[0] - park.lat) ** 2 + ((p[1] - park.lon) * 0.74) ** 2;
+  const start = pts.reduce((a, p) => (d2(p) < d2(a) ? p : a), pts[0]);
+  const name = t.name || t.ref || 'Sentiero';
+  const gpx = `<?xml version="1.0" encoding="UTF-8"?>\n<gpx version="1.1" creator="Fungaroli Rieti" xmlns="http://www.topografix.com/GPX/1/1"><metadata><name>${esc(name)}</name><desc>Tratto nella zona ${esc(z.name)}. Dati OpenStreetMap, licenza ODbL.</desc></metadata>${(t.lines || []).map((l) => `<trk><name>${esc(name)}</name><trkseg>${l.map((p) => `<trkpt lat="${p[0]}" lon="${p[1]}"/>`).join('')}</trkseg></trk>`).join('')}</gpx>`;
+  const file = `${(t.ref || name).replace(/[^\w-]+/g, '_')}-${z.id}.gpx`;
+  return `<p class="trail-links small">
+    <a href="https://hiking.waymarkedtrails.org/#route?id=${t.id}&map=${zoom}/${c[0].toFixed(5)}/${c[1].toFixed(5)}" target="_blank" rel="noopener">Mappa e profilo</a> ·
+    <a href="${gmaps(start[0], start[1])}" target="_blank" rel="noopener">Portami all'imbocco</a> ·
+    <a href="data:application/gpx+xml;charset=utf-8,${encodeURIComponent(gpx)}" download="${esc(file)}">Scarica GPX</a> ·
+    <a href="https://www.openstreetmap.org/relation/${t.id}" target="_blank" rel="noopener">OpenStreetMap</a></p>`;
 }
 
 // --- testi legali e di sicurezza (data/legal.json, con ripiego prudente) ------
