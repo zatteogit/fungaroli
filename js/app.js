@@ -74,8 +74,9 @@ async function init() {
   if (embedded) $('#refresh').hidden = true;
   else $('#refresh').addEventListener('click', () => refreshWeather(true));
   for (const [id, key] of [['distance-penalty', 'distancePenalty'], ['avoid-crowd', 'avoidCrowd'], ['prefer-comfort', 'preferComfort']]) {
-    $('#' + id).checked = state[key];
-    $('#' + id).addEventListener('change', (e) => { state[key] = e.target.checked; savePrefs(); renderAll(); });
+    const b = $('#' + id);
+    b.setAttribute('aria-pressed', String(state[key]));
+    b.addEventListener('click', () => { state[key] = !state[key]; b.setAttribute('aria-pressed', String(state[key])); savePrefs(); renderAll(); });
   }
   matchMedia('(prefers-color-scheme: dark)').addEventListener('change', renderAll);
   let rt;
@@ -272,9 +273,13 @@ function renderRanking() {
     li.innerHTML = `<span class="score-pill"><span class="dot" style="background:var(${scoreVar(c.s)})"></span>${c.s}</span>
       <div><div class="t1">${esc(c.z.name)} · ${day}</div>
       <div class="t2">${esc(c.d.best.species.name)} intorno ai ${c.d.best.band} m · ${access[c.z.id]?.[0]?.minutes ?? c.z.drive_min} min da Rieti</div>
-      <div class="badges">${c.d.crowd ? `<span class="badge crowd-${c.d.crowd.level}">folla ${c.d.crowd.level}</span>` : ''}${c.d.comfort ? `<span class="badge comfort-${c.d.comfort.level}">${c.d.comfort.level}</span>` : ''}</div></div>
+      <div class="badges">${c.d.crowd ? `<span class="badge crowd-${c.d.crowd.level}">folla ${c.d.crowd.level}</span>` : ''}${c.d.comfort ? `<span class="badge comfort-${c.d.comfort.level}">accesso ${c.d.comfort.level}</span>` : ''}</div></div>
       <span class="conf">affidabilità<br>${conf >= 0.8 ? 'alta' : conf >= 0.55 ? 'media' : 'bassa'}</span>`;
-    const go = () => { state.zoneId = c.z.id; state.dayOffset = c.o; renderAll(); map?.flyTo([c.z.lat, c.z.lon], 12, { duration: 0.6 }); };
+    const go = () => {
+      state.zoneId = c.z.id; state.dayOffset = c.o; renderAll();
+      map?.flyTo([c.z.lat, c.z.lon], 12, { duration: 0.6 });
+      if (matchMedia('(max-width: 900px)').matches) $('#detail').scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
+    };
     li.addEventListener('click', go);
     li.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); } });
     ol.appendChild(li);
@@ -419,6 +424,49 @@ function forestBar(frac) {
   return `<div class="forest">${bar}</div><div class="forest-legend">${leg}</div>`;
 }
 
+const ICON = {
+  find: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 6 0 0 1 16 0z"/><path d="M10 12v6a2 2 0 0 0 4 0v-6"/></svg>',
+  when: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg>',
+  car: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 16V11l2-4h10l2 4v5"/><path d="M4 16h16"/><circle cx="8" cy="17" r="1.5"/><circle cx="16" cy="17" r="1.5"/></svg>',
+  trail: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 20c2-4 8-3 8-7s-6-3-6-7"/><circle cx="17" cy="5" r="1.5"/></svg>',
+};
+
+function planCard(z, d) {
+  const best = d.best;
+  const rows = [];
+  rows.push({ icon: 'find', k: 'Cosa cercare', v: `<b>${esc(best.species.name)}</b> intorno ai <b>${best.band} m</b>`,
+    sub: d.perSpecies.slice(1, 3).filter((p) => p.score >= 20).map((p) => `${esc(p.species.name)} ${p.score}`).join(' · ') || esc(best.species.latin) });
+  if (d.crowd) {
+    const t = timingAdvice({ dateStr: d.date, lat: z.lat, lon: z.lon, crowd: d.crowd });
+    rows.push({ icon: 'when', k: 'Quando', v: `Arriva <b>entro le ${fmtTime(t.arrive)}</b> <span class="badge crowd-${d.crowd.level}">folla ${d.crowd.level}</span>`,
+      sub: `alba ${fmtTime(t.sunrise)} · raccolta dalle ${fmtTime(t.legal)}` });
+  }
+  const a0 = access[z.id]?.[0];
+  const ax = d.access;
+  if (a0 || ax) {
+    const unp = a0?.unpaved_tail_km > 0.2 ? `, ultimi ${fmtKm(a0.unpaved_tail_km)} km su strada bianca` : '';
+    rows.push({ icon: 'car', k: 'Come arrivare',
+      v: ax ? `In auto ${ax.road ? `su ${esc(ax.road)}` : 'fino al punto più vicino'}, poi <b>${fmtM(ax.walkM)} a piedi</b>` : `${a0.minutes} min fino a ${esc(a0.parking)}`,
+      sub: `${a0 ? `${a0.minutes} min da Rieti${unp}` : ''}${ax ? ` · <a href="${gmaps(ax.rlat, ax.rlon)}" target="_blank" rel="noopener">navigatore</a>` : ''}`,
+      badge: d.comfort ? `<span class="badge comfort-${d.comfort.level}">${d.comfort.level}</span>` : '' });
+  }
+  const tl = trailsFor(z, best.species, best.band);
+  if (tl[0]) {
+    const t = tl[0];
+    rows.push({ icon: 'trail', k: 'Sentiero', v: `${t.ref ? `<span class="ref">${esc(t.ref)}</span> ` : ''}${esc(t.name || t.itinerary.join(' – ') || 'Sentiero')}`,
+      sub: `${fmtKm(t.goodKm)} km in bosco adatto tra ${t.lo} e ${t.hi} m` });
+  }
+  return `<ul class="plan">${rows.map((r) => `
+    <li><span class="plan-ic">${ICON[r.icon]}</span>
+      <div class="plan-body"><div class="plan-k">${r.k}${r.badge ? ' ' + r.badge : ''}</div><div class="plan-v">${r.v}</div>${r.sub ? `<div class="plan-sub">${r.sub}</div>` : ''}</div></li>`).join('')}</ul>`;
+}
+
+const section = (id, title, body, open = false) => body ? `
+  <details class="sec" data-sec="${id}"${open || openSecs.has(id) ? ' open' : ''}>
+    <summary>${title}</summary><div class="sec-body">${body}</div>
+  </details>` : '';
+const openSecs = new Set(['meteo']);
+
 function renderDetail() {
   const z = zones.find((x) => x.id === state.zoneId) || zones[0];
   const r = results[z.id];
@@ -427,7 +475,7 @@ function renderDetail() {
   if (!d?.best) { box.innerHTML = '<p class="muted">Nessun dato per questo giorno.</p>'; return; }
   const best = d.best;
   const s = adjusted(z, d.score, d);
-  const dayLabel = state.dayOffset === 0 ? 'oggi' : fmtDate(d.date, { weekday: 'long', day: 'numeric', month: 'long' });
+  const dayLabel = state.dayOffset === 0 ? 'Oggi' : fmtDate(d.date, { weekday: 'long', day: 'numeric', month: 'long' });
   const hab = habitatAtBand(habitat[z.id], best.band);
   const rows = d.perSpecies.map((p) => `
     <tr>
@@ -440,43 +488,45 @@ function renderDetail() {
 
   const sb = series[z.id][bandIndex(z, best.band)];
   const from = Math.max(0, r.todayIndex - HISTORY_DAYS);
-  const humanHtml = renderHuman(z, d);
-  const accessHtml = renderAccess(z, d);
-  const trailsHtml = renderTrails(z, d);
   const days = r.days.filter((x) => x.i >= from);
+  const reasons = explain(best);
+  reasons.push(`affidabilità ${Math.round(best.confidence * 100)}%`);
 
   box.innerHTML = `
-    <h2>${esc(z.name)}</h2>
-    <p class="meta">${dayLabel} · ${access[z.id]?.[0]?.minutes ?? z.drive_min} min / ${access[z.id]?.[0]?.km ?? z.drive_km} km da Rieti</p>
-    <p><span class="score-pill" style="font-size:20px"><span class="dot" style="width:14px;height:14px;background:var(${scoreVar(s)})"></span>${s}</span>
-      <span class="muted"> ${CLASSES[classOf(s)].label} · ${esc(best.species.name)} intorno ai <b>${best.band} m</b></span></p>
-    <ul class="reasons">${explain(best).map((x) => `<li>${esc(x)}</li>`).join('')}
-      <li>affidabilità ${Math.round(best.confidence * 100)}%${best.confidence < 1 ? ' (dipende anche da pioggia prevista)' : ''}</li></ul>
+    <header class="zone-head">
+      <div>
+        <p class="eyebrow">${esc(dayLabel)}</p>
+        <h2>${esc(z.name)}</h2>
+      </div>
+      <div class="big-score" style="--c:var(${scoreVar(s)})"><span>${s}</span><small>${CLASSES[classOf(s)].label}</small></div>
+    </header>
+    ${planCard(z, d)}
+    <ul class="why">${reasons.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>
     ${z.protection ? `<div class="notice">${esc(z.protection)}</div>` : ''}
-    ${humanHtml}
-    ${accessHtml}
-    ${trailsHtml}
-    <h3>Pioggia e indice</h3>
-    <div id="charts"></div>
-    <h3>Specie (miglior quota per ciascuna)</h3>
-    <table class="sp-table"><thead><tr><th>Specie</th><th>Quota</th><th></th><th>Indice</th></tr></thead><tbody>${rows}</tbody></table>
-    <h3>Bosco a ${best.band} m ±150 (Carta Forestale)</h3>
-    ${forestBar(hab.frac)}
-    <h3>La zona</h3>
-    <p class="small">${esc(z.description)}</p>
-    <dl class="kv">
-      <dt>Accesso</dt><dd>${esc(z.access)}</dd>
-      <dt>Soste</dt><dd>${z.parking.map((p) => `<a href="https://www.google.com/maps/dir/?api=1&destination=${p.lat},${p.lon}" target="_blank" rel="noopener">${esc(p.name)}</a>`).join(' · ')}</dd>
-      <dt>Quote zona</dt><dd>${habitat[z.id].elevation.min}–${habitat[z.id].elevation.max} m (mediana ${habitat[z.id].elevation.median})</dd>
-    </dl>`;
-
-  renderCharts($('#charts'), {
+    ${section('meteo', 'Pioggia e indice degli ultimi 30 giorni', '<div id="charts"></div>', true)}
+    ${section('quando', 'Quando andare e affollamento', renderHuman(z, d))}
+    ${section('accesso', 'Accesso in auto e a piedi', renderAccess(z, d))}
+    ${section('sentieri', 'Sentieri della zona', renderTrails(z, d))}
+    ${section('specie', `Tutte le specie (${d.perSpecies.length})`, `<table class="sp-table"><thead><tr><th>Specie</th><th>Quota</th><th></th><th>Indice</th></tr></thead><tbody>${rows}</tbody></table>`)}
+    ${section('bosco', `Bosco a ${best.band} m (Carta Forestale)`, forestBar(hab.frac))}
+    ${section('zona', 'La zona', `<p class="small">${esc(z.description)}</p>
+      <dl class="kv">
+        <dt>Accesso</dt><dd>${esc(z.access)}</dd>
+        <dt>Soste</dt><dd>${z.parking.map((p) => `<a href="https://www.google.com/maps/dir/?api=1&destination=${p.lat},${p.lon}" target="_blank" rel="noopener">${esc(p.name)}</a>`).join(' · ')}</dd>
+        <dt>Quote</dt><dd>${habitat[z.id].elevation.min}–${habitat[z.id].elevation.max} m (mediana ${habitat[z.id].elevation.median})</dd>
+      </dl>`)}`;
+  box.querySelectorAll('details.sec').forEach((el) => el.addEventListener('toggle', () => {
+    if (el.open) openSecs.add(el.dataset.sec); else openSecs.delete(el.dataset.sec);
+    if (el.dataset.sec === 'meteo' && el.open) drawCharts();
+  }));
+  const drawCharts = () => $('#charts') && renderCharts($('#charts'), {
     dates: days.map((x) => x.date),
     rain: days.map((x) => sb.p[x.i] ?? 0),
     score: days.map((x) => adjusted(z, x.score, x)),
     todayIndex: r.todayIndex - from,
     selectedIndex: r.todayIndex + state.dayOffset - from,
   });
+  if (openSecs.has('meteo')) drawCharts();
 }
 
 const fmtKm = (km) => km.toLocaleString('it-IT', { maximumFractionDigits: 1 });
@@ -502,7 +552,6 @@ function renderHuman(z, d) {
   if (alt) tips.push(`Alternativa più tranquilla: ${fmtDate(alt.date, { weekday: 'long', day: 'numeric' })} (indice ${alt.score}, folla ${alt.crowd.level}).`);
   if ((series[z.id][bandIndex(z, d.best.band)].p[d.i] ?? 0) >= 5) tips.push('È prevista pioggia: meno gente, ma porta il necessario e attenzione al fondo scivoloso.');
   return `
-    <h3>Quando andare</h3>
     <div class="human">
       <p><span class="badge crowd-${d.crowd.level}">Affollamento ${d.crowd.level}</span> <span class="muted small">${esc(hol || d.crowd.day.label)}</span></p>
       <dl class="kv">
@@ -531,17 +580,16 @@ function renderAccess(z, d) {
     lines.push(`<b>Punto più comodo per ${esc(d.best.species.name.toLowerCase())}</b>: in auto ${ax.surface === 0 ? 'su asfalto' : `su ${SURF_LABEL[ax.surface]}`}${ax.road ? ` lungo ${esc(ax.road)}` : ''} fino al <a href="${gmaps(ax.rlat, ax.rlon)}" target="_blank" rel="noopener">punto sulla strada</a>, poi <b>${fmtM(ax.walkM)} a piedi</b> (in linea d'aria) fino a ${esc((SHORT[ax.cat] || ax.cat).toLowerCase())} a ${ax.e} m.`);
   }
   return `
-    <h3>Come arrivare <span class="badge comfort-${d.comfort?.level}">${d.comfort?.level ?? ''}</span></h3>
+    <p><span class="badge comfort-${d.comfort?.level}">accesso ${d.comfort?.level ?? ''}</span></p>
     <ul class="reasons access">${lines.map((x) => `<li>${x}</li>`).join('')}</ul>
     ${acc.length > 1 ? `<p class="small muted">Altre soste: ${acc.slice(1).map((a) => `<a href="${gmaps(a.lat, a.lon)}" target="_blank" rel="noopener">${esc(a.parking)}</a> (${a.minutes} min${a.unpaved_tail_km > 0.2 ? `, ${fmtKm(a.unpaved_tail_km)} km di strada bianca` : ''})`).join(' · ')}</p>` : ''}`;
 }
 
 function renderTrails(z, d) {
   const list = trailsFor(z, d.best.species, d.best.band).slice(0, 4);
-  if (!list.length) return trails[z.id] ? '<h3>Sentieri</h3><p class="small muted">Nessun sentiero segnato attraversa bosco adatto a questa quota: muoviti fuori sentiero dal punto d\'accesso.</p>' : '';
+  if (!list.length) return trails[z.id] ? '<p class="small muted">Nessun sentiero segnato attraversa bosco adatto a questa quota: muoviti fuori sentiero dal punto d\'accesso.</p>' : '';
   const DIFF = { T: 'turistico', E: 'escursionistico', EE: 'per esperti', EEA: 'attrezzato' };
   return `
-    <h3>Sentieri consigliati</h3>
     <ol class="trails">${list.map((t, k) => `
       <li${k === 0 ? ' class="top"' : ''}>
         <div class="t1">${t.ref ? `<span class="ref">${esc(t.ref)}</span> ` : ''}${esc(t.name || t.itinerary.join(' – ') || 'Sentiero')}</div>

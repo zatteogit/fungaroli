@@ -106,7 +106,9 @@ code { background: var(--surface-2); padding: 1px 5px; border-radius: 5px; font-
 
 .layout { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 16px; align-items: start; }
 .panel { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px; min-width: 0; }
-.map-panel { padding: 0; overflow: hidden; grid-row: span 2; position: sticky; top: 12px; }
+.col-left { display: grid; gap: 16px; min-width: 0; align-content: start; }
+.map-panel { padding: 0; overflow: hidden; }
+.detail { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 12px); max-height: calc(100vh - 24px); overflow-y: auto; scrollbar-width: thin; }
 #map { height: 600px; background: var(--surface-2); }
 /* base topografica desaturata: le zone colorate restano leggibili */
 #map .leaflet-tile-pane { filter: saturate(.4) contrast(.9) brightness(1.06); }
@@ -198,6 +200,38 @@ code { background: var(--surface-2); padding: 1px 5px; border-radius: 5px; font-
 .svgmap .zone:focus-visible circle:first-child { stroke: var(--accent); stroke-width: 3; }
 .stale { width: min(1288px, calc(100% - 32px)); margin: 0 auto 12px; }
 
+/* --- scheda zona --- */
+.zone-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 14px; }
+.zone-head h2 { font-family: var(--font-display); font-size: 22px; font-weight: 600; margin: 0; letter-spacing: -0.01em; }
+.eyebrow { margin: 0 0 2px; font-size: 12px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; }
+.big-score { display: grid; justify-items: end; line-height: 1; flex: none; }
+.big-score span { font-family: var(--font-display); font-size: 40px; font-weight: 700; font-variant-numeric: tabular-nums; display: inline-flex; align-items: center; gap: 8px; }
+.big-score span::before { content: ''; width: 14px; height: 14px; border-radius: 50%; background: var(--c); }
+.big-score small { font-size: 12.5px; color: var(--text-2); margin-top: 4px; }
+.plan { list-style: none; margin: 0 0 12px; padding: 0; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+.plan li { display: grid; grid-template-columns: 36px 1fr; gap: 10px; padding: 11px 12px; align-items: start; }
+.plan li + li { border-top: 1px solid var(--grid); }
+.plan-ic { width: 32px; height: 32px; border-radius: 9px; background: var(--surface-2); display: grid; place-items: center; color: var(--accent); }
+.plan-ic svg { width: 19px; height: 19px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.plan-body { min-width: 0; }
+.plan-k { font-size: 11.5px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; display: flex; align-items: center; gap: 6px; }
+.plan-k .badge { text-transform: none; letter-spacing: 0; }
+.plan-v { font-size: 15px; margin-top: 1px; }
+.plan-v .badge { margin-left: 4px; }
+.plan-sub { font-size: 12.5px; color: var(--text-2); margin-top: 1px; }
+.plan .ref { display: inline-block; font-size: 11.5px; font-weight: 700; padding: 0 6px; border-radius: 4px; background: var(--surface-2); box-shadow: inset 0 0 0 1px var(--border); vertical-align: 1px; }
+.why { list-style: none; margin: 0 0 12px; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
+.why li { font-size: 12px; color: var(--text-2); background: var(--surface-2); border-radius: 999px; padding: 3px 10px; }
+.sec { border-top: 1px solid var(--grid); }
+.sec > summary { list-style: none; cursor: pointer; padding: 11px 0; font-weight: 600; font-size: 14px; display: flex; justify-content: space-between; align-items: center; }
+.sec > summary::-webkit-details-marker { display: none; }
+.sec > summary::after { content: ''; width: 8px; height: 8px; border-right: 2px solid var(--muted); border-bottom: 2px solid var(--muted); transform: rotate(45deg); transition: transform .15s; margin-right: 4px; }
+.sec[open] > summary::after { transform: rotate(-135deg); }
+.sec > summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+.sec-body { padding-bottom: 12px; }
+.chip.pref[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+@media (prefers-reduced-motion: reduce) { .sec > summary::after { transition: none; } }
+
 /* --- fattore umano, accessi, sentieri --- */
 .badges { display: flex; gap: 4px; margin-top: 3px; flex-wrap: wrap; }
 .badge { display: inline-block; font-size: 11.5px; font-weight: 500; padding: 1px 8px; border-radius: 999px; background: var(--grid); color: var(--text-2); vertical-align: 2px; }
@@ -262,7 +296,16 @@ label.btn { display: inline-flex; align-items: center; }
 
 @media (max-width: 900px) {
   .layout { grid-template-columns: 1fr; }
-  .map-panel { grid-row: auto; position: static; }
+  .detail { position: static; max-height: none; overflow: visible; }
+  .top { align-items: stretch; }
+  .top-actions { width: 100%; justify-content: space-between; flex-wrap: wrap; }
+  .top-actions #updated { order: 3; width: 100%; }
+  .filters { flex-direction: column; align-items: stretch; gap: 8px; }
+  .filter-row { flex-wrap: nowrap; }
+  .filter-row .chips { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; padding-bottom: 2px; }
+  .filter-row .chips::-webkit-scrollbar { display: none; }
+  .chip { white-space: nowrap; }
+  .filter-label { min-width: 72px; }
   .rank-item .conf { display: none; }
   .wiz { width: 100%; max-width: 100%; height: 100%; max-height: 100%; border-radius: 0; }
   .top-actions [data-open-journal] { order: -1; }
