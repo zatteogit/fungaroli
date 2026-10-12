@@ -32,6 +32,8 @@
       <div id="species-filter" class="chips" role="group" aria-label="Gruppi di specie"></div>
     </div>
     <div class="filter-row">
+      <label class="toggle"><input type="checkbox" id="avoid-crowd"> Evita la folla</label>
+      <label class="toggle"><input type="checkbox" id="prefer-comfort"> Preferisci accessi comodi</label>
       <label class="toggle"><input type="checkbox" id="distance-penalty"> Pesa la distanza da Rieti</label>
     </div>
   </section>
@@ -96,6 +98,9 @@
           <li><strong>Penalità</strong> per gelate (min &lt; −1 °C) e caldo (max &gt; 30 °C); <strong>bonus</strong> per shock termico (calo ≥ 4 °C 4–14 giorni prima). <span class="tag warn">pratica micologica</span></li>
           <li><strong>Habitat</strong>: quota di bosco idoneo alla specie nella fascia ±150 m, calcolata su ~315 punti campione per zona dalla <em>Carta Forestale su base tipologica</em> della Regione Lazio. <span class="tag ok">dato ufficiale</span></li>
           <li><strong>Stagione</strong> e <strong>quota</strong> della specie. <span class="tag warn">manualistica</span></li>
+          <li><strong>Affollamento</strong>: giorno (weekend e festivi), notorietà della zona, da quanti giorni l'indice è alto, facilità d'accesso, pioggia. Con "Evita la folla" pesa fino al −45%. <span class="tag warn">euristica</span></li>
+          <li><strong>Comodità</strong>: minuti d'auto, strada bianca, metri a piedi dalla strada carrozzabile più vicina al bosco adatto (Valhalla su OpenStreetMap). <span class="tag ok">dati OSM</span></li>
+          <li><strong>Orari</strong>: alba e tramonto calcolati (algoritmo NOAA); la raccolta è consentita da un'ora prima dell'alba a un'ora dopo il tramonto. <span class="tag ok">L.R. 32/98</span></li>
         </ul>
         <p>Per i giorni futuri la pioggia rilevante è in gran parte <em>già caduta</em> (latenza di 1–3 settimane): per questo l'indice a 3–7 giorni è più affidabile di quanto sembri. L'<strong>affidabilità</strong> scende quando conta pioggia ancora solo prevista.</p>
         <p class="muted">Limiti: il modello non conosce esposizione, pendenza, età del bosco, pressione di raccolta, né le singole fungaie. Usalo per scegliere zona, quota e giorno, non come promessa. I parametri delle specie sono in <code>js/species.js</code>: vanno calibrati con le tue uscite.</p>

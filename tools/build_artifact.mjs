@@ -23,6 +23,8 @@ globalThis.localStorage = { getItem: () => null, setItem: () => {} };
 const read = (p) => fs.readFileSync(path.join(ROOT, p), 'utf8');
 const zones = JSON.parse(read('data/zones.json'));
 const habitat = JSON.parse(read('data/habitat.json'));
+const access = JSON.parse(read('data/access.json'));
+const trails = JSON.parse(read('data/trails.json'));
 const { loadWeather } = await import(path.join(ROOT, 'js/weather.js'));
 const w = await loadWeather(zones.zones, { force: true });
 
@@ -49,7 +51,7 @@ const fonts = html.match(/<link rel="stylesheet" href="https:\/\/fonts\.googleap
 const body = html.match(/<body>([\s\S]*)<\/body>/)[1]
   .replace(/<script[\s\S]*?<\/script>/g, '')
   .replace('Mappe © OpenStreetMap, OpenTopoMap (CC-BY-SA). ', '');
-const data = JSON.stringify({ zones, habitat, basemap, weather: { series: w.series, fetchedAt: w.fetchedAt.toISOString() } })
+const data = JSON.stringify({ zones, habitat, access, trails, basemap, weather: { series: w.series, fetchedAt: w.fetchedAt.toISOString() } })
   .replace(/</g, '\\u003c');
 
 const out = `${title}

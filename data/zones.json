@@ -1,106 +1,207 @@
 {
-  "origin": { "name": "Rieti", "lat": 42.404, "lon": 12.8623 },
+  "origin": {
+    "name": "Rieti",
+    "lat": 42.404,
+    "lon": 12.8623
+  },
   "zones": [
     {
       "id": "vallonina",
       "name": "Vallonina / Terminillo",
-      "lat": 42.485, "lon": 13.005, "radius_m": 3000,
-      "bands": [1200, 1450, 1650],
+      "lat": 42.485,
+      "lon": 13.005,
+      "radius_m": 3000,
+      "bands": [
+        1200,
+        1450,
+        1650
+      ],
       "description": "Faggeta d'alto fusto continua sul versante nord del Terminillo verso Leonessa. Microclima umido e fresco, nebbie di condensazione e piogge orografiche anche d'estate.",
       "access": "Da Rieti SS 4 bis del Terminillo, oltre Pian de' Valli, poi SP 10 della Vallonina verso la Sella di Leonessa.",
       "parking": [
-        { "name": "Rifugio Maiolica (fondovalle)", "lat": 42.5005, "lon": 13.0090 },
-        { "name": "Bivio Rifugio Sebastiani", "lat": 42.4697, "lon": 13.0102 }
+        {
+          "name": "Rifugio Maiolica (fondovalle)",
+          "lat": 42.5005,
+          "lon": 13.009
+        },
+        {
+          "name": "Bivio Rifugio Sebastiani",
+          "lat": 42.4697,
+          "lon": 13.0102
+        }
       ],
       "trails": "CAI 404 (Selletta di Pratorecchia, Iaccio Crudele); CAI 439 (Buco del Merlo, Monte I Porcini).",
-      "drive_min": 42, "drive_km": 33,
-      "protection": null
+      "drive_min": 42,
+      "drive_km": 33,
+      "protection": null,
+      "popularity": 1.0
     },
     {
       "id": "poggio-cantalice",
       "name": "Poggio Bustone / Cantalice",
-      "lat": 42.490, "lon": 12.915, "radius_m": 3000,
-      "bands": [750, 950, 1200],
+      "lat": 42.49,
+      "lon": 12.915,
+      "radius_m": 3000,
+      "bands": [
+        750,
+        950,
+        1200
+      ],
       "description": "Cintura pedemontana ai piedi del Terminillo: querceti a roverella e ostrieti in basso, faggeta sopra i 1.000 m. Secondo la Carta Forestale i castagneti qui sono marginali.",
       "access": "Da Rieti SP 2 verso Cantalice e Poggio Bustone, poi strade comunali alte e piste tagliafuoco.",
       "parking": [
-        { "name": "Poggio Bustone (Santuario)", "lat": 42.5018, "lon": 12.8881 }
+        {
+          "name": "Poggio Bustone (Santuario)",
+          "lat": 42.5018,
+          "lon": 12.8881
+        }
       ],
       "trails": "Mulattiere e sentieri dal Santuario verso le pendici superiori.",
-      "drive_min": 22, "drive_km": 16,
-      "protection": null
+      "drive_min": 22,
+      "drive_km": 16,
+      "protection": null,
+      "popularity": 0.7
     },
     {
       "id": "antrodoco",
       "name": "Antrodoco / Media Valle del Velino",
-      "lat": 42.420, "lon": 13.090, "radius_m": 4000,
-      "bands": [650, 850, 1100],
+      "lat": 42.42,
+      "lon": 13.09,
+      "radius_m": 4000,
+      "bands": [
+        650,
+        850,
+        1100
+      ],
       "description": "Castagneti secolari (Marrone Antrodocano) misti a carpino nero, cerro e roverella; faggeta alle quote superiori.",
       "access": "SS 4 Salaria per Antrodoco e Borgo Velino; diramazione per Micigliano e il Colle.",
       "parking": [
-        { "name": "Antrodoco", "lat": 42.4033, "lon": 13.1354 },
-        { "name": "Micigliano", "lat": 42.4513, "lon": 13.0547 }
+        {
+          "name": "Antrodoco",
+          "lat": 42.4033,
+          "lon": 13.1354
+        },
+        {
+          "name": "Micigliano",
+          "lat": 42.4513,
+          "lon": 13.0547
+        }
       ],
       "trails": "Sentieri rurali e mulattiere dai fondivalle verso le pendici.",
-      "drive_min": 31, "drive_km": 31,
-      "protection": null
+      "drive_min": 31,
+      "drive_km": 31,
+      "protection": null,
+      "popularity": 0.6
     },
     {
       "id": "cicolano",
       "name": "Cicolano – Marcetelli, Ascrea, Collalto",
-      "lat": 42.195, "lon": 13.030, "radius_m": 5000,
-      "bands": [750, 900, 1050],
+      "lat": 42.195,
+      "lon": 13.03,
+      "radius_m": 5000,
+      "bands": [
+        750,
+        900,
+        1050
+      ],
       "description": "Collina e media montagna tra i laghi del Salto e del Turano. La Carta Forestale indica una netta prevalenza di castagneto, poi cerrete e ostrieti.",
       "access": "SR 578 Salto-Cicolano, uscite per la diga del Salto, Marcetelli, Pescorocchiano; accessi comunali.",
       "parking": [
-        { "name": "Marcetelli", "lat": 42.2266, "lon": 13.0469 },
-        { "name": "Ascrea", "lat": 42.1962, "lon": 12.9966 }
+        {
+          "name": "Marcetelli",
+          "lat": 42.2266,
+          "lon": 13.0469
+        },
+        {
+          "name": "Ascrea",
+          "lat": 42.1962,
+          "lon": 12.9966
+        }
       ],
       "trails": "Strade comunali e sentieri della Riserva Navegna-Cervia.",
-      "drive_min": 52, "drive_km": 41,
-      "protection": "Parte dell'area ricade nella Riserva Naturale Monte Navegna e Monte Cervia: raccolta vietata nelle Zone A, consentita in B e C secondo L.R. 32/98."
+      "drive_min": 52,
+      "drive_km": 41,
+      "protection": "Parte dell'area ricade nella Riserva Naturale Monte Navegna e Monte Cervia: raccolta vietata nelle Zone A, consentita in B e C secondo L.R. 32/98.",
+      "popularity": 0.6
     },
     {
       "id": "rascino",
       "name": "Altopiano di Rascino",
-      "lat": 42.335, "lon": 13.150, "radius_m": 3500,
-      "bands": [1250, 1350, 1450],
+      "lat": 42.335,
+      "lon": 13.15,
+      "radius_m": 3500,
+      "bands": [
+        1250,
+        1350,
+        1450
+      ],
       "description": "Altopiano carsico tra Fiamignano e Petrella Salto. La Carta Forestale indica soprattutto faggeta; i rimboschimenti a pino nero sono nuclei limitati ma importanti per Suillus e morette.",
       "access": "Da Fiamignano per la strada comunale panoramica verso il lago di Rascino.",
       "parking": [
-        { "name": "Pianori presso il lago di Rascino", "lat": 42.3466, "lon": 13.1464 }
+        {
+          "name": "Pianori presso il lago di Rascino",
+          "lat": 42.3466,
+          "lon": 13.1464
+        }
       ],
       "trails": "Carrarecce e sentieri attorno alla piana del lago.",
-      "drive_min": 93, "drive_km": 52,
-      "protection": null
+      "drive_min": 93,
+      "drive_km": 52,
+      "protection": null,
+      "popularity": 0.4
     },
     {
       "id": "tancia",
       "name": "Monte Tancia (Monti Sabini)",
-      "lat": 42.315, "lon": 12.745, "radius_m": 3000,
-      "bands": [650, 850, 1100],
+      "lat": 42.315,
+      "lon": 12.745,
+      "radius_m": 3000,
+      "bands": [
+        650,
+        850,
+        1100
+      ],
       "description": "Dorsale calcarea submediterranea: ostrieti, cerrete, lecci e roverelle; faggeta relitta sopra i 1.100 m verso la cima. Risponde molto rapidamente alle piogge di fine estate.",
       "access": "Da Rieti SP 46 del Tancia fino al valico (Osteria del Tancia, ~800 m).",
       "parking": [
-        { "name": "Osteria del Tancia", "lat": 42.3046, "lon": 12.7497 }
+        {
+          "name": "Osteria del Tancia",
+          "lat": 42.3046,
+          "lon": 12.7497
+        }
       ],
       "trails": "Sentieri verso Monte Tancia, Monte Ode e le Pozze del Diavolo.",
-      "drive_min": 32, "drive_km": 24,
-      "protection": null
+      "drive_min": 32,
+      "drive_km": 24,
+      "protection": null,
+      "popularity": 0.8
     },
     {
       "id": "laga",
       "name": "Monti della Laga (Amatrice)",
-      "lat": 42.635, "lon": 13.345, "radius_m": 4000,
-      "bands": [1100, 1350, 1600],
+      "lat": 42.635,
+      "lon": 13.345,
+      "radius_m": 4000,
+      "bands": [
+        1100,
+        1350,
+        1600
+      ],
       "description": "Substrato arenaceo-marnoso acido, ad alta ritenzione idrica e con fossi perenni. Cerrete alle quote basse, faggete continue sopra i 1.200 m.",
       "access": "SS 4 Salaria fino ad Amatrice, poi viabilità montana verso le frazioni a monte (Capricchia, Sant'Angelo).",
       "parking": [
-        { "name": "Capricchia", "lat": 42.6222, "lon": 13.3397 }
+        {
+          "name": "Capricchia",
+          "lat": 42.6222,
+          "lon": 13.3397
+        }
       ],
       "trails": "Accessi alle valli torrentizie dalle frazioni.",
-      "drive_min": 72, "drive_km": 69,
-      "protection": "Area nel Parco Nazionale del Gran Sasso e Monti della Laga: divieto nelle zone di protezione integrale e regole dell'Ente Parco (verificare prima dell'uscita)."
+      "drive_min": 72,
+      "drive_km": 69,
+      "protection": "Area nel Parco Nazionale del Gran Sasso e Monti della Laga: divieto nelle zone di protezione integrale e regole dell'Ente Parco (verificare prima dell'uscita).",
+      "popularity": 0.5
     }
-  ]
+  ],
+  "popularity_note": "Notorieta' della zona 0-1 (euristica locale: Terminillo e Tancia piu' frequentati per vicinanza a Rieti e Roma)."
 }

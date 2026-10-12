@@ -8,7 +8,7 @@ Fonti:
 Uso: python3 tools/build_habitat.py   -> scrive data/habitat.json
 Richiede: shapely, pyproj
 """
-import json, math, sys, time, urllib.parse, urllib.request
+import json, math, subprocess, sys, time, urllib.parse
 from collections import defaultdict
 from pathlib import Path
 
@@ -25,16 +25,18 @@ GRID = 21  # punti per lato della griglia di campionamento
 to_utm = Transformer.from_crs("EPSG:4326", "EPSG:32633", always_xy=True).transform
 
 
-def get_json(url, params, tries=4):
-    q = url + "?" + urllib.parse.urlencode(params)
+def get_json(url, params, tries=5):
+    """GET JSON via curl (piu' robusto di urllib dietro proxy)."""
+    q = url + ("?" + urllib.parse.urlencode(params) if params else "")
     for i in range(tries):
-        try:
-            req = urllib.request.Request(q, headers={"User-Agent": "fungaroli/0.1"})
-            with urllib.request.urlopen(req, timeout=120) as r:
-                return json.load(r)
-        except Exception as e:  # noqa: BLE001
-            print(f"  retry {i+1}: {e}", file=sys.stderr)
-            time.sleep(2 ** (i + 1))
+        r = subprocess.run(["curl", "-sS", "-m", "120", "-A", "fungaroli/0.1", q], capture_output=True, text=True)
+        if r.returncode == 0:
+            try:
+                return json.loads(r.stdout)
+            except json.JSONDecodeError:
+                pass
+        print(f"  retry {i+1}: {r.stderr.strip()[:120]}", file=sys.stderr)
+        time.sleep(2 ** (i + 1))
     raise RuntimeError(q)
 
 
@@ -100,11 +102,46 @@ def sample_points(polys, lat, lon, radius_m, n=GRID):
                 c = polys[idx][1]
                 break
         cats.append(c)
-    return [(round(e), c) for e, c in zip(els, cats)]
+    return [(round(e), c, plat, plon) for e, c, (plat, plon) in zip(els, cats, pts)]
+
+
+SURF = {"paved_smooth": 0, "paved": 0, "paved_rough": 0, "compacted": 1, "dirt": 1, "gravel": 1, "path": 2, "impassable": 2}
+
+
+def nearest_roads(samples):
+    """Strada carrozzabile piu' vicina a ogni punto (Valhalla /locate): distanza, fondo, nome."""
+    out = []
+    for k in range(0, len(samples), 40):
+        chunk = samples[k:k + 40]
+        body = {"locations": [{"lat": s[2], "lon": s[3]} for s in chunk], "costing": "auto", "verbose": True}
+        for i in range(5):
+            r = subprocess.run(["curl", "-sS", "-m", "120", "https://valhalla1.openstreetmap.de/locate",
+                                "-H", "Content-Type: application/json", "-d", json.dumps(body)], capture_output=True, text=True)
+            try:
+                res = json.loads(r.stdout)
+                if isinstance(res, list):
+                    break
+            except json.JSONDecodeError:
+                pass
+            time.sleep(2 ** (i + 1))
+        else:
+            raise RuntimeError("valhalla locate")
+        for loc in res:
+            edges = loc.get("edges") or []
+            if not edges:
+                out.append(None)
+                continue
+            e = min(edges, key=lambda x: x.get("distance", 1e9))
+            cl = (e.get("edge") or {}).get("classification") or {}
+            names = (e.get("edge_info") or {}).get("names") or []
+            name = next((n for n in names if n[:2] in ("SS", "SR", "SP")), names[0] if names else None)
+            out.append((round(e["distance"]), SURF.get(cl.get("surface"), 1), name, round(e["correlated_lat"], 5), round(e["correlated_lon"], 5)))
+        time.sleep(1)
+    return out
 
 
 def elevation_stats(samples):
-    els = sorted(e for e, _ in samples)
+    els = sorted(s[0] for s in samples)
     q = lambda f: els[int(f * (len(els) - 1))]
     return {"min": q(0), "p25": q(.25), "median": q(.5), "p75": q(.75), "max": q(1)}
 
@@ -118,13 +155,19 @@ def main():
         print(z["id"], file=sys.stderr)
         polys = fetch_forest(z["lat"], z["lon"], z["radius_m"])
         samples = sample_points(polys, z["lat"], z["lon"], z["radius_m"])
-        cat_names = sorted({c for _, c in samples if c})
+        cat_names = sorted({s[1] for s in samples if s[1]})
+        roads = nearest_roads(samples)
+        road_names = sorted({r[2] for r in roads if r and r[2]})
         out["zones"][z["id"]] = {
             "forest": composition(polys, z["lat"], z["lon"], z["radius_m"]),
             "elevation": elevation_stats(samples),
-            # campioni [quota, indice categoria | -1 = non bosco]
+            # campioni [quota, categoria (-1 = non bosco), lat, lon,
+            #           m dalla strada carrozzabile, fondo (0 asfalto, 1 bianca, 2 sentiero), strada, lat/lon sulla strada]
             "sample_categories": cat_names,
-            "samples": [[e, cat_names.index(c) if c else -1] for e, c in samples],
+            "road_names": road_names,
+            "samples": [[s[0], cat_names.index(s[1]) if s[1] else -1, round(s[2], 5), round(s[3], 5)]
+                        + ([r[0], r[1], road_names.index(r[2]) if r[2] else -1, r[3], r[4]] if r else [None, None, -1, None, None])
+                        for s, r in zip(samples, roads)],
         }
     (ROOT / "data" / "habitat.json").write_text(json.dumps(out, ensure_ascii=False, indent=1))
 
