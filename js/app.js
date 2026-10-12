@@ -101,7 +101,8 @@ async function init() {
   applyLegal();
   initTrees({ trees: trj, media: mj, assetUrl: embedded ? (f) => embedded.assets?.[f] || '' : (f) => f, zones, habitat, thumb });
   renderTreeGrid($('#tree-grid'));
-  treesData = trj;
+  treesData = trj; idData = idj;
+  renderFilterSummary(); // ora che c'e' il pregio delle specie, riordina i filtri
   buildSearch(idj, trj, embedded);
   initMap();
   initShell();
@@ -256,15 +257,34 @@ const go = (hash) => { location.hash = hash; };
 
 // Filtri in una sola riga: tutti i gruppi visibili (si parte da "Tutti" e si restringe) e le preferenze come interruttori
 const PREFS = [['avoidCrowd', 'Poca gente'], ['preferComfort', 'Accesso comodo'], ['distancePenalty', 'Vicino a Rieti']];
+// ordine dei funghi: prima quelli in stagione adesso, poi per pregio; i primi CHIPS_SHOWN visibili, gli altri dietro "+ altri"
+const CHIPS_SHOWN = 5;
+const QUALITY = { ottimo: 1, buono: 0.6 };
+let chipsOpen = false;
+function groupOrder() {
+  const m = new Date().getMonth();
+  const val = (g) => {
+    const sp = SPECIES.filter((x) => x.group === g.id);
+    const season = Math.max(...sp.map((x) => x.months[m] || 0));
+    const q = Math.max(...sp.map((x) => QUALITY[idData?.species?.[x.id]?.edibility] ?? 0.3));
+    return (season >= 0.6 ? 2 : season >= 0.3 ? 1 : 0) + q;
+  };
+  return [...GROUPS].sort((a, b) => val(b) - val(a));
+}
 function renderFilterSummary() {
   const box = $('#active-filters');
   if (!box) return;
   const all = state.groups.size === GROUPS.length;
+  const order = groupOrder();
+  const vis = chipsOpen ? order : order.filter((g, k) => k < CHIPS_SHOWN || (!all && state.groups.has(g.id)));
+  const hidden = order.length - vis.length;
   box.innerHTML = `<button type="button" class="chip" data-g="all" aria-pressed="${all}">Tutti</button>
-    ${GROUPS.map((g) => `<button type="button" class="chip chip-ph" data-g="${g.id}" aria-pressed="${!all && state.groups.has(g.id)}">${thumb(g.rep, 22)}${esc(g.label)}</button>`).join('')}
+    ${vis.map((g) => `<button type="button" class="chip chip-ph" data-g="${g.id}" aria-pressed="${!all && state.groups.has(g.id)}">${thumb(g.rep, 22)}${esc(g.label)}</button>`).join('')}
+    ${hidden > 0 ? `<button type="button" class="chip chip-more" data-more>+ altri ${hidden}</button>` : ''}
     <span class="af-sep" aria-hidden="true"></span>
     ${PREFS.map(([k, label]) => `<button type="button" class="chip pref" data-p="${k}" aria-pressed="${!!state[k]}">${esc(label)}</button>`).join('')}`;
   const changed = () => soft(() => { savePrefs(); renderFilterSummary(); if (series) { compute(); outCache.clear(); renderAll(); } });
+  box.querySelector('[data-more]')?.addEventListener('click', () => soft(() => { chipsOpen = true; renderFilterSummary(); }));
   box.querySelectorAll('[data-g]').forEach((b) => b.addEventListener('click', () => {
     const id = b.dataset.g;
     if (id === 'all') state.groups = new Set(GROUPS.map((g) => g.id));
@@ -372,7 +392,7 @@ const dayEntry = (zid, offset) => {
 };
 // indice "opportunita'": l'indice di fruttificazione corretto con le preferenze attive
 // le stesse correzioni di adjusted(), una per una, per spiegarle
-let prep = null, trailheads = {}, treesData = null;
+let prep = null, trailheads = {}, treesData = null, idData = null;
 const srcLinks = (src) => (src || []).map((x) => `<a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.title)}</a>`).join(' · ');
 function prepGeneralHtml(rules) {
   const ord = [...rules].sort((a, b) => (a.level === 'obbligatorio' ? 0 : 1) - (b.level === 'obbligatorio' ? 0 : 1));
