@@ -76,10 +76,17 @@ def commons_photo(latin, slug, qid=None):
     }
 
 
+ITALY = {"swlat": 36.5, "swlng": 6.6, "nelat": 47.1, "nelng": 18.6}
+
+
 def inat_photos(latin, slug, n=3):
-    d = get_json("https://api.inaturalist.org/v1/observations", {
-        "taxon_name": latin, "quality_grade": "research", "photo_license": INAT_LICENSES,
-        "per_page": 12, "order_by": "votes", **CENTRAL_IT})
+    # prima Italia centrale, poi Italia, poi ovunque (per i sosia rari)
+    for area in (CENTRAL_IT, ITALY, {}):
+        d = get_json("https://api.inaturalist.org/v1/observations", {
+            "taxon_name": latin, "quality_grade": "research", "photo_license": INAT_LICENSES,
+            "per_page": 12, "order_by": "votes", **area})
+        if any(o.get("photos") and o.get("taxon", {}).get("name") == latin for o in d.get("results", [])):
+            break
     out = []
     for o in d.get("results", []):
         if not o.get("photos") or o.get("taxon", {}).get("name") != latin:

@@ -590,6 +590,197 @@
     "page": "https://sketchfab.com/3d-models/none-2bb23136394a4362a061f8a6d8b1cd8e",
     "embed": "https://sketchfab.com/models/2bb23136394a4362a061f8a6d8b1cd8e/embed?autostart=0&ui_infos=0&ui_watermark=0"
    }
+  },
+  "virescens": {
+   "latin": "Russula virescens",
+   "wikidata": "Q677341",
+   "ref": {
+    "file": "assets/species/virescens-ref.jpg",
+    "source": "Wikimedia Commons",
+    "page": "https://commons.wikimedia.org/wiki/File:Russula_virescens3.JPG",
+    "author": "Paffka",
+    "license": "CC BY-SA 3.0"
+   },
+   "inat": [
+    {
+     "file": "assets/species/virescens-inat1.jpg",
+     "source": "iNaturalist (research grade)",
+     "page": "https://www.inaturalist.org/observations/221331641",
+     "author": "Luca Pilia",
+     "license": "CC-BY-NC",
+     "place": "00066 Manziana, Metropolitan City of Rome Capital, Italy",
+     "date": "2024-06-08"
+    },
+    {
+     "file": "assets/species/virescens-inat2.jpg",
+     "source": "iNaturalist (research grade)",
+     "page": "https://www.inaturalist.org/observations/292664884",
+     "author": "adcam",
+     "license": "CC-BY-NC",
+     "place": "Vetralla, Lazio, IT",
+     "date": "2025-06-25"
+    },
+    {
+     "file": "assets/species/virescens-inat3.jpg",
+     "source": "iNaturalist (research grade)",
+     "page": "https://www.inaturalist.org/observations/377464728",
+     "author": "Anonimous Pug",
+     "license": "CC-BY-NC",
+     "place": "Province of Viterbo, Italy",
+     "date": "2025-09-27"
+    }
+   ],
+   "gbif": {
+    "taxonKey": 2551423,
+    "total": 218,
+    "months": [
+     38,
+     7,
+     0,
+     0,
+     14,
+     21,
+     34,
+     28,
+     26,
+     7,
+     37,
+     0
+    ],
+    "page": "https://www.gbif.org/occurrence/search?taxon_key=2551423&country=IT"
+   },
+   "model3d": {
+    "uid": "7da28231cfa4437ba81a011fb8aa26c1",
+    "name": "Zelenkasta Golobica Russula virescens",
+    "author": "Prirodoslovni muzej Slovenije",
+    "license": "CC Attribution",
+    "page": "https://sketchfab.com/3d-models/none-7da28231cfa4437ba81a011fb8aa26c1",
+    "embed": "https://sketchfab.com/models/7da28231cfa4437ba81a011fb8aa26c1/embed?autostart=0&ui_infos=0&ui_watermark=0"
+   }
+  },
+  "suillus": {
+   "latin": "Suillus luteus",
+   "wikidata": "Q816730",
+   "ref": {
+    "file": "assets/species/suillus-ref.jpg",
+    "source": "Wikimedia Commons",
+    "page": "https://commons.wikimedia.org/wiki/File:Ruhland,_Grenzstra%C3%9Fe_bei_Hausnr._1,_Butterpilz_am_Parkplatzrand,_Entwicklungsreihe,_Herbst,_02.jpg",
+    "author": "Wilhelm Zimmerling PAR",
+    "license": "CC BY-SA 4.0"
+   },
+   "inat": [],
+   "gbif": {
+    "taxonKey": 7777157,
+    "total": 45,
+    "months": [
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     1,
+     3,
+     5,
+     23,
+     7,
+     0
+    ],
+    "page": "https://www.gbif.org/occurrence/search?taxon_key=7777157&country=IT"
+   },
+   "model3d": null
+  },
+  "terreum": {
+   "latin": "Tricholoma terreum",
+   "wikidata": "Q27266",
+   "ref": {
+    "file": "assets/species/terreum-ref.jpg",
+    "source": "Wikimedia Commons",
+    "page": "https://commons.wikimedia.org/wiki/File:Tricholoma_terreum_20061105wa.jpg",
+    "author": "User:Strobilomyces",
+    "license": "CC BY-SA 3.0"
+   },
+   "inat": [
+    {
+     "file": "assets/species/terreum-inat1.jpg",
+     "source": "iNaturalist (research grade)",
+     "page": "https://www.inaturalist.org/observations/64606524",
+     "author": "Rino",
+     "license": "CC-BY-NC",
+     "place": "Provincia di Chieti, Italia",
+     "date": "2020-11-10"
+    },
+    {
+     "file": "assets/species/terreum-inat2.jpg",
+     "source": "iNaturalist (research grade)",
+     "page": "https://www.inaturalist.org/observations/146211484",
+     "author": "Dr. Fabio Mao Valletta",
+     "license": "CC-BY-NC",
+     "place": "Provincia di Frosinone, Italia",
+     "date": "2022-12-17"
+    },
+    {
+     "file": "assets/species/terreum-inat3.jpg",
+     "source": "iNaturalist (research grade)",
+     "page": "https://www.inaturalist.org/observations/253982533",
+     "author": "Giorgio",
+     "license": "CC-BY-NC",
+     "place": "60044 Fabriano AN, Italia",
+     "date": "2024-12-03"
+    }
+   ],
+   "gbif": {
+    "taxonKey": 5241808,
+    "total": 366,
+    "months": [
+     7,
+     0,
+     0,
+     2,
+     0,
+     1,
+     93,
+     14,
+     68,
+     24,
+     141,
+     13
+    ],
+    "page": "https://www.gbif.org/occurrence/search?taxon_key=5241808&country=IT"
+   },
+   "model3d": null
+  },
+  "nuda": {
+   "latin": "Lepista nuda",
+   "wikidata": "Q29362",
+   "ref": {
+    "file": "assets/species/nuda-ref.jpg",
+    "source": "Wikimedia Commons",
+    "page": "https://commons.wikimedia.org/wiki/File:Lepista_nuda.jpg",
+    "author": "Archenzo, Italy",
+    "license": "CC BY-SA 3.0"
+   },
+   "inat": [],
+   "gbif": {
+    "taxonKey": 5242048,
+    "total": 47,
+    "months": [
+     1,
+     0,
+     1,
+     1,
+     2,
+     1,
+     0,
+     0,
+     2,
+     9,
+     23,
+     4
+    ],
+    "page": "https://www.gbif.org/occurrence/search?taxon_key=5242048&country=IT"
+   },
+   "model3d": null
   }
  },
  "lookalikes": {
@@ -932,6 +1123,136 @@
    "wikidata": "Q2449977",
    "ref": null,
    "inat": []
+  },
+  "Russula heterophylla": {
+   "wikidata": "Q1415480",
+   "ref": null,
+   "inat": []
+  },
+  "Russula olivacea": {
+   "wikidata": "Q241024",
+   "ref": null,
+   "inat": [
+    {
+     "file": "assets/species/russula-olivacea-inat1.jpg",
+     "source": "iNaturalist (research grade)",
+     "page": "https://www.inaturalist.org/observations/312288846",
+     "author": "Manuela Fiorini",
+     "license": "CC-BY",
+     "place": "Sefro, Marche, IT",
+     "date": "2025-09-07"
+    }
+   ]
+  },
+  "Russula aeruginea": {
+   "wikidata": "Q1323740",
+   "ref": null,
+   "inat": []
+  },
+  "Chalciporus piperatus": {
+   "wikidata": "Q674065",
+   "ref": null,
+   "inat": []
+  },
+  "Suillus bovinus": {
+   "wikidata": "Q1165762",
+   "ref": null,
+   "inat": []
+  },
+  "Tricholoma pardinum": {
+   "wikidata": "Q1928462",
+   "ref": null,
+   "inat": [
+    {
+     "file": "assets/species/tricholoma-pardinum-inat1.jpg",
+     "source": "iNaturalist (research grade)",
+     "page": "https://www.inaturalist.org/observations/317281798",
+     "author": "Luca Pilia",
+     "license": "CC-BY-NC",
+     "place": "Provincia di Rieti, Italia",
+     "date": "2025-09-27"
+    }
+   ]
+  },
+  "Tricholoma virgatum": {
+   "wikidata": "Q594027",
+   "ref": null,
+   "inat": []
+  },
+  "Tricholoma sciodes": {
+   "wikidata": "Q10646429",
+   "ref": null,
+   "inat": [
+    {
+     "file": "assets/species/tricholoma-sciodes-inat1.jpg",
+     "source": "iNaturalist (research grade)",
+     "page": "https://www.inaturalist.org/observations/253265892",
+     "author": "matteo_bevilacqua",
+     "license": "CC-BY-NC",
+     "place": "Città metropolitana di Roma Capitale, Italia",
+     "date": "2024-11-08"
+    }
+   ]
+  },
+  "Entoloma sinuatum": {
+   "wikidata": "Q1424216",
+   "ref": null,
+   "inat": [
+    {
+     "file": "assets/species/entoloma-sinuatum-inat1.jpg",
+     "source": "iNaturalist (research grade)",
+     "page": "https://www.inaturalist.org/observations/315210408",
+     "author": "Manuela Fiorini",
+     "license": "CC-BY",
+     "place": "Serravalle di Chienti, Marche, IT",
+     "date": "2025-09-20"
+    }
+   ]
+  },
+  "Cortinarius traganus": {
+   "wikidata": "Q948871",
+   "ref": null,
+   "inat": []
+  },
+  "Cortinarius violaceus": {
+   "wikidata": "Q167887",
+   "ref": null,
+   "inat": []
+  },
+  "Inocybe lilacina": {
+   "wikidata": "Q1824920",
+   "ref": null,
+   "inat": []
+  },
+  "Mycena pura": {
+   "wikidata": "Q1500783",
+   "ref": null,
+   "inat": [
+    {
+     "file": "assets/species/mycena-pura-inat1.jpg",
+     "source": "iNaturalist (research grade)",
+     "page": "https://www.inaturalist.org/observations/63006070",
+     "author": "Danny Cicchetti",
+     "license": "CC0",
+     "place": "Provincia di Frosinone, Italia",
+     "date": "2020-10-19"
+    }
+   ]
+  },
+  "Laccaria amethystina": {
+   "wikidata": "Q28492278",
+   "ref": null,
+   "inat": [
+    {
+     "file": "assets/species/laccaria-amethystina-inat1.jpg",
+     "source": "iNaturalist (research grade)",
+     "page": "https://www.inaturalist.org/observations/135048688",
+     "author": "Rino",
+     "license": "CC-BY-NC",
+     "place": "Provincia di Teramo, Italia",
+     "date": "2022-09-11"
+    }
+   ]
   }
  }
 }

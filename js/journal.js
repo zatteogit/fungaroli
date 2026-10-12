@@ -53,6 +53,46 @@ function dbStore(col) {
   };
 }
 
+// Diario sincronizzato sul sito (Cloudflare Pages Function + KV), protetto dal "codice diario".
+const TOKEN_KEY = 'fungaroli:diario-token';
+const API = 'api/diario';
+const getToken = () => { try { return localStorage.getItem(TOKEN_KEY) || ''; } catch { return ''; } };
+const setToken = (t) => { try { if (t) localStorage.setItem(TOKEN_KEY, t); else localStorage.removeItem(TOKEN_KEY); } catch { /* ignora */ } };
+
+// 'needs_code' se il sito ha la sincronizzazione attiva, altrimenti 'none'
+async function probeRemote() {
+  try {
+    const r = await fetch(API, { headers: { authorization: 'Bearer -' } });
+    if (r.status === 401 && (r.headers.get('content-type') || '').includes('json')) return 'needs_code';
+  } catch { /* offline o sito statico */ }
+  return 'none';
+}
+
+function remoteStore(token) {
+  const local = localStore();
+  const call = async (path, opts = {}) => {
+    const r = await fetch(path, { ...opts, headers: { ...(opts.headers || {}), authorization: `Bearer ${token}`, 'content-type': 'application/json' } });
+    if (!r.ok) { const e = new Error(`HTTP ${r.status}`); e.status = r.status; throw e; }
+    return r.json();
+  };
+  return {
+    kind: 'remote',
+    async list() {
+      try {
+        const { entries } = await call(API);
+        try { localStorage.setItem(KEY, JSON.stringify(entries)); } catch { /* copia locale facoltativa */ }
+        return entries;
+      } catch (e) {
+        if (e.status === 401) throw e;
+        this.offline = true;
+        return local.list(); // offline: mostra l'ultima copia scaricata
+      }
+    },
+    async put(e) { await local.put(e); await call(`${API}/${e.id}`, { method: 'PUT', body: JSON.stringify(e) }); },
+    async remove(id) { await local.remove(id); await call(`${API}/${id}`, { method: 'DELETE' }); },
+  };
+}
+
 async function openStore() {
   const use = globalThis.claude?.use;
   if (typeof use === 'function') {
@@ -291,14 +331,64 @@ export function initJournal({ zones, predict, getZoneId }) {
   const imp = document.getElementById('journal-import');
   imp.addEventListener('change', () => { if (imp.files[0]) importFile(imp.files[0]); imp.value = ''; });
   renderList();
-  openStore().then(async (st) => {
+  const storageBox = document.getElementById('journal-storage');
+
+  function renderStorage(remote) {
+    if (store.kind === 'db') {
+      storageBox.innerHTML = 'Il diario è salvato nel tuo spazio privato di questa pagina: lo ritrovi da qualsiasi dispositivo.';
+    } else if (store.kind === 'remote') {
+      storageBox.innerHTML = `${store.offline ? 'Sei offline: vedi l\'ultima copia scaricata. ' : ''}Diario sincronizzato: lo ritrovi su tutti i dispositivi collegati con lo stesso codice. <button type="button" class="link-btn small" id="j-disconnect">Scollega questo dispositivo</button>`;
+      storageBox.querySelector('#j-disconnect').addEventListener('click', () => { setToken(''); location.reload(); });
+    } else if (remote === 'needs_code') {
+      storageBox.innerHTML = `
+        <form class="j-connect" id="j-connect">
+          <label for="j-code">Il diario ora è solo in questo browser. Inserisci il codice diario per sincronizzarlo su tutti i dispositivi:</label>
+          <div class="j-connect-row"><input id="j-code" type="password" autocomplete="current-password" class="wiz-input" placeholder="Codice diario" required>
+          <button type="submit" class="btn primary">Collega</button></div>
+          <p class="j-connect-msg small" role="status"></p>
+        </form>`;
+      storageBox.querySelector('#j-connect').addEventListener('submit', async (ev) => {
+        ev.preventDefault();
+        const code = storageBox.querySelector('#j-code').value.trim();
+        const msg = storageBox.querySelector('.j-connect-msg');
+        msg.textContent = 'Collego…';
+        const rs = remoteStore(code);
+        try {
+          const remoteEntries = await rs.list();
+          // carica online le uscite salvate finora solo in questo browser
+          const ids = new Set(remoteEntries.map((e) => e.id));
+          for (const e of entries) if (!ids.has(e.id)) await rs.put(e);
+          setToken(code);
+          store = rs;
+          entries = await rs.list();
+          sortEntries();
+          renderStorage();
+          renderList(`Diario collegato: ${entries.length} uscite sincronizzate.`);
+        } catch (e) {
+          msg.textContent = e.status === 401 ? 'Codice non valido.' : 'Collegamento non riuscito, riprova tra poco.';
+        }
+      });
+    } else {
+      storageBox.innerHTML = 'Il diario resta solo in questo browser. Esporta ogni tanto il file per non perderlo o per spostarlo su un altro dispositivo.';
+    }
+  }
+
+  (async () => {
+    let st = await openStore();
+    let remote = 'none';
+    if (st.kind === 'local') {
+      const token = getToken();
+      if (token) {
+        const rs = remoteStore(token);
+        try { await rs.list(); st = rs; } catch (e) { if (e.status === 401) setToken(''); }
+      }
+      if (st.kind === 'local') remote = await probeRemote();
+    }
     store = st;
     try { entries = await st.list(); } catch { entries = []; }
     sortEntries();
-    document.getElementById('journal-storage').textContent = st.kind === 'db'
-      ? 'Il diario è salvato nel tuo spazio privato di questa pagina: lo ritrovi da qualsiasi dispositivo.'
-      : 'Il diario resta solo in questo browser. Esporta ogni tanto il file per non perderlo o per spostarlo su un altro dispositivo.';
+    renderStorage(remote);
     renderList();
-  });
+  })();
   return { refresh: renderList };
 }

@@ -276,6 +276,9 @@ Una volta sola: nel repository su GitHub, *Settings → Pages → Source: GitHub
 1. Nel pannello Cloudflare: *Workers & Pages → Create → Pages → Connect to Git*, scegli il repository e il branch di produzione.
 2. *Framework preset*: nessuno. *Build command*: vuoto. *Build output directory*: `/`.
 3. Salva e pubblica. Ogni push sul branch scelto ripubblica; gli altri branch diventano anteprime.
+4. Diario sincronizzato (facoltativo ma consigliato): crea un namespace Workers KV, collegalo al progetto con nome variabile `DIARIO` (*Settings → Bindings*), aggiungi il segreto `DIARIO_TOKEN` con il "codice diario" (*Settings → Variables and Secrets*) e ripubblica. La funzione `functions/api/diario/[[path]].js` espone `GET /api/diario`, `PUT` e `DELETE /api/diario/<id>` con `Authorization: Bearer <codice>`; senza binding o segreto risponde 503 e l'app resta col diario nel browser.
+
+Procedura passo passo per un agente nel browser: [handoff-cloudflare.md](handoff-cloudflare.md). Prova in locale: `npx wrangler pages dev . --kv DIARIO --binding DIARIO_TOKEN=<codice>`.
 
 Cloudflare non esegue i test: lanciali prima del push. In entrambi i casi i file `data/*.json` devono essere nel repository, perché nessuno dei due servizi esegue gli script Python.
 

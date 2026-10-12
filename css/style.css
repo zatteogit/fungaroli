@@ -316,6 +316,10 @@ h3 .badge { margin-left: 6px; }
 .sources { padding-left: 18px; }
 
 /* --- diario --- */
+.j-connect { display: grid; gap: 6px; margin-top: 4px; color: var(--text-2); }
+.j-connect-row { display: flex; gap: 8px; max-width: 420px; }
+.j-connect-row .wiz-input { padding: 9px 12px; font-size: 15px; }
+.j-connect-msg { margin: 0; min-height: 1em; }
 .btn.primary { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
 .btn.primary:hover { filter: brightness(1.08); }
 label.btn { display: inline-flex; align-items: center; }
