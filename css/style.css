@@ -27,6 +27,7 @@
   --line: #326820;
   --grid: #e6dfd3;
   /* rampa dell'indice su fondo chiaro: da un verde chiaro a un verde pieno (mai quasi nero) */
+  --m0: #bdb6a8; --m1: #fde9a0; --m2: #fdb863; --m3: #f4795a; --m4: #c73e7f; --m5: #6a2a9a; /* scala della mappa */
   --s0: #cfcabf; --s1: #c2dea8; --s2: #9fcb7a; --s3: #7ab553; --s4: #5a9c37; --s5: #3f8424;
   /* su fondo scuro (giorno selezionato, anelli sulle foto): cresce la saturazione, non la chiarezza */
   --ps0: #8d8a82; --ps1: #8a9e7c; --ps2: #8fb66c; --ps3: #93cb57; --ps4: #98dc43; --ps5: #a2ec33;
@@ -1786,4 +1787,4 @@ html.theme-swap, html.theme-swap *, html.theme-swap *::before, html.theme-swap *
 }
 .install-invite h2:focus { outline: none; }
 .lg-cells { flex-basis: 100%; display: flex; gap: 8px; align-items: flex-start; font-size: 12.5px; color: var(--muted); }
-.sw-cell { flex: none; width: 12px; height: 12px; border-radius: 2px; margin-top: 2px; background: color-mix(in srgb, var(--s4) 70%, transparent); }
+.sw-cell { flex: none; width: 12px; height: 12px; border-radius: 2px; margin-top: 2px; background: linear-gradient(90deg, var(--m1), var(--m3), var(--m5)); }

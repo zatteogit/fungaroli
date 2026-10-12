@@ -27,6 +27,9 @@ const $ = (s) => document.querySelector(s);
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const cssVar = (name) => getComputedStyle(document.documentElement).getPropertyValue(name).trim();
 const scoreVar = (score) => `--s${5 - classOf(score)}`;
+// sulla mappa una scala calda (giallo → arancio → magenta → viola): il verde si perdeva tra boschi e curve di livello.
+// Niente rosso puro: nell'app il rosso vuol dire velenoso.
+const mapVar = (score) => `--m${5 - classOf(score)}`;
 const fmtDate = (d, opts) => new Date(d + 'T12:00:00').toLocaleDateString('it-IT', opts);
 
 // Colore fisso per categoria forestale (il colore segue l'entita', non il rango).
@@ -1003,11 +1006,29 @@ function zoneCells(z, d) {
       const v = Math.round(sc * f * elevationFit(p.species, e) * band);
       if (v > best) { best = v; who = p.species; }
     }
-    if (best >= 12) out.push({ lat, lon, v: best, e, cat, sp: who });
+    if (best >= 15) out.push({ lat, lon, v: best, e, cat, sp: who });
   }
   return out;
 }
 let cellRenderer = null;
+const canHover = matchMedia('(hover: hover) and (pointer: fine)').matches;
+function cellsLayer(z, d, interactive = true) {
+  cellRenderer ||= L.canvas({ padding: 0.3 });
+  const lg = L.layerGroup();
+  const dLat = CELL / 2 / 111320, dLon = CELL / 2 / (111320 * Math.cos(z.lat * Math.PI / 180));
+  for (const c of zoneCells(z, d)) {
+    const op = 0.5 + 0.4 * Math.min(1, c.v / 80);
+    const r = L.rectangle([[c.lat - dLat, c.lon - dLon], [c.lat + dLat, c.lon + dLon]], {
+      renderer: cellRenderer, interactive, stroke: false, color: '#fff', weight: 2, fillColor: cssVar(mapVar(c.v)), fillOpacity: op,
+    }).addTo(lg);
+    if (!interactive) continue;
+    r.on('click', () => openSheet(z.id))
+      .bindTooltip(`<b>${esc(c.sp.name.split(' / ')[0])} · ${c.v}%</b><br>${esc(c.cat)}, ${c.e} m`, { className: 'zone-tt', sticky: true });
+    // il riquadro sotto il mouse si stacca: bordo chiaro e colore pieno
+    if (canHover) r.on('mouseover', () => { r.setStyle({ stroke: true, fillOpacity: 0.95 }); r.bringToFront(); }).on('mouseout', () => r.setStyle({ stroke: false, fillOpacity: op }));
+  }
+  return lg;
+}
 
 function renderMap() {
   if (!hasLeaflet()) {
@@ -1017,8 +1038,8 @@ function renderMap() {
         const d = dayEntry(z.id, state.dayOffset);
         const s = adjusted(z, d?.score ?? 0, d);
         return {
-          z, score: s, color: `var(${scoreVar(s)})`, selected: z.id === state.zoneId,
-          tooltip: `${z.name} · indice ${s}${d?.best ? ` · ${d.best.species.name} ~${d.best.band} m` : ''}`,
+          z, score: s, color: `var(${mapVar(s)})`, selected: z.id === state.zoneId,
+          tooltip: `${z.name} · ${s}% ${CLASSES[classOf(s)].label.toLowerCase()}${d?.best ? ` · ${d.best.species.name} ~${d.best.band} m` : ''}`,
         };
       }),
       onSelect: (id) => openSheet(id),
@@ -1042,29 +1063,26 @@ function renderMap() {
   for (const z of zones) {
     const d = dayEntry(z.id, state.dayOffset);
     const s = adjusted(z, d?.score ?? 0, d);
-    const color = cssVar(scoreVar(s));
+    const color = cssVar(mapVar(s));
     const g = L.layerGroup().addTo(map);
     const selected = z.id === state.zoneId;
     // il cerchio e' l'area di cui si parla, non il posto dei funghi: da vicino resta solo il contorno, dentro i riquadri
     const near = map.getZoom() >= 11.5;
     const showCells = near || selected;
-    L.circle([z.lat, z.lon], {
+    const circle = L.circle([z.lat, z.lon], {
       radius: z.radius_m, color: selected ? cssVar('--text') : color, weight: selected ? 2.5 : 2,
       dashArray: showCells ? '6 6' : null, fillColor: color, fillOpacity: showCells ? 0.04 : 0.28,
     }).addTo(g).on('click', () => openSheet(z.id));
-    if (showCells && d) {
-      cellRenderer ||= L.canvas({ padding: 0.3 });
-      const dLat = CELL / 2 / 111320, dLon = CELL / 2 / (111320 * Math.cos(z.lat * Math.PI / 180));
-      for (const c of zoneCells(z, d)) {
-        L.rectangle([[c.lat - dLat, c.lon - dLon], [c.lat + dLat, c.lon + dLon]], {
-          renderer: cellRenderer, stroke: false, fillColor: cssVar(scoreVar(c.v)), fillOpacity: 0.42 + 0.4 * Math.min(1, c.v / 80),
-        }).addTo(g).on('click', () => openSheet(z.id))
-          .bindTooltip(`${esc(c.sp.name.split(' / ')[0])} · ${c.v}%<br>${esc(c.cat)}, ${c.e} m`, { className: 'zone-tt', sticky: true });
-      }
+    if (showCells && d) cellsLayer(z, d).addTo(g);
+    else if (d && canHover) {
+      // a volo d'uccello: passandoci sopra la zona si accende e mostra in anteprima i suoi riquadri
+      let prev = null;
+      circle.on('mouseover', () => { circle.setStyle({ weight: 3.5, fillOpacity: 0.1, dashArray: '6 6' }); prev ||= cellsLayer(z, d, false); prev.addTo(g); });
+      circle.on('mouseout', () => { circle.setStyle({ weight: 2, fillOpacity: 0.28, dashArray: null }); prev?.remove(); });
     }
-    if (matchMedia('(hover: hover)').matches) g.getLayers()[0].bindTooltip(`<b>${esc(z.name)}</b><br>Indice ${s} · ${d?.best ? esc(d.best.species.name) + ' ~' + d.best.band + ' m' : '—'}`, { className: 'zone-tt', sticky: true });
+    if (matchMedia('(hover: hover)').matches) g.getLayers()[0].bindTooltip(`<b>${esc(z.name)}</b><br>${s}% ${esc(CLASSES[classOf(s)].label.toLowerCase())} · ${d?.best ? esc(d.best.species.name) + ' ~' + d.best.band + ' m' : '—'}`, { className: 'zone-tt', sticky: true });
     L.marker(labelPos[z.id], {
-      icon: L.divIcon({ className: '', html: `<span class="zone-label${state.zoneId && !selected ? ' zone-label-min' : ''}${selected ? ' zone-label-sel' : ''}"><span class="dot" style="background:${color}"></span> ${s}${state.zoneId && !selected ? '' : ` <span class="zone-name">${esc(shortName(z))}</span>`}</span>`, iconSize: null }),
+      icon: L.divIcon({ className: '', html: `<span class="zone-label${state.zoneId && !selected ? ' zone-label-min' : ''}${selected ? ' zone-label-sel' : ''}"><span class="dot" style="background:${color}"></span> <b class="pc">${s}</b>${state.zoneId && !selected ? '' : ` <span class="zone-name">${esc(shortName(z))}</span>`}</span>`, iconSize: null }),
       interactive: false,
     }).addTo(g);
     if (selected && d?.best) {
@@ -1103,7 +1121,7 @@ function renderMap() {
 }
 
 function renderLegend() {
-  const items = [...CLASSES].reverse().map((c) => `<span><span class="sw" style="background:var(${scoreVar(c.min)})"></span>${c.label}${c.min ? ' ≥' + c.min : ''}</span>`);
+  const items = [...CLASSES].reverse().map((c) => `<span><span class="sw" style="background:var(${mapVar(c.min)})"></span>${c.label}${c.min ? ' ≥' + c.min : ''}</span>`);
   $('#legend').innerHTML = items.join('') +
     (hasLeaflet() || !globalThis.FUNGAROLI_DATA ? '' : '<span class="muted">Schema: cerchi = zone, anelli = distanza in linea d\'aria da Rieti</span>') +
     (hasLeaflet() ? '<span class="lg-cells"><span class="sw sw-cell"></span>Riquadri da 300 m: bosco adatto alla quota giusta, non la posizione dei funghi. Avvicinati o apri una zona per vederli.</span>' : '') +
