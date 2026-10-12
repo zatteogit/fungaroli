@@ -252,8 +252,12 @@ const qShort = (q) => q.shortFor?.(state.ans[q.after]) || q.short;
 const tipHtml = (q) => (!q.tip ? '' : q.tip.steps
   ? `<details class="id-tip"><summary>${esc(q.tip.title)}</summary><ol class="id-tip-steps">${q.tip.steps.map((x) => `<li>${esc(x)}</li>`).join('')}</ol></details>`
   : `<details class="id-tip"><summary>${esc(q.tip.title)}</summary><ul>${q.tip.items.map(([v, t, d]) => `<li><span class="id-hym" aria-hidden="true">${HYM_ICON[v] || ''}</span><span><b>${esc(t)}</b> ${esc(d)}</span></li>`).join('')}</ul></details>`);
+// caratteri si/no detti per esteso: "con anello", "senza volva" (mai "anello" o "si'" da soli)
+const BOOL_NOUN = { stem_ring: 'anello', stem_volva: 'volva', stem_reticulum: 'reticolo', cap_veil: 'verruche', latex: 'lattice' };
+const withOut = (key, v) => (BOOL_NOUN[key] ? `${v ? 'con' : 'senza'} ${BOOL_NOUN[key]}` : (v ? 'sì' : 'no'));
+const cap1 = (t) => t.charAt(0).toUpperCase() + t.slice(1);
 const optLabel = (q, v) => (q.bool ? (q.labels?.[String(v)] || (v ? 'sì' : 'no')) : (q.labels?.[v] || v));
-const valLabel = (q, v) => (q.bool ? `${qShort(q)}: ${v ? 'sì' : 'no'}` : `${qShort(q)}: ${q.labels?.[v] || v}`);
+const valLabel = (q, v) => (q.bool ? cap1(withOut(q.key, v)) : `${qShort(q)}: ${q.labels?.[v] || v}`);
 
 function artFor(q, v) {
   if (v == null) return ART.dontknow;
@@ -300,7 +304,7 @@ function contraText(c) {
     const exp = [].concat(traitOf(c.t, q));
     if (k === 'season') return `<b>Non torna: stagione.</b> Di solito si trova in ${esc(monthsTxt(exp))}.`;
     if (k === 'trees') return `<b>Non torna: alberi.</b> Di solito vicino a ${esc(orList(exp.slice(0, 4)))}.`;
-    if (q.bool) return `<b>Non torna: ${esc(q.short.toLowerCase())}.</b> Hai indicato ${state.ans[k] ? 'sì' : 'no'}, in questa specie di solito ${exp[0] ? 'c\'è' : 'manca'}.`;
+    if (q.bool) return `<b>Non torna: ${esc(q.short.toLowerCase())}.</b> Hai indicato ${withOut(k, state.ans[k])}, ma di solito ${exp[0] ? 'ce l\'ha' : 'non ce l\'ha'}.`;
     const say = (v) => (k === 'flesh_change' ? (v === 'nessuno' ? 'non cambia' : `vira al ${v}`) : optLabel(q, v));
     const verb = { hymenophore: 'ha ', cap_color: 'è ', hymenophore_color: 'sono ', habitat: 'cresce ', growth: 'cresce ', spore_print: 'è ', gill_attachment: 'sono ', cap_surface: 'è ', flesh_texture: 'si spezza ', stem_base: 'è ' }[k] || '';
     return `<b>Non torna: ${esc(q.short.toLowerCase())}.</b> Hai indicato ${esc(say(state.ans[k]))}, ma di solito ${verb}${esc(orList(exp.map(say)))}.`;
@@ -363,8 +367,8 @@ function diffs(ref, t) {
     if (a == null || b == null) return null;
     const A = [].concat(a), B = [].concat(b);
     if (B.some((v) => A.includes(v))) return null;
-    const say = (v) => (q.bool ? (v ? 'sì' : 'no') : q.key === 'flesh_change' ? (v === 'nessuno' ? 'non cambia' : `vira al ${v}`) : optLabel(q, v));
-    return { q, txt: `${q.short}: ${orList(B.map(say))}`, ref: orList(A.map(say)) };
+    const say = (v) => (q.bool ? withOut(q.key, v) : q.key === 'flesh_change' ? (v === 'nessuno' ? 'non cambia' : `vira al ${v}`) : optLabel(q, v));
+    return { q, txt: q.bool ? cap1(orList(B.map(say))) : `${q.short}: ${orList(B.map(say))}`, ref: orList(A.map(say)) };
   }).filter(Boolean);
 }
 // tessere dei caratteri, con gli stessi disegni di Riconosci
@@ -393,8 +397,8 @@ export function traitStrip(edibleId, t = refOf(edibleId)) {
   // gambo: anello, volva, reticolo e base nello stesso disegno
   if (tr.stem_ring != null || tr.stem_volva != null || tr.stem_reticulum != null || tr.stem_base?.length) {
     const base = [].concat(tr.stem_base || ['normale'])[0];
-    const bits = [tr.stem_ring === true ? 'anello' : tr.stem_ring === false ? 'senza anello' : 'anello variabile',
-      tr.stem_volva === true ? 'volva' : tr.stem_volva === false ? 'senza volva' : null, tr.stem_reticulum === true ? 'reticolo' : null].filter(Boolean);
+    const bits = [tr.stem_ring === true ? 'con anello' : tr.stem_ring === false ? 'senza anello' : 'anello variabile',
+      tr.stem_volva === true ? 'con volva' : tr.stem_volva === false ? 'senza volva' : null, tr.stem_reticulum === true ? 'con reticolo' : null].filter(Boolean);
     out.push(tile(stemArt2(base, tr.stem_ring, tr.stem_volva, tr.stem_reticulum, [].concat(tr.cap_color || [])[0], [].concat(tr.cap_shape || [])[0]), 'Gambo', bits.join(', '),
       tr.stem_base?.length ? `base ${orList(tr.stem_base.map((v) => optLabel(Q('stem_base'), v)))}` : ''));
   }
@@ -612,7 +616,7 @@ function cmpRows(ref, t) {
     const a = r.get ? r.get(ref) : ref.traits?.[r.key], b = r.get ? r.get(t) : t.traits?.[r.key];
     if (a == null || b == null || (Array.isArray(a) && !a.length) || (Array.isArray(b) && !b.length)) return null;
     const A = [].concat(a), B = [].concat(b);
-    const txt = (X) => (r.key === 'season' ? monthsTxt(X) : r.bool ? (X[0] ? 'sì' : 'no') : orList(X.map(r.say)));
+    const txt = (X) => (r.key === 'season' ? monthsTxt(X) : r.bool ? withOut(r.key, X[0]) : orList(X.map(r.say)));
     const shared = B.filter((v) => A.includes(v)).length;
     // info: la stagione aiuta poco a distinguere, quindi non diventa mai "qui li distingui"
     const kind = r.info ? 'same' : !shared ? 'diff' : (shared < B.length || shared < A.length) ? 'part' : 'same';
