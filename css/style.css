@@ -1472,3 +1472,5 @@ html:has(dialog[open]:modal) body { overflow: hidden; }
 .cc-txt b { display: block; color: var(--accent); font-size: 15.5px; }
 .cc-txt small { font-size: 12.5px; color: var(--text-2); line-height: 1.4; }
 .cmp-cta .ts-cta-go { font-size: 24px; color: var(--accent); }
+.k-badge.mild { background: #d9731c; color: #fff; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .k-badge.mild { background: #e8893a; color: #1a1208; } }

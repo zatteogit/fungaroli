@@ -98,7 +98,7 @@ function kitchen(id) {
   const srcs = [...(p?.sources || []), ...must.flatMap((x) => x.sources || []), ...(c?.uses || []).flatMap((u) => u.sources || [])].filter((x, i, a) => x?.url && a.findIndex((y) => y.url === x.url) === i);
   return `<section class="kitchen" aria-labelledby="k-h-${id}">
     <h3 id="k-h-${id}">In cucina</h3>
-    ${p ? `<p class="k-raw"><span class="k-badge${p.raw === 'mai crudo' ? ' never' : ''}">${p.raw === 'mai crudo' ? 'Tossico crudo' : 'Solo cotto'}</span>${esc(p.raw_why || '')}</p>` : ''}
+    ${p ? `<p class="k-raw"><span class="k-badge${p.raw === 'mai crudo' ? (p.raw_level === 'lieve' ? ' mild' : ' never') : ''}">${p.raw === 'mai crudo' ? (p.raw_level === 'lieve' ? 'Leggermente tossico crudo' : 'Tossico crudo') : 'Solo cotto'}</span>${esc(p.raw_why || '')}</p>` : ''}
     ${must.length ? `<p class="k-h">Obbligatorio</p><ol class="k-steps k-must">${must.map(step).join('')}</ol>` : ''}
     ${p?.discard ? `<p class="k-line"><b>Scarta:</b> ${esc(p.discard)}</p>` : ''}
     ${keep.length || tips.length ? `<details class="k-more"><summary>Conservare, quantità e consigli</summary>
