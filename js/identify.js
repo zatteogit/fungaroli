@@ -683,10 +683,17 @@ function renderCompare(box, ref, pick) {
   // l'altezza segue la slide visibile anche quando cresce dopo (foto caricate, sezioni aperte): mai uno scroll dentro lo scroll
   const ro = new ResizeObserver(() => fit());
   slides.forEach((sl) => ro.observe(sl));
-  track.addEventListener('scroll', () => {
-    const i = Math.round(track.scrollLeft / track.clientWidth);
+  // si aggiorna solo a scorrimento finito: cambiare altezza o pillole mentre il dito trascina interrompe lo scatto (iOS)
+  // e la slide resta a meta'. Se per qualunque motivo non e' allineata, la si porta sulla piu' vicina.
+  let settleT;
+  const settle = () => {
+    clearTimeout(settleT);
+    const w = track.clientWidth, i = Math.round(track.scrollLeft / w);
+    if (Math.abs(track.scrollLeft - i * w) > 2) { track.scrollTo({ left: i * w, behavior: 'smooth' }); return; }
     if (i !== cur && list[i]) { cur = i; mark(i); fit(); }
-  }, { passive: true });
+  };
+  track.addEventListener('scroll', () => { clearTimeout(settleT); settleT = setTimeout(settle, 160); }, { passive: true });
+  track.addEventListener('scrollend', settle);
   box.querySelectorAll('.cmp-same').forEach((d) => d.addEventListener('toggle', fit));
   addEventListener('resize', fit, { passive: true });
   box.querySelectorAll('.cmp-slide img').forEach((im) => im.addEventListener('load', fit, { once: true }));
