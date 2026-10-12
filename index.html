@@ -78,8 +78,10 @@
     </section>
 
     <section class="view view-map" data-view="mappa" hidden aria-label="Mappa">
-      <div id="map-days" class="days map-days" role="tablist" aria-label="Giorno"></div>
-      <div id="map-filters" class="active-filters map-filters" role="group" aria-label="Cosa cerchi sulla mappa"></div>
+      <div class="map-top">
+        <div id="map-days" class="days map-days" role="tablist" aria-label="Giorno"></div>
+        <div id="map-filters" class="active-filters map-filters" role="group" aria-label="Cosa cerchi sulla mappa"></div>
+      </div>
       <div id="map" role="application" aria-label="Mappa delle zone"></div>
       <div id="map-sheet" class="sheet" hidden></div>
       <details class="legend-box" ontoggle="this.dataset.touched = this.dataset.touched || (event.isTrusted ? '1' : '')"><summary>Legenda</summary><div class="legend" id="legend"></div></details>

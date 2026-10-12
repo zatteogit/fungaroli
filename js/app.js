@@ -899,6 +899,10 @@ function initMap() {
   });
   mapControls({ bases: [['Topografica', 'assets/map-thumb-topo.jpg', topo], ['Stradale', 'assets/map-thumb-osm.jpg', osm]], forest });
   map.on('zoomend', () => results && state.view === 'mappa' && renderMap());
+  if (canHover) {
+    map.on('mousemove', hoverCell);
+    map.on('mouseout', () => hoverCell({ latlng: L.latLng(0, 0) }));
+  }
 }
 
 // Controlli della mappa come nelle app di mappe: una colonna in alto a destra (livelli, posizione;
@@ -984,6 +988,10 @@ function initEmbeddedMap(bm) {
   map.setView([42.42, 13.03], 10);
   mapControls({ forest });
   map.on('zoomend', () => results && state.view === 'mappa' && renderMap());
+  if (canHover) {
+    map.on('mousemove', hoverCell);
+    map.on('mouseout', () => hoverCell({ latlng: L.latLng(0, 0) }));
+  }
 }
 
 const shortName = (z) => z.title || z.name.split(/[/–(]/)[0].trim();
@@ -1017,24 +1025,48 @@ function zoneCells(z, d) {
   }
   return out;
 }
-let cellRenderer = null;
+let cellRenderer = null, cellsOut = false;
+// popover della mappa: titolo e percentuale grande, una riga per fungo con la barretta nella scala dell'indice, l'azione in fondo
+function mapCard({ title, sub, pct, rows = [], more = 0, foot = '' }) {
+  return `<div class="mtt"><b class="mtt-t">${esc(title)}</b>${sub ? `<span class="mtt-s">${sub}</span>` : ''}
+    <span class="mtt-p" style="--c:var(${scoreVar(pct)})"><b class="pc">${pct}</b><small>${esc(CLASSES[classOf(pct)].label.toLowerCase())}</small></span>
+    ${rows.length ? `<ul class="mtt-rows">${rows.map((r) => `<li><span>${esc(r.name)}</span><i><i style="width:${r.v}%;background:var(${scoreVar(r.v)})"></i></i><b class="pc">${r.v}</b></li>`).join('')}</ul>` : ''}
+    ${more ? `<p class="mtt-more">e altri ${more}</p>` : ''}${foot ? `<p class="mtt-f">${foot}</p>` : ''}</div>`;
+}
 const canHover = matchMedia('(hover: hover) and (pointer: fine)').matches;
+// i riquadri sono disegnati su una tela che non prende il mouse (sotto ci sono cerchi e sentieri):
+// il riquadro sotto il puntatore si trova dalla posizione (cellHits) e si evidenzia con un contorno a parte
+let cellHits = [], cellHi = null, cellTip = null;
 function cellsLayer(z, d, interactive = true) {
-  cellRenderer ||= L.canvas({ padding: 0.3 });
+  if (!map.getPane('cells')) map.createPane('cells').style.zIndex = 410; // sopra i cerchi, sotto le etichette
+  cellRenderer ||= L.canvas({ padding: 0.3, pane: 'cells' });
   const lg = L.layerGroup();
   const dLat = CELL / 2 / 111320, dLon = CELL / 2 / (111320 * Math.cos(z.lat * Math.PI / 180));
   for (const c of zoneCells(z, d)) {
-    const op = 0.5 + 0.4 * Math.min(1, c.v / 80);
-    const r = L.rectangle([[c.lat - dLat, c.lon - dLon], [c.lat + dLat, c.lon + dLon]], {
-      renderer: cellRenderer, interactive, stroke: false, color: '#fff', weight: 2, fillColor: cssVar(mapVar(c.v)), fillOpacity: op,
+    L.rectangle([[c.lat - dLat, c.lon - dLon], [c.lat + dLat, c.lon + dLon]], {
+      renderer: cellRenderer, interactive: false, stroke: false, fillColor: cssVar(mapVar(c.v)), fillOpacity: 0.5 + 0.4 * Math.min(1, c.v / 80),
     }).addTo(lg);
-    if (!interactive) continue;
-    r.on('click', () => openSheet(z.id))
-      .bindTooltip(`<b>${c.v}%</b> · ${esc(c.cat)}, ${c.e} m<br>${c.parts.slice(0, 3).map((x) => `${esc(x.sp.name.split(' / ')[0])} ${x.v}%`).join(' · ')}${c.parts.length > 3 ? ` · +${c.parts.length - 3}` : ''}`, { className: 'zone-tt', sticky: true });
-    // il riquadro sotto il mouse si stacca: bordo chiaro e colore pieno
-    if (canHover) r.on('mouseover', () => { r.setStyle({ stroke: true, fillOpacity: 0.95 }); r.bringToFront(); }).on('mouseout', () => r.setStyle({ stroke: false, fillOpacity: op }));
+    if (interactive) cellHits.push({ z, c, dLat, dLon });
   }
   return lg;
+}
+function cellAt(ll) {
+  for (const h of cellHits) if (Math.abs(ll.lat - h.c.lat) <= h.dLat && Math.abs(ll.lng - h.c.lon) <= h.dLon) return h;
+  return null;
+}
+function hoverCell(e) {
+  const h = map && $('#map').classList.contains('cells-on') ? cellAt(e.latlng) : null;
+  if (!h) { cellHi?.remove(); cellHi = null; cellTip?.remove(); cellTip = null; return; }
+  const { c, dLat, dLon } = h;
+  const b = [[c.lat - dLat, c.lon - dLon], [c.lat + dLat, c.lon + dLon]];
+  if (!cellHi) cellHi = L.rectangle(b, { interactive: false, color: '#fff', weight: 2.5, fill: false, className: 'cell-hi' }).addTo(map);
+  else cellHi.setBounds(b);
+  const html = mapCard({ title: 'Questo riquadro', sub: `${esc(c.cat)} · ${c.e} m`, pct: c.v,
+    rows: c.parts.slice(0, 3).map((x) => ({ name: x.sp.name.split(' / ')[0], v: x.v })), more: Math.max(0, c.parts.length - 3),
+    foot: 'Bosco adatto alla quota giusta: non è la posizione dei funghi' });
+  if (!cellTip) cellTip = L.tooltip({ className: 'zone-tt', direction: 'top', offset: [0, -14], opacity: 1 }).setLatLng(e.latlng).setContent(html).addTo(map);
+  else { cellTip.setLatLng(e.latlng); if (cellTip._fz !== c) cellTip.setContent(html); }
+  cellTip._fz = c;
 }
 
 function renderMap() {
@@ -1053,9 +1085,22 @@ function renderMap() {
     });
     return;
   }
+  // passaggio cerchi pieni <-> riquadri: prima si anima (carta, cerchi, riquadri in dissolvenza), poi si ridisegna
+  const mapEl = $('#map');
+  const want = map.getZoom() >= 11.5 || !!state.zoneId;
+  const had = mapEl.classList.contains('cells-on');
+  const slow = !matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (had && !want && slow && !cellsOut) {
+    cellsOut = true;
+    mapEl.classList.remove('cells-on');
+    setTimeout(() => { cellsOut = false; renderMap(); }, 420);
+    return;
+  }
   for (const k in zoneLayers) zoneLayers[k].remove();
   zoneLayers = {};
-  $('#map').classList.toggle('cells-on', map.getZoom() >= 11.5 || !!state.zoneId);
+  cellHits = []; cellHi?.remove(); cellHi = null; cellTip?.remove(); cellTip = null;
+  if (want && !had) requestAnimationFrame(() => requestAnimationFrame(() => mapEl.classList.add('cells-on')));
+  else mapEl.classList.toggle('cells-on', want);
   // etichette con nome: spostamento verticale greedy (in pixel) per evitare sovrapposizioni
   const placed = [];
   const labelPos = {};
@@ -1079,16 +1124,22 @@ function renderMap() {
     const showCells = near || selected;
     const circle = L.circle([z.lat, z.lon], {
       radius: z.radius_m, color: selected ? cssVar('--text') : color, weight: selected ? 2.5 : 2,
-      dashArray: showCells ? '6 6' : null, fillColor: color, fillOpacity: showCells ? 0.04 : 0.28,
+      dashArray: showCells ? '6 6' : null, fillColor: color, fillOpacity: 0.28, className: `zone-c${showCells ? ' has-cells' : ''}`,
     }).addTo(g).on('click', () => openSheet(z.id));
     if (showCells && d) cellsLayer(z, d).addTo(g);
     else if (d && canHover) {
       // a volo d'uccello: passandoci sopra la zona si accende e mostra in anteprima i suoi riquadri
       let prev = null;
-      circle.on('mouseover', () => { circle.setStyle({ weight: 3.5, fillOpacity: 0.1, dashArray: '6 6' }); prev ||= cellsLayer(z, d, false); prev.addTo(g); });
-      circle.on('mouseout', () => { circle.setStyle({ weight: 2, fillOpacity: 0.28, dashArray: null }); prev?.remove(); });
+      circle.on('mouseover', () => { circle.setStyle({ weight: 3.5, dashArray: '6 6' }); circle.getElement()?.classList.add('peek'); prev ||= cellsLayer(z, d, false); prev.addTo(g); mapEl.classList.add('cells-peek'); });
+      circle.on('mouseout', () => { circle.setStyle({ weight: 2, dashArray: null }); circle.getElement()?.classList.remove('peek'); mapEl.classList.remove('cells-peek'); setTimeout(() => { if (!mapEl.classList.contains('cells-peek')) prev?.remove(); }, 300); });
     }
-    if (matchMedia('(hover: hover)').matches) g.getLayers()[0].bindTooltip(`<b>${esc(z.name)}</b><br>${s}% ${esc(CLASSES[classOf(s)].label.toLowerCase())}${d?.perSpecies?.length ? ` · ${d.perSpecies.slice(0, 3).map((p) => `${esc(p.species.name.split(' / ')[0])} ${spScore(z, d, p)}%`).join(', ')}` : ''}`, { className: 'zone-tt', sticky: true });
+    if (canHover && !showCells) {
+      const [t1, t2] = splitName(z);
+      g.getLayers()[0].bindTooltip(mapCard({ title: t1, sub: t2 ? esc(t2) : '', pct: s,
+        rows: (d?.perSpecies || []).slice(0, 3).map((p) => ({ name: p.species.name.split(' / ')[0], v: spScore(z, d, p) })),
+        more: Math.max(0, (d?.perSpecies?.filter((p) => spScore(z, d, p) >= 10).length || 0) - 3),
+        foot: 'Tocca per aprire la zona' }), { className: 'zone-tt', sticky: true, direction: 'top', offset: [0, -14], opacity: 1 });
+    }
     L.marker(labelPos[z.id], {
       icon: L.divIcon({ className: '', html: `<span class="zone-label${state.zoneId && !selected ? ' zone-label-min' : ''}${selected ? ' zone-label-sel' : ''}"><span class="dot" style="background:${color}"></span> <b class="pc">${s}</b>${state.zoneId && !selected ? '' : ` <span class="zone-name">${esc(shortName(z))}</span>`}</span>`, iconSize: null }),
       interactive: false,
