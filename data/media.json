@@ -766,7 +766,8 @@
     "source": "Wikimedia Commons",
     "page": "https://commons.wikimedia.org/wiki/File:Tricholoma_terreum_20061105wa.jpg",
     "author": "User:Strobilomyces",
-    "license": "CC BY-SA 3.0"
+    "license": "CC BY-SA 3.0",
+    "file_hd": "assets/species/terreum-ref-hd.jpg"
    },
    "inat": [
     {
@@ -776,7 +777,8 @@
      "author": "Rino",
      "license": "CC-BY-NC",
      "place": "Provincia di Chieti, Italia",
-     "date": "2020-11-10"
+     "date": "2020-11-10",
+     "file_hd": "assets/species/terreum-inat1-hd.jpg"
     },
     {
      "file": "assets/species/terreum-inat2.jpg",
@@ -785,7 +787,8 @@
      "author": "Dr. Fabio Mao Valletta",
      "license": "CC-BY-NC",
      "place": "Provincia di Frosinone, Italia",
-     "date": "2022-12-17"
+     "date": "2022-12-17",
+     "file_hd": "assets/species/terreum-inat2-hd.jpg"
     },
     {
      "file": "assets/species/terreum-inat3.jpg",
@@ -794,7 +797,8 @@
      "author": "Giorgio",
      "license": "CC-BY-NC",
      "place": "60044 Fabriano AN, Italia",
-     "date": "2024-12-03"
+     "date": "2024-12-03",
+     "file_hd": "assets/species/terreum-inat3-hd.jpg"
     }
    ],
    "gbif": {
@@ -826,7 +830,8 @@
     "source": "Wikimedia Commons",
     "page": "https://commons.wikimedia.org/wiki/File:Lepista_nuda.jpg",
     "author": "Archenzo, Italy",
-    "license": "CC BY-SA 3.0"
+    "license": "CC BY-SA 3.0",
+    "file_hd": "assets/species/nuda-ref-hd.jpg"
    },
    "inat": [],
    "gbif": {
@@ -863,7 +868,8 @@
      "author": "Luca Pilia",
      "license": "CC-BY-NC",
      "place": "Provincia di Rieti, Italia",
-     "date": "2026-07-04"
+     "date": "2026-07-04",
+     "file_hd": "assets/species/tylopilus-felleus-inat1-hd.jpg"
     }
    ]
   },
@@ -878,7 +884,8 @@
      "author": "Manuela Fiorini",
      "license": "CC-BY",
      "place": "San Severino Marche, Marche, IT",
-     "date": "2026-09-19"
+     "date": "2026-09-19",
+     "file_hd": "assets/species/rubroboletus-satanas-inat1-hd.jpg"
     }
    ]
   },
@@ -893,7 +900,8 @@
      "author": "Luca Pilia",
      "license": "CC-BY-NC",
      "place": "Provincia di Rieti, Italia",
-     "date": "2023-07-01"
+     "date": "2023-07-01",
+     "file_hd": "assets/species/caloboletus-calopus-inat1-hd.jpg"
     }
    ]
   },
@@ -908,7 +916,8 @@
      "author": "Andrea Meucci",
      "license": "CC-BY-SA",
      "place": "67030 Alfedena AQ, Italia",
-     "date": "2019-09-12"
+     "date": "2019-09-12",
+     "file_hd": "assets/species/caloboletus-radicans-inat1-hd.jpg"
     }
    ]
   },
@@ -928,7 +937,8 @@
      "author": "matteo_bevilacqua",
      "license": "CC-BY-NC",
      "place": "00066 Manziana RM, Italia",
-     "date": "2024-05-12"
+     "date": "2024-05-12",
+     "file_hd": "assets/species/imleria-badia-inat1-hd.jpg"
     }
    ]
   },
@@ -943,7 +953,8 @@
      "author": "Luca Pilia",
      "license": "CC-BY-NC",
      "place": "Città metropolitana di Roma Capitale, Italia",
-     "date": "2022-10-01"
+     "date": "2022-10-01",
+     "file_hd": "assets/species/amanita-phalloides-inat1-hd.jpg"
     }
    ]
   },
@@ -958,7 +969,8 @@
      "author": "Danny Cicchetti",
      "license": "CC0",
      "place": "Provincia di Arezzo, Italia",
-     "date": "2020-05-31"
+     "date": "2020-05-31",
+     "file_hd": "assets/species/amanita-verna-inat1-hd.jpg"
     }
    ]
   },
@@ -973,7 +985,8 @@
      "author": "Nicolas Schwab",
      "license": "CC-BY-NC",
      "place": "Bevaix, Switzerland",
-     "date": "2024-09-08"
+     "date": "2024-09-08",
+     "file_hd": "assets/species/amanita-virosa-inat1-hd.jpg"
     }
    ]
   },
@@ -988,7 +1001,8 @@
      "author": "rengarob",
      "license": "CC-BY-NC",
      "place": "Abbadia San Salvatore",
-     "date": "2018-09-18"
+     "date": "2018-09-18",
+     "file_hd": "assets/species/amanita-muscaria-inat1-hd.jpg"
     }
    ]
   },
@@ -1003,7 +1017,8 @@
      "author": "simonebosetti",
      "license": "CC-BY-NC",
      "place": "Lagundo",
-     "date": "2020-07-28"
+     "date": "2020-07-28",
+     "file_hd": "assets/species/amanita-crocea-inat1-hd.jpg"
     }
    ]
   },
@@ -1018,7 +1033,8 @@
      "author": "Edoardo Gesuelli",
      "license": "CC-BY-NC",
      "place": "San Michele, Mogliano, Marche, IT",
-     "date": "2021-11-03"
+     "date": "2021-11-03",
+     "file_hd": "assets/species/omphalotus-olearius-inat1-hd.jpg"
     }
    ]
   },
@@ -1033,7 +1049,8 @@
      "author": "Manuela Fiorini",
      "license": "CC-BY",
      "place": "Esanatoglia, Marche, IT",
-     "date": "2023-11-05"
+     "date": "2023-11-05",
+     "file_hd": "assets/species/hygrophoropsis-aurantiaca-inat1-hd.jpg"
     }
    ]
   },
@@ -1048,7 +1065,8 @@
      "author": "Federico Calledda",
      "license": "CC-BY-NC",
      "place": "Città Metropolitana di Genova, Italia",
-     "date": "2011-08-17"
+     "date": "2011-08-17",
+     "file_hd": "assets/species/cortinarius-orellanus-inat1-hd.jpg"
     }
    ]
   },
@@ -1063,7 +1081,8 @@
      "author": "Manuela Fiorini",
      "license": "CC-BY",
      "place": "Perugia, Umbria, IT",
-     "date": "2024-09-23"
+     "date": "2024-09-23",
+     "file_hd": "assets/species/craterellus-cinereus-inat1-hd.jpg"
     }
    ]
   },
@@ -1083,7 +1102,8 @@
      "author": "Emília Kovácsné Kas",
      "license": "CC-BY-NC",
      "place": "Kisszékely, 7082 Magyarország",
-     "date": "2026-03-03"
+     "date": "2026-03-03",
+     "file_hd": "assets/species/urnula-craterium-inat1-hd.jpg"
     }
    ]
   },
@@ -1098,7 +1118,8 @@
      "author": "Rino",
      "license": "CC-BY-NC",
      "place": "Provincia di Isernia, Italia",
-     "date": "2024-10-09"
+     "date": "2024-10-09",
+     "file_hd": "assets/species/hydnum-rufescens-inat1-hd.jpg"
     }
    ]
   },
@@ -1113,7 +1134,8 @@
      "author": "Gergely Nigg",
      "license": "CC-BY",
      "place": "Flums, Svájc",
-     "date": "2020-08-15"
+     "date": "2020-08-15",
+     "file_hd": "assets/species/sarcodon-imbricatus-inat1-hd.jpg"
     }
    ]
   },
@@ -1133,7 +1155,8 @@
      "author": "pangoliiin",
      "license": "CC-BY-NC",
      "place": "Route du Col de la Croix, Ollon, Vaud, CH",
-     "date": "2021-09-18"
+     "date": "2021-09-18",
+     "file_hd": "assets/species/hydnellum-peckii-inat1-hd.jpg"
     }
    ]
   },
@@ -1148,7 +1171,8 @@
      "author": "Javier Marcos Martínez",
      "license": "CC-BY-NC",
      "place": "Italy",
-     "date": "2016-10-23"
+     "date": "2016-10-23",
+     "file_hd": "assets/species/lepiota-brunneoincarnata-inat1-hd.jpg"
     }
    ]
   },
@@ -1163,7 +1187,8 @@
      "author": "Alea",
      "license": "CC-BY-NC",
      "place": "00066 Manziana RM, Italia",
-     "date": "2023-10-28"
+     "date": "2023-10-28",
+     "file_hd": "assets/species/lepiota-subincarnata-inat1-hd.jpg"
     }
    ]
   },
@@ -1178,7 +1203,8 @@
      "author": "RICCARDO MATTEA",
      "license": "CC-BY-NC",
      "place": "Fiume Tronto, Arquata del Tronto, Marche, IT",
-     "date": "2020-10-10"
+     "date": "2020-10-10",
+     "file_hd": "assets/species/lepiota-cristata-inat1-hd.jpg"
     }
    ]
   },
@@ -1193,7 +1219,8 @@
      "author": "Jason Grant",
      "license": "CC-BY",
      "place": "Ins, Switzerland",
-     "date": "2022-11-13"
+     "date": "2022-11-13",
+     "file_hd": "assets/species/chlorophyllum-rhacodes-inat1-hd.jpg"
     }
    ]
   },
@@ -1213,7 +1240,8 @@
      "author": "Manuela Fiorini",
      "license": "CC-BY",
      "place": "San Severino Marche, Marche, IT",
-     "date": "2025-12-27"
+     "date": "2025-12-27",
+     "file_hd": "assets/species/galerina-marginata-inat1-hd.jpg"
     }
    ]
   },
@@ -1228,7 +1256,8 @@
      "author": "Riccardo Molajoli",
      "license": "CC-BY-NC",
      "place": "67029 Secinaro AQ, Italia",
-     "date": "2022-10-29"
+     "date": "2022-10-29",
+     "file_hd": "assets/species/hypholoma-fasciculare-inat1-hd.jpg"
     }
    ]
   },
@@ -1243,7 +1272,8 @@
      "author": "Mark Mowlazadeh",
      "license": "CC-BY-NC",
      "place": "32040 Comelico Superiore BL, Italia",
-     "date": "2024-09-01"
+     "date": "2024-09-01",
+     "file_hd": "assets/species/cortinarius-rubellus-inat1-hd.jpg"
     }
    ]
   },
@@ -1258,7 +1288,8 @@
      "author": "Manuela Fiorini",
      "license": "CC-BY",
      "place": "Parco Naturale Regionale della Gola della Rossa e di Frasassi, Fabriano, Marche, IT",
-     "date": "2023-10-08"
+     "date": "2023-10-08",
+     "file_hd": "assets/species/gymnopilus-junonius-inat1-hd.jpg"
     }
    ]
   },
@@ -1273,7 +1304,8 @@
      "author": "Alessandro Vitale",
      "license": "CC-BY-NC",
      "place": "03040 Picinisco FR, Italia",
-     "date": "2023-10-03"
+     "date": "2023-10-03",
+     "file_hd": "assets/species/pholiota-squarrosa-inat1-hd.jpg"
     }
    ]
   },
@@ -1293,7 +1325,8 @@
      "author": "uwekozina",
      "license": "CC-BY-NC",
      "place": "Nestelbach bei Graz, Österreich",
-     "date": "2012-08-12"
+     "date": "2012-08-12",
+     "file_hd": "assets/species/russula-heterophylla-inat1-hd.jpg"
     }
    ]
   },
@@ -1308,7 +1341,8 @@
      "author": "Manuela Fiorini",
      "license": "CC-BY",
      "place": "Sefro, Marche, IT",
-     "date": "2025-09-07"
+     "date": "2025-09-07",
+     "file_hd": "assets/species/russula-olivacea-inat1-hd.jpg"
     }
    ]
   },
@@ -1323,7 +1357,8 @@
      "author": "Claudio",
      "license": "CC-BY-NC",
      "place": "39030 Vandoies di Sotto BZ, Italia",
-     "date": "2021-08-02"
+     "date": "2021-08-02",
+     "file_hd": "assets/species/russula-aeruginea-inat1-hd.jpg"
     }
    ]
   },
@@ -1338,7 +1373,8 @@
      "author": "Nicolas Schwab",
      "license": "CC-BY-NC",
      "place": "Bulle, Switzerland",
-     "date": "2025-09-18"
+     "date": "2025-09-18",
+     "file_hd": "assets/species/chalciporus-piperatus-inat1-hd.jpg"
     }
    ]
   },
@@ -1353,7 +1389,8 @@
      "author": "Mirko Tomasi",
      "license": "CC-BY-NC",
      "place": "Provincia di Varese, Italia",
-     "date": "2019-10-22"
+     "date": "2019-10-22",
+     "file_hd": "assets/species/suillus-bovinus-inat1-hd.jpg"
     }
    ]
   },
@@ -1368,7 +1405,8 @@
      "author": "Luca Pilia",
      "license": "CC-BY-NC",
      "place": "Provincia di Rieti, Italia",
-     "date": "2025-09-27"
+     "date": "2025-09-27",
+     "file_hd": "assets/species/tricholoma-pardinum-inat1-hd.jpg"
     }
    ]
   },
@@ -1383,7 +1421,8 @@
      "author": "Claudio Peterlongo",
      "license": "CC-BY-NC",
      "place": "Trentino, Italia",
-     "date": "2020-09-13"
+     "date": "2020-09-13",
+     "file_hd": "assets/species/tricholoma-virgatum-inat1-hd.jpg"
     }
    ]
   },
@@ -1398,7 +1437,8 @@
      "author": "matteo_bevilacqua",
      "license": "CC-BY-NC",
      "place": "Città metropolitana di Roma Capitale, Italia",
-     "date": "2024-11-08"
+     "date": "2024-11-08",
+     "file_hd": "assets/species/tricholoma-sciodes-inat1-hd.jpg"
     }
    ]
   },
@@ -1413,7 +1453,8 @@
      "author": "Manuela Fiorini",
      "license": "CC-BY",
      "place": "Serravalle di Chienti, Marche, IT",
-     "date": "2025-09-20"
+     "date": "2025-09-20",
+     "file_hd": "assets/species/entoloma-sinuatum-inat1-hd.jpg"
     }
    ]
   },
@@ -1428,7 +1469,8 @@
      "author": "Nicolas Schwab",
      "license": "CC-BY-NC",
      "place": "Ormont-Dessus, Switzerland",
-     "date": "2025-09-06"
+     "date": "2025-09-06",
+     "file_hd": "assets/species/cortinarius-traganus-inat1-hd.jpg"
     }
    ]
   },
@@ -1443,7 +1485,8 @@
      "author": "Mirko Ubović",
      "license": "CC0",
      "place": "Glamoč, Federacija Bosne i Hercegovine, BA",
-     "date": "2025-08-26"
+     "date": "2025-08-26",
+     "file_hd": "assets/species/cortinarius-violaceus-inat1-hd.jpg"
     }
    ]
   },
@@ -1458,7 +1501,8 @@
      "author": "lastovka",
      "license": "CC-BY-NC",
      "place": "Jennersdorf, Österreich",
-     "date": "2023-10-29"
+     "date": "2023-10-29",
+     "file_hd": "assets/species/inocybe-lilacina-inat1-hd.jpg"
     }
    ]
   },
@@ -1473,7 +1517,8 @@
      "author": "Danny Cicchetti",
      "license": "CC0",
      "place": "Provincia di Frosinone, Italia",
-     "date": "2020-10-19"
+     "date": "2020-10-19",
+     "file_hd": "assets/species/mycena-pura-inat1-hd.jpg"
     }
    ]
   },
@@ -1488,7 +1533,8 @@
      "author": "Rino",
      "license": "CC-BY-NC",
      "place": "Provincia di Teramo, Italia",
-     "date": "2022-09-11"
+     "date": "2022-09-11",
+     "file_hd": "assets/species/laccaria-amethystina-inat1-hd.jpg"
     }
    ]
   }

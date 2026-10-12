@@ -64,9 +64,10 @@ async function init() {
   const embedded = globalThis.FUNGAROLI_DATA;
   const load = (f) => fetch(`data/${f}.json`).then((r) => (r.ok ? r.json() : null)).catch(() => null);
   legal = embedded ? embedded.legal : await load('legal');
-  const [zj, hj, aj, tj, idj, mj, ij, trj, stj] = embedded
-    ? [embedded.zones, embedded.habitat, embedded.access, embedded.trails, embedded.speciesId, embedded.media, embedded.infographics, embedded.trees, embedded.traits]
-    : await Promise.all(['zones', 'habitat', 'access', 'trails', 'species-id', 'media', 'infografiche', 'trees', 'species-traits'].map(load));
+  const [zj, hj, aj, tj, idj, mj, ij, trj, stj, mtj] = embedded
+    ? [embedded.zones, embedded.habitat, embedded.access, embedded.trails, embedded.speciesId, embedded.media, embedded.infographics, embedded.trees, embedded.traits, null]
+    : await Promise.all(['zones', 'habitat', 'access', 'trails', 'species-id', 'media', 'infografiche', 'trees', 'species-traits', 'media-trees'].map(load));
+  if (mj && mtj?.trees) mj.trees = { ...(mj.trees || {}), ...mtj.trees };
   traits = stj;
   initSpeciesCards({
     idData: idj, media: mj, allow3d: !embedded, infographics: ij?.species,
@@ -122,7 +123,7 @@ function initShell() {
 }
 
 function parseRoute() {
-  const parts = location.hash.replace(/^#\/?/, '').split('/').filter(Boolean);
+  const parts = location.hash.replace(/^#\/?/, '').split('/').filter(Boolean).map((x) => { try { return decodeURIComponent(x); } catch { return x; } });
   const [a, b, c] = parts;
   if (a === 'zona' && zones.some((z) => z.id === b)) return { view: 'zona', zoneId: b, offset: Math.max(0, Math.min(AHEAD_DAYS, +c || 0)) };
   if (a === 'mappa') return { view: 'mappa', zoneId: b };
@@ -573,7 +574,7 @@ function forestBar(frac) {
   const leg = named.filter(([, v]) => v >= 0.03).map(([k, v]) => {
     const tid = treeForCategory(k);
     const label = esc(SHORT[k] || k);
-    return `<span><span class="dot" style="background:${forestColor(k)};border-radius:3px"></span> ${tid ? `<a class="tree-link" href="#/albero/${tid}">${label}</a>` : label} ${Math.round(v * 100)}%</span>`;
+    return `<span><span class="dot" style="background:${forestColor(k)};border-radius:3px"></span> ${tid ? `<a class="tree-link" href="#/albero/${encodeURIComponent(tid)}">${label}</a>` : label} ${Math.round(v * 100)}%</span>`;
   }).join('');
   return `<div class="forest">${bar}</div><div class="forest-legend">${leg}</div>`;
 }

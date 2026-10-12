@@ -1,0 +1,1495 @@
+{
+ "version": 1,
+ "generated": "2026-10-12",
+ "note": "Schede di campo degli alberi simbionti nel Reatino. Quote indicative per l'Appennino centrale; distribuzione locale dalla Carta Forestale su base tipologica della Regione Lazio e dai piani di gestione forestale dei comuni.",
+ "trees": {
+  "faggio": {
+   "name": "Faggio",
+   "latin": "Fagus sylvatica",
+   "aliases": [
+    "faggi",
+    "faggeta",
+    "faggete"
+   ],
+   "wikidata": "Q146149",
+   "type": "latifoglia caducifoglia",
+   "recognize": [
+    "Corteccia liscia grigio-argentea anche sui tronchi grossi",
+    "Foglia ovale a margine intero e ondulato, ciglia sul bordo da giovane",
+    "5-9 paia di nervature parallele e diritte",
+    "Gemme lunghe, sottili e appuntite (a sigaro), bruno-rossicce",
+    "A terra cupole legnose a 4 valve con aculei morbidi e faggiole triangolari"
+   ],
+   "leaf": "Alterna, ovale-ellittica, 5-10 cm, verde lucido, margine intero ondulato (al massimo piccoli denti all'apice delle nervature), ciglia bianche sul bordo nelle foglie giovani.",
+   "bark": "Liscia, sottile, grigio-argentea, spesso con macchie di licheni; non si fessura nemmeno da vecchio.",
+   "fruit": "Faggiola: 1-3 semi trigoni lucidi in una cupola legnosa con aculei morbidi che si apre in 4 valve; maturano a settembre-ottobre, con annate di pasciona ogni alcuni anni.",
+   "habit": "Albero alto 25-40 m, fusto diritto e colonnare in fustaia; nel Reatino spesso ceduo a più polloni sulla stessa ceppaia.",
+   "confusable": [
+    {
+     "name": "Carpino bianco",
+     "how_to_tell": "Foglia doppiamente seghettata e pieghettata lungo le nervature; corteccia con costolature 'muscolose'; frutti con brattea a tre lobi."
+    },
+    {
+     "name": "Carpino nero",
+     "how_to_tell": "Foglia acuminata e doppiamente seghettata, corteccia bruna che si sfalda; infruttescenze pendule simili al luppolo."
+    }
+   ],
+   "altitude_m": [
+    800,
+    1850
+   ],
+   "where_reatino": "Fascia montana continua: Terminillo e Vallonina, Monti della Laga, Altopiano di Rascino, Monte Nuria e Duchessa nel Cicolano; nuclei relitti sopra i 1.100 m sui Monti Sabini (Tancia).",
+   "forest_categories": [
+    "Faggeta"
+   ],
+   "fungi": [
+    "edulis",
+    "pinophilus",
+    "aestivalis",
+    "cibarius",
+    "cornucopioides",
+    "repandum",
+    "virescens",
+    "mellea",
+    "nuda"
+   ],
+   "fungi_note": "Simbionte (ectomicorriza) del porcino, del porcino rosso, del finferlo, della trombetta dei morti, dello steccherino e delle colombine; il porcino estivo solo nelle faggete più basse. Il chiodino cresce a cespi su ceppaie e radici morte, l'agarico violetto sulla lettiera.",
+   "season_tip": "D'inverno: lettiera di foglie ramate e intere, gusci a 4 valve a terra, gemme a sigaro. I giovani faggi in sottobosco trattengono le foglie secche fino a primavera.",
+   "sources": [
+    {
+     "title": "Acta Plantarum, IPFI: Fagus sylvatica",
+     "url": "https://www.actaplantarum.org/flora/flora_info.php?id=500259"
+    },
+    {
+     "title": "Portale della Flora d'Italia (Università di Trieste): Fagus sylvatica",
+     "url": "https://dryades.units.it/floritaly/index.php?procedure=taxon_page&tipo=all&id=259"
+    },
+    {
+     "title": "European Atlas of Forest Tree Species (JRC): Fagus sylvatica",
+     "url": "https://forest.jrc.ec.europa.eu/media/atlas/Fagus_sylvatica.pdf"
+    },
+    {
+     "title": "Carta Forestale su base tipologica, Regione Lazio (layer tipi_forestali2)",
+     "url": "https://geoportale.regione.lazio.it/geoserver/ows?service=WFS&version=1.0.0&request=DescribeFeatureType&typeName=geonode:tipi_forestali2"
+    },
+    {
+     "title": "Wikipedia (incrocio): Fagus sylvatica",
+     "url": "https://it.wikipedia.org/wiki/Fagus_sylvatica"
+    }
+   ]
+  },
+  "castagno": {
+   "name": "Castagno",
+   "latin": "Castanea sativa",
+   "aliases": [
+    "castagni",
+    "castagneto",
+    "castagneti"
+   ],
+   "wikidata": "Q22699",
+   "type": "latifoglia caducifoglia",
+   "recognize": [
+    "Foglia lunga e lanceolata (fino a 20-25 cm) con denti a punta setolosa",
+    "Nervature parallele molto regolari, una per dente",
+    "Ricci spinosi a terra in autunno, con 1-3 castagne",
+    "Corteccia adulta a solchi profondi, spesso avvolti a spirale",
+    "Fioritura a giugno-luglio con lunghi amenti color crema e odore intenso"
+   ],
+   "leaf": "Alterna, oblungo-lanceolata, 8-25 cm, margine con denti acuti terminati da una punta, verde lucido sopra.",
+   "bark": "Da giovane liscia, bruno-olivastra; da adulta grigio-bruna con fessure longitudinali profonde, spesso a spirale.",
+   "fruit": "Riccio (cupola) fittamente spinoso che contiene 1-3 castagne lucide; cade tra settembre e ottobre.",
+   "habit": "Albero di 20-30 m a chioma ampia; nei castagneti da frutto grandi esemplari innestati e radi, nei cedui polloni fitti dalla ceppaia.",
+   "confusable": [
+    {
+     "name": "Ippocastano (Aesculus hippocastanum)",
+     "how_to_tell": "Foglia composta palmata a 5-7 foglioline; riccio con poche spine corte; seme non commestibile. Solo piantato in paesi e viali."
+    },
+    {
+     "name": "Cerro",
+     "how_to_tell": "Foglia lobata, non dentata a sega; ghiande in cupola 'riccioluta' invece dei ricci."
+    }
+   ],
+   "altitude_m": [
+    300,
+    1100
+   ],
+   "where_reatino": "Su arenarie e marne acide: Cicolano (Marcetelli, Ascrea, Collalto), Media Valle del Velino (Antrodoco, Borgo Velino), Monti della Laga; quasi assente sui calcari puri.",
+   "forest_categories": [
+    "Castagneto"
+   ],
+   "fungi": [
+    "edulis",
+    "aereus",
+    "aestivalis",
+    "caesarea",
+    "cibarius",
+    "cornucopioides",
+    "repandum",
+    "virescens",
+    "mellea",
+    "procera"
+   ],
+   "fungi_note": "L'albero più ricco per il cercatore: micorriza con porcini (nero ed estivo in testa), ovolo, finferlo, colombine, trombetta e steccherino. Il chiodino attacca le ceppaie dei cedui; la mazza di tamburo nelle radure dei castagneti da frutto.",
+   "season_tip": "In autunno-inverno: ricci e gusci a terra e foglie lunghe dentate nella lettiera. Le ceppaie con molti polloni e la corteccia a spirale lo identificano anche spoglio.",
+   "sources": [
+    {
+     "title": "Acta Plantarum, IPFI: Castanea sativa",
+     "url": "https://www.actaplantarum.org/flora/flora_info.php?id=500260"
+    },
+    {
+     "title": "Portale della Flora d'Italia (Università di Trieste): Castanea sativa",
+     "url": "https://dryades.units.it/floritaly/index.php?procedure=taxon_page&tipo=all&id=260"
+    },
+    {
+     "title": "European Atlas of Forest Tree Species (JRC): Castanea sativa",
+     "url": "https://forest.jrc.ec.europa.eu/media/atlas/Castanea_sativa.pdf"
+    },
+    {
+     "title": "Carta Forestale su base tipologica, Regione Lazio (layer tipi_forestali2)",
+     "url": "https://geoportale.regione.lazio.it/geoserver/ows?service=WFS&version=1.0.0&request=DescribeFeatureType&typeName=geonode:tipi_forestali2"
+    },
+    {
+     "title": "Wikipedia (incrocio): Castanea sativa",
+     "url": "https://it.wikipedia.org/wiki/Castanea_sativa"
+    }
+   ]
+  },
+  "cerro": {
+   "name": "Cerro",
+   "latin": "Quercus cerris",
+   "aliases": [
+    "cerri",
+    "cerreta",
+    "cerrete"
+   ],
+   "wikidata": "Q157277",
+   "type": "latifoglia caducifoglia",
+   "recognize": [
+    "Gemme circondate da filamenti lunghi e persistenti (stipole a 'baffi')",
+    "Cupola della ghianda 'riccioluta', coperta di squame lunghe e ricurve",
+    "Foglia ruvida al tatto, lobi irregolari spesso appuntiti",
+    "Corteccia a solchi profondi con il fondo rosso-arancio",
+    "Ghiande che maturano in due anni"
+   ],
+   "leaf": "Alterna, 9-12 cm, molto variabile, con 4-9 paia di lobi da poco a molto profondi e spesso acuti; ruvida sopra, grigio-tomentosa sotto.",
+   "bark": "Grigio-scura, spessa, con solchi profondi in cui si vede il fondo rossastro o arancio.",
+   "fruit": "Ghianda di 2-3,5 cm, matura il secondo anno, in una cupola coperta di squame lunghe, lineari e ricurve.",
+   "habit": "Albero di 25-35 m, fusto diritto e chioma ovale; frequentissimo come ceduo matricinato.",
+   "confusable": [
+    {
+     "name": "Roverella",
+     "how_to_tell": "Rametti e pagina inferiore vellutati, gemme senza filamenti, cupola con squame corte e appressate."
+    },
+    {
+     "name": "Farnetto",
+     "how_to_tell": "Foglia molto più grande, allargata verso l'apice, con molti lobi profondi e regolari e base a orecchiette; gemme grosse senza filamenti."
+    }
+   ],
+   "altitude_m": [
+    200,
+    1200
+   ],
+   "where_reatino": "Tipo forestale molto esteso: cerrete neutro-basifile in Cicolano, Valle del Velino e Monti Sabini; cerrete acidofile su arenarie ai piedi dei Monti della Laga (Amatrice).",
+   "forest_categories": [
+    "Cerreta"
+   ],
+   "fungi": [
+    "edulis",
+    "aereus",
+    "aestivalis",
+    "caesarea",
+    "cibarius",
+    "cornucopioides",
+    "repandum",
+    "virescens",
+    "mellea",
+    "procera"
+   ],
+   "fungi_note": "Quercia micorrizica del porcino nero ed estivo, dell'ovolo e delle colombine; nelle cerrete più fresche anche porcino, finferlo, trombetta e steccherino. Chiodino su ceppaie dei cedui.",
+   "season_tip": "D'inverno: filamenti attorno alle gemme sempre visibili; cupole riccioli e ghiande a terra; i giovani cerri possono trattenere le foglie secche.",
+   "sources": [
+    {
+     "title": "Acta Plantarum, IPFI: Quercus cerris",
+     "url": "https://www.actaplantarum.org/flora/flora_info.php?id=500267"
+    },
+    {
+     "title": "Portale della Flora d'Italia (Università di Trieste): Quercus cerris",
+     "url": "https://dryades.units.it/floritaly/index.php?procedure=taxon_page&tipo=all&id=267"
+    },
+    {
+     "title": "European Atlas of Forest Tree Species (JRC): Quercus cerris",
+     "url": "https://forest.jrc.ec.europa.eu/media/atlas/Quercus_cerris.pdf"
+    },
+    {
+     "title": "Carta Forestale su base tipologica, Regione Lazio (layer tipi_forestali2)",
+     "url": "https://geoportale.regione.lazio.it/geoserver/ows?service=WFS&version=1.0.0&request=DescribeFeatureType&typeName=geonode:tipi_forestali2"
+    },
+    {
+     "title": "Wikipedia (incrocio): Quercus cerris",
+     "url": "https://it.wikipedia.org/wiki/Quercus_cerris"
+    }
+   ]
+  },
+  "roverella": {
+   "name": "Roverella",
+   "latin": "Quercus pubescens",
+   "aliases": [
+    "roverelle",
+    "querceto a roverella",
+    "querceti a roverella"
+   ],
+   "wikidata": "Q161415",
+   "type": "latifoglia caducifoglia",
+   "recognize": [
+    "Rametti dell'anno e pagina inferiore della foglia vellutati (pelosi)",
+    "Foglia piccola (5-10 cm) a lobi poco profondi e arrotondati",
+    "Foglie secche che restano attaccate per tutto l'inverno",
+    "Cupola con squame corte, appressate e pelose; ghiande spesso a gruppi",
+    "Portamento contorto e chioma larga su versanti soleggiati e sassosi"
+   ],
+   "leaf": "Alterna, ovato-oblunga, (3)5-10 cm, 5-6 paia di lobi poco profondi; da giovane grigio-pelosa, poi verde scuro sopra e pubescente sotto; picciolo peloso.",
+   "bark": "Grigio-scura, fessurata in piccole placche rettangolari.",
+   "fruit": "Ghiande ellittiche di 2-3,5 cm, spesso in gruppi di 2-4, con cupola a squame triangolari pelose e appressate; maturano in un anno.",
+   "habit": "Albero di 10-20 m, spesso basso e tortuoso o a ceduo; isolato nei pascoli assume chioma ampia.",
+   "confusable": [
+    {
+     "name": "Cerro",
+     "how_to_tell": "Gemme con filamenti, cupola riccioluta, corteccia con fondo rossastro."
+    },
+    {
+     "name": "Leccio",
+     "how_to_tell": "Sempreverde: foglie coriacee verde scuro tutto l'anno, non lobate."
+    }
+   ],
+   "altitude_m": [
+    100,
+    1100
+   ],
+   "where_reatino": "Versanti caldi e calcarei della cintura collinare: Poggio Bustone e Cantalice, Valle del Velino, Cicolano, Bassa e Alta Sabina; spesso mista a cerro e carpino nero.",
+   "forest_categories": [
+    "Querceto a roverella"
+   ],
+   "fungi": [
+    "aereus",
+    "aestivalis",
+    "caesarea",
+    "edulis",
+    "cibarius",
+    "repandum",
+    "virescens",
+    "mellea",
+    "procera"
+   ],
+   "fungi_note": "Quercia dei boschi caldi: micorriza con porcino nero, porcino estivo e ovolo, poi colombine; è anche il principale ospite dei tartufi. Chiodino sulle ceppaie; mazza di tamburo ai margini e nei pascoli alberati.",
+   "season_tip": "D'inverno è la quercia che resta 'vestita' di foglie secche marroni; i rametti vellutati si sentono al tatto.",
+   "sources": [
+    {
+     "title": "Acta Plantarum, IPFI: Quercus pubescens",
+     "url": "https://www.actaplantarum.org/flora/flora_info.php?id=500274"
+    },
+    {
+     "title": "Portale della Flora d'Italia (Università di Trieste): Quercus pubescens",
+     "url": "https://dryades.units.it/floritaly/index.php?procedure=taxon_page&tipo=all&id=274"
+    },
+    {
+     "title": "European Atlas of Forest Tree Species (JRC): Quercus pubescens",
+     "url": "https://forest.jrc.ec.europa.eu/media/atlas/Quercus_pubescens.pdf"
+    },
+    {
+     "title": "Carta Forestale su base tipologica, Regione Lazio (layer tipi_forestali2)",
+     "url": "https://geoportale.regione.lazio.it/geoserver/ows?service=WFS&version=1.0.0&request=DescribeFeatureType&typeName=geonode:tipi_forestali2"
+    },
+    {
+     "title": "Wikipedia (incrocio): Quercus pubescens",
+     "url": "https://it.wikipedia.org/wiki/Quercus_pubescens"
+    }
+   ]
+  },
+  "farnetto": {
+   "name": "Farnetto",
+   "latin": "Quercus frainetto",
+   "aliases": [
+    "farnetti",
+    "quercia farnetto",
+    "querceto a cerro e farnetto"
+   ],
+   "wikidata": "Q857075",
+   "type": "latifoglia caducifoglia",
+   "recognize": [
+    "Foglia molto grande (fino a 20-25 cm), più larga verso l'apice",
+    "7-10 paia di lobi profondi e regolari, i più numerosi tra le querce",
+    "Base della foglia a orecchiette, picciolo cortissimo",
+    "Gemme grosse, brune e pelose, senza filamenti",
+    "Cupola con squame embricate e appressate"
+   ],
+   "leaf": "Alterna, obovata, 10-25 cm, con numerosi lobi profondi; pagina inferiore densamente pelosa; base auricolata.",
+   "bark": "Grigio-brunastra, fessurata in placche piccole e fitte.",
+   "fruit": "Ghianda ovoidale fino a 2,5 cm, in cupola a squame appressate; matura in un anno.",
+   "habit": "Albero alto fino a 30 m, fusto slanciato; di solito misto al cerro.",
+   "confusable": [
+    {
+     "name": "Cerro",
+     "how_to_tell": "Foglia più piccola e ruvida, lobi irregolari; gemme con filamenti e cupola riccioluta."
+    },
+    {
+     "name": "Roverella",
+     "how_to_tell": "Foglia piccola a lobi poco profondi, ghiande spesso in gruppi."
+    }
+   ],
+   "altitude_m": [
+    100,
+    1000
+   ],
+   "where_reatino": "Raro: la Carta Forestale indica querceti a cerro e farnetto soprattutto nella conca di Amatrice, su suoli arenacei, e piccoli lembi in Sabina.",
+   "forest_categories": [
+    "Cerreta"
+   ],
+   "fungi": [
+    "aereus",
+    "aestivalis",
+    "caesarea",
+    "virescens",
+    "mellea"
+   ],
+   "fungi_note": "Quercia ectomicorrizica come il cerro, con cui convive: vi si trovano soprattutto porcino nero, porcino estivo, ovolo e colombine; chiodino sulle ceppaie.",
+   "season_tip": "Le grandi foglie secche a lobi profondi nella lettiera sono inconfondibili anche in inverno; le gemme sono più grosse di quelle delle altre querce.",
+   "sources": [
+    {
+     "title": "Acta Plantarum, IPFI: Quercus frainetto",
+     "url": "https://www.actaplantarum.org/flora/flora_info.php?id=500275"
+    },
+    {
+     "title": "Portale della Flora d'Italia (Università di Trieste): Quercus frainetto",
+     "url": "https://dryades.units.it/floritaly/index.php?procedure=taxon_page&tipo=all&id=275"
+    },
+    {
+     "title": "European Atlas of Forest Tree Species (JRC): Quercus frainetto",
+     "url": "https://forest.jrc.ec.europa.eu/media/atlas/Quercus_frainetto.pdf"
+    },
+    {
+     "title": "ISPRA Carta della Natura, habitat E.12C Querceti a cerro e farnetto",
+     "url": "https://cartanatura.isprambiente.it/Legenda/StampaSchedeHabitat.php?h=E.12C"
+    },
+    {
+     "title": "Carta Forestale su base tipologica, Regione Lazio (layer tipi_forestali2)",
+     "url": "https://geoportale.regione.lazio.it/geoserver/ows?service=WFS&version=1.0.0&request=DescribeFeatureType&typeName=geonode:tipi_forestali2"
+    },
+    {
+     "title": "Wikipedia (incrocio): Quercus frainetto",
+     "url": "https://it.wikipedia.org/wiki/Quercus_frainetto"
+    }
+   ]
+  },
+  "leccio": {
+   "name": "Leccio",
+   "latin": "Quercus ilex",
+   "aliases": [
+    "lecci",
+    "lecceta",
+    "leccete",
+    "elce",
+    "elci"
+   ],
+   "wikidata": "Q218155",
+   "type": "latifoglia sempreverde",
+   "recognize": [
+    "Sempreverde: foglie coriacee verde scuro anche d'inverno",
+    "Pagina inferiore grigio-biancastra e feltrosa",
+    "Foglie dei polloni e dei giovani con margine spinoso",
+    "Corteccia bruno-nerastra divisa in piccole placche quadrate",
+    "Ghiande piccole e allungate"
+   ],
+   "leaf": "Alterna, coriacea, 3-7 cm, lanceolata o ovale, margine intero o dentato-spinoso nei polloni; sopra verde scuro, sotto grigio-tomentosa.",
+   "bark": "Bruno-nerastra, finemente screpolata in piccole placche quadrangolari.",
+   "fruit": "Ghianda di 1,5-3 cm, sottile e appuntita, in cupola a squame appressate; matura in autunno.",
+   "habit": "Albero fino a 20 m o, più spesso nel Reatino, ceduo denso e scuro su rupi e versanti calcarei.",
+   "confusable": [
+    {
+     "name": "Agrifoglio",
+     "how_to_tell": "Foglie lucide e glabre su entrambe le facce, molto spinose; bacche rosse; cresce in faggeta."
+    },
+    {
+     "name": "Olivo",
+     "how_to_tell": "Foglie opposte, strette, argentate sotto ma non feltrose; frutti a oliva."
+    }
+   ],
+   "altitude_m": [
+    100,
+    1000
+   ],
+   "where_reatino": "Leccete extrazonali su rupi e versanti calcarei caldi: Greccio (ZSC del Convento), gole del Velino ad Antrodoco, Cicolano, Monti Sabini (Tancia).",
+   "forest_categories": [
+    "Lecceta"
+   ],
+   "fungi": [
+    "aereus",
+    "caesarea",
+    "mellea"
+   ],
+   "fungi_note": "Micorrizico del porcino nero e dell'ovolo nelle leccete aperte e miste a roverella; chiodino sulle ceppaie. Attenzione: sulle ceppaie di leccio e querce cresce anche il fungo dell'olivo, tossico e simile al finferlo.",
+   "season_tip": "Facile tutto l'anno: è l'unica quercia verde scura in inverno; la lettiera è fatta di foglie piccole, dure e grigie sotto.",
+   "sources": [
+    {
+     "title": "Acta Plantarum, IPFI: Quercus ilex",
+     "url": "https://www.actaplantarum.org/flora/flora_info.php?id=500263"
+    },
+    {
+     "title": "Portale della Flora d'Italia (Università di Trieste): Quercus ilex",
+     "url": "https://dryades.units.it/floritaly/index.php?procedure=taxon_page&tipo=all&id=263"
+    },
+    {
+     "title": "European Atlas of Forest Tree Species (JRC): Quercus ilex",
+     "url": "https://forest.jrc.ec.europa.eu/media/atlas/Quercus_ilex.pdf"
+    },
+    {
+     "title": "PGAF Comune di Greccio (Regione Lazio): leccete, rimboschimenti di pino nero, domestico e d'Aleppo",
+     "url": "https://www.regione.lazio.it/sites/default/files/amministrazione-trasparente/tbl_contenuti/PGAF_Greccio.pdf"
+    },
+    {
+     "title": "Carta Forestale su base tipologica, Regione Lazio (layer tipi_forestali2)",
+     "url": "https://geoportale.regione.lazio.it/geoserver/ows?service=WFS&version=1.0.0&request=DescribeFeatureType&typeName=geonode:tipi_forestali2"
+    },
+    {
+     "title": "Wikipedia (incrocio): Quercus ilex",
+     "url": "https://it.wikipedia.org/wiki/Quercus_ilex"
+    }
+   ]
+  },
+  "carpino nero": {
+   "name": "Carpino nero",
+   "latin": "Ostrya carpinifolia",
+   "aliases": [
+    "carpini neri",
+    "ostrieto",
+    "ostrieti",
+    "orno-ostrieto",
+    "orno-ostrieti"
+   ],
+   "wikidata": "Q1367533",
+   "type": "latifoglia caducifoglia",
+   "recognize": [
+    "Foglia ovata e acuminata, doppiamente seghettata, 10-15 paia di nervature",
+    "Infruttescenze pendule simili ai coni del luppolo, dorate in autunno",
+    "Corteccia bruna che con l'età si sfalda in strisce e scaglie sottili",
+    "Ceduo fitto su versanti calcarei, insieme all'orniello",
+    "Amenti maschili già visibili in inverno sui rami"
+   ],
+   "leaf": "Alterna, ovato-lanceolata, 3-10 cm, apice acuminato, margine doppiamente seghettato, base arrotondata e simmetrica.",
+   "bark": "Da giovane liscia e grigio-scura; da adulta bruna, rugosa, fessurata e sfaldata in scaglie longitudinali.",
+   "fruit": "Grappoli penduli di 3-8 cm formati da vescicole membranose, ognuna con una piccola nucula; dorati a fine estate.",
+   "habit": "Albero fino a 15-20 m, ma nel Reatino quasi sempre ceduo a più polloni di 5-10 m.",
+   "confusable": [
+    {
+     "name": "Carpino bianco",
+     "how_to_tell": "Corteccia liscia grigio-acciaio con costolature, frutti con brattea a tre lobi e non a vescica."
+    },
+    {
+     "name": "Nocciolo",
+     "how_to_tell": "Foglia più rotonda, ruvida e pelosa; arbusto a molti fusti; nocciole in involucro frangiato."
+    }
+   ],
+   "altitude_m": [
+    200,
+    1300
+   ],
+   "where_reatino": "Il bosco più diffuso dopo la faggeta: versanti calcarei di Monti Sabini, Cicolano, Valle del Velino e piedi del Terminillo, spesso con orniello, roverella e cerro.",
+   "forest_categories": [
+    "Ostrieto"
+   ],
+   "fungi": [
+    "mellea"
+   ],
+   "fungi_note": "È ectomicorrizico ma nessun commestibile dell'app è legato in modo specifico a lui: porcini, ovoli e colombine negli ostrieti dipendono dalle querce e dai castagni mescolati. Chiodino frequente sulle ceppaie dei cedui.",
+   "season_tip": "D'inverno restano a lungo i grappoli secchi di frutti a vescica e si vedono gli amenti maschili; corteccia bruna sfrangiata.",
+   "sources": [
+    {
+     "title": "Acta Plantarum, IPFI: Ostrya carpinifolia",
+     "url": "https://www.actaplantarum.org/flora/flora_info.php?id=500255"
+    },
+    {
+     "title": "Portale della Flora d'Italia (Università di Trieste): Ostrya carpinifolia",
+     "url": "https://dryades.units.it/floritaly/index.php?procedure=taxon_page&tipo=all&id=255"
+    },
+    {
+     "title": "European Atlas of Forest Tree Species (JRC): Ostrya carpinifolia",
+     "url": "https://forest.jrc.ec.europa.eu/media/atlas/Ostrya_carpinifolia.pdf"
+    },
+    {
+     "title": "Carta Forestale su base tipologica, Regione Lazio (layer tipi_forestali2)",
+     "url": "https://geoportale.regione.lazio.it/geoserver/ows?service=WFS&version=1.0.0&request=DescribeFeatureType&typeName=geonode:tipi_forestali2"
+    },
+    {
+     "title": "Wikipedia (incrocio): Ostrya carpinifolia",
+     "url": "https://it.wikipedia.org/wiki/Ostrya_carpinifolia"
+    }
+   ]
+  },
+  "carpino bianco": {
+   "name": "Carpino bianco",
+   "latin": "Carpinus betulus",
+   "aliases": [
+    "carpini bianchi"
+   ],
+   "wikidata": "Q158776",
+   "type": "latifoglia caducifoglia",
+   "recognize": [
+    "Corteccia liscia grigio-acciaio con costolature 'muscolose'",
+    "Foglia ovata, doppiamente seghettata, pieghettata tra nervature parallele",
+    "Frutto: piccola nucula su una brattea verde a tre lobi, in grappoli",
+    "Tronco spesso scanalato e non perfettamente cilindrico",
+    "Foglie secche che restano sulla pianta in inverno"
+   ],
+   "leaf": "Alterna, ovata, 5-10 cm, margine doppiamente seghettato, nervature parallele incise che la fanno sembrare pieghettata; opaca.",
+   "bark": "Liscia, grigia, con creste longitudinali sinuose; non si fessura nemmeno da vecchio.",
+   "fruit": "Grappoli penduli di nucule, ciascuna alla base di una brattea trilobata lunga 3-4 cm.",
+   "habit": "Albero di 15-25 m, chioma ovale; nel Reatino sparso e subordinato.",
+   "confusable": [
+    {
+     "name": "Faggio",
+     "how_to_tell": "Foglia a margine intero ondulato e lucida; corteccia liscia ma senza costolature."
+    },
+    {
+     "name": "Carpino nero",
+     "how_to_tell": "Corteccia bruna sfaldata; frutti a vescica simili al luppolo."
+    }
+   ],
+   "altitude_m": [
+    200,
+    1000
+   ],
+   "where_reatino": "Sparso nei boschi misti freschi: valloni, fondovalle e forre di Cicolano, Sabina e Valle del Velino; nei piani forestali del Reatino compare come specie secondaria.",
+   "forest_categories": [
+    "Bosco di forra"
+   ],
+   "fungi": [
+    "cibarius",
+    "cornucopioides",
+    "virescens",
+    "mellea"
+   ],
+   "fungi_note": "Ectomicorrizico: nei boschi misti freschi accompagna finferlo, trombetta dei morti e colombine (soprattutto Russula cyanoxantha); chiodino su ceppaie e radici.",
+   "season_tip": "In inverno la corteccia grigia 'a muscoli' e le foglie secche trattenute sui rami bassi; brattee trilobate secche nella lettiera.",
+   "sources": [
+    {
+     "title": "Acta Plantarum, IPFI: Carpinus betulus",
+     "url": "https://www.actaplantarum.org/flora/flora_info.php?id=500253"
+    },
+    {
+     "title": "Portale della Flora d'Italia (Università di Trieste): Carpinus betulus",
+     "url": "https://dryades.units.it/floritaly/index.php?procedure=taxon_page&tipo=all&id=253"
+    },
+    {
+     "title": "European Atlas of Forest Tree Species (JRC): Carpinus betulus",
+     "url": "https://forest.jrc.ec.europa.eu/media/atlas/Carpinus_betulus.pdf"
+    },
+    {
+     "title": "Carta Forestale su base tipologica, Regione Lazio (layer tipi_forestali2)",
+     "url": "https://geoportale.regione.lazio.it/geoserver/ows?service=WFS&version=1.0.0&request=DescribeFeatureType&typeName=geonode:tipi_forestali2"
+    },
+    {
+     "title": "Wikipedia (incrocio): Carpinus betulus",
+     "url": "https://it.wikipedia.org/wiki/Carpinus_betulus"
+    }
+   ]
+  },
+  "orniello": {
+   "name": "Orniello",
+   "latin": "Fraxinus ornus",
+   "aliases": [
+    "ornielli",
+    "frassino da manna",
+    "frassino minore"
+   ],
+   "wikidata": "Q161421",
+   "type": "latifoglia caducifoglia",
+   "recognize": [
+    "Foglia composta opposta con 5-9 foglioline",
+    "Gemme grigio-brune e vellutate (non nere)",
+    "Corteccia grigia e liscia anche da vecchio",
+    "A maggio pannocchie di fiori bianco-crema profumati",
+    "Frutti a samara lanceolata in grappoli"
+   ],
+   "leaf": "Opposta, imparipennata, 20-30 cm, 5-9 foglioline ovate e seghettate, picciolettate; in autunno gialla o rosata.",
+   "bark": "Grigia, liscia o appena rugosa, anche nei tronchi vecchi.",
+   "fruit": "Samare di 2-4 cm a forma di lingua, in grappoli che restano sulla pianta in inverno.",
+   "habit": "Alberello di 6-15 m, chioma irregolare; fa polloni dalla ceppaia.",
+   "confusable": [
+    {
+     "name": "Frassino maggiore",
+     "how_to_tell": "Gemme nere vellutate e fiori senza petali; luoghi freschi di montagna e forre."
+    },
+    {
+     "name": "Sorbo domestico",
+     "how_to_tell": "Foglie alterne con 13-21 foglioline; frutti a piccola pera."
+    }
+   ],
+   "altitude_m": [
+    0,
+    1200
+   ],
+   "where_reatino": "Ovunque nei boschi caldi di collina, con carpino nero e roverella: Sabina, Cicolano, Valle del Velino, cintura del Terminillo.",
+   "forest_categories": [
+    "Ostrieto"
+   ],
+   "fungi": [
+    "mellea"
+   ],
+   "fungi_note": "Ha micorrize arbuscolari e non ospita porcini o ovoli. Indica però ostrieti e querceti caldi; il chiodino può attaccarne le ceppaie.",
+   "season_tip": "D'inverno: gemme grigie vellutate opposte e grappoli di samare secche; d'estate la foglia opposta composta basta.",
+   "sources": [
+    {
+     "title": "Acta Plantarum, IPFI: Fraxinus ornus",
+     "url": "https://www.actaplantarum.org/flora/flora_info.php?id=503974"
+    },
+    {
+     "title": "Portale della Flora d'Italia (Università di Trieste): Fraxinus ornus",
+     "url": "https://dryades.units.it/floritaly/index.php?procedure=taxon_page&tipo=all&id=3974"
+    },
+    {
+     "title": "European Atlas of Forest Tree Species (JRC): Fraxinus ornus",
+     "url": "https://forest.jrc.ec.europa.eu/media/atlas/Fraxinus_ornus.pdf"
+    },
+    {
+     "title": "Carta Forestale su base tipologica, Regione Lazio (layer tipi_forestali2)",
+     "url": "https://geoportale.regione.lazio.it/geoserver/ows?service=WFS&version=1.0.0&request=DescribeFeatureType&typeName=geonode:tipi_forestali2"
+    },
+    {
+     "title": "Wikipedia (incrocio): Fraxinus ornus",
+     "url": "https://it.wikipedia.org/wiki/Fraxinus_ornus"
+    }
+   ]
+  },
+  "pino nero": {
+   "name": "Pino nero",
+   "latin": "Pinus nigra",
+   "aliases": [
+    "pini neri",
+    "pineta",
+    "pinete",
+    "pineta di pino nero",
+    "pinete di pino nero"
+   ],
+   "wikidata": "Q145954",
+   "type": "conifera",
+   "recognize": [
+    "Aghi riuniti a due, lunghi 8-16 cm, rigidi e verde scuro",
+    "Corteccia grigio-scura a grandi placche, mai arancione in alto",
+    "Pigne ovoidi 5-8 cm, giallo-brune lucide, quasi sessili",
+    "Impianti regolari a file su versanti un tempo nudi",
+    "Gemme grandi, chiare e resinose"
+   ],
+   "leaf": "Aghi a coppie, 8-16 cm, rigidi, diritti o appena curvi, verde scuro; restano 3-4 anni.",
+   "bark": "Grigio-scura o grigio-nerastra, fessurata in placche allungate.",
+   "fruit": "Pigna ovoide-conica di 5-8 cm, lucida, giallo-bruna, che si apre a fine inverno del secondo anno.",
+   "habit": "Albero di 20-30 m, chioma conica da giovane e poi piatta; nel Reatino quasi sempre in rimboschimenti densi.",
+   "confusable": [
+    {
+     "name": "Pino silvestre",
+     "how_to_tell": "Corteccia arancio-rossiccia nella parte alta del tronco; aghi corti (3-7 cm), grigio-azzurri e ritorti."
+    },
+    {
+     "name": "Pino domestico",
+     "how_to_tell": "Chioma a ombrello, pigne grandi e pesanti con pinoli; quote basse."
+    }
+   ],
+   "altitude_m": [
+    500,
+    1700
+   ],
+   "where_reatino": "Non spontaneo nel Lazio: rimboschimenti del Novecento sul Terminillo, a Rascino, sui Monti della Laga, sui Sabini e attorno a Greccio.",
+   "forest_categories": [
+    "Rimboschimenti di pini e/o altre conifere montane"
+   ],
+   "fungi": [
+    "suillus",
+    "terreum",
+    "pinophilus",
+    "edulis",
+    "nuda"
+   ],
+   "fungi_note": "Simbionte obbligato dei pinaroli (Suillus) e della moretta, legati solo ai pini; nelle pinete più vecchie e fresche anche porcino rosso e porcino. L'agarico violetto cresce nella lettiera di aghi.",
+   "season_tip": "Sempreverde: aghi lunghi a coppie e pigne lucide a terra tutto l'anno. Il tappeto di aghi è più spesso e scuro di quello delle latifoglie.",
+   "sources": [
+    {
+     "title": "Acta Plantarum, IPFI: Pinus nigra",
+     "url": "https://www.actaplantarum.org/flora/flora_info.php?id=500154"
+    },
+    {
+     "title": "Portale della Flora d'Italia (Università di Trieste): Pinus nigra",
+     "url": "https://dryades.units.it/floritaly/index.php?procedure=taxon_page&tipo=all&id=154"
+    },
+    {
+     "title": "European Atlas of Forest Tree Species (JRC): Pinus nigra",
+     "url": "https://forest.jrc.ec.europa.eu/media/atlas/Pinus_nigra.pdf"
+    },
+    {
+     "title": "PGAF Comune di Greccio (Regione Lazio): leccete, rimboschimenti di pino nero, domestico e d'Aleppo",
+     "url": "https://www.regione.lazio.it/sites/default/files/amministrazione-trasparente/tbl_contenuti/PGAF_Greccio.pdf"
+    },
+    {
+     "title": "Carta Forestale su base tipologica, Regione Lazio (layer tipi_forestali2)",
+     "url": "https://geoportale.regione.lazio.it/geoserver/ows?service=WFS&version=1.0.0&request=DescribeFeatureType&typeName=geonode:tipi_forestali2"
+    },
+    {
+     "title": "Wikipedia (incrocio): Pinus nigra",
+     "url": "https://it.wikipedia.org/wiki/Pinus_nigra"
+    }
+   ]
+  },
+  "pino domestico": {
+   "name": "Pino domestico",
+   "latin": "Pinus pinea",
+   "aliases": [
+    "pini domestici",
+    "pino da pinoli",
+    "pineta di pino domestico",
+    "pinete di pino domestico",
+    "pineta termofila",
+    "pinete termofile"
+   ],
+   "wikidata": "Q106094",
+   "type": "conifera",
+   "recognize": [
+    "Chioma a ombrello piatta e larga da adulto",
+    "Aghi a due, 8-15 cm, verdi",
+    "Pigne grandi e pesanti (8-15 cm), globose, con pinoli",
+    "Corteccia rosso-bruna a larghe placche piatte",
+    "Fusto corto con rami che salgono obliqui"
+   ],
+   "leaf": "Aghi a coppie, 8-15 cm, verde chiaro-bluastro, abbastanza rigidi.",
+   "bark": "Bruno-rossiccia, profondamente fessurata in placche larghe e piatte color arancio-viola.",
+   "fruit": "Pigna ovoide-globosa di 8-15 cm, matura al terzo anno, con semi grandi (pinoli) a guscio duro.",
+   "habit": "Albero di 15-25 m dalla tipica chioma a ombrello; da giovane cespuglioso e globoso.",
+   "confusable": [
+    {
+     "name": "Pino d'Aleppo",
+     "how_to_tell": "Chioma rada e irregolare, aghi sottili verde chiaro, pigne piccole con peduncolo ricurvo."
+    },
+    {
+     "name": "Pino nero",
+     "how_to_tell": "Chioma conica o piatta ma non a ombrello, corteccia grigio-scura, pigne piccole."
+    }
+   ],
+   "altitude_m": [
+    0,
+    700
+   ],
+   "where_reatino": "Solo piantato: piccole pinete in Bassa Sabina, attorno ai laghi del Salto e del Turano e nei rimboschimenti di Greccio.",
+   "forest_categories": [
+    "Pineta termofila"
+   ],
+   "fungi": [
+    "suillus",
+    "terreum",
+    "nuda"
+   ],
+   "fungi_note": "Ospita pinaroli (S. collinitus, S. granulatus), moretta e agarico violetto, tutti legati ai pini o alla loro lettiera.",
+   "season_tip": "Riconoscibile tutto l'anno da lontano per la chioma a ombrello; a terra pigne grosse e gusci di pinoli.",
+   "sources": [
+    {
+     "title": "Acta Plantarum, IPFI: Pinus pinea",
+     "url": "https://www.actaplantarum.org/flora/flora_info.php?id=500164"
+    },
+    {
+     "title": "Portale della Flora d'Italia (Università di Trieste): Pinus pinea",
+     "url": "https://dryades.units.it/floritaly/index.php?procedure=taxon_page&tipo=all&id=164"
+    },
+    {
+     "title": "European Atlas of Forest Tree Species (JRC): Pinus pinea",
+     "url": "https://forest.jrc.ec.europa.eu/media/atlas/Pinus_pinea.pdf"
+    },
+    {
+     "title": "PGAF Comune di Greccio (Regione Lazio): leccete, rimboschimenti di pino nero, domestico e d'Aleppo",
+     "url": "https://www.regione.lazio.it/sites/default/files/amministrazione-trasparente/tbl_contenuti/PGAF_Greccio.pdf"
+    },
+    {
+     "title": "Carta Forestale su base tipologica, Regione Lazio (layer tipi_forestali2)",
+     "url": "https://geoportale.regione.lazio.it/geoserver/ows?service=WFS&version=1.0.0&request=DescribeFeatureType&typeName=geonode:tipi_forestali2"
+    },
+    {
+     "title": "Wikipedia (incrocio): Pinus pinea",
+     "url": "https://it.wikipedia.org/wiki/Pinus_pinea"
+    }
+   ]
+  },
+  "pino d'aleppo": {
+   "name": "Pino d'Aleppo",
+   "latin": "Pinus halepensis",
+   "aliases": [
+    "pini d'aleppo",
+    "pino d’aleppo",
+    "pineta di pino d'aleppo"
+   ],
+   "wikidata": "Q211457",
+   "type": "conifera",
+   "recognize": [
+    "Aghi a due, sottili e flessibili, 6-10 cm, verde chiaro",
+    "Pigne di 5-10 cm su un peduncolo ricurvo all'indietro",
+    "Pigne vecchie che restano per anni sui rami",
+    "Corteccia grigio-argentea da giovane, poi bruno-rossiccia",
+    "Chioma rada, irregolare e luminosa"
+   ],
+   "leaf": "Aghi a coppie, 6-10 cm, molto sottili e morbidi, verde chiaro-giallastro.",
+   "bark": "Liscia e grigio-argentea sui rami e da giovane; sul tronco adulto bruno-rossastra e fessurata.",
+   "fruit": "Pigna conico-allungata 5-10 cm, bruno-rossiccia lucida, portata da un peduncolo ripiegato verso la base del ramo.",
+   "habit": "Albero di 10-20 m, tronco spesso storto, chioma aperta.",
+   "confusable": [
+    {
+     "name": "Pino domestico",
+     "how_to_tell": "Chioma a ombrello densa, pigne grandi globose senza peduncolo ricurvo."
+    },
+    {
+     "name": "Pino marittimo (Pinus pinaster)",
+     "how_to_tell": "Aghi molto più lunghi (15-25 cm) e spessi, pigne grandi 10-20 cm."
+    }
+   ],
+   "altitude_m": [
+    0,
+    600
+   ],
+   "where_reatino": "Non spontaneo nel Reatino: usato in piccola misura nei rimboschimenti di collina (es. Greccio, insieme al pino domestico e al cipresso).",
+   "forest_categories": [
+    "Pineta termofila"
+   ],
+   "fungi": [
+    "suillus",
+    "terreum",
+    "nuda"
+   ],
+   "fungi_note": "Pino mediterraneo associato soprattutto a Suillus collinitus (pinarolo) e alla moretta; nel Reatino gli impianti sono pochi e piccoli.",
+   "season_tip": "Tutto l'anno: pigne con il peduncolo piegato all'indietro e aghi sottili chiari.",
+   "sources": [
+    {
+     "title": "Acta Plantarum, IPFI: Pinus halepensis",
+     "url": "https://www.actaplantarum.org/flora/flora_info.php?id=500162"
+    },
+    {
+     "title": "Portale della Flora d'Italia (Università di Trieste): Pinus halepensis",
+     "url": "https://dryades.units.it/floritaly/index.php?procedure=taxon_page&tipo=all&id=162"
+    },
+    {
+     "title": "PGAF Comune di Greccio (Regione Lazio): leccete, rimboschimenti di pino nero, domestico e d'Aleppo",
+     "url": "https://www.regione.lazio.it/sites/default/files/amministrazione-trasparente/tbl_contenuti/PGAF_Greccio.pdf"
+    },
+    {
+     "title": "Carta Forestale su base tipologica, Regione Lazio (layer tipi_forestali2)",
+     "url": "https://geoportale.regione.lazio.it/geoserver/ows?service=WFS&version=1.0.0&request=DescribeFeatureType&typeName=geonode:tipi_forestali2"
+    },
+    {
+     "title": "Wikipedia (incrocio): Pinus halepensis",
+     "url": "https://it.wikipedia.org/wiki/Pinus_halepensis"
+    }
+   ]
+  },
+  "pino silvestre": {
+   "name": "Pino silvestre",
+   "latin": "Pinus sylvestris",
+   "aliases": [
+    "pini silvestri"
+   ],
+   "wikidata": "Q133128",
+   "type": "conifera",
+   "recognize": [
+    "Corteccia arancio-rossiccia e sfogliata nella parte alta del tronco",
+    "Aghi a due, corti (3-7 cm), grigio-azzurri e ritorti",
+    "Pigne piccole (3-6 cm), opache, a punta",
+    "Base del tronco grigio-bruna a placche spesse"
+   ],
+   "leaf": "Aghi a coppie, 3-7 cm, rigidi, attorcigliati, verde-glauco.",
+   "bark": "In basso grigio-bruna a placche; dalla metà del fusto in su arancione e sottile, in sfoglie.",
+   "fruit": "Pigna conica di 3-6 cm, grigio-bruna opaca, matura nel secondo anno.",
+   "habit": "Albero di 20-30 m, fusto slanciato e chioma alta.",
+   "confusable": [
+    {
+     "name": "Pino nero",
+     "how_to_tell": "Corteccia grigio-scura fino in cima, aghi lunghi 8-16 cm verde scuro."
+    }
+   ],
+   "altitude_m": [
+    800,
+    1600
+   ],
+   "where_reatino": "Non spontaneo: presente solo in alcuni rimboschimenti montani, molto meno del pino nero.",
+   "forest_categories": [
+    "Rimboschimenti di pini e/o altre conifere montane"
+   ],
+   "fungi": [
+    "suillus",
+    "terreum",
+    "pinophilus",
+    "edulis",
+    "nuda"
+   ],
+   "fungi_note": "Come il pino nero: pinaroli (S. luteus in particolare), moretta, porcino rosso e porcino nelle pinete montane.",
+   "season_tip": "Il tronco arancione in alto si vede anche da lontano e in pieno inverno.",
+   "sources": [
+    {
+     "title": "Acta Plantarum, IPFI: Pinus sylvestris",
+     "url": "https://www.actaplantarum.org/flora/flora_info.php?id=500156"
+    },
+    {
+     "title": "Portale della Flora d'Italia (Università di Trieste): Pinus sylvestris",
+     "url": "https://dryades.units.it/floritaly/index.php?procedure=taxon_page&tipo=all&id=156"
+    },
+    {
+     "title": "European Atlas of Forest Tree Species (JRC): Pinus sylvestris",
+     "url": "https://forest.jrc.ec.europa.eu/media/atlas/Pinus_sylvestris.pdf"
+    },
+    {
+     "title": "Carta Forestale su base tipologica, Regione Lazio (layer tipi_forestali2)",
+     "url": "https://geoportale.regione.lazio.it/geoserver/ows?service=WFS&version=1.0.0&request=DescribeFeatureType&typeName=geonode:tipi_forestali2"
+    },
+    {
+     "title": "Wikipedia (incrocio): Pinus sylvestris",
+     "url": "https://it.wikipedia.org/wiki/Pinus_sylvestris"
+    }
+   ]
+  },
+  "abete bianco": {
+   "name": "Abete bianco",
+   "latin": "Abies alba",
+   "aliases": [
+    "abeti bianchi",
+    "abetina",
+    "abetine"
+   ],
+   "wikidata": "Q146992",
+   "type": "conifera",
+   "recognize": [
+    "Aghi piatti con apice smarginato e due bande bianche sotto",
+    "Aghi disposti a pettine sui due lati del rametto",
+    "Pigne erette sui rami alti che si disfano sulla pianta",
+    "Corteccia liscia grigio-argentea",
+    "Gemme non resinose"
+   ],
+   "leaf": "Aghi singoli, piatti, 2-3 cm, flessibili e non pungenti, verde scuro lucido sopra con due bande bianche sotto, apice intaccato.",
+   "bark": "Grigio-chiara, liscia da giovane; da vecchia finemente screpolata in piccole placche.",
+   "fruit": "Pigna cilindrica eretta 10-15 cm; a maturità perde le squame sull'albero, a terra si trovano solo squame e assi nudi.",
+   "habit": "Albero alto 30-50 m, chioma conica regolare, poi appiattita a 'nido di cicogna' negli esemplari vecchi.",
+   "confusable": [
+    {
+     "name": "Abete rosso (Picea abies)",
+     "how_to_tell": "Aghi a sezione quadrata e pungenti, senza bande bianche; pigne pendenti che cadono intere; corteccia rossastra. Solo piantato in Appennino."
+    },
+    {
+     "name": "Tasso",
+     "how_to_tell": "Aghi senza bande bianche, frutti con arillo rosso; pianta velenosa."
+    }
+   ],
+   "altitude_m": [
+    900,
+    1700
+   ],
+   "where_reatino": "Raro: individui sparsi o piantati in faggete e rimboschimenti montani. I nuclei spontanei più vicini sono sul versante teramano dei Monti della Laga.",
+   "forest_categories": [
+    "Faggeta"
+   ],
+   "fungi": [
+    "edulis",
+    "pinophilus",
+    "cibarius",
+    "repandum",
+    "nuda"
+   ],
+   "fungi_note": "Simbionte di porcino, porcino rosso, finferlo e steccherino come il faggio con cui si mescola; nel Reatino è troppo raro per fare la differenza.",
+   "season_tip": "Sempreverde: a terra squame di pigne e mai pigne intere; rametti con aghi piatti a pettine.",
+   "sources": [
+    {
+     "title": "Acta Plantarum, IPFI: Abies alba",
+     "url": "https://www.actaplantarum.org/flora/flora_info.php?id=500145"
+    },
+    {
+     "title": "Portale della Flora d'Italia (Università di Trieste): Abies alba",
+     "url": "https://dryades.units.it/floritaly/index.php?procedure=taxon_page&tipo=all&id=145"
+    },
+    {
+     "title": "European Atlas of Forest Tree Species (JRC): Abies alba",
+     "url": "https://forest.jrc.ec.europa.eu/media/atlas/Abies_alba.pdf"
+    },
+    {
+     "title": "ISPRA Carta della Natura, habitat E.312 (abetine appenniniche)",
+     "url": "https://cartanatura.isprambiente.it/Legenda/StampaSchedeHabitat.php?h=E.312"
+    },
+    {
+     "title": "Wikipedia (incrocio): Abies alba",
+     "url": "https://it.wikipedia.org/wiki/Abies_alba"
+    }
+   ]
+  },
+  "betulla": {
+   "name": "Betulla",
+   "latin": "Betula pendula",
+   "aliases": [
+    "betulle",
+    "betuleto",
+    "betuleti"
+   ],
+   "wikidata": "Q156895",
+   "type": "latifoglia caducifoglia",
+   "recognize": [
+    "Corteccia bianca con lenticelle scure orizzontali",
+    "Base del tronco nera e fessurata",
+    "Rametti sottili e penduli, con verruche resinose",
+    "Foglia romboidale-triangolare, doppiamente seghettata, a punta",
+    "Amenti cilindrici penduli"
+   ],
+   "leaf": "Alterna, 3-7 cm, triangolare-romboidale, base tronca, apice appuntito, margine doppiamente seghettato, glabra.",
+   "bark": "Bianca, sottile, che si sfoglia in strisce orizzontali; alla base diventa nera e solcata.",
+   "fruit": "Amenti femminili di 2-4 cm che si disfano liberando piccole samare alate.",
+   "habit": "Albero di 15-25 m, chioma leggera con rami ricadenti; pioniere su radure e pascoli.",
+   "confusable": [
+    {
+     "name": "Pioppo bianco",
+     "how_to_tell": "Foglie lobate, bianco-feltrose sotto; corteccia biancastra con lenticelle a rombo; lungo i fiumi."
+    },
+    {
+     "name": "Pioppo tremolo",
+     "how_to_tell": "Foglia rotonda a denti larghi su picciolo piatto; corteccia grigio-verdastra."
+    }
+   ],
+   "altitude_m": [
+    900,
+    1800
+   ],
+   "where_reatino": "Rara e relitta: betuleti segnalati sui Monti della Laga (versante laziale) e ai margini delle faggete su suoli acidi.",
+   "forest_categories": [],
+   "fungi": [
+    "edulis",
+    "cibarius"
+   ],
+   "fungi_note": "Ectomicorrizica: sotto le betulle crescono porcino e finferlo, oltre ai porcinelli (Leccinum, non schedati nell'app). Attenzione: è il simbionte preferito dell'ovolo malefico (Amanita muscaria), sosia dell'ovolo buono.",
+   "season_tip": "Il tronco bianco si riconosce in ogni stagione; d'inverno amenti maschili già pronti sui rami.",
+   "sources": [
+    {
+     "title": "Acta Plantarum, IPFI: Betula pendula",
+     "url": "https://www.actaplantarum.org/flora/flora_info.php?id=500245"
+    },
+    {
+     "title": "Portale della Flora d'Italia (Università di Trieste): Betula pendula",
+     "url": "https://dryades.units.it/floritaly/index.php?procedure=taxon_page&tipo=all&id=245"
+    },
+    {
+     "title": "European Atlas of Forest Tree Species (JRC): Betula spp",
+     "url": "https://forest.jrc.ec.europa.eu/media/atlas/Betula_spp.pdf"
+    },
+    {
+     "title": "ISPRA Carta della Natura, CORINE 41.B Betuleti (Lazio: Monti della Laga)",
+     "url": "https://groupware.sinanet.isprambiente.it/carta-della-natura/library/manuale_pagine/cdn_ccb41-b/download/en/1/CDN_CCB41-B.pdf"
+    },
+    {
+     "title": "Wikipedia (incrocio): Betula pendula",
+     "url": "https://it.wikipedia.org/wiki/Betula_pendula"
+    }
+   ]
+  },
+  "nocciolo": {
+   "name": "Nocciolo",
+   "latin": "Corylus avellana",
+   "aliases": [
+    "noccioli",
+    "nocciolo selvatico",
+    "noccioleto",
+    "noccioleti"
+   ],
+   "wikidata": "Q124969",
+   "type": "latifoglia caducifoglia",
+   "recognize": [
+    "Cespuglio a molti fusti dritti che escono dalla stessa ceppaia",
+    "Foglia rotonda, cuoriforme alla base, con punta breve",
+    "Foglia ruvida e pelosa, doppiamente seghettata",
+    "Amenti gialli penduli già in pieno inverno (gennaio-marzo)",
+    "Nocciole in un involucro verde frangiato"
+   ],
+   "leaf": "Alterna, 6-12 cm, rotonda o obovata, base cuoriforme, apice acuminato breve, margine doppiamente seghettato, pelosa.",
+   "bark": "Bruno-grigia, liscia e lucida, con lenticelle chiare.",
+   "fruit": "Nocciola in un involucro fogliaceo frangiato, singola o a gruppi; matura ad agosto-settembre.",
+   "habit": "Arbusto o piccolo albero di 3-6 m, policormico; nel sottobosco o a formare macchie ai margini.",
+   "confusable": [
+    {
+     "name": "Ontano nero",
+     "how_to_tell": "Foglia con apice tronco o smarginato e appiccicosa da giovane; piccole pigne legnose nere; lungo le acque."
+    },
+    {
+     "name": "Tiglio",
+     "how_to_tell": "Albero vero; foglia a base asimmetrica, liscia e glabra."
+    }
+   ],
+   "altitude_m": [
+    200,
+    1500
+   ],
+   "where_reatino": "Comune nel sottobosco di castagneti, cerrete e faggete fresche e nelle macchie di ricolonizzazione dei pascoli, dal Cicolano al Terminillo.",
+   "forest_categories": [
+    "Arbusteto e macchia alta"
+   ],
+   "fungi": [
+    "cibarius",
+    "cornucopioides"
+   ],
+   "fungi_note": "Ectomicorrizico: sotto i noccioli si trovano finferli e trombette dei morti (è anche ospite di tartufi). Nei castagneti e nelle cerrete aiuta a localizzare i punti freschi.",
+   "season_tip": "È il primo a 'fiorire': amenti gialli penduli già a gennaio, prima delle foglie; fusti dritti e lucidi da una ceppaia.",
+   "sources": [
+    {
+     "title": "Acta Plantarum, IPFI: Corylus avellana",
+     "url": "https://www.actaplantarum.org/flora/flora_info.php?id=500256"
+    },
+    {
+     "title": "Portale della Flora d'Italia (Università di Trieste): Corylus avellana",
+     "url": "https://dryades.units.it/floritaly/index.php?procedure=taxon_page&tipo=all&id=256"
+    },
+    {
+     "title": "European Atlas of Forest Tree Species (JRC): Corylus avellana",
+     "url": "https://forest.jrc.ec.europa.eu/media/atlas/Corylus_avellana.pdf"
+    },
+    {
+     "title": "Wikipedia (incrocio): Corylus avellana",
+     "url": "https://it.wikipedia.org/wiki/Corylus_avellana"
+    }
+   ]
+  },
+  "acero campestre": {
+   "name": "Acero campestre",
+   "latin": "Acer campestre",
+   "aliases": [
+    "aceri campestri",
+    "acero oppio"
+   ],
+   "wikidata": "Q158785",
+   "type": "latifoglia caducifoglia",
+   "recognize": [
+    "Foglie opposte, palmate, con 3-5 lobi arrotondati a margine intero",
+    "Picciolo che spezzato emette latice bianco",
+    "Samare con le due ali in linea orizzontale (180°)",
+    "Rametti spesso con creste di sughero",
+    "Foglie giallo-oro in autunno"
+   ],
+   "leaf": "Opposta, 5-10 cm, palmata con 3-5 lobi ottusi a margine intero; picciolo con latice.",
+   "bark": "Grigio-bruna, finemente fessurata in placche rettangolari; rami giovani suberosi.",
+   "fruit": "Disamara con ali opposte quasi in linea, spesso rossastre.",
+   "habit": "Alberello di 8-15 m o arbusto in siepi e sottobosco.",
+   "confusable": [
+    {
+     "name": "Acero opalo",
+     "how_to_tell": "Foglie più grandi a lobi larghi e poco profondi, senza latice; samare ad angolo acuto."
+    },
+    {
+     "name": "Acero minore",
+     "how_to_tell": "Foglie piccole e coriacee a 3 lobi; samare quasi parallele; versanti caldi."
+    }
+   ],
+   "altitude_m": [
+    0,
+    1100
+   ],
+   "where_reatino": "Diffuso ma sempre subordinato in cerrete, querceti a roverella e ostrieti, nelle siepi e ai margini dei coltivi.",
+   "forest_categories": [],
+   "fungi": [
+    "mellea"
+   ],
+   "fungi_note": "Ha micorrize arbuscolari e non ospita porcini o ovoli; il chiodino può colonizzarne ceppaie e radici.",
+   "season_tip": "In autunno la chioma gialla; d'inverno rametti opposti con creste di sughero e samare secche.",
+   "sources": [
+    {
+     "title": "Acta Plantarum, IPFI: Acer campestre",
+     "url": "https://www.actaplantarum.org/flora/flora_info.php?id=503038"
+    },
+    {
+     "title": "Portale della Flora d'Italia (Università di Trieste): Acer campestre",
+     "url": "https://dryades.units.it/floritaly/index.php?procedure=taxon_page&tipo=all&id=3038"
+    },
+    {
+     "title": "European Atlas of Forest Tree Species (JRC): Acer campestre",
+     "url": "https://forest.jrc.ec.europa.eu/media/atlas/Acer_campestre.pdf"
+    },
+    {
+     "title": "Wikipedia (incrocio): Acer campestre",
+     "url": "https://it.wikipedia.org/wiki/Acer_campestre"
+    }
+   ]
+  },
+  "pioppo": {
+   "name": "Pioppo",
+   "latin": "Populus spp.",
+   "aliases": [
+    "pioppi",
+    "pioppeto",
+    "pioppeti",
+    "pioppo nero",
+    "pioppo bianco",
+    "pioppo tremolo",
+    "gattice"
+   ],
+   "wikidata": "Q25356",
+   "type": "latifoglia caducifoglia",
+   "recognize": [
+    "Picciolo appiattito: le foglie tremolano anche con poco vento",
+    "Pioppo nero: foglia triangolare-romboidale, corteccia scura a solchi profondi",
+    "Pioppo bianco: foglia lobata, bianca e feltrosa sotto; corteccia biancastra con lenticelle a rombo",
+    "Pioppo tremolo: foglia tondeggiante a denti larghi; radure montane",
+    "Gemme con più perule, spesso resinose e profumate"
+   ],
+   "leaf": "Alterna, a lungo picciolo appiattito; deltoide nel pioppo nero, lobata e bianco-tomentosa sotto nel pioppo bianco, rotonda e dentata nel tremolo.",
+   "bark": "Pioppo nero: grigio-scura e profondamente solcata, con ingrossamenti sul tronco; pioppo bianco e tremolo: liscia biancastra o grigio-verde con lenticelle a rombo.",
+   "fruit": "Capsule in amenti che a maggio-giugno liberano semi con lanugine bianca ('piumino').",
+   "habit": "Alberi di 20-30 m a crescita rapida, lungo fiumi e fossi; il tremolo è più piccolo e forma macchie da polloni radicali.",
+   "confusable": [
+    {
+     "name": "Salice",
+     "how_to_tell": "Foglie strette e lanceolate; gemme coperte da un'unica perula a cappuccio."
+    },
+    {
+     "name": "Betulla",
+     "how_to_tell": "Corteccia bianca con lenticelle orizzontali, rametti penduli; luoghi asciutti di montagna."
+    }
+   ],
+   "altitude_m": [
+    0,
+    1500
+   ],
+   "where_reatino": "Pioppo nero e bianco lungo Velino, Turano, Salto e nella Piana Reatina; il tremolo in radure e margini delle faggete.",
+   "forest_categories": [
+    "Bosco alveale e ripariale"
+   ],
+   "fungi": [
+    "mellea"
+   ],
+   "fungi_note": "Il chiodino forma cespi su ceppaie e radici di pioppi; sui pioppi cresce anche il pioppino (Cyclocybe aegerita), non schedato nell'app.",
+   "season_tip": "D'inverno: gemme resinose profumate, piccioli piatti nelle foglie a terra, corteccia molto diversa tra le specie.",
+   "sources": [
+    {
+     "title": "Acta Plantarum, IPFI: Populus nigra",
+     "url": "https://www.actaplantarum.org/flora/flora_info.php?id=500238"
+    },
+    {
+     "title": "Portale della Flora d'Italia (Università di Trieste): Populus nigra",
+     "url": "https://dryades.units.it/floritaly/index.php?procedure=taxon_page&tipo=all&id=238"
+    },
+    {
+     "title": "European Atlas of Forest Tree Species (JRC): Populus nigra",
+     "url": "https://forest.jrc.ec.europa.eu/media/atlas/Populus_nigra.pdf"
+    },
+    {
+     "title": "Acta Plantarum, IPFI: Populus alba",
+     "url": "https://www.actaplantarum.org/flora/flora_info.php?id=500235"
+    },
+    {
+     "title": "Acta Plantarum, IPFI: Populus tremula",
+     "url": "https://www.actaplantarum.org/flora/flora_info.php?id=500237"
+    },
+    {
+     "title": "Carta Forestale su base tipologica, Regione Lazio (layer tipi_forestali2)",
+     "url": "https://geoportale.regione.lazio.it/geoserver/ows?service=WFS&version=1.0.0&request=DescribeFeatureType&typeName=geonode:tipi_forestali2"
+    },
+    {
+     "title": "Wikipedia (incrocio): Populus",
+     "url": "https://it.wikipedia.org/wiki/Populus"
+    }
+   ]
+  },
+  "salice": {
+   "name": "Salice",
+   "latin": "Salix spp.",
+   "aliases": [
+    "salici",
+    "saliceto",
+    "saliceti",
+    "salicone",
+    "salice bianco"
+   ],
+   "wikidata": "Q36050",
+   "type": "latifoglia caducifoglia",
+   "recognize": [
+    "Gemme coperte da un'unica squama a cappuccio, appressate al ramo",
+    "Foglie quasi sempre strette e lanceolate (salice bianco argenteo sotto)",
+    "Salicone: foglie ellittiche larghe, grigio-pelose sotto; in radure montane",
+    "Amenti 'gattini' sericei a fine inverno, prima delle foglie",
+    "Sempre vicino all'acqua o su suoli umidi e smossi"
+   ],
+   "leaf": "Alterna; nel salice bianco lanceolata 5-10 cm, finemente seghettata, sericea e argentata sotto; nel salicone ellittica 5-10 cm, rugosa, pelosa sotto.",
+   "bark": "Grigio-bruna, solcata a rete nei salici arborei; liscia nei giovani e negli arbusti.",
+   "fruit": "Capsule in amenti che liberano semi cotonosi in primavera.",
+   "habit": "Alberi di 10-25 m (salice bianco) o arbusti e alberelli di 3-10 m (salicone, salici di greto).",
+   "confusable": [
+    {
+     "name": "Pioppo",
+     "how_to_tell": "Foglia larga su picciolo appiattito; gemme con più squame."
+    },
+    {
+     "name": "Olivo",
+     "how_to_tell": "Foglie opposte, coriacee e sempreverdi; luoghi asciutti coltivati."
+    }
+   ],
+   "altitude_m": [
+    0,
+    1600
+   ],
+   "where_reatino": "Saliceti ripariali lungo Velino, Turano, Salto e fossi; il salicone nelle radure, nelle frane e sui bordi delle strade di montagna.",
+   "forest_categories": [
+    "Bosco alveale e ripariale"
+   ],
+   "fungi": [
+    "mellea"
+   ],
+   "fungi_note": "Il chiodino attacca ceppaie e radici di salici lungo i corsi d'acqua; nessun altro commestibile dell'app è legato in modo specifico ai salici.",
+   "season_tip": "A fine inverno i 'gattini' argentei; tutto l'anno le gemme a cappuccio unico, il carattere più sicuro del genere.",
+   "sources": [
+    {
+     "title": "Acta Plantarum, IPFI: Salix alba",
+     "url": "https://www.actaplantarum.org/flora/flora_info.php?id=500186"
+    },
+    {
+     "title": "Portale della Flora d'Italia (Università di Trieste): Salix alba",
+     "url": "https://dryades.units.it/floritaly/index.php?procedure=taxon_page&tipo=all&id=186"
+    },
+    {
+     "title": "European Atlas of Forest Tree Species (JRC): Salix alba",
+     "url": "https://forest.jrc.ec.europa.eu/media/atlas/Salix_alba.pdf"
+    },
+    {
+     "title": "Acta Plantarum, IPFI: Salix caprea",
+     "url": "https://www.actaplantarum.org/flora/flora_info.php?id=500211"
+    },
+    {
+     "title": "European Atlas of Forest Tree Species (JRC): Salix caprea",
+     "url": "https://forest.jrc.ec.europa.eu/media/atlas/Salix_caprea.pdf"
+    },
+    {
+     "title": "Carta Forestale su base tipologica, Regione Lazio (layer tipi_forestali2)",
+     "url": "https://geoportale.regione.lazio.it/geoserver/ows?service=WFS&version=1.0.0&request=DescribeFeatureType&typeName=geonode:tipi_forestali2"
+    },
+    {
+     "title": "Wikipedia (incrocio): Salix",
+     "url": "https://it.wikipedia.org/wiki/Salix"
+    }
+   ]
+  },
+  "ontano": {
+   "name": "Ontano nero",
+   "latin": "Alnus glutinosa",
+   "aliases": [
+    "ontani",
+    "ontano nero",
+    "ontaneta",
+    "ontanete"
+   ],
+   "wikidata": "Q156904",
+   "type": "latifoglia caducifoglia",
+   "recognize": [
+    "Foglia obovata con apice tronco o leggermente smarginato",
+    "Foglie giovani e gemme vischiose",
+    "Piccole 'pigne' legnose nere (strobili) che restano sui rami in inverno",
+    "Gemme peduncolate, violacee",
+    "Sempre con i piedi nell'acqua: rive, fossi, sorgenti"
+   ],
+   "leaf": "Alterna, 4-10 cm, rotonda-obovata, apice arrotondato o smarginato, margine doppiamente dentato; vischiosa da giovane.",
+   "bark": "Bruno-scura, da giovane liscia con lenticelle, poi fessurata in placche.",
+   "fruit": "Strobili ovoidi di 1-2 cm, verdi poi neri e legnosi, che liberano piccoli semi alati.",
+   "habit": "Albero di 15-25 m, chioma conica; spesso in filari lungo i corsi d'acqua.",
+   "confusable": [
+    {
+     "name": "Ontano napoletano (Alnus cordata)",
+     "how_to_tell": "Foglia cuoriforme lucida con apice acuto, strobili più grossi; nel Reatino solo piantato."
+    },
+    {
+     "name": "Nocciolo",
+     "how_to_tell": "Foglia ruvida con punta acuminata e base cuoriforme; nocciole invece degli strobili."
+    }
+   ],
+   "altitude_m": [
+    0,
+    1000
+   ],
+   "where_reatino": "Boschi ripariali lungo Velino, Turano, Salto, fossi della Piana Reatina e fossi perenni dei Monti della Laga.",
+   "forest_categories": [
+    "Bosco alveale e ripariale"
+   ],
+   "fungi": [],
+   "fungi_note": "Ha micorrize con funghi specialisti dell'ontano (es. Paxillus, Lactarius) e noduli azotofissatori; nessun commestibile dell'app è legato a lui. Indica suoli intrisi d'acqua.",
+   "season_tip": "D'inverno strobili neri e amenti maschili violacei sui rami spogli, accanto all'acqua.",
+   "sources": [
+    {
+     "title": "Acta Plantarum, IPFI: Alnus glutinosa",
+     "url": "https://www.actaplantarum.org/flora/flora_info.php?id=500250"
+    },
+    {
+     "title": "Portale della Flora d'Italia (Università di Trieste): Alnus glutinosa",
+     "url": "https://dryades.units.it/floritaly/index.php?procedure=taxon_page&tipo=all&id=250"
+    },
+    {
+     "title": "European Atlas of Forest Tree Species (JRC): Alnus glutinosa",
+     "url": "https://forest.jrc.ec.europa.eu/media/atlas/Alnus_glutinosa.pdf"
+    },
+    {
+     "title": "Carta Forestale su base tipologica, Regione Lazio (layer tipi_forestali2)",
+     "url": "https://geoportale.regione.lazio.it/geoserver/ows?service=WFS&version=1.0.0&request=DescribeFeatureType&typeName=geonode:tipi_forestali2"
+    },
+    {
+     "title": "Wikipedia (incrocio): Alnus glutinosa",
+     "url": "https://it.wikipedia.org/wiki/Alnus_glutinosa"
+    }
+   ]
+  },
+  "olivo": {
+   "name": "Olivo",
+   "latin": "Olea europaea",
+   "aliases": [
+    "olivi",
+    "ulivo",
+    "ulivi",
+    "oliveto",
+    "oliveti",
+    "uliveto",
+    "uliveti"
+   ],
+   "wikidata": "Q37083",
+   "type": "latifoglia sempreverde",
+   "recognize": [
+    "Foglie opposte, strette e coriacee, verde-grigie sopra e argentee sotto",
+    "Tronco grigio, contorto e cavernoso negli esemplari vecchi",
+    "Frutti a oliva, verdi poi neri",
+    "Quasi sempre in oliveti terrazzati sotto i 600 m"
+   ],
+   "leaf": "Opposta, lanceolata, 3-8 cm, coriacea, margine intero, pagina inferiore argentea per piccole squame.",
+   "bark": "Grigia, liscia da giovane, poi rugosa e fessurata; tronco spesso cavo e ritorto.",
+   "fruit": "Drupa ovoide di 1-3 cm, matura in ottobre-dicembre.",
+   "habit": "Albero coltivato di 4-10 m, chioma larga e grigiastra.",
+   "confusable": [
+    {
+     "name": "Leccio",
+     "how_to_tell": "Foglie alterne, più larghe, feltrose sotto; ghiande."
+    },
+    {
+     "name": "Salice",
+     "how_to_tell": "Foglie alterne e caduche; ambienti umidi."
+    }
+   ],
+   "altitude_m": [
+    0,
+    600
+   ],
+   "where_reatino": "Coltivato in tutta la Sabina e sui colli attorno alla Piana Reatina; oliveti abbandonati in via di ricolonizzazione.",
+   "forest_categories": [],
+   "fungi": [],
+   "fungi_note": "Nessun commestibile dell'app. Va riconosciuto perché sulle sue ceppaie (e su quelle di querce e castagno) nasce il fungo dell'olivo (Omphalotus olearius), tossico e scambiato per il finferlo.",
+   "season_tip": "Sempreverde: chioma argentea riconoscibile tutto l'anno.",
+   "sources": [
+    {
+     "title": "Acta Plantarum, IPFI: Olea europaea",
+     "url": "https://www.actaplantarum.org/flora/flora_info.php?id=503985"
+    },
+    {
+     "title": "Portale della Flora d'Italia (Università di Trieste): Olea europaea",
+     "url": "https://dryades.units.it/floritaly/index.php?procedure=taxon_page&tipo=all&id=3985"
+    },
+    {
+     "title": "European Atlas of Forest Tree Species (JRC): Olea europaea",
+     "url": "https://forest.jrc.ec.europa.eu/media/atlas/Olea_europaea.pdf"
+    },
+    {
+     "title": "Wikipedia (incrocio): Olea europaea",
+     "url": "https://it.wikipedia.org/wiki/Olea_europaea"
+    }
+   ]
+  }
+ }
+}

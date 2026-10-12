@@ -26,7 +26,7 @@ export function linkTrees(text) {
   if (!aliasRe) return safe;
   return safe.replace(aliasRe, (m, pre, word) => {
     const id = aliasMap[word.toLowerCase().replace(/\s+/g, ' ')];
-    return id ? `${pre}<a class="tree-link" href="#/albero/${id}">${word}</a>` : m;
+    return id ? `${pre}<a class="tree-link" href="#/albero/${encodeURIComponent(id)}">${word}</a>` : m;
   });
 }
 
@@ -46,7 +46,7 @@ export function treeThumb(id, size = 56) {
 
 export function renderTreeGrid(box) {
   box.innerHTML = Object.entries(T).map(([id, t]) => `
-    <a class="sp-tile" href="#/albero/${id}">${treeThumb(id, 56)}
+    <a class="sp-tile" href="#/albero/${encodeURIComponent(id)}">${treeThumb(id, 56)}
       <span><b>${esc(t.name)}</b><i>${esc(t.latin)}</i><small>${esc(t.type || '')}</small></span></a>`).join('')
     || '<p class="muted">Schede degli alberi in preparazione.</p>';
 }
