@@ -1,6 +1,6 @@
 # Prompt per GPT Image: tutte le infografiche
 
-Raccolta dei prompt dai brief di questa cartella, pronti da copiare. Per metodo, licenze e verifica vedi `README.md`; per i dettagli di ogni specie il suo brief `<id>.md`.
+Raccolta dei prompt dai brief di questa cartella, pronti da copiare. Se GPT lavora collegato al repository, fagli seguire `ISTRUZIONI-GPT.md`. Per metodo, licenze e verifica vedi `README.md`; per i dettagli di ogni specie il suo brief `<id>.md`.
 
 **Come si usa in ChatGPT.** Allega le immagini nell'ordine indicato (Image 1, Image 2, …), poi incolla il prompt. Le foto vanno scaricate dalle pagine linkate e ritagliate sul carattere che servono. L'immagine non deve contenere testo: le etichette in italiano si aggiungono dopo, in impaginazione (sezione 6 di ogni brief).
 
