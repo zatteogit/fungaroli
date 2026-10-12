@@ -214,6 +214,7 @@ function initMap() {
     attribution: 'Carta Forestale © Regione Lazio',
   });
   L.control.layers({ 'Topografica': topo, 'OpenStreetMap': osm }, { 'Carta Forestale (Regione Lazio)': forest }, { collapsed: true }).addTo(map);
+  map.on('zoomend', () => results && renderMap());
   map.on('overlayadd', (e) => { if (e.layer === forest) $('#legend .wms').hidden = false; });
   map.on('overlayremove', (e) => { if (e.layer === forest) $('#legend .wms').hidden = true; });
 }
@@ -242,7 +243,10 @@ function initEmbeddedMap(bm) {
     },
   });
   new Toggle({ position: 'topright' }).addTo(map);
+  map.on('zoomend', () => results && renderMap());
 }
+
+const shortName = (z) => z.name.split(/[/–(]/)[0].trim();
 
 function renderMap() {
   if (!hasLeaflet()) {
@@ -262,6 +266,18 @@ function renderMap() {
   }
   for (const k in zoneLayers) zoneLayers[k].remove();
   zoneLayers = {};
+  // etichette con nome: spostamento verticale greedy (in pixel) per evitare sovrapposizioni
+  const placed = [];
+  const labelPos = {};
+  for (const z of zones) {
+    const pt = map.latLngToContainerPoint([z.lat, z.lon]);
+    const w = 40 + shortName(z).length * 7;
+    let y = pt.y;
+    const hit = (yy) => placed.some((b) => Math.abs(b.x - pt.x) < (b.w + w) / 2 + 4 && Math.abs(b.y - yy) < 26);
+    for (let k = 1; hit(y) && k < 8; k++) y = pt.y + (k % 2 ? 1 : -1) * Math.ceil(k / 2) * 26;
+    placed.push({ x: pt.x, y, w });
+    labelPos[z.id] = map.containerPointToLatLng([pt.x, y]);
+  }
   for (const z of zones) {
     const d = dayEntry(z.id, state.dayOffset);
     const s = adjusted(z, d?.score ?? 0);
@@ -273,8 +289,8 @@ function renderMap() {
       fillColor: color, fillOpacity: 0.5,
     }).addTo(g).on('click', () => { state.zoneId = z.id; renderAll(); })
       .bindTooltip(`<b>${esc(z.name)}</b><br>Indice ${s} · ${d?.best ? esc(d.best.species.name) + ' ~' + d.best.band + ' m' : '—'}`, { className: 'zone-tt', sticky: true });
-    L.marker([z.lat, z.lon], {
-      icon: L.divIcon({ className: '', html: `<span class="zone-label"><span class="dot" style="background:${color}"></span> ${s}</span>`, iconSize: null }),
+    L.marker(labelPos[z.id], {
+      icon: L.divIcon({ className: '', html: `<span class="zone-label"><span class="dot" style="background:${color}"></span> ${s} <span class="zone-name">${esc(shortName(z))}</span></span>`, iconSize: null }),
       interactive: false,
     }).addTo(g);
     if (selected) {
