@@ -1,6 +1,6 @@
 # Guida all'uso
 
-Fungaroli Rieti ti aiuta a scegliere **dove**, **a che quota** e **quando** andare a cercare funghi commestibili nelle sette zone intorno a Rieti. Non ti dice dove sono i funghi e non serve a riconoscerli: ti dice dove le condizioni di bosco, pioggia e temperatura sono più favorevoli, giorno per giorno.
+Fungaroli Rieti ti aiuta a scegliere **dove**, **a che quota** e **quando** andare a cercare funghi commestibili nelle quindici zone intorno a Rieti. Non ti dice dove sono i funghi e non serve a riconoscerli: ti dice dove le condizioni di bosco, pioggia e temperatura sono più favorevoli, giorno per giorno.
 
 Il dettaglio di come si calcola l'indice è in [metodo-scientifico.md](metodo-scientifico.md). Qui c'è solo quello che serve per usarlo.
 
@@ -110,6 +110,18 @@ Sotto il riepilogo ci sono sezioni che si aprono e chiudono; l'app ricorda quali
 **Bosco a ... m (Carta Forestale).** Una barra con la composizione del bosco nella fascia di ±150 m attorno alla quota consigliata, calcolata su circa 300 punti campione per zona. È il dato che più di tutti spiega perché una quota funziona e un'altra no.
 
 **La zona.** Descrizione, accesso stradale, soste con link alle indicazioni stradali, quote minime, massime e mediane dell'area.
+
+## Riconosci
+
+Riconosci non identifica un fungo: restringe i candidati, velenosi e mortali compresi, e ti dice cosa controllare. Il giudizio finale spetta all'Ispettorato micologico dell'ASL.
+
+- **Guidata**: una domanda alla volta, scelta tra quelle che dividono meglio i candidati rimasti. Ogni risposta si chiude in una riga (carattere, disegno, valore): la tocchi per cambiarla. "Non lo so" non esclude nulla.
+- **Tutti i caratteri**: tutte le domande in fila, nell'ordine che preferisci.
+- **I caratteri**: cosa c'è sotto il cappello (lamelle, pori, aculei, pliche, liscio) e il loro colore, attaccatura delle lamelle, volva, anello, reticolo, colore e forma del cappello, dimensione, verruche, superficie, lattice, come si spezza il gambo, base del gambo, viraggio della carne, odore, sporata, alberi vicini, habitat, crescita, stagione. Alcune domande compaiono solo quando hanno senso: il colore delle lamelle dopo aver detto che sono lamelle, l'attaccatura solo per lamelle e pliche.
+- **Un carattere che non torna** non elimina subito una specie, se almeno due altri tornano: la card dice quale carattere non torna e cosa ci si aspetterebbe.
+- **Confronto con i sosia**: dalla scheda di una specie commestibile, "Confrontalo con i sosia" affianca la specie a ciascun sosia e mostra prima i caratteri che non coincidono mai.
+
+Come sono costruiti i dati: per ogni specie e carattere, i valori possibili, verificati su fonti (Wikipedia, First Nature, MushroomExpert, schede ASL e regionali) elencate nel file `data/species-traits.json`. Per le specie tossiche e mortali i valori sono volutamente larghi, così un carattere incerto (per esempio le verruche che la pioggia lava via) non le esclude. Per le commestibili si tengono solo i valori con fonte.
 
 ## Il diario
 

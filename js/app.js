@@ -8,10 +8,11 @@ import { initSpeciesCards, thumb, renderSpeciesDetail, whereSummary, criticalRul
 import { openLightbox, captionHtml } from './lightbox.js';
 import { initInstall } from './install.js';
 import { loadOuting, outingFor, OUTING_LABEL, OUTING_SHORT, OUTING_RANK } from './outing.js';
-import { initIdentify, renderIdentify, setCompare } from './identify.js';
+import { initIdentify, renderIdentify, setCompare, searchTaxa, openTaxon } from './identify.js';
+import { initSearch, openSearch } from './search.js';
 import { navigate, soft } from './motion.js';
 import { FOREST_LEGEND } from './forest-legend.js';
-import { initTrees, renderTreeGrid, renderTreePage, linkTrees, treeForCategory } from './trees.js';
+import { initTrees, renderTreeGrid, renderTreePage, linkTrees, treeForCategory, treeThumb } from './trees.js';
 import { crowding, comfortScore, timingAdvice, fmtTime, holidayName, intornoA } from './human.js';
 
 const HISTORY_DAYS = 30;   // giorni passati mostrati nel grafico
@@ -97,6 +98,7 @@ async function init() {
   applyLegal();
   initTrees({ trees: trj, media: mj, assetUrl: embedded ? (f) => embedded.assets?.[f] || '' : (f) => f, zones, habitat, thumb });
   renderTreeGrid($('#tree-grid'));
+  buildSearch(idj, trj, embedded);
   initMap();
   initShell();
   initJournal({ zones, predict, getZoneId: () => state.zoneId || zones[0].id, zoneImage: (zid) => zoneMedia[zid]?.file || speciesPhoto(SPECIES[0].id)?.file });
@@ -374,13 +376,14 @@ const normTxt = (t) => String(t || '').toLowerCase().normalize('NFD').replace(/[
 function renderSpeciesGrid() {
   const box = $('#species-grid');
   if (!box) return;
-  if (!box.querySelector('#sp-q')) {
+  if (!box.querySelector('#sp-head')) {
     const chips = [{ id: 'all', label: 'Tutti' }, ...GROUPS];
-    box.innerHTML = `<label class="search-box"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg>
-        <input id="sp-q" type="search" placeholder="Cerca: porcino, ovolo, Boletus…" autocomplete="off" aria-label="Cerca una specie"></label>
+    // un solo campo di ricerca nell'app: qui apre la ricerca generale, con funghi e sosia in cima
+    box.innerHTML = `<button type="button" id="sp-head" class="search-box search-fake" data-open-search><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg>
+        <span>Cerca funghi, sosia, alberi, zone…</span></button>
       <div class="filter-rail" role="group" aria-label="Gruppi">${chips.map((g) => `<button type="button" class="chip" data-spf="${g.id}" aria-pressed="${spFilter === g.id}">${esc(g.label)}</button>`).join('')}</div>
       <div class="card-grid" id="sp-cards"></div>`;
-    box.querySelector('#sp-q').addEventListener('input', (e) => { spQuery = e.target.value; fillSpecies(); });
+    box.querySelector('#sp-head').addEventListener('click', () => openSearch());
     box.querySelectorAll('[data-spf]').forEach((b) => b.addEventListener('click', () => {
       spFilter = b.dataset.spf;
       box.querySelectorAll('[data-spf]').forEach((x) => x.setAttribute('aria-pressed', String(x.dataset.spf === spFilter)));
@@ -484,6 +487,54 @@ const splitName = (z) => {
   return m ? [m[1], m[2]] : [z.name, ''];
 };
 // Foto di copertina: il luogo se c'e', altrimenti il fungo da cercare
+// indice della ricerca generale: tutto quello che l'app sa, in voci semplici
+function buildSearch(idj, trj, embedded) {
+  const A = embedded ? (f) => embedded.assets?.[f] || '' : (f) => f;
+  const img = (src) => (src ? `<img class="thumb" src="${src}" width="44" height="44" alt="" loading="lazy">` : '');
+  const items = [];
+  for (const z of zones) {
+    const tip = Object.keys(habitat?.[z.id]?.forest?.tipologie_ha || {}).join(' ');
+    // "faggio" deve trovare le zone con faggete: nomi degli alberi i cui sinonimi compaiono nei tipi di bosco
+    const tl = tip.toLowerCase();
+    const treesHere = Object.values(trj?.trees || {}).filter((t) => [t.name, ...(t.aliases || [])].some((a) => a && tl.includes(String(a).toLowerCase()))).map((t) => t.name).join(' ');
+    const cv = coverOf(z);
+    items.push({ kind: 'zona', title: splitName(z)[0], sub: splitName(z)[1] || z.name, hay: `${z.name} ${tip} ${treesHere} ${(habitat?.[z.id]?.road_names || []).join(' ')}`, href: `#/zona/${z.id}`, img: cv ? img(cv.small) : '', boost: 1 });
+  }
+  for (const sp of SPECIES) {
+    const d = idj?.species?.[sp.id] || {};
+    items.push({ kind: 'fungo', title: sp.name, sub: sp.latin, hay: `${(d.aka || []).join(' ')} ${sp.group || ''} ${d.latin || ''}`, href: `#/specie/${sp.id}`, img: thumb(sp.id, 44), boost: 1 });
+  }
+  for (const t of searchTaxa()) {
+    const look = t.look.map((id) => SPECIES.find((x) => x.id === id)?.name).filter(Boolean);
+    items.push({ kind: 'velenoso', title: t.name || t.latin, sub: `${t.name !== t.latin ? t.latin : ''}${look.length ? `${t.name !== t.latin ? ' · ' : ''}si confonde con ${look.slice(0, 2).join(', ').toLowerCase()}` : ''}`, hay: look.join(' '), action: () => openTaxon(t.key), img: t.photo ? img(A(t.photo.file)) : '', badge: t.toxicity, badgeCls: `tox-${String(t.toxicity).replace(/\s/g, '-')}` });
+  }
+  for (const [id, t] of Object.entries(trj?.trees || {})) {
+    items.push({ kind: 'albero', title: t.name, sub: t.latin, hay: `${(t.aliases || []).join(' ')} ${t.type || ''}`, href: `#/albero/${encodeURIComponent(id)}`, img: treeThumb(id, 44) });
+  }
+  const seen = new Map();
+  for (const z of zones) for (const t of trails[z.id]?.trails || []) {
+    const key = `${t.ref || ''}|${t.name || ''}`;
+    if (seen.has(key)) { seen.get(key).zs.push(z); continue; }
+    seen.set(key, { t, zs: [z] });
+  }
+  for (const { t, zs } of seen.values()) {
+    items.push({ kind: 'sentiero', title: `${t.ref ? `Sentiero ${t.ref}` : 'Sentiero'}${t.name ? ` · ${t.name}` : ''}`, sub: zs.map((z) => splitName(z)[0]).join(', '), hay: `${(t.itinerary || []).join(' ')} ${t.operator || ''} cai segnavia`, href: `#/zona/${zs[0].id}`, img: segnavia(t) });
+  }
+  const pages = [
+    ['Riconosci un fungo', 'Descrivi quello che vedi, anche se è velenoso', 'identificare trovato velenoso sosia caratteri lamelle pori volva anello sporata', '#/riconosci'],
+    ['Emergenza e intossicazione', 'Cosa fare, chi chiamare', 'emergenza intossicazione avvelenamento centro antiveleni 118 112 pronto soccorso sintomi', '#/info'],
+    ['Regole di raccolta nel Lazio', 'Attestato, contributo, limiti, orari', 'regole legge tesserino attestato contributo 3 kg limite orari divieti parchi aree protette', '#/info'],
+    ['Controllo gratuito all\'ASL', 'Ispettorato micologico', 'asl ispettorato micologico controllo gratuito micologo', '#/info'],
+    ['Il metodo', 'Come si calcola la probabilità', 'metodo indice calcolo pioggia temperatura suolo probabilita affidabilita', '#/info'],
+    ['Gli alberi', 'Riconoscerli e cosa ci cresce sotto', 'alberi bosco piante', '#/alberi'],
+    ['Il diario delle uscite', 'Registra cosa hai trovato e dove', 'diario uscite registrare raccolto storico esporta', '#/diario'],
+    ['La mappa', 'Zone, parcheggi, sentieri, Carta Forestale', 'mappa carta forestale parcheggio sosta', '#/mappa'],
+    ['Installa l\'app', 'A tutto schermo e senza campo', 'installa app schermo home offline', '#/info'],
+  ];
+  for (const [title, sub, hay, href] of pages) items.push({ kind: 'pagina', title, sub, hay, href, img: '<span class="sr-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4M10 12h5M10 16h5"/></svg></span>' });
+  initSearch(items);
+}
+
 function coverOf(z, spId) {
   const zm = zoneMedia[z.id];
   if (zm) return { hd: zm.file_hd || zm.file, small: zm.file, credit: zm, alt: z.name };

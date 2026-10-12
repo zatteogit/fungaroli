@@ -143,7 +143,53 @@
       "larice": "larice",
       "ceppaie e legno morto di latifoglie": "ceppaie e legno morto di latifoglie"
     },
-    "_note": "I campi multipli (array) elencano tutti i valori possibili per la specie o il gruppo. Anche cap_size e growth sono array per coprire la variabilita'. Nei campi booleani del gambo, null significa variabile o fugace: non va usato per escludere una specie. Per i taxa tossici e mortali i valori sono volutamente larghi, cosi' un filtro non li esclude per un carattere incerto."
+    "_note": "I campi multipli (array) elencano tutti i valori possibili per la specie o il gruppo. Anche cap_size e growth sono array per coprire la variabilita'. Nei campi booleani del gambo, null significa variabile o fugace: non va usato per escludere una specie. Per i taxa tossici e mortali i valori sono volutamente larghi, cosi' un filtro non li esclude per un carattere incerto.",
+    "spore_print": {
+      "bianco": "bianco",
+      "crema": "crema",
+      "giallo": "giallo",
+      "rosa": "rosa",
+      "ocra": "ocra",
+      "ruggine": "ruggine",
+      "bruno": "bruno",
+      "bruno-violaceo": "bruno-violaceo",
+      "nero": "nero",
+      "verde-oliva": "verde-oliva"
+    },
+    "cap_veil": {
+      "true": "Resti di velo sul cappello (fiocchi, verruche, placche asportabili)",
+      "false": "Nessun resto di velo",
+      "null": "Variabile o fugace (la pioggia li lava via): non usarlo per escludere"
+    },
+    "latex": {
+      "true": "Lattice alla rottura (Lactarius)",
+      "false": "Nessun lattice"
+    },
+    "flesh_texture": {
+      "fibrosa": "Si sfilaccia in fibre",
+      "gessosa": "Si spezza netta come un gessetto (Russula, Lactarius)",
+      "elastica/coriacea": "Si piega, elastica o coriacea",
+      "soda": "Compatta e soda"
+    },
+    "cap_surface": {
+      "asciutta": "Asciutta, opaca",
+      "viscida": "Viscida o vischiosa da umida",
+      "squamosa": "Con squame o fibrille in rilievo",
+      "vellutata/feltrata": "Vellutata o feltrata",
+      "liscia": "Liscia"
+    },
+    "gill_attachment": {
+      "libere": "Libere",
+      "adnate": "Adnate",
+      "smarginate": "Smarginate o uncinate",
+      "decorrenti": "Decorrenti"
+    },
+    "stem_base": {
+      "normale": "Normale",
+      "bulbosa": "Con bulbo",
+      "radicante": "Radicante",
+      "assottigliata": "Assottigliata"
+    }
   },
   "general_rules": [
     {
@@ -249,6 +295,25 @@
           9,
           10,
           11
+        ],
+        "spore_print": [
+          "verde-oliva",
+          "bruno"
+        ],
+        "cap_veil": false,
+        "latex": false,
+        "flesh_texture": [
+          "soda"
+        ],
+        "cap_surface": [
+          "liscia",
+          "asciutta",
+          "viscida"
+        ],
+        "gill_attachment": null,
+        "stem_base": [
+          "normale",
+          "bulbosa"
         ]
       },
       "field_rules": [
@@ -311,6 +376,14 @@
         {
           "title": "Wikidata Q19740",
           "url": "https://www.wikidata.org/wiki/Q19740"
+        },
+        {
+          "title": "Boletus edulis - First Nature",
+          "url": "https://www.first-nature.com/fungi/boletus-edulis.php"
+        },
+        {
+          "title": "Regione Emilia-Romagna - Funghi commestibili (scheda)",
+          "url": "https://ambiente.regione.emilia-romagna.it/it/parchi-natura2000/sistema-regionale/funghi-sottobosco-tartufi/funghi-allegati/funghi-commestibili/@@download/file"
         }
       ],
       "where_to_look": {
@@ -339,7 +412,8 @@
         "abete bianco",
         "abete rosso",
         "pino nero"
-      ]
+      ],
+      "traits_notes": "Sporata bruno-olivastra in massa (tutte le fonti) -> verde-oliva; aggiunto 'bruno' per larghezza. Cuticola liscia o rugosa, brillante/asciutta col secco, vischiosa e lucida con tempo umido. Velo nudo (assente). Carne soda nei giovani, floscia/spugnosa nei vecchi. Gambo clavato/ventricoso, 'ingrossato alla base' (ER): non e' un bulbo netto, quindi messi sia 'normale' sia 'bulbosa'."
     },
     "pinophilus": {
       "latin": "Boletus pinophilus",
@@ -392,6 +466,26 @@
           8,
           9,
           10
+        ],
+        "spore_print": [
+          "verde-oliva",
+          "bruno"
+        ],
+        "cap_veil": false,
+        "latex": false,
+        "flesh_texture": [
+          "soda"
+        ],
+        "cap_surface": [
+          "liscia",
+          "asciutta",
+          "viscida",
+          "vellutata/feltrata"
+        ],
+        "gill_attachment": null,
+        "stem_base": [
+          "normale",
+          "bulbosa"
         ]
       },
       "field_rules": [
@@ -450,6 +544,10 @@
         {
           "title": "Wikidata Q1415435",
           "url": "https://www.wikidata.org/wiki/Q1415435"
+        },
+        {
+          "title": "Boletus pinophilus - First Nature",
+          "url": "https://www.first-nature.com/fungi/boletus-pinophilus.php"
         }
       ],
       "where_to_look": {
@@ -474,7 +572,8 @@
         "abete bianco",
         "faggio",
         "castagno"
-      ]
+      ],
+      "traits_notes": "Sporata olivastra o bruno tabacco in massa -> verde-oliva + bruno. Cuticola prima untuosa e liscia poi leggermente vellutata (it.wiki); asciutta o leggermente untuosa, viscida col bagnato (First Nature). Gambo spesso panciuto/clavato: base ingrossata ma non bulbo netto -> 'normale' e 'bulbosa'. Consistenza della carne non esplicitata dalle fonti per questa specie: 'soda' per analogia di gruppo con B. edulis (ER cita B. pinicola nello stesso gruppo)."
     },
     "aereus": {
       "latin": "Boletus aereus",
@@ -526,6 +625,25 @@
           8,
           9,
           10
+        ],
+        "spore_print": [
+          "verde-oliva",
+          "bruno"
+        ],
+        "cap_veil": false,
+        "latex": false,
+        "flesh_texture": [
+          "soda"
+        ],
+        "cap_surface": [
+          "vellutata/feltrata",
+          "liscia",
+          "asciutta"
+        ],
+        "gill_attachment": null,
+        "stem_base": [
+          "normale",
+          "bulbosa"
         ]
       },
       "field_rules": [
@@ -584,6 +702,10 @@
         {
           "title": "Wikidata Q757127",
           "url": "https://www.wikidata.org/wiki/Q757127"
+        },
+        {
+          "title": "Boletus aereus - First Nature",
+          "url": "https://www.first-nature.com/fungi/boletus-aereus.php"
         }
       ],
       "where_to_look": {
@@ -607,7 +729,8 @@
         "cerro",
         "roverella",
         "leccio"
-      ]
+      ],
+      "traits_notes": "Sporata bruno-olivastra in massa. Cuticola vellutata/pubescente poi liscia, finemente screpolata o granulosa; nessuna fonte la dice viscida (asciutta). Carne dura/molto soda, piu' soda di B. edulis. Gambo 'ingrossato bulboso alla base poi cilindrico' (it.wiki), botte/clava (First Nature) -> 'bulbosa' e 'normale'."
     },
     "aestivalis": {
       "latin": "Boletus reticulatus",
@@ -659,6 +782,24 @@
           8,
           9,
           10
+        ],
+        "spore_print": [
+          "verde-oliva",
+          "bruno"
+        ],
+        "cap_veil": false,
+        "latex": false,
+        "flesh_texture": [
+          "soda"
+        ],
+        "cap_surface": [
+          "asciutta",
+          "vellutata/feltrata"
+        ],
+        "gill_attachment": null,
+        "stem_base": [
+          "normale",
+          "bulbosa"
         ]
       },
       "field_rules": [
@@ -713,6 +854,14 @@
         {
           "title": "Wikidata Q26203726",
           "url": "https://www.wikidata.org/wiki/Q26203726"
+        },
+        {
+          "title": "Boletus reticulatus - First Nature",
+          "url": "https://www.first-nature.com/fungi/boletus-reticulatus.php"
+        },
+        {
+          "title": "Regione Emilia-Romagna - Funghi commestibili (scheda)",
+          "url": "https://ambiente.regione.emilia-romagna.it/it/parchi-natura2000/sistema-regionale/funghi-sottobosco-tartufi/funghi-allegati/funghi-commestibili/@@download/file"
         }
       ],
       "where_to_look": {
@@ -738,7 +887,8 @@
         "cerro",
         "roverella",
         "faggio"
-      ]
+      ],
+      "traits_notes": "Sporata scura olivastra / 'olivaceous snuff-brown'. Cuticola asciutta, opaca, vellutata, che si screpola facilmente (carattere tipico, citato anche da ER). Carne meno soda di B. edulis/aereus ('abbastanza morbida' per it.wiki): unico valore di vocabolario plausibile 'soda'. Gambo cilindrico ingrossato alla base / a botte -> 'normale' e 'bulbosa'."
     },
     "caesarea": {
       "latin": "Amanita caesarea",
@@ -789,6 +939,27 @@
           8,
           9,
           10
+        ],
+        "spore_print": [
+          "bianco",
+          "crema"
+        ],
+        "cap_veil": null,
+        "latex": false,
+        "flesh_texture": [
+          "soda"
+        ],
+        "cap_surface": [
+          "liscia",
+          "viscida"
+        ],
+        "gill_attachment": [
+          "libere",
+          "adnate"
+        ],
+        "stem_base": [
+          "normale",
+          "bulbosa"
         ]
       },
       "field_rules": [
@@ -862,6 +1033,18 @@
         {
           "title": "Wikidata Q220662",
           "url": "https://www.wikidata.org/wiki/Q220662"
+        },
+        {
+          "title": "Amanita caesarea - Wikipedia en",
+          "url": "https://en.wikipedia.org/wiki/Amanita_caesarea"
+        },
+        {
+          "title": "Amanita caesarea - First Nature",
+          "url": "https://www.first-nature.com/fungi/amanita-caesarea.php"
+        },
+        {
+          "title": "Regione Emilia-Romagna - Funghi commestibili (scheda)",
+          "url": "https://ambiente.regione.emilia-romagna.it/it/parchi-natura2000/sistema-regionale/funghi-sottobosco-tartufi/funghi-allegati/funghi-commestibili/@@download/file"
         }
       ],
       "where_to_look": {
@@ -888,7 +1071,8 @@
         "cerro",
         "roverella",
         "leccio"
-      ]
+      ],
+      "traits_notes": "Sporata bianca volgente al giallognolo in massa -> bianco + crema. Resti di velo sul cappello: First Nature dice 'occasionalmente' presenti (placche bianche di volva), piu' spesso assenti -> null. Cuticola liscia, lucida, leggermente vischiosa (ER, en.wiki). Lamelle libere (it.wiki, ER, FN), en.wiki 'leggermente annesse o libere' -> aggiunto 'adnate'. Gambo uniforme o bulboso alla base dentro volva sacciforme bianca -> normale+bulbosa. Carne 'soda' (ER), 'tenera, fragile' (it.wiki); nessuna fonte letta la dice esplicitamente fibrosa, quindi non aggiunto 'fibrosa' (tipico del genere Amanita ma non verificato)."
     },
     "cibarius": {
       "latin": "Cantharellus cibarius",
@@ -937,6 +1121,29 @@
           8,
           9,
           10
+        ],
+        "spore_print": [
+          "bianco",
+          "crema",
+          "giallo",
+          "rosa"
+        ],
+        "cap_veil": false,
+        "latex": false,
+        "flesh_texture": [
+          "soda",
+          "fibrosa"
+        ],
+        "cap_surface": [
+          "liscia",
+          "asciutta"
+        ],
+        "gill_attachment": [
+          "decorrenti"
+        ],
+        "stem_base": [
+          "assottigliata",
+          "normale"
         ]
       },
       "field_rules": [
@@ -1001,6 +1208,22 @@
         {
           "title": "Wikidata Q188749",
           "url": "https://www.wikidata.org/wiki/Q188749"
+        },
+        {
+          "title": "Cantharellus cibarius - Wikipedia en",
+          "url": "https://en.wikipedia.org/wiki/Cantharellus_cibarius"
+        },
+        {
+          "title": "Cantharellus cibarius - First Nature",
+          "url": "https://www.first-nature.com/fungi/cantharellus-cibarius.php"
+        },
+        {
+          "title": "Cantharellus cibarius - NCR Fungi (Univ. Arkansas)",
+          "url": "https://ncrfungi.uark.edu/species/7_cantharellusCibarius/cantharellusCibarius.html"
+        },
+        {
+          "title": "Regione Emilia-Romagna - Funghi commestibili (scheda)",
+          "url": "https://ambiente.regione.emilia-romagna.it/it/parchi-natura2000/sistema-regionale/funghi-sottobosco-tartufi/funghi-allegati/funghi-commestibili/@@download/file"
         }
       ],
       "where_to_look": {
@@ -1026,7 +1249,8 @@
         "cerro",
         "pino nero",
         "abete bianco"
-      ]
+      ],
+      "traits_notes": "Sporata variabile: gialla/giallastra (it/en wiki), 'giallo pallido-bianco crema, talvolta con sfumatura rosata' (First Nature) -> tutti e quattro. Cuticola liscia, pruinosa, asciutta (it.wiki, NCR Fungi). Pliche (pseudolamelle) molto decorrenti. Carne soda e compatta, fibrosa nel gambo (ER, it.wiki). Gambo attenuato/assottigliato in basso (ER, it.wiki), a volte corto e cilindrico."
     },
     "cornucopioides": {
       "latin": "Craterellus cornucopioides",
@@ -1074,6 +1298,25 @@
           10,
           11,
           12
+        ],
+        "spore_print": [
+          "bianco",
+          "crema"
+        ],
+        "cap_veil": false,
+        "latex": false,
+        "flesh_texture": [
+          "elastica/coriacea"
+        ],
+        "cap_surface": [
+          "vellutata/feltrata",
+          "squamosa"
+        ],
+        "gill_attachment": [
+          "decorrenti"
+        ],
+        "stem_base": [
+          "assottigliata"
         ]
       },
       "field_rules": [
@@ -1123,6 +1366,14 @@
         {
           "title": "Wikidata Q857903",
           "url": "https://www.wikidata.org/wiki/Q857903"
+        },
+        {
+          "title": "Craterellus cornucopioides - Wikipedia en",
+          "url": "https://en.wikipedia.org/wiki/Craterellus_cornucopioides"
+        },
+        {
+          "title": "Craterellus cornucopioides - First Nature",
+          "url": "https://www.first-nature.com/fungi/craterellus-cornucopioides.php"
         }
       ],
       "where_to_look": {
@@ -1146,7 +1397,8 @@
         "cerro",
         "castagno",
         "carpino nero"
-      ]
+      ],
+      "traits_notes": "Sporata bianca (it.wiki, FN), 'crema-camoscio' (en.wiki) -> bianco+crema. Superficie interna tomentosa con piccole squame scure (it.wiki), rugosa al margine (FN). Imenoforo esterno liscio poi rugoso/venato, non vere pliche: gill_attachment messo 'decorrenti' perche' la superficie fertile scende sul gambo (en.wiki 'hymenium decurrent'); se l'app tratta il liscio come null va ignorato. Carne sottile, elastica (it.wiki), 'tough-skinned' (FN). Gambo cavo fino alla base, leggermente assottigliato verso il basso (FN)."
     },
     "repandum": {
       "latin": "Hydnum repandum",
@@ -1200,6 +1452,24 @@
           10,
           11,
           12
+        ],
+        "spore_print": [
+          "bianco",
+          "crema"
+        ],
+        "cap_veil": false,
+        "latex": false,
+        "flesh_texture": [
+          "soda"
+        ],
+        "cap_surface": [
+          "liscia",
+          "asciutta",
+          "vellutata/feltrata"
+        ],
+        "gill_attachment": null,
+        "stem_base": [
+          "normale"
         ]
       },
       "field_rules": [
@@ -1240,6 +1510,18 @@
         {
           "title": "Wikidata Q13684",
           "url": "https://www.wikidata.org/wiki/Q13684"
+        },
+        {
+          "title": "Hydnum repandum - Wikipedia en",
+          "url": "https://en.wikipedia.org/wiki/Hydnum_repandum"
+        },
+        {
+          "title": "Hydnum repandum - First Nature",
+          "url": "https://www.first-nature.com/fungi/hydnum-repandum.php"
+        },
+        {
+          "title": "Regione Emilia-Romagna - Funghi commestibili (scheda)",
+          "url": "https://ambiente.regione.emilia-romagna.it/it/parchi-natura2000/sistema-regionale/funghi-sottobosco-tartufi/funghi-allegati/funghi-commestibili/@@download/file"
         }
       ],
       "where_to_look": {
@@ -1264,7 +1546,8 @@
         "castagno",
         "abete bianco",
         "pino nero"
-      ]
+      ],
+      "traits_notes": "Sporata bianca (FN), crema/crema pallido (ER, en.wiki). Cuticola liscia e secca (ER, en.wiki), al tatto finemente vellutata (FN). Carne compatta, tenace, soda e croccante, ma anche 'fragile' (en.wiki): scelto 'soda'. Imenoforo ad aculei -> gill_attachment null. Gambo tozzo, pieno, cilindrico, talvolta eccentrico: nessuna fonte descrive bulbo o radice -> 'normale'."
     },
     "procera": {
       "latin": "Macrolepiota procera",
@@ -1316,6 +1599,26 @@
           9,
           10,
           11
+        ],
+        "spore_print": [
+          "bianco",
+          "crema"
+        ],
+        "cap_veil": false,
+        "latex": false,
+        "flesh_texture": [
+          "fibrosa",
+          "elastica/coriacea"
+        ],
+        "cap_surface": [
+          "squamosa",
+          "asciutta"
+        ],
+        "gill_attachment": [
+          "libere"
+        ],
+        "stem_base": [
+          "bulbosa"
         ]
       },
       "field_rules": [
@@ -1376,6 +1679,14 @@
         {
           "title": "Wikidata Q243381",
           "url": "https://www.wikidata.org/wiki/Q243381"
+        },
+        {
+          "title": "Macrolepiota procera - First Nature",
+          "url": "https://www.first-nature.com/fungi/macrolepiota-procera.php"
+        },
+        {
+          "title": "Regione Emilia-Romagna - Funghi commestibili (scheda)",
+          "url": "https://ambiente.regione.emilia-romagna.it/it/parchi-natura2000/sistema-regionale/funghi-sottobosco-tartufi/funghi-allegati/funghi-commestibili/@@download/file"
         }
       ],
       "where_to_look": {
@@ -1401,7 +1712,8 @@
         "cerro",
         "roverella",
         "pino nero"
-      ]
+      ],
+      "traits_notes": "Sporata bianca (it.wiki), bianca o crema molto pallido (FN); la scheda ER scrive 'ocracee in massa' (probabile imprecisione, ma inclusa per larghezza). cap_veil=false: le squame brune sono la cuticola che si lacera radialmente (umbone centrale liscio), non resti di velo asportabili. Cuticola fibrillosa con squame fioccose -> squamosa, asciutta. Lamelle libere, distanti dal gambo. Gambo bulboso alla base, zebrato, con anello doppio scorrevole. Carne del gambo fibrosa, dura 'quasi legnosa' -> fibrosa + elastica/coriacea. Tolto 'ocra' dalla sporata: lo riporta una sola scheda regionale, tutte le altre fonti la danno bianca o crema; su una specie commestibile un valore in piu' la lascerebbe tra i candidati a torto."
     },
     "mellea": {
       "latin": "Armillaria mellea",
@@ -1451,6 +1763,31 @@
           10,
           11,
           12
+        ],
+        "spore_print": [
+          "bianco",
+          "crema"
+        ],
+        "cap_veil": false,
+        "latex": false,
+        "flesh_texture": [
+          "fibrosa",
+          "elastica/coriacea"
+        ],
+        "cap_surface": [
+          "squamosa",
+          "liscia",
+          "asciutta",
+          "viscida"
+        ],
+        "gill_attachment": [
+          "adnate",
+          "decorrenti"
+        ],
+        "stem_base": [
+          "assottigliata",
+          "normale",
+          "bulbosa"
         ]
       },
       "field_rules": [
@@ -1523,6 +1860,22 @@
         {
           "title": "Wikidata Q473745",
           "url": "https://www.wikidata.org/wiki/Q473745"
+        },
+        {
+          "title": "Armillaria mellea - Wikipedia en",
+          "url": "https://en.wikipedia.org/wiki/Armillaria_mellea"
+        },
+        {
+          "title": "Armillaria mellea - First Nature",
+          "url": "https://www.first-nature.com/fungi/armillaria-mellea.php"
+        },
+        {
+          "title": "Armillaria mellea - MushroomExpert",
+          "url": "https://www.mushroomexpert.com/armillaria_mellea.html"
+        },
+        {
+          "title": "Regione Emilia-Romagna - Funghi commestibili (scheda)",
+          "url": "https://ambiente.regione.emilia-romagna.it/it/parchi-natura2000/sistema-regionale/funghi-sottobosco-tartufi/funghi-allegati/funghi-commestibili/@@download/file"
         }
       ],
       "where_to_look": {
@@ -1558,7 +1911,8 @@
         "pioppo",
         "ceppaie e legno morto di latifoglie"
       ],
-      "caution": "tossico crudo o poco cotto: va prebollito, buttando l'acqua, e poi cotto a lungo."
+      "caution": "tossico crudo o poco cotto: va prebollito, buttando l'acqua, e poi cotto a lungo.",
+      "traits_notes": "Sporata bianca (it/en wiki, MushroomExpert), bianco crema molto pallido (FN). Cappello con squamette brune fitte al centro che spariscono con l'eta' (parte della cuticola, non velo asportabile -> cap_veil false); asciutta o leggermente vischiosa/appiccicosa col bagnato (MushroomExpert, en.wiki). Lamelle adnate o leggermente decorrenti. Base del gambo: assottigliata e fusa nel cespo (en.wiki, MushroomExpert), ma 'bulboso alla base' (ER) e 'ingrossato' (it.wiki) -> tutti i valori. Carne del gambo tenace, fibrosa, coriaceo-fibrosa."
     },
     "virescens": {
       "latin": "Russula virescens; Russula cyanoxantha",
@@ -1609,6 +1963,32 @@
           8,
           9,
           10
+        ],
+        "spore_print": [
+          "bianco",
+          "crema"
+        ],
+        "cap_veil": false,
+        "latex": false,
+        "flesh_texture": [
+          "gessosa",
+          "soda"
+        ],
+        "cap_surface": [
+          "asciutta",
+          "vellutata/feltrata",
+          "viscida",
+          "liscia",
+          "squamosa"
+        ],
+        "gill_attachment": [
+          "libere",
+          "adnate",
+          "decorrenti"
+        ],
+        "stem_base": [
+          "assottigliata",
+          "normale"
         ]
       },
       "field_rules": [
@@ -1677,6 +2057,18 @@
         {
           "title": "Wikidata Q677341 / Q246696",
           "url": "https://www.wikidata.org/wiki/Q677341"
+        },
+        {
+          "title": "Russula virescens - First Nature",
+          "url": "https://www.first-nature.com/fungi/russula-virescens.php"
+        },
+        {
+          "title": "Russula cyanoxantha - Wikipedia it",
+          "url": "https://it.wikipedia.org/wiki/Russula_cyanoxantha"
+        },
+        {
+          "title": "Russula cyanoxantha - First Nature",
+          "url": "https://www.first-nature.com/fungi/russula-cyanoxantha.php"
         }
       ],
       "where_to_look": {
@@ -1699,7 +2091,8 @@
         "cerro",
         "roverella",
         "faggio"
-      ]
+      ],
+      "traits_notes": "Gruppo (unione) R. virescens + R. cyanoxantha. Sporata: virescens bianco-crema/crema, cyanoxantha bianca. Cuticola: virescens asciutta, opaca, vellutata, rotta in areole poligonali (aggiunto 'squamosa' perche' le areole possono sembrare squame), untuosa da umida (FN); cyanoxantha umida/lucida col bagnato, untuosa, rugosa -> viscida+liscia. Lamelle: libere/poco aderenti (virescens), annesse (adnexed) o appena decorrenti (cyanoxantha); in cyanoxantha le lamelle sono lardacee/elastiche e non si sbriciolano, ma la carne del gambo resta fragile (sferocisti) -> gessosa + soda. Gambo cilindrico, attenuato alla base (virescens), a volte fusiforme."
     },
     "suillus": {
       "latin": "Suillus luteus; Suillus granulatus; Suillus collinitus",
@@ -1753,6 +2146,26 @@
           10,
           11,
           12
+        ],
+        "spore_print": [
+          "ocra",
+          "bruno",
+          "verde-oliva"
+        ],
+        "cap_veil": null,
+        "latex": false,
+        "flesh_texture": [
+          "soda",
+          "fibrosa"
+        ],
+        "cap_surface": [
+          "viscida",
+          "liscia"
+        ],
+        "gill_attachment": null,
+        "stem_base": [
+          "normale",
+          "assottigliata"
         ]
       },
       "field_rules": [
@@ -1802,6 +2215,18 @@
         {
           "title": "Wikidata Q816730 / Q1142857 / Q1855565",
           "url": "https://www.wikidata.org/wiki/Q816730"
+        },
+        {
+          "title": "Suillus luteus - first-nature.com",
+          "url": "https://www.first-nature.com/fungi/suillus-luteus.php"
+        },
+        {
+          "title": "Suillus granulatus - first-nature.com",
+          "url": "https://www.first-nature.com/fungi/suillus-granulatus.php"
+        },
+        {
+          "title": "Suillus luteus - Wikipedia it",
+          "url": "https://it.wikipedia.org/wiki/Suillus_luteus"
         }
       ],
       "where_to_look": {
@@ -1825,7 +2250,8 @@
         "pino domestico",
         "pino d'aleppo"
       ],
-      "caution": "la pellicina vischiosa del cappello è lassativa: va tolta. Solo esemplari sodi, cotti."
+      "caution": "la pellicina vischiosa del cappello è lassativa: va tolta. Solo esemplari sodi, cotti.",
+      "traits_notes": "Sporata: ocra (luteus), ocra/bruno-siena (granulatus), bruno-oliva (collinitus) -> unione ocra/bruno/verde-oliva. Cappello viscido da umido, liscio/semiopaco da secco in tutte e tre. cap_veil null: S. luteus ha spesso lembi di velo pendenti dal margine (first-nature) mentre granulatus e collinitus hanno velo nudo; il gruppo e' misto. Carne: soda (luteus, gambo sodo in granulatus) ma tenera/molle nel cappello; gambo di luteus descritto anche fibroso. Base: leggermente allargata (luteus, granulatus) = normale; attenuata con micelio rosa in collinitus."
     },
     "terreum": {
       "latin": "Tricholoma terreum",
@@ -1873,6 +2299,27 @@
           10,
           11,
           12
+        ],
+        "spore_print": [
+          "bianco",
+          "crema"
+        ],
+        "cap_veil": false,
+        "latex": false,
+        "flesh_texture": [
+          "fibrosa"
+        ],
+        "cap_surface": [
+          "asciutta",
+          "squamosa",
+          "vellutata/feltrata"
+        ],
+        "gill_attachment": [
+          "smarginate",
+          "adnate"
+        ],
+        "stem_base": [
+          "normale"
         ]
       },
       "field_rules": [
@@ -1922,6 +2369,18 @@
         {
           "title": "Wikidata Q27266",
           "url": "https://www.wikidata.org/wiki/Q27266"
+        },
+        {
+          "title": "Tricholoma terreum - Wikipedia en",
+          "url": "https://en.wikipedia.org/wiki/Tricholoma_terreum"
+        },
+        {
+          "title": "Tricholoma terreum - first-nature.com",
+          "url": "https://www.first-nature.com/fungi/tricholoma-terreum.php"
+        },
+        {
+          "title": "Tricholoma terreum - MushroomExpert",
+          "url": "https://www.mushroomexpert.com/tricholoma_terreum.html"
         }
       ],
       "where_to_look": {
@@ -1940,7 +2399,8 @@
       "trees": [
         "pino nero",
         "pino silvestre"
-      ]
+      ],
+      "traits_notes": "Sporata bianca (en.wiki infobox: bianco-crema). Cappello asciutto, fibrilloso-feltrato ('slightly downy', first-nature) fino a finemente squamoso. Nessun resto di velo sul cappello; esiste una cortina effimera nei giovanissimi (mushroomexpert) che resta sul gambo/margine -> cap_veil false. Lamelle smarginate (it.wiki, mushroomexpert) o adnate/annesse (en.wiki). Gambo cilindrico/uguale. Carne sottile e fragile: nessuna fonte forte dice esplicitamente 'fibrosa'; scelta 'fibrosa' (gambo fibrilloso, tipico di Tricholoma, citato come 'often fibrous' solo da fonti secondarie). Dubbio moderato su flesh_texture."
     },
     "nuda": {
       "latin": "Lepista nuda",
@@ -1991,6 +2451,29 @@
           11,
           12,
           1
+        ],
+        "spore_print": [
+          "rosa",
+          "crema"
+        ],
+        "cap_veil": false,
+        "latex": false,
+        "flesh_texture": [
+          "fibrosa",
+          "elastica/coriacea"
+        ],
+        "cap_surface": [
+          "liscia",
+          "viscida",
+          "asciutta"
+        ],
+        "gill_attachment": [
+          "adnate",
+          "smarginate"
+        ],
+        "stem_base": [
+          "normale",
+          "bulbosa"
         ]
       },
       "field_rules": [
@@ -2045,6 +2528,14 @@
         {
           "title": "Wikidata Q29362",
           "url": "https://www.wikidata.org/wiki/Q29362"
+        },
+        {
+          "title": "Lepista nuda - first-nature.com",
+          "url": "https://www.first-nature.com/fungi/lepista-nuda.php"
+        },
+        {
+          "title": "Clitocybe nuda - MushroomExpert",
+          "url": "https://www.mushroomexpert.com/clitocybe_nuda.html"
         }
       ],
       "where_to_look": {
@@ -2068,7 +2559,8 @@
         "castagno",
         "cerro"
       ],
-      "caution": "tossica cruda o poco cotta: va cotta a lungo. Si confonde con cortinari violetti."
+      "caution": "tossica cruda o poco cotta: va cotta a lungo. Si confonde con cortinari violetti.",
+      "traits_notes": "Sporata rosa pallido / rosa-camoscio ('pale pinkish-buff') -> aggiunto anche crema perche' in strato sottile puo' sembrare crema. Cappello liscio, glabro, 'slightly tacky when moist' (mushroomexpert) -> anche viscida. Nessun resto di velo/cortina (importante distinzione da Cortinarius viola). Lamelle adnato-uncinate/smarginate. Gambo uguale o ingrossato-clavato alla base (non un bulbo marginato come nei Cortinarius). Carne elastica nel gambo, fragile nel cappello; gambo fibroso/fibrilloso."
     },
     "tylopilus-felleus": {
       "latin": "Tylopilus felleus",
@@ -2119,6 +2611,25 @@
           9,
           10,
           11
+        ],
+        "spore_print": [
+          "rosa",
+          "bruno"
+        ],
+        "cap_veil": false,
+        "latex": false,
+        "flesh_texture": [
+          "soda"
+        ],
+        "cap_surface": [
+          "asciutta",
+          "vellutata/feltrata",
+          "liscia"
+        ],
+        "gill_attachment": null,
+        "stem_base": [
+          "bulbosa",
+          "normale"
         ]
       },
       "field_rules": [
@@ -2141,6 +2652,18 @@
         {
           "title": "Wikidata Q633503 (Tylopilus felleus)",
           "url": "https://www.wikidata.org/wiki/Q633503"
+        },
+        {
+          "title": "Tylopilus felleus - Wikipedia en",
+          "url": "https://en.wikipedia.org/wiki/Tylopilus_felleus"
+        },
+        {
+          "title": "Tylopilus felleus - first-nature.com",
+          "url": "https://www.first-nature.com/fungi/tylopilus-felleus.php"
+        },
+        {
+          "title": "Tylopilus felleus - MushroomExpert",
+          "url": "https://www.mushroomexpert.com/tylopilus_felleus.html"
         }
       ],
       "trees": [
@@ -2154,7 +2677,8 @@
         "pinophilus",
         "aereus",
         "aestivalis"
-      ]
+      ],
+      "traits_notes": "Sporata rosa-bruna ('clay-pink', 'brownish pink', 'rosate in massa') -> rosa + bruno. Cappello asciutto, leggermente vellutato da giovane, poi liscio e opaco; nessuna fonte lo dice viscido. Gambo ingrossato alla base, a volte obeso/clavato, con reticolo bruno marcato. Carne: 'soda' e' il valore piu' vicino nel vocabolario, ma en.wiki e mushroomexpert la dicono piu' tenera/morbida degli altri boleti e spugnosa con l'eta'."
     },
     "rubroboletus-satanas": {
       "latin": "Rubroboletus satanas",
@@ -2203,6 +2727,26 @@
           7,
           8,
           9
+        ],
+        "spore_print": [
+          "verde-oliva",
+          "bruno"
+        ],
+        "cap_veil": false,
+        "latex": false,
+        "flesh_texture": [
+          "soda"
+        ],
+        "cap_surface": [
+          "vellutata/feltrata",
+          "asciutta",
+          "liscia",
+          "viscida"
+        ],
+        "gill_attachment": null,
+        "stem_base": [
+          "bulbosa",
+          "normale"
         ]
       },
       "field_rules": [
@@ -2229,6 +2773,14 @@
         {
           "title": "Wikidata Q26203731 (Rubroboletus satanas)",
           "url": "https://www.wikidata.org/wiki/Q26203731"
+        },
+        {
+          "title": "Rubroboletus satanas - Wikipedia en",
+          "url": "https://en.wikipedia.org/wiki/Rubroboletus_satanas"
+        },
+        {
+          "title": "Rubroboletus satanas - first-nature.com",
+          "url": "https://www.first-nature.com/fungi/rubroboletus-satanas.php"
         }
       ],
       "trees": [
@@ -2240,7 +2792,8 @@
       "lookalike_of": [
         "edulis",
         "aestivalis"
-      ]
+      ],
+      "traits_notes": "TOSSICO, valori larghi. Sporata bruno-oliva/verde-oliva (aggiunto anche bruno). Cappello vellutato da giovane, poi glabro e liscio con screpolature; en.wiki: 'often slightly viscid in wet weather' -> incluse tutte. Gambo tozzo, ovale-globoso, ingrossato/bulboso alla base; aggiunto 'normale' per prudenza (esemplari adulti piu' cilindrici). Carne soda e compatta (it.wiki), spugnosa con l'eta' (en.wiki)."
     },
     "caloboletus-calopus": {
       "latin": "Caloboletus calopus",
@@ -2289,6 +2842,26 @@
           8,
           9,
           10
+        ],
+        "spore_print": [
+          "verde-oliva",
+          "bruno"
+        ],
+        "cap_veil": false,
+        "latex": false,
+        "flesh_texture": [
+          "soda"
+        ],
+        "cap_surface": [
+          "asciutta",
+          "vellutata/feltrata",
+          "liscia",
+          "squamosa"
+        ],
+        "gill_attachment": null,
+        "stem_base": [
+          "normale",
+          "bulbosa"
         ]
       },
       "field_rules": [
@@ -2311,6 +2884,14 @@
         {
           "title": "Wikidata Q29784429 (Caloboletus calopus)",
           "url": "https://www.wikidata.org/wiki/Q29784429"
+        },
+        {
+          "title": "Caloboletus calopus - Wikipedia en",
+          "url": "https://en.wikipedia.org/wiki/Caloboletus_calopus"
+        },
+        {
+          "title": "Caloboletus calopus - first-nature.com",
+          "url": "https://www.first-nature.com/fungi/caloboletus-calopus.php"
         }
       ],
       "trees": [
@@ -2322,7 +2903,8 @@
       "lookalike_of": [
         "edulis",
         "pinophilus"
-      ]
+      ],
+      "traits_notes": "Sporata oliva / bruno-oliva ('olivaceous snuff-brown'). Cappello asciutto, non viscoso (it.wiki), inizialmente finemente feltrato poi liscio; a volte screpolato o con piccole squame al centro (first-nature) -> incluso squamosa. Gambo uguale o ingrossato verso la base (en.wiki), spesso curvo alla base. Carne compatta, dura."
     },
     "caloboletus-radicans": {
       "latin": "Caloboletus radicans",
@@ -2370,6 +2952,25 @@
           8,
           9,
           10
+        ],
+        "spore_print": [
+          "verde-oliva",
+          "bruno"
+        ],
+        "cap_veil": false,
+        "latex": false,
+        "flesh_texture": [
+          "soda"
+        ],
+        "cap_surface": [
+          "asciutta",
+          "vellutata/feltrata"
+        ],
+        "gill_attachment": null,
+        "stem_base": [
+          "radicante",
+          "bulbosa",
+          "assottigliata"
         ]
       },
       "field_rules": [
@@ -2392,6 +2993,14 @@
         {
           "title": "Wikidata Q64785775 (Caloboletus radicans)",
           "url": "https://www.wikidata.org/wiki/Q64785775"
+        },
+        {
+          "title": "Caloboletus radicans - Wikipedia en",
+          "url": "https://en.wikipedia.org/wiki/Caloboletus_radicans"
+        },
+        {
+          "title": "Caloboletus radicans - first-nature.com",
+          "url": "https://www.first-nature.com/fungi/caloboletus-radicans.php"
         }
       ],
       "trees": [
@@ -2402,7 +3011,8 @@
       "lookalike_of": [
         "edulis",
         "aestivalis"
-      ]
+      ],
+      "traits_notes": "Sporata bruno-oliva. Cappello asciutto, vellutato/feltrato ('asciutta, vellutata' it.wiki; 'downy' en.wiki), spesso screpolato al centro a maturita'. Gambo ingrossato/a botte da giovane, poi fusiforme con base assottigliata e radicante nel substrato (en.wiki, it.wiki); first-nature: radicazione presente solo in alcuni esemplari, gambo talora clavato. Carne soda."
     },
     "neoboletus-luridiformis": {
       "latin": "Neoboletus luridiformis",
@@ -2454,6 +3064,25 @@
           9,
           10,
           11
+        ],
+        "spore_print": [
+          "verde-oliva",
+          "bruno"
+        ],
+        "cap_veil": false,
+        "latex": false,
+        "flesh_texture": [
+          "soda"
+        ],
+        "cap_surface": [
+          "vellutata/feltrata",
+          "asciutta",
+          "liscia"
+        ],
+        "gill_attachment": null,
+        "stem_base": [
+          "normale",
+          "bulbosa"
         ]
       },
       "field_rules": [
@@ -2476,6 +3105,14 @@
         {
           "title": "Wikidata Q26203718 (Neoboletus luridiformis)",
           "url": "https://www.wikidata.org/wiki/Q26203718"
+        },
+        {
+          "title": "Neoboletus luridiformis - first-nature.com",
+          "url": "https://www.first-nature.com/fungi/neoboletus-luridiformis.php"
+        },
+        {
+          "title": "Boletus erythropus - MykoWeb (California Boletes)",
+          "url": "https://www.mykoweb.com/boletes/species/Boletus_erythropus.html"
         }
       ],
       "trees": [
@@ -2491,7 +3128,8 @@
         "pinophilus",
         "aereus"
       ],
-      "caution": "tossico crudo o poco cotto: commestibile solo dopo cottura prolungata."
+      "caution": "tossico crudo o poco cotto: commestibile solo dopo cottura prolungata.",
+      "traits_notes": "Sporata bruno-oliva (mykoweb: bruno-ocracea). Cappello inizialmente vellutato/feltrato, poi liscio e lucido (first-nature); mykoweb: superficie asciutta. Nessuna fonte letta lo dice viscido, quindi 'viscida' non inclusa (dubbio: alcuni autori lo descrivono leggermente untuoso da umido). Gambo piu' o meno cilindrico (first-nature) o clavato/subclavato (mykoweb) -> normale + bulbosa. Carne soda, compatta, solida. La pagina it.wiki della specie non esiste (404); la scheda mykoweb si riferisce al concetto americano di B. erythropus, usata solo come conferma."
     },
     "imleria-badia": {
       "latin": "Imleria badia",
@@ -2539,6 +3177,26 @@
           9,
           10,
           11
+        ],
+        "spore_print": [
+          "verde-oliva",
+          "bruno"
+        ],
+        "cap_veil": false,
+        "latex": false,
+        "flesh_texture": [
+          "soda"
+        ],
+        "cap_surface": [
+          "vellutata/feltrata",
+          "asciutta",
+          "viscida",
+          "liscia"
+        ],
+        "gill_attachment": null,
+        "stem_base": [
+          "normale",
+          "assottigliata"
         ]
       },
       "field_rules": [
@@ -2561,6 +3219,10 @@
         {
           "title": "Wikidata Q752497 (Imleria badia)",
           "url": "https://www.wikidata.org/wiki/Q752497"
+        },
+        {
+          "title": "Imleria badia - first-nature.com",
+          "url": "https://www.first-nature.com/fungi/imleria-badia.php"
         }
       ],
       "trees": [
@@ -2571,7 +3233,8 @@
       ],
       "lookalike_of": [
         "aereus"
-      ]
+      ],
+      "traits_notes": "Sporata bruno-olivastra. Cuticola vellutata e asciutta, viscida con l'umido (it.wiki); liscia da adulto, leggermente feltrata da giovane (first-nature). Gambo di diametro uniforme, spesso curvo, attenuato in basso e fibroso alla base (it.wiki). Carne compatta/soda."
     },
     "amanita-phalloides": {
       "latin": "Amanita phalloides",
@@ -2627,6 +3290,27 @@
           9,
           10,
           11
+        ],
+        "spore_print": [
+          "bianco"
+        ],
+        "cap_veil": null,
+        "latex": false,
+        "flesh_texture": [
+          "fibrosa",
+          "soda"
+        ],
+        "cap_surface": [
+          "liscia",
+          "viscida",
+          "asciutta",
+          "squamosa"
+        ],
+        "gill_attachment": [
+          "libere"
+        ],
+        "stem_base": [
+          "bulbosa"
         ]
       },
       "field_rules": [
@@ -2682,6 +3366,18 @@
         {
           "title": "Wikidata Q188643 (Amanita phalloides)",
           "url": "https://www.wikidata.org/wiki/Q188643"
+        },
+        {
+          "title": "Amanita phalloides - Wikipedia en",
+          "url": "https://en.wikipedia.org/wiki/Amanita_phalloides"
+        },
+        {
+          "title": "Amanita phalloides - first-nature.com",
+          "url": "https://www.first-nature.com/fungi/amanita-phalloides.php"
+        },
+        {
+          "title": "Funghi mortali - Regione Emilia-Romagna",
+          "url": "https://ambiente.regione.emilia-romagna.it/it/parchi-natura2000/sistema-regionale/funghi-sottobosco-tartufi/funghi-allegati/funghi-mortali"
         }
       ],
       "trees": [
@@ -2694,7 +3390,8 @@
       "lookalike_of": [
         "caesarea",
         "virescens"
-      ]
+      ],
+      "traits_notes": "MORTALE, valori larghi. Sporata bianca. Cappello di norma liscio, serico, senza verruche, con fibrille radiali innate (it.wiki); vischioso col tempo umido (en.wiki 'sticky when wet', schede regionali). cap_veil null: di solito nudo, ma first-nature riporta che resti di velo possono persistere come grandi placche bianco-crema -> non deve mai essere escluso. Aggiunti 'asciutta' (da secco) e 'squamosa' (fibrille/placche di velo possono essere percepite come squame) per prudenza. Lamelle libere. Base con bulbo avvolto da volva a sacco membranosa (spesso nascosta nel terreno/lettiera). Carne bianca, soda (it.wiki), 'piuttosto fibrosa' (schede micologiche italiane trovate via ricerca; il PDF regionale non e' stato letto per intero)."
     },
     "amanita-verna": {
       "latin": "Amanita verna",
@@ -2742,6 +3439,27 @@
           5,
           6,
           7
+        ],
+        "spore_print": [
+          "bianco"
+        ],
+        "cap_veil": null,
+        "latex": false,
+        "flesh_texture": [
+          "fibrosa",
+          "soda"
+        ],
+        "cap_surface": [
+          "liscia",
+          "viscida",
+          "asciutta"
+        ],
+        "gill_attachment": [
+          "libere"
+        ],
+        "stem_base": [
+          "bulbosa",
+          "normale"
         ]
       },
       "field_rules": [
@@ -2781,6 +3499,14 @@
         {
           "title": "Wikidata Q571885 (Amanita verna)",
           "url": "https://www.wikidata.org/wiki/Q571885"
+        },
+        {
+          "title": "Amanita verna - Wikipedia en",
+          "url": "https://en.wikipedia.org/wiki/Amanita_verna"
+        },
+        {
+          "title": "Amanita phalloides - first-nature.com (gruppo phalloides, resti di velo)",
+          "url": "https://www.first-nature.com/fungi/amanita-phalloides.php"
         }
       ],
       "trees": [
@@ -2791,7 +3517,8 @@
       ],
       "lookalike_of": [
         "caesarea"
-      ]
+      ],
+      "traits_notes": "MORTALE, valori larghi. Sporata bianca. Cappello glabro, bianco, viscoso a tempo umido (it.wiki). cap_veil null: nessuna fonte riporta resti di velo sul cappello, ma come nelle specie affini del gruppo phalloides possono restare lembi di volva; per sicurezza non si esclude. Lamelle libere. Gambo solo leggermente ingrossato alla base con volva a sacco grande, spesso completamente interrata -> 'normale' incluso perche' se la volva resta nel terreno la base appare quasi normale. Carne tenera, bianca (it.wiki); 'fibrosa' e 'soda' per analogia di genere/gruppo (Amanita = gambo fibroso, non gessoso), non verificato specificamente per verna. Pagina first-nature di A. verna non disponibile (404)."
     },
     "amanita-virosa": {
       "latin": "Amanita virosa",
@@ -2840,6 +3567,27 @@
           9,
           10,
           11
+        ],
+        "spore_print": [
+          "bianco"
+        ],
+        "cap_veil": null,
+        "latex": false,
+        "flesh_texture": [
+          "fibrosa",
+          "soda"
+        ],
+        "cap_surface": [
+          "liscia",
+          "asciutta",
+          "viscida"
+        ],
+        "gill_attachment": [
+          "libere"
+        ],
+        "stem_base": [
+          "bulbosa",
+          "normale"
         ]
       },
       "field_rules": [
@@ -2875,6 +3623,14 @@
         {
           "title": "Wikidata Q472817 (Amanita virosa)",
           "url": "https://www.wikidata.org/wiki/Q472817"
+        },
+        {
+          "title": "Wikipedia en - Amanita virosa",
+          "url": "https://en.wikipedia.org/wiki/Amanita_virosa"
+        },
+        {
+          "title": "First Nature - Amanita virosa",
+          "url": "https://www.first-nature.com/fungi/amanita-virosa.php"
         }
       ],
       "trees": [
@@ -2884,7 +3640,8 @@
       ],
       "lookalike_of": [
         "caesarea"
-      ]
+      ],
+      "traits_notes": "Sporata bianca (tutte le fonti). Velo: alcuni giovani esemplari hanno resti bianchi del velo universale che la pioggia lava presto (First Nature), resti anche al margine (en.wiki): MORTALE, quindi null per non escluderla mai. Cuticola setosa/glabra, poco vischiosa a tempo umido (it.wiki) -> liscia+asciutta+viscida. Carne fibrosa (it.wiki); 'soda' aggiunto per prudenza (non citato esplicitamente). Lamelle libere. Base bulbosa con volva sacciforme spesso profondamente interrata (First Nature): aggiunto 'normale' perche' se raccolta senza scavare la base puo' sembrare normale."
     },
     "amanita-muscaria": {
       "latin": "Amanita muscaria",
@@ -2935,6 +3692,27 @@
           9,
           10,
           11
+        ],
+        "spore_print": [
+          "bianco"
+        ],
+        "cap_veil": null,
+        "latex": false,
+        "flesh_texture": [
+          "fibrosa",
+          "soda"
+        ],
+        "cap_surface": [
+          "viscida",
+          "liscia",
+          "asciutta",
+          "squamosa"
+        ],
+        "gill_attachment": [
+          "libere"
+        ],
+        "stem_base": [
+          "bulbosa"
         ]
       },
       "field_rules": [
@@ -2967,6 +3745,14 @@
         {
           "title": "Wikidata Q131227 (Amanita muscaria)",
           "url": "https://www.wikidata.org/wiki/Q131227"
+        },
+        {
+          "title": "Wikipedia en - Amanita muscaria",
+          "url": "https://en.wikipedia.org/wiki/Amanita_muscaria"
+        },
+        {
+          "title": "First Nature - Amanita muscaria",
+          "url": "https://www.first-nature.com/fungi/amanita-muscaria.php"
         }
       ],
       "trees": [
@@ -2981,7 +3767,8 @@
       ],
       "lookalike_of": [
         "caesarea"
-      ]
+      ],
+      "traits_notes": "Verruche bianche/gialle del velo universale tipiche, ma la pioggia e l'eta' possono asportarle del tutto (en.wiki, First Nature): TOSSICO, quindi cap_veil null per non escluderla quando il cappello e' nudo. Cuticola viscida a tempo umido, staccabile (it.wiki); 'squamosa' aggiunto per prudenza perche' l'utente puo' scambiare le verruche per squame. Gambo 'leggermente fragile, fibroso' (en.wiki) -> fibrosa; 'soda' per prudenza. Lamelle libere. Base nettamente bulbosa con volva dissociata in cercini (it/en.wiki)."
     },
     "amanita-crocea": {
       "latin": "Amanita crocea",
@@ -3029,6 +3816,25 @@
           8,
           9,
           10
+        ],
+        "spore_print": [
+          "bianco"
+        ],
+        "cap_veil": null,
+        "latex": false,
+        "flesh_texture": null,
+        "cap_surface": [
+          "viscida",
+          "liscia",
+          "asciutta"
+        ],
+        "gill_attachment": [
+          "libere",
+          "adnate"
+        ],
+        "stem_base": [
+          "normale",
+          "bulbosa"
         ]
       },
       "field_rules": [
@@ -3051,6 +3857,18 @@
         {
           "title": "Wikidata Q1574920 (Amanita crocea)",
           "url": "https://www.wikidata.org/wiki/Q1574920"
+        },
+        {
+          "title": "Wikipedia en - Amanita crocea",
+          "url": "https://en.wikipedia.org/wiki/Amanita_crocea"
+        },
+        {
+          "title": "First Nature - Amanita crocea",
+          "url": "https://www.first-nature.com/fungi/amanita-crocea.php"
+        },
+        {
+          "title": "MushroomExpert - Amanita crocea",
+          "url": "https://mushroomexpert.com/amanita_crocea.html"
         }
       ],
       "trees": [
@@ -3063,7 +3881,8 @@
       ],
       "lookalike_of": [
         "caesarea"
-      ]
+      ],
+      "traits_notes": "Sporata bianca. Velo sul cappello di norma assente (First Nature non l'ha mai visto), ma altri osservatori riportano 1-2 grossi lembi dopo tempo secco -> null. Cappello liscio, appiccicoso a umido, glabro (MushroomExpert, concetto nordamericano). Lamelle libere o annesse/leggermente attaccate (it.wiki, First Nature, MushroomExpert) -> libere+adnate. Base: 'senza base ingrossata' con volva sacciforme membranosa (MushroomExpert): 'normale', ma aggiunto 'bulbosa' per prudenza perche' la volva a sacco puo' sembrare un bulbo. Consistenza carne: solo 'sottile e tenera' (it.wiki), non mappabile con certezza -> null."
     },
     "omphalotus-olearius": {
       "latin": "Omphalotus olearius",
@@ -3117,6 +3936,28 @@
           10,
           11,
           12
+        ],
+        "spore_print": [
+          "bianco",
+          "crema"
+        ],
+        "cap_veil": false,
+        "latex": false,
+        "flesh_texture": [
+          "elastica/coriacea",
+          "fibrosa"
+        ],
+        "cap_surface": [
+          "liscia",
+          "asciutta",
+          "squamosa"
+        ],
+        "gill_attachment": [
+          "decorrenti"
+        ],
+        "stem_base": [
+          "assottigliata",
+          "normale"
         ]
       },
       "field_rules": [
@@ -3143,6 +3984,10 @@
         {
           "title": "Wikidata Q1043730 (Omphalotus olearius)",
           "url": "https://www.wikidata.org/wiki/Q1043730"
+        },
+        {
+          "title": "First Nature - Omphalotus olearius",
+          "url": "https://www.first-nature.com/fungi/omphalotus-olearius.php"
         }
       ],
       "trees": [
@@ -3155,7 +4000,8 @@
       ],
       "lookalike_of": [
         "cibarius"
-      ]
+      ],
+      "traits_notes": "Sporata crema/bianco-crema (it.wiki 'crema in massa', First Nature 'creamy white'). Carne 'elastica, tenace e fibrosa' (it.wiki). Cuticola 'fibrillosa, lucida' (it.wiki), 'smooth' (First Nature) -> liscia+asciutta; 'squamosa' aggiunto per prudenza (fibrille innate, non vere squame). Lamelle molto decorrenti. Gambo attenuato alla base (entrambe le fonti), spesso cespitoso; 'normale' per prudenza. Pdf ASL Oristano non leggibile (solo immagini)."
     },
     "hygrophoropsis-aurantiaca": {
       "latin": "Hygrophoropsis aurantiaca",
@@ -3205,6 +4051,27 @@
           10,
           11,
           12
+        ],
+        "spore_print": [
+          "bianco",
+          "crema"
+        ],
+        "cap_veil": false,
+        "latex": false,
+        "flesh_texture": [
+          "elastica/coriacea",
+          "fibrosa"
+        ],
+        "cap_surface": [
+          "vellutata/feltrata",
+          "asciutta"
+        ],
+        "gill_attachment": [
+          "decorrenti"
+        ],
+        "stem_base": [
+          "normale",
+          "bulbosa"
         ]
       },
       "field_rules": [
@@ -3231,6 +4098,14 @@
         {
           "title": "Wikidata Q1265541 (Hygrophoropsis aurantiaca)",
           "url": "https://www.wikidata.org/wiki/Q1265541"
+        },
+        {
+          "title": "First Nature - Hygrophoropsis aurantiaca",
+          "url": "https://www.first-nature.com/fungi/hygrophoropsis-aurantiaca.php"
+        },
+        {
+          "title": "MushroomExpert - Hygrophoropsis aurantiaca",
+          "url": "https://www.mushroomexpert.com/hygrophoropsis_aurantiaca.html"
         }
       ],
       "trees": [
@@ -3240,7 +4115,8 @@
       ],
       "lookalike_of": [
         "cibarius"
-      ]
+      ],
+      "traits_notes": "Sporata bianca (First Nature, MushroomExpert) o bianca-crema (en.wiki). Cappello finemente vellutato/feltrato, asciutto e morbido (en.wiki, MushroomExpert). Lamelle (false lamelle) profondamente decorrenti, ripetutamente forcate. Carne sottile e morbida; gambo 'tough' (First Nature) -> elastica/coriacea; 'fibrosa' aggiunto per larghezza. Gambo piu' o meno uguale, a volte 'somewhat swollen toward the base' (MushroomExpert) -> normale+bulbosa (ingrossamento non netto)."
     },
     "cortinarius-orellanus": {
       "latin": "Cortinarius orellanus",
@@ -3290,6 +4166,31 @@
           8,
           9,
           10
+        ],
+        "spore_print": [
+          "ruggine",
+          "ocra",
+          "bruno"
+        ],
+        "cap_veil": null,
+        "latex": false,
+        "flesh_texture": [
+          "fibrosa",
+          "soda"
+        ],
+        "cap_surface": [
+          "asciutta",
+          "squamosa",
+          "vellutata/feltrata",
+          "liscia"
+        ],
+        "gill_attachment": [
+          "adnate",
+          "smarginate"
+        ],
+        "stem_base": [
+          "assottigliata",
+          "normale"
         ]
       },
       "field_rules": [
@@ -3317,6 +4218,14 @@
         {
           "title": "Wikidata Q1367003 (Cortinarius orellanus)",
           "url": "https://www.wikidata.org/wiki/Q1367003"
+        },
+        {
+          "title": "Wikipedia en - Cortinarius orellanus",
+          "url": "https://en.wikipedia.org/wiki/Cortinarius_orellanus"
+        },
+        {
+          "title": "First Nature - Cortinarius orellanus",
+          "url": "https://www.first-nature.com/fungi/cortinarius-orellanus.php"
         }
       ],
       "trees": [
@@ -3327,7 +4236,8 @@
       ],
       "lookalike_of": [
         "cibarius"
-      ]
+      ],
+      "traits_notes": "MORTALE: valori larghi. Sporata ruggine/bruno-rossastra (First Nature, en.wiki, it.wiki testo), taxobox it.wiki 'ocra' -> ruggine+ocra+bruno. Velo: solo cortina debole su lamelle/gambo, nessuna fonte parla di resti sul cappello; null per prudenza (fibre di cortina al margine potrebbero essere scambiate). Cappello asciutto, finemente fibrilloso-squamuloso, sericeo opaco, liscio con l'eta' (First Nature, it/en.wiki) -> asciutta+squamosa+liscia; vellutata/feltrata aggiunto per prudenza. Lamelle adnato-uncinate (it.wiki), adnate o sinuate (en.wiki). Gambo fibroso, sodo, un po' assottigliato alla base (tutte le fonti)."
     },
     "craterellus-cinereus": {
       "latin": "Craterellus cinereus",
@@ -3373,6 +4283,27 @@
           9,
           10,
           11
+        ],
+        "spore_print": [
+          "bianco",
+          "crema"
+        ],
+        "cap_veil": false,
+        "latex": false,
+        "flesh_texture": [
+          "fibrosa",
+          "gessosa"
+        ],
+        "cap_surface": [
+          "liscia",
+          "squamosa"
+        ],
+        "gill_attachment": [
+          "decorrenti"
+        ],
+        "stem_base": [
+          "assottigliata",
+          "normale"
         ]
       },
       "field_rules": [
@@ -3395,6 +4326,14 @@
         {
           "title": "Wikidata Q12236668 (Craterellus cinereus)",
           "url": "https://www.wikidata.org/wiki/Q12236668"
+        },
+        {
+          "title": "MushroomExpert - Craterellus cinereus",
+          "url": "https://mushroomexpert.com/craterellus_cinereus.html"
+        },
+        {
+          "title": "Svampguiden - Craterellus cinereus",
+          "url": "https://www.svampguiden.com/en/art/477-gra-kantarell"
         }
       ],
       "trees": [
@@ -3404,7 +4343,8 @@
       ],
       "lookalike_of": [
         "cornucopioides"
-      ]
+      ],
+      "traits_notes": "Sporata 'whitish' (en.wiki); 'crema' aggiunto per larghezza (MushroomExpert non la riporta). Cappello umido, glabro o finemente squamuloso (MushroomExpert) -> liscia+squamosa. Pliche (false lamelle) grigie, forcate, distanziate e decorrenti. Carne sottile e fragile ('brittle', MushroomExpert) -> gessosa; 'fibrosa' aggiunto per prudenza (gambo cavo, fonti non esplicite). Gambo assottigliato verso la base, a volte con base lanosa bianca e gambi fusi (MushroomExpert, en.wiki); 'normale' per larghezza. Nota: en.wiki segnala che parte del vecchio concetto e' ora C. atrocinereus."
     },
     "pseudocraterellus-undulatus": {
       "latin": "Pseudocraterellus undulatus",
@@ -3451,6 +4391,25 @@
           9,
           10,
           11
+        ],
+        "spore_print": [
+          "bianco",
+          "crema",
+          "giallo",
+          "ocra"
+        ],
+        "cap_veil": false,
+        "latex": false,
+        "flesh_texture": [
+          "fibrosa",
+          "elastica/coriacea"
+        ],
+        "cap_surface": null,
+        "gill_attachment": [
+          "decorrenti"
+        ],
+        "stem_base": [
+          "assottigliata"
         ]
       },
       "field_rules": [
@@ -3473,6 +4432,14 @@
         {
           "title": "Wikidata Q107866831 (Pseudocraterellus undulatus)",
           "url": "https://www.wikidata.org/wiki/Q107866831"
+        },
+        {
+          "title": "First Nature - Pseudocraterellus undulatus",
+          "url": "https://www.first-nature.com/fungi/pseudocraterellus-undulatus.php"
+        },
+        {
+          "title": "Naturalis Mushrooms - Pseudocraterellus undulatus",
+          "url": "https://mushrooms.linnaeus.naturalis.nl/linnaeus_ng/app/views/species/taxon.php?id=100588"
         }
       ],
       "trees": [
@@ -3482,7 +4449,8 @@
       ],
       "lookalike_of": [
         "cornucopioides"
-      ]
+      ],
+      "traits_notes": "Sporata discordante: bianca (Naturalis), bianca-giallo pallido (en.wiki), ocra giallastra (First Nature) -> bianco+crema+giallo+ocra. Imenoforo da liscio a finemente rugoso/venoso-costolato, decorrente (gill_attachment 'decorrenti' vale per la forma a pliche). Carne 'tough' (en.wiki), 'soft, fibrous' (Naturalis) -> fibrosa+elastica/coriacea. Gambo cavo, solcato, assottigliato alla base (tutte le fonti), spesso cespitoso e fuso. Superficie del cappello: le fonti descrivono solo colore, rughe e margine ondulato, niente su asciutta/viscida/liscia -> null."
     },
     "urnula-craterium": {
       "latin": "Urnula craterium",
@@ -3527,6 +4495,26 @@
           3,
           4,
           5
+        ],
+        "spore_print": [
+          "bianco",
+          "bruno",
+          "nero"
+        ],
+        "cap_veil": false,
+        "latex": false,
+        "flesh_texture": [
+          "elastica/coriacea"
+        ],
+        "cap_surface": [
+          "vellutata/feltrata",
+          "squamosa",
+          "liscia"
+        ],
+        "gill_attachment": null,
+        "stem_base": [
+          "assottigliata",
+          "normale"
         ]
       },
       "field_rules": [
@@ -3549,6 +4537,14 @@
         {
           "title": "Wikidata Q1738729 (Urnula craterium)",
           "url": "https://www.wikidata.org/wiki/Q1738729"
+        },
+        {
+          "title": "MushroomExpert - Urnula craterium",
+          "url": "https://www.mushroomexpert.com/urnula_craterium.html"
+        },
+        {
+          "title": "Missouri Department of Conservation - Devil's Urn",
+          "url": "https://mdc.mo.gov/discover-nature/field-guide/devils-urn"
         }
       ],
       "trees": [
@@ -3559,7 +4555,8 @@
       ],
       "lookalike_of": [
         "cornucopioides"
-      ]
+      ],
+      "traits_notes": "Ascomicete a coppa: 'cappello' = coppa. Sporata: MDC dice 'blackish brown', ma le spore sono ialine (en.wiki, MushroomExpert), il che farebbe attendere un deposito chiaro -> bianco+bruno+nero per prudenza. Superficie esterna vellutata, rugosa o squamosa, con piccole placche fioccose e screpolata con l'eta'; interna liscia (MushroomExpert, en.wiki). Le placche esterne sono tessuto della coppa, non velo -> cap_veil false. Carne coriacea/gommosa (en.wiki 'leathery', MDC 'tough and rubbery'). Pseudogambo assottigliato alla base con micelio nero (MushroomExpert), 'sides equal' (MDC) -> assottigliata+normale. Imenoforo liscio -> gill_attachment null."
     },
     "hydnum-rufescens": {
       "latin": "Hydnum rufescens",
@@ -3608,6 +4605,24 @@
           9,
           10,
           11
+        ],
+        "spore_print": [
+          "bianco",
+          "crema"
+        ],
+        "cap_veil": false,
+        "latex": false,
+        "flesh_texture": [
+          "soda",
+          "gessosa"
+        ],
+        "cap_surface": [
+          "liscia",
+          "vellutata/feltrata"
+        ],
+        "gill_attachment": null,
+        "stem_base": [
+          "normale"
         ]
       },
       "field_rules": [
@@ -3630,6 +4645,14 @@
         {
           "title": "Wikidata Q2475470 (Hydnum rufescens)",
           "url": "https://www.wikidata.org/wiki/Q2475470"
+        },
+        {
+          "title": "First Nature - Hydnum rufescens",
+          "url": "https://www.first-nature.com/fungi/hydnum-rufescens.php"
+        },
+        {
+          "title": "Foraging Course Company - Terracotta hedgehog",
+          "url": "https://www.foragingcoursecompany.co.uk/post/foraging-guide-terracotta-hedgehog"
         }
       ],
       "trees": [
@@ -3639,7 +4662,8 @@
       ],
       "lookalike_of": [
         "repandum"
-      ]
+      ],
+      "traits_notes": "Sporata bianca (First Nature, Foraging Course Co.) o bianco-crema (it.wiki). Cuticola liscia (it.wiki), leggermente feltrata/vellutata al tatto (First Nature, Foraging Course Co.). Carne 'soda, fragile, anche molto friabile' (it.wiki) -> soda+gessosa. Aculei -> gill_attachment null. Base: nessuna fonte la descrive in modo specifico; gambo 'cilindrico', spesso eccentrico (Foraging Course Co.) -> normale (valore meno solido)."
     },
     "sarcodon-imbricatus": {
       "latin": "Sarcodon imbricatus",
@@ -3687,6 +4711,25 @@
           9,
           10,
           11
+        ],
+        "spore_print": [
+          "bruno"
+        ],
+        "cap_veil": false,
+        "latex": false,
+        "flesh_texture": [
+          "elastica/coriacea",
+          "soda"
+        ],
+        "cap_surface": [
+          "squamosa",
+          "asciutta"
+        ],
+        "gill_attachment": null,
+        "stem_base": [
+          "normale",
+          "assottigliata",
+          "bulbosa"
         ]
       },
       "field_rules": [
@@ -3709,6 +4752,10 @@
         {
           "title": "Wikidata Q262105 (Sarcodon imbricatus)",
           "url": "https://www.wikidata.org/wiki/Q262105"
+        },
+        {
+          "title": "Wikipedia en - Sarcodon imbricatus",
+          "url": "https://en.wikipedia.org/wiki/Sarcodon_imbricatus"
         }
       ],
       "trees": [
@@ -3718,7 +4765,8 @@
       ],
       "lookalike_of": [
         "repandum"
-      ]
+      ],
+      "traits_notes": "Sporata bruna (it/en.wiki). Cappello con grosse squame scure concentriche, rialzate, coriacee (it.wiki) -> squamosa; 'asciutta' implicito (cuticola squamosa non viscida, non esplicitato). Squame della cuticola, non velo -> cap_veil false. Carne 'coriacea' (it.wiki) vs 'soft' (en.wiki) -> elastica/coriacea+soda. Base discordante: 'piu' grosso alla base' (it.wiki) vs 'puo' essere piu' stretto alla base' (en.wiki), spesso eccentrico -> normale+assottigliata+bulbosa (ingrossamento non un bulbo netto). Aculei -> gill_attachment null. Pagina First Nature non trovata (404)."
     },
     "sarcodon-scabrosus": {
       "latin": "Sarcodon scabrosus",
@@ -3766,6 +4814,25 @@
           9,
           10,
           11
+        ],
+        "spore_print": [
+          "bruno"
+        ],
+        "cap_veil": false,
+        "latex": false,
+        "flesh_texture": [
+          "elastica/coriacea",
+          "soda"
+        ],
+        "cap_surface": [
+          "squamosa",
+          "asciutta",
+          "vellutata/feltrata"
+        ],
+        "gill_attachment": null,
+        "stem_base": [
+          "assottigliata",
+          "radicante"
         ]
       },
       "field_rules": [
@@ -3788,6 +4855,18 @@
         {
           "title": "Wikidata Q10670604 (Sarcodon scabrosus)",
           "url": "https://www.wikidata.org/wiki/Q10670604"
+        },
+        {
+          "title": "Wikipedia en - Sarcodon scabrosus",
+          "url": "https://en.wikipedia.org/wiki/Sarcodon_scabrosus"
+        },
+        {
+          "title": "MushroomExpert - Sarcodon scabrosus",
+          "url": "https://www.mushroomexpert.com/sarcodon_scabrosus.html"
+        },
+        {
+          "title": "First Nature - Sarcodon scabrosus",
+          "url": "https://www.first-nature.com/fungi/sarcodon-scabrosus.php"
         }
       ],
       "trees": [
@@ -3798,7 +4877,8 @@
       ],
       "lookalike_of": [
         "repandum"
-      ]
+      ],
+      "traits_notes": "Sporata bruna (tutte le fonti). Cappello asciutto, da giovane fibrilloso-appressato (sub-feltrato) poi con squame a punta scura: squame della cuticola, non velo. Carne: it.wiki 'coriacea', MushroomExpert 'soft' -> messi coriacea e soda. Gambo assottigliato alla base, spesso prolungato nel terreno 'come una radice' (MushroomExpert) con base verde-bluastra/nerastra. Imenoforo ad aculei -> gill_attachment null."
     },
     "hydnellum-peckii": {
       "latin": "Hydnellum peckii",
@@ -3849,6 +4929,26 @@
           9,
           10,
           11
+        ],
+        "spore_print": [
+          "bruno"
+        ],
+        "cap_veil": false,
+        "latex": false,
+        "flesh_texture": [
+          "elastica/coriacea",
+          "fibrosa"
+        ],
+        "cap_surface": [
+          "vellutata/feltrata",
+          "liscia"
+        ],
+        "gill_attachment": null,
+        "stem_base": [
+          "bulbosa",
+          "radicante",
+          "normale",
+          "assottigliata"
         ]
       },
       "field_rules": [
@@ -3871,6 +4971,14 @@
         {
           "title": "Wikidata Q1908340 (Hydnellum peckii)",
           "url": "https://www.wikidata.org/wiki/Q1908340"
+        },
+        {
+          "title": "Wikipedia en - Hydnellum peckii",
+          "url": "https://en.wikipedia.org/wiki/Hydnellum_peckii"
+        },
+        {
+          "title": "First Nature - Hydnellum peckii",
+          "url": "https://www.first-nature.com/fungi/hydnellum-peckii.php"
         }
       ],
       "trees": [
@@ -3880,7 +4988,8 @@
       ],
       "lookalike_of": [
         "repandum"
-      ]
+      ],
+      "traits_notes": "Sporata bruna. Cappello feltrato/vellutato da giovane, poi liscio, bitorzoluto, con goccioline rosse da fresco (essudato, non vischiosita': non messo 'viscida'; asciutto non esplicitato dalle fonti). Carne coriacea, zonata, 'tough and fibrous', legnosa a maturita'. Gambo: en.wiki bulboso e radicante nel terreno per alcuni cm; First Nature cilindrico o assottigliato in basso -> tutti i valori. Imenoforo ad aculei -> gill_attachment null."
     },
     "lepiota-brunneoincarnata": {
       "latin": "Lepiota brunneoincarnata",
@@ -3938,6 +5047,29 @@
           9,
           10,
           11
+        ],
+        "spore_print": [
+          "bianco",
+          "crema"
+        ],
+        "cap_veil": null,
+        "latex": false,
+        "flesh_texture": [
+          "fibrosa",
+          "soda"
+        ],
+        "cap_surface": [
+          "squamosa",
+          "vellutata/feltrata",
+          "asciutta",
+          "liscia"
+        ],
+        "gill_attachment": [
+          "libere"
+        ],
+        "stem_base": [
+          "normale",
+          "bulbosa"
         ]
       },
       "field_rules": [
@@ -3973,6 +5105,14 @@
         {
           "title": "Wikidata Q2375450 (Lepiota brunneoincarnata)",
           "url": "https://www.wikidata.org/wiki/Q2375450"
+        },
+        {
+          "title": "Wikipedia en - Lepiota brunneoincarnata",
+          "url": "https://en.wikipedia.org/wiki/Lepiota_brunneoincarnata"
+        },
+        {
+          "title": "First Nature - Lepiota brunneoincarnata",
+          "url": "https://www.first-nature.com/fungi/lepiota-brunneoincarnata.php"
         }
       ],
       "trees": [
@@ -3982,7 +5122,8 @@
       ],
       "lookalike_of": [
         "procera"
-      ]
+      ],
+      "traits_notes": "MORTALE (amatossine). Sporata bianca (tutte le fonti); aggiunto 'crema' per prudenza (sporate biancastre percepite come crema). Squame lanose concentriche derivano dalla rottura della cuticola feltrata, non da velo universale; ma essendo fioccose e facilmente scambiabili per fiocchi di velo, cap_veil=null per non escluderla. Cappello feltrato poi squamoso, disco centrale intero (liscio). Lamelle libere. Gambo cilindrico; una scheda (endemia.nc, vista solo come estratto di ricerca) lo dice da clavato a sub-bulboso -> aggiunto 'bulbosa' per prudenza. Carne 'pastosa' (it.wiki), gambo con squame fibrose -> fibrosa+soda; non gessosa."
     },
     "lepiota-subincarnata": {
       "latin": "Lepiota subincarnata",
@@ -4037,6 +5178,29 @@
           9,
           10,
           11
+        ],
+        "spore_print": [
+          "bianco",
+          "crema"
+        ],
+        "cap_veil": null,
+        "latex": false,
+        "flesh_texture": [
+          "fibrosa",
+          "soda"
+        ],
+        "cap_surface": [
+          "squamosa",
+          "vellutata/feltrata",
+          "asciutta",
+          "liscia"
+        ],
+        "gill_attachment": [
+          "libere"
+        ],
+        "stem_base": [
+          "normale",
+          "bulbosa"
         ]
       },
       "field_rules": [
@@ -4063,12 +5227,25 @@
         {
           "title": "Wikidata Q4259141 (Lepiota subincarnata)",
           "url": "https://www.wikidata.org/wiki/Q4259141"
+        },
+        {
+          "title": "Wikipedia en - Lepiota subincarnata",
+          "url": "https://en.wikipedia.org/wiki/Lepiota_subincarnata"
+        },
+        {
+          "title": "First Nature - Lepiota subincarnata",
+          "url": "https://first-nature.com/fungi/lepiota-subincarnata.php"
+        },
+        {
+          "title": "MykoWeb CAF - Lepiota subincarnata",
+          "url": "https://www.mykoweb.com/CAF/species/Lepiota_subincarnata.html"
         }
       ],
       "trees": [],
       "lookalike_of": [
         "procera"
-      ]
+      ],
+      "traits_notes": "MORTALE (amatossine). Sporata bianca; 'crema' aggiunto per prudenza (lamelle crema). Cappello fioccoso-squamuloso (MykoWeb 'floccose-squamulose'), squame lanose concentriche da rottura cuticola: cap_veil=null perche' facilmente confondibili con fiocchi di velo. Lamelle libere. Gambo leggermente ingrossato alla base (wiki) / 'bulbous base' (First Nature) -> normale+bulbosa. Consistenza carne non descritta dalle fonti: messo fibrosa+soda come per le Lepiota (gambo fibrilloso-squamoso), per prudenza."
     },
     "lepiota-cristata": {
       "latin": "Lepiota cristata",
@@ -4119,6 +5296,27 @@
           9,
           10,
           11
+        ],
+        "spore_print": [
+          "bianco",
+          "crema"
+        ],
+        "cap_veil": null,
+        "latex": false,
+        "flesh_texture": [
+          "fibrosa"
+        ],
+        "cap_surface": [
+          "squamosa",
+          "asciutta",
+          "vellutata/feltrata",
+          "liscia"
+        ],
+        "gill_attachment": [
+          "libere"
+        ],
+        "stem_base": [
+          "normale"
         ]
       },
       "field_rules": [
@@ -4149,6 +5347,18 @@
         {
           "title": "Wikidata Q855482 (Lepiota cristata)",
           "url": "https://www.wikidata.org/wiki/Q855482"
+        },
+        {
+          "title": "Wikipedia en - Lepiota cristata",
+          "url": "https://en.wikipedia.org/wiki/Lepiota_cristata"
+        },
+        {
+          "title": "MushroomExpert - Lepiota cristata",
+          "url": "https://www.mushroomexpert.com/lepiota_cristata.html"
+        },
+        {
+          "title": "First Nature - Lepiota cristata",
+          "url": "https://www.first-nature.com/fungi/lepiota-cristata.php"
         }
       ],
       "trees": [
@@ -4156,7 +5366,8 @@
       ],
       "lookalike_of": [
         "procera"
-      ]
+      ],
+      "traits_notes": "Sporata bianca (tutte le fonti); 'crema' aggiunto per prudenza. Cappello asciutto (MushroomExpert), prima liscio/feltrato poi rotto in squame concentriche bruno-rossastre su fondo bianco, centro intero: squame della cuticola, non velo; cap_veil=null per prudenza (taxon tossico, squamette scambiabili per fiocchi). Lamelle libere. Gambo cilindrico, 'more or less equal', base non descritta come bulbosa -> normale. Carne fragile nel cappello, piu' fibrosa nel gambo (it.wiki) -> fibrosa."
     },
     "chlorophyllum-rhacodes": {
       "latin": "Chlorophyllum rhacodes",
@@ -4209,6 +5420,27 @@
           9,
           10,
           11
+        ],
+        "spore_print": [
+          "bianco",
+          "crema"
+        ],
+        "cap_veil": null,
+        "latex": false,
+        "flesh_texture": [
+          "fibrosa",
+          "soda"
+        ],
+        "cap_surface": [
+          "squamosa",
+          "asciutta",
+          "liscia"
+        ],
+        "gill_attachment": [
+          "libere"
+        ],
+        "stem_base": [
+          "bulbosa"
         ]
       },
       "field_rules": [
@@ -4235,6 +5467,18 @@
         {
           "title": "Wikidata Q757119 (Chlorophyllum rhacodes)",
           "url": "https://www.wikidata.org/wiki/Q757119"
+        },
+        {
+          "title": "Wikipedia en - Chlorophyllum rhacodes",
+          "url": "https://en.wikipedia.org/wiki/Chlorophyllum_rhacodes"
+        },
+        {
+          "title": "First Nature - Chlorophyllum rhacodes",
+          "url": "https://www.first-nature.com/fungi/chlorophyllum-rhacodes.php"
+        },
+        {
+          "title": "MycoCharentes - Chlorophyllum brunneum (confronto con C. rhacodes)",
+          "url": "https://mycocharentes.fr/pdf1/2198.pdf"
         }
       ],
       "trees": [
@@ -4247,7 +5491,8 @@
       ],
       "lookalike_of": [
         "procera"
-      ]
+      ],
+      "traits_notes": "Sporata bianca (wiki) o 'white or pale cream' (First Nature). Le grosse squame derivano dalla lacerazione della cuticola (come Macrolepiota) -> a rigore cap_veil=false, ma per un taxon tossico con squame grossolane spesso descritte come 'placche' metto null per non escluderlo. Calotta centrale liscia. Lamelle libere. Gambo ingrossato/con grosso bulbo alla base (en.wiki 'bulbous', First Nature 'large bulbous base', it.wiki 'ingrossato alla base'; MycoCharentes: 'stipe en massue'). Carne fragile nel cappello; gambo fibroso tipico del gruppo (non esplicitato dalle fonti lette) -> fibrosa+soda, non gessosa."
     },
     "chlorophyllum-venenatum": {
       "latin": "Chlorophyllum venenatum",
@@ -4297,6 +5542,27 @@
           9,
           10,
           11
+        ],
+        "spore_print": [
+          "bianco",
+          "crema"
+        ],
+        "cap_veil": null,
+        "latex": false,
+        "flesh_texture": [
+          "fibrosa",
+          "soda"
+        ],
+        "cap_surface": [
+          "squamosa",
+          "asciutta",
+          "liscia"
+        ],
+        "gill_attachment": [
+          "libere"
+        ],
+        "stem_base": [
+          "bulbosa"
         ]
       },
       "field_rules": [
@@ -4323,12 +5589,17 @@
         {
           "title": "Wikidata Q1523559 (Macrolepiota venenata)",
           "url": "https://www.wikidata.org/wiki/Q1523559"
+        },
+        {
+          "title": "MycoCharentes - Chlorophyllum brunneum (sin. M. venenata)",
+          "url": "https://mycocharentes.fr/pdf1/2198.pdf"
         }
       ],
       "trees": [],
       "lookalike_of": [
         "procera"
-      ]
+      ],
+      "traits_notes": "Fonti scarse: la pagina it.wiki rinvia a C. rhacodes; en.wiki e First Nature senza pagina dedicata. Scheda Sant'Anna: cappello con centro stellato, squame fibrillo-lanose, gambo clavato, bulboso, da liscio a fibrilloso, anello semplice, sporata biancastra. MycoCharentes (trattato come C. brunneum, sin. M. venenata): grandi squame brune contrastanti, bulbo marginato. Squame cuticolari -> a rigore cap_veil=false, ma per prudenza (tossico) null. Lamelle libere come in tutto il genere (non esplicitato nelle schede lette per questa specie: esteso da C. rhacodes). Consistenza carne non descritta: fibrosa+soda per analogia col gruppo, per prudenza."
     },
     "galerina-marginata": {
       "latin": "Galerina marginata",
@@ -4385,6 +5656,29 @@
           10,
           11,
           12
+        ],
+        "spore_print": [
+          "ruggine",
+          "bruno",
+          "ocra"
+        ],
+        "cap_veil": null,
+        "latex": false,
+        "flesh_texture": [
+          "fibrosa",
+          "elastica/coriacea"
+        ],
+        "cap_surface": [
+          "liscia",
+          "viscida",
+          "asciutta"
+        ],
+        "gill_attachment": [
+          "adnate",
+          "decorrenti"
+        ],
+        "stem_base": [
+          "normale"
         ]
       },
       "field_rules": [
@@ -4407,6 +5701,18 @@
         {
           "title": "Wikidata Q248829 (Galerina marginata)",
           "url": "https://www.wikidata.org/wiki/Q248829"
+        },
+        {
+          "title": "Wikipedia en - Galerina marginata",
+          "url": "https://en.wikipedia.org/wiki/Galerina_marginata"
+        },
+        {
+          "title": "MushroomExpert - Galerina marginata",
+          "url": "https://www.mushroomexpert.com/galerina_marginata.html"
+        },
+        {
+          "title": "First Nature - Galerina marginata",
+          "url": "https://www.first-nature.com/fungi/galerina-marginata.php"
         }
       ],
       "trees": [
@@ -4417,7 +5723,8 @@
       ],
       "lookalike_of": [
         "mellea"
-      ]
+      ],
+      "traits_notes": "MORTALE (amatossine). Sporata bruno-ruggine (en.wiki, MushroomExpert), 'ocra ruggine' (it.wiki), 'snuff brown' (First Nature) -> ruggine+bruno+ocra. Cappello liscio, igrofano, vischioso da fresco/umido poi asciutto (viscosita' molto variabile) -> tutti e tre. Velo: MushroomExpert riporta resti biancastri di velo al margine negli esemplari molto giovani -> cap_veil=null. Lamelle adnate o leggermente decorrenti. Gambo cilindrico, fibroso, con anello membranoso fugace; nessuna fonte descrive bulbo o radice -> normale. Carne esigua, 'pliant' (flessibile) -> fibrosa+elastica."
     },
     "hypholoma-fasciculare": {
       "latin": "Hypholoma fasciculare",
@@ -4476,6 +5783,29 @@
           10,
           11,
           12
+        ],
+        "spore_print": [
+          "bruno-violaceo",
+          "nero"
+        ],
+        "cap_veil": null,
+        "latex": false,
+        "flesh_texture": [
+          "fibrosa",
+          "elastica/coriacea",
+          "soda"
+        ],
+        "cap_surface": [
+          "liscia",
+          "asciutta"
+        ],
+        "gill_attachment": [
+          "adnate",
+          "smarginate"
+        ],
+        "stem_base": [
+          "normale",
+          "assottigliata"
         ]
       },
       "field_rules": [
@@ -4502,6 +5832,18 @@
         {
           "title": "Wikidata Q752507 (Hypholoma fasciculare)",
           "url": "https://www.wikidata.org/wiki/Q752507"
+        },
+        {
+          "title": "Wikipedia en - Hypholoma fasciculare",
+          "url": "https://en.wikipedia.org/wiki/Hypholoma_fasciculare"
+        },
+        {
+          "title": "MushroomExpert - Hypholoma fasciculare",
+          "url": "https://www.mushroomexpert.com/hypholoma_fasciculare.html"
+        },
+        {
+          "title": "First Nature - Hypholoma fasciculare",
+          "url": "https://www.first-nature.com/fungi/hypholoma-fasciculare.php"
         }
       ],
       "trees": [
@@ -4510,7 +5852,8 @@
       ],
       "lookalike_of": [
         "mellea"
-      ]
+      ],
+      "traits_notes": "Sporata bruno-porpora / viola-nerastra (it.wiki) -> bruno-violaceo + nero. Cappello liscio e asciutto (MushroomExpert 'bald; dry'). Resti di cortina (fibrille scure) spesso al margine del cappello (First Nature, MushroomExpert), ma non sempre visibili -> cap_veil=null. Lamelle adnate; MushroomExpert 'attached or pulling away' -> aggiunto smarginate per prudenza. Gambo cilindrico, uguale o assottigliato verso la base, cespitoso. Gambo elastico (it.wiki), carne del cappello 'quite firm' (First Nature) -> fibrosa/elastica/soda."
     },
     "cortinarius-rubellus": {
       "latin": "Cortinarius rubellus",
@@ -4559,6 +5902,34 @@
           8,
           9,
           10
+        ],
+        "spore_print": [
+          "ruggine",
+          "ocra",
+          "bruno",
+          "crema",
+          "giallo"
+        ],
+        "cap_veil": null,
+        "latex": false,
+        "flesh_texture": [
+          "fibrosa",
+          "soda"
+        ],
+        "cap_surface": [
+          "squamosa",
+          "asciutta",
+          "vellutata/feltrata"
+        ],
+        "gill_attachment": [
+          "adnate",
+          "smarginate",
+          "decorrenti"
+        ],
+        "stem_base": [
+          "normale",
+          "bulbosa",
+          "assottigliata"
         ]
       },
       "field_rules": [
@@ -4581,6 +5952,14 @@
         {
           "title": "Wikidata Q944328 (Cortinarius rubellus)",
           "url": "https://www.wikidata.org/wiki/Q944328"
+        },
+        {
+          "title": "Wikipedia en - Cortinarius rubellus",
+          "url": "https://en.wikipedia.org/wiki/Cortinarius_rubellus"
+        },
+        {
+          "title": "First Nature - Cortinarius rubellus",
+          "url": "https://www.first-nature.com/fungi/cortinarius-rubellus.php"
         }
       ],
       "trees": [
@@ -4589,7 +5968,8 @@
       ],
       "lookalike_of": [
         "mellea"
-      ]
+      ],
+      "traits_notes": "MORTALE (orellanina). Sporata: First Nature bruno-ruggine rossastro, it.wiki ocra; l'infobox di en.wiki dice 'cream to yellow' (probabile errore, ma inclusi crema/giallo per prudenza come da regola 3). Cappello asciutto, finemente squamuloso-fibrilloso, opaco. Cortina giallastra nei giovani, resti gialli sul gambo a bande: residui al margine del cappello non documentati ma possibili -> cap_veil=null. Lamelle: it.wiki 'smarginato-decorrenti, uncinate', infobox 'adnate' -> tutte e tre. Gambo: en.wiki 'bulbous base', it.wiki si allarga a ~2 cm alla base, First Nature 'tapers slightly towards the base' -> normale+bulbosa+assottigliata. Consistenza carne non descritta: fibrosa+soda (gambo fibrilloso tipico dei Cortinarius), per prudenza."
     },
     "gymnopilus-junonius": {
       "latin": "Gymnopilus junonius",
@@ -4638,6 +6018,31 @@
           9,
           10,
           11
+        ],
+        "spore_print": [
+          "ruggine",
+          "bruno"
+        ],
+        "cap_veil": null,
+        "latex": false,
+        "flesh_texture": [
+          "soda",
+          "fibrosa"
+        ],
+        "cap_surface": [
+          "squamosa",
+          "asciutta",
+          "liscia"
+        ],
+        "gill_attachment": [
+          "adnate",
+          "decorrenti",
+          "smarginate"
+        ],
+        "stem_base": [
+          "normale",
+          "assottigliata",
+          "bulbosa"
         ]
       },
       "field_rules": [
@@ -4660,6 +6065,14 @@
         {
           "title": "Wikidata Q1830008 (Gymnopilus junonius)",
           "url": "https://www.wikidata.org/wiki/Q1830008"
+        },
+        {
+          "title": "First Nature - Gymnopilus junonius",
+          "url": "https://www.first-nature.com/fungi/gymnopilus-junonius.php"
+        },
+        {
+          "title": "MushroomExpert - Gymnopilus junonius",
+          "url": "https://www.mushroomexpert.com/gymnopilus_junonius.html"
         }
       ],
       "trees": [
@@ -4669,7 +6082,8 @@
       ],
       "lookalike_of": [
         "mellea"
-      ]
+      ],
+      "traits_notes": "Sporata ruggine/bruno-ruggine, arancio-ruggine (tutte le fonti), infobox bruno-rossastro -> ruggine+bruno. Cappello asciutto, fibrilloso-squamoso (en.wiki 'dry scaly'), MushroomExpert 'finely silky' -> squamosa+asciutta+liscia. Cortina gialla che lascia frammenti al bordo del cappello (First Nature) -> cap_veil=null (resti di cortina marginali, non verruche). Lamelle adnate/sub-decorrenti; MushroomExpert 'narrowly attached' -> aggiunto smarginate per prudenza. Gambo spesso assottigliato in basso (en.wiki), bulboso o clavato (First Nature), uguale o ventricoso (MushroomExpert) -> tre valori. Carne soda e spessa; gambo fibroso sotto l'anello. Pagina it.wiki non esistente (404)."
     },
     "pholiota-squarrosa": {
       "latin": "Pholiota squarrosa",
@@ -4717,6 +6131,29 @@
           9,
           10,
           11
+        ],
+        "spore_print": [
+          "ruggine",
+          "bruno"
+        ],
+        "cap_veil": null,
+        "latex": false,
+        "flesh_texture": [
+          "soda",
+          "elastica/coriacea"
+        ],
+        "cap_surface": [
+          "asciutta",
+          "squamosa"
+        ],
+        "gill_attachment": [
+          "adnate",
+          "smarginate",
+          "decorrenti"
+        ],
+        "stem_base": [
+          "normale",
+          "assottigliata"
         ]
       },
       "field_rules": [
@@ -4739,6 +6176,22 @@
         {
           "title": "Wikidata Q1574926 (Pholiota squarrosa)",
           "url": "https://www.wikidata.org/wiki/Q1574926"
+        },
+        {
+          "title": "First Nature - Pholiota squarrosa",
+          "url": "https://www.first-nature.com/fungi/pholiota-squarrosa.php"
+        },
+        {
+          "title": "MushroomExpert - Pholiota squarrosa",
+          "url": "https://www.mushroomexpert.com/pholiota_squarrosa.html"
+        },
+        {
+          "title": "Naturalis Linnaeus - Pholiota squarrosa",
+          "url": "https://mushrooms.linnaeus.naturalis.nl/linnaeus_ng/app/views/species/taxon.php?id=100263"
+        },
+        {
+          "title": "Landcare Virtual Mycota - Pholiota squarrosa",
+          "url": "https://virtualmycota.landcareresearch.co.nz/webforms/vM_Species_Details.aspx?pk=29990"
         }
       ],
       "trees": [
@@ -4747,7 +6200,8 @@
       ],
       "lookalike_of": [
         "mellea"
-      ]
+      ],
+      "traits_notes": "Sporata bruno-cannella/ruggine (Wikipedia, First Nature, MushroomExpert). Cappello asciutto e coperto di squame rialzate concentriche. cap_veil messo a null: le fonti descrivono squame della cuticola e un velo parziale che forma l'anello, ma non verruche asportabili. Le squame grosse però possono sembrare resti di velo, quindi null per non escluderlo dal filtro. Lamelle adnate, spesso uncinate (Wikipedia), oppure un po' decorrenti (MushroomExpert). Carne soda (First Nature) e tenace (Linnaeus). Gambo di larghezza uniforme (Wikipedia), un po' ristretto verso la base (descrizione NZ): normale e assottigliata."
     },
     "armillaria-tabescens": {
       "latin": "Desarmillaria tabescens",
@@ -4797,6 +6251,27 @@
           9,
           10,
           11
+        ],
+        "spore_print": [
+          "bianco",
+          "crema"
+        ],
+        "cap_veil": false,
+        "latex": false,
+        "flesh_texture": [
+          "fibrosa",
+          "elastica/coriacea"
+        ],
+        "cap_surface": [
+          "asciutta",
+          "squamosa"
+        ],
+        "gill_attachment": [
+          "decorrenti",
+          "adnate"
+        ],
+        "stem_base": [
+          "assottigliata"
         ]
       },
       "field_rules": [
@@ -4823,6 +6298,10 @@
         {
           "title": "Wikidata Q2449977 (Armillaria tabescens)",
           "url": "https://www.wikidata.org/wiki/Q2449977"
+        },
+        {
+          "title": "MushroomExpert - Armillaria tabescens",
+          "url": "https://www.mushroomexpert.com/armillaria_tabescens.html"
         }
       ],
       "trees": [
@@ -4837,7 +6316,8 @@
       "lookalike_of": [
         "mellea"
       ],
-      "caution": "come il chiodino: tossico crudo, va prebollito e cotto a lungo."
+      "caution": "come il chiodino: tossico crudo, va prebollito e cotto a lungo.",
+      "traits_notes": "Sporata bianca (MushroomExpert) o bianca/crema pallido (Wikipedia IT). Cappello asciutto con squamette più scure. Niente anello e velo nudo, quindi cap_veil false. La carne è fragile nel cappello ed elastica-coriacea, quasi legnosa, nel gambo, che è fibroso. Lamelle appena decorrenti o quasi (adnate-decorrenti). Gambo assottigliato alla base, con basi saldate nel cespo."
     },
     "russula-heterophylla": {
       "latin": "Russula heterophylla",
@@ -4886,6 +6366,28 @@
           8,
           9,
           10
+        ],
+        "spore_print": [
+          "bianco"
+        ],
+        "cap_veil": false,
+        "latex": false,
+        "flesh_texture": [
+          "gessosa",
+          "soda"
+        ],
+        "cap_surface": [
+          "viscida",
+          "liscia",
+          "asciutta"
+        ],
+        "gill_attachment": [
+          "adnate",
+          "decorrenti"
+        ],
+        "stem_base": [
+          "normale",
+          "assottigliata"
         ]
       },
       "field_rules": [
@@ -4912,6 +6414,10 @@
         {
           "title": "Wikidata Q1415480 (Russula heterophylla)",
           "url": "https://www.wikidata.org/wiki/Q1415480"
+        },
+        {
+          "title": "Wikipedia EN - Russula heterophylla",
+          "url": "https://en.wikipedia.org/wiki/Russula_heterophylla"
         }
       ],
       "trees": [
@@ -4921,7 +6427,8 @@
       ],
       "lookalike_of": [
         "virescens"
-      ]
+      ],
+      "traits_notes": "Sporata bianca (Wikipedia IT ed EN). Cuticola un po' viscida con l'umido, lucida e liscia, a volte screpolata col secco. Carne compatta: Wikipedia IT dice anche 'alquanto elastica', ma come tutte le Russula si spezza netta, quindi gessosa più soda. Lamelle annesse, un po' decorrenti. Gambo cilindrico, spesso assottigliato alla base."
     },
     "russula-olivacea": {
       "latin": "Russula olivacea",
@@ -4973,6 +6480,29 @@
           8,
           9,
           10
+        ],
+        "spore_print": [
+          "giallo",
+          "ocra"
+        ],
+        "cap_veil": false,
+        "latex": false,
+        "flesh_texture": [
+          "gessosa",
+          "soda"
+        ],
+        "cap_surface": [
+          "asciutta",
+          "liscia",
+          "vellutata/feltrata"
+        ],
+        "gill_attachment": [
+          "adnate",
+          "libere"
+        ],
+        "stem_base": [
+          "normale",
+          "assottigliata"
         ]
       },
       "field_rules": [
@@ -4995,6 +6525,14 @@
         {
           "title": "Wikidata Q241024 (Russula olivacea)",
           "url": "https://www.wikidata.org/wiki/Q241024"
+        },
+        {
+          "title": "Wikipedia EN - Russula olivacea",
+          "url": "https://en.wikipedia.org/wiki/Russula_olivacea"
+        },
+        {
+          "title": "MykoWeb (California Fungi) - Russula olivacea",
+          "url": "https://mykoweb.com/CAF/species/Russula_olivacea.html"
         }
       ],
       "trees": [
@@ -5003,7 +6541,8 @@
       ],
       "lookalike_of": [
         "virescens"
-      ]
+      ],
+      "traits_notes": "Sporata giallo-ocra (Wikipedia IT), gialla (EN), giallo pallido (MykoWeb). Cuticola opaca, asciutta e glabra. Ho aggiunto vellutata/feltrata solo per prudenza, perché è un taxon tossico e la cuticola opaca può sembrare vellutata: nessuna fonte letta lo dice in modo esplicito. Carne soda e compatta, lamelle fragili, gessosa come nel genere. Lamelle adnate o annesse (MykoWeb); con 'libere' copro l'inserzione stretta delle annesse, sempre per prudenza. Gambo cilindrico, base un po' arrotondata (Wikipedia IT) o a volte appuntita (MykoWeb)."
     },
     "russula-aeruginea": {
       "latin": "Russula aeruginea",
@@ -5051,6 +6590,30 @@
           8,
           9,
           10
+        ],
+        "spore_print": [
+          "crema",
+          "giallo"
+        ],
+        "cap_veil": false,
+        "latex": false,
+        "flesh_texture": [
+          "gessosa",
+          "soda"
+        ],
+        "cap_surface": [
+          "viscida",
+          "liscia",
+          "asciutta"
+        ],
+        "gill_attachment": [
+          "adnate",
+          "smarginate",
+          "decorrenti"
+        ],
+        "stem_base": [
+          "normale",
+          "assottigliata"
         ]
       },
       "field_rules": [
@@ -5077,6 +6640,14 @@
         {
           "title": "Wikidata Q1323740 (Russula aeruginea)",
           "url": "https://www.wikidata.org/wiki/Q1323740"
+        },
+        {
+          "title": "Wikipedia EN - Russula aeruginea",
+          "url": "https://en.wikipedia.org/wiki/Russula_aeruginea"
+        },
+        {
+          "title": "First Nature - Russula aeruginea",
+          "url": "https://www.first-nature.com/fungi/russula-aeruginea.php"
         }
       ],
       "trees": [
@@ -5085,7 +6656,8 @@
       ],
       "lookalike_of": [
         "virescens"
-      ]
+      ],
+      "traits_notes": "Sporata bianco-crema (Wikipedia IT), crema (First Nature), crema-gialla (EN). Cuticola viscida e lucida con l'umido, 'greasy' (First Nature); da secca è asciutta e liscia. Carne fragile (gessosa), soda da giovane. Lamelle annesse o adnate, 'quasi decorrenti o sinuate' (Wikipedia IT). Gambo cilindrico, a volte assottigliato alla base (First Nature)."
     },
     "chalciporus-piperatus": {
       "latin": "Chalciporus piperatus",
@@ -5134,6 +6706,26 @@
           9,
           10,
           11
+        ],
+        "spore_print": [
+          "ruggine",
+          "bruno",
+          "ocra"
+        ],
+        "cap_veil": false,
+        "latex": false,
+        "flesh_texture": [
+          "soda"
+        ],
+        "cap_surface": [
+          "asciutta",
+          "viscida",
+          "liscia"
+        ],
+        "gill_attachment": null,
+        "stem_base": [
+          "normale",
+          "assottigliata"
         ]
       },
       "field_rules": [
@@ -5156,6 +6748,14 @@
         {
           "title": "Wikidata Q674065 (Chalciporus piperatus)",
           "url": "https://www.wikidata.org/wiki/Q674065"
+        },
+        {
+          "title": "Wikipedia EN - Chalciporus piperatus",
+          "url": "https://en.wikipedia.org/wiki/Chalciporus_piperatus"
+        },
+        {
+          "title": "First Nature - Chalciporus piperatus",
+          "url": "https://www.first-nature.com/fungi/chalciporus-piperatus.php"
         }
       ],
       "trees": [
@@ -5165,7 +6765,8 @@
       ],
       "lookalike_of": [
         "suillus"
-      ]
+      ],
+      "traits_notes": "Sporata cannella (First Nature), da bruna a cannella (EN), rosso-cannella in massa con tabella 'ocra' (Wikipedia IT): metto ruggine, bruno e ocra, e niente verde-oliva perché nessuna fonte lo cita. Cappello liscio, vischioso con l'umido e lucido da secco. Carne soda da giovane, spugnosa e tenera da matura: l'ho resa con 'soda' perché nel vocabolario non c'è un valore per 'spugnosa'. Ha pori, quindi gill_attachment null. Gambo cilindrico e uniforme, oppure un po' assottigliato verso la base gialla (First Nature). Wikipedia IT ed EN lo dicono invece un po' ingrossato alla base, ma non c'è un bulbo netto."
     },
     "suillus-bovinus": {
       "latin": "Suillus bovinus",
@@ -5213,6 +6814,24 @@
           9,
           10,
           11
+        ],
+        "spore_print": [
+          "verde-oliva",
+          "bruno"
+        ],
+        "cap_veil": false,
+        "latex": false,
+        "flesh_texture": [
+          "elastica/coriacea"
+        ],
+        "cap_surface": [
+          "viscida",
+          "liscia"
+        ],
+        "gill_attachment": null,
+        "stem_base": [
+          "normale",
+          "assottigliata"
         ]
       },
       "field_rules": [
@@ -5235,6 +6854,14 @@
         {
           "title": "Wikidata Q1165762 (Suillus bovinus)",
           "url": "https://www.wikidata.org/wiki/Q1165762"
+        },
+        {
+          "title": "Wikipedia EN - Suillus bovinus",
+          "url": "https://en.wikipedia.org/wiki/Suillus_bovinus"
+        },
+        {
+          "title": "First Nature - Suillus bovinus",
+          "url": "https://www.first-nature.com/fungi/suillus-bovinus.php"
         }
       ],
       "trees": [
@@ -5244,7 +6871,8 @@
       ],
       "lookalike_of": [
         "suillus"
-      ]
+      ],
+      "traits_notes": "Sporata bruno-oliva (EN), oliva in massa (Wikipedia IT), verde-oliva o bruna (First Nature). Cuticola vischiosa con l'umido, liscia e lucida, asportabile. La carne è spugnosa e gommosa (EN, 'spongy and rubbery'), quindi elastica/coriacea e non soda. Non c'è anello né velo. Il gambo tende ad assottigliarsi verso la base (EN), ma Wikipedia IT lo dice lievemente ingrossato alla base e First Nature claviforme da giovane: metto normale e assottigliata, mai un bulbo netto."
     },
     "tricholoma-pardinum": {
       "latin": "Tricholoma pardinum",
@@ -5293,6 +6921,28 @@
           9,
           10,
           11
+        ],
+        "spore_print": [
+          "bianco"
+        ],
+        "cap_veil": null,
+        "latex": false,
+        "flesh_texture": [
+          "soda",
+          "fibrosa"
+        ],
+        "cap_surface": [
+          "asciutta",
+          "squamosa",
+          "viscida"
+        ],
+        "gill_attachment": [
+          "libere",
+          "smarginate"
+        ],
+        "stem_base": [
+          "normale",
+          "bulbosa"
         ]
       },
       "field_rules": [
@@ -5319,6 +6969,18 @@
         {
           "title": "Wikidata Q1928462 (Tricholoma pardinum)",
           "url": "https://www.wikidata.org/wiki/Q1928462"
+        },
+        {
+          "title": "Wikipedia EN - Tricholoma pardinum",
+          "url": "https://en.wikipedia.org/wiki/Tricholoma_pardinum"
+        },
+        {
+          "title": "First Nature - Tricholoma pardinum",
+          "url": "https://www.first-nature.com/fungi/tricholoma-pardinum.php"
+        },
+        {
+          "title": "MykoWeb (California Fungi) - Tricholoma pardinum",
+          "url": "https://www.mykoweb.com/CAF/species/Tricholoma_pardinum.html"
         }
       ],
       "trees": [
@@ -5328,7 +6990,8 @@
       ],
       "lookalike_of": [
         "terreum"
-      ]
+      ],
+      "traits_notes": "TOSSICO, quindi valori larghi. Sporata bianca (tutte le fonti). Cappello asciutto (MykoWeb) con squame o placche scure concentriche. Ho aggiunto 'viscida' perché la var. unguentatum ha il cappello unto (Wikipedia EN). cap_veil a null: le fonti dicono velo nudo, niente anello né volva, e le placche sono della cuticola; però le placche tigrate si possono scambiare per resti di velo, quindi null per non escluderlo. Lamelle libere (EN, First Nature, infobox IT) o uncinate al gambo (testo IT): metto libere e smarginate. Gambo da uniforme a clavato, con la base ingrossata fino al doppio del diametro (First Nature), a volte obeso: normale e bulbosa. Carne compatta, gambo pieno e fibrilloso; nessuna fonte usa la parola 'fibrosa', l'ho aggiunta per prudenza."
     },
     "tricholoma-virgatum": {
       "latin": "Tricholoma virgatum",
@@ -5377,6 +7040,28 @@
           9,
           10,
           11
+        ],
+        "spore_print": [
+          "bianco"
+        ],
+        "cap_veil": false,
+        "latex": false,
+        "flesh_texture": [
+          "fibrosa",
+          "soda"
+        ],
+        "cap_surface": [
+          "asciutta",
+          "liscia",
+          "squamosa"
+        ],
+        "gill_attachment": [
+          "smarginate",
+          "adnate"
+        ],
+        "stem_base": [
+          "normale",
+          "bulbosa"
         ]
       },
       "field_rules": [
@@ -5399,6 +7084,14 @@
         {
           "title": "Wikidata Q594027 (Tricholoma virgatum)",
           "url": "https://www.wikidata.org/wiki/Q594027"
+        },
+        {
+          "title": "First Nature - Tricholoma virgatum",
+          "url": "https://www.first-nature.com/fungi/tricholoma-virgatum.php"
+        },
+        {
+          "title": "MushroomExpert - Tricholoma virgatum",
+          "url": "https://mushroomexpert.com/tricholoma_virgatum.html"
         }
       ],
       "trees": [
@@ -5408,7 +7101,8 @@
       ],
       "lookalike_of": [
         "terreum"
-      ]
+      ],
+      "traits_notes": "TOSSICO, quindi valori larghi. Sporata bianca. Cappello conico con umbone acuto, asciutto e sericeo, con fibrille radiali innate o appressate e a volte squamette fini: asciutta, liscia e squamosa. Nessuna fonte parla di velo. Lamelle sinuate o smarginate (First Nature), adnexed nell'infobox EN. Gambo cilindrico o appena clavato, 'equal or somewhat swollen below' (MushroomExpert): metto normale e, per prudenza, bulbosa, anche se un bulbo netto non c'è. Nessuna fonte descrive la consistenza della carne; il gambo ha fibre sericee appressate, quindi fibrosa e soda (dato debole)."
     },
     "tricholoma-sciodes": {
       "latin": "Tricholoma sciodes",
@@ -5456,6 +7150,27 @@
           9,
           10,
           11
+        ],
+        "spore_print": [
+          "bianco"
+        ],
+        "cap_veil": false,
+        "latex": false,
+        "flesh_texture": [
+          "elastica/coriacea",
+          "fibrosa"
+        ],
+        "cap_surface": [
+          "asciutta",
+          "vellutata/feltrata",
+          "liscia",
+          "squamosa"
+        ],
+        "gill_attachment": [
+          "smarginate"
+        ],
+        "stem_base": [
+          "normale"
         ]
       },
       "field_rules": [
@@ -5478,6 +7193,14 @@
         {
           "title": "Wikidata Q10646429 (Tricholoma sciodes)",
           "url": "https://www.wikidata.org/wiki/Q10646429"
+        },
+        {
+          "title": "First Nature - Tricholoma sciodes",
+          "url": "https://www.first-nature.com/fungi/tricholoma-sciodes.php"
+        },
+        {
+          "title": "Mycocharentes - Tricholoma sciodes (scheda)",
+          "url": "https://mycocharentes.fr/pdf1/2071.pdf"
         }
       ],
       "trees": [
@@ -5485,7 +7208,8 @@
       ],
       "lookalike_of": [
         "terreum"
-      ]
+      ],
+      "traits_notes": "Sporata bianca (First Nature; Wikipedia IT non la riporta). Cuticola 'glabra, asciutta, feltrata' (Wikipedia IT); una scheda francese, vista solo nel riassunto della ricerca e non aperta, la dice fibrillosa o finemente squamulosa. Carne elastica (Wikipedia IT), gambo fibrilloso. Lamelle smarginate con dentino, filo punteggiato di nero. Gambo cilindrico, appena allargato verso la base (First Nature): normale, senza bulbo netto."
     },
     "entoloma-sinuatum": {
       "latin": "Entoloma sinuatum",
@@ -5533,6 +7257,31 @@
           8,
           9,
           10
+        ],
+        "spore_print": [
+          "rosa",
+          "bruno"
+        ],
+        "cap_veil": false,
+        "latex": false,
+        "flesh_texture": [
+          "soda",
+          "fibrosa"
+        ],
+        "cap_surface": [
+          "asciutta",
+          "viscida",
+          "liscia",
+          "squamosa"
+        ],
+        "gill_attachment": [
+          "smarginate",
+          "adnate",
+          "libere"
+        ],
+        "stem_base": [
+          "normale",
+          "bulbosa"
         ]
       },
       "field_rules": [
@@ -5555,6 +7304,18 @@
         {
           "title": "Wikidata Q1424216 (Entoloma sinuatum)",
           "url": "https://www.wikidata.org/wiki/Q1424216"
+        },
+        {
+          "title": "Wikipedia EN - Entoloma sinuatum",
+          "url": "https://en.wikipedia.org/wiki/Entoloma_sinuatum"
+        },
+        {
+          "title": "First Nature - Entoloma sinuatum",
+          "url": "https://www.first-nature.com/fungi/entoloma-sinuatum.php"
+        },
+        {
+          "title": "Comunidad de Madrid - scheda Entoloma sinuatum/nidorosum/rhodopolium",
+          "url": "https://www.comunidad.madrid/sites/default/files/doc/sanidad/sali/d_entoloma_sinuatum_entoloma_nidorosum_y_entoloma_rhodopolium.pdf"
         }
       ],
       "trees": [
@@ -5565,7 +7326,8 @@
       ],
       "lookalike_of": [
         "terreum"
-      ]
+      ],
+      "traits_notes": "TOSSICO, quindi valori larghi. Sporata rosa-salmone (Wikipedia IT, First Nature), ma il testo di Wikipedia EN dice 'reddish-brown': aggiungo bruno. Cappello fibroso per fibrille innate (Wikipedia IT) e un po' vischioso da giovane (First Nature): metto asciutta, viscida e liscia, più squamosa per prudenza, nel caso le fibrille vengano lette come fibrille in rilievo. Velo nudo, nessun anello. Lamelle sinuate o smarginate, quasi libere (EN), adnate nell'infobox (IT, EN). Gambo cilindrico, a volte bulboso alla base (EN, First Nature). Carne soda ('firme', scheda di Madrid, che ho visto solo nel riassunto della ricerca perché il PDF dà 404). Ho aggiunto 'fibrosa' per prudenza, nessuna fonte la dice."
     },
     "inocybe": {
       "latin": "Inocybe spp.",
@@ -5629,6 +7391,32 @@
           9,
           10,
           11
+        ],
+        "spore_print": [
+          "bruno",
+          "ocra"
+        ],
+        "cap_veil": null,
+        "latex": false,
+        "flesh_texture": [
+          "fibrosa"
+        ],
+        "cap_surface": [
+          "asciutta",
+          "squamosa",
+          "vellutata/feltrata",
+          "liscia",
+          "viscida"
+        ],
+        "gill_attachment": [
+          "libere",
+          "adnate",
+          "smarginate",
+          "decorrenti"
+        ],
+        "stem_base": [
+          "normale",
+          "bulbosa"
         ]
       },
       "field_rules": [
@@ -5651,6 +7439,22 @@
         {
           "title": "Wikidata Q784343 (Inocybe)",
           "url": "https://www.wikidata.org/wiki/Q784343"
+        },
+        {
+          "title": "Wikipedia en - Inocybe",
+          "url": "https://en.wikipedia.org/wiki/Inocybe"
+        },
+        {
+          "title": "MushroomExpert - Inocybe",
+          "url": "https://www.mushroomexpert.com/inocybe.html"
+        },
+        {
+          "title": "MushroomExpert - Inocybe lilacina",
+          "url": "https://mushroomexpert.com/inocybe_lilacina.html"
+        },
+        {
+          "title": "First Nature - Inocybe geophylla",
+          "url": "https://www.first-nature.com/fungi/inocybe-geophylla.php"
         }
       ],
       "trees": [
@@ -5664,7 +7468,8 @@
       ],
       "lookalike_of": [
         "terreum"
-      ]
+      ],
+      "traits_notes": "Genere ampio e tossico: valori volutamente larghi. Sporata bruna (bruno-tabacco), aggiunto 'ocra' per sicurezza. Cappello fibrilloso/sericeo, da liscio-sericeo a squamoso, lacerato o lanoso (Mallocybe); 'viscida' incluso perche' alcune specie (es. I. lilacina) sono vischiose da giovani/umide. cap_veil null: il velo generale non e' distinto dalla cuticola (it.wiki) ma il cappello puo' portare residui di velo/cortina al margine (en.wiki). Lamelle quasi libere, adnate/smarginate (adnexed), adnato-subdecorrenti in Mallocybe, decorrenti in Tubariomyces. Base del gambo normale o con bulbo (anche marginato nel gruppo Marginatae)."
     },
     "cortinarius-traganus": {
       "latin": "Cortinarius traganus",
@@ -5710,6 +7515,30 @@
           8,
           9,
           10
+        ],
+        "spore_print": [
+          "ruggine",
+          "bruno"
+        ],
+        "cap_veil": null,
+        "latex": false,
+        "flesh_texture": [
+          "fibrosa",
+          "soda"
+        ],
+        "cap_surface": [
+          "asciutta",
+          "liscia",
+          "vellutata/feltrata",
+          "squamosa"
+        ],
+        "gill_attachment": [
+          "adnate",
+          "smarginate"
+        ],
+        "stem_base": [
+          "bulbosa",
+          "normale"
         ]
       },
       "field_rules": [
@@ -5732,6 +7561,14 @@
         {
           "title": "Wikidata Q948871 (Cortinarius traganus)",
           "url": "https://www.wikidata.org/wiki/Q948871"
+        },
+        {
+          "title": "MykoWeb - Cortinarius traganus",
+          "url": "https://mykoweb.com/CAF/species/Cortinarius_traganus.html"
+        },
+        {
+          "title": "Beaty Museum UBC - Cortinarius traganus",
+          "url": "https://explore.beatymuseum.ubc.ca/mushroomsup/C_traganus.html"
         }
       ],
       "trees": [
@@ -5740,7 +7577,8 @@
       ],
       "lookalike_of": [
         "nuda"
-      ]
+      ],
+      "traits_notes": "Cappello asciutto, sericeo-lucido o tomentoso al margine, poi screpolato in piccole squame; spesso con frammenti membranosi di velo bronzei e placche biancastre adese: cap_veil messo null (presenti ma non costanti, taxon tossico). Sporata bruno-ruggine. Lamelle adnate, a volte leggermente smarginate. Gambo tenace, spugnoso all'interno, claviforme-bulboso, con velo biancastro a calza. Nessuna fonte italiana dettagliata trovata."
     },
     "cortinarius-violaceus": {
       "latin": "Cortinarius violaceus",
@@ -5787,6 +7625,29 @@
           8,
           9,
           10
+        ],
+        "spore_print": [
+          "ruggine",
+          "ocra"
+        ],
+        "cap_veil": false,
+        "latex": false,
+        "flesh_texture": [
+          "fibrosa",
+          "soda"
+        ],
+        "cap_surface": [
+          "asciutta",
+          "vellutata/feltrata",
+          "squamosa"
+        ],
+        "gill_attachment": [
+          "adnate",
+          "smarginate"
+        ],
+        "stem_base": [
+          "bulbosa",
+          "normale"
         ]
       },
       "field_rules": [
@@ -5809,6 +7670,10 @@
         {
           "title": "Wikidata Q167887 (Cortinarius violaceus)",
           "url": "https://www.wikidata.org/wiki/Q167887"
+        },
+        {
+          "title": "Wikipedia en - Cortinarius violaceus",
+          "url": "https://en.wikipedia.org/wiki/Cortinarius_violaceus"
         }
       ],
       "trees": [
@@ -5818,7 +7683,8 @@
       ],
       "lookalike_of": [
         "nuda"
-      ]
+      ],
+      "traits_notes": "Cappello tomentoso, secco, con fini squamette feltrate (en: 'fine, downy scales'), non viscido (talvolta untuoso). Sporata ocra-fulva (it.wiki) / ruggine (en.wiki): messi entrambi. Lamelle sinuato-adnate. Gambo claviforme con base bulbosa fino a 4 cm. Carne descritta 'molle, spugnosa' (it.wiki): 'soda' incluso per il cappello carnoso, ma incerto. Cortina violacea fugace, nessun residuo di velo sul cappello."
     },
     "inocybe-lilacina": {
       "latin": "Inocybe lilacina",
@@ -5865,6 +7731,28 @@
           9,
           10,
           11
+        ],
+        "spore_print": [
+          "bruno"
+        ],
+        "cap_veil": false,
+        "latex": false,
+        "flesh_texture": [
+          "fibrosa"
+        ],
+        "cap_surface": [
+          "asciutta",
+          "liscia",
+          "squamosa",
+          "viscida"
+        ],
+        "gill_attachment": [
+          "adnate",
+          "smarginate"
+        ],
+        "stem_base": [
+          "normale",
+          "bulbosa"
         ]
       },
       "field_rules": [
@@ -5887,6 +7775,22 @@
         {
           "title": "Wikidata Q1824920 (Inocybe geophylla var. lilacina)",
           "url": "https://www.wikidata.org/wiki/Q1824920"
+        },
+        {
+          "title": "Wikipedia en - Inocybe geophylla",
+          "url": "https://en.wikipedia.org/wiki/Inocybe_geophylla"
+        },
+        {
+          "title": "First Nature - Inocybe geophylla var. lilacina",
+          "url": "https://www.first-nature.com/fungi/inocybe-geophylla-lilacina.php"
+        },
+        {
+          "title": "MushroomExpert - Inocybe lilacina",
+          "url": "https://mushroomexpert.com/inocybe_lilacina.html"
+        },
+        {
+          "title": "Minnesota Seasons - Lilac Fibrecap",
+          "url": "https://minnesotaseasons.com/Fungi/Lilac_Fibrecap.html"
         }
       ],
       "trees": [
@@ -5896,7 +7800,8 @@
       ],
       "lookalike_of": [
         "nuda"
-      ]
+      ],
+      "traits_notes": "Cappello liscio-sericeo con fibrille radiali che col secco si fessurano ('squamosa' incluso per le fibrille in rilievo); asciutto ma vischioso da giovane/umido secondo mushroomexpert e Minnesota Seasons -> 'viscida' incluso. Sporata bruno opaca (tabacco). Lamelle smarginate/adnexed o adnate. Base del gambo leggermente ingrossata o con piccolo bulbo. Cortina biancastra effimera che copre le lamelle nel giovane, nessun residuo sul cappello: cap_veil false (nota: il nome europeo e' usato per un taxon forse distinto da quello nordamericano)."
     },
     "mycena-pura": {
       "latin": "Mycena pura",
@@ -5951,6 +7856,27 @@
           10,
           11,
           12
+        ],
+        "spore_print": [
+          "bianco"
+        ],
+        "cap_veil": false,
+        "latex": false,
+        "flesh_texture": [
+          "fibrosa",
+          "elastica/coriacea"
+        ],
+        "cap_surface": [
+          "liscia",
+          "asciutta"
+        ],
+        "gill_attachment": [
+          "adnate",
+          "smarginate",
+          "decorrenti"
+        ],
+        "stem_base": [
+          "normale"
         ]
       },
       "field_rules": [
@@ -5973,6 +7899,22 @@
         {
           "title": "Wikidata Q1500783 (Mycena pura)",
           "url": "https://www.wikidata.org/wiki/Q1500783"
+        },
+        {
+          "title": "Wikipedia en - Mycena pura",
+          "url": "https://en.wikipedia.org/wiki/Mycena_pura"
+        },
+        {
+          "title": "First Nature - Mycena pura",
+          "url": "https://www.first-nature.com/fungi/mycena-pura.php"
+        },
+        {
+          "title": "MushroomExpert - Mycena pura",
+          "url": "https://mushroomexpert.com/mycena_pura.html"
+        },
+        {
+          "title": "Fungi of the Netherlands (Naturalis) - Mycena pura",
+          "url": "https://mushrooms.linnaeus.naturalis.nl/linnaeus_ng/app/views/species/taxon.php?id=100394"
         }
       ],
       "trees": [
@@ -5982,7 +7924,8 @@
       ],
       "lookalike_of": [
         "nuda"
-      ]
+      ],
+      "traits_notes": "Cappello glabro, liscio, igrofano, striato per trasparenza, 'moist or dry' (mushroomexpert): nessuna fonte lo dice viscido, quindi 'viscida' non incluso. Lamelle adnate, adnexed/uncinate ('attached by a tooth', sinuate-adnate) o leggermente decorrenti (first-nature). Gambo cavo, fragile, liscio, cilindrico, appena piu' largo alla base con fibrille bianche: 'normale'. Consistenza: gambo cartilagineo-fragile, non propriamente fibroso (Galloway Wild Foods lo contrappone al gambo fibroso di Laccaria): messi 'fibrosa' ed 'elastica/coriacea' per essere larghi (taxon tossico). Sporata bianca."
     },
     "laccaria-amethystina": {
       "latin": "Laccaria amethystina",
@@ -6029,6 +7972,28 @@
           9,
           10,
           11
+        ],
+        "spore_print": [
+          "bianco"
+        ],
+        "cap_veil": false,
+        "latex": false,
+        "flesh_texture": [
+          "fibrosa",
+          "elastica/coriacea"
+        ],
+        "cap_surface": [
+          "asciutta",
+          "liscia",
+          "squamosa"
+        ],
+        "gill_attachment": [
+          "adnate",
+          "smarginate",
+          "decorrenti"
+        ],
+        "stem_base": [
+          "normale"
         ]
       },
       "field_rules": [
@@ -6051,6 +8016,14 @@
         {
           "title": "Wikidata Q28492278 (Laccaria amethystina)",
           "url": "https://www.wikidata.org/wiki/Q28492278"
+        },
+        {
+          "title": "First Nature - Laccaria amethystina",
+          "url": "https://www.first-nature.com/fungi/laccaria-amethystina.php"
+        },
+        {
+          "title": "MushroomExpert - Laccaria amethystina",
+          "url": "https://mushroomexpert.com/laccaria_amethystina.html"
         }
       ],
       "trees": [
@@ -6064,7 +8037,9 @@
       "lookalike_of": [
         "nuda"
       ],
-      "caution": "accumula arsenico dal suolo: poca, e mai da zone contaminate."
+      "caution": "accumula arsenico dal suolo: poca, e mai da zone contaminate.",
+      "traits_notes": "Cappello igrofano, quasi glabro o finemente forforaceo/squamuloso al centro ('finely hairy-scaly, or nearly bald'). Lamelle spaziate, sinuate (en.wiki) o adnate, raramente decorrenti (mushroomexpert). Gambo fibroso, cavo, tenace, base uguale o appena ingrossata con fibrille/micelio lilla: 'normale'. Sporata bianca. Pagina it.wiki non disponibile (404)."
     }
-  }
+  },
+  "_note_traits_2": "Caratteri aggiunti il 2026-10-12 (sporata, velo, lattice, consistenza, superficie, attaccatura, base): ogni valore verificato su fonti lette, elencate in sources; dubbi e scelte in traits_notes. Taxa tossici e mortali: valori larghi per non escluderli; commestibili: solo valori con fonte."
 }

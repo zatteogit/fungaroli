@@ -119,7 +119,7 @@ const TREE_GROUPS = {
 };
 const FLESH = { nessuno: '#efe6d0', blu: '#2f5fb3', rosso: '#b23a2c', giallo: '#e2b52f', bruno: '#7a5434', nero: '#2b2826' };
 const QUESTIONS = [
-  { key: 'hymenophore', label: 'Cosa c\'è sotto il cappello?', short: 'Sotto il cappello', values: ['lamelle', 'pori', 'aculei', 'pliche', 'liscio'], icon: (v) => HYM_ICON[v], hint: 'Gira il fungo e guarda la parte sotto il cappello.',
+  { weight: 1.4, key: 'hymenophore', label: 'Cosa c\'è sotto il cappello?', short: 'Sotto il cappello', values: ['lamelle', 'pori', 'aculei', 'pliche', 'liscio'], icon: (v) => HYM_ICON[v], hint: 'Gira il fungo e guarda la parte sotto il cappello.',
     tip: { title: 'Lamelle, pori, aculei: come si distinguono', items: [
       ['lamelle', 'Lamelle', 'Lamine sottili, come le pagine di un libro, che vanno dal gambo al bordo. Es. ovolo, prataiolo.'],
       ['pori', 'Pori', 'Una spugna di tubetti con tanti forellini. Si stacca dalla carne come un cuscinetto. Es. porcino.'],
@@ -138,12 +138,12 @@ const QUESTIONS = [
   { key: 'growth', label: 'Come cresce?', short: 'Crescita', values: ['singolo', 'gregario', 'cespitoso'], art: (v) => ART[v], labels: { singolo: 'da solo', gregario: 'a gruppi sparsi', cespitoso: 'a cespi, uniti alla base' } },
   { key: 'cap_shape', label: 'Che forma ha il cappello?', short: 'Forma', values: Object.keys(SHAPE), art: (v) => SHAPE[v], labels: { imbuto: 'a imbuto, depresso', trombetta: 'a trombetta', ombrellato: 'a ombrello, con umbone', conico: 'conico o a campana' }, hint: 'Guardalo di profilo. Nei funghi giovani il cappello è più chiuso.' },
   { key: 'cap_size', label: 'Quanto è grande il cappello?', short: 'Dimensione', values: ['piccolo', 'medio', 'grande'], art: (v) => SIZE({ piccolo: 0.45, medio: 0.72, grande: 1 }[v]), labels: { piccolo: 'fino a 5 cm', medio: 'da 5 a 12 cm', grande: 'oltre 12 cm' }, hint: 'Il diametro. Una carta di credito è lunga 8,5 cm.' },
-  { key: 'trees', label: 'Vicino a quali alberi?', short: 'Alberi', values: Object.keys(TREE_GROUPS), text: true, get: (t) => t.trees,
+  { weight: 0.85, key: 'trees', label: 'Vicino a quali alberi?', short: 'Alberi', values: Object.keys(TREE_GROUPS), text: true, get: (t) => t.trees,
     match: (tv, v) => tv.some((x) => TREE_GROUPS[v].includes(x)), labels: { querce: 'querce (cerro, roverella, leccio)', pini: 'pini', abeti: 'abeti', carpino: 'carpino o nocciolo', 'legno morto': 'su legno morto' },
     hint: 'Molti funghi vivono in simbiosi con alberi precisi: guarda quelli entro pochi metri.' },
-  { key: 'smell', label: 'Che odore ha?', short: 'Odore', values: ['gradevole', 'farina', 'anice', 'rapa/terroso', 'sgradevole', 'nessuno'], text: true,
+  { weight: 0.75, key: 'smell', label: 'Che odore ha?', short: 'Odore', values: ['gradevole', 'farina', 'anice', 'rapa/terroso', 'sgradevole', 'nessuno'], text: true,
     labels: { gradevole: 'gradevole, di fungo', farina: 'di farina', anice: 'di anice', 'rapa/terroso': 'di rapa o terra', sgradevole: 'sgradevole', nessuno: 'quasi nessuno' }, hint: 'Annusa la carne appena tagliata e le lamelle. Non assaggiare.' },
-  { key: 'season', label: 'Quando l\'hai trovato?', short: 'Quando', values: ['adesso', 'primavera', 'estate', 'autunno', 'inverno'], text: true,
+  { weight: 0.5, key: 'season', label: 'Quando l\'hai trovato?', short: 'Quando', values: ['adesso', 'primavera', 'estate', 'autunno', 'inverno'], text: true,
     match: (tv, v) => monthsOf(v).some((m) => tv.includes(m)), labels: { adesso: `adesso (${MESE_IT[new Date().getMonth()]})` } },
   { key: 'gill_attachment', label: 'Come si attaccano le lamelle al gambo?', short: 'Attaccatura', values: Object.keys(ATTACH), art: (v) => ATTACH[v],
     labels: { libere: 'libere, non toccano il gambo', adnate: 'attaccate dritte', smarginate: 'con una tacca vicino al gambo', decorrenti: 'scendono sul gambo' },
@@ -154,11 +154,11 @@ const QUESTIONS = [
     labels: { asciutta: 'asciutta, opaca', liscia: 'liscia', viscida: 'viscida, appiccica', squamosa: 'con squame', 'vellutata/feltrata': 'vellutata' }, hint: 'Toccala con un dito. Con il bagnato molti cappelli sembrano viscidi.' },
   { key: 'latex', label: 'Spezzando una lamella esce un lattice?', short: 'Lattice', bool: true, art: (v) => LATEX[v], labels: { true: 'sì, gocce di "latte"', false: 'no' },
     when: () => !['pori', 'aculei'].includes(state.ans.hymenophore), hint: 'Rompi il bordo di una lamella o il gambo: nei lattari escono subito gocce bianche o colorate.' },
-  { key: 'flesh_texture', label: 'Come si spezza il gambo?', short: 'Gambo', values: Object.keys(TEXTURE), art: (v) => TEXTURE[v],
+  { weight: 0.85, key: 'flesh_texture', label: 'Come si spezza il gambo?', short: 'Gambo', values: Object.keys(TEXTURE), art: (v) => TEXTURE[v],
     labels: { gessosa: 'netto, come un gessetto', fibrosa: 'si sfilaccia in fibre', 'elastica/coriacea': 'si piega, elastico', soda: 'compatto e sodo' }, hint: 'Piegalo tra le dita finché si rompe.' },
   { key: 'stem_base', label: 'Com\'è la base del gambo?', short: 'Base', values: Object.keys(BASE), art: (v) => BASE[v],
     labels: { normale: 'dritta', bulbosa: 'con un bulbo', radicante: 'si allunga nel terreno', assottigliata: 'si assottiglia' }, hint: 'Estrai il fungo intero, senza tagliarlo: la base è spesso decisiva (le amanite mortali hanno bulbo e volva).' },
-  { key: 'spore_print', label: 'Di che colore è la sporata?', short: 'Sporata', values: Object.keys(SPORE), art: (v) => sporeArt(v),
+  { weight: 0.35, key: 'spore_print', label: 'Di che colore è la sporata?', short: 'Sporata', values: Object.keys(SPORE), art: (v) => sporeArt(v),
     labels: { 'bruno-violaceo': 'bruno-violacea', 'verde-oliva': 'bruno oliva' }, hint: 'Facoltativa: chiede qualche ora. Ma è uno dei caratteri più affidabili.',
     tip: { title: 'Come si fa la sporata', steps: ['Taglia il gambo e appoggia il cappello, lamelle in giù, su un foglio metà bianco e metà nero.', 'Copri con un bicchiere perché non secchi.', 'Dopo 2-6 ore solleva il cappello: la polvere rimasta è il colore delle spore.'] } },
   { key: 'stem_reticulum', label: 'Il gambo ha un reticolo in rilievo?', short: 'Reticolo', bool: true, art: (v) => ART[`ret_${v}`], labels: { true: 'sì, una rete', false: 'no, liscio' } },
@@ -235,7 +235,9 @@ function nextQuestion(list) {
     const n = counts.reduce((a, b) => a + b, 0);
     if (n < 2) continue;
     const h = -counts.filter(Boolean).reduce((s, c) => s + (c / n) * Math.log2(c / n), 0);
-    if (!best || h > best.h) best = { q, h };
+    // peso: la sporata chiede ore, stagione e odore aiutano poco a separare; prima i caratteri che vedi subito
+    const w = q.weight ?? 1;
+    if (!best || h * w > best.h) best = { q, h: h * w };
   }
   return best?.q || null;
 }
@@ -354,6 +356,8 @@ export function compareCta(edibleId) {
   const t = refOf(edibleId), n = t ? sosiaOf(t).length : 0;
   return n ? `<a class="ts-cta" href="#/riconosci/confronta/${esc(t.key)}"><span class="ts-cta-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 6h7v12H4zM13 6h7v12h-7z"/><path d="M7.5 10v4M16.5 10v4"/></svg></span><span><b>Confrontalo con ${n === 1 ? 'il sosia' : `i ${n} sosia`}</b><small>Solo i caratteri che li distinguono, in Riconosci</small></span><span class="ts-cta-go" aria-hidden="true">›</span></a>` : '';
 }
+// per la ricerca generale: le specie senza pagina propria (velenose e sosia), con la foto
+export const searchTaxa = () => TAXA.filter((t) => !t.edible_id || t.lookalike_of?.length).map((t) => ({ key: t.key, name: t.name, latin: t.latin, toxicity: t.toxicity, photo: photoOf(t), look: t.lookalike_of || [] }));
 export function setCompare(key, pick) { state.compare = key || ''; state.pick = pick || ''; }
 
 // righe del confronto: stessi disegni di Riconosci, un valore per lato
@@ -457,7 +461,7 @@ function renderCompare(box, ref, pick) {
 }
 
 // scheda breve per le specie senza pagina propria (velenose e sosia)
-function openTaxon(key) {
+export function openTaxon(key) {
   const t = TAXA.find((x) => x.key === key);
   if (!t) return;
   let dlg = document.getElementById('taxon-dlg');
@@ -522,8 +526,8 @@ export function renderIdentify(box) {
     ${ZONES.length ? `<div class="filter-rail id-zones" role="group" aria-label="Dove l'hai trovato"><span class="af-label">Zona</span><button type="button" class="chip" data-zone="" aria-pressed="${!state.zone}">Ovunque</button>${ZONES.map((z) => `<button type="button" class="chip" data-zone="${z.id}" aria-pressed="${state.zone === z.id}">${esc(z.title || z.name)}</button>`).join('')}</div>` : ''}
     ${!state.guided && answered.length ? '<div class="id-answers-head"><span></span><button type="button" class="af-add" id="id-reset">Ricomincia</button></div>' : ''}
     ${state.guided ? guidedMode() : allMode()}
-    <label class="search-box id-search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg><input id="id-q" type="search" placeholder="Oppure cerca: anello, blu, castagno…" value="${esc(state.q)}" autocomplete="off" aria-label="Cerca per nome o caratteristica"></label>
     <div class="id-head"><h2 class="sec-title">${list.length} ${list.length === 1 ? 'candidato' : 'candidati'}</h2></div>
+    <label class="search-box id-search id-filter"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M7 12h10M10 18h4"/></svg><input id="id-q" type="search" placeholder="Filtra i candidati: anello, blu, castagno…" value="${esc(state.q)}" autocomplete="off" aria-label="Filtra i candidati per parola"></label>
     ${deadly.length ? `<p class="id-deadly"><b>${deadly.length} ${deadly.length === 1 ? 'specie mortale compatibile' : 'specie mortali compatibili'}</b> con quello che hai indicato. Non raccogliere e non assaggiare nulla di cui non sei certo.</p>` : ''}
     <ul class="id-cards">${list.slice(0, 40).map(resultCard).join('')}</ul>
     ${RULES.length ? `<details class="sec"><summary>Regole generali di sicurezza</summary><div class="sec-body"><ul class="reasons">${RULES.map((r) => `<li${r.severity === 'critico' ? ' class="crit"' : ''}>${esc(r.text)}</li>`).join('')}</ul></div></details>` : ''}`;

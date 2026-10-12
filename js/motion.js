@@ -52,11 +52,13 @@ export function navigate(update, { nav = 'none', back = '' } = {}) {
 }
 
 // aggiornamento nella stessa vista (filtri, giorno, risposte): gli elementi con un nome si spostano, il resto sfuma
+// tocchi veloci: se una transizione e' ancora in corso, l'aggiornamento successivo si applica subito
+let softVT = null;
 export function soft(update) {
-  if (!canVT()) { update(); return; }
+  if (!canVT() || softVT) { update(); return; }
   root.dataset.nav = 'soft';
-  const vt = document.startViewTransition(update);
-  vt.finished.finally(() => { delete root.dataset.nav; });
+  softVT = document.startViewTransition(update);
+  softVT.finished.finally(() => { softVT = null; delete root.dataset.nav; });
 }
 
 // numeri degli anelli: contano da 0 al valore quando la vista e' appena entrata
