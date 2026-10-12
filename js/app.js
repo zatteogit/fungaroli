@@ -725,7 +725,7 @@ function renderHome() {
         <span class="cover-title">${esc(title)}</span>${sub ? `<span class="cover-sub">${esc(sub)}</span>` : ''}
         <span class="cover-sp">${thumb(hero.d.best.species.id, 44)}<span><span class="cover-sp-name"><b>${esc(hero.d.best.species.name)}</b> <b class="pc">${hero.s}</b></span>
           <small>${intornoA(hero.d.best.band)} ${hero.d.best.band} m${also.length ? ` · anche ${also.join('')}` : ''}</small></span></span>
-        <span class="facts" aria-label="L'uscita in breve">${t ? fact('clock', `<span class="fk">entro le </span><b>${fmtRough(t.arrive, 15, 'floor')}</b>`) : ''}${fact('car', `<b>${access[hero.z.id]?.[0]?.minutes ?? hero.z.drive_min}</b><span class="fk2"> min</span><span class="fk3">′</span>`)}${hero.d.crowd ? fact('people', crowdText(hero.d.crowd)) : ''}${w0 ? `<span class="fact wx-${w0.level}" title="${esc(w0.text)}">${wxi(w0)}<span class="fx">${esc(w0.level === 'ok' ? w0.main : (w0.short || w0.main))}</span></span>` : ''}</span>
+        <span class="facts" aria-label="L'uscita in breve">${t ? fact('clock', `<span class="fk">entro le </span><b>${fmtRough(t.arrive, 15, 'floor')}</b>`) : ''}${fact('car', `<span><b>${access[hero.z.id]?.[0]?.minutes ?? hero.z.drive_min}</b><span class="fk2"> min</span><span class="fk3">′</span></span>`)}${hero.d.crowd ? fact('people', crowdText(hero.d.crowd)) : ''}${w0 ? `<span class="fact wx-${w0.level}" title="${esc(w0.text)}">${wxi(w0)}<span class="fx">${esc(w0.level === 'ok' ? w0.main : (w0.short || w0.main))}</span></span>` : ''}</span>
         ${note}
         <span class="cover-cta" aria-hidden="true">Il piano dell'uscita <span>→</span></span>
       </span>
@@ -751,6 +751,7 @@ function fitFacts(el) {
   for (const c of ['t1', 't2', 't3']) { if (el.scrollWidth <= el.clientWidth + 1) break; el.classList.add(c); }
 }
 addEventListener('resize', () => fitFacts($('#hero .facts')));
+document.fonts?.ready.then(() => fitFacts($('#hero .facts'))); // misurata col font giusto, non con quello di riserva
 // Copertina della home alta quanto serve per arrivare esatta sopra la barra in basso, su ogni telefono
 function fitCover() {
   const c = $('#hero .cover');
@@ -761,7 +762,12 @@ function fitCover() {
   const top = c.getBoundingClientRect().top + scrollY;
   const h = Math.round(vh - top - below - 14);
   // mai piu' bassa del contenuto: il titolo non deve finire sotto l'etichetta in alto
-  const need = (c.querySelector('.cover-body')?.offsetHeight || 0) + (c.querySelector('.cover-top')?.offsetHeight || 0) + 18 * 2 + 14;
+  const body = c.querySelector('.cover-body');
+  // telefono: testo sotto la foto (in flusso), alla foto restano almeno 200 px
+  const split = body && getComputedStyle(body).position !== 'absolute';
+  const need = split ? body.offsetHeight + 200
+    : (body?.offsetHeight || 0) + (c.querySelector('.cover-top')?.offsetHeight || 0) + 18 * 2 + 14;
+  fitFacts(c.querySelector('.facts'));
   document.documentElement.style.setProperty('--cover-h', `${Math.max(need, vh < 800 ? 300 : 400, Math.min(640, h))}px`);
 }
 let fitT;
