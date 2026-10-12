@@ -276,7 +276,8 @@ function routeNow(r, nav) {
     requestAnimationFrame(() => {
       map?.invalidateSize();
       const lb = $('.legend-box');
-      if (lb && !lb.dataset.touched) lb.open = $('#map').clientWidth >= 761; // su telefono parte chiusa: la carta prima di tutto
+      // aperta di default solo su schermi grandi (larghi e alti): su telefono e tablet la carta prima di tutto
+      if (lb && !lb.dataset.touched) lb.open = matchMedia('(min-width: 1200px) and (min-height: 760px)').matches;
       const z = zones.find((x) => x.id === r.zoneId);
       if (z && map) { map.flyToBounds(L.latLng(z.lat, z.lon).toBounds(z.radius_m * 2.6), { duration: 0.5 }); openSheet(z.id); }
     });
