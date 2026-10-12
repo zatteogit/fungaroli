@@ -69,3 +69,14 @@ test('elevationFit decresce fuori fascia', () => {
   assert.equal(elevationFit(edulis, 500), 0);
   assert.ok(elevationFit(edulis, 600) > 0);
 });
+
+test('habitatPotential: faggeta alla quota giusta = alta; prato = scarsa', async () => {
+  const { habitatPotential } = await import('../js/model.js');
+  const beechZone = { sample_categories: ['Faggeta'], samples: Array.from({ length: 40 }, (_, k) => [1100 + k * 10, 0]) };
+  const meadow = { sample_categories: [], samples: Array.from({ length: 40 }, () => [1200, -1]) };
+  const a = habitatPotential(edulis, beechZone, 2800);
+  assert.equal(a.level, 'alta');
+  assert.equal(a.ha, 2800);
+  assert.deepEqual(a.elevRange, [1100, 1490]);
+  assert.equal(habitatPotential(edulis, meadow, 2800).level, 'scarsa');
+});

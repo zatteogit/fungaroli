@@ -1,5 +1,5 @@
 import { SPECIES, GROUPS, FOREST } from './species.js';
-import { scoreZoneDay, scoreSpecies, habitatAtBand, explain, classOf, CLASSES } from './model.js';
+import { scoreZoneDay, scoreSpecies, habitatAtBand, habitatPotential, explain, classOf, CLASSES } from './model.js';
 import { loadWeather } from './weather.js';
 import { renderCharts } from './chart.js';
 import { initJournal } from './journal.js';
@@ -61,11 +61,12 @@ async function init() {
   // versione Artifact: dati incorporati nella pagina (niente fetch esterni)
   const embedded = globalThis.FUNGAROLI_DATA;
   const load = (f) => fetch(`data/${f}.json`).then((r) => (r.ok ? r.json() : null)).catch(() => null);
-  const [zj, hj, aj, tj, idj, mj] = embedded
-    ? [embedded.zones, embedded.habitat, embedded.access, embedded.trails, embedded.speciesId, embedded.media]
-    : await Promise.all(['zones', 'habitat', 'access', 'trails', 'species-id', 'media'].map(load));
+  const [zj, hj, aj, tj, idj, mj, ij] = embedded
+    ? [embedded.zones, embedded.habitat, embedded.access, embedded.trails, embedded.speciesId, embedded.media, embedded.infographics]
+    : await Promise.all(['zones', 'habitat', 'access', 'trails', 'species-id', 'media', 'infografiche'].map(load));
   initSpeciesCards({
-    idData: idj, media: mj, allow3d: !embedded,
+    idData: idj, media: mj, allow3d: !embedded, infographics: ij?.species,
+    whereSection: (id) => whereToFind(id),
     assetUrl: embedded ? (f) => embedded.assets?.[f] || '' : (f) => f,
   });
   renderSpeciesGrid();
@@ -78,6 +79,7 @@ async function init() {
   renderFilters();
   initShell();
   initJournal({ zones, predict, getZoneId: () => state.zoneId || zones[0].id });
+  route(); // le pagine che non dipendono dal meteo (specie, diario, info) compaiono subito
   await refreshWeather(false);
   if (embedded) $('#refresh').hidden = true;
   else $('#refresh').addEventListener('click', () => refreshWeather(true));
@@ -89,7 +91,6 @@ async function init() {
   matchMedia('(prefers-color-scheme: dark)').addEventListener('change', renderAll);
   let rt;
   addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(() => results && state.view === 'zona' && renderDetail(), 200); });
-  route();
 }
 
 // ---------------------------------------------------------------------------
@@ -640,7 +641,7 @@ function renderDetail() {
     ${section('quando', 'Quando andare e affollamento', renderHuman(z, d))}
     ${section('accesso', 'Accesso in auto e a piedi', renderAccess(z, d))}
     ${section('sentieri', 'Sentieri della zona', renderTrails(z, d))}
-    ${section('specie', `Tutte le specie (${d.perSpecies.length})`, `<table class="sp-table"><thead><tr><th>Specie</th><th>Quota</th><th></th><th>Indice</th></tr></thead><tbody>${rows}</tbody></table>`)}
+    ${section('specie', 'Cosa può nascere qui', zoneSpecies(z, d))}
     ${section('bosco', `Bosco a ${best.band} m (Carta Forestale)`, forestBar(hab.frac))}
     ${section('zona', 'La zona', `<p class="small">${esc(z.description)}</p>
       <dl class="kv">
@@ -756,6 +757,48 @@ function renderTrails(z, d) {
         <a class="small" href="https://hiking.waymarkedtrails.org/#route?id=${t.id}" target="_blank" rel="noopener">Tracciato e profilo</a>
       </li>`).join('')}</ol>
     <p class="muted small">Sentieri OpenStreetMap (rete CAI). I km "adatti" incrociano tracciato, Carta Forestale e quota della specie.</p>`;
+}
+
+// Dove trovare una specie: idoneita' dell'habitat per zona + indice di oggi (se il meteo e' caricato).
+const POT_LABEL = { alta: 'habitat molto adatto', media: 'habitat adatto', bassa: 'habitat scarso', scarsa: 'quasi assente' };
+function potentialOf(sp, z) { return habitatPotential(sp, habitat[z.id], habitat[z.id].forest?.area_ha); }
+function whereToFind(id) {
+  const sp = SPECIES.find((x) => x.id === id);
+  if (!sp || !zones) return '';
+  const rows = zones.map((z) => {
+    const pot = potentialOf(sp, z);
+    let today = null;
+    if (results && series) {
+      const r = results[z.id];
+      const sb = series[z.id];
+      const i = r.todayIndex;
+      today = Math.max(...z.bands.map((b, bi) => scoreSpecies(sp, sb[bi], i, habitat[z.id], b).score));
+    }
+    return { z, pot, today };
+  }).sort((a, b) => b.pot.score - a.pot.score);
+  return `<p class="small muted">Quanto bosco adatto alla specie c'è in ogni zona, alla quota giusta (Carta Forestale). Non è un censimento: dice dove ha senso cercarla.</p>
+    <ul class="where">${rows.map(({ z, pot, today }) => `
+      <li><a href="#/zona/${z.id}/0">
+        <div class="where-top"><b>${esc(shortName(z))}</b><span class="badge pot-${pot.level}">${POT_LABEL[pot.level]}</span></div>
+        <div class="bar"><i style="width:${Math.round(pot.score * 100)}%;background:var(--line)"></i></div>
+        <div class="small muted">${pot.ha ? `~${pot.ha.toLocaleString('it-IT')} ha adatti` : 'nessun bosco adatto'}${pot.elevRange ? ` tra ${pot.elevRange[0]} e ${pot.elevRange[1]} m` : ''}${today != null ? ` · indice oggi ${today}` : ''}</div>
+      </a></li>`).join('')}</ul>`;
+}
+
+// Specie che possono nascere in una zona, con idoneita' e indice del giorno scelto
+function zoneSpecies(z, d) {
+  const scores = Object.fromEntries((d.perSpecies || []).map((p) => [p.species.id, p]));
+  const sb = series[z.id];
+  const rows = SPECIES.map((sp) => {
+    const pot = potentialOf(sp, z);
+    const p = scores[sp.id] || { score: Math.max(...z.bands.map((b, bi) => scoreSpecies(sp, sb[bi], d.i, habitat[z.id], b).score)) };
+    return { sp, pot, score: p.score, band: p.band };
+  }).filter((r) => r.pot.level !== 'scarsa').sort((a, b) => b.score - a.score || b.pot.score - a.pot.score);
+  return `<ul class="zsp">${rows.map(({ sp, pot, score }) => `
+    <li><a href="#/specie/${sp.id}" class="zsp-row">${thumb(sp.id, 40)}
+      <span class="zsp-body"><b>${esc(sp.name)}</b><span class="small muted">${POT_LABEL[pot.level]}${pot.ha ? ` · ~${pot.ha.toLocaleString('it-IT')} ha` : ''}</span></span>
+      <span class="score-pill"><span class="dot" style="background:var(${scoreVar(score)})"></span>${score}</span></a></li>`).join('')}</ul>
+    <p class="small muted">Ordinate per indice di oggi; sotto il nome, quanto habitat adatto c'è nella zona.</p>`;
 }
 
 // Indice previsto per tutte le specie in una zona/data (per il diario).

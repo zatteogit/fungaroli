@@ -1,0 +1,4 @@
+{
+  "note": "Infografiche di riconoscimento. Per aggiungerne una: salva l'immagine in assets/infografiche/<id>.webp (o .png/.jpg) e aggiungi qui una voce con file e credit. I brief per generarle sono in docs/infografiche/<id>.md.",
+  "species": {}
+}

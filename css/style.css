@@ -495,3 +495,70 @@ body[data-page="mappa"] #views { max-width: none; padding: 0; }
   .sheet { left: auto; right: 16px; bottom: 16px; width: 380px; }
 }
 @media (prefers-reduced-motion: reduce) { .sheet { animation: none; } .hero:active { transform: none; } }
+
+/* --- immagini ingrandibili e visore --- */
+.zoomable, .look-btn { font: inherit; display: block; width: 100%; padding: 0; border: 0; background: none; cursor: zoom-in; position: relative; color: inherit; }
+.zoomable img { display: block; width: 100%; }
+.zoomable:focus-visible, .look-btn:focus-visible { outline: 3px solid var(--accent); outline-offset: -3px; }
+.zoom-ic { position: absolute; right: 8px; bottom: 8px; width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center; background: rgb(0 0 0 / .55); color: #fff; font-size: 16px; pointer-events: none; }
+.look-btn { width: 96px; height: 96px; border-radius: 10px; overflow: hidden; }
+.look-btn img { width: 96px; height: 96px; object-fit: cover; display: block; }
+.look-btn .zoom-ic { width: 24px; height: 24px; font-size: 13px; right: 5px; bottom: 5px; }
+.look-btn:disabled { cursor: default; }
+.look li { grid-template-columns: 96px 1fr; }
+.look-ph { width: 96px; height: 96px; display: grid; place-items: center; font-size: 11px; color: var(--muted); text-align: center; border-radius: 10px; }
+.look .credit { margin: 4px 0 0; }
+.sp-info { margin: 0; }
+.sp-info img { border-radius: 12px; }
+.sp-3d { position: relative; display: grid; place-items: center; gap: 6px; padding: 12px; text-align: center; }
+.sp-3d:fullscreen { padding: 0; border-radius: 0; }
+.sp-3d-full { margin-top: 8px; }
+
+html.lb-open { overflow: hidden; }
+.lb { border: 0; padding: 0; margin: 0; width: 100vw; height: 100dvh; max-width: none; max-height: none; background: #0b0b0a; color: #f2f0ea; overflow: hidden; }
+.lb::backdrop { background: #0b0b0a; }
+.lb-stage { position: absolute; inset: 0; display: grid; place-items: center; touch-action: none; overflow: hidden; cursor: zoom-in; }
+.lb.zoomed .lb-stage { cursor: grab; }
+.lb-stage img { max-width: 100%; max-height: 100%; object-fit: contain; transform-origin: center center; user-select: none; -webkit-user-drag: none; will-change: transform; }
+.lb-top { position: absolute; top: 0; left: 0; right: 0; display: flex; justify-content: space-between; align-items: center; padding: calc(env(safe-area-inset-top, 0px) + 8px) 10px 8px 16px; background: linear-gradient(rgb(0 0 0 / .6), transparent); }
+.lb-count { font-size: 13px; font-variant-numeric: tabular-nums; opacity: .85; }
+.lb-tools { display: flex; gap: 6px; }
+.lb-btn, .lb-nav { font: inherit; border: 0; cursor: pointer; color: #fff; background: rgb(255 255 255 / .14); }
+.lb-btn { width: 42px; height: 42px; border-radius: 50%; font-size: 20px; }
+.lb-btn:hover, .lb-nav:hover { background: rgb(255 255 255 / .26); }
+.lb-btn:focus-visible, .lb-nav:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+.lb-nav { position: absolute; top: 50%; transform: translateY(-50%); width: 44px; height: 64px; border-radius: 12px; font-size: 30px; }
+.lb-prev { left: 8px; } .lb-next { right: 8px; }
+.lb.single .lb-nav, .lb.zoomed .lb-nav { display: none; }
+.lb-cap { position: absolute; left: 0; right: 0; bottom: 0; padding: 28px 16px calc(env(safe-area-inset-bottom, 0px) + 14px); background: linear-gradient(transparent, rgb(0 0 0 / .78) 40%); display: grid; gap: 3px; font-size: 14px; max-height: 45%; overflow-y: auto; transition: opacity .15s; }
+.lb.zoomed .lb-cap { opacity: 0; pointer-events: none; }
+.lb-cap b { font-size: 16px; }
+.lb-cap small { font-size: 11.5px; opacity: .75; }
+.lb-cap a { color: #f4c9a4; }
+.lb-cap .tox { background: rgb(255 255 255 / .18); color: #fff; }
+.lb-cap .tox-mortale { background: var(--crit); }
+@media (prefers-reduced-motion: reduce) { .lb-cap { transition: none; } }
+
+/* scheda specie: prima foto, nome e riconoscimento; il resto su richiesta */
+.sp-page .sp-hero { display: grid; gap: 6px; margin: 0 -16px 14px; }
+.sp-page .sp-main img { width: 100%; max-height: 380px; object-fit: cover; }
+.sp-strip { display: flex; gap: 6px; padding: 0 16px; overflow-x: auto; scrollbar-width: none; }
+.sp-strip::-webkit-scrollbar { display: none; }
+.sp-strip .zoomable { flex: none; width: 76px; height: 76px; border-radius: 10px; overflow: hidden; }
+.sp-strip img { width: 76px; height: 76px; object-fit: cover; }
+.sp-head { margin-bottom: 6px; }
+.sp-badges { display: flex; gap: 6px; flex-wrap: wrap; margin: 8px 0 0; }
+.sp-more { margin-top: 18px; }
+.sp-info img { border-radius: 12px; }
+@media (min-width: 900px) { .sp-page .sp-hero { margin: 0 0 14px; } .sp-page .sp-main img { border-radius: 16px; } .sp-strip { padding: 0; } }
+
+/* dove trovarlo / cosa nasce qui */
+.where, .zsp { list-style: none; margin: 8px 0 0; padding: 0; display: grid; gap: 6px; }
+.where a { display: grid; gap: 5px; padding: 10px 12px; border-radius: 12px; background: var(--surface-2); text-decoration: none; color: var(--text); }
+.where-top { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.badge.pot-alta { background: var(--ok-bg); color: var(--ok-ink); }
+.badge.pot-media { background: var(--surface); color: var(--text); box-shadow: inset 0 0 0 1px var(--border); }
+.badge.pot-bassa { background: var(--warn-bg); color: var(--warn-ink); }
+.zsp-row { display: grid; grid-template-columns: 40px 1fr auto; gap: 10px; align-items: center; padding: 8px 10px; border-radius: 12px; background: var(--surface-2); text-decoration: none; color: var(--text); }
+.zsp-row .thumb { width: 40px; height: 40px; }
+.zsp-body { display: grid; min-width: 0; }

@@ -10,7 +10,8 @@
     "source": "Wikimedia Commons",
     "page": "https://commons.wikimedia.org/wiki/File:(Gemeine_Steinpilz)_Boletus_edulis.jpg",
     "author": "Holger Krisp",
-    "license": "CC BY 3.0"
+    "license": "CC BY 3.0",
+    "file_hd": "assets/species/edulis-ref-hd.jpg"
    },
    "inat": [
     {
@@ -20,7 +21,8 @@
      "author": "Rino",
      "license": "CC-BY-NC",
      "place": "Provincia di Teramo, Italia",
-     "date": "2022-09-11"
+     "date": "2022-09-11",
+     "file_hd": "assets/species/edulis-inat1-hd.jpg"
     },
     {
      "file": "assets/species/edulis-inat2.jpg",
@@ -29,7 +31,8 @@
      "author": "Rino",
      "license": "CC-BY-NC",
      "place": "Provincia di Chieti, Italia",
-     "date": "2020-10-18"
+     "date": "2020-10-18",
+     "file_hd": "assets/species/edulis-inat2-hd.jpg"
     },
     {
      "file": "assets/species/edulis-inat3.jpg",
@@ -38,7 +41,8 @@
      "author": "danix",
      "license": "CC-BY-NC",
      "place": "Norma",
-     "date": "2020-10-13"
+     "date": "2020-10-13",
+     "file_hd": "assets/species/edulis-inat3-hd.jpg"
     }
    ],
    "gbif": {

@@ -169,3 +169,22 @@ export function explain(r) {
   if (r.shock > 1) out.push(`shock termico (−${r.drop.toFixed(1)} °C)`);
   return out;
 }
+
+// Idoneita' dell'habitat di una zona per una specie (indipendente dal meteo).
+// Quota della zona coperta da bosco adatto alla quota giusta, dai punti campione della Carta Forestale.
+// Non e' una probabilita' di presenza misurata: dice quanto ambiente adatto c'e'.
+export function habitatPotential(species, hab, areaHa) {
+  let sum = 0, n = 0, lo = Infinity, hi = -Infinity;
+  for (const smp of hab.samples) {
+    const [e, c] = smp;
+    n++;
+    const cat = c >= 0 ? hab.sample_categories[c] : 'non bosco';
+    const v = (species.forest[cat] || 0) * elevationFit(species, e);
+    if (v >= 0.5) { lo = Math.min(lo, e); hi = Math.max(hi, e); }
+    sum += v;
+  }
+  const share = n ? sum / n : 0;           // frazione dell'area "pienamente" adatta
+  const score = 1 - Math.exp(-share / 0.25); // 25% dell'area pienamente adatta -> 0,63
+  const level = score >= 0.6 ? 'alta' : score >= 0.35 ? 'media' : score >= 0.1 ? 'bassa' : 'scarsa';
+  return { share, score, level, ha: areaHa ? Math.round(share * areaHa) : null, elevRange: lo <= hi ? [lo, hi] : null };
+}
