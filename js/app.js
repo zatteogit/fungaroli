@@ -6,6 +6,7 @@ import { initJournal } from './journal.js';
 import { renderSvgMap } from './svgmap.js';
 import { initSpeciesCards, thumb, renderSpeciesDetail, whereSummary, criticalRule, speciesPhoto } from './speciescard.js';
 import { openLightbox, captionHtml } from './lightbox.js';
+import { initInstall } from './install.js';
 import { initIdentify, renderIdentify } from './identify.js';
 import { initTrees, renderTreeGrid, renderTreePage, linkTrees, treeForCategory } from './trees.js';
 import { crowding, comfortScore, timingAdvice, fmtTime, holidayName, intornoA } from './human.js';
@@ -61,6 +62,7 @@ let zones, origin, habitat, access, trails, traits, legal, series, results, map,
 const hasLeaflet = () => typeof globalThis.L !== 'undefined';
 
 async function init() {
+  initInstall(); // prima di tutto: non dipende dai dati
   // versione Artifact: dati incorporati nella pagina (niente fetch esterni)
   const embedded = globalThis.FUNGAROLI_DATA;
   const review = !!globalThis.FUNGAROLI_REVIEW; // copia di revisione: niente API esterne
@@ -198,9 +200,11 @@ async function refreshWeather(force) {
     const w = await loadWeather(zones, { force });
     series = w.series;
     zones = zones.filter((z) => series[z.id]); // una zona senza meteo (copia di revisione vecchia) resta fuori
-    $('#updated').textContent = w.snapshot
+    const sameDay = w.fetchedAt.toDateString() === new Date().toDateString();
+    $('#updated').textContent = (w.offline ? 'Senza rete · ' : '') + (w.snapshot || !sameDay
       ? 'Meteo del ' + w.fetchedAt.toLocaleString('it-IT', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' })
-      : 'Meteo delle ' + w.fetchedAt.toLocaleTimeString('it-IT', { hour: '2-digit', minute: '2-digit' });
+      : 'Meteo delle ' + w.fetchedAt.toLocaleTimeString('it-IT', { hour: '2-digit', minute: '2-digit' }));
+    document.documentElement.classList.toggle('is-offline', !!w.offline);
     $('#stale').hidden = !w.stale;
     $('#today-kicker').textContent = new Date().toLocaleDateString('it-IT', { weekday: 'long', day: 'numeric', month: 'long' });
     compute();
@@ -488,7 +492,25 @@ function renderHome() {
   }).join('');
   $('#others-h').hidden = list.length < 2;
   renderSeason();
+  fitCover();
 }
+
+// Copertina della home alta quanto serve per arrivare esatta sopra la barra in basso, su ogni telefono
+function fitCover() {
+  const c = $('#hero .cover');
+  if (!c || state.view !== 'uscite') return;
+  const vh = window.visualViewport?.height || innerHeight;
+  const tab = $('.tabbar').getBoundingClientRect();
+  const below = tab.top > vh / 2 ? vh - tab.top : 0; // barra in basso (telefono) o in alto (desktop)
+  const top = c.getBoundingClientRect().top + scrollY;
+  const h = Math.round(vh - top - below - 14);
+  document.documentElement.style.setProperty('--cover-h', `${Math.max(vh < 800 ? 300 : 400, Math.min(640, h))}px`);
+}
+let fitT;
+const refit = () => { clearTimeout(fitT); fitT = setTimeout(fitCover, 120); };
+addEventListener('resize', refit);
+addEventListener('orientationchange', refit);
+window.visualViewport?.addEventListener('resize', refit);
 
 // "Nei boschi in questi giorni": tutte le specie, il miglior indice tra le zone nel giorno scelto
 function renderSeason() {
@@ -544,7 +566,7 @@ function openSheet(zid) {
 function initMap() {
   const bm = globalThis.FUNGAROLI_DATA?.basemap || globalThis.FUNGAROLI_REVIEW?.basemap;
   if (hasLeaflet() && bm) { initEmbeddedMap(bm); return; }
-  if (!hasLeaflet()) { document.querySelector('.map-panel').classList.add('schematic'); return; }
+  if (!hasLeaflet()) { document.querySelector('.view-map')?.classList.add('schematic'); return; } // senza Leaflet: mappa schematica
   map = L.map('map', { scrollWheelZoom: true, zoomControl: true }).setView([42.4, 13.05], 10);
   const topo = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
     maxZoom: 17, attribution: '© OpenStreetMap, SRTM | © OpenTopoMap (CC-BY-SA)',

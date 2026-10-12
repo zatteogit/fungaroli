@@ -8,10 +8,13 @@ export const FORECAST_DAYS = 8;
 const CACHE_KEY = 'fungaroli:weather:v1';
 const CACHE_TTL_MS = 60 * 60 * 1000;
 
-function readCache(sig) {
+// anyAge: senza rete va bene anche un meteo vecchio, purche' per le stesse zone e quote
+function readCache(sig, anyAge = false) {
   try {
     const c = JSON.parse(localStorage.getItem(CACHE_KEY) || 'null');
+    const where = (x) => x.slice(x.indexOf('|') + 1);
     if (c && c.sig === sig && Date.now() - c.t < CACHE_TTL_MS) return c;
+    if (anyAge && c && where(c.sig) === where(sig) && Date.now() - c.t < 6 * 864e5) return c;
   } catch { /* storage non disponibile */ }
   return null;
 }
@@ -73,11 +76,12 @@ export async function loadWeather(zones, { force = false } = {}) {
   const today = todayISO();
   const sig = today + '|' + locs.map((l) => `${l.lat},${l.lon},${l.band}`).join(';');
 
-  let raw = null, fetchedAt = null;
+  let raw = null, fetchedAt = null, offline = false;
   const cached = force ? null : readCache(sig);
   if (cached) {
     raw = cached.data; fetchedAt = new Date(cached.t);
   } else {
+    try {
     const params = new URLSearchParams({
       latitude: locs.map((l) => l.lat).join(','),
       longitude: locs.map((l) => l.lon).join(','),
@@ -94,11 +98,17 @@ export async function loadWeather(zones, { force = false } = {}) {
     if (!Array.isArray(raw)) raw = [raw];
     fetchedAt = new Date();
     writeCache(sig, raw);
+    } catch (err) {
+      // senza campo (o servizio limitato): l'ultimo meteo salvato, dichiarato come tale
+      const old = readCache(sig, true);
+      if (!old) throw err;
+      raw = old.data; fetchedAt = new Date(old.t); offline = true;
+    }
   }
 
   const out = {};
   locs.forEach((l, k) => {
     (out[l.zid] ||= [])[l.bi] = toDaily(raw[k], today);
   });
-  return { series: out, fetchedAt };
+  return { series: out, fetchedAt, offline };
 }

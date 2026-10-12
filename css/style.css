@@ -42,8 +42,9 @@
 
   --appbar-h: 56px;
   --tabbar-h: 64px;
-  --tabbar-gap: 10px;
-  --tabbar-space: calc(var(--tabbar-h) + var(--tabbar-gap) + env(safe-area-inset-bottom, 0px));
+  /* la barra in basso si appoggia sopra l'indicatore Home dell'iPhone senza sprecare spazio */
+  --tabbar-bottom: max(10px, calc(env(safe-area-inset-bottom, 0px) - 4px));
+  --tabbar-space: calc(var(--tabbar-h) + var(--tabbar-bottom));
   --col: 720px;
   --gutter: 16px;
   font-family: var(--font-body);
@@ -122,7 +123,7 @@ button { font: inherit; color: inherit; }
 /* barra delle sezioni: pillola fluttuante in basso */
 .tabbar {
   position: fixed; z-index: 1000; left: 12px; right: 12px;
-  bottom: calc(var(--tabbar-gap) + env(safe-area-inset-bottom, 0px));
+  bottom: var(--tabbar-bottom);
   height: var(--tabbar-h); padding: 6px; max-width: 520px; margin: 0 auto;
   display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px;
   border-radius: 24px; border: 1px solid color-mix(in srgb, var(--border) 60%, transparent);
@@ -236,7 +237,7 @@ label.btn { display: inline-flex; }
 .af-add { border: 1px dashed var(--border); background: transparent; color: var(--text-2); padding-right: 12px; }
 
 /* ------------------------------------------------------------- home */
-.cover { position: relative; display: block; isolation: isolate; overflow: hidden; color: #fff; text-decoration: none; background: var(--forest); border-radius: var(--r-xl); height: clamp(430px, calc(100dvh - 360px), 580px); box-shadow: var(--shadow-2); }
+.cover { position: relative; display: block; isolation: isolate; overflow: hidden; color: #fff; text-decoration: none; background: var(--forest); border-radius: var(--r-xl); height: var(--cover-h, clamp(420px, calc(100svh - 360px), 600px)); box-shadow: var(--shadow-2); }
 .cover-top { position: absolute; top: 18px; left: 18px; right: 18px; display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; }
 .cover-top .pill { margin-top: 6px; white-space: normal; }
 .cover-body { position: absolute; left: 18px; right: 18px; bottom: 18px; display: grid; gap: 12px; }
@@ -265,8 +266,8 @@ label.btn { display: inline-flex; }
 .legal-strip a { font-weight: 600; }
 
 /* ------------------------------------------------ testata fotografica */
-.phero { position: relative; isolation: isolate; overflow: hidden; color: #fff; background: var(--forest); margin: -8px calc(-1 * var(--gutter)) 0; height: 48vh; min-height: 330px; max-height: 500px; }
-.phero-tall { height: 64vh; min-height: 400px; max-height: 640px; }
+.phero { position: relative; isolation: isolate; overflow: hidden; color: #fff; background: var(--forest); margin: -8px calc(-1 * var(--gutter)) 0; height: 48vh; height: 48svh; min-height: 330px; max-height: 500px; }
+.phero-tall { height: 64vh; height: 64svh; min-height: 400px; max-height: 640px; }
 .phero-img { position: absolute; inset: 0; border: 0; padding: 0; margin: 0; background: none; cursor: zoom-in; }
 .phero-bar { position: absolute; z-index: 2; top: calc(env(safe-area-inset-top, 0px) + 12px); left: 12px; right: 12px; display: flex; justify-content: space-between; pointer-events: none; }
 .phero-bar > * { pointer-events: auto; }
@@ -681,6 +682,103 @@ html.lb-open { overflow: hidden; }
   body[data-page="zona"] #views, body[data-page="specie-dettaglio"] #views, body[data-page="albero"] #views { padding-top: 8px; }
   body[data-page="zona"] .stale { display: none; }
 }
+
+/* ------------------------------------------- profili per dispositivo */
+/* telefoni stretti: iPhone SE/mini, Galaxy compatti (<= 360 px) */
+@media (max-width: 360px) {
+  :root { --gutter: 14px; --tabbar-h: 60px; }
+  body { font-size: 15px; }
+  .view-title { font-size: 30px; }
+  .cover-title { font-size: 34px; }
+  .phero-title { font-size: 32px; }
+  .phero-body { right: 92px; }
+  .day { min-width: 54px; padding: 8px 6px 7px; }
+  .day .d2 { font-size: 19px; }
+  .tabbar a { font-size: 10.5px; }
+  .card-grid { gap: 8px; }
+  .sp-card-body b { font-size: 16.5px; }
+  .ring { --size: 66px; }
+  .ring b { font-size: 24px; }
+  .fact { font-size: 12.5px; padding: 6px 10px 6px 8px; }
+  .id-grid { grid-template-columns: repeat(3, 1fr); }
+}
+/* telefoni grandi: Pixel, iPhone Plus/Pro Max (412-599 px) */
+@media (min-width: 412px) and (max-width: 599px) {
+  :root { --gutter: 18px; }
+  .card-grid, .id-cards { gap: 12px; }
+}
+/* schermi bassi in verticale: iPhone SE, Android piccoli, browser con barre alte */
+@media (max-height: 700px) and (orientation: portrait) {
+  :root { --tabbar-h: 58px; }
+  .kicker { display: none; }
+  .view-head { margin-bottom: 10px; }
+  .view-title { font-size: 30px; }
+  .day { padding: 7px 7px 6px; }
+  .day .d2 { font-size: 19px; }
+  .phero { height: 42svh; min-height: 280px; }
+  .phero-tall { height: 54svh; min-height: 320px; }
+  .cover-sp small { display: none; }
+  .active-filters { margin-bottom: 8px; }
+  .view-head { margin-top: 0; }
+  .cover-body { gap: 9px; bottom: 14px; }
+  .cover-title { font-size: 34px; }
+  .cover-cta { display: none; }
+  .fact { padding: 5px 10px 5px 8px; font-size: 12.5px; }
+}
+/* telefono in orizzontale: testate a tutta altezza, barra compatta */
+@media (orientation: landscape) and (max-height: 520px) {
+  :root { --tabbar-h: 50px; --appbar-h: 48px; }
+  .tabbar { max-width: 460px; padding: 4px; }
+  .tabbar a { grid-auto-flow: column; gap: 6px; font-size: 12px; }
+  .tabbar svg { width: 20px; height: 20px; }
+  #views { padding-left: max(var(--gutter), env(safe-area-inset-left, 0px)); padding-right: max(var(--gutter), env(safe-area-inset-right, 0px)); }
+  .phero, .phero-tall { height: calc(100svh - 16px); min-height: 0; max-height: none; }
+  .cover { height: auto !important; aspect-ratio: 16 / 7; min-height: 300px; }
+  .cover-title, .phero-title { font-size: 36px; }
+  .card-grid { grid-template-columns: repeat(4, 1fr); }
+  .kicker { display: none; }
+}
+/* tablet in verticale */
+@media (min-width: 600px) and (max-width: 899px) {
+  :root { --gutter: 24px; --col: 760px; }
+  .tile { width: 320px; }
+  .portrait { width: 156px; }
+  .phero { margin: 0; border-radius: var(--r-xl); }
+  .pbody { margin: -24px 0 0; border-radius: 26px; padding-inline: 20px; }
+}
+/* app installata: niente "tira per ricaricare" e niente menu del tocco prolungato sui comandi */
+@media (display-mode: standalone) {
+  html { overscroll-behavior-y: none; }
+  .tabbar, .appbar, .day, .chip, .btn, .fab, .af-pill, .id-opt { -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; }
+}
+
+/* tastiera aperta: la barra in basso si toglie, i campi di ricerca restano a portata */
+html.kb-open .tabbar, html.kb-open .install-banner { display: none; }
+html.kb-open body { padding-bottom: 16px; }
+.search-box { scroll-margin-top: calc(var(--appbar-h) + env(safe-area-inset-top, 0px) + 8px); }
+[data-view="specie"] .search-box { position: sticky; top: calc(var(--appbar-h) + env(safe-area-inset-top, 0px) + 6px); z-index: 5; }
+@media (max-width: 899px) {
+  .wiz { height: var(--vvh, 100%); max-height: var(--vvh, 100%); }
+  .sheet-dlg { max-height: calc(var(--vvh, 100dvh) - 12px); overflow-y: auto; }
+}
+
+/* installazione */
+.install-banner { display: grid; grid-template-columns: 44px 1fr auto auto; gap: 12px; align-items: center; margin: 14px 0 0; padding: 10px 10px 10px 12px; border-radius: var(--r-lg); background: var(--surface); border: 1px solid var(--hair); box-shadow: var(--shadow-1); }
+.install-banner img { border-radius: 11px; }
+.install-banner div { display: grid; min-width: 0; }
+.install-banner b { font-size: 15px; }
+.install-banner span { font-size: 12.5px; color: var(--text-2); }
+.install-banner .btn { padding: 9px 14px; }
+.ib-close { width: 32px; height: 32px; border-radius: 50%; border: 0; background: var(--surface-2); color: var(--text-2); cursor: pointer; }
+.install-info { margin: 0 0 12px; padding: 16px; border-radius: var(--r-lg); background: var(--surface); border: 1px solid var(--hair); }
+.install-info h2 { font-family: var(--font-display); font-size: 20px; margin: 0 0 4px; }
+.install-info p { margin: 0 0 12px; }
+.ios-steps { list-style: none; margin: 4px 0 14px; padding: 0; display: grid; gap: 12px; font-size: 15px; }
+.ios-steps li { display: grid; grid-template-columns: 40px 1fr; gap: 12px; align-items: center; }
+.ios-ic { width: 40px; height: 40px; border-radius: 12px; background: var(--surface-2); display: grid; place-items: center; color: var(--rain); }
+.ios-ic svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.ios-ic img { border-radius: 7px; }
+html.is-offline #updated { color: var(--warn-ink); font-weight: 600; }
 
 /* --------------------------------------------------------------- desktop */
 @media (min-width: 600px) {
