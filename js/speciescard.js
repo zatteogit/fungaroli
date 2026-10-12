@@ -94,7 +94,7 @@ function kitchen(id) {
   const keep = [
     p?.freeze && ['Congelare', p.freeze], p?.dry && ['Essiccare', p.dry], p?.amount && ['Quanto', p.amount],
   ].filter(Boolean);
-  const srcs = [...(p?.sources || []), ...must.flatMap((x) => x.sources || [])].filter((x, i, a) => x?.url && a.findIndex((y) => y.url === x.url) === i);
+  const srcs = [...(p?.sources || []), ...must.flatMap((x) => x.sources || []), ...(c?.uses || []).flatMap((u) => u.sources || [])].filter((x, i, a) => x?.url && a.findIndex((y) => y.url === x.url) === i);
   return `<section class="kitchen" aria-labelledby="k-h-${id}">
     <h3 id="k-h-${id}">In cucina</h3>
     ${p ? `<p class="k-raw"><span class="k-badge${p.raw === 'mai crudo' ? ' never' : ''}">${p.raw === 'mai crudo' ? 'Tossico crudo' : 'Solo cotto'}</span>${esc(p.raw_why || '')}</p>` : ''}
@@ -107,7 +107,8 @@ function kitchen(id) {
     ${c?.uses?.length ? `<details class="k-food"><summary>I classici in cucina</summary>
       ${c.taste ? `<p class="k-taste">${esc(c.taste)}</p>` : ''}
       <ul class="k-uses">${c.uses.map((u) => `<li>${esc(u.text)}</li>`).join('')}</ul>
-      ${c.local ? `<p class="k-line"><b>Nel Lazio:</b> ${esc(c.local)}</p>` : ''}</details>` : ''}
+      ${c.local ? `<p class="k-line"><b>Nel Lazio:</b> ${esc(c.local)}</p>` : ''}
+</details>` : ''}
     ${srcs.length ? `<details class="k-src-list"><summary>Fonti (${srcs.length})</summary><p class="k-sources small muted">${srcList(srcs)}</p></details>` : ''}
   </section>`;
 }

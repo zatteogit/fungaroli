@@ -322,7 +322,7 @@ const srcLinks = (src) => (src || []).map((x) => `<a href="${esc(x.url)}" target
 function prepGeneralHtml(rules) {
   const ord = [...rules].sort((a, b) => (a.level === 'obbligatorio' ? 0 : 1) - (b.level === 'obbligatorio' ? 0 : 1));
   return `<details class="prep-gen"><summary><h2>Prepararli e conservarli: le regole per tutti</h2></summary>
-    <ol class="k-steps">${ord.map((r) => `<li class="${r.level === 'obbligatorio' ? 'must' : 'tip'}"><b>${esc(r.title)}</b> ${esc(r.text)}${r.why ? `<small>${esc(r.why)}</small>` : ''}<span class="k-src">${r.level === 'obbligatorio' ? '<span class="k-lv">obbligatorio</span>' : '<span class="k-lv tip">consigliato</span>'} ${srcLinks(r.sources)}</span></li>`).join('')}</ol>
+    <ol class="k-steps">${ord.map((r) => `<li class="${r.level === 'obbligatorio' ? 'must' : 'tip'}"><b>${esc(r.title)}</b> ${esc(r.text)}${r.why ? `<small>${esc(r.why)}</small>` : ''}<span class="k-src">${r.level === 'obbligatorio' ? '<span class="k-lv">obbligatorio</span>' : '<span class="k-lv tip">consigliato</span>'}${r.sources?.length ? `<details class="k-src-d"><summary>Fonti (${r.sources.length})</summary>${srcLinks(r.sources)}</details>` : ''}</span></li>`).join('')}</ol>
   </details>`;
 }
 const adjParts = (zone, d) => {
