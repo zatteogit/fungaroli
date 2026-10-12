@@ -1872,3 +1872,11 @@ html.theme-swap, html.theme-swap *, html.theme-swap *::before, html.theme-swap *
   .sheet-key .muted { display: none; }
   .sheet .btn.big { padding: 11px; font-size: 15px; }
 }
+/* titolo piccolo al centro della barra in alto, solo nell'app installata, quando il titolo grande e' scorso via */
+.appbar-title { display: none; }
+.is-standalone .appbar-title { display: block; position: absolute; left: 50%; bottom: calc((var(--appbar-h) - 22px) / 2); transform: translate(-50%, 6px); max-width: 52%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  font-family: var(--font-display); font-size: 16px; font-weight: 700; line-height: 22px; color: var(--text); opacity: 0; pointer-events: none; transition: opacity .2s, transform .25s var(--ease-out, ease); }
+.is-standalone.title-in-bar .appbar-title { opacity: 1; transform: translate(-50%, 0); }
+.is-standalone.title-in-bar .appbar-back { max-width: 30%; }
+@media (min-width: 761px) { .is-standalone .appbar-title { display: none; } }
+.is-standalone.title-in-bar .appbar { background: color-mix(in srgb, var(--bg) 95%, transparent); transition: background-color .2s; }

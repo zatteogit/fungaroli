@@ -209,6 +209,23 @@ function parentOf(r) {
   return '#/';
 }
 const PARENT_TITLE = (r) => ({ '#/specie': 'Specie', '#/alberi': 'Alberi', '#/riconosci': 'Riconosci', '#/': 'Uscite' }[parentOf(r)]);
+// modalita' app: quando il titolo grande della pagina passa sotto la barra in alto, la barra lo mostra piccolo al centro (come iOS)
+let titleIO = null;
+function watchTitle() {
+  const bar = $('.appbar-title');
+  if (!bar) return;
+  titleIO?.disconnect();
+  document.documentElement.classList.remove('title-in-bar');
+  const h = $('.view:not([hidden]) :is(.view-title, .phero-title)');
+  if (!h) return;
+  bar.textContent = h.textContent.trim();
+  const top = $('.appbar').getBoundingClientRect().bottom;
+  titleIO = new IntersectionObserver(([e]) => {
+    // fuori dalla vista ma sopra (scorso via), non sotto (pagina corta o non ancora raggiunto)
+    document.documentElement.classList.toggle('title-in-bar', !e.isIntersecting && e.boundingClientRect.top < top);
+  }, { rootMargin: `-${Math.round(top)}px 0px 0px 0px` });
+  titleIO.observe(h);
+}
 function updateBack(r, nav) {
   if (nav === 'pop') { while (navStack.length && navStack[navStack.length - 1].hash !== r.hash) navStack.pop(); }
   if (navStack[navStack.length - 1]?.hash !== r.hash) {
@@ -236,7 +253,7 @@ function route() {
   const nav = navKind(prev, r), back = prev?.hash || '';
   if (prev) scrollMem.set(prev.hash, scrollY);
   prev = r;
-  navigate(() => { routeNow(r, nav); updateBack(r, nav); }, { nav, back });
+  navigate(() => { routeNow(r, nav); updateBack(r, nav); requestAnimationFrame(watchTitle); }, { nav, back });
 }
 
 function routeNow(r, nav) {
