@@ -10,6 +10,8 @@ Il risultato è un indice 0–100 per ogni combinazione **zona × quota × speci
 
 ## Uso
 
+**Online:** https://fungaroli.zatteo.workers.dev (Cloudflare Workers, ripubblicato a ogni push sul branch di produzione; configurazione in `wrangler.jsonc`, procedura in `docs/handoff-cloudflare.md`).
+
 ```bash
 python3 -m http.server 8000   # oppure: npm start
 # apri http://localhost:8000

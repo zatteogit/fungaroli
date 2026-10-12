@@ -1,5 +1,7 @@
 # Handoff: completare la pubblicazione di Fungaroli Rieti su Cloudflare
 
+> **Stato (12 ottobre 2026): completato.** Sito online su https://fungaroli.zatteo.workers.dev, KV `fungaroli-diario` collegato in `wrangler.jsonc`, segreto `DIARIO_TOKEN` impostato, `/api/diario` risponde `unauthorized` senza codice. L'Artifact su claude.ai e la sua routine giornaliera sono stati eliminati.
+
 Istruzioni per un agente che opera nel browser dell'utente (Claude in Chrome), con la dashboard Cloudflare aperta e l'utente autenticato. L'agente agisce nell'account dell'utente: chiede conferma prima di ogni passaggio che crea o modifica risorse, e non legge, non scrive e non ripete mai segreti in chat.
 
 ## Situazione attuale
