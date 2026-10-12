@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fungaroli Rieti</title>
+  <meta name="description" content="Dove e quando andare a funghi intorno a Rieti: indice di fruttificazione da meteo, Carta Forestale e calendario delle specie.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><path d='M4 15a12 9 0 0 1 24 0z' fill='%238a4b25'/><rect x='12' y='15' width='8' height='12' rx='3' fill='%23e9dcc2'/></svg>">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="top">
+    <div class="brand">
+      <h1>Fungaroli <span>Rieti</span></h1>
+      <p class="sub">Dove e quando: meteo degli ultimi 60 giorni + previsioni, Carta Forestale regionale, calendario delle specie.</p>
+    </div>
+    <div class="top-actions">
+      <span id="updated" class="muted small"></span>
+      <button id="refresh" class="btn ghost" type="button">Aggiorna meteo</button>
+    </div>
+  </header>
+
+  <section class="filters" aria-label="Filtri">
+    <div class="filter-row">
+      <span class="filter-label">Cerco</span>
+      <div id="species-filter" class="chips" role="group" aria-label="Gruppi di specie"></div>
+    </div>
+    <div class="filter-row">
+      <label class="toggle"><input type="checkbox" id="distance-penalty"> Pesa la distanza da Rieti</label>
+    </div>
+  </section>
+
+  <section aria-label="Giorni">
+    <div id="days" class="days" role="tablist" aria-label="Giorno di uscita"></div>
+  </section>
+
+  <main class="layout">
+    <section class="panel map-panel" aria-label="Mappa">
+      <div id="map" role="application" aria-label="Mappa delle zone"></div>
+      <div class="legend" id="legend"></div>
+    </section>
+
+    <section class="panel" aria-label="Migliori combinazioni">
+      <h2>Migliori combinazioni <span class="muted small">prossimi 8 giorni</span></h2>
+      <ol id="ranking" class="ranking"></ol>
+    </section>
+
+    <section class="panel detail" id="detail" aria-live="polite"></section>
+  </main>
+
+  <section class="info">
+    <details>
+      <summary><h2>Regole di raccolta nel Lazio</h2></summary>
+      <ul class="rules">
+        <li><strong>Titolo:</strong> attestato del corso micologico (min. 14 h) o vecchio tesserino + ricevuta del contributo regionale annuale (25 € residenti, 40 € non residenti; esenti i residenti over 65) + documento d'identità. L.R. 32/98, mod. L.R. 1/2020.</li>
+        <li><strong>Giorni:</strong> tutti i giorni (L.R. 20/2024, art. 21). <strong>Orari:</strong> da un'ora prima dell'alba a un'ora dopo il tramonto.</li>
+        <li><strong>Limite:</strong> 3 kg a persona al giorno. Cesti rigidi e aerati; vietati rastrelli e uncini.</li>
+        <li><strong>Taglie minime cappello:</strong> porcini e ovolo 4 cm, mazza di tamburo 5 cm, altre specie 3 cm.</li>
+        <li><strong>Divieti:</strong> entro 10 m dalle strade carrabili, entro 100 m da fabbricati abitati, Zone A delle riserve; nel Parco Gran Sasso-Laga valgono le regole dell'Ente Parco.</li>
+        <li><strong>Controllo gratuito:</strong> Ispettorato Micologico ASL Rieti (SIAN). Porta i funghi interi e puliti solo sommariamente. Le app di riconoscimento non hanno valore diagnostico.</li>
+      </ul>
+      <p class="muted small">Sintesi dal documento di partenza (fonte AMER, 2025). Verifica sempre il testo vigente prima di uscire.</p>
+    </details>
+    <details>
+      <summary><h2>Come funziona l'indice</h2></summary>
+      <div class="method">
+        <p>Per ogni zona l'app scarica il meteo a <strong>tre quote</strong> (Open-Meteo, correzione altimetrica) e calcola per ogni specie un indice 0–100 come prodotto di fattori:</p>
+        <ul>
+          <li><strong>Pioggia</strong>: millimetri caduti nella finestra di latenza della specie (es. 7–21 giorni prima per i porcini) + cumulata 30 giorni. Senza un evento ≥ 8 mm il fattore si dimezza. <span class="tag ok">letteratura</span></li>
+          <li><strong>Temperatura</strong>: media dell'aria nei 20 giorni precedenti, confrontata con l'ottimo della specie (porcino ≈ 13 °C). <span class="tag ok">letteratura (B. edulis)</span> <span class="tag warn">euristica per le altre</span></li>
+          <li><strong>Suolo</strong>: umidità 3–9 cm degli ultimi 3 giorni (modello). <span class="tag warn">euristica</span></li>
+          <li><strong>Penalità</strong> per gelate (min &lt; −1 °C) e caldo (max &gt; 30 °C); <strong>bonus</strong> per shock termico (calo ≥ 4 °C 4–14 giorni prima). <span class="tag warn">pratica micologica</span></li>
+          <li><strong>Habitat</strong>: quota di bosco idoneo alla specie nella fascia ±150 m, calcolata su ~315 punti campione per zona dalla <em>Carta Forestale su base tipologica</em> della Regione Lazio. <span class="tag ok">dato ufficiale</span></li>
+          <li><strong>Stagione</strong> e <strong>quota</strong> della specie. <span class="tag warn">manualistica</span></li>
+        </ul>
+        <p>Per i giorni futuri la pioggia rilevante è in gran parte <em>già caduta</em> (latenza di 1–3 settimane): per questo l'indice a 3–7 giorni è più affidabile di quanto sembri. L'<strong>affidabilità</strong> scende quando conta pioggia ancora solo prevista.</p>
+        <p class="muted">Limiti: il modello non conosce esposizione, pendenza, età del bosco, pressione di raccolta, né le singole fungaie. Usalo per scegliere zona, quota e giorno, non come promessa. I parametri delle specie sono in <code>js/species.js</code>: vanno calibrati con le tue uscite.</p>
+        <p class="small">Fonti principali: Salerni E., Laganà A., Perini C. et al. (2002), <em>Israel Journal of Plant Sciences</em> 50(3) — correlazione più forte con la pioggia dei 30 giorni precedenti; preprint bioRxiv (2025) <em>Predicting porcini</em> — picco con T media ~13 °C nei 20 giorni e pioggia cumulata su ~26 giorni; Regione Lazio, Carta Forestale su base tipologica (WFS geoportale); Open-Meteo. Elenco completo nel README.</p>
+      </div>
+    </details>
+  </section>
+
+  <footer class="foot muted small">
+    Strumento di supporto, non di identificazione. Nessun fungo va consumato senza certezza: in caso di dubbio, Ispettorato Micologico ASL.
+    Mappe © OpenStreetMap, OpenTopoMap (CC-BY-SA). Meteo: Open-Meteo.com (CC BY 4.0). Carta Forestale: Regione Lazio.
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

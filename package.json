@@ -1,0 +1,10 @@
+{
+  "name": "fungaroli",
+  "private": true,
+  "type": "module",
+  "description": "Dove e quando andare a funghi intorno a Rieti",
+  "scripts": {
+    "start": "python3 -m http.server 8000",
+    "test": "node --test tests/*.test.mjs"
+  }
+}
