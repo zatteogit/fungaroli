@@ -47,8 +47,11 @@ def strip_html(s):
     return re.sub(r"<[^>]+>", "", s or "").strip()
 
 
-def commons_photo(latin, slug):
-    q = f'SELECT ?item ?img WHERE {{ ?item wdt:P225 "{latin}" . OPTIONAL {{ ?item wdt:P18 ?img }} }} LIMIT 1'
+def commons_photo(latin, slug, qid=None):
+    if qid:  # ID verificato in species-id.json (es. la moretta su Wikidata e' "Tricholoma terraria")
+        q = f'SELECT ?item ?img WHERE {{ BIND(wd:{qid} AS ?item) OPTIONAL {{ ?item wdt:P18 ?img }} }}'
+    else:
+        q = f'SELECT ?item ?img WHERE {{ ?item wdt:P225 "{latin}" . OPTIONAL {{ ?item wdt:P18 ?img }} }} LIMIT 1'
     d = get_json("https://query.wikidata.org/sparql", {"query": q, "format": "json"})
     b = d["results"]["bindings"]
     if not b:
@@ -138,6 +141,18 @@ def safe(fn, *a, default=None):
         return default
 
 
+def optimize(max_side=560, quality=72):
+    """Ricomprime le foto (servono incorporate nell'Artifact, limite 16 MB)."""
+    from PIL import Image
+    for f in OUT.glob("*.jpg"):
+        im = Image.open(f)
+        if max(im.size) <= max_side and f.stat().st_size < 70_000:
+            continue
+        im = im.convert("RGB")
+        im.thumbnail((max_side, max_side))
+        im.save(f, "JPEG", quality=quality, optimize=True, progressive=True)
+
+
 def main():
     OUT.mkdir(parents=True, exist_ok=True)
     ids = {}
@@ -149,7 +164,7 @@ def main():
              "species": {}, "lookalikes": {}}
     for sid, latin in species_list():
         print(sid, latin, file=sys.stderr)
-        qid, ref = safe(commons_photo, latin, sid, default=(None, None))
+        qid, ref = safe(commons_photo, latin, sid, ids.get(sid, {}).get("wikidata"), default=(None, None))
         time.sleep(3)
         media["species"][sid] = {"latin": latin, "wikidata": qid, "ref": ref, "inat": safe(inat_photos, latin, sid, default=[]),
                                  "gbif": safe(gbif_months, latin), "model3d": safe(sketchfab, latin)}
@@ -159,11 +174,12 @@ def main():
                 continue
             slug = ll.group(0).lower().replace(" ", "-")
             print("  sosia", ll.group(0), file=sys.stderr)
-            lq, lref = safe(commons_photo, ll.group(0), slug, default=(None, None))
+            lq, lref = safe(commons_photo, ll.group(0), slug, lk.get("wikidata"), default=(None, None))
             time.sleep(3)
             media["lookalikes"][ll.group(0)] = {"wikidata": lq, "ref": lref, "inat": safe(inat_photos, ll.group(0), slug, 1, default=[])}
         # salvataggio progressivo: si puo' rilanciare e riprende dalla cache
         (ROOT / "data" / "media.json").write_text(json.dumps(media, ensure_ascii=False, indent=1))
+    optimize()
 
 
 if __name__ == "__main__":

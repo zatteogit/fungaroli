@@ -523,6 +523,258 @@
     "page": "https://sketchfab.com/3d-models/none-80edb9e8104f4995aac3dd0dcd3fc4d6",
     "embed": "https://sketchfab.com/models/80edb9e8104f4995aac3dd0dcd3fc4d6/embed?autostart=0&ui_infos=0&ui_watermark=0"
    }
+  },
+  "mellea": {
+   "latin": "Armillaria mellea",
+   "wikidata": "Q473745",
+   "ref": {
+    "file": "assets/species/mellea-ref.jpg",
+    "source": "Wikimedia Commons",
+    "page": "https://commons.wikimedia.org/wiki/File:Armillaria_mellea_(1).jpg",
+    "author": "tomasz przechlewski from Sopot, Poland",
+    "license": "CC BY 2.0"
+   },
+   "inat": [
+    {
+     "file": "assets/species/mellea-inat1.jpg",
+     "source": "iNaturalist (research grade)",
+     "page": "https://www.inaturalist.org/observations/64431559",
+     "author": "lucapassalacqua",
+     "license": "CC-BY-NC",
+     "place": "Provincia di Grosseto, Italia",
+     "date": "2020-11-07"
+    },
+    {
+     "file": "assets/species/mellea-inat2.jpg",
+     "source": "iNaturalist (research grade)",
+     "page": "https://www.inaturalist.org/observations/277155542",
+     "author": "Alessandra Florea e Andrea Boiani",
+     "license": "CC-BY-NC",
+     "place": "Provincia di Viterbo, Italia",
+     "date": "2024-10-20"
+    },
+    {
+     "file": "assets/species/mellea-inat3.jpg",
+     "source": "iNaturalist (research grade)",
+     "page": "https://www.inaturalist.org/observations/101284231",
+     "author": "diegoreggianti",
+     "license": "CC-BY-NC",
+     "place": "Crocco- Olivi, 00148 Roma RM, Italia",
+     "date": "2021-11-15"
+    }
+   ],
+   "gbif": {
+    "taxonKey": 2536891,
+    "total": 411,
+    "months": [
+     2,
+     1,
+     0,
+     1,
+     2,
+     0,
+     0,
+     1,
+     14,
+     185,
+     166,
+     15
+    ],
+    "page": "https://www.gbif.org/occurrence/search?taxon_key=2536891&country=IT"
+   },
+   "model3d": {
+    "uid": "2bb23136394a4362a061f8a6d8b1cd8e",
+    "name": "Honey Agaric (Armillaria Mellea)",
+    "author": "3D_UTPL",
+    "license": "CC Attribution-NonCommercial-ShareAlike",
+    "page": "https://sketchfab.com/3d-models/none-2bb23136394a4362a061f8a6d8b1cd8e",
+    "embed": "https://sketchfab.com/models/2bb23136394a4362a061f8a6d8b1cd8e/embed?autostart=0&ui_infos=0&ui_watermark=0"
+   }
+  },
+  "virescens": {
+   "latin": "Russula virescens",
+   "wikidata": "Q677341",
+   "ref": {
+    "file": "assets/species/virescens-ref.jpg",
+    "source": "Wikimedia Commons",
+    "page": "https://commons.wikimedia.org/wiki/File:Russula_virescens3.JPG",
+    "author": "Paffka",
+    "license": "CC BY-SA 3.0"
+   },
+   "inat": [
+    {
+     "file": "assets/species/virescens-inat1.jpg",
+     "source": "iNaturalist (research grade)",
+     "page": "https://www.inaturalist.org/observations/221331641",
+     "author": "Luca Pilia",
+     "license": "CC-BY-NC",
+     "place": "00066 Manziana, Metropolitan City of Rome Capital, Italy",
+     "date": "2024-06-08"
+    },
+    {
+     "file": "assets/species/virescens-inat2.jpg",
+     "source": "iNaturalist (research grade)",
+     "page": "https://www.inaturalist.org/observations/292664884",
+     "author": "adcam",
+     "license": "CC-BY-NC",
+     "place": "Vetralla, Lazio, IT",
+     "date": "2025-06-25"
+    },
+    {
+     "file": "assets/species/virescens-inat3.jpg",
+     "source": "iNaturalist (research grade)",
+     "page": "https://www.inaturalist.org/observations/377464728",
+     "author": "Anonimous Pug",
+     "license": "CC-BY-NC",
+     "place": "Province of Viterbo, Italy",
+     "date": "2025-09-27"
+    }
+   ],
+   "gbif": {
+    "taxonKey": 2551423,
+    "total": 218,
+    "months": [
+     38,
+     7,
+     0,
+     0,
+     14,
+     21,
+     34,
+     28,
+     26,
+     7,
+     37,
+     0
+    ],
+    "page": "https://www.gbif.org/occurrence/search?taxon_key=2551423&country=IT"
+   },
+   "model3d": {
+    "uid": "7da28231cfa4437ba81a011fb8aa26c1",
+    "name": "Zelenkasta Golobica Russula virescens",
+    "author": "Prirodoslovni muzej Slovenije",
+    "license": "CC Attribution",
+    "page": "https://sketchfab.com/3d-models/none-7da28231cfa4437ba81a011fb8aa26c1",
+    "embed": "https://sketchfab.com/models/7da28231cfa4437ba81a011fb8aa26c1/embed?autostart=0&ui_infos=0&ui_watermark=0"
+   }
+  },
+  "suillus": {
+   "latin": "Suillus luteus",
+   "wikidata": "Q816730",
+   "ref": {
+    "file": "assets/species/suillus-ref.jpg",
+    "source": "Wikimedia Commons",
+    "page": "https://commons.wikimedia.org/wiki/File:Ruhland,_Grenzstra%C3%9Fe_bei_Hausnr._1,_Butterpilz_am_Parkplatzrand,_Entwicklungsreihe,_Herbst,_02.jpg",
+    "author": "Wilhelm Zimmerling PAR",
+    "license": "CC BY-SA 4.0"
+   },
+   "inat": [],
+   "gbif": {
+    "taxonKey": 7777157,
+    "total": 45,
+    "months": [
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     1,
+     3,
+     5,
+     23,
+     7,
+     0
+    ],
+    "page": "https://www.gbif.org/occurrence/search?taxon_key=7777157&country=IT"
+   },
+   "model3d": null
+  },
+  "terreum": {
+   "latin": "Tricholoma terreum",
+   "wikidata": null,
+   "ref": null,
+   "inat": [
+    {
+     "file": "assets/species/terreum-inat1.jpg",
+     "source": "iNaturalist (research grade)",
+     "page": "https://www.inaturalist.org/observations/64606524",
+     "author": "Rino",
+     "license": "CC-BY-NC",
+     "place": "Provincia di Chieti, Italia",
+     "date": "2020-11-10"
+    },
+    {
+     "file": "assets/species/terreum-inat2.jpg",
+     "source": "iNaturalist (research grade)",
+     "page": "https://www.inaturalist.org/observations/146211484",
+     "author": "Dr. Fabio Mao Valletta",
+     "license": "CC-BY-NC",
+     "place": "Provincia di Frosinone, Italia",
+     "date": "2022-12-17"
+    },
+    {
+     "file": "assets/species/terreum-inat3.jpg",
+     "source": "iNaturalist (research grade)",
+     "page": "https://www.inaturalist.org/observations/253982533",
+     "author": "Giorgio",
+     "license": "CC-BY-NC",
+     "place": "60044 Fabriano AN, Italia",
+     "date": "2024-12-03"
+    }
+   ],
+   "gbif": {
+    "taxonKey": 5241808,
+    "total": 366,
+    "months": [
+     7,
+     0,
+     0,
+     2,
+     0,
+     1,
+     93,
+     14,
+     68,
+     24,
+     141,
+     13
+    ],
+    "page": "https://www.gbif.org/occurrence/search?taxon_key=5241808&country=IT"
+   },
+   "model3d": null
+  },
+  "nuda": {
+   "latin": "Lepista nuda",
+   "wikidata": "Q29362",
+   "ref": {
+    "file": "assets/species/nuda-ref.jpg",
+    "source": "Wikimedia Commons",
+    "page": "https://commons.wikimedia.org/wiki/File:Lepista_nuda.jpg",
+    "author": "Archenzo, Italy",
+    "license": "CC BY-SA 3.0"
+   },
+   "inat": [],
+   "gbif": {
+    "taxonKey": 5242048,
+    "total": 47,
+    "months": [
+     1,
+     0,
+     1,
+     1,
+     2,
+     1,
+     0,
+     0,
+     2,
+     9,
+     23,
+     4
+    ],
+    "page": "https://www.gbif.org/occurrence/search?taxon_key=5242048&country=IT"
+   },
+   "model3d": null
   }
  },
  "lookalikes": {}
