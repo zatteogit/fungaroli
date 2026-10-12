@@ -127,7 +127,7 @@ Regola generale: la L.R. 32/1998 cede il passo alle regole dell'ente gestore (ar
 
 - **Legge istitutiva:** L.R. 7 giugno 1990, n. 70. L'art. 12, c. 1, lett. m) vieta, fino all'entrata in vigore di piano e regolamento, "la raccolta di specie vegetali spontanee"; nel frattempo la raccolta "potrà essere autorizzata dall'ente gestore", che ne fissa quantità e modalità.
 - **Piano della riserva:** approvato con **Deliberazione del Consiglio regionale 15 settembre 2021, n. 16**, pubblicata sul BURL n. 93, supplemento n. 1, del 30 settembre 2021. Gli elaborati comprendono Norme tecniche di attuazione e un Regolamento ("RS RR Regolamento"), adottati dal Comune di Borgorose con la delibera consiliare 20/2014.
-- **Non verificato:** le Norme tecniche nel PDF del BURL sono in gran parte immagini scansionate. Non sono riuscito a estrarre le disposizioni sui funghi e non so se il Regolamento della riserva sia in vigore. Non so nemmeno se la legge istitutiva comprenda i funghi tra le "specie vegetali spontanee".
+- **Regolamento non approvato (verifica del 12/10/2026):** la DCR 16/2021 approva il solo Piano. Gli elaborati elencati nel dispositivo sono Relazione generale, Norme tecniche di attuazione, Schede degli interventi e sette tavole: il Regolamento non c'è (testo della DCR, pp. 8-9). Il testo del PDF ha una codifica dei caratteri sfasata. Una volta decodificato, l'unica occorrenza di "funghi" è descrittiva ("produzioni non legnose (es. funghi)"). **Interpretazione:** il Piano non contiene regole sulla raccolta e valgono le misure di salvaguardia dell'art. 12 della L.R. 70/1990. La decodifica può essere incompleta, quindi le NTA vanno controllate a mano. Non so nemmeno se la legge istitutiva comprenda i funghi tra le "specie vegetali spontanee".
 - **Nota:** nessuna delle sette zone dell'app sembra ricadere nella Duchessa: Rascino è nel territorio di Fiamignano, non di Borgorose. La riserva compare nel README e nelle regole perché è vicina.
 
 ### 2.3 Parco Nazionale del Gran Sasso e Monti della Laga (zona Laga - Amatrice)
@@ -159,8 +159,9 @@ Non ho controllato in modo sistematico se Vallonina/Terminillo, Poggio Bustone/C
 | Sede | Via del Terminillo 42, 02100 Rieti (blocco 4) | Stessa scheda (2026) e elenco del Ministero della Salute aggiornato al 20 marzo 2024 |
 | Telefono | 0746 279801 | Elenco del Ministero (2024) e scheda ASL (2026, come recapito del responsabile del corso) |
 | Centralino ASL | 0746 2781 | Intestazione della scheda ASL (2026) |
-| Orari al pubblico | lunedì, mercoledì, venerdì 8:00-9:30 | Elenco del Ministero aggiornato al 20 marzo 2024 |
-| Sportello Antrodoco | P.za Martiri della Libertà, lunedì 8:00-9:30 | Elenco del Ministero (2024) |
+| Orari al pubblico | dal lunedì al venerdì 8:30-9:30 | Pagina *Ispettorato Micologico* sul sito ASL Rieti, `article:modified_time` 24/09/2026, letta il 12/10/2026: https://www.asl.rieti.it/organizzazione-aziendale/dipartimenti-aree-e-staff/dipartimento-della-prevenzione/uosd-igiene-degli-alimenti-e-della-nutrizione/ispettorato-micologico/ (l'elenco del Ministero del 2024 diceva lunedì, mercoledì e venerdì 8:00-9:30) |
+| Sportello Antrodoco | Non più elencato | La pagina ASL del 2026 indica solo la sede di Rieti; lo sportello compariva nell'elenco del Ministero (2024) e in un comunicato ASL del 2018 |
+| Prenotazione | Non citata | Pagina ASL 2026 |
 
 Aggiornamento del 12/10/2026 (verifica dal browser, `inbox/README.md`): la pagina ufficiale dell'Ispettorato, modificata il 24/09/2026, indica lunedì-venerdì 8:30-9:30, via del Terminillo 42 (blocco 4), tel. 0746 279801, ispettoratomicologico@asl.rieti.it. Non parla di prenotazione né di periodo stagionale; lo sportello di Antrodoco non compare più. https://www.asl.rieti.it/organizzazione-aziendale/dipartimenti-aree-e-staff/dipartimento-della-prevenzione/uosd-igiene-degli-alimenti-e-della-nutrizione/ispettorato-micologico/ Non ho riportato nominativi ed email personali dei micologi presenti nei documenti.
 

@@ -169,16 +169,16 @@ La raccolta è regolata dalla L.R. Lazio 5 agosto 1998, n. 32 e dalle sue modifi
 | Regola | Contenuto | Verifica |
 |---|---|---|
 | Titolo | Attestato di un corso di formazione micologica di almeno 14 ore (dal 2020, L.R. 1/2020, sostituisce il tesserino; chi ha il vecchio tesserino può continuare a usarlo). | Confermato sul sito della Regione Lazio (pagina aggiornata l'8 ottobre 2026) |
-| Contributo annuale | 25 € residenti nel Lazio, 40 € non residenti, valido un anno dal versamento. Causale "L.R. n. 32/98 - raccolta funghi anno...". | Confermato (Regione Lazio, AMER 2025) |
+| Contributo annuale | 25 € residenti nel Lazio, 40 € non residenti, valido un anno dal versamento. Causale "L.R. n. 32/98 - raccolta funghi anno...". | Confermato (L.R. 32/98 art. 4 c.1 lett. b; Regione Lazio) |
 | Esenzione | Residenti nel Lazio con più di 65 anni non pagano il contributo; attestato e documento restano obbligatori. | Confermato (Regione Lazio) |
-| Documenti da portare | Attestato (o tesserino), ricevuta del versamento, documento d'identità. | Confermato (AMER 2025) |
+| Documenti da portare | Attestato (o tesserino), ricevuta del versamento, documento d'identità. | Confermato (Regione Lazio) |
 | Giorni | Tutti i giorni della settimana: l'art. 21 della L.R. 20/2024 ha abrogato il limite dei quattro giorni. | Confermato (Regione Lazio) |
-| Orari | Vietata la raccolta da un'ora dopo il tramonto a un'ora prima dell'alba. | Confermato (AMER 2025, art. 9 L.R. 32/98) |
-| Quantità | 3 kg a persona al giorno, salvo un unico esemplare o un unico cespo concresciuto. | Confermato (AMER 2025) |
-| Contenitori e attrezzi | Contenitori rigidi e aerati; vietati rastrelli, uncini e mezzi che danneggiano humus e micelio; vietato distruggere funghi, anche non commestibili. | Confermato (AMER 2025) |
-| Pulizia | Pulizia sommaria sul posto, conservando i caratteri utili al riconoscimento. | Confermato (AMER 2025) |
+| Orari | Vietata la raccolta da un'ora dopo il tramonto a un'ora prima dell'alba. | Confermato (L.R. 32/98 art. 9 c.1) |
+| Quantità | 3 kg a persona al giorno, salvo un unico esemplare o un unico cespo concresciuto. | Confermato (L.R. 32/98 art. 3 c.1) |
+| Contenitori e attrezzi | Contenitori rigidi e aerati; vietati rastrelli, uncini e mezzi che danneggiano humus e micelio; vietato distruggere funghi, anche non commestibili. | Confermato (L.R. 32/98 art. 9 cc. 2-4) |
+| Pulizia | Pulizia sommaria sul posto, conservando i caratteri utili al riconoscimento. | Confermato (L.R. 32/98 art. 9 c.4) |
 | Taglie minime del cappello | 4 cm: porcini (gruppo *B. edulis*), ovolo buono, verdone (*Russula virescens*), agarico geotropo, prataiolo. 5 cm: mazza di tamburo. 3 cm: tutte le altre. | Confermato (AMER 2025). Il documento di partenza e l'interfaccia non citano il verdone, l'agarico geotropo e il prataiolo a 4 cm. |
-| Dove è vietato | Entro 10 m dal margine delle strade pubbliche; terreni di pertinenza di abitazioni per almeno 100 m; giardini e parchi privati; verde pubblico urbano; ex discariche e aree industriali; riserve integrali. | Confermato (AMER 2025) |
+| Dove è vietato | Entro 10 m dal margine delle strade pubbliche; terreni di pertinenza di abitazioni per almeno 100 m; giardini e parchi privati; verde pubblico urbano; ex discariche e aree industriali; riserve integrali. | Confermato (L.R. 32/98 art. 10 cc. 1-3) |
 | Minori e accompagnati | Sotto i 14 anni solo accompagnati da chi ha i titoli. Chi non ha l'attestato può avere fino a cinque autorizzazioni giornaliere gratuite all'anno, solo se accompagnato. | Riportato sul sito della Regione Lazio |
 
 ### Aree protette
@@ -192,15 +192,15 @@ Questi due punti vengono dal documento di partenza e da AMER (che conferma il pr
 
 L'**Ispettorato Micologico della ASL di Rieti** (Servizio Igiene degli Alimenti e della Nutrizione, Dipartimento di Prevenzione) controlla gratuitamente i funghi raccolti e rilascia la certificazione di commestibilità. Porta i funghi interi, con la base del gambo, puliti solo sommariamente, freschi e non bagnati.
 
-Un comunicato della ASL del 2018 indicava la sede di via del Terminillo 42 a Rieti, dal lunedì al venerdì dalle 8 alle 9:30, e un punto ad Antrodoco il lunedì. Sono informazioni vecchie: verifica sede e orari sul sito della ASL prima di andare.
+Secondo la pagina della ASL aggiornata al 24 settembre 2026: Blocco 4, Via del Terminillo 42, Rieti; dal lunedì al venerdì dalle 8:30 alle 9:30; tel. 0746 279801, ispettoratomicologico@asl.rieti.it. La pagina non parla di prenotazione né di periodi stagionali e non elenca più lo sportello di Antrodoco. Il corso per l'attestato è gratuito.
 
 Le app di riconoscimento fotografico non hanno valore diagnostico. Lo ricorda anche il Ministero della Salute in una nota dell'ottobre 2025.
 
 ### Fonti delle regole
 
 - Regione Lazio, *Funghi* (pagina aggiornata l'8 ottobre 2026). https://regione.lazio.it/cittadini/agricoltura/Funghi
-- AMER (2025). *Raccolta funghi nel Lazio: le regole in vigore nel 2025*. https://www.ameronlus.it/blog/2025/01/14/raccolta-funghi-nel-lazio-le-regole-in-vigore/
-- ASL Rieti, comunicato del 30 agosto 2018 sul servizio gratuito di certificazione dei funghi.
+- L.R. Lazio 5 agosto 1998, n. 32, testo coordinato vigente. https://www.consiglio.regione.lazio.it/consiglio-regionale/?vw=leggiregionalidettaglio&id=8275&sv=vigente
+- ASL Rieti, *Ispettorato Micologico* (pagina aggiornata il 24/09/2026). https://www.asl.rieti.it/organizzazione-aziendale/dipartimenti-aree-e-staff/dipartimento-della-prevenzione/uosd-igiene-degli-alimenti-e-della-nutrizione/ispettorato-micologico/
 - Ministero della Salute, *Ispettorati micologici*. https://www.salute.gov.it/new/it/tema/sistema-di-controllo-della-sicurezza-alimentare/ispettorati-micologici/
 
 La norma cambia: prima della stagione controlla il testo vigente sul sito del Consiglio regionale del Lazio.

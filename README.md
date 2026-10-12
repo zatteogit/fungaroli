@@ -79,8 +79,9 @@ indice = 100 × stagione × habitat × quota × pioggia × temperatura × suolo 
 
 ### Cosa è fatto, cosa è ipotesi
 
-- **Fatti verificati:** composizione forestale e quote (Carta Forestale, DEM); meteo (modello Open-Meteo, non stazioni a terra); regole di raccolta (dal documento di partenza, fonte AMER 2025).
+- **Fatti verificati:** composizione forestale e quote (Carta Forestale, DEM); meteo (modello Open-Meteo, non stazioni a terra); regole di raccolta (L.R. Lazio 32/1998, testo vigente; dettagli e fonti in `docs/legale.md`).
 - **Da letteratura, ma con limiti:** la relazione pioggia 26–30 gg e T ≈ 13 °C vale per *B. edulis* in faggete; lo studio del 2025 è un preprint non ancora revisionato.
+- **Licenza della Carta Forestale da chiarire:** la risorsa shapefile su dati.lazio.it è dichiarata CC BY 4.0, ma la scheda metadati allegata allo stesso dataset (aggiornata a dicembre 2012) limita l'uso a fini non commerciali e vieta distribuzione e modifica. `data/habitat.json`, `data/trails.json` e le immagini in `assets/` ne derivano: prima di diffondere l'app conviene una conferma scritta della Regione. Dettagli in `docs/legale.md`, sezione licenze.
 - **Euristiche:** ottimi termici delle altre specie, finestre di latenza, pesi di habitat, bonus shock. Sono in `js/species.js` e `js/model.js` (`PARAMS`): **vanno calibrati sulle uscite reali**.
 - **Cosa il modello non vede:** esposizione e pendenza, età e gestione del bosco, pressione di raccolta, singole fungaie, microclima di valle.
 
@@ -113,16 +114,16 @@ Per aggiungere una zona: inserirla in `data/zones.json` (centro, raggio, tre quo
 
 ## Avvertenze
 
-Strumento di supporto alla pianificazione, **non di identificazione**. Raccolta solo con attestato micologico e contributo regionale (L.R. Lazio 32/98 e s.m.i.), max 3 kg/giorno. Far controllare il raccolto all'Ispettorato Micologico ASL Rieti (SIAN), gratuito. Nelle riserve (Navegna-Cervia, Duchessa) e nel Parco Gran Sasso-Laga valgono zonizzazioni e regolamenti propri.
+Strumento di supporto alla pianificazione, **non di identificazione**. Raccolta solo con attestato micologico e contributo regionale (L.R. Lazio 32/98 e s.m.i.), max 3 kg/giorno. Far controllare il raccolto all'Ispettorato Micologico ASL Rieti (Via del Terminillo 42, blocco 4; lun–ven 8:30–9:30; tel. 0746 279801), gratuito per i privati secondo il Ministero della Salute. Nelle riserve (Navegna-Cervia, Duchessa) e nel Parco Gran Sasso-Laga valgono zonizzazioni e regolamenti propri.
 
 ## Fonti
 
 - Salerni E., Laganà A., Perini C., Loppi S., De Dominicis V. (2002). *Effects of temperature and rainfall on fruiting of macrofungi in oak forests of the Mediterranean area*. Israel Journal of Plant Sciences 50(3): 189–198. https://usiena-air.unisi.it/handle/11365/3048
-- *Predicting porcini: a decade of sporocarp monitoring reveals the meteorological triggers of Boletus edulis fruiting in central European beech forests* (2025). bioRxiv, preprint. https://www.biorxiv.org/content/10.64898/2025.12.12.693895v1
 - Salerni E., Paoli L., Perini C. (2023). Produttività di *B. edulis* in abetine e risposta a eventi termici estremi. Italian Journal of Mycology. https://doaj.org/article/8b44d1d6b39e4739ab56842f048e3336
 - Regione Lazio. *Carta Forestale su base tipologica* — WFS/WMS `geonode:tipi_forestali2`. https://geoportale.regione.lazio.it ; https://dati.lazio.it/dataset/carta-forestale-su-base-tipologica-della-regione-lazio
 - Open-Meteo. Forecast API ed Elevation API (CC BY 4.0). https://open-meteo.com
 - OpenStreetMap (ODbL) via Valhalla per accessi e fondo stradale, via Waymarked Trails per i sentieri; OpenTopoMap per la base cartografica.
-- Brejon Lamartinière E., Hoffman J. I. (2025). *Predicting porcini…* bioRxiv, preprint (autori verificati sull'abstract).
-- AMER (2025). *Raccolta funghi nel Lazio: le regole in vigore nel 2025*. https://www.ameronlus.it/blog/2025/01/14/raccolta-funghi-nel-lazio-le-regole-in-vigore/
+- Brejon Lamartinière E., Hoffman J. I. (2026). *Predicting porcini: a decade of sporocarp monitoring reveals the meteorological triggers of Boletus edulis fruiting in central European beech forests*. bioRxiv, preprint non revisionato, **versione 2 dell'8 giugno 2026**. La v1 (14/12/2025) usava finestre di 5 giorni e un ottimo di 13,2 °C; i valori di 20 e 26 giorni usati dal modello vengono dalla v2. https://doi.org/10.64898/2025.12.12.693895 ; https://www.biorxiv.org/content/10.64898/2025.12.12.693895v2.full
+- L.R. Lazio 5 agosto 1998, n. 32, testo coordinato vigente (Consiglio regionale del Lazio). https://www.consiglio.regione.lazio.it/consiglio-regionale/?vw=leggiregionalidettaglio&id=8275&sv=vigente
+- ASL Rieti, *Ispettorato Micologico* (pagina aggiornata il 24/09/2026). https://www.asl.rieti.it/organizzazione-aziendale/dipartimenti-aree-e-staff/dipartimento-della-prevenzione/uosd-igiene-degli-alimenti-e-della-nutrizione/ispettorato-micologico/
 - MyBoletus, *Funghi nel Lazio*; AMER, *Report uscita micologica Altopiano di Rascino* (2018); Alta Valle del Velino, *Andar per funghi* — per habitat e stagionalità locali (vedi documento di partenza).

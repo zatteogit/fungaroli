@@ -220,7 +220,7 @@ Questi fattori non entrano nell'indice di fruttificazione. Servono a correggere 
 
 ### Orari di raccolta e alba
 
-**Fatto (Dato ufficiale e norma)**: la raccolta nel Lazio è vietata da un'ora dopo il tramonto a un'ora prima dell'alba (L.R. 32/1998, art. 9, come riportato da AMER 2025). L'app calcola alba e tramonto per il centro della zona con le formule NOAA (errore di 1-2 minuti, rifrazione standard di 90,833°), e il test verifica per Rieti il 12 ottobre 2026 alba alle 07:16 e tramonto alle 18:33.
+**Fatto (Dato ufficiale e norma)**: la raccolta nel Lazio è vietata da un'ora dopo il tramonto a un'ora prima dell'alba (L.R. 32/1998, art. 9 c.1, testo vigente). L'app calcola alba e tramonto per il centro della zona con le formule NOAA (errore di 1-2 minuti, rifrazione standard di 90,833°), e il test verifica per Rieti il 12 ottobre 2026 alba alle 07:16 e tramonto alle 18:33.
 
 L'app non tiene conto dell'orizzonte reale: in una valle stretta il sole arriva più tardi, ma l'orario legale si riferisce all'alba astronomica.
 
@@ -352,7 +352,7 @@ Dati e servizi:
 
 Norma:
 
-- L.R. Lazio 5 agosto 1998, n. 32 e successive modifiche; sintesi in AMER (2025), *Raccolta funghi nel Lazio: le regole in vigore nel 2025*. https://www.ameronlus.it/blog/2025/01/14/raccolta-funghi-nel-lazio-le-regole-in-vigore/
+- L.R. Lazio 5 agosto 1998, n. 32 e successive modifiche, testo coordinato vigente (Consiglio regionale del Lazio). https://www.consiglio.regione.lazio.it/consiglio-regionale/?vw=leggiregionalidettaglio&id=8275&sv=vigente
 
 Fonti che ho cercato ma non ho potuto verificare nei contenuti, e che quindi non uso a sostegno di nessun parametro:
 
