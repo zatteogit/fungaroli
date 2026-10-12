@@ -664,7 +664,7 @@ function renderCompare(box, ref, pick) {
     <p class="small muted cmp-lede">${fromToxic
       ? `Si confonde con ${list.length === 1 ? 'un fungo commestibile' : `${list.length} funghi commestibili`}. A sinistra ${esc((ref.name || ref.latin).toLowerCase())}, a destra il fungo con cui si scambia${list.length > 1 ? ': scorri di lato per vederli tutti' : ''}.`
       : `${list.length} ${list.length === 1 ? 'fungo che gli somiglia' : 'funghi che gli somigliano'}. Scorri di lato per confrontarli uno alla volta: a sinistra ${esc(ref.name.toLowerCase())}, a destra il sosia.`}</p>
-    <div class="cmp-pickbar"><span class="cmp-chip cmp-chip-ref ${toxCls(ref)}"><span class="cmp-chip-img">${pic(ref, true)}</span><span>${esc(ref.name || ref.latin)}</span></span><span class="cmp-pvs" aria-hidden="true">vs</span>
+    <div class="cmp-pickbar"><span class="cmp-ref-l ${toxCls(ref)}"><b>${esc(ref.name || ref.latin)}</b> <i aria-hidden="true">vs</i></span>
     <div class="cmp-pick" role="tablist" aria-label="Scegli il sosia">${list.map((t, k) => `<button type="button" role="tab" class="cmp-chip ${toxCls(t)}" data-go="${k}" aria-selected="${k === start}"><span class="cmp-chip-img">${pic(t, true)}</span><span>${esc(t.name || t.latin)}</span></button>`).join('')}</div></div>
     <div class="cmp-track">${list.map(slide).join('')}</div>
     <p class="cmp-dots" aria-hidden="true">${list.map((_, k) => `<i${k === start ? ' class="on"' : ''}></i>`).join('')}</p>
