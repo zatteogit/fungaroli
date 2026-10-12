@@ -362,7 +362,7 @@ export function traitStrip(edibleId, t = refOf(edibleId)) {
     const k = { lamelle: 'Lamelle', pori: 'Pori', aculei: 'Aculei', pliche: 'Pliche', liscio: 'Sotto il cappello' }[h] || 'Sotto il cappello';
     const g = { lamelle: 'fp', pliche: 'fp', pori: 'mp', aculei: 'mp' }[h] || 'ms';
     const cols = [].concat(tr.hymenophore_color || []);
-    const art = cols.length ? cols.slice(0, 2).map((v) => swatch(hymKind(tr.hymenophore), v)).join('') : `<span class="id-hym">${HYM_ICON[h] || ''}</span>`;
+    const art = hymArt(h, cols);
     out.push(tile(art, k, cols.length ? orList(cols.map((c) => agree(c, g))) : (h === 'liscio' ? 'liscio' : '')));
   }
   // gambo: anello, volva, reticolo e base nello stesso disegno
@@ -370,10 +370,10 @@ export function traitStrip(edibleId, t = refOf(edibleId)) {
     const base = [].concat(tr.stem_base || ['normale'])[0];
     const bits = [tr.stem_ring === true ? 'anello' : tr.stem_ring === false ? 'senza anello' : 'anello variabile',
       tr.stem_volva === true ? 'volva' : tr.stem_volva === false ? 'senza volva' : null, tr.stem_reticulum === true ? 'reticolo' : null].filter(Boolean);
-    out.push(tile(stemArt2(base, tr.stem_ring, tr.stem_volva, tr.stem_reticulum), 'Gambo', bits.join(', '),
+    out.push(tile(stemArt2(base, tr.stem_ring, tr.stem_volva, tr.stem_reticulum, [].concat(tr.cap_color || [])[0], [].concat(tr.cap_shape || [])[0]), 'Gambo', bits.join(', '),
       tr.stem_base?.length ? `base ${orList(tr.stem_base.map((v) => optLabel(Q('stem_base'), v)))}` : ''));
   }
-  if (tr.flesh_change) { const f = [].concat(tr.flesh_change); out.push(tile(`<span class="id-flesh" style="background:linear-gradient(100deg, #f4ecd8 30%, ${FLESH[f[0]]} 85%)"></span>`, 'Al taglio', orList(f.map((v) => (v === 'nessuno' ? 'non cambia' : `vira al ${v}`))))); }
+  if (tr.flesh_change) { const f = [].concat(tr.flesh_change); out.push(tile(fleshArt(f.find((v) => v !== 'nessuno') || f[0], [].concat(tr.cap_color || [])[0]), 'Al taglio', orList(f.map((v) => (v === 'nessuno' ? 'non cambia' : `vira al ${v}`))))); }
   if (tr.spore_print?.length) out.push(tile(sporeArt(tr.spore_print[0]), 'Sporata', orList(tr.spore_print.map((v) => Q('spore_print').labels?.[v] || agree(v, 'fs')))));
   return `<ul class="trait-strip" aria-label="Caratteri principali">${out.join('')}</ul>`;
 }
@@ -403,29 +403,82 @@ export function attentionBox(rules, extra = '') {
 
 // disegni composti per le tessere della scheda
 let capN = 0;
+const STEMC = ['#f6efe0', '#e4d8bd', '#b9a782']; // gambo e carne: crema neutro
+const gid = () => `ta-${++capN}`;
+const lin = (id, [l, m, d], x2 = 0, y2 = 1) => `<linearGradient id="${id}" x1="0" y1="0" x2="${x2}" y2="${y2}"><stop offset="0" stop-color="${l}"/><stop offset=".55" stop-color="${m}"/><stop offset="1" stop-color="${d}"/></linearGradient>`;
+const rad = (id, [l, m, d]) => `<radialGradient id="${id}" cx="36%" cy="18%" r="90%"><stop offset="0" stop-color="${l}"/><stop offset=".5" stop-color="${m}"/><stop offset="1" stop-color="${d}"/></radialGradient>`;
+const svgA = (vb, w, h, body) => `<svg class="ta" viewBox="${vb}" width="${w}" height="${h}">${body}</svg>`;
+// un fungo intero di profilo: cappello della forma della specie, nel suo colore, sul gambo
+function mushroom(shape, col, veil, tf) {
+  const d = SHAPE_D[shape] || SHAPE_D.convesso, C = COLORS[col] || COLORS.bruno, a = gid(), b = gid();
+  const whole = shape === 'trombetta'; // la trombetta non ha un gambo separato
+  return `<g transform="${tf}"><defs>${rad(a, C)}${lin(b, STEMC, 1, 0)}</defs>
+    ${whole ? '' : `<path d="M26 31 C25 42 24.5 50 23.5 56 H40.5 C39.5 50 39 42 38 31 Z" fill="url(#${b})" stroke="${STEMC[2]}" stroke-width="1.1"/>`}
+    <path d="${d}" fill="url(#${a})" stroke="${C[2]}" stroke-opacity=".7" stroke-width="1.3" stroke-linejoin="round"/>
+    ${veil ? [[22, 22], [31, 17], [41, 19], [47, 26], [27, 28], [37, 25], [16, 29]].map(([x, y]) => `<circle cx="${x}" cy="${y}" r="2.3" fill="#fff" stroke="rgb(0 0 0 / .2)" stroke-width=".7"/>`).join('') : ''}</g>`;
+}
 function capArt(shape, cols, veil) {
-  // uno o due cappelli della forma della specie, ciascuno di un colore (davanti il primo), come un piccolo gruppo
-  const d = SHAPE_D[shape] || SHAPE_D.convesso;
-  const cap = (c, tf) => { const id = `capg-${++capN}`, [l, m, dk] = COLORS[c] || COLORS.bruno;
-    return `<g transform="${tf}"><defs><radialGradient id="${id}" cx="38%" cy="20%" r="85%"><stop offset="0" stop-color="${l}"/><stop offset=".55" stop-color="${m}"/><stop offset="1" stop-color="${dk}"/></radialGradient></defs>
-      <path d="${d}" fill="url(#${id})" stroke="${dk}" stroke-opacity=".55" stroke-width="1.2"/>${veil ? [[20, 24], [30, 19], [41, 21], [48, 28], [26, 29], [36, 27], [14, 30]].map(([x, y]) => `<circle cx="${x}" cy="${y}" r="2.4" fill="#fff" stroke="rgb(0 0 0 / .25)" stroke-width=".8"/>`).join('') : ''}</g>`; };
+  // un fungo per colore possibile (al massimo due): quello davanti col primo colore
   const two = cols.length > 1;
-  return `<svg viewBox="0 2 64 40">${two ? cap(cols[1], 'translate(26 6) scale(.62)') : ''}${cap(cols[0], two ? 'translate(-2 6) scale(.8)' : 'translate(0 4)')}</svg>`;
+  return svgA('0 0 84 60', 84, 60, `<ellipse cx="${two ? 40 : 42}" cy="57" rx="${two ? 34 : 22}" ry="2.6" fill="currentColor" opacity=".12"/>
+    ${two ? mushroom(shape, cols[1], veil, 'translate(38 13) scale(.74)') : ''}${mushroom(shape, cols[0], veil, two ? 'translate(2 1)' : 'translate(10 1)')}`);
+}
+// il sotto del cappello visto dal basso: un disco con la trama vera (lamelle, pori, aculei, pliche),
+// uno spicchio per ogni colore possibile, al centro il gambo in sezione
+function hymArt(h, cols) {
+  const R = 25, cx = 30, cy = 30, cs = cols.length ? cols.slice(0, 4) : ['crema'];
+  const pt = (r, a) => `${(cx + r * Math.cos(a)).toFixed(2)} ${(cy + r * Math.sin(a)).toFixed(2)}`;
+  const n = cs.length, a0 = -Math.PI / 2 - (n > 1 ? Math.PI / n : 0);
+  const defs = [], slices = cs.map((c, i) => {
+    const id = gid(); defs.push(`<radialGradient id="${id}" cx="50%" cy="50%" r="50%"><stop offset=".2" stop-color="${COLORS[c][0]}"/><stop offset="1" stop-color="${COLORS[c][1]}"/></radialGradient>`);
+    if (n === 1) return `<circle cx="${cx}" cy="${cy}" r="${R}" fill="url(#${id})"/>`;
+    const s1 = a0 + (i / n) * 2 * Math.PI, s2 = a0 + ((i + 1) / n) * 2 * Math.PI;
+    return `<path d="M${cx} ${cy} L${pt(R, s1)} A${R} ${R} 0 ${s2 - s1 > Math.PI ? 1 : 0} 1 ${pt(R, s2)} Z" fill="url(#${id})"/>`;
+  });
+  const ink = 'rgb(60 40 20 / .38)';
+  let tex = '';
+  if (h === 'lamelle' || h === 'pliche') {
+    const k = h === 'pliche' ? 22 : 44;
+    for (let i = 0; i < k; i++) { const a = (i / k) * 2 * Math.PI, r0 = h === 'lamelle' && i % 2 ? 15 : 7.5;
+      tex += `<path d="M${pt(r0, a)} L${pt(R - 1, a)}" stroke="${ink}" stroke-width="${h === 'pliche' ? 1.3 : .75}"/>`;
+      if (h === 'pliche') tex += `<path d="M${pt(16, a)} L${pt(R - 1, a + 0.09)}" stroke="${ink}" stroke-width="1"/>`; }
+  } else if (h === 'pori' || h === 'aculei') {
+    for (let r = 10; r < R - 1; r += 3.6) { const m = Math.round((2 * Math.PI * r) / 3.8);
+      for (let i = 0; i < m; i++) { const a = (i / m) * 2 * Math.PI + r; tex += h === 'pori' ? `<circle cx="${(cx + r * Math.cos(a)).toFixed(2)}" cy="${(cy + r * Math.sin(a)).toFixed(2)}" r="1.05" fill="${ink}"/>` : `<circle cx="${(cx + r * Math.cos(a)).toFixed(2)}" cy="${(cy + r * Math.sin(a)).toFixed(2)}" r="1.25" fill="${ink}"/><circle cx="${(cx + r * Math.cos(a) - .4).toFixed(2)}" cy="${(cy + r * Math.sin(a) - .4).toFixed(2)}" r=".45" fill="#fff" opacity=".7"/>`; } }
+  }
+  const sep = n > 1 ? cs.map((_, i) => `<path d="M${cx} ${cy} L${pt(R, a0 + (i / n) * 2 * Math.PI)}" stroke="#fff" stroke-width="1.2" opacity=".9"/>`).join('') : '';
+  const sid = gid();
+  return svgA('0 0 60 60', 60, 60, `<defs>${defs.join('')}${rad(sid, STEMC)}</defs>
+    <circle cx="${cx}" cy="${cy}" r="${R + 2.6}" fill="${COLORS[cs[0]][2]}" opacity=".35"/>${slices.join('')}${tex}${sep}
+    <circle cx="${cx}" cy="${cy}" r="${R}" fill="none" stroke="rgb(60 40 20 / .35)" stroke-width="1"/>
+    <circle cx="${cx}" cy="${cy}" r="6.2" fill="url(#${sid})" stroke="${STEMC[2]}" stroke-width="1"/>`);
+}
+// fungo tagliato a meta': la carne e, se cambia, il colore che prende partendo dal taglio
+function fleshArt(change, capCol) {
+  const C = COLORS[capCol] || COLORS.bruno, ch = change && change !== 'nessuno' ? FLESH[change] : null, f = gid();
+  return svgA('0 0 64 60', 64, 60, `<defs><linearGradient id="${f}" x1="0" y1="0" x2=".9" y2="1"><stop offset="0" stop-color="#f6efdf"/><stop offset=".35" stop-color="#f1e7cf"/>${ch ? `<stop offset=".75" stop-color="${ch}" stop-opacity=".85"/><stop offset="1" stop-color="${ch}"/>` : '<stop offset="1" stop-color="#e3d6b6"/>'}</linearGradient></defs>
+    <ellipse cx="32" cy="57" rx="20" ry="2.4" fill="currentColor" opacity=".12"/>
+    <path d="M7 30 C8 9 56 9 57 30 Q50 33 40 32 L41 56 H23 L24 32 Q14 33 7 30 Z" fill="url(#${f})" stroke="${STEMC[2]}" stroke-width="1.1" stroke-linejoin="round"/>
+    <path d="M7 30 C8 9 56 9 57 30" fill="none" stroke="${C[1]}" stroke-width="3.2" stroke-linecap="round"/>
+    <path d="M10 31.5 Q32 36 54 31.5" fill="none" stroke="rgb(60 40 20 / .25)" stroke-width="1" stroke-dasharray="1.5 1.5"/>`);
 }
 const sizeTxt = (sz) => {
   const r = { piccolo: [0, 5], medio: [5, 12], grande: [12, 99] }, a = [].concat(sz || []).map((x) => r[x]).filter(Boolean);
   if (!a.length) return '';
   const lo = Math.min(...a.map((x) => x[0])), hi = Math.max(...a.map((x) => x[1]));
-  return hi >= 99 ? (lo ? `oltre ${lo} cm` : 'di ogni taglia') : lo ? `${lo}–${hi} cm` : `fino a ${hi} cm`;
+  return hi >= 99 ? (lo ? `oltre\u00a0${lo}\u00a0cm` : 'di ogni taglia') : lo ? `${lo}–${hi}\u00a0cm` : `fino a\u00a0${hi}\u00a0cm`;
 };
-function stemArt2(base, ring, volva, ret) {
-  const stem = { normale: 'M27 18 V54 H37 V18 Z', bulbosa: 'M28 18 V42 C19 44 19 56 32 56 C45 56 45 44 36 42 V18 Z', radicante: 'M27 18 V52 L31 62 H33 L37 52 V18 Z', assottigliata: 'M25 18 L29 54 H35 L39 18 Z' }[base] || 'M27 18 V54 H37 V18 Z';
-  return `<svg viewBox="0 0 64 64"><path d="M12 18 C12 6 52 6 52 18 Z" fill="currentColor" opacity=".15" stroke="currentColor" stroke-width="1.4" stroke-opacity=".5"/>
-    <path d="${stem}" fill="currentColor" opacity=".2" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
-    ${ret ? '<path d="M28 22 l4 4 4-4 M28 28 l4 4 4-4 M28 34 l4 4 4-4 M32 22 v16" stroke="currentColor" stroke-width="1" fill="none"/>' : ''}
-    ${ring === true ? '<path d="M24 25 Q32 32 40 25 L38 29 Q32 35 26 29 Z" fill="currentColor" opacity=".65"/>' : ring == null ? '<path d="M25 27 Q32 32 39 27" stroke="currentColor" stroke-width="1.4" stroke-dasharray="2 2" fill="none"/>' : ''}
-    ${volva === true ? '<path d="M20 50 C20 61 44 61 44 50 L40 54 H24 Z" fill="currentColor" opacity=".55"/><path d="M20 50 Q22 46 26 48 M44 50 Q42 46 38 48" stroke="currentColor" stroke-width="1.6" fill="none"/>' : ''}
-    <path d="M6 56 H58" stroke="currentColor" stroke-width="1.2" stroke-dasharray="2 3" opacity=".6"/></svg>`;
+function stemArt2(base, ring, volva, ret, capCol, shape) {
+  const stem = { normale: 'M27 22 C26.5 36 26 46 25.5 54 H38.5 C38 46 37.5 36 37 22 Z', bulbosa: 'M27.5 22 V42 C18 44 18 56 32 56 C46 56 46 44 36.5 42 V22 Z', radicante: 'M27 22 V50 L31 60 H33 L37 50 V22 Z', assottigliata: 'M25 22 L29 54 H35 L39 22 Z' }[base] || 'M27 22 C26.5 36 26 46 25.5 54 H38.5 C38 46 37.5 36 37 22 Z';
+  const C = COLORS[capCol] || COLORS.bruno, a = gid(), b = gid();
+  const cap = SHAPE_D[shape === 'trombetta' ? 'imbuto' : shape] || SHAPE_D.convesso;
+  return svgA('0 0 64 62', 64, 62, `<defs>${rad(a, C)}${lin(b, STEMC, 1, 0)}</defs>
+    <ellipse cx="32" cy="58" rx="20" ry="2.4" fill="currentColor" opacity=".12"/>
+    <path d="${stem}" fill="url(#${b})" stroke="${STEMC[2]}" stroke-width="1.1" stroke-linejoin="round"/>
+    ${ret ? '<path d="M28 26 l4 4 4-4 M28 32 l4 4 4-4 M28 38 l4 4 4-4 M32 26 v18" stroke="#8a6a3e" stroke-width=".9" fill="none" opacity=".8"/>' : ''}
+    <g transform="translate(0 -11) scale(1 .95)" opacity=".9"><path d="${cap}" fill="url(#${a})" stroke="${C[2]}" stroke-opacity=".6" stroke-width="1.2"/></g>
+    ${ring === true ? '<path d="M23.5 28 Q32 35 40.5 28 L38.5 33 Q32 38.5 25.5 33 Z" fill="#fbf7ec" stroke="#a8977a" stroke-width=".9"/>' : ring == null ? '<path d="M25 30 Q32 35 39 30" stroke="#a8977a" stroke-width="1.2" stroke-dasharray="2 2" fill="none"/>' : ''}
+    ${volva === true ? '<path d="M19 47 C18 59 46 59 45 47 L40 51 Q32 49 24 51 Z" fill="#f4eee0" stroke="#a8977a" stroke-width="1"/><path d="M19 47 Q21 44 25 46 M45 47 Q43 44 39 46" stroke="#a8977a" stroke-width="1.1" fill="none"/>' : ''}`);
 }
 
 // pagina completa di un velenoso o di un sosia (le commestibili hanno la loro scheda)

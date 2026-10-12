@@ -283,7 +283,7 @@ function fitChips(box) {
   const wrap = sep && getComputedStyle(sep).flexBasis === '100%';
   const fixed = w(box.querySelector('[data-g="all"]')) + (w(box.querySelector('[data-more]')) || 96) + (wrap ? 0 : w(sep) + [...box.querySelectorAll('[data-p]')].reduce((a, el) => a + w(el), 0)); // 112 = "+ altri N"
   let used = fixed, n = 0;
-  for (const el of box.querySelectorAll('.chip-ph')) { if (used + w(el) > W) break; used += w(el); n++; }
+  for (const el of box.querySelectorAll('.chip-g')) { if (used + w(el) > W) break; used += w(el); n++; }
   n = Math.max(1, n);
   if (n !== fitN) { fitN = n; renderFilterSummary(); }
 }
@@ -297,7 +297,7 @@ function renderFilterSummary() {
   const vis = chipsOpen ? order : order.filter((g, k) => k < fitN || (!all && state.groups.has(g.id)));
   const hidden = order.length - vis.length;
   box.innerHTML = `<button type="button" class="chip" data-g="all" aria-pressed="${all}">Tutti</button>
-    ${vis.map((g) => { const on = !all && state.groups.has(g.id); return `<button type="button" class="chip chip-ph" data-g="${g.id}" aria-pressed="${on}">${on ? '<span class="chip-chk" aria-hidden="true"></span>' : thumb(g.rep, 22)}${esc(g.label)}</button>`; }).join('')}
+    ${vis.map((g) => `<button type="button" class="chip chip-g" data-g="${g.id}" aria-pressed="${!all && state.groups.has(g.id)}">${esc(g.label)}</button>`).join('')}
     ${hidden > 0 ? `<button type="button" class="chip chip-more" data-more>+ altri ${hidden}</button>` : chipsOpen ? '<button type="button" class="chip chip-more" data-less>Meno</button>' : ''}
     <span class="af-sep" aria-hidden="true"></span>
     ${PREFS.map(([k, label]) => `<button type="button" class="chip pref" data-p="${k}" aria-pressed="${!!state[k]}">${esc(label)}</button>`).join('')}`;

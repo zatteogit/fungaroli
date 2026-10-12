@@ -1583,3 +1583,8 @@ html:has(dialog[open]:modal) body { overflow: hidden; }
   .active-filters .chip-ph { padding-left: 5px; gap: 6px; }
   .active-filters .chip-ph .thumb, .active-filters .chip-chk { width: 22px; height: 22px; }
 }
+/* tessere dei caratteri: stesso riquadro per tutti i disegni */
+.trait-strip .ts-art { height: 60px; margin-bottom: 4px; }
+.trait-strip .ts-art > svg.ta { height: 60px; width: auto; max-width: 100%; flex: none; color: var(--text-2); }
+.trait-strip .ts-art > svg.ta + svg { display: none; }
+.trait-strip .ts-v, .trait-strip .ts-sub { overflow-wrap: anywhere; max-width: 100%; }
