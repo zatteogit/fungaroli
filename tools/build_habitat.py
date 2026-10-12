@@ -8,7 +8,7 @@ Fonti:
 Uso: python3 tools/build_habitat.py   -> scrive data/habitat.json
 Richiede: shapely, pyproj
 """
-import json, math, subprocess, sys, time, urllib.parse
+import hashlib, json, math, subprocess, sys, time, urllib.parse
 from collections import defaultdict
 from pathlib import Path
 
@@ -25,19 +25,29 @@ GRID = 21  # punti per lato della griglia di campionamento
 to_utm = Transformer.from_crs("EPSG:4326", "EPSG:32633", always_xy=True).transform
 
 
-def get_json(url, params, tries=5):
-    """GET JSON via curl (piu' robusto di urllib dietro proxy)."""
+CACHE = ROOT / ".cache" / "http"
+
+
+def get_json(url, params, tries=8):
+    """GET JSON via curl (piu' robusto di urllib dietro proxy), con cache su disco per riprendere."""
     q = url + ("?" + urllib.parse.urlencode(params) if params else "")
+    f = CACHE / (hashlib.sha1(q.encode()).hexdigest() + ".json")
+    if f.exists():
+        return json.loads(f.read_text())
     for i in range(tries):
         r = subprocess.run(["curl", "-sS", "-m", "120", "-A", "fungaroli/0.1", q], capture_output=True, text=True)
         if r.returncode == 0:
             try:
-                return json.loads(r.stdout)
+                d = json.loads(r.stdout)
+                if not (isinstance(d, dict) and d.get("error")):
+                    CACHE.mkdir(parents=True, exist_ok=True)
+                    f.write_text(r.stdout)
+                    return d
             except json.JSONDecodeError:
                 pass
-        print(f"  retry {i+1}: {r.stderr.strip()[:120]}", file=sys.stderr)
-        time.sleep(2 ** (i + 1))
-    raise RuntimeError(q)
+        print(f"  retry {i+1}: {r.stderr.strip()[:80]}", file=sys.stderr)
+        time.sleep(min(60, 3 * 2 ** i))
+    raise RuntimeError(q[:200])
 
 
 def fetch_forest(lat, lon, radius_m):
