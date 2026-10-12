@@ -1557,7 +1557,8 @@
         "salice",
         "pioppo",
         "ceppaie e legno morto di latifoglie"
-      ]
+      ],
+      "caution": "tossico crudo o poco cotto: va prebollito, buttando l'acqua, e poi cotto a lungo."
     },
     "virescens": {
       "latin": "Russula virescens; Russula cyanoxantha",
@@ -1823,7 +1824,8 @@
         "pino silvestre",
         "pino domestico",
         "pino d'aleppo"
-      ]
+      ],
+      "caution": "la pellicina vischiosa del cappello è lassativa: va tolta. Solo esemplari sodi, cotti."
     },
     "terreum": {
       "latin": "Tricholoma terreum",
@@ -2065,7 +2067,8 @@
         "faggio",
         "castagno",
         "cerro"
-      ]
+      ],
+      "caution": "tossica cruda o poco cotta: va cotta a lungo. Si confonde con cortinari violetti."
     },
     "tylopilus-felleus": {
       "latin": "Tylopilus felleus",
@@ -2487,7 +2490,8 @@
       "lookalike_of": [
         "pinophilus",
         "aereus"
-      ]
+      ],
+      "caution": "tossico crudo o poco cotto: commestibile solo dopo cottura prolungata."
     },
     "imleria-badia": {
       "latin": "Imleria badia",
@@ -4832,7 +4836,8 @@
       ],
       "lookalike_of": [
         "mellea"
-      ]
+      ],
+      "caution": "come il chiodino: tossico crudo, va prebollito e cotto a lungo."
     },
     "russula-heterophylla": {
       "latin": "Russula heterophylla",
@@ -6058,7 +6063,8 @@
       ],
       "lookalike_of": [
         "nuda"
-      ]
+      ],
+      "caution": "accumula arsenico dal suolo: poca, e mai da zone contaminate."
     }
   }
 }

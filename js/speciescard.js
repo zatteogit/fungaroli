@@ -1,6 +1,7 @@
 // Scheda dettagliata di una specie: foto reali, riconoscimento, sosia pericolosi,
 // calendario delle osservazioni (GBIF) a confronto con il modello, modello 3D.
 
+import { traitStrip, compareCta } from './identify.js';
 import { SPECIES } from './species.js';
 import { openLightbox, captionHtml } from './lightbox.js';
 import { linkTrees } from './trees.js';
@@ -129,9 +130,10 @@ export function renderSpeciesDetail(body, id) {
     <div class="pbody">
     ${photos.length > 1 ? `<div class="sp-strip">${photos.slice(1).map((p, k) => `<button type="button" class="zoomable" data-photo="${k + 1}" aria-label="Foto ${k + 2}: ingrandisci"><img src="${ASSET(p.file)}" alt="" loading="lazy"></button>`).join('')}</div>` : ''}
     ${attention(id, warn)}
-    ${d.key_features?.length ? `<h3>Come riconoscerlo</h3><ol class="keys">${d.key_features.map((k) => `<li>${esc(k)}</li>`).join('')}</ol>` : '<p class="notice">Scheda di riconoscimento in preparazione.</p>'}
+    ${d.key_features?.length ? `<h3>Come riconoscerlo</h3>${traitStrip(id)}<ol class="keys">${d.key_features.map((k) => `<li>${esc(k)}</li>`).join('')}</ol>` : '<p class="notice">Scheda di riconoscimento in preparazione.</p>'}
     ${TRAITS[id] ? '' : (warn.length ? `<div class="notice">${esc(warn.join(' '))}</div>` : '')}
     ${checks(id)}
+    ${compareCta(id)}
     ${whereToLook(id)}
     ${lookalikes(d)}
     ${INFO[id]?.file ? `<h3>Infografica</h3><button type="button" class="zoomable sp-info" data-info="1" aria-label="Apri l'infografica"><img src="${ASSET(INFO[id].file)}" alt="Infografica di riconoscimento: ${esc(sp.name)}" loading="lazy"><span class="zoom-ic" aria-hidden="true">⤢</span></button>` : ''}

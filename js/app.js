@@ -8,7 +8,7 @@ import { initSpeciesCards, thumb, renderSpeciesDetail, whereSummary, criticalRul
 import { openLightbox, captionHtml } from './lightbox.js';
 import { initInstall } from './install.js';
 import { loadOuting, outingFor, OUTING_LABEL, OUTING_SHORT, OUTING_RANK } from './outing.js';
-import { initIdentify, renderIdentify } from './identify.js';
+import { initIdentify, renderIdentify, setCompare } from './identify.js';
 import { initTrees, renderTreeGrid, renderTreePage, linkTrees, treeForCategory } from './trees.js';
 import { crowding, comfortScore, timingAdvice, fmtTime, holidayName, intornoA } from './human.js';
 
@@ -128,7 +128,7 @@ function parseRoute() {
   if (a === 'specie') return { view: 'specie' };
   if (a === 'albero' && b) return { view: 'albero', treeId: b };
   if (a === 'alberi') return { view: 'alberi' };
-  if (a === 'riconosci') return { view: 'riconosci' };
+  if (a === 'riconosci') return { view: 'riconosci', compare: b === 'confronta' ? c : '' };
   if (a === 'diario') return { view: 'diario' };
   if (a === 'info') return { view: 'info' };
   return { view: 'uscite' };
@@ -148,10 +148,12 @@ function route() {
   if (r.view !== 'mappa') scrollTo(0, 0);
   if (r.view === 'specie-dettaglio') renderSpeciesDetail($('#species-detail'), r.speciesId);
   if (r.view === 'albero') renderTreePage($('#tree-detail'), r.treeId);
-  if (r.view === 'riconosci') renderIdentify($('#identify'));
+  if (r.view === 'riconosci') { setCompare(r.compare); renderIdentify($('#identify')); }
   if (r.view === 'mappa') {
     requestAnimationFrame(() => {
       map?.invalidateSize();
+      const lb = $('.legend-box');
+      if (lb && !lb.dataset.touched) lb.open = $('#map').clientHeight >= 600 && $('#map').clientWidth >= 340;
       const z = zones.find((x) => x.id === r.zoneId);
       if (z && map) { map.flyToBounds(L.latLng(z.lat, z.lon).toBounds(z.radius_m * 2.6), { duration: 0.5 }); openSheet(z.id); }
     });
@@ -574,17 +576,56 @@ function openSheet(zid) {
       <span class="sheet-txt"><span class="eyebrow">${esc(dayLabel(state.dayOffset, d.date, true))}</span><b class="sheet-title">${esc(splitName(z)[0])}</b>
         <span class="small">${esc(d.best.species.name)} ~${d.best.band} m · ${access[zid]?.[0]?.minutes ?? z.drive_min} min${d.crowd ? ` · ${crowdText(d.crowd)}` : ''}</span>${wxOf(z, d) ? `<span class="small wx-line wx-${wxOf(z, d).level}">${IC[wxIcon(wxOf(z, d))]}${esc(wxOf(z, d).text)}</span>` : ''}</span>
     </a>
+    <p class="sheet-key small"><span class="key-p">P</span> sosta <span class="key-walk">${IC.walk}</span> qui lasci l'auto <span class="key-trail"></span> sentiero consigliato <span class="muted">· tocca un segno</span></p>
     <a class="btn primary big" href="#/zona/${zid}/${state.dayOffset}">Apri il piano dell'uscita</a>`;
   sh.hidden = false;
   sh.querySelector('.sheet-close').addEventListener('click', () => { sh.hidden = true; sheetZone = null; state.zoneId = null; renderMap(); });
   if (state.zoneId !== zid) { state.zoneId = zid; renderMap(); }
 }
 
+function openPoint(zid, pt) {
+  const z = zones.find((x) => x.id === zid);
+  const d = dayEntry(zid, state.dayOffset);
+  const sh = $('#map-sheet');
+  if (!z || !d?.best) return;
+  const copyBtn = (lat, lon) => `<button type="button" class="btn ghost" data-copy="${lat.toFixed(5)}, ${lon.toFixed(5)}">Copia coordinate</button>`;
+  let ic, eyebrow, title, text, actions;
+  if (pt.kind === 'parking') {
+    ic = '<span class="pt-ic pt-p">P</span>'; eyebrow = 'Sosta per l\'auto'; title = pt.p.name;
+    text = 'Parcheggio o slargo da cui partono i boschi della zona.';
+    actions = `<a class="btn primary big" href="${gmaps(pt.p.lat, pt.p.lon)}" target="_blank" rel="noopener">${IC.car} Indicazioni stradali fin qui</a>${copyBtn(pt.p.lat, pt.p.lon)}`;
+  } else if (pt.kind === 'access') {
+    const ax = d.access;
+    ic = `<span class="pt-ic pt-walk">${IC.walk}</span>`; eyebrow = 'Qui lasci l\'auto e prosegui a piedi'; title = ax.road || 'Punto più vicino al bosco adatto';
+    text = `In auto ${ax.surface ? `su ${SURF_LABEL[ax.surface]}` : 'su asfalto'} fino a qui, poi ${ax.walkM < 50 ? `il bosco adatto è a bordo strada: ${esc((SHORT[ax.cat] || ax.cat).toLowerCase())} a ${ax.e} m` : `${walkTxt(ax.walkM)} in linea d'aria fino a ${esc((SHORT[ax.cat] || ax.cat).toLowerCase())} a ${ax.e} m`}, adatto a ${esc(d.best.species.name.toLowerCase())}.`;
+    actions = `<a class="btn primary big" href="${gmaps(ax.rlat, ax.rlon)}" target="_blank" rel="noopener">${IC.car} Indicazioni stradali fin qui</a>${copyBtn(ax.rlat, ax.rlon)}`;
+  } else {
+    const t = pt.t, g = trailGeo(z, t);
+    ic = null; eyebrow = pt.top ? 'Sentiero consigliato' : 'Sentiero'; title = '';
+    text = trailCard(z, t, d, false);
+    actions = g ? `<a class="btn primary big" href="${g.wm}" target="_blank" rel="noopener">${IC.map} Percorso e profilo del sentiero</a>
+      <a class="btn ghost" href="${gmaps(g.start[0], g.start[1])}" target="_blank" rel="noopener">${IC.car} Indicazioni stradali all'imbocco</a>
+      <a class="btn ghost" href="${g.gpx}" download="${esc(g.file)}">Scarica GPX</a>` : '';
+  }
+  sh.innerHTML = `
+    <div class="sheet-nav"><button type="button" class="sheet-back">‹ ${esc(splitName(z)[0])}</button><button type="button" class="sheet-close" aria-label="Chiudi">✕</button></div>
+    ${ic ? `<div class="pt-head">${ic}<div><span class="eyebrow">${eyebrow}</span><b class="sheet-title">${esc(title)}</b></div></div>
+    <p class="small pt-text">${text}</p>` : `<span class="eyebrow">${eyebrow}</span>${text}`}
+    <div class="pt-actions">${actions}</div>`;
+  sh.hidden = false;
+  sh.querySelector('.sheet-back').addEventListener('click', () => openSheet(zid));
+  sh.querySelector('.sheet-close').addEventListener('click', () => { sh.hidden = true; sheetZone = null; state.zoneId = null; renderMap(); });
+  sh.querySelector('[data-copy]')?.addEventListener('click', (e) => {
+    const b = e.currentTarget;
+    navigator.clipboard?.writeText(b.dataset.copy).then(() => { b.textContent = 'Copiate'; }).catch(() => { b.textContent = b.dataset.copy; });
+  });
+}
+
 function initMap() {
   const bm = globalThis.FUNGAROLI_DATA?.basemap || globalThis.FUNGAROLI_REVIEW?.basemap;
   if (hasLeaflet() && bm) { initEmbeddedMap(bm); return; }
   if (!hasLeaflet()) { document.querySelector('.view-map')?.classList.add('schematic'); return; } // senza Leaflet: mappa schematica
-  map = L.map('map', { scrollWheelZoom: true, zoomControl: true }).setView([42.4, 13.05], 10);
+  map = L.map('map', { scrollWheelZoom: true, zoomControl: false }).setView([42.4, 13.05], 10);
   const topo = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
     maxZoom: 17, attribution: '© OpenStreetMap, SRTM | © OpenTopoMap (CC-BY-SA)',
   }).addTo(map);
@@ -593,54 +634,90 @@ function initMap() {
     layers: 'geonode:tipi_forestali2', format: 'image/png', transparent: true, opacity: 0.55,
     attribution: 'Carta Forestale © Regione Lazio',
   });
-  L.control.layers({ 'Topografica': topo, 'OpenStreetMap': osm }, null, { collapsed: true }).addTo(map);
-  forestToggle(forest);
+  mapControls({ bases: [['Topografica', 'assets/map-thumb-topo.jpg', topo], ['Stradale', 'assets/map-thumb-osm.jpg', osm]], forest });
   map.on('zoomend', () => results && state.view === 'mappa' && renderMap());
 }
 
-// Interruttore della Carta Forestale: stato acceso/spento sempre leggibile
-function forestToggle(forest) {
-  const Toggle = L.Control.extend({
+// Controlli della mappa come nelle app di mappe: una colonna in alto a destra (livelli, posizione;
+// zoom + e - solo con il mouse, al tocco si usano due dita). Le opzioni stanno in un unico pannello.
+function mapControls({ bases = null, forest }) {
+  let base = bases?.[0]?.[2] || null, me = null;
+  const fine = matchMedia('(hover: hover) and (pointer: fine)').matches;
+  const Ctl = L.Control.extend({
     onAdd() {
-      const b = L.DomUtil.create('button', 'map-toggle');
-      b.type = 'button';
-      b.setAttribute('role', 'switch');
-      const paint = (on) => {
-        b.setAttribute('aria-checked', String(on));
-        b.innerHTML = `<span class="mt-label">Carta Forestale</span><span class="mt-switch" aria-hidden="true"><i></i></span><span class="mt-state">${on ? 'accesa' : 'spenta'}</span>`;
-      };
-      paint(false);
-      L.DomEvent.disableClickPropagation(b);
-      b.addEventListener('click', () => {
-        const on = !map.hasLayer(forest);
-        if (on) forest.addTo(map); else forest.remove();
-        paint(on);
-        const w = $('#legend .wms');
-        if (w) w.hidden = !on;
-        if (on) $('.legend-box').open = true;
+      const box = L.DomUtil.create('div', 'mapctl');
+      box.innerHTML = `<div class="mapctl-stack">
+          <button type="button" class="mapctl-btn" data-act="layers" aria-label="Livelli della mappa" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 9 5-9 5-9-5z"/><path d="m3 13 9 5 9-5"/></svg></button>
+          <button type="button" class="mapctl-btn" data-act="locate" aria-label="La mia posizione"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/><circle cx="12" cy="12" r="6.5"/><circle cx="12" cy="12" r="2.2" fill="currentColor"/></svg></button>
+          ${fine ? '<button type="button" class="mapctl-btn" data-act="in" aria-label="Ingrandisci">+</button><button type="button" class="mapctl-btn" data-act="out" aria-label="Riduci">−</button>' : ''}
+        </div>
+        <div class="mapctl-panel" hidden>
+          <div class="mapctl-head"><b>Livelli</b><button type="button" class="mapctl-x" data-act="layers" aria-label="Chiudi">✕</button></div>
+          ${bases ? `<p class="eyebrow">Tipo di mappa</p><div class="mapctl-tiles">${bases.map(([n, img], k) => `<button type="button" class="mapctl-tile" data-base="${k}" aria-pressed="${k === 0}"><img src="${img}" alt="" width="64" height="64"><span>${n}</span></button>`).join('')}</div>` : ''}
+          <p class="eyebrow">Dettagli della mappa</p>
+          <div class="mapctl-tiles"><button type="button" class="mapctl-tile" data-act="forest" aria-pressed="false"><img src="assets/map-thumb-forest.jpg" alt="" width="64" height="64"><span>Carta Forestale</span></button></div>
+          <p class="small muted mapctl-note" hidden>Colori dei tipi di bosco: vedi Legenda in basso.</p>
+        </div>`;
+      L.DomEvent.disableClickPropagation(box);
+      L.DomEvent.disableScrollPropagation(box);
+      const panel = box.querySelector('.mapctl-panel');
+      const lbtn = box.querySelector('[data-act="layers"]');
+      box.addEventListener('click', (e) => {
+        const b = e.target.closest('button');
+        if (!b) return;
+        const act = b.dataset.act;
+        if (act === 'layers') { panel.hidden = !panel.hidden; lbtn.setAttribute('aria-expanded', String(!panel.hidden)); box.classList.toggle('open', !panel.hidden); }
+        if (act === 'in') map.zoomIn();
+        if (act === 'out') map.zoomOut();
+        if (act === 'forest') {
+          const on = !map.hasLayer(forest);
+          if (on) forest.addTo(map); else forest.remove();
+          b.setAttribute('aria-pressed', String(on));
+          box.querySelector('.mapctl-note').hidden = !on;
+          lbtn.classList.toggle('on', on);
+          const w = $('#legend .wms');
+          if (w) w.hidden = !on;
+          if (on) $('.legend-box').open = true;
+        }
+        if (b.dataset.base != null) {
+          const nb = bases[+b.dataset.base][2];
+          if (nb !== base) { base.remove(); nb.addTo(map); nb.bringToBack(); base = nb; }
+          box.querySelectorAll('[data-base]').forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+        }
+        if (act === 'locate') {
+          b.classList.add('busy');
+          map.locate({ setView: true, maxZoom: 14, enableHighAccuracy: true });
+        }
       });
-      return b;
+      map.on('click', () => { panel.hidden = true; lbtn.setAttribute('aria-expanded', 'false'); box.classList.remove('open'); });
+      map.on('locationfound', (e) => {
+        box.querySelector('[data-act="locate"]').classList.remove('busy');
+        if (!me) me = L.layerGroup().addTo(map);
+        me.clearLayers();
+        L.circle(e.latlng, { radius: e.accuracy, color: '#2a78d6', weight: 1, fillOpacity: 0.12, interactive: false }).addTo(me);
+        L.circleMarker(e.latlng, { radius: 7, color: '#fff', weight: 3, fillColor: '#2a78d6', fillOpacity: 1, interactive: false }).addTo(me);
+      });
+      map.on('locationerror', () => {
+        const b = box.querySelector('[data-act="locate"]');
+        b.classList.remove('busy');
+        b.setAttribute('aria-label', 'Posizione non disponibile: controlla i permessi del browser');
+        b.classList.add('err'); setTimeout(() => b.classList.remove('err'), 2500);
+      });
+      return box;
     },
   });
-  new Toggle({ position: 'topright' }).addTo(map);
+  new Ctl({ position: 'topright' }).addTo(map);
 }
 
-// Riquadro sulla mappa con le azioni per un punto (accesso, parcheggio)
-function pointPopup(title, text, lat, lon) {
-  const c = `${lat.toFixed(5)}, ${lon.toFixed(5)}`;
-  return `<div class="pp"><b class="pp-title">${title}</b>${text ? `<p>${text}</p>` : ''}
-    <a class="btn primary pp-go" href="${gmaps(lat, lon)}" target="_blank" rel="noopener">Portami qui</a>
-    <p class="pp-coord small muted">Coordinate: <span class="pp-c">${c}</span></p></div>`;
-}
 
 // Versione Artifact: base topografica e Carta Forestale incorporate come immagini georeferenziate.
 function initEmbeddedMap(bm) {
   const bounds = L.latLngBounds(bm.bounds);
-  map = L.map('map', { maxBounds: bounds.pad(0.05), minZoom: 9, maxZoom: 14, zoomSnap: 0.5 }).fitBounds(bounds);
+  map = L.map('map', { maxBounds: bounds.pad(0.05), minZoom: 9, maxZoom: 14, zoomSnap: 0.5, zoomControl: false }).fitBounds(bounds);
   L.imageOverlay(bm.topo, bounds, { className: 'basemap', attribution: bm.attribution }).addTo(map);
   const forest = L.imageOverlay(bm.forest, bounds, { opacity: 0.55, className: 'forestmap' });
   map.setView([42.42, 13.03], 10);
-  forestToggle(forest);
+  mapControls({ forest });
   map.on('zoomend', () => results && state.view === 'mappa' && renderMap());
 }
 
@@ -685,36 +762,33 @@ function renderMap() {
     L.circle([z.lat, z.lon], {
       radius: z.radius_m, color: selected ? cssVar('--text') : color, weight: selected ? 3 : 2,
       fillColor: color, fillOpacity: 0.5,
-    }).addTo(g).on('click', () => openSheet(z.id))
-      .bindTooltip(`<b>${esc(z.name)}</b><br>Indice ${s} · ${d?.best ? esc(d.best.species.name) + ' ~' + d.best.band + ' m' : '—'}`, { className: 'zone-tt', sticky: true });
+    }).addTo(g).on('click', () => openSheet(z.id));
+    if (matchMedia('(hover: hover)').matches) g.getLayers()[0].bindTooltip(`<b>${esc(z.name)}</b><br>Indice ${s} · ${d?.best ? esc(d.best.species.name) + ' ~' + d.best.band + ' m' : '—'}`, { className: 'zone-tt', sticky: true });
     L.marker(labelPos[z.id], {
-      icon: L.divIcon({ className: '', html: `<span class="zone-label"><span class="dot" style="background:${color}"></span> ${s} <span class="zone-name">${esc(shortName(z))}</span></span>`, iconSize: null }),
+      icon: L.divIcon({ className: '', html: `<span class="zone-label${state.zoneId && !selected ? ' zone-label-min' : ''}${selected ? ' zone-label-sel' : ''}"><span class="dot" style="background:${color}"></span> ${s}${state.zoneId && !selected ? '' : ` <span class="zone-name">${esc(shortName(z))}</span>`}</span>`, iconSize: null }),
       interactive: false,
     }).addTo(g);
     if (selected && d?.best) {
       const tl = trailsFor(z, d.best.species, d.best.band);
       const topId = tl[0]?.id;
       for (const t of trails[z.id]?.trails || []) {
-        const good = tl.some((x) => x.id === t.id);
+        const good = tl.find((x) => x.id === t.id);
         for (const line of t.lines) {
-          L.polyline(line, { color: cssVar(t.id === topId ? '--accent' : '--text-2'), weight: t.id === topId ? 4 : good ? 2.5 : 1.5, opacity: good ? 0.95 : 0.5, dashArray: good ? null : '4 4' })
-            .addTo(g).bindTooltip(`${t.ref ? 'CAI ' + esc(t.ref) + ' · ' : ''}${esc(t.name || t.itinerary.join(' – ') || 'Sentiero')}`, { sticky: true });
+          L.polyline(line, { color: cssVar(t.id === topId ? '--accent' : '--text-2'), weight: t.id === topId ? 5 : good ? 3 : 2, opacity: good ? 0.95 : 0.5, dashArray: good ? null : '4 4' })
+            .addTo(g).on('click', (e) => { L.DomEvent.stop(e); openPoint(z.id, { kind: 'trail', t: good || t, top: t.id === topId }); })
+            .bindTooltip(`${t.ref ? 'CAI ' + esc(t.ref) + ' · ' : ''}${esc(t.name || t.itinerary.join(' – ') || 'Sentiero')}`, { sticky: true });
         }
       }
       if (d.access?.rlat) {
-        const ax = d.access;
-        const walk = `Lasci l'auto ${ax.road ? `su ${esc(ax.road)}` : 'sulla strada'}${ax.surface ? ` (${SURF_LABEL[ax.surface]})` : ''}, poi circa <b>${fmtM(ax.walkM)} a piedi</b> in linea d'aria fino a ${esc((SHORT[ax.cat] || ax.cat).toLowerCase())} a ${ax.e} m, adatto a ${esc(d.best.species.name.toLowerCase())}.`;
-        L.marker([ax.rlat, ax.rlon], { icon: L.divIcon({ className: '', html: `<span class="map-pin" aria-hidden="true">${IC.walk}</span>`, iconSize: [34, 34], iconAnchor: [17, 17] }), keyboard: true, title: 'Punto d\'accesso più comodo' })
-          .addTo(g).bindTooltip('Punto d\'accesso più comodo · tocca per le indicazioni')
-          .bindPopup(pointPopup('Punto d\'accesso più comodo', walk, ax.rlat, ax.rlon), { className: 'pp-wrap', maxWidth: 280 });
-        L.polyline([[d.access.rlat, d.access.rlon], [d.access.lat, d.access.lon]], { color: cssVar('--text'), weight: 2, dashArray: '2 5' }).addTo(g);
+        L.polyline([[d.access.rlat, d.access.rlon], [d.access.lat, d.access.lon]], { color: cssVar('--text'), weight: 2, dashArray: '2 5', interactive: false }).addTo(g);
+        L.marker([d.access.rlat, d.access.rlon], { icon: L.divIcon({ className: '', html: `<span class="map-pin" aria-hidden="true">${IC.walk}</span>`, iconSize: [36, 36], iconAnchor: [18, 18] }), keyboard: true, title: 'Qui lasci l\'auto e prosegui a piedi' })
+          .addTo(g).on('click', () => openPoint(z.id, { kind: 'access' }));
       }
     }
     if (selected) {
       for (const p of z.parking) {
-        L.circleMarker([p.lat, p.lon], { radius: 8, color: cssVar('--surface'), weight: 2, fillColor: cssVar('--accent'), fillOpacity: 1 })
-          .addTo(g).bindTooltip('P · ' + esc(p.name))
-          .bindPopup(pointPopup(`Sosta · ${esc(p.name)}`, '', p.lat, p.lon), { className: 'pp-wrap', maxWidth: 260 });
+        L.marker([p.lat, p.lon], { icon: L.divIcon({ className: '', html: '<span class="map-p" aria-hidden="true">P</span>', iconSize: [28, 28], iconAnchor: [14, 14] }), keyboard: true, title: `Sosta: ${p.name}` })
+          .addTo(g).on('click', () => openPoint(z.id, { kind: 'parking', p }));
       }
     }
     zoneLayers[z.id] = g;
@@ -775,15 +849,15 @@ function planCard(z, d) {
   if (a0 || ax) {
     const unp = a0?.unpaved_tail_km > 0.2 ? `, ultimi ${fmtKm(a0.unpaved_tail_km)} km su strada bianca` : '';
     rows.push({ sec: 'accesso', icon: 'car', k: 'Come arrivare',
-      v: ax ? `In auto ${ax.road ? `su ${esc(ax.road)}` : 'fino al punto più vicino'}, poi <b>${fmtM(ax.walkM)} a piedi</b>` : `${a0.minutes} min fino a ${esc(a0.parking)}`,
+      v: ax ? `In auto ${ax.road ? `su ${esc(ax.road)}` : 'fino al punto più vicino'}${ax.walkM < 50 ? ': bosco adatto a bordo strada' : `, poi <b>${fmtM(ax.walkM)} a piedi</b>`}` : `${a0.minutes} min fino a ${esc(a0.parking)}`,
       sub: `${a0 ? `${a0.minutes} min da Rieti${unp}` : ''}${ax ? ` · <a href="${gmaps(ax.rlat, ax.rlon)}" target="_blank" rel="noopener">navigatore</a>` : ''}`,
       badge: d.comfort ? `<span class="badge comfort-${d.comfort.level}">${d.comfort.level}</span>` : '' });
   }
   const tl = trailsFor(z, best.species, best.band);
   if (tl[0]) {
     const t = tl[0];
-    rows.push({ sec: 'sentieri', icon: 'trail', k: 'Sentiero', v: `${t.ref ? `<span class="ref">${esc(t.ref)}</span> ` : ''}${esc(t.name || t.itinerary.join(' – ') || 'Sentiero')}`,
-      sub: `${fmtKm(t.goodKm)} km in bosco adatto tra ${t.lo} e ${t.hi} m` });
+    rows.push({ sec: 'sentieri', svg: segnavia(t), k: 'Sentiero', v: esc(trailName(t)),
+      sub: `${fmtKm(t.goodKm)} km in bosco adatto tra ${t.lo} e ${t.hi} m${t.difficulty ? ` · ${esc(t.difficulty)}, ${esc(DIFF[t.difficulty] || '')}` : ''}` });
   }
   return `<ul class="plan">${rows.map((r) => `
     <li data-sec-open="${r.sec}" tabindex="0" role="button" aria-label="${r.k}: dettagli"><span class="plan-ic${r.thumb ? ' has-thumb' : ''}${r.svg ? ' plan-ic-wx' : ''}">${r.thumb ? `<button type="button" class="thumb-btn" data-species="${r.thumb}" aria-label="Scheda specie">${thumb(r.thumb, 32)}</button>` : (r.svg || ICON[r.icon])}</span>
@@ -893,6 +967,8 @@ function renderDetail() {
 
 const fmtKm = (km) => km.toLocaleString('it-IT', { maximumFractionDigits: 1 });
 const fmtM = (m) => (m >= 1000 ? `${fmtKm(m / 1000)} km` : `${Math.round(m / 10) * 10} m`);
+// tratto a piedi in parole: sotto i 50 m il bosco e' praticamente a bordo strada
+const walkTxt = (m) => (m < 50 ? 'il bosco adatto è <b>a bordo strada</b>' : `circa <b>${fmtM(m)} a piedi</b>`);
 const SURF_LABEL = ['asfalto', 'strada bianca', 'sentiero o pista'];
 const gmaps = (lat, lon) => `https://www.google.com/maps/dir/?api=1&origin=Rieti&destination=${lat},${lon}&travelmode=driving`;
 
@@ -939,7 +1015,7 @@ function renderAccess(z, d) {
     lines.push(txt);
   }
   if (ax) {
-    lines.push(`<b>Punto più comodo per ${esc(d.best.species.name.toLowerCase())}</b>: in auto ${ax.surface === 0 ? 'su asfalto' : `su ${SURF_LABEL[ax.surface]}`}${ax.road ? ` lungo ${esc(ax.road)}` : ''} fino al <a href="${gmaps(ax.rlat, ax.rlon)}" target="_blank" rel="noopener">punto sulla strada</a>, poi <b>${fmtM(ax.walkM)} a piedi</b> (in linea d'aria) fino a ${esc((SHORT[ax.cat] || ax.cat).toLowerCase())} a ${ax.e} m.`);
+    lines.push(`<b>Punto più comodo per ${esc(d.best.species.name.toLowerCase())}</b>: in auto ${ax.surface === 0 ? 'su asfalto' : `su ${SURF_LABEL[ax.surface]}`}${ax.road ? ` lungo ${esc(ax.road)}` : ''} fino al <a href="${gmaps(ax.rlat, ax.rlon)}" target="_blank" rel="noopener">punto sulla strada</a>, poi ${ax.walkM < 50 ? 'subito, a bordo strada,' : `<b>${fmtM(ax.walkM)} a piedi</b> (in linea d'aria) fino a`} ${esc((SHORT[ax.cat] || ax.cat).toLowerCase())} a ${ax.e} m.`);
   }
   return `
     <p><span class="badge comfort-${d.comfort?.level}">accesso ${d.comfort?.level ?? ''}</span></p>
@@ -947,39 +1023,81 @@ function renderAccess(z, d) {
     ${acc.length > 1 ? `<p class="small muted">Altre soste: ${acc.slice(1).map((a) => `<a href="${gmaps(a.lat, a.lon)}" target="_blank" rel="noopener">${esc(a.parking)}</a> (${a.minutes} min${a.unpaved_tail_km > 0.2 ? `, ${fmtKm(a.unpaved_tail_km)} km di strada bianca` : ''})`).join(' · ')}</p>` : ''}`;
 }
 
+// Sentieri: segnavia CAI, difficolta' in parole, dati dell'itinerario e profilo del tratto nella zona
+const DIFF = { T: 'turistico', E: 'escursionistico', EE: 'per escursionisti esperti', EEA: 'attrezzato, per esperti' };
+const segnavia = (t) => (t.ref
+  ? `<span class="segnavia" role="img" aria-label="Segnavia ${esc(t.ref)}"><i></i><b>${esc(t.ref)}</b><i></i></span>`
+  : `<span class="segnavia seg-none" aria-hidden="true">${ICON.trail}</span>`);
+const trailName = (t) => t.name || (t.itinerary?.length ? `${t.itinerary[0]} – ${t.itinerary[t.itinerary.length - 1]}` : 'Sentiero');
+const fmtDur = (h) => { const [a, b] = String(h).split(':').map(Number); return `${a} h${b ? ` ${b}` : ''}`; };
+
+function trailProfile(zid, t, sp, band) {
+  const sm = t.samples || [];
+  if (sm.length < 4) return '';
+  const cats = trails[zid]?.sample_categories || [];
+  const es = sm.map((x) => x[0]);
+  const lo = Math.min(...es), hi = Math.max(...es);
+  const W = 300, H = 70, n = sm.length;
+  const X = (i) => (i / (n - 1)) * W;
+  const Y = (e) => H - 6 - ((e - lo) / Math.max(1, hi - lo)) * (H - 18);
+  const ok = sm.map(([e, c]) => { const cat = c >= 0 ? cats[c] : 'non bosco'; return (sp.forest[cat] || 0) >= 0.6 && e >= sp.elev[0] && e <= sp.elev[1] && Math.abs(e - band) <= 250; });
+  const line = sm.map(([e], i) => `${i ? 'L' : 'M'}${X(i).toFixed(1)} ${Y(e).toFixed(1)}`).join('');
+  const area = `${line}L${W} ${H}L0 ${H}Z`;
+  const step = W / (n - 1);
+  const good = sm.map(([e], i) => (ok[i] ? `<rect x="${(X(i) - step / 2).toFixed(1)}" y="${Y(e).toFixed(1)}" width="${step.toFixed(1)}" height="${(H - Y(e)).toFixed(1)}"/>` : '')).join('');
+  return `<figure class="tprof"><svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" role="img" aria-label="Profilo del tratto nella zona: da ${es[0]} a ${es[n - 1]} m, tra ${lo} e ${hi} m">
+      <path d="${area}" class="tp-area"/><g class="tp-good">${good}</g><path d="${line}" class="tp-line"/></svg>
+    <figcaption><span>${hi} m</span><span class="tp-key"><i></i>bosco adatto a ${esc(sp.name.toLowerCase())}</span><span>${lo} m</span></figcaption></figure>`;
+}
+
+function trailCard(z, t, d, top = false) {
+  const facts = [
+    t.difficulty && `<div><dt>Difficoltà</dt><dd><b>${esc(t.difficulty)}</b> · ${esc(DIFF[t.difficulty] || '')}</dd></div>`,
+    t.total_km && t.total_km < 200 && `<div><dt>Intero</dt><dd>${fmtKm(t.total_km)} km${t.duration ? ` · ${fmtDur(t.duration)}` : ''}${t.ascent ? ` · +${esc(t.ascent)} m` : ''}</dd></div>`,
+    `<div><dt>Nella zona</dt><dd>${fmtKm(t.in_zone_km)} km${t.goodKm != null ? `, di cui <b>${fmtKm(t.goodKm)} km</b> in bosco adatto` : ''}</dd></div>`,
+  ].filter(Boolean).join('');
+  return `<div class="tcard${top ? ' top' : ''}">
+    <div class="tc-head">${segnavia(t)}<div class="tc-name"><b>${esc(trailName(t))}</b>${t.itinerary?.length > 2 ? `<small>${esc(t.itinerary.slice(1, -1).join(' · '))}</small>` : ''}${t.long ? '<small>tratto di un itinerario lungo</small>' : ''}${t.operator ? `<small>${esc(t.operator)}</small>` : ''}</div>${top ? '<span class="badge tc-top">consigliato</span>' : ''}</div>
+    <dl class="tc-facts">${facts}</dl>
+    ${d?.best ? trailProfile(z.id, t, d.best.species, d.best.band) : ''}
+  </div>`;
+}
+
 function renderTrails(z, d) {
   const list = trailsFor(z, d.best.species, d.best.band).slice(0, 4);
   if (!list.length) return trails[z.id] ? '<p class="small muted">Nessun sentiero segnato attraversa bosco adatto a questa quota: muoviti fuori sentiero dal punto d\'accesso.</p>' : '';
-  const DIFF = { T: 'turistico', E: 'escursionistico', EE: 'per esperti', EEA: 'attrezzato' };
   return `
-    <ol class="trails">${list.map((t, k) => `
-      <li${k === 0 ? ' class="top"' : ''}>
-        <div class="t1">${t.ref ? `<span class="ref">${esc(t.ref)}</span> ` : ''}${esc(t.name || t.itinerary.join(' – ') || 'Sentiero')}${t.long ? ' <span class="badge">itinerario lungo</span>' : ''}</div>
-        <div class="t2"><b>${fmtKm(t.goodKm)} km</b> in ${esc((SHORT[t.mainCat] || t.mainCat || 'bosco').toLowerCase())} adatto tra ${t.lo} e ${t.hi} m · ${fmtKm(t.in_zone_km)} km nella zona${t.difficulty ? ` · ${DIFF[t.difficulty] || t.difficulty}` : ''}${t.duration ? ` · intero ${t.duration.replace(/^0/, '')} h` : ''}</div>
-        ${trailLinks(z, t)}
-      </li>`).join('')}</ol>
-    <p class="muted small">Sentieri OpenStreetMap (rete CAI). I km "adatti" incrociano tracciato, Carta Forestale e quota della specie. Google Maps di norma non mostra i sentieri CAI: per seguirli sul posto importa il GPX in un'app con mappe OpenStreetMap (OsmAnd, Organic Maps, Komoot, Locus).</p>`;
+    <ol class="trails">${list.map((t, k) => `<li>${trailCard(z, t, d, k === 0)}${trailLinks(z, t)}</li>`).join('')}</ol>
+    <p class="muted small">Sentieri OpenStreetMap (rete CAI). Il segnavia è il segno bianco e rosso con il numero dipinto su alberi e sassi. I km "adatti" incrociano tracciato, Carta Forestale e quota della specie. Google Maps di norma non mostra i sentieri CAI: sul posto usa un'app con mappe OpenStreetMap (OsmAnd, Organic Maps, Komoot, Locus) e il GPX.</p>`;
 }
 
-// Link di un sentiero: mappa centrata sul tratto nella zona, OSM, navigazione all'imbocco, GPX del tratto
-function trailLinks(z, t) {
+// Geometria di un sentiero nella zona: mappa centrata sul tratto, imbocco piu' vicino alla sosta, GPX del tratto
+function trailGeo(z, t) {
   const pts = (t.lines || []).flat();
-  if (!pts.length) return `<a class="small" href="https://www.openstreetmap.org/relation/${t.id}" target="_blank" rel="noopener">Tracciato su OpenStreetMap</a>`;
+  if (!pts.length) return null;
   const lats = pts.map((p) => p[0]), lons = pts.map((p) => p[1]);
   const c = [(Math.min(...lats) + Math.max(...lats)) / 2, (Math.min(...lons) + Math.max(...lons)) / 2];
   const span = Math.max(Math.max(...lats) - Math.min(...lats), (Math.max(...lons) - Math.min(...lons)) * 0.74);
   const zoom = Math.max(11, Math.min(15, Math.round(Math.log2(0.9 / Math.max(span, 0.005)) + 8)));
-  // imbocco: punto del tratto piu' vicino alla sosta principale della zona
   const park = access[z.id]?.[0] || z;
   const d2 = (p) => (p[0] - park.lat) ** 2 + ((p[1] - park.lon) * 0.74) ** 2;
   const start = pts.reduce((a, p) => (d2(p) < d2(a) ? p : a), pts[0]);
   const name = t.name || t.ref || 'Sentiero';
   const gpx = `<?xml version="1.0" encoding="UTF-8"?>\n<gpx version="1.1" creator="Fungaroli Rieti" xmlns="http://www.topografix.com/GPX/1/1"><metadata><name>${esc(name)}</name><desc>Tratto nella zona ${esc(z.name)}. Dati OpenStreetMap, licenza ODbL.</desc></metadata>${(t.lines || []).map((l) => `<trk><name>${esc(name)}</name><trkseg>${l.map((p) => `<trkpt lat="${p[0]}" lon="${p[1]}"/>`).join('')}</trkseg></trk>`).join('')}</gpx>`;
-  const file = `${(t.ref || name).replace(/[^\w-]+/g, '_')}-${z.id}.gpx`;
+  return {
+    wm: `https://hiking.waymarkedtrails.org/#route?id=${t.id}&map=${zoom}/${c[0].toFixed(5)}/${c[1].toFixed(5)}`, start,
+    gpx: `data:application/gpx+xml;charset=utf-8,${encodeURIComponent(gpx)}`, file: `${(t.ref || name).replace(/[^\w-]+/g, '_')}-${z.id}.gpx`,
+  };
+}
+
+// Link di un sentiero nella scheda della zona
+function trailLinks(z, t) {
+  const g = trailGeo(z, t);
+  if (!g) return `<a class="small" href="https://www.openstreetmap.org/relation/${t.id}" target="_blank" rel="noopener">Tracciato su OpenStreetMap</a>`;
   return `<p class="trail-links small">
-    <a href="https://hiking.waymarkedtrails.org/#route?id=${t.id}&map=${zoom}/${c[0].toFixed(5)}/${c[1].toFixed(5)}" target="_blank" rel="noopener">Mappa e profilo</a> ·
-    <a href="${gmaps(start[0], start[1])}" target="_blank" rel="noopener">Portami all'imbocco</a> ·
-    <a href="data:application/gpx+xml;charset=utf-8,${encodeURIComponent(gpx)}" download="${esc(file)}">Scarica GPX</a> ·
+    <a href="${g.wm}" target="_blank" rel="noopener">Percorso e profilo</a> ·
+    <a href="${gmaps(g.start[0], g.start[1])}" target="_blank" rel="noopener">Indicazioni stradali all'imbocco</a> ·
+    <a href="${g.gpx}" download="${esc(g.file)}">Scarica GPX</a> ·
     <a href="https://www.openstreetmap.org/relation/${t.id}" target="_blank" rel="noopener">OpenStreetMap</a></p>`;
 }
 

@@ -64,7 +64,7 @@
       <div id="map-days" class="days map-days" role="tablist" aria-label="Giorno"></div>
       <div id="map" role="application" aria-label="Mappa delle zone"></div>
       <div id="map-sheet" class="sheet" hidden></div>
-      <details class="legend-box"><summary>Legenda</summary><div class="legend" id="legend"></div></details>
+      <details class="legend-box" ontoggle="this.dataset.touched = this.dataset.touched || (event.isTrusted ? '1' : '')"><summary>Legenda</summary><div class="legend" id="legend"></div></details>
     </section>
 
     <section class="view" data-view="specie" hidden aria-labelledby="sp-h">
