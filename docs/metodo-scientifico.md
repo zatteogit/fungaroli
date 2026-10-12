@@ -303,7 +303,7 @@ Porcino, 10 ottobre, fascia 1300 m. Pioggia: 25 mm dodici giorni prima e 15 mm u
 | Temperatura | 0,96 | 12 °C contro un ottimo di 13 |
 | Suolo | 0,84 | 0,22 m³/m³ |
 | Gelo, caldo, shock | 1 | nessun evento |
-| **Indice** | **51** | classe "Buono" |
+| **Indice** | **51** | classe "Abbastanza probabile" |
 
 L'indice resta a metà scala nonostante tutto sia favorevole: 40 mm sono una pioggia discreta, non abbondante, e la curva a saturazione del fattore pioggia arriva a 0,9 solo con circa 100 mm nella finestra. **Interpretazione**: il modello è tarato per dare valori sopra 75 solo in annate davvero piovose. Se nella pratica trovate porcini già con indice 35-40, le soglie delle classi o `eref` vanno abbassati.
 

@@ -148,11 +148,12 @@ export function scoreZoneDay(zone, hab, seriesByBand, speciesList, i) {
 }
 
 export const CLASSES = [
-  { min: 75, label: 'Eccellente' },
-  { min: 60, label: 'Ottimo' },
-  { min: 45, label: 'Buono' },
+  // parole di probabilita' (qualitative: l'indice non e' una probabilita' calibrata)
+  { min: 75, label: 'Molto probabile' },
+  { min: 60, label: 'Probabile' },
+  { min: 45, label: 'Abbastanza probabile' },
   { min: 30, label: 'Possibile' },
-  { min: 15, label: 'Scarso' },
+  { min: 15, label: 'Poco probabile' },
   { min: 0, label: 'Improbabile' },
 ];
 export const classOf = (score) => CLASSES.findIndex((c) => score >= c.min);

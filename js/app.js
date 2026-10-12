@@ -405,7 +405,19 @@ function dayChips(box, selected, onPick, { withAll = false } = {}) {
     b.addEventListener('click', () => onPick(o));
     box.appendChild(b);
   };
-  if (withAll) mk('Tutti', '8', null, null);
+  if (withAll) {
+    // la settimana intera: intervallo di date e miglior indice del periodo
+    const bests = [...Array(AHEAD_DAYS + 1).keys()].map((o) => bestOfDay(o)).filter(Boolean);
+    if (bests.length) {
+      const d0 = bests[0].d.date, d1 = bests[bests.length - 1].d.date;
+      const same = d0.slice(5, 7) === d1.slice(5, 7);
+      const range = `${fmtDate(d0, { day: 'numeric' })}–${fmtDate(d1, { day: 'numeric' })}`;
+      mk('Settimana', range, null, Math.max(...bests.map((x) => x.s)));
+      const b = box.lastChild;
+      b.classList.add('day-all');
+      b.setAttribute('aria-label', `Tutta la settimana, ${fmtDate(d0, { day: 'numeric', month: 'long' })} - ${fmtDate(d1, { day: 'numeric', month: 'long' })}${same ? '' : ''}: mostra le uscite migliori del periodo`);
+    }
+  }
   for (let o = 0; o <= AHEAD_DAYS; o++) {
     const best = bestOfDay(o);
     if (best) mk(o === 0 ? 'Oggi' : o === 1 ? 'Dom' : fmtDate(best.d.date, { weekday: 'short' }).replace('.', ''), fmtDate(best.d.date, { day: 'numeric' }), o, best.s);

@@ -10,12 +10,14 @@ Ogni zona riceve un numero da 0 a 100 per ogni giorno. È il risultato migliore 
 
 | Indice | Classe | Come leggerla |
 |---|---|---|
-| 75-100 | Eccellente | Condizioni molto vicine all'ottimo. Rare. |
-| 60-74 | Ottimo | Vale l'uscita. |
-| 45-59 | Buono | Condizioni favorevoli, uscita sensata. |
+| 75-100 | Molto probabile | Condizioni molto vicine all'ottimo. Rare. |
+| 60-74 | Probabile | Vale l'uscita. |
+| 45-59 | Abbastanza probabile | Condizioni favorevoli, uscita sensata. |
 | 30-44 | Possibile | Qualcosa può esserci, soprattutto nei punti migliori. |
-| 15-29 | Scarso | Poche probabilità. |
+| 15-29 | Poco probabile | Poche probabilità. |
 | 0-14 | Improbabile | Fuori stagione, bosco inadatto o troppo secco. |
+
+Le parole descrivono quanto è probabile trovare la specie, ma sono qualitative: l'indice stima le condizioni favorevoli e non è ancora tarato sui ritrovamenti, quindi "molto probabile" non vuol dire "80% di probabilità".
 
 Due cose da sapere subito:
 
