@@ -1303,3 +1303,30 @@ html.is-offline #updated { color: var(--warn-ink); font-weight: 600; }
 .md pre { white-space: pre-wrap; overflow-wrap: anywhere; }
 .md { overflow-wrap: break-word; }
 .sf-top { grid-template-columns: 1fr minmax(90px, 36%) 50px; }
+
+/* in cucina: obbligatorio, conservare, i classici */
+.kitchen { margin: 20px 0 8px; padding: 16px; border-radius: var(--r-lg); background: var(--surface); border: 1px solid var(--hair); }
+.kitchen h3 { margin-top: 0; }
+.k-raw { display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap; margin: 0 0 10px; font-size: 14px; line-height: 1.45; }
+.k-badge { flex: none; font-size: 11px; font-weight: 800; letter-spacing: .05em; text-transform: uppercase; padding: 3px 9px; border-radius: 999px; background: var(--warn-bg); color: var(--warn-ink); }
+.k-badge.never { background: var(--crit); color: #fff; }
+.k-h { margin: 12px 0 6px; font-size: 11.5px; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; color: var(--crit); }
+.k-steps { margin: 0; padding-left: 22px; display: grid; gap: 8px; font-size: 14.5px; line-height: 1.45; }
+.k-steps li small { display: block; font-size: 12.5px; color: var(--muted); margin-top: 2px; }
+.k-must li::marker { color: var(--crit); font-weight: 800; }
+.k-tips { list-style: disc; }
+.k-line { margin: 10px 0 0; font-size: 14px; }
+.k-more, .k-food { margin-top: 12px; border-top: 1px solid var(--hair); padding-top: 10px; }
+.k-more summary, .k-food summary { cursor: pointer; font-weight: 600; color: var(--accent); }
+.k-keep { margin: 10px 0; display: grid; gap: 6px; font-size: 14px; }
+.k-keep div { display: grid; grid-template-columns: 92px 1fr; gap: 10px; }
+.k-keep dt { color: var(--muted); } .k-keep dd { margin: 0; }
+.k-taste { margin: 10px 0 6px; font-style: italic; color: var(--text-2); }
+.k-uses { margin: 0; padding-left: 20px; display: grid; gap: 6px; font-size: 14.5px; }
+.k-sources { margin: 12px 0 0; line-height: 1.5; }
+.prep-gen .k-steps { margin: 12px 0; }
+.prep-gen .k-steps li.tip::marker { color: var(--muted); }
+.k-src { display: block; font-size: 11.5px; color: var(--muted); margin-top: 3px; }
+.k-lv { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: .05em; padding: 1px 6px; border-radius: 999px; background: var(--crit-bg); color: var(--crit-ink); margin-right: 4px; }
+.k-lv.tip { background: var(--surface-3); color: var(--text-2); }
+.k-src-list { margin-top: 10px; } .k-src-list summary { cursor: pointer; font-size: 12.5px; color: var(--muted); }

@@ -1,0 +1,1985 @@
+{
+  "version": 1,
+  "generated": "2026-10-12",
+  "note": "Preparazione e conservazione: cosa è necessario per la sicurezza (obbligatorio) e cosa è prudente (consigliato), con fonti. 'cucinà = usi tradizionali, informazione di contorno, mai a crudo. Le regole valide per tutti stanno in 'general' e non si ripetono nelle specie.",
+  "general": [
+    {
+      "title": "Fai controllare i funghi prima di cucinarli o conservarli",
+      "text": "Porta tutto il raccolto, fresco e intero, all'Ispettorato micologico della ASL (gratis) prima di cucinarlo, congelarlo, seccarlo o metterlo sott'olio.",
+      "why": "Cottura, essiccazione e congelamento non tolgono i veleni dei funghi mortali; e il micologo controlla solo funghi freschi, non congelati o secchi.",
+      "level": "obbligatorio",
+      "sources": [
+        {
+          "title": "Ministero della Salute, IZSLER, Centro Antiveleni di Milano (Niguarda): I funghi, guida alla prevenzione delle intossicazioni (ristampa 2015)",
+          "url": "https://files.supersite.aruba.it/media/31032_6a3a5c4102653f07ccccaee3c18492d0de53ad03.pdf"
+        },
+        {
+          "title": "ATS Insubria, S.C. Igiene Alimenti e Nutrizione: nota ai Comuni sul controllo micologico (11/07/2025)",
+          "url": "https://cassina-rizzardi-api.municipiumapp.it/s3/1562/allegati/ats_insubria-registro_ufficiale-2025-0074310.pdf"
+        },
+        {
+          "title": "Azienda USL Valle d'Aosta, Ispettorato micologico: Raccolta e consumo dei funghi in sicurezza (2026)",
+          "url": "https://www.ausl.vda.it/Media/AUSL/Hierarchy/64/6481/Opuscolo%20ispettorato%20micologico%202026.pdf"
+        }
+      ]
+    },
+    {
+      "title": "Non mangiarli mai crudi",
+      "text": "Mangia i funghi spontanei solo cotti, anche le specie commestibili.",
+      "why": "Molti funghi commestibili crudi o poco cotti danno disturbi o intossicazioni; crudi sono comunque poco digeribili.",
+      "level": "obbligatorio",
+      "sources": [
+        {
+          "title": "Ministero della Salute, IZSLER, Centro Antiveleni di Milano (Niguarda): I funghi, guida alla prevenzione delle intossicazioni (ristampa 2015)",
+          "url": "https://files.supersite.aruba.it/media/31032_6a3a5c4102653f07ccccaee3c18492d0de53ad03.pdf"
+        },
+        {
+          "title": "ATS Insubria, S.C. Igiene Alimenti e Nutrizione: nota ai Comuni sul controllo micologico (11/07/2025)",
+          "url": "https://cassina-rizzardi-api.municipiumapp.it/s3/1562/allegati/ats_insubria-registro_ufficiale-2025-0074310.pdf"
+        },
+        {
+          "title": "ASL TO4, Centro di controllo micologico: Informazioni controllo funghi 2025 (pubblicato dal Comune di Chivasso)",
+          "url": "https://chivasso-api.cloud.municipiumapp.it/s3/2083/allegati/informazioni-controllo-funghi-anno-2025.pdf"
+        },
+        {
+          "title": "ATS Milano Città Metropolitana: I funghi, consigli per la raccolta, il consumo e la conservazione (2023)",
+          "url": "https://www.ats-milano.it/sites/default/files/2023-10/Funghi.pdf"
+        }
+      ]
+    },
+    {
+      "title": "Cuocili bene e a lungo",
+      "text": "Cuoci i funghi a fondo, in padella o in umido, per almeno 30 minuti. Evita griglia e frittura per le specie che devono cuocere a lungo. Masticali bene.",
+      "why": "Alcune specie hanno tossine che si distruggono col calore: griglia e frittura non le eliminano del tutto.",
+      "level": "obbligatorio",
+      "sources": [
+        {
+          "title": "Ministero della Salute, IZSLER, Centro Antiveleni di Milano (Niguarda): I funghi, guida alla prevenzione delle intossicazioni (ristampa 2015)",
+          "url": "https://files.supersite.aruba.it/media/31032_6a3a5c4102653f07ccccaee3c18492d0de53ad03.pdf"
+        },
+        {
+          "title": "Azienda USL Valle d'Aosta, Ispettorato micologico: Raccolta e consumo dei funghi in sicurezza (2026)",
+          "url": "https://www.ausl.vda.it/Media/AUSL/Hierarchy/64/6481/Opuscolo%20ispettorato%20micologico%202026.pdf"
+        },
+        {
+          "title": "Azienda USL Umbria 1, Ispettorato micologico: Funghi... prima di mangiarli facciamoli controllare",
+          "url": "https://www.uslumbria1.it/wp-content/uploads/2022/05/Leggi-tutte-le-informazioni-per-consumare-funghi-senza-problemi.pdf"
+        },
+        {
+          "title": "Azienda USL di Bologna: Consigli per la raccolta, il consumo e la conservazione dei funghi",
+          "url": "https://www.ausl.bologna.it/servt/dipt/dsp/uo/ian/ia/funghi/consigli-per-la-raccolta-il-consumo-e-la"
+        }
+      ]
+    },
+    {
+      "title": "Segui le regole della singola specie",
+      "text": "Se la specie lo richiede, prebolli e butta l'acqua, togli il gambo o la cuticola. Chiedi al micologo come preparare quella specie.",
+      "why": "Esempi: il chiodino è tossico senza 15-20 minuti di prebollitura (l'acqua va buttata); il gambo del chiodino e la cuticola del pinarello vanno scartati.",
+      "level": "obbligatorio",
+      "sources": [
+        {
+          "title": "Ministero della Salute, IZSLER, Centro Antiveleni di Milano (Niguarda): I funghi, guida alla prevenzione delle intossicazioni (ristampa 2015)",
+          "url": "https://files.supersite.aruba.it/media/31032_6a3a5c4102653f07ccccaee3c18492d0de53ad03.pdf"
+        },
+        {
+          "title": "ATS Milano Città Metropolitana: I funghi, consigli per la raccolta, il consumo e la conservazione (2023)",
+          "url": "https://www.ats-milano.it/sites/default/files/2023-10/Funghi.pdf"
+        },
+        {
+          "title": "Azienda USL Umbria 1, Ispettorato micologico: Funghi... prima di mangiarli facciamoli controllare",
+          "url": "https://www.uslumbria1.it/wp-content/uploads/2022/05/Leggi-tutte-le-informazioni-per-consumare-funghi-senza-problemi.pdf"
+        },
+        {
+          "title": "L'Unione Sarda (11/10/2024): raccomandazioni di P. Murgia, Ispettorato micologico ASL Sassari",
+          "url": "https://www.unionesarda.it/news-sardegna/sassari-provincia/sassari-nuova-intossicazione-da-funghi-40enne-in-ospedale-igwnfv13"
+        }
+      ]
+    },
+    {
+      "title": "Cucinali presto, non tenerli crudi a lungo",
+      "text": "Tieni i funghi freschi in frigo (1-4 °C) o in un posto fresco e aerato, mai in sacchetti di plastica. Cucinali entro 24 ore dal controllo.",
+      "why": "Si guastano in fretta: anche quelli commestibili, se vecchi o mal conservati, diventano tossici.",
+      "level": "obbligatorio",
+      "sources": [
+        {
+          "title": "Azienda USL Umbria 1, Ispettorato micologico: Funghi... prima di mangiarli facciamoli controllare",
+          "url": "https://www.uslumbria1.it/wp-content/uploads/2022/05/Leggi-tutte-le-informazioni-per-consumare-funghi-senza-problemi.pdf"
+        },
+        {
+          "title": "Azienda USL di Bologna: Consigli per la raccolta, il consumo e la conservazione dei funghi",
+          "url": "https://www.ausl.bologna.it/servt/dipt/dsp/uo/ian/ia/funghi/consigli-per-la-raccolta-il-consumo-e-la"
+        },
+        {
+          "title": "Azienda USL Valle d'Aosta, Ispettorato micologico: Raccolta e consumo dei funghi in sicurezza (2026)",
+          "url": "https://www.ausl.vda.it/Media/AUSL/Hierarchy/64/6481/Opuscolo%20ispettorato%20micologico%202026.pdf"
+        },
+        {
+          "title": "Ministero della Salute, IZSLER, Centro Antiveleni di Milano (Niguarda): I funghi, guida alla prevenzione delle intossicazioni (ristampa 2015)",
+          "url": "https://files.supersite.aruba.it/media/31032_6a3a5c4102653f07ccccaee3c18492d0de53ad03.pdf"
+        }
+      ]
+    },
+    {
+      "title": "Avanzi cotti: frigo subito e poco tempo",
+      "text": "Metti gli avanzi in frigo entro 2 ore dalla cottura, in un contenitore chiuso. Mangiali entro il giorno dopo e riscaldali bene (almeno 70 °C, meglio farli ribollire qualche minuto).",
+      "why": "Anche cotti, i funghi si conservano poco. Riscaldarli va bene se sono stati subito messi in frigo.",
+      "level": "consigliato",
+      "sources": [
+        {
+          "title": "Azienda USL Umbria 1, Ispettorato micologico: Funghi... prima di mangiarli facciamoli controllare",
+          "url": "https://www.uslumbria1.it/wp-content/uploads/2022/05/Leggi-tutte-le-informazioni-per-consumare-funghi-senza-problemi.pdf"
+        },
+        {
+          "title": "Azienda USL di Bologna: Consigli per la raccolta, il consumo e la conservazione dei funghi",
+          "url": "https://www.ausl.bologna.it/servt/dipt/dsp/uo/ian/ia/funghi/consigli-per-la-raccolta-il-consumo-e-la"
+        },
+        {
+          "title": "ISS e Ministero della Salute: Linee guida per la corretta preparazione delle conserve alimentari in ambito domestico",
+          "url": "https://www.iss.it/documents/20126/2293568/LineeGuidaConserve_light.pdf/f76af27b-51bb-4675-158b-7433f66d07de?t=1575730710064"
+        },
+        {
+          "title": "Centro Tutela Consumatori Utenti Alto Adige: I funghi si possono riscaldare? (2019)",
+          "url": "https://www.consumer.bz.it/it/i-funghi-si-possono-riscaldare"
+        }
+      ]
+    },
+    {
+      "title": "Congela solo dopo averli sbollentati",
+      "text": "Congela solo funghi giovani e sani, puliti, sbollentati per qualche minuto, scolati e asciugati, in piccole porzioni a -18 °C. Scrivi la data e usali entro 3 mesi.",
+      "why": "Le regole del Ministero chiedono di sbollentarli prima di congelarli. Le specie tossiche crude (es. chiodino) vanno prebollite come al solito prima del congelamento.",
+      "level": "obbligatorio",
+      "sources": [
+        {
+          "title": "Ministero della Salute, IZSLER, Centro Antiveleni di Milano (Niguarda): I funghi, guida alla prevenzione delle intossicazioni (ristampa 2015)",
+          "url": "https://files.supersite.aruba.it/media/31032_6a3a5c4102653f07ccccaee3c18492d0de53ad03.pdf"
+        },
+        {
+          "title": "ATS Milano Città Metropolitana: I funghi, consigli per la raccolta, il consumo e la conservazione (2023)",
+          "url": "https://www.ats-milano.it/sites/default/files/2023-10/Funghi.pdf"
+        },
+        {
+          "title": "Azienda USL Valle d'Aosta, Ispettorato micologico: Raccolta e consumo dei funghi in sicurezza (2026)",
+          "url": "https://www.ausl.vda.it/Media/AUSL/Hierarchy/64/6481/Opuscolo%20ispettorato%20micologico%202026.pdf"
+        },
+        {
+          "title": "Azienda USL Umbria 1, Ispettorato micologico: Funghi... prima di mangiarli facciamoli controllare",
+          "url": "https://www.uslumbria1.it/wp-content/uploads/2022/05/Leggi-tutte-le-informazioni-per-consumare-funghi-senza-problemi.pdf"
+        },
+        {
+          "title": "Azienda USL di Bologna: Consigli per la raccolta, il consumo e la conservazione dei funghi",
+          "url": "https://www.ausl.bologna.it/servt/dipt/dsp/uo/ian/ia/funghi/consigli-per-la-raccolta-il-consumo-e-la"
+        }
+      ]
+    },
+    {
+      "title": "Cuoci i congelati senza scongelarli",
+      "text": "Metti i funghi congelati direttamente in pentola e cuocili bene, senza scongelarli prima.",
+      "why": "La ATS Milano indica che non serve scongelarli prima di cuocerli.",
+      "level": "consigliato",
+      "sources": [
+        {
+          "title": "ATS Milano Città Metropolitana: I funghi, consigli per la raccolta, il consumo e la conservazione (2023)",
+          "url": "https://www.ats-milano.it/sites/default/files/2023-10/Funghi.pdf"
+        }
+      ]
+    },
+    {
+      "title": "Essiccali puliti, a fette sottili",
+      "text": "Pulisci i funghi dalla terra senza lavarli, tagliali a fette sottili e seccali al sole o in essiccatoio (non oltre 50 °C). Tienili in un posto fresco e asciutto, in piccole porzioni, e usali entro un anno.",
+      "why": "Fette sottili seccano bene anche all'interno; tenuti all'asciutto non fanno muffa.",
+      "level": "consigliato",
+      "sources": [
+        {
+          "title": "Ministero della Salute, IZSLER, Centro Antiveleni di Milano (Niguarda): I funghi, guida alla prevenzione delle intossicazioni (ristampa 2015)",
+          "url": "https://files.supersite.aruba.it/media/31032_6a3a5c4102653f07ccccaee3c18492d0de53ad03.pdf"
+        },
+        {
+          "title": "Azienda USL Valle d'Aosta, Ispettorato micologico: Raccolta e consumo dei funghi in sicurezza (2026)",
+          "url": "https://www.ausl.vda.it/Media/AUSL/Hierarchy/64/6481/Opuscolo%20ispettorato%20micologico%202026.pdf"
+        },
+        {
+          "title": "ATS Milano Città Metropolitana: I funghi, consigli per la raccolta, il consumo e la conservazione (2023)",
+          "url": "https://www.ats-milano.it/sites/default/files/2023-10/Funghi.pdf"
+        }
+      ]
+    },
+    {
+      "title": "Sott'olio solo dopo bollitura in acqua e aceto",
+      "text": "Prima di metterli sott'olio, bolli i funghi per almeno 20 minuti in 2/3 di aceto di vino (acidità almeno 6%) e 1/3 di acqua. Scolali, asciugali, coprili di olio di almeno 1 cm, chiudi e pastorizza i vasetti. Se aggiungi olio, pastorizza di nuovo.",
+      "why": "I funghi sott'olio fatti in casa sono tra le prime cause di botulismo in Italia: il batterio non cresce in ambiente acido (pH sotto 4,6).",
+      "level": "obbligatorio",
+      "sources": [
+        {
+          "title": "ISS e Ministero della Salute: Linee guida per la corretta preparazione delle conserve alimentari in ambito domestico",
+          "url": "https://www.iss.it/documents/20126/2293568/LineeGuidaConserve_light.pdf/f76af27b-51bb-4675-158b-7433f66d07de?t=1575730710064"
+        },
+        {
+          "title": "Ministero della Salute, IZSLER, Centro Antiveleni di Milano (Niguarda): I funghi, guida alla prevenzione delle intossicazioni (ristampa 2015)",
+          "url": "https://files.supersite.aruba.it/media/31032_6a3a5c4102653f07ccccaee3c18492d0de53ad03.pdf"
+        },
+        {
+          "title": "ATS Milano Città Metropolitana: I funghi, consigli per la raccolta, il consumo e la conservazione (2023)",
+          "url": "https://www.ats-milano.it/sites/default/files/2023-10/Funghi.pdf"
+        },
+        {
+          "title": "Azienda USL Valle d'Aosta, Ispettorato micologico: Raccolta e consumo dei funghi in sicurezza (2026)",
+          "url": "https://www.ausl.vda.it/Media/AUSL/Hierarchy/64/6481/Opuscolo%20ispettorato%20micologico%202026.pdf"
+        }
+      ]
+    },
+    {
+      "title": "Controlla i vasetti prima di aprirli",
+      "text": "Butta, senza assaggiarlo, il vasetto con tappo bombato o che fa click-clack, bollicine, olio torbido, odore o colore strani. Dopo l'apertura tienilo in frigo. Prima di buttare un vasetto sospetto, bollilo chiuso per 30 minuti.",
+      "why": "Sono segni che nel vasetto crescono microbi. Per l'ISS, anche solo se sospetti un'alterazione, la conserva non va né assaggiata né mangiata.",
+      "level": "obbligatorio",
+      "sources": [
+        {
+          "title": "ISS e Ministero della Salute: Linee guida per la corretta preparazione delle conserve alimentari in ambito domestico",
+          "url": "https://www.iss.it/documents/20126/2293568/LineeGuidaConserve_light.pdf/f76af27b-51bb-4675-158b-7433f66d07de?t=1575730710064"
+        }
+      ]
+    },
+    {
+      "title": "Mangiane poco e non spesso",
+      "text": "Mangia porzioni moderate (al massimo un piatto di funghi a pasto), non in pasti ravvicinati, e non sempre la stessa specie. Un ispettorato ASL indica di non superare circa 200 g di funghi freschi a persona a settimana.",
+      "why": "Anche quelli commestibili, in grandi quantità o in pasti vicini, danno disturbi allo stomaco e all'intestino.",
+      "level": "obbligatorio",
+      "sources": [
+        {
+          "title": "Ministero della Salute, IZSLER, Centro Antiveleni di Milano (Niguarda): I funghi, guida alla prevenzione delle intossicazioni (ristampa 2015)",
+          "url": "https://files.supersite.aruba.it/media/31032_6a3a5c4102653f07ccccaee3c18492d0de53ad03.pdf"
+        },
+        {
+          "title": "Regione Piemonte: Funghi, quali pericoli per il consumatore? Rapporto Ispettorati micologici ASL 2018-2020",
+          "url": "https://www.regione.piemonte.it/web/media/32307/download"
+        },
+        {
+          "title": "ATS Milano Città Metropolitana: I funghi, consigli per la raccolta, il consumo e la conservazione (2023)",
+          "url": "https://www.ats-milano.it/sites/default/files/2023-10/Funghi.pdf"
+        },
+        {
+          "title": "Azienda USL di Bologna: Consigli per la raccolta, il consumo e la conservazione dei funghi",
+          "url": "https://www.ausl.bologna.it/servt/dipt/dsp/uo/ian/ia/funghi/consigli-per-la-raccolta-il-consumo-e-la"
+        },
+        {
+          "title": "Azienda USL Umbria 1, Ispettorato micologico: Funghi... prima di mangiarli facciamoli controllare",
+          "url": "https://www.uslumbria1.it/wp-content/uploads/2022/05/Leggi-tutte-le-informazioni-per-consumare-funghi-senza-problemi.pdf"
+        },
+        {
+          "title": "L'Unione Sarda (11/10/2024): raccomandazioni di P. Murgia, Ispettorato micologico ASL Sassari",
+          "url": "https://www.unionesarda.it/news-sardegna/sassari-provincia/sassari-nuova-intossicazione-da-funghi-40enne-in-ospedale-igwnfv13"
+        }
+      ]
+    },
+    {
+      "title": "Chi non dovrebbe mangiarli",
+      "text": "Non dare funghi ai bambini piccoli, alle donne in gravidanza o in allattamento, agli anziani debilitati e a chi ha malattie di fegato, reni, pancreas, stomaco o intestino o intolleranze, senza il parere del medico.",
+      "why": "Sono poco digeribili. In queste persone le tossine fanno più danni o vengono eliminate peggio.",
+      "level": "obbligatorio",
+      "sources": [
+        {
+          "title": "Ministero della Salute, IZSLER, Centro Antiveleni di Milano (Niguarda): I funghi, guida alla prevenzione delle intossicazioni (ristampa 2015)",
+          "url": "https://files.supersite.aruba.it/media/31032_6a3a5c4102653f07ccccaee3c18492d0de53ad03.pdf"
+        },
+        {
+          "title": "ATS Insubria, S.C. Igiene Alimenti e Nutrizione: nota ai Comuni sul controllo micologico (11/07/2025)",
+          "url": "https://cassina-rizzardi-api.municipiumapp.it/s3/1562/allegati/ats_insubria-registro_ufficiale-2025-0074310.pdf"
+        },
+        {
+          "title": "ASL TO4, Centro di controllo micologico: Informazioni controllo funghi 2025 (pubblicato dal Comune di Chivasso)",
+          "url": "https://chivasso-api.cloud.municipiumapp.it/s3/2083/allegati/informazioni-controllo-funghi-anno-2025.pdf"
+        },
+        {
+          "title": "Azienda USL Valle d'Aosta, Ispettorato micologico: Raccolta e consumo dei funghi in sicurezza (2026)",
+          "url": "https://www.ausl.vda.it/Media/AUSL/Hierarchy/64/6481/Opuscolo%20ispettorato%20micologico%202026.pdf"
+        },
+        {
+          "title": "Azienda USL Umbria 1, Ispettorato micologico: Funghi... prima di mangiarli facciamoli controllare",
+          "url": "https://www.uslumbria1.it/wp-content/uploads/2022/05/Leggi-tutte-le-informazioni-per-consumare-funghi-senza-problemi.pdf"
+        }
+      ]
+    },
+    {
+      "title": "Niente alcol nel pasto con funghi",
+      "text": "Evita bevande alcoliche quando mangi funghi.",
+      "why": "Alcune specie (es. Coprinus atramentarius) con l'alcol danno la sindrome coprinica (rossore, tachicardia, pressione bassa). L'alcol peggiora anche altre intossicazioni da funghi.",
+      "level": "consigliato",
+      "sources": [
+        {
+          "title": "Azienda USL Umbria 1, Ispettorato micologico: Funghi... prima di mangiarli facciamoli controllare",
+          "url": "https://www.uslumbria1.it/wp-content/uploads/2022/05/Leggi-tutte-le-informazioni-per-consumare-funghi-senza-problemi.pdf"
+        },
+        {
+          "title": "Azienda USL Valle d'Aosta, Ispettorato micologico: Raccolta e consumo dei funghi in sicurezza (2026)",
+          "url": "https://www.ausl.vda.it/Media/AUSL/Hierarchy/64/6481/Opuscolo%20ispettorato%20micologico%202026.pdf"
+        }
+      ]
+    }
+  ],
+  "species": {
+    "edulis": {
+      "raw": "sconsigliato",
+      "raw_why": "Va cotto, come tutti i funghi spontanei: lo chiedono le ASL. Qualche fonte lo ammette crudo, ma le indicazioni sanitarie non fanno eccezioni.",
+      "steps": [],
+      "discard": null,
+      "freeze": "Sbollentalo o cuocilo prima di congelarlo, usa pezzi piccoli e consumalo entro 3 mesi.",
+      "dry": "Si può essiccare: puliscilo senza lavarlo, taglialo a fette sottili, conservalo all'asciutto (anche in freezer) e consumalo entro un anno.",
+      "amount": null,
+      "sources": [
+        {
+          "title": "Regione Piemonte - Sicurezza funghi, le raccomandazioni dell'ASL TO3",
+          "url": "https://www.regione.piemonte.it/web/node/15678"
+        },
+        {
+          "title": "AUSL Valle d'Aosta - Opuscolo Ispettorato micologico (maggio 2026)",
+          "url": "https://www.ausl.vda.it/Media/AUSL/Hierarchy/64/6481/Opuscolo%20ispettorato%20micologico%202026.pdf"
+        },
+        {
+          "title": "USL Umbria 1 - Leggi tutte le informazioni per consumare funghi senza problemi",
+          "url": "https://www.uslumbria1.it/wp-content/uploads/2022/05/Leggi-tutte-le-informazioni-per-consumare-funghi-senza-problemi.pdf"
+        },
+        {
+          "title": "ASL VCO - 10 regole d'oro per il consumo sicuro dei funghi (Ministero della Salute)",
+          "url": "https://www.aslvco.it/wp-content/uploads/2025/12/PRESENTAZIONE-MTA-2025-per-utenza.pdf"
+        },
+        {
+          "title": "D.P.R. 14 luglio 1995 n. 376 (art. 5 funghi secchi, art. 9 e Allegato II funghi conservati) - testo FAOLEX",
+          "url": "https://faolex.fao.org/docs/pdf/ita33146.pdf"
+        },
+        {
+          "title": "ISS - Linee guida per la corretta preparazione delle conserve alimentari in ambito domestico",
+          "url": "https://www.iss.it/documents/20126/2293568/LineeGuidaConserve_light.pdf/f76af27b-51bb-4675-158b-7433f66d07de?t=1575730710064"
+        },
+        {
+          "title": "Regione Lombardia - Manuale del cercatore di funghi",
+          "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/10-agricoltura/18-raccolta-funghi-e-tartufi/red-funghi-regole-agr/allegati/all-Manuale-del-cercatore-di-funghi-agr.pdf"
+        },
+        {
+          "title": "USL Toscana Centro - Le malattie trasmesse da alimenti in Toscana, report 2015-2019 (dati CAV Careggi)",
+          "url": "https://www.uslcentro.toscana.it/attachments/article/21433/4-REPORT_2015-2019_.pdf"
+        }
+      ],
+      "notes": "Crudo: il dossier del Ministero della Salute 'Funghi, impariamo a conoscerlì (salute.gov.it, non consultabile direttamente perché bloccato da verifica anti-bot; testo noto da riprese di siti divulgativi) cita Boletus edulis e Amanita caesarea tra le poche specie mangiabili crude; l'ASL TO3 (pagina Regione Piemonte, risultata in 503: contenuto visto solo dall'indice di ricerca) dice che anche i porcini vanno cotti. Ho scelto 'sconsigliatò. Congelamento: VdA, USL Umbria 1 e le 10 regole del Ministero (riportate da ASL VCO) dicono di sbollentare/cuocere prima di congelare (Ministero: entro 3 mesi; VdA: entro 2-3 mesi). Il Manuale della Regione Lombardia invece congela i funghi interi crudi (entro 12 mesi) e un vecchio dossier del Ministero, citato da siti divulgativi, ammetteva il congelamento a crudo dei porcini. Ho scelto la regola più prudente (sbollentare prima, 6 mesi). Sott'olio: l'ISS dice di sbollentare 'per qualche minutò in acqua e aceto in parti uguali (aceto di vino >=6%); la AUSL VdA dice almeno 20 minuti; il Manuale Lombardia 15-20 minuti in 2/3 aceto e 1/3 acqua. Ho scelto almeno 20 minuti con acqua e aceto almeno metà e metà (più prudente). Il DPR 376/1995 (Allegato II) elenca la specie tra quelle che si possono conservare sott'olio, congelate ecc. Essiccazione: il DPR 376/1995 art. 5 ammette come 'funghi secchì Boletus edulis e gruppo (B. pinicola=pinophilus, B. aereus, B. reticulatus=aestivalis); i consigli pratici sono della AUSL VdA. Parti da scartare: nessuna fonte ufficiale trovata che imponga di togliere tubuli/pori o gambo; restano solo le regole generali (esemplari guasti). Dati CAV Careggi 1995-2019: Boletus edulis è la specie più associata a sindromi gastrointestinali a breve incubazione (report USL Toscana Centro)."
+    },
+    "pinophilus": {
+      "raw": "sconsigliato",
+      "raw_why": "Va cotto, come tutti i funghi spontanei: lo chiedono le ASL. Qualche fonte lo ammette crudo, ma le indicazioni sanitarie non fanno eccezioni.",
+      "steps": [],
+      "discard": null,
+      "freeze": "Sbollentalo o cuocilo prima di congelarlo, usa pezzi piccoli e consumalo entro 3 mesi.",
+      "dry": "Si può essiccare: puliscilo senza lavarlo, taglialo a fette sottili, conservalo all'asciutto (anche in freezer) e consumalo entro un anno.",
+      "amount": null,
+      "sources": [
+        {
+          "title": "Regione Piemonte - Sicurezza funghi, le raccomandazioni dell'ASL TO3",
+          "url": "https://www.regione.piemonte.it/web/node/15678"
+        },
+        {
+          "title": "AUSL Valle d'Aosta - Opuscolo Ispettorato micologico (maggio 2026)",
+          "url": "https://www.ausl.vda.it/Media/AUSL/Hierarchy/64/6481/Opuscolo%20ispettorato%20micologico%202026.pdf"
+        },
+        {
+          "title": "USL Umbria 1 - Leggi tutte le informazioni per consumare funghi senza problemi",
+          "url": "https://www.uslumbria1.it/wp-content/uploads/2022/05/Leggi-tutte-le-informazioni-per-consumare-funghi-senza-problemi.pdf"
+        },
+        {
+          "title": "ASL VCO - 10 regole d'oro per il consumo sicuro dei funghi (Ministero della Salute)",
+          "url": "https://www.aslvco.it/wp-content/uploads/2025/12/PRESENTAZIONE-MTA-2025-per-utenza.pdf"
+        },
+        {
+          "title": "D.P.R. 14 luglio 1995 n. 376 (art. 5 funghi secchi, art. 9 e Allegato II funghi conservati) - testo FAOLEX",
+          "url": "https://faolex.fao.org/docs/pdf/ita33146.pdf"
+        },
+        {
+          "title": "ISS - Linee guida per la corretta preparazione delle conserve alimentari in ambito domestico",
+          "url": "https://www.iss.it/documents/20126/2293568/LineeGuidaConserve_light.pdf/f76af27b-51bb-4675-158b-7433f66d07de?t=1575730710064"
+        },
+        {
+          "title": "Regione Lombardia - Manuale del cercatore di funghi",
+          "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/10-agricoltura/18-raccolta-funghi-e-tartufi/red-funghi-regole-agr/allegati/all-Manuale-del-cercatore-di-funghi-agr.pdf"
+        },
+        {
+          "title": "USL Toscana Centro - Le malattie trasmesse da alimenti in Toscana, report 2015-2019 (dati CAV Careggi)",
+          "url": "https://www.uslcentro.toscana.it/attachments/article/21433/4-REPORT_2015-2019_.pdf"
+        }
+      ],
+      "notes": "Crudo: il dossier del Ministero della Salute 'Funghi, impariamo a conoscerlì (salute.gov.it, non consultabile direttamente perché bloccato da verifica anti-bot; testo noto da riprese di siti divulgativi) cita Boletus edulis e Amanita caesarea tra le poche specie mangiabili crude; l'ASL TO3 (pagina Regione Piemonte, risultata in 503: contenuto visto solo dall'indice di ricerca) dice che anche i porcini vanno cotti. Ho scelto 'sconsigliatò. Congelamento: VdA, USL Umbria 1 e le 10 regole del Ministero (riportate da ASL VCO) dicono di sbollentare/cuocere prima di congelare (Ministero: entro 3 mesi; VdA: entro 2-3 mesi). Il Manuale della Regione Lombardia invece congela i funghi interi crudi (entro 12 mesi) e un vecchio dossier del Ministero, citato da siti divulgativi, ammetteva il congelamento a crudo dei porcini. Ho scelto la regola più prudente (sbollentare prima, 6 mesi). Sott'olio: l'ISS dice di sbollentare 'per qualche minutò in acqua e aceto in parti uguali (aceto di vino >=6%); la AUSL VdA dice almeno 20 minuti; il Manuale Lombardia 15-20 minuti in 2/3 aceto e 1/3 acqua. Ho scelto almeno 20 minuti con acqua e aceto almeno metà e metà (più prudente). Il DPR 376/1995 (Allegato II) elenca la specie tra quelle che si possono conservare sott'olio, congelate ecc. Essiccazione: il DPR 376/1995 art. 5 ammette come 'funghi secchì Boletus edulis e gruppo (B. pinicola=pinophilus, B. aereus, B. reticulatus=aestivalis); i consigli pratici sono della AUSL VdA. Parti da scartare: nessuna fonte ufficiale trovata che imponga di togliere tubuli/pori o gambo; restano solo le regole generali (esemplari guasti). Dati CAV Careggi 1995-2019: Boletus edulis è la specie più associata a sindromi gastrointestinali a breve incubazione (report USL Toscana Centro). Boletus pinophilus fa parte del gruppo edulis (nel DPR 376/1995 è 'Boletus pinicolà): valgono le stesse regole del porcino."
+    },
+    "aestivalis": {
+      "raw": "sconsigliato",
+      "raw_why": "Va cotto, come tutti i funghi spontanei: lo chiedono le ASL. Qualche fonte lo ammette crudo, ma le indicazioni sanitarie non fanno eccezioni.",
+      "steps": [],
+      "discard": null,
+      "freeze": "Sbollentalo o cuocilo prima di congelarlo, usa pezzi piccoli e consumalo entro 3 mesi.",
+      "dry": "Si può essiccare: puliscilo senza lavarlo, taglialo a fette sottili, conservalo all'asciutto (anche in freezer) e consumalo entro un anno.",
+      "amount": null,
+      "sources": [
+        {
+          "title": "Regione Piemonte - Sicurezza funghi, le raccomandazioni dell'ASL TO3",
+          "url": "https://www.regione.piemonte.it/web/node/15678"
+        },
+        {
+          "title": "AUSL Valle d'Aosta - Opuscolo Ispettorato micologico (maggio 2026)",
+          "url": "https://www.ausl.vda.it/Media/AUSL/Hierarchy/64/6481/Opuscolo%20ispettorato%20micologico%202026.pdf"
+        },
+        {
+          "title": "USL Umbria 1 - Leggi tutte le informazioni per consumare funghi senza problemi",
+          "url": "https://www.uslumbria1.it/wp-content/uploads/2022/05/Leggi-tutte-le-informazioni-per-consumare-funghi-senza-problemi.pdf"
+        },
+        {
+          "title": "ASL VCO - 10 regole d'oro per il consumo sicuro dei funghi (Ministero della Salute)",
+          "url": "https://www.aslvco.it/wp-content/uploads/2025/12/PRESENTAZIONE-MTA-2025-per-utenza.pdf"
+        },
+        {
+          "title": "D.P.R. 14 luglio 1995 n. 376 (art. 5 funghi secchi, art. 9 e Allegato II funghi conservati) - testo FAOLEX",
+          "url": "https://faolex.fao.org/docs/pdf/ita33146.pdf"
+        },
+        {
+          "title": "ISS - Linee guida per la corretta preparazione delle conserve alimentari in ambito domestico",
+          "url": "https://www.iss.it/documents/20126/2293568/LineeGuidaConserve_light.pdf/f76af27b-51bb-4675-158b-7433f66d07de?t=1575730710064"
+        },
+        {
+          "title": "Regione Lombardia - Manuale del cercatore di funghi",
+          "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/10-agricoltura/18-raccolta-funghi-e-tartufi/red-funghi-regole-agr/allegati/all-Manuale-del-cercatore-di-funghi-agr.pdf"
+        },
+        {
+          "title": "USL Toscana Centro - Le malattie trasmesse da alimenti in Toscana, report 2015-2019 (dati CAV Careggi)",
+          "url": "https://www.uslcentro.toscana.it/attachments/article/21433/4-REPORT_2015-2019_.pdf"
+        }
+      ],
+      "notes": "Crudo: il dossier del Ministero della Salute 'Funghi, impariamo a conoscerlì (salute.gov.it, non consultabile direttamente perché bloccato da verifica anti-bot; testo noto da riprese di siti divulgativi) cita Boletus edulis e Amanita caesarea tra le poche specie mangiabili crude; l'ASL TO3 (pagina Regione Piemonte, risultata in 503: contenuto visto solo dall'indice di ricerca) dice che anche i porcini vanno cotti. Ho scelto 'sconsigliatò. Congelamento: VdA, USL Umbria 1 e le 10 regole del Ministero (riportate da ASL VCO) dicono di sbollentare/cuocere prima di congelare (Ministero: entro 3 mesi; VdA: entro 2-3 mesi). Il Manuale della Regione Lombardia invece congela i funghi interi crudi (entro 12 mesi) e un vecchio dossier del Ministero, citato da siti divulgativi, ammetteva il congelamento a crudo dei porcini. Ho scelto la regola più prudente (sbollentare prima, 6 mesi). Sott'olio: l'ISS dice di sbollentare 'per qualche minutò in acqua e aceto in parti uguali (aceto di vino >=6%); la AUSL VdA dice almeno 20 minuti; il Manuale Lombardia 15-20 minuti in 2/3 aceto e 1/3 acqua. Ho scelto almeno 20 minuti con acqua e aceto almeno metà e metà (più prudente). Il DPR 376/1995 (Allegato II) elenca la specie tra quelle che si possono conservare sott'olio, congelate ecc. Essiccazione: il DPR 376/1995 art. 5 ammette come 'funghi secchì Boletus edulis e gruppo (B. pinicola=pinophilus, B. aereus, B. reticulatus=aestivalis); i consigli pratici sono della AUSL VdA. Parti da scartare: nessuna fonte ufficiale trovata che imponga di togliere tubuli/pori o gambo; restano solo le regole generali (esemplari guasti). Dati CAV Careggi 1995-2019: Boletus edulis è la specie più associata a sindromi gastrointestinali a breve incubazione (report USL Toscana Centro). Boletus aestivalis = B. reticulatus, fa parte del gruppo edulis (DPR 376/1995 art. 5 e Allegato II; AUSL VdA): valgono le stesse regole del porcino."
+    },
+    "aereus": {
+      "raw": "sconsigliato",
+      "raw_why": "Va cotto, come tutti i funghi spontanei: lo chiedono le ASL. Qualche fonte lo ammette crudo, ma le indicazioni sanitarie non fanno eccezioni. Per il porcino nero l'AUSL Bologna segnala anche intolleranze da crudo.",
+      "steps": [
+        {
+          "text": "Cuocilo sempre; se lo assaggi per la prima volta, mangiane poco.",
+          "why": "Crudo può intossicare chi è intollerante; la prima volta conviene verificare la propria tolleranza.",
+          "level": "obbligatorio",
+          "sources": [
+            {
+              "title": "il Resto del Carlino - Funghi, sicurezza: come fare (intervista a L. Prete, Igiene alimenti AUSL Bologna)",
+              "url": "https://www.ilrestodelcarlino.it/cronaca/funghi-sicurezza-come-fare-6c252df7"
+            },
+            {
+              "title": "Regione Piemonte - Sicurezza funghi, le raccomandazioni dell'ASL TO3",
+              "url": "https://www.regione.piemonte.it/web/node/15678"
+            }
+          ]
+        }
+      ],
+      "discard": null,
+      "freeze": "Sbollentalo o cuocilo prima di congelarlo, usa pezzi piccoli e consumalo entro 3 mesi.",
+      "dry": "Si può essiccare: puliscilo senza lavarlo, taglialo a fette sottili, conservalo all'asciutto (anche in freezer) e consumalo entro un anno.",
+      "amount": null,
+      "sources": [
+        {
+          "title": "Regione Piemonte - Sicurezza funghi, le raccomandazioni dell'ASL TO3",
+          "url": "https://www.regione.piemonte.it/web/node/15678"
+        },
+        {
+          "title": "AUSL Valle d'Aosta - Opuscolo Ispettorato micologico (maggio 2026)",
+          "url": "https://www.ausl.vda.it/Media/AUSL/Hierarchy/64/6481/Opuscolo%20ispettorato%20micologico%202026.pdf"
+        },
+        {
+          "title": "USL Umbria 1 - Leggi tutte le informazioni per consumare funghi senza problemi",
+          "url": "https://www.uslumbria1.it/wp-content/uploads/2022/05/Leggi-tutte-le-informazioni-per-consumare-funghi-senza-problemi.pdf"
+        },
+        {
+          "title": "ASL VCO - 10 regole d'oro per il consumo sicuro dei funghi (Ministero della Salute)",
+          "url": "https://www.aslvco.it/wp-content/uploads/2025/12/PRESENTAZIONE-MTA-2025-per-utenza.pdf"
+        },
+        {
+          "title": "D.P.R. 14 luglio 1995 n. 376 (art. 5 funghi secchi, art. 9 e Allegato II funghi conservati) - testo FAOLEX",
+          "url": "https://faolex.fao.org/docs/pdf/ita33146.pdf"
+        },
+        {
+          "title": "ISS - Linee guida per la corretta preparazione delle conserve alimentari in ambito domestico",
+          "url": "https://www.iss.it/documents/20126/2293568/LineeGuidaConserve_light.pdf/f76af27b-51bb-4675-158b-7433f66d07de?t=1575730710064"
+        },
+        {
+          "title": "Regione Lombardia - Manuale del cercatore di funghi",
+          "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/10-agricoltura/18-raccolta-funghi-e-tartufi/red-funghi-regole-agr/allegati/all-Manuale-del-cercatore-di-funghi-agr.pdf"
+        },
+        {
+          "title": "USL Toscana Centro - Le malattie trasmesse da alimenti in Toscana, report 2015-2019 (dati CAV Careggi)",
+          "url": "https://www.uslcentro.toscana.it/attachments/article/21433/4-REPORT_2015-2019_.pdf"
+        }
+      ],
+      "notes": "Crudo: il dossier del Ministero della Salute 'Funghi, impariamo a conoscerlì (salute.gov.it, non consultabile direttamente perché bloccato da verifica anti-bot; testo noto da riprese di siti divulgativi) cita Boletus edulis e Amanita caesarea tra le poche specie mangiabili crude; l'ASL TO3 (pagina Regione Piemonte, risultata in 503: contenuto visto solo dall'indice di ricerca) dice che anche i porcini vanno cotti. Ho scelto 'sconsigliatò. Congelamento: VdA, USL Umbria 1 e le 10 regole del Ministero (riportate da ASL VCO) dicono di sbollentare/cuocere prima di congelare (Ministero: entro 3 mesi; VdA: entro 2-3 mesi). Il Manuale della Regione Lombardia invece congela i funghi interi crudi (entro 12 mesi) e un vecchio dossier del Ministero, citato da siti divulgativi, ammetteva il congelamento a crudo dei porcini. Ho scelto la regola più prudente (sbollentare prima, 6 mesi). Sott'olio: l'ISS dice di sbollentare 'per qualche minutò in acqua e aceto in parti uguali (aceto di vino >=6%); la AUSL VdA dice almeno 20 minuti; il Manuale Lombardia 15-20 minuti in 2/3 aceto e 1/3 acqua. Ho scelto almeno 20 minuti con acqua e aceto almeno metà e metà (più prudente). Il DPR 376/1995 (Allegato II) elenca la specie tra quelle che si possono conservare sott'olio, congelate ecc. Essiccazione: il DPR 376/1995 art. 5 ammette come 'funghi secchì Boletus edulis e gruppo (B. pinicola=pinophilus, B. aereus, B. reticulatus=aestivalis); i consigli pratici sono della AUSL VdA. Parti da scartare: nessuna fonte ufficiale trovata che imponga di togliere tubuli/pori o gambo; restano solo le regole generali (esemplari guasti). Dati CAV Careggi 1995-2019: Boletus edulis è la specie più associata a sindromi gastrointestinali a breve incubazione (report USL Toscana Centro). Per B. aereus una dirigente dell'Igiene alimenti AUSL Bologna (intervista sul Resto del Carlino, 2023) dice che 'anche il Boletus aereus va cottò e che chi è intollerante e lo mangia crudo può avere una vera intossicazione: per questo ho messo 'mai crudò (scelta prudente, fonte giornalistica che riporta un parere ASL, non un documento ufficiale)."
+    },
+    "caesarea": {
+      "raw": "sconsigliato",
+      "raw_why": "Va cotto, come tutti i funghi spontanei. Qualche ASL ammette l'ovolo crudo, ma la regola generale delle indicazioni sanitarie è non mangiare crudi i funghi spontanei.",
+      "steps": [
+        {
+          "text": "Non raccogliere l'ovolo ancora chiuso: prendilo solo se il velo bianco si è già aperto da solo.",
+          "why": "In Lazio è vietato dalla legge regionale (L.R. 32/1998) per motivi ecologici e sanitari: chiuso si confonde con amanite velenose o mortali.",
+          "level": "obbligatorio",
+          "sources": [
+            {
+              "title": "ISPRA - Raccolta dei funghi epigei, Regione Lazio (testo L.R. Lazio 5 agosto 1998 n. 32)",
+              "url": "https://development.isprambiente.gov.it/files/biodiversita/raccolta-dei-funghi-epigei-regione-lazio.pdf"
+            },
+            {
+              "title": "USL Umbria 1 - Leggi tutte le informazioni per consumare funghi senza problemi",
+              "url": "https://www.uslumbria1.it/wp-content/uploads/2022/05/Leggi-tutte-le-informazioni-per-consumare-funghi-senza-problemi.pdf"
+            }
+          ]
+        },
+        {
+          "text": "Fallo controllare dal micologo dell'ASL: gambo e lamelle devono essere gialli.",
+          "why": "Si può confondere con Amanita muscaria (velenosa) quando la pioggia lava via le verruche bianche del cappello; la muscaria ha gambo e lamelle bianchi.",
+          "level": "obbligatorio",
+          "sources": [
+            {
+              "title": "Regione Lombardia - Manuale del cercatore di funghi",
+              "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/10-agricoltura/18-raccolta-funghi-e-tartufi/red-funghi-regole-agr/allegati/all-Manuale-del-cercatore-di-funghi-agr.pdf"
+            },
+            {
+              "title": "ASL VCO - 10 regole d'oro per il consumo sicuro dei funghi (Ministero della Salute)",
+              "url": "https://www.aslvco.it/wp-content/uploads/2025/12/PRESENTAZIONE-MTA-2025-per-utenza.pdf"
+            }
+          ]
+        }
+      ],
+      "discard": null,
+      "freeze": "Sbollentalo o cuocilo prima di congelarlo, usa pezzi piccoli e consumalo entro 3 mesi.",
+      "dry": "Ammesso tra i funghi secchi (DPR 376/1995): puliscilo senza lavarlo, a fette sottili, conservalo all'asciutto ed entro un anno.",
+      "amount": null,
+      "sources": [
+        {
+          "title": "ISPRA - Raccolta dei funghi epigei, Regione Lazio (testo L.R. Lazio 5 agosto 1998 n. 32)",
+          "url": "https://development.isprambiente.gov.it/files/biodiversita/raccolta-dei-funghi-epigei-regione-lazio.pdf"
+        },
+        {
+          "title": "USL Umbria 1 - Leggi tutte le informazioni per consumare funghi senza problemi",
+          "url": "https://www.uslumbria1.it/wp-content/uploads/2022/05/Leggi-tutte-le-informazioni-per-consumare-funghi-senza-problemi.pdf"
+        },
+        {
+          "title": "Regione Lombardia - Manuale del cercatore di funghi",
+          "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/10-agricoltura/18-raccolta-funghi-e-tartufi/red-funghi-regole-agr/allegati/all-Manuale-del-cercatore-di-funghi-agr.pdf"
+        },
+        {
+          "title": "Regione Piemonte - Sicurezza funghi, le raccomandazioni dell'ASL TO3",
+          "url": "https://www.regione.piemonte.it/web/node/15678"
+        },
+        {
+          "title": "Regione Piemonte - Sitta et al. (2021) Guida ragionata alla commestibilità dei funghi, tabella integrativa",
+          "url": "https://www.regione.piemonte.it/web/media/29625/download"
+        },
+        {
+          "title": "AUSL Valle d'Aosta - Opuscolo Ispettorato micologico (maggio 2026)",
+          "url": "https://www.ausl.vda.it/Media/AUSL/Hierarchy/64/6481/Opuscolo%20ispettorato%20micologico%202026.pdf"
+        },
+        {
+          "title": "ASL VCO - 10 regole d'oro per il consumo sicuro dei funghi (Ministero della Salute)",
+          "url": "https://www.aslvco.it/wp-content/uploads/2025/12/PRESENTAZIONE-MTA-2025-per-utenza.pdf"
+        },
+        {
+          "title": "D.P.R. 14 luglio 1995 n. 376 (art. 5 funghi secchi, art. 9 e Allegato II funghi conservati) - testo FAOLEX",
+          "url": "https://faolex.fao.org/docs/pdf/ita33146.pdf"
+        },
+        {
+          "title": "ISS - Linee guida per la corretta preparazione delle conserve alimentari in ambito domestico",
+          "url": "https://www.iss.it/documents/20126/2293568/LineeGuidaConserve_light.pdf/f76af27b-51bb-4675-158b-7433f66d07de?t=1575730710064"
+        },
+        {
+          "title": "USL Toscana Centro - Le malattie trasmesse da alimenti in Toscana, report 2015-2019 (dati CAV Careggi)",
+          "url": "https://www.uslcentro.toscana.it/attachments/article/21433/4-REPORT_2015-2019_.pdf"
+        }
+      ],
+      "notes": "Crudo: l'ASL TO3 (pagina Regione Piemonte risultata in 503, contenuto visto dall'indice di ricerca) cita Amanita caesarea tra i funghi mangiabili crudi senza conseguenze; anche il dossier del Ministero (non consultabile direttamente) la cita. Il Manuale Lombardia dice di mangiare crude solo le pochissime specie adatte, freschissime, in piccole quantità. Per la regola dell'app ho messo 'sconsigliatò. Divieto di raccolta dell'ovolo chiuso: L.R. Lazio 32/1998 art. 3 c. 4 (testo nel documento ISPRA, aggiornato ad aprile 2021) e legge quadro 352/1993. Nei dati CAV Careggi 1995-2019 A. caesarea compare tra le specie commestibili coinvolte in consulenze per sospetta intossicazione (68 casi). Essiccazione: A. caesarea è nell'elenco 'funghi secchì del DPR 376/1995 art. 5; nessuna fonte ufficiale trovata che lo sconsigli, ma nessuna nemmeno che lo raccomandi in particolare. Congelamento: VdA, USL Umbria 1 e le 10 regole del Ministero (riportate da ASL VCO) dicono di sbollentare/cuocere prima di congelare (Ministero: entro 3 mesi; VdA: entro 2-3 mesi). Il Manuale della Regione Lombardia invece congela i funghi interi crudi (entro 12 mesi) e un vecchio dossier del Ministero, citato da siti divulgativi, ammetteva il congelamento a crudo dei porcini. Ho scelto la regola più prudente (sbollentare prima, 6 mesi). Sott'olio: l'ISS dice di sbollentare 'per qualche minutò in acqua e aceto in parti uguali (aceto di vino >=6%); la AUSL VdA dice almeno 20 minuti; il Manuale Lombardia 15-20 minuti in 2/3 aceto e 1/3 acqua. Ho scelto almeno 20 minuti con acqua e aceto almeno metà e metà (più prudente). Il DPR 376/1995 (Allegato II) elenca la specie tra quelle che si possono conservare sott'olio, congelate ecc. Escluso il consiglio sull'uso crudo: contraddice la regola generale."
+    },
+    "cibarius": {
+      "raw": "sconsigliato",
+      "raw_why": "La guida della Regione Piemonte lo classifica commestibile 'di base previa cotturà; come tutti i funghi spontanei non va mangiato crudo.",
+      "steps": [
+        {
+          "text": "Fallo controllare dal micologo dell'ASL prima di cucinarlo.",
+          "why": "Si confonde facilmente con il fungo dell'olivo (Omphalotus olearius), tossico, che cresce sul legno e ha vere lamelle invece delle pieghe.",
+          "level": "obbligatorio",
+          "sources": [
+            {
+              "title": "Il Fatto Alimentare - Intossicazioni da funghi in Toscana 2024 (dati Ispettorato micologico ASL Toscana centro)",
+              "url": "https://ilfattoalimentare.it/intossicazioni-funghi-toscana-2024.html"
+            },
+            {
+              "title": "USL Toscana Centro - Le malattie trasmesse da alimenti in Toscana, report 2015-2019 (dati CAV Careggi)",
+              "url": "https://www.uslcentro.toscana.it/attachments/article/21433/4-REPORT_2015-2019_.pdf"
+            },
+            {
+              "title": "ASL VCO - 10 regole d'oro per il consumo sicuro dei funghi (Ministero della Salute)",
+              "url": "https://www.aslvco.it/wp-content/uploads/2025/12/PRESENTAZIONE-MTA-2025-per-utenza.pdf"
+            }
+          ]
+        },
+        {
+          "text": "Cuocilo bene prima di mangiarlo.",
+          "why": "È commestibile solo previa cottura secondo la guida regionale piemontese.",
+          "level": "consigliato",
+          "sources": [
+            {
+              "title": "Regione Piemonte - Sitta et al. (2021) Guida ragionata alla commestibilità dei funghi, tabella integrativa",
+              "url": "https://www.regione.piemonte.it/web/media/29625/download"
+            },
+            {
+              "title": "USL Umbria 1 - Leggi tutte le informazioni per consumare funghi senza problemi",
+              "url": "https://www.uslumbria1.it/wp-content/uploads/2022/05/Leggi-tutte-le-informazioni-per-consumare-funghi-senza-problemi.pdf"
+            }
+          ]
+        }
+      ],
+      "discard": null,
+      "freeze": "Sbollentalo o cuocilo prima di congelarlo, usa pezzi piccoli e consumalo entro 3 mesi.",
+      "dry": "Si può essiccare: puliscilo senza lavarlo, taglialo a fette sottili, conservalo all'asciutto (anche in freezer) e consumalo entro un anno.",
+      "amount": null,
+      "sources": [
+        {
+          "title": "Regione Piemonte - Sitta et al. (2021) Guida ragionata alla commestibilità dei funghi, tabella integrativa",
+          "url": "https://www.regione.piemonte.it/web/media/29625/download"
+        },
+        {
+          "title": "Il Fatto Alimentare - Intossicazioni da funghi in Toscana 2024 (dati Ispettorato micologico ASL Toscana centro)",
+          "url": "https://ilfattoalimentare.it/intossicazioni-funghi-toscana-2024.html"
+        },
+        {
+          "title": "USL Toscana Centro - Le malattie trasmesse da alimenti in Toscana, report 2015-2019 (dati CAV Careggi)",
+          "url": "https://www.uslcentro.toscana.it/attachments/article/21433/4-REPORT_2015-2019_.pdf"
+        },
+        {
+          "title": "AUSL Valle d'Aosta - Opuscolo Ispettorato micologico (maggio 2026)",
+          "url": "https://www.ausl.vda.it/Media/AUSL/Hierarchy/64/6481/Opuscolo%20ispettorato%20micologico%202026.pdf"
+        },
+        {
+          "title": "USL Umbria 1 - Leggi tutte le informazioni per consumare funghi senza problemi",
+          "url": "https://www.uslumbria1.it/wp-content/uploads/2022/05/Leggi-tutte-le-informazioni-per-consumare-funghi-senza-problemi.pdf"
+        },
+        {
+          "title": "ASL VCO - 10 regole d'oro per il consumo sicuro dei funghi (Ministero della Salute)",
+          "url": "https://www.aslvco.it/wp-content/uploads/2025/12/PRESENTAZIONE-MTA-2025-per-utenza.pdf"
+        },
+        {
+          "title": "D.P.R. 14 luglio 1995 n. 376 (art. 5 funghi secchi, art. 9 e Allegato II funghi conservati) - testo FAOLEX",
+          "url": "https://faolex.fao.org/docs/pdf/ita33146.pdf"
+        },
+        {
+          "title": "ISS - Linee guida per la corretta preparazione delle conserve alimentari in ambito domestico",
+          "url": "https://www.iss.it/documents/20126/2293568/LineeGuidaConserve_light.pdf/f76af27b-51bb-4675-158b-7433f66d07de?t=1575730710064"
+        },
+        {
+          "title": "Regione Lombardia - Manuale del cercatore di funghi",
+          "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/10-agricoltura/18-raccolta-funghi-e-tartufi/red-funghi-regole-agr/allegati/all-Manuale-del-cercatore-di-funghi-agr.pdf"
+        }
+      ],
+      "notes": "Nessuna fonte ufficiale trovata che dica che il finferlo è tossico crudo: per questo 'sconsigliatò e non 'mai crudò. La guida Piemonte (Sitta et al. 2021) lo mette nella categoria 'commestibile, di base previa cotturà. Confusione con Omphalotus olearius: ASL Toscana centro (2024, riportata da Il Fatto Alimentare); nel report USL Toscana Centro 2015-2019 Omphalotus è la seconda specie tossica per episodi (17,7%) e C. cibarius compare tra le specie commestibili coinvolte in consulenze. Essiccazione: il DPR 376/1995 art. 5 ammette Cantharellus (tutte le specie tranne subcibarius, tubaeformis var. lutescens e muscigenus). Congelamento: VdA, USL Umbria 1 e le 10 regole del Ministero (riportate da ASL VCO) dicono di sbollentare/cuocere prima di congelare (Ministero: entro 3 mesi; VdA: entro 2-3 mesi). Il Manuale della Regione Lombardia invece congela i funghi interi crudi (entro 12 mesi) e un vecchio dossier del Ministero, citato da siti divulgativi, ammetteva il congelamento a crudo dei porcini. Ho scelto la regola più prudente (sbollentare prima, 6 mesi). Sott'olio: l'ISS dice di sbollentare 'per qualche minutò in acqua e aceto in parti uguali (aceto di vino >=6%); la AUSL VdA dice almeno 20 minuti; il Manuale Lombardia 15-20 minuti in 2/3 aceto e 1/3 acqua. Ho scelto almeno 20 minuti con acqua e aceto almeno metà e metà (più prudente). Il DPR 376/1995 (Allegato II) elenca la specie tra quelle che si possono conservare sott'olio, congelate ecc."
+    },
+    "cornucopioides": {
+      "raw": "sconsigliato",
+      "raw_why": "Non ho trovato fonti che lo dicano tossico crudo; vale la regola generale che i funghi spontanei, tranne pochissime eccezioni, vanno cotti.",
+      "steps": [
+        {
+          "text": "Cuocilo bene prima di mangiarlo.",
+          "why": "Quasi tutti i funghi devono essere cotti; molte specie commestibili danno disturbi se mangiate crude o poco cotte.",
+          "level": "consigliato",
+          "sources": [
+            {
+              "title": "AUSL Valle d'Aosta - Opuscolo Ispettorato micologico (maggio 2026)",
+              "url": "https://www.ausl.vda.it/Media/AUSL/Hierarchy/64/6481/Opuscolo%20ispettorato%20micologico%202026.pdf"
+            },
+            {
+              "title": "Regione Lombardia - Manuale del cercatore di funghi",
+              "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/10-agricoltura/18-raccolta-funghi-e-tartufi/red-funghi-regole-agr/allegati/all-Manuale-del-cercatore-di-funghi-agr.pdf"
+            },
+            {
+              "title": "USL Umbria 1 - Leggi tutte le informazioni per consumare funghi senza problemi",
+              "url": "https://www.uslumbria1.it/wp-content/uploads/2022/05/Leggi-tutte-le-informazioni-per-consumare-funghi-senza-problemi.pdf"
+            }
+          ]
+        }
+      ],
+      "discard": null,
+      "freeze": "Sbollentalo o cuocilo prima di congelarlo, usa pezzi piccoli e consumalo entro 3 mesi.",
+      "dry": "Si può essiccare: puliscilo senza lavarlo, taglialo a fette sottili, conservalo all'asciutto (anche in freezer) e consumalo entro un anno.",
+      "amount": null,
+      "sources": [
+        {
+          "title": "AUSL Valle d'Aosta - Opuscolo Ispettorato micologico (maggio 2026)",
+          "url": "https://www.ausl.vda.it/Media/AUSL/Hierarchy/64/6481/Opuscolo%20ispettorato%20micologico%202026.pdf"
+        },
+        {
+          "title": "Regione Lombardia - Manuale del cercatore di funghi",
+          "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/10-agricoltura/18-raccolta-funghi-e-tartufi/red-funghi-regole-agr/allegati/all-Manuale-del-cercatore-di-funghi-agr.pdf"
+        },
+        {
+          "title": "USL Umbria 1 - Leggi tutte le informazioni per consumare funghi senza problemi",
+          "url": "https://www.uslumbria1.it/wp-content/uploads/2022/05/Leggi-tutte-le-informazioni-per-consumare-funghi-senza-problemi.pdf"
+        },
+        {
+          "title": "ASL VCO - 10 regole d'oro per il consumo sicuro dei funghi (Ministero della Salute)",
+          "url": "https://www.aslvco.it/wp-content/uploads/2025/12/PRESENTAZIONE-MTA-2025-per-utenza.pdf"
+        },
+        {
+          "title": "D.P.R. 14 luglio 1995 n. 376 (art. 5 funghi secchi, art. 9 e Allegato II funghi conservati) - testo FAOLEX",
+          "url": "https://faolex.fao.org/docs/pdf/ita33146.pdf"
+        },
+        {
+          "title": "ISS - Linee guida per la corretta preparazione delle conserve alimentari in ambito domestico",
+          "url": "https://www.iss.it/documents/20126/2293568/LineeGuidaConserve_light.pdf/f76af27b-51bb-4675-158b-7433f66d07de?t=1575730710064"
+        }
+      ],
+      "notes": "Nessuna regola specifica di sicurezza trovata per la trombetta dei morti in fonti ufficiali: valgono le regole generali. Essiccazione: Craterellus cornucopioides è nell'elenco 'funghi secchì del DPR 376/1995 art. 5; il bollettino micologico 'Occhio al Fungò (Bologna, 2013) dice che si presta molto bene all'essiccazione (consiglio di qualità, non di sicurezza). Congelamento: VdA, USL Umbria 1 e le 10 regole del Ministero (riportate da ASL VCO) dicono di sbollentare/cuocere prima di congelare (Ministero: entro 3 mesi; VdA: entro 2-3 mesi). Il Manuale della Regione Lombardia invece congela i funghi interi crudi (entro 12 mesi) e un vecchio dossier del Ministero, citato da siti divulgativi, ammetteva il congelamento a crudo dei porcini. Ho scelto la regola più prudente (sbollentare prima, 6 mesi). Sott'olio: l'ISS dice di sbollentare 'per qualche minutò in acqua e aceto in parti uguali (aceto di vino >=6%); la AUSL VdA dice almeno 20 minuti; il Manuale Lombardia 15-20 minuti in 2/3 aceto e 1/3 acqua. Ho scelto almeno 20 minuti con acqua e aceto almeno metà e metà (più prudente). Il DPR 376/1995 (Allegato II) elenca la specie tra quelle che si possono conservare sott'olio, congelate ecc."
+    },
+    "mellea": {
+      "raw": "mai crudo",
+      "raw_why": "Crudo o poco cotto è tossico: contiene tossine sensibili al calore che danno disturbi gastrointestinali.",
+      "steps": [
+        {
+          "text": "Scarta il gambo, almeno fino all'anello: tieni solo i cappelli (meglio esemplari giovani).",
+          "why": "Il gambo è fibroso e indigesto; le ASL lo indicano come trattamento obbligatorio insieme alla prebollitura.",
+          "level": "obbligatorio",
+          "sources": [
+            {
+              "title": "ATS Milano – I funghi: consigli per la raccolta, il consumo e la conservazione (2023)",
+              "url": "https://www.ats-milano.it/sites/default/files/2023-10/Funghi.pdf"
+            },
+            {
+              "title": "AUSL Valle d'Aosta – Opuscolo Ispettorato micologico 2026",
+              "url": "https://www.ausl.vda.it/Media/AUSL/Hierarchy/64/6481/Opuscolo%20ispettorato%20micologico%202026.pdf"
+            },
+            {
+              "title": "Regione Piemonte – Funghi: quali pericoli per il consumatore? Rapporto Ispettorati micologici ASL 2018-2020",
+              "url": "https://www.regione.piemonte.it/web/media/32307/download"
+            },
+            {
+              "title": "AUSL Bologna – Consigli per la raccolta, il consumo e la conservazione dei funghi",
+              "url": "https://www.ausl.bologna.it/servt/dipt/dsp/uo/ian/ia/funghi/consigli-per-la-raccolta-il-consumo-e-la"
+            },
+            {
+              "title": "Regione Emilia-Romagna – Alcune delle specie più comuni di funghi commestibili",
+              "url": "https://ambiente.regione.emilia-romagna.it/it/parchi-natura2000/sistema-regionale/funghi-sottobosco-tartufi/funghi-allegati/funghi-commestibili/@@download/file"
+            }
+          ]
+        },
+        {
+          "text": "Prebolli i cappelli in abbondante acqua bollente per almeno 20 minuti, a pentola scoperta, poi scola e butta via l'acqua.",
+          "why": "Le tossine si disattivano col calore e passano nell'acqua, che quindi non va usata.",
+          "level": "obbligatorio",
+          "sources": [
+            {
+              "title": "ATS Milano – I funghi: consigli per la raccolta, il consumo e la conservazione (2023)",
+              "url": "https://www.ats-milano.it/sites/default/files/2023-10/Funghi.pdf"
+            },
+            {
+              "title": "Regione Piemonte – Funghi: quali pericoli per il consumatore? Rapporto Ispettorati micologici ASL 2018-2020",
+              "url": "https://www.regione.piemonte.it/web/media/32307/download"
+            },
+            {
+              "title": "AUSL Valle d'Aosta – Opuscolo Ispettorato micologico 2026",
+              "url": "https://www.ausl.vda.it/Media/AUSL/Hierarchy/64/6481/Opuscolo%20ispettorato%20micologico%202026.pdf"
+            },
+            {
+              "title": "AUSL Bologna – Occhio al Fungo (opuscolo 2018)",
+              "url": "https://www.ausl.bologna.it/servt/dipt/dsp/uo/ian/ia/funghi/ouscoli/occhio-al-fungo-1/occhio-al-fungo/files/opuscolo-funghi-2018-ok-1.pdf"
+            }
+          ]
+        },
+        {
+          "text": "Dopo la prebollitura cuocili ancora a fondo nel modo che preferisci.",
+          "why": "La sola cottura senza prebollitura deve durare almeno 30 minuti; dopo la prebollitura serve comunque una cottura completa.",
+          "level": "consigliato",
+          "sources": [
+            {
+              "title": "AUSL Valle d'Aosta – Opuscolo Ispettorato micologico 2026",
+              "url": "https://www.ausl.vda.it/Media/AUSL/Hierarchy/64/6481/Opuscolo%20ispettorato%20micologico%202026.pdf"
+            },
+            {
+              "title": "AUSL Bologna – Consigli per la raccolta, il consumo e la conservazione dei funghi",
+              "url": "https://www.ausl.bologna.it/servt/dipt/dsp/uo/ian/ia/funghi/consigli-per-la-raccolta-il-consumo-e-la"
+            }
+          ]
+        },
+        {
+          "text": "Non congelarli crudi: congelali solo dopo la prebollitura (e meglio dopo la cottura).",
+          "why": "Chiodini congelati crudi hanno causato disturbi: il freddo non elimina le tossine.",
+          "level": "obbligatorio",
+          "sources": [
+            {
+              "title": "AUSL Bologna – Consigli per la raccolta, il consumo e la conservazione dei funghi",
+              "url": "https://www.ausl.bologna.it/servt/dipt/dsp/uo/ian/ia/funghi/consigli-per-la-raccolta-il-consumo-e-la"
+            },
+            {
+              "title": "AUSL Valle d'Aosta – Opuscolo Ispettorato micologico 2026",
+              "url": "https://www.ausl.vda.it/Media/AUSL/Hierarchy/64/6481/Opuscolo%20ispettorato%20micologico%202026.pdf"
+            },
+            {
+              "title": "ATS Milano – I funghi: consigli per la raccolta, il consumo e la conservazione (2023)",
+              "url": "https://www.ats-milano.it/sites/default/files/2023-10/Funghi.pdf"
+            },
+            {
+              "title": "Wikipedia (it) – Armillaria mellea (supporto)",
+              "url": "https://it.wikipedia.org/wiki/Armillaria_mellea"
+            }
+          ]
+        },
+        {
+          "text": "Per il sott'olio prebollili prima come sopra, poi segui le regole delle conserve (acqua e aceto).",
+          "why": "La prebollitura serve per le tossine; acqua e aceto servono contro il botulino.",
+          "level": "obbligatorio",
+          "sources": [
+            {
+              "title": "ATS Milano – I funghi: consigli per la raccolta, il consumo e la conservazione (2023)",
+              "url": "https://www.ats-milano.it/sites/default/files/2023-10/Funghi.pdf"
+            },
+            {
+              "title": "AUSL Valle d'Aosta – Opuscolo Ispettorato micologico 2026",
+              "url": "https://www.ausl.vda.it/Media/AUSL/Hierarchy/64/6481/Opuscolo%20ispettorato%20micologico%202026.pdf"
+            }
+          ]
+        }
+      ],
+      "discard": "Gambo (almeno fino all'anello); acqua di prebollitura.",
+      "freeze": "Mai crudo: solo dopo prebollitura di 20 minuti (meglio già cotto).",
+      "dry": null,
+      "amount": "Quantità moderate, non in pasti ravvicinati: in Piemonte è tra le specie commestibili che causano più intossicazioni (16% dei casi 2018-2020).",
+      "sources": [
+        {
+          "title": "ATS Milano – I funghi: consigli per la raccolta, il consumo e la conservazione (2023)",
+          "url": "https://www.ats-milano.it/sites/default/files/2023-10/Funghi.pdf"
+        },
+        {
+          "title": "AUSL Valle d'Aosta – Opuscolo Ispettorato micologico 2026",
+          "url": "https://www.ausl.vda.it/Media/AUSL/Hierarchy/64/6481/Opuscolo%20ispettorato%20micologico%202026.pdf"
+        },
+        {
+          "title": "AUSL Bologna – Consigli per la raccolta, il consumo e la conservazione dei funghi",
+          "url": "https://www.ausl.bologna.it/servt/dipt/dsp/uo/ian/ia/funghi/consigli-per-la-raccolta-il-consumo-e-la"
+        },
+        {
+          "title": "AUSL Bologna – Occhio al Fungo (opuscolo 2018)",
+          "url": "https://www.ausl.bologna.it/servt/dipt/dsp/uo/ian/ia/funghi/ouscoli/occhio-al-fungo-1/occhio-al-fungo/files/opuscolo-funghi-2018-ok-1.pdf"
+        },
+        {
+          "title": "Regione Piemonte – Funghi: quali pericoli per il consumatore? Rapporto Ispettorati micologici ASL 2018-2020",
+          "url": "https://www.regione.piemonte.it/web/media/32307/download"
+        },
+        {
+          "title": "Regione Emilia-Romagna – Alcune delle specie più comuni di funghi commestibili",
+          "url": "https://ambiente.regione.emilia-romagna.it/it/parchi-natura2000/sistema-regionale/funghi-sottobosco-tartufi/funghi-allegati/funghi-commestibili/@@download/file"
+        },
+        {
+          "title": "Scuola Sant'Anna Pisa – La risorsa FUNGO in Alta Valle del Vara, scheda Armillaria mellea (p. 92-94)",
+          "url": "https://iris.santannapisa.it/retrieve/dd9e0b31-bbf8-709e-e053-3705fe0a83fd/92_vqr_Funghi.pdf"
+        },
+        {
+          "title": "Wikipedia (it) – Armillaria mellea (supporto)",
+          "url": "https://it.wikipedia.org/wiki/Armillaria_mellea"
+        }
+      ],
+      "notes": "Tempi di prebollitura divergenti: ATS Milano e Regione Piemonte (rapporto ASL 2018-2020) dicono almeno 20 minuti; AUSL Valle d'Aosta 15-20 minuti; AUSL Bologna (pagina web) 5-10 minuti di prebollitura oppure almeno 30 minuti di cottura; ASL Biella (poster, non leggibile: server 503) secondo i risultati di ricerca 5 minuti più 15-20 di cottura. Ho scelto il più prudente: 20 minuti a pentola scoperta, acqua buttata, poi cottura completa. Essiccazione: nessuna fonte ufficiale trovata, lasciato null. La Regione Piemonte classifica Armillaria spp. come 'commestibile dopo trattamenti (commestibilità condizionata)'."
+    },
+    "suillus": {
+      "raw": "sconsigliato",
+      "raw_why": "Nessuna fonte lo indica come tossico crudo, ma i funghi spontanei non vanno mangiati crudi; inoltre può essere lassativo anche cotto.",
+      "steps": [
+        {
+          "text": "Togli la cuticola viscosa del cappello prima di cucinarlo (usa guanti: macchia le dita).",
+          "why": "La cuticola è associata a effetti lassativi e ad alcune intossicazioni; l'ATS Milano scrive che va scartata.",
+          "level": "obbligatorio",
+          "sources": [
+            {
+              "title": "ATS Milano – I funghi: consigli per la raccolta, il consumo e la conservazione (2023)",
+              "url": "https://www.ats-milano.it/sites/default/files/2023-10/Funghi.pdf"
+            },
+            {
+              "title": "AUSL Bologna – Occhio al Fungo (opuscolo 2018)",
+              "url": "https://www.ausl.bologna.it/servt/dipt/dsp/uo/ian/ia/funghi/ouscoli/occhio-al-fungo-1/occhio-al-fungo/files/opuscolo-funghi-2018-ok-1.pdf"
+            },
+            {
+              "title": "Scuola Sant'Anna Pisa – La risorsa FUNGO in Alta Valle del Vara, scheda Suillus luteus (p. 214)",
+              "url": "https://www.iris.sssup.it/retrieve/dd9e0b31-bbe7-709e-e053-3705fe0a83fd/214_vqr_Funghi.pdf"
+            },
+            {
+              "title": "AUSL Bologna – Consigli per la raccolta, il consumo e la conservazione dei funghi",
+              "url": "https://www.ausl.bologna.it/servt/dipt/dsp/uo/ian/ia/funghi/consigli-per-la-raccolta-il-consumo-e-la"
+            }
+          ]
+        },
+        {
+          "text": "Mangialo con cautela e in piccole porzioni.",
+          "why": "Può avere effetto lassativo anche da cotto; descritti rari casi di reazione allergica.",
+          "level": "consigliato",
+          "sources": [
+            {
+              "title": "AUSL Bologna – Occhio al Fungo (opuscolo 2018)",
+              "url": "https://www.ausl.bologna.it/servt/dipt/dsp/uo/ian/ia/funghi/ouscoli/occhio-al-fungo-1/occhio-al-fungo/files/opuscolo-funghi-2018-ok-1.pdf"
+            },
+            {
+              "title": "Scuola Sant'Anna Pisa – La risorsa FUNGO in Alta Valle del Vara, scheda Suillus luteus (p. 214)",
+              "url": "https://www.iris.sssup.it/retrieve/dd9e0b31-bbe7-709e-e053-3705fe0a83fd/214_vqr_Funghi.pdf"
+            }
+          ]
+        }
+      ],
+      "discard": "Cuticola viscosa del cappello.",
+      "freeze": null,
+      "dry": "Si può essiccare (uso tradizionale documentato per S. luteus), dopo aver tolto la cuticola.",
+      "amount": "Porzioni piccole: può essere lassativo anche cotto.",
+      "sources": [
+        {
+          "title": "ATS Milano – I funghi: consigli per la raccolta, il consumo e la conservazione (2023)",
+          "url": "https://www.ats-milano.it/sites/default/files/2023-10/Funghi.pdf"
+        },
+        {
+          "title": "AUSL Bologna – Occhio al Fungo (opuscolo 2018)",
+          "url": "https://www.ausl.bologna.it/servt/dipt/dsp/uo/ian/ia/funghi/ouscoli/occhio-al-fungo-1/occhio-al-fungo/files/opuscolo-funghi-2018-ok-1.pdf"
+        },
+        {
+          "title": "AUSL Bologna – Consigli per la raccolta, il consumo e la conservazione dei funghi",
+          "url": "https://www.ausl.bologna.it/servt/dipt/dsp/uo/ian/ia/funghi/consigli-per-la-raccolta-il-consumo-e-la"
+        },
+        {
+          "title": "Scuola Sant'Anna Pisa – La risorsa FUNGO in Alta Valle del Vara, scheda Suillus luteus (p. 214)",
+          "url": "https://www.iris.sssup.it/retrieve/dd9e0b31-bbe7-709e-e053-3705fe0a83fd/214_vqr_Funghi.pdf"
+        }
+      ],
+      "notes": "ATS Milano dà la regola a livello di genere (Suillus – pinarello: la cuticola 'devè essere scartata); AUSL Bologna (scheda S. granulatus) dice 'si consiglià e avverte dell'effetto lassativo anche da cotto; Sant'Anna (S. luteus) collega alcune intossicazioni al fungo non decorticato. Per S. collinitus nessuna fonte specifica: applicata la regola di genere. Essiccazione: solo uso tradizionale (Sant'Anna), non una raccomandazione sanitaria; la parte 'dopo aver tolto la cuticolà è una mia deduzione dalla regola principale."
+    },
+    "nuda": {
+      "raw": "mai crudo",
+      "raw_why": "Contiene tossine sensibili al calore: casi di intossicazione documentati dopo consumo crudo o poco cotto.",
+      "steps": [
+        {
+          "text": "Cuocilo a lungo e a fondo: almeno 30 minuti (in umido/trifolato, non solo alla griglia o fritto).",
+          "why": "Le tossine si eliminano solo col calore; griglia e frittura possono lasciare parti poco cotte.",
+          "level": "obbligatorio",
+          "sources": [
+            {
+              "title": "Gruppo Micologico Castellano – Commestibilità dei funghi",
+              "url": "https://www.gruppomicologicocastellano.it/micologia/tossicologia/commestibilita_tossicita_dei_funghi.pdf"
+            },
+            {
+              "title": "AUSL Valle d'Aosta – Opuscolo Ispettorato micologico 2026",
+              "url": "https://www.ausl.vda.it/Media/AUSL/Hierarchy/64/6481/Opuscolo%20ispettorato%20micologico%202026.pdf"
+            },
+            {
+              "title": "Scuola Sant'Anna Pisa – La risorsa FUNGO in Alta Valle del Vara, scheda Lepista nuda (p. 174)",
+              "url": "https://www.iris.sssup.it/retrieve/dd9e0b31-bbfe-709e-e053-3705fe0a83fd/174_vqr_Funghi.pdf"
+            },
+            {
+              "title": "AMINT (Funghi in Italia) – Scheda Lepista nuda",
+              "url": "https://www.funghiitaliani.it/topic/15260-lepista-nuda-bull-fr-cooke-1871/"
+            },
+            {
+              "title": "Wikipedia (it) – Lepista nuda (supporto)",
+              "url": "https://it.wikipedia.org/wiki/Lepista_nuda"
+            }
+          ]
+        },
+        {
+          "text": "Non usare esemplari maturi, scuri e impregnati d'acqua.",
+          "why": "Il fungo vecchio e imbibito è sconsigliato per l'uso alimentare.",
+          "level": "consigliato",
+          "sources": [
+            {
+              "title": "AMINT (Funghi in Italia) – Scheda Lepista nuda",
+              "url": "https://www.funghiitaliani.it/topic/15260-lepista-nuda-bull-fr-cooke-1871/"
+            },
+            {
+              "title": "Gruppo Micologico Castellano – Commestibilità dei funghi",
+              "url": "https://www.gruppomicologicocastellano.it/micologia/tossicologia/commestibilita_tossicita_dei_funghi.pdf"
+            }
+          ]
+        }
+      ],
+      "discard": null,
+      "freeze": "Congela solo dopo cottura completa, mai crudo.",
+      "dry": null,
+      "amount": null,
+      "sources": [
+        {
+          "title": "Gruppo Micologico Castellano – Commestibilità dei funghi",
+          "url": "https://www.gruppomicologicocastellano.it/micologia/tossicologia/commestibilita_tossicita_dei_funghi.pdf"
+        },
+        {
+          "title": "AUSL Valle d'Aosta – Opuscolo Ispettorato micologico 2026",
+          "url": "https://www.ausl.vda.it/Media/AUSL/Hierarchy/64/6481/Opuscolo%20ispettorato%20micologico%202026.pdf"
+        },
+        {
+          "title": "Scuola Sant'Anna Pisa – La risorsa FUNGO in Alta Valle del Vara, scheda Lepista nuda (p. 174)",
+          "url": "https://www.iris.sssup.it/retrieve/dd9e0b31-bbfe-709e-e053-3705fe0a83fd/174_vqr_Funghi.pdf"
+        },
+        {
+          "title": "AMINT (Funghi in Italia) – Scheda Lepista nuda",
+          "url": "https://www.funghiitaliani.it/topic/15260-lepista-nuda-bull-fr-cooke-1871/"
+        },
+        {
+          "title": "Wikipedia (it) – Lepista nuda (supporto)",
+          "url": "https://it.wikipedia.org/wiki/Lepista_nuda"
+        },
+        {
+          "title": "AUSL Bologna – Occhio al Fungo (opuscolo 2018)",
+          "url": "https://www.ausl.bologna.it/servt/dipt/dsp/uo/ian/ia/funghi/ouscoli/occhio-al-fungo-1/occhio-al-fungo/files/opuscolo-funghi-2018-ok-1.pdf"
+        }
+      ],
+      "notes": "Nessuna fonte ASL/Ministero trovata che nomini Lepista nuda; le fonti specifiche sono un gruppo micologico (GM Castellano: tossine termolabili, cottura completa di almeno 15 minuti a 70-80 °C), AMINT ('lievemente tossico da crudò, almeno 15 minuti dal primo bollore), Scuola Sant'Anna (intossicazioni documentate se crudo o poco cotto) e Wikipedia ('commestibile dopo completa cotturà). Ho scelto i 30 minuti, più prudenti, dell'AUSL Valle d'Aosta, che li indica in generale per le specie con tossine sensibili al calore e sconsiglia griglia/frittura. Congelamento: regola generale (AUSL Bologna opuscolo 'prima di congelarli è bene cucinarlì; GM Castellano 'cuocere sempre preventivamentè), non specifica per la specie. Nota fuori tema: si confonde con Cortinarius violacei, va fatta controllare."
+    },
+    "procera": {
+      "raw": "mai crudo",
+      "raw_why": "Leggermente tossica da cruda: crudo o poco cotto può dare intossicazioni con sintomi gastrointestinali.",
+      "steps": [
+        {
+          "text": "Mangia solo il cappello: scarta il gambo.",
+          "why": "Il gambo è fibroso, quasi legnoso, e indigesto.",
+          "level": "consigliato",
+          "sources": [
+            {
+              "title": "Regione Emilia-Romagna – Alcune delle specie più comuni di funghi commestibili",
+              "url": "https://ambiente.regione.emilia-romagna.it/it/parchi-natura2000/sistema-regionale/funghi-sottobosco-tartufi/funghi-allegati/funghi-commestibili/@@download/file"
+            },
+            {
+              "title": "Wikipedia (it) – Macrolepiota procera (supporto)",
+              "url": "https://it.wikipedia.org/wiki/Macrolepiota_procera"
+            }
+          ]
+        },
+        {
+          "text": "Cuocila a lungo e a fondo; se la fai alla piastra o impanata, controlla che sia cotta anche all'interno.",
+          "why": "Cruda o poco cotta può causare disturbi gastrointestinali.",
+          "level": "obbligatorio",
+          "sources": [
+            {
+              "title": "AUSL Bologna – Occhio al Fungo (opuscolo 2018)",
+              "url": "https://www.ausl.bologna.it/servt/dipt/dsp/uo/ian/ia/funghi/ouscoli/occhio-al-fungo-1/occhio-al-fungo/files/opuscolo-funghi-2018-ok-1.pdf"
+            },
+            {
+              "title": "Scuola Sant'Anna Pisa – La risorsa FUNGO in Alta Valle del Vara, scheda Macrolepiota procera (p. 178)",
+              "url": "https://iris.santannapisa.it/retrieve/dd9e0b31-bbed-709e-e053-3705fe0a83fd/178_vqr_Funghi.pdf"
+            },
+            {
+              "title": "Wikipedia (it) – Macrolepiota procera (supporto)",
+              "url": "https://it.wikipedia.org/wiki/Macrolepiota_procera"
+            }
+          ]
+        }
+      ],
+      "discard": "Gambo (fibroso).",
+      "freeze": null,
+      "dry": "Si può essiccare (uso tradizionale); anche il secco va cotto prima di mangiarlo.",
+      "amount": null,
+      "sources": [
+        {
+          "title": "Regione Emilia-Romagna – Alcune delle specie più comuni di funghi commestibili",
+          "url": "https://ambiente.regione.emilia-romagna.it/it/parchi-natura2000/sistema-regionale/funghi-sottobosco-tartufi/funghi-allegati/funghi-commestibili/@@download/file"
+        },
+        {
+          "title": "AUSL Bologna – Occhio al Fungo (opuscolo 2018)",
+          "url": "https://www.ausl.bologna.it/servt/dipt/dsp/uo/ian/ia/funghi/ouscoli/occhio-al-fungo-1/occhio-al-fungo/files/opuscolo-funghi-2018-ok-1.pdf"
+        },
+        {
+          "title": "Scuola Sant'Anna Pisa – La risorsa FUNGO in Alta Valle del Vara, scheda Macrolepiota procera (p. 178)",
+          "url": "https://iris.santannapisa.it/retrieve/dd9e0b31-bbed-709e-e053-3705fe0a83fd/178_vqr_Funghi.pdf"
+        },
+        {
+          "title": "Wikipedia (it) – Macrolepiota procera (supporto)",
+          "url": "https://it.wikipedia.org/wiki/Macrolepiota_procera"
+        }
+      ],
+      "notes": "Gambo: Regione Emilia-Romagna 'si consuma solo il cappello perché il gambo è fibrosò (motivo di digeribilità, non tossicità: per questo 'consigliatò); AUSL Bologna invece suggerisce di usare il gambo seccato e tritato come polvere aromatica, sempre con cottura. Cottura: AUSL Bologna 'richiede una prolungata cotturà; Wikipedia sconsiglia piastra/griglia perché l'interno può restare crudo, mentre la scheda Sant'Anna cita la griglia come uso tradizionale: ho scritto 'controlla che sia cotta anche all'internò. Essiccazione: uso tradizionale (Sant'Anna) e AUSL Bologna (polvere del gambo, da cuocere). Rischio principale non di preparazione: confusione con Chlorophyllum/Macrolepiota venenata (tossiche)."
+    },
+    "terreum": {
+      "raw": "sconsigliato",
+      "raw_why": "Nessuna fonte la indica come tossica cruda, ma i funghi spontanei non vanno mangiati crudi.",
+      "steps": [
+        {
+          "text": "Cuocila sempre completamente.",
+          "why": "La Regione Piemonte la considera commestibile 'di base previa cotturà.",
+          "level": "consigliato",
+          "sources": [
+            {
+              "title": "Regione Piemonte – Sitta et al. (2021) Guida ragionata alla commestibilità dei funghi, tabella integrativa",
+              "url": "https://www.regione.piemonte.it/web/media/29625/download"
+            }
+          ]
+        },
+        {
+          "text": "Mangiane quantità moderate e non in pasti ravvicinati.",
+          "why": "Regola generale per i funghi; per questa specie è stato ipotizzato (solo su topi) un rischio muscolare, contestato.",
+          "level": "consigliato",
+          "sources": [
+            {
+              "title": "ATS Milano – I funghi: consigli per la raccolta, il consumo e la conservazione (2023)",
+              "url": "https://www.ats-milano.it/sites/default/files/2023-10/Funghi.pdf"
+            },
+            {
+              "title": "Regione Piemonte – Funghi: quali pericoli per il consumatore? Rapporto Ispettorati micologici ASL 2018-2020",
+              "url": "https://www.regione.piemonte.it/web/media/32307/download"
+            },
+            {
+              "title": "Yin X. et al. (2014) Chemical and toxicological investigations of a previously unknown poisonous European mushroom Tricholoma terreum. Chemistry Eur J 20:7001-9 (PubMed 24753190)",
+              "url": "https://doi.org/10.1002/chem.201400226"
+            },
+            {
+              "title": "Davoli P., Floriani M., Assisi F. (CAV Niguarda), Kob K., Sitta N. (2016) Comment on 'Chemical and toxicological investigations... Tricholoma terreum'. Chemistry Eur J 22:5786-8 (PubMed 26969909)",
+              "url": "https://doi.org/10.1002/chem.201406655"
+            }
+          ]
+        }
+      ],
+      "discard": null,
+      "freeze": null,
+      "dry": null,
+      "amount": "Porzioni moderate, non in pasti ravvicinati. Nessun limite ufficiale specifico.",
+      "sources": [
+        {
+          "title": "Regione Piemonte – Sitta et al. (2021) Guida ragionata alla commestibilità dei funghi, tabella integrativa",
+          "url": "https://www.regione.piemonte.it/web/media/29625/download"
+        },
+        {
+          "title": "ATS Milano – I funghi: consigli per la raccolta, il consumo e la conservazione (2023)",
+          "url": "https://www.ats-milano.it/sites/default/files/2023-10/Funghi.pdf"
+        },
+        {
+          "title": "Regione Piemonte – Funghi: quali pericoli per il consumatore? Rapporto Ispettorati micologici ASL 2018-2020",
+          "url": "https://www.regione.piemonte.it/web/media/32307/download"
+        },
+        {
+          "title": "Yin X. et al. (2014) Chemical and toxicological investigations of a previously unknown poisonous European mushroom Tricholoma terreum. Chemistry Eur J 20:7001-9 (PubMed 24753190)",
+          "url": "https://doi.org/10.1002/chem.201400226"
+        },
+        {
+          "title": "Davoli P., Floriani M., Assisi F. (CAV Niguarda), Kob K., Sitta N. (2016) Comment on 'Chemical and toxicological investigations... Tricholoma terreum'. Chemistry Eur J 22:5786-8 (PubMed 26969909)",
+          "url": "https://doi.org/10.1002/chem.201406655"
+        },
+        {
+          "title": "Yin X. et al. (2016) Response to the Comment... Tricholoma terreum. Chemistry Eur J 22:5789-92 (PubMed 26945891)",
+          "url": "https://doi.org/10.1002/chem.201504410"
+        },
+        {
+          "title": "Wikipedia (en) – Tricholoma terreum (supporto)",
+          "url": "https://en.wikipedia.org/wiki/Tricholoma_terreum"
+        }
+      ],
+      "notes": "Rabdomiolisi: Yin et al. 2014 (Chemistry Eur J, doi 10.1002/chem.201400226) hanno isolato saponaceolidi da T. terreum che nei topi, a dosi orali alte, aumentano la creatinchinasi, ipotizzando un legame con la rabdomiolisi; nessun caso umano documentato. Davoli, Floriani, Assisi (Centro Antiveleni Niguarda), Kob e Sitta 2016 (doi 10.1002/chem.201406655) hanno contestato la conclusione: T. terreum resta commestibile; gli autori cinesi hanno replicato (doi 10.1002/chem.201504410) sostenendo che le sostanze resistono alla cottura. La guida della Regione Piemonte 2021 (Sitta et al.) la classifica 'commestibile (commestibilità libera)'. Wikipedia en: 'commestibile, ma tossica in quantità estremamente elevatè. Nessuna fonte ufficiale italiana dà una quantità massima: ho messo solo la regola generale delle quantità moderate. Il rischio pratico maggiore è la confusione con T. pardinum (velenoso), che non riguarda la preparazione."
+    },
+    "repandum": {
+      "raw": "sconsigliato",
+      "raw_why": "Nessuna fonte lo indica come tossico crudo, ma i funghi spontanei non vanno mangiati crudi.",
+      "steps": [
+        {
+          "text": "Negli esemplari grandi togli gli aculei e prebollili prima di cucinarli.",
+          "why": "Gli esemplari sviluppati diventano amarognoli; l'AUSL Bologna lo indica come preferibile.",
+          "level": "consigliato",
+          "sources": [
+            {
+              "title": "AUSL Bologna – Occhio al Fungo (opuscolo 2018)",
+              "url": "https://www.ausl.bologna.it/servt/dipt/dsp/uo/ian/ia/funghi/ouscoli/occhio-al-fungo-1/occhio-al-fungo/files/opuscolo-funghi-2018-ok-1.pdf"
+            }
+          ]
+        },
+        {
+          "text": "Preferisci esemplari giovani.",
+          "why": "Sono più teneri e meno amari.",
+          "level": "consigliato",
+          "sources": [
+            {
+              "title": "AUSL Bologna – Occhio al Fungo (opuscolo 2018)",
+              "url": "https://www.ausl.bologna.it/servt/dipt/dsp/uo/ian/ia/funghi/ouscoli/occhio-al-fungo-1/occhio-al-fungo/files/opuscolo-funghi-2018-ok-1.pdf"
+            },
+            {
+              "title": "Regione Emilia-Romagna – Alcune delle specie più comuni di funghi commestibili",
+              "url": "https://ambiente.regione.emilia-romagna.it/it/parchi-natura2000/sistema-regionale/funghi-sottobosco-tartufi/funghi-allegati/funghi-commestibili/@@download/file"
+            }
+          ]
+        }
+      ],
+      "discard": "Aculei negli esemplari adulti.",
+      "freeze": null,
+      "dry": null,
+      "amount": null,
+      "sources": [
+        {
+          "title": "AUSL Bologna – Occhio al Fungo (opuscolo 2018)",
+          "url": "https://www.ausl.bologna.it/servt/dipt/dsp/uo/ian/ia/funghi/ouscoli/occhio-al-fungo-1/occhio-al-fungo/files/opuscolo-funghi-2018-ok-1.pdf"
+        },
+        {
+          "title": "Regione Emilia-Romagna – Alcune delle specie più comuni di funghi commestibili",
+          "url": "https://ambiente.regione.emilia-romagna.it/it/parchi-natura2000/sistema-regionale/funghi-sottobosco-tartufi/funghi-allegati/funghi-commestibili/@@download/file"
+        },
+        {
+          "title": "Scuola Sant'Anna Pisa – La risorsa FUNGO in Alta Valle del Vara, scheda Hydnum repandum (p. 146)",
+          "url": "https://iris.santannapisa.it/retrieve/dd9e0b31-bbea-709e-e053-3705fe0a83fd/142_vqr_Funghi.pdf"
+        }
+      ],
+      "notes": "Nessuna fonte indica trattamenti obbligatori per motivi di sicurezza: le indicazioni (togliere aculei, prebollire i grandi) sono di AUSL Bologna e sembrano legate all'amaro più che alla tossicità, per questo 'consigliatò. Sant'Anna cita come uso tradizionale il sott'olio. Nessuna indicazione trovata su congelamento o essiccazione."
+    },
+    "virescens": {
+      "raw": "sconsigliato",
+      "raw_why": "Regola generale: i funghi spontanei non vanno mangiati crudi. L'AUSL Bologna sconsiglia di mangiare crude le russule a sapore dolce.",
+      "steps": [
+        {
+          "text": "Cuocila completamente; non mangiarla cruda.",
+          "why": "Alcune russule dolci simili (es. R. olivacea) sono tossiche e si mangiano solo dopo lunga cottura.",
+          "level": "consigliato",
+          "sources": [
+            {
+              "title": "AUSL Bologna – Consigli per la raccolta, il consumo e la conservazione dei funghi",
+              "url": "https://www.ausl.bologna.it/servt/dipt/dsp/uo/ian/ia/funghi/consigli-per-la-raccolta-il-consumo-e-la"
+            },
+            {
+              "title": "Gruppo Micologico Castellano – Commestibilità dei funghi",
+              "url": "https://www.gruppomicologicocastellano.it/micologia/tossicologia/commestibilita_tossicita_dei_funghi.pdf"
+            }
+          ]
+        }
+      ],
+      "discard": null,
+      "freeze": null,
+      "dry": null,
+      "amount": null,
+      "sources": [
+        {
+          "title": "AUSL Bologna – Consigli per la raccolta, il consumo e la conservazione dei funghi",
+          "url": "https://www.ausl.bologna.it/servt/dipt/dsp/uo/ian/ia/funghi/consigli-per-la-raccolta-il-consumo-e-la"
+        },
+        {
+          "title": "AUSL Bologna – Occhio al Fungo (opuscolo 2018)",
+          "url": "https://www.ausl.bologna.it/servt/dipt/dsp/uo/ian/ia/funghi/ouscoli/occhio-al-fungo-1/occhio-al-fungo/files/opuscolo-funghi-2018-ok-1.pdf"
+        },
+        {
+          "title": "Gruppo Micologico Castellano – Commestibilità dei funghi",
+          "url": "https://www.gruppomicologicocastellano.it/micologia/tossicologia/commestibilita_tossicita_dei_funghi.pdf"
+        },
+        {
+          "title": "Scuola Sant'Anna Pisa – La risorsa FUNGO in Alta Valle del Vara, scheda Russula cyanoxantha (p. 200)",
+          "url": "https://iris.santannapisa.it/retrieve/dd9e0b31-bba0-709e-e053-3705fe0a83fd/198_vqr_Funghi.pdf"
+        }
+      ],
+      "notes": "Divergenza: il Gruppo Micologico Castellano cita Russula virescens tra le poche specie mangiabili crude (esemplari freschissimi, piccole quantità); come da brief non lo riporto come sicuro e tengo 'sconsigliatò. L'AUSL Bologna dice che le russule dolci si mangiano solo dopo lunga cottura, mai crude/grigliate/fritte, se non si può escludere R. olivacea o specie simili: per R. virescens/cyanoxantha controllate dal micologo questo è prudenza, non obbligo. Togliere la cuticola è solo un'abitudine di cucina (Sant'Anna), non una regola di sicurezza: discard null. Per R. cyanoxantha nessuna regola specifica oltre 'commestibilè (Sant'Anna). Rischio principale non di preparazione: confusione di R. virescens con Amanita phalloides (AUSL Bologna)."
+    }
+  },
+  "cucina": {
+    "edulis": {
+      "taste": "Carne bianca e soda da giovane, sapore dolce e aromatico con note di nocciola, profumo gradevole.",
+      "uses": [
+        {
+          "text": "Trifolato con olio, aglio e prezzemolo: è il modo classico per i porcini freschi. Sala solo a fine cottura, così non rilascia acqua e non lessa.",
+          "sources": [
+            {
+              "title": "Funghi trifolati – Cucchiaio d'Argento",
+              "url": "https://www.cucchiaio.it/ricetta/ricetta-funghi-trifolati/"
+            }
+          ]
+        },
+        {
+          "text": "Fritto: a fette non troppo sottili, passato in farina, uovo e pangrattato. Si serve come antipasto, contorno o secondo.",
+          "sources": [
+            {
+              "title": "Porcini fritti – Cucchiaio d'Argento",
+              "url": "https://www.cucchiaio.it/ricetta/ricetta-cappelle-porcini-impanate-fritte/"
+            }
+          ]
+        },
+        {
+          "text": "Il risotto ai porcini è il piatto d'autunno per eccellenza. Con i porcini secchi si usa anche l'acqua dell'ammollo, filtrata, al posto di parte del brodo.",
+          "sources": [
+            {
+              "title": "Boletus edulis – Wikipedia (en)",
+              "url": "https://en.wikipedia.org/wiki/Boletus_edulis"
+            },
+            {
+              "title": "Risotto ai funghi porcini secchi – Cucchiaio d'Argento",
+              "url": "https://www.cucchiaio.it/ricetta/risotto-ai-funghi-porcini-secchi/"
+            }
+          ]
+        },
+        {
+          "text": "Essiccato a fette il profumo si concentra. Dopo l'ammollo in acqua tiepida è perfetto per il sugo delle tagliatelle, anche con un filo di pomodoro.",
+          "sources": [
+            {
+              "title": "Boletus edulis – Wikipedia (en)",
+              "url": "https://en.wikipedia.org/wiki/Boletus_edulis"
+            },
+            {
+              "title": "Tagliatelle ai funghi – Cucchiaio d'Argento",
+              "url": "https://www.cucchiaio.it/ricetta/ricetta-tagliatelle-funghi/"
+            }
+          ]
+        },
+        {
+          "text": "Si conserva bene sott'olio, dopo cottura in acqua e aceto in parti uguali, poi invasato sott'olio e pastorizzato (metodo ISS).",
+          "sources": [
+            {
+              "title": "Boletus edulis – Wikipedia",
+              "url": "https://it.wikipedia.org/wiki/Boletus_edulis"
+            },
+            {
+              "title": "Botulismo – EpiCentro, Istituto Superiore di Sanità",
+              "url": "https://www.epicentro.iss.it/botulismo/"
+            }
+          ]
+        }
+      ],
+      "local": "Le fettuccine ai porcini sono il piatto delle sagre estive della Valle del Turano: ad Ascrea dal 1986 (con bruschette ai porcini, salsicce e fagioli) e a Casaprota da oltre 40 edizioni, dove i porcini condiscono anche la carne.",
+      "notes": "Le fonti (Wikipedia it/en, Gambero Rosso, Cucchiaio) citano anche l'uso crudo (insalata, carpaccio): è una tradizione, ma qui è esclusa. Le sagre reatine parlano genericamente di 'porcinì, senza distinguere la specie."
+    },
+    "pinophilus": {
+      "taste": "Carne bianca, più tenera negli adulti, sapore dolce di nocciola e odore di muschio. Un po' meno aromatico degli altri porcini, ma in alcune zone è il preferito.",
+      "uses": [
+        {
+          "text": "Si usa come gli altri porcini: fresco, essiccato o conservato.",
+          "sources": [
+            {
+              "title": "Boletus pinophilus – Wikipedia (en)",
+              "url": "https://en.wikipedia.org/wiki/Boletus_pinophilus"
+            }
+          ]
+        },
+        {
+          "text": "Trifolato con aglio e prezzemolo, il metodo tradizionale per i porcini freschi.",
+          "sources": [
+            {
+              "title": "Funghi trifolati – Cucchiaio d'Argento",
+              "url": "https://www.cucchiaio.it/ricetta/ricetta-funghi-trifolati/"
+            }
+          ]
+        },
+        {
+          "text": "Fritto, a fette impanate in uovo e pangrattato.",
+          "sources": [
+            {
+              "title": "Porcini fritti – Cucchiaio d'Argento",
+              "url": "https://www.cucchiaio.it/ricetta/ricetta-cappelle-porcini-impanate-fritte/"
+            }
+          ]
+        },
+        {
+          "text": "Essiccato, per risotti e sughi: l'acqua dell'ammollo, filtrata, si aggiunge alla cottura.",
+          "sources": [
+            {
+              "title": "Boletus pinophilus – Wikipedia (en)",
+              "url": "https://en.wikipedia.org/wiki/Boletus_pinophilus"
+            },
+            {
+              "title": "Risotto ai funghi porcini secchi – Cucchiaio d'Argento",
+              "url": "https://www.cucchiaio.it/ricetta/risotto-ai-funghi-porcini-secchi/"
+            }
+          ]
+        }
+      ],
+      "local": "Le fettuccine ai porcini sono il piatto delle sagre estive della Valle del Turano: ad Ascrea dal 1986 (con bruschette ai porcini, salsicce e fagioli) e a Casaprota da oltre 40 edizioni, dove i porcini condiscono anche la carne.",
+      "notes": "Le ricette (Cucchiaio d'Argento) si riferiscono ai porcini in generale, non a questa specie. Wikipedia en conferma che si cucina come gli altri porcini. Gli usi a crudo sono esclusi."
+    },
+    "aereus": {
+      "taste": "Carne dura, compatta e bianca, con ottima resa in cucina. Profumo intenso di nocciola, soprattutto da cotto: per molti è il migliore dei porcini.",
+      "uses": [
+        {
+          "text": "Trifolato è il modo che lo esalta di più. Gli esemplari grandi sono ottimi alla brace.",
+          "sources": [
+            {
+              "title": "Boletus aereus – scheda AMEP",
+              "url": "https://www.amep.it/Boletus%20aereus.html"
+            }
+          ]
+        },
+        {
+          "text": "Impanato e fritto: c'è chi lo mangia solo così.",
+          "sources": [
+            {
+              "title": "Boletus aereus – scheda AMEP",
+              "url": "https://www.amep.it/Boletus%20aereus.html"
+            }
+          ]
+        },
+        {
+          "text": "È il porcino più adatto all'essiccazione, che ne rafforza aroma e sapore. Si taglia a fette, si rinviene in acqua calda e l'acqua dell'ammollo diventa un brodo profumato.",
+          "sources": [
+            {
+              "title": "Boletus aereus – Wikipedia",
+              "url": "https://it.wikipedia.org/wiki/Boletus_aereus"
+            },
+            {
+              "title": "Boletus aereus – Wikipedia (en)",
+              "url": "https://en.wikipedia.org/wiki/Boletus_aereus"
+            }
+          ]
+        },
+        {
+          "text": "Si conserva bene surgelato oppure sott'olio, dopo cottura in acqua e aceto in parti uguali, poi invasato sott'olio e pastorizzato (metodo ISS).",
+          "sources": [
+            {
+              "title": "Boletus aereus – Wikipedia",
+              "url": "https://it.wikipedia.org/wiki/Boletus_aereus"
+            },
+            {
+              "title": "Botulismo – EpiCentro, Istituto Superiore di Sanità",
+              "url": "https://www.epicentro.iss.it/botulismo/"
+            }
+          ]
+        }
+      ],
+      "local": "Le fettuccine ai porcini sono il piatto delle sagre estive della Valle del Turano: ad Ascrea dal 1986 (con bruschette ai porcini, salsicce e fagioli) e a Casaprota da oltre 40 edizioni, dove i porcini condiscono anche la carne.",
+      "notes": "AMEP lo cita anche 'ottimo crudò: uso escluso. Le fonti avvertono che la forma chiara si confonde con il B. edulis, ma in cucina sono intercambiabili."
+    },
+    "aestivalis": {
+      "taste": "Carne bianca, dolce, un po' più molle degli altri porcini. Per Wikipedia è il più profumato del gruppo.",
+      "uses": [
+        {
+          "text": "Si cucina come gli altri porcini: trifolato con aglio e prezzemolo.",
+          "sources": [
+            {
+              "title": "Boletus reticulatus – Wikipedia (en)",
+              "url": "https://en.wikipedia.org/wiki/Boletus_reticulatus"
+            },
+            {
+              "title": "Funghi trifolati – Cucchiaio d'Argento",
+              "url": "https://www.cucchiaio.it/ricetta/ricetta-funghi-trifolati/"
+            }
+          ]
+        },
+        {
+          "text": "A fette, impanato e fritto.",
+          "sources": [
+            {
+              "title": "Porcini fritti – Cucchiaio d'Argento",
+              "url": "https://www.cucchiaio.it/ricetta/ricetta-cappelle-porcini-impanate-fritte/"
+            }
+          ]
+        },
+        {
+          "text": "Già a fine Settecento Paulet lo raccomandava con la fricassea di pollo.",
+          "sources": [
+            {
+              "title": "Boletus reticulatus – Wikipedia (en)",
+              "url": "https://en.wikipedia.org/wiki/Boletus_reticulatus"
+            }
+          ]
+        },
+        {
+          "text": "Essiccato, per risotti e sughi come i porcini secchi.",
+          "sources": [
+            {
+              "title": "Risotto ai funghi porcini secchi – Cucchiaio d'Argento",
+              "url": "https://www.cucchiaio.it/ricetta/risotto-ai-funghi-porcini-secchi/"
+            }
+          ]
+        }
+      ],
+      "local": "Le fettuccine ai porcini sono il piatto delle sagre estive della Valle del Turano: ad Ascrea dal 1986 (con bruschette ai porcini, salsicce e fagioli) e a Casaprota da oltre 40 edizioni, dove i porcini condiscono anche la carne.",
+      "notes": "È molto spesso larvato (esce d'estate) e la carne è meno soda: conviene scegliere esemplari giovani e sodi. Non ho trovato fonti di cucina dedicate a questa specie, quindi gli usi sono quelli dei porcini in generale."
+    },
+    "caesarea": {
+      "taste": "Carne bianca, tenera e fragile, sapore dolce e delicato. In cottura resta gialla.",
+      "uses": [
+        {
+          "text": "Saltato in padella con olio, aglio e un goccio di vino bianco, poi finito con mentuccia o prezzemolo, è un sugo veloce per le tagliatelle fatte in casa.",
+          "sources": [
+            {
+              "title": "Carpaccio di ovoli e tagliatelle agli ovoli – Firenze Post",
+              "url": "https://www.firenzepost.it/2016/09/17/carpaccio-di-ovoli-e-tagliatelle-agli-ovoli-piatti-di-fine-estate/"
+            }
+          ]
+        },
+        {
+          "text": "In padella insieme ai porcini, come contorno o per condire pasta e riso. È buono anche sulla carne ai ferri o come ripieno di omelette.",
+          "sources": [
+            {
+              "title": "Ovoli e porcini in padella – blog GialloZafferano (In cucina si può cambiare il mondo)",
+              "url": "https://blog.giallozafferano.it/renatabriano/ricetta-ovoli-e-porcini-in-padella/"
+            }
+          ]
+        },
+        {
+          "text": "Alla piastra, al forno o ripieno: sono gli usi da cotto della tradizione popolare.",
+          "sources": [
+            {
+              "title": "La risorsa FUNGO in Alta Valle del Vara, scheda Amanita caesarea – Scuola Superiore Sant'Anna (IRIS)",
+              "url": "https://iris.santannapisa.it/retrieve/dd9e0b31-bbe6-709e-e053-3705fe0a83fd/80_vqr_Funghi.pdf"
+            }
+          ]
+        }
+      ],
+      "local": null,
+      "notes": "Molte fonti (Wikipedia, Cucchiaio d'Argento, Firenze Post) indicano il crudo (insalata, carpaccio) come uso tipico: tradizione esclusa qui. Wikipedia ricorda che non va mai raccolto chiuso 'a uovò, sia per la confusione con le amanite mortali sia perché la specie si sta rarefacendo. Si può conservare essiccato o sott'olio (Wikipedia), ma è un uso poco comune per un fungo così delicato."
+    },
+    "cibarius": {
+      "taste": "Carne soda, un po' fibrosa. Da cotto ha un profumo intenso e un sapore dolce e fruttato, con una nota di albicocca.",
+      "uses": [
+        {
+          "text": "Trifolato o in padella con aglio e prezzemolo, ma ben cotto: la cottura è più lunga di quella di altri funghi, altrimenti resta legnoso.",
+          "sources": [
+            {
+              "title": "Champignon, finferli, chiodini: tutti i funghi buoni da mangiare – Cucchiaio d'Argento",
+              "url": "https://www.cucchiaio.it/articolo/champignon-finferli-chiodini-tutti-funghi-buoni-da-mangiare-quali-sono-e-come-cucinarli/"
+            },
+            {
+              "title": "Funghi trifolati – Cucchiaio d'Argento",
+              "url": "https://www.cucchiaio.it/ricetta/ricetta-funghi-trifolati/"
+            }
+          ]
+        },
+        {
+          "text": "Il classico con la selvaggina e la cacciagione. Ottimo anche nelle tagliatelle.",
+          "sources": [
+            {
+              "title": "Champignon, finferli, chiodini: tutti i funghi buoni da mangiare – Cucchiaio d'Argento",
+              "url": "https://www.cucchiaio.it/articolo/champignon-finferli-chiodini-tutti-funghi-buoni-da-mangiare-quali-sono-e-come-cucinarli/"
+            }
+          ]
+        },
+        {
+          "text": "Nel risotto o stufato.",
+          "sources": [
+            {
+              "title": "La risorsa FUNGO in Alta Valle del Vara, scheda Cantharellus cibarius – Scuola Superiore Sant'Anna (IRIS)",
+              "url": "https://iris.santannapisa.it/retrieve/dd9e0b31-bba4-709e-e053-3705fe0a83fd/116_vqr_Funghi.pdf"
+            }
+          ]
+        },
+        {
+          "text": "Essiccato è il 'prezzemolo dei funghì, usato per insaporire piatti e altri funghi. Meglio non essiccarlo in forno, che può renderlo amaro.",
+          "sources": [
+            {
+              "title": "Cantharellus cibarius – Wikipedia",
+              "url": "https://it.wikipedia.org/wiki/Cantharellus_cibarius"
+            },
+            {
+              "title": "Chanterelle (Cantharellus cibarius) – Wikipedia (en)",
+              "url": "https://en.wikipedia.org/wiki/Cantharellus_cibarius"
+            }
+          ]
+        },
+        {
+          "text": "Si conserva sbollentato e poi congelato (se lo congeli senza sbollentarlo diventa amarognolo), oppure sott'olio dopo cottura in acqua e aceto in parti uguali, poi invasato sott'olio e pastorizzato (metodo ISS).",
+          "sources": [
+            {
+              "title": "Cantharellus cibarius – Wikipedia",
+              "url": "https://it.wikipedia.org/wiki/Cantharellus_cibarius"
+            },
+            {
+              "title": "Champignon, finferli, chiodini: tutti i funghi buoni da mangiare – Cucchiaio d'Argento",
+              "url": "https://www.cucchiaio.it/articolo/champignon-finferli-chiodini-tutti-funghi-buoni-da-mangiare-quali-sono-e-come-cucinarli/"
+            },
+            {
+              "title": "Botulismo – EpiCentro, Istituto Superiore di Sanità",
+              "url": "https://www.epicentro.iss.it/botulismo/"
+            }
+          ]
+        }
+      ],
+      "local": null,
+      "notes": "Wikipedia consiglia un consumo moderato perché può dare allergie."
+    },
+    "cornucopioides": {
+      "taste": "Carne sottile ed elastica, sapore dolce e aromatico con un forte richiamo al tartufo, che si accentua da secco.",
+      "uses": [
+        {
+          "text": "Con la pasta fresca, nei risotti, nel misto di funghi e con la selvaggina.",
+          "sources": [
+            {
+              "title": "Craterellus cornucopioides – Wikipedia",
+              "url": "https://it.wikipedia.org/wiki/Craterellus_cornucopioides"
+            }
+          ]
+        },
+        {
+          "text": "Va bene come un porcino: con la polenta, gli gnocchetti di zucca o sulle bruschette rustiche.",
+          "sources": [
+            {
+              "title": "Champignon, finferli, chiodini: tutti i funghi buoni da mangiare – Cucchiaio d'Argento",
+              "url": "https://www.cucchiaio.it/articolo/champignon-finferli-chiodini-tutti-funghi-buoni-da-mangiare-quali-sono-e-come-cucinarli/"
+            }
+          ]
+        },
+        {
+          "text": "Essiccata (in forno ventilato a 45 °C, circa un'ora) e ridotta in polvere, è il 'tartufo dei poverì. Va unita in cottura a uova, patate al forno o pasta con burro e parmigiano.",
+          "sources": [
+            {
+              "title": "Champignon, finferli, chiodini: tutti i funghi buoni da mangiare – Cucchiaio d'Argento",
+              "url": "https://www.cucchiaio.it/articolo/champignon-finferli-chiodini-tutti-funghi-buoni-da-mangiare-quali-sono-e-come-cucinarli/"
+            },
+            {
+              "title": "Craterellus cornucopioides – Wikipedia",
+              "url": "https://it.wikipedia.org/wiki/Craterellus_cornucopioides"
+            },
+            {
+              "title": "Craterellus cornucopioides – Wikipedia (en)",
+              "url": "https://en.wikipedia.org/wiki/Craterellus_cornucopioides"
+            }
+          ]
+        }
+      ],
+      "local": null,
+      "notes": "Il Cucchiaio d'Argento la cita anche cruda: uso escluso. Per coerenza con la regola niente crudo, ho scritto di aggiungere la polvere in cottura e non spolverata a piatto finito. Il fungo è sottile e rende poco: ne serve una buona quantità."
+    },
+    "repandum": {
+      "taste": "Carne soda e croccante, sapore dolce di nocciola con un leggero retrogusto amarognolo.",
+      "uses": [
+        {
+          "text": "Saltato in padella diventa tenero e carnoso, con un sapore delicato: si usa spesso insieme ai finferli.",
+          "sources": [
+            {
+              "title": "Hydnum repandum – Wikipedia (en)",
+              "url": "https://en.wikipedia.org/wiki/Hydnum_repandum"
+            }
+          ]
+        },
+        {
+          "text": "Stufato nel latte o nel brodo: assorbe bene i liquidi e prende il sapore del condimento.",
+          "sources": [
+            {
+              "title": "Hydnum repandum – Wikipedia (en)",
+              "url": "https://en.wikipedia.org/wiki/Hydnum_repandum"
+            }
+          ]
+        },
+        {
+          "text": "Sott'aceto o sott'olio, dopo cottura in acqua e aceto in parti uguali, poi invasato sott'olio e pastorizzato (metodo ISS).",
+          "sources": [
+            {
+              "title": "Hydnum repandum – Wikipedia (en)",
+              "url": "https://en.wikipedia.org/wiki/Hydnum_repandum"
+            },
+            {
+              "title": "Botulismo – EpiCentro, Istituto Superiore di Sanità",
+              "url": "https://www.epicentro.iss.it/botulismo/"
+            }
+          ]
+        },
+        {
+          "text": "Una volta cotto mantiene la consistenza e si congela bene.",
+          "sources": [
+            {
+              "title": "Hydnum repandum – Wikipedia (en)",
+              "url": "https://en.wikipedia.org/wiki/Hydnum_repandum"
+            }
+          ]
+        }
+      ],
+      "local": null,
+      "notes": "Negli esemplari maturi alcune associazioni micologiche consigliano di togliere gli aculei, che sono amari (Wikipedia it). Secondo Wikipedia en l'amaro dei vecchi sparisce con la bollitura. Il sapore va da mediocre a ottimo secondo età e habitat."
+    },
+    "procera": {
+      "taste": "Cappello tenero e fioccoso, sapore dolce di nocciola. Il gambo è fibroso, quasi legnoso, e non si mangia.",
+      "uses": [
+        {
+          "text": "La cotoletta: si usa solo il cappello aperto, con le lamelle ancora bianche, passato nell'uovo e nel pangrattato e fritto. È croccante fuori e tenero dentro.",
+          "sources": [
+            {
+              "title": "Macrolepiota procera – Wikipedia",
+              "url": "https://it.wikipedia.org/wiki/Macrolepiota_procera"
+            },
+            {
+              "title": "Champignon, finferli, chiodini: tutti i funghi buoni da mangiare – Cucchiaio d'Argento",
+              "url": "https://www.cucchiaio.it/articolo/champignon-finferli-chiodini-tutti-funghi-buoni-da-mangiare-quali-sono-e-come-cucinarli/"
+            },
+            {
+              "title": "Macrolepiota procera – Wikipedia (en)",
+              "url": "https://en.wikipedia.org/wiki/Macrolepiota_procera"
+            }
+          ]
+        },
+        {
+          "text": "I cappelli ancora chiusi vanno bene nella frittata.",
+          "sources": [
+            {
+              "title": "Macrolepiota procera – Wikipedia",
+              "url": "https://it.wikipedia.org/wiki/Macrolepiota_procera"
+            }
+          ]
+        },
+        {
+          "text": "Cappelli giovani ripieni di carne macinata e cotti al forno, come i peperoni ripieni.",
+          "sources": [
+            {
+              "title": "Macrolepiota procera – Wikipedia (en)",
+              "url": "https://en.wikipedia.org/wiki/Macrolepiota_procera"
+            }
+          ]
+        },
+        {
+          "text": "A pezzi in un soffritto di cipolla con passata di pomodoro, per un sugo veloce, oppure nelle minestre.",
+          "sources": [
+            {
+              "title": "Mazza di tamburo – ricette, blog GialloZafferano (Ortaggi che passione)",
+              "url": "https://blog.giallozafferano.it/ortaggichepassionebysara/mazza-di-tamburo-ricette/"
+            }
+          ]
+        }
+      ],
+      "local": null,
+      "notes": "Wikipedia it sconsiglia piastra e griglia perché l'interno può restare crudo, e la mazza di tamburo è leggermente tossica cruda: ho escluso la grigliata proposta dal blog GialloZafferano. La resa è bassa perché in cottura i cappelli si riducono molto."
+    },
+    "mellea": {
+      "taste": "Sapore dolce-acidulo con un leggero retrogusto amarognolo. Il cappello è tenero e il gambo fibroso. In cottura scurisce fino quasi al nero.",
+      "uses": [
+        {
+          "text": "Dopo la prebollitura (acqua buttata), è ottimo in umido: è il modo più tradizionale.",
+          "sources": [
+            {
+              "title": "Armillaria mellea – Wikipedia",
+              "url": "https://it.wikipedia.org/wiki/Armillaria_mellea"
+            },
+            {
+              "title": "Champignon, finferli, chiodini: tutti i funghi buoni da mangiare – Cucchiaio d'Argento",
+              "url": "https://www.cucchiaio.it/articolo/champignon-finferli-chiodini-tutti-funghi-buoni-da-mangiare-quali-sono-e-come-cucinarli/"
+            }
+          ]
+        },
+        {
+          "text": "Dopo la prebollitura, con carne e salsiccia, o nel ragù.",
+          "sources": [
+            {
+              "title": "Armillaria mellea – Wikipedia",
+              "url": "https://it.wikipedia.org/wiki/Armillaria_mellea"
+            },
+            {
+              "title": "Champignon, finferli, chiodini: tutti i funghi buoni da mangiare – Cucchiaio d'Argento",
+              "url": "https://www.cucchiaio.it/articolo/champignon-finferli-chiodini-tutti-funghi-buoni-da-mangiare-quali-sono-e-come-cucinarli/"
+            }
+          ]
+        },
+        {
+          "text": "Dopo la prebollitura, trifolato o come condimento per i risotti.",
+          "sources": [
+            {
+              "title": "Armillaria mellea – Wikipedia",
+              "url": "https://it.wikipedia.org/wiki/Armillaria_mellea"
+            }
+          ]
+        },
+        {
+          "text": "I piccoli e sodi sono la classica conserva sott'olio: prima la prebollitura, poi la cottura in acqua e aceto, quindi in vasetto sott'olio e pastorizzati.",
+          "sources": [
+            {
+              "title": "Armillaria mellea – Wikipedia",
+              "url": "https://it.wikipedia.org/wiki/Armillaria_mellea"
+            },
+            {
+              "title": "La risorsa FUNGO in Alta Valle del Vara, scheda Armillaria mellea – Scuola Superiore Sant'Anna (IRIS)",
+              "url": "https://iris.santannapisa.it/retrieve/dd9e0b31-bbf8-709e-e053-3705fe0a83fd/92_vqr_Funghi.pdf"
+            },
+            {
+              "title": "Botulismo – EpiCentro, Istituto Superiore di Sanità",
+              "url": "https://www.epicentro.iss.it/botulismo/"
+            }
+          ]
+        }
+      ],
+      "local": null,
+      "notes": "Si usano il cappello e la parte alta del gambo. Il resto del gambo è coriaceo e si scarta, salvo negli esemplari molto giovani. Quelli cresciuti su latifoglie sono meno amari. Il Cucchiaio d'Argento non parla di prebollitura: l'ho aggiunta in ogni uso. Wikipedia segnala disturbi con esemplari congelati senza prebollitura."
+    },
+    "virescens": {
+      "taste": "Carne soda e compatta, sapore delicato e dolce di nocciola.",
+      "uses": [
+        {
+          "text": "Alla brace o sulla piastra, con un filo d'olio e un pizzico di sale: è l'uso più tradizionale.",
+          "sources": [
+            {
+              "title": "La risorsa FUNGO in Alta Valle del Vara, schede Russula virescens e Suillus granulatus – Scuola Superiore Sant'Anna (IRIS)",
+              "url": "https://iris.santannapisa.it/retrieve/dd9e0b31-bba2-709e-e053-3705fe0a83fd/208_vqr_Funghi.pdf"
+            },
+            {
+              "title": "Russula virescens – Wikipedia (en)",
+              "url": "https://en.wikipedia.org/wiki/Russula_virescens"
+            }
+          ]
+        },
+        {
+          "text": "In umido oppure ripiena.",
+          "sources": [
+            {
+              "title": "La risorsa FUNGO in Alta Valle del Vara, schede Russula virescens e Suillus granulatus – Scuola Superiore Sant'Anna (IRIS)",
+              "url": "https://iris.santannapisa.it/retrieve/dd9e0b31-bba2-709e-e053-3705fe0a83fd/208_vqr_Funghi.pdf"
+            }
+          ]
+        },
+        {
+          "text": "Saltata in padella: da giovane ricorda un po' la patata e sta bene con lo scalogno.",
+          "sources": [
+            {
+              "title": "Russula virescens – Wikipedia (en)",
+              "url": "https://en.wikipedia.org/wiki/Russula_virescens"
+            }
+          ]
+        },
+        {
+          "text": "La R. cyanoxantha si cucina da sola o nel misto di funghi.",
+          "sources": [
+            {
+              "title": "Russula cyanoxantha – scheda AMEP",
+              "url": "https://www.amep.it/Russula%20cyanoxantha.html"
+            }
+          ]
+        }
+      ],
+      "local": null,
+      "notes": "Wikipedia it/en la citano anche cruda in insalata: uso escluso. Essiccata prende un odore sgradevole 'di pescè (Wikipedia it), quindi è meglio fresca. Va raccolta intera, base compresa, per non confonderla con l'Amanita phalloides."
+    },
+    "suillus": {
+      "taste": "Carne tenera, presto molle e acquosa. Sapore dolce o acidulo, odore fruttato o resinoso.",
+      "uses": [
+        {
+          "text": "Sempre senza cuticola: in umido o stufato, da solo o nel misto di funghi.",
+          "sources": [
+            {
+              "title": "La risorsa FUNGO in Alta Valle del Vara, scheda Suillus luteus – Scuola Superiore Sant'Anna (IRIS)",
+              "url": "https://www.iris.sssup.it/retrieve/dd9e0b31-bbe7-709e-e053-3705fe0a83fd/214_vqr_Funghi.pdf"
+            },
+            {
+              "title": "La risorsa FUNGO in Alta Valle del Vara, schede Russula virescens e Suillus granulatus – Scuola Superiore Sant'Anna (IRIS)",
+              "url": "https://iris.santannapisa.it/retrieve/dd9e0b31-bba2-709e-e053-3705fe0a83fd/208_vqr_Funghi.pdf"
+            },
+            {
+              "title": "Suillus luteus – Wikipedia (en)",
+              "url": "https://en.wikipedia.org/wiki/Suillus_luteus"
+            }
+          ]
+        },
+        {
+          "text": "Senza cuticola, fritto in padella o nelle zuppe.",
+          "sources": [
+            {
+              "title": "Suillus luteus – Wikipedia (en)",
+              "url": "https://en.wikipedia.org/wiki/Suillus_luteus"
+            }
+          ]
+        },
+        {
+          "text": "I giovani, senza cuticola, sono molto apprezzati sott'olio, dopo cottura in acqua e aceto in parti uguali, poi invasato sott'olio e pastorizzato (metodo ISS).",
+          "sources": [
+            {
+              "title": "G. Segneri, Il genere Suillus – Rivista Micologica Romana (AMER), n. 105, 2018",
+              "url": "https://www.ameronlus.it/RMR/2018/boll_105/105_154-159_Segneri.pdf"
+            },
+            {
+              "title": "La risorsa FUNGO in Alta Valle del Vara, scheda Suillus luteus – Scuola Superiore Sant'Anna (IRIS)",
+              "url": "https://www.iris.sssup.it/retrieve/dd9e0b31-bbe7-709e-e053-3705fe0a83fd/214_vqr_Funghi.pdf"
+            },
+            {
+              "title": "Botulismo – EpiCentro, Istituto Superiore di Sanità",
+              "url": "https://www.epicentro.iss.it/botulismo/"
+            }
+          ]
+        },
+        {
+          "text": "Si trova anche essiccato, ma essendo molto acquoso non tutti lo consigliano per l'essiccazione.",
+          "sources": [
+            {
+              "title": "La risorsa FUNGO in Alta Valle del Vara, scheda Suillus luteus – Scuola Superiore Sant'Anna (IRIS)",
+              "url": "https://www.iris.sssup.it/retrieve/dd9e0b31-bbe7-709e-e053-3705fe0a83fd/214_vqr_Funghi.pdf"
+            },
+            {
+              "title": "Suillus luteus – Wikipedia (en)",
+              "url": "https://en.wikipedia.org/wiki/Suillus_luteus"
+            }
+          ]
+        }
+      ],
+      "local": "Nel Lazio il S. granulatus è forse il pinarolo più diffuso, soprattutto nei giovani impianti di pino nero. Secondo la Rivista Micologica Romana i giovani esemplari, privati della cuticola, sono molto apprezzati per la conservazione sott'olio.",
+      "notes": "La cuticola viscosa va tolta perché è lassativa (Wikipedia it). Alcuni autori consigliano di togliere anche i tubuli. Sconsigliato frullarlo in vellutata: secondo Wikipedia en diventa una colla. In Russia lo si mette in salamoia con tutta la cuticola: uso escluso perché contraddice la regola."
+    },
+    "terreum": {
+      "taste": "Carne sottile e fragile, bianco-grigiastra, sapore mite e leggermente dolce, senza odori particolari.",
+      "uses": [
+        {
+          "text": "Trifolata, da sola o nel misto di funghi.",
+          "sources": [
+            {
+              "title": "Tricholoma terreum – scheda AMEP",
+              "url": "https://www.amep.it/Tricholoma%20terreum.html"
+            },
+            {
+              "title": "Tricholome terreux – Wikipédia (fr)",
+              "url": "https://fr.wikipedia.org/wiki/Tricholome_terreux"
+            }
+          ]
+        },
+        {
+          "text": "Per risotti e sughi molto saporiti.",
+          "sources": [
+            {
+              "title": "Tricholoma terreum – scheda AMEP",
+              "url": "https://www.amep.it/Tricholoma%20terreum.html"
+            }
+          ]
+        },
+        {
+          "text": "Si presta bene sott'olio, dopo cottura in acqua e aceto in parti uguali, poi invasato sott'olio e pastorizzato (metodo ISS).",
+          "sources": [
+            {
+              "title": "Tricholoma terreum – Natura, Provincia di Cuneo",
+              "url": "https://natura.provincia.cuneo.it/funghi/commestibili/tricholoma-terreum/"
+            },
+            {
+              "title": "Botulismo – EpiCentro, Istituto Superiore di Sanità",
+              "url": "https://www.epicentro.iss.it/botulismo/"
+            }
+          ]
+        }
+      ],
+      "local": null,
+      "notes": "Fonti di cucina scarse: ho usato schede micologiche (AMEP, Provincia di Cuneo). Nel 2014 si era sospettato che potesse causare rabdomiolisi. Una revisione del 2018 e uno studio italiano del 2024 l'hanno riconfermata commestibile in quantità normali (Wikipedia en): meglio mangiarne con moderazione. È molto simile al T. pardinum, che è velenoso."
+    },
+    "nuda": {
+      "taste": "Sapore dolce e delicato, profumo fruttato intenso, carne acquosa.",
+      "uses": [
+        {
+          "text": "Ben cotta e a lungo, in padella con burro e cipolla o porro: il suo sapore deciso regge bene.",
+          "sources": [
+            {
+              "title": "Clitocybe nuda – Wikipedia (en)",
+              "url": "https://en.wikipedia.org/wiki/Clitocybe_nuda"
+            },
+            {
+              "title": "Lepista nuda – Wikipedia",
+              "url": "https://it.wikipedia.org/wiki/Lepista_nuda"
+            }
+          ]
+        },
+        {
+          "text": "Dopo una cottura completa, in salsa con la panna, in umido o come ripieno di frittata.",
+          "sources": [
+            {
+              "title": "Clitocybe nuda – Wikipedia (en)",
+              "url": "https://en.wikipedia.org/wiki/Clitocybe_nuda"
+            },
+            {
+              "title": "Lepista nuda – Wikipedia",
+              "url": "https://it.wikipedia.org/wiki/Lepista_nuda"
+            }
+          ]
+        },
+        {
+          "text": "Sott'olio o sott'aceto: va sbollentata e cotta in acqua e aceto prima di invasarla.",
+          "sources": [
+            {
+              "title": "Clitocybe nuda – Wikipedia (en)",
+              "url": "https://en.wikipedia.org/wiki/Clitocybe_nuda"
+            },
+            {
+              "title": "La risorsa FUNGO in Alta Valle del Vara, scheda Lepista nuda – Scuola Superiore Sant'Anna (IRIS)",
+              "url": "https://iris.santannapisa.it/retrieve/dd9e0b31-bbfe-709e-e053-3705fe0a83fd/174_vqr_Funghi.pdf"
+            },
+            {
+              "title": "Botulismo – EpiCentro, Istituto Superiore di Sanità",
+              "url": "https://www.epicentro.iss.it/botulismo/"
+            }
+          ]
+        },
+        {
+          "text": "Si può essiccare.",
+          "sources": [
+            {
+              "title": "Clitocybe nuda – Wikipedia (en)",
+              "url": "https://en.wikipedia.org/wiki/Clitocybe_nuda"
+            }
+          ]
+        }
+      ],
+      "local": null,
+      "notes": "Cruda o poco cotta è tossica (Wikipedia it, scheda Valle del Vara). Wikipedia en dice che si può cucinare 'come la trippà: l'ho tradotto in 'in umidò."
+    }
+  }
+}

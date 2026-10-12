@@ -73,16 +73,17 @@ async function init() {
   const review = !!globalThis.FUNGAROLI_REVIEW; // copia di revisione: niente API esterne
   const load = (f) => fetch(`data/${f}.json`).then((r) => (r.ok ? r.json() : null)).catch(() => null);
   legal = embedded ? embedded.legal : await load('legal');
-  const [zj, hj, aj, tj, idj, mj, ij, trj, stj, mtj, mzj] = embedded
-    ? [embedded.zones, embedded.habitat, embedded.access, embedded.trails, embedded.speciesId, embedded.media, embedded.infographics, embedded.trees, embedded.traits, null, null]
-    : await Promise.all(['zones', 'habitat', 'access', 'trails', 'species-id', 'media', 'infografiche', 'trees', 'species-traits', 'media-trees', 'media-zones'].map(load));
+  const [zj, hj, aj, tj, idj, mj, ij, trj, stj, mtj, mzj, prj] = embedded
+    ? [embedded.zones, embedded.habitat, embedded.access, embedded.trails, embedded.speciesId, embedded.media, embedded.infographics, embedded.trees, embedded.traits, null, null, embedded.preparation]
+    : await Promise.all(['zones', 'habitat', 'access', 'trails', 'species-id', 'media', 'infografiche', 'trees', 'species-traits', 'media-trees', 'media-zones', 'preparation'].map(load));
+  prep = prj;
   zoneMedia = mzj?.zones || {};
   if (mj && mtj?.trees) mj.trees = { ...(mj.trees || {}), ...mtj.trees };
   traits = stj;
   initSpeciesCards({
     idData: idj, media: mj, allow3d: !embedded && !review, infographics: ij?.species,
     whereSection: (id) => whereToFind(id),
-    traits: stj, footer: legal?.species_footer,
+    traits: stj, footer: legal?.species_footer, prep: prj,
     assetUrl: embedded ? (f) => embedded.assets?.[f] || '' : (f) => f,
   });
   renderSpeciesGrid();
@@ -316,6 +317,14 @@ const dayEntry = (zid, offset) => {
 };
 // indice "opportunita'": l'indice di fruttificazione corretto con le preferenze attive
 // le stesse correzioni di adjusted(), una per una, per spiegarle
+let prep = null;
+const srcLinks = (src) => (src || []).map((x) => `<a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.title)}</a>`).join(' · ');
+function prepGeneralHtml(rules) {
+  const ord = [...rules].sort((a, b) => (a.level === 'obbligatorio' ? 0 : 1) - (b.level === 'obbligatorio' ? 0 : 1));
+  return `<details class="prep-gen"><summary><h2>Prepararli e conservarli: le regole per tutti</h2></summary>
+    <ol class="k-steps">${ord.map((r) => `<li class="${r.level === 'obbligatorio' ? 'must' : 'tip'}"><b>${esc(r.title)}</b> ${esc(r.text)}${r.why ? `<small>${esc(r.why)}</small>` : ''}<span class="k-src">${r.level === 'obbligatorio' ? '<span class="k-lv">obbligatorio</span>' : '<span class="k-lv tip">consigliato</span>'} ${srcLinks(r.sources)}</span></li>`).join('')}</ol>
+  </details>`;
+}
 const adjParts = (zone, d) => {
   const out = [];
   if (state.distancePenalty) out.push({ label: 'vicino a Rieti', mult: 1 - 0.3 * Math.min(1, (access[zone.id]?.[0]?.minutes ?? zone.drive_min) / 120) });
@@ -538,6 +547,7 @@ function buildSearch(idj, trj, embedded) {
     ['Controllo gratuito all\'ASL', 'Ispettorato micologico', 'asl ispettorato micologico controllo gratuito micologo', '#/info'],
     ['Come funziona l\'indice', 'Formule, parametri, fonti e limiti', 'metodo scienza scientifico indice calcolo formula pioggia temperatura suolo latenza innesco probabilita affidabilita fonti letteratura euristica', '#/metodo'],
     ['Gli alberi', 'Riconoscerli e cosa ci cresce sotto', 'alberi bosco piante', '#/alberi'],
+    ['Prepararli e conservarli', 'Crudo, prebollitura, congelare, essiccare, sott\'olio', 'preparazione cucina cuocere cottura crudo prebollitura congelare surgelare essiccare seccare sottolio sott olio botulino conserve vasetti quantita bambini gravidanza alcol', '#/info'],
     ['Il diario delle uscite', 'Registra cosa hai trovato e dove', 'diario uscite registrare raccolto storico esporta', '#/diario'],
     ['La mappa', 'Zone, parcheggi, sentieri, Carta Forestale', 'mappa carta forestale parcheggio sosta', '#/mappa'],
     ['Installa l\'app', 'A tutto schermo e senza campo', 'installa app schermo home offline', '#/info'],
@@ -1241,6 +1251,8 @@ function applyLegal() {
     <div class="em-numbers">${(em?.numbers || [{ label: 'Numero unico di emergenza', number: '112' }]).map((n) => `<a class="btn ${n.number === '112' ? 'primary' : 'ghost'}" href="tel:${esc(n.number.replace(/\s/g, ''))}">${esc(n.label)} · <b>${esc(n.number)}</b></a>`).join('')}</div>`;
   const zc = Object.entries(zoneMedia).map(([zid, m]) => `${esc(zones.find((z) => z.id === zid)?.name || zid)}: ${creditLine(m)}`);
   if (zc.length) $('#zone-credits').innerHTML = `<b>Foto dei luoghi</b> (Wikimedia Commons): ${zc.join(' · ')}`;
+  // preparazione e conservazione: regole per tutti i funghi (obbligatorie prima)
+  if (prep?.general?.length && $('#prep-general')) $('#prep-general').innerHTML = prepGeneralHtml(prep.general);
   $('#legal-sections').innerHTML = (L.info_sections || []).map((x) => `<details><summary><h2>${esc(x.title)}</h2></summary><div class="method">${x.html}</div></details>`).join('');
   // primo avvio: avviso da confermare (si ripresenta se cambia la versione dei testi)
   const ver = String(L.version || 0) + (L.verified_on || '');

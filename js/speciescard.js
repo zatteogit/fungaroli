@@ -12,9 +12,10 @@ const MONTHS = ['G', 'F', 'M', 'A', 'M', 'G', 'L', 'A', 'S', 'O', 'N', 'D'];
 const MONTHS_LONG = ['gennaio', 'febbraio', 'marzo', 'aprile', 'maggio', 'giugno', 'luglio', 'agosto', 'settembre', 'ottobre', 'novembre', 'dicembre'];
 const TOX = { mortale: 'tox-deadly', tossico: 'tox-toxic', 'non commestibile': 'tox-no', commestibile: 'tox-ok' };
 
-let ID = null, MEDIA = null, ASSET = (f) => f, EMBED_3D = true, INFO = {}, WHERE = () => '', TRAITS = {}, FOOTER = '';
+let PREP = null, ID = null, MEDIA = null, ASSET = (f) => f, EMBED_3D = true, INFO = {}, WHERE = () => '', TRAITS = {}, FOOTER = '';
 
-export function initSpeciesCards({ idData, media, assetUrl, allow3d = true, infographics = {}, whereSection, traits, footer }) {
+export function initSpeciesCards({ idData, media, assetUrl, allow3d = true, infographics = {}, whereSection, traits, footer, prep }) {
+  PREP = prep || null;
   ID = idData; MEDIA = media; if (assetUrl) ASSET = assetUrl; EMBED_3D = allow3d; INFO = infographics || {}; if (whereSection) WHERE = whereSection;
   TRAITS = traits?.taxa || {}; FOOTER = footer || '';
   // ogni elemento con data-species apre la pagina della specie
@@ -83,6 +84,34 @@ function lookalikes(d) {
   }).join('')}</ul>`;
 }
 
+// In cucina: prima cio' che e' obbligatorio (sicurezza), poi conservazione e quantita', infine i classici
+const srcList = (src) => (src || []).map((x) => `<a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.title)}</a>`).join(' · ');
+function kitchen(id) {
+  const p = PREP?.species?.[id], c = PREP?.cucina?.[id];
+  if (!p && !c) return '';
+  const must = (p?.steps || []).filter((x) => x.level === 'obbligatorio'), tips = (p?.steps || []).filter((x) => x.level !== 'obbligatorio');
+  const step = (x) => `<li>${esc(x.text)}${x.why ? `<small>${esc(x.why)}</small>` : ''}</li>`;
+  const keep = [
+    p?.freeze && ['Congelare', p.freeze], p?.dry && ['Essiccare', p.dry], p?.amount && ['Quanto', p.amount],
+  ].filter(Boolean);
+  const srcs = [...(p?.sources || []), ...must.flatMap((x) => x.sources || [])].filter((x, i, a) => x?.url && a.findIndex((y) => y.url === x.url) === i);
+  return `<section class="kitchen" aria-labelledby="k-h-${id}">
+    <h3 id="k-h-${id}">In cucina</h3>
+    ${p ? `<p class="k-raw"><span class="k-badge${p.raw === 'mai crudo' ? ' never' : ''}">${p.raw === 'mai crudo' ? 'Tossico crudo' : 'Solo cotto'}</span>${esc(p.raw_why || '')}</p>` : ''}
+    ${must.length ? `<p class="k-h">Obbligatorio</p><ol class="k-steps k-must">${must.map(step).join('')}</ol>` : ''}
+    ${p?.discard ? `<p class="k-line"><b>Scarta:</b> ${esc(p.discard)}</p>` : ''}
+    ${keep.length || tips.length ? `<details class="k-more"><summary>Conservare, quantità e consigli</summary>
+      ${keep.length ? `<dl class="k-keep">${keep.map(([k, v]) => `<div><dt>${k}</dt><dd>${esc(v)}</dd></div>`).join('')}</dl>` : ''}
+      ${tips.length ? `<ul class="k-steps k-tips">${tips.map(step).join('')}</ul>` : ''}
+      <p class="small"><a href="#/info">Regole per tutti i funghi: sott'olio, congelamento, chi non deve mangiarli ›</a></p></details>` : ''}
+    ${c?.uses?.length ? `<details class="k-food"><summary>I classici in cucina</summary>
+      ${c.taste ? `<p class="k-taste">${esc(c.taste)}</p>` : ''}
+      <ul class="k-uses">${c.uses.map((u) => `<li>${esc(u.text)}</li>`).join('')}</ul>
+      ${c.local ? `<p class="k-line"><b>Nel Lazio:</b> ${esc(c.local)}</p>` : ''}</details>` : ''}
+    ${srcs.length ? `<details class="k-src-list"><summary>Fonti (${srcs.length})</summary><p class="k-sources small muted">${srcList(srcs)}</p></details>` : ''}
+  </section>`;
+}
+
 // lista di controllo: si spunta toccando (o con spazio/invio)
 function toggleCheck(li) { li.setAttribute('aria-checked', li.getAttribute('aria-checked') !== 'true'); tick(); }
 document.addEventListener('keydown', (e) => {
@@ -144,6 +173,7 @@ export function renderSpeciesDetail(body, id) {
     ${TRAITS[id] ? '' : (warn.length ? `<div class="notice">${esc(warn.join(' '))}</div>` : '')}
     ${checks(id)}
     ${compareCta(id)}
+    ${kitchen(id)}
     ${whereToLook(id)}
     ${lookalikes(d)}
     ${INFO[id]?.file ? `<h3>Infografica</h3><button type="button" class="zoomable sp-info" data-info="1" aria-label="Apri l'infografica"><img src="${ASSET(INFO[id].file)}" alt="Infografica di riconoscimento: ${esc(sp.name)}" loading="lazy"><span class="zoom-ic" aria-hidden="true">⤢</span></button>` : ''}
