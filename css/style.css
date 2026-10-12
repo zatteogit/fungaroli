@@ -237,9 +237,9 @@ label.btn { display: inline-flex; }
 
 /* ------------------------------------------------------------- home */
 .cover { position: relative; display: block; isolation: isolate; overflow: hidden; color: #fff; text-decoration: none; background: var(--forest); border-radius: var(--r-xl); height: clamp(430px, calc(100dvh - 360px), 580px); box-shadow: var(--shadow-2); }
-.cover-top { position: absolute; top: 14px; left: 14px; right: 14px; display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; }
-.cover-top .pill { margin-top: 4px; white-space: normal; }
-.cover-body { position: absolute; left: 20px; right: 20px; bottom: 20px; display: grid; gap: 12px; }
+.cover-top { position: absolute; top: 18px; left: 18px; right: 18px; display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; }
+.cover-top .pill { margin-top: 6px; white-space: normal; }
+.cover-body { position: absolute; left: 18px; right: 18px; bottom: 18px; display: grid; gap: 12px; }
 .cover-title { font-family: var(--font-display); font-size: clamp(36px, 10vw, 50px); line-height: 1; font-weight: 700; letter-spacing: -0.025em; text-shadow: 0 2px 24px rgb(0 0 0 / .3); }
 .cover-sub { font-size: 15px; font-weight: 500; opacity: .88; margin-top: -6px; }
 .cover-sp { display: flex; gap: 12px; align-items: center; font-size: 16px; line-height: 1.3; }
