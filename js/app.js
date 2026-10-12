@@ -9,7 +9,7 @@ import { initJournal } from './journal.js';
 import { renderSvgMap } from './svgmap.js';
 import { initSpeciesCards, thumb, renderSpeciesDetail, whereSummary, criticalRule, speciesPhoto } from './speciescard.js';
 import { openLightbox, captionHtml } from './lightbox.js';
-import { initInstall } from './install.js';
+import { initInstall, maybeInvite } from './install.js';
 import { loadOuting, outingFor, OUTING_LABEL, OUTING_SHORT, OUTING_RANK } from './outing.js';
 import { initIdentify, renderIdentify, setCompare, searchTaxa, openTaxon, renderTaxonPage, taxonName } from './identify.js';
 import { initSearch, openSearch } from './search.js';
@@ -1452,8 +1452,9 @@ function applyLegal() {
     $('#ob-accept').onclick = () => { try { localStorage.setItem(LEGAL_KEY, ver); } catch { /* ignora */ } dlg.close(); };
     $('#ob-more').onclick = () => dlg.close();
     dlg.addEventListener('cancel', (e) => e.preventDefault());
+    dlg.addEventListener('close', maybeInvite, { once: true }); // dopo l'avviso, l'invito a installare
     dlg.showModal();
-  }
+  } else maybeInvite();
 }
 
 function zoneLegal(z) {

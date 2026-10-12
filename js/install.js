@@ -37,17 +37,103 @@ addEventListener('focusin', () => setTimeout(trackViewport, 250));
 addEventListener('focusout', () => setTimeout(trackViewport, 100));
 trackViewport();
 
+// --- Installazione: invito a tutto schermo con istruzioni per QUESTO telefono e browser -------------------
+// Fonti verificate il 12/10/2026 (Apple, Google, sorgenti Chromium e Firefox): vedi docs/installazione.md.
+// Safari 26+ congela la versione di iOS nel user agent a 18_x: la versione vera si legge da "Version/NN".
+const IPAD_DESK = /Macintosh/.test(ua) && navigator.maxTouchPoints > 1;
+const IN_APP = /Instagram|FBAN|FBAV|FBIOS|FB_IAB|FB4A|musical_ly|BytedanceWebview|LinkedInApp|; wv\)/.test(ua)
+  || (isIOS && !standalone() && !/Safari\//.test(ua));
+const IOS_THIRD = /CriOS|FxiOS|EdgiOS|OPiOS/.test(ua);
+function platform() {
+  if (IN_APP) return { kind: 'inapp' };
+  if (isIOS) {
+    if (/CriOS/.test(ua)) return { kind: 'ios-chrome' };
+    if (IOS_THIRD) return { kind: 'ios-other' };
+    const v = +(ua.match(/Version\/(\d+)/)?.[1] || 0);
+    return { kind: v >= 27 ? 'ios-27' : v === 26 ? 'ios-26' : 'ios-old', v, ipad: IPAD_DESK || /iPad/.test(ua) };
+  }
+  if (isAndroid) {
+    if (/SamsungBrowser/.test(ua)) return { kind: 'and-samsung' };
+    if (/EdgA/.test(ua)) return { kind: 'and-edge' };
+    if (/Firefox\//.test(ua)) return { kind: 'and-firefox' };
+    if (/Chrome\//.test(ua)) return { kind: 'and-chrome' };
+    return { kind: 'and-other' };
+  }
+  if (/Edg\//.test(ua)) return { kind: 'desk-edge' };
+  if (/Chrome\//.test(ua)) return { kind: 'desk-chrome' };
+  if (/Firefox\//.test(ua)) return { kind: /Windows/.test(ua) ? 'desk-firefox-win' : 'desk-none' };
+  if (/Safari\//.test(ua) && /Macintosh/.test(ua)) return { kind: 'desk-safari' };
+  return { kind: 'desk-none' };
+}
+const P = platform();
+const S = (d) => `<svg viewBox="0 0 24 24" aria-hidden="true">${d}</svg>`;
+const I = {
+  share: S('<path d="M12 15V3M8 7l4-4 4 4"/><path d="M6 11v9h12v-9"/>'),
+  pagemenu: S('<path d="M4 7h16M4 12h11M4 17h7"/>'),
+  more: S('<circle cx="6" cy="12" r="1.6" fill="currentColor"/><circle cx="12" cy="12" r="1.6" fill="currentColor"/><circle cx="18" cy="12" r="1.6" fill="currentColor"/>'),
+  kebab: S('<circle cx="12" cy="6" r="1.6" fill="currentColor"/><circle cx="12" cy="12" r="1.6" fill="currentColor"/><circle cx="12" cy="18" r="1.6" fill="currentColor"/>'),
+  burger: S('<path d="M4 7h16M4 12h16M4 17h16"/>'),
+  add: S('<rect x="4" y="4" width="16" height="16" rx="4"/><path d="M12 8v8M8 12h8"/>'),
+  toggle: S('<rect x="3" y="7" width="18" height="10" rx="5"/><circle cx="16" cy="12" r="3.2" fill="currentColor"/>'),
+  ok: S('<path d="m5 12 4.5 4.5L19 7"/>'),
+  install: S('<rect x="3" y="4" width="18" height="13" rx="2"/><path d="M12 7v6M9 10l3 3 3-3M8 21h8"/>'),
+  open: S('<path d="M14 4h6v6M20 4l-9 9"/><path d="M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/>'),
+};
+const step = (ic, html) => `<li><span class="iv-ic">${I[ic]}</span><span>${html}</span></li>`;
+// dove sta il primo bottone da toccare (freccia che lo indica): 'bl' in basso a sinistra, 'br' a destra, 'bc' al centro, 'tr' in alto a destra
+function guide() {
+  const iosEnd = [step('add', 'Scorri e tocca <b>Aggiungi alla schermata Home</b> <small>(se non c\'è: in fondo, <b>Modifica azioni</b>)</small>')];
+  const webApp = step('toggle', 'Lascia attivo <b>Apri come app web</b>, poi tocca <b>Aggiungi</b>');
+  switch (P.kind) {
+    case 'ios-27': return { where: P.ipad ? '' : 'bl', title: `Su iPhone con iOS ${P.v}, in Safari`, steps: [
+      step('pagemenu', 'Tocca <b>Menu della pagina</b>, a sinistra della barra dell\'indirizzo (oppure tieni premuta la barra), poi <b>Condividi</b> <small>(con la barra "In basso" o "In alto": tocca direttamente <b>Condividi</b>)</small>'), ...iosEnd, webApp] };
+    case 'ios-26': return { where: P.ipad ? '' : 'br', title: 'Su iPhone con iOS 26, in Safari', steps: [
+      step('more', 'Tocca <b>Altro</b> (•••) a destra della barra dell\'indirizzo, poi <b>Condividi</b> <small>(con la barra "In basso" o "In alto": tocca direttamente <b>Condividi</b>)</small>'), ...iosEnd, webApp] };
+    case 'ios-old': return { where: P.ipad ? 'tr' : 'bc', title: 'Su iPhone, in Safari', steps: [
+      step('share', 'Tocca <b>Condividi</b> nella barra di Safari'), step('add', 'Scorri e tocca <b>Aggiungi alla schermata Home</b>'), step('ok', 'Tocca <b>Aggiungi</b>')] };
+    case 'ios-chrome': return { where: 'tr', title: 'Su iPhone, in Chrome', steps: [
+      step('share', 'Tocca <b>Condividi</b>, a destra della barra dell\'indirizzo'), step('add', 'Tocca <b>Aggiungi alla schermata Home</b>'), step('ok', 'Tocca <b>Aggiungi</b>')] };
+    case 'ios-other': return { where: '', title: 'Su iPhone', steps: [
+      step('share', 'Apri il menu del browser e tocca <b>Condividi</b>'), step('add', 'Tocca <b>Aggiungi alla schermata Home</b>, poi <b>Aggiungi</b>')],
+      note: 'Se non trovi la voce, apri la pagina in Safari: lì funziona sempre.' };
+    case 'and-chrome': return { where: 'tr', title: 'Su Android, in Chrome', steps: [
+      step('kebab', 'Tocca <b>⋮</b> in alto a destra'), step('add', 'Tocca <b>Installa e crea scorciatoia</b> <small>(nelle versioni meno recenti: <b>Installa app</b> o <b>Aggiungi a schermata Home</b>)</small>'), step('install', 'Scegli <b>Installa</b>')] };
+    case 'and-samsung': return { where: 'br', title: 'Su Android, in Samsung Internet', steps: [
+      step('burger', 'Tocca <b>≡</b> in basso a destra'), step('add', 'Tocca <b>Aggiungi pagina a</b>, poi <b>Schermata Home</b>'), step('ok', 'Tocca <b>Aggiungi</b>')] };
+    case 'and-firefox': return { where: 'tr', title: 'Su Android, in Firefox', steps: [
+      step('kebab', 'Tocca <b>⋮</b> (il menu di Firefox)'), step('add', 'Tocca <b>Aggiungi app alla schermata principale</b> <small>(se non la vedi, cercala sotto <b>Altro</b>)</small>'), step('ok', 'Conferma con <b>Aggiungi</b>')] };
+    case 'and-edge': return { where: 'bc', title: 'Su Android, in Edge', steps: [
+      step('more', 'Tocca <b>…</b> in basso al centro'), step('add', 'Scorri e tocca <b>Aggiungi al telefono</b>'), step('install', 'Tocca <b>Installa</b>')] };
+    case 'and-other': return { where: '', title: 'Su Android', steps: [
+      step('kebab', 'Apri il menu del browser'), step('add', 'Cerca <b>Installa app</b> o <b>Aggiungi a schermata Home</b>')], note: 'Con Chrome è più semplice: apri lì questa pagina.' };
+    case 'desk-chrome': return { where: '', title: 'Sul computer, in Chrome', steps: [
+      step('install', 'Clicca l\'icona <b>Installa</b> a destra nella barra dell\'indirizzo'), step('kebab', 'Oppure: <b>⋮</b> → <b>Trasmetti, salva e condividi</b> → <b>Installa pagina come app…</b>')] };
+    case 'desk-edge': return { where: '', title: 'Sul computer, in Edge', steps: [
+      step('install', 'Clicca <b>App disponibile</b> nella barra dell\'indirizzo'), step('more', 'Oppure: <b>…</b> → <b>Applicazioni</b> → <b>Installa questo sito come app</b>')] };
+    case 'desk-safari': return { where: '', title: 'Sul Mac, in Safari', steps: [
+      step('share', 'Menu <b>File</b> → <b>Aggiungi al Dock</b> (o <b>Condividi</b> → <b>Aggiungi al Dock</b>)'), step('ok', 'Clicca <b>Aggiungi</b>')] };
+    case 'desk-firefox-win': return { where: '', title: 'Sul computer, in Firefox', steps: [
+      step('add', 'Clicca <b>Aggiungi scheda alla barra delle applicazioni</b> nella barra dell\'indirizzo')] };
+    case 'inapp': return { where: 'tr', inapp: true, title: 'Sei nel browser di un\'altra app', steps: [
+      step('more', 'Tocca <b>⋯</b> o <b>⋮</b> in alto a destra'), step('open', `Scegli <b>Apri ${isIOS ? 'in Safari' : 'nel browser'}</b> <small>(o <b>Apri nel browser esterno</b>)</small>`), step('add', 'Da lì segui le istruzioni per installarla')],
+      note: 'Da qui l\'app non si può installare. Se non trovi la voce, copia il link e incollalo nel browser.' };
+    default: return null;
+  }
+}
+
 export function initInstall() {
   if ('serviceWorker' in navigator && (location.protocol === 'https:' || ['localhost', '127.0.0.1'].includes(location.hostname)) && !globalThis.FUNGAROLI_REVIEW && !globalThis.FUNGAROLI_DATA) {
     navigator.serviceWorker.register('sw.js').catch(() => { /* senza service worker l'app funziona lo stesso */ });
   }
   addEventListener('beforeinstallprompt', (e) => { e.preventDefault(); deferred = e; render(); });
-  addEventListener('appinstalled', () => { deferred = null; markMode(); render(); });
+  addEventListener('appinstalled', () => { deferred = null; markMode(); render(); document.getElementById('install-invite')?.close(); });
   render();
 }
 
+const LATER = 'fungaroli:install-later';
+const embedded = () => !globalThis.FUNGAROLI_TEST_INSTALL && !!(globalThis.FUNGAROLI_REVIEW || globalThis.FUNGAROLI_DATA); // nelle copie di revisione niente invito (salvo test)
 const dismissed = () => { try { return Date.now() - (+localStorage.getItem(KEY) || 0) < 30 * 864e5; } catch { return false; } };
-const canOffer = () => !standalone() && (deferred || isIOS);
+const canOffer = () => !standalone() && !embedded() && (!!deferred || !!guide());
 
 function render() {
   const banner = document.getElementById('install-banner');
@@ -65,16 +151,53 @@ function render() {
       <button type="button" class="ib-close" aria-label="Non ora">✕</button>`;
     banner.querySelector('.ib-close').onclick = () => { try { localStorage.setItem(KEY, String(Date.now())); } catch { /* ignora */ } banner.hidden = true; };
   }
-  document.querySelectorAll('[data-install]').forEach((b) => { b.onclick = install; });
+  document.querySelectorAll('[data-install]').forEach((b) => { b.onclick = () => openInvite(true); });
 }
 
-async function install() {
-  if (deferred) {
+// Invito a tutto schermo: a ogni nuova sessione finche' non e' installata, ma non piu' di una volta al giorno
+export function maybeInvite() {
+  if (!canOffer()) return;
+  try {
+    if (sessionStorage.getItem(LATER)) return;
+    if (Date.now() - (+localStorage.getItem(LATER) || 0) < 20 * 3600e3) return;
+  } catch { /* storage non disponibile: si mostra */ }
+  // Chrome/Edge su Android annunciano l'installabilita' un attimo dopo: si aspetta un po' prima di decidere
+  setTimeout(() => openInvite(false), deferred || !isAndroid ? 600 : 2500);
+}
+
+function openInvite(fromButton) {
+  if (!canOffer()) return;
+  let dlg = document.getElementById('install-invite');
+  if (!dlg) { dlg = document.createElement('dialog'); dlg.id = 'install-invite'; dlg.className = 'install-invite'; document.body.append(dlg); }
+  const g = guide();
+  const native = !!deferred && !g?.inapp;
+  dlg.innerHTML = `<div class="iv-in">
+    <img class="iv-icon" src="assets/icon-192.png" alt="" width="84" height="84">
+    <h2 tabindex="-1" autofocus>${g?.inapp ? 'Aprila nel browser,<br>poi installala' : 'Fungaroli è meglio<br>come app'}</h2>
+    <ul class="iv-why">
+      <li>Si apre in un tocco, a tutto schermo</li>
+      <li>Nel bosco, senza campo, ti mostra l'ultimo meteo e le zone</li>
+      <li>Niente barra del browser che ruba spazio alla mappa</li>
+    </ul>
+    ${native ? '<button type="button" class="btn primary big iv-go" data-native>Installa adesso</button>' : ''}
+    ${g ? `<div class="iv-how${native ? ' alt' : ''}">${native ? '<p class="iv-or">Se non parte, a mano:</p>' : ''}<p class="iv-t">${g.title}</p><ol class="iv-steps">${g.steps.join('')}</ol>${g.note ? `<p class="iv-note">${g.note}</p>` : ''}
+      ${g.inapp ? '<button type="button" class="btn big iv-copy" data-copy>Copia il link</button>' : ''}</div>` : ''}
+    <button type="button" class="iv-later" data-later>${fromButton ? 'Chiudi' : 'Lo faccio dopo, intanto do un\'occhiata…'}</button>
+  </div>
+  ${g?.where && !native ? `<span class="iv-point iv-${g.where}" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 4v15M6 13l6 6 6-6"/></svg></span>` : ''}`;
+  dlg.querySelector('[data-native]')?.addEventListener('click', async () => {
     deferred.prompt();
-    await deferred.userChoice.catch(() => null);
+    const r = await deferred.userChoice.catch(() => null);
     deferred = null;
-    render();
-    return;
-  }
-  if (isIOS) document.getElementById('ios-install').showModal();
+    if (r?.outcome === 'accepted') dlg.close(); else render();
+  });
+  dlg.querySelector('[data-copy]')?.addEventListener('click', async (e) => {
+    try { await navigator.clipboard.writeText(location.href.split('#')[0]); e.target.textContent = 'Link copiato'; } catch { e.target.textContent = location.host; }
+  });
+  dlg.querySelector('[data-later]').addEventListener('click', () => {
+    try { sessionStorage.setItem(LATER, '1'); localStorage.setItem(LATER, String(Date.now())); } catch { /* ignora */ }
+    dlg.close();
+  });
+  dlg.addEventListener('cancel', () => { try { sessionStorage.setItem(LATER, '1'); } catch { /* ignora */ } }, { once: true });
+  if (!dlg.open) dlg.showModal();
 }
