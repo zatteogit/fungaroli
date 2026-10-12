@@ -1874,10 +1874,11 @@ html.theme-swap, html.theme-swap *, html.theme-swap *::before, html.theme-swap *
 }
 /* titolo piccolo al centro della barra in alto, solo nell'app installata, quando il titolo grande e' scorso via */
 .appbar-title { display: none; }
-.is-standalone .appbar-title { display: block; position: absolute; left: 50%; bottom: calc((var(--appbar-h) - 22px) / 2); transform: translate(-50%, 6px); max-width: 52%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+.is-standalone .appbar-title { display: block; position: absolute; left: 50%; bottom: calc((var(--appbar-h) - 22px) / 2); transform: translate(-50%, 6px); max-width: 58%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
   font-family: var(--font-display); font-size: 16px; font-weight: 700; line-height: 22px; color: var(--text); opacity: 0; pointer-events: none; transition: opacity .2s, transform .25s var(--ease-out, ease); }
 .is-standalone.title-in-bar .appbar-title { opacity: 1; transform: translate(-50%, 0); }
-.is-standalone.title-in-bar .appbar-back { max-width: 30%; }
+/* titolo nella barra: indietro solo con la freccia (il nome del livello sopra si troncava) */
+.is-standalone.title-in-bar .appbar-back span { display: none; }
 @media (min-width: 761px) { .is-standalone .appbar-title { display: none; } }
 .is-standalone.title-in-bar .appbar { background: color-mix(in srgb, var(--bg) 95%, transparent); transition: background-color .2s; }
 /* ===== Riconosci, modo Filtri: filtro avanzato a gruppi, con conteggi ===== */
@@ -1922,3 +1923,17 @@ html.theme-swap, html.theme-swap *, html.theme-swap *::before, html.theme-swap *
   .idf-main .id-cards { grid-template-columns: repeat(3, 1fr); }
 }
 @media (min-width: 900px) { #views:has(.view:not([hidden]) .idf) { max-width: 1180px; } }
+/* confronto: cambio sosia con il fungo di riferimento fermo */
+::view-transition-group(cmp-ref), ::view-transition-group(cmp-vs) { animation: none; }
+::view-transition-old(cmp-ref), ::view-transition-new(cmp-ref), ::view-transition-old(cmp-vs), ::view-transition-new(cmp-vs) { animation: none; }
+::view-transition-new(cmp-ref), ::view-transition-new(cmp-vs) { opacity: 1; }
+::view-transition-old(cmp-ref), ::view-transition-old(cmp-vs) { opacity: 0; }
+::view-transition-group(cmp-pick) { animation-duration: .32s; }
+::view-transition-old(cmp-pick) { animation: cmp-out .22s cubic-bezier(.4, 0, 1, 1) both; }
+::view-transition-new(cmp-pick) { animation: cmp-in .34s cubic-bezier(.2, .8, .2, 1) both; }
+html[data-cmp-dir="prev"]::view-transition-old(cmp-pick) { animation-name: cmp-out-r; }
+html[data-cmp-dir="prev"]::view-transition-new(cmp-pick) { animation-name: cmp-in-l; }
+@keyframes cmp-out { to { opacity: 0; transform: translateX(-24px); } }
+@keyframes cmp-in { from { opacity: 0; transform: translateX(32px); } }
+@keyframes cmp-out-r { to { opacity: 0; transform: translateX(24px); } }
+@keyframes cmp-in-l { from { opacity: 0; transform: translateX(-32px); } }

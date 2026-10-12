@@ -2,7 +2,7 @@
 // Non e' un'identificazione: restringe i candidati e dice sempre cosa controllare.
 
 import { openLightbox, captionHtml } from './lightbox.js';
-import { soft, tick } from './motion.js';
+import { soft, tick, canVT } from './motion.js';
 
 const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const norm = (s) => String(s ?? '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
@@ -679,7 +679,22 @@ function renderCompare(box, ref, pick) {
   box.querySelectorAll('.cmp-same').forEach((d) => d.addEventListener('toggle', fit));
   addEventListener('resize', fit, { passive: true });
   box.querySelectorAll('.cmp-slide img').forEach((im) => im.addEventListener('load', fit, { once: true }));
-  chips.forEach((c) => c.addEventListener('click', () => track.scrollTo({ left: +c.dataset.go * track.clientWidth, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' })));
+  // tocco su un sosia: il fungo di riferimento resta fermo, cambia solo il sosia (entra dal lato giusto) e sotto la tabella sfuma
+  const names = (i) => slides.forEach((sl, j) => {
+    const on = j === i, sides = sl.querySelectorAll('.cmp-side');
+    sides[0].style.viewTransitionName = on ? 'cmp-ref' : '';
+    sides[1].style.viewTransitionName = on ? 'cmp-pick' : '';
+    const vs = sl.querySelector('.cmp-vs'); if (vs) vs.style.viewTransitionName = on ? 'cmp-vs' : '';
+  });
+  const go = (k) => {
+    if (k === cur) return;
+    if (!canVT()) { track.scrollTo({ left: k * track.clientWidth, behavior: 'auto' }); return; }
+    document.documentElement.dataset.cmpDir = k > cur ? 'next' : 'prev';
+    names(cur);
+    const vt = document.startViewTransition(() => { track.scrollTo({ left: k * track.clientWidth, behavior: 'instant' }); cur = k; mark(k); fit(); names(k); });
+    vt.finished.finally(() => { names(-1); delete document.documentElement.dataset.cmpDir; });
+  };
+  chips.forEach((c) => c.addEventListener('click', () => go(+c.dataset.go)));
   requestAnimationFrame(() => { track.scrollLeft = start * track.clientWidth; fit(); });
   box.querySelectorAll('[data-taxon]').forEach((b) => b.addEventListener('click', () => openTaxon(b.dataset.taxon)));
   const all = [ref, ...list].map((t) => ({ t, ph: photoOf(t) })).filter((y) => y.ph);

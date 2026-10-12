@@ -216,7 +216,9 @@ function watchTitle() {
   if (!bar) return;
   titleIO?.disconnect();
   document.documentElement.classList.remove('title-in-bar');
-  const h = $('.view:not([hidden]) :is(.view-title, .phero-title)');
+  // il titolo del livello in cui sei: prima quello della pagina interna (confronto, scheda), poi quello della sezione
+  const v = $('.view:not([hidden])');
+  const h = v?.querySelector('.cmp-title') || v?.querySelector('.phero-title') || v?.querySelector('.view-title');
   // dove c'e' il logo (la home) la barra ha gia' il suo titolo: niente titolino sopra il logo
   if (!h || ($('.brand') && !$('.brand').hidden)) return;
   bar.textContent = h.textContent.trim();
