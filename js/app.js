@@ -2,7 +2,7 @@ import './rails.js';
 import './theme.js';
 import { consumeFresh, freshDone } from './refresh.js';
 import { SPECIES, GROUPS, FOREST } from './species.js';
-import { scoreZoneDay, scoreSpecies, habitatAtBand, habitatPotential, classOf, CLASSES } from './model.js';
+import { scoreZoneDay, scoreSpecies, habitatAtBand, habitatPotential, elevationFit, classOf, CLASSES } from './model.js';
 import { loadWeather } from './weather.js';
 import { renderCharts } from './chart.js';
 import { initJournal } from './journal.js';
@@ -981,6 +981,34 @@ function initEmbeddedMap(bm) {
 
 const shortName = (z) => z.title || z.name.split(/[/–(]/)[0].trim();
 
+// Dove cercare dentro una zona: i punti campione della Carta Forestale (griglia di 300 m) con bosco adatto
+// alla specie e una quota vicina a quella migliore del giorno. Il valore di un riquadro e' l'indice della specie
+// (stessa correzione dell'anello) per l'adattezza del bosco e della quota: dice "bosco giusto alla quota giusta",
+// non "qui c'e' il fungo". Prima specie migliore, poi le altre due (vince la piu' alta).
+const CELL = 300;
+function zoneCells(z, d) {
+  const hab = habitat[z.id];
+  if (!hab?.samples?.length || !d?.perSpecies?.length) return [];
+  const sp = d.perSpecies.slice(0, 3).map((p) => ({ p, sc: spScore(z, d, p) })).filter((x) => x.sc >= 15);
+  const out = [];
+  for (const smp of hab.samples) {
+    const [e, c, lat, lon] = smp;
+    const cat = c >= 0 ? hab.sample_categories[c] : 'non bosco';
+    let best = 0, who = null;
+    for (const { p, sc } of sp) {
+      const f = p.species.forest[cat] || 0;
+      if (f < 0.5) continue;
+      // il meteo e' calcolato alla quota migliore: entro 200 m vale tutto, poi cala fino a 600 m
+      const band = Math.max(0, 1 - Math.max(0, Math.abs(e - p.band) - 200) / 400);
+      const v = Math.round(sc * f * elevationFit(p.species, e) * band);
+      if (v > best) { best = v; who = p.species; }
+    }
+    if (best >= 12) out.push({ lat, lon, v: best, e, cat, sp: who });
+  }
+  return out;
+}
+let cellRenderer = null;
+
 function renderMap() {
   if (!hasLeaflet()) {
     renderSvgMap($('#map'), {
@@ -1017,10 +1045,23 @@ function renderMap() {
     const color = cssVar(scoreVar(s));
     const g = L.layerGroup().addTo(map);
     const selected = z.id === state.zoneId;
+    // il cerchio e' l'area di cui si parla, non il posto dei funghi: da vicino resta solo il contorno, dentro i riquadri
+    const near = map.getZoom() >= 11.5;
+    const showCells = near || selected;
     L.circle([z.lat, z.lon], {
-      radius: z.radius_m, color: selected ? cssVar('--text') : color, weight: selected ? 3 : 2,
-      fillColor: color, fillOpacity: 0.5,
+      radius: z.radius_m, color: selected ? cssVar('--text') : color, weight: selected ? 2.5 : 2,
+      dashArray: showCells ? '6 6' : null, fillColor: color, fillOpacity: showCells ? 0.04 : 0.28,
     }).addTo(g).on('click', () => openSheet(z.id));
+    if (showCells && d) {
+      cellRenderer ||= L.canvas({ padding: 0.3 });
+      const dLat = CELL / 2 / 111320, dLon = CELL / 2 / (111320 * Math.cos(z.lat * Math.PI / 180));
+      for (const c of zoneCells(z, d)) {
+        L.rectangle([[c.lat - dLat, c.lon - dLon], [c.lat + dLat, c.lon + dLon]], {
+          renderer: cellRenderer, stroke: false, fillColor: cssVar(scoreVar(c.v)), fillOpacity: 0.42 + 0.4 * Math.min(1, c.v / 80),
+        }).addTo(g).on('click', () => openSheet(z.id))
+          .bindTooltip(`${esc(c.sp.name.split(' / ')[0])} · ${c.v}%<br>${esc(c.cat)}, ${c.e} m`, { className: 'zone-tt', sticky: true });
+      }
+    }
     if (matchMedia('(hover: hover)').matches) g.getLayers()[0].bindTooltip(`<b>${esc(z.name)}</b><br>Indice ${s} · ${d?.best ? esc(d.best.species.name) + ' ~' + d.best.band + ' m' : '—'}`, { className: 'zone-tt', sticky: true });
     L.marker(labelPos[z.id], {
       icon: L.divIcon({ className: '', html: `<span class="zone-label${state.zoneId && !selected ? ' zone-label-min' : ''}${selected ? ' zone-label-sel' : ''}"><span class="dot" style="background:${color}"></span> ${s}${state.zoneId && !selected ? '' : ` <span class="zone-name">${esc(shortName(z))}</span>`}</span>`, iconSize: null }),
@@ -1065,6 +1106,7 @@ function renderLegend() {
   const items = [...CLASSES].reverse().map((c) => `<span><span class="sw" style="background:var(${scoreVar(c.min)})"></span>${c.label}${c.min ? ' ≥' + c.min : ''}</span>`);
   $('#legend').innerHTML = items.join('') +
     (hasLeaflet() || !globalThis.FUNGAROLI_DATA ? '' : '<span class="muted">Schema: cerchi = zone, anelli = distanza in linea d\'aria da Rieti</span>') +
+    (hasLeaflet() ? '<span class="lg-cells"><span class="sw sw-cell"></span>Riquadri da 300 m: bosco adatto alla quota giusta, non la posizione dei funghi. Avvicinati o apri una zona per vederli.</span>' : '') +
     `<div class="wms"${forestOn ? '' : ' hidden'}>${forestLegend()}</div>`;
 }
 

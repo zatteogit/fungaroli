@@ -1785,3 +1785,5 @@ html.theme-swap, html.theme-swap *, html.theme-swap *::before, html.theme-swap *
   .iv-point { display: none; }
 }
 .install-invite h2:focus { outline: none; }
+.lg-cells { flex-basis: 100%; display: flex; gap: 8px; align-items: flex-start; font-size: 12.5px; color: var(--muted); }
+.sw-cell { flex: none; width: 12px; height: 12px; border-radius: 2px; margin-top: 2px; background: color-mix(in srgb, var(--s4) 70%, transparent); }
