@@ -199,8 +199,10 @@ function trailsFor(z, sp, band) {
       cats[cat] = (cats[cat] || 0) + 1;
     }
     const mainCat = Object.entries(cats).sort((a, b) => b[1] - a[1])[0]?.[0];
-    return { ...t, goodKm: n / 10, lo, hi, mainCat };
-  }).filter((t) => t.goodKm >= 0.3).sort((a, b) => b.goodKm - a.goodKm);
+    // i lunghi itinerari (E1, Sentiero Italia, cammini) ricalcano i sentieri CAI: precedenza ai locali
+    const long = ['INT', 'NAT', 'REG'].includes(t.group);
+    return { ...t, goodKm: n / 10, lo, hi, mainCat, long, rank: (n / 10) * (long ? 0.7 : 1) };
+  }).filter((t) => t.goodKm >= 0.3).sort((a, b) => b.rank - a.rank);
 }
 
 function renderSpeciesGrid() {
@@ -609,7 +611,7 @@ function renderTrails(z, d) {
   return `
     <ol class="trails">${list.map((t, k) => `
       <li${k === 0 ? ' class="top"' : ''}>
-        <div class="t1">${t.ref ? `<span class="ref">${esc(t.ref)}</span> ` : ''}${esc(t.name || t.itinerary.join(' – ') || 'Sentiero')}</div>
+        <div class="t1">${t.ref ? `<span class="ref">${esc(t.ref)}</span> ` : ''}${esc(t.name || t.itinerary.join(' – ') || 'Sentiero')}${t.long ? ' <span class="badge">itinerario lungo</span>' : ''}</div>
         <div class="t2"><b>${fmtKm(t.goodKm)} km</b> in ${esc((SHORT[t.mainCat] || t.mainCat || 'bosco').toLowerCase())} adatto tra ${t.lo} e ${t.hi} m · ${fmtKm(t.in_zone_km)} km nella zona${t.difficulty ? ` · ${DIFF[t.difficulty] || t.difficulty}` : ''}${t.duration ? ` · intero ${t.duration.replace(/^0/, '')} h` : ''}</div>
         <a class="small" href="https://hiking.waymarkedtrails.org/#route?id=${t.id}" target="_blank" rel="noopener">Tracciato e profilo</a>
       </li>`).join('')}</ol>
