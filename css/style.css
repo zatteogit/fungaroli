@@ -1770,10 +1770,8 @@ html.theme-swap, html.theme-swap *, html.theme-swap *::before, html.theme-swap *
 /* freccia che indica dove sta il primo bottone nella barra del browser */
 .iv-point { position: fixed; z-index: 2; width: 44px; height: 44px; color: #9be34c; pointer-events: none; animation: iv-bob 1.2s ease-in-out infinite; filter: drop-shadow(0 2px 6px rgb(0 0 0 / .5)); }
 .iv-point svg { width: 100%; height: 100%; fill: none; stroke: currentColor; stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; }
-.iv-bl { left: 18px; bottom: calc(8px + env(safe-area-inset-bottom)); }
-.iv-br { right: 18px; bottom: calc(8px + env(safe-area-inset-bottom)); }
-.iv-bc { left: calc(50% - 22px); bottom: calc(8px + env(safe-area-inset-bottom)); }
-.iv-tr { right: 14px; top: calc(4px + env(safe-area-inset-top)); transform: rotate(180deg); animation-name: iv-bob-up; }
+.iv-down { left: calc(50% - 22px); bottom: calc(6px + env(safe-area-inset-bottom)); }
+.iv-up { left: calc(50% - 22px); top: calc(2px + env(safe-area-inset-top)); transform: rotate(180deg); animation-name: iv-bob-up; }
 @keyframes iv-bob { 50% { transform: translateY(8px); } }
 @keyframes iv-bob-up { 0%, 100% { transform: rotate(180deg); } 50% { transform: rotate(180deg) translateY(8px); } }
 @media (prefers-reduced-motion: reduce) { .install-invite[open], .iv-point { animation: none; } }
@@ -1837,3 +1835,6 @@ html.theme-swap, html.theme-swap *, html.theme-swap *::before, html.theme-swap *
 .mtt-f { margin: 8px 0 0; padding-top: 8px; border-top: 1px solid var(--hair); font-size: 12px; color: var(--muted); }
 .leaflet-cells-pane, .leaflet-cells-pane canvas { pointer-events: none !important; }
 .cell-hi { pointer-events: none; filter: drop-shadow(0 1px 3px rgb(0 0 0 / .45)); }
+/* spazio per la freccia dell'invito: non deve coprire il link in fondo ne' l'icona in alto */
+.install-invite:has(.iv-down) .iv-in { padding-bottom: calc(64px + env(safe-area-inset-bottom)); }
+.install-invite:has(.iv-up) .iv-in { padding-top: calc(60px + env(safe-area-inset-top)); }

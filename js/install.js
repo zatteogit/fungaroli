@@ -80,29 +80,30 @@ const I = {
   open: S('<path d="M14 4h6v6M20 4l-9 9"/><path d="M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/>'),
 };
 const step = (ic, html) => `<li><span class="iv-ic">${I[ic]}</span><span>${html}</span></li>`;
-// dove sta il primo bottone da toccare (freccia che lo indica): 'bl' in basso a sinistra, 'br' a destra, 'bc' al centro, 'tr' in alto a destra
+// verso dove indicare la barra del browser: una pagina non puo' sapere dove sta (su iPhone la sceglie l'utente),
+// quindi solo la direzione piu' probabile: 'down' (iPhone, Samsung, Edge) o 'up' (iPad, Chrome e Firefox su Android, app)
 function guide() {
   const iosEnd = [step('add', 'Scorri e tocca <b>Aggiungi alla schermata Home</b> <small>(se non c\'è: in fondo, <b>Modifica azioni</b>)</small>')];
   const webApp = step('toggle', 'Lascia attivo <b>Apri come app web</b>, poi tocca <b>Aggiungi</b>');
   switch (P.kind) {
-    case 'ios-27': return { where: P.ipad ? '' : 'bl', title: `Su iPhone con iOS ${P.v}, in Safari`, steps: [
+    case 'ios-27': return { where: P.ipad ? 'up' : 'down', title: `Su iPhone con iOS ${P.v}, in Safari`, steps: [
       step('pagemenu', 'Tocca <b>Menu della pagina</b>, a sinistra della barra dell\'indirizzo (oppure tieni premuta la barra), poi <b>Condividi</b> <small>(con la barra "In basso" o "In alto": tocca direttamente <b>Condividi</b>)</small>'), ...iosEnd, webApp] };
-    case 'ios-26': return { where: P.ipad ? '' : 'br', title: 'Su iPhone con iOS 26, in Safari', steps: [
+    case 'ios-26': return { where: P.ipad ? 'up' : 'down', title: 'Su iPhone con iOS 26, in Safari', steps: [
       step('more', 'Tocca <b>Altro</b> (•••) a destra della barra dell\'indirizzo, poi <b>Condividi</b> <small>(con la barra "In basso" o "In alto": tocca direttamente <b>Condividi</b>)</small>'), ...iosEnd, webApp] };
-    case 'ios-old': return { where: P.ipad ? 'tr' : 'bc', title: 'Su iPhone, in Safari', steps: [
+    case 'ios-old': return { where: P.ipad ? 'up' : 'down', title: 'Su iPhone, in Safari', steps: [
       step('share', 'Tocca <b>Condividi</b> nella barra di Safari'), step('add', 'Scorri e tocca <b>Aggiungi alla schermata Home</b>'), step('ok', 'Tocca <b>Aggiungi</b>')] };
-    case 'ios-chrome': return { where: 'tr', title: 'Su iPhone, in Chrome', steps: [
+    case 'ios-chrome': return { where: 'up', title: 'Su iPhone, in Chrome', steps: [
       step('share', 'Tocca <b>Condividi</b>, a destra della barra dell\'indirizzo'), step('add', 'Tocca <b>Aggiungi alla schermata Home</b>'), step('ok', 'Tocca <b>Aggiungi</b>')] };
     case 'ios-other': return { where: '', title: 'Su iPhone', steps: [
       step('share', 'Apri il menu del browser e tocca <b>Condividi</b>'), step('add', 'Tocca <b>Aggiungi alla schermata Home</b>, poi <b>Aggiungi</b>')],
       note: 'Se non trovi la voce, apri la pagina in Safari: lì funziona sempre.' };
-    case 'and-chrome': return { where: 'tr', title: 'Su Android, in Chrome', steps: [
+    case 'and-chrome': return { where: 'up', title: 'Su Android, in Chrome', steps: [
       step('kebab', 'Tocca <b>⋮</b> in alto a destra'), step('add', 'Tocca <b>Installa e crea scorciatoia</b> <small>(nelle versioni meno recenti: <b>Installa app</b> o <b>Aggiungi a schermata Home</b>)</small>'), step('install', 'Scegli <b>Installa</b>')] };
-    case 'and-samsung': return { where: 'br', title: 'Su Android, in Samsung Internet', steps: [
+    case 'and-samsung': return { where: 'down', title: 'Su Android, in Samsung Internet', steps: [
       step('burger', 'Tocca <b>≡</b> in basso a destra'), step('add', 'Tocca <b>Aggiungi pagina a</b>, poi <b>Schermata Home</b>'), step('ok', 'Tocca <b>Aggiungi</b>')] };
-    case 'and-firefox': return { where: 'tr', title: 'Su Android, in Firefox', steps: [
+    case 'and-firefox': return { where: 'up', title: 'Su Android, in Firefox', steps: [
       step('kebab', 'Tocca <b>⋮</b> (il menu di Firefox)'), step('add', 'Tocca <b>Aggiungi app alla schermata principale</b> <small>(se non la vedi, cercala sotto <b>Altro</b>)</small>'), step('ok', 'Conferma con <b>Aggiungi</b>')] };
-    case 'and-edge': return { where: 'bc', title: 'Su Android, in Edge', steps: [
+    case 'and-edge': return { where: 'down', title: 'Su Android, in Edge', steps: [
       step('more', 'Tocca <b>…</b> in basso al centro'), step('add', 'Scorri e tocca <b>Aggiungi al telefono</b>'), step('install', 'Tocca <b>Installa</b>')] };
     case 'and-other': return { where: '', title: 'Su Android', steps: [
       step('kebab', 'Apri il menu del browser'), step('add', 'Cerca <b>Installa app</b> o <b>Aggiungi a schermata Home</b>')], note: 'Con Chrome è più semplice: apri lì questa pagina.' };
@@ -114,7 +115,7 @@ function guide() {
       step('share', 'Menu <b>File</b> → <b>Aggiungi al Dock</b> (o <b>Condividi</b> → <b>Aggiungi al Dock</b>)'), step('ok', 'Clicca <b>Aggiungi</b>')] };
     case 'desk-firefox-win': return { where: '', title: 'Sul computer, in Firefox', steps: [
       step('add', 'Clicca <b>Aggiungi scheda alla barra delle applicazioni</b> nella barra dell\'indirizzo')] };
-    case 'inapp': return { where: 'tr', inapp: true, title: 'Sei nel browser di un\'altra app', steps: [
+    case 'inapp': return { where: 'up', inapp: true, title: 'Sei nel browser di un\'altra app', steps: [
       step('more', 'Tocca <b>⋯</b> o <b>⋮</b> in alto a destra'), step('open', `Scegli <b>Apri ${isIOS ? 'in Safari' : 'nel browser'}</b> <small>(o <b>Apri nel browser esterno</b>)</small>`), step('add', 'Da lì segui le istruzioni per installarla')],
       note: 'Da qui l\'app non si può installare. Se non trovi la voce, copia il link e incollalo nel browser.' };
     default: return null;
@@ -123,7 +124,13 @@ function guide() {
 
 export function initInstall() {
   if ('serviceWorker' in navigator && (location.protocol === 'https:' || ['localhost', '127.0.0.1'].includes(location.hostname)) && !globalThis.FUNGAROLI_REVIEW && !globalThis.FUNGAROLI_DATA) {
-    navigator.serviceWorker.register('sw.js').catch(() => { /* senza service worker l'app funziona lo stesso */ });
+    navigator.serviceWorker.register('sw.js').then((reg) => {
+      // l'app installata spesso viene solo ripresa dalla memoria, senza ricaricarsi: si controlla se c'e' una versione nuova
+      // ogni volta che torna in primo piano e ogni mezz'ora (l'avviso "versione nuova" e' in refresh.js)
+      const check = () => reg.update().catch(() => {});
+      document.addEventListener('visibilitychange', () => { if (!document.hidden) check(); });
+      setInterval(check, 30 * 60e3);
+    }).catch(() => { /* senza service worker l'app funziona lo stesso */ });
   }
   addEventListener('beforeinstallprompt', (e) => { e.preventDefault(); deferred = e; render(); });
   addEventListener('appinstalled', () => { deferred = null; markMode(); render(); document.getElementById('install-invite')?.close(); });
