@@ -719,6 +719,42 @@
      "file_hd": "assets/species/tree-ontano-inat3-hd.jpg"
     }
    ]
+  },
+  "olivo": {
+   "latin": "Olea europaea",
+   "photo_taxon": "Olea europaea",
+   "inat": [
+    {
+     "file": "assets/species/tree-olivo-inat1.jpg",
+     "source": "iNaturalist (research grade)",
+     "page": "https://www.inaturalist.org/observations/36350772",
+     "author": "lucapassalacqua",
+     "license": "CC-BY-NC",
+     "place": "Provincia di Grosseto, Italia",
+     "date": "2014-08-23",
+     "file_hd": "assets/species/tree-olivo-inat1-hd.jpg"
+    },
+    {
+     "file": "assets/species/tree-olivo-inat2.jpg",
+     "source": "iNaturalist (research grade)",
+     "page": "https://www.inaturalist.org/observations/336480335",
+     "author": "Filippo Cerrone",
+     "license": "CC-BY-NC",
+     "place": "Isernia, Molise, IT",
+     "date": "2026-01-28",
+     "file_hd": "assets/species/tree-olivo-inat2-hd.jpg"
+    },
+    {
+     "file": "assets/species/tree-olivo-inat3.jpg",
+     "source": "iNaturalist (research grade)",
+     "page": "https://www.inaturalist.org/observations/342929241",
+     "author": "Anonimous Pug",
+     "license": "CC-BY-NC",
+     "place": "Roma",
+     "date": "2026-03-14",
+     "file_hd": "assets/species/tree-olivo-inat3-hd.jpg"
+    }
+   ]
   }
  }
 }
