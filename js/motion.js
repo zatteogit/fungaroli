@@ -10,7 +10,8 @@ if (canVT()) root.classList.add('vt');
 let tapped = null;
 document.addEventListener('click', (e) => {
   const el = e.target.closest('a[href^="#/"], [data-species], [data-go-zone]');
-  tapped = el?.querySelector('img') || null;
+  // la copertina ha un link sovrapposto (senza immagine dentro): la foto e' quella della card
+  tapped = (el?.closest('.cover') || el)?.querySelector('img') || null;
 }, true);
 
 const inView = (el) => { const r = el.getBoundingClientRect(); return r.bottom > 0 && r.top < innerHeight && r.width > 0; };

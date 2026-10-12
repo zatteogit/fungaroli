@@ -1659,3 +1659,41 @@ html:has(dialog[open]:modal) body { overflow: hidden; }
 /* cambio tema a mano: una dissolvenza breve invece dello scatto */
 html.theme-swap, html.theme-swap *, html.theme-swap *::before, html.theme-swap *::after { transition: background-color .3s, color .3s, border-color .3s, fill .3s !important; }
 @media (prefers-reduced-motion: reduce) { html.theme-swap * { transition: none !important; } }
+/* ===== Copertina della home: un solo link (tutta la card), una nota cliccabile a parte ===== */
+.cover-link { position: absolute; inset: 0; z-index: 1; border-radius: inherit; }
+.cover-link:focus-visible { outline: 3px solid #fff; outline-offset: -5px; }
+.cover .cover-top, .cover .cover-body { pointer-events: none; z-index: 2; }
+.cover-body > .cover-note { pointer-events: auto; }
+/* le info dell'uscita in una sola barra di vetro, a segmenti: si leggono insieme, non sembrano bottoni */
+.cover .facts { justify-self: start; display: inline-flex; flex-wrap: nowrap; gap: 0; max-width: 100%; overflow: hidden; border-radius: 999px; background: rgb(255 255 255 / .14); border: 1px solid rgb(255 255 255 / .2); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+.cover .fact { background: none; border: 0; border-radius: 0; backdrop-filter: none; -webkit-backdrop-filter: none; padding: 7px 12px; white-space: nowrap; }
+.cover .fact + .fact { box-shadow: inset 1px 0 rgb(255 255 255 / .2); }
+.cover .fact.wx-attenzione { background: rgb(240 190 80 / .3); }
+.cover .fact.wx-sconsigliata { background: rgb(210 60 50 / .45); }
+/* specie: nome e percentuale come testo; le altre in piccolo sotto, col pallino della loro classe */
+.cover-sp-name { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+.cover-sp .pc { font-weight: 800; font-variant-numeric: tabular-nums; }
+.sp-also { white-space: nowrap; }
+.sp-also i { display: inline-block; width: 7px; height: 7px; border-radius: 50%; margin-right: 4px; vertical-align: 1px; }
+.sp-also .pc { font-weight: 700; }
+.pc-up::before { content: '↑'; margin: 0 1px 0 2px; opacity: .85; }
+.pc-up::after { content: '%'; font-size: .8em; }
+/* nota "il posto migliore avrebbe... ma...": compatta e cliccabile */
+.cover-note { position: relative; z-index: 3; justify-self: start; max-width: 100%; display: inline-flex; align-items: center; gap: 10px; padding: 7px 12px 7px 10px; border-radius: 12px; color: #fff; text-decoration: none; font-size: 13px; background: rgb(16 15 12 / .5); border: 1px solid rgb(255 255 255 / .16); }
+.cover-note > span:first-child { display: inline-flex; align-items: center; gap: 6px; min-width: 0; }
+.cover-note .wxi svg { width: 15px; height: 15px; }
+.cover-note > span[aria-hidden] { font-size: 17px; opacity: .8; }
+@media (hover: hover) and (pointer: fine) { .cover-note:hover { background: rgb(16 15 12 / .72); } }
+/* telefono: meno righe sopra la foto */
+@media (max-width: 760px) {
+  .cover .cover-sub { display: none; }
+  .cover .fact { padding: 6px 10px; font-size: 12.5px; }
+  .cover-sp small { font-size: 12.5px; }
+}
+/* barra stretta (fitFacts): via le parole meno utili, una alla volta */
+.cover .facts.t1 .fk, .cover .facts.t2 .fk, .cover .facts.t3 .fk { display: none; }
+.cover .facts.t2 .fk2, .cover .facts.t3 .fk2 { display: none; }
+.cover .facts.t3 .fact.wx-ok .fx { display: none; }
+@media (max-width: 760px) { .cover .sp-also + .sp-also { display: none; } }
+.cover .fk3 { display: none; }
+.cover .facts.t2 .fk3, .cover .facts.t3 .fk3 { display: inline; }

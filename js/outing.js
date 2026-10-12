@@ -66,7 +66,13 @@ export function outingFor(series, z, dateStr) {
   const snow = codes.some(isSnow);
   const fog = codes.filter(isFog).length >= 2;
   const tmin = Math.round(Math.min(...temps)), tmax = Math.round(Math.max(...temps));
-  const parts = [];
+  const parts = [], shorts = [];
+  if (thunder) shorts.push('temporali');
+  if (snow) shorts.push('neve');
+  if (rain >= 0.5) shorts.push(`pioggia (${rain < 10 ? rain.toFixed(1).replace('.', ',') : Math.round(rain)} mm)`);
+  else if (prob >= 50) shorts.push(`piovaschi (${prob}%)`);
+  if (gust >= 40) shorts.push(`vento forte (${Math.round(gust)} km/h)`);
+  if (fog) shorts.push('nebbia');
   if (thunder) parts.push('temporali possibili');
   if (snow) parts.push('neve');
   if (rain >= 0.5) parts.push(`pioggia ${rain < 10 ? rain.toFixed(1).replace('.', ',') : Math.round(rain)} mm`);
@@ -78,7 +84,8 @@ export function outingFor(series, z, dateStr) {
   else if (rain >= 1 || prob >= 50 || gust >= 40 || fog) level = 'attenzione';
   const main = parts.length ? parts.join(' · ') : (prob < 20 ? 'asciutto' : 'probabilmente asciutto');
   const text = `${main} · ${tmin === tmax ? tmin : `${tmin}–${tmax}`} °C`;
-  return { level, text, main: parts[0] || main, rain, prob, thunder, snow, fog, gust, tmin, tmax, from };
+  // short: la ragione principale in due parole, col numero tra parentesi (per le note compatte)
+  return { level, text, main: parts[0] || main, short: shorts[0] || main, rain, prob, thunder, snow, fog, gust, tmin, tmax, from };
 }
 
 export const OUTING_LABEL = { ok: 'tempo buono', attenzione: 'tempo incerto', sconsigliata: 'uscita sconsigliata' };

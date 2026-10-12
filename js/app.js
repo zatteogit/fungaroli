@@ -695,23 +695,29 @@ function renderHome() {
   const a0 = access[hero.z.id]?.[0];
   const [title, sub] = splitName(hero.z);
   const cov = coverOf(hero.z, hero.d.best.species.id);
-  // ogni specie con la sua probabilita' (stessa correzione dell'anello): la principale ha il valore dell'anello
+  // le altre specie: testo con il pallino della classe, non pillole (non sono bottoni)
   const also = hero.d.perSpecies.slice(1, 3).map((p) => [p, spScore(hero.z, hero.d, p)]).filter(([, sc]) => sc >= 20)
-    .map(([p, sc]) => spPill(p.species.name.split(' / ')[0], sc));
+    .map(([p, sc], k) => `<span class="sp-also">${k ? ', ' : ''}<i style="background:var(${scoreVar(sc).replace('--s', '--ps')})"></i>${esc(p.species.name.split(' / ')[0].toLowerCase())} <b class="pc">${sc}</b></span>`);
+  const w0 = wxOf(hero.z, hero.d);
+  // il posto con l'indice piu' alto quel giorno, se il meteo della mattina l'ha fatto scendere: nota breve e cliccabile
+  const g = list.filter((c) => c.o === hero.o).sort((a, b) => b.s - a.s)[0], wg = g && wxOf(g.z, g.d);
+  const note = g && g.z.id !== hero.z.id && wg && wg.level !== 'ok'
+    ? `<a class="cover-note" href="#/zona/${g.z.id}/${g.o}"><span>${wxi(wg)}<b>${esc(splitName(g.z)[0])}</b> <span class="pc-up">${g.s}</span> ma ${esc(wg.short || wg.main)}</span><span aria-hidden="true">›</span></a>` : '';
   box.innerHTML = `
-    <a class="cover vtn" style="--vtn:cover" href="#/zona/${hero.z.id}/${hero.o}">
+    <div class="cover vtn" style="--vtn:cover">
       ${cov ? `<img class="cover-img" src="${cov.hd}" alt="${esc(cov.alt)}" fetchpriority="high">` : ''}
       <span class="shade"></span>
+      <a class="cover-link" href="#/zona/${hero.z.id}/${hero.o}" aria-label="${esc(title)}, ${esc(dayLabel(hero.o, hero.d.date, true))}: il piano dell'uscita"></a>
       <span class="cover-top"><span class="pill glass">${state.homeDay == null ? 'La migliore uscita' : 'Il posto migliore'} · ${esc(dayLabel(hero.o, hero.d.date, true))}</span>${ring(hero.s)}</span>
       <span class="cover-body">
         <span class="cover-title">${esc(title)}</span>${sub ? `<span class="cover-sub">${esc(sub)}</span>` : ''}
-        <span class="cover-sp">${thumb(hero.d.best.species.id, 44)}<span><b>${esc(hero.d.best.species.name)}</b> ${spPill('', hero.s)}<small>${intornoA(hero.d.best.band)} ${hero.d.best.band} m</small></span></span>
-        ${also.length ? `<span class="sp-pills" aria-label="Altre specie possibili"><span class="sp-pills-k">anche</span>${also.join('')}</span>` : ''}
-        <span class="facts">${t ? fact('clock', `entro le <b>${fmtRough(t.arrive, 15, 'floor')}</b>`) : ''}${fact('car', `<b>${a0?.minutes ?? hero.z.drive_min}</b> min`)}${hero.d.crowd ? fact('people', crowdText(hero.d.crowd)) : ''}${wxOf(hero.z, hero.d) ? `<span class="fact wx-${wxOf(hero.z, hero.d).level}">${wxi(wxOf(hero.z, hero.d))}${esc(wxOf(hero.z, hero.d).main)}</span>` : ''}</span>
-        ${(() => { const g = list.filter((c) => c.o === hero.o).sort((a, b) => b.s - a.s)[0]; const wg = g && wxOf(g.z, g.d); return g && g.z.id !== hero.z.id && wg && wg.level !== 'ok' ? `<span class="cover-note">${esc(splitName(g.z)[0])} avrebbe un indice più alto (${g.s}), ma ${esc(dayLabel(hero.o, hero.d.date, true).toLowerCase())} mattina: ${esc(wg.main)}.</span>` : ''; })()}
-        <span class="cover-cta">Il piano dell'uscita <span aria-hidden="true">→</span></span>
+        <span class="cover-sp">${thumb(hero.d.best.species.id, 44)}<span><span class="cover-sp-name"><b>${esc(hero.d.best.species.name)}</b> <b class="pc">${hero.s}</b></span>
+          <small>${intornoA(hero.d.best.band)} ${hero.d.best.band} m${also.length ? ` · anche ${also.join('')}` : ''}</small></span></span>
+        <span class="facts" aria-label="L'uscita in breve">${t ? fact('clock', `<span class="fk">entro le </span><b>${fmtRough(t.arrive, 15, 'floor')}</b>`) : ''}${fact('car', `<b>${access[hero.z.id]?.[0]?.minutes ?? hero.z.drive_min}</b><span class="fk2"> min</span><span class="fk3">′</span>`)}${hero.d.crowd ? fact('people', crowdText(hero.d.crowd)) : ''}${w0 ? `<span class="fact wx-${w0.level}" title="${esc(w0.text)}">${wxi(w0)}<span class="fx">${esc(w0.level === 'ok' ? w0.main : (w0.short || w0.main))}</span></span>` : ''}</span>
+        ${note}
+        <span class="cover-cta" aria-hidden="true">Il piano dell'uscita <span>→</span></span>
       </span>
-    </a>`;
+    </div>`;
   const ol = $('#ranking');
   ol.innerHTML = list.slice(1, 8).map((c) => {
     const cv = coverOf(c.z, c.d.best.species.id);
@@ -721,10 +727,18 @@ function renderHome() {
     </a></li>`;
   }).join('');
   $('#others-h').hidden = list.length < 2;
+  fitFacts($('#hero .facts'));
   renderSeason();
   fitCover();
 }
 
+// barra delle info: se non ci sta, toglie prima "entro le", poi "min", poi il testo del meteo quando e' bello (resta l'icona)
+function fitFacts(el) {
+  if (!el) return;
+  el.classList.remove('t1', 't2', 't3');
+  for (const c of ['t1', 't2', 't3']) { if (el.scrollWidth <= el.clientWidth + 1) break; el.classList.add(c); }
+}
+addEventListener('resize', () => fitFacts($('#hero .facts')));
 // Copertina della home alta quanto serve per arrivare esatta sopra la barra in basso, su ogni telefono
 function fitCover() {
   const c = $('#hero .cover');
