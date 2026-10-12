@@ -355,6 +355,29 @@ export function traitStrip(edibleId, t = refOf(edibleId)) {
   return `<ul class="trait-strip" aria-label="Caratteri principali">${out.join('')}</ul>`;
 }
 
+// riquadro Attenzione compatto: i punti critici in una riga ciascuno, tutto il resto aprendolo
+const headOf = (t) => {
+  const c = t.indexOf(':');
+  if (c > 12 && c < 95) return t.slice(0, c);
+  const dot = t.search(/[.;](\s|$)/);
+  if (dot > 12 && dot < 95) return t.slice(0, dot);
+  return t.length > 90 ? `${t.slice(0, t.lastIndexOf(' ', 86))}…` : t;
+};
+export function attentionBox(rules, extra = '') {
+  if (!rules?.length) return '';
+  const sorted = [...rules].sort((a, b) => (a.severity === 'critico' ? 0 : 1) - (b.severity === 'critico' ? 0 : 1));
+  const crit = sorted.filter((r) => r.severity === 'critico');
+  const top = (crit.length ? crit : sorted).slice(0, 3);
+  const more = sorted.length - top.length;
+  return `<details class="attention att-c" role="note">
+    <summary><span class="att-h">Attenzione</span>
+      <ul class="att-compact">${top.map((r) => `<li class="${r.severity === 'critico' ? 'crit' : ''}">${esc(headOf(r.text))}</li>`).join('')}</ul>
+      <span class="att-more">${more > 0 ? `Tutti i ${sorted.length} punti, con i perché` : 'I dettagli'}</span></summary>
+    <ul>${sorted.map((r) => `<li class="${r.severity === 'critico' ? 'crit' : ''}">${esc(r.text)}</li>`).join('')}</ul>
+    ${extra ? `<p class="small">${esc(extra)}</p>` : ''}
+  </details>`;
+}
+
 // pagina completa di un velenoso o di un sosia (le commestibili hanno la loro scheda)
 const photosOf = (t) => {
   if (t.edible_id && !t.lookalike_of?.length) { const m = MEDIA.species?.[t.edible_id]; return [m?.ref, ...(m?.inat || [])].filter(Boolean); }
@@ -380,7 +403,7 @@ export function renderTaxonPage(box, key) {
     </header>
     <div class="pbody">
       ${ph.length > 1 ? `<div class="sp-strip">${ph.slice(1, 6).map((p, k) => `<button type="button" class="zoomable" data-photo="${k + 1}" aria-label="Foto ${k + 2}: ingrandisci"><img src="${ASSET(p.file)}" alt="" loading="lazy"></button>`).join('')}</div>` : ''}
-      ${t.field_rules?.length ? `<div class="attention" role="note"><h3>Attenzione</h3><ul>${[...t.field_rules].sort((a, b) => (a.severity === 'critico' ? 0 : 1) - (b.severity === 'critico' ? 0 : 1)).map((r) => `<li class="${r.severity === 'critico' ? 'crit' : ''}">${esc(r.text)}</li>`).join('')}</ul></div>` : ''}
+      ${attentionBox(t.field_rules)}
       ${t.caution ? `<p class="id-why"><b>Come si mangia:</b> ${esc(t.caution)}</p>` : ''}
       <h3>Come riconoscerla</h3>
       ${traitStrip(null, t)}

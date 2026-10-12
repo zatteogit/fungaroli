@@ -1398,3 +1398,21 @@ html:has(dialog[open]:modal) body { overflow: hidden; }
 .ring b::after, .sp-pill b::after, .pc::after { content: '%'; font-size: .55em; font-weight: 700; margin-left: 1px; opacity: .85; }
 .ring-sm b::after { font-size: .6em; }
 .d3 .pc { font-weight: inherit; }
+
+/* Attenzione compatta: i punti critici in una riga, il resto aprendo */
+.att-c { padding: 14px 16px 12px; }
+.att-c > summary { list-style: none; cursor: pointer; display: grid; gap: 8px; }
+.att-c > summary::-webkit-details-marker { display: none; }
+.att-h { display: flex; align-items: center; gap: 8px; font-size: 12.5px; font-weight: 800; text-transform: uppercase; letter-spacing: .08em; color: var(--crit); }
+.att-h::before { content: '!'; width: 22px; height: 22px; border-radius: 50%; display: grid; place-items: center; background: var(--crit); color: #fff; font-size: 14px; letter-spacing: 0; }
+.att-compact { margin: 0; padding-left: 18px; display: grid; gap: 4px; font-size: 14.5px; font-weight: 600; line-height: 1.4; }
+.att-compact li::marker { color: var(--crit); }
+.att-more { font-size: 13px; font-weight: 700; color: var(--crit); display: inline-flex; align-items: center; gap: 4px; }
+.att-more::after { content: '›'; font-size: 17px; transition: transform .25s; }
+.att-c[open] .att-compact { display: none; }
+.att-c[open] .att-more::after { transform: rotate(90deg); }
+.att-c[open] .att-more { display: none; }
+.att-h::after { content: '›'; margin-left: auto; font-size: 20px; line-height: 1; transform: rotate(90deg); opacity: 0; transition: opacity .2s, transform .25s; }
+.att-c[open] .att-h::after { opacity: 1; transform: rotate(-90deg); }
+.att-c > ul { margin-top: 10px; }
+.att-c li.crit { font-weight: 600; }

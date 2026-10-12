@@ -1,7 +1,7 @@
 // Scheda dettagliata di una specie: foto reali, riconoscimento, sosia pericolosi,
 // calendario delle osservazioni (GBIF) a confronto con il modello, modello 3D.
 
-import { traitStrip, compareCta, taxonKeyByLatin, openTaxon } from './identify.js';
+import { traitStrip, compareCta, taxonKeyByLatin, openTaxon, attentionBox } from './identify.js';
 import { tick } from './motion.js';
 import { SPECIES } from './species.js';
 import { openLightbox, captionHtml } from './lightbox.js';
@@ -151,10 +151,8 @@ document.addEventListener('keydown', (e) => {
 
 // Regole di comportamento sul campo (prima di tutto il resto)
 function attention(id, warn) {
-  const rules = TRAITS[id]?.field_rules || [];
-  if (!rules.length) return '';
-  const sorted = [...rules].sort((a, b) => (a.severity === 'critico' ? 0 : 1) - (b.severity === 'critico' ? 0 : 1));
-  return `<div class="attention" role="note"><h3>Attenzione</h3><ul>${sorted.map((r) => `<li class="${r.severity === 'critico' ? 'crit' : ''}">${esc(r.text)}</li>`).join('')}</ul>${warn.length ? `<p class="small">${esc(warn.join(' '))}</p>` : ''}</div>`;
+  // il testo di avvertenza della scheda ripete gli stessi punti: con le regole elencate non serve
+  return attentionBox(TRAITS[id]?.field_rules || []);
 }
 function checks(id) {
   const c = TRAITS[id]?.check_before_picking || [];
