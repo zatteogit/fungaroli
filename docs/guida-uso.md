@@ -152,7 +152,7 @@ L'app esiste in due forme con lo stesso codice.
 
 | | Sito (GitHub Pages o Cloudflare Pages) | Artifact su claude.ai |
 |---|---|---|
-| **Meteo** | Scaricato in diretta da Open-Meteo all'apertura, tenuto in memoria per un'ora. Il pulsante **Aggiorna meteo** forza un nuovo download. In alto: "Meteo delle HH:MM". | Una fotografia del meteo incorporata nella pagina al momento della pubblicazione. Una routine programmata la rigenera e ripubblica ogni mattina alle 6:52. Non c'è il pulsante di aggiornamento; in alto: "Meteo del <giorno, ora>". |
+| **Meteo** | Scaricato in diretta da Open-Meteo all'apertura, tenuto in memoria per un'ora. Il pulsante **Aggiorna meteo** forza un nuovo download. In alto: "Aggiornamento meteo · HH:MM" (senza rete: "Senza rete · Aggiornamento meteo · giorno, ora"). | Una fotografia del meteo incorporata nella pagina al momento della pubblicazione. Una routine programmata la rigenera e ripubblica ogni mattina alle 6:52. Non c'è il pulsante di aggiornamento; in alto: "Meteo del <giorno, ora>". |
 | **Dati non aggiornati** | Non succede, salvo errori di rete. | Se la fotografia non copre più la data di oggi (per esempio la routine non è girata) compare un avviso: l'indice si riferisce al giorno di pubblicazione. |
 | **Mappa** | Tile online OpenTopoMap o OpenStreetMap, Carta Forestale dal servizio WMS della Regione, zoom libero. | Base topografica e Carta Forestale incorporate come immagini, area fissa intorno alle zone, zoom da 9 a 14. |
 | **Diario** | Nel browser (memoria locale). Va esportato per non perderlo. | Nel database privato della pagina, legato al tuo account: lo ritrovi da qualsiasi dispositivo, e Claude può leggerlo per proporre una taratura. |

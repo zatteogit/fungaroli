@@ -214,6 +214,18 @@ dove `quota_prevista` è la frazione della pioggia nella finestra di latenza che
 
 Limite: l'affidabilità considera solo la pioggia della finestra di latenza. Anche la temperatura media a 20 giorni, l'umidità del suolo, il gelo e il caldo dei giorni futuri vengono dalle previsioni, ma non abbassano l'affidabilità.
 
+## Il meteo dell'uscita
+
+L'indice usa il meteo **passato** (che fa nascere i funghi). Separatamente l'app legge le **previsioni orarie** Open-Meteo per la mattina dell'uscita, alla quota centrale di ogni zona, da un'ora prima dell'alba alle 13 (`js/outing.js`): pioggia, probabilità di pioggia, temporali, neve, nebbia (codici WMO), raffiche e temperatura.
+
+| Livello | Quando | Effetto |
+|---|---|---|
+| tempo buono | nessuna delle condizioni sotto | nessuno |
+| tempo incerto | pioggia da 1 mm, probabilità almeno 50%, raffiche da 40 km/h, nebbia | ordine dei consigli × 0,85 |
+| uscita sconsigliata | temporali, neve, pioggia da 5 mm, raffiche da 60 km/h | ordine dei consigli × 0,55 |
+
+**Euristica**: soglie scelte per sicurezza e comodità in bosco, non da letteratura. Il livello cambia solo l'ordine dei consigli, non l'indice mostrato. Quando una zona ha tempo incerto o sconsigliato, l'app propone un'alternativa nello stesso giorno con tempo migliore e indice almeno il 70% (e non sotto 30): "Puoi andare a…".
+
 ## Come sono state scelte le zone
 
 Le prime 7 zone vengono dal documento di partenza. Il 12 ottobre 2026 ne sono state aggiunte 8 incrociando due fonti indipendenti.
