@@ -4,3 +4,4 @@ node_modules/
 !assets/*.png
 .DS_Store
 dist/
+.cache/
