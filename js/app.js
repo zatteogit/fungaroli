@@ -258,7 +258,7 @@ const go = (hash) => { location.hash = hash; };
 // Filtri in una sola riga: tutti i gruppi visibili (si parte da "Tutti" e si restringe) e le preferenze come interruttori
 const PREFS = [['avoidCrowd', 'Poca gente'], ['preferComfort', 'Accesso comodo'], ['distancePenalty', 'Vicino a Rieti']];
 // ordine dei funghi: prima quelli in stagione adesso, poi per pregio; i primi CHIPS_SHOWN visibili, gli altri dietro "+ altri"
-const CHIPS_SHOWN = 5;
+let fitN = 99; // quanti funghi entrano nella riga senza tagliare (ricalcolato sulla larghezza)
 const QUALITY = { ottimo: 1, buono: 0.6 };
 let chipsOpen = false;
 function groupOrder() {
@@ -271,20 +271,40 @@ function groupOrder() {
   };
   return [...GROUPS].sort((a, b) => val(b) - val(a));
 }
+// adatta il numero di funghi visibili alla larghezza: la riga si taglia solo se proprio non c'e' spazio
+function fitChips(box) {
+  const cs = getComputedStyle(box);
+  const W = box.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight) - 2;
+  if (W <= 0) return;
+  const gap = parseFloat(cs.columnGap) || 8;
+  const w = (el) => (el ? el.getBoundingClientRect().width + gap : 0);
+  // su mobile le preferenze vanno a capo (riga propria): nella prima riga contano solo "Tutti", i funghi e "+ altri"
+  const sep = box.querySelector('.af-sep');
+  const wrap = sep && getComputedStyle(sep).flexBasis === '100%';
+  const fixed = w(box.querySelector('[data-g="all"]')) + (w(box.querySelector('[data-more]')) || 96) + (wrap ? 0 : w(sep) + [...box.querySelectorAll('[data-p]')].reduce((a, el) => a + w(el), 0)); // 112 = "+ altri N"
+  let used = fixed, n = 0;
+  for (const el of box.querySelectorAll('.chip-ph')) { if (used + w(el) > W) break; used += w(el); n++; }
+  n = Math.max(1, n);
+  if (n !== fitN) { fitN = n; renderFilterSummary(); }
+}
+let fitT2;
+addEventListener('resize', () => { clearTimeout(fitT2); fitT2 = setTimeout(() => { fitN = 99; renderFilterSummary(); }, 150); });
 function renderFilterSummary() {
   const box = $('#active-filters');
   if (!box) return;
   const all = state.groups.size === GROUPS.length;
   const order = groupOrder();
-  const vis = chipsOpen ? order : order.filter((g, k) => k < CHIPS_SHOWN || (!all && state.groups.has(g.id)));
+  const vis = chipsOpen ? order : order.filter((g, k) => k < fitN || (!all && state.groups.has(g.id)));
   const hidden = order.length - vis.length;
   box.innerHTML = `<button type="button" class="chip" data-g="all" aria-pressed="${all}">Tutti</button>
-    ${vis.map((g) => `<button type="button" class="chip chip-ph" data-g="${g.id}" aria-pressed="${!all && state.groups.has(g.id)}">${thumb(g.rep, 22)}${esc(g.label)}</button>`).join('')}
-    ${hidden > 0 ? `<button type="button" class="chip chip-more" data-more>+ altri ${hidden}</button>` : ''}
+    ${vis.map((g) => { const on = !all && state.groups.has(g.id); return `<button type="button" class="chip chip-ph" data-g="${g.id}" aria-pressed="${on}">${on ? '<span class="chip-chk" aria-hidden="true"></span>' : thumb(g.rep, 22)}${esc(g.label)}</button>`; }).join('')}
+    ${hidden > 0 ? `<button type="button" class="chip chip-more" data-more>+ altri ${hidden}</button>` : chipsOpen ? '<button type="button" class="chip chip-more" data-less>Meno</button>' : ''}
     <span class="af-sep" aria-hidden="true"></span>
     ${PREFS.map(([k, label]) => `<button type="button" class="chip pref" data-p="${k}" aria-pressed="${!!state[k]}">${esc(label)}</button>`).join('')}`;
   const changed = () => soft(() => { savePrefs(); renderFilterSummary(); if (series) { compute(); outCache.clear(); renderAll(); } });
   box.querySelector('[data-more]')?.addEventListener('click', () => soft(() => { chipsOpen = true; renderFilterSummary(); }));
+  box.querySelector('[data-less]')?.addEventListener('click', () => soft(() => { chipsOpen = false; renderFilterSummary(); }));
+  if (!chipsOpen) fitChips(box);
   box.querySelectorAll('[data-g]').forEach((b) => b.addEventListener('click', () => {
     const id = b.dataset.g;
     if (id === 'all') state.groups = new Set(GROUPS.map((g) => g.id));
@@ -414,6 +434,9 @@ const adjusted = (zone, score, d) => {
   if (state.preferComfort && d?.comfort) v *= 0.55 + 0.45 * d.comfort.value;
   return Math.round(v);
 };
+// ogni specie con la stessa correzione dell'anello: i numeri si confrontano tra loro e la prima coincide con l'indice
+const spScore = (z, d, p) => adjusted(z, p.score, d);
+const spPill = (name, sc) => `<span class="sp-pill" title="${esc(CLASSES[classOf(sc)].label)}"><i style="background:var(${scoreVar(sc).replace('--s', '--ps')})"></i>${name ? `${esc(name)} ` : ''}<b>${sc}</b></span>`;
 
 // Punto del bosco adatto piu' vicino a una strada carrozzabile (campioni Carta Forestale + Valhalla).
 function accessFor(z, sp, band) {
@@ -668,9 +691,9 @@ function renderHome() {
   const a0 = access[hero.z.id]?.[0];
   const [title, sub] = splitName(hero.z);
   const cov = coverOf(hero.z, hero.d.best.species.id);
-  // le altre specie con la loro probabilita': pillole piccole, colore della classe (la principale e' gia' nell'anello)
-  const also = hero.d.perSpecies.slice(1, 3).filter((p) => p.score >= 25)
-    .map((p) => `<span class="sp-pill" title="${esc(CLASSES[classOf(p.score)].label)}"><i style="background:var(${scoreVar(p.score).replace('--s', '--ps')})"></i>${esc(p.species.name.split(' / ')[0])} <b>${p.score}</b></span>`);
+  // ogni specie con la sua probabilita' (stessa correzione dell'anello): la principale ha il valore dell'anello
+  const also = hero.d.perSpecies.slice(1, 3).map((p) => [p, spScore(hero.z, hero.d, p)]).filter(([, sc]) => sc >= 20)
+    .map(([p, sc]) => spPill(p.species.name.split(' / ')[0], sc));
   box.innerHTML = `
     <a class="cover vtn" style="--vtn:cover" href="#/zona/${hero.z.id}/${hero.o}">
       ${cov ? `<img class="cover-img" src="${cov.hd}" alt="${esc(cov.alt)}" fetchpriority="high">` : ''}
@@ -678,7 +701,7 @@ function renderHome() {
       <span class="cover-top"><span class="pill glass">${state.homeDay == null ? 'La migliore uscita' : 'Il posto migliore'} · ${esc(dayLabel(hero.o, hero.d.date, true))}</span>${ring(hero.s)}</span>
       <span class="cover-body">
         <span class="cover-title">${esc(title)}</span>${sub ? `<span class="cover-sub">${esc(sub)}</span>` : ''}
-        <span class="cover-sp">${thumb(hero.d.best.species.id, 44)}<span><b>${esc(hero.d.best.species.name)}</b> ${intornoA(hero.d.best.band)} ${hero.d.best.band} m</span></span>
+        <span class="cover-sp">${thumb(hero.d.best.species.id, 44)}<span><b>${esc(hero.d.best.species.name)}</b> ${spPill('', hero.s)}<small>${intornoA(hero.d.best.band)} ${hero.d.best.band} m</small></span></span>
         ${also.length ? `<span class="sp-pills" aria-label="Altre specie possibili"><span class="sp-pills-k">anche</span>${also.join('')}</span>` : ''}
         <span class="facts">${t ? fact('clock', `entro le <b>${fmtRough(t.arrive, 15, 'floor')}</b>`) : ''}${fact('car', `<b>${a0?.minutes ?? hero.z.drive_min}</b> min`)}${hero.d.crowd ? fact('people', crowdText(hero.d.crowd)) : ''}${wxOf(hero.z, hero.d) ? `<span class="fact wx-${wxOf(hero.z, hero.d).level}">${wxi(wxOf(hero.z, hero.d))}${esc(wxOf(hero.z, hero.d).main)}</span>` : ''}</span>
         ${(() => { const g = list.filter((c) => c.o === hero.o).sort((a, b) => b.s - a.s)[0]; const wg = g && wxOf(g.z, g.d); return g && g.z.id !== hero.z.id && wg && wg.level !== 'ok' ? `<span class="cover-note">${esc(splitName(g.z)[0])} avrebbe un indice più alto (${g.s}), ma ${esc(dayLabel(hero.o, hero.d.date, true).toLowerCase())} mattina: ${esc(wg.main)}.</span>` : ''; })()}
@@ -1064,7 +1087,7 @@ function planCard(z, d) {
   rows.push({ sec: 'specie', icon: 'find', thumb: best.species.id, k: 'Cosa cercare', v: `<button type="button" class="sp-inline" data-species="${best.species.id}">${esc(best.species.name)}</button> ${intornoA(best.band)} <b>${best.band} m</b>`,
     sub: [whereSummary(best.species.id) && `<span class="plan-where">${linkTrees(whereSummary(best.species.id))}</span>`,
       criticalRule(best.species.id) && `<span class="plan-crit">⚠ ${esc(criticalRule(best.species.id))}</span>`,
-      d.perSpecies.slice(1, 3).filter((p) => p.score >= 20).map((p) => `${esc(p.species.name)} ${p.score}`).join(' · ')].filter(Boolean).join('<br>') || esc(best.species.latin) });
+      d.perSpecies.slice(1, 3).map((p) => [p, spScore(z, d, p)]).filter(([, sc]) => sc >= 20).map(([p, sc]) => `${esc(p.species.name)} ${sc}%`).join(' · ')].filter(Boolean).join('<br>') || esc(best.species.latin) });
   if (d.crowd) {
     const t = timingAdvice({ dateStr: d.date, lat: z.lat, lon: z.lon, crowd: d.crowd });
     rows.push({ sec: 'quando', icon: 'when', k: 'Quando', v: `Arriva <b>entro le ${fmtRough(t.arrive, 15, 'floor')}</b> <span class="badge crowd-${d.crowd.level}">${crowdText(d.crowd)}</span>`,
@@ -1114,7 +1137,7 @@ function renderDetail() {
   const s = adjusted(z, d.score, d);
   const dayLabel = state.dayOffset === 0 ? 'Oggi' : fmtDate(d.date, { weekday: 'long', day: 'numeric', month: 'long' });
   const hab = habitatAtBand(habitat[z.id], best.band);
-  const rows = d.perSpecies.map((p) => `
+  const rows = d.perSpecies.map((p0) => ({ ...p0, score: spScore(z, d, p0) })).map((p) => `
     <tr>
       <td><button type="button" class="sp-link" data-species="${p.species.id}">${thumb(p.species.id, 34)}<span><span class="sp-n">${esc(p.species.name)}</span><span class="latin">${esc(p.species.latin)}</span></span></button>
         ${p.species.warning ? `<div class="warnline">⚠ ${esc(p.species.warning)}</div>` : ''}</td>
