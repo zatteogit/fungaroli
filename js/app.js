@@ -217,7 +217,8 @@ function watchTitle() {
   titleIO?.disconnect();
   document.documentElement.classList.remove('title-in-bar');
   const h = $('.view:not([hidden]) :is(.view-title, .phero-title)');
-  if (!h) return;
+  // dove c'e' il logo (la home) la barra ha gia' il suo titolo: niente titolino sopra il logo
+  if (!h || ($('.brand') && !$('.brand').hidden)) return;
   bar.textContent = h.textContent.trim();
   const top = $('.appbar').getBoundingClientRect().bottom;
   titleIO = new IntersectionObserver(([e]) => {
