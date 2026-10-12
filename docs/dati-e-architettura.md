@@ -271,7 +271,19 @@ Il workflow `.github/workflows/pages.yml` parte a ogni push su `main` e a mano (
 
 Una volta sola: nel repository su GitHub, *Settings → Pages → Source: GitHub Actions*.
 
-### Cloudflare Pages
+### Cloudflare Workers (configurazione attuale)
+
+Il progetto `fungaroli` su Cloudflare è un **Worker con file statici**, collegato al repository: a ogni push sul branch di produzione Cloudflare esegue `npx wrangler deploy`, che legge `wrangler.jsonc`.
+
+- `wrangler.jsonc`: nome, `main` (`worker/index.js`), cartella degli asset (`.`) e binding KV del diario.
+- `.assetsignore`: cosa NON pubblicare (script, test, cache, configurazione).
+- `worker/index.js`: serve i file statici e inoltra `/api/diario/*` a `handleDiario` (in `functions/api/diario/[[path]].js`, condivisa con la variante Pages).
+
+Diario sincronizzato: crea il namespace KV `fungaroli-diario` (*Storage & Databases → Workers KV*), metti il suo ID in `wrangler.jsonc` → `"kv_namespaces": [{ "binding": "DIARIO", "id": "<ID>" }]`, e aggiungi il segreto `DIARIO_TOKEN` nel Worker (*Settings → Variables and Secrets → Secret*). I segreti restano tra un deploy e l'altro; i binding invece vanno tenuti in `wrangler.jsonc`, perché il deploy sostituisce quelli aggiunti a mano dal pannello.
+
+Prova in locale: `npx wrangler dev`.
+
+### Cloudflare Pages (alternativa)
 
 1. Nel pannello Cloudflare: *Workers & Pages → Create → Pages → Connect to Git*, scegli il repository e il branch di produzione.
 2. *Framework preset*: nessuno. *Build command*: vuoto. *Build output directory*: `/`.

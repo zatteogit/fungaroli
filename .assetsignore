@@ -1,0 +1,16 @@
+.git
+.github
+.cache
+.wrangler
+node_modules
+dist
+tools
+tests
+worker
+functions
+wrangler.jsonc
+package.json
+package-lock.json
+bun.lock
+bun.lockb
+*.py

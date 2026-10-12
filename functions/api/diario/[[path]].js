@@ -1,8 +1,8 @@
-// Cloudflare Pages Function: sincronizzazione del diario delle uscite.
+// Sincronizzazione del diario delle uscite (Cloudflare Workers o Pages Functions).
 //
-// Configurazione (Cloudflare dashboard -> Pages -> progetto -> Settings):
-// - Bindings: KV namespace con nome variabile DIARIO
-// - Variables and secrets: DIARIO_TOKEN = il "codice diario" (segreto, almeno 12 caratteri)
+// Configurazione:
+// - KV namespace collegato con nome DIARIO (Workers: in wrangler.jsonc; Pages: Settings -> Bindings)
+// - Segreto DIARIO_TOKEN = il "codice diario" (Settings -> Variables and Secrets, almeno 12 caratteri)
 //
 // API (header Authorization: Bearer <codice>):
 //   GET    /api/diario          -> { entries: [...] }
@@ -33,13 +33,19 @@ export function validEntry(e, id) {
     && (e.note == null || (typeof e.note === 'string' && e.note.length <= 2000));
 }
 
-export async function onRequest({ request, env, params }) {
+// Pages Functions: functions/api/diario/[[path]].js
+export function onRequest({ request, env, params }) {
+  const path = Array.isArray(params.path) ? params.path : params.path ? [params.path] : [];
+  return handleDiario(request, env, path);
+}
+
+// Usata anche dal Worker (worker/index.js): path = segmenti dopo /api/diario
+export async function handleDiario(request, env, path) {
   if (!env.DIARIO || !env.DIARIO_TOKEN) return json({ error: 'not_configured' }, 503);
   const auth = request.headers.get('authorization') || '';
   const token = auth.startsWith('Bearer ') ? auth.slice(7) : '';
   if (!sameSecret(token, env.DIARIO_TOKEN)) return json({ error: 'unauthorized' }, 401);
 
-  const path = Array.isArray(params.path) ? params.path : params.path ? [params.path] : [];
   const id = path[0];
 
   if (request.method === 'GET' && !id) {

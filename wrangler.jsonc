@@ -1,0 +1,13 @@
+{
+  // Cloudflare Workers con file statici: https://developers.cloudflare.com/workers/static-assets/
+  "name": "fungaroli",
+  "main": "worker/index.js",
+  "compatibility_date": "2026-09-01",
+  "assets": {
+    "directory": ".",
+    "binding": "ASSETS"
+  },
+  // Diario sincronizzato: crea il namespace KV "fungaroli-diario" e incolla qui il suo ID.
+  // Senza KV l'app funziona lo stesso, con il diario salvato nel browser.
+  "kv_namespaces": []
+}
