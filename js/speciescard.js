@@ -2,6 +2,7 @@
 // calendario delle osservazioni (GBIF) a confronto con il modello, modello 3D.
 
 import { traitStrip, compareCta } from './identify.js';
+import { tick } from './motion.js';
 import { SPECIES } from './species.js';
 import { openLightbox, captionHtml } from './lightbox.js';
 import { linkTrees } from './trees.js';
@@ -18,6 +19,8 @@ export function initSpeciesCards({ idData, media, assetUrl, allow3d = true, info
   TRAITS = traits?.taxa || {}; FOOTER = footer || '';
   // ogni elemento con data-species apre la pagina della specie
   document.addEventListener('click', (e) => {
+    const ck = e.target.closest('.checks li[aria-checked]');
+    if (ck) { toggleCheck(ck); return; }
     const t = e.target.closest('[data-species]');
     if (t) { e.preventDefault(); location.hash = `#/specie/${t.dataset.species}`; }
   });
@@ -80,6 +83,13 @@ function lookalikes(d) {
   }).join('')}</ul>`;
 }
 
+// lista di controllo: si spunta toccando (o con spazio/invio)
+function toggleCheck(li) { li.setAttribute('aria-checked', li.getAttribute('aria-checked') !== 'true'); tick(); }
+document.addEventListener('keydown', (e) => {
+  const li = e.target.closest?.('.checks li[aria-checked]');
+  if (li && (e.key === ' ' || e.key === 'Enter')) { e.preventDefault(); toggleCheck(li); }
+});
+
 // Regole di comportamento sul campo (prima di tutto il resto)
 function attention(id, warn) {
   const rules = TRAITS[id]?.field_rules || [];
@@ -89,7 +99,7 @@ function attention(id, warn) {
 }
 function checks(id) {
   const c = TRAITS[id]?.check_before_picking || [];
-  return c.length ? `<h3>Prima di raccoglierlo controlla</h3><ul class="checks">${c.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>` : '';
+  return c.length ? `<h3>Prima di raccoglierlo controlla</h3><p class="small muted checks-tip">Spunta mentre guardi il fungo che hai in mano.</p><ul class="checks">${c.map((x) => `<li role="checkbox" aria-checked="false" tabindex="0">${esc(x)}</li>`).join('')}</ul>` : '';
 }
 function whereToLook(id) {
   const w = TRAITS[id]?.where_to_look;

@@ -9,6 +9,7 @@ import { openLightbox, captionHtml } from './lightbox.js';
 import { initInstall } from './install.js';
 import { loadOuting, outingFor, OUTING_LABEL, OUTING_SHORT, OUTING_RANK } from './outing.js';
 import { initIdentify, renderIdentify, setCompare } from './identify.js';
+import { navigate, soft } from './motion.js';
 import { initTrees, renderTreeGrid, renderTreePage, linkTrees, treeForCategory } from './trees.js';
 import { crowding, comfortScore, timingAdvice, fmtTime, holidayName, intornoA } from './human.js';
 
@@ -89,6 +90,7 @@ async function init() {
   habitat = hj.zones;
   initIdentify({
     traits: stj, media: mj, assetUrl: embedded ? (f) => embedded.assets?.[f] || '' : (f) => f, thumb, zones, banner: legal?.identify_banner,
+    howTo: (eid, latin) => idj?.species?.[eid]?.lookalikes?.find((l) => l.latin === latin)?.how_to_tell || '',
     potential: (sid, zid) => { const sp = SPECIES.find((x) => x.id === sid); const z = zones.find((x) => x.id === zid); return sp && z ? potentialOf(sp, z) : null; },
   });
   applyLegal();
@@ -128,27 +130,54 @@ function parseRoute() {
   if (a === 'specie') return { view: 'specie' };
   if (a === 'albero' && b) return { view: 'albero', treeId: b };
   if (a === 'alberi') return { view: 'alberi' };
-  if (a === 'riconosci') return { view: 'riconosci', compare: b === 'confronta' ? c : '' };
+  if (a === 'riconosci') return { view: 'riconosci', compare: b === 'confronta' ? c : '', pick: b === 'confronta' ? parts[3] : '' };
   if (a === 'diario') return { view: 'diario' };
   if (a === 'info') return { view: 'info' };
   return { view: 'uscite' };
 }
 
+// profondita' e posizione delle viste: decidono la direzione della transizione
+const LEVEL = { zona: 1, 'specie-dettaglio': 1, albero: 1, info: 1 };
+const TABS = ['uscite', 'mappa', 'specie', 'diario'];
+const SUB = { specie: 0, alberi: 1, riconosci: 2 };
+const scrollMem = new Map();
+let prev = null;
+function navKind(a, b) {
+  if (!a) return 'none';
+  const la = (LEVEL[a.view] || 0) + (a.compare ? 2 : 0), lb = (LEVEL[b.view] || 0) + (b.compare ? 2 : 0);
+  if (lb > la) return 'push';
+  if (lb < la) return 'pop';
+  if (a.view === b.view) return 'none';
+  const ta = TABS.indexOf(a.tab), tb = TABS.indexOf(b.tab);
+  if (ta !== tb && ta >= 0 && tb >= 0) return tb > ta ? 'right' : 'left';
+  if (a.view in SUB && b.view in SUB) return SUB[b.view] > SUB[a.view] ? 'right' : 'left';
+  return 'none';
+}
+
 function route() {
   const r = parseRoute();
+  r.tab = { zona: 'uscite', 'specie-dettaglio': 'specie', alberi: 'specie', albero: 'specie', riconosci: 'specie', info: '' }[r.view] ?? r.view;
+  r.hash = location.hash || '#/';
+  const nav = navKind(prev, r), back = prev?.hash || '';
+  if (prev) scrollMem.set(prev.hash, scrollY);
+  prev = r;
+  navigate(() => routeNow(r, nav), { nav, back });
+}
+
+function routeNow(r, nav) {
   state.view = r.view;
   if (r.zoneId) state.zoneId = r.zoneId;
   if (r.view === 'zona') state.dayOffset = r.offset;
   document.querySelectorAll('[data-view]').forEach((v) => { v.hidden = v.dataset.view !== r.view; });
-  const tab = { zona: 'uscite', 'specie-dettaglio': 'specie', alberi: 'specie', albero: 'specie', riconosci: 'specie', info: '' }[r.view] ?? r.view;
+  const tab = r.tab;
   document.querySelectorAll('[data-tab]').forEach((t) => {
     if (t.dataset.tab === tab) t.setAttribute('aria-current', 'page'); else t.removeAttribute('aria-current');
   });
+  $('.tabbar')?.style.setProperty('--ti', TABS.indexOf(tab));
   document.body.dataset.page = r.view;
-  if (r.view !== 'mappa') scrollTo(0, 0);
   if (r.view === 'specie-dettaglio') renderSpeciesDetail($('#species-detail'), r.speciesId);
   if (r.view === 'albero') renderTreePage($('#tree-detail'), r.treeId);
-  if (r.view === 'riconosci') { setCompare(r.compare); renderIdentify($('#identify')); }
+  if (r.view === 'riconosci') { setCompare(r.compare, r.pick); renderIdentify($('#identify')); }
   if (r.view === 'mappa') {
     requestAnimationFrame(() => {
       map?.invalidateSize();
@@ -159,6 +188,8 @@ function route() {
     });
   }
   renderAll();
+  // indietro: torni dove eri nella lista; avanti: dall'inizio
+  if (r.view !== 'mappa') scrollTo(0, nav === 'pop' ? (scrollMem.get(r.hash) || 0) : 0);
 }
 
 const go = (hash) => { location.hash = hash; };
@@ -173,7 +204,7 @@ function renderFilterSummary() {
     ${GROUPS.map((g) => `<button type="button" class="chip" data-g="${g.id}" aria-pressed="${!all && state.groups.has(g.id)}">${esc(g.label)}</button>`).join('')}
     <span class="af-sep" aria-hidden="true"></span>
     ${PREFS.map(([k, label]) => `<button type="button" class="chip pref" data-p="${k}" aria-pressed="${!!state[k]}">${esc(label)}</button>`).join('')}`;
-  const changed = () => { savePrefs(); renderFilterSummary(); if (series) { compute(); outCache.clear(); renderAll(); } };
+  const changed = () => soft(() => { savePrefs(); renderFilterSummary(); if (series) { compute(); outCache.clear(); renderAll(); } });
   box.querySelectorAll('[data-g]').forEach((b) => b.addEventListener('click', () => {
     const id = b.dataset.g;
     if (id === 'all') state.groups = new Set(GROUPS.map((g) => g.id));
@@ -182,7 +213,7 @@ function renderFilterSummary() {
     else state.groups.add(id);
     changed();
   }));
-  box.querySelectorAll('[data-p]').forEach((b) => b.addEventListener('click', () => { state[b.dataset.p] = !state[b.dataset.p]; savePrefs(); renderFilterSummary(); renderAll(); }));
+  box.querySelectorAll('[data-p]').forEach((b) => b.addEventListener('click', () => soft(() => { state[b.dataset.p] = !state[b.dataset.p]; savePrefs(); renderFilterSummary(); renderAll(); })));
 }
 
 async function refreshWeather(force) {
@@ -428,7 +459,7 @@ function dayChips(box, selected, onPick, { withAll = false } = {}) {
 }
 
 function renderDays() {
-  dayChips($('#days'), state.homeDay, (o) => { state.homeDay = o; renderAll(); }, { withAll: true });
+  dayChips($('#days'), state.homeDay, (o) => soft(() => { state.homeDay = o; renderAll(); }), { withAll: true });
 }
 
 function combosList() {
@@ -487,15 +518,18 @@ function renderHome() {
   const a0 = access[hero.z.id]?.[0];
   const [title, sub] = splitName(hero.z);
   const cov = coverOf(hero.z, hero.d.best.species.id);
-  const also = hero.d.perSpecies.slice(1, 3).filter((p) => p.score >= 25).map((p) => esc(p.species.name.toLowerCase()));
+  // le altre specie con la loro probabilita': pillole piccole, colore della classe (la principale e' gia' nell'anello)
+  const also = hero.d.perSpecies.slice(1, 3).filter((p) => p.score >= 25)
+    .map((p) => `<span class="sp-pill" title="${esc(CLASSES[classOf(p.score)].label)}"><i style="background:var(${scoreVar(p.score).replace('--s', '--ps')})"></i>${esc(p.species.name.split(' / ')[0])} <b>${p.score}</b></span>`);
   box.innerHTML = `
-    <a class="cover" href="#/zona/${hero.z.id}/${hero.o}">
+    <a class="cover vtn" style="--vtn:cover" href="#/zona/${hero.z.id}/${hero.o}">
       ${cov ? `<img class="cover-img" src="${cov.hd}" alt="${esc(cov.alt)}" fetchpriority="high">` : ''}
       <span class="shade"></span>
       <span class="cover-top"><span class="pill glass">${state.homeDay == null ? 'La migliore uscita' : 'Il posto migliore'} · ${esc(dayLabel(hero.o, hero.d.date, true))}</span>${ring(hero.s)}</span>
       <span class="cover-body">
         <span class="cover-title">${esc(title)}</span>${sub ? `<span class="cover-sub">${esc(sub)}</span>` : ''}
-        <span class="cover-sp">${thumb(hero.d.best.species.id, 44)}<span><b>${esc(hero.d.best.species.name)}</b> ${intornoA(hero.d.best.band)} ${hero.d.best.band} m${also.length ? `<small>e anche ${also.join(', ')}</small>` : ''}</span></span>
+        <span class="cover-sp">${thumb(hero.d.best.species.id, 44)}<span><b>${esc(hero.d.best.species.name)}</b> ${intornoA(hero.d.best.band)} ${hero.d.best.band} m</span></span>
+        ${also.length ? `<span class="sp-pills" aria-label="Altre specie possibili"><span class="sp-pills-k">anche</span>${also.join('')}</span>` : ''}
         <span class="facts">${t ? fact('clock', `entro le <b>${fmtTime(t.arrive)}</b>`) : ''}${fact('car', `<b>${a0?.minutes ?? hero.z.drive_min}</b> min`)}${hero.d.crowd ? fact('people', crowdText(hero.d.crowd)) : ''}${wxOf(hero.z, hero.d) ? `<span class="fact wx-${wxOf(hero.z, hero.d).level}">${IC[wxIcon(wxOf(hero.z, hero.d))]}${esc(wxOf(hero.z, hero.d).main)}</span>` : ''}</span>
         ${(() => { const g = list.filter((c) => c.o === hero.o).sort((a, b) => b.s - a.s)[0]; const wg = g && wxOf(g.z, g.d); return g && g.z.id !== hero.z.id && wg && wg.level !== 'ok' ? `<span class="cover-note">${esc(splitName(g.z)[0])} avrebbe un indice più alto (${g.s}), ma ${esc(dayLabel(hero.o, hero.d.date, true).toLowerCase())} mattina: ${esc(wg.main)}.</span>` : ''; })()}
         <span class="cover-cta">Il piano dell'uscita <span aria-hidden="true">→</span></span>
@@ -504,7 +538,7 @@ function renderHome() {
   const ol = $('#ranking');
   ol.innerHTML = list.slice(1, 8).map((c) => {
     const cv = coverOf(c.z, c.d.best.species.id);
-    return `<li><a class="tile" href="#/zona/${c.z.id}/${c.o}">
+    return `<li class="vtn" style="--vtn:t-${c.z.id}-${c.o}"><a class="tile" href="#/zona/${c.z.id}/${c.o}">
       ${cv ? `<img src="${cv.small}" alt="" loading="lazy">` : ''}<span class="shade"></span>${ring(c.s, false)}${(() => { const w = wxOf(c.z, c.d); return w && w.level !== 'ok' ? `<span class="tile-wx wx-${w.level}" title="${esc(w.text)}">${IC[wxIcon(w)]}${esc(OUTING_LABEL[w.level])}</span>` : ''; })()}
       <span class="tile-body"><span class="tile-day">${esc(dayLabel(c.o, c.d.date, true))}</span><b>${esc(splitName(c.z)[0])}</b><small>${esc(c.d.best.species.name)} · ${c.d.best.band} m · ${access[c.z.id]?.[0]?.minutes ?? c.z.drive_min} min</small></span>
     </a></li>`;
@@ -523,7 +557,9 @@ function fitCover() {
   const below = tab.top > vh / 2 ? vh - tab.top : 0; // barra in basso (telefono) o in alto (desktop)
   const top = c.getBoundingClientRect().top + scrollY;
   const h = Math.round(vh - top - below - 14);
-  document.documentElement.style.setProperty('--cover-h', `${Math.max(vh < 800 ? 300 : 400, Math.min(640, h))}px`);
+  // mai piu' bassa del contenuto: il titolo non deve finire sotto l'etichetta in alto
+  const need = (c.querySelector('.cover-body')?.offsetHeight || 0) + (c.querySelector('.cover-top')?.offsetHeight || 0) + 18 * 2 + 14;
+  document.documentElement.style.setProperty('--cover-h', `${Math.max(need, vh < 800 ? 300 : 400, Math.min(640, h))}px`);
 }
 let fitT;
 const refit = () => { clearTimeout(fitT); fitT = setTimeout(fitCover, 120); };
@@ -935,7 +971,7 @@ function renderDetail() {
     const b = document.createElement('button');
     b.type = 'button'; b.className = 'day'; b.setAttribute('role', 'tab'); b.setAttribute('aria-selected', String(o === state.dayOffset));
     b.innerHTML = `<span class="d1">${o === 0 ? 'Oggi' : o === 1 ? 'Dom' : fmtDate(x.date, { weekday: 'short' }).replace('.', '')}</span><span class="d2">${fmtDate(x.date, { day: 'numeric' })}</span><span class="d3"><span class="dot" style="--dc:var(${scoreVar(sc)});--dcs:var(${scoreVar(sc).replace('--s', '--ps')})"></span>${sc}</span>`;
-    b.addEventListener('click', () => { history.replaceState(null, '', `#/zona/${z.id}/${o}`); state.dayOffset = o; renderDetail(); });
+    b.addEventListener('click', () => soft(() => { history.replaceState(null, '', `#/zona/${z.id}/${o}`); state.dayOffset = o; renderDetail(); }));
     zd.appendChild(b);
   }
   zd.querySelector('[aria-selected="true"]')?.scrollIntoView({ block: 'nearest', inline: 'center' });

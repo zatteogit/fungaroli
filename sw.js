@@ -3,14 +3,14 @@
 // - meteo Open-Meteo: prima la rete, senza rete l'ultima risposta salvata
 // - mappe: dalla cache se gia' viste, con un limite di tessere
 // - diario (/api/): mai in cache
-const SHELL = 'fungaroli-shell-v1';
+const SHELL = 'fungaroli-shell-v2';
 const RUNTIME = 'fungaroli-runtime-v1';
 const TILES = 'fungaroli-tiles-v1';
 const MAX_TILES = 1500;
 const PRECACHE = [
   './', 'index.html', 'manifest.webmanifest', 'css/style.css', 'css/fonts.css',
   'js/app.js', 'js/model.js', 'js/species.js', 'js/weather.js', 'js/chart.js', 'js/journal.js', 'js/svgmap.js',
-  'js/speciescard.js', 'js/identify.js', 'js/trees.js', 'js/human.js', 'js/lightbox.js', 'js/install.js', 'js/outing.js',
+  'js/speciescard.js', 'js/identify.js', 'js/trees.js', 'js/human.js', 'js/lightbox.js', 'js/install.js', 'js/outing.js', 'js/motion.js',
   'data/zones.json', 'data/habitat.json', 'data/access.json', 'data/trails.json', 'data/species-id.json', 'data/media.json',
   'data/infografiche.json', 'data/trees.json', 'data/species-traits.json', 'data/media-trees.json', 'data/media-zones.json', 'data/legal.json',
   'assets/icon-192.png', 'assets/icon.svg', 'assets/map-thumb-topo.jpg', 'assets/map-thumb-osm.jpg', 'assets/map-thumb-forest.jpg',
