@@ -10,6 +10,7 @@ import { initInstall } from './install.js';
 import { loadOuting, outingFor, OUTING_LABEL, OUTING_SHORT, OUTING_RANK } from './outing.js';
 import { initIdentify, renderIdentify, setCompare } from './identify.js';
 import { navigate, soft } from './motion.js';
+import { FOREST_LEGEND } from './forest-legend.js';
 import { initTrees, renderTreeGrid, renderTreePage, linkTrees, treeForCategory } from './trees.js';
 import { crowding, comfortScore, timingAdvice, fmtTime, holidayName, intornoA } from './human.js';
 
@@ -612,6 +613,7 @@ function openSheet(zid) {
       <span class="sheet-txt"><span class="eyebrow">${esc(dayLabel(state.dayOffset, d.date, true))}</span><b class="sheet-title">${esc(splitName(z)[0])}</b>
         <span class="small">${esc(d.best.species.name)} ~${d.best.band} m · ${access[zid]?.[0]?.minutes ?? z.drive_min} min${d.crowd ? ` · ${crowdText(d.crowd)}` : ''}</span>${wxOf(z, d) ? `<span class="small wx-line wx-${wxOf(z, d).level}">${IC[wxIcon(wxOf(z, d))]}${esc(wxOf(z, d).text)}</span>` : ''}</span>
     </a>
+    ${forestOn ? forestHere(zid) : ''}
     <p class="sheet-key small"><span class="key-p">P</span> sosta <span class="key-walk">${IC.walk}</span> qui lasci l'auto <span class="key-trail"></span> sentiero consigliato <span class="muted">· tocca un segno</span></p>
     <a class="btn primary big" href="#/zona/${zid}/${state.dayOffset}">Apri il piano dell'uscita</a>`;
   sh.hidden = false;
@@ -711,8 +713,10 @@ function mapControls({ bases = null, forest }) {
           b.setAttribute('aria-pressed', String(on));
           box.querySelector('.mapctl-note').hidden = !on;
           lbtn.classList.toggle('on', on);
+          forestOn = on;
           const w = $('#legend .wms');
-          if (w) w.hidden = !on;
+          if (w) { w.hidden = !on; w.innerHTML = forestLegend(); }
+          if (sheetZone && !$('#map-sheet').hidden && $('#map-sheet .sheet-row')) openSheet(sheetZone);
           if (on) $('.legend-box').open = true;
         }
         if (b.dataset.base != null) {
@@ -835,7 +839,34 @@ function renderLegend() {
   const items = [...CLASSES].reverse().map((c) => `<span><span class="sw" style="background:var(${scoreVar(c.min)})"></span>${c.label}${c.min ? ' ≥' + c.min : ''}</span>`);
   $('#legend').innerHTML = items.join('') +
     (hasLeaflet() || !globalThis.FUNGAROLI_DATA ? '' : '<span class="muted">Schema: cerchi = zone, anelli = distanza in linea d\'aria da Rieti</span>') +
-    `<span class="wms" hidden><img alt="Legenda Carta Forestale" style="max-width:100%;display:block;margin-top:6px" src="${(globalThis.FUNGAROLI_DATA || globalThis.FUNGAROLI_REVIEW)?.basemap?.legend || 'https://geoportale.regione.lazio.it/geoserver/ows?service=WMS&request=GetLegendGraphic&format=image/png&layer=geonode:tipi_forestali2'}"></span>`;
+    `<div class="wms"${forestOn ? '' : ' hidden'}>${forestLegend()}</div>`;
+}
+
+// legenda della Carta Forestale nel nostro carattere: prima i tipi della zona aperta (con la quota), poi quelli delle altre zone
+let forestOn = false;
+const FL = new Map(FOREST_LEGEND.map(([n, c, p]) => [n, { c, p }]));
+const flSw = (n) => { const f = FL.get(n); return f ? `<i class="fl-sw${f.p ? ' fl-righe' : ''}" style="--fc:${f.c}"></i>` : '<i class="fl-sw"></i>'; };
+// nel riquadro della zona, con la Carta Forestale accesa: i tipi di bosco che vedi qui
+function forestHere(zid) {
+  const t = habitat?.[zid]?.forest?.tipologie_ha;
+  if (!t) return '';
+  const tot = Object.values(t).reduce((a, b) => a + b, 0);
+  const top = Object.entries(t).filter(([n]) => FL.has(n)).sort((a, b) => b[1] - a[1]).slice(0, 4).filter(([, ha]) => ha / tot >= 0.02);
+  return top.length ? `<ul class="fl fl-sheet" aria-label="Tipi di bosco nella zona">${top.map(([n, ha]) => `<li>${flSw(n)}<span>${esc(n)}</span><b>${Math.round((ha / tot) * 100)}%</b></li>`).join('')}</ul>` : '';
+}
+function forestLegend() {
+  const here = sheetZone && habitat?.[sheetZone]?.forest?.tipologie_ha;
+  const tot = here ? Object.values(here).reduce((a, b) => a + b, 0) : 0;
+  const mine = here ? Object.entries(here).filter(([n, ha]) => FL.has(n) && ha / tot >= 0.01).sort((a, b) => b[1] - a[1]) : [];
+  const all = {};
+  for (const z of zones) for (const [n, ha] of Object.entries(habitat?.[z.id]?.forest?.tipologie_ha || {})) all[n] = (all[n] || 0) + ha;
+  const others = Object.entries(all).filter(([n]) => FL.has(n) && !mine.some(([m]) => m === n)).sort((a, b) => b[1] - a[1]);
+  const row = (n, pct) => `<li>${flSw(n)}<span>${esc(n)}</span>${pct != null ? `<b>${pct < 1 ? '<1' : Math.round(pct)}%</b>` : ''}</li>`;
+  const z = zones.find((x) => x.id === sheetZone);
+  return `<p class="fl-h">Tipi di bosco${z ? ` · ${esc(splitName(z)[0])}` : ''}</p>
+    ${mine.length ? `<ul class="fl">${mine.map(([n, ha]) => row(n, (ha / tot) * 100)).join('')}</ul>` : ''}
+    ${others.length ? (mine.length ? `<details class="fl-more"><summary>Nelle altre zone (${others.length})</summary><ul class="fl">${others.map(([n]) => row(n)).join('')}</ul></details>` : `<ul class="fl">${others.map(([n]) => row(n)).join('')}</ul>`) : ''}
+    <p class="fl-src">Carta Forestale, Regione Lazio</p>`;
 }
 
 function forestBar(frac) {

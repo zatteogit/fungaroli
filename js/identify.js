@@ -72,6 +72,43 @@ const SHAPE = {
   trombetta: sh('M12 10 Q32 22 52 10 L38 54 H26 Z', false),
 };
 const SIZE = (k) => `<svg viewBox="0 0 64 64"><g transform="translate(32 58) scale(${k}) translate(-32 -58)">${SST.replace('stroke-width="2"', `stroke-width="${2 / k}"`)}<path d="M8 34 C10 16 54 16 56 34 Z" fill="currentColor" opacity=".25" stroke="currentColor" stroke-width="${2 / k}"/></g><path d="M6 61 H58" stroke="currentColor" stroke-width="1.5" stroke-dasharray="2 3"/></svg>`;
+// sporata, attaccatura delle lamelle, velo, lattice, superficie, carne, base del gambo
+const SPORE = { bianco: '#f7f5ef', crema: '#ecdcb8', giallo: '#e2c35a', rosa: '#e3a99c', ocra: '#c99a4e', ruggine: '#a65a2a', bruno: '#6e4a2e', 'bruno-violaceo': '#4f3a46', nero: '#26221f', 'verde-oliva': '#7d7040' };
+const sporeArt = (v) => `<svg viewBox="0 0 64 64"><rect x="6" y="8" width="52" height="48" rx="5" fill="#fbfaf6" stroke="currentColor" stroke-opacity=".35"/><rect x="32" y="8" width="26" height="48" rx="0" fill="#2b2826" opacity=".9"/><path d="M32 8 H53 a5 5 0 0 1 5 5 V51 a5 5 0 0 1 -5 5 H32 Z" fill="#2b2826"/><g opacity=".92">${Array.from({ length: 18 }, (_, i) => { const a = (i / 18) * Math.PI * 2; return `<path d="M32 32 L${(32 + Math.cos(a) * 19).toFixed(1)} ${(32 + Math.sin(a) * 19).toFixed(1)}" stroke="${SPORE[v]}" stroke-width="2.6" stroke-linecap="round"/>`; }).join('')}</g><circle cx="32" cy="32" r="4" fill="${SPORE[v]}"/></svg>`;
+const GILL_CAP = '<path d="M4 22 Q32 2 60 22 Z" fill="currentColor" opacity=".22" stroke="currentColor" stroke-width="2"/><path d="M28 22 V60 M36 22 V60" stroke="currentColor" stroke-width="2"/>';
+const gillArt = (pts) => `<svg viewBox="0 0 64 64">${GILL_CAP}<g fill="currentColor" opacity=".7"><path d="${pts}"/><path d="${pts}" transform="translate(64 0) scale(-1 1)"/></g></svg>`;
+const ATTACH = {
+  libere: gillArt('M40 22 H58 L52 31 H42 Z'),
+  adnate: gillArt('M36 22 H58 L52 31 H36 Z'),
+  smarginate: gillArt('M36 22 H58 L52 31 H42 Q39 25 36 29 Z'),
+  decorrenti: gillArt('M36 22 H58 L50 30 L36 42 Z'),
+};
+const DOME = (extra = '') => `<svg viewBox="0 0 64 64"><path d="M6 44 C8 14 56 14 58 44 Z" fill="currentColor" opacity=".22" stroke="currentColor" stroke-width="2"/>${extra}</svg>`;
+const SURF = {
+  asciutta: DOME(),
+  liscia: DOME('<path d="M18 28 Q24 20 32 20" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" fill="none" opacity=".55"/>'),
+  viscida: DOME('<path d="M18 28 Q24 20 32 20" stroke="currentColor" stroke-width="3" stroke-linecap="round" fill="none" opacity=".7"/><path d="M44 44 q2 5 0 7 q-2 -2 0 -7 Z M24 44 q2 6 0 9 q-2 -3 0 -9 Z" fill="currentColor" opacity=".8"/>'),
+  squamosa: DOME([[20, 34], [30, 28], [40, 30], [48, 38], [26, 40], [36, 38], [16, 41], [44, 25]].map(([x, y]) => `<path d="M${x - 3} ${y} q3 -4 6 0" stroke="currentColor" stroke-width="1.8" fill="none"/>`).join('')),
+  'vellutata/feltrata': DOME(Array.from({ length: 26 }, (_, i) => `<circle cx="${12 + (i * 37) % 40}" cy="${24 + (i * 13) % 18}" r=".9" fill="currentColor"/>`).join('')),
+};
+const VEIL = { true: DOME([[20, 34], [30, 26], [42, 30], [48, 39], [27, 39], [37, 37], [16, 41]].map(([x, y]) => `<circle cx="${x}" cy="${y}" r="2.6" fill="#fff" stroke="currentColor" stroke-width="1.2"/>`).join('')), false: DOME() };
+const LATEX = {
+  true: '<svg viewBox="0 0 64 64"><path d="M6 26 H58 L52 34 H12 Z" fill="currentColor" opacity=".22" stroke="currentColor" stroke-width="2"/><path d="M30 34 l-3 6 6 0 Z" fill="currentColor" opacity=".5"/><path d="M32 38 q-5 8 0 11 q5 -3 0 -11 Z" fill="#fff" stroke="currentColor" stroke-width="1.6"/><path d="M42 36 q-3 5 0 7 q3 -2 0 -7 Z" fill="#fff" stroke="currentColor" stroke-width="1.4"/></svg>',
+  false: '<svg viewBox="0 0 64 64"><path d="M6 26 H58 L52 34 H12 Z" fill="currentColor" opacity=".22" stroke="currentColor" stroke-width="2"/><path d="M30 34 l-3 6 6 0 Z" fill="currentColor" opacity=".5"/></svg>',
+};
+const TEXTURE = {
+  gessosa: '<svg viewBox="0 0 64 64"><path d="M24 8 H40 V28 H24 Z M24 36 H40 V58 H24 Z" fill="currentColor" opacity=".25" stroke="currentColor" stroke-width="2"/><path d="M20 32 H44" stroke="currentColor" stroke-width="1.4" stroke-dasharray="2 3"/></svg>',
+  fibrosa: '<svg viewBox="0 0 64 64"><path d="M24 8 H40 V26 L37 32 L34 26 L31 33 L28 26 L24 31 Z M24 58 H40 V40 L37 34 L34 40 L31 33 L28 40 L24 35 Z" fill="currentColor" opacity=".25" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M28 12 V24 M33 12 V24 M37 12 V24" stroke="currentColor" stroke-width="1"/></svg>',
+  'elastica/coriacea': '<svg viewBox="0 0 64 64"><path d="M26 8 C26 30 44 34 44 58 H34 C34 38 18 34 18 8 Z" fill="currentColor" opacity=".25" stroke="currentColor" stroke-width="2"/></svg>',
+  soda: '<svg viewBox="0 0 64 64"><ellipse cx="32" cy="32" rx="18" ry="20" fill="currentColor" opacity=".3" stroke="currentColor" stroke-width="2"/><path d="M24 28 h4 M34 24 h4 M30 38 h4" stroke="currentColor" stroke-width="1.4" opacity=".6"/></svg>',
+};
+const stemArt = (d) => `<svg viewBox="0 0 64 64"><path d="M10 14 C12 4 52 4 54 14 Z" fill="currentColor" opacity=".18" stroke="currentColor" stroke-width="1.6"/><path d="${d}" fill="currentColor" opacity=".25" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M4 52 H60" stroke="currentColor" stroke-width="1.5" stroke-dasharray="2 3"/></svg>`;
+const BASE = {
+  normale: stemArt('M27 14 V52 H37 V14 Z'),
+  bulbosa: stemArt('M28 14 V40 C18 42 18 54 32 54 C46 54 46 42 36 40 V14 Z'),
+  radicante: stemArt('M27 14 V52 L31 62 L33 62 L37 52 V14 Z'),
+  assottigliata: stemArt('M25 14 L29 54 H35 L39 14 Z'),
+};
 const SEASONS = { primavera: [3, 4, 5], estate: [6, 7, 8], autunno: [9, 10, 11], inverno: [12, 1, 2] };
 const MESE_IT = ['gennaio', 'febbraio', 'marzo', 'aprile', 'maggio', 'giugno', 'luglio', 'agosto', 'settembre', 'ottobre', 'novembre', 'dicembre'];
 const monthsOf = (v) => (v === 'adesso' ? [new Date().getMonth() + 1] : SEASONS[v] || []);
@@ -108,6 +145,22 @@ const QUESTIONS = [
     labels: { gradevole: 'gradevole, di fungo', farina: 'di farina', anice: 'di anice', 'rapa/terroso': 'di rapa o terra', sgradevole: 'sgradevole', nessuno: 'quasi nessuno' }, hint: 'Annusa la carne appena tagliata e le lamelle. Non assaggiare.' },
   { key: 'season', label: 'Quando l\'hai trovato?', short: 'Quando', values: ['adesso', 'primavera', 'estate', 'autunno', 'inverno'], text: true,
     match: (tv, v) => monthsOf(v).some((m) => tv.includes(m)), labels: { adesso: `adesso (${MESE_IT[new Date().getMonth()]})` } },
+  { key: 'gill_attachment', label: 'Come si attaccano le lamelle al gambo?', short: 'Attaccatura', values: Object.keys(ATTACH), art: (v) => ATTACH[v],
+    labels: { libere: 'libere, non toccano il gambo', adnate: 'attaccate dritte', smarginate: 'con una tacca vicino al gambo', decorrenti: 'scendono sul gambo' },
+    when: () => ['lamelle', 'pliche'].includes(state.ans.hymenophore), hint: 'Taglia il fungo a metà dall\'alto in basso e guarda dove le lamelle incontrano il gambo.' },
+  { key: 'cap_veil', label: 'Sul cappello ci sono fiocchi o verruche che si staccano?', short: 'Verruche', bool: true, art: (v) => VEIL[v], labels: { true: 'sì, fiocchi o placche', false: 'no, cappello pulito' },
+    hint: 'Sono resti del velo: si tolgono con un dito. La pioggia può lavarli via, quindi "no" non esclude nulla con certezza.' },
+  { key: 'cap_surface', label: 'Com\'è la superficie del cappello?', short: 'Superficie', values: Object.keys(SURF), art: (v) => SURF[v],
+    labels: { asciutta: 'asciutta, opaca', liscia: 'liscia', viscida: 'viscida, appiccica', squamosa: 'con squame', 'vellutata/feltrata': 'vellutata' }, hint: 'Toccala con un dito. Con il bagnato molti cappelli sembrano viscidi.' },
+  { key: 'latex', label: 'Spezzando una lamella esce un lattice?', short: 'Lattice', bool: true, art: (v) => LATEX[v], labels: { true: 'sì, gocce di "latte"', false: 'no' },
+    when: () => !['pori', 'aculei'].includes(state.ans.hymenophore), hint: 'Rompi il bordo di una lamella o il gambo: nei lattari escono subito gocce bianche o colorate.' },
+  { key: 'flesh_texture', label: 'Come si spezza il gambo?', short: 'Gambo', values: Object.keys(TEXTURE), art: (v) => TEXTURE[v],
+    labels: { gessosa: 'netto, come un gessetto', fibrosa: 'si sfilaccia in fibre', 'elastica/coriacea': 'si piega, elastico', soda: 'compatto e sodo' }, hint: 'Piegalo tra le dita finché si rompe.' },
+  { key: 'stem_base', label: 'Com\'è la base del gambo?', short: 'Base', values: Object.keys(BASE), art: (v) => BASE[v],
+    labels: { normale: 'dritta', bulbosa: 'con un bulbo', radicante: 'si allunga nel terreno', assottigliata: 'si assottiglia' }, hint: 'Estrai il fungo intero, senza tagliarlo: la base è spesso decisiva (le amanite mortali hanno bulbo e volva).' },
+  { key: 'spore_print', label: 'Di che colore è la sporata?', short: 'Sporata', values: Object.keys(SPORE), art: (v) => sporeArt(v),
+    labels: { 'bruno-violaceo': 'bruno-violacea', 'verde-oliva': 'bruno oliva' }, hint: 'Facoltativa: chiede qualche ora. Ma è uno dei caratteri più affidabili.',
+    tip: { title: 'Come si fa la sporata', steps: ['Taglia il gambo e appoggia il cappello, lamelle in giù, su un foglio metà bianco e metà nero.', 'Copri con un bicchiere perché non secchi.', 'Dopo 2-6 ore solleva il cappello: la polvere rimasta è il colore delle spore.'] } },
   { key: 'stem_reticulum', label: 'Il gambo ha un reticolo in rilievo?', short: 'Reticolo', bool: true, art: (v) => ART[`ret_${v}`], labels: { true: 'sì, una rete', false: 'no, liscio' } },
 ];
 const TOX_ORDER = { mortale: 0, tossico: 1, 'non commestibile': 2, 'commestibile con cautela': 3, commestibile: 4 };
@@ -176,6 +229,7 @@ function nextQuestion(list) {
   for (const q of QUESTIONS) {
     if (state.ans[q.key] !== undefined) continue;
     if (q.after && state.ans[q.after] === undefined) continue; // il colore di lamelle o pori solo dopo aver detto quali sono
+    if (q.when && !q.when()) continue;
     const vals = q.bool ? [true, false] : q.values;
     const counts = vals.map((v) => list.filter((c) => { const tv = traitOf(c.t, q); return tv != null && hitOf(q, tv, v); }).length);
     const n = counts.reduce((a, b) => a + b, 0);
@@ -188,7 +242,9 @@ function nextQuestion(list) {
 
 const qLabel = (q) => q.labelFor?.(state.ans[q.after]) || q.label;
 const qShort = (q) => q.shortFor?.(state.ans[q.after]) || q.short;
-const tipHtml = (q) => (q.tip ? `<details class="id-tip"><summary>${esc(q.tip.title)}</summary><ul>${q.tip.items.map(([v, t, d]) => `<li><span class="id-hym" aria-hidden="true">${HYM_ICON[v] || ''}</span><span><b>${esc(t)}</b> ${esc(d)}</span></li>`).join('')}</ul></details>` : '');
+const tipHtml = (q) => (!q.tip ? '' : q.tip.steps
+  ? `<details class="id-tip"><summary>${esc(q.tip.title)}</summary><ol class="id-tip-steps">${q.tip.steps.map((x) => `<li>${esc(x)}</li>`).join('')}</ol></details>`
+  : `<details class="id-tip"><summary>${esc(q.tip.title)}</summary><ul>${q.tip.items.map(([v, t, d]) => `<li><span class="id-hym" aria-hidden="true">${HYM_ICON[v] || ''}</span><span><b>${esc(t)}</b> ${esc(d)}</span></li>`).join('')}</ul></details>`);
 const optLabel = (q, v) => (q.bool ? (q.labels?.[String(v)] || (v ? 'sì' : 'no')) : (q.labels?.[v] || v));
 const valLabel = (q, v) => (q.bool ? `${qShort(q)}: ${v ? 'sì' : 'no'}` : `${qShort(q)}: ${q.labels?.[v] || v}`);
 
@@ -236,7 +292,7 @@ function contraText(c) {
     if (k === 'trees') return `<b>Non torna: alberi.</b> Di solito vicino a ${esc(orList(exp.slice(0, 4)))}.`;
     if (q.bool) return `<b>Non torna: ${esc(q.short.toLowerCase())}.</b> Hai indicato ${state.ans[k] ? 'sì' : 'no'}, in questa specie di solito ${exp[0] ? 'c\'è' : 'manca'}.`;
     const say = (v) => (k === 'flesh_change' ? (v === 'nessuno' ? 'non cambia' : `vira al ${v}`) : optLabel(q, v));
-    const verb = { hymenophore: 'ha ', cap_color: 'è ', hymenophore_color: 'sono ', habitat: 'cresce ', growth: 'cresce ' }[k] || '';
+    const verb = { hymenophore: 'ha ', cap_color: 'è ', hymenophore_color: 'sono ', habitat: 'cresce ', growth: 'cresce ', spore_print: 'è ', gill_attachment: 'sono ', cap_surface: 'è ', flesh_texture: 'si spezza ', stem_base: 'è ' }[k] || '';
     return `<b>Non torna: ${esc(q.short.toLowerCase())}.</b> Hai indicato ${esc(say(state.ans[k]))}, ma di solito ${verb}${esc(orList(exp.map(say)))}.`;
   }).join(' ');
 }
@@ -318,6 +374,13 @@ const CMP = [
   { key: 'cap_shape', k: 'Forma del cappello', art: (a) => SHAPE[a[0]], say: (v) => optLabel(QK('cap_shape'), v) },
   { key: 'cap_size', k: 'Dimensione', say: (v) => optLabel(QK('cap_size'), v) },
   { key: 'trees', k: 'Alberi', get: (t) => t.trees, say: (v) => v },
+  { key: 'spore_print', k: 'Sporata', art: (a) => sporeArt(a[0]), say: (v) => optLabel(QK('spore_print'), v) },
+  { key: 'gill_attachment', k: 'Attaccatura delle lamelle', art: (a) => ATTACH[a[0]], say: (v) => optLabel(QK('gill_attachment'), v) },
+  { key: 'cap_veil', k: 'Verruche sul cappello', bool: true, art: (a) => VEIL[a[0]] },
+  { key: 'cap_surface', k: 'Superficie del cappello', art: (a) => SURF[a[0]], say: (v) => optLabel(QK('cap_surface'), v) },
+  { key: 'latex', k: 'Lattice', bool: true, art: (a) => LATEX[a[0]] },
+  { key: 'flesh_texture', k: 'Il gambo si spezza', art: (a) => TEXTURE[a[0]], say: (v) => optLabel(QK('flesh_texture'), v) },
+  { key: 'stem_base', k: 'Base del gambo', art: (a) => BASE[a[0]], say: (v) => optLabel(QK('stem_base'), v) },
   { key: 'season', k: 'Stagione', info: true },
 ];
 function cmpRows(ref, t) {
@@ -436,6 +499,7 @@ export function renderIdentify(box) {
     const out = []; let run = [];
     const flush = () => { if (run.length) out.push(`<ul class="id-answers">${run.join('')}</ul>`); run = []; };
     for (const q of QUESTIONS) {
+      if (q.when && !q.when() && state.ans[q.key] === undefined) continue;
       if (state.ans[q.key] !== undefined && state.editing !== q.key) run.push(answerRow(q));
       else { flush(); out.push(questionCard(q)); }
     }
