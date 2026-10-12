@@ -31,8 +31,8 @@
         }
       ],
       "trails": "CAI 404 (Selletta di Pratorecchia, Iaccio Crudele); CAI 439 (Buco del Merlo, Monte I Porcini).",
-      "drive_min": 42,
-      "drive_km": 33,
+      "drive_min": 55,
+      "drive_km": 34,
       "protection": null,
       "popularity": 1.0
     },
@@ -57,8 +57,8 @@
         }
       ],
       "trails": "Mulattiere e sentieri dal Santuario verso le pendici superiori.",
-      "drive_min": 22,
-      "drive_km": 16,
+      "drive_min": 34,
+      "drive_km": 17,
       "protection": null,
       "popularity": 0.7
     },
@@ -88,7 +88,7 @@
         }
       ],
       "trails": "Sentieri rurali e mulattiere dai fondivalle verso le pendici.",
-      "drive_min": 31,
+      "drive_min": 42,
       "drive_km": 31,
       "protection": null,
       "popularity": 0.6
@@ -119,8 +119,8 @@
         }
       ],
       "trails": "Strade comunali e sentieri della Riserva Navegna-Cervia.",
-      "drive_min": 52,
-      "drive_km": 41,
+      "drive_min": 65,
+      "drive_km": 50,
       "protection": "Parte dell'area ricade nella Riserva Naturale Monte Navegna e Monte Cervia: raccolta vietata nelle Zone A, consentita in B e C secondo L.R. 32/98.",
       "popularity": 0.6
     },
@@ -145,7 +145,7 @@
         }
       ],
       "trails": "Carrarecce e sentieri attorno alla piana del lago.",
-      "drive_min": 93,
+      "drive_min": 102,
       "drive_km": 52,
       "protection": null,
       "popularity": 0.4
@@ -171,7 +171,7 @@
         }
       ],
       "trails": "Sentieri verso Monte Tancia, Monte Ode e le Pozze del Diavolo.",
-      "drive_min": 32,
+      "drive_min": 43,
       "drive_km": 24,
       "protection": null,
       "popularity": 0.8
@@ -197,7 +197,7 @@
         }
       ],
       "trails": "Accessi alle valli torrentizie dalle frazioni.",
-      "drive_min": 72,
+      "drive_min": 93,
       "drive_km": 69,
       "protection": "Area nel Parco Nazionale del Gran Sasso e Monti della Laga: divieto nelle zone di protezione integrale e regole dell'Ente Parco (verificare prima dell'uscita).",
       "popularity": 0.5

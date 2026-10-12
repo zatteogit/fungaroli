@@ -23,8 +23,9 @@ globalThis.localStorage = { getItem: () => null, setItem: () => {} };
 const read = (p) => fs.readFileSync(path.join(ROOT, p), 'utf8');
 const zones = JSON.parse(read('data/zones.json'));
 const habitat = JSON.parse(read('data/habitat.json'));
-const access = JSON.parse(read('data/access.json'));
-const trails = JSON.parse(read('data/trails.json'));
+const readOpt = (p) => (fs.existsSync(path.join(ROOT, p)) ? JSON.parse(read(p)) : null);
+const access = readOpt('data/access.json');
+const trails = readOpt('data/trails.json');
 const { loadWeather } = await import(path.join(ROOT, 'js/weather.js'));
 const w = await loadWeather(zones.zones, { force: true });
 

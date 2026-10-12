@@ -1,9 +1,11 @@
 // Specie commestibili considerate e parametri del modello.
 //
 // Cosa e' verificato e cosa no:
-// - Finestra pioggia ~26-30 giorni e temperatura media ~13 °C nei 20 giorni
-//   precedenti come trigger di B. edulis: Salerni et al. 2002; preprint bioRxiv 2025
-//   su faggete centro-europee (vedi README > Fonti).
+// - Pioggia cumulata sui 30 giorni precedenti: correlazione piu' forte per i macromiceti
+//   dei querceti toscani (Salerni et al. 2002, non specifico per il porcino).
+// - B. edulis in faggeta: picco con T media ~13 °C sui 20 giorni e pioggia su ~26 giorni
+//   (Brejon Lamartinière & Hoffman, preprint bioRxiv 2025, non ancora revisionato).
+// - Finestre di latenza e soglia d'innesco (8 mm): euristiche.
 // - Habitat, fasce di quota e stagionalita' nel Reatino: documento di partenza
 //   (MyBoletus, AMER, Alta Valle del Velino) + manualistica micologica.
 // - Temperature ottimali delle altre specie, finestre di latenza e pesi: EURISTICHE,
@@ -107,7 +109,7 @@ export const SPECIES = [
     id: 'mellea', group: 'altri', name: 'Chiodino', latin: 'Armillaria mellea',
     forest: { [F.CAS]: 1, [F.CER]: 0.9, [F.ROV]: 0.9, [F.OST]: 0.8, [F.FAG]: 0.8, [F.RIP]: 0.6, [F.LEC]: 0.5 },
     months: m(0, 0, 0, 0, 0, 0, 0, 0.1, 0.5, 1, 0.9, 0.2),
-    elev: [200, 1500], topt: 11, tsd: 3.5, lag: [5, 15], eref: 25, minCap: 3, shockWeight: 2,
+    elev: [200, 1500], topt: 11, tsd: 3.5, lag: [5, 15], eref: 25, minCap: 3, shockWeight: 3,
     warning: 'Tossico crudo o poco cotto: sbollentare e scartare l\'acqua prima della cottura.',
     evidence: 'Euristica; buttate legate al primo freddo.',
   },
@@ -115,7 +117,7 @@ export const SPECIES = [
     id: 'virescens', group: 'altri', name: 'Colombina / verdone', latin: 'Russula virescens, R. cyanoxantha',
     forest: { [F.CAS]: 1, [F.CER]: 1, [F.FAG]: 0.9, [F.ROV]: 0.8 },
     months: m(0, 0, 0, 0, 0.1, 0.7, 0.9, 0.8, 1, 0.6, 0.1, 0),
-    elev: [300, 1600], topt: 17, tsd: 4, lag: [5, 14], eref: 25, minCap: 3,
+    elev: [300, 1600], topt: 17, tsd: 4, lag: [5, 14], eref: 25, minCap: 4,
     warning: 'Le russule verdi si confondono con Amanita phalloides: controlla sempre base e volva.',
     evidence: 'Euristica.',
   },
