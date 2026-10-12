@@ -1,4 +1,9 @@
 {
   "note": "Infografiche di riconoscimento. Per aggiungerne una: salva l'immagine in assets/infografiche/<id>.webp (o .png/.jpg) e aggiungi qui una voce con file e credit. I brief per generarle sono in docs/infografiche/<id>.md.",
-  "species": {}
+  "species": {
+    "caesarea": {
+      "file": "assets/infografiche/caesarea.webp",
+      "credit": "Illustrazione generata con IA (GPT Image via image_gen; versione del modello non esposta) e impaginata. Riferimenti: Yaqui e Julien Thurion (CC BY-SA 3.0), Luca Pilia (CC BY-NC), G. Bresadola (pubblico dominio). Da rivedere con un micologo."
+    }
+  }
 }
