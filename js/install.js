@@ -144,7 +144,8 @@ function render() {
       <button type="button" class="btn primary big" data-install>Installa Fungaroli</button>` : '';
   }
   if (banner) {
-    banner.hidden = !canOffer() || dismissed();
+    // banner solo su telefono e tablet: sul computer l'installazione resta in Info
+    banner.hidden = !canOffer() || dismissed() || !(isIOS || isAndroid);
     banner.innerHTML = `<img src="assets/icon-192.png" alt="" width="44" height="44">
       <div><b>Fungaroli come app</b><span>A tutto schermo e anche senza campo</span></div>
       <button type="button" class="btn primary" data-install>Installa</button>
