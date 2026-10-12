@@ -4,6 +4,7 @@ import { loadWeather } from './weather.js';
 import { renderCharts } from './chart.js';
 import { initJournal } from './journal.js';
 import { renderSvgMap } from './svgmap.js';
+import { initSpeciesCards, thumb } from './speciescard.js';
 import { crowding, comfortScore, timingAdvice, fmtTime, holidayName } from './human.js';
 
 const HISTORY_DAYS = 30;   // giorni passati mostrati nel grafico
@@ -59,9 +60,14 @@ async function init() {
   // versione Artifact: dati incorporati nella pagina (niente fetch esterni)
   const embedded = globalThis.FUNGAROLI_DATA;
   const load = (f) => fetch(`data/${f}.json`).then((r) => (r.ok ? r.json() : null)).catch(() => null);
-  const [zj, hj, aj, tj] = embedded
-    ? [embedded.zones, embedded.habitat, embedded.access, embedded.trails]
-    : await Promise.all(['zones', 'habitat', 'access', 'trails'].map(load));
+  const [zj, hj, aj, tj, idj, mj] = embedded
+    ? [embedded.zones, embedded.habitat, embedded.access, embedded.trails, embedded.speciesId, embedded.media]
+    : await Promise.all(['zones', 'habitat', 'access', 'trails', 'species-id', 'media'].map(load));
+  initSpeciesCards({
+    idData: idj, media: mj, allow3d: !embedded,
+    assetUrl: embedded ? (f) => embedded.assets?.[f] || '' : (f) => f,
+  });
+  renderSpeciesGrid();
   access = aj?.zones || {};
   trails = tj?.zones || {};
   zones = zj.zones;
@@ -195,6 +201,17 @@ function trailsFor(z, sp, band) {
     const mainCat = Object.entries(cats).sort((a, b) => b[1] - a[1])[0]?.[0];
     return { ...t, goodKm: n / 10, lo, hi, mainCat };
   }).filter((t) => t.goodKm >= 0.3).sort((a, b) => b.goodKm - a.goodKm);
+}
+
+function renderSpeciesGrid() {
+  const box = $('#species-grid');
+  if (!box) return;
+  const groups = Object.fromEntries(GROUPS.map((g) => [g.id, g.label]));
+  box.innerHTML = SPECIES.map((sp) => `
+    <button type="button" class="sp-tile" data-species="${sp.id}">
+      ${thumb(sp.id, 56)}
+      <span><b>${esc(sp.name)}</b><i>${esc(sp.latin)}</i><small>${esc(groups[sp.group] || '')}</small></span>
+    </button>`).join('');
 }
 
 function renderFilters() {
@@ -434,7 +451,7 @@ const ICON = {
 function planCard(z, d) {
   const best = d.best;
   const rows = [];
-  rows.push({ icon: 'find', k: 'Cosa cercare', v: `<b>${esc(best.species.name)}</b> intorno ai <b>${best.band} m</b>`,
+  rows.push({ icon: 'find', thumb: best.species.id, k: 'Cosa cercare', v: `<button type="button" class="sp-inline" data-species="${best.species.id}">${esc(best.species.name)}</button> intorno ai <b>${best.band} m</b>`,
     sub: d.perSpecies.slice(1, 3).filter((p) => p.score >= 20).map((p) => `${esc(p.species.name)} ${p.score}`).join(' · ') || esc(best.species.latin) });
   if (d.crowd) {
     const t = timingAdvice({ dateStr: d.date, lat: z.lat, lon: z.lon, crowd: d.crowd });
@@ -457,7 +474,7 @@ function planCard(z, d) {
       sub: `${fmtKm(t.goodKm)} km in bosco adatto tra ${t.lo} e ${t.hi} m` });
   }
   return `<ul class="plan">${rows.map((r) => `
-    <li><span class="plan-ic">${ICON[r.icon]}</span>
+    <li><span class="plan-ic${r.thumb ? ' has-thumb' : ''}">${r.thumb ? `<button type="button" class="thumb-btn" data-species="${r.thumb}" aria-label="Scheda specie">${thumb(r.thumb, 32)}</button>` : ICON[r.icon]}</span>
       <div class="plan-body"><div class="plan-k">${r.k}${r.badge ? ' ' + r.badge : ''}</div><div class="plan-v">${r.v}</div>${r.sub ? `<div class="plan-sub">${r.sub}</div>` : ''}</div></li>`).join('')}</ul>`;
 }
 
@@ -479,7 +496,7 @@ function renderDetail() {
   const hab = habitatAtBand(habitat[z.id], best.band);
   const rows = d.perSpecies.map((p) => `
     <tr>
-      <td><div>${esc(p.species.name)}</div><div class="latin">${esc(p.species.latin)}</div>
+      <td><button type="button" class="sp-link" data-species="${p.species.id}">${thumb(p.species.id, 34)}<span><span class="sp-n">${esc(p.species.name)}</span><span class="latin">${esc(p.species.latin)}</span></span></button>
         ${p.species.warning ? `<div class="warnline">⚠ ${esc(p.species.warning)}</div>` : ''}</td>
       <td class="num">${p.band} m</td>
       <td><div class="bar"><i style="width:${p.score}%;background:var(${scoreVar(p.score)})"></i></div></td>

@@ -26,6 +26,13 @@ const habitat = JSON.parse(read('data/habitat.json'));
 const readOpt = (p) => (fs.existsSync(path.join(ROOT, p)) ? JSON.parse(read(p)) : null);
 const access = readOpt('data/access.json');
 const trails = readOpt('data/trails.json');
+const speciesId = readOpt('data/species-id.json');
+const media = readOpt('data/media.json');
+// foto delle specie incorporate come data URI (l'Artifact non carica immagini esterne)
+const assets = {};
+const collect = (m) => { if (m?.file && fs.existsSync(path.join(ROOT, m.file))) assets[m.file] = `data:image/jpeg;base64,${fs.readFileSync(path.join(ROOT, m.file)).toString('base64')}`; };
+for (const v of Object.values(media?.species || {})) { collect(v.ref); (v.inat || []).forEach(collect); }
+for (const v of Object.values(media?.lookalikes || {})) { collect(v.ref); (v.inat || []).forEach(collect); }
 const { loadWeather } = await import(path.join(ROOT, 'js/weather.js'));
 const w = await loadWeather(zones.zones, { force: true });
 
@@ -52,7 +59,7 @@ const fonts = html.match(/<link rel="stylesheet" href="https:\/\/fonts\.googleap
 const body = html.match(/<body>([\s\S]*)<\/body>/)[1]
   .replace(/<script[\s\S]*?<\/script>/g, '')
   .replace('Mappe © OpenStreetMap, OpenTopoMap (CC-BY-SA). ', '');
-const data = JSON.stringify({ zones, habitat, access, trails, basemap, weather: { series: w.series, fetchedAt: w.fetchedAt.toISOString() } })
+const data = JSON.stringify({ zones, habitat, access, trails, speciesId, media, assets, basemap, weather: { series: w.series, fetchedAt: w.fetchedAt.toISOString() } })
   .replace(/</g, '\\u003c');
 
 const out = `${title}
