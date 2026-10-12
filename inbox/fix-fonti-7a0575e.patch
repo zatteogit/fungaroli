@@ -1,0 +1,159 @@
+diff --git a/README.md b/README.md
+index 5bcfb4b..14b59fc 100644
+--- a/README.md
++++ b/README.md
+@@ -79,8 +79,9 @@ indice = 100 × stagione × habitat × quota × pioggia × temperatura × suolo
+ 
+ ### Cosa è fatto, cosa è ipotesi
+ 
+-- **Fatti verificati:** composizione forestale e quote (Carta Forestale, DEM); meteo (modello Open-Meteo, non stazioni a terra); regole di raccolta (dal documento di partenza, fonte AMER 2025).
++- **Fatti verificati:** composizione forestale e quote (Carta Forestale, DEM); meteo (modello Open-Meteo, non stazioni a terra); regole di raccolta (L.R. Lazio 32/1998, testo vigente; dettagli e fonti in `docs/legale.md`).
+ - **Da letteratura, ma con limiti:** la relazione pioggia 26–30 gg e T ≈ 13 °C vale per *B. edulis* in faggete; lo studio del 2025 è un preprint non ancora revisionato.
++- **Licenza della Carta Forestale da chiarire:** la risorsa shapefile su dati.lazio.it è dichiarata CC BY 4.0, ma la scheda metadati allegata allo stesso dataset (aggiornata a dicembre 2012) limita l'uso a fini non commerciali e vieta distribuzione e modifica. `data/habitat.json`, `data/trails.json` e le immagini in `assets/` ne derivano: prima di diffondere l'app conviene una conferma scritta della Regione. Dettagli in `docs/legale.md`, sezione licenze.
+ - **Euristiche:** ottimi termici delle altre specie, finestre di latenza, pesi di habitat, bonus shock. Sono in `js/species.js` e `js/model.js` (`PARAMS`): **vanno calibrati sulle uscite reali**.
+ - **Cosa il modello non vede:** esposizione e pendenza, età e gestione del bosco, pressione di raccolta, singole fungaie, microclima di valle.
+ 
+@@ -113,16 +114,16 @@ Per aggiungere una zona: inserirla in `data/zones.json` (centro, raggio, tre quo
+ 
+ ## Avvertenze
+ 
+-Strumento di supporto alla pianificazione, **non di identificazione**. Raccolta solo con attestato micologico e contributo regionale (L.R. Lazio 32/98 e s.m.i.), max 3 kg/giorno. Far controllare il raccolto all'Ispettorato Micologico ASL Rieti (SIAN), gratuito. Nelle riserve (Navegna-Cervia, Duchessa) e nel Parco Gran Sasso-Laga valgono zonizzazioni e regolamenti propri.
++Strumento di supporto alla pianificazione, **non di identificazione**. Raccolta solo con attestato micologico e contributo regionale (L.R. Lazio 32/98 e s.m.i.), max 3 kg/giorno. Far controllare il raccolto all'Ispettorato Micologico ASL Rieti (Via del Terminillo 42, blocco 4; lun–ven 8:30–9:30; tel. 0746 279801), gratuito per i privati secondo il Ministero della Salute. Nelle riserve (Navegna-Cervia, Duchessa) e nel Parco Gran Sasso-Laga valgono zonizzazioni e regolamenti propri.
+ 
+ ## Fonti
+ 
+ - Salerni E., Laganà A., Perini C., Loppi S., De Dominicis V. (2002). *Effects of temperature and rainfall on fruiting of macrofungi in oak forests of the Mediterranean area*. Israel Journal of Plant Sciences 50(3): 189–198. https://usiena-air.unisi.it/handle/11365/3048
+-- *Predicting porcini: a decade of sporocarp monitoring reveals the meteorological triggers of Boletus edulis fruiting in central European beech forests* (2025). bioRxiv, preprint. https://www.biorxiv.org/content/10.64898/2025.12.12.693895v1
+ - Salerni E., Paoli L., Perini C. (2023). Produttività di *B. edulis* in abetine e risposta a eventi termici estremi. Italian Journal of Mycology. https://doaj.org/article/8b44d1d6b39e4739ab56842f048e3336
+ - Regione Lazio. *Carta Forestale su base tipologica* — WFS/WMS `geonode:tipi_forestali2`. https://geoportale.regione.lazio.it ; https://dati.lazio.it/dataset/carta-forestale-su-base-tipologica-della-regione-lazio
+ - Open-Meteo. Forecast API ed Elevation API (CC BY 4.0). https://open-meteo.com
+ - OpenStreetMap (ODbL) via Valhalla per accessi e fondo stradale, via Waymarked Trails per i sentieri; OpenTopoMap per la base cartografica.
+-- Brejon Lamartinière E., Hoffman J. I. (2025). *Predicting porcini…* bioRxiv, preprint (autori verificati sull'abstract).
+-- AMER (2025). *Raccolta funghi nel Lazio: le regole in vigore nel 2025*. https://www.ameronlus.it/blog/2025/01/14/raccolta-funghi-nel-lazio-le-regole-in-vigore/
++- Brejon Lamartinière E., Hoffman J. I. (2026). *Predicting porcini: a decade of sporocarp monitoring reveals the meteorological triggers of Boletus edulis fruiting in central European beech forests*. bioRxiv, preprint non revisionato, **versione 2 dell'8 giugno 2026**. La v1 (14/12/2025) usava finestre di 5 giorni e un ottimo di 13,2 °C; i valori di 20 e 26 giorni usati dal modello vengono dalla v2. https://doi.org/10.64898/2025.12.12.693895 ; https://www.biorxiv.org/content/10.64898/2025.12.12.693895v2.full
++- L.R. Lazio 5 agosto 1998, n. 32, testo coordinato vigente (Consiglio regionale del Lazio). https://www.consiglio.regione.lazio.it/consiglio-regionale/?vw=leggiregionalidettaglio&id=8275&sv=vigente
++- ASL Rieti, *Ispettorato Micologico* (pagina aggiornata il 24/09/2026). https://www.asl.rieti.it/organizzazione-aziendale/dipartimenti-aree-e-staff/dipartimento-della-prevenzione/uosd-igiene-degli-alimenti-e-della-nutrizione/ispettorato-micologico/
+ - MyBoletus, *Funghi nel Lazio*; AMER, *Report uscita micologica Altopiano di Rascino* (2018); Alta Valle del Velino, *Andar per funghi* — per habitat e stagionalità locali (vedi documento di partenza).
+diff --git a/data/species-traits.json b/data/species-traits.json
+index 31066c4..c5434bd 100644
+--- a/data/species-traits.json
++++ b/data/species-traits.json
+@@ -147,9 +147,9 @@
+   },
+   "general_rules": [
+     {
+-      "text": "Fai controllare tutto il raccolto, non solo una parte, all'Ispettorato micologico della ASL prima di consumarlo: il servizio è gratuito (ASL Rieti: via del Terminillo 42; sede anche ad Antrodoco). Non affidarti ad app, foto o amici.",
++      "text": "Fai controllare tutto il raccolto, non solo una parte, all'Ispettorato micologico della ASL prima di consumarlo: il servizio è gratuito per i privati (ASL Rieti: via del Terminillo 42, blocco 4, lun-ven 8:30-9:30). Non affidarti ad app, foto o amici.",
+       "severity": "critico",
+-      "source": "https://aslrieti.dev.laserromae.it/wp-content/uploads/fileadmin/user_upload/Immagini-Stampa/2018/n24%20Alla%20Asl%20di%20Rieti%20controlli%20e%20certficazione%20gratuiti%20funghi%20%20%2030%2008%2018.pdf"
++      "source": "https://www.asl.rieti.it/organizzazione-aziendale/dipartimenti-aree-e-staff/dipartimento-della-prevenzione/uosd-igiene-degli-alimenti-e-della-nutrizione/ispettorato-micologico/"
+     },
+     {
+       "text": "Tieni ogni esemplare dubbio o poco conosciuto in un contenitore separato, intero: se è velenoso, i suoi frammenti non devono mescolarsi al resto del raccolto.",
+diff --git a/docs/dati-e-architettura.md b/docs/dati-e-architettura.md
+index 3e6813c..6c2bbe9 100644
+--- a/docs/dati-e-architettura.md
++++ b/docs/dati-e-architettura.md
+@@ -10,7 +10,7 @@ Un sito statico senza build: HTML, CSS e moduli ES che leggono tre file JSON pre
+ 
+ | Fonte | Cosa fornisce | Dove si usa | Licenza e condizioni |
+ |---|---|---|---|
+-| **Regione Lazio, Carta Forestale su base tipologica** | Poligoni dei tipi forestali (campi `categoria`, `tipologia`). WFS e WMS `geonode:tipi_forestali2` su `https://geoportale.regione.lazio.it/geoserver/ows`. | `build_habitat.py`, `build_trails.py` (WFS); `build_basemap.py` e mappa del sito (WMS); legenda (`GetLegendGraphic`) | Open data regionale. La scheda su dati.lazio.it al momento della verifica riportava "Nessuna licenza trovata" pur esponendo il badge CC BY 4.0 nel piè di pagina: conviene citare sempre "© Regione Lazio". Dataset creato nel 2015, dati modificati nel 2020. |
++| **Regione Lazio, Carta Forestale su base tipologica** | Poligoni dei tipi forestali (campi `categoria`, `tipologia`). WFS e WMS `geonode:tipi_forestali2` su `https://geoportale.regione.lazio.it/geoserver/ows`. | `build_habitat.py`, `build_trails.py` (WFS); `build_basemap.py` e mappa del sito (WMS); legenda (`GetLegendGraphic`) | **Licenza in conflitto, da chiarire con la Regione** (verifica del 12/10/2026). La risorsa SHP su dati.lazio.it è dichiarata CC BY 4.0 e la pagina *Licenze* del portale vale per "tutti i contenuti". La pagina del dataset però dice "Nessuna licenza trovata" e la [scheda metadati PDF](https://dati.lazio.it/dataset/91a9cd67-1a41-4584-b611-960c65d82724/resource/5d8c5060-1242-4422-9e3a-52703cad54ce/download/metadaticartaforestalesubasetipologica.pdf) allegata allo stesso dataset (aggiornata a dicembre 2012), alla voce "Restrizioni d'uso", dice: "La banca dati può essere utilizzata solo per fini non commerciali, previa citazione della fonte. E’ vietata la distribuzione, la riproduzione, la traduzione, l’adattamento e ogni altra modifica". `data/habitat.json`, `data/trails.json` e le immagini in `assets/` sono derivati. Citare sempre "© Regione Lazio". Dataset creato nel 2015, dati modificati nel 2020. Dettagli in `docs/legale.md`. |
+ | **Open-Meteo Forecast API** | Pioggia giornaliera, temperatura media/min/max, umidità del suolo 3-9 cm e temperatura del suolo a 6 cm (orarie, aggregate per giorno). Parametri: `past_days=62`, `forecast_days=8`, `elevation` per fascia, `timezone=Europe/Rome`. | `js/weather.js` (sito, dal browser); `build_artifact.mjs` (fotografia) | Dati CC BY 4.0 con attribuzione a Open-Meteo. L'API gratuita è per uso non commerciale, con limiti indicativi di 10.000 chiamate al giorno. L'app fa una sola chiamata per tutte le 21 coppie zona-fascia. |
+ | **Open-Meteo Elevation API** | Quota dei punti (DEM Copernicus GLO-90, 90 m, modello di superficie). Fino a 100 coordinate per chiamata. | `build_habitat.py`, `build_access.py`, `build_trails.py` | Come sopra; va citato anche il programma Copernicus. |
+ | **OpenStreetMap** | Rete stradale e sentieristica. | tramite Valhalla, OSRM, Waymarked Trails, tile | ODbL 1.0, attribuzione "© OpenStreetMap contributors". |
+diff --git a/docs/guida-uso.md b/docs/guida-uso.md
+index d7ca888..4f5aa3e 100644
+--- a/docs/guida-uso.md
++++ b/docs/guida-uso.md
+@@ -169,16 +169,16 @@ La raccolta è regolata dalla L.R. Lazio 5 agosto 1998, n. 32 e dalle sue modifi
+ | Regola | Contenuto | Verifica |
+ |---|---|---|
+ | Titolo | Attestato di un corso di formazione micologica di almeno 14 ore (dal 2020, L.R. 1/2020, sostituisce il tesserino; chi ha il vecchio tesserino può continuare a usarlo). | Confermato sul sito della Regione Lazio (pagina aggiornata l'8 ottobre 2026) |
+-| Contributo annuale | 25 € residenti nel Lazio, 40 € non residenti, valido un anno dal versamento. Causale "L.R. n. 32/98 - raccolta funghi anno...". | Confermato (Regione Lazio, AMER 2025) |
++| Contributo annuale | 25 € residenti nel Lazio, 40 € non residenti, valido un anno dal versamento. Causale "L.R. n. 32/98 - raccolta funghi anno...". | Confermato (L.R. 32/98 art. 4 c.1 lett. b; Regione Lazio) |
+ | Esenzione | Residenti nel Lazio con più di 65 anni non pagano il contributo; attestato e documento restano obbligatori. | Confermato (Regione Lazio) |
+-| Documenti da portare | Attestato (o tesserino), ricevuta del versamento, documento d'identità. | Confermato (AMER 2025) |
++| Documenti da portare | Attestato (o tesserino), ricevuta del versamento, documento d'identità. | Confermato (Regione Lazio) |
+ | Giorni | Tutti i giorni della settimana: l'art. 21 della L.R. 20/2024 ha abrogato il limite dei quattro giorni. | Confermato (Regione Lazio) |
+-| Orari | Vietata la raccolta da un'ora dopo il tramonto a un'ora prima dell'alba. | Confermato (AMER 2025, art. 9 L.R. 32/98) |
+-| Quantità | 3 kg a persona al giorno, salvo un unico esemplare o un unico cespo concresciuto. | Confermato (AMER 2025) |
+-| Contenitori e attrezzi | Contenitori rigidi e aerati; vietati rastrelli, uncini e mezzi che danneggiano humus e micelio; vietato distruggere funghi, anche non commestibili. | Confermato (AMER 2025) |
+-| Pulizia | Pulizia sommaria sul posto, conservando i caratteri utili al riconoscimento. | Confermato (AMER 2025) |
++| Orari | Vietata la raccolta da un'ora dopo il tramonto a un'ora prima dell'alba. | Confermato (L.R. 32/98 art. 9 c.1) |
++| Quantità | 3 kg a persona al giorno, salvo un unico esemplare o un unico cespo concresciuto. | Confermato (L.R. 32/98 art. 3 c.1) |
++| Contenitori e attrezzi | Contenitori rigidi e aerati; vietati rastrelli, uncini e mezzi che danneggiano humus e micelio; vietato distruggere funghi, anche non commestibili. | Confermato (L.R. 32/98 art. 9 cc. 2-4) |
++| Pulizia | Pulizia sommaria sul posto, conservando i caratteri utili al riconoscimento. | Confermato (L.R. 32/98 art. 9 c.4) |
+ | Taglie minime del cappello | 4 cm: porcini (gruppo *B. edulis*), ovolo buono, verdone (*Russula virescens*), agarico geotropo, prataiolo. 5 cm: mazza di tamburo. 3 cm: tutte le altre. | Confermato (AMER 2025). Il documento di partenza e l'interfaccia non citano il verdone, l'agarico geotropo e il prataiolo a 4 cm. |
+-| Dove è vietato | Entro 10 m dal margine delle strade pubbliche; terreni di pertinenza di abitazioni per almeno 100 m; giardini e parchi privati; verde pubblico urbano; ex discariche e aree industriali; riserve integrali. | Confermato (AMER 2025) |
++| Dove è vietato | Entro 10 m dal margine delle strade pubbliche; terreni di pertinenza di abitazioni per almeno 100 m; giardini e parchi privati; verde pubblico urbano; ex discariche e aree industriali; riserve integrali. | Confermato (L.R. 32/98 art. 10 cc. 1-3) |
+ | Minori e accompagnati | Sotto i 14 anni solo accompagnati da chi ha i titoli. Chi non ha l'attestato può avere fino a cinque autorizzazioni giornaliere gratuite all'anno, solo se accompagnato. | Riportato sul sito della Regione Lazio |
+ 
+ ### Aree protette
+@@ -192,15 +192,15 @@ Questi due punti vengono dal documento di partenza e da AMER (che conferma il pr
+ 
+ L'**Ispettorato Micologico della ASL di Rieti** (Servizio Igiene degli Alimenti e della Nutrizione, Dipartimento di Prevenzione) controlla gratuitamente i funghi raccolti e rilascia la certificazione di commestibilità. Porta i funghi interi, con la base del gambo, puliti solo sommariamente, freschi e non bagnati.
+ 
+-Un comunicato della ASL del 2018 indicava la sede di via del Terminillo 42 a Rieti, dal lunedì al venerdì dalle 8 alle 9:30, e un punto ad Antrodoco il lunedì. Sono informazioni vecchie: verifica sede e orari sul sito della ASL prima di andare.
++Secondo la pagina della ASL aggiornata al 24 settembre 2026: Blocco 4, Via del Terminillo 42, Rieti; dal lunedì al venerdì dalle 8:30 alle 9:30; tel. 0746 279801, ispettoratomicologico@asl.rieti.it. La pagina non parla di prenotazione né di periodi stagionali e non elenca più lo sportello di Antrodoco. Il corso per l'attestato è gratuito.
+ 
+ Le app di riconoscimento fotografico non hanno valore diagnostico. Lo ricorda anche il Ministero della Salute in una nota dell'ottobre 2025.
+ 
+ ### Fonti delle regole
+ 
+ - Regione Lazio, *Funghi* (pagina aggiornata l'8 ottobre 2026). https://regione.lazio.it/cittadini/agricoltura/Funghi
+-- AMER (2025). *Raccolta funghi nel Lazio: le regole in vigore nel 2025*. https://www.ameronlus.it/blog/2025/01/14/raccolta-funghi-nel-lazio-le-regole-in-vigore/
+-- ASL Rieti, comunicato del 30 agosto 2018 sul servizio gratuito di certificazione dei funghi.
++- L.R. Lazio 5 agosto 1998, n. 32, testo coordinato vigente. https://www.consiglio.regione.lazio.it/consiglio-regionale/?vw=leggiregionalidettaglio&id=8275&sv=vigente
++- ASL Rieti, *Ispettorato Micologico* (pagina aggiornata il 24/09/2026). https://www.asl.rieti.it/organizzazione-aziendale/dipartimenti-aree-e-staff/dipartimento-della-prevenzione/uosd-igiene-degli-alimenti-e-della-nutrizione/ispettorato-micologico/
+ - Ministero della Salute, *Ispettorati micologici*. https://www.salute.gov.it/new/it/tema/sistema-di-controllo-della-sicurezza-alimentare/ispettorati-micologici/
+ 
+ La norma cambia: prima della stagione controlla il testo vigente sul sito del Consiglio regionale del Lazio.
+diff --git a/docs/legale.md b/docs/legale.md
+index 9dcdf4f..0d31d8e 100644
+--- a/docs/legale.md
++++ b/docs/legale.md
+@@ -127,7 +127,7 @@ Regola generale: la L.R. 32/1998 cede il passo alle regole dell'ente gestore (ar
+ 
+ - **Legge istitutiva:** L.R. 7 giugno 1990, n. 70. L'art. 12, c. 1, lett. m) vieta, fino all'entrata in vigore di piano e regolamento, "la raccolta di specie vegetali spontanee"; nel frattempo la raccolta "potrà essere autorizzata dall'ente gestore", che ne fissa quantità e modalità.
+ - **Piano della riserva:** approvato con **Deliberazione del Consiglio regionale 15 settembre 2021, n. 16**, pubblicata sul BURL n. 93, supplemento n. 1, del 30 settembre 2021. Gli elaborati comprendono Norme tecniche di attuazione e un Regolamento ("RS RR Regolamento"), adottati dal Comune di Borgorose con la delibera consiliare 20/2014.
+-- **Non verificato:** le Norme tecniche nel PDF del BURL sono in gran parte immagini scansionate. Non sono riuscito a estrarre le disposizioni sui funghi e non so se il Regolamento della riserva sia in vigore. Non so nemmeno se la legge istitutiva comprenda i funghi tra le "specie vegetali spontanee".
++- **Regolamento non approvato (verifica del 12/10/2026):** la DCR 16/2021 approva il solo Piano. Gli elaborati elencati nel dispositivo sono Relazione generale, Norme tecniche di attuazione, Schede degli interventi e sette tavole: il Regolamento non c'è (testo della DCR, pp. 8-9). Il testo del PDF ha una codifica dei caratteri sfasata. Una volta decodificato, l'unica occorrenza di "funghi" è descrittiva ("produzioni non legnose (es. funghi)"). **Interpretazione:** il Piano non contiene regole sulla raccolta e valgono le misure di salvaguardia dell'art. 12 della L.R. 70/1990. La decodifica può essere incompleta, quindi le NTA vanno controllate a mano. Non so nemmeno se la legge istitutiva comprenda i funghi tra le "specie vegetali spontanee".
+ - **Nota:** nessuna delle sette zone dell'app sembra ricadere nella Duchessa: Rascino è nel territorio di Fiamignano, non di Borgorose. La riserva compare nel README e nelle regole perché è vicina.
+ 
+ ### 2.3 Parco Nazionale del Gran Sasso e Monti della Laga (zona Laga - Amatrice)
+@@ -159,8 +159,9 @@ Non ho controllato in modo sistematico se Vallonina/Terminillo, Poggio Bustone/C
+ | Sede | Via del Terminillo 42, 02100 Rieti (blocco 4) | Stessa scheda (2026) e elenco del Ministero della Salute aggiornato al 20 marzo 2024 |
+ | Telefono | 0746 279801 | Elenco del Ministero (2024) e scheda ASL (2026, come recapito del responsabile del corso) |
+ | Centralino ASL | 0746 2781 | Intestazione della scheda ASL (2026) |
+-| Orari al pubblico | lunedì, mercoledì, venerdì 8:00-9:30 | Elenco del Ministero aggiornato al 20 marzo 2024 |
+-| Sportello Antrodoco | P.za Martiri della Libertà, lunedì 8:00-9:30 | Elenco del Ministero (2024) |
++| Orari al pubblico | dal lunedì al venerdì 8:30-9:30 | Pagina *Ispettorato Micologico* sul sito ASL Rieti, `article:modified_time` 24/09/2026, letta il 12/10/2026: https://www.asl.rieti.it/organizzazione-aziendale/dipartimenti-aree-e-staff/dipartimento-della-prevenzione/uosd-igiene-degli-alimenti-e-della-nutrizione/ispettorato-micologico/ (l'elenco del Ministero del 2024 diceva lunedì, mercoledì e venerdì 8:00-9:30) |
++| Sportello Antrodoco | Non più elencato | La pagina ASL del 2026 indica solo la sede di Rieti; lo sportello compariva nell'elenco del Ministero (2024) e in un comunicato ASL del 2018 |
++| Prenotazione | Non citata | Pagina ASL 2026 |
+ 
+ Aggiornamento del 12/10/2026 (verifica dal browser, `inbox/README.md`): la pagina ufficiale dell'Ispettorato, modificata il 24/09/2026, indica lunedì-venerdì 8:30-9:30, via del Terminillo 42 (blocco 4), tel. 0746 279801, ispettoratomicologico@asl.rieti.it. Non parla di prenotazione né di periodo stagionale; lo sportello di Antrodoco non compare più. https://www.asl.rieti.it/organizzazione-aziendale/dipartimenti-aree-e-staff/dipartimento-della-prevenzione/uosd-igiene-degli-alimenti-e-della-nutrizione/ispettorato-micologico/ Non ho riportato nominativi ed email personali dei micologi presenti nei documenti.
+ 
+diff --git a/docs/metodo-scientifico.md b/docs/metodo-scientifico.md
+index 4635b81..e34e7d8 100644
+--- a/docs/metodo-scientifico.md
++++ b/docs/metodo-scientifico.md
+@@ -220,7 +220,7 @@ Questi fattori non entrano nell'indice di fruttificazione. Servono a correggere
+ 
+ ### Orari di raccolta e alba
+ 
+-**Fatto (Dato ufficiale e norma)**: la raccolta nel Lazio è vietata da un'ora dopo il tramonto a un'ora prima dell'alba (L.R. 32/1998, art. 9, come riportato da AMER 2025). L'app calcola alba e tramonto per il centro della zona con le formule NOAA (errore di 1-2 minuti, rifrazione standard di 90,833°), e il test verifica per Rieti il 12 ottobre 2026 alba alle 07:16 e tramonto alle 18:33.
++**Fatto (Dato ufficiale e norma)**: la raccolta nel Lazio è vietata da un'ora dopo il tramonto a un'ora prima dell'alba (L.R. 32/1998, art. 9 c.1, testo vigente). L'app calcola alba e tramonto per il centro della zona con le formule NOAA (errore di 1-2 minuti, rifrazione standard di 90,833°), e il test verifica per Rieti il 12 ottobre 2026 alba alle 07:16 e tramonto alle 18:33.
+ 
+ L'app non tiene conto dell'orizzonte reale: in una valle stretta il sole arriva più tardi, ma l'orario legale si riferisce all'alba astronomica.
+ 
+@@ -352,7 +352,7 @@ Dati e servizi:
+ 
+ Norma:
+ 
+-- L.R. Lazio 5 agosto 1998, n. 32 e successive modifiche; sintesi in AMER (2025), *Raccolta funghi nel Lazio: le regole in vigore nel 2025*. https://www.ameronlus.it/blog/2025/01/14/raccolta-funghi-nel-lazio-le-regole-in-vigore/
++- L.R. Lazio 5 agosto 1998, n. 32 e successive modifiche, testo coordinato vigente (Consiglio regionale del Lazio). https://www.consiglio.regione.lazio.it/consiglio-regionale/?vw=leggiregionalidettaglio&id=8275&sv=vigente
+ 
+ Fonti che ho cercato ma non ho potuto verificare nei contenuti, e che quindi non uso a sostegno di nessun parametro:
+ 
