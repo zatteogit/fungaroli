@@ -34,7 +34,9 @@
    "drive_min": 55,
    "drive_km": 34,
    "protection": null,
-   "popularity": 1.0
+   "popularity": 1.0,
+   "title": "Vallonina",
+   "subtitle": "Terminillo, versante nord"
   },
   {
    "id": "poggio-cantalice",
@@ -60,7 +62,9 @@
    "drive_min": 34,
    "drive_km": 17,
    "protection": null,
-   "popularity": 0.7
+   "popularity": 0.7,
+   "title": "Poggio Bustone e Cantalice",
+   "subtitle": "Monti Reatini, versante ovest"
   },
   {
    "id": "antrodoco",
@@ -91,7 +95,9 @@
    "drive_min": 42,
    "drive_km": 31,
    "protection": null,
-   "popularity": 0.6
+   "popularity": 0.6,
+   "title": "Antrodoco",
+   "subtitle": "Media Valle del Velino"
   },
   {
    "id": "cicolano",
@@ -122,7 +128,9 @@
    "drive_min": 65,
    "drive_km": 50,
    "protection": "Parte dell'area è nella Riserva Naturale Monte Navegna e Monte Cervia. La legge istitutiva (L.R. 56/1988, art. 11) consente la raccolta secondo la L.R. 32/1998 finché la riserva non ha un regolamento: verifica con l'ente gestore eventuali divieti locali.",
-   "popularity": 0.6
+   "popularity": 0.6,
+   "title": "Cicolano",
+   "subtitle": "Marcetelli, Ascrea, Collalto"
   },
   {
    "id": "rascino",
@@ -148,7 +156,9 @@
    "drive_min": 102,
    "drive_km": 52,
    "protection": null,
-   "popularity": 0.4
+   "popularity": 0.4,
+   "title": "Altopiano di Rascino",
+   "subtitle": "Cicolano, sopra Fiamignano"
   },
   {
    "id": "tancia",
@@ -174,7 +184,9 @@
    "drive_min": 43,
    "drive_km": 24,
    "protection": null,
-   "popularity": 0.8
+   "popularity": 0.8,
+   "title": "Monte Tancia",
+   "subtitle": "Monti Sabini"
   },
   {
    "id": "laga",
@@ -200,7 +212,9 @@
    "drive_min": 93,
    "drive_km": 69,
    "protection": "Area nel Parco Nazionale del Gran Sasso e Monti della Laga. Il Piano del Parco (2020) esclude il prelievo nelle zone \"a\" di riserva integrale e il regolamento sui funghi è ancora in bozza: verifica con l'Ente Parco prima dell'uscita.",
-   "popularity": 0.5
+   "popularity": 0.5,
+   "title": "Monti della Laga",
+   "subtitle": "Amatrice"
   },
   {
    "id": "terminillo-ovest",
@@ -230,7 +244,9 @@
     1180,
     1390
    ],
-   "proposed_by": "fonti+dati"
+   "proposed_by": "fonti+dati",
+   "title": "Pian de' Rosce",
+   "subtitle": "Terminillo, versante di Rieti"
   },
   {
    "id": "terminillo-est",
@@ -255,7 +271,9 @@
     1310,
     1490
    ],
-   "proposed_by": "fonti+dati"
+   "proposed_by": "fonti+dati",
+   "title": "Cinque Confini e Monte Bove",
+   "subtitle": "Terminillo, versante sud-est"
   },
   {
    "id": "cittareale",
@@ -280,7 +298,9 @@
     1210,
     1340
    ],
-   "proposed_by": "fonti+dati"
+   "proposed_by": "fonti+dati",
+   "title": "Cittareale",
+   "subtitle": "Alto Velino"
   },
   {
    "id": "pescorocchiano",
@@ -310,7 +330,9 @@
     780,
     890
    ],
-   "proposed_by": "fonti+dati"
+   "proposed_by": "fonti+dati",
+   "title": "Pescorocchiano",
+   "subtitle": "Cicolano orientale"
   },
   {
    "id": "malito",
@@ -340,7 +362,9 @@
     1110,
     1290
    ],
-   "proposed_by": "fonti+dati"
+   "proposed_by": "fonti+dati",
+   "title": "Valle di Malito",
+   "subtitle": "Corvaro di Borgorose"
   },
   {
    "id": "sangiovanni",
@@ -365,7 +389,9 @@
     690,
     810
    ],
-   "proposed_by": "fonti+dati"
+   "proposed_by": "fonti+dati",
+   "title": "Monte San Giovanni in Sabina",
+   "subtitle": "Monti Sabini, versante di Rieti"
   },
   {
    "id": "leonessa",
@@ -390,7 +416,9 @@
     1340,
     1590
    ],
-   "proposed_by": "dati"
+   "proposed_by": "dati",
+   "title": "Leonessa",
+   "subtitle": "faggete dei Monti Reatini"
   },
   {
    "id": "domo",
@@ -415,7 +443,9 @@
     1000,
     1040
    ],
-   "proposed_by": "dati"
+   "proposed_by": "dati",
+   "title": "Domo",
+   "subtitle": "valle del Tronto, Amatrice"
   }
  ],
  "popularity_note": "Notorieta' della zona 0-1 (euristica locale: Terminillo e Tancia piu' frequentati per vicinanza a Rieti e Roma)."

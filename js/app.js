@@ -393,6 +393,7 @@ function combosList() {
 
 // Nome della zona in titolo + sottotitolo ("Monte Tancia (Monti Sabini)" -> due righe)
 const splitName = (z) => {
+  if (z.title) return [z.title, z.subtitle || ''];
   const m = z.name.match(/^(.*?)\s*(?:\(|\s\/\s|\s–\s)\s*(.*?)\)?$/);
   return m ? [m[1], m[2]] : [z.name, ''];
 };
@@ -546,7 +547,7 @@ function initEmbeddedMap(bm) {
   map.on('zoomend', () => results && state.view === 'mappa' && renderMap());
 }
 
-const shortName = (z) => z.name.split(/[/–(]/)[0].trim();
+const shortName = (z) => z.title || z.name.split(/[/–(]/)[0].trim();
 
 function renderMap() {
   if (!hasLeaflet()) {

@@ -168,7 +168,7 @@ export function initJournal({ zones, predict, getZoneId, zoneImage = () => '' })
     if (s === 'dove') {
       shell('Dove sei stato?', 'Tocca la zona.', '', { canNext: false });
       body.querySelector('.wiz-content').appendChild(choices(
-        zones.map((z) => ({ value: z.id, label: z.name.split(/\s[(/–]\s?/)[0], sub: (z.name.match(/[(/–]\s?(.*?)\)?$/) || [])[1], img: zoneImage(z.id) })), draft.zoneId,
+        zones.map((z) => ({ value: z.id, label: z.title || z.name, sub: z.subtitle, img: zoneImage(z.id) })), draft.zoneId,
         (v) => { draft.zoneId = v; draft.band = undefined; next(); }));
     }
 
@@ -278,7 +278,7 @@ export function initJournal({ zones, predict, getZoneId, zoneImage = () => '' })
       return `<li class="j-item">
         <span class="j-img">${img ? `<img src="${img}" alt="" loading="lazy">` : ''}</span>
         <div class="j-body">
-          <div class="j-top"><b>${esc((z?.name ?? e.zoneId).split(/\s[(/–]/)[0])}</b><span class="muted small">${fmt(e.date)}${e.band ? ` · ${e.band} m` : ''}</span></div>
+          <div class="j-top"><b>${esc(z?.title ?? z?.name ?? e.zoneId)}</b><span class="muted small">${fmt(e.date)}${e.band ? ` · ${e.band} m` : ''}</span></div>
           <div class="small">Trovato: ${esc(found)}${top ? ` · previsto ${top[1]} (${esc(SPECIES.find((x) => x.id === top[0])?.name ?? '')})` : ''}</div>
           <div>${badge}</div>
           ${e.note ? `<div class="small muted">${esc(e.note)}</div>` : ''}
