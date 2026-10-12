@@ -12,7 +12,7 @@ const MONTHS = ['G', 'F', 'M', 'A', 'M', 'G', 'L', 'A', 'S', 'O', 'N', 'D'];
 const MONTHS_LONG = ['gennaio', 'febbraio', 'marzo', 'aprile', 'maggio', 'giugno', 'luglio', 'agosto', 'settembre', 'ottobre', 'novembre', 'dicembre'];
 const TOX = { mortale: 'tox-deadly', tossico: 'tox-toxic', 'non commestibile': 'tox-no', commestibile: 'tox-ok' };
 
-let PREP = null, ID = null, MEDIA = null, ASSET = (f) => f, EMBED_3D = true, INFO = {}, WHERE = () => '', TRAITS = {}, FOOTER = '';
+let PREP = null, ID = null, MEDIA = null, ASSET = (f) => f, EMBED_3D = true, INFO = {}, WHERE = () => '', TRAITS = {}, FOOTER = '', INFO_OBSERVER = null;
 
 export function initSpeciesCards({ idData, media, assetUrl, allow3d = true, infographics = {}, whereSection, traits, footer, prep }) {
   PREP = prep || null;
@@ -131,6 +131,52 @@ function checks(id) {
   const c = TRAITS[id]?.check_before_picking || [];
   return c.length ? `<h3>Prima di raccoglierlo controlla</h3><p class="small muted checks-tip">Spunta mentre guardi il fungo che hai in mano.</p><ul class="checks">${c.map((x) => `<li role="checkbox" aria-checked="false" tabindex="0">${esc(x)}</li>`).join('')}</ul>` : '';
 }
+
+function infographicDetails(c) {
+  if (!c) return '';
+  const look = c.lookalike;
+  const labels = (c.labels || []).map((x) => `<li>${esc(x)}</li>`).join('');
+  return `<div class="sp-info-html">
+    <div class="sp-info-heading"><h4>${esc(c.title || '')}</h4><p class="sp-info-latin"><i>${esc(c.latin || '')}</i>${c.quality ? ` · ${esc(c.quality)}` : ''}</p></div>
+    ${labels ? `<ul class="sp-info-mobile-labels">${labels}</ul>` : ''}
+    ${c.warning ? `<p class="sp-info-mobile-warning">${esc(c.warning)}</p>` : ''}
+    ${look ? `<section class="sp-info-look"><h5>${esc(look.heading || 'Non confonderlo con')}</h5><p><span class="tox tox-mortale">${esc(look.toxicity || '')}</span> <b>${esc(look.name || '')}</b> <i>${esc(look.latin || '')}</i></p><p>${esc(look.difference || '')}</p></section>` : ''}
+    <div class="sp-info-facts">
+      ${c.habitat ? `<p><b>Habitat:</b> ${esc(c.habitat)}</p>` : ''}
+      ${c.season ? `<p><b>Stagione:</b> ${esc(c.season)}</p>` : ''}
+      ${c.minimum ? `<p class="sp-info-minimum"><b>${esc(c.minimum)}</b></p>` : ''}
+      ${c.asl ? `<p class="sp-info-asl">${esc(c.asl)}</p>` : ''}
+    </div>
+  </div>`;
+}
+
+function infographicOverlay(c) {
+  if (!c) return '';
+  const labels = (c.labels || []).map((x) => `<li>${esc(x)}</li>`).join('');
+  const targets = JSON.stringify(c.targets || []);
+  return `<svg class="sp-info-leaders" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"></svg>
+    <aside class="sp-info-overlay" aria-label="Etichette dell’illustrazione">
+      <h4>${esc(c.title || '')}</h4><p class="sp-info-latin"><i>${esc(c.latin || '')}</i>${c.quality ? ` · ${esc(c.quality)}` : ''}</p>
+      ${labels ? `<ul class="sp-info-labels" data-targets="${esc(targets)}">${labels}</ul>` : ''}
+      ${c.warning ? `<p class="sp-info-warning">${esc(c.warning)}</p>` : ''}
+    </aside>`;
+}
+
+function infographicCaptionText(c) {
+  if (!c) return '';
+  const lines = [
+    c.latin ? `<span><i>${esc(c.latin)}</i>${c.quality ? ` · ${esc(c.quality)}` : ''}</span>` : '',
+    ...(c.labels || []).map((x) => `<span>${esc(x)}</span>`),
+    c.warning ? `<span class="lb-info-warning">${esc(c.warning)}</span>` : '',
+    c.lookalike ? `<span><b>${esc(c.lookalike.heading)}:</b> ${esc(c.lookalike.name)} · <i>${esc(c.lookalike.latin)}</i> · ${esc(c.lookalike.toxicity)}<br>${esc(c.lookalike.difference)}</span>` : '',
+    c.habitat ? `<span><b>Habitat:</b> ${esc(c.habitat)}</span>` : '',
+    c.season ? `<span><b>Stagione:</b> ${esc(c.season)}</span>` : '',
+    c.minimum ? `<span><b>${esc(c.minimum)}</b></span>` : '',
+    c.asl ? `<span>${esc(c.asl)}</span>` : '',
+  ].filter(Boolean);
+  return `<span class="lb-info-copy">${lines.join('')}</span>`;
+}
+
 function whereToLook(id) {
   const w = TRAITS[id]?.where_to_look;
   if (!w) return '';
@@ -142,6 +188,7 @@ export const whereSummary = (id) => TRAITS[id]?.where_to_look?.summary || '';
 export const criticalRule = (id) => (TRAITS[id]?.field_rules || []).find((r) => r.severity === 'critico')?.text || '';
 
 export function renderSpeciesDetail(body, id) {
+  INFO_OBSERVER?.disconnect(); INFO_OBSERVER = null;
   const sp = SPECIES.find((s) => s.id === id);
   if (!sp) { body.innerHTML = '<p class="muted">Specie non trovata.</p>'; return; }
   const d = ID?.species?.[id] || {};
@@ -177,7 +224,7 @@ export function renderSpeciesDetail(body, id) {
     ${kitchen(id)}
     ${whereToLook(id)}
     ${lookalikes(d)}
-    ${INFO[id]?.file ? `<h3>Infografica</h3><button type="button" class="zoomable sp-info" data-info="1" aria-label="Apri l'infografica"><img src="${ASSET(INFO[id].file)}" alt="Infografica di riconoscimento: ${esc(sp.name)}" loading="lazy"><span class="zoom-ic" aria-hidden="true">⤢</span></button>` : ''}
+    ${INFO[id]?.file ? `<h3>Infografica</h3><figure class="sp-info"><div class="sp-info-picture"><button type="button" class="zoomable sp-info-art" data-info="1" aria-label="Apri l’illustrazione dell’infografica"><img src="${ASSET(INFO[id].file)}" alt="Illustrazione senza testo per riconoscere ${esc(sp.name)}" loading="lazy"><span class="zoom-ic" aria-hidden="true">⤢</span></button>${infographicOverlay(INFO[id].content)}</div>${infographicDetails(INFO[id].content)}<figcaption class="small muted">${esc(INFO[id].credit || '')}</figcaption></figure>` : ''}
     <div class="sp-more">
       ${sec('Dove trovarlo nelle zone', WHERE(id))}
       ${sec('Tutti i caratteri', d.cap ? traitsTable(d) + (d.aka?.length ? `<p class="small"><b>Nomi locali:</b> ${esc(d.aka.join(', '))}</p>` : '') : '')}
@@ -201,8 +248,29 @@ export function renderSpeciesDetail(body, id) {
   });
   // foto della specie: visore con zoom e swipe tra tutte le foto
   const gallery = photos.map((p) => ({ src: hd(p), alt: sp.name, caption: captionHtml({ title: esc(d.name || sp.name), text: esc([p.place, p.date].filter(Boolean).join(' · ')), credit: creditText(p) }) }));
+  const infoPicture = body.querySelector('.sp-info-picture');
+  if (infoPicture) {
+    const updateLeaders = () => {
+      const points = INFO[id]?.content?.targets || [];
+      const rows = [...infoPicture.querySelectorAll('.sp-info-labels li')];
+      const rect = infoPicture.getBoundingClientRect();
+      const svg = infoPicture.querySelector('.sp-info-leaders');
+      if (!rect.width || !rect.height || !svg) return;
+      svg.innerHTML = points.slice(0, rows.length).map((p, i) => {
+        const x = Number(p?.[0]), y = Number(p?.[1]);
+        if (!Number.isFinite(x) || !Number.isFinite(y)) return '';
+        const r = rows[i].getBoundingClientRect();
+        const ex = ((r.left - rect.left + 3) / rect.width) * 100;
+        const ey = ((r.top + r.height / 2 - rect.top) / rect.height) * 100;
+        return `<line x1="${x}" y1="${y}" x2="${ex}" y2="${ey}"/><circle cx="${x}" cy="${y}" r="0.28"/>`;
+      }).join('');
+    };
+    requestAnimationFrame(updateLeaders);
+    infoPicture.querySelector('img')?.addEventListener('load', updateLeaders, { once: true });
+    if (window.ResizeObserver) { INFO_OBSERVER = new ResizeObserver(updateLeaders); INFO_OBSERVER.observe(infoPicture); }
+  }
   body.querySelectorAll('[data-photo]').forEach((b) => b.addEventListener('click', () => openLightbox(gallery, +b.dataset.photo)));
-  body.querySelectorAll('[data-info]').forEach((b) => b.addEventListener('click', () => openLightbox([{ src: ASSET(INFO[id].file), alt: `Infografica ${sp.name}`, caption: captionHtml({ title: `Infografica · ${esc(sp.name)}`, credit: esc(INFO[id].credit || '') }) }])));
+  body.querySelectorAll('[data-info]').forEach((b) => b.addEventListener('click', () => openLightbox([{ src: ASSET(INFO[id].file), alt: `Illustrazione dell’infografica ${sp.name}`, caption: captionHtml({ title: `Infografica · ${esc(sp.name)}`, text: infographicCaptionText(INFO[id].content), credit: esc(INFO[id].credit || '') }) }])));
   // sosia: foto grande con pericolosita' e differenza da guardare
   const looks = (d.lookalikes || []).map((l) => {
     const key = (l.latin || '').match(/[A-Z][a-z]+ [a-z]+/)?.[0];

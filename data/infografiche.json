@@ -3,7 +3,36 @@
   "species": {
     "caesarea": {
       "file": "assets/infografiche/caesarea.webp",
-      "credit": "Illustrazione generata con IA (GPT Image via image_gen; versione del modello non esposta) e impaginata. Riferimenti: Yaqui e Julien Thurion (CC BY-SA 3.0), Luca Pilia (CC BY-NC), G. Bresadola (pubblico dominio). Da rivedere con un micologo."
+      "credit": "Illustrazione generata con IA (GPT Image via image_gen; versione del modello non esposta) e impaginata. Riferimenti: Yaqui e Julien Thurion (CC BY-SA 3.0), Luca Pilia (CC BY-NC), G. Bresadola (pubblico dominio). Da rivedere con un micologo.",
+      "content": {
+        "title": "Ovolo buono",
+        "labels": [
+          "Lamelle, gambo e anello GIALLI",
+          "Volva a sacco BIANCA, grande e spessa",
+          "Cappello arancio, orlo striato",
+          "In sezione: arancio e giallo"
+        ],
+        "targets": [
+          [51, 53],
+          [82, 55],
+          [51, 9],
+          [15, 56]
+        ],
+        "warning": "Vietato raccogliere l’ovolo chiuso",
+        "lookalike": {
+          "heading": "Non confonderlo con",
+          "name": "Tignosa verdognola",
+          "latin": "Amanita phalloides",
+          "toxicity": "MORTALE",
+          "difference": "L’uovo tagliato è bianco o verdastro dentro, mai arancio e giallo; da adulta ha lamelle e anello bianchi e volva bianca a sacco."
+        },
+        "habitat": "Castagneti, cerrete e querceti a roverella luminosi e asciutti, di solito sotto i 1000 m. Nel Reatino nella cintura collinare e pedemontana (es. Poggio Bustone, Cantalice, Antrodoco).",
+        "season": "Giugno-ottobre, soprattutto luglio-settembre dopo piogge calde.",
+        "minimum": "Taglia minima: 4 cm",
+        "asl": "Prima di mangiarli, fai controllare tutti i funghi dall’Ispettorato micologico ASL. È gratuito.",
+        "latin": "Amanita caesarea",
+        "quality": "ottimo"
+      }
     }
   }
 }

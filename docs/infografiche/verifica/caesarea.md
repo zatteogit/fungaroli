@@ -43,7 +43,7 @@ Foto usate solo per confronto (non allegate): [Manuela Fiorini](https://www.inat
 
 - Varianti generate: **3**. Edit mirati: **5** — un edit della volva dell’ovolo, tre dell’anello dell’ovolo e un edit della volva della falloide.
 - Esito dell’edit dell’anello: dopo tre tentativi resta ambiguo; la tavola viene consegnata **non approvata** senza ulteriori correzioni.
-- Il prompt GPT Image del brief è stato usato letteralmente per le tre varianti. Lo strumento d’immagine integrato non espone modello/versione, `size`, `quality` o `output_format`; ha restituito tavole 1122×1402, quindi la PNG sorgente 1600×2000 è stata ricampionata in alto. La versione finale è 1080×1350 WebP, 130.714 byte, qualità 80.
-- Font Public Sans, Literata e DejaVu non erano disponibili; per la composizione sono stati usati Verdana e Times New Roman. I testi sono almeno 28 px.
+- Il prompt GPT Image del brief è stato usato letteralmente per le tre varianti. Lo strumento d’immagine integrato non espone modello/versione, `size`, `quality` o `output_format`; ha restituito tavole 1122×1402, quindi la PNG sorgente 1600×2000 è stata ricampionata in alto. La tavola finale senza testo è 1080×1350 WebP, 134.906 byte, qualità 80; tutte le parole sono contenuti HTML nella scheda specie e nel visore, alimentati dal campo `content` in `data/infografiche.json`; i richiami e i punti sono linee e marcatori SVG sovrapposti in HTML/CSS.
+- I testi non sono rasterizzati. L’HTML usa il sistema tipografico e i componenti della scheda dell’app.
 - **Discrepanza istruzioni:** README §6 prescrive la riga ASL “Prima di mangiarli, fai controllare tutti i funghi dall’Ispettorato micologico ASL. È gratuito.”; il brief caesarea §2 riporta “Fai sempre controllare i funghi all’Ispettorato micologico della ASL.” È stata usata la riga fissa del README. Da uniformare nel brief.
 - Nessuna revisione di un micologo è stata eseguita; il credit mantiene l’avvertenza richiesta.
