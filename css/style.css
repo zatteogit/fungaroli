@@ -1485,9 +1485,10 @@ html:has(dialog[open]:modal) body { overflow: hidden; }
   .appbar-actions { order: 3; }
   .tabbar { left: 50%; transform: translateX(-50%); gap: 2px; --tbw: 112px; }
   .tabbar a { width: var(--tbw); justify-content: center; border-radius: 10px; color: var(--text-2); }
-  .tabbar a[aria-current="page"] { color: var(--text); font-weight: 700; }
+  .tabbar a[aria-current="page"] { color: var(--accent); font-weight: 700; }
+  @media (hover: hover) { .tabbar a[aria-current="page"]:hover { background: none; } }
   @media (hover: hover) { .tabbar a:hover { background: var(--surface-2); } }
-  .tab-pill { top: auto; bottom: 4px; left: calc((var(--tbw) - 26px) / 2); width: 26px; height: 3px; border-radius: 2px; background: var(--accent); transform: translateX(calc(var(--ti, 0) * (var(--tbw) + 2px))); }
+  .tab-pill { top: calc((var(--appbar-h) - 40px) / 2); bottom: auto; left: 0; width: var(--tbw); height: 40px; border-radius: 10px; background: var(--accent-soft); transform: translateX(calc(var(--ti, 0) * (var(--tbw) + 2px))); }
   .tab-search { width: auto; height: 38px; margin-left: 18px; padding: 0 8px 0 12px; gap: 8px; border-radius: 10px; background: var(--surface); color: var(--muted); border: 1px solid var(--hair); box-shadow: none; display: inline-flex; align-items: center; font: inherit; font-size: 14px; }
   .tab-search svg { width: 17px; height: 17px; }
   .tsl { display: inline; min-width: 90px; text-align: left; }
