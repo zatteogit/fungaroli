@@ -114,7 +114,7 @@ code { background: var(--surface-2); padding: 1px 5px; border-radius: 5px; font-
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) #map .leaflet-tile-pane { filter: saturate(.35) brightness(.7) contrast(1.05); } }
 .legend { display: flex; flex-wrap: wrap; gap: 6px 14px; padding: 10px 14px; border-top: 1px solid var(--border); font-size: 12px; color: var(--text-2); align-items: center; }
 .legend .sw { display: inline-block; width: 12px; height: 12px; border-radius: 4px; vertical-align: -2px; margin-right: 5px; }
-.legend .wms { margin-left: auto; }
+.legend .wms { flex-basis: 100%; max-height: 220px; overflow: auto; border-top: 1px solid var(--border); padding-top: 6px; }
 
 .dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; flex: none; }
 .score-pill { display: inline-flex; align-items: center; gap: 6px; font-weight: 600; font-variant-numeric: tabular-nums; }
@@ -177,6 +177,13 @@ code { background: var(--surface-2); padding: 1px 5px; border-radius: 5px; font-
 .leaflet-tooltip.zone-tt { background: var(--surface); color: var(--text); border-color: var(--border); }
 .loading { padding: 40px; text-align: center; color: var(--muted); }
 .error { background: var(--warn-bg); color: var(--warn-ink); padding: 12px; border-radius: 10px; }
+
+/* --- mappa incorporata (Artifact) --- */
+#map img.basemap { filter: saturate(.4) contrast(.9) brightness(1.06); }
+:root[data-theme="dark"] #map img.basemap { filter: saturate(.35) brightness(.7) contrast(1.05); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) #map img.basemap { filter: saturate(.35) brightness(.7) contrast(1.05); } }
+.map-toggle { font: inherit; font-size: 12.5px; font-weight: 500; padding: 7px 12px; border-radius: 8px; border: 1px solid var(--border); background: var(--surface); color: var(--text); cursor: pointer; box-shadow: 0 1px 3px rgb(0 0 0 / .15); }
+.map-toggle[aria-pressed="true"] { background: var(--text); color: var(--bg); }
 
 /* --- mappa schematica --- */
 .map-panel.schematic #map { height: auto; }

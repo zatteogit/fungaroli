@@ -201,6 +201,8 @@ function renderRanking() {
 }
 
 function initMap() {
+  const bm = globalThis.FUNGAROLI_DATA?.basemap;
+  if (hasLeaflet() && bm) { initEmbeddedMap(bm); return; }
   if (!hasLeaflet()) { document.querySelector('.map-panel').classList.add('schematic'); return; }
   map = L.map('map', { scrollWheelZoom: true, zoomControl: true }).setView([42.4, 13.05], 10);
   const topo = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
@@ -214,6 +216,32 @@ function initMap() {
   L.control.layers({ 'Topografica': topo, 'OpenStreetMap': osm }, { 'Carta Forestale (Regione Lazio)': forest }, { collapsed: true }).addTo(map);
   map.on('overlayadd', (e) => { if (e.layer === forest) $('#legend .wms').hidden = false; });
   map.on('overlayremove', (e) => { if (e.layer === forest) $('#legend .wms').hidden = true; });
+}
+
+// Versione Artifact: base topografica e Carta Forestale incorporate come immagini georeferenziate.
+function initEmbeddedMap(bm) {
+  const bounds = L.latLngBounds(bm.bounds);
+  map = L.map('map', { maxBounds: bounds.pad(0.05), minZoom: 9, maxZoom: 14, zoomSnap: 0.5 }).fitBounds(bounds);
+  L.imageOverlay(bm.topo, bounds, { className: 'basemap', attribution: bm.attribution }).addTo(map);
+  const forest = L.imageOverlay(bm.forest, bounds, { opacity: 0.55, className: 'forestmap' });
+  map.setView([42.42, 13.03], 10);
+  const Toggle = L.Control.extend({
+    onAdd() {
+      const b = L.DomUtil.create('button', 'map-toggle');
+      b.type = 'button';
+      b.textContent = 'Carta Forestale';
+      b.setAttribute('aria-pressed', 'false');
+      L.DomEvent.disableClickPropagation(b);
+      b.addEventListener('click', () => {
+        const on = !map.hasLayer(forest);
+        if (on) forest.addTo(map); else forest.remove();
+        b.setAttribute('aria-pressed', String(on));
+        $('#legend .wms').hidden = !on;
+      });
+      return b;
+    },
+  });
+  new Toggle({ position: 'topright' }).addTo(map);
 }
 
 function renderMap() {
@@ -262,8 +290,8 @@ function renderMap() {
 function renderLegend() {
   const items = [...CLASSES].reverse().map((c) => `<span><span class="sw" style="background:var(${scoreVar(c.min)})"></span>${c.label}${c.min ? ' ≥' + c.min : ''}</span>`);
   $('#legend').innerHTML = items.join('') +
-    (hasLeaflet() ? '' : '<span class="muted">Schema: cerchi = zone, anelli = distanza in linea d\'aria da Rieti</span>') +
-    `<span class="wms" hidden><img alt="Legenda Carta Forestale" style="max-width:100%;display:block;margin-top:6px" src="https://geoportale.regione.lazio.it/geoserver/ows?service=WMS&request=GetLegendGraphic&format=image/png&layer=geonode:tipi_forestali2"></span>`;
+    (hasLeaflet() || !globalThis.FUNGAROLI_DATA ? '' : '<span class="muted">Schema: cerchi = zone, anelli = distanza in linea d\'aria da Rieti</span>') +
+    `<span class="wms" hidden><img alt="Legenda Carta Forestale" style="max-width:100%;display:block;margin-top:6px" src="${globalThis.FUNGAROLI_DATA?.basemap?.legend || 'https://geoportale.regione.lazio.it/geoserver/ows?service=WMS&request=GetLegendGraphic&format=image/png&layer=geonode:tipi_forestali2'}"></span>`;
 }
 
 function forestBar(frac) {

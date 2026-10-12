@@ -27,7 +27,7 @@ Test del modello: `npm test` (Node ≥ 20).
 npm i && npm run build:artifact   # -> dist/fungaroli.html
 ```
 
-Un Artifact non può chiamare API esterne né caricare tile di mappa, quindi la build incorpora JS, CSS, dati e una **fotografia del meteo** al momento della build; la mappa diventa uno schema SVG con gli anelli di distanza da Rieti. Per aggiornare il meteo si rilancia la build e si ripubblica. Il diario nell'Artifact è salvato nel db privato dell'utente (`data/users/<id>/diario/uscite`), quindi resta tra dispositivi e Claude può leggerlo per tarare il modello.
+Un Artifact non può chiamare API esterne né caricare tile di mappa, quindi la build incorpora JS, CSS, dati e una **fotografia del meteo** al momento della build; la mappa usa una base topografica e la Carta Forestale incorporate come immagini georeferenziate (`assets/`, generate una tantum con `python3 tools/build_basemap.py`). Per aggiornare il meteo si rilancia la build e si ripubblica. Il diario nell'Artifact è salvato nel db privato dell'utente (`data/users/<id>/diario/uscite`), quindi resta tra dispositivi e Claude può leggerlo per tarare il modello.
 
 ## Diario delle uscite
 
@@ -87,7 +87,9 @@ js/species.js         specie e parametri
 js/weather.js         Open-Meteo + cache locale 1 h
 js/chart.js           grafici SVG pioggia / indice
 js/journal.js         diario: procedura guidata, archivio, confronto previsto/trovato
-js/svgmap.js          mappa schematica (versione Artifact)
+js/svgmap.js          mappa schematica di riserva
+assets/               base topografica + Carta Forestale per l'Artifact
+tools/build_basemap.py  rigenera assets/ (solo se cambia l'area)
 tools/build_artifact.mjs  build della versione Artifact
 data/zones.json       zone, quote, accessi, soste, vincoli
 data/habitat.json     generato: composizione forestale e campioni quota/bosco

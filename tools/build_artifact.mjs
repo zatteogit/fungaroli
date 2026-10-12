@@ -31,22 +31,36 @@ const bundle = await esbuild.build({
   bundle: true, format: 'iife', minify: true, write: false, target: 'es2020',
 });
 
+// base cartografica incorporata (generata una tantum da tools/build_basemap.py)
+const b64 = (f, type) => `data:${type};base64,${fs.readFileSync(path.join(ROOT, 'assets', f)).toString('base64')}`;
+const bmMeta = JSON.parse(read('assets/basemap.json'));
+const basemap = {
+  ...bmMeta,
+  topo: b64('basemap-topo.webp', 'image/webp'),
+  forest: b64('basemap-forest.webp', 'image/webp'),
+  legend: b64('forest-legend.png', 'image/png'),
+};
+const LEAFLET = 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4';
+const leafletCss = execFileSync('curl', ['-sS', '--retry', '4', `${LEAFLET}/leaflet.min.css`]).toString();
+
 const html = read('index.html');
 const title = html.match(/<title>[\s\S]*?<\/title>/)[0];
 const fonts = html.match(/<link rel="stylesheet" href="https:\/\/fonts\.googleapis\.com[^>]*>/)[0];
 const body = html.match(/<body>([\s\S]*)<\/body>/)[1]
   .replace(/<script[\s\S]*?<\/script>/g, '')
   .replace('Mappe © OpenStreetMap, OpenTopoMap (CC-BY-SA). ', '');
-const data = JSON.stringify({ zones, habitat, weather: { series: w.series, fetchedAt: w.fetchedAt.toISOString() } })
+const data = JSON.stringify({ zones, habitat, basemap, weather: { series: w.series, fetchedAt: w.fetchedAt.toISOString() } })
   .replace(/</g, '\\u003c');
 
 const out = `${title}
 ${fonts}
 <style>
+${leafletCss}
 ${read('css/style.css')}
 body { padding-inline: 0; }
 </style>
 ${body.trim()}
+<script src="${LEAFLET}/leaflet.min.js"></script>
 <script>window.FUNGAROLI_DATA=${data};</script>
 <script>${bundle.outputFiles[0].text.replace(/<\/script/g, '<\\/script')}</script>
 `;
