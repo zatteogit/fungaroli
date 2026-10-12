@@ -2,7 +2,7 @@ import './rails.js';
 import './theme.js';
 import { consumeFresh, freshDone } from './refresh.js';
 import { SPECIES, GROUPS, FOREST } from './species.js';
-import { scoreZoneDay, scoreSpecies, habitatAtBand, habitatPotential, elevationFit, classOf, CLASSES } from './model.js';
+import { scoreZoneDay, scoreSpecies, habitatAtBand, habitatPotential, elevationFit, combine, classOf, CLASSES } from './model.js';
 import { loadWeather } from './weather.js';
 import { renderCharts } from './chart.js';
 import { initJournal } from './journal.js';
@@ -27,9 +27,8 @@ const $ = (s) => document.querySelector(s);
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const cssVar = (name) => getComputedStyle(document.documentElement).getPropertyValue(name).trim();
 const scoreVar = (score) => `--s${5 - classOf(score)}`;
-// sulla mappa una scala calda (giallo → arancio → magenta → viola): il verde si perdeva tra boschi e curve di livello.
-// Niente rosso puro: nell'app il rosso vuol dire velenoso.
-const mapVar = (score) => `--m${5 - classOf(score)}`;
+// sulla mappa la stessa scala verde dell'app: per farla risaltare, quando ci sono i riquadri la carta sotto si desatura (#map.cells-on)
+const mapVar = scoreVar;
 const fmtDate = (d, opts) => new Date(d + 'T12:00:00').toLocaleDateString('it-IT', opts);
 
 // Colore fisso per categoria forestale (il colore segue l'entita', non il rango).
@@ -307,22 +306,26 @@ function fitChips(box) {
 let fitT2;
 addEventListener('resize', () => { clearTimeout(fitT2); fitT2 = setTimeout(() => { fitN = 99; renderFilterSummary(); }, 150); });
 function renderFilterSummary() {
-  const box = $('#active-filters');
+  renderFilterBox($('#active-filters'));
+  renderFilterBox($('#map-filters'), true);
+}
+function renderFilterBox(box, onMap = false) {
   if (!box) return;
   const all = state.groups.size === GROUPS.length;
   const order = groupOrder();
-  const vis = chipsOpen ? order : order.filter((g, k) => k < fitN || (!all && state.groups.has(g.id)));
+  // in mappa la riga scorre di lato: tutti i funghi, senza "+ altri"
+  const vis = chipsOpen || onMap ? order : order.filter((g, k) => k < fitN || (!all && state.groups.has(g.id)));
   const hidden = order.length - vis.length;
   box.innerHTML = `<button type="button" class="chip" data-g="all" aria-pressed="${all}">Tutti</button>
     ${vis.map((g) => `<button type="button" class="chip chip-g" data-g="${g.id}" aria-pressed="${!all && state.groups.has(g.id)}">${esc(g.label)}</button>`).join('')}
-    ${hidden > 0 ? `<button type="button" class="chip chip-more" data-more>+ altri ${hidden}</button>` : chipsOpen ? '<button type="button" class="chip chip-more" data-less>Meno</button>' : ''}
+    ${onMap ? '' : hidden > 0 ? `<button type="button" class="chip chip-more" data-more>+ altri ${hidden}</button>` : chipsOpen ? '<button type="button" class="chip chip-more" data-less>Meno</button>' : ''}
     <span class="af-sep" aria-hidden="true"></span>
     ${PREFS.map(([k, label]) => `<button type="button" class="chip pref" data-p="${k}" aria-pressed="${!!state[k]}">${esc(label)}</button>`).join('')}`;
   const changed = () => soft(() => { savePrefs(); renderFilterSummary(); if (series) { compute(); outCache.clear(); renderAll(); } });
   box.querySelector('[data-more]')?.addEventListener('click', () => soft(() => { chipsOpen = true; renderFilterSummary(); }));
   box.classList.toggle('open', chipsOpen);
   box.querySelector('[data-less]')?.addEventListener('click', () => soft(() => { chipsOpen = false; renderFilterSummary(); }));
-  if (!chipsOpen) fitChips(box);
+  if (!chipsOpen && !onMap) fitChips(box);
   box.querySelectorAll('[data-g]').forEach((b) => b.addEventListener('click', () => {
     const id = b.dataset.g;
     if (id === 'all') state.groups = new Set(GROUPS.map((g) => g.id));
@@ -404,7 +407,8 @@ function compute() {
     const days = [];
     for (let i = Math.max(30, t - HISTORY_DAYS); i <= t + AHEAD_DAYS && i < sb[0].dates.length; i++) {
       const r = scoreZoneDay(z, habitat[z.id], sb, sp, i);
-      days.push({ i, date: sb[0].dates[i], ...r, score: r.best ? r.best.score : 0 });
+      // indice della zona: almeno uno dei funghi scelti (model.combine); il migliore resta in r.best
+      days.push({ i, date: sb[0].dates[i], ...r, score: r.best ? combine(r.perSpecies.map((p) => p.score)) : 0 });
     }
     // fattore umano: accesso, comodita' e affollamento per ogni giorno
     const acc0 = access[z.id]?.[0];
@@ -992,21 +996,24 @@ const CELL = 300;
 function zoneCells(z, d) {
   const hab = habitat[z.id];
   if (!hab?.samples?.length || !d?.perSpecies?.length) return [];
-  const sp = d.perSpecies.slice(0, 3).map((p) => ({ p, sc: spScore(z, d, p) })).filter((x) => x.sc >= 15);
+  const sp = d.perSpecies.map((p) => ({ p, sc: spScore(z, d, p) })).filter((x) => x.sc >= 10);
   const out = [];
   for (const smp of hab.samples) {
     const [e, c, lat, lon] = smp;
     const cat = c >= 0 ? hab.sample_categories[c] : 'non bosco';
-    let best = 0, who = null;
+    const parts = [];
     for (const { p, sc } of sp) {
       const f = p.species.forest[cat] || 0;
       if (f < 0.5) continue;
-      // il meteo e' calcolato alla quota migliore: entro 200 m vale tutto, poi cala fino a 600 m
+      // il meteo e' calcolato alla quota migliore della specie: entro 200 m vale tutto, poi cala fino a 600 m
       const band = Math.max(0, 1 - Math.max(0, Math.abs(e - p.band) - 200) / 400);
       const v = Math.round(sc * f * elevationFit(p.species, e) * band);
-      if (v > best) { best = v; who = p.species; }
+      if (v >= 5) parts.push({ sp: p.species, v });
     }
-    if (best >= 15) out.push({ lat, lon, v: best, e, cat, sp: who });
+    if (!parts.length) continue;
+    parts.sort((a, b) => b.v - a.v);
+    const v = combine(parts.map((x) => x.v)); // stesso aggregato della zona
+    if (v >= 15) out.push({ lat, lon, v, e, cat, parts });
   }
   return out;
 }
@@ -1023,7 +1030,7 @@ function cellsLayer(z, d, interactive = true) {
     }).addTo(lg);
     if (!interactive) continue;
     r.on('click', () => openSheet(z.id))
-      .bindTooltip(`<b>${esc(c.sp.name.split(' / ')[0])} · ${c.v}%</b><br>${esc(c.cat)}, ${c.e} m`, { className: 'zone-tt', sticky: true });
+      .bindTooltip(`<b>${c.v}%</b> · ${esc(c.cat)}, ${c.e} m<br>${c.parts.slice(0, 3).map((x) => `${esc(x.sp.name.split(' / ')[0])} ${x.v}%`).join(' · ')}${c.parts.length > 3 ? ` · +${c.parts.length - 3}` : ''}`, { className: 'zone-tt', sticky: true });
     // il riquadro sotto il mouse si stacca: bordo chiaro e colore pieno
     if (canHover) r.on('mouseover', () => { r.setStyle({ stroke: true, fillOpacity: 0.95 }); r.bringToFront(); }).on('mouseout', () => r.setStyle({ stroke: false, fillOpacity: op }));
   }
@@ -1048,6 +1055,7 @@ function renderMap() {
   }
   for (const k in zoneLayers) zoneLayers[k].remove();
   zoneLayers = {};
+  $('#map').classList.toggle('cells-on', map.getZoom() >= 11.5 || !!state.zoneId);
   // etichette con nome: spostamento verticale greedy (in pixel) per evitare sovrapposizioni
   const placed = [];
   const labelPos = {};
@@ -1080,7 +1088,7 @@ function renderMap() {
       circle.on('mouseover', () => { circle.setStyle({ weight: 3.5, fillOpacity: 0.1, dashArray: '6 6' }); prev ||= cellsLayer(z, d, false); prev.addTo(g); });
       circle.on('mouseout', () => { circle.setStyle({ weight: 2, fillOpacity: 0.28, dashArray: null }); prev?.remove(); });
     }
-    if (matchMedia('(hover: hover)').matches) g.getLayers()[0].bindTooltip(`<b>${esc(z.name)}</b><br>${s}% ${esc(CLASSES[classOf(s)].label.toLowerCase())} · ${d?.best ? esc(d.best.species.name) + ' ~' + d.best.band + ' m' : '—'}`, { className: 'zone-tt', sticky: true });
+    if (matchMedia('(hover: hover)').matches) g.getLayers()[0].bindTooltip(`<b>${esc(z.name)}</b><br>${s}% ${esc(CLASSES[classOf(s)].label.toLowerCase())}${d?.perSpecies?.length ? ` · ${d.perSpecies.slice(0, 3).map((p) => `${esc(p.species.name.split(' / ')[0])} ${spScore(z, d, p)}%`).join(', ')}` : ''}`, { className: 'zone-tt', sticky: true });
     L.marker(labelPos[z.id], {
       icon: L.divIcon({ className: '', html: `<span class="zone-label${state.zoneId && !selected ? ' zone-label-min' : ''}${selected ? ' zone-label-sel' : ''}"><span class="dot" style="background:${color}"></span> <b class="pc">${s}</b>${state.zoneId && !selected ? '' : ` <span class="zone-name">${esc(shortName(z))}</span>`}</span>`, iconSize: null }),
       interactive: false,
@@ -1265,7 +1273,7 @@ function renderDetail() {
     <a class="btn ghost big map-link" href="#/mappa/${z.id}">${IC.map} Sentieri e accesso sulla mappa</a>
     ${zoneLegal(z, d)}
     ${z.protection ? `<div class="notice">${esc(z.protection)}</div>` : ''}
-    ${section('meteo', 'Perché questo indice', `${renderWhy({ r: best, s: sb, i: d.i, sp: best.species, band: best.band, dateStr: d.date, shown: s, prefs: adjParts(z, d), outing: wxRank(z, d) < 1 ? wxRank(z, d) : 0 })}
+    ${section('meteo', 'Perché questo indice', `${renderWhy({ r: best, s: sb, i: d.i, sp: best.species, band: best.band, dateStr: d.date, shown: s, agg: d.score, parts: d.perSpecies.map((p) => ({ name: p.species.name.split(' / ')[0], score: p.score })), prefs: adjParts(z, d), outing: wxRank(z, d) < 1 ? wxRank(z, d) : 0 })}
       <p class="sci-h">L'indice nei giorni</p><div id="charts"></div>${legal?.forecast_note ? `<p class="small muted">${esc(legal.forecast_note)}</p>` : ''}`)}
     ${section('quando', 'Quando andare e affollamento', renderHuman(z, d))}
     ${section('accesso', 'Accesso in auto e a piedi', renderAccess(z, d))}

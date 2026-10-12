@@ -86,7 +86,7 @@ function speciesProfile(sp) {
 }
 
 // la sezione "Perche' questo indice", completa
-export function renderWhy({ r, s, i, sp, band, dateStr, shown, prefs = [], outing }) {
+export function renderWhy({ r, s, i, sp, band, dateStr, shown, agg, parts = [], prefs = [], outing }) {
   const rows = factorRows(r, sp, band, dateStr);
   const product = Math.min(1, rows.reduce((a, x) => a * x.v, 1));
   const weakest = rows.filter((x) => !x.bonus).reduce((a, x) => (x.v < a.v ? x : a));
@@ -101,6 +101,7 @@ export function renderWhy({ r, s, i, sp, band, dateStr, shown, prefs = [], outin
       </li>`).join('')}
     </ol>
     <p class="sci-eq"><span>100 × ${rows.map((x) => n1(x.v, 2)).join(' × ')}</span> = <b>${raw}</b></p>
+    ${parts.length > 1 ? `<p class="sci-note"><b>Questo è l'indice di ${esc(sp.name.split(' / ')[0].toLowerCase())}</b>, il fungo più probabile. L'indice della zona vale per <b>almeno uno</b> dei funghi che hai scelto (${parts.slice(1, 4).map((x) => `${esc(x.name.toLowerCase())} ${x.score}`).join(', ')}${parts.length > 4 ? '…' : ''}): il secondo fungo pesa il 35% e ogni altro la metà del precedente, perché lo stesso meteo li fa nascere o no insieme e non si possono sommare come eventi indipendenti. Risultato: <b>${agg}</b>.</p>` : ''}
     ${prefs.length ? `<p class="sci-note">Con le tue preferenze (${prefs.map((p) => `${esc(p.label)} ×${n1(p.mult, 2)}`).join(', ')}) l'indice mostrato è <b>${shown}</b>.</p>` : ''}
     ${outing ? `<p class="sci-note"><b>Il meteo dell'uscita non cambia l'indice</b>: cambia solo l'ordine delle zone (×${n1(outing, 2)} in classifica), perché i funghi nascono lo stesso anche se quel giorno piove.</p>` : ''}
     ${fc}

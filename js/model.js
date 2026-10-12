@@ -147,6 +147,19 @@ export function scoreZoneDay(zone, hab, seriesByBand, speciesList, i) {
   return { best, perSpecies };
 }
 
+// Indice di una zona (o di un riquadro) per piu' funghi insieme: "almeno uno di quelli scelti".
+// Non e' l'unione di eventi indipendenti (lo stesso meteo li fa nascere o no insieme, e con molte specie
+// arriverebbe sempre a 100): il migliore conta pieno, il secondo pesa il 35%, ogni altro la meta' del precedente.
+// Cosi' il bonus resta limitato (anche con tutti gli altri a 100: al massimo meta' della distanza da 100).
+export const COMBINE_WEIGHT = 0.35;
+export function combine(scores) {
+  const a = scores.filter((x) => x > 0).sort((x, y) => y - x);
+  if (!a.length) return 0;
+  let miss = 1 - a[0] / 100, w = COMBINE_WEIGHT;
+  for (const x of a.slice(1)) { miss *= 1 - w * (x / 100); w /= 2; }
+  return Math.round((1 - miss) * 100);
+}
+
 export const CLASSES = [
   // parole di probabilita' (qualitative: l'indice non e' una probabilita' calibrata)
   { min: 75, label: 'Molto probabile' },

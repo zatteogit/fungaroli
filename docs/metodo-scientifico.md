@@ -20,7 +20,20 @@ In sintesi, prima di entrare nel dettaglio: i dati di ingresso (bosco, quote, me
 
 Per ogni combinazione di **zona × fascia di quota × specie × giorno** l'app calcola un indice di idoneità alla fruttificazione. Non è una probabilità di trovare funghi e non è una stima di quantità: è un punteggio relativo che dice quanto le condizioni di quel giorno somigliano a quelle in cui la specie di solito fruttifica.
 
-Ogni zona ha tre fasce di quota (in `data/zones.json`, campo `bands`). Per ogni zona e giorno l'app tiene la combinazione quota × specie con l'indice più alto, e quella è l'indice della zona.
+Ogni zona ha tre fasce di quota (in `data/zones.json`, campo `bands`). Per ogni specie l'app tiene la fascia con l'indice più alto.
+
+### Più funghi insieme: l'indice della zona
+
+L'indice della zona vale per **almeno uno dei funghi scelti** nei filtri (`combine` in `js/model.js`). Non si usa l'unione di eventi indipendenti, 1 − Π(1 − pᵢ), perché i funghi non sono indipendenti (lo stesso meteo li fa nascere o no insieme) e perché con molte specie in stagione l'unione arriva sempre vicino a 100, e allora l'indice non aiuta più a scegliere. Regola usata: si ordinano gli indici dal più alto; il primo conta pieno, il secondo pesa il 35%, ogni altro la metà del precedente:
+
+```
+mancato = (1 − p₁) × (1 − 0,35·p₂) × (1 − 0,175·p₃) × (1 − 0,0875·p₄) × …
+indice  = 1 − mancato
+```
+
+Esempio: mazza di tamburo 78, chiodino 52, porcino 31 → 1 − 0,22 × 0,818 × 0,946 = 0,830 → **83**. Anche con tutti gli altri funghi a 100 il bonus non supera circa metà della distanza tra il fungo migliore e 100: il fungo migliore resta quello che decide. Con un solo fungo scelto l'indice della zona è quello del fungo. Le schede mostrano sempre anche l'indice di ogni fungo.
+
+Sulla mappa, da vicino, ogni riquadro di 300 m della Carta Forestale ha lo stesso aggregato: per ogni fungo, l'indice per quanto è adatto quel bosco alla specie, la quota rispetto al suo intervallo e la vicinanza alla quota migliore del giorno (piena entro 200 m, nulla oltre 600 m).
 
 ### La formula
 

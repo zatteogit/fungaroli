@@ -27,7 +27,6 @@
   --line: #326820;
   --grid: #e6dfd3;
   /* rampa dell'indice su fondo chiaro: da un verde chiaro a un verde pieno (mai quasi nero) */
-  --m0: #bdb6a8; --m1: #fde9a0; --m2: #fdb863; --m3: #f4795a; --m4: #c73e7f; --m5: #6a2a9a; /* scala della mappa */
   --s0: #cfcabf; --s1: #c2dea8; --s2: #9fcb7a; --s3: #7ab553; --s4: #5a9c37; --s5: #3f8424;
   /* su fondo scuro (giorno selezionato, anelli sulle foto): cresce la saturazione, non la chiarezza */
   --ps0: #8d8a82; --ps1: #8a9e7c; --ps2: #8fb66c; --ps3: #93cb57; --ps4: #98dc43; --ps5: #a2ec33;
@@ -1787,4 +1786,16 @@ html.theme-swap, html.theme-swap *, html.theme-swap *::before, html.theme-swap *
 }
 .install-invite h2:focus { outline: none; }
 .lg-cells { flex-basis: 100%; display: flex; gap: 8px; align-items: flex-start; font-size: 12.5px; color: var(--muted); }
-.sw-cell { flex: none; width: 12px; height: 12px; border-radius: 2px; margin-top: 2px; background: linear-gradient(90deg, var(--m1), var(--m3), var(--m5)); }
+.sw-cell { flex: none; width: 12px; height: 12px; border-radius: 2px; margin-top: 2px; background: linear-gradient(90deg, var(--s1), var(--s3), var(--s5)); }
+/* filtri anche sulla mappa: riga sotto i giorni, scorre di lato */
+.map-filters { position: absolute; z-index: 600; top: 96px; left: 0; right: 64px; margin: 0 !important; flex-wrap: nowrap !important; overflow-x: auto !important; padding: 2px var(--gutter, 16px) 6px; pointer-events: none; }
+.map-filters > * { pointer-events: auto; }
+.map-filters .chip { box-shadow: var(--shadow-1); background: var(--surface); }
+.map-filters .af-sep { flex-basis: auto !important; width: 1px !important; height: auto; align-self: stretch; margin: 6px 2px !important; background: var(--border) !important; }
+.view-map .rail-host:has(.map-filters) { position: absolute; z-index: 600; top: 96px; left: 0; right: 64px; }
+.view-map .rail-host:has(.map-filters) .map-filters { position: static; }
+/* riquadri visibili: la carta sotto perde colore, cosi' il verde della probabilita' si legge (stessa scala del resto dell'app) */
+#map .leaflet-tile-pane, #map .basemap { transition: filter .3s; }
+#map.cells-on .leaflet-tile-pane, #map.cells-on .basemap { filter: saturate(.15) contrast(.9) brightness(1.06); }
+:root[data-theme="dark"] #map.cells-on .leaflet-tile-pane, :root[data-theme="dark"] #map.cells-on .basemap { filter: saturate(.1) brightness(.6) contrast(1.05); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) #map.cells-on .leaflet-tile-pane, :root:not([data-theme="light"]) #map.cells-on .basemap { filter: saturate(.1) brightness(.6) contrast(1.05); } }
