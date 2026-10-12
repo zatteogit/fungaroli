@@ -39,9 +39,17 @@ export function initIdentify({ traits, media, assetUrl, thumb, potential, zones,
 }
 export const hasIdentify = () => TAXA.length > 0;
 
+const slug = (s) => norm(s).replace(/[^a-z]+/g, '-').replace(/^-|-$/g, '');
 function photoOf(t) {
   if (t.edible_id) { const m = MEDIA.species?.[t.edible_id]; return m?.ref || m?.inat?.[0]; }
-  const m = MEDIA.lookalikes?.[t.latin?.match(/[A-Z][a-z]+ [a-z]+/)?.[0]];
+  const L = MEDIA.lookalikes || {};
+  // per nome latino; se la nomenclatura e' cambiata (es. Desarmillaria), per epiteto o per chiave
+  let m = L[t.latin?.match(/[A-Z][a-z]+ [a-z]+/)?.[0]];
+  if (!m) {
+    const ep = t.latin?.split(' ')[1];
+    const k = Object.keys(L).find((x) => slug(x) === t.key || (ep && x.endsWith(' ' + ep)));
+    m = k && L[k];
+  }
   return m?.ref || m?.inat?.[0];
 }
 
