@@ -305,7 +305,10 @@ function contraText(c) {
     if (k === 'season') return `<b>Non torna: stagione.</b> Di solito si trova in ${esc(monthsTxt(exp))}.`;
     if (k === 'trees') return `<b>Non torna: alberi.</b> Di solito vicino a ${esc(orList(exp.slice(0, 4)))}.`;
     if (q.bool) return `<b>Non torna: ${esc(q.short.toLowerCase())}.</b> Hai indicato ${withOut(k, state.ans[k])}, ma di solito ${exp[0] ? 'ce l\'ha' : 'non ce l\'ha'}.`;
-    const say = (v) => (k === 'flesh_change' ? (v === 'nessuno' ? 'non cambia' : `vira al ${v}`) : optLabel(q, v));
+    // colori di lamelle e pori accordati: "bianche o crema" (lamelle), "bianchi o gialli" (pori)
+    const h = [].concat(c.t.traits?.hymenophore || [])[0];
+    const g = k === 'hymenophore_color' ? ({ lamelle: 'fp', pliche: 'fp', pori: 'mp', aculei: 'mp' }[h] || 'ms') : 'ms';
+    const say = (v) => (k === 'flesh_change' ? (v === 'nessuno' ? 'non cambia' : `vira al ${v}`) : g !== 'ms' ? agree(v, g) : optLabel(q, v));
     const verb = { hymenophore: 'ha ', cap_color: 'è ', hymenophore_color: 'sono ', habitat: 'cresce ', growth: 'cresce ', spore_print: 'è ', gill_attachment: 'sono ', cap_surface: 'è ', flesh_texture: 'si spezza ', stem_base: 'è ' }[k] || '';
     return `<b>Non torna: ${esc(q.short.toLowerCase())}.</b> Hai indicato ${esc(say(state.ans[k]))}, ma di solito ${verb}${esc(orList(exp.map(say)))}.`;
   }).join(' ');
@@ -319,7 +322,7 @@ function resultCard(c) {
   // tutta la card porta alla scheda (link "allungato"); la foto si ingrandisce dal suo pulsante
   return `<li class="id-card vtn tox-${tox.replace(/\s/g, '-')}" style="--vtn:c-${t.key.replace(/[^a-z0-9-]/gi, '')}">
     <div class="id-card-img">
-      ${ph ? `<img src="${ASSET(ph.thumb || ph.file)}" alt="" loading="lazy" decoding="async">` : ''}<span class="tox">${toxL}</span>
+      ${ph ? `<img src="${ASSET(ph.file)}" alt="" loading="lazy" decoding="async">` : ''}<span class="tox">${toxL}</span>
       ${ph ? `<button type="button" class="id-zoom" data-photo="${esc(t.key)}" aria-label="${name}: ingrandisci la foto"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6"/><path d="m20 20-5-5M10.5 8v5M8 10.5h5"/></svg></button>` : ''}
       ${c.tot ? `<span class="id-fit${c.contra.length ? ' warn' : ''}">${c.ok}/${c.tot}</span>` : ''}</div>
     <div class="id-card-body">

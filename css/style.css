@@ -489,7 +489,7 @@ li.crit { font-weight: 600; }
 .id-head { display: flex; align-items: baseline; justify-content: space-between; }
 .id-deadly { margin: 0 0 12px; padding: 12px 14px; border-radius: var(--r-md); background: var(--crit-bg); color: var(--crit-ink); border: 1px solid color-mix(in srgb, var(--crit) 22%, transparent); font-size: 14px; }
 .id-deadly b { color: var(--crit); }
-.id-cards { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+.id-cards { list-style: none; margin: 0 0 20px; padding: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; align-items: start; }
 .id-card { position: relative; cursor: pointer; transition: box-shadow .15s, transform .15s; display: grid; grid-template-rows: auto 1fr; border-radius: var(--r-md); overflow: hidden; background: var(--surface); border: 1px solid var(--hair); }
 .id-card.tox-mortale { border-color: color-mix(in srgb, var(--crit) 55%, transparent); box-shadow: 0 0 0 1px color-mix(in srgb, var(--crit) 40%, transparent); }
 .id-card-img { position: relative; aspect-ratio: 4 / 3; border: 0; padding: 0; background: var(--surface-3); display: block; width: 100%; }
