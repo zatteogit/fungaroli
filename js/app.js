@@ -63,6 +63,7 @@ const hasLeaflet = () => typeof globalThis.L !== 'undefined';
 async function init() {
   // versione Artifact: dati incorporati nella pagina (niente fetch esterni)
   const embedded = globalThis.FUNGAROLI_DATA;
+  const review = !!globalThis.FUNGAROLI_REVIEW; // copia di revisione: niente API esterne
   const load = (f) => fetch(`data/${f}.json`).then((r) => (r.ok ? r.json() : null)).catch(() => null);
   legal = embedded ? embedded.legal : await load('legal');
   const [zj, hj, aj, tj, idj, mj, ij, trj, stj, mtj, mzj] = embedded
@@ -72,7 +73,7 @@ async function init() {
   if (mj && mtj?.trees) mj.trees = { ...(mj.trees || {}), ...mtj.trees };
   traits = stj;
   initSpeciesCards({
-    idData: idj, media: mj, allow3d: !embedded, infographics: ij?.species,
+    idData: idj, media: mj, allow3d: !embedded && !review, infographics: ij?.species,
     whereSection: (id) => whereToFind(id),
     traits: stj, footer: legal?.species_footer,
     assetUrl: embedded ? (f) => embedded.assets?.[f] || '' : (f) => f,
@@ -96,7 +97,7 @@ async function init() {
   initJournal({ zones, predict, getZoneId: () => state.zoneId || zones[0].id, zoneImage: (zid) => zoneMedia[zid]?.file || speciesPhoto(SPECIES[0].id)?.file });
   route(); // le pagine che non dipendono dal meteo (specie, diario, info) compaiono subito
   await refreshWeather(false);
-  if (embedded) $('#refresh').hidden = true;
+  if (embedded || review) $('#refresh').hidden = true;
   else $('#refresh').addEventListener('click', () => refreshWeather(true));
   for (const [id, key] of [['distance-penalty', 'distancePenalty'], ['avoid-crowd', 'avoidCrowd'], ['prefer-comfort', 'preferComfort']]) {
     const b = $('#' + id);
@@ -500,7 +501,7 @@ function openSheet(zid) {
 }
 
 function initMap() {
-  const bm = globalThis.FUNGAROLI_DATA?.basemap;
+  const bm = globalThis.FUNGAROLI_DATA?.basemap || globalThis.FUNGAROLI_REVIEW?.basemap;
   if (hasLeaflet() && bm) { initEmbeddedMap(bm); return; }
   if (!hasLeaflet()) { document.querySelector('.map-panel').classList.add('schematic'); return; }
   map = L.map('map', { scrollWheelZoom: true, zoomControl: true }).setView([42.4, 13.05], 10);
@@ -622,7 +623,7 @@ function renderLegend() {
   const items = [...CLASSES].reverse().map((c) => `<span><span class="sw" style="background:var(${scoreVar(c.min)})"></span>${c.label}${c.min ? ' ≥' + c.min : ''}</span>`);
   $('#legend').innerHTML = items.join('') +
     (hasLeaflet() || !globalThis.FUNGAROLI_DATA ? '' : '<span class="muted">Schema: cerchi = zone, anelli = distanza in linea d\'aria da Rieti</span>') +
-    `<span class="wms" hidden><img alt="Legenda Carta Forestale" style="max-width:100%;display:block;margin-top:6px" src="${globalThis.FUNGAROLI_DATA?.basemap?.legend || 'https://geoportale.regione.lazio.it/geoserver/ows?service=WMS&request=GetLegendGraphic&format=image/png&layer=geonode:tipi_forestali2'}"></span>`;
+    `<span class="wms" hidden><img alt="Legenda Carta Forestale" style="max-width:100%;display:block;margin-top:6px" src="${(globalThis.FUNGAROLI_DATA || globalThis.FUNGAROLI_REVIEW)?.basemap?.legend || 'https://geoportale.regione.lazio.it/geoserver/ows?service=WMS&request=GetLegendGraphic&format=image/png&layer=geonode:tipi_forestali2'}"></span>`;
 }
 
 function forestBar(frac) {

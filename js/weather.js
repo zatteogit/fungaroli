@@ -54,7 +54,8 @@ export function todayISO() {
 // Ritorna { [zoneId]: [serie per ciascuna fascia di quota] } e l'ora di aggiornamento.
 export async function loadWeather(zones, { force = false } = {}) {
   // versione Artifact: serie gia' calcolate e incorporate (la pagina non puo' chiamare Open-Meteo)
-  const snap = globalThis.FUNGAROLI_DATA?.weather;
+  // (anche la copia di revisione su claude.ai: FUNGAROLI_REVIEW, solo meteo e mappa di base)
+  const snap = globalThis.FUNGAROLI_DATA?.weather || globalThis.FUNGAROLI_REVIEW?.weather;
   if (snap) {
     const today = todayISO();
     let stale = false;
