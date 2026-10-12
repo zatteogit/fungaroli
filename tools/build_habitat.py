@@ -26,6 +26,7 @@ to_utm = Transformer.from_crs("EPSG:4326", "EPSG:32633", always_xy=True).transfo
 
 
 CACHE = ROOT / ".cache" / "http"
+UA = "Fungaroli/0.1 (https://github.com/zatteogit/fungaroli; progetto personale non commerciale)"
 
 
 def get_json(url, params, tries=8):
@@ -35,8 +36,8 @@ def get_json(url, params, tries=8):
     if f.exists():
         return json.loads(f.read_text())
     for i in range(tries):
-        r = subprocess.run(["curl", "-sS", "-m", "120", "-A", "fungaroli/0.1", q], capture_output=True, text=True)
-        if r.returncode == 0:
+        r = subprocess.run(["curl", "-sS", "-m", "120", "-A", UA, q], capture_output=True, text=True)
+        if r.returncode == 0 and r.stdout.lstrip().startswith(("{", "[")):
             try:
                 d = json.loads(r.stdout)
                 if not (isinstance(d, dict) and d.get("error")):

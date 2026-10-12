@@ -14,7 +14,7 @@ import json, re, subprocess, sys, time, urllib.parse
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from build_habitat import get_json  # noqa: E402  (curl + cache + retry)
+from build_habitat import UA, get_json  # noqa: E402  (curl + cache + retry)
 
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "assets" / "species"
@@ -34,10 +34,12 @@ def species_list():
 
 def download(url, dest):
     for i in range(5):
-        r = subprocess.run(["curl", "-sS", "-L", "-m", "120", "-A", "fungaroli/0.1 (uso personale)", "-o", str(dest), url])
+        if dest.exists() and dest.stat().st_size > 2000:
+            return True
+        r = subprocess.run(["curl", "-sS", "-L", "-f", "-m", "120", "-A", UA, "-o", str(dest), url])
         if r.returncode == 0 and dest.exists() and dest.stat().st_size > 2000:
             return True
-        time.sleep(2 ** (i + 1))
+        time.sleep(10 * (i + 1))
     return False
 
 
@@ -128,6 +130,14 @@ def sketchfab(latin):
             "page": m["viewerUrl"], "embed": f"https://sketchfab.com/models/{m['uid']}/embed?autostart=0&ui_infos=0&ui_watermark=0"}
 
 
+def safe(fn, *a, default=None):
+    try:
+        return fn(*a)
+    except Exception as e:  # noqa: BLE001 - una fonte che non risponde non deve fermare le altre
+        print("  saltato:", fn.__name__, str(e)[:120], file=sys.stderr)
+        return default
+
+
 def main():
     OUT.mkdir(parents=True, exist_ok=True)
     ids = {}
@@ -139,18 +149,21 @@ def main():
              "species": {}, "lookalikes": {}}
     for sid, latin in species_list():
         print(sid, latin, file=sys.stderr)
-        qid, ref = commons_photo(latin, sid)
-        media["species"][sid] = {"latin": latin, "wikidata": qid, "ref": ref, "inat": inat_photos(latin, sid),
-                                 "gbif": gbif_months(latin), "model3d": sketchfab(latin)}
+        qid, ref = safe(commons_photo, latin, sid, default=(None, None))
+        time.sleep(3)
+        media["species"][sid] = {"latin": latin, "wikidata": qid, "ref": ref, "inat": safe(inat_photos, latin, sid, default=[]),
+                                 "gbif": safe(gbif_months, latin), "model3d": safe(sketchfab, latin)}
         for lk in ids.get(sid, {}).get("lookalikes", []):
             ll = re.match(r"[A-Z][a-z]+ [a-z]+", lk.get("latin", "") or "")
             if not ll or ll.group(0) in media["lookalikes"]:
                 continue
             slug = ll.group(0).lower().replace(" ", "-")
             print("  sosia", ll.group(0), file=sys.stderr)
-            lq, lref = commons_photo(ll.group(0), slug)
-            media["lookalikes"][ll.group(0)] = {"wikidata": lq, "ref": lref, "inat": inat_photos(ll.group(0), slug, n=1)}
-    (ROOT / "data" / "media.json").write_text(json.dumps(media, ensure_ascii=False, indent=1))
+            lq, lref = safe(commons_photo, ll.group(0), slug, default=(None, None))
+            time.sleep(3)
+            media["lookalikes"][ll.group(0)] = {"wikidata": lq, "ref": lref, "inat": safe(inat_photos, ll.group(0), slug, 1, default=[])}
+        # salvataggio progressivo: si puo' rilanciare e riprende dalla cache
+        (ROOT / "data" / "media.json").write_text(json.dumps(media, ensure_ascii=False, indent=1))
 
 
 if __name__ == "__main__":
