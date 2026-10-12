@@ -7,7 +7,9 @@
     "directory": ".",
     "binding": "ASSETS"
   },
-  // Diario sincronizzato: crea il namespace KV "fungaroli-diario" e incolla qui il suo ID.
-  // Senza KV l'app funziona lo stesso, con il diario salvato nel browser.
-  "kv_namespaces": []
+  // Diario sincronizzato: namespace KV "fungaroli-diario". Il segreto DIARIO_TOKEN
+  // sta nelle impostazioni del Worker (Settings -> Variables and Secrets), non qui.
+  "kv_namespaces": [
+    { "binding": "DIARIO", "id": "d09f741e0e9d47d38d28c69d43efcc3e" }
+  ]
 }
