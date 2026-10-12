@@ -108,7 +108,7 @@ Con `topt = 13 °C` e `tsd = 3,5 °C` per il porcino: a 13 °C il fattore vale 1
 | Moretta (*T. terreum*) | 9 | 3,5 | Euristica |
 | Agarico violetto (*L. nuda*) | 8 | 3,5 | Euristica |
 
-**La base per il porcino.** Brejon Lamartinière e Hoffman (2025) hanno analizzato dieci anni (2015-2024) di conteggi giornalieri di carpofori di *B. edulis* in una faggeta vicino a Bielefeld, in Germania, con modelli lineari generalizzati misti. Il picco di fruttificazione coincide con una temperatura media di circa 13 °C calcolata sui 20 giorni precedenti. Il lavoro è un **preprint su bioRxiv, non ancora revisionato**, e riguarda un solo sito di pianura centro-europea. **Interpretazione**: applicarlo alle faggete del Terminillo o della Laga è un'estrapolazione ragionevole per la specie e l'habitat, meno per il clima (l'Appennino ha estati più calde e secche e un regime di piogge diverso).
+**La base per il porcino.** Brejon Lamartinière e Hoffman (2025) hanno analizzato dieci anni (2015-2024) di conteggi giornalieri di carpofori di *B. edulis* in una faggeta vicino a Bielefeld, in Germania, con modelli lineari generalizzati misti. Il picco di fruttificazione coincide con una temperatura media di circa 13 °C calcolata sui 20 giorni precedenti. Il lavoro è un **preprint su bioRxiv, non ancora revisionato**, e riguarda un solo sito di pianura centro-europea. Nella versione 2 (giugno 2026), che sostituisce la prima: ottimo termico di circa 13 °C sulla media dei 20 giorni (13,7 °C nella didascalia della Fig. 4: testo e figura non coincidono); effetto lineare e positivo della pioggia cumulata su 26 giorni (26-32 nei due siti più produttivi), **senza soglia di innesco né soglia superiore**; fruttificazioni concentrate tra 10 e 15 °C e 2-4 mm di pioggia media al giorno nella finestra. L'umidità del suolo non è misurata e lo **shock termico non compare** nel modello. **Conseguenza per l'app**: le soglie di innesco a 8 e 15 mm e il bonus per shock termico non vengono da questo lavoro; restano euristiche di pratica micologica. **Interpretazione**: applicarlo alle faggete del Terminillo o della Laga è un'estrapolazione ragionevole per la specie e l'habitat, meno per il clima (l'Appennino ha estati più calde e secche e un regime di piogge diverso).
 
 **Le altre specie.** Gli ottimi termici sono stime coerenti con la stagionalità nota (specie estive e termofile più alte, specie tardive più basse) ma non hanno una fonte puntuale. Sono il primo candidato alla taratura.
 
@@ -341,7 +341,7 @@ Studi peer-reviewed, verificati (ho controllato almeno titolo, autori, rivista e
 
 Preprint (non revisionato):
 
-- Brejon Lamartinière E., Hoffman J.I. (2025). *Predicting porcini: a decade of sporocarp monitoring reveals the meteorological triggers of Boletus edulis fruiting in central European beech forests*. bioRxiv. https://doi.org/10.64898/2025.12.12.693895 (Autori, sito, periodo e risultati principali verificati dall'abstract; il testo completo non era accessibile al momento della verifica, quindi non riporto dettagli del modello.)
+- Brejon Lamartinière E., Hoffman J.I. (2025; v2 8 giugno 2026). *Predicting porcini: a decade of sporocarp monitoring reveals the meteorological triggers of Boletus edulis fruiting in central European beech forests*. bioRxiv, preprint non revisionato, CC BY-NC 4.0. https://doi.org/10.64898/2025.12.12.693895 — v2: https://www.biorxiv.org/content/10.64898/2025.12.12.693895v2.full (letta per sezioni il 12/10/2026, vedi `inbox/README.md`).
 
 Dati e servizi:
 

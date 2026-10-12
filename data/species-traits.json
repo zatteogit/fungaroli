@@ -2405,7 +2405,7 @@
       "latin": "Neoboletus luridiformis",
       "name": "Boleto a piede rosso",
       "edible_id": null,
-      "toxicity": "tossico",
+      "toxicity": "commestibile con cautela",
       "traits": {
         "hymenophore": [
           "pori"
@@ -2482,7 +2482,7 @@
         "pino nero"
       ],
       "notes": [
-        "Molte fonti lo danno commestibile dopo cottura prolungata; species-id e l'app lo trattano come tossico (versione prudente)."
+        "Tossico da crudo o poco cotto; commestibile solo dopo cottura prolungata (molte fonti micologiche). Non è un porcino: la carne vira subito al blu e i pori sono rossi."
       ],
       "lookalike_of": [
         "pinophilus",
@@ -4828,7 +4828,7 @@
         "ceppaie e legno morto di latifoglie"
       ],
       "notes": [
-        "species-id lo indica 'commestibile'; qui 'commestibile con cautela' perché è tossico crudo come il chiodino."
+        "Tossico da crudo come il chiodino: commestibile solo ben cotto, con prebollitura."
       ],
       "lookalike_of": [
         "mellea"

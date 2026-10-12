@@ -133,7 +133,7 @@
           "latin": "Neoboletus luridiformis",
           "name": "Boleto a piede rosso (B. erythropus auct.)",
           "wikidata": "Q26203718",
-          "toxicity": "tossico",
+          "toxicity": "commestibile con cautela",
           "how_to_tell": "Pori rossi e gambo punteggiato di rosso, senza reticolo; la carne gialla diventa subito blu intenso al taglio. Tossico crudo."
         },
         {
@@ -209,7 +209,7 @@
           "latin": "Neoboletus luridiformis",
           "name": "Boleto a piede rosso (B. erythropus auct.)",
           "wikidata": "Q26203718",
-          "toxicity": "tossico",
+          "toxicity": "commestibile con cautela",
           "how_to_tell": "Cappello scuro simile, ma pori rossi, gambo punteggiato di rosso e carne gialla che diventa blu all'istante."
         },
         {
@@ -820,7 +820,7 @@
           "latin": "Armillaria tabescens (= Desarmillaria tabescens)",
           "name": "Chiodino senza anello",
           "wikidata": "Q2449977",
-          "toxicity": "commestibile",
+          "toxicity": "commestibile con cautela",
           "how_to_tell": "Simile ma senza anello; stesse cautele del chiodino (tossico crudo)."
         }
       ],
