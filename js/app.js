@@ -259,7 +259,7 @@ function routeNow(r, nav) {
     requestAnimationFrame(() => {
       map?.invalidateSize();
       const lb = $('.legend-box');
-      if (lb && !lb.dataset.touched) lb.open = $('#map').clientHeight >= 600 && $('#map').clientWidth >= 340;
+      if (lb && !lb.dataset.touched) lb.open = $('#map').clientWidth >= 761; // su telefono parte chiusa: la carta prima di tutto
       const z = zones.find((x) => x.id === r.zoneId);
       if (z && map) { map.flyToBounds(L.latLng(z.lat, z.lon).toBounds(z.radius_m * 2.6), { duration: 0.5 }); openSheet(z.id); }
     });
@@ -316,12 +316,20 @@ function renderFilterBox(box, onMap = false) {
   // in mappa la riga scorre di lato: tutti i funghi, senza "+ altri"
   const vis = chipsOpen || onMap ? order : order.filter((g, k) => k < fitN || (!all && state.groups.has(g.id)));
   const hidden = order.length - vis.length;
-  box.innerHTML = `<button type="button" class="chip" data-g="all" aria-pressed="${all}">Tutti</button>
+  const bd = onMap && results ? bestOfDay(state.dayOffset) : null;
+  const dayChip = bd ? `<button type="button" class="chip chip-day" data-days aria-expanded="${!!box.closest('.map-top')?.classList.contains('days-open')}" style="--dc:var(${scoreVar(bd.s)})"><i></i>${esc(state.dayOffset === 0 ? 'Oggi' : state.dayOffset === 1 ? 'Domani' : fmtDate(bd.d.date, { weekday: 'short' }).replace('.', '').replace(/^./, (c) => c.toUpperCase()))} ${esc(fmtDate(bd.d.date, { day: 'numeric' }))} <b class="pc">${bd.s}</b><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>` : '';
+  box.innerHTML = `${dayChip}<button type="button" class="chip" data-g="all" aria-pressed="${all}">Tutti</button>
     ${vis.map((g) => `<button type="button" class="chip chip-g" data-g="${g.id}" aria-pressed="${!all && state.groups.has(g.id)}">${esc(g.label)}</button>`).join('')}
     ${onMap ? '' : hidden > 0 ? `<button type="button" class="chip chip-more" data-more>+ altri ${hidden}</button>` : chipsOpen ? '<button type="button" class="chip chip-more" data-less>Meno</button>' : ''}
     <span class="af-sep" aria-hidden="true"></span>
     ${PREFS.map(([k, label]) => `<button type="button" class="chip pref" data-p="${k}" aria-pressed="${!!state[k]}">${esc(label)}</button>`).join('')}`;
   const changed = () => soft(() => { savePrefs(); renderFilterSummary(); if (series) { compute(); outCache.clear(); renderAll(); } });
+  box.querySelector('[data-days]')?.addEventListener('click', (e) => {
+    const top = box.closest('.map-top');
+    const open = top.classList.toggle('days-open');
+    e.currentTarget.setAttribute('aria-expanded', String(open));
+    if (open) top.querySelector('.day[aria-selected="true"]')?.scrollIntoView({ block: 'nearest', inline: 'center' });
+  });
   box.querySelector('[data-more]')?.addEventListener('click', () => soft(() => { chipsOpen = true; renderFilterSummary(); }));
   box.classList.toggle('open', chipsOpen);
   box.querySelector('[data-less]')?.addEventListener('click', () => soft(() => { chipsOpen = false; renderFilterSummary(); }));
@@ -557,7 +565,7 @@ function renderAll() {
   if (!results) return;
   if (state.view === 'uscite') { renderDays(); renderHome(); }
   if (state.view === 'zona') renderDetail();
-  if (state.view === 'mappa') { renderMapDays(); renderMap(); renderLegend(); if (sheetZone) openSheet(sheetZone); }
+  if (state.view === 'mappa') { renderMapDays(); renderFilterBox($('#map-filters'), true); renderMap(); renderLegend(); if (sheetZone) openSheet(sheetZone); }
 }
 
 function bestOfDay(o) {
@@ -810,8 +818,12 @@ function renderSeason() {
 }
 
 function renderMapDays() {
-  dayChips($('#map-days'), state.dayOffset, (o) => { state.dayOffset = o; renderAll(); });
+  // scelto il giorno, su telefono la fila si richiude (resta il chip del giorno in testa ai filtri)
+  dayChips($('#map-days'), state.dayOffset, (o) => { state.dayOffset = o; $('.map-top')?.classList.remove('days-open'); renderAll(); renderFilterSummary(); });
 }
+// riquadro della zona aperto: su telefono la barra delle sezioni si toglie di mezzo (come fa Google Maps)
+new MutationObserver(() => document.documentElement.classList.toggle('map-sheet-open', !$('#map-sheet')?.hidden))
+  .observe(document.getElementById('map-sheet') || document.body, { attributes: true, attributeFilter: ['hidden'] });
 
 // Riquadro dal basso sulla mappa: riassunto della zona e accesso alla scheda
 let sheetZone = null;
@@ -899,6 +911,8 @@ function initMap() {
   });
   mapControls({ bases: [['Topografica', 'assets/map-thumb-topo.jpg', topo], ['Stradale', 'assets/map-thumb-osm.jpg', osm]], forest });
   map.on('zoomend', () => results && state.view === 'mappa' && renderMap());
+  // la carta cambia misura (barra in alto che sparisce, rotazione): Leaflet va avvisato
+  new ResizeObserver(() => map.invalidateSize()).observe($('#map'));
   if (canHover) {
     map.on('mousemove', hoverCell);
     map.on('mouseout', () => hoverCell({ latlng: L.latLng(0, 0) }));
@@ -988,6 +1002,8 @@ function initEmbeddedMap(bm) {
   map.setView([42.42, 13.03], 10);
   mapControls({ forest });
   map.on('zoomend', () => results && state.view === 'mappa' && renderMap());
+  // la carta cambia misura (barra in alto che sparisce, rotazione): Leaflet va avvisato
+  new ResizeObserver(() => map.invalidateSize()).observe($('#map'));
   if (canHover) {
     map.on('mousemove', hoverCell);
     map.on('mouseout', () => hoverCell({ latlng: L.latLng(0, 0) }));

@@ -1838,3 +1838,37 @@ html.theme-swap, html.theme-swap *, html.theme-swap *::before, html.theme-swap *
 /* spazio per la freccia dell'invito: non deve coprire il link in fondo ne' l'icona in alto */
 .install-invite:has(.iv-down) .iv-in { padding-bottom: calc(64px + env(safe-area-inset-bottom)); }
 .install-invite:has(.iv-up) .iv-in { padding-top: calc(60px + env(safe-area-inset-top)); }
+/* ===== Mappa su telefono: tutto lo spazio alla carta ===== */
+.chip-day { display: none; }
+.tabbar { transition: transform .3s cubic-bezier(.2, .8, .2, 1), opacity .2s; }
+@media (max-width: 760px) {
+  /* niente barra in alto: la carta arriva fino in cima (tema e info sono nelle altre pagine) */
+  body[data-page="mappa"] .appbar { display: none; }
+  body[data-page="mappa"] .view-map { height: 100dvh; }
+  .map-top { top: calc(env(safe-area-inset-top, 0px) + 8px); padding: 6px 0; }
+  .view-map .leaflet-top, .view-map .leaflet-top.leaflet-right { top: calc(env(safe-area-inset-top, 0px) + 66px); }
+  /* i giorni stanno in un chip in testa ai filtri; toccandolo si apre la fila */
+  .map-top .map-days, .map-top .rail-host:has(> .map-days) { display: none; }
+  .map-top.days-open .map-days, .map-top.days-open .rail-host:has(> .map-days) { display: flex; }
+  .map-top.days-open .rail-host:has(> .map-days) { display: block; }
+  .map-top .map-filters { border-top: 0; padding-top: 2px; }
+  .map-top.days-open .map-filters { border-top: 1px solid var(--hair); padding-top: 8px; }
+  .map-top.days-open .map-days { padding-top: 2px; }
+  .map-top.days-open ~ * .leaflet-top { top: 150px; }
+  .chip-day { display: inline-flex; align-items: center; gap: 6px; font-weight: 700; color: var(--text); }
+  .chip-day i { width: 9px; height: 9px; border-radius: 50%; background: var(--dc); flex: none; }
+  .chip-day svg { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; margin-left: -2px; transition: transform .2s; }
+  .chip-day[aria-expanded="true"] svg { transform: rotate(180deg); }
+  /* riquadro della zona aperto: via la barra delle sezioni, il riquadro scende al suo posto */
+  html.map-sheet-open body[data-page="mappa"] .tabbar { transform: translateY(calc(100% + var(--tabbar-bottom) + 12px)); opacity: 0; pointer-events: none; }
+  html.map-sheet-open body[data-page="mappa"] .sheet { bottom: calc(env(safe-area-inset-bottom, 0px) + 8px); }
+  /* riquadro piu' compatto */
+  .sheet { padding: 10px 12px 12px; gap: 8px; }
+  .sheet-row { grid-template-columns: 64px 1fr; gap: 12px; }
+  .sheet-img { width: 64px; height: 64px; border-radius: 14px; }
+  .sheet-img .ring-sm { transform: scale(.85); transform-origin: right bottom; }
+  .sheet-title { font-size: 19px; }
+  .sheet-key { font-size: 12px; }
+  .sheet-key .muted { display: none; }
+  .sheet .btn.big { padding: 11px; font-size: 15px; }
+}
