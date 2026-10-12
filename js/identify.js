@@ -687,7 +687,8 @@ export function openTaxon(key) {
   let dlg = document.getElementById('taxon-dlg');
   if (!dlg) {
     dlg = document.createElement('dialog'); dlg.id = 'taxon-dlg'; dlg.className = 'sheet-dlg taxon-dlg';
-    dlg.addEventListener('click', (e) => { if (e.target === dlg || e.target.closest('.wiz-close')) dlg.close(); });
+    // i link interni chiudono sempre il pannello: se portano dove sei gia' (stesso indirizzo) non c'e' hashchange
+    dlg.addEventListener('click', (e) => { if (e.target === dlg || e.target.closest('.wiz-close, a[href^="#/"]')) dlg.close(); });
     addEventListener('hashchange', () => { if (dlg.open) dlg.close(); });
     document.body.append(dlg);
   }
@@ -695,7 +696,7 @@ export function openTaxon(key) {
   // "si confonde con": porta dritto al confronto affiancato (la scheda della commestibile e' a un tocco da li')
   const look = (t.lookalike_of || []).map((id) => TAXA.find((x) => x.edible_id === id && !x.lookalike_of?.length))
     .sort((x, y) => (y ? similarity(y, t) : 0) - (x ? similarity(x, t) : 0)).map((o) => {
-    return o ? `<a class="tx-vs" href="#/riconosci/confronta/${esc(o.key)}/${esc(t.key)}"><span class="tx-vs-ic" aria-hidden="true">vs</span>${esc(o.name)}<span aria-hidden="true">›</span></a>` : '';
+    return o ? `<a class="tx-vs" href="#/riconosci/confronta/${esc(o.key)}/${esc(t.key)}">${esc(o.name)}<span aria-hidden="true">›</span></a>` : '';
   }).filter(Boolean);
   dlg.dataset.expand = `#/fungo/${t.key}`;
   dlg.innerHTML = `<button type="button" class="wiz-close" aria-label="Chiudi">✕</button>
