@@ -1697,3 +1697,29 @@ html.theme-swap, html.theme-swap *, html.theme-swap *::before, html.theme-swap *
 @media (max-width: 760px) { .cover .sp-also + .sp-also { display: none; } }
 .cover .fk3 { display: none; }
 .cover .facts.t2 .fk3, .cover .facts.t3 .fk3 { display: inline; }
+/* ===== Loader iniziale: la sagoma della copertina, un fungo che spunta, i passi veri del caricamento ===== */
+.loader { position: relative; overflow: hidden; display: grid; place-items: center; align-content: center; gap: 18px; min-height: min(560px, calc(100svh - 260px)); padding: 32px 20px; border-radius: var(--r-xl);
+  background: radial-gradient(120% 80% at 50% 110%, color-mix(in srgb, var(--forest) 70%, #000) 0%, var(--forest) 55%, color-mix(in srgb, var(--forest) 80%, #fff) 100%); color: #f3efe7; }
+.loader::after { content: ''; position: absolute; inset: 0; background: linear-gradient(105deg, transparent 35%, rgb(255 255 255 / .09) 50%, transparent 65%); transform: translateX(-100%); animation: ld-sweep 2.4s ease-in-out infinite; pointer-events: none; }
+.ld-shroom { width: 112px; height: 112px; overflow: visible; }
+.ld-ground { fill: rgb(0 0 0 / .25); }
+.ld-stem { fill: #efe6d0; }
+.ld-cap { fill: #b9773e; }
+.ld-dot { fill: #f6efe0; opacity: .9; }
+.ld-spores circle { fill: #f6efe0; opacity: 0; }
+.ld-grow { transform-origin: 60px 98px; animation: ld-grow 2.6s cubic-bezier(.3, 1.4, .5, 1) infinite; }
+.ld-spores circle { animation: ld-spore 2.6s ease-out infinite; }
+.ld-spores circle:nth-child(2) { animation-delay: .25s; }
+.ld-spores circle:nth-child(3) { animation-delay: .5s; }
+.ld-steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; font-size: 14px; }
+.ld-steps li { display: flex; align-items: center; gap: 10px; opacity: .5; transition: opacity .3s; }
+.ld-steps li::before { content: ''; width: 16px; height: 16px; border-radius: 50%; flex: none; box-sizing: border-box; border: 2px solid rgb(255 255 255 / .45); }
+.ld-steps li.now { opacity: 1; font-weight: 600; }
+.ld-steps li.now::before { border-color: #fff; border-right-color: transparent; animation: ld-spin .8s linear infinite; }
+.ld-steps li.done { opacity: .85; }
+.ld-steps li.done::before { content: '✓'; display: grid; place-items: center; font-size: 10px; font-weight: 900; line-height: 1; color: #16261b; background: #9be34c; border: 0; }
+@keyframes ld-sweep { to { transform: translateX(100%); } }
+@keyframes ld-grow { 0% { transform: scale(.2, 0); opacity: 0; } 18% { opacity: 1; } 45%, 82% { transform: scale(1); opacity: 1; } 100% { transform: scale(1); opacity: 0; } }
+@keyframes ld-spore { 0%, 45% { opacity: 0; transform: translateY(0); } 60% { opacity: .9; } 100% { opacity: 0; transform: translateY(-26px); } }
+@keyframes ld-spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .loader::after, .ld-grow, .ld-spores circle, .ld-steps li.now::before { animation: none; } .ld-grow { transform: none; } }

@@ -68,7 +68,15 @@ const savePrefs = () => {
 let zones, origin, habitat, access, trails, traits, legal, series, results, map, zoneLayers = {}, zoneMedia = {}, outing = null;
 const hasLeaflet = () => typeof globalThis.L !== 'undefined';
 
+// caricamento iniziale: i passi del loader si spuntano man mano (index.html, .loader)
+function loadStep(n) {
+  document.querySelectorAll('.loader .ld-steps li').forEach((li) => {
+    const k = +li.dataset.step;
+    li.classList.toggle('done', k < n); li.classList.toggle('now', k === n);
+  });
+}
 async function init() {
+  loadStep(0);
   initInstall(); // prima di tutto: non dipende dai dati
   // versione Artifact: dati incorporati nella pagina (niente fetch esterni)
   const embedded = globalThis.FUNGAROLI_DATA;
@@ -323,7 +331,10 @@ function renderFilterSummary() {
 async function refreshWeather(force) {
   try {
     $('#updated').textContent = 'Aggiornamento…';
+    loadStep(1);
     const w = await loadWeather(zones, { force });
+    loadStep(2);
+    await new Promise((r) => requestAnimationFrame(() => setTimeout(r, 0))); // lascia disegnare il passo prima del calcolo
     series = w.series;
     zones = zones.filter((z) => series[z.id]); // una zona senza meteo (copia di revisione vecchia) resta fuori
     const sameDay = w.fetchedAt.toDateString() === new Date().toDateString();
@@ -338,9 +349,10 @@ async function refreshWeather(force) {
     loadOuting(zones, { force }).then((o) => { outing = o; outCache.clear(); renderAll(); }).catch(() => {});
   } catch (err) {
     $('#updated').textContent = '';
-    const msg = `<div class="error">Non riesco a scaricare il meteo (${esc(err.message)}). Controlla la connessione e tocca ↻ in alto per riprovare.</div>`;
+    const msg = `<div class="error">Non riesco a scaricare il meteo (${esc(err.message)}). Controlla la connessione e <button type="button" class="link-btn" data-retry>riprova</button>.</div>`;
     $('#hero').innerHTML = msg;
     $('#detail').innerHTML = msg;
+    document.querySelectorAll('[data-retry]').forEach((b) => b.addEventListener('click', () => refreshWeather(true)));
   }
 }
 
