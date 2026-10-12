@@ -73,7 +73,7 @@
     850,
     1100
    ],
-   "description": "Castagneti secolari (Marrone Antrodocano) misti a carpino nero, cerro e roverella; faggeta alle quote superiori.",
+   "description": "Castagneti secolari (Marrone Antrodocano) misti a carpino nero, cerro e roverella; faggeta alle quote superiori. Comprende i castagneti di Colle Rinaldo (Borgo Velino).",
    "access": "SS 4 Salaria per Antrodoco e Borgo Velino; diramazione per Micigliano e il Colle.",
    "parking": [
     {
@@ -104,7 +104,7 @@
     900,
     1050
    ],
-   "description": "Collina e media montagna tra i laghi del Salto e del Turano. La Carta Forestale indica una netta prevalenza di castagneto, poi cerrete e ostrieti.",
+   "description": "Collina e media montagna tra i laghi del Salto e del Turano. La Carta Forestale indica una netta prevalenza di castagneto, poi cerrete e ostrieti. Dentro il cerchio anche i castagneti di Tonnicoda, il nucleo di bosco adatto più esteso trovato nella provincia.",
    "access": "SR 578 Salto-Cicolano, uscite per la diga del Salto, Marcetelli, Pescorocchiano; accessi comunali.",
    "parking": [
     {
@@ -201,6 +201,221 @@
    "drive_km": 69,
    "protection": "Area nel Parco Nazionale del Gran Sasso e Monti della Laga. Il Piano del Parco (2020) esclude il prelievo nelle zone \"a\" di riserva integrale e il regolamento sui funghi è ancora in bozza: verifica con l'Ente Parco prima dell'uscita.",
    "popularity": 0.5
+  },
+  {
+   "id": "terminillo-ovest",
+   "name": "Pian de' Rosce / Terminillo ovest",
+   "lat": 42.462,
+   "lon": 12.955,
+   "radius_m": 3000,
+   "popularity": 0.9,
+   "description": "Faggeta continua sul versante di Rieti del Terminillo, tra Pian de' Rosce, Monte Cardito e Campoforogna (circa 1000-1600 m). È la zona di montagna più vicina alla città e una delle più frequentate dai cercatori: le cronache locali la citano dal 2010 a oggi.",
+   "access": "Da Rieti SS 4 bis del Terminillo per Vazia e Lisciano fino a Pian de' Rosce (circa 20-25 minuti); Campoforogna poco più su, prima di Pian de' Valli.",
+   "parking": [
+    {
+     "name": "Pian de' Rosce",
+     "lat": 42.4612,
+     "lon": 12.938
+    },
+    {
+     "name": "Campoforogna",
+     "lat": 42.4537,
+     "lon": 12.9869
+    }
+   ],
+   "trails": "Sentieri CAI del versante sud-ovest del Terminillo.",
+   "protection": null,
+   "bands": [
+    860,
+    1180,
+    1390
+   ],
+   "proposed_by": "fonti+dati"
+  },
+  {
+   "id": "terminillo-est",
+   "name": "Cinque Confini / Monte Bove",
+   "lat": 42.443,
+   "lon": 13.012,
+   "radius_m": 3000,
+   "popularity": 0.6,
+   "description": "Faggete d'alta quota sopra Micigliano e Borgo Velino, tra Cinque Confini, Fonte Porcini, Monte Bove e Colle delle Scangive (1200-1650 m). Frequentata dai fungaioli (soccorsi nel 2010 e ad agosto 2026), ma più fuori mano di Pian de' Rosce; tratti ripidi e senza segnaletica.",
+   "access": "Da Rieti SS 4 bis fino a Pian de' Valli e Campoforogna, poi al piazzale dei Cinque Confini; da lì a piedi (CAI 407).",
+   "parking": [
+    {
+     "name": "Cinque Confini",
+     "lat": 42.446,
+     "lon": 12.991
+    }
+   ],
+   "trails": "CAI 407 Cinque Confini - Monte Bove.",
+   "protection": null,
+   "bands": [
+    1000,
+    1310,
+    1490
+   ],
+   "proposed_by": "fonti+dati"
+  },
+  {
+   "id": "cittareale",
+   "name": "Cittareale / Alto Velino",
+   "lat": 42.618,
+   "lon": 13.16,
+   "radius_m": 4000,
+   "popularity": 0.7,
+   "description": "Faggete e cerrete dell'Alto Velino attorno a Cittareale (900-1500 m), al confine con l'Umbria. I Carabinieri Forestali vi controllano spesso i raccoglitori, anche da Roma e Perugia (sequestri di porcini nel 2019 a Fonte Corno e Fosso Builli).",
+   "access": "Da Rieti SS 4 Salaria fino a Posta, poi la strada per Cittareale (circa 50-60 minuti).",
+   "parking": [
+    {
+     "name": "Cittareale",
+     "lat": 42.6182,
+     "lon": 13.1596
+    }
+   ],
+   "trails": "Sentieri locali dell'Alto Velino.",
+   "protection": null,
+   "bands": [
+    1000,
+    1210,
+    1340
+   ],
+   "proposed_by": "fonti+dati"
+  },
+  {
+   "id": "pescorocchiano",
+   "name": "Pescorocchiano / Cicolano est",
+   "lat": 42.21,
+   "lon": 13.112,
+   "radius_m": 3500,
+   "popularity": 0.55,
+   "description": "Castagneti e cerrete delle frazioni di Pescorocchiano (Pace, Colle di Pace, Leofreni, Santa Lucia), 600-1000 m: attorno a Leofreni il castagneto supera il 60% del bosco. Zona di ovoli e porcini estivi; più episodi di cercatori in difficoltà tra 2018 e 2025. Comprende anche i castagneti di Collaralli.",
+   "access": "Da Rieti SR 578 Salto-Cicolano fino a Pescorocchiano, poi le strade per le frazioni (circa 50 minuti).",
+   "parking": [
+    {
+     "name": "Pace",
+     "lat": 42.229,
+     "lon": 13.118
+    },
+    {
+     "name": "Leofreni",
+     "lat": 42.197,
+     "lon": 13.125
+    }
+   ],
+   "trails": "Strade forestali e sentieri tra le frazioni.",
+   "protection": null,
+   "bands": [
+    710,
+    780,
+    890
+   ],
+   "proposed_by": "fonti+dati"
+  },
+  {
+   "id": "malito",
+   "name": "Valle di Malito / Corvaro",
+   "lat": 42.212,
+   "lon": 13.256,
+   "radius_m": 3000,
+   "popularity": 0.6,
+   "description": "Boschi misti di cerro, roverella, carpino nero e castagno sopra Corvaro (830-1250 m), con faggeta più in alto. Nel 2014 la Forestale di Borgorose vi segnalava porcini, finferli e trombette e molti raccoglitori.",
+   "access": "Da Rieti SR 578 o Salaria e A24 (uscita Valle del Salto) fino a Corvaro di Borgorose, poi verso la chiesa della Madonna di Malito (circa 1 ora - 1 ora e 10).",
+   "parking": [
+    {
+     "name": "Madonna di Malito",
+     "lat": 42.219,
+     "lon": 13.255
+    },
+    {
+     "name": "Corvaro",
+     "lat": 42.2058,
+     "lon": 13.2647
+    }
+   ],
+   "trails": "Sentieri della Valle di Malito verso la Duchessa.",
+   "protection": "La parte alta della valle confina con la Riserva Naturale Montagne della Duchessa (L.R. 70/1990): nella zona A di riserva integrale la raccolta è vietata, altrove la legge istitutiva la subordina all'autorizzazione dell'ente gestore. Verifica i confini e chiedi all'ente (riservaduchessa@regione.lazio.it, 0746 306493).",
+   "bands": [
+    880,
+    1110,
+    1290
+   ],
+   "proposed_by": "fonti+dati"
+  },
+  {
+   "id": "sangiovanni",
+   "name": "Monte San Giovanni in Sabina",
+   "lat": 42.355,
+   "lon": 12.78,
+   "radius_m": 3000,
+   "popularity": 0.45,
+   "description": "Cerrete e boschi di carpino nero tra Cerchiara, Piediserre e San Giovanni Reatino (440-770 m), sul versante dei Sabini verso Rieti. Quote basse: zona da ovoli e porcini estivi dopo i temporali, frequentata anche da Terni.",
+   "access": "Da Rieti la strada per San Giovanni Reatino o la SP del Tancia (circa 25 minuti).",
+   "parking": [
+    {
+     "name": "Cerchiara",
+     "lat": 42.36,
+     "lon": 12.779
+    }
+   ],
+   "trails": "Strade bianche e sentieri dei Monti Sabini.",
+   "protection": null,
+   "bands": [
+    560,
+    690,
+    810
+   ],
+   "proposed_by": "fonti+dati"
+  },
+  {
+   "id": "leonessa",
+   "name": "Leonessa / faggete nord",
+   "lat": 42.535,
+   "lon": 12.99,
+   "radius_m": 3000,
+   "popularity": 0.4,
+   "description": "Faggete del versante nord dei Monti Reatini sopra Leonessa (1000-1700 m), estese e continue sulla Carta Forestale. Proposta dai dati: nelle fonti non risultano segnalazioni specifiche di cercatori, quindi probabilmente meno battuta del Terminillo.",
+   "access": "Da Rieti per il Terminillo e la Sella di Leonessa, oppure per la SS 4 bis e la strada di Leonessa (circa 50 minuti).",
+   "parking": [
+    {
+     "name": "Leonessa",
+     "lat": 42.5631,
+     "lon": 12.9638
+    }
+   ],
+   "trails": "Sentieri CAI tra Leonessa e il Terminillo.",
+   "protection": null,
+   "bands": [
+    1120,
+    1340,
+    1590
+   ],
+   "proposed_by": "dati"
+  },
+  {
+   "id": "domo",
+   "name": "Domo / Valle del Tronto",
+   "lat": 42.656,
+   "lon": 13.229,
+   "radius_m": 3000,
+   "popularity": 0.3,
+   "description": "Cerrete e castagneti della valle del Tronto ad ovest di Amatrice, attorno a Domo (860-1170 m): più in basso e più caldi della faggeta della Laga, quindi buoni prima in stagione e per ovoli e porcini estivi. Proposta dai dati, senza segnalazioni specifiche nelle fonti.",
+   "access": "Da Rieti SS 4 Salaria fino ad Amatrice, poi la strada per Domo (circa 1 ora).",
+   "parking": [
+    {
+     "name": "Domo",
+     "lat": 42.6581,
+     "lon": 13.2385
+    }
+   ],
+   "trails": "Sentieri locali dell'Amatriciano.",
+   "protection": null,
+   "bands": [
+    920,
+    1000,
+    1040
+   ],
+   "proposed_by": "dati"
   }
  ],
  "popularity_note": "Notorieta' della zona 0-1 (euristica locale: Terminillo e Tancia piu' frequentati per vicinanza a Rieti e Roma)."

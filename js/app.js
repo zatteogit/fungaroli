@@ -81,7 +81,7 @@ async function init() {
   renderSpeciesGrid();
   access = aj?.zones || {};
   trails = tj?.zones || {};
-  zones = zj.zones;
+  zones = zj.zones.filter((z) => hj.zones[z.id]); // una zona senza dati di bosco non e' ancora pronta
   origin = zj.origin;
   habitat = hj.zones;
   initIdentify({

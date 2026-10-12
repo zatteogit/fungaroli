@@ -73,6 +73,32 @@
     1200,
     1600
    ]
+  },
+  "malito": {
+   "file": "assets/zones/malito.jpg",
+   "file_hd": "assets/zones/malito-hd.jpg",
+   "source": "Wikimedia Commons",
+   "page": "https://commons.wikimedia.org/wiki/File:Borgo_di_Pagliara%2C_Borgorose.jpg",
+   "author": "Marica Massaro",
+   "license": "CC BY-SA 4.0",
+   "size": [
+    1280,
+    557
+   ],
+   "place": "Pagliara"
+  },
+  "domo": {
+   "file": "assets/zones/domo.jpg",
+   "file_hd": "assets/zones/domo-hd.jpg",
+   "source": "Wikimedia Commons",
+   "page": "https://commons.wikimedia.org/wiki/File:Villa_San_Lorenzo_a_Flaviano.jpg",
+   "author": "Giuseppe Boni",
+   "license": "CC BY-SA 3.0",
+   "size": [
+    1280,
+    960
+   ],
+   "place": "Villa San Lorenzo a Flaviano"
   }
  }
 }

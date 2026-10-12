@@ -214,6 +214,19 @@ dove `quota_prevista` è la frazione della pioggia nella finestra di latenza che
 
 Limite: l'affidabilità considera solo la pioggia della finestra di latenza. Anche la temperatura media a 20 giorni, l'umidità del suolo, il gelo e il caldo dei giorni futuri vengono dalle previsioni, ma non abbassano l'affidabilità.
 
+## Come sono state scelte le zone
+
+Le prime 7 zone vengono dal documento di partenza. Il 12 ottobre 2026 ne sono state aggiunte 8 incrociando due fonti indipendenti.
+
+1. **Dove va la gente** (`inbox/zone-candidate.md`). Ricerca sulle testate locali (RietInVetrina, La Provincia di Rieti, Format Rieti, Sabina Magazine, Frontiera, Il Messaggero Rieti): soccorsi, sanzioni e sequestri di cercatori di funghi indicano dove si raccoglie, non quanto si trova. **Fatto** per i luoghi citati; la popolarità assegnata a ogni zona è un'**interpretazione**.
+2. **Dove c'è il bosco giusto alla quota giusta** (`tools/scan_province.py`). Reticolo di punti ogni 1 km entro 55 km da Rieti: tipo di bosco dalla Carta Forestale e quota dal DEM Copernicus. Per ogni punto l'idoneità di ogni specie (affinità bosco × quota, le stesse tabelle del modello), pesata per interesse (porcini e ovolo 1, finferli 0,8, altre 0,6, pineta 0,5) e sommata nel raggio di 2,5 km. **Euristica**: non tiene conto di accessi, proprietà, età del bosco.
+
+Zone aggiunte:
+- con fonti e dati coerenti: Pian de' Rosce / Terminillo ovest, Cinque Confini / Monte Bove, Cittareale, Pescorocchiano, Valle di Malito, Monte San Giovanni in Sabina;
+- solo dai dati, segnate come meno battute (`proposed_by: "dati"`): faggete di Leonessa, Domo / valle del Tronto.
+
+Colle Rinaldo (Borgo Velino) e i castagneti di Tonnicoda (Petrella Salto), il nucleo più esteso trovato dallo scanner, ricadono già nei cerchi di Antrodoco e del Cicolano. Le fasce di quota delle zone nuove sono il 20°, 50° e 80° percentile delle quote dei punti di bosco nel cerchio.
+
 ## Il fattore umano
 
 Questi fattori non entrano nell'indice di fruttificazione. Servono a correggere la classifica in base alle preferenze attive e a dare consigli pratici. **Sono tutti euristiche**, come dice esplicitamente il commento in testa a `js/human.js`: non esistono studi sull'affollamento dei boschi reatini.
