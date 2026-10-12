@@ -18,12 +18,14 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
   <link rel="stylesheet" href="css/fonts.css">
   <link rel="stylesheet" href="css/style.css">
+  <script>try{var t=localStorage.getItem('fungaroli:theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t}catch(e){}</script>
 </head>
 <body>
   <header class="appbar">
     <button type="button" class="appbar-back" data-back hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5 8 12l7 7"/></svg><span></span></button>
     <a class="brand" href="#/" aria-label="Fungaroli Rieti, home"><span class="brand-name">Fungaroli</span> <span class="brand-place">Rieti</span></a>
     <div class="appbar-actions">
+      <button type="button" class="icon-btn theme-btn" id="theme-btn" aria-label="Cambia tema"></button>
       <a class="icon-btn" href="#/info" aria-label="Regole e metodo" title="Regole e metodo"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg></a>
     </div>
   </header>

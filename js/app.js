@@ -1,3 +1,5 @@
+import './rails.js';
+import './theme.js';
 import { SPECIES, GROUPS, FOREST } from './species.js';
 import { scoreZoneDay, scoreSpecies, habitatAtBand, habitatPotential, classOf, CLASSES } from './model.js';
 import { loadWeather } from './weather.js';
@@ -113,6 +115,7 @@ async function init() {
   if (embedded || review) $('#refresh').disabled = true;
   else $('#refresh').addEventListener('click', () => { $('#refresh').classList.add('spin'); refreshWeather(true).finally(() => $('#refresh').classList.remove('spin')); });
   matchMedia('(prefers-color-scheme: dark)').addEventListener('change', renderAll);
+  addEventListener('themechange', renderAll);
   let rt;
   addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(() => results && state.view === 'zona' && renderDetail(), 200); });
 }
@@ -303,6 +306,7 @@ function renderFilterSummary() {
     ${PREFS.map(([k, label]) => `<button type="button" class="chip pref" data-p="${k}" aria-pressed="${!!state[k]}">${esc(label)}</button>`).join('')}`;
   const changed = () => soft(() => { savePrefs(); renderFilterSummary(); if (series) { compute(); outCache.clear(); renderAll(); } });
   box.querySelector('[data-more]')?.addEventListener('click', () => soft(() => { chipsOpen = true; renderFilterSummary(); }));
+  box.classList.toggle('open', chipsOpen);
   box.querySelector('[data-less]')?.addEventListener('click', () => soft(() => { chipsOpen = false; renderFilterSummary(); }));
   if (!chipsOpen) fitChips(box);
   box.querySelectorAll('[data-g]').forEach((b) => b.addEventListener('click', () => {
