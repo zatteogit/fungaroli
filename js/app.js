@@ -1,5 +1,5 @@
 import { SPECIES, GROUPS, FOREST } from './species.js';
-import { scoreZoneDay, scoreSpecies, habitatAtBand, habitatPotential, explain, classOf, CLASSES } from './model.js';
+import { scoreZoneDay, scoreSpecies, habitatAtBand, habitatPotential, classOf, CLASSES } from './model.js';
 import { loadWeather } from './weather.js';
 import { renderCharts } from './chart.js';
 import { initJournal } from './journal.js';
@@ -10,6 +10,7 @@ import { initInstall } from './install.js';
 import { loadOuting, outingFor, OUTING_LABEL, OUTING_SHORT, OUTING_RANK } from './outing.js';
 import { initIdentify, renderIdentify, setCompare, searchTaxa, openTaxon } from './identify.js';
 import { initSearch, openSearch } from './search.js';
+import { renderWhy, renderMethod } from './science.js';
 import { navigate, soft } from './motion.js';
 import { FOREST_LEGEND } from './forest-legend.js';
 import { initTrees, renderTreeGrid, renderTreePage, linkTrees, treeForCategory, treeThumb } from './trees.js';
@@ -136,11 +137,12 @@ function parseRoute() {
   if (a === 'riconosci') return { view: 'riconosci', compare: b === 'confronta' ? c : '', pick: b === 'confronta' ? parts[3] : '' };
   if (a === 'diario') return { view: 'diario' };
   if (a === 'info') return { view: 'info' };
+  if (a === 'metodo') return { view: 'metodo' };
   return { view: 'uscite' };
 }
 
 // profondita' e posizione delle viste: decidono la direzione della transizione
-const LEVEL = { zona: 1, 'specie-dettaglio': 1, albero: 1, info: 1 };
+const LEVEL = { zona: 1, 'specie-dettaglio': 1, albero: 1, info: 1, metodo: 2 };
 const TABS = ['uscite', 'mappa', 'specie', 'diario'];
 const SUB = { specie: 0, alberi: 1, riconosci: 2 };
 const scrollMem = new Map();
@@ -159,7 +161,7 @@ function navKind(a, b) {
 
 function route() {
   const r = parseRoute();
-  r.tab = { zona: 'uscite', 'specie-dettaglio': 'specie', alberi: 'specie', albero: 'specie', riconosci: 'specie', info: '' }[r.view] ?? r.view;
+  r.tab = { zona: 'uscite', 'specie-dettaglio': 'specie', alberi: 'specie', albero: 'specie', riconosci: 'specie', info: '', metodo: '' }[r.view] ?? r.view;
   r.hash = location.hash || '#/';
   const nav = navKind(prev, r), back = prev?.hash || '';
   if (prev) scrollMem.set(prev.hash, scrollY);
@@ -180,6 +182,7 @@ function routeNow(r, nav) {
   document.body.dataset.page = r.view;
   if (r.view === 'specie-dettaglio') renderSpeciesDetail($('#species-detail'), r.speciesId);
   if (r.view === 'albero') renderTreePage($('#tree-detail'), r.treeId);
+  if (r.view === 'metodo') renderMethod($('#method-body'));
   if (r.view === 'riconosci') { setCompare(r.compare, r.pick); renderIdentify($('#identify')); }
   if (r.view === 'mappa') {
     requestAnimationFrame(() => {
@@ -312,6 +315,14 @@ const dayEntry = (zid, offset) => {
   return r.days.find((d) => d.i === r.todayIndex + offset);
 };
 // indice "opportunita'": l'indice di fruttificazione corretto con le preferenze attive
+// le stesse correzioni di adjusted(), una per una, per spiegarle
+const adjParts = (zone, d) => {
+  const out = [];
+  if (state.distancePenalty) out.push({ label: 'vicino a Rieti', mult: 1 - 0.3 * Math.min(1, (access[zone.id]?.[0]?.minutes ?? zone.drive_min) / 120) });
+  if (state.avoidCrowd && d?.crowd) out.push({ label: 'poca gente', mult: 1 - 0.45 * d.crowd.value });
+  if (state.preferComfort && d?.comfort) out.push({ label: 'accesso comodo', mult: 0.55 + 0.45 * d.comfort.value });
+  return out;
+};
 const adjusted = (zone, score, d) => {
   let v = score;
   if (state.distancePenalty) v *= 1 - 0.3 * Math.min(1, (access[zone.id]?.[0]?.minutes ?? zone.drive_min) / 120);
@@ -525,7 +536,7 @@ function buildSearch(idj, trj, embedded) {
     ['Emergenza e intossicazione', 'Cosa fare, chi chiamare', 'emergenza intossicazione avvelenamento centro antiveleni 118 112 pronto soccorso sintomi', '#/info'],
     ['Regole di raccolta nel Lazio', 'Attestato, contributo, limiti, orari', 'regole legge tesserino attestato contributo 3 kg limite orari divieti parchi aree protette', '#/info'],
     ['Controllo gratuito all\'ASL', 'Ispettorato micologico', 'asl ispettorato micologico controllo gratuito micologo', '#/info'],
-    ['Il metodo', 'Come si calcola la probabilità', 'metodo indice calcolo pioggia temperatura suolo probabilita affidabilita', '#/info'],
+    ['Come funziona l\'indice', 'Formule, parametri, fonti e limiti', 'metodo scienza scientifico indice calcolo formula pioggia temperatura suolo latenza innesco probabilita affidabilita fonti letteratura euristica', '#/metodo'],
     ['Gli alberi', 'Riconoscerli e cosa ci cresce sotto', 'alberi bosco piante', '#/alberi'],
     ['Il diario delle uscite', 'Registra cosa hai trovato e dove', 'diario uscite registrare raccolto storico esporta', '#/diario'],
     ['La mappa', 'Zone, parcheggi, sentieri, Carta Forestale', 'mappa carta forestale parcheggio sosta', '#/mappa'],
@@ -1010,8 +1021,6 @@ function renderDetail() {
   const sb = series[z.id][bandIndex(z, best.band)];
   const from = Math.max(0, r.todayIndex - HISTORY_DAYS);
   const days = r.days.filter((x) => x.i >= from);
-  const reasons = explain(best);
-  reasons.push(`affidabilità ${Math.round(best.confidence * 100)}%`);
 
   const [title, sub] = splitName(z);
   const cov = coverOf(z, best.species.id);
@@ -1029,7 +1038,8 @@ function renderDetail() {
     <a class="btn ghost big map-link" href="#/mappa/${z.id}">${IC.map} Sentieri e accesso sulla mappa</a>
     ${zoneLegal(z, d)}
     ${z.protection ? `<div class="notice">${esc(z.protection)}</div>` : ''}
-    ${section('meteo', 'Perché questo indice', `<ul class="why">${reasons.map((x) => `<li>${esc(x)}</li>`).join('')}</ul><div id="charts"></div>${legal?.forecast_note ? `<p class="small muted">${esc(legal.forecast_note)}</p>` : ''}`)}
+    ${section('meteo', 'Perché questo indice', `${renderWhy({ r: best, s: sb, i: d.i, sp: best.species, band: best.band, dateStr: d.date, shown: s, prefs: adjParts(z, d), outing: wxRank(z, d) < 1 ? wxRank(z, d) : 0 })}
+      <p class="sci-h">L'indice nei giorni</p><div id="charts"></div>${legal?.forecast_note ? `<p class="small muted">${esc(legal.forecast_note)}</p>` : ''}`)}
     ${section('quando', 'Quando andare e affollamento', renderHuman(z, d))}
     ${section('accesso', 'Accesso in auto e a piedi', renderAccess(z, d))}
     ${section('sentieri', 'Sentieri della zona', renderTrails(z, d))}

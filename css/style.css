@@ -1237,3 +1237,69 @@ html.is-offline #updated { color: var(--warn-ink); font-weight: 600; }
 @media (prefers-reduced-motion: no-preference) { .tab-search { transition: transform .5s var(--spring); } .tab-search:active { transform: scale(.9); transition-duration: .1s; } }
 .search-fake { min-height: 50px; }
 .id-filter { box-shadow: none; background: var(--surface-2); }
+
+/* la scienza dietro l'indice */
+.sci-lede { margin: 0 0 12px; font-size: 14.5px; line-height: 1.5; }
+.sci-factors { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; counter-reset: f; }
+.sci-factors li { padding: 9px 10px; border-radius: 12px; }
+.sci-factors li.weak { background: color-mix(in srgb, var(--warn-bg) 70%, transparent); }
+.sf-top { display: grid; grid-template-columns: minmax(96px, 34%) 1fr 48px; gap: 10px; align-items: center; }
+.sf-k { font-weight: 700; font-size: 14px; }
+.sf-bar { height: 8px; border-radius: 4px; background: var(--surface-3); overflow: hidden; }
+.sf-bar i { display: block; height: 100%; border-radius: 4px; }
+.lv-hi i { background: var(--ok-ink); } .lv-mid i { background: #c79a2e; } .lv-lo i { background: var(--crit); } .lv-na i { background: var(--muted); opacity: .5; }
+.sf-v { text-align: right; font-variant-numeric: tabular-nums; font-size: 13.5px; }
+.sf-why { margin: 4px 0 0; font-size: 13px; line-height: 1.45; color: var(--text-2); }
+.ev-tag { display: inline-block; font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: .05em; padding: 1px 6px; border-radius: 999px; vertical-align: 1px; white-space: nowrap; }
+.ev-lett { background: color-mix(in srgb, var(--ok-ink) 16%, transparent); color: var(--ok-ink); }
+.ev-dato { background: color-mix(in srgb, #2f5fb3 14%, transparent); color: #2f5fb3; }
+.ev-eur { background: var(--surface-3); color: var(--text-2); }
+.sci-eq { margin: 12px 0; padding: 10px 12px; border-radius: 12px; background: var(--surface-2); font: 12.5px/1.6 ui-monospace, SFMono-Regular, Menlo, monospace; overflow-wrap: anywhere; }
+.sci-eq b { font-size: 15px; }
+.sci-note { margin: 8px 0; font-size: 13.5px; line-height: 1.5; padding-left: 12px; border-left: 3px solid var(--hair); }
+.sci-chart { margin: 16px 0 0; }
+.sci-chart figcaption { font-size: 12.5px; color: var(--text-2); margin-bottom: 4px; }
+.sci-chart svg { display: block; width: 100%; height: auto; overflow: visible; }
+.sci-chart .bars rect { fill: #4d7fc4; } .sci-chart .bars rect.in { fill: #2f5fb3; } .sci-chart .bars rect.fc { fill: #4d7fc4; opacity: .4; }
+.sci-chart .win { fill: color-mix(in srgb, var(--accent) 12%, transparent); }
+.sci-chart .thr { stroke: var(--muted); stroke-dasharray: 3 3; stroke-width: 1; }
+.sci-chart .ln { fill: none; stroke: var(--text); stroke-width: 1.8; stroke-linejoin: round; }
+.sci-chart .lbl { font-size: 9.5px; fill: var(--muted); font-family: inherit; }
+.sci-h { margin: 20px 0 8px; font-size: 11.5px; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; color: var(--muted); }
+.sci-sub { margin: 12px 0 6px; font-size: 12.5px; font-weight: 600; color: var(--text-2); }
+.sci-profile { margin-top: 8px; }
+.sci-params { margin: 0; display: grid; gap: 4px; font-size: 13.5px; }
+.sci-params div { display: grid; grid-template-columns: minmax(120px, 40%) 1fr; gap: 10px; }
+.sci-params dt { color: var(--muted); } .sci-params dd { margin: 0; }
+.sp-months { display: grid; grid-template-columns: repeat(12, 1fr); gap: 3px; height: 54px; align-items: end; }
+.sp-m { display: grid; grid-template-rows: 1fr auto; height: 100%; text-align: center; }
+.sp-m i { align-self: end; display: block; border-radius: 3px 3px 0 0; background: var(--accent); opacity: .75; }
+.sp-m small { font-size: 9.5px; color: var(--muted); }
+.sp-forest { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; }
+.sp-forest li { display: grid; grid-template-columns: minmax(110px, 40%) 1fr 30px; gap: 8px; align-items: center; font-size: 13px; }
+.sp-forest i { height: 6px; border-radius: 3px; background: linear-gradient(90deg, var(--ok-ink) var(--w), var(--surface-3) var(--w)); }
+.sp-forest b { text-align: right; font-variant-numeric: tabular-nums; font-weight: 600; color: var(--text-2); }
+.sci-more { margin: 18px 0 4px; } .sci-more a { font-weight: 700; color: var(--accent); text-decoration: none; }
+/* pagina del metodo */
+.method-cta { margin: 4px 0 16px; }
+.md-toc { margin: 8px 0 20px; padding: 12px 14px; border-radius: var(--r-lg); background: var(--surface); border: 1px solid var(--hair); }
+.md-toc ol { margin: 0; padding-left: 20px; display: grid; gap: 4px; font-size: 14px; }
+.md-toc a { color: var(--accent); text-decoration: none; }
+.md { font-size: 15px; line-height: 1.6; }
+.md h2 { display: none; }
+.md h3 { font-family: var(--font-display); font-size: 22px; margin: 28px 0 8px; scroll-margin-top: calc(var(--appbar-h) + 12px); }
+.md h4 { font-size: 16px; margin: 20px 0 6px; scroll-margin-top: calc(var(--appbar-h) + 12px); }
+.md h5 { font-size: 14px; margin: 16px 0 4px; }
+.md p, .md ul, .md ol { margin: 0 0 12px; }
+.md code { font: 13px ui-monospace, SFMono-Regular, Menlo, monospace; background: var(--surface-2); padding: 1px 5px; border-radius: 5px; }
+.md pre { background: var(--surface-2); padding: 12px; border-radius: 12px; overflow-x: auto; }
+.md pre code { background: none; padding: 0; }
+.md-table { overflow-x: auto; margin: 0 0 14px; border: 1px solid var(--hair); border-radius: 12px; }
+.md table { border-collapse: collapse; width: 100%; font-size: 13.5px; }
+.md th, .md td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--hair); vertical-align: top; }
+.md th { background: var(--surface-2); font-weight: 700; }
+.md blockquote { margin: 0 0 12px; padding: 8px 12px; border-left: 3px solid var(--accent); background: var(--surface); }
+#method-body, .md { min-width: 0; max-width: 100%; }
+.md pre { white-space: pre-wrap; overflow-wrap: anywhere; }
+.md { overflow-wrap: break-word; }
+.sf-top { grid-template-columns: 1fr minmax(90px, 36%) 50px; }
