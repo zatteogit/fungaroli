@@ -23,7 +23,7 @@ export function initSpeciesCards({ idData, media, assetUrl, allow3d = true }) {
 
 // Miniatura fotografica (o segnaposto con le iniziali se manca la foto).
 export function thumb(id, size = 36) {
-  const m = MEDIA?.species?.[id]?.ref;
+  const m = MEDIA?.species?.[id]?.ref || MEDIA?.species?.[id]?.inat?.[0];
   const sp = SPECIES.find((s) => s.id === id);
   if (m) return `<img class="thumb" src="${ASSET(m.file)}" width="${size}" height="${size}" alt="" loading="lazy">`;
   return `<span class="thumb thumb-ph" style="width:${size}px;height:${size}px">${esc((sp?.name || '?').slice(0, 2))}</span>`;

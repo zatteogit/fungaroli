@@ -174,8 +174,8 @@ def main():
                 continue
             slug = ll.group(0).lower().replace(" ", "-")
             print("  sosia", ll.group(0), file=sys.stderr)
-            lq, lref = safe(commons_photo, ll.group(0), slug, lk.get("wikidata"), default=(None, None))
-            time.sleep(3)
+            # per i sosia solo iNaturalist: Wikimedia limita le richieste dall'IP condiviso del container
+            lq, lref = lk.get("wikidata"), None
             media["lookalikes"][ll.group(0)] = {"wikidata": lq, "ref": lref, "inat": safe(inat_photos, ll.group(0), slug, 1, default=[])}
         # salvataggio progressivo: si puo' rilanciare e riprende dalla cache
         (ROOT / "data" / "media.json").write_text(json.dumps(media, ensure_ascii=False, indent=1))
