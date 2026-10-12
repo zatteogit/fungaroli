@@ -655,7 +655,7 @@ function renderCompare(box, ref, pick) {
     <p class="cmp-dots" aria-hidden="true">${list.map((_, k) => `<i${k === start ? ' class="on"' : ''}></i>`).join('')}</p>
     <p><a class="btn" href="#/riconosci">Riconosci un altro fungo</a></p>`;
 
-  const track = box.querySelector('.cmp-track'), chips = [...box.querySelectorAll('.cmp-chip')], dots = [...box.querySelectorAll('.cmp-dots i')];
+  const track = box.querySelector('.cmp-track'), chips = [...box.querySelectorAll('.cmp-chip[role="tab"]')], dots = [...box.querySelectorAll('.cmp-dots i')];
   const mark = (i) => {
     chips.forEach((c, k) => c.setAttribute('aria-selected', k === i)); dots.forEach((d, k) => d.classList.toggle('on', k === i));
     chips[i]?.scrollIntoView({ block: 'nearest', inline: 'center', behavior: 'smooth' });
