@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-12",
- "note": "Foto dei luoghi da Wikimedia Commons, scelte a mano tra le immagini georeferenziate di Wikidata vicino a ogni zona.",
+ "note": "Foto dei luoghi da Wikimedia Commons: solo paesaggi o boschi della zona (niente centri abitati), scelte a mano tra le foto georeferenziate vicine (tools/build_media_zones.py). Dove non c'e' niente di adatto si vede la foto del fungo.",
  "zones": {
   "vallonina": {
    "file": "assets/zones/vallonina.jpg",
@@ -74,31 +74,17 @@
     1600
    ]
   },
-  "malito": {
-   "file": "assets/zones/malito.jpg",
-   "file_hd": "assets/zones/malito-hd.jpg",
+  "tancia": {
+   "file": "assets/zones/tancia.jpg",
+   "file_hd": "assets/zones/tancia-hd.jpg",
    "source": "Wikimedia Commons",
-   "page": "https://commons.wikimedia.org/wiki/File:Borgo_di_Pagliara%2C_Borgorose.jpg",
-   "author": "Marica Massaro",
-   "license": "CC BY-SA 4.0",
+   "page": "https://commons.wikimedia.org/wiki/File%3ABeech_Forest_in_the_Sabina_Hills%2C_Latium%2C_Italy_-_52993979506.jpg",
+   "author": "Christoph Strässler",
+   "license": "CC BY-SA 2.0",
    "size": [
-    1280,
-    557
-   ],
-   "place": "Pagliara"
-  },
-  "domo": {
-   "file": "assets/zones/domo.jpg",
-   "file_hd": "assets/zones/domo-hd.jpg",
-   "source": "Wikimedia Commons",
-   "page": "https://commons.wikimedia.org/wiki/File:Villa_San_Lorenzo_a_Flaviano.jpg",
-   "author": "Giuseppe Boni",
-   "license": "CC BY-SA 3.0",
-   "size": [
-    1280,
-    960
-   ],
-   "place": "Villa San Lorenzo a Flaviano"
+    2000,
+    1125
+   ]
   }
  }
 }
