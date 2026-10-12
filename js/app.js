@@ -73,9 +73,10 @@ async function init() {
   const review = !!globalThis.FUNGAROLI_REVIEW; // copia di revisione: niente API esterne
   const load = (f) => fetch(`data/${f}.json`).then((r) => (r.ok ? r.json() : null)).catch(() => null);
   legal = embedded ? embedded.legal : await load('legal');
-  const [zj, hj, aj, tj, idj, mj, ij, trj, stj, mtj, mzj, prj] = embedded
-    ? [embedded.zones, embedded.habitat, embedded.access, embedded.trails, embedded.speciesId, embedded.media, embedded.infographics, embedded.trees, embedded.traits, null, null, embedded.preparation]
-    : await Promise.all(['zones', 'habitat', 'access', 'trails', 'species-id', 'media', 'infografiche', 'trees', 'species-traits', 'media-trees', 'media-zones', 'preparation'].map(load));
+  const [zj, hj, aj, tj, idj, mj, ij, trj, stj, mtj, mzj, prj, thj] = embedded
+    ? [embedded.zones, embedded.habitat, embedded.access, embedded.trails, embedded.speciesId, embedded.media, embedded.infographics, embedded.trees, embedded.traits, null, null, embedded.preparation, embedded.trailheads]
+    : await Promise.all(['zones', 'habitat', 'access', 'trails', 'species-id', 'media', 'infografiche', 'trees', 'species-traits', 'media-trees', 'media-zones', 'preparation', 'trailheads'].map(load));
+  trailheads = thj?.zones || {};
   prep = prj;
   zoneMedia = mzj?.zones || {};
   if (mj && mtj?.trees) mj.trees = { ...(mj.trees || {}), ...mtj.trees };
@@ -319,7 +320,7 @@ const dayEntry = (zid, offset) => {
 };
 // indice "opportunita'": l'indice di fruttificazione corretto con le preferenze attive
 // le stesse correzioni di adjusted(), una per una, per spiegarle
-let prep = null;
+let prep = null, trailheads = {};
 const srcLinks = (src) => (src || []).map((x) => `<a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.title)}</a>`).join(' · ');
 function prepGeneralHtml(rules) {
   const ord = [...rules].sort((a, b) => (a.level === 'obbligatorio' ? 0 : 1) - (b.level === 'obbligatorio' ? 0 : 1));
@@ -711,6 +712,12 @@ function openPoint(zid, pt) {
     ic = `<span class="pt-ic pt-walk">${IC.walk}</span>`; eyebrow = 'Qui lasci l\'auto e prosegui a piedi'; title = ax.road || 'Punto più vicino al bosco adatto';
     text = `In auto ${ax.surface ? `su ${SURF_LABEL[ax.surface]}` : 'su asfalto'} fino a qui, poi ${ax.walkM < 50 ? `il bosco adatto è a bordo strada: ${esc((SHORT[ax.cat] || ax.cat).toLowerCase())} a ${ax.e} m` : `${walkTxt(ax.walkM)} in linea d'aria fino a ${esc((SHORT[ax.cat] || ax.cat).toLowerCase())} a ${ax.e} m`}, adatto a ${esc(d.best.species.name.toLowerCase())}.`;
     actions = `<a class="btn primary big" href="${gmaps(ax.rlat, ax.rlon)}" target="_blank" rel="noopener">${IC.car} Indicazioni stradali fin qui</a>${copyBtn(ax.rlat, ax.rlon)}`;
+  } else if (pt.kind === 'trailhead') {
+    const h = pt.h, t = pt.t;
+    ic = `<span class="pt-ic pt-th">${segnavia(t)}</span>`; eyebrow = 'Imbocco del sentiero'; title = trailName(t);
+    text = `Qui il sentiero incontra una ${h.kind === 'strada' ? 'strada percorribile in auto' : 'strada sterrata'}${h.road ? ` (${esc(h.road)})` : ''}${h.ele != null ? `, a ${h.ele.toLocaleString('it-IT')} m` : ''}.${h.kind === 'sterrata' ? ' Controlla prima che la sterrata sia aperta e adatta alla tua auto.' : ''}`;
+    actions = `<a class="btn primary big" href="${gmaps(h.lat, h.lon)}" target="_blank" rel="noopener">${IC.car} Indicazioni stradali fin qui</a>
+      <button type="button" class="btn ghost" data-trail="${t.id}">Il sentiero</button>${copyBtn(h.lat, h.lon)}`;
   } else {
     const t = pt.t, g = trailGeo(z, t);
     ic = null; eyebrow = pt.top ? 'Sentiero consigliato' : 'Sentiero'; title = '';
@@ -727,6 +734,7 @@ function openPoint(zid, pt) {
   sh.hidden = false;
   sh.querySelector('.sheet-back').addEventListener('click', () => openSheet(zid));
   sh.querySelector('.sheet-close').addEventListener('click', () => { sh.hidden = true; sheetZone = null; state.zoneId = null; renderMap(); });
+  sh.querySelector('[data-trail]')?.addEventListener('click', () => openPoint(zid, { kind: 'trail', t: pt.t, top: false }));
   sh.querySelector('[data-copy]')?.addEventListener('click', (e) => {
     const b = e.currentTarget;
     navigator.clipboard?.writeText(b.dataset.copy).then(() => { b.textContent = 'Copiate'; }).catch(() => { b.textContent = b.dataset.copy; });
@@ -893,6 +901,14 @@ function renderMap() {
             .bindTooltip(`${t.ref ? 'CAI ' + esc(t.ref) + ' · ' : ''}${esc(t.name || t.itinerary.join(' – ') || 'Sentiero')}`, { sticky: true });
         }
       }
+      // imbocchi dei sentieri adatti: un segnavia piccolo dove si lascia l'auto (uno per punto, anche se ci passano piu' sentieri)
+      const seenTh = [];
+      for (const t of tl) for (const h of headsOf(z, t)) {
+        if (seenTh.some((q) => Math.abs(q.lat - h.lat) < 0.0015 && Math.abs(q.lon - h.lon) < 0.002)) continue;
+        seenTh.push(h);
+        L.marker([h.lat, h.lon], { icon: L.divIcon({ className: '', html: `<span class="map-th${h.kind === 'strada' ? '' : ' unpaved'}" aria-hidden="true"><i></i><i></i><i></i></span>`, iconSize: [18, 22], iconAnchor: [9, 11] }), keyboard: true, title: `Imbocco: ${trailName(t)}` })
+          .addTo(g).on('click', () => openPoint(z.id, { kind: 'trailhead', h, t }));
+      }
       if (d.access?.rlat) {
         L.polyline([[d.access.rlat, d.access.rlon], [d.access.lat, d.access.lon]], { color: cssVar('--text'), weight: 2, dashArray: '2 5', interactive: false }).addTo(g);
         L.marker([d.access.rlat, d.access.rlon], { icon: L.divIcon({ className: '', html: `<span class="map-pin" aria-hidden="true">${IC.walk}</span>`, iconSize: [36, 36], iconAnchor: [18, 18] }), keyboard: true, title: 'Qui lasci l\'auto e prosegui a piedi' })
@@ -959,6 +975,9 @@ function forestBar(frac) {
 }
 
 const ICON = {
+  track: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 21 10 3M19 21 14 3"/><circle cx="12" cy="17" r=".6"/><circle cx="10.5" cy="12" r=".6"/><circle cx="13" cy="8.5" r=".6"/><circle cx="12" cy="5" r=".6"/></svg>',
+  download: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>',
+  ext: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v6H4V6h6"/></svg>',
   find: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 6 0 0 1 16 0z"/><path d="M10 12v6a2 2 0 0 0 4 0v-6"/></svg>',
   when: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg>',
   car: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 16V11l2-4h10l2 4v5"/><path d="M4 16h16"/><circle cx="8" cy="17" r="1.5"/><circle cx="16" cy="17" r="1.5"/></svg>',
@@ -1196,10 +1215,12 @@ function trailCard(z, t, d, top = false) {
     t.total_km && t.total_km < 200 && `<div><dt>Intero</dt><dd>${fmtKm(t.total_km)} km${t.duration ? ` · ${fmtDur(t.duration)}` : ''}${t.ascent ? ` · +${esc(t.ascent)} m` : ''}</dd></div>`,
     `<div><dt>Nella zona</dt><dd>${fmtKm(t.in_zone_km)} km${t.goodKm != null ? `, di cui <b>${fmtKm(t.goodKm)} km</b> in bosco adatto` : ''}</dd></div>`,
   ].filter(Boolean).join('');
+  const heads = headsOf(z, t);
   return `<div class="tcard${top ? ' top' : ''}">
     <div class="tc-head">${segnavia(t)}<div class="tc-name"><b>${esc(trailName(t))}</b>${t.itinerary?.length > 2 ? `<small>${esc(t.itinerary.slice(1, -1).join(' · '))}</small>` : ''}${t.long ? '<small>tratto di un itinerario lungo</small>' : ''}${t.operator ? `<small>${esc(t.operator)}</small>` : ''}</div>${top ? '<span class="badge tc-top">consigliato</span>' : ''}</div>
     <dl class="tc-facts">${facts}</dl>
     ${d?.best ? trailProfile(z.id, t, d.best.species, d.best.band) : ''}
+    ${heads.length ? `<div class="th-row"><span class="th-k">Imbocchi</span><div class="th-list">${heads.map((h) => `<a class="th-chip" href="${gmaps(h.lat, h.lon)}" target="_blank" rel="noopener" aria-label="Indicazioni stradali per l'imbocco a ${h.ele ?? ''} metri">${h.kind === 'strada' ? IC.car : ICON.track}<span><b>${h.ele != null ? `${h.ele.toLocaleString('it-IT')} m` : 'imbocco'}</b><small>${esc(h.road || (h.kind === 'strada' ? 'su strada' : 'su sterrata'))}</small></span></a>`).join('')}</div></div>` : ''}
   </div>`;
 }
 
@@ -1209,6 +1230,14 @@ function renderTrails(z, d) {
   return `
     <ol class="trails">${list.map((t, k) => `<li>${trailCard(z, t, d, k === 0)}${trailLinks(z, t)}</li>`).join('')}</ol>
     <p class="muted small">Sentieri OpenStreetMap (rete CAI). Il segnavia è il segno bianco e rosso con il numero dipinto su alberi e sassi. I km "adatti" incrociano tracciato, Carta Forestale e quota della specie. Google Maps di norma non mostra i sentieri CAI: sul posto usa un'app con mappe OpenStreetMap (OsmAnd, Organic Maps, Komoot, Locus) e il GPX.</p>`;
+}
+
+// imbocchi del sentiero (data/trailheads.json): dove si arriva in auto; prima i piu' vicini alla sosta della zona
+function headsOf(z, t) {
+  const list = trailheads[z.id]?.[String(t.id)] || [];
+  const park = access[z.id]?.[0] || z;
+  const d2 = (h) => (h.lat - park.lat) ** 2 + ((h.lon - park.lon) * 0.74) ** 2;
+  return [...list].sort((a, b) => (a.kind === 'strada' ? 0 : 1) - (b.kind === 'strada' ? 0 : 1) || d2(a) - d2(b)).slice(0, 3);
 }
 
 // Geometria di un sentiero nella zona: mappa centrata sul tratto, imbocco piu' vicino alla sosta, GPX del tratto
@@ -1234,11 +1263,12 @@ function trailGeo(z, t) {
 function trailLinks(z, t) {
   const g = trailGeo(z, t);
   if (!g) return `<a class="small" href="https://www.openstreetmap.org/relation/${t.id}" target="_blank" rel="noopener">Tracciato su OpenStreetMap</a>`;
-  return `<p class="trail-links small">
-    <a href="${g.wm}" target="_blank" rel="noopener">Percorso e profilo</a> ·
-    <a href="${gmaps(g.start[0], g.start[1])}" target="_blank" rel="noopener">Indicazioni stradali all'imbocco</a> ·
-    <a href="${g.gpx}" download="${esc(g.file)}">Scarica GPX</a> ·
-    <a href="https://www.openstreetmap.org/relation/${t.id}" target="_blank" rel="noopener">OpenStreetMap</a></p>`;
+  const h = headsOf(z, t)[0], go = h ? [h.lat, h.lon] : g.start;
+  return `<div class="tl-btns">
+    <a class="tl-btn primary" href="${gmaps(go[0], go[1])}" target="_blank" rel="noopener">${IC.car}<span>Portami all'imbocco</span></a>
+    <a class="tl-btn" href="${g.wm}" target="_blank" rel="noopener">${IC.map}<span>Percorso e profilo</span></a>
+    <a class="tl-btn" href="${g.gpx}" download="${esc(g.file)}">${ICON.download}<span>Scarica GPX</span></a>
+    <a class="tl-btn" href="https://www.openstreetmap.org/relation/${t.id}" target="_blank" rel="noopener">${ICON.ext}<span>OpenStreetMap</span></a></div>`;
 }
 
 // --- testi legali e di sicurezza (data/legal.json, con ripiego prudente) ------

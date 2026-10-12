@@ -1,0 +1,2984 @@
+{
+ "generated": "2026-10-12",
+ "source": "OpenStreetMap via Valhalla (trace_attributes, height): punti dove il sentiero incontra una strada carrozzabile o una sterrata",
+ "zones": {
+  "vallonina": {
+   "1021025": [
+    {
+     "lat": 42.46847,
+     "lon": 13.01093,
+     "kind": "strada",
+     "road": null,
+     "ele": 1760
+    },
+    {
+     "lat": 42.46562,
+     "lon": 13.00265,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 1689
+    },
+    {
+     "lat": 42.47231,
+     "lon": 13.01418,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 1816
+    },
+    {
+     "lat": 42.48473,
+     "lon": 13.013,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 1799
+    },
+    {
+     "lat": 42.4969,
+     "lon": 13.00769,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 1832
+    },
+    {
+     "lat": 42.45828,
+     "lon": 12.9997,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 1529
+    }
+   ],
+   "10645640": [
+    {
+     "lat": 42.4969,
+     "lon": 13.00769,
+     "kind": "strada",
+     "road": null,
+     "ele": 1832
+    },
+    {
+     "lat": 42.47231,
+     "lon": 13.01418,
+     "kind": "strada",
+     "road": null,
+     "ele": 1816
+    },
+    {
+     "lat": 42.48587,
+     "lon": 13.01145,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 1775
+    }
+   ],
+   "10645560": [
+    {
+     "lat": 42.48628,
+     "lon": 13.02912,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 1089
+    },
+    {
+     "lat": 42.47888,
+     "lon": 13.02323,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 1385
+    },
+    {
+     "lat": 42.49046,
+     "lon": 13.04074,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 934
+    }
+   ],
+   "14187617": [
+    {
+     "lat": 42.49918,
+     "lon": 13.01698,
+     "kind": "strada",
+     "road": null,
+     "ele": 1801
+    },
+    {
+     "lat": 42.4902,
+     "lon": 13.01268,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 1888
+    }
+   ],
+   "10645471": [
+    {
+     "lat": 42.47045,
+     "lon": 13.00394,
+     "kind": "strada",
+     "road": null,
+     "ele": 1983
+    }
+   ],
+   "10646060": [
+    {
+     "lat": 42.49926,
+     "lon": 13.01697,
+     "kind": "strada",
+     "road": null,
+     "ele": 1802
+    }
+   ],
+   "11211416": [
+    {
+     "lat": 42.50316,
+     "lon": 12.9804,
+     "kind": "strada",
+     "road": null,
+     "ele": 1439
+    },
+    {
+     "lat": 42.49783,
+     "lon": 12.97866,
+     "kind": "strada",
+     "road": null,
+     "ele": 1555
+    },
+    {
+     "lat": 42.49148,
+     "lon": 12.97815,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 1650
+    }
+   ],
+   "14326260": [
+    {
+     "lat": 42.49698,
+     "lon": 13.01301,
+     "kind": "strada",
+     "road": null,
+     "ele": 1797
+    },
+    {
+     "lat": 42.5053,
+     "lon": 13.0221,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 1891
+    }
+   ],
+   "19556826": [
+    {
+     "lat": 42.46019,
+     "lon": 12.99531,
+     "kind": "strada",
+     "road": null,
+     "ele": 1673
+    },
+    {
+     "lat": 42.46847,
+     "lon": 13.01093,
+     "kind": "strada",
+     "road": null,
+     "ele": 1760
+    },
+    {
+     "lat": 42.46562,
+     "lon": 13.00265,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 1689
+    }
+   ],
+   "10645738": [
+    {
+     "lat": 42.46847,
+     "lon": 13.01093,
+     "kind": "strada",
+     "road": null,
+     "ele": 1760
+    },
+    {
+     "lat": 42.46562,
+     "lon": 13.00265,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 1689
+    },
+    {
+     "lat": 42.45828,
+     "lon": 12.9997,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 1529
+    }
+   ],
+   "18087684": [
+    {
+     "lat": 42.47042,
+     "lon": 12.97711,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 1584
+    }
+   ]
+  },
+  "poggio-cantalice": {
+   "1230678": [
+    {
+     "lat": 42.4907,
+     "lon": 12.88832,
+     "kind": "strada",
+     "road": null,
+     "ele": 589
+    },
+    {
+     "lat": 42.48703,
+     "lon": 12.88789,
+     "kind": "strada",
+     "road": null,
+     "ele": 572
+    },
+    {
+     "lat": 42.46826,
+     "lon": 12.90098,
+     "kind": "strada",
+     "road": null,
+     "ele": 645
+    },
+    {
+     "lat": 42.46735,
+     "lon": 12.90454,
+     "kind": "strada",
+     "road": null,
+     "ele": 660
+    },
+    {
+     "lat": 42.50527,
+     "lon": 12.89359,
+     "kind": "strada",
+     "road": null,
+     "ele": 849
+    },
+    {
+     "lat": 42.51622,
+     "lon": 12.91873,
+     "kind": "strada",
+     "road": null,
+     "ele": 1485
+    },
+    {
+     "lat": 42.51202,
+     "lon": 12.89818,
+     "kind": "strada",
+     "road": null,
+     "ele": 1282
+    },
+    {
+     "lat": 42.47269,
+     "lon": 12.89586,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 612
+    },
+    {
+     "lat": 42.51628,
+     "lon": 12.90661,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 1396
+    }
+   ],
+   "11109163": [
+    {
+     "lat": 42.50247,
+     "lon": 12.90768,
+     "kind": "strada",
+     "road": null,
+     "ele": 952
+    },
+    {
+     "lat": 42.50463,
+     "lon": 12.89271,
+     "kind": "strada",
+     "road": "Via Convento San Giacomo",
+     "ele": 826
+    },
+    {
+     "lat": 42.50069,
+     "lon": 12.89094,
+     "kind": "strada",
+     "road": null,
+     "ele": 643
+    },
+    {
+     "lat": 42.4907,
+     "lon": 12.88832,
+     "kind": "strada",
+     "road": null,
+     "ele": 589
+    },
+    {
+     "lat": 42.48703,
+     "lon": 12.88789,
+     "kind": "strada",
+     "road": null,
+     "ele": 572
+    },
+    {
+     "lat": 42.46826,
+     "lon": 12.90098,
+     "kind": "strada",
+     "road": null,
+     "ele": 645
+    },
+    {
+     "lat": 42.4675,
+     "lon": 12.90458,
+     "kind": "strada",
+     "road": null,
+     "ele": 661
+    },
+    {
+     "lat": 42.47269,
+     "lon": 12.89586,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 612
+    }
+   ],
+   "6689530": [
+    {
+     "lat": 42.50069,
+     "lon": 12.89094,
+     "kind": "strada",
+     "road": null,
+     "ele": 643
+    },
+    {
+     "lat": 42.4907,
+     "lon": 12.88832,
+     "kind": "strada",
+     "road": null,
+     "ele": 589
+    },
+    {
+     "lat": 42.48703,
+     "lon": 12.88789,
+     "kind": "strada",
+     "road": null,
+     "ele": 572
+    },
+    {
+     "lat": 42.46826,
+     "lon": 12.90098,
+     "kind": "strada",
+     "road": null,
+     "ele": 645
+    },
+    {
+     "lat": 42.4675,
+     "lon": 12.90458,
+     "kind": "strada",
+     "road": null,
+     "ele": 661
+    },
+    {
+     "lat": 42.50418,
+     "lon": 12.89166,
+     "kind": "strada",
+     "road": "Via San Giacomo",
+     "ele": 825
+    },
+    {
+     "lat": 42.47269,
+     "lon": 12.89586,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 612
+    }
+   ],
+   "7793277": [
+    {
+     "lat": 42.46687,
+     "lon": 12.90529,
+     "kind": "strada",
+     "road": "Via Castello",
+     "ele": 698
+    },
+    {
+     "lat": 42.46826,
+     "lon": 12.90098,
+     "kind": "strada",
+     "road": null,
+     "ele": 645
+    },
+    {
+     "lat": 42.48703,
+     "lon": 12.88789,
+     "kind": "strada",
+     "road": null,
+     "ele": 572
+    },
+    {
+     "lat": 42.4907,
+     "lon": 12.88832,
+     "kind": "strada",
+     "road": null,
+     "ele": 589
+    },
+    {
+     "lat": 42.50069,
+     "lon": 12.89094,
+     "kind": "strada",
+     "road": null,
+     "ele": 643
+    },
+    {
+     "lat": 42.46438,
+     "lon": 12.90346,
+     "kind": "strada",
+     "road": "Via del Castello",
+     "ele": 691
+    },
+    {
+     "lat": 42.47269,
+     "lon": 12.89586,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 612
+    }
+   ],
+   "21004687": [
+    {
+     "lat": 42.50446,
+     "lon": 12.89219,
+     "kind": "strada",
+     "road": null,
+     "ele": 821
+    },
+    {
+     "lat": 42.50069,
+     "lon": 12.89094,
+     "kind": "strada",
+     "road": null,
+     "ele": 643
+    },
+    {
+     "lat": 42.4907,
+     "lon": 12.88832,
+     "kind": "strada",
+     "road": null,
+     "ele": 589
+    },
+    {
+     "lat": 42.48703,
+     "lon": 12.88789,
+     "kind": "strada",
+     "road": null,
+     "ele": 572
+    },
+    {
+     "lat": 42.46826,
+     "lon": 12.90098,
+     "kind": "strada",
+     "road": null,
+     "ele": 645
+    },
+    {
+     "lat": 42.4675,
+     "lon": 12.90458,
+     "kind": "strada",
+     "road": null,
+     "ele": 661
+    },
+    {
+     "lat": 42.47269,
+     "lon": 12.89586,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 612
+    }
+   ],
+   "7794322": [
+    {
+     "lat": 42.50446,
+     "lon": 12.89219,
+     "kind": "strada",
+     "road": null,
+     "ele": 821
+    },
+    {
+     "lat": 42.50069,
+     "lon": 12.89094,
+     "kind": "strada",
+     "road": null,
+     "ele": 643
+    },
+    {
+     "lat": 42.4907,
+     "lon": 12.88832,
+     "kind": "strada",
+     "road": null,
+     "ele": 589
+    },
+    {
+     "lat": 42.48703,
+     "lon": 12.88789,
+     "kind": "strada",
+     "road": null,
+     "ele": 572
+    },
+    {
+     "lat": 42.46826,
+     "lon": 12.90098,
+     "kind": "strada",
+     "road": null,
+     "ele": 645
+    },
+    {
+     "lat": 42.4675,
+     "lon": 12.90458,
+     "kind": "strada",
+     "road": null,
+     "ele": 661
+    },
+    {
+     "lat": 42.47269,
+     "lon": 12.89586,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 612
+    }
+   ],
+   "7790985": [
+    {
+     "lat": 42.46687,
+     "lon": 12.90529,
+     "kind": "strada",
+     "road": "Via Castello",
+     "ele": 698
+    },
+    {
+     "lat": 42.46826,
+     "lon": 12.90098,
+     "kind": "strada",
+     "road": null,
+     "ele": 645
+    },
+    {
+     "lat": 42.48703,
+     "lon": 12.88789,
+     "kind": "strada",
+     "road": null,
+     "ele": 572
+    },
+    {
+     "lat": 42.4907,
+     "lon": 12.88832,
+     "kind": "strada",
+     "road": null,
+     "ele": 589
+    },
+    {
+     "lat": 42.50069,
+     "lon": 12.89094,
+     "kind": "strada",
+     "road": null,
+     "ele": 643
+    },
+    {
+     "lat": 42.50446,
+     "lon": 12.89219,
+     "kind": "strada",
+     "road": null,
+     "ele": 821
+    },
+    {
+     "lat": 42.46438,
+     "lon": 12.90346,
+     "kind": "strada",
+     "road": "Via del Castello",
+     "ele": 691
+    },
+    {
+     "lat": 42.47269,
+     "lon": 12.89586,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 612
+    }
+   ],
+   "11211872": [
+    {
+     "lat": 42.50088,
+     "lon": 12.90353,
+     "kind": "strada",
+     "road": null,
+     "ele": 1026
+    },
+    {
+     "lat": 42.50247,
+     "lon": 12.90768,
+     "kind": "strada",
+     "road": null,
+     "ele": 952
+    }
+   ],
+   "11211743": [
+    {
+     "lat": 42.50446,
+     "lon": 12.89219,
+     "kind": "strada",
+     "road": null,
+     "ele": 821
+    },
+    {
+     "lat": 42.50247,
+     "lon": 12.90768,
+     "kind": "strada",
+     "road": null,
+     "ele": 952
+    },
+    {
+     "lat": 42.51622,
+     "lon": 12.91873,
+     "kind": "strada",
+     "road": null,
+     "ele": 1485
+    }
+   ],
+   "11211746": [
+    {
+     "lat": 42.51202,
+     "lon": 12.89818,
+     "kind": "strada",
+     "road": null,
+     "ele": 1282
+    }
+   ],
+   "7794323": [
+    {
+     "lat": 42.50446,
+     "lon": 12.89219,
+     "kind": "strada",
+     "road": null,
+     "ele": 821
+    },
+    {
+     "lat": 42.50542,
+     "lon": 12.88503,
+     "kind": "strada",
+     "road": "Via della Casetta",
+     "ele": 812
+    }
+   ],
+   "7792813": [
+    {
+     "lat": 42.50446,
+     "lon": 12.89219,
+     "kind": "strada",
+     "road": null,
+     "ele": 821
+    }
+   ]
+  },
+  "antrodoco": {
+   "1021025": [
+    {
+     "lat": 42.38724,
+     "lon": 13.08182,
+     "kind": "strada",
+     "road": null,
+     "ele": 1009
+    },
+    {
+     "lat": 42.39816,
+     "lon": 13.07519,
+     "kind": "strada",
+     "road": null,
+     "ele": 744
+    },
+    {
+     "lat": 42.40223,
+     "lon": 13.07496,
+     "kind": "strada",
+     "road": null,
+     "ele": 712
+    },
+    {
+     "lat": 42.40871,
+     "lon": 13.07695,
+     "kind": "strada",
+     "road": null,
+     "ele": 612
+    },
+    {
+     "lat": 42.41448,
+     "lon": 13.07743,
+     "kind": "strada",
+     "road": null,
+     "ele": 485
+    },
+    {
+     "lat": 42.42004,
+     "lon": 13.07897,
+     "kind": "strada",
+     "road": "Via Nazionale (Salaria vecchia)",
+     "ele": 500
+    },
+    {
+     "lat": 42.43543,
+     "lon": 13.0749,
+     "kind": "strada",
+     "road": null,
+     "ele": 520
+    },
+    {
+     "lat": 42.3901,
+     "lon": 13.07609,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 965
+    },
+    {
+     "lat": 42.43239,
+     "lon": 13.06475,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 531
+    },
+    {
+     "lat": 42.43918,
+     "lon": 13.0577,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 731
+    }
+   ],
+   "11183896": [
+    {
+     "lat": 42.38724,
+     "lon": 13.08182,
+     "kind": "strada",
+     "road": null,
+     "ele": 1009
+    },
+    {
+     "lat": 42.39814,
+     "lon": 13.07463,
+     "kind": "strada",
+     "road": null,
+     "ele": 757
+    },
+    {
+     "lat": 42.40223,
+     "lon": 13.07496,
+     "kind": "strada",
+     "road": null,
+     "ele": 712
+    },
+    {
+     "lat": 42.40871,
+     "lon": 13.07695,
+     "kind": "strada",
+     "road": null,
+     "ele": 612
+    },
+    {
+     "lat": 42.41448,
+     "lon": 13.07743,
+     "kind": "strada",
+     "road": null,
+     "ele": 485
+    },
+    {
+     "lat": 42.42004,
+     "lon": 13.07897,
+     "kind": "strada",
+     "road": "Via Nazionale (Salaria vecchia)",
+     "ele": 500
+    },
+    {
+     "lat": 42.44305,
+     "lon": 13.07707,
+     "kind": "strada",
+     "road": null,
+     "ele": 518
+    },
+    {
+     "lat": 42.3901,
+     "lon": 13.07609,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 965
+    },
+    {
+     "lat": 42.39561,
+     "lon": 13.07685,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 773
+    },
+    {
+     "lat": 42.4333,
+     "lon": 13.0752,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 510
+    }
+   ],
+   "14326317": [
+    {
+     "lat": 42.41118,
+     "lon": 13.13016,
+     "kind": "strada",
+     "road": null,
+     "ele": 905
+    },
+    {
+     "lat": 42.42874,
+     "lon": 13.12623,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 1305
+    }
+   ],
+   "10647439": [
+    {
+     "lat": 42.39981,
+     "lon": 13.08869,
+     "kind": "strada",
+     "road": null,
+     "ele": 742
+    },
+    {
+     "lat": 42.39653,
+     "lon": 13.09031,
+     "kind": "strada",
+     "road": null,
+     "ele": 786
+    },
+    {
+     "lat": 42.38834,
+     "lon": 13.07727,
+     "kind": "strada",
+     "road": null,
+     "ele": 981
+    },
+    {
+     "lat": 42.38724,
+     "lon": 13.08182,
+     "kind": "strada",
+     "road": null,
+     "ele": 1009
+    }
+   ],
+   "10646876": [
+    {
+     "lat": 42.42291,
+     "lon": 13.04834,
+     "kind": "strada",
+     "road": null,
+     "ele": 884
+    },
+    {
+     "lat": 42.42279,
+     "lon": 13.06304,
+     "kind": "strada",
+     "road": null,
+     "ele": 735
+    }
+   ],
+   "11211696": [
+    {
+     "lat": 42.44305,
+     "lon": 13.07707,
+     "kind": "strada",
+     "road": null,
+     "ele": 518
+    },
+    {
+     "lat": 42.42124,
+     "lon": 13.07951,
+     "kind": "strada",
+     "road": null,
+     "ele": 488
+    },
+    {
+     "lat": 42.4333,
+     "lon": 13.0752,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 510
+    }
+   ],
+   "10646634": [
+    {
+     "lat": 42.40956,
+     "lon": 13.05132,
+     "kind": "strada",
+     "road": null,
+     "ele": 574
+    },
+    {
+     "lat": 42.41226,
+     "lon": 13.04608,
+     "kind": "strada",
+     "road": null,
+     "ele": 735
+    },
+    {
+     "lat": 42.42224,
+     "lon": 13.04895,
+     "kind": "strada",
+     "road": null,
+     "ele": 862
+    },
+    {
+     "lat": 42.40823,
+     "lon": 13.05584,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 460
+    }
+   ],
+   "10645738": [
+    {
+     "lat": 42.43239,
+     "lon": 13.06475,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 531
+    },
+    {
+     "lat": 42.43918,
+     "lon": 13.0577,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 731
+    },
+    {
+     "lat": 42.43379,
+     "lon": 13.07308,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 517
+    }
+   ],
+   "14184684": [
+    {
+     "lat": 42.3997,
+     "lon": 13.06675,
+     "kind": "strada",
+     "road": null,
+     "ele": 670
+    },
+    {
+     "lat": 42.39366,
+     "lon": 13.0685,
+     "kind": "strada",
+     "road": null,
+     "ele": 849
+    },
+    {
+     "lat": 42.38921,
+     "lon": 13.06936,
+     "kind": "strada",
+     "road": null,
+     "ele": 943
+    }
+   ],
+   "10647149": [
+    {
+     "lat": 42.40124,
+     "lon": 13.06122,
+     "kind": "strada",
+     "road": null,
+     "ele": 635
+    },
+    {
+     "lat": 42.39638,
+     "lon": 13.06585,
+     "kind": "strada",
+     "road": null,
+     "ele": 789
+    }
+   ]
+  },
+  "cicolano": {
+   "17823580": [
+    {
+     "lat": 42.21509,
+     "lon": 13.00913,
+     "kind": "strada",
+     "road": null,
+     "ele": 1145
+    }
+   ],
+   "1021025": [
+    {
+     "lat": 42.16432,
+     "lon": 13.03522,
+     "kind": "strada",
+     "road": null,
+     "ele": 1053
+    },
+    {
+     "lat": 42.16271,
+     "lon": 13.02184,
+     "kind": "strada",
+     "road": null,
+     "ele": 900
+    },
+    {
+     "lat": 42.1911,
+     "lon": 12.99834,
+     "kind": "strada",
+     "road": null,
+     "ele": 728
+    },
+    {
+     "lat": 42.19568,
+     "lon": 12.99633,
+     "kind": "strada",
+     "road": null,
+     "ele": 736
+    },
+    {
+     "lat": 42.19921,
+     "lon": 12.99455,
+     "kind": "strada",
+     "road": "Strada provinciale 34E di Ascrea",
+     "ele": 745
+    },
+    {
+     "lat": 42.21529,
+     "lon": 13.00991,
+     "kind": "strada",
+     "road": null,
+     "ele": 1152
+    },
+    {
+     "lat": 42.15294,
+     "lon": 13.04135,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 723
+    },
+    {
+     "lat": 42.1606,
+     "lon": 13.03277,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 1032
+    },
+    {
+     "lat": 42.17569,
+     "lon": 13.00937,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 888
+    },
+    {
+     "lat": 42.15128,
+     "lon": 13.0443,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 725
+    }
+   ],
+   "11183896": [
+    {
+     "lat": 42.22308,
+     "lon": 13.01702,
+     "kind": "strada",
+     "road": null,
+     "ele": 950
+    },
+    {
+     "lat": 42.22055,
+     "lon": 13.04025,
+     "kind": "strada",
+     "road": null,
+     "ele": 987
+    },
+    {
+     "lat": 42.22666,
+     "lon": 13.04702,
+     "kind": "strada",
+     "road": null,
+     "ele": 916
+    },
+    {
+     "lat": 42.22501,
+     "lon": 13.05832,
+     "kind": "strada",
+     "road": null,
+     "ele": 743
+    },
+    {
+     "lat": 42.21481,
+     "lon": 13.04059,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 1070
+    },
+    {
+     "lat": 42.22325,
+     "lon": 13.05255,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 789
+    }
+   ],
+   "11098510": [
+    {
+     "lat": 42.19989,
+     "lon": 13.04486,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 948
+    },
+    {
+     "lat": 42.20425,
+     "lon": 13.04838,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 849
+    },
+    {
+     "lat": 42.2019,
+     "lon": 13.03811,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 963
+    }
+   ],
+   "14288642": [
+    {
+     "lat": 42.21666,
+     "lon": 13.01715,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 1057
+    },
+    {
+     "lat": 42.21622,
+     "lon": 13.04379,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 1028
+    }
+   ],
+   "11098305": [
+    {
+     "lat": 42.16271,
+     "lon": 13.02184,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 900
+    },
+    {
+     "lat": 42.1606,
+     "lon": 13.03277,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 1032
+    },
+    {
+     "lat": 42.1512,
+     "lon": 13.01602,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 599
+    }
+   ],
+   "14163480": [
+    {
+     "lat": 42.23843,
+     "lon": 13.01408,
+     "kind": "strada",
+     "road": "Strada provinciale 65 Vallecupola - Varco",
+     "ele": 778
+    },
+    {
+     "lat": 42.21529,
+     "lon": 13.00991,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 1152
+    }
+   ],
+   "11098360": [
+    {
+     "lat": 42.16036,
+     "lon": 13.03605,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 1060
+    },
+    {
+     "lat": 42.17529,
+     "lon": 13.03549,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 1017
+    }
+   ],
+   "11098724": [
+    {
+     "lat": 42.21762,
+     "lon": 12.97941,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 721
+    }
+   ],
+   "11098449": [
+    {
+     "lat": 42.2084,
+     "lon": 13.00235,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 1117
+    },
+    {
+     "lat": 42.21529,
+     "lon": 13.00991,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 1152
+    }
+   ],
+   "11098379": [
+    {
+     "lat": 42.18005,
+     "lon": 13.00494,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 860
+    },
+    {
+     "lat": 42.18822,
+     "lon": 12.99792,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 718
+    }
+   ],
+   "14160063": [
+    {
+     "lat": 42.16353,
+     "lon": 13.01975,
+     "kind": "strada",
+     "road": null,
+     "ele": 864
+    },
+    {
+     "lat": 42.17569,
+     "lon": 13.00937,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 888
+    }
+   ],
+   "14159810": [
+    {
+     "lat": 42.16246,
+     "lon": 13.03874,
+     "kind": "strada",
+     "road": null,
+     "ele": 909
+    },
+    {
+     "lat": 42.15294,
+     "lon": 13.04135,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 723
+    },
+    {
+     "lat": 42.15128,
+     "lon": 13.0443,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 725
+    }
+   ],
+   "11098448": [
+    {
+     "lat": 42.20249,
+     "lon": 13.03245,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 951
+    },
+    {
+     "lat": 42.19816,
+     "lon": 13.02274,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 808
+    }
+   ]
+  },
+  "rascino": {
+   "11183896": [
+    {
+     "lat": 42.3235,
+     "lon": 13.18564,
+     "kind": "strada",
+     "road": null,
+     "ele": 1317
+    },
+    {
+     "lat": 42.33046,
+     "lon": 13.16772,
+     "kind": "strada",
+     "road": null,
+     "ele": 1192
+    },
+    {
+     "lat": 42.3208,
+     "lon": 13.18791,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 1296
+    }
+   ],
+   "12420231": [
+    {
+     "lat": 42.32674,
+     "lon": 13.11642,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 1235
+    },
+    {
+     "lat": 42.33935,
+     "lon": 13.13456,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 1153
+    }
+   ],
+   "12460968": [
+    {
+     "lat": 42.35593,
+     "lon": 13.15187,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 1357
+    },
+    {
+     "lat": 42.33382,
+     "lon": 13.1641,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 1171
+    },
+    {
+     "lat": 42.35402,
+     "lon": 13.13303,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 1306
+    }
+   ],
+   "11183875": [
+    {
+     "lat": 42.3235,
+     "lon": 13.18564,
+     "kind": "strada",
+     "road": null,
+     "ele": 1317
+    },
+    {
+     "lat": 42.33046,
+     "lon": 13.16772,
+     "kind": "strada",
+     "road": null,
+     "ele": 1192
+    },
+    {
+     "lat": 42.3208,
+     "lon": 13.18791,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 1296
+    }
+   ],
+   "12164320": [
+    {
+     "lat": 42.34273,
+     "lon": 13.13902,
+     "kind": "strada",
+     "road": null,
+     "ele": 1152
+    },
+    {
+     "lat": 42.34638,
+     "lon": 13.13204,
+     "kind": "strada",
+     "road": null,
+     "ele": 1214
+    },
+    {
+     "lat": 42.35401,
+     "lon": 13.1166,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 1307
+    },
+    {
+     "lat": 42.33773,
+     "lon": 13.14506,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 1143
+    }
+   ],
+   "12231811": [
+    {
+     "lat": 42.34061,
+     "lon": 13.11835,
+     "kind": "strada",
+     "road": null,
+     "ele": 1322
+    },
+    {
+     "lat": 42.34305,
+     "lon": 13.11059,
+     "kind": "strada",
+     "road": null,
+     "ele": 1486
+    },
+    {
+     "lat": 42.34047,
+     "lon": 13.12235,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 1247
+    },
+    {
+     "lat": 42.33773,
+     "lon": 13.14506,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 1143
+    }
+   ],
+   "13673705": [
+    {
+     "lat": 42.32974,
+     "lon": 13.1102,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 1253
+    },
+    {
+     "lat": 42.33823,
+     "lon": 13.11369,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 1311
+    },
+    {
+     "lat": 42.32674,
+     "lon": 13.11642,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 1235
+    }
+   ]
+  },
+  "tancia": {
+   "12253825": [
+    {
+     "lat": 42.30641,
+     "lon": 12.74865,
+     "kind": "strada",
+     "road": null,
+     "ele": 815
+    },
+    {
+     "lat": 42.29734,
+     "lon": 12.75741,
+     "kind": "strada",
+     "road": null,
+     "ele": 779
+    },
+    {
+     "lat": 42.29625,
+     "lon": 12.77102,
+     "kind": "strada",
+     "road": null,
+     "ele": 609
+    },
+    {
+     "lat": 42.33507,
+     "lon": 12.73507,
+     "kind": "sterrata",
+     "road": "vicinale Valle Gemini",
+     "ele": 1080
+    },
+    {
+     "lat": 42.32457,
+     "lon": 12.74958,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 1012
+    },
+    {
+     "lat": 42.3096,
+     "lon": 12.74801,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 893
+    },
+    {
+     "lat": 42.34124,
+     "lon": 12.73637,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 1134
+    }
+   ],
+   "12313366": [
+    {
+     "lat": 42.33507,
+     "lon": 12.73507,
+     "kind": "strada",
+     "road": null,
+     "ele": 1080
+    }
+   ],
+   "20368596": [
+    {
+     "lat": 42.29734,
+     "lon": 12.75741,
+     "kind": "strada",
+     "road": null,
+     "ele": 779
+    },
+    {
+     "lat": 42.30353,
+     "lon": 12.73465,
+     "kind": "strada",
+     "road": "Strada provinciale Vecchia Tancia",
+     "ele": 663
+    },
+    {
+     "lat": 42.30697,
+     "lon": 12.72152,
+     "kind": "strada",
+     "road": null,
+     "ele": 654
+    },
+    {
+     "lat": 42.31296,
+     "lon": 12.71005,
+     "kind": "strada",
+     "road": null,
+     "ele": 566
+    },
+    {
+     "lat": 42.29625,
+     "lon": 12.77102,
+     "kind": "sterrata",
+     "road": "strada vicinale di Valle Rozza",
+     "ele": 609
+    },
+    {
+     "lat": 42.30891,
+     "lon": 12.71776,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 607
+    }
+   ],
+   "12296368": [
+    {
+     "lat": 42.30697,
+     "lon": 12.72152,
+     "kind": "strada",
+     "road": null,
+     "ele": 654
+    },
+    {
+     "lat": 42.30353,
+     "lon": 12.73465,
+     "kind": "strada",
+     "road": null,
+     "ele": 663
+    },
+    {
+     "lat": 42.31296,
+     "lon": 12.71005,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 566
+    },
+    {
+     "lat": 42.30891,
+     "lon": 12.71776,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 607
+    },
+    {
+     "lat": 42.29383,
+     "lon": 12.7375,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 736
+    },
+    {
+     "lat": 42.29425,
+     "lon": 12.75051,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 832
+    }
+   ],
+   "12252649": [
+    {
+     "lat": 42.30926,
+     "lon": 12.74514,
+     "kind": "strada",
+     "road": null,
+     "ele": 878
+    }
+   ],
+   "12313439": [
+    {
+     "lat": 42.3406,
+     "lon": 12.73685,
+     "kind": "strada",
+     "road": null,
+     "ele": 1127
+    },
+    {
+     "lat": 42.32617,
+     "lon": 12.71874,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 874
+    }
+   ],
+   "12470628": [
+    {
+     "lat": 42.30202,
+     "lon": 12.75196,
+     "kind": "strada",
+     "road": null,
+     "ele": 808
+    },
+    {
+     "lat": 42.29425,
+     "lon": 12.75051,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 832
+    },
+    {
+     "lat": 42.28878,
+     "lon": 12.75103,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 881
+    }
+   ]
+  },
+  "laga": {
+   "12536246": [
+    {
+     "lat": 42.62356,
+     "lon": 13.35533,
+     "kind": "strada",
+     "road": null,
+     "ele": 1294
+    },
+    {
+     "lat": 42.62573,
+     "lon": 13.35793,
+     "kind": "strada",
+     "road": null,
+     "ele": 1380
+    },
+    {
+     "lat": 42.62975,
+     "lon": 13.33448,
+     "kind": "strada",
+     "road": "strada interna Ferrazza - Voceto",
+     "ele": 1130
+    },
+    {
+     "lat": 42.62608,
+     "lon": 13.33125,
+     "kind": "strada",
+     "road": null,
+     "ele": 1083
+    },
+    {
+     "lat": 42.62183,
+     "lon": 13.3277,
+     "kind": "strada",
+     "road": null,
+     "ele": 1052
+    },
+    {
+     "lat": 42.6236,
+     "lon": 13.31627,
+     "kind": "strada",
+     "road": null,
+     "ele": 989
+    },
+    {
+     "lat": 42.62583,
+     "lon": 13.30222,
+     "kind": "strada",
+     "road": null,
+     "ele": 963
+    },
+    {
+     "lat": 42.63955,
+     "lon": 13.3483,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 1383
+    },
+    {
+     "lat": 42.62439,
+     "lon": 13.31116,
+     "kind": "sterrata",
+     "road": "Retrosi - Amatrice",
+     "ele": 957
+    },
+    {
+     "lat": 42.62625,
+     "lon": 13.30617,
+     "kind": "sterrata",
+     "road": "Retrosi - Amatrice",
+     "ele": 917
+    },
+    {
+     "lat": 42.60156,
+     "lon": 13.36309,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 1326
+    }
+   ],
+   "12346105": [
+    {
+     "lat": 42.62935,
+     "lon": 13.29757,
+     "kind": "strada",
+     "road": null,
+     "ele": 888
+    },
+    {
+     "lat": 42.63405,
+     "lon": 13.30063,
+     "kind": "strada",
+     "road": null,
+     "ele": 942
+    },
+    {
+     "lat": 42.63408,
+     "lon": 13.30778,
+     "kind": "strada",
+     "road": null,
+     "ele": 961
+    },
+    {
+     "lat": 42.63442,
+     "lon": 13.31462,
+     "kind": "strada",
+     "road": null,
+     "ele": 997
+    },
+    {
+     "lat": 42.6351,
+     "lon": 13.31894,
+     "kind": "strada",
+     "road": null,
+     "ele": 1032
+    },
+    {
+     "lat": 42.64974,
+     "lon": 13.3359,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 1349
+    }
+   ],
+   "12437841": [
+    {
+     "lat": 42.65116,
+     "lon": 13.30868,
+     "kind": "strada",
+     "road": "strada comunale per Quercia di Galloro e Cimitero",
+     "ele": 1036
+    },
+    {
+     "lat": 42.6371,
+     "lon": 13.29634,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 941
+    }
+   ],
+   "12256314": [
+    {
+     "lat": 42.63792,
+     "lon": 13.3389,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 1276
+    },
+    {
+     "lat": 42.63075,
+     "lon": 13.33521,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 1146
+    }
+   ],
+   "12389976": [
+    {
+     "lat": 42.62284,
+     "lon": 13.34283,
+     "kind": "strada",
+     "road": null,
+     "ele": 1136
+    },
+    {
+     "lat": 42.63444,
+     "lon": 13.31486,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 997
+    }
+   ],
+   "12325804": [
+    {
+     "lat": 42.61713,
+     "lon": 13.32353,
+     "kind": "strada",
+     "road": "Strada Regionale 577 Lago di Campotosto",
+     "ele": 1005
+    },
+    {
+     "lat": 42.61293,
+     "lon": 13.33398,
+     "kind": "strada",
+     "road": null,
+     "ele": 1156
+    },
+    {
+     "lat": 42.60348,
+     "lon": 13.34081,
+     "kind": "strada",
+     "road": null,
+     "ele": 1277
+    },
+    {
+     "lat": 42.60046,
+     "lon": 13.34777,
+     "kind": "strada",
+     "road": null,
+     "ele": 1366
+    },
+    {
+     "lat": 42.62067,
+     "lon": 13.31125,
+     "kind": "strada",
+     "road": "Strada Regionale 577 Lago di Campotosto",
+     "ele": 991
+    },
+    {
+     "lat": 42.61559,
+     "lon": 13.32842,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 1104
+    }
+   ],
+   "14003839": [
+    {
+     "lat": 42.61559,
+     "lon": 13.32842,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 1104
+    }
+   ],
+   "1021025": [
+    {
+     "lat": 42.62674,
+     "lon": 13.29978,
+     "kind": "strada",
+     "road": null,
+     "ele": 965
+    }
+   ],
+   "11183896": [
+    {
+     "lat": 42.62674,
+     "lon": 13.29978,
+     "kind": "strada",
+     "road": null,
+     "ele": 965
+    }
+   ],
+   "11184317": [
+    {
+     "lat": 42.61573,
+     "lon": 13.34723,
+     "kind": "strada",
+     "road": null,
+     "ele": 1191
+    },
+    {
+     "lat": 42.61338,
+     "lon": 13.36143,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 1512
+    }
+   ],
+   "12286661": [
+    {
+     "lat": 42.61573,
+     "lon": 13.34723,
+     "kind": "strada",
+     "road": null,
+     "ele": 1191
+    },
+    {
+     "lat": 42.61338,
+     "lon": 13.36143,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 1512
+    }
+   ],
+   "12428247": [
+    {
+     "lat": 42.62491,
+     "lon": 13.31657,
+     "kind": "strada",
+     "road": null,
+     "ele": 1003
+    },
+    {
+     "lat": 42.62706,
+     "lon": 13.32366,
+     "kind": "strada",
+     "road": null,
+     "ele": 1047
+    },
+    {
+     "lat": 42.63408,
+     "lon": 13.30778,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 961
+    }
+   ],
+   "12411486": [
+    {
+     "lat": 42.62284,
+     "lon": 13.34283,
+     "kind": "strada",
+     "road": null,
+     "ele": 1136
+    },
+    {
+     "lat": 42.62418,
+     "lon": 13.34774,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 1138
+    }
+   ],
+   "12410991": [
+    {
+     "lat": 42.62505,
+     "lon": 13.33958,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 1068
+    }
+   ]
+  },
+  "terminillo-ovest": {
+   "9797274": [
+    {
+     "lat": 42.45935,
+     "lon": 12.94269,
+     "kind": "strada",
+     "road": "Via Terminillese",
+     "ele": 1212
+    },
+    {
+     "lat": 42.45576,
+     "lon": 12.97423,
+     "kind": "strada",
+     "road": null,
+     "ele": 1615
+    },
+    {
+     "lat": 42.45772,
+     "lon": 12.93611,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 1147
+    }
+   ],
+   "10624762": [
+    {
+     "lat": 42.43976,
+     "lon": 12.95656,
+     "kind": "strada",
+     "road": null,
+     "ele": 1040
+    },
+    {
+     "lat": 42.44904,
+     "lon": 12.97823,
+     "kind": "strada",
+     "road": null,
+     "ele": 1534
+    }
+   ],
+   "10624367": [
+    {
+     "lat": 42.44469,
+     "lon": 12.96103,
+     "kind": "strada",
+     "road": null,
+     "ele": 1222
+    }
+   ],
+   "10645471": [
+    {
+     "lat": 42.4534,
+     "lon": 12.98813,
+     "kind": "strada",
+     "road": null,
+     "ele": 1683
+    }
+   ],
+   "19556826": [
+    {
+     "lat": 42.45855,
+     "lon": 12.99031,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 1675
+    }
+   ],
+   "18087684": [
+    {
+     "lat": 42.47042,
+     "lon": 12.97711,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 1584
+    }
+   ]
+  },
+  "terminillo-est": {
+   "1021025": [
+    {
+     "lat": 42.46847,
+     "lon": 13.01093,
+     "kind": "strada",
+     "road": null,
+     "ele": 1760
+    },
+    {
+     "lat": 42.45007,
+     "lon": 13.04356,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 947
+    },
+    {
+     "lat": 42.45474,
+     "lon": 13.00253,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 1398
+    },
+    {
+     "lat": 42.46562,
+     "lon": 13.00265,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 1689
+    },
+    {
+     "lat": 42.44788,
+     "lon": 13.04786,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 943
+    }
+   ],
+   "10645738": [
+    {
+     "lat": 42.46847,
+     "lon": 13.01093,
+     "kind": "strada",
+     "road": null,
+     "ele": 1760
+    },
+    {
+     "lat": 42.45007,
+     "lon": 13.04356,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 947
+    },
+    {
+     "lat": 42.45474,
+     "lon": 13.00253,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 1398
+    },
+    {
+     "lat": 42.46562,
+     "lon": 13.00265,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 1689
+    },
+    {
+     "lat": 42.44788,
+     "lon": 13.04786,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 943
+    }
+   ],
+   "19556826": [
+    {
+     "lat": 42.46019,
+     "lon": 12.99531,
+     "kind": "strada",
+     "road": null,
+     "ele": 1673
+    },
+    {
+     "lat": 42.46847,
+     "lon": 13.01093,
+     "kind": "strada",
+     "road": null,
+     "ele": 1760
+    },
+    {
+     "lat": 42.45594,
+     "lon": 12.98,
+     "kind": "strada",
+     "road": null,
+     "ele": 1613
+    },
+    {
+     "lat": 42.45855,
+     "lon": 12.99031,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 1675
+    },
+    {
+     "lat": 42.46562,
+     "lon": 13.00265,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 1689
+    }
+   ],
+   "10646876": [
+    {
+     "lat": 42.44269,
+     "lon": 13.00642,
+     "kind": "strada",
+     "road": null,
+     "ele": 1533
+    }
+   ],
+   "9075394": [
+    {
+     "lat": 42.43447,
+     "lon": 13.04059,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 660
+    },
+    {
+     "lat": 42.43472,
+     "lon": 13.04671,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 820
+    }
+   ],
+   "14308347": [
+    {
+     "lat": 42.43048,
+     "lon": 12.99062,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 1414
+    },
+    {
+     "lat": 42.42664,
+     "lon": 12.98299,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 1393
+    }
+   ],
+   "10647757": [
+    {
+     "lat": 42.43955,
+     "lon": 12.99597,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 1441
+    },
+    {
+     "lat": 42.4442,
+     "lon": 12.99457,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 1584
+    },
+    {
+     "lat": 42.43048,
+     "lon": 12.99062,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 1414
+    }
+   ],
+   "10624762": [
+    {
+     "lat": 42.44904,
+     "lon": 12.97823,
+     "kind": "strada",
+     "road": null,
+     "ele": 1534
+    }
+   ],
+   "10645471": [
+    {
+     "lat": 42.4534,
+     "lon": 12.98813,
+     "kind": "strada",
+     "road": null,
+     "ele": 1683
+    }
+   ]
+  },
+  "cittareale": {
+   "9075394": [
+    {
+     "lat": 42.61362,
+     "lon": 13.1991,
+     "kind": "strada",
+     "road": null,
+     "ele": 1332
+    },
+    {
+     "lat": 42.60725,
+     "lon": 13.15284,
+     "kind": "strada",
+     "road": null,
+     "ele": 1094
+    },
+    {
+     "lat": 42.59237,
+     "lon": 13.159,
+     "kind": "strada",
+     "road": null,
+     "ele": 819
+    },
+    {
+     "lat": 42.61493,
+     "lon": 13.20821,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 1163
+    },
+    {
+     "lat": 42.60528,
+     "lon": 13.19561,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 1223
+    },
+    {
+     "lat": 42.6057,
+     "lon": 13.19125,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 1186
+    },
+    {
+     "lat": 42.6116,
+     "lon": 13.15227,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 1044
+    },
+    {
+     "lat": 42.59626,
+     "lon": 13.15824,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 858
+    }
+   ],
+   "1021025": [
+    {
+     "lat": 42.60219,
+     "lon": 13.12434,
+     "kind": "strada",
+     "road": null,
+     "ele": 1581
+    },
+    {
+     "lat": 42.61336,
+     "lon": 13.13535,
+     "kind": "strada",
+     "road": null,
+     "ele": 1274
+    },
+    {
+     "lat": 42.62036,
+     "lon": 13.14213,
+     "kind": "strada",
+     "road": null,
+     "ele": 1228
+    },
+    {
+     "lat": 42.61493,
+     "lon": 13.20821,
+     "kind": "strada",
+     "road": null,
+     "ele": 1163
+    },
+    {
+     "lat": 42.6022,
+     "lon": 13.11916,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 1648
+    },
+    {
+     "lat": 42.6057,
+     "lon": 13.19125,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 1186
+    },
+    {
+     "lat": 42.60528,
+     "lon": 13.19561,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 1223
+    },
+    {
+     "lat": 42.61362,
+     "lon": 13.1991,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 1332
+    }
+   ],
+   "11183896": [
+    {
+     "lat": 42.59237,
+     "lon": 13.159,
+     "kind": "strada",
+     "road": null,
+     "ele": 819
+    },
+    {
+     "lat": 42.59626,
+     "lon": 13.15824,
+     "kind": "strada",
+     "road": null,
+     "ele": 858
+    },
+    {
+     "lat": 42.61146,
+     "lon": 13.1519,
+     "kind": "strada",
+     "road": null,
+     "ele": 1060
+    },
+    {
+     "lat": 42.61262,
+     "lon": 13.15693,
+     "kind": "strada",
+     "road": null,
+     "ele": 927
+    },
+    {
+     "lat": 42.61937,
+     "lon": 13.16031,
+     "kind": "strada",
+     "road": "Strada Vicinale Sotto Le Mura",
+     "ele": 1025
+    },
+    {
+     "lat": 42.62667,
+     "lon": 13.18507,
+     "kind": "strada",
+     "road": null,
+     "ele": 1393
+    },
+    {
+     "lat": 42.58242,
+     "lon": 13.15249,
+     "kind": "strada",
+     "road": null,
+     "ele": 811
+    },
+    {
+     "lat": 42.60725,
+     "lon": 13.15284,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 1094
+    },
+    {
+     "lat": 42.61368,
+     "lon": 13.14977,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 1055
+    },
+    {
+     "lat": 42.62586,
+     "lon": 13.16048,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 1084
+    }
+   ],
+   "12632800": [
+    {
+     "lat": 42.61362,
+     "lon": 13.1991,
+     "kind": "strada",
+     "road": null,
+     "ele": 1332
+    },
+    {
+     "lat": 42.61493,
+     "lon": 13.20821,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 1163
+    },
+    {
+     "lat": 42.60528,
+     "lon": 13.19561,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 1223
+    },
+    {
+     "lat": 42.6057,
+     "lon": 13.19125,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 1186
+    }
+   ],
+   "12757220": [
+    {
+     "lat": 42.62115,
+     "lon": 13.1595,
+     "kind": "strada",
+     "road": null,
+     "ele": 1038
+    },
+    {
+     "lat": 42.62667,
+     "lon": 13.18507,
+     "kind": "strada",
+     "road": null,
+     "ele": 1393
+    },
+    {
+     "lat": 42.62586,
+     "lon": 13.16048,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 1084
+    }
+   ],
+   "14330237": [
+    {
+     "lat": 42.60219,
+     "lon": 13.12434,
+     "kind": "strada",
+     "road": null,
+     "ele": 1581
+    },
+    {
+     "lat": 42.61336,
+     "lon": 13.13535,
+     "kind": "strada",
+     "road": null,
+     "ele": 1274
+    },
+    {
+     "lat": 42.62036,
+     "lon": 13.14213,
+     "kind": "strada",
+     "road": null,
+     "ele": 1228
+    },
+    {
+     "lat": 42.6022,
+     "lon": 13.11916,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 1648
+    },
+    {
+     "lat": 42.61724,
+     "lon": 13.14005,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 1314
+    }
+   ],
+   "12757300": [
+    {
+     "lat": 42.62759,
+     "lon": 13.15978,
+     "kind": "strada",
+     "road": null,
+     "ele": 1084
+    },
+    {
+     "lat": 42.63453,
+     "lon": 13.15834,
+     "kind": "strada",
+     "road": null,
+     "ele": 1172
+    },
+    {
+     "lat": 42.62029,
+     "lon": 13.15663,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 991
+    },
+    {
+     "lat": 42.64912,
+     "lon": 13.16118,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 1469
+    }
+   ],
+   "12757400": [
+    {
+     "lat": 42.6009,
+     "lon": 13.15446,
+     "kind": "strada",
+     "road": null,
+     "ele": 903
+    },
+    {
+     "lat": 42.60211,
+     "lon": 13.15778,
+     "kind": "strada",
+     "road": null,
+     "ele": 907
+    },
+    {
+     "lat": 42.5832,
+     "lon": 13.14749,
+     "kind": "strada",
+     "road": null,
+     "ele": 920
+    }
+   ]
+  },
+  "pescorocchiano": {
+   "11183896": [
+    {
+     "lat": 42.23774,
+     "lon": 13.09293,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 697
+    },
+    {
+     "lat": 42.23468,
+     "lon": 13.09329,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 751
+    },
+    {
+     "lat": 42.21782,
+     "lon": 13.13473,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 672
+    },
+    {
+     "lat": 42.21333,
+     "lon": 13.13176,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 709
+    },
+    {
+     "lat": 42.21072,
+     "lon": 13.13847,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 762
+    }
+   ],
+   "17823580": [
+    {
+     "lat": 42.20759,
+     "lon": 13.14482,
+     "kind": "strada",
+     "road": null,
+     "ele": 782
+    },
+    {
+     "lat": 42.23774,
+     "lon": 13.09293,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 697
+    },
+    {
+     "lat": 42.23468,
+     "lon": 13.09329,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 751
+    },
+    {
+     "lat": 42.21782,
+     "lon": 13.13473,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 672
+    },
+    {
+     "lat": 42.21333,
+     "lon": 13.13176,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 709
+    },
+    {
+     "lat": 42.21797,
+     "lon": 13.14525,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 766
+    }
+   ],
+   "13888857": [
+    {
+     "lat": 42.19329,
+     "lon": 13.09551,
+     "kind": "strada",
+     "road": null,
+     "ele": 870
+    },
+    {
+     "lat": 42.19946,
+     "lon": 13.11477,
+     "kind": "strada",
+     "road": null,
+     "ele": 833
+    },
+    {
+     "lat": 42.19275,
+     "lon": 13.11816,
+     "kind": "strada",
+     "road": null,
+     "ele": 884
+    },
+    {
+     "lat": 42.19447,
+     "lon": 13.12456,
+     "kind": "strada",
+     "road": null,
+     "ele": 958
+    },
+    {
+     "lat": 42.19476,
+     "lon": 13.1009,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 740
+    },
+    {
+     "lat": 42.19776,
+     "lon": 13.15009,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 880
+    }
+   ],
+   "13895359": [
+    {
+     "lat": 42.21348,
+     "lon": 13.10396,
+     "kind": "strada",
+     "road": null,
+     "ele": 812
+    },
+    {
+     "lat": 42.21704,
+     "lon": 13.0938,
+     "kind": "strada",
+     "road": null,
+     "ele": 625
+    },
+    {
+     "lat": 42.19963,
+     "lon": 13.11494,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 831
+    }
+   ],
+   "13895164": [
+    {
+     "lat": 42.19081,
+     "lon": 13.09829,
+     "kind": "strada",
+     "road": "Strada Provinciale Leofreni Santa Lucia",
+     "ele": 831
+    },
+    {
+     "lat": 42.18653,
+     "lon": 13.09908,
+     "kind": "strada",
+     "road": null,
+     "ele": 917
+    },
+    {
+     "lat": 42.18243,
+     "lon": 13.10092,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 1014
+    }
+   ],
+   "13895667": [
+    {
+     "lat": 42.21797,
+     "lon": 13.14525,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 766
+    }
+   ],
+   "13895397": [
+    {
+     "lat": 42.20794,
+     "lon": 13.1053,
+     "kind": "strada",
+     "road": null,
+     "ele": 861
+    }
+   ]
+  },
+  "malito": {
+   "11183896": [
+    {
+     "lat": 42.2087,
+     "lon": 13.22168,
+     "kind": "strada",
+     "road": null,
+     "ele": 827
+    },
+    {
+     "lat": 42.2066,
+     "lon": 13.26028,
+     "kind": "strada",
+     "road": "Via Madonna di Malito",
+     "ele": 934
+    },
+    {
+     "lat": 42.21287,
+     "lon": 13.21969,
+     "kind": "strada",
+     "road": "Via Pagliara",
+     "ele": 805
+    },
+    {
+     "lat": 42.20727,
+     "lon": 13.26427,
+     "kind": "strada",
+     "road": null,
+     "ele": 883
+    },
+    {
+     "lat": 42.20243,
+     "lon": 13.23889,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 826
+    },
+    {
+     "lat": 42.21504,
+     "lon": 13.26313,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 1099
+    }
+   ],
+   "9075394": [
+    {
+     "lat": 42.20774,
+     "lon": 13.22198,
+     "kind": "strada",
+     "road": null,
+     "ele": 811
+    },
+    {
+     "lat": 42.21287,
+     "lon": 13.21969,
+     "kind": "strada",
+     "road": "Via Pagliara",
+     "ele": 805
+    },
+    {
+     "lat": 42.20243,
+     "lon": 13.23889,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 826
+    }
+   ],
+   "13912178": [
+    {
+     "lat": 42.20251,
+     "lon": 13.28692,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 1039
+    },
+    {
+     "lat": 42.20713,
+     "lon": 13.28281,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 891
+    }
+   ]
+  },
+  "sangiovanni": {},
+  "leonessa": {
+   "1021025": [
+    {
+     "lat": 42.51609,
+     "lon": 13.01487,
+     "kind": "strada",
+     "road": null,
+     "ele": 1776
+    },
+    {
+     "lat": 42.53549,
+     "lon": 12.97539,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 1597
+    },
+    {
+     "lat": 42.54614,
+     "lon": 12.97562,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 1621
+    },
+    {
+     "lat": 42.55535,
+     "lon": 13.00385,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 932
+    },
+    {
+     "lat": 42.5592,
+     "lon": 12.97379,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 965
+    }
+   ],
+   "10645640": [
+    {
+     "lat": 42.54614,
+     "lon": 12.97562,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 1621
+    },
+    {
+     "lat": 42.51609,
+     "lon": 13.01487,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 1776
+    }
+   ],
+   "11211416": [
+    {
+     "lat": 42.51784,
+     "lon": 12.9804,
+     "kind": "strada",
+     "road": null,
+     "ele": 1158
+    }
+   ]
+  },
+  "domo": {
+   "12658603": [
+    {
+     "lat": 42.63533,
+     "lon": 13.25216,
+     "kind": "sterrata",
+     "road": null,
+     "ele": 944
+    }
+   ],
+   "12658847": [
+    {
+     "lat": 42.64337,
+     "lon": 13.25254,
+     "kind": "strada",
+     "road": null,
+     "ele": 979
+    }
+   ]
+  }
+ }
+}

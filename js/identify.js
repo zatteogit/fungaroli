@@ -62,6 +62,11 @@ const ART = {
 // forme del cappello (sagome semplici) e dimensioni
 const SST = '<path d="M28 34 L27 56 H37 L36 34" fill="none" stroke="currentColor" stroke-width="2"/>';
 const sh = (d, stem = true) => `<svg viewBox="0 0 64 64">${stem ? SST : ''}<path d="${d}" fill="currentColor" opacity=".25" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>`;
+const SHAPE_D = {
+  convesso: 'M8 34 C10 16 54 16 56 34 Z', piano: 'M6 30 C8 25 56 25 58 30 L58 34 H6 Z', emisferico: 'M14 34 C14 8 50 8 50 34 Z',
+  conico: 'M32 8 C36 16 46 26 50 34 H14 C18 26 28 16 32 8 Z', ombrellato: 'M4 32 C14 26 22 22 27 17 Q32 9 37 17 C42 22 50 26 60 32 L60 34 H4 Z',
+  imbuto: 'M6 20 Q32 36 58 20 L46 34 H18 Z', trombetta: 'M12 10 Q32 22 52 10 L38 54 H26 Z',
+};
 const SHAPE = {
   convesso: sh('M8 34 C10 16 54 16 56 34 Z'),
   piano: sh('M6 30 C8 25 56 25 58 30 L58 34 H6 Z'),
@@ -284,6 +289,9 @@ function options(q, { big = false } = {}) {
 }
 
 // quale carattere non torna, cosa hai indicato e cosa ci si aspetta per la specie
+// colori concordati: "lamelle bianche", "pori bianchi" (crema, rosa, arancio, viola restano invariati)
+const PLUR = { bianco: ['bianche', 'bianchi', 'bianca'], giallo: ['gialle', 'gialli', 'gialla'], rosso: ['rosse', 'rossi', 'rossa'], verde: ['verdi', 'verdi', 'verde'], grigio: ['grigie', 'grigi', 'grigia'], bruno: ['brune', 'bruni', 'bruna'], violetto: ['violette', 'violetti', 'violetta'], nero: ['nere', 'neri', 'nera'] };
+const agree = (c, g) => (g === 'ms' || !PLUR[c] ? c : PLUR[c][{ fp: 0, mp: 1, fs: 2 }[g]]);
 const orList = (a) => (a.length > 1 ? `${a.slice(0, -1).join(', ')} o ${a[a.length - 1]}` : a[0]);
 function contraText(c) {
   return c.contra.map((k) => {
@@ -338,20 +346,35 @@ function diffs(ref, t) {
 export function traitStrip(edibleId, t = refOf(edibleId)) {
   if (!t) return '';
   const tr = t.traits || {};
-  const tile = (art, k, v) => `<li><span class="ts-art" aria-hidden="true">${art}</span><span class="ts-k">${esc(k)}</span><span class="ts-v">${esc(v)}</span></li>`;
+  const tile = (art, k, v, sub = '') => `<li><span class="ts-art" aria-hidden="true">${art}</span><span class="ts-k">${esc(k)}</span><span class="ts-v">${esc(v)}</span>${sub ? `<span class="ts-sub">${esc(sub)}</span>` : ''}</li>`;
   const out = [];
   const one = (q, v) => optLabel(q, v);
   const Q = (k) => QUESTIONS.find((q) => q.key === k);
-  if (tr.cap_color) out.push(tile([].concat(tr.cap_color).slice(0, 2).map((v) => swatch('cap', v)).join(''), 'Cappello', orList([].concat(tr.cap_color).map((v) => one(Q('cap_color'), v)))));
-  if (tr.hymenophore) { const h = [].concat(tr.hymenophore)[0]; out.push(tile(`<span class="id-hym">${HYM_ICON[h] || ''}</span>`, 'Sotto', orList([].concat(tr.hymenophore)))); }
-  if (tr.hymenophore_color) out.push(tile([].concat(tr.hymenophore_color).slice(0, 2).map((v) => swatch(hymKind(tr.hymenophore), v)).join(''), tr.hymenophore?.includes?.('pori') ? 'Pori' : 'Lamelle', orList([].concat(tr.hymenophore_color))));
-  if (tr.stem_ring != null) out.push(tile(ART[`ring_${tr.stem_ring}`], 'Anello', tr.stem_ring ? 'sì' : 'no'));
-  if (tr.stem_volva != null) out.push(tile(ART[`volva_${tr.stem_volva}`], 'Volva', tr.stem_volva ? 'sì' : 'no'));
-  if (tr.stem_reticulum) out.push(tile(ART.ret_true, 'Reticolo', 'sì'));
+  // cappello: la sua forma, nei suoi colori, con le verruche se ci sono; sotto forma e diametro
+  if (tr.cap_color || tr.cap_shape) {
+    const shape = [].concat(tr.cap_shape || ['convesso'])[0], cols = [].concat(tr.cap_color || ['bruno']).slice(0, 3);
+    out.push(tile(capArt(shape, cols, tr.cap_veil === true), 'Cappello', orList([].concat(tr.cap_color || []).map((v) => one(Q('cap_color'), v))) || '',
+      [orList([].concat(tr.cap_shape || []).slice(0, 2).map((v) => optLabel(Q('cap_shape'), v))), sizeTxt(tr.cap_size)].filter(Boolean).join(' · ')));
+  }
+  // sotto il cappello e il suo colore in una sola tessera: "Lamelle · bianche o crema"
+  if (tr.hymenophore || tr.hymenophore_color) {
+    const h = [].concat(tr.hymenophore || [])[0];
+    const k = { lamelle: 'Lamelle', pori: 'Pori', aculei: 'Aculei', pliche: 'Pliche', liscio: 'Sotto il cappello' }[h] || 'Sotto il cappello';
+    const g = { lamelle: 'fp', pliche: 'fp', pori: 'mp', aculei: 'mp' }[h] || 'ms';
+    const cols = [].concat(tr.hymenophore_color || []);
+    const art = cols.length ? cols.slice(0, 2).map((v) => swatch(hymKind(tr.hymenophore), v)).join('') : `<span class="id-hym">${HYM_ICON[h] || ''}</span>`;
+    out.push(tile(art, k, cols.length ? orList(cols.map((c) => agree(c, g))) : (h === 'liscio' ? 'liscio' : '')));
+  }
+  // gambo: anello, volva, reticolo e base nello stesso disegno
+  if (tr.stem_ring != null || tr.stem_volva != null || tr.stem_reticulum != null || tr.stem_base?.length) {
+    const base = [].concat(tr.stem_base || ['normale'])[0];
+    const bits = [tr.stem_ring === true ? 'anello' : tr.stem_ring === false ? 'senza anello' : 'anello variabile',
+      tr.stem_volva === true ? 'volva' : tr.stem_volva === false ? 'senza volva' : null, tr.stem_reticulum === true ? 'reticolo' : null].filter(Boolean);
+    out.push(tile(stemArt2(base, tr.stem_ring, tr.stem_volva, tr.stem_reticulum), 'Gambo', bits.join(', '),
+      tr.stem_base?.length ? `base ${orList(tr.stem_base.map((v) => optLabel(Q('stem_base'), v)))}` : ''));
+  }
   if (tr.flesh_change) { const f = [].concat(tr.flesh_change); out.push(tile(`<span class="id-flesh" style="background:linear-gradient(100deg, #f4ecd8 30%, ${FLESH[f[0]]} 85%)"></span>`, 'Al taglio', orList(f.map((v) => (v === 'nessuno' ? 'non cambia' : `vira al ${v}`))))); }
-  if (tr.cap_veil) out.push(tile(VEIL.true, 'Verruche', 'sì'));
-  if (tr.stem_base?.length) out.push(tile(BASE[tr.stem_base[0]], 'Base', orList(tr.stem_base.map((v) => optLabel(Q('stem_base'), v)))));
-  if (tr.spore_print?.length) out.push(tile(sporeArt(tr.spore_print[0]), 'Sporata', orList(tr.spore_print.map((v) => optLabel(Q('spore_print'), v)))));
+  if (tr.spore_print?.length) out.push(tile(sporeArt(tr.spore_print[0]), 'Sporata', orList(tr.spore_print.map((v) => Q('spore_print').labels?.[v] || agree(v, 'fs')))));
   return `<ul class="trait-strip" aria-label="Caratteri principali">${out.join('')}</ul>`;
 }
 
@@ -376,6 +399,33 @@ export function attentionBox(rules, extra = '') {
     <ul>${sorted.map((r) => `<li class="${r.severity === 'critico' ? 'crit' : ''}">${esc(r.text)}</li>`).join('')}</ul>
     ${extra ? `<p class="small">${esc(extra)}</p>` : ''}
   </details>`;
+}
+
+// disegni composti per le tessere della scheda
+let capN = 0;
+function capArt(shape, cols, veil) {
+  // uno o due cappelli della forma della specie, ciascuno di un colore (davanti il primo), come un piccolo gruppo
+  const d = SHAPE_D[shape] || SHAPE_D.convesso;
+  const cap = (c, tf) => { const id = `capg-${++capN}`, [l, m, dk] = COLORS[c] || COLORS.bruno;
+    return `<g transform="${tf}"><defs><radialGradient id="${id}" cx="38%" cy="20%" r="85%"><stop offset="0" stop-color="${l}"/><stop offset=".55" stop-color="${m}"/><stop offset="1" stop-color="${dk}"/></radialGradient></defs>
+      <path d="${d}" fill="url(#${id})" stroke="${dk}" stroke-opacity=".55" stroke-width="1.2"/>${veil ? [[20, 24], [30, 19], [41, 21], [48, 28], [26, 29], [36, 27], [14, 30]].map(([x, y]) => `<circle cx="${x}" cy="${y}" r="2.4" fill="#fff" stroke="rgb(0 0 0 / .25)" stroke-width=".8"/>`).join('') : ''}</g>`; };
+  const two = cols.length > 1;
+  return `<svg viewBox="0 2 64 40">${two ? cap(cols[1], 'translate(26 6) scale(.62)') : ''}${cap(cols[0], two ? 'translate(-2 6) scale(.8)' : 'translate(0 4)')}</svg>`;
+}
+const sizeTxt = (sz) => {
+  const r = { piccolo: [0, 5], medio: [5, 12], grande: [12, 99] }, a = [].concat(sz || []).map((x) => r[x]).filter(Boolean);
+  if (!a.length) return '';
+  const lo = Math.min(...a.map((x) => x[0])), hi = Math.max(...a.map((x) => x[1]));
+  return hi >= 99 ? (lo ? `oltre ${lo} cm` : 'di ogni taglia') : lo ? `${lo}–${hi} cm` : `fino a ${hi} cm`;
+};
+function stemArt2(base, ring, volva, ret) {
+  const stem = { normale: 'M27 18 V54 H37 V18 Z', bulbosa: 'M28 18 V42 C19 44 19 56 32 56 C45 56 45 44 36 42 V18 Z', radicante: 'M27 18 V52 L31 62 H33 L37 52 V18 Z', assottigliata: 'M25 18 L29 54 H35 L39 18 Z' }[base] || 'M27 18 V54 H37 V18 Z';
+  return `<svg viewBox="0 0 64 64"><path d="M12 18 C12 6 52 6 52 18 Z" fill="currentColor" opacity=".15" stroke="currentColor" stroke-width="1.4" stroke-opacity=".5"/>
+    <path d="${stem}" fill="currentColor" opacity=".2" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+    ${ret ? '<path d="M28 22 l4 4 4-4 M28 28 l4 4 4-4 M28 34 l4 4 4-4 M32 22 v16" stroke="currentColor" stroke-width="1" fill="none"/>' : ''}
+    ${ring === true ? '<path d="M24 25 Q32 32 40 25 L38 29 Q32 35 26 29 Z" fill="currentColor" opacity=".65"/>' : ring == null ? '<path d="M25 27 Q32 32 39 27" stroke="currentColor" stroke-width="1.4" stroke-dasharray="2 2" fill="none"/>' : ''}
+    ${volva === true ? '<path d="M20 50 C20 61 44 61 44 50 L40 54 H24 Z" fill="currentColor" opacity=".55"/><path d="M20 50 Q22 46 26 48 M44 50 Q42 46 38 48" stroke="currentColor" stroke-width="1.6" fill="none"/>' : ''}
+    <path d="M6 56 H58" stroke="currentColor" stroke-width="1.2" stroke-dasharray="2 3" opacity=".6"/></svg>`;
 }
 
 // pagina completa di un velenoso o di un sosia (le commestibili hanno la loro scheda)
