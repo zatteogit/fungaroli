@@ -1812,9 +1812,9 @@ html.theme-swap, html.theme-swap *, html.theme-swap *::before, html.theme-swap *
 #map.cells-on .leaflet-cells-pane, #map.cells-peek .leaflet-cells-pane { opacity: 1; }
 #map.cells-peek .leaflet-cells-pane { transition-duration: .25s; }
 @media (prefers-reduced-motion: reduce) { #map .leaflet-tile-pane, #map .basemap, #map .zone-c, #map .leaflet-cells-pane { transition: none; } }
-#map.cells-on .leaflet-tile-pane, #map.cells-on .basemap { filter: saturate(.15) contrast(.9) brightness(1.06); }
-:root[data-theme="dark"] #map.cells-on .leaflet-tile-pane, :root[data-theme="dark"] #map.cells-on .basemap { filter: saturate(.1) brightness(.6) contrast(1.05); }
-@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) #map.cells-on .leaflet-tile-pane, :root:not([data-theme="light"]) #map.cells-on .basemap { filter: saturate(.1) brightness(.6) contrast(1.05); } }
+#map.cells-on .leaflet-tile-pane, #map.cells-on .basemap { filter: saturate(.4) contrast(.92) brightness(1.04); }
+:root[data-theme="dark"] #map.cells-on .leaflet-tile-pane, :root[data-theme="dark"] #map.cells-on .basemap { filter: saturate(.3) brightness(.62) contrast(1.05); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) #map.cells-on .leaflet-tile-pane, :root:not([data-theme="light"]) #map.cells-on .basemap { filter: saturate(.3) brightness(.62) contrast(1.05); } }
 @media (max-width: 760px) { .view-map .leaflet-top, .view-map .leaflet-top.leaflet-right { top: 150px; } }
 .leaflet-tooltip.zone-tt { padding: 0; border-radius: 16px; border: 1px solid var(--border); background: var(--surface); color: var(--text); box-shadow: var(--shadow-2); white-space: normal; }
 .leaflet-tooltip.zone-tt::before { display: none; }
@@ -1948,3 +1948,4 @@ html[data-cmp-dir="prev"]::view-transition-new(cmp-pick) { animation-name: cmp-i
 .cmp-ref-l { flex: none; display: inline-flex; align-items: baseline; gap: 6px; max-width: 38%; font-size: 14px; }
 .cmp-ref-l b { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-weight: 700; }
 .cmp-ref-l i { flex: none; font-family: var(--font-display); font-style: italic; font-weight: 700; font-size: 14px; color: var(--muted); }
+#map.no-anim .leaflet-tile-pane, #map.no-anim .basemap, #map.no-anim .zone-c, #map.no-anim .leaflet-cells-pane { transition: none !important; }

@@ -52,7 +52,8 @@ const SHORT = { [FOREST.CON]: 'Conifere (rimboschimenti)', [FOREST.ROV]: 'Rovere
 
 const state = {
   groups: new Set(GROUPS.map((g) => g.id)),
-  dayOffset: 0,
+  // giorno della mappa e della scheda: dalle 14 (ora italiana) si guarda a domani, oggi l'uscita e' ormai andata
+  dayOffset: +new Intl.DateTimeFormat('it-IT', { hour: 'numeric', hourCycle: 'h23', timeZone: 'Europe/Rome' }).format(new Date()) >= 14 ? 1 : 0,
   zoneId: null,
   distancePenalty: false,
   avoidCrowd: false,
@@ -1136,7 +1137,13 @@ function renderMap() {
   for (const k in zoneLayers) zoneLayers[k].remove();
   zoneLayers = {};
   cellHits = []; cellHi?.remove(); cellHi = null; cellTip?.remove(); cellTip = null;
-  if (want && !had) requestAnimationFrame(() => requestAnimationFrame(() => mapEl.classList.add('cells-on')));
+  // al primo disegno la carta e' gia' nello stato giusto (niente dissolvenza colorata -> grigia); dopo, i passaggi si animano
+  if (!mapEl.dataset.ready) {
+    mapEl.dataset.ready = '1';
+    mapEl.classList.add('no-anim');
+    mapEl.classList.toggle('cells-on', want);
+    setTimeout(() => mapEl.classList.remove('no-anim'), 120);
+  } else if (want && !had) requestAnimationFrame(() => requestAnimationFrame(() => mapEl.classList.add('cells-on')));
   else mapEl.classList.toggle('cells-on', want);
   // etichette con nome: spostamento verticale greedy (in pixel) per evitare sovrapposizioni
   const placed = [];
