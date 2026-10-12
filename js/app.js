@@ -102,7 +102,7 @@ async function init() {
   for (const [id, key] of [['distance-penalty', 'distancePenalty'], ['avoid-crowd', 'avoidCrowd'], ['prefer-comfort', 'preferComfort']]) {
     const b = $('#' + id);
     b.setAttribute('aria-pressed', String(state[key]));
-    b.addEventListener('click', () => { state[key] = !state[key]; b.setAttribute('aria-pressed', String(state[key])); savePrefs(); renderAll(); });
+    b.addEventListener('click', () => { state[key] = !state[key]; b.setAttribute('aria-pressed', String(state[key])); savePrefs(); renderFilterSummary(); renderAll(); });
   }
   matchMedia('(prefers-color-scheme: dark)').addEventListener('change', renderAll);
   let rt;
@@ -168,10 +168,28 @@ function route() {
 
 const go = (hash) => { location.hash = hash; };
 
+// Filtri attivi sempre visibili: una pillola per ogni gruppo e preferenza, con la x per toglierla
+const PREFS = [['avoidCrowd', 'Poca gente', 'avoid-crowd'], ['preferComfort', 'Accesso comodo', 'prefer-comfort'], ['distancePenalty', 'Vicino a Rieti', 'distance-penalty']];
 function renderFilterSummary() {
-  const g = GROUPS.filter((x) => state.groups.has(x.id)).map((x) => x.label);
-  const prefs = [state.avoidCrowd && 'poca gente', state.preferComfort && 'comodo', state.distancePenalty && 'vicino'].filter(Boolean);
-  $('#filter-summary').textContent = (g.length > 2 ? `${g.length} gruppi` : g.join(', ')) + (prefs.length ? ` · ${prefs.join(', ')}` : '');
+  const active = GROUPS.filter((x) => state.groups.has(x.id));
+  const prefs = PREFS.filter(([k]) => state[k]);
+  $('#filter-summary').textContent = 'Filtri';
+  $('#filter-count').textContent = String(active.length + prefs.length);
+  const box = $('#active-filters');
+  if (!box) return;
+  const x = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7l10 10M17 7 7 17"/></svg>';
+  box.innerHTML = `<span class="af-label">Cerchi</span>${active.map((g) => `<button type="button" class="af-pill" data-af-group="${g.id}" ${active.length < 2 ? 'disabled' : ''} aria-label="Togli ${esc(g.label)}">${esc(g.label)}${active.length < 2 ? '' : x}</button>`).join('')}
+    ${prefs.map(([k, label]) => `<button type="button" class="af-pill af-pref" data-af-pref="${k}" aria-label="Togli ${esc(label)}">${esc(label)}${x}</button>`).join('')}
+    <button type="button" class="af-add" data-af-open>＋ Modifica</button>`;
+  box.querySelectorAll('[data-af-group]').forEach((b) => b.addEventListener('click', () => {
+    state.groups.delete(b.dataset.afGroup); savePrefs(); renderFilters(); renderFilterSummary(); if (series) { compute(); renderAll(); }
+  }));
+  box.querySelectorAll('[data-af-pref]').forEach((b) => b.addEventListener('click', () => {
+    const k = b.dataset.afPref; state[k] = false; savePrefs();
+    $('#' + PREFS.find((p) => p[0] === k)[2]).setAttribute('aria-pressed', 'false');
+    renderFilterSummary(); renderAll();
+  }));
+  box.querySelector('[data-af-open]').addEventListener('click', () => $('#filters-dialog').showModal());
 }
 
 async function refreshWeather(force) {
@@ -179,6 +197,7 @@ async function refreshWeather(force) {
     $('#updated').textContent = 'Aggiornamento…';
     const w = await loadWeather(zones, { force });
     series = w.series;
+    zones = zones.filter((z) => series[z.id]); // una zona senza meteo (copia di revisione vecchia) resta fuori
     $('#updated').textContent = w.snapshot
       ? 'Meteo del ' + w.fetchedAt.toLocaleString('it-IT', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' })
       : 'Meteo delle ' + w.fetchedAt.toLocaleTimeString('it-IT', { hour: '2-digit', minute: '2-digit' });
@@ -293,23 +312,40 @@ function trailsFor(z, sp, band) {
   }).filter((t) => t.goodKm >= 0.3).sort((a, b) => b.rank - a.rank);
 }
 
-let spFilter = 'all';
+let spFilter = 'all', spQuery = '';
+const normTxt = (t) => String(t || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
 function renderSpeciesGrid() {
   const box = $('#species-grid');
   if (!box) return;
+  if (!box.querySelector('#sp-q')) {
+    const chips = [{ id: 'all', label: 'Tutti' }, ...GROUPS];
+    box.innerHTML = `<label class="search-box"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg>
+        <input id="sp-q" type="search" placeholder="Cerca: porcino, ovolo, Boletus…" autocomplete="off" aria-label="Cerca una specie"></label>
+      <div class="filter-rail" role="group" aria-label="Gruppi">${chips.map((g) => `<button type="button" class="chip" data-spf="${g.id}" aria-pressed="${spFilter === g.id}">${esc(g.label)}</button>`).join('')}</div>
+      <div class="card-grid" id="sp-cards"></div>`;
+    box.querySelector('#sp-q').addEventListener('input', (e) => { spQuery = e.target.value; fillSpecies(); });
+    box.querySelectorAll('[data-spf]').forEach((b) => b.addEventListener('click', () => {
+      spFilter = b.dataset.spf;
+      box.querySelectorAll('[data-spf]').forEach((x) => x.setAttribute('aria-pressed', String(x.dataset.spf === spFilter)));
+      fillSpecies();
+    }));
+  }
+  fillSpecies();
+}
+function fillSpecies() {
   const month = new Date().getMonth();
-  const chips = [{ id: 'all', label: 'Tutti' }, ...GROUPS];
-  const list = SPECIES.filter((sp) => spFilter === 'all' || sp.group === spFilter);
-  box.innerHTML = `<div class="filter-rail" role="group" aria-label="Gruppi">${chips.map((g) => `<button type="button" class="chip" data-spf="${g.id}" aria-pressed="${spFilter === g.id}">${esc(g.label)}</button>`).join('')}</div>
-    <div class="card-grid">${list.map((sp) => {
-      const ph = speciesPhoto(sp.id);
-      const inSeason = sp.months[month] >= 0.6;
-      return `<button type="button" class="sp-card" data-species="${sp.id}" aria-label="${esc(sp.name)}">
-        ${ph ? `<img src="${ph.file}" alt="" loading="lazy">` : ''}<span class="shade"></span>
-        ${inSeason ? '<span class="pill glass sm">in stagione</span>' : ''}
-        <span class="sp-card-body"><b>${esc(sp.name)}</b><i>${esc(sp.latin)}</i></span></button>`;
-    }).join('')}</div>`;
-  box.querySelectorAll('[data-spf]').forEach((b) => b.addEventListener('click', () => { spFilter = b.dataset.spf; renderSpeciesGrid(); }));
+  const q = normTxt(spQuery).trim();
+  const groups = Object.fromEntries(GROUPS.map((g) => [g.id, g.label]));
+  const list = SPECIES.filter((sp) => (spFilter === 'all' || sp.group === spFilter)
+    && (!q || q.split(/\s+/).every((w) => normTxt(`${sp.name} ${sp.latin} ${groups[sp.group]}`).includes(w))));
+  $('#sp-cards').innerHTML = list.map((sp) => {
+    const ph = speciesPhoto(sp.id);
+    const inSeason = sp.months[month] >= 0.6;
+    return `<button type="button" class="sp-card" data-species="${sp.id}" aria-label="${esc(sp.name)}">
+      ${ph ? `<img src="${ph.file}" alt="" loading="lazy">` : ''}<span class="shade"></span>
+      ${inSeason ? '<span class="pill glass sm">in stagione</span>' : ''}
+      <span class="sp-card-body"><b>${esc(sp.name)}</b><i>${esc(sp.latin)}</i></span></button>`;
+  }).join('') || `<p class="muted empty-note">Nessuna specie commestibile con "${esc(spQuery)}". Se cerchi un fungo che hai trovato, anche velenoso, prova <a href="#/riconosci">Riconosci</a>.</p>`;
 }
 
 function renderFilters() {
@@ -414,6 +450,9 @@ const IC = {
   map: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4 3.5 6v14L9 18l6 2 5.5-2V4L15 6z"/><path d="M9 4v14M15 6v14"/></svg>',
   zoom: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7"/></svg>',
 };
+// affollamento in parole (il livello resta basso/medio/alto per i colori)
+const CROWD = { basso: 'poca gente', medio: 'un po\' di gente', alto: 'molta gente' };
+const crowdText = (c) => CROWD[c?.level] || '';
 const fact = (ic, html) => `<span class="fact">${IC[ic]}${html}</span>`;
 const creditLine = (m) => m ? `Foto: ${esc(m.author || '')}${m.license ? `, ${esc(m.license)}` : ''} · <a href="${esc(m.page)}" target="_blank" rel="noopener">${esc(m.source || 'fonte')}</a>` : '';
 
@@ -435,7 +474,7 @@ function renderHome() {
       <span class="cover-body">
         <span class="cover-title">${esc(title)}</span>${sub ? `<span class="cover-sub">${esc(sub)}</span>` : ''}
         <span class="cover-sp">${thumb(hero.d.best.species.id, 44)}<span><b>${esc(hero.d.best.species.name)}</b> ${intornoA(hero.d.best.band)} ${hero.d.best.band} m${also.length ? `<small>e anche ${also.join(', ')}</small>` : ''}</span></span>
-        <span class="facts">${t ? fact('clock', `entro le <b>${fmtTime(t.arrive)}</b>`) : ''}${fact('car', `<b>${a0?.minutes ?? hero.z.drive_min}</b> min`)}${hero.d.crowd ? fact('people', `folla ${hero.d.crowd.level}`) : ''}</span>
+        <span class="facts">${t ? fact('clock', `entro le <b>${fmtTime(t.arrive)}</b>`) : ''}${fact('car', `<b>${a0?.minutes ?? hero.z.drive_min}</b> min`)}${hero.d.crowd ? fact('people', crowdText(hero.d.crowd)) : ''}</span>
         <span class="cover-cta">Il piano dell'uscita <span aria-hidden="true">→</span></span>
       </span>
     </a>`;
@@ -482,6 +521,7 @@ function renderMapDays() {
 let sheetZone = null;
 function openSheet(zid) {
   sheetZone = zid;
+  if (!results) return; // il meteo non e' ancora arrivato: renderAll riapre il riquadro
   const z = zones.find((x) => x.id === zid);
   const d = dayEntry(zid, state.dayOffset);
   const sh = $('#map-sheet');
@@ -493,7 +533,7 @@ function openSheet(zid) {
     <a class="sheet-row" href="#/zona/${zid}/${state.dayOffset}">
       <span class="sheet-img">${cv ? `<img src="${cv.small}" alt="">` : ''}${ring(sc, false)}</span>
       <span class="sheet-txt"><span class="eyebrow">${esc(dayLabel(state.dayOffset, d.date, true))}</span><b class="sheet-title">${esc(splitName(z)[0])}</b>
-        <span class="small">${esc(d.best.species.name)} ~${d.best.band} m · ${access[zid]?.[0]?.minutes ?? z.drive_min} min${d.crowd ? ` · folla ${d.crowd.level}` : ''}</span></span>
+        <span class="small">${esc(d.best.species.name)} ~${d.best.band} m · ${access[zid]?.[0]?.minutes ?? z.drive_min} min${d.crowd ? ` · ${crowdText(d.crowd)}` : ''}</span></span>
     </a>
     <a class="btn primary big" href="#/zona/${zid}/${state.dayOffset}">Apri il piano dell'uscita</a>`;
   sh.hidden = false;
@@ -514,10 +554,44 @@ function initMap() {
     layers: 'geonode:tipi_forestali2', format: 'image/png', transparent: true, opacity: 0.55,
     attribution: 'Carta Forestale © Regione Lazio',
   });
-  L.control.layers({ 'Topografica': topo, 'OpenStreetMap': osm }, { 'Carta Forestale (Regione Lazio)': forest }, { collapsed: true }).addTo(map);
+  L.control.layers({ 'Topografica': topo, 'OpenStreetMap': osm }, null, { collapsed: true }).addTo(map);
+  forestToggle(forest);
   map.on('zoomend', () => results && state.view === 'mappa' && renderMap());
-  map.on('overlayadd', (e) => { if (e.layer === forest) $('#legend .wms').hidden = false; });
-  map.on('overlayremove', (e) => { if (e.layer === forest) $('#legend .wms').hidden = true; });
+}
+
+// Interruttore della Carta Forestale: stato acceso/spento sempre leggibile
+function forestToggle(forest) {
+  const Toggle = L.Control.extend({
+    onAdd() {
+      const b = L.DomUtil.create('button', 'map-toggle');
+      b.type = 'button';
+      b.setAttribute('role', 'switch');
+      const paint = (on) => {
+        b.setAttribute('aria-checked', String(on));
+        b.innerHTML = `<span class="mt-label">Carta Forestale</span><span class="mt-switch" aria-hidden="true"><i></i></span><span class="mt-state">${on ? 'accesa' : 'spenta'}</span>`;
+      };
+      paint(false);
+      L.DomEvent.disableClickPropagation(b);
+      b.addEventListener('click', () => {
+        const on = !map.hasLayer(forest);
+        if (on) forest.addTo(map); else forest.remove();
+        paint(on);
+        const w = $('#legend .wms');
+        if (w) w.hidden = !on;
+        if (on) $('.legend-box').open = true;
+      });
+      return b;
+    },
+  });
+  new Toggle({ position: 'topright' }).addTo(map);
+}
+
+// Riquadro sulla mappa con le azioni per un punto (accesso, parcheggio)
+function pointPopup(title, text, lat, lon) {
+  const c = `${lat.toFixed(5)}, ${lon.toFixed(5)}`;
+  return `<div class="pp"><b class="pp-title">${title}</b>${text ? `<p>${text}</p>` : ''}
+    <a class="btn primary pp-go" href="${gmaps(lat, lon)}" target="_blank" rel="noopener">Portami qui</a>
+    <p class="pp-coord small muted">Coordinate: <span class="pp-c">${c}</span></p></div>`;
 }
 
 // Versione Artifact: base topografica e Carta Forestale incorporate come immagini georeferenziate.
@@ -527,23 +601,7 @@ function initEmbeddedMap(bm) {
   L.imageOverlay(bm.topo, bounds, { className: 'basemap', attribution: bm.attribution }).addTo(map);
   const forest = L.imageOverlay(bm.forest, bounds, { opacity: 0.55, className: 'forestmap' });
   map.setView([42.42, 13.03], 10);
-  const Toggle = L.Control.extend({
-    onAdd() {
-      const b = L.DomUtil.create('button', 'map-toggle');
-      b.type = 'button';
-      b.textContent = 'Carta Forestale';
-      b.setAttribute('aria-pressed', 'false');
-      L.DomEvent.disableClickPropagation(b);
-      b.addEventListener('click', () => {
-        const on = !map.hasLayer(forest);
-        if (on) forest.addTo(map); else forest.remove();
-        b.setAttribute('aria-pressed', String(on));
-        $('#legend .wms').hidden = !on;
-      });
-      return b;
-    },
-  });
-  new Toggle({ position: 'topright' }).addTo(map);
+  forestToggle(forest);
   map.on('zoomend', () => results && state.view === 'mappa' && renderMap());
 }
 
@@ -605,15 +663,19 @@ function renderMap() {
         }
       }
       if (d.access?.rlat) {
-        L.circleMarker([d.access.rlat, d.access.rlon], { radius: 7, color: cssVar('--surface'), weight: 2, fillColor: cssVar('--text'), fillOpacity: 1 })
-          .addTo(g).bindTooltip('Punto d\'accesso più comodo');
+        const ax = d.access;
+        const walk = `Lasci l'auto ${ax.road ? `su ${esc(ax.road)}` : 'sulla strada'}${ax.surface ? ` (${SURF_LABEL[ax.surface]})` : ''}, poi circa <b>${fmtM(ax.walkM)} a piedi</b> in linea d'aria fino a ${esc((SHORT[ax.cat] || ax.cat).toLowerCase())} a ${ax.e} m, adatto a ${esc(d.best.species.name.toLowerCase())}.`;
+        L.marker([ax.rlat, ax.rlon], { icon: L.divIcon({ className: '', html: `<span class="map-pin" aria-hidden="true">${IC.walk}</span>`, iconSize: [34, 34], iconAnchor: [17, 17] }), keyboard: true, title: 'Punto d\'accesso più comodo' })
+          .addTo(g).bindTooltip('Punto d\'accesso più comodo · tocca per le indicazioni')
+          .bindPopup(pointPopup('Punto d\'accesso più comodo', walk, ax.rlat, ax.rlon), { className: 'pp-wrap', maxWidth: 280 });
         L.polyline([[d.access.rlat, d.access.rlon], [d.access.lat, d.access.lon]], { color: cssVar('--text'), weight: 2, dashArray: '2 5' }).addTo(g);
       }
     }
     if (selected) {
       for (const p of z.parking) {
-        L.circleMarker([p.lat, p.lon], { radius: 6, color: cssVar('--surface'), weight: 2, fillColor: cssVar('--accent'), fillOpacity: 1 })
-          .addTo(g).bindTooltip('P · ' + esc(p.name));
+        L.circleMarker([p.lat, p.lon], { radius: 8, color: cssVar('--surface'), weight: 2, fillColor: cssVar('--accent'), fillOpacity: 1 })
+          .addTo(g).bindTooltip('P · ' + esc(p.name))
+          .bindPopup(pointPopup(`Sosta · ${esc(p.name)}`, '', p.lat, p.lon), { className: 'pp-wrap', maxWidth: 260 });
       }
     }
     zoneLayers[z.id] = g;
@@ -658,7 +720,7 @@ function planCard(z, d) {
       d.perSpecies.slice(1, 3).filter((p) => p.score >= 20).map((p) => `${esc(p.species.name)} ${p.score}`).join(' · ')].filter(Boolean).join('<br>') || esc(best.species.latin) });
   if (d.crowd) {
     const t = timingAdvice({ dateStr: d.date, lat: z.lat, lon: z.lon, crowd: d.crowd });
-    rows.push({ sec: 'quando', icon: 'when', k: 'Quando', v: `Arriva <b>entro le ${fmtTime(t.arrive)}</b> <span class="badge crowd-${d.crowd.level}">folla ${d.crowd.level}</span>`,
+    rows.push({ sec: 'quando', icon: 'when', k: 'Quando', v: `Arriva <b>entro le ${fmtTime(t.arrive)}</b> <span class="badge crowd-${d.crowd.level}">${crowdText(d.crowd)}</span>`,
       sub: `alba ${fmtTime(t.sunrise)} · raccolta dalle ${fmtTime(t.legal)}` });
   }
   const a0 = access[z.id]?.[0];
@@ -802,11 +864,11 @@ function renderHuman(z, d) {
   if (d.crowd.fresh) tips.push('La buttata è appena partita: pochi lo sanno ancora.');
   else if (d.crowd.goodDays >= 3) tips.push(`L'indice è alto da ${d.crowd.goodDays} giorni: la notizia gira, aspettati altri cercatori.`);
   if (d.access?.farShare >= 0.2 && d.crowd.level !== 'basso') tips.push(`Il ${Math.round(d.access.farShare * 100)}% del bosco adatto è a più di 600 m da una strada: lì passa molta meno gente.`);
-  if (alt) tips.push(`Alternativa più tranquilla: ${fmtDate(alt.date, { weekday: 'long', day: 'numeric' })} (indice ${alt.score}, folla ${alt.crowd.level}).`);
+  if (alt) tips.push(`Alternativa più tranquilla: ${fmtDate(alt.date, { weekday: 'long', day: 'numeric' })} (indice ${alt.score}, ${crowdText(alt.crowd)}).`);
   if ((series[z.id][bandIndex(z, d.best.band)].p[d.i] ?? 0) >= 5) tips.push('È prevista pioggia: meno gente, ma porta il necessario e attenzione al fondo scivoloso.');
   return `
     <div class="human">
-      <p><span class="badge crowd-${d.crowd.level}">Affollamento ${d.crowd.level}</span> <span class="muted small">${esc(hol || d.crowd.day.label)}</span></p>
+      <p><span class="badge crowd-${d.crowd.level}">${crowdText(d.crowd).replace(/^./, (c) => c.toUpperCase())}</span> <span class="muted small">${esc(hol || d.crowd.day.label)}</span></p>
       <dl class="kv">
         <dt>Alba</dt><dd>${fmtTime(t.sunrise)} · raccolta consentita dalle <b>${fmtTime(t.legal)}</b> alle ${fmtTime(t.end)}</dd>
         <dt>Arrivo consigliato</dt><dd><b>entro le ${fmtTime(t.arrive)}</b>. ${esc(t.why)}</dd>

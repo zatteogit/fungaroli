@@ -41,9 +41,10 @@
         </div>
         <button id="open-filters" class="filter-btn" type="button" aria-haspopup="dialog">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M7 12h10M10 18h4"/></svg>
-          <span id="filter-summary">Filtri</span>
+          <span id="filter-summary">Filtri</span><span class="filter-count" id="filter-count"></span>
         </button>
       </div>
+      <div id="active-filters" class="active-filters" role="group" aria-label="Filtri attivi"></div>
       <div id="days" class="days" role="tablist" aria-label="Giorno di uscita"></div>
       <div id="hero" aria-live="polite"><div class="loading">Carico meteo e dati forestali…</div></div>
       <h2 class="sec-title" id="others-h">Altre buone uscite</h2>
