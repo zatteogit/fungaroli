@@ -4,7 +4,8 @@ import { loadWeather } from './weather.js';
 import { renderCharts } from './chart.js';
 import { initJournal } from './journal.js';
 import { renderSvgMap } from './svgmap.js';
-import { initSpeciesCards, thumb, renderSpeciesDetail, whereSummary, criticalRule } from './speciescard.js';
+import { initSpeciesCards, thumb, renderSpeciesDetail, whereSummary, criticalRule, speciesPhoto } from './speciescard.js';
+import { openLightbox, captionHtml } from './lightbox.js';
 import { initIdentify, renderIdentify } from './identify.js';
 import { initTrees, renderTreeGrid, renderTreePage, linkTrees, treeForCategory } from './trees.js';
 import { crowding, comfortScore, timingAdvice, fmtTime, holidayName } from './human.js';
@@ -56,7 +57,7 @@ const savePrefs = () => {
   try { localStorage.setItem(PREFS_KEY, JSON.stringify({ groups: [...state.groups], distancePenalty: state.distancePenalty, avoidCrowd: state.avoidCrowd, preferComfort: state.preferComfort })); } catch { /* ignora */ }
 };
 
-let zones, origin, habitat, access, trails, traits, legal, series, results, map, zoneLayers = {};
+let zones, origin, habitat, access, trails, traits, legal, series, results, map, zoneLayers = {}, zoneMedia = {};
 const hasLeaflet = () => typeof globalThis.L !== 'undefined';
 
 async function init() {
@@ -64,9 +65,10 @@ async function init() {
   const embedded = globalThis.FUNGAROLI_DATA;
   const load = (f) => fetch(`data/${f}.json`).then((r) => (r.ok ? r.json() : null)).catch(() => null);
   legal = embedded ? embedded.legal : await load('legal');
-  const [zj, hj, aj, tj, idj, mj, ij, trj, stj, mtj] = embedded
-    ? [embedded.zones, embedded.habitat, embedded.access, embedded.trails, embedded.speciesId, embedded.media, embedded.infographics, embedded.trees, embedded.traits, null]
-    : await Promise.all(['zones', 'habitat', 'access', 'trails', 'species-id', 'media', 'infografiche', 'trees', 'species-traits', 'media-trees'].map(load));
+  const [zj, hj, aj, tj, idj, mj, ij, trj, stj, mtj, mzj] = embedded
+    ? [embedded.zones, embedded.habitat, embedded.access, embedded.trails, embedded.speciesId, embedded.media, embedded.infographics, embedded.trees, embedded.traits, null, null]
+    : await Promise.all(['zones', 'habitat', 'access', 'trails', 'species-id', 'media', 'infografiche', 'trees', 'species-traits', 'media-trees', 'media-zones'].map(load));
+  zoneMedia = mzj?.zones || {};
   if (mj && mtj?.trees) mj.trees = { ...(mj.trees || {}), ...mtj.trees };
   traits = stj;
   initSpeciesCards({
@@ -91,7 +93,7 @@ async function init() {
   initMap();
   renderFilters();
   initShell();
-  initJournal({ zones, predict, getZoneId: () => state.zoneId || zones[0].id });
+  initJournal({ zones, predict, getZoneId: () => state.zoneId || zones[0].id, zoneImage: (zid) => zoneMedia[zid]?.file || speciesPhoto(SPECIES[0].id)?.file });
   route(); // le pagine che non dipendono dal meteo (specie, diario, info) compaiono subito
   await refreshWeather(false);
   if (embedded) $('#refresh').hidden = true;
@@ -112,9 +114,10 @@ async function init() {
 let navDepth = 0;
 function initShell() {
   addEventListener('hashchange', () => { navDepth++; route(); });
-  document.querySelectorAll('[data-back]').forEach((b) => b.addEventListener('click', () => {
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('[data-back]')) return;
     if (navDepth > 0) history.back(); else location.hash = '#/';
-  }));
+  });
   const fd = $('#filters-dialog');
   $('#open-filters').addEventListener('click', () => fd.showModal());
   $('#filters-done').addEventListener('click', () => fd.close());
@@ -179,6 +182,7 @@ async function refreshWeather(force) {
       ? 'Meteo del ' + w.fetchedAt.toLocaleString('it-IT', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' })
       : 'Meteo delle ' + w.fetchedAt.toLocaleTimeString('it-IT', { hour: '2-digit', minute: '2-digit' });
     $('#stale').hidden = !w.stale;
+    $('#today-kicker').textContent = new Date().toLocaleDateString('it-IT', { weekday: 'long', day: 'numeric', month: 'long' });
     compute();
     renderAll();
   } catch (err) {
@@ -288,15 +292,23 @@ function trailsFor(z, sp, band) {
   }).filter((t) => t.goodKm >= 0.3).sort((a, b) => b.rank - a.rank);
 }
 
+let spFilter = 'all';
 function renderSpeciesGrid() {
   const box = $('#species-grid');
   if (!box) return;
-  const groups = Object.fromEntries(GROUPS.map((g) => [g.id, g.label]));
-  box.innerHTML = SPECIES.map((sp) => `
-    <button type="button" class="sp-tile" data-species="${sp.id}">
-      ${thumb(sp.id, 56)}
-      <span><b>${esc(sp.name)}</b><i>${esc(sp.latin)}</i><small>${esc(groups[sp.group] || '')}</small></span>
-    </button>`).join('');
+  const month = new Date().getMonth();
+  const chips = [{ id: 'all', label: 'Tutti' }, ...GROUPS];
+  const list = SPECIES.filter((sp) => spFilter === 'all' || sp.group === spFilter);
+  box.innerHTML = `<div class="filter-rail" role="group" aria-label="Gruppi">${chips.map((g) => `<button type="button" class="chip" data-spf="${g.id}" aria-pressed="${spFilter === g.id}">${esc(g.label)}</button>`).join('')}</div>
+    <div class="card-grid">${list.map((sp) => {
+      const ph = speciesPhoto(sp.id);
+      const inSeason = sp.months[month] >= 0.6;
+      return `<button type="button" class="sp-card" data-species="${sp.id}" aria-label="${esc(sp.name)}">
+        ${ph ? `<img src="${ph.file}" alt="" loading="lazy">` : ''}<span class="shade"></span>
+        ${inSeason ? '<span class="pill glass sm">in stagione</span>' : ''}
+        <span class="sp-card-body"><b>${esc(sp.name)}</b><i>${esc(sp.latin)}</i></span></button>`;
+    }).join('')}</div>`;
+  box.querySelectorAll('[data-spf]').forEach((b) => b.addEventListener('click', () => { spFilter = b.dataset.spf; renderSpeciesGrid(); }));
 }
 
 function renderFilters() {
@@ -342,21 +354,22 @@ const dayLabel = (o, date, long = false) => (o === 0 ? 'Oggi' : o === 1 ? 'Doman
 
 function dayChips(box, selected, onPick, { withAll = false } = {}) {
   box.innerHTML = '';
-  const mk = (label, sub, o, sc) => {
+  const mk = (top, mid, o, sc) => {
     const b = document.createElement('button');
     b.type = 'button';
     b.className = 'day';
     b.setAttribute('role', 'tab');
     b.setAttribute('aria-selected', String(selected === o));
-    b.innerHTML = `<span class="d1">${label}</span>${sc != null ? `<span class="d3"><span class="dot" style="background:var(${scoreVar(sc)})"></span><b>${sc}</b></span>` : `<span class="d3">${sub}</span>`}`;
+    b.innerHTML = `<span class="d1">${top}</span><span class="d2">${mid}</span>${sc != null ? `<span class="d3"><span class="dot" style="background:var(${scoreVar(sc)})"></span>${sc}</span>` : '<span class="d3">giorni</span>'}`;
     b.addEventListener('click', () => onPick(o));
     box.appendChild(b);
   };
-  if (withAll) mk('Prossimi', '8 giorni', null, null);
+  if (withAll) mk('Tutti', '8', null, null);
   for (let o = 0; o <= AHEAD_DAYS; o++) {
     const best = bestOfDay(o);
-    if (best) mk(dayLabel(o, best.d.date), '', o, best.s);
+    if (best) mk(o === 0 ? 'Oggi' : o === 1 ? 'Dom' : fmtDate(best.d.date, { weekday: 'short' }).replace('.', ''), fmtDate(best.d.date, { day: 'numeric' }), o, best.s);
   }
+  box.querySelector('[aria-selected="true"]')?.scrollIntoView({ block: 'nearest', inline: 'center' });
 }
 
 function renderDays() {
@@ -377,6 +390,31 @@ function combosList() {
   return combos.filter((c) => (perZone[c.z.id] = (perZone[c.z.id] || 0) + 1) <= (state.homeDay == null ? 2 : 1));
 }
 
+// Nome della zona in titolo + sottotitolo ("Monte Tancia (Monti Sabini)" -> due righe)
+const splitName = (z) => {
+  const m = z.name.match(/^(.*?)\s*(?:\(|\s\/\s|\s–\s)\s*(.*?)\)?$/);
+  return m ? [m[1], m[2]] : [z.name, ''];
+};
+// Foto di copertina: il luogo se c'e', altrimenti il fungo da cercare
+function coverOf(z, spId) {
+  const zm = zoneMedia[z.id];
+  if (zm) return { hd: zm.file_hd || zm.file, small: zm.file, credit: zm, alt: z.name };
+  const p = speciesPhoto(spId);
+  return p ? { hd: p.file_hd || p.file, small: p.file, credit: p, alt: '' } : null;
+}
+const ring = (s, big = true) => `<span class="ring${big ? '' : ' ring-sm'}" style="--c:var(${scoreVar(s).replace('--s', '--ps')});--p:${s}" aria-label="Indice ${s} su 100, ${CLASSES[classOf(s)].label}"><b>${s}</b>${big ? `<small>${CLASSES[classOf(s)].label}</small>` : ''}</span>`;
+const IC = {
+  clock: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>',
+  car: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 16v-4.5L7 7h10l2 4.5V16"/><path d="M3.5 16h17"/><circle cx="8" cy="17" r="1.6"/><circle cx="16" cy="17" r="1.6"/></svg>',
+  people: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8.5" r="3"/><path d="M3.5 19a5.5 5.5 0 0 1 11 0"/><circle cx="17" cy="9.5" r="2.4"/><path d="M15.5 14.2A4.5 4.5 0 0 1 21 18.5"/></svg>',
+  walk: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="13" cy="4.5" r="1.8"/><path d="m9 21 2.5-6.5L14 17v4M8 11l3-3.5 3 1.5 2 3M11.5 14.5l1-5"/></svg>',
+  back: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5 8 12l7 7"/></svg>',
+  map: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4 3.5 6v14L9 18l6 2 5.5-2V4L15 6z"/><path d="M9 4v14M15 6v14"/></svg>',
+  zoom: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7"/></svg>',
+};
+const fact = (ic, html) => `<span class="fact">${IC[ic]}${html}</span>`;
+const creditLine = (m) => m ? `Foto: ${esc(m.author || '')}${m.license ? `, ${esc(m.license)}` : ''} · <a href="${esc(m.page)}" target="_blank" rel="noopener">${esc(m.source || 'fonte')}</a>` : '';
+
 function renderHome() {
   const list = combosList();
   const hero = list[0];
@@ -384,32 +422,54 @@ function renderHome() {
   if (!hero) { box.innerHTML = '<p class="muted">Nessuna uscita calcolabile per questi filtri.</p>'; $('#ranking').innerHTML = ''; return; }
   const t = hero.d.crowd ? timingAdvice({ dateStr: hero.d.date, lat: hero.z.lat, lon: hero.z.lon, crowd: hero.d.crowd }) : null;
   const a0 = access[hero.z.id]?.[0];
+  const [title, sub] = splitName(hero.z);
+  const cov = coverOf(hero.z, hero.d.best.species.id);
+  const also = hero.d.perSpecies.slice(1, 3).filter((p) => p.score >= 25).map((p) => esc(p.species.name.toLowerCase()));
   box.innerHTML = `
-    <a class="hero" href="#/zona/${hero.z.id}/${hero.o}">
-      <div class="hero-top">
-        <p class="eyebrow">${state.homeDay == null ? 'La migliore uscita' : 'Il posto migliore'} · ${esc(dayLabel(hero.o, hero.d.date, true))}</p>
-        <div class="big-score" style="--c:var(${scoreVar(hero.s)})"><span>${hero.s}</span><small>${CLASSES[classOf(hero.s)].label}</small></div>
-      </div>
-      <h2 class="hero-zone">${esc(hero.z.name)}</h2>
-      <div class="hero-what">${thumb(hero.d.best.species.id, 44)}<div><b>${esc(hero.d.best.species.name)}</b> intorno ai <b>${hero.d.best.band} m</b>
-        <div class="muted small">${hero.d.perSpecies.slice(1, 3).filter((p) => p.score >= 25).map((p) => `${esc(p.species.name)} ${p.score}`).join(' · ')}</div></div></div>
-      <ul class="hero-facts">
-        ${t ? `<li><span class="k">Arrivo</span><b>entro le ${fmtTime(t.arrive)}</b></li>` : ''}
-        ${hero.d.crowd ? `<li><span class="k">Folla</span><span class="badge crowd-${hero.d.crowd.level}">${hero.d.crowd.level}</span></li>` : ''}
-        <li><span class="k">Auto</span><b>${a0?.minutes ?? hero.z.drive_min} min</b></li>
-        ${hero.d.comfort ? `<li><span class="k">Accesso</span><span class="badge comfort-${hero.d.comfort.level}">${hero.d.comfort.level}</span></li>` : ''}
-      </ul>
-      <span class="hero-cta">Vedi il piano dell'uscita <span aria-hidden="true">›</span></span>
+    <a class="cover" href="#/zona/${hero.z.id}/${hero.o}">
+      ${cov ? `<img class="cover-img" src="${cov.hd}" alt="${esc(cov.alt)}" fetchpriority="high">` : ''}
+      <span class="shade"></span>
+      <span class="cover-top"><span class="pill glass">${state.homeDay == null ? 'La migliore uscita' : 'Il posto migliore'} · ${esc(dayLabel(hero.o, hero.d.date, true))}</span>${ring(hero.s)}</span>
+      <span class="cover-body">
+        <span class="cover-title">${esc(title)}</span>${sub ? `<span class="cover-sub">${esc(sub)}</span>` : ''}
+        <span class="cover-sp">${thumb(hero.d.best.species.id, 44)}<span><b>${esc(hero.d.best.species.name)}</b> intorno ai ${hero.d.best.band} m${also.length ? `<small>e anche ${also.join(', ')}</small>` : ''}</span></span>
+        <span class="facts">${t ? fact('clock', `entro le <b>${fmtTime(t.arrive)}</b>`) : ''}${fact('car', `<b>${a0?.minutes ?? hero.z.drive_min}</b> min`)}${hero.d.crowd ? fact('people', `folla ${hero.d.crowd.level}`) : ''}</span>
+        <span class="cover-cta">Il piano dell'uscita <span aria-hidden="true">→</span></span>
+      </span>
     </a>`;
   const ol = $('#ranking');
-  ol.innerHTML = list.slice(1, 7).map((c) => `
-    <li><a class="rank-item" href="#/zona/${c.z.id}/${c.o}">
-      <span class="score-pill"><span class="dot" style="background:var(${scoreVar(c.s)})"></span>${c.s}</span>
-      <div class="rank-body"><div class="t1">${esc(shortName(c.z))} <span class="muted">· ${esc(dayLabel(c.o, c.d.date, true).toLowerCase())}</span></div>
-        <div class="t2">${esc(c.d.best.species.name)} ~${c.d.best.band} m · ${access[c.z.id]?.[0]?.minutes ?? c.z.drive_min} min${c.d.crowd ? ` · folla ${c.d.crowd.level}` : ''}</div></div>
-      <span class="chev" aria-hidden="true">›</span>
-    </a></li>`).join('');
+  ol.innerHTML = list.slice(1, 8).map((c) => {
+    const cv = coverOf(c.z, c.d.best.species.id);
+    return `<li><a class="tile" href="#/zona/${c.z.id}/${c.o}">
+      ${cv ? `<img src="${cv.small}" alt="" loading="lazy">` : ''}<span class="shade"></span>${ring(c.s, false)}
+      <span class="tile-body"><span class="tile-day">${esc(dayLabel(c.o, c.d.date, true))}</span><b>${esc(splitName(c.z)[0])}</b><small>${esc(c.d.best.species.name)} · ${c.d.best.band} m · ${access[c.z.id]?.[0]?.minutes ?? c.z.drive_min} min</small></span>
+    </a></li>`;
+  }).join('');
   $('#others-h').hidden = list.length < 2;
+  renderSeason();
+}
+
+// "Nei boschi in questi giorni": tutte le specie, il miglior indice tra le zone nel giorno scelto
+function renderSeason() {
+  const box = $('#season');
+  if (!box) return;
+  const o = state.homeDay ?? 0;
+  const best = {};
+  for (const z of zones) {
+    const d = dayEntry(z.id, o);
+    if (!d) continue;
+    for (const p of scoreZoneDay(z, habitat[z.id], series[z.id], SPECIES, d.i).perSpecies) {
+      if (!best[p.species.id] || p.score > best[p.species.id].score) best[p.species.id] = { ...p, z };
+    }
+  }
+  const arr = Object.values(best).filter((p) => p.score >= 15).sort((a, b) => b.score - a.score).slice(0, 10);
+  $('#season-h').hidden = !arr.length;
+  box.innerHTML = arr.map((p) => {
+    const ph = speciesPhoto(p.species.id);
+    return `<li><button type="button" class="portrait" data-species="${p.species.id}">
+      ${ph ? `<img src="${ph.file}" alt="" loading="lazy">` : ''}<span class="shade"></span>${ring(p.score, false)}
+      <span class="portrait-body"><b>${esc(p.species.name)}</b><small>${esc(splitName(p.z)[0])}</small></span></button></li>`;
+  }).join('');
 }
 
 function renderMapDays() {
@@ -425,13 +485,14 @@ function openSheet(zid) {
   const sh = $('#map-sheet');
   if (!z || !d?.best) { sh.hidden = true; return; }
   const sc = adjusted(z, d.score, d);
+  const cv = coverOf(z, d.best.species.id);
   sh.innerHTML = `
     <button type="button" class="sheet-close" aria-label="Chiudi">✕</button>
-    <div class="sheet-row">
-      <div class="big-score small-score" style="--c:var(${scoreVar(sc)})"><span>${sc}</span></div>
-      <div><p class="eyebrow">${esc(dayLabel(state.dayOffset, d.date, true))}</p><h2>${esc(z.name)}</h2>
-        <p class="small">${esc(d.best.species.name)} ~${d.best.band} m${d.crowd ? ` · folla ${d.crowd.level}` : ''} · ${access[zid]?.[0]?.minutes ?? z.drive_min} min</p></div>
-    </div>
+    <a class="sheet-row" href="#/zona/${zid}/${state.dayOffset}">
+      <span class="sheet-img">${cv ? `<img src="${cv.small}" alt="">` : ''}${ring(sc, false)}</span>
+      <span class="sheet-txt"><span class="eyebrow">${esc(dayLabel(state.dayOffset, d.date, true))}</span><b class="sheet-title">${esc(splitName(z)[0])}</b>
+        <span class="small">${esc(d.best.species.name)} ~${d.best.band} m · ${access[zid]?.[0]?.minutes ?? z.drive_min} min${d.crowd ? ` · folla ${d.crowd.level}` : ''}</span></span>
+    </a>
     <a class="btn primary big" href="#/zona/${zid}/${state.dayOffset}">Apri il piano dell'uscita</a>`;
   sh.hidden = false;
   sh.querySelector('.sheet-close').addEventListener('click', () => { sh.hidden = true; sheetZone = null; state.zoneId = null; renderMap(); });
@@ -649,17 +710,20 @@ function renderDetail() {
   const reasons = explain(best);
   reasons.push(`affidabilità ${Math.round(best.confidence * 100)}%`);
 
+  const [title, sub] = splitName(z);
+  const cov = coverOf(z, best.species.id);
   box.innerHTML = `
-    <header class="zone-head">
-      <div>
-        <p class="eyebrow">${esc(dayLabel)}</p>
-        <h1 class="zone-title">${esc(z.name)}</h1>
-      </div>
-      <div class="big-score" style="--c:var(${scoreVar(s)})"><span>${s}</span><small>${CLASSES[classOf(s)].label}</small></div>
+    <header class="phero">
+      ${cov ? `<button type="button" class="phero-img" data-cover aria-label="Ingrandisci la foto"><img src="${cov.hd}" alt="${esc(cov.alt)}"></button>` : ''}
+      <span class="shade"></span>
+      <div class="phero-bar"><button type="button" class="fab" data-back aria-label="Indietro">${IC.back}</button><a class="fab" href="#/mappa/${z.id}" aria-label="Mappa della zona">${IC.map}</a></div>
+      <div class="phero-body"><span class="pill glass">${esc(dayLabel)}</span><h1 class="phero-title">${esc(title)}</h1>${sub ? `<p class="phero-sub">${esc(sub)}</p>` : ''}</div>
+      ${ring(s)}
     </header>
+    <div class="pbody">
     <div id="zone-days" class="days compact" role="tablist" aria-label="Giorno"></div>
     ${planCard(z, d)}
-    <a class="btn ghost map-link" href="#/mappa/${z.id}">Vedi sentieri e accesso sulla mappa</a>
+    <a class="btn ghost big map-link" href="#/mappa/${z.id}">${IC.map} Sentieri e accesso sulla mappa</a>
     ${zoneLegal(z, d)}
     ${z.protection ? `<div class="notice">${esc(z.protection)}</div>` : ''}
     ${section('meteo', 'Perché questo indice', `<ul class="why">${reasons.map((x) => `<li>${esc(x)}</li>`).join('')}</ul><div id="charts"></div>${legal?.forecast_note ? `<p class="small muted">${esc(legal.forecast_note)}</p>` : ''}`)}
@@ -673,7 +737,9 @@ function renderDetail() {
         <dt>Accesso</dt><dd>${esc(z.access)}</dd>
         <dt>Soste</dt><dd>${z.parking.map((p) => `<a href="https://www.google.com/maps/dir/?api=1&destination=${p.lat},${p.lon}" target="_blank" rel="noopener">${esc(p.name)}</a>`).join(' · ')}</dd>
         <dt>Quote</dt><dd>${habitat[z.id].elevation.min}–${habitat[z.id].elevation.max} m (mediana ${habitat[z.id].elevation.median})</dd>
-      </dl>`)}`;
+      </dl>${zoneMedia[z.id] ? `<p class="small muted">${creditLine(zoneMedia[z.id])}</p>` : ''}`)}
+    </div>`;
+  box.querySelector('[data-cover]')?.addEventListener('click', () => openLightbox([{ src: cov.hd, alt: cov.alt, caption: captionHtml({ title: esc(z.name), credit: creditLine(cov.credit) }) }]));
   // giorni della zona: cambiano il giorno senza aggiungere voci di cronologia
   const zd = $('#zone-days');
   zd.innerHTML = '';
@@ -683,7 +749,7 @@ function renderDetail() {
     const sc = adjusted(z, x.score, x);
     const b = document.createElement('button');
     b.type = 'button'; b.className = 'day'; b.setAttribute('role', 'tab'); b.setAttribute('aria-selected', String(o === state.dayOffset));
-    b.innerHTML = `<span class="d1">${o === 0 ? 'Oggi' : o === 1 ? 'Dom.' : fmtDate(x.date, { weekday: 'short' })}</span><span class="d3"><span class="dot" style="background:var(${scoreVar(sc)})"></span><b>${sc}</b></span>`;
+    b.innerHTML = `<span class="d1">${o === 0 ? 'Oggi' : o === 1 ? 'Dom' : fmtDate(x.date, { weekday: 'short' }).replace('.', '')}</span><span class="d2">${fmtDate(x.date, { day: 'numeric' })}</span><span class="d3"><span class="dot" style="background:var(${scoreVar(sc)})"></span>${sc}</span>`;
     b.addEventListener('click', () => { history.replaceState(null, '', `#/zona/${z.id}/${o}`); state.dayOffset = o; renderDetail(); });
     zd.appendChild(b);
   }
@@ -816,6 +882,8 @@ function applyLegal() {
   $('#emergency').innerHTML = `<h2>${esc(em?.title || 'Sospetto avvelenamento')}</h2>
     <ul class="reasons">${(em?.steps || ['Chiama subito il 112, anche senza sintomi.', 'Conserva i funghi avanzati, gli scarti e il resto del raccolto per i medici.']).map((x) => `<li>${esc(x)}</li>`).join('')}</ul>
     <div class="em-numbers">${(em?.numbers || [{ label: 'Numero unico di emergenza', number: '112' }]).map((n) => `<a class="btn ${n.number === '112' ? 'primary' : 'ghost'}" href="tel:${esc(n.number.replace(/\s/g, ''))}">${esc(n.label)} · <b>${esc(n.number)}</b></a>`).join('')}</div>`;
+  const zc = Object.entries(zoneMedia).map(([zid, m]) => `${esc(zones.find((z) => z.id === zid)?.name || zid)}: ${creditLine(m)}`);
+  if (zc.length) $('#zone-credits').innerHTML = `<b>Foto dei luoghi</b> (Wikimedia Commons): ${zc.join(' · ')}`;
   $('#legal-sections').innerHTML = (L.info_sections || []).map((x) => `<details><summary><h2>${esc(x.title)}</h2></summary><div class="method">${x.html}</div></details>`).join('');
   // primo avvio: avviso da confermare (si ripresenta se cambia la versione dei testi)
   const ver = String(L.version || 0) + (L.verified_on || '');

@@ -79,7 +79,7 @@ function candidates() {
     if (state.zone && t.edible_id) prior = 0.4 + 0.6 * (POTENTIAL(t.edible_id, state.zone)?.score ?? 0.5);
     const fit = m.tot ? m.ok / m.tot : 1;
     return { t, ...m, fit, rank: fit * prior };
-  }).filter((c) => c.contra.length <= 1)                // tollera un solo carattere discordante
+  }).filter((c) => !c.contra.length || (c.contra.length === 1 && c.ok >= 2)) // un solo carattere discordante, e solo se almeno due tornano
     .sort((a, b) => b.rank - a.rank || (TOX_ORDER[a.t.toxicity] ?? 9) - (TOX_ORDER[b.t.toxicity] ?? 9));
 }
 

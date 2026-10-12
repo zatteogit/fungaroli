@@ -111,7 +111,7 @@ const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&l
 const iso = (d) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
 const fmt = (s) => new Date(s + 'T12:00:00').toLocaleDateString('it-IT', { weekday: 'short', day: 'numeric', month: 'short', year: 'numeric' });
 
-export function initJournal({ zones, predict, getZoneId }) {
+export function initJournal({ zones, predict, getZoneId, zoneImage = () => '' }) {
   const dlg = document.getElementById('journal-dialog');
   const body = dlg.querySelector('.wiz-body');
   const list = document.getElementById('journal-list');
@@ -153,8 +153,8 @@ export function initJournal({ zones, predict, getZoneId }) {
     for (const it of items) {
       const b = document.createElement('button');
       b.type = 'button';
-      b.className = 'wiz-choice' + (it.value === current ? ' sel' : '');
-      b.innerHTML = `<span>${esc(it.label)}</span>${it.sub ? `<small>${esc(it.sub)}</small>` : ''}`;
+      b.className = 'wiz-choice' + (it.value === current ? ' sel' : '') + (it.img ? ' has-img' : '');
+      b.innerHTML = `${it.img ? `<img src="${it.img}" alt="" loading="lazy">` : ''}<span>${esc(it.label)}</span>${it.sub ? `<small>${esc(it.sub)}</small>` : ''}`;
       b.addEventListener('click', () => onPick(it.value));
       wrap.appendChild(b);
     }
@@ -168,7 +168,7 @@ export function initJournal({ zones, predict, getZoneId }) {
     if (s === 'dove') {
       shell('Dove sei stato?', 'Tocca la zona.', '', { canNext: false });
       body.querySelector('.wiz-content').appendChild(choices(
-        zones.map((z) => ({ value: z.id, label: z.name })), draft.zoneId,
+        zones.map((z) => ({ value: z.id, label: z.name.split(/\s[(/–]\s?/)[0], sub: (z.name.match(/[(/–]\s?(.*?)\)?$/) || [])[1], img: zoneImage(z.id) })), draft.zoneId,
         (v) => { draft.zoneId = v; draft.band = undefined; next(); }));
     }
 
@@ -265,21 +265,30 @@ export function initJournal({ zones, predict, getZoneId }) {
     const head = entries.length
       ? `<p class="j-sum">${sm.total} ${sm.total === 1 ? 'uscita' : 'uscite'}${sm.judged ? ` · il modello ci ha preso <b>${sm.ok} su ${sm.judged}</b>` : ''}
          ${sm.falseAlarm ? ` · ${sm.falseAlarm} volte ha promesso troppo` : ''}${sm.missed ? ` · ${sm.missed} volte è stato troppo pessimista` : ''}</p>`
-      : '<p class="muted">Ancora nessuna uscita. Dopo ogni giro registra cosa hai trovato (anche niente): servono per capire se il modello funziona qui.</p>';
+      : `<div class="j-empty">${zoneImage('laga') ? `<img src="${zoneImage('laga')}" alt="" loading="lazy">` : ''}<span class="shade"></span>
+          <div class="j-empty-body"><b>Il primo giro è il più utile</b><span>Dopo ogni uscita segna cosa hai trovato, anche niente: in pochi tocchi capisci se il modello funziona nei tuoi boschi.</span>
+          <button type="button" class="btn light big" data-open-journal-inline>＋ Registra un'uscita</button></div></div>`;
     const rows = entries.map((e) => {
       const z = zones.find((x) => x.id === e.zoneId);
       const found = Object.entries(e.finds).map(([id, l]) => `${SPECIES.find((x) => x.id === id)?.name ?? id} (${LEVELS[l].toLowerCase()})`).join(', ') || 'niente';
       const a = agreement(e);
       const top = Object.entries(e.predicted || {}).sort((x, y) => y[1] - x[1])[0];
       const badge = a ? `<span class="tag ${a.ok ? 'ok' : 'warn'}">${a.ok ? 'previsione giusta' : a.said ? 'previsione ottimista' : 'previsione pessimista'}</span>` : '<span class="tag">fuori dal periodo meteo</span>';
+      const img = zoneImage(e.zoneId);
       return `<li class="j-item">
-        <div><b>${esc(z?.name ?? e.zoneId)}</b> · ${fmt(e.date)}${e.band ? ` · ${e.band} m` : ''}</div>
-        <div class="small">Trovato: ${esc(found)}${top ? ` · indice previsto ${top[1]} (${esc(SPECIES.find((x) => x.id === top[0])?.name ?? '')})` : ''} ${badge}</div>
-        ${e.note ? `<div class="small muted">${esc(e.note)}</div>` : ''}
-        <button type="button" class="link-btn small" data-del="${e.id}">Elimina</button>
+        <span class="j-img">${img ? `<img src="${img}" alt="" loading="lazy">` : ''}</span>
+        <div class="j-body">
+          <div class="j-top"><b>${esc((z?.name ?? e.zoneId).split(/\s[(/–]/)[0])}</b><span class="muted small">${fmt(e.date)}${e.band ? ` · ${e.band} m` : ''}</span></div>
+          <div class="small">Trovato: ${esc(found)}${top ? ` · previsto ${top[1]} (${esc(SPECIES.find((x) => x.id === top[0])?.name ?? '')})` : ''}</div>
+          <div>${badge}</div>
+          ${e.note ? `<div class="small muted">${esc(e.note)}</div>` : ''}
+          <button type="button" class="link-btn small" data-del="${e.id}">Elimina</button>
+        </div>
       </li>`;
     }).join('');
     list.innerHTML = (msg ? `<p class="notice">${esc(msg)}</p>` : '') + head + (rows ? `<ul class="j-list">${rows}</ul>` : '');
+    list.querySelector('[data-open-journal-inline]')?.addEventListener('click', open);
+    document.querySelector('[data-open-journal]').hidden = !entries.length;
     // conferma in pagina: primo tocco arma, secondo elimina
     list.querySelectorAll('[data-del]').forEach((b) => b.addEventListener('click', async () => {
       if (b.dataset.armed !== '1') {

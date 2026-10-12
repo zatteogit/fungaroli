@@ -35,6 +35,7 @@
     <section class="view" data-view="uscite" aria-labelledby="home-h">
       <div class="view-head">
         <div>
+          <p class="kicker" id="today-kicker"></p>
           <h1 id="home-h" class="view-title">Dove andare</h1>
           <p class="view-sub"><span id="updated"></span></p>
         </div>
@@ -45,13 +46,14 @@
       </div>
       <div id="days" class="days" role="tablist" aria-label="Giorno di uscita"></div>
       <div id="hero" aria-live="polite"><div class="loading">Carico meteo e dati forestali…</div></div>
-      <p class="legal-strip small" id="home-legal"><span>Per raccogliere servono l'attestato micologico e il contributo regionale annuale.</span> <a href="#/info">Regole</a></p>
       <h2 class="sec-title" id="others-h">Altre buone uscite</h2>
-      <ol id="ranking" class="ranking" aria-labelledby="others-h"></ol>
+      <ol id="ranking" class="rail" aria-labelledby="others-h"></ol>
+      <h2 class="sec-title" id="season-h">Nei boschi in questi giorni</h2>
+      <ul id="season" class="rail rail-portrait" aria-labelledby="season-h"></ul>
+      <p class="legal-strip small" id="home-legal"><span>Per raccogliere servono l'attestato micologico e il contributo regionale annuale.</span> <a href="#/info">Regole</a></p>
     </section>
 
-    <section class="view" data-view="zona" hidden>
-      <div class="subbar"><button type="button" class="back" data-back>‹ Indietro</button></div>
+    <section class="view view-hero" data-view="zona" hidden>
       <div id="detail" aria-live="polite"></div>
     </section>
 
@@ -64,7 +66,7 @@
 
     <section class="view" data-view="specie" hidden aria-labelledby="sp-h">
       <div class="view-head"><div><h1 id="sp-h" class="view-title">Le specie</h1>
-        <p class="view-sub">Tocca una specie: come riconoscerla, i sosia pericolosi, quando si trova.</p></div></div>
+        <p class="view-sub">Come riconoscerle, i sosia pericolosi, quando e dove cercarle.</p></div></div>
       <nav class="seg-nav" aria-label="Sezioni specie"><a href="#/specie" aria-current="page">Funghi</a><a href="#/alberi">Alberi</a><a href="#/riconosci">Riconosci</a></nav>
       <div id="species-grid" class="species-grid"></div>
     </section>
@@ -83,13 +85,11 @@
       <div id="identify"></div>
     </section>
 
-    <section class="view" data-view="albero" hidden>
-      <div class="subbar"><button type="button" class="back" data-back>‹ Indietro</button></div>
+    <section class="view view-hero" data-view="albero" hidden>
       <div id="tree-detail" class="sp-page"></div>
     </section>
 
-    <section class="view" data-view="specie-dettaglio" hidden>
-      <div class="subbar"><button type="button" class="back" data-back>‹ Indietro</button></div>
+    <section class="view view-hero" data-view="specie-dettaglio" hidden>
       <div id="species-detail" class="sp-page"></div>
     </section>
 
@@ -131,6 +131,7 @@
     </details>
 
   <div id="legal-sections"></div>
+  <p class="small muted" id="zone-credits"></p>
   <footer class="foot muted small">
     Strumento di supporto, non di identificazione. Nessun fungo va consumato senza certezza: in caso di dubbio, Ispettorato Micologico ASL.
     Mappe © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">contributori OpenStreetMap</a> (ODbL), stile <a href="https://opentopomap.org/about" target="_blank" rel="noopener">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC BY-SA</a>). Meteo: <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo.com</a> (<a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>). Carta Forestale su base tipologica: Regione Lazio. Dettagli in "Fonti dei dati, licenze e crediti".

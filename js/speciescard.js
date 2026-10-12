@@ -30,6 +30,9 @@ export function thumb(id, size = 36) {
   return `<span class="thumb thumb-ph" style="width:${size}px;height:${size}px">${esc((sp?.name || '?').slice(0, 2))}</span>`;
 }
 
+// Foto principale di una specie (oggetto di media.json, con file e file_hd)
+export const speciesPhoto = (id) => MEDIA?.species?.[id]?.ref || MEDIA?.species?.[id]?.inat?.[0] || null;
+
 const creditText = (m) => m ? `Foto: ${esc(m.author)}${m.license ? `, ${esc(m.license)}` : ''} · <a href="${esc(m.page)}" target="_blank" rel="noopener">${esc(m.source)}</a>` : '';
 const credit = (m) => m ? `<span class="credit">Foto: ${esc(m.author)}${m.license ? `, ${esc(m.license)}` : ''} · <a href="${esc(m.page)}" target="_blank" rel="noopener">${esc(m.source)}</a></span>` : '';
 
@@ -112,15 +115,19 @@ export function renderSpeciesDetail(body, id) {
     return [MEDIA?.lookalikes?.[key]?.ref, ...(MEDIA?.lookalikes?.[key]?.inat || [])].filter(Boolean).map((p) => `${esc(l.latin)}: ${creditText(p)}`);
   })];
   body.innerHTML = `
-    <div class="sp-hero">
-      ${photos[0] ? `<button type="button" class="zoomable sp-main" data-photo="0" aria-label="Ingrandisci la foto"><img src="${ASSET(photos[0].file)}" alt="${esc(sp.name)}"><span class="zoom-ic" aria-hidden="true">⤢</span></button>` : ''}
-      ${photos.length > 1 ? `<div class="sp-strip">${photos.slice(1).map((p, k) => `<button type="button" class="zoomable" data-photo="${k + 1}" aria-label="Foto ${k + 2}: ingrandisci"><img src="${ASSET(p.file)}" alt="" loading="lazy"></button>`).join('')}</div>` : ''}
-    </div>
-    <header class="sp-head">
-      <h1 class="zone-title">${esc(d.name || sp.name)}</h1>
-      <p class="sp-latin">${esc(d.latin || sp.latin)}</p>
-      <p class="sp-badges">${d.edibility ? `<span class="badge">${esc(d.edibility)}</span>` : ''}${sp.minCap ? `<span class="badge">cappello ≥ ${sp.minCap} cm</span>` : sp.minCap === 0 ? '<span class="badge">nessuna taglia minima</span>' : ''}</p>
+    <header class="phero phero-tall">
+      ${photos[0] ? `<button type="button" class="phero-img" data-photo="0" aria-label="Ingrandisci la foto"><img src="${hd(photos[0])}" alt="${esc(sp.name)}"></button>` : ''}
+      <span class="shade"></span>
+      <div class="phero-bar"><button type="button" class="fab" data-back aria-label="Indietro"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5 8 12l7 7"/></svg></button>
+        ${photos[0] ? '<button type="button" class="fab" data-photo="0" aria-label="Foto a schermo intero"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7"/></svg></button>' : ''}</div>
+      <div class="phero-body">
+        <p class="sp-badges">${d.edibility ? `<span class="pill glass">${esc(d.edibility)}</span>` : ''}${sp.minCap ? `<span class="pill glass">cappello ≥ ${sp.minCap} cm</span>` : sp.minCap === 0 ? '<span class="pill glass">nessuna taglia minima</span>' : ''}</p>
+        <h1 class="phero-title">${esc(d.name || sp.name)}</h1>
+        <p class="phero-sub"><i>${esc(d.latin || sp.latin)}</i></p>
+      </div>
     </header>
+    <div class="pbody">
+    ${photos.length > 1 ? `<div class="sp-strip">${photos.slice(1).map((p, k) => `<button type="button" class="zoomable" data-photo="${k + 1}" aria-label="Foto ${k + 2}: ingrandisci"><img src="${ASSET(p.file)}" alt="" loading="lazy"></button>`).join('')}</div>` : ''}
     ${attention(id, warn)}
     ${d.key_features?.length ? `<h3>Come riconoscerlo</h3><ol class="keys">${d.key_features.map((k) => `<li>${esc(k)}</li>`).join('')}</ol>` : '<p class="notice">Scheda di riconoscimento in preparazione.</p>'}
     ${TRAITS[id] ? '' : (warn.length ? `<div class="notice">${esc(warn.join(' '))}</div>` : '')}
@@ -138,7 +145,8 @@ export function renderSpeciesDetail(body, id) {
         : ''}<p class="small muted">${esc(model.name)} · ${esc(model.author)} · ${esc(model.license)} · <a href="${esc(model.page)}" target="_blank" rel="noopener">apri su Sketchfab</a></p>`) : ''}
       ${sec('Fonti e crediti delle foto', `${d.sources?.length ? `<ul class="small sources">${d.sources.map((x) => `<li><a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.title)}</a></li>`).join('')}</ul>` : ''}${credits.length ? `<ul class="small sources">${credits.map((c) => `<li>${c}</li>`).join('')}</ul>` : ''}`)}
     </div>
-    <p class="small muted">${esc(FOOTER || 'Scheda di supporto: non sostituisce il controllo dell\'Ispettorato Micologico ASL. Nel dubbio non si raccoglie e non si mangia.')} <a href="#/info">Emergenza e note legali</a></p>`;
+    <p class="small muted sp-foot">${esc(FOOTER || 'Scheda di supporto: non sostituisce il controllo dell\'Ispettorato Micologico ASL. Nel dubbio non si raccoglie e non si mangia.')} <a href="#/info">Emergenza e note legali</a></p>
+    </div>`;
   body.querySelector('.sp-3d button')?.addEventListener('click', (e) => {
     const box = e.target.closest('.sp-3d');
     box.innerHTML = `<iframe title="Modello 3D ${esc(sp.name)}" src="${esc(box.dataset.embed.replace('autostart=0', 'autostart=1'))}" allow="autoplay; fullscreen; xr-spatial-tracking" allowfullscreen></iframe>`;

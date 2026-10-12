@@ -45,10 +45,13 @@ export function treeThumb(id, size = 56) {
 }
 
 export function renderTreeGrid(box) {
-  box.innerHTML = Object.entries(T).map(([id, t]) => `
-    <a class="sp-tile" href="#/albero/${encodeURIComponent(id)}">${treeThumb(id, 56)}
-      <span><b>${esc(t.name)}</b><i>${esc(t.latin)}</i><small>${esc(t.type || '')}</small></span></a>`).join('')
-    || '<p class="muted">Schede degli alberi in preparazione.</p>';
+  const html = Object.entries(T).map(([id, t]) => {
+    const m = MEDIA[id]?.ref || MEDIA[id]?.inat?.[0];
+    return `<a class="sp-card" href="#/albero/${encodeURIComponent(id)}" aria-label="${esc(t.name)}">
+      ${m ? `<img src="${ASSET(m.file)}" alt="" loading="lazy">` : ''}<span class="shade"></span>
+      <span class="sp-card-body"><b>${esc(t.name)}</b><i>${esc(t.latin)}</i></span></a>`;
+  }).join('');
+  box.innerHTML = html ? `<div class="card-grid">${html}</div>` : '<p class="muted">Schede degli alberi in preparazione.</p>';
 }
 
 export function renderTreePage(body, id) {
@@ -65,15 +68,18 @@ export function renderTreePage(body, id) {
   const maxHa = Math.max(1, ...zrows.map((r) => r.ha));
   const sec = (title, html) => html ? `<details class="sec"><summary>${title}</summary><div class="sec-body">${html}</div></details>` : '';
   body.innerHTML = `
-    <div class="sp-hero">
-      ${photos[0] ? `<button type="button" class="zoomable sp-main" data-photo="0" aria-label="Ingrandisci la foto"><img src="${ASSET(photos[0].file)}" alt="${esc(t.name)}"><span class="zoom-ic" aria-hidden="true">⤢</span></button>` : ''}
-      ${photos.length > 1 ? `<div class="sp-strip">${photos.slice(1).map((p, k) => `<button type="button" class="zoomable" data-photo="${k + 1}" aria-label="Foto ${k + 2}: ingrandisci"><img src="${ASSET(p.file)}" alt="" loading="lazy"></button>`).join('')}</div>` : ''}
-    </div>
-    <header class="sp-head">
-      <h1 class="zone-title">${esc(t.name)}</h1>
-      <p class="sp-latin">${esc(t.latin)}</p>
-      <p class="sp-badges">${t.type ? `<span class="badge">${esc(t.type)}</span>` : ''}${t.altitude_m ? `<span class="badge">${t.altitude_m[0]}–${t.altitude_m[1]} m</span>` : ''}</p>
+    <header class="phero phero-tall">
+      ${photos[0] ? `<button type="button" class="phero-img" data-photo="0" aria-label="Ingrandisci la foto"><img src="${ASSET(photos[0].file_hd || photos[0].file)}" alt="${esc(t.name)}"></button>` : ''}
+      <span class="shade"></span>
+      <div class="phero-bar"><button type="button" class="fab" data-back aria-label="Indietro"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5 8 12l7 7"/></svg></button></div>
+      <div class="phero-body">
+        <p class="sp-badges">${t.type ? `<span class="pill glass">${esc(t.type)}</span>` : ''}${t.altitude_m ? `<span class="pill glass">${t.altitude_m[0]}–${t.altitude_m[1]} m</span>` : ''}</p>
+        <h1 class="phero-title">${esc(t.name)}</h1>
+        <p class="phero-sub"><i>${esc(t.latin)}</i></p>
+      </div>
     </header>
+    <div class="pbody">
+    ${photos.length > 1 ? `<div class="sp-strip">${photos.slice(1).map((p, k) => `<button type="button" class="zoomable" data-photo="${k + 1}" aria-label="Foto ${k + 2}: ingrandisci"><img src="${ASSET(p.file)}" alt="" loading="lazy"></button>`).join('')}</div>` : ''}
     ${t.recognize?.length ? `<h3>Come riconoscerlo</h3><ol class="keys">${t.recognize.map((k) => `<li>${esc(k)}</li>`).join('')}</ol>` : ''}
     ${fungi.length ? `<h3>Funghi che ci crescono</h3><div class="tree-fungi">${fungi.map((s) => `<a href="#/specie/${s.id}" class="tf">${THUMB(s.id, 52)}<span>${esc(s.name)}</span></a>`).join('')}</div>${t.fungi_note ? `<p class="small muted">${esc(t.fungi_note)}</p>` : ''}` : ''}
     <div class="sp-more">
@@ -82,6 +88,7 @@ export function renderTreePage(body, id) {
       ${sec('Foglia, corteccia, frutto', `<dl class="traits">${[['Foglia', t.leaf], ['Corteccia', t.bark], ['Frutto', t.fruit], ['Portamento', t.habit], ["D'inverno", t.season_tip], ['Nel Reatino', t.where_reatino]].filter(([, v]) => v).map(([k, v]) => `<dt>${k}</dt><dd>${esc(v)}</dd>`).join('')}</dl>`)}
       ${sec('Con cosa si confonde', t.confusable?.length ? `<ul class="reasons">${t.confusable.map((c) => `<li><b>${esc(c.name)}</b>: ${esc(c.how_to_tell)}</li>`).join('')}</ul>` : '')}
       ${sec('Fonti e crediti delle foto', `${t.sources?.length ? `<ul class="small sources">${t.sources.map((x) => `<li><a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.title)}</a></li>`).join('')}</ul>` : ''}${photos.length ? `<ul class="small sources">${photos.map((p) => `<li>${credit(p)}</li>`).join('')}</ul>` : ''}`)}
+    </div>
     </div>`;
   const gallery = photos.map((p) => ({ src: ASSET(p.file_hd || p.file), alt: t.name, caption: captionHtml({ title: esc(t.name), text: esc(t.latin), credit: credit(p) }) }));
   body.querySelectorAll('[data-photo]').forEach((b) => b.addEventListener('click', () => openLightbox(gallery, +b.dataset.photo)));

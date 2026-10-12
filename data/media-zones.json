@@ -1,0 +1,66 @@
+{
+ "generated": "2026-10-12",
+ "note": "Foto dei luoghi da Wikimedia Commons, scelte a mano tra le immagini georeferenziate di Wikidata vicino a ogni zona.",
+ "zones": {
+  "vallonina": {
+   "file": "assets/zones/vallonina.jpg",
+   "file_hd": "assets/zones/vallonina-hd.jpg",
+   "source": "Wikimedia Commons",
+   "page": "https://commons.wikimedia.org/wiki/File:SelladiLeonessa001.jpg",
+   "author": "Idéfix",
+   "license": "CC BY-SA 2.5 / CC BY-SA 3.0",
+   "size": [
+    600,
+    450
+   ]
+  },
+  "poggio-cantalice": {
+   "file": "assets/zones/poggio-cantalice.jpg",
+   "file_hd": "assets/zones/poggio-cantalice-hd.jpg",
+   "source": "Wikimedia Commons",
+   "page": "https://commons.wikimedia.org/wiki/File:Terminillo.JPG",
+   "author": "Li vioandronico2013",
+   "license": "CC BY-SA 3.0",
+   "size": [
+    1600,
+    1200
+   ]
+  },
+  "antrodoco": {
+   "file": "assets/zones/antrodoco.jpg",
+   "file_hd": "assets/zones/antrodoco-hd.jpg",
+   "source": "Wikimedia Commons",
+   "page": "https://commons.wikimedia.org/wiki/File:Monte_Giano_DVX.JPG",
+   "author": "DVX (Wikimedia Commons)",
+   "license": "CC0",
+   "size": [
+    1600,
+    1199
+   ]
+  },
+  "cicolano": {
+   "file": "assets/zones/cicolano.jpg",
+   "file_hd": "assets/zones/cicolano-hd.jpg",
+   "source": "Wikimedia Commons",
+   "page": "https://commons.wikimedia.org/wiki/File:Lago_del_Salto%21%21_%287447648144%29.jpg",
+   "author": "Alessandro Blasi from Rieti, Italy",
+   "license": "CC BY 2.0",
+   "size": [
+    1600,
+    482
+   ]
+  },
+  "laga": {
+   "file": "assets/zones/laga.jpg",
+   "file_hd": "assets/zones/laga-hd.jpg",
+   "source": "Wikimedia Commons",
+   "page": "https://commons.wikimedia.org/wiki/File:Pizzo_di_Sevo.jpg",
+   "author": "Mario1952",
+   "license": "CC BY-SA 3.0",
+   "size": [
+    1600,
+    1200
+   ]
+  }
+ }
+}
