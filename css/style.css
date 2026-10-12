@@ -1544,3 +1544,27 @@ html:has(dialog[open]:modal) body { overflow: hidden; }
 /* anello di selezione: il colore da solo non basta (molti giorni hanno tinte simili) */
 .day[aria-selected="true"][data-lv] { box-shadow: 0 0 0 2.5px var(--bg), 0 0 0 4.5px var(--text), 0 6px 16px color-mix(in srgb, var(--sel) 40%, transparent); }
 .days, #days, #map-days { padding-block: 6px; }
+
+/* meteo: icone colorate per tipo, badge colorati per livello (sobri) */
+.wxi { display: inline-grid; place-items: center; line-height: 0; }
+.wxi svg { width: 1em; height: 1em; }
+.wxi-sun { color: #c98500; } .wxi-rain { color: #2f6fb3; } .wxi-storm { color: #6b4fb3; } .wxi-snow { color: #2a8cb8; }
+:is(.fact, .tile-wx) .wxi-sun { color: #ffd36b; } :is(.fact, .tile-wx) .wxi-rain { color: #9cc8ff; } :is(.fact, .tile-wx) .wxi-storm { color: #d2bdff; } :is(.fact, .tile-wx) .wxi-snow { color: #c6edff; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) :is(.plan, .wx-line) .wxi-sun { color: #f2c14e; } :root:not([data-theme="light"]) :is(.plan, .wx-line) .wxi-rain { color: #7fb2f0; } :root:not([data-theme="light"]) :is(.plan, .wx-line) .wxi-storm { color: #b9a2f0; } }
+.fact .wxi svg, .tile-wx .wxi svg, .wx-line .wxi svg { width: 16px; height: 16px; }
+.plan-ic .wxi svg { width: 22px; height: 22px; }
+.badge.wx-b.wx-ok { background: var(--ok-bg); color: var(--ok-ink); }
+.badge.wx-b.wx-attenzione { background: var(--warn-bg); color: var(--warn-ink); }
+.badge.wx-b.wx-sconsigliata { background: var(--crit-bg); color: var(--crit-ink); }
+.chip-ph { display: inline-flex; align-items: center; gap: 7px; padding-left: 5px; }
+.chip-ph .thumb { width: 24px; height: 24px; border-radius: 50%; object-fit: cover; flex: none; }
+
+/* filtri attivi: spunta + tinta + bordo, uno stile solo per tutti i chip (Material 3, filter chip; WCAG 1.4.1: non solo colore) */
+:root { --chk: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"); }
+.chip[aria-pressed="true"], .chip.pref[aria-pressed="true"] { background: var(--accent-soft); color: var(--accent); border-color: color-mix(in srgb, var(--accent) 55%, transparent); font-weight: 600; }
+.chip[aria-pressed="true"]:not(.chip-ph) { display: inline-flex; align-items: center; gap: 6px; padding-left: 10px; }
+.chip[aria-pressed="true"]:not(.chip-ph)::before { content: ''; width: 15px; height: 15px; flex: none; background: currentColor; -webkit-mask: var(--chk) center / contain no-repeat; mask: var(--chk) center / contain no-repeat; }
+.chip-ph { position: relative; }
+.chip-ph[aria-pressed="true"]::before { content: ''; position: absolute; left: 6px; top: 50%; width: 24px; height: 24px; transform: translateY(-50%); border-radius: 50%; background: var(--accent) ; -webkit-mask: none; }
+.chip-ph[aria-pressed="true"]::after { content: ''; position: absolute; left: 10px; top: 50%; width: 16px; height: 16px; transform: translateY(-50%); background: #fff; -webkit-mask: var(--chk) center / contain no-repeat; mask: var(--chk) center / contain no-repeat; }
+@media (prefers-reduced-motion: no-preference) { .chip[aria-pressed="true"]::before, .chip-ph[aria-pressed="true"]::after { animation: chk-in .3s var(--spring); } @keyframes chk-in { from { transform: translateY(-50%) scale(.4); opacity: 0; } } .chip[aria-pressed="true"]:not(.chip-ph)::before { animation-name: chk-in2; } @keyframes chk-in2 { from { transform: scale(.4); opacity: 0; } } }

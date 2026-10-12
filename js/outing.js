@@ -47,7 +47,8 @@ export async function loadOuting(zones, { force = false } = {}) {
 export function outingFor(series, z, dateStr) {
   if (!series) return null;
   const { sunrise } = sunTimes(dateStr, z.lat, z.lon);
-  const from = new Date(sunrise.getTime() - 3600e3).getHours();
+  // ora italiana, qualunque sia il fuso del dispositivo (le ore della serie sono in Europe/Rome)
+  const from = +new Intl.DateTimeFormat('it-IT', { hour: 'numeric', hourCycle: 'h23', timeZone: 'Europe/Rome' }).format(new Date(sunrise.getTime() - 3600e3));
   const idx = [];
   series.time.forEach((t, i) => {
     if (!t.startsWith(dateStr)) return;

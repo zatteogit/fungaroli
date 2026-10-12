@@ -57,7 +57,7 @@ const state = {
 };
 try {
   const p = JSON.parse(localStorage.getItem(PREFS_KEY) || 'null');
-  if (p) { state.groups = new Set(p.groups); state.distancePenalty = !!p.distancePenalty; state.avoidCrowd = !!p.avoidCrowd; state.preferComfort = !!p.preferComfort; }
+  if (p) { const ok = (p.groups || []).filter((g) => GROUPS.some((x) => x.id === g)); state.groups = new Set(ok.length ? ok : GROUPS.map((g) => g.id)); state.distancePenalty = !!p.distancePenalty; state.avoidCrowd = !!p.avoidCrowd; state.preferComfort = !!p.preferComfort; }
 } catch { /* preferenze non disponibili */ }
 const savePrefs = () => {
   try { localStorage.setItem(PREFS_KEY, JSON.stringify({ groups: [...state.groups], distancePenalty: state.distancePenalty, avoidCrowd: state.avoidCrowd, preferComfort: state.preferComfort })); } catch { /* ignora */ }
@@ -261,7 +261,7 @@ function renderFilterSummary() {
   if (!box) return;
   const all = state.groups.size === GROUPS.length;
   box.innerHTML = `<button type="button" class="chip" data-g="all" aria-pressed="${all}">Tutti</button>
-    ${GROUPS.map((g) => `<button type="button" class="chip" data-g="${g.id}" aria-pressed="${!all && state.groups.has(g.id)}">${esc(g.label)}</button>`).join('')}
+    ${GROUPS.map((g) => `<button type="button" class="chip chip-ph" data-g="${g.id}" aria-pressed="${!all && state.groups.has(g.id)}">${thumb(g.rep, 22)}${esc(g.label)}</button>`).join('')}
     <span class="af-sep" aria-hidden="true"></span>
     ${PREFS.map(([k, label]) => `<button type="button" class="chip pref" data-p="${k}" aria-pressed="${!!state[k]}">${esc(label)}</button>`).join('')}`;
   const changed = () => soft(() => { savePrefs(); renderFilterSummary(); if (series) { compute(); outCache.clear(); renderAll(); } });
@@ -329,6 +329,8 @@ function alternativeFor(z, o, d) {
   }
   return best;
 }
+// icona meteo con il suo colore (sole ambra, pioggia blu, temporale viola, neve azzurro)
+const wxi = (w) => `<span class="wxi wxi-${wxIcon(w)}">${IC[wxIcon(w)]}</span>`;
 const wxIcon = (w) => (w?.thunder ? 'storm' : w?.snow ? 'snow' : w && (w.rain >= 0.5 || w.prob >= 50) ? 'rain' : 'sun');
 
 function compute() {
@@ -450,7 +452,7 @@ function renderSpeciesGrid() {
   const box = $('#species-grid');
   if (!box) return;
   if (!box.querySelector('#sp-head')) {
-    const chips = [{ id: 'all', label: 'Tutti' }, ...GROUPS];
+    const chips = [{ id: 'all', label: 'Tutti' }, { id: 'season', label: 'In stagione ora' }];
     // un solo campo di ricerca nell'app: qui apre la ricerca generale, con funghi e sosia in cima
     box.innerHTML = `<button type="button" id="sp-head" class="search-box search-fake" data-open-search><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg>
         <span>Cerca funghi, sosia, alberi, zone…</span></button>
@@ -469,7 +471,7 @@ function fillSpecies() {
   const month = new Date().getMonth();
   const q = normTxt(spQuery).trim();
   const groups = Object.fromEntries(GROUPS.map((g) => [g.id, g.label]));
-  const list = SPECIES.filter((sp) => (spFilter === 'all' || sp.group === spFilter)
+  const list = SPECIES.filter((sp) => (spFilter === 'all' || (spFilter === 'season' ? sp.months[month] >= 0.6 : sp.group === spFilter))
     && (!q || q.split(/\s+/).every((w) => normTxt(`${sp.name} ${sp.latin} ${groups[sp.group]}`).includes(w))));
   $('#sp-cards').innerHTML = list.map((sp) => {
     const ph = speciesPhoto(sp.id);
@@ -658,7 +660,7 @@ function renderHome() {
         <span class="cover-title">${esc(title)}</span>${sub ? `<span class="cover-sub">${esc(sub)}</span>` : ''}
         <span class="cover-sp">${thumb(hero.d.best.species.id, 44)}<span><b>${esc(hero.d.best.species.name)}</b> ${intornoA(hero.d.best.band)} ${hero.d.best.band} m</span></span>
         ${also.length ? `<span class="sp-pills" aria-label="Altre specie possibili"><span class="sp-pills-k">anche</span>${also.join('')}</span>` : ''}
-        <span class="facts">${t ? fact('clock', `entro le <b>${fmtRough(t.arrive, 15, 'floor')}</b>`) : ''}${fact('car', `<b>${a0?.minutes ?? hero.z.drive_min}</b> min`)}${hero.d.crowd ? fact('people', crowdText(hero.d.crowd)) : ''}${wxOf(hero.z, hero.d) ? `<span class="fact wx-${wxOf(hero.z, hero.d).level}">${IC[wxIcon(wxOf(hero.z, hero.d))]}${esc(wxOf(hero.z, hero.d).main)}</span>` : ''}</span>
+        <span class="facts">${t ? fact('clock', `entro le <b>${fmtRough(t.arrive, 15, 'floor')}</b>`) : ''}${fact('car', `<b>${a0?.minutes ?? hero.z.drive_min}</b> min`)}${hero.d.crowd ? fact('people', crowdText(hero.d.crowd)) : ''}${wxOf(hero.z, hero.d) ? `<span class="fact wx-${wxOf(hero.z, hero.d).level}">${wxi(wxOf(hero.z, hero.d))}${esc(wxOf(hero.z, hero.d).main)}</span>` : ''}</span>
         ${(() => { const g = list.filter((c) => c.o === hero.o).sort((a, b) => b.s - a.s)[0]; const wg = g && wxOf(g.z, g.d); return g && g.z.id !== hero.z.id && wg && wg.level !== 'ok' ? `<span class="cover-note">${esc(splitName(g.z)[0])} avrebbe un indice più alto (${g.s}), ma ${esc(dayLabel(hero.o, hero.d.date, true).toLowerCase())} mattina: ${esc(wg.main)}.</span>` : ''; })()}
         <span class="cover-cta">Il piano dell'uscita <span aria-hidden="true">→</span></span>
       </span>
@@ -667,7 +669,7 @@ function renderHome() {
   ol.innerHTML = list.slice(1, 8).map((c) => {
     const cv = coverOf(c.z, c.d.best.species.id);
     return `<li class="vtn" style="--vtn:t-${c.z.id}-${c.o}"><a class="tile" href="#/zona/${c.z.id}/${c.o}">
-      ${cv ? `<img src="${cv.small}" alt="" loading="lazy">` : ''}<span class="shade"></span>${ring(c.s, false)}${(() => { const w = wxOf(c.z, c.d); return w && w.level !== 'ok' ? `<span class="tile-wx wx-${w.level}" title="${esc(w.text)}">${IC[wxIcon(w)]}${esc(OUTING_LABEL[w.level])}</span>` : ''; })()}
+      ${cv ? `<img src="${cv.small}" alt="" loading="lazy">` : ''}<span class="shade"></span>${ring(c.s, false)}${(() => { const w = wxOf(c.z, c.d); return w && w.level !== 'ok' ? `<span class="tile-wx wx-${w.level}" title="${esc(w.text)}">${wxi(w)}${esc(OUTING_LABEL[w.level])}</span>` : ''; })()}
       <span class="tile-body"><span class="tile-day">${esc(dayLabel(c.o, c.d.date, true))}</span><b>${esc(splitName(c.z)[0])}</b><small>${esc(c.d.best.species.name)} · ${c.d.best.band} m · ${access[c.z.id]?.[0]?.minutes ?? c.z.drive_min} min</small></span>
     </a></li>`;
   }).join('');
@@ -738,7 +740,7 @@ function openSheet(zid) {
     <a class="sheet-row" href="#/zona/${zid}/${state.dayOffset}">
       <span class="sheet-img">${cv ? `<img src="${cv.small}" alt="">` : ''}${ring(sc, false)}</span>
       <span class="sheet-txt"><span class="eyebrow">${esc(dayLabel(state.dayOffset, d.date, true))}</span><b class="sheet-title">${esc(splitName(z)[0])}</b>
-        <span class="small">${esc(d.best.species.name)} ~${d.best.band} m · ${access[zid]?.[0]?.minutes ?? z.drive_min} min${d.crowd ? ` · ${crowdText(d.crowd)}` : ''}</span>${wxOf(z, d) ? `<span class="small wx-line wx-${wxOf(z, d).level}">${IC[wxIcon(wxOf(z, d))]}${esc(wxOf(z, d).text)}</span>` : ''}</span>
+        <span class="small">${esc(d.best.species.name)} ~${d.best.band} m · ${access[zid]?.[0]?.minutes ?? z.drive_min} min${d.crowd ? ` · ${crowdText(d.crowd)}` : ''}</span>${wxOf(z, d) ? `<span class="small wx-line wx-${wxOf(z, d).level}">${wxi(wxOf(z, d))}${esc(wxOf(z, d).text)}</span>` : ''}</span>
     </a>
     ${forestOn ? forestHere(zid) : ''}
     <p class="sheet-key small"><span class="key-p">P</span> sosta <span class="key-walk">${IC.walk}</span> qui lasci l'auto <span class="key-trail"></span> sentiero consigliato <span class="muted">· tocca un segno</span></p>
@@ -1050,7 +1052,7 @@ function planCard(z, d) {
   }  const w = wxOf(z, d);
   if (w) {
     const alt = alternativeFor(z, state.dayOffset, d);
-    rows.push({ sec: 'quando', svg: IC[wxIcon(w)], k: 'Meteo dell\'uscita', badge: `<span class="badge wx-b wx-${w.level}">${OUTING_SHORT[w.level]}</span>`,
+    rows.push({ sec: 'quando', svg: wxi(w), k: 'Meteo dell\'uscita', badge: `<span class="badge wx-b wx-${w.level}">${OUTING_SHORT[w.level]}</span>`,
       v: `${esc(w.text.replace(/^./, (c) => c.toUpperCase()))}`,
       sub: alt ? `<span class="plan-alt">Puoi andare a <a href="#/zona/${alt.z.id}/${state.dayOffset}">${esc(splitName(alt.z)[0])}</a>: ${esc(alt.w.main)}, indice ${alt.s}.</span>`
         : `Mattina, dalle ${w.from}:00 alle 13${w.thunder ? ' · in montagna con i temporali non si sta nel bosco' : ''}` });
