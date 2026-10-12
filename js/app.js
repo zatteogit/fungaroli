@@ -511,6 +511,8 @@ function dayChips(box, selected, onPick, { withAll = false } = {}) {
     b.className = 'day';
     b.setAttribute('role', 'tab');
     b.setAttribute('aria-selected', String(selected === o));
+    // selezionato: tutta la tessera prende il colore del suo indice (il testo si adegua al chiaro/scuro della tinta)
+    if (sc != null) { b.dataset.lv = scoreVar(sc).slice(3); b.style.setProperty('--sel', `var(${scoreVar(sc)})`); }
     b.innerHTML = `<span class="d1">${top}</span><span class="d2">${mid}</span>${sc != null ? `<span class="d3"><span class="dot" style="--dc:var(${scoreVar(sc)});--dcs:var(${scoreVar(sc).replace('--s', '--ps')})"></span><b class="pc">${sc}</b></span>` : '<span class="d3">giorni</span>'}`;
     b.addEventListener('click', () => onPick(o));
     box.appendChild(b);
@@ -530,7 +532,7 @@ function dayChips(box, selected, onPick, { withAll = false } = {}) {
   }
   for (let o = 0; o <= AHEAD_DAYS; o++) {
     const best = bestOfDay(o);
-    if (best) mk(o === 0 ? 'Oggi' : o === 1 ? 'Dom' : fmtDate(best.d.date, { weekday: 'short' }).replace('.', ''), fmtDate(best.d.date, { day: 'numeric' }), o, best.s);
+    if (best) mk(o === 0 ? 'Oggi' : o === 1 ? 'Domani' : fmtDate(best.d.date, { weekday: 'short' }).replace('.', ''), fmtDate(best.d.date, { day: 'numeric' }), o, best.s);
   }
   box.querySelector('[aria-selected="true"]')?.scrollIntoView({ block: 'nearest', inline: 'center' });
 }
@@ -1240,7 +1242,18 @@ const segnavia = (t) => (t.ref
 const trailName = (t) => t.name || (t.itinerary?.length ? `${t.itinerary[0]} – ${t.itinerary[t.itinerary.length - 1]}` : 'Sentiero');
 const fmtDur = (h) => { const [a, b] = String(h).split(':').map(Number); return `${a} h${b ? ` ${b}` : ''}`; };
 
-function trailProfile(zid, t, sp, band) {
+// posizione di un imbocco lungo il tratto della zona (0-1): punto piu' vicino sulla linea, distanza cumulata
+function headX(t, h) {
+  const pts = (t.lines || []).flat();
+  if (pts.length < 2) return null;
+  const k = Math.cos((h.lat * Math.PI) / 180);
+  const dd = (a, b) => Math.hypot(a[0] - b[0], (a[1] - b[1]) * k);
+  let cum = 0, best = Infinity, at = 0;
+  pts.forEach((p, i) => { if (i) cum += dd(pts[i - 1], p); const d = dd(p, [h.lat, h.lon]); if (d < best) { best = d; at = cum; } });
+  return cum ? at / cum : null;
+}
+
+function trailProfile(zid, t, sp, band, heads = []) {
   const sm = t.samples || [];
   if (sm.length < 4) return '';
   const cats = trails[zid]?.sample_categories || [];
@@ -1254,9 +1267,11 @@ function trailProfile(zid, t, sp, band) {
   const area = `${line}L${W} ${H}L0 ${H}Z`;
   const step = W / (n - 1);
   const good = sm.map(([e], i) => (ok[i] ? `<rect x="${(X(i) - step / 2).toFixed(1)}" y="${Y(e).toFixed(1)}" width="${step.toFixed(1)}" height="${(H - Y(e)).toFixed(1)}"/>` : '')).join('');
-  return `<figure class="tprof"><svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" role="img" aria-label="Profilo del tratto nella zona: da ${es[0]} a ${es[n - 1]} m, tra ${lo} e ${hi} m">
-      <path d="${area}" class="tp-area"/><g class="tp-good">${good}</g><path d="${line}" class="tp-line"/></svg>
-    <figcaption><span>${hi} m</span><span class="tp-key"><i></i>bosco adatto a ${esc(sp.name.toLowerCase())}</span><span>${lo} m</span></figcaption></figure>`;
+  // imbocchi sulla linea, numerati come i bottoni sotto il grafico
+  const marks = heads.map((h, k) => { const x = headX(t, h); if (x == null) return ''; const i = Math.round(x * (n - 1)); return `<span class="tp-th" style="--x:${(x * 100).toFixed(1)}%;top:${((Y(es[i]) / H) * 100).toFixed(1)}%" aria-hidden="true">${k + 1}</span>`; }).join('');
+  return `<figure class="tprof"><div class="tp-wrap"><svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" role="img" aria-label="Profilo del tratto nella zona: da ${es[0]} a ${es[n - 1]} m, tra ${lo} e ${hi} m">
+      <path d="${area}" class="tp-area"/><g class="tp-good">${good}</g><path d="${line}" class="tp-line"/></svg>${marks}</div>
+    <figcaption><span>${es[0]} m</span><span class="tp-key"><i></i>bosco adatto a ${esc(sp.name.toLowerCase())}</span><span>${es[n - 1]} m</span></figcaption></figure>`;
 }
 
 function trailCard(z, t, d, top = false) {
@@ -1269,8 +1284,8 @@ function trailCard(z, t, d, top = false) {
   return `<div class="tcard${top ? ' top' : ''}">
     <div class="tc-head">${segnavia(t)}<div class="tc-name"><b>${esc(trailName(t))}</b>${t.itinerary?.length > 2 ? `<small>${esc(t.itinerary.slice(1, -1).join(' · '))}</small>` : ''}${t.long ? '<small>tratto di un itinerario lungo</small>' : ''}${t.operator ? `<small>${esc(t.operator)}</small>` : ''}</div>${top ? '<span class="badge tc-top">consigliato</span>' : ''}</div>
     <dl class="tc-facts">${facts}</dl>
-    ${d?.best ? trailProfile(z.id, t, d.best.species, d.best.band) : ''}
-    ${heads.length ? `<div class="th-row"><span class="th-k">Imbocchi</span><div class="th-list">${heads.map((h) => `<a class="th-chip" href="${gmaps(h.lat, h.lon)}" target="_blank" rel="noopener" aria-label="Indicazioni stradali per l'imbocco a ${h.ele ?? ''} metri">${h.kind === 'strada' ? IC.car : ICON.track}<span><b>${h.ele != null ? `${h.ele.toLocaleString('it-IT')} m` : 'imbocco'}</b><small>${esc(h.road || (h.kind === 'strada' ? 'su strada' : 'su sterrata'))}</small></span></a>`).join('')}</div></div>` : ''}
+    ${d?.best ? trailProfile(z.id, t, d.best.species, d.best.band, heads) : ''}
+    ${heads.length ? `<div class="th-row"><span class="th-k">Imbocchi</span><div class="th-list">${heads.map((h, k) => `<a class="th-chip" href="${gmaps(h.lat, h.lon)}" target="_blank" rel="noopener" aria-label="Indicazioni stradali per l'imbocco ${k + 1}, a ${h.ele ?? ''} metri"><i class="th-n">${k + 1}</i>${h.kind === 'strada' ? IC.car : ICON.track}<span><b>${h.ele != null ? `${h.ele.toLocaleString('it-IT')} m` : 'imbocco'}</b><small>${esc(h.road || (h.kind === 'strada' ? 'su strada' : 'su sterrata'))}</small></span></a>`).join('')}</div></div>` : ''}
   </div>`;
 }
 

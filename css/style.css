@@ -26,10 +26,10 @@
   --rain-fc: #86b6ef;
   --line: #326820;
   --grid: #e6dfd3;
-  /* rampa ordinale dell'indice (validata): s1 chiaro = basso, s5 scuro = alto */
-  --s0: #c9c4b8; --s1: #8fc06c; --s2: #6aa548; --s3: #4b8731; --s4: #326820; --s5: #1d4a12;
-  /* stessa rampa per gli anelli sopra le foto: piu' alto = piu' luminoso */
-  --ps0: #9a978c; --ps1: #6aa548; --ps2: #86c160; --ps3: #a3d47c; --ps4: #c0e59c; --ps5: #ddf5c0;
+  /* rampa dell'indice su fondo chiaro: da un verde chiaro a un verde pieno (mai quasi nero) */
+  --s0: #cfcabf; --s1: #c2dea8; --s2: #9fcb7a; --s3: #7ab553; --s4: #5a9c37; --s5: #3f8424;
+  /* su fondo scuro (giorno selezionato, anelli sulle foto): cresce la saturazione, non la chiarezza */
+  --ps0: #8d8a82; --ps1: #8a9e7c; --ps2: #8fb66c; --ps3: #93cb57; --ps4: #98dc43; --ps5: #a2ec33;
 
   --warn-bg: #fbf1dc; --warn-ink: #674600;
   --ok-bg: #e4efda; --ok-ink: #24501a;
@@ -56,7 +56,7 @@
     --text: #f0ede5; --text-2: #c7c1b4; --muted: #978f82;
     --accent: #e09a64; --accent-ink: #1a1208; --accent-soft: #3a2616; --forest: #16261b;
     --rain: #3987e5; --rain-fc: #1c5cab; --line: #9fd07a; --grid: #2a2f25;
-    --s0: #4a4d45; --s1: #33701f; --s2: #4f9233; --s3: #74b34f; --s4: #9fd07a; --s5: #cfe7b8;
+    --s0: #4a4d45; --s1: #4e6b40; --s2: #5b8c3c; --s3: #6daa3f; --s4: #82c845; --s5: #9be34c;
     --warn-bg: #362c15; --warn-ink: #f2d59a; --ok-bg: #20301a; --ok-ink: #c4e3ad;
     --crit: #f0786c; --crit-bg: #361612; --crit-ink: #f8d0ca;
     --shadow-1: 0 1px 2px rgb(0 0 0 / .4); --shadow-2: 0 18px 44px rgb(0 0 0 / .5);
@@ -68,7 +68,7 @@
   --text: #f0ede5; --text-2: #c7c1b4; --muted: #978f82;
   --accent: #e09a64; --accent-ink: #1a1208; --accent-soft: #3a2616; --forest: #16261b;
   --rain: #3987e5; --rain-fc: #1c5cab; --line: #9fd07a; --grid: #2a2f25;
-  --s0: #4a4d45; --s1: #33701f; --s2: #4f9233; --s3: #74b34f; --s4: #9fd07a; --s5: #cfe7b8;
+  --s0: #4a4d45; --s1: #4e6b40; --s2: #5b8c3c; --s3: #6daa3f; --s4: #82c845; --s5: #9be34c;
   --warn-bg: #362c15; --warn-ink: #f2d59a; --ok-bg: #20301a; --ok-ink: #c4e3ad;
   --crit: #f0786c; --crit-bg: #361612; --crit-ink: #f8d0ca;
   --shadow-1: 0 1px 2px rgb(0 0 0 / .4); --shadow-2: 0 18px 44px rgb(0 0 0 / .5);
@@ -1518,3 +1518,28 @@ html:has(dialog[open]:modal) body { overflow: hidden; }
 .qr-img { width: 200px; height: 200px; background: #fff; padding: 8px; border-radius: 12px; }
 .qr-img svg { width: 100%; height: 100%; display: block; }
 #j-disconnect { margin-top: 6px; }
+
+/* imbocchi sul profilo */
+.tp-wrap { position: relative; }
+.tp-th { position: absolute; transform: translate(-50%, -130%); width: 20px; height: 20px; border-radius: 50%; display: grid; place-items: center; background: var(--accent); color: #fff; font-size: 11px; font-weight: 800; box-shadow: 0 0 0 2px var(--surface), 0 1px 4px rgb(0 0 0 / .3); }
+.tp-th::after { content: ''; position: absolute; left: 50%; top: 100%; width: 1.5px; height: 9px; background: var(--accent); transform: translateX(-50%); }
+.th-n { width: 18px; height: 18px; border-radius: 50%; display: grid; place-items: center; flex: none; background: var(--accent); color: #fff; font: 800 10.5px/1 var(--font-body); font-style: normal; }
+.tp-th { left: clamp(10px, var(--x, 0%), calc(100% - 10px)) !important; }
+
+/* giorno selezionato nel colore del suo indice; testo scuro sulle tinte chiare, chiaro sulle scure */
+.day[aria-selected="true"][data-lv] { background: var(--sel); border-color: transparent; color: #1b1915; box-shadow: 0 4px 14px color-mix(in srgb, var(--sel) 45%, transparent); }
+.day[aria-selected="true"][data-lv] :is(.d1, .d3) { color: rgb(27 25 21 / .72); }
+.day[aria-selected="true"][data-lv] .dot { background: transparent; box-shadow: inset 0 0 0 2px currentColor; }
+.day[aria-selected="true"][data-lv="5"] { color: #fff; }
+.day[aria-selected="true"][data-lv="5"] :is(.d1, .d3) { color: rgb(255 255 255 / .82); }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .day[aria-selected="true"]:is([data-lv="0"], [data-lv="1"], [data-lv="2"]) { color: #f0ede5; }
+  :root:not([data-theme="light"]) .day[aria-selected="true"]:is([data-lv="0"], [data-lv="1"], [data-lv="2"]) :is(.d1, .d3) { color: rgb(240 237 229 / .8); }
+  :root:not([data-theme="light"]) .day[aria-selected="true"][data-lv="5"] { color: #1b1915; }
+  :root:not([data-theme="light"]) .day[aria-selected="true"][data-lv="5"] :is(.d1, .d3) { color: rgb(27 25 21 / .72); }
+}
+:root[data-theme="dark"] .day[aria-selected="true"]:is([data-lv="0"], [data-lv="1"], [data-lv="2"]) { color: #f0ede5; }
+:root[data-theme="dark"] .day[aria-selected="true"][data-lv="5"] { color: #1b1915; }
+/* anello di selezione: il colore da solo non basta (molti giorni hanno tinte simili) */
+.day[aria-selected="true"][data-lv] { box-shadow: 0 0 0 2.5px var(--bg), 0 0 0 4.5px var(--text), 0 6px 16px color-mix(in srgb, var(--sel) 40%, transparent); }
+.days, #days, #map-days { padding-block: 6px; }
