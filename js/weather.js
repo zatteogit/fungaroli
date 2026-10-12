@@ -20,7 +20,7 @@ function writeCache(sig, data) {
   try { localStorage.setItem(CACHE_KEY, JSON.stringify({ sig, t: Date.now(), data })); } catch { /* quota o privato */ }
 }
 
-function toDaily(loc, todayStr) {
+export function toDaily(loc, todayStr) {
   const d = loc.daily;
   const h = loc.hourly;
   const byDay = {};
@@ -53,6 +53,20 @@ export function todayISO() {
 
 // Ritorna { [zoneId]: [serie per ciascuna fascia di quota] } e l'ora di aggiornamento.
 export async function loadWeather(zones, { force = false } = {}) {
+  // versione Artifact: serie gia' calcolate e incorporate (la pagina non puo' chiamare Open-Meteo)
+  const snap = globalThis.FUNGAROLI_DATA?.weather;
+  if (snap) {
+    const today = todayISO();
+    let stale = false;
+    for (const zid in snap.series) {
+      for (const s of snap.series[zid]) {
+        const i = s.dates.indexOf(today);
+        if (i >= 0) s.todayIndex = i; else stale = true;
+      }
+    }
+    return { series: snap.series, fetchedAt: new Date(snap.fetchedAt), snapshot: true, stale };
+  }
+
   const locs = [];
   for (const z of zones) z.bands.forEach((band, bi) => locs.push({ zid: z.id, bi, lat: z.lat, lon: z.lon, band }));
   const today = todayISO();

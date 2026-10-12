@@ -5,6 +5,10 @@
   "description": "Dove e quando andare a funghi intorno a Rieti",
   "scripts": {
     "start": "python3 -m http.server 8000",
-    "test": "node --test tests/*.test.mjs"
+    "test": "node --test tests/*.test.mjs",
+    "build:artifact": "node tools/build_artifact.mjs"
+  },
+  "devDependencies": {
+    "esbuild": "0.24.0"
   }
 }

@@ -1,9 +1,12 @@
+/* Layout: guida di campo — striscia dei giorni, mappa a sinistra, scheda zona a destra. */
 :root {
   color-scheme: light;
-  --bg: #f4f1ea;
-  --surface: #fbfaf6;
-  --surface-2: #efebe1;
-  --border: #ddd6c7;
+  --font-display: Literata, Georgia, 'Times New Roman', serif;
+  --font-body: 'Public Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --bg: #eceee6;
+  --surface: #f9faf6;
+  --surface-2: #e8ebe1;
+  --border: #d3d8c9;
   --text: #1f1c17;
   --text-2: #57514a;
   --muted: #7b746a;
@@ -25,7 +28,7 @@
   --ok-bg: #e3efd9;
   --ok-ink: #24501a;
   --radius: 14px;
-  font-family: Inter, system-ui, -apple-system, Segoe UI, sans-serif;
+  font-family: var(--font-body);
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
@@ -67,8 +70,8 @@
 * { box-sizing: border-box; }
 html, body { margin: 0; }
 body { background: var(--bg); color: var(--text); font-size: 15px; line-height: 1.45; }
-h1, h2, h3 { margin: 0; line-height: 1.2; }
-h1 { font-family: Fraunces, Georgia, serif; font-size: 26px; font-weight: 600; letter-spacing: -0.01em; }
+h1, h2, h3 { margin: 0; line-height: 1.2; text-wrap: balance; }
+h1 { font-family: var(--font-display); font-size: 26px; font-weight: 600; letter-spacing: -0.01em; }
 h1 span { color: var(--accent); }
 h2 { font-size: 16px; font-weight: 600; margin-bottom: 12px; }
 h3 { font-size: 14px; font-weight: 600; margin: 18px 0 8px; }
@@ -175,10 +178,70 @@ code { background: var(--surface-2); padding: 1px 5px; border-radius: 5px; font-
 .loading { padding: 40px; text-align: center; color: var(--muted); }
 .error { background: var(--warn-bg); color: var(--warn-ink); padding: 12px; border-radius: 10px; }
 
+/* --- mappa schematica --- */
+.map-panel.schematic #map { height: auto; }
+.svgmap { display: block; width: 100%; height: auto; }
+.svgmap .ring-label { fill: var(--muted); font-size: 10.5px; }
+.svgmap .town-label { fill: var(--text-2); font-size: 11px; }
+.svgmap .origin-label { fill: var(--text); font-size: 13px; font-weight: 700; }
+.svgmap .zone-text { fill: var(--text); font-size: 11.5px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.svgmap .zone { cursor: pointer; }
+.svgmap .zone:focus-visible { outline: none; }
+.svgmap .zone:focus-visible circle:first-child { stroke: var(--accent); stroke-width: 3; }
+.stale { width: min(1288px, calc(100% - 32px)); margin: 0 auto 12px; }
+
+/* --- diario --- */
+.btn.primary { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+.btn.primary:hover { filter: brightness(1.08); }
+label.btn { display: inline-flex; align-items: center; }
+.link-btn { font: inherit; background: none; border: 0; padding: 4px 0; color: var(--accent); cursor: pointer; text-decoration: underline; }
+.journal { margin: 16px auto 0; width: min(1288px, calc(100% - 32px)); }
+.journal-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 8px; }
+.journal-head h2 { margin: 0; }
+.journal-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+.j-sum { font-size: 14px; }
+.j-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.j-item { background: var(--surface-2); border-radius: 10px; padding: 10px 12px; display: grid; gap: 3px; font-size: 14px; }
+.j-item .tag { margin-left: 6px; }
+.tag:not(.ok):not(.warn) { background: var(--grid); color: var(--text-2); }
+
+.wiz { border: 0; border-radius: 18px; padding: 0; width: min(520px, calc(100% - 24px)); max-height: calc(100% - 24px); background: var(--surface); color: var(--text); box-shadow: 0 20px 60px rgb(0 0 0 / .35); }
+.wiz::backdrop { background: rgb(0 0 0 / .45); }
+.wiz-body { padding: 22px 20px 20px; }
+.wiz-close { position: absolute; top: 10px; right: 10px; font: inherit; font-size: 16px; width: 36px; height: 36px; border-radius: 50%; border: 0; background: var(--surface-2); color: var(--text); cursor: pointer; }
+.wiz-progress { display: flex; gap: 4px; margin: 0 44px 12px 0; }
+.wiz-progress span { flex: 1; height: 4px; border-radius: 2px; background: var(--grid); }
+.wiz-progress span.on { background: var(--accent); }
+.wiz-step { margin: 0; font-size: 12px; color: var(--muted); }
+.wiz-title { font-family: var(--font-display); font-size: 24px; font-weight: 600; margin: 2px 0 6px; }
+.wiz-hint { margin: 0 0 14px; color: var(--text-2); font-size: 14px; }
+.wiz-content { display: grid; gap: 10px; margin-top: 12px; }
+.wiz-choices { display: grid; gap: 8px; }
+.wiz-choice { font: inherit; font-size: 16px; font-weight: 500; text-align: left; padding: 14px 16px; border-radius: 12px; border: 1px solid var(--border); background: var(--surface-2); color: var(--text); cursor: pointer; display: grid; gap: 2px; min-height: 52px; }
+.wiz-choice small { font-weight: 400; color: var(--muted); font-size: 12.5px; }
+.wiz-choice:hover { border-color: var(--accent); }
+.wiz-choice.sel { border-color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); }
+.wiz-input { font: inherit; font-size: 16px; padding: 12px; border-radius: 12px; border: 1px solid var(--border); background: var(--surface-2); color: var(--text); width: 100%; }
+.wiz-row { display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 8px 0; border-bottom: 1px solid var(--grid); }
+.wiz-sp { display: grid; font-weight: 500; font-size: 15px; min-width: 0; }
+.wiz-sp small { font-weight: 400; font-style: italic; color: var(--muted); font-size: 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.seg { display: flex; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; flex: none; }
+.seg button { font: inherit; font-size: 13px; padding: 9px 10px; border: 0; background: var(--surface); color: var(--text-2); cursor: pointer; min-height: 40px; }
+.seg button + button { border-left: 1px solid var(--border); }
+.seg button[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink); font-weight: 600; }
+.wiz-recap { background: var(--surface-2); border-radius: 12px; padding: 12px; margin: 0; font-size: 14px; }
+.wiz-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; }
+.wiz-nav .btn { font-size: 15px; padding: 10px 18px; }
+.wiz-done { text-align: center; }
+.wiz-big { font-size: 44px; margin: 6px 0 0; color: var(--accent); }
+.wiz-done .wiz-nav { justify-content: center; }
+
 @media (max-width: 900px) {
   .layout { grid-template-columns: 1fr; }
   .map-panel { grid-row: auto; position: static; }
   .rank-item .conf { display: none; }
+  .wiz { width: 100%; max-width: 100%; height: 100%; max-height: 100%; border-radius: 0; }
+  .top-actions [data-open-journal] { order: -1; }
   #map { height: 380px; }
   h1 { font-size: 22px; }
 }

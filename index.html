@@ -8,7 +8,7 @@
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><path d='M4 15a12 9 0 0 1 24 0z' fill='%238a4b25'/><rect x='12' y='15' width='8' height='12' rx='3' fill='%23e9dcc2'/></svg>">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&family=Literata:opsz,wght@7..72,600;7..72,700&display=swap">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -20,8 +20,11 @@
     <div class="top-actions">
       <span id="updated" class="muted small"></span>
       <button id="refresh" class="btn ghost" type="button">Aggiorna meteo</button>
+      <button class="btn primary" type="button" data-open-journal>＋ Registra uscita</button>
     </div>
   </header>
+
+  <p id="stale" class="notice stale" hidden>Questi dati meteo non coprono più la data di oggi: l'indice si riferisce al giorno della pubblicazione.</p>
 
   <section class="filters" aria-label="Filtri">
     <div class="filter-row">
@@ -50,6 +53,24 @@
 
     <section class="panel detail" id="detail" aria-live="polite"></section>
   </main>
+
+  <section class="journal panel" aria-labelledby="journal-h">
+    <div class="journal-head">
+      <h2 id="journal-h">Il mio diario</h2>
+      <div class="journal-actions">
+        <button class="btn primary" type="button" data-open-journal>＋ Registra uscita</button>
+        <button class="btn ghost" type="button" id="journal-export">Esporta</button>
+        <label class="btn ghost">Importa<input type="file" id="journal-import" accept="application/json,.json" hidden></label>
+      </div>
+    </div>
+    <div id="journal-list"></div>
+    <p class="muted small" id="journal-storage"></p>
+  </section>
+
+  <dialog id="journal-dialog" class="wiz" aria-label="Registra un'uscita">
+    <button type="button" class="wiz-close" aria-label="Chiudi">✕</button>
+    <div class="wiz-body"></div>
+  </dialog>
 
   <section class="info">
     <details>

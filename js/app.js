@@ -1,7 +1,9 @@
 import { SPECIES, GROUPS, FOREST } from './species.js';
-import { scoreZoneDay, habitatAtBand, explain, classOf, CLASSES } from './model.js';
+import { scoreZoneDay, scoreSpecies, habitatAtBand, explain, classOf, CLASSES } from './model.js';
 import { loadWeather } from './weather.js';
 import { renderCharts } from './chart.js';
+import { initJournal } from './journal.js';
+import { renderSvgMap } from './svgmap.js';
 
 const HISTORY_DAYS = 30;   // giorni passati mostrati nel grafico
 const AHEAD_DAYS = 7;      // giorni futuri valutati
@@ -46,20 +48,26 @@ const savePrefs = () => {
   try { localStorage.setItem(PREFS_KEY, JSON.stringify({ groups: [...state.groups], distancePenalty: state.distancePenalty })); } catch { /* ignora */ }
 };
 
-let zones, habitat, series, results, map, zoneLayers = {};
+let zones, origin, habitat, series, results, map, zoneLayers = {};
+const hasLeaflet = () => typeof globalThis.L !== 'undefined';
 
 async function init() {
   $('#detail').innerHTML = '<div class="loading">Carico meteo e dati forestali…</div>';
-  const [zj, hj] = await Promise.all([
+  // versione Artifact: dati incorporati nella pagina (niente fetch esterni)
+  const embedded = globalThis.FUNGAROLI_DATA;
+  const [zj, hj] = embedded ? [embedded.zones, embedded.habitat] : await Promise.all([
     fetch('data/zones.json').then((r) => r.json()),
     fetch('data/habitat.json').then((r) => r.json()),
   ]);
   zones = zj.zones;
+  origin = zj.origin;
   habitat = hj.zones;
   initMap();
   renderFilters();
+  initJournal({ zones, predict, getZoneId: () => state.zoneId || zones[0].id });
   await refreshWeather(false);
-  $('#refresh').addEventListener('click', () => refreshWeather(true));
+  if (embedded) $('#refresh').hidden = true;
+  else $('#refresh').addEventListener('click', () => refreshWeather(true));
   $('#distance-penalty').checked = state.distancePenalty;
   $('#distance-penalty').addEventListener('change', (e) => { state.distancePenalty = e.target.checked; savePrefs(); renderAll(); });
   matchMedia('(prefers-color-scheme: dark)').addEventListener('change', renderAll);
@@ -72,7 +80,10 @@ async function refreshWeather(force) {
     $('#updated').textContent = 'Aggiornamento…';
     const w = await loadWeather(zones, { force });
     series = w.series;
-    $('#updated').textContent = 'Meteo delle ' + w.fetchedAt.toLocaleTimeString('it-IT', { hour: '2-digit', minute: '2-digit' });
+    $('#updated').textContent = w.snapshot
+      ? 'Meteo del ' + w.fetchedAt.toLocaleString('it-IT', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' })
+      : 'Meteo delle ' + w.fetchedAt.toLocaleTimeString('it-IT', { hour: '2-digit', minute: '2-digit' });
+    $('#stale').hidden = !w.stale;
     compute();
     renderAll();
   } catch (err) {
@@ -181,7 +192,7 @@ function renderRanking() {
       <div><div class="t1">${esc(c.z.name)} · ${day}</div>
       <div class="t2">${esc(c.d.best.species.name)} intorno ai ${c.d.best.band} m · ${c.z.drive_min} min da Rieti</div></div>
       <span class="conf">affidabilità<br>${conf >= 0.8 ? 'alta' : conf >= 0.55 ? 'media' : 'bassa'}</span>`;
-    const go = () => { state.zoneId = c.z.id; state.dayOffset = c.o; renderAll(); map.flyTo([c.z.lat, c.z.lon], 12, { duration: 0.6 }); };
+    const go = () => { state.zoneId = c.z.id; state.dayOffset = c.o; renderAll(); map?.flyTo([c.z.lat, c.z.lon], 12, { duration: 0.6 }); };
     li.addEventListener('click', go);
     li.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); } });
     ol.appendChild(li);
@@ -190,6 +201,7 @@ function renderRanking() {
 }
 
 function initMap() {
+  if (!hasLeaflet()) { document.querySelector('.map-panel').classList.add('schematic'); return; }
   map = L.map('map', { scrollWheelZoom: true, zoomControl: true }).setView([42.4, 13.05], 10);
   const topo = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
     maxZoom: 17, attribution: '© OpenStreetMap, SRTM | © OpenTopoMap (CC-BY-SA)',
@@ -205,6 +217,21 @@ function initMap() {
 }
 
 function renderMap() {
+  if (!hasLeaflet()) {
+    renderSvgMap($('#map'), {
+      zones, origin,
+      items: zones.map((z) => {
+        const d = dayEntry(z.id, state.dayOffset);
+        const s = adjusted(z, d?.score ?? 0);
+        return {
+          z, score: s, color: `var(${scoreVar(s)})`, selected: z.id === state.zoneId,
+          tooltip: `${z.name} · indice ${s}${d?.best ? ` · ${d.best.species.name} ~${d.best.band} m` : ''}`,
+        };
+      }),
+      onSelect: (id) => { state.zoneId = id; renderAll(); },
+    });
+    return;
+  }
   for (const k in zoneLayers) zoneLayers[k].remove();
   zoneLayers = {};
   for (const z of zones) {
@@ -235,6 +262,7 @@ function renderMap() {
 function renderLegend() {
   const items = [...CLASSES].reverse().map((c) => `<span><span class="sw" style="background:var(${scoreVar(c.min)})"></span>${c.label}${c.min ? ' ≥' + c.min : ''}</span>`);
   $('#legend').innerHTML = items.join('') +
+    (hasLeaflet() ? '' : '<span class="muted">Schema: cerchi = zone, anelli = distanza in linea d\'aria da Rieti</span>') +
     `<span class="wms" hidden><img alt="Legenda Carta Forestale" style="max-width:100%;display:block;margin-top:6px" src="https://geoportale.regione.lazio.it/geoserver/ows?service=WMS&request=GetLegendGraphic&format=image/png&layer=geonode:tipi_forestali2"></span>`;
 }
 
@@ -301,6 +329,22 @@ function renderDetail() {
     todayIndex: r.todayIndex - from,
     selectedIndex: r.todayIndex + state.dayOffset - from,
   });
+}
+
+// Indice previsto per tutte le specie in una zona/data (per il diario).
+// band null = miglior quota della zona. Ritorna null se la data e' fuori dai dati meteo.
+function predict(zoneId, date, band) {
+  if (!series) return null;
+  const z = zones.find((x) => x.id === zoneId);
+  const sb = series[zoneId];
+  const i = sb[0].dates.indexOf(date);
+  if (i < 30) return null;
+  const bands = band == null ? z.bands : [band];
+  const out = {};
+  for (const sp of SPECIES) {
+    out[sp.id] = Math.max(...bands.map((b) => scoreSpecies(sp, sb[bandIndex(z, b)], i, habitat[zoneId], b).score));
+  }
+  return out;
 }
 
 function bandIndex(z, band) {

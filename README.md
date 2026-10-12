@@ -21,6 +21,18 @@ Pubblicazione: il workflow `.github/workflows/pages.yml` pubblica su GitHub Page
 
 Test del modello: `npm test` (Node ≥ 20).
 
+### Versione Artifact (claude.ai)
+
+```bash
+npm i && npm run build:artifact   # -> dist/fungaroli.html
+```
+
+Un Artifact non può chiamare API esterne né caricare tile di mappa, quindi la build incorpora JS, CSS, dati e una **fotografia del meteo** al momento della build; la mappa diventa uno schema SVG con gli anelli di distanza da Rieti. Per aggiornare il meteo si rilancia la build e si ripubblica. Il diario nell'Artifact è salvato nel db privato dell'utente (`data/users/<id>/diario/uscite`), quindi resta tra dispositivi e Claude può leggerlo per tarare il modello.
+
+## Diario delle uscite
+
+Procedura guidata in 5 passi (zona → giorno → quota → cosa e quanto → nota). Al salvataggio l'app memorizza anche l'indice che il modello prevedeva per quella zona e quel giorno, così l'elenco mostra se la previsione era giusta, ottimista o pessimista. Su GitHub Pages il diario resta nel browser: usa *Esporta* / *Importa*.
+
 ## Zone (prima versione)
 
 | Zona | Quote valutate | Bosco prevalente (Carta Forestale) | Auto da Rieti* |
@@ -74,6 +86,9 @@ js/model.js           modello (funzioni pure)
 js/species.js         specie e parametri
 js/weather.js         Open-Meteo + cache locale 1 h
 js/chart.js           grafici SVG pioggia / indice
+js/journal.js         diario: procedura guidata, archivio, confronto previsto/trovato
+js/svgmap.js          mappa schematica (versione Artifact)
+tools/build_artifact.mjs  build della versione Artifact
 data/zones.json       zone, quote, accessi, soste, vincoli
 data/habitat.json     generato: composizione forestale e campioni quota/bosco
 tools/build_habitat.py  rigenera habitat.json (pip install shapely pyproj)
