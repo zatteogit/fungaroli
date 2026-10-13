@@ -880,7 +880,7 @@ function renderHome() {
   const cov = coverOf(hero.z, hero.d.best.species.id);
   // le altre specie: testo con il pallino della classe, non pillole (non sono bottoni)
   const also = hero.d.perSpecies.slice(1, 3).map((p) => [p, spScore(hero.z, hero.d, p)]).filter(([, sc]) => sc >= 20)
-    .map(([p, sc], k) => `<span class="sp-also">${k ? ', ' : ''}<i style="background:var(${scoreVar(sc).replace('--s', '--ps')})"></i>${esc(p.species.name.split(' / ')[0].toLowerCase())} <b class="pc">${formatIndex(sc)}</b></span>`);
+    .map(([p, sc], k) => `<span class="sp-also">${k ? ' · ' : ''}<i style="background:var(${scoreVar(sc).replace('--s', '--ps')})"></i>${esc(p.species.name.split(' / ')[0].toLowerCase())} <b class="pc">${formatIndex(sc)}</b></span>`);
   const w0 = wxOf(hero.z, hero.d);
   // il posto con l'indice piu' alto quel giorno, se il meteo della mattina l'ha fatto scendere: nota breve e cliccabile
   const g = list.filter((c) => c.o === hero.o).sort((a, b) => b.s - a.s)[0], wg = g && wxOf(g.z, g.d);
