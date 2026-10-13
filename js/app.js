@@ -2,7 +2,7 @@ import './rails.js';
 import './theme.js';
 import { consumeFresh, freshDone } from './refresh.js';
 import { SPECIES, GROUPS, FOREST } from './species.js';
-import { scoreZoneDay, scoreSpecies, habitatAtBand, habitatPotential, elevationFit, combine, classOf, CLASSES } from './model.js';
+import { scoreZoneDay, scoreSpecies, habitatAtBand, habitatPotential, elevationFit, combine, classOf, scoreLabel, formatIndex, MODEL_VERSION, PARAMS, CLASSES } from './model.js';
 import { loadWeather } from './weather.js';
 import { renderCharts } from './chart.js';
 import { initJournal } from './journal.js';
@@ -18,6 +18,8 @@ import { navigate, soft } from './motion.js';
 import { FOREST_LEGEND } from './forest-legend.js';
 import { initTrees, renderTreeGrid, renderTreePage, linkTrees, treeForCategory, treeThumb } from './trees.js';
 import { crowding, comfortScore, timingAdvice, fmtTime, fmtRough, holidayName, intornoA } from './human.js';
+import { initCommunity, communityStatus, communityRank, reportBadge } from './community.js';
+import { guideTitle, renderGuideCards, renderGuide } from './guides.js';
 
 const HISTORY_DAYS = 30;   // giorni passati mostrati nel grafico
 const AHEAD_DAYS = 7;      // giorni futuri valutati
@@ -26,7 +28,9 @@ const PREFS_KEY = 'fungaroli:prefs:v2'; // v2: si parte con tutti i gruppi
 const $ = (s) => document.querySelector(s);
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const cssVar = (name) => getComputedStyle(document.documentElement).getPropertyValue(name).trim();
-const scoreVar = (score) => `--s${5 - classOf(score)}`;
+const scoreVar = (score) => Number.isFinite(score) ? `--s${5 - classOf(score)}` : '--muted';
+const scoreText = formatIndex;
+let journal;
 // sulla mappa la stessa scala verde dell'app: per farla risaltare, quando ci sono i riquadri la carta sotto si desatura (#map.cells-on)
 const mapVar = scoreVar;
 const fmtDate = (d, opts) => new Date(d + 'T12:00:00').toLocaleDateString('it-IT', opts);
@@ -107,6 +111,9 @@ async function init() {
   zones = zj.zones.filter((z) => hj.zones[z.id]); // una zona senza dati di bosco non e' ancora pronta
   origin = zj.origin;
   habitat = hj.zones;
+  renderGuideCards($('#editorial'));
+  initCommunity({ zoneList: zones });
+  document.addEventListener('fungaroli:community', () => { if (results) renderAll(); });
   initIdentify({
     traits: stj, media: mj, assetUrl: embedded ? (f) => embedded.assets?.[f] || '' : (f) => f, thumb, zones, banner: legal?.identify_banner,
     howTo: (eid, latin) => idj?.species?.[eid]?.lookalikes?.find((l) => l.latin === latin)?.how_to_tell || '',
@@ -120,7 +127,7 @@ async function init() {
   buildSearch(idj, trj, embedded);
   initMap();
   initShell();
-  initJournal({ zones, predict, getZoneId: () => state.zoneId || zones[0].id, zoneImage: (zid) => zoneMedia[zid]?.file || speciesPhoto(SPECIES[0].id)?.file });
+  journal = initJournal({ zones, predict, captureForecast, getZoneId: () => state.zoneId || zones[0].id, zoneImage: (zid) => zoneMedia[zid]?.file || speciesPhoto(SPECIES[0].id)?.file });
   route(); // le pagine che non dipendono dal meteo (specie, diario, info) compaiono subito
   const fresh = consumeFresh(); // ricarica pulita dal logo: anche il meteo da capo
   await refreshWeather(fresh);
@@ -158,6 +165,7 @@ function parseRoute() {
   if (a === 'albero' && b) return { view: 'albero', treeId: b };
   if (a === 'alberi') return { view: 'alberi' };
   if (a === 'riconosci') return { view: 'riconosci', compare: b === 'confronta' ? c : '', pick: b === 'confronta' ? parts[3] : '' };
+  if (a === 'guide') return { view: 'guide', guideId: b };
   if (a === 'diario') return { view: 'diario' };
   if (a === 'info') return { view: 'info' };
   if (a === 'metodo') return { view: 'metodo' };
@@ -166,7 +174,7 @@ function parseRoute() {
 }
 
 // profondita' e posizione delle viste: decidono la direzione della transizione
-const LEVEL = { zona: 1, 'specie-dettaglio': 1, albero: 1, info: 1, metodo: 2, fungo: 1 };
+const LEVEL = { guide: 1, zona: 1, 'specie-dettaglio': 1, albero: 1, info: 1, metodo: 2, fungo: 1 };
 const TABS = ['uscite', 'mappa', 'specie', 'diario'];
 const SUB = { specie: 0, alberi: 1, riconosci: 2 };
 const scrollMem = new Map();
@@ -198,6 +206,7 @@ function titleOf(r) {
   if (r.view === 'zona') { const z = zones.find((x) => x.id === r.zoneId); return z ? splitName(z)[0] : 'Zona'; }
   if (r.view === 'specie-dettaglio') return SPECIES.find((x) => x.id === r.speciesId)?.name || 'Specie';
   if (r.view === 'fungo') return taxonName(r.taxonId) || 'Specie';
+  if (r.view === 'guide') return guideTitle(r.guideId);
   if (r.view === 'albero') return treesData?.trees?.[r.treeId]?.name || 'Albero';
   if (r.view === 'riconosci' && r.compare) return 'Confronto';
   return TITLES[r.view] || '';
@@ -252,7 +261,7 @@ function updateBack(r, nav) {
 
 function route() {
   const r = parseRoute();
-  r.tab = { zona: 'uscite', 'specie-dettaglio': 'specie', alberi: 'specie', albero: 'specie', riconosci: 'specie', info: '', metodo: '', fungo: 'specie' }[r.view] ?? r.view;
+  r.tab = { zona: 'uscite', 'specie-dettaglio': 'specie', alberi: 'specie', albero: 'specie', riconosci: 'specie', info: '', metodo: '', guide: 'uscite', fungo: 'specie' }[r.view] ?? r.view;
   r.hash = location.hash || '#/';
   const nav = navKind(prev, r), back = prev?.hash || '';
   if (prev) scrollMem.set(prev.hash, scrollY);
@@ -273,6 +282,7 @@ function routeNow(r, nav) {
   document.body.dataset.page = r.view;
   if (r.view === 'specie-dettaglio') renderSpeciesDetail($('#species-detail'), r.speciesId);
   if (r.view === 'albero') renderTreePage($('#tree-detail'), r.treeId);
+  if (r.view === 'guide') renderGuide($('#guide-body'), r.guideId);
   if (r.view === 'metodo') renderMethod($('#method-body'));
   if (r.view === 'fungo') renderTaxonPage($('#taxon-detail'), r.taxonId);
   if (r.view === 'riconosci') { setCompare(r.compare, r.pick); renderIdentify($('#identify')); }
@@ -339,10 +349,10 @@ function renderFilterBox(box, onMap = false) {
   const vis = chipsOpen || onMap ? order : order.filter((g, k) => k < fitN || (!all && state.groups.has(g.id)));
   const hidden = order.length - vis.length;
   const bd = onMap && results ? bestOfDay(state.dayOffset) : null;
-  const dayChip = bd ? `<button type="button" class="chip chip-day" data-days aria-expanded="${!!box.closest('.map-top')?.classList.contains('days-open')}" style="--dc:var(${scoreVar(bd.s)})"><i></i>${esc(state.dayOffset === 0 ? 'Oggi' : state.dayOffset === 1 ? 'Domani' : fmtDate(bd.d.date, { weekday: 'short' }).replace('.', '').replace(/^./, (c) => c.toUpperCase()))} ${esc(fmtDate(bd.d.date, { day: 'numeric' }))} <b class="pc">${bd.s}</b><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>` : '';
+  const dayChip = bd ? `<button type="button" class="chip chip-day" data-days aria-expanded="${!!box.closest('.map-top')?.classList.contains('days-open')}" style="--dc:var(${scoreVar(bd.s)})"><i></i>${esc(state.dayOffset === 0 ? 'Oggi' : state.dayOffset === 1 ? 'Domani' : fmtDate(bd.d.date, { weekday: 'short' }).replace('.', '').replace(/^./, (c) => c.toUpperCase()))} ${esc(fmtDate(bd.d.date, { day: 'numeric' }))} <b class="pc">${formatIndex(bd.s)}</b><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>` : '';
   box.innerHTML = `${dayChip}<button type="button" class="chip" data-g="all" aria-pressed="${all}">Tutti</button>
     ${vis.map((g) => `<button type="button" class="chip chip-g" data-g="${g.id}" aria-pressed="${!all && state.groups.has(g.id)}">${esc(g.label)}</button>`).join('')}
-    ${onMap ? '' : hidden > 0 ? `<button type="button" class="chip chip-more" data-more>+ altri ${hidden}</button>` : chipsOpen ? '<button type="button" class="chip chip-more" data-less>Meno</button>' : ''}
+    <button type="button" class="chip chip-more" data-more aria-haspopup="dialog">Tutti i filtri</button>
     <span class="af-sep" aria-hidden="true"></span>
     ${PREFS.map(([k, label]) => `<button type="button" class="chip pref" data-p="${k}" aria-pressed="${!!state[k]}">${esc(label)}</button>`).join('')}`;
   const changed = () => soft(() => { savePrefs(); renderFilterSummary(); if (series) { compute(); outCache.clear(); renderAll(); } });
@@ -352,7 +362,7 @@ function renderFilterBox(box, onMap = false) {
     e.currentTarget.setAttribute('aria-expanded', String(open));
     if (open) top.querySelector('.day[aria-selected="true"]')?.scrollIntoView({ block: 'nearest', inline: 'center' });
   });
-  box.querySelector('[data-more]')?.addEventListener('click', () => soft(() => { chipsOpen = true; renderFilterSummary(); }));
+  box.querySelector('[data-more]')?.addEventListener('click', openFullFilters);
   box.classList.toggle('open', chipsOpen);
   box.querySelector('[data-less]')?.addEventListener('click', () => soft(() => { chipsOpen = false; renderFilterSummary(); }));
   if (!chipsOpen && !onMap) fitChips(box);
@@ -365,6 +375,42 @@ function renderFilterBox(box, onMap = false) {
     changed();
   }));
   box.querySelectorAll('[data-p]').forEach((b) => b.addEventListener('click', () => soft(() => { state[b.dataset.p] = !state[b.dataset.p]; savePrefs(); renderFilterSummary(); renderAll(); })));
+}
+
+// Tutti i gruppi sono sempre raggiungibili, anche quando la riga compatta ne mostra pochi.
+function openFullFilters() {
+  let dlg = $('#full-filters');
+  if (!dlg) {
+    dlg = document.createElement('dialog');
+    dlg.id = 'full-filters'; dlg.className = 'full-filters';
+    dlg.setAttribute('aria-labelledby', 'full-filters-title');
+    document.body.appendChild(dlg);
+  }
+  const paint = () => {
+    dlg.innerHTML = `<div class="filter-panel-head"><h2 id="full-filters-title">Tutti i filtri</h2><button type="button" class="btn ghost" data-close>Chiudi</button></div>
+      <p>Quali specie vuoi esplorare? Puoi scegliere più gruppi.</p>
+      <div class="filter-panel-groups" role="group" aria-label="Gruppi di funghi">
+        <button type="button" class="chip" data-all aria-pressed="${state.groups.size === GROUPS.length}">Tutti i funghi</button>
+        ${GROUPS.map((g) => `<button type="button" class="chip" data-group="${g.id}" aria-pressed="${state.groups.has(g.id)}">${thumb(g.rep, 32)}${esc(g.label)}${g.id === 'porcini' ? ' (4 specie)' : ''}</button>`).join('')}
+      </div><h3>Preferenze per l'uscita</h3><p class="small muted">Cambiano l'ordine dei consigli, mantenendo l'indice delle condizioni.</p>
+      <div class="filter-panel-groups" role="group" aria-label="Preferenze">${PREFS.map(([k, label]) => `<button type="button" class="chip" data-pref="${k}" aria-pressed="${!!state[k]}">${esc(label)}</button>`).join('')}</div>
+      <p class="small muted" aria-live="polite">${state.groups.size} gruppi selezionati su ${GROUPS.length}</p><button type="button" class="btn primary big" data-close>Mostra i risultati</button>`;
+    dlg.querySelectorAll('[data-close]').forEach((b) => b.addEventListener('click', () => dlg.close()));
+    const changed = (focus) => {
+      savePrefs(); if (series) compute(); outCache.clear(); renderAll(); paint();
+      dlg.querySelector(focus)?.focus();
+    };
+    dlg.querySelector('[data-all]').addEventListener('click', () => { state.groups = new Set(GROUPS.map((g) => g.id)); changed('[data-all]'); });
+    dlg.querySelectorAll('[data-group]').forEach((b) => b.addEventListener('click', () => {
+      const id = b.dataset.group;
+      if (state.groups.size === GROUPS.length) state.groups = new Set([id]);
+      else if (state.groups.has(id)) { state.groups.delete(id); if (!state.groups.size) state.groups = new Set(GROUPS.map((g) => g.id)); }
+      else state.groups.add(id);
+      changed(`[data-group="${id}"]`);
+    }));
+    dlg.querySelectorAll('[data-pref]').forEach((b) => b.addEventListener('click', () => { const k = b.dataset.pref; state[k] = !state[k]; changed(`[data-pref="${k}"]`); }));
+  };
+  paint(); dlg.showModal();
 }
 
 async function refreshWeather(force) {
@@ -382,6 +428,7 @@ async function refreshWeather(force) {
       : w.fetchedAt.toLocaleTimeString('it-IT', { hour: '2-digit', minute: '2-digit' }));
     document.documentElement.classList.toggle('is-offline', !!w.offline);
     $('#stale').hidden = !w.stale;
+    $('#stale').textContent = 'Meteo salvato o non aggiornato: verifica la data di acquisizione. Oltre 24 ore gli indici per oggi e i giorni futuri non vengono calcolati.';
     $('#today-kicker').textContent = new Date().toLocaleDateString('it-IT', { weekday: 'long', day: 'numeric', month: 'long' });
     compute();
     renderAll();
@@ -400,12 +447,12 @@ const selectedSpecies = () => SPECIES.filter((s) => state.groups.has(s.group));
 // meteo della mattina dell'uscita per zona e giorno (null finche' le previsioni orarie non arrivano)
 const outCache = new Map();
 function wxOf(z, d) {
-  if (!outing || !d) return null;
+  if (!d) return null;
   const k = z.id + d.date;
-  if (!outCache.has(k)) outCache.set(k, outingFor(outing[z.id], z, d.date));
+  if (!outCache.has(k)) outCache.set(k, outingFor(outing?.[z.id], z, d.date));
   return outCache.get(k);
 }
-const wxRank = (z, d) => OUTING_RANK[wxOf(z, d)?.level] ?? 1;
+const wxRank = (z, d) => OUTING_RANK[wxOf(z, d)?.level] ?? OUTING_RANK.non_disponibile;
 // "Puoi andare a...": stesso giorno, tempo migliore, funghi ancora probabili
 function alternativeFor(z, o, d) {
   const w = wxOf(z, d);
@@ -416,7 +463,7 @@ function alternativeFor(z, o, d) {
     if (z2.id === z.id) continue;
     const d2 = dayEntry(z2.id, o);
     const w2 = wxOf(z2, d2);
-    if (!d2?.best || !w2 || OUTING_RANK[w2.level] <= OUTING_RANK[w.level]) continue;
+    if (!d2?.best || !w2?.available || w2.level !== 'ok') continue;
     const s2 = adjusted(z2, d2.score, d2);
     if (s2 < Math.max(30, s0 * 0.7)) continue;
     const r = s2 * OUTING_RANK[w2.level];
@@ -426,7 +473,7 @@ function alternativeFor(z, o, d) {
 }
 // icona meteo con il suo colore (sole ambra, pioggia blu, temporale viola, neve azzurro)
 const wxi = (w) => `<span class="wxi wxi-${wxIcon(w)}">${IC[wxIcon(w)]}</span>`;
-const wxIcon = (w) => (w?.thunder ? 'storm' : w?.snow ? 'snow' : w && (w.rain >= 0.5 || w.prob >= 50) ? 'rain' : 'sun');
+const wxIcon = (w) => (!w?.available ? 'unknown' : w?.thunder ? 'storm' : w?.snow ? 'snow' : w && (w.rain >= 0.5 || w.prob >= 50) ? 'rain' : 'sun');
 
 function compute() {
   const sp = selectedSpecies();
@@ -435,10 +482,11 @@ function compute() {
     const sb = series[z.id];
     const t = sb[0].todayIndex;
     const days = [];
+    if (t < 0) { results[z.id] = { todayIndex: t, days }; continue; }
     for (let i = Math.max(30, t - HISTORY_DAYS); i <= t + AHEAD_DAYS && i < sb[0].dates.length; i++) {
       const r = scoreZoneDay(z, habitat[z.id], sb, sp, i);
-      // indice della zona: almeno uno dei funghi scelti (model.combine); il migliore resta in r.best
-      days.push({ i, date: sb[0].dates[i], ...r, score: r.best ? combine(r.perSpecies.map((p) => p.score)) : 0 });
+      // Indice della zona: il migliore delle specie selezionate, senza bonus dal numero di taxa.
+      days.push({ i, date: sb[0].dates[i], ...r, score: combine(r.perSpecies.map((p) => p.score)) });
     }
     // fattore umano: accesso, comodita' e affollamento per ogni giorno
     const acc0 = access[z.id]?.[0];
@@ -473,7 +521,7 @@ const srcLinks = (src) => (src || []).map((x) => `<a href="${esc(x.url)}" target
 function prepGeneralHtml(rules) {
   const ord = [...rules].sort((a, b) => (a.level === 'obbligatorio' ? 0 : 1) - (b.level === 'obbligatorio' ? 0 : 1));
   return `<details class="prep-gen"><summary><h2>Prepararli e conservarli: le regole per tutti</h2></summary>
-    <ol class="k-steps">${ord.map((r) => `<li class="${r.level === 'obbligatorio' ? 'must' : 'tip'}"><b>${esc(r.title)}</b> ${esc(r.text)}${r.why ? `<small>${esc(r.why)}</small>` : ''}<span class="k-src">${r.level === 'obbligatorio' ? '<span class="k-lv">obbligatorio</span>' : '<span class="k-lv tip">consigliato</span>'}${r.sources?.length ? `<details class="k-src-d"><summary>Fonti (${r.sources.length})</summary>${srcLinks(r.sources)}</details>` : ''}</span></li>`).join('')}</ol>
+    <ol class="k-steps">${ord.map((r) => `<li class="${r.level === 'obbligatorio' ? 'must' : 'tip'}"><b>${esc(r.title)}</b> ${esc(r.text)}${r.why ? `<small>${esc(r.why)}</small>` : ''}<span class="k-src">${r.level === 'obbligatorio' ? '<span class="k-lv">indicazione di sicurezza</span>' : '<span class="k-lv tip">prudenziale</span>'}${r.sources?.length ? `<details class="k-src-d"><summary>Fonti (${r.sources.length})</summary>${srcLinks(r.sources)}</details>` : ''}</span></li>`).join('')}</ol>
   </details>`;
 }
 const adjParts = (zone, d) => {
@@ -483,7 +531,7 @@ const adjParts = (zone, d) => {
   if (state.preferComfort && d?.comfort) out.push({ label: 'accesso comodo', mult: 0.55 + 0.45 * d.comfort.value });
   return out;
 };
-const adjusted = (zone, score, d) => {
+const preferenceRank = (zone, score, d) => {
   let v = score;
   if (state.distancePenalty) v *= 1 - 0.3 * Math.min(1, (access[zone.id]?.[0]?.minutes ?? zone.drive_min) / 120);
   if (state.avoidCrowd && d?.crowd) v *= 1 - 0.45 * d.crowd.value;
@@ -491,8 +539,10 @@ const adjusted = (zone, score, d) => {
   return Math.round(v);
 };
 // ogni specie con la stessa correzione dell'anello: i numeri si confrontano tra loro e la prima coincide con l'indice
-const spScore = (z, d, p) => adjusted(z, p.score, d);
-const spPill = (name, sc) => `<span class="sp-pill" title="${esc(CLASSES[classOf(sc)].label)}"><i style="background:var(${scoreVar(sc).replace('--s', '--ps')})"></i>${name ? `${esc(name)} ` : ''}<b>${sc}</b></span>`;
+// Il numero mostrato resta biologico; le preferenze cambiano solo l'ordine.
+const adjusted = (zone, score) => Number.isFinite(score) ? score : null;
+const spScore = (z, d, p) => p.score;
+const spPill = (name, sc) => `<span class="sp-pill" title="${esc(scoreLabel(sc))}"><i style="background:var(${scoreVar(sc).replace('--s', '--ps')})"></i>${name ? `${esc(name)} ` : ''}<b>${formatIndex(sc)}</b></span>`;
 
 // Punto del bosco adatto piu' vicino a una strada carrozzabile (campioni Carta Forestale + Valhalla).
 function accessFor(z, sp, band) {
@@ -596,7 +646,8 @@ function bestOfDay(o) {
     const d = dayEntry(z.id, o);
     if (!d?.best) continue;
     const sc = adjusted(z, d.score, d);
-    if (!best || sc > best.s) best = { s: sc, z, d, o };
+    const rank = preferenceRank(z, sc, d) * wxRank(z, d) * communityRank(z.id, selectedSpecies().map((s) => s.id));
+    if (!best || rank > best.rank) best = { s: sc, rank, z, d, o };
   }
   return best;
 }
@@ -614,7 +665,7 @@ function dayChips(box, selected, onPick, { withAll = false } = {}) {
     b.setAttribute('aria-selected', String(selected === o));
     // selezionato: tutta la tessera prende il colore del suo indice (il testo si adegua al chiaro/scuro della tinta)
     if (sc != null) { b.dataset.lv = scoreVar(sc).slice(3); b.style.setProperty('--sel', `var(${scoreVar(sc)})`); }
-    b.innerHTML = `<span class="d1">${top}</span><span class="d2">${mid}</span>${sc != null ? `<span class="d3"><span class="dot" style="--dc:var(${scoreVar(sc)});--dcs:var(${scoreVar(sc).replace('--s', '--ps')})"></span><b class="pc">${sc}</b></span>` : '<span class="d3">giorni</span>'}`;
+    b.innerHTML = `<span class="d1">${top}</span><span class="d2">${mid}</span>${sc != null ? `<span class="d3"><span class="dot" style="--dc:var(${scoreVar(sc)});--dcs:var(${scoreVar(sc).replace('--s', '--ps')})"></span><b class="pc">${formatIndex(sc)}</b></span>` : '<span class="d3">giorni</span>'}`;
     b.addEventListener('click', () => onPick(o));
     box.appendChild(b);
   };
@@ -648,7 +699,7 @@ function combosList() {
     for (let o = 0; o <= AHEAD_DAYS; o++) {
       if (state.homeDay != null && o !== state.homeDay) continue;
       const d = dayEntry(z.id, o);
-      if (d?.best) { const s = adjusted(z, d.score, d); combos.push({ z, o, d, s, r: s * wxRank(z, d) }); }
+      if (d?.best) { const s = adjusted(z, d.score, d); combos.push({ z, o, d, s, r: preferenceRank(z, s, d) * wxRank(z, d) * communityRank(z.id, selectedSpecies().map((s) => s.id)) }); }
     }
   }
   combos.sort((a, b) => b.r - a.r || a.o - b.o);
@@ -704,7 +755,8 @@ function buildSearch(idj, trj, embedded) {
     ['Come funziona l\'indice', 'Formule, parametri, fonti e limiti', 'metodo scienza scientifico indice calcolo formula pioggia temperatura suolo latenza innesco probabilita affidabilita fonti letteratura euristica', '#/metodo'],
     ['Gli alberi', 'Riconoscerli e cosa ci cresce sotto', 'alberi bosco piante', '#/alberi'],
     ['Prepararli e conservarli', 'Crudo, prebollitura, congelare, essiccare, sott\'olio', 'preparazione cucina cuocere cottura crudo prebollitura congelare surgelare essiccare seccare sottolio sott olio botulino conserve vasetti quantita bambini gravidanza alcol', '#/info'],
-    ['Il diario delle uscite', 'Registra cosa hai trovato e dove', 'diario uscite registrare raccolto storico esporta', '#/diario'],
+    ['Il diario delle passeggiate', 'Annota ricerche, ritrovamenti e osservazioni', 'diario uscite registrare raccolto storico esporta', '#/diario'],
+    ['Il taccuino del bosco', 'Alberi, piogge e preparazione della passeggiata', 'imparare guida passeggiate boschi editoriale', '#/guide/leggere-il-bosco'],
     ['La mappa', 'Zone, parcheggi, sentieri, Carta Forestale', 'mappa carta forestale parcheggio sosta', '#/mappa'],
     ['Installa l\'app', 'A tutto schermo e senza campo', 'installa app schermo home offline', '#/info'],
   ];
@@ -718,8 +770,9 @@ function coverOf(z, spId) {
   const p = speciesPhoto(spId);
   return p ? { hd: p.file_hd || p.file, small: p.file, credit: p, alt: '' } : null;
 }
-const ring = (s, big = true) => `<span class="ring${big ? '' : ' ring-sm'}" style="--c:var(${scoreVar(s).replace('--s', '--ps')});--p:${s}" aria-label="Indice ${s} su 100, ${CLASSES[classOf(s)].label}"><b>${s}</b>${big ? `<small>${CLASSES[classOf(s)].label}</small>` : ''}</span>`;
+const ring = (s, big = true) => `<span class="ring${big ? '' : ' ring-sm'}" style="--c:var(${scoreVar(s).replace('--s', '--ps')});--p:${s ?? 0}" aria-label="Indice ${formatIndex(s)} su 10, ${scoreLabel(s)}"><b>${scoreText(s)}</b>${big ? `<small>${scoreLabel(s)}</small>` : ''}</span>`;
 const IC = {
+  unknown: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9 8a3 3 0 0 1 6 0c0 2-3 2-3 5M12 17h.01"/></svg>',
   clock: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>',
   car: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 16v-4.5L7 7h10l2 4.5V16"/><path d="M3.5 16h17"/><circle cx="8" cy="17" r="1.6"/><circle cx="16" cy="17" r="1.6"/></svg>',
   people: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8.5" r="3"/><path d="M3.5 19a5.5 5.5 0 0 1 11 0"/><circle cx="17" cy="9.5" r="2.4"/><path d="M15.5 14.2A4.5 4.5 0 0 1 21 18.5"/></svg>',
@@ -742,32 +795,33 @@ function renderHome() {
   const list = combosList();
   const hero = list[0];
   const box = $('#hero');
-  if (!hero) { box.innerHTML = '<p class="muted">Nessuna uscita calcolabile per questi filtri.</p>'; $('#ranking').innerHTML = ''; return; }
+  if (!hero) { box.innerHTML = `<p class="notice">Le condizioni di crescita non sono calcolabili: mancano dati o meteo aggiornato. Puoi comunque esplorare boschi e sentieri.</p><div class="explore-fallback">${zones.slice(0, 6).map((z) => `<a class="btn ghost" href="#/mappa/${z.id}">${esc(z.title || z.name)}</a>`).join('')}</div>`; $('#ranking').innerHTML = ''; renderCommunityIntro(); return; }
   const t = hero.d.crowd ? timingAdvice({ dateStr: hero.d.date, lat: hero.z.lat, lon: hero.z.lon, crowd: hero.d.crowd }) : null;
   const a0 = access[hero.z.id]?.[0];
   const [title, sub] = splitName(hero.z);
   const cov = coverOf(hero.z, hero.d.best.species.id);
   // le altre specie: testo con il pallino della classe, non pillole (non sono bottoni)
   const also = hero.d.perSpecies.slice(1, 3).map((p) => [p, spScore(hero.z, hero.d, p)]).filter(([, sc]) => sc >= 20)
-    .map(([p, sc], k) => `<span class="sp-also">${k ? ', ' : ''}<i style="background:var(${scoreVar(sc).replace('--s', '--ps')})"></i>${esc(p.species.name.split(' / ')[0].toLowerCase())} <b class="pc">${sc}</b></span>`);
+    .map(([p, sc], k) => `<span class="sp-also">${k ? ', ' : ''}<i style="background:var(${scoreVar(sc).replace('--s', '--ps')})"></i>${esc(p.species.name.split(' / ')[0].toLowerCase())} <b class="pc">${formatIndex(sc)}</b></span>`);
   const w0 = wxOf(hero.z, hero.d);
   // il posto con l'indice piu' alto quel giorno, se il meteo della mattina l'ha fatto scendere: nota breve e cliccabile
   const g = list.filter((c) => c.o === hero.o).sort((a, b) => b.s - a.s)[0], wg = g && wxOf(g.z, g.d);
   const note = g && g.z.id !== hero.z.id && wg && wg.level !== 'ok'
-    ? `<a class="cover-note" href="#/zona/${g.z.id}/${g.o}"><span>${wxi(wg)}<b>${esc(splitName(g.z)[0])}</b> <span class="pc-up">${g.s}</span> ma ${esc(wg.short || wg.main)}</span><span aria-hidden="true">›</span></a>` : '';
+    ? `<a class="cover-note" href="#/zona/${g.z.id}/${g.o}"><span>${wxi(wg)}<b>${esc(splitName(g.z)[0])}</b> <span class="pc-up">${formatIndex(g.s)}</span> ma ${esc(wg.short || wg.main)}</span><span aria-hidden="true">›</span></a>` : '';
   box.innerHTML = `
+    <p class="small muted">Condizioni di crescita: indice sperimentale 0–10. Le passeggiate sono ordinate con preferenze, meteo e segnalazioni recenti; i ritrovamenti restano incerti.</p>
     <div class="cover vtn" style="--vtn:cover">
       ${cov ? `<img class="cover-img" src="${cov.hd}" alt="${esc(cov.alt)}" fetchpriority="high">` : ''}
       <span class="shade"></span>
       <a class="cover-link" href="#/zona/${hero.z.id}/${hero.o}" aria-label="${esc(title)}, ${esc(dayLabel(hero.o, hero.d.date, true))}: il piano dell'uscita"></a>
-      <span class="cover-top"><span class="pill glass">${state.homeDay == null ? 'La migliore uscita' : 'Il posto migliore'} · ${esc(dayLabel(hero.o, hero.d.date, true))}</span>${ring(hero.s)}</span>
+      <span class="cover-top"><span class="pill glass">Una passeggiata da esplorare · ${esc(dayLabel(hero.o, hero.d.date, true))}</span>${ring(hero.s)}</span>
       <span class="cover-body">
         <span class="cover-title">${esc(title)}</span>${sub ? `<span class="cover-sub">${esc(sub)}</span>` : ''}
-        <span class="cover-sp">${thumb(hero.d.best.species.id, 44)}<span><span class="cover-sp-name"><b>${esc(hero.d.best.species.name)}</b> <b class="pc">${hero.s}</b></span>
+        <span class="cover-sp">${thumb(hero.d.best.species.id, 44)}<span><small>Da conoscere in questi boschi</small><span class="cover-sp-name"><b>${esc(hero.d.best.species.name)}</b> ${reportBadge(hero.z.id, hero.d.best.species.id)}</span>
           <small>${intornoA(hero.d.best.band)} ${hero.d.best.band} m${also.length ? ` · anche ${also.join('')}` : ''}</small></span></span>
         <span class="facts" aria-label="L'uscita in breve">${t ? fact('clock', `<span class="fk">entro le </span><b>${fmtRough(t.arrive, 15, 'floor')}</b>`) : ''}${fact('car', `<span><b>${access[hero.z.id]?.[0]?.minutes ?? hero.z.drive_min}</b><span class="fk2"> min</span><span class="fk3">′</span></span>`)}${hero.d.crowd ? fact('people', crowdText(hero.d.crowd)) : ''}${w0 ? `<span class="fact wx-${w0.level}" title="${esc(w0.text)}">${wxi(w0)}<span class="fx">${esc(w0.level === 'ok' ? w0.main : (w0.short || w0.main))}</span></span>` : ''}</span>
         ${note}
-        <span class="cover-cta" aria-hidden="true">Il piano dell'uscita <span>→</span></span>
+        <span class="cover-cta" aria-hidden="true">Il taccuino della passeggiata <span>→</span></span>
       </span>
     </div>`;
   const ol = $('#ranking');
@@ -781,7 +835,13 @@ function renderHome() {
   $('#others-h').hidden = list.length < 2;
   fitFacts($('#hero .facts'));
   renderSeason();
+  renderCommunityIntro();
   fitCover();
+}
+
+function renderCommunityIntro() {
+  const box = $('#community-intro');
+  if (box) box.innerHTML = `<p class="eyebrow">Un bosco da conoscere insieme</p><h2>Ogni passeggiata aggiunge un pezzetto.</h2><p>Fungaroli nasce per esplorare i sentieri, imparare e osservare. Vogliamo renderlo più accurato grazie alle vostre segnalazioni, anche quando una ricerca non porta ritrovamenti.</p><p class="small muted">${esc(communityStatus())}</p><button class="btn primary" type="button" data-report>Segnala dal bosco</button> <button class="btn ghost" type="button" data-community-account>Il tuo profilo</button>`;
 }
 
 // barra delle info: se non ci sta, toglie prima "entro le", poi "min", poi il testo del meteo quando e' bello (resta l'icona)
@@ -835,7 +895,7 @@ function renderSeason() {
     const ph = speciesPhoto(p.species.id);
     return `<li><button type="button" class="portrait" data-species="${p.species.id}">
       ${ph ? `<img src="${ph.file}" alt="" loading="lazy" decoding="async">` : ''}<span class="shade"></span>${ring(p.score, false)}
-      <span class="portrait-body"><b>${esc(p.species.name)}</b><small>${esc(splitName(p.z)[0])}</small></span></button></li>`;
+      <span class="portrait-body"><b>${esc(p.species.name)}</b>${reportBadge(p.z.id, p.species.id)}<small>${esc(splitName(p.z)[0])}</small></span></button></li>`;
   }).join('');
 }
 
@@ -1038,7 +1098,8 @@ const shortName = (z) => z.title || z.name.split(/[/–(]/)[0].trim();
 // alla specie e una quota vicina a quella migliore del giorno. Il valore di un riquadro e' l'indice della specie
 // (stessa correzione dell'anello) per l'adattezza del bosco e della quota: dice "bosco giusto alla quota giusta",
 // non "qui c'e' il fungo". Prima specie migliore, poi le altre due (vince la piu' alta).
-const CELL = 300;
+// Le celle hanno il passo del reticolo originale (300–500 m).
+const cellSize = (z) => z.radius_m / 10;
 function zoneCells(z, d) {
   const hab = habitat[z.id];
   if (!hab?.samples?.length || !d?.perSpecies?.length) return [];
@@ -1050,6 +1111,7 @@ function zoneCells(z, d) {
     const parts = [];
     for (const { p, sc } of sp) {
       const f = p.species.forest[cat] || 0;
+      if (cat === FOREST.CON && ['suillus', 'terreum'].includes(p.species.id)) continue; // categoria mista: presenza di pini non confermata
       if (f < 0.5) continue;
       // il meteo e' calcolato alla quota migliore della specie: entro 200 m vale tutto, poi cala fino a 600 m
       const band = Math.max(0, 1 - Math.max(0, Math.abs(e - p.band) - 200) / 400);
@@ -1059,7 +1121,7 @@ function zoneCells(z, d) {
     if (!parts.length) continue;
     parts.sort((a, b) => b.v - a.v);
     const v = combine(parts.map((x) => x.v)); // stesso aggregato della zona
-    if (v >= 15) out.push({ lat, lon, v, e, cat, parts });
+    if (v >= 15) out.push({ lat, lon, v, e, cat, parts, size: cellSize(z) });
   }
   return out;
 }
@@ -1067,8 +1129,8 @@ let cellRenderer = null, cellsOut = false;
 // popover della mappa: titolo e percentuale grande, una riga per fungo con la barretta nella scala dell'indice, l'azione in fondo
 function mapCard({ title, sub, pct, rows = [], more = 0, foot = '' }) {
   return `<div class="mtt"><b class="mtt-t">${esc(title)}</b>${sub ? `<span class="mtt-s">${sub}</span>` : ''}
-    <span class="mtt-p" style="--c:var(${scoreVar(pct)})"><b class="pc">${pct}</b><small>${esc(CLASSES[classOf(pct)].label.toLowerCase())}</small></span>
-    ${rows.length ? `<ul class="mtt-rows">${rows.map((r) => `<li><span>${esc(r.name)}</span><i><i style="width:${r.v}%;background:var(${scoreVar(r.v)})"></i></i><b class="pc">${r.v}</b></li>`).join('')}</ul>` : ''}
+    <span class="mtt-p" style="--c:var(${scoreVar(pct)})"><b class="pc">${scoreText(pct)}</b><small>${esc(scoreLabel(pct).toLowerCase())}</small></span>
+    ${rows.length ? `<ul class="mtt-rows">${rows.map((r) => `<li><span>${esc(r.name)}</span><i><i style="width:${r.v}%;background:var(${scoreVar(r.v)})"></i></i><b class="pc">${formatIndex(r.v)}</b></li>`).join('')}</ul>` : ''}
     ${more ? `<p class="mtt-more">e altri ${more}</p>` : ''}${foot ? `<p class="mtt-f">${foot}</p>` : ''}</div>`;
 }
 const canHover = matchMedia('(hover: hover) and (pointer: fine)').matches;
@@ -1079,7 +1141,8 @@ function cellsLayer(z, d, interactive = true) {
   if (!map.getPane('cells')) map.createPane('cells').style.zIndex = 410; // sopra i cerchi, sotto le etichette
   cellRenderer ||= L.canvas({ padding: 0.3, pane: 'cells' });
   const lg = L.layerGroup();
-  const dLat = CELL / 2 / 111320, dLon = CELL / 2 / (111320 * Math.cos(z.lat * Math.PI / 180));
+  const size = cellSize(z);
+  const dLat = size / 2 / 111320, dLon = size / 2 / (111320 * Math.cos(z.lat * Math.PI / 180));
   for (const c of zoneCells(z, d)) {
     L.rectangle([[c.lat - dLat, c.lon - dLon], [c.lat + dLat, c.lon + dLon]], {
       renderer: cellRenderer, interactive: false, stroke: false, fillColor: cssVar(mapVar(c.v)), fillOpacity: 0.5 + 0.4 * Math.min(1, c.v / 80),
@@ -1099,9 +1162,9 @@ function hoverCell(e) {
   const b = [[c.lat - dLat, c.lon - dLon], [c.lat + dLat, c.lon + dLon]];
   if (!cellHi) cellHi = L.rectangle(b, { interactive: false, color: '#fff', weight: 2.5, fill: false, className: 'cell-hi' }).addTo(map);
   else cellHi.setBounds(b);
-  const html = mapCard({ title: 'Questo riquadro', sub: `${esc(c.cat)} · ${c.e} m`, pct: c.v,
+  const html = mapCard({ title: 'Questo riquadro', sub: `${esc(c.cat)} · ${c.e} m · campione ${c.size} m`, pct: c.v,
     rows: c.parts.slice(0, 3).map((x) => ({ name: x.sp.name.split(' / ')[0], v: x.v })), more: Math.max(0, c.parts.length - 3),
-    foot: 'Bosco adatto alla quota giusta: non è la posizione dei funghi' });
+    foot: 'Campione di habitat: verifica alberi ospiti, divieti e condizioni sul posto.' });
   if (!cellTip) cellTip = L.tooltip({ className: 'zone-tt', direction: 'top', offset: [0, -14], opacity: 1 }).setLatLng(e.latlng).setContent(html).addTo(map);
   else { cellTip.setLatLng(e.latlng); if (cellTip._fz !== c) cellTip.setContent(html); }
   cellTip._fz = c;
@@ -1113,10 +1176,10 @@ function renderMap() {
       zones, origin,
       items: zones.map((z) => {
         const d = dayEntry(z.id, state.dayOffset);
-        const s = adjusted(z, d?.score ?? 0, d);
+        const s = adjusted(z, d?.score ?? null, d);
         return {
           z, score: s, color: `var(${mapVar(s)})`, selected: z.id === state.zoneId,
-          tooltip: `${z.name} · ${s}% ${CLASSES[classOf(s)].label.toLowerCase()}${d?.best ? ` · ${d.best.species.name} ~${d.best.band} m` : ''}`,
+          tooltip: `${z.name} · ${scoreText(s)}/10 ${scoreLabel(s).toLowerCase()}${d?.best ? ` · ${d.best.species.name} ~${d.best.band} m` : ''}`,
         };
       }),
       onSelect: (id) => openSheet(id),
@@ -1159,7 +1222,7 @@ function renderMap() {
   }
   for (const z of zones) {
     const d = dayEntry(z.id, state.dayOffset);
-    const s = adjusted(z, d?.score ?? 0, d);
+    const s = adjusted(z, d?.score ?? null, d);
     const color = cssVar(mapVar(s));
     const g = L.layerGroup().addTo(map);
     const selected = z.id === state.zoneId;
@@ -1185,7 +1248,7 @@ function renderMap() {
         foot: 'Tocca per aprire la zona' }), { className: 'zone-tt', sticky: true, direction: 'top', offset: [0, -14], opacity: 1 });
     }
     L.marker(labelPos[z.id], {
-      icon: L.divIcon({ className: '', html: `<span class="zone-label${state.zoneId && !selected ? ' zone-label-min' : ''}${selected ? ' zone-label-sel' : ''}"><span class="dot" style="background:${color}"></span> <b class="pc">${s}</b>${state.zoneId && !selected ? '' : ` <span class="zone-name">${esc(shortName(z))}</span>`}</span>`, iconSize: null }),
+      icon: L.divIcon({ className: '', html: `<span class="zone-label${state.zoneId && !selected ? ' zone-label-min' : ''}${selected ? ' zone-label-sel' : ''}"><span class="dot" style="background:${color}"></span> <b class="pc">${formatIndex(s)}</b>${state.zoneId && !selected ? '' : ` <span class="zone-name">${esc(shortName(z))}</span>`}</span>`, iconSize: null }),
       interactive: false,
     }).addTo(g);
     if (selected && d?.best) {
@@ -1224,10 +1287,10 @@ function renderMap() {
 }
 
 function renderLegend() {
-  const items = [...CLASSES].reverse().map((c) => `<span><span class="sw" style="background:var(${mapVar(c.min)})"></span>${c.label}${c.min ? ' ≥' + c.min : ''}</span>`);
+  const items = [...CLASSES].reverse().map((c) => `<span><span class="sw" style="background:var(${mapVar(c.min)})"></span>${c.label}${c.min ? ' ≥' + formatIndex(c.min) : ''}</span>`);
   $('#legend').innerHTML = items.join('') +
     (hasLeaflet() || !globalThis.FUNGAROLI_DATA ? '' : '<span class="muted">Schema: cerchi = zone, anelli = distanza in linea d\'aria da Rieti</span>') +
-    (hasLeaflet() ? '<span class="lg-cells"><span class="sw sw-cell"></span>Riquadri da 300 m: bosco adatto alla quota giusta, non la posizione dei funghi. Avvicinati o apri una zona per vederli.</span>' : '') +
+    (hasLeaflet() ? '<span class="lg-cells"><span class="sw sw-cell"></span>Riquadri campionati da 300–500 m: habitat potenziale, senza verifica di presenza o permesso di raccolta. Avvicinati o apri una zona per vederli.</span>' : '') +
     `<div class="wms"${forestOn ? '' : ' hidden'}>${forestLegend()}</div>`;
 }
 
@@ -1286,10 +1349,10 @@ const ICON = {
 function planCard(z, d) {
   const best = d.best;
   const rows = [];
-  rows.push({ sec: 'specie', icon: 'find', thumb: best.species.id, k: 'Cosa cercare', v: `<button type="button" class="sp-inline" data-species="${best.species.id}">${esc(best.species.name)}</button> ${intornoA(best.band)} <b>${best.band} m</b>`,
+  rows.push({ sec: 'specie', icon: 'find', thumb: best.species.id, k: 'Cosa osservare', v: `<button type="button" class="sp-inline" data-species="${best.species.id}">${esc(best.species.name)}</button> ${intornoA(best.band)} <b>${best.band} m</b>`,
     sub: [whereSummary(best.species.id) && `<span class="plan-where">${linkTrees(whereSummary(best.species.id))}</span>`,
       criticalRule(best.species.id) && `<span class="plan-crit">⚠ ${esc(criticalRule(best.species.id))}</span>`,
-      d.perSpecies.slice(1, 3).map((p) => [p, spScore(z, d, p)]).filter(([, sc]) => sc >= 20).map(([p, sc]) => `${esc(p.species.name)} ${sc}%`).join(' · ')].filter(Boolean).join('<br>') || esc(best.species.latin) });
+      d.perSpecies.slice(1, 3).map((p) => [p, spScore(z, d, p)]).filter(([, sc]) => sc >= 20).map(([p, sc]) => `${esc(p.species.name)} ${formatIndex(sc)}/10`).join(' · ')].filter(Boolean).join('<br>') || esc(best.species.latin) });
   if (d.crowd) {
     const t = timingAdvice({ dateStr: d.date, lat: z.lat, lon: z.lon, crowd: d.crowd });
     rows.push({ sec: 'quando', icon: 'when', k: 'Quando', v: `Arriva <b>entro le ${fmtRough(t.arrive, 15, 'floor')}</b> <span class="badge crowd-${d.crowd.level}">${crowdText(d.crowd)}</span>`,
@@ -1299,8 +1362,8 @@ function planCard(z, d) {
     const alt = alternativeFor(z, state.dayOffset, d);
     rows.push({ sec: 'quando', svg: wxi(w), k: 'Meteo dell\'uscita', badge: `<span class="badge wx-b wx-${w.level}">${OUTING_SHORT[w.level]}</span>`,
       v: `${esc(w.text.replace(/^./, (c) => c.toUpperCase()))}`,
-      sub: alt ? `<span class="plan-alt">Puoi andare a <a href="#/zona/${alt.z.id}/${state.dayOffset}">${esc(splitName(alt.z)[0])}</a>: ${esc(alt.w.main)}, indice ${alt.s}.</span>`
-        : `Mattina, dalle ${w.from}:00 alle 13${w.thunder ? ' · in montagna con i temporali non si sta nel bosco' : ''}` });
+      sub: alt ? `<span class="plan-alt">Puoi andare a <a href="#/zona/${alt.z.id}/${state.dayOffset}">${esc(splitName(alt.z)[0])}</a>: ${esc(alt.w.main)}, indice ${formatIndex(alt.s)}.</span>`
+        : w.available ? `Mattina, dalle ${w.from}:00 alle 13 · quota centrale. Verifica percorso e rientro${w.thunder ? ' · uscita sconsigliata con temporali' : ''}` : 'Aggiorna le previsioni prima di decidere.' });
   }
 
   const a0 = access[z.id]?.[0];
@@ -1308,7 +1371,7 @@ function planCard(z, d) {
   if (a0 || ax) {
     const unp = a0?.unpaved_tail_km > 0.2 ? `, ultimi ${fmtKm(a0.unpaved_tail_km)} km su strada bianca` : '';
     rows.push({ sec: 'accesso', icon: 'car', k: 'Come arrivare',
-      v: ax ? `In auto ${ax.road ? `su ${esc(ax.road)}` : 'fino al punto più vicino'}${ax.walkM < 50 ? ': bosco adatto a bordo strada' : `, poi <b>${fmtM(ax.walkM)} a piedi</b>`}` : `${a0.minutes} min fino a ${esc(a0.parking)}`,
+      v: ax ? `In auto ${ax.road ? `su ${esc(ax.road)}` : 'fino al punto più vicino'}${ax.walkM < 50 ? ': habitat campionato vicino alla strada' : `, poi <b>${fmtM(ax.walkM)} in linea d’aria</b>`}` : `${a0.minutes} min fino a ${esc(a0.parking)}`,
       sub: `${a0 ? `${a0.minutes} min da Rieti${unp}` : ''}${ax ? ` · <a href="${gmaps(ax.rlat, ax.rlon)}" target="_blank" rel="noopener">navigatore</a>` : ''}`,
       badge: d.comfort ? `<span class="badge comfort-${d.comfort.level}">${d.comfort.level}</span>` : '' });
   }
@@ -1334,7 +1397,10 @@ function renderDetail() {
   const r = results[z.id];
   const d = dayEntry(z.id, state.dayOffset);
   const box = $('#detail');
-  if (!d?.best) { box.innerHTML = '<p class="muted">Nessun dato per questo giorno.</p>'; return; }
+  if (!d?.best) {
+    const missing = [...new Set((d?.perSpecies || []).flatMap((p) => p.quality?.missing || []))];
+    box.innerHTML = `<h1>${esc(z.title || z.name)}</h1><p class="notice">Indice non calcolabile${missing.length ? ': mancano ' + esc(missing.join(', ')) : ' per questo giorno'}. Un dato mancante non indica assenza di funghi.</p><p><a href="#/mappa/${z.id}">Apri la mappa</a> · <a href="#/metodo">Metodo e limiti</a></p>${z.protection ? `<p class="notice">${esc(z.protection)}</p>` : ''}`; return;
+  }
   const best = d.best;
   const s = adjusted(z, d.score, d);
   const dayLabel = state.dayOffset === 0 ? 'Oggi' : fmtDate(d.date, { weekday: 'long', day: 'numeric', month: 'long' });
@@ -1344,8 +1410,8 @@ function renderDetail() {
       <td><button type="button" class="sp-link" data-species="${p.species.id}">${thumb(p.species.id, 34)}<span><span class="sp-n">${esc(p.species.name)}</span><span class="latin">${esc(p.species.latin)}</span></span></button>
         ${p.species.warning ? `<div class="warnline">⚠ ${esc(p.species.warning)}</div>` : ''}</td>
       <td class="num">${p.band} m</td>
-      <td><div class="bar"><i style="width:${p.score}%;background:var(${scoreVar(p.score)})"></i></div></td>
-      <td class="num"><b class="pc">${p.score}</b></td>
+      <td><div class="bar"><i style="width:${p.score ?? 0}%;background:var(${scoreVar(p.score)})"></i></div></td>
+      <td class="num"><b class="pc">${formatIndex(p.score)}</b>${p.score == null ? `<small>${esc(p.quality.missing.join(', '))}</small>` : ''}</td>
     </tr>`).join('');
 
   const sb = series[z.id][bandIndex(z, best.band)];
@@ -1365,6 +1431,8 @@ function renderDetail() {
     <div class="pbody">
     <div id="zone-days" class="days compact" role="tablist" aria-label="Giorno"></div>
     ${planCard(z, d)}
+    <div class="zone-community"><button type="button" class="btn primary" data-report data-zone="${z.id}" data-species="${best.species.id}">Segnala dal bosco</button>${reportBadge(z.id, best.species.id)}</div>
+    <button type="button" class="btn ghost big" data-save-plan>Salva le condizioni prima della passeggiata</button><p class="small muted" data-plan-status></p>
     <a class="btn ghost big map-link" href="#/mappa/${z.id}">${IC.map} Sentieri e accesso sulla mappa</a>
     ${zoneLegal(z, d)}
     ${z.protection ? `<div class="notice">${esc(z.protection)}</div>` : ''}
@@ -1374,7 +1442,7 @@ function renderDetail() {
     ${section('accesso', 'Accesso in auto e a piedi', renderAccess(z, d))}
     ${section('sentieri', 'Sentieri della zona', renderTrails(z, d))}
     ${section('specie', 'Cosa può nascere qui', zoneSpecies(z, d))}
-    ${section('bosco', `Bosco a ${best.band} m (Carta Forestale)`, forestBar(hab.frac))}
+    ${section('bosco', `Bosco a ${best.band} m (Carta Forestale)`, forestBar(hab.frac) + `<p class="small muted">${hab.n} punti nella fascia ±150 m. Campioni spazialmente correlati; composizione indicativa.</p>`)}
     ${section('zona', 'La zona', `<p class="small">${linkTrees(z.description)}</p>
       <dl class="kv">
         <dt>Accesso</dt><dd>${esc(z.access)}</dd>
@@ -1383,6 +1451,13 @@ function renderDetail() {
       </dl>${zoneMedia[z.id] ? `<p class="small muted">${creditLine(zoneMedia[z.id])}</p>` : ''}`)}
     </div>`;
   box.querySelector('[data-cover]')?.addEventListener('click', () => openLightbox([{ src: cov.hd, alt: cov.alt, caption: captionHtml({ title: esc(z.name), credit: creditLine(cov.credit) }) }]));
+  box.querySelector('[data-save-plan]')?.addEventListener('click', async (e) => {
+    const btn = e.currentTarget, status = box.querySelector('[data-plan-status]');
+    btn.disabled = true;
+    try { await journal.savePlan(z.id, d.date, best.band); status.textContent = 'Previsione e dati salvati nel diario. Dopo l’uscita registra specie cercate, orario e ritrovamenti.'; }
+    catch (err) { status.textContent = err.message; }
+    finally { btn.disabled = false; }
+  });
   // giorni della zona: cambiano il giorno senza aggiungere voci di cronologia
   const zd = $('#zone-days');
   zd.innerHTML = '';
@@ -1392,7 +1467,7 @@ function renderDetail() {
     const sc = adjusted(z, x.score, x);
     const b = document.createElement('button');
     b.type = 'button'; b.className = 'day'; b.setAttribute('role', 'tab'); b.setAttribute('aria-selected', String(o === state.dayOffset));
-    b.innerHTML = `<span class="d1">${o === 0 ? 'Oggi' : o === 1 ? 'Dom' : fmtDate(x.date, { weekday: 'short' }).replace('.', '')}</span><span class="d2">${fmtDate(x.date, { day: 'numeric' })}</span><span class="d3"><span class="dot" style="--dc:var(${scoreVar(sc)});--dcs:var(${scoreVar(sc).replace('--s', '--ps')})"></span><b class="pc">${sc}</b></span>`;
+    b.innerHTML = `<span class="d1">${o === 0 ? 'Oggi' : o === 1 ? 'Dom' : fmtDate(x.date, { weekday: 'short' }).replace('.', '')}</span><span class="d2">${fmtDate(x.date, { day: 'numeric' })}</span><span class="d3"><span class="dot" style="--dc:var(${scoreVar(sc)});--dcs:var(${scoreVar(sc).replace('--s', '--ps')})"></span><b class="pc">${formatIndex(sc)}</b></span>`;
     b.addEventListener('click', () => soft(() => { history.replaceState(null, '', `#/zona/${z.id}/${o}`); state.dayOffset = o; renderDetail(); }));
     zd.appendChild(b);
   }
@@ -1415,7 +1490,7 @@ function renderDetail() {
   }));
   const drawCharts = () => $('#charts') && renderCharts($('#charts'), {
     dates: days.map((x) => x.date),
-    rain: days.map((x) => sb.p[x.i] ?? 0),
+    rain: days.map((x) => sb.p[x.i]),
     score: days.map((x) => adjusted(z, x.score, x)),
     todayIndex: r.todayIndex - from,
     selectedIndex: r.todayIndex + state.dayOffset - from,
@@ -1426,7 +1501,7 @@ function renderDetail() {
 const fmtKm = (km) => km.toLocaleString('it-IT', { maximumFractionDigits: 1 });
 const fmtM = (m) => (m >= 1000 ? `${fmtKm(m / 1000)} km` : `${Math.round(m / 10) * 10} m`);
 // tratto a piedi in parole: sotto i 50 m il bosco e' praticamente a bordo strada
-const walkTxt = (m) => (m < 50 ? 'il bosco adatto è <b>a bordo strada</b>' : `circa <b>${fmtM(m)} a piedi</b>`);
+const walkTxt = (m) => (m < 50 ? 'il campione di habitat è <b>vicino alla strada</b>' : `circa <b>${fmtM(m)} in linea d’aria</b>`);
 const SURF_LABEL = ['asfalto', 'strada bianca', 'sentiero o pista'];
 const gmaps = (lat, lon) => `https://www.google.com/maps/dir/?api=1&origin=Rieti&destination=${lat},${lon}&travelmode=driving`;
 
@@ -1442,10 +1517,10 @@ function renderHuman(z, d) {
     if (x.crowd.value < d.crowd.value - 0.15 && x.score >= d.score - 10 && (!alt || x.score > alt.score)) alt = x;
   }
   const tips = [];
-  if (d.crowd.fresh) tips.push('La buttata è appena partita: pochi lo sanno ancora.');
-  else if (d.crowd.goodDays >= 3) tips.push(`L'indice è alto da ${d.crowd.goodDays} giorni: la notizia gira, aspettati altri cercatori.`);
-  if (d.access?.farShare >= 0.2 && d.crowd.level !== 'basso') tips.push(`Il ${Math.round(d.access.farShare * 100)}% del bosco adatto è a più di 600 m da una strada: lì passa molta meno gente.`);
-  if (alt) tips.push(`Alternativa più tranquilla: ${fmtDate(alt.date, { weekday: 'long', day: 'numeric' })} (indice ${alt.score}, ${crowdText(alt.crowd)}).`);
+  if (d.crowd.fresh) tips.push('Il modello segnala un aumento recente dell’indice: l’affollamento è solo ipotizzato.');
+  else if (d.crowd.goodDays >= 3) tips.push(`Le condizioni sono favorevoli da ${d.crowd.goodDays} giorni: il modello ipotizza più cercatori; il passaparola non è misurato.`);
+  if (d.access?.farShare >= 0.2 && d.crowd.level !== 'basso') tips.push(`Il ${Math.round(d.access.farShare * 100)}% del bosco adatto è a più di 600 m da una strada: la minore frequentazione è un’ipotesi da verificare.`);
+  if (alt) tips.push(`Alternativa più tranquilla: ${fmtDate(alt.date, { weekday: 'long', day: 'numeric' })} (indice ${formatIndex(alt.score)}, ${crowdText(alt.crowd)}).`);
   if ((series[z.id][bandIndex(z, d.best.band)].p[d.i] ?? 0) >= 5) tips.push('È prevista pioggia: meno gente, ma porta il necessario e attenzione al fondo scivoloso.');
   return `
     <div class="human">
@@ -1473,7 +1548,7 @@ function renderAccess(z, d) {
     lines.push(txt);
   }
   if (ax) {
-    lines.push(`<b>Punto più comodo per ${esc(d.best.species.name.toLowerCase())}</b>: in auto ${ax.surface === 0 ? 'su asfalto' : `su ${SURF_LABEL[ax.surface]}`}${ax.road ? ` lungo ${esc(ax.road)}` : ''} fino al <a href="${gmaps(ax.rlat, ax.rlon)}" target="_blank" rel="noopener">punto sulla strada</a>, poi ${ax.walkM < 50 ? 'subito, a bordo strada,' : `<b>${fmtM(ax.walkM)} a piedi</b> (in linea d'aria) fino a`} ${esc((SHORT[ax.cat] || ax.cat).toLowerCase())} a ${ax.e} m.`);
+    lines.push(`<b>Punto più comodo per ${esc(d.best.species.name.toLowerCase())}</b>: in auto ${ax.surface === 0 ? 'su asfalto' : `su ${SURF_LABEL[ax.surface]}`}${ax.road ? ` lungo ${esc(ax.road)}` : ''} fino al <a href="${gmaps(ax.rlat, ax.rlon)}" target="_blank" rel="noopener">punto sulla strada</a>, poi ${ax.walkM < 50 ? 'subito, a bordo strada,' : `<b>${fmtM(ax.walkM)} in linea d’aria</b> (in linea d'aria) fino a`} ${esc((SHORT[ax.cat] || ax.cat).toLowerCase())} a ${ax.e} m.`);
   }
   return `
     <p><span class="badge comfort-${d.comfort?.level}">accesso ${d.comfort?.level ?? ''}</span></p>
@@ -1529,7 +1604,7 @@ function trailCard(z, t, d, top = false) {
   ].filter(Boolean).join('');
   const heads = headsOf(z, t);
   return `<div class="tcard${top ? ' top' : ''}">
-    <div class="tc-head">${segnavia(t)}<div class="tc-name"><b>${esc(trailName(t))}</b>${t.itinerary?.length > 2 ? `<small>${esc(t.itinerary.slice(1, -1).join(' · '))}</small>` : ''}${t.long ? '<small>tratto di un itinerario lungo</small>' : ''}${t.operator ? `<small>${esc(t.operator)}</small>` : ''}</div>${top ? '<span class="badge tc-top">consigliato</span>' : ''}</div>
+    <div class="tc-head">${segnavia(t)}<div class="tc-name"><b>${esc(trailName(t))}</b>${t.itinerary?.length > 2 ? `<small>${esc(t.itinerary.slice(1, -1).join(' · '))}</small>` : ''}${t.long ? '<small>tratto di un itinerario lungo</small>' : ''}${t.operator ? `<small>${esc(t.operator)}</small>` : ''}</div>${top ? '<span class="badge tc-top">prudenziale</span>' : ''}</div>
     <dl class="tc-facts">${facts}</dl>
     ${d?.best ? trailProfile(z.id, t, d.best.species, d.best.band, heads) : ''}
     ${heads.length ? `<div class="th-row"><span class="th-k">Imbocchi</span><div class="th-list">${heads.map((h, k) => `<a class="th-chip" href="${gmaps(h.lat, h.lon)}" target="_blank" rel="noopener" aria-label="Indicazioni stradali per l'imbocco ${k + 1}, a ${h.ele ?? ''} metri"><i class="th-n">${k + 1}</i>${h.kind === 'strada' ? IC.car : ICON.track}<span><b>${h.ele != null ? `${h.ele.toLocaleString('it-IT')} m` : 'imbocco'}</b><small>${esc(h.road || (h.kind === 'strada' ? 'su strada' : 'su sterrata'))}</small></span></a>`).join('')}</div></div>` : ''}
@@ -1640,7 +1715,7 @@ function whereToFind(id) {
       const r = results[z.id];
       const sb = series[z.id];
       const i = r.todayIndex;
-      today = Math.max(...z.bands.map((b, bi) => scoreSpecies(sp, sb[bi], i, habitat[z.id], b).score));
+      today = combine(z.bands.map((b, bi) => scoreSpecies(sp, sb[bi], i, habitat[z.id], b).score));
     }
     return { z, pot, today };
   }).sort((a, b) => b.pot.score - a.pot.score);
@@ -1659,14 +1734,14 @@ function zoneSpecies(z, d) {
   const sb = series[z.id];
   const rows = SPECIES.map((sp) => {
     const pot = potentialOf(sp, z);
-    const p = scores[sp.id] || { score: Math.max(...z.bands.map((b, bi) => scoreSpecies(sp, sb[bi], d.i, habitat[z.id], b).score)) };
+    const p = scores[sp.id] || { score: combine(z.bands.map((b, bi) => scoreSpecies(sp, sb[bi], d.i, habitat[z.id], b).score)) };
     return { sp, pot, score: p.score, band: p.band };
   }).filter((r) => r.pot.level !== 'scarsa').sort((a, b) => b.score - a.score || b.pot.score - a.pot.score);
   return `<ul class="zsp">${rows.map(({ sp, pot, score }) => `
     <li><a href="#/specie/${sp.id}" class="zsp-row">${thumb(sp.id, 40)}
-      <span class="zsp-body"><b>${esc(sp.name)}</b><span class="small muted">${POT_LABEL[pot.level]}${pot.ha ? ` · ~${pot.ha.toLocaleString('it-IT')} ha` : ''}</span></span>
-      <span class="score-pill"><span class="dot" style="background:var(${scoreVar(score)})"></span>${score}</span></a></li>`).join('')}</ul>
-    <p class="small muted">Ordinate per indice di oggi; sotto il nome, quanto habitat adatto c'è nella zona.</p>`;
+      <span class="zsp-body"><b>${esc(sp.name)}</b>${reportBadge(z.id, sp.id)}<span class="small muted">${POT_LABEL[pot.level]}${pot.ha ? ` · ~${pot.ha.toLocaleString('it-IT')} ha` : ''}</span></span>
+      <span class="score-pill"><span class="dot" style="background:var(${scoreVar(score)})"></span>${scoreText(score)}</span></a></li>`).join('')}</ul>
+    <p class="small muted">Ordinate per condizioni nel giorno scelto; sotto il nome, habitat e segnalazioni dichiarate degli ultimi 7 giorni.</p>`;
 }
 
 // Indice previsto per tutte le specie in una zona/data (per il diario).
@@ -1675,18 +1750,35 @@ function predict(zoneId, date, band) {
   if (!series) return null;
   const z = zones.find((x) => x.id === zoneId);
   const sb = series[zoneId];
+  if (!z || !sb?.[0]) return null;
   const i = sb[0].dates.indexOf(date);
   if (i < 30) return null;
   const bands = band == null ? z.bands : [band];
   const out = {};
   for (const sp of SPECIES) {
-    out[sp.id] = Math.max(...bands.map((b) => scoreSpecies(sp, sb[bandIndex(z, b)], i, habitat[zoneId], b).score));
+    out[sp.id] = combine(bands.map((b) => scoreSpecies(sp, sb[bandIndex(z, b)], i, habitat[zoneId], b).score));
   }
   return out;
 }
 
 function bandIndex(z, band) {
   return Math.max(0, z.bands.indexOf(band));
+}
+
+function captureForecast(zoneId, date, band) {
+  const z = zones.find((x) => x.id === zoneId), sb = series?.[zoneId];
+  if (!z || !sb?.length) return null;
+  const i = sb[0].dates.indexOf(date);
+  if (i < 30 || i < sb[0].todayIndex || sb.some((s) => s.source?.expired)) return null;
+  const scoresByBand = Object.fromEntries(z.bands.map((b) => [b, predict(zoneId, date, b)]));
+  const scores = scoresByBand[band] || predict(zoneId, date, null);
+  if (!scores || !Object.values(scores).some(Number.isFinite)) return null;
+  const inputs = sb.map((s, bi) => ({ band: z.bands[bi], source: s.source,
+    dates: s.dates.slice(i - 30, i + 1),
+    ...Object.fromEntries(['p', 'tmean', 'tmin', 'tmax', 'soilm', 'soilt'].map((k) => [k, s[k].slice(i - 30, i + 1)])) }));
+  return { mode: 'prospective', capturedAt: new Date().toISOString(), modelVersion: MODEL_VERSION,
+    internalScoreScale: '0–100', scores, scoresByBand, inputs, model: { params: PARAMS, species: SPECIES },
+    habitat: { sample_categories: habitat[zoneId].sample_categories, samples: habitat[zoneId].samples.map((s) => s.slice(0, 2)) } };
 }
 
 init().catch((e) => {

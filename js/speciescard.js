@@ -51,7 +51,7 @@ function phenology(id) {
   };
   let html = row(sp.months, 'model', 'Calendario del modello', (v) => `peso ${v}`);
   if (g?.total) html = row(g.months, 'obs', `Osservazioni in Italia (GBIF, ${g.total.toLocaleString('it-IT')})`, (v) => `${v} osservazioni`) + html;
-  const note = g?.total ? `<p class="small muted">Le osservazioni GBIF dicono quando la specie viene fotografata e segnalata in tutta Italia, Alpi comprese: servono a controllare la forma della stagione, non le date esatte nel Reatino. <a href="${esc(g.page)}" target="_blank" rel="noopener">Dati GBIF</a></p>` : '';
+  const note = g?.total ? `<p class="small muted">Le osservazioni GBIF dicono quando la specie viene fotografata e segnalata in tutta Italia, Alpi comprese: descrivono la frequenza delle segnalazioni, influenzata da osservatori, luoghi e anni. Non misurano abbondanza o stagionalità locale nel Reatino. <a href="${esc(g.page)}" target="_blank" rel="noopener">Dati GBIF</a></p>` : '';
   return html + note;
 }
 
@@ -60,7 +60,7 @@ function traitsTable(d) {
     ['Cappello', d.cap && [d.cap.shape, d.cap.size_cm && `${d.cap.size_cm[0]}–${d.cap.size_cm[1]} cm`, d.cap.color, d.cap.surface]],
     ['Sotto il cappello', d.hymenophore && [d.hymenophore.type, d.hymenophore.color, d.hymenophore.notes]],
     ['Gambo', d.stem && [d.stem.shape, d.stem.color, d.stem.surface, d.stem.ring && `anello: ${d.stem.ring}`, d.stem.volva && `volva: ${d.stem.volva}`]],
-    ['Carne', d.flesh && [d.flesh.color, d.flesh.change && `al taglio: ${d.flesh.change}`, d.flesh.smell && `odore: ${d.flesh.smell}`, d.flesh.taste && `sapore: ${d.flesh.taste}`]],
+    ['Carne', d.flesh && [d.flesh.color, d.flesh.change && `al taglio: ${d.flesh.change}`, d.flesh.smell && `odore: ${d.flesh.smell}`]],
     ['Sporata', d.spore_print && [d.spore_print]],
     ['Habitat', d.habitat && [d.habitat]],
     ['Stagione', d.season && [d.season]],

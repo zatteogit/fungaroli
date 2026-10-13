@@ -27,7 +27,7 @@
       "title": "Non mangiarli mai crudi",
       "text": "Mangia i funghi spontanei solo cotti, anche le specie commestibili.",
       "why": "Molti funghi commestibili crudi o poco cotti danno disturbi o intossicazioni; crudi sono comunque poco digeribili.",
-      "level": "obbligatorio",
+      "level": "consigliato",
       "sources": [
         {
           "title": "Ministero della Salute, IZSLER, Centro Antiveleni di Milano (Niguarda): I funghi, guida alla prevenzione delle intossicazioni (ristampa 2015)",
@@ -49,8 +49,8 @@
     },
     {
       "title": "Cuocili bene e a lungo",
-      "text": "Cuoci i funghi a fondo, in padella o in umido, per almeno 30 minuti. Evita griglia e frittura per le specie che devono cuocere a lungo. Masticali bene.",
-      "why": "Alcune specie hanno tossine che si distruggono col calore: griglia e frittura non le eliminano del tutto.",
+      "text": "Cuoci i funghi completamente e segui il trattamento indicato dal micologo per la singola specie. Per quelle tossiche da crude sono necessari trattamenti specifici: una durata uguale per tutti non è una garanzia di sicurezza.",
+      "why": "Le fonti sanitarie distinguono le specie e i trattamenti. La cottura non rende commestibile una specie velenosa.",
       "level": "obbligatorio",
       "sources": [
         {
@@ -147,7 +147,7 @@
       "title": "Congela solo dopo averli sbollentati",
       "text": "Congela solo funghi giovani e sani, puliti, sbollentati per qualche minuto, scolati e asciugati, in piccole porzioni a -18 °C. Scrivi la data e usali entro 3 mesi.",
       "why": "Le regole del Ministero chiedono di sbollentarli prima di congelarli. Le specie tossiche crude (es. chiodino) vanno prebollite come al solito prima del congelamento.",
-      "level": "obbligatorio",
+      "level": "consigliato",
       "sources": [
         {
           "title": "Ministero della Salute, IZSLER, Centro Antiveleni di Milano (Niguarda): I funghi, guida alla prevenzione delle intossicazioni (ristampa 2015)",
@@ -204,9 +204,9 @@
       ]
     },
     {
-      "title": "Sott'olio solo dopo bollitura in acqua e aceto",
-      "text": "Prima di metterli sott'olio, bolli i funghi per almeno 20 minuti in 2/3 di aceto di vino (acidità almeno 6%) e 1/3 di acqua. Scolali, asciugali, coprili di olio di almeno 1 cm, chiudi e pastorizza i vasetti. Se aggiungi olio, pastorizza di nuovo.",
-      "why": "I funghi sott'olio fatti in casa sono tra le prime cause di botulismo in Italia: il batterio non cresce in ambiente acido (pH sotto 4,6).",
+      "title": "Conserve: segui una procedura sanitaria completa",
+      "text": "Per conservare sott’olio usa le linee guida complete dell’ISS, con acidificazione e trattamento definiti per quel procedimento. Questa scheda non sostituisce un protocollo di conservazione verificato.",
+      "why": "Tempi, acidità e trattamento dei vasetti devono essere valutati insieme; combinare istruzioni parziali non garantisce la sicurezza.",
       "level": "obbligatorio",
       "sources": [
         {
@@ -229,7 +229,7 @@
     },
     {
       "title": "Controlla i vasetti prima di aprirli",
-      "text": "Butta, senza assaggiarlo, il vasetto con tappo bombato o che fa click-clack, bollicine, olio torbido, odore o colore strani. Dopo l'apertura tienilo in frigo. Prima di buttare un vasetto sospetto, bollilo chiuso per 30 minuti.",
+      "text": "Non aprire, assaggiare o consumare conserve sospette o con tappo bombato, perdite, bollicine, odori o colori anomali. L’assenza di questi segni non garantisce la sicurezza. Per la gestione di una conserva sospetta segui le indicazioni sanitarie complete.",
       "why": "Sono segni che nel vasetto crescono microbi. Per l'ISS, anche solo se sospetti un'alterazione, la conserva non va né assaggiata né mangiata.",
       "level": "obbligatorio",
       "sources": [
@@ -242,8 +242,8 @@
     {
       "title": "Mangiane poco e non spesso",
       "text": "Mangia porzioni moderate (al massimo un piatto di funghi a pasto), non in pasti ravvicinati, e non sempre la stessa specie. Un ispettorato ASL indica di non superare circa 200 g di funghi freschi a persona a settimana.",
-      "why": "Anche quelli commestibili, in grandi quantità o in pasti vicini, danno disturbi allo stomaco e all'intestino.",
-      "level": "obbligatorio",
+      "why": "Indicazione prudenziale delle fonti citate, non una dose sicura universale.",
+      "level": "consigliato",
       "sources": [
         {
           "title": "Ministero della Salute, IZSLER, Centro Antiveleni di Milano (Niguarda): I funghi, guida alla prevenzione delle intossicazioni (ristampa 2015)",
@@ -787,8 +787,8 @@
         },
         {
           "text": "Dopo la prebollitura cuocili ancora a fondo nel modo che preferisci.",
-          "why": "La sola cottura senza prebollitura deve durare almeno 30 minuti; dopo la prebollitura serve comunque una cottura completa.",
-          "level": "consigliato",
+          "why": "Il procedimento prudenziale scelto dall’app comprende prebollitura con acqua scartata e successiva cottura completa. Chiedi conferma al micologo.",
+          "level": "obbligatorio",
           "sources": [
             {
               "title": "AUSL Valle d'Aosta – Opuscolo Ispettorato micologico 2026",
@@ -824,7 +824,7 @@
           ]
         },
         {
-          "text": "Per il sott'olio prebollili prima come sopra, poi segui le regole delle conserve (acqua e aceto).",
+          "text": "Per il sott’olio, dopo gli eventuali trattamenti necessari alla specie, segui un protocollo completo dell’ISS per le conserve. Non basta questa checklist.",
           "why": "La prebollitura serve per le tossine; acqua e aceto servono contro il botulino.",
           "level": "obbligatorio",
           "sources": [
@@ -1163,9 +1163,13 @@
         {
           "title": "Wikipedia (en) – Tricholoma terreum (supporto)",
           "url": "https://en.wikipedia.org/wiki/Tricholoma_terreum"
+        },
+        {
+          "title": "Clericuzio, Serra e Vidari (2024), analisi di due raccolte italiane di Tricholoma terreum",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/38675614/"
         }
       ],
-      "notes": "Rabdomiolisi: Yin et al. 2014 (Chemistry Eur J, doi 10.1002/chem.201400226) hanno isolato saponaceolidi da T. terreum che nei topi, a dosi orali alte, aumentano la creatinchinasi, ipotizzando un legame con la rabdomiolisi; nessun caso umano documentato. Davoli, Floriani, Assisi (Centro Antiveleni Niguarda), Kob e Sitta 2016 (doi 10.1002/chem.201406655) hanno contestato la conclusione: T. terreum resta commestibile; gli autori cinesi hanno replicato (doi 10.1002/chem.201504410) sostenendo che le sostanze resistono alla cottura. La guida della Regione Piemonte 2021 (Sitta et al.) la classifica 'commestibile (commestibilità libera)'. Wikipedia en: 'commestibile, ma tossica in quantità estremamente elevatè. Nessuna fonte ufficiale italiana dà una quantità massima: ho messo solo la regola generale delle quantità moderate. Il rischio pratico maggiore è la confusione con T. pardinum (velenoso), che non riguarda la preparazione."
+      "notes": "Rabdomiolisi: Yin et al. 2014 (Chemistry Eur J, doi 10.1002/chem.201400226) hanno isolato saponaceolidi da T. terreum che nei topi, a dosi orali alte, aumentano la creatinchinasi, ipotizzando un legame con la rabdomiolisi; nessun caso umano documentato. Davoli, Floriani, Assisi (Centro Antiveleni Niguarda), Kob e Sitta 2016 (doi 10.1002/chem.201406655) hanno contestato la conclusione: T. terreum resta commestibile; gli autori cinesi hanno replicato (doi 10.1002/chem.201504410) sostenendo che le sostanze resistono alla cottura. La guida della Regione Piemonte 2021 (Sitta et al.) la classifica 'commestibile (commestibilità libera)'. Wikipedia en: 'commestibile, ma tossica in quantità estremamente elevatè. Nessuna fonte ufficiale italiana dà una quantità massima: ho messo solo la regola generale delle quantità moderate. Il rischio pratico maggiore è la confusione con T. pardinum (velenoso), che non riguarda la preparazione. Aggiornamento 2024: in due raccolte italiane identificate geneticamente non sono stati trovati alcuni terpenoidi descritti in precedenza; questo non definisce una dose sicura universale (Clericuzio et al., Molecules 29:1794)."
     },
     "repandum": {
       "raw": "sconsigliato",
@@ -1985,5 +1989,6 @@
       "local": null,
       "notes": "Cruda o poco cotta è tossica (Wikipedia it, scheda Valle del Vara). Wikipedia en dice che si può cucinare 'come la trippà: l'ho tradotto in 'in umidò."
     }
-  }
+  },
+  "review_note": "Revisione 2026-10-13: i livelli sono indicazioni sanitarie o scelte prudenziali dell’app, non obblighi di legge. Confermare i trattamenti della singola specie con il micologo."
 }

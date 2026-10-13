@@ -1,3 +1,5 @@
+> Aggiornamento del 13 ottobre 2026: questa analisi descrive la versione precedente senza account. Per profili con passkey, cookie tecnici, diario D1 e osservazioni condivise, fanno riferimento `data/legal.json` versione 2 e [community.md](community.md). Non si presume un’esenzione domestica per la comunità aperta. Le conclusioni sul vecchio diario KV restano riferite solo a quel servizio.
+
 # Note legali e di sicurezza
 
 Documento di riferimento per i testi legali di Fungaroli Rieti (`data/legal.json`). Raccoglie le norme vigenti, le fonti consultate, i punti che non è stato possibile verificare e i rischi che l'app presenta oggi.

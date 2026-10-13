@@ -6,9 +6,19 @@
   "scripts": {
     "start": "python3 -m http.server 8000",
     "test": "node --test tests/*.test.mjs",
-    "build:artifact": "node tools/build_artifact.mjs"
+    "build:artifact": "node tools/build_artifact.mjs",
+    "build:vendor": "node tools/build_vendor.mjs",
+    "prepare": "node tools/build_vendor.mjs",
+    "deploy": "npm test && wrangler deploy",
+    "test:browser": "playwright test"
   },
   "devDependencies": {
-    "esbuild": "0.24.0"
+    "@playwright/test": "1.64.0",
+    "esbuild": "0.27.3",
+    "wrangler": "4.149.0"
+  },
+  "dependencies": {
+    "@simplewebauthn/browser": "14.0.0",
+    "@simplewebauthn/server": "14.0.3"
   }
 }

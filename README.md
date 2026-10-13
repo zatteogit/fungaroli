@@ -1,12 +1,14 @@
 # Fungaroli · Rieti
 
-Web app statica che indica **dove e quando** andare a funghi (commestibili) intorno a Rieti, incrociando:
+App per **passeggiare, esplorare i sentieri e imparare a conoscere i boschi** intorno a Rieti. Il taccuino personale e le segnalazioni collettive hanno lo scopo di migliorare gradualmente la validazione locale. Le condizioni di crescita sono stimate: accuratezza della trovabilità e abbondanza reale non sono ancora misurate.
+
+La parte ambientale incrocia:
 
 1. **Meteo** degli ultimi ~60 giorni + previsioni a 7 giorni (Open-Meteo), calcolato a **tre quote** per ogni zona;
 2. **Carta Forestale su base tipologica** della Regione Lazio (WFS ufficiale), campionata su ~315 punti per zona per sapere quale bosco c'è a quale quota;
 3. **Calendario ed ecologia** delle specie (habitat, quote, stagionalità, finestre di latenza dopo la pioggia).
 
-Il risultato è un indice 0–100 per ogni combinazione **zona × quota × specie × giorno**, con classifica delle migliori uscite, mappa, grafico pioggia/indice e spiegazione dei fattori.
+Il risultato è un indice sperimentale 0–10 con un decimale italiano (es. 7,2) per ogni combinazione **zona × quota × specie × giorno**, con priorità di passeggiate da esplorare, mappa, grafico pioggia/indice e spiegazione dei fattori.
 
 ## Uso
 
@@ -21,7 +23,7 @@ Nessuna build, nessuna chiave API. Serve un server HTTP (i moduli ES e i JSON no
 
 Pubblicazione: il workflow `.github/workflows/pages.yml` pubblica su GitHub Pages a ogni push su `main`. Va abilitato una volta in *Settings → Pages → Source: GitHub Actions*.
 
-Test del modello: `npm test` (Node ≥ 20).
+Test del modello: `npm test` (Node ≥ 22). Per il servizio completo: `npm ci` e `npx wrangler dev`; verifiche passkey e isolamento con `npm run test:browser`.
 
 ### Versione Artifact (claude.ai)
 
@@ -29,11 +31,11 @@ Test del modello: `npm test` (Node ≥ 20).
 npm i && npm run build:artifact   # -> dist/fungaroli.html
 ```
 
-Un Artifact non può chiamare API esterne né caricare tile di mappa, quindi la build incorpora JS, CSS, dati e una **fotografia del meteo** al momento della build; la mappa usa una base topografica e la Carta Forestale incorporate come immagini georeferenziate (`assets/`, generate una tantum con `python3 tools/build_basemap.py`). Per aggiornare il meteo si rilancia la build e si ripubblica. Il diario nell'Artifact è salvato nel db privato dell'utente (`data/users/<id>/diario/uscite`), quindi resta tra dispositivi e Claude può leggerlo per tarare il modello.
+Un Artifact non può chiamare API esterne né caricare tile di mappa, quindi la build incorpora JS, CSS, dati e una **fotografia del meteo** al momento della build; la mappa usa una base topografica e la Carta Forestale incorporate come immagini georeferenziate (`assets/`, generate una tantum con `python3 tools/build_basemap.py`). Per aggiornare il meteo si rilancia la build e si ripubblica. La versione Artifact è un’esportazione storica, con fotografia del meteo: non supporta il nuovo servizio della comunità. Il sito Cloudflare è la versione corrente.
 
 ## Diario delle uscite
 
-Procedura guidata in 5 passi (zona → giorno → quota → cosa e quanto → nota). Al salvataggio l'app memorizza anche l'indice che il modello prevedeva per quella zona e quel giorno, così l'elenco mostra se la previsione era giusta, ottimista o pessimista. Su GitHub Pages il diario resta nel browser: usa *Esporta* / *Importa*.
+Procedura guidata in 6 passi (zona → giorno → quota → ricerca → cosa e quanto → nota). Prima dell’uscita si può salvare una previsione immutabile con modello e input. Il diario confronta poi le specie cercate, distinguendo zeri espliciti, dati mancanti e ricostruzioni a posteriori. I conteggi sono esplorativi e non misurano l’accuratezza scientifica. Su GitHub Pages il diario resta nel browser: usa *Esporta* / *Importa*.
 
 ## Zone (prima versione)
 
@@ -62,7 +64,7 @@ Procedura guidata in 5 passi (zona → giorno → quota → cosa e quanto → no
 Per ogni specie e giorno *d*:
 
 ```
-indice = 100 × stagione × habitat × quota × pioggia × temperatura × suolo × gelo × caldo × shock
+indice pubblico = 10 × stagione × habitat × quota × pioggia × temperatura × suolo × gelo × caldo × shock
 ```
 
 | Fattore | Come si calcola | Base |
@@ -75,12 +77,14 @@ indice = 100 × stagione × habitat × quota × pioggia × temperatura × suolo 
 | Habitat | frazione di bosco idoneo nella fascia ±150 m (punti campione Carta Forestale × affinità specie) | dato ufficiale + affinità da manualistica |
 | Stagione, quota | pesi mensili e range altimetrico per specie | documento di partenza, manualistica |
 
-**Affidabilità:** per i giorni futuri la pioggia che conta è in gran parte già caduta (latenza 1–3 settimane), quindi l'indice a 3–7 giorni è ragionevolmente robusto. L'app abbassa l'affidabilità quando una parte della pioggia efficace è solo prevista.
+**Incertezza:** la vecchia percentuale di affidabilità è rimossa. Si mostrano completezza degli input, uso delle previsioni, timestamp e campioni forestali; senza dati necessari l’indice è non calcolabile. I punteggi interni e i vecchi diari restano 0–100, l’interfaccia divide per 10.
+
+**Community:** Cloudflare D1 conserva account con passkey, sessioni protette e diari privati. Solo le osservazioni condivise entrano negli aggregati pubblici. Una segnalazione per persona/zona/specie/giorno; conteggi degli ultimi sette giorni. Un segnale sufficiente modifica al massimo del 10% l’ordine delle passeggiate, senza cambiare l’indice biologico. Non c’è addestramento automatico dei parametri su dati non verificati. Configurazione e limiti in [community.md](docs/community.md).
 
 ### Cosa è fatto, cosa è ipotesi
 
 - **Fatti verificati:** composizione forestale e quote (Carta Forestale, DEM); meteo (modello Open-Meteo, non stazioni a terra); regole di raccolta (L.R. Lazio 32/1998, testo vigente; dettagli e fonti in `docs/legale.md`).
-- **Da letteratura, ma con limiti:** la relazione pioggia 26–30 gg e T ≈ 13 °C vale per *B. edulis* in faggete; lo studio del 2025 è un preprint non ancora revisionato.
+- **Da letteratura, ma con limiti:** la relazione pioggia 26–30 gg e T ≈ 13 °C vale per *B. edulis* in faggete; il codice cita bioRxiv v2; la pagina degli autori lo indica ora in stampa su Fungal Ecology.
 - **Licenza della Carta Forestale da chiarire:** la risorsa shapefile su dati.lazio.it è dichiarata CC BY 4.0, ma la scheda metadati allegata allo stesso dataset (aggiornata a dicembre 2012) limita l'uso a fini non commerciali e vieta distribuzione e modifica. `data/habitat.json`, `data/trails.json` e le immagini in `assets/` ne derivano: prima di diffondere l'app conviene una conferma scritta della Regione. Dettagli in `docs/legale.md`, sezione licenze.
 - **Euristiche:** ottimi termici delle altre specie, finestre di latenza, pesi di habitat, bonus shock. Sono in `js/species.js` e `js/model.js` (`PARAMS`): **vanno calibrati sulle uscite reali**.
 - **Cosa il modello non vede:** esposizione e pendenza, età e gestione del bosco, pressione di raccolta, singole fungaie, microclima di valle.

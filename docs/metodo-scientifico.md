@@ -1,6 +1,8 @@
-# Il metodo: come l'app stima la fruttificazione
+# Il metodo e la validazione locale
 
-Questo documento spiega come Fungaroli Rieti calcola l'indice 0-100 e che cosa c'è dietro ogni numero. I valori citati sono quelli del codice al momento della stesura (`js/model.js`, `js/species.js`, `js/human.js`, `js/app.js`). Se cambiate un parametro nel codice, questo documento va aggiornato.
+Fungaroli invita a passeggiare, scoprire sentieri e imparare. L’app ha lo scopo di diventare più accurata grazie alle osservazioni degli utenti. La validazione della trovabilità è ancora iniziale e nessuna percentuale di accuratezza è disponibile.
+
+Questo documento spiega come Fungaroli Rieti calcola l’indice pubblico 0–10 con un decimale (modello 2.0.0; internamente 0–100 per conservare i dati storici) e che cosa c'è dietro ogni numero. I valori citati sono quelli del codice al momento della stesura (`js/model.js`, `js/species.js`, `js/human.js`, `js/app.js`). Se cambiate un parametro nel codice, questo documento va aggiornato.
 
 ## Come leggere le etichette
 
@@ -22,26 +24,19 @@ Per ogni combinazione di **zona × fascia di quota × specie × giorno** l'app c
 
 Ogni zona ha tre fasce di quota (in `data/zones.json`, campo `bands`). Per ogni specie l'app tiene la fascia con l'indice più alto.
 
-### Più funghi insieme: l'indice della zona
+### Più funghi insieme e passeggiate
 
-L'indice della zona vale per **almeno uno dei funghi scelti** nei filtri (`combine` in `js/model.js`). Non si usa l'unione di eventi indipendenti, 1 − Π(1 − pᵢ), perché i funghi non sono indipendenti (lo stesso meteo li fa nascere o no insieme) e perché con molte specie in stagione l'unione arriva sempre vicino a 100, e allora l'indice non aiuta più a scegliere. Regola usata: si ordinano gli indici dal più alto; il primo conta pieno, il secondo pesa il 35%, ogni altro la metà del precedente:
+La zona mostra il **massimo indice calcolabile** delle specie selezionate, senza bonus dal loro numero. È un indice di condizioni di crescita, non una probabilità di trovare almeno una specie. Aggiungere taxa simili non aumenta automaticamente il valore. Le specie possono avere la quota migliore in parti diverse della zona.
 
-```
-mancato = (1 − p₁) × (1 − 0,35·p₂) × (1 − 0,175·p₃) × (1 − 0,0875·p₄) × …
-indice  = 1 − mancato
-```
-
-Esempio: mazza di tamburo 78, chiodino 52, porcino 31 → 1 − 0,22 × 0,818 × 0,946 = 0,830 → **83**. Anche con tutti gli altri funghi a 100 il bonus non supera circa metà della distanza tra il fungo migliore e 100: il fungo migliore resta quello che decide. Con un solo fungo scelto l'indice della zona è quello del fungo. Le schede mostrano sempre anche l'indice di ogni fungo.
-
-Sulla mappa, da vicino, ogni riquadro di 300 m della Carta Forestale ha lo stesso aggregato: per ogni fungo, l'indice per quanto è adatto quel bosco alla specie, la quota rispetto al suo intervallo e la vicinanza alla quota migliore del giorno (piena entro 200 m, nulla oltre 600 m).
+Le preferenze di distanza, comodità e folla cambiano solo l’ordine dei consigli. Le segnalazioni recenti della community possono modificare questa priorità, non il numero biologico. La mappa usa riquadri larghi quanto il reticolo originario della zona: 300–500 m. Il colore deriva da un campione di habitat e dal meteo della fascia; non verifica presenza, alberi ospiti puntuali, transitabilità o permesso di raccolta.
 
 ### La formula
 
 ```
-indice = 100 × stagione × habitat × quota × pioggia × temperatura × suolo × gelo × caldo × shock
+indice pubblico = 10 × stagione × habitat × quota × pioggia × temperatura × suolo × gelo × caldo × shock
 ```
 
-Il risultato è limitato tra 0 e 100 e arrotondato. Lo shock termico è l'unico fattore che può superare 1 (vale al massimo 1,15), quindi in condizioni ideali il prodotto può sforare 100 ed essere tagliato a 100.
+Il prodotto è limitato tra 0 e 1. Il codice conserva un intero 0–100; l’interfaccia lo divide per 10 e mostra un decimale italiano, per esempio 72 → 7,2. Lo shock termico può superare 1: vale 1,15 normalmente e 1,225 per il chiodino. Nessuno di questi coefficienti è stato calibrato nel Reatino.
 
 Una conseguenza del prodotto, da tenere a mente: basta un fattore vicino a zero per azzerare l'indice. È voluto (senza bosco adatto o fuori stagione non ha senso andare), ma rende il modello severo. Un fattore a 0,5 dimezza tutto, anche se gli altri sono perfetti.
 
@@ -121,7 +116,7 @@ Con `topt = 13 °C` e `tsd = 3,5 °C` per il porcino: a 13 °C il fattore vale 1
 | Moretta (*T. terreum*) | 9 | 3,5 | Euristica |
 | Agarico violetto (*L. nuda*) | 8 | 3,5 | Euristica |
 
-**La base per il porcino.** Brejon Lamartinière e Hoffman (2025) hanno analizzato dieci anni (2015-2024) di conteggi giornalieri di carpofori di *B. edulis* in una faggeta vicino a Bielefeld, in Germania, con modelli lineari generalizzati misti. Il picco di fruttificazione coincide con una temperatura media di circa 13 °C calcolata sui 20 giorni precedenti. Il lavoro è un **preprint su bioRxiv, non ancora revisionato**, e riguarda un solo sito di pianura centro-europea. Nella versione 2 (giugno 2026), che sostituisce la prima: ottimo termico di circa 13 °C sulla media dei 20 giorni (13,7 °C nella didascalia della Fig. 4: testo e figura non coincidono); effetto lineare e positivo della pioggia cumulata su 26 giorni (26-32 nei due siti più produttivi), **senza soglia di innesco né soglia superiore**; fruttificazioni concentrate tra 10 e 15 °C e 2-4 mm di pioggia media al giorno nella finestra. L'umidità del suolo non è misurata e lo **shock termico non compare** nel modello. **Conseguenza per l'app**: le soglie di innesco a 8 e 15 mm e il bonus per shock termico non vengono da questo lavoro; restano euristiche di pratica micologica. **Interpretazione**: applicarlo alle faggete del Terminillo o della Laga è un'estrapolazione ragionevole per la specie e l'habitat, meno per il clima (l'Appennino ha estati più calde e secche e un regime di piogge diverso).
+**La base per il porcino.** Brejon Lamartinière e Hoffman (2025) hanno analizzato dieci anni (2015-2024) di conteggi giornalieri di carpofori di *B. edulis* in una faggeta vicino a Bielefeld, in Germania, con modelli lineari generalizzati misti. Il picco di fruttificazione coincide con una temperatura media di circa 13 °C calcolata sui 20 giorni precedenti. Qui si usa la versione **bioRxiv v2**; al 13 ottobre 2026 la pagina del laboratorio degli autori indica il lavoro **in stampa su Fungal Ecology** (https://thehoffmanlab.com/publications/). Questo aggiornamento non valida il modello dell’app, e riguarda un solo sito di pianura centro-europea. Nella versione 2 (giugno 2026), che sostituisce la prima: ottimo termico di circa 13 °C sulla media dei 20 giorni (13,7 °C nella didascalia della Fig. 4: testo e figura non coincidono); effetto lineare e positivo della pioggia cumulata su 26 giorni (26-32 nei due siti più produttivi), **senza soglia di innesco né soglia superiore**; fruttificazioni concentrate tra 10 e 15 °C e 2-4 mm di pioggia media al giorno nella finestra. L'umidità del suolo non è misurata e lo **shock termico non compare** nel modello. **Conseguenza per l'app**: le soglie di innesco a 8 e 15 mm e il bonus per shock termico non vengono da questo lavoro; restano euristiche di pratica micologica. **Interpretazione**: applicarlo alle faggete del Terminillo o della Laga è un'estrapolazione ragionevole per la specie e l'habitat, meno per il clima (l'Appennino ha estati più calde e secche e un regime di piogge diverso).
 
 **Le altre specie.** Gli ottimi termici sono stime coerenti con la stagionalità nota (specie estive e termofile più alte, specie tardive più basse) ma non hanno una fonte puntuale. Sono il primo candidato alla taratura.
 
@@ -133,7 +128,7 @@ L'app usa l'umidità volumetrica del suolo tra 3 e 9 cm di profondità (variabil
 suolo = max( 0,15 , clamp((umidità − 0,10) / (0,26 − 0,10))^0,6 )
 ```
 
-Sotto 0,10 il fattore resta a 0,15 (non scende a zero), sopra 0,26 vale 1. Se il dato manca vale 0,5.
+Sotto 0,10 il fattore resta a 0,15 (non scende a zero), sopra 0,26 vale 1. Se una finestra meteorologica necessaria è incompleta, l’indice è non calcolabile. Il dato mancante non viene trasformato in condizioni sfavorevoli o assenza di funghi.
 
 | Elemento | Etichetta | Note |
 |---|---|---|
@@ -164,7 +159,7 @@ shock = 1 + 0,075 × shockWeight      (shockWeight predefinito 2, quindi ×1,15)
 
 **Etichetta: Euristica** da pratica micologica. L'idea che un calo brusco di temperatura dopo la pioggia "sblocchi" le nascite è molto diffusa tra i cercatori e nei siti di previsione, ma non ho trovato studi che la quantifichino. Il README la descrive correttamente come "pratica micologica, non verificata".
 
-Nota sul codice: il chiodino ha `shockWeight: 2`, cioè lo stesso valore predefinito di tutte le altre specie. Il commento della specie dice "buttate legate al primo freddo", ma di fatto il chiodino non riceve un bonus maggiore. Se l'intenzione era differenziarlo, il valore va alzato.
+Il chiodino ha `shockWeight: 3`, quindi bonus ×1,225. Questo valore è un’euristica da sottoporre a confronto con una variante senza shock.
 
 ### 7. Habitat: la Carta Forestale campionata per fascia di quota
 
@@ -192,7 +187,7 @@ Il 45% di bosco pienamente idoneo nella fascia basta per un habitat "pieno".
 
 **Perché per fascia di quota e non per area.** Una zona di montagna mescola boschi molto diversi: a Poggio Bustone la roverella domina in basso e la faggeta sopra i 1000 m. Una composizione media della zona direbbe "un po' di tutto"; il campionamento per quota dice quale bosco trovi alla quota a cui pensi di andare. **Parere**: è la scelta che rende l'app utile sul campo, più dell'accuratezza dei parametri meteo.
 
-**Un dettaglio da sapere.** La griglia ha sempre 21 punti per lato, quindi la densità dipende dal raggio: un punto ogni 300 m nelle zone di raggio 3 km, ogni 500 m nel Cicolano (raggio 5 km). Nelle fasce di quota poco rappresentate i punti possono essere pochi, e la composizione diventa rumorosa. Il modello non usa il numero di punti per abbassare l'affidabilità.
+**Un dettaglio da sapere.** La griglia ha sempre 21 punti per lato, quindi la densità dipende dal raggio: un punto ogni 300 m nelle zone di raggio 3 km, ogni 500 m nel Cicolano (raggio 5 km). Nelle fasce di quota poco rappresentate i punti possono essere pochi, e la composizione diventa rumorosa. La scheda riporta il numero di campioni della fascia; non li tratta come osservazioni indipendenti e non deriva da essi una percentuale di affidabilità.
 
 ### 8. Quota
 
@@ -207,25 +202,19 @@ Il porcino ha `elev = [700, 1800]`: a 600 m il fattore vale 0,5, a 500 m vale 0.
 
 ### 9. Stagionalità
 
-Ogni specie ha 12 pesi mensili (gennaio-dicembre), interpretati come valori al giorno 15 di ogni mese e interpolati linearmente tra un mese e l'altro. Il porcino, per esempio, vale 0 da gennaio ad aprile, 0,1 a maggio, poi sale fino a 1 a settembre e ottobre, 0,4 a novembre, 0 a dicembre.
+Ogni specie ha 12 pesi mensili (gennaio-dicembre), interpretati come valori al giorno 15 di ogni mese e interpolati linearmente usando la durata reale tra queste date. Il porcino, per esempio, vale 0 da gennaio ad aprile, 0,1 a maggio, poi sale fino a 1 a settembre e ottobre, 0,4 a novembre, 0 a dicembre.
 
 **Etichetta: Euristica** basata sul documento di partenza e sulla manualistica locale.
 
 **Cosa dice la letteratura sul tema.** Kauserud et al. (2012), su oltre 746.000 segnalazioni datate di 486 specie autunnali in quattro paesi europei, hanno osservato tra il 1970 e il 2007 un allungamento della stagione di fruttificazione e uno spostamento in avanti della data media. Büntgen et al. (2013), su inventari svizzeri 1975-2006, riportano un ritardo autunnale medio di 12 giorni dopo il 1991. La rassegna di Boddy et al. (2014) conclude che la fenologia sta cambiando in molti paesi europei, con stagioni mediamente più lunghe ma risposte diverse tra specie e luoghi. **Interpretazione**: pesi mensili fissi, presi da manuali scritti con il clima di qualche decennio fa, rischiano di chiudere la stagione troppo presto in autunno. Se il diario mostra nascite a novembre con indice basso, il primo sospetto è la stagionalità.
 
-### 10. Affidabilità delle previsioni
+### 10. Completezza dei dati e incertezza
 
-Per i giorni passati e per oggi l'affidabilità è 1. Per i giorni futuri:
+La vecchia percentuale `confidence` è stata rimossa: non misurava gli errori del modello. Ora il calcolo distingue completezza delle finestre, uso di meteo previsto, data di acquisizione e numero di campioni forestali. Il giorno dell’acquisizione contiene ancora previsioni e non è etichettato come osservato.
 
-```
-affidabilità = clamp( 1 − 0,5 × quota_prevista − 0,04 × giorni_avanti , 0,2 , 1 )
-```
+Devono essere completi pioggia antecedente, temperatura media, umidità del suolo, minime e massime nelle finestre richieste. Un giorno di suolo richiede almeno 24 valori orari validi. Un habitat privo di campioni produce stato non calcolabile. Non si sostituiscono pioggia mancante con zero, suolo mancante con 0,5 o estremi mancanti con assenza di gelo/caldo.
 
-dove `quota_prevista` è la frazione della pioggia nella finestra di latenza che cade in giorni futuri (cioè solo prevista). Nell'interfaccia: alta da 0,8, media da 0,55, bassa sotto.
-
-**Etichetta: Euristica.** Il ragionamento dietro è corretto e importante: siccome per il porcino conta la pioggia di 7-21 giorni prima, l'indice di dopodomani dipende quasi tutto da pioggia già caduta. Per questo l'indice a 3-7 giorni è più stabile di una previsione meteo a 3-7 giorni.
-
-Limite: l'affidabilità considera solo la pioggia della finestra di latenza. Anche la temperatura media a 20 giorni, l'umidità del suolo, il gelo e il caldo dei giorni futuri vengono dalle previsioni, ma non abbassano l'affidabilità.
+La cache conserva il timestamp originale. Dati biologici più vecchi di 24 ore non producono indici per oggi e il futuro. Se la data corrente non è nella serie non viene associata al primo giorno. I dati meteorologici passati restano uscite di modello. L’accuratezza della trovabilità deve essere misurata con dati locali e un protocollo di ricerca.
 
 ## Il meteo dell'uscita
 
@@ -237,7 +226,7 @@ L'indice usa il meteo **passato** (che fa nascere i funghi). Separatamente l'app
 | tempo incerto | pioggia da 1 mm, probabilità almeno 50%, raffiche da 40 km/h, nebbia | ordine dei consigli × 0,85 |
 | uscita sconsigliata | temporali, neve, pioggia da 5 mm, raffiche da 60 km/h | ordine dei consigli × 0,55 |
 
-**Euristica**: soglie scelte per sicurezza e comodità in bosco, non da letteratura. Il livello cambia solo l'ordine dei consigli, non l'indice mostrato. Quando una zona ha tempo incerto o sconsigliato, l'app propone un'alternativa nello stesso giorno con tempo migliore e indice almeno il 70% (e non sotto 30): "Puoi andare a…".
+**Euristica**: soglie scelte per sicurezza e comodità in bosco, non da letteratura. Il livello cambia solo l’ordine dei consigli, non l’indice mostrato. La finestra mattutina alla quota centrale non sostituisce la previsione del percorso e del rientro. Serie incomplete o senza data valida non producono “tempo buono”; oltre tre ore vengono scartate e già dopo un’ora è segnalato l’aggiornamento necessario. Quando una zona ha tempo incerto o sconsigliato, l'app propone un'alternativa nello stesso giorno con tempo migliore e indice almeno il 70% (e non sotto 30): "Puoi andare a…".
 
 ## Come sono state scelte le zone
 
@@ -260,7 +249,7 @@ Questi fattori non entrano nell'indice di fruttificazione. Servono a correggere 
 
 **Fatto (Dato ufficiale e norma)**: la raccolta nel Lazio è vietata da un'ora dopo il tramonto a un'ora prima dell'alba (L.R. 32/1998, art. 9 c.1, testo vigente). L'app calcola alba e tramonto per il centro della zona con le formule NOAA (errore di 1-2 minuti, rifrazione standard di 90,833°), e il test verifica per Rieti il 12 ottobre 2026 alba alle 07:16 e tramonto alle 18:33.
 
-L'app non tiene conto dell'orizzonte reale: in una valle stretta il sole arriva più tardi, ma l'orario legale si riferisce all'alba astronomica.
+L'app non tiene conto dell'orizzonte reale: in una valle stretta il sole arriva più tardi, ma la formula usa il sorgere convenzionale del sole a un orizzonte standard (non il crepuscolo astronomico). Non certifica l’illuminazione del sentiero.
 
 ### Giorno della settimana e festivi
 
@@ -281,7 +270,7 @@ folla = notorietà × peso_giorno × (0,45 + 0,55 × passaparola) × (0,6 + 0,4 
 - `buttata appena partita`: indice di oggi ≥ 45 e indice di due giorni prima < 30.
 - Livelli: alto da 0,5, medio da 0,25, basso sotto.
 
-Con la preferenza **Poca gente** (nelle versioni precedenti *Evita la folla*) l'indice mostrato viene moltiplicato per `1 − 0,45 × folla`, quindi perde fino al 45%.
+Con la preferenza **Poca gente** (nelle versioni precedenti *Evita la folla*) la priorità in classifica viene moltiplicata per `1 − 0,45 × folla`, con un effetto massimo del 45% sull’ordine; il valore biologico rimane invariato.
 
 **Etichetta: Euristica** in ogni sua parte. **Interpretazione** da Egli et al. (2006): in uno studio di lungo periodo in due riserve svizzere la raccolta in sé non ha ridotto le raccolte degli anni successivi, mentre il calpestio, in esperimenti precedenti richiamati dallo stesso lavoro, ha avuto effetti negativi sulla produzione di carpofori. La folla quindi conta per quello che trovi tu quel giorno (concorrenza) più che per la salute della fungaia. Non ho potuto leggere il testo integrale, quindi non riporto numeri sul calpestio.
 
@@ -303,7 +292,7 @@ Da dove vengono i dati:
 - **metri a piedi**: per ogni punto campione della Carta Forestale lo script ha chiesto a Valhalla la strada carrozzabile più vicina. L'app sceglie il punto di bosco adatto alla specie (affinità ≥ 0,6, quota compatibile ±50 m, possibilmente entro ±150 m dalla fascia) che minimizza `distanza + 300 × fondo`. La distanza è **in linea d'aria**, non lungo un sentiero, e non tiene conto del dislivello.
 - **pesi e soglie**: **Euristica**.
 
-Con la preferenza **Accesso comodo** (prima *Preferisci accessi comodi*) l'indice mostrato viene moltiplicato per `0,55 + 0,45 × comodità`. Con **Vicino a Rieti** (prima *Pesa la distanza da Rieti*) viene moltiplicato per `1 − 0,3 × min(1, minuti / 120)`.
+Con la preferenza **Accesso comodo** (prima *Preferisci accessi comodi*) la priorità in classifica viene moltiplicata per `0,55 + 0,45 × comodità`. Con **Vicino a Rieti** (prima *Pesa la distanza da Rieti*) viene moltiplicato per `1 − 0,3 × min(1, minuti / 120)`.
 
 L'interfaccia, nella sezione "Come funziona l'indice", etichetta la comodità come "dati OSM". I dati di ingresso lo sono, la formula no.
 
@@ -328,9 +317,9 @@ Porcino, 10 ottobre, fascia 1300 m. Pioggia: 25 mm dodici giorni prima e 15 mm u
 | Temperatura | 0,96 | 12 °C contro un ottimo di 13 |
 | Suolo | 0,84 | 0,22 m³/m³ |
 | Gelo, caldo, shock | 1 | nessun evento |
-| **Indice** | **51** | classe "Abbastanza probabile" |
+| **Indice** | **5,1** | classe "Condizioni discrete" |
 
-L'indice resta a metà scala nonostante tutto sia favorevole: 40 mm sono una pioggia discreta, non abbondante, e la curva a saturazione del fattore pioggia arriva a 0,9 solo con circa 100 mm nella finestra. **Interpretazione**: il modello è tarato per dare valori sopra 75 solo in annate davvero piovose. Se nella pratica trovate porcini già con indice 35-40, le soglie delle classi o `eref` vanno abbassati.
+L'indice resta a metà scala nonostante tutto sia favorevole: 40 mm sono una pioggia discreta, non abbondante, e la curva a saturazione del fattore pioggia arriva a 0,9 solo con circa 100 mm nella finestra. **Interpretazione**: il modello è tarato per dare valori pubblici sopra 7,5 solo in annate davvero piovose. Se nella pratica trovate porcini già con indice 3,5–4,0, le soglie delle classi o `eref` vanno abbassati.
 
 ## Limiti
 
@@ -340,31 +329,26 @@ Messi in ordine di importanza, secondo me.
 2. **Meteo da modello, non da stazione.** Open-Meteo fornisce dati di modelli meteorologici con correzione statistica per la quota (parametro `elevation`). In montagna i temporali estivi molto locali possono essere sbagliati di decine di millimetri, e il fattore pioggia ne risente subito.
 3. **Un solo punto meteo per zona.** Le tre fasce usano la stessa coordinata (il centro della zona) con quote diverse. Un versante esposto alla pioggia e uno in ombra pluviometrica nello stesso cerchio ricevono gli stessi dati.
 4. **Cosa il modello non vede.** Esposizione e pendenza, età e struttura del bosco, diradamenti, suolo reale, microclima di valle, singole fungaie, pressione di raccolta reale. Salerni et al. (2023) mostrano che la gestione forestale cambia la risposta al caldo: è un esempio concreto di variabile che manca.
-5. **Specie diverse dal porcino.** Ottimi termici, latenze e affinità sono euristiche. Per ovolo, finferlo, chiodino e le specie di pineta il modello ha la forma giusta ma numeri non verificati.
+5. **Specie diverse dal porcino.** Ottimi termici, latenze e affinità sono euristiche. Per ovolo, finferlo, chiodino e le specie di pineta anche la struttura comune va confrontata con risposte specifiche per specie e gruppo trofico.
 6. **Stagionalità rigida.** I pesi mensili non si adattano agli anni anomali né alla tendenza documentata verso stagioni più lunghe.
-7. **Indice relativo, non quantità.** 70 non vuol dire "il doppio dei funghi di 35". Vuol dire "condizioni più vicine all'ottimo".
+7. **Indice relativo, non quantità.** 7,0 non vuol dire "il doppio dei funghi di 3,5". Vuol dire "condizioni più vicine all'ottimo".
 8. **Affollamento e comodità non misurati.** Sono stime ragionevoli, non osservazioni.
 
-## Come calibrarlo con il diario
+## Il taccuino personale e la community
 
-Il diario esiste per questo. Al salvataggio di ogni uscita l'app memorizza, oltre a cosa avete trovato, l'indice che il modello prevedeva per ogni specie quel giorno in quella zona (alla quota indicata, oppure alla migliore delle tre se non la indicate). Poi confronta: se l'indice massimo previsto era almeno 30 (`FOUND_THRESHOLD` in `js/journal.js`) il modello "diceva di andare"; se avete trovato almeno una specie con quantità indicata, "c'erano funghi". Da qui le tre etichette: previsione giusta, ottimista, pessimista.
+Il diario è privato per il profilo autenticato con passkey. Una voce rimane personale finché l’utente sceglie di condividere i dati della ricerca. La community vede solo conteggi aggregati per zona approssimativa e specie; nomi, note e punti GPS non vengono pubblicati.
 
-Il confronto automatico è grossolano per costruzione: usa il massimo su tutte le specie, quindi un'uscita in cui il modello prometteva porcini e avete trovato solo chiodini risulta "giusta". Per tarare davvero servono i dati per specie, che sono comunque salvati in ogni voce (`predicted` e `finds`).
+Le segnalazioni contengono quantità ordinali (pochi, discreti, tanti) e zeri espliciti per le specie cercate. Sono dichiarazioni degli utenti, non identificazioni certificate, conteggi standardizzati o misure di abbondanza. Un contributore conta al massimo una volta per zona, specie e giorno; una nuova segnalazione aggiorna la precedente. I dati storici condivisi possono servire alla futura validazione; solo gli ultimi sette giorni influenzano le priorità attuali.
 
-Un procedimento che consiglio (**Parere**):
+Un segnale entra nell’ordine delle passeggiate con almeno tre contributori i cui profili hanno almeno 24 ore, su almeno due giorni distinti. Il moltiplicatore è `1 + 0,1 × (ritrovamenti − zeri) / osservazioni × min(1, contributori / 10)`, scegliendo il segnale di maggiore ampiezza tra le specie selezionate, senza sommare bonus. L’effetto è limitato a ±10%. Sono euristiche di priorità, senza interpretazione probabilistica. Passkey, limiti di frequenza e deduplicazione riducono abusi e duplicati; non provano l’indipendenza dei contributori o la correttezza dei ritrovamenti.
 
-1. **Registrate anche le uscite a vuoto.** Senza i "niente funghi" non si distingue un modello buono da uno sempre ottimista.
-2. **Indicate la quota quando la sapete.** La previsione salvata sarà quella della fascia, non la migliore della zona.
-3. **Aspettate almeno 15-20 uscite** prima di cambiare parametri. Con meno, si rincorre il rumore.
-4. **Guardate prima gli errori sistematici.**
-   - Molte previsioni ottimiste in estate: il caldo pesa più di quanto il modello creda (abbassate `heatC` o la penalità) oppure l'ottimo termico della specie è troppo alto.
-   - Molte pessimiste a fine stagione: allungate i pesi mensili di novembre o abbassate `topt` delle specie tardive.
-   - Trovate funghi a indice 20-30 con regolarità: le soglie delle classi in `CLASSES` o `FOUND_THRESHOLD` sono troppo alte, oppure `eref` è troppo grande.
-   - Sbagli concentrati in una zona: guardate la composizione forestale della fascia (scheda zona) e le affinità della specie.
-5. **Cambiate un parametro alla volta** e annotate cosa avete cambiato. Il diario salva l'indice previsto con i parametri del momento, quindi il confronto delle uscite vecchie resta quello del vecchio modello.
-6. **Esportate il diario** (JSON) prima di grosse modifiche: è il vostro dataset.
+## Come costruire la validazione
 
-Nella versione Artifact il diario sta nel database privato della pagina e può essere letto da Claude per proporre una taratura sulla base delle uscite reali.
+Prima della passeggiata si possono salvare indice, parametri, versione del modello, input meteo e habitat. Nel servizio collettivo la previsione è immutabile e datata dal server. Dopo l’uscita si annotano specie effettivamente cercate, inizio, durata, numero di cercatori e quantità. Per una specie cercata senza ritrovamenti lo zero è esplicito; per una specie non cercata il dato è mancante. La verifica dipende da orari e osservazioni dichiarati dall’utente, non certificati.
+
+Il confronto automatico è per specie e richiede una previsione salvata prima dell’inizio dichiarato. Una ricostruzione a posteriori o una vecchia voce senza provenance non viene chiamata previsione corretta. La soglia esplorativa è 3,0/10 (30 nella scala interna), non calibrata. I conteggi di concordanza non misurano accuratezza scientifica e non trattano uscite della stessa buttata come indipendenti.
+
+La futura taratura richiede riferimenti semplici (calendario e habitat; pioggia e temperatura), confronto con il modello completo, separazione per periodo/sito, valutazione su uscite future e controllo degli errori per specie e sforzo. Quindici o venti uscite possono suggerire ipotesi, ma non bastano a validare tutte le specie e i coefficienti. Le segnalazioni modificano oggi la priorità; i parametri biologici non vengono addestrati automaticamente su segnalazioni non verificate.
 
 ## Riferimenti
 
@@ -377,9 +361,9 @@ Studi peer-reviewed, verificati (ho controllato almeno titolo, autori, rivista e
 - Salerni E., Laganà A., Perini C., Loppi S., De Dominicis V. (2002). *Effects of temperature and rainfall on fruiting of macrofungi in oak forests of the Mediterranean area*. Israel Journal of Plant Sciences 50(3): 189-198. https://doi.org/10.1092/GV8J-VPKL-UV98-WVU1 ; https://usiena-air.unisi.it/handle/11365/3048
 - Salerni E., Paoli L., Perini C. (2023). *Combined impact of forest management and climate change on Boletus edulis productivity: may mycosilviculture mitigate the effects of climate extremes?* Italian Journal of Mycology 52(1): 76-88. https://doi.org/10.6092/issn.2531-7342/16464
 
-Preprint (non revisionato):
+Versione bibliografica usata dal codice:
 
-- Brejon Lamartinière E., Hoffman J.I. (2025; v2 8 giugno 2026). *Predicting porcini: a decade of sporocarp monitoring reveals the meteorological triggers of Boletus edulis fruiting in central European beech forests*. bioRxiv, preprint non revisionato, CC BY-NC 4.0. https://doi.org/10.64898/2025.12.12.693895 — v2: https://www.biorxiv.org/content/10.64898/2025.12.12.693895v2.full (letta per sezioni il 12/10/2026, vedi `inbox/README.md`).
+- Brejon Lamartinière E., Hoffman J.I. (2025; v2 8 giugno 2026). *Predicting porcini: a decade of sporocarp monitoring reveals the meteorological triggers of Boletus edulis fruiting in central European beech forests*. bioRxiv v2, CC BY-NC 4.0; pagina degli autori: in stampa su Fungal Ecology. https://doi.org/10.64898/2025.12.12.693895 — v2: https://www.biorxiv.org/content/10.64898/2025.12.12.693895v2.full (letta per sezioni il 12/10/2026, vedi `inbox/README.md`).
 
 Dati e servizi:
 

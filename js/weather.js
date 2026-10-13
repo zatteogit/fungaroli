@@ -5,8 +5,10 @@
 const API = 'https://api.open-meteo.com/v1/forecast';
 export const PAST_DAYS = 62;
 export const FORECAST_DAYS = 8;
-const CACHE_KEY = 'fungaroli:weather:v1';
+const CACHE_KEY = 'fungaroli:weather:v2';
 const CACHE_TTL_MS = 60 * 60 * 1000;
+export const MAX_FORECAST_AGE_MS = 24 * 60 * 60 * 1000;
+const finite = (v) => Number.isFinite(v) ? v : null;
 
 // anyAge: senza rete va bene anche un meteo vecchio, purche' per le stesse zone e quote
 function readCache(sig, anyAge = false) {
@@ -23,35 +25,36 @@ function writeCache(sig, data) {
   try { localStorage.setItem(CACHE_KEY, JSON.stringify({ sig, t: Date.now(), data })); } catch { /* quota o privato */ }
 }
 
-export function toDaily(loc, todayStr) {
+export function toDaily(loc, todayStr, source = {}) {
   const d = loc.daily;
-  const h = loc.hourly;
+  const h = loc.hourly || {};
   const byDay = {};
-  h.time.forEach((t, k) => {
+  (h.time || []).forEach((t, k) => {
     const day = t.slice(0, 10);
     const b = (byDay[day] ||= { m: 0, n: 0, st: 0, ns: 0 });
-    const sm = h.soil_moisture_3_to_9cm[k];
-    const st = h.soil_temperature_6cm[k];
-    if (sm != null) { b.m += sm; b.n++; }
-    if (st != null) { b.st += st; b.ns++; }
+    const sm = h.soil_moisture_3_to_9cm?.[k];
+    const st = h.soil_temperature_6cm?.[k];
+    if (Number.isFinite(sm) && sm >= 0 && sm <= 1) { b.m += sm; b.n++; }
+    if (Number.isFinite(st)) { b.st += st; b.ns++; }
   });
   const dates = d.time;
   return {
     dates,
-    p: d.precipitation_sum.map((v) => v ?? 0),
-    tmean: d.temperature_2m_mean,
-    tmin: d.temperature_2m_min,
-    tmax: d.temperature_2m_max,
-    soilm: dates.map((x) => (byDay[x]?.n ? byDay[x].m / byDay[x].n : null)),
-    soilt: dates.map((x) => (byDay[x]?.ns ? byDay[x].st / byDay[x].ns : null)),
-    todayIndex: Math.max(0, dates.indexOf(todayStr)),
+    p: dates.map((_, k) => d.precipitation_sum?.[k] >= 0 ? finite(d.precipitation_sum[k]) : null),
+    tmean: dates.map((_, k) => finite(d.temperature_2m_mean?.[k])),
+    tmin: dates.map((_, k) => finite(d.temperature_2m_min?.[k])),
+    tmax: dates.map((_, k) => finite(d.temperature_2m_max?.[k])),
+    soilm: dates.map((x) => (byDay[x]?.n >= 24 ? byDay[x].m / byDay[x].n : null)),
+    soilt: dates.map((x) => (byDay[x]?.ns >= 24 ? byDay[x].st / byDay[x].ns : null)),
+    todayIndex: dates.indexOf(todayStr),
+    issuedIndex: dates.indexOf(source.fetchedAt ? todayISO(new Date(source.fetchedAt)) : todayStr),
+    source: { ...source, latitude: loc.latitude, longitude: loc.longitude, elevation: loc.elevation,
+      dailyUnits: loc.daily_units || {}, hourlyUnits: loc.hourly_units || {}, models: 'Open-Meteo auto' },
   };
 }
 
-export function todayISO() {
-  const d = new Date();
-  const z = (n) => String(n).padStart(2, '0');
-  return `${d.getFullYear()}-${z(d.getMonth() + 1)}-${z(d.getDate())}`;
+export function todayISO(d = new Date()) {
+  return new Intl.DateTimeFormat('en-CA', { year: 'numeric', month: '2-digit', day: '2-digit', timeZone: 'Europe/Rome' }).format(d);
 }
 
 // Ritorna { [zoneId]: [serie per ciascuna fascia di quota] } e l'ora di aggiornamento.
@@ -61,14 +64,20 @@ export async function loadWeather(zones, { force = false } = {}) {
   const snap = globalThis.FUNGAROLI_DATA?.weather || globalThis.FUNGAROLI_REVIEW?.weather;
   if (snap) {
     const today = todayISO();
-    let stale = false;
+    const fetchedAt = new Date(snap.fetchedAt);
+    const age = Date.now() - fetchedAt.getTime();
+    let stale = !Number.isFinite(age) || age > CACHE_TTL_MS;
     for (const zid in snap.series) {
       for (const s of snap.series[zid]) {
         const i = s.dates.indexOf(today);
-        if (i >= 0) s.todayIndex = i; else stale = true;
+        s.todayIndex = i;
+        if (i < 0) stale = true;
+        s.issuedIndex ??= Number.isFinite(age) ? s.dates.indexOf(todayISO(fetchedAt)) : -1;
+        s.source = { ...s.source, fetchedAt: snap.fetchedAt,
+          expired: !Number.isFinite(age) || age > MAX_FORECAST_AGE_MS, snapshot: true };
       }
     }
-    return { series: snap.series, fetchedAt: new Date(snap.fetchedAt), snapshot: true, stale };
+    return { series: snap.series, fetchedAt, snapshot: true, stale };
   }
 
   const locs = [];
@@ -92,7 +101,7 @@ export async function loadWeather(zones, { force = false } = {}) {
       forecast_days: FORECAST_DAYS,
       timezone: 'Europe/Rome',
     });
-    const res = await fetch(`${API}?${params}`);
+    const res = await fetch(`${API}?${params}`, { cache: 'no-store' });
     if (!res.ok) throw new Error(`Open-Meteo HTTP ${res.status}`);
     raw = await res.json();
     if (!Array.isArray(raw)) raw = [raw];
@@ -107,8 +116,13 @@ export async function loadWeather(zones, { force = false } = {}) {
   }
 
   const out = {};
+  const expired = Date.now() - fetchedAt.getTime() > MAX_FORECAST_AGE_MS;
   locs.forEach((l, k) => {
-    (out[l.zid] ||= [])[l.bi] = toDaily(raw[k], today);
+    if (!raw[k]?.daily?.time) throw new Error('Serie meteo incompleta');
+    (out[l.zid] ||= [])[l.bi] = toDaily(raw[k], today, {
+      fetchedAt: fetchedAt.toISOString(), expired, requested: { latitude: l.lat, longitude: l.lon, elevation: l.band },
+    });
   });
-  return { series: out, fetchedAt, offline };
+  const stale = offline || expired || Object.values(out).some((ss) => ss.some((s) => s.todayIndex < 0));
+  return { series: out, fetchedAt, offline, stale };
 }

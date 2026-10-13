@@ -4,44 +4,86 @@
 
 import { SPECIES } from './species.js';
 import { intornoA } from './human.js';
+import { formatIndex } from './model.js';
+import { todayISO } from './weather.js';
+import { communityReady, communityEnabled, currentUser, communityRequest, shareDiaryEntry } from './community.js';
 
 const KEY = 'fungaroli:diario:v1';
 export const LEVELS = ['', 'Pochi', 'Discreti', 'Tanti'];
-export const FOUND_THRESHOLD = 30; // indice da cui il modello "dice di andare"
+export const FOUND_THRESHOLD = 30; // soglia esplorativa 3,0/10, non calibrata
 
 // --- funzioni pure (testabili) ------------------------------------------------
 
 // Il modello e' d'accordo con l'uscita? Confronta l'indice massimo previsto
 // (solo specie con previsione) con l'aver trovato o meno qualcosa.
+export function speciesAgreement(entry) {
+  const captured = Date.parse(entry.forecast?.capturedAt);
+  const started = Date.parse(entry.effort?.startedAt);
+  if (entry.kind === 'plan' || entry.forecast?.mode !== 'prospective' || !Number.isFinite(captured)
+      || !Number.isFinite(started) || captured >= started || !Array.isArray(entry.searched)) return [];
+  return [...new Set(entry.searched)].flatMap((id) => {
+    const predicted = entry.predicted?.[id], observed = entry.finds?.[id];
+    if (!Number.isFinite(predicted) || !Number.isFinite(observed)) return [];
+    const said = predicted >= FOUND_THRESHOLD, found = observed > 0;
+    return [{ id, predicted, said, found, ok: said === found }];
+  });
+}
+
 export function agreement(entry) {
-  const scores = Object.values(entry.predicted || {});
-  if (!scores.length) return null;
-  const said = Math.max(...scores) >= FOUND_THRESHOLD;
-  const found = Object.values(entry.finds || {}).some((l) => l > 0);
-  return { said, found, ok: said === found };
+  const species = speciesAgreement(entry);
+  if (!species.length) return null;
+  return { species, ok: species.every((s) => s.ok),
+    missed: species.filter((s) => !s.said && s.found).length,
+    falseAlarm: species.filter((s) => s.said && !s.found).length };
 }
 
 export function summary(entries) {
-  const judged = entries.map(agreement).filter(Boolean);
+  const outings = entries.filter((e) => e.kind !== 'plan');
+  const judged = outings.flatMap(speciesAgreement);
   return {
-    total: entries.length,
+    total: outings.length,
     judged: judged.length,
     ok: judged.filter((a) => a.ok).length,
-    missed: judged.filter((a) => !a.said && a.found).length,      // trovati ma il modello diceva di no
-    falseAlarm: judged.filter((a) => a.said && !a.found).length,  // il modello diceva si', niente funghi
+    missed: judged.filter((a) => !a.said && a.found).length,
+    falseAlarm: judged.filter((a) => a.said && !a.found).length,
   };
 }
 
 // --- archivio -----------------------------------------------------------------
 
-function localStore() {
-  const read = () => { try { return JSON.parse(localStorage.getItem(KEY) || '[]'); } catch { return []; } };
-  const write = (list) => { localStorage.setItem(KEY, JSON.stringify(list)); };
+function localStore(key = KEY) {
+  const read = () => { try { return JSON.parse(localStorage.getItem(key) || '[]'); } catch { return []; } };
+  const write = (list) => { localStorage.setItem(key, JSON.stringify(list)); };
   return {
     kind: 'local',
     async list() { return read(); },
+    async replace(list) { write(list); },
     async put(e) { write([...read().filter((x) => x.id !== e.id), e]); },
     async remove(id) { write(read().filter((x) => x.id !== id)); },
+  };
+}
+
+function collectiveStore() {
+  const account = currentUser();
+  const local = localStore('fungaroli:diario:account:' + account.id);
+  return { kind: 'community', ownerId: account.id,
+    async list() {
+      try {
+        if (currentUser()?.id !== account.id) throw Object.assign(new Error('Profilo cambiato.'), { status: 401 });
+        const entries = (await communityRequest('entries')).entries;
+        if (currentUser()?.id !== account.id) throw Object.assign(new Error('Profilo cambiato.'), { status: 401 });
+        await local.replace(entries); return entries;
+      }
+      catch (e) { if (e.status === 401) throw e; return local.list(); }
+    },
+    async put(e) {
+      if (currentUser()?.id !== account.id) throw new Error('Profilo cambiato: riapri il diario.');
+      await local.put(e);
+      if (currentUser()?.id !== account.id) throw new Error('Profilo cambiato: riapri il diario.');
+      const saved = await communityRequest('entries/' + e.id, 'PUT', e);
+      if (saved.entry) { Object.assign(e, saved.entry); await local.put(e); }
+    },
+    async remove(id) { if (currentUser()?.id !== account.id) throw new Error('Profilo cambiato.'); await communityRequest('entries/' + id, 'DELETE'); await local.remove(id); },
   };
 }
 
@@ -95,6 +137,8 @@ function remoteStore(token) {
 }
 
 async function openStore() {
+  await communityReady();
+  if (communityEnabled() && currentUser()) return collectiveStore();
   const use = globalThis.claude?.use;
   if (typeof use === 'function') {
     try {
@@ -109,22 +153,23 @@ async function openStore() {
 // --- interfaccia --------------------------------------------------------------
 
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
-const iso = (d) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+const iso = todayISO;
 const fmt = (s) => new Date(s + 'T12:00:00').toLocaleDateString('it-IT', { weekday: 'short', day: 'numeric', month: 'short', year: 'numeric' });
 
-export function initJournal({ zones, predict, getZoneId, zoneImage = () => '' }) {
+export function initJournal({ zones, predict, captureForecast, getZoneId, zoneImage = () => '' }) {
   const dlg = document.getElementById('journal-dialog');
   const body = dlg.querySelector('.wiz-body');
   const list = document.getElementById('journal-list');
   let entries = [];
   let store = null;
   let draft, step;
+  let listMessage = '';
   const sortEntries = () => entries.sort((a, b) => b.date.localeCompare(a.date) || b.savedAt.localeCompare(a.savedAt));
 
-  const STEPS = ['dove', 'quando', 'quota', 'cosa', 'nota'];
+  const STEPS = ['dove', 'quando', 'quota', 'ricerca', 'cosa', 'nota'];
 
   function open() {
-    draft = { zoneId: getZoneId(), date: iso(new Date()), band: undefined, finds: {}, note: '' };
+    draft = { zoneId: getZoneId(), date: iso(new Date()), band: undefined, finds: {}, searched: [], effort: {}, note: '' };
     step = 0;
     render();
     dlg.showModal();
@@ -201,10 +246,21 @@ export function initJournal({ zones, predict, getZoneId, zoneImage = () => '' })
         draft.band, (v) => { draft.band = v; next(); }));
     }
 
+    if (s === 'ricerca') {
+      shell('Come hai cercato?', 'Indica le specie cercate, anche quando non le hai trovate. Le altre restano non osservate.',
+        `<div class="filter-panel-groups">${SPECIES.map((sp) => `<button type="button" class="chip" data-searched="${sp.id}" aria-pressed="${draft.searched.includes(sp.id)}">${esc(sp.name)}</button>`).join('')}</div>
+         <label>Inizio ricerca (ora del dispositivo) <input class="wiz-input" type="datetime-local" data-effort="startedAt" value="${esc(draft.effort.startedAt || '')}" min="${draft.date}T00:00" max="${draft.date}T23:59"></label>
+         <label>Minuti di ricerca <input class="wiz-input" type="number" min="1" max="1440" data-effort="minutes" value="${draft.effort.minutes || ''}"></label>
+         <label>Numero di cercatori <input class="wiz-input" type="number" min="1" max="100" data-effort="people" value="${draft.effort.people || ''}"></label>
+         <p class="small muted">Orario e sforzo sono facoltativi. Il confronto per specie richiede una previsione salvata prima dell'inizio della ricerca.</p>`);
+      body.querySelectorAll('[data-searched]').forEach((b) => b.addEventListener('click', () => { const id = b.dataset.searched; draft.searched = draft.searched.includes(id) ? draft.searched.filter((x) => x !== id) : [...draft.searched, id]; render(); }));
+      body.querySelectorAll('[data-effort]').forEach((inp) => inp.addEventListener('input', () => { draft.effort[inp.dataset.effort] = inp.value; }));
+    }
+
     if (s === 'cosa') {
       const pred = predict(draft.zoneId, draft.date, draft.band) || {};
       const sorted = [...SPECIES].sort((a, b) => (pred[b.id] ?? -1) - (pred[a.id] ?? -1));
-      const showAll = draft.showAll || sorted.slice(6).some((sp) => draft.finds[sp.id]);
+      const showAll = draft.showAll || sorted.slice(6).some((sp) => draft.finds[sp.id] || draft.searched.includes(sp.id));
       const shown = showAll ? sorted : sorted.slice(0, 6);
       const rows = shown.map((sp) => `
         <div class="wiz-row">
@@ -214,7 +270,7 @@ export function initJournal({ zones, predict, getZoneId, zoneImage = () => '' })
           </div>
         </div>`).join('');
       const nothing = !Object.values(draft.finds).some(Boolean);
-      shell('Cosa hai trovato?', 'Tocca la quantità solo per quello che hai raccolto. Se non hai trovato niente, vai avanti.',
+      shell('Cosa hai trovato?', 'Indica i ritrovamenti. Per le specie che hai dichiarato di cercare, nessuna quantità significa zero; per le altre significa non osservata.',
         rows + (showAll ? '' : '<button type="button" class="link-btn" data-act="all">Mostra altre specie</button>'),
         { nextLabel: nothing ? 'Niente funghi, avanti' : 'Avanti' });
       body.querySelectorAll('.seg button').forEach((b) => b.addEventListener('click', () => {
@@ -232,57 +288,80 @@ export function initJournal({ zones, predict, getZoneId, zoneImage = () => '' })
         : 'niente funghi';
       shell('Vuoi aggiungere una nota?', 'Facoltativo: esposizione, tipo di bosco, com\'era il terreno…',
         `<p class="wiz-recap"><b>${esc(zone.name)}</b> · ${fmt(draft.date)}${draft.band ? ` · ${draft.band} m` : ''}<br>${esc(recap)}</p>
-         <textarea class="wiz-input" rows="3" placeholder="Es. versante nord, faggeta, terreno umido">${esc(draft.note)}</textarea>`,
+         <textarea class="wiz-input" rows="3" placeholder="Es. versante nord, faggeta, terreno umido">${esc(draft.note)}</textarea>
+         ${store?.kind === 'community' ? `<label class="small"><input type="checkbox" data-share${draft.share ? ' checked' : ''}> Condividi dati della ricerca, zona, giorno, specie e quantità per migliorare i suggerimenti. Le note restano private.</label>` : '<p class="small muted">Questa uscita resta su questo dispositivo. Puoi creare un profilo per tenere il diario privato online e scegliere cosa segnalare.</p>'}`,
         { nextLabel: 'Salva uscita' });
       body.querySelector('textarea').addEventListener('input', (e) => { draft.note = e.target.value; });
+      body.querySelector('[data-share]')?.addEventListener('change', (e) => { draft.share = e.target.checked; });
     }
   }
 
   async function save() {
+    const startedAt = draft.effort.startedAt ? new Date(draft.effort.startedAt).toISOString() : null;
+    const plan = entries.filter((e) => e.kind === 'plan' && e.zoneId === draft.zoneId && e.date === draft.date
+      && Date.parse(e.forecast?.capturedAt) < Date.parse(startedAt)).sort((a, b) => b.savedAt.localeCompare(a.savedAt))[0];
+    const forecast = plan ? { ...plan.forecast, mode: 'prospective', planId: plan.id }
+      : { mode: 'retrospective', capturedAt: new Date().toISOString() };
+    const predicted = plan ? (draft.band == null ? plan.forecast.scores : plan.forecast.scoresByBand?.[draft.band] || {})
+      : predict(draft.zoneId, draft.date, draft.band) || {};
     const entry = {
       id: Date.now().toString(36),
       date: draft.date,
       zoneId: draft.zoneId,
       band: draft.band ?? null,
-      finds: Object.fromEntries(Object.entries(draft.finds).filter(([, l]) => l)),
+      kind: 'outing', searched: draft.searched,
+      effort: { startedAt, minutes: +draft.effort.minutes || null, people: +draft.effort.people || null },
+      finds: { ...Object.fromEntries(draft.searched.map((id) => [id, 0])), ...Object.fromEntries(Object.entries(draft.finds).filter(([, l]) => l)) },
       note: draft.note.trim(),
-      predicted: predict(draft.zoneId, draft.date, draft.band) || {},
+      predicted, forecast,
       savedAt: new Date().toISOString(),
     };
     let ok = true;
-    try { await store.put(entry); } catch { ok = false; }
+    let shared = false, shareError = '';
+    try {
+      await store.put(entry);
+      if (draft.share && store.kind === 'community') {
+        try { shared = await shareDiaryEntry(entry); } catch (e) { shareError = e.message; }
+      }
+    } catch { ok = false; }
     entries = [entry, ...entries];
     sortEntries();
     body.innerHTML = `<div class="wiz-done"><p class="wiz-big">✓</p><h2 class="wiz-title">Uscita salvata</h2>
       ${ok ? '' : '<p class="notice">Non sono riuscito a salvarla in modo permanente: esporta subito il diario.</p>'}
+      ${shared ? '<p>Osservazioni aggiunte ai conteggi della community.</p>' : ''}${shareError ? `<p class="notice">Diario salvato, condivisione non completata: ${esc(shareError)}</p>` : ''}
       <div class="wiz-nav"><span></span><button type="button" class="btn primary" data-act="close">Chiudi</button></div></div>`;
     body.querySelector('[data-act="close"]').addEventListener('click', () => dlg.close());
     renderList();
   }
 
-  function renderList(msg = '') {
+  function renderList(msg) {
+    if (msg !== undefined) listMessage = msg;
+    msg = listMessage;
     if (!store) { list.innerHTML = '<p class="muted">Carico il diario…</p>'; return; }
     const sm = summary(entries);
     const head = entries.length
-      ? `<p class="j-sum">${sm.total} ${sm.total === 1 ? 'uscita' : 'uscite'}${sm.judged ? ` · il modello ci ha preso <b>${sm.ok} su ${sm.judged}</b>` : ''}
-         ${sm.falseAlarm ? ` · ${sm.falseAlarm} volte ha promesso troppo` : ''}${sm.missed ? ` · ${sm.missed} volte è stato troppo pessimista` : ''}</p>`
+      ? `<p class="j-sum">${sm.total} ${sm.total === 1 ? 'uscita' : 'uscite'}${sm.judged ? ` · concordanze esplorative per specie: <b>${sm.ok} su ${sm.judged}</b>` : ''}
+         ${sm.falseAlarm ? ` · ${sm.falseAlarm} falsi allarmi` : ''}${sm.missed ? ` · ${sm.missed} ritrovamenti con indice basso` : ''}</p><p class="small muted">Confronto a soglia 3,0 su 10, non calibrata. Le osservazioni non sono indipendenti: questi conteggi non misurano l'accuratezza scientifica.</p>`
       : `<div class="j-empty">${zoneImage('laga') ? `<img src="${zoneImage('laga')}" alt="" loading="lazy" decoding="async">` : ''}<span class="shade"></span>
           <div class="j-empty-body"><b>Il primo giro è il più utile</b><span>Dopo ogni uscita segna cosa hai trovato, anche niente: in pochi tocchi capisci se il modello funziona nei tuoi boschi.</span>
           <button type="button" class="btn light big" data-open-journal-inline>＋ Registra un'uscita</button></div></div>`;
     const rows = entries.map((e) => {
       const z = zones.find((x) => x.id === e.zoneId);
-      const found = Object.entries(e.finds).map(([id, l]) => `${SPECIES.find((x) => x.id === id)?.name ?? id} (${LEVELS[l].toLowerCase()})`).join(', ') || 'niente';
+      const found = Object.entries(e.finds || {}).filter(([, l]) => l > 0).map(([id, l]) => `${SPECIES.find((x) => x.id === id)?.name ?? id} (${LEVELS[l]?.toLowerCase() || l})`).join(', ') || 'nessun ritrovamento annotato';
       const a = agreement(e);
-      const top = Object.entries(e.predicted || {}).sort((x, y) => y[1] - x[1])[0];
-      const badge = a ? `<span class="tag ${a.ok ? 'ok' : 'warn'}">${a.ok ? 'previsione giusta' : a.said ? 'previsione ottimista' : 'previsione pessimista'}</span>` : '<span class="tag">fuori dal periodo meteo</span>';
+      const top = Object.entries(e.predicted || {}).filter(([, v]) => Number.isFinite(v)).sort((x, y) => y[1] - x[1])[0];
+      const badge = e.kind === 'plan' ? '<span class="tag">previsione salvata prima dell’uscita</span>'
+        : a ? a.species.map((x) => `<span class="tag ${x.ok ? 'ok' : 'warn'}">${esc(SPECIES.find((s) => s.id === x.id)?.name || x.id)}: ${x.ok ? 'concordante' : x.said ? 'indice alto, zero osservato' : 'trovata con indice basso'}</span>`).join(' ')
+          : '<span class="tag">osservazione senza confronto prospettico</span>';
       const img = zoneImage(e.zoneId);
       return `<li class="j-item">
         <span class="j-img">${img ? `<img src="${img}" alt="" loading="lazy" decoding="async">` : ''}</span>
         <div class="j-body">
           <div class="j-top"><b>${esc(z?.title ?? z?.name ?? e.zoneId)}</b><span class="muted small">${fmt(e.date)}${e.band ? ` · ${e.band} m` : ''}</span></div>
-          <div class="small">Trovato: ${esc(found)}${top ? ` · previsto ${top[1]} (${esc(SPECIES.find((x) => x.id === top[0])?.name ?? '')})` : ''}</div>
+          <div class="small">${e.kind === 'plan' ? 'Piano' : 'Trovato: ' + esc(found)}${top ? ` · indice ${formatIndex(top[1])} (${esc(SPECIES.find((x) => x.id === top[0])?.name ?? '')})` : ''}</div>
           <div>${badge}</div>
           ${e.note ? `<div class="small muted">${esc(e.note)}</div>` : ''}
+          ${store.kind === 'community' && e.kind !== 'plan' ? `<button type="button" class="link-btn small" data-share-entry="${e.id}">Condividi osservazioni</button> <button type="button" class="link-btn small" data-withdraw-entry="${e.id}">Ritira segnalazioni</button>` : ''}
           <button type="button" class="link-btn small" data-del="${e.id}">Elimina</button>
         </div>
       </li>`;
@@ -290,6 +369,15 @@ export function initJournal({ zones, predict, getZoneId, zoneImage = () => '' })
     list.innerHTML = (msg ? `<p class="notice">${esc(msg)}</p>` : '') + head + (rows ? `<ul class="j-list">${rows}</ul>` : '');
     list.querySelector('[data-open-journal-inline]')?.addEventListener('click', open);
     document.querySelector('[data-open-journal]').hidden = !entries.length;
+    list.querySelectorAll('[data-share-entry]').forEach((b) => b.addEventListener('click', async () => {
+      b.disabled = true;
+      try { await shareDiaryEntry(entries.find((e) => e.id === b.dataset.shareEntry)); renderList('Osservazioni condivise: zona, giorno, specie e quantità. Le note restano private.'); }
+      catch (e) { renderList(e.message); }
+    }));
+    list.querySelectorAll('[data-withdraw-entry]').forEach((b) => b.addEventListener('click', async () => {
+      try { await communityRequest('reports', 'DELETE', { entryId: b.dataset.withdrawEntry }); document.dispatchEvent(new CustomEvent('fungaroli:refresh-community')); renderList('Segnalazioni ritirate. L’uscita resta nel diario privato.'); }
+      catch (e) { renderList(e.message); }
+    }));
     // conferma in pagina: primo tocco arma, secondo elimina
     list.querySelectorAll('[data-del]').forEach((b) => b.addEventListener('click', async () => {
       if (b.dataset.armed !== '1') {
@@ -305,7 +393,7 @@ export function initJournal({ zones, predict, getZoneId, zoneImage = () => '' })
   }
 
   async function exportFile() {
-    const json = JSON.stringify({ version: 1, entries }, null, 1);
+    const json = JSON.stringify({ version: 2, internalScoreScale: '0–100', displayScoreScale: '0–10', entries }, null, 1);
     const filename = `diario-funghi-${iso(new Date())}.json`;
     const downloads = typeof globalThis.claude?.use === 'function' ? await globalThis.claude.use('downloads') : null;
     if (downloads) {
@@ -370,7 +458,16 @@ export function initJournal({ zones, predict, getZoneId, zoneImage = () => '' })
   const loadQr = () => qrLib || (qrLib = new Promise((ok, ko) => { if (globalThis.qrcode) return ok(); const sc = document.createElement('script'); sc.src = 'https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js'; sc.onload = ok; sc.onerror = ko; document.head.append(sc); }));
 
   function renderStorage(remote) {
-    if (store.kind === 'db') {
+    if (store.kind === 'community') {
+      storageBox.innerHTML = `<p>Diario privato di <b>${esc(currentUser()?.handle || 'questo profilo')}</b>, sincronizzato con la passkey. Le condivisioni sono facoltative.</p><button type="button" class="btn ghost" data-community-account>Gestisci il profilo</button><button type="button" class="btn ghost" data-import-local>Importa il diario di questo dispositivo</button>`;
+      storageBox.querySelector('[data-import-local]').onclick = async () => {
+        const local = await localStore().list(), ids = new Set(entries.map((e) => e.id));
+        try { for (const e of local) if (!ids.has(e.id)) await store.put(e); entries = await store.list(); sortEntries(); renderList('Diario importato nel profilo privato. Nessuna osservazione è stata condivisa automaticamente.'); }
+        catch { renderList('Importazione incompleta. La copia su questo dispositivo resta disponibile.'); }
+      };
+    } else if (communityEnabled() && store.kind === 'local') {
+      storageBox.innerHTML = '<p>Il taccuino resta su questo dispositivo. Con una passkey puoi tenerlo privato online e scegliere quali osservazioni condividere.</p><button type="button" class="btn primary" data-community-account>Crea profilo o accedi</button>';
+    } else if (store.kind === 'db') {
       storageBox.innerHTML = 'Il diario è salvato nel tuo spazio privato di questa pagina: lo ritrovi da qualsiasi dispositivo.';
     } else if (store.kind === 'remote') {
       storageBox.innerHTML = `<div class="sync-card ok"><span class="sync-ic">${PHONES}</span><div><b>Diario sincronizzato</b><p class="small">${store.offline ? 'Sei offline: vedi l\'ultima copia scaricata. ' : ''}Lo ritrovi su tutti i dispositivi collegati.</p></div></div>
@@ -415,6 +512,7 @@ export function initJournal({ zones, predict, getZoneId, zoneImage = () => '' })
 
   // link dal QR: #/diario/collega/<codice>. Il codice esce subito dalla barra degli indirizzi e dalla cronologia
   const fromLink = () => {
+    if (communityEnabled()) return; // i vecchi codici di famiglia non cambiano il proprietario del diario personale
     const m = location.hash.match(/^#\/diario\/collega\/(.+)$/);
     if (!m) return;
     let code = ''; try { code = decodeURIComponent(m[1]); } catch { return; }
@@ -427,7 +525,7 @@ export function initJournal({ zones, predict, getZoneId, zoneImage = () => '' })
   (async () => {
     let st = await openStore();
     let remote = 'none';
-    if (st.kind === 'local') {
+    if (st.kind === 'local' && !communityEnabled()) {
       const token = getToken();
       if (token) {
         const rs = remoteStore(token);
@@ -435,12 +533,33 @@ export function initJournal({ zones, predict, getZoneId, zoneImage = () => '' })
       }
       if (st.kind === 'local') remote = await probeRemote();
     }
+    if (st.kind === 'community' && st.ownerId !== currentUser()?.id) return;
     store = st;
-    try { entries = await st.list(); } catch { entries = []; }
+    let initial; try { initial = await st.list(); } catch { initial = []; }
+    if (store !== st || (st.kind === 'community' && st.ownerId !== currentUser()?.id)) return;
+    entries = initial;
     sortEntries();
     renderStorage(remote);
     renderList();
     fromLink(); // dopo l'avvio: il collegamento dal QR non deve essere sovrascritto
   })();
-  return { refresh: renderList };
+  let profileId = currentUser()?.id || null;
+  document.addEventListener('fungaroli:community', async () => {
+    const next = currentUser()?.id || null;
+    if (next === profileId) { if (store?.kind === 'community') { const loading = store; try { const fresh = await loading.list(); if (loading !== store) return; entries = fresh; sortEntries(); renderList(); } catch { /* nessuna perdita della copia locale */ } } return; }
+    profileId = next;
+    store = next ? collectiveStore() : localStore();
+    entries = []; renderList();
+    const loading = store;
+    try { const fresh = await loading.list(); if (loading !== store) return; entries = fresh; sortEntries(); renderStorage('none'); renderList(); } catch { if (loading === store) renderList('Diario non disponibile. Riprova.'); }
+  });
+  return { refresh: renderList, async savePlan(zoneId, date, band) {
+    if (!store) throw new Error('Il diario sta ancora caricando. Riprova tra poco.');
+    const forecast = captureForecast?.(zoneId, date, band);
+    if (!forecast) throw new Error('Non ci sono dati completi e aggiornati per salvare questa previsione.');
+    const entry = { id: Date.now().toString(36), kind: 'plan', zoneId, date, band, finds: {}, note: '',
+      predicted: forecast.scores, forecast, savedAt: forecast.capturedAt };
+    await store.put(entry); entries = [entry, ...entries]; sortEntries(); renderList();
+    return entry;
+  } };
 }

@@ -15,7 +15,7 @@ const esbuild = await import(process.env.ESBUILD_PATH || 'esbuild');
 
 // fetch via curl: rispetta proxy e certificati di sistema
 globalThis.fetch = async (url) => {
-  const body = execFileSync('curl', ['-sS', '--retry', '4', '--retry-all-errors', '-m', '60', String(url)], { maxBuffer: 1e9 }).toString();
+  const body = execFileSync('curl', ['--fail', '-sS', '--retry', '2', '--retry-all-errors', '-m', '30', String(url)], { maxBuffer: 1e9 }).toString();
   return { ok: true, status: 200, json: async () => JSON.parse(body) };
 };
 globalThis.localStorage = { getItem: () => null, setItem: () => {} };
@@ -37,6 +37,8 @@ for (const v of Object.values(media?.species || {})) { collect(v.ref); (v.inat |
 for (const v of Object.values(media?.lookalikes || {})) { collect(v.ref); (v.inat || []).forEach(collect); }
 const { loadWeather } = await import(path.join(ROOT, 'js/weather.js'));
 const w = await loadWeather(zones.zones, { force: true });
+const { loadOuting } = await import(path.join(ROOT, 'js/outing.js'));
+const outing = await loadOuting(zones.zones, { force: true });
 
 const bundle = await esbuild.build({
   entryPoints: [path.join(ROOT, 'js/app.js')],
@@ -61,7 +63,8 @@ const fonts = html.match(/<link rel="stylesheet" href="https:\/\/fonts\.googleap
 const body = html.match(/<body>([\s\S]*)<\/body>/)[1]
   .replace(/<script[\s\S]*?<\/script>/g, '')
   .replace('Mappe © OpenStreetMap, OpenTopoMap (CC-BY-SA). ', '');
-const data = JSON.stringify({ zones, habitat, access, trails, speciesId, media, assets, basemap, weather: { series: w.series, fetchedAt: w.fetchedAt.toISOString() } })
+const extra = Object.fromEntries(Object.entries({ legal: 'legal', traits: 'species-traits', trees: 'trees', infographics: 'infografiche', preparation: 'preparation', trailheads: 'trailheads' }).map(([k,f]) => [k, readOpt('data/' + f + '.json')]));
+const data = JSON.stringify({ zones, habitat, access, trails, speciesId, media, assets, basemap, ...extra, outing, weather: { series: w.series, fetchedAt: w.fetchedAt.toISOString() } })
   .replace(/</g, '\\u003c');
 
 const out = `${title}

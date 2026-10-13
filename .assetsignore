@@ -15,3 +15,8 @@ bun.lock
 bun.lockb
 *.py
 inbox
+
+migrations
+test-results
+playwright-report
+playwright.config.mjs

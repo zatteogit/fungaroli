@@ -9,7 +9,7 @@
 //   PUT    /api/diario/<id>     -> salva o aggiorna un'uscita (corpo JSON)
 //   DELETE /api/diario/<id>     -> elimina un'uscita
 
-const MAX_BYTES = 20_000;
+const MAX_BYTES = 250_000; // include i nuovi snapshot con modello e input meteo
 const ID_RE = /^[a-z0-9]{4,32}$/;
 
 const json = (data, status = 200) => new Response(JSON.stringify(data), {
