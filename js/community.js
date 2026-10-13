@@ -1,5 +1,6 @@
 import { SPECIES } from './species.js';
 import { todayISO } from './weather.js';
+import { mountSearchSelect } from './search-select.js';
 import { startRegistration, startAuthentication, browserSupportsWebAuthn } from './vendor/webauthn.js';
 import { communityMultiplier } from './community-signal.js';
 import {setBaseUser,mountBaseEditor} from './base-location.js';
@@ -157,29 +158,69 @@ export async function shareDiaryEntry(entry, { identificationChecked = false } =
   await refreshCommunity(); return true;
 }
 
+let reportControls = [], reportEpoch = 0;
 export async function openQuickReport(zoneId = '', speciesId = '') {
-  if (!reportDialog) { reportDialog = document.createElement('dialog'); reportDialog.className = 'community-dialog'; document.body.appendChild(reportDialog); }
+  const epoch = ++reportEpoch;
+  const origin = document.activeElement;
+  reportControls.forEach(c=>c.destroy()); reportControls=[];
+  if (!reportDialog) {
+    reportDialog = document.createElement('dialog'); reportDialog.className = 'community-dialog report-dialog'; document.body.appendChild(reportDialog);
+    addEventListener('hashchange',()=>{if(reportDialog.open)reportDialog.close();});
+  }
+  const today=todayISO(),yesterday=todayISO(new Date(Date.now()-864e5));
   reportDialog.setAttribute('aria-label', 'Segnala dal bosco');
-  reportDialog.innerHTML = `<h2>Un’osservazione dal bosco</h2><p>Aiuta chi verrà dopo di te. La zona resta approssimativa: nessun punto GPS o nome è pubblicato.</p>
-    <form><label>Zona <select class="wiz-input" name="zone">${zones.map((z) => `<option value="${z.id}"${z.id === zoneId ? ' selected' : ''}>${esc(z.title || z.name)}</option>`).join('')}</select></label>
-    <label>Specie <select class="wiz-input" name="species">${speciesCatalog.map((s) => `<option value="${s.id}"${s.id === speciesId ? ' selected' : ''}>${esc(s.name)}</option>`).join('')}</select></label>
-    <label>Quando <input class="wiz-input" type="date" name="day" value="${todayISO()}" max="${todayISO()}" required></label>
-    <fieldset><legend>Cosa hai osservato?</legend><div class="seg">${['Cercata, non trovata', 'Pochi', 'Discreti', 'Tanti'].map((l, i) => `<label><input type="radio" name="amount" value="${i}" required> ${l}</label>`).join('')}</div></fieldset>
-    <label class="small"><input type="checkbox" name="checked"> Identità controllata da un micologo (facoltativo)</label>
-    <p class="small muted">Segnala solo specie che sai riconoscere. Foto e app non certificano la commestibilità: fai controllare il raccolto prima del consumo. Quantità e ritrovamenti sono dichiarazioni degli utenti.</p>
-    <button class="btn primary big" type="submit">Condividi l’osservazione</button><button class="btn ghost" type="button" data-close>Annulla</button><p role="status" data-status></p></form>`;
-  reportDialog.querySelector('[data-close]').onclick = () => reportDialog.close();
-  reportDialog.querySelector('form').onsubmit = async (e) => {
-    e.preventDefault(); const form = e.currentTarget, data = new FormData(form), status = form.querySelector('[data-status]');
-    const submit = form.querySelector('[type="submit"]'); submit.disabled = true;
+  reportDialog.innerHTML = `<header class="report-header"><div><p class="eyebrow">Dal bosco al taccuino</p><h2>Osservazione</h2></div><button class="profile-close" type="button" data-report-dismiss aria-label="Chiudi">×</button></header>
+    <p class="report-intro">Nel tuo taccuino, e nei conteggi della community.</p>
+    <form class="report-form">
+      <div class="report-fields">
+        <div class="report-field search-select"><label id="report-zone-label" for="report-zone">Zona</label><input id="report-zone" class="wiz-input" type="text" placeholder="Cerca una zona…" autocomplete="off" required><input name="zone" type="hidden"><ul id="report-zone-options" class="search-select-options" aria-labelledby="report-zone-label" hidden></ul></div>
+        <div class="report-field search-select"><label id="report-species-label" for="report-species">Specie</label><input id="report-species" class="wiz-input" type="text" placeholder="Nome comune o scientifico…" autocomplete="off" required aria-describedby="report-species-hint"><input name="species" type="hidden"><ul id="report-species-options" class="search-select-options" aria-labelledby="report-species-label" hidden></ul><small id="report-species-hint">Cerca anche con i nomi locali.</small></div>
+      </div>
+      <div class="report-field report-date"><label for="report-day">Quando</label><div class="report-date-row"><div class="report-days" role="group" aria-label="Giorni recenti"><button type="button" class="chip" data-report-day="${today}" aria-pressed="true">Oggi</button><button type="button" class="chip" data-report-day="${yesterday}" aria-pressed="false">Ieri</button></div><input id="report-day" class="wiz-input" type="date" name="day" value="${today}" max="${today}" required aria-label="Data dell’osservazione"></div></div>
+      <fieldset class="report-amount"><legend>Cosa hai osservato?</legend><div class="report-quantities">${[
+        ['Nessuno','Ricerca a vuoto'],['Pochi','Ritrovamento scarso'],['Discreti','Presenza intermedia'],['Tanti','Presenza abbondante']
+      ].map(([label,hint],i)=>`<label class="report-quantity"><input type="radio" name="amount" value="${i}" required><span><b>${label}</b><small>${hint}</small></span></label>`).join('')}</div></fieldset>
+      <details class="report-extra"><summary>Controllo dell’identità <span class="small muted">facoltativo</span></summary><label class="report-check"><input type="checkbox" name="checked"><span>Identità controllata da un micologo</span></label></details>
+      <p class="report-privacy">È pubblica solo la zona: nessun punto preciso o nome personale.</p>
+      <details class="report-safety"><summary>L’app non certifica la commestibilità.</summary><p>Segnala solo specie che sai riconoscere. Foto e schede non identificano l’esemplare: fai controllare il raccolto all’Ispettorato micologico ASL prima del consumo. Quantità e ritrovamenti sono dichiarazioni degli utenti; scegli “Nessuno” solo se hai cercato questa specie senza trovarla.</p></details>
+      <p role="status" class="report-status" data-status></p>
+      <footer class="report-actions"><button class="btn primary" type="submit">Condividi</button><button class="btn ghost" type="button" data-close>Annulla</button></footer>
+    </form>`;
+  const dismiss=()=>{reportDialog.close();if(origin?.isConnected)origin.focus({preventScroll:true});};
+  reportDialog.querySelector('[data-report-dismiss]').onclick=dismiss;
+  reportDialog.querySelector('[data-close]').onclick=dismiss;
+  const form=reportDialog.querySelector('form');
+  for(const [kind,options,selectedId] of [
+    ['zone',zones.map(z=>({value:z.id,label:z.title||z.name,detail:z.subtitle||'',aliases:[z.name]})),zoneId],
+    ['species',speciesCatalog.map(s=>({value:s.id,label:s.name,detail:s.latin,aliases:s.aliases})),speciesId]
+  ]) reportControls.push(mountSearchSelect({input:form.querySelector(`#report-${kind}`),list:form.querySelector(`#report-${kind}-options`),options,selectedId,
+    onChange:value=>{form.elements[kind].value=value;},bounds:()=>({top:reportDialog.querySelector('.report-header').getBoundingClientRect().bottom,bottom:form.querySelector('.report-actions').getBoundingClientRect().top}),
+    empty:kind==='zone'?'Nessuna zona nel catalogo con questo nome.':'Nessuna specie commestibile nel catalogo con questo nome.'}));
+  const dateInput=form.elements.day;
+  const markDate=()=>form.querySelectorAll('[data-report-day]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.reportDay===dateInput.value)));
+  form.querySelectorAll('[data-report-day]').forEach(b=>b.onclick=()=>{dateInput.value=b.dataset.reportDay;markDate();});
+  dateInput.onchange=markDate;
+  form.onsubmit = async e => {
+    e.preventDefault(); const data=new FormData(form),status=form.querySelector('[data-status]'),submit=form.querySelector('[type="submit"]');
+    if(!zones.some(z=>z.id===data.get('zone'))||!speciesCatalog.some(s=>s.id===data.get('species'))) {status.textContent='Scegli zona e specie dai risultati della ricerca.';return;}
+    submit.disabled=true;submit.textContent='Invio…';
     try {
-      const account = await ensureAccount(); if (!account) return;
-      await communityRequest('reports', 'POST', { zoneId: data.get('zone'), speciesId: data.get('species'), day: data.get('day'), amount: +data.get('amount'),
-        searched: +data.get('amount') === 0, identificationChecked: data.get('checked') === 'on' });
-      await refreshCommunity(); status.textContent = 'Grazie! L’osservazione è nel tuo diario e nei conteggi collettivi.';
-      submit.textContent = 'Segnalazione inviata'; submit.dataset.saved = '1';
-    } catch (err) { status.textContent = err.message; }
-    finally { submit.disabled = submit.dataset.saved === '1'; }
+      const account=await ensureAccount();if(!account)return;
+      if(epoch!==reportEpoch||!reportDialog.open)return;
+      await communityRequest('reports','POST',{zoneId:data.get('zone'),speciesId:data.get('species'),day:data.get('day'),amount:+data.get('amount'),searched:+data.get('amount')===0,identificationChecked:data.get('checked')==='on'});
+      await refreshCommunity();
+      if(epoch!==reportEpoch||!reportDialog.open)return;
+      reportControls.forEach(c=>c.destroy());reportControls=[];
+      const zone=zones.find(z=>z.id===data.get('zone')),species=speciesCatalog.find(s=>s.id===data.get('species'));
+      reportDialog.querySelector('.report-intro').remove();
+      form.innerHTML=`<div class="report-done"><span class="report-done-mark" aria-hidden="true">✓</span><h3>Osservazione salvata</h3><p><b>${esc(species.name)}</b> · ${esc(zone.title||zone.name)}<br>${esc(new Date(data.get('day')+'T12:00:00').toLocaleDateString('it-IT',{day:'numeric',month:'long'}))}</p><p role="status" class="report-status" data-status>È nel tuo taccuino e nei conteggi collettivi.</p><a class="btn primary" href="#/diario">Apri il taccuino →</a><button class="btn ghost" type="button" data-close>Chiudi</button></div>`;
+      form.querySelector('[data-close]').onclick=dismiss;
+      reportDialog.scrollTop=0;form.querySelector('a').focus({preventScroll:true});
+    } catch(err) {status.textContent=err.message;}
+    finally {if(submit.isConnected){submit.disabled=false;submit.textContent='Condividi';}}
   };
-  reportDialog.showModal();
+  if(!reportDialog.open)reportDialog.showModal();
+  // Nessuna ricerca aperta automaticamente quando si arriva da una scheda già selezionata.
+  reportDialog.querySelector('[data-report-dismiss]').focus({preventScroll:true});
+  reportDialog.scrollTop=0;
 }
