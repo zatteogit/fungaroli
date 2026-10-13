@@ -395,7 +395,6 @@ label.btn { display: inline-flex; }
 .species-grid { display: block; }
 .card-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
 .sp-card { position: relative; display: block; isolation: isolate; overflow: hidden; aspect-ratio: 4 / 5; border: 0; padding: 0; border-radius: 20px; color: #fff; background: var(--forest); cursor: pointer; text-align: left; text-decoration: none; box-shadow: var(--shadow-1); }
-.sp-card .pill { position: absolute; top: 10px; left: 10px; }
 .sp-card-body { position: absolute; left: 12px; right: 12px; bottom: 11px; display: grid; gap: 3px; text-shadow: 0 1px 4px rgb(0 0 0 / .4); }
 .sp-card-body b { font-family: var(--font-display); font-size: 18px; line-height: 1.12; font-weight: 700; }
 .sp-card-body i { font-size: 12px; opacity: .9; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
@@ -2042,17 +2041,15 @@ html[data-cmp-dir="prev"]::view-transition-new(cmp-pick) { animation-name: cmp-i
 .species-options button:hover, .species-options [aria-selected="true"] { background: var(--accent-soft); }
 .species-options b, .species-options i { display: block; }
 .species-options i { font-size: .8rem; color: var(--muted); margin-top: 3px; }
-.season-badge { display: inline-block; flex: none; font-size: .72rem; border-radius: 20px; padding: 4px 8px; color: var(--text-2); background: var(--surface-2); }
+.season-badge { display: inline-block; flex: none; font-size: .7rem; line-height: 1.3; white-space: nowrap; border-radius: 20px; padding: 2px 6px; color: var(--text-2); background: var(--surface-2); }
 .season-out { color: var(--warn-ink); }
 .chip small { display: block; font-size: .65rem; line-height: 1.2; font-weight: 500; margin-top: 3px; }
+.full-filters .filter-panel-groups .chip { display: inline-flex; align-items: center; gap: 6px; max-width: 100%; }
+.full-filters .filter-panel-groups .chip > span:not([aria-hidden]) { min-width: 0; overflow-wrap: anywhere; white-space: normal; }
+.chip .season-badge { display: inline-block; margin-top: 0; }
 .species-choice span { text-align: left; }
 .catalog-all { margin: 20px 0; }
 .catalog-all summary { cursor: pointer; font-weight: 700; }
 .selected-species { padding-bottom: 16px; border-bottom: 1px solid var(--hair); }
-.followed-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px; margin-bottom: 24px; }
-.followed-card { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; padding: 16px; border: 1px solid var(--hair); border-radius: 16px; background: var(--surface); }
-.followed-card a { color: var(--text); text-decoration: none; }
-.followed-card b, .followed-card i { display: block; }
-.followed-card i { margin-top: 4px; color: var(--muted); font-size: .8rem; }
 .catalog-placeholder { display: grid; place-content: center; min-height: 220px; color: rgb(255 255 255 / .35); font: 700 4rem var(--font-display); }
 @media (max-width: 420px) { .species-options button { align-items: flex-start; } .season-badge { font-size: .65rem; } }
