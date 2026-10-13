@@ -408,7 +408,7 @@ function renderFilterBox(box, onMap = false) {
   const dayChip = bd ? `<button type="button" class="chip chip-day" data-days aria-expanded="${!!box.closest('.map-top')?.classList.contains('days-open')}" style="--dc:var(${scoreVar(bd.s)})"><i></i>${esc(state.dayOffset === 0 ? 'Oggi' : state.dayOffset === 1 ? 'Domani' : fmtDate(bd.d.date, { weekday: 'short' }).replace('.', '').replace(/^./, (c) => c.toUpperCase()))} ${esc(fmtDate(bd.d.date, { day: 'numeric' }))} <b class="pc">${formatIndex(bd.s)}</b><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>` : '';
   box.innerHTML = `${dayChip}<button type="button" class="chip" data-g="all" aria-pressed="${all}">Tutti</button>
     ${vis.map((g) => `<button type="button" class="chip chip-g" data-g="${g.id}" aria-pressed="${!all && groupSelection(g.id) !== 'none'}">${esc(g.label)}</button>`).join('')}
-    <button type="button" class="chip chip-more" data-more aria-haspopup="dialog">Tutti i filtri</button>
+    <button type="button" class="chip chip-more" data-more aria-haspopup="dialog">Altri</button>
     <span class="af-sep" aria-hidden="true"></span>
     ${PREFS.map(([k, label]) => `<button type="button" class="chip pref" data-p="${k}" aria-pressed="${!!state[k]}">${esc(label)}</button>`).join('')}`;
   const changed = () => soft(() => { savePrefs(); renderFilterSummary(); if (series) { compute(); outCache.clear(); renderAll(); } });
