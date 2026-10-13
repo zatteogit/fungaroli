@@ -45,11 +45,22 @@ export function compactGrowth(rows) {
 // arbitrario, né possibilità di moltiplicare le richieste variando i parametri.
 export async function cachedForecast(query,{zones,cache,fetcher=fetch,now=Date.now()}) {
   const kind=Object.keys(profiles).find(k=>{
-    const expected=forecastParams(zones,k);
-    return [...query].length===[...expected].length&&[...expected].every(([name,value])=>query.getAll(name).length===1&&query.get(name)===value);
+    return [zones,...zones.map(z=>[z])].some(selection=>{
+      const expected=forecastParams(selection,k);
+      return [...query].length===[...expected].length&&[...expected].every(([name,value])=>query.getAll(name).length===1&&query.get(name)===value);
+    });
   });
   if(!kind)throw fail('Richiesta meteo non valida per le zone pubblicate.',422);
-  const params=forecastParams(zones,kind),hash=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(params.toString()));
+  const params=new URLSearchParams(query);
+  // Compatibilità con le pagine già aperte: inoltra la vecchia richiesta globale
+  // come stream, senza elaborare il grande JSON nel Worker. Le nuove pagine
+  // chiedono e mettono in cache una zona alla volta, entro il budget di CPU.
+  if(params.get('latitude').split(',').length>Math.max(...zones.map(z=>z.bands.length))) {
+    const r=await fetcher(`${API}?${params}`,{headers:{accept:'application/json','user-agent':'Fungaroli/1.0 (+https://fungaroli.zatteo.workers.dev)'},signal:AbortSignal.timeout(15000)});
+    if(!r.ok)throw fail('Il servizio meteo non è disponibile. Riprova tra poco.',r.status===429?429:503);
+    return new Response(r.body,{headers:{'content-type':'application/json','cache-control':'no-store','x-weather-fetched-at':new Date(now).toISOString(),'x-weather-cache':'legacy-stream'}});
+  }
+  const hash=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(params.toString()));
   const key=`weather:v2:${todayISO(new Date(now))}:${Array.from(new Uint8Array(hash),b=>b.toString(16).padStart(2,'0')).join('')}`;
   const maxAge=kind==='growth'?86400000:3*TTL;
   let saved=null;

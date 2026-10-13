@@ -52,9 +52,9 @@ export async function publishedContent(env,origin) {
     versions:Object.fromEntries(rows[1].results.map(r=>[r.id,r.published_version]))};
 }
 
-export async function publishedResources(env,origin,ids) {
+export async function publishedResources(env,origin,ids,{initialize=true}={}) {
   if(!env.CMS_DB)return null;
-  await init(env,origin);
+  if(initialize)await init(env,origin);
   const rows=await env.CMS_DB.prepare(`SELECT id,published FROM cms_documents WHERE id IN (${ids.map(()=>'?').join(',')})`).bind(...ids).all();
   return Object.fromEntries(rows.results.map(r=>[r.id,JSON.parse(r.published)]));
 }

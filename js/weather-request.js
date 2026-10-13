@@ -2,8 +2,24 @@
 // possono interrogare direttamente il provider senza dipendere dal sito.
 const API = 'https://api.open-meteo.com/v1/forecast';
 export async function fetchForecast(params) {
+  if(typeof document!=='undefined') {
+    const coords=['latitude','longitude','elevation'].map(name=>params.get(name).split(','));
+    const groups=[];
+    for(let start=0;start<coords[0].length;){
+      let end=start+1;while(end<coords[0].length&&coords[0][end]===coords[0][start]&&coords[1][end]===coords[1][start])end++;
+      const query=new URLSearchParams(params);['latitude','longitude','elevation'].forEach((name,i)=>query.set(name,coords[i].slice(start,end).join(',')));
+      groups.push(query);start=end;
+    }
+    const results=[],controller=new AbortController(),signal=AbortSignal.any([controller.signal,AbortSignal.timeout(20000)]);let next=0;
+    try {await Promise.all(Array.from({length:Math.min(3,groups.length)},async()=>{while(next<groups.length){signal.throwIfAborted();const i=next++;results[i]=await requestForecast(groups[i],signal);}}));}
+    catch(e){controller.abort();throw e;}
+    return {raw:results.flatMap(r=>r.raw),fetchedAt:new Date(Math.min(...results.map(r=>r.fetchedAt.getTime()))),stale:results.some(r=>r.stale)};
+  }
+  return requestForecast(params);
+}
+async function requestForecast(params,signal=AbortSignal.timeout(20000)) {
   const endpoint = typeof document === 'undefined' ? API : '/api/weather/v1/forecast';
-  const response = await fetch(`${endpoint}?${params}`, {cache:'no-store',signal:AbortSignal.timeout(20000)});
+  const response = await fetch(`${endpoint}?${params}`, {cache:'no-store',signal});
   if (!response.ok) {
     let detail;
     try {detail=await response.json();} catch { /* risposta non JSON */ }

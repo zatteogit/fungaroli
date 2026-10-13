@@ -58,3 +58,17 @@ test('small provider batches stay bounded and preserve the requested elevation o
   }});
   assert.equal(calls,3);assert.ok(max<=3);assert.deepEqual((await result.json()).map(r=>r.elevation),wide[0].bands);
 });
+test('browser requests published zones separately with bounded concurrency and retains the oldest acquisition date',async()=>{
+  const original=global.fetch,document=global.document;global.document={};
+  const wide=Array.from({length:8},(_,i)=>({lat:42+i*.01,lon:12+i*.01,bands:[700,900,1100]}));let live=0,max=0,calls=0;
+  global.fetch=async url=>{
+    const q=new URL(url,'https://example.test').searchParams,elevations=q.get('elevation').split(',').map(Number),i=wide.findIndex(z=>String(z.lat)===q.get('latitude').split(',')[0]);
+    assert.equal(elevations.length,3);assert.equal(new Set(q.get('latitude').split(',')).size,1);
+    calls++;live++;max=Math.max(max,live);await new Promise(r=>setTimeout(r,i===0?10:1));live--;
+    return Response.json(elevations.map(elevation=>({elevation,latitude:wide[i].lat})),{headers:{'x-weather-fetched-at':new Date(now-i*60000).toISOString()}});
+  };
+  try {
+    const result=await fetchForecast(forecastParams(wide,'growth'));assert.equal(calls,8);assert.ok(max<=3);
+    assert.deepEqual(result.raw.map(r=>r.latitude),wide.flatMap(z=>z.bands.map(()=>z.lat)));assert.equal(result.fetchedAt.getTime(),now-7*60000);
+  } finally{global.fetch=original;if(document===undefined)delete global.document;else global.document=document;}
+});
