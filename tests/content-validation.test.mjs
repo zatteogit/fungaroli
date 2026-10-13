@@ -63,3 +63,11 @@ test('glossary images require explanatory text, provenance and a reusable licenc
   assert.throws(()=>validateContent('media-glossary',generated,original),/schemi/);
   generated.terms.pliche.illustrations[0].kind='diagram';assert.equal(validateContent('media-glossary',generated,original).needsReview,true);
 });
+test('botanical model updates require scientific review and preserve unknown fields without inventing calendars',()=>{
+ const data=read('botanical-models');assert.equal(validateContent('botanical-models',data).needsReview,true);assert.equal(validateContent('botanical-models',data,data).needsReview,false);
+ assert.equal(data.models['plant-fragolina'].phaseMonths,null);
+ for(const [key,value] of [['phaseMonths',[0,13]],['elevationRange',[1800,0]],['observationDays',0],['landscapeAffinity',{Lecceta:2}],['calendarOrigin','validated_probability']]){
+  const altered=structuredClone(data);altered.models['plant-corbezzolo'][key]=value;assert.throws(()=>validateContent('botanical-models',altered,data));
+ }
+ const changed=structuredClone(data);changed.models['plant-corbezzolo'].phaseMonths=[10,11];assert.equal(validateContent('botanical-models',changed,data).needsReview,true);
+});

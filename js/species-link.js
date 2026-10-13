@@ -2,5 +2,5 @@
 const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 
 export function speciesLink(species, label = species.name) {
-  return `<a class="species-link" href="#/specie/${encodeURIComponent(species.id)}">${esc(label)}</a>`;
+  return `<a class="species-link" href="${species.kind==='plant'?species.href:'#/specie/'+encodeURIComponent(species.id)}">${esc(label)}</a>`;
 }

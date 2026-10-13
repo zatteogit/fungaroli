@@ -49,6 +49,18 @@ export function validateContent(id, data, previous) {
   }
   normalizeSources(value);
   let needsReview=false;
+  if(id==='botanical-models'){
+    if(!value.models||typeof value.models!=='object'||Array.isArray(value.models))err('Elenco dei modelli botanici non valido.');
+    for(const [key,m] of Object.entries(value.models)){
+      if(!idPattern.test(key)||!idPattern.test(m.plantId)||typeof m.enabled!=='boolean'||!['young_leaves','ripe_fruits','dry_fruits'].includes(m.phase)||typeof m.phaseLabel!=='string'||!m.phaseLabel.trim()||m.parameterOrigin!=='editorial_hypothesis')err('Indica specie, fase e provenienza sperimentale dei parametri.');
+      if(m.phaseMonths!=null&&!['source_calendar','hypothesis'].includes(m.calendarOrigin))err('Distingui calendario riportato dalla fonte e mesi ricavati da una stagione.');
+      if(m.phaseMonths!=null&&(!Array.isArray(m.phaseMonths)||!m.phaseMonths.length||m.phaseMonths.some(x=>!Number.isInteger(x)||x<1||x>12)))err('Calendario della fase non valido.');
+      if(m.elevationRange!=null&&(!Array.isArray(m.elevationRange)||m.elevationRange.length!==2||m.elevationRange.some(x=>!Number.isFinite(x)||x<0||x>4000)||m.elevationRange[0]>=m.elevationRange[1]))err('Intervallo di quota non valido.');
+      if(!m.landscapeAffinity||typeof m.landscapeAffinity!=='object'||Array.isArray(m.landscapeAffinity)||Object.values(m.landscapeAffinity).some(x=>!Number.isFinite(x)||x<0||x>1)||!Number.isFinite(m.landscapeSaturation)||m.landscapeSaturation<=0||m.landscapeSaturation>1||!Number.isInteger(m.observationDays)||m.observationDays<1||m.observationDays>30)err('Affinità o freschezza delle osservazioni non valide.');
+      if(!Array.isArray(m.sources)||!m.sources.length||m.sources.some(s=>!s?.title||!/^https:\/\/[^\s"'<>]+$/.test(s.url||'')))err('Ogni modello richiede fonti consultabili.');
+    }
+    needsReview=!previous||!same(value,previous);
+  }
   const entries = (v,key) => Array.isArray(v[key]) ? v[key] : Object.entries(v[key]||{}).map(([id,t])=>({...t,id}));
   const checkIds = rows => {
     const seen=new Set();

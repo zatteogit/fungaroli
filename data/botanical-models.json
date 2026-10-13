@@ -1,0 +1,487 @@
+{
+  "version": 1,
+  "modelStatus": "experimental",
+  "models": {
+    "plant-ortica": {
+      "plantId": "ortica",
+      "enabled": true,
+      "group": "ortica",
+      "phase": "young_leaves",
+      "phaseLabel": "Foglie giovani",
+      "phaseMonths": [
+        3,
+        4,
+        5
+      ],
+      "elevationRange": [
+        0,
+        1800
+      ],
+      "landscapeAffinity": {
+        "Bosco di forra": 1,
+        "Bosco alveale e ripariale": 1,
+        "Faggeta": 0.55,
+        "Arbusteto e macchia alta": 0.4,
+        "non bosco": 0.25
+      },
+      "landscapeSaturation": 0.45,
+      "observationDays": 14,
+      "habitatNote": "Schiarite e margini di boschi freschi, ambienti ricchi di nutrienti e suoli umidi. Le categorie cartografiche sono un proxy: margini, nutrienti e specie presenti non sono rilevati.",
+      "calendarNote": "Germogli teneri in primavera; apici/foglie anche nel resto dell'anno; sfalcio favorisce nuovi germogli. Marzo–maggio traduce primavera: ipotesi software. Altri mesi non esclusi; foglie giovani osservate riattivano opportunità.",
+      "methodNote": "Indice sperimentale di compatibilità e supporto alla scelta del giro. Pesi, affinità cartografiche e freschezza delle note sono ipotesi dell’app, non coefficienti biologici pubblicati. Nessuna probabilità di raccolta o certificazione alimentare.",
+      "parameterOrigin": "editorial_hypothesis",
+      "sources": [
+        {
+          "title": "Università di Trieste · Portale della Flora di Roma",
+          "url": "https://dryades.units.it/Roma/index.php?id=298&procedure=taxon_page"
+        },
+        {
+          "title": "Biological Flora of the British Isles: Urtica dioica L.",
+          "url": "https://besjournals.onlinelibrary.wiley.com/doi/10.1111/j.1365-2745.2009.01575.x"
+        },
+        {
+          "title": "M. C. Zuin (CNR-IBAF), Piante alimurgiche del Veneto, Veneto Agricoltura e Università di Padova, 2010 · Veneto",
+          "url": "https://old.venetoagricoltura.org/upload/pubblicazioni/Completo%20x%20web.pdf"
+        }
+      ],
+      "calendarOrigin": "hypothesis",
+      "elevationNote": "Intervallo descritto nel manuale del Veneto; trasferimento al Lazio e attenuazione fuori intervallo sono ipotesi, non limiti biologici."
+    },
+    "plant-cicoria": {
+      "plantId": "cicoria",
+      "enabled": true,
+      "group": "cicoria",
+      "phase": "young_leaves",
+      "phaseLabel": "Foglie giovani",
+      "phaseMonths": [
+        3,
+        4
+      ],
+      "elevationRange": null,
+      "landscapeAffinity": {
+        "non bosco": 0.4,
+        "Arbusteto e macchia alta": 0.2
+      },
+      "landscapeSaturation": 0.45,
+      "observationDays": 14,
+      "habitatNote": "Prati, incolti e margini aperti, soprattutto sotto la fascia montana. Le categorie cartografiche sono un proxy: margini, nutrienti e specie presenti non sono rilevati.",
+      "calendarNote": "Raccolta delle foglie basali giovani marzo–aprile, prima della fioritura. Mesi direttamente riportati, trasferimento Bassa Lombardia→Lazio sperimentale. Fuori core non esclusione automatica.",
+      "methodNote": "Indice sperimentale di compatibilità e supporto alla scelta del giro. Pesi, affinità cartografiche e freschezza delle note sono ipotesi dell’app, non coefficienti biologici pubblicati. Nessuna probabilità di raccolta o certificazione alimentare.",
+      "parameterOrigin": "editorial_hypothesis",
+      "sources": [
+        {
+          "title": "Università di Trieste · Portale della Flora di Roma",
+          "url": "https://dryades.units.it/Roma/index.php?id=6152&procedure=taxon_page"
+        },
+        {
+          "title": "Functional Traits, Morphology, and Herbage Production of Vernalised and Non-Vernalised Chicory cv. Choice",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/32403361/"
+        },
+        {
+          "title": "Zanotti, Gorno, Paletti, Le piante selvatiche commestibili, I Quaderni del Parco Oglio Nord vol. 9 · Bassa Lombardia",
+          "url": "https://www.parcooglionord.it/emporio-dettaglio.php?id_pubb=6640"
+        },
+        {
+          "title": "Testo consultato del manuale Oglio Nord: trascrizione; il vecchio PDF ufficiale non è disponibile",
+          "url": "https://diazilla.com/doc/909878/le-piante-selvatiche-commestibili"
+        }
+      ],
+      "calendarOrigin": "source_calendar",
+      "elevationNote": "Intervallo numerico di quota non documentato."
+    },
+    "plant-tarassaco": {
+      "plantId": "tarassaco",
+      "enabled": true,
+      "group": "tarassaco",
+      "phase": "young_leaves",
+      "phaseLabel": "Foglie giovani",
+      "phaseMonths": [
+        2,
+        3,
+        4
+      ],
+      "elevationRange": [
+        0,
+        1700
+      ],
+      "landscapeAffinity": {
+        "non bosco": 0.4,
+        "Arbusteto e macchia alta": 0.2
+      },
+      "landscapeSaturation": 0.45,
+      "observationDays": 14,
+      "habitatNote": "Prati e terreni disturbati, suoli freschi e ricchi di nutrienti, dalla pianura alla montagna. Le categorie cartografiche sono un proxy: margini, nutrienti e specie presenti non sono rilevati.",
+      "calendarNote": "Rosette fine inverno/primavera (fine febbraio–inizio aprile); ricacci in autunno piovoso e dopo sfalcio. Interi mesi febbraio–aprile sono discretizzazione più larga della finestra. Ramo autunnale richiede ricaccio/sfalcio, pioggia sola non prova fase. Manuali usano T. officinale s.l.",
+      "methodNote": "Indice sperimentale di compatibilità e supporto alla scelta del giro. Pesi, affinità cartografiche e freschezza delle note sono ipotesi dell’app, non coefficienti biologici pubblicati. Nessuna probabilità di raccolta o certificazione alimentare.",
+      "parameterOrigin": "editorial_hypothesis",
+      "sources": [
+        {
+          "title": "Università di Trieste · Portale della Flora di Roma",
+          "url": "https://dryades.units.it/Roma/index.php?id=21061&procedure=taxon_page"
+        },
+        {
+          "title": "Fine-Scale Environmental Heterogeneity Drives Intra- and Inter-Site Variation in Taraxacum officinale Flowering Phenology",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/40733448/"
+        },
+        {
+          "title": "M. C. Zuin (CNR-IBAF), Piante alimurgiche del Veneto, Veneto Agricoltura e Università di Padova, 2010 · Veneto",
+          "url": "https://old.venetoagricoltura.org/upload/pubblicazioni/Completo%20x%20web.pdf"
+        },
+        {
+          "title": "Zanotti, Gorno, Paletti, Le piante selvatiche commestibili, I Quaderni del Parco Oglio Nord vol. 9 · Bassa Lombardia",
+          "url": "https://www.parcooglionord.it/emporio-dettaglio.php?id_pubb=6640"
+        },
+        {
+          "title": "Testo consultato del manuale Oglio Nord: trascrizione; il vecchio PDF ufficiale non è disponibile",
+          "url": "https://diazilla.com/doc/909878/le-piante-selvatiche-commestibili"
+        }
+      ],
+      "calendarOrigin": "hypothesis",
+      "elevationNote": "Intervallo descritto nel manuale del Veneto; trasferimento al Lazio e attenuazione fuori intervallo sono ipotesi, non limiti biologici."
+    },
+    "plant-finocchietto": {
+      "plantId": "finocchietto",
+      "enabled": true,
+      "group": "finocchietto",
+      "phase": "dry_fruits",
+      "phaseLabel": "Frutti secchi aromatici",
+      "phaseMonths": [
+        8,
+        9
+      ],
+      "elevationRange": null,
+      "landscapeAffinity": {
+        "non bosco": 0.4,
+        "Arbusteto e macchia alta": 0.6,
+        "Pseudo-macchia": 0.6,
+        "Lecceta": 0.3
+      },
+      "landscapeSaturation": 0.45,
+      "observationDays": 14,
+      "habitatNote": "Ambienti aperti e disturbati mediterranei, generalmente sotto la fascia montana inferiore. Le categorie cartografiche sono un proxy: margini, nutrienti e specie presenti non sono rilevati.",
+      "calendarNote": "Frutti maturi agosto–settembre (VdA); luglio–settembre, scalarmente (Puglia). Core8–9 direttamente riportato; luglio fonte pugliese separata. Nessuna soglia GDD indiana trasferibile.",
+      "methodNote": "Indice sperimentale di compatibilità e supporto alla scelta del giro. Pesi, affinità cartografiche e freschezza delle note sono ipotesi dell’app, non coefficienti biologici pubblicati. Nessuna probabilità di raccolta o certificazione alimentare.",
+      "parameterOrigin": "editorial_hypothesis",
+      "sources": [
+        {
+          "title": "Università di Trieste · Portale della Flora di Roma",
+          "url": "https://dryades.units.it/Roma/index.php?id=3527&procedure=taxon_page"
+        },
+        {
+          "title": "Thermal time (growing degree days) effects on phenology, yield and quality attributes of fennel",
+          "url": "https://epubs.icar.org.in/index.php/IJSS/article/view/175975"
+        },
+        {
+          "title": "Regione Valle d'Aosta, Il finocchio selvatico, Annie Vout e Ugo Lini · Italia; articolo regionale VdA",
+          "url": "https://www.regione.vda.it/gestione/riviweb/templates/aspx/informatore.aspx?pkArt=1130"
+        },
+        {
+          "title": "PAT Puglia, Finocchio selvatico, Michela Cataldi, Università di Bari · Puglia",
+          "url": "https://www.patpuglia.it/it/12/Finocchio_selvatico/6_367_M"
+        }
+      ],
+      "calendarOrigin": "source_calendar",
+      "elevationNote": "Intervallo numerico di quota non documentato."
+    },
+    "plant-fragolina": {
+      "plantId": "fragolina",
+      "enabled": true,
+      "group": "fragolina",
+      "phase": "ripe_fruits",
+      "phaseLabel": "Frutti maturi",
+      "phaseMonths": null,
+      "elevationRange": null,
+      "landscapeAffinity": {
+        "Faggeta": 0.7,
+        "Castagneto": 0.7,
+        "Cerreta": 0.5,
+        "Bosco di forra": 0.7,
+        "Rimboschimenti di pini e/o altre conifere montane": 0.4,
+        "Arbusteto e macchia alta": 0.4,
+        "non bosco": 0.25
+      },
+      "landscapeSaturation": 0.45,
+      "observationDays": 14,
+      "habitatNote": "Radure, margini e sentieri boschivi. Presente in Italia; molto rara nell’area metropolitana di Roma secondo Dryades. Le categorie cartografiche sono un proxy: margini, nutrienti e specie presenti non sono rilevati.",
+      "calendarNote": "Calendario moderno della maturazione non verificato: il fattore resta sconosciuto. La fonte storica non viene trasformata in una previsione attuale.",
+      "methodNote": "Indice sperimentale di compatibilità e supporto alla scelta del giro. Pesi, affinità cartografiche e freschezza delle note sono ipotesi dell’app, non coefficienti biologici pubblicati. Nessuna probabilità di raccolta o certificazione alimentare.",
+      "parameterOrigin": "editorial_hypothesis",
+      "sources": [
+        {
+          "title": "Università di Trieste · Portale della Flora di Roma",
+          "url": "https://dryades.units.it/Roma/index.php?id=2073&procedure=taxon_page"
+        },
+        {
+          "title": "Interactions of temperature and photoperiod in the control of flowering of latitudinal and altitudinal populations of wild strawberry",
+          "url": "https://onlinelibrary.wiley.com/doi/10.1111/j.1399-3054.2007.00906.x"
+        },
+        {
+          "title": "Strawberry homologue of TERMINAL FLOWER1 integrates photoperiod and temperature signals to inhibit flowering",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/25720985/"
+        },
+        {
+          "title": "Flowering responses of the woodland strawberry to local climate and reduced precipitation along a European latitudinal gradient",
+          "url": "https://academic.oup.com/jpe/article/18/5/rtaf105/8209627"
+        },
+        {
+          "title": "Bertoloni, Vegetazione dei monti di Porretta e dei suoi prodotti vegetali · Monti di Porretta, Appennino emiliano",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/b/b1/Vegetazione_dei_monti_di_Porretta_e_dei_suoi_prodotti_vegetali_%28IA_vegetazionedeimo00bert%29.pdf"
+        }
+      ],
+      "calendarOrigin": "hypothesis",
+      "elevationNote": "Intervallo numerico di quota non documentato."
+    },
+    "plant-rovo": {
+      "plantId": "rovo",
+      "enabled": true,
+      "group": "rovo",
+      "phase": "ripe_fruits",
+      "phaseLabel": "Frutti maturi",
+      "phaseMonths": [
+        6,
+        7,
+        8,
+        9
+      ],
+      "elevationRange": null,
+      "landscapeAffinity": {
+        "Arbusteto e macchia alta": 1,
+        "Pseudo-macchia": 0.8,
+        "Cerreta": 0.4,
+        "Castagneto": 0.5,
+        "non bosco": 0.3
+      },
+      "landscapeSaturation": 0.45,
+      "observationDays": 14,
+      "habitatNote": "Siepi, boscaglie rade e margini del bosco, con suoli da freschi a relativamente asciutti. Le categorie cartografiche sono un proxy: margini, nutrienti e specie presenti non sono rilevati.",
+      "calendarNote": "Raccolta more mature estate–inizio autunno. Giugno–settembre traduce stagione; scelta software, non mese-picco misurato. Fonte tratta R.ulmifolius e R.caesius insieme.",
+      "methodNote": "Indice sperimentale di compatibilità e supporto alla scelta del giro. Pesi, affinità cartografiche e freschezza delle note sono ipotesi dell’app, non coefficienti biologici pubblicati. Nessuna probabilità di raccolta o certificazione alimentare.",
+      "parameterOrigin": "editorial_hypothesis",
+      "sources": [
+        {
+          "title": "Università di Trieste · Portale della Flora di Roma",
+          "url": "https://dryades.units.it/Roma/index.php?id=1907&procedure=taxon_page"
+        },
+        {
+          "title": "Evolution of the Volatile Organic Compounds, Phenols and Antioxidant Capacity during Fruit Ripening and Development of Rubus ulmifolius Schott Fruits",
+          "url": "https://www.mdpi.com/2311-7524/9/1/13"
+        },
+        {
+          "title": "Zanotti, Gorno, Paletti, Le piante selvatiche commestibili, I Quaderni del Parco Oglio Nord vol. 9 · Bassa Lombardia",
+          "url": "https://www.parcooglionord.it/emporio-dettaglio.php?id_pubb=6640"
+        },
+        {
+          "title": "Testo consultato del manuale Oglio Nord: trascrizione; il vecchio PDF ufficiale non è disponibile",
+          "url": "https://diazilla.com/doc/909878/le-piante-selvatiche-commestibili"
+        }
+      ],
+      "calendarOrigin": "hypothesis",
+      "elevationNote": "Intervallo numerico di quota non documentato."
+    },
+    "plant-rosa-canina": {
+      "plantId": "rosa-canina",
+      "enabled": true,
+      "group": "rosa-canina",
+      "phase": "ripe_fruits",
+      "phaseLabel": "Frutti maturi",
+      "phaseMonths": [
+        10,
+        11
+      ],
+      "elevationRange": null,
+      "landscapeAffinity": {
+        "Arbusteto e macchia alta": 1,
+        "Pseudo-macchia": 0.6,
+        "Cerreta": 0.4,
+        "non bosco": 0.3
+      },
+      "landscapeSaturation": 0.45,
+      "observationDays": 14,
+      "habitatNote": "Siepi, arbusteti, boscaglie aperte e pascoli abbandonati, dalla pianura alla montagna. Le categorie cartografiche sono un proxy: margini, nutrienti e specie presenti non sono rilevati.",
+      "calendarNote": "Cinorrodi a piena maturazione ottobre–novembre. Mesi direttamente riportati, trasferimento Veneto→Lazio sperimentale. Nessun bonus dopo gelo.",
+      "methodNote": "Indice sperimentale di compatibilità e supporto alla scelta del giro. Pesi, affinità cartografiche e freschezza delle note sono ipotesi dell’app, non coefficienti biologici pubblicati. Nessuna probabilità di raccolta o certificazione alimentare.",
+      "parameterOrigin": "editorial_hypothesis",
+      "sources": [
+        {
+          "title": "Università di Trieste · Portale della Flora di Roma",
+          "url": "https://dryades.units.it/Roma/index.php?id=1972&procedure=taxon_page"
+        },
+        {
+          "title": "Phenological and Pomological Characteristics of Rosa canina L. Species Cultivated and Naturally Distributed in Amasya Province",
+          "url": "https://dergipark.org.tr/tr/pub/bsagriculture/article/1356222"
+        },
+        {
+          "title": "Changes in Pomological and Physical Parameters in Rosehips during Ripening",
+          "url": "https://www.mdpi.com/2223-7747/12/6/1314"
+        },
+        {
+          "title": "Frost decreases content of sugars, ascorbic acid and some quercetin glycosides but stimulates selected carotenes in Rosa canina hips",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/25768262/"
+        },
+        {
+          "title": "BUR Veneto n. 53, 26 aprile 2022, Rosa canina · Veneto",
+          "url": "https://bur.regione.veneto.it/BurvServices/pubblica/burvGalleryDettaglio.aspx?id=2487"
+        }
+      ],
+      "calendarOrigin": "source_calendar",
+      "elevationNote": "Intervallo numerico di quota non documentato."
+    },
+    "plant-corbezzolo": {
+      "plantId": "corbezzolo",
+      "enabled": true,
+      "group": "corbezzolo",
+      "phase": "ripe_fruits",
+      "phaseLabel": "Frutti maturi",
+      "phaseMonths": [
+        10,
+        11,
+        12
+      ],
+      "elevationRange": null,
+      "landscapeAffinity": {
+        "Lecceta": 1,
+        "Arbusteto e macchia alta": 0.6,
+        "Pseudo-macchia": 0.6
+      },
+      "landscapeSaturation": 0.45,
+      "observationDays": 14,
+      "habitatNote": "Macchia mediterranea, spesso con leccio e substrati silicei; non è una pianta di tutti i boschi montani. Le categorie cartografiche sono un proxy: margini, nutrienti e specie presenti non sono rilevati.",
+      "calendarNote": "Maturazione ottobre–dicembre nell'anno successivo alla fioritura. Fonte laziale. Coorti/fioritura simultanea distinte; pioggia degli ultimi14gg non spiega maturazione annua.",
+      "methodNote": "Indice sperimentale di compatibilità e supporto alla scelta del giro. Pesi, affinità cartografiche e freschezza delle note sono ipotesi dell’app, non coefficienti biologici pubblicati. Nessuna probabilità di raccolta o certificazione alimentare.",
+      "parameterOrigin": "editorial_hypothesis",
+      "sources": [
+        {
+          "title": "Università di Trieste · Portale della Flora di Roma",
+          "url": "https://dryades.units.it/Roma/index.php?id=3730&procedure=taxon_page"
+        },
+        {
+          "title": "Influence of temperature and rainfall on fruit and seed production of Arbutus unedo L.",
+          "url": "https://academic.oup.com/botlinnean/article-abstract/111/1/71/2632487"
+        },
+        {
+          "title": "An Endemic Plant of the Mediterranean Area: Phytochemical Characterization of Strawberry Tree Fruits Extracts at Different Ripening Stages",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9249387/"
+        },
+        {
+          "title": "ARSIAL Cerveteri · Frutti maturi ottobre–dicembre, ciclo annuale",
+          "url": "https://progetti.regione.lazio.it/ossigeno/app/uploads/sites/62/Manuale-operativo-Azienda-ARSIAL-Cerveteri.pdf"
+        }
+      ],
+      "calendarOrigin": "source_calendar",
+      "elevationNote": "Intervallo numerico di quota non documentato."
+    },
+    "plant-prugnolo": {
+      "plantId": "prugnolo",
+      "enabled": true,
+      "group": "prugnolo",
+      "phase": "ripe_fruits",
+      "phaseLabel": "Frutti maturi",
+      "phaseMonths": [
+        9,
+        10
+      ],
+      "elevationRange": null,
+      "landscapeAffinity": {
+        "Arbusteto e macchia alta": 1,
+        "Pseudo-macchia": 0.6,
+        "non bosco": 0.3,
+        "Cerreta": 0.4
+      },
+      "landscapeSaturation": 0.45,
+      "observationDays": 14,
+      "habitatNote": "Siepi, margini boschivi e prati abbandonati, spesso su terreni argillosi. Le categorie cartografiche sono un proxy: margini, nutrienti e specie presenti non sono rilevati.",
+      "calendarNote": "Maturazione settembre–ottobre; raccolta settembre–novembre, frutti possono persistere in inverno. Novembre è disponibilità/raccolta, non automaticamente nuova maturazione. Trasferimento Lombardia→Lazio sperimentale.",
+      "methodNote": "Indice sperimentale di compatibilità e supporto alla scelta del giro. Pesi, affinità cartografiche e freschezza delle note sono ipotesi dell’app, non coefficienti biologici pubblicati. Nessuna probabilità di raccolta o certificazione alimentare.",
+      "parameterOrigin": "editorial_hypothesis",
+      "sources": [
+        {
+          "title": "Università di Trieste · Portale della Flora di Roma",
+          "url": "https://dryades.units.it/Roma/index.php?id=2222&procedure=taxon_page"
+        },
+        {
+          "title": "BfR · Piante velenose e parti non alimentari",
+          "url": "https://www.bfr.bund.de/en/service/frequently-asked-questions/topic/poisonous-plants-how-to-protect-yourself-and-what-to-do-in-case-of-poisoning/"
+        },
+        {
+          "title": "Influence of temperature on blackthorn phenophases in spring season",
+          "url": "https://www.jstage.jst.go.jp/article/agrmet/76/1/76_D-19-00030/_pdf"
+        },
+        {
+          "title": "Zanotti, Gorno, Paletti, Le piante selvatiche commestibili, I Quaderni del Parco Oglio Nord vol. 9 · Bassa Lombardia",
+          "url": "https://www.parcooglionord.it/emporio-dettaglio.php?id_pubb=6640"
+        },
+        {
+          "title": "Testo consultato del manuale Oglio Nord: trascrizione; il vecchio PDF ufficiale non è disponibile",
+          "url": "https://diazilla.com/doc/909878/le-piante-selvatiche-commestibili"
+        }
+      ],
+      "calendarOrigin": "source_calendar",
+      "elevationNote": "Intervallo numerico di quota non documentato."
+    },
+    "plant-sambuco": {
+      "plantId": "sambuco",
+      "enabled": true,
+      "group": "sambuco",
+      "phase": "ripe_fruits",
+      "phaseLabel": "Frutti maturi",
+      "phaseMonths": [
+        8,
+        9
+      ],
+      "elevationRange": null,
+      "landscapeAffinity": {
+        "Bosco di forra": 1,
+        "Bosco alveale e ripariale": 1,
+        "Arbusteto e macchia alta": 0.6,
+        "non bosco": 0.3,
+        "Faggeta": 0.5
+      },
+      "landscapeSaturation": 0.45,
+      "observationDays": 14,
+      "habitatNote": "Boschi freschi, forre e margini disturbati su suoli umidi e ricchi di nutrienti. Le categorie cartografiche sono un proxy: margini, nutrienti e specie presenti non sono rilevati.",
+      "calendarNote": "Frutti maturi agosto–settembre. Trasferimento Lombardia→Lazio sperimentale. Frutti soltanto adeguatamente cotti, identità indipendente dal modello; non confondere con S.ebulus.",
+      "methodNote": "Indice sperimentale di compatibilità e supporto alla scelta del giro. Pesi, affinità cartografiche e freschezza delle note sono ipotesi dell’app, non coefficienti biologici pubblicati. Nessuna probabilità di raccolta o certificazione alimentare.",
+      "parameterOrigin": "editorial_hypothesis",
+      "sources": [
+        {
+          "title": "Università di Trieste · Portale della Flora di Roma",
+          "url": "https://dryades.units.it/Roma/index.php?id=5142&procedure=taxon_page"
+        },
+        {
+          "title": "Regione Lazio · Sambuco nero: parti alimentari e tossicità",
+          "url": "https://progetti.regione.lazio.it/ossigeno/albero/sambuco-nero/"
+        },
+        {
+          "title": "NCCIH · Sicurezza dei frutti di sambuco",
+          "url": "https://www.nccih.nih.gov/health/elderberry"
+        },
+        {
+          "title": "IPHEN—a real-time network for phenological monitoring and modelling in Italy",
+          "url": "https://link.springer.com/article/10.1007/s00484-012-0615-x"
+        },
+        {
+          "title": "CREA IPHEN Italian phenological network",
+          "url": "https://www.crea.gov.it/en/web/agricoltura-e-ambiente/-/iphen-italian-phenological-network"
+        },
+        {
+          "title": "Bollettino fenologico settimanale, Rete Rurale",
+          "url": "https://www.reterurale.it/bollettinofeno"
+        },
+        {
+          "title": "Sambucus nigra L.",
+          "url": "https://onlinelibrary.wiley.com/doi/10.1046/j.1365-2745.2002.00698.x/full"
+        },
+        {
+          "title": "Zanotti, Gorno, Paletti, Le piante selvatiche commestibili, I Quaderni del Parco Oglio Nord vol. 9 · Bassa Lombardia",
+          "url": "https://www.parcooglionord.it/emporio-dettaglio.php?id_pubb=6640"
+        },
+        {
+          "title": "Testo consultato del manuale Oglio Nord: trascrizione; il vecchio PDF ufficiale non è disponibile",
+          "url": "https://diazilla.com/doc/909878/le-piante-selvatiche-commestibili"
+        }
+      ],
+      "calendarOrigin": "source_calendar",
+      "elevationNote": "Intervallo numerico di quota non documentato."
+    }
+  }
+}

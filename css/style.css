@@ -2343,3 +2343,14 @@ html.entity-open { overflow: hidden; }
 .notebook-context-action { margin:24px 0; }
 
 .botanical-food.notice-danger { background:var(--crit-bg); color:var(--crit-ink); border-color:color-mix(in srgb,var(--crit) 35%,var(--hair)); }
+
+.target-modes { display:flex; gap:4px; border-right:1px solid var(--hair); padding-right:8px; flex-shrink:0; }
+.botanical-factors { display:grid; gap:12px; margin:16px 0; }
+.botanical-factors article { padding:14px; background:var(--surface-2); border-radius:var(--r-md); }
+.botanical-factors article>div { display:flex; justify-content:space-between; gap:12px; }
+.botanical-factors p { margin:8px 0; }
+.botanical-factors small { color:var(--muted); }
+
+@media(max-width:359px) { .appbar { gap:6px; } .appbar .brand-place { display:none; } .appbar .brand { font-size:17px; } .appbar-actions .icon-btn { width:36px; } }
+.botanical-personalize { display:flex; gap:10px; align-items:flex-start; margin-top:18px; }
+.botanical-personalize input { margin-top:4px; flex:none; }

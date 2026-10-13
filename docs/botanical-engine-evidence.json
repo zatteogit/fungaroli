@@ -1,0 +1,621 @@
+{
+  "verifiedAt": "2026-10-13",
+  "scope": "operational scientific evidence; not repository edits",
+  "modelStatus": "experimental_not_locally_calibrated",
+  "models": {
+    "plant-ortica": {
+      "plantId": "ortica",
+      "taxon": "Urtica dioica",
+      "phase": "young_leaves",
+      "phaseMonths": [
+        3,
+        4,
+        5
+      ],
+      "elevationRange": [
+        0,
+        1800
+      ],
+      "elevationNature": "described_interval_not_tolerance_threshold",
+      "phaseCalendar": {
+        "directEvidence": "Germogli teneri in primavera; apici/foglie anche nel resto dell'anno; sfalcio favorisce nuovi germogli.",
+        "sourceIds": [
+          "cnr"
+        ],
+        "pages": "pp.62–63",
+        "mappingStatus": "season_to_months_implementation_hypothesis",
+        "localCalibration": false,
+        "limits": "Marzo–maggio traduce primavera: ipotesi software. Altri mesi non esclusi; foglie giovani osservate riattivano opportunità."
+      },
+      "habitat": {
+        "directDescription": "Suoli freschi/umidi nutrienti, radure, margini, rudereti.",
+        "sourceUrl": "https://dryades.units.it/Roma/index.php?id=298&procedure=taxon_page",
+        "numericLandscapeAffinities": "implementation_hypothesis_not_published_coefficients"
+      },
+      "sources": [
+        {
+          "title": "M. C. Zuin (CNR-IBAF), Piante alimurgiche del Veneto, Veneto Agricoltura e Università di Padova, 2010",
+          "url": "https://old.venetoagricoltura.org/upload/pubblicazioni/Completo%20x%20web.pdf",
+          "domain": "Veneto",
+          "type": "institutional_scientific_manual",
+          "sourceId": "cnr"
+        }
+      ],
+      "outsideCore": "outside_typical_or_unknown_not_absence",
+      "weatherNumericParameters": null,
+      "weatherParameterStatus": "no_locally_validated_edible_phase_function_verified"
+    },
+    "plant-cicoria": {
+      "plantId": "cicoria",
+      "taxon": "Cichorium intybus",
+      "phase": "young_leaves",
+      "phaseMonths": [
+        3,
+        4
+      ],
+      "elevationRange": null,
+      "elevationNature": "unknown_no_numeric_interval_verified",
+      "phaseCalendar": {
+        "directEvidence": "Raccolta delle foglie basali giovani marzo–aprile, prima della fioritura.",
+        "sourceIds": [
+          "oglio"
+        ],
+        "pages": "pp.72–73",
+        "mappingStatus": "months_reported_by_source",
+        "localCalibration": false,
+        "limits": "Mesi direttamente riportati, trasferimento Bassa Lombardia→Lazio sperimentale. Fuori core non esclusione automatica."
+      },
+      "habitat": {
+        "directDescription": "Prati, incolti, margini aperti; optimum sotto fascia montana.",
+        "sourceUrl": "https://dryades.units.it/Roma/index.php?id=6152&procedure=taxon_page",
+        "numericLandscapeAffinities": "implementation_hypothesis_not_published_coefficients"
+      },
+      "sources": [
+        {
+          "title": "Zanotti, Gorno, Paletti, Le piante selvatiche commestibili, I Quaderni del Parco Oglio Nord vol. 9",
+          "url": "https://www.parcooglionord.it/emporio-dettaglio.php?id_pubb=6640",
+          "consultedTextUrl": "https://diazilla.com/doc/909878/le-piante-selvatiche-commestibili",
+          "domain": "Bassa Lombardia",
+          "type": "institutional_botanical_manual",
+          "accessNote": "Vecchio PDF ufficiale ora 404; consultata trascrizione dell'edizione primaria, paginazione diversa dalla ristampa corrente.",
+          "sourceId": "oglio"
+        }
+      ],
+      "outsideCore": "outside_typical_or_unknown_not_absence",
+      "weatherNumericParameters": null,
+      "weatherParameterStatus": "no_locally_validated_edible_phase_function_verified"
+    },
+    "plant-tarassaco": {
+      "plantId": "tarassaco",
+      "taxon": "Taraxacum sect. Taraxacum",
+      "phase": "young_leaves",
+      "phaseMonths": [
+        2,
+        3,
+        4
+      ],
+      "elevationRange": [
+        0,
+        1700
+      ],
+      "elevationNature": "described_interval_not_tolerance_threshold",
+      "phaseCalendar": {
+        "directEvidence": "Rosette fine inverno/primavera (fine febbraio–inizio aprile); ricacci in autunno piovoso e dopo sfalcio.",
+        "sourceIds": [
+          "cnr",
+          "oglio"
+        ],
+        "pages": "Zuinpp.56–57; Ogliopp.99–100",
+        "mappingStatus": "season_to_months_implementation_hypothesis",
+        "localCalibration": false,
+        "limits": "Interi mesi febbraio–aprile sono discretizzazione più larga della finestra. Ramo autunnale richiede ricaccio/sfalcio, pioggia sola non prova fase. Manuali usano T. officinale s.l."
+      },
+      "habitat": {
+        "directDescription": "Prati/incolti e ambienti disturbati, piano–montano.",
+        "sourceUrl": "https://dryades.units.it/Roma/index.php?id=21061&procedure=taxon_page",
+        "numericLandscapeAffinities": "implementation_hypothesis_not_published_coefficients"
+      },
+      "sources": [
+        {
+          "title": "M. C. Zuin (CNR-IBAF), Piante alimurgiche del Veneto, Veneto Agricoltura e Università di Padova, 2010",
+          "url": "https://old.venetoagricoltura.org/upload/pubblicazioni/Completo%20x%20web.pdf",
+          "domain": "Veneto",
+          "type": "institutional_scientific_manual",
+          "sourceId": "cnr"
+        },
+        {
+          "title": "Zanotti, Gorno, Paletti, Le piante selvatiche commestibili, I Quaderni del Parco Oglio Nord vol. 9",
+          "url": "https://www.parcooglionord.it/emporio-dettaglio.php?id_pubb=6640",
+          "consultedTextUrl": "https://diazilla.com/doc/909878/le-piante-selvatiche-commestibili",
+          "domain": "Bassa Lombardia",
+          "type": "institutional_botanical_manual",
+          "accessNote": "Vecchio PDF ufficiale ora 404; consultata trascrizione dell'edizione primaria, paginazione diversa dalla ristampa corrente.",
+          "sourceId": "oglio"
+        }
+      ],
+      "outsideCore": "outside_typical_or_unknown_not_absence",
+      "weatherNumericParameters": null,
+      "weatherParameterStatus": "no_locally_validated_edible_phase_function_verified"
+    },
+    "plant-finocchietto": {
+      "plantId": "finocchietto",
+      "taxon": "Anethum foeniculum (=Foeniculum vulgare)",
+      "phase": "dry_fruits",
+      "phaseMonths": [
+        8,
+        9
+      ],
+      "elevationRange": null,
+      "elevationNature": "unknown_no_numeric_interval_verified",
+      "phaseCalendar": {
+        "directEvidence": "Frutti maturi agosto–settembre (VdA); luglio–settembre, scalarmente (Puglia).",
+        "sourceIds": [
+          "vda",
+          "puglia"
+        ],
+        "pages": null,
+        "mappingStatus": "months_reported_by_source",
+        "localCalibration": false,
+        "limits": "Core8–9 direttamente riportato; luglio fonte pugliese separata. Nessuna soglia GDD indiana trasferibile."
+      },
+      "habitat": {
+        "directDescription": "Rudereti/terreni aperti mediterranei, generalmente sotto fascia montana inferiore.",
+        "sourceUrl": "https://dryades.units.it/Roma/index.php?id=3527&procedure=taxon_page",
+        "numericLandscapeAffinities": "implementation_hypothesis_not_published_coefficients"
+      },
+      "sources": [
+        {
+          "title": "Regione Valle d'Aosta, Il finocchio selvatico, Annie Vout e Ugo Lini",
+          "url": "https://www.regione.vda.it/gestione/riviweb/templates/aspx/informatore.aspx?pkArt=1130",
+          "domain": "Italia; articolo regionale VdA",
+          "type": "institutional_agronomic_article",
+          "accessNote": "Tratta spontaneo e coltivato: non soglia sperimentale locale.",
+          "sourceId": "vda"
+        },
+        {
+          "title": "PAT Puglia, Finocchio selvatico, Michela Cataldi, Università di Bari",
+          "url": "https://www.patpuglia.it/it/12/Finocchio_selvatico/6_367_M",
+          "domain": "Puglia",
+          "type": "institutional_food_tradition_compilation",
+          "sourceId": "puglia"
+        }
+      ],
+      "outsideCore": "outside_typical_or_unknown_not_absence",
+      "weatherNumericParameters": null,
+      "weatherParameterStatus": "no_locally_validated_edible_phase_function_verified"
+    },
+    "plant-fragolina": {
+      "plantId": "fragolina",
+      "taxon": "Fragaria vesca subsp. vesca",
+      "phase": "ripe_fruits",
+      "phaseMonths": [
+        6,
+        7,
+        8
+      ],
+      "elevationRange": null,
+      "elevationNature": "unknown_no_numeric_interval_verified",
+      "phaseCalendar": {
+        "directEvidence": "Osservazione storica: frutti maturi fine giugno, luglio–agosto nei monti più alti.",
+        "sourceIds": [
+          "bertoloni"
+        ],
+        "pages": null,
+        "mappingStatus": "season_to_months_implementation_hypothesis",
+        "localCalibration": false,
+        "limits": "Prior debole/storico, non calendario moderno. June–August discretizzazione; lasciare phaseMonths null se policy richiede fonte moderna. Nemi Apr–Sept è fioritura, non frutti."
+      },
+      "habitat": {
+        "directDescription": "Radure, margini, sentieri e boschi disturbati sino al montano superiore.",
+        "sourceUrl": "https://dryades.units.it/Roma/index.php?id=2073&procedure=taxon_page",
+        "numericLandscapeAffinities": "implementation_hypothesis_not_published_coefficients"
+      },
+      "sources": [
+        {
+          "title": "Bertoloni, Vegetazione dei monti di Porretta e dei suoi prodotti vegetali",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/b/b1/Vegetazione_dei_monti_di_Porretta_e_dei_suoi_prodotti_vegetali_%28IA_vegetazionedeimo00bert%29.pdf",
+          "domain": "Monti di Porretta, Appennino emiliano",
+          "type": "historical_primary_botanical_observation",
+          "accessNote": "Fonte storica; non calendario climatico moderno calibrato, anno bibliografico non verificato.",
+          "sourceId": "bertoloni"
+        }
+      ],
+      "outsideCore": "outside_typical_or_unknown_not_absence",
+      "weatherNumericParameters": null,
+      "weatherParameterStatus": "no_locally_validated_edible_phase_function_verified"
+    },
+    "plant-rovo": {
+      "plantId": "rovo",
+      "taxon": "Rubus ulmifolius",
+      "phase": "ripe_fruits",
+      "phaseMonths": [
+        6,
+        7,
+        8,
+        9
+      ],
+      "elevationRange": null,
+      "elevationNature": "unknown_no_numeric_interval_verified",
+      "phaseCalendar": {
+        "directEvidence": "Raccolta more mature estate–inizio autunno.",
+        "sourceIds": [
+          "oglio"
+        ],
+        "pages": "pp.160–162",
+        "mappingStatus": "season_to_months_implementation_hypothesis",
+        "localCalibration": false,
+        "limits": "Giugno–settembre traduce stagione; scelta software, non mese-picco misurato. Fonte tratta R.ulmifolius e R.caesius insieme."
+      },
+      "habitat": {
+        "directDescription": "Orli, boscaglie rade, siepi, suoli freschi–subaridi.",
+        "sourceUrl": "https://dryades.units.it/Roma/index.php?id=1907&procedure=taxon_page",
+        "numericLandscapeAffinities": "implementation_hypothesis_not_published_coefficients"
+      },
+      "sources": [
+        {
+          "title": "Zanotti, Gorno, Paletti, Le piante selvatiche commestibili, I Quaderni del Parco Oglio Nord vol. 9",
+          "url": "https://www.parcooglionord.it/emporio-dettaglio.php?id_pubb=6640",
+          "consultedTextUrl": "https://diazilla.com/doc/909878/le-piante-selvatiche-commestibili",
+          "domain": "Bassa Lombardia",
+          "type": "institutional_botanical_manual",
+          "accessNote": "Vecchio PDF ufficiale ora 404; consultata trascrizione dell'edizione primaria, paginazione diversa dalla ristampa corrente.",
+          "sourceId": "oglio"
+        }
+      ],
+      "outsideCore": "outside_typical_or_unknown_not_absence",
+      "weatherNumericParameters": null,
+      "weatherParameterStatus": "no_locally_validated_edible_phase_function_verified"
+    },
+    "plant-rosa-canina": {
+      "plantId": "rosa-canina",
+      "taxon": "Rosa canina",
+      "phase": "ripe_fruits",
+      "phaseMonths": [
+        10,
+        11
+      ],
+      "elevationRange": null,
+      "elevationNature": "unknown_no_numeric_interval_verified",
+      "phaseCalendar": {
+        "directEvidence": "Cinorrodi a piena maturazione ottobre–novembre.",
+        "sourceIds": [
+          "rosa"
+        ],
+        "pages": null,
+        "mappingStatus": "months_reported_by_source",
+        "localCalibration": false,
+        "limits": "Mesi direttamente riportati, trasferimento Veneto→Lazio sperimentale. Nessun bonus dopo gelo."
+      },
+      "habitat": {
+        "directDescription": "Siepi, arbusteti, boscaglie aperte, piano–montano.",
+        "sourceUrl": "https://dryades.units.it/Roma/index.php?id=1972&procedure=taxon_page",
+        "numericLandscapeAffinities": "implementation_hypothesis_not_published_coefficients"
+      },
+      "sources": [
+        {
+          "title": "BUR Veneto n. 53, 26 aprile 2022, Rosa canina",
+          "url": "https://bur.regione.veneto.it/BurvServices/pubblica/burvGalleryDettaglio.aspx?id=2487",
+          "domain": "Veneto",
+          "type": "institutional_botanical_note",
+          "sourceId": "rosa"
+        }
+      ],
+      "outsideCore": "outside_typical_or_unknown_not_absence",
+      "weatherNumericParameters": null,
+      "weatherParameterStatus": "no_locally_validated_edible_phase_function_verified"
+    },
+    "plant-corbezzolo": {
+      "plantId": "corbezzolo",
+      "taxon": "Arbutus unedo",
+      "phase": "ripe_fruits",
+      "phaseMonths": [
+        10,
+        11,
+        12
+      ],
+      "elevationRange": null,
+      "elevationNature": "unknown_no_numeric_interval_verified",
+      "phaseCalendar": {
+        "directEvidence": "Maturazione ottobre–dicembre nell'anno successivo alla fioritura.",
+        "sourceIds": [
+          "arsial"
+        ],
+        "pages": "p.5 stampata",
+        "mappingStatus": "months_reported_by_source",
+        "localCalibration": false,
+        "limits": "Fonte laziale. Coorti/fioritura simultanea distinte; pioggia degli ultimi14gg non spiega maturazione annua."
+      },
+      "habitat": {
+        "directDescription": "Macchia mediterranea, spesso leccio e substrati silicei, non vincolo geologico esclusivo.",
+        "sourceUrl": "https://dryades.units.it/Roma/index.php?id=3730&procedure=taxon_page",
+        "numericLandscapeAffinities": "implementation_hypothesis_not_published_coefficients"
+      },
+      "sources": [
+        {
+          "title": "ARSIAL Cerveteri, Manuale operativo forestale, marzo 2022, Luca Scarnati, p.5",
+          "url": "https://progetti.regione.lazio.it/ossigeno/app/uploads/sites/62/Manuale-operativo-Azienda-ARSIAL-Cerveteri.pdf",
+          "domain": "Cerveteri, Lazio",
+          "type": "institutional_forest_manual",
+          "sourceId": "arsial"
+        }
+      ],
+      "outsideCore": "outside_typical_or_unknown_not_absence",
+      "weatherNumericParameters": null,
+      "weatherParameterStatus": "no_locally_validated_edible_phase_function_verified"
+    },
+    "plant-prugnolo": {
+      "plantId": "prugnolo",
+      "taxon": "Prunus spinosa subsp. spinosa",
+      "phase": "ripe_fruits",
+      "phaseMonths": [
+        9,
+        10
+      ],
+      "elevationRange": null,
+      "elevationNature": "unknown_no_numeric_interval_verified",
+      "phaseCalendar": {
+        "directEvidence": "Maturazione settembre–ottobre; raccolta settembre–novembre, frutti possono persistere in inverno.",
+        "sourceIds": [
+          "oglio"
+        ],
+        "pages": "pp.154–155",
+        "mappingStatus": "months_reported_by_source",
+        "localCalibration": false,
+        "limits": "Novembre è disponibilità/raccolta, non automaticamente nuova maturazione. Trasferimento Lombardia→Lazio sperimentale."
+      },
+      "habitat": {
+        "directDescription": "Siepi, margini, prati abbandonati, spesso suoli argillosi.",
+        "sourceUrl": "https://dryades.units.it/Roma/index.php?id=2222&procedure=taxon_page",
+        "numericLandscapeAffinities": "implementation_hypothesis_not_published_coefficients"
+      },
+      "sources": [
+        {
+          "title": "Zanotti, Gorno, Paletti, Le piante selvatiche commestibili, I Quaderni del Parco Oglio Nord vol. 9",
+          "url": "https://www.parcooglionord.it/emporio-dettaglio.php?id_pubb=6640",
+          "consultedTextUrl": "https://diazilla.com/doc/909878/le-piante-selvatiche-commestibili",
+          "domain": "Bassa Lombardia",
+          "type": "institutional_botanical_manual",
+          "accessNote": "Vecchio PDF ufficiale ora 404; consultata trascrizione dell'edizione primaria, paginazione diversa dalla ristampa corrente.",
+          "sourceId": "oglio"
+        }
+      ],
+      "outsideCore": "outside_typical_or_unknown_not_absence",
+      "weatherNumericParameters": null,
+      "weatherParameterStatus": "no_locally_validated_edible_phase_function_verified"
+    },
+    "plant-sambuco": {
+      "plantId": "sambuco",
+      "taxon": "Sambucus nigra",
+      "phase": "ripe_fruits",
+      "phaseMonths": [
+        8,
+        9
+      ],
+      "elevationRange": null,
+      "elevationNature": "unknown_no_numeric_interval_verified",
+      "phaseCalendar": {
+        "directEvidence": "Frutti maturi agosto–settembre.",
+        "sourceIds": [
+          "oglio"
+        ],
+        "pages": "p.162",
+        "mappingStatus": "months_reported_by_source",
+        "localCalibration": false,
+        "limits": "Trasferimento Lombardia→Lazio sperimentale. Frutti soltanto adeguatamente cotti, identità indipendente dal modello; non confondere con S.ebulus."
+      },
+      "habitat": {
+        "directDescription": "Boschi freschi/forre e ambienti disturbati su suoli freschi nutrienti.",
+        "sourceUrl": "https://dryades.units.it/Roma/index.php?id=5142&procedure=taxon_page",
+        "numericLandscapeAffinities": "implementation_hypothesis_not_published_coefficients"
+      },
+      "sources": [
+        {
+          "title": "Zanotti, Gorno, Paletti, Le piante selvatiche commestibili, I Quaderni del Parco Oglio Nord vol. 9",
+          "url": "https://www.parcooglionord.it/emporio-dettaglio.php?id_pubb=6640",
+          "consultedTextUrl": "https://diazilla.com/doc/909878/le-piante-selvatiche-commestibili",
+          "domain": "Bassa Lombardia",
+          "type": "institutional_botanical_manual",
+          "accessNote": "Vecchio PDF ufficiale ora 404; consultata trascrizione dell'edizione primaria, paginazione diversa dalla ristampa corrente.",
+          "sourceId": "oglio"
+        }
+      ],
+      "outsideCore": "outside_typical_or_unknown_not_absence",
+      "weatherNumericParameters": null,
+      "weatherParameterStatus": "no_locally_validated_edible_phase_function_verified"
+    }
+  },
+  "sources": {
+    "cnr": {
+      "title": "M. C. Zuin (CNR-IBAF), Piante alimurgiche del Veneto, Veneto Agricoltura e Università di Padova, 2010",
+      "url": "https://old.venetoagricoltura.org/upload/pubblicazioni/Completo%20x%20web.pdf",
+      "domain": "Veneto",
+      "type": "institutional_scientific_manual"
+    },
+    "oglio": {
+      "title": "Zanotti, Gorno, Paletti, Le piante selvatiche commestibili, I Quaderni del Parco Oglio Nord vol. 9",
+      "url": "https://www.parcooglionord.it/emporio-dettaglio.php?id_pubb=6640",
+      "consultedTextUrl": "https://diazilla.com/doc/909878/le-piante-selvatiche-commestibili",
+      "domain": "Bassa Lombardia",
+      "type": "institutional_botanical_manual",
+      "accessNote": "Vecchio PDF ufficiale ora 404; consultata trascrizione dell'edizione primaria, paginazione diversa dalla ristampa corrente."
+    },
+    "vda": {
+      "title": "Regione Valle d'Aosta, Il finocchio selvatico, Annie Vout e Ugo Lini",
+      "url": "https://www.regione.vda.it/gestione/riviweb/templates/aspx/informatore.aspx?pkArt=1130",
+      "domain": "Italia; articolo regionale VdA",
+      "type": "institutional_agronomic_article",
+      "accessNote": "Tratta spontaneo e coltivato: non soglia sperimentale locale."
+    },
+    "puglia": {
+      "title": "PAT Puglia, Finocchio selvatico, Michela Cataldi, Università di Bari",
+      "url": "https://www.patpuglia.it/it/12/Finocchio_selvatico/6_367_M",
+      "domain": "Puglia",
+      "type": "institutional_food_tradition_compilation"
+    },
+    "rosa": {
+      "title": "BUR Veneto n. 53, 26 aprile 2022, Rosa canina",
+      "url": "https://bur.regione.veneto.it/BurvServices/pubblica/burvGalleryDettaglio.aspx?id=2487",
+      "domain": "Veneto",
+      "type": "institutional_botanical_note"
+    },
+    "arsial": {
+      "title": "ARSIAL Cerveteri, Manuale operativo forestale, marzo 2022, Luca Scarnati, p.5",
+      "url": "https://progetti.regione.lazio.it/ossigeno/app/uploads/sites/62/Manuale-operativo-Azienda-ARSIAL-Cerveteri.pdf",
+      "domain": "Cerveteri, Lazio",
+      "type": "institutional_forest_manual"
+    },
+    "bertoloni": {
+      "title": "Bertoloni, Vegetazione dei monti di Porretta e dei suoi prodotti vegetali",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/b/b1/Vegetazione_dei_monti_di_Porretta_e_dei_suoi_prodotti_vegetali_%28IA_vegetazionedeimo00bert%29.pdf",
+      "domain": "Monti di Porretta, Appennino emiliano",
+      "type": "historical_primary_botanical_observation",
+      "accessNote": "Fonte storica; non calendario climatico moderno calibrato, anno bibliografico non verificato."
+    },
+    "fragariaProduction": {
+      "title": "De-la-Cruz et al., Fragaria vesca genotype–environment reproductive responses, Annals of Botany 2025",
+      "url": "https://academic.oup.com/aob/article/136/3/611/8044977",
+      "doi": "10.1093/aob/mcaf025",
+      "domain": "16 genotipi selvatici, 4 siti europei, due anni",
+      "type": "primary_experiment"
+    },
+    "cicoriaWater": {
+      "title": "Water deficit morphophysiological responses in chicory (Selvatica and cultivars)",
+      "url": "https://www.mdpi.com/2079-7737/12/3/444",
+      "doi": "10.3390/biology12030444",
+      "domain": "Esperimento controllato, varietà Selvatica e cultivar",
+      "type": "primary_experiment"
+    },
+    "rosaWater": {
+      "title": "Rosa canina and R. sempervirens rooted cuttings under irrigation deficit",
+      "url": "https://www.iris.unina.it/handle/11588/934983",
+      "doi": "10.17660/ActaHortic.2023.1368.20",
+      "domain": "Italia, talee in vasi4L, 900/600/300mL",
+      "type": "primary_experiment"
+    },
+    "prugnoloForcing": {
+      "title": "Influence of temperature on blackthorn phenophases in spring season",
+      "url": "https://www.jstage.jst.go.jp/article/agrmet/76/1/76_D-19-00030/_pdf",
+      "doi": "10.2480/agrmet.D-19-00030",
+      "domain": "Oltenia, Romania, 16 genotipi, 81–163m, 2017–18",
+      "type": "primary_observational_study"
+    },
+    "frostLeafout": {
+      "title": "Ecotypic variation in leaf-out and frost exposure",
+      "url": "https://onlinelibrary.wiley.com/doi/10.1111/geb.13088",
+      "doi": "10.1111/geb.13088",
+      "domain": "108 anni di erbario, 40–60N, include Prunus spinosa",
+      "type": "primary_observational_study"
+    },
+    "rosaFrost": {
+      "title": "Frost decreases content of sugars, ascorbic acid and some quercetin glycosides but stimulates selected carotenes in Rosa canina hips",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/25768262/",
+      "domain": "Qualità biochimica dei cinorrodi, non resa",
+      "type": "primary_experiment"
+    }
+  },
+  "weatherRules": [
+    {
+      "taxa": [
+        "tarassaco"
+      ],
+      "phase": "young_leaves",
+      "sourceIds": [
+        "cnr"
+      ],
+      "directEvidence": "Ricacci autunnali in condizioni piovose e dopo sfalcio",
+      "implementation": "Autumn branch if regrowth observed or mowing known plus water context; rainfall alone possible-to-check",
+      "numericThresholds": null
+    },
+    {
+      "taxa": [
+        "ortica"
+      ],
+      "phase": "young_leaves",
+      "sourceIds": [
+        "cnr"
+      ],
+      "directEvidence": "Taglio/sfalcio stimola nuove parti tenere",
+      "implementation": "Observed young leaves valid outside spring locally; mowing cannot be inferred from rain",
+      "numericThresholds": null
+    },
+    {
+      "taxa": [
+        "fragolina"
+      ],
+      "phase": "ripe_fruits",
+      "sourceIds": [
+        "fragariaProduction"
+      ],
+      "directEvidence": "Genotype×site-specific drought response, sometimes lower production, sometimes higher",
+      "implementation": "Drought contextual flag; no universal rain/soil multiplier",
+      "numericThresholds": null
+    },
+    {
+      "taxa": [
+        "cicoria"
+      ],
+      "phase": "young_leaves",
+      "sourceIds": [
+        "cicoriaWater"
+      ],
+      "directEvidence": "Vegetative/morphophysiological changes under water deficit",
+      "implementation": "Potential stress context, no leaf-harvest GDD or soil threshold",
+      "numericThresholds": null
+    },
+    {
+      "taxa": [
+        "rosa-canina"
+      ],
+      "phase": "ripe_fruits",
+      "sourceIds": [
+        "rosaWater",
+        "rosaFrost"
+      ],
+      "directEvidence": "Drought experiment vegetative only; frost changes quality but does not prove abundance",
+      "implementation": "No direct weather bonus to ripe-fruit score",
+      "numericThresholds": null
+    },
+    {
+      "taxa": [
+        "prugnolo"
+      ],
+      "phase": "open_flowers",
+      "sourceIds": [
+        "prugnoloForcing"
+      ],
+      "directEvidence": "CH=sum(hours 0<T<7°C) from Nov1; GDD=sum(max(0,Tmean−8°C)) from observed budbreak; observed29–46GDD",
+      "implementation": "Candidate auxiliary spring-flowering model only; not used for autumn ripe-fruit score",
+      "numericThresholds": {
+        "baseC": 8,
+        "observedGDDRange": [
+          29,
+          46
+        ]
+      },
+      "localValidation": false
+    },
+    {
+      "taxa": [
+        "prugnolo"
+      ],
+      "phase": "young_leaves",
+      "sourceIds": [
+        "frostLeafout"
+      ],
+      "directEvidence": "Leaf-out frost exposure depends on ecotype/phase",
+      "implementation": "Tmin<0 flags modeled freezing-air event; not tissue damage percentage; universal0.4penalty unsupported",
+      "numericThresholds": null
+    }
+  ],
+  "decisionConstraints": [
+    "Edibility, identification and preparation independent from weather and score.",
+    "Flowering calendar cannot stand for ripe fruit or young leaf calendar.",
+    "Unknown component omitted with explicit coverage; missing/expired weather must not suppress habitat+food-calendar recommendation.",
+    "Zone-level private unreviewed note is limited context, not presence at another trail/elevation/patch.",
+    "Availability none is non-detection/remaining quantity, not biological absence of species.",
+    "Unknown elevation stays null. No invented meter threshold from botanical altitudinal belts.",
+    "Outside described elevation/calendar not proven impossible.",
+    "Ordinal mappings, weights, smoothing, source-domain transfer are versioned implementation hypotheses.",
+    "No harvest probabilities or scientific attribution of invented coefficients."
+  ]
+}

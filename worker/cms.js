@@ -28,13 +28,11 @@ async function init(env,origin) {
       const res=await env.ASSETS.fetch(new Request(new URL(`/data/${r.id}.json`,origin)));
       if(!res.ok) failure(`Dati iniziali mancanti: ${r.title}.`,503);
       const data=await res.json();
-      const value=['guides','legal','glossary','plants'].includes(r.id)?validateContent(r.id,data).value:data;
+      const value=['guides','legal','glossary','plants','botanical-models'].includes(r.id)?validateContent(r.id,data).value:data;
       return {id:r.id,payload:JSON.stringify(value)};
     }));
     if(seeds.length) await db.batch([
-      // 20 documents use 100 bindings, below D1's 100-parameter limit.
-      // Two statements keep the cold start within the free tier query budget.
-      db.prepare(`INSERT INTO cms_documents(id,draft,published,updated_at,updated_by) VALUES ${seeds.map(()=>'(?,?,?,?,?)').join(',')} ON CONFLICT(id) DO NOTHING`).bind(...seeds.flatMap(r=>[r.id,r.payload,r.payload,Date.now(),'seed'])),
+      ...Array.from({length:Math.ceil(seeds.length/20)},(_,i)=>{const batch=seeds.slice(i*20,(i+1)*20);return db.prepare(`INSERT INTO cms_documents(id,draft,published,updated_at,updated_by) VALUES ${batch.map(()=>'(?,?,?,?,?)').join(',')} ON CONFLICT(id) DO NOTHING`).bind(...batch.flatMap(r=>[r.id,r.payload,r.payload,Date.now(),'seed']));}),
       db.prepare('INSERT INTO cms_revisions(document_id,version,payload,created_at,actor) SELECT id,0,draft,updated_at,updated_by FROM cms_documents WHERE version=0 ON CONFLICT(document_id,version) DO NOTHING'),
     ]);
     const baseline=await db.prepare("SELECT id FROM cms_documents WHERE id='glossary' AND version=0 AND updated_by='seed' AND json_extract(draft,'$.version')=1").first();
