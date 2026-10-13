@@ -1,3 +1,4 @@
+import {GLOSSARY_CONTEXTS,termContexts,glossaryAliasKey} from '../js/glossary-context.js';
 import sanitizeHtml from 'sanitize-html';
 import { resourceOf, isLockedField } from '../js/content-schema.js';
 import { SPECIES } from '../js/species.js';
@@ -113,13 +114,14 @@ export function validateContent(id, data, previous) {
     checkIds(value.terms);
     const ids=new Set(value.terms.map(t=>t.id)), aliases=new Map();
     for(const t of value.terms) {
-      if(typeof t.term!=='string'||!t.term.trim()||typeof t.definition!=='string'||!t.definition.trim()||typeof t.observe!=='string'||!['Funghi','Alberi','Bosco','Sentiero'].includes(t.category)) err(`Completa parola, categoria, definizione e indicazioni di campo per ${t.id}.`);
+      if(typeof t.term!=='string'||!t.term.trim()||typeof t.definition!=='string'||!t.definition.trim()||typeof t.observe!=='string'||!GLOSSARY_CONTEXTS.includes(t.category)) err(`Completa parola, categoria, definizione e indicazioni di campo per ${t.id}.`);
       if(!Array.isArray(t.aliases)||t.aliases.some(a=>typeof a!=='string'||a.trim().length<3)||!Array.isArray(t.related)||t.related.some(id=>!ids.has(id)||id===t.id)) err(`Sinonimi o voci collegate non validi per ${t.id}.`);
       if(!Array.isArray(t.sources)||!t.sources.length||t.sources.some(s=>typeof s?.title!=='string'||!s.title.trim()||!/^https?:\/\//.test(s?.url||''))) err(`Aggiungi fonti consultabili alla voce ${t.id}.`);
+      if(t.contexts!=null&&(!Array.isArray(t.contexts)||!t.contexts.length||t.contexts.some(c=>!GLOSSARY_CONTEXTS.includes(c))||new Set(t.contexts).size!==t.contexts.length))err(`Contesti del glossario non validi per ${t.id}.`);
       for(const word of [t.term,...t.aliases]) {
-        const key=word.trim().toLowerCase();
-        if(aliases.has(key)&&aliases.get(key)!==t.id) err(`La parola ${word} è associata a più voci del glossario.`);
-        aliases.set(key,t.id);
+        const key=glossaryAliasKey(word),prior=aliases.get(key)||[];
+        if(prior.some(x=>x.id!==t.id&&termContexts(x).some(c=>termContexts(t).includes(c))))err(`La parola ${word} è associata a più voci del glossario nello stesso contesto.`);
+        if(!prior.some(x=>x.id===t.id))prior.push(t);aliases.set(key,prior);
       }
     }
     for(const id of ['difficolta-t','difficolta-e','difficolta-ee','difficolta-eea']) if(!ids.has(id)) err('Mantieni le quattro voci della legenda CAI.');

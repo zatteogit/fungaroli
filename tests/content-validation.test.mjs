@@ -71,3 +71,9 @@ test('botanical model updates require scientific review and preserve unknown fie
  }
  const changed=structuredClone(data);changed.models['plant-corbezzolo'].phaseMonths=[10,11];assert.equal(validateContent('botanical-models',changed,data).needsReview,true);
 });
+test('glossary homonyms require disjoint explicit contexts, including normalized aliases',()=>{
+ const original=read('glossary');assert.equal(validateContent('glossary',original).needsReview,false);
+ const altered=structuredClone(original);altered.terms.find(t=>t.id==='aculei-piante').contexts.push('Funghi');assert.throws(()=>validateContent('glossary',altered,original),/stesso contesto/);
+ const invalid=structuredClone(original);invalid.terms[0].contexts=['bad-context'];assert.throws(()=>validateContent('glossary',invalid,original),/Contesti/);
+ const unscoped=structuredClone(original);delete unscoped.terms.find(t=>t.id==='aculei-piante').contexts;unscoped.terms.find(t=>t.id==='aculei-piante').category='Bosco';assert.throws(()=>validateContent('glossary',unscoped,original),/stesso contesto/);
+});

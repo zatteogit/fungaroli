@@ -68,6 +68,7 @@ function renderEditor(){
 }
 function fields(v,path,depth=0){
   if(['phaseMonths','elevationRange'].includes(path.at(-1)))return `<label>${esc(title(path.at(-1)))} <span class="small muted">Un numero per riga; vuoto = sconosciuto</span><textarea data-field="${pathCode(path)}" data-kind="nullable-numbers">${esc((v||[]).join('\n'))}</textarea></label>`;
+  if(doc.id==='glossary'&&path.at(-1)==='contexts')return `<label>Contesti del collegamento <span class="small muted">Un contesto per riga: Funghi, Piante, Alberi, Bosco, Sentiero. Vuoto = significato condiviso.</span><textarea data-field="${pathCode(path)}" data-kind="nullable-contexts">${esc((v||[]).join('\n'))}</textarea></label>`;
   if(v===null)return `<label>${esc(title(path.at(-1)||'Valore'))}<input data-field="${pathCode(path)}" data-kind="nullable" placeholder="Non disponibile" value=""></label>`;
   if(typeof v!=='object')return field(v,path);
   if(Array.isArray(v)) {
@@ -87,7 +88,7 @@ function field(v,path){
   if(typeof v==='boolean')return `<label><span><input type="checkbox" data-field="${pathCode(path)}" data-kind="boolean" ${v?'checked':''}> ${label}</span></label>`;
   if(key==='id')return `<label>${label}<input value="${esc(v)}" readonly></label>`;
   if(doc.id==='media-glossary'&&key==='kind')return `<label>${label}<select data-field="${pathCode(path)}" data-kind="string">${[['photo','Fotografia'],['diagram','Schema didattico']].map(([id,name])=>`<option value="${id}" ${id===v?'selected':''}>${name}</option>`).join('')}</select></label>`;
-  if(doc.id==='glossary'&&key==='category')return `<label>${label}<select data-field="${pathCode(path)}" data-kind="string">${['Funghi','Alberi','Bosco','Sentiero'].map(x=>`<option ${x===v?'selected':''}>${x}</option>`).join('')}</select></label>`;
+  if(doc.id==='glossary'&&key==='category')return `<label>${label}<select data-field="${pathCode(path)}" data-kind="string">${['Funghi','Piante','Alberi','Bosco','Sentiero'].map(x=>`<option ${x===v?'selected':''}>${x}</option>`).join('')}</select></label>`;
   if(doc.id==='botanical-models'&&['phase','calendarOrigin'].includes(key))return `<label>${label}<select data-field="${pathCode(path)}" data-kind="string">${(key==='phase'?[['young_leaves','Foglie giovani'],['ripe_fruits','Frutti maturi'],['dry_fruits','Frutti aromatici maturi']]:[['hypothesis','Mesi ricavati da una stagione (ipotesi)'],['source_calendar','Mesi riportati dalla fonte']]).map(([id,name])=>`<option value="${id}" ${id===v?'selected':''}>${name}</option>`).join('')}</select></label>`;
   if(key==='toxicity')return `<label>${label}<select data-field="${pathCode(path)}" data-kind="string">${['da verificare','commestibile','commestibile con cautela','non commestibile','tossico','mortale'].map(x=>`<option ${x===v||!v&&x==='da verificare'?'selected':''}>${x}</option>`).join('')}</select></label>`;
   if(doc.id==='plants'&&['category','status'].includes(key))return `<label>${label}<select data-field="${pathCode(path)}" data-kind="string">${(key==='category'?['Erbe','Frutti','Pericolose']:['da verificare','solo parti e preparazioni indicate','tossico','mortale']).map(x=>`<option ${x===v?'selected':''}>${x}</option>`).join('')}</select></label>`;
@@ -100,6 +101,7 @@ editor.addEventListener('input',e=>{
   let value=el.dataset.kind==='html'?el.innerHTML:el.value;
   if(el.dataset.kind==='number')value=el.value===''?null:Number(el.value);
   if(el.dataset.kind==='nullable')value=el.value||null;
+  if(el.dataset.kind==='nullable-contexts')value=el.value.trim()?el.value.split('\n').map(x=>x.trim()).filter(Boolean):null;
   if(el.dataset.kind==='nullable-numbers')value=el.value.trim()?el.value.split('\n').filter(x=>x.trim()).map(Number):null;
   if(el.dataset.kind==='boolean')value=el.checked;
   if(['strings','numbers'].includes(el.dataset.kind))value=el.value.split('\n').filter(x=>x.trim()).map(x=>el.dataset.kind==='numbers'?Number(x):x);

@@ -513,6 +513,7 @@ const photosOf = (t) => {
 export const taxonName = (key) => { const t = TAXA.find((x) => x.key === key); return t?.name || t?.latin || ''; };
 export const hasTaxonPage = (key) => { const t = TAXA.find((x) => x.key === key); return !!t && !(t.edible_id && !t.lookalike_of?.length); };
 export function renderTaxonPage(box, key) {
+  box.dataset.glossaryContext='Funghi';
   const t = TAXA.find((x) => x.key === key);
   if (!t) { box.innerHTML = '<p class="muted">Specie non trovata.</p>'; return; }
   const ph = photosOf(t), tox = esc(t.toxicity || ''), toxL = esc(t.tox_label || t.toxicity || '');
@@ -783,6 +784,7 @@ function wireFacets(root, after) {
 }
 
 export function renderIdentify(box) {
+  box.dataset.glossaryContext='Funghi';
   if (!TAXA.length) { box.innerHTML = '<p class="notice">I caratteri delle specie sono in preparazione: la ricerca sarà disponibile a breve.</p>'; return; }
   const ref = state.compare && TAXA.find((t) => t.key === state.compare);
   if (ref) { renderCompare(box, ref, state.pick); return; }

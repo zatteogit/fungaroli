@@ -1,4 +1,5 @@
 // Lessico di campo e spiegazioni contestuali: i link restano utilizzabili senza popover.
+import {buildGlossaryIndex,resolveGlossaryTerm,relatedGlossaryTerms} from './glossary-context.js';
 import { openEntitySheet } from './entity-sheet.js';
 import {openLightbox,captionHtml} from './lightbox.js';
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
@@ -24,14 +25,15 @@ function termImages(id) {
     <button type="button" class="learning-image ${m.kind==='diagram'?'learning-diagram':''}" data-learning-image="${esc(id)}" data-image-index="${i}" aria-label="Ingrandisci: ${esc(m.alt)}"><img data-src="${esc(ASSET(m.file))}" alt="${esc(m.alt)}" loading="lazy" decoding="async"><span aria-hidden="true">⤢</span></button>
     <figcaption><span>${esc(m.caption)}</span><small>${imageCredit(m)}</small></figcaption></figure>`).join('')}</div>`;
 }
-function termBody(t, legend = false) {
+function termBody(t, legend = false, context=t.category) {
+  const related=relatedGlossaryTerms(aliasMap,TERMS,t,context);
   if(legend && t.id.startsWith('difficolta-')) return `<div class="difficulty-legend" aria-label="Legenda delle difficoltà">${Object.values(difficultyIds).map(id => TERMS.find(x => x.id === id)).filter(Boolean).map(x => `<div${x.id === t.id ? ' class="current"' : ''}><b>${esc(x.term)}</b><p>${esc(x.definition)}</p></div>`).join('')}</div><p class="learning-observe">${esc(t.observe)}</p><p class="small muted">Sigla dalla fonte del percorso: verifica stato del sentiero, meteo, tempi e dislivelli prima di partire.</p><p class="learning-sources small muted">Fonte: ${sourceLinks(t.sources)}</p>`;
-  return `<p>${esc(t.definition)}</p>${termImages(t.id)}${t.observe ? `<p class="learning-observe">${esc(t.observe)}</p>` : ''}
-    ${t.related?.length ? `<div class="learning-related">${t.related.map(id => TERMS.find(x => x.id === id)).filter(Boolean).map(x => `<a class="glossary-link" data-term="${x.id}" href="#/glossario/${x.id}">${esc(x.term)}</a>`).join('')}</div>` : ''}
+  return `<p class="small muted learning-category">${esc(t.category)}</p><p>${esc(t.definition)}</p>${termImages(t.id)}${t.observe ? `<p class="learning-observe">${esc(t.observe)}</p>` : ''}
+    ${related.length ? `<div class="learning-related">${related.map(x => `<a class="glossary-link" data-term="${x.id}" href="#/glossario/${x.id}">${esc(x.term)}</a>`).join('')}</div>` : ''}
     <p class="learning-sources small muted">Fonti: ${sourceLinks(t.sources)}</p>`;
 }
 
-export function renderGlossary(box, selected = '', categories = ['Funghi','Alberi','Bosco','Sentiero']) {
+export function renderGlossary(box, selected = '', categories = ['Funghi','Piante','Alberi','Bosco','Sentiero']) {
   const category = TERMS.find(t => t.id === selected)?.category || '';
   box.innerHTML = `<label class="search-box"><input id="${box.id}-q" type="search" placeholder="Cerca una parola: volva, dislivello, micorriza…" aria-label="Cerca nel glossario" autocomplete="off"></label>
     <div class="learning-filters" role="group" aria-label="Argomento del glossario">${['', ...categories].map(c => `<button type="button" class="chip" data-category="${c}" aria-pressed="${c === category}">${c || 'Tutto'}</button>`).join('')}</div>
@@ -60,18 +62,20 @@ export function enhanceGlossary(root) {
   }});
   const nodes = []; while(walker.nextNode()) nodes.push(walker.currentNode);
   for(const node of nodes) {
+    const context=node.parentElement.closest('[data-glossary-context]')?.dataset.glossaryContext;
     aliasRe.lastIndex = 0;
     const matches = [...node.textContent.matchAll(aliasRe)];
     if(!matches.length) continue;
     const fragment = document.createDocumentFragment(); let pos = 0;
     for(const m of matches) {
       const start = m.index + m[1].length, word = m[2];
-      const id = aliasMap.get(word.toLowerCase().replace(/\s+/g,' '));
+      const id = resolveGlossaryTerm(aliasMap,word,context)?.id;
       if(!id) continue;
       fragment.append(document.createTextNode(node.textContent.slice(pos,start)));
       const a = document.createElement('a'); a.className = 'glossary-link'; a.dataset.term = id; a.href = `#/glossario/${id}`; a.setAttribute('aria-haspopup','dialog'); a.textContent = word;
       fragment.append(a); pos = start + word.length;
     }
+    if(!pos)continue;
     fragment.append(document.createTextNode(node.textContent.slice(pos))); node.replaceWith(fragment);
   }
 }
@@ -108,13 +112,14 @@ function positionPopover(panel) {
   const below=r.bottom+10, top=below+p.height<=innerHeight-12 ? below : Math.max(12,r.top-p.height-10);
   panel.style.left=`${left}px`; panel.style.top=`${top}px`;
 }
-function openPanel(link, title, body, href, label) {
+function openPanel(link, title, body, href, label, context) {
   const mobile = matchMedia('(max-width: 699px)').matches || !('showPopover' in HTMLElement.prototype);
   const panel = ensurePanel(mobile), prior = opener, same = active === panel;
   if(!same) closePanel(false);
   // Un popover sopra una scheda modale deve restare dentro il suo ambito attivo.
   if(!mobile) (link.closest('dialog[open]') || document.body).append(panel);
   opener = link.closest('.learning-panel') ? prior : link; active = panel;
+  if(context)panel.dataset.glossaryContext=context;else delete panel.dataset.glossaryContext;
   panel.innerHTML = `<header><h2 id="${panel.id}-title">${esc(title)}</h2><button type="button" class="icon-btn" data-learning-close aria-label="Chiudi la spiegazione">×</button></header><div class="learning-panel-body">${body}</div><footer><a class="btn ghost" href="${esc(href)}">${esc(label)} →</a></footer>`;
   panel.scrollTop = 0;
   opener?.setAttribute('aria-expanded','true'); opener?.setAttribute('aria-controls',panel.id);
@@ -129,8 +134,7 @@ function openPanel(link, title, body, href, label) {
 export function initLearning({glossary, trees,media,assetUrl}) {
   TERMS = Array.isArray(glossary?.terms) ? glossary.terms : []; TREES = trees?.trees || {};
   ILLUSTRATIONS=media?.terms||{};if(assetUrl)ASSET=assetUrl;
-  aliasMap = new Map();
-  for(const t of TERMS) for(const alias of [t.term,...(t.aliases || [])]) if(alias.length > 2) aliasMap.set(alias.toLowerCase(), t.id);
+  aliasMap = buildGlossaryIndex(TERMS);
   const words=[...aliasMap.keys()].sort((a,b)=>b.length-a.length).map(w=>w.replace(/[.*+?^${}()|[\]\\]/g,'\\$&').replace(/ /g,'\\s+'));
   aliasRe=words.length ? new RegExp(`(^|[^\\p{L}\\p{N}])(${words.join('|')})(?=[^\\p{L}\\p{N}]|$)`,'giu') : null;
   document.addEventListener('click',e=>{
@@ -144,15 +148,16 @@ export function initLearning({glossary, trees,media,assetUrl}) {
     const link=e.target.closest('a.glossary-link,a.tree-link,a.species-link,a[data-entity]');
     if(!link || e.defaultPrevented || e.button!==0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
     const t=TERMS.find(x=>x.id===link.dataset.term);
+    const context=link.closest('[data-glossary-context]')?.dataset.glossaryContext||t?.category;
     let title,body,href,label;
-    if(t) {title=t.term;body=termBody(t,true);href=`#/glossario/${t.id}`;label='Nel glossario';}
+    if(t) {title=t.term;body=termBody(t,true,context);href=`#/glossario/${t.id}`;label='Nel glossario';}
     else {
       const match=link.getAttribute('href')?.match(/^#\/(albero|pianta|specie|fungo|commestibile)\/([^/]+)$/);
       if(!match) return;
       if(openEntitySheet(link.getAttribute('href'),link)) {e.preventDefault();closePanel(false);}
       return;
     }
-    e.preventDefault();openPanel(link,title,body,href,label);
+    e.preventDefault();openPanel(link,title,body,href,label,context);
   });
   addEventListener('hashchange',()=>closePanel(false));
   addEventListener('resize',()=>closePanel(false));
@@ -167,6 +172,7 @@ export function initLearning({glossary, trees,media,assetUrl}) {
 }
 
 export function renderFieldIdentify(box, mode, thumb) {
+  box.dataset.glossaryContext=mode==='bosco'?'Bosco':'Alberi';
   if(mode==='bosco') {
     box.innerHTML='<p class="learning-observe">Guarda il substrato, il margine del bosco e i segni sul sentiero. Queste voci aiutano a descrivere ciò che vedi.</p><div id="field-glossary"></div>';
     renderGlossary(box.querySelector('#field-glossary'), '', ['Bosco','Sentiero']);

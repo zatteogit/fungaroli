@@ -761,6 +761,7 @@ function trailsFor(z, sp, band) {
 function renderSpeciesGrid() {
   const box = $('#species-grid');
   if (!box) return;
+  box.dataset.glossaryContext='Funghi';
   if (!box.querySelector('#sp-head')) {
     // un solo campo di ricerca nell'app: qui apre la ricerca generale, con funghi e sosia in cima
     box.innerHTML = `<button type="button" id="sp-head" class="search-box search-fake" data-open-search><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg>
@@ -781,6 +782,7 @@ function fillSpecies() {
 }
 
 function renderEdiblePage(id, box=$('#edible-detail')) {
+  box.dataset.glossaryContext='Funghi';
   const s = catalog.find(x=>x.id===id);
   if (!s) { box.innerHTML='<p>Specie non presente nel catalogo.</p>';return; }
   const names=['gen','feb','mar','apr','mag','giu','lug','ago','set','ott','nov','dic'];
@@ -983,6 +985,7 @@ const fact = (ic, html) => `<span class="fact">${IC[ic]}${html}</span>`;
 const creditLine = (m) => m ? `Foto: ${esc(m.author || '')}${m.license ? `, ${esc(m.license)}` : ''} · <a href="${esc(m.page)}" target="_blank" rel="noopener">${esc(m.source || 'fonte')}</a>` : '';
 
 function renderHome() {
+  for(const el of document.querySelectorAll('#hero,#ranking,#season'))el.dataset.glossaryContext=state.target==='piante'?'Piante':'Funghi';
   const list = combosList();
   const hero = list[0];
   const box = $('#hero');
@@ -1560,7 +1563,7 @@ const ICON = {
 function renderWalkFocus(z, d, walk) {
   if (!walk) return `<p class="small muted">Non abbiamo ancora un sentiero documentato per questa zona.</p>`;
   const { t, h } = walk;
-  return `<details class="sec walk-focus" name="zone-details" data-sec="passeggiata" data-walk-trail="${t.id}"${openSecs.has('passeggiata') ? ' open' : ''}>
+  return `<details class="sec walk-focus" data-glossary-context="Sentiero" name="zone-details" data-sec="passeggiata" data-walk-trail="${t.id}"${openSecs.has('passeggiata') ? ' open' : ''}>
     <summary><span class="walk-summary">
       <span class="eyebrow">La passeggiata, più da vicino</span><span class="walk-title">${esc(walk.microzone)}</span>
       <span class="walk-route">${segnavia(t)}<b>${esc(trailName(t))}</b></span>
@@ -1572,7 +1575,7 @@ function renderWalkFocus(z, d, walk) {
       <div><dt>Itinerario completo</dt><dd>${t.total_km ? `${fmtKm(t.total_km)} km` : 'Lunghezza n.d.'}${t.duration ? ` · ${fmtDur(t.duration)}` : ''}${t.ascent ? ` · +${esc(t.ascent)} m` : ''}</dd></div>
       <div><dt>Imbocco mappato</dt><dd>${h ? `${h.ele != null ? `Circa ${Math.round(h.ele / 25) * 25} m · ` : ''}${esc(h.road || (h.kind === 'strada' ? 'su strada' : 'su sterrata'))}` : 'Non disponibile; le soste indicate riguardano la zona'}</dd></div>
     </dl>
-    ${t.mainCat ? `<p class="small">Lungo il tracciato: ${linkTrees(t.mainCat.toLowerCase())} nei campioni tra circa ${Math.floor(t.lo / 25) * 25} e ${Math.ceil(t.hi / 25) * 25} m${d?.best?.species ? `, ${d.best.kind==='plant'?'proxy di paesaggio per':'compatibili con l’habitat di'} ${speciesLink(d.best.species, d.best.species.name.toLowerCase())}` : ''}.</p>` : ''}
+    ${t.mainCat ? `<p class="small" data-glossary-context="${d?.best?.kind==='plant'?'Piante':'Funghi'}">Lungo il tracciato: ${linkTrees(t.mainCat.toLowerCase())} nei campioni tra circa ${Math.floor(t.lo / 25) * 25} e ${Math.ceil(t.hi / 25) * 25} m${d?.best?.species ? `, ${d.best.kind==='plant'?'proxy di paesaggio per':'compatibili con l’habitat di'} ${speciesLink(d.best.species, d.best.species.name.toLowerCase())}` : ''}.</p>` : ''}
     ${trailVisual(z, t, d, headsOf(z,t))}
     <button type="button" class="btn ghost" data-note-kind="zona" data-note-id="${z.id}" data-note-zone="${z.id}" data-note-href="${esc(walkHref(z,state.dayOffset,t))}" data-note-title="${esc(trailName(t))}">＋ Salva il giro nel taccuino</button>
     ${trailLinks(z, t)}
@@ -1620,7 +1623,7 @@ function essentialSections(z, d, walk) {
 }
 
 const section = (id, title, body, open = false) => body ? `
-  <details class="sec" name="zone-details" data-sec="${id}"${openSecs.has(id) || (open && !openSecs.size) ? ' open' : ''}>
+  <details class="sec" name="zone-details" data-sec="${id}"${['sentieri','accesso'].includes(id)?' data-glossary-context="Sentiero"':''}${openSecs.has(id) || (open && !openSecs.size) ? ' open' : ''}>
     <summary>${title}</summary><div class="sec-body">${body}</div>
   </details>` : '';
 const openSecs = new Set();
@@ -1651,6 +1654,7 @@ function bindDetailSections(box, onOpen = () => {}) {
 }
 
 function renderDetail() {
+  $('#detail').dataset.glossaryContext=state.target==='piante'?'Piante':'Funghi';
   const z = (weatherZones||zones).find((x) => x.id === state.zoneId) || zones[0];
   const r = results[z.id];
   const d = dayEntry(z.id, state.dayOffset);
@@ -1903,7 +1907,7 @@ function trailCard(z, t, d, top = false) {
     `<div><dt>Nella zona</dt><dd>${fmtKm(t.in_zone_km)} km${t.goodKm != null ? `, di cui <b>${fmtKm(t.goodKm)} km</b> in ${d?.best?.kind==='plant'?'paesaggio compatibile (proxy)':'bosco adatto'}` : ''}</dd></div>`,
   ].filter(Boolean).join('');
   const heads = headsOf(z, t);
-  return `<div class="tcard${top ? ' top' : ''}">
+  return `<div data-glossary-context="Sentiero" class="tcard${top ? ' top' : ''}">
     <div class="tc-head">${segnavia(t)}<div class="tc-name"><b>${esc(trailName(t))}</b>${t.itinerary?.length > 2 ? `<small>${esc(t.itinerary.slice(1, -1).join(' · '))}</small>` : ''}${t.long ? '<small>tratto di un itinerario lungo</small>' : ''}${t.operator ? `<small>${esc(t.operator)}</small>` : ''}</div>${top ? '<span class="badge tc-top">In evidenza</span>' : ''}</div>
     <dl class="tc-facts">${facts}</dl>
     ${t.editorialNote?`<p class="small">${esc(t.editorialNote)}</p>`:''}
