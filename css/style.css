@@ -2089,11 +2089,6 @@ html[data-cmp-dir="prev"]::view-transition-new(cmp-pick) { animation-name: cmp-i
 @media (max-width: 420px) { .species-options button { align-items: flex-start; } .season-badge { font-size: .65rem; } }
 
 /* Impara e lessico di campo */
-.learn-paths { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px; margin: 0 0 32px; }
-.learn-paths > a { position: relative; display: block; padding: 22px; background: var(--surface); border: 1px solid var(--hair); border-radius: var(--r-lg); text-decoration: none; color: var(--text); }
-.learn-paths h2 { margin: 8px 0; font-family: var(--font-display); font-size: 28px; }
-.learn-paths p { color: var(--text-2); margin: 0 0 18px; }
-.learn-paths > a > span:last-child { color: var(--accent); font-size: 22px; }
 .learning-filters { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
 .glossary-entry { margin: 10px 0; border: 1px solid var(--hair); background: var(--surface); border-radius: 16px; }
 .glossary-entry > summary { list-style: none; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 16px; min-height: 64px; cursor: pointer; }
@@ -2134,9 +2129,5 @@ html[data-cmp-dir="prev"]::view-transition-new(cmp-pick) { animation-name: cmp-i
 .difficulty-legend > .current { border-color: var(--accent); background: var(--accent-soft); }
 .difficulty-legend p { font-size: 12.5px; margin: 5px 0 0; line-height: 1.4; }
 @media (max-width: 480px) {
-  .learn-paths { gap: 10px; }
-  .learn-paths > a { padding: 16px; }
-  .learn-paths h2 { font-size: 23px; }
-  .learn-paths p { font-size: 13px; line-height: 1.45; }
   .seg-nav a { padding-inline: 6px; font-size: 12px; }
 }

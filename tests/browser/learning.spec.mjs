@@ -31,9 +31,10 @@ for(const width of [320,1280]) test(`spiegazioni contestuali, glossario e ricono
   await expect(keyword).toBeVisible();await keyword.click();await expect(panel.locator('h2')).toHaveText('Volva');
   await panel.locator('.learning-related [data-term="anello"]').click();await expect(panel.locator('h2')).toHaveText('Anello');
   await page.keyboard.press('Escape');await expect(panel).toBeHidden();await expect(keyword).toBeFocused();
-  await page.locator('[data-tab="specie"]').click();await expect(page.locator('[data-view="impara"]')).toBeVisible();
+  await page.locator('[data-tab="specie"]').click();await expect(page.locator('[data-view="specie"]')).toBeVisible();
+  await expect(page.locator('#species-grid .sp-card')).not.toHaveCount(0);
   await expect(page.locator('[data-tab="specie"]')).toContainText('Impara');
-  await page.locator('.learn-paths a[href="#/glossario"]').click();
+  await page.locator('[data-view="specie"] .seg-nav a[href="#/glossario"]').click();
   await page.locator('#glossary-q').fill('ectomicorriza');await expect(page.locator('#glossary-results details')).toHaveCount(1);
   await expect(page.locator('#glossary-results')).toContainText('Micorriza');
   await page.locator('#glossary-q').fill('parola inesistente');await expect(page.locator('#glossary-results')).toContainText('Nessuna voce');
