@@ -69,12 +69,12 @@ function collectiveStore() {
   const account = currentUser();
   const local = localStore('fungaroli:diario:account:' + account.id);
   return { kind: 'community', ownerId: account.id,
-    async list() {
+    async list({isCurrent=()=>true}={}) {
       try {
         if (currentUser()?.id !== account.id) throw Object.assign(new Error('Profilo cambiato.'), { status: 401 });
         const entries = (await communityRequest('entries')).entries;
         if (currentUser()?.id !== account.id) throw Object.assign(new Error('Profilo cambiato.'), { status: 401 });
-        await local.replace(entries); return entries;
+        if(isCurrent())await local.replace(entries); return entries;
       }
       catch (e) { if (e.status === 401) throw e; return local.list(); }
     },
@@ -85,7 +85,7 @@ function collectiveStore() {
       const saved = await communityRequest('entries/' + e.id, 'PUT', e);
       if (saved.entry) { Object.assign(e, saved.entry); await local.put(e); }
     },
-    async remove(id) { if (currentUser()?.id !== account.id) throw new Error('Profilo cambiato.'); await communityRequest('entries/' + id, 'DELETE'); await local.remove(id); },
+    async remove(id,{signal}={}) { if (currentUser()?.id !== account.id) throw new Error('Profilo cambiato.'); await communityRequest('entries/' + id, 'DELETE',undefined,{signal}); await local.remove(id); },
   };
 }
 
@@ -166,6 +166,7 @@ export function initJournal({ onEntries=()=>{},zones, speciesCatalog = SPECIES, 
   let store = null;
   let draft, step;
   let listMessage = '';
+  const actionStates=new Map();let entriesRevision=0;
   let listFilter='',listQuery='',noteControls=[];
   const sortEntries = () => entries.sort((a, b) => String(b.date||'').localeCompare(String(a.date||'')) || String(b.savedAt||'').localeCompare(String(a.savedAt||'')));
   const noteDialog=document.createElement('dialog');noteDialog.className='wiz notebook-dialog';noteDialog.setAttribute('aria-label','Appunto privato');document.body.append(noteDialog);
@@ -378,6 +379,55 @@ export function initJournal({ onEntries=()=>{},zones, speciesCatalog = SPECIES, 
     renderList();
   }
 
+  function rowActions(entry){
+    const state=actionStates.get(String(entry.id))||{},id=esc(entry.id),disabled=state.busy?' disabled':'';
+    return `<div class="j-actions" aria-busy="${!!state.busy}">
+      ${store.kind==='community'&&!['note','plan'].includes(entry.kind)?`<button type="button" class="link-btn small" data-share-entry="${id}"${disabled}>${state.busy==='share'?'Condivido…':'Condividi osservazioni'}</button><button type="button" class="link-btn small" data-withdraw-entry="${id}"${disabled}>${state.busy==='withdraw'?'Ritiro…':'Ritira segnalazioni'}</button>`:''}
+      <button type="button" class="link-btn small j-delete" data-del="${id}"${disabled}>${state.busy==='delete'?'Elimino…':state.confirmDelete?'Conferma eliminazione':'Elimina'}</button>
+      ${state.confirmDelete&&!state.busy?`<button type="button" class="link-btn small" data-cancel-delete="${id}">Annulla</button>`:''}
+    </div>${state.message?`<p class="j-action-status${state.error?' is-error':''}" role="${state.error?'alert':'status'}">${esc(state.message)}</p>`:''}`;
+  }
+  const currentStore=target=>target===store&&(target.kind!=='community'||target.ownerId===currentUser()?.id);
+  const focusAction=(id,attr)=>list.querySelector(`[${attr}="${CSS.escape(id)}"]`)?.focus({preventScroll:true});
+  list.addEventListener('click',async event=>{
+    const button=event.target.closest('[data-share-entry],[data-withdraw-entry],[data-del],[data-cancel-delete]');
+    if(!button||!list.contains(button)||button.disabled)return;
+    const attr=['data-share-entry','data-withdraw-entry','data-del','data-cancel-delete'].find(key=>button.hasAttribute(key)),id=button.getAttribute(attr),entry=entries.find(e=>String(e.id)===id),target=store;
+    if(!entry||!target||!currentStore(target))return;
+    const state=actionStates.get(id)||{};if(state.busy)return;
+    if(attr==='data-cancel-delete'){actionStates.delete(id);renderList();focusAction(id,'data-del');return;}
+    if(attr==='data-del'&&!state.confirmDelete){
+      actionStates.set(id,{confirmDelete:true,message:entry.kind==='note'?'Eliminare definitivamente questo appunto? Conferma oppure annulla.':'Eliminare definitivamente questa voce e le sue segnalazioni? Conferma oppure annulla.'});
+      renderList();focusAction(id,'data-del');return;
+    }
+    const action=attr==='data-share-entry'?'share':attr==='data-withdraw-entry'?'withdraw':'delete';
+    actionStates.set(id,{busy:action,message:action==='share'?'Condivisione in corso…':action==='withdraw'?'Ritiro delle segnalazioni in corso…':'Eliminazione in corso…'});
+    entriesRevision++;renderList();
+    const signal=AbortSignal.timeout(15000);
+    try{
+      let message;
+      if(action==='share'){
+        if(!await shareDiaryEntry(entry,{signal}))throw new Error('Accedi al tuo profilo per condividere questa osservazione.');
+        message='Osservazioni condivise: zona, giorno, specie e quantità. Le note restano private.';
+      }else if(action==='withdraw'){
+        await communityRequest('reports','DELETE',{entryId:id},{signal});
+        document.dispatchEvent(new CustomEvent('fungaroli:refresh-community'));
+        message='Segnalazioni ritirate. L’uscita resta nel taccuino privato.';
+      }else{
+        await target.remove(entry.id,{signal});
+        if(!currentStore(target))return;
+        entries=entries.filter(e=>String(e.id)!==id);actionStates.delete(id);entriesRevision++;
+        renderList(entry.kind==='note'?'Appunto eliminato.':'Voce e segnalazioni eliminate.');return;
+      }
+      if(!currentStore(target))return;
+      actionStates.set(id,{message});entriesRevision++;renderList(message);focusAction(id,attr);
+    }catch(error){
+      if(!currentStore(target))return;
+      const message=['TimeoutError','AbortError'].includes(error.name)?'La richiesta impiega troppo tempo. Controlla la connessione e riprova.':error.message||'Operazione non riuscita. Riprova.';
+      actionStates.set(id,{error:true,message});entriesRevision++;renderList(message);focusAction(id,attr);
+    }
+  });
+
   function renderList(msg) {
     if (msg !== undefined) listMessage = msg;
     msg = listMessage;
@@ -394,7 +444,7 @@ export function initJournal({ onEntries=()=>{},zones, speciesCatalog = SPECIES, 
     const matchesType=e=>!listFilter|| (listFilter==='percorso'?e.kind==='note'&&e.category==='percorso':listFilter==='outing'?!['plan','note'].includes(e.kind):e.kind==='note');
     const visible=entries.filter(e=>matchesType(e)&&JSON.stringify([e.title,e.note,e.reference?.title,zones.find(z=>z.id===e.zoneId)?.name]).toLowerCase().includes(listQuery.toLowerCase().trim()));
     const rows = visible.map((e) => {
-      if(e.kind==='note')return `<li class="j-item notebook-entry"><div class="notebook-mark" aria-hidden="true">${e.category==='percorso'?'↗':'✎'}</div><div class="j-body"><div class="j-top"><b>${esc(e.title)}</b><span class="muted small">${fmt(e.date)}</span></div>${e.reference?`<a href="${esc(e.reference.href)}" data-entity>${esc(e.reference.title)} →</a>`:''}${e.zoneId?`<p class="small muted">${esc(zones.find(z=>z.id===e.zoneId)?.name||e.zoneId)}</p>`:''}${e.note?`<p class="notebook-text">${esc(e.note)}</p>`:''}${e.observation?`<p class="small muted">Identificazione proposta · non verificata</p><ul class="notebook-phases">${e.observation.phases.filter(p=>p.status!=='unsure').map(p=>`<li>${esc(PHENO_PHASES.find(([code])=>code===p.code)?.[1]||p.code)}: ${p.status==='present'?'presente':'cercato, non osservato'}</li>`).join('')}</ul>${e.observation.availability!=='unknown'?`<p class="small">Frutti maturi rimasti: ${{none:'nessuno osservato',few:'pochi',many:'molti'}[e.observation.availability]||'non indicato'}</p>`:''}`:''}<div class="notebook-actions"><button type="button" class="link-btn small" data-edit-note="${esc(e.id)}">Modifica</button><button type="button" class="link-btn small" data-del="${esc(e.id)}">Elimina</button></div></div></li>`;
+      if(e.kind==='note')return `<li class="j-item notebook-entry" data-journal-id="${esc(e.id)}"><div class="notebook-mark" aria-hidden="true">${e.category==='percorso'?'↗':'✎'}</div><div class="j-body"><div class="j-top"><b>${esc(e.title)}</b><span class="muted small">${fmt(e.date)}</span></div>${e.reference?`<a href="${esc(e.reference.href)}" data-entity>${esc(e.reference.title)} →</a>`:''}${e.zoneId?`<p class="small muted">${esc(zones.find(z=>z.id===e.zoneId)?.name||e.zoneId)}</p>`:''}${e.note?`<p class="notebook-text">${esc(e.note)}</p>`:''}${e.observation?`<p class="small muted">Identificazione proposta · non verificata</p><ul class="notebook-phases">${e.observation.phases.filter(p=>p.status!=='unsure').map(p=>`<li>${esc(PHENO_PHASES.find(([code])=>code===p.code)?.[1]||p.code)}: ${p.status==='present'?'presente':'cercato, non osservato'}</li>`).join('')}</ul>${e.observation.availability!=='unknown'?`<p class="small">Frutti maturi rimasti: ${{none:'nessuno osservato',few:'pochi',many:'molti'}[e.observation.availability]||'non indicato'}</p>`:''}`:''}<div class="notebook-actions"><button type="button" class="link-btn small" data-edit-note="${esc(e.id)}">Modifica</button></div>${rowActions(e)}</div></li>`;
       const z = zones.find((x) => x.id === e.zoneId);
       const found = Object.entries(e.finds || {}).filter(([, l]) => l > 0).map(([id, l]) => `${speciesCatalog.find((x) => x.id === id)?.name ?? id} (${LEVELS[l]?.toLowerCase() || l})`).join(', ') || 'nessun ritrovamento annotato';
       const a = agreement(e);
@@ -403,15 +453,14 @@ export function initJournal({ onEntries=()=>{},zones, speciesCatalog = SPECIES, 
         : a ? a.species.map((x) => `<span class="tag ${x.ok ? 'ok' : 'warn'}">${esc(speciesCatalog.find((s) => s.id === x.id)?.name || x.id)}: ${x.ok ? 'concordante' : x.said ? 'indice alto, zero osservato' : 'trovata con indice basso'}</span>`).join(' ')
           : '<span class="tag">osservazione senza confronto prospettico</span>';
       const img = zoneImage(e.zoneId);
-      return `<li class="j-item">
+      return `<li class="j-item" data-journal-id="${esc(e.id)}">
         <span class="j-img">${img ? `<img data-src="${img}" alt="" loading="lazy" decoding="async">` : ''}</span>
         <div class="j-body">
           <div class="j-top"><b>${esc(z?.title ?? z?.name ?? e.zoneId)}</b><span class="muted small">${fmt(e.date)}${e.band ? ` · ${esc(e.band)} m` : ''}</span></div>
           <div class="small">${e.kind === 'plan' ? 'Piano' : 'Trovato: ' + esc(found)}${top ? ` · indice ${formatIndex(top[1])} (${esc(speciesCatalog.find((x) => x.id === top[0])?.name ?? '')})` : ''}</div>
           <div>${badge}</div>
           ${e.note ? `<div class="small muted">${esc(e.note)}</div>` : ''}
-          ${store.kind === 'community' && e.kind !== 'plan' ? `<button type="button" class="link-btn small" data-share-entry="${esc(e.id)}">Condividi osservazioni</button> <button type="button" class="link-btn small" data-withdraw-entry="${esc(e.id)}">Ritira segnalazioni</button>` : ''}
-          <button type="button" class="link-btn small" data-del="${esc(e.id)}">Elimina</button>
+          ${rowActions(e)}
         </div>
       </li>`;
     }).join('');
@@ -421,27 +470,6 @@ export function initJournal({ onEntries=()=>{},zones, speciesCatalog = SPECIES, 
     list.querySelector('#notebook-query')?.addEventListener('input',ev=>{const pos=ev.target.selectionStart;listQuery=ev.target.value;renderList();const input=list.querySelector('#notebook-query');input.focus({preventScroll:true});if(pos!=null)try{input.setSelectionRange(pos,pos);}catch{/* search inputs may not expose selection */}});
     list.querySelector('[data-open-journal-inline]')?.addEventListener('click', open);
     document.querySelector('[data-open-journal]').hidden = false;
-    list.querySelectorAll('[data-share-entry]').forEach((b) => b.addEventListener('click', async () => {
-      b.disabled = true;
-      try { await shareDiaryEntry(entries.find((e) => e.id === b.dataset.shareEntry)); renderList('Osservazioni condivise: zona, giorno, specie e quantità. Le note restano private.'); }
-      catch (e) { renderList(e.message); }
-    }));
-    list.querySelectorAll('[data-withdraw-entry]').forEach((b) => b.addEventListener('click', async () => {
-      try { await communityRequest('reports', 'DELETE', { entryId: b.dataset.withdrawEntry }); document.dispatchEvent(new CustomEvent('fungaroli:refresh-community')); renderList('Segnalazioni ritirate. L’uscita resta nel taccuino privato.'); }
-      catch (e) { renderList(e.message); }
-    }));
-    // conferma in pagina: primo tocco arma, secondo elimina
-    list.querySelectorAll('[data-del]').forEach((b) => b.addEventListener('click', async () => {
-      if (b.dataset.armed !== '1') {
-        b.dataset.armed = '1';
-        b.textContent = 'Tocca di nuovo per eliminare';
-        setTimeout(() => { if (b.isConnected) { b.dataset.armed = ''; b.textContent = 'Elimina'; } }, 4000);
-        return;
-      }
-      try { await store.remove(b.dataset.del); } catch { renderList('Eliminazione non riuscita, riprova.'); return; }
-      entries = entries.filter((e) => e.id !== b.dataset.del);
-      renderList();
-    }));
   }
 
   async function exportFile() {
@@ -616,8 +644,8 @@ export function initJournal({ onEntries=()=>{},zones, speciesCatalog = SPECIES, 
   let profileId = currentUser()?.id || null;
   document.addEventListener('fungaroli:community', async () => {
     const next = currentUser()?.id || null;
-    if (next === profileId) { if (store?.kind === 'community') { const loading = store; try { const fresh = await loading.list(); if (loading !== store) return; entries = fresh; sortEntries(); renderList(); } catch { /* nessuna perdita della copia locale */ } } return; }
-    profileId = next;
+    if (next === profileId) { if (store?.kind === 'community') { const loading = store,revision=entriesRevision; try { const fresh = await loading.list({isCurrent:()=>currentStore(loading)&&revision===entriesRevision}); if (!currentStore(loading)||revision!==entriesRevision) return; entries = fresh; sortEntries(); renderList(); } catch { /* nessuna perdita della copia locale */ } } return; }
+    profileId = next;entriesRevision++;actionStates.clear();listMessage='';
     if(noteDialog.open)noteDialog.close();
     store = next ? collectiveStore() : localStore();
     entries = []; renderList();

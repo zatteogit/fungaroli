@@ -2376,3 +2376,11 @@ html.entity-open { overflow: hidden; }
 .discovery-context { background:var(--surface-2); border:1px solid var(--hair); border-radius:var(--r-md); padding:14px; margin-bottom:16px; }
 .discovery-context .sec { margin-bottom:0; }
 @media(max-width:760px){ .discovery-grid { grid-template-columns:1fr; } .discovery-grid li { padding:12px; } .discovery-grid [data-note-kind] { margin-left:54px; padding-top:8px; } }
+
+/* Le azioni e i loro esiti restano accanto alla voce del taccuino. */
+.j-actions { display:flex; gap:4px 16px; flex-wrap:wrap; align-items:center; margin-top:10px; }
+.j-actions .link-btn { min-height:44px; margin:0; text-align:left; }
+.j-actions .j-delete { color:var(--crit); }
+.j-actions button:disabled { opacity:.6; }
+.j-action-status { margin:4px 0 0; font-size:13px; line-height:1.45; color:var(--text-2); }
+.j-action-status.is-error { color:var(--crit); }

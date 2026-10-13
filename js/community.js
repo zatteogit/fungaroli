@@ -11,10 +11,15 @@ export const communityEnabled = () => enabled;
 export const currentUser = () => user;
 export const communityReady = () => ready;
 
-export async function communityRequest(path, method = 'GET', data) {
+export async function communityRequest(path, method = 'GET', data, {signal} = {}) {
   const res = await fetch('/api/community/' + path, { method, credentials: 'same-origin', cache: 'no-store',
+    signal,
     headers: data == null ? {} : { 'content-type': 'application/json' }, body: data == null ? undefined : JSON.stringify(data) });
-  let out; try { out = await res.json(); } catch { out = {}; }
+  let out; try { out = await res.json(); } catch(error) {
+    if(signal?.aborted)throw signal.reason||error;
+    if(res.ok)throw new Error('Il servizio ha restituito una risposta non valida. Riprova.');
+    out = {};
+  }
   if (!res.ok) { const e = new Error(out.error || 'La community non è raggiungibile. Riprova.'); e.status = res.status; throw e; }
   return out;
 }
@@ -24,9 +29,9 @@ const changed = () => {
   document.querySelectorAll('[data-profile-label]').forEach(el=>{el.textContent=user?.handle||'Accedi';});
   document.dispatchEvent(new CustomEvent('fungaroli:community', { detail: { user } }));
 };
-export async function refreshCommunity() {
+export async function refreshCommunity({signal} = {}) {
   if (!enabled) return;
-  try { summary = await communityRequest('summary'); } catch { summary = null; }
+  try { summary = await communityRequest('summary','GET',undefined,{signal}); } catch { summary = null; }
   changed();
 }
 export function communityStatus() {
@@ -145,7 +150,7 @@ export async function openAccount() {
   });
 }
 
-export async function shareDiaryEntry(entry, { identificationChecked = false } = {}) {
+export async function shareDiaryEntry(entry, { identificationChecked = false, signal } = {}) {
   if (!entry || entry.kind==='note' || !Object.entries(entry.finds || {}).some(([id, amount]) => speciesCatalog.some((s) => s.id === id) && (amount > 0 || (amount === 0 && entry.searched?.includes(id)))))
     throw new Error('Non ci sono ritrovamenti o ricerche a vuoto esplicite da condividere.');
   await ensureAccount();
@@ -153,9 +158,9 @@ export async function shareDiaryEntry(entry, { identificationChecked = false } =
   for (const [speciesId, amount] of Object.entries(entry.finds || {})) {
     if (!speciesCatalog.some((s) => s.id === speciesId) || (amount === 0 && !entry.searched?.includes(speciesId))) continue;
     await communityRequest('reports', 'POST', { entryId: entry.id, zoneId: entry.zoneId, day: entry.date,
-      speciesId, amount, searched: entry.searched?.includes(speciesId) || false, identificationChecked });
+      speciesId, amount, searched: entry.searched?.includes(speciesId) || false, identificationChecked },{signal});
   }
-  await refreshCommunity(); return true;
+  await refreshCommunity({signal}); return true;
 }
 
 let reportControls = [], reportEpoch = 0;
