@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "Fungaroli CMS",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "description": "API condivise dalla redazione umana e dagli agenti. Le autorizzazioni sono assegnate dal gestore. Il GET pubblico espone soltanto contenuti pubblicati."
   },
   "servers": [
@@ -27,7 +27,19 @@
         "summary": "Identità e capacità",
         "responses": {
           "200": {
-            "description": "Operazione completata"
+            "description": "Identità, ruolo e capacità assegnati dal server",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": ["user", "configured"],
+                  "properties": {
+                    "user": { "$ref": "#/components/schemas/Principal" },
+                    "configured": { "type": "boolean" }
+                  }
+                }
+              }
+            }
           },
           "401": {
             "description": "Identità non autenticata",
@@ -1269,6 +1281,21 @@
               "type": "integer"
             }
           }
+        }
+      },
+      "Principal": {
+        "type": "object",
+        "required": ["id", "name", "kind", "role", "scopes", "resources"],
+        "properties": {
+          "id": { "type": "string" },
+          "name": { "type": "string" },
+          "kind": { "type": "string", "enum": ["human", "agent"] },
+          "role": { "type": "string", "enum": ["member", "editor", "admin", "agent"] },
+          "scopes": {
+            "type": "array",
+            "items": { "type": "string", "enum": ["read", "write", "publish", "review", "admin"] }
+          },
+          "resources": { "type": "array", "items": { "type": "string" } }
         }
       },
       "Error": {

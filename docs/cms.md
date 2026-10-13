@@ -4,7 +4,15 @@ Il CMS essenziale gestisce tutte le sezioni dei contenuti tramite moduli per le 
 
 ## Usare la redazione
 
-Dalla home, il pulsante in alto mostra **Accedi** oppure il nome del profilo, per esempio **Matteo**. Nel profilo degli amministratori compare **Apri la redazione**. È possibile aprire direttamente [la redazione](https://fungaroli.zatteo.workers.dev/redazione).
+Dalla home, il pulsante in alto mostra **Accedi** oppure il nome del profilo, per esempio **Matteo**. Il profilo mostra il ruolo verificato dal server; **Apri la redazione** compare per editor e amministratori. È possibile aprire direttamente [la redazione](https://fungaroli.zatteo.workers.dev/redazione).
+
+| Ruolo | Permessi |
+|---|---|
+| Utente | Diario e osservazioni personali; nessun accesso alla redazione. |
+| Editor | Consulta i contenuti, prepara e salva bozze, controlla anteprime e ripristina revisioni come nuove bozze. |
+| Amministratore | Anche pubblicazione, conferma delle verifiche scientifiche e gestione delle credenziali degli agenti. |
+
+La registrazione assegna un profilo ordinario. Gli editor sono autorizzati dal gestore tramite `CMS_EDITOR_IDS`, gli amministratori tramite `CMS_ADMIN_IDS`: liste di ID dei profili separati da virgola. Se un ID è presente in entrambe, prevale amministratore. Non si può scegliere il ruolo dal browser. `/api/cms/v1/me` restituisce il ruolo e le capacità correnti; tutte le operazioni verificano nuovamente i permessi sul server. La modifica delle liste richiede un aggiornamento della configurazione: questa versione non include ancora un pannello per assegnare ruoli alle persone.
 
 Scegli una sezione, poi una voce. I campi descrivono nomi, testi, caratteri, immagini e fonti. Gli articoli hanno un editor con grassetto, corsivo, elenchi e sottotitoli. Per creare una voce, usa un ID stabile con minuscole, numeri e trattini: l’ID non va cambiato quando cambia il titolo. Le nuove schede partono da campi vuoti; non ereditano i caratteri o le fonti di un’altra specie.
 
@@ -81,7 +89,7 @@ Il contratto è in [cms.openapi.json](cms.openapi.json). Gli endpoint principali
 
 ## Architettura e gestione
 
-Il Worker usa il database D1 dedicato `fungaroli-content`, binding `CMS_DB`; il database della comunità conserva passkey e sessioni. `CMS_ADMIN_IDS` contiene gli account autorizzati alla redazione. La migrazione `0002_cms.sql` viene applicata in modo idempotente al primo accesso. I JSON presenti nel deploy inizializzano una sola volta documenti e revisioni originali; il database diventa poi la fonte dei contenuti pubblicati. Un nuovo deploy non sovrascrive le modifiche della redazione.
+Il Worker usa il database D1 dedicato `fungaroli-content`, binding `CMS_DB`; il database della comunità conserva passkey e sessioni. `CMS_ADMIN_IDS` contiene gli amministratori e `CMS_EDITOR_IDS` gli editor autorizzati alle bozze. La migrazione `0002_cms.sql` viene applicata in modo idempotente al primo accesso. I JSON presenti nel deploy inizializzano una sola volta documenti e revisioni originali; il database diventa poi la fonte dei contenuti pubblicati. Un nuovo deploy non sovrascrive le modifiche della redazione.
 
 `cms_documents` conserva bozza e pubblicato; `cms_revisions` le revisioni immutabili; `cms_releases` gli ID e le revisioni di una pubblicazione; `cms_agent_tokens` gli hash delle credenziali e i permessi; `cms_audit` autore e operazione. I controlli di revisione e il cambio della release avvengono in batch transazionali D1.
 

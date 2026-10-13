@@ -13,7 +13,7 @@ for path in pathlib.Path(sys.argv[1]).rglob('*.sqlite'):
  db=sqlite3.connect(path,timeout=20)
  if db.execute("SELECT COUNT(*) FROM sqlite_master WHERE name='accounts'").fetchone()[0]:
   now=int(time.time()*1000)
-  db.execute('INSERT INTO accounts(id,handle,created_at) VALUES(?,?,?) ON CONFLICT(id) DO NOTHING',(sys.argv[2],'Matteo' if sys.argv[2]=='cms-test-admin' else 'Lettore',now))
+  db.execute('INSERT INTO accounts(id,handle,created_at) VALUES(?,?,?) ON CONFLICT(id) DO NOTHING',(sys.argv[2],'Matteo' if sys.argv[2]=='cms-test-admin' else 'Editor' if sys.argv[2]=='cms-test-editor' else 'Lettore',now))
   db.execute('INSERT INTO sessions(token_hash,account_id,expires_at) VALUES(?,?,?)',(sys.argv[3],sys.argv[2],now+3600000))
   db.commit();db.close();break
  else: db.close()
@@ -26,6 +26,54 @@ async function api(page,path,method='GET',data,headers={}) {
 }
 const cms=(page,path,method='GET',data,headers)=>api(page,'/api/cms/v1/'+path,method,data,headers);
 
+test('ruoli del profilo: utente, editor delle bozze e amministratore',async({browser})=>{
+  for(const[id,role,label]of[['cms-test-reader','member','Utente'],['cms-test-editor','editor','Editor'],['cms-test-admin','admin','Amministratore']]){
+    const context=await browser.newContext({serviceWorkers:'block'}),page=await context.newPage(),errors=[];
+    page.on('pageerror',e=>errors.push(e.message));
+    await page.route('https://**/*',r=>r.abort());
+    await page.addInitScript(()=>localStorage.setItem('fungaroli:legal-accepted','22026-10-12'));
+    await loginFixture(page,id);await page.goto('/');
+    const me=await cms(page,'me');expect(me.status).toBe(200);expect(me.data.user.role).toBe(role);
+    if(role==='member'){
+      expect(me.data.user.scopes).toEqual([]);expect((await cms(page,'items')).status).toBe(403);
+      expect((await cms(page,'items/ui-copy','PATCH',{role:'admin',data:{}},{'if-match':'"0"'})).status).toBe(403);
+    }
+    if(role==='editor'){
+      expect(me.data.user.scopes).toEqual(['read','write']);
+      const before=(await api(page,'/api/content/v1/snapshot')).data.resources['ui-copy'];
+      const current=(await cms(page,'items/ui-copy')).data,data={...current.data,homeTitle:'Bozza dell’editor'};
+      const saved=await cms(page,'items/ui-copy','PATCH',{data},{'if-match':`"${current.version}"`});expect(saved.status).toBe(200);
+      const release=(await cms(page,'items')).data.release;
+      expect((await cms(page,'releases','POST',{baseRelease:release,items:[{id:'ui-copy',version:saved.data.version}],role:'admin',reviewed:true})).status).toBe(403);
+      expect((await cms(page,'tokens','POST',{name:'Promozione non consentita',days:1,scopes:['read']})).status).toBe(403);
+      expect((await cms(page,'audit')).status).toBe(403);
+      expect((await api(page,'/api/content/v1/snapshot')).data.resources['ui-copy']).toEqual(before);
+      expect((await cms(page,'items/ui-copy/restore','POST',{version:0},{'if-match':`"${saved.data.version}"`})).status).toBe(200);
+    }
+    for(const width of[320,390,1280]){
+      await page.setViewportSize({width,height:900});await page.locator('[data-community-account]').first().click();
+      const dialog=page.locator('dialog.profile-dialog[open]');await expect(dialog.locator('[data-account-role]')).toHaveText(label);
+      await expect(dialog.getByRole('link',{name:'Apri la redazione →'})).toHaveCount(role==='member'?0:1);
+      const geometry=await dialog.evaluate(el=>{
+        const a=el.querySelector('[data-logout]').getBoundingClientRect(),b=el.querySelector('.profile-actions [data-close]').getBoundingClientRect(),d=el.querySelector('[data-delete-account]').getBoundingClientRect();
+        return{overlap:a.left<b.right&&a.right>b.left&&a.top<b.bottom&&a.bottom>b.top,destructiveSeparate:d.top>=Math.max(a.bottom,b.bottom)+12,overflow:el.scrollWidth>el.clientWidth,heights:[a.height,b.height]};
+      });
+      expect(geometry.overlap).toBe(false);expect(geometry.destructiveSeparate).toBe(true);expect(geometry.overflow).toBe(false);expect(geometry.heights.every(h=>h>=44)).toBe(true);
+      if(role==='admin'&&width===390)await dialog.screenshot({path:'/tmp/fungaroli-profile-admin.png'});
+      if(role==='editor'&&width===390)await dialog.screenshot({path:'/tmp/fungaroli-profile-editor.png'});
+      await dialog.locator('[data-delete-account]').click();await expect(dialog.locator('[data-delete-account]')).toHaveText('Conferma eliminazione');
+      expect((await api(page,'/api/community/session')).status).toBe(200);
+      await dialog.locator('.profile-actions [data-close]').click();await expect(dialog).toHaveCount(0);
+    }
+    if(role==='editor'){
+      await page.goto('/redazione');await expect(page.locator('#cms-workspace')).toBeVisible();await expect(page.locator('#cms-identity')).toContainText('Editor');
+      await expect(page.locator('[data-save]')).toBeEnabled();await expect(page.locator('[data-publish]')).toBeDisabled();await expect(page.locator('#cms-agents')).toBeHidden();
+      await page.locator('[data-resource="species-traits"]').click();await expect(page.locator('[data-reviewed]')).toHaveCount(0);
+    }
+    expect(errors).toEqual([]);await context.close();
+  }
+});
+
 test('redazione, bozze, pubblicazione, conflitti, agenti e catalogo condiviso',async({page,browser})=>{
   const errors=[];page.on('pageerror',e=>errors.push(e.message));
   await page.route('https://**/*',r=>r.abort());
@@ -34,7 +82,7 @@ test('redazione, bozze, pubblicazione, conflitti, agenti e catalogo condiviso',a
   await expect(page.locator('#cms-access-status')).toContainText('Accedi');
   expect((await cms(page,'items')).status).toBe(401);
   const other=await browser.newContext({serviceWorkers:'block'}),reader=await other.newPage();await reader.goto('/redazione');await loginFixture(reader,'cms-test-reader');
-  expect((await cms(reader,'me')).data.user.scopes).toEqual([]);expect((await cms(reader,'items')).status).toBe(403);await other.close();
+  expect((await cms(reader,'me')).data.user.scopes).toEqual([]);expect((await cms(reader,'me')).data.user.role).toBe('member');expect((await cms(reader,'items')).status).toBe(403);await other.close();
   await loginFixture(page);await page.reload();
   await expect(page.locator('#cms-workspace')).toBeVisible();
   await expect(page.locator('[data-profile-label]')).toHaveText('Matteo');

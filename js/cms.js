@@ -21,7 +21,8 @@ async function access() {
     const me=await api('me');if(n!==opening)return;actor=me.user;
     const allowed=can('read');$('#cms-access').hidden=allowed;$('#cms-workspace').hidden=!allowed;
     if(!allowed){$('#cms-access-status').textContent=`Il profilo ${actor.name} non ha ancora un ruolo di redazione. Il tuo ID è ${actor.id}.`;return;}
-    $('#cms-identity').textContent=`${actor.name} · accesso con passkey · bozze e pubblicazione separate`;
+    const role={admin:'Amministratore',editor:'Editor'}[actor.role]||'Redazione';
+    $('#cms-identity').textContent=`${actor.name} · ${role} · accesso con passkey`;
     $('#cms-agents').hidden=!can('admin');
     await refreshItems();
     if(!doc)await openItem(items.find(i=>!i.readonly)?.id);
@@ -55,10 +56,11 @@ function renderEditor(){
   const path=recordPath(),value=valueAt(path)||doc.data;
   editor.innerHTML=`<p class="eyebrow">${esc(schema.group)}</p><h2>${esc(schema.title)}</h2><div class="cms-meta"><span>Revisione ${doc.version}</span><span>Pubblicata: ${doc.publishedVersion}</span>${schema.readonly?'<span>Dati generati · consultazione</span>':''}</div>
     <div class="cms-toolbar"><button class="btn primary" type="button" data-save ${!can('write')||schema.readonly?'disabled':''}>Salva bozza</button><button class="btn ghost" type="button" data-preview>Anteprima e controlli</button><button class="btn ghost" type="button" data-publish ${!can('publish')||schema.readonly?'disabled':''}>Pubblica bozza</button><button class="btn ghost" type="button" data-reload>Rileggi</button></div>
+    ${actor.role==='editor'?'<p class="small muted">Puoi preparare e salvare bozze. La pubblicazione e la verifica delle fonti sono riservate agli amministratori.</p>':''}
     ${schema.readonly?'<p class="small muted">Questi campioni e percorsi provengono dai processi geografici. La redazione li consulta; l’aggiornamento avviene tramite importazione dei dati.</p>':''}
     ${schema.collections.length?`<div class="cms-record-picker"><label>Gruppo<select data-collection>${schema.collections.map(k=>`<option value="${esc(k)}" ${k===collection?'selected':''}>${esc(title(k))}</option>`).join('')}<option value="" ${!collection?'selected':''}>Impostazioni del documento</option></select></label><label>Voce<select data-record>${rows.map(([k,v])=>`<option value="${esc(k)}" ${k===record?'selected':''}>${esc(typeof v==='string'?v.slice(0,70):v.name||v.title||v.latin||v.id||k)}</option>`).join('')}</select></label></div>${!schema.readonly&&collection&&doc.id!=='trails'?'<button class="btn ghost small" type="button" data-new>＋ Nuova voce</button>':''}`:''}
     <fieldset class="cms-fieldset" ${!can('write')||schema.readonly?'disabled':''}><legend>Contenuto</legend><div class="cms-fields">${fields(value,path)}</div></fieldset>
-    ${['species-traits','edible-catalog','legal'].includes(doc.id)?'<label class="cms-review"><span><input type="checkbox" data-reviewed> Ho verificato le fonti delle modifiche micologiche o normative, quando richiesto.</span></label><p class="small muted">I controlli automatici verificano struttura e collegamenti; non certificano la correttezza scientifica.</p>':''}
+    ${can('review')&&['species-traits','edible-catalog','legal'].includes(doc.id)?'<label class="cms-review"><span><input type="checkbox" data-reviewed> Ho verificato le fonti delle modifiche micologiche o normative, quando richiesto.</span></label><p class="small muted">I controlli automatici verificano struttura e collegamenti; non certificano la correttezza scientifica.</p>':''}
     <p class="small muted">La pubblicazione include tutte le voci modificate in questa sezione.</p>
     <div id="cms-preview" hidden></div><details class="cms-revisions"><summary>Cronologia e ripristino</summary><div id="cms-revisions"></div></details>`;
   loadRevisions();

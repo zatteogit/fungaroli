@@ -2044,6 +2044,20 @@ html[data-cmp-dir="prev"]::view-transition-new(cmp-pick) { animation-name: cmp-i
 .community-dialog .seg label { display: flex; align-items: center; gap: 6px; min-height: 44px; padding: 10px; border: 1px solid var(--hair); border-radius: 10px; margin: 0; }
 .community-dialog .btn { margin: 8px 0; }
 .community-dialog fieldset { border: 0; padding: 0; margin: 14px 0; }
+.profile-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; }
+.profile-header > div { min-width: 0; }
+.profile-header h2 { margin: 0; overflow-wrap: anywhere; }
+.profile-role { margin: 4px 0 0; }
+.profile-close { flex: none; width: 44px; height: 44px; display: grid; place-items: center; border: 0; border-radius: 50%; background: var(--surface-2); color: var(--text); font: inherit; font-size: 24px; cursor: pointer; }
+.profile-editorial { margin: 20px 0; padding: 14px; background: var(--surface-2); border-radius: 14px; }
+.profile-editorial .btn { margin: 0; min-height: 44px; }
+.profile-editorial p { margin: 8px 0 0; }
+.profile-actions { display: flex; justify-content: flex-end; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+.profile-actions .btn { min-height: 44px; margin: 0; }
+.profile-data { margin-top: 20px; padding-top: 12px; border-top: 1px solid var(--hair); }
+.profile-data .link-btn { color: var(--crit); min-height: 44px; max-width: 100%; font-size: 13px; text-align: left; white-space: normal; }
+.profile-status { margin: 8px 0 0; font-size: 13px; }
+.profile-status:empty { display: none; }
 .explore-fallback { display: flex; flex-wrap: wrap; gap: 12px; margin: 20px 0; }
 @media (max-width: 680px) {
   .editorial-cards { display: flex; overflow-x: auto; scroll-snap-type: x proximity; padding-bottom: 8px; }
