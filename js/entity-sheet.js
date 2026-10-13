@@ -1,6 +1,6 @@
 // Le schede contestuali usano gli stessi renderer delle pagine, senza cambiare rotta.
 let renderEntity, enhance, dialog, origin, frames = [], sequence = 0, locked = false;
-const entityRoute = href => /^#\/(albero|specie|fungo|commestibile)\/[^/]+$/.test(href || '');
+const entityRoute = href => /^#\/(albero|pianta|specie|fungo|commestibile)\/[^/]+$/.test(href || '');
 
 export function initEntitySheets(options) {
   renderEntity = options.render; enhance = options.enhance;

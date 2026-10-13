@@ -484,3 +484,16 @@ for(const width of [320,1280]) test(`form osservazioni: autocomplete, contesto e
   await page.keyboard.press('Escape');await expect(dlg).toBeHidden();await expect(trigger).toBeFocused();
   await api(page,'account','DELETE');expect(errors).toEqual([]);
 });
+
+test('appunti privati: sincronizzazione, isolamento fra profili e nessuna segnalazione botanica nei conteggi fungini',async({page,browser})=>{
+ const errors=await setup(page);await register(page,'NoteA');
+ const note={id:'notetest123',kind:'note',title:'Corbezzolo da ritrovare',category:'botanica',date:todayISO(),zoneId:null,note:'Fiori e frutti sulla stessa pianta.',reference:{href:'#/pianta/corbezzolo',title:'Corbezzolo'},observation:{taxonId:'corbezzolo',phases:[{code:'open_flowers',status:'present'},{code:'ripe_fruits',status:'present'}],availability:'few',minutes:5,patchLabel:'La curva'},finds:{porcino:3},forecast:{mode:'prospective'}};
+ let r=await api(page,'entries/'+note.id,'PUT',note);expect(r.status).toBe(200);expect(r.data.entry.finds).toBeUndefined();expect(r.data.entry.forecast).toBeUndefined();expect(r.data.entry.observation.researchConsent).toBe(false);
+ await page.goto('/#/diario');await page.reload();await expect(page.locator('#journal-list')).toContainText(note.title);await expect(page.locator('#journal-list [data-share-entry]')).toHaveCount(0);
+ expect((await api(page,'entries/'+note.id,'PUT',{...note,reference:{href:'javascript:alert(1)',title:'x'}})).status).toBe(400);
+ expect((await api(page,'entries/'+note.id,'PUT',{...note,observation:{...note.observation,taxonId:'fake'}})).status).toBe(400);
+ expect((await api(page,'reports','POST',{entryId:note.id,zoneId:'tancia',day:todayISO(),speciesId:'porcino',amount:3,searched:false})).status).toBe(400);
+ const context=await browser.newContext({serviceWorkers:'block',locale:'it-IT'}),other=await context.newPage();await setup(other);await register(other,'NoteB');expect((await api(other,'entries')).data.entries).toEqual([]);
+ expect((await api(other,'entries/'+note.id,'DELETE')).status).toBe(200);expect((await api(page,'entries')).data.entries.some(e=>e.id===note.id)).toBe(true);
+ await page.locator('[data-community-account]').first().click();await page.locator('dialog.profile-dialog[open] [data-logout]').click();await expect(page.locator('#journal-list')).not.toContainText(note.title);await context.close();expect(errors).toEqual([]);
+});

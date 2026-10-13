@@ -146,7 +146,7 @@ export async function openAccount() {
 }
 
 export async function shareDiaryEntry(entry, { identificationChecked = false } = {}) {
-  if (!entry || !Object.entries(entry.finds || {}).some(([id, amount]) => speciesCatalog.some((s) => s.id === id) && (amount > 0 || (amount === 0 && entry.searched?.includes(id)))))
+  if (!entry || entry.kind==='note' || !Object.entries(entry.finds || {}).some(([id, amount]) => speciesCatalog.some((s) => s.id === id) && (amount > 0 || (amount === 0 && entry.searched?.includes(id)))))
     throw new Error('Non ci sono ritrovamenti o ricerche a vuoto esplicite da condividere.');
   await ensureAccount();
   if (!user) return false;

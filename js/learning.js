@@ -147,7 +147,7 @@ export function initLearning({glossary, trees,media,assetUrl}) {
     let title,body,href,label;
     if(t) {title=t.term;body=termBody(t,true);href=`#/glossario/${t.id}`;label='Nel glossario';}
     else {
-      const match=link.getAttribute('href')?.match(/^#\/(albero|specie|fungo|commestibile)\/([^/]+)$/);
+      const match=link.getAttribute('href')?.match(/^#\/(albero|pianta|specie|fungo|commestibile)\/([^/]+)$/);
       if(!match) return;
       if(openEntitySheet(link.getAttribute('href'),link)) {e.preventDefault();closePanel(false);}
       return;

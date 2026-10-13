@@ -26,7 +26,7 @@ export function validateContent(id, data, previous) {
     if (typeof v === 'string') {
       if (v.length>200000) err('Testo troppo lungo.');
       if(!['html','body'].includes(key)&&v!==old&&/<\/?[a-z][^>]*>/i.test(v))err(`Il campo ${key} contiene HTML. Usa i campi di testo formattato per gli articoli.`);
-      if (['file','file_hd','thumb','page','url','href','src'].includes(key) && v && !/^(?:https?:\/\/[^\s"'<>]+|\/?assets\/[a-zA-Z0-9_./%-]+|\/?api\/content\/media\/[a-zA-Z0-9_./-]+|#\/[a-zA-Z0-9_/-]+)$/.test(v)) err(`Il campo ${key} deve contenere un URL o un percorso immagine valido.`);
+      if (['file','file_hd','thumb','page','url','href','src','sourceImage','licenseUrl'].includes(key) && v && !/^(?:https?:\/\/[^\s"'<>]+|\/?assets\/[a-zA-Z0-9_./%-]+|\/?api\/content\/media\/[a-zA-Z0-9_./-]+|#\/[a-zA-Z0-9_/-]+)$/.test(v)) err(`Il campo ${key} deve contenere un URL o un percorso immagine valido.`);
       return ['html','body'].includes(key) ? sanitizeHtml(v,cleanOptions) : v;
     }
     if (Array.isArray(v)) return v.map((x,i)=>visit(x,key,old?.[i],depth+1));
@@ -76,6 +76,20 @@ export function validateContent(id, data, previous) {
     if (!Array.isArray(value.guides)) err('Elenco articoli non valido.');
     checkIds(value.guides);
     if (value.guides.some(g=>typeof g.title!=='string'||!g.title.trim()||typeof g.body!=='string')) err('Ogni articolo richiede titolo e testo.');
+  }
+  if(id==='plants'){
+    if(!value.plants||typeof value.plants!=='object'||Array.isArray(value.plants))err('Elenco piante non valido.');
+    checkIds(entries(value,'plants'));
+    const ids=new Set(Object.keys(value.plants));
+    for(const [pid,p] of Object.entries(value.plants)){
+      if(!['name','latin','habitat','phaseNote'].every(k=>typeof p[k]==='string'&&p[k].trim())||!['Erbe','Frutti','Pericolose'].includes(p.category)||!Array.isArray(p.aliases)||p.aliases.some(a=>typeof a!=='string')||!Array.isArray(p.recognize)||!p.recognize.length||p.recognize.some(s=>typeof s!=='string'||!s.trim()))err(`Completa nome, habitat, categoria e caratteri per ${pid}.`);
+      if(!Array.isArray(p.flowerMonths)||p.flowerMonths.some(m=>!Number.isInteger(m)||m<1||m>12)||!Array.isArray(p.lookalikes)||p.lookalikes.some(id=>!ids.has(id)||id===pid))err(`Fioritura o schede di confronto non valide per ${pid}.`);
+      if(!p.foodUse||!['solo parti e preparazioni indicate','tossico','mortale'].includes(p.foodUse.status)||typeof p.foodUse.parts!=='string'||typeof p.foodUse.caution!=='string'||!p.foodUse.caution.trim()||p.category==='Pericolose'&&(!['tossico','mortale'].includes(p.foodUse.status)||p.foodUse.parts)||p.category!=='Pericolose'&&(p.foodUse.status!=='solo parti e preparazioni indicate'||!p.foodUse.parts.trim()))err(`Distingui parti alimentari, preparazione e tossicità per ${pid}.`);
+      if(!Array.isArray(p.sources)||!p.sources.length||p.sources.some(s=>!s?.title?.trim()||!/^https:\/\/[^\s"'<>]+$/.test(s.url||'')))err(`Aggiungi fonti botaniche consultabili per ${pid}.`);
+      if(!Array.isArray(p.photos)||!p.photos.length||p.photos.length>6)err(`Aggiungi fotografie attribuite per ${pid}.`);
+      for(const m of p.photos)if(!['file','alt','caption','author','license'].every(k=>typeof m[k]==='string'&&m[k].trim())||!/^https:\/\/[^\s"'<>]+$/.test(m.page||'')||!/^https:\/\/[^\s"'<>]+$/.test(m.licenseUrl||''))err(`Completa fotografia, fonte e licenza per ${pid}.`);
+    }
+    needsReview=!previous||!same(value,previous);
   }
   if (id==='zones') {
     if (!Array.isArray(value.zones)) err('Elenco zone non valido.');

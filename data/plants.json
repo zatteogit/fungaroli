@@ -1,0 +1,650 @@
+{
+  "version": 1,
+  "verified_on": "2026-10-13",
+  "scope": "Schede botaniche: presenza regionale, non segnalazioni sui sentieri.",
+  "plants": {
+    "ortica": {
+      "name": "Ortica",
+      "latin": "Urtica dioica L.",
+      "category": "Erbe",
+      "aliases": [
+        "ortica comune",
+        "ortica dioica"
+      ],
+      "habitat": "Schiarite e margini di boschi freschi, ambienti ricchi di nutrienti e suoli umidi.",
+      "recognize": [
+        "Foglie opposte con margine dentato.",
+        "Peli urticanti su foglie e fusto: osserva senza toccare.",
+        "Piccoli fiori in infiorescenze ramificate."
+      ],
+      "foodUse": {
+        "status": "solo parti e preparazioni indicate",
+        "parts": "Foglie, dopo cottura.",
+        "caution": "Usa guanti. La cottura riguarda una pianta correttamente identificata; non rende sicura una specie sconosciuta."
+      },
+      "flowerMonths": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "phaseNote": "Il ricaccio dopo sfalcio può produrre foglie nuove: la fioritura non indica la disponibilità di foglie tenere.",
+      "lookalikes": [],
+      "sources": [
+        {
+          "title": "Università di Trieste · Portale della Flora di Roma",
+          "url": "https://dryades.units.it/Roma/index.php?id=298&procedure=taxon_page"
+        },
+        {
+          "title": "Biological Flora of the British Isles: Urtica dioica L.",
+          "url": "https://besjournals.onlinelibrary.wiley.com/doi/10.1111/j.1365-2745.2009.01575.x"
+        }
+      ],
+      "photos": [
+        {
+          "file": "assets/plants/ortica.jpg",
+          "alt": "Ortica: confronto di portamento, foglie, fiori e frutti",
+          "caption": "Tavola fotografica di caratteri della specie.",
+          "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "page": "https://dryades.units.it/Roma/index.php?id=298&procedure=taxon_page",
+          "sourceImage": "https://dryades.units.it/dryades/plants/foto/UrticadioicaLjpg1661420296.jpg"
+        }
+      ]
+    },
+    "cicoria": {
+      "name": "Cicoria selvatica",
+      "latin": "Cichorium intybus L.",
+      "category": "Erbe",
+      "aliases": [
+        "radicchio selvatico"
+      ],
+      "habitat": "Prati, incolti e margini aperti, soprattutto sotto la fascia montana.",
+      "recognize": [
+        "Foglie basali raccolte in una rosetta.",
+        "Fusto fiorale ramificato, con poche foglie.",
+        "Capolini generalmente azzurri."
+      ],
+      "foodUse": {
+        "status": "solo parti e preparazioni indicate",
+        "parts": "Foglie giovani, soprattutto cotte.",
+        "caution": "Una rosetta senza fiori può essere difficile da distinguere: confronta l’intera pianta. Non raccogliere vicino a traffico o trattamenti."
+      },
+      "flowerMonths": [
+        7,
+        8,
+        9,
+        10
+      ],
+      "phaseNote": "Rosetta e fusto fiorale sono fasi diverse; non sono disponibili soglie locali validate per le foglie giovani.",
+      "lookalikes": [],
+      "sources": [
+        {
+          "title": "Università di Trieste · Portale della Flora di Roma",
+          "url": "https://dryades.units.it/Roma/index.php?id=6152&procedure=taxon_page"
+        },
+        {
+          "title": "Functional Traits, Morphology, and Herbage Production of Vernalised and Non-Vernalised Chicory cv. Choice",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/32403361/"
+        }
+      ],
+      "photos": [
+        {
+          "file": "assets/plants/cicoria.jpg",
+          "alt": "Cicoria selvatica: confronto di portamento, foglie, fiori e frutti",
+          "caption": "Tavola fotografica di caratteri della specie.",
+          "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "page": "https://dryades.units.it/Roma/index.php?id=6152&procedure=taxon_page",
+          "sourceImage": "https://dryades.units.it/dryades/plants/foto/CichoriumintybusLjpg1632469640.jpg"
+        }
+      ]
+    },
+    "tarassaco": {
+      "name": "Tarassaco",
+      "latin": "Taraxacum sect. Taraxacum",
+      "category": "Erbe",
+      "aliases": [
+        "soffione",
+        "dente di leone"
+      ],
+      "habitat": "Prati e terreni disturbati, suoli freschi e ricchi di nutrienti, dalla pianura alla montagna.",
+      "recognize": [
+        "Foglie basali in rosetta.",
+        "Un capolino giallo per ciascun peduncolo senza foglie.",
+        "I frutti formano il caratteristico soffione."
+      ],
+      "foodUse": {
+        "status": "solo parti e preparazioni indicate",
+        "parts": "Foglie giovani cotte.",
+        "caution": "È un gruppo di specie difficili da separare, non una determinazione della singola specie. Il soffione o una foglia, da soli, non bastano."
+      },
+      "flowerMonths": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "phaseNote": "Fioritura possibile in mesi diversi; disponibilità delle foglie e condizioni del microhabitat vanno osservate.",
+      "lookalikes": [],
+      "sources": [
+        {
+          "title": "Università di Trieste · Portale della Flora di Roma",
+          "url": "https://dryades.units.it/Roma/index.php?id=21061&procedure=taxon_page"
+        },
+        {
+          "title": "Fine-Scale Environmental Heterogeneity Drives Intra- and Inter-Site Variation in Taraxacum officinale Flowering Phenology",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/40733448/"
+        }
+      ],
+      "photos": [
+        {
+          "file": "assets/plants/tarassaco.jpg",
+          "alt": "Tarassaco: confronto di portamento, foglie, fiori e frutti",
+          "caption": "Tavola fotografica di caratteri della specie.",
+          "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "page": "https://dryades.units.it/Roma/index.php?id=21061&procedure=taxon_page",
+          "sourceImage": "https://dryades.units.it/dryades/plants/foto/TSB86769.jpg"
+        }
+      ]
+    },
+    "finocchietto": {
+      "name": "Finocchietto selvatico",
+      "latin": "Anethum foeniculum L.",
+      "category": "Erbe",
+      "aliases": [
+        "Foeniculum vulgare",
+        "finocchio selvatico"
+      ],
+      "habitat": "Ambienti aperti e disturbati mediterranei, generalmente sotto la fascia montana inferiore.",
+      "recognize": [
+        "Foglie molto divise, con segmenti sottili.",
+        "Fiori gialli riuniti in ombrelle.",
+        "Pianta erbacea alta e ramificata."
+      ],
+      "foodUse": {
+        "status": "solo parti e preparazioni indicate",
+        "parts": "Frutti aromatici, nella pianta correttamente identificata.",
+        "caution": "Le Apiaceae comprendono specie mortali. Non usare odore, assaggio o un solo carattere come prova di identità; confronta anche la cicuta."
+      },
+      "flowerMonths": [
+        6,
+        7,
+        8
+      ],
+      "phaseNote": "Foglie, ombrelle e frutti secchi sono fasi distinte. Le soglie pubblicate per semi coltivati in India non sono previsioni per il Lazio.",
+      "lookalikes": [
+        "cicuta"
+      ],
+      "sources": [
+        {
+          "title": "Università di Trieste · Portale della Flora di Roma",
+          "url": "https://dryades.units.it/Roma/index.php?id=3527&procedure=taxon_page"
+        },
+        {
+          "title": "Thermal time (growing degree days) effects on phenology, yield and quality attributes of fennel",
+          "url": "https://epubs.icar.org.in/index.php/IJSS/article/view/175975"
+        }
+      ],
+      "photos": [
+        {
+          "file": "assets/plants/finocchietto.jpg",
+          "alt": "Finocchietto selvatico: confronto di portamento, foglie, fiori e frutti",
+          "caption": "Tavola fotografica di caratteri della specie.",
+          "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "page": "https://dryades.units.it/Roma/index.php?id=3527&procedure=taxon_page",
+          "sourceImage": "https://dryades.units.it/dryades/plants/foto/FoeniculumvulgareMilljpg1635329090.jpg"
+        }
+      ]
+    },
+    "fragolina": {
+      "name": "Fragolina di bosco",
+      "latin": "Fragaria vesca L. subsp. vesca",
+      "category": "Frutti",
+      "aliases": [
+        "fragola selvatica",
+        "fragoline"
+      ],
+      "habitat": "Radure, margini e sentieri boschivi. Presente in Italia; molto rara nell’area metropolitana di Roma secondo Dryades.",
+      "recognize": [
+        "Foglie formate da tre foglioline dentate.",
+        "Fiori bianchi con cinque petali.",
+        "Piccoli falsi frutti rossi, con acheni sulla superficie."
+      ],
+      "foodUse": {
+        "status": "solo parti e preparazioni indicate",
+        "parts": "Falsi frutti maturi.",
+        "caution": "Confronta foglie, fiori e frutti: il colore rosso da solo non identifica una fragolina. La scheda non segnala presenze sui sentieri."
+      },
+      "flowerMonths": [
+        4,
+        5,
+        6
+      ],
+      "phaseNote": "Fioritura e maturazione dipendono da temperatura, fotoperiodo e popolazione; non usare parametri delle fragole coltivate.",
+      "lookalikes": [],
+      "sources": [
+        {
+          "title": "Università di Trieste · Portale della Flora di Roma",
+          "url": "https://dryades.units.it/Roma/index.php?id=2073&procedure=taxon_page"
+        },
+        {
+          "title": "Interactions of temperature and photoperiod in the control of flowering of latitudinal and altitudinal populations of wild strawberry",
+          "url": "https://onlinelibrary.wiley.com/doi/10.1111/j.1399-3054.2007.00906.x"
+        },
+        {
+          "title": "Strawberry homologue of TERMINAL FLOWER1 integrates photoperiod and temperature signals to inhibit flowering",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/25720985/"
+        },
+        {
+          "title": "Flowering responses of the woodland strawberry to local climate and reduced precipitation along a European latitudinal gradient",
+          "url": "https://academic.oup.com/jpe/article/18/5/rtaf105/8209627"
+        }
+      ],
+      "photos": [
+        {
+          "file": "assets/plants/fragolina.jpg",
+          "alt": "Fragolina di bosco: confronto di portamento, foglie, fiori e frutti",
+          "caption": "Tavola fotografica di caratteri della specie.",
+          "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "page": "https://dryades.units.it/Roma/index.php?id=2073&procedure=taxon_page",
+          "sourceImage": "https://dryades.units.it/dryades/plants/foto/FragariavescaLsubspvescajpg1635334898.jpg"
+        }
+      ]
+    },
+    "rovo": {
+      "name": "Rovo e more",
+      "latin": "Rubus ulmifolius Schott",
+      "category": "Frutti",
+      "aliases": [
+        "mora",
+        "more",
+        "rovo fruticoso"
+      ],
+      "habitat": "Siepi, boscaglie rade e margini del bosco, con suoli da freschi a relativamente asciutti.",
+      "recognize": [
+        "Rami arcuati con aculei.",
+        "Foglie composte da foglioline dentate.",
+        "More formate da numerose piccole drupe, nere a maturità."
+      ],
+      "foodUse": {
+        "status": "solo parti e preparazioni indicate",
+        "parts": "More mature.",
+        "caution": "I rovi costituiscono un gruppo complesso: non tutte le piante simili sono determinate come Rubus ulmifolius. Evita spine e frutti alterati."
+      },
+      "flowerMonths": [
+        5,
+        6,
+        7
+      ],
+      "phaseNote": "Fiori e frutti a stadi diversi possono coesistere. Frutti maturi e quantità rimasta sono osservazioni separate.",
+      "lookalikes": [],
+      "sources": [
+        {
+          "title": "Università di Trieste · Portale della Flora di Roma",
+          "url": "https://dryades.units.it/Roma/index.php?id=1907&procedure=taxon_page"
+        },
+        {
+          "title": "Evolution of the Volatile Organic Compounds, Phenols and Antioxidant Capacity during Fruit Ripening and Development of Rubus ulmifolius Schott Fruits",
+          "url": "https://www.mdpi.com/2311-7524/9/1/13"
+        }
+      ],
+      "photos": [
+        {
+          "file": "assets/plants/rovo.jpg",
+          "alt": "Rovo e more: confronto di portamento, foglie, fiori e frutti",
+          "caption": "Tavola fotografica di caratteri della specie.",
+          "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "page": "https://dryades.units.it/Roma/index.php?id=1907&procedure=taxon_page",
+          "sourceImage": "https://dryades.units.it/dryades/plants/foto/TS112799.jpg"
+        }
+      ]
+    },
+    "rosa-canina": {
+      "name": "Rosa canina",
+      "latin": "Rosa canina L.",
+      "category": "Frutti",
+      "aliases": [
+        "cinorrodo",
+        "cinorrodi",
+        "rosa selvatica"
+      ],
+      "habitat": "Siepi, arbusteti, boscaglie aperte e pascoli abbandonati, dalla pianura alla montagna.",
+      "recognize": [
+        "Arbusto con aculei ricurvi.",
+        "Foglie composte da foglioline dentate.",
+        "Fiori a cinque petali e cinorrodi generalmente rossi o aranciati."
+      ],
+      "foodUse": {
+        "status": "solo parti e preparazioni indicate",
+        "parts": "Polpa dei cinorrodi per preparazioni, eliminando accuratamente peli interni e acheni.",
+        "caution": "I peli interni sono irritanti. Il gruppo delle rose canine è difficile da determinare; non usare la scheda per preparazioni medicinali."
+      },
+      "flowerMonths": [
+        5,
+        6,
+        7
+      ],
+      "phaseNote": "Maturazione da osservare; una gelata non costituisce automaticamente un miglioramento o un bonus di raccolta.",
+      "lookalikes": [],
+      "sources": [
+        {
+          "title": "Università di Trieste · Portale della Flora di Roma",
+          "url": "https://dryades.units.it/Roma/index.php?id=1972&procedure=taxon_page"
+        },
+        {
+          "title": "Phenological and Pomological Characteristics of Rosa canina L. Species Cultivated and Naturally Distributed in Amasya Province",
+          "url": "https://dergipark.org.tr/tr/pub/bsagriculture/article/1356222"
+        },
+        {
+          "title": "Changes in Pomological and Physical Parameters in Rosehips during Ripening",
+          "url": "https://www.mdpi.com/2223-7747/12/6/1314"
+        },
+        {
+          "title": "Frost decreases content of sugars, ascorbic acid and some quercetin glycosides but stimulates selected carotenes in Rosa canina hips",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/25768262/"
+        }
+      ],
+      "photos": [
+        {
+          "file": "assets/plants/rosa-canina.jpg",
+          "alt": "Rosa canina: confronto di portamento, foglie, fiori e frutti",
+          "caption": "Tavola fotografica di caratteri della specie.",
+          "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "page": "https://dryades.units.it/Roma/index.php?id=1972&procedure=taxon_page",
+          "sourceImage": "https://dryades.units.it/dryades/plants/foto/TSB73489.jpg"
+        }
+      ]
+    },
+    "corbezzolo": {
+      "name": "Corbezzolo",
+      "latin": "Arbutus unedo L.",
+      "category": "Frutti",
+      "aliases": [
+        "corbezzoli"
+      ],
+      "habitat": "Macchia mediterranea, spesso con leccio e substrati silicei; non è una pianta di tutti i boschi montani.",
+      "recognize": [
+        "Foglie sempreverdi, coriacee e dentate.",
+        "Fiori chiari a forma di piccola urna.",
+        "Frutti sferici con superficie granulosa, rossi a maturità."
+      ],
+      "foodUse": {
+        "status": "solo parti e preparazioni indicate",
+        "parts": "Frutti maturi, freschi o in preparazioni.",
+        "caution": "Riconosci l’intera pianta. La presenza regionale non indica che il corbezzolo sia sul percorso scelto."
+      },
+      "flowerMonths": [
+        10,
+        11
+      ],
+      "phaseNote": "La maturazione avviene circa un anno dopo la fioritura: sulla stessa pianta possono esserci fiori e frutti di coorti diverse.",
+      "lookalikes": [],
+      "sources": [
+        {
+          "title": "Università di Trieste · Portale della Flora di Roma",
+          "url": "https://dryades.units.it/Roma/index.php?id=3730&procedure=taxon_page"
+        },
+        {
+          "title": "Influence of temperature and rainfall on fruit and seed production of Arbutus unedo L.",
+          "url": "https://academic.oup.com/botlinnean/article-abstract/111/1/71/2632487"
+        },
+        {
+          "title": "An Endemic Plant of the Mediterranean Area: Phytochemical Characterization of Strawberry Tree Fruits Extracts at Different Ripening Stages",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9249387/"
+        }
+      ],
+      "photos": [
+        {
+          "file": "assets/plants/corbezzolo.jpg",
+          "alt": "Corbezzolo: confronto di portamento, foglie, fiori e frutti",
+          "caption": "Tavola fotografica di caratteri della specie.",
+          "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "page": "https://dryades.units.it/Roma/index.php?id=3730&procedure=taxon_page",
+          "sourceImage": "https://dryades.units.it/dryades/plants/foto/ArbutusunedoLjpg1669801055.jpg"
+        }
+      ]
+    },
+    "prugnolo": {
+      "name": "Prugnolo",
+      "latin": "Prunus spinosa L. subsp. spinosa",
+      "category": "Frutti",
+      "aliases": [
+        "pruno selvatico",
+        "prugnole"
+      ],
+      "habitat": "Siepi, margini boschivi e prati abbandonati, spesso su terreni argillosi.",
+      "recognize": [
+        "Arbusto deciduo con rami spinescenti.",
+        "Fiori bianchi primaverili, prima o durante l’emissione delle foglie.",
+        "Piccole drupe blu scuro con rivestimento pruinoso."
+      ],
+      "foodUse": {
+        "status": "solo parti e preparazioni indicate",
+        "parts": "Polpa dei frutti maturi, usata in preparazioni.",
+        "caution": "Non consumare i noccioli o i semi. I frutti possono essere molto aspri: non assaggiare per identificare la pianta."
+      },
+      "flowerMonths": [
+        3,
+        4
+      ],
+      "phaseNote": "Lo studio termico disponibile riguarda germogliamento e fioritura in Romania, non la maturazione dei frutti nel Lazio.",
+      "lookalikes": [],
+      "sources": [
+        {
+          "title": "Università di Trieste · Portale della Flora di Roma",
+          "url": "https://dryades.units.it/Roma/index.php?id=2222&procedure=taxon_page"
+        },
+        {
+          "title": "BfR · Piante velenose e parti non alimentari",
+          "url": "https://www.bfr.bund.de/en/service/frequently-asked-questions/topic/poisonous-plants-how-to-protect-yourself-and-what-to-do-in-case-of-poisoning/"
+        },
+        {
+          "title": "Influence of temperature on blackthorn phenophases in spring season",
+          "url": "https://www.jstage.jst.go.jp/article/agrmet/76/1/76_D-19-00030/_pdf"
+        }
+      ],
+      "photos": [
+        {
+          "file": "assets/plants/prugnolo.jpg",
+          "alt": "Prugnolo: confronto di portamento, foglie, fiori e frutti",
+          "caption": "Tavola fotografica di caratteri della specie.",
+          "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "page": "https://dryades.units.it/Roma/index.php?id=2222&procedure=taxon_page",
+          "sourceImage": "https://dryades.units.it/dryades/plants/foto/Prunusspinosajpg1742559746.jpg"
+        }
+      ]
+    },
+    "sambuco": {
+      "name": "Sambuco nero",
+      "latin": "Sambucus nigra L.",
+      "category": "Frutti",
+      "aliases": [
+        "sambuco comune"
+      ],
+      "habitat": "Boschi freschi, forre e margini disturbati su suoli umidi e ricchi di nutrienti.",
+      "recognize": [
+        "Arbusto o piccolo albero con fusti legnosi.",
+        "Foglie opposte e composte da foglioline dentate.",
+        "Infiorescenze chiare; frutti scuri in infruttescenze spesso pendenti."
+      ],
+      "foodUse": {
+        "status": "solo parti e preparazioni indicate",
+        "parts": "Fiori per preparazioni e frutti maturi soltanto dopo adeguata cottura.",
+        "caution": "Frutti crudi o immaturi e parti verdi possono essere tossici. Confronta sempre l’ebbio: i suoi frutti sono tossici. Non dare per sicura una pianta perché i frutti pendono."
+      },
+      "flowerMonths": [
+        4,
+        5,
+        6
+      ],
+      "phaseNote": "CREA/IPHEN include la specie nella rete storica; un servizio attuale di previsione dei frutti nel Lazio non è stato verificato.",
+      "lookalikes": [
+        "ebbio"
+      ],
+      "sources": [
+        {
+          "title": "Università di Trieste · Portale della Flora di Roma",
+          "url": "https://dryades.units.it/Roma/index.php?id=5142&procedure=taxon_page"
+        },
+        {
+          "title": "Regione Lazio · Sambuco nero: parti alimentari e tossicità",
+          "url": "https://progetti.regione.lazio.it/ossigeno/albero/sambuco-nero/"
+        },
+        {
+          "title": "NCCIH · Sicurezza dei frutti di sambuco",
+          "url": "https://www.nccih.nih.gov/health/elderberry"
+        },
+        {
+          "title": "IPHEN—a real-time network for phenological monitoring and modelling in Italy",
+          "url": "https://link.springer.com/article/10.1007/s00484-012-0615-x"
+        },
+        {
+          "title": "CREA IPHEN Italian phenological network",
+          "url": "https://www.crea.gov.it/en/web/agricoltura-e-ambiente/-/iphen-italian-phenological-network"
+        },
+        {
+          "title": "Bollettino fenologico settimanale, Rete Rurale",
+          "url": "https://www.reterurale.it/bollettinofeno"
+        },
+        {
+          "title": "Sambucus nigra L.",
+          "url": "https://onlinelibrary.wiley.com/doi/10.1046/j.1365-2745.2002.00698.x/full"
+        }
+      ],
+      "photos": [
+        {
+          "file": "assets/plants/sambuco.jpg",
+          "alt": "Sambuco nero: confronto di portamento, foglie, fiori e frutti",
+          "caption": "Tavola fotografica di caratteri della specie.",
+          "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "page": "https://dryades.units.it/Roma/index.php?id=5142&procedure=taxon_page",
+          "sourceImage": "https://dryades.units.it/dryades/plants/foto/SambucusnigraLjpg1643041021.jpg"
+        }
+      ]
+    },
+    "ebbio": {
+      "name": "Ebbio",
+      "latin": "Sambucus ebulus L.",
+      "category": "Pericolose",
+      "aliases": [
+        "sambuco lebbio",
+        "sambuchella"
+      ],
+      "habitat": "Popolamenti erbacei su terreni freschi e ricchi di nutrienti, anche ai margini stradali.",
+      "recognize": [
+        "Pianta erbacea perenne, con fusti non legnosi.",
+        "Foglie composte da numerose foglioline dentate.",
+        "Fiori chiari e piccoli frutti scuri: somiglianza con il sambuco nero."
+      ],
+      "foodUse": {
+        "status": "tossico",
+        "parts": "",
+        "caution": "Tutte le parti sono tossiche, compresi i frutti. Non raccogliere per uso alimentare."
+      },
+      "flowerMonths": [
+        5,
+        6,
+        7
+      ],
+      "phaseNote": "Scheda di confronto per una specie tossica; nessuna indicazione di raccolta.",
+      "lookalikes": [
+        "sambuco"
+      ],
+      "sources": [
+        {
+          "title": "Università di Trieste · Portale della Flora di Roma",
+          "url": "https://dryades.units.it/Roma/index.php?id=5141&procedure=taxon_page"
+        }
+      ],
+      "photos": [
+        {
+          "file": "assets/plants/ebbio.jpg",
+          "alt": "Ebbio: confronto di portamento, foglie, fiori e frutti",
+          "caption": "Tavola fotografica di caratteri della specie.",
+          "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "page": "https://dryades.units.it/Roma/index.php?id=5141&procedure=taxon_page",
+          "sourceImage": "https://dryades.units.it/dryades/plants/foto/TS197195.jpg"
+        }
+      ]
+    },
+    "cicuta": {
+      "name": "Cicuta maggiore",
+      "latin": "Conium maculatum L. subsp. maculatum",
+      "category": "Pericolose",
+      "aliases": [
+        "cicuta"
+      ],
+      "habitat": "Argini, fossi e ambienti disturbati, anche presso gli abitati.",
+      "recognize": [
+        "Foglie ripetutamente divise.",
+        "Fiori bianchi riuniti in ombrelle.",
+        "Fusto spesso con macchie rossastre: non è un carattere sufficiente da solo."
+      ],
+      "foodUse": {
+        "status": "mortale",
+        "parts": "",
+        "caution": "Tutta la pianta è molto velenosa e l’ingestione può essere mortale. Non toccare per provare l’odore e non assaggiare; attenzione alle confusioni tra Apiaceae."
+      },
+      "flowerMonths": [
+        6,
+        7,
+        8,
+        9
+      ],
+      "phaseNote": "Scheda di confronto per una specie mortale; nessuna indicazione di raccolta.",
+      "lookalikes": [
+        "finocchietto"
+      ],
+      "sources": [
+        {
+          "title": "Università di Trieste · Portale della Flora di Roma",
+          "url": "https://dryades.units.it/Roma/index.php?id=3535&procedure=taxon_page"
+        }
+      ],
+      "photos": [
+        {
+          "file": "assets/plants/cicuta.jpg",
+          "alt": "Cicuta maggiore: confronto di portamento, foglie, fiori e frutti",
+          "caption": "Tavola fotografica di caratteri della specie.",
+          "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "page": "https://dryades.units.it/Roma/index.php?id=3535&procedure=taxon_page",
+          "sourceImage": "https://dryades.units.it/dryades/plants/foto/TS109061.jpg"
+        }
+      ]
+    }
+  }
+}

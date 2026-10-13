@@ -237,7 +237,10 @@ for(const width of [320,1280]) test(`guide in Impara e taccuino personale distin
   await page.goto('/#/info');await expect(page.locator('#legal-sections')).toContainText('Taccuino privato');
   await page.goto('/');await expect(page.locator('#hero .cover-cta')).toContainText('Scopri la passeggiata');
   await page.locator('#hero .cover-link').click();await page.locator('.walk-focus > summary').click();
-  await expect(page.locator('.walk-focus')).not.toContainText('taccuino');
+  await expect(page.locator('.walk-focus > summary')).not.toContainText('taccuino');
+  await expect(page.locator('.walk-focus [data-note-kind="zona"]')).toContainText('Salva il giro nel taccuino');
+  await page.locator('.walk-focus [data-note-kind="zona"]').click();await page.locator('.notebook-dialog[open] [type="submit"]').click();await expect(page.locator('.notebook-dialog[open]')).toHaveCount(0);
+  await page.goto('/#/diario');await page.locator('[data-notebook-filter="percorso"]').click();await expect(page.locator('#journal-list .notebook-entry')).toHaveCount(1);await expect(page.locator('#journal-list .notebook-entry a')).toHaveAttribute('href',/^#\/zona\/.+\/sentiero\//);
   expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);expect(errors).toEqual([]);
 });
 
