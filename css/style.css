@@ -1793,6 +1793,8 @@ html.theme-swap, html.theme-swap *, html.theme-swap *::before, html.theme-swap *
 .app-toast .link-btn { color: inherit; font-weight: 800; }
 .app-toast .spin { width: 14px; height: 14px; border-radius: 50%; border: 2px solid currentColor; border-right-color: transparent; animation: ld-spin .8s linear infinite; }
 @media (min-width: 761px) { .app-toast { bottom: 24px; } }
+.app-toast.app-toast-top { top: calc(var(--appbar-h) + env(safe-area-inset-top, 0px) + 8px); right: 16px; bottom: auto; left: auto; z-index: 1002; transform: translateY(-8px); }
+.app-toast.app-toast-top.on { transform: translateY(0); }
 /* ===== Invito a installare: a tutto schermo sul telefono, finestra centrata su desktop ===== */
 .install-invite { width: 100vw; max-width: none; height: 100dvh; max-height: none; margin: 0; padding: 0; border: 0; color: #f3efe7; overflow: auto;
   background: radial-gradient(120% 70% at 50% 0%, #2d4a33 0%, #16261b 55%, #0f1a12 100%); }

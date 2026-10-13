@@ -34,6 +34,6 @@ document.getElementById('theme-btn')?.addEventListener('click', () => {
   apply(next);
   const b = document.getElementById('theme-btn');
   b?.classList.add('spin'); setTimeout(() => b?.classList.remove('spin'), 460);
-  toast(`${b?.innerHTML || ''}<span>${next === 'auto' ? `Automatico (ora ${systemDark() ? 'scuro' : 'chiaro'})` : next === 'dark' ? 'Tema scuro' : 'Tema chiaro'}</span>`, 1800);
+  toast(`${b?.innerHTML || ''}<span>${next === 'auto' ? `Automatico (ora ${systemDark() ? 'scuro' : 'chiaro'})` : next === 'dark' ? 'Tema scuro' : 'Tema chiaro'}</span>`, 1800, 'top');
   setTimeout(() => root.classList.remove('theme-swap'), 400);
 });
