@@ -2,6 +2,7 @@
 // Non e' un'identificazione: restringe i candidati e dice sempre cosa controllare.
 
 import { openLightbox, captionHtml } from './lightbox.js';
+import { openEntitySheet } from './entity-sheet.js';
 import { soft, tick, canVT } from './motion.js';
 import { matchTraits, retainCandidate } from './identify-model.js';
 
@@ -531,7 +532,7 @@ export function renderTaxonPage(box, key) {
       ${t.check_before_picking?.length ? `<h3>Cosa controllare</h3><ol class="keys">${t.check_before_picking.map((x) => `<li>${esc(x)}</li>`).join('')}</ol>` : ''}
       ${look.length ? `<h3>Si confonde con</h3><ul class="tx-look">${look.map(({ id, o }) => { const op = photoOf(o); return `<li>
         <a class="tx-look-main" href="#/riconosci/confronta/${esc(t.key)}/${esc(o.key)}">${op ? `<img src="${ASSET(op.thumb || op.file)}" alt="" loading="lazy" decoding="async">` : ''}<span><b>${esc(o.name)}</b><i>${esc(o.latin)}</i><small class="tx-cmp">Confrontali carattere per carattere ›</small></span></a>
-        <a class="tx-sheet" href="#/specie/${esc(id)}">Scheda di ${esc(o.name.toLowerCase())} ›</a></li>`; }).join('')}</ul>` : ''}
+        <a class="tx-sheet" data-entity href="#/specie/${esc(id)}">Scheda di ${esc(o.name.toLowerCase())} ›</a></li>`; }).join('')}</ul>` : ''}
       <h3>Dove e quando</h3>
       <dl class="sci-params">
         ${habitat.length ? `<div><dt>Dove</dt><dd>${esc(orList(habitat))}</dd></div>` : ''}
@@ -702,39 +703,10 @@ function renderCompare(box, ref, pick) {
 
 // scheda breve per le specie senza pagina propria (velenose e sosia)
 export function openTaxon(key) {
-  const t = TAXA.find((x) => x.key === key);
+  const t = TAXA.find(x => x.key === key);
   if (!t) return;
-  let dlg = document.getElementById('taxon-dlg');
-  if (!dlg) {
-    dlg = document.createElement('dialog'); dlg.id = 'taxon-dlg'; dlg.className = 'sheet-dlg taxon-dlg';
-    // i link interni chiudono sempre il pannello: se portano dove sei gia' (stesso indirizzo) non c'e' hashchange
-    dlg.addEventListener('click', (e) => { if (e.target === dlg || e.target.closest('.wiz-close, a[href^="#/"]')) dlg.close(); });
-    addEventListener('hashchange', () => { if (dlg.open) dlg.close(); });
-    document.body.append(dlg);
-  }
-  const ph = photoOf(t), tox = esc(t.toxicity || ''), toxL = esc(t.tox_label || t.toxicity || '');
-  // "si confonde con": porta dritto al confronto affiancato (la scheda della commestibile e' a un tocco da li')
-  const look = (t.lookalike_of || []).map((id) => TAXA.find((x) => x.edible_id === id && !x.lookalike_of?.length))
-    .sort((x, y) => (y ? similarity(y, t) : 0) - (x ? similarity(x, t) : 0)).map((o) => {
-    return o ? `<a class="tx-vs" href="#/riconosci/confronta/${esc(t.key)}/${esc(o.key)}">${esc(o.name)}<span aria-hidden="true">›</span></a>` : '';
-  }).filter(Boolean);
-  const full = t.edible_id && !t.lookalike_of?.length ? `#/specie/${t.edible_id}` : `#/fungo/${t.key}`;
-  const sos = !t.lookalike_of?.length && t.edible_id ? sosiaOf(t) : [];
-  dlg.dataset.expand = full;
-  dlg.innerHTML = `<button type="button" class="wiz-close" aria-label="Chiudi">✕</button>
-    <div class="tx-handle" data-drag aria-hidden="true"><span class="sheet-grip"></span></div>
-    ${ph ? `<figure class="tx-img" data-drag><img src="${ASSET(ph.file_hd || ph.file)}" alt=""><figcaption>Foto: ${esc(ph.author)}, ${esc(ph.license)}</figcaption></figure>` : ''}
-    <div class="tx-body tox-${tox.replace(/\s/g, '-')}"><span class="tox">${toxL}</span>
-    <h2>${esc(t.name || t.latin)}</h2>${t.name && t.name !== t.latin ? `<p class="tx-latin">${esc(t.latin)}</p>` : ''}
-    ${t.caution ? `<p class="id-why"><b>Come si mangia:</b> ${esc(t.caution)}</p>` : ''}
-    ${look.length ? `<p class="tx-vs-row"><b>Si confonde con</b>${look.join('')}</p>` : ''}
-    ${sos.length && state.compare !== t.key ? `<p class="tx-vs-row"><b>Sosia</b><a class="tx-vs" href="#/riconosci/confronta/${esc(t.key)}">Confrontalo con ${sos.length === 1 ? 'il sosia' : `i ${sos.length} sosia`}<span aria-hidden="true">›</span></a></p>` : ''}
-    ${t.field_rules?.length ? `<h3>Da sapere</h3><ul class="reasons">${t.field_rules.map((r) => `<li${r.severity === 'critico' ? ' class="crit"' : ''}>${esc(r.text)}</li>`).join('')}</ul>` : ''}
-    ${t.check_before_picking?.length ? `<h3>Cosa controllare</h3><ul class="reasons">${t.check_before_picking.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>` : ''}
-    </div>
-    <div class="tx-foot"><a class="btn primary big" href="${full}">Scheda completa <span aria-hidden="true">›</span></a></div>`;
-  dlg.showModal();
-  dlg.scrollTop = 0;
+  const href = t.edible_id && !t.lookalike_of?.length ? `#/specie/${t.edible_id}` : `#/fungo/${t.key}`;
+  if (!openEntitySheet(href)) location.hash = href;
 }
 
 // --- Modo "Filtri": i caratteri come filtro avanzato (gruppi per parte del fungo, chip con il conteggio) ---

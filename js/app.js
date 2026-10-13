@@ -9,6 +9,7 @@ import { initJournal } from './journal.js';
 import { renderSvgMap } from './svgmap.js';
 import { initSpeciesCards, thumb, renderSpeciesDetail, whereSummary, criticalRule, speciesPhoto } from './speciescard.js';
 import { speciesLink } from './species-link.js';
+import { initEntitySheets } from './entity-sheet.js';
 import {initBaseLocation,currentBase,customBase,travelTo,travelText,directionsTo,BASE_PRIVACY_TEXT} from './base-location.js';
 import { initLearning, renderGlossary, renderFieldIdentify, difficultyLink, glossaryTerms, glossaryTitle, enhanceGlossary } from './learning.js';
 import { openLightbox, captionHtml } from './lightbox.js';
@@ -189,7 +190,17 @@ async function init() {
   renderSpeciesGrid();
   applyLegal();
   initTrees({ trees: trj, media: mj, assetUrl: embedded ? (f) => embedded.assets?.[f] || '' : (f) => f, zones, habitat, thumb });
-  initLearning({ glossary: embedded?.glossary || await load('glossary'), trees: trj, traits: stj });
+  initLearning({ glossary: embedded?.glossary || await load('glossary'), trees: trj });
+  initEntitySheets({ enhance: enhanceGlossary, render: (body, href) => {
+    const [, kind, encodedId] = href.split('/'), id = decodeURIComponent(encodedId);
+    if (kind === 'albero' && trj.trees?.[id]) { renderTreePage(body, id); return trj.trees[id].name; }
+    if (kind === 'fungo' && taxonName(id)) { renderTaxonPage(body, id); return taxonName(id); }
+    const s = catalog.find(x => x.id === id);
+    if (!s) return '';
+    if (kind === 'specie' && SPECIES.some(x => x.id === id)) renderSpeciesDetail(body, id);
+    else renderEdiblePage(id, body);
+    return s.name;
+  }});
   renderTreeGrid($('#tree-grid'));
   treesData = trj; idData = idj;
   renderFilterSummary(); // ora che c'e' il pregio delle specie, riordina i filtri
@@ -706,8 +717,8 @@ function fillSpecies() {
   }).join('') || '<p class="muted empty-note">Nessuna specie commestibile nel catalogo.</p>';
 }
 
-function renderEdiblePage(id) {
-  const s = catalog.find(x=>x.id===id), box=$('#edible-detail');
+function renderEdiblePage(id, box=$('#edible-detail')) {
+  const s = catalog.find(x=>x.id===id);
   if (!s) { box.innerHTML='<p>Specie non presente nel catalogo.</p>';return; }
   const names=['gen','feb','mar','apr','mag','giu','lug','ago','set','ott','nov','dic'];
   box.innerHTML=`<article class="editorial-article"><p class="eyebrow">Taccuino delle specie</p><h1>${esc(s.name)}</h1><p><i>${esc(s.latin)}</i></p>
