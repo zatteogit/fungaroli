@@ -2,7 +2,7 @@ import schema from '../migrations/0002_cms.sql';
 import { CONTENT_RESOURCES, CONTENT_SCHEMA_VERSION, resourceOf } from '../js/content-schema.js';
 import { readCommunityUser } from './community.js';
 import { validateContent } from './content-validation.js';
-import {glossarySeedUpdate} from './seed-update.js';
+import {glossaryContextSeedUpdate} from './seed-update.js';
 
 const initialized=new WeakMap(), enc=new TextEncoder();
 const hash=async s=>Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',enc.encode(s))),b=>b.toString(16).padStart(2,'0')).join('');
@@ -35,12 +35,12 @@ async function init(env,origin) {
       ...Array.from({length:Math.ceil(seeds.length/20)},(_,i)=>{const batch=seeds.slice(i*20,(i+1)*20);return db.prepare(`INSERT INTO cms_documents(id,draft,published,updated_at,updated_by) VALUES ${batch.map(()=>'(?,?,?,?,?)').join(',')} ON CONFLICT(id) DO NOTHING`).bind(...batch.flatMap(r=>[r.id,r.payload,r.payload,Date.now(),'seed']));}),
       db.prepare('INSERT INTO cms_revisions(document_id,version,payload,created_at,actor) SELECT id,0,draft,updated_at,updated_by FROM cms_documents WHERE version=0 ON CONFLICT(document_id,version) DO NOTHING'),
     ]);
-    const baseline=await db.prepare("SELECT id FROM cms_documents WHERE id='glossary' AND version=0 AND updated_by='seed' AND json_extract(draft,'$.version')=1").first();
+    const baseline=await db.prepare("SELECT id FROM cms_documents WHERE id='glossary' AND draft=published AND ((version=0 AND published_version=0 AND updated_by='seed' AND json_extract(draft,'$.version') IN (1,2)) OR (version=1 AND published_version=1 AND updated_by='release:glossary-illustrations-v2' AND json_extract(draft,'$.version')=2))").first();
     if(baseline){
       const source=await env.ASSETS.fetch(new Request(new URL('/data/glossary.json',origin)));
-      if(source.ok){const data=await source.json();if(data.version===2){
+      if(source.ok){const data=await source.json();if(data.version===3){
         const payload=JSON.stringify(validateContent('glossary',data).value);
-        await db.batch(glossarySeedUpdate(db,payload,Date.now(),crypto.randomUUID(),crypto.randomUUID()));
+        await db.batch(glossaryContextSeedUpdate(db,payload,Date.now(),crypto.randomUUID(),crypto.randomUUID()));
       }}
     }
   })().catch(e=>{initialized.delete(db);throw e;}));

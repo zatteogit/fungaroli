@@ -45,6 +45,7 @@ export function treeThumb(id, size = 56) {
 }
 
 export function renderTreeGrid(box) {
+  box.dataset.glossaryContext='Alberi';
   const html = Object.entries(T).map(([id, t]) => {
     const m = MEDIA[id]?.ref || MEDIA[id]?.inat?.[0];
     return `<a class="sp-card" href="#/albero/${encodeURIComponent(id)}" aria-label="${esc(t.name)}">
@@ -55,6 +56,7 @@ export function renderTreeGrid(box) {
 }
 
 export function renderTreePage(body, id) {
+  body.dataset.glossaryContext='Alberi';
   const t = T[id];
   if (!t) { body.innerHTML = '<p class="muted">Scheda non ancora disponibile.</p>'; return; }
   const m = MEDIA[id] || {};

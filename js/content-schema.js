@@ -28,7 +28,7 @@ export const CONTENT_TEMPLATES = {
   'botanical-models':{plantId:'',enabled:false,phase:'young_leaves',phaseLabel:'Foglie giovani',phaseMonths:null,calendarOrigin:'hypothesis',calendarNote:'',elevationRange:null,elevationNote:'',landscapeAffinity:{},landscapeSaturation:0.45,observationDays:14,habitatNote:'',methodNote:'Pesi e affinità sono ipotesi di ordinamento, non parametri biologici calibrati.',sources:[],parameterOrigin:'editorial_hypothesis'},
   plants:{name:'',latin:'',category:'Erbe',aliases:[],habitat:'',recognize:[],foodUse:{status:'da verificare',parts:'',caution:''},flowerMonths:[],phaseNote:'',lookalikes:[],sources:[],photos:[]},
   guides:{id:'',category:'',title:'',excerpt:'',body:''},
-  glossary:{id:'',term:'',category:'Bosco',aliases:[],definition:'',observe:'',related:[],sources:[]},
+  glossary:{id:'',term:'',category:'Bosco',contexts:null,aliases:[],definition:'',observe:'',related:[],sources:[]},
   'edible-catalog':{id:'',name:'',latin:'',toxicity:'da verificare',aliases:[],months:null,description:'',caution:'',sources:[]},
   'species-traits':{name:'',latin:'',toxicity:'da verificare',caution:'',traits:{season:[]},sources:[]},
   infografiche:{file:'',alt:'',author:'',license:'',page:''},

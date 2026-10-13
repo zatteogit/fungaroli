@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 3,
   "terms": [
     {
       "id": "difficolta-t",
@@ -274,6 +274,9 @@
           "title": "First Nature · Glossary of mycological terms",
           "url": "https://www.first-nature.com/fungi/~glossary.php"
         }
+      ],
+      "contexts": [
+        "Funghi"
       ]
     },
     {
@@ -298,6 +301,12 @@
           "title": "First Nature · Glossary of mycological terms",
           "url": "https://www.first-nature.com/fungi/~glossary.php"
         }
+      ],
+      "contexts": [
+        "Funghi",
+        "Piante",
+        "Alberi",
+        "Bosco"
       ]
     },
     {
@@ -320,6 +329,12 @@
           "title": "First Nature · Glossary of mycological terms",
           "url": "https://www.first-nature.com/fungi/~glossary.php"
         }
+      ],
+      "contexts": [
+        "Funghi",
+        "Piante",
+        "Alberi",
+        "Bosco"
       ]
     },
     {
@@ -339,6 +354,12 @@
           "title": "First Nature · Glossary of mycological terms",
           "url": "https://www.first-nature.com/fungi/~glossary.php"
         }
+      ],
+      "contexts": [
+        "Funghi",
+        "Piante",
+        "Alberi",
+        "Bosco"
       ]
     },
     {
@@ -361,6 +382,9 @@
           "title": "First Nature · Glossary of mycological terms",
           "url": "https://www.first-nature.com/fungi/~glossary.php"
         }
+      ],
+      "contexts": [
+        "Funghi"
       ]
     },
     {
@@ -381,6 +405,9 @@
           "title": "AMINT · Lamelle (Glossario illustrato micologico)",
           "url": "https://enciclopedia.funghiitaliani.it/termine.php?show=1107"
         }
+      ],
+      "contexts": [
+        "Funghi"
       ]
     },
     {
@@ -404,6 +431,9 @@
           "title": "AMINT · Pori (Glossario illustrato micologico)",
           "url": "https://enciclopedia.funghiitaliani.it/termine.php?show=1526"
         }
+      ],
+      "contexts": [
+        "Funghi"
       ]
     },
     {
@@ -425,6 +455,9 @@
           "title": "AMINT · Pliche (Glossario illustrato micologico)",
           "url": "https://enciclopedia.funghiitaliani.it/termine.php?show=2638"
         }
+      ],
+      "contexts": [
+        "Funghi"
       ]
     },
     {
@@ -444,6 +477,9 @@
           "title": "AMINT · Aculei (Glossario illustrato micologico)",
           "url": "https://enciclopedia.funghiitaliani.it/termine.php?show=29"
         }
+      ],
+      "contexts": [
+        "Funghi"
       ]
     },
     {
@@ -465,6 +501,9 @@
           "title": "AMINT · Imenoforo (Glossario illustrato micologico)",
           "url": "https://enciclopedia.funghiitaliani.it/termine.php?show=2651"
         }
+      ],
+      "contexts": [
+        "Funghi"
       ]
     },
     {
@@ -484,6 +523,9 @@
           "title": "AMINT · Anello (Glossario illustrato micologico)",
           "url": "https://enciclopedia.funghiitaliani.it/termine.php?show=109"
         }
+      ],
+      "contexts": [
+        "Funghi"
       ]
     },
     {
@@ -504,6 +546,9 @@
           "title": "AMINT · Volva (Glossario illustrato micologico)",
           "url": "https://enciclopedia.funghiitaliani.it/termine.php?show=2061"
         }
+      ],
+      "contexts": [
+        "Funghi"
       ]
     },
     {
@@ -523,6 +568,9 @@
           "title": "Gruppo Micologico Ravenna · Reticolato (Glossarietto)",
           "url": "https://micologia.racine.ra.it/Demo-chiavi-funghi/Glossarietto.htm"
         }
+      ],
+      "contexts": [
+        "Funghi"
       ]
     },
     {
@@ -542,6 +590,9 @@
           "title": "First Nature · Glossary of mycological terms",
           "url": "https://www.first-nature.com/fungi/~glossary.php"
         }
+      ],
+      "contexts": [
+        "Funghi"
       ]
     },
     {
@@ -561,6 +612,9 @@
           "title": "First Nature · Glossary of mycological terms",
           "url": "https://www.first-nature.com/fungi/~glossary.php"
         }
+      ],
+      "contexts": [
+        "Funghi"
       ]
     },
     {
@@ -581,6 +635,9 @@
           "title": "First Nature · Glossary of mycological terms",
           "url": "https://www.first-nature.com/fungi/~glossary.php"
         }
+      ],
+      "contexts": [
+        "Funghi"
       ]
     },
     {
@@ -602,6 +659,9 @@
           "title": "First Nature · Glossary of mycological terms",
           "url": "https://www.first-nature.com/fungi/~glossary.php"
         }
+      ],
+      "contexts": [
+        "Funghi"
       ]
     },
     {
@@ -663,6 +723,10 @@
           "title": "Acta Plantarum · Glossario botanico",
           "url": "https://www.actaplantarum.org/glossario/"
         }
+      ],
+      "contexts": [
+        "Piante",
+        "Alberi"
       ]
     },
     {
@@ -725,6 +789,10 @@
           "title": "Acta Plantarum · Glossario botanico",
           "url": "https://www.actaplantarum.org/glossario/"
         }
+      ],
+      "contexts": [
+        "Piante",
+        "Alberi"
       ]
     },
     {
@@ -748,6 +816,10 @@
           "title": "Acta Plantarum · Glossario botanico",
           "url": "https://www.actaplantarum.org/glossario/"
         }
+      ],
+      "contexts": [
+        "Piante",
+        "Alberi"
       ]
     },
     {
@@ -767,6 +839,10 @@
           "title": "Acta Plantarum · Glossario botanico",
           "url": "https://www.actaplantarum.org/glossario/"
         }
+      ],
+      "contexts": [
+        "Piante",
+        "Alberi"
       ]
     },
     {
@@ -774,14 +850,13 @@
       "term": "Ceduo",
       "category": "Bosco",
       "aliases": [
-        "cedui",
-        "polloni",
-        "pollone"
+        "cedui"
       ],
       "definition": "Bosco gestito con tagli dopo i quali molte latifoglie producono nuovi fusti dalla ceppaia. Più polloni possono condividere la stessa base.",
       "observe": "Il tipo di gestione non identifica da solo l’albero o i funghi presenti.",
       "related": [
-        "ceppaia"
+        "ceppaia",
+        "pollone"
       ],
       "sources": [
         {
@@ -847,6 +922,12 @@
           "title": "First Nature · Glossary of mycological terms",
           "url": "https://www.first-nature.com/fungi/~glossary.php"
         }
+      ],
+      "contexts": [
+        "Funghi",
+        "Piante",
+        "Alberi",
+        "Bosco"
       ]
     },
     {
@@ -869,6 +950,9 @@
           "title": "AMINT · Glossario illustrato: Cappello",
           "url": "https://enciclopedia.funghiitaliani.it/termine.php?show=335"
         }
+      ],
+      "contexts": [
+        "Funghi"
       ]
     },
     {
@@ -891,6 +975,82 @@
         {
           "title": "AMINT · Glossario illustrato: Gambo",
           "url": "https://enciclopedia.funghiitaliani.it/termine.php?show=867"
+        }
+      ],
+      "contexts": [
+        "Funghi"
+      ]
+    },
+    {
+      "id": "aculei-piante",
+      "term": "Aculei",
+      "category": "Piante",
+      "aliases": [
+        "aculeo"
+      ],
+      "definition": "Sporgenze appuntite dei tessuti superficiali della pianta, diritte o ricurve. Nei rovi e nelle rose si trovano sui rami; non sono le vere spine, che derivano dalla trasformazione di un organo.",
+      "observe": "Nel rovo e nella rosa canina osserva forma, curvatura e posizione sul ramo. Anche la cupola del faggio porta aculei. Nei funghi la stessa parola indica invece elementi del loro imenoforo.",
+      "related": [],
+      "sources": [
+        {
+          "title": "Treccani · Aculeo, botanica",
+          "url": "https://www.treccani.it/enciclopedia/aculeo/"
+        }
+      ],
+      "contexts": [
+        "Piante",
+        "Alberi"
+      ]
+    },
+    {
+      "id": "substrato-piante",
+      "term": "Substrato",
+      "category": "Piante",
+      "aliases": [
+        "substrati"
+      ],
+      "definition": "Base o materiale su cui vive una pianta. Nelle descrizioni dell’habitat può riferirsi al terreno e alla roccia che contribuisce a formarlo, per esempio substrati calcarei o silicei.",
+      "observe": "Il substrato è una caratteristica dell’ambiente: non coincide con il nome del bosco e non dimostra da solo la presenza di una pianta.",
+      "related": [
+        "habitat"
+      ],
+      "sources": [
+        {
+          "title": "Treccani · Substrato, biologia e geologia",
+          "url": "https://www.treccani.it/enciclopedia/substrato/"
+        }
+      ],
+      "contexts": [
+        "Piante",
+        "Alberi",
+        "Bosco",
+        "Sentiero"
+      ]
+    },
+    {
+      "id": "pollone",
+      "term": "Pollone",
+      "category": "Piante",
+      "aliases": [
+        "polloni"
+      ],
+      "contexts": [
+        "Piante",
+        "Alberi",
+        "Bosco",
+        "Funghi",
+        "Sentiero"
+      ],
+      "definition": "Nuovo getto che nasce da una gemma avventizia di una pianta legnosa, per esempio alla base del fusto, dalle radici o vicino a un vecchio taglio.",
+      "observe": "I polloni possono comparire anche su una singola pianta: la loro presenza non significa necessariamente che l’intero bosco sia gestito a ceduo.",
+      "related": [
+        "gemme",
+        "ceduo"
+      ],
+      "sources": [
+        {
+          "title": "Treccani · Pollone",
+          "url": "https://www.treccani.it/vocabolario/pollone/"
         }
       ]
     }

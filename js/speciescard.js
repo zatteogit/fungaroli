@@ -171,6 +171,7 @@ export const whereSummary = (id) => TRAITS[id]?.where_to_look?.summary || '';
 export const criticalRule = (id) => (TRAITS[id]?.field_rules || []).find((r) => r.severity === 'critico')?.text || '';
 
 export function renderSpeciesDetail(body, id) {
+  body.dataset.glossaryContext='Funghi';
   const sp = SPECIES.find((s) => s.id === id);
   if (!sp) { body.innerHTML = '<p class="muted">Specie non trovata.</p>'; return; }
   const d = ID?.species?.[id] || {};
