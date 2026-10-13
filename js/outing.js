@@ -1,8 +1,8 @@
 // Meteo dell'uscita: le previsioni orarie nella finestra della raccolta (da un'ora prima dell'alba alle 13),
 // separate dal meteo passato che fa nascere i funghi. Servono a dire "oggi lì piove, puoi andare altrove".
 import { sunTimes } from './human.js';
+import {fetchForecast} from './weather-request.js';
 
-const API = 'https://api.open-meteo.com/v1/forecast';
 const KEY = 'fungaroli:outing:v2';
 const TTL = 60 * 60 * 1000;
 export const MAX_OUTING_AGE_MS = 3 * TTL;
@@ -26,17 +26,14 @@ export async function loadOuting(zones, { force = false } = {}) {
       latitude: locs.map((l) => l.lat).join(','), longitude: locs.map((l) => l.lon).join(','), elevation: locs.map((l) => l.elev).join(','),
       hourly: HOURLY, forecast_days: 8, timezone: 'Europe/Rome',
     });
-    const res = await fetch(`${API}?${q}`, { cache: 'no-store' });
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    let raw = await res.json();
-    if (!Array.isArray(raw)) raw = [raw];
+    const {raw,fetchedAt}=await fetchForecast(q);
     const data = {};
     locs.forEach((l, k) => {
       const h = raw[k].hourly;
       data[l.zid] = { time: h.time, p: h.precipitation, pp: h.precipitation_probability, wc: h.weather_code, g: h.wind_gusts_10m, t: h.temperature_2m,
-        fetchedAt: new Date().toISOString(), elevation: l.elev };
+        fetchedAt: fetchedAt.toISOString(), elevation: l.elev };
     });
-    try { localStorage.setItem(KEY, JSON.stringify({ sig, t: Date.now(), data })); } catch { /* quota */ }
+    try { localStorage.setItem(KEY, JSON.stringify({ sig, t: fetchedAt.getTime(), data })); } catch { /* quota */ }
     return data;
   } catch {
     // senza rete: l'ultima previsione salvata (stesse zone), se c'e'

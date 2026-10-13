@@ -2,7 +2,7 @@
 // past_days: rianalisi/previsioni a breve per i giorni passati (non stazioni a terra).
 // Il parametro `elevation` applica la correzione di quota (gradiente termico).
 
-const API = 'https://api.open-meteo.com/v1/forecast';
+import {fetchForecast} from './weather-request.js';
 export const PAST_DAYS = 62;
 export const FORECAST_DAYS = 8;
 const CACHE_KEY = 'fungaroli:weather:v2';
@@ -21,8 +21,8 @@ function readCache(sig, anyAge = false) {
   return null;
 }
 
-function writeCache(sig, data) {
-  try { localStorage.setItem(CACHE_KEY, JSON.stringify({ sig, t: Date.now(), data })); } catch { /* quota o privato */ }
+function writeCache(sig, data, fetchedAt) {
+  try { localStorage.setItem(CACHE_KEY, JSON.stringify({ sig, t: fetchedAt.getTime(), data })); } catch { /* quota o privato */ }
 }
 
 export function toDaily(loc, todayStr, source = {}) {
@@ -101,12 +101,10 @@ export async function loadWeather(zones, { force = false } = {}) {
       forecast_days: FORECAST_DAYS,
       timezone: 'Europe/Rome',
     });
-    const res = await fetch(`${API}?${params}`, { cache: 'no-store' });
-    if (!res.ok) throw new Error(`Open-Meteo HTTP ${res.status}`);
-    raw = await res.json();
-    if (!Array.isArray(raw)) raw = [raw];
-    fetchedAt = new Date();
-    writeCache(sig, raw);
+    const received=await fetchForecast(params);
+    raw=received.raw; fetchedAt=received.fetchedAt; offline=received.stale;
+    if(raw.length!==locs.length||raw.some(r=>!Array.isArray(r?.daily?.time)))throw new Error('Serie meteo incompleta');
+    writeCache(sig, raw, fetchedAt);
     } catch (err) {
       // senza campo (o servizio limitato): l'ultimo meteo salvato, dichiarato come tale
       const old = readCache(sig, true);

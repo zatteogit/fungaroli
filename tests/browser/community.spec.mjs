@@ -1,11 +1,22 @@
 import { test, expect } from '@playwright/test';
 import { todayISO } from '../../js/weather.js';
+import {execFileSync} from 'node:child_process';
 test.use({locale:'it-IT'});
+// Ogni prova ha il proprio budget di registrazioni nel database locale isolato.
+// Le molte passkey virtuali della suite non sono dieci iscrizioni dello stesso utente.
+test.beforeEach(()=>execFileSync('python3',['-c',`
+import pathlib,sqlite3,sys
+for path in pathlib.Path(sys.argv[1]).rglob('*.sqlite'):
+ db=sqlite3.connect(path,timeout=20)
+ if db.execute("SELECT COUNT(*) FROM sqlite_master WHERE name='rate_limits'").fetchone()[0]:
+  db.execute("DELETE FROM rate_limits WHERE key LIKE 'auth:%'");db.commit()
+ db.close()
+`,process.env.FUNGAROLI_BROWSER_PERSIST]));
 
 async function setup(page) {
-  await page.route('https://**/*', async (route) => {
+  await page.route('**/*', async (route) => {
     const u = new URL(route.request().url());
-    if (u.hostname !== 'api.open-meteo.com') return route.abort();
+    if(u.pathname!=='/api/weather/v1/forecast'&&u.hostname!=='api.open-meteo.com')return u.protocol==='https:'?route.abort():route.fallback();
     const count = u.searchParams.get('latitude').split(',').length;
     const dates = Array.from({ length: 70 }, (_, i) => todayISO(new Date(Date.now() + (i - 62) * 864e5)));
     const time = dates.flatMap((d) => Array.from({ length: 24 }, (_, h) => `${d}T${String(h).padStart(2, '0')}:00`));
@@ -16,7 +27,9 @@ async function setup(page) {
   await page.addInitScript(() => localStorage.setItem('fungaroli:legal-accepted', '22026-10-12'));
   const errors=[]; page.on('pageerror', (e) => errors.push(e.message));
   await page.goto('/');
-  await expect(page.locator('#editorial a')).toHaveCount(3);
+  await expect(page.locator('#editorial')).toBeHidden();
+  await page.goto('/#/guide');await expect(page.locator('#editorial a')).toHaveCount(3);
+  await page.goto('/');
   return errors;
 }
 async function register(page, name) {
@@ -293,11 +306,13 @@ test('previsioni datate dal server, immutabili e mutazioni che ritirano dati obs
 
 test('taccuini e community restano accessibili senza dati meteo', async ({ page }) => {
   await setup(page);
-  await page.route('https://api.open-meteo.com/**',r=>r.abort());
+  await page.route('**/api/weather/v1/forecast?**',r=>r.abort());
   await page.evaluate(()=>{localStorage.removeItem('fungaroli:weather:v2');localStorage.removeItem('fungaroli:outing:v2');});
   await page.reload();
   await expect(page.locator('#hero [data-retry]')).toBeVisible();
-  await expect(page.locator('#editorial a')).toHaveCount(3);
+  await expect(page.locator('#editorial')).toBeHidden();
+  await page.goto('/#/guide');await expect(page.locator('#editorial a')).toHaveCount(3);
+  await page.goto('/');
   await expect(page.locator('#community-intro')).toContainText('nessuna segnalazione');
   await page.locator('#community-intro [data-community-account]').click();
   await expect(page.locator('[data-register]')).toBeVisible();
