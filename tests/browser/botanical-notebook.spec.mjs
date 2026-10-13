@@ -25,7 +25,7 @@ test('plants: search, comparison sheets and private simultaneous phenophases on 
 
 test('botanical layouts, global search and short note form in both themes',async({page})=>{
  const errors=await start(page,'#/piante',1280);
- await page.locator('[data-open-search]').first().click();await page.locator('dialog.search-dlg input').fill('Foeniculum vulgare');await expect(page.locator('dialog.search-dlg')).toContainText('Finocchietto selvatico');await page.keyboard.press('Escape');
+ await page.locator('[data-open-search]').first().click();await page.locator('dialog.search-dlg input').fill('Foeniculum vulgare');await expect(page.locator('dialog.search-dlg')).toContainText('Finocchietto selvatico');await page.locator('dialog.search-dlg .search-cancel').click();await expect(page.locator('dialog.search-dlg[open]')).toHaveCount(0);
  for(const theme of ['light','dark']){
   await page.evaluate(theme=>document.documentElement.dataset.theme=theme,theme);
   await expect.poll(()=>page.locator('.recognize-modes button').nth(1).evaluate(b=>getComputedStyle(b).color)).toBe(theme==='dark'?'rgb(233, 239, 231)':'rgb(27, 25, 21)');
@@ -37,6 +37,7 @@ test('botanical layouts, global search and short note form in both themes',async
   }
  }
  await page.goto('/#/pianta/cicuta');await expect(page.locator('#plant-detail img').first()).toHaveAttribute('data-image-state','ready');await page.screenshot({path:'/tmp/fungaroli-cicuta-dark-stable.png',fullPage:true});
+ await page.locator('#plant-detail a[href="#/pianta/finocchietto"]').click();const sheet=page.locator('#entity-sheet[open]');await sheet.locator('[data-note-kind]').click();await page.locator('.notebook-dialog[open] [type="submit"]').click();await expect(sheet.locator('.app-toast.on')).toContainText('Salvato nel taccuino');await sheet.locator('[data-entity-close]').click();expect(new URL(page.url()).hash).toBe('#/pianta/cicuta');
  await page.goto('/#/pianta/corbezzolo');await page.setViewportSize({width:390,height:900});await page.locator('#plant-detail [data-note-kind]').click();const dialog=page.locator('.notebook-dialog[open]');await expect(dialog.locator('[type="submit"]')).toBeInViewport();await expect(dialog.locator('.notebook-context')).not.toHaveAttribute('open','');await dialog.screenshot({path:'/tmp/fungaroli-note-short-dark.png'});await dialog.locator('[data-note-close]').first().click();
  expect(errors).toEqual([]);
 });
