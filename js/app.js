@@ -4,6 +4,7 @@ import { consumeFresh, freshDone } from './refresh.js';
 import { SPECIES, GROUPS, FOREST } from './species.js';
 import { scoreZoneDay, scoreSpecies, habitatAtBand, habitatPotential, elevationFit, combine, classOf, scoreLabel, scoreShortLabel, formatIndex, MODEL_VERSION, PARAMS, CLASSES } from './model.js';
 import { todayISO, loadWeather } from './weather.js';
+import { weatherErrorMessage } from './weather-request.js';
 import { renderCharts } from './chart.js';
 import { initJournal } from './journal.js';
 import { renderSvgMap } from './svgmap.js';
@@ -524,7 +525,7 @@ async function refreshWeather(force) {
     series = w.series;
     zones = zones.filter((z) => series[z.id]); // una zona senza meteo (copia di revisione vecchia) resta fuori
     const sameDay = w.fetchedAt.toDateString() === new Date().toDateString();
-    $('#updated').textContent = (w.offline ? 'Senza rete · ' : '') + 'Aggiornamento meteo · ' + (w.snapshot || !sameDay
+    $('#updated').textContent = (w.offline ? 'Dati salvati · ' : '') + 'Aggiornamento meteo · ' + (w.snapshot || !sameDay
       ? w.fetchedAt.toLocaleString('it-IT', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' })
       : w.fetchedAt.toLocaleTimeString('it-IT', { hour: '2-digit', minute: '2-digit' }));
     document.documentElement.classList.toggle('is-offline', !!w.offline);
@@ -536,7 +537,7 @@ async function refreshWeather(force) {
     loadOuting(zones, { force }).then((o) => { outing = o; outCache.clear(); renderAll(); }).catch(() => {});
   } catch (err) {
     $('#updated').textContent = '';
-    const msg = `<div class="error">Non riesco a scaricare il meteo (${esc(err.message)}). Controlla la connessione e <button type="button" class="link-btn" data-retry>riprova</button>.</div>`;
+    const msg = `<div class="error">${esc(weatherErrorMessage(err))} <button type="button" class="link-btn" data-retry>Riprova</button>.</div>`;
     $('#hero').innerHTML = msg;
     $('#detail').innerHTML = msg;
     document.querySelectorAll('[data-retry]').forEach((b) => b.addEventListener('click', () => refreshWeather(true)));
