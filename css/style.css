@@ -2159,3 +2159,4 @@ html[data-cmp-dir="prev"]::view-transition-new(cmp-pick) { animation-name: cmp-i
 /* Tile: ogni riga si adatta alla card più alta, anche con dettagli espansi. */
 :is(.card-grid, .id-cards, .editorial-cards, .field-results, .trait-strip, .sci-signals, .rail) { align-items: stretch; }
 :is(.card-grid, .id-cards, .editorial-cards, .field-results, .trait-strip, .sci-signals) > * { align-self: stretch; }
+.card-grid > .sp-card { width: 100%; min-width: 0; justify-self: stretch; }
