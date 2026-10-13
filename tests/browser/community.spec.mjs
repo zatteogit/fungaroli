@@ -112,3 +112,39 @@ test('previsioni datate dal server, immutabili e mutazioni che ritirano dati obs
   expect((await api(page,'entries')).data.entries).toHaveLength(2);
   await api(page,'account','DELETE');
 });
+
+test('taccuini e community restano accessibili senza dati meteo', async ({ page }) => {
+  await setup(page);
+  await page.route('https://api.open-meteo.com/**',r=>r.abort());
+  await page.evaluate(()=>{localStorage.removeItem('fungaroli:weather:v2');localStorage.removeItem('fungaroli:outing:v2');});
+  await page.reload();
+  await expect(page.locator('#hero [data-retry]')).toBeVisible();
+  await expect(page.locator('#editorial a')).toHaveCount(3);
+  await expect(page.locator('#community-intro')).toContainText('nessuna segnalazione');
+  await page.locator('#community-intro [data-community-account]').click();
+  await expect(page.locator('[data-register]')).toBeVisible();
+});
+
+test('migrazione esplicita del diario con codice senza pubblicare osservazioni', async ({ page }) => {
+  await setup(page); await register(page,'Test migrazione');
+  await page.route('**/api/diario',r=>{
+    expect(r.request().headers().authorization).toBe('Bearer codice-di-test');
+    return r.fulfill({json:{entries:[{id:'legacy123',date:todayISO(),zoneId:'tancia',finds:{edulis:2},note:'nota del vecchio diario',predicted:{edulis:72},savedAt:new Date().toISOString()}]}});
+  });
+  await page.goto('/#/diario');
+  await page.locator('#journal-storage details summary').click();
+  await page.locator('[data-legacy-code]').fill('codice-di-test'); await page.locator('[data-import-legacy] [type="submit"]').click();
+  await expect(page.locator('[data-legacy-status]')).toContainText('1 voci importate');
+  expect((await api(page,'entries')).data.entries[0].note).toBe('nota del vecchio diario');
+  expect((await api(page,'summary')).data.totalReports).toBe(0);
+  await api(page,'account','DELETE');
+});
+
+test('i campi del diario importato vengono visualizzati come testo', async ({ page }) => {
+  await setup(page); await page.goto('/#/diario');
+  const payload={id:'x123"><img src=x onerror="window.injected=1">',date:todayISO(),zoneId:'tancia',band:'<img src=x onerror="window.injected=1">',note:'<svg onload="window.injected=1">',finds:{},predicted:{},savedAt:new Date().toISOString()};
+  await page.locator('#journal-import').setInputFiles({name:'diario.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify({entries:[payload]}))});
+  await expect(page.locator('#journal-list')).toContainText(payload.note);
+  expect(await page.evaluate(()=>window.injected)).toBeUndefined();
+  expect(await page.locator('#journal-list [onerror], #journal-list [onload]').count()).toBe(0);
+});

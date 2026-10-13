@@ -357,12 +357,12 @@ export function initJournal({ zones, predict, captureForecast, getZoneId, zoneIm
       return `<li class="j-item">
         <span class="j-img">${img ? `<img src="${img}" alt="" loading="lazy" decoding="async">` : ''}</span>
         <div class="j-body">
-          <div class="j-top"><b>${esc(z?.title ?? z?.name ?? e.zoneId)}</b><span class="muted small">${fmt(e.date)}${e.band ? ` · ${e.band} m` : ''}</span></div>
+          <div class="j-top"><b>${esc(z?.title ?? z?.name ?? e.zoneId)}</b><span class="muted small">${fmt(e.date)}${e.band ? ` · ${esc(e.band)} m` : ''}</span></div>
           <div class="small">${e.kind === 'plan' ? 'Piano' : 'Trovato: ' + esc(found)}${top ? ` · indice ${formatIndex(top[1])} (${esc(SPECIES.find((x) => x.id === top[0])?.name ?? '')})` : ''}</div>
           <div>${badge}</div>
           ${e.note ? `<div class="small muted">${esc(e.note)}</div>` : ''}
-          ${store.kind === 'community' && e.kind !== 'plan' ? `<button type="button" class="link-btn small" data-share-entry="${e.id}">Condividi osservazioni</button> <button type="button" class="link-btn small" data-withdraw-entry="${e.id}">Ritira segnalazioni</button>` : ''}
-          <button type="button" class="link-btn small" data-del="${e.id}">Elimina</button>
+          ${store.kind === 'community' && e.kind !== 'plan' ? `<button type="button" class="link-btn small" data-share-entry="${esc(e.id)}">Condividi osservazioni</button> <button type="button" class="link-btn small" data-withdraw-entry="${esc(e.id)}">Ritira segnalazioni</button>` : ''}
+          <button type="button" class="link-btn small" data-del="${esc(e.id)}">Elimina</button>
         </div>
       </li>`;
     }).join('');
@@ -459,7 +459,24 @@ export function initJournal({ zones, predict, captureForecast, getZoneId, zoneIm
 
   function renderStorage(remote) {
     if (store.kind === 'community') {
-      storageBox.innerHTML = `<p>Diario privato di <b>${esc(currentUser()?.handle || 'questo profilo')}</b>, sincronizzato con la passkey. Le condivisioni sono facoltative.</p><button type="button" class="btn ghost" data-community-account>Gestisci il profilo</button><button type="button" class="btn ghost" data-import-local>Importa il diario di questo dispositivo</button>`;
+      storageBox.innerHTML = `<p>Diario privato di <b>${esc(currentUser()?.handle || 'questo profilo')}</b>, sincronizzato con la passkey. Le condivisioni sono facoltative.</p><button type="button" class="btn ghost" data-community-account>Gestisci il profilo</button><button type="button" class="btn ghost" data-import-local>Importa il diario di questo dispositivo</button>
+        <details><summary>Hai il vecchio diario con codice?</summary><p>Importalo nel profilo privato. La copia originale resta nel diario di famiglia; nessuna segnalazione viene pubblicata.</p>
+        <form data-import-legacy><label>Codice del vecchio diario <input type="password" class="wiz-input" data-legacy-code autocomplete="off" required></label><button type="submit" class="btn ghost">Importa nel mio profilo</button><p role="status" data-legacy-status></p></form></details>`;
+      storageBox.querySelector('[data-legacy-code]').value = getToken();
+      storageBox.querySelector('[data-import-legacy]').onsubmit = async (ev) => {
+        ev.preventDefault(); const form = ev.currentTarget, btn = form.querySelector('button'), status = form.querySelector('[data-legacy-status]'), target = store;
+        btn.disabled = true;
+        try {
+          const old = await remoteStore(form.querySelector('[data-legacy-code]').value.trim()).list();
+          const ids = new Set((await target.list()).map((e) => e.id)); let n = 0;
+          for (const e of old) if (!ids.has(e.id)) { await target.put(e); n++; }
+          if (target !== store) return;
+          entries = await target.list(); sortEntries(); renderList();
+          status.textContent = `${n} voci importate nel profilo privato. Nessuna osservazione pubblicata.`;
+          form.querySelector('[data-legacy-code]').value = '';
+        } catch (e) { status.textContent = e.status === 401 ? 'Codice non valido o sessione scaduta.' : 'Importazione incompleta. Il vecchio diario resta disponibile: puoi riprovare.'; }
+        finally { btn.disabled = false; }
+      };
       storageBox.querySelector('[data-import-local]').onclick = async () => {
         const local = await localStore().list(), ids = new Set(entries.map((e) => e.id));
         try { for (const e of local) if (!ids.has(e.id)) await store.put(e); entries = await store.list(); sortEntries(); renderList('Diario importato nel profilo privato. Nessuna osservazione è stata condivisa automaticamente.'); }

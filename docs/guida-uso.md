@@ -34,4 +34,4 @@ Le concordanze con una soglia esplorativa di 3,0 non sono una misura scientifica
 
 La ricerca guidata aiuta a confrontare caratteri e sosia. Le specie mortali restano visibili anche con risposte discordanti; il catalogo non è completo. Non assaggiare funghi crudi per usare l’app. Foto e schede non autorizzano il consumo: fai controllare il raccolto all’Ispettorato micologico ASL. Le sezioni informative ricordano anche regole del Lazio ed emergenze.
 
-Le vecchie copie del diario con codice rimangono separate dal nuovo profilo: esporta e importa per trasferirle. Non sono condivise automaticamente con la comunità. Dettagli su sicurezza e servizi in [community.md](community.md).
+Le vecchie copie del diario con codice rimangono separate dal nuovo profilo: puoi importarle dal pannello “Hai il vecchio diario con codice?” nel profilo, oppure esportare e importare il file. Non sono condivise automaticamente con la comunità. Dettagli su sicurezza e servizi in [community.md](community.md).

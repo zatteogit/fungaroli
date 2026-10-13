@@ -22,6 +22,10 @@ La revisione ha esaminato il commit `c39718b135999d2e2e7bd3e97a00e7d8d46d304a`: 
 
 ## Verifiche
 
-40 test Node verificano comportamenti e casi limite: null, forecast scaduti, scala, aggregazione, calendario, diario e riconoscimento. Tre scenari browser su Worker e D1 locali verificano passkey reali tramite autenticatore virtuale, isolamento fra profili, protezione dell’origine e contro riuso delle sfide, note private, duplicati, ritiro, cancellazione, immutabilità dei piani e flusso rapido su telefono. Il bundle Worker è compilato con Wrangler in dry-run; le dipendenze di produzione non presentavano vulnerabilità note all’audit npm eseguito.
+40 test Node verificano comportamenti e casi limite: null, forecast scaduti, scala, aggregazione, calendario, diario e riconoscimento. Sei scenari browser su Worker e D1 locali verificano passkey reali tramite autenticatore virtuale, isolamento fra profili, protezione dell’origine e contro riuso delle sfide, note private, duplicati, ritiro, cancellazione, immutabilità dei piani e flusso rapido su telefono e accessibilità dei contenuti senza meteo, migrazione del vecchio diario e visualizzazione sicura dei campi importati. Il bundle Worker è compilato con Wrangler in dry-run; le dipendenze di produzione non presentavano vulnerabilità note all’audit npm eseguito.
 
 Queste verifiche provano il comportamento del software nei casi coperti, non l’accuratezza biologica o l’assenza di qualsiasi vulnerabilità. Per una validazione servono uscite prospettiche, controllo delle identificazioni, dati dello sforzo e un insieme indipendente per la verifica. Il piano è in [metodo-scientifico.md](metodo-scientifico.md); servizi e privacy in [community.md](community.md).
+
+## Pubblicazione
+
+Deploy Cloudflare riuscito il 13 ottobre 2026, PR [#2](https://github.com/zatteogit/fungaroli/pull/2), versione Worker `0b81af66-eb8c-4b4f-a524-0cdd7183a4f4`. D1 attivo: status `enabled:true`, summary iniziale senza segnalazioni, diario non autenticato 401, file server/config non pubblicati (404). Verificati sul dominio pubblico registrazione passkey, sessione, sincronizzazione di una voce privata, eliminazione del profilo tecnico e revoca della sessione. Nessuna osservazione dimostrativa condivisa.

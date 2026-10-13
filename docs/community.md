@@ -1,8 +1,10 @@
 # Taccuino privato e osservazioni collettive
 
+Servizio attivo su https://fungaroli.zatteo.workers.dev dal 13 ottobre 2026: provisioning D1 e registrazione con passkey verificati sul dominio pubblico.
+
 ## Architettura
 
-Il Worker esistente serve il sito e `/api/community/*`. **Cloudflare D1**, binding `COMMUNITY_DB`, contiene profili, chiavi pubbliche WebAuthn, sessioni, sfide, diario e segnalazioni. Il vecchio namespace KV e la sua API rimangono separati per preservare i diari con codice. Non vengono trasferiti o pubblicati automaticamente.
+Il Worker esistente serve il sito e `/api/community/*`. **Cloudflare D1**, binding `COMMUNITY_DB`, contiene profili, chiavi pubbliche WebAuthn, sessioni, sfide, diario e segnalazioni. Il vecchio namespace KV e la sua API rimangono separati per preservare i diari con codice. Non vengono trasferiti o pubblicati automaticamente. Il profilo offre un’importazione esplicita con il vecchio codice, che legge la copia KV senza modificarla.
 
 Wrangler 4.149.0 può creare automaticamente il database `fungaroli-community` al deploy quando il binding non ha `database_id`. Il token usato dal build Cloudflare deve poter creare e scrivere database D1. La migrazione idempotente `migrations/0001_community.sql` viene applicata al primo accesso all’API con un batch di istruzioni complete. Questa configurazione non garantisce una collocazione esclusivamente europea: per un vincolo di giurisdizione occorre configurare il servizio nel pannello Cloudflare.
 

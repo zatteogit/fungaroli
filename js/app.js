@@ -113,7 +113,8 @@ async function init() {
   habitat = hj.zones;
   renderGuideCards($('#editorial'));
   initCommunity({ zoneList: zones });
-  document.addEventListener('fungaroli:community', () => { if (results) renderAll(); });
+  renderCommunityIntro();
+  document.addEventListener('fungaroli:community', () => { renderCommunityIntro(); if (results) renderAll(); });
   initIdentify({
     traits: stj, media: mj, assetUrl: embedded ? (f) => embedded.assets?.[f] || '' : (f) => f, thumb, zones, banner: legal?.identify_banner,
     howTo: (eid, latin) => idj?.species?.[eid]?.lookalikes?.find((l) => l.latin === latin)?.how_to_tell || '',
