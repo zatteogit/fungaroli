@@ -16,6 +16,22 @@ async function setup(page,width) {
   await page.goto('/');await expect(page.locator('#hero .cover-link')).toBeVisible();return errors;
 }
 
+for(const width of [320,768,1280]) test(`le card fotografiche riempiono le colonne del catalogo a ${width}px`,async({page})=>{
+  const errors=await setup(page,width);
+  for(const route of ['/#/specie','/#/alberi']){
+    await page.goto(route);await page.evaluate(()=>document.fonts.ready);
+    const grid=page.locator('.view:not([hidden]) .card-grid');await expect(grid.locator('.sp-card').first()).toBeVisible();
+    const metrics=await grid.evaluate(el=>{
+      const widths=getComputedStyle(el).gridTemplateColumns.split(' ').map(parseFloat);
+      return [...el.querySelectorAll('.sp-card')].map((card,i)=>{const rect=card.getBoundingClientRect(),title=card.querySelector('.sp-card-body b');return{width:rect.width,expected:widths[i%widths.length],ratio:rect.width/rect.height,titleFits:title.scrollWidth<=title.clientWidth+1};});
+    });
+    expect(metrics.length).toBeGreaterThan(10);
+    for(const card of metrics){expect(Math.abs(card.width-card.expected)).toBeLessThan(1);expect(card.ratio).toBeCloseTo(.8,2);expect(card.titleFits).toBe(true);}
+    await page.screenshot({path:`/tmp/fungaroli-catalog-width-${route.endsWith('alberi')?'trees':'fungi'}-${width}.png`});
+  }
+  expect(errors).toEqual([]);
+});
+
 for(const width of [320,1280]) test(`spiegazioni contestuali, glossario e riconoscimento del bosco a ${width}px`,async({page})=>{
   const errors=await setup(page,width),panel=page.locator(width<700?'#learning-sheet':'#learning-popover');
   await page.locator('#hero .cover-link').click();
