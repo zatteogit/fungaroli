@@ -14,7 +14,7 @@ Wrangler 4.149.0 può creare automaticamente il database `fungaroli-community` a
 
 Passkey discoverable e verifica dell’utente obbligatoria; nessuna password, email, attestation obbligatoria o chiave privata sul server. SDK SimpleWebAuthn mantenuto, bundle browser locale. Token casuali di sessione/sfida in cookie `__Host-`, Secure, HttpOnly, SameSite=Strict; nel database restano solo hash SHA-256. Le mutazioni verificano l’origine, la sfida WebAuthn è consumata una sola volta e il contatore è aggiornato senza sovrascrivere accessi concorrenti. Sessione di 30 giorni e sfida di 5 minuti.
 
-Ogni lettura e scrittura del diario usa l’account ricavato dalla sessione, mai un proprietario inviato dal client. Cache locale separata per account. Note private, niente GPS raccolto. La condivisione è una scelta esplicita. La summary pubblica espone soltanto aggregati per zona/specie negli ultimi sette giorni, anche se derivano da una singola osservazione; nessun nome o identificativo personale. Il gestore conserva accesso amministrativo al database.
+Ogni lettura e scrittura del diario usa l’account ricavato dalla sessione, mai un proprietario inviato dal client. Cache locale separata per account. Note e base di partenza private. La base facoltativa conserva nome e coordinate nel profilo su D1; il GPS viene richiesto solo con il pulsante scelto dall’utente. La base non entra nella summary delle segnalazioni. La condivisione è una scelta esplicita. La summary pubblica espone soltanto aggregati per zona/specie negli ultimi sette giorni, anche se derivano da una singola osservazione; nessun nome o identificativo personale. Il gestore conserva accesso amministrativo al database.
 
 Ritiro, cancellazione della voce ed eliminazione account rimuovono le segnalazioni dal database operativo mediante chiavi esterne e transazioni. Un cambiamento a giorno, zona o ritrovamenti ritira le vecchie segnalazioni prima di una nuova condivisione. Le copie di recupero dipendono dal piano Cloudflare; non promettere una cancellazione immediata dalle copie di backup.
 
@@ -35,3 +35,11 @@ Il segnale condiviso influenza soltanto l’ordine dei consigli, entro ±10%, do
 - Per backup e recupero usare esportazione D1 e [Time Travel](https://developers.cloudflare.com/d1/reference/time-travel/), secondo il piano; il diario offre anche export individuale. Nessun backup a un secondo fornitore è configurato.
 
 Riferimenti: [provisioning automatico](https://developers.cloudflare.com/workers/wrangler/configuration/#automatic-provisioning), [D1](https://developers.cloudflare.com/d1/), [SimpleWebAuthn](https://simplewebauthn.dev/).
+
+## Base di partenza
+
+Dal profilo si cerca un comune/località con Photon oppure si usa la posizione attuale. Le coordinate vengono salvate con `PUT /api/community/profile`, legate esclusivamente all’account della sessione. Nome e coordinate si leggono nella propria sessione; si rimuovono con “Ripristina Rieti” o eliminando il profilo. Il nome del profilo e gli identificativi non vengono inviati ai servizi geografici.
+
+`GET /api/community/places?q=…` inoltra una ricerca esplicita a Photon. `POST /api/community/travel` calcola una matrice OSRM/OpenStreetMap per massimo 50 destinazioni, usando la base salvata dal server. Autenticazione, controllo dell’origine e limiti di frequenza proteggono le richieste; i risultati stradali hanno una cache Cloudflare privata per account di sei ore, senza caching delle risposte API sul browser. Non sono tempi con traffico. Se il servizio non risponde o una destinazione non è raggiungibile, l’interfaccia indica i chilometri in linea d’aria e omette gli orari di partenza calcolati.
+
+La preferenza “Vicino alla base”, la comodità personale e i navigatori usano la partenza scelta. L’indice ambientale e l’affollamento di riferimento della zona restano indipendenti dalla base personale. Le caratteristiche del tragitto stradale precalcolato da Rieti non vengono attribuite ai nuovi percorsi.

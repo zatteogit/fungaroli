@@ -32,7 +32,7 @@ export function renderSvgMap(container, { zones, origin, items, onSelect }) {
   const s = W / (maxX - minX); // px per km
   const P = (lat, lon) => [(lon * kx - minX) * s, (maxY - lat * ky) * s];
 
-  const svg = el('svg', { viewBox: `0 0 ${W} ${H}`, class: 'svgmap', role: 'group', 'aria-label': 'Mappa schematica delle zone attorno a Rieti' }, container);
+  const svg = el('svg', { viewBox: `0 0 ${W} ${H}`, class: 'svgmap', role: 'group', 'aria-label': `Mappa schematica delle zone con partenza da ${origin.name}` }, container);
   el('rect', { x: 0, y: 0, width: W, height: H, fill: 'var(--surface-2)' }, svg);
 
   // anelli di distanza in linea d'aria da Rieti

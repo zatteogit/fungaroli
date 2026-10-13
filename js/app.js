@@ -9,6 +9,7 @@ import { initJournal } from './journal.js';
 import { renderSvgMap } from './svgmap.js';
 import { initSpeciesCards, thumb, renderSpeciesDetail, whereSummary, criticalRule, speciesPhoto } from './speciescard.js';
 import { speciesLink } from './species-link.js';
+import {initBaseLocation,currentBase,customBase,travelTo,travelText,directionsTo,BASE_PRIVACY_TEXT} from './base-location.js';
 import { initLearning, renderGlossary, renderFieldIdentify, difficultyLink, glossaryTerms, glossaryTitle, enhanceGlossary } from './learning.js';
 import { openLightbox, captionHtml } from './lightbox.js';
 import { initInstall, maybeInvite } from './install.js';
@@ -111,6 +112,16 @@ function addSpecies(id) {
 const outOfSeason = (id) => { const members = groupMembers(id); return members.length && members.every(s => seasonStatus(s, filterDate()) === 'out'); };
 
 let zones, origin, habitat, access, trails, traits, legal, series, results, map, zoneLayers = {}, zoneMedia = {}, outing = null;
+let baseMarker=null;
+function zoneTrip(z,walk=null) {
+  const a=access?.[z.id]?.[0],target=customBase()&&walk?.h ? walk.h : a||z.parking?.[0]||z;
+  return travelTo(target,{minutes:a?.minutes??z.drive_min,km:a?.km??z.drive_km});
+}
+const compactTravel=t=>Number.isFinite(t.minutes)?`${t.minutes}<span class="fk2"> min</span><span class="fk3">′</span>`:`${fmtKm(t.airKm)} km <abbr title="In linea d’aria" aria-label="in linea d’aria">l.d.</abbr>`;
+function proximityMultiplier(z) {
+  const t=zoneTrip(z),distance=customBase()?(t.km??t.airKm)/100:(t.minutes??0)/120;
+  return 1-0.3*Math.min(1,distance);
+}
 const hasLeaflet = () => typeof globalThis.L !== 'undefined';
 
 // caricamento iniziale: i passi del loader si spuntano man mano (index.html, .loader)
@@ -161,7 +172,10 @@ async function init() {
   access = aj?.zones || {};
   trails = tj?.zones || {};
   zones = zj.zones.filter((z) => hj.zones[z.id]); // una zona senza dati di bosco non e' ancora pronta
-  origin = zj.origin;
+  initBaseLocation(zj.origin);origin = currentBase();
+  const updateTravel=()=>{origin=currentBase();if(series){compute();outCache.clear();renderAll();}renderFilterSummary();};
+  document.addEventListener('fungaroli:base',updateTravel);
+  document.addEventListener('fungaroli:travel',updateTravel);
   habitat = hj.zones;
   renderGuideCards($('#editorial'));
   initCommunity({ zoneList: zones, speciesList: catalog });
@@ -374,7 +388,7 @@ function routeNow(r, nav) {
 const go = (hash) => { location.hash = hash; };
 
 // Filtri in una sola riga: tutti i gruppi visibili (si parte da "Tutti" e si restringe) e le preferenze come interruttori
-const PREFS = [['avoidCrowd', 'Poca gente'], ['preferComfort', 'Accesso comodo'], ['distancePenalty', 'Vicino a Rieti']];
+const PREFS = [['avoidCrowd', 'Poca gente'], ['preferComfort', 'Accesso comodo'], ['distancePenalty', 'Vicino alla base']];
 // ordine dei funghi: prima quelli in stagione adesso, poi per pregio; i primi CHIPS_SHOWN visibili, gli altri dietro "+ altri"
 let fitN = 99; // quanti funghi entrano nella riga senza tagliare (ricalcolato sulla larghezza)
 const QUALITY = { ottimo: 1, buono: 0.6 };
@@ -566,15 +580,17 @@ function compute() {
     days.forEach((d, k) => {
       if (!d.best) return;
       d.access = accessFor(z, d.best.species, d.best.band);
-      d.comfort = comfortScore({
+      const referenceComfort = comfortScore({
         driveMin: acc0?.minutes ?? z.drive_min,
         walkM: d.access?.walkM ?? 800,
         surface: d.access?.surface ?? 0,
         unpavedKm: (acc0?.unpaved_tail_km ?? 0) + (acc0?.unpaved_other_km ?? 0),
       });
+      const trip=zoneTrip(z);
+      d.comfort=customBase() ? Number.isFinite(trip.minutes) ? comfortScore({driveMin:trip.minutes,walkM:d.access?.walkM??800,surface:d.access?.surface??0,unpavedKm:0}) : null : referenceComfort;
       const bi = bandIndex(z, d.best.band);
       d.crowd = crowding({
-        dateStr: d.date, popularity: z.popularity ?? 0.5, comfort: d.comfort.value,
+        dateStr: d.date, popularity: z.popularity ?? 0.5, comfort: referenceComfort.value,
         scores: days.slice(Math.max(0, k - 6), k + 1).map((x) => x.score),
         rainMm: sb[bi].p[d.i] ?? 0,
       });
@@ -599,14 +615,14 @@ function prepGeneralHtml(rules) {
 }
 const adjParts = (zone, d) => {
   const out = [];
-  if (state.distancePenalty) out.push({ label: 'vicino a Rieti', mult: 1 - 0.3 * Math.min(1, (access[zone.id]?.[0]?.minutes ?? zone.drive_min) / 120) });
+  if (state.distancePenalty) out.push({ label: 'vicino alla base', mult: proximityMultiplier(zone) });
   if (state.avoidCrowd && d?.crowd) out.push({ label: 'poca gente', mult: 1 - 0.45 * d.crowd.value });
   if (state.preferComfort && d?.comfort) out.push({ label: 'accesso comodo', mult: 0.55 + 0.45 * d.comfort.value });
   return out;
 };
 const preferenceRank = (zone, score, d) => {
   let v = score;
-  if (state.distancePenalty) v *= 1 - 0.3 * Math.min(1, (access[zone.id]?.[0]?.minutes ?? zone.drive_min) / 120);
+  if (state.distancePenalty) v *= proximityMultiplier(zone);
   if (state.avoidCrowd && d?.crowd) v *= 1 - 0.45 * d.crowd.value;
   if (state.preferComfort && d?.comfort) v *= 0.55 + 0.45 * d.comfort.value;
   return Math.round(v);
@@ -915,7 +931,7 @@ function renderHome() {
         ${hero.walk ? `<span class="cover-walk"><b>${esc(hero.walk.microzone)}</b><span>${esc(walkBrief(hero.walk))}</span></span>` : ''}
         <span class="cover-sp">${thumb(hero.d.best.species.id, 44)}<span><small>Da conoscere in questi boschi</small><span class="cover-sp-name"><b>${esc(hero.d.best.species.name)}</b> ${reportBadge(hero.z.id, hero.d.best.species.id)}</span>
           <small>${intornoA(hero.d.best.band)} ${hero.d.best.band} m${also.length ? ` · anche ${also.join('')}` : ''}</small></span></span>
-        <span class="facts" aria-label="L'uscita in breve">${t ? fact('clock', `<span class="fk">entro le </span><b>${fmtRough(t.arrive, 15, 'floor')}</b>`) : ''}${fact('car', `<span><b>${access[hero.z.id]?.[0]?.minutes ?? hero.z.drive_min}</b><span class="fk2"> min</span><span class="fk3">′</span></span>`)}${hero.d.crowd ? fact('people', crowdText(hero.d.crowd)) : ''}${w0 ? `<span class="fact wx-${w0.level}" title="${esc(w0.text)}">${wxi(w0)}<span class="fx">${esc(w0.level === 'ok' ? w0.main : (w0.short || w0.main))}</span></span>` : ''}</span>
+        <span class="facts" aria-label="L'uscita in breve">${t ? fact('clock', `<span class="fk">entro le </span><b>${fmtRough(t.arrive, 15, 'floor')}</b>`) : ''}${fact('car', `<span><b>${compactTravel(zoneTrip(hero.z,hero.walk))}</b></span>`)}${hero.d.crowd ? fact('people', crowdText(hero.d.crowd)) : ''}${w0 ? `<span class="fact wx-${w0.level}" title="${esc(w0.text)}">${wxi(w0)}<span class="fx">${esc(w0.level === 'ok' ? w0.main : (w0.short || w0.main))}</span></span>` : ''}</span>
         ${note}
         <span class="cover-cta" aria-hidden="true">Il taccuino della passeggiata <span>→</span></span>
       </span>
@@ -1019,7 +1035,7 @@ function openSheet(zid) {
     <a class="sheet-row" href="#/zona/${zid}/${state.dayOffset}">
       <span class="sheet-img">${cv ? `<img src="${cv.small}" alt="" loading="lazy" decoding="async">` : ''}${ring(sc, false)}</span>
       <span class="sheet-txt"><span class="eyebrow">${esc(dayLabel(state.dayOffset, d.date, true))}</span><b class="sheet-title">${esc(splitName(z)[0])}</b>
-        <span class="small">${esc(d.best.species.name)} ~${d.best.band} m · ${access[zid]?.[0]?.minutes ?? z.drive_min} min${d.crowd ? ` · ${crowdText(d.crowd)}` : ''}</span>${wxOf(z, d) ? `<span class="small wx-line wx-${wxOf(z, d).level}">${wxi(wxOf(z, d))}${esc(wxOf(z, d).text)}</span>` : ''}</span>
+        <span class="small">${esc(d.best.species.name)} ~${d.best.band} m · ${esc(travelText(zoneTrip(z)))}${d.crowd ? ` · ${crowdText(d.crowd)}` : ''}</span>${wxOf(z, d) ? `<span class="small wx-line wx-${wxOf(z, d).level}">${wxi(wxOf(z, d))}${esc(wxOf(z, d).text)}</span>` : ''}</span>
     </a>
     ${forestOn ? forestHere(zid) : ''}
     <p class="sheet-key small"><span class="key-p">P</span> sosta <span class="key-walk">${IC.walk}</span> qui lasci l'auto <span class="key-trail"></span> sentiero consigliato <span class="muted">· tocca un segno</span></p>
@@ -1298,6 +1314,8 @@ function renderMap() {
     });
     return;
   }
+  baseMarker?.remove();baseMarker=null;
+  if(customBase())baseMarker=L.marker([origin.lat,origin.lon],{icon:L.divIcon({className:'map-base',html:'<span aria-hidden="true">⌂</span>',iconSize:[32,32],iconAnchor:[16,16]}),title:`Base di partenza: ${origin.name}`}).bindTooltip(`Base: ${esc(origin.name)}`).addTo(map);
   // passaggio cerchi pieni <-> riquadri: prima si anima (carta, cerchi, riquadri in dissolvenza), poi si ridisegna
   const mapEl = $('#map');
   const want = map.getZoom() >= 11.5 || !!state.zoneId;
@@ -1401,7 +1419,7 @@ function renderMap() {
 function renderLegend() {
   const items = [...CLASSES].reverse().map((c) => `<span><span class="sw" style="background:var(${mapVar(c.min)})"></span>${c.label}${c.min ? ' ≥' + formatIndex(c.min) : ''}</span>`);
   $('#legend').innerHTML = items.join('') +
-    (hasLeaflet() || !globalThis.FUNGAROLI_DATA ? '' : '<span class="muted">Schema: cerchi = zone, anelli = distanza in linea d\'aria da Rieti</span>') +
+    (hasLeaflet() || !globalThis.FUNGAROLI_DATA ? '' : `<span class="muted">Schema: cerchi = zone, anelli = distanza in linea d’aria da ${esc(currentBase().name)}</span>`) +
     (hasLeaflet() ? '<span class="lg-cells"><span class="sw sw-cell"></span>Riquadri campionati da 300–500 m: habitat potenziale, senza verifica di presenza o permesso di raccolta. Avvicinati o apri una zona per vederli.</span>' : '') +
     `<div class="wms"${forestOn ? '' : ' hidden'}>${forestLegend()}</div>`;
 }
@@ -1503,8 +1521,8 @@ function planCard(z, d, walk) {
   if (a0 || ax) {
     const unp = a0?.unpaved_tail_km > 0.2 ? `, ultimi ${fmtKm(a0.unpaved_tail_km)} km su strada bianca` : '';
     rows.push({ sec: 'accesso', icon: 'car', k: 'Come arrivare',
-      v: walk?.h ? `<a href="${gmaps(walk.h.lat, walk.h.lon)}" target="_blank" rel="noopener">Apri l’imbocco mappato del sentiero ${esc(walk.t.ref || '')}</a>` : ax ? `In auto ${ax.road ? `su ${esc(ax.road)}` : 'fino al punto più vicino'}${ax.walkM < 50 ? ': habitat campionato vicino alla strada' : `, poi <b>${fmtM(ax.walkM)} in linea d’aria</b>`}` : `${a0.minutes} min fino a ${esc(a0.parking)}`,
-      sub: `${a0 ? `${a0.minutes} min da Rieti${unp}` : ''}${ax ? ` · <a href="${gmaps(ax.rlat, ax.rlon)}" target="_blank" rel="noopener">navigatore</a>` : ''}`,
+      v: walk?.h ? `<a href="${gmaps(walk.h.lat, walk.h.lon)}" target="_blank" rel="noopener">Apri l’imbocco mappato del sentiero ${esc(walk.t.ref || '')}</a>` : ax ? `In auto ${ax.road ? `su ${esc(ax.road)}` : 'fino al punto più vicino'}${ax.walkM < 50 ? ': habitat campionato vicino alla strada' : `, poi <b>${fmtM(ax.walkM)} in linea d’aria</b>`}` : `${esc(travelText(zoneTrip(z)))} fino a ${esc(a0.parking)}`,
+      sub: `${a0 ? `${esc(travelText(zoneTrip(z,walk)))} da ${esc(currentBase().name)}${customBase()?'':unp}` : ''}${ax ? ` · <a href="${gmaps(ax.rlat, ax.rlon)}" target="_blank" rel="noopener">navigatore</a>` : ''}`,
       badge: d.comfort ? `<span class="badge comfort-${d.comfort.level}">${d.comfort.level}</span>` : '' });
   }
   if (walk?.t) {
@@ -1636,7 +1654,7 @@ const fmtM = (m) => (m >= 1000 ? `${fmtKm(m / 1000)} km` : `${Math.round(m / 10)
 // tratto a piedi in parole: sotto i 50 m il bosco e' praticamente a bordo strada
 const walkTxt = (m) => (m < 50 ? 'il campione di habitat è <b>vicino alla strada</b>' : `circa <b>${fmtM(m)} in linea d’aria</b>`);
 const SURF_LABEL = ['asfalto', 'strada bianca', 'sentiero o pista'];
-const gmaps = (lat, lon) => `https://www.google.com/maps/dir/?api=1&origin=Rieti&destination=${lat},${lon}&travelmode=driving`;
+const gmaps = directionsTo;
 
 function renderHuman(z, d) {
   if (!d.crowd) return '';
@@ -1662,7 +1680,7 @@ function renderHuman(z, d) {
       <dl class="kv">
         <dt>Alba</dt><dd>verso le ${fmtRough(t.sunrise, 5)} · raccolta consentita dalle <b>${fmtRough(t.legal, 5, 'ceil')}</b> alle ${fmtRough(t.end, 5, 'floor')}</dd>
         <dt>Arrivo consigliato</dt><dd><b>entro le ${fmtRough(t.arrive, 15, 'floor')}</b>. ${esc(t.why)}</dd>
-        ${(() => { const dep = new Date(t.arrive.getTime() - ((access[z.id]?.[0]?.minutes ?? z.drive_min) + 10) * 6e4); return `<dt>Partenza da Rieti</dt><dd>verso le ${fmtRough(dep, 15, 'floor')}</dd>`; })()}
+        ${(() => { const minutes=zoneTrip(z,walkFor(z,d,state.trailId)).minutes;if(!Number.isFinite(minutes))return `<dt>Partenza da ${esc(currentBase().name)}</dt><dd>Tempo in auto non disponibile: verifica nel navigatore.</dd>`;const dep = new Date(t.arrive.getTime() - (minutes + 10) * 6e4); return `<dt>Partenza da ${esc(currentBase().name)}</dt><dd>verso le ${fmtRough(dep, 15, 'floor')}</dd>`; })()}
       </dl>
       ${tips.length ? `<ul class="reasons">${tips.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>` : ''}
     </div>`;
@@ -1675,8 +1693,9 @@ function renderAccess(z, d) {
   if (!a0 && !ax) return '';
   const lines = [];
   if (a0) {
-    let txt = `Da Rieti ${a0.minutes} min, ${fmtKm(a0.km)} km${a0.roads.length ? ` via ${a0.roads.join(', ')}` : ''}.`;
-    if (a0.unpaved_tail_km > 0.2) txt += ` Asfalto per ${fmtKm(a0.paved_km)} km${a0.transition?.after ? ` (fino a ${a0.transition.after})` : ''}, poi <b>${fmtKm(a0.unpaved_tail_km)} km di strada bianca</b>${a0.unpaved_surfaces.length ? ` (${a0.unpaved_surfaces.map((x) => ({ gravel: 'ghiaia', dirt: 'sterrato', compacted: 'fondo compatto' }[x] || x)).join(', ')})` : ''} fino a ${esc(a0.parking)}.`;
+    let txt = `Da ${esc(currentBase().name)} ${esc(travelText(travelTo(a0,a0)))}${!customBase()&&a0.roads.length ? ` via ${a0.roads.join(', ')}` : ''}.`;
+    if(customBase())txt += ` Fino a ${esc(a0.parking)} (${a0.elevation} m). Verifica il fondo dell’ultimo accesso.`;
+    else if (a0.unpaved_tail_km > 0.2) txt += ` Asfalto per ${fmtKm(a0.paved_km)} km${a0.transition?.after ? ` (fino a ${a0.transition.after})` : ''}, poi <b>${fmtKm(a0.unpaved_tail_km)} km di strada bianca</b>${a0.unpaved_surfaces.length ? ` (${a0.unpaved_surfaces.map((x) => ({ gravel: 'ghiaia', dirt: 'sterrato', compacted: 'fondo compatto' }[x] || x)).join(', ')})` : ''} fino a ${esc(a0.parking)}.`;
     else txt += ` Tutto su asfalto fino a ${esc(a0.parking)} (${a0.elevation} m).`;
     lines.push(txt);
   }
@@ -1684,9 +1703,9 @@ function renderAccess(z, d) {
     lines.push(`<b>Punto più comodo per ${speciesLink(d.best.species, d.best.species.name.toLowerCase())}</b>: in auto ${ax.surface === 0 ? 'su asfalto' : `su ${SURF_LABEL[ax.surface]}`}${ax.road ? ` lungo ${esc(ax.road)}` : ''} fino al <a href="${gmaps(ax.rlat, ax.rlon)}" target="_blank" rel="noopener">punto sulla strada</a>, poi ${ax.walkM < 50 ? 'subito, a bordo strada,' : `<b>${fmtM(ax.walkM)} in linea d’aria</b> (in linea d'aria) fino a`} ${esc((SHORT[ax.cat] || ax.cat).toLowerCase())} a ${ax.e} m.`);
   }
   return `
-    <p><span class="badge comfort-${d.comfort?.level}">accesso ${d.comfort?.level ?? ''}</span></p>
-    <ul class="reasons access">${lines.map((x) => `<li>${x}</li>`).join('')}</ul>
-    ${acc.length > 1 ? `<p class="small muted">Altre soste: ${acc.slice(1).map((a) => `<a href="${gmaps(a.lat, a.lon)}" target="_blank" rel="noopener">${esc(a.parking)}</a> (${a.minutes} min${a.unpaved_tail_km > 0.2 ? `, ${fmtKm(a.unpaved_tail_km)} km di strada bianca` : ''})`).join(' · ')}</p>` : ''}`;
+    ${d.comfort ? `<p><span class="badge comfort-${d.comfort.level}">accesso ${d.comfort.level}</span></p>` : ''}
+    <ul class="reasons access">${lines.map((x) => `<li>${x}</li>`).join('')}</ul>${customBase()?'<p class="small muted">Percorsi OSRM/OpenStreetMap, senza traffico. Se il percorso manca, la distanza è indicata in linea d’aria.</p>':''}
+    ${acc.length > 1 ? `<p class="small muted">Altre soste: ${acc.slice(1).map((a) => `<a href="${gmaps(a.lat, a.lon)}" target="_blank" rel="noopener">${esc(a.parking)}</a> (${esc(travelText(travelTo(a,a)))}${!customBase()&&a.unpaved_tail_km > 0.2 ? `, ${fmtKm(a.unpaved_tail_km)} km di strada bianca` : ''})`).join(' · ')}</p>` : ''}`;
 }
 
 // Sentieri: segnavia CAI, difficolta' in parole, dati dell'itinerario e profilo del tratto nella zona
@@ -1809,7 +1828,7 @@ function applyLegal() {
   if (zc.length) $('#zone-credits').innerHTML = `<b>Foto dei luoghi</b> (Wikimedia Commons): ${zc.join(' · ')}`;
   // preparazione e conservazione: regole per tutti i funghi (obbligatorie prima)
   if (prep?.general?.length && $('#prep-general')) $('#prep-general').innerHTML = prepGeneralHtml(prep.general);
-  $('#legal-sections').innerHTML = (L.info_sections || []).map((x) => `<details><summary><h2>${esc(x.title)}</h2></summary><div class="method">${x.html}</div></details>`).join('');
+  $('#legal-sections').innerHTML = (L.info_sections || []).map((x) => `<details><summary><h2>${esc(x.title)}</h2></summary><div class="method">${x.id==='privacy'?String(x.html||'').replace('Non chiediamo la tua posizione','Non richiediamo la posizione per usare l’app')+`<p>${esc(BASE_PRIVACY_TEXT)}</p>`:x.html}</div></details>`).join('');
   // primo avvio: avviso da confermare (si ripresenta se cambia la versione dei testi)
   const ver = String(L.version || 0) + (L.verified_on || '');
   let accepted = null;

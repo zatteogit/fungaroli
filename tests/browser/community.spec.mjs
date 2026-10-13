@@ -31,6 +31,48 @@ async function register(page, name) {
 async function api(page, path, method='GET', data) {
   return page.evaluate(async ({path,method,data}) => { const r=await fetch('/api/community/'+path,{method,headers:data==null?{}:{'content-type':'application/json'},body:data==null?undefined:JSON.stringify(data)}); return {status:r.status,data:await r.json()}; }, {path,method,data});
 }
+test('base privata del profilo: salvataggio, distanze, navigatori, isolamento e ripristino',async({page,browser})=>{
+  await page.addInitScript(()=>{globalThis.baseGpsCalls=0;Object.defineProperty(navigator,'geolocation',{value:{getCurrentPosition(success){globalThis.baseGpsCalls++;success({coords:{latitude:42.5678,longitude:12.9648}});}}});});
+  const errors=await setup(page),rome={name:'Roma',lat:41.9028,lon:12.4964};
+  let unavailable=false;
+  await page.route('**/api/community/places?*',r=>r.fulfill({json:{places:[rome]}}));
+  await page.route('**/api/community/travel',async r=>{
+    if(unavailable)return r.fulfill({status:503,json:{error:'Servizio temporaneamente non disponibile'}});
+    const session=await page.request.get('/api/community/session'),data=await session.json();
+    const targets=r.request().postDataJSON().targets;
+    await r.fulfill({json:{base:data.user.base,routes:targets.map(p=>({key:`${p.lat.toFixed(5)},${p.lon.toFixed(5)}`,minutes:111,km:77})),source:'OSRM / OpenStreetMap',traffic:false}});
+  });
+  await register(page,'Base');const owner=(await api(page,'session')).data.user.id;
+  const score=await page.locator('#hero .ring b').textContent();
+  await page.locator('[data-community-account]').first().click();const profile=page.locator('dialog.profile-dialog[open]');
+  await profile.locator('.base-settings summary').click();expect(await page.evaluate(()=>globalThis.baseGpsCalls)).toBe(0);await profile.locator('[data-base-gps]').click();expect(await page.evaluate(()=>globalThis.baseGpsCalls)).toBe(1);expect((await api(page,'session')).data.user.base).toBe(null);
+  await profile.locator('[data-base-query]').fill('Roma');await profile.locator('[data-base-search]').click();
+  await profile.locator('[data-place]').click();await profile.locator('[data-base-save]').click();await expect(profile.locator('[data-base-status]')).toContainText('Base salvata');
+  expect((await api(page,'session')).data.user.base).toEqual(rome);
+  for(const width of[320,390,1280]){await page.setViewportSize({width,height:900});expect(await profile.evaluate(el=>el.scrollWidth<=el.clientWidth)).toBe(true);if(width===390)await profile.screenshot({path:'/tmp/fungaroli-profile-base-mobile.png'});}
+  await profile.locator('.profile-actions [data-close]').click();await expect(page.locator('#hero .facts')).toContainText('111 min');
+  expect(await page.locator('#hero .ring b').textContent()).toBe(score);
+  await page.locator('#hero .cover-link').click();await page.locator('#detail [data-sec="accesso"] summary').click();
+  await expect(page.locator('#detail [data-sec="accesso"]')).toContainText('Da Roma 111 min · 77 km');
+  const href=await page.locator('#detail a[href*="google.com/maps/dir"]').first().getAttribute('href');expect(new URL(href).searchParams.get('origin')).toBe('41.9028,12.4964');
+  await page.reload();await expect(page.locator('#detail [data-sec="accesso"]')).toContainText('Da Roma');
+  expect((await api(page,'profile','PUT',{accountId:owner,base:{name:'Errata',lat:91,lon:0}})).status).toBe(422);
+  expect((await page.request.post('/api/community/travel',{headers:{origin:'http://localhost:8788'},data:{targets:[]}})).status()).toBe(422);
+  const csrf=await page.request.put('/api/community/profile',{headers:{origin:'https://evil.example'},data:{accountId:owner,base:null}});expect(csrf.status()).toBe(403);
+  const second=await browser.newContext({serviceWorkers:'block'}),other=await second.newPage();await setup(other);await register(other,'Secondo');
+  expect((await api(other,'session')).data.user.base).toBe(null);
+  expect((await api(other,'profile','PUT',{accountId:owner,base:rome})).status).toBe(409);
+  expect((await api(other,'travel','POST',{targets:[{lat:42.4,lon:12.8}]})).status).toBe(422);await second.close();
+  expect(JSON.stringify((await api(page,'summary')).data)).not.toContain('Roma');
+  unavailable=true;
+  expect((await api(page,'profile','PUT',{accountId:owner,base:{name:'Leonessa',lat:42.5678,lon:12.9648}})).status).toBe(200);
+  await page.reload();await page.locator('#detail [data-sec="accesso"] summary').click();
+  await expect(page.locator('#detail [data-sec="accesso"]')).toContainText('in linea d’aria');await expect(page.locator('#detail [data-sec="accesso"]')).not.toContainText('111 min');
+  await page.locator('[data-community-account]').first().click();await profile.locator('.base-settings summary').click();await profile.locator('[data-base-reset]').click();await expect(profile.locator('[data-base-status]')).toContainText('Base salvata');
+  expect((await api(page,'session')).data.user.base).toBe(null);await profile.locator('.profile-actions [data-close]').click();
+  const resetHref=await page.locator('#detail a[href*="google.com/maps/dir"]').first().getAttribute('href');expect(new URL(resetHref).searchParams.get('origin')).toBe('42.404,12.8623');
+  expect(errors).toEqual([]);
+});
 test('vetrina varia e sentiero stabile passando dalla proposta ai giorni del taccuino', async ({ page }) => {
   await page.setViewportSize({width:390,height:844});
   const errors = await setup(page);
