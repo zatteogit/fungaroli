@@ -16,7 +16,10 @@ export async function routeMatrix(base,targets,fetcher=fetch) {
   const coords=[base,...targets].map(p=>`${p.lon},${p.lat}`).join(';');
   const url=new URL(`https://routing.openstreetmap.de/routed-car/table/v1/driving/${coords}`);
   url.search=new URLSearchParams({sources:'0',destinations:targets.map((_,i)=>i+1).join(';'),annotations:'distance,duration'}).toString();
-  const r=await fetcher(url,{signal:AbortSignal.timeout(18000)});if(!r.ok)throw new Error('Calcolo stradale non disponibile. Riprova.');
+  let r;
+  try{r=await fetcher(url,{headers:{accept:'application/json','user-agent':'Fungaroli/1.0 (+https://fungaroli.zatteo.workers.dev)'},signal:AbortSignal.timeout(18000)});}
+  catch{throw Object.assign(new Error('Il servizio dei percorsi non risponde. Riprova.'),{status:503});}
+  if(!r.ok)throw Object.assign(new Error(`Calcolo stradale non disponibile (servizio HTTP ${r.status}). Riprova.`),{status:503});
   const data=await r.json();if(data.code!=='Ok')throw new Error('Il servizio non riesce a calcolare questi percorsi.');
   return targets.map((p,i)=>{
     const seconds=data.durations?.[0]?.[i],meters=data.distances?.[0]?.[i];
