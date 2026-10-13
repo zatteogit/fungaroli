@@ -75,14 +75,17 @@ export async function ensureAccount() {
 export async function openAccount() {
   await ready;
   if (!authDialog) { authDialog = document.createElement('dialog'); authDialog.className = 'community-dialog'; document.body.appendChild(authDialog); }
+  authDialog.classList.toggle('profile-dialog', !!user);
   if (!enabled) {
     authDialog.innerHTML = '<h2>Il taccuino è già tuo</h2><p>Puoi usarlo su questo dispositivo. Profili e segnalazioni collettive saranno disponibili quando il servizio è attivo.</p><button class="btn primary" type="button">Continua</button>';
     authDialog.querySelector('button').onclick = () => authDialog.close(); authDialog.showModal(); return null;
   }
   return new Promise((resolve) => {
-    authDialog.innerHTML = user ? `<h2>Il tuo profilo</h2><p>${esc(user.handle)}</p><p>Il diario è privato. Solo le osservazioni che scegli di condividere entrano nei conteggi collettivi.</p>
-      <div data-cms-link></div>
-      <button type="button" class="btn ghost" data-logout>Esci</button><button type="button" class="link-btn" data-delete-account>Elimina profilo e dati</button><button type="button" class="btn primary" data-close>Chiudi</button><p role="status" data-status></p>`
+    authDialog.innerHTML = user ? `<div class="profile-header"><div><h2>${esc(user.handle || 'Il tuo profilo')}</h2><p class="small muted profile-role" data-account-role>Profilo personale</p></div><button type="button" class="profile-close" data-close aria-label="Chiudi il profilo">×</button></div>
+      <p>Il diario è privato. Solo le osservazioni che scegli di condividere entrano nei conteggi collettivi.</p>
+      <div class="profile-editorial" data-cms-link hidden></div>
+      <div class="profile-actions" role="group" aria-label="Azioni del profilo"><button type="button" class="btn ghost" data-logout>Esci dal profilo</button><button type="button" class="btn primary" data-close autofocus>Chiudi</button></div>
+      <div class="profile-data"><button type="button" class="link-btn" data-delete-account>Elimina profilo e dati</button></div><p class="profile-status" role="status" data-status></p>`
       : `<h2>Unisciti a Fungaroli</h2><p>Un profilo senza password o email: usa la passkey del telefono o del computer. Il nome è facoltativo e non appare nelle segnalazioni.</p>
       <label>Come vuoi chiamarti? <input class="wiz-input" maxlength="32" autocomplete="nickname" data-handle placeholder="Un nome, anche inventato"></label>
       <button type="button" class="btn primary big" data-register>Crea profilo con passkey</button><button type="button" class="btn ghost big" data-login>Ho già una passkey</button>
@@ -91,15 +94,21 @@ export async function openAccount() {
       <p role="status" data-status></p><button type="button" class="btn ghost" data-close>Continua senza profilo</button>`;
     authDialog.setAttribute('aria-label', user ? 'Il tuo profilo' : 'Accedi o crea un profilo');
     const status = authDialog.querySelector('[data-status]');
-    if(user&&!location.pathname.startsWith('/redazione')){
+    if(user){
       const accountId=user.id;
-      fetch('/api/cms/v1/me',{cache:'no-store',signal:AbortSignal.timeout(2000)}).then(r=>r.ok?r.json():null).then(r=>{
+      fetch('/api/cms/v1/me',{credentials:'same-origin',cache:'no-store',signal:AbortSignal.timeout(5000)}).then(r=>r.ok?r.json():null).then(r=>{
         const slot=authDialog.querySelector('[data-cms-link]');
-        if(slot&&user?.id===accountId&&r?.user?.scopes?.includes('read'))slot.innerHTML='<a class="btn ghost" href="/redazione">Apri la redazione</a>';
+        if(!slot||user?.id!==accountId||r?.user?.id!==accountId)return;
+        const scopes=r.user.scopes||[],role=r.user.role||(scopes.includes('admin')?'admin':scopes.includes('write')?'editor':'member');
+        authDialog.querySelector('[data-account-role]').textContent={admin:'Amministratore',editor:'Editor',member:'Utente'}[role]||'Profilo personale';
+        if(scopes.includes('read')&&!location.pathname.startsWith('/redazione')){
+          slot.hidden=false;
+          slot.innerHTML=`<a class="btn ghost" href="/redazione">Apri la redazione →</a><p class="small muted">${scopes.includes('admin')?'Puoi gestire contenuti, pubblicazioni e accessi degli agenti.':'Puoi preparare le bozze. Un amministratore le pubblica.'}</p>`;
+        }
       }).catch(()=>{});
     }
     authDialog.onclose = () => resolve(user);
-    authDialog.querySelector('[data-close]').onclick = () => authDialog.close();
+    authDialog.querySelectorAll('[data-close]').forEach(b=>b.onclick=()=>authDialog.close());
     const auth = async (register) => {
       if (!browserSupportsWebAuthn()) { status.textContent = 'Questo browser non supporta le passkey. Puoi continuare con il diario locale.'; return; }
       const buttons = authDialog.querySelectorAll('button'); buttons.forEach((b) => b.disabled = true);
@@ -118,7 +127,7 @@ export async function openAccount() {
       try { await communityRequest('auth/logout', 'POST', {}); user = null; changed(); authDialog.close(); } catch (e) { status.textContent = e.message; }
     });
     authDialog.querySelector('[data-delete-account]')?.addEventListener('click', async (e) => {
-      if (!e.currentTarget.dataset.confirm) { e.currentTarget.dataset.confirm = '1'; e.currentTarget.textContent = 'Conferma eliminazione di profilo, diario e segnalazioni'; return; }
+      if (!e.currentTarget.dataset.confirm) { e.currentTarget.dataset.confirm = '1'; e.currentTarget.textContent = 'Conferma eliminazione'; status.textContent = 'Elimina il tuo profilo, il diario e le tue segnalazioni. Premi ancora per confermare.'; return; }
       try { await communityRequest('account', 'DELETE'); user = null; changed(); await refreshCommunity(); authDialog.close(); }
       catch (err) { status.textContent = err.message; }
     });

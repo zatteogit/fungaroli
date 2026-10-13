@@ -65,12 +65,14 @@ async function identity(req,env,now) {
     if(!/^Bearer cms_[a-f0-9]{64}$/.test(auth)) failure('Credenziale agente non valida.',401);
     const t=await env.CMS_DB.prepare('SELECT * FROM cms_agent_tokens WHERE token_hash=? AND expires_at>? AND revoked_at IS NULL').bind(await hash(auth.slice(7)),now).first();
     if(!t) failure('Credenziale agente scaduta o revocata.',401);
-    return {id:'agent:'+t.id,name:t.name,kind:'agent',scopes:JSON.parse(t.scopes),resources:JSON.parse(t.resources)};
+    return {id:'agent:'+t.id,name:t.name,kind:'agent',role:'agent',scopes:JSON.parse(t.scopes),resources:JSON.parse(t.resources)};
   }
   const user=await readCommunityUser(req,env,now);
   if(!user) failure('Accedi con la tua passkey.',401);
-  const admin=(env.CMS_ADMIN_IDS||'').split(',').map(s=>s.trim()).filter(Boolean).includes(user.id);
-  return {id:user.id,name:user.handle,kind:'human',scopes:admin?['read','write','publish','review','admin']:[],resources:CONTENT_RESOURCES.map(r=>r.id)};
+  const assigned=key=>(env[key]||'').split(',').map(s=>s.trim()).filter(Boolean).includes(user.id);
+  const role=assigned('CMS_ADMIN_IDS')?'admin':assigned('CMS_EDITOR_IDS')?'editor':'member';
+  const scopes=role==='admin'?['read','write','publish','review','admin']:role==='editor'?['read','write']:[];
+  return {id:user.id,name:user.handle,kind:'human',role,scopes,resources:role==='member'?[]:CONTENT_RESOURCES.map(r=>r.id)};
 }
 function permit(actor,scope,id) {
   if(!actor.scopes.includes(scope)||id&&!actor.resources.includes(id)) failure('Il tuo profilo non ha questo permesso di redazione.',403);
@@ -91,7 +93,7 @@ export async function handleCms(req,env,now=Date.now()) {
     if(!['GET','POST','PATCH','DELETE'].includes(req.method)) failure('Metodo non consentito.',405);
     const origin=req.headers.get('origin'),expected=env.APP_ORIGIN||url.origin;
     if(req.method!=='GET' && (actor.kind==='human'?origin!==expected:origin&&origin!==expected)) failure('Origine non autorizzata.',403);
-    if(path==='me'&&req.method==='GET')return response({user:actor,configured:!!env.CMS_ADMIN_IDS});
+    if(path==='me'&&req.method==='GET')return response({user:actor,configured:!!(env.CMS_ADMIN_IDS||env.CMS_EDITOR_IDS)});
     permit(actor,'read');await rate(db,actor,now);
     if(path==='schemas'&&req.method==='GET')return response({schemaVersion:CONTENT_SCHEMA_VERSION,resources:CONTENT_RESOURCES.map(r=>({...r,schema:{type:'object',required:r.required,additionalProperties:true}})),operations:['read','write','publish','review'],maxBytes:1500000});
     if(path==='items'&&req.method==='GET') {
