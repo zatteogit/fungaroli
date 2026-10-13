@@ -1095,14 +1095,10 @@ function openPoint(zid, pt) {
 }
 
 function pointTrailPreview(z, t, d, h) {
-  const profile = t.lines?.length === 1 && d?.best ? trailProfile(z.id, t, d.best.species, d.best.band, [h]) : '';
-  const sketch = profile ? null : trailSketch(t, h);
-  if (!profile && !sketch) return '';
   const elevations = (t.samples || []).map(s => s[0]).filter(Number.isFinite);
   const range = elevations.length ? ` · ${Math.min(...elevations)}–${Math.max(...elevations)} m` : '';
   return `<div class="pt-preview"><p class="pt-preview-title">Tratto locale · ${fmtKm(t.in_zone_km)} km${range}</p>
-    ${profile || `<figure class="walk-sketch"><svg viewBox="0 0 360 200" role="img" aria-label="Anteprima del tratto locale con imbocco mappato"><text x="330" y="20">N ↑</text>${sketch.paths.map(p => `<polyline points="${p}"/>`).join('')}<circle cx="${sketch.head[0].toFixed(1)}" cy="${sketch.head[1].toFixed(1)}" r="6"/></svg><figcaption>${sketch.paths.length > 1 ? 'Segmenti separati' : 'Traccia locale'} · punto: imbocco</figcaption></figure>`}
-    ${profile ? '<p class="pt-preview-note">1: imbocco mappato</p>' : ''}</div>`;
+    ${trailVisual(z, t, d, [h])}</div>`;
 }
 
 function initMap() {
@@ -1477,7 +1473,7 @@ const ICON = {
 
 function renderWalkFocus(z, d, walk) {
   if (!walk) return `<p class="small muted">Non abbiamo ancora un sentiero documentato per questa zona.</p>`;
-  const { t, h } = walk, sketch = trailSketch(t, h);
+  const { t, h } = walk;
   return `<details class="sec walk-focus" name="zone-details" data-sec="passeggiata" data-walk-trail="${t.id}"${openSecs.has('passeggiata') ? ' open' : ''}>
     <summary><span class="walk-summary">
       <span class="eyebrow">La passeggiata, più da vicino</span><span class="walk-title">${esc(walk.microzone)}</span>
@@ -1491,7 +1487,7 @@ function renderWalkFocus(z, d, walk) {
       <div><dt>Imbocco mappato</dt><dd>${h ? `${h.ele != null ? `Circa ${Math.round(h.ele / 25) * 25} m · ` : ''}${esc(h.road || (h.kind === 'strada' ? 'su strada' : 'su sterrata'))}` : 'Non disponibile; le soste indicate riguardano la zona'}</dd></div>
     </dl>
     ${t.mainCat ? `<p class="small">Lungo il tracciato: ${linkTrees(t.mainCat.toLowerCase())} nei campioni tra circa ${Math.floor(t.lo / 25) * 25} e ${Math.ceil(t.hi / 25) * 25} m${d?.best?.species ? `, compatibili con l’habitat di ${speciesLink(d.best.species, d.best.species.name.toLowerCase())}` : ''}.</p>` : ''}
-    ${sketch ? `<figure class="walk-sketch"><svg viewBox="0 0 360 200" role="img" aria-label="Schema del tratto di sentiero nella zona${h ? ', con imbocco mappato' : ''}"><text x="330" y="20">N ↑</text>${sketch.paths.map(p => `<polyline points="${p}"/>`).join('')}${sketch.head ? `<circle cx="${sketch.head[0].toFixed(1)}" cy="${sketch.head[1].toFixed(1)}" r="6"/>` : ''}</svg><figcaption>Traccia locale${h ? ' · punto: imbocco mappato' : ''}. Schema orientato a nord; apri la mappa del percorso per orientarti.</figcaption></figure>` : ''}
+    ${trailVisual(z, t, d, h ? [h] : [])}
     ${trailLinks(z, t)}
     <p class="small muted">Il GPX contiene solo il tratto nella zona. Tempi e dislivello, quando disponibili, riguardano l’itinerario completo. Verifica accesso, sosta e stato del sentiero prima di partire.</p>
     <p class="small muted">Tracciato OpenStreetMap / Waymarked Trails · imbocchi ricavati dalla rete stradale mappata. L’indice e le segnalazioni riguardano la zona, non questo singolo sentiero.</p>
@@ -1524,7 +1520,7 @@ function planCard(z, d, walk) {
   if (a0 || ax) {
     const unp = a0?.unpaved_tail_km > 0.2 ? `, ultimi ${fmtKm(a0.unpaved_tail_km)} km su strada bianca` : '';
     rows.push({ sec: 'accesso', icon: 'car', k: 'Come arrivare',
-      v: walk?.h ? `<a href="${gmaps(walk.h.lat, walk.h.lon)}" target="_blank" rel="noopener">Apri l’imbocco mappato del sentiero ${esc(walk.t.ref || '')}</a>` : ax ? `In auto ${ax.road ? `su ${esc(ax.road)}` : 'fino al punto più vicino'}${ax.walkM < 50 ? ': habitat campionato vicino alla strada' : `, poi <b>${fmtM(ax.walkM)} in linea d’aria</b>`}` : `${esc(travelText(zoneTrip(z)))} fino a ${esc(a0.parking)}`,
+      v: walk?.h ? `<a href="${gmaps(walk.h.lat, walk.h.lon)}" target="_blank" rel="noopener">Indicazioni per il sentiero ${esc(walk.t.ref || '')}</a>` : ax ? `In auto ${ax.road ? `su ${esc(ax.road)}` : 'fino al punto più vicino'}${ax.walkM < 50 ? ': habitat campionato vicino alla strada' : `, poi <b>${fmtM(ax.walkM)} in linea d’aria</b>`}` : `${esc(travelText(zoneTrip(z)))} fino a ${esc(a0.parking)}`,
       sub: `${a0 ? `${esc(travelText(zoneTrip(z,walk)))} da ${esc(currentBase().name)}${customBase()?'':unp}` : ''}${ax ? ` · <a href="${gmaps(ax.rlat, ax.rlon)}" target="_blank" rel="noopener">navigatore</a>` : ''}`,
       badge: d.comfort ? `<span class="badge comfort-${d.comfort.level}">${d.comfort.level}</span>` : '' });
   }
@@ -1745,7 +1741,7 @@ function headX(t, h) {
 
 function trailProfile(zid, t, sp, band, heads = []) {
   const sm = t.samples || [];
-  if (sm.length < 4) return '';
+  if (sm.length < 4 || sm.some(x => !Number.isFinite(x[0]))) return '';
   if (t.lines?.length > 1) return `<p class="small muted">Quote campionate tra ${Math.min(...sm.map(x => x[0]))} e ${Math.max(...sm.map(x => x[0]))} m su segmenti separati. Non costituiscono un profilo continuo.</p>`;
   const cats = trails[zid]?.sample_categories || [];
   const es = sm.map((x) => x[0]);
@@ -1753,7 +1749,8 @@ function trailProfile(zid, t, sp, band, heads = []) {
   const W = 300, H = 70, n = sm.length;
   const X = (i) => (i / (n - 1)) * W;
   const Y = (e) => H - 6 - ((e - lo) / Math.max(1, hi - lo)) * (H - 18);
-  const ok = sm.map(([e, c]) => { const cat = c >= 0 ? cats[c] : 'non bosco'; return (sp.forest[cat] || 0) >= 0.6 && e >= sp.elev[0] && e <= sp.elev[1] && Math.abs(e - band) <= 250; });
+  const habitatKnown = sp?.forest && Number.isFinite(band);
+  const ok = sm.map(([e, c]) => { const cat = c >= 0 ? cats[c] : 'non bosco'; return habitatKnown && (sp.forest[cat] || 0) >= 0.6 && e >= sp.elev[0] && e <= sp.elev[1] && Math.abs(e - band) <= 250; });
   const line = sm.map(([e], i) => `${i ? 'L' : 'M'}${X(i).toFixed(1)} ${Y(e).toFixed(1)}`).join('');
   const area = `${line}L${W} ${H}L0 ${H}Z`;
   const step = W / (n - 1);
@@ -1762,8 +1759,42 @@ function trailProfile(zid, t, sp, band, heads = []) {
   const marks = heads.map((h, k) => { const x = headX(t, h); if (x == null) return ''; const i = Math.round(x * (n - 1)); return `<span class="tp-th" style="--x:${(x * 100).toFixed(1)}%;top:${((Y(es[i]) / H) * 100).toFixed(1)}%" aria-hidden="true">${k + 1}</span>`; }).join('');
   return `<figure class="tprof"><div class="tp-wrap"><svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" role="img" aria-label="Profilo del tratto nella zona: da ${es[0]} a ${es[n - 1]} m, tra ${lo} e ${hi} m">
       <path d="${area}" class="tp-area"/><g class="tp-good">${good}</g><path d="${line}" class="tp-line"/></svg>${marks}</div>
-    <figcaption><span>${es[0]} m</span><span class="tp-key"><i></i>bosco adatto a ${esc(sp.name.toLowerCase())}</span><span>${es[n - 1]} m</span></figcaption></figure>`;
+    <figcaption><span>${es[0]} m</span><span class="tp-key">${habitatKnown ? `<i></i><span>bosco compatibile con ${speciesLink(sp, sp.name.toLowerCase())}</span>` : 'Quote del tratto locale'}</span><span>${es[n - 1]} m</span></figcaption></figure>`;
 }
+
+let trailVisualId = 0;
+const trailViews = new Map();
+function trailVisual(z, t, d, heads = []) {
+  const id = `trail-visual-${++trailVisualId}`, key = `${z.id}/${t.id}`;
+  const view = trailViews.get(key) || 'trace', sketch = trailSketch(t, heads[0], heads.slice(1));
+  const trace = sketch ? `<figure class="walk-sketch"><span class="trail-north" aria-hidden="true">N ↑</span><svg viewBox="${sketch.viewBox.map(n=>n.toFixed(1)).join(' ')}" role="img" aria-label="Schema del tratto locale orientato a nord${heads.length ? ', con accessi mappati numerati' : ''}">${sketch.paths.map(p => `<polyline points="${p}"/>`).join('')}${sketch.heads.map((p,k) => `<g class="trail-access" aria-hidden="true"><circle cx="${p[0].toFixed(1)}" cy="${p[1].toFixed(1)}" r="8"/><text x="${p[0].toFixed(1)}" y="${p[1].toFixed(1)}" text-anchor="middle" dominant-baseline="central">${k+1}</text></g>`).join('')}</svg><figcaption>${sketch.paths.length > 1 ? 'Segmenti separati' : 'Tratto locale'}${heads.length ? ' · punti: accessi mappati' : ''}. Schema orientato a nord; usa la mappa del sentiero per orientarti.</figcaption></figure>` : '<p class="small muted">Tracciato non disponibile per questo tratto.</p>';
+  const profile = trailProfile(z.id, t, d?.best?.species, d?.best?.band, heads) || '<p class="small muted">Profilo altimetrico non disponibile: mancano quote sufficienti per questo tratto.</p>';
+  return `<div class="trail-visual" data-trail-view-key="${esc(key)}">
+    <div class="trail-view-tabs" role="tablist" aria-label="Vista del tratto di ${esc(trailName(t))}">${[['trace','Tracciato'],['profile','Profilo']].map(([v,label]) => `<button type="button" role="tab" id="${id}-${v}-tab" data-trail-view="${v}" aria-selected="${view===v}" aria-controls="${id}-${v}" tabindex="${view===v?0:-1}">${label}</button>`).join('')}</div>
+    <div class="trail-visual-panel" role="tabpanel" id="${id}-trace" data-trail-panel="trace" aria-labelledby="${id}-trace-tab" tabindex="0"${view!=='trace'?' hidden':''}>${trace}</div>
+    <div class="trail-visual-panel" role="tabpanel" id="${id}-profile" data-trail-panel="profile" aria-labelledby="${id}-profile-tab" tabindex="0"${view!=='profile'?' hidden':''}>${profile}</div>
+  </div>`;
+}
+function selectTrailView(box, view) {
+  trailViews.set(box.dataset.trailViewKey, view);
+  document.querySelectorAll('.trail-visual').forEach(peer => {
+    if (peer.dataset.trailViewKey !== box.dataset.trailViewKey) return;
+    peer.querySelectorAll('[data-trail-view]').forEach(tab => { const selected=tab.dataset.trailView===view; tab.setAttribute('aria-selected',String(selected)); tab.tabIndex=selected?0:-1; });
+    peer.querySelectorAll('[data-trail-panel]').forEach(panel => { panel.hidden=panel.dataset.trailPanel!==view; });
+  });
+}
+document.addEventListener('click', e => {
+  const tab=e.target.closest('button[data-trail-view]');
+  if(tab)selectTrailView(tab.closest('.trail-visual'),tab.dataset.trailView);
+});
+document.addEventListener('keydown', e => {
+  const tab=e.target.closest('button[data-trail-view]');
+  if(!tab || !['ArrowLeft','ArrowRight','Home','End'].includes(e.key))return;
+  e.preventDefault();
+  const box=tab.closest('.trail-visual'),tabs=[...box.querySelectorAll('[data-trail-view]')],index=tabs.indexOf(tab);
+  const next=e.key==='Home'?tabs[0]:e.key==='End'?tabs.at(-1):tabs[(index+(e.key==='ArrowRight'?1:-1)+tabs.length)%tabs.length];
+  selectTrailView(box,next.dataset.trailView);next.focus();
+});
 
 function trailCard(z, t, d, top = false) {
   const facts = [
@@ -1776,7 +1807,7 @@ function trailCard(z, t, d, top = false) {
     <div class="tc-head">${segnavia(t)}<div class="tc-name"><b>${esc(trailName(t))}</b>${t.itinerary?.length > 2 ? `<small>${esc(t.itinerary.slice(1, -1).join(' · '))}</small>` : ''}${t.long ? '<small>tratto di un itinerario lungo</small>' : ''}${t.operator ? `<small>${esc(t.operator)}</small>` : ''}</div>${top ? '<span class="badge tc-top">In evidenza</span>' : ''}</div>
     <dl class="tc-facts">${facts}</dl>
     ${t.editorialNote?`<p class="small">${esc(t.editorialNote)}</p>`:''}
-    ${d?.best ? trailProfile(z.id, t, d.best.species, d.best.band, heads) : ''}
+    ${trailVisual(z, t, d, heads)}
     ${heads.length ? `<div class="th-row"><span class="th-k">Imbocchi</span><div class="th-list">${heads.map((h, k) => `<a class="th-chip" href="${gmaps(h.lat, h.lon)}" target="_blank" rel="noopener" aria-label="Indicazioni stradali per l'imbocco ${k + 1}, a ${h.ele ?? ''} metri"><i class="th-n">${k + 1}</i>${h.kind === 'strada' ? IC.car : ICON.track}<span><b>${h.ele != null ? `${h.ele.toLocaleString('it-IT')} m` : 'imbocco'}</b><small>${esc(h.road || (h.kind === 'strada' ? 'su strada' : 'su sterrata'))}</small></span></a>`).join('')}</div></div>` : ''}
   </div>`;
 }
@@ -1824,8 +1855,8 @@ function trailLinks(z, t) {
   if (!g) return `<a class="small" href="https://www.openstreetmap.org/relation/${t.id}" target="_blank" rel="noopener">Tracciato su OpenStreetMap</a>`;
   const h = headsOf(z, t)[0], go = h ? [h.lat, h.lon] : g.start;
   return `<div class="tl-btns">
-    <a class="tl-btn primary" href="${gmaps(go[0], go[1])}" target="_blank" rel="noopener">${h ? IC.car : IC.map}<span>${h ? 'Apri l’imbocco mappato' : 'Apri un punto sulla traccia'}</span></a>
-    <a class="tl-btn" href="${g.wm}" target="_blank" rel="noopener">${IC.map}<span>Percorso e profilo</span></a>
+    <a class="tl-btn primary" href="${gmaps(go[0], go[1])}" target="_blank" rel="noopener" aria-label="${h ? 'Indicazioni stradali per l’accesso mappato' : 'Indicazioni per un punto sulla traccia: accesso non individuato'}">${h ? IC.car : IC.map}<span>${h ? 'Indicazioni' : 'Punto sulla traccia'}</span></a>
+    <a class="tl-btn" href="${g.wm}" target="_blank" rel="noopener">${IC.map}<span>Mappa del sentiero</span></a>
     <a class="tl-btn" href="${g.gpx}" download="${esc(g.file)}">${ICON.download}<span>GPX del tratto locale</span></a>
     <a class="tl-btn" href="https://www.openstreetmap.org/relation/${t.id}" target="_blank" rel="noopener">${ICON.ext}<span>OpenStreetMap</span></a></div>`;
 }

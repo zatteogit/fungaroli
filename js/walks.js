@@ -42,11 +42,12 @@ export function walkContext(z, t, heads) {
 }
 
 // Separate polylines stay separate: a clipped relation is not necessarily a loop.
-export function trailSketch(t, head) {
+export function trailSketch(t, head, extraHeads = []) {
   const lines = (t.lines || []).filter(l => l.length >= 2);
   if (!lines.length) return null;
   const points = lines.flat();
-  if (head) points.push([head.lat, head.lon]);
+  const heads = [head, ...extraHeads].filter(h => h && Number.isFinite(h.lat) && Number.isFinite(h.lon));
+  heads.forEach(h => points.push([h.lat, h.lon]));
   const lat = points.reduce((s, p) => s + p[0], 0) / points.length;
   const k = Math.cos(lat * Math.PI / 180);
   const xs = points.map(p => p[1] * k), ys = points.map(p => -p[0]);
@@ -54,5 +55,8 @@ export function trailSketch(t, head) {
   const scale = Math.min(312 / Math.max(maxX - minX, .0001), 152 / Math.max(maxY - minY, .0001));
   const dx = (360 - (maxX - minX) * scale) / 2, dy = (200 - (maxY - minY) * scale) / 2;
   const project = p => [(p[1] * k - minX) * scale + dx, (-p[0] - minY) * scale + dy];
-  return { paths: lines.map(l => l.map(p => project(p).map(n => n.toFixed(1)).join(',')).join(' ')), head: head ? project([head.lat, head.lon]) : null };
+  const projected = points.map(project), px = projected.map(p => p[0]), py = projected.map(p => p[1]);
+  const width = Math.max(80, Math.max(...px)-Math.min(...px)+32), height = Math.max(80, Math.max(...py)-Math.min(...py)+32);
+  const viewBox = [(Math.max(...px)+Math.min(...px)-width)/2,(Math.max(...py)+Math.min(...py)-height)/2,width,height];
+  return { paths: lines.map(l => l.map(p => project(p).map(n => n.toFixed(1)).join(',')).join(' ')), head: head && Number.isFinite(head.lat) && Number.isFinite(head.lon) ? project([head.lat, head.lon]) : null, heads: heads.map(h => project([h.lat, h.lon])), viewBox };
 }
