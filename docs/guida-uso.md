@@ -10,7 +10,7 @@ La zona mostra il massimo tra le specie selezionate e le fasce di quota. Aggiung
 
 ## Scegliere la passeggiata
 
-Apri **Tutti i filtri** dalla home o dalla mappa: trovi tutti gli undici gruppi e le preferenze di accesso, distanza e affollamento. Le preferenze cambiano l’ordine dei consigli, mantenendo il valore biologico dell’indice. Anche il meteo della mattina influisce sull’ordine: condizioni non disponibili non significano bel tempo. Affollamento e orari suggeriti sono ipotesi, non misurazioni.
+Apri **Tutti i filtri** dalla home o dalla mappa: trovi gli undici gruppi, “Aggiungi una specie” con autocomplete e l’elenco di tutte le 46 voci commestibili. Puoi selezionare anche i singoli porcini. “Fuori stagione” segue il calendario indicativo; se non è documentato compare “Stagione n.d.”. Le specie senza modello si possono consultare e segnalare ma non ricevono un indice inventato. Seguono le preferenze di accesso, distanza e affollamento. Le preferenze cambiano l’ordine dei consigli, mantenendo il valore biologico dell’indice. Anche il meteo della mattina influisce sull’ordine: condizioni non disponibili non significano bel tempo. Affollamento e orari suggeriti sono ipotesi, non misurazioni.
 
 La mappa e la scheda della zona mostrano soste, campioni di habitat e sentieri OSM. Le distanze dal campione alla strada sono in linea d’aria, non lunghezze di un percorso a piedi. La Carta Forestale è una classificazione territoriale, non una mappa dei funghi. Controlla segnaletica, proprietà private, divieti, tracciato, dislivello e condizioni reali prima di partire.
 
