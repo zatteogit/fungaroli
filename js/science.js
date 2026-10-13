@@ -17,31 +17,39 @@ function factorRows(r, sp, band, dateStr) {
   const [lagMin, lagMax] = sp.lag;
   const month = ['gennaio', 'febbraio', 'marzo', 'aprile', 'maggio', 'giugno', 'luglio', 'agosto', 'settembre', 'ottobre', 'novembre', 'dicembre'][new Date(dateStr + 'T12:00:00').getMonth()];
   return [
-    { k: 'Stagione', v: r.season, tags: ['eur'], why: `${/^[ao]/.test(month) ? 'ad' : 'a'} ${month} ${r.season >= 0.8 ? 'è nel suo periodo' : r.season >= 0.3 ? 'è ai margini del periodo' : 'è fuori stagione'} (curva mensile della specie).` },
-    { k: 'Bosco alla quota', v: r.habitat, tags: ['dato', 'eur'], why: `a ${band} m l'idoneità ponderata dell'area campionata è ${pct(r.suitableShare)}, inclusi i punti fuori bosco (${r.habitatSamples} campioni, ±${PARAMS.bandHalfWidth} m). Il massimo a 45% è una scelta euristica.` },
-    { k: 'Quota', v: r.elev, tags: ['eur'], why: band >= lo && band <= hi ? `${band} m è dentro l'intervallo della specie (${lo}–${hi} m).` : `${band} m è fuori dall'intervallo ${lo}–${hi} m: il fattore cala di 1/200 per metro.` },
-    { k: 'Pioggia', v: r.rain, tags: ['lett', 'eur'], why: `${n0(r.effRain)} mm tra ${lagMax} e ${lagMin} giorni prima (la finestra in cui la pioggia "diventa" funghi), evento massimo ${n0(r.maxEvent)} mm${r.triggered ? ': innesco sì' : ` (sotto gli ${PARAMS.triggerMm} mm dell'innesco: vale meno)`}; ${n0(r.r30)} mm nei 30 giorni.` },
-    { k: 'Temperatura', v: r.temp, tags: sp.id === 'edulis' ? ['lett', 'eur'] : ['eur'], why: `media dei 20 giorni prima ${n1(r.t20)} °C; centro della curva ${n1(sp.topt, 0)} °C, ampiezza euristica ${n1(sp.tsd)} °C. Non è un intervallo di confidenza.` },
-    { k: 'Umidità del suolo', v: r.moist, tags: ['dato', 'eur'], why: r.sm == null ? 'dato non disponibile: indice non calcolabile.' : `${n1(r.sm, 2)} m³/m³ a 3–9 cm negli ultimi 3 giorni (soglie euristiche ${n1(PARAMS.moistDry, 2)}–${n1(PARAMS.moistWet, 2)}). È un dato di modello, non una misura del terreno.` },
-    { k: 'Gelo', v: r.frost, tags: ['eur'], why: r.frost < 1 ? `minima di ${n1(r.minT)} °C negli ultimi 5 giorni: sotto ${PARAMS.frostC} °C i carpofori si fermano.` : `minima ${n1(r.minT)} °C negli ultimi 5 giorni: nessuna gelata.` },
-    { k: 'Caldo', v: r.heat, tags: ['eur'], why: r.heat < 1 ? `massima di ${n1(r.maxT)} °C negli ultimi 3 giorni: sopra ${PARAMS.heatC} °C lettiera e funghi seccano.` : `massima ${n1(r.maxT)} °C negli ultimi 3 giorni: niente caldo eccessivo.` },
-    { k: 'Shock termico', v: r.shock, tags: ['eur'], bonus: true, why: r.shock > 1 ? `calo di ${n1(r.drop)} °C nella media tra 4 e 14 giorni fa: bonus ipotizzato, senza validazione locale.` : `nessun calo di almeno ${PARAMS.shockDropC} °C tra 4 e 14 giorni fa: nessun bonus.` },
+    { k: 'Stagione', v: r.season, inputs: ['data'], brief: `${month} · periodo indicativo della specie`, tags: ['eur'], why: `${/^[ao]/.test(month) ? 'ad' : 'a'} ${month} ${r.season >= 0.8 ? 'è nel suo periodo' : r.season >= 0.3 ? 'è ai margini del periodo' : 'è fuori stagione'} (curva mensile della specie).` },
+    { k: 'Bosco alla quota', v: r.habitat, inputs: ['campioni di habitat'], brief: `${pct(r.suitableShare)} di idoneità ponderata · ${r.habitatSamples} campioni`, tags: ['dato', 'eur'], why: `a ${band} m l'idoneità ponderata dell'area campionata è ${pct(r.suitableShare)}, inclusi i punti fuori bosco (${r.habitatSamples} campioni, ±${PARAMS.bandHalfWidth} m). Il massimo a 45% è una scelta euristica.` },
+    { k: 'Quota', v: r.elev, inputs: [], brief: `${band} m · intervallo del modello ${lo}–${hi} m`, tags: ['eur'], why: band >= lo && band <= hi ? `${band} m è dentro l'intervallo della specie (${lo}–${hi} m).` : `${band} m è fuori dall'intervallo ${lo}–${hi} m: il fattore cala di 1/200 per metro.` },
+    { k: 'Pioggia', v: r.rain, inputs: ['pioggia', 'meteo aggiornato'], brief: `${n0(r.effRain)} mm tra ${lagMax} e ${lagMin} giorni prima`, tags: ['lett', 'eur'], why: `${n0(r.effRain)} mm tra ${lagMax} e ${lagMin} giorni prima (finestra di latenza del modello), evento massimo ${n0(r.maxEvent)} mm${r.triggered ? ': innesco sì' : ` (sotto gli ${PARAMS.triggerMm} mm dell'innesco: vale meno)`}; ${n0(r.r30)} mm nei 30 giorni.` },
+    { k: 'Temperatura', v: r.temp, inputs: ['temperatura media', 'meteo aggiornato'], brief: `Media di ${n1(r.t20)} °C nei 20 giorni precedenti`, tags: sp.id === 'edulis' ? ['lett', 'eur'] : ['eur'], why: `media dei 20 giorni prima ${n1(r.t20)} °C; centro della curva ${n1(sp.topt, 0)} °C, ampiezza euristica ${n1(sp.tsd)} °C. Non è un intervallo di confidenza.` },
+    { k: 'Umidità del suolo', v: r.moist, inputs: ['umidità del suolo', 'meteo aggiornato'], brief: `${n1(r.sm, 2)} m³/m³ stimati a 3–9 cm`, tags: ['dato', 'eur'], why: r.sm == null ? 'dato non disponibile: indice non calcolabile.' : `${n1(r.sm, 2)} m³/m³ a 3–9 cm negli ultimi 3 giorni (soglie euristiche ${n1(PARAMS.moistDry, 2)}–${n1(PARAMS.moistWet, 2)}). È un dato di modello, non una misura del terreno.` },
+    { k: 'Gelo', v: r.frost, inputs: ['temperature minime', 'meteo aggiornato'], brief: `Minima di ${n1(r.minT)} °C negli ultimi 5 giorni`, tags: ['eur'], why: r.frost < 1 ? `minima di ${n1(r.minT)} °C negli ultimi 5 giorni: il modello penalizza il gelo sotto ${PARAMS.frostC} °C.` : `minima ${n1(r.minT)} °C negli ultimi 5 giorni: nessuna penalità per gelo nel modello.` },
+    { k: 'Caldo', v: r.heat, inputs: ['temperature massime', 'meteo aggiornato'], brief: `Massima di ${n1(r.maxT)} °C negli ultimi 3 giorni`, tags: ['eur'], why: r.heat < 1 ? `massima di ${n1(r.maxT)} °C negli ultimi 3 giorni: il modello penalizza il caldo sopra ${PARAMS.heatC} °C.` : `massima ${n1(r.maxT)} °C negli ultimi 3 giorni: nessuna penalità per caldo nel modello.` },
+    { k: 'Shock termico', v: r.shock, inputs: ['temperatura media', 'meteo aggiornato'], brief: r.shock > 1 ? `Calo di ${n1(r.drop)} °C · bonus non validato` : 'Nessun bonus nel modello', tags: ['eur'], bonus: true, why: r.shock > 1 ? `calo di ${n1(r.drop)} °C nella media tra 4 e 14 giorni fa: bonus ipotizzato, senza validazione locale.` : `nessun calo di almeno ${PARAMS.shockDropC} °C tra 4 e 14 giorni fa: nessun bonus.` },
   ];
 }
 
-const level = (v) => (v >= 0.8 ? 'hi' : v >= 0.5 ? 'mid' : 'lo');
+function factorState(x) {
+  if (!Number.isFinite(x.v)) return { label: 'Non disponibile', kind: 'unknown' };
+  if (x.bonus) return { label: x.v > 1 ? 'Bonus ipotizzato' : 'Nessun bonus', kind: 'neutral' };
+  if (x.v >= 1) return { label: 'Non penalizza', kind: 'good' };
+  if (x.v === 0) return { label: 'Azzera il calcolo', kind: 'low' };
+  return x.v >= .8 ? { label: 'Riduce poco', kind: 'mild' } : x.v >= .5 ? { label: 'Riduce', kind: 'moderate' } : { label: 'Riduce molto', kind: 'low' };
+}
 
 // grafici piccoli, SVG in linea: niente librerie, leggibili su telefono
 function rainChart(s, i, sp) {
   const from = Math.max(0, i - 35), N = i - from + 1, W = 320, H = 96, bw = W / N;
   const vals = s.p.slice(from, i + 1);
+  if (!vals.some(v => Number.isFinite(v) && v >= 0)) return '<p class="sci-note">Pioggia giornaliera: dati non disponibili per il grafico.</p>';
+  const total30 = r30sum(s, i);
   const max = Math.max(PARAMS.triggerMm * 1.6, ...vals.filter(Number.isFinite));
   const Y = (v) => H - 14 - (v / max) * (H - 24);
   const [lagMin, lagMax] = sp.lag;
   const a = Math.max(from, i - lagMax) - from, b = Math.max(from, i - lagMin) - from;
-  const bars = vals.map((v, k) => `<rect x="${(k * bw + 0.6).toFixed(1)}" y="${Y(v).toFixed(1)}" width="${(bw - 1.2).toFixed(1)}" height="${(H - 14 - Y(v)).toFixed(1)}" class="${k + from > s.todayIndex ? 'fc' : k >= a && k <= b ? 'in' : ''}"/>`).join('');
+  const bars = vals.map((v, k) => Number.isFinite(v) && v >= 0 ? `<rect x="${(k * bw + 0.6).toFixed(1)}" y="${Y(v).toFixed(1)}" width="${(bw - 1.2).toFixed(1)}" height="${(H - 14 - Y(v)).toFixed(1)}" class="${k + from > s.todayIndex ? 'fc' : k >= a && k <= b ? 'in' : ''}"/>` : '').join('');
   return `<figure class="sci-chart"><figcaption><b>Pioggia giornaliera</b> · la fascia è la finestra di latenza (${lagMax}–${lagMin} giorni prima)</figcaption>
-    <svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Pioggia degli ultimi ${N} giorni: ${n0(r30sum(s, i))} mm negli ultimi 30">
+    <svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Pioggia degli ultimi ${N} giorni: ${total30 == null ? 'totale degli ultimi 30 non disponibile' : `${n0(total30)} mm negli ultimi 30`}">
       <rect x="${(a * bw).toFixed(1)}" y="0" width="${((b - a + 1) * bw).toFixed(1)}" height="${H - 14}" class="win"/>
       <line x1="0" x2="${W}" y1="${Y(PARAMS.triggerMm).toFixed(1)}" y2="${Y(PARAMS.triggerMm).toFixed(1)}" class="thr"/>
       <text x="${W - 2}" y="${(Y(PARAMS.triggerMm) - 3).toFixed(1)}" text-anchor="end" class="lbl">${PARAMS.triggerMm} mm innesco</text>
@@ -49,7 +57,7 @@ function rainChart(s, i, sp) {
       <text x="0" y="${H - 2}" class="lbl">${N - 1} giorni prima</text><text x="${W}" y="${H - 2}" text-anchor="end" class="lbl">giorno scelto</text>
     </svg></figure>`;
 }
-const r30sum = (s, i) => { let t = 0; for (let k = Math.max(0, i - 30); k < i; k++) t += s.p[k] ?? 0; return t; };
+const r30sum = (s, i) => { let t = 0; if (i < 30) return null; for (let k = i - 30; k < i; k++) { if (!Number.isFinite(s.p[k]) || s.p[k] < 0) return null; t += s.p[k]; } return t; };
 
 function lineChart({ vals, lo, hi, band, unit, title, note, bandLabel, digits = 1 }) {
   const W = 320, H = 92, N = vals.length;
@@ -87,28 +95,41 @@ function speciesProfile(sp) {
 
 // la sezione "Perche' questo indice", completa
 export function renderWhy({ r, s, i, sp, band, dateStr, shown, agg, parts = [], prefs = [], outing }) {
-  const rows = factorRows(r, sp, band, dateStr);
-  const product = Math.min(1, rows.reduce((a, x) => a * x.v, 1));
-  const weakest = rows.filter((x) => !x.bonus).reduce((a, x) => (x.v < a.v ? x : a));
-  const raw = Math.round(product * 100);
+  const missing = new Set(r.quality?.missing || []);
+  const rows = factorRows(r, sp, band, dateStr).map(x => x.inputs.some(k => missing.has(k)) ? { ...x, v: null, brief: 'Dati mancanti o non aggiornati per il calcolo', why: 'Dati mancanti o non aggiornati per le finestre richieste: il fattore non è utilizzabile.' } : x);
+  const complete = r.quality?.complete !== false && rows.every(x => Number.isFinite(x.v));
+  const product = complete ? Math.min(1, rows.reduce((a, x) => a * x.v, 1)) : null;
+  const limiting = rows.filter(x => !x.bonus && Number.isFinite(x.v) && x.v < 1).sort((a, b) => a.v - b.v);
+  const weakest = limiting[0];
+  const tied = weakest ? limiting.filter(x => Math.abs(x.v - weakest.v) < 1e-9) : [];
+  const main = [...tied, ...rows.slice(0, 6).filter(x => !tied.includes(x))].slice(0, 6);
+  const other = rows.filter(x => !main.includes(x));
+  const raw = complete ? Math.round(product * 100) : null;
+  const takeaway = !complete ? 'Mancano dati per un indice completo.' : tied.length ? `Nel modello ${tied.map(x => x.k.toLowerCase()).join(' e ')} ${tied.length > 1 ? 'sono i fattori che riducono' : 'è il fattore che riduce'} di più l’indice.` : 'Nessun fattore riduce l’indice nel modello.';
   const fc = `<p class="sci-note"><b>Dati ${r.quality?.complete ? 'completi per le finestre richieste' : 'incompleti'}.</b> ${r.quality?.usesForecast ? 'Il calcolo include previsioni meteorologiche, anche del giorno di acquisizione.' : 'Il calcolo usa meteo passato di modello, non misure nella fungaia.'} L'accuratezza dei ritrovamenti non è stata misurata nel Reatino. ${r.quality?.fetchedAt ? `Acquisizione: ${esc(new Date(r.quality.fetchedAt).toLocaleString('it-IT', { timeZone: 'Europe/Rome' }))}.` : ''}</p>`;
   return `
-    <p class="sci-lede">L'indice sperimentale va da <b>0 a 10</b>, con un decimale, e deriva dal prodotto di nove fattori (lo shock può superare 1). Il numero descrive condizioni ambientali, senza misurare la probabilità di ritrovamento. Oggi pesa di più <b>${esc(weakest.k.toLowerCase())}</b> (${n1(weakest.v, 2)}).</p>
+    <p class="sci-lede">${Number.isFinite(shown) && complete ? `Indice sperimentale <b>${formatIndex(shown)}/10</b>` : '<b>Indice non disponibile</b>'} per ${esc(sp.name.toLowerCase())} a ${band} m. Descrive condizioni ambientali stimate, non la probabilità di trovare funghi.</p>
+    <p class="sci-takeaway">${esc(takeaway)}</p>
+    <p class="sci-sub">Come incidono le condizioni nel modello</p>
+    <ul class="sci-signals" aria-label="Come incidono i fattori nel modello">${main.map(x => { const state = factorState(x); return `<li class="sci-signal ${tied.includes(x) && complete ? 'weak' : ''}"><div class="sci-signal-head"><b>${esc(x.k)}</b><span class="sci-state state-${state.kind}">${state.label}</span></div><p>${esc(x.brief)}</p></li>`; }).join('')}</ul>
+    <ul class="sci-checks" aria-label="Altri fattori del modello">${other.map(x => { const state = factorState(x); return `<li><b>${esc(x.k)}</b><span class="sci-state state-${state.kind}">${state.label}</span><small>${esc(x.brief)}</small></li>`; }).join('')}</ul>
+    <details class="sci-technical"><summary>Calcolo e fonti dei 9 fattori</summary><div class="sci-technical-body">
+    <p class="sci-note">I fattori si moltiplicano: ×1 non riduce l’indice, un valore inferiore lo abbassa. Lo shock termico può aggiungere un bonus ipotizzato. Le etichette riassumono l’effetto nel modello, senza misurare l’affidabilità dei dati.</p>
     <ol class="sci-factors">${rows.map((x) => `
-      <li class="${x === weakest ? 'weak' : ''}">
-        <div class="sf-top"><span class="sf-k">${esc(x.k)}</span><span class="sf-bar lv-${x.bonus ? (x.v > 1 ? 'hi' : 'na') : level(x.v)}"><i style="width:${Math.min(100, x.v * 100)}%"></i></span><b class="sf-v">×${n1(x.v, 2)}</b></div>
+      <li>
+        <div class="sf-top"><span class="sf-k">${esc(x.k)}</span><b class="sf-v" title="Moltiplicatore del fattore">${Number.isFinite(x.v) ? `×${n1(x.v, 2)}` : 'Non disponibile'}</b></div>
         <p class="sf-why">${esc(x.why)} ${x.tags.map(tag).join(' ')}</p>
       </li>`).join('')}
     </ol>
-    <p class="sci-eq"><span>10 × ${rows.map((x) => n1(x.v, 2)).join(' × ')}</span> = <b>${formatIndex(raw)}</b></p>
+    <p class="sci-eq"><span>min(10; 10 × ${rows.map((x) => n1(x.v, 2)).join(' × ')})</span> ≈ <b>${formatIndex(raw)}</b></p>
+    <p class="sci-note">I coefficienti mostrati sono arrotondati; il risultato usa i valori completi ed è limitato a 10.</p>
     ${parts.length > 1 ? `<p class="sci-note">L'indice della zona è il <b>massimo</b> delle specie selezionate. Le altre: ${parts.slice(1).map((x) => `${esc(x.name.toLowerCase())} ${formatIndex(x.score)}`).join(', ')}. Aggiungere specie non aumenta automaticamente il numero. Specie diverse possono avere la quota migliore in luoghi diversi.</p>` : ''}
     ${prefs.length ? `<p class="sci-note">Le preferenze (${prefs.map((p) => `${esc(p.label)} ×${n1(p.mult, 2)}`).join(', ')}) modificano solo l'ordine dei consigli. L'indice delle condizioni resta <b>${formatIndex(shown)}</b>.</p>` : ''}
-    ${outing ? `<p class="sci-note"><b>Il meteo dell'uscita non cambia l'indice</b>: cambia solo l'ordine delle zone (×${n1(outing, 2)} in classifica), perché i funghi nascono lo stesso anche se quel giorno piove.</p>` : ''}
-    ${fc}
+    ${outing ? `<p class="sci-note"><b>Il meteo dell'uscita non cambia l'indice</b>: cambia solo l'ordine delle zone (×${n1(outing, 2)} in classifica). Le condizioni della mattina sono valutate separatamente dalle condizioni di crescita.</p>` : ''}
+    ${fc}${speciesProfile(sp)}</div></details>
     ${rainChart(s, i, sp)}
     ${lineChart({ vals: s.tmean.slice(Math.max(0, i - 35), i + 1), band: [sp.topt - sp.tsd, sp.topt + sp.tsd], bandLabel: 'ampiezza della curva euristica', unit: '°C', title: 'Temperatura media', note: 'conta la media dei 20 giorni prima' })}
     ${lineChart({ vals: s.soilm.slice(Math.max(0, i - 35), i + 1), lo: PARAMS.moistDry, hi: PARAMS.moistWet, unit: 'm³/m³', digits: 2, title: 'Umidità del suolo (3–9 cm)', note: 'sotto la linea bassa è secco, sopra l\'alta pienamente umido' })}
-    ${speciesProfile(sp)}
     <p class="sci-more"><a href="#/metodo">Il metodo completo: formule, fonti e limiti ›</a></p>`;
 }
 
