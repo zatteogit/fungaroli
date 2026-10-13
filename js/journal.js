@@ -7,6 +7,8 @@ import { intornoA } from './human.js';
 import { formatIndex } from './model.js';
 import { todayISO } from './weather.js';
 import { communityReady, communityEnabled, currentUser, communityRequest, shareDiaryEntry } from './community.js';
+import {PHENO_PHASES,normalizeNotebookNote} from './notebook-entry.js';
+import {mountSearchSelect} from './search-select.js';
 
 const KEY = 'fungaroli:diario:v1';
 export const LEVELS = ['', 'Pochi', 'Discreti', 'Tanti'];
@@ -19,7 +21,7 @@ export const FOUND_THRESHOLD = 30; // soglia esplorativa 3,0/10, non calibrata
 export function speciesAgreement(entry) {
   const captured = Date.parse(entry.forecast?.capturedAt);
   const started = Date.parse(entry.effort?.startedAt);
-  if (entry.kind === 'plan' || entry.forecast?.mode !== 'prospective' || !Number.isFinite(captured)
+  if (['plan','note'].includes(entry.kind) || entry.forecast?.mode !== 'prospective' || !Number.isFinite(captured)
       || !Number.isFinite(started) || captured >= started || !Array.isArray(entry.searched)) return [];
   return [...new Set(entry.searched)].flatMap((id) => {
     const predicted = entry.predicted?.[id], observed = entry.finds?.[id];
@@ -38,7 +40,7 @@ export function agreement(entry) {
 }
 
 export function summary(entries) {
-  const outings = entries.filter((e) => e.kind !== 'plan');
+  const outings = entries.filter((e) => !['plan','note'].includes(e.kind));
   const judged = outings.flatMap(speciesAgreement);
   return {
     total: outings.length,
@@ -164,7 +166,49 @@ export function initJournal({ zones, speciesCatalog = SPECIES, predict, captureF
   let store = null;
   let draft, step;
   let listMessage = '';
-  const sortEntries = () => entries.sort((a, b) => b.date.localeCompare(a.date) || b.savedAt.localeCompare(a.savedAt));
+  let listFilter='',listQuery='',noteControls=[];
+  const sortEntries = () => entries.sort((a, b) => String(b.date||'').localeCompare(String(a.date||'')) || String(b.savedAt||'').localeCompare(String(a.savedAt||'')));
+  const noteDialog=document.createElement('dialog');noteDialog.className='wiz notebook-dialog';noteDialog.setAttribute('aria-label','Appunto privato');document.body.append(noteDialog);
+  const savedNotice=document.createElement('div');savedNotice.className='app-toast';savedNotice.setAttribute('role','status');document.body.append(savedNotice);let noticeTimer;
+  document.addEventListener('fungaroli:note-saved',()=>{clearTimeout(noticeTimer);(noteOrigin?.closest('dialog[open]')||document.body).append(savedNotice);savedNotice.innerHTML='Salvato nel taccuino <a href="#/diario" class="link-btn">Apri →</a>';savedNotice.classList.add('on');noticeTimer=setTimeout(()=>savedNotice.classList.remove('on'),5000);});
+  let noteOrigin=null;
+  noteDialog.addEventListener('close',()=>{noteControls.forEach(c=>c.destroy());noteControls=[];noteOrigin?.isConnected&&noteOrigin.focus({preventScroll:true});});
+  addEventListener('hashchange',()=>{if(noteDialog.open)noteDialog.close();});
+
+  async function openNote(context={},existing=null){
+    await storageReady;
+    if(!store){renderList('Il taccuino sta ancora caricando.');return;}
+    const owner=store;
+    noteOrigin=document.activeElement;
+    const reference=existing?.reference||context.reference||null;
+    const botanical=existing?.category==='botanica'||context.category==='botanica';
+    const observation=existing?.observation;
+    let zoneId=existing?.zoneId||context.zoneId||'';
+    noteControls.forEach(c=>c.destroy());noteControls=[];
+    noteDialog.innerHTML=`<header class="report-header"><div><p class="eyebrow">Nel tuo taccuino · privato</p><h2>${existing?'Modifica appunto':reference?'Annota e conserva':'Nuovo appunto'}</h2></div><button class="profile-close" type="button" data-note-close aria-label="Chiudi">×</button></header><form class="notebook-form"><label>Titolo<input class="wiz-input" name="title" maxlength="120" required value="${esc(existing?.title||reference?.title||'')}"></label><label>Giorno<input class="wiz-input" type="date" name="date" required value="${esc(existing?.date||iso(new Date()))}" ${botanical?`max="${iso(new Date())}"`:''}></label>${reference?`<p class="notebook-reference">${esc(reference.title)} <span class="muted small">· riferimento conservato</span></p>`:''}<label>Appunto<textarea class="wiz-input notebook-paper" name="note" rows="5" maxlength="2000" placeholder="Quello che vuoi ricordare, un’idea per il prossimo giro…" ${reference?'':'required'}>${esc(existing?.note||'')}</textarea></label><details class="notebook-context" ><summary>${botanical?'Fasi della pianta e luogo':'Aggiungi un luogo'}</summary><div class="search-select"><label>Zona (facoltativa)<input class="wiz-input" data-note-zone autocomplete="off" placeholder="Cerca una zona…"></label><ul class="search-select-list" id="notebook-zone-options" hidden></ul></div><button type="button" class="link-btn small" data-clear-note-zone>Togli la zona</button>${botanical?`<p class="small muted">Il nome è un’identificazione proposta, non verificata. Indica solo ciò che hai osservato; più fasi possono essere presenti insieme.</p><div class="phenology-fields">${PHENO_PHASES.map(([code,label])=>`<label>${label}<select class="wiz-input" data-phase="${code}">${[['unsure','Non osservato / non so'],['present','Presente'],['absent','Cercato, non osservato']].map(([v,l])=>`<option value="${v}" ${observation?.phases?.find(p=>p.code===code)?.status===v?'selected':''}>${l}</option>`).join('')}</select></label>`).join('')}</div><label>Frutti maturi ancora presenti<select class="wiz-input" name="availability">${[['unknown','Non osservato / non so'],['none','Nessuno, dopo aver cercato'],['few','Pochi'],['many','Molti']].map(([v,l])=>`<option value="${v}" ${observation?.availability===v?'selected':''}>${l}</option>`).join('')}</select></label><label>Minuti di osservazione (facoltativi)<input type="number" class="wiz-input" min="1" max="1440" name="minutes" value="${observation?.minutes||''}"></label><label>Pianta o gruppo da ritrovare (facoltativo)<input class="wiz-input" name="patchLabel" maxlength="120" value="${esc(observation?.patchLabel||'')}" placeholder="Un nome tuo, per riconoscerlo al prossimo giro"></label>`:''}</details><p class="small muted">Appunto privato. Non viene pubblicato né usato per tarare i modelli.</p><p data-note-status role="status"></p><div class="notebook-actions"><button type="submit" class="btn primary">${existing?'Salva modifiche':'Salva nel taccuino'}</button><button type="button" class="btn ghost" data-note-close>Annulla</button></div></form>`;
+    const input=noteDialog.querySelector('[data-note-zone]'),options=zones.map(z=>({value:z.id,label:z.title||z.name,detail:z.subtitle||''}));
+    noteControls.push(mountSearchSelect({input,list:noteDialog.querySelector('#notebook-zone-options'),options,selectedId:zoneId,onChange:v=>{zoneId=v;},bounds:()=>{const r=noteDialog.getBoundingClientRect();return {top:r.top+16,bottom:r.bottom-16};}}));
+    input.setCustomValidity('');input.addEventListener('input',()=>{if(!input.value.trim())input.setCustomValidity('');});
+    noteDialog.querySelector('[data-clear-note-zone]').onclick=()=>{input.value='';input.dispatchEvent(new Event('input'));input.blur();input.setCustomValidity('');zoneId='';};
+    noteDialog.querySelectorAll('[data-note-close]').forEach(b=>b.onclick=()=>noteDialog.close());
+    noteDialog.querySelector('form').onsubmit=async ev=>{
+      ev.preventDefault();const form=ev.currentTarget,button=form.querySelector('[type="submit"]'),status=form.querySelector('[data-note-status]');button.disabled=true;
+      try{
+        if(owner!==store)throw new Error('Profilo cambiato: riapri il taccuino.');
+        const entry=normalizeNotebookNote({id:existing?.id||Date.now().toString(36)+crypto.randomUUID().replace(/-/g,'').slice(0,6),kind:'note',title:form.elements.title.value,date:form.elements.date.value,note:form.elements.note.value,category:existing?.category||context.category||'appunto',zoneId,reference,savedAt:existing?.savedAt||new Date().toISOString(),observation:botanical&&([...form.querySelectorAll('[data-phase]')].some(s=>s.value!=='unsure')||form.elements.availability.value!=='unknown'||form.elements.minutes.value||form.elements.patchLabel.value.trim())?{taxonId:reference.href.split('/').at(-1),phases:[...form.querySelectorAll('[data-phase]')].map(s=>({code:s.dataset.phase,status:s.value})),availability:form.elements.availability.value,minutes:form.elements.minutes.value?Number(form.elements.minutes.value):null,patchLabel:form.elements.patchLabel.value}:null});
+        await owner.put(entry);if(owner!==store)return;
+        entries=[entry,...entries.filter(e=>e.id!==entry.id)];sortEntries();renderList('Appunto salvato nel taccuino privato.');noteDialog.close();
+        document.dispatchEvent(new CustomEvent('fungaroli:note-saved',{detail:{title:entry.title}}));
+      }catch(e){status.textContent=`Salvataggio non completato: ${e.message}`;}finally{button.disabled=false;}
+    };
+    noteDialog.showModal();noteDialog.querySelector('[name="title"]').focus({preventScroll:true});
+  }
+  document.addEventListener('click',e=>{
+    const b=e.target.closest('[data-new-note],[data-note-kind]');if(!b)return;
+    const kind=b.dataset.noteKind,id=b.dataset.noteId;
+    const category={pianta:'botanica',albero:'albero',specie:'fungo',fungo:'fungo',commestibile:'fungo',zona:'percorso',guide:'lettura'}[kind]||'appunto';
+    openNote({category,zoneId:b.dataset.noteZone,reference:kind?{href:b.dataset.noteHref||`#/${kind}/${id}`,title:b.dataset.noteTitle}:null});
+  });
 
   const STEPS = ['dove', 'quando', 'quota', 'ricerca', 'cosa', 'nota'];
 
@@ -339,13 +383,17 @@ export function initJournal({ zones, speciesCatalog = SPECIES, predict, captureF
     msg = listMessage;
     if (!store) { list.innerHTML = '<p class="muted">Carico il taccuino…</p>'; return; }
     const sm = summary(entries);
+    const nnotes=entries.filter(e=>e.kind==='note').length;
     const head = entries.length
-      ? `<p class="j-sum">${sm.total} ${sm.total === 1 ? 'uscita' : 'uscite'}${sm.judged ? ` · concordanze esplorative per specie: <b>${sm.ok} su ${sm.judged}</b>` : ''}
-         ${sm.falseAlarm ? ` · ${sm.falseAlarm} falsi allarmi` : ''}${sm.missed ? ` · ${sm.missed} ritrovamenti con indice basso` : ''}</p><p class="small muted">Confronto a soglia 3,0 su 10, non calibrata. Le osservazioni non sono indipendenti: questi conteggi non misurano l'accuratezza scientifica.</p>`
+      ? `<p class="j-sum">${nnotes} ${nnotes===1?'appunto':'appunti'} · ${sm.total} ${sm.total === 1 ? 'uscita' : 'uscite'}${sm.judged ? ` · concordanze esplorative per specie: <b>${sm.ok} su ${sm.judged}</b>` : ''}
+         ${sm.falseAlarm ? ` · ${sm.falseAlarm} falsi allarmi` : ''}${sm.missed ? ` · ${sm.missed} ritrovamenti con indice basso` : ''}</p>${sm.judged?'<p class="small muted">Confronto a soglia 3,0 su 10, non calibrata. Le osservazioni non sono indipendenti: questi conteggi non misurano l’accuratezza scientifica.</p>':''}<div class="notebook-filters"><label class="sr-only" for="notebook-query">Cerca nel taccuino</label><input id="notebook-query" type="search" class="wiz-input" placeholder="Cerca fra i tuoi appunti…" value="${esc(listQuery)}"><div class="recognize-modes">${[['','Tutto'],['note','Appunti'],['percorso','Giri salvati'],['outing','Uscite']].map(([id,label])=>`<button type="button" class="btn ghost small" data-notebook-filter="${id}" aria-pressed="${listFilter===id}">${label}</button>`).join('')}</div></div>`
       : `<div class="j-empty">${zoneImage('laga') ? `<img data-src="${zoneImage('laga')}" alt="" loading="lazy" decoding="async">` : ''}<span class="shade"></span>
-          <div class="j-empty-body"><b>Il primo giro è il più utile</b><span>Dopo ogni uscita segna cosa hai trovato, anche niente: in pochi tocchi capisci se il modello funziona nei tuoi boschi.</span>
-          <button type="button" class="btn light big" data-open-journal-inline>＋ Registra un'uscita</button></div></div>`;
-    const rows = entries.map((e) => {
+          <div class="j-empty-body"><b>Una pagina per ogni cosa da ricordare</b><span>Appunti, piante osservate, giri da fare e uscite: tutto nel tuo taccuino privato.</span>
+          <button type="button" class="btn light big" data-new-note>＋ Scrivi il primo appunto</button></div></div>`;
+    const matchesType=e=>!listFilter|| (listFilter==='percorso'?e.kind==='note'&&e.category==='percorso':listFilter==='outing'?!['plan','note'].includes(e.kind):e.kind==='note');
+    const visible=entries.filter(e=>matchesType(e)&&JSON.stringify([e.title,e.note,e.reference?.title,zones.find(z=>z.id===e.zoneId)?.name]).toLowerCase().includes(listQuery.toLowerCase().trim()));
+    const rows = visible.map((e) => {
+      if(e.kind==='note')return `<li class="j-item notebook-entry"><div class="notebook-mark" aria-hidden="true">${e.category==='percorso'?'↗':'✎'}</div><div class="j-body"><div class="j-top"><b>${esc(e.title)}</b><span class="muted small">${fmt(e.date)}</span></div>${e.reference?`<a href="${esc(e.reference.href)}" data-entity>${esc(e.reference.title)} →</a>`:''}${e.zoneId?`<p class="small muted">${esc(zones.find(z=>z.id===e.zoneId)?.name||e.zoneId)}</p>`:''}${e.note?`<p class="notebook-text">${esc(e.note)}</p>`:''}${e.observation?`<p class="small muted">Identificazione proposta · non verificata</p><ul class="notebook-phases">${e.observation.phases.filter(p=>p.status!=='unsure').map(p=>`<li>${esc(PHENO_PHASES.find(([code])=>code===p.code)?.[1]||p.code)}: ${p.status==='present'?'presente':'cercato, non osservato'}</li>`).join('')}</ul>${e.observation.availability!=='unknown'?`<p class="small">Frutti maturi rimasti: ${{none:'nessuno osservato',few:'pochi',many:'molti'}[e.observation.availability]||'non indicato'}</p>`:''}`:''}<div class="notebook-actions"><button type="button" class="link-btn small" data-edit-note="${esc(e.id)}">Modifica</button><button type="button" class="link-btn small" data-del="${esc(e.id)}">Elimina</button></div></div></li>`;
       const z = zones.find((x) => x.id === e.zoneId);
       const found = Object.entries(e.finds || {}).filter(([, l]) => l > 0).map(([id, l]) => `${speciesCatalog.find((x) => x.id === id)?.name ?? id} (${LEVELS[l]?.toLowerCase() || l})`).join(', ') || 'nessun ritrovamento annotato';
       const a = agreement(e);
@@ -367,8 +415,11 @@ export function initJournal({ zones, speciesCatalog = SPECIES, predict, captureF
       </li>`;
     }).join('');
     list.innerHTML = (msg ? `<p class="notice">${esc(msg)}</p>` : '') + head + (rows ? `<ul class="j-list">${rows}</ul>` : '');
+    list.querySelectorAll('[data-edit-note]').forEach(b=>b.onclick=()=>openNote({},entries.find(e=>e.id===b.dataset.editNote)));
+    list.querySelectorAll('[data-notebook-filter]').forEach(b=>b.onclick=()=>{listFilter=b.dataset.notebookFilter;renderList();});
+    list.querySelector('#notebook-query')?.addEventListener('input',ev=>{const pos=ev.target.selectionStart;listQuery=ev.target.value;renderList();const input=list.querySelector('#notebook-query');input.focus({preventScroll:true});if(pos!=null)try{input.setSelectionRange(pos,pos);}catch{/* search inputs may not expose selection */}});
     list.querySelector('[data-open-journal-inline]')?.addEventListener('click', open);
-    document.querySelector('[data-open-journal]').hidden = !entries.length;
+    document.querySelector('[data-open-journal]').hidden = false;
     list.querySelectorAll('[data-share-entry]').forEach((b) => b.addEventListener('click', async () => {
       b.disabled = true;
       try { await shareDiaryEntry(entries.find((e) => e.id === b.dataset.shareEntry)); renderList('Osservazioni condivise: zona, giorno, specie e quantità. Le note restano private.'); }
@@ -411,14 +462,14 @@ export function initJournal({ zones, speciesCatalog = SPECIES, predict, captureF
   async function importFile(file) {
     try {
       const data = JSON.parse(await file.text());
-      const incoming = (Array.isArray(data) ? data : data.entries).filter((e) => e && e.id && e.date && e.zoneId);
+      const incoming = (Array.isArray(data) ? data : data.entries).filter((e) => e && e.id && e.date && (e.zoneId||e.kind==='note')).map(e=>e.kind==='note'?normalizeNotebookNote(e):e);
       await storageReady;
       const ids = new Set(entries.map((e) => e.id));
       const fresh = incoming.filter((e) => !ids.has(e.id));
       for (const e of fresh) await store.put(e);
       entries = [...entries, ...fresh];
       sortEntries();
-      renderList(`Importate ${fresh.length} uscite.`);
+      renderList(`Importate ${fresh.length} voci.`);
     } catch {
       renderList('File non valido: serve un taccuino esportato da questa app.');
     }
@@ -446,7 +497,7 @@ export function initJournal({ zones, speciesCatalog = SPECIES, predict, captureF
       entries = await rs.list();
       sortEntries();
       renderStorage();
-      renderList(`Taccuino collegato: ${entries.length} uscite sincronizzate.`);
+      renderList(`Taccuino collegato: ${entries.length} voci sincronizzate.`);
       return true;
     } catch (e) {
       if (msg) msg.textContent = e.status === 401 ? 'Codice non valido: controlla di averlo copiato tutto.' : 'Collegamento non riuscito, riprova tra poco.';
@@ -566,6 +617,7 @@ export function initJournal({ zones, speciesCatalog = SPECIES, predict, captureF
     const next = currentUser()?.id || null;
     if (next === profileId) { if (store?.kind === 'community') { const loading = store; try { const fresh = await loading.list(); if (loading !== store) return; entries = fresh; sortEntries(); renderList(); } catch { /* nessuna perdita della copia locale */ } } return; }
     profileId = next;
+    if(noteDialog.open)noteDialog.close();
     store = next ? collectiveStore() : localStore();
     entries = []; renderList();
     const loading = store;

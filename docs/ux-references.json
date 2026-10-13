@@ -1,0 +1,11 @@
+{
+  "verified_on": "2026-10-13",
+  "reference": "Komoot: sito pubblico, vista Rieti desktop/mobile e documentazione ufficiale",
+  "principles": [
+    {"pattern":"Distanza, durata, dislivello e difficoltà leggibili prima di approfondire","application":"Riepilogo della passeggiata e schede sentiero con fatti dalla fonte","source":"https://support.komoot.com/hc/en-us/articles/10207999797530-Find-routes-and-inspiration-on-komoot"},
+    {"pattern":"Punti numerati collegati alla geometria e al profilo","application":"Imbocchi con lo stesso numero su profilo, traccia e selettore; profilo come prima vista","source":"https://support.komoot.com/hc/en-us/articles/10206792140826-Plan-routes-in-the-app"},
+    {"pattern":"Approfondimento di un punto senza perdere il giro","application":"Schede botaniche contestuali con navigazione interna, ritorno e apertura come pagina facoltativa","source":"https://support.komoot.com/hc/en-us/articles/10194639751450-Highlights"},
+    {"pattern":"Salvataggi facili da ritrovare","application":"Giri salvati e riferimenti alle schede nel Taccuino, distinti dalle uscite svolte e dalle previsioni prospettiche","source":"https://www.komoot.com/it-it/guide/54259/hiking-in-rieti"}
+  ],
+  "scope": "Ispirazione ai flussi; nessuna importazione di foto, recensioni o percorsi proprietari. Appunti privati e nessuna promessa di navigazione turn-by-turn."
+}

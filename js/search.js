@@ -5,20 +5,20 @@ const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<
 const norm = (s) => String(s ?? '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/['’]/g, ' ');
 
 const KINDS = {
-  zona: 'Zone', fungo: 'Funghi', velenoso: 'Velenosi e sosia', albero: 'Alberi', sentiero: 'Sentieri', termine: 'Glossario', pagina: 'Pagine e regole',
+  pianta:'Piante, erbe e frutti', zona: 'Zone', fungo: 'Funghi', velenoso: 'Velenosi e sosia', albero: 'Alberi', sentiero: 'Sentieri', termine: 'Glossario', pagina: 'Pagine e regole',
 };
 const ORDER = Object.keys(KINDS);
-const SUGGEST = ['Porcino', 'Terminillo', 'Faggio', 'Amanita', 'Ovolo', 'Emergenza', 'Chiodino', 'Castagno'];
+const SUGGEST = ['Terminillo', 'Porcino', 'More', 'Ortica', 'Faggio', 'Emergenza', 'Fragolina', 'Castagno'];
 const RECENT_KEY = 'fungaroli:search-recent';
 
 // la sezione in cui sei decide cosa viene prima (la ricerca resta su tutto)
 const PRIORITY = {
-  glossario: ['termine'],
+  piante:['pianta'],pianta:['pianta'],glossario: ['termine'],
   specie: ['fungo', 'velenoso'], 'specie-dettaglio': ['fungo', 'velenoso'], riconosci: ['velenoso', 'fungo'],
   alberi: ['albero'], albero: ['albero'], uscite: ['zona', 'sentiero'], zona: ['sentiero', 'zona'], mappa: ['zona', 'sentiero'], diario: ['zona', 'fungo'], info: ['pagina'],
 };
 const PLACEHOLDER = {
-  glossario: 'Cerca una parola del glossario…',
+  piante:'Cerca piante, erbe e frutti…',pianta:'Cerca piante, erbe e frutti…',glossario: 'Cerca una parola del glossario…',
   specie: 'Cerca funghi, sosia, alberi, zone…', 'specie-dettaglio': 'Cerca funghi, sosia, alberi, zone…', riconosci: 'Cerca velenosi, sosia, funghi…',
   alberi: 'Cerca alberi, funghi, zone…', albero: 'Cerca alberi, funghi, zone…', mappa: 'Cerca zone, sentieri, funghi…',
 };

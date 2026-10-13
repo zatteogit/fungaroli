@@ -1,4 +1,5 @@
 import './rails.js';
+import {initPlants,plants,plantName,plantThumb,renderPlants,renderPlantPage} from './plants.js';
 import './theme.js';
 import './images.js';
 import { consumeFresh, freshDone } from './refresh.js';
@@ -35,6 +36,7 @@ const AHEAD_DAYS = 7;      // giorni futuri valutati
 const PREFS_KEY = 'fungaroli:prefs:v2'; // v2: si parte con tutti i gruppi
 
 const $ = (s) => document.querySelector(s);
+function addNotebookReference(box,kind,id,title){if(!box||!title)return;const button=box.querySelector('.notebook-context-action')||document.createElement('button');button.type='button';button.className='btn ghost notebook-context-action';button.dataset.noteKind=kind;button.dataset.noteId=id;button.dataset.noteTitle=title;button.textContent='＋ Annota nel taccuino';(box.querySelector('.pbody')||box).append(button);}
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const cssVar = (name) => getComputedStyle(document.documentElement).getPropertyValue(name).trim();
 const scoreVar = (score) => Number.isFinite(score) ? `--s${5 - classOf(score)}` : '--muted';
@@ -192,15 +194,18 @@ async function init() {
   renderSpeciesGrid();
   applyLegal();
   initTrees({ trees: trj, media: mj, assetUrl: embedded ? (f) => embedded.assets?.[f] || '' : (f) => f, zones, habitat, thumb });
+  initPlants(embedded?.plants || await load('plants'),embedded?(f)=>embedded.assets?.[f]||'':(f)=>f);
   initLearning({ glossary: embedded?.glossary || await load('glossary'), trees: trj,media:embedded?.glossaryMedia||await load('media-glossary'),assetUrl:embedded?(f)=>embedded.assets?.[f]||'':(f)=>f });
   initEntitySheets({ enhance: enhanceGlossary, render: (body, href) => {
     const [, kind, encodedId] = href.split('/'), id = decodeURIComponent(encodedId);
-    if (kind === 'albero' && trj.trees?.[id]) { renderTreePage(body, id); return trj.trees[id].name; }
-    if (kind === 'fungo' && taxonName(id)) { renderTaxonPage(body, id); return taxonName(id); }
+    if (kind === 'pianta' && plantName(id)) {renderPlantPage(body,id);return plantName(id);}
+    if (kind === 'albero' && trj.trees?.[id]) { renderTreePage(body, id);addNotebookReference(body,'albero',id,trj.trees[id].name); return trj.trees[id].name; }
+    if (kind === 'fungo' && taxonName(id)) { renderTaxonPage(body, id);addNotebookReference(body,'fungo',id,taxonName(id)); return taxonName(id); }
     const s = catalog.find(x => x.id === id);
     if (!s) return '';
     if (kind === 'specie' && SPECIES.some(x => x.id === id)) renderSpeciesDetail(body, id);
     else renderEdiblePage(id, body);
+    addNotebookReference(body,kind,id,s.name);
     return s.name;
   }});
   renderTreeGrid($('#tree-grid'));
@@ -246,8 +251,10 @@ function parseRoute() {
   if (a === 'specie' || a === 'impara') return { view: 'specie' };
   if (a === 'glossario') return { view: 'glossario', termId: b };
   if (a === 'albero' && b) return { view: 'albero', treeId: b };
+  if (a === 'piante') return {view:'piante'};
+  if (a === 'pianta' && b) return {view:'pianta',plantId:b};
   if (a === 'alberi') return { view: 'alberi' };
-  if (a === 'riconosci') return { view: 'riconosci', recognizeMode: ['alberi','bosco'].includes(b) ? b : 'funghi', compare: b === 'confronta' ? c : '', pick: b === 'confronta' ? parts[3] : '' };
+  if (a === 'riconosci') return { view: 'riconosci', recognizeMode: ['alberi','piante','bosco'].includes(b) ? b : 'funghi', compare: b === 'confronta' ? c : '', pick: b === 'confronta' ? parts[3] : '' };
   if (a === 'guide') return b ? { view: 'guide', guideId: b } : { view: 'guide-list' };
   if (a === 'diario') return { view: 'diario' };
   if (a === 'info') return { view: 'info' };
@@ -258,9 +265,9 @@ function parseRoute() {
 }
 
 // profondita' e posizione delle viste: decidono la direzione della transizione
-const LEVEL = { commestibile: 1, guide: 1, zona: 1, 'specie-dettaglio': 1, albero: 1, info: 1, metodo: 2, fungo: 1 };
+const LEVEL = { pianta:1, commestibile: 1, guide: 1, zona: 1, 'specie-dettaglio': 1, albero: 1, info: 1, metodo: 2, fungo: 1 };
 const TABS = ['uscite', 'mappa', 'specie', 'diario'];
-const SUB = { specie: 0, alberi: 1, riconosci: 2, glossario: 3, 'guide-list': 4 };
+const SUB = { specie: 0, alberi: 1, piante:2, riconosci: 3, glossario: 4, 'guide-list': 5 };
 const scrollMem = new Map();
 let prev = null;
 function navKind(a, b) {
@@ -284,7 +291,7 @@ addEventListener('scroll', onScrollBar, { passive: true });
 
 // tasto indietro in alto a sinistra: freccia + nome della pagina a cui torni
 const navStack = [];
-const TITLES = { uscite: 'Uscite', mappa: 'Mappa', specie: 'Funghi', alberi: 'Alberi', riconosci: 'Riconosci', glossario: 'Glossario', 'guide-list': 'Guide', diario: 'Taccuino', info: 'Regole e metodo', metodo: 'Come funziona' };
+const TITLES = { piante:'Piante, erbe e frutti', uscite: 'Uscite', mappa: 'Mappa', specie: 'Funghi', alberi: 'Alberi', riconosci: 'Riconosci', glossario: 'Glossario', 'guide-list': 'Guide', diario: 'Taccuino', info: 'Regole e metodo', metodo: 'Come funziona' };
 function titleOf(r) {
   if (!r) return '';
   if (r.view === 'zona') { const z = (weatherZones||zones).find((x) => x.id === r.zoneId); return z ? splitName(z)[0] : 'Zona'; }
@@ -293,6 +300,7 @@ function titleOf(r) {
   if (r.view === 'fungo') return taxonName(r.taxonId) || 'Specie';
   if (r.view === 'guide') return guideTitle(r.guideId);
   if (r.view === 'glossario' && r.termId) return glossaryTitle(r.termId);
+  if (r.view === 'pianta') return plantName(r.plantId)||'Pianta';
   if (r.view === 'albero') return treesData?.trees?.[r.treeId]?.name || 'Albero';
   if (r.view === 'riconosci' && r.compare) return 'Confronto';
   return TITLES[r.view] || '';
@@ -300,13 +308,14 @@ function titleOf(r) {
 function parentOf(r) {
   if (!r) return '#/';
   if (r.view === 'specie-dettaglio' || r.view === 'fungo' || r.view === 'commestibile') return '#/specie';
+  if (r.view === 'pianta') return '#/piante';
   if (r.view === 'albero') return '#/alberi';
   if (r.view === 'guide') return '#/guide';
   if (r.view === 'riconosci' && r.compare) return '#/riconosci';
-  if (['specie','alberi','riconosci','glossario','guide-list'].includes(r.view)) return '#/impara';
+  if (['specie','alberi','piante','riconosci','glossario','guide-list'].includes(r.view)) return '#/impara';
   return '#/';
 }
-const PARENT_TITLE = (r) => ({ '#/impara': 'Impara', '#/specie': 'Funghi', '#/alberi': 'Alberi', '#/riconosci': 'Riconosci', '#/guide': 'Guide', '#/': 'Uscite' }[parentOf(r)]);
+const PARENT_TITLE = (r) => ({ '#/impara': 'Impara', '#/specie': 'Funghi', '#/alberi': 'Alberi', '#/piante':'Piante', '#/riconosci': 'Riconosci', '#/guide': 'Guide', '#/': 'Uscite' }[parentOf(r)]);
 // modalita' app: quando il titolo grande della pagina passa sotto la barra in alto, la barra lo mostra piccolo al centro (come iOS)
 let titleIO = null;
 function watchTitle() {
@@ -349,7 +358,7 @@ function updateBack(r, nav) {
 
 function route() {
   const r = parseRoute();
-  r.tab = { zona: 'uscite', glossario: 'specie', 'specie-dettaglio': 'specie', alberi: 'specie', albero: 'specie', riconosci: 'specie', info: '', metodo: '', guide: 'specie', 'guide-list': 'specie', fungo: 'specie', commestibile: 'specie' }[r.view] ?? r.view;
+  r.tab = { piante:'specie', pianta:'specie', zona: 'uscite', glossario: 'specie', 'specie-dettaglio': 'specie', alberi: 'specie', albero: 'specie', riconosci: 'specie', info: '', metodo: '', guide: 'specie', 'guide-list': 'specie', fungo: 'specie', commestibile: 'specie' }[r.view] ?? r.view;
   r.hash = location.hash || '#/';
   const nav = navKind(prev, r), back = prev?.hash || '';
   if (prev) scrollMem.set(prev.hash, scrollY);
@@ -370,6 +379,8 @@ function routeNow(r, nav) {
   $('.tabbar')?.style.setProperty('--ti', TABS.indexOf(tab));
   document.body.dataset.page = r.view;
   if (r.view === 'specie-dettaglio') renderSpeciesDetail($('#species-detail'), r.speciesId);
+  if (r.view === 'piante') renderPlants($('#plant-grid'));
+  if (r.view === 'pianta') renderPlantPage($('#plant-detail'),r.plantId);
   if (r.view === 'albero') renderTreePage($('#tree-detail'), r.treeId);
   if (r.view === 'guide') renderGuide($('#guide-body'), r.guideId);
   if (r.view === 'metodo') renderMethod($('#method-body'));
@@ -381,9 +392,13 @@ function routeNow(r, nav) {
     $('#identify').hidden = r.recognizeMode !== 'funghi';
     $('#field-identify').hidden = r.recognizeMode === 'funghi';
     if(r.recognizeMode==='funghi') {setCompare(r.compare,r.pick);renderIdentify($('#identify'));}
+    else if(r.recognizeMode==='piante') renderPlants($('#field-identify'),{identify:true});
     else renderFieldIdentify($('#field-identify'),r.recognizeMode,treeThumb);
   }
-  enhanceGlossary(document.querySelector(`.view[data-view="${r.view}"]`));
+  const referenceBox=document.querySelector(`.view[data-view="${r.view}"]`);
+  const noteRoute={'albero':['albero',r.treeId],'specie-dettaglio':['specie',r.speciesId],'fungo':['fungo',r.taxonId],'commestibile':['commestibile',r.speciesId],'guide':['guide',r.guideId]}[r.view];
+  if(noteRoute)addNotebookReference(referenceBox.querySelector('.sp-page,#guide-body,#edible-detail')||referenceBox,noteRoute[0],noteRoute[1],titleOf(r));
+  enhanceGlossary(referenceBox);
   const learningNav=document.querySelector(`.view[data-view="${r.view}"] .seg-nav`),selectedSection=learningNav?.querySelector('[aria-current="page"]');
   if(selectedSection) learningNav.scrollLeft=selectedSection.offsetLeft-(learningNav.clientWidth-selectedSection.offsetWidth)/2;
   if (r.view === 'mappa') {
@@ -714,7 +729,7 @@ function renderSpeciesGrid() {
   if (!box.querySelector('#sp-head')) {
     // un solo campo di ricerca nell'app: qui apre la ricerca generale, con funghi e sosia in cima
     box.innerHTML = `<button type="button" id="sp-head" class="search-box search-fake" data-open-search><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg>
-        <span>Cerca funghi, sosia, alberi, zone…</span></button>
+        <span>Cerca sentieri, piante, funghi, luoghi…</span></button>
       <div class="card-grid" id="sp-cards"></div>`;
     box.querySelector('#sp-head').addEventListener('click', () => openSearch());
   }
@@ -872,6 +887,7 @@ function buildSearch(idj, trj, embedded) {
   for (const [id, t] of Object.entries(trj?.trees || {})) {
     items.push({ kind: 'albero', title: t.name, sub: t.latin, hay: `${(t.aliases || []).join(' ')} ${t.type || ''}`, href: `#/albero/${encodeURIComponent(id)}`, img: treeThumb(id, 44) });
   }
+  for(const p of plants())items.push({kind:'pianta',title:p.name,sub:p.latin,hay:[...p.aliases,...p.recognize].join(' '),href:`#/pianta/${p.id}`,img:plantThumb(p.id)});
   for (const t of glossaryTerms()) items.push({kind:'termine',title:t.term,sub:t.category,hay:[...t.aliases,t.definition,t.observe].join(' '),href:`#/glossario/${t.id}`});
   const seen = new Map();
   for (const z of zones) for (const t of trails[z.id]?.trails || []) {
@@ -890,6 +906,7 @@ function buildSearch(idj, trj, embedded) {
     ['Come funziona l\'indice', 'Formule, parametri, fonti e limiti', 'metodo scienza scientifico indice calcolo formula pioggia temperatura suolo latenza innesco probabilita affidabilita fonti letteratura euristica', '#/metodo'],
     ['Glossario del bosco', 'Definizioni, caratteri e legenda delle difficoltà', 'impara glossario parole significato legenda', '#/glossario'],
     ['Riconosci un albero', 'Confronta foglie, corteccia e frutti', 'riconoscimento botanica foglia corteccia frutto gemme', '#/riconosci/alberi'],
+    ['Piante, erbe e frutti','Caratteri, parti alimentari e sosia pericolosi','erbe bacche more ortica cicoria piante spontanee botanica','#/piante'],
     ['Gli alberi', 'Riconoscerli e cosa ci cresce sotto', 'alberi bosco piante', '#/alberi'],
     ['Prepararli e conservarli', 'Crudo, prebollitura, congelare, essiccare, sott\'olio', 'preparazione cucina cuocere cottura crudo prebollitura congelare surgelare essiccare seccare sottolio sott olio botulino conserve vasetti quantita bambini gravidanza alcol', '#/info'],
     ['Il mio taccuino', 'Annota ricerche, ritrovamenti e osservazioni', 'taccuino diario appunti uscite registrare raccolto storico esporta', '#/diario'],
@@ -1521,6 +1538,7 @@ function renderWalkFocus(z, d, walk) {
     </dl>
     ${t.mainCat ? `<p class="small">Lungo il tracciato: ${linkTrees(t.mainCat.toLowerCase())} nei campioni tra circa ${Math.floor(t.lo / 25) * 25} e ${Math.ceil(t.hi / 25) * 25} m${d?.best?.species ? `, compatibili con l’habitat di ${speciesLink(d.best.species, d.best.species.name.toLowerCase())}` : ''}.</p>` : ''}
     ${trailVisual(z, t, d, headsOf(z,t))}
+    <button type="button" class="btn ghost" data-note-kind="zona" data-note-id="${z.id}" data-note-zone="${z.id}" data-note-href="${esc(walkHref(z,state.dayOffset,t))}" data-note-title="${esc(trailName(t))}">＋ Salva il giro nel taccuino</button>
     ${trailLinks(z, t)}
     <p class="small muted">Il GPX contiene solo il tratto nella zona. Tempi e dislivello, quando disponibili, riguardano l’itinerario completo. Verifica accesso, sosta e stato del sentiero prima di partire.</p>
     <p class="small muted">Tracciato OpenStreetMap / Waymarked Trails · imbocchi ricavati dalla rete stradale mappata. L’indice e le segnalazioni riguardano la zona, non questo singolo sentiero.</p>

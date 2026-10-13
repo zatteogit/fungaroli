@@ -4,6 +4,7 @@ export const CONTENT_RESOURCES = [
   {id:'species-traits',title:'Specie e sosia',group:'Specie',collections:['taxa'],required:['taxa','vocabulary']},
   {id:'edible-catalog',title:'Catalogo dei commestibili',group:'Specie',collections:['species'],required:['species']},
   {id:'species-id',title:'Schede delle specie modellate',group:'Specie',collections:['species'],required:['species']},
+  {id:'plants',title:'Piante, erbe e frutti',group:'Bosco',collections:['plants'],required:['plants']},
   {id:'trees',title:'Alberi',group:'Bosco',collections:['trees'],required:['trees']},
   {id:'guides',title:'Articoli e taccuini',group:'Redazione',collections:['guides'],required:['guides']},
   {id:'glossary',title:'Glossario e legenda',group:'Impara',collections:['terms'],required:['terms']},
@@ -23,6 +24,7 @@ export const CONTENT_RESOURCES = [
 ];
 export const resourceOf = id => CONTENT_RESOURCES.find(r => r.id === id);
 export const CONTENT_TEMPLATES = {
+  plants:{name:'',latin:'',category:'Erbe',aliases:[],habitat:'',recognize:[],foodUse:{status:'da verificare',parts:'',caution:''},flowerMonths:[],phaseNote:'',lookalikes:[],sources:[],photos:[]},
   guides:{id:'',category:'',title:'',excerpt:'',body:''},
   glossary:{id:'',term:'',category:'Bosco',aliases:[],definition:'',observe:'',related:[],sources:[]},
   'edible-catalog':{id:'',name:'',latin:'',toxicity:'da verificare',aliases:[],months:null,description:'',caution:'',sources:[]},
@@ -32,6 +34,7 @@ export const CONTENT_TEMPLATES = {
 };
 export const isLockedField = key => ['samples','lines','line','sample_categories','in_zone_km','total_km','duration','ascent','generated','source'].includes(key);
 export const FIELD_LABELS = {
+  plants:'Piante',foodUse:'Parti alimentari e cautele',parts:'Parti e preparazione',flowerMonths:'Mesi della fioritura',phaseNote:'Fasi e limiti dei dati',recognize:'Caratteri da confrontare',photos:'Fotografie',sourceImage:'Immagine originale',status:'Stato',
   guides:'Articoli',taxa:'Specie e sosia',species:'Specie',zones:'Luoghi',trees:'Alberi',
   terms:'Voci del glossario',term:'Parola',definition:'Definizione',observe:'Cosa osservare',related:'Voci collegate',
   illustrations:'Illustrazioni',kind:'Tipo di immagine',generated:'Immagine generata',licenseUrl:'Link alla licenza',

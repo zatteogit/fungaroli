@@ -9,6 +9,8 @@
 //   PUT    /api/diario/<id>     -> salva o aggiorna un'uscita (corpo JSON)
 //   DELETE /api/diario/<id>     -> elimina un'uscita
 
+import {normalizeNotebookNote} from '../../../js/notebook-entry.js';
+
 const MAX_BYTES = 250_000; // include i nuovi snapshot con modello e input meteo
 const ID_RE = /^[a-z0-9]{4,32}$/;
 
@@ -26,6 +28,7 @@ function sameSecret(a, b) {
 }
 
 export function validEntry(e, id) {
+  if(e?.kind==='note'){try{normalizeNotebookNote(e);return e.id===id;}catch{return false;}}
   return e && typeof e === 'object' && e.id === id
     && /^\d{4}-\d{2}-\d{2}$/.test(e.date || '')
     && typeof e.zoneId === 'string' && e.zoneId.length <= 40
@@ -68,6 +71,7 @@ export async function handleDiario(request, env, path) {
     let entry;
     try { entry = JSON.parse(body); } catch { return json({ error: 'bad_json' }, 400); }
     if (!validEntry(entry, id)) return json({ error: 'bad_entry' }, 400);
+    if(entry.kind==='note')entry=normalizeNotebookNote(entry);
     await env.DIARIO.put(`entry:${id}`, JSON.stringify(entry));
     return json({ ok: true });
   }

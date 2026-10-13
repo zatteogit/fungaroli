@@ -66,7 +66,8 @@ const fonts = `<style>${read('css/fonts.css').replace(/url\(([^)]+)\)/g,(_,src)=
 const body = html.match(/<body>([\s\S]*)<\/body>/)[1]
   .replace(/<script[\s\S]*?<\/script>/g, '')
   .replace('Mappe © OpenStreetMap, OpenTopoMap (CC-BY-SA). ', '');
-const extra = Object.fromEntries(Object.entries({ glossary:'glossary',glossaryMedia:'media-glossary',guides:'guides',contentCopy:'ui-copy',edibleCatalog: 'edible-catalog', legal: 'legal', traits: 'species-traits', trees: 'trees', infographics: 'infografiche', preparation: 'preparation', trailheads: 'trailheads' }).map(([k,f]) => [k, readOpt('data/' + f + '.json')]));
+const extra = Object.fromEntries(Object.entries({ plants:'plants',glossary:'glossary',glossaryMedia:'media-glossary',guides:'guides',contentCopy:'ui-copy',edibleCatalog: 'edible-catalog', legal: 'legal', traits: 'species-traits', trees: 'trees', infographics: 'infografiche', preparation: 'preparation', trailheads: 'trailheads' }).map(([k,f]) => [k, readOpt('data/' + f + '.json')]));
+for(const p of Object.values(extra.plants?.plants||{}))for(const m of p.photos||[])put(m.file);
 for(const row of Object.values(extra.glossaryMedia?.terms||{}))for(const m of row.illustrations||[])put(m.file);
 const data = JSON.stringify({ zones, habitat, access, trails, speciesId, media, assets, basemap, ...extra, outing, weather: { series: w.series, fetchedAt: w.fetchedAt.toISOString() } })
   .replace(/</g, '\\u003c');

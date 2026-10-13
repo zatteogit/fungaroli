@@ -1,6 +1,8 @@
 import { generateRegistrationOptions, verifyRegistrationResponse, generateAuthenticationOptions, verifyAuthenticationResponse } from '@simplewebauthn/server';
 import schema from '../migrations/0001_community.sql';
 import preferencesSchema from '../migrations/0003_account_preferences.sql';
+import {normalizeNotebookNote} from '../js/notebook-entry.js';
+import plantCatalog from '../data/plants.json';
 import {normalizeBase,validPoint} from '../js/travel-model.js';
 import {searchPlaces,routeMatrix} from './travel-provider.js';
 import { buildEdibleCatalog } from '../js/edible-catalog.js';
@@ -74,9 +76,9 @@ export async function readCommunityUser(request,env,now=Date.now()) {
   try{return await signedIn(request,env.COMMUNITY_DB,now);}catch(e){if(e.status===401)return null;throw e;}
 }
 async function currentCatalogIds(env,origin) {
-  const content=await publishedResources(env,origin,['species-traits','edible-catalog','zones']);
-  if(!content)return {speciesIds,zoneIds};
-  return {speciesIds:new Set(buildEdibleCatalog(content['species-traits'],content['edible-catalog']).map(s=>s.id)),zoneIds:new Set(content.zones.zones.map(z=>z.id))};
+  const content=await publishedResources(env,origin,['species-traits','edible-catalog','zones','plants']);
+  if(!content)return {speciesIds,zoneIds,plantIds:new Set(Object.keys(plantCatalog.plants))};
+  return {plantIds:new Set(Object.keys(content.plants?.plants||plantCatalog.plants)),speciesIds:new Set(buildEdibleCatalog(content['species-traits'],content['edible-catalog']).map(s=>s.id)),zoneIds:new Set(content.zones.zones.map(z=>z.id))};
 }
 
 async function rate(db, key, limit, seconds, now) {
@@ -224,9 +226,11 @@ export async function handleCommunity(request, env, now = Date.now()) {
     }
     const entryMatch = path.match(/^entries\/([a-zA-Z0-9-]{4,64})$/);
     if (entryMatch && request.method === 'PUT') {
-      const entry = await body(request), id = entryMatch[1];
+      let entry = await body(request); const id = entryMatch[1];
       const liveIds=await currentCatalogIds(env,url.origin);
-      if (entry.id !== id || !liveIds.zoneIds.has(entry.zoneId) || typeof entry.date !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(entry.date)
+      if(entry.kind==='note'){try{entry=normalizeNotebookNote(entry,liveIds);}catch(e){fail(e.message);}}
+      if(entry.kind!=null&&!['outing','plan','note'].includes(entry.kind))fail('Tipo di voce non valido.');
+      if (entry.id !== id || (entry.kind==='note'?entry.zoneId!=null&&!liveIds.zoneIds.has(entry.zoneId):!liveIds.zoneIds.has(entry.zoneId)) || typeof entry.date !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(entry.date)
           || (entry.note != null && (typeof entry.note !== 'string' || entry.note.length > 2000))) fail('Voce del taccuino non valida.');
       const date = new Date(entry.date + 'T12:00:00Z');
       if (!Number.isFinite(date.getTime()) || date.toISOString().slice(0, 10) !== entry.date) fail('Giorno non valido.');
@@ -245,6 +249,7 @@ export async function handleCommunity(request, env, now = Date.now()) {
         const count = await db.prepare('SELECT COUNT(*) AS n FROM diary_entries WHERE account_id=?').bind(user.id).first('n');
         if (count >= 1000) fail('Il taccuino ha raggiunto 1000 voci. Esporta e archivia le uscite prima di aggiungerne altre.', 409);
       }
+      if(entry.kind==='note')entry.savedAt=new Date(now).toISOString();
       if (entry.kind === 'plan') {
         entry.forecast = { ...entry.forecast, mode: 'prospective', capturedAt: new Date(now).toISOString() };
         entry.savedAt = new Date(now).toISOString();
@@ -285,7 +290,7 @@ export async function handleCommunity(request, env, now = Date.now()) {
         note: '', predicted: {}, forecast: { mode: 'none' }, savedAt: new Date(now).toISOString() });
       }
       const e = JSON.parse(entry);
-      if (e.zoneId !== data.zoneId || e.date !== data.day || (e.finds?.[data.speciesId] ?? null) !== data.amount || e.kind === 'plan'
+      if (e.zoneId !== data.zoneId || e.date !== data.day || (e.finds?.[data.speciesId] ?? null) !== data.amount || ['plan','note'].includes(e.kind)
           || (data.amount === 0 && !e.searched?.includes(data.speciesId))) fail('La segnalazione non corrisponde all’uscita.');
       await db.batch([
         db.prepare('INSERT INTO diary_entries(account_id,id,payload,saved_at) VALUES(?,?,?,?) ON CONFLICT(account_id,id) DO NOTHING').bind(user.id, entryId, entry, now),

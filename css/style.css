@@ -2305,3 +2305,41 @@ html.entity-open { overflow: hidden; }
 .trail-visual-panel .tp-key i { flex: none; margin-top: 4px; }
 .pt-preview .trail-visual-panel, .sheet .trail-visual-panel { height: 144px; }
 .pt-preview .trail-visual-panel .tprof svg, .sheet .trail-visual-panel .tprof svg { height: 78px; }
+
+/* Botanical sheets and a private notebook: readable paper, including dark mode. */
+.botanical-tools { display:grid; gap:12px; margin-bottom:16px; }
+.botanical-tools label,.notebook-form label { display:grid; gap:6px; font-size:14px; }
+.botanical-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr)); gap:16px; align-items:stretch; }
+.botanical-card { display:flex; flex-direction:column; min-width:0; border:1px solid var(--hair); border-radius:var(--r-md); overflow:hidden; background:var(--surface); }
+.botanical-photo { display:block; aspect-ratio:826/590; overflow:hidden; }
+.botanical-photo img { display:block; width:100%; height:100%; object-fit:contain; }
+.botanical-card-body { padding:18px; display:flex; flex-direction:column; align-items:flex-start; flex:1; gap:8px; }
+.botanical-card h2 { font-size:22px; font-weight:700; line-height:1.2; margin:0; }
+.botanical-card h2 a { color:var(--text); text-decoration:none; }
+.botanical-card i { font-size:14px; color:var(--text-2); }
+.botanical-card p { font-size:14px; line-height:1.55; margin:0 0 8px; }
+.botanical-details { margin-top:auto; font-size:14px; }
+.botanical-food { padding:16px 20px; border:1px solid var(--hair); background:var(--surface-2); border-radius:var(--r-md); margin:24px 0; }
+.botanical-food h2 { margin-top:0; font-size:20px; font-weight:700; line-height:1.3; }
+.botanical-food p:last-child { margin-bottom:0; }
+.recognize-modes button[aria-pressed="true"] { background:var(--accent-soft); color:var(--accent); border-color:var(--accent); }
+.notebook-actions { display:flex; flex-wrap:wrap; gap:12px; align-items:center; margin:12px 0; }
+.notebook-dialog { padding:24px; }
+.notebook-dialog .report-header h2 { margin:0; font-size:24px; }
+.notebook-form { display:grid; gap:16px; }
+.notebook-paper { line-height:28px; background-image:repeating-linear-gradient(transparent 0 27px,var(--hair) 27px 28px); background-attachment:local; }
+.notebook-context { padding:16px; border:1px solid var(--hair); border-radius:var(--r-md); }
+.notebook-context[open] { display:grid; gap:16px; }
+.notebook-context label { margin-top:10px; }
+.notebook-entry { grid-template-columns:32px 1fr; padding:20px; border-left:4px solid var(--accent); }
+.notebook-mark { font-size:24px; color:var(--accent); }
+.notebook-text { white-space:pre-wrap; line-height:1.8; margin:8px 0; overflow-wrap:anywhere; }
+.notebook-reference { margin:0; }
+.notebook-phases { margin:8px 0; padding-left:20px; }
+.notebook-filters { margin:16px 0; }
+.phenology-fields { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr)); gap:12px; }
+@media(max-width:480px) { .notebook-dialog { padding:18px; } .notebook-entry { padding:16px; grid-template-columns:24px 1fr; gap:10px; } }
+
+.notebook-context-action { margin:24px 0; }
+
+.botanical-food.notice-danger { background:var(--crit-bg); color:var(--crit-ink); border-color:color-mix(in srgb,var(--crit) 35%,var(--hair)); }

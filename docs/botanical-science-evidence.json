@@ -1,0 +1,545 @@
+{
+  "version": 1,
+  "verifiedAt": "2026-10-13",
+  "scope": "Ricerca per il catalogo botanico e futuri modelli locali del Lazio",
+  "decision": "descriptive_release_only",
+  "forbiddenClaims": [
+    "edibility_from_weather",
+    "unvalidated_harvest_probability",
+    "flowering_implies_edible_part_available",
+    "regional_presence_implies_trail_presence"
+  ],
+  "bibliography": [
+    {
+      "id": "urtica_taylor_2009",
+      "title": "Biological Flora of the British Isles: Urtica dioica L.",
+      "doi": "10.1111/j.1365-2745.2009.01575.x",
+      "url": "https://besjournals.onlinelibrary.wiley.com/doi/10.1111/j.1365-2745.2009.01575.x",
+      "kind": "review",
+      "evidenceAccess": "full_text"
+    },
+    {
+      "id": "chicory_choice_2020",
+      "title": "Functional Traits, Morphology, and Herbage Production of Vernalised and Non-Vernalised Chicory cv. Choice",
+      "doi": "10.3390/plants9050611",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/32403361/",
+      "kind": "primary",
+      "evidenceAccess": "abstract"
+    },
+    {
+      "id": "taraxacum_microhabitat_2025",
+      "title": "Fine-Scale Environmental Heterogeneity Drives Intra- and Inter-Site Variation in Taraxacum officinale Flowering Phenology",
+      "doi": "10.3390/plants14142211",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40733448/",
+      "kind": "primary",
+      "evidenceAccess": "abstract"
+    },
+    {
+      "id": "fennel_gdd_icar",
+      "title": "Thermal time (growing degree days) effects on phenology, yield and quality attributes of fennel",
+      "doi": "10.56093/JSS.v15i2.1",
+      "url": "https://epubs.icar.org.in/index.php/IJSS/article/view/175975",
+      "kind": "primary",
+      "evidenceAccess": "abstract"
+    },
+    {
+      "id": "fragaria_heide_2007",
+      "title": "Interactions of temperature and photoperiod in the control of flowering of latitudinal and altitudinal populations of wild strawberry",
+      "doi": "10.1111/j.1399-3054.2007.00906.x",
+      "url": "https://onlinelibrary.wiley.com/doi/10.1111/j.1399-3054.2007.00906.x",
+      "kind": "primary",
+      "evidenceAccess": "abstract"
+    },
+    {
+      "id": "fragaria_rantanen_2015",
+      "title": "Strawberry homologue of TERMINAL FLOWER1 integrates photoperiod and temperature signals to inhibit flowering",
+      "doi": "10.1111/tpj.12809",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/25720985/",
+      "kind": "primary",
+      "evidenceAccess": "abstract"
+    },
+    {
+      "id": "fragaria_europe_2025",
+      "title": "Flowering responses of the woodland strawberry to local climate and reduced precipitation along a European latitudinal gradient",
+      "doi": "10.1093/jpe/rtaf105",
+      "url": "https://academic.oup.com/jpe/article/18/5/rtaf105/8209627",
+      "kind": "primary",
+      "evidenceAccess": "full_text"
+    },
+    {
+      "id": "rubus_ripening_2023",
+      "title": "Evolution of the Volatile Organic Compounds, Phenols and Antioxidant Capacity during Fruit Ripening and Development of Rubus ulmifolius Schott Fruits",
+      "doi": "10.3390/horticulturae9010013",
+      "url": "https://www.mdpi.com/2311-7524/9/1/13",
+      "kind": "primary",
+      "evidenceAccess": "indexed_abstract"
+    },
+    {
+      "id": "rosa_amasya_2023",
+      "title": "Phenological and Pomological Characteristics of Rosa canina L. Species Cultivated and Naturally Distributed in Amasya Province",
+      "doi": "10.47115/bsagriculture.1356222",
+      "url": "https://dergipark.org.tr/tr/pub/bsagriculture/article/1356222",
+      "kind": "primary",
+      "evidenceAccess": "abstract"
+    },
+    {
+      "id": "rosa_ripening_2023",
+      "title": "Changes in Pomological and Physical Parameters in Rosehips during Ripening",
+      "doi": "10.3390/plants12061314",
+      "url": "https://www.mdpi.com/2223-7747/12/6/1314",
+      "kind": "primary",
+      "evidenceAccess": "indexed_abstract"
+    },
+    {
+      "id": "rosa_frost_2015",
+      "title": "Frost decreases content of sugars, ascorbic acid and some quercetin glycosides but stimulates selected carotenes in Rosa canina hips",
+      "doi": null,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/25768262/",
+      "kind": "primary",
+      "evidenceAccess": "indexed_abstract"
+    },
+    {
+      "id": "arbutus_climate_1993",
+      "title": "Influence of temperature and rainfall on fruit and seed production of Arbutus unedo L.",
+      "doi": "10.1111/j.1095-8339.1993.tb01891.x",
+      "url": "https://academic.oup.com/botlinnean/article-abstract/111/1/71/2632487",
+      "kind": "primary",
+      "evidenceAccess": "abstract"
+    },
+    {
+      "id": "arbutus_italy_2022",
+      "title": "An Endemic Plant of the Mediterranean Area: Phytochemical Characterization of Strawberry Tree Fruits Extracts at Different Ripening Stages",
+      "doi": null,
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9249387/",
+      "kind": "primary",
+      "evidenceAccess": "indexed_text"
+    },
+    {
+      "id": "prunus_romania_2020",
+      "title": "Influence of temperature on blackthorn phenophases in spring season",
+      "doi": "10.2480/agrmet.D-19-00030",
+      "url": "https://www.jstage.jst.go.jp/article/agrmet/76/1/76_D-19-00030/_pdf",
+      "kind": "primary",
+      "evidenceAccess": "full_pdf"
+    },
+    {
+      "id": "sambucus_atkinson_2002",
+      "title": "Sambucus nigra L.",
+      "doi": "10.1046/j.1365-2745.2002.00698.x",
+      "url": "https://onlinelibrary.wiley.com/doi/10.1046/j.1365-2745.2002.00698.x/full",
+      "kind": "review",
+      "evidenceAccess": "indexed_text"
+    },
+    {
+      "id": "iphen_2013",
+      "title": "IPHEN—a real-time network for phenological monitoring and modelling in Italy",
+      "doi": "10.1007/s00484-012-0615-x",
+      "url": "https://link.springer.com/article/10.1007/s00484-012-0615-x",
+      "kind": "primary",
+      "evidenceAccess": "abstract"
+    },
+    {
+      "id": "iphen_crea",
+      "title": "CREA IPHEN Italian phenological network",
+      "doi": null,
+      "url": "https://www.crea.gov.it/en/web/agricoltura-e-ambiente/-/iphen-italian-phenological-network",
+      "kind": "institutional",
+      "evidenceAccess": "full_page"
+    },
+    {
+      "id": "iphen_operational",
+      "title": "Bollettino fenologico settimanale, Rete Rurale",
+      "doi": null,
+      "url": "https://www.reterurale.it/bollettinofeno",
+      "kind": "institutional",
+      "evidenceAccess": "full_page"
+    },
+    {
+      "id": "pep725_access",
+      "title": "PEP725 Dataset access and terms",
+      "doi": null,
+      "url": "https://pep725.eu/dataset/",
+      "kind": "institutional",
+      "evidenceAccess": "full_page"
+    },
+    {
+      "id": "pep725_2018",
+      "title": "Pan European Phenological database (PEP725): a single point of access for European data",
+      "doi": "10.1007/s00484-018-1512-8",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/29455297/",
+      "kind": "primary",
+      "evidenceAccess": "abstract"
+    },
+    {
+      "id": "npn_protocol_2014",
+      "title": "Standardized phenology monitoring methods to track plant and animal activity for science and resource management applications",
+      "doi": "10.1007/s00484-014-0789-5",
+      "url": "https://pubs.usgs.gov/publication/70110625",
+      "kind": "primary",
+      "evidenceAccess": "abstract"
+    },
+    {
+      "id": "bbch_woody_2007",
+      "title": "A general growth stage key for describing trees and woody plants",
+      "doi": "10.1111/j.1744-7348.2007.00159.x",
+      "url": "https://onlinelibrary.wiley.com/doi/10.1111/j.1744-7348.2007.00159.x",
+      "kind": "primary",
+      "evidenceAccess": "abstract"
+    },
+    {
+      "id": "gdd_definition_1997",
+      "title": "Growing degree-days: one equation, two interpretations",
+      "doi": "10.1016/S0168-1923(97)00027-0",
+      "url": "https://digitalcommons.unl.edu/usdaarsfacpub/83/",
+      "kind": "primary",
+      "evidenceAccess": "indexed_abstract"
+    },
+    {
+      "id": "occupancy_2002",
+      "title": "Estimating site occupancy rates when detection probabilities are less than one",
+      "doi": "10.1890/0012-9658(2002)083[2248:ESORWD]2.0.CO;2",
+      "url": "https://www.usgs.gov/publications/estimating-site-occupancy-rates-when-detection-probabilities-are-less-one",
+      "kind": "primary",
+      "evidenceAccess": "abstract"
+    },
+    {
+      "id": "sdm_bias_2009",
+      "title": "Sample selection bias and presence-only distribution models: implications for background and pseudo-absence data",
+      "doi": "10.1890/07-2153.1",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/19323182/",
+      "kind": "primary",
+      "evidenceAccess": "abstract"
+    },
+    {
+      "id": "blocked_cv_2017",
+      "title": "Cross-validation strategies for data with temporal, spatial, hierarchical, or phylogenetic structure",
+      "doi": "10.1111/ecog.02881",
+      "url": "https://nsojournals.onlinelibrary.wiley.com/doi/full/10.1111/ecog.02881",
+      "kind": "methodology",
+      "evidenceAccess": "abstract"
+    },
+    {
+      "id": "microclimate_2019",
+      "title": "Global buffering of temperatures under forest canopies",
+      "doi": "10.1038/s41559-019-0842-1",
+      "url": "https://www.nature.com/articles/s41559-019-0842-1",
+      "kind": "primary",
+      "evidenceAccess": "abstract"
+    },
+    {
+      "id": "phenostage_images_2025",
+      "title": "Expanding phenological insights: automated phenostage annotation with community science plant images",
+      "doi": "10.1007/s00484-025-02972-x",
+      "url": "https://link.springer.com/article/10.1007/s00484-025-02972-x",
+      "kind": "primary",
+      "evidenceAccess": "full_text"
+    },
+    {
+      "id": "nccih_sambucus",
+      "title": "Elderberry: Usefulness and Safety",
+      "doi": null,
+      "url": "https://www.nccih.nih.gov/health/elderberry",
+      "kind": "institutional_health",
+      "evidenceAccess": "full_page"
+    },
+    {
+      "id": "floritaly_fennel",
+      "title": "Anethum foeniculum L., FlorItaly",
+      "doi": null,
+      "url": "https://dryades.units.it/floritaly/index.php?id=9820&procedure=taxon_page&tipo=all",
+      "kind": "institutional_taxonomy",
+      "evidenceAccess": "indexed_page"
+    }
+  ],
+  "species": [
+    {
+      "taxon": "Urtica dioica",
+      "target": "Germogli/foglie giovani; ricaccio",
+      "modelEvidence": "Ecologia/fenologia descrittiva; nessuna soglia pronta",
+      "studyDomain": "Rassegna Gran Bretagna",
+      "localCalibration": "Osservazioni locali; sfalcio incluso",
+      "sourceIds": [
+        "urtica_taylor_2009"
+      ],
+      "releaseStatus": "descriptive_only",
+      "harvestProbabilityValidatedForLazio": false
+    },
+    {
+      "taxon": "Cichorium intybus",
+      "target": "Rosetta vs allungamento del fusto",
+      "modelEvidence": "GDD/vernalizzazione solo cultivar",
+      "studyDomain": "Cultivar foraggere e da orto",
+      "localCalibration": "Non trasferire soglia 274 GDD",
+      "sourceIds": [
+        "chicory_choice_2020"
+      ],
+      "releaseStatus": "descriptive_only",
+      "harvestProbabilityValidatedForLazio": false
+    },
+    {
+      "taxon": "Taraxacum sect. Taraxacum",
+      "target": "Foglie, fioritura, emergenza distinti",
+      "modelEvidence": "Fenologia microhabitat; GDD agricoli non raccolta",
+      "studyDomain": "Corea; studi Kentucky/campi di frumento",
+      "localCalibration": "Taxon/clone e fase locale",
+      "sourceIds": [
+        "taraxacum_microhabitat_2025"
+      ],
+      "releaseStatus": "descriptive_only",
+      "harvestProbabilityValidatedForLazio": false
+    },
+    {
+      "taxon": "Anethum foeniculum / Foeniculum vulgare",
+      "target": "Foglie/fiori/frutti secchi",
+      "modelEvidence": "GDD semi coltivati",
+      "studyDomain": "Ajmer, India, 2019–2021",
+      "localCalibration": "Base termica/metodo e popolazioni locali richiesti",
+      "sourceIds": [
+        "fennel_gdd_icar"
+      ],
+      "releaseStatus": "descriptive_only",
+      "harvestProbabilityValidatedForLazio": false
+    },
+    {
+      "taxon": "Fragaria vesca",
+      "target": "Induzione autunnale/fioritura/maturazione",
+      "modelEvidence": "Temperatura × fotoperiodo × ecotipo",
+      "studyDomain": "Esperimenti controllati; quattro siti europei",
+      "localCalibration": "Modello locale separato per fase, non parametri F. × ananassa",
+      "sourceIds": [
+        "fragaria_heide_2007",
+        "fragaria_rantanen_2015",
+        "fragaria_europe_2025"
+      ],
+      "releaseStatus": "descriptive_only",
+      "harvestProbabilityValidatedForLazio": false
+    },
+    {
+      "taxon": "Rubus ulmifolius",
+      "target": "Frutti verdi/in colorazione/maturi/residui",
+      "modelEvidence": "Stadi osservati; studi maturazione",
+      "studyDomain": "Frutteto, due stagioni",
+      "localCalibration": "Nessuna soglia raccolta Lazio trovata",
+      "sourceIds": [
+        "rubus_ripening_2023"
+      ],
+      "releaseStatus": "descriptive_only",
+      "harvestProbabilityValidatedForLazio": false
+    },
+    {
+      "taxon": "Rosa canina",
+      "target": "Maturazione cinorrodi",
+      "modelEvidence": "Stadi/colore/consistenza; coltivato diverso da spontaneo",
+      "studyDomain": "Amasya, Turchia, 2022; altri studi",
+      "localCalibration": "Nessuna soglia termica locale pronta",
+      "sourceIds": [
+        "rosa_amasya_2023",
+        "rosa_ripening_2023",
+        "rosa_frost_2015"
+      ],
+      "releaseStatus": "descriptive_only",
+      "harvestProbabilityValidatedForLazio": false
+    },
+    {
+      "taxon": "Arbutus unedo",
+      "target": "Coorte frutti: ciclo circa annuale",
+      "modelEvidence": "Temperatura/acqua lungo sviluppo; fase osservata",
+      "studyDomain": "Studio italiano; dati Sud Italia",
+      "localCalibration": "Storico annuale e coorte; non solo meteo recente",
+      "sourceIds": [
+        "arbutus_climate_1993",
+        "arbutus_italy_2022"
+      ],
+      "releaseStatus": "descriptive_only",
+      "harvestProbabilityValidatedForLazio": false
+    },
+    {
+      "taxon": "Prunus spinosa",
+      "target": "Germogliamento → fioritura, NON maturazione",
+      "modelEvidence": "CH 0<T<7 °C; GDD base 8 °C dal budbreak",
+      "studyDomain": "16 genotipi spontanei, Oltenia, Romania, 81–163 m; 2017–2018",
+      "localCalibration": "Parametri candidati; due anni non validano Lazio",
+      "sourceIds": [
+        "prunus_romania_2020"
+      ],
+      "releaseStatus": "descriptive_only",
+      "harvestProbabilityValidatedForLazio": false
+    },
+    {
+      "taxon": "Sambucus nigra",
+      "target": "Germogliamento/fioritura/frutti distinti",
+      "modelEvidence": "IPHEN: Normal Heat Hours + correzione osservativa",
+      "studyDomain": "Italia; rassegna britannica per budburst",
+      "localCalibration": "Copertura/fasi live, parametri e licenza da accertare",
+      "sourceIds": [
+        "iphen_2013",
+        "iphen_crea",
+        "iphen_operational",
+        "sambucus_atkinson_2002"
+      ],
+      "releaseStatus": "descriptive_only",
+      "harvestProbabilityValidatedForLazio": false
+    }
+  ],
+  "iphen": {
+    "method": "Normal Heat Hours plus field-observation correction",
+    "sourceIds": [
+      "iphen_2013",
+      "iphen_crea",
+      "iphen_operational"
+    ],
+    "generalCrealistIncludesSambucus": true,
+    "currentOperationalPageSpecies": [
+      "Vitis vinifera",
+      "Olea europaea",
+      "Robinia pseudoacacia",
+      "Castanea sativa (field observations)"
+    ],
+    "currentSambucusForecastServiceVerified": false,
+    "latestBulletinListed": "2026-10-08",
+    "currentGridResolutionKm": 6.5,
+    "publicApiVerified": false,
+    "commercialReuseLicenseVerified": false,
+    "nextSteps": [
+      "Verify target phenophases and Lazio coverage",
+      "Request data/model parameters/version under explicit user authorization",
+      "Verify license and commercial permission",
+      "Independent local validation"
+    ],
+    "contactsSent": false
+  },
+  "pep725": {
+    "apiStatus": "in_development",
+    "directDownloads": "temporarily_unavailable",
+    "fullDataAccess": "email_request_with_intended_use",
+    "sampleLicense": "CC BY 4.0, Germany/Austria 2014–2017 sample only",
+    "fullDatasetCommercialLicense": "must_verify",
+    "sourceId": "pep725_access"
+  },
+  "observationSchema": {
+    "required": [
+      "id",
+      "observedAt",
+      "taxonId_or_proposedTaxon",
+      "identificationStatus",
+      "visitId",
+      "spatialScope",
+      "locationPrecision",
+      "visibility",
+      "protocolVersion"
+    ],
+    "optional": [
+      "plantId_private",
+      "patchId_private",
+      "photoOriginals",
+      "reviewerId",
+      "reviewedAt",
+      "consentToResearch",
+      "environmentObserved",
+      "environmentModelled",
+      "availabilityBeforeHarvest",
+      "disturbance",
+      "intensity"
+    ],
+    "phenophases": {
+      "multiLabel": true,
+      "status": [
+        "present",
+        "absent",
+        "unknown"
+      ],
+      "codes": [
+        "new_shoots",
+        "young_leaves",
+        "flowers_open",
+        "fruit_unripe",
+        "fruit_colouring",
+        "fruit_ripe",
+        "senescent"
+      ],
+      "counts": {
+        "value": "number_or_null",
+        "unit": "defined_unit",
+        "denominator": "recorded_where_relevant"
+      }
+    },
+    "effort": {
+      "fields": [
+        "durationMin",
+        "searchedArea_or_routeLength",
+        "targetTaxa",
+        "completeChecklist"
+      ],
+      "outcomes": [
+        "not_searched",
+        "searched_not_detected",
+        "detected"
+      ]
+    },
+    "privacy": {
+      "privateCoordinatesSeparate": true,
+      "sharedPrecisionChoices": [
+        "exact_point",
+        "microzone",
+        "zone"
+      ],
+      "noForcedExactSharing": true,
+      "spatialUncertaintyMustBePreserved": true,
+      "researchConsentSeparateFromPublication": true
+    }
+  },
+  "validation": {
+    "splits": [
+      "spatial_blocks",
+      "individual_or_patch_blocks",
+      "observer_blocks",
+      "leave_year_out",
+      "future_season_holdout"
+    ],
+    "metrics": {
+      "date": [
+        "MAE",
+        "bias",
+        "prediction_interval_coverage"
+      ],
+      "phase_probability": [
+        "Brier_score",
+        "log_loss",
+        "calibration_by_domain"
+      ],
+      "baseline": [
+        "local_season_calendar",
+        "last_observation"
+      ]
+    },
+    "sampleSize": "Design via power/simulation; no universal threshold",
+    "abstention": [
+      "taxon_ambiguous",
+      "unsupported_target_phase",
+      "unproven_parameters",
+      "insufficient_weather_history",
+      "coordinates_too_imprecise",
+      "outside_validated_domain",
+      "few_independent_sites_years",
+      "unreviewed_identification",
+      "prediction_interval_uninformative",
+      "fails_baseline",
+      "stale_evidence"
+    ]
+  },
+  "implementNow": [
+    "Source-backed habitat text",
+    "Phase/organ-specific descriptive calendars",
+    "Dated recent observations with confidence and scope",
+    "Multi-phase notebook observations",
+    "Separate food-safety editorial data",
+    "Versioned model provenance in CMS"
+  ],
+  "notImplementNow": [
+    "Numerical botanical growth score",
+    "Percent harvest chance",
+    "Borrowed cultivar GDD thresholds",
+    "Assumed public IPHEN or PEP725 API",
+    "AI certification of edible identity"
+  ]
+}
