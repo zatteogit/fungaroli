@@ -9,6 +9,7 @@ import { initJournal } from './journal.js';
 import { renderSvgMap } from './svgmap.js';
 import { initSpeciesCards, thumb, renderSpeciesDetail, whereSummary, criticalRule, speciesPhoto } from './speciescard.js';
 import { speciesLink } from './species-link.js';
+import { initLearning, renderGlossary, renderFieldIdentify, difficultyLink, glossaryTerms, glossaryTitle, enhanceGlossary } from './learning.js';
 import { openLightbox, captionHtml } from './lightbox.js';
 import { initInstall, maybeInvite } from './install.js';
 import { loadOuting, outingFor, OUTING_LABEL, OUTING_SHORT, OUTING_RANK } from './outing.js';
@@ -174,6 +175,8 @@ async function init() {
   renderSpeciesGrid();
   applyLegal();
   initTrees({ trees: trj, media: mj, assetUrl: embedded ? (f) => embedded.assets?.[f] || '' : (f) => f, zones, habitat, thumb });
+  initLearning({ glossary: embedded?.glossary || await load('glossary'), trees: trj, traits: stj });
+  renderGuideCards($('#learn-editorial'));
   renderTreeGrid($('#tree-grid'));
   treesData = trj; idData = idj;
   renderFilterSummary(); // ora che c'e' il pregio delle specie, riordina i filtri
@@ -215,9 +218,11 @@ function parseRoute() {
   if (a === 'mappa') return { view: 'mappa', zoneId: b };
   if (a === 'specie' && b) return { view: 'specie-dettaglio', speciesId: b };
   if (a === 'specie') return { view: 'specie' };
+  if (a === 'impara') return { view: 'impara' };
+  if (a === 'glossario') return { view: 'glossario', termId: b };
   if (a === 'albero' && b) return { view: 'albero', treeId: b };
   if (a === 'alberi') return { view: 'alberi' };
-  if (a === 'riconosci') return { view: 'riconosci', compare: b === 'confronta' ? c : '', pick: b === 'confronta' ? parts[3] : '' };
+  if (a === 'riconosci') return { view: 'riconosci', recognizeMode: ['alberi','bosco'].includes(b) ? b : 'funghi', compare: b === 'confronta' ? c : '', pick: b === 'confronta' ? parts[3] : '' };
   if (a === 'guide') return { view: 'guide', guideId: b };
   if (a === 'diario') return { view: 'diario' };
   if (a === 'info') return { view: 'info' };
@@ -230,7 +235,7 @@ function parseRoute() {
 // profondita' e posizione delle viste: decidono la direzione della transizione
 const LEVEL = { commestibile: 1, guide: 1, zona: 1, 'specie-dettaglio': 1, albero: 1, info: 1, metodo: 2, fungo: 1 };
 const TABS = ['uscite', 'mappa', 'specie', 'diario'];
-const SUB = { specie: 0, alberi: 1, riconosci: 2 };
+const SUB = { impara: 0, specie: 1, alberi: 2, riconosci: 3, glossario: 4 };
 const scrollMem = new Map();
 let prev = null;
 function navKind(a, b) {
@@ -254,7 +259,7 @@ addEventListener('scroll', onScrollBar, { passive: true });
 
 // tasto indietro in alto a sinistra: freccia + nome della pagina a cui torni
 const navStack = [];
-const TITLES = { uscite: 'Uscite', mappa: 'Mappa', specie: 'Specie', alberi: 'Alberi', riconosci: 'Riconosci', diario: 'Diario', info: 'Regole e metodo', metodo: 'Come funziona' };
+const TITLES = { uscite: 'Uscite', mappa: 'Mappa', impara: 'Impara', specie: 'Funghi', alberi: 'Alberi', riconosci: 'Riconosci', glossario: 'Glossario', diario: 'Diario', info: 'Regole e metodo', metodo: 'Come funziona' };
 function titleOf(r) {
   if (!r) return '';
   if (r.view === 'zona') { const z = zones.find((x) => x.id === r.zoneId); return z ? splitName(z)[0] : 'Zona'; }
@@ -262,6 +267,7 @@ function titleOf(r) {
   if (r.view === 'commestibile') return catalog.find(s => s.id === r.speciesId)?.name || 'Specie';
   if (r.view === 'fungo') return taxonName(r.taxonId) || 'Specie';
   if (r.view === 'guide') return guideTitle(r.guideId);
+  if (r.view === 'glossario' && r.termId) return glossaryTitle(r.termId);
   if (r.view === 'albero') return treesData?.trees?.[r.treeId]?.name || 'Albero';
   if (r.view === 'riconosci' && r.compare) return 'Confronto';
   return TITLES[r.view] || '';
@@ -271,9 +277,10 @@ function parentOf(r) {
   if (r.view === 'specie-dettaglio' || r.view === 'fungo' || r.view === 'commestibile') return '#/specie';
   if (r.view === 'albero') return '#/alberi';
   if (r.view === 'riconosci' && r.compare) return '#/riconosci';
+  if (['specie','alberi','riconosci','glossario'].includes(r.view)) return '#/impara';
   return '#/';
 }
-const PARENT_TITLE = (r) => ({ '#/specie': 'Specie', '#/alberi': 'Alberi', '#/riconosci': 'Riconosci', '#/': 'Uscite' }[parentOf(r)]);
+const PARENT_TITLE = (r) => ({ '#/impara': 'Impara', '#/specie': 'Funghi', '#/alberi': 'Alberi', '#/riconosci': 'Riconosci', '#/': 'Uscite' }[parentOf(r)]);
 // modalita' app: quando il titolo grande della pagina passa sotto la barra in alto, la barra lo mostra piccolo al centro (come iOS)
 let titleIO = null;
 function watchTitle() {
@@ -316,7 +323,7 @@ function updateBack(r, nav) {
 
 function route() {
   const r = parseRoute();
-  r.tab = { zona: 'uscite', 'specie-dettaglio': 'specie', alberi: 'specie', albero: 'specie', riconosci: 'specie', info: '', metodo: '', guide: 'uscite', fungo: 'specie', commestibile: 'specie' }[r.view] ?? r.view;
+  r.tab = { zona: 'uscite', impara: 'specie', glossario: 'specie', 'specie-dettaglio': 'specie', alberi: 'specie', albero: 'specie', riconosci: 'specie', info: '', metodo: '', guide: 'uscite', fungo: 'specie', commestibile: 'specie' }[r.view] ?? r.view;
   r.hash = location.hash || '#/';
   const nav = navKind(prev, r), back = prev?.hash || '';
   if (prev) scrollMem.set(prev.hash, scrollY);
@@ -342,7 +349,15 @@ function routeNow(r, nav) {
   if (r.view === 'metodo') renderMethod($('#method-body'));
   if (r.view === 'commestibile') renderEdiblePage(r.speciesId);
   if (r.view === 'fungo') renderTaxonPage($('#taxon-detail'), r.taxonId);
-  if (r.view === 'riconosci') { setCompare(r.compare, r.pick); renderIdentify($('#identify')); }
+  if (r.view === 'glossario') renderGlossary($('#glossary'), r.termId);
+  if (r.view === 'riconosci') {
+    document.querySelectorAll('[data-recognize-mode]').forEach(a => { if(a.dataset.recognizeMode===r.recognizeMode)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current'); });
+    $('#identify').hidden = r.recognizeMode !== 'funghi';
+    $('#field-identify').hidden = r.recognizeMode === 'funghi';
+    if(r.recognizeMode==='funghi') {setCompare(r.compare,r.pick);renderIdentify($('#identify'));}
+    else renderFieldIdentify($('#field-identify'),r.recognizeMode,treeThumb);
+  }
+  enhanceGlossary(document.querySelector(`.view[data-view="${r.view}"]`));
   if (r.view === 'mappa') {
     requestAnimationFrame(() => {
       map?.invalidateSize();
@@ -814,6 +829,7 @@ function buildSearch(idj, trj, embedded) {
   for (const [id, t] of Object.entries(trj?.trees || {})) {
     items.push({ kind: 'albero', title: t.name, sub: t.latin, hay: `${(t.aliases || []).join(' ')} ${t.type || ''}`, href: `#/albero/${encodeURIComponent(id)}`, img: treeThumb(id, 44) });
   }
+  for (const t of glossaryTerms()) items.push({kind:'termine',title:t.term,sub:t.category,hay:[...t.aliases,t.definition,t.observe].join(' '),href:`#/glossario/${t.id}`});
   const seen = new Map();
   for (const z of zones) for (const t of trails[z.id]?.trails || []) {
     const key = String(t.id);
@@ -829,6 +845,8 @@ function buildSearch(idj, trj, embedded) {
     ['Regole di raccolta nel Lazio', 'Attestato, contributo, limiti, orari', 'regole legge tesserino attestato contributo 3 kg limite orari divieti parchi aree protette', '#/info'],
     ['Controllo gratuito all\'ASL', 'Ispettorato micologico', 'asl ispettorato micologico controllo gratuito micologo', '#/info'],
     ['Come funziona l\'indice', 'Formule, parametri, fonti e limiti', 'metodo scienza scientifico indice calcolo formula pioggia temperatura suolo latenza innesco probabilita affidabilita fonti letteratura euristica', '#/metodo'],
+    ['Glossario del bosco', 'Definizioni, caratteri e legenda delle difficoltà', 'impara glossario parole significato legenda', '#/glossario'],
+    ['Riconosci un albero', 'Confronta foglie, corteccia e frutti', 'riconoscimento botanica foglia corteccia frutto gemme', '#/riconosci/alberi'],
     ['Gli alberi', 'Riconoscerli e cosa ci cresce sotto', 'alberi bosco piante', '#/alberi'],
     ['Prepararli e conservarli', 'Crudo, prebollitura, congelare, essiccare, sott\'olio', 'preparazione cucina cuocere cottura crudo prebollitura congelare surgelare essiccare seccare sottolio sott olio botulino conserve vasetti quantita bambini gravidanza alcol', '#/info'],
     ['Il diario delle passeggiate', 'Annota ricerche, ritrovamenti e osservazioni', 'diario uscite registrare raccolto storico esporta', '#/diario'],
@@ -1449,7 +1467,7 @@ function renderWalkFocus(z, d, walk) {
     <p class="eyebrow">La passeggiata, più da vicino</p><h2>${esc(walk.microzone)}</h2>
     <p class="walk-route">${segnavia(t)}<b>${esc(trailName(t))}</b></p>
     <dl class="walk-facts">
-      <div><dt>Difficoltà</dt><dd>${esc(t.difficulty ? `${t.difficulty} · ${DIFF[t.difficulty] || 'classificazione della fonte'}` : 'Non indicata nella fonte')}</dd></div>
+      <div><dt>Difficoltà</dt><dd>${t.difficulty ? difficultyLink(t.difficulty, `${t.difficulty} · ${DIFF[t.difficulty] || 'classificazione della fonte'}`) : 'Non indicata nella fonte'}</dd></div>
       <div><dt>Tratto nella zona</dt><dd>${fmtKm(t.in_zone_km)} km${t.lines?.length > 1 ? ' · più segmenti separati' : ''}</dd></div>
       <div><dt>Itinerario completo</dt><dd>${t.total_km ? `${fmtKm(t.total_km)} km` : 'Lunghezza n.d.'}${t.duration ? ` · ${fmtDur(t.duration)}` : ''}${t.ascent ? ` · +${esc(t.ascent)} m` : ''}</dd></div>
       <div><dt>Imbocco mappato</dt><dd>${h ? `${h.ele != null ? `Circa ${Math.round(h.ele / 25) * 25} m · ` : ''}${esc(h.road || (h.kind === 'strada' ? 'su strada' : 'su sterrata'))}` : 'Non disponibile; le soste indicate riguardano la zona'}</dd></div>
@@ -1494,7 +1512,7 @@ function planCard(z, d, walk) {
   if (walk?.t) {
     const t = walk.t;
     rows.push({ sec: 'sentieri', svg: segnavia(t), k: 'Sentiero', v: esc(trailName(t)),
-      sub: `${fmtKm(t.in_zone_km)} km nella zona${t.difficulty ? ` · ${esc(t.difficulty)}, ${esc(DIFF[t.difficulty] || '')}` : ' · difficoltà n.d.'}` });
+      sub: `${fmtKm(t.in_zone_km)} km nella zona${t.difficulty ? ` · ${difficultyLink(t.difficulty, `${t.difficulty} · ${DIFF[t.difficulty] || ''}`)}` : ' · difficoltà n.d.'}` });
   }
   return `<ul class="plan">${rows.map((r) => `
     <li data-sec-open="${r.sec}" tabindex="0" role="button" aria-label="${r.k}: dettagli"><span class="plan-ic${r.thumb ? ' has-thumb' : ''}${r.svg ? ' plan-ic-wx' : ''}">${r.thumb ? `<button type="button" class="thumb-btn" data-species="${r.thumb}" aria-label="Scheda specie">${thumb(r.thumb, 32)}</button>` : (r.svg || ICON[r.icon])}</span>
@@ -1599,7 +1617,7 @@ function renderDetail() {
       sec.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
     };
     row.addEventListener('click', open);
-    row.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(e); } });
+    row.addEventListener('keydown', (e) => { if (!e.target.closest('a,button') && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); open(e); } });
   });
   box.querySelectorAll('details.sec').forEach((el) => el.addEventListener('toggle', () => {
     if (el.open) openSecs.add(el.dataset.sec); else openSecs.delete(el.dataset.sec);
@@ -1716,7 +1734,7 @@ function trailProfile(zid, t, sp, band, heads = []) {
 
 function trailCard(z, t, d, top = false) {
   const facts = [
-    t.difficulty && `<div><dt>Difficoltà</dt><dd><b>${esc(t.difficulty)}</b> · ${esc(DIFF[t.difficulty] || '')}</dd></div>`,
+    t.difficulty && `<div><dt>Difficoltà</dt><dd>${difficultyLink(t.difficulty, `${t.difficulty} · ${DIFF[t.difficulty] || 'classificazione della fonte'}`)}</dd></div>`,
     t.total_km && t.total_km < 200 && `<div><dt>Intero</dt><dd>${fmtKm(t.total_km)} km${t.duration ? ` · ${fmtDur(t.duration)}` : ''}${t.ascent ? ` · +${esc(t.ascent)} m` : ''}</dd></div>`,
     `<div><dt>Nella zona</dt><dd>${fmtKm(t.in_zone_km)} km${t.goodKm != null ? `, di cui <b>${fmtKm(t.goodKm)} km</b> in bosco adatto` : ''}</dd></div>`,
   ].filter(Boolean).join('');

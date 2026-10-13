@@ -86,7 +86,7 @@ test('redazione, bozze, pubblicazione, conflitti, agenti e catalogo condiviso',a
   await loginFixture(page);await page.reload();
   await expect(page.locator('#cms-workspace')).toBeVisible();
   await expect(page.locator('[data-profile-label]')).toHaveText('Matteo');
-  await expect(page.locator('[data-resource]')).toHaveCount(17);
+  await expect(page.locator('[data-resource]')).toHaveCount(18);
   const original=(await api(page,'/api/content/v1/snapshot')).data;
   await page.locator('[data-resource="guides"]').click();
   await expect(page.locator('#cms-editor > h2')).toHaveText('Articoli e taccuini');
@@ -120,15 +120,25 @@ test('redazione, bozze, pubblicazione, conflitti, agenti e catalogo condiviso',a
   await page.goto('/#/commestibile/catalogo-prova');await page.reload();await expect(page.getByRole('heading',{name:'Fungo didattico',exact:true})).toBeVisible();
   const report=await api(page,'/api/community/reports','POST',{zoneId:'tancia',day:todayISO(),speciesId:'catalogo-prova',amount:1});expect(report.status).toBe(200);
   await api(page,'/api/community/entries/'+report.data.entryId,'DELETE');
+  const glossary=(await cms(page,'items/glossary')).data, glossaryData=structuredClone(glossary.data);
+  glossaryData.terms.find(t=>t.id==='volva').definition+=' Precisazione verificata dalla redazione.';
+  const glossaryDraft=await cms(page,'items/glossary','PATCH',{data:glossaryData},{'if-match':`"${glossary.version}"`});expect(glossaryDraft.status).toBe(200);
+  list=(await cms(page,'items')).data;
+  expect((await cms(page,'releases','POST',{baseRelease:list.release,items:[{id:'glossary',version:glossaryDraft.data.version}]})).status).toBe(422);
+  expect((await api(page,'/api/content/v1/snapshot')).data.resources.glossary).toEqual(original.resources.glossary);
+  expect((await cms(page,'releases','POST',{baseRelease:list.release,items:[{id:'glossary',version:glossaryDraft.data.version}],reviewed:true})).status).toBe(201);
+  await page.goto('/#/glossario/volva');await page.reload();await expect(page.locator('#glossary-term-volva')).toContainText('Precisazione verificata dalla redazione.');
   // Restore the seed as a new revision, preserving history and isolating later browser tests.
   const restoreItems=[];
-  for(const id of ['guides','edible-catalog']){const current=(await cms(page,'items/'+id)).data;const restored=await cms(page,`items/${id}/restore`,'POST',{version:0},{'if-match':`"${current.version}"`});expect(restored.status).toBe(200);restoreItems.push({id,version:restored.data.version});}
+  for(const id of ['guides','edible-catalog','glossary']){const current=(await cms(page,'items/'+id)).data;const restored=await cms(page,`items/${id}/restore`,'POST',{version:0},{'if-match':`"${current.version}"`});expect(restored.status).toBe(200);restoreItems.push({id,version:restored.data.version});}
   list=(await cms(page,'items')).data;
   expect((await cms(page,'releases','POST',{baseRelease:list.release,items:restoreItems,reviewed:true})).status).toBe(201);
   expect((await api(page,'/api/content/v1/snapshot')).data.resources.guides).toEqual(original.resources.guides);
   const readonly=(await cms(page,'items/habitat')).data;
   expect((await cms(page,'items/habitat','PATCH',{data:readonly.data},{'if-match':'"0"'})).status).toBe(403);
-  await page.setViewportSize({width:390,height:844});await page.goto('/redazione');await page.locator('[data-resource="guides"]').click();
+  await page.setViewportSize({width:390,height:844});await page.goto('/redazione');
+  await page.locator('[data-resource="glossary"]').click();await page.locator('[data-record]').selectOption({label:'Volva'});await expect(page.getByRole('textbox',{name:'Definizione',exact:true})).toHaveValue(/velo generale/);await expect(page.getByRole('combobox',{name:'Categoria',exact:true})).toHaveValue('Funghi');
+  await page.locator('[data-resource="guides"]').click();
   await expect(page.locator('#cms-editor > h2')).toHaveText('Articoli e taccuini');
   await expect(page.getByLabel('Titolo',{exact:true})).toBeVisible();
   expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);

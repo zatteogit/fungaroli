@@ -82,6 +82,23 @@ export function validateContent(id, data, previous) {
     checkIds(value.zones);
     for(const z of value.zones) if(!z.name||!Number.isFinite(z.lat)||Math.abs(z.lat)>90||!Number.isFinite(z.lon)||Math.abs(z.lon)>180||!Array.isArray(z.bands)||!Array.isArray(z.parking)||!(z.radius_m>0)) err(`Dati geografici non validi per ${z.id}.`);
   }
+  if (id==='glossary') {
+    if(!Array.isArray(value.terms)) err('Elenco del glossario non valido.');
+    checkIds(value.terms);
+    const ids=new Set(value.terms.map(t=>t.id)), aliases=new Map();
+    for(const t of value.terms) {
+      if(typeof t.term!=='string'||!t.term.trim()||typeof t.definition!=='string'||!t.definition.trim()||typeof t.observe!=='string'||!['Funghi','Alberi','Bosco','Sentiero'].includes(t.category)) err(`Completa parola, categoria, definizione e indicazioni di campo per ${t.id}.`);
+      if(!Array.isArray(t.aliases)||t.aliases.some(a=>typeof a!=='string'||a.trim().length<3)||!Array.isArray(t.related)||t.related.some(id=>!ids.has(id)||id===t.id)) err(`Sinonimi o voci collegate non validi per ${t.id}.`);
+      if(!Array.isArray(t.sources)||!t.sources.length||t.sources.some(s=>typeof s?.title!=='string'||!s.title.trim()||!/^https?:\/\//.test(s?.url||''))) err(`Aggiungi fonti consultabili alla voce ${t.id}.`);
+      for(const word of [t.term,...t.aliases]) {
+        const key=word.trim().toLowerCase();
+        if(aliases.has(key)&&aliases.get(key)!==t.id) err(`La parola ${word} è associata a più voci del glossario.`);
+        aliases.set(key,t.id);
+      }
+    }
+    for(const id of ['difficolta-t','difficolta-e','difficolta-ee','difficolta-eea']) if(!ids.has(id)) err('Mantieni le quattro voci della legenda CAI.');
+    needsReview=!!previous&&!same(value,previous);
+  }
   if (id==='legal' && previous && !same(value,previous)) {
     if (!Number.isInteger(value.version)||value.version<=previous.version) err('Aumenta la versione degli avvisi quando aggiorni le regole.');
     needsReview=true;

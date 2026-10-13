@@ -35,7 +35,7 @@
       <span class="tab-pill" aria-hidden="true"></span>
       <a href="#/" data-tab="uscite"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 6 0 0 1 16 0z"/><path d="M10 12v6a2 2 0 0 0 4 0v-6"/></svg><span>Passeggiate</span></a>
       <a href="#/mappa" data-tab="mappa"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2z"/><path d="M9 4v14M15 6v14"/></svg><span>Mappa</span></a>
-      <a href="#/specie" data-tab="specie"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="7" height="7" rx="2"/><rect x="13" y="4" width="7" height="7" rx="2"/><rect x="4" y="13" width="7" height="7" rx="2"/><rect x="13" y="13" width="7" height="7" rx="2"/></svg><span>Specie</span></a>
+      <a href="#/impara" data-tab="specie"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="7" height="7" rx="2"/><rect x="13" y="4" width="7" height="7" rx="2"/><rect x="4" y="13" width="7" height="7" rx="2"/><rect x="13" y="13" width="7" height="7" rx="2"/></svg><span>Impara</span></a>
       <a href="#/diario" data-tab="diario"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h11a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H6z"/><path d="M6 3v18M10 8h5M10 12h5"/></svg><span>Diario</span></a>
       <button type="button" class="tab-search" data-open-search aria-label="Cerca in tutta l'app" title="Cerca (/)"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg><span class="tsl">Cerca</span><kbd class="tsk">/</kbd></button>
     </nav>
@@ -91,25 +91,43 @@
       <details class="legend-box" ontoggle="this.dataset.touched = this.dataset.touched || (event.isTrusted ? '1' : '')"><summary>Legenda</summary><div class="legend" id="legend"></div></details>
     </section>
 
+    <section class="view" data-view="impara" hidden aria-labelledby="learn-h">
+      <div class="view-head"><div><h1 id="learn-h" class="view-title">Impara</h1><p class="view-sub">Conosci il bosco, una cosa alla volta.</p></div></div>
+      <div class="learn-paths">
+        <a href="#/specie"><span class="eyebrow">Il catalogo</span><h2>Funghi</h2><p>Caratteri, habitat e sosia da conoscere.</p><span aria-hidden="true">→</span></a>
+        <a href="#/alberi"><span class="eyebrow">Guarda in alto</span><h2>Alberi</h2><p>Foglie, corteccia, frutti e relazioni con i funghi.</p><span aria-hidden="true">→</span></a>
+        <a href="#/riconosci"><span class="eyebrow">Sul campo</span><h2>Riconosci</h2><p>Confronta quello che vedi, dai funghi ai segnavia.</p><span aria-hidden="true">→</span></a>
+        <a href="#/glossario"><span class="eyebrow">Le parole del bosco</span><h2>Glossario</h2><p>Spiegazioni brevi, dettagli da osservare e fonti.</p><span aria-hidden="true">→</span></a>
+      </div>
+      <section id="learn-editorial" class="editorial"></section>
+    </section>
+
+    <section class="view" data-view="glossario" hidden aria-labelledby="glossary-h">
+      <div class="view-head"><div><h1 id="glossary-h" class="view-title">Glossario</h1><p class="view-sub">Le parole che incontri tra boschi e sentieri.</p></div></div>
+      <nav class="seg-nav" aria-label="Sezioni di Impara"><a href="#/specie">Funghi</a><a href="#/alberi">Alberi</a><a href="#/riconosci">Riconosci</a><a href="#/glossario" aria-current="page">Glossario</a></nav>
+      <div id="glossary"></div>
+    </section>
+
     <section class="view" data-view="specie" hidden aria-labelledby="sp-h">
-      <div class="view-head"><div><h1 id="sp-h" class="view-title">Le specie</h1>
+      <div class="view-head"><div><h1 id="sp-h" class="view-title">Funghi</h1>
         <p class="view-sub">Come riconoscerle, i sosia pericolosi, quando e dove cercarle.</p></div></div>
-      <nav class="seg-nav" aria-label="Sezioni specie"><a href="#/specie" aria-current="page">Funghi</a><a href="#/alberi">Alberi</a><a href="#/riconosci">Riconosci</a></nav>
+      <nav class="seg-nav" aria-label="Sezioni di Impara"><a href="#/specie" aria-current="page">Funghi</a><a href="#/alberi">Alberi</a><a href="#/riconosci">Riconosci</a><a href="#/glossario">Glossario</a></nav>
       <div id="species-grid" class="species-grid"></div>
     </section>
 
     <section class="view" data-view="alberi" hidden aria-labelledby="tr-h">
       <div class="view-head"><div><h1 id="tr-h" class="view-title">Gli alberi</h1>
         <p class="view-sub">Foglie, corteccia e frutti: un taccuino per conoscere gli alberi e gli habitat.</p></div></div>
-      <nav class="seg-nav" aria-label="Sezioni specie"><a href="#/specie">Funghi</a><a href="#/alberi" aria-current="page">Alberi</a><a href="#/riconosci">Riconosci</a></nav>
+      <nav class="seg-nav" aria-label="Sezioni di Impara"><a href="#/specie">Funghi</a><a href="#/alberi" aria-current="page">Alberi</a><a href="#/riconosci">Riconosci</a><a href="#/glossario">Glossario</a></nav>
       <div id="tree-grid" class="species-grid"></div>
     </section>
 
     <section class="view" data-view="riconosci" hidden aria-labelledby="id-h">
       <div class="view-head"><div><h1 id="id-h" class="view-title">Riconosci</h1>
-        <p class="view-sub">Descrivi quello che vedi: restringo i candidati e ti dico cosa controllare.</p></div></div>
-      <nav class="seg-nav" aria-label="Sezioni specie"><a href="#/specie">Funghi</a><a href="#/alberi">Alberi</a><a href="#/riconosci" aria-current="page">Riconosci</a></nav>
-      <div id="identify"></div>
+        <p class="view-sub">Funghi, alberi e dettagli del bosco: descrivi quello che vedi e confronta i caratteri.</p></div></div>
+      <nav class="seg-nav" aria-label="Sezioni di Impara"><a href="#/specie">Funghi</a><a href="#/alberi">Alberi</a><a href="#/riconosci" aria-current="page">Riconosci</a><a href="#/glossario">Glossario</a></nav>
+      <nav class="recognize-modes" aria-label="Che cosa vuoi riconoscere"><a href="#/riconosci" data-recognize-mode="funghi" aria-current="page">Funghi</a><a href="#/riconosci/alberi" data-recognize-mode="alberi">Alberi</a><a href="#/riconosci/bosco" data-recognize-mode="bosco">Bosco e sentiero</a></nav>
+      <div id="identify"></div><div id="field-identify" hidden></div>
     </section>
 
     <section class="view view-hero" data-view="albero" hidden>

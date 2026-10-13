@@ -30,6 +30,7 @@ Le modifiche alla classificazione micologica, alle cautele o alle regole richied
 | Catalogo dei commestibili | Le 22 voci aggiuntive, con possibilità di aggiungere altre schede verificate. |
 | Schede delle specie modellate | Descrizioni, caratteri, sosia e fonti delle 14 voci con modello. |
 | Alberi | Le 21 schede iniziali e i collegamenti agli habitat. |
+| Glossario e legenda | Parole, sinonimi, definizioni, indicazioni di campo e fonti; legenda T/E/EE/EEA. Le modifiche richiedono verifica delle fonti prima di pubblicare. |
 | Articoli e taccuini | Le tre guide iniziali, ora estratte dal codice, e nuovi articoli. |
 | Testi della home | Introduzione, titoli delle sezioni, testo della community e spiegazione delle condizioni. |
 | Luoghi e microzone | Le 15 zone iniziali, descrizioni, soste e informazioni geografiche. |

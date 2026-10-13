@@ -35,3 +35,19 @@ test('legal updates require a new version and unsafe media URLs are rejected',()
   const media=read('media');media.species.edulis.file='assets/x" onerror="alert(1)';
   assert.throws(()=>validateContent('media',media),/URL/);
 });
+test('glossary publication requires sources, unambiguous keywords and a complete difficulty legend',()=>{
+  const original=read('glossary');
+  assert.equal(validateContent('glossary',original).needsReview,false);
+  const changed=structuredClone(original);changed.terms[0].definition+=' Una precisazione.';
+  assert.equal(validateContent('glossary',changed,original).needsReview,true);
+  changed.terms[0].sources=[];
+  assert.throws(()=>validateContent('glossary',changed,original),/fonti/);
+  const collision=structuredClone(original);collision.terms[0].aliases.push('volva');
+  assert.throws(()=>validateContent('glossary',collision,original),/più voci/);
+  const broken=structuredClone(original);broken.terms[0].related.push('voce-inesistente');
+  assert.throws(()=>validateContent('glossary',broken,original),/collegate/);
+  const incomplete=structuredClone(original);incomplete.terms=incomplete.terms.filter(t=>t.id!=='difficolta-eea');incomplete.terms.forEach(t=>t.related=t.related.filter(id=>id!=='difficolta-eea'));
+  assert.throws(()=>validateContent('glossary',incomplete,original),/legenda CAI/);
+  const unsafe=structuredClone(original);unsafe.terms[0].aliases.push('<img src=x onerror=alert(1)>');
+  assert.throws(()=>validateContent('glossary',unsafe,original),/contiene HTML/);
+});
