@@ -1,0 +1,1287 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Fungaroli CMS",
+    "version": "0.1.0",
+    "description": "API condivise dalla redazione umana e dagli agenti. Le autorizzazioni sono assegnate dal gestore. Il GET pubblico espone soltanto contenuti pubblicati."
+  },
+  "servers": [
+    {
+      "url": "https://fungaroli.zatteo.workers.dev"
+    },
+    {
+      "url": "http://localhost:8788"
+    }
+  ],
+  "security": [
+    {
+      "cmsBearer": []
+    },
+    {
+      "cmsSession": []
+    }
+  ],
+  "paths": {
+    "/api/cms/v1/me": {
+      "get": {
+        "summary": "Identità e capacità",
+        "responses": {
+          "200": {
+            "description": "Operazione completata"
+          },
+          "401": {
+            "description": "Identità non autenticata",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Permesso mancante",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "412": {
+            "description": "Revisione o release cambiata",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Documento non valido",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/cms/v1/schemas": {
+      "get": {
+        "summary": "Schemi delle sezioni e limiti",
+        "responses": {
+          "200": {
+            "description": "Operazione completata"
+          },
+          "401": {
+            "description": "Identità non autenticata",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Permesso mancante",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "412": {
+            "description": "Revisione o release cambiata",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Documento non valido",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/cms/v1/items": {
+      "get": {
+        "summary": "Sezioni autorizzate e release corrente",
+        "responses": {
+          "200": {
+            "description": "Operazione completata"
+          },
+          "401": {
+            "description": "Identità non autenticata",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Permesso mancante",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "412": {
+            "description": "Revisione o release cambiata",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Documento non valido",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/cms/v1/items/{id}": {
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "enum": [
+              "species-traits",
+              "edible-catalog",
+              "species-id",
+              "trees",
+              "guides",
+              "ui-copy",
+              "zones",
+              "trails",
+              "trailheads",
+              "access",
+              "habitat",
+              "media",
+              "media-zones",
+              "media-trees",
+              "infografiche",
+              "preparation",
+              "legal"
+            ]
+          }
+        }
+      ],
+      "get": {
+        "summary": "Bozza corrente con ETag",
+        "responses": {
+          "200": {
+            "description": "Operazione completata",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Document"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Identità non autenticata",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Permesso mancante",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "412": {
+            "description": "Revisione o release cambiata",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Documento non valido",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "summary": "Salva una nuova revisione della bozza",
+        "responses": {
+          "200": {
+            "description": "Operazione completata",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Document"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Identità non autenticata",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Permesso mancante",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "412": {
+            "description": "Revisione o release cambiata",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Documento non valido",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "If-Match",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "ETag della revisione letta, per esempio \"3\"."
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "data"
+                ],
+                "properties": {
+                  "data": {
+                    "type": "object",
+                    "additionalProperties": true
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/cms/v1/items/{id}/validate": {
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "enum": [
+              "species-traits",
+              "edible-catalog",
+              "species-id",
+              "trees",
+              "guides",
+              "ui-copy",
+              "zones",
+              "trails",
+              "trailheads",
+              "access",
+              "habitat",
+              "media",
+              "media-zones",
+              "media-trees",
+              "infografiche",
+              "preparation",
+              "legal"
+            ]
+          }
+        }
+      ],
+      "post": {
+        "summary": "Controlla e normalizza senza salvare",
+        "responses": {
+          "200": {
+            "description": "Operazione completata"
+          },
+          "401": {
+            "description": "Identità non autenticata",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Permesso mancante",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "412": {
+            "description": "Revisione o release cambiata",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Documento non valido",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "data"
+                ],
+                "properties": {
+                  "data": {
+                    "type": "object",
+                    "additionalProperties": true
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/cms/v1/items/{id}/preview": {
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "enum": [
+              "species-traits",
+              "edible-catalog",
+              "species-id",
+              "trees",
+              "guides",
+              "ui-copy",
+              "zones",
+              "trails",
+              "trailheads",
+              "access",
+              "habitat",
+              "media",
+              "media-zones",
+              "media-trees",
+              "infografiche",
+              "preparation",
+              "legal"
+            ]
+          }
+        }
+      ],
+      "get": {
+        "summary": "Dati per l’anteprima",
+        "responses": {
+          "200": {
+            "description": "Operazione completata"
+          },
+          "401": {
+            "description": "Identità non autenticata",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Permesso mancante",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "412": {
+            "description": "Revisione o release cambiata",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Documento non valido",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "revision",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "minimum": 0
+            }
+          }
+        ]
+      }
+    },
+    "/api/cms/v1/items/{id}/revisions": {
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "enum": [
+              "species-traits",
+              "edible-catalog",
+              "species-id",
+              "trees",
+              "guides",
+              "ui-copy",
+              "zones",
+              "trails",
+              "trailheads",
+              "access",
+              "habitat",
+              "media",
+              "media-zones",
+              "media-trees",
+              "infografiche",
+              "preparation",
+              "legal"
+            ]
+          }
+        }
+      ],
+      "get": {
+        "summary": "Revisioni immutabili",
+        "responses": {
+          "200": {
+            "description": "Operazione completata"
+          },
+          "401": {
+            "description": "Identità non autenticata",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Permesso mancante",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "412": {
+            "description": "Revisione o release cambiata",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Documento non valido",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/cms/v1/items/{id}/restore": {
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "enum": [
+              "species-traits",
+              "edible-catalog",
+              "species-id",
+              "trees",
+              "guides",
+              "ui-copy",
+              "zones",
+              "trails",
+              "trailheads",
+              "access",
+              "habitat",
+              "media",
+              "media-zones",
+              "media-trees",
+              "infografiche",
+              "preparation",
+              "legal"
+            ]
+          }
+        }
+      ],
+      "post": {
+        "summary": "Recupera una revisione come bozza",
+        "responses": {
+          "200": {
+            "description": "Operazione completata"
+          },
+          "401": {
+            "description": "Identità non autenticata",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Permesso mancante",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "412": {
+            "description": "Revisione o release cambiata",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Documento non valido",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "If-Match",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "ETag della revisione letta, per esempio \"3\"."
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "version"
+                ],
+                "properties": {
+                  "version": {
+                    "type": "integer",
+                    "minimum": 0
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/cms/v1/releases": {
+      "get": {
+        "summary": "Cronologia delle pubblicazioni",
+        "responses": {
+          "200": {
+            "description": "Operazione completata"
+          },
+          "401": {
+            "description": "Identità non autenticata",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Permesso mancante",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "412": {
+            "description": "Revisione o release cambiata",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Documento non valido",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Pubblica sezioni in un batch atomico",
+        "responses": {
+          "200": {
+            "description": "Operazione completata"
+          },
+          "201": {
+            "description": "Release pubblicata"
+          },
+          "401": {
+            "description": "Identità non autenticata",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Permesso mancante",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "412": {
+            "description": "Revisione o release cambiata",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Documento non valido",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "baseRelease",
+                  "items"
+                ],
+                "properties": {
+                  "baseRelease": {
+                    "type": "string"
+                  },
+                  "items": {
+                    "type": "array",
+                    "minItems": 1,
+                    "maxItems": 17,
+                    "items": {
+                      "type": "object",
+                      "required": [
+                        "id",
+                        "version"
+                      ],
+                      "properties": {
+                        "id": {
+                          "type": "string",
+                          "enum": [
+                            "species-traits",
+                            "edible-catalog",
+                            "species-id",
+                            "trees",
+                            "guides",
+                            "ui-copy",
+                            "zones",
+                            "trails",
+                            "trailheads",
+                            "access",
+                            "habitat",
+                            "media",
+                            "media-zones",
+                            "media-trees",
+                            "infografiche",
+                            "preparation",
+                            "legal"
+                          ]
+                        },
+                        "version": {
+                          "type": "integer",
+                          "minimum": 0
+                        }
+                      }
+                    }
+                  },
+                  "reviewed": {
+                    "type": "boolean"
+                  },
+                  "note": {
+                    "type": "string",
+                    "maxLength": 1000
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/cms/v1/tokens": {
+      "get": {
+        "summary": "Elenco credenziali senza segreti; amministratore",
+        "responses": {
+          "200": {
+            "description": "Operazione completata"
+          },
+          "401": {
+            "description": "Identità non autenticata",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Permesso mancante",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "412": {
+            "description": "Revisione o release cambiata",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Documento non valido",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Crea una credenziale, restituita una sola volta",
+        "responses": {
+          "200": {
+            "description": "Operazione completata"
+          },
+          "201": {
+            "description": "Credenziale creata; token mostrato solo in questa risposta"
+          },
+          "401": {
+            "description": "Identità non autenticata",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Permesso mancante",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "412": {
+            "description": "Revisione o release cambiata",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Documento non valido",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "name",
+                  "days",
+                  "scopes",
+                  "resources"
+                ],
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "maxLength": 80
+                  },
+                  "days": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 90
+                  },
+                  "scopes": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "enum": [
+                        "read",
+                        "write",
+                        "publish",
+                        "review"
+                      ]
+                    }
+                  },
+                  "resources": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "enum": [
+                        "species-traits",
+                        "edible-catalog",
+                        "species-id",
+                        "trees",
+                        "guides",
+                        "ui-copy",
+                        "zones",
+                        "trails",
+                        "trailheads",
+                        "access",
+                        "habitat",
+                        "media",
+                        "media-zones",
+                        "media-trees",
+                        "infografiche",
+                        "preparation",
+                        "legal"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/cms/v1/tokens/{id}": {
+      "delete": {
+        "summary": "Revoca una credenziale; amministratore",
+        "responses": {
+          "200": {
+            "description": "Operazione completata"
+          },
+          "401": {
+            "description": "Identità non autenticata",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Permesso mancante",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "412": {
+            "description": "Revisione o release cambiata",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Documento non valido",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ]
+      }
+    },
+    "/api/cms/v1/audit": {
+      "get": {
+        "summary": "Log delle operazioni; amministratore",
+        "responses": {
+          "200": {
+            "description": "Operazione completata"
+          },
+          "401": {
+            "description": "Identità non autenticata",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Permesso mancante",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "412": {
+            "description": "Revisione o release cambiata",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Documento non valido",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/content/v1/snapshot": {
+      "get": {
+        "summary": "Snapshot pubblico dello schema 1",
+        "responses": {
+          "200": {
+            "description": "Contenuti pubblicati, release e revisioni",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Snapshot"
+                }
+              }
+            }
+          },
+          "304": {
+            "description": "Release invariata"
+          },
+          "503": {
+            "description": "Servizio non disponibile",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "cmsBearer": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "cms_<64 hex characters>"
+      },
+      "cmsSession": {
+        "type": "apiKey",
+        "in": "cookie",
+        "name": "__Host-fungaroli_session",
+        "description": "Sessione della passkey. Le mutazioni del browser richiedono l’origine autorizzata."
+      }
+    },
+    "schemas": {
+      "Document": {
+        "type": "object",
+        "required": [
+          "id",
+          "version",
+          "publishedVersion",
+          "data"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "version": {
+            "type": "integer"
+          },
+          "publishedVersion": {
+            "type": "integer"
+          },
+          "data": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "updatedAt": {
+            "type": "integer"
+          },
+          "updatedBy": {
+            "type": "string"
+          },
+          "needsReview": {
+            "type": "boolean"
+          }
+        }
+      },
+      "Snapshot": {
+        "type": "object",
+        "required": [
+          "schemaVersion",
+          "release",
+          "resources",
+          "versions"
+        ],
+        "properties": {
+          "schemaVersion": {
+            "type": "integer",
+            "const": 1
+          },
+          "release": {
+            "type": "string"
+          },
+          "resources": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object"
+            }
+          },
+          "versions": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "integer"
+            }
+          }
+        }
+      },
+      "Error": {
+        "type": "object",
+        "required": [
+          "error"
+        ],
+        "properties": {
+          "error": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

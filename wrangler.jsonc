@@ -4,15 +4,17 @@
   "main": "worker/index.js",
   "compatibility_date": "2026-09-01",
   "compatibility_flags": ["nodejs_compat"],
-  "vars": { "APP_ORIGIN": "https://fungaroli.zatteo.workers.dev" },
+  "vars": { "APP_ORIGIN": "https://fungaroli.zatteo.workers.dev", "CMS_ADMIN_IDS": "2ce3edfd-514c-4ef7-a8f3-9140396360c5" },
   "d1_databases": [
-    { "binding": "COMMUNITY_DB", "database_name": "fungaroli-community", "migrations_dir": "migrations" }
+    { "binding": "COMMUNITY_DB", "database_name": "fungaroli-community", "migrations_dir": "migrations" },
+    { "binding": "CMS_DB", "database_name": "fungaroli-content", "migrations_dir": "migrations" }
   ],
   "rules": [{ "type": "Text", "globs": ["**/*.sql"], "fallthrough": true }],
   "triggers": { "crons": ["17 3 * * *"] },
   "assets": {
     "directory": ".",
-    "binding": "ASSETS"
+    "binding": "ASSETS",
+    "run_worker_first": ["/api/*", "/redazione", "/redazione/"]
   },
   // Diario sincronizzato: namespace KV "fungaroli-diario". Il segreto DIARIO_TOKEN
   // sta nelle impostazioni del Worker (Settings -> Variables and Secrets), non qui.

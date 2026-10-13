@@ -17,7 +17,10 @@ export async function communityRequest(path, method = 'GET', data) {
   return out;
 }
 
-const changed = () => document.dispatchEvent(new CustomEvent('fungaroli:community', { detail: { user } }));
+const changed = () => {
+  document.querySelectorAll('[data-profile-label]').forEach(el=>{el.textContent=user?.handle||'Accedi';});
+  document.dispatchEvent(new CustomEvent('fungaroli:community', { detail: { user } }));
+};
 export async function refreshCommunity() {
   if (!enabled) return;
   try { summary = await communityRequest('summary'); } catch { summary = null; }
@@ -78,6 +81,7 @@ export async function openAccount() {
   }
   return new Promise((resolve) => {
     authDialog.innerHTML = user ? `<h2>Il tuo profilo</h2><p>${esc(user.handle)}</p><p>Il diario è privato. Solo le osservazioni che scegli di condividere entrano nei conteggi collettivi.</p>
+      <div data-cms-link></div>
       <button type="button" class="btn ghost" data-logout>Esci</button><button type="button" class="link-btn" data-delete-account>Elimina profilo e dati</button><button type="button" class="btn primary" data-close>Chiudi</button><p role="status" data-status></p>`
       : `<h2>Unisciti a Fungaroli</h2><p>Un profilo senza password o email: usa la passkey del telefono o del computer. Il nome è facoltativo e non appare nelle segnalazioni.</p>
       <label>Come vuoi chiamarti? <input class="wiz-input" maxlength="32" autocomplete="nickname" data-handle placeholder="Un nome, anche inventato"></label>
@@ -87,6 +91,13 @@ export async function openAccount() {
       <p role="status" data-status></p><button type="button" class="btn ghost" data-close>Continua senza profilo</button>`;
     authDialog.setAttribute('aria-label', user ? 'Il tuo profilo' : 'Accedi o crea un profilo');
     const status = authDialog.querySelector('[data-status]');
+    if(user&&!location.pathname.startsWith('/redazione')){
+      const accountId=user.id;
+      fetch('/api/cms/v1/me',{cache:'no-store',signal:AbortSignal.timeout(2000)}).then(r=>r.ok?r.json():null).then(r=>{
+        const slot=authDialog.querySelector('[data-cms-link]');
+        if(slot&&user?.id===accountId&&r?.user?.scopes?.includes('read'))slot.innerHTML='<a class="btn ghost" href="/redazione">Apri la redazione</a>';
+      }).catch(()=>{});
+    }
     authDialog.onclose = () => resolve(user);
     authDialog.querySelector('[data-close]').onclick = () => authDialog.close();
     const auth = async (register) => {

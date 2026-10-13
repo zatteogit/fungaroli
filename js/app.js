@@ -19,7 +19,7 @@ import { FOREST_LEGEND } from './forest-legend.js';
 import { initTrees, renderTreeGrid, renderTreePage, linkTrees, treeForCategory, treeThumb } from './trees.js';
 import { crowding, comfortScore, timingAdvice, fmtTime, fmtRough, holidayName, intornoA } from './human.js';
 import { initCommunity, communityStatus, communityRank, reportBadge } from './community.js';
-import { guideTitle, renderGuideCards, renderGuide } from './guides.js';
+import { guideTitle, renderGuideCards, renderGuide, initGuideContent } from './guides.js';
 import { buildEdibleCatalog, seasonStatus, seasonLabel, searchEdibleCatalog } from './edible-catalog.js';
 import { mountSpeciesAutocomplete } from './species-autocomplete.js';
 import { uniquePlaceProposals, chooseWalkTrail, walkContext, trailSketch } from './walks.js';
@@ -34,6 +34,7 @@ const cssVar = (name) => getComputedStyle(document.documentElement).getPropertyV
 const scoreVar = (score) => Number.isFinite(score) ? `--s${5 - classOf(score)}` : '--muted';
 const scoreText = formatIndex;
 let journal;
+let contentCopy = {};
 // sulla mappa la stessa scala verde dell'app: per farla risaltare, quando ci sono i riquadri la carta sotto si desatura (#map.cells-on)
 const mapVar = scoreVar;
 const fmtDate = (d, opts) => new Date(d + 'T12:00:00').toLocaleDateString('it-IT', opts);
@@ -123,7 +124,16 @@ async function init() {
   // versione Artifact: dati incorporati nella pagina (niente fetch esterni)
   const embedded = globalThis.FUNGAROLI_DATA;
   const review = !!globalThis.FUNGAROLI_REVIEW; // copia di revisione: niente API esterne
-  const load = (f) => fetch(`data/${f}.json`).then((r) => (r.ok ? r.json() : null)).catch(() => null);
+  let snapshot=null;
+  const complete=s=>s?.schemaVersion===1&&s.resources&&['zones','habitat','species-traits','edible-catalog','guides','legal'].every(id=>s.resources[id]);
+  if(!embedded&&!review){
+    try{const res=await fetch('/api/content/v1/snapshot',{cache:'no-cache',signal:AbortSignal.timeout(7000)});if(res.ok){const s=await res.json();if(complete(s)){snapshot=s;try{localStorage.setItem('fungaroli:content:v1',JSON.stringify(s));}catch{/* optional public cache */}}}}catch{/* recover the last public release */}
+    if(!snapshot)try{const s=JSON.parse(localStorage.getItem('fungaroli:content:v1')||'null');if(complete(s))snapshot=s;}catch{/* use bundled data */}
+  }
+  const load = (f) => snapshot?.resources?.[f] ? Promise.resolve(structuredClone(snapshot.resources[f])) : fetch(`data/${f}.json`).then((r) => (r.ok ? r.json() : null)).catch(() => null);
+  contentCopy = embedded?.contentCopy || await load('ui-copy') || {};
+  initGuideContent(embedded?.guides || await load('guides'),contentCopy);
+  for(const[selector,key]of [['#home-h','homeTitle'],['.home-intro','homeIntro'],['#others-h','otherPlacesTitle'],['#season-h','speciesTitle']])if(contentCopy[key]&&$(selector))$(selector).textContent=contentCopy[key];
   legal = embedded ? embedded.legal : await load('legal');
   const [zj, hj, aj, tj, idj, mj, ij, trj, stj, mtj, mzj, prj, thj, ecj] = embedded
     ? [embedded.zones, embedded.habitat, embedded.access, embedded.trails, embedded.speciesId, embedded.media, embedded.infographics, embedded.trees, embedded.traits, null, null, embedded.preparation, embedded.trailheads, embedded.edibleCatalog]
@@ -133,6 +143,7 @@ async function init() {
   zoneMedia = mzj?.zones || {};
   if (mj && mtj?.trees) mj.trees = { ...(mj.trees || {}), ...mtj.trees };
   traits = stj;
+  for(const sp of SPECIES){const t=stj?.taxa?.[sp.id];if(t){sp.name=t.name||sp.name;sp.latin=t.latin||sp.latin;sp.warning=t.caution||sp.warning;}}
   catalog = buildEdibleCatalog(stj, ecj, idj);
   if (state.speciesIds !== null) {
     state.speciesIds = new Set([...state.speciesIds].filter(id => catalog.some(s => s.id === id)));
@@ -896,7 +907,7 @@ function renderHome() {
   const note = g && g.z.id !== hero.z.id && wg && wg.level !== 'ok'
     ? `<a class="cover-note" href="#/zona/${g.z.id}/${g.o}"><span>${wxi(wg)}<b>${esc(splitName(g.z)[0])}</b> <span class="pc-up">${formatIndex(g.s)}</span> ma ${esc(wg.short || wg.main)}</span><span aria-hidden="true">›</span></a>` : '';
   box.innerHTML = `
-    <p class="small muted">Condizioni di crescita: indice sperimentale 0–10. Le passeggiate sono ordinate con preferenze, meteo e segnalazioni recenti; i ritrovamenti restano incerti.</p>
+    <p class="small muted">${esc(contentCopy.indexExplanation || 'Condizioni di crescita: indice sperimentale 0–10. Le passeggiate sono ordinate con preferenze, meteo e segnalazioni recenti; i ritrovamenti restano incerti.')}</p>
     <div class="cover vtn" style="--vtn:cover">
       ${cov ? `<img class="cover-img" src="${cov.hd}" alt="${esc(cov.alt)}" fetchpriority="high">` : ''}
       <span class="shade"></span>
@@ -929,7 +940,7 @@ function renderHome() {
 
 function renderCommunityIntro() {
   const box = $('#community-intro');
-  if (box) box.innerHTML = `<p class="eyebrow">Un bosco da conoscere insieme</p><h2>Ogni passeggiata aggiunge un pezzetto.</h2><p>Fungaroli nasce per esplorare i sentieri, imparare e osservare. Vogliamo renderlo più accurato grazie alle vostre segnalazioni, anche quando una ricerca non porta ritrovamenti.</p><p class="small muted">${esc(communityStatus())}</p><button class="btn primary" type="button" data-report>Segnala dal bosco</button> <button class="btn ghost" type="button" data-community-account>Il tuo profilo</button>`;
+  if (box) box.innerHTML = `<p class="eyebrow">${esc(contentCopy.communityEyebrow || 'Un bosco da conoscere insieme')}</p><h2>${esc(contentCopy.communityTitle || 'Ogni passeggiata aggiunge un pezzetto.')}</h2><p>${esc(contentCopy.communityIntro || 'Fungaroli nasce per esplorare i sentieri, imparare e osservare. Vogliamo renderlo più accurato grazie alle vostre segnalazioni, anche quando una ricerca non porta ritrovamenti.')}</p><p class="small muted">${esc(communityStatus())}</p><button class="btn primary" type="button" data-report>Segnala dal bosco</button> <button class="btn ghost" type="button" data-community-account>Il tuo profilo</button>`;
 }
 
 // barra delle info: se non ci sta, toglie prima "entro le", poi "min", poi il testo del meteo quando e' bello (resta l'icona)
@@ -1714,6 +1725,7 @@ function trailCard(z, t, d, top = false) {
   return `<div class="tcard${top ? ' top' : ''}">
     <div class="tc-head">${segnavia(t)}<div class="tc-name"><b>${esc(trailName(t))}</b>${t.itinerary?.length > 2 ? `<small>${esc(t.itinerary.slice(1, -1).join(' · '))}</small>` : ''}${t.long ? '<small>tratto di un itinerario lungo</small>' : ''}${t.operator ? `<small>${esc(t.operator)}</small>` : ''}</div>${top ? '<span class="badge tc-top">In evidenza</span>' : ''}</div>
     <dl class="tc-facts">${facts}</dl>
+    ${t.editorialNote?`<p class="small">${esc(t.editorialNote)}</p>`:''}
     ${d?.best ? trailProfile(z.id, t, d.best.species, d.best.band, heads) : ''}
     ${heads.length ? `<div class="th-row"><span class="th-k">Imbocchi</span><div class="th-list">${heads.map((h, k) => `<a class="th-chip" href="${gmaps(h.lat, h.lon)}" target="_blank" rel="noopener" aria-label="Indicazioni stradali per l'imbocco ${k + 1}, a ${h.ele ?? ''} metri"><i class="th-n">${k + 1}</i>${h.kind === 'strada' ? IC.car : ICON.track}<span><b>${h.ele != null ? `${h.ele.toLocaleString('it-IT')} m` : 'imbocco'}</b><small>${esc(h.road || (h.kind === 'strada' ? 'su strada' : 'su sterrata'))}</small></span></a>`).join('')}</div></div>` : ''}
   </div>`;

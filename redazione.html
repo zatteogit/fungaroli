@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Redazione · Fungaroli</title><link rel="icon" href="assets/icon.svg"><link rel="stylesheet" href="css/fonts.css"><link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/cms.css"></head>
+<body class="cms-page">
+  <header class="cms-header"><a class="brand" href="/">Fungaroli <span>Redazione</span></a><button class="btn primary" type="button" data-community-account><span data-profile-label>Accedi</span></button></header>
+  <main class="cms-main">
+    <div id="cms-access" class="cms-welcome"><p class="eyebrow">Il taccuino, dietro le quinte</p><h1>La redazione di Fungaroli</h1><p>Schede, articoli, luoghi e immagini, in un solo posto. Accedi con il tuo profilo per gestire i contenuti.</p><p id="cms-access-status" role="status">Verifico l’accesso…</p></div>
+    <div id="cms-workspace" hidden>
+      <div class="cms-intro"><div><p class="eyebrow">Contenuti</p><h1>Un bosco di cose da raccontare.</h1><p id="cms-identity" class="small muted"></p></div><button class="btn ghost" id="cms-agents" type="button">Accesso degli agenti</button></div>
+      <p id="cms-status" class="cms-status" role="status" aria-live="polite"></p>
+      <div class="cms-layout"><aside class="cms-sidebar"><label>Cerca una sezione<input id="cms-resource-search" type="search" placeholder="Specie, articoli, foto…"></label><nav id="cms-resources" aria-label="Tipi di contenuto"></nav><a class="small" href="/docs/cms.md">Guida e API</a></aside>
+      <section class="cms-editor" id="cms-editor" aria-label="Editor del contenuto"><p>Scegli una sezione per iniziare.</p></section></div>
+    </div>
+  </main>
+  <dialog id="cms-token-dialog" class="cms-dialog"><button type="button" class="cms-close" data-close aria-label="Chiudi">×</button><p class="eyebrow">Persone e agenti</p><h2>Credenziali dedicate</h2><p class="small">Ogni agente ha una chiave revocabile, una scadenza e permessi sulle sezioni scelte. La chiave viene mostrata una sola volta.</p><form id="cms-token-form"><label>Nome dell’agente<input name="name" maxlength="80" required placeholder="Redattore delle specie"></label><label>Scadenza in giorni<input name="days" type="number" min="1" max="90" value="30" required></label><fieldset><legend>Permessi</legend><label><input type="checkbox" name="scope" value="read" checked disabled> Lettura</label><label><input type="checkbox" name="scope" value="write" checked> Salvataggio bozze</label><label><input type="checkbox" name="scope" value="publish"> Pubblicazione</label><label><input type="checkbox" name="scope" value="review"> Conferma delle verifiche micologiche e normative</label></fieldset><fieldset id="cms-token-resources"><legend>Sezioni</legend></fieldset><button type="submit" class="btn primary">Crea credenziale</button></form><div id="cms-token-result" role="status"></div><div id="cms-token-list"></div></dialog>
+  <script type="module" src="js/cms.js"></script>
+</body></html>
