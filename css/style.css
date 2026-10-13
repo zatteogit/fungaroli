@@ -1993,7 +1993,6 @@ html[data-cmp-dir="prev"]::view-transition-new(cmp-pick) { animation-name: cmp-i
 .filter-panel-groups .chip { min-height: 44px; }
 .filter-panel-groups .chip img { border-radius: 50%; }
 
-.home-intro { max-width: 52ch; margin: 0 0 24px; font-size: 1.05rem; line-height: 1.55; color: var(--muted); }
 .editorial-section, .community-intro { margin: 40px 0 24px; }
 .editorial-section h2, .community-intro h2 { font-family: var(--font-display); font-size: clamp(1.4rem, 3vw, 2rem); }
 .editorial-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
