@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "terms": [
     {
       "id": "difficolta-t",
@@ -378,8 +378,8 @@
       ],
       "sources": [
         {
-          "title": "First Nature · Glossary of mycological terms",
-          "url": "https://www.first-nature.com/fungi/~glossary.php"
+          "title": "AMINT · Lamelle (Glossario illustrato micologico)",
+          "url": "https://enciclopedia.funghiitaliani.it/termine.php?show=1107"
         }
       ]
     },
@@ -401,8 +401,8 @@
       ],
       "sources": [
         {
-          "title": "First Nature · Glossary of mycological terms",
-          "url": "https://www.first-nature.com/fungi/~glossary.php"
+          "title": "AMINT · Pori (Glossario illustrato micologico)",
+          "url": "https://enciclopedia.funghiitaliani.it/termine.php?show=1526"
         }
       ]
     },
@@ -415,15 +415,15 @@
         "false lamelle"
       ],
       "definition": "Pieghe o nervature sotto il cappello, spesso ramificate e collegate tra loro, diverse dalle vere lamelle.",
-      "observe": "Nel finferlo sono un carattere da confrontare con il resto del fungo e con i sosia.",
+      "observe": "Nel finferlo sono un carattere da confrontare con il resto del fungo e con i sosia. Il termine può indicare anche pieghe del cappello.",
       "related": [
         "lamelle",
         "imenoforo"
       ],
       "sources": [
         {
-          "title": "First Nature · Glossary of mycological terms",
-          "url": "https://www.first-nature.com/fungi/~glossary.php"
+          "title": "AMINT · Pliche (Glossario illustrato micologico)",
+          "url": "https://enciclopedia.funghiitaliani.it/termine.php?show=2638"
         }
       ]
     },
@@ -441,8 +441,8 @@
       ],
       "sources": [
         {
-          "title": "First Nature · Glossary of mycological terms",
-          "url": "https://www.first-nature.com/fungi/~glossary.php"
+          "title": "AMINT · Aculei (Glossario illustrato micologico)",
+          "url": "https://enciclopedia.funghiitaliani.it/termine.php?show=29"
         }
       ]
     },
@@ -462,8 +462,8 @@
       ],
       "sources": [
         {
-          "title": "First Nature · Glossary of mycological terms",
-          "url": "https://www.first-nature.com/fungi/~glossary.php"
+          "title": "AMINT · Imenoforo (Glossario illustrato micologico)",
+          "url": "https://enciclopedia.funghiitaliani.it/termine.php?show=2651"
         }
       ]
     },
@@ -474,15 +474,15 @@
       "aliases": [
         "anelli"
       ],
-      "definition": "Residuo del velo parziale che può formare una fascia intorno al gambo. Può essere fragile, fugace o danneggiato.",
+      "definition": "Fascia o membrana intorno al gambo, spesso residuo del velo parziale. Può essere fragile, fugace o danneggiata.",
       "observe": "Non vederlo non prova che sia assente: non usarlo da solo per escludere specie mortali.",
       "related": [
         "volva"
       ],
       "sources": [
         {
-          "title": "First Nature · Glossary of mycological terms",
-          "url": "https://www.first-nature.com/fungi/~glossary.php"
+          "title": "AMINT · Anello (Glossario illustrato micologico)",
+          "url": "https://enciclopedia.funghiitaliani.it/termine.php?show=109"
         }
       ]
     },
@@ -501,8 +501,8 @@
       ],
       "sources": [
         {
-          "title": "First Nature · Glossary of mycological terms",
-          "url": "https://www.first-nature.com/fungi/~glossary.php"
+          "title": "AMINT · Volva (Glossario illustrato micologico)",
+          "url": "https://enciclopedia.funghiitaliani.it/termine.php?show=2061"
         }
       ]
     },
@@ -520,8 +520,8 @@
       ],
       "sources": [
         {
-          "title": "First Nature · Glossary of mycological terms",
-          "url": "https://www.first-nature.com/fungi/~glossary.php"
+          "title": "Gruppo Micologico Ravenna · Reticolato (Glossarietto)",
+          "url": "https://micologia.racine.ra.it/Demo-chiavi-funghi/Glossarietto.htm"
         }
       ]
     },
@@ -846,6 +846,51 @@
         {
           "title": "First Nature · Glossary of mycological terms",
           "url": "https://www.first-nature.com/fungi/~glossary.php"
+        }
+      ]
+    },
+    {
+      "id": "cappello",
+      "term": "Cappello",
+      "category": "Funghi",
+      "aliases": [
+        "cappelli",
+        "pileo"
+      ],
+      "definition": "Nei funghi con gambo è la struttura che lo sovrasta, compresa la superficie inferiore con l’imenoforo. La forma può cambiare con lo sviluppo.",
+      "observe": "Confronta profilo, superficie, margine e diametro; il colore del cappello da solo non identifica una specie.",
+      "related": [
+        "gambo",
+        "imenoforo",
+        "umbone"
+      ],
+      "sources": [
+        {
+          "title": "AMINT · Glossario illustrato: Cappello",
+          "url": "https://enciclopedia.funghiitaliani.it/termine.php?show=335"
+        }
+      ]
+    },
+    {
+      "id": "gambo",
+      "term": "Gambo",
+      "category": "Funghi",
+      "aliases": [
+        "gambi",
+        "stipite"
+      ],
+      "definition": "La parte del corpo fruttifero che sostiene il cappello e si collega al micelio. In alcune specie è laterale, molto ridotta o assente.",
+      "observe": "Osserva tutta la lunghezza e la base: forma, superficie, anello e volva sono caratteri da confrontare insieme.",
+      "related": [
+        "cappello",
+        "anello",
+        "volva",
+        "reticolo"
+      ],
+      "sources": [
+        {
+          "title": "AMINT · Glossario illustrato: Gambo",
+          "url": "https://enciclopedia.funghiitaliani.it/termine.php?show=867"
         }
       ]
     }

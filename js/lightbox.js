@@ -1,6 +1,7 @@
 // Visore a schermo intero per foto e infografiche: pizzico/doppio tocco/rotellina per lo zoom,
 // trascinamento per spostarsi, swipe o frecce per passare da un'immagine all'altra.
 // Nessuna dipendenza esterna.
+import {setImageSource} from './images.js';
 
 const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const MAX = 6;
@@ -15,7 +16,7 @@ function build() {
   dlg.className = 'lb';
   dlg.setAttribute('aria-label', 'Visore immagini');
   dlg.innerHTML = `
-    <div class="lb-stage"><img alt="" draggable="false"></div>
+    <div class="lb-stage" aria-busy="true"><img alt="" draggable="false"><p class="lb-loading" role="status">Carico la foto…</p><button type="button" class="lb-retry lb-btn" data-lb="retry" hidden>Riprova</button></div>
     <div class="lb-top">
       <span class="lb-count" aria-live="polite"></span>
       <div class="lb-tools">
@@ -32,6 +33,14 @@ function build() {
   img = stage.querySelector('img');
   cap = dlg.querySelector('.lb-cap');
   counter = dlg.querySelector('.lb-count');
+  stage.addEventListener('fungaroli:image-state',e=>{
+    if(e.target!==img)return;
+    const state=e.detail.state;
+    stage.setAttribute('aria-busy',String(state==='loading'||state==='waiting'));
+    stage.querySelector('.lb-loading').hidden=state==='ready';
+    stage.querySelector('.lb-loading').textContent=state==='error'?'Foto non disponibile.':'Carico la foto…';
+    stage.querySelector('.lb-retry').hidden=state!=='error';
+  });
 
   dlg.addEventListener('click', (e) => {
     const a = e.target.closest('[data-lb]')?.dataset.lb;
@@ -40,6 +49,7 @@ function build() {
     if (a === 'next') show(index + 1);
     if (a === 'in') zoomAt(scale * 1.6);
     if (a === 'out') zoomAt(scale / 1.6);
+    if (a === 'retry') show(index);
   });
   dlg.addEventListener('keydown', (e) => {
     if (e.key === 'ArrowLeft') show(index - 1);
@@ -87,6 +97,7 @@ function zoomAt(next, cx, cy) {
 }
 
 function onDown(e) {
+  if(e.target.closest('button,a'))return;
   stage.setPointerCapture(e.pointerId);
   pointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
   if (pointers.size === 2) {
@@ -133,7 +144,11 @@ function show(i) {
   index = (i + items.length) % items.length;
   const it = items[index];
   scale = 1; tx = 0; ty = 0; apply();
-  img.src = it.src;
+  stage.setAttribute('aria-busy','true');
+  stage.querySelector('.lb-loading').hidden=false;
+  stage.querySelector('.lb-loading').textContent='Carico la foto…';
+  stage.querySelector('.lb-retry').hidden=true;
+  setImageSource(img,it.src);
   img.alt = it.alt || '';
   cap.innerHTML = it.caption || '';
   counter.textContent = items.length > 1 ? `${index + 1} / ${items.length}` : '';
@@ -141,8 +156,9 @@ function show(i) {
 }
 
 // items: [{ src, alt, caption (HTML gia' sanificato) }]
-export function openLightbox(list, start = 0) {
+export function openLightbox(list, start = 0, {container=document.body} = {}) {
   if (!dlg) build();
+  container.append(dlg);
   items = list;
   show(start);
   document.documentElement.classList.add('lb-open');

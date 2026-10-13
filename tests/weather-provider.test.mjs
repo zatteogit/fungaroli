@@ -72,3 +72,13 @@ test('browser requests published zones separately with bounded concurrency and r
     assert.deepEqual(result.raw.map(r=>r.latitude),wide.flatMap(z=>z.bands.map(()=>z.lat)));assert.equal(result.fetchedAt.getTime(),now-7*60000);
   } finally{global.fetch=original;if(document===undefined)delete global.document;else global.document=document;}
 });
+test('one failing zone does not cancel successful forecasts or shift elevations',async()=>{
+  const original=global.fetch,document=global.document;global.document={};
+  const selection=[{id:'ok-first',lat:42,lon:13,bands:[800,1000]},{id:'missing',lat:43,lon:13,bands:[900]},{id:'ok-last',lat:44,lon:13,bands:[700]}];let failedCalls=0;
+  global.fetch=async url=>{const q=new URL(url,'https://test.local').searchParams;if(q.get('latitude')==='43'){failedCalls++;return Response.json({error:'Temporaneamente non disponibile'},{status:503});}return Response.json(q.get('elevation').split(',').map(e=>({elevation:Number(e),daily:{time:[todayISO()],precipitation_sum:[3]}})),{headers:{'x-weather-fetched-at':new Date(now).toISOString()}});};
+  try{
+    const result=await fetchForecast(forecastParams(selection,'growth'));assert.equal(result.partial,true);assert.equal(failedCalls,2);assert.deepEqual(result.raw.map(r=>r?.elevation??null),[800,1000,null,700]);
+    const {loadWeather}=await import('../js/weather.js');const writes=[];const oldStorage=global.localStorage;global.localStorage={getItem:()=>null,setItem:(...x)=>writes.push(x)};
+    try{const weather=await loadWeather(selection);assert.deepEqual(weather.missingZones,['missing']);assert.deepEqual(Object.keys(weather.series),['ok-first','ok-last']);assert.equal(writes.length,0);}finally{if(oldStorage===undefined)delete global.localStorage;else global.localStorage=oldStorage;}
+  }finally{global.fetch=original;if(document===undefined)delete global.document;else global.document=document;}
+});

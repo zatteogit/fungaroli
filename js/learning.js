@@ -1,8 +1,10 @@
 // Lessico di campo e spiegazioni contestuali: i link restano utilizzabili senza popover.
 import { openEntitySheet } from './entity-sheet.js';
+import {openLightbox,captionHtml} from './lightbox.js';
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 export const normalizeLearning = s => String(s ?? '').toLowerCase().normalize('NFD').replace(/\p{M}/gu, '').replace(/[’']/g, ' ');
 let TERMS = [], TREES = {}, aliasMap = new Map(), aliasRe, active = null, opener = null, observer;
+let ILLUSTRATIONS={},ASSET=f=>f;
 export const glossaryTerms = () => TERMS;
 export const glossaryTitle = id => TERMS.find(t => t.id === id)?.term || 'Glossario';
 const difficultyIds = {T:'difficolta-t', E:'difficolta-e', EE:'difficolta-ee', EEA:'difficolta-eea'};
@@ -13,9 +15,18 @@ export function difficultyLink(code, label) {
 }
 
 const sourceLinks = sources => (sources || []).filter(s => /^https?:\/\//.test(s?.url || '')).map(s => `<a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.title)}</a>`).join(' · ');
+const imagesFor=id=>(ILLUSTRATIONS[id]?.illustrations||[]).filter(m=>m?.alt&&/^(?:https:\/\/[^\s"'<>]+|\/?assets\/[a-zA-Z0-9_/-]+\.(?:svg|webp|png|jpe?g))$/.test(m.file||''));
+const imageCredit=m=>`${m.generated?'Schema generato':m.kind==='diagram'?'Schema':'Foto'}: ${esc(m.author)} · ${/^https:\/\//.test(m.licenseUrl||'')?`<a href="${esc(m.licenseUrl)}" target="_blank" rel="noopener noreferrer">${esc(m.license)}</a>`:esc(m.license)}${/^https:\/\//.test(m.page||'')?` · <a href="${esc(m.page)}" target="_blank" rel="noopener noreferrer">Originale</a>`:''}`;
+function termImages(id) {
+  const images=imagesFor(id);
+  if(!images.length)return '';
+  return `<div class="learning-media${images.length>1?' learning-media-grid':''}">${images.map((m,i)=>`<figure data-no-glossary>
+    <button type="button" class="learning-image ${m.kind==='diagram'?'learning-diagram':''}" data-learning-image="${esc(id)}" data-image-index="${i}" aria-label="Ingrandisci: ${esc(m.alt)}"><img data-src="${esc(ASSET(m.file))}" alt="${esc(m.alt)}" loading="lazy" decoding="async"><span aria-hidden="true">⤢</span></button>
+    <figcaption><span>${esc(m.caption)}</span><small>${imageCredit(m)}</small></figcaption></figure>`).join('')}</div>`;
+}
 function termBody(t, legend = false) {
   if(legend && t.id.startsWith('difficolta-')) return `<div class="difficulty-legend" aria-label="Legenda delle difficoltà">${Object.values(difficultyIds).map(id => TERMS.find(x => x.id === id)).filter(Boolean).map(x => `<div${x.id === t.id ? ' class="current"' : ''}><b>${esc(x.term)}</b><p>${esc(x.definition)}</p></div>`).join('')}</div><p class="learning-observe">${esc(t.observe)}</p><p class="small muted">Sigla dalla fonte del percorso: verifica stato del sentiero, meteo, tempi e dislivelli prima di partire.</p><p class="learning-sources small muted">Fonte: ${sourceLinks(t.sources)}</p>`;
-  return `<p>${esc(t.definition)}</p>${t.observe ? `<p class="learning-observe">${esc(t.observe)}</p>` : ''}
+  return `<p>${esc(t.definition)}</p>${termImages(t.id)}${t.observe ? `<p class="learning-observe">${esc(t.observe)}</p>` : ''}
     ${t.related?.length ? `<div class="learning-related">${t.related.map(id => TERMS.find(x => x.id === id)).filter(Boolean).map(x => `<a class="glossary-link" data-term="${x.id}" href="#/glossario/${x.id}">${esc(x.term)}</a>`).join('')}</div>` : ''}
     <p class="learning-sources small muted">Fonti: ${sourceLinks(t.sources)}</p>`;
 }
@@ -79,7 +90,9 @@ function ensurePanel(mobile) {
   panel = document.createElement(mobile ? 'dialog' : 'div'); panel.id = id; panel.className = 'learning-panel'; panel.dataset.noGlossary = '';
   if(!mobile) { panel.setAttribute('popover','auto'); panel.setAttribute('role','dialog'); }
   panel.setAttribute('aria-labelledby', `${id}-title`);
+  panel.addEventListener('load',()=>{if(active===panel&&!mobile)positionPopover(panel);},true);
   panel.addEventListener('click', e => {
+    if(e.target.closest('dialog.lb'))return;
     if(e.target.closest('[data-learning-close]')) closePanel();
     else if(e.target.closest('a:not(.glossary-link)')) closePanel(false);
     else if(mobile && e.target === panel) { const r=panel.getBoundingClientRect(); if(e.clientX<r.left || e.clientX>r.right || e.clientY<r.top || e.clientY>r.bottom) closePanel(); }
@@ -113,13 +126,21 @@ function openPanel(link, title, body, href, label) {
   }
 }
 
-export function initLearning({glossary, trees}) {
+export function initLearning({glossary, trees,media,assetUrl}) {
   TERMS = Array.isArray(glossary?.terms) ? glossary.terms : []; TREES = trees?.trees || {};
+  ILLUSTRATIONS=media?.terms||{};if(assetUrl)ASSET=assetUrl;
   aliasMap = new Map();
   for(const t of TERMS) for(const alias of [t.term,...(t.aliases || [])]) if(alias.length > 2) aliasMap.set(alias.toLowerCase(), t.id);
   const words=[...aliasMap.keys()].sort((a,b)=>b.length-a.length).map(w=>w.replace(/[.*+?^${}()|[\]\\]/g,'\\$&').replace(/ /g,'\\s+'));
   aliasRe=words.length ? new RegExp(`(^|[^\\p{L}\\p{N}])(${words.join('|')})(?=[^\\p{L}\\p{N}]|$)`,'giu') : null;
   document.addEventListener('click',e=>{
+    const zoom=e.target.closest('[data-learning-image]');
+    if(zoom){
+      e.preventDefault();
+      const images=imagesFor(zoom.dataset.learningImage);
+      openLightbox(images.map(m=>({src:ASSET(m.file),alt:m.alt,caption:captionHtml({text:esc(m.caption),credit:imageCredit(m)})})),Number(zoom.dataset.imageIndex),{container:zoom.closest('.learning-panel')||document.body});
+      return;
+    }
     const link=e.target.closest('a.glossary-link,a.tree-link,a.species-link,a[data-entity]');
     if(!link || e.defaultPrevented || e.button!==0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
     const t=TERMS.find(x=>x.id===link.dataset.term);

@@ -2,6 +2,7 @@ import schema from '../migrations/0002_cms.sql';
 import { CONTENT_RESOURCES, CONTENT_SCHEMA_VERSION, resourceOf } from '../js/content-schema.js';
 import { readCommunityUser } from './community.js';
 import { validateContent } from './content-validation.js';
+import {glossarySeedUpdate} from './seed-update.js';
 
 const initialized=new WeakMap(), enc=new TextEncoder();
 const hash=async s=>Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',enc.encode(s))),b=>b.toString(16).padStart(2,'0')).join('');
@@ -31,11 +32,19 @@ async function init(env,origin) {
       return {id:r.id,payload:JSON.stringify(value)};
     }));
     if(seeds.length) await db.batch([
-      // 18 documents use 90 bindings, below D1's 100-parameter limit.
+      // 19 documents use 95 bindings, below D1's 100-parameter limit.
       // Two statements keep the cold start within the free tier query budget.
       db.prepare(`INSERT INTO cms_documents(id,draft,published,updated_at,updated_by) VALUES ${seeds.map(()=>'(?,?,?,?,?)').join(',')} ON CONFLICT(id) DO NOTHING`).bind(...seeds.flatMap(r=>[r.id,r.payload,r.payload,Date.now(),'seed'])),
       db.prepare('INSERT INTO cms_revisions(document_id,version,payload,created_at,actor) SELECT id,0,draft,updated_at,updated_by FROM cms_documents WHERE version=0 ON CONFLICT(document_id,version) DO NOTHING'),
     ]);
+    const baseline=await db.prepare("SELECT id FROM cms_documents WHERE id='glossary' AND version=0 AND updated_by='seed' AND json_extract(draft,'$.version')=1").first();
+    if(baseline){
+      const source=await env.ASSETS.fetch(new Request(new URL('/data/glossary.json',origin)));
+      if(source.ok){const data=await source.json();if(data.version===2){
+        const payload=JSON.stringify(validateContent('glossary',data).value);
+        await db.batch(glossarySeedUpdate(db,payload,Date.now(),crypto.randomUUID(),crypto.randomUUID()));
+      }}
+    }
   })().catch(e=>{initialized.delete(db);throw e;}));
   return initialized.get(db);
 }

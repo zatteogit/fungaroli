@@ -1,4 +1,5 @@
 import { initCommunity, communityReady, currentUser } from './community.js';
+import './images.js';
 import { CONTENT_RESOURCES, CONTENT_TEMPLATES, FIELD_LABELS, isLockedField } from './content-schema.js';
 
 const $=s=>document.querySelector(s);
@@ -60,7 +61,7 @@ function renderEditor(){
     ${schema.readonly?'<p class="small muted">Questi campioni e percorsi provengono dai processi geografici. La redazione li consulta; l’aggiornamento avviene tramite importazione dei dati.</p>':''}
     ${schema.collections.length?`<div class="cms-record-picker"><label>Gruppo<select data-collection>${schema.collections.map(k=>`<option value="${esc(k)}" ${k===collection?'selected':''}>${esc(title(k))}</option>`).join('')}<option value="" ${!collection?'selected':''}>Impostazioni del documento</option></select></label><label>Voce<select data-record>${rows.map(([k,v])=>`<option value="${esc(k)}" ${k===record?'selected':''}>${esc(typeof v==='string'?v.slice(0,70):v.name||v.title||v.term||v.latin||v.id||k)}</option>`).join('')}</select></label></div>${!schema.readonly&&collection&&doc.id!=='trails'?'<button class="btn ghost small" type="button" data-new>＋ Nuova voce</button>':''}`:''}
     <fieldset class="cms-fieldset" ${!can('write')||schema.readonly?'disabled':''}><legend>Contenuto</legend><div class="cms-fields">${fields(value,path)}</div></fieldset>
-    ${can('review')&&['species-traits','edible-catalog','legal','glossary'].includes(doc.id)?'<label class="cms-review"><span><input type="checkbox" data-reviewed> Ho verificato le fonti delle modifiche scientifiche o normative, quando richiesto.</span></label><p class="small muted">I controlli automatici verificano struttura e collegamenti; non certificano la correttezza scientifica.</p>':''}
+    ${can('review')&&['species-traits','edible-catalog','legal','glossary','media-glossary'].includes(doc.id)?'<label class="cms-review"><span><input type="checkbox" data-reviewed> Ho verificato le fonti delle modifiche scientifiche o normative, quando richiesto.</span></label><p class="small muted">I controlli automatici verificano struttura e collegamenti; non certificano la correttezza scientifica.</p>':''}
     <p class="small muted">La pubblicazione include tutte le voci modificate in questa sezione.</p>
     <div id="cms-preview" hidden></div><details class="cms-revisions"><summary>Cronologia e ripristino</summary><div id="cms-revisions"></div></details>`;
   loadRevisions();
@@ -70,12 +71,12 @@ function fields(v,path,depth=0){
   if(typeof v!=='object')return field(v,path);
   if(Array.isArray(v)) {
     if(v.length>50||isLockedField(path.at(-1)))return `<p class="cms-readonly">${esc(title(path.at(-1)))} · ${v.length} valori del dataset</p>`;
-    if(v.every(x=>typeof x==='string'||typeof x==='number'))return `<label>${esc(title(path.at(-1)))} <span class="small muted">Un valore per riga</span><textarea data-field="${pathCode(path)}" data-kind="${v.length&&typeof v[0]==='number'?'numbers':'strings'}">${esc(v.join('\n'))}</textarea></label>`;
+    if(path.at(-1)!=='illustrations'&&v.every(x=>typeof x==='string'||typeof x==='number'))return `<label>${esc(title(path.at(-1)))} <span class="small muted">Un valore per riga</span><textarea data-field="${pathCode(path)}" data-kind="${v.length&&typeof v[0]==='number'?'numbers':'strings'}">${esc(v.join('\n'))}</textarea></label>`;
     return `<details class="cms-fieldset" ${depth<1?'open':''}><summary>${esc(title(path.at(-1)))} · ${v.length} voci</summary><div class="cms-fields">${v.map((x,i)=>`<div class="cms-array-item">${fields(x,[...path,i],depth+1)}<button class="btn ghost small" type="button" data-remove="${pathCode([...path,i])}">Rimuovi voce</button></div>`).join('')}<button class="btn ghost small" type="button" data-add="${pathCode(path)}">＋ Aggiungi voce</button></div></details>`;
   }
   return Object.entries(v).map(([k,x])=>{
     const p=[...path,k];
-    if(isLockedField(k))return `<details class="cms-fieldset"><summary>${esc(title(k))} · dalla fonte</summary><pre class="cms-readonly">${esc(JSON.stringify(x,null,2).slice(0,800))}</pre></details>`;
+    if(isLockedField(k)&&!(doc.id==='media-glossary'&&k==='generated'))return `<details class="cms-fieldset"><summary>${esc(title(k))} · dalla fonte</summary><pre class="cms-readonly">${esc(JSON.stringify(x,null,2).slice(0,800))}</pre></details>`;
     if(x&&typeof x==='object'&&!Array.isArray(x))return `<details class="cms-fieldset" ${depth<1?'open':''}><summary>${esc(title(k))}</summary><div class="cms-fields">${fields(x,p,depth+1)}</div></details>`;
     return fields(x,p,depth+1);
   }).join('');
@@ -84,6 +85,7 @@ function field(v,path){
   const key=path.at(-1),label=esc(title(key));
   if(typeof v==='boolean')return `<label><span><input type="checkbox" data-field="${pathCode(path)}" data-kind="boolean" ${v?'checked':''}> ${label}</span></label>`;
   if(key==='id')return `<label>${label}<input value="${esc(v)}" readonly></label>`;
+  if(doc.id==='media-glossary'&&key==='kind')return `<label>${label}<select data-field="${pathCode(path)}" data-kind="string">${[['photo','Fotografia'],['diagram','Schema didattico']].map(([id,name])=>`<option value="${id}" ${id===v?'selected':''}>${name}</option>`).join('')}</select></label>`;
   if(doc.id==='glossary'&&key==='category')return `<label>${label}<select data-field="${pathCode(path)}" data-kind="string">${['Funghi','Alberi','Bosco','Sentiero'].map(x=>`<option ${x===v?'selected':''}>${x}</option>`).join('')}</select></label>`;
   if(key==='toxicity')return `<label>${label}<select data-field="${pathCode(path)}" data-kind="string">${['da verificare','commestibile','commestibile con cautela','non commestibile','tossico','mortale'].map(x=>`<option ${x===v||!v&&x==='da verificare'?'selected':''}>${x}</option>`).join('')}</select></label>`;
   if(['body','html'].includes(key))return `<label>${label}</label><div class="cms-rich-tools"><button type="button" data-format="bold">Grassetto</button><button type="button" data-format="italic">Corsivo</button><button type="button" data-format="insertUnorderedList">Elenco</button><button type="button" data-format="formatBlock" data-format-value="h2">Sottotitolo</button></div><div class="cms-rich" contenteditable="true" role="textbox" aria-label="${label}" aria-multiline="true" data-field="${pathCode(path)}" data-kind="html">${v}</div>`;
@@ -115,7 +117,7 @@ async function preview(){
   const p=recordPath(),v=p.reduce((a,k)=>a?.[k],checked.data)||checked.data;
   const box=$('#cms-preview');box.hidden=false;box.className='cms-preview';
   const diff=differences(published,checked.data);
-  box.innerHTML=`<p class="eyebrow">Anteprima della bozza</p>${v.title||v.name||v.term?`<h3>${esc(v.title||v.name||v.term)}</h3>`:''}${v.excerpt?`<p>${esc(v.excerpt)}</p>`:''}${v.body||v.html||`<p>${esc(v.definition||v.description||v.caution||v.latin||'I campi vengono presentati nelle schede dell’app.')}</p>`}<h4>${diff.length} modifiche rispetto al pubblicato${diff.length===100?' (prime 100)':''}</h4><ul class="cms-diff">${diff.map(d=>`<li><b>${esc(d.path)}</b><del>${esc(JSON.stringify(d.before)?.slice(0,300)||'Assente')}</del><ins>${esc(JSON.stringify(d.after)?.slice(0,300)||'Rimosso')}</ins></li>`).join('')}</ul>`;
+  box.innerHTML=`<p class="eyebrow">Anteprima della bozza</p>${v.title||v.name||v.term?`<h3>${esc(v.title||v.name||v.term)}</h3>`:''}${v.excerpt?`<p>${esc(v.excerpt)}</p>`:''}${(v.illustrations||[]).map(m=>`<figure><img data-src="${esc(m.file)}" alt="${esc(m.alt)}" style="display:block;width:100%;height:210px;object-fit:contain"><figcaption>${esc(m.caption)}<br><small>${esc(m.generated?'Schema generato':m.kind==='diagram'?'Schema':'Foto')}: ${esc(m.author)} · ${esc(m.license)}</small></figcaption></figure>`).join('')}${v.body||v.html||`<p>${esc(v.definition||v.description||v.caution||v.latin||'I campi vengono presentati nelle schede dell’app.')}</p>`}<h4>${diff.length} modifiche rispetto al pubblicato${diff.length===100?' (prime 100)':''}</h4><ul class="cms-diff">${diff.map(d=>`<li><b>${esc(d.path)}</b><del>${esc(JSON.stringify(d.before)?.slice(0,300)||'Assente')}</del><ins>${esc(JSON.stringify(d.after)?.slice(0,300)||'Rimosso')}</ins></li>`).join('')}</ul>`;
   message(checked.needsReview?'Struttura valida. La modifica richiede verifica delle fonti prima di pubblicare.':'Struttura valida. La bozza resta privata fino alla pubblicazione.');
 }
 async function loadRevisions(){try{const r=await api(`items/${doc.id}/revisions`);$('#cms-revisions').innerHTML=r.revisions.map(v=>`<button type="button" class="btn ghost small" data-restore="${v.version}">Revisione ${v.version} · ${esc(v.actor==='seed'?'Originale':new Date(v.createdAt).toLocaleString('it-IT'))}</button>`).join('');}catch(e){message(e.message,true);}}
@@ -142,7 +144,7 @@ editor.addEventListener('click',async e=>{
       for(const k of ['name','title','latin','excerpt','body','sources'])if(k in template)template[k]=Array.isArray(template[k])?[]:'';
       dirty=true;renderEditor();message('Nuova voce in bozza: completa i campi e le fonti prima di salvare.');
     }
-    if(b.dataset.add){const p=decode(b.dataset.add),v=valueAt(p);v.push(typeof v[0]==='object'?blank(v[0]):'');dirty=true;renderEditor();}
+    if(b.dataset.add){const p=decode(b.dataset.add),v=valueAt(p);v.push(p.at(-1)==='illustrations'?{file:'',alt:'',caption:'',author:'',license:'',licenseUrl:'',page:'',kind:'photo',generated:false}:typeof v[0]==='object'?blank(v[0]):'');dirty=true;renderEditor();}
     if(b.dataset.remove){const p=decode(b.dataset.remove),v=valueAt(p.slice(0,-1));v.splice(p.at(-1),1);dirty=true;renderEditor();}
   }catch(e){message(e.message,true);}finally{if(b.isConnected)b.disabled=false;}
 });

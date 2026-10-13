@@ -1,5 +1,6 @@
 import './rails.js';
 import './theme.js';
+import './images.js';
 import { consumeFresh, freshDone } from './refresh.js';
 import { SPECIES, GROUPS, FOREST } from './species.js';
 import { scoreZoneDay, scoreSpecies, habitatAtBand, habitatPotential, elevationFit, combine, classOf, scoreLabel, scoreShortLabel, formatIndex, MODEL_VERSION, PARAMS, CLASSES } from './model.js';
@@ -113,7 +114,7 @@ function addSpecies(id) {
 }
 const outOfSeason = (id) => { const members = groupMembers(id); return members.length && members.every(s => seasonStatus(s, filterDate()) === 'out'); };
 
-let zones, origin, habitat, access, trails, traits, legal, series, results, map, zoneLayers = {}, zoneMedia = {}, outing = null;
+let zones, weatherZones, origin, habitat, access, trails, traits, legal, series, results, map, zoneLayers = {}, zoneMedia = {}, outing = null;
 let baseMarker=null;
 function zoneTrip(z,walk=null) {
   const a=access?.[z.id]?.[0],target=customBase()&&walk?.h ? walk.h : a||z.parking?.[0]||z;
@@ -191,7 +192,7 @@ async function init() {
   renderSpeciesGrid();
   applyLegal();
   initTrees({ trees: trj, media: mj, assetUrl: embedded ? (f) => embedded.assets?.[f] || '' : (f) => f, zones, habitat, thumb });
-  initLearning({ glossary: embedded?.glossary || await load('glossary'), trees: trj });
+  initLearning({ glossary: embedded?.glossary || await load('glossary'), trees: trj,media:embedded?.glossaryMedia||await load('media-glossary'),assetUrl:embedded?(f)=>embedded.assets?.[f]||'':(f)=>f });
   initEntitySheets({ enhance: enhanceGlossary, render: (body, href) => {
     const [, kind, encodedId] = href.split('/'), id = decodeURIComponent(encodedId);
     if (kind === 'albero' && trj.trees?.[id]) { renderTreePage(body, id); return trj.trees[id].name; }
@@ -239,7 +240,7 @@ function initShell() {
 function parseRoute() {
   const parts = location.hash.replace(/^#\/?/, '').split('/').filter(Boolean).map((x) => { try { return decodeURIComponent(x); } catch { return x; } });
   const [a, b, c] = parts;
-  if (a === 'zona' && zones.some((z) => z.id === b)) return { view: 'zona', zoneId: b, offset: Math.max(0, Math.min(AHEAD_DAYS, +c || 0)), trailId: parts[3] === 'sentiero' && (trails[b]?.trails || []).some(t => String(t.id) === parts[4]) ? parts[4] : null };
+  if (a === 'zona' && (weatherZones||zones).some((z) => z.id === b)) return { view: 'zona', zoneId: b, offset: Math.max(0, Math.min(AHEAD_DAYS, +c || 0)), trailId: parts[3] === 'sentiero' && (trails[b]?.trails || []).some(t => String(t.id) === parts[4]) ? parts[4] : null };
   if (a === 'mappa') return { view: 'mappa', zoneId: b };
   if (a === 'specie' && b) return { view: 'specie-dettaglio', speciesId: b };
   if (a === 'specie' || a === 'impara') return { view: 'specie' };
@@ -286,7 +287,7 @@ const navStack = [];
 const TITLES = { uscite: 'Uscite', mappa: 'Mappa', specie: 'Funghi', alberi: 'Alberi', riconosci: 'Riconosci', glossario: 'Glossario', 'guide-list': 'Guide', diario: 'Taccuino', info: 'Regole e metodo', metodo: 'Come funziona' };
 function titleOf(r) {
   if (!r) return '';
-  if (r.view === 'zona') { const z = zones.find((x) => x.id === r.zoneId); return z ? splitName(z)[0] : 'Zona'; }
+  if (r.view === 'zona') { const z = (weatherZones||zones).find((x) => x.id === r.zoneId); return z ? splitName(z)[0] : 'Zona'; }
   if (r.view === 'specie-dettaglio') return SPECIES.find((x) => x.id === r.speciesId)?.name || 'Specie';
   if (r.view === 'commestibile') return catalog.find(s => s.id === r.speciesId)?.name || 'Specie';
   if (r.view === 'fungo') return taxonName(r.taxonId) || 'Specie';
@@ -448,7 +449,7 @@ function renderFilterBox(box, onMap = false) {
   const vis = chipsOpen || onMap ? order : order.filter((g, k) => k < fitN || (!all && groupSelection(g.id) !== 'none'));
   const hidden = order.length - vis.length;
   const bd = onMap && results ? bestOfDay(state.dayOffset) : null;
-  const dayChip = bd ? `<button type="button" class="chip chip-day" data-days aria-expanded="${!!box.closest('.map-top')?.classList.contains('days-open')}" style="--dc:var(${scoreVar(bd.s)})"><i></i>${esc(state.dayOffset === 0 ? 'Oggi' : state.dayOffset === 1 ? 'Domani' : fmtDate(bd.d.date, { weekday: 'short' }).replace('.', '').replace(/^./, (c) => c.toUpperCase()))} ${esc(fmtDate(bd.d.date, { day: 'numeric' }))} <b class="pc">${formatIndex(bd.s)}</b><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>` : '';
+  const dayChip = bd ? `<button type="button" class="chip chip-day" data-days aria-expanded="${!!box.closest('.map-top')?.classList.contains('days-open')}" style="--dc:var(${scoreVar(bd.s)})"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4M17 3v4M3 11h18"/></svg><span>${esc(fmtDate(bd.d.date, { weekday: 'short' }).replace('.', ''))} ${esc(fmtDate(bd.d.date, { day: 'numeric' }))}</span><span class="chip-day-score"><i aria-hidden="true"></i><b class="pc">${formatIndex(bd.s)}</b></span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>` : '';
   box.innerHTML = `${dayChip}<button type="button" class="chip" data-g="all" aria-pressed="${all}">Tutti</button>
     ${vis.map((g) => `<button type="button" class="chip chip-g" data-g="${g.id}" aria-pressed="${!all && groupSelection(g.id) !== 'none'}">${esc(g.label)}</button>`).join('')}
     <button type="button" class="chip chip-more" data-more aria-haspopup="dialog">Altri</button>
@@ -519,11 +520,14 @@ async function refreshWeather(force) {
   try {
     $('#updated').textContent = 'Aggiornamento…';
     loadStep(1);
-    const w = await loadWeather(zones, { force });
+    weatherZones??=zones;
+    const w = await loadWeather(weatherZones, { force,onProgress:(done,total)=>{
+      const step=$('.loader [data-step="1"]');if(step)step.textContent=`Scarico il meteo delle zone · ${done}/${total}`;
+    } });
     loadStep(2);
     await new Promise((r) => requestAnimationFrame(() => setTimeout(r, 0))); // lascia disegnare il passo prima del calcolo
     series = w.series;
-    zones = zones.filter((z) => series[z.id]); // una zona senza meteo (copia di revisione vecchia) resta fuori
+    zones = weatherZones.filter((z) => series[z.id]);
     const sameDay = w.fetchedAt.toDateString() === new Date().toDateString();
     $('#updated').textContent = (w.offline ? 'Dati salvati · ' : '') + 'Aggiornamento meteo · ' + (w.snapshot || !sameDay
       ? w.fetchedAt.toLocaleString('it-IT', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' })
@@ -531,6 +535,11 @@ async function refreshWeather(force) {
     document.documentElement.classList.toggle('is-offline', !!w.offline);
     $('#stale').hidden = !w.stale;
     $('#stale').textContent = 'Meteo salvato o non aggiornato: verifica la data di acquisizione. Oltre 24 ore gli indici per oggi e i giorni futuri non vengono calcolati.';
+    if(w.missingZones?.length){
+      $('#stale').hidden=false;
+      $('#stale').textContent=`Meteo disponibile per ${zones.length} zone su ${weatherZones.length}. Le altre non vengono valutate. `;
+      const retry=document.createElement('button');retry.type='button';retry.className='link-btn';retry.textContent='Riprova';retry.onclick=()=>refreshWeather(true);$('#stale').append(retry);
+    }
     $('#today-kicker').textContent = new Date().toLocaleDateString('it-IT', { weekday: 'long', day: 'numeric', month: 'long' });
     compute();
     renderAll();
@@ -615,8 +624,8 @@ function compute() {
 }
 
 const dayEntry = (zid, offset) => {
-  const r = results[zid];
-  return r.days.find((d) => d.i === r.todayIndex + offset);
+  const r = results?.[zid];
+  return r?.days.find((d) => d.i === r.todayIndex + offset);
 };
 // indice "opportunita'": l'indice di fruttificazione corretto con le preferenze attive
 // le stesse correzioni di adjusted(), una per una, per spiegarle
@@ -716,7 +725,7 @@ function fillSpecies() {
   $('#sp-cards').innerHTML = catalog.map(s => {
     const ph = catalogPhoto(s);
     return `<a class="sp-card" href="${s.href}" aria-label="${esc(s.name)}">
-      ${ph ? `<img src="${ph.file}" alt="" loading="lazy" decoding="async">` : `<span class="catalog-placeholder" aria-hidden="true">${esc(s.name.slice(0,2))}</span>`}<span class="shade"></span>
+      ${ph ? `<img data-src="${ph.file}" alt="" loading="lazy" decoding="async">` : `<span class="catalog-placeholder" aria-hidden="true">${esc(s.name.slice(0,2))}</span>`}<span class="shade"></span>
       <span class="sp-card-body"><b>${esc(s.name)}</b><i>${esc(s.latin)}</i></span></a>`;
   }).join('') || '<p class="muted empty-note">Nessuna specie commestibile nel catalogo.</p>';
 }
@@ -821,7 +830,12 @@ function walkFor(z, d, trailId = null, excluded = new Set()) {
     : chooseWalkTrail(compatible, all, t => headsOf(z, t));
   return walkContext(z, t, t ? headsOf(z, t) : []);
 }
-const walkBrief = w => w ? `${w.t.ref ? 'Sentiero ' + w.t.ref : trailName(w.t)} · ${w.t.difficulty || 'difficoltà n.d.'} · ${fmtKm(w.t.in_zone_km)} km nella zona` : 'Sentieri da verificare';
+const walkBrief = w => {
+  if (!w) return 'Sentieri da verificare';
+  const ref=w.t.ref && `Sentiero ${w.t.ref}`;
+  const repeated=ref && w.microzone?.toLocaleLowerCase('it').includes(ref.toLocaleLowerCase('it'));
+  return [repeated ? '' : ref || trailName(w.t),w.t.difficulty || 'difficoltà n.d.',`${fmtKm(w.t.in_zone_km)} km nella zona`].filter(Boolean).join(' · ');
+};
 
 // Nome della zona in titolo + sottotitolo ("Monte Tancia (Monti Sabini)" -> due righe)
 const splitName = (z) => {
@@ -833,7 +847,7 @@ const splitName = (z) => {
 // indice della ricerca generale: tutto quello che l'app sa, in voci semplici
 function buildSearch(idj, trj, embedded) {
   const A = embedded ? (f) => embedded.assets?.[f] || '' : (f) => f;
-  const img = (src) => (src ? `<img class="thumb" src="${src}" width="44" height="44" alt="" loading="lazy" decoding="async">` : '');
+  const img = (src) => (src ? `<img class="thumb" data-src="${src}" width="44" height="44" alt="" loading="lazy" decoding="async">` : '');
   const items = [];
   for (const z of zones) {
     const tip = Object.keys(habitat?.[z.id]?.forest?.tipologie_ha || {}).join(' ');
@@ -928,7 +942,7 @@ function renderHome() {
   const cov = coverOf(hero.z, hero.d.best.species.id);
   // le altre specie: testo con il pallino della classe, non pillole (non sono bottoni)
   const also = hero.d.perSpecies.slice(1, 3).map((p) => [p, spScore(hero.z, hero.d, p)]).filter(([, sc]) => sc >= 20)
-    .map(([p, sc], k) => `<span class="sp-also">${k ? ' · ' : ''}<i style="background:var(${scoreVar(sc).replace('--s', '--ps')})"></i>${esc(p.species.name.split(' / ')[0].toLowerCase())} <b class="pc">${formatIndex(sc)}</b></span>`);
+    .map(([p, sc], k) => `<span class="sp-also">${k ? ' · ' : ''}${esc(p.species.name.split(' / ')[0].toLowerCase())} <span class="sp-also-score"><i aria-hidden="true" style="background:var(${scoreVar(sc).replace('--s', '--ps')})"></i><b class="pc">${formatIndex(sc)}</b></span></span>`);
   const w0 = wxOf(hero.z, hero.d);
   // il posto con l'indice piu' alto quel giorno, se il meteo della mattina l'ha fatto scendere: nota breve e cliccabile
   const g = list.filter((c) => c.o === hero.o).sort((a, b) => b.s - a.s)[0], wg = g && wxOf(g.z, g.d);
@@ -936,7 +950,7 @@ function renderHome() {
     ? `<a class="cover-note" href="#/zona/${g.z.id}/${g.o}"><span>${wxi(wg)}<b>${esc(splitName(g.z)[0])}</b> <span class="pc-up">${formatIndex(g.s)}</span> ma ${esc(wg.short || wg.main)}</span><span aria-hidden="true">›</span></a>` : '';
   box.innerHTML = `
     <div class="cover vtn" style="--vtn:cover">
-      ${cov ? `<img class="cover-img" src="${cov.hd}" alt="${esc(cov.alt)}" fetchpriority="high">` : ''}
+      ${cov ? `<img class="cover-img" data-src="${cov.hd}" alt="${esc(cov.alt)}" fetchpriority="high">` : ''}
       <span class="shade"></span>
       <a class="cover-link" data-walk-zone="${hero.z.id}" href="${walkHref(hero.z, hero.o, hero.walk?.t)}" aria-label="${esc(title)}, ${esc(hero.walk?.microzone || sub)}, ${esc(dayLabel(hero.o, hero.d.date, true))}: i dettagli della passeggiata"></a>
       <span class="cover-top"><span class="pill glass">Una passeggiata da esplorare · ${esc(dayLabel(hero.o, hero.d.date, true))}</span>${ring(hero.s)}</span>
@@ -954,7 +968,7 @@ function renderHome() {
   ol.innerHTML = list.slice(1, 8).map((c) => {
     const cv = coverOf(c.z, c.d.best.species.id);
     return `<li class="vtn" style="--vtn:t-${c.z.id}-${c.o}"><a class="tile" data-walk-zone="${c.z.id}" href="${walkHref(c.z, c.o, c.walk?.t)}">
-      ${cv ? `<img src="${cv.small}" alt="" loading="lazy" decoding="async">` : ''}<span class="shade"></span>${ring(c.s, false)}${(() => { const w = wxOf(c.z, c.d); return w && w.level !== 'ok' ? `<span class="tile-wx wx-${w.level}" title="${esc(w.text)}">${wxi(w)}${esc(OUTING_LABEL[w.level])}</span>` : ''; })()}
+      ${cv ? `<img data-src="${cv.small}" alt="" loading="lazy" decoding="async">` : ''}<span class="shade"></span>${ring(c.s, false)}${(() => { const w = wxOf(c.z, c.d); return w && w.level !== 'ok' ? `<span class="tile-wx wx-${w.level}" title="${esc(w.text)}">${wxi(w)}${esc(OUTING_LABEL[w.level])}</span>` : ''; })()}
       <span class="tile-body"><span class="tile-day">${esc(dayLabel(c.o, c.d.date, true))}</span><b>${esc(splitName(c.z)[0])}</b>${c.walk ? `<span class="tile-micro">${esc(c.walk.microzone)}</span><small>${esc(walkBrief(c.walk))}</small>` : ''}<small>${esc(c.d.best.species.name)} · ${c.d.best.band} m</small></span>
     </a></li>`;
   }).join('');
@@ -1020,7 +1034,7 @@ function renderSeason() {
   box.innerHTML = arr.map((p) => {
     const ph = speciesPhoto(p.species.id);
     return `<li><button type="button" class="portrait" data-species="${p.species.id}">
-      ${ph ? `<img src="${ph.file}" alt="" loading="lazy" decoding="async">` : ''}<span class="shade"></span>${ring(p.score, false)}
+      ${ph ? `<img data-src="${ph.file}" alt="" loading="lazy" decoding="async">` : ''}<span class="shade"></span>${ring(p.score, false)}
       <span class="portrait-body"><b>${esc(p.species.name)}</b>${reportBadge(p.z.id, p.species.id)}<small>${esc(splitName(p.z)[0])}</small></span></button></li>`;
   }).join('');
 }
@@ -1047,7 +1061,7 @@ function openSheet(zid) {
   sh.innerHTML = `
     <button type="button" class="sheet-close" aria-label="Chiudi">✕</button>
     <a class="sheet-row" href="#/zona/${zid}/${state.dayOffset}">
-      <span class="sheet-img">${cv ? `<img src="${cv.small}" alt="" loading="lazy" decoding="async">` : ''}${ring(sc, false)}</span>
+      <span class="sheet-img">${cv ? `<img data-src="${cv.small}" alt="" loading="lazy" decoding="async">` : ''}${ring(sc, false)}</span>
       <span class="sheet-txt"><span class="eyebrow">${esc(dayLabel(state.dayOffset, d.date, true))}</span><b class="sheet-title">${esc(splitName(z)[0])}</b>
         <span class="small">${esc(d.best.species.name)} ~${d.best.band} m · ${esc(travelText(zoneTrip(z)))}${d.crowd ? ` · ${crowdText(d.crowd)}` : ''}</span>${wxOf(z, d) ? `<span class="small wx-line wx-${wxOf(z, d).level}">${wxi(wxOf(z, d))}${esc(wxOf(z, d).text)}</span>` : ''}</span>
     </a>
@@ -1131,6 +1145,7 @@ function initMap() {
   });
   mapControls({ bases: [['Topografica', 'assets/map-thumb-topo.jpg', topo], ['Stradale', 'assets/map-thumb-osm.jpg', osm]], forest });
   map.on('zoomend', () => results && state.view === 'mappa' && renderMap());
+  map.on('moveend',syncCellBackdrop);
   // la carta cambia misura (barra in alto che sparisce, rotazione): Leaflet va avvisato
   new ResizeObserver(() => map.invalidateSize()).observe($('#map'));
   if (canHover) {
@@ -1154,9 +1169,9 @@ function mapControls({ bases = null, forest }) {
         </div>
         <div class="mapctl-panel" hidden>
           <div class="mapctl-head"><b>Livelli</b><button type="button" class="mapctl-x" data-act="layers" aria-label="Chiudi">✕</button></div>
-          ${bases ? `<p class="eyebrow">Tipo di mappa</p><div class="mapctl-tiles">${bases.map(([n, img], k) => `<button type="button" class="mapctl-tile" data-base="${k}" aria-pressed="${k === 0}"><img src="${img}" alt="" width="64" height="64"><span>${n}</span></button>`).join('')}</div>` : ''}
+          ${bases ? `<p class="eyebrow">Tipo di mappa</p><div class="mapctl-tiles">${bases.map(([n, img], k) => `<button type="button" class="mapctl-tile" data-base="${k}" aria-pressed="${k === 0}"><img data-src="${img}" alt="" width="64" height="64"><span>${n}</span></button>`).join('')}</div>` : ''}
           <p class="eyebrow">Dettagli della mappa</p>
-          <div class="mapctl-tiles"><button type="button" class="mapctl-tile" data-act="forest" aria-pressed="false"><img src="assets/map-thumb-forest.jpg" alt="" width="64" height="64"><span>Carta Forestale</span></button></div>
+          <div class="mapctl-tiles"><button type="button" class="mapctl-tile" data-act="forest" aria-pressed="false"><img data-src="assets/map-thumb-forest.jpg" alt="" width="64" height="64"><span>Carta Forestale</span></button></div>
           <p class="small muted mapctl-note" hidden>Colori dei tipi di bosco: vedi Legenda in basso.</p>
         </div>`;
       L.DomEvent.disableClickPropagation(box);
@@ -1222,6 +1237,7 @@ function initEmbeddedMap(bm) {
   map.setView([42.42, 13.03], 10);
   mapControls({ forest });
   map.on('zoomend', () => results && state.view === 'mappa' && renderMap());
+  map.on('moveend',syncCellBackdrop);
   // la carta cambia misura (barra in alto che sparisce, rotazione): Leaflet va avvisato
   new ResizeObserver(() => map.invalidateSize()).observe($('#map'));
   if (canHover) {
@@ -1263,7 +1279,13 @@ function zoneCells(z, d) {
   }
   return out;
 }
-let cellRenderer = null, cellsOut = false;
+let cellRenderer = null, cellsOut = false,mapRenderRevision=0;
+function syncCellBackdrop() {
+  if(!map)return;
+  const el=$('#map'),bounds=map.getBounds();
+  const visible=(el.classList.contains('cells-on')&&cellHits.some(({c,dLat,dLon})=>bounds.intersects([[c.lat-dLat,c.lon-dLon],[c.lat+dLat,c.lon+dLon]])))||(el.classList.contains('cells-peek')&&peekCellBounds.some(b=>bounds.intersects(b)));
+  el.classList.toggle('cells-visible',visible);
+}
 // popover della mappa: titolo e percentuale grande, una riga per fungo con la barretta nella scala dell'indice, l'azione in fondo
 function mapCard({ title, sub, pct, rows = [], more = 0, foot = '' }) {
   return `<div class="mtt"><b class="mtt-t">${esc(title)}</b>${sub ? `<span class="mtt-s">${sub}</span>` : ''}
@@ -1274,7 +1296,7 @@ function mapCard({ title, sub, pct, rows = [], more = 0, foot = '' }) {
 const canHover = matchMedia('(hover: hover) and (pointer: fine)').matches;
 // i riquadri sono disegnati su una tela che non prende il mouse (sotto ci sono cerchi e sentieri):
 // il riquadro sotto il puntatore si trova dalla posizione (cellHits) e si evidenzia con un contorno a parte
-let cellHits = [], cellHi = null, cellTip = null;
+let cellHits = [], peekCellBounds = [], cellHi = null, cellTip = null;
 function cellsLayer(z, d, interactive = true) {
   if (!map.getPane('cells')) map.createPane('cells').style.zIndex = 410; // sopra i cerchi, sotto le etichette
   cellRenderer ||= L.canvas({ padding: 0.3, pane: 'cells' });
@@ -1328,26 +1350,19 @@ function renderMap() {
   if(customBase())baseMarker=L.marker([origin.lat,origin.lon],{icon:L.divIcon({className:'map-base',html:'<span aria-hidden="true">⌂</span>',iconSize:[32,32],iconAnchor:[16,16]}),title:`Base di partenza: ${origin.name}`}).bindTooltip(`Base: ${esc(origin.name)}`).addTo(map);
   // passaggio cerchi pieni <-> riquadri: prima si anima (carta, cerchi, riquadri in dissolvenza), poi si ridisegna
   const mapEl = $('#map');
+  const revision=++mapRenderRevision;
   const want = map.getZoom() >= 11.5 || !!state.zoneId;
   const had = mapEl.classList.contains('cells-on');
   const slow = !matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (had && !want && slow && !cellsOut) {
     cellsOut = true;
-    mapEl.classList.remove('cells-on');
+    mapEl.classList.remove('cells-on','cells-visible');
     setTimeout(() => { cellsOut = false; renderMap(); }, 420);
     return;
   }
   for (const k in zoneLayers) zoneLayers[k].remove();
   zoneLayers = {};
-  cellHits = []; cellHi?.remove(); cellHi = null; cellTip?.remove(); cellTip = null;
-  // al primo disegno la carta e' gia' nello stato giusto (niente dissolvenza colorata -> grigia); dopo, i passaggi si animano
-  if (!mapEl.dataset.ready) {
-    mapEl.dataset.ready = '1';
-    mapEl.classList.add('no-anim');
-    mapEl.classList.toggle('cells-on', want);
-    setTimeout(() => mapEl.classList.remove('no-anim'), 120);
-  } else if (want && !had) requestAnimationFrame(() => requestAnimationFrame(() => mapEl.classList.add('cells-on')));
-  else mapEl.classList.toggle('cells-on', want);
+  cellHits = []; peekCellBounds=[];mapEl.classList.remove('cells-peek');cellHi?.remove(); cellHi = null; cellTip?.remove(); cellTip = null;
   // etichette con nome: spostamento verticale greedy (in pixel) per evitare sovrapposizioni
   const placed = [];
   const labelPos = {};
@@ -1377,8 +1392,8 @@ function renderMap() {
     else if (d && canHover) {
       // a volo d'uccello: passandoci sopra la zona si accende e mostra in anteprima i suoi riquadri
       let prev = null;
-      circle.on('mouseover', () => { circle.setStyle({ weight: 3.5, dashArray: '6 6' }); circle.getElement()?.classList.add('peek'); prev ||= cellsLayer(z, d, false); prev.addTo(g); mapEl.classList.add('cells-peek'); });
-      circle.on('mouseout', () => { circle.setStyle({ weight: 2, dashArray: null }); circle.getElement()?.classList.remove('peek'); mapEl.classList.remove('cells-peek'); setTimeout(() => { if (!mapEl.classList.contains('cells-peek')) prev?.remove(); }, 300); });
+      circle.on('mouseover', () => { circle.setStyle({ weight: 3.5, dashArray: '6 6' }); circle.getElement()?.classList.add('peek'); prev ||= cellsLayer(z, d, false); prev.addTo(g);peekCellBounds=prev.getLayers().map(layer=>layer.getBounds());mapEl.classList.add('cells-peek');requestAnimationFrame(syncCellBackdrop); });
+      circle.on('mouseout', () => { circle.setStyle({ weight: 2, dashArray: null }); circle.getElement()?.classList.remove('peek'); mapEl.classList.remove('cells-peek');syncCellBackdrop();setTimeout(() => { if (!mapEl.classList.contains('cells-peek')) prev?.remove(); }, 300); });
     }
     if (canHover && !showCells) {
       const [t1, t2] = splitName(z);
@@ -1424,6 +1439,9 @@ function renderMap() {
     }
     zoneLayers[z.id] = g;
   }
+  const reveal=()=>{if(revision!==mapRenderRevision)return;mapEl.classList.toggle('cells-on',want);syncCellBackdrop();};
+  // La tela Leaflet disegna al frame successivo: avvia la dissolvenza solo dopo.
+  if(slow&&want&&!had)requestAnimationFrame(()=>requestAnimationFrame(reveal));else reveal();
 }
 
 function renderLegend() {
@@ -1502,7 +1520,7 @@ function renderWalkFocus(z, d, walk) {
       <div><dt>Imbocco mappato</dt><dd>${h ? `${h.ele != null ? `Circa ${Math.round(h.ele / 25) * 25} m · ` : ''}${esc(h.road || (h.kind === 'strada' ? 'su strada' : 'su sterrata'))}` : 'Non disponibile; le soste indicate riguardano la zona'}</dd></div>
     </dl>
     ${t.mainCat ? `<p class="small">Lungo il tracciato: ${linkTrees(t.mainCat.toLowerCase())} nei campioni tra circa ${Math.floor(t.lo / 25) * 25} e ${Math.ceil(t.hi / 25) * 25} m${d?.best?.species ? `, compatibili con l’habitat di ${speciesLink(d.best.species, d.best.species.name.toLowerCase())}` : ''}.</p>` : ''}
-    ${trailVisual(z, t, d, h ? [h] : [])}
+    ${trailVisual(z, t, d, headsOf(z,t))}
     ${trailLinks(z, t)}
     <p class="small muted">Il GPX contiene solo il tratto nella zona. Tempi e dislivello, quando disponibili, riguardano l’itinerario completo. Verifica accesso, sosta e stato del sentiero prima di partire.</p>
     <p class="small muted">Tracciato OpenStreetMap / Waymarked Trails · imbocchi ricavati dalla rete stradale mappata. L’indice e le segnalazioni riguardano la zona, non questo singolo sentiero.</p>
@@ -1510,7 +1528,7 @@ function renderWalkFocus(z, d, walk) {
   </details>`;
 }
 
-function planCard(z, d, walk) {
+function essentialSections(z, d, walk) {
   const best = d.best;
   const rows = [];
   rows.push({ sec: 'specie', icon: 'find', thumb: best.species.id, k: 'Cosa osservare', v: `<button type="button" class="sp-inline" data-species="${best.species.id}">${esc(best.species.name)}</button> ${intornoA(best.band)} <b>${best.band} m</b>`,
@@ -1539,14 +1557,12 @@ function planCard(z, d, walk) {
       sub: `${a0 ? `${esc(travelText(zoneTrip(z,walk)))} da ${esc(currentBase().name)}${customBase()?'':unp}` : ''}${ax ? ` · <a href="${gmaps(ax.rlat, ax.rlon)}" target="_blank" rel="noopener">navigatore</a>` : ''}`,
       badge: d.comfort ? `<span class="badge comfort-${d.comfort.level}">${d.comfort.level}</span>` : '' });
   }
-  if (walk?.t) {
-    const t = walk.t;
-    rows.push({ sec: 'passeggiata', svg: segnavia(t), k: 'Sentiero', v: esc(trailName(t)),
-      sub: `${fmtKm(t.in_zone_km)} km nella zona${t.difficulty ? ` · ${difficultyLink(t.difficulty, `${t.difficulty} · ${DIFF[t.difficulty] || ''}`)}` : ' · difficoltà n.d.'}` });
-  }
-  return `<ul class="plan">${rows.map((r) => `
-    <li data-sec-open="${r.sec}" tabindex="0" role="button" aria-label="${r.k}: dettagli"><span class="plan-ic${r.thumb ? ' has-thumb' : ''}${r.svg ? ' plan-ic-wx' : ''}">${r.thumb ? `<button type="button" class="thumb-btn" data-species="${r.thumb}" aria-label="Scheda specie">${thumb(r.thumb, 32)}</button>` : (r.svg || ICON[r.icon])}</span>
-      <div class="plan-body"><div class="plan-k">${r.k}${r.badge ? ' ' + r.badge : ''}</div><div class="plan-v">${r.v}</div>${r.sub ? `<div class="plan-sub">${r.sub}</div>` : ''}</div><span class="chev" aria-hidden="true">›</span></li>`).join('')}</ul>`;
+  const bodies={specie:()=>zoneSpecies(z,d),quando:()=>renderHuman(z,d),accesso:()=>renderAccess(z,d)};
+  return `<div class="essential-sections">${Object.keys(bodies).map(id=>{
+    const group=rows.filter(r=>r.sec===id);if(!group.length)return '';
+    const summary=group.map(r=>`<span class="essential-summary"><span class="plan-ic${r.thumb?' has-thumb':''}">${r.thumb?thumb(r.thumb,48):r.svg||ICON[r.icon]}</span><span class="plan-body"><span class="plan-k">${r.k}${r.badge?' '+r.badge:''}</span><span class="plan-v">${r.v}</span>${r.sub?`<span class="plan-sub">${r.sub}</span>`:''}</span></span>`).join('');
+    return section(id,summary,bodies[id]()||'<p class="small muted">Verifica le previsioni aggiornate e le condizioni del percorso prima di partire.</p>');
+  }).join('')}</div>`;
 }
 
 const section = (id, title, body, open = false) => body ? `
@@ -1558,6 +1574,7 @@ const openSecs = new Set();
 function bindDetailSections(box, onOpen = () => {}) {
   const sections = [...box.querySelectorAll('details.sec[data-sec]')];
   const sync = (el) => {
+    if(!el.isConnected||!box.contains(el))return;
     if (el.open) {
       // Also enforce exclusivity in browsers without native details[name] support.
       sections.forEach(other => { if (other !== el) other.open = false; });
@@ -1565,20 +1582,33 @@ function bindDetailSections(box, onOpen = () => {}) {
       onOpen(el.dataset.sec);
     } else openSecs.delete(el.dataset.sec);
   };
-  sections.forEach(el => el.addEventListener('toggle', () => sync(el)));
+  sections.forEach(el => {
+    el.addEventListener('toggle', () => sync(el));
+    const summary=el.querySelector(':scope > summary');
+    summary.addEventListener('click',e=>{
+      if(e.target.closest('a,button,input')||e.defaultPrevented)return;
+      const top=summary.getBoundingClientRect().top;
+      // Chiudere una sezione più alta non deve far sparire quella appena aperta.
+      requestAnimationFrame(()=>{if(summary.isConnected)scrollBy({top:summary.getBoundingClientRect().top-top,behavior:'instant'});});
+    });
+  });
   const current = sections.find(el => el.open);
   if (current) sync(current); else openSecs.clear();
 }
 
 function renderDetail() {
-  const z = zones.find((x) => x.id === state.zoneId) || zones[0];
+  const z = (weatherZones||zones).find((x) => x.id === state.zoneId) || zones[0];
   const r = results[z.id];
   const d = dayEntry(z.id, state.dayOffset);
   const walk = walkFor(z, d, state.trailId);
   const box = $('#detail');
+  if(box.querySelector('details.sec')){
+    const current=box.querySelector('details.sec[open]');openSecs.clear();if(current)openSecs.add(current.dataset.sec);
+  }
   if (!d?.best) {
     const missing = [...new Set((d?.perSpecies || []).flatMap((p) => p.quality?.missing || []))];
-    box.innerHTML = `<h1>${esc(z.title || z.name)}</h1><p class="notice">${selectedSpecies().length?'Indice non calcolabile':'Indice non ancora disponibile per le specie selezionate'}${missing.length ? ': mancano ' + esc(missing.join(', ')) : ' per questo giorno'}. Un dato mancante non indica assenza di funghi.</p><p><a href="#/mappa/${z.id}">Apri la mappa</a> · <a href="#/metodo">Metodo e limiti</a></p>${renderWalkFocus(z, d, walk)}${z.protection ? `<p class="notice">${esc(z.protection)}</p>` : ''}<p>${linkTrees(z.description)}</p>${section('accesso','Accessi e soste',renderAccess(z,{access:null}))}${section('sentieri','Sentieri della zona',renderTrails(z,null),true)}`;
+    box.innerHTML = `<h1>${esc(z.title || z.name)}</h1>${!series[z.id]?'<p class="notice">Meteo non disponibile per questa zona. <button type="button" class="link-btn" data-zone-weather-retry>Riprova</button></p>':''}<p class="notice">${selectedSpecies().length?'Indice non calcolabile':'Indice non ancora disponibile per le specie selezionate'}${missing.length ? ': mancano ' + esc(missing.join(', ')) : ' per questo giorno'}. Un dato mancante non indica assenza di funghi.</p><p><a href="#/mappa/${z.id}">Apri la mappa</a> · <a href="#/metodo">Metodo e limiti</a></p>${renderWalkFocus(z, d, walk)}${z.protection ? `<p class="notice">${esc(z.protection)}</p>` : ''}<p>${linkTrees(z.description)}</p>${section('accesso','Accessi e soste',renderAccess(z,{access:null}))}${section('sentieri','Sentieri della zona',renderTrails(z,null),true)}`;
+    box.querySelector('[data-zone-weather-retry]')?.addEventListener('click',()=>refreshWeather(true));
     bindDetailSections(box); return;
   }
   const best = d.best;
@@ -1602,7 +1632,7 @@ function renderDetail() {
   const cov = coverOf(z, best.species.id);
   box.innerHTML = `
     <header class="phero">
-      ${cov ? `<button type="button" class="phero-img" data-cover aria-label="Ingrandisci la foto"><img src="${cov.hd}" alt="${esc(cov.alt)}"></button>` : ''}
+      ${cov ? `<button type="button" class="phero-img" data-cover aria-label="Ingrandisci la foto"><img data-src="${cov.hd}" alt="${esc(cov.alt)}"></button>` : ''}
       <span class="shade"></span>
       <div class="phero-bar"><a class="fab" href="#/mappa/${z.id}" aria-label="Mappa della zona">${IC.map}</a></div>
       <div class="phero-body"><span class="pill glass">${esc(dayLabel)}</span><h1 class="phero-title">${esc(title)}</h1>${sub ? `<p class="phero-sub">${esc(sub)}</p>` : ''}</div>
@@ -1611,7 +1641,7 @@ function renderDetail() {
     <div class="pbody">
     <div id="zone-days" class="days compact" role="tablist" aria-label="Giorno"></div>
     ${renderWalkFocus(z, d, walk)}
-    ${planCard(z, d, walk)}
+    ${essentialSections(z, d, walk)}
     <div class="zone-community"><button type="button" class="btn primary" data-report data-zone="${z.id}" data-species="${best.species.id}">Segnala dal bosco</button>${reportBadge(z.id, best.species.id)}</div>
     <button type="button" class="btn ghost big" data-save-plan>Salva le condizioni prima della passeggiata</button><p class="small muted" data-plan-status></p>
     <a class="btn ghost big map-link" href="#/mappa/${z.id}">${IC.map} Sentieri e accessi nella zona</a>
@@ -1620,10 +1650,7 @@ function renderDetail() {
     ${section('meteo', 'Perché questo indice', `${renderWhy({ r: best, s: sb, i: d.i, sp: best.species, band: best.band, dateStr: d.date, shown: s, agg: d.score, parts: d.perSpecies.map((p) => ({ name: p.species.name.split(' / ')[0], score: p.score })), prefs: adjParts(z, d), outing: wxRank(z, d) < 1 ? wxRank(z, d) : 0 })}
       <p class="small muted">${esc(contentCopy.indexExplanation || 'Condizioni di crescita: indice sperimentale 0–10.')}</p>
       <p class="sci-h">L'indice nei giorni</p><div id="charts"></div>${legal?.forecast_note ? `<p class="small muted">${esc(legal.forecast_note)}</p>` : ''}`)}
-    ${section('quando', 'Quando andare e affollamento', renderHuman(z, d))}
-    ${section('accesso', 'Accesso in auto e a piedi', renderAccess(z, d))}
     ${section('sentieri', 'Sentieri della zona', renderTrails(z, d))}
-    ${section('specie', 'Cosa può nascere qui', zoneSpecies(z, d))}
     ${section('bosco', `Bosco a ${best.band} m (Carta Forestale)`, forestBar(hab.frac) + `<p class="small muted">${hab.n} punti nella fascia ±150 m. Campioni spazialmente correlati; composizione indicativa.</p>`)}
     ${section('zona', 'La zona', `<p class="small">${linkTrees(z.description)}</p>
       <dl class="kv">
@@ -1654,18 +1681,6 @@ function renderDetail() {
     zd.appendChild(b);
   }
   zd.querySelector('[aria-selected="true"]')?.scrollIntoView({ block: 'nearest', inline: 'center' });
-  // ogni riga del piano apre la sezione di dettaglio corrispondente
-  box.querySelectorAll('[data-sec-open]').forEach((row) => {
-    const open = (e) => {
-      if (e.target.closest('a, button')) return;
-      const sec = box.querySelector(`details.sec[data-sec="${row.dataset.secOpen}"]`);
-      if (!sec) return;
-      sec.open = true;
-      sec.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
-    };
-    row.addEventListener('click', open);
-    row.addEventListener('keydown', (e) => { if (!e.target.closest('a,button') && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); open(e); } });
-  });
   const drawCharts = () => $('#charts') && renderCharts($('#charts'), {
     dates: days.map((x) => x.date),
     rain: days.map((x) => sb.p[x.i]),
@@ -1754,7 +1769,7 @@ function headX(t, h) {
   return cum ? at / cum : null;
 }
 
-function trailProfile(zid, t, sp, band, heads = []) {
+function trailProfile(zid, t, sp, band, heads = [], visualId = '') {
   const sm = t.samples || [];
   if (sm.length < 4 || sm.some(x => !Number.isFinite(x[0]))) return '';
   if (t.lines?.length > 1) return `<p class="small muted">Quote campionate tra ${Math.min(...sm.map(x => x[0]))} e ${Math.max(...sm.map(x => x[0]))} m su segmenti separati. Non costituiscono un profilo continuo.</p>`;
@@ -1771,7 +1786,7 @@ function trailProfile(zid, t, sp, band, heads = []) {
   const step = W / (n - 1);
   const good = sm.map(([e], i) => (ok[i] ? `<rect x="${(X(i) - step / 2).toFixed(1)}" y="${Y(e).toFixed(1)}" width="${step.toFixed(1)}" height="${(H - Y(e)).toFixed(1)}"/>` : '')).join('');
   // imbocchi sulla linea, numerati come i bottoni sotto il grafico
-  const marks = heads.map((h, k) => { const x = headX(t, h); if (x == null) return ''; const i = Math.round(x * (n - 1)); return `<span class="tp-th" style="--x:${(x * 100).toFixed(1)}%;top:${((Y(es[i]) / H) * 100).toFixed(1)}%" aria-hidden="true">${k + 1}</span>`; }).join('');
+  const marks = heads.map((h, k) => { const x = headX(t, h); if (x == null) return ''; const i = Math.round(x * (n - 1)); return `<button type="button" class="tp-th" data-trail-head="${k}" aria-controls="${visualId}-head-${k}" aria-label="Mostra imbocco ${k + 1}${h.ele != null ? `, a ${h.ele} metri` : ''}" aria-pressed="false" style="--x:${(x * 100).toFixed(1)}%;top:${((Y(es[i]) / H) * 100).toFixed(1)}%">${k + 1}</button>`; }).join('');
   return `<figure class="tprof"><div class="tp-wrap"><svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" role="img" aria-label="Profilo del tratto nella zona: da ${es[0]} a ${es[n - 1]} m, tra ${lo} e ${hi} m">
       <path d="${area}" class="tp-area"/><g class="tp-good">${good}</g><path d="${line}" class="tp-line"/></svg>${marks}</div>
     <figcaption><span>${es[0]} m</span><span class="tp-key">${habitatKnown ? `<i></i><span>bosco compatibile con ${speciesLink(sp, sp.name.toLowerCase())}</span>` : 'Quote del tratto locale'}</span><span>${es[n - 1]} m</span></figcaption></figure>`;
@@ -1781,13 +1796,14 @@ let trailVisualId = 0;
 const trailViews = new Map();
 function trailVisual(z, t, d, heads = []) {
   const id = `trail-visual-${++trailVisualId}`, key = `${z.id}/${t.id}`;
-  const view = trailViews.get(key) || 'trace', sketch = trailSketch(t, heads[0], heads.slice(1));
-  const trace = sketch ? `<figure class="walk-sketch"><span class="trail-north" aria-hidden="true">N ↑</span><svg viewBox="${sketch.viewBox.map(n=>n.toFixed(1)).join(' ')}" role="img" aria-label="Schema del tratto locale orientato a nord${heads.length ? ', con accessi mappati numerati' : ''}">${sketch.paths.map(p => `<polyline points="${p}"/>`).join('')}${sketch.heads.map((p,k) => `<g class="trail-access" aria-hidden="true"><circle cx="${p[0].toFixed(1)}" cy="${p[1].toFixed(1)}" r="8"/><text x="${p[0].toFixed(1)}" y="${p[1].toFixed(1)}" text-anchor="middle" dominant-baseline="central">${k+1}</text></g>`).join('')}</svg><figcaption>${sketch.paths.length > 1 ? 'Segmenti separati' : 'Tratto locale'}${heads.length ? ' · punti: accessi mappati' : ''}. Schema orientato a nord; usa la mappa del sentiero per orientarti.</figcaption></figure>` : '<p class="small muted">Tracciato non disponibile per questo tratto.</p>';
-  const profile = trailProfile(z.id, t, d?.best?.species, d?.best?.band, heads) || '<p class="small muted">Profilo altimetrico non disponibile: mancano quote sufficienti per questo tratto.</p>';
+  const view = trailViews.get(key) || 'profile', sketch = trailSketch(t, heads[0], heads.slice(1));
+  const trace = sketch ? `<figure class="walk-sketch"><span class="trail-north" aria-hidden="true">N ↑</span><svg viewBox="${sketch.viewBox.map(n=>n.toFixed(1)).join(' ')}" role="img" aria-label="Schema del tratto locale orientato a nord${heads.length ? ', con accessi mappati numerati' : ''}">${sketch.paths.map(p => `<polyline points="${p}"/>`).join('')}${sketch.heads.map((p,k) => `<g class="trail-access" data-trail-head="${k}" aria-hidden="true"><circle cx="${p[0].toFixed(1)}" cy="${p[1].toFixed(1)}" r="8"/><text x="${p[0].toFixed(1)}" y="${p[1].toFixed(1)}" text-anchor="middle" dominant-baseline="central">${k+1}</text></g>`).join('')}</svg><figcaption>${sketch.paths.length > 1 ? 'Segmenti separati' : 'Tratto locale'}${heads.length ? ' · punti: accessi mappati' : ''}. Schema orientato a nord; usa la mappa del sentiero per orientarti.</figcaption></figure>` : '<p class="small muted">Tracciato non disponibile per questo tratto.</p>';
+  const profile = trailProfile(z.id, t, d?.best?.species, d?.best?.band, heads,id) || '<p class="small muted">Profilo altimetrico non disponibile: mancano quote sufficienti per questo tratto.</p>';
   return `<div class="trail-visual" data-trail-view-key="${esc(key)}">
-    <div class="trail-view-tabs" role="tablist" aria-label="Vista del tratto di ${esc(trailName(t))}">${[['trace','Tracciato'],['profile','Profilo']].map(([v,label]) => `<button type="button" role="tab" id="${id}-${v}-tab" data-trail-view="${v}" aria-selected="${view===v}" aria-controls="${id}-${v}" tabindex="${view===v?0:-1}">${label}</button>`).join('')}</div>
+    <div class="trail-view-tabs" role="tablist" aria-label="Vista del tratto di ${esc(trailName(t))}">${[['profile','Profilo'],['trace','Tracciato']].map(([v,label]) => `<button type="button" role="tab" id="${id}-${v}-tab" data-trail-view="${v}" aria-selected="${view===v}" aria-controls="${id}-${v}" tabindex="${view===v?0:-1}">${label}</button>`).join('')}</div>
     <div class="trail-visual-panel" role="tabpanel" id="${id}-trace" data-trail-panel="trace" aria-labelledby="${id}-trace-tab" tabindex="0"${view!=='trace'?' hidden':''}>${trace}</div>
     <div class="trail-visual-panel" role="tabpanel" id="${id}-profile" data-trail-panel="profile" aria-labelledby="${id}-profile-tab" tabindex="0"${view!=='profile'?' hidden':''}>${profile}</div>
+    ${heads.length ? `<div class="th-row"><span class="th-k">Imbocchi</span><div class="th-list">${heads.map((h,k)=>`<a class="th-chip" id="${id}-head-${k}" data-trail-head="${k}" data-trail-head-chip href="${gmaps(h.lat,h.lon)}" target="_blank" rel="noopener" aria-label="Indicazioni stradali per l’imbocco ${k+1}${h.ele!=null?`, a ${h.ele} metri`:''}"><i class="th-n">${k+1}</i>${h.kind==='strada'?IC.car:ICON.track}<span><b>${h.ele!=null?`${h.ele.toLocaleString('it-IT')} m`:'Imbocco'}</b><small>${esc(h.road||(h.kind==='strada'?'su strada':'su sterrata'))}</small></span></a>`).join('')}</div></div>` : ''}
   </div>`;
 }
 function selectTrailView(box, view) {
@@ -1798,7 +1814,22 @@ function selectTrailView(box, view) {
     peer.querySelectorAll('[data-trail-panel]').forEach(panel => { panel.hidden=panel.dataset.trailPanel!==view; });
   });
 }
+function highlightTrailHead(box,index) {
+  if(!box)return;
+  box.querySelectorAll('[data-trail-head]').forEach(el=>{
+    const active=el.dataset.trailHead===index;el.classList.toggle('is-active',active);
+    if(el.tagName==='BUTTON')el.setAttribute('aria-pressed',String(active));
+  });
+}
+document.addEventListener('pointerover',e=>{
+  const head=e.target.closest('[data-trail-head]');if(head)highlightTrailHead(head.closest('.trail-visual'),head.dataset.trailHead);
+});
+document.addEventListener('focusin',e=>{
+  const head=e.target.closest('[data-trail-head]');if(head)highlightTrailHead(head.closest('.trail-visual'),head.dataset.trailHead);
+});
 document.addEventListener('click', e => {
+  const head=e.target.closest('button[data-trail-head]');
+  if(head){const box=head.closest('.trail-visual');highlightTrailHead(box,head.dataset.trailHead);box.querySelector(`[data-trail-head-chip][data-trail-head="${head.dataset.trailHead}"]`)?.focus({preventScroll:true});}
   const tab=e.target.closest('button[data-trail-view]');
   if(tab)selectTrailView(tab.closest('.trail-visual'),tab.dataset.trailView);
 });
@@ -1823,7 +1854,7 @@ function trailCard(z, t, d, top = false) {
     <dl class="tc-facts">${facts}</dl>
     ${t.editorialNote?`<p class="small">${esc(t.editorialNote)}</p>`:''}
     ${trailVisual(z, t, d, heads)}
-    ${heads.length ? `<div class="th-row"><span class="th-k">Imbocchi</span><div class="th-list">${heads.map((h, k) => `<a class="th-chip" href="${gmaps(h.lat, h.lon)}" target="_blank" rel="noopener" aria-label="Indicazioni stradali per l'imbocco ${k + 1}, a ${h.ele ?? ''} metri"><i class="th-n">${k + 1}</i>${h.kind === 'strada' ? IC.car : ICON.track}<span><b>${h.ele != null ? `${h.ele.toLocaleString('it-IT')} m` : 'imbocco'}</b><small>${esc(h.road || (h.kind === 'strada' ? 'su strada' : 'su sterrata'))}</small></span></a>`).join('')}</div></div>` : ''}
+
   </div>`;
 }
 

@@ -16,6 +16,7 @@ export const CONTENT_RESOURCES = [
   {id:'media',title:'Foto di funghi e sosia',group:'Immagini',collections:['species','lookalikes'],required:['species']},
   {id:'media-zones',title:'Foto dei luoghi',group:'Immagini',collections:['zones'],required:['zones']},
   {id:'media-trees',title:'Foto degli alberi',group:'Immagini',collections:['trees'],required:['trees']},
+  {id:'media-glossary',title:'Illustrazioni del glossario',group:'Immagini',collections:['terms'],required:['terms']},
   {id:'infografiche',title:'Infografiche',group:'Immagini',collections:['species'],required:['species']},
   {id:'preparation',title:'Preparazione e cucina',group:'Informazioni',collections:['general','species','cucina'],required:['general','species']},
   {id:'legal',title:'Regole e avvisi',group:'Informazioni',collections:['info_sections'],required:['version','onboarding','info_sections']},
@@ -27,11 +28,13 @@ export const CONTENT_TEMPLATES = {
   'edible-catalog':{id:'',name:'',latin:'',toxicity:'da verificare',aliases:[],months:null,description:'',caution:'',sources:[]},
   'species-traits':{name:'',latin:'',toxicity:'da verificare',caution:'',traits:{season:[]},sources:[]},
   infografiche:{file:'',alt:'',author:'',license:'',page:''},
+  'media-glossary':{name:'',illustrations:[]},
 };
 export const isLockedField = key => ['samples','lines','line','sample_categories','in_zone_km','total_km','duration','ascent','generated','source'].includes(key);
 export const FIELD_LABELS = {
   guides:'Articoli',taxa:'Specie e sosia',species:'Specie',zones:'Luoghi',trees:'Alberi',
   terms:'Voci del glossario',term:'Parola',definition:'Definizione',observe:'Cosa osservare',related:'Voci collegate',
+  illustrations:'Illustrazioni',kind:'Tipo di immagine',generated:'Immagine generata',licenseUrl:'Link alla licenza',
   info_sections:'Sezioni informative',general:'Indicazioni generali',cucina:'Cucina',lookalikes:'Sosia',trails:'Tracciati',
   version:'Versione degli avvisi',verified_on:'Data della verifica',vocabulary:'Vocabolario dei caratteri',
   name:'Nome',latin:'Nome scientifico',title:'Titolo',subtitle:'Sottotitolo',description:'Descrizione',

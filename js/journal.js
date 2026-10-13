@@ -200,7 +200,7 @@ export function initJournal({ zones, speciesCatalog = SPECIES, predict, captureF
       const b = document.createElement('button');
       b.type = 'button';
       b.className = 'wiz-choice' + (it.value === current ? ' sel' : '') + (it.img ? ' has-img' : '');
-      b.innerHTML = `${it.img ? `<img src="${it.img}" alt="" loading="lazy" decoding="async">` : ''}<span>${esc(it.label)}</span>${it.sub ? `<small>${esc(it.sub)}</small>` : ''}`;
+      b.innerHTML = `${it.img ? `<img data-src="${it.img}" alt="" loading="lazy" decoding="async">` : ''}<span>${esc(it.label)}</span>${it.sub ? `<small>${esc(it.sub)}</small>` : ''}`;
       b.addEventListener('click', () => onPick(it.value));
       wrap.appendChild(b);
     }
@@ -342,7 +342,7 @@ export function initJournal({ zones, speciesCatalog = SPECIES, predict, captureF
     const head = entries.length
       ? `<p class="j-sum">${sm.total} ${sm.total === 1 ? 'uscita' : 'uscite'}${sm.judged ? ` · concordanze esplorative per specie: <b>${sm.ok} su ${sm.judged}</b>` : ''}
          ${sm.falseAlarm ? ` · ${sm.falseAlarm} falsi allarmi` : ''}${sm.missed ? ` · ${sm.missed} ritrovamenti con indice basso` : ''}</p><p class="small muted">Confronto a soglia 3,0 su 10, non calibrata. Le osservazioni non sono indipendenti: questi conteggi non misurano l'accuratezza scientifica.</p>`
-      : `<div class="j-empty">${zoneImage('laga') ? `<img src="${zoneImage('laga')}" alt="" loading="lazy" decoding="async">` : ''}<span class="shade"></span>
+      : `<div class="j-empty">${zoneImage('laga') ? `<img data-src="${zoneImage('laga')}" alt="" loading="lazy" decoding="async">` : ''}<span class="shade"></span>
           <div class="j-empty-body"><b>Il primo giro è il più utile</b><span>Dopo ogni uscita segna cosa hai trovato, anche niente: in pochi tocchi capisci se il modello funziona nei tuoi boschi.</span>
           <button type="button" class="btn light big" data-open-journal-inline>＋ Registra un'uscita</button></div></div>`;
     const rows = entries.map((e) => {
@@ -355,7 +355,7 @@ export function initJournal({ zones, speciesCatalog = SPECIES, predict, captureF
           : '<span class="tag">osservazione senza confronto prospettico</span>';
       const img = zoneImage(e.zoneId);
       return `<li class="j-item">
-        <span class="j-img">${img ? `<img src="${img}" alt="" loading="lazy" decoding="async">` : ''}</span>
+        <span class="j-img">${img ? `<img data-src="${img}" alt="" loading="lazy" decoding="async">` : ''}</span>
         <div class="j-body">
           <div class="j-top"><b>${esc(z?.title ?? z?.name ?? e.zoneId)}</b><span class="muted small">${fmt(e.date)}${e.band ? ` · ${esc(e.band)} m` : ''}</span></div>
           <div class="small">${e.kind === 'plan' ? 'Piano' : 'Trovato: ' + esc(found)}${top ? ` · indice ${formatIndex(top[1])} (${esc(speciesCatalog.find((x) => x.id === top[0])?.name ?? '')})` : ''}</div>

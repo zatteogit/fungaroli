@@ -12,12 +12,12 @@ export function forecastParams(zones,kind) {
 }
 const fail=(message,status)=>Object.assign(new Error(message),{status});
 function validate(raw,params,now,compact=false) {
-  const rows=Array.isArray(raw)?raw:[raw],count=params.get('latitude').split(',').length;
+  const rows=Array.isArray(raw)?raw:[raw],count=params.get('latitude').split(',').length,today=todayISO(new Date(now));
   if(rows.length!==count)throw fail('Il servizio meteo ha restituito dati incompleti.',502);
   for(const row of rows)for(const group of ['daily','hourly']) {
     const fields=params.get(group)?.split(',');if(!fields||compact&&group==='hourly'&&params.has('daily'))continue;
     const data=row?.[group];
-    if(!Array.isArray(data?.time)||!data.time.length||data.time.some(t=>typeof t!=='string')||!data.time.some(t=>t.startsWith(todayISO(new Date(now))))
+    if(!Array.isArray(data?.time)||!data.time.length||data.time.some(t=>typeof t!=='string')||!data.time.some(t=>t.startsWith(today))
       ||fields.some(f=>!Array.isArray(data[f])||data[f].length!==data.time.length||data[f].some(v=>v!==null&&!Number.isFinite(v))))throw fail('Il servizio meteo ha restituito dati incompleti.',502);
   }
   if(compact&&params.has('daily'))for(const row of rows)for(const key of ['soil_moisture_3_to_9cm_mean','soil_temperature_6cm_mean'])if(!Array.isArray(row.daily[key])||row.daily[key].length!==row.daily.time.length||row.daily[key].some(v=>v!==null&&!Number.isFinite(v)))throw fail('Le medie giornaliere del suolo sono incomplete.',502);
@@ -44,8 +44,10 @@ export function compactGrowth(rows) {
 // Query soltanto per le zone pubblicate e i due profili dell'app: nessun proxy
 // arbitrario, né possibilità di moltiplicare le richieste variando i parametri.
 export async function cachedForecast(query,{zones,cache,fetcher=fetch,now=Date.now()}) {
+  const lat=query.get('latitude')?.split(',')[0],lon=query.get('longitude')?.split(',')[0];
+  const local=zones.find(z=>String(z.lat)===lat&&String(z.lon)===lon);
   const kind=Object.keys(profiles).find(k=>{
-    return [zones,...zones.map(z=>[z])].some(selection=>{
+    return [zones,...(local?[[local]]:[])].some(selection=>{
       const expected=forecastParams(selection,k);
       return [...query].length===[...expected].length&&[...expected].every(([name,value])=>query.getAll(name).length===1&&query.get(name)===value);
     });

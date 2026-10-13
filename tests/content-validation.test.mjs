@@ -51,3 +51,15 @@ test('glossary publication requires sources, unambiguous keywords and a complete
   const unsafe=structuredClone(original);unsafe.terms[0].aliases.push('<img src=x onerror=alert(1)>');
   assert.throws(()=>validateContent('glossary',unsafe,original),/contiene HTML/);
 });
+test('glossary images require explanatory text, provenance and a reusable licence',()=>{
+  const original=read('media-glossary');assert.equal(validateContent('media-glossary',original).needsReview,false);
+  for(const key of ['alt','caption','author','license','page','licenseUrl']) {
+    const changed=structuredClone(original);changed.terms.pliche.illustrations[0][key]='';
+    assert.throws(()=>validateContent('media-glossary',changed,original),/Completa|origine|licenza/);
+  }
+  const unsafe=structuredClone(original);unsafe.terms.pliche.illustrations[0].file='assets/../worker/index.js';
+  assert.throws(()=>validateContent('media-glossary',unsafe,original),/immagine/);
+  const generated=structuredClone(original);generated.terms.pliche.illustrations[0].generated=true;
+  assert.throws(()=>validateContent('media-glossary',generated,original),/schemi/);
+  generated.terms.pliche.illustrations[0].kind='diagram';assert.equal(validateContent('media-glossary',generated,original).needsReview,true);
+});

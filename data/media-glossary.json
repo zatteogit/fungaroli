@@ -1,0 +1,310 @@
+{
+  "version": 1,
+  "terms": {
+    "difficolta-t": {
+      "name": "T · turistico",
+      "illustrations": []
+    },
+    "difficolta-e": {
+      "name": "E · escursionistico",
+      "illustrations": []
+    },
+    "difficolta-ee": {
+      "name": "EE · escursionisti esperti",
+      "illustrations": []
+    },
+    "difficolta-eea": {
+      "name": "EEA · escursionisti esperti con attrezzatura",
+      "illustrations": []
+    },
+    "dislivello": {
+      "name": "Dislivello",
+      "illustrations": []
+    },
+    "quota": {
+      "name": "Quota",
+      "illustrations": []
+    },
+    "segnavia": {
+      "name": "Segnavia",
+      "illustrations": []
+    },
+    "gpx": {
+      "name": "Traccia GPX",
+      "illustrations": []
+    },
+    "esposizione": {
+      "name": "Esposizione",
+      "illustrations": []
+    },
+    "microclima": {
+      "name": "Microclima",
+      "illustrations": []
+    },
+    "lettiera": {
+      "name": "Lettiera",
+      "illustrations": []
+    },
+    "radura": {
+      "name": "Radura",
+      "illustrations": []
+    },
+    "habitat": {
+      "name": "Habitat",
+      "illustrations": []
+    },
+    "substrato": {
+      "name": "Substrato",
+      "illustrations": []
+    },
+    "micorriza": {
+      "name": "Micorriza",
+      "illustrations": []
+    },
+    "saprotrofo": {
+      "name": "Saprotrofo",
+      "illustrations": []
+    },
+    "micelio": {
+      "name": "Micelio",
+      "illustrations": []
+    },
+    "carpoforo": {
+      "name": "Corpo fruttifero",
+      "illustrations": []
+    },
+    "lamelle": {
+      "name": "Lamelle",
+      "illustrations": [
+        {
+          "file": "assets/glossary/lamelle.jpg",
+          "alt": "Lamelle rosa disposte a raggera sotto il cappello di Agaricus campestris",
+          "caption": "Lamelle di un prataiolo: sottili lamine disposte a raggera. Colore e disposizione cambiano tra specie e con l’età.",
+          "author": "Ak ccm",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "page": "https://commons.wikimedia.org/wiki/File:2010-08-07_Agaricus_campestris_gills.jpg",
+          "kind": "photo",
+          "generated": false
+        }
+      ]
+    },
+    "pori": {
+      "name": "Pori e tubuli",
+      "illustrations": [
+        {
+          "file": "assets/glossary/pori.jpg",
+          "alt": "Confronto tra superficie dei pori di un porcino giovane e di uno maturo",
+          "caption": "Pori del porcino: poco visibili nel giovane esemplare a sinistra, più aperti e giallastri in quello maturo a destra.",
+          "author": "Ude",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "page": "https://commons.wikimedia.org/wiki/File:Boletus_edulis_pores_aging.jpg",
+          "kind": "photo",
+          "generated": false
+        }
+      ]
+    },
+    "pliche": {
+      "name": "Pliche",
+      "illustrations": [
+        {
+          "file": "assets/glossary/pliche.jpg",
+          "alt": "Pieghe gialle ramificate sotto il cappello di un finferlo",
+          "caption": "Pliche del finferlo: rilievi che si ramificano e scendono sul gambo, diversi dalle vere lamelle.",
+          "author": "Japonica",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "page": "https://commons.wikimedia.org/wiki/File:Cantharellus_cibarius_-hym%C3%A9nium_fausses_lamelles.jpg",
+          "kind": "photo",
+          "generated": false
+        }
+      ]
+    },
+    "aculei": {
+      "name": "Aculei",
+      "illustrations": [
+        {
+          "file": "assets/glossary/aculei.jpg",
+          "alt": "Piccole punte chiare nell’imenoforo di Hydnum repandum",
+          "caption": "Aculei dello steccherino: piccole punte che pendono sotto il cappello.",
+          "author": "Amadej Trnkoczy",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "page": "https://commons.wikimedia.org/wiki/File:Hydnum_repandum_78164.jpg",
+          "kind": "photo",
+          "generated": false
+        }
+      ]
+    },
+    "imenoforo": {
+      "name": "Imenoforo",
+      "illustrations": [
+        {
+          "file": "assets/glossary/lamelle.jpg",
+          "alt": "Lamelle rosa disposte a raggera sotto il cappello di Agaricus campestris",
+          "caption": "Lamelle di un prataiolo: sottili lamine disposte a raggera. Colore e disposizione cambiano tra specie e con l’età.",
+          "author": "Ak ccm",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "page": "https://commons.wikimedia.org/wiki/File:2010-08-07_Agaricus_campestris_gills.jpg",
+          "kind": "photo",
+          "generated": false
+        },
+        {
+          "file": "assets/glossary/pliche.jpg",
+          "alt": "Pieghe gialle ramificate sotto il cappello di un finferlo",
+          "caption": "Pliche del finferlo: rilievi che si ramificano e scendono sul gambo, diversi dalle vere lamelle.",
+          "author": "Japonica",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "page": "https://commons.wikimedia.org/wiki/File:Cantharellus_cibarius_-hym%C3%A9nium_fausses_lamelles.jpg",
+          "kind": "photo",
+          "generated": false
+        },
+        {
+          "file": "assets/glossary/pori.jpg",
+          "alt": "Confronto tra superficie dei pori di un porcino giovane e di uno maturo",
+          "caption": "Pori del porcino: poco visibili nel giovane esemplare a sinistra, più aperti e giallastri in quello maturo a destra.",
+          "author": "Ude",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "page": "https://commons.wikimedia.org/wiki/File:Boletus_edulis_pores_aging.jpg",
+          "kind": "photo",
+          "generated": false
+        },
+        {
+          "file": "assets/glossary/aculei.jpg",
+          "alt": "Piccole punte chiare nell’imenoforo di Hydnum repandum",
+          "caption": "Aculei dello steccherino: piccole punte che pendono sotto il cappello.",
+          "author": "Amadej Trnkoczy",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "page": "https://commons.wikimedia.org/wiki/File:Hydnum_repandum_78164.jpg",
+          "kind": "photo",
+          "generated": false
+        }
+      ]
+    },
+    "anello": {
+      "name": "Anello",
+      "illustrations": [
+        {
+          "file": "assets/glossary/anello-volva.svg",
+          "alt": "Schema di un gambo con anello nella parte superiore e volva a sacco alla base",
+          "caption": "Schema: l’anello circonda il gambo nella parte superiore; la volva a sacco è alla base. La forma e la posizione dell’anello variano tra specie.",
+          "author": "Natr, da Debivort e Lokal Profil",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "page": "https://commons.wikimedia.org/wiki/File:Ring_and_volva_stipe_icon.svg",
+          "kind": "diagram",
+          "generated": false
+        }
+      ]
+    },
+    "volva": {
+      "name": "Volva",
+      "illustrations": [
+        {
+          "file": "assets/glossary/anello-volva.svg",
+          "alt": "Schema di un gambo con anello nella parte superiore e volva a sacco alla base",
+          "caption": "Schema: la volva a sacco è l’involucro alla base; l’anello è più in alto sul gambo. Esistono forme diverse di entrambe le strutture.",
+          "author": "Natr, da Debivort e Lokal Profil",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "page": "https://commons.wikimedia.org/wiki/File:Ring_and_volva_stipe_icon.svg",
+          "kind": "diagram",
+          "generated": false
+        }
+      ]
+    },
+    "reticolo": {
+      "name": "Reticolo",
+      "illustrations": [
+        {
+          "file": "assets/glossary/reticolo.jpg",
+          "alt": "Maglie chiare in rilievo sulla parte superiore del gambo di un porcino",
+          "caption": "Reticolo sul gambo di un porcino: maglie in rilievo che formano una rete.",
+          "author": "Alinja",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "page": "https://commons.wikimedia.org/wiki/File:Boletus_edulis_herkkutatti.jpg",
+          "kind": "photo",
+          "generated": false
+        }
+      ]
+    },
+    "sporata": {
+      "name": "Sporata",
+      "illustrations": []
+    },
+    "viraggio": {
+      "name": "Viraggio",
+      "illustrations": []
+    },
+    "umbone": {
+      "name": "Umbone",
+      "illustrations": []
+    },
+    "cespitoso": {
+      "name": "Cespitoso",
+      "illustrations": []
+    },
+    "latifoglie": {
+      "name": "Latifoglie",
+      "illustrations": []
+    },
+    "conifere": {
+      "name": "Conifere",
+      "illustrations": []
+    },
+    "aghi": {
+      "name": "Aghi",
+      "illustrations": []
+    },
+    "caducifoglia": {
+      "name": "Caducifoglia",
+      "illustrations": []
+    },
+    "sempreverde": {
+      "name": "Sempreverde",
+      "illustrations": []
+    },
+    "lobi": {
+      "name": "Lobi",
+      "illustrations": []
+    },
+    "seghettato": {
+      "name": "Margine seghettato",
+      "illustrations": []
+    },
+    "gemme": {
+      "name": "Gemme",
+      "illustrations": []
+    },
+    "ceduo": {
+      "name": "Ceduo",
+      "illustrations": []
+    },
+    "ceppaia": {
+      "name": "Ceppaia",
+      "illustrations": []
+    },
+    "spora": {
+      "name": "Spora",
+      "illustrations": []
+    },
+    "ifa": {
+      "name": "Ifa",
+      "illustrations": []
+    },
+    "cappello": {
+      "name": "Cappello",
+      "illustrations": []
+    },
+    "gambo": {
+      "name": "Gambo",
+      "illustrations": []
+    }
+  }
+}

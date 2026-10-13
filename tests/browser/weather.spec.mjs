@@ -26,3 +26,18 @@ test('richiesta bloccata termina il loader con un messaggio di timeout',async({p
   await page.goto('/');await expect(page.locator('#hero .error')).toContainText('impiega troppo tempo');
   await expect(page.locator('#hero .loader')).toHaveCount(0);await expect(page.locator('#hero [data-retry]')).toBeVisible();
 });
+test('una zona indisponibile mantiene le altre e il retry recupera l’intero catalogo',async({page})=>{
+  let unavailable=true,missingLatitude;
+  await page.route('https://**/*',r=>r.abort());
+  await page.route('**/api/weather/v1/forecast?**',r=>{
+    const lat=new URL(r.request().url()).searchParams.get('latitude').split(',')[0];missingLatitude??=lat;
+    return unavailable&&lat===missingLatitude?r.fulfill({status:503,json:{error:'Zona temporaneamente non disponibile'}}):r.fulfill({json:forecast(r.request())});
+  });
+  await page.addInitScript(()=>localStorage.setItem('fungaroli:legal-accepted','22026-10-12'));
+  await page.goto('/');await expect(page.locator('#hero .cover-link')).toBeVisible();
+  await expect(page.locator('#stale')).toContainText('14 zone su 15');await expect(page.locator('#stale')).toContainText('Le altre non vengono valutate');
+  const zones=(await(await page.request.get('/data/zones.json')).json()).zones,missing=zones.find(z=>String(z.lat)===missingLatitude);
+  await page.evaluate(id=>location.hash=`#/zona/${id}/0`,missing.id);
+  await expect(page.locator('#detail h1')).toHaveText(missing.title||missing.name);await expect(page.locator('#detail')).toContainText('Meteo non disponibile per questa zona');
+  unavailable=false;await page.locator('#detail [data-zone-weather-retry]').click();await expect(page.locator('#detail .phero-title')).toHaveText((missing.title||missing.name).split(' (')[0]);await expect(page.locator('#stale')).toBeHidden();
+});

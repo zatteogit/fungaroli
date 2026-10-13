@@ -1,7 +1,7 @@
 // Il browser usa la cache condivisa del Worker; gli strumenti di esportazione
 // possono interrogare direttamente il provider senza dipendere dal sito.
 const API = 'https://api.open-meteo.com/v1/forecast';
-export async function fetchForecast(params) {
+export async function fetchForecast(params,{onProgress}={}) {
   if(typeof document!=='undefined') {
     const coords=['latitude','longitude','elevation'].map(name=>params.get(name).split(','));
     const groups=[];
@@ -10,10 +10,23 @@ export async function fetchForecast(params) {
       const query=new URLSearchParams(params);['latitude','longitude','elevation'].forEach((name,i)=>query.set(name,coords[i].slice(start,end).join(',')));
       groups.push(query);start=end;
     }
-    const results=[],controller=new AbortController(),signal=AbortSignal.any([controller.signal,AbortSignal.timeout(20000)]);let next=0;
-    try {await Promise.all(Array.from({length:Math.min(3,groups.length)},async()=>{while(next<groups.length){signal.throwIfAborted();const i=next++;results[i]=await requestForecast(groups[i],signal);}}));}
-    catch(e){controller.abort();throw e;}
-    return {raw:results.flatMap(r=>r.raw),fetchedAt:new Date(Math.min(...results.map(r=>r.fetchedAt.getTime()))),stale:results.some(r=>r.stale)};
+    const results=[],signal=AbortSignal.timeout(20000);let next=0,finished=0,firstError;
+    await Promise.all(Array.from({length:Math.min(3,groups.length)},async()=>{while(next<groups.length){
+      const i=next++,query=groups[i],count=query.get('latitude').split(',').length;
+      try {
+        let received;
+        try {received=await requestForecast(query,signal);}catch(e){
+          // Una risposta transitoria non deve cancellare tutte le altre zone.
+          if(!signal.aborted&&e.status>=500)received=await requestForecast(query,signal);else throw e;
+        }
+        if(received.raw.length!==count)throw new Error('Serie meteo incompleta');
+        results[i]=received;
+      }catch(e){firstError??=e;results[i]={raw:Array(count).fill(null)};}
+      onProgress?.(++finished,groups.length);
+    }}));
+    const valid=results.filter(r=>r.fetchedAt);
+    if(!valid.length)throw firstError;
+    return {raw:results.flatMap(r=>r.raw),fetchedAt:new Date(Math.min(...valid.map(r=>r.fetchedAt.getTime()))),stale:valid.some(r=>r.stale),partial:valid.length!==results.length};
   }
   return requestForecast(params);
 }
