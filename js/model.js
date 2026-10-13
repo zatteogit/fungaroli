@@ -1,6 +1,8 @@
 // Modello di idoneita' alla fruttificazione (0-100) per specie, zona, quota e giorno.
 // Funzioni pure: nessuna dipendenza dal DOM, testabili con `node --test`.
 
+import {scoreBotanical} from './botanical-model.js';
+
 export const MODEL_VERSION = '2.0.0'; // indice sperimentale; nessuna calibrazione locale
 export const PARAMS = {
   r30Days: 30,          // finestra pioggia cumulata (Salerni et al. 2002: correlazione piu' forte a 30 gg)
@@ -132,7 +134,8 @@ export function inputQuality(species, s, i) {
     forecastDays: futureDays.size, fetchedAt: s.source?.fetchedAt || null, validation: 'non validato localmente' };
 }
 
-export function scoreSpecies(species, s, i, hab, band) {
+export function scoreSpecies(species, s, i, hab, band,context) {
+  if(species.kind==='plant')return scoreBotanical(species,s,i,hab,band,context);
   const season = seasonWeight(species.months, s.dates[i]);
   const { frac, n } = habitatAtBand(hab, band);
   const habitat = habitatScore(species, frac);
@@ -151,7 +154,7 @@ export function scoreSpecies(species, s, i, hab, band) {
 }
 
 // Miglior combinazione quota x specie per una zona in un giorno.
-export function scoreZoneDay(zone, hab, seriesByBand, speciesList, i) {
+export function scoreZoneDay(zone, hab, seriesByBand, speciesList, i,context) {
   let best = null;
   const perSpecies = [];
   for (const sp of speciesList) {
@@ -159,7 +162,7 @@ export function scoreZoneDay(zone, hab, seriesByBand, speciesList, i) {
     zone.bands.forEach((band, bi) => {
       const s = seriesByBand[bi];
       if (!s) return;
-      const r = scoreSpecies(sp, s, i, hab, band);
+      const r = scoreSpecies(sp, s, i, hab, band,context);
       if (!spBest || (r.score ?? -1) > (spBest.score ?? -1)) spBest = { ...r, band, species: sp };
     });
     if (spBest) perSpecies.push(spBest);

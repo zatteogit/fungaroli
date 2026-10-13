@@ -4,7 +4,7 @@
 // - meteo Open-Meteo: gestito dall'app con data di acquisizione e limite d'età
 // - mappe: dalla cache se gia' viste, con un limite di tessere
 // - diario (/api/): mai in cache
-const SHELL = 'fungaroli-shell-v20';
+const SHELL = 'fungaroli-shell-v21';
 const RUNTIME = 'fungaroli-runtime-v1';
 const TILES = 'fungaroli-tiles-v1';
 const MAX_TILES = 1500;
@@ -13,7 +13,7 @@ const PRECACHE = [
   'js/entity-sheet.js',
   'js/search-select.js',
   'js/weather-request.js',
-  'js/images.js', 'js/plants.js', 'js/plant-catalog.js', 'js/notebook-entry.js', 'data/plants.json',
+  'js/images.js', 'js/plants.js','js/botanical-model.js','js/botanical-explanation.js','data/botanical-models.json', 'js/plant-catalog.js', 'js/notebook-entry.js', 'data/plants.json',
   'data/media-glossary.json',
   './', 'index.html', 'manifest.webmanifest', 'css/style.css', 'css/fonts.css',
   'js/learning.js', 'js/species-link.js', 'js/content-schema.js', 'js/walks.js', 'js/edible-catalog.js', 'js/species-autocomplete.js', 'js/app.js', 'js/community.js', 'js/community-signal.js', 'js/guides.js', 'js/vendor/webauthn.js', 'js/model.js', 'js/species.js', 'js/weather.js', 'js/chart.js', 'js/journal.js', 'js/svgmap.js',

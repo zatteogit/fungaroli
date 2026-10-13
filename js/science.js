@@ -2,6 +2,7 @@
 // i grafici con le soglie della specie, il profilo della specie e la pagina del metodo (docs/metodo-scientifico.md).
 import { PARAMS, formatIndex } from './model.js';
 import { speciesLink } from './species-link.js';
+import {renderBotanicalWhy} from './botanical-explanation.js';
 
 const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const n1 = (x, d = 1) => (x == null || Number.isNaN(x) ? '–' : x.toLocaleString('it-IT', { minimumFractionDigits: d, maximumFractionDigits: d }));
@@ -96,6 +97,7 @@ function speciesProfile(sp) {
 
 // la sezione "Perche' questo indice", completa
 export function renderWhy({ r, s, i, sp, band, dateStr, shown, agg, parts = [], prefs = [], outing }) {
+  if(sp.kind==='plant')return renderBotanicalWhy({r,sp,prefs});
   const missing = new Set(r.quality?.missing || []);
   const rows = factorRows(r, sp, band, dateStr).map(x => x.inputs.some(k => missing.has(k)) ? { ...x, v: null, brief: 'Dati mancanti o non aggiornati per il calcolo', why: 'Dati mancanti o non aggiornati per le finestre richieste: il fattore non è utilizzabile.' } : x);
   const complete = r.quality?.complete !== false && rows.every(x => Number.isFinite(x.v));
