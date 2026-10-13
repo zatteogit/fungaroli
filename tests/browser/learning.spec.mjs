@@ -25,6 +25,8 @@ for(const width of [320,1280]) test(`spiegazioni contestuali, glossario e ricono
   expect(page.url()).toBe(original);
   expect(await panel.evaluate(el=>{const r=el.getBoundingClientRect();return r.left>=0&&r.right<=innerWidth&&r.top>=0&&r.bottom<=innerHeight;})).toBe(true);
   await page.keyboard.press('Escape');await expect(panel).toBeHidden();await expect(trigger).toBeFocused();
+  await expect(page.locator('.walk-focus')).not.toHaveAttribute('open','');
+  await page.locator('.walk-focus > summary').click();
   await page.locator('.walk-focus .species-link').click();await expect(panel).toBeVisible();
   await panel.locator('footer a').click();await expect(page.locator('#species-detail')).toBeVisible();
   const keyword=page.locator('#species-detail a.glossary-link[data-term="volva"]').first();

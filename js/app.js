@@ -1478,21 +1478,25 @@ const ICON = {
 function renderWalkFocus(z, d, walk) {
   if (!walk) return `<p class="small muted">Non abbiamo ancora un sentiero documentato per questa zona.</p>`;
   const { t, h } = walk, sketch = trailSketch(t, h);
-  return `<section class="walk-focus" data-walk-trail="${t.id}" aria-label="Microzona e sentiero">
-    <p class="eyebrow">La passeggiata, più da vicino</p><h2>${esc(walk.microzone)}</h2>
-    <p class="walk-route">${segnavia(t)}<b>${esc(trailName(t))}</b></p>
+  return `<details class="sec walk-focus" name="zone-details" data-sec="passeggiata" data-walk-trail="${t.id}"${openSecs.has('passeggiata') ? ' open' : ''}>
+    <summary><span class="walk-summary">
+      <span class="eyebrow">La passeggiata, più da vicino</span><span class="walk-title">${esc(walk.microzone)}</span>
+      <span class="walk-route">${segnavia(t)}<b>${esc(trailName(t))}</b></span>
+      <span class="walk-summary-facts"><span>${fmtKm(t.in_zone_km)} km nella zona</span><span>${t.difficulty ? difficultyLink(t.difficulty, `${t.difficulty} · ${DIFF[t.difficulty] || 'classificazione della fonte'}`) : 'Difficoltà n.d.'}</span></span>
+    </span></summary><div class="sec-body">
     <dl class="walk-facts">
       <div><dt>Difficoltà</dt><dd>${t.difficulty ? difficultyLink(t.difficulty, `${t.difficulty} · ${DIFF[t.difficulty] || 'classificazione della fonte'}`) : 'Non indicata nella fonte'}</dd></div>
       <div><dt>Tratto nella zona</dt><dd>${fmtKm(t.in_zone_km)} km${t.lines?.length > 1 ? ' · più segmenti separati' : ''}</dd></div>
       <div><dt>Itinerario completo</dt><dd>${t.total_km ? `${fmtKm(t.total_km)} km` : 'Lunghezza n.d.'}${t.duration ? ` · ${fmtDur(t.duration)}` : ''}${t.ascent ? ` · +${esc(t.ascent)} m` : ''}</dd></div>
       <div><dt>Imbocco mappato</dt><dd>${h ? `${h.ele != null ? `Circa ${Math.round(h.ele / 25) * 25} m · ` : ''}${esc(h.road || (h.kind === 'strada' ? 'su strada' : 'su sterrata'))}` : 'Non disponibile; le soste indicate riguardano la zona'}</dd></div>
     </dl>
-    ${t.mainCat ? `<p class="small">Lungo il tracciato: ${linkTrees(t.mainCat.toLowerCase())} nei campioni tra circa ${Math.floor(t.lo / 25) * 25} e ${Math.ceil(t.hi / 25) * 25} m, compatibili con l’habitat di ${speciesLink(d.best.species, d.best.species.name.toLowerCase())}.</p>` : ''}
+    ${t.mainCat ? `<p class="small">Lungo il tracciato: ${linkTrees(t.mainCat.toLowerCase())} nei campioni tra circa ${Math.floor(t.lo / 25) * 25} e ${Math.ceil(t.hi / 25) * 25} m${d?.best?.species ? `, compatibili con l’habitat di ${speciesLink(d.best.species, d.best.species.name.toLowerCase())}` : ''}.</p>` : ''}
     ${sketch ? `<figure class="walk-sketch"><svg viewBox="0 0 360 200" role="img" aria-label="Schema del tratto di sentiero nella zona${h ? ', con imbocco mappato' : ''}"><text x="330" y="20">N ↑</text>${sketch.paths.map(p => `<polyline points="${p}"/>`).join('')}${sketch.head ? `<circle cx="${sketch.head[0].toFixed(1)}" cy="${sketch.head[1].toFixed(1)}" r="6"/>` : ''}</svg><figcaption>Traccia locale${h ? ' · punto: imbocco mappato' : ''}. Schema orientato a nord; apri la mappa del percorso per orientarti.</figcaption></figure>` : ''}
     ${trailLinks(z, t)}
     <p class="small muted">Il GPX contiene solo il tratto nella zona. Tempi e dislivello, quando disponibili, riguardano l’itinerario completo. Verifica accesso, sosta e stato del sentiero prima di partire.</p>
     <p class="small muted">Tracciato OpenStreetMap / Waymarked Trails · imbocchi ricavati dalla rete stradale mappata. L’indice e le segnalazioni riguardano la zona, non questo singolo sentiero.</p>
-  </section>`;
+    </div>
+  </details>`;
 }
 
 function planCard(z, d, walk) {
@@ -1526,7 +1530,7 @@ function planCard(z, d, walk) {
   }
   if (walk?.t) {
     const t = walk.t;
-    rows.push({ sec: 'sentieri', svg: segnavia(t), k: 'Sentiero', v: esc(trailName(t)),
+    rows.push({ sec: 'passeggiata', svg: segnavia(t), k: 'Sentiero', v: esc(trailName(t)),
       sub: `${fmtKm(t.in_zone_km)} km nella zona${t.difficulty ? ` · ${difficultyLink(t.difficulty, `${t.difficulty} · ${DIFF[t.difficulty] || ''}`)}` : ' · difficoltà n.d.'}` });
   }
   return `<ul class="plan">${rows.map((r) => `
@@ -1535,10 +1539,25 @@ function planCard(z, d, walk) {
 }
 
 const section = (id, title, body, open = false) => body ? `
-  <details class="sec" data-sec="${id}"${open || openSecs.has(id) ? ' open' : ''}>
+  <details class="sec" name="zone-details" data-sec="${id}"${openSecs.has(id) || (open && !openSecs.size) ? ' open' : ''}>
     <summary>${title}</summary><div class="sec-body">${body}</div>
   </details>` : '';
 const openSecs = new Set();
+
+function bindDetailSections(box, onOpen = () => {}) {
+  const sections = [...box.querySelectorAll('details.sec[data-sec]')];
+  const sync = (el) => {
+    if (el.open) {
+      // Also enforce exclusivity in browsers without native details[name] support.
+      sections.forEach(other => { if (other !== el) other.open = false; });
+      openSecs.clear(); openSecs.add(el.dataset.sec);
+      onOpen(el.dataset.sec);
+    } else openSecs.delete(el.dataset.sec);
+  };
+  sections.forEach(el => el.addEventListener('toggle', () => sync(el)));
+  const current = sections.find(el => el.open);
+  if (current) sync(current); else openSecs.clear();
+}
 
 function renderDetail() {
   const z = zones.find((x) => x.id === state.zoneId) || zones[0];
@@ -1548,7 +1567,8 @@ function renderDetail() {
   const box = $('#detail');
   if (!d?.best) {
     const missing = [...new Set((d?.perSpecies || []).flatMap((p) => p.quality?.missing || []))];
-    box.innerHTML = `<h1>${esc(z.title || z.name)}</h1><p class="notice">${selectedSpecies().length?'Indice non calcolabile':'Indice non ancora disponibile per le specie selezionate'}${missing.length ? ': mancano ' + esc(missing.join(', ')) : ' per questo giorno'}. Un dato mancante non indica assenza di funghi.</p><p><a href="#/mappa/${z.id}">Apri la mappa</a> · <a href="#/metodo">Metodo e limiti</a></p>${renderWalkFocus(z, d, walk)}${z.protection ? `<p class="notice">${esc(z.protection)}</p>` : ''}<p>${linkTrees(z.description)}</p>${section('accesso','Accessi e soste',renderAccess(z,{access:null}))}${section('sentieri','Sentieri della zona',renderTrails(z,null),true)}`; return;
+    box.innerHTML = `<h1>${esc(z.title || z.name)}</h1><p class="notice">${selectedSpecies().length?'Indice non calcolabile':'Indice non ancora disponibile per le specie selezionate'}${missing.length ? ': mancano ' + esc(missing.join(', ')) : ' per questo giorno'}. Un dato mancante non indica assenza di funghi.</p><p><a href="#/mappa/${z.id}">Apri la mappa</a> · <a href="#/metodo">Metodo e limiti</a></p>${renderWalkFocus(z, d, walk)}${z.protection ? `<p class="notice">${esc(z.protection)}</p>` : ''}<p>${linkTrees(z.description)}</p>${section('accesso','Accessi e soste',renderAccess(z,{access:null}))}${section('sentieri','Sentieri della zona',renderTrails(z,null),true)}`;
+    bindDetailSections(box); return;
   }
   const best = d.best;
   const s = adjusted(z, d.score, d);
@@ -1635,10 +1655,6 @@ function renderDetail() {
     row.addEventListener('click', open);
     row.addEventListener('keydown', (e) => { if (!e.target.closest('a,button') && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); open(e); } });
   });
-  box.querySelectorAll('details.sec').forEach((el) => el.addEventListener('toggle', () => {
-    if (el.open) openSecs.add(el.dataset.sec); else openSecs.delete(el.dataset.sec);
-    if (el.dataset.sec === 'meteo' && el.open) drawCharts();
-  }));
   const drawCharts = () => $('#charts') && renderCharts($('#charts'), {
     dates: days.map((x) => x.date),
     rain: days.map((x) => sb.p[x.i]),
@@ -1646,7 +1662,7 @@ function renderDetail() {
     todayIndex: r.todayIndex - from,
     selectedIndex: r.todayIndex + state.dayOffset - from,
   });
-  if (openSecs.has('meteo')) drawCharts();
+  bindDetailSections(box, id => { if (id === 'meteo') drawCharts(); });
 }
 
 const fmtKm = (km) => km.toLocaleString('it-IT', { maximumFractionDigits: 1 });

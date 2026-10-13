@@ -102,10 +102,45 @@ test('vetrina varia e sentiero stabile passando dalla proposta ai giorni del tac
   expect(errors).toEqual([]);
 });
 
+for (const width of [320,1280]) test(`passeggiata compatta e accordion esclusivi a ${width}px`, async ({page}) => {
+  await page.setViewportSize({width,height:900});
+  await page.emulateMedia({reducedMotion:'reduce'});
+  const errors=await setup(page);
+  await page.goto('/#/zona/poggio-cantalice/0');
+  const focus=page.locator('#detail .walk-focus'),summary=focus.locator(':scope > summary');
+  await expect(focus).toBeVisible();await expect(focus).not.toHaveAttribute('open','');
+  await expect(summary).toContainText('km nella zona');await expect(summary.locator('[data-term]')).toBeVisible();
+  await expect(focus.locator('.walk-sketch')).toBeHidden();await expect(focus.locator('a[download]')).toBeHidden();
+  for(const theme of ['light','dark']){
+    await page.evaluate(t=>document.documentElement.dataset.theme=t,theme);
+    await summary.scrollIntoViewIfNeeded();await focus.screenshot({path:`/tmp/fungaroli-walk-accordion-closed-${width}-${theme}.png`});
+    expect(await focus.evaluate(el=>el.scrollWidth<=el.clientWidth)).toBe(true);
+  }
+  await summary.focus();await page.keyboard.press('Enter');await expect(focus).toHaveAttribute('open','');
+  await expect(focus.locator('.walk-sketch')).toBeVisible();await expect(focus.locator('a[download]')).toBeVisible();
+  await focus.screenshot({path:`/tmp/fungaroli-walk-accordion-open-${width}.png`});
+  const meteo=page.locator('#detail [data-sec="meteo"]');await meteo.locator(':scope > summary').click();
+  await expect(focus).not.toHaveAttribute('open','');await expect(page.locator('#detail details.sec[open]')).toHaveCount(1);
+  await expect(page.locator('#charts svg')).not.toHaveCount(0);
+  await meteo.locator('.sci-technical > summary').click();await expect(meteo).toHaveAttribute('open','');
+  await page.locator('#detail .plan [data-sec-open="passeggiata"]').click();
+  await expect(focus).toHaveAttribute('open','');await expect(meteo).not.toHaveAttribute('open','');
+  await page.locator('#zone-days [aria-selected="false"]').first().click();
+  await expect(focus).toHaveAttribute('open','');await expect(page.locator('#detail details.sec[open]')).toHaveCount(1);
+  // Simulate a browser without native name grouping: the toggle fallback still closes siblings.
+  await page.locator('#detail details.sec').evaluateAll(nodes=>nodes.forEach(el=>el.removeAttribute('name')));
+  const access=page.locator('#detail [data-sec="accesso"]');await access.locator(':scope > summary').click();
+  await expect(focus).not.toHaveAttribute('open','');await expect(page.locator('#detail details.sec[open]')).toHaveCount(1);
+  await access.locator(':scope > summary').focus();await page.keyboard.press('Space');
+  await expect(page.locator('#detail details.sec[open]')).toHaveCount(0);
+  expect(errors).toEqual([]);
+});
+
 test('tratto locale distinto dal percorso intero, segmenti separati e imbocco mancante', async ({ page }) => {
   const errors = await setup(page);
   await page.goto('/#/zona/tancia/0/sentiero/12313439');
   const focus = page.locator('#detail .walk-focus');
+  await focus.locator(':scope > summary').click();
   await expect(focus).toHaveAttribute('data-walk-trail','12313439');
   await expect(focus).toContainText('più segmenti separati');
   await expect(focus.locator('.walk-sketch polyline')).toHaveCount(2);
