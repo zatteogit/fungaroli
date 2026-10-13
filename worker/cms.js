@@ -2,7 +2,7 @@ import schema from '../migrations/0002_cms.sql';
 import { CONTENT_RESOURCES, CONTENT_SCHEMA_VERSION, resourceOf } from '../js/content-schema.js';
 import { readCommunityUser } from './community.js';
 import { validateContent } from './content-validation.js';
-import {glossaryContextSeedUpdate} from './seed-update.js';
+import {glossaryContextSeedUpdate,repositorySeedUpdate} from './seed-update.js';
 
 const initialized=new WeakMap(), enc=new TextEncoder();
 const hash=async s=>Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',enc.encode(s))),b=>b.toString(16).padStart(2,'0')).join('');
@@ -43,6 +43,15 @@ async function init(env,origin) {
         await db.batch(glossaryContextSeedUpdate(db,payload,Date.now(),crypto.randomUUID(),crypto.randomUUID()));
       }}
     }
+    const refreshed=['ui-copy','plants','trees','media','media-trees','species-id','species-traits','edible-catalog','preparation'];
+    const untouched=(await db.prepare("SELECT id,version,published FROM cms_documents WHERE draft=published AND version=published_version AND ((version=0 AND updated_by='seed') OR updated_by LIKE 'release:repository-seed:%')").all()).results.filter(r=>refreshed.includes(r.id));
+    const sources=await Promise.all(untouched.map(async previous=>{
+      const source=await env.ASSETS.fetch(new Request(new URL(`/data/${previous.id}.json`,origin)));
+      if(!source.ok)failure(`Aggiornamento iniziale mancante: ${previous.id}.`,503);
+      return {previous,payload:JSON.stringify(validateContent(previous.id,await source.json()).value)};
+    }));
+    for(const {previous,payload} of sources)if(previous.published!==payload)
+      await db.batch(repositorySeedUpdate(db,previous.id,previous,payload,Date.now(),crypto.randomUUID(),crypto.randomUUID()));
   })().catch(e=>{initialized.delete(db);throw e;}));
   return initialized.get(db);
 }

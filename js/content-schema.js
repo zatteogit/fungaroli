@@ -8,7 +8,7 @@ export const CONTENT_RESOURCES = [
   {id:'plants',title:'Piante, erbe e frutti',group:'Bosco',collections:['plants'],required:['plants']},
   {id:'trees',title:'Alberi',group:'Bosco',collections:['trees'],required:['trees']},
   {id:'guides',title:'Articoli e taccuini',group:'Redazione',collections:['guides'],required:['guides']},
-  {id:'glossary',title:'Glossario e legenda',group:'Impara',collections:['terms'],required:['terms']},
+  {id:'glossary',title:'Glossario e legenda',group:'Scopri',collections:['terms'],required:['terms']},
   {id:'ui-copy',title:'Testi della home',group:'Redazione',collections:[],required:['homeTitle','homeIntro']},
   {id:'zones',title:'Luoghi e microzone',group:'Luoghi',collections:['zones'],required:['zones','origin']},
   {id:'trails',title:'Sentieri',group:'Luoghi',collections:['zones'],required:['zones']},

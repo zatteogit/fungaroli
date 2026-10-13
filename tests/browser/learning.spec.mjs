@@ -60,7 +60,7 @@ for(const width of [320,1280]) test(`spiegazioni contestuali, glossario e ricono
   await attention.locator('summary').click();
   await page.locator('[data-tab="specie"]').click();await expect(page.locator('[data-view="specie"]')).toBeVisible();
   await expect(page.locator('#species-grid .sp-card')).not.toHaveCount(0);
-  await expect(page.locator('[data-tab="specie"]')).toContainText('Impara');
+  await expect(page.locator('[data-tab="specie"]')).toContainText('Scopri');
   await page.locator('[data-view="specie"] .seg-nav a[href="#/glossario"]').click();
   await page.locator('#glossary-q').fill('ectomicorriza');await expect(page.locator('#glossary-results details')).toHaveCount(1);
   await expect(page.locator('#glossary-results')).toContainText('Micorriza');
@@ -165,7 +165,7 @@ for(const width of [320,1280]) test(`schede contestuali complete, ritorno e navi
   // I risultati di Riconosci aprono la scheda completa, mantenendo i caratteri scelti.
   await page.goto('/#/riconosci');await page.locator('#identify [data-mode="all"]').click();
   const candidate=page.locator('#identify [data-taxon]').first();await candidate.click();
-  await expect(sheet).toBeVisible();await expect(sheet.locator('h3',{hasText:'Cosa controllare'})).toBeVisible();
+  await expect(sheet).toBeVisible();await expect(sheet.locator('h3',{hasText:'Cosa osservare'})).toBeVisible();
   expect(page.url()).toContain('#/riconosci');await page.keyboard.press('Escape');await expect(candidate).toBeFocused();
   expect(errors).toEqual([]);
 });
@@ -204,7 +204,7 @@ for(const width of [320,1280]) test(`le keyword non spezzano gli elenchi numerat
   expect(errors).toEqual([]);
 });
 
-for(const width of [320,1280]) test(`guide in Impara e taccuino personale distinti a ${width}px`,async({page})=>{
+for(const width of [320,1280]) test(`guide in Scopri e taccuino personale distinti a ${width}px`,async({page})=>{
   // Una release CMS precedente deve restare leggibile con la terminologia aggiornata.
   await page.route('**/api/content/v1/snapshot',async route=>{
     const response=await route.fetch(),snapshot=await response.json();
@@ -235,7 +235,7 @@ for(const width of [320,1280]) test(`guide in Impara e taccuino personale distin
   await page.locator('[data-tab="diario"]').click();await expect(page.locator('#journal-h')).toHaveText('Il mio taccuino');
   await expect(page.locator('#journal-storage')).toContainText('Il taccuino');
   await page.goto('/#/info');await expect(page.locator('#legal-sections')).toContainText('Taccuino privato');
-  await page.goto('/');await expect(page.locator('#hero .cover-cta')).toContainText('Scopri la passeggiata');
+  await page.goto('/');await expect(page.locator('#hero .cover-cta')).toContainText('Vedi l’uscita');
   await page.locator('#hero .cover-link').click();await page.locator('.walk-focus > summary').click();
   await expect(page.locator('.walk-focus > summary')).not.toContainText('taccuino');
   await expect(page.locator('.walk-focus [data-note-kind="zona"]')).toContainText('Salva il giro nel taccuino');
@@ -316,24 +316,27 @@ test('tocchi rapidi nelle transizioni mantengono l’ultima vista e i decimali d
   await page.goto('/');await expect(page.locator('#hero .ring b')).toHaveText(final);expect(final).toMatch(/^\d,\d$/);expect(errors).toEqual([]);
 });
 
-for(const width of [320,1280])test(`motore botanico nelle proposte, dettagli, filtri e ritorno ai funghi a ${width}px`,async({page})=>{
+for(const width of [320,1280])test(`funghi al centro, scoperte contestuali e taccuino a ${width}px`,async({page})=>{
  const errors=await setup(page,width);
- await page.locator('#active-filters [data-target="piante"]').click();await expect(page.locator('#hero .cover-sp-name')).toContainText(/Ortica|Cicoria|Tarassaco|Finocchietto|Fragolina|Rovo|Rosa|Corbezzolo|Prugnolo|Sambuco/);
- await expect(page.locator('#hero .cover-sp')).toContainText('Da osservare');await page.locator('#active-filters [data-more]').click();await expect(page.locator('#full-filters')).toContainText('parti da osservare');await page.locator('#full-filters [data-group="corbezzolo"]').click();await page.locator('#full-filters [data-close]').first().click();await expect(page.locator('#hero .cover-sp-name')).toContainText('Corbezzolo');
- await page.screenshot({path:`/tmp/botanical-intelligence-home-${width}.png`});await page.locator('#hero .cover-link').click();await expect(page.locator('#detail')).toContainText('Annota la fase');await expect(page.locator('#detail [data-save-plan]')).toHaveCount(0);await expect(page.locator('#detail [data-report]')).toHaveCount(0);
- await page.locator('#detail [data-sec="meteo"] > summary').click();await expect(page.locator('.botanical-factors')).toContainText('Meteo e maturazione');await expect(page.locator('.botanical-factors')).toContainText('Non determinato');await expect(page.locator('#charts svg')).toHaveCount(4);await page.screenshot({path:`/tmp/botanical-intelligence-detail-${width}.png`});
- await page.locator('#detail [data-sec="specie"] > summary').click();await page.locator('#detail [data-sec="specie"] [data-species]').first().click();await expect(page.locator('#entity-sheet[open]')).toContainText('Corbezzolo');await page.locator('#entity-sheet[open] [data-entity-close]').click();
- await page.goto('/#/');await page.locator('#active-filters [data-target="funghi"]').click();await expect(page.locator('#hero .cover-sp')).toContainText('Da conoscere');expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),JSON.stringify(await page.evaluate(()=>[...document.querySelectorAll('body *')].filter(e=>{const r=e.getBoundingClientRect();return r.right>innerWidth+1&&r.width>0}).slice(0,15).map(e=>({tag:e.tagName,cls:e.className,width:e.getBoundingClientRect().width}))))).toBe(true);expect(errors).toEqual([]);
+ await expect(page.locator('[data-target]')).toHaveCount(0);await expect(page.locator('#during-walk')).toBeVisible();
+ const hero=await page.locator('#hero .cover-link').getAttribute('href'),index=await page.locator('#hero .ring b').innerText();
+ const cards=page.locator('#during-walk .discovery-grid>li');expect(await cards.count()).toBeGreaterThan(0);expect(await cards.count()).toBeLessThanOrEqual(3);await expect(page.locator('#during-walk .ring')).toHaveCount(0);
+ const link=page.locator('#during-walk [data-discovery]').first(),href=await link.getAttribute('href'),original=page.url();await link.click();const sheet=page.locator('#entity-sheet[open]');await expect(sheet.locator('.discovery-context')).toContainText('presenza');expect(page.url()).toBe(original);await expect(sheet.locator('[data-note-kind]').first()).toHaveAttribute('data-note-zone',/\S+/);
+ await sheet.locator('[data-entity-close]').click();await expect(link).toBeFocused();
+ await page.locator('#active-filters [data-more]').click();await expect(page.locator('[data-botanical-personalize]')).not.toBeChecked();await page.locator('[data-botanical-personalize]').check();await page.locator('[data-discoveries-toggle]').uncheck();await page.locator('#full-filters [data-close]').first().click();await expect(page.locator('#during-walk')).toBeHidden();await expect(page.locator('#hero .cover-link')).toHaveAttribute('href',hero);await expect(page.locator('#hero .ring b')).toHaveText(index);
+ await page.reload();await expect(page.locator('#during-walk')).toBeHidden();await expect(page.locator('#hero .cover-link')).toHaveAttribute('href',hero);
+ await page.goto('/#/pianta/ortica');await expect(page.locator('#plant-detail [data-botanical-discover]')).toHaveCount(0);await page.locator('[data-botanical-method]>summary').click();await expect(page.locator('[data-botanical-method]')).toContainText('Durante il giro');
+ await page.goto('/#/scopri');await expect(page.locator('[data-tab="specie"]')).toContainText('Scopri');await expect(page.locator('#species-grid .sp-card').first()).toBeVisible();
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);expect(errors).toEqual([]);
 });
-test('dalla scheda al motore botanico, note personali facoltative e mappa senza presenze inventate',async({page})=>{
- const errors=await setup(page,320);
- await page.goto('/#/pianta/ortica');await page.locator('#plant-detail [data-botanical-discover]').click();await expect(page.locator('#hero .cover-sp-name')).toHaveText('Ortica');
- await page.locator('#active-filters [data-more]').click();await expect(page.locator('[data-botanical-personalize]')).not.toBeChecked();await page.locator('[data-botanical-personalize]').check();await page.locator('#full-filters [data-close]').first().click();
- const zid=await page.locator('#hero [data-walk-zone]').getAttribute('data-walk-zone');
- await page.evaluate(({zid,date})=>localStorage.setItem('fungaroli:diario:v1',JSON.stringify([{id:'leafnote1',kind:'note',title:'Ortica osservata',date,zoneId:zid,reference:{href:'#/pianta/ortica',title:'Ortica'},observation:{taxonId:'ortica',phases:[{code:'young_leaves',status:'present'}],availability:'none'}}])),{zid,date:todayISO()});
- await page.reload();await page.locator('#hero .cover-link').click();await page.locator('#detail [data-sec="meteo"] > summary').click();await expect(page.locator('.botanical-factors')).toContainText('Dal tuo taccuino');await expect(page.locator('.botanical-factors')).toContainText('quota e identificazione non verificate');
- await page.goto('/#/');await page.locator('#active-filters [data-more]').click();await page.locator('[data-botanical-personalize]').uncheck();await page.locator('#full-filters [data-close]').first().click();await page.locator('#hero .cover-link').click();await page.locator('#detail [data-sec="meteo"] > summary').click();await expect(page.locator('.botanical-factors')).not.toContainText('Dal tuo taccuino');
- await page.goto('/#/mappa');await expect(page.locator('#map-filters [data-target="piante"]')).toHaveAttribute('aria-pressed','true');await expect(page.locator('.lg-cells')).toHaveCount(0);expect(errors).toEqual([]);
+test('le vecchie preferenze botaniche non sostituiscono l’uscita a funghi',async({page})=>{
+ await page.addInitScript(()=>localStorage.setItem('fungaroli:prefs:v2',JSON.stringify({target:'piante',plantIds:['ortica']})));
+ const errors=await setup(page,390);await expect(page.locator('#hero .cover-sp')).toContainText('Da conoscere');await expect(page.locator('[data-target]')).toHaveCount(0);expect(errors).toEqual([]);
+});
+for(const width of [320,1280])test(`avvisi brevi visibili e caratteri senza verdetti di raccolta a ${width}px`,async({page})=>{
+ const errors=await setup(page,width);await page.goto('/#/fungo/cortinarius-rubellus');const warning=page.locator('#taxon-detail .attention');await expect(warning).toBeVisible();await expect(warning.locator('summary')).toHaveCount(0);await expect(warning.locator('ul')).toContainText('danni renali tardivi');await expect(warning).not.toContainText(/scarta/i);await expect(warning.locator('[data-term="cappello"]')).toBeVisible();
+ await page.screenshot({path:`/tmp/fungaroli-warning-${width}.png`});
+ await page.goto('/#/specie/procera');await expect(page.locator('#species-detail .checks [role="checkbox"]')).toHaveCount(0);await expect(page.locator('#species-detail')).toContainText('Caratteri da confrontare');await expect(page.locator('#species-detail')).not.toContainText(/Scarta/i);expect(errors).toEqual([]);
 });
 for(const width of [320,1280])test(`omonimi nel glossario: piante, alberi, funghi e pannelli annidati a ${width}px`,async({page})=>{
  const errors=await setup(page,width),panel=page.locator(width<700?'#learning-sheet':'#learning-popover');
@@ -344,7 +347,7 @@ for(const width of [320,1280])test(`omonimi nel glossario: piante, alberi, fungh
  await page.goto('/#/specie/repandum');await page.locator('#species-detail .keys [data-term="aculei"]').first().click();await expect(panel.locator('.learning-category')).toHaveText('Funghi');await expect(panel).toContainText('sotto il cappello');await page.keyboard.press('Escape');
  // A modal plant sheet opened from a fungal route has its own context.
  await page.evaluate(()=>{const a=document.createElement('a');a.href='#/pianta/rovo';a.dataset.entity='';a.textContent='Apri il rovo';document.querySelector('#species-detail').append(a);});await page.locator('#species-detail [data-entity][href="#/pianta/rovo"]').click();await page.locator('#entity-sheet[open] [data-term="aculei-piante"]').first().click();await expect(panel.locator('.learning-category')).toHaveText('Piante');await page.keyboard.press('Escape');await page.locator('#entity-sheet[open] [data-entity-close]').click();
- await page.goto('/#/pianta/corbezzolo');await page.locator('#plant-detail details.sec').first().locator('summary').click();await page.locator('#plant-detail [data-term="substrato-piante"]').first().click();await expect(panel.locator('.learning-category')).toHaveText('Piante');await page.keyboard.press('Escape');
+ await page.goto('/#/pianta/corbezzolo');await page.locator('#plant-detail details.sec').first().locator(':scope > summary').click();await page.locator('#plant-detail [data-term="substrato-piante"]').first().click();await expect(panel.locator('.learning-category')).toHaveText('Piante');await page.keyboard.press('Escape');
  await page.evaluate(()=>{const p=document.createElement('p');p.id='context-probe';p.textContent='Habitat compatibile: anello, cappello e cespitosa.';document.querySelector('#plant-detail .pbody').append(p);});await expect(page.locator('#context-probe [data-term="anello"],#context-probe [data-term="cappello"],#context-probe [data-term="cespitoso"]')).toHaveCount(0);await page.locator('#plant-detail [data-term="habitat"]').first().click();await panel.locator('[data-term="substrato-piante"]').click();await expect(panel.locator('.learning-category')).toHaveText('Piante');await page.keyboard.press('Escape');
  await page.goto('/#/albero/leccio');await page.locator('.view:not([hidden]) [data-term="pollone"]').first().click();await expect(panel).toContainText('non significa necessariamente');await page.keyboard.press('Escape');
  await page.goto('/#/');await page.locator('#hero .cover-link').click();await page.locator('.walk-focus .sec-body').waitFor({state:'attached'});await page.evaluate(()=>{const p=document.createElement('p');p.id='trail-probe';p.textContent='Un percorso ad anello: porta un cappello, controlla il dislivello.';document.querySelector('.walk-focus .sec-body').append(p);});await expect(page.locator('#trail-probe [data-term="dislivello"]')).toHaveCount(1);await expect(page.locator('#trail-probe [data-term="anello"],#trail-probe [data-term="cappello"]')).toHaveCount(0);

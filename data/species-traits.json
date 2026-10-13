@@ -223,7 +223,7 @@
       "source": "https://faolex.fao.org/docs/pdf/ita21952.pdf"
     },
     {
-      "text": "Scarta esemplari vecchi, fradici, ammuffiti, bacati o troppo giovani, e non raccogliere lungo strade trafficate, discariche, frutteti o campi trattati.",
+      "text": "Esemplari alterati o troppo giovani e ambienti contaminati comportano rischi indipendenti dalla specie. La scheda non valuta l’idoneità del raccolto.",
       "severity": "importante",
       "source": "https://www.ausl.vda.it/Media/AUSL/Hierarchy/64/6481/Opuscolo%20ispettorato%20micologico%202026.pdf"
     },
@@ -233,9 +233,9 @@
       "source": "https://chivasso-api.cloud.municipiumapp.it/s3/2083/allegati/informazioni-controllo-funghi-anno-2025.pdf"
     },
     {
-      "text": "Dopo il controllo conserva i funghi al fresco in contenitori rigidi e aerati e consumali presto. Per il sott'olio bollili almeno 20 minuti in acqua e aceto (rischio botulino).",
+      "text": "Dopo il controllo micologico, la conservazione richiede procedure sanitarie complete. Per il sott’olio, acidificazione e trattamento vanno seguiti insieme secondo le linee guida ISS: indicazioni parziali non garantiscono la sicurezza.",
       "severity": "importante",
-      "source": "https://www.ausl.vda.it/Media/AUSL/Hierarchy/64/6481/Opuscolo%20ispettorato%20micologico%202026.pdf"
+      "source": "https://www.iss.it/documents/20126/2293568/LineeGuidaConserve_light.pdf/f76af27b-51bb-4675-158b-7433f66d07de?t=1575730710064"
     },
     {
       "text": "Se stai male dopo un pasto di funghi, anche molte ore dopo, vai subito al Pronto Soccorso portando avanzi, scarti di pulizia e funghi rimasti. Non curarti da solo.",
@@ -318,29 +318,29 @@
       },
       "field_rules": [
         {
-          "text": "Ogni boleto con pori rosa, rossi o arancio, o con carne che diventa blu al taglio, non è un porcino: lascialo o tienilo separato.",
+          "text": "Pori rosa, rossi o arancio e carne che vira al blu sono caratteri di altri boleti, anche tossici; il confronto non certifica l’identità di un porcino.",
           "severity": "critico",
           "source": "https://iris.santannapisa.it/retrieve/dd9e0b31-bbe9-709e-e053-3705fe0a83fd/104_vqr_Funghi.pdf"
         },
         {
-          "text": "Se i pori virano al rosa e il reticolo è bruno scuro e grossolano è il porcino di fiele: un solo esemplare rende amaro tutto il piatto.",
+          "text": "Pori rosati e reticolo bruno grossolano sono caratteri del porcino di fiele, descritto come molto amaro. Non è una prova da fare assaggiando.",
           "severity": "importante",
           "source": "https://it.wikipedia.org/wiki/Tylopilus_felleus"
         },
         {
-          "text": "Raccogli solo esemplari con cappello di almeno 4 cm (L.R. Lazio 32/98).",
+          "text": "Taglia minima del cappello per questa specie nel Lazio: 4 cm (L.R. 32/98). È un limite di raccolta, non un criterio di commestibilità.",
           "severity": "importante",
           "source": "https://faolex.fao.org/docs/pdf/ita21952.pdf"
         },
         {
-          "text": "Scarta gli esemplari vecchi, molli o bacati.",
+          "text": "Esemplari vecchi, molli, ammuffiti o infestati da larve possono essere alterati, anche nelle specie commestibili.",
           "severity": "importante",
           "source": "https://www.ausl.vda.it/Media/AUSL/Hierarchy/64/6481/Opuscolo%20ispettorato%20micologico%202026.pdf"
         }
       ],
       "check_before_picking": [
         "Pori bianchi, crema o giallo-verdastri: mai rosa, rossi o arancio",
-        "Taglia il gambo in verticale: la carne resta bianca, non diventa blu",
+        "Carne bianca, immutabile nella sezione longitudinale",
         "Reticolo fine e chiaro in alto sul gambo, non bruno scuro e grossolano",
         "Cappello nocciola o bruno, sodo, senza parti molli o bacate"
       ],
@@ -490,22 +490,22 @@
       },
       "field_rules": [
         {
-          "text": "Ogni boleto con pori rosa, rossi o arancio, o con carne che diventa blu al taglio, non è un porcino: lascialo o tienilo separato.",
+          "text": "Pori rosa, rossi o arancio e carne che vira al blu sono caratteri di altri boleti, anche tossici; il confronto non certifica l’identità di un porcino.",
           "severity": "critico",
           "source": "https://iris.santannapisa.it/retrieve/dd9e0b31-bbe9-709e-e053-3705fe0a83fd/104_vqr_Funghi.pdf"
         },
         {
-          "text": "Un boleto rosso-bruno con pori rossi e gambo punteggiato di rosso è il boleto a piede rosso: tossico crudo, non è un porcino.",
+          "text": "Pori rossi e punteggiatura rossa sul gambo sono caratteri da confrontare con il boleto a piede rosso, tossico da crudo.",
           "severity": "importante",
           "source": "https://en.wikipedia.org/wiki/Neoboletus_luridiformis"
         },
         {
-          "text": "Raccogli solo esemplari con cappello di almeno 4 cm (L.R. Lazio 32/98).",
+          "text": "Taglia minima del cappello per questa specie nel Lazio: 4 cm (L.R. 32/98). È un limite di raccolta, non un criterio di commestibilità.",
           "severity": "importante",
           "source": "https://faolex.fao.org/docs/pdf/ita21952.pdf"
         },
         {
-          "text": "Scarta gli esemplari vecchi, molli o bacati.",
+          "text": "Esemplari vecchi, molli, ammuffiti o infestati da larve possono essere alterati, anche nelle specie commestibili.",
           "severity": "importante",
           "source": "https://www.ausl.vda.it/Media/AUSL/Hierarchy/64/6481/Opuscolo%20ispettorato%20micologico%202026.pdf"
         }
@@ -648,22 +648,22 @@
       },
       "field_rules": [
         {
-          "text": "Ogni boleto con pori rosa, rossi o arancio, o con carne che diventa blu al taglio, non è un porcino: lascialo o tienilo separato.",
+          "text": "Pori rosa, rossi o arancio e carne che vira al blu sono caratteri di altri boleti, anche tossici; il confronto non certifica l’identità di un porcino.",
           "severity": "critico",
           "source": "https://iris.santannapisa.it/retrieve/dd9e0b31-bbe9-709e-e053-3705fe0a83fd/104_vqr_Funghi.pdf"
         },
         {
-          "text": "Il cappello scuro non basta: controlla sempre pori e carne al taglio, il boleto a piede rosso ha lo stesso colore.",
+          "text": "Un cappello scuro compare in diversi boleti: colore, pori e carne devono essere considerati insieme.",
           "severity": "importante",
           "source": "https://iris.santannapisa.it/retrieve/dd9e0b31-bbf2-709e-e053-3705fe0a83fd/96_vqr_Funghi.pdf"
         },
         {
-          "text": "Raccogli solo esemplari con cappello di almeno 4 cm (L.R. Lazio 32/98).",
+          "text": "Taglia minima del cappello per questa specie nel Lazio: 4 cm (L.R. 32/98). È un limite di raccolta, non un criterio di commestibilità.",
           "severity": "importante",
           "source": "https://faolex.fao.org/docs/pdf/ita21952.pdf"
         },
         {
-          "text": "Scarta gli esemplari vecchi, molli o bacati.",
+          "text": "Esemplari vecchi, molli, ammuffiti o infestati da larve possono essere alterati, anche nelle specie commestibili.",
           "severity": "importante",
           "source": "https://www.ausl.vda.it/Media/AUSL/Hierarchy/64/6481/Opuscolo%20ispettorato%20micologico%202026.pdf"
         }
@@ -804,22 +804,22 @@
       },
       "field_rules": [
         {
-          "text": "Ogni boleto con pori rosa, rossi o arancio, o con carne che diventa blu al taglio, non è un porcino: lascialo o tienilo separato.",
+          "text": "Pori rosa, rossi o arancio e carne che vira al blu sono caratteri di altri boleti, anche tossici; il confronto non certifica l’identità di un porcino.",
           "severity": "critico",
           "source": "https://iris.santannapisa.it/retrieve/dd9e0b31-bbe9-709e-e053-3705fe0a83fd/104_vqr_Funghi.pdf"
         },
         {
-          "text": "Se i pori virano al rosa e il reticolo è bruno scuro e grossolano è il porcino di fiele: un solo esemplare rende amaro tutto il piatto.",
+          "text": "Pori rosati e reticolo bruno grossolano sono caratteri del porcino di fiele, descritto come molto amaro. Non è una prova da fare assaggiando.",
           "severity": "importante",
           "source": "https://it.wikipedia.org/wiki/Tylopilus_felleus"
         },
         {
-          "text": "È il porcino più attaccato dalle larve: taglialo e scarta quelli bacati o molli.",
+          "text": "Esemplari vecchi, molli, ammuffiti o infestati da larve possono essere alterati, anche nelle specie commestibili.",
           "severity": "importante",
           "source": "https://www.rivistadiagraria.org/articoli/anno-2006/i-porcini/?print=pdf"
         },
         {
-          "text": "Raccogli solo esemplari con cappello di almeno 4 cm (L.R. Lazio 32/98).",
+          "text": "Taglia minima del cappello per questa specie nel Lazio: 4 cm (L.R. 32/98). È un limite di raccolta, non un criterio di commestibilità.",
           "severity": "importante",
           "source": "https://faolex.fao.org/docs/pdf/ita21952.pdf"
         }
@@ -961,32 +961,32 @@
       },
       "field_rules": [
         {
-          "text": "Non raccogliere mai ovoli chiusi: è vietato nel Lazio (L.R. 32/98, art. 3 c. 4) e da chiuso l'ovolo buono si confonde con l'Amanita phalloides, mortale.",
+          "text": "La raccolta degli ovoli con velo ancora chiuso è vietata nel Lazio (L.R. 32/98, art. 3 c. 4). In questa fase sono possibili confusioni con amanite mortali.",
           "severity": "critico",
           "source": "https://faolex.fao.org/docs/pdf/ita21952.pdf"
         },
         {
-          "text": "Raccogli solo ovoli con il velo già lacerato da solo e il cappello arancio visibile; non aprire o tagliare ovoli chiusi per controllarli.",
+          "text": "Il velo naturalmente lacerato rende visibili più caratteri; aprire un ovolo chiuso non rende lecita la raccolta né ne conferma l’identità.",
           "severity": "critico",
           "source": "https://faolex.fao.org/docs/pdf/ita21952.pdf"
         },
         {
-          "text": "Verifica tutto il fungo: lamelle, gambo e anello gialli, volva bianca a sacco. Se una di queste parti è bianca, non è un ovolo buono.",
+          "text": "Lamelle, gambo e anello gialli e volva bianca a sacco sono caratteri descritti per A. caesarea: nessuno, isolatamente, certifica la specie.",
           "severity": "critico",
           "source": "https://iris.santannapisa.it/retrieve/dd9e0b31-bbe6-709e-e053-3705fe0a83fd/80_vqr_Funghi.pdf"
         },
         {
-          "text": "Estrai il fungo intero con la volva: senza volva non si distingue con sicurezza da A. muscaria e dalle amanite mortali.",
+          "text": "La base completa e gli eventuali resti della volva sono necessari al controllo micologico; una base incompleta limita il confronto.",
           "severity": "critico",
           "source": "https://www.ausl.vda.it/Media/AUSL/Hierarchy/64/6481/Opuscolo%20ispettorato%20micologico%202026.pdf"
         },
         {
-          "text": "Un cappello arancio liscio non basta: l'Amanita muscaria lavata dalla pioggia perde le verruche bianche ma ha lamelle e gambo bianchi.",
+          "text": "Amanita muscaria può perdere le verruche con la pioggia: un cappello arancio liscio non identifica A. caesarea.",
           "severity": "importante",
           "source": "https://iris.santannapisa.it/retrieve/dd9e0b31-bbe6-709e-e053-3705fe0a83fd/80_vqr_Funghi.pdf"
         },
         {
-          "text": "Taglia minima 4 cm di cappello (L.R. Lazio 32/98).",
+          "text": "Taglia minima del cappello per questa specie nel Lazio: 4 cm (L.R. 32/98). È un limite di raccolta, non un criterio di commestibilità.",
           "severity": "importante",
           "source": "https://faolex.fao.org/docs/pdf/ita21952.pdf"
         }
@@ -1145,27 +1145,27 @@
       },
       "field_rules": [
         {
-          "text": "Raccogli solo finferli che nascono a terra: un fungo arancio a cespi su ceppaie o radici è il fungo dell'olivo, tossico.",
+          "text": "Omphalotus olearius, tossico, può formare cespi aranciati su legno e radici, talvolta interrati.",
           "severity": "critico",
           "source": "https://asl5oristano.it/wp-content/uploads/2024/09/OMPHALOTUS-OLEARIUS.pdf"
         },
         {
-          "text": "Sotto il cappello devono esserci pliche spesse e ramificate, non vere lamelle sottili e fitte.",
+          "text": "Le pliche spesse e ramificate del finferlo sono diverse dalle vere lamelle sottili; questo carattere va confrontato con il resto del fungo.",
           "severity": "critico",
           "source": "https://asl5oristano.it/wp-content/uploads/2024/09/OMPHALOTUS-OLEARIUS.pdf"
         },
         {
-          "text": "Scarta ogni fungo aranciato con vere lamelle e sporata ruggine: può essere un cortinario mortale per i reni.",
+          "text": "Tra i cortinari fulvo-aranciati con lamelle e sporata ruggine vi sono specie contenenti orellanina: possibili danni renali tardivi.",
           "severity": "critico",
           "source": "https://it.wikipedia.org/wiki/Cortinarius_orellanus"
         },
         {
-          "text": "Non fidarti delle app di riconoscimento: diversi intossicati da fungo dell'olivo le avevano usate.",
+          "text": "Foto e app non certificano l’identità del fungo né escludono sosia tossici.",
           "severity": "importante",
           "source": "https://www.gonews.it/2020/08/31/fungo-olivo-intossicati-pontremoli/amp/"
         },
         {
-          "text": "Va consumato ben cotto e in quantità moderate.",
+          "text": "Anche per le specie commestibili, cottura e quantità seguono le indicazioni sanitarie dopo il controllo micologico.",
           "severity": "importante",
           "source": "https://iris.santannapisa.it/retrieve/dd9e0b31-bba4-709e-e053-3705fe0a83fd/116_vqr_Funghi.pdf"
         }
@@ -1229,7 +1229,7 @@
           "Cercalo nei tratti muschiosi e acidi del bosco, spesso in gruppi.",
           "Cresce sia sotto latifoglie (faggio, castagno, cerro) sia sotto conifere.",
           "Nel Reatino è segnalato anche nelle pinete di pino nero dell'Altopiano di Rascino, vicino alla faggeta.",
-          "Mai su legno: se è su una ceppaia non è un finferlo."
+          "I finferli fruttificano sul terreno; legno o radici interrati possono non essere visibili, limitando il confronto con Omphalotus."
         ],
         "trees": [
           "faggio",
@@ -1318,17 +1318,17 @@
       },
       "field_rules": [
         {
-          "text": "Scarta gli esemplari vecchi, molli o bacati.",
+          "text": "Esemplari vecchi, molli, ammuffiti o infestati da larve possono essere alterati, anche nelle specie commestibili.",
           "severity": "importante",
           "source": "https://www.ausl.vda.it/Media/AUSL/Hierarchy/64/6481/Opuscolo%20ispettorato%20micologico%202026.pdf"
         },
         {
-          "text": "Pulisci bene l'interno della tromba da terra e insetti e consumala cotta.",
+          "text": "La cavità della tromba può contenere terra e insetti. Le indicazioni di pulizia e cottura valgono dopo il controllo micologico.",
           "severity": "importante",
           "source": "https://it.wikipedia.org/wiki/Craterellus_cornucopioides"
         },
         {
-          "text": "Se hai anche un solo dubbio, mettilo in un contenitore a parte o lascialo: non mescolarlo agli altri.",
+          "text": "Una somiglianza con la scheda non risolve un’identità incerta; la valutazione del raccolto spetta all’Ispettorato micologico.",
           "severity": "critico",
           "source": "https://www.ausl.vda.it/Media/AUSL/Hierarchy/64/6481/Opuscolo%20ispettorato%20micologico%202026.pdf"
         }
@@ -1471,12 +1471,12 @@
       },
       "field_rules": [
         {
-          "text": "Ogni fungo con aculei bruno scuro, duro, sugheroso o con cappello squamoso non è uno steccherino dorato: lascialo.",
+          "text": "Aculei bruni, consistenza dura o sugherosa e cappello squamoso compaiono in altri funghi idnoidi, con commestibilità diverse.",
           "severity": "importante",
           "source": "https://it.wikipedia.org/wiki/Hydnum_repandum"
         },
         {
-          "text": "Preferisci esemplari giovani: i vecchi diventano amari. Va consumato cotto.",
+          "text": "Gli esemplari maturi possono essere amari. Le indicazioni di preparazione riguardano solo esemplari controllati.",
           "severity": "importante",
           "source": "https://it.wikipedia.org/wiki/Hydnum_repandum"
         }
@@ -1620,33 +1620,33 @@
       },
       "field_rules": [
         {
-          "text": "Raccogli solo esemplari con cappello grande: per legge almeno 5 cm, ma per prudenza scarta tutto sotto i 10 cm. Le piccole lepiote possono essere mortali.",
+          "text": "Le piccole Lepiota comprendono specie mortali. Nel Lazio il limite di raccolta di M. procera è 5 cm; una taglia maggiore non certifica l’identità.",
           "severity": "critico",
           "source": "https://sabatosera.it/sabatosera/news/2019/09/25/non-tutti-i-funghi-sono-commestibili-a-imola-ha-riaperto-lispettorato-micologico"
         },
         {
-          "text": "Controlla l'anello doppio e scorrevole e il gambo zigrinato come pelle di serpente: senza questi caratteri non è una mazza di tamburo.",
+          "text": "Anello doppio e mobile e zigrinature del gambo sono caratteri descritti per M. procera, da confrontare con l’intero fungo.",
           "severity": "critico",
           "source": "https://iris.santannapisa.it/retrieve/dd9e0b31-bbed-709e-e053-3705fe0a83fd/178_vqr_Funghi.pdf"
         },
         {
-          "text": "Se la carne tagliata diventa subito rosso-arancio è una mazza arrossante (Chlorophyllum), tossica: scartala.",
+          "text": "Arrossamento della carne e gambo liscio compaiono in Chlorophyllum, che comprende sosia problematici: non sono da soli un’identificazione.",
           "severity": "importante",
           "source": "https://iris.santannapisa.it/retrieve/dd9e0b31-bbed-709e-e053-3705fe0a83fd/178_vqr_Funghi.pdf"
         },
         {
-          "text": "Non mangiarla cruda o poco cotta; consuma solo il cappello.",
+          "text": "M. procera è tossica cruda o poco cotta; il gambo è fibroso. Preparazione solo dopo il controllo micologico.",
           "severity": "importante",
           "source": "https://iris.santannapisa.it/retrieve/dd9e0b31-bbed-709e-e053-3705fe0a83fd/178_vqr_Funghi.pdf"
         },
         {
-          "text": "Non raccoglierla in prati a bordo strada o in aree inquinate: accumula metalli pesanti.",
+          "text": "I funghi possono accumulare contaminanti: bordo strada e aree inquinate comportano rischi indipendenti dalla specie.",
           "severity": "importante",
           "source": "https://iris.santannapisa.it/retrieve/dd9e0b31-bbed-709e-e053-3705fe0a83fd/178_vqr_Funghi.pdf"
         }
       ],
       "check_before_picking": [
-        "Cappello ben più largo di 10 cm, con squame brune su fondo chiaro",
+        "Cappello grande, con squame brune su fondo chiaro",
         "Anello doppio che scorre lungo il gambo",
         "Gambo alto con zigrinature brune, non liscio",
         "Carne bianca che non arrossa forte al taglio",
@@ -1702,7 +1702,7 @@
         "source": "https://it.wikipedia.org/wiki/Macrolepiota_procera"
       },
       "notes": [
-        "Taglia minima: la L.R. Lazio 32/98 fissa 5 cm; ispettorati e fonti prudenti indicano di scartare tutto sotto i 10 cm. Scelta la regola dei 10 cm."
+        "Nel Lazio la taglia minima legale è 5 cm. Una soglia di dimensione non identifica M. procera né esclude le Lepiota mortali."
       ],
       "trees": [
         "castagno",
@@ -1789,27 +1789,27 @@
       },
       "field_rules": [
         {
-          "text": "Mai crudo né poco cotto: prebollilo in abbondante acqua almeno 15-20 minuti, butta l'acqua e poi cuocilo di nuovo.",
+          "text": "Armillaria è tossica cruda o poco cotta. Le fonti sanitarie prevedono prebollitura con eliminazione dell’acqua e successiva cottura, dopo il controllo micologico.",
           "severity": "critico",
           "source": "https://www.ausl.vda.it/Media/AUSL/Hierarchy/64/6481/Opuscolo%20ispettorato%20micologico%202026.pdf"
         },
         {
-          "text": "Controlla il cespo fungo per fungo: tra i chiodini può crescere la Galerina marginata, mortale, piccola, bruno-ocra e con sporata ruggine.",
+          "text": "Galerina marginata, mortale, può crescere sullo stesso legno delle Armillaria: un cespo non garantisce che tutti gli esemplari appartengano alla stessa specie.",
           "severity": "critico",
           "source": "https://it.wikipedia.org/wiki/Galerina_marginata"
         },
         {
-          "text": "Usa solo i cappelli e scarta il gambo almeno fino all'anello.",
+          "text": "Il gambo è fibroso, soprattutto nella parte inferiore; le indicazioni di preparazione riguardano il raccolto controllato.",
           "severity": "importante",
           "source": "https://www.ausl.vda.it/Media/AUSL/Hierarchy/64/6481/Opuscolo%20ispettorato%20micologico%202026.pdf"
         },
         {
-          "text": "Non congelarlo crudo e scarta i chiodini colpiti dal gelo.",
+          "text": "Le fonti sanitarie sconsigliano il congelamento delle Armillaria crude e il consumo di esemplari colpiti dal gelo.",
           "severity": "importante",
           "source": "https://aslbi.piemonte.it/wp-content/uploads/2025/08/Poster-NON-CONSUMARE-I-CHIODINI-CRUDI.pdf"
         },
         {
-          "text": "Mangiane poco e non in pasti ravvicinati: è tra le prime cause di intossicazione.",
+          "text": "Armillaria è frequentemente coinvolta in intossicazioni; quantità elevate, pasti ravvicinati e sensibilità individuale aumentano i problemi.",
           "severity": "importante",
           "source": "https://aslbi.piemonte.it/wp-content/uploads/2025/08/Poster-NON-CONSUMARE-I-CHIODINI-CRUDI.pdf"
         }
@@ -1818,8 +1818,7 @@
         "Anello membranoso bianco-giallastro sul gambo",
         "Squamette scure al centro del cappello",
         "Lamelle bianche o crema, non giallo-verdi né ruggine",
-        "Cespo su legno o radici; cordoni neri alla base",
-        "Ogni esemplare del cespo uguale agli altri"
+        "Cespo su legno o radici; cordoni neri alla base"
       ],
       "sources": [
         {
@@ -1992,33 +1991,33 @@
       },
       "field_rules": [
         {
-          "text": "Estrai ogni fungo verde con lamelle bianche intero e scava alla base: se c'è una volva a sacco o un anello è Amanita phalloides, mortale.",
+          "text": "Amanita phalloides può avere cappello verde e lamelle bianche. Anello e volva possono essere nascosti o danneggiati: la loro apparente assenza non esclude il rischio.",
           "severity": "critico",
           "source": "https://www.ufficiostampa.provincia.tn.it/Comunicati/FUNGHI-ATTENZIONE-ALLE-INTOSSICAZIONI"
         },
         {
-          "text": "Il gambo della russula si spezza di netto come un gesso; quello della falloide è fibroso.",
+          "text": "La rottura del gambo descritta come simile al gesso è un carattere delle russule, non una prova di commestibilità.",
           "severity": "importante",
           "source": "https://it.wikipedia.org/wiki/Amanita_phalloides"
         },
         {
-          "text": "Scarta le russule verdi con lamelle o sporata gialle (R. olivacea) e quelle dal sapore piccante.",
+          "text": "Lamelle o sporata gialle compaiono in altre russule. Il sapore riportato nelle fonti non va verificato assaggiando un fungo sconosciuto.",
           "severity": "importante",
           "source": "https://iris.santannapisa.it/retrieve/dd9e0b31-bba2-709e-e053-3705fe0a83fd/208_vqr_Funghi.pdf"
         },
         {
-          "text": "Consumala cotta.",
+          "text": "Il controllo micologico precede qualsiasi consumo; è sconsigliato consumare funghi spontanei crudi.",
           "severity": "importante",
           "source": "https://www.ufficiostampa.provincia.tn.it/Comunicati/FUNGHI-ATTENZIONE-ALLE-INTOSSICAZIONI"
         },
         {
-          "text": "Taglia minima 4 cm per R. virescens (L.R. Lazio 32/98).",
+          "text": "Taglia minima del cappello per questa specie nel Lazio: 4 cm (L.R. 32/98). È un limite di raccolta, non un criterio di commestibilità.",
           "severity": "importante",
           "source": "https://faolex.fao.org/docs/pdf/ita21952.pdf"
         }
       ],
       "check_before_picking": [
-        "Nessuna volva alla base, anche scavando",
+        "Nessuna volva alla base, quando la base è completa",
         "Nessun anello sul gambo",
         "Gambo bianco che si spezza come un gesso",
         "Lamelle bianche o crema, non gialle",
@@ -2169,17 +2168,17 @@
       },
       "field_rules": [
         {
-          "text": "Togli sempre la cuticola vischiosa: è lassativa.",
+          "text": "La cuticola vischiosa dei Suillus può causare disturbi intestinali; le indicazioni di rimozione valgono dopo il controllo micologico.",
           "severity": "importante",
           "source": "https://www.iris.sssup.it/retrieve/dd9e0b31-bbe7-709e-e053-3705fe0a83fd/214_vqr_Funghi.pdf"
         },
         {
-          "text": "Scarta i boleti piccoli con pori ramati e sapore piccante (boleto pepato).",
+          "text": "Pori bruno-ramati e piccole dimensioni sono caratteri da confrontare con Chalciporus piperatus. Il sapore descritto nelle fonti non è una prova da fare sul campo.",
           "severity": "importante",
           "source": "https://it.wikipedia.org/wiki/Chalciporus_piperatus"
         },
         {
-          "text": "Scarta gli esemplari vecchi e molli; consumalo cotto e poco la prima volta.",
+          "text": "Esemplari vecchi, molli, ammuffiti o infestati da larve possono essere alterati, anche nelle specie commestibili.",
           "severity": "importante",
           "source": "https://www.iris.sssup.it/retrieve/dd9e0b31-bbe7-709e-e053-3705fe0a83fd/214_vqr_Funghi.pdf"
         }
@@ -2249,7 +2248,7 @@
         "pino domestico",
         "pino d'aleppo"
       ],
-      "caution": "la pellicina vischiosa del cappello è lassativa: va tolta. Solo esemplari sodi, cotti.",
+      "caution": "La cuticola vischiosa può causare disturbi intestinali. Preparazione solo dopo il controllo micologico.",
       "traits_notes": "Sporata: ocra (luteus), ocra/bruno-siena (granulatus), bruno-oliva (collinitus) -> unione ocra/bruno/verde-oliva. Cappello viscido da umido, liscio/semiopaco da secco in tutte e tre. cap_veil null: S. luteus ha spesso lembi di velo pendenti dal margine (first-nature) mentre granulatus e collinitus hanno velo nudo; il gruppo e' misto. Carne: soda (luteus, gambo sodo in granulatus) ma tenera/molle nel cappello; gambo di luteus descritto anche fibroso. Base: leggermente allargata (luteus, granulatus) = normale; attenuata con micelio rosa in collinitus.",
       "tox_label": "commestibile senza cuticola",
       "tox_short": "senza cuticola"
@@ -2325,17 +2324,17 @@
       },
       "field_rules": [
         {
-          "text": "Fai controllare ogni raccolta: tra le morette grigie si mescolano specie tossiche come T. pardinum.",
+          "text": "Tra i tricolomi grigi vi sono sosia tossici come T. pardinum; foto e descrizioni non escludono la confusione.",
           "severity": "critico",
           "source": "https://comunidad.madrid/sites/default/files/doc/sanidad/sali/d_tricholoma_pardinum.pdf"
         },
         {
-          "text": "Scarta gli esemplari con odore di farina, sapore amaro o piccante, lamelle non bianche o grigie, o cappello lucido con umbone appuntito.",
+          "text": "Odore di farina, aspetto delle lamelle e forma del cappello variano nei tricolomi grigi: nessun singolo carattere conferma la specie. Il sapore non va verificato assaggiando.",
           "severity": "importante",
           "source": "https://it.wikipedia.org/wiki/Tricholoma_terreum"
         },
         {
-          "text": "Consumala cotta e in quantità moderate.",
+          "text": "Le indicazioni di cottura e quantità moderate riguardano solo il raccolto controllato.",
           "severity": "importante",
           "source": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11052463/"
         }
@@ -2479,22 +2478,22 @@
       },
       "field_rules": [
         {
-          "text": "Scarta i funghi violetti con ragnatela (cortina) sul gambo o lamelle color ruggine: sono cortinari, alcuni tossici.",
+          "text": "Tra i funghi violetti con cortina e sporata ruggine vi sono cortinari tossici; il colore viola non indica commestibilità.",
           "severity": "critico",
           "source": "https://comunidad.madrid/sites/default/files/doc/sanidad/sali/a_lepista_nuda.pdf"
         },
         {
-          "text": "Fai la sporata o falla fare all'ASL: rosa pallido è giusta, ruggine indica un cortinario.",
+          "text": "La sporata rosa pallido è descritta per L. nuda; la sporata ruggine è un carattere dei cortinari. Nessuna delle due, da sola, identifica l’esemplare.",
           "severity": "importante",
           "source": "https://iris.santannapisa.it/retrieve/dd9e0b31-bbfe-709e-e053-3705fe0a83fd/174_vqr_Funghi.pdf"
         },
         {
-          "text": "Tossica cruda o poco cotta: cuocila a lungo.",
+          "text": "L. nuda è tossica cruda o poco cotta; preparazione solo dopo il controllo micologico.",
           "severity": "importante",
           "source": "https://iris.santannapisa.it/retrieve/dd9e0b31-bbfe-709e-e053-3705fe0a83fd/174_vqr_Funghi.pdf"
         },
         {
-          "text": "Scarta i violetti piccoli con odore di rapa (Mycena pura) o cappello conico setoso (Inocybe).",
+          "text": "Anche piccoli funghi violetti come Mycena pura e alcune Inocybe sono tossici. Odore e forma non bastano a distinguerli con sicurezza.",
           "severity": "importante",
           "source": "https://it.wikipedia.org/wiki/Mycena_pura"
         }
@@ -2637,15 +2636,14 @@
       },
       "field_rules": [
         {
-          "text": "Scartalo: è amarissimo e un solo esemplare rovina tutto il piatto.",
+          "text": "Tylopilus felleus è descritto come molto amaro; pori rosati e reticolo bruno sono caratteri da confrontare. Il sapore non va verificato assaggiando.",
           "severity": "importante",
           "source": "https://it.wikipedia.org/wiki/Tylopilus_felleus"
         }
       ],
       "check_before_picking": [
         "Pori che diventano rosa",
-        "Reticolo bruno scuro, grossolano",
-        "Sapore amarissimo"
+        "Reticolo bruno scuro, grossolano"
       ],
       "sources": [
         {
@@ -2754,7 +2752,7 @@
       },
       "field_rules": [
         {
-          "text": "Non raccogliere boleti con pori rossi e carne che diventa blu: tossico, causa gravi gastroenteriti.",
+          "text": "Rubroboletus satanas è tossico e può causare gravi disturbi gastrointestinali. Pori rossi e viraggio al blu compaiono anche in altri boleti e non lo identificano da soli.",
           "severity": "critico",
           "source": "https://it.wikipedia.org/wiki/Rubroboletus_satanas"
         }
@@ -2869,15 +2867,14 @@
       },
       "field_rules": [
         {
-          "text": "Scarta i boleti con gambo rosso e carne che vira al blu: è amaro e indigesto.",
+          "text": "Gambo rosso reticolato e viraggio al blu sono caratteri di C. calopus, non commestibile. Le descrizioni del sapore non invitano all’assaggio.",
           "severity": "importante",
           "source": "https://it.wikipedia.org/wiki/Caloboletus_calopus"
         }
       ],
       "check_before_picking": [
         "Pori gialli che bluastrano",
-        "Gambo rosso con reticolo chiaro",
-        "Carne amara che vira al blu"
+        "Gambo rosso con reticolo chiaro"
       ],
       "sources": [
         {
@@ -2978,15 +2975,14 @@
       },
       "field_rules": [
         {
-          "text": "Un boleto chiaro con pori gialli e carne che vira al blu non è un porcino: scartalo, è amaro.",
+          "text": "Cappello chiaro, pori gialli e viraggio al blu sono caratteri di C. radicans, non commestibile. Non costituiscono da soli un’identificazione.",
           "severity": "importante",
           "source": "https://it.wikipedia.org/wiki/Caloboletus_radicans"
         }
       ],
       "check_before_picking": [
         "Cappello biancastro, pori gialli",
-        "Gambo giallo, radicante",
-        "Carne che vira al blu, amara"
+        "Gambo giallo, radicante"
       ],
       "sources": [
         {
@@ -3090,7 +3086,7 @@
       },
       "field_rules": [
         {
-          "text": "Tossico crudo o poco cotto: non raccoglierlo se non sai riconoscerlo con certezza.",
+          "text": "Neoboletus luridiformis è tossico crudo o poco cotto. La classificazione della specie non certifica l’identità di un esemplare.",
           "severity": "importante",
           "source": "https://en.wikipedia.org/wiki/Neoboletus_luridiformis"
         }
@@ -3206,7 +3202,7 @@
       },
       "field_rules": [
         {
-          "text": "Commestibile, ma i pori bluastrano: fallo controllare prima di consumarlo insieme ai porcini.",
+          "text": "I pori di Imleria badia possono macchiarsi di blu: il viraggio non è una prova generale di tossicità o commestibilità.",
           "severity": "importante",
           "source": "https://it.wikipedia.org/wiki/Imleria_badia"
         }
@@ -3320,27 +3316,27 @@
       },
       "field_rules": [
         {
-          "text": "Ogni fungo con lamelle bianche, anello e volva va considerato un'amanita mortale finché l'ASL non dice il contrario: tienilo separato o lascialo.",
+          "text": "Lamelle bianche, anello e volva sono presenti anche nelle amanite mortali. Resti assenti, nascosti o danneggiati non escludono il rischio.",
           "severity": "critico",
           "source": "https://it.wikipedia.org/wiki/Amanita_phalloides"
         },
         {
-          "text": "Non toccare con le mani gli altri funghi dopo averla maneggiata e non metterla nel cestino comune: bastano piccoli frammenti.",
+          "text": "A. phalloides contiene amatossine: l’ingestione anche di piccole quantità può essere mortale. La semplice manipolazione non equivale all’ingestione.",
           "severity": "critico",
           "source": "https://www.ausl.vda.it/Media/AUSL/Hierarchy/64/6481/Opuscolo%20ispettorato%20micologico%202026.pdf"
         },
         {
-          "text": "Allo stadio di ovolo si confonde con l'ovolo buono: non raccogliere mai ovoli chiusi.",
+          "text": "Gli ovoli chiusi possono confondersi con A. caesarea; la loro raccolta è vietata nel Lazio.",
           "severity": "critico",
           "source": "https://faolex.fao.org/docs/pdf/ita21952.pdf"
         },
         {
-          "text": "Senza la base del gambo si confonde con le russule verdi: scava sempre fino alla volva.",
+          "text": "Una base mancante o incompleta può nascondere la volva e impedire un confronto attendibile.",
           "severity": "critico",
           "source": "https://it.wikipedia.org/wiki/Amanita_phalloides"
         },
         {
-          "text": "I sintomi arrivano dopo 12-48 ore: se l'hai anche solo toccata in cucina o temi di averla mangiata, vai al Pronto Soccorso subito, senza aspettare.",
+          "text": "L’avvelenamento può manifestarsi dopo molte ore. In caso di sospetta ingestione, contattare subito il 112 o un Centro Antiveleni, senza attendere i sintomi.",
           "severity": "critico",
           "source": "https://it.wikipedia.org/wiki/Amanita_phalloides"
         }
@@ -3383,6 +3379,10 @@
         {
           "title": "Funghi mortali - Regione Emilia-Romagna",
           "url": "https://ambiente.regione.emilia-romagna.it/it/parchi-natura2000/sistema-regionale/funghi-sottobosco-tartufi/funghi-allegati/funghi-mortali"
+        },
+        {
+          "title": "ISSalute · Intossicazione da funghi: sindromi e rischi",
+          "url": "https://www.issalute.it/index.php/la-salute-dalla-a-alla-z-menu/i/intossicazione-da-funghi"
         }
       ],
       "trees": [
@@ -3469,12 +3469,12 @@
       },
       "field_rules": [
         {
-          "text": "Ogni fungo con lamelle bianche, anello e volva va considerato un'amanita mortale finché l'ASL non dice il contrario: tienilo separato o lascialo.",
+          "text": "Lamelle bianche, anello e volva sono presenti anche nelle amanite mortali. Resti assenti, nascosti o danneggiati non escludono il rischio.",
           "severity": "critico",
           "source": "https://it.wikipedia.org/wiki/Amanita_phalloides"
         },
         {
-          "text": "Non toccare con le mani gli altri funghi dopo averla maneggiata e non metterla nel cestino comune: bastano piccoli frammenti.",
+          "text": "A. verna contiene amatossine: l’ingestione anche di piccole quantità può essere mortale. La semplice manipolazione non equivale all’ingestione.",
           "severity": "critico",
           "source": "https://www.ausl.vda.it/Media/AUSL/Hierarchy/64/6481/Opuscolo%20ispettorato%20micologico%202026.pdf"
         }
@@ -3512,6 +3512,10 @@
         {
           "title": "Amanita phalloides - first-nature.com (gruppo phalloides, resti di velo)",
           "url": "https://www.first-nature.com/fungi/amanita-phalloides.php"
+        },
+        {
+          "title": "ISSalute · Intossicazione da funghi: sindromi e rischi",
+          "url": "https://www.issalute.it/index.php/la-salute-dalla-a-alla-z-menu/i/intossicazione-da-funghi"
         }
       ],
       "trees": [
@@ -3597,12 +3601,12 @@
       },
       "field_rules": [
         {
-          "text": "Ogni fungo con lamelle bianche, anello e volva va considerato un'amanita mortale finché l'ASL non dice il contrario: tienilo separato o lascialo.",
+          "text": "Lamelle bianche, anello e volva sono presenti anche nelle amanite mortali. Resti assenti, nascosti o danneggiati non escludono il rischio.",
           "severity": "critico",
           "source": "https://it.wikipedia.org/wiki/Amanita_phalloides"
         },
         {
-          "text": "Non toccare con le mani gli altri funghi dopo averla maneggiata e non metterla nel cestino comune: bastano piccoli frammenti.",
+          "text": "A. virosa contiene amatossine: l’ingestione anche di piccole quantità può essere mortale. La semplice manipolazione non equivale all’ingestione.",
           "severity": "critico",
           "source": "https://www.ausl.vda.it/Media/AUSL/Hierarchy/64/6481/Opuscolo%20ispettorato%20micologico%202026.pdf"
         }
@@ -3636,6 +3640,10 @@
         {
           "title": "First Nature - Amanita virosa",
           "url": "https://www.first-nature.com/fungi/amanita-virosa.php"
+        },
+        {
+          "title": "ISSalute · Intossicazione da funghi: sindromi e rischi",
+          "url": "https://www.issalute.it/index.php/la-salute-dalla-a-alla-z-menu/i/intossicazione-da-funghi"
         }
       ],
       "trees": [
@@ -3722,12 +3730,12 @@
       },
       "field_rules": [
         {
-          "text": "Non confonderla con l'ovolo buono: lamelle, gambo e anello bianchi, volva a cercini sul bulbo e non a sacco.",
+          "text": "Lamelle, gambo e anello bianchi e resti della volva sul bulbo sono caratteri da confrontare con A. caesarea.",
           "severity": "critico",
           "source": "https://iris.santannapisa.it/retrieve/dd9e0b31-bbe6-709e-e053-3705fe0a83fd/80_vqr_Funghi.pdf"
         },
         {
-          "text": "Le verruche bianche possono sparire con la pioggia: non basarti sul cappello.",
+          "text": "Le verruche bianche possono scomparire con la pioggia: il solo cappello non identifica la specie.",
           "severity": "importante",
           "source": "https://iris.santannapisa.it/retrieve/dd9e0b31-bbe6-709e-e053-3705fe0a83fd/80_vqr_Funghi.pdf"
         }
@@ -3844,7 +3852,7 @@
       },
       "field_rules": [
         {
-          "text": "Tossica cruda: un'amanita arancio senza anello e con lamelle chiare non è un ovolo buono.",
+          "text": "A. crocea è tossica cruda. L’assenza di anello e le lamelle chiare sono caratteri da confrontare con altre amanite, anche mortali.",
           "severity": "importante",
           "source": "https://it.wikipedia.org/wiki/Amanita_crocea"
         }
@@ -3967,7 +3975,7 @@
       },
       "field_rules": [
         {
-          "text": "Un fungo arancio a cespi su ceppaie o radici non è un finferlo: lascialo.",
+          "text": "Omphalotus olearius è tossico: cespi aranciati su legno o radici, anche interrati, e vere lamelle sono caratteri da confrontare con i finferli.",
           "severity": "critico",
           "source": "https://asl5oristano.it/wp-content/uploads/2024/09/OMPHALOTUS-OLEARIUS.pdf"
         }
@@ -4081,7 +4089,7 @@
       },
       "field_rules": [
         {
-          "text": "Lamelle sottili, fitte e forcate di colore arancio carico: non è un finferlo, scartalo.",
+          "text": "Lamelle aranciate, sottili, fitte e ripetutamente forcate sono caratteri del falso gallinaccio, diversi dalle pliche dei finferli. Il confronto non identifica un esemplare.",
           "severity": "importante",
           "source": "https://en.wikipedia.org/wiki/Hygrophoropsis_aurantiaca"
         }
@@ -4200,14 +4208,14 @@
       },
       "field_rules": [
         {
-          "text": "Scarta ogni fungo fulvo-aranciato con lamelle e sporata ruggine: danneggia i reni anche dopo giorni dal pasto.",
+          "text": "Cortinario orellano: cappello fulvo-aranciato, lamelle e sporata ruggine. L’orellanina può causare danni renali tardivi.",
           "severity": "critico",
-          "source": "https://it.wikipedia.org/wiki/Cortinarius_orellanus"
+          "source": "https://www.issalute.it/index.php/la-salute-dalla-a-alla-z-menu/i/intossicazione-da-funghi"
         },
         {
-          "text": "I sintomi possono comparire dopo 2-20 giorni: se hai mangiato funghi non controllati e stai male, dillo al medico.",
+          "text": "I sintomi possono comparire dopo giorni. In caso di sospetta ingestione, contattare subito il 112 o un Centro Antiveleni, senza attendere i sintomi.",
           "severity": "critico",
-          "source": "https://it.wikipedia.org/wiki/Cortinarius_orellanus"
+          "source": "https://www.issalute.it/index.php/la-salute-dalla-a-alla-z-menu/i/intossicazione-da-funghi"
         }
       ],
       "check_before_picking": [
@@ -4231,6 +4239,10 @@
         {
           "title": "First Nature - Cortinarius orellanus",
           "url": "https://www.first-nature.com/fungi/cortinarius-orellanus.php"
+        },
+        {
+          "title": "ISSalute · Intossicazione da funghi: sindromi e rischi",
+          "url": "https://www.issalute.it/index.php/la-salute-dalla-a-alla-z-menu/i/intossicazione-da-funghi"
         }
       ],
       "trees": [
@@ -4313,7 +4325,7 @@
       },
       "field_rules": [
         {
-          "text": "Commestibile: tienilo comunque separato finché l'ASL non lo conferma.",
+          "text": "C. cinereus è classificato commestibile nelle fonti; questo non conferma l’identità o l’idoneità alimentare di un esemplare.",
           "severity": "importante",
           "source": "https://en.wikipedia.org/wiki/Craterellus_cinereus"
         }
@@ -4419,7 +4431,7 @@
       },
       "field_rules": [
         {
-          "text": "Commestibile ma piccolo e simile ad altri: fallo controllare.",
+          "text": "P. undulatus è classificato commestibile nelle fonti, ma può confondersi con altri piccoli funghi: la scheda non sostituisce il controllo micologico.",
           "severity": "importante",
           "source": "https://en.wikipedia.org/wiki/Pseudocraterellus_undulatus"
         }
@@ -4524,7 +4536,7 @@
       },
       "field_rules": [
         {
-          "text": "Una coppa nera e coriacea su rami interrati a fine inverno non è una trombetta: lasciala.",
+          "text": "Coppa nera coriacea su rami interrati, a fine inverno: caratteri di Urnula craterium, non commestibile, da confrontare con le trombette.",
           "severity": "importante",
           "source": "https://en.wikipedia.org/wiki/Urnula_craterium"
         }
@@ -4632,7 +4644,7 @@
       },
       "field_rules": [
         {
-          "text": "Commestibile solo ben cotto; fallo controllare insieme agli altri steccherini.",
+          "text": "Hydnum rufescens è classificato commestibile dopo cottura; identità e preparazione del raccolto richiedono il controllo micologico.",
           "severity": "importante",
           "source": "https://it.wikipedia.org/wiki/Hydnum_rufescens"
         }
@@ -4739,7 +4751,7 @@
       },
       "field_rules": [
         {
-          "text": "Un idnoide bruno con grosse squame a tegola non è uno steccherino dorato: lascialo.",
+          "text": "Cappello bruno con grosse squame a tegola e aculei bruno-grigi: caratteri da confrontare con gli Hydnum chiari.",
           "severity": "importante",
           "source": "https://it.wikipedia.org/wiki/Sarcodon_imbricatus"
         }
@@ -4842,15 +4854,14 @@
       },
       "field_rules": [
         {
-          "text": "Base del gambo verde-blu e carne amarissima: scartalo.",
+          "text": "Base del gambo verde-blu e consistenza della carne sono caratteri di S. scabrosus, non commestibile. Le descrizioni del sapore non invitano all’assaggio.",
           "severity": "importante",
           "source": "https://it.wikipedia.org/wiki/Sarcodon_scabrosus"
         }
       ],
       "check_before_picking": [
         "Cappello bruno squamuloso",
-        "Base del gambo verde-bluastra",
-        "Carne amarissima"
+        "Base del gambo verde-bluastra"
       ],
       "sources": [
         {
@@ -4958,7 +4969,7 @@
       },
       "field_rules": [
         {
-          "text": "Fungo duro e sugheroso che trasuda gocce rosse: non è commestibile.",
+          "text": "Consistenza dura e sugherosa e, nei giovani, gocce rosse: caratteri di H. peckii, non commestibile.",
           "severity": "importante",
           "source": "https://it.wikipedia.org/wiki/Hydnellum_peckii"
         }
@@ -5079,12 +5090,12 @@
       },
       "field_rules": [
         {
-          "text": "Scarta ogni piccola lepiota con cappello sotto i 10 cm: alcune contengono le stesse tossine mortali della falloide.",
+          "text": "Tra le piccole Lepiota vi sono specie con amatossine mortali. Le dimensioni del cappello, da sole, non distinguono specie commestibili e velenose.",
           "severity": "critico",
           "source": "https://sabatosera.it/sabatosera/news/2019/09/25/non-tutti-i-funghi-sono-commestibili-a-imola-ha-riaperto-lispettorato-micologico"
         },
         {
-          "text": "Cresce anche in parchi, giardini e bordi di strade: non raccogliere piccole 'mazzette'.",
+          "text": "L. brunneoincarnata, mortale, cresce anche in parchi, giardini e bordi di strada. Il luogo non certifica la commestibilità.",
           "severity": "critico",
           "source": "https://old.cittametropolitana.rc.it/canali/agricoltura/notizie-e-avvisi/avviso-comunicato-per-i-raccoglitori-di-funghi/avviso.pdf"
         }
@@ -5210,7 +5221,7 @@
       },
       "field_rules": [
         {
-          "text": "Scarta ogni piccola lepiota con cappello sotto i 10 cm: alcune contengono le stesse tossine mortali della falloide.",
+          "text": "Tra le piccole Lepiota vi sono specie con amatossine mortali. Le dimensioni del cappello, da sole, non distinguono specie commestibili e velenose.",
           "severity": "critico",
           "source": "https://sabatosera.it/sabatosera/news/2019/09/25/non-tutti-i-funghi-sono-commestibili-a-imola-ha-riaperto-lispettorato-micologico"
         }
@@ -5326,7 +5337,7 @@
       },
       "field_rules": [
         {
-          "text": "Scarta ogni piccola lepiota con cappello sotto i 10 cm: alcune contengono le stesse tossine mortali della falloide.",
+          "text": "Tra le piccole Lepiota vi sono specie con amatossine mortali. Le dimensioni del cappello, da sole, non distinguono specie commestibili e velenose.",
           "severity": "critico",
           "source": "https://sabatosera.it/sabatosera/news/2019/09/25/non-tutti-i-funghi-sono-commestibili-a-imola-ha-riaperto-lispettorato-micologico"
         }
@@ -5450,7 +5461,7 @@
       },
       "field_rules": [
         {
-          "text": "Se la carne del gambo tagliato diventa subito rosso-arancio e il gambo è liscio, scartala.",
+          "text": "Arrossamento della carne e gambo liscio sono caratteri da confrontare nel gruppo Chlorophyllum: non bastano a identificare il fungo o stabilirne la commestibilità.",
           "severity": "importante",
           "source": "https://iris.santannapisa.it/retrieve/dd9e0b31-bbed-709e-e053-3705fe0a83fd/178_vqr_Funghi.pdf"
         }
@@ -5572,7 +5583,7 @@
       },
       "field_rules": [
         {
-          "text": "Non raccogliere mazze in orti, giardini o vicino al compost: qui cresce la mazza velenosa.",
+          "text": "Orti, giardini e compost sono ambienti descritti per la mazza velenosa. L’habitat non basta a distinguere le specie di Chlorophyllum.",
           "severity": "importante",
           "source": "https://iris.santannapisa.it/retrieve/dd9e0b31-bbed-709e-e053-3705fe0a83fd/178_vqr_Funghi.pdf"
         }
@@ -5688,7 +5699,7 @@
       },
       "field_rules": [
         {
-          "text": "Contiene le tossine della falloide: ogni piccolo fungo bruno su legno, anche in mezzo ai chiodini, va scartato.",
+          "text": "Galerina marginata contiene amatossine mortali. Piccoli funghi bruni su legno possono crescere anche accanto ai chiodini.",
           "severity": "critico",
           "source": "https://it.wikipedia.org/wiki/Galerina_marginata"
         }
@@ -5815,15 +5826,14 @@
       },
       "field_rules": [
         {
-          "text": "Cespi giallo zolfo con lamelle verdastre: non sono chiodini, scartali.",
+          "text": "Cespi giallo zolfo con lamelle verdastre: caratteri di Hypholoma fasciculare, tossico, da confrontare con le Armillaria.",
           "severity": "importante",
           "source": "https://it.wikipedia.org/wiki/Hypholoma_fasciculare"
         }
       ],
       "check_before_picking": [
         "Giallo zolfo",
-        "Lamelle giallo-verdastre poi nerastre",
-        "Niente anello; sapore molto amaro"
+        "Lamelle giallo-verdastre poi nerastre"
       ],
       "sources": [
         {
@@ -5939,9 +5949,9 @@
       },
       "field_rules": [
         {
-          "text": "Scarta ogni fungo fulvo con cappello a punta, cortina e lamelle ruggine: danni renali tardivi.",
+          "text": "Cortinario rubello: cappello fulvo a punta, cortina e lamelle ruggine. L’orellanina può causare danni renali tardivi.",
           "severity": "critico",
-          "source": "https://it.wikipedia.org/wiki/Cortinarius_rubellus"
+          "source": "https://www.issalute.it/index.php/la-salute-dalla-a-alla-z-menu/i/intossicazione-da-funghi"
         }
       ],
       "check_before_picking": [
@@ -5965,6 +5975,10 @@
         {
           "title": "First Nature - Cortinarius rubellus",
           "url": "https://www.first-nature.com/fungi/cortinarius-rubellus.php"
+        },
+        {
+          "title": "ISSalute · Intossicazione da funghi: sindromi e rischi",
+          "url": "https://www.issalute.it/index.php/la-salute-dalla-a-alla-z-menu/i/intossicazione-da-funghi"
         }
       ],
       "trees": [
@@ -6052,15 +6066,14 @@
       },
       "field_rules": [
         {
-          "text": "Grossi cespi giallo-oro su ceppaie con lamelle ruggine: non sono chiodini.",
+          "text": "Grossi cespi giallo-oro su ceppaie con lamelle ruggine: caratteri di Gymnopilus junonius, da confrontare con le Armillaria.",
           "severity": "importante",
           "source": "https://en.wikipedia.org/wiki/Gymnopilus_junonius"
         }
       ],
       "check_before_picking": [
         "Più grande, giallo-oro",
-        "Lamelle che diventano ruggine",
-        "Carne amara"
+        "Lamelle che diventano ruggine"
       ],
       "sources": [
         {
@@ -6163,7 +6176,7 @@
       },
       "field_rules": [
         {
-          "text": "Cespi con cappello e gambo coperti di grosse squame rialzate: scartali.",
+          "text": "Cespi con grosse squame rialzate su cappello e gambo: caratteri di Pholiota squarrosa, non commestibile, da confrontare con le Armillaria.",
           "severity": "importante",
           "source": "https://en.wikipedia.org/wiki/Pholiota_squarrosa"
         }
@@ -6281,15 +6294,14 @@
       },
       "field_rules": [
         {
-          "text": "Valgono le stesse cautele del chiodino: tossico crudo, prebollitura e scarto dell'acqua.",
+          "text": "Come le altre Armillaria, è tossica cruda o poco cotta; le fonti sanitarie prevedono prebollitura, eliminazione dell’acqua e successiva cottura.",
           "severity": "critico",
           "source": "https://www.ausl.vda.it/Media/AUSL/Hierarchy/64/6481/Opuscolo%20ispettorato%20micologico%202026.pdf"
         }
       ],
       "check_before_picking": [
         "Simile al chiodino ma senza anello",
-        "A cespi su legno di latifoglie",
-        "Ogni esemplare del cespo uguale agli altri: niente piccoli funghi bruni (Galerina)"
+        "A cespi su legno di latifoglie"
       ],
       "sources": [
         {
@@ -6399,14 +6411,14 @@
       },
       "field_rules": [
         {
-          "text": "Come ogni russula verde, estraila intera e controlla la base per escludere la falloide.",
+          "text": "Amanita phalloides può avere cappello verde e lamelle bianche. Una base incompleta o resti danneggiati possono nascondere la volva.",
           "severity": "critico",
           "source": "https://www.ufficiostampa.provincia.tn.it/Comunicati/FUNGHI-ATTENZIONE-ALLE-INTOSSICAZIONI"
         }
       ],
       "check_before_picking": [
         "Lamelle fitte e forcate vicino al gambo",
-        "Nessuna volva né anello, anche scavando",
+        "Nessuna volva né anello, quando la base è completa",
         "Gambo che si spezza come un gesso"
       ],
       "sources": [
@@ -6514,7 +6526,7 @@
       },
       "field_rules": [
         {
-          "text": "Russula verde-oliva con lamelle e sporata gialle: scartala, causa gastroenteriti se poco cotta.",
+          "text": "Lamelle e sporata gialle sono caratteri di R. olivacea, coinvolta in disturbi gastrointestinali dopo consumo crudo o poco cotto.",
           "severity": "importante",
           "source": "https://it.wikipedia.org/wiki/Russula_olivacea"
         }
@@ -6625,7 +6637,7 @@
       },
       "field_rules": [
         {
-          "text": "Come ogni russula verde, estraila intera e controlla la base per escludere la falloide.",
+          "text": "Amanita phalloides può avere cappello verde e lamelle bianche. Una base incompleta o resti danneggiati possono nascondere la volva.",
           "severity": "critico",
           "source": "https://www.ufficiostampa.provincia.tn.it/Comunicati/FUNGHI-ATTENZIONE-ALLE-INTOSSICAZIONI"
         }
@@ -6737,15 +6749,14 @@
       },
       "field_rules": [
         {
-          "text": "Piccolo boleto dai pori ramati e sapore piccante: scartalo.",
+          "text": "Pori bruno-ramati e micelio giallo alla base sono caratteri di Chalciporus piperatus. Il sapore riportato nelle fonti non va verificato assaggiando.",
           "severity": "importante",
           "source": "https://it.wikipedia.org/wiki/Chalciporus_piperatus"
         }
       ],
       "check_before_picking": [
         "Pori bruno-ramati",
-        "Micelio giallo vivo alla base",
-        "Sapore pepato"
+        "Micelio giallo vivo alla base"
       ],
       "sources": [
         {
@@ -6843,7 +6854,7 @@
       },
       "field_rules": [
         {
-          "text": "Commestibile mediocre; valgono le stesse cautele dei pinaroli.",
+          "text": "Le fonti lo classificano commestibile di scarso pregio; la classificazione non conferma l’identità dell’esemplare.",
           "severity": "importante",
           "source": "https://it.wikipedia.org/wiki/Suillus_bovinus"
         }
@@ -6954,7 +6965,7 @@
       },
       "field_rules": [
         {
-          "text": "Una 'moretta' grande, carnosa e squamosa a tigre con odore di farina è l'agarico tigrino: gravi gastroenteriti.",
+          "text": "Cappello grigio squamoso e consistenza carnosa sono caratteri di T. pardinum: specie tossica che può causare gravi gastroenteriti.",
           "severity": "critico",
           "source": "https://comunidad.madrid/sites/default/files/doc/sanidad/sali/d_tricholoma_pardinum.pdf"
         }
@@ -7073,15 +7084,14 @@
       },
       "field_rules": [
         {
-          "text": "Tricoloma grigio con umbone appuntito, lucido e sapore amaro-piccante: scartalo.",
+          "text": "Cappello grigio lucido con umbone appuntito: caratteri di T. virgatum, tossico. Il sapore descritto nelle fonti non è una prova da fare.",
           "severity": "importante",
           "source": "https://en.wikipedia.org/wiki/Tricholoma_virgatum"
         }
       ],
       "check_before_picking": [
         "Cappello conico appuntito, grigio argento lucido",
-        "Fibre radiali scure",
-        "Sapore amaro e piccante"
+        "Fibre radiali scure"
       ],
       "sources": [
         {
@@ -7182,14 +7192,13 @@
       },
       "field_rules": [
         {
-          "text": "Tricoloma grigio con filo delle lamelle annerito e sapore amaro: scartalo.",
+          "text": "Filo delle lamelle annerito e habitat sotto faggio sono caratteri di T. sciodes, tossico, da confrontare con altri tricolomi grigi.",
           "severity": "importante",
           "source": "https://it.wikipedia.org/wiki/Tricholoma_sciodes"
         }
       ],
       "check_before_picking": [
         "Filo delle lamelle annerito",
-        "Sapore amaro-piccante",
         "Sotto faggio"
       ],
       "sources": [
@@ -7293,7 +7302,7 @@
       },
       "field_rules": [
         {
-          "text": "Fungo grigio-crema con lamelle giallastre che diventano rosa e odore di farina: scartalo, gravi gastroenteriti.",
+          "text": "Cappello grigio-crema, lamelle giallastre poi rosa e odore di farina: caratteri di E. sinuatum, responsabile di gravi gastroenteriti.",
           "severity": "critico",
           "source": "https://it.wikipedia.org/wiki/Entoloma_sinuatum"
         }
@@ -7428,7 +7437,7 @@
       },
       "field_rules": [
         {
-          "text": "Scarta tutti i piccoli funghi con cappello conico, fibroso o screpolato e lamelle grigio-brune: molti contengono muscarina.",
+          "text": "Molte Inocybe contengono muscarina. Cappello conico e fibroso e lamelle grigio-brune sono caratteri presenti in questo gruppo, senza identificarne da soli una specie.",
           "severity": "critico",
           "source": "https://it.wikipedia.org/wiki/Inocybe"
         }
@@ -7550,7 +7559,7 @@
       },
       "field_rules": [
         {
-          "text": "Fungo lilla con cortina, lamelle ruggine e carne giallo-zafferano: non è un agarico violetto, scartalo.",
+          "text": "Colori lilla, cortina, lamelle ruggine e carne giallo-zafferano: caratteri di C. traganus, tossico, da confrontare con L. nuda.",
           "severity": "importante",
           "source": "https://en.wikipedia.org/wiki/Cortinarius_traganus"
         }
@@ -7659,7 +7668,7 @@
       },
       "field_rules": [
         {
-          "text": "Tutti i cortinari violetti vanno scartati.",
+          "text": "Il colore viola non indica commestibilità: fra i cortinari vi sono specie tossiche e mortali. C. violaceus è qui trattato come specie da osservare.",
           "severity": "importante",
           "source": "https://it.wikipedia.org/wiki/Cortinarius_violaceus"
         }
@@ -7764,7 +7773,7 @@
       },
       "field_rules": [
         {
-          "text": "Piccolo fungo lilla con cappello conico e setoso: scartalo, contiene muscarina.",
+          "text": "Piccolo cappello lilla, conico e setoso: caratteri di I. lilacina, segnalata come tossica nelle fonti.",
           "severity": "critico",
           "source": "https://it.wikipedia.org/wiki/Inocybe_geophylla"
         }
@@ -7888,7 +7897,7 @@
       },
       "field_rules": [
         {
-          "text": "Piccolo fungo lilla con odore di rapa e gambo cavo: scartalo, contiene muscarina.",
+          "text": "Piccolo fungo lilla, odore di rapa e gambo cavo: caratteri di Mycena pura, tossica.",
           "severity": "importante",
           "source": "https://it.wikipedia.org/wiki/Mycena_pura"
         }
@@ -8005,7 +8014,7 @@
       },
       "field_rules": [
         {
-          "text": "Accumula arsenico dal suolo: non raccoglierla in aree contaminate e fai controllare ogni violetto piccolo.",
+          "text": "L. amethystina può accumulare arsenico dal suolo. Ambiente e colore non certificano l’idoneità alimentare dell’esemplare.",
           "severity": "importante",
           "source": "https://en.wikipedia.org/wiki/Laccaria_amethystina"
         }
@@ -8044,12 +8053,12 @@
       "lookalike_of": [
         "nuda"
       ],
-      "caution": "accumula arsenico dal suolo: poca, e mai da zone contaminate.",
+      "caution": "Può accumulare arsenico dal suolo: il colore e l’identità della specie non certificano l’idoneità alimentare del raccolto.",
       "traits_notes": "Cappello igrofano, quasi glabro o finemente forforaceo/squamuloso al centro ('finely hairy-scaly, or nearly bald'). Lamelle spaziate, sinuate (en.wiki) o adnate, raramente decorrenti (mushroomexpert). Gambo fibroso, cavo, tenace, base uguale o appena ingrossata con fibrille/micelio lilla: 'normale'. Sporata bianca. Pagina it.wiki non disponibile (404).",
       "tox_label": "commestibile con cautela",
       "tox_short": "con cautela"
     }
   },
   "_note_traits_2": "Caratteri aggiunti il 2026-10-12 (sporata, velo, lattice, consistenza, superficie, attaccatura, base): ogni valore verificato su fonti lette, elencate in sources; dubbi e scelte in traits_notes. Taxa tossici e mortali: valori larghi per non escluderli; commestibili: solo valori con fonte.",
-  "review_note": "Revisione 2026-10-13: nessun assaggio nel percorso pubblico; i caratteri inseriti dall’utente non escludono i taxa mortali. Catalogo incompleto e non validato come strumento diagnostico."
+  "review_note": "Revisione 2026-10-13: caratteri e rischi descrittivi, senza selezione degli esemplari, prove di assaggio o conferme diagnostiche. La commestibilità tassonomica non certifica il raccolto. Orellanina: ISSalute; controllo micologico: Ministero della Salute. Le regole legali e di preparazione restano distinte dal confronto."
 }

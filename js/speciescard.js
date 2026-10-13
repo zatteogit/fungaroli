@@ -2,7 +2,6 @@
 // calendario delle osservazioni (GBIF) a confronto con il modello, modello 3D.
 
 import { traitStrip, compareCta, taxonKeyByLatin, openTaxon, attentionBox, compareHref, lookalikeRank } from './identify.js';
-import { tick } from './motion.js';
 import { SPECIES } from './species.js';
 import { openLightbox, captionHtml } from './lightbox.js';
 import { linkTrees } from './trees.js';
@@ -21,8 +20,6 @@ export function initSpeciesCards({ idData, media, assetUrl, allow3d = true, info
   TRAITS = traits?.taxa || {}; FOOTER = footer || '';
   // I richiami contestuali aprono la stessa scheda senza abbandonare la vista.
   document.addEventListener('click', (e) => {
-    const ck = e.target.closest('.checks li[aria-checked]');
-    if (ck) { toggleCheck(ck); return; }
     const t = e.target.closest('[data-species]');
     if (t && !t.hasAttribute('data-report')) { e.preventDefault(); const href = `#/specie/${t.dataset.species}`; if (!openEntitySheet(href,t)) location.hash = href; }
   });
@@ -37,6 +34,7 @@ export function thumb(id, size = 36) {
 }
 
 // Foto principale di una specie (oggetto di media.json, con file e file_hd)
+export const speciesPhotos = id => [MEDIA?.species?.[id]?.ref,...(MEDIA?.species?.[id]?.inat||[])].filter((p,i,a)=>p&&a.findIndex(x=>x?.file===p.file)===i);
 export const speciesPhoto = (id) => MEDIA?.species?.[id]?.ref || MEDIA?.species?.[id]?.inat?.[0] || null;
 
 const creditText = (m) => m ? `Foto: ${esc(m.author)}${m.license ? `, ${esc(m.license)}` : ''} · <a href="${esc(m.page)}" target="_blank" rel="noopener">${esc(m.source)}</a>` : '';
@@ -99,10 +97,10 @@ function kitchen(id) {
   ].filter(Boolean);
   const srcs = [...(p?.sources || []), ...must.flatMap((x) => x.sources || []), ...(c?.uses || []).flatMap((u) => u.sources || [])].filter((x, i, a) => x?.url && a.findIndex((y) => y.url === x.url) === i);
   return `<section class="kitchen" aria-labelledby="k-h-${id}">
-    <h3 id="k-h-${id}">In cucina</h3>
+    <h3 id="k-h-${id}">In cucina</h3><p class="small muted">Indicazioni per la specie, dopo il controllo del raccolto all’Ispettorato micologico. Questa scheda non identifica l’esemplare.</p>
     ${p ? `<p class="k-raw"><span class="k-badge${p.raw === 'mai crudo' ? (p.raw_level === 'lieve' ? ' mild' : ' never') : ''}">${p.raw === 'mai crudo' ? (p.raw_level === 'lieve' ? 'Leggermente tossico crudo' : 'Tossico crudo') : 'Solo cotto'}</span>${esc(p.raw_why || '')}</p>` : ''}
     ${must.length ? `<p class="k-h">Obbligatorio</p><ol class="k-steps k-must">${must.map(step).join('')}</ol>` : ''}
-    ${p?.discard ? `<p class="k-line"><b>Scarta:</b> ${esc(p.discard)}</p>` : ''}
+    ${p?.discard ? `<p class="k-line"><b>Parti da rimuovere nella preparazione:</b> ${esc(p.discard)}</p>` : ''}
     ${keep.length || tips.length ? `<details class="k-more"><summary>Conservare, quantità e consigli</summary>
       ${keep.length ? `<dl class="k-keep">${keep.map(([k, v]) => `<div><dt>${k}</dt><dd>${esc(v)}</dd></div>`).join('')}</dl>` : ''}
       ${tips.length ? `<ul class="k-steps k-tips">${tips.map(step).join('')}</ul>` : ''}
@@ -144,13 +142,6 @@ function open3d(box, model, name) {
   }).catch(fallback);
 }
 
-// lista di controllo: si spunta toccando (o con spazio/invio)
-function toggleCheck(li) { li.setAttribute('aria-checked', li.getAttribute('aria-checked') !== 'true'); tick(); }
-document.addEventListener('keydown', (e) => {
-  const li = e.target.closest?.('.checks li[aria-checked]');
-  if (li && (e.key === ' ' || e.key === 'Enter')) { e.preventDefault(); toggleCheck(li); }
-});
-
 // Regole di comportamento sul campo (prima di tutto il resto)
 function attention(id, warn) {
   // il testo di avvertenza della scheda ripete gli stessi punti: con le regole elencate non serve
@@ -158,7 +149,7 @@ function attention(id, warn) {
 }
 function checks(id) {
   const c = TRAITS[id]?.check_before_picking || [];
-  return c.length ? `<h3>Cosa controllare</h3><p class="small muted checks-tip">Spunta mentre guardi il fungo che hai in mano.</p><ul class="checks">${c.map((x) => `<li role="checkbox" aria-checked="false" tabindex="0">${esc(x)}</li>`).join('')}</ul>` : '';
+  return c.length ? `<h3>Cosa osservare</h3><p class="small muted checks-tip">Caratteri descritti per la specie: confrontarli non identifica un esemplare né ne certifica la commestibilità.</p><ol class="keys">${c.map((x) => `<li><span class="key-text">${esc(x)}</span></li>`).join('')}</ol>` : '';
 }
 function whereToLook(id) {
   const w = TRAITS[id]?.where_to_look;
@@ -205,7 +196,7 @@ export function renderSpeciesDetail(body, id) {
     <div class="pbody">
     ${photos.length > 1 ? `<div class="sp-strip">${photos.slice(1).map((p, k) => `<button type="button" class="zoomable" data-photo="${k + 1}" aria-label="Foto ${k + 2}: ingrandisci"><img data-src="${ASSET(p.file)}" alt="" loading="lazy" decoding="async"></button>`).join('')}</div>` : ''}
     ${attention(id, warn)}
-    ${d.key_features?.length ? `<h3>Come riconoscerlo</h3>${traitStrip(id)}<ol class="keys">${d.key_features.map((k) => `<li><span class="key-text">${esc(k)}</span></li>`).join('')}</ol>` : '<p class="notice">Scheda di riconoscimento in preparazione.</p>'}
+    ${d.key_features?.length ? `<h3>Caratteri da confrontare</h3>${traitStrip(id)}<ol class="keys">${d.key_features.map((k) => `<li><span class="key-text">${esc(k)}</span></li>`).join('')}</ol>` : '<p class="notice">Caratteri di confronto in preparazione.</p>'}
     ${TRAITS[id] ? '' : (warn.length ? `<div class="notice">${esc(warn.join(' '))}</div>` : '')}
     ${checks(id)}
     ${compareCta(id)}
