@@ -14,7 +14,7 @@ export default {
         const content=await publishedResources(env,url.origin,['zones']);
         const zones=content?.zones?.zones||(await (await env.ASSETS.fetch(new Request(new URL('/data/zones.json',url)))).json()).zones;
         return await cachedForecast(url.searchParams,{zones,cache:env.DIARIO});
-      } catch(e) {return Response.json({error:e?.status?e.message:'Il servizio meteo non è disponibile. Riprova tra poco.'},{status:e?.status||503,headers:{'cache-control':'no-store'}});}
+      } catch(e) {return Response.json({error:e?.status?e.message:'Il servizio meteo non è disponibile. Riprova tra poco.',...(e?.code?{code:e.code}:{})},{status:e?.status||503,headers:{'cache-control':'no-store'}});}
     }
     if(url.pathname==='/redazione'||url.pathname==='/redazione/')return env.ASSETS.fetch(request);
     if(url.pathname.startsWith('/api/cms/v1/'))return handleCms(request,env);

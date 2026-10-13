@@ -11,16 +11,35 @@ export function forecastParams(zones,kind) {
   return new URLSearchParams({latitude:locs.map(l=>l.lat).join(','),longitude:locs.map(l=>l.lon).join(','),elevation:locs.map(l=>l.elev).join(','),...profiles[kind]});
 }
 const fail=(message,status)=>Object.assign(new Error(message),{status});
-function validate(raw,params,now) {
+function validate(raw,params,now,compact=false) {
   const rows=Array.isArray(raw)?raw:[raw],count=params.get('latitude').split(',').length;
   if(rows.length!==count)throw fail('Il servizio meteo ha restituito dati incompleti.',502);
   for(const row of rows)for(const group of ['daily','hourly']) {
-    const fields=params.get(group)?.split(',');if(!fields)continue;
+    const fields=params.get(group)?.split(',');if(!fields||compact&&group==='hourly'&&params.has('daily'))continue;
     const data=row?.[group];
     if(!Array.isArray(data?.time)||!data.time.length||data.time.some(t=>typeof t!=='string')||!data.time.some(t=>t.startsWith(todayISO(new Date(now))))
       ||fields.some(f=>!Array.isArray(data[f])||data[f].length!==data.time.length||data[f].some(v=>v!==null&&!Number.isFinite(v))))throw fail('Il servizio meteo ha restituito dati incompleti.',502);
   }
+  if(compact&&params.has('daily'))for(const row of rows)for(const key of ['soil_moisture_3_to_9cm_mean','soil_temperature_6cm_mean'])if(!Array.isArray(row.daily[key])||row.daily[key].length!==row.daily.time.length||row.daily[key].some(v=>v!==null&&!Number.isFinite(v)))throw fail('Le medie giornaliere del suolo sono incomplete.',502);
   return rows;
+}
+// Il browser usa soltanto le medie giornaliere del suolo. Aggregare una volta
+// evita di trasferire e serializzare oltre due MB di ore ad ogni apertura.
+export function compactGrowth(rows) {
+  let reference=null,ranges;
+  return rows.map(row=>{
+    const h=row.hourly;
+    if(!reference||h.time.length!==reference.length||!h.time.every((t,i)=>t===reference[i])) {
+      reference=h.time;ranges=new Map();
+      h.time.forEach((t,i)=>{const day=t.slice(0,10);if(!ranges.has(day))ranges.set(day,[]);ranges.get(day).push(i);});
+    }
+    const mean=key=>row.daily.time.map(day=>{
+      let sum=0,count=0;for(const i of ranges.get(day)||[])if(Number.isFinite(h[key][i])){sum+=h[key][i];count++;}
+      return count>=24?sum/count:null;
+    });
+    const {hourly,...rest}=row;
+    return {...rest,daily:{...row.daily,soil_moisture_3_to_9cm_mean:mean('soil_moisture_3_to_9cm'),soil_temperature_6cm_mean:mean('soil_temperature_6cm')}};
+  });
 }
 // Query soltanto per le zone pubblicate e i due profili dell'app: nessun proxy
 // arbitrario, né possibilità di moltiplicare le richieste variando i parametri.
@@ -31,21 +50,38 @@ export async function cachedForecast(query,{zones,cache,fetcher=fetch,now=Date.n
   });
   if(!kind)throw fail('Richiesta meteo non valida per le zone pubblicate.',422);
   const params=forecastParams(zones,kind),hash=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(params.toString()));
-  const key=`weather:v1:${todayISO(new Date(now))}:${Array.from(new Uint8Array(hash),b=>b.toString(16).padStart(2,'0')).join('')}`;
+  const key=`weather:v2:${todayISO(new Date(now))}:${Array.from(new Uint8Array(hash),b=>b.toString(16).padStart(2,'0')).join('')}`;
   const maxAge=kind==='growth'?86400000:3*TTL;
   let saved=null;
   try {saved=cache?await cache.get(key,'json'):null;} catch { /* cache opzionale */ }
   if(saved&&(!Number.isFinite(saved.t)||now-saved.t<0||now-saved.t>maxAge))saved=null;
-  if(saved)try {validate(saved.raw,params,now);} catch {saved=null;}
+  if(saved)try {validate(saved.raw,params,now,kind==='growth');} catch {saved=null;}
   const response=(data,mode)=>new Response(JSON.stringify(data.raw),{headers:{'content-type':'application/json; charset=utf-8','cache-control':'no-store','x-weather-fetched-at':new Date(data.t).toISOString(),'x-weather-cache':mode,'x-content-type-options':'nosniff'}});
   if(saved&&now-saved.t<TTL)return response(saved,'hit');
   if(!pending.has(key))pending.set(key,(async()=>{
-    const r=await fetcher(`${API}?${params}`,{headers:{accept:'application/json'},signal:AbortSignal.timeout(15000)});
-    if(!r.ok)throw fail(r.status===429?'Il servizio meteo ha raggiunto il limite di richieste. Riprova tra poco.':'Il servizio meteo non è disponibile. Riprova tra poco.',r.status===429?429:503);
-    const raw=validate(await r.json(),params,now),value={t:now,raw};
+    const coords=['latitude','longitude','elevation'].map(name=>params.get(name).split(','));
+    const step=kind==='growth'?5:15,parts=Array.from({length:Math.ceil(coords[0].length/step)},(_,i)=>i*step),results=[];
+    const controller=new AbortController(),signal=AbortSignal.any([controller.signal,AbortSignal.timeout(15000)]);
+    let next=0;
+    const download=async()=>{
+      while(next<parts.length){
+        signal.throwIfAborted();const part=next++,start=parts[part],query=new URLSearchParams(params);
+        ['latitude','longitude','elevation'].forEach((name,i)=>query.set(name,coords[i].slice(start,start+step).join(',')));
+        const r=await fetcher(`${API}?${query}`,{headers:{accept:'application/json','user-agent':'Fungaroli/1.0 (+https://fungaroli.zatteo.workers.dev)'},signal});
+        if(!r.ok)throw fail(r.status===429?'Il servizio meteo ha raggiunto il limite di richieste. Riprova tra poco.':'Il servizio meteo non è disponibile. Riprova tra poco.',r.status===429?429:503);
+        const rows=validate(await r.json(),query,now);results[part]=kind==='growth'?compactGrowth(rows):rows;
+      }
+    };
+    try {await Promise.all(Array.from({length:Math.min(3,parts.length)},download));}catch(e){controller.abort();throw e;}
+    const value={t:now,raw:results.flat()};
     try {if(cache)await cache.put(key,JSON.stringify(value),{expirationTtl:maxAge/1000});} catch { /* dati validi anche senza cache */ }
     return value;
   })().finally(()=>pending.delete(key)));
   try {return response(await pending.get(key),'miss');}
-  catch(e){if(saved)return response(saved,'stale');throw e?.status?e:fail('Il servizio meteo impiega troppo tempo a rispondere. Riprova tra poco.',503);}
+  catch(e){
+    if(saved)return response(saved,'stale');
+    if(e?.status)throw e;
+    const timeout=e?.name==='TimeoutError'||e?.name==='AbortError';
+    throw Object.assign(fail(timeout?'Il servizio meteo impiega troppo tempo a rispondere. Riprova tra poco.':'Non riesco a contattare il servizio meteo. Riprova tra poco.',503),{code:timeout?'upstream-timeout':'upstream-network'});
+  }
 }
