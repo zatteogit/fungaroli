@@ -482,10 +482,10 @@ li.crit { font-weight: 600; }
 /* ----------------------------------------------------------- riconosci */
 .id-warn { margin: 0 0 14px; padding: 12px 14px 12px 44px; position: relative; border-radius: var(--r-md); background: var(--warn-bg); color: var(--warn-ink); font-size: 13.5px; }
 .id-warn::before { content: '!'; position: absolute; left: 14px; top: 12px; width: 20px; height: 20px; border-radius: 50%; display: grid; place-items: center; background: var(--warn-ink); color: var(--warn-bg); font-weight: 800; font-size: 13px; }
-.id-warn summary { cursor: pointer; list-style: none; }
-.id-warn summary::-webkit-details-marker { display: none; }
-.id-warn summary::after { content: ' Perché ›'; font-weight: 600; text-decoration: underline; text-underline-offset: 2px; }
-.id-warn[open] summary::after { content: ''; }
+.id-warn > summary, .id-deadly > summary { cursor: pointer; list-style: none; display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+.id-warn > summary::-webkit-details-marker, .id-deadly > summary::-webkit-details-marker { display: none; }
+.id-warn > summary::after, .id-deadly > summary::after { content: ''; flex: none; width: 8px; height: 8px; margin-top: 4px; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: rotate(45deg); transition: transform .18s; }
+.id-warn[open] > summary::after, .id-deadly[open] > summary::after { transform: rotate(-135deg); }
 .id-warn p { margin: 8px 0 0; }
 .id-warn a { color: inherit; font-weight: 700; }
 .seg-tabs { display: flex; padding: 4px; border-radius: 16px; background: var(--surface-2); margin: 0 0 12px; }
@@ -517,6 +517,7 @@ li.crit { font-weight: 600; }
 .id-head { display: flex; align-items: baseline; justify-content: space-between; }
 .id-deadly { margin: 0 0 12px; padding: 12px 14px; border-radius: var(--r-md); background: var(--crit-bg); color: var(--crit-ink); border: 1px solid color-mix(in srgb, var(--crit) 22%, transparent); font-size: 14px; }
 .id-deadly b { color: var(--crit); }
+.id-deadly p { margin: 8px 0 0; }
 .id-cards { list-style: none; margin: 0 0 20px; padding: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; align-items: start; }
 .id-card { position: relative; cursor: pointer; transition: box-shadow .15s, transform .15s; display: grid; grid-template-rows: auto 1fr; border-radius: var(--r-md); overflow: hidden; background: var(--surface); border: 1px solid var(--hair); }
 .id-card.tox-mortale { border-color: color-mix(in srgb, var(--crit) 55%, transparent); box-shadow: 0 0 0 1px color-mix(in srgb, var(--crit) 40%, transparent); }
@@ -1461,21 +1462,14 @@ html:has(dialog[open]:modal) body { overflow: hidden; }
 .ring-sm b::after { font-size: .6em; }
 .d3 .pc { font-weight: inherit; }
 
-/* Attenzione compatta: i punti critici in una riga, il resto aprendo */
+/* Attenzione compatta: solo il titolo, tutti i messaggi aprendo */
 .att-c { padding: 14px 16px 12px; }
 .att-c > summary { list-style: none; cursor: pointer; display: grid; gap: 8px; }
 .att-c > summary::-webkit-details-marker { display: none; }
 .att-h { display: flex; align-items: center; gap: 8px; font-size: 12.5px; font-weight: 800; text-transform: uppercase; letter-spacing: .08em; color: var(--crit); }
 .att-h::before { content: '!'; width: 22px; height: 22px; border-radius: 50%; display: grid; place-items: center; background: var(--crit); color: #fff; font-size: 14px; letter-spacing: 0; }
-.att-compact { margin: 0; padding-left: 18px; display: grid; gap: 4px; font-size: 14.5px; font-weight: 600; line-height: 1.4; }
-.att-compact li::marker { color: var(--crit); }
-.att-more { font-size: 13px; font-weight: 700; color: var(--crit); display: inline-flex; align-items: center; gap: 4px; }
-.att-more::after { content: '›'; font-size: 17px; transition: transform .25s; }
-.att-c[open] .att-compact { display: none; }
-.att-c[open] .att-more::after { transform: rotate(90deg); }
-.att-c[open] .att-more { display: none; }
-.att-h::after { content: '›'; margin-left: auto; font-size: 20px; line-height: 1; transform: rotate(90deg); opacity: 0; transition: opacity .2s, transform .25s; }
-.att-c[open] .att-h::after { opacity: 1; transform: rotate(-90deg); }
+.att-h::after { content: '›'; margin-left: auto; font-size: 20px; line-height: 1; transform: rotate(90deg); transition: transform .25s; }
+.att-c[open] .att-h::after { transform: rotate(-90deg); }
 .att-c > ul { margin-top: 10px; }
 .att-c li.crit { font-weight: 600; }
 
