@@ -144,6 +144,9 @@ test('tratto locale distinto dal percorso intero, segmenti separati e imbocco ma
   await expect(focus).toHaveAttribute('data-walk-trail','12313439');
   await expect(focus).toContainText('più segmenti separati');
   await expect(focus.locator('.walk-sketch polyline')).toHaveCount(2);
+  await focus.getByRole('tab',{name:'Profilo',exact:true}).click();
+  await expect(focus.getByRole('tabpanel',{name:'Profilo',exact:true})).toContainText('Non costituiscono un profilo continuo');
+  await expect(focus.getByRole('tabpanel',{name:'Profilo',exact:true}).locator('svg')).toHaveCount(0);
   const values = await focus.locator('.walk-facts dd').allTextContents();
   expect(values[1]).toContain('4,1 km');
   expect(values[2]).toContain('9,9 km');
@@ -153,9 +156,53 @@ test('tratto locale distinto dal percorso intero, segmenti separati e imbocco ma
   expect(xml).toContain('Tratto nella zona');
   await page.goto('/#/zona/sangiovanni/0/sentiero/12313439');
   await expect(focus).toContainText('Non disponibile; le soste indicate riguardano la zona');
-  await expect(focus).toContainText('Apri un punto sulla traccia');
+  await expect(focus).toContainText('Punto sulla traccia');
   expect(errors).toEqual([]);
 });
+
+for(const width of [320,1280]) test(`tracciato e profilo nello stesso riquadro a ${width}px`,async({page})=>{
+  await page.setViewportSize({width,height:900});await page.emulateMedia({reducedMotion:'reduce'});
+  const errors=await setup(page);await page.goto('/#/zona/tancia/0/sentiero/12313366');
+  const focus=page.locator('#detail .walk-focus');await focus.locator(':scope > summary').click();
+  const visual=focus.locator('.trail-visual'),trace=visual.getByRole('tab',{name:'Tracciato',exact:true,includeHidden:true}),profile=visual.getByRole('tab',{name:'Profilo',exact:true,includeHidden:true});
+  await expect(trace).toHaveAttribute('aria-selected','true');
+  await expect(visual.getByRole('tabpanel',{name:'Tracciato',exact:true})).toBeVisible();
+  const size=await visual.boundingBox();await trace.focus();await page.keyboard.press('ArrowRight');
+  await expect(profile).toBeFocused();await expect(profile).toHaveAttribute('aria-selected','true');
+  await expect(visual.getByRole('tabpanel',{name:'Tracciato',exact:true})).toBeHidden();
+  await expect(visual.getByRole('tabpanel',{name:'Profilo',exact:true}).locator('svg')).toBeVisible();
+  expect((await visual.boundingBox()).height).toBeCloseTo(size.height,1);
+  await visual.evaluate(el=>scrollTo(0,el.getBoundingClientRect().top+scrollY-80));
+  for(const theme of ['light','dark']){
+    await page.evaluate(t=>document.documentElement.dataset.theme=t,theme);
+    await visual.screenshot({path:`/tmp/fungaroli-trail-profile-${width}-${theme}.png`});
+    await trace.click();await visual.screenshot({path:`/tmp/fungaroli-trail-trace-${width}-${theme}.png`});await profile.click();
+  }
+  await profile.focus();await page.keyboard.press('Home');await expect(trace).toBeFocused();
+  await page.keyboard.press('End');await expect(profile).toBeFocused();
+  await page.locator('#detail [data-sec="sentieri"] > summary').click();
+  const peer=page.locator('#detail [data-sec="sentieri"] .trail-visual[data-trail-view-key="tancia/12313366"]');
+  await expect(peer.getByRole('tab',{name:'Profilo',exact:true})).toHaveAttribute('aria-selected','true');
+  await peer.getByRole('tab',{name:'Tracciato',exact:true}).click();await expect(trace).toHaveAttribute('aria-selected','true');
+  await page.locator('#zone-days [aria-selected="false"]').first().click();await focus.locator(':scope > summary').click();
+  await expect(trace).toHaveAttribute('aria-selected','true');
+  const ids=await page.locator('.trail-visual [id]').evaluateAll(nodes=>nodes.map(el=>el.id));expect(new Set(ids).size).toBe(ids.length);
+  await expect(focus.getByRole('link',{name:'Indicazioni stradali per l’accesso mappato'})).toBeVisible();
+  // Elevations can be shown without an environmental model, without habitat highlighting.
+  await page.evaluate(()=>localStorage.setItem('fungaroli:prefs:v2',JSON.stringify({speciesIds:['cyclocybe-aegerita']})));await page.reload();
+  await expect(focus).toBeVisible();await focus.locator(':scope > summary').click();await profile.click();
+  await expect(visual.getByRole('tabpanel',{name:'Profilo',exact:true})).toContainText('Quote del tratto locale');
+  await expect(visual.locator('.tp-good rect')).toHaveCount(0);
+  const data=await(await page.request.get('/data/trails.json')).json();data.zones.tancia.trails.find(t=>t.id===12313366).samples=[];
+  await page.route('**/api/content/v1/snapshot',r=>r.fulfill({status:503,json:{error:'test'}}));
+  await page.route('**/data/trails.json',r=>r.fulfill({json:data}));
+  await page.evaluate(()=>{localStorage.removeItem('fungaroli:content:v1');localStorage.removeItem('fungaroli:prefs:v2');});await page.reload();
+  await focus.locator(':scope > summary').click();await profile.click();
+  await expect(visual.getByRole('tabpanel',{name:'Profilo',exact:true})).toContainText('mancano quote sufficienti');
+  await expect(visual.getByRole('tabpanel',{name:'Profilo',exact:true}).locator('svg')).toHaveCount(0);
+  expect(errors).toEqual([]);
+});
+
 test('editoriale, filtri completi, passkey, isolamento e condivisione revocabile', async ({ browser, page }) => {
   const errors = await setup(page);
   await expect(page.locator('#community-intro')).toContainText('nessuna segnalazione');

@@ -2160,3 +2160,24 @@ html[data-cmp-dir="prev"]::view-transition-new(cmp-pick) { animation-name: cmp-i
 :is(.card-grid, .id-cards, .editorial-cards, .field-results, .trait-strip, .sci-signals, .rail) { align-items: stretch; }
 :is(.card-grid, .id-cards, .editorial-cards, .field-results, .trait-strip, .sci-signals) > * { align-self: stretch; }
 .card-grid > .sp-card { width: 100%; min-width: 0; justify-self: stretch; }
+
+/* Tracciato e profilo occupano lo stesso riquadro. */
+.trail-visual { min-width: 0; border: 1px solid var(--hair); border-radius: 14px; background: var(--surface-2); }
+.trail-view-tabs { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 4px; padding: 4px; border-bottom: 1px solid var(--hair); }
+.trail-view-tabs button { min-height: 44px; border: 0; border-radius: 10px; padding: 8px 12px; font: inherit; font-size: 13px; font-weight: 600; background: none; color: var(--text-2); cursor: pointer; }
+.trail-view-tabs [aria-selected="true"] { background: var(--surface); color: var(--text); box-shadow: var(--shadow-1); }
+.trail-visual-panel { min-width: 0; height: 240px; padding: 12px; display: flex; flex-direction: column; justify-content: center; }
+.trail-visual-panel .walk-sketch { margin: 0; height: 100%; display: flex; flex-direction: column; background: none; }
+.trail-visual-panel .walk-sketch svg { flex: 1; min-height: 0; height: 0; max-height: none; }
+.trail-visual-panel .walk-sketch figcaption { padding: 8px 0 0; font-size: 11px; line-height: 1.4; }
+.trail-north { flex: none; text-align: right; color: var(--muted); font-size: 11px; line-height: 1.4; }
+.walk-sketch .trail-access circle { fill: var(--accent); }
+.walk-sketch .trail-access text { fill: var(--accent-ink); font-size: 8px; font-weight: 700; }
+.trail-visual-panel .tprof { margin: 0; width: 100%; }
+.trail-visual-panel .tprof svg { height: 140px; }
+.trail-visual-panel .tprof figcaption { gap: 8px; align-items: flex-start; }
+.trail-visual-panel .tprof figcaption > span:first-child, .trail-visual-panel .tprof figcaption > span:last-child { flex: none; white-space: nowrap; }
+.trail-visual-panel .tp-key { min-width: 0; justify-content: center; text-align: center; }
+.trail-visual-panel .tp-key i { flex: none; margin-top: 4px; }
+.pt-preview .trail-visual-panel, .sheet .trail-visual-panel { height: 144px; }
+.pt-preview .trail-visual-panel .tprof svg, .sheet .trail-visual-panel .tprof svg { height: 78px; }

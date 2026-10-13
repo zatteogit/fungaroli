@@ -37,5 +37,8 @@ test('local sketch preserves disconnected fragments and has finite coordinates',
   assert.equal(sketch.paths.length, 2);
   assert.ok(sketch.head.every(Number.isFinite));
   assert.ok(sketch.paths.every(p => !/NaN|Infinity/.test(p)));
+  const withHeads=trailSketch({lines:[[[42,13],[42.001,13]]]}, {lat:42,lon:13}, [{lat:42.002,lon:13.001}]);
+  assert.equal(withHeads.heads.length,2);
+  assert.ok(withHeads.heads.every(([x,y])=>Number.isFinite(x)&&Number.isFinite(y)&&x>=0&&x<=360&&y>=0&&y<=200));
   assert.equal(trailSketch({ lines: [] }), null);
 });
