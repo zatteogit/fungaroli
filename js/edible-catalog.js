@@ -10,7 +10,7 @@ export function buildEdibleCatalog(traits, extra, identification) {
   for (const sp of SPECIES) {
     const t = taxa[sp.id];
     if (t && !EDIBLE.has(t.toxicity)) continue;
-    records.set(sp.id, { id: sp.id, name: sp.name, latin: sp.latin, modelId: sp.id, group: sp.group,
+    records.set(sp.id, { id: sp.id, name: t?.name || sp.name, latin: t?.latin || sp.latin, modelId: sp.id, group: sp.group,
       toxicity: t?.toxicity || 'commestibile', months: validMonths(t?.traits?.season) || sp.months.flatMap((w, i) => w > 0 ? [i + 1] : []),
       aliases: [t?.name || '', ...(identification?.species?.[sp.id]?.aka || [])], caution: t?.caution || sp.warning || '', sources: t?.sources || [], href: '#/specie/' + sp.id });
   }

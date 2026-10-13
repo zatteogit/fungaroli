@@ -247,6 +247,9 @@ label.btn { display: inline-flex; }
 .cover-top .pill { margin-top: 6px; white-space: normal; }
 .cover-body { position: absolute; left: 18px; right: 18px; bottom: 18px; display: grid; gap: 12px; }
 .cover-title { font-family: var(--font-display); font-size: clamp(36px, 10vw, 50px); line-height: 1; font-weight: 700; letter-spacing: -0.025em; text-shadow: 0 2px 24px rgb(0 0 0 / .3); }
+.profile-entry { display: inline-flex; align-items: center; gap: 5px; border: 1px solid var(--border); border-radius: 999px; padding: 7px 10px; color: var(--text); background: var(--surface); font: inherit; font-size: 12px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+.profile-entry svg { width: 16px; height: 16px; }
+.profile-entry [data-profile-label] { max-width: 90px; overflow: hidden; text-overflow: ellipsis; }
 .cover-sub { font-size: 15px; font-weight: 500; opacity: .88; margin-top: -6px; }
 .cover-walk { display: grid; gap: 3px; padding-left: 10px; border-left: 2px solid rgb(255 255 255 / .5); font-size: 15px; }
 .cover-walk > span { font-size: 13px; opacity: .86; }

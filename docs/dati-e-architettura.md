@@ -6,6 +6,8 @@ Documento tecnico: da dove vengono i dati, come si rigenerano, che forma hanno, 
 
 Un front-end di moduli ES e un Worker Cloudflare con D1 per la comunità (vedi [community.md](community.md)): HTML, CSS e moduli ES che leggono tre file JSON precalcolati (`data/`) e chiedono il meteo a Open-Meteo dal browser. Gli script in `tools/` rigenerano i JSON quando cambiano le zone. Uno script Node impacchetta tutto in un unico HTML per la versione Artifact.
 
+La [redazione](cms.md) usa un secondo database D1 per bozze, revisioni e pubblicazioni. I JSON inizializzano i contenuti; l’app legge poi uno snapshot pubblico coerente dal CMS. Anche la whitelist delle segnalazioni legge il catalogo pubblicato. Dati generati e coefficienti scientifici restano distinti dai contenuti editoriali.
+
 ### Proposte di passeggiata e microzone
 
 `js/walks.js` seleziona una sola proposta per zona, mantenendo il giorno con rango più alto; in vetrina non ripete la stessa relazione OSM in zone confinanti. Il sentiero è scelto tra quelli ambientalmente compatibili quando disponibili, dando precedenza a difficoltà T/E documentata, imbocchi mappati e itinerari prevalentemente locali. Questi criteri non attestano sicurezza o transitabilità. Se manca una compatibilità calcolabile, il percorso resta consultabile senza attribuirgli idoneità micologica.

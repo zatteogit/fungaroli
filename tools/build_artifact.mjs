@@ -59,11 +59,14 @@ const leafletCss = execFileSync('curl', ['-sS', '--retry', '4', `${LEAFLET}/leaf
 
 const html = read('index.html');
 const title = html.match(/<title>[\s\S]*?<\/title>/)[0];
-const fonts = html.match(/<link rel="stylesheet" href="https:\/\/fonts\.googleapis\.com[^>]*>/)[0];
+const fonts = `<style>${read('css/fonts.css').replace(/url\(([^)]+)\)/g,(_,src)=>{
+  const file=path.resolve(ROOT,'css',src.replace(/["']/g,'').trim());
+  return `url(data:font/woff2;base64,${fs.readFileSync(file).toString('base64')})`;
+})}</style>`;
 const body = html.match(/<body>([\s\S]*)<\/body>/)[1]
   .replace(/<script[\s\S]*?<\/script>/g, '')
   .replace('Mappe © OpenStreetMap, OpenTopoMap (CC-BY-SA). ', '');
-const extra = Object.fromEntries(Object.entries({ edibleCatalog: 'edible-catalog', legal: 'legal', traits: 'species-traits', trees: 'trees', infographics: 'infografiche', preparation: 'preparation', trailheads: 'trailheads' }).map(([k,f]) => [k, readOpt('data/' + f + '.json')]));
+const extra = Object.fromEntries(Object.entries({ guides:'guides',contentCopy:'ui-copy',edibleCatalog: 'edible-catalog', legal: 'legal', traits: 'species-traits', trees: 'trees', infographics: 'infografiche', preparation: 'preparation', trailheads: 'trailheads' }).map(([k,f]) => [k, readOpt('data/' + f + '.json')]));
 const data = JSON.stringify({ zones, habitat, access, trails, speciesId, media, assets, basemap, ...extra, outing, weather: { series: w.series, fetchedAt: w.fetchedAt.toISOString() } })
   .replace(/</g, '\\u003c');
 

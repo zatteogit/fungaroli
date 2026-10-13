@@ -4,6 +4,7 @@ import { buildEdibleCatalog } from '../js/edible-catalog.js';
 import traits from '../data/species-traits.json';
 import edibleCatalog from '../data/edible-catalog.json';
 import zones from '../data/zones.json';
+import { publishedResources } from './cms.js';
 
 const SESSION = '__Host-fungaroli_session', CHALLENGE = '__Host-fungaroli_challenge';
 const SESSION_SECONDS = 30 * 86400, MAX_BYTES = 250_000;
@@ -57,11 +58,22 @@ export function validDay(day, now = Date.now(), maxDays = 365) {
   return day <= today && (new Date(today + 'T12:00:00Z') - date) / 864e5 <= maxDays;
 }
 
-export function validateReport(data, now = Date.now()) {
-  if (!data || !zoneIds.has(data.zoneId) || !speciesIds.has(data.speciesId) || !validDay(data.day, now)
+export function validateReport(data, now = Date.now(), ids = {speciesIds,zoneIds}) {
+  if (!data || !ids.zoneIds.has(data.zoneId) || !ids.speciesIds.has(data.speciesId) || !validDay(data.day, now)
       || !Number.isInteger(data.amount) || data.amount < 0 || data.amount > 3
       || (data.amount === 0 && data.searched !== true)) fail('Indica zona, specie, giorno e quantità. Uno zero richiede una ricerca esplicita.');
   return { ...data, searched: data.searched === true, identificationChecked: data.identificationChecked === true };
+}
+
+export async function readCommunityUser(request,env,now=Date.now()) {
+  if(!env.COMMUNITY_DB) return null;
+  await init(env.COMMUNITY_DB);
+  try{return await signedIn(request,env.COMMUNITY_DB,now);}catch(e){if(e.status===401)return null;throw e;}
+}
+async function currentCatalogIds(env,origin) {
+  const content=await publishedResources(env,origin,['species-traits','edible-catalog','zones']);
+  if(!content)return {speciesIds,zoneIds};
+  return {speciesIds:new Set(buildEdibleCatalog(content['species-traits'],content['edible-catalog']).map(s=>s.id)),zoneIds:new Set(content.zones.zones.map(z=>z.id))};
 }
 
 async function rate(db, key, limit, seconds, now) {
@@ -183,7 +195,8 @@ export async function handleCommunity(request, env, now = Date.now()) {
     const entryMatch = path.match(/^entries\/([a-zA-Z0-9-]{4,64})$/);
     if (entryMatch && request.method === 'PUT') {
       const entry = await body(request), id = entryMatch[1];
-      if (entry.id !== id || !zoneIds.has(entry.zoneId) || typeof entry.date !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(entry.date)
+      const liveIds=await currentCatalogIds(env,url.origin);
+      if (entry.id !== id || !liveIds.zoneIds.has(entry.zoneId) || typeof entry.date !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(entry.date)
           || (entry.note != null && (typeof entry.note !== 'string' || entry.note.length > 2000))) fail('Voce del diario non valida.');
       const date = new Date(entry.date + 'T12:00:00Z');
       if (!Number.isFinite(date.getTime()) || date.toISOString().slice(0, 10) !== entry.date) fail('Giorno non valido.');
@@ -230,7 +243,7 @@ export async function handleCommunity(request, env, now = Date.now()) {
 
     if (path === 'reports' && request.method === 'POST') {
       await rate(db, 'reports:' + user.id, 30, 86400, now);
-      const data = validateReport(await body(request), now);
+      const data = validateReport(await body(request), now,await currentCatalogIds(env,url.origin));
       const entryId = typeof data.entryId === 'string' && /^[a-zA-Z0-9-]{4,64}$/.test(data.entryId) ? data.entryId : crypto.randomUUID();
       let entry = await db.prepare('SELECT payload FROM diary_entries WHERE account_id=? AND id=?').bind(user.id, entryId).first('payload');
       if (data.entryId && !entry) fail('Questa uscita non appartiene al tuo diario.', 404);

@@ -1,0 +1,37 @@
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import {validateContent} from '../worker/content-validation.js';
+const read=id=>JSON.parse(readFileSync(new URL(`../data/${id}.json`,import.meta.url)));
+test('article HTML cannot execute scripts, handlers or javascript links',()=>{
+  const data=read('guides');
+  data.guides[0].body='<h2>Un titolo</h2><script>alert(1)</script><a href="javascript:alert(1)" onclick="alert(1)">Link</a><img src=x onerror="alert(1)">';
+  const clean=validateContent('guides',data,read('guides')).value;
+  assert.match(clean.guides[0].body,/<h2>Un titolo<\/h2>/);
+  assert.doesNotMatch(clean.guides[0].body,/script|onclick|onerror|javascript/);
+  data.guides[0].title='<img src=x onerror="alert(1)">';
+  assert.throws(()=>validateContent('guides',data,read('guides')),/contiene HTML/);
+});
+test('a new edible taxon requires names, classification, sources and scientific review',()=>{
+  const data=read('edible-catalog'),old=structuredClone(data);
+  data.species.push({id:'test-species',name:'Nome di prova',latin:'Taxon test',toxicity:'commestibile',months:null,sources:[]});
+  assert.throws(()=>validateContent('edible-catalog',data,old),/fonti/);
+  data.species.at(-1).sources=['https://example.org/source'];
+  assert.equal(validateContent('edible-catalog',data,old).needsReview,true);
+  data.species.at(-1).toxicity='mortale';
+  assert.throws(()=>validateContent('edible-catalog',data,old),/solo commestibili/);
+});
+test('mapped trail geometry is protected while editorial annotations remain editable',()=>{
+  const old=read('trails'),data=structuredClone(old),id=Object.keys(data.zones)[0];
+  data.zones[id].trails[0].editorialNote='Controlla la segnaletica sul posto.';
+  assert.equal(validateContent('trails',data,old).value.zones[id].trails[0].editorialNote,data.zones[id].trails[0].editorialNote);
+  data.zones[id].trails[0].lines=[];
+  assert.throws(()=>validateContent('trails',data,old),/fonte del tracciato/);
+});
+test('legal updates require a new version and unsafe media URLs are rejected',()=>{
+  const old=read('legal'),data=structuredClone(old);data.home_strip='Una nuova regola';
+  assert.throws(()=>validateContent('legal',data,old),/versione/);
+  data.version++;assert.equal(validateContent('legal',data,old).needsReview,true);
+  const media=read('media');media.species.edulis.file='assets/x" onerror="alert(1)';
+  assert.throws(()=>validateContent('media',media),/URL/);
+});
