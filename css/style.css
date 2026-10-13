@@ -396,9 +396,9 @@ label.btn { display: inline-flex; }
 .card-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
 .sp-card { position: relative; display: block; isolation: isolate; overflow: hidden; aspect-ratio: 4 / 5; border: 0; padding: 0; border-radius: 20px; color: #fff; background: var(--forest); cursor: pointer; text-align: left; text-decoration: none; box-shadow: var(--shadow-1); }
 .sp-card .pill { position: absolute; top: 10px; left: 10px; }
-.sp-card-body { position: absolute; left: 12px; right: 12px; bottom: 11px; display: grid; }
+.sp-card-body { position: absolute; left: 12px; right: 12px; bottom: 11px; display: grid; gap: 3px; text-shadow: 0 1px 4px rgb(0 0 0 / .4); }
 .sp-card-body b { font-family: var(--font-display); font-size: 18px; line-height: 1.12; font-weight: 700; }
-.sp-card-body i { font-size: 12px; opacity: .82; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.sp-card-body i { font-size: 12px; opacity: .9; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
 .sp-strip { display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none; margin: 0 calc(-1 * var(--gutter)) 14px; padding: 0 var(--gutter); }
 .sp-strip::-webkit-scrollbar { display: none; }
@@ -2055,5 +2055,4 @@ html[data-cmp-dir="prev"]::view-transition-new(cmp-pick) { animation-name: cmp-i
 .followed-card b, .followed-card i { display: block; }
 .followed-card i { margin-top: 4px; color: var(--muted); font-size: .8rem; }
 .catalog-placeholder { display: grid; place-content: center; min-height: 220px; color: rgb(255 255 255 / .35); font: 700 4rem var(--font-display); }
-a.sp-card { display: block; color: inherit; text-decoration: none; }
 @media (max-width: 420px) { .species-options button { align-items: flex-start; } .season-badge { font-size: .65rem; } }
