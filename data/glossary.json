@@ -1,0 +1,853 @@
+{
+  "version": 1,
+  "terms": [
+    {
+      "id": "difficolta-t",
+      "term": "T · turistico",
+      "category": "Sentiero",
+      "aliases": [
+        "turistico"
+      ],
+      "definition": "Percorsi generalmente su stradine, mulattiere o sentieri evidenti, senza particolari difficoltà tecniche.",
+      "observe": "Servono comunque calzature adatte e una valutazione di meteo, durata e dislivello.",
+      "related": [
+        "difficolta-e"
+      ],
+      "sources": [
+        {
+          "title": "CAI · Livelli di difficoltà delle attività",
+          "url": "https://www.cai.it/attivita/livelli-difficolta-cai-attivita/"
+        }
+      ]
+    },
+    {
+      "id": "difficolta-e",
+      "term": "E · escursionistico",
+      "category": "Sentiero",
+      "aliases": [
+        "escursionistico"
+      ],
+      "definition": "Sentieri o tracce su terreno vario, anche ripido: richiedono orientamento, abitudine a camminare in montagna e preparazione fisica. Possono esserci brevi tratti esposti protetti.",
+      "observe": "Controlla esperienza richiesta, esposizione e stato del fondo: E non significa privo di rischi.",
+      "related": [
+        "difficolta-t",
+        "difficolta-ee"
+      ],
+      "sources": [
+        {
+          "title": "CAI · Livelli di difficoltà delle attività",
+          "url": "https://www.cai.it/attivita/livelli-difficolta-cai-attivita/"
+        }
+      ]
+    },
+    {
+      "id": "difficolta-ee",
+      "term": "EE · escursionisti esperti",
+      "category": "Sentiero",
+      "aliases": [
+        "escursionisti esperti"
+      ],
+      "definition": "Terreni più impegnativi, ripidi, esposti o con tratti rocciosi: richiedono esperienza, passo sicuro e capacità di orientamento.",
+      "observe": "Valuta la tua esperienza e le condizioni del giorno; una traccia GPX non sostituisce queste capacità.",
+      "related": [
+        "difficolta-e",
+        "difficolta-eea"
+      ],
+      "sources": [
+        {
+          "title": "CAI · Livelli di difficoltà delle attività",
+          "url": "https://www.cai.it/attivita/livelli-difficolta-cai-attivita/"
+        }
+      ]
+    },
+    {
+      "id": "difficolta-eea",
+      "term": "EEA · escursionisti esperti con attrezzatura",
+      "category": "Sentiero",
+      "aliases": [
+        "EEA",
+        "via ferrata",
+        "vie ferrate"
+      ],
+      "definition": "Percorsi attrezzati, come le vie ferrate, che richiedono equipaggiamento specifico e conoscenza delle tecniche per usarlo.",
+      "observe": "Casco, imbracatura e set da ferrata vanno scelti e usati correttamente. La sigla non indica un normale sentiero.",
+      "related": [
+        "difficolta-ee"
+      ],
+      "sources": [
+        {
+          "title": "CAI · Livelli di difficoltà delle attività",
+          "url": "https://www.cai.it/attivita/livelli-difficolta-cai-attivita/"
+        }
+      ]
+    },
+    {
+      "id": "dislivello",
+      "term": "Dislivello",
+      "category": "Sentiero",
+      "aliases": [
+        "dislivelli",
+        "dislivello positivo"
+      ],
+      "definition": "Differenza di quota. Il dislivello positivo cumulato somma tutte le salite lungo il percorso: non coincide necessariamente con quota massima meno quota minima.",
+      "observe": "Un “+714 m” descrive la salita cumulata dell’itinerario indicato; verifica se il dato riguarda il percorso intero.",
+      "related": [
+        "quota"
+      ],
+      "sources": [
+        {
+          "title": "CAI · Livelli di difficoltà delle attività",
+          "url": "https://www.cai.it/attivita/livelli-difficolta-cai-attivita/"
+        }
+      ]
+    },
+    {
+      "id": "quota",
+      "term": "Quota",
+      "category": "Sentiero",
+      "aliases": [
+        "altitudine"
+      ],
+      "definition": "Altezza rispetto al livello del mare, normalmente espressa in metri.",
+      "observe": "La quota influisce su temperatura e vegetazione, ma non identifica da sola un habitat.",
+      "related": [
+        "dislivello"
+      ],
+      "sources": [
+        {
+          "title": "CAI · Livelli di difficoltà delle attività",
+          "url": "https://www.cai.it/attivita/livelli-difficolta-cai-attivita/"
+        }
+      ]
+    },
+    {
+      "id": "segnavia",
+      "term": "Segnavia",
+      "category": "Sentiero",
+      "aliases": [
+        "segnaletica"
+      ],
+      "definition": "Segno, simbolo o numero che aiuta a seguire un percorso. I sentieri CAI utilizzano segni bianco-rossi e tabelle secondo la rete locale.",
+      "observe": "Confronta numero, direzione e destinazione con la mappa: una marcatura non garantisce che il sentiero sia oggi percorribile.",
+      "related": [
+        "gpx"
+      ],
+      "sources": [
+        {
+          "title": "CAI · Livelli di difficoltà delle attività",
+          "url": "https://www.cai.it/attivita/livelli-difficolta-cai-attivita/"
+        }
+      ]
+    },
+    {
+      "id": "gpx",
+      "term": "Traccia GPX",
+      "category": "Sentiero",
+      "aliases": [
+        "GPX",
+        "traccia GPX"
+      ],
+      "definition": "File con punti geografici di un percorso, leggibile da molte app di navigazione. In Fungaroli può contenere solo il tratto nella zona, anche su segmenti separati.",
+      "observe": "Verifica copertura della traccia e mappa offline; un file non certifica transitabilità o sicurezza.",
+      "related": [
+        "segnavia"
+      ],
+      "sources": [
+        {
+          "title": "Topografix · GPX 1.1",
+          "url": "https://www.topografix.com/GPX/1/1/"
+        }
+      ]
+    },
+    {
+      "id": "esposizione",
+      "term": "Esposizione",
+      "category": "Bosco",
+      "aliases": [
+        "esposizioni"
+      ],
+      "definition": "Orientamento di un versante rispetto ai punti cardinali. Insieme a pendenza e vegetazione modifica luce, vento e condizioni locali.",
+      "observe": "Un versante ombreggiato può trattenere l’umidità diversamente da uno soleggiato: osserva il terreno, senza dedurre ritrovamenti certi.",
+      "related": [
+        "microclima"
+      ],
+      "sources": [
+        {
+          "title": "JRC · European Atlas of Forest Tree Species",
+          "url": "https://forest.jrc.ec.europa.eu/en/european-atlas/"
+        }
+      ]
+    },
+    {
+      "id": "microclima",
+      "term": "Microclima",
+      "category": "Bosco",
+      "aliases": [
+        "microclimi"
+      ],
+      "definition": "Condizioni climatiche di un luogo piccolo, diverse da quelle generali della zona: per esempio un impluvio o una radura.",
+      "observe": "Il meteo di modello non misura tutte queste differenze locali.",
+      "related": [
+        "esposizione",
+        "lettiera"
+      ],
+      "sources": [
+        {
+          "title": "JRC · European Atlas of Forest Tree Species",
+          "url": "https://forest.jrc.ec.europa.eu/en/european-atlas/"
+        }
+      ]
+    },
+    {
+      "id": "lettiera",
+      "term": "Lettiera",
+      "category": "Bosco",
+      "aliases": [
+        "lettiere"
+      ],
+      "definition": "Strato superficiale di foglie, aghi, piccoli rami e altro materiale organico caduto sul terreno.",
+      "observe": "Osserva composizione e umidità senza rimuoverla: è habitat e protezione del suolo.",
+      "related": [
+        "saprotrofo",
+        "micelio"
+      ],
+      "sources": [
+        {
+          "title": "JRC · European Atlas of Forest Tree Species",
+          "url": "https://forest.jrc.ec.europa.eu/en/european-atlas/"
+        }
+      ]
+    },
+    {
+      "id": "radura",
+      "term": "Radura",
+      "category": "Bosco",
+      "aliases": [
+        "radure"
+      ],
+      "definition": "Apertura nella copertura degli alberi, all’interno o ai margini del bosco.",
+      "observe": "Luce, erbe e terreno possono differire dal bosco vicino. “Fuori bosco” nella mappa non significa assenza di funghi.",
+      "related": [
+        "habitat"
+      ],
+      "sources": [
+        {
+          "title": "JRC · European Atlas of Forest Tree Species",
+          "url": "https://forest.jrc.ec.europa.eu/en/european-atlas/"
+        }
+      ]
+    },
+    {
+      "id": "habitat",
+      "term": "Habitat",
+      "category": "Bosco",
+      "aliases": [
+        "habitat compatibile"
+      ],
+      "definition": "Ambiente in cui una specie vive, con condizioni fisiche e biologiche adatte. Per i funghi contano anche substrato e possibili alberi ospiti.",
+      "observe": "Un habitat compatibile suggerisce cosa osservare, senza confermare la presenza della specie.",
+      "related": [
+        "substrato",
+        "micorriza"
+      ],
+      "sources": [
+        {
+          "title": "JRC · European Atlas of Forest Tree Species",
+          "url": "https://forest.jrc.ec.europa.eu/en/european-atlas/"
+        }
+      ]
+    },
+    {
+      "id": "substrato",
+      "term": "Substrato",
+      "category": "Funghi",
+      "aliases": [
+        "substrati"
+      ],
+      "definition": "Materiale o superficie su cui cresce un fungo: terreno, lettiera, legno o altri materiali.",
+      "observe": "Annota se il fungo emerge dal terreno o direttamente dal legno; le radici sepolte possono trarre in inganno.",
+      "related": [
+        "saprotrofo"
+      ],
+      "sources": [
+        {
+          "title": "First Nature · Glossary of mycological terms",
+          "url": "https://www.first-nature.com/fungi/~glossary.php"
+        }
+      ]
+    },
+    {
+      "id": "micorriza",
+      "term": "Micorriza",
+      "category": "Funghi",
+      "aliases": [
+        "micorrize",
+        "micorrizico",
+        "micorrizici",
+        "ectomicorriza",
+        "ectomicorrize"
+      ],
+      "definition": "Associazione tra un fungo e le radici di una pianta, con scambio di nutrienti. Molti funghi forestali formano ectomicorrize.",
+      "observe": "Riconoscere gli alberi vicini aiuta a leggere l’habitat, ma non identifica il fungo.",
+      "related": [
+        "micelio",
+        "habitat"
+      ],
+      "sources": [
+        {
+          "title": "First Nature · Glossary of mycological terms",
+          "url": "https://www.first-nature.com/fungi/~glossary.php"
+        }
+      ]
+    },
+    {
+      "id": "saprotrofo",
+      "term": "Saprotrofo",
+      "category": "Funghi",
+      "aliases": [
+        "saprotrofi",
+        "saprofita",
+        "saprofiti"
+      ],
+      "definition": "Organismo che ricava nutrienti dalla materia organica morta, contribuendo alla decomposizione.",
+      "observe": "Legno morto e lettiera ospitano specie diverse: descrivi il substrato.",
+      "related": [
+        "substrato",
+        "lettiera"
+      ],
+      "sources": [
+        {
+          "title": "First Nature · Glossary of mycological terms",
+          "url": "https://www.first-nature.com/fungi/~glossary.php"
+        }
+      ]
+    },
+    {
+      "id": "micelio",
+      "term": "Micelio",
+      "category": "Funghi",
+      "aliases": [
+        "miceli"
+      ],
+      "definition": "Insieme dei filamenti del fungo, chiamati ife, che si sviluppano nel substrato. Il fungo visibile è spesso soltanto il corpo fruttifero.",
+      "observe": "Non scavare per cercarlo; la presenza di filamenti bianchi non identifica una specie.",
+      "related": [
+        "carpoforo"
+      ],
+      "sources": [
+        {
+          "title": "First Nature · Glossary of mycological terms",
+          "url": "https://www.first-nature.com/fungi/~glossary.php"
+        }
+      ]
+    },
+    {
+      "id": "carpoforo",
+      "term": "Corpo fruttifero",
+      "category": "Funghi",
+      "aliases": [
+        "carpoforo",
+        "carpofori",
+        "corpi fruttiferi"
+      ],
+      "definition": "Struttura del fungo che produce e disperde le spore; nei funghi a cappello è la parte che osserviamo sopra il substrato.",
+      "observe": "La sua comparsa è fruttificazione: non equivale alla crescita o alla quantità totale del micelio.",
+      "related": [
+        "micelio",
+        "sporata"
+      ],
+      "sources": [
+        {
+          "title": "First Nature · Glossary of mycological terms",
+          "url": "https://www.first-nature.com/fungi/~glossary.php"
+        }
+      ]
+    },
+    {
+      "id": "lamelle",
+      "term": "Lamelle",
+      "category": "Funghi",
+      "aliases": [
+        "lamella"
+      ],
+      "definition": "Sottili strutture a lama sotto il cappello, sulle cui superfici si trova lo strato che produce le spore.",
+      "observe": "Osserva colore, distanza e attacco al gambo. Non confonderle con le pliche del finferlo.",
+      "related": [
+        "pliche",
+        "imenoforo"
+      ],
+      "sources": [
+        {
+          "title": "First Nature · Glossary of mycological terms",
+          "url": "https://www.first-nature.com/fungi/~glossary.php"
+        }
+      ]
+    },
+    {
+      "id": "pori",
+      "term": "Pori e tubuli",
+      "category": "Funghi",
+      "aliases": [
+        "pori",
+        "poro",
+        "tubuli",
+        "tubulo"
+      ],
+      "definition": "I tubuli sono piccoli canali sotto il cappello; i pori sono le loro aperture visibili. Formano la superficie spugnosa di molti boleti.",
+      "observe": "Osserva il colore dei pori e gli eventuali cambiamenti, senza usarli da soli per decidere la commestibilità.",
+      "related": [
+        "imenoforo",
+        "viraggio"
+      ],
+      "sources": [
+        {
+          "title": "First Nature · Glossary of mycological terms",
+          "url": "https://www.first-nature.com/fungi/~glossary.php"
+        }
+      ]
+    },
+    {
+      "id": "pliche",
+      "term": "Pliche",
+      "category": "Funghi",
+      "aliases": [
+        "plica",
+        "false lamelle"
+      ],
+      "definition": "Pieghe o nervature sotto il cappello, spesso ramificate e collegate tra loro, diverse dalle vere lamelle.",
+      "observe": "Nel finferlo sono un carattere da confrontare con il resto del fungo e con i sosia.",
+      "related": [
+        "lamelle",
+        "imenoforo"
+      ],
+      "sources": [
+        {
+          "title": "First Nature · Glossary of mycological terms",
+          "url": "https://www.first-nature.com/fungi/~glossary.php"
+        }
+      ]
+    },
+    {
+      "id": "aculei",
+      "term": "Aculei",
+      "category": "Funghi",
+      "aliases": [
+        "aculeo"
+      ],
+      "definition": "Piccoli elementi appuntiti. In alcuni funghi, come gli steccherini, pendono sotto il cappello e portano lo strato fertile.",
+      "observe": "Nel contesto di un riccio o di una foglia la parola può indicare una struttura vegetale diversa.",
+      "related": [
+        "imenoforo"
+      ],
+      "sources": [
+        {
+          "title": "First Nature · Glossary of mycological terms",
+          "url": "https://www.first-nature.com/fungi/~glossary.php"
+        }
+      ]
+    },
+    {
+      "id": "imenoforo",
+      "term": "Imenoforo",
+      "category": "Funghi",
+      "aliases": [
+        "imenofori"
+      ],
+      "definition": "Struttura che sostiene lo strato fertile del fungo: può avere lamelle, tubuli, aculei, pliche o una superficie quasi liscia.",
+      "observe": "Guarda sotto il cappello senza basarti solo sul suo colore esterno.",
+      "related": [
+        "lamelle",
+        "pori",
+        "pliche"
+      ],
+      "sources": [
+        {
+          "title": "First Nature · Glossary of mycological terms",
+          "url": "https://www.first-nature.com/fungi/~glossary.php"
+        }
+      ]
+    },
+    {
+      "id": "anello",
+      "term": "Anello",
+      "category": "Funghi",
+      "aliases": [
+        "anelli"
+      ],
+      "definition": "Residuo del velo parziale che può formare una fascia intorno al gambo. Può essere fragile, fugace o danneggiato.",
+      "observe": "Non vederlo non prova che sia assente: non usarlo da solo per escludere specie mortali.",
+      "related": [
+        "volva"
+      ],
+      "sources": [
+        {
+          "title": "First Nature · Glossary of mycological terms",
+          "url": "https://www.first-nature.com/fungi/~glossary.php"
+        }
+      ]
+    },
+    {
+      "id": "volva",
+      "term": "Volva",
+      "category": "Funghi",
+      "aliases": [
+        "volve",
+        "cercini"
+      ],
+      "definition": "Residuo del velo generale alla base del gambo, a sacco, lembi o cercini secondo la specie. Può essere nascosta nel terreno o danneggiata.",
+      "observe": "L’assenza apparente non esclude un’Amanita mortale. Per il controllo micologico serve l’esemplare intero, base compresa.",
+      "related": [
+        "anello"
+      ],
+      "sources": [
+        {
+          "title": "First Nature · Glossary of mycological terms",
+          "url": "https://www.first-nature.com/fungi/~glossary.php"
+        }
+      ]
+    },
+    {
+      "id": "reticolo",
+      "term": "Reticolo",
+      "category": "Funghi",
+      "aliases": [
+        "reticoli"
+      ],
+      "definition": "Disegno a maglie, simile a una rete, sulla superficie del gambo di alcuni funghi.",
+      "observe": "Osserva posizione, colore e rilievo delle maglie; un solo carattere non conferma la specie.",
+      "related": [
+        "viraggio"
+      ],
+      "sources": [
+        {
+          "title": "First Nature · Glossary of mycological terms",
+          "url": "https://www.first-nature.com/fungi/~glossary.php"
+        }
+      ]
+    },
+    {
+      "id": "sporata",
+      "term": "Sporata",
+      "category": "Funghi",
+      "aliases": [
+        "sporate"
+      ],
+      "definition": "Deposito di spore rilasciate dal fungo, il cui colore può aiutare il confronto tra specie.",
+      "observe": "Il colore del deposito non coincide necessariamente con quello di lamelle o pori; non è una prova di commestibilità.",
+      "related": [
+        "imenoforo"
+      ],
+      "sources": [
+        {
+          "title": "First Nature · Glossary of mycological terms",
+          "url": "https://www.first-nature.com/fungi/~glossary.php"
+        }
+      ]
+    },
+    {
+      "id": "viraggio",
+      "term": "Viraggio",
+      "category": "Funghi",
+      "aliases": [
+        "viraggi"
+      ],
+      "definition": "Cambiamento di colore di un tessuto dopo taglio, rottura o pressione.",
+      "observe": "Annota colore, punto e velocità del cambiamento. Blu non significa automaticamente tossico, né assenza di blu significa commestibile.",
+      "related": [
+        "reticolo"
+      ],
+      "sources": [
+        {
+          "title": "First Nature · Glossary of mycological terms",
+          "url": "https://www.first-nature.com/fungi/~glossary.php"
+        }
+      ]
+    },
+    {
+      "id": "umbone",
+      "term": "Umbone",
+      "category": "Funghi",
+      "aliases": [
+        "umboni",
+        "umbonato"
+      ],
+      "definition": "Rilievo centrale del cappello, più o meno evidente e appuntito.",
+      "observe": "Confronta profilo e forma dell’intero cappello: età e umidità possono modificarli.",
+      "related": [
+        "carpoforo"
+      ],
+      "sources": [
+        {
+          "title": "First Nature · Glossary of mycological terms",
+          "url": "https://www.first-nature.com/fungi/~glossary.php"
+        }
+      ]
+    },
+    {
+      "id": "cespitoso",
+      "term": "Cespitoso",
+      "category": "Funghi",
+      "aliases": [
+        "cespitosa",
+        "cespitosi",
+        "a cespi"
+      ],
+      "definition": "Crescita in gruppi fitti, spesso con gambi uniti o molto ravvicinati alla base.",
+      "observe": "Non equivale a una specie particolare: osserva anche substrato e base dei gambi.",
+      "related": [
+        "substrato"
+      ],
+      "sources": [
+        {
+          "title": "First Nature · Glossary of mycological terms",
+          "url": "https://www.first-nature.com/fungi/~glossary.php"
+        }
+      ]
+    },
+    {
+      "id": "latifoglie",
+      "term": "Latifoglie",
+      "category": "Alberi",
+      "aliases": [
+        "latifoglia"
+      ],
+      "definition": "Piante con foglie a lamina generalmente larga, in contrapposizione alle foglie aghiformi o squamiformi di molte conifere. Possono essere decidue o sempreverdi.",
+      "observe": "Faggio, castagno e leccio sono latifoglie, ma non perdono tutti le foglie in inverno.",
+      "related": [
+        "conifere",
+        "caducifoglia",
+        "sempreverde"
+      ],
+      "sources": [
+        {
+          "title": "Acta Plantarum · Glossario botanico",
+          "url": "https://www.actaplantarum.org/glossario/"
+        }
+      ]
+    },
+    {
+      "id": "conifere",
+      "term": "Conifere",
+      "category": "Alberi",
+      "aliases": [
+        "conifera"
+      ],
+      "definition": "Gruppo di piante legnose che produce coni; molte hanno foglie ad ago o a squama. Non tutte sono sempreverdi.",
+      "observe": "Confronta disposizione degli aghi e coni: “conifera” da sola non distingue pino e abete.",
+      "related": [
+        "aghi",
+        "latifoglie"
+      ],
+      "sources": [
+        {
+          "title": "Acta Plantarum · Glossario botanico",
+          "url": "https://www.actaplantarum.org/glossario/"
+        }
+      ]
+    },
+    {
+      "id": "aghi",
+      "term": "Aghi",
+      "category": "Alberi",
+      "aliases": [
+        "ago",
+        "aghiforme"
+      ],
+      "definition": "Foglie strette e allungate, tipiche di molte conifere. Possono essere singole o riunite in fascetti.",
+      "observe": "Nei pini del catalogo cerca coppie di aghi; nell’abete bianco aghi singoli, piatti, con due bande chiare sotto.",
+      "related": [
+        "conifere"
+      ],
+      "sources": [
+        {
+          "title": "Acta Plantarum · Glossario botanico",
+          "url": "https://www.actaplantarum.org/glossario/"
+        }
+      ]
+    },
+    {
+      "id": "caducifoglia",
+      "term": "Caducifoglia",
+      "category": "Alberi",
+      "aliases": [
+        "caducifoglie",
+        "decidua",
+        "decidue"
+      ],
+      "definition": "Pianta che perde le foglie nella stagione sfavorevole. “Decidua” è un termine equivalente.",
+      "observe": "In inverno usa insieme gemme, corteccia e frutti a terra; alcune foglie secche possono restare sui rami.",
+      "related": [
+        "sempreverde",
+        "gemme"
+      ],
+      "sources": [
+        {
+          "title": "Acta Plantarum · Glossario botanico",
+          "url": "https://www.actaplantarum.org/glossario/"
+        }
+      ]
+    },
+    {
+      "id": "sempreverde",
+      "term": "Sempreverde",
+      "category": "Alberi",
+      "aliases": [
+        "sempreverdi"
+      ],
+      "definition": "Pianta che mantiene foglie vive tutto l’anno, rinnovandole gradualmente.",
+      "observe": "Non conserva ogni singola foglia per sempre. Leccio e olivo sono esempi nel catalogo.",
+      "related": [
+        "caducifoglia"
+      ],
+      "sources": [
+        {
+          "title": "Acta Plantarum · Glossario botanico",
+          "url": "https://www.actaplantarum.org/glossario/"
+        }
+      ]
+    },
+    {
+      "id": "lobi",
+      "term": "Lobi",
+      "category": "Alberi",
+      "aliases": [
+        "lobo",
+        "lobata",
+        "lobate"
+      ],
+      "definition": "Parti sporgenti del margine di una foglia, separate da incavi più o meno profondi.",
+      "observe": "Conta i lobi e guarda forma e profondità degli incavi; nelle querce una singola foglia può essere poco rappresentativa.",
+      "related": [
+        "seghettato"
+      ],
+      "sources": [
+        {
+          "title": "Acta Plantarum · Glossario botanico",
+          "url": "https://www.actaplantarum.org/glossario/"
+        }
+      ]
+    },
+    {
+      "id": "seghettato",
+      "term": "Margine seghettato",
+      "category": "Alberi",
+      "aliases": [
+        "seghettato",
+        "seghettata",
+        "dentato",
+        "dentata",
+        "doppiamente seghettato"
+      ],
+      "definition": "Bordo della foglia con piccoli denti simili a quelli di una sega. Se i denti hanno a loro volta denti più piccoli, è doppiamente seghettato.",
+      "observe": "Guarda diverse foglie mature: danni o giovani foglie possono rendere il bordo ingannevole.",
+      "related": [
+        "lobi"
+      ],
+      "sources": [
+        {
+          "title": "Acta Plantarum · Glossario botanico",
+          "url": "https://www.actaplantarum.org/glossario/"
+        }
+      ]
+    },
+    {
+      "id": "gemme",
+      "term": "Gemme",
+      "category": "Alberi",
+      "aliases": [
+        "gemma"
+      ],
+      "definition": "Strutture da cui si sviluppano germogli, foglie o fiori; forma e disposizione aiutano il riconoscimento, soprattutto in inverno.",
+      "observe": "Nel faggio le gemme sono lunghe e sottili: confrontale anche con corteccia e foglie a terra.",
+      "related": [
+        "caducifoglia"
+      ],
+      "sources": [
+        {
+          "title": "Acta Plantarum · Glossario botanico",
+          "url": "https://www.actaplantarum.org/glossario/"
+        }
+      ]
+    },
+    {
+      "id": "ceduo",
+      "term": "Ceduo",
+      "category": "Bosco",
+      "aliases": [
+        "cedui",
+        "polloni",
+        "pollone"
+      ],
+      "definition": "Bosco gestito con tagli dopo i quali molte latifoglie producono nuovi fusti dalla ceppaia. Più polloni possono condividere la stessa base.",
+      "observe": "Il tipo di gestione non identifica da solo l’albero o i funghi presenti.",
+      "related": [
+        "ceppaia"
+      ],
+      "sources": [
+        {
+          "title": "JRC · European Atlas of Forest Tree Species",
+          "url": "https://forest.jrc.ec.europa.eu/en/european-atlas/"
+        }
+      ]
+    },
+    {
+      "id": "ceppaia",
+      "term": "Ceppaia",
+      "category": "Bosco",
+      "aliases": [
+        "ceppaie"
+      ],
+      "definition": "Base e apparato radicale di un albero, spesso visibili dopo il taglio del fusto. Può produrre nuovi germogli o diventare legno morto.",
+      "observe": "Distingui il legno dal terreno vicino: funghi su ceppaia e funghi micorrizici hanno relazioni diverse con gli alberi.",
+      "related": [
+        "ceduo",
+        "substrato"
+      ],
+      "sources": [
+        {
+          "title": "JRC · European Atlas of Forest Tree Species",
+          "url": "https://forest.jrc.ec.europa.eu/en/european-atlas/"
+        }
+      ]
+    },
+    {
+      "id": "spora",
+      "term": "Spora",
+      "category": "Funghi",
+      "aliases": [
+        "spore"
+      ],
+      "definition": "Unità microscopica coinvolta nella riproduzione e dispersione dei funghi. Nei funghi a cappello molte spore vengono prodotte nello strato fertile sotto il cappello.",
+      "observe": "La singola spora non si riconosce a occhio nudo. Il deposito di molte spore forma la sporata; non è una prova di commestibilità.",
+      "related": [
+        "sporata",
+        "imenoforo"
+      ],
+      "sources": [
+        {
+          "title": "First Nature · Glossary of mycological terms",
+          "url": "https://www.first-nature.com/fungi/~glossary.php"
+        }
+      ]
+    },
+    {
+      "id": "ifa",
+      "term": "Ifa",
+      "category": "Funghi",
+      "aliases": [
+        "ife"
+      ],
+      "definition": "Filamento che costituisce il corpo di molti funghi. L’insieme delle ife forma il micelio.",
+      "observe": "Filamenti nel terreno o sul legno non permettono da soli di identificare una specie.",
+      "related": [
+        "micelio"
+      ],
+      "sources": [
+        {
+          "title": "First Nature · Glossary of mycological terms",
+          "url": "https://www.first-nature.com/fungi/~glossary.php"
+        }
+      ]
+    }
+  ]
+}

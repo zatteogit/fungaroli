@@ -6,6 +6,7 @@ export const CONTENT_RESOURCES = [
   {id:'species-id',title:'Schede delle specie modellate',group:'Specie',collections:['species'],required:['species']},
   {id:'trees',title:'Alberi',group:'Bosco',collections:['trees'],required:['trees']},
   {id:'guides',title:'Articoli e taccuini',group:'Redazione',collections:['guides'],required:['guides']},
+  {id:'glossary',title:'Glossario e legenda',group:'Impara',collections:['terms'],required:['terms']},
   {id:'ui-copy',title:'Testi della home',group:'Redazione',collections:[],required:['homeTitle','homeIntro']},
   {id:'zones',title:'Luoghi e microzone',group:'Luoghi',collections:['zones'],required:['zones','origin']},
   {id:'trails',title:'Sentieri',group:'Luoghi',collections:['zones'],required:['zones']},
@@ -22,6 +23,7 @@ export const CONTENT_RESOURCES = [
 export const resourceOf = id => CONTENT_RESOURCES.find(r => r.id === id);
 export const CONTENT_TEMPLATES = {
   guides:{id:'',category:'',title:'',excerpt:'',body:''},
+  glossary:{id:'',term:'',category:'Bosco',aliases:[],definition:'',observe:'',related:[],sources:[]},
   'edible-catalog':{id:'',name:'',latin:'',toxicity:'da verificare',aliases:[],months:null,description:'',caution:'',sources:[]},
   'species-traits':{name:'',latin:'',toxicity:'da verificare',caution:'',traits:{season:[]},sources:[]},
   infografiche:{file:'',alt:'',author:'',license:'',page:''},
@@ -29,6 +31,7 @@ export const CONTENT_TEMPLATES = {
 export const isLockedField = key => ['samples','lines','line','sample_categories','in_zone_km','total_km','duration','ascent','generated','source'].includes(key);
 export const FIELD_LABELS = {
   guides:'Articoli',taxa:'Specie e sosia',species:'Specie',zones:'Luoghi',trees:'Alberi',
+  terms:'Voci del glossario',term:'Parola',definition:'Definizione',observe:'Cosa osservare',related:'Voci collegate',
   info_sections:'Sezioni informative',general:'Indicazioni generali',cucina:'Cucina',lookalikes:'Sosia',trails:'Tracciati',
   version:'Versione degli avvisi',verified_on:'Data della verifica',vocabulary:'Vocabolario dei caratteri',
   name:'Nome',latin:'Nome scientifico',title:'Titolo',subtitle:'Sottotitolo',description:'Descrizione',
