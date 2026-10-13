@@ -30,10 +30,12 @@ async function init(env,origin) {
       const value=['guides','legal'].includes(r.id)?validateContent(r.id,data).value:data;
       return {id:r.id,payload:JSON.stringify(value)};
     }));
-    if(seeds.length) await db.batch(seeds.flatMap(r=>[
-      db.prepare('INSERT INTO cms_documents(id,draft,published,updated_at,updated_by) VALUES(?,?,?,?,?) ON CONFLICT(id) DO NOTHING').bind(r.id,r.payload,r.payload,Date.now(),'seed'),
-      db.prepare('INSERT INTO cms_revisions(document_id,version,payload,created_at,actor) SELECT id,0,draft,updated_at,updated_by FROM cms_documents WHERE id=? ON CONFLICT(document_id,version) DO NOTHING').bind(r.id),
-    ]));
+    if(seeds.length) await db.batch([
+      // 17 documents use 85 bindings, below D1's 100-parameter limit.
+      // Two statements keep the cold start within the free tier query budget.
+      db.prepare(`INSERT INTO cms_documents(id,draft,published,updated_at,updated_by) VALUES ${seeds.map(()=>'(?,?,?,?,?)').join(',')} ON CONFLICT(id) DO NOTHING`).bind(...seeds.flatMap(r=>[r.id,r.payload,r.payload,Date.now(),'seed'])),
+      db.prepare('INSERT INTO cms_revisions(document_id,version,payload,created_at,actor) SELECT id,0,draft,updated_at,updated_by FROM cms_documents WHERE version=0 ON CONFLICT(document_id,version) DO NOTHING'),
+    ]);
   })().catch(e=>{initialized.delete(db);throw e;}));
   return initialized.get(db);
 }
