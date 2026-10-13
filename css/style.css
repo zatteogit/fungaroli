@@ -2131,3 +2131,25 @@ html[data-cmp-dir="prev"]::view-transition-new(cmp-pick) { animation-name: cmp-i
 @media (max-width: 480px) {
   .seg-nav a { padding-inline: 6px; font-size: 12px; }
 }
+
+/* Base privata del profilo */
+.base-settings { border: 1px solid var(--hair); border-radius: 14px; margin: 18px 0; }
+.base-settings > summary { min-height: 60px; padding: 12px 14px; cursor: pointer; list-style: none; }
+.base-settings > summary::-webkit-details-marker { display: none; }
+.base-settings summary span { display: block; color: var(--text-2); font-size: 12px; margin-bottom: 4px; }
+.base-settings summary b { color: var(--accent); font-size: 15px; overflow-wrap: anywhere; }
+.base-settings summary b::after { content: ' ›'; }
+.base-settings[open] summary b::after { content: ' ⌄'; }
+.base-settings-body { padding: 0 14px 14px; }
+.base-search { display: flex; align-items: end; gap: 8px; }
+.base-search label { flex: 1; min-width: 0; margin: 0; }
+.base-search input { min-width: 0; width: 100%; }
+.base-settings-body .btn { min-height: 44px; margin: 6px 0; }
+.base-places { list-style: none; padding: 0; margin: 10px 0; }
+.base-place { font: inherit; color: var(--text); text-align: left; width: 100%; min-height: 44px; border: 1px solid var(--hair); background: var(--surface-2); border-radius: 10px; padding: 10px 12px; margin: 3px 0; overflow-wrap: anywhere; cursor: pointer; }
+.base-secondary { display: flex; flex-wrap: wrap; gap: 8px 16px; }
+.base-secondary .link-btn { min-height: 44px; }
+.base-settings-body [data-base-selected] { padding: 8px 0; }
+.base-settings-body [data-base-selected] p { overflow-wrap: anywhere; margin: 6px 0; }
+.base-settings-body [data-base-status]:empty { display: none; }
+.map-base { background: var(--surface); color: var(--accent); border: 2px solid var(--accent); border-radius: 50%; display: grid; place-items: center; box-shadow: var(--shadow-1); font-size: 24px; font-weight: 700; }

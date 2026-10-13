@@ -2,6 +2,7 @@ import { SPECIES } from './species.js';
 import { todayISO } from './weather.js';
 import { startRegistration, startAuthentication, browserSupportsWebAuthn } from './vendor/webauthn.js';
 import { communityMultiplier } from './community-signal.js';
+import {setBaseUser,mountBaseEditor} from './base-location.js';
 
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 let enabled = false, user = null, summary = null, zones = [], ready = Promise.resolve(), reportDialog, authDialog, speciesCatalog = SPECIES;
@@ -18,6 +19,7 @@ export async function communityRequest(path, method = 'GET', data) {
 }
 
 const changed = () => {
+  setBaseUser(user);
   document.querySelectorAll('[data-profile-label]').forEach(el=>{el.textContent=user?.handle||'Accedi';});
   document.dispatchEvent(new CustomEvent('fungaroli:community', { detail: { user } }));
 };
@@ -50,6 +52,7 @@ async function session() {
 export function initCommunity({ zoneList, speciesList = SPECIES }) {
   zones = zoneList; speciesCatalog = speciesList;
   document.addEventListener('fungaroli:refresh-community', refreshCommunity);
+  document.addEventListener('fungaroli:refresh-account',async()=>{if(enabled){await session();changed();}});
   ready = (async () => {
     if (globalThis.FUNGAROLI_DATA || globalThis.FUNGAROLI_REVIEW) { changed(); return; }
     try { enabled = (await communityRequest('status')).enabled; } catch { enabled = false; }
@@ -83,6 +86,7 @@ export async function openAccount() {
   return new Promise((resolve) => {
     authDialog.innerHTML = user ? `<div class="profile-header"><div><h2>${esc(user.handle || 'Il tuo profilo')}</h2><p class="small muted profile-role" data-account-role>Profilo personale</p></div><button type="button" class="profile-close" data-close aria-label="Chiudi il profilo">×</button></div>
       <p>Il diario è privato. Solo le osservazioni che scegli di condividere entrano nei conteggi collettivi.</p>
+      <div data-profile-base></div>
       <div class="profile-editorial" data-cms-link hidden></div>
       <div class="profile-actions" role="group" aria-label="Azioni del profilo"><button type="button" class="btn ghost" data-logout>Esci dal profilo</button><button type="button" class="btn primary" data-close autofocus>Chiudi</button></div>
       <div class="profile-data"><button type="button" class="link-btn" data-delete-account>Elimina profilo e dati</button></div><p class="profile-status" role="status" data-status></p>`
@@ -96,6 +100,11 @@ export async function openAccount() {
     const status = authDialog.querySelector('[data-status]');
     if(user){
       const accountId=user.id;
+      const baseSlot=authDialog.querySelector('[data-profile-base]');
+      mountBaseEditor(baseSlot,{value:user.base,save:async base=>{
+        if(user?.id!==accountId)throw new Error('Il profilo è cambiato. Riaprilo prima di salvare.');
+        const r=await communityRequest('profile','PUT',{accountId,base});user={...user,base:r.base};changed();
+      }});
       fetch('/api/cms/v1/me',{credentials:'same-origin',cache:'no-store',signal:AbortSignal.timeout(5000)}).then(r=>r.ok?r.json():null).then(r=>{
         const slot=authDialog.querySelector('[data-cms-link]');
         if(!slot||user?.id!==accountId||r?.user?.id!==accountId)return;

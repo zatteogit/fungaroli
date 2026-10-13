@@ -1,5 +1,8 @@
 import { generateRegistrationOptions, verifyRegistrationResponse, generateAuthenticationOptions, verifyAuthenticationResponse } from '@simplewebauthn/server';
 import schema from '../migrations/0001_community.sql';
+import preferencesSchema from '../migrations/0003_account_preferences.sql';
+import {normalizeBase,validPoint} from '../js/travel-model.js';
+import {searchPlaces,routeMatrix} from './travel-provider.js';
 import { buildEdibleCatalog } from '../js/edible-catalog.js';
 import traits from '../data/species-traits.json';
 import edibleCatalog from '../data/edible-catalog.json';
@@ -27,7 +30,7 @@ const fail = (message, status = 400) => { const e = new Error(message); e.status
 async function init(db) {
   if (!initialized.has(db)) initialized.set(db, (async () => {
     // D1 exec treats individual lines as statements; use complete SQL statements.
-    await db.batch(schema.split(';').map((s) => s.trim()).filter((s) => s && !s.startsWith('PRAGMA')).map((s) => db.prepare(s)));
+    await db.batch((schema+';'+preferencesSchema).split(';').map((s) => s.trim()).filter((s) => s && !s.startsWith('PRAGMA')).map((s) => db.prepare(s)));
     await db.prepare("INSERT INTO community_meta(key,value) VALUES('ip_salt',?) ON CONFLICT(key) DO NOTHING").bind(token()).run();
   })().catch((e) => { initialized.delete(db); throw e; }));
   return initialized.get(db);
@@ -85,9 +88,10 @@ async function rate(db, key, limit, seconds, now) {
 async function signedIn(req, db, now) {
   const raw = readCookie(req, SESSION);
   if (!raw) fail('Accedi con la tua passkey.', 401);
-  const user = await db.prepare('SELECT a.id,a.handle,a.created_at FROM sessions s JOIN accounts a ON a.id=s.account_id WHERE s.token_hash=? AND s.expires_at>?')
+  const user = await db.prepare('SELECT a.id,a.handle,a.created_at,p.base FROM sessions s JOIN accounts a ON a.id=s.account_id LEFT JOIN account_preferences p ON p.account_id=a.id WHERE s.token_hash=? AND s.expires_at>?')
     .bind(await hash(raw), now).first();
   if (!user) fail('Sessione scaduta. Accedi di nuovo.', 401);
+  user.base=user.base?JSON.parse(user.base):null;
   return user;
 }
 
@@ -176,8 +180,34 @@ export async function handleCommunity(request, env, now = Date.now()) {
     }
 
     const user = await signedIn(request, db, now);
-    if (path === 'session' && request.method === 'GET') return result({ user: { id: user.id, handle: user.handle } });
+    if (path === 'session' && request.method === 'GET') return result({ user: { id: user.id, handle: user.handle, base:user.base } });
     await rate(db, 'user:' + user.id, 120, 3600, now);
+    if(path==='profile'&&request.method==='PUT') {
+      const data=await body(request);
+      if(data.accountId!==user.id)fail('Il profilo è cambiato. Riaprilo prima di salvare.',409);
+      let base;try{base=normalizeBase(data.base);}catch(e){fail(e.message,422);}
+      if(base===null)await db.prepare('DELETE FROM account_preferences WHERE account_id=?').bind(user.id).run();
+      else await db.prepare('INSERT INTO account_preferences(account_id,base,updated_at) VALUES(?,?,?) ON CONFLICT(account_id) DO UPDATE SET base=excluded.base,updated_at=excluded.updated_at').bind(user.id,JSON.stringify(base),now).run();
+      return result({base});
+    }
+    if(path==='places'&&request.method==='GET'){
+      const q=url.searchParams.get('q');if(!q||q.trim().length<2||q.length>120)fail('Scrivi da 2 a 120 caratteri per cercare una località.',422);
+      return result({places:await searchPlaces(q)});
+    }
+    if(path==='travel'&&request.method==='POST') {
+      const data=await body(request);
+      // The origin always comes from this account, never from a body supplied by another tab.
+      if(!user.base)fail('Imposta prima la tua base nel profilo.',422);
+      if(!Array.isArray(data.targets)||!data.targets.length||data.targets.length>50||data.targets.some(p=>!validPoint(p)))fail('Punti del percorso non validi.',422);
+      await rate(db,'travel:'+user.id,60,3600,now);
+      const cache=globalThis.caches?.default;
+      const key=new Request(new URL('/api/internal/travel-cache/'+await hash(user.id+JSON.stringify([user.base,data.targets.map(p=>({lat:p.lat,lon:p.lon}))])),url.origin));
+      try{const cached=cache&&await cache.match(key);if(cached)return result(await cached.json());}catch{/* cache is optional */}
+      const routes=await routeMatrix(user.base,data.targets);
+      const out={base:user.base,routes,source:'OSRM / OpenStreetMap',traffic:false};
+      if(cache)try{await cache.put(key,new Response(JSON.stringify(out),{headers:{'content-type':'application/json','cache-control':`max-age=${routes.some(r=>r.minutes===null)?120:21600}`}}));}catch{/* preserve the calculated routes */}
+      return result(out);
+    }
 
     if (path === 'auth/logout' && request.method === 'POST') {
       await db.prepare('DELETE FROM sessions WHERE token_hash=?').bind(await hash(readCookie(request, SESSION))).run();
