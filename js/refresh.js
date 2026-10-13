@@ -5,9 +5,10 @@ const FLAG = 'fungaroli:fresh';
 // ogni passo ha un tempo massimo: su Safari l'aggiornamento del service worker a volte non risponde mai
 const within = (p, ms) => Promise.race([Promise.resolve(p).catch(() => {}), new Promise((r) => setTimeout(r, ms))]);
 
-export function toast(html, ms = 3200) {
+export function toast(html, ms = 3200, placement = 'bottom') {
   let t = document.getElementById('app-toast');
   if (!t) { t = document.createElement('div'); t.id = 'app-toast'; t.className = 'app-toast'; t.setAttribute('role', 'status'); document.body.append(t); }
+  t.classList.toggle('app-toast-top', placement === 'top');
   t.innerHTML = html;
   t.classList.add('on');
   clearTimeout(t._h);
