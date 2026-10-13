@@ -77,9 +77,9 @@ function collectiveStore() {
       catch (e) { if (e.status === 401) throw e; return local.list(); }
     },
     async put(e) {
-      if (currentUser()?.id !== account.id) throw new Error('Profilo cambiato: riapri il diario.');
+      if (currentUser()?.id !== account.id) throw new Error('Profilo cambiato: riapri il taccuino.');
       await local.put(e);
-      if (currentUser()?.id !== account.id) throw new Error('Profilo cambiato: riapri il diario.');
+      if (currentUser()?.id !== account.id) throw new Error('Profilo cambiato: riapri il taccuino.');
       const saved = await communityRequest('entries/' + e.id, 'PUT', e);
       if (saved.entry) { Object.assign(e, saved.entry); await local.put(e); }
     },
@@ -96,7 +96,7 @@ function dbStore(col) {
   };
 }
 
-// Diario sincronizzato sul sito (Cloudflare Pages Function + KV), protetto dal "codice diario".
+// Taccuino sincronizzato sul sito (Cloudflare Pages Function + KV), protetto dal "codice diario".
 const TOKEN_KEY = 'fungaroli:diario-token';
 const API = 'api/diario';
 const getToken = () => { try { return localStorage.getItem(TOKEN_KEY) || ''; } catch { return ''; } };
@@ -289,7 +289,7 @@ export function initJournal({ zones, speciesCatalog = SPECIES, predict, captureF
       shell('Vuoi aggiungere una nota?', 'Facoltativo: esposizione, tipo di bosco, com\'era il terreno…',
         `<p class="wiz-recap"><b>${esc(zone.name)}</b> · ${fmt(draft.date)}${draft.band ? ` · ${draft.band} m` : ''}<br>${esc(recap)}</p>
          <textarea class="wiz-input" rows="3" placeholder="Es. versante nord, faggeta, terreno umido">${esc(draft.note)}</textarea>
-         ${store?.kind === 'community' ? `<label class="small"><input type="checkbox" data-share${draft.share ? ' checked' : ''}> Condividi dati della ricerca, zona, giorno, specie e quantità per migliorare i suggerimenti. Le note restano private.</label>` : '<p class="small muted">Questa uscita resta su questo dispositivo. Puoi creare un profilo per tenere il diario privato online e scegliere cosa segnalare.</p>'}`,
+         ${store?.kind === 'community' ? `<label class="small"><input type="checkbox" data-share${draft.share ? ' checked' : ''}> Condividi dati della ricerca, zona, giorno, specie e quantità per migliorare i suggerimenti. Le note restano private.</label>` : '<p class="small muted">Questa uscita resta su questo dispositivo. Puoi creare un profilo per tenere il taccuino privato online e scegliere cosa segnalare.</p>'}`,
         { nextLabel: 'Salva uscita' });
       body.querySelector('textarea').addEventListener('input', (e) => { draft.note = e.target.value; });
       body.querySelector('[data-share]')?.addEventListener('change', (e) => { draft.share = e.target.checked; });
@@ -327,8 +327,8 @@ export function initJournal({ zones, speciesCatalog = SPECIES, predict, captureF
     entries = [entry, ...entries];
     sortEntries();
     body.innerHTML = `<div class="wiz-done"><p class="wiz-big">✓</p><h2 class="wiz-title">Uscita salvata</h2>
-      ${ok ? '' : '<p class="notice">Non sono riuscito a salvarla in modo permanente: esporta subito il diario.</p>'}
-      ${shared ? '<p>Osservazioni aggiunte ai conteggi della community.</p>' : ''}${shareError ? `<p class="notice">Diario salvato, condivisione non completata: ${esc(shareError)}</p>` : ''}
+      ${ok ? '' : '<p class="notice">Non sono riuscito a salvarla in modo permanente: esporta subito il taccuino.</p>'}
+      ${shared ? '<p>Osservazioni aggiunte ai conteggi della community.</p>' : ''}${shareError ? `<p class="notice">Taccuino salvato, condivisione non completata: ${esc(shareError)}</p>` : ''}
       <div class="wiz-nav"><span></span><button type="button" class="btn primary" data-act="close">Chiudi</button></div></div>`;
     body.querySelector('[data-act="close"]').addEventListener('click', () => dlg.close());
     renderList();
@@ -337,7 +337,7 @@ export function initJournal({ zones, speciesCatalog = SPECIES, predict, captureF
   function renderList(msg) {
     if (msg !== undefined) listMessage = msg;
     msg = listMessage;
-    if (!store) { list.innerHTML = '<p class="muted">Carico il diario…</p>'; return; }
+    if (!store) { list.innerHTML = '<p class="muted">Carico il taccuino…</p>'; return; }
     const sm = summary(entries);
     const head = entries.length
       ? `<p class="j-sum">${sm.total} ${sm.total === 1 ? 'uscita' : 'uscite'}${sm.judged ? ` · concordanze esplorative per specie: <b>${sm.ok} su ${sm.judged}</b>` : ''}
@@ -375,7 +375,7 @@ export function initJournal({ zones, speciesCatalog = SPECIES, predict, captureF
       catch (e) { renderList(e.message); }
     }));
     list.querySelectorAll('[data-withdraw-entry]').forEach((b) => b.addEventListener('click', async () => {
-      try { await communityRequest('reports', 'DELETE', { entryId: b.dataset.withdrawEntry }); document.dispatchEvent(new CustomEvent('fungaroli:refresh-community')); renderList('Segnalazioni ritirate. L’uscita resta nel diario privato.'); }
+      try { await communityRequest('reports', 'DELETE', { entryId: b.dataset.withdrawEntry }); document.dispatchEvent(new CustomEvent('fungaroli:refresh-community')); renderList('Segnalazioni ritirate. L’uscita resta nel taccuino privato.'); }
       catch (e) { renderList(e.message); }
     }));
     // conferma in pagina: primo tocco arma, secondo elimina
@@ -394,7 +394,7 @@ export function initJournal({ zones, speciesCatalog = SPECIES, predict, captureF
 
   async function exportFile() {
     const json = JSON.stringify({ version: 2, internalScoreScale: '0–100', displayScoreScale: '0–10', entries }, null, 1);
-    const filename = `diario-funghi-${iso(new Date())}.json`;
+    const filename = `taccuino-fungaroli-${iso(new Date())}.json`;
     const downloads = typeof globalThis.claude?.use === 'function' ? await globalThis.claude.use('downloads') : null;
     if (downloads) {
       try { await downloads.save({ filename, data: json }); } catch (e) { if (e?.code !== 'declined') renderList('Esportazione non disponibile qui.'); }
@@ -420,7 +420,7 @@ export function initJournal({ zones, speciesCatalog = SPECIES, predict, captureF
       sortEntries();
       renderList(`Importate ${fresh.length} uscite.`);
     } catch {
-      renderList('File non valido: serve un diario esportato da questa app.');
+      renderList('File non valido: serve un taccuino esportato da questa app.');
     }
   }
 
@@ -446,7 +446,7 @@ export function initJournal({ zones, speciesCatalog = SPECIES, predict, captureF
       entries = await rs.list();
       sortEntries();
       renderStorage();
-      renderList(`Diario collegato: ${entries.length} uscite sincronizzate.`);
+      renderList(`Taccuino collegato: ${entries.length} uscite sincronizzate.`);
       return true;
     } catch (e) {
       if (msg) msg.textContent = e.status === 401 ? 'Codice non valido: controlla di averlo copiato tutto.' : 'Collegamento non riuscito, riprova tra poco.';
@@ -460,9 +460,9 @@ export function initJournal({ zones, speciesCatalog = SPECIES, predict, captureF
 
   function renderStorage(remote) {
     if (store.kind === 'community') {
-      storageBox.innerHTML = `<p>Diario privato di <b>${esc(currentUser()?.handle || 'questo profilo')}</b>, sincronizzato con la passkey. Le condivisioni sono facoltative.</p><button type="button" class="btn ghost" data-community-account>Gestisci il profilo</button><button type="button" class="btn ghost" data-import-local>Importa il diario di questo dispositivo</button>
-        <details><summary>Hai il vecchio diario con codice?</summary><p>Importalo nel profilo privato. La copia originale resta nel diario di famiglia; nessuna segnalazione viene pubblicata.</p>
-        <form data-import-legacy><label>Codice del vecchio diario <input type="password" class="wiz-input" data-legacy-code autocomplete="off" required></label><button type="submit" class="btn ghost">Importa nel mio profilo</button><p role="status" data-legacy-status></p></form></details>`;
+      storageBox.innerHTML = `<p>Taccuino privato di <b>${esc(currentUser()?.handle || 'questo profilo')}</b>, sincronizzato con la passkey. Le condivisioni sono facoltative.</p><button type="button" class="btn ghost" data-community-account>Gestisci il profilo</button><button type="button" class="btn ghost" data-import-local>Importa il taccuino di questo dispositivo</button>
+        <details><summary>Hai il vecchio taccuino con codice?</summary><p>Importalo nel profilo privato. La copia originale resta nel taccuino di famiglia; nessuna segnalazione viene pubblicata.</p>
+        <form data-import-legacy><label>Codice del vecchio taccuino <input type="password" class="wiz-input" data-legacy-code autocomplete="off" required></label><button type="submit" class="btn ghost">Importa nel mio profilo</button><p role="status" data-legacy-status></p></form></details>`;
       storageBox.querySelector('[data-legacy-code]').value = getToken();
       storageBox.querySelector('[data-import-legacy]').onsubmit = async (ev) => {
         ev.preventDefault(); const form = ev.currentTarget, btn = form.querySelector('button'), status = form.querySelector('[data-legacy-status]'), target = store;
@@ -475,20 +475,20 @@ export function initJournal({ zones, speciesCatalog = SPECIES, predict, captureF
           entries = await target.list(); sortEntries(); renderList();
           status.textContent = `${n} voci importate nel profilo privato. Nessuna osservazione pubblicata.`;
           form.querySelector('[data-legacy-code]').value = '';
-        } catch (e) { status.textContent = e.status === 401 ? 'Codice non valido o sessione scaduta.' : 'Importazione incompleta. Il vecchio diario resta disponibile: puoi riprovare.'; }
+        } catch (e) { status.textContent = e.status === 401 ? 'Codice non valido o sessione scaduta.' : 'Importazione incompleta. Il vecchio taccuino resta disponibile: puoi riprovare.'; }
         finally { btn.disabled = false; }
       };
       storageBox.querySelector('[data-import-local]').onclick = async () => {
         const local = await localStore().list(), ids = new Set(entries.map((e) => e.id));
-        try { for (const e of local) if (!ids.has(e.id)) await store.put(e); entries = await store.list(); sortEntries(); renderList('Diario importato nel profilo privato. Nessuna osservazione è stata condivisa automaticamente.'); }
+        try { for (const e of local) if (!ids.has(e.id)) await store.put(e); entries = await store.list(); sortEntries(); renderList('Taccuino importato nel profilo privato. Nessuna osservazione è stata condivisa automaticamente.'); }
         catch { renderList('Importazione incompleta. La copia su questo dispositivo resta disponibile.'); }
       };
     } else if (communityEnabled() && store.kind === 'local') {
       storageBox.innerHTML = '<p>Il taccuino resta su questo dispositivo. Con una passkey puoi tenerlo privato online e scegliere quali osservazioni condividere.</p><button type="button" class="btn primary" data-community-account>Crea profilo o accedi</button>';
     } else if (store.kind === 'db') {
-      storageBox.innerHTML = 'Il diario è salvato nel tuo spazio privato di questa pagina: lo ritrovi da qualsiasi dispositivo.';
+      storageBox.innerHTML = 'Il taccuino è salvato nel tuo spazio privato di questa pagina: lo ritrovi da qualsiasi dispositivo.';
     } else if (store.kind === 'remote') {
-      storageBox.innerHTML = `<div class="sync-card ok"><span class="sync-ic">${PHONES}</span><div><b>Diario sincronizzato</b><p class="small">${store.offline ? 'Sei offline: vedi l\'ultima copia scaricata. ' : ''}Lo ritrovi su tutti i dispositivi collegati.</p></div></div>
+      storageBox.innerHTML = `<div class="sync-card ok"><span class="sync-ic">${PHONES}</span><div><b>Taccuino sincronizzato</b><p class="small">${store.offline ? 'Sei offline: vedi l\'ultima copia scaricata. ' : ''}Lo ritrovi su tutti i dispositivi collegati.</p></div></div>
         <button type="button" class="btn primary" id="j-share">Collega un altro dispositivo</button>
         <div class="sync-qr" id="j-qr" hidden></div>
         <button type="button" class="link-btn small" id="j-disconnect">Scollega questo dispositivo</button>`;
@@ -498,17 +498,17 @@ export function initJournal({ zones, speciesCatalog = SPECIES, predict, captureF
         e.currentTarget.hidden = true; box.hidden = false;
         box.innerHTML = `<p><b>Sull'altro telefono inquadra il codice con la fotocamera</b> e apri il link: si collega da solo.</p><div class="qr-img" aria-label="Codice QR per collegare un altro dispositivo"></div>
           <button type="button" class="btn ghost" id="j-copy">Oppure copia il link</button>
-          <p class="small muted">Chi ha questo codice può leggere e scrivere il diario: mostralo solo ai tuoi.</p>`;
+          <p class="small muted">Chi ha questo codice può leggere e scrivere il taccuino: mostralo solo ai tuoi.</p>`;
         box.querySelector('#j-copy').addEventListener('click', (ev) => navigator.clipboard?.writeText(url).then(() => { ev.target.textContent = 'Link copiato'; }));
         try { await loadQr(); const q = globalThis.qrcode(0, 'M'); q.addData(url); q.make(); box.querySelector('.qr-img').innerHTML = q.createSvgTag({ cellSize: 6, margin: 2, scalable: true }); }
         catch { box.querySelector('.qr-img').innerHTML = '<p class="small">Senza rete non posso disegnare il QR: usa "copia il link".</p>'; }
       });
     } else if (remote === 'needs_code') {
       storageBox.innerHTML = `
-        <div class="sync-card"><span class="sync-ic">${PHONES}</span><div><b>Ritrova il diario su tutti i dispositivi</b>
+        <div class="sync-card"><span class="sync-ic">${PHONES}</span><div><b>Ritrova il taccuino su tutti i dispositivi</b>
           <p class="small">Ora le uscite sono salvate solo su questo dispositivo.</p></div></div>
         <ol class="sync-steps">
-          <li>Sul telefono dove il diario è già collegato apri <b>Diario › Collega un altro dispositivo</b>.</li>
+          <li>Sul telefono dove il taccuino è già collegato apri <b>Taccuino › Collega un altro dispositivo</b>.</li>
           <li>Inquadra il codice QR con la fotocamera di questo telefono e apri il link. Fatto.</li>
         </ol>
         <details class="sync-code"><summary>Non hai l'altro telefono a portata di mano? Inserisci il codice</summary>
@@ -524,13 +524,13 @@ export function initJournal({ zones, speciesCatalog = SPECIES, predict, captureF
         await connect(inp.value.trim(), storageBox.querySelector('.j-connect-msg'));
       });
     } else {
-      storageBox.innerHTML = 'Il diario resta solo in questo browser. Esporta ogni tanto il file per non perderlo o per spostarlo su un altro dispositivo.';
+      storageBox.innerHTML = 'Il taccuino resta solo in questo browser. Esporta ogni tanto il file per non perderlo o per spostarlo su un altro dispositivo.';
     }
   }
 
   // link dal QR: #/diario/collega/<codice>. Il codice esce subito dalla barra degli indirizzi e dalla cronologia
   const fromLink = () => {
-    if (communityEnabled()) return; // i vecchi codici di famiglia non cambiano il proprietario del diario personale
+    if (communityEnabled()) return; // i vecchi codici di famiglia non cambiano il proprietario del taccuino personale
     const m = location.hash.match(/^#\/diario\/collega\/(.+)$/);
     if (!m) return;
     let code = ''; try { code = decodeURIComponent(m[1]); } catch { return; }
@@ -569,10 +569,10 @@ export function initJournal({ zones, speciesCatalog = SPECIES, predict, captureF
     store = next ? collectiveStore() : localStore();
     entries = []; renderList();
     const loading = store;
-    try { const fresh = await loading.list(); if (loading !== store) return; entries = fresh; sortEntries(); renderStorage('none'); renderList(); } catch { if (loading === store) renderList('Diario non disponibile. Riprova.'); }
+    try { const fresh = await loading.list(); if (loading !== store) return; entries = fresh; sortEntries(); renderStorage('none'); renderList(); } catch { if (loading === store) renderList('Taccuino non disponibile. Riprova.'); }
   });
   return { refresh: renderList, async savePlan(zoneId, date, band) {
-    if (!store) throw new Error('Il diario sta ancora caricando. Riprova tra poco.');
+    if (!store) throw new Error('Il taccuino sta ancora caricando. Riprova tra poco.');
     const forecast = captureForecast?.(zoneId, date, band);
     if (!forecast) throw new Error('Non ci sono dati completi e aggiornati per salvare questa previsione.');
     const entry = { id: Date.now().toString(36), kind: 'plan', zoneId, date, band, finds: {}, note: '',

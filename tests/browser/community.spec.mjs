@@ -210,8 +210,12 @@ test('editoriale, filtri completi, passkey, isolamento e condivisione revocabile
   await page.locator('#active-filters [data-more]').click();
   await expect(page.locator('#full-filters [data-group]')).toHaveCount(11);
   await page.locator('#full-filters [data-close]').first().click();
+  await expect(page.locator('[data-view="uscite"] #editorial')).toHaveCount(0);
+  await page.locator('[data-tab="specie"]').click();
+  await page.locator('[data-view="specie"] .seg-nav a[href="#/guide"]').click();
   await page.locator('#editorial a').first().click();
   await expect(page.locator('.editorial-article h1')).toBeVisible();
+  await expect(page.locator('[data-tab="specie"]')).toHaveAttribute('aria-current','page');
   await page.goto('/');
   await expect(page.locator('#hero .pc').first()).toHaveText(/^\d{1,2},\d$/);
   await register(page, 'Test privato A');

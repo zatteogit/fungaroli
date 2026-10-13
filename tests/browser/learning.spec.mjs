@@ -203,3 +203,40 @@ for(const width of [320,1280]) test(`le keyword non spezzano gli elenchi numerat
   }
   expect(errors).toEqual([]);
 });
+
+for(const width of [320,1280]) test(`guide in Impara e taccuino personale distinti a ${width}px`,async({page})=>{
+  // Una release CMS precedente deve restare leggibile con la terminologia aggiornata.
+  await page.route('**/api/content/v1/snapshot',async route=>{
+    const response=await route.fetch(),snapshot=await response.json();
+    snapshot.resources['ui-copy'].editorialEyebrow='Il taccuino del bosco';
+    const guide=snapshot.resources.guides.guides[0];guide.category='Taccuino di campo';guide.title='Una guida dal CMS';
+    guide.body=guide.body.replace('Conosci gli alberi','Apri il taccuino degli alberi');
+    await route.fulfill({json:snapshot});
+  });
+  const errors=await setup(page,width);
+  await expect(page.locator('[data-view="uscite"] #editorial')).toHaveCount(0);
+  await expect(page.locator('[data-tab="diario"]')).toHaveText('Taccuino');
+  await page.locator('[data-tab="specie"]').click();await expect(page.locator('#species-grid')).toBeVisible();
+  await page.locator('[data-view="specie"] .seg-nav a[href="#/guide"]').click();
+  const view=page.locator('[data-view="guide-list"]');await expect(view).toBeVisible();
+  await expect(view.locator('.seg-nav [aria-current="page"]')).toHaveText('Guide');
+  await expect(page.locator('[data-tab="specie"]')).toHaveAttribute('aria-current','page');
+  await expect(page.locator('#editorial .eyebrow').first()).toHaveText('Guide del bosco');
+  await expect(page.locator('#editorial .editorial-card')).toHaveCount(3);
+  await expect(page.locator('#editorial')).not.toContainText('Taccuino');
+  expect(await view.locator('.seg-nav').evaluate(el=>{const active=el.querySelector('[aria-current="page"]'),a=active.getBoundingClientRect(),r=el.getBoundingClientRect();return a.left>=r.left-1&&a.right<=r.right+1;})).toBe(true);
+  await page.evaluate(()=>document.fonts.ready);await page.screenshot({path:`/tmp/fungaroli-guide-navigation-${width}.png`});
+  await page.locator('#editorial a').first().click();await expect(page.locator('#guide-body h1')).toHaveText('Una guida dal CMS');
+  await expect(page.locator('#guide-body')).toContainText('Conosci gli alberi');
+  await expect(page.locator('.appbar-back')).toHaveAttribute('aria-label','Indietro: Guide');
+  await page.locator('.appbar-back').click();await expect(view).toBeVisible();
+  await page.goto('/#/guide/leggere-il-bosco');await expect(page.locator('.appbar-back')).toHaveAttribute('aria-label','Indietro: Guide');
+  await page.locator('.appbar-back').click();await expect(view).toBeVisible();
+  await page.locator('[data-tab="diario"]').click();await expect(page.locator('#journal-h')).toHaveText('Il mio taccuino');
+  await expect(page.locator('#journal-storage')).toContainText('Il taccuino');
+  await page.goto('/#/info');await expect(page.locator('#legal-sections')).toContainText('Taccuino privato');
+  await page.goto('/');await expect(page.locator('#hero .cover-cta')).toContainText('Scopri la passeggiata');
+  await page.locator('#hero .cover-link').click();await page.locator('.walk-focus > summary').click();
+  await expect(page.locator('.walk-focus')).not.toContainText('taccuino');
+  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);expect(errors).toEqual([]);
+});
