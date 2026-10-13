@@ -1259,10 +1259,7 @@ function initMap() {
   map.on('moveend',syncCellBackdrop);
   // la carta cambia misura (barra in alto che sparisce, rotazione): Leaflet va avvisato
   new ResizeObserver(() => map.invalidateSize()).observe($('#map'));
-  if (canHover) {
-    map.on('mousemove', hoverCell);
-    map.on('mouseout', () => hoverCell({ latlng: L.latLng(0, 0) }));
-  }
+  initCellInteractions();
 }
 
 // Controlli della mappa come nelle app di mappe: una colonna in alto a destra (livelli, posizione;
@@ -1351,10 +1348,7 @@ function initEmbeddedMap(bm) {
   map.on('moveend',syncCellBackdrop);
   // la carta cambia misura (barra in alto che sparisce, rotazione): Leaflet va avvisato
   new ResizeObserver(() => map.invalidateSize()).observe($('#map'));
-  if (canHover) {
-    map.on('mousemove', hoverCell);
-    map.on('mouseout', () => hoverCell({ latlng: L.latLng(0, 0) }));
-  }
+  initCellInteractions();
 }
 
 const shortName = (z) => z.title || z.name.split(/[/–(]/)[0].trim();
@@ -1399,8 +1393,8 @@ function syncCellBackdrop() {
   el.classList.toggle('cells-visible',visible);
 }
 // popover della mappa: titolo e percentuale grande, una riga per fungo con la barretta nella scala dell'indice, l'azione in fondo
-function mapCard({ title, sub, pct, rows = [], more = 0, foot = '' }) {
-  return `<div class="mtt"><b class="mtt-t">${esc(title)}</b>${sub ? `<span class="mtt-s">${sub}</span>` : ''}
+function mapCard({ title, sub, pct, rows = [], more = 0, foot = '', interactive = false }) {
+  return `<div class="mtt"${interactive ? '' : ' data-no-glossary'}><b class="mtt-t">${esc(title)}</b>${sub ? `<span class="mtt-s">${sub}</span>` : ''}
     <span class="mtt-p" style="--c:var(${scoreVar(pct)})"><b class="pc">${scoreText(pct)}</b><small>${esc(scoreLabel(pct).toLowerCase())}</small></span>
     ${rows.length ? `<ul class="mtt-rows">${rows.map((r) => `<li><span>${esc(r.name)}</span><i><i style="width:${r.v}%;background:var(${scoreVar(r.v)})"></i></i><b class="pc">${formatIndex(r.v)}</b></li>`).join('')}</ul>` : ''}
     ${more ? `<p class="mtt-more">e altri ${more}</p>` : ''}${foot ? `<p class="mtt-f">${foot}</p>` : ''}</div>`;
@@ -1409,6 +1403,51 @@ const canHover = matchMedia('(hover: hover) and (pointer: fine)').matches;
 // i riquadri sono disegnati su una tela che non prende il mouse (sotto ci sono cerchi e sentieri):
 // il riquadro sotto il puntatore si trova dalla posizione (cellHits) e si evidenzia con un contorno a parte
 let cellHits = [], peekCellBounds = [], cellHi = null, cellTip = null;
+let cellCardTimer = null, cellPinned = false, cellDoubleClickZoom = false;
+function cancelCellCardTimer() { clearTimeout(cellCardTimer); cellCardTimer = null; }
+function closeCellCard() {
+  cancelCellCardTimer(); cellPinned = false;
+  const restoreFocus = cellTip?.getElement()?.contains(document.activeElement);
+  const card = cellTip?.getElement();
+  if (card) { card.inert = true; card.style.pointerEvents = 'none'; }
+  cellHi?.remove(); cellHi = null; cellTip?.remove(); cellTip = null;
+  // Restore after the current click has finished bubbling. Leaflet synthesises
+  // double taps from clicks; interacting with the card must not zoom the map.
+  if (cellDoubleClickZoom) setTimeout(() => { if (!cellTip) { map.doubleClickZoom.enable(); cellDoubleClickZoom = false; } }, 0);
+  if (restoreFocus) map?.getContainer().focus({ preventScroll: true });
+}
+function deferCellCard(action = closeCellCard) {
+  cancelCellCardTimer();
+  if (!cellPinned) cellCardTimer = setTimeout(action, 250);
+}
+function initCellInteractions() {
+  if (canHover) {
+    map.on('mousemove', hoverCell);
+    map.getContainer().addEventListener('mouseleave', () => deferCellCard());
+  }
+  map.on('click', e => { if (!pinCellCard(e)) closeCellCard(); });
+  map.on('dragstart zoomstart', closeCellCard);
+  map.getContainer().setAttribute('aria-keyshortcuts', 'Enter');
+  map.getContainer().setAttribute('aria-label', 'Mappa delle zone. Premi Invio per esplorare il riquadro più vicino al centro.');
+  map.getContainer().addEventListener('keydown', e => {
+    if (e.key !== 'Enter' || e.target !== map.getContainer() || !$('#map').classList.contains('cells-on')) return;
+    const center = map.getCenter(), bounds = map.getBounds();
+    const nearest = cellHits.filter(h => bounds.contains([h.c.lat, h.c.lon])).sort((a, b) => center.distanceTo([a.c.lat, a.c.lon]) - center.distanceTo([b.c.lat, b.c.lon]))[0];
+    if (nearest) { e.preventDefault(); showCellCard(nearest); cellPinned = true; cellTip.getElement().querySelector('[data-cell-close]').focus({ preventScroll: true }); }
+  });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && cellTip && !document.querySelector('dialog[open],.learning-panel:popover-open')) {
+      e.preventDefault(); closeCellCard();
+    }
+  });
+  addEventListener('hashchange', closeCellCard);
+}
+function pinCellCard(e) {
+  const h = $('#map').classList.contains('cells-on') && cellAt(e.latlng);
+  if (!h) return false;
+  cancelCellCardTimer(); showCellCard(h); cellPinned = true;
+  return true;
+}
 function cellsLayer(z, d, interactive = true) {
   if (!map.getPane('cells')) map.createPane('cells').style.zIndex = 410; // sopra i cerchi, sotto le etichette
   cellRenderer ||= L.canvas({ padding: 0.3, pane: 'cells' });
@@ -1428,18 +1467,48 @@ function cellAt(ll) {
   return null;
 }
 function hoverCell(e) {
+  if (cellPinned || cellTip?.getElement()?.contains(e.originalEvent?.target)) return;
+  if (e.originalEvent?.target?.closest('.leaflet-control')) { deferCellCard(); return; }
   const h = map && $('#map').classList.contains('cells-on') ? cellAt(e.latlng) : null;
-  if (!h) { cellHi?.remove(); cellHi = null; cellTip?.remove(); cellTip = null; return; }
+  if (!h) { deferCellCard(); return; }
+  if (cellTip?._fz === h.c) { cancelCellCardTimer(); return; }
+  // A short grace period lets the pointer cross the gap, or another sample,
+  // on its way into the fixed card without replacing its content underneath it.
+  if (cellTip) deferCellCard(() => {
+    const current = cellHits.find(hit => hit.c.lat === h.c.lat && hit.c.lon === h.c.lon);
+    if (current) showCellCard(current); else closeCellCard();
+  }); else showCellCard(h);
+}
+function showCellCard(h, preserveTimer = false) {
+  if (!preserveTimer) cancelCellCardTimer();
   const { c, dLat, dLon } = h;
   const b = [[c.lat - dLat, c.lon - dLon], [c.lat + dLat, c.lon + dLon]];
   if (!cellHi) cellHi = L.rectangle(b, { interactive: false, color: '#fff', weight: 2.5, fill: false, className: 'cell-hi' }).addTo(map);
   else cellHi.setBounds(b);
-  const html = mapCard({ title: 'Questo riquadro', sub: `${esc(c.cat)} · ${c.e} m · campione ${c.size} m`, pct: c.v,
+  const html = mapCard({ title: 'Questo riquadro', sub: `${esc(c.cat)} · ${c.e} m · campione ${c.size} m`, pct: c.v, interactive: true,
     rows: c.parts.slice(0, 3).map((x) => ({ name: x.sp.name.split(' / ')[0], v: x.v })), more: Math.max(0, c.parts.length - 3),
     foot: 'Campione di habitat: verifica alberi ospiti, divieti e condizioni sul posto.' });
-  if (!cellTip) cellTip = L.tooltip({ className: 'zone-tt', direction: 'top', offset: [0, -14], opacity: 1 }).setLatLng(e.latlng).setContent(html).addTo(map);
-  else { cellTip.setLatLng(e.latlng); if (cellTip._fz !== c) cellTip.setContent(html); }
-  cellTip._fz = c;
+  const content = `${html}<button type="button" class="cell-card-close" data-cell-close aria-label="Chiudi il riquadro">×</button>`;
+  const position = [c.lat, c.lon];
+  if (!cellTip) {
+    cellDoubleClickZoom ||= map.doubleClickZoom.enabled(); map.doubleClickZoom.disable();
+    cellTip = L.tooltip({ className: 'zone-tt cell-card', interactive: true, permanent: true, direction: 'center', opacity: 1 }).setLatLng(position).setContent(content).addTo(map);
+    const card = cellTip.getElement();
+    card.setAttribute('role', 'dialog'); card.setAttribute('aria-label', 'Questo riquadro');
+    L.DomEvent.disableClickPropagation(card); L.DomEvent.disableScrollPropagation(card);
+    card.addEventListener('mouseenter', cancelCellCardTimer);
+    card.addEventListener('mouseleave', () => deferCellCard());
+    card.addEventListener('focusin', () => { cancelCellCardTimer(); cellPinned = true; });
+    card.addEventListener('click', e => { if (e.target.closest('[data-cell-close]')) closeCellCard(); else { cancelCellCardTimer(); cellPinned = true; } });
+  } else { cellTip.setLatLng(position); if (cellTip._fhtml !== content) cellTip.setContent(content); }
+  // Keep the card within the map even when its sample is near an edge.
+  const card = cellTip.getElement(), point = map.latLngToContainerPoint(position), size = map.getSize();
+  const halfW = card.offsetWidth / 2, halfH = card.offsetHeight / 2;
+  const x = Math.max(halfW + 8, Math.min(size.x - halfW - 8, point.x));
+  const above = point.y - halfH - 10;
+  const y = Math.max(halfH + 8, Math.min(size.y - halfH - 8, above - halfH >= 8 ? above : point.y + halfH + 10));
+  cellTip.setLatLng(map.containerPointToLatLng([x, y]));
+  cellTip._fz = c; cellTip._fhtml = content;
 }
 
 function renderMap() {
@@ -1464,6 +1533,8 @@ function renderMap() {
   const mapEl = $('#map');
   const revision=++mapRenderRevision;
   const want = map.getZoom() >= 11.5 || !!state.zoneId;
+  const displayedCell = cellTip?._fz;
+  if (!want) closeCellCard();
   const had = mapEl.classList.contains('cells-on');
   const slow = !matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (had && !want && slow && !cellsOut) {
@@ -1474,7 +1545,7 @@ function renderMap() {
   }
   for (const k in zoneLayers) zoneLayers[k].remove();
   zoneLayers = {};
-  cellHits = []; peekCellBounds=[];mapEl.classList.remove('cells-peek');cellHi?.remove(); cellHi = null; cellTip?.remove(); cellTip = null;
+  cellHits = []; peekCellBounds=[];mapEl.classList.remove('cells-peek');
   // etichette con nome: spostamento verticale greedy (in pixel) per evitare sovrapposizioni
   const placed = [];
   const labelPos = {};
@@ -1499,7 +1570,7 @@ function renderMap() {
     const circle = L.circle([z.lat, z.lon], {
       radius: z.radius_m, color: selected ? cssVar('--text') : color, weight: selected ? 2.5 : 2,
       dashArray: showCells ? '6 6' : null, fillColor: color, fillOpacity: 0.28, className: `zone-c${showCells ? ' has-cells' : ''}`,
-    }).addTo(g).on('click', () => openSheet(z.id));
+    }).addTo(g).on('click', e => { if (!pinCellCard(e)) openSheet(z.id); });
     if (showCells && d) cellsLayer(z, d).addTo(g);
     else if (d && canHover) {
       // a volo d'uccello: passandoci sopra la zona si accende e mostra in anteprima i suoi riquadri
@@ -1550,6 +1621,10 @@ function renderMap() {
       }
     }
     zoneLayers[z.id] = g;
+  }
+  if (displayedCell && cellTip) {
+    const hit = cellHits.find(h => h.c.lat === displayedCell.lat && h.c.lon === displayedCell.lon);
+    if (hit) showCellCard(hit, true); else closeCellCard();
   }
   const reveal=()=>{if(revision!==mapRenderRevision)return;mapEl.classList.toggle('cells-on',want);syncCellBackdrop();};
   // La tela Leaflet disegna al frame successivo: avvia la dissolvenza solo dopo.

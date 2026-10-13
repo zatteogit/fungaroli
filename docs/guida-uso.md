@@ -14,6 +14,8 @@ Apri **Tutti i filtri** dalla home o dalla mappa: trovi gli undici gruppi, “Ag
 
 La mappa e la scheda della zona mostrano soste, campioni di habitat e sentieri OSM. Le distanze dal campione alla strada sono in linea d’aria, non lunghezze di un percorso a piedi. La Carta Forestale è una classificazione territoriale, non una mappa dei funghi. Controlla segnaletica, proprietà private, divieti, tracciato, dislivello e condizioni reali prima di partire.
 
+Da vicino, passa il mouse su un riquadro per leggerne le condizioni: puoi entrare nel pannello e aprire le parole del glossario. Clic o tap lo mantengono aperto; chiudilo con ×, Esc o un clic sulla mappa fuori dai campioni. Con la mappa a fuoco, Invio apre il campione visibile più vicino al centro e porta il fuoco nel pannello.
+
 ## Il taccuino e la comunità
 
 Il taccuino presenta le voci come pagine: appunti, schede collegate, giri e uscite. Le fotografie applicate provengono dalla scheda o dal luogo indicato, non sono foto del ritrovamento personale. Ricerca e filtri sono nell’indice; le azioni e i loro esiti restano nella pagina. Gli appunti lunghi si espandono con “Leggi tutto”. Profilo, sincronizzazione, esportazione e importazione si aprono in fondo al quaderno.
