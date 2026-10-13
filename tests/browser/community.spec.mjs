@@ -1,5 +1,6 @@
 import { test, expect } from '@playwright/test';
 import { todayISO } from '../../js/weather.js';
+test.use({locale:'it-IT'});
 
 async function setup(page) {
   await page.route('https://**/*', async (route) => {
@@ -247,7 +248,8 @@ test('segnalazione rapida su telefono, conteggi e ritiro dal diario', async ({ p
   await register(page,'Test rapido');
   await page.locator('#community-intro [data-report]').click();
   const dlg=page.locator('dialog[aria-label="Segnala dal bosco"]');
-  await dlg.locator('[name="zone"]').selectOption('vallonina'); await dlg.locator('[name="species"]').selectOption('procera');
+  await dlg.locator('#report-zone').fill('vallonina'); await dlg.locator('#report-zone-options [role="option"]').click();
+  await dlg.locator('#report-species').fill('mazza'); await dlg.locator('#report-species-options [role="option"]').click();
   await dlg.locator('[name="amount"][value="1"]').check(); await dlg.locator('[type="submit"]').click();
   await expect(dlg.locator('[data-status]')).toContainText('conteggi collettivi');
   await dlg.locator('[data-close]').click();
@@ -372,8 +374,9 @@ test('le nuove specie sono segnalabili e i tossici restano esclusi dal server',a
   const errors=await setup(page);await register(page,'Test nuovo catalogo');
   await page.locator('#community-intro [data-report]').click();
   const dlg=page.locator('dialog[aria-label="Segnala dal bosco"]');
-  await expect(dlg.locator('[name="species"] option')).toHaveCount(46);
-  await dlg.locator('[name="species"]').selectOption('cyclocybe-aegerita');
+  await dlg.locator('#report-species').click();await expect(dlg.locator('#report-species-options [role="option"]')).toHaveCount(46);
+  await dlg.locator('#report-zone').fill('vallonina');await dlg.locator('#report-zone-options [role="option"]').click();
+  await dlg.locator('#report-species').fill('cyclocybe');await dlg.locator('#report-species-options [role="option"]').click();
   await dlg.locator('[name="amount"][value="1"]').check();await dlg.locator('[type="submit"]').click();
   await expect(dlg.locator('[data-status]')).toContainText('conteggi collettivi');
   const entries=(await api(page,'entries')).data.entries; expect(entries[0].finds['cyclocybe-aegerita']).toBe(1);
@@ -382,4 +385,64 @@ test('le nuove specie sono segnalabili e i tossici restano esclusi dal server',a
   await page.goto('/#/diario');await expect(page.locator('#journal-list')).toContainText('Pioppino');
   await api(page,'account','DELETE');expect((await api(page,'summary')).data.totalReports).toBe(0);
   expect(errors).toEqual([]);
+});
+
+
+for(const width of [320,1280]) test(`form osservazioni: autocomplete, contesto e invio a ${width}px`,async({page})=>{
+  await page.setViewportSize({width,height:900});await page.emulateMedia({reducedMotion:'reduce'});
+  const errors=await setup(page);await register(page,'Form '+width);
+  await page.locator('#community-intro [data-report]').click();
+  const dlg=page.locator('dialog[aria-label="Segnala dal bosco"]'),zone=dlg.locator('#report-zone'),species=dlg.locator('#report-species');
+  await expect(dlg.locator('[name="zone"]')).toHaveValue('');await expect(dlg.locator('[name="species"]')).toHaveValue('');
+  await zone.fill('vallon');await expect(dlg.locator('#report-zone-options [role="option"]')).toHaveCount(1);
+  await page.keyboard.press('ArrowDown');await expect(zone).toHaveAttribute('aria-activedescendant',/report-zone-options/);
+  await page.keyboard.press('Enter');await expect(zone).toHaveValue('Vallonina');await expect(dlg.locator('[name="zone"]')).toHaveValue('vallonina');
+  await expect(zone).toBeFocused();await expect(zone).toHaveAttribute('aria-expanded','false');
+  await species.fill('Boletus edulis');await page.keyboard.press('ArrowDown');await page.keyboard.press('Enter');
+  await expect(species).toHaveValue('Porcino');await expect(dlg.locator('[name="species"]')).toHaveValue('edulis');
+  // Modificare il testo invalida la vecchia scelta; niente identificativi rimasti nascosti.
+  await species.fill('nome inventato');await expect(dlg.locator('[name="species"]')).toHaveValue('');
+  await expect(dlg.locator('#report-species-options')).toContainText('Nessuna specie');
+  await page.keyboard.press('Escape');await expect(dlg).toBeVisible();await expect(species).toHaveAttribute('aria-expanded','false');
+  await dlg.locator('[name="amount"][value="0"]').check();await dlg.locator('[type="submit"]').click();
+  await expect(species).toBeFocused();expect((await api(page,'entries')).data.entries).toHaveLength(0);
+  await species.fill('gallinaccio');await dlg.locator('#report-species-options [role="option"]').click();
+  await expect(dlg.locator('[name="species"]')).toHaveValue('cibarius');
+  await dlg.locator('[data-report-day]').last().click();await expect(dlg.locator('[data-report-day]').last()).toHaveAttribute('aria-pressed','true');
+  await dlg.locator('#report-day').fill(todayISO());await dlg.locator('#report-day').dispatchEvent('change');
+  await expect(dlg.locator('[data-report-day]').first()).toHaveAttribute('aria-pressed','true');
+  await expect(dlg.locator('.report-check')).toBeHidden();await dlg.locator('.report-extra summary').click();await dlg.locator('[name="checked"]').check();
+  await dlg.locator('.report-extra summary').click();
+  for(const theme of ['light','dark']) {
+    await page.evaluate(t=>document.documentElement.dataset.theme=t,theme);await page.evaluate(()=>document.fonts.ready);
+    await dlg.evaluate(el=>{el.scrollTop=0;document.getAnimations().forEach(a=>{try{a.finish();}catch{}});});
+    expect(await dlg.evaluate(el=>el.scrollWidth<=el.clientWidth)).toBe(true);
+    expect(await dlg.evaluate(el=>el.querySelector('.report-safety summary').getBoundingClientRect().bottom<=el.querySelector('.report-actions').getBoundingClientRect().top+1)).toBe(true);
+    const cards=await dlg.locator('.report-quantity').evaluateAll(els=>els.map(el=>({x:el.getBoundingClientRect().left,y:el.getBoundingClientRect().top,h:el.getBoundingClientRect().height})));
+    expect(cards[0].y).toBeCloseTo(cards[1].y,0);expect(cards[2].y).toBeCloseTo(cards[3].y,0);
+    expect(cards[0].h).toBeCloseTo(cards[1].h,0);expect(cards[2].h).toBeCloseTo(cards[3].h,0);
+    await page.screenshot({path:`/tmp/fungaroli-report-${width}-${theme}.png`});
+  }
+  if(width===320) {
+    await page.setViewportSize({width,height:568});
+    await expect(dlg.locator('[type="submit"]')).toBeInViewport();await expect(dlg.locator('[data-report-dismiss]')).toBeInViewport();
+    await species.fill('boletus');await page.keyboard.press('ArrowDown');
+    const menu=dlg.locator('#report-species-options');
+    expect(await menu.evaluate(el=>{const r=el.getBoundingClientRect(),d=el.closest('dialog'),top=d.querySelector('.report-header').getBoundingClientRect().bottom,bottom=d.querySelector('.report-actions').getBoundingClientRect().top;return r.top>=top-1&&r.bottom<=bottom+1;})).toBe(true);
+    await page.screenshot({path:'/tmp/fungaroli-report-autocomplete-320.png'});
+    await page.keyboard.press('Escape');await species.fill('gallinaccio');await dlg.locator('#report-species-options [role="option"]').click();
+    await page.setViewportSize({width,height:900});
+  }
+  await dlg.locator('[type="submit"]').click();await expect(dlg.locator('[data-status]')).toContainText('conteggi collettivi');
+  const entries=(await api(page,'entries')).data.entries;
+  expect(entries).toHaveLength(1);expect(entries[0].zoneId).toBe('vallonina');expect(entries[0].finds.cibarius).toBe(0);expect(entries[0].searched).toContain('cibarius');
+  await expect(dlg.locator('h3')).toHaveText('Osservazione salvata');
+  await dlg.locator('a[href="#/diario"]').click();await expect(dlg).toBeHidden();await expect(page.locator('#journal-list')).toContainText('Vallonina');
+  // Dalla passeggiata il contesto viene precompilato, mantenuto alla chiusura.
+  await page.goto('/#/zona/vallonina/0');const trigger=page.locator('.zone-community [data-report]');
+  await trigger.click();await expect(dlg.locator('[name="zone"]')).toHaveValue('vallonina');
+  await expect(dlg.locator('[name="species"]')).not.toHaveValue('');
+  await expect(dlg.locator('#report-zone-options')).toBeHidden();await expect(dlg.locator('#report-species-options')).toBeHidden();
+  await page.keyboard.press('Escape');await expect(dlg).toBeHidden();await expect(trigger).toBeFocused();
+  await api(page,'account','DELETE');expect(errors).toEqual([]);
 });
