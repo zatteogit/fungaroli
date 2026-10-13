@@ -518,7 +518,7 @@ li.crit { font-weight: 600; }
 .id-deadly { margin: 0 0 12px; padding: 12px 14px; border-radius: var(--r-md); background: var(--crit-bg); color: var(--crit-ink); border: 1px solid color-mix(in srgb, var(--crit) 22%, transparent); font-size: 14px; }
 .id-deadly b { color: var(--crit); }
 .id-deadly p { margin: 8px 0 0; }
-.id-cards { list-style: none; margin: 0 0 20px; padding: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; align-items: start; }
+.id-cards { list-style: none; margin: 0 0 20px; padding: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
 .id-card { position: relative; cursor: pointer; transition: box-shadow .15s, transform .15s; display: grid; grid-template-rows: auto 1fr; border-radius: var(--r-md); overflow: hidden; background: var(--surface); border: 1px solid var(--hair); }
 .id-card.tox-mortale { border-color: color-mix(in srgb, var(--crit) 55%, transparent); box-shadow: 0 0 0 1px color-mix(in srgb, var(--crit) 40%, transparent); }
 .id-card-img { position: relative; aspect-ratio: 4 / 3; border: 0; padding: 0; background: var(--surface-3); display: block; width: 100%; }
@@ -529,7 +529,7 @@ li.crit { font-weight: 600; }
 .id-card.tox-commestibile .tox, .id-card.tox-commestibile-con-cautela .tox { background: var(--ok-bg); color: var(--ok-ink); }
 .id-fit { position: absolute; right: 8px; bottom: 8px; padding: 2px 8px; border-radius: 999px; background: rgb(16 15 12 / .7); color: #fff; font-size: 12px; font-weight: 700; font-variant-numeric: tabular-nums; }
 .id-fit.warn { background: var(--warn-ink); color: var(--warn-bg); }
-.id-card-body { display: grid; align-content: start; gap: 2px; padding: 10px 12px 12px; font-size: 13.5px; min-width: 0; }
+.id-card-body { display: flex; flex-direction: column; gap: 2px; padding: 10px 12px 12px; font-size: 13.5px; min-width: 0; }
 .id-card-body > b { font-size: 15px; line-height: 1.25; }
 .id-why b, .id-contra b { font-size: inherit; }
 .id-card-body i { color: var(--text-2); font-size: 12.5px; }
@@ -537,7 +537,7 @@ li.crit { font-weight: 600; }
 .id-contra b { font-weight: 700; }
 .id-card-body details { margin-top: 6px; }
 .id-card-body summary { cursor: pointer; font-weight: 600; font-size: 13px; color: var(--accent); }
-.id-more { margin-top: 6px; font-weight: 600; }
+.id-more { margin-top: auto; padding-top: 6px; font-weight: 600; }
 @media (min-width: 600px) { .id-cards { grid-template-columns: repeat(3, 1fr); } }
 
 /* --------------------------------------------------------------- diario */
@@ -976,7 +976,7 @@ html.is-offline #updated { color: var(--warn-ink); font-weight: 600; }
 .id-card:active { transform: scale(.99); }
 @media (hover: hover) { .id-card:hover { box-shadow: 0 6px 18px rgb(0 0 0 / .1); } }
 .id-card-body details, .id-zoom { position: relative; z-index: 1; }
-.id-more { color: var(--accent); font-weight: 600; margin-top: 6px; }
+.id-more { color: var(--accent); font-weight: 600; }
 .id-zoom { position: absolute; right: 8px; top: 8px; width: 34px; height: 34px; border-radius: 50%; border: 0; display: grid; place-items: center; background: rgb(20 18 14 / .55); color: #fff; cursor: zoom-in; backdrop-filter: blur(4px); }
 .id-zoom svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; }
 .taxon-dlg { padding: 0 0 calc(20px + env(safe-area-inset-bottom, 0px)); max-height: calc(var(--vvh, 100dvh) - 24px); overflow-y: auto; }
@@ -2157,3 +2157,7 @@ html[data-cmp-dir="prev"]::view-transition-new(cmp-pick) { animation-name: cmp-i
 .base-settings-body [data-base-selected] p { overflow-wrap: anywhere; margin: 6px 0; }
 .base-settings-body [data-base-status]:empty { display: none; }
 .map-base { background: var(--surface); color: var(--accent); border: 2px solid var(--accent); border-radius: 50%; display: grid; place-items: center; box-shadow: var(--shadow-1); font-size: 24px; font-weight: 700; }
+
+/* Tile: ogni riga si adatta alla card più alta, anche con dettagli espansi. */
+:is(.card-grid, .id-cards, .editorial-cards, .field-results, .trait-strip, .sci-signals, .rail) { align-items: stretch; }
+:is(.card-grid, .id-cards, .editorial-cards, .field-results, .trait-strip, .sci-signals) > * { align-self: stretch; }
