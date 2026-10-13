@@ -169,3 +169,37 @@ for(const width of [320,1280]) test(`schede contestuali complete, ritorno e navi
   expect(page.url()).toContain('#/riconosci');await page.keyboard.press('Escape');await expect(candidate).toBeFocused();
   expect(errors).toEqual([]);
 });
+
+for(const width of [320,1280]) test(`le keyword non spezzano gli elenchi numerati a ${width}px`,async({page})=>{
+  const errors=await setup(page,width);
+  const verify=async row=>{
+    await expect(row).toContainText('Gemme grosse, brune e pelose, senza filamenti');
+    const metrics=await row.evaluate(el=>{
+      const text=el.querySelector('.key-text'),link=text.querySelector('a[data-term="gemma"]')||text.querySelector('a.glossary-link');
+      const tail=[...text.childNodes].find(n=>n.nodeType===Node.TEXT_NODE&&n.textContent.includes('grosse'));
+      const range=document.createRange(),i=tail.textContent.indexOf('grosse');range.setStart(tail,i);range.setEnd(tail,i+6);
+      const a=link.getBoundingClientRect(),b=range.getBoundingClientRect();
+      return {delta:Math.abs(a.top-b.top),inline:b.left>=a.right-2,linkWidth:a.width,height:el.getBoundingClientRect().height};
+    });
+    expect(metrics.delta).toBeLessThan(4);expect(metrics.inline).toBe(true);expect(metrics.linkWidth).toBeLessThan(100);expect(metrics.height).toBeLessThan(80);
+  };
+  await page.goto('/#/albero/farnetto');await page.evaluate(()=>document.fonts.ready);
+  const row=page.locator('#tree-detail .keys > li').nth(3);await verify(row);
+  await row.scrollIntoViewIfNeeded();await page.screenshot({path:`/tmp/fungaroli-gemme-inline-${width}.png`});
+  // Anche con le vecchie regole grid, l'intera frase deve restare una sola cella.
+  await page.addStyleTag({content:'.keys li{display:grid;position:static;padding-left:0;grid-template-columns:30px 1fr;gap:12px}.keys li::before{position:static}'});
+  await verify(row);
+  await page.goto('/#/riconosci/alberi');await page.locator('#tree-observation-q').fill('Farnetto');
+  const trigger=page.locator('#tree-observation-results a').first();await trigger.click();
+  const modalRow=page.locator('#entity-sheet .keys > li').nth(3);await verify(modalRow);
+  const word=modalRow.locator('a.glossary-link');await word.click();
+  const panel=page.locator(width<700?'#learning-sheet':'#learning-popover');await expect(panel).toBeVisible();
+  await page.keyboard.press('Escape');await expect(word).toBeFocused();
+  await page.keyboard.press('Escape');await expect(trigger).toBeFocused();
+  for(const route of ['/#/specie/edulis','/#/fungo/amanita-phalloides']){
+    await page.goto(route);const keys=page.locator('.view:not([hidden]) .keys > li');await expect(keys.first()).toBeVisible();
+    const links=keys.locator('a.glossary-link');expect(await links.count()).toBeGreaterThan(0);
+    expect(await links.evaluateAll(nodes=>nodes.every(el=>el.getBoundingClientRect().width<150))).toBe(true);
+  }
+  expect(errors).toEqual([]);
+});

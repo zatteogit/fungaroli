@@ -425,7 +425,8 @@ label.btn { display: inline-flex; }
 li.crit { font-weight: 600; }
 
 .keys { list-style: none; counter-reset: k; margin: 0; padding: 0; display: grid; gap: 12px; font-size: 15px; }
-.keys li { counter-increment: k; position: relative; padding-left: 42px; min-height: 30px; }
+.keys li { display: block; counter-increment: k; position: relative; padding-left: 42px; min-height: 30px; }
+.keys .key-text { display: block; min-width: 0; }
 .keys li::before { content: counter(k); position: absolute; left: 0; top: 0; width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center; background: var(--accent-soft); color: var(--accent); font-weight: 800; font-size: 13.5px; }
 .checks { list-style: none; padding: 4px; margin: 0; display: grid; background: var(--surface); border: 1px solid var(--hair); border-radius: var(--r-lg); }
 .checks li { padding: 12px 14px 12px 46px; position: relative; font-size: 14.5px; }

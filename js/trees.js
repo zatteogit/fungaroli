@@ -80,7 +80,7 @@ export function renderTreePage(body, id) {
     </header>
     <div class="pbody">
     ${photos.length > 1 ? `<div class="sp-strip">${photos.slice(1).map((p, k) => `<button type="button" class="zoomable" data-photo="${k + 1}" aria-label="Foto ${k + 2}: ingrandisci"><img src="${ASSET(p.file)}" alt="" loading="lazy" decoding="async"></button>`).join('')}</div>` : ''}
-    ${t.recognize?.length ? `<h3>Come riconoscerlo</h3><ol class="keys">${t.recognize.map((k) => `<li>${esc(k)}</li>`).join('')}</ol>` : ''}
+    ${t.recognize?.length ? `<h3>Come riconoscerlo</h3><ol class="keys">${t.recognize.map((k) => `<li><span class="key-text">${esc(k)}</span></li>`).join('')}</ol>` : ''}
     ${fungi.length ? `<h3>Funghi che ci crescono</h3><div class="tree-fungi">${fungi.map((s) => `<a href="#/specie/${s.id}" class="tf" data-entity>${THUMB(s.id, 52)}<span>${esc(s.name)}</span></a>`).join('')}</div>${t.fungi_note ? `<p class="small muted">${esc(t.fungi_note)}</p>` : ''}` : ''}
     <div class="sp-more">
       ${sec('Nelle zone', zrows.length ? `<p class="small muted">Ettari dei boschi in cui domina (${esc(cats.join(', '))}), dalla Carta Forestale.</p><ul class="where">${zrows.map(({ z, ha }) => `

@@ -529,7 +529,7 @@ export function renderTaxonPage(box, key) {
       ${t.caution ? `<p class="id-why"><b>Come si mangia:</b> ${esc(t.caution)}</p>` : ''}
       <h3>Come riconoscerla</h3>
       ${traitStrip(null, t)}
-      ${t.check_before_picking?.length ? `<h3>Cosa controllare</h3><ol class="keys">${t.check_before_picking.map((x) => `<li>${esc(x)}</li>`).join('')}</ol>` : ''}
+      ${t.check_before_picking?.length ? `<h3>Cosa controllare</h3><ol class="keys">${t.check_before_picking.map((x) => `<li><span class="key-text">${esc(x)}</span></li>`).join('')}</ol>` : ''}
       ${look.length ? `<h3>Si confonde con</h3><ul class="tx-look">${look.map(({ id, o }) => { const op = photoOf(o); return `<li>
         <a class="tx-look-main" href="#/riconosci/confronta/${esc(t.key)}/${esc(o.key)}">${op ? `<img src="${ASSET(op.thumb || op.file)}" alt="" loading="lazy" decoding="async">` : ''}<span><b>${esc(o.name)}</b><i>${esc(o.latin)}</i><small class="tx-cmp">Confrontali carattere per carattere ›</small></span></a>
         <a class="tx-sheet" data-entity href="#/specie/${esc(id)}">Scheda di ${esc(o.name.toLowerCase())} ›</a></li>`; }).join('')}</ul>` : ''}
