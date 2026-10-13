@@ -13,12 +13,12 @@ const RECENT_KEY = 'fungaroli:search-recent';
 
 // la sezione in cui sei decide cosa viene prima (la ricerca resta su tutto)
 const PRIORITY = {
-  impara: ['termine','albero','fungo'], glossario: ['termine'],
+  glossario: ['termine'],
   specie: ['fungo', 'velenoso'], 'specie-dettaglio': ['fungo', 'velenoso'], riconosci: ['velenoso', 'fungo'],
   alberi: ['albero'], albero: ['albero'], uscite: ['zona', 'sentiero'], zona: ['sentiero', 'zona'], mappa: ['zona', 'sentiero'], diario: ['zona', 'fungo'], info: ['pagina'],
 };
 const PLACEHOLDER = {
-  impara: 'Cerca funghi, alberi e parole del bosco…', glossario: 'Cerca una parola del glossario…',
+  glossario: 'Cerca una parola del glossario…',
   specie: 'Cerca funghi, sosia, alberi, zone…', 'specie-dettaglio': 'Cerca funghi, sosia, alberi, zone…', riconosci: 'Cerca velenosi, sosia, funghi…',
   alberi: 'Cerca alberi, funghi, zone…', albero: 'Cerca alberi, funghi, zone…', mappa: 'Cerca zone, sentieri, funghi…',
 };

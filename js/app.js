@@ -176,7 +176,6 @@ async function init() {
   applyLegal();
   initTrees({ trees: trj, media: mj, assetUrl: embedded ? (f) => embedded.assets?.[f] || '' : (f) => f, zones, habitat, thumb });
   initLearning({ glossary: embedded?.glossary || await load('glossary'), trees: trj, traits: stj });
-  renderGuideCards($('#learn-editorial'));
   renderTreeGrid($('#tree-grid'));
   treesData = trj; idData = idj;
   renderFilterSummary(); // ora che c'e' il pregio delle specie, riordina i filtri
@@ -217,8 +216,7 @@ function parseRoute() {
   if (a === 'zona' && zones.some((z) => z.id === b)) return { view: 'zona', zoneId: b, offset: Math.max(0, Math.min(AHEAD_DAYS, +c || 0)), trailId: parts[3] === 'sentiero' && (trails[b]?.trails || []).some(t => String(t.id) === parts[4]) ? parts[4] : null };
   if (a === 'mappa') return { view: 'mappa', zoneId: b };
   if (a === 'specie' && b) return { view: 'specie-dettaglio', speciesId: b };
-  if (a === 'specie') return { view: 'specie' };
-  if (a === 'impara') return { view: 'impara' };
+  if (a === 'specie' || a === 'impara') return { view: 'specie' };
   if (a === 'glossario') return { view: 'glossario', termId: b };
   if (a === 'albero' && b) return { view: 'albero', treeId: b };
   if (a === 'alberi') return { view: 'alberi' };
@@ -235,7 +233,7 @@ function parseRoute() {
 // profondita' e posizione delle viste: decidono la direzione della transizione
 const LEVEL = { commestibile: 1, guide: 1, zona: 1, 'specie-dettaglio': 1, albero: 1, info: 1, metodo: 2, fungo: 1 };
 const TABS = ['uscite', 'mappa', 'specie', 'diario'];
-const SUB = { impara: 0, specie: 1, alberi: 2, riconosci: 3, glossario: 4 };
+const SUB = { specie: 0, alberi: 1, riconosci: 2, glossario: 3 };
 const scrollMem = new Map();
 let prev = null;
 function navKind(a, b) {
@@ -259,7 +257,7 @@ addEventListener('scroll', onScrollBar, { passive: true });
 
 // tasto indietro in alto a sinistra: freccia + nome della pagina a cui torni
 const navStack = [];
-const TITLES = { uscite: 'Uscite', mappa: 'Mappa', impara: 'Impara', specie: 'Funghi', alberi: 'Alberi', riconosci: 'Riconosci', glossario: 'Glossario', diario: 'Diario', info: 'Regole e metodo', metodo: 'Come funziona' };
+const TITLES = { uscite: 'Uscite', mappa: 'Mappa', specie: 'Funghi', alberi: 'Alberi', riconosci: 'Riconosci', glossario: 'Glossario', diario: 'Diario', info: 'Regole e metodo', metodo: 'Come funziona' };
 function titleOf(r) {
   if (!r) return '';
   if (r.view === 'zona') { const z = zones.find((x) => x.id === r.zoneId); return z ? splitName(z)[0] : 'Zona'; }
@@ -323,7 +321,7 @@ function updateBack(r, nav) {
 
 function route() {
   const r = parseRoute();
-  r.tab = { zona: 'uscite', impara: 'specie', glossario: 'specie', 'specie-dettaglio': 'specie', alberi: 'specie', albero: 'specie', riconosci: 'specie', info: '', metodo: '', guide: 'uscite', fungo: 'specie', commestibile: 'specie' }[r.view] ?? r.view;
+  r.tab = { zona: 'uscite', glossario: 'specie', 'specie-dettaglio': 'specie', alberi: 'specie', albero: 'specie', riconosci: 'specie', info: '', metodo: '', guide: 'uscite', fungo: 'specie', commestibile: 'specie' }[r.view] ?? r.view;
   r.hash = location.hash || '#/';
   const nav = navKind(prev, r), back = prev?.hash || '';
   if (prev) scrollMem.set(prev.hash, scrollY);
