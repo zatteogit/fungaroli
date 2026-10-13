@@ -535,9 +535,7 @@ li.crit { font-weight: 600; }
 .id-card-body i { color: var(--text-2); font-size: 12.5px; }
 .id-contra { color: var(--warn-ink); margin-top: 2px; line-height: 1.4; }
 .id-contra b { font-weight: 700; }
-.id-card-body details { margin-top: 6px; }
-.id-card-body summary { cursor: pointer; font-weight: 600; font-size: 13px; color: var(--accent); }
-.id-more { margin-top: auto; padding-top: 6px; font-weight: 600; }
+.id-more { position: relative; z-index: 1; margin-top: auto; padding: 6px 0 0; border: 0; background: none; font: inherit; font-size: 13px; font-weight: 600; text-align: left; cursor: pointer; }
 @media (min-width: 600px) { .id-cards { grid-template-columns: repeat(3, 1fr); } }
 
 /* --------------------------------------------------------------- diario */
@@ -975,7 +973,7 @@ html.is-offline #updated { color: var(--warn-ink); font-weight: 600; }
 .id-card:has(.id-link:focus-visible) { outline: 2px solid var(--accent); outline-offset: 2px; }
 .id-card:active { transform: scale(.99); }
 @media (hover: hover) { .id-card:hover { box-shadow: 0 6px 18px rgb(0 0 0 / .1); } }
-.id-card-body details, .id-zoom { position: relative; z-index: 1; }
+.id-zoom { z-index: 1; }
 .id-more { color: var(--accent); font-weight: 600; }
 .id-zoom { position: absolute; right: 8px; top: 8px; width: 34px; height: 34px; border-radius: 50%; border: 0; display: grid; place-items: center; background: rgb(20 18 14 / .55); color: #fff; cursor: zoom-in; backdrop-filter: blur(4px); }
 .id-zoom svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; }
