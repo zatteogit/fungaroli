@@ -36,7 +36,7 @@
       <a href="#/" data-tab="uscite"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 6 0 0 1 16 0z"/><path d="M10 12v6a2 2 0 0 0 4 0v-6"/></svg><span>Passeggiate</span></a>
       <a href="#/mappa" data-tab="mappa"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2z"/><path d="M9 4v14M15 6v14"/></svg><span>Mappa</span></a>
       <a href="#/specie" data-tab="specie"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="7" height="7" rx="2"/><rect x="13" y="4" width="7" height="7" rx="2"/><rect x="4" y="13" width="7" height="7" rx="2"/><rect x="13" y="13" width="7" height="7" rx="2"/></svg><span>Impara</span></a>
-      <a href="#/diario" data-tab="diario"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h11a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H6z"/><path d="M6 3v18M10 8h5M10 12h5"/></svg><span>Diario</span></a>
+      <a href="#/diario" data-tab="diario"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h11a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H6z"/><path d="M6 3v18M10 8h5M10 12h5"/></svg><span>Taccuino</span></a>
       <button type="button" class="tab-search" data-open-search aria-label="Cerca in tutta l'app" title="Cerca (/)"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg><span class="tsl">Cerca</span><kbd class="tsk">/</kbd></button>
     </nav>
 
@@ -72,7 +72,6 @@
       <ol id="ranking" class="rail" aria-labelledby="others-h"></ol>
       <h2 class="sec-title" id="season-h">Specie da conoscere in questi giorni</h2>
       <ul id="season" class="rail rail-portrait" aria-labelledby="season-h"></ul>
-      <section id="editorial" class="editorial-section" aria-label="Taccuini del bosco"></section>
       <section id="community-intro" class="community-intro" aria-label="La community di Fungaroli"></section>
       <p class="legal-strip small" id="home-legal"><span>Per raccogliere servono l'attestato micologico e il contributo regionale annuale.</span> <a href="#/info">Regole</a></p>
     </section>
@@ -93,30 +92,36 @@
 
     <section class="view" data-view="glossario" hidden aria-labelledby="glossary-h">
       <div class="view-head"><div><h1 id="glossary-h" class="view-title">Glossario</h1><p class="view-sub">Le parole che incontri tra boschi e sentieri.</p></div></div>
-      <nav class="seg-nav" aria-label="Sezioni di Impara"><a href="#/specie">Funghi</a><a href="#/alberi">Alberi</a><a href="#/riconosci">Riconosci</a><a href="#/glossario" aria-current="page">Glossario</a></nav>
+      <nav class="seg-nav" aria-label="Sezioni di Impara"><a href="#/specie">Funghi</a><a href="#/alberi">Alberi</a><a href="#/riconosci">Riconosci</a><a href="#/glossario" aria-current="page">Glossario</a><a href="#/guide">Guide</a></nav>
       <div id="glossary"></div>
     </section>
 
     <section class="view" data-view="specie" hidden aria-labelledby="sp-h">
       <div class="view-head"><div><h1 id="sp-h" class="view-title">Funghi</h1>
         <p class="view-sub">Come riconoscerli, i sosia pericolosi, quando e dove osservarli.</p></div></div>
-      <nav class="seg-nav" aria-label="Sezioni di Impara"><a href="#/specie" aria-current="page">Funghi</a><a href="#/alberi">Alberi</a><a href="#/riconosci">Riconosci</a><a href="#/glossario">Glossario</a></nav>
+      <nav class="seg-nav" aria-label="Sezioni di Impara"><a href="#/specie" aria-current="page">Funghi</a><a href="#/alberi">Alberi</a><a href="#/riconosci">Riconosci</a><a href="#/glossario">Glossario</a><a href="#/guide">Guide</a></nav>
       <div id="species-grid" class="species-grid"></div>
     </section>
 
     <section class="view" data-view="alberi" hidden aria-labelledby="tr-h">
       <div class="view-head"><div><h1 id="tr-h" class="view-title">Gli alberi</h1>
-        <p class="view-sub">Foglie, corteccia e frutti: un taccuino per conoscere gli alberi e gli habitat.</p></div></div>
-      <nav class="seg-nav" aria-label="Sezioni di Impara"><a href="#/specie">Funghi</a><a href="#/alberi" aria-current="page">Alberi</a><a href="#/riconosci">Riconosci</a><a href="#/glossario">Glossario</a></nav>
+        <p class="view-sub">Foglie, corteccia e frutti per conoscere gli alberi e gli habitat.</p></div></div>
+      <nav class="seg-nav" aria-label="Sezioni di Impara"><a href="#/specie">Funghi</a><a href="#/alberi" aria-current="page">Alberi</a><a href="#/riconosci">Riconosci</a><a href="#/glossario">Glossario</a><a href="#/guide">Guide</a></nav>
       <div id="tree-grid" class="species-grid"></div>
     </section>
 
     <section class="view" data-view="riconosci" hidden aria-labelledby="id-h">
       <div class="view-head"><div><h1 id="id-h" class="view-title">Riconosci</h1>
         <p class="view-sub">Funghi, alberi e dettagli del bosco: descrivi quello che vedi e confronta i caratteri.</p></div></div>
-      <nav class="seg-nav" aria-label="Sezioni di Impara"><a href="#/specie">Funghi</a><a href="#/alberi">Alberi</a><a href="#/riconosci" aria-current="page">Riconosci</a><a href="#/glossario">Glossario</a></nav>
+      <nav class="seg-nav" aria-label="Sezioni di Impara"><a href="#/specie">Funghi</a><a href="#/alberi">Alberi</a><a href="#/riconosci" aria-current="page">Riconosci</a><a href="#/glossario">Glossario</a><a href="#/guide">Guide</a></nav>
       <nav class="recognize-modes" aria-label="Che cosa vuoi riconoscere"><a href="#/riconosci" data-recognize-mode="funghi" aria-current="page">Funghi</a><a href="#/riconosci/alberi" data-recognize-mode="alberi">Alberi</a><a href="#/riconosci/bosco" data-recognize-mode="bosco">Bosco e sentiero</a></nav>
       <div id="identify"></div><div id="field-identify" hidden></div>
+    </section>
+
+    <section class="view" data-view="guide-list" hidden aria-labelledby="guides-h">
+      <div class="view-head"><div><h1 id="guides-h" class="view-title">Guide</h1><p class="view-sub">Piccole letture per conoscere il bosco e preparare la passeggiata.</p></div></div>
+      <nav class="seg-nav" aria-label="Sezioni di Impara"><a href="#/specie">Funghi</a><a href="#/alberi">Alberi</a><a href="#/riconosci">Riconosci</a><a href="#/glossario">Glossario</a><a href="#/guide" aria-current="page">Guide</a></nav>
+      <section id="editorial" class="editorial-section" aria-label="Guide del bosco"></section>
     </section>
 
     <section class="view view-hero" data-view="albero" hidden>
@@ -132,7 +137,7 @@
 
     <section class="view" data-view="diario" hidden aria-labelledby="journal-h">
       <div class="view-head"><div><h1 id="journal-h" class="view-title">Il mio taccuino</h1>
-        <p class="view-sub">Registra ogni uscita, anche quando non trovi niente: serve a tarare il modello.</p></div></div>
+        <p class="view-sub">Le tue uscite e osservazioni, con appunti e condizioni salvate.</p></div></div>
       <button class="btn primary big" type="button" data-open-journal>＋ Registra un'uscita</button>
       <div id="journal-list"></div>
       <div class="muted small" id="journal-storage"></div>

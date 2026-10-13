@@ -71,7 +71,7 @@ export function initCommunity({ zoneList, speciesList = SPECIES }) {
 
 export async function ensureAccount() {
   await ready;
-  if (!enabled) throw new Error('La community non è ancora attiva. Puoi usare il diario su questo dispositivo.');
+  if (!enabled) throw new Error('La community non è ancora attiva. Puoi usare il taccuino su questo dispositivo.');
   if (user) return user;
   return openAccount();
 }
@@ -86,7 +86,7 @@ export async function openAccount() {
   }
   return new Promise((resolve) => {
     authDialog.innerHTML = user ? `<div class="profile-header"><div><h2>${esc(user.handle || 'Il tuo profilo')}</h2><p class="small muted profile-role" data-account-role>Profilo personale</p></div><button type="button" class="profile-close" data-close aria-label="Chiudi il profilo">×</button></div>
-      <p>Il diario è privato. Solo le osservazioni che scegli di condividere entrano nei conteggi collettivi.</p>
+      <p>Il taccuino è privato. Solo le osservazioni che scegli di condividere entrano nei conteggi collettivi.</p>
       <div data-profile-base></div>
       <div class="profile-editorial" data-cms-link hidden></div>
       <div class="profile-actions" role="group" aria-label="Azioni del profilo"><button type="button" class="btn ghost" data-logout>Esci dal profilo</button><button type="button" class="btn primary" data-close autofocus>Chiudi</button></div>
@@ -94,7 +94,7 @@ export async function openAccount() {
       : `<h2>Unisciti a Fungaroli</h2><p>Un profilo senza password o email: usa la passkey del telefono o del computer. Il nome è facoltativo e non appare nelle segnalazioni.</p>
       <label>Come vuoi chiamarti? <input class="wiz-input" maxlength="32" autocomplete="nickname" data-handle placeholder="Un nome, anche inventato"></label>
       <button type="button" class="btn primary big" data-register>Crea profilo con passkey</button><button type="button" class="btn ghost big" data-login>Ho già una passkey</button>
-      <p class="small muted">Il diario rimane tuo. Zona, specie, giorno e quantità diventano pubblici solo in forma aggregata quando scegli di segnalarli. <a href="#/info">Privacy e condizioni</a></p>
+      <p class="small muted">Il taccuino rimane tuo. Zona, specie, giorno e quantità diventano pubblici solo in forma aggregata quando scegli di segnalarli. <a href="#/info">Privacy e condizioni</a></p>
       <p class="small muted">Per ritrovare il profilo usa la stessa passkey, eventualmente sincronizzata dal tuo dispositivo. Se la perdi, non possiamo recuperarla tramite email.</p>
       <p role="status" data-status></p><button type="button" class="btn ghost" data-close>Continua senza profilo</button>`;
     authDialog.setAttribute('aria-label', user ? 'Il tuo profilo' : 'Accedi o crea un profilo');
@@ -120,7 +120,7 @@ export async function openAccount() {
     authDialog.onclose = () => resolve(user);
     authDialog.querySelectorAll('[data-close]').forEach(b=>b.onclick=()=>authDialog.close());
     const auth = async (register) => {
-      if (!browserSupportsWebAuthn()) { status.textContent = 'Questo browser non supporta le passkey. Puoi continuare con il diario locale.'; return; }
+      if (!browserSupportsWebAuthn()) { status.textContent = 'Questo browser non supporta le passkey. Puoi continuare con il taccuino locale.'; return; }
       const buttons = authDialog.querySelectorAll('button'); buttons.forEach((b) => b.disabled = true);
       status.textContent = 'Conferma sul tuo dispositivo…';
       try {
@@ -137,7 +137,7 @@ export async function openAccount() {
       try { await communityRequest('auth/logout', 'POST', {}); user = null; changed(); authDialog.close(); } catch (e) { status.textContent = e.message; }
     });
     authDialog.querySelector('[data-delete-account]')?.addEventListener('click', async (e) => {
-      if (!e.currentTarget.dataset.confirm) { e.currentTarget.dataset.confirm = '1'; e.currentTarget.textContent = 'Conferma eliminazione'; status.textContent = 'Elimina il tuo profilo, il diario e le tue segnalazioni. Premi ancora per confermare.'; return; }
+      if (!e.currentTarget.dataset.confirm) { e.currentTarget.dataset.confirm = '1'; e.currentTarget.textContent = 'Conferma eliminazione'; status.textContent = 'Elimina il tuo profilo, il taccuino e le tue segnalazioni. Premi ancora per confermare.'; return; }
       try { await communityRequest('account', 'DELETE'); user = null; changed(); await refreshCommunity(); authDialog.close(); }
       catch (err) { status.textContent = err.message; }
     });

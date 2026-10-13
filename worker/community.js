@@ -227,7 +227,7 @@ export async function handleCommunity(request, env, now = Date.now()) {
       const entry = await body(request), id = entryMatch[1];
       const liveIds=await currentCatalogIds(env,url.origin);
       if (entry.id !== id || !liveIds.zoneIds.has(entry.zoneId) || typeof entry.date !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(entry.date)
-          || (entry.note != null && (typeof entry.note !== 'string' || entry.note.length > 2000))) fail('Voce del diario non valida.');
+          || (entry.note != null && (typeof entry.note !== 'string' || entry.note.length > 2000))) fail('Voce del taccuino non valida.');
       const date = new Date(entry.date + 'T12:00:00Z');
       if (!Number.isFinite(date.getTime()) || date.toISOString().slice(0, 10) !== entry.date) fail('Giorno non valido.');
       if (entry.effort?.startedAt != null) {
@@ -243,7 +243,7 @@ export async function handleCommunity(request, env, now = Date.now()) {
       if (previous && JSON.parse(previous).kind === 'plan') return result({ ok: true, entry: JSON.parse(previous) });
       if (!previous) {
         const count = await db.prepare('SELECT COUNT(*) AS n FROM diary_entries WHERE account_id=?').bind(user.id).first('n');
-        if (count >= 1000) fail('Il diario ha raggiunto 1000 voci. Esporta e archivia le uscite prima di aggiungerne altre.', 409);
+        if (count >= 1000) fail('Il taccuino ha raggiunto 1000 voci. Esporta e archivia le uscite prima di aggiungerne altre.', 409);
       }
       if (entry.kind === 'plan') {
         entry.forecast = { ...entry.forecast, mode: 'prospective', capturedAt: new Date(now).toISOString() };
@@ -276,10 +276,10 @@ export async function handleCommunity(request, env, now = Date.now()) {
       const data = validateReport(await body(request), now,await currentCatalogIds(env,url.origin));
       const entryId = typeof data.entryId === 'string' && /^[a-zA-Z0-9-]{4,64}$/.test(data.entryId) ? data.entryId : crypto.randomUUID();
       let entry = await db.prepare('SELECT payload FROM diary_entries WHERE account_id=? AND id=?').bind(user.id, entryId).first('payload');
-      if (data.entryId && !entry) fail('Questa uscita non appartiene al tuo diario.', 404);
+      if (data.entryId && !entry) fail('Questa uscita non appartiene al tuo taccuino.', 404);
       if (!entry) {
         const count = await db.prepare('SELECT COUNT(*) AS n FROM diary_entries WHERE account_id=?').bind(user.id).first('n');
-        if (count >= 1000) fail('Il diario ha raggiunto 1000 voci. Esporta e archivia le uscite prima di aggiungerne altre.', 409);
+        if (count >= 1000) fail('Il taccuino ha raggiunto 1000 voci. Esporta e archivia le uscite prima di aggiungerne altre.', 409);
         entry = JSON.stringify({ id: entryId, kind: 'outing', date: data.day, zoneId: data.zoneId, band: null,
         finds: { [data.speciesId]: data.amount }, searched: data.searched ? [data.speciesId] : [],
         note: '', predicted: {}, forecast: { mode: 'none' }, savedAt: new Date(now).toISOString() });

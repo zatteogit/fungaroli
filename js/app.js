@@ -246,7 +246,7 @@ function parseRoute() {
   if (a === 'albero' && b) return { view: 'albero', treeId: b };
   if (a === 'alberi') return { view: 'alberi' };
   if (a === 'riconosci') return { view: 'riconosci', recognizeMode: ['alberi','bosco'].includes(b) ? b : 'funghi', compare: b === 'confronta' ? c : '', pick: b === 'confronta' ? parts[3] : '' };
-  if (a === 'guide') return { view: 'guide', guideId: b };
+  if (a === 'guide') return b ? { view: 'guide', guideId: b } : { view: 'guide-list' };
   if (a === 'diario') return { view: 'diario' };
   if (a === 'info') return { view: 'info' };
   if (a === 'metodo') return { view: 'metodo' };
@@ -258,7 +258,7 @@ function parseRoute() {
 // profondita' e posizione delle viste: decidono la direzione della transizione
 const LEVEL = { commestibile: 1, guide: 1, zona: 1, 'specie-dettaglio': 1, albero: 1, info: 1, metodo: 2, fungo: 1 };
 const TABS = ['uscite', 'mappa', 'specie', 'diario'];
-const SUB = { specie: 0, alberi: 1, riconosci: 2, glossario: 3 };
+const SUB = { specie: 0, alberi: 1, riconosci: 2, glossario: 3, 'guide-list': 4 };
 const scrollMem = new Map();
 let prev = null;
 function navKind(a, b) {
@@ -282,7 +282,7 @@ addEventListener('scroll', onScrollBar, { passive: true });
 
 // tasto indietro in alto a sinistra: freccia + nome della pagina a cui torni
 const navStack = [];
-const TITLES = { uscite: 'Uscite', mappa: 'Mappa', specie: 'Funghi', alberi: 'Alberi', riconosci: 'Riconosci', glossario: 'Glossario', diario: 'Diario', info: 'Regole e metodo', metodo: 'Come funziona' };
+const TITLES = { uscite: 'Uscite', mappa: 'Mappa', specie: 'Funghi', alberi: 'Alberi', riconosci: 'Riconosci', glossario: 'Glossario', 'guide-list': 'Guide', diario: 'Taccuino', info: 'Regole e metodo', metodo: 'Come funziona' };
 function titleOf(r) {
   if (!r) return '';
   if (r.view === 'zona') { const z = zones.find((x) => x.id === r.zoneId); return z ? splitName(z)[0] : 'Zona'; }
@@ -299,11 +299,12 @@ function parentOf(r) {
   if (!r) return '#/';
   if (r.view === 'specie-dettaglio' || r.view === 'fungo' || r.view === 'commestibile') return '#/specie';
   if (r.view === 'albero') return '#/alberi';
+  if (r.view === 'guide') return '#/guide';
   if (r.view === 'riconosci' && r.compare) return '#/riconosci';
-  if (['specie','alberi','riconosci','glossario'].includes(r.view)) return '#/impara';
+  if (['specie','alberi','riconosci','glossario','guide-list'].includes(r.view)) return '#/impara';
   return '#/';
 }
-const PARENT_TITLE = (r) => ({ '#/impara': 'Impara', '#/specie': 'Funghi', '#/alberi': 'Alberi', '#/riconosci': 'Riconosci', '#/': 'Uscite' }[parentOf(r)]);
+const PARENT_TITLE = (r) => ({ '#/impara': 'Impara', '#/specie': 'Funghi', '#/alberi': 'Alberi', '#/riconosci': 'Riconosci', '#/guide': 'Guide', '#/': 'Uscite' }[parentOf(r)]);
 // modalita' app: quando il titolo grande della pagina passa sotto la barra in alto, la barra lo mostra piccolo al centro (come iOS)
 let titleIO = null;
 function watchTitle() {
@@ -346,7 +347,7 @@ function updateBack(r, nav) {
 
 function route() {
   const r = parseRoute();
-  r.tab = { zona: 'uscite', glossario: 'specie', 'specie-dettaglio': 'specie', alberi: 'specie', albero: 'specie', riconosci: 'specie', info: '', metodo: '', guide: 'uscite', fungo: 'specie', commestibile: 'specie' }[r.view] ?? r.view;
+  r.tab = { zona: 'uscite', glossario: 'specie', 'specie-dettaglio': 'specie', alberi: 'specie', albero: 'specie', riconosci: 'specie', info: '', metodo: '', guide: 'specie', 'guide-list': 'specie', fungo: 'specie', commestibile: 'specie' }[r.view] ?? r.view;
   r.hash = location.hash || '#/';
   const nav = navKind(prev, r), back = prev?.hash || '';
   if (prev) scrollMem.set(prev.hash, scrollY);
@@ -381,6 +382,8 @@ function routeNow(r, nav) {
     else renderFieldIdentify($('#field-identify'),r.recognizeMode,treeThumb);
   }
   enhanceGlossary(document.querySelector(`.view[data-view="${r.view}"]`));
+  const learningNav=document.querySelector(`.view[data-view="${r.view}"] .seg-nav`),selectedSection=learningNav?.querySelector('[aria-current="page"]');
+  if(selectedSection) learningNav.scrollLeft=selectedSection.offsetLeft-(learningNav.clientWidth-selectedSection.offsetWidth)/2;
   if (r.view === 'mappa') {
     requestAnimationFrame(() => {
       map?.invalidateSize();
@@ -721,7 +724,7 @@ function renderEdiblePage(id, box=$('#edible-detail')) {
   const s = catalog.find(x=>x.id===id);
   if (!s) { box.innerHTML='<p>Specie non presente nel catalogo.</p>';return; }
   const names=['gen','feb','mar','apr','mag','giu','lug','ago','set','ott','nov','dic'];
-  box.innerHTML=`<article class="editorial-article"><p class="eyebrow">Taccuino delle specie</p><h1>${esc(s.name)}</h1><p><i>${esc(s.latin)}</i></p>
+  box.innerHTML=`<article class="editorial-article"><p class="eyebrow">Scheda della specie</p><h1>${esc(s.name)}</h1><p><i>${esc(s.latin)}</i></p>
     <p>${esc(s.habitat || '')}</p><h2>Quando osservarla</h2><p>${s.months?.length ? s.months.map(m=>names[m-1]).join(' · ') : 'Calendario non ancora documentato.'}</p><p class="small muted">Stagione indicativa da manualistica, non validata nel Reatino: clima e quota possono spostarla. Le coltivazioni seguono cicli diversi.</p>
     ${s.caution?`<p class="notice">${esc(s.caution)}</p>`:''}
     <h2>Le osservazioni aiutano a conoscerla</h2><p>L’indice di crescita non è ancora disponibile per questa specie. Puoi annotare ritrovamenti e ricerche a vuoto nel taccuino e scegliere di condividerli.</p><button class="btn primary" type="button" data-report data-species="${s.id}">Segnala un’osservazione</button>
@@ -874,8 +877,8 @@ function buildSearch(idj, trj, embedded) {
     ['Riconosci un albero', 'Confronta foglie, corteccia e frutti', 'riconoscimento botanica foglia corteccia frutto gemme', '#/riconosci/alberi'],
     ['Gli alberi', 'Riconoscerli e cosa ci cresce sotto', 'alberi bosco piante', '#/alberi'],
     ['Prepararli e conservarli', 'Crudo, prebollitura, congelare, essiccare, sott\'olio', 'preparazione cucina cuocere cottura crudo prebollitura congelare surgelare essiccare seccare sottolio sott olio botulino conserve vasetti quantita bambini gravidanza alcol', '#/info'],
-    ['Il diario delle passeggiate', 'Annota ricerche, ritrovamenti e osservazioni', 'diario uscite registrare raccolto storico esporta', '#/diario'],
-    ['Il taccuino del bosco', 'Alberi, piogge e preparazione della passeggiata', 'imparare guida passeggiate boschi editoriale', '#/guide/leggere-il-bosco'],
+    ['Il mio taccuino', 'Annota ricerche, ritrovamenti e osservazioni', 'taccuino diario appunti uscite registrare raccolto storico esporta', '#/diario'],
+    ['Guide del bosco', 'Alberi, piogge e preparazione della passeggiata', 'imparare guide passeggiate boschi editoriale', '#/guide'],
     ['La mappa', 'Zone, parcheggi, sentieri, Carta Forestale', 'mappa carta forestale parcheggio sosta', '#/mappa'],
     ['Installa l\'app', 'A tutto schermo e senza campo', 'installa app schermo home offline', '#/info'],
   ];
@@ -934,7 +937,7 @@ function renderHome() {
     <div class="cover vtn" style="--vtn:cover">
       ${cov ? `<img class="cover-img" src="${cov.hd}" alt="${esc(cov.alt)}" fetchpriority="high">` : ''}
       <span class="shade"></span>
-      <a class="cover-link" data-walk-zone="${hero.z.id}" href="${walkHref(hero.z, hero.o, hero.walk?.t)}" aria-label="${esc(title)}, ${esc(hero.walk?.microzone || sub)}, ${esc(dayLabel(hero.o, hero.d.date, true))}: il taccuino della passeggiata"></a>
+      <a class="cover-link" data-walk-zone="${hero.z.id}" href="${walkHref(hero.z, hero.o, hero.walk?.t)}" aria-label="${esc(title)}, ${esc(hero.walk?.microzone || sub)}, ${esc(dayLabel(hero.o, hero.d.date, true))}: i dettagli della passeggiata"></a>
       <span class="cover-top"><span class="pill glass">Una passeggiata da esplorare · ${esc(dayLabel(hero.o, hero.d.date, true))}</span>${ring(hero.s)}</span>
       <span class="cover-body">
         <span class="cover-title">${esc(title)}</span>${sub ? `<span class="cover-sub">${esc(sub)}</span>` : ''}
@@ -943,7 +946,7 @@ function renderHome() {
           <small>${intornoA(hero.d.best.band)} ${hero.d.best.band} m${also.length ? ` · anche ${also.join('')}` : ''}</small></span></span>
         <span class="facts" aria-label="L'uscita in breve">${t ? fact('clock', `<span class="fk">entro le </span><b>${fmtRough(t.arrive, 15, 'floor')}</b>`) : ''}${fact('car', `<span><b>${compactTravel(zoneTrip(hero.z,hero.walk))}</b></span>`)}${hero.d.crowd ? fact('people', crowdText(hero.d.crowd)) : ''}${w0 ? `<span class="fact wx-${w0.level}" title="${esc(w0.text)}">${wxi(w0)}<span class="fx">${esc(w0.level === 'ok' ? w0.main : (w0.short || w0.main))}</span></span>` : ''}</span>
         ${note}
-        <span class="cover-cta" aria-hidden="true">Il taccuino della passeggiata <span>→</span></span>
+        <span class="cover-cta" aria-hidden="true">Scopri la passeggiata <span>→</span></span>
       </span>
     </div>`;
   const ol = $('#ranking');
@@ -1077,12 +1080,12 @@ function openPoint(zid, pt) {
     text = `Qui il sentiero incontra una ${h.kind === 'strada' ? 'strada mappata' : 'strada sterrata mappata'}${h.road ? ` (${esc(h.road)})` : ''}${h.ele != null ? `, a circa ${Math.round(h.ele / 25) * 25} m` : ''}. Verifica transitabilità e possibilità di sosta.`;
     preview = pointTrailPreview(z, t, d, h);
     actions = `<a class="btn primary" href="${gmaps(h.lat, h.lon)}" target="_blank" rel="noopener" aria-label="Indicazioni stradali fin qui">${IC.car} Indicazioni</a>
-      <a class="btn ghost" href="${walkHref(z, state.dayOffset, t)}" aria-label="Il taccuino di questo sentiero">${IC.book} Taccuino</a>${copyBtn(h.lat, h.lon)}`;
+      <a class="btn ghost" href="${walkHref(z, state.dayOffset, t)}" aria-label="Dettagli del sentiero">${IC.map} Dettagli del sentiero</a>${copyBtn(h.lat, h.lon)}`;
   } else {
     const t = pt.t;
     ic = null; eyebrow = 'Sentiero da esplorare'; title = '';
     text = trailCard(z, t, d, false);
-    actions = `<a class="btn primary" href="${walkHref(z, state.dayOffset, t)}" aria-label="Il taccuino di questo sentiero">${IC.book} Taccuino</a>${trailLinks(z, t)}`;
+    actions = `<a class="btn primary" href="${walkHref(z, state.dayOffset, t)}" aria-label="Dettagli del sentiero">${IC.map} Dettagli del sentiero</a>${trailLinks(z, t)}`;
   }
   sh.innerHTML = `
     <div class="sheet-nav"><button type="button" class="sheet-back">‹ ${esc(splitName(z)[0])}</button><button type="button" class="sheet-close" aria-label="Chiudi">✕</button></div>
@@ -1632,7 +1635,7 @@ function renderDetail() {
   box.querySelector('[data-save-plan]')?.addEventListener('click', async (e) => {
     const btn = e.currentTarget, status = box.querySelector('[data-plan-status]');
     btn.disabled = true;
-    try { await journal.savePlan(z.id, d.date, best.band); status.textContent = 'Previsione e dati salvati nel diario. Dopo l’uscita registra specie cercate, orario e ritrovamenti.'; }
+    try { await journal.savePlan(z.id, d.date, best.band); status.textContent = 'Previsione e dati salvati nel taccuino. Dopo l’uscita registra specie cercate, orario e ritrovamenti.'; }
     catch (err) { status.textContent = err.message; }
     finally { btn.disabled = false; }
   });
@@ -1829,7 +1832,7 @@ function renderTrails(z, d) {
   const list = (walk ? [walk.t, ...candidates.filter(t => t.id !== walk.t.id)] : candidates).slice(0,4);
   if (!list.length) return trails[z.id] ? '<p class="small muted">Non risultano sentieri compatibili in questi dati: verifica tracciati, accessibilità e segnaletica sul posto.</p>' : '';
   return `
-    <ol class="trails">${list.map((t, k) => `<li>${trailCard(z, t, d, k === 0)}<a class="small" href="${walkHref(z, state.dayOffset, t)}">Microzona e taccuino di questo sentiero →</a>${trailLinks(z, t)}</li>`).join('')}</ol>
+    <ol class="trails">${list.map((t, k) => `<li>${trailCard(z, t, d, k === 0)}<a class="small" href="${walkHref(z, state.dayOffset, t)}">Microzona e dettagli del sentiero →</a>${trailLinks(z, t)}</li>`).join('')}</ol>
     <p class="muted small">Sentieri OpenStreetMap (rete CAI). ${d?.best ? 'I km adatti incrociano tracciato, Carta Forestale e quota della specie.' : 'Questi percorsi sono elencati senza una valutazione di idoneità per la specie selezionata.'} Google Maps di norma non mostra i sentieri CAI: sul posto usa un'app con mappe OpenStreetMap (OsmAnd, Organic Maps, Komoot, Locus) e il GPX.</p>`;
 }
 
@@ -1874,6 +1877,14 @@ function trailLinks(z, t) {
 
 // --- testi legali e di sicurezza (data/legal.json, con ripiego prudente) ------
 const LEGAL_KEY = 'fungaroli:legal-accepted';
+function notebookPrivacyHtml(html) {
+  // Solo testo editoriale: URL e identificativi dei vecchi diari restano validi.
+  const template=document.createElement('template');template.innerHTML=String(html||'');
+  const walker=document.createTreeWalker(template.content,NodeFilter.SHOW_TEXT);
+  while(walker.nextNode()) walker.currentNode.textContent=walker.currentNode.textContent.replace(/\b(diario|Diario)\b/g,word=>word==='Diario'?'Taccuino':'taccuino');
+  return template.innerHTML;
+}
+
 function applyLegal() {
   const L = legal || {};
   if (L.home_strip) $('#home-legal span').textContent = L.home_strip;
@@ -1886,7 +1897,7 @@ function applyLegal() {
   if (zc.length) $('#zone-credits').innerHTML = `<b>Foto dei luoghi</b> (Wikimedia Commons): ${zc.join(' · ')}`;
   // preparazione e conservazione: regole per tutti i funghi (obbligatorie prima)
   if (prep?.general?.length && $('#prep-general')) $('#prep-general').innerHTML = prepGeneralHtml(prep.general);
-  $('#legal-sections').innerHTML = (L.info_sections || []).map((x) => `<details><summary><h2>${esc(x.title)}</h2></summary><div class="method">${x.id==='privacy'?String(x.html||'').replace('Non chiediamo la tua posizione','Non richiediamo la posizione per usare l’app')+`<p>${esc(BASE_PRIVACY_TEXT)}</p>`:x.html}</div></details>`).join('');
+  $('#legal-sections').innerHTML = (L.info_sections || []).map((x) => `<details><summary><h2>${esc(x.title)}</h2></summary><div class="method">${x.id==='privacy'?notebookPrivacyHtml(x.html).replace('Non chiediamo la tua posizione','Non richiediamo la posizione per usare l’app')+`<p>${esc(BASE_PRIVACY_TEXT)}</p>`:x.html}</div></details>`).join('');
   // primo avvio: avviso da confermare (si ripresenta se cambia la versione dei testi)
   const ver = String(L.version || 0) + (L.verified_on || '');
   let accepted = null;
