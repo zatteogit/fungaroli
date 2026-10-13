@@ -1,6 +1,7 @@
 // La scienza dietro l'indice, per chi vuole approfondire: la "ricetta" fattore per fattore con i numeri veri del giorno,
 // i grafici con le soglie della specie, il profilo della specie e la pagina del metodo (docs/metodo-scientifico.md).
 import { PARAMS, formatIndex } from './model.js';
+import { speciesLink } from './species-link.js';
 
 const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const n1 = (x, d = 1) => (x == null || Number.isNaN(x) ? '–' : x.toLocaleString('it-IT', { minimumFractionDigits: d, maximumFractionDigits: d }));
@@ -79,7 +80,7 @@ function speciesProfile(sp) {
   const months = sp.months.map((v, k) => `<span class="sp-m" title="${MESI[k]}: ${pct(v)}"><i style="height:${Math.max(4, v * 100)}%"></i><small>${MESI[k][0]}</small></span>`).join('');
   const forest = Object.entries(sp.forest).sort((a, b) => b[1] - a[1]).map(([k, v]) => `<li><span>${esc(k === 'non bosco' ? 'fuori bosco (prati, radure)' : k)}</span><i style="--w:${v * 100}%"></i><b>${n1(v, 1)}</b></li>`).join('');
   return `<div class="sci-profile">
-    <p class="sci-h">Il profilo di ${esc(sp.name.toLowerCase())} nel modello</p>
+    <p class="sci-h">Il profilo di ${speciesLink(sp, sp.name.toLowerCase())} nel modello</p>
     <dl class="sci-params">
       <div><dt>Finestra di latenza</dt><dd>${sp.lag[0]}–${sp.lag[1]} giorni dopo la pioggia</dd></div>
       <div><dt>Pioggia di riferimento</dt><dd>${sp.eref} mm (parametro di saturazione euristico delle due curve)</dd></div>
@@ -108,7 +109,7 @@ export function renderWhy({ r, s, i, sp, band, dateStr, shown, agg, parts = [], 
   const takeaway = !complete ? 'Mancano dati per un indice completo.' : tied.length ? `Nel modello ${tied.map(x => x.k.toLowerCase()).join(' e ')} ${tied.length > 1 ? 'sono i fattori che riducono' : 'è il fattore che riduce'} di più l’indice.` : 'Nessun fattore riduce l’indice nel modello.';
   const fc = `<p class="sci-note"><b>Dati ${r.quality?.complete ? 'completi per le finestre richieste' : 'incompleti'}.</b> ${r.quality?.usesForecast ? 'Il calcolo include previsioni meteorologiche, anche del giorno di acquisizione.' : 'Il calcolo usa meteo passato di modello, non misure nella fungaia.'} L'accuratezza dei ritrovamenti non è stata misurata nel Reatino. ${r.quality?.fetchedAt ? `Acquisizione: ${esc(new Date(r.quality.fetchedAt).toLocaleString('it-IT', { timeZone: 'Europe/Rome' }))}.` : ''}</p>`;
   return `
-    <p class="sci-lede">${Number.isFinite(shown) && complete ? `Indice sperimentale <b>${formatIndex(shown)}/10</b>` : '<b>Indice non disponibile</b>'} per ${esc(sp.name.toLowerCase())} a ${band} m. Descrive condizioni ambientali stimate, non la probabilità di trovare funghi.</p>
+    <p class="sci-lede">${Number.isFinite(shown) && complete ? `Indice sperimentale <b>${formatIndex(shown)}/10</b>` : '<b>Indice non disponibile</b>'} per ${speciesLink(sp, sp.name.toLowerCase())} a ${band} m. Descrive condizioni ambientali stimate, non la probabilità di trovare funghi.</p>
     <p class="sci-takeaway">${esc(takeaway)}</p>
     <p class="sci-sub">Come incidono le condizioni nel modello</p>
     <ul class="sci-signals" aria-label="Come incidono i fattori nel modello">${main.map(x => { const state = factorState(x); return `<li class="sci-signal ${tied.includes(x) && complete ? 'weak' : ''}"><div class="sci-signal-head"><b>${esc(x.k)}</b><span class="sci-state state-${state.kind}">${state.label}</span></div><p>${esc(x.brief)}</p></li>`; }).join('')}</ul>
