@@ -58,7 +58,7 @@ export function todayISO(d = new Date()) {
 }
 
 // Ritorna { [zoneId]: [serie per ciascuna fascia di quota] } e l'ora di aggiornamento.
-export async function loadWeather(zones, { force = false } = {}) {
+export async function loadWeather(zones, { force = false,onProgress } = {}) {
   // versione Artifact: serie gia' calcolate e incorporate (la pagina non puo' chiamare Open-Meteo)
   // (anche la copia di revisione su claude.ai: FUNGAROLI_REVIEW, solo meteo e mappa di base)
   const snap = globalThis.FUNGAROLI_DATA?.weather || globalThis.FUNGAROLI_REVIEW?.weather;
@@ -101,10 +101,10 @@ export async function loadWeather(zones, { force = false } = {}) {
       forecast_days: FORECAST_DAYS,
       timezone: 'Europe/Rome',
     });
-    const received=await fetchForecast(params);
+    const received=await fetchForecast(params,{onProgress});
     raw=received.raw; fetchedAt=received.fetchedAt; offline=received.stale;
-    if(raw.length!==locs.length||raw.some(r=>!Array.isArray(r?.daily?.time)))throw new Error('Serie meteo incompleta');
-    writeCache(sig, raw, fetchedAt);
+    if(raw.length!==locs.length||raw.some(r=>r!==null&&!Array.isArray(r?.daily?.time)))throw new Error('Serie meteo incompleta');
+    if(!received.partial)writeCache(sig, raw, fetchedAt);
     } catch (err) {
       // senza campo (o servizio limitato): l'ultimo meteo salvato, dichiarato come tale
       const old = readCache(sig, true);
@@ -115,12 +115,13 @@ export async function loadWeather(zones, { force = false } = {}) {
 
   const out = {};
   const expired = Date.now() - fetchedAt.getTime() > MAX_FORECAST_AGE_MS;
+  const missingZones=zones.filter(z=>locs.some((l,k)=>l.zid===z.id&&!raw[k]?.daily?.time)).map(z=>z.id);
   locs.forEach((l, k) => {
-    if (!raw[k]?.daily?.time) throw new Error('Serie meteo incompleta');
+    if(missingZones.includes(l.zid))return;
     (out[l.zid] ||= [])[l.bi] = toDaily(raw[k], today, {
       fetchedAt: fetchedAt.toISOString(), expired, requested: { latitude: l.lat, longitude: l.lon, elevation: l.band },
     });
   });
   const stale = offline || expired || Object.values(out).some((ss) => ss.some((s) => s.todayIndex < 0));
-  return { series: out, fetchedAt, offline, stale };
+  return { series: out, fetchedAt, offline, stale,missingZones };
 }

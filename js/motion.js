@@ -15,6 +15,14 @@ document.addEventListener('click', (e) => {
 }, true);
 
 const inView = (el) => { const r = el.getBoundingClientRect(); return r.bottom > 0 && r.top < innerHeight && r.width > 0; };
+const readyPhoto=el=>el?.complete&&el.naturalWidth>0;
+let transition=null,revision=0;
+function settle(vt,cleanup){
+  transition=vt;
+  // Una transizione interrotta è prevista durante tocchi rapidi, non un errore.
+  vt.ready.catch(()=>{});
+  vt.finished.then(()=>{},()=>{}).finally(()=>{cleanup?.();if(transition===vt){transition=null;delete root.dataset.nav;}});
+}
 const heroImg = () => document.querySelector('.view:not([hidden]) .phero-img img');
 
 // "fresco" per un attimo dopo un cambio di vista: anelli e liste entrano animati solo li', non a ogni filtro
@@ -28,14 +36,17 @@ function fresh() {
 
 // nav: 'push' (piu' in profondita'), 'pop' (indietro), 'left'/'right' (tra schede), 'none'
 export function navigate(update, { nav = 'none', back = '' } = {}) {
+  const current=++revision;
+  if(transition){transition.skipTransition();update();tapped=null;return;}
   if (!canVT() || nav === 'none') { update(); fresh(); countUp(); tapped = null; return; }
   root.dataset.nav = nav;
   let from = null;
-  if (nav === 'push' && tapped && inView(tapped)) from = tapped;
-  if (nav === 'pop') from = heroImg();
+  if (nav === 'push' && readyPhoto(tapped) && inView(tapped)) from = tapped;
+  if (nav === 'pop' && readyPhoto(heroImg())) from = heroImg();
   if (from) from.style.viewTransitionName = 'hero';
   const vt = document.startViewTransition(() => {
     if (from) from.style.viewTransitionName = '';
+    if(current!==revision)return;
     update();
     fresh();
     countUp();
@@ -46,33 +57,34 @@ export function navigate(update, { nav = 'none', back = '' } = {}) {
       to = document.querySelector(`.view:not([hidden]) a[href="${CSS.escape(back)}"] img, .view:not([hidden]) [data-species="${CSS.escape(id || '')}"] img`);
       if (to && !inView(to)) to = null;
     }
-    if (to) { to.style.viewTransitionName = 'hero'; vt.finished.finally(() => { to.style.viewTransitionName = ''; }); }
+    if (to && readyPhoto(to)) { to.style.viewTransitionName = 'hero'; vt.finished.then(()=>{},()=>{}).finally(() => { to.style.viewTransitionName = ''; }); }
   });
-  vt.finished.finally(() => { delete root.dataset.nav; });
+  settle(vt,()=>{if(from)from.style.viewTransitionName='';});
   tapped = null;
 }
 
 // aggiornamento nella stessa vista (filtri, giorno, risposte): gli elementi con un nome si spostano, il resto sfuma
 // tocchi veloci: se una transizione e' ancora in corso, l'aggiornamento successivo si applica subito
-let softVT = null;
 export function soft(update) {
-  if (!canVT() || softVT) { update(); return; }
+  const current=++revision;
+  if(transition){transition.skipTransition();update();return;}
+  if (!canVT()) { update(); return; }
   root.dataset.nav = 'soft';
-  softVT = document.startViewTransition(update);
-  softVT.finished.finally(() => { softVT = null; delete root.dataset.nav; });
+  settle(document.startViewTransition(()=>{if(current===revision)update();}));
 }
 
 // numeri degli anelli: contano da 0 al valore quando la vista e' appena entrata
 function countUp() {
   if (reduce.matches || !root.classList.contains('fresh')) return;
   document.querySelectorAll('.view:not([hidden]) .ring b').forEach((b) => {
-    const to = +b.textContent;
+    const final=b.textContent,to = Number(final.replace(',','.'));
     if (!Number.isFinite(to) || to <= 0 || b.dataset.counted) return;
     b.dataset.counted = '1';
     const t0 = performance.now(), dur = 900;
     const step = (t) => {
       const k = Math.min(1, (t - t0) / dur);
-      b.textContent = Math.round(to * (1 - (1 - k) ** 3));
+      if(!b.isConnected)return;
+      b.textContent = k===1?final:(to * (1 - (1 - k) ** 3)).toLocaleString('it-IT',{minimumFractionDigits:1,maximumFractionDigits:1});
       if (k < 1) requestAnimationFrame(step);
     };
     b.textContent = '0';

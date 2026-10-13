@@ -29,7 +29,7 @@ async function setup(page) {
   await page.goto('/');
   await expect(page.locator('#editorial')).toBeHidden();
   await page.goto('/#/guide');await expect(page.locator('#editorial a')).toHaveCount(3);
-  await page.goto('/');
+  await page.goto('/');await expect(page.locator('#hero .cover-link')).toBeVisible();
   return errors;
 }
 async function register(page, name) {
@@ -66,7 +66,7 @@ test('base privata del profilo: salvataggio, distanze, navigatori, isolamento e 
   for(const width of[320,390,1280]){await page.setViewportSize({width,height:900});expect(await profile.evaluate(el=>el.scrollWidth<=el.clientWidth)).toBe(true);if(width===390)await profile.screenshot({path:'/tmp/fungaroli-profile-base-mobile.png'});}
   await profile.locator('.profile-actions [data-close]').click();await expect(page.locator('#hero .facts')).toContainText('111 min');
   expect(await page.locator('#hero .ring b').textContent()).toBe(score);
-  await page.locator('#hero .cover-link').click();await page.locator('#detail [data-sec="accesso"] summary').click();
+  await page.locator('#hero .cover-link').click();await page.locator('#detail [data-sec="accesso"] summary').click({position:{x:5,y:10}});
   await expect(page.locator('#detail [data-sec="accesso"]')).toContainText('Da Roma 111 min · 77 km');
   const href=await page.locator('#detail a[href*="google.com/maps/dir"]').first().getAttribute('href');expect(new URL(href).searchParams.get('origin')).toBe('41.9028,12.4964');
   await page.reload();await expect(page.locator('#detail [data-sec="accesso"]')).toContainText('Da Roma');
@@ -80,7 +80,7 @@ test('base privata del profilo: salvataggio, distanze, navigatori, isolamento e 
   expect(JSON.stringify((await api(page,'summary')).data)).not.toContain('Roma');
   unavailable=true;
   expect((await api(page,'profile','PUT',{accountId:owner,base:{name:'Leonessa',lat:42.5678,lon:12.9648}})).status).toBe(200);
-  await page.reload();await page.locator('#detail [data-sec="accesso"] summary').click();
+  await page.reload();await page.locator('#detail [data-sec="accesso"] summary').click({position:{x:5,y:10}});
   await expect(page.locator('#detail [data-sec="accesso"]')).toContainText('in linea d’aria');await expect(page.locator('#detail [data-sec="accesso"]')).not.toContainText('111 min');
   await page.locator('[data-community-account]').first().click();await profile.locator('.base-settings summary').click();await profile.locator('[data-base-reset]').click();await expect(profile.locator('[data-base-status]')).toContainText('Base salvata');
   expect((await api(page,'session')).data.user.base).toBe(null);await profile.locator('.profile-actions [data-close]').click();
@@ -131,19 +131,19 @@ for (const width of [320,1280]) test(`passeggiata compatta e accordion esclusivi
     expect(await focus.evaluate(el=>el.scrollWidth<=el.clientWidth)).toBe(true);
   }
   await summary.focus();await page.keyboard.press('Enter');await expect(focus).toHaveAttribute('open','');
-  await expect(focus.locator('.walk-sketch')).toBeVisible();await expect(focus.locator('a[download]')).toBeVisible();
+  await expect(focus.getByRole('tabpanel',{name:'Profilo',exact:true})).toBeVisible();await expect(focus.locator('a[download]')).toBeVisible();
   await focus.screenshot({path:`/tmp/fungaroli-walk-accordion-open-${width}.png`});
   const meteo=page.locator('#detail [data-sec="meteo"]');await meteo.locator(':scope > summary').click();
   await expect(focus).not.toHaveAttribute('open','');await expect(page.locator('#detail details.sec[open]')).toHaveCount(1);
   await expect(page.locator('#charts svg')).not.toHaveCount(0);
   await meteo.locator('.sci-technical > summary').click();await expect(meteo).toHaveAttribute('open','');
-  await page.locator('#detail .plan [data-sec-open="passeggiata"]').click();
+  await focus.locator(':scope > summary').click();
   await expect(focus).toHaveAttribute('open','');await expect(meteo).not.toHaveAttribute('open','');
   await page.locator('#zone-days [aria-selected="false"]').first().click();
   await expect(focus).toHaveAttribute('open','');await expect(page.locator('#detail details.sec[open]')).toHaveCount(1);
   // Simulate a browser without native name grouping: the toggle fallback still closes siblings.
   await page.locator('#detail details.sec').evaluateAll(nodes=>nodes.forEach(el=>el.removeAttribute('name')));
-  const access=page.locator('#detail [data-sec="accesso"]');await access.locator(':scope > summary').click();
+  const access=page.locator('#detail [data-sec="accesso"]');await access.locator(':scope > summary').click({position:{x:5,y:10}});
   await expect(focus).not.toHaveAttribute('open','');await expect(page.locator('#detail details.sec[open]')).toHaveCount(1);
   await access.locator(':scope > summary').focus();await page.keyboard.press('Space');
   await expect(page.locator('#detail details.sec[open]')).toHaveCount(0);
@@ -157,6 +157,7 @@ test('tratto locale distinto dal percorso intero, segmenti separati e imbocco ma
   await focus.locator(':scope > summary').click();
   await expect(focus).toHaveAttribute('data-walk-trail','12313439');
   await expect(focus).toContainText('più segmenti separati');
+  await focus.getByRole('tab',{name:'Tracciato',exact:true}).click();
   await expect(focus.locator('.walk-sketch polyline')).toHaveCount(2);
   await focus.getByRole('tab',{name:'Profilo',exact:true}).click();
   await expect(focus.getByRole('tabpanel',{name:'Profilo',exact:true})).toContainText('Non costituiscono un profilo continuo');
@@ -179,12 +180,16 @@ for(const width of [320,1280]) test(`tracciato e profilo nello stesso riquadro a
   const errors=await setup(page);await page.goto('/#/zona/tancia/0/sentiero/12313366');
   const focus=page.locator('#detail .walk-focus');await focus.locator(':scope > summary').click();
   const visual=focus.locator('.trail-visual'),trace=visual.getByRole('tab',{name:'Tracciato',exact:true,includeHidden:true}),profile=visual.getByRole('tab',{name:'Profilo',exact:true,includeHidden:true});
-  await expect(trace).toHaveAttribute('aria-selected','true');
-  await expect(visual.getByRole('tabpanel',{name:'Tracciato',exact:true})).toBeVisible();
-  const size=await visual.boundingBox();await trace.focus();await page.keyboard.press('ArrowRight');
-  await expect(profile).toBeFocused();await expect(profile).toHaveAttribute('aria-selected','true');
+  await expect(profile).toHaveAttribute('aria-selected','true');
+  await expect(visual.getByRole('tabpanel',{name:'Profilo',exact:true})).toBeVisible();
+  const size=await visual.boundingBox();await profile.focus();await page.keyboard.press('ArrowRight');
+  await expect(trace).toBeFocused();await expect(trace).toHaveAttribute('aria-selected','true');
+  await page.keyboard.press('ArrowLeft');await expect(profile).toBeFocused();
   await expect(visual.getByRole('tabpanel',{name:'Tracciato',exact:true})).toBeHidden();
   await expect(visual.getByRole('tabpanel',{name:'Profilo',exact:true}).locator('svg')).toBeVisible();
+  const marker=visual.locator('button.tp-th').first(),chip=visual.locator('[data-trail-head-chip]').first();
+  await expect(marker).toHaveAttribute('aria-controls',await chip.getAttribute('id'));
+  await marker.click();await expect(chip).toBeFocused();await expect(chip).toHaveClass(/is-active/);await expect(marker).toHaveAttribute('aria-pressed','true');
   expect((await visual.boundingBox()).height).toBeCloseTo(size.height,1);
   await visual.evaluate(el=>scrollTo(0,el.getBoundingClientRect().top+scrollY-80));
   for(const theme of ['light','dark']){
@@ -192,8 +197,8 @@ for(const width of [320,1280]) test(`tracciato e profilo nello stesso riquadro a
     await visual.screenshot({path:`/tmp/fungaroli-trail-profile-${width}-${theme}.png`});
     await trace.click();await visual.screenshot({path:`/tmp/fungaroli-trail-trace-${width}-${theme}.png`});await profile.click();
   }
-  await profile.focus();await page.keyboard.press('Home');await expect(trace).toBeFocused();
-  await page.keyboard.press('End');await expect(profile).toBeFocused();
+  await profile.focus();await page.keyboard.press('Home');await expect(profile).toBeFocused();
+  await page.keyboard.press('End');await expect(trace).toBeFocused();await profile.click();
   await page.locator('#detail [data-sec="sentieri"] > summary').click();
   const peer=page.locator('#detail [data-sec="sentieri"] .trail-visual[data-trail-view-key="tancia/12313366"]');
   await expect(peer.getByRole('tab',{name:'Profilo',exact:true})).toHaveAttribute('aria-selected','true');
@@ -215,6 +220,20 @@ for(const width of [320,1280]) test(`tracciato e profilo nello stesso riquadro a
   await expect(visual.getByRole('tabpanel',{name:'Profilo',exact:true})).toContainText('mancano quote sufficienti');
   await expect(visual.getByRole('tabpanel',{name:'Profilo',exact:true}).locator('svg')).toHaveCount(0);
   expect(errors).toEqual([]);
+});
+
+test('riepiloghi essenziali negli accordion sul posto, senza voci duplicate o salti',async({page})=>{
+  await page.emulateMedia({reducedMotion:'reduce'});
+  const errors=await setup(page);await page.goto('/#/zona/tancia/0');await page.waitForLoadState('networkidle');
+  await expect(page.locator('#detail [data-sec-open],#detail .plan')).toHaveCount(0);
+  for(const id of ['specie','quando','accesso']){
+    const section=page.locator(`#detail details[data-sec="${id}"]`);await expect(section).toHaveCount(1);
+    const summary=section.locator(':scope > summary');await summary.evaluate(el=>el.scrollIntoView({block:'center'}));
+    await summary.click({position:{x:5,y:10}});await expect(section).toHaveAttribute('open','');
+    await expect(summary).toBeInViewport();await expect(page.locator('#detail details.sec[open]')).toHaveCount(1);
+    expect(await summary.locator('.glossary-link').evaluateAll(links=>links.every(a=>getComputedStyle(a).textDecorationStyle==='dotted'))).toBe(true);
+  }
+  await page.screenshot({path:'/tmp/fungaroli-inline-accordions.png',fullPage:true});expect(errors).toEqual([]);
 });
 
 test('editoriale, filtri completi, passkey, isolamento e condivisione revocabile', async ({ browser, page }) => {

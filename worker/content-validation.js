@@ -99,6 +99,21 @@ export function validateContent(id, data, previous) {
     for(const id of ['difficolta-t','difficolta-e','difficolta-ee','difficolta-eea']) if(!ids.has(id)) err('Mantieni le quattro voci della legenda CAI.');
     needsReview=!!previous&&!same(value,previous);
   }
+  if(id==='media-glossary') {
+    if(!value.terms||typeof value.terms!=='object'||Array.isArray(value.terms))err('Elenco delle illustrazioni non valido.');
+    checkIds(entries(value,'terms'));
+    for(const [term,row] of Object.entries(value.terms)) {
+      if(!Array.isArray(row.illustrations)||row.illustrations.length>6)err(`Aggiungi al massimo sei illustrazioni alla voce ${term}.`);
+      for(const image of row.illustrations) {
+        if(!image||!['photo','diagram'].includes(image.kind)||typeof image.generated!=='boolean'||image.generated&&image.kind!=='diagram')err('Distingui le fotografie dagli schemi e indica le immagini generate.');
+        if(!['file','alt','caption','author','license'].every(k=>typeof image[k]==='string'&&image[k].trim()))err(`Completa immagine, testo alternativo, didascalia, autore e licenza per ${term}.`);
+        if(!/^(?:https:\/\/[^\s"'<>]+|\/?assets\/[a-zA-Z0-9_/-]+\.(?:svg|webp|png|jpe?g))$/.test(image.file))err('Usa un’immagine HTTPS o un file nella cartella assets.');
+        if(!image.generated&&(!/^https:\/\/[^\s"'<>]+$/.test(image.page||'')||!/^https:\/\/[^\s"'<>]+$/.test(image.licenseUrl||'')))err('Per le immagini trovate indica la pagina di origine e il link alla licenza.');
+        for(const k of ['page','licenseUrl'])if(image[k]&&!/^https:\/\/[^\s"'<>]+$/.test(image[k]))err('Fonte e licenza devono avere collegamenti HTTPS validi.');
+      }
+    }
+    needsReview=!!previous&&!same(value,previous);
+  }
   if (id==='legal' && previous && !same(value,previous)) {
     if (!Number.isInteger(value.version)||value.version<=previous.version) err('Aumenta la versione degli avvisi quando aggiorni le regole.');
     needsReview=true;

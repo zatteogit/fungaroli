@@ -240,3 +240,75 @@ for(const width of [320,1280]) test(`guide in Impara e taccuino personale distin
   await expect(page.locator('.walk-focus')).not.toContainText('taccuino');
   expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);expect(errors).toEqual([]);
 });
+
+for(const width of [320,1280]) test(`illustrazioni del glossario, fonti e ingrandimento senza perdere il contesto a ${width}px`,async({page})=>{
+  const errors=await setup(page,width),panel=page.locator(width<700?'#learning-sheet':'#learning-popover');
+  await page.goto('/#/glossario/pliche');
+  const entry=page.locator('#glossary-term-pliche'),image=entry.locator('[data-learning-image]');
+  await expect(entry.locator('.learning-sources a')).toHaveAttribute('href','https://enciclopedia.funghiitaliani.it/termine.php?show=2638');
+  await expect(image.locator('img')).toBeVisible();await expect.poll(()=>image.locator('img').evaluate(el=>el.naturalWidth)).toBeGreaterThan(0);
+  await expect(entry.locator('figcaption')).toContainText('Japonica');await expect(entry.locator('figcaption a').first()).toHaveAttribute('href','https://creativecommons.org/licenses/by-sa/4.0/');
+  const hash=await page.evaluate(()=>location.hash);await image.focus();await page.keyboard.press('Enter');
+  await expect(page.locator('dialog.lb')).toBeVisible();await expect(page.locator('.lb-cap')).toContainText('Pliche del finferlo');
+  await page.keyboard.press('Escape');await expect(image).toBeFocused();await expect(entry).toHaveAttribute('open','');expect(await page.evaluate(()=>location.hash)).toBe(hash);
+  await page.goto('/#/specie/cibarius');
+  const keyword=page.locator('#species-detail a.glossary-link[data-term="pliche"]:visible').first();await keyword.click();
+  await expect(panel).toBeVisible();const zoom=panel.locator('[data-learning-image]');await expect(zoom).toBeVisible();
+  await expect.poll(()=>zoom.locator('img').evaluate(el=>el.naturalWidth)).toBeGreaterThan(0);
+  await expect.poll(()=>panel.evaluate(el=>{const r=el.getBoundingClientRect();return r.left>=0&&r.right<=innerWidth&&r.top>=0&&r.bottom<=innerHeight;})).toBe(true);
+  await page.evaluate(()=>document.fonts.ready);await panel.screenshot({path:`/tmp/fungaroli-glossary-pliche-${width}-light.png`});
+  await page.evaluate(()=>document.documentElement.dataset.theme='dark');await panel.screenshot({path:`/tmp/fungaroli-glossary-pliche-${width}-dark.png`});
+  await zoom.click();await expect(page.locator('dialog.lb')).toBeVisible();
+  await page.keyboard.press('Escape');await expect(panel).toBeVisible();await expect(zoom).toBeFocused();
+  await page.keyboard.press('Escape');await expect(panel).toBeHidden();await expect(keyword).toBeFocused();
+  await page.goto('/#/glossario/imenoforo');await expect(page.locator('#glossary-term-imenoforo .learning-image')).toHaveCount(4);
+  await page.goto('/#/glossario/volva');await expect(page.locator('#glossary-term-volva .learning-diagram img')).toBeVisible();
+  expect(errors).toEqual([]);
+});
+
+for(const width of [320,1280]) test(`titoletti senza link e keyword complete nel testo a ${width}px`,async({page})=>{
+  const errors=await setup(page,width);await page.goto('/#/specie/caesarea');
+  await expect(page.locator('#species-detail .trait-strip .ts-k a')).toHaveCount(0);
+  const cap=page.locator('#species-detail .keys [data-term="cappello"]').first(),stem=page.locator('#species-detail .keys [data-term="gambo"]').first();
+  await expect(cap).toBeVisible();await expect(stem).toBeVisible();
+  await cap.click();const panel=page.locator(width<700?'#learning-sheet':'#learning-popover');await expect(panel.locator('h2')).toHaveText('Cappello');
+  await page.keyboard.press('Escape');await expect(cap).toBeFocused();
+  for(const theme of ['light','dark']){await page.evaluate(t=>document.documentElement.dataset.theme=t,theme);await page.locator('#species-detail .trait-strip').screenshot({path:`/tmp/fungaroli-traits-${width}-${theme}.png`});}
+  await page.goto('/');await expect(page.locator('#hero .cover-link')).toBeVisible();await page.waitForLoadState('networkidle');
+  expect(await page.locator('#hero .sp-also').evaluateAll(nodes=>nodes.every(el=>{const score=el.querySelector('.sp-also-score');return !!score&&score.children[0].tagName==='I'&&score.children[1].tagName==='B';}))).toBe(true);
+  await page.locator('#hero .cover-sp').screenshot({path:`/tmp/fungaroli-also-species-${width}.png`});
+  const repeated=await page.locator('#hero .cover-walk,#ranking .tile-body').evaluateAll(nodes=>nodes.some(el=>{const text=el.textContent;const refs=text.match(/sentiero\s+\d+/gi)||[];return new Set(refs.map(x=>x.toLowerCase())).size<refs.length;}));expect(repeated).toBe(false);
+  expect(errors).toEqual([]);
+});
+
+test('foto fuori vista differite, skeleton stabili e visore recuperabile dopo un errore',async({page})=>{
+  const errors=await setup(page,390);await page.goto('/#/specie');
+  const cards=page.locator('#species-grid .sp-card'),last=cards.filter({has:page.locator('img')}).last();
+  await expect(last.locator('img')).toHaveAttribute('data-src',/.+/);await expect(last.locator('img')).not.toHaveAttribute('src',/.+/);
+  const before=await last.boundingBox();await last.scrollIntoViewIfNeeded();await expect.poll(()=>last.locator('img').evaluate(el=>el.naturalWidth)).toBeGreaterThan(0);
+  const after=await last.boundingBox();expect(after.width).toBeCloseTo(before.width,0);expect(after.height).toBeCloseTo(before.height,0);
+  // Trattiene una vera immagine per verificare lo stato durante il download.
+  let release;const gate=new Promise(r=>release=r);let failFull=true;
+  await page.route('**/assets/glossary/pliche.jpg*',async route=>{await gate;if(failFull&&route.request().url().includes('full-test'))return route.abort();return route.continue();});
+  await page.goto('/#/glossario/pliche');const image=page.locator('#glossary-term-pliche .learning-image img');
+  await expect(image).toHaveAttribute('data-image-state','loading');const pending=await image.boundingBox();
+  await page.screenshot({path:'/tmp/fungaroli-photo-skeleton.png'});release();await expect(image).toHaveAttribute('data-image-state','ready');const ready=await image.boundingBox();expect(ready.height).toBe(pending.height);
+  await page.evaluate(async()=>{const {openLightbox}=await import('/js/lightbox.js');openLightbox([{src:'/assets/glossary/pliche.jpg?full-test',alt:'Pliche del finferlo'}]);});
+  await expect(page.locator('.lb-retry')).toBeVisible();await expect(page.locator('.lb-loading')).toHaveText('Foto non disponibile.');failFull=false;
+  await page.locator('.lb-retry').click();await expect(page.locator('.lb-stage img')).toHaveAttribute('data-image-state','ready');await expect(page.locator('.lb-loading')).toBeHidden();
+  await page.keyboard.press('Escape');await expect(page.locator('#glossary-term-pliche')).toHaveAttribute('open','');expect(errors).toEqual([]);
+});
+
+test('tocchi rapidi nelle transizioni mantengono l’ultima vista e i decimali dell’indice',async({page})=>{
+  const errors=await setup(page,1280);await page.emulateMedia({reducedMotion:'no-preference'});
+  const final=await page.locator('#hero .ring b').innerText();
+  await page.evaluate(async()=>{
+    const {navigate,soft}=await import('/js/motion.js');
+    navigate(()=>{location.hash='#/specie';},{nav:'push'});
+    soft(()=>{location.hash='#/alberi';});
+    navigate(()=>{location.hash='#/glossario';},{nav:'left'});
+  });
+  await expect(page.locator('[data-view="glossario"]')).toBeVisible();
+  await expect.poll(()=>page.evaluate(()=>document.documentElement.dataset.nav||'')).toBe('');
+  await page.goto('/');await expect(page.locator('#hero .ring b')).toHaveText(final);expect(final).toMatch(/^\d,\d$/);expect(errors).toEqual([]);
+});

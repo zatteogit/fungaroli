@@ -88,7 +88,7 @@ test('redazione, bozze, pubblicazione, conflitti, agenti e catalogo condiviso',a
   await loginFixture(page);await page.reload();
   await expect(page.locator('#cms-workspace')).toBeVisible();
   await expect(page.locator('[data-profile-label]')).toHaveText('Matteo');
-  await expect(page.locator('[data-resource]')).toHaveCount(18);
+  await expect(page.locator('[data-resource]')).toHaveCount(19);
   const original=(await api(page,'/api/content/v1/snapshot')).data;
   await page.locator('[data-resource="guides"]').click();
   await expect(page.locator('#cms-editor > h2')).toHaveText('Articoli e taccuini');
@@ -129,10 +129,20 @@ test('redazione, bozze, pubblicazione, conflitti, agenti e catalogo condiviso',a
   expect((await cms(page,'releases','POST',{baseRelease:list.release,items:[{id:'glossary',version:glossaryDraft.data.version}]})).status).toBe(422);
   expect((await api(page,'/api/content/v1/snapshot')).data.resources.glossary).toEqual(original.resources.glossary);
   expect((await cms(page,'releases','POST',{baseRelease:list.release,items:[{id:'glossary',version:glossaryDraft.data.version}],reviewed:true})).status).toBe(201);
+  await page.goto('/redazione');await page.locator('[data-resource="media-glossary"]').click();
+  await page.locator('[data-record]').selectOption('pliche');
+  await page.locator('details.cms-fieldset > summary',{hasText:'Illustrazioni'}).click();
+  await expect(page.getByLabel('Immagine generata',{exact:true})).toBeEnabled();
+  await page.getByLabel('Didascalia',{exact:true}).fill('Pliche del finferlo: didascalia di prova verificata.');
+  await page.locator('[data-save]').click();await expect(page.locator('#cms-status')).toContainText('Bozza salvata');
+  await page.locator('[data-preview]').click();await expect(page.locator('#cms-preview img')).toBeVisible();await expect(page.locator('#cms-preview')).toContainText('Japonica');
+  await page.locator('[data-publish]').click();await expect(page.locator('#cms-status')).toContainText('Verifica le fonti');
+  await page.locator('[data-reviewed]').check();await page.locator('[data-publish]').click();await expect(page.locator('#cms-status')).toContainText('Pubblicato');
+  await page.goto('/#/glossario/pliche');await expect(page.locator('#glossary-term-pliche figcaption')).toContainText('didascalia di prova verificata');
   await page.goto('/#/glossario/volva');await page.reload();await expect(page.locator('#glossary-term-volva')).toContainText('Precisazione verificata dalla redazione.');
   // Restore the seed as a new revision, preserving history and isolating later browser tests.
   const restoreItems=[];
-  for(const id of ['guides','edible-catalog','glossary']){const current=(await cms(page,'items/'+id)).data;const restored=await cms(page,`items/${id}/restore`,'POST',{version:0},{'if-match':`"${current.version}"`});expect(restored.status).toBe(200);restoreItems.push({id,version:restored.data.version});}
+  for(const id of ['guides','edible-catalog','glossary','media-glossary']){const current=(await cms(page,'items/'+id)).data;const restored=await cms(page,`items/${id}/restore`,'POST',{version:0},{'if-match':`"${current.version}"`});expect(restored.status).toBe(200);restoreItems.push({id,version:restored.data.version});}
   list=(await cms(page,'items')).data;
   expect((await cms(page,'releases','POST',{baseRelease:list.release,items:restoreItems,reviewed:true})).status).toBe(201);
   expect((await api(page,'/api/content/v1/snapshot')).data.resources.guides).toEqual(original.resources.guides);

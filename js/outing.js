@@ -26,14 +26,15 @@ export async function loadOuting(zones, { force = false } = {}) {
       latitude: locs.map((l) => l.lat).join(','), longitude: locs.map((l) => l.lon).join(','), elevation: locs.map((l) => l.elev).join(','),
       hourly: HOURLY, forecast_days: 8, timezone: 'Europe/Rome',
     });
-    const {raw,fetchedAt}=await fetchForecast(q);
+    const {raw,fetchedAt,partial}=await fetchForecast(q);
     const data = {};
     locs.forEach((l, k) => {
-      const h = raw[k].hourly;
+      const h = raw[k]?.hourly;
+      if(!h)return;
       data[l.zid] = { time: h.time, p: h.precipitation, pp: h.precipitation_probability, wc: h.weather_code, g: h.wind_gusts_10m, t: h.temperature_2m,
         fetchedAt: fetchedAt.toISOString(), elevation: l.elev };
     });
-    try { localStorage.setItem(KEY, JSON.stringify({ sig, t: fetchedAt.getTime(), data })); } catch { /* quota */ }
+    try { if(!partial)localStorage.setItem(KEY, JSON.stringify({ sig, t: fetchedAt.getTime(), data })); } catch { /* quota */ }
     return data;
   } catch {
     // senza rete: l'ultima previsione salvata (stesse zone), se c'e'
