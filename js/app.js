@@ -1643,13 +1643,13 @@ function renderHuman(z, d) {
   return `
     <div class="human">
       <p><span class="badge crowd-${d.crowd.level}">${crowdText(d.crowd).replace(/^./, (c) => c.toUpperCase())}</span> <span class="muted small">${esc(hol || d.crowd.day.label)}</span></p>
+      <p class="muted small">Stima indicativa per la zona: giorno e festivi, notorietà stimata, facilità d’accesso, pioggia e andamento recente dell’indice. Non misuriamo le presenze.</p>
       <dl class="kv">
         <dt>Alba</dt><dd>verso le ${fmtRough(t.sunrise, 5)} · raccolta consentita dalle <b>${fmtRough(t.legal, 5, 'ceil')}</b> alle ${fmtRough(t.end, 5, 'floor')}</dd>
         <dt>Arrivo consigliato</dt><dd><b>entro le ${fmtRough(t.arrive, 15, 'floor')}</b>. ${esc(t.why)}</dd>
         ${(() => { const dep = new Date(t.arrive.getTime() - ((access[z.id]?.[0]?.minutes ?? z.drive_min) + 10) * 6e4); return `<dt>Partenza da Rieti</dt><dd>verso le ${fmtRough(dep, 15, 'floor')}</dd>`; })()}
       </dl>
       ${tips.length ? `<ul class="reasons">${tips.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>` : ''}
-      <p class="muted small">Stima euristica: giorno della settimana e festivi, notorietà della zona, da quanti giorni l'indice è alto, facilità d'accesso, pioggia.</p>
     </div>`;
 }
 
