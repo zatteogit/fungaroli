@@ -22,6 +22,7 @@ import { initCommunity, communityStatus, communityRank, reportBadge } from './co
 import { guideTitle, renderGuideCards, renderGuide } from './guides.js';
 import { buildEdibleCatalog, seasonStatus, seasonLabel, searchEdibleCatalog } from './edible-catalog.js';
 import { mountSpeciesAutocomplete } from './species-autocomplete.js';
+import { uniquePlaceProposals, chooseWalkTrail, walkContext, trailSketch } from './walks.js';
 
 const HISTORY_DAYS = 30;   // giorni passati mostrati nel grafico
 const AHEAD_DAYS = 7;      // giorni futuri valutati
@@ -62,6 +63,7 @@ const state = {
   // giorno della mappa e della scheda: dalle 14 (ora italiana) si guarda a domani, oggi l'uscita e' ormai andata
   dayOffset: +new Intl.DateTimeFormat('it-IT', { hour: 'numeric', hourCycle: 'h23', timeZone: 'Europe/Rome' }).format(new Date()) >= 14 ? 1 : 0,
   zoneId: null,
+  trailId: null,
   distancePenalty: false,
   avoidCrowd: false,
   preferComfort: false,
@@ -197,7 +199,7 @@ function initShell() {
 function parseRoute() {
   const parts = location.hash.replace(/^#\/?/, '').split('/').filter(Boolean).map((x) => { try { return decodeURIComponent(x); } catch { return x; } });
   const [a, b, c] = parts;
-  if (a === 'zona' && zones.some((z) => z.id === b)) return { view: 'zona', zoneId: b, offset: Math.max(0, Math.min(AHEAD_DAYS, +c || 0)) };
+  if (a === 'zona' && zones.some((z) => z.id === b)) return { view: 'zona', zoneId: b, offset: Math.max(0, Math.min(AHEAD_DAYS, +c || 0)), trailId: parts[3] === 'sentiero' && (trails[b]?.trails || []).some(t => String(t.id) === parts[4]) ? parts[4] : null };
   if (a === 'mappa') return { view: 'mappa', zoneId: b };
   if (a === 'specie' && b) return { view: 'specie-dettaglio', speciesId: b };
   if (a === 'specie') return { view: 'specie' };
@@ -313,6 +315,7 @@ function route() {
 function routeNow(r, nav) {
   state.view = r.view;
   if (r.zoneId) state.zoneId = r.zoneId;
+  if (r.view === 'zona' || r.view === 'mappa') state.trailId = r.trailId || null;
   if (r.view === 'zona') state.dayOffset = r.offset;
   document.querySelectorAll('[data-view]').forEach((v) => { v.hidden = v.dataset.view !== r.view; });
   const tab = r.tab;
@@ -764,10 +767,26 @@ function combosList() {
       if (d?.best) { const s = adjusted(z, d.score, d); combos.push({ z, o, d, s, r: preferenceRank(z, s, d) * wxRank(z, d) * communityRank(z.id, selectedCatalog().map((s) => s.id)) }); }
     }
   }
-  combos.sort((a, b) => b.r - a.r || a.o - b.o);
-  const perZone = {};
-  return combos.filter((c) => (perZone[c.z.id] = (perZone[c.z.id] || 0) + 1) <= (state.homeDay == null ? 2 : 1));
+  const seenTrails = new Set(), list = [];
+  for (const c of uniquePlaceProposals(combos)) {
+    const walk = walkFor(c.z, c.d, null, seenTrails);
+    if (!walk && trails[c.z.id]?.trails.length) continue; // same mapped route already featured elsewhere
+    if (walk) seenTrails.add(String(walk.t.id));
+    list.push({ ...c, walk });
+  }
+  return list;
 }
+
+const walkHref = (z, o, t) => `#/zona/${z.id}/${o}${t ? '/sentiero/' + t.id : ''}`;
+function walkFor(z, d, trailId = null, excluded = new Set()) {
+  const all = (trails[z.id]?.trails || []).filter(t => !excluded.has(String(t.id)));
+  const compatible = d?.best ? trailsFor(z, d.best.species, d.best.band).filter(t => !excluded.has(String(t.id))) : [];
+  const selected = trailId && all.find(t => String(t.id) === String(trailId));
+  const t = selected ? compatible.find(t => t.id === selected.id) || selected
+    : chooseWalkTrail(compatible, all, t => headsOf(z, t));
+  return walkContext(z, t, t ? headsOf(z, t) : []);
+}
+const walkBrief = w => w ? `${w.t.ref ? 'Sentiero ' + w.t.ref : trailName(w.t)} · ${w.t.difficulty || 'difficoltà n.d.'} · ${fmtKm(w.t.in_zone_km)} km nella zona` : 'Sentieri da verificare';
 
 // Nome della zona in titolo + sottotitolo ("Monte Tancia (Monti Sabini)" -> due righe)
 const splitName = (z) => {
@@ -806,12 +825,12 @@ function buildSearch(idj, trj, embedded) {
   }
   const seen = new Map();
   for (const z of zones) for (const t of trails[z.id]?.trails || []) {
-    const key = `${t.ref || ''}|${t.name || ''}`;
+    const key = String(t.id);
     if (seen.has(key)) { seen.get(key).zs.push(z); continue; }
     seen.set(key, { t, zs: [z] });
   }
   for (const { t, zs } of seen.values()) {
-    items.push({ kind: 'sentiero', title: `${t.ref ? `Sentiero ${t.ref}` : 'Sentiero'}${t.name ? ` · ${t.name}` : ''}`, sub: zs.map((z) => splitName(z)[0]).join(', '), hay: `${(t.itinerary || []).join(' ')} ${t.operator || ''} cai segnavia`, href: `#/zona/${zs[0].id}`, img: segnavia(t) });
+    items.push({ kind: 'sentiero', title: `${t.ref ? `Sentiero ${t.ref}` : 'Sentiero'}${t.name ? ` · ${t.name}` : ''}`, sub: zs.map((z) => splitName(z)[0]).join(', '), hay: `${(t.itinerary || []).join(' ')} ${t.operator || ''} cai segnavia`, href: walkHref(zs[0], 0, t), img: segnavia(t) });
   }
   const pages = [
     ['Riconosci un fungo', 'Descrivi quello che vedi, anche se è velenoso', 'identificare trovato velenoso sosia caratteri lamelle pori volva anello sporata', '#/riconosci'],
@@ -881,10 +900,11 @@ function renderHome() {
     <div class="cover vtn" style="--vtn:cover">
       ${cov ? `<img class="cover-img" src="${cov.hd}" alt="${esc(cov.alt)}" fetchpriority="high">` : ''}
       <span class="shade"></span>
-      <a class="cover-link" href="#/zona/${hero.z.id}/${hero.o}" aria-label="${esc(title)}, ${esc(dayLabel(hero.o, hero.d.date, true))}: il piano dell'uscita"></a>
+      <a class="cover-link" data-walk-zone="${hero.z.id}" href="${walkHref(hero.z, hero.o, hero.walk?.t)}" aria-label="${esc(title)}, ${esc(hero.walk?.microzone || sub)}, ${esc(dayLabel(hero.o, hero.d.date, true))}: il taccuino della passeggiata"></a>
       <span class="cover-top"><span class="pill glass">Una passeggiata da esplorare · ${esc(dayLabel(hero.o, hero.d.date, true))}</span>${ring(hero.s)}</span>
       <span class="cover-body">
         <span class="cover-title">${esc(title)}</span>${sub ? `<span class="cover-sub">${esc(sub)}</span>` : ''}
+        ${hero.walk ? `<span class="cover-walk"><b>${esc(hero.walk.microzone)}</b><span>${esc(walkBrief(hero.walk))}</span></span>` : ''}
         <span class="cover-sp">${thumb(hero.d.best.species.id, 44)}<span><small>Da conoscere in questi boschi</small><span class="cover-sp-name"><b>${esc(hero.d.best.species.name)}</b> ${reportBadge(hero.z.id, hero.d.best.species.id)}</span>
           <small>${intornoA(hero.d.best.band)} ${hero.d.best.band} m${also.length ? ` · anche ${also.join('')}` : ''}</small></span></span>
         <span class="facts" aria-label="L'uscita in breve">${t ? fact('clock', `<span class="fk">entro le </span><b>${fmtRough(t.arrive, 15, 'floor')}</b>`) : ''}${fact('car', `<span><b>${access[hero.z.id]?.[0]?.minutes ?? hero.z.drive_min}</b><span class="fk2"> min</span><span class="fk3">′</span></span>`)}${hero.d.crowd ? fact('people', crowdText(hero.d.crowd)) : ''}${w0 ? `<span class="fact wx-${w0.level}" title="${esc(w0.text)}">${wxi(w0)}<span class="fx">${esc(w0.level === 'ok' ? w0.main : (w0.short || w0.main))}</span></span>` : ''}</span>
@@ -895,9 +915,9 @@ function renderHome() {
   const ol = $('#ranking');
   ol.innerHTML = list.slice(1, 8).map((c) => {
     const cv = coverOf(c.z, c.d.best.species.id);
-    return `<li class="vtn" style="--vtn:t-${c.z.id}-${c.o}"><a class="tile" href="#/zona/${c.z.id}/${c.o}">
+    return `<li class="vtn" style="--vtn:t-${c.z.id}-${c.o}"><a class="tile" data-walk-zone="${c.z.id}" href="${walkHref(c.z, c.o, c.walk?.t)}">
       ${cv ? `<img src="${cv.small}" alt="" loading="lazy" decoding="async">` : ''}<span class="shade"></span>${ring(c.s, false)}${(() => { const w = wxOf(c.z, c.d); return w && w.level !== 'ok' ? `<span class="tile-wx wx-${w.level}" title="${esc(w.text)}">${wxi(w)}${esc(OUTING_LABEL[w.level])}</span>` : ''; })()}
-      <span class="tile-body"><span class="tile-day">${esc(dayLabel(c.o, c.d.date, true))}</span><b>${esc(splitName(c.z)[0])}</b><small>${esc(c.d.best.species.name)} · ${c.d.best.band} m · ${access[c.z.id]?.[0]?.minutes ?? c.z.drive_min} min</small></span>
+      <span class="tile-body"><span class="tile-day">${esc(dayLabel(c.o, c.d.date, true))}</span><b>${esc(splitName(c.z)[0])}</b>${c.walk ? `<span class="tile-micro">${esc(c.walk.microzone)}</span><small>${esc(walkBrief(c.walk))}</small>` : ''}<small>${esc(c.d.best.species.name)} · ${c.d.best.band} m</small></span>
     </a></li>`;
   }).join('');
   $('#others-h').hidden = list.length < 2;
@@ -1020,16 +1040,14 @@ function openPoint(zid, pt) {
   } else if (pt.kind === 'trailhead') {
     const h = pt.h, t = pt.t;
     ic = `<span class="pt-ic pt-th">${segnavia(t)}</span>`; eyebrow = 'Imbocco del sentiero'; title = trailName(t);
-    text = `Qui il sentiero incontra una ${h.kind === 'strada' ? 'strada percorribile in auto' : 'strada sterrata'}${h.road ? ` (${esc(h.road)})` : ''}${h.ele != null ? `, a ${h.ele.toLocaleString('it-IT')} m` : ''}.${h.kind === 'sterrata' ? ' Controlla prima che la sterrata sia aperta e adatta alla tua auto.' : ''}`;
+    text = `Qui il sentiero incontra una ${h.kind === 'strada' ? 'strada mappata' : 'strada sterrata mappata'}${h.road ? ` (${esc(h.road)})` : ''}${h.ele != null ? `, a circa ${Math.round(h.ele / 25) * 25} m` : ''}. Verifica transitabilità e possibilità di sosta.`;
     actions = `<a class="btn primary big" href="${gmaps(h.lat, h.lon)}" target="_blank" rel="noopener">${IC.car} Indicazioni stradali fin qui</a>
-      <button type="button" class="btn ghost" data-trail="${t.id}">Il sentiero</button>${copyBtn(h.lat, h.lon)}`;
+      <a class="btn ghost" href="${walkHref(z, state.dayOffset, t)}">Il taccuino di questo sentiero</a>${copyBtn(h.lat, h.lon)}`;
   } else {
-    const t = pt.t, g = trailGeo(z, t);
-    ic = null; eyebrow = pt.top ? 'Sentiero consigliato' : 'Sentiero'; title = '';
+    const t = pt.t;
+    ic = null; eyebrow = 'Sentiero da esplorare'; title = '';
     text = trailCard(z, t, d, false);
-    actions = g ? `<a class="btn primary big" href="${g.wm}" target="_blank" rel="noopener">${IC.map} Percorso e profilo del sentiero</a>
-      <a class="btn ghost" href="${gmaps(g.start[0], g.start[1])}" target="_blank" rel="noopener">${IC.car} Indicazioni stradali all'imbocco</a>
-      <a class="btn ghost" href="${g.gpx}" download="${esc(g.file)}">Scarica GPX</a>` : '';
+    actions = `<a class="btn primary big" href="${walkHref(z, state.dayOffset, t)}">Il taccuino di questo sentiero</a>${trailLinks(z, t)}`;
   }
   sh.innerHTML = `
     <div class="sheet-nav"><button type="button" class="sheet-back">‹ ${esc(splitName(z)[0])}</button><button type="button" class="sheet-close" aria-label="Chiudi">✕</button></div>
@@ -1414,7 +1432,27 @@ const ICON = {
   trail: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 20c2-4 8-3 8-7s-6-3-6-7"/><circle cx="17" cy="5" r="1.5"/></svg>',
 };
 
-function planCard(z, d) {
+function renderWalkFocus(z, d, walk) {
+  if (!walk) return `<p class="small muted">Non abbiamo ancora un sentiero documentato per questa zona.</p>`;
+  const { t, h } = walk, sketch = trailSketch(t, h);
+  return `<section class="walk-focus" data-walk-trail="${t.id}" aria-label="Microzona e sentiero">
+    <p class="eyebrow">La passeggiata, più da vicino</p><h2>${esc(walk.microzone)}</h2>
+    <p class="walk-route">${segnavia(t)}<b>${esc(trailName(t))}</b></p>
+    <dl class="walk-facts">
+      <div><dt>Difficoltà</dt><dd>${esc(t.difficulty ? `${t.difficulty} · ${DIFF[t.difficulty] || 'classificazione della fonte'}` : 'Non indicata nella fonte')}</dd></div>
+      <div><dt>Tratto nella zona</dt><dd>${fmtKm(t.in_zone_km)} km${t.lines?.length > 1 ? ' · più segmenti separati' : ''}</dd></div>
+      <div><dt>Itinerario completo</dt><dd>${t.total_km ? `${fmtKm(t.total_km)} km` : 'Lunghezza n.d.'}${t.duration ? ` · ${fmtDur(t.duration)}` : ''}${t.ascent ? ` · +${esc(t.ascent)} m` : ''}</dd></div>
+      <div><dt>Imbocco mappato</dt><dd>${h ? `${h.ele != null ? `Circa ${Math.round(h.ele / 25) * 25} m · ` : ''}${esc(h.road || (h.kind === 'strada' ? 'su strada' : 'su sterrata'))}` : 'Non disponibile; le soste indicate riguardano la zona'}</dd></div>
+    </dl>
+    ${t.mainCat ? `<p class="small">Lungo il tracciato: ${linkTrees(t.mainCat.toLowerCase())} nei campioni tra circa ${Math.floor(t.lo / 25) * 25} e ${Math.ceil(t.hi / 25) * 25} m, compatibili con l’habitat di ${esc(d.best.species.name.toLowerCase())}.</p>` : ''}
+    ${sketch ? `<figure class="walk-sketch"><svg viewBox="0 0 360 200" role="img" aria-label="Schema del tratto di sentiero nella zona${h ? ', con imbocco mappato' : ''}"><text x="330" y="20">N ↑</text>${sketch.paths.map(p => `<polyline points="${p}"/>`).join('')}${sketch.head ? `<circle cx="${sketch.head[0].toFixed(1)}" cy="${sketch.head[1].toFixed(1)}" r="6"/>` : ''}</svg><figcaption>Traccia locale${h ? ' · punto: imbocco mappato' : ''}. Schema orientato a nord; apri la mappa del percorso per orientarti.</figcaption></figure>` : ''}
+    ${trailLinks(z, t)}
+    <p class="small muted">Il GPX contiene solo il tratto nella zona. Tempi e dislivello, quando disponibili, riguardano l’itinerario completo. Verifica accesso, sosta e stato del sentiero prima di partire.</p>
+    <p class="small muted">Tracciato OpenStreetMap / Waymarked Trails · imbocchi ricavati dalla rete stradale mappata. L’indice e le segnalazioni riguardano la zona, non questo singolo sentiero.</p>
+  </section>`;
+}
+
+function planCard(z, d, walk) {
   const best = d.best;
   const rows = [];
   rows.push({ sec: 'specie', icon: 'find', thumb: best.species.id, k: 'Cosa osservare', v: `<button type="button" class="sp-inline" data-species="${best.species.id}">${esc(best.species.name)}</button> ${intornoA(best.band)} <b>${best.band} m</b>`,
@@ -1435,19 +1473,18 @@ function planCard(z, d) {
   }
 
   const a0 = access[z.id]?.[0];
-  const ax = d?.access;
+  const ax = walk?.h ? null : d?.access;
   if (a0 || ax) {
     const unp = a0?.unpaved_tail_km > 0.2 ? `, ultimi ${fmtKm(a0.unpaved_tail_km)} km su strada bianca` : '';
     rows.push({ sec: 'accesso', icon: 'car', k: 'Come arrivare',
-      v: ax ? `In auto ${ax.road ? `su ${esc(ax.road)}` : 'fino al punto più vicino'}${ax.walkM < 50 ? ': habitat campionato vicino alla strada' : `, poi <b>${fmtM(ax.walkM)} in linea d’aria</b>`}` : `${a0.minutes} min fino a ${esc(a0.parking)}`,
+      v: walk?.h ? `<a href="${gmaps(walk.h.lat, walk.h.lon)}" target="_blank" rel="noopener">Apri l’imbocco mappato del sentiero ${esc(walk.t.ref || '')}</a>` : ax ? `In auto ${ax.road ? `su ${esc(ax.road)}` : 'fino al punto più vicino'}${ax.walkM < 50 ? ': habitat campionato vicino alla strada' : `, poi <b>${fmtM(ax.walkM)} in linea d’aria</b>`}` : `${a0.minutes} min fino a ${esc(a0.parking)}`,
       sub: `${a0 ? `${a0.minutes} min da Rieti${unp}` : ''}${ax ? ` · <a href="${gmaps(ax.rlat, ax.rlon)}" target="_blank" rel="noopener">navigatore</a>` : ''}`,
       badge: d.comfort ? `<span class="badge comfort-${d.comfort.level}">${d.comfort.level}</span>` : '' });
   }
-  const tl = trailsFor(z, best.species, best.band);
-  if (tl[0]) {
-    const t = tl[0];
+  if (walk?.t) {
+    const t = walk.t;
     rows.push({ sec: 'sentieri', svg: segnavia(t), k: 'Sentiero', v: esc(trailName(t)),
-      sub: `${fmtKm(t.goodKm)} km in bosco adatto tra ${t.lo} e ${t.hi} m${t.difficulty ? ` · ${esc(t.difficulty)}, ${esc(DIFF[t.difficulty] || '')}` : ''}` });
+      sub: `${fmtKm(t.in_zone_km)} km nella zona${t.difficulty ? ` · ${esc(t.difficulty)}, ${esc(DIFF[t.difficulty] || '')}` : ' · difficoltà n.d.'}` });
   }
   return `<ul class="plan">${rows.map((r) => `
     <li data-sec-open="${r.sec}" tabindex="0" role="button" aria-label="${r.k}: dettagli"><span class="plan-ic${r.thumb ? ' has-thumb' : ''}${r.svg ? ' plan-ic-wx' : ''}">${r.thumb ? `<button type="button" class="thumb-btn" data-species="${r.thumb}" aria-label="Scheda specie">${thumb(r.thumb, 32)}</button>` : (r.svg || ICON[r.icon])}</span>
@@ -1464,10 +1501,11 @@ function renderDetail() {
   const z = zones.find((x) => x.id === state.zoneId) || zones[0];
   const r = results[z.id];
   const d = dayEntry(z.id, state.dayOffset);
+  const walk = walkFor(z, d, state.trailId);
   const box = $('#detail');
   if (!d?.best) {
     const missing = [...new Set((d?.perSpecies || []).flatMap((p) => p.quality?.missing || []))];
-    box.innerHTML = `<h1>${esc(z.title || z.name)}</h1><p class="notice">${selectedSpecies().length?'Indice non calcolabile':'Indice non ancora disponibile per le specie selezionate'}${missing.length ? ': mancano ' + esc(missing.join(', ')) : ' per questo giorno'}. Un dato mancante non indica assenza di funghi.</p><p><a href="#/mappa/${z.id}">Apri la mappa</a> · <a href="#/metodo">Metodo e limiti</a></p>${z.protection ? `<p class="notice">${esc(z.protection)}</p>` : ''}<p>${linkTrees(z.description)}</p>${section('accesso','Accessi e soste',renderAccess(z,{access:null}))}${section('sentieri','Sentieri della zona',renderTrails(z,null),true)}`; return;
+    box.innerHTML = `<h1>${esc(z.title || z.name)}</h1><p class="notice">${selectedSpecies().length?'Indice non calcolabile':'Indice non ancora disponibile per le specie selezionate'}${missing.length ? ': mancano ' + esc(missing.join(', ')) : ' per questo giorno'}. Un dato mancante non indica assenza di funghi.</p><p><a href="#/mappa/${z.id}">Apri la mappa</a> · <a href="#/metodo">Metodo e limiti</a></p>${renderWalkFocus(z, d, walk)}${z.protection ? `<p class="notice">${esc(z.protection)}</p>` : ''}<p>${linkTrees(z.description)}</p>${section('accesso','Accessi e soste',renderAccess(z,{access:null}))}${section('sentieri','Sentieri della zona',renderTrails(z,null),true)}`; return;
   }
   const best = d.best;
   const s = adjusted(z, d.score, d);
@@ -1498,10 +1536,11 @@ function renderDetail() {
     </header>
     <div class="pbody">
     <div id="zone-days" class="days compact" role="tablist" aria-label="Giorno"></div>
-    ${planCard(z, d)}
+    ${renderWalkFocus(z, d, walk)}
+    ${planCard(z, d, walk)}
     <div class="zone-community"><button type="button" class="btn primary" data-report data-zone="${z.id}" data-species="${best.species.id}">Segnala dal bosco</button>${reportBadge(z.id, best.species.id)}</div>
     <button type="button" class="btn ghost big" data-save-plan>Salva le condizioni prima della passeggiata</button><p class="small muted" data-plan-status></p>
-    <a class="btn ghost big map-link" href="#/mappa/${z.id}">${IC.map} Sentieri e accesso sulla mappa</a>
+    <a class="btn ghost big map-link" href="#/mappa/${z.id}">${IC.map} Sentieri e accessi nella zona</a>
     ${zoneLegal(z, d)}
     ${z.protection ? `<div class="notice">${esc(z.protection)}</div>` : ''}
     ${section('meteo', 'Perché questo indice', `${renderWhy({ r: best, s: sb, i: d.i, sp: best.species, band: best.band, dateStr: d.date, shown: s, agg: d.score, parts: d.perSpecies.map((p) => ({ name: p.species.name.split(' / ')[0], score: p.score })), prefs: adjParts(z, d), outing: wxRank(z, d) < 1 ? wxRank(z, d) : 0 })}
@@ -1536,7 +1575,7 @@ function renderDetail() {
     const b = document.createElement('button');
     b.type = 'button'; b.className = 'day'; b.setAttribute('role', 'tab'); b.setAttribute('aria-selected', String(o === state.dayOffset));
     b.innerHTML = `<span class="d1">${o === 0 ? 'Oggi' : o === 1 ? 'Dom' : fmtDate(x.date, { weekday: 'short' }).replace('.', '')}</span><span class="d2">${fmtDate(x.date, { day: 'numeric' })}</span><span class="d3"><span class="dot" style="--dc:var(${scoreVar(sc)});--dcs:var(${scoreVar(sc).replace('--s', '--ps')})"></span><b class="pc">${formatIndex(sc)}</b></span>`;
-    b.addEventListener('click', () => soft(() => { history.replaceState(null, '', `#/zona/${z.id}/${o}`); state.dayOffset = o; renderDetail(); }));
+    b.addEventListener('click', () => soft(() => { history.replaceState(null, '', walkHref(z, o, state.trailId ? walk?.t : null)); state.dayOffset = o; renderDetail(); }));
     zd.appendChild(b);
   }
   zd.querySelector('[aria-selected="true"]')?.scrollIntoView({ block: 'nearest', inline: 'center' });
@@ -1646,6 +1685,7 @@ function headX(t, h) {
 function trailProfile(zid, t, sp, band, heads = []) {
   const sm = t.samples || [];
   if (sm.length < 4) return '';
+  if (t.lines?.length > 1) return `<p class="small muted">Quote campionate tra ${Math.min(...sm.map(x => x[0]))} e ${Math.max(...sm.map(x => x[0]))} m su segmenti separati. Non costituiscono un profilo continuo.</p>`;
   const cats = trails[zid]?.sample_categories || [];
   const es = sm.map((x) => x[0]);
   const lo = Math.min(...es), hi = Math.max(...es);
@@ -1672,7 +1712,7 @@ function trailCard(z, t, d, top = false) {
   ].filter(Boolean).join('');
   const heads = headsOf(z, t);
   return `<div class="tcard${top ? ' top' : ''}">
-    <div class="tc-head">${segnavia(t)}<div class="tc-name"><b>${esc(trailName(t))}</b>${t.itinerary?.length > 2 ? `<small>${esc(t.itinerary.slice(1, -1).join(' · '))}</small>` : ''}${t.long ? '<small>tratto di un itinerario lungo</small>' : ''}${t.operator ? `<small>${esc(t.operator)}</small>` : ''}</div>${top ? '<span class="badge tc-top">prudenziale</span>' : ''}</div>
+    <div class="tc-head">${segnavia(t)}<div class="tc-name"><b>${esc(trailName(t))}</b>${t.itinerary?.length > 2 ? `<small>${esc(t.itinerary.slice(1, -1).join(' · '))}</small>` : ''}${t.long ? '<small>tratto di un itinerario lungo</small>' : ''}${t.operator ? `<small>${esc(t.operator)}</small>` : ''}</div>${top ? '<span class="badge tc-top">In evidenza</span>' : ''}</div>
     <dl class="tc-facts">${facts}</dl>
     ${d?.best ? trailProfile(z.id, t, d.best.species, d.best.band, heads) : ''}
     ${heads.length ? `<div class="th-row"><span class="th-k">Imbocchi</span><div class="th-list">${heads.map((h, k) => `<a class="th-chip" href="${gmaps(h.lat, h.lon)}" target="_blank" rel="noopener" aria-label="Indicazioni stradali per l'imbocco ${k + 1}, a ${h.ele ?? ''} metri"><i class="th-n">${k + 1}</i>${h.kind === 'strada' ? IC.car : ICON.track}<span><b>${h.ele != null ? `${h.ele.toLocaleString('it-IT')} m` : 'imbocco'}</b><small>${esc(h.road || (h.kind === 'strada' ? 'su strada' : 'su sterrata'))}</small></span></a>`).join('')}</div></div>` : ''}
@@ -1680,14 +1720,16 @@ function trailCard(z, t, d, top = false) {
 }
 
 function renderTrails(z, d) {
-  const list = d?.best ? trailsFor(z, d.best.species, d.best.band).slice(0,4) : (trails[z.id]?.trails || []).slice(0,4);
+  const candidates = d?.best ? trailsFor(z, d.best.species, d.best.band) : (trails[z.id]?.trails || []);
+  const walk = walkFor(z, d, state.trailId);
+  const list = (walk ? [walk.t, ...candidates.filter(t => t.id !== walk.t.id)] : candidates).slice(0,4);
   if (!list.length) return trails[z.id] ? '<p class="small muted">Non risultano sentieri compatibili in questi dati: verifica tracciati, accessibilità e segnaletica sul posto.</p>' : '';
   return `
-    <ol class="trails">${list.map((t, k) => `<li>${trailCard(z, t, d, !!d?.best && k === 0)}${trailLinks(z, t)}</li>`).join('')}</ol>
+    <ol class="trails">${list.map((t, k) => `<li>${trailCard(z, t, d, k === 0)}<a class="small" href="${walkHref(z, state.dayOffset, t)}">Microzona e taccuino di questo sentiero →</a>${trailLinks(z, t)}</li>`).join('')}</ol>
     <p class="muted small">Sentieri OpenStreetMap (rete CAI). ${d?.best ? 'I km adatti incrociano tracciato, Carta Forestale e quota della specie.' : 'Questi percorsi sono elencati senza una valutazione di idoneità per la specie selezionata.'} Google Maps di norma non mostra i sentieri CAI: sul posto usa un'app con mappe OpenStreetMap (OsmAnd, Organic Maps, Komoot, Locus) e il GPX.</p>`;
 }
 
-// imbocchi del sentiero (data/trailheads.json): dove si arriva in auto; prima i piu' vicini alla sosta della zona
+// Intersezioni con strade mappate: non certificano transitabilità o possibilità di sosta.
 function headsOf(z, t) {
   const list = trailheads[z.id]?.[String(t.id)] || [];
   const park = access[z.id]?.[0] || z;
@@ -1720,9 +1762,9 @@ function trailLinks(z, t) {
   if (!g) return `<a class="small" href="https://www.openstreetmap.org/relation/${t.id}" target="_blank" rel="noopener">Tracciato su OpenStreetMap</a>`;
   const h = headsOf(z, t)[0], go = h ? [h.lat, h.lon] : g.start;
   return `<div class="tl-btns">
-    <a class="tl-btn primary" href="${gmaps(go[0], go[1])}" target="_blank" rel="noopener">${IC.car}<span>Portami all'imbocco</span></a>
+    <a class="tl-btn primary" href="${gmaps(go[0], go[1])}" target="_blank" rel="noopener">${h ? IC.car : IC.map}<span>${h ? 'Apri l’imbocco mappato' : 'Apri un punto sulla traccia'}</span></a>
     <a class="tl-btn" href="${g.wm}" target="_blank" rel="noopener">${IC.map}<span>Percorso e profilo</span></a>
-    <a class="tl-btn" href="${g.gpx}" download="${esc(g.file)}">${ICON.download}<span>Scarica GPX</span></a>
+    <a class="tl-btn" href="${g.gpx}" download="${esc(g.file)}">${ICON.download}<span>GPX del tratto locale</span></a>
     <a class="tl-btn" href="https://www.openstreetmap.org/relation/${t.id}" target="_blank" rel="noopener">${ICON.ext}<span>OpenStreetMap</span></a></div>`;
 }
 

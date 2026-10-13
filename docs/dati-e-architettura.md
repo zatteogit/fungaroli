@@ -6,6 +6,14 @@ Documento tecnico: da dove vengono i dati, come si rigenerano, che forma hanno, 
 
 Un front-end di moduli ES e un Worker Cloudflare con D1 per la comunità (vedi [community.md](community.md)): HTML, CSS e moduli ES che leggono tre file JSON precalcolati (`data/`) e chiedono il meteo a Open-Meteo dal browser. Gli script in `tools/` rigenerano i JSON quando cambiano le zone. Uno script Node impacchetta tutto in un unico HTML per la versione Artifact.
 
+### Proposte di passeggiata e microzone
+
+`js/walks.js` seleziona una sola proposta per zona, mantenendo il giorno con rango più alto; in vetrina non ripete la stessa relazione OSM in zone confinanti. Il sentiero è scelto tra quelli ambientalmente compatibili quando disponibili, dando precedenza a difficoltà T/E documentata, imbocchi mappati e itinerari prevalentemente locali. Questi criteri non attestano sicurezza o transitabilità. Se manca una compatibilità calcolabile, il percorso resta consultabile senza attribuirgli idoneità micologica.
+
+Il collegamento `#/zona/<zona>/<giorno>/sentiero/<relazione>` conserva il sentiero scelto cambiando giorno. La microzona è descritta usando un imbocco documentato: nome della sosta se entro 500 m in linea d’aria, altrimenti strada mappata o segnavia. Senza imbocco la scheda indica soltanto il tratto nella zona. Non si inventano nomi locali, parcheggi autorizzati o accessi carrabili.
+
+Lo schema del sentiero e il GPX mantengono separati i frammenti della relazione tagliata sul cerchio della zona. Lunghezza locale e lunghezza dell’itinerario completo sono distinte; tempi e dislivello non vengono trasferiti al tratto locale. Per geometrie disconnesse non si disegna un profilo altimetrico continuo. L’indice di crescita e i conteggi collettivi restano riferiti alla zona, non al sentiero o al singolo imbocco.
+
 ## Fonti dati e licenze
 
 | Fonte | Cosa fornisce | Dove si usa | Licenza e condizioni |

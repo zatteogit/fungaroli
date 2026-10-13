@@ -31,6 +31,54 @@ async function register(page, name) {
 async function api(page, path, method='GET', data) {
   return page.evaluate(async ({path,method,data}) => { const r=await fetch('/api/community/'+path,{method,headers:data==null?{}:{'content-type':'application/json'},body:data==null?undefined:JSON.stringify(data)}); return {status:r.status,data:await r.json()}; }, {path,method,data});
 }
+test('vetrina varia e sentiero stabile passando dalla proposta ai giorni del taccuino', async ({ page }) => {
+  await page.setViewportSize({width:390,height:844});
+  const errors = await setup(page);
+  const proposals = page.locator('#hero [data-walk-zone], #ranking [data-walk-zone]');
+  const places = await proposals.evaluateAll(nodes => nodes.map(n => n.dataset.walkZone));
+  expect(places.length).toBeGreaterThan(3);
+  expect(new Set(places).size).toBe(places.length);
+  const paths = await proposals.evaluateAll(nodes => nodes.map(n => n.getAttribute('href')));
+  const trailIds = paths.map(p => p.split('/sentiero/')[1]).filter(Boolean);
+  expect(new Set(trailIds).size).toBe(trailIds.length);
+  await expect(page.locator('#hero .cover-walk')).toContainText('km nella zona');
+  expect(await page.evaluate(()=>document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+  await page.screenshot({path:'/tmp/fungaroli-walks-mobile.png',fullPage:true});
+  const href = await page.locator('#hero .cover-link').getAttribute('href');
+  await page.locator('#hero .cover-link').click();
+  const focus = page.locator('#detail .walk-focus');
+  await expect(focus).toBeVisible();
+  const trailId = href.split('/sentiero/')[1];
+  await expect(focus).toHaveAttribute('data-walk-trail',trailId);
+  await expect(focus).toContainText('Itinerario completo');
+  await expect(focus).toContainText('non questo singolo sentiero');
+  await page.locator('#zone-days [aria-selected="false"]').first().click();
+  await expect(page).toHaveURL(new RegExp('/sentiero/'+trailId+'$'));
+  await expect(focus).toHaveAttribute('data-walk-trail',trailId);
+  expect(await page.evaluate(()=>document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+  await page.screenshot({path:'/tmp/fungaroli-walk-detail-mobile.png',fullPage:true});
+  expect(errors).toEqual([]);
+});
+
+test('tratto locale distinto dal percorso intero, segmenti separati e imbocco mancante', async ({ page }) => {
+  const errors = await setup(page);
+  await page.goto('/#/zona/tancia/0/sentiero/12313439');
+  const focus = page.locator('#detail .walk-focus');
+  await expect(focus).toHaveAttribute('data-walk-trail','12313439');
+  await expect(focus).toContainText('più segmenti separati');
+  await expect(focus.locator('.walk-sketch polyline')).toHaveCount(2);
+  const values = await focus.locator('.walk-facts dd').allTextContents();
+  expect(values[1]).toContain('4,1 km');
+  expect(values[2]).toContain('9,9 km');
+  const gpx = await focus.locator('a[download]').getAttribute('href');
+  const xml = decodeURIComponent(gpx.split(',').slice(1).join(','));
+  expect(xml.match(/<trkseg>/g)).toHaveLength(2);
+  expect(xml).toContain('Tratto nella zona');
+  await page.goto('/#/zona/sangiovanni/0/sentiero/12313439');
+  await expect(focus).toContainText('Non disponibile; le soste indicate riguardano la zona');
+  await expect(focus).toContainText('Apri un punto sulla traccia');
+  expect(errors).toEqual([]);
+});
 test('editoriale, filtri completi, passkey, isolamento e condivisione revocabile', async ({ browser, page }) => {
   const errors = await setup(page);
   await expect(page.locator('#community-intro')).toContainText('nessuna segnalazione');
@@ -141,6 +189,11 @@ test('migrazione esplicita del diario con codice senza pubblicare osservazioni',
 });
 
 test('i campi del diario importato vengono visualizzati come testo', async ({ page }) => {
+  // Import while the archive is still opening: this must not reject a valid JSON file.
+  await page.route('**/api/community/session', async route => {
+    await new Promise(resolve => setTimeout(resolve, 2000));
+    await route.continue();
+  });
   await setup(page); await page.goto('/#/diario');
   const payload={id:'x123"><img src=x onerror="window.injected=1">',date:todayISO(),zoneId:'tancia',band:'<img src=x onerror="window.injected=1">',note:'<svg onload="window.injected=1">',finds:{},predicted:{},savedAt:new Date().toISOString()};
   await page.locator('#journal-import').setInputFiles({name:'diario.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify({entries:[payload]}))});
