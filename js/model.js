@@ -177,15 +177,16 @@ export function combine(scores) {
 }
 
 export const CLASSES = [
-  { min: 75, label: 'Condizioni molto favorevoli' },
-  { min: 60, label: 'Condizioni favorevoli' },
-  { min: 45, label: 'Condizioni discrete' },
-  { min: 30, label: 'Condizioni limitate' },
-  { min: 15, label: 'Condizioni poco favorevoli' },
-  { min: 0, label: 'Condizioni sfavorevoli' },
+  { min: 75, label: 'Condizioni molto favorevoli', shortLabel: 'Molto buone' },
+  { min: 60, label: 'Condizioni favorevoli', shortLabel: 'Buone' },
+  { min: 45, label: 'Condizioni discrete', shortLabel: 'Discrete' },
+  { min: 30, label: 'Condizioni limitate', shortLabel: 'Limitate' },
+  { min: 15, label: 'Condizioni poco favorevoli', shortLabel: 'Scarse' },
+  { min: 0, label: 'Condizioni sfavorevoli', shortLabel: 'Sfavorevoli' },
 ];
 export const classOf = (score) => Number.isFinite(score) ? CLASSES.findIndex((c) => score >= c.min) : -1;
 export const scoreLabel = (score) => CLASSES[classOf(score)]?.label || 'Non calcolabile';
+export const scoreShortLabel = (score) => CLASSES[classOf(score)]?.shortLabel || 'N.d.';
 // Scala interna 0–100 per preservare i dati; presentazione pubblica 0–10.
 export const formatIndex = (score) => Number.isFinite(score) ? (score / 10).toFixed(1).replace('.', ',') : '–';
 
