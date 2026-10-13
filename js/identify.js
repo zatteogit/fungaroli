@@ -140,7 +140,7 @@ const QUESTIONS = [
   { key: 'hymenophore_color', label: 'Di che colore sono lamelle o pori?', short: 'Lamelle/pori', values: Object.keys(COLORS), color: true, after: 'hymenophore',
     labelFor: (h) => ({ lamelle: 'Di che colore sono le lamelle?', pori: 'Di che colore sono i pori?', aculei: 'Di che colore sono gli aculei?', pliche: 'Di che colore sono le pliche?', liscio: 'Di che colore è la parte sotto il cappello?' }[h]),
     shortFor: (h) => ({ lamelle: 'Lamelle', pori: 'Pori', aculei: 'Aculei', pliche: 'Pliche' }[h]) },
-  { key: 'flesh_change', label: 'Tagliata, la carne cambia colore?', short: 'Carne al taglio', values: ['nessuno', 'blu', 'rosso', 'giallo', 'bruno', 'nero'], labels: { nessuno: 'non cambia' }, flesh: true, hint: 'Taglia il gambo e aspetta un minuto.' },
+  { key: 'flesh_change', label: 'Tagliata, la carne cambia colore?', short: 'Carne al taglio', values: ['nessuno', 'blu', 'rosso', 'giallo', 'bruno', 'nero'], labels: { nessuno: 'non cambia colore' }, flesh: true, hint: 'Taglia il gambo e aspetta un minuto.' },
   { key: 'habitat', label: 'Dove cresce?', short: 'Dove', values: ['latifoglie', 'conifere', 'prati/radure', 'ceppaie/legno'], art: (v) => ART[v], labels: { latifoglie: 'sotto latifoglie', conifere: 'sotto conifere', 'prati/radure': 'prati e radure', 'ceppaie/legno': 'su ceppaie o legno' } },
   { key: 'growth', label: 'Come cresce?', short: 'Crescita', values: ['singolo', 'gregario', 'cespitoso'], art: (v) => ART[v], labels: { singolo: 'da solo', gregario: 'a gruppi sparsi', cespitoso: 'a cespi, uniti alla base' } },
   { key: 'cap_shape', label: 'Che forma ha il cappello?', short: 'Forma', values: Object.keys(SHAPE), art: (v) => SHAPE[v], labels: { imbuto: 'a imbuto, depresso', trombetta: 'a trombetta', ombrellato: 'a ombrello, con umbone', conico: 'conico o a campana' }, hint: 'Guardalo di profilo. Nei funghi giovani il cappello è più chiuso.' },
@@ -258,7 +258,7 @@ function artFor(q, v) {
   if (q.art) return q.art(v);
   if (q.icon) return `<span class="id-hym">${q.icon(v)}</span>`;
   if (q.color) return swatch(q.key === 'cap_color' ? 'cap' : hymKind(state.ans.hymenophore), v);
-  if (q.flesh) return `<span class="id-flesh" style="background:linear-gradient(100deg, #f4ecd8 30%, ${FLESH[v]} 85%)"></span>`;
+  if (q.flesh) return fleshArt(v);
   return '';
 }
 // risposta data: una riga compatta "carattere · disegno · valore", tocchi per cambiarla
@@ -302,7 +302,7 @@ function contraText(c) {
     // colori di lamelle e pori accordati: "bianche o crema" (lamelle), "bianchi o gialli" (pori)
     const h = [].concat(c.t.traits?.hymenophore || [])[0];
     const g = k === 'hymenophore_color' ? ({ lamelle: 'fp', pliche: 'fp', pori: 'mp', aculei: 'mp' }[h] || 'ms') : 'ms';
-    const say = (v) => (k === 'flesh_change' ? (v === 'nessuno' ? 'non cambia' : `vira al ${v}`) : g !== 'ms' ? agree(v, g) : optLabel(q, v));
+    const say = (v) => (k === 'flesh_change' ? fleshSay(v) : g !== 'ms' ? agree(v, g) : optLabel(q, v));
     const verb = { hymenophore: 'ha ', cap_color: 'è ', hymenophore_color: 'sono ', habitat: 'cresce ', growth: 'cresce ', spore_print: 'è ', gill_attachment: 'sono ', cap_surface: 'è ', flesh_texture: 'si spezza ', stem_base: 'è ' }[k] || '';
     return `<b>Non torna: ${esc(q.short.toLowerCase())}.</b> Hai indicato ${esc(say(state.ans[k]))}, ma di solito ${verb}${esc(orList(exp.map(say)))}.`;
   }).join(' ');
@@ -363,7 +363,7 @@ function diffs(ref, t) {
     if (a == null || b == null) return null;
     const A = [].concat(a), B = [].concat(b);
     if (B.some((v) => A.includes(v))) return null;
-    const say = (v) => (q.bool ? withOut(q.key, v) : q.key === 'flesh_change' ? (v === 'nessuno' ? 'non cambia' : `vira al ${v}`) : optLabel(q, v));
+    const say = (v) => (q.bool ? withOut(q.key, v) : q.key === 'flesh_change' ? fleshSay(v) : optLabel(q, v));
     return { q, txt: q.bool ? cap1(orList(B.map(say))) : `${q.short}: ${orList(B.map(say))}`, ref: orList(A.map(say)) };
   }).filter(Boolean);
 }
@@ -398,7 +398,7 @@ export function traitStrip(edibleId, t = refOf(edibleId)) {
     out.push(tile(stemArt2(base, tr.stem_ring, tr.stem_volva, tr.stem_reticulum, [].concat(tr.cap_color || [])[0], [].concat(tr.cap_shape || [])[0]), 'Gambo', bits.join(', '),
       tr.stem_base?.length ? `base ${orList(tr.stem_base.map((v) => optLabel(Q('stem_base'), v)))}` : ''));
   }
-  if (tr.flesh_change) { const f = [].concat(tr.flesh_change); out.push(tile(fleshArt(f.find((v) => v !== 'nessuno') || f[0], [].concat(tr.cap_color || [])[0]), 'Al taglio', orList(f.map((v) => (v === 'nessuno' ? 'non cambia' : `vira al ${v}`))))); }
+  if (tr.flesh_change) { const f = [].concat(tr.flesh_change); out.push(tile(fleshArt(f), 'Al taglio', orList(f.map(fleshSay)))); }
   if (tr.spore_print?.length) out.push(tile(sporeArt(tr.spore_print[0]), 'Sporata', orList(tr.spore_print.map((v) => Q('spore_print').labels?.[v] || agree(v, 'fs')))));
   return `<ul class="trait-strip" aria-label="Caratteri principali">${out.join('')}</ul>`;
 }
@@ -471,14 +471,18 @@ function hymArt(h, cols) {
     <circle cx="${cx}" cy="${cy}" r="${R}" fill="none" stroke="rgb(60 40 20 / .35)" stroke-width="1"/>
     <circle cx="${cx}" cy="${cy}" r="6.2" fill="url(#${sid})" stroke="${STEMC[2]}" stroke-width="1"/>`);
 }
-// fungo tagliato a meta': la carne e, se cambia, il colore che prende partendo dal taglio
-function fleshArt(change, capCol) {
-  const C = COLORS[capCol] || COLORS.bruno, ch = change && change !== 'nessuno' ? FLESH[change] : null, f = gid();
-  return svgA('0 0 64 60', 64, 60, `<defs><linearGradient id="${f}" x1="0" y1="0" x2=".9" y2="1"><stop offset="0" stop-color="#f6efdf"/><stop offset=".35" stop-color="#f1e7cf"/>${ch ? `<stop offset=".75" stop-color="${ch}" stop-opacity=".85"/><stop offset="1" stop-color="${ch}"/>` : '<stop offset="1" stop-color="#e3d6b6"/>'}</linearGradient></defs>
-    <ellipse cx="32" cy="57" rx="20" ry="2.4" fill="currentColor" opacity=".12"/>
-    <path d="M7 30 C8 9 56 9 57 30 Q50 33 40 32 L41 56 H23 L24 32 Q14 33 7 30 Z" fill="url(#${f})" stroke="${STEMC[2]}" stroke-width="1.1" stroke-linejoin="round"/>
-    <path d="M7 30 C8 9 56 9 57 30" fill="none" stroke="${C[1]}" stroke-width="3.2" stroke-linecap="round"/>
-    <path d="M10 31.5 Q32 36 54 31.5" fill="none" stroke="rgb(60 40 20 / .25)" stroke-width="1" stroke-dasharray="1.5 1.5"/>`);
+// Simbolo del viraggio, non ritratto della specie. Il campione iniziale è neutro:
+// flesh_change non descrive né la forma del fungo né il colore originale della carne.
+// Se il dato ammette più esiti, li mostriamo tutti, senza sceglierne uno arbitrariamente.
+function fleshArt(changes) {
+  const values = [...new Set([].concat(changes))], height = values.length * 40;
+  const sample = (x, colour) => `<rect x="${x}" y="7" width="24" height="26" rx="6" fill="${colour || 'currentColor'}" fill-opacity="${colour ? '1' : '.12'}" stroke="currentColor" stroke-width="1.5"/>`;
+  const rows = values.map((change, i) => `<g transform="translate(0 ${i * 40})">
+    ${sample(3)}
+    <path d="${change === 'nessuno' ? 'M35 17 H49 M35 23 H49' : 'M34 20 H50 M45 15 L50 20 L45 25'}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    ${sample(57, change === 'nessuno' ? null : FLESH[change])}
+    </g>`).join('');
+  return svgA(`0 0 84 ${height}`, 84, height, rows);
 }
 const sizeTxt = (sz) => {
   const r = { piccolo: [0, 5], medio: [5, 12], grande: [12, 99] }, a = [].concat(sz || []).map((x) => r[x]).filter(Boolean);
@@ -571,11 +575,11 @@ export function setCompare(key, pick) { state.compare = key || ''; state.pick = 
 // righe del confronto: stessi disegni di Riconosci, un valore per lato
 const MESI = ['gen', 'feb', 'mar', 'apr', 'mag', 'giu', 'lug', 'ago', 'set', 'ott', 'nov', 'dic'];
 const monthsTxt = (m) => { const a = [...m].sort((x, y) => x - y); return a.length && a[a.length - 1] - a[0] === a.length - 1 ? `${MESI[a[0] - 1]}–${MESI[a[a.length - 1] - 1]}` : a.map((x) => MESI[x - 1]).join(' '); };
-const fleshSay = (v) => (v === 'nessuno' ? 'non cambia' : `vira al ${v}`);
+const fleshSay = (v) => (v === 'nessuno' ? 'non cambia colore' : `vira al ${v}`);
 const CMP = [
   { key: 'hymenophore', k: 'Sotto il cappello', art: (a) => `<span class="id-hym">${HYM_ICON[a[0]] || ''}</span>`, say: (v) => v },
   { key: 'hymenophore_color', k: 'Colore di lamelle o pori', art: (a, t) => a.slice(0, 3).map((v) => swatch(hymKind(t.traits?.hymenophore), v)).join(''), say: (v) => v },
-  { key: 'flesh_change', k: 'Carne al taglio', art: (a) => `<span class="id-flesh" style="background:linear-gradient(100deg, #f4ecd8 30%, ${FLESH[a[0]]} 85%)"></span>`, say: fleshSay },
+  { key: 'flesh_change', k: 'Carne al taglio', art: fleshArt, say: fleshSay },
   { key: 'cap_color', k: 'Cappello', art: (a) => a.slice(0, 3).map((v) => swatch('cap', v)).join(''), say: (v) => v },
   { key: 'stem_ring', k: 'Anello', bool: true, art: (a) => ART[`ring_${a[0]}`] },
   { key: 'stem_volva', k: 'Volva', bool: true, art: (a) => ART[`volva_${a[0]}`] },
