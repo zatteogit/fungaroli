@@ -1909,6 +1909,12 @@ html.theme-swap, html.theme-swap *, html.theme-swap *::before, html.theme-swap *
 @media (max-width: 760px) { .view-map .leaflet-top, .view-map .leaflet-top.leaflet-right { top: 150px; } }
 .leaflet-tooltip.zone-tt { padding: 0; border-radius: 16px; border: 1px solid var(--border); background: var(--surface); color: var(--text); box-shadow: var(--shadow-2); white-space: normal; }
 .leaflet-tooltip.zone-tt::before { display: none; }
+.leaflet-tooltip.cell-card { pointer-events:auto; max-width:calc(100vw - 24px); }
+.cell-card .mtt { max-width:100%; }
+.cell-card .mtt-t { padding-right:25px; }
+.cell-card-close { position:absolute; top:5px; right:5px; width:30px; height:30px; display:grid; place-items:center; padding:0; border:0; border-radius:50%; background:transparent; color:var(--text-2); font-size:22px; cursor:pointer; }
+.cell-card-close:hover { background:var(--surface-2); }
+.cell-card-close:focus-visible { outline:2px solid var(--accent); outline-offset:1px; }
 .mtt { width: 264px; padding: 12px 14px 10px; font: 13px/1.35 var(--font-body); }
 .mtt-t { display: block; font-family: var(--font-display); font-size: 16px; line-height: 1.2; }
 .mtt-s { display: block; margin-top: 2px; font-size: 12px; color: var(--muted); }
