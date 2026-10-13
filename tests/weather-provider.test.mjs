@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {cachedForecast,forecastParams,compactGrowth} from '../worker/weather-provider.js';
 import {fetchForecast} from '../js/weather-request.js';
 import {todayISO,toDaily} from '../js/weather.js';
-const now=Date.now(),zones=[{lat:42.4,lon:12.8,bands:[800,1000]}];
+const now=Date.parse(todayISO()+'T10:00:00Z'),zones=[{lat:42.4,lon:12.8,bands:[800,1000]}];
 const cache=()=>{const data=new Map();return{data,get:async k=>data.has(k)?JSON.parse(data.get(k)):null,put:async(k,v)=>data.set(k,v)};};
 const raw=(kind='growth')=>Array.from({length:kind==='growth'?2:1},()=>Object.fromEntries(['daily','hourly'].filter(g=>forecastParams(zones,kind).has(g)).map(g=>[g,{time:[todayISO(new Date(now))+(g==='hourly'?'T12:00':'')],...Object.fromEntries(forecastParams(zones,kind).get(g).split(',').map(f=>[f,[0]]))}])));
 test('shared cache coalesces parallel downloads and preserves the provider acquisition date',async()=>{

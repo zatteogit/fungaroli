@@ -321,7 +321,7 @@ function resultCard(c) {
       ${c.tot ? `<span class="id-fit${c.contra.length ? ' warn' : ''}">${c.ok}/${c.tot}</span>` : ''}</div>
     <div class="id-card-body">
       <button type="button" class="id-link" data-taxon="${esc(t.key)}">${name}</button>${t.name && t.name !== t.latin ? `<i>${esc(t.latin)}</i>` : ''}
-      ${t.caution ? `<span class="small id-why"><b>Come si mangia:</b> ${esc(t.caution)}</span>` : ''}
+      ${t.caution ? `<span class="small id-why"><b>Cautele della specie:</b> ${esc(t.caution)}</span>` : ''}
       ${c.contra.length ? `<span class="small id-contra">${contraText(c)}</span>` : ''}
       <button type="button" class="small id-more" data-taxon="${esc(t.key)}" aria-label="Dettagli di ${name}">Dettagli ›</button>
     </div></li>`;
@@ -403,15 +403,16 @@ export function traitStrip(edibleId, t = refOf(edibleId)) {
   return `<ul class="trait-strip" aria-label="Caratteri principali">${out.join('')}</ul>`;
 }
 
-// Riquadro Attenzione: titolo da chiuso, messaggi completi aprendolo.
+// A short notice is always visible; longer notices disclose their full text.
 export function attentionBox(rules, extra = '') {
   if (!rules?.length) return '';
   const sorted = [...rules].sort((a, b) => (a.severity === 'critico' ? 0 : 1) - (b.severity === 'critico' ? 0 : 1));
-  return `<details class="attention att-c" role="note">
-    <summary><span class="att-h">Attenzione</span></summary>
+  const compact = sorted.length <= 2 && sorted.reduce((n,r)=>n+r.text.length,extra.length) <= 320;
+  return `<${compact?'section':'details'} class="attention att-c${compact?' att-static':''}" role="note"${compact?' aria-label="Attenzione"':''}>
+    ${compact?'<h3 class="att-h">Attenzione</h3>':'<summary><span class="att-h">Attenzione</span></summary>'}
     <ul>${sorted.map((r) => `<li class="${r.severity === 'critico' ? 'crit' : ''}">${esc(r.text)}</li>`).join('')}</ul>
     ${extra ? `<p class="small">${esc(extra)}</p>` : ''}
-  </details>`;
+  </${compact?'section':'details'}>`;
 }
 
 // disegni composti per le tessere della scheda
@@ -531,10 +532,10 @@ export function renderTaxonPage(box, key) {
     <div class="pbody">
       ${ph.length > 1 ? `<div class="sp-strip">${ph.slice(1, 6).map((p, k) => `<button type="button" class="zoomable" data-photo="${k + 1}" aria-label="Foto ${k + 2}: ingrandisci"><img data-src="${ASSET(p.file)}" alt="" loading="lazy" decoding="async"></button>`).join('')}</div>` : ''}
       ${attentionBox(t.field_rules)}
-      ${t.caution ? `<p class="id-why"><b>Come si mangia:</b> ${esc(t.caution)}</p>` : ''}
-      <h3>Come riconoscerla</h3>
+      ${t.caution ? `<p class="id-why"><b>Cautele della specie:</b> ${esc(t.caution)}</p>` : ''}
+      <h3>Caratteri da confrontare</h3>
       ${traitStrip(null, t)}
-      ${t.check_before_picking?.length ? `<h3>Cosa controllare</h3><ol class="keys">${t.check_before_picking.map((x) => `<li><span class="key-text">${esc(x)}</span></li>`).join('')}</ol>` : ''}
+      ${t.check_before_picking?.length ? `<h3>Cosa osservare</h3><ol class="keys">${t.check_before_picking.map((x) => `<li><span class="key-text">${esc(x)}</span></li>`).join('')}</ol>` : ''}
       ${look.length ? `<h3>Si confonde con</h3><ul class="tx-look">${look.map(({ id, o }) => { const op = photoOf(o); return `<li>
         <a class="tx-look-main" href="#/riconosci/confronta/${esc(t.key)}/${esc(o.key)}">${op ? `<img data-src="${ASSET(op.thumb || op.file)}" alt="" loading="lazy" decoding="async">` : ''}<span><b>${esc(o.name)}</b><i>${esc(o.latin)}</i><small class="tx-cmp">Confrontali carattere per carattere ›</small></span></a>
         <a class="tx-sheet" data-entity href="#/specie/${esc(id)}">Scheda di ${esc(o.name.toLowerCase())} ›</a></li>`; }).join('')}</ul>` : ''}
@@ -544,7 +545,7 @@ export function renderTaxonPage(box, key) {
         ${t.trees?.length ? `<div><dt>Alberi</dt><dd>${esc(t.trees.join(', '))}</dd></div>` : ''}
         ${months ? `<div><dt>Quando</dt><dd>${esc(months)}</dd></div>` : ''}
       </dl>
-      <p class="small muted">Riconoscerla non basta per mangiare nulla: fai controllare tutto il raccolto all'Ispettorato micologico dell'ASL. È gratuito.</p>
+      <p class="small muted">Confrontare questi caratteri non identifica un esemplare: fai controllare tutto il raccolto all'Ispettorato micologico dell'ASL. È gratuito.</p>
       ${t.sources?.length ? `<details class="sec"><summary>Fonti</summary><div class="sec-body"><ul class="small sources">${t.sources.map((x) => `<li><a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.title)}</a></li>`).join('')}</ul></div></details>` : ''}
     </div>`;
   const lb = ph.map((p) => ({ src: ASSET(p.file_hd || p.file), alt: t.name, caption: captionHtml({ title: `<span class="tox">${toxL}</span> ${esc(t.name || '')} <i>${esc(t.latin)}</i>`, credit: `Foto: ${esc(p.author || '')}${p.license ? `, ${esc(p.license)}` : ''}` }) }));
@@ -635,13 +636,12 @@ function renderCompare(box, ref, pick) {
           <div class="cmp-name">${nameBtn(x)}${x.name !== x.latin ? `<i>${esc(x.latin)}</i>` : ''}</div></div>`).join('')}
         <span class="cmp-vs" aria-hidden="true">vs</span>
       </div>
-      ${how ? `<p class="cmp-how"><b>Come distinguerlo.</b> ${esc(how)}</p>` : ''}
-      ${diff.length ? `<h4 class="cmp-h diff">Qui li distingui</h4><ul class="cmp-rows">${diff.map((r) => r.html).join('')}</ul>`
-        : '<p class="cmp-none"><b>Nessuna domanda di Riconosci li separa con certezza.</b> Contano i dettagli: leggi "Come distinguerlo" e, nel dubbio, fallo vedere all\'Ispettorato micologico.</p>'}
+      ${how ? `<p class="cmp-how"><b>Differenze descritte.</b> ${esc(how)}</p>` : ''}
+      ${diff.length ? `<h4 class="cmp-h diff">Caratteri differenti nelle fonti</h4><ul class="cmp-rows">${diff.map((r) => r.html).join('')}</ul>`
+        : '<p class="cmp-none"><b>Nessuna domanda di Riconosci li separa con certezza.</b> Contano i dettagli: leggi le differenze descritte e, nel dubbio, fallo vedere all\'Ispettorato micologico.</p>'}
       ${part.length ? `<h4 class="cmp-h part">A volte simili</h4><ul class="cmp-rows">${part.map((r) => r.html).join('')}</ul>` : ''}
       ${same.length ? `<details class="cmp-same"><summary>Uguali in: ${esc(same.map((r) => r.k.toLowerCase()).join(', '))}</summary><ul class="cmp-rows">${same.map((r) => r.html).join('')}</ul></details>` : ''}
-      ${!fromToxic && ['mortale', 'tossico'].includes(t.toxicity) ? `<p class="cmp-verdict">Se il tuo fungo ha anche uno solo dei caratteri a destra, <b>non è ${esc(ref.name.toLowerCase())}</b>: lascialo dov'è.</p>`
-        : fromToxic && ['mortale', 'tossico'].includes(ref.toxicity) ? `<p class="cmp-verdict">Se il tuo fungo ha anche uno solo dei caratteri a sinistra, <b>non è ${esc((t.name || t.latin).toLowerCase())}</b>: lascialo dov'è.</p>` : ''}
+      ${[ref,t].some(x=>['mortale','tossico'].includes(x.toxicity)) ? '<p class="cmp-verdict">Questo confronto include specie tossiche o mortali. I caratteri descritti possono variare o essere incompleti: somiglianze e differenze non identificano il tuo esemplare.</p>' : ''}
     </section>`;
   };
   const start = Math.max(0, list.findIndex((t) => t.key === pick));

@@ -1,17 +1,24 @@
 {
   "version": 1,
   "generated": "2026-10-12",
-  "disclaimer": "Schede di supporto al riconoscimento, non sostituiscono il controllo. Nessun fungo va consumato sulla base di app, foto o descrizioni: fai sempre controllare il raccolto, esemplare per esemplare, all'Ispettorato micologico della ASL (servizio gratuito). Raccogli esemplari interi, con la base del gambo, e tieni separati quelli dubbi. In caso di malessere dopo un pasto di funghi vai al Pronto Soccorso portando gli avanzi, crudi o cotti.",
+  "disclaimer": "Schede per conoscere e confrontare caratteri e rischi, non per identificare un esemplare o decidere quale consumare. Foto e descrizioni non sostituiscono il controllo dell’intero raccolto all’Ispettorato micologico della ASL. In caso di sospetta ingestione di funghi velenosi contattare subito il 112 o un Centro Antiveleni, senza attendere i sintomi.",
   "species": {
     "edulis": {
       "name": "Porcino",
-      "aka": ["porcino comune", "farnia (in una zona del Lazio)", "ceppatello (Toscana)"],
+      "aka": [
+        "porcino comune",
+        "farnia (in una zona del Lazio)",
+        "ceppatello (Toscana)"
+      ],
       "latin": "Boletus edulis",
       "wikidata": "Q19740",
       "edibility": "ottimo",
       "cap": {
         "shape": "emisferico da giovane, poi convesso e piano-convesso, carnoso",
-        "size_cm": [5, 25],
+        "size_cm": [
+          5,
+          25
+        ],
         "color": "da nocciola chiaro a bruno castano, spesso con un orlo più chiaro, quasi bianco, al margine",
         "surface": "liscia o leggermente rugosa, asciutta; un po' viscida e lucida con l'umido"
       },
@@ -40,8 +47,7 @@
         "Pori bianchi, poi gialli e verdastri: mai rosa, rossi o arancio",
         "Carne bianca che non cambia colore al taglio",
         "Gambo panciuto con reticolo fine e chiaro, non scuro",
-        "Cappello nocciola-bruno, spesso con orlo chiaro",
-        "Sapore dolce, mai amaro"
+        "Cappello nocciola-bruno, spesso con orlo chiaro"
       ],
       "lookalikes": [
         {
@@ -74,30 +80,53 @@
         }
       ],
       "warnings": [
-        "Scarta gli esemplari vecchi, molli o con larve: si alterano facilmente e sono la causa più comune di disturbi.",
-        "Il consumo crudo è diffuso ma sconsigliato per i funghi spontanei; consumalo crudo solo se giovane, sodo e perfetto.",
-        "Qualsiasi boleto con pori rosa, rossi o arancio, o con carne che vira, non è un porcino.",
-        "Limite di raccolta nel Lazio: 3 kg al giorno a persona (L.R. 32/1998)."
+        "Pori rosa, rossi o arancio e carne che vira al blu sono caratteri di altri boleti, anche tossici; il confronto non certifica l’identità di un porcino.",
+        "Pori rosati e reticolo bruno grossolano sono caratteri del porcino di fiele, descritto come molto amaro. Non è una prova da fare assaggiando.",
+        "Taglia minima del cappello per questa specie nel Lazio: 4 cm (L.R. 32/98). È un limite di raccolta, non un criterio di commestibilità.",
+        "Esemplari vecchi, molli, ammuffiti o infestati da larve possono essere alterati, anche nelle specie commestibili."
       ],
       "min_cap_cm": 4,
       "sources": [
-        { "title": "Boletus edulis, Wikipedia (it)", "url": "https://it.wikipedia.org/wiki/Boletus_edulis" },
-        { "title": "I porcini, Rivista di Agraria (2006)", "url": "https://www.rivistadiagraria.org/articoli/anno-2006/i-porcini/?print=pdf" },
-        { "title": "L.R. Lazio 5 agosto 1998 n. 32, testo (FAOLEX)", "url": "https://faolex.fao.org/docs/pdf/ita21952.pdf" },
-        { "title": "Mallozzi A., Nomi volgari e dialettali di alcuni funghi nell'Italia centrale (2011)", "url": "https://www.diacronia.ro/indexing/details/V1473/pdf" },
-        { "title": "La risorsa FUNGO in Alta Valle del Vara (SSSA Pisa, Gruppo Micologico Lucchese), scheda Boletus luridus e boleti a pori rossi", "url": "https://iris.santannapisa.it/retrieve/dd9e0b31-bbe9-709e-e053-3705fe0a83fd/104_vqr_Funghi.pdf" },
-        { "title": "Wikidata Q19740", "url": "https://www.wikidata.org/wiki/Q19740" }
+        {
+          "title": "Boletus edulis, Wikipedia (it)",
+          "url": "https://it.wikipedia.org/wiki/Boletus_edulis"
+        },
+        {
+          "title": "I porcini, Rivista di Agraria (2006)",
+          "url": "https://www.rivistadiagraria.org/articoli/anno-2006/i-porcini/?print=pdf"
+        },
+        {
+          "title": "L.R. Lazio 5 agosto 1998 n. 32, testo (FAOLEX)",
+          "url": "https://faolex.fao.org/docs/pdf/ita21952.pdf"
+        },
+        {
+          "title": "Mallozzi A., Nomi volgari e dialettali di alcuni funghi nell'Italia centrale (2011)",
+          "url": "https://www.diacronia.ro/indexing/details/V1473/pdf"
+        },
+        {
+          "title": "La risorsa FUNGO in Alta Valle del Vara (SSSA Pisa, Gruppo Micologico Lucchese), scheda Boletus luridus e boleti a pori rossi",
+          "url": "https://iris.santannapisa.it/retrieve/dd9e0b31-bbe9-709e-e053-3705fe0a83fd/104_vqr_Funghi.pdf"
+        },
+        {
+          "title": "Wikidata Q19740",
+          "url": "https://www.wikidata.org/wiki/Q19740"
+        }
       ]
     },
     "pinophilus": {
       "name": "Porcino rosso",
-      "aka": ["porcino dei pini"],
+      "aka": [
+        "porcino dei pini"
+      ],
       "latin": "Boletus pinophilus",
       "wikidata": "Q1415435",
       "edibility": "ottimo",
       "cap": {
         "shape": "emisferico, poi convesso, molto carnoso",
-        "size_cm": [6, 25],
+        "size_cm": [
+          6,
+          25
+        ],
         "color": "bruno-rossastro, rosso-mattone o mogano, a volte con orlo più chiaro",
         "surface": "asciutta, opaca, spesso finemente granulosa o rugosa"
       },
@@ -152,28 +181,47 @@
         }
       ],
       "warnings": [
-        "Scarta esemplari vecchi o invasi da larve.",
-        "Sconsigliato il consumo crudo dei funghi spontanei.",
-        "Un boleto rosso con pori rossi o carne che vira non è un porcino rosso.",
-        "Limite di raccolta nel Lazio: 3 kg al giorno a persona."
+        "Pori rosa, rossi o arancio e carne che vira al blu sono caratteri di altri boleti, anche tossici; il confronto non certifica l’identità di un porcino.",
+        "Pori rossi e punteggiatura rossa sul gambo sono caratteri da confrontare con il boleto a piede rosso, tossico da crudo.",
+        "Taglia minima del cappello per questa specie nel Lazio: 4 cm (L.R. 32/98). È un limite di raccolta, non un criterio di commestibilità.",
+        "Esemplari vecchi, molli, ammuffiti o infestati da larve possono essere alterati, anche nelle specie commestibili."
       ],
       "min_cap_cm": 4,
       "sources": [
-        { "title": "Boletus pinophilus, Wikipedia (it)", "url": "https://it.wikipedia.org/wiki/Boletus_pinophilus" },
-        { "title": "I porcini, Rivista di Agraria (2006)", "url": "https://www.rivistadiagraria.org/articoli/anno-2006/i-porcini/?print=pdf" },
-        { "title": "L.R. Lazio 5 agosto 1998 n. 32, testo (FAOLEX)", "url": "https://faolex.fao.org/docs/pdf/ita21952.pdf" },
-        { "title": "Wikidata Q1415435", "url": "https://www.wikidata.org/wiki/Q1415435" }
+        {
+          "title": "Boletus pinophilus, Wikipedia (it)",
+          "url": "https://it.wikipedia.org/wiki/Boletus_pinophilus"
+        },
+        {
+          "title": "I porcini, Rivista di Agraria (2006)",
+          "url": "https://www.rivistadiagraria.org/articoli/anno-2006/i-porcini/?print=pdf"
+        },
+        {
+          "title": "L.R. Lazio 5 agosto 1998 n. 32, testo (FAOLEX)",
+          "url": "https://faolex.fao.org/docs/pdf/ita21952.pdf"
+        },
+        {
+          "title": "Wikidata Q1415435",
+          "url": "https://www.wikidata.org/wiki/Q1415435"
+        }
       ]
     },
     "aereus": {
       "name": "Porcino nero",
-      "aka": ["moreccio (Toscana)", "bronzino", "farno"],
+      "aka": [
+        "moreccio (Toscana)",
+        "bronzino",
+        "farno"
+      ],
       "latin": "Boletus aereus",
       "wikidata": "Q757127",
       "edibility": "ottimo",
       "cap": {
         "shape": "emisferico, poi convesso e spianato, molto sodo",
-        "size_cm": [6, 24],
+        "size_cm": [
+          6,
+          24
+        ],
         "color": "bruno scuro quasi nero, bronzo; a volte con zone più chiare bruno-ocra. Esistono forme decolorate nocciola",
         "surface": "asciutta, vellutata o liscia, spesso irregolare, come ammaccata"
       },
@@ -228,28 +276,49 @@
         }
       ],
       "warnings": [
-        "Le forme chiare si confondono con gli altri porcini (tutti commestibili): il problema sono i boleti a pori rossi.",
-        "Sconsigliato il consumo crudo dei funghi spontanei.",
-        "Limite di raccolta nel Lazio: 3 kg al giorno a persona."
+        "Pori rosa, rossi o arancio e carne che vira al blu sono caratteri di altri boleti, anche tossici; il confronto non certifica l’identità di un porcino.",
+        "Un cappello scuro compare in diversi boleti: colore, pori e carne devono essere considerati insieme.",
+        "Taglia minima del cappello per questa specie nel Lazio: 4 cm (L.R. 32/98). È un limite di raccolta, non un criterio di commestibilità.",
+        "Esemplari vecchi, molli, ammuffiti o infestati da larve possono essere alterati, anche nelle specie commestibili."
       ],
       "min_cap_cm": 4,
       "sources": [
-        { "title": "Boletus aereus, Wikipedia (it)", "url": "https://it.wikipedia.org/wiki/Boletus_aereus" },
-        { "title": "La risorsa FUNGO in Alta Valle del Vara (SSSA Pisa, Gruppo Micologico Lucchese), scheda Boletus aereus", "url": "https://iris.santannapisa.it/retrieve/dd9e0b31-bbf2-709e-e053-3705fe0a83fd/96_vqr_Funghi.pdf" },
-        { "title": "Forum Funghi Italiani, Boletus aereus", "url": "https://www.funghiitaliani.it/topic/15312-boletus-aereus-bull-fr-1789/page/3/" },
-        { "title": "L.R. Lazio 5 agosto 1998 n. 32, testo (FAOLEX)", "url": "https://faolex.fao.org/docs/pdf/ita21952.pdf" },
-        { "title": "Wikidata Q757127", "url": "https://www.wikidata.org/wiki/Q757127" }
+        {
+          "title": "Boletus aereus, Wikipedia (it)",
+          "url": "https://it.wikipedia.org/wiki/Boletus_aereus"
+        },
+        {
+          "title": "La risorsa FUNGO in Alta Valle del Vara (SSSA Pisa, Gruppo Micologico Lucchese), scheda Boletus aereus",
+          "url": "https://iris.santannapisa.it/retrieve/dd9e0b31-bbf2-709e-e053-3705fe0a83fd/96_vqr_Funghi.pdf"
+        },
+        {
+          "title": "Forum Funghi Italiani, Boletus aereus",
+          "url": "https://www.funghiitaliani.it/topic/15312-boletus-aereus-bull-fr-1789/page/3/"
+        },
+        {
+          "title": "L.R. Lazio 5 agosto 1998 n. 32, testo (FAOLEX)",
+          "url": "https://faolex.fao.org/docs/pdf/ita21952.pdf"
+        },
+        {
+          "title": "Wikidata Q757127",
+          "url": "https://www.wikidata.org/wiki/Q757127"
+        }
       ]
     },
     "aestivalis": {
       "name": "Porcino estivo",
-      "aka": ["porcino d'estate"],
+      "aka": [
+        "porcino d'estate"
+      ],
       "latin": "Boletus reticulatus (= B. aestivalis)",
       "wikidata": "Q26203726",
       "edibility": "ottimo",
       "cap": {
         "shape": "emisferico, poi convesso, raramente del tutto disteso",
-        "size_cm": [4, 20],
+        "size_cm": [
+          4,
+          20
+        ],
         "color": "nocciola-brunastro uniforme, senza orlo chiaro",
         "surface": "asciutta, opaca, vellutata; si screpola facilmente col caldo"
       },
@@ -305,27 +374,48 @@
         }
       ],
       "warnings": [
-        "È il porcino più attaccato dalle larve: controlla la sezione e scarta gli esemplari bacati o molli.",
-        "Sconsigliato il consumo crudo dei funghi spontanei.",
-        "Limite di raccolta nel Lazio: 3 kg al giorno a persona."
+        "Pori rosa, rossi o arancio e carne che vira al blu sono caratteri di altri boleti, anche tossici; il confronto non certifica l’identità di un porcino.",
+        "Pori rosati e reticolo bruno grossolano sono caratteri del porcino di fiele, descritto come molto amaro. Non è una prova da fare assaggiando.",
+        "Esemplari vecchi, molli, ammuffiti o infestati da larve possono essere alterati, anche nelle specie commestibili.",
+        "Taglia minima del cappello per questa specie nel Lazio: 4 cm (L.R. 32/98). È un limite di raccolta, non un criterio di commestibilità."
       ],
       "min_cap_cm": 4,
       "sources": [
-        { "title": "Boletus aestivalis, Wikipedia (it)", "url": "https://it.wikipedia.org/wiki/Boletus_aestivalis" },
-        { "title": "I porcini, Rivista di Agraria (2006)", "url": "https://www.rivistadiagraria.org/articoli/anno-2006/i-porcini/?print=pdf" },
-        { "title": "L.R. Lazio 5 agosto 1998 n. 32, testo (FAOLEX)", "url": "https://faolex.fao.org/docs/pdf/ita21952.pdf" },
-        { "title": "Wikidata Q26203726", "url": "https://www.wikidata.org/wiki/Q26203726" }
+        {
+          "title": "Boletus aestivalis, Wikipedia (it)",
+          "url": "https://it.wikipedia.org/wiki/Boletus_aestivalis"
+        },
+        {
+          "title": "I porcini, Rivista di Agraria (2006)",
+          "url": "https://www.rivistadiagraria.org/articoli/anno-2006/i-porcini/?print=pdf"
+        },
+        {
+          "title": "L.R. Lazio 5 agosto 1998 n. 32, testo (FAOLEX)",
+          "url": "https://faolex.fao.org/docs/pdf/ita21952.pdf"
+        },
+        {
+          "title": "Wikidata Q26203726",
+          "url": "https://www.wikidata.org/wiki/Q26203726"
+        }
       ]
     },
     "caesarea": {
       "name": "Ovolo buono",
-      "aka": ["ovolo reale", "ovulo buono (Alta Valle del Velino)", "ovolaccio (Umbria)", "veloccio (basso Lazio)"],
+      "aka": [
+        "ovolo reale",
+        "ovulo buono (Alta Valle del Velino)",
+        "ovolaccio (Umbria)",
+        "veloccio (basso Lazio)"
+      ],
       "latin": "Amanita caesarea",
       "wikidata": "Q220662",
       "edibility": "ottimo",
       "cap": {
         "shape": "da giovane chiuso in un 'uovo' bianco, poi emisferico, infine piano",
-        "size_cm": [6, 20],
+        "size_cm": [
+          6,
+          20
+        ],
         "color": "arancio vivo o rosso-arancio, più giallo verso il bordo",
         "surface": "liscia, lucida, a volte con un lembo bianco di volva; orlo striato"
       },
@@ -355,7 +445,7 @@
         "Volva a sacco BIANCA, grande e spessa",
         "Cappello arancio vivo con orlo striato",
         "In sezione l'ovolo mostra il cappello arancio e il giallo all'interno",
-        "Va raccolto solo aperto: l'ovolo chiuso è vietato"
+        "La raccolta degli ovoli chiusi è vietata nel Lazio"
       ],
       "lookalikes": [
         {
@@ -395,31 +485,63 @@
         }
       ],
       "warnings": [
-        "Vietato raccogliere l'ovolo chiuso, con il velo non ancora lacerato (L.R. Lazio 32/1998, art. 3 c. 4).",
-        "Molti lo mangiano crudo: è prudente farlo solo dopo il controllo ASL e su esemplari freschissimi.",
-        "Mai fidarsi del solo colore del cappello: verifica lamelle e gambo gialli e la volva bianca a sacco.",
-        "Raccogli l'esemplare intero, con la volva, per permettere il controllo."
+        "La raccolta degli ovoli con velo ancora chiuso è vietata nel Lazio (L.R. 32/98, art. 3 c. 4). In questa fase sono possibili confusioni con amanite mortali.",
+        "Il velo naturalmente lacerato rende visibili più caratteri; aprire un ovolo chiuso non rende lecita la raccolta né ne conferma l’identità.",
+        "Lamelle, gambo e anello gialli e volva bianca a sacco sono caratteri descritti per A. caesarea: nessuno, isolatamente, certifica la specie.",
+        "La base completa e gli eventuali resti della volva sono necessari al controllo micologico; una base incompleta limita il confronto.",
+        "Amanita muscaria può perdere le verruche con la pioggia: un cappello arancio liscio non identifica A. caesarea.",
+        "Taglia minima del cappello per questa specie nel Lazio: 4 cm (L.R. 32/98). È un limite di raccolta, non un criterio di commestibilità."
       ],
       "min_cap_cm": 4,
       "sources": [
-        { "title": "Amanita caesarea, Wikipedia (it)", "url": "https://it.wikipedia.org/wiki/Amanita_caesarea" },
-        { "title": "La risorsa FUNGO in Alta Valle del Vara (SSSA Pisa, Gruppo Micologico Lucchese), schede Amanita caesarea e A. muscaria", "url": "https://iris.santannapisa.it/retrieve/dd9e0b31-bbe6-709e-e053-3705fe0a83fd/80_vqr_Funghi.pdf" },
-        { "title": "La risorsa FUNGO in Alta Valle del Vara, scheda Amanita verna", "url": "https://iris.santannapisa.it/retrieve/dd9e0b31-bbf8-709e-e053-3705fe0a83fd/92_vqr_Funghi.pdf" },
-        { "title": "L.R. Lazio 5 agosto 1998 n. 32, testo (FAOLEX)", "url": "https://faolex.fao.org/docs/pdf/ita21952.pdf" },
-        { "title": "Mallozzi A., Nomi volgari e dialettali di alcuni funghi nell'Italia centrale (2011)", "url": "https://www.diacronia.ro/indexing/details/V1473/pdf" },
-        { "title": "Andar per funghi, Alta Valle del Velino", "url": "https://www.altavalledelvelino.com/natura-e-ambiente/bosco-e-dintorni/252-andar-per-funghi.html" },
-        { "title": "Wikidata Q220662", "url": "https://www.wikidata.org/wiki/Q220662" }
+        {
+          "title": "Amanita caesarea, Wikipedia (it)",
+          "url": "https://it.wikipedia.org/wiki/Amanita_caesarea"
+        },
+        {
+          "title": "La risorsa FUNGO in Alta Valle del Vara (SSSA Pisa, Gruppo Micologico Lucchese), schede Amanita caesarea e A. muscaria",
+          "url": "https://iris.santannapisa.it/retrieve/dd9e0b31-bbe6-709e-e053-3705fe0a83fd/80_vqr_Funghi.pdf"
+        },
+        {
+          "title": "La risorsa FUNGO in Alta Valle del Vara, scheda Amanita verna",
+          "url": "https://iris.santannapisa.it/retrieve/dd9e0b31-bbf8-709e-e053-3705fe0a83fd/92_vqr_Funghi.pdf"
+        },
+        {
+          "title": "L.R. Lazio 5 agosto 1998 n. 32, testo (FAOLEX)",
+          "url": "https://faolex.fao.org/docs/pdf/ita21952.pdf"
+        },
+        {
+          "title": "Mallozzi A., Nomi volgari e dialettali di alcuni funghi nell'Italia centrale (2011)",
+          "url": "https://www.diacronia.ro/indexing/details/V1473/pdf"
+        },
+        {
+          "title": "Andar per funghi, Alta Valle del Velino",
+          "url": "https://www.altavalledelvelino.com/natura-e-ambiente/bosco-e-dintorni/252-andar-per-funghi.html"
+        },
+        {
+          "title": "Wikidata Q220662",
+          "url": "https://www.wikidata.org/wiki/Q220662"
+        }
       ]
     },
     "cibarius": {
       "name": "Finferlo",
-      "aka": ["galletto", "gallinaccio", "galluzzo", "caglinella (basso Lazio)", "cantarello"],
+      "aka": [
+        "galletto",
+        "gallinaccio",
+        "galluzzo",
+        "caglinella (basso Lazio)",
+        "cantarello"
+      ],
       "latin": "Cantharellus cibarius",
       "wikidata": "Q188749",
       "edibility": "ottimo",
       "cap": {
         "shape": "convesso, poi a imbuto, con margine sottile, ondulato e lobato",
-        "size_cm": [2, 12],
+        "size_cm": [
+          2,
+          12
+        ],
         "color": "giallo uovo o giallo-arancio, uniforme",
         "surface": "liscia, asciutta"
       },
@@ -470,33 +592,60 @@
           "name": "Cortinario orellano",
           "wikidata": "Q1367003",
           "toxicity": "mortale",
-          "how_to_tell": "Arancio-fulvo ma con vere lamelle staccate e sporata color ruggine; carne giallastra. Danni ai reni dopo giorni dal pasto: ogni fungo aranciato con lamelle va scartato."
+          "how_to_tell": "Arancio-fulvo ma con vere lamelle staccate e sporata color ruggine; carne giallastra. Cortinarius orellanus contiene orellanina, con possibili danni renali tardivi. Il colore e le lamelle non identificano da soli la specie."
         }
       ],
       "warnings": [
-        "Va consumato ben cotto; è di digestione lenta, mangiane quantità moderate.",
-        "Controlla sempre che le 'lamelle' siano pliche e che il fungo nasca a terra: i casi di intossicazione da Omphalotus sono frequenti.",
-        "Non affidarti alle app di riconoscimento: diversi intossicati da Omphalotus le avevano usate."
+        "Omphalotus olearius, tossico, può formare cespi aranciati su legno e radici, talvolta interrati.",
+        "Le pliche spesse e ramificate del finferlo sono diverse dalle vere lamelle sottili; questo carattere va confrontato con il resto del fungo.",
+        "Tra i cortinari fulvo-aranciati con lamelle e sporata ruggine vi sono specie contenenti orellanina: possibili danni renali tardivi.",
+        "Foto e app non certificano l’identità del fungo né escludono sosia tossici.",
+        "Anche per le specie commestibili, cottura e quantità seguono le indicazioni sanitarie dopo il controllo micologico."
       ],
       "min_cap_cm": 3,
       "sources": [
-        { "title": "Cantharellus cibarius, Wikipedia (it)", "url": "https://it.wikipedia.org/wiki/Cantharellus_cibarius" },
-        { "title": "La risorsa FUNGO in Alta Valle del Vara (SSSA Pisa, Gruppo Micologico Lucchese), scheda Cantharellus cibarius", "url": "https://iris.santannapisa.it/retrieve/dd9e0b31-bba4-709e-e053-3705fe0a83fd/116_vqr_Funghi.pdf" },
-        { "title": "ASL Oristano, Ispettorato micologico: Attenzione ai sosia, Omphalotus olearius", "url": "https://asl5oristano.it/wp-content/uploads/2024/09/OMPHALOTUS-OLEARIUS.pdf" },
-        { "title": "Fungo dell'olivo, turisti intossicati a Pontremoli (GoNews, 2020)", "url": "https://www.gonews.it/2020/08/31/fungo-olivo-intossicati-pontremoli/amp/" },
-        { "title": "Mallozzi A., Nomi volgari e dialettali di alcuni funghi nell'Italia centrale (2011)", "url": "https://www.diacronia.ro/indexing/details/V1473/pdf" },
-        { "title": "Wikidata Q188749", "url": "https://www.wikidata.org/wiki/Q188749" }
+        {
+          "title": "Cantharellus cibarius, Wikipedia (it)",
+          "url": "https://it.wikipedia.org/wiki/Cantharellus_cibarius"
+        },
+        {
+          "title": "La risorsa FUNGO in Alta Valle del Vara (SSSA Pisa, Gruppo Micologico Lucchese), scheda Cantharellus cibarius",
+          "url": "https://iris.santannapisa.it/retrieve/dd9e0b31-bba4-709e-e053-3705fe0a83fd/116_vqr_Funghi.pdf"
+        },
+        {
+          "title": "ASL Oristano, Ispettorato micologico: Attenzione ai sosia, Omphalotus olearius",
+          "url": "https://asl5oristano.it/wp-content/uploads/2024/09/OMPHALOTUS-OLEARIUS.pdf"
+        },
+        {
+          "title": "Fungo dell'olivo, turisti intossicati a Pontremoli (GoNews, 2020)",
+          "url": "https://www.gonews.it/2020/08/31/fungo-olivo-intossicati-pontremoli/amp/"
+        },
+        {
+          "title": "Mallozzi A., Nomi volgari e dialettali di alcuni funghi nell'Italia centrale (2011)",
+          "url": "https://www.diacronia.ro/indexing/details/V1473/pdf"
+        },
+        {
+          "title": "Wikidata Q188749",
+          "url": "https://www.wikidata.org/wiki/Q188749"
+        }
       ]
     },
     "cornucopioides": {
       "name": "Trombetta dei morti",
-      "aka": ["trombetta da morto", "tartufo dei poveri", "corno dell'abbondanza"],
+      "aka": [
+        "trombetta da morto",
+        "tartufo dei poveri",
+        "corno dell'abbondanza"
+      ],
       "latin": "Craterellus cornucopioides",
       "wikidata": "Q857903",
       "edibility": "ottimo",
       "cap": {
         "shape": "a tromba o imbuto profondo, cavo fino alla base, con orlo arricciato e ondulato",
-        "size_cm": [2, 8],
+        "size_cm": [
+          2,
+          8
+        ],
         "color": "interno bruno-nerastro o nero; più grigio col secco",
         "surface": "interno squamuloso-fibrilloso, opaco"
       },
@@ -551,28 +700,50 @@
         }
       ],
       "warnings": [
-        "Non ha sosia tossici rilevanti, ma raccogli solo esemplari freschi: quelli vecchi e molli si alterano.",
-        "Pulisci bene l'interno della tromba da terra e insetti; va consumata cotta.",
-        "Si essicca molto bene."
+        "Esemplari vecchi, molli, ammuffiti o infestati da larve possono essere alterati, anche nelle specie commestibili.",
+        "La cavità della tromba può contenere terra e insetti. Le indicazioni di pulizia e cottura valgono dopo il controllo micologico.",
+        "Una somiglianza con la scheda non risolve un’identità incerta; la valutazione del raccolto spetta all’Ispettorato micologico."
       ],
       "min_cap_cm": 3,
       "sources": [
-        { "title": "Craterellus cornucopioides, Wikipedia (it)", "url": "https://it.wikipedia.org/wiki/Craterellus_cornucopioides" },
-        { "title": "La risorsa FUNGO in Alta Valle del Vara (SSSA Pisa, Gruppo Micologico Lucchese), scheda Craterellus cornucopioides", "url": "https://www.iris.sssup.it/retrieve/dd9e0b31-bbfc-709e-e053-3705fe0a83fd/132_vqr_Funghi.pdf" },
-        { "title": "Mallozzi A., Nomi volgari e dialettali di alcuni funghi nell'Italia centrale (2011)", "url": "https://www.diacronia.ro/indexing/details/V1473/pdf" },
-        { "title": "Andar per funghi, Alta Valle del Velino", "url": "https://www.altavalledelvelino.com/natura-e-ambiente/bosco-e-dintorni/252-andar-per-funghi.html" },
-        { "title": "Wikidata Q857903", "url": "https://www.wikidata.org/wiki/Q857903" }
+        {
+          "title": "Craterellus cornucopioides, Wikipedia (it)",
+          "url": "https://it.wikipedia.org/wiki/Craterellus_cornucopioides"
+        },
+        {
+          "title": "La risorsa FUNGO in Alta Valle del Vara (SSSA Pisa, Gruppo Micologico Lucchese), scheda Craterellus cornucopioides",
+          "url": "https://www.iris.sssup.it/retrieve/dd9e0b31-bbfc-709e-e053-3705fe0a83fd/132_vqr_Funghi.pdf"
+        },
+        {
+          "title": "Mallozzi A., Nomi volgari e dialettali di alcuni funghi nell'Italia centrale (2011)",
+          "url": "https://www.diacronia.ro/indexing/details/V1473/pdf"
+        },
+        {
+          "title": "Andar per funghi, Alta Valle del Velino",
+          "url": "https://www.altavalledelvelino.com/natura-e-ambiente/bosco-e-dintorni/252-andar-per-funghi.html"
+        },
+        {
+          "title": "Wikidata Q857903",
+          "url": "https://www.wikidata.org/wiki/Q857903"
+        }
       ]
     },
     "repandum": {
       "name": "Steccherino dorato",
-      "aka": ["spinarolo / spinerolo (Umbria e Lazio)", "dentino", "steccherino"],
+      "aka": [
+        "spinarolo / spinerolo (Umbria e Lazio)",
+        "dentino",
+        "steccherino"
+      ],
       "latin": "Hydnum repandum",
       "wikidata": "Q13684",
       "edibility": "buono",
       "cap": {
         "shape": "convesso o un po' depresso, irregolare e lobato, orlo spesso ondulato",
-        "size_cm": [3, 15],
+        "size_cm": [
+          3,
+          15
+        ],
         "color": "crema, ocra chiaro o giallo-arancio pallido",
         "surface": "asciutta, opaca, come feltrata"
       },
@@ -634,28 +805,52 @@
         }
       ],
       "warnings": [
-        "Gli esemplari vecchi diventano amari: preferisci quelli giovani; si possono togliere gli aculei.",
-        "Va consumato cotto.",
-        "Ogni idnoide bruno, scuro, duro o sugheroso non è uno steccherino dorato."
+        "Aculei bruni, consistenza dura o sugherosa e cappello squamoso compaiono in altri funghi idnoidi, con commestibilità diverse.",
+        "Gli esemplari maturi possono essere amari. Le indicazioni di preparazione riguardano solo esemplari controllati."
       ],
       "min_cap_cm": 3,
       "sources": [
-        { "title": "Hydnum repandum, Wikipedia (it)", "url": "https://it.wikipedia.org/wiki/Hydnum_repandum" },
-        { "title": "Mallozzi A., Nomi volgari e dialettali di alcuni funghi nell'Italia centrale (2011)", "url": "https://www.diacronia.ro/indexing/details/V1473/pdf" },
-        { "title": "Sarcodon imbricatus, Wikipedia (it)", "url": "https://it.wikipedia.org/wiki/Sarcodon_imbricatus" },
-        { "title": "Hydnellum peckii, Wikipedia (it)", "url": "https://it.wikipedia.org/wiki/Hydnellum_peckii" },
-        { "title": "Wikidata Q13684", "url": "https://www.wikidata.org/wiki/Q13684" }
+        {
+          "title": "Hydnum repandum, Wikipedia (it)",
+          "url": "https://it.wikipedia.org/wiki/Hydnum_repandum"
+        },
+        {
+          "title": "Mallozzi A., Nomi volgari e dialettali di alcuni funghi nell'Italia centrale (2011)",
+          "url": "https://www.diacronia.ro/indexing/details/V1473/pdf"
+        },
+        {
+          "title": "Sarcodon imbricatus, Wikipedia (it)",
+          "url": "https://it.wikipedia.org/wiki/Sarcodon_imbricatus"
+        },
+        {
+          "title": "Hydnellum peckii, Wikipedia (it)",
+          "url": "https://it.wikipedia.org/wiki/Hydnellum_peckii"
+        },
+        {
+          "title": "Wikidata Q13684",
+          "url": "https://www.wikidata.org/wiki/Q13684"
+        }
       ]
     },
     "procera": {
       "name": "Mazza di tamburo",
-      "aka": ["bubbola maggiore", "parasole", "ombrellone", "crocola / crucola (Monti Cimini)", "grucola (Tolfa)", "cappellaccio"],
+      "aka": [
+        "bubbola maggiore",
+        "parasole",
+        "ombrellone",
+        "crocola / crucola (Monti Cimini)",
+        "grucola (Tolfa)",
+        "cappellaccio"
+      ],
       "latin": "Macrolepiota procera",
       "wikidata": "Q243381",
       "edibility": "buono",
       "cap": {
         "shape": "da giovane ovale chiuso 'a mazza di tamburo', poi aperto a ombrello con umbone centrale",
-        "size_cm": [10, 30],
+        "size_cm": [
+          10,
+          30
+        ],
         "color": "fondo crema-nocciola con umbone bruno liscio e squame brune disposte in cerchi",
         "surface": "fibrosa, asciutta, con squame che si diradano verso il margine sfrangiato"
       },
@@ -700,7 +895,7 @@
           "name": "Lepiota subincarnata",
           "wikidata": "Q4259141",
           "toxicity": "mortale",
-          "how_to_tell": "Piccola, cappello sotto i 5 cm con squame rosate; gambo con fiocchi rosati. Ogni 'mazzetta' sotto i 10 cm va scartata."
+          "how_to_tell": "Piccola, cappello sotto i 5 cm con squame rosate; gambo con fiocchi rosati. Piccole Lepiota possono contenere amatossine mortali: la taglia non certifica la commestibilità."
         },
         {
           "latin": "Lepiota cristata",
@@ -725,30 +920,56 @@
         }
       ],
       "warnings": [
-        "Tossica cruda o poco cotta: cuocila a lungo; evita piastra e griglia se l'interno resta crudo.",
-        "Si consuma solo il cappello: il gambo è fibroso e va scartato.",
-        "Raccogli solo esemplari grandi con tutti i caratteri: le piccole Lepiota sono mortali. Taglia minima di legge 5 cm, ma è prudente scartare tutto sotto i 10 cm.",
-        "Accumula metalli pesanti: evita prati a bordo strada e aree inquinate."
+        "Le piccole Lepiota comprendono specie mortali. Nel Lazio il limite di raccolta di M. procera è 5 cm; una taglia maggiore non certifica l’identità.",
+        "Anello doppio e mobile e zigrinature del gambo sono caratteri descritti per M. procera, da confrontare con l’intero fungo.",
+        "Arrossamento della carne e gambo liscio compaiono in Chlorophyllum, che comprende sosia problematici: non sono da soli un’identificazione.",
+        "M. procera è tossica cruda o poco cotta; il gambo è fibroso. Preparazione solo dopo il controllo micologico.",
+        "I funghi possono accumulare contaminanti: bordo strada e aree inquinate comportano rischi indipendenti dalla specie."
       ],
       "min_cap_cm": 5,
       "sources": [
-        { "title": "Macrolepiota procera, Wikipedia (it)", "url": "https://it.wikipedia.org/wiki/Macrolepiota_procera" },
-        { "title": "La risorsa FUNGO in Alta Valle del Vara (SSSA Pisa, Gruppo Micologico Lucchese), schede Macrolepiota procera e M. venenata", "url": "https://iris.santannapisa.it/retrieve/dd9e0b31-bbed-709e-e053-3705fe0a83fd/178_vqr_Funghi.pdf" },
-        { "title": "Ispettorato micologico di Imola: Lepiota mortali (Sabato Sera, 2019)", "url": "https://sabatosera.it/sabatosera/news/2019/09/25/non-tutti-i-funghi-sono-commestibili-a-imola-ha-riaperto-lispettorato-micologico" },
-        { "title": "Città Metropolitana di Reggio Calabria, avviso ai raccoglitori di funghi", "url": "https://old.cittametropolitana.rc.it/canali/agricoltura/notizie-e-avvisi/avviso-comunicato-per-i-raccoglitori-di-funghi/avviso.pdf" },
-        { "title": "L.R. Lazio 5 agosto 1998 n. 32, testo (FAOLEX)", "url": "https://faolex.fao.org/docs/pdf/ita21952.pdf" },
-        { "title": "Wikidata Q243381", "url": "https://www.wikidata.org/wiki/Q243381" }
+        {
+          "title": "Macrolepiota procera, Wikipedia (it)",
+          "url": "https://it.wikipedia.org/wiki/Macrolepiota_procera"
+        },
+        {
+          "title": "La risorsa FUNGO in Alta Valle del Vara (SSSA Pisa, Gruppo Micologico Lucchese), schede Macrolepiota procera e M. venenata",
+          "url": "https://iris.santannapisa.it/retrieve/dd9e0b31-bbed-709e-e053-3705fe0a83fd/178_vqr_Funghi.pdf"
+        },
+        {
+          "title": "Ispettorato micologico di Imola: Lepiota mortali (Sabato Sera, 2019)",
+          "url": "https://sabatosera.it/sabatosera/news/2019/09/25/non-tutti-i-funghi-sono-commestibili-a-imola-ha-riaperto-lispettorato-micologico"
+        },
+        {
+          "title": "Città Metropolitana di Reggio Calabria, avviso ai raccoglitori di funghi",
+          "url": "https://old.cittametropolitana.rc.it/canali/agricoltura/notizie-e-avvisi/avviso-comunicato-per-i-raccoglitori-di-funghi/avviso.pdf"
+        },
+        {
+          "title": "L.R. Lazio 5 agosto 1998 n. 32, testo (FAOLEX)",
+          "url": "https://faolex.fao.org/docs/pdf/ita21952.pdf"
+        },
+        {
+          "title": "Wikidata Q243381",
+          "url": "https://www.wikidata.org/wiki/Q243381"
+        }
       ]
     },
     "mellea": {
       "name": "Chiodino",
-      "aka": ["famigliola buona", "famijole de quercia (Perugino)", "chiodini"],
+      "aka": [
+        "famigliola buona",
+        "famijole de quercia (Perugino)",
+        "chiodini"
+      ],
       "latin": "Armillaria mellea",
       "wikidata": "Q473745",
       "edibility": "commestibile con cautela",
       "cap": {
         "shape": "convesso, poi piano, a volte un po' umbonato o depresso",
-        "size_cm": [3, 12],
+        "size_cm": [
+          3,
+          12
+        ],
         "color": "giallo-miele, bruno-giallastro o bruno-rossiccio, più scuro al centro",
         "surface": "con piccole squame scure, fitte al centro, che spariscono negli adulti; margine sottile e striato"
       },
@@ -825,33 +1046,67 @@
         }
       ],
       "warnings": [
-        "Tossico crudo o poco cotto: prebollilo, butta l'acqua e poi cuocilo di nuovo a lungo. Le indicazioni sui tempi variano (ASL Biella: 5 minuti di prebollitura e 15-20 di cottura; altre fonti chiedono 15-20 minuti già di prebollitura): segui la versione più lunga.",
-        "Non congelarlo crudo e scarta i chiodini colpiti dal gelo: sono stati descritti disturbi anche dopo cottura.",
-        "Usa solo i cappelli e la parte alta del gambo; il resto è fibroso e indigesto.",
-        "È tra le prime cause di intossicazione in Italia: mangiane poco, evita pasti ripetuti ravvicinati; alcune persone sono intolleranti.",
-        "Con 'chiodino' si raccolgono più specie di Armillaria (A. mellea, A. gallica, A. ostoyae): valgono per tutte le stesse cautele. Ogni cespo va verificato fungo per fungo: le Galerina crescono anche mescolate."
+        "Armillaria è tossica cruda o poco cotta. Le fonti sanitarie prevedono prebollitura con eliminazione dell’acqua e successiva cottura, dopo il controllo micologico.",
+        "Galerina marginata, mortale, può crescere sullo stesso legno delle Armillaria: un cespo non garantisce che tutti gli esemplari appartengano alla stessa specie.",
+        "Il gambo è fibroso, soprattutto nella parte inferiore; le indicazioni di preparazione riguardano il raccolto controllato.",
+        "Le fonti sanitarie sconsigliano il congelamento delle Armillaria crude e il consumo di esemplari colpiti dal gelo.",
+        "Armillaria è frequentemente coinvolta in intossicazioni; quantità elevate, pasti ravvicinati e sensibilità individuale aumentano i problemi."
       ],
       "min_cap_cm": 3,
       "sources": [
-        { "title": "Armillaria mellea, Wikipedia (it)", "url": "https://it.wikipedia.org/wiki/Armillaria_mellea" },
-        { "title": "La risorsa FUNGO in Alta Valle del Vara (SSSA Pisa, Gruppo Micologico Lucchese), scheda Armillaria mellea", "url": "https://iris.santannapisa.it/retrieve/dd9e0b31-bbf8-709e-e053-3705fe0a83fd/92_vqr_Funghi.pdf" },
-        { "title": "ASL Biella, poster 'Non consumare i chiodini crudi' (2025)", "url": "https://aslbi.piemonte.it/wp-content/uploads/2025/08/Poster-NON-CONSUMARE-I-CHIODINI-CRUDI.pdf" },
-        { "title": "Galerina marginata, Wikipedia (it)", "url": "https://it.wikipedia.org/wiki/Galerina_marginata" },
-        { "title": "Mallozzi A., Nomi volgari e dialettali di alcuni funghi nell'Italia centrale (2011)", "url": "https://www.diacronia.ro/indexing/details/V1473/pdf" },
-        { "title": "L.R. Lazio 5 agosto 1998 n. 32 (deroga alla taglia minima per i cespi)", "url": "https://faolex.fao.org/docs/pdf/ita21952.pdf" },
-        { "title": "Wikidata Q473745", "url": "https://www.wikidata.org/wiki/Q473745" }
+        {
+          "title": "Armillaria mellea, Wikipedia (it)",
+          "url": "https://it.wikipedia.org/wiki/Armillaria_mellea"
+        },
+        {
+          "title": "La risorsa FUNGO in Alta Valle del Vara (SSSA Pisa, Gruppo Micologico Lucchese), scheda Armillaria mellea",
+          "url": "https://iris.santannapisa.it/retrieve/dd9e0b31-bbf8-709e-e053-3705fe0a83fd/92_vqr_Funghi.pdf"
+        },
+        {
+          "title": "ASL Biella, poster 'Non consumare i chiodini crudi' (2025)",
+          "url": "https://aslbi.piemonte.it/wp-content/uploads/2025/08/Poster-NON-CONSUMARE-I-CHIODINI-CRUDI.pdf"
+        },
+        {
+          "title": "Galerina marginata, Wikipedia (it)",
+          "url": "https://it.wikipedia.org/wiki/Galerina_marginata"
+        },
+        {
+          "title": "Mallozzi A., Nomi volgari e dialettali di alcuni funghi nell'Italia centrale (2011)",
+          "url": "https://www.diacronia.ro/indexing/details/V1473/pdf"
+        },
+        {
+          "title": "L.R. Lazio 5 agosto 1998 n. 32 (deroga alla taglia minima per i cespi)",
+          "url": "https://faolex.fao.org/docs/pdf/ita21952.pdf"
+        },
+        {
+          "title": "Wikidata Q473745",
+          "url": "https://www.wikidata.org/wiki/Q473745"
+        }
       ]
     },
     "virescens": {
       "name": "Colombina verde",
-      "aka": ["verdone", "colombina verde", "rovella verde", "colombina maggiore (R. cyanoxantha)"],
+      "aka": [
+        "verdone",
+        "colombina verde",
+        "rovella verde",
+        "colombina maggiore (R. cyanoxantha)"
+      ],
       "latin": "Russula virescens; Russula cyanoxantha",
       "wikidata": "Q677341",
-      "wikidata_others": [ { "latin": "Russula cyanoxantha", "wikidata": "Q246696" } ],
+      "wikidata_others": [
+        {
+          "latin": "Russula cyanoxantha",
+          "wikidata": "Q246696"
+        }
+      ],
       "edibility": "ottimo",
       "cap": {
         "shape": "emisferico, poi convesso e depresso al centro; sodo",
-        "size_cm": [5, 15],
+        "size_cm": [
+          5,
+          15
+        ],
         "color": "R. virescens: verde, verde-grigio o verde-oliva su fondo bianco. R. cyanoxantha: miscuglio di viola, lilla, blu-ardesia, rosa e verde (esiste una forma tutta verde)",
         "surface": "R. virescens: opaca e vellutata, poi screpolata in piccole placche verdi che lasciano vedere il bianco. R. cyanoxantha: liscia, un po' untuosa con l'umido, con fibrille radiali"
       },
@@ -913,35 +1168,71 @@
         }
       ],
       "warnings": [
-        "Ogni fungo verde con lamelle bianche va estratto intero e controllato alla base: la falloide è stata confusa con il verdone in casi recenti di intossicazione.",
-        "Le russule a sapore piccante vanno scartate.",
-        "È prudente consumarle cotte: chi mangia il verdone crudo rischia di più se lo confonde con Russula olivacea.",
-        "La L.R. Lazio 32/98 fissa per Russula virescens una taglia minima di 4 cm; per R. cyanoxantha vale la regola generale di 3 cm (qui si usa il valore più prudente)."
+        "Amanita phalloides può avere cappello verde e lamelle bianche. Anello e volva possono essere nascosti o danneggiati: la loro apparente assenza non esclude il rischio.",
+        "La rottura del gambo descritta come simile al gesso è un carattere delle russule, non una prova di commestibilità.",
+        "Lamelle o sporata gialle compaiono in altre russule. Il sapore riportato nelle fonti non va verificato assaggiando un fungo sconosciuto.",
+        "Il controllo micologico precede qualsiasi consumo; è sconsigliato consumare funghi spontanei crudi.",
+        "Taglia minima del cappello per questa specie nel Lazio: 4 cm (L.R. 32/98). È un limite di raccolta, non un criterio di commestibilità."
       ],
       "min_cap_cm": 4,
       "sources": [
-        { "title": "La risorsa FUNGO in Alta Valle del Vara (SSSA Pisa, Gruppo Micologico Lucchese), scheda Russula virescens", "url": "https://iris.santannapisa.it/retrieve/dd9e0b31-bba2-709e-e053-3705fe0a83fd/208_vqr_Funghi.pdf" },
-        { "title": "La risorsa FUNGO in Alta Valle del Vara, scheda Russula cyanoxantha", "url": "https://iris.santannapisa.it/retrieve/dd9e0b31-bba0-709e-e053-3705fe0a83fd/198_vqr_Funghi.pdf" },
-        { "title": "Russula virescens, Wikipedia (it)", "url": "https://it.wikipedia.org/wiki/Russula_virescens" },
-        { "title": "Russula cyanoxantha, Wikipedia (en)", "url": "https://en.wikipedia.org/wiki/Russula_cyanoxantha" },
-        { "title": "Provincia di Trento, Funghi: attenzione alle intossicazioni (Centro antiveleni di Pavia)", "url": "https://www.ufficiostampa.provincia.tn.it/Comunicati/FUNGHI-ATTENZIONE-ALLE-INTOSSICAZIONI" },
-        { "title": "L.R. Lazio 5 agosto 1998 n. 32, testo (FAOLEX)", "url": "https://faolex.fao.org/docs/pdf/ita21952.pdf" },
-        { "title": "Wikidata Q677341 / Q246696", "url": "https://www.wikidata.org/wiki/Q677341" }
+        {
+          "title": "La risorsa FUNGO in Alta Valle del Vara (SSSA Pisa, Gruppo Micologico Lucchese), scheda Russula virescens",
+          "url": "https://iris.santannapisa.it/retrieve/dd9e0b31-bba2-709e-e053-3705fe0a83fd/208_vqr_Funghi.pdf"
+        },
+        {
+          "title": "La risorsa FUNGO in Alta Valle del Vara, scheda Russula cyanoxantha",
+          "url": "https://iris.santannapisa.it/retrieve/dd9e0b31-bba0-709e-e053-3705fe0a83fd/198_vqr_Funghi.pdf"
+        },
+        {
+          "title": "Russula virescens, Wikipedia (it)",
+          "url": "https://it.wikipedia.org/wiki/Russula_virescens"
+        },
+        {
+          "title": "Russula cyanoxantha, Wikipedia (en)",
+          "url": "https://en.wikipedia.org/wiki/Russula_cyanoxantha"
+        },
+        {
+          "title": "Provincia di Trento, Funghi: attenzione alle intossicazioni (Centro antiveleni di Pavia)",
+          "url": "https://www.ufficiostampa.provincia.tn.it/Comunicati/FUNGHI-ATTENZIONE-ALLE-INTOSSICAZIONI"
+        },
+        {
+          "title": "L.R. Lazio 5 agosto 1998 n. 32, testo (FAOLEX)",
+          "url": "https://faolex.fao.org/docs/pdf/ita21952.pdf"
+        },
+        {
+          "title": "Wikidata Q677341 / Q246696",
+          "url": "https://www.wikidata.org/wiki/Q677341"
+        }
       ]
     },
     "suillus": {
       "name": "Pinarolo",
-      "aka": ["pinarello", "boleto giallo (S. luteus)", "pinaccio (S. collinitus)", "pinaroli"],
+      "aka": [
+        "pinarello",
+        "boleto giallo (S. luteus)",
+        "pinaccio (S. collinitus)",
+        "pinaroli"
+      ],
       "latin": "Suillus luteus; Suillus granulatus; Suillus collinitus",
       "wikidata": "Q816730",
       "wikidata_others": [
-        { "latin": "Suillus granulatus", "wikidata": "Q1142857" },
-        { "latin": "Suillus collinitus", "wikidata": "Q1855565" }
+        {
+          "latin": "Suillus granulatus",
+          "wikidata": "Q1142857"
+        },
+        {
+          "latin": "Suillus collinitus",
+          "wikidata": "Q1855565"
+        }
       ],
       "edibility": "commestibile con cautela",
       "cap": {
         "shape": "emisferico, poi convesso-appianato",
-        "size_cm": [4, 12],
+        "size_cm": [
+          4,
+          12
+        ],
         "color": "S. luteus: bruno-cioccolato o bruno-porpora. S. granulatus: ruggine, bruno-giallastro. S. collinitus: castano con fibrille radiali più scure",
         "surface": "vischiosa e lucida con l'umido; cuticola che si stacca tutta"
       },
@@ -989,28 +1280,50 @@
         }
       ],
       "warnings": [
-        "Togli sempre la cuticola vischiosa: è lassativa e alcune intossicazioni sono legate al consumo del fungo non pelato.",
-        "In alcune persone causa disturbi intestinali o reazioni allergiche: mangiane poco la prima volta.",
-        "Scarta gli esemplari vecchi e molli; va consumato cotto."
+        "La cuticola vischiosa dei Suillus può causare disturbi intestinali; le indicazioni di rimozione valgono dopo il controllo micologico.",
+        "Pori bruno-ramati e piccole dimensioni sono caratteri da confrontare con Chalciporus piperatus. Il sapore descritto nelle fonti non è una prova da fare sul campo.",
+        "Esemplari vecchi, molli, ammuffiti o infestati da larve possono essere alterati, anche nelle specie commestibili."
       ],
       "min_cap_cm": 3,
       "sources": [
-        { "title": "La risorsa FUNGO in Alta Valle del Vara (SSSA Pisa, Gruppo Micologico Lucchese), scheda Suillus luteus", "url": "https://www.iris.sssup.it/retrieve/dd9e0b31-bbe7-709e-e053-3705fe0a83fd/214_vqr_Funghi.pdf" },
-        { "title": "Suillus granulatus, Wikipedia (it)", "url": "https://it.wikipedia.org/wiki/Suillus_granulatus" },
-        { "title": "Suillus collinitus, Wikipedia (it)", "url": "https://it.wikipedia.org/wiki/Suillus_collinitus" },
-        { "title": "AMER, report uscita micologica Altopiano di Rascino (2018)", "url": "https://www.ameronlus.it/blog/2018/11/10/report-uscita-micologica-altopiano-di-rascino/" },
-        { "title": "Wikidata Q816730 / Q1142857 / Q1855565", "url": "https://www.wikidata.org/wiki/Q816730" }
+        {
+          "title": "La risorsa FUNGO in Alta Valle del Vara (SSSA Pisa, Gruppo Micologico Lucchese), scheda Suillus luteus",
+          "url": "https://www.iris.sssup.it/retrieve/dd9e0b31-bbe7-709e-e053-3705fe0a83fd/214_vqr_Funghi.pdf"
+        },
+        {
+          "title": "Suillus granulatus, Wikipedia (it)",
+          "url": "https://it.wikipedia.org/wiki/Suillus_granulatus"
+        },
+        {
+          "title": "Suillus collinitus, Wikipedia (it)",
+          "url": "https://it.wikipedia.org/wiki/Suillus_collinitus"
+        },
+        {
+          "title": "AMER, report uscita micologica Altopiano di Rascino (2018)",
+          "url": "https://www.ameronlus.it/blog/2018/11/10/report-uscita-micologica-altopiano-di-rascino/"
+        },
+        {
+          "title": "Wikidata Q816730 / Q1142857 / Q1855565",
+          "url": "https://www.wikidata.org/wiki/Q816730"
+        }
       ]
     },
     "terreum": {
       "name": "Moretta",
-      "aka": ["morette", "fratino (Toscana)", "tricoloma terreo"],
+      "aka": [
+        "morette",
+        "fratino (Toscana)",
+        "tricoloma terreo"
+      ],
       "latin": "Tricholoma terreum",
       "wikidata": "Q27266",
       "edibility": "buono",
       "cap": {
         "shape": "conico-campanulato da giovane, poi convesso e piano con un piccolo umbone",
-        "size_cm": [3, 8],
+        "size_cm": [
+          3,
+          8
+        ],
         "color": "grigio topo o grigio-bruno, uniforme",
         "surface": "asciutta, feltrata, coperta di fini squamette e fibrille grigio scure; carne sottile"
       },
@@ -1039,7 +1352,6 @@
         "Cappello piccolo grigio topo, feltrato, con umbone",
         "Lamelle bianco-grigie smarginate",
         "Carne sottile, odore debole NON di farina",
-        "Sapore dolce, non amaro né piccante",
         "Sotto pino, a fine autunno"
       ],
       "lookalikes": [
@@ -1080,30 +1392,54 @@
         }
       ],
       "warnings": [
-        "Fai controllare ogni raccolta: tra le morette grigie si mescolano facilmente specie tossiche.",
-        "Scarta gli esemplari con odore di farina, sapore amaro o piccante, o lamelle e sporata non bianche.",
-        "Uno studio del 2014 aveva ipotizzato tossine muscolari nella moretta; un lavoro del 2024 non le ha ritrovate e non risultano casi in Europa: per prudenza consumala in quantità moderate.",
-        "Va consumata cotta."
+        "Tra i tricolomi grigi vi sono sosia tossici come T. pardinum; foto e descrizioni non escludono la confusione.",
+        "Odore di farina, aspetto delle lamelle e forma del cappello variano nei tricolomi grigi: nessun singolo carattere conferma la specie. Il sapore non va verificato assaggiando.",
+        "Le indicazioni di cottura e quantità moderate riguardano solo il raccolto controllato."
       ],
       "min_cap_cm": 3,
       "sources": [
-        { "title": "Tricholoma terreum, Wikipedia (it)", "url": "https://it.wikipedia.org/wiki/Tricholoma_terreum" },
-        { "title": "No Evidence Was Found for Terreolides... in Tricholoma terreum, Molecules 2024", "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11052463/" },
-        { "title": "Mallozzi A., Nomi volgari e dialettali di alcuni funghi nell'Italia centrale (2011)", "url": "https://www.diacronia.ro/indexing/details/V1473/pdf" },
-        { "title": "AMER, report uscita micologica Altopiano di Rascino (2018)", "url": "https://www.ameronlus.it/blog/2018/11/10/report-uscita-micologica-altopiano-di-rascino/" },
-        { "title": "Comunidad de Madrid, ficha Tricholoma pardinum", "url": "https://comunidad.madrid/sites/default/files/doc/sanidad/sali/d_tricholoma_pardinum.pdf" },
-        { "title": "Wikidata Q27266", "url": "https://www.wikidata.org/wiki/Q27266" }
+        {
+          "title": "Tricholoma terreum, Wikipedia (it)",
+          "url": "https://it.wikipedia.org/wiki/Tricholoma_terreum"
+        },
+        {
+          "title": "No Evidence Was Found for Terreolides... in Tricholoma terreum, Molecules 2024",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11052463/"
+        },
+        {
+          "title": "Mallozzi A., Nomi volgari e dialettali di alcuni funghi nell'Italia centrale (2011)",
+          "url": "https://www.diacronia.ro/indexing/details/V1473/pdf"
+        },
+        {
+          "title": "AMER, report uscita micologica Altopiano di Rascino (2018)",
+          "url": "https://www.ameronlus.it/blog/2018/11/10/report-uscita-micologica-altopiano-di-rascino/"
+        },
+        {
+          "title": "Comunidad de Madrid, ficha Tricholoma pardinum",
+          "url": "https://comunidad.madrid/sites/default/files/doc/sanidad/sali/d_tricholoma_pardinum.pdf"
+        },
+        {
+          "title": "Wikidata Q27266",
+          "url": "https://www.wikidata.org/wiki/Q27266"
+        }
       ]
     },
     "nuda": {
       "name": "Agarico violetto",
-      "aka": ["agarico nudo", "ordinale viola", "cardinale viola"],
+      "aka": [
+        "agarico nudo",
+        "ordinale viola",
+        "cardinale viola"
+      ],
       "latin": "Lepista nuda (= Collybia nuda)",
       "wikidata": "Q29362",
       "edibility": "commestibile con cautela",
       "cap": {
         "shape": "convesso, poi piano o un po' depresso, carnoso, margine arrotolato",
-        "size_cm": [5, 15],
+        "size_cm": [
+          5,
+          15
+        ],
         "color": "viola-lilla, poi bruno-violaceo; schiarisce col secco fino a rosa-lilla o nocciola",
         "surface": "liscia, nuda, un po' untuosa con l'umido"
       },
@@ -1148,7 +1484,7 @@
           "name": "Cortinario violaceo",
           "wikidata": "Q167887",
           "toxicity": "non commestibile",
-          "how_to_tell": "Viola scurissimo, cappello squamuloso-vellutato, cortina, sporata ruggine. Tutti i cortinari violetti vanno scartati."
+          "how_to_tell": "Viola scurissimo, cappello squamuloso-vellutato, cortina, sporata ruggine. Il colore viola non indica commestibilità; il genere comprende specie tossiche e mortali."
         },
         {
           "latin": "Inocybe lilacina",
@@ -1173,18 +1509,33 @@
         }
       ],
       "warnings": [
-        "Tossica cruda o poco cotta: cuocila a lungo.",
-        "Fai sempre la sporata o farla fare all'ASL: rosa pallido è giusta, ruggine indica un Cortinarius (alcuni sono mortali per i reni).",
-        "Scarta esemplari con resti di ragnatela sul gambo o lamelle color ruggine.",
-        "Scarta gli esemplari vecchi o fradici."
+        "Tra i funghi violetti con cortina e sporata ruggine vi sono cortinari tossici; il colore viola non indica commestibilità.",
+        "La sporata rosa pallido è descritta per L. nuda; la sporata ruggine è un carattere dei cortinari. Nessuna delle due, da sola, identifica l’esemplare.",
+        "L. nuda è tossica cruda o poco cotta; preparazione solo dopo il controllo micologico.",
+        "Anche piccoli funghi violetti come Mycena pura e alcune Inocybe sono tossici. Odore e forma non bastano a distinguerli con sicurezza."
       ],
       "min_cap_cm": 3,
       "sources": [
-        { "title": "La risorsa FUNGO in Alta Valle del Vara (SSSA Pisa, Gruppo Micologico Lucchese), scheda Lepista nuda", "url": "https://iris.santannapisa.it/retrieve/dd9e0b31-bbfe-709e-e053-3705fe0a83fd/174_vqr_Funghi.pdf" },
-        { "title": "Lepista nuda, Wikipedia (it)", "url": "https://it.wikipedia.org/wiki/Lepista_nuda" },
-        { "title": "Comunidad de Madrid, ficha Lepista nuda", "url": "https://comunidad.madrid/sites/default/files/doc/sanidad/sali/a_lepista_nuda.pdf" },
-        { "title": "AMER, report uscita micologica Altopiano di Rascino (2018)", "url": "https://www.ameronlus.it/blog/2018/11/10/report-uscita-micologica-altopiano-di-rascino/" },
-        { "title": "Wikidata Q29362", "url": "https://www.wikidata.org/wiki/Q29362" }
+        {
+          "title": "La risorsa FUNGO in Alta Valle del Vara (SSSA Pisa, Gruppo Micologico Lucchese), scheda Lepista nuda",
+          "url": "https://iris.santannapisa.it/retrieve/dd9e0b31-bbfe-709e-e053-3705fe0a83fd/174_vqr_Funghi.pdf"
+        },
+        {
+          "title": "Lepista nuda, Wikipedia (it)",
+          "url": "https://it.wikipedia.org/wiki/Lepista_nuda"
+        },
+        {
+          "title": "Comunidad de Madrid, ficha Lepista nuda",
+          "url": "https://comunidad.madrid/sites/default/files/doc/sanidad/sali/a_lepista_nuda.pdf"
+        },
+        {
+          "title": "AMER, report uscita micologica Altopiano di Rascino (2018)",
+          "url": "https://www.ameronlus.it/blog/2018/11/10/report-uscita-micologica-altopiano-di-rascino/"
+        },
+        {
+          "title": "Wikidata Q29362",
+          "url": "https://www.wikidata.org/wiki/Q29362"
+        }
       ]
     }
   }

@@ -9,10 +9,10 @@ async function start(page,hash='#/piante',width=390){
  await expect(page.locator('#plant-grid [data-plant-results]')).toBeVisible();return errors;
 }
 test('plants: search, comparison sheets and private simultaneous phenophases on mobile and desktop',async({page})=>{
- const errors=await start(page);await expect(page.locator('.botanical-card')).toHaveCount(12);
+ const errors=await start(page);await expect(page.locator('.botanical-card')).toHaveCount(54);
  for(const width of [320,390,1280]){await page.setViewportSize({width,height:900});expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);if(width===1280)await page.screenshot({path:'/tmp/fungaroli-plants-desktop.png'});}
  await page.setViewportSize({width:390,height:900});await page.locator('[data-plant-query]').fill('sambuco');await expect(page.locator('.botanical-card')).toHaveCount(2);
- await page.goto('/#/pianta/sambuco');await expect(page.locator('#plant-detail')).toContainText('adeguata cottura');
+ await page.goto('/#/pianta/sambuco');await expect(page.locator('#plant-detail')).toContainText('Frutti crudi o immaturi');
  await page.locator('#plant-detail a[href="#/pianta/ebbio"]').click();const sheet=page.locator('#entity-sheet[open]');await expect(sheet).toContainText('Tutte le parti sono tossiche');expect(new URL(page.url()).hash).toBe('#/pianta/sambuco');await sheet.locator('[data-entity-close]').click();
  await page.locator('#plant-detail [data-note-kind]').click();const form=page.locator('.notebook-dialog[open]');await form.locator('[name="note"]').fill('Alcuni fiori e frutti ancora verdi.');await form.locator('.notebook-context summary').click();await form.locator('[data-phase="open_flowers"]').selectOption('present');await form.locator('[data-phase="unripe_fruits"]').selectOption('present');await form.screenshot({path:'/tmp/fungaroli-botanical-note-mobile.png'});await form.locator('[type="submit"]').click();await expect(form).toHaveCount(0);
  await page.goto('/#/diario');await expect(page.locator('#journal-list')).toContainText('Fiori aperti: presente');await expect(page.locator('#journal-list')).toContainText('Frutti immaturi: presente');await expect(page.locator('#journal-list')).toContainText('0 uscite');await expect(page.locator('#journal-list [data-share-entry]')).toHaveCount(0);

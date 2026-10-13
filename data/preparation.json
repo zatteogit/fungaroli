@@ -736,7 +736,7 @@
       "raw_why": "Crudo o poco cotto è tossico: contiene tossine sensibili al calore che danno disturbi gastrointestinali.",
       "steps": [
         {
-          "text": "Scarta il gambo, almeno fino all'anello: tieni solo i cappelli (meglio esemplari giovani).",
+          "text": "Nella preparazione delle Armillaria controllate, il gambo fibroso viene rimosso almeno fino all’anello; si utilizzano i cappelli.",
           "why": "Il gambo è fibroso e indigesto; le ASL lo indicano come trattamento obbligatorio insieme alla prebollitura.",
           "level": "obbligatorio",
           "sources": [
@@ -1033,7 +1033,7 @@
       "raw_why": "Leggermente tossica da cruda: crudo o poco cotto può dare intossicazioni con sintomi gastrointestinali.",
       "steps": [
         {
-          "text": "Mangia solo il cappello: scarta il gambo.",
+          "text": "Nella preparazione di M. procera controllata si utilizza il cappello; il gambo fibroso viene rimosso.",
           "why": "Il gambo è fibroso, quasi legnoso, e indigesto.",
           "level": "consigliato",
           "sources": [
@@ -1990,5 +1990,5 @@
       "notes": "Cruda o poco cotta è tossica (Wikipedia it, scheda Valle del Vara). Wikipedia en dice che si può cucinare 'come la trippà: l'ho tradotto in 'in umidò."
     }
   },
-  "review_note": "Revisione 2026-10-13: i livelli sono indicazioni sanitarie o scelte prudenziali dell’app, non obblighi di legge. Confermare i trattamenti della singola specie con il micologo."
+  "review_note": "Revisione 2026-10-13: le indicazioni di cucina seguono il controllo micologico e non sono criteri per scegliere o identificare gli esemplari."
 }

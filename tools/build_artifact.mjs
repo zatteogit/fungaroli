@@ -28,12 +28,14 @@ const access = readOpt('data/access.json');
 const trails = readOpt('data/trails.json');
 const speciesId = readOpt('data/species-id.json');
 const media = readOpt('data/media.json');
+media.trees={...(media.trees||{}),...(readOpt('data/media-trees.json')?.trees||{})};
 // foto delle specie incorporate come data URI (l'Artifact non carica immagini esterne)
 const assets = {};
 const mime = (f) => (f.endsWith('.svg') ? 'image/svg+xml' : f.endsWith('.webp') ? 'image/webp' : f.endsWith('.png') ? 'image/png' : 'image/jpeg');
 const put = (f) => { if (f && fs.existsSync(path.join(ROOT, f))) assets[f] = `data:${mime(f)};base64,${fs.readFileSync(path.join(ROOT, f)).toString('base64')}`; };
 const collect = (m) => { put(m?.file); put(m?.thumb); };
 for (const v of Object.values(media?.species || {})) { collect(v.ref); (v.inat || []).forEach(collect); }
+for (const v of Object.values(media?.trees || {})) { collect(v.ref); [...(v.inat||[]),...(v.commons||[])].forEach(collect); }
 for (const v of Object.values(media?.lookalikes || {})) { collect(v.ref); (v.inat || []).forEach(collect); }
 const { loadWeather } = await import(path.join(ROOT, 'js/weather.js'));
 const w = await loadWeather(zones.zones, { force: true });
@@ -67,7 +69,7 @@ const body = html.match(/<body>([\s\S]*)<\/body>/)[1]
   .replace(/<script[\s\S]*?<\/script>/g, '')
   .replace('Mappe © OpenStreetMap, OpenTopoMap (CC-BY-SA). ', '');
 const extra = Object.fromEntries(Object.entries({ botanicalModels:'botanical-models',plants:'plants',glossary:'glossary',glossaryMedia:'media-glossary',guides:'guides',contentCopy:'ui-copy',edibleCatalog: 'edible-catalog', legal: 'legal', traits: 'species-traits', trees: 'trees', infographics: 'infografiche', preparation: 'preparation', trailheads: 'trailheads' }).map(([k,f]) => [k, readOpt('data/' + f + '.json')]));
-for(const p of Object.values(extra.plants?.plants||{}))for(const m of p.photos||[])put(m.file);
+for(const p of Object.values(extra.plants?.plants||{}))for(const m of p.photos||[])collect(m);
 for(const row of Object.values(extra.glossaryMedia?.terms||{}))for(const m of row.illustrations||[])put(m.file);
 const data = JSON.stringify({ zones, habitat, access, trails, speciesId, media, assets, basemap, ...extra, outing, weather: { series: w.series, fetchedAt: w.fetchedAt.toISOString() } })
   .replace(/</g, '\\u003c');

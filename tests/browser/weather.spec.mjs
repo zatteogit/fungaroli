@@ -41,11 +41,9 @@ test('una zona indisponibile mantiene le altre e il retry recupera l’intero ca
   await expect(page.locator('#detail h1')).toHaveText(missing.title||missing.name);await expect(page.locator('#detail')).toContainText('Meteo non disponibile per questa zona');
   unavailable=false;await page.locator('#detail [data-zone-weather-retry]').click();await expect(page.locator('#detail .phero-title')).toHaveText((missing.title||missing.name).split(' (')[0]);await expect(page.locator('#stale')).toBeHidden();
 });
-test('le piante restano consigliabili senza meteo, senza inventare dati climatici o indici fungini',async({page})=>{
+test('catalogo botanico e calendario accessibili senza meteo, senza falsi indici fungini',async({page})=>{
  const errors=[];page.on('pageerror',e=>errors.push(e.message));
  await page.route('https://**/*',r=>r.abort());await page.route('**/api/weather/v1/forecast?**',r=>r.fulfill({status:503,json:{error:'Servizio temporaneamente indisponibile'}}));
- await page.addInitScript(()=>localStorage.setItem('fungaroli:legal-accepted','22026-10-12'));await page.goto('/');await expect(page.locator('#hero .error')).toBeVisible();
- await page.locator('#active-filters [data-target="piante"]').click();await expect(page.locator('#hero .cover-link')).toBeVisible();await expect(page.locator('#stale')).toContainText('Nessun contributo climatico');
- await page.locator('#hero .cover-link').click();await expect(page.locator('#detail')).toContainText('meteo non disponibile');await page.locator('#detail [data-sec="meteo"] > summary').click();await expect(page.locator('.botanical-factors')).toContainText('Non determinato');
- await page.goto('/#/');await page.locator('#active-filters [data-target="funghi"]').click();await expect(page.locator('#hero .cover-link')).toHaveCount(0);await expect(page.locator('#hero')).toContainText('non sono calcolabili');expect(errors).toEqual([]);
+ await page.addInitScript(()=>localStorage.setItem('fungaroli:legal-accepted','22026-10-12'));await page.goto('/');await expect(page.locator('#hero .error')).toBeVisible();await expect(page.locator('[data-target]')).toHaveCount(0);
+ await page.goto('/#/pianta/ortica');await expect(page.locator('#plant-detail h1')).toHaveText('Ortica');await page.locator('[data-botanical-method]>summary').click();await expect(page.locator('[data-botanical-method]')).toContainText('calendario');await expect(page.locator('#plant-detail .ring')).toHaveCount(0);expect(errors).toEqual([]);
 });

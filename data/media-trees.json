@@ -1,823 +1,1255 @@
 {
- "trees": {
-  "faggio": {
-   "latin": "Fagus sylvatica",
-   "photo_taxon": "Fagus sylvatica",
-   "inat": [
-    {
-     "file": "assets/species/tree-faggio-inat1.webp",
-     "source": "iNaturalist (research grade)",
-     "page": "https://www.inaturalist.org/observations/144659310",
-     "author": "Giorgio",
-     "license": "CC-BY-NC",
-     "place": "60044 Fabriano AN, Italia",
-     "date": "2022-12-19",
-     "file_hd": "assets/species/tree-faggio-inat1-hd.webp",
-     "thumb": "assets/species/tree-faggio-inat1-t.webp"
+  "trees": {
+    "faggio": {
+      "latin": "Fagus sylvatica",
+      "photo_taxon": "Fagus sylvatica",
+      "inat": [
+        {
+          "file": "assets/species/tree-faggio-inat1.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/144659310",
+          "author": "Giorgio",
+          "license": "CC-BY-NC",
+          "place": "60044 Fabriano AN, Italia",
+          "date": "2022-12-19",
+          "file_hd": "assets/species/tree-faggio-inat1-hd.webp",
+          "thumb": "assets/species/tree-faggio-inat1-t.webp"
+        },
+        {
+          "file": "assets/species/tree-faggio-inat2.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/295152549",
+          "author": "matteo_76",
+          "license": "CC-BY-NC",
+          "place": "Provincia di Pesaro e Urbino, Italia",
+          "date": "2024-06-28",
+          "file_hd": "assets/species/tree-faggio-inat2-hd.webp",
+          "thumb": "assets/species/tree-faggio-inat2-t.webp"
+        },
+        {
+          "file": "assets/species/tree-faggio-inat3.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/45618048",
+          "author": "marcopirox",
+          "license": "CC-BY-NC",
+          "place": "01038 Soriano nel Cimino VT, Italia",
+          "date": "2020-05-11",
+          "file_hd": "assets/species/tree-faggio-inat3-hd.webp",
+          "thumb": "assets/species/tree-faggio-inat3-t.webp"
+        }
+      ]
     },
-    {
-     "file": "assets/species/tree-faggio-inat2.webp",
-     "source": "iNaturalist (research grade)",
-     "page": "https://www.inaturalist.org/observations/295152549",
-     "author": "matteo_76",
-     "license": "CC-BY-NC",
-     "place": "Provincia di Pesaro e Urbino, Italia",
-     "date": "2024-06-28",
-     "file_hd": "assets/species/tree-faggio-inat2-hd.webp",
-     "thumb": "assets/species/tree-faggio-inat2-t.webp"
+    "castagno": {
+      "latin": "Castanea sativa",
+      "photo_taxon": "Castanea sativa",
+      "inat": [
+        {
+          "file": "assets/species/tree-castagno-inat1.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/344739474",
+          "author": "Andrea Montechiarini",
+          "license": "CC-BY-NC",
+          "place": "Province of Viterbo, Italy",
+          "date": "2026-03-23",
+          "file_hd": "assets/species/tree-castagno-inat1-hd.webp",
+          "thumb": "assets/species/tree-castagno-inat1-t.webp"
+        },
+        {
+          "file": "assets/species/tree-castagno-inat2.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/9170487",
+          "author": "Stefano Doglio",
+          "license": "CC-BY-NC",
+          "place": "Via Teglieto, Marcetelli",
+          "date": "2017-12-12",
+          "file_hd": "assets/species/tree-castagno-inat2-hd.webp",
+          "thumb": "assets/species/tree-castagno-inat2-t.webp"
+        },
+        {
+          "file": "assets/species/tree-castagno-inat3.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/198379990",
+          "author": "Chiara Catalano",
+          "license": "CC-BY-SA",
+          "place": "Orvieto, Umbrien, IT",
+          "date": "2024-02-04",
+          "file_hd": "assets/species/tree-castagno-inat3-hd.webp",
+          "thumb": "assets/species/tree-castagno-inat3-t.webp"
+        }
+      ]
     },
-    {
-     "file": "assets/species/tree-faggio-inat3.webp",
-     "source": "iNaturalist (research grade)",
-     "page": "https://www.inaturalist.org/observations/45618048",
-     "author": "marcopirox",
-     "license": "CC-BY-NC",
-     "place": "01038 Soriano nel Cimino VT, Italia",
-     "date": "2020-05-11",
-     "file_hd": "assets/species/tree-faggio-inat3-hd.webp",
-     "thumb": "assets/species/tree-faggio-inat3-t.webp"
+    "cerro": {
+      "latin": "Quercus cerris",
+      "photo_taxon": "Quercus cerris",
+      "inat": [
+        {
+          "file": "assets/species/tree-cerro-inat1.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/227077592",
+          "author": "flaviaisoli",
+          "license": "CC-BY-NC",
+          "place": "01019 Vetralla VT, Italia",
+          "date": "2024-07-04",
+          "file_hd": "assets/species/tree-cerro-inat1-hd.webp",
+          "thumb": "assets/species/tree-cerro-inat1-t.webp"
+        },
+        {
+          "file": "assets/species/tree-cerro-inat2.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/2683962",
+          "author": "Stefano Doglio",
+          "license": "CC-BY-NC",
+          "place": "Marco Simone",
+          "date": "2016-02-14",
+          "file_hd": "assets/species/tree-cerro-inat2-hd.webp",
+          "thumb": "assets/species/tree-cerro-inat2-t.webp"
+        },
+        {
+          "file": "assets/species/tree-cerro-inat3.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/273659873",
+          "author": "elisaerriu",
+          "license": "CC-BY-NC",
+          "place": "Parco Naturale, Oriolo Romano, Lazio, IT",
+          "date": "2025-04-26",
+          "file_hd": "assets/species/tree-cerro-inat3-hd.webp",
+          "thumb": "assets/species/tree-cerro-inat3-t.webp"
+        }
+      ]
+    },
+    "roverella": {
+      "latin": "Quercus pubescens",
+      "photo_taxon": "Quercus pubescens",
+      "inat": [
+        {
+          "file": "assets/species/tree-roverella-inat1.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/266748757",
+          "author": "Leonardo Pucci",
+          "license": "CC-BY-NC",
+          "place": "00046 Grottaferrata RM, Italia",
+          "date": "2025-03-23",
+          "file_hd": "assets/species/tree-roverella-inat1-hd.webp",
+          "thumb": "assets/species/tree-roverella-inat1-t.webp"
+        },
+        {
+          "file": "assets/species/tree-roverella-inat2.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/130916111",
+          "author": "lu03",
+          "license": "CC-BY-NC",
+          "place": "Via Pieve di Chio, Castiglion Fiorentino, Toskana, IT",
+          "date": "2022-08-15",
+          "file_hd": "assets/species/tree-roverella-inat2-hd.webp",
+          "thumb": "assets/species/tree-roverella-inat2-t.webp"
+        },
+        {
+          "file": "assets/species/tree-roverella-inat3.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/129106652",
+          "author": "Alan Weakley",
+          "license": "CC0",
+          "place": "Asciano, Tuscany, IT",
+          "date": "2022-08-02",
+          "file_hd": "assets/species/tree-roverella-inat3-hd.webp",
+          "thumb": "assets/species/tree-roverella-inat3-t.webp"
+        }
+      ]
+    },
+    "farnetto": {
+      "latin": "Quercus frainetto",
+      "photo_taxon": "Quercus frainetto",
+      "inat": [
+        {
+          "file": "assets/species/tree-farnetto-inat1.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/323184945",
+          "author": "Marco Gasponi",
+          "license": "CC-BY-NC",
+          "place": "05022 Amelia TR, Italia",
+          "date": "2025-10-26",
+          "file_hd": "assets/species/tree-farnetto-inat1-hd.webp",
+          "thumb": "assets/species/tree-farnetto-inat1-t.webp"
+        },
+        {
+          "file": "assets/species/tree-farnetto-inat2.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/157994623",
+          "author": "Marco",
+          "license": "CC-BY-NC",
+          "place": "00015 Monterotondo RM, Italia",
+          "date": "2023-04-30",
+          "file_hd": "assets/species/tree-farnetto-inat2-hd.webp",
+          "thumb": "assets/species/tree-farnetto-inat2-t.webp"
+        },
+        {
+          "file": "assets/species/tree-farnetto-inat3.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/100939942",
+          "author": "Flavio Rocchi",
+          "license": "CC-BY-NC",
+          "place": "00030 Genazzano RM, Italia",
+          "date": "2021-11-12",
+          "file_hd": "assets/species/tree-farnetto-inat3-hd.webp",
+          "thumb": "assets/species/tree-farnetto-inat3-t.webp"
+        }
+      ]
+    },
+    "leccio": {
+      "latin": "Quercus ilex",
+      "photo_taxon": "Quercus ilex",
+      "inat": [
+        {
+          "file": "assets/species/tree-leccio-inat1.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/163212177",
+          "author": "Thomas Cole",
+          "license": "CC-BY-NC",
+          "place": "Quartiere IX Appio Latino, Roma RM, Italy",
+          "date": "2023-05-21",
+          "file_hd": "assets/species/tree-leccio-inat1-hd.webp",
+          "thumb": "assets/species/tree-leccio-inat1-t.webp"
+        },
+        {
+          "file": "assets/species/tree-leccio-inat2.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/168082765",
+          "author": "Eren Polat",
+          "license": "CC-BY-NC",
+          "place": "Via Litoranea, Roma, Lazio, IT",
+          "date": "2023-06-18",
+          "file_hd": "assets/species/tree-leccio-inat2-hd.webp",
+          "thumb": "assets/species/tree-leccio-inat2-t.webp"
+        },
+        {
+          "file": "assets/species/tree-leccio-inat3.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/180139786",
+          "author": "fabriziolanfredi",
+          "license": "CC-BY-NC",
+          "place": "Ancona, Marche, IT",
+          "date": "2023-08-25",
+          "file_hd": "assets/species/tree-leccio-inat3-hd.webp",
+          "thumb": "assets/species/tree-leccio-inat3-t.webp"
+        }
+      ]
+    },
+    "carpino nero": {
+      "latin": "Ostrya carpinifolia",
+      "photo_taxon": "Ostrya carpinifolia",
+      "inat": [
+        {
+          "file": "assets/species/tree-carpino-nero-inat1.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/231476434",
+          "author": "msiri08",
+          "license": "CC-BY-NC",
+          "place": "Via San Pacifico, San Severino Marche, Marche, IT",
+          "date": "2024-07-22",
+          "file_hd": "assets/species/tree-carpino-nero-inat1-hd.webp",
+          "thumb": "assets/species/tree-carpino-nero-inat1-t.webp"
+        },
+        {
+          "file": "assets/species/tree-carpino-nero-inat2.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/270432933",
+          "author": "Roland Kaiser",
+          "license": "CC-BY-NC-SA",
+          "place": "Caramanico Terme, Abruzzo, IT",
+          "date": "2025-04-13",
+          "file_hd": "assets/species/tree-carpino-nero-inat2-hd.webp",
+          "thumb": "assets/species/tree-carpino-nero-inat2-t.webp"
+        },
+        {
+          "file": "assets/species/tree-carpino-nero-inat3.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/283128368",
+          "author": "Sarah Whitehead",
+          "license": "CC-BY-NC",
+          "place": "Terni",
+          "date": "2025-05-22",
+          "file_hd": "assets/species/tree-carpino-nero-inat3-hd.webp",
+          "thumb": "assets/species/tree-carpino-nero-inat3-t.webp"
+        }
+      ]
+    },
+    "carpino bianco": {
+      "latin": "Carpinus betulus",
+      "photo_taxon": "Carpinus betulus",
+      "inat": [
+        {
+          "file": "assets/species/tree-carpino-bianco-inat1.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/158529756",
+          "author": "Marco Gasponi",
+          "license": "CC-BY-NC",
+          "place": "00060 Canale Monterano RM, Italia",
+          "date": "2023-05-01",
+          "file_hd": "assets/species/tree-carpino-bianco-inat1-hd.webp",
+          "thumb": "assets/species/tree-carpino-bianco-inat1-t.webp"
+        },
+        {
+          "file": "assets/species/tree-carpino-bianco-inat2.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/310002202",
+          "author": "Marco Gasponi",
+          "license": "CC-BY-NC",
+          "place": "43M7+4P Sorgente ferrosa del Rafanello, 00060 Canale Monterano RM, Italia",
+          "date": "2025-08-29",
+          "file_hd": "assets/species/tree-carpino-bianco-inat2-hd.webp",
+          "thumb": "assets/species/tree-carpino-bianco-inat2-t.webp"
+        },
+        {
+          "file": "assets/species/tree-carpino-bianco-inat3.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/342285528",
+          "author": "Franco Barbadoro",
+          "license": "CC-BY-NC",
+          "place": "Parco Del Monte Cucco, Scheggia e Pascelupo, Umbria, IT",
+          "date": "2026-03-10",
+          "file_hd": "assets/species/tree-carpino-bianco-inat3-hd.webp",
+          "thumb": "assets/species/tree-carpino-bianco-inat3-t.webp"
+        }
+      ]
+    },
+    "orniello": {
+      "latin": "Fraxinus ornus",
+      "photo_taxon": "Fraxinus ornus",
+      "inat": [
+        {
+          "file": "assets/species/tree-orniello-inat1.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/258382898",
+          "author": "Sarah Gregg",
+          "license": "CC-BY-NC-SA",
+          "place": "Province of L'Aquila, Italy",
+          "date": "2012-05-12",
+          "file_hd": "assets/species/tree-orniello-inat1-hd.webp",
+          "thumb": "assets/species/tree-orniello-inat1-t.webp"
+        },
+        {
+          "file": "assets/species/tree-orniello-inat2.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/157220139",
+          "author": "albertoaries",
+          "license": "CC-BY-NC",
+          "place": "Città metropolitana di Roma Capitale, Italia",
+          "date": "2023-04-28",
+          "file_hd": "assets/species/tree-orniello-inat2-hd.webp",
+          "thumb": "assets/species/tree-orniello-inat2-t.webp"
+        },
+        {
+          "file": "assets/species/tree-orniello-inat3.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/268397813",
+          "author": "Fausto Carbonari",
+          "license": "CC-BY-NC",
+          "place": "01100 Viterbo VT, Italia",
+          "date": "2025-04-02",
+          "file_hd": "assets/species/tree-orniello-inat3-hd.webp",
+          "thumb": "assets/species/tree-orniello-inat3-t.webp"
+        }
+      ]
+    },
+    "pino nero": {
+      "latin": "Pinus nigra",
+      "photo_taxon": "Pinus nigra",
+      "inat": [
+        {
+          "file": "assets/species/tree-pino-nero-inat1.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/273012240",
+          "author": "albertoaries",
+          "license": "CC-BY-NC",
+          "place": "00028 Subiaco RM, Italia",
+          "date": "2025-04-25",
+          "file_hd": "assets/species/tree-pino-nero-inat1-hd.webp",
+          "thumb": "assets/species/tree-pino-nero-inat1-t.webp"
+        },
+        {
+          "file": "assets/species/tree-pino-nero-inat2.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/42002221",
+          "author": "lucapassalacqua",
+          "license": "CC-BY-NC",
+          "place": "Provincia di Grosseto, Italia",
+          "date": "2017-03-02",
+          "file_hd": "assets/species/tree-pino-nero-inat2-hd.webp",
+          "thumb": "assets/species/tree-pino-nero-inat2-t.webp"
+        },
+        {
+          "file": "assets/species/tree-pino-nero-inat3.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/32782190",
+          "author": "Andrea Meucci",
+          "license": "CC-BY-SA",
+          "place": "67017 Pizzoli AQ, Italia",
+          "date": "2019-09-15",
+          "file_hd": "assets/species/tree-pino-nero-inat3-hd.webp",
+          "thumb": "assets/species/tree-pino-nero-inat3-t.webp"
+        }
+      ]
+    },
+    "pino domestico": {
+      "latin": "Pinus pinea",
+      "photo_taxon": "Pinus pinea",
+      "inat": [
+        {
+          "file": "assets/species/tree-pino-domestico-inat1.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/1158860",
+          "author": "Stefano Doglio",
+          "license": "CC-BY-NC",
+          "place": "Via Dell'Alberata, S. Gregorio da Sassola",
+          "date": "2015-01-03",
+          "file_hd": "assets/species/tree-pino-domestico-inat1-hd.webp",
+          "thumb": "assets/species/tree-pino-domestico-inat1-t.webp"
+        },
+        {
+          "file": "assets/species/tree-pino-domestico-inat2.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/303662441",
+          "author": "pietro_vigano",
+          "license": "CC-BY-NC",
+          "place": "Porto Sant'Elpidio",
+          "date": "2025-08-04",
+          "file_hd": "assets/species/tree-pino-domestico-inat2-hd.webp",
+          "thumb": "assets/species/tree-pino-domestico-inat2-t.webp"
+        },
+        {
+          "file": "assets/species/tree-pino-domestico-inat3.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/394479729",
+          "author": "fullpokedex",
+          "license": "CC-BY-NC",
+          "place": "Via della Rocca, Fermo, Marche, IT",
+          "date": "2026-08-05",
+          "file_hd": "assets/species/tree-pino-domestico-inat3-hd.webp",
+          "thumb": "assets/species/tree-pino-domestico-inat3-t.webp"
+        }
+      ]
+    },
+    "pino d'aleppo": {
+      "latin": "Pinus halepensis",
+      "photo_taxon": "Pinus halepensis",
+      "inat": [
+        {
+          "file": "assets/species/tree-pino-d-aleppo-inat1.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/369789924",
+          "author": "T. Haberl",
+          "license": "CC-BY-NC",
+          "place": "63065 Ripatransone, Ascoli Piceno, Italien",
+          "date": "2026-06-08",
+          "file_hd": "assets/species/tree-pino-d-aleppo-inat1-hd.webp",
+          "thumb": "assets/species/tree-pino-d-aleppo-inat1-t.webp"
+        },
+        {
+          "file": "assets/species/tree-pino-d-aleppo-inat2.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/297671403",
+          "author": "donzelli",
+          "license": "CC-BY-NC",
+          "place": "Provincia dell'Aquila, Italia",
+          "date": "2025-07-09",
+          "file_hd": "assets/species/tree-pino-d-aleppo-inat2-hd.webp",
+          "thumb": "assets/species/tree-pino-d-aleppo-inat2-t.webp"
+        },
+        {
+          "file": "assets/species/tree-pino-d-aleppo-inat3.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/375348704",
+          "author": "johnld",
+          "license": "CC-BY-NC",
+          "place": "Viale della Rimembranza, Ascoli Piceno, Marche, IT",
+          "date": "2026-05-31",
+          "file_hd": "assets/species/tree-pino-d-aleppo-inat3-hd.webp",
+          "thumb": "assets/species/tree-pino-d-aleppo-inat3-t.webp"
+        }
+      ]
+    },
+    "pino silvestre": {
+      "latin": "Pinus sylvestris",
+      "photo_taxon": "Pinus sylvestris",
+      "inat": [
+        {
+          "file": "assets/species/tree-pino-silvestre-inat1.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/42831175",
+          "author": "Tom Bombadil",
+          "license": "CC-BY-NC",
+          "place": "52031 Anghiari AR, Italia",
+          "date": "2019-08-10",
+          "file_hd": "assets/species/tree-pino-silvestre-inat1-hd.webp",
+          "thumb": "assets/species/tree-pino-silvestre-inat1-t.webp"
+        },
+        {
+          "file": "assets/species/tree-pino-silvestre-inat2.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/42830742",
+          "author": "Tom Bombadil",
+          "license": "CC-BY-NC",
+          "place": "52031 Anghiari AR, Italia",
+          "date": "2019-08-10",
+          "file_hd": "assets/species/tree-pino-silvestre-inat2-hd.webp",
+          "thumb": "assets/species/tree-pino-silvestre-inat2-t.webp"
+        },
+        {
+          "file": "assets/species/tree-pino-silvestre-inat3.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/308187039",
+          "author": "stefaniapanero",
+          "license": "CC-BY-NC",
+          "place": "Parco Naturale Regionale Monti Simbruini, Cervara di Roma, Lazio, IT",
+          "date": "2025-08-22",
+          "file_hd": "assets/species/tree-pino-silvestre-inat3-hd.webp",
+          "thumb": "assets/species/tree-pino-silvestre-inat3-t.webp"
+        }
+      ]
+    },
+    "abete bianco": {
+      "latin": "Abies alba",
+      "photo_taxon": "Abies alba",
+      "inat": [
+        {
+          "file": "assets/species/tree-abete-bianco-inat1.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/144221326",
+          "author": "Giorgio",
+          "license": "CC-BY-NC",
+          "place": "60044 Fabriano AN, Italia",
+          "date": "2022-12-12",
+          "file_hd": "assets/species/tree-abete-bianco-inat1-hd.webp",
+          "thumb": "assets/species/tree-abete-bianco-inat1-t.webp"
+        },
+        {
+          "file": "assets/species/tree-abete-bianco-inat2.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/406769907",
+          "author": "Víctor González García",
+          "license": "CC-BY-NC",
+          "place": "Gran Sasso e Monti della Laga, Teramo, Abruzzo, Italy",
+          "date": "2026-10-02",
+          "file_hd": "assets/species/tree-abete-bianco-inat2-hd.webp",
+          "thumb": "assets/species/tree-abete-bianco-inat2-t.webp"
+        },
+        {
+          "file": "assets/species/tree-abete-bianco-inat3.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/178895293",
+          "author": "Francisilmuloparlante",
+          "license": "CC-BY-NC",
+          "place": "58033 Castel del Piano, Province of Grosseto, Italy",
+          "date": "2023-08-17",
+          "file_hd": "assets/species/tree-abete-bianco-inat3-hd.webp",
+          "thumb": "assets/species/tree-abete-bianco-inat3-t.webp"
+        }
+      ]
+    },
+    "betulla": {
+      "latin": "Betula pendula",
+      "photo_taxon": "Betula pendula",
+      "inat": [
+        {
+          "file": "assets/species/tree-betulla-inat1.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/281083187",
+          "author": "rcaccia",
+          "license": "CC-BY-NC",
+          "place": "Manziana, Lazio, IT",
+          "date": "2025-05-14",
+          "file_hd": "assets/species/tree-betulla-inat1-hd.webp",
+          "thumb": "assets/species/tree-betulla-inat1-t.webp"
+        },
+        {
+          "file": "assets/species/tree-betulla-inat2.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/51687104",
+          "author": "Rino",
+          "license": "CC-BY-NC",
+          "place": "Provincia dell'Aquila, Italia",
+          "date": "2020-07-01",
+          "file_hd": "assets/species/tree-betulla-inat2-hd.webp",
+          "thumb": "assets/species/tree-betulla-inat2-t.webp"
+        },
+        {
+          "file": "assets/species/tree-betulla-inat3.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/151942005",
+          "author": "atropurpurascens",
+          "license": "CC-BY-NC",
+          "place": "00066 Manziana RM, Italia",
+          "date": "2023-03-12",
+          "file_hd": "assets/species/tree-betulla-inat3-hd.webp",
+          "thumb": "assets/species/tree-betulla-inat3-t.webp"
+        }
+      ]
+    },
+    "nocciolo": {
+      "latin": "Corylus avellana",
+      "photo_taxon": "Corylus avellana",
+      "inat": [
+        {
+          "file": "assets/species/tree-nocciolo-inat1.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/379321407",
+          "author": "Maurizio Russo",
+          "license": "CC-BY-NC",
+          "place": "67030 Opi AQ, Italia",
+          "date": "2026-07-08",
+          "file_hd": "assets/species/tree-nocciolo-inat1-hd.webp",
+          "thumb": "assets/species/tree-nocciolo-inat1-t.webp"
+        },
+        {
+          "file": "assets/species/tree-nocciolo-inat2.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/158537685",
+          "author": "Marco Gasponi",
+          "license": "CC-BY-NC",
+          "place": "Roma, Lazio, IT",
+          "date": "2023-05-01",
+          "file_hd": "assets/species/tree-nocciolo-inat2-hd.webp",
+          "thumb": "assets/species/tree-nocciolo-inat2-t.webp"
+        },
+        {
+          "file": "assets/species/tree-nocciolo-inat3.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/125568907",
+          "author": "lucapassalacqua",
+          "license": "CC-BY-NC",
+          "place": "58031 Merigar West GR, Italia",
+          "date": "2022-07-09",
+          "file_hd": "assets/species/tree-nocciolo-inat3-hd.webp",
+          "thumb": "assets/species/tree-nocciolo-inat3-t.webp"
+        }
+      ]
+    },
+    "acero campestre": {
+      "latin": "Acer campestre",
+      "photo_taxon": "Acer campestre",
+      "inat": [
+        {
+          "file": "assets/species/tree-acero-campestre-inat1.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/184408576",
+          "author": "Daniel Cahen",
+          "license": "CC-BY",
+          "place": "Province of Ancona, Italy",
+          "date": "2023-09-22",
+          "file_hd": "assets/species/tree-acero-campestre-inat1-hd.webp",
+          "thumb": "assets/species/tree-acero-campestre-inat1-t.webp"
+        },
+        {
+          "file": "assets/species/tree-acero-campestre-inat2.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/306687509",
+          "author": "Felix Riegel",
+          "license": "CC-BY-NC",
+          "place": "Roccaraso, Abruzzo, Italien",
+          "date": "2025-05-21",
+          "file_hd": "assets/species/tree-acero-campestre-inat2-hd.webp",
+          "thumb": "assets/species/tree-acero-campestre-inat2-t.webp"
+        },
+        {
+          "file": "assets/species/tree-acero-campestre-inat3.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/218635834",
+          "author": "terrysamson",
+          "license": "CC-BY-NC",
+          "place": "Asciano, Tuscany, IT",
+          "date": "2024-05-27",
+          "file_hd": "assets/species/tree-acero-campestre-inat3-hd.webp",
+          "thumb": "assets/species/tree-acero-campestre-inat3-t.webp"
+        }
+      ]
+    },
+    "pioppo": {
+      "latin": "Populus spp.",
+      "photo_taxon": "Populus nigra",
+      "inat": [
+        {
+          "file": "assets/species/tree-pioppo-inat1.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/370106232",
+          "author": "elenben",
+          "license": "CC-BY-NC",
+          "place": "Via Tespi, Roma, Lazio, IT",
+          "date": "2026-06-09",
+          "file_hd": "assets/species/tree-pioppo-inat1-hd.webp",
+          "thumb": "assets/species/tree-pioppo-inat1-t.webp"
+        },
+        {
+          "file": "assets/species/tree-pioppo-inat2.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/213181144",
+          "author": "Andrea Bonifazi",
+          "license": "CC-BY-NC",
+          "place": "00139 Roma RM, Italia",
+          "date": "2024-05-03",
+          "file_hd": "assets/species/tree-pioppo-inat2-hd.webp",
+          "thumb": "assets/species/tree-pioppo-inat2-t.webp"
+        },
+        {
+          "file": "assets/species/tree-pioppo-inat3.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/238568635",
+          "author": "Andrea Bonifazi",
+          "license": "CC-BY-NC",
+          "place": "Giardinetti, 00133 Roma RM, Italia",
+          "date": "2024-08-29",
+          "file_hd": "assets/species/tree-pioppo-inat3-hd.webp",
+          "thumb": "assets/species/tree-pioppo-inat3-t.webp"
+        }
+      ]
+    },
+    "salice": {
+      "latin": "Salix spp.",
+      "photo_taxon": "Salix alba",
+      "inat": [
+        {
+          "file": "assets/species/tree-salice-inat1.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/3341186",
+          "author": "Dino Biancolini",
+          "license": "CC-BY-NC",
+          "place": "Frosinone, Lazio, IT",
+          "date": "2016-05-30",
+          "file_hd": "assets/species/tree-salice-inat1-hd.webp",
+          "thumb": "assets/species/tree-salice-inat1-t.webp"
+        },
+        {
+          "file": "assets/species/tree-salice-inat2.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/166778754",
+          "author": "Marco Gasponi",
+          "license": "CC-BY-NC",
+          "place": "05025 Guardea TR, Italia",
+          "date": "2023-06-11",
+          "file_hd": "assets/species/tree-salice-inat2-hd.webp",
+          "thumb": "assets/species/tree-salice-inat2-t.webp"
+        },
+        {
+          "file": "assets/species/tree-salice-inat3.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/159279271",
+          "author": "Valerio Viglioglia",
+          "license": "CC-BY-NC",
+          "place": "00179 Roma RM, Italia",
+          "date": "2023-05-01",
+          "file_hd": "assets/species/tree-salice-inat3-hd.webp",
+          "thumb": "assets/species/tree-salice-inat3-t.webp"
+        }
+      ]
+    },
+    "ontano": {
+      "latin": "Alnus glutinosa",
+      "photo_taxon": "Alnus glutinosa",
+      "inat": [
+        {
+          "file": "assets/species/tree-ontano-inat1.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/302850359",
+          "author": "Marco Gasponi",
+          "license": "CC-BY-NC",
+          "place": "05100 Terni TR, Italia",
+          "date": "2025-08-01",
+          "file_hd": "assets/species/tree-ontano-inat1-hd.webp",
+          "thumb": "assets/species/tree-ontano-inat1-t.webp"
+        },
+        {
+          "file": "assets/species/tree-ontano-inat2.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/158768549",
+          "author": "umbertopessolano",
+          "license": "CC-BY-NC",
+          "place": "Riserva Naturale di Nazzano, Tevere-Farfa, Nazzano, Lazio, IT",
+          "date": "2023-05-01",
+          "file_hd": "assets/species/tree-ontano-inat2-hd.webp",
+          "thumb": "assets/species/tree-ontano-inat2-t.webp"
+        },
+        {
+          "file": "assets/species/tree-ontano-inat3.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/140383103",
+          "author": "stefanocim",
+          "license": "CC-BY-NC",
+          "place": "Porta Cartara - Bar Mediterraneo, 63100 Ascoli Piceno AP, Italia",
+          "date": "2022-10-29",
+          "file_hd": "assets/species/tree-ontano-inat3-hd.webp",
+          "thumb": "assets/species/tree-ontano-inat3-t.webp"
+        }
+      ]
+    },
+    "olivo": {
+      "latin": "Olea europaea",
+      "photo_taxon": "Olea europaea",
+      "inat": [
+        {
+          "file": "assets/species/tree-olivo-inat1.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/36350772",
+          "author": "lucapassalacqua",
+          "license": "CC-BY-NC",
+          "place": "Provincia di Grosseto, Italia",
+          "date": "2014-08-23",
+          "file_hd": "assets/species/tree-olivo-inat1-hd.webp",
+          "thumb": "assets/species/tree-olivo-inat1-t.webp"
+        },
+        {
+          "file": "assets/species/tree-olivo-inat2.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/336480335",
+          "author": "Filippo Cerrone",
+          "license": "CC-BY-NC",
+          "place": "Isernia, Molise, IT",
+          "date": "2026-01-28",
+          "file_hd": "assets/species/tree-olivo-inat2-hd.webp",
+          "thumb": "assets/species/tree-olivo-inat2-t.webp"
+        },
+        {
+          "file": "assets/species/tree-olivo-inat3.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/342929241",
+          "author": "Anonimous Pug",
+          "license": "CC-BY-NC",
+          "place": "Roma",
+          "date": "2026-03-14",
+          "file_hd": "assets/species/tree-olivo-inat3-hd.webp",
+          "thumb": "assets/species/tree-olivo-inat3-t.webp"
+        }
+      ]
+    },
+    "acero di montpellier": {
+      "latin": "Acer monspessulanum L. subsp. monspessulanum",
+      "photo_taxon": "Acer monspessulanum L. subsp. monspessulanum",
+      "commons": [
+        {
+          "file": "assets/trees/acero-di-montpellier-1.webp",
+          "thumb": "assets/trees/acero-di-montpellier-1-t.webp",
+          "alt": "Acero di Montpellier: fotografia della specie",
+          "caption": "Fotografia originale della specie; i caratteri vanno confrontati insieme.",
+          "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "page": "https://dryades.units.it/Roma/index.php?id=3043&procedure=taxon_page",
+          "sourceImage": "https://dryades.units.it/dryades/plants/foto/TSB11102.jpg",
+          "sourceCaption": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Andrea Moro · Comune di Monfalcone, lago di Pietrarossa.  , FVG, Italia · 2/5/04 0.00.00 · Distributed under CC BY-SA 4.0 license.",
+          "source": "Università di Trieste · Dryades",
+          "file_hd": "assets/trees/acero-di-montpellier-1.webp"
+        },
+        {
+          "file": "assets/trees/acero-di-montpellier-2.webp",
+          "thumb": "assets/trees/acero-di-montpellier-2-t.webp",
+          "alt": "Acero di Montpellier: fotografia della specie",
+          "caption": "Fotografia originale della specie; i caratteri vanno confrontati insieme.",
+          "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "page": "https://dryades.units.it/Roma/index.php?id=3043&procedure=taxon_page",
+          "sourceImage": "https://dryades.units.it/dryades/plants/foto/TSB33060.jpg",
+          "sourceCaption": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Andrea Moro · Comune di Monrupino, spalti della Rocca., Friuli Venezia Giulia, Italia · 22/04/2006 · Distributed under CC BY-SA 4.0 license.",
+          "source": "Università di Trieste · Dryades",
+          "file_hd": "assets/trees/acero-di-montpellier-2.webp"
+        },
+        {
+          "file": "assets/trees/acero-di-montpellier-3.webp",
+          "thumb": "assets/trees/acero-di-montpellier-3-t.webp",
+          "alt": "Acero di Montpellier: fotografia della specie",
+          "caption": "Fotografia originale della specie; i caratteri vanno confrontati insieme.",
+          "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "page": "https://dryades.units.it/Roma/index.php?id=3043&procedure=taxon_page",
+          "sourceImage": "https://dryades.units.it/dryades/plants/foto/IMG2698JPG1713166602.jpg",
+          "sourceCaption": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Andrea Moro · Comune di Trieste, Monte Grisa / Svetišče na Vejni, ciglione affacciato sul mare, TS, Friuli Venezia Giulia, Italia · 14/04/2024 · Distributed under CC BY-SA 4.0 license.",
+          "source": "Università di Trieste · Dryades",
+          "file_hd": "assets/trees/acero-di-montpellier-3.webp"
+        }
+      ]
+    },
+    "sorbo domestico": {
+      "latin": "Sorbus domestica L.",
+      "photo_taxon": "Sorbus domestica L.",
+      "commons": [
+        {
+          "file": "assets/trees/sorbo-domestico-1.webp",
+          "thumb": "assets/trees/sorbo-domestico-1-t.webp",
+          "alt": "Sorbo domestico: fotografia della specie",
+          "caption": "Fotografia originale della specie; i caratteri vanno confrontati insieme.",
+          "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "page": "https://dryades.units.it/Roma/index.php?id=2177&procedure=taxon_page",
+          "sourceImage": "https://dryades.units.it/dryades/plants/foto/TSB16067.jpg",
+          "sourceCaption": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Andrea Moro · Comune di Serle, località Ronco. , Lombardia, Italia · 5/10/04 0.00.00 · Distributed under CC BY-SA 4.0 license.",
+          "source": "Università di Trieste · Dryades",
+          "file_hd": "assets/trees/sorbo-domestico-1.webp"
+        },
+        {
+          "file": "assets/trees/sorbo-domestico-2.webp",
+          "thumb": "assets/trees/sorbo-domestico-2-t.webp",
+          "alt": "Sorbo domestico: fotografia della specie",
+          "caption": "Fotografia originale della specie; i caratteri vanno confrontati insieme.",
+          "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "page": "https://dryades.units.it/Roma/index.php?id=2177&procedure=taxon_page",
+          "sourceImage": "https://dryades.units.it/dryades/plants/foto/TS204717.jpg",
+          "sourceCaption": "© Dipartimento di Scienze della Vita, Università di Trieste · Andrea Moro · Comune di Tivoli, Villa Adriana, area archeologica, Lazio, Italia · 06/06/2017 · Distributed under CC BY-SA 4.0 license.",
+          "source": "Università di Trieste · Dryades",
+          "file_hd": "assets/trees/sorbo-domestico-2.webp"
+        },
+        {
+          "file": "assets/trees/sorbo-domestico-3.webp",
+          "thumb": "assets/trees/sorbo-domestico-3-t.webp",
+          "alt": "Sorbo domestico: fotografia della specie",
+          "caption": "Fotografia originale della specie; i caratteri vanno confrontati insieme.",
+          "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "page": "https://dryades.units.it/Roma/index.php?id=2177&procedure=taxon_page",
+          "sourceImage": "https://dryades.units.it/dryades/plants/foto/TS247433.jpg",
+          "sourceCaption": "© Università di Trieste, Dipartimento di Scienze Della Vita · Andrea Moro · Comune di Padova, Orto Botanico, Veneto, Italia · 18/07/2019 · Distributed under CC BY-SA 4.0 license.",
+          "source": "Università di Trieste · Dryades",
+          "file_hd": "assets/trees/sorbo-domestico-3.webp"
+        }
+      ]
+    },
+    "ciliegio": {
+      "latin": "Prunus avium (L.) L.",
+      "photo_taxon": "Prunus avium (L.) L.",
+      "commons": [
+        {
+          "file": "assets/trees/ciliegio-1.webp",
+          "thumb": "assets/trees/ciliegio-1-t.webp",
+          "alt": "Ciliegio: fotografia della specie",
+          "caption": "Fotografia originale della specie; i caratteri vanno confrontati insieme.",
+          "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "page": "https://dryades.units.it/Roma/index.php?id=2229&procedure=taxon_page",
+          "sourceImage": "https://dryades.units.it/dryades/plants/foto/IMG2633JPG1711366441.jpg",
+          "sourceCaption": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Andrea Moro · Comune di Trieste, località Prosecco / Prosek, vigneto sopra Miramare, TS, Friuli Venezia Giulia, Italia · 24/03/2024 · Distributed under CC BY-SA 4.0 license.",
+          "source": "Università di Trieste · Dryades",
+          "file_hd": "assets/trees/ciliegio-1.webp"
+        },
+        {
+          "file": "assets/trees/ciliegio-2.webp",
+          "thumb": "assets/trees/ciliegio-2-t.webp",
+          "alt": "Ciliegio: fotografia della specie",
+          "caption": "Fotografia originale della specie; i caratteri vanno confrontati insieme.",
+          "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "page": "https://dryades.units.it/Roma/index.php?id=2229&procedure=taxon_page",
+          "sourceImage": "https://dryades.units.it/dryades/plants/foto/IMG4342JPG1587998321.jpg",
+          "sourceCaption": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Andrea Moro · Comune di Trieste, Campus Universitario, TS, Friuli Venezia Giulia, Italia · 23/04/2019 · Distributed under CC BY-SA 4.0 license.",
+          "source": "Università di Trieste · Dryades",
+          "file_hd": "assets/trees/ciliegio-2.webp"
+        },
+        {
+          "file": "assets/trees/ciliegio-3.webp",
+          "thumb": "assets/trees/ciliegio-3-t.webp",
+          "alt": "Ciliegio: fotografia della specie",
+          "caption": "Fotografia originale della specie; i caratteri vanno confrontati insieme.",
+          "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "page": "https://dryades.units.it/Roma/index.php?id=2229&procedure=taxon_page",
+          "sourceImage": "https://dryades.units.it/dryades/plants/foto/IMG4333JPG1587998075.jpg",
+          "sourceCaption": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Andrea Moro · Comune di Trieste, Campus Universitario, TS, Friuli Venezia Giulia, Italia · 23/04/2019 · Distributed under CC BY-SA 4.0 license.",
+          "source": "Università di Trieste · Dryades",
+          "file_hd": "assets/trees/ciliegio-3.webp"
+        }
+      ]
+    },
+    "noce": {
+      "latin": "Juglans regia L.",
+      "photo_taxon": "Juglans regia L.",
+      "commons": [
+        {
+          "file": "assets/trees/noce-1.webp",
+          "thumb": "assets/trees/noce-1-t.webp",
+          "alt": "Noce: fotografia della specie",
+          "caption": "Fotografia originale della specie; i caratteri vanno confrontati insieme.",
+          "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "page": "https://dryades.units.it/Roma/index.php?id=242&procedure=taxon_page",
+          "sourceImage": "https://dryades.units.it/dryades/plants/foto/IMG6675JPG1655732151.jpg",
+          "sourceCaption": "© Università di Trieste, Dipartimento di Scienze della Vita · Andrea Moro · Comune di Trieste, Monte Valerio, TS, Friuli Venezia Giulia, Italia · 20/06/2020 · Distributed under CC BY-SA 4.0 license.",
+          "source": "Università di Trieste · Dryades",
+          "file_hd": "assets/trees/noce-1.webp"
+        },
+        {
+          "file": "assets/trees/noce-2.webp",
+          "thumb": "assets/trees/noce-2-t.webp",
+          "alt": "Noce: fotografia della specie",
+          "caption": "Fotografia originale della specie; i caratteri vanno confrontati insieme.",
+          "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "page": "https://dryades.units.it/Roma/index.php?id=242&procedure=taxon_page",
+          "sourceImage": "https://dryades.units.it/dryades/plants/foto/IMG4405JPG1714400609.jpg",
+          "sourceCaption": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Andrea Moro · Comune di Trieste, Monte Valerio, Orto Botanico Universitario, TS, Friuli Venezia Giulia, Italia · 29/04/2024 · Distributed under CC BY-SA 4.0 license.",
+          "source": "Università di Trieste · Dryades",
+          "file_hd": "assets/trees/noce-2.webp"
+        },
+        {
+          "file": "assets/trees/noce-3.webp",
+          "thumb": "assets/trees/noce-3-t.webp",
+          "alt": "Noce: fotografia della specie",
+          "caption": "Fotografia originale della specie; i caratteri vanno confrontati insieme.",
+          "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "page": "https://dryades.units.it/Roma/index.php?id=242&procedure=taxon_page",
+          "sourceImage": "https://dryades.units.it/dryades/plants/foto/IMG6671JPG1655732100.jpg",
+          "sourceCaption": "© Università di Trieste, Dipartimento di Scienze della Vita · Andrea Moro · Comune di Trieste, Monte Valerio, TS, Friuli Venezia Giulia, Italia · 20/06/2020 · Distributed under CC BY-SA 4.0 license.",
+          "source": "Università di Trieste · Dryades",
+          "file_hd": "assets/trees/noce-3.webp"
+        }
+      ]
+    },
+    "tiglio nostrano": {
+      "latin": "Tilia platyphyllos Scop. subsp. platyphyllos",
+      "photo_taxon": "Tilia platyphyllos Scop. subsp. platyphyllos",
+      "commons": [
+        {
+          "file": "assets/trees/tiglio-nostrano-1.webp",
+          "thumb": "assets/trees/tiglio-nostrano-1-t.webp",
+          "alt": "Tiglio nostrano: fotografia della specie",
+          "caption": "Fotografia originale della specie; i caratteri vanno confrontati insieme.",
+          "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "page": "https://dryades.units.it/Roma/index.php?id=3089&procedure=taxon_page",
+          "sourceImage": "https://dryades.units.it/dryades/plants/foto/TS183991.jpg",
+          "sourceCaption": "© Dipartimento di Scienze della Vita, Università di Trieste · Andrea Moro · Comune di Merano/Meran, Passeggiata d'estate, Trentino-Alto Adige/Südtirol, Italia · 02/11/2015 · Distributed under CC BY-SA 4.0 license.",
+          "source": "Università di Trieste · Dryades",
+          "file_hd": "assets/trees/tiglio-nostrano-1.webp"
+        },
+        {
+          "file": "assets/trees/tiglio-nostrano-2.webp",
+          "thumb": "assets/trees/tiglio-nostrano-2-t.webp",
+          "alt": "Tiglio nostrano: fotografia della specie",
+          "caption": "Fotografia originale della specie; i caratteri vanno confrontati insieme.",
+          "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "page": "https://dryades.units.it/Roma/index.php?id=3089&procedure=taxon_page",
+          "sourceImage": "https://dryades.units.it/dryades/plants/foto/TS213254.jpg",
+          "sourceCaption": "© Dipartimento di Scienze della Vita, Università di Trieste · Andrea Moro · Comune di Firenze, Giardino dei Semplici, Toscana, Italia · 02/11/2017 · Distributed under CC BY-SA 4.0 license.",
+          "source": "Università di Trieste · Dryades",
+          "file_hd": "assets/trees/tiglio-nostrano-2.webp"
+        },
+        {
+          "file": "assets/trees/tiglio-nostrano-3.webp",
+          "thumb": "assets/trees/tiglio-nostrano-3-t.webp",
+          "alt": "Tiglio nostrano: fotografia della specie",
+          "caption": "Fotografia originale della specie; i caratteri vanno confrontati insieme.",
+          "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "page": "https://dryades.units.it/Roma/index.php?id=3089&procedure=taxon_page",
+          "sourceImage": "https://dryades.units.it/dryades/plants/foto/TS213251.jpg",
+          "sourceCaption": "© Dipartimento di Scienze della Vita, Università di Trieste · Andrea Moro · Comune di Firenze, Giardino dei Semplici, Toscana, Italia · 02/11/2017 · Distributed under CC BY-SA 4.0 license.",
+          "source": "Università di Trieste · Dryades",
+          "file_hd": "assets/trees/tiglio-nostrano-3.webp"
+        }
+      ]
+    },
+    "agrifoglio": {
+      "latin": "Ilex aquifolium L.",
+      "photo_taxon": "Ilex aquifolium L.",
+      "commons": [
+        {
+          "file": "assets/trees/agrifoglio-1.webp",
+          "thumb": "assets/trees/agrifoglio-1-t.webp",
+          "alt": "Agrifoglio: fotografia della specie",
+          "caption": "Fotografia originale della specie; i caratteri vanno confrontati insieme.",
+          "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "page": "https://dryades.units.it/Roma/index.php?id=3052&procedure=taxon_page",
+          "sourceImage": "https://dryades.units.it/dryades/plants/foto/IMG1624JPG1710428663.jpg",
+          "sourceCaption": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Andrea Moro · Comune di Trieste, Giardino pubblico Muzio de' Tommasini, TS, Friuli Venezia Giulia, Italia · 14/03/2024 · Distributed under CC BY-SA 4.0 license.",
+          "source": "Università di Trieste · Dryades",
+          "file_hd": "assets/trees/agrifoglio-1.webp"
+        },
+        {
+          "file": "assets/trees/agrifoglio-2.webp",
+          "thumb": "assets/trees/agrifoglio-2-t.webp",
+          "alt": "Agrifoglio: fotografia della specie",
+          "caption": "Fotografia originale della specie; i caratteri vanno confrontati insieme.",
+          "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "page": "https://dryades.units.it/Roma/index.php?id=3052&procedure=taxon_page",
+          "sourceImage": "https://dryades.units.it/dryades/plants/foto/TS167150.jpg",
+          "sourceCaption": "© Dipartimento di Scienze della Vita, Università degli studi di Trieste · Andrea Moro · Comune di Serle, altopiano di Cariadeghe, Lombardia, Italia · 03/05/2014 · Distributed under CC BY-SA 4.0 license.",
+          "source": "Università di Trieste · Dryades",
+          "file_hd": "assets/trees/agrifoglio-2.webp"
+        },
+        {
+          "file": "assets/trees/agrifoglio-3.webp",
+          "thumb": "assets/trees/agrifoglio-3-t.webp",
+          "alt": "Agrifoglio: fotografia della specie",
+          "caption": "Fotografia originale della specie; i caratteri vanno confrontati insieme.",
+          "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "page": "https://dryades.units.it/Roma/index.php?id=3052&procedure=taxon_page",
+          "sourceImage": "https://dryades.units.it/dryades/plants/foto/IMG1625JPG1710428603.jpg",
+          "sourceCaption": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Andrea Moro · Comune di Trieste, Giardino pubblico Muzio de' Tommasini, TS, Friuli Venezia Giulia, Italia · 14/03/2024 · Distributed under CC BY-SA 4.0 license.",
+          "source": "Università di Trieste · Dryades",
+          "file_hd": "assets/trees/agrifoglio-3.webp"
+        }
+      ]
+    },
+    "robinia": {
+      "latin": "Robinia pseudoacacia L.",
+      "photo_taxon": "Robinia pseudoacacia L.",
+      "commons": [
+        {
+          "file": "assets/trees/robinia-1.webp",
+          "thumb": "assets/trees/robinia-1-t.webp",
+          "alt": "Robinia: fotografia della specie",
+          "caption": "Fotografia originale della specie; i caratteri vanno confrontati insieme.",
+          "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "page": "https://dryades.units.it/Roma/index.php?id=2331&procedure=taxon_page",
+          "sourceImage": "https://dryades.units.it/dryades/plants/foto/IMG5697JPG1588259488.jpg",
+          "sourceCaption": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Andrea Moro · Comune di Trieste, campus universitario, TS, Friuli Venezia Giulia, Italia · 29/04/2020 · Distributed under CC BY-SA 4.0 license.",
+          "source": "Università di Trieste · Dryades",
+          "file_hd": "assets/trees/robinia-1.webp"
+        },
+        {
+          "file": "assets/trees/robinia-2.webp",
+          "thumb": "assets/trees/robinia-2-t.webp",
+          "alt": "Robinia: fotografia della specie",
+          "caption": "Fotografia originale della specie; i caratteri vanno confrontati insieme.",
+          "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "page": "https://dryades.units.it/Roma/index.php?id=2331&procedure=taxon_page",
+          "sourceImage": "https://dryades.units.it/dryades/plants/foto/IMG4379JPG1587999423.jpg",
+          "sourceCaption": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Andrea Moro · Comune di Trieste, Campus Universitario, TS, Friuli Venezia Giulia, Italia · 23/04/2019 · Distributed under CC BY-SA 4.0 license.",
+          "source": "Università di Trieste · Dryades",
+          "file_hd": "assets/trees/robinia-2.webp"
+        },
+        {
+          "file": "assets/trees/robinia-3.webp",
+          "thumb": "assets/trees/robinia-3-t.webp",
+          "alt": "Robinia: fotografia della specie",
+          "caption": "Fotografia originale della specie; i caratteri vanno confrontati insieme.",
+          "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "page": "https://dryades.units.it/Roma/index.php?id=2331&procedure=taxon_page",
+          "sourceImage": "https://dryades.units.it/dryades/plants/foto/IMG5712JPG1588259498.jpg",
+          "sourceCaption": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Andrea Moro · Comune di Trieste, campus universitario, TS, Friuli Venezia Giulia, Italia · 29/04/2020 · Distributed under CC BY-SA 4.0 license.",
+          "source": "Università di Trieste · Dryades",
+          "file_hd": "assets/trees/robinia-3.webp"
+        }
+      ]
+    },
+    "olmo montano": {
+      "latin": "Ulmus glabra Huds.",
+      "photo_taxon": "Ulmus glabra Huds.",
+      "commons": [
+        {
+          "file": "assets/trees/olmo-montano-1.webp",
+          "thumb": "assets/trees/olmo-montano-1-t.webp",
+          "alt": "Olmo montano: fotografia della specie",
+          "caption": "Fotografia originale della specie; i caratteri vanno confrontati insieme.",
+          "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "page": "https://dryades.units.it/Roma/index.php?id=279&procedure=taxon_page",
+          "sourceImage": "https://dryades.units.it/dryades/plants/foto/TSB75257.jpg",
+          "sourceCaption": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Andrea Moro · Orto Botanico dell'Università di Ferrara, Emilia-Romagna, Italia · 25/05/2010 · Distributed under CC BY-SA 4.0 license.",
+          "source": "Università di Trieste · Dryades",
+          "file_hd": "assets/trees/olmo-montano-1.webp"
+        },
+        {
+          "file": "assets/trees/olmo-montano-2.webp",
+          "thumb": "assets/trees/olmo-montano-2-t.webp",
+          "alt": "Olmo montano: fotografia della specie",
+          "caption": "Fotografia originale della specie; i caratteri vanno confrontati insieme.",
+          "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "page": "https://dryades.units.it/Roma/index.php?id=279&procedure=taxon_page",
+          "sourceImage": "https://dryades.units.it/dryades/plants/foto/TSB22520.jpg",
+          "sourceCaption": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Andrea Moro · Comune di Ferrara, Orto Botanico. , Emilia Romagna, Italia · 13/5/05 0.00.00 · Distributed under CC BY-SA 4.0 license.",
+          "source": "Università di Trieste · Dryades",
+          "file_hd": "assets/trees/olmo-montano-2.webp"
+        },
+        {
+          "file": "assets/trees/olmo-montano-3.webp",
+          "thumb": "assets/trees/olmo-montano-3-t.webp",
+          "alt": "Olmo montano: fotografia della specie",
+          "caption": "Fotografia originale della specie; i caratteri vanno confrontati insieme.",
+          "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "page": "https://dryades.units.it/Roma/index.php?id=279&procedure=taxon_page",
+          "sourceImage": "https://dryades.units.it/dryades/plants/foto/TSB22521.jpg",
+          "sourceCaption": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Andrea Moro · Comune di Ferrara, Orto Botanico. , Emilia Romagna, Italia · 13/5/05 0.00.00 · Distributed under CC BY-SA 4.0 license.",
+          "source": "Università di Trieste · Dryades",
+          "file_hd": "assets/trees/olmo-montano-3.webp"
+        }
+      ]
+    },
+    "olmo campestre": {
+      "latin": "Ulmus minor Mill. subsp. minor",
+      "photo_taxon": "Ulmus minor Mill. subsp. minor",
+      "commons": [
+        {
+          "file": "assets/trees/olmo-campestre-1.webp",
+          "thumb": "assets/trees/olmo-campestre-1-t.webp",
+          "alt": "Olmo campestre: fotografia della specie",
+          "caption": "Fotografia originale della specie; i caratteri vanno confrontati insieme.",
+          "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "page": "https://dryades.units.it/Roma/index.php?id=281&procedure=taxon_page",
+          "sourceImage": "https://dryades.units.it/dryades/plants/foto/IMG4232JPG1715077275.jpg",
+          "sourceCaption": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Andrea Moro · Comune di Trieste, Monte Valerio, Complesso Universitario, TS, Friuli Venezia Giulia, Italia · 29/04/2024 · Distributed under CC BY-SA 4.0 license.",
+          "source": "Università di Trieste · Dryades",
+          "file_hd": "assets/trees/olmo-campestre-1.webp"
+        },
+        {
+          "file": "assets/trees/olmo-campestre-2.webp",
+          "thumb": "assets/trees/olmo-campestre-2-t.webp",
+          "alt": "Olmo campestre: fotografia della specie",
+          "caption": "Fotografia originale della specie; i caratteri vanno confrontati insieme.",
+          "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "page": "https://dryades.units.it/Roma/index.php?id=281&procedure=taxon_page",
+          "sourceImage": "https://dryades.units.it/dryades/plants/foto/TSB62686.jpg",
+          "sourceCaption": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Andrea Moro · Comune di Trieste, Campus Universitario., Friuli Venezia-Giulia, Italia · 01/04/2009 · Distributed under CC BY-SA 4.0 license.",
+          "source": "Università di Trieste · Dryades",
+          "file_hd": "assets/trees/olmo-campestre-2.webp"
+        },
+        {
+          "file": "assets/trees/olmo-campestre-3.webp",
+          "thumb": "assets/trees/olmo-campestre-3-t.webp",
+          "alt": "Olmo campestre: fotografia della specie",
+          "caption": "Fotografia originale della specie; i caratteri vanno confrontati insieme.",
+          "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "page": "https://dryades.units.it/Roma/index.php?id=281&procedure=taxon_page",
+          "sourceImage": "https://dryades.units.it/dryades/plants/foto/IMG2869JPG1585581974.jpg",
+          "sourceCaption": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Andrea Moro · Comune di Trieste, Campus Universitario, TS, Friuli Venezia Giulia, Italia · 30/03/2020 · Distributed under CC BY-SA 4.0 license.",
+          "source": "Università di Trieste · Dryades",
+          "file_hd": "assets/trees/olmo-campestre-3.webp"
+        }
+      ]
     }
-   ]
-  },
-  "castagno": {
-   "latin": "Castanea sativa",
-   "photo_taxon": "Castanea sativa",
-   "inat": [
-    {
-     "file": "assets/species/tree-castagno-inat1.webp",
-     "source": "iNaturalist (research grade)",
-     "page": "https://www.inaturalist.org/observations/344739474",
-     "author": "Andrea Montechiarini",
-     "license": "CC-BY-NC",
-     "place": "Province of Viterbo, Italy",
-     "date": "2026-03-23",
-     "file_hd": "assets/species/tree-castagno-inat1-hd.webp",
-     "thumb": "assets/species/tree-castagno-inat1-t.webp"
-    },
-    {
-     "file": "assets/species/tree-castagno-inat2.webp",
-     "source": "iNaturalist (research grade)",
-     "page": "https://www.inaturalist.org/observations/9170487",
-     "author": "Stefano Doglio",
-     "license": "CC-BY-NC",
-     "place": "Via Teglieto, Marcetelli",
-     "date": "2017-12-12",
-     "file_hd": "assets/species/tree-castagno-inat2-hd.webp",
-     "thumb": "assets/species/tree-castagno-inat2-t.webp"
-    },
-    {
-     "file": "assets/species/tree-castagno-inat3.webp",
-     "source": "iNaturalist (research grade)",
-     "page": "https://www.inaturalist.org/observations/198379990",
-     "author": "Chiara Catalano",
-     "license": "CC-BY-SA",
-     "place": "Orvieto, Umbrien, IT",
-     "date": "2024-02-04",
-     "file_hd": "assets/species/tree-castagno-inat3-hd.webp",
-     "thumb": "assets/species/tree-castagno-inat3-t.webp"
-    }
-   ]
-  },
-  "cerro": {
-   "latin": "Quercus cerris",
-   "photo_taxon": "Quercus cerris",
-   "inat": [
-    {
-     "file": "assets/species/tree-cerro-inat1.webp",
-     "source": "iNaturalist (research grade)",
-     "page": "https://www.inaturalist.org/observations/227077592",
-     "author": "flaviaisoli",
-     "license": "CC-BY-NC",
-     "place": "01019 Vetralla VT, Italia",
-     "date": "2024-07-04",
-     "file_hd": "assets/species/tree-cerro-inat1-hd.webp",
-     "thumb": "assets/species/tree-cerro-inat1-t.webp"
-    },
-    {
-     "file": "assets/species/tree-cerro-inat2.webp",
-     "source": "iNaturalist (research grade)",
-     "page": "https://www.inaturalist.org/observations/2683962",
-     "author": "Stefano Doglio",
-     "license": "CC-BY-NC",
-     "place": "Marco Simone",
-     "date": "2016-02-14",
-     "file_hd": "assets/species/tree-cerro-inat2-hd.webp",
-     "thumb": "assets/species/tree-cerro-inat2-t.webp"
-    },
-    {
-     "file": "assets/species/tree-cerro-inat3.webp",
-     "source": "iNaturalist (research grade)",
-     "page": "https://www.inaturalist.org/observations/273659873",
-     "author": "elisaerriu",
-     "license": "CC-BY-NC",
-     "place": "Parco Naturale, Oriolo Romano, Lazio, IT",
-     "date": "2025-04-26",
-     "file_hd": "assets/species/tree-cerro-inat3-hd.webp",
-     "thumb": "assets/species/tree-cerro-inat3-t.webp"
-    }
-   ]
-  },
-  "roverella": {
-   "latin": "Quercus pubescens",
-   "photo_taxon": "Quercus pubescens",
-   "inat": [
-    {
-     "file": "assets/species/tree-roverella-inat1.webp",
-     "source": "iNaturalist (research grade)",
-     "page": "https://www.inaturalist.org/observations/266748757",
-     "author": "Leonardo Pucci",
-     "license": "CC-BY-NC",
-     "place": "00046 Grottaferrata RM, Italia",
-     "date": "2025-03-23",
-     "file_hd": "assets/species/tree-roverella-inat1-hd.webp",
-     "thumb": "assets/species/tree-roverella-inat1-t.webp"
-    },
-    {
-     "file": "assets/species/tree-roverella-inat2.webp",
-     "source": "iNaturalist (research grade)",
-     "page": "https://www.inaturalist.org/observations/130916111",
-     "author": "lu03",
-     "license": "CC-BY-NC",
-     "place": "Via Pieve di Chio, Castiglion Fiorentino, Toskana, IT",
-     "date": "2022-08-15",
-     "file_hd": "assets/species/tree-roverella-inat2-hd.webp",
-     "thumb": "assets/species/tree-roverella-inat2-t.webp"
-    },
-    {
-     "file": "assets/species/tree-roverella-inat3.webp",
-     "source": "iNaturalist (research grade)",
-     "page": "https://www.inaturalist.org/observations/129106652",
-     "author": "Alan Weakley",
-     "license": "CC0",
-     "place": "Asciano, Tuscany, IT",
-     "date": "2022-08-02",
-     "file_hd": "assets/species/tree-roverella-inat3-hd.webp",
-     "thumb": "assets/species/tree-roverella-inat3-t.webp"
-    }
-   ]
-  },
-  "farnetto": {
-   "latin": "Quercus frainetto",
-   "photo_taxon": "Quercus frainetto",
-   "inat": [
-    {
-     "file": "assets/species/tree-farnetto-inat1.webp",
-     "source": "iNaturalist (research grade)",
-     "page": "https://www.inaturalist.org/observations/323184945",
-     "author": "Marco Gasponi",
-     "license": "CC-BY-NC",
-     "place": "05022 Amelia TR, Italia",
-     "date": "2025-10-26",
-     "file_hd": "assets/species/tree-farnetto-inat1-hd.webp",
-     "thumb": "assets/species/tree-farnetto-inat1-t.webp"
-    },
-    {
-     "file": "assets/species/tree-farnetto-inat2.webp",
-     "source": "iNaturalist (research grade)",
-     "page": "https://www.inaturalist.org/observations/157994623",
-     "author": "Marco",
-     "license": "CC-BY-NC",
-     "place": "00015 Monterotondo RM, Italia",
-     "date": "2023-04-30",
-     "file_hd": "assets/species/tree-farnetto-inat2-hd.webp",
-     "thumb": "assets/species/tree-farnetto-inat2-t.webp"
-    },
-    {
-     "file": "assets/species/tree-farnetto-inat3.webp",
-     "source": "iNaturalist (research grade)",
-     "page": "https://www.inaturalist.org/observations/100939942",
-     "author": "Flavio Rocchi",
-     "license": "CC-BY-NC",
-     "place": "00030 Genazzano RM, Italia",
-     "date": "2021-11-12",
-     "file_hd": "assets/species/tree-farnetto-inat3-hd.webp",
-     "thumb": "assets/species/tree-farnetto-inat3-t.webp"
-    }
-   ]
-  },
-  "leccio": {
-   "latin": "Quercus ilex",
-   "photo_taxon": "Quercus ilex",
-   "inat": [
-    {
-     "file": "assets/species/tree-leccio-inat1.webp",
-     "source": "iNaturalist (research grade)",
-     "page": "https://www.inaturalist.org/observations/163212177",
-     "author": "Thomas Cole",
-     "license": "CC-BY-NC",
-     "place": "Quartiere IX Appio Latino, Roma RM, Italy",
-     "date": "2023-05-21",
-     "file_hd": "assets/species/tree-leccio-inat1-hd.webp",
-     "thumb": "assets/species/tree-leccio-inat1-t.webp"
-    },
-    {
-     "file": "assets/species/tree-leccio-inat2.webp",
-     "source": "iNaturalist (research grade)",
-     "page": "https://www.inaturalist.org/observations/168082765",
-     "author": "Eren Polat",
-     "license": "CC-BY-NC",
-     "place": "Via Litoranea, Roma, Lazio, IT",
-     "date": "2023-06-18",
-     "file_hd": "assets/species/tree-leccio-inat2-hd.webp",
-     "thumb": "assets/species/tree-leccio-inat2-t.webp"
-    },
-    {
-     "file": "assets/species/tree-leccio-inat3.webp",
-     "source": "iNaturalist (research grade)",
-     "page": "https://www.inaturalist.org/observations/180139786",
-     "author": "fabriziolanfredi",
-     "license": "CC-BY-NC",
-     "place": "Ancona, Marche, IT",
-     "date": "2023-08-25",
-     "file_hd": "assets/species/tree-leccio-inat3-hd.webp",
-     "thumb": "assets/species/tree-leccio-inat3-t.webp"
-    }
-   ]
-  },
-  "carpino nero": {
-   "latin": "Ostrya carpinifolia",
-   "photo_taxon": "Ostrya carpinifolia",
-   "inat": [
-    {
-     "file": "assets/species/tree-carpino-nero-inat1.webp",
-     "source": "iNaturalist (research grade)",
-     "page": "https://www.inaturalist.org/observations/231476434",
-     "author": "msiri08",
-     "license": "CC-BY-NC",
-     "place": "Via San Pacifico, San Severino Marche, Marche, IT",
-     "date": "2024-07-22",
-     "file_hd": "assets/species/tree-carpino-nero-inat1-hd.webp",
-     "thumb": "assets/species/tree-carpino-nero-inat1-t.webp"
-    },
-    {
-     "file": "assets/species/tree-carpino-nero-inat2.webp",
-     "source": "iNaturalist (research grade)",
-     "page": "https://www.inaturalist.org/observations/270432933",
-     "author": "Roland Kaiser",
-     "license": "CC-BY-NC-SA",
-     "place": "Caramanico Terme, Abruzzo, IT",
-     "date": "2025-04-13",
-     "file_hd": "assets/species/tree-carpino-nero-inat2-hd.webp",
-     "thumb": "assets/species/tree-carpino-nero-inat2-t.webp"
-    },
-    {
-     "file": "assets/species/tree-carpino-nero-inat3.webp",
-     "source": "iNaturalist (research grade)",
-     "page": "https://www.inaturalist.org/observations/283128368",
-     "author": "Sarah Whitehead",
-     "license": "CC-BY-NC",
-     "place": "Terni",
-     "date": "2025-05-22",
-     "file_hd": "assets/species/tree-carpino-nero-inat3-hd.webp",
-     "thumb": "assets/species/tree-carpino-nero-inat3-t.webp"
-    }
-   ]
-  },
-  "carpino bianco": {
-   "latin": "Carpinus betulus",
-   "photo_taxon": "Carpinus betulus",
-   "inat": [
-    {
-     "file": "assets/species/tree-carpino-bianco-inat1.webp",
-     "source": "iNaturalist (research grade)",
-     "page": "https://www.inaturalist.org/observations/158529756",
-     "author": "Marco Gasponi",
-     "license": "CC-BY-NC",
-     "place": "00060 Canale Monterano RM, Italia",
-     "date": "2023-05-01",
-     "file_hd": "assets/species/tree-carpino-bianco-inat1-hd.webp",
-     "thumb": "assets/species/tree-carpino-bianco-inat1-t.webp"
-    },
-    {
-     "file": "assets/species/tree-carpino-bianco-inat2.webp",
-     "source": "iNaturalist (research grade)",
-     "page": "https://www.inaturalist.org/observations/310002202",
-     "author": "Marco Gasponi",
-     "license": "CC-BY-NC",
-     "place": "43M7+4P Sorgente ferrosa del Rafanello, 00060 Canale Monterano RM, Italia",
-     "date": "2025-08-29",
-     "file_hd": "assets/species/tree-carpino-bianco-inat2-hd.webp",
-     "thumb": "assets/species/tree-carpino-bianco-inat2-t.webp"
-    },
-    {
-     "file": "assets/species/tree-carpino-bianco-inat3.webp",
-     "source": "iNaturalist (research grade)",
-     "page": "https://www.inaturalist.org/observations/342285528",
-     "author": "Franco Barbadoro",
-     "license": "CC-BY-NC",
-     "place": "Parco Del Monte Cucco, Scheggia e Pascelupo, Umbria, IT",
-     "date": "2026-03-10",
-     "file_hd": "assets/species/tree-carpino-bianco-inat3-hd.webp",
-     "thumb": "assets/species/tree-carpino-bianco-inat3-t.webp"
-    }
-   ]
-  },
-  "orniello": {
-   "latin": "Fraxinus ornus",
-   "photo_taxon": "Fraxinus ornus",
-   "inat": [
-    {
-     "file": "assets/species/tree-orniello-inat1.webp",
-     "source": "iNaturalist (research grade)",
-     "page": "https://www.inaturalist.org/observations/258382898",
-     "author": "Sarah Gregg",
-     "license": "CC-BY-NC-SA",
-     "place": "Province of L'Aquila, Italy",
-     "date": "2012-05-12",
-     "file_hd": "assets/species/tree-orniello-inat1-hd.webp",
-     "thumb": "assets/species/tree-orniello-inat1-t.webp"
-    },
-    {
-     "file": "assets/species/tree-orniello-inat2.webp",
-     "source": "iNaturalist (research grade)",
-     "page": "https://www.inaturalist.org/observations/157220139",
-     "author": "albertoaries",
-     "license": "CC-BY-NC",
-     "place": "Città metropolitana di Roma Capitale, Italia",
-     "date": "2023-04-28",
-     "file_hd": "assets/species/tree-orniello-inat2-hd.webp",
-     "thumb": "assets/species/tree-orniello-inat2-t.webp"
-    },
-    {
-     "file": "assets/species/tree-orniello-inat3.webp",
-     "source": "iNaturalist (research grade)",
-     "page": "https://www.inaturalist.org/observations/268397813",
-     "author": "Fausto Carbonari",
-     "license": "CC-BY-NC",
-     "place": "01100 Viterbo VT, Italia",
-     "date": "2025-04-02",
-     "file_hd": "assets/species/tree-orniello-inat3-hd.webp",
-     "thumb": "assets/species/tree-orniello-inat3-t.webp"
-    }
-   ]
-  },
-  "pino nero": {
-   "latin": "Pinus nigra",
-   "photo_taxon": "Pinus nigra",
-   "inat": [
-    {
-     "file": "assets/species/tree-pino-nero-inat1.webp",
-     "source": "iNaturalist (research grade)",
-     "page": "https://www.inaturalist.org/observations/273012240",
-     "author": "albertoaries",
-     "license": "CC-BY-NC",
-     "place": "00028 Subiaco RM, Italia",
-     "date": "2025-04-25",
-     "file_hd": "assets/species/tree-pino-nero-inat1-hd.webp",
-     "thumb": "assets/species/tree-pino-nero-inat1-t.webp"
-    },
-    {
-     "file": "assets/species/tree-pino-nero-inat2.webp",
-     "source": "iNaturalist (research grade)",
-     "page": "https://www.inaturalist.org/observations/42002221",
-     "author": "lucapassalacqua",
-     "license": "CC-BY-NC",
-     "place": "Provincia di Grosseto, Italia",
-     "date": "2017-03-02",
-     "file_hd": "assets/species/tree-pino-nero-inat2-hd.webp",
-     "thumb": "assets/species/tree-pino-nero-inat2-t.webp"
-    },
-    {
-     "file": "assets/species/tree-pino-nero-inat3.webp",
-     "source": "iNaturalist (research grade)",
-     "page": "https://www.inaturalist.org/observations/32782190",
-     "author": "Andrea Meucci",
-     "license": "CC-BY-SA",
-     "place": "67017 Pizzoli AQ, Italia",
-     "date": "2019-09-15",
-     "file_hd": "assets/species/tree-pino-nero-inat3-hd.webp",
-     "thumb": "assets/species/tree-pino-nero-inat3-t.webp"
-    }
-   ]
-  },
-  "pino domestico": {
-   "latin": "Pinus pinea",
-   "photo_taxon": "Pinus pinea",
-   "inat": [
-    {
-     "file": "assets/species/tree-pino-domestico-inat1.webp",
-     "source": "iNaturalist (research grade)",
-     "page": "https://www.inaturalist.org/observations/1158860",
-     "author": "Stefano Doglio",
-     "license": "CC-BY-NC",
-     "place": "Via Dell'Alberata, S. Gregorio da Sassola",
-     "date": "2015-01-03",
-     "file_hd": "assets/species/tree-pino-domestico-inat1-hd.webp",
-     "thumb": "assets/species/tree-pino-domestico-inat1-t.webp"
-    },
-    {
-     "file": "assets/species/tree-pino-domestico-inat2.webp",
-     "source": "iNaturalist (research grade)",
-     "page": "https://www.inaturalist.org/observations/303662441",
-     "author": "pietro_vigano",
-     "license": "CC-BY-NC",
-     "place": "Porto Sant'Elpidio",
-     "date": "2025-08-04",
-     "file_hd": "assets/species/tree-pino-domestico-inat2-hd.webp",
-     "thumb": "assets/species/tree-pino-domestico-inat2-t.webp"
-    },
-    {
-     "file": "assets/species/tree-pino-domestico-inat3.webp",
-     "source": "iNaturalist (research grade)",
-     "page": "https://www.inaturalist.org/observations/394479729",
-     "author": "fullpokedex",
-     "license": "CC-BY-NC",
-     "place": "Via della Rocca, Fermo, Marche, IT",
-     "date": "2026-08-05",
-     "file_hd": "assets/species/tree-pino-domestico-inat3-hd.webp",
-     "thumb": "assets/species/tree-pino-domestico-inat3-t.webp"
-    }
-   ]
-  },
-  "pino d'aleppo": {
-   "latin": "Pinus halepensis",
-   "photo_taxon": "Pinus halepensis",
-   "inat": [
-    {
-     "file": "assets/species/tree-pino-d-aleppo-inat1.webp",
-     "source": "iNaturalist (research grade)",
-     "page": "https://www.inaturalist.org/observations/369789924",
-     "author": "T. Haberl",
-     "license": "CC-BY-NC",
-     "place": "63065 Ripatransone, Ascoli Piceno, Italien",
-     "date": "2026-06-08",
-     "file_hd": "assets/species/tree-pino-d-aleppo-inat1-hd.webp",
-     "thumb": "assets/species/tree-pino-d-aleppo-inat1-t.webp"
-    },
-    {
-     "file": "assets/species/tree-pino-d-aleppo-inat2.webp",
-     "source": "iNaturalist (research grade)",
-     "page": "https://www.inaturalist.org/observations/297671403",
-     "author": "donzelli",
-     "license": "CC-BY-NC",
-     "place": "Provincia dell'Aquila, Italia",
-     "date": "2025-07-09",
-     "file_hd": "assets/species/tree-pino-d-aleppo-inat2-hd.webp",
-     "thumb": "assets/species/tree-pino-d-aleppo-inat2-t.webp"
-    },
-    {
-     "file": "assets/species/tree-pino-d-aleppo-inat3.webp",
-     "source": "iNaturalist (research grade)",
-     "page": "https://www.inaturalist.org/observations/375348704",
-     "author": "johnld",
-     "license": "CC-BY-NC",
-     "place": "Viale della Rimembranza, Ascoli Piceno, Marche, IT",
-     "date": "2026-05-31",
-     "file_hd": "assets/species/tree-pino-d-aleppo-inat3-hd.webp",
-     "thumb": "assets/species/tree-pino-d-aleppo-inat3-t.webp"
-    }
-   ]
-  },
-  "pino silvestre": {
-   "latin": "Pinus sylvestris",
-   "photo_taxon": "Pinus sylvestris",
-   "inat": [
-    {
-     "file": "assets/species/tree-pino-silvestre-inat1.webp",
-     "source": "iNaturalist (research grade)",
-     "page": "https://www.inaturalist.org/observations/42831175",
-     "author": "Tom Bombadil",
-     "license": "CC-BY-NC",
-     "place": "52031 Anghiari AR, Italia",
-     "date": "2019-08-10",
-     "file_hd": "assets/species/tree-pino-silvestre-inat1-hd.webp",
-     "thumb": "assets/species/tree-pino-silvestre-inat1-t.webp"
-    },
-    {
-     "file": "assets/species/tree-pino-silvestre-inat2.webp",
-     "source": "iNaturalist (research grade)",
-     "page": "https://www.inaturalist.org/observations/42830742",
-     "author": "Tom Bombadil",
-     "license": "CC-BY-NC",
-     "place": "52031 Anghiari AR, Italia",
-     "date": "2019-08-10",
-     "file_hd": "assets/species/tree-pino-silvestre-inat2-hd.webp",
-     "thumb": "assets/species/tree-pino-silvestre-inat2-t.webp"
-    },
-    {
-     "file": "assets/species/tree-pino-silvestre-inat3.webp",
-     "source": "iNaturalist (research grade)",
-     "page": "https://www.inaturalist.org/observations/308187039",
-     "author": "stefaniapanero",
-     "license": "CC-BY-NC",
-     "place": "Parco Naturale Regionale Monti Simbruini, Cervara di Roma, Lazio, IT",
-     "date": "2025-08-22",
-     "file_hd": "assets/species/tree-pino-silvestre-inat3-hd.webp",
-     "thumb": "assets/species/tree-pino-silvestre-inat3-t.webp"
-    }
-   ]
-  },
-  "abete bianco": {
-   "latin": "Abies alba",
-   "photo_taxon": "Abies alba",
-   "inat": [
-    {
-     "file": "assets/species/tree-abete-bianco-inat1.webp",
-     "source": "iNaturalist (research grade)",
-     "page": "https://www.inaturalist.org/observations/144221326",
-     "author": "Giorgio",
-     "license": "CC-BY-NC",
-     "place": "60044 Fabriano AN, Italia",
-     "date": "2022-12-12",
-     "file_hd": "assets/species/tree-abete-bianco-inat1-hd.webp",
-     "thumb": "assets/species/tree-abete-bianco-inat1-t.webp"
-    },
-    {
-     "file": "assets/species/tree-abete-bianco-inat2.webp",
-     "source": "iNaturalist (research grade)",
-     "page": "https://www.inaturalist.org/observations/406769907",
-     "author": "Víctor González García",
-     "license": "CC-BY-NC",
-     "place": "Gran Sasso e Monti della Laga, Teramo, Abruzzo, Italy",
-     "date": "2026-10-02",
-     "file_hd": "assets/species/tree-abete-bianco-inat2-hd.webp",
-     "thumb": "assets/species/tree-abete-bianco-inat2-t.webp"
-    },
-    {
-     "file": "assets/species/tree-abete-bianco-inat3.webp",
-     "source": "iNaturalist (research grade)",
-     "page": "https://www.inaturalist.org/observations/178895293",
-     "author": "Francisilmuloparlante",
-     "license": "CC-BY-NC",
-     "place": "58033 Castel del Piano, Province of Grosseto, Italy",
-     "date": "2023-08-17",
-     "file_hd": "assets/species/tree-abete-bianco-inat3-hd.webp",
-     "thumb": "assets/species/tree-abete-bianco-inat3-t.webp"
-    }
-   ]
-  },
-  "betulla": {
-   "latin": "Betula pendula",
-   "photo_taxon": "Betula pendula",
-   "inat": [
-    {
-     "file": "assets/species/tree-betulla-inat1.webp",
-     "source": "iNaturalist (research grade)",
-     "page": "https://www.inaturalist.org/observations/281083187",
-     "author": "rcaccia",
-     "license": "CC-BY-NC",
-     "place": "Manziana, Lazio, IT",
-     "date": "2025-05-14",
-     "file_hd": "assets/species/tree-betulla-inat1-hd.webp",
-     "thumb": "assets/species/tree-betulla-inat1-t.webp"
-    },
-    {
-     "file": "assets/species/tree-betulla-inat2.webp",
-     "source": "iNaturalist (research grade)",
-     "page": "https://www.inaturalist.org/observations/51687104",
-     "author": "Rino",
-     "license": "CC-BY-NC",
-     "place": "Provincia dell'Aquila, Italia",
-     "date": "2020-07-01",
-     "file_hd": "assets/species/tree-betulla-inat2-hd.webp",
-     "thumb": "assets/species/tree-betulla-inat2-t.webp"
-    },
-    {
-     "file": "assets/species/tree-betulla-inat3.webp",
-     "source": "iNaturalist (research grade)",
-     "page": "https://www.inaturalist.org/observations/151942005",
-     "author": "atropurpurascens",
-     "license": "CC-BY-NC",
-     "place": "00066 Manziana RM, Italia",
-     "date": "2023-03-12",
-     "file_hd": "assets/species/tree-betulla-inat3-hd.webp",
-     "thumb": "assets/species/tree-betulla-inat3-t.webp"
-    }
-   ]
-  },
-  "nocciolo": {
-   "latin": "Corylus avellana",
-   "photo_taxon": "Corylus avellana",
-   "inat": [
-    {
-     "file": "assets/species/tree-nocciolo-inat1.webp",
-     "source": "iNaturalist (research grade)",
-     "page": "https://www.inaturalist.org/observations/379321407",
-     "author": "Maurizio Russo",
-     "license": "CC-BY-NC",
-     "place": "67030 Opi AQ, Italia",
-     "date": "2026-07-08",
-     "file_hd": "assets/species/tree-nocciolo-inat1-hd.webp",
-     "thumb": "assets/species/tree-nocciolo-inat1-t.webp"
-    },
-    {
-     "file": "assets/species/tree-nocciolo-inat2.webp",
-     "source": "iNaturalist (research grade)",
-     "page": "https://www.inaturalist.org/observations/158537685",
-     "author": "Marco Gasponi",
-     "license": "CC-BY-NC",
-     "place": "Roma, Lazio, IT",
-     "date": "2023-05-01",
-     "file_hd": "assets/species/tree-nocciolo-inat2-hd.webp",
-     "thumb": "assets/species/tree-nocciolo-inat2-t.webp"
-    },
-    {
-     "file": "assets/species/tree-nocciolo-inat3.webp",
-     "source": "iNaturalist (research grade)",
-     "page": "https://www.inaturalist.org/observations/125568907",
-     "author": "lucapassalacqua",
-     "license": "CC-BY-NC",
-     "place": "58031 Merigar West GR, Italia",
-     "date": "2022-07-09",
-     "file_hd": "assets/species/tree-nocciolo-inat3-hd.webp",
-     "thumb": "assets/species/tree-nocciolo-inat3-t.webp"
-    }
-   ]
-  },
-  "acero campestre": {
-   "latin": "Acer campestre",
-   "photo_taxon": "Acer campestre",
-   "inat": [
-    {
-     "file": "assets/species/tree-acero-campestre-inat1.webp",
-     "source": "iNaturalist (research grade)",
-     "page": "https://www.inaturalist.org/observations/184408576",
-     "author": "Daniel Cahen",
-     "license": "CC-BY",
-     "place": "Province of Ancona, Italy",
-     "date": "2023-09-22",
-     "file_hd": "assets/species/tree-acero-campestre-inat1-hd.webp",
-     "thumb": "assets/species/tree-acero-campestre-inat1-t.webp"
-    },
-    {
-     "file": "assets/species/tree-acero-campestre-inat2.webp",
-     "source": "iNaturalist (research grade)",
-     "page": "https://www.inaturalist.org/observations/306687509",
-     "author": "Felix Riegel",
-     "license": "CC-BY-NC",
-     "place": "Roccaraso, Abruzzo, Italien",
-     "date": "2025-05-21",
-     "file_hd": "assets/species/tree-acero-campestre-inat2-hd.webp",
-     "thumb": "assets/species/tree-acero-campestre-inat2-t.webp"
-    },
-    {
-     "file": "assets/species/tree-acero-campestre-inat3.webp",
-     "source": "iNaturalist (research grade)",
-     "page": "https://www.inaturalist.org/observations/218635834",
-     "author": "terrysamson",
-     "license": "CC-BY-NC",
-     "place": "Asciano, Tuscany, IT",
-     "date": "2024-05-27",
-     "file_hd": "assets/species/tree-acero-campestre-inat3-hd.webp",
-     "thumb": "assets/species/tree-acero-campestre-inat3-t.webp"
-    }
-   ]
-  },
-  "pioppo": {
-   "latin": "Populus spp.",
-   "photo_taxon": "Populus nigra",
-   "inat": [
-    {
-     "file": "assets/species/tree-pioppo-inat1.webp",
-     "source": "iNaturalist (research grade)",
-     "page": "https://www.inaturalist.org/observations/370106232",
-     "author": "elenben",
-     "license": "CC-BY-NC",
-     "place": "Via Tespi, Roma, Lazio, IT",
-     "date": "2026-06-09",
-     "file_hd": "assets/species/tree-pioppo-inat1-hd.webp",
-     "thumb": "assets/species/tree-pioppo-inat1-t.webp"
-    },
-    {
-     "file": "assets/species/tree-pioppo-inat2.webp",
-     "source": "iNaturalist (research grade)",
-     "page": "https://www.inaturalist.org/observations/213181144",
-     "author": "Andrea Bonifazi",
-     "license": "CC-BY-NC",
-     "place": "00139 Roma RM, Italia",
-     "date": "2024-05-03",
-     "file_hd": "assets/species/tree-pioppo-inat2-hd.webp",
-     "thumb": "assets/species/tree-pioppo-inat2-t.webp"
-    },
-    {
-     "file": "assets/species/tree-pioppo-inat3.webp",
-     "source": "iNaturalist (research grade)",
-     "page": "https://www.inaturalist.org/observations/238568635",
-     "author": "Andrea Bonifazi",
-     "license": "CC-BY-NC",
-     "place": "Giardinetti, 00133 Roma RM, Italia",
-     "date": "2024-08-29",
-     "file_hd": "assets/species/tree-pioppo-inat3-hd.webp",
-     "thumb": "assets/species/tree-pioppo-inat3-t.webp"
-    }
-   ]
-  },
-  "salice": {
-   "latin": "Salix spp.",
-   "photo_taxon": "Salix alba",
-   "inat": [
-    {
-     "file": "assets/species/tree-salice-inat1.webp",
-     "source": "iNaturalist (research grade)",
-     "page": "https://www.inaturalist.org/observations/3341186",
-     "author": "Dino Biancolini",
-     "license": "CC-BY-NC",
-     "place": "Frosinone, Lazio, IT",
-     "date": "2016-05-30",
-     "file_hd": "assets/species/tree-salice-inat1-hd.webp",
-     "thumb": "assets/species/tree-salice-inat1-t.webp"
-    },
-    {
-     "file": "assets/species/tree-salice-inat2.webp",
-     "source": "iNaturalist (research grade)",
-     "page": "https://www.inaturalist.org/observations/166778754",
-     "author": "Marco Gasponi",
-     "license": "CC-BY-NC",
-     "place": "05025 Guardea TR, Italia",
-     "date": "2023-06-11",
-     "file_hd": "assets/species/tree-salice-inat2-hd.webp",
-     "thumb": "assets/species/tree-salice-inat2-t.webp"
-    },
-    {
-     "file": "assets/species/tree-salice-inat3.webp",
-     "source": "iNaturalist (research grade)",
-     "page": "https://www.inaturalist.org/observations/159279271",
-     "author": "Valerio Viglioglia",
-     "license": "CC-BY-NC",
-     "place": "00179 Roma RM, Italia",
-     "date": "2023-05-01",
-     "file_hd": "assets/species/tree-salice-inat3-hd.webp",
-     "thumb": "assets/species/tree-salice-inat3-t.webp"
-    }
-   ]
-  },
-  "ontano": {
-   "latin": "Alnus glutinosa",
-   "photo_taxon": "Alnus glutinosa",
-   "inat": [
-    {
-     "file": "assets/species/tree-ontano-inat1.webp",
-     "source": "iNaturalist (research grade)",
-     "page": "https://www.inaturalist.org/observations/302850359",
-     "author": "Marco Gasponi",
-     "license": "CC-BY-NC",
-     "place": "05100 Terni TR, Italia",
-     "date": "2025-08-01",
-     "file_hd": "assets/species/tree-ontano-inat1-hd.webp",
-     "thumb": "assets/species/tree-ontano-inat1-t.webp"
-    },
-    {
-     "file": "assets/species/tree-ontano-inat2.webp",
-     "source": "iNaturalist (research grade)",
-     "page": "https://www.inaturalist.org/observations/158768549",
-     "author": "umbertopessolano",
-     "license": "CC-BY-NC",
-     "place": "Riserva Naturale di Nazzano, Tevere-Farfa, Nazzano, Lazio, IT",
-     "date": "2023-05-01",
-     "file_hd": "assets/species/tree-ontano-inat2-hd.webp",
-     "thumb": "assets/species/tree-ontano-inat2-t.webp"
-    },
-    {
-     "file": "assets/species/tree-ontano-inat3.webp",
-     "source": "iNaturalist (research grade)",
-     "page": "https://www.inaturalist.org/observations/140383103",
-     "author": "stefanocim",
-     "license": "CC-BY-NC",
-     "place": "Porta Cartara - Bar Mediterraneo, 63100 Ascoli Piceno AP, Italia",
-     "date": "2022-10-29",
-     "file_hd": "assets/species/tree-ontano-inat3-hd.webp",
-     "thumb": "assets/species/tree-ontano-inat3-t.webp"
-    }
-   ]
-  },
-  "olivo": {
-   "latin": "Olea europaea",
-   "photo_taxon": "Olea europaea",
-   "inat": [
-    {
-     "file": "assets/species/tree-olivo-inat1.webp",
-     "source": "iNaturalist (research grade)",
-     "page": "https://www.inaturalist.org/observations/36350772",
-     "author": "lucapassalacqua",
-     "license": "CC-BY-NC",
-     "place": "Provincia di Grosseto, Italia",
-     "date": "2014-08-23",
-     "file_hd": "assets/species/tree-olivo-inat1-hd.webp",
-     "thumb": "assets/species/tree-olivo-inat1-t.webp"
-    },
-    {
-     "file": "assets/species/tree-olivo-inat2.webp",
-     "source": "iNaturalist (research grade)",
-     "page": "https://www.inaturalist.org/observations/336480335",
-     "author": "Filippo Cerrone",
-     "license": "CC-BY-NC",
-     "place": "Isernia, Molise, IT",
-     "date": "2026-01-28",
-     "file_hd": "assets/species/tree-olivo-inat2-hd.webp",
-     "thumb": "assets/species/tree-olivo-inat2-t.webp"
-    },
-    {
-     "file": "assets/species/tree-olivo-inat3.webp",
-     "source": "iNaturalist (research grade)",
-     "page": "https://www.inaturalist.org/observations/342929241",
-     "author": "Anonimous Pug",
-     "license": "CC-BY-NC",
-     "place": "Roma",
-     "date": "2026-03-14",
-     "file_hd": "assets/species/tree-olivo-inat3-hd.webp",
-     "thumb": "assets/species/tree-olivo-inat3-t.webp"
-    }
-   ]
   }
- }
 }

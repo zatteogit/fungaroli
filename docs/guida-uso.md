@@ -1,6 +1,6 @@
 # Guida all’uso
 
-Fungaroli è un compagno per passeggiare nei boschi intorno a Rieti, scoprire sentieri e imparare. La home propone una passeggiata e tre letture: leggere il bosco, capire pioggia e crescita, preparare l’uscita. Le schede di zone, alberi e funghi aiutano a osservare: non certificano identità, commestibilità o sicurezza di un percorso.
+Fungaroli aiuta a scegliere un’uscita a funghi nei boschi intorno a Rieti. I sentieri accompagnano la proposta; piante, frutti e alberi sono suggerimenti aggiuntivi in “Durante il giro”. Guide, cataloghi e glossario sono raccolti in “Scopri”. Le schede di zone, alberi e funghi aiutano a osservare: non certificano identità, commestibilità o sicurezza di un percorso.
 
 ## Leggere le condizioni
 
@@ -30,7 +30,11 @@ Prima di partire, nella scheda della zona usa **Salva le condizioni prima della 
 
 Le concordanze con una soglia esplorativa di 3,0 non sono una misura scientifica di accuratezza. Una futura taratura richiede un insieme indipendente di uscite, condizioni comparabili e controllo degli errori di identificazione: vedi [metodo-scientifico.md](metodo-scientifico.md).
 
-## Imparare a osservare
+## Scopri e Durante il giro
+
+“Scopri” comprende 54 piante e 30 alberi, oltre ai funghi, con fotografie reali attribuite. Gli usi alimentari documentati, le specie da osservare e quelle tossiche sono distinti. Calendari di fioritura e compatibilità ambientale non provano presenza, maturità dei frutti o abbondanza.
+
+“Durante il giro” mostra fino a tre suggerimenti riferiti agli ambienti campionati sullo stesso tratto del sentiero, o nella zona quando manca un tracciato. Le note botaniche personali possono affinare questi suggerimenti solo se abilitate nei filtri; non modificano l’indice dei funghi o l’ordine dei luoghi. Una scheda contestuale si apre senza perdere la navigazione e permette di annotare nel taccuino. Le preferenze botaniche precedenti non sostituiscono più l’uscita a funghi.
 
 La ricerca guidata aiuta a confrontare caratteri e sosia. Le specie mortali restano visibili anche con risposte discordanti; il catalogo non è completo. Non assaggiare funghi crudi per usare l’app. Foto e schede non autorizzano il consumo: fai controllare il raccolto all’Ispettorato micologico ASL. Le sezioni informative ricordano anche regole del Lazio ed emergenze.
 

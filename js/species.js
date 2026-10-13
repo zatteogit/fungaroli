@@ -102,7 +102,7 @@ export const SPECIES = [
     forest: { [F.ARB]: 0.7, [F.CAS]: 0.7, [F.CER]: 0.7, [F.ROV]: 0.7, [F.NON]: 0.6, [F.FAG]: 0.4, [F.OST]: 0.4 },
     months: m(0, 0, 0, 0, 0, 0.1, 0.4, 0.7, 1, 1, 0.4, 0),
     elev: [200, 1500], topt: 15, tsd: 4.5, lag: [4, 14], eref: 25, minCap: 5,
-    warning: 'Taglia minima di legge 5 cm; la dimensione non garantisce l’identità. Scarta le piccole lepiote e fai controllare il raccolto. Gambo non commestibile.',
+    warning: 'Taglia minima di legge 5 cm; la dimensione non garantisce l’identità. Tra le piccole Lepiota vi sono specie mortali; il raccolto richiede controllo micologico. Gambo non commestibile.',
     evidence: 'Euristica.',
   },
   {
