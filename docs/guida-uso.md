@@ -16,6 +16,8 @@ La mappa e la scheda della zona mostrano soste, campioni di habitat e sentieri O
 
 ## Il taccuino e la comunità
 
+Il taccuino presenta le voci come pagine: appunti, schede collegate, giri e uscite. Le fotografie applicate provengono dalla scheda o dal luogo indicato, non sono foto del ritrovamento personale. Ricerca e filtri sono nell’indice; le azioni e i loro esiti restano nella pagina. Gli appunti lunghi si espandono con “Leggi tutto”. Profilo, sincronizzazione, esportazione e importazione si aprono in fondo al quaderno.
+
 Il taccuino funziona senza account, sul dispositivo. Il profilo facoltativo usa una **passkey**, senza password o email: segue il flusso di sblocco del telefono o computer. Conserva o sincronizza la passkey; se la perdi non esiste un recupero via email. Con il profilo, il diario si sincronizza online ed è privato. Puoi importare esplicitamente il diario locale, esportare tutto e cancellare profilo e dati.
 
 Per un’annotazione completa registra zona, giorno, quota, **specie cercate**, ritrovamenti e nota facoltativa. Uno zero vale solo per una specie cercata: non aver annotato un’altra specie non significa averla cercata senza trovarla. Durata, numero di persone e ora d’inizio sono facoltativi e aiutano a interpretare le osservazioni.

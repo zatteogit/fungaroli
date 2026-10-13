@@ -158,11 +158,11 @@ const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&l
 const iso = todayISO;
 const fmt = (s) => new Date(s + 'T12:00:00').toLocaleDateString('it-IT', { weekday: 'short', day: 'numeric', month: 'short', year: 'numeric' });
 
-export function initJournal({ onEntries=()=>{},zones, speciesCatalog = SPECIES, predict, captureForecast, getZoneId, zoneImage = () => '' }) {
+export function initJournal({ onEntries=()=>{},zones, speciesCatalog = SPECIES, predict, captureForecast, getZoneId, zoneImage = () => '', referenceImage=()=>null }) {
   const dlg = document.getElementById('journal-dialog');
   const body = dlg.querySelector('.wiz-body');
   const list = document.getElementById('journal-list');
-  let entries = [];
+  let entries = [],notifiedEntries=null;
   let store = null;
   let draft, step;
   let listMessage = '';
@@ -382,7 +382,8 @@ export function initJournal({ onEntries=()=>{},zones, speciesCatalog = SPECIES, 
   function rowActions(entry){
     const state=actionStates.get(String(entry.id))||{},id=esc(entry.id),disabled=state.busy?' disabled':'';
     return `<div class="j-actions" aria-busy="${!!state.busy}">
-      ${store.kind==='community'&&!['note','plan'].includes(entry.kind)?`<button type="button" class="link-btn small" data-share-entry="${id}"${disabled}>${state.busy==='share'?'Condivido…':'Condividi osservazioni'}</button><button type="button" class="link-btn small" data-withdraw-entry="${id}"${disabled}>${state.busy==='withdraw'?'Ritiro…':'Ritira segnalazioni'}</button>`:''}
+      ${entry.kind==='note'?`<button type="button" class="link-btn small" data-edit-note="${id}"${disabled}>Modifica</button>`:''}
+      ${store.kind==='community'&&!['note','plan'].includes(entry.kind)?`<button type="button" class="link-btn small" data-share-entry="${id}" aria-label="Condividi osservazioni"${disabled}>${state.busy==='share'?'Condivido…':'Condividi'}</button><button type="button" class="link-btn small" data-withdraw-entry="${id}" aria-label="Ritira segnalazioni"${disabled}>${state.busy==='withdraw'?'Ritiro…':'Ritira'}</button>`:''}
       <button type="button" class="link-btn small j-delete" data-del="${id}"${disabled}>${state.busy==='delete'?'Elimino…':state.confirmDelete?'Conferma eliminazione':'Elimina'}</button>
       ${state.confirmDelete&&!state.busy?`<button type="button" class="link-btn small" data-cancel-delete="${id}">Annulla</button>`:''}
     </div>${state.message?`<p class="j-action-status${state.error?' is-error':''}" role="${state.error?'alert':'status'}">${esc(state.message)}</p>`:''}`;
@@ -432,41 +433,35 @@ export function initJournal({ onEntries=()=>{},zones, speciesCatalog = SPECIES, 
     if (msg !== undefined) listMessage = msg;
     msg = listMessage;
     if (!store) { list.innerHTML = '<p class="muted">Carico il taccuino…</p>'; return; }
-    onEntries(entries);
+    // Search, filters and action feedback do not change the saved observations.
+    if(notifiedEntries!==entries){notifiedEntries=entries;onEntries(entries);}
     const sm = summary(entries);
     const nnotes=entries.filter(e=>e.kind==='note').length;
-    const head = entries.length
-      ? `<p class="j-sum">${nnotes} ${nnotes===1?'appunto':'appunti'} · ${sm.total} ${sm.total === 1 ? 'uscita' : 'uscite'}${sm.judged ? ` · concordanze esplorative per specie: <b>${sm.ok} su ${sm.judged}</b>` : ''}
-         ${sm.falseAlarm ? ` · ${sm.falseAlarm} falsi allarmi` : ''}${sm.missed ? ` · ${sm.missed} ritrovamenti con indice basso` : ''}</p>${sm.judged?'<p class="small muted">Confronto a soglia 3,0 su 10, non calibrata. Le osservazioni non sono indipendenti: questi conteggi non misurano l’accuratezza scientifica.</p>':''}<div class="notebook-filters"><label class="sr-only" for="notebook-query">Cerca nel taccuino</label><input id="notebook-query" type="search" class="wiz-input" placeholder="Cerca fra i tuoi appunti…" value="${esc(listQuery)}"><div class="recognize-modes">${[['','Tutto'],['note','Appunti'],['percorso','Giri salvati'],['outing','Uscite']].map(([id,label])=>`<button type="button" class="btn ghost small" data-notebook-filter="${id}" aria-pressed="${listFilter===id}">${label}</button>`).join('')}</div></div>`
-      : `<div class="j-empty">${zoneImage('laga') ? `<img data-src="${zoneImage('laga')}" alt="" loading="lazy" decoding="async">` : ''}<span class="shade"></span>
-          <div class="j-empty-body"><b>Una pagina per ogni cosa da ricordare</b><span>Appunti, piante osservate, giri da fare e uscite: tutto nel tuo taccuino privato.</span>
-          <button type="button" class="btn light big" data-new-note>＋ Scrivi il primo appunto</button></div></div>`;
+    const head = entries.length ? `<div class="notebook-index"><p class="j-sum"><span class="notebook-page-total">${entries.length} ${entries.length===1?'pagina':'pagine'}</span> <span aria-hidden="true">·</span> ${nnotes} ${nnotes===1?'appunto':'appunti'} <span aria-hidden="true">·</span> ${sm.total} ${sm.total===1?'uscita':'uscite'}</p><label class="notebook-search" for="notebook-query"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4 4"/></svg><span class="sr-only">Cerca nel taccuino</span><input id="notebook-query" type="search" placeholder="Cerca un appunto…" value="${esc(listQuery)}"></label><div class="notebook-tabs" aria-label="Pagine del taccuino">${[['','Tutto'],['note','Appunti'],['percorso','Giri salvati'],['outing','Uscite']].map(([id,label])=>`<button type="button" data-notebook-filter="${id}" aria-pressed="${listFilter===id}">${label}</button>`).join('')}</div></div>${sm.judged?`<details class="notebook-comparison"><summary>Confronto fra condizioni salvate e osservazioni</summary><p>Concordanze esplorative per specie: ${sm.ok} su ${sm.judged}${sm.falseAlarm?` · ${sm.falseAlarm} falsi allarmi`:''}${sm.missed?` · ${sm.missed} ritrovamenti con indice basso`:''}.</p><p>Confronto a soglia 3,0 su 10, non calibrata. Le osservazioni non sono indipendenti: questi conteggi non misurano l’accuratezza scientifica.</p></details>`:''}` : '';
     const matchesType=e=>!listFilter|| (listFilter==='percorso'?e.kind==='note'&&e.category==='percorso':listFilter==='outing'?!['plan','note'].includes(e.kind):e.kind==='note');
     const visible=entries.filter(e=>matchesType(e)&&JSON.stringify([e.title,e.note,e.reference?.title,zones.find(z=>z.id===e.zoneId)?.name]).toLowerCase().includes(listQuery.toLowerCase().trim()));
-    const rows = visible.map((e) => {
-      if(e.kind==='note')return `<li class="j-item notebook-entry" data-journal-id="${esc(e.id)}"><div class="notebook-mark" aria-hidden="true">${e.category==='percorso'?'↗':'✎'}</div><div class="j-body"><div class="j-top"><b>${esc(e.title)}</b><span class="muted small">${fmt(e.date)}</span></div>${e.reference?`<a href="${esc(e.reference.href)}" data-entity>${esc(e.reference.title)} →</a>`:''}${e.zoneId?`<p class="small muted">${esc(zones.find(z=>z.id===e.zoneId)?.name||e.zoneId)}</p>`:''}${e.note?`<p class="notebook-text">${esc(e.note)}</p>`:''}${e.observation?`<p class="small muted">Identificazione proposta · non verificata</p><ul class="notebook-phases">${e.observation.phases.filter(p=>p.status!=='unsure').map(p=>`<li>${esc(PHENO_PHASES.find(([code])=>code===p.code)?.[1]||p.code)}: ${p.status==='present'?'presente':'cercato, non osservato'}</li>`).join('')}</ul>${e.observation.availability!=='unknown'?`<p class="small">Frutti maturi rimasti: ${{none:'nessuno osservato',few:'pochi',many:'molti'}[e.observation.availability]||'non indicato'}</p>`:''}`:''}<div class="notebook-actions"><button type="button" class="link-btn small" data-edit-note="${esc(e.id)}">Modifica</button></div>${rowActions(e)}</div></li>`;
-      const z = zones.find((x) => x.id === e.zoneId);
-      const found = Object.entries(e.finds || {}).filter(([, l]) => l > 0).map(([id, l]) => `${speciesCatalog.find((x) => x.id === id)?.name ?? id} (${LEVELS[l]?.toLowerCase() || l})`).join(', ') || 'nessun ritrovamento annotato';
-      const a = agreement(e);
-      const top = Object.entries(e.predicted || {}).filter(([, v]) => Number.isFinite(v)).sort((x, y) => y[1] - x[1])[0];
-      const badge = e.kind === 'plan' ? '<span class="tag">previsione salvata prima dell’uscita</span>'
-        : a ? a.species.map((x) => `<span class="tag ${x.ok ? 'ok' : 'warn'}">${esc(speciesCatalog.find((s) => s.id === x.id)?.name || x.id)}: ${x.ok ? 'concordante' : x.said ? 'indice alto, zero osservato' : 'trovata con indice basso'}</span>`).join(' ')
-          : '<span class="tag">osservazione senza confronto prospettico</span>';
-      const img = zoneImage(e.zoneId);
-      return `<li class="j-item" data-journal-id="${esc(e.id)}">
-        <span class="j-img">${img ? `<img data-src="${img}" alt="" loading="lazy" decoding="async">` : ''}</span>
-        <div class="j-body">
-          <div class="j-top"><b>${esc(z?.title ?? z?.name ?? e.zoneId)}</b><span class="muted small">${fmt(e.date)}${e.band ? ` · ${esc(e.band)} m` : ''}</span></div>
-          <div class="small">${e.kind === 'plan' ? 'Piano' : 'Trovato: ' + esc(found)}${top ? ` · indice ${formatIndex(top[1])} (${esc(speciesCatalog.find((x) => x.id === top[0])?.name ?? '')})` : ''}</div>
-          <div>${badge}</div>
-          ${e.note ? `<div class="small muted">${esc(e.note)}</div>` : ''}
-          ${rowActions(e)}
-        </div>
-      </li>`;
+    const noteText=text=>!text?'':text.length<=360?`<p class="notebook-text">${esc(text)}</p>`:`<p class="notebook-text">${esc(text.slice(0,320).replace(/\s+\S*$/,''))}…</p><details class="notebook-full-note"><summary>Leggi tutto l’appunto</summary><p class="notebook-text">${esc(text)}</p></details>`;
+    const photo=(src,alt,href,label)=>src?`<figure class="j-img notebook-photo">${href?`<a href="${esc(href)}" data-entity aria-label="${esc(alt)}"><img data-src="${esc(src)}" alt="${esc(alt)}" loading="lazy" decoding="async"></a>`:`<img data-src="${esc(src)}" alt="${esc(alt)}" loading="lazy" decoding="async">`}<figcaption>${esc(label)}</figcaption></figure>`:'';
+    const rows=visible.map(e=>{
+      const number=entries.length-entries.indexOf(e),z=zones.find(x=>x.id===e.zoneId),note=e.kind==='note';
+      const kind=note?({botanica:'Osservazione botanica',albero:'Alberi',fungo:'Funghi',percorso:'Giro salvato',lettura:'Lettura'})[e.category]||'Appunto':e.kind==='plan'?'Condizioni salvate':'Uscita';
+      const title=note?e.title:z?.title||z?.name||e.zoneId;
+      const refPhoto=note&&e.reference?referenceImage(e.reference.href):null;
+      const photograph=refPhoto?.file?photo(refPhoto.file,`Foto dalla scheda: ${e.reference.title}`,e.reference.href,'Dalla scheda collegata'):!note&&zoneImage(e.zoneId)?photo(zoneImage(e.zoneId),`Immagine del luogo: ${title}`,'','Il luogo dell’uscita'):'';
+      const found=Object.entries(e.finds||{}).filter(([,l])=>l>0).map(([id,l])=>`${speciesCatalog.find(x=>x.id===id)?.name??id} (${LEVELS[l]?.toLowerCase()||l})`).join(', ')||'nessun ritrovamento annotato';
+      const a=agreement(e),top=Object.entries(e.predicted||{}).filter(([,v])=>Number.isFinite(v)).sort((x,y)=>y[1]-x[1])[0];
+      const comparison=a?a.species.map(x=>`<p>${esc(speciesCatalog.find(s=>s.id===x.id)?.name||x.id)}: ${x.ok?'concordante':x.said?'indice alto, zero osservato':'trovata con indice basso'}</p>`).join(''):'<p>Osservazione senza confronto prospettico.</p>';
+      return `<li class="j-item notebook-page${note?' notebook-entry':''}${photograph?' has-photo':''}" data-journal-id="${esc(e.id)}"><div class="entry-meta"><span class="entry-kind">${kind}</span><time datetime="${esc(e.date)}">${fmt(e.date)}</time></div><div class="j-body">${photograph}<h2 class="entry-title">${esc(title)}</h2>
+        ${note?`${e.reference?`<a class="notebook-reference-link" href="${esc(e.reference.href)}" data-entity>${esc(e.reference.title)} <svg class="notebook-reference-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></a>`:''}${e.zoneId?`<p class="entry-place">${esc(z?.name||e.zoneId)}</p>`:''}${noteText(e.note)}`:`<p class="entry-found">${e.kind==='plan'?'Da ritrovare al prossimo giro.':'Trovato: '+esc(found)}</p>${e.band?`<p class="entry-place">${esc(e.band)} m</p>`:''}${noteText(e.note)}`}
+        ${e.observation?`<ul class="notebook-phases">${e.observation.phases.filter(p=>p.status!=='unsure').map(p=>`<li>${esc(PHENO_PHASES.find(([code])=>code===p.code)?.[1]||p.code)}: ${p.status==='present'?'presente':'cercato, non osservato'}</li>`).join('')}</ul>${e.observation.availability!=='unknown'?`<p class="small">Frutti maturi rimasti: ${{none:'nessuno osservato',few:'pochi',many:'molti'}[e.observation.availability]||'non indicato'}</p>`:''}<p class="entry-caution">Identificazione proposta · non verificata</p>`:''}
+        ${!note?`<details class="notebook-analysis"><summary>Condizioni ${e.kind==='plan'?'salvate':'dell’uscita'}</summary>${top?`<p>Indice ${formatIndex(top[1])} · ${esc(speciesCatalog.find(x=>x.id===top[0])?.name||top[0])}</p>`:''}${e.kind==='plan'?'<p>Previsione salvata prima dell’uscita.</p>':comparison}</details>`:''}
+        </div><footer class="notebook-page-footer"><div class="notebook-page-actions">${rowActions(e)}</div><span class="notebook-page-number" aria-label="Pagina ${number}">${String(number).padStart(2,'0')}</span></footer></li>`;
     }).join('');
-    list.innerHTML = (msg ? `<p class="notice">${esc(msg)}</p>` : '') + head + (rows ? `<ul class="j-list">${rows}</ul>` : '');
+    const empty=`<div class="notebook-first-page"><div><p class="entry-kind">La prima pagina</p><h2>Una pagina per ogni cosa da ricordare</h2><p>Una pianta incontrata, un giro da fare, un’idea. Il tuo taccuino comincia da qui.</p><button type="button" class="btn primary" data-new-note>＋ Scrivi il primo appunto</button></div><aside class="notebook-pocket"><div class="pocket-note"><span class="entry-kind">Cosa puoi conservare</span><p>Un pensiero al volo.</p><p>Una scheda da ritrovare.</p><p>Il ricordo di un’uscita.</p></div><span class="pocket-label">Appunti da portare con te</span></aside></div>`;
+    const hasRowMessage=[...actionStates.values()].some(state=>state.message===msg);
+    list.innerHTML=(msg&&!hasRowMessage?`<p class="notice notebook-feedback" role="status">${esc(msg)}</p>`:'')+head+(rows?`<ul class="j-list">${rows}</ul>`:entries.length?'<p class="notebook-no-results" role="status">Nessuna pagina corrisponde. Prova un’altra parola o un altro filtro.</p>':empty);
     list.querySelectorAll('[data-edit-note]').forEach(b=>b.onclick=()=>openNote({},entries.find(e=>e.id===b.dataset.editNote)));
-    list.querySelectorAll('[data-notebook-filter]').forEach(b=>b.onclick=()=>{listFilter=b.dataset.notebookFilter;renderList();});
+    list.querySelectorAll('[data-notebook-filter]').forEach(b=>b.onclick=()=>{listFilter=b.dataset.notebookFilter;renderList();list.querySelector(`[data-notebook-filter="${CSS.escape(listFilter)}"]`)?.focus({preventScroll:true});});
     list.querySelector('#notebook-query')?.addEventListener('input',ev=>{const pos=ev.target.selectionStart;listQuery=ev.target.value;renderList();const input=list.querySelector('#notebook-query');input.focus({preventScroll:true});if(pos!=null)try{input.setSelectionRange(pos,pos);}catch{/* search inputs may not expose selection */}});
     list.querySelector('[data-open-journal-inline]')?.addEventListener('click', open);
     document.querySelector('[data-open-journal]').hidden = false;

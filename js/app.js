@@ -233,7 +233,19 @@ async function init() {
   buildSearch(idj, trj, embedded);
   initMap();
   initShell();
-  journal = initJournal({ onEntries:entries=>{botanicalNotes=entries.filter(e=>e.kind==='note'&&e.observation);if(series){compute();outCache.clear();renderAll();}},zones, speciesCatalog: catalog, predict, captureForecast, getZoneId: () => state.zoneId || zones[0].id, zoneImage: (zid) => zoneMedia[zid]?.file || speciesPhoto(SPECIES[0].id)?.file });
+  const notebookReferenceImage=href=>{
+    if(typeof href!=='string')return null;
+    const [,kind,encoded]=href.split('/');let id;try{id=decodeURIComponent(encoded||'');}catch{return null;}
+    let image;
+    if(kind==='zona')image=zoneMedia[id];
+    else if(kind==='pianta')image=plantRecord(id)?.photos?.[0];
+    else if(kind==='albero'){const m=mj.trees?.[id];image=m?.ref||m?.inat?.[0]||m?.commons?.[0];}
+    else if(['specie','commestibile'].includes(kind))image=fungusPhoto(id);
+    else if(kind==='fungo')image=searchTaxa().find(t=>t.key===id)?.photo;
+    const file=image?.thumb||image?.file;return file?{file:assetSrc(file)}:null;
+  };
+  journal = initJournal({ onEntries:entries=>{botanicalNotes=entries.filter(e=>e.kind==='note'&&e.observation);if(series){compute();outCache.clear();renderAll();}},zones, speciesCatalog: catalog, predict, captureForecast, getZoneId: () => state.zoneId || zones[0].id, zoneImage:zid=>assetSrc(zoneMedia[zid]?.file||''),referenceImage:notebookReferenceImage });
+
   route(); // le pagine che non dipendono dal meteo (specie, diario, info) compaiono subito
   const fresh = consumeFresh(); // ricarica pulita dal logo: anche il meteo da capo
   await refreshWeather(fresh);
