@@ -142,16 +142,16 @@
       <div id="species-detail" class="sp-page"></div>
     </section>
 
-    <section class="view" data-view="diario" hidden aria-labelledby="journal-h">
-      <div class="view-head"><div><h1 id="journal-h" class="view-title">Il mio taccuino</h1>
-        <p class="view-sub">Idee, piante osservate, giri da fare e ricordi delle tue passeggiate.</p></div></div>
-      <div class="notebook-actions"><button class="btn primary big" type="button" data-new-note>＋ Nuovo appunto</button><button class="btn ghost big" type="button" data-open-journal>Registra un'uscita</button></div>
-      <div id="journal-list"></div>
-      <div class="muted small" id="journal-storage"></div>
-      <div class="journal-actions">
-        <button class="btn ghost" type="button" id="journal-export">Esporta</button>
-        <label class="btn ghost">Importa<input type="file" id="journal-import" accept="application/json,.json" hidden></label>
-      </div>
+    <section class="view notebook-view" data-view="diario" hidden aria-labelledby="journal-h">
+      <header class="notebook-heading"><div><p class="kicker">Appunti di campo <span class="notebook-private">Privato</span></p><h1 id="journal-h" class="view-title">Il mio taccuino</h1>
+        <p class="view-sub">Quello che incontri, quello che vuoi ricordare.</p></div>
+        <div class="notebook-toolbar"><button class="btn primary" type="button" data-new-note>＋ Nuovo appunto</button><button class="btn ghost" type="button" data-open-journal>Registra un'uscita</button></div>
+      </header>
+      <div class="notebook-cover"><div id="journal-list" class="notebook-pages" aria-live="off"></div></div>
+      <details class="notebook-storage" id="notebook-storage-panel"><summary>Profilo, sincronizzazione e copie del taccuino</summary><div class="notebook-storage-body">
+        <div class="muted small" id="journal-storage"></div>
+        <div class="journal-actions"><button class="btn ghost" type="button" id="journal-export">Esporta il taccuino</button><label class="btn ghost">Importa una copia<input type="file" id="journal-import" accept="application/json,.json" hidden></label></div>
+      </div></details>
     </section>
 
     <section class="view" data-view="commestibile" hidden><div id="edible-detail"></div></section>

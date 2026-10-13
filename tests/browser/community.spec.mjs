@@ -292,10 +292,10 @@ test('segnalazione rapida su telefono, conteggi e ritiro dal diario', async ({ p
   expect((await api(page,'summary')).data.reports.find(r=>r.speciesId==='procera').sightings).toBe(1);
   await page.goto('/#/diario'); await expect(page.locator('[data-withdraw-entry]')).toHaveCount(1);
   await page.locator('[data-withdraw-entry]').click();
-  await expect(page.locator('#journal-list .notice')).toContainText('Segnalazioni ritirate');
+  await expect(page.locator('#journal-list .j-action-status')).toContainText('Segnalazioni ritirate');
   expect((await api(page,'summary')).data.totalReports).toBe(0);
   await page.locator('[data-share-entry]').click();
-  await expect(page.locator('#journal-list .notice')).toContainText('Osservazioni condivise');
+  await expect(page.locator('#journal-list .j-action-status')).toContainText('Osservazioni condivise');
   expect((await api(page,'summary')).data.totalReports).toBe(1);
   await api(page,'account','DELETE'); expect((await api(page,'summary')).data.totalReports).toBe(0);
   expect(errors).toEqual([]);
@@ -344,7 +344,7 @@ test('migrazione esplicita del diario con codice senza pubblicare osservazioni',
     return r.fulfill({json:{entries:[{id:'legacy123',date:todayISO(),zoneId:'tancia',finds:{edulis:2},note:'nota del vecchio diario',predicted:{edulis:72},savedAt:new Date().toISOString()}]}});
   });
   await page.goto('/#/diario');
-  await page.locator('#journal-storage details summary').click();
+  await page.locator('#notebook-storage-panel > summary').click();await page.locator('#journal-storage details summary').click();
   await page.locator('[data-legacy-code]').fill('codice-di-test'); await page.locator('[data-import-legacy] [type="submit"]').click();
   await expect(page.locator('[data-legacy-status]')).toContainText('1 voci importate');
   expect((await api(page,'entries')).data.entries[0].note).toBe('nota del vecchio diario');
