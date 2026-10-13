@@ -412,6 +412,7 @@ export function initJournal({ zones, speciesCatalog = SPECIES, predict, captureF
     try {
       const data = JSON.parse(await file.text());
       const incoming = (Array.isArray(data) ? data : data.entries).filter((e) => e && e.id && e.date && e.zoneId);
+      await storageReady;
       const ids = new Set(entries.map((e) => e.id));
       const fresh = incoming.filter((e) => !ids.has(e.id));
       for (const e of fresh) await store.put(e);
@@ -539,7 +540,7 @@ export function initJournal({ zones, speciesCatalog = SPECIES, predict, captureF
   addEventListener('hashchange', fromLink);
 
 
-  (async () => {
+  const storageReady = (async () => {
     let st = await openStore();
     let remote = 'none';
     if (st.kind === 'local' && !communityEnabled()) {
