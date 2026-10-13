@@ -1,8 +1,8 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {cachedForecast,forecastParams} from '../worker/weather-provider.js';
+import {cachedForecast,forecastParams,compactGrowth} from '../worker/weather-provider.js';
 import {fetchForecast} from '../js/weather-request.js';
-import {todayISO} from '../js/weather.js';
+import {todayISO,toDaily} from '../js/weather.js';
 const now=Date.now(),zones=[{lat:42.4,lon:12.8,bands:[800,1000]}];
 const cache=()=>{const data=new Map();return{data,get:async k=>data.has(k)?JSON.parse(data.get(k)):null,put:async(k,v)=>data.set(k,v)};};
 const raw=(kind='growth')=>Array.from({length:kind==='growth'?2:1},()=>Object.fromEntries(['daily','hourly'].filter(g=>forecastParams(zones,kind).has(g)).map(g=>[g,{time:[todayISO(new Date(now))+(g==='hourly'?'T12:00':'')],...Object.fromEntries(forecastParams(zones,kind).get(g).split(',').map(f=>[f,[0]]))}])));
@@ -40,4 +40,21 @@ test('browser request has a timeout and keeps a stale server timestamp',async()=
   global.fetch=async(url,opts)=>{assert.match(url,/^\/api\/weather\/v1\/forecast\?/);assert.ok(opts.signal instanceof AbortSignal);return Response.json(raw(),{headers:{'x-weather-fetched-at':new Date(now-7200000).toISOString(),'x-weather-cache':'stale'}});};
   try{const received=await fetchForecast(forecastParams(zones,'growth'));assert.equal(received.fetchedAt.getTime(),now-7200000);assert.equal(received.stale,true);}
   finally{global.fetch=original;if(document===undefined)delete global.document;else global.document=document;}
+});
+test('compact soil series preserve hourly means, incomplete days and all daily climate data',()=>{
+  const row={daily:{time:['2026-10-12','2026-10-13'],precipitation_sum:[4,null],temperature_2m_mean:[13,14],temperature_2m_min:[8,9],temperature_2m_max:[18,19]},hourly:{time:Array.from({length:48},(_,i)=>`2026-10-${i<24?'12':'13'}T${String(i%24).padStart(2,'0')}:00`),soil_moisture_3_to_9cm:Array(48).fill(.3),soil_temperature_6cm:Array(48).fill(13)}};
+  row.hourly.soil_moisture_3_to_9cm[29]=null;
+  const small=compactGrowth([row])[0];
+  assert.equal(small.hourly,undefined);assert.equal(small.daily.soil_moisture_3_to_9cm_mean[1],null);
+  const full=toDaily(row,'2026-10-13'),compact=toDaily(small,'2026-10-13');
+  for(const key of ['dates','p','tmean','tmin','tmax','soilm','soilt'])assert.deepEqual(compact[key],full[key]);
+});
+test('small provider batches stay bounded and preserve the requested elevation order',async()=>{
+  const wide=[{...zones[0],bands:Array.from({length:12},(_,i)=>600+i*100)}],storage=cache();let live=0,max=0,calls=0;
+  const result=await cachedForecast(forecastParams(wide,'growth'),{zones:wide,cache:storage,now,fetcher:async url=>{
+    const elevations=new URL(url).searchParams.get('elevation').split(',').map(Number);assert.ok(elevations.length<=5);
+    calls++;live++;max=Math.max(max,live);await new Promise(resolve=>setTimeout(resolve,elevations[0]===600?15:1));live--;
+    return Response.json(elevations.map(elevation=>({...raw()[0],elevation})));
+  }});
+  assert.equal(calls,3);assert.ok(max<=3);assert.deepEqual((await result.json()).map(r=>r.elevation),wide[0].bands);
 });
