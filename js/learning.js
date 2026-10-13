@@ -1,7 +1,8 @@
 // Lessico di campo e spiegazioni contestuali: i link restano utilizzabili senza popover.
+import { openEntitySheet } from './entity-sheet.js';
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 export const normalizeLearning = s => String(s ?? '').toLowerCase().normalize('NFD').replace(/\p{M}/gu, '').replace(/[’']/g, ' ');
-let TERMS = [], TREES = {}, TRAITS = {}, aliasMap = new Map(), aliasRe, active = null, opener = null, observer;
+let TERMS = [], TREES = {}, aliasMap = new Map(), aliasRe, active = null, opener = null, observer;
 export const glossaryTerms = () => TERMS;
 export const glossaryTitle = id => TERMS.find(t => t.id === id)?.term || 'Glossario';
 const difficultyIds = {T:'difficolta-t', E:'difficolta-e', EE:'difficolta-ee', EEA:'difficolta-eea'};
@@ -40,7 +41,7 @@ export function renderGlossary(box, selected = '', categories = ['Funghi','Alber
 // Modifica soltanto nodi di testo: niente regex sull'HTML, link annidati o controlli alterati.
 export function enhanceGlossary(root) {
   if (!root || !aliasRe) return;
-  root.querySelectorAll('a.tree-link,a.species-link').forEach(a=>a.setAttribute('aria-haspopup','dialog'));
+  root.querySelectorAll('a.tree-link,a.species-link,a[data-entity]').forEach(a=>a.setAttribute('aria-haspopup','dialog'));
   const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {acceptNode(node) {
     const p = node.parentElement;
     if (!p || !node.textContent.trim() || p.closest('a,button,label,select,textarea,input,code,pre,script,style,svg,h1,h2,h3,h4,summary,[contenteditable],[data-no-glossary]')) return NodeFilter.FILTER_REJECT;
@@ -98,6 +99,8 @@ function openPanel(link, title, body, href, label) {
   const mobile = matchMedia('(max-width: 699px)').matches || !('showPopover' in HTMLElement.prototype);
   const panel = ensurePanel(mobile), prior = opener, same = active === panel;
   if(!same) closePanel(false);
+  // Un popover sopra una scheda modale deve restare dentro il suo ambito attivo.
+  if(!mobile) (link.closest('dialog[open]') || document.body).append(panel);
   opener = link.closest('.learning-panel') ? prior : link; active = panel;
   panel.innerHTML = `<header><h2 id="${panel.id}-title">${esc(title)}</h2><button type="button" class="icon-btn" data-learning-close aria-label="Chiudi la spiegazione">×</button></header><div class="learning-panel-body">${body}</div><footer><a class="btn ghost" href="${esc(href)}">${esc(label)} →</a></footer>`;
   panel.scrollTop = 0;
@@ -110,25 +113,23 @@ function openPanel(link, title, body, href, label) {
   }
 }
 
-export function initLearning({glossary, trees, traits}) {
-  TERMS = Array.isArray(glossary?.terms) ? glossary.terms : []; TREES = trees?.trees || {}; TRAITS = traits?.taxa || {};
+export function initLearning({glossary, trees}) {
+  TERMS = Array.isArray(glossary?.terms) ? glossary.terms : []; TREES = trees?.trees || {};
   aliasMap = new Map();
   for(const t of TERMS) for(const alias of [t.term,...(t.aliases || [])]) if(alias.length > 2) aliasMap.set(alias.toLowerCase(), t.id);
   const words=[...aliasMap.keys()].sort((a,b)=>b.length-a.length).map(w=>w.replace(/[.*+?^${}()|[\]\\]/g,'\\$&').replace(/ /g,'\\s+'));
   aliasRe=words.length ? new RegExp(`(^|[^\\p{L}\\p{N}])(${words.join('|')})(?=[^\\p{L}\\p{N}]|$)`,'giu') : null;
   document.addEventListener('click',e=>{
-    const link=e.target.closest('a.glossary-link,a.tree-link,a.species-link');
+    const link=e.target.closest('a.glossary-link,a.tree-link,a.species-link,a[data-entity]');
     if(!link || e.defaultPrevented || e.button!==0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
     const t=TERMS.find(x=>x.id===link.dataset.term);
     let title,body,href,label;
     if(t) {title=t.term;body=termBody(t,true);href=`#/glossario/${t.id}`;label='Nel glossario';}
     else {
-      const match=link.getAttribute('href')?.match(/^#\/(albero|specie)\/([^/]+)$/);
+      const match=link.getAttribute('href')?.match(/^#\/(albero|specie|fungo|commestibile)\/([^/]+)$/);
       if(!match) return;
-      const record=match[1]==='albero' ? TREES[decodeURIComponent(match[2])] : TRAITS[decodeURIComponent(match[2])];
-      if(!record) return;
-      title=record.name;href=link.getAttribute('href');label='Apri la scheda';
-      body=`<p class="latin">${esc(record.latin)}</p>${match[1]==='albero' ? `<ul>${(record.recognize||[]).slice(0,3).map(x=>`<li>${esc(x)}</li>`).join('')}</ul>` : `<p>${esc(record.caution || 'Confronta tutti i caratteri e i sosia nella scheda. Il nome non identifica l’esemplare osservato.')}</p><p class="small muted">Per il consumo serve il controllo dell’Ispettorato micologico.</p>`}`;
+      if(openEntitySheet(link.getAttribute('href'),link)) {e.preventDefault();closePanel(false);}
+      return;
     }
     e.preventDefault();openPanel(link,title,body,href,label);
   });
@@ -160,7 +161,7 @@ export function renderFieldIdentify(box, mode, thumb) {
     const text=t=>part.value ? (Array.isArray(t[part.value]) ? t[part.value].join(' ') : t[part.value] || '') : [t.name,t.latin,...(t.aliases||[]),...(t.recognize||[]),t.leaf,t.bark,t.fruit].join(' ');
     const hits=Object.entries(TREES).filter(([,t])=>words.every(w=>normalizeLearning(text(t)).includes(w)));
     box.querySelector('#tree-observation-count').textContent=`${hits.length} ${hits.length===1?'scheda da confrontare':'schede da confrontare'}`;
-    box.querySelector('#tree-observation-results').innerHTML=hits.length ? hits.map(([id,t])=>`<article class="field-card"><a class="field-card-head" href="#/albero/${encodeURIComponent(id)}">${thumb(id,52)}<span><b>${esc(t.name)}</b><i>${esc(t.latin)}</i></span><span aria-hidden="true">→</span></a><p>${esc(part.value ? text(t) : (t.recognize||[]).slice(0,2).join(' · '))}</p></article>`).join('') : '<p class="notice">Nessuna scheda corrisponde. Prova un altro carattere: il catalogo non comprende tutti gli alberi.</p>';
+    box.querySelector('#tree-observation-results').innerHTML=hits.length ? hits.map(([id,t])=>`<article class="field-card"><a class="field-card-head tree-link" href="#/albero/${encodeURIComponent(id)}">${thumb(id,52)}<span><b>${esc(t.name)}</b><i>${esc(t.latin)}</i></span><span aria-hidden="true">→</span></a><p>${esc(part.value ? text(t) : (t.recognize||[]).slice(0,2).join(' · '))}</p></article>`).join('') : '<p class="notice">Nessuna scheda corrisponde. Prova un altro carattere: il catalogo non comprende tutti gli alberi.</p>';
     box.querySelectorAll('[data-observation]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.observation===input.value)));
   };
   input.addEventListener('input',paint);part.addEventListener('change',paint);

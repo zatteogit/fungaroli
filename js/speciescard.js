@@ -6,6 +6,7 @@ import { tick } from './motion.js';
 import { SPECIES } from './species.js';
 import { openLightbox, captionHtml } from './lightbox.js';
 import { linkTrees } from './trees.js';
+import { openEntitySheet } from './entity-sheet.js';
 
 const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const MONTHS = ['G', 'F', 'M', 'A', 'M', 'G', 'L', 'A', 'S', 'O', 'N', 'D'];
@@ -18,12 +19,12 @@ export function initSpeciesCards({ idData, media, assetUrl, allow3d = true, info
   PREP = prep || null;
   ID = idData; MEDIA = media; if (assetUrl) ASSET = assetUrl; EMBED_3D = allow3d; INFO = infographics || {}; if (whereSection) WHERE = whereSection;
   TRAITS = traits?.taxa || {}; FOOTER = footer || '';
-  // ogni elemento con data-species apre la pagina della specie
+  // I richiami contestuali aprono la stessa scheda senza abbandonare la vista.
   document.addEventListener('click', (e) => {
     const ck = e.target.closest('.checks li[aria-checked]');
     if (ck) { toggleCheck(ck); return; }
     const t = e.target.closest('[data-species]');
-    if (t) { e.preventDefault(); location.hash = `#/specie/${t.dataset.species}`; }
+    if (t && !t.hasAttribute('data-report')) { e.preventDefault(); const href = `#/specie/${t.dataset.species}`; if (!openEntitySheet(href,t)) location.hash = href; }
   });
 }
 
@@ -247,7 +248,7 @@ export function renderSpeciesDetail(body, id) {
     caption: captionHtml({ title: `<span class="tox tox-${esc(x.l.toxicity).replace(/\s/g, '-')}">${esc(x.l.toxicity)}</span> ${esc(x.l.name || '')} <i>${esc(x.l.latin)}</i>`, text: `Differenza: ${esc(x.l.how_to_tell)}`,
       credit: `${creditText(p)} · <a href="https://www.inaturalist.org/taxa/search?q=${encodeURIComponent(x.key)}" target="_blank" rel="noopener">altre foto</a> · <a href="https://it.wikipedia.org/w/index.php?search=${encodeURIComponent(x.key)}" target="_blank" rel="noopener">Wikipedia</a>` }),
   })));
-  body.querySelector('[data-jump-k]')?.addEventListener('click', (e) => document.getElementById(e.currentTarget.dataset.jumpK)?.closest('.kitchen')?.scrollIntoView({ behavior: 'smooth', block: 'start' }));
+  body.querySelector('[data-jump-k]')?.addEventListener('click', (e) => body.querySelector(`#${CSS.escape(e.currentTarget.dataset.jumpK)}`)?.closest('.kitchen')?.scrollIntoView({ behavior: 'smooth', block: 'start' }));
   body.querySelectorAll('.look-open[data-taxon]').forEach((b) => b.addEventListener('click', () => openTaxon(b.dataset.taxon)));
   body.querySelectorAll('[data-look]').forEach((b) => b.addEventListener('click', () => {
     const i = lookItems.findIndex((it) => it.key === b.dataset.look);

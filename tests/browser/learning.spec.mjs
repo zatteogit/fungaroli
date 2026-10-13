@@ -43,8 +43,12 @@ for(const width of [320,1280]) test(`spiegazioni contestuali, glossario e ricono
   await page.keyboard.press('Escape');await expect(panel).toBeHidden();await expect(trigger).toBeFocused();
   await expect(page.locator('.walk-focus')).not.toHaveAttribute('open','');
   await page.locator('.walk-focus > summary').click();
-  await page.locator('.walk-focus .species-link').click();await expect(panel).toBeVisible();
-  await panel.locator('footer a').click();await expect(page.locator('#species-detail')).toBeVisible();
+  const speciesTrigger=page.locator('.walk-focus .species-link').first();
+  await speciesTrigger.click();const sheet=page.locator('#entity-sheet');await expect(sheet).toBeVisible();
+  expect(page.url()).toBe(original);await expect(sheet.locator('h1')).toBeVisible();
+  await page.keyboard.press('Escape');await expect(sheet).toBeHidden();await expect(speciesTrigger).toBeFocused();
+  // Dal catalogo invece la scheda è una normale pagina navigabile.
+  await page.goto('/#/specie/edulis');await expect(page.locator('#species-detail')).toBeVisible();
   const keyword=page.locator('#species-detail a.glossary-link[data-term="volva"]').first();
   await expect(keyword).toBeVisible();await keyword.click();await expect(panel.locator('h2')).toHaveText('Volva');
   await panel.locator('.learning-related [data-term="anello"]').click();await expect(panel.locator('h2')).toHaveText('Anello');
@@ -64,7 +68,10 @@ for(const width of [320,1280]) test(`spiegazioni contestuali, glossario e ricono
   await page.goto('/#/glossario/dislivello');await expect(page.locator('#glossary-term-dislivello')).toHaveAttribute('open','');
   await page.goto('/#/riconosci/alberi');await page.locator('[data-observation="aghi a coppie"]').click();
   await expect(page.locator('#tree-observation-count')).toHaveText('4 schede da confrontare');
-  await page.locator('#tree-observation-results a').first().click();await expect(page.locator('#tree-detail h1')).toContainText('Pino nero');
+  const treeResult=page.locator('#tree-observation-results a').first();
+  await treeResult.click();await expect(sheet.locator('h1')).toContainText('Pino nero');
+  expect(page.url()).toContain('#/riconosci/alberi');await page.keyboard.press('Escape');
+  await expect(treeResult).toBeFocused();await expect(page.locator('#tree-observation-q')).toHaveValue('aghi a coppie');
   await page.goto('/#/riconosci/bosco');await page.locator('#field-glossary [data-category="Sentiero"]').click();
   await page.locator('#field-glossary-q').fill('segnavia');await expect(page.locator('#field-glossary-results')).toContainText('Segnavia');
   await page.goto('/#/riconosci');
@@ -103,4 +110,62 @@ for(const width of [320,1280]) test(`spiegazioni contestuali, glossario e ricono
   await page.keyboard.press('Escape');await expect(filters).toBeHidden();await expect(more).toBeFocused();
   await page.locator('#identify [data-mode="guided"]').click();await expect(page.locator('#identify .id-q-big')).toBeVisible();
   expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);expect(errors).toEqual([]);
+});
+
+for(const width of [320,1280]) test(`schede contestuali complete, ritorno e navigazione esplicita a ${width}px`,async({page})=>{
+  const errors=await setup(page,width);
+  await page.locator('#hero .cover-link').click();
+  await page.locator('.walk-focus > summary').click();
+  const tree=page.locator('.walk-focus a.tree-link').first(),href=await tree.getAttribute('href');
+  await tree.scrollIntoViewIfNeeded();await tree.focus();
+  const before=await page.evaluate(()=>({hash:location.hash,scroll:scrollY,history:history.length}));
+  await page.keyboard.press('Enter');
+  const sheet=page.locator('#entity-sheet'),panel=page.locator(width<700?'#learning-sheet':'#learning-popover');
+  await expect(sheet).toBeVisible();await expect(sheet.locator('h1')).toBeVisible();
+  await expect(sheet.locator('summary', {hasText:'Foglia, corteccia, frutto'})).toBeVisible();
+  expect(await page.evaluate(()=>({hash:location.hash,scroll:scrollY,history:history.length}))).toEqual(before);
+  expect(await sheet.evaluate(el=>{const r=el.getBoundingClientRect();return r.left>=0&&r.right<=innerWidth&&r.top>=0&&r.bottom<=innerHeight;})).toBe(true);
+  await page.evaluate(()=>document.fonts.ready);
+  await page.screenshot({path:`/tmp/fungaroli-contextual-tree-${width}.png`});
+  await page.evaluate(()=>document.documentElement.dataset.theme='dark');
+  await page.screenshot({path:`/tmp/fungaroli-contextual-tree-${width}-dark.png`});
+  await page.evaluate(()=>document.documentElement.dataset.theme='light');
+  const features=sheet.locator('summary',{hasText:'Foglia, corteccia, frutto'});
+  await features.click();const treeTitle=await sheet.locator('h1').textContent();
+  const fungus=sheet.locator('.tree-fungi a').first();await fungus.scrollIntoViewIfNeeded();
+  const treeScroll=await sheet.evaluate(el=>el.scrollTop);
+  await fungus.click();await expect(sheet.locator('h1')).not.toHaveText(treeTitle);
+  await expect(sheet.locator('[data-entity-back]')).toBeVisible();
+  // Le parole del glossario rimangono consultabili anche nella modale, con focus corretto.
+  const keyword=sheet.locator('a.glossary-link:visible').first();await keyword.click();await expect(panel).toBeVisible();
+  await page.keyboard.press('Escape');await expect(panel).toBeHidden();await expect(sheet).toBeVisible();await expect(keyword).toBeFocused();
+  await sheet.locator('.phero [data-photo]').first().click();await expect(page.locator('dialog.lb')).toBeVisible();
+  await page.keyboard.press('Escape');await expect(page.locator('dialog.lb')).toBeHidden();await expect(sheet).toBeVisible();
+  await sheet.locator('[data-entity-back]').click();await expect(sheet.locator('h1')).toHaveText(treeTitle);
+  await expect(features.locator('..')).toHaveAttribute('open','');await expect(fungus).toBeFocused();
+  expect(await sheet.evaluate(el=>el.scrollTop)).toBeCloseTo(treeScroll,0);
+  await sheet.locator('[data-entity-close]').click();await expect(sheet).toBeHidden();await expect(tree).toBeFocused();
+  await expect(page.locator('.walk-focus')).toHaveAttribute('open','');
+  expect(await page.evaluate(()=>({hash:location.hash,scroll:scrollY,history:history.length}))).toEqual(before);
+  // Ridimensionare non chiude la scheda; aprire come pagina è una scelta esplicita.
+  await tree.click();await page.setViewportSize({width:width===320?768:600,height:900});await expect(sheet).toBeVisible();
+  await sheet.locator('[data-entity-page]').click();await expect(sheet).toBeHidden();
+  expect(page.url()).toContain(href);await expect(page.locator('#tree-detail h1')).toHaveText(treeTitle);
+  expect(await page.evaluate(()=>document.documentElement.classList.contains('entity-open'))).toBe(false);
+  // Stessa specie presente nella pagina e nel pannello: ID distinti e comandi locali.
+  await page.goto('/#/specie/edulis');
+  const relatedTree=page.locator('#species-detail a.tree-link').first();await relatedTree.click();
+  const porcino=sheet.locator('.tree-fungi a[href="#/specie/edulis"]');await porcino.click();
+  await expect(sheet.locator('h1')).toContainText('Porcino');
+  expect(await page.evaluate(()=>{const ids=[...document.querySelectorAll('[id]')].map(el=>el.id);return ids.length===new Set(ids).size;})).toBe(true);
+  await sheet.locator('[data-entity-back]').click();
+  await sheet.locator('.tree-fungi a[href="#/specie/mellea"]').click();
+  await sheet.locator('[data-jump-k]').click();await expect(sheet.locator('.kitchen')).toBeInViewport();
+  await page.keyboard.press('Escape');await expect(relatedTree).toBeFocused();
+  // I risultati di Riconosci aprono la scheda completa, mantenendo i caratteri scelti.
+  await page.goto('/#/riconosci');await page.locator('#identify [data-mode="all"]').click();
+  const candidate=page.locator('#identify [data-taxon]').first();await candidate.click();
+  await expect(sheet).toBeVisible();await expect(sheet.locator('h3',{hasText:'Cosa controllare'})).toBeVisible();
+  expect(page.url()).toContain('#/riconosci');await page.keyboard.press('Escape');await expect(candidate).toBeFocused();
+  expect(errors).toEqual([]);
 });

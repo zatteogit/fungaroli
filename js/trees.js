@@ -81,7 +81,7 @@ export function renderTreePage(body, id) {
     <div class="pbody">
     ${photos.length > 1 ? `<div class="sp-strip">${photos.slice(1).map((p, k) => `<button type="button" class="zoomable" data-photo="${k + 1}" aria-label="Foto ${k + 2}: ingrandisci"><img src="${ASSET(p.file)}" alt="" loading="lazy" decoding="async"></button>`).join('')}</div>` : ''}
     ${t.recognize?.length ? `<h3>Come riconoscerlo</h3><ol class="keys">${t.recognize.map((k) => `<li>${esc(k)}</li>`).join('')}</ol>` : ''}
-    ${fungi.length ? `<h3>Funghi che ci crescono</h3><div class="tree-fungi">${fungi.map((s) => `<a href="#/specie/${s.id}" class="tf">${THUMB(s.id, 52)}<span>${esc(s.name)}</span></a>`).join('')}</div>${t.fungi_note ? `<p class="small muted">${esc(t.fungi_note)}</p>` : ''}` : ''}
+    ${fungi.length ? `<h3>Funghi che ci crescono</h3><div class="tree-fungi">${fungi.map((s) => `<a href="#/specie/${s.id}" class="tf" data-entity>${THUMB(s.id, 52)}<span>${esc(s.name)}</span></a>`).join('')}</div>${t.fungi_note ? `<p class="small muted">${esc(t.fungi_note)}</p>` : ''}` : ''}
     <div class="sp-more">
       ${sec('Nelle zone', zrows.length ? `<p class="small muted">Ettari dei boschi in cui domina (${esc(cats.join(', '))}), dalla Carta Forestale.</p><ul class="where">${zrows.map(({ z, ha }) => `
         <li><a href="#/zona/${z.id}/0"><div class="where-top"><b>${esc(z.name)}</b><span class="small">~${ha.toLocaleString('it-IT')} ha</span></div><div class="bar"><i style="width:${Math.round((ha / maxHa) * 100)}%;background:var(--line)"></i></div></a></li>`).join('')}</ul>` : (t.where_reatino ? '' : ''))}
