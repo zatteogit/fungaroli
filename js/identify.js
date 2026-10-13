@@ -759,9 +759,10 @@ const FGROUPS = [
   ['Dove e quando', ['habitat', 'trees', 'growth', 'season']],
 ];
 const shortOpt = (q, v) => (q.bool ? cap1(withOut(q.key, v)) : cap1(String(optLabel(q, v)).split(/,| \(/)[0]));
-function facetsHtml() {
+const PRIMARY_FILTERS = ['hymenophore', 'habitat'];
+function facetsHtml(groups = FGROUPS, compact = false) {
   // per ogni carattere, quanti candidati restano scegliendo ciascun valore (contando gli altri filtri, non il suo)
-  return FGROUPS.map(([title, keys]) => {
+  return groups.map(([title, keys]) => {
     const rows = keys.map(QK).filter((q) => q && (!q.when || q.when() || state.ans[q.key] !== undefined)).map((q) => {
       const others = { ...state.ans }; delete others[q.key];
       const pool = candidates(others);
@@ -774,41 +775,48 @@ function facetsHtml() {
         return `<button type="button" class="fo${q.color || q.flesh ? ' fo-sw' : ''}" data-fk="${q.key}" data-fv="${esc(String(v))}" aria-pressed="${on}"><span class="fo-art" aria-hidden="true">${artFor(q, v)}</span><span class="fo-l">${esc(shortOpt(q, v))}</span><span class="fo-n">${n}</span></button>`;
       }).join('');
       if (!chips) return '';
-      return `<div class="facet${cur !== undefined ? ' on' : ''}"><div class="facet-h"><span>${esc(qShort(q))}</span>${cur !== undefined ? `<button type="button" class="facet-x" data-fclear="${q.key}">Togli</button>` : ''}</div><div class="facet-o">${chips}</div></div>`;
+      const heading = compact && q.key === 'habitat' ? 'Dove cresce' : qShort(q);
+      return `<div class="facet${cur !== undefined ? ' on' : ''}" role="group" aria-label="${esc(heading)}"><div class="facet-h"><span>${esc(heading)}</span>${cur !== undefined ? `<button type="button" class="facet-x" data-fclear="${q.key}">Togli</button>` : ''}</div><div class="facet-o">${chips}</div></div>`;
     }).join('');
-    return rows ? `<section class="fgroup"><h3 class="fgroup-h">${esc(title)}</h3>${rows}</section>` : '';
+    return compact ? rows : rows ? `<section class="fgroup"><h3 class="fgroup-h">${esc(title)}</h3>${rows}</section>` : '';
   }).join('');
 }
-const activeChips = () => QUESTIONS.filter((q) => state.ans[q.key] != null).map((q) => `<button type="button" class="chip chip-x" data-fclear="${q.key}"><span>${esc(q.bool ? cap1(withOut(q.key, state.ans[q.key])) : `${qShort(q)}: ${shortOpt(q, state.ans[q.key]).toLowerCase()}`)}</span>${X_IC}</button>`).join('');
+const activeChips = () => QUESTIONS.filter((q) => state.ans[q.key] != null && !PRIMARY_FILTERS.includes(q.key)).map((q) => `<button type="button" class="chip chip-x" data-fclear="${q.key}"><span>${esc(q.bool ? cap1(withOut(q.key, state.ans[q.key])) : `${qShort(q)}: ${shortOpt(q, state.ans[q.key]).toLowerCase()}`)}</span>${X_IC}</button>`).join('');
 let idfSheet = null;
 function openFilterSheet(box) {
   if (!idfSheet) {
     idfSheet = document.createElement('dialog');
+    idfSheet.id = 'identify-filters';
     idfSheet.className = 'sheet-dlg idf-sheet';
+    idfSheet.setAttribute('aria-labelledby', 'identify-filters-title');
     idfSheet.addEventListener('click', (e) => { if (e.target === idfSheet || e.target.closest('[data-idf-close]')) idfSheet.close(); });
+    idfSheet.addEventListener('close', () => box.querySelector('[data-idf-open]')?.focus({preventScroll:true}));
     document.body.append(idfSheet);
   }
   const paint = () => {
     const n = candidates().length;
     idfSheet.innerHTML = `<div class="tx-handle" data-drag aria-hidden="true"><span class="sheet-grip"></span></div>
-      <div class="idf-sh-h"><h2>Filtri</h2>${Object.keys(state.ans).length ? '<button type="button" class="af-add" data-fall>Azzera</button>' : ''}</div>
+      <div class="idf-sh-h"><h2 id="identify-filters-title">Tutti i caratteri</h2><div>${Object.keys(state.ans).length ? '<button type="button" class="af-add" data-fall>Azzera</button>' : ''}<button type="button" class="icon-btn" data-idf-close aria-label="Chiudi il pannello dei caratteri">×</button></div></div>
       <div class="idf-sh-b">${facetsHtml()}</div>
       <div class="idf-sh-f"><button type="button" class="btn primary big" data-idf-close>Mostra ${n} ${n === 1 ? 'candidato' : 'candidati'}</button></div>`;
-    wireFacets(idfSheet, () => { renderIdentify(box); paint(); });
+    wireFacets(idfSheet, selector => { renderIdentify(box); paint(); focusFilter(idfSheet, selector); });
   };
   idfSheet._paint = paint;
   paint();
   if (!idfSheet.open) idfSheet.showModal();
+}
+function focusFilter(root, selector) {
+  (root.querySelector(selector) || root.querySelector('[data-idf-open],[data-idf-close]'))?.focus({preventScroll:true});
 }
 function wireFacets(root, after) {
   root.querySelectorAll('[data-fk]').forEach((b) => b.addEventListener('click', () => {
     const q = QK(b.dataset.fk), v = q.bool ? b.dataset.fv === 'true' : b.dataset.fv;
     if (state.ans[q.key] === v) delete state.ans[q.key]; else state.ans[q.key] = v;
     if (q.key === 'hymenophore') { delete state.ans.hymenophore_color; delete state.ans.gill_attachment; }
-    tick(); after();
+    tick(); after(`[data-fk="${q.key}"][data-fv="${CSS.escape(String(v))}"]`);
   }));
-  root.querySelectorAll('[data-fclear]').forEach((b) => b.addEventListener('click', () => { delete state.ans[b.dataset.fclear]; tick(); after(); }));
-  root.querySelector('[data-fall]')?.addEventListener('click', () => { state.ans = {}; tick(); after(); });
+  root.querySelectorAll('[data-fclear]').forEach((b) => b.addEventListener('click', () => { delete state.ans[b.dataset.fclear]; if(b.dataset.fclear==='hymenophore'){delete state.ans.hymenophore_color;delete state.ans.gill_attachment;} tick(); after(`[data-fk="${b.dataset.fclear}"]`); }));
+  root.querySelector('[data-fall]')?.addEventListener('click', () => { state.ans = {}; tick(); after('[data-fall]'); });
 }
 
 export function renderIdentify(box) {
@@ -834,15 +842,13 @@ export function renderIdentify(box) {
       <button type="button" role="tab" data-mode="all" aria-selected="${!state.guided}">Filtri</button>
     </div>
     ${ZONES.length ? `<div class="filter-rail id-zones" role="group" aria-label="Dove l'hai trovato"><span class="af-label">Zona</span><button type="button" class="chip" data-zone="" aria-pressed="${!state.zone}">Ovunque</button>${ZONES.map((z) => `<button type="button" class="chip" data-zone="${z.id}" aria-pressed="${state.zone === z.id}">${esc(z.title || z.name)}</button>`).join('')}</div>` : ''}
-    ${state.guided ? guidedMode() : `<div class="idf-bar"><button type="button" class="btn idf-open" data-idf-open><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M7 12h10M10 18h4"/></svg>Filtri${given.length ? ` <b>${given.length}</b>` : ''}</button>${activeChips()}${given.length ? '<button type="button" class="af-add" data-fall>Azzera</button>' : ''}</div>`}
-    ${state.guided ? '' : `<div class="idf"><aside class="idf-side" aria-label="Filtri">${facetsHtml()}</aside><div class="idf-main">`}
+    ${state.guided ? guidedMode() : `<div class="idf-primary" aria-label="Caratteri principali">${facetsHtml([['', PRIMARY_FILTERS]], true)}</div><div class="idf-bar">${activeChips()}<button type="button" class="btn idf-open" data-idf-open aria-haspopup="dialog" aria-controls="identify-filters">Altri${given.filter(q=>!PRIMARY_FILTERS.includes(q.key)).length ? ` <b>${given.filter(q=>!PRIMARY_FILTERS.includes(q.key)).length}</b>` : ''}</button>${given.length ? '<button type="button" class="af-add" data-fall>Azzera</button>' : ''}</div>`}
     <div class="id-head"><h2 class="sec-title">${list.length} ${list.length === 1 ? 'candidato' : 'candidati'}</h2></div>
     <label class="search-box id-search id-filter"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M7 12h10M10 18h4"/></svg><input id="id-q" type="search" placeholder="Filtra i candidati: anello, blu, castagno…" value="${esc(state.q)}" autocomplete="off" aria-label="Filtra i candidati per parola"></label>
     <div class="id-deadly"><b>Le risposte e i filtri non escludono i funghi mortali.</b> Anello e volva possono essere nascosti o danneggiati. Il catalogo è incompleto: anche un solo candidato o nessun mortale nei risultati non conferma la specie né la commestibilità.
       ${deadly.length ? `<details><summary>Sosia mortali da conoscere (${deadly.length})</summary><ul>${deadly.map((t) => `<li><a href="#/fungo/${esc(t.key)}">${esc(t.name || t.latin)}</a> · <i>${esc(t.latin)}</i></li>`).join('')}</ul></details>` : ''}
     </div>
     <ul class="id-cards">${list.slice(0, 40).map(resultCard).join('')}</ul>
-    ${state.guided ? '' : '</div></div>'}
     ${RULES.length ? `<details class="sec"><summary>Regole generali di sicurezza</summary><div class="sec-body"><ul class="reasons">${RULES.map((r) => `<li${r.severity === 'critico' ? ' class="crit"' : ''}>${esc(r.text)}</li>`).join('')}</ul></div></details>` : ''}`;
 
   const rerender = () => renderIdentify(box);
@@ -850,7 +856,7 @@ export function renderIdentify(box) {
   box.querySelector('#id-q').addEventListener('input', (e) => { state.q = e.target.value; clearTimeout(box._t); box._t = setTimeout(() => { rerender(); const i = box.querySelector('#id-q'); i.focus(); i.setSelectionRange(i.value.length, i.value.length); }, 250); });
   box.querySelectorAll('[data-mode]').forEach((b) => b.addEventListener('click', () => { state.guided = b.dataset.mode === 'guided'; rerender(); }));
   if (!state.guided) {
-    wireFacets(box, () => soft(() => renderIdentify(box)));
+    wireFacets(box, selector => soft(() => { renderIdentify(box); focusFilter(box, selector); }));
     box.querySelector('[data-idf-open]')?.addEventListener('click', () => openFilterSheet(box));
   }
   box.querySelectorAll('[data-zone]').forEach((b) => b.addEventListener('click', () => { state.zone = b.dataset.zone; rerender(); }));
