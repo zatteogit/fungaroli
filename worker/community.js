@@ -1,11 +1,13 @@
 import { generateRegistrationOptions, verifyRegistrationResponse, generateAuthenticationOptions, verifyAuthenticationResponse } from '@simplewebauthn/server';
 import schema from '../migrations/0001_community.sql';
-import { SPECIES } from '../js/species.js';
+import { buildEdibleCatalog } from '../js/edible-catalog.js';
+import traits from '../data/species-traits.json';
+import edibleCatalog from '../data/edible-catalog.json';
 import zones from '../data/zones.json';
 
 const SESSION = '__Host-fungaroli_session', CHALLENGE = '__Host-fungaroli_challenge';
 const SESSION_SECONDS = 30 * 86400, MAX_BYTES = 250_000;
-const speciesIds = new Set(SPECIES.map((s) => s.id)), zoneIds = new Set(zones.zones.map((z) => z.id));
+const speciesIds = new Set(buildEdibleCatalog(traits, edibleCatalog).map((s) => s.id)), zoneIds = new Set(zones.zones.map((z) => z.id));
 const initialized = new WeakMap();
 const enc = new TextEncoder();
 const token = () => crypto.randomUUID() + crypto.randomUUID();

@@ -1,0 +1,642 @@
+{
+  "version": 1,
+  "reviewed_on": "2026-10-13",
+  "note": "Catalogo documentato, non elenco di tutti i funghi esistenti. Le stagioni sono intervalli manualistici europei, inclusi periodi mediterranei quando documentati. La loro traduzione in mesi è indicativa e non validata nel Reatino; condizioni e quota possono spostare le fruttificazioni. Nessun coefficiente del modello è assegnato alle specie aggiuntive. I complessi s.l. mantengono questa indicazione.",
+  "species": [
+    {
+      "id": "agaricus-campestris",
+      "name": "Prataiolo",
+      "latin": "Agaricus campestris",
+      "months": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "aliases": [
+        "prataioli",
+        "prataiolo campestre"
+      ],
+      "habitat": "Prati e pascoli.",
+      "toxicity": "commestibile",
+      "caution": "Si confonde con agarici tossici e amanite mortali: fai controllare il raccolto.",
+      "sources": [
+        {
+          "title": "First Nature — Agaricus campestris",
+          "url": "https://www.first-nature.com/fungi/agaricus-campestris.php"
+        },
+        {
+          "title": "Wikipedia — Agaricus campestris",
+          "url": "https://it.wikipedia.org/wiki/Agaricus_campestris"
+        }
+      ]
+    },
+    {
+      "id": "agaricus-arvensis",
+      "name": "Prataiolo maggiore",
+      "latin": "Agaricus arvensis",
+      "months": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "aliases": [
+        "prataiolo dei cavalli"
+      ],
+      "habitat": "Prati, pascoli e margini erbosi.",
+      "toxicity": "commestibile",
+      "caution": "Si confonde con Agaricus xanthodermus e altri agarici tossici.",
+      "sources": [
+        {
+          "title": "First Nature — Agaricus arvensis",
+          "url": "https://www.first-nature.com/fungi/agaricus-arvensis.php"
+        },
+        {
+          "title": "Wikipedia — Agaricus arvensis",
+          "url": "https://it.wikipedia.org/wiki/Agaricus_arvensis"
+        }
+      ]
+    },
+    {
+      "id": "agaricus-bisporus",
+      "name": "Champignon",
+      "latin": "Agaricus bisporus",
+      "months": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "aliases": [
+        "champignons",
+        "portobello",
+        "prataiolo coltivato"
+      ],
+      "habitat": "In natura, terreni ricchi di sostanza organica; è anche coltivato.",
+      "toxicity": "commestibile",
+      "caution": "La familiarità con lo champignon coltivato non identifica un esemplare selvatico.",
+      "sources": [
+        {
+          "title": "First Nature — Agaricus bisporus",
+          "url": "https://www.first-nature.com/fungi/agaricus-bisporus.php"
+        }
+      ]
+    },
+    {
+      "id": "agaricus-sylvicola",
+      "name": "Prataiolo dei boschi",
+      "latin": "Agaricus sylvicola",
+      "months": [
+        8,
+        9,
+        10,
+        11,
+        12,
+        1,
+        2
+      ],
+      "aliases": [
+        "agaricus silvicola"
+      ],
+      "habitat": "Lettiera dei boschi.",
+      "toxicity": "commestibile",
+      "caution": "Si confonde con agarici tossici e amanite mortali.",
+      "sources": [
+        {
+          "title": "First Nature — Agaricus sylvicola",
+          "url": "https://www.first-nature.com/fungi/agaricus-sylvicola.php"
+        }
+      ]
+    },
+    {
+      "id": "cyclocybe-aegerita",
+      "name": "Pioppino",
+      "latin": "Cyclocybe cylindracea (= Cyclocybe aegerita)",
+      "months": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "aliases": [
+        "pioppini",
+        "piopparello",
+        "agrocybe aegerita",
+        "agrocybe cylindracea",
+        "peppino"
+      ],
+      "habitat": "Legno di latifoglie, soprattutto pioppo, salice e olmo.",
+      "toxicity": "commestibile con cautela",
+      "caution": "Elimina i gambi fibrosi e cuoci completamente. Fai controllare il raccolto e segui le indicazioni del micologo.",
+      "sources": [
+        {
+          "title": "Wikipedia — Cyclocybe cylindracea (= Cyclocybe aegerita)",
+          "url": "https://it.wikipedia.org/wiki/Cyclocybe_aegerita"
+        },
+        {
+          "title": "Regione Piemonte — Guida ragionata alla commestibilità dei funghi (2021)",
+          "url": "https://www.regione.piemonte.it/web/media/24510/download"
+        }
+      ]
+    },
+    {
+      "id": "pleurotus-ostreatus",
+      "name": "Gelone",
+      "latin": "Pleurotus ostreatus",
+      "months": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        1,
+        2
+      ],
+      "aliases": [
+        "orecchione",
+        "orecchioni",
+        "fungo ostrica",
+        "sbrisa"
+      ],
+      "habitat": "Tronchi e ceppaie di latifoglie.",
+      "toxicity": "commestibile",
+      "caution": null,
+      "sources": [
+        {
+          "title": "First Nature — Pleurotus ostreatus",
+          "url": "https://www.first-nature.com/fungi/pleurotus-ostreatus.php"
+        },
+        {
+          "title": "Regione Piemonte — Guida ragionata alla commestibilità dei funghi (2021)",
+          "url": "https://www.regione.piemonte.it/web/media/24510/download"
+        }
+      ]
+    },
+    {
+      "id": "pleurotus-eryngii",
+      "name": "Cardoncello",
+      "latin": "Pleurotus eryngii",
+      "months": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        1,
+        2
+      ],
+      "aliases": [
+        "cardoncelli",
+        "ferlengo",
+        "ferlenghi"
+      ],
+      "habitat": "Praterie con radici di ombrellifere; anche coltivato.",
+      "toxicity": "commestibile",
+      "caution": null,
+      "sources": [
+        {
+          "title": "Wikipedia — Pleurotus eryngii",
+          "url": "https://it.wikipedia.org/wiki/Pleurotus_eryngii"
+        },
+        {
+          "title": "Regione Piemonte — Guida ragionata alla commestibilità dei funghi (2021)",
+          "url": "https://www.regione.piemonte.it/web/media/24510/download"
+        }
+      ]
+    },
+    {
+      "id": "pleurotus-cornucopiae",
+      "name": "Cornucopia",
+      "latin": "Pleurotus cornucopiae",
+      "months": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "aliases": [
+        "pleuroto cornucopia"
+      ],
+      "habitat": "Legno di latifoglie.",
+      "toxicity": "commestibile",
+      "caution": null,
+      "sources": [
+        {
+          "title": "First Nature — Pleurotus cornucopiae",
+          "url": "https://www.first-nature.com/fungi/pleurotus-cornucopiae.php"
+        },
+        {
+          "title": "Regione Piemonte — Guida ragionata alla commestibilità dei funghi (2021)",
+          "url": "https://www.regione.piemonte.it/web/media/24510/download"
+        }
+      ]
+    },
+    {
+      "id": "morchella-esculenta",
+      "name": "Spugnola gialla",
+      "latin": "Morchella esculenta s.l.",
+      "months": [
+        3,
+        4,
+        5,
+        6
+      ],
+      "aliases": [
+        "spugnole",
+        "spugnola comune",
+        "morchella",
+        "morchelle"
+      ],
+      "habitat": "Terreni umidi, boschi e margini.",
+      "toxicity": "commestibile con cautela",
+      "caution": "Commestibile solo dopo corretta cottura; cruda o poco cotta può causare intossicazioni. Si confonde con giromitre tossiche.",
+      "sources": [
+        {
+          "title": "First Nature — Morchella esculenta s.l.",
+          "url": "https://www.first-nature.com/fungi/morchella-esculenta.php"
+        },
+        {
+          "title": "Regione Piemonte — Guida ragionata alla commestibilità dei funghi (2021)",
+          "url": "https://www.regione.piemonte.it/web/media/24510/download"
+        }
+      ]
+    },
+    {
+      "id": "morchella-elata",
+      "name": "Spugnola nera",
+      "latin": "Morchella elata s.l.",
+      "months": [
+        3,
+        4,
+        5
+      ],
+      "aliases": [
+        "morchelle nere"
+      ],
+      "habitat": "Boschi, margini e terreni disturbati.",
+      "toxicity": "commestibile con cautela",
+      "caution": "Commestibile solo dopo corretta cottura; cruda o poco cotta può causare intossicazioni. Si confonde con giromitre tossiche.",
+      "sources": [
+        {
+          "title": "First Nature — Morchella elata s.l.",
+          "url": "https://www.first-nature.com/fungi/morchella-elata.php"
+        },
+        {
+          "title": "Regione Piemonte — Guida ragionata alla commestibilità dei funghi (2021)",
+          "url": "https://www.regione.piemonte.it/web/media/24510/download"
+        }
+      ]
+    },
+    {
+      "id": "calocybe-gambosa",
+      "name": "Prugnolo",
+      "latin": "Calocybe gambosa",
+      "months": [
+        3,
+        4,
+        5,
+        6
+      ],
+      "aliases": [
+        "prugnoli",
+        "spinarolo",
+        "fungo di san giorgio",
+        "tricholoma georgii"
+      ],
+      "habitat": "Prati, margini del bosco e cespugli.",
+      "toxicity": "commestibile",
+      "caution": "Può essere confuso con Inocybe erubescens, mortale, e altri funghi tossici.",
+      "sources": [
+        {
+          "title": "First Nature — Calocybe gambosa",
+          "url": "https://www.first-nature.com/fungi/calocybe-gambosa.php"
+        },
+        {
+          "title": "Wikipedia — Calocybe gambosa",
+          "url": "https://it.wikipedia.org/wiki/Calocybe_gambosa"
+        },
+        {
+          "title": "Regione Piemonte — Guida ragionata alla commestibilità dei funghi (2021)",
+          "url": "https://www.regione.piemonte.it/web/media/24510/download"
+        }
+      ]
+    },
+    {
+      "id": "marasmius-oreades",
+      "name": "Gambesecche",
+      "latin": "Marasmius oreades",
+      "months": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "aliases": [
+        "gambesecca",
+        "gambesecche"
+      ],
+      "habitat": "Prati e sentieri erbosi.",
+      "toxicity": "commestibile",
+      "caution": "Si confonde con piccole clitocibi tossiche: fai controllare il raccolto.",
+      "sources": [
+        {
+          "title": "First Nature — Marasmius oreades",
+          "url": "https://www.first-nature.com/fungi/marasmius-oreades.php"
+        },
+        {
+          "title": "Wikipedia — Marasmius oreades",
+          "url": "https://it.wikipedia.org/wiki/Marasmius_oreades"
+        },
+        {
+          "title": "Regione Piemonte — Guida ragionata alla commestibilità dei funghi (2021)",
+          "url": "https://www.regione.piemonte.it/web/media/24510/download"
+        }
+      ]
+    },
+    {
+      "id": "craterellus-lutescens",
+      "name": "Finferla",
+      "latin": "Craterellus lutescens",
+      "months": null,
+      "aliases": [
+        "finferle",
+        "cantharellus lutescens"
+      ],
+      "habitat": "Boschi umidi di conifere e faggete acide.",
+      "toxicity": "commestibile",
+      "caution": null,
+      "sources": [
+        {
+          "title": "Wikipedia — Craterellus lutescens",
+          "url": "https://it.wikipedia.org/wiki/Craterellus_lutescens"
+        },
+        {
+          "title": "Regione Piemonte — Guida ragionata alla commestibilità dei funghi (2021)",
+          "url": "https://www.regione.piemonte.it/web/media/24510/download"
+        }
+      ]
+    },
+    {
+      "id": "lactarius-deliciosus",
+      "name": "Sanguinello",
+      "latin": "Lactarius deliciosus",
+      "months": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "aliases": [
+        "lattario delizioso",
+        "sanguinelli",
+        "sanguigno",
+        "rosito",
+        "rovellone"
+      ],
+      "habitat": "Boschi di pini.",
+      "toxicity": "commestibile",
+      "caution": "Non tutti i lattari con colori simili sono commestibili.",
+      "sources": [
+        {
+          "title": "First Nature — Lactarius deliciosus",
+          "url": "https://www.first-nature.com/fungi/lactarius-deliciosus.php"
+        }
+      ]
+    },
+    {
+      "id": "lactarius-deterrimus",
+      "name": "Lattario degli abeti",
+      "latin": "Lactarius deterrimus",
+      "months": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "aliases": [
+        "falso sanguinello"
+      ],
+      "habitat": "Soprattutto presso abeti rossi.",
+      "toxicity": "commestibile",
+      "caution": null,
+      "sources": [
+        {
+          "title": "First Nature — Lactarius deterrimus",
+          "url": "https://www.first-nature.com/fungi/lactarius-deterrimus.php"
+        }
+      ]
+    },
+    {
+      "id": "hygrophorus-marzuolus",
+      "name": "Marzuolo",
+      "latin": "Hygrophorus marzuolus",
+      "months": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "aliases": [
+        "marzuoli",
+        "dormiente"
+      ],
+      "habitat": "Boschi di latifoglie e conifere, a fine inverno e in primavera.",
+      "toxicity": "commestibile",
+      "caution": null,
+      "sources": [
+        {
+          "title": "Wikipedia — Hygrophorus marzuolus",
+          "url": "https://it.wikipedia.org/wiki/Hygrophorus_marzuolus"
+        },
+        {
+          "title": "Regione Piemonte — Guida ragionata alla commestibilità dei funghi (2021)",
+          "url": "https://www.regione.piemonte.it/web/media/24510/download"
+        }
+      ]
+    },
+    {
+      "id": "hygrophorus-latitabundus",
+      "name": "Lardaiolo",
+      "latin": "Hygrophorus latitabundus",
+      "months": [
+        9,
+        10,
+        11,
+        12,
+        1
+      ],
+      "aliases": [
+        "lardaioli"
+      ],
+      "habitat": "Pinete e boschi misti di pino e quercia.",
+      "toxicity": "commestibile",
+      "caution": null,
+      "sources": [
+        {
+          "title": "First Nature — Hygrophorus latitabundus",
+          "url": "https://www.first-nature.com/fungi/hygrophorus-latitabundus.php"
+        }
+      ]
+    },
+    {
+      "id": "tricholoma-portentosum",
+      "name": "Portentoso",
+      "latin": "Tricholoma portentosum",
+      "months": [
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "aliases": [
+        "portentosi"
+      ],
+      "habitat": "Soprattutto boschi di conifere.",
+      "toxicity": "commestibile",
+      "caution": "Si confonde con altre specie di Tricholoma tossiche.",
+      "sources": [
+        {
+          "title": "First Nature — Tricholoma portentosum",
+          "url": "https://www.first-nature.com/fungi/tricholoma-portentosum.php"
+        }
+      ]
+    },
+    {
+      "id": "coprinus-comatus",
+      "name": "Coprinus comatus",
+      "latin": "Coprinus comatus",
+      "months": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "aliases": [
+        "coprino chiomato",
+        "fungo dell inchiostro chiomato"
+      ],
+      "habitat": "Prati e terreni ricchi di sostanza organica.",
+      "toxicity": "commestibile con cautela",
+      "caution": "Commestibile solo giovane e fresco; non confonderlo con altri coprini.",
+      "sources": [
+        {
+          "title": "First Nature — Coprinus comatus",
+          "url": "https://www.first-nature.com/fungi/coprinus-comatus.php"
+        }
+      ]
+    },
+    {
+      "id": "fistulina-hepatica",
+      "name": "Lingua di bue",
+      "latin": "Fistulina hepatica",
+      "months": [
+        7,
+        8,
+        9,
+        10
+      ],
+      "aliases": [
+        "lingue di bue"
+      ],
+      "habitat": "Tronchi di quercia e castagno.",
+      "toxicity": "commestibile",
+      "caution": null,
+      "sources": [
+        {
+          "title": "First Nature — Fistulina hepatica",
+          "url": "https://www.first-nature.com/fungi/fistulina-hepatica.php"
+        }
+      ]
+    },
+    {
+      "id": "amanita-rubescens",
+      "name": "Amanita arrossante",
+      "latin": "Amanita rubescens",
+      "months": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "aliases": [
+        "tignosa vinata",
+        "tignosa rossastra"
+      ],
+      "habitat": "Boschi di latifoglie e conifere.",
+      "toxicity": "commestibile con cautela",
+      "caution": "Tossica da cruda; richiede corretta cottura e controllo micologico. Si confonde con Amanita pantherina, tossica.",
+      "sources": [
+        {
+          "title": "First Nature — Amanita rubescens",
+          "url": "https://www.first-nature.com/fungi/amanita-rubescens.php"
+        },
+        {
+          "title": "Regione Piemonte — Guida ragionata alla commestibilità dei funghi (2021)",
+          "url": "https://www.regione.piemonte.it/web/media/24510/download"
+        }
+      ]
+    },
+    {
+      "id": "russula-aurea",
+      "name": "Colombina dorata",
+      "latin": "Russula aurea",
+      "months": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "aliases": [
+        "russula aurata"
+      ],
+      "habitat": "Boschi di latifoglie e conifere.",
+      "toxicity": "commestibile",
+      "caution": null,
+      "sources": [
+        {
+          "title": "First Nature — Russula aurea",
+          "url": "https://www.first-nature.com/fungi/russula-aurea.php"
+        }
+      ]
+    }
+  ]
+}

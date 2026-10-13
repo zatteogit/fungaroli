@@ -3,7 +3,7 @@ import './theme.js';
 import { consumeFresh, freshDone } from './refresh.js';
 import { SPECIES, GROUPS, FOREST } from './species.js';
 import { scoreZoneDay, scoreSpecies, habitatAtBand, habitatPotential, elevationFit, combine, classOf, scoreLabel, scoreShortLabel, formatIndex, MODEL_VERSION, PARAMS, CLASSES } from './model.js';
-import { loadWeather } from './weather.js';
+import { todayISO, loadWeather } from './weather.js';
 import { renderCharts } from './chart.js';
 import { initJournal } from './journal.js';
 import { renderSvgMap } from './svgmap.js';
@@ -20,6 +20,8 @@ import { initTrees, renderTreeGrid, renderTreePage, linkTrees, treeForCategory, 
 import { crowding, comfortScore, timingAdvice, fmtTime, fmtRough, holidayName, intornoA } from './human.js';
 import { initCommunity, communityStatus, communityRank, reportBadge } from './community.js';
 import { guideTitle, renderGuideCards, renderGuide } from './guides.js';
+import { buildEdibleCatalog, seasonStatus, seasonLabel, searchEdibleCatalog } from './edible-catalog.js';
+import { mountSpeciesAutocomplete } from './species-autocomplete.js';
 
 const HISTORY_DAYS = 30;   // giorni passati mostrati nel grafico
 const AHEAD_DAYS = 7;      // giorni futuri valutati
@@ -54,8 +56,9 @@ const forestColor = (name) => {
 };
 const SHORT = { [FOREST.CON]: 'Conifere (rimboschimenti)', [FOREST.ROV]: 'Roverella' };
 
+let catalog = buildEdibleCatalog();
 const state = {
-  groups: new Set(GROUPS.map((g) => g.id)),
+  speciesIds: null, // null = tutto il catalogo; Set = selezione individuale
   // giorno della mappa e della scheda: dalle 14 (ora italiana) si guarda a domani, oggi l'uscita e' ormai andata
   dayOffset: +new Intl.DateTimeFormat('it-IT', { hour: 'numeric', hourCycle: 'h23', timeZone: 'Europe/Rome' }).format(new Date()) >= 14 ? 1 : 0,
   zoneId: null,
@@ -67,11 +70,40 @@ const state = {
 };
 try {
   const p = JSON.parse(localStorage.getItem(PREFS_KEY) || 'null');
-  if (p) { const ok = (p.groups || []).filter((g) => GROUPS.some((x) => x.id === g)); state.groups = new Set(ok.length ? ok : GROUPS.map((g) => g.id)); state.distancePenalty = !!p.distancePenalty; state.avoidCrowd = !!p.avoidCrowd; state.preferComfort = !!p.preferComfort; }
+  if (p) {
+    if ('speciesIds' in p) state.speciesIds = Array.isArray(p.speciesIds) ? new Set(p.speciesIds.filter(x => typeof x === 'string')) : null;
+    else {
+      const groups = (p.groups || []).filter(g => GROUPS.some(x => x.id === g));
+      if (groups.length && groups.length !== GROUPS.length) state.speciesIds = new Set(SPECIES.filter(s => groups.includes(s.group)).map(s => s.id));
+    }
+    state.distancePenalty = !!p.distancePenalty; state.avoidCrowd = !!p.avoidCrowd; state.preferComfort = !!p.preferComfort;
+  }
 } catch { /* preferenze non disponibili */ }
 const savePrefs = () => {
-  try { localStorage.setItem(PREFS_KEY, JSON.stringify({ groups: [...state.groups], distancePenalty: state.distancePenalty, avoidCrowd: state.avoidCrowd, preferComfort: state.preferComfort })); } catch { /* ignora */ }
+  try { localStorage.setItem(PREFS_KEY, JSON.stringify({ speciesIds: state.speciesIds === null ? null : [...state.speciesIds], distancePenalty: state.distancePenalty, avoidCrowd: state.avoidCrowd, preferComfort: state.preferComfort })); } catch { /* ignora */ }
 };
+const selectedCatalog = () => state.speciesIds === null ? catalog : catalog.filter(s => state.speciesIds.has(s.id));
+const filterDate = () => todayISO(new Date(Date.now() + (state.view === 'uscite' ? state.homeDay || 0 : state.dayOffset) * 864e5));
+const groupMembers = (id) => catalog.filter(s => s.group === id);
+const groupSelection = (id) => {
+  const members = groupMembers(id), n = members.filter(s => state.speciesIds === null || state.speciesIds.has(s.id)).length;
+  return n === members.length ? 'full' : n ? 'partial' : 'none';
+};
+function toggleGroup(id) {
+  const members = groupMembers(id);
+  if (state.speciesIds === null) state.speciesIds = new Set(members.map(s => s.id));
+  else {
+    const remove = members.every(s => state.speciesIds.has(s.id));
+    members.forEach(s => remove ? state.speciesIds.delete(s.id) : state.speciesIds.add(s.id));
+    if (!state.speciesIds.size) state.speciesIds = null;
+  }
+}
+function addSpecies(id) {
+  if (!catalog.some(s => s.id === id)) return;
+  if (state.speciesIds === null) state.speciesIds = new Set();
+  state.speciesIds.add(id);
+}
+const outOfSeason = (id) => { const members = groupMembers(id); return members.length && members.every(s => seasonStatus(s, filterDate()) === 'out'); };
 
 let zones, origin, habitat, access, trails, traits, legal, series, results, map, zoneLayers = {}, zoneMedia = {}, outing = null;
 const hasLeaflet = () => typeof globalThis.L !== 'undefined';
@@ -91,14 +123,19 @@ async function init() {
   const review = !!globalThis.FUNGAROLI_REVIEW; // copia di revisione: niente API esterne
   const load = (f) => fetch(`data/${f}.json`).then((r) => (r.ok ? r.json() : null)).catch(() => null);
   legal = embedded ? embedded.legal : await load('legal');
-  const [zj, hj, aj, tj, idj, mj, ij, trj, stj, mtj, mzj, prj, thj] = embedded
-    ? [embedded.zones, embedded.habitat, embedded.access, embedded.trails, embedded.speciesId, embedded.media, embedded.infographics, embedded.trees, embedded.traits, null, null, embedded.preparation, embedded.trailheads]
-    : await Promise.all(['zones', 'habitat', 'access', 'trails', 'species-id', 'media', 'infografiche', 'trees', 'species-traits', 'media-trees', 'media-zones', 'preparation', 'trailheads'].map(load));
+  const [zj, hj, aj, tj, idj, mj, ij, trj, stj, mtj, mzj, prj, thj, ecj] = embedded
+    ? [embedded.zones, embedded.habitat, embedded.access, embedded.trails, embedded.speciesId, embedded.media, embedded.infographics, embedded.trees, embedded.traits, null, null, embedded.preparation, embedded.trailheads, embedded.edibleCatalog]
+    : await Promise.all(['zones', 'habitat', 'access', 'trails', 'species-id', 'media', 'infografiche', 'trees', 'species-traits', 'media-trees', 'media-zones', 'preparation', 'trailheads', 'edible-catalog'].map(load));
   trailheads = thj?.zones || {};
   prep = prj;
   zoneMedia = mzj?.zones || {};
   if (mj && mtj?.trees) mj.trees = { ...(mj.trees || {}), ...mtj.trees };
   traits = stj;
+  catalog = buildEdibleCatalog(stj, ecj, idj);
+  if (state.speciesIds !== null) {
+    state.speciesIds = new Set([...state.speciesIds].filter(id => catalog.some(s => s.id === id)));
+    if (!state.speciesIds.size) state.speciesIds = null;
+  }
   initSpeciesCards({
     idData: idj, media: mj, allow3d: !embedded && !review, infographics: ij?.species,
     whereSection: (id) => whereToFind(id),
@@ -112,14 +149,15 @@ async function init() {
   origin = zj.origin;
   habitat = hj.zones;
   renderGuideCards($('#editorial'));
-  initCommunity({ zoneList: zones });
+  initCommunity({ zoneList: zones, speciesList: catalog });
   renderCommunityIntro();
-  document.addEventListener('fungaroli:community', () => { renderCommunityIntro(); if (results) renderAll(); });
+  document.addEventListener('fungaroli:community', () => { renderCommunityIntro(); renderTrackedSpecies(); if (results) renderAll(); });
   initIdentify({
     traits: stj, media: mj, assetUrl: embedded ? (f) => embedded.assets?.[f] || '' : (f) => f, thumb, zones, banner: legal?.identify_banner,
     howTo: (eid, latin) => idj?.species?.[eid]?.lookalikes?.find((l) => l.latin === latin)?.how_to_tell || '',
     potential: (sid, zid) => { const sp = SPECIES.find((x) => x.id === sid); const z = zones.find((x) => x.id === zid); return sp && z ? potentialOf(sp, z) : null; },
   });
+  renderSpeciesGrid();
   applyLegal();
   initTrees({ trees: trj, media: mj, assetUrl: embedded ? (f) => embedded.assets?.[f] || '' : (f) => f, zones, habitat, thumb });
   renderTreeGrid($('#tree-grid'));
@@ -128,7 +166,7 @@ async function init() {
   buildSearch(idj, trj, embedded);
   initMap();
   initShell();
-  journal = initJournal({ zones, predict, captureForecast, getZoneId: () => state.zoneId || zones[0].id, zoneImage: (zid) => zoneMedia[zid]?.file || speciesPhoto(SPECIES[0].id)?.file });
+  journal = initJournal({ zones, speciesCatalog: catalog, predict, captureForecast, getZoneId: () => state.zoneId || zones[0].id, zoneImage: (zid) => zoneMedia[zid]?.file || speciesPhoto(SPECIES[0].id)?.file });
   route(); // le pagine che non dipendono dal meteo (specie, diario, info) compaiono subito
   const fresh = consumeFresh(); // ricarica pulita dal logo: anche il meteo da capo
   await refreshWeather(fresh);
@@ -170,12 +208,13 @@ function parseRoute() {
   if (a === 'diario') return { view: 'diario' };
   if (a === 'info') return { view: 'info' };
   if (a === 'metodo') return { view: 'metodo' };
+  if (a === 'commestibile' && b) return { view: 'commestibile', speciesId: b };
   if (a === 'fungo' && b) return { view: 'fungo', taxonId: b };
   return { view: 'uscite' };
 }
 
 // profondita' e posizione delle viste: decidono la direzione della transizione
-const LEVEL = { guide: 1, zona: 1, 'specie-dettaglio': 1, albero: 1, info: 1, metodo: 2, fungo: 1 };
+const LEVEL = { commestibile: 1, guide: 1, zona: 1, 'specie-dettaglio': 1, albero: 1, info: 1, metodo: 2, fungo: 1 };
 const TABS = ['uscite', 'mappa', 'specie', 'diario'];
 const SUB = { specie: 0, alberi: 1, riconosci: 2 };
 const scrollMem = new Map();
@@ -206,6 +245,7 @@ function titleOf(r) {
   if (!r) return '';
   if (r.view === 'zona') { const z = zones.find((x) => x.id === r.zoneId); return z ? splitName(z)[0] : 'Zona'; }
   if (r.view === 'specie-dettaglio') return SPECIES.find((x) => x.id === r.speciesId)?.name || 'Specie';
+  if (r.view === 'commestibile') return catalog.find(s => s.id === r.speciesId)?.name || 'Specie';
   if (r.view === 'fungo') return taxonName(r.taxonId) || 'Specie';
   if (r.view === 'guide') return guideTitle(r.guideId);
   if (r.view === 'albero') return treesData?.trees?.[r.treeId]?.name || 'Albero';
@@ -214,7 +254,7 @@ function titleOf(r) {
 }
 function parentOf(r) {
   if (!r) return '#/';
-  if (r.view === 'specie-dettaglio' || r.view === 'fungo') return '#/specie';
+  if (r.view === 'specie-dettaglio' || r.view === 'fungo' || r.view === 'commestibile') return '#/specie';
   if (r.view === 'albero') return '#/alberi';
   if (r.view === 'riconosci' && r.compare) return '#/riconosci';
   return '#/';
@@ -262,7 +302,7 @@ function updateBack(r, nav) {
 
 function route() {
   const r = parseRoute();
-  r.tab = { zona: 'uscite', 'specie-dettaglio': 'specie', alberi: 'specie', albero: 'specie', riconosci: 'specie', info: '', metodo: '', guide: 'uscite', fungo: 'specie' }[r.view] ?? r.view;
+  r.tab = { zona: 'uscite', 'specie-dettaglio': 'specie', alberi: 'specie', albero: 'specie', riconosci: 'specie', info: '', metodo: '', guide: 'uscite', fungo: 'specie', commestibile: 'specie' }[r.view] ?? r.view;
   r.hash = location.hash || '#/';
   const nav = navKind(prev, r), back = prev?.hash || '';
   if (prev) scrollMem.set(prev.hash, scrollY);
@@ -285,6 +325,7 @@ function routeNow(r, nav) {
   if (r.view === 'albero') renderTreePage($('#tree-detail'), r.treeId);
   if (r.view === 'guide') renderGuide($('#guide-body'), r.guideId);
   if (r.view === 'metodo') renderMethod($('#method-body'));
+  if (r.view === 'commestibile') renderEdiblePage(r.speciesId);
   if (r.view === 'fungo') renderTaxonPage($('#taxon-detail'), r.taxonId);
   if (r.view === 'riconosci') { setCompare(r.compare, r.pick); renderIdentify($('#identify')); }
   if (r.view === 'mappa') {
@@ -341,18 +382,19 @@ addEventListener('resize', () => { clearTimeout(fitT2); fitT2 = setTimeout(() =>
 function renderFilterSummary() {
   renderFilterBox($('#active-filters'));
   renderFilterBox($('#map-filters'), true);
+  renderTrackedSpecies();
 }
 function renderFilterBox(box, onMap = false) {
   if (!box) return;
-  const all = state.groups.size === GROUPS.length;
+  const all = state.speciesIds === null;
   const order = groupOrder();
   // in mappa la riga scorre di lato: tutti i funghi, senza "+ altri"
-  const vis = chipsOpen || onMap ? order : order.filter((g, k) => k < fitN || (!all && state.groups.has(g.id)));
+  const vis = chipsOpen || onMap ? order : order.filter((g, k) => k < fitN || (!all && groupSelection(g.id) !== 'none'));
   const hidden = order.length - vis.length;
   const bd = onMap && results ? bestOfDay(state.dayOffset) : null;
   const dayChip = bd ? `<button type="button" class="chip chip-day" data-days aria-expanded="${!!box.closest('.map-top')?.classList.contains('days-open')}" style="--dc:var(${scoreVar(bd.s)})"><i></i>${esc(state.dayOffset === 0 ? 'Oggi' : state.dayOffset === 1 ? 'Domani' : fmtDate(bd.d.date, { weekday: 'short' }).replace('.', '').replace(/^./, (c) => c.toUpperCase()))} ${esc(fmtDate(bd.d.date, { day: 'numeric' }))} <b class="pc">${formatIndex(bd.s)}</b><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>` : '';
   box.innerHTML = `${dayChip}<button type="button" class="chip" data-g="all" aria-pressed="${all}">Tutti</button>
-    ${vis.map((g) => `<button type="button" class="chip chip-g" data-g="${g.id}" aria-pressed="${!all && state.groups.has(g.id)}">${esc(g.label)}</button>`).join('')}
+    ${vis.map((g) => `<button type="button" class="chip chip-g" data-g="${g.id}" aria-pressed="${!all && groupSelection(g.id) !== 'none'}">${esc(g.label)}${outOfSeason(g.id) ? '<small class="season-out">Fuori stagione</small>' : ''}</button>`).join('')}
     <button type="button" class="chip chip-more" data-more aria-haspopup="dialog">Tutti i filtri</button>
     <span class="af-sep" aria-hidden="true"></span>
     ${PREFS.map(([k, label]) => `<button type="button" class="chip pref" data-p="${k}" aria-pressed="${!!state[k]}">${esc(label)}</button>`).join('')}`;
@@ -369,10 +411,8 @@ function renderFilterBox(box, onMap = false) {
   if (!chipsOpen && !onMap) fitChips(box);
   box.querySelectorAll('[data-g]').forEach((b) => b.addEventListener('click', () => {
     const id = b.dataset.g;
-    if (id === 'all') state.groups = new Set(GROUPS.map((g) => g.id));
-    else if (state.groups.size === GROUPS.length) state.groups = new Set([id]); // da "Tutti" si restringe al gruppo toccato
-    else if (state.groups.has(id)) { state.groups.delete(id); if (!state.groups.size) state.groups = new Set(GROUPS.map((g) => g.id)); }
-    else state.groups.add(id);
+    if (id === 'all') state.speciesIds = null;
+    else toggleGroup(id);
     changed();
   }));
   box.querySelectorAll('[data-p]').forEach((b) => b.addEventListener('click', () => soft(() => { state[b.dataset.p] = !state[b.dataset.p]; savePrefs(); renderFilterSummary(); renderAll(); })));
@@ -382,36 +422,48 @@ function renderFilterBox(box, onMap = false) {
 function openFullFilters() {
   let dlg = $('#full-filters');
   if (!dlg) {
-    dlg = document.createElement('dialog');
-    dlg.id = 'full-filters'; dlg.className = 'full-filters';
-    dlg.setAttribute('aria-labelledby', 'full-filters-title');
-    document.body.appendChild(dlg);
+    dlg = document.createElement('dialog'); dlg.id = 'full-filters'; dlg.className = 'full-filters';
+    dlg.setAttribute('aria-labelledby', 'full-filters-title'); document.body.appendChild(dlg);
   }
   const paint = () => {
+    const selected = selectedCatalog(), date = filterDate();
+    const chip = (s) => `<button type="button" class="chip species-choice" data-catalog-id="${s.id}" aria-pressed="${state.speciesIds === null || state.speciesIds.has(s.id)}"><span>${esc(s.name)}<small class="${seasonStatus(s,date)==='out'?'season-out':''}">${seasonStatus(s,date)==='out'?'Fuori stagione':s.toxicity==='commestibile con cautela'?'Preparazione specifica':''}</small></span></button>`;
     dlg.innerHTML = `<div class="filter-panel-head"><h2 id="full-filters-title">Tutti i filtri</h2><button type="button" class="btn ghost" data-close>Chiudi</button></div>
-      <p>Quali specie vuoi esplorare? Puoi scegliere più gruppi.</p>
+      <p>Scegli gruppi o singole specie commestibili.</p>
+      <label class="species-search-label" for="species-filter-search">Aggiungi una specie</label>
+      <input id="species-filter-search" class="wiz-input" type="search" placeholder="Es. pioppino, spugnola, Boletus…" role="combobox" aria-autocomplete="list" aria-controls="species-filter-options" aria-expanded="false" autocomplete="off">
+      <ul id="species-filter-options" class="species-options" role="listbox" aria-label="Specie commestibili" hidden></ul>
+      <p class="small muted">Da “Tutti”, scegliere una specie restringe la selezione; poi puoi aggiungerne altre.</p>
+      ${state.speciesIds !== null ? `<div class="filter-panel-groups selected-species" aria-label="Specie selezionate">${selected.map(s=>`<button type="button" class="chip" data-remove-species="${s.id}" aria-label="Rimuovi ${esc(s.name)}">${esc(s.name)}${seasonStatus(s,date)==='out'?'<small class="season-out">Fuori stagione</small>':''} <span aria-hidden="true">×</span></button>`).join('')}</div>` : ''}
       <div class="filter-panel-groups" role="group" aria-label="Gruppi di funghi">
-        <button type="button" class="chip" data-all aria-pressed="${state.groups.size === GROUPS.length}">Tutti i funghi</button>
-        ${GROUPS.map((g) => `<button type="button" class="chip" data-group="${g.id}" aria-pressed="${state.groups.has(g.id)}">${thumb(g.rep, 32)}${esc(g.label)}${g.id === 'porcini' ? ' (4 specie)' : ''}</button>`).join('')}
-      </div><h3>Preferenze per l'uscita</h3><p class="small muted">Cambiano l'ordine dei consigli, mantenendo l'indice delle condizioni.</p>
-      <div class="filter-panel-groups" role="group" aria-label="Preferenze">${PREFS.map(([k, label]) => `<button type="button" class="chip" data-pref="${k}" aria-pressed="${!!state[k]}">${esc(label)}</button>`).join('')}</div>
-      <p class="small muted" aria-live="polite">${state.groups.size} gruppi selezionati su ${GROUPS.length}</p><button type="button" class="btn primary big" data-close>Mostra i risultati</button>`;
-    dlg.querySelectorAll('[data-close]').forEach((b) => b.addEventListener('click', () => dlg.close()));
-    const changed = (focus) => {
-      savePrefs(); if (series) compute(); outCache.clear(); renderAll(); paint();
-      dlg.querySelector(focus)?.focus();
-    };
-    dlg.querySelector('[data-all]').addEventListener('click', () => { state.groups = new Set(GROUPS.map((g) => g.id)); changed('[data-all]'); });
-    dlg.querySelectorAll('[data-group]').forEach((b) => b.addEventListener('click', () => {
-      const id = b.dataset.group;
-      if (state.groups.size === GROUPS.length) state.groups = new Set([id]);
-      else if (state.groups.has(id)) { state.groups.delete(id); if (!state.groups.size) state.groups = new Set(GROUPS.map((g) => g.id)); }
-      else state.groups.add(id);
-      changed(`[data-group="${id}"]`);
-    }));
-    dlg.querySelectorAll('[data-pref]').forEach((b) => b.addEventListener('click', () => { const k = b.dataset.pref; state[k] = !state[k]; changed(`[data-pref="${k}"]`); }));
+        <button type="button" class="chip" data-all aria-pressed="${state.speciesIds === null}">Tutti i commestibili</button>
+        ${GROUPS.map(g=>`<button type="button" class="chip" data-group="${g.id}" aria-pressed="${groupSelection(g.id)!=='none'}">${thumb(g.rep,32)}<span>${esc(g.label)}${g.id==='porcini'?' (4 specie)':''}${outOfSeason(g.id)?'<small class="season-out">Fuori stagione</small>':''}</span></button>`).join('')}
+      </div>
+      <details class="catalog-all"><summary>Tutti i ${catalog.length} commestibili del catalogo</summary><div class="filter-panel-groups">${[...catalog].sort((a,b)=>a.name.localeCompare(b.name,'it')).map(chip).join('')}</div></details>
+      <p class="small muted">Stagione indicativa per ${fmtDate(date,{day:'numeric',month:'long'})}, variabile con clima e quota. Sono inclusi anche i commestibili che richiedono trattamenti. Il catalogo si amplia: non comprende ogni specie esistente.</p>
+      <h3>Preferenze per l'uscita</h3><p class="small muted">Cambiano l'ordine dei consigli, mantenendo l'indice delle condizioni.</p>
+      <div class="filter-panel-groups" role="group" aria-label="Preferenze">${PREFS.map(([k,label])=>`<button type="button" class="chip" data-pref="${k}" aria-pressed="${!!state[k]}">${esc(label)}</button>`).join('')}</div>
+      <p class="small muted" aria-live="polite">${selected.length} specie selezionate · ${selected.filter(s=>s.modelId).length} con indice di crescita</p><button type="button" class="btn primary big" data-close>Mostra i risultati</button>`;
+    dlg.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',()=>dlg.close()));
+    const changed = (focus) => { savePrefs(); if (series) compute(); outCache.clear(); renderFilterSummary(); renderAll(); paint(); dlg.querySelector(focus)?.focus(); };
+    mountSpeciesAutocomplete({ input: dlg.querySelector('#species-filter-search'), list: dlg.querySelector('#species-filter-options'), catalog, date,
+      onSelect: s => { addSpecies(s.id); changed('#species-filter-search'); } });
+    dlg.querySelector('[data-all]').onclick = () => { state.speciesIds = null; changed('[data-all]'); };
+    dlg.querySelectorAll('[data-group]').forEach(b=>b.onclick=()=>{toggleGroup(b.dataset.group); changed(`[data-group="${b.dataset.group}"]`);});
+    dlg.querySelectorAll('[data-remove-species]').forEach(b=>b.onclick=()=>{state.speciesIds.delete(b.dataset.removeSpecies); if (!state.speciesIds.size) state.speciesIds=null; changed('#species-filter-search');});
+    dlg.querySelectorAll('[data-catalog-id]').forEach(b=>b.onclick=()=>{const id=b.dataset.catalogId; if(state.speciesIds?.has(id)){state.speciesIds.delete(id);if(!state.speciesIds.size)state.speciesIds=null;}else addSpecies(id);changed('#species-filter-search');});
+    dlg.querySelectorAll('[data-pref]').forEach(b=>b.onclick=()=>{const k=b.dataset.pref;state[k]=!state[k];changed(`[data-pref="${k}"]`);});
   };
+  dlg.onclose = () => $(state.view === 'mappa' ? '#map-filters [data-more]' : '#active-filters [data-more]')?.focus();
   paint(); dlg.showModal();
+}
+
+function renderTrackedSpecies() {
+  const box = $('#followed-species'); if (!box) return;
+  const selected = state.speciesIds === null ? [] : selectedCatalog();
+  box.hidden = !selected.length;
+  const date = filterDate();
+  box.innerHTML = selected.length ? `<h2 class="sec-title">Le specie che hai scelto</h2><div class="followed-grid">${selected.map(s=>`<article class="followed-card"><a href="${s.href}"><b>${esc(s.name)}</b><i>${esc(s.latin)}</i></a><span class="season-badge ${seasonStatus(s,date)==='out'?'season-out':''}">${seasonLabel(s,date)}</span>${reportBadge(null,s.id)}${s.modelId?'': '<small class="muted">Indice non disponibile</small>'}<button type="button" class="link-btn small" data-report data-species="${s.id}">Segnala un’osservazione</button></article>`).join('')}</div>` : '';
 }
 
 async function refreshWeather(force) {
@@ -443,7 +495,7 @@ async function refreshWeather(force) {
   }
 }
 
-const selectedSpecies = () => SPECIES.filter((s) => state.groups.has(s.group));
+const selectedSpecies = () => { const ids = new Set(selectedCatalog().map(s=>s.modelId).filter(Boolean)); return SPECIES.filter(s=>ids.has(s.id)); };
 
 // meteo della mattina dell'uscita per zona e giorno (null finche' le previsioni orarie non arrivano)
 const outCache = new Map();
@@ -617,20 +669,29 @@ function renderSpeciesGrid() {
   }
   fillSpecies();
 }
+const catalogPhoto = (s) => s.modelId ? speciesPhoto(s.modelId) : searchTaxa().find(t => t.key === s.id)?.photo;
 function fillSpecies() {
-  const month = new Date().getMonth();
-  const q = normTxt(spQuery).trim();
-  const groups = Object.fromEntries(GROUPS.map((g) => [g.id, g.label]));
-  const list = SPECIES.filter((sp) => (spFilter === 'all' || (spFilter === 'season' ? sp.months[month] >= 0.6 : sp.group === spFilter))
-    && (!q || q.split(/\s+/).every((w) => normTxt(`${sp.name} ${sp.latin} ${groups[sp.group]}`).includes(w))));
-  $('#sp-cards').innerHTML = list.map((sp) => {
-    const ph = speciesPhoto(sp.id);
-    const inSeason = sp.months[month] >= 0.6;
-    return `<button type="button" class="sp-card" data-species="${sp.id}" aria-label="${esc(sp.name)}">
-      ${ph ? `<img src="${ph.file}" alt="" loading="lazy" decoding="async">` : ''}<span class="shade"></span>
-      ${inSeason ? '<span class="pill glass sm">in stagione</span>' : ''}
-      <span class="sp-card-body"><b>${esc(sp.name)}</b><i>${esc(sp.latin)}</i></span></button>`;
-  }).join('') || `<p class="muted empty-note">Nessuna specie commestibile con "${esc(spQuery)}". Se cerchi un fungo che hai trovato, anche velenoso, prova <a href="#/riconosci">Riconosci</a>.</p>`;
+  const date = todayISO();
+  const matched = spQuery.trim() ? searchEdibleCatalog(catalog, spQuery, { date, limit: catalog.length }) : catalog;
+  const list = matched.filter(s => spFilter === 'all' || (spFilter === 'season' ? seasonStatus(s,date)==='in' : s.group===spFilter));
+  $('#sp-cards').innerHTML = list.map(s => {
+    const ph = catalogPhoto(s);
+    return `<a class="sp-card" href="${s.href}" aria-label="${esc(s.name)}">
+      ${ph ? `<img src="${ph.file}" alt="" loading="lazy" decoding="async">` : `<span class="catalog-placeholder" aria-hidden="true">${esc(s.name.slice(0,2))}</span>`}<span class="shade"></span>
+      <span class="pill glass sm">${seasonLabel(s,date)}</span>
+      <span class="sp-card-body"><b>${esc(s.name)}</b><i>${esc(s.latin)}</i></span></a>`;
+  }).join('') || `<p class="muted empty-note">Nessuna specie commestibile con “${esc(spQuery)}”.</p>`;
+}
+
+function renderEdiblePage(id) {
+  const s = catalog.find(x=>x.id===id), box=$('#edible-detail');
+  if (!s) { box.innerHTML='<p>Specie non presente nel catalogo.</p>';return; }
+  const date=todayISO(), names=['gen','feb','mar','apr','mag','giu','lug','ago','set','ott','nov','dic'];
+  box.innerHTML=`<article class="editorial-article"><p class="eyebrow">Taccuino delle specie</p><h1>${esc(s.name)}</h1><p><i>${esc(s.latin)}</i></p><span class="season-badge ${seasonStatus(s,date)==='out'?'season-out':''}">${seasonLabel(s,date)}</span>
+    <p>${esc(s.habitat || '')}</p><h2>Quando osservarla</h2><p>${s.months?.length ? s.months.map(m=>names[m-1]).join(' · ') : 'Calendario non ancora documentato.'}</p><p class="small muted">Stagione indicativa da manualistica, non validata nel Reatino: clima e quota possono spostarla. Le coltivazioni seguono cicli diversi.</p>
+    ${s.caution?`<p class="notice">${esc(s.caution)}</p>`:''}
+    <h2>Le osservazioni aiutano a conoscerla</h2><p>L’indice di crescita non è ancora disponibile per questa specie. Puoi annotare ritrovamenti e ricerche a vuoto nel taccuino e scegliere di condividerli.</p><button class="btn primary" type="button" data-report data-species="${s.id}">Segnala un’osservazione</button>
+    <p class="small muted">Commestibilità della specie, non dell’esemplare: foto e schede non confermano l’identità. Fai controllare il raccolto all’Ispettorato micologico ASL e segui le indicazioni di preparazione.</p><details><summary>Fonti</summary><ul>${(s.sources||[]).map(x=>`<li><a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.title)}</a></li>`).join('')}</ul></details></article>`;
 }
 
 
@@ -647,7 +708,7 @@ function bestOfDay(o) {
     const d = dayEntry(z.id, o);
     if (!d?.best) continue;
     const sc = adjusted(z, d.score, d);
-    const rank = preferenceRank(z, sc, d) * wxRank(z, d) * communityRank(z.id, selectedSpecies().map((s) => s.id));
+    const rank = preferenceRank(z, sc, d) * wxRank(z, d) * communityRank(z.id, selectedCatalog().map((s) => s.id));
     if (!best || rank > best.rank) best = { s: sc, rank, z, d, o };
   }
   return best;
@@ -700,7 +761,7 @@ function combosList() {
     for (let o = 0; o <= AHEAD_DAYS; o++) {
       if (state.homeDay != null && o !== state.homeDay) continue;
       const d = dayEntry(z.id, o);
-      if (d?.best) { const s = adjusted(z, d.score, d); combos.push({ z, o, d, s, r: preferenceRank(z, s, d) * wxRank(z, d) * communityRank(z.id, selectedSpecies().map((s) => s.id)) }); }
+      if (d?.best) { const s = adjusted(z, d.score, d); combos.push({ z, o, d, s, r: preferenceRank(z, s, d) * wxRank(z, d) * communityRank(z.id, selectedCatalog().map((s) => s.id)) }); }
     }
   }
   combos.sort((a, b) => b.r - a.r || a.o - b.o);
@@ -728,11 +789,15 @@ function buildSearch(idj, trj, embedded) {
     const cv = coverOf(z);
     items.push({ kind: 'zona', title: splitName(z)[0], sub: splitName(z)[1] || z.name, hay: `${z.name} ${tip} ${treesHere} ${(habitat?.[z.id]?.road_names || []).join(' ')}`, href: `#/zona/${z.id}`, img: cv ? img(cv.small) : '', boost: 1 });
   }
-  for (const sp of SPECIES) {
+  for (const sp of catalog.filter(s=>s.modelId)) {
     const d = idj?.species?.[sp.id] || {};
     items.push({ kind: 'fungo', title: sp.name, sub: sp.latin, hay: `${(d.aka || []).join(' ')} ${sp.group || ''} ${d.latin || ''}`, href: `#/specie/${sp.id}`, img: thumb(sp.id, 44), boost: 1 });
   }
-  for (const t of searchTaxa()) {
+  for (const s of catalog.filter(s=>!s.modelId)) {
+    const ph = catalogPhoto(s);
+    items.push({kind:'fungo',title:s.name,sub:s.latin,hay:(s.aliases||[]).join(' '),href:s.href,img:ph?img(ph.file):'',boost:1});
+  }
+  for (const t of searchTaxa().filter(t=>!catalog.some(s=>s.id===t.key))) {
     const look = t.look.map((id) => SPECIES.find((x) => x.id === id)?.name).filter(Boolean);
     items.push({ kind: 'velenoso', title: t.name || t.latin, sub: `${t.name !== t.latin ? t.latin : ''}${look.length ? `${t.name !== t.latin ? ' · ' : ''}si confonde con ${look.slice(0, 2).join(', ').toLowerCase()}` : ''}`, hay: look.join(' '), href: `#/fungo/${t.key}`, img: t.photo ? img(A(t.photo.thumb || t.photo.file)) : '', badge: t.toxicity, badgeCls: `tox-${String(t.toxicity).replace(/\s/g, '-')}` });
   }
@@ -796,7 +861,9 @@ function renderHome() {
   const list = combosList();
   const hero = list[0];
   const box = $('#hero');
-  if (!hero) { box.innerHTML = `<p class="notice">Le condizioni di crescita non sono calcolabili: mancano dati o meteo aggiornato. Puoi comunque esplorare boschi e sentieri.</p><div class="explore-fallback">${zones.slice(0, 6).map((z) => `<a class="btn ghost" href="#/mappa/${z.id}">${esc(z.title || z.name)}</a>`).join('')}</div>`; $('#ranking').innerHTML = ''; renderCommunityIntro(); return; }
+  renderTrackedSpecies();
+  if (!hero) { box.innerHTML = `<p class="notice">${selectedSpecies().length ? 'Le condizioni di crescita non sono calcolabili: mancano dati o meteo aggiornato.' : 'Per queste specie l’indice di crescita non è ancora disponibile. Puoi consultare le schede e contribuire con le osservazioni.'} Puoi comunque esplorare boschi e sentieri.</p><div class="explore-fallback">${zones.slice(0, 6).map((z) => `<a class="btn ghost" href="#/zona/${z.id}/${state.homeDay || 0}">${esc(z.title || z.name)}</a>`).join('')}</div>`; $('#ranking').innerHTML = ''; $('#others-h').hidden = true; renderSeason(); renderCommunityIntro(); return; }
+  $('#others-h').hidden = false;
   const t = hero.d.crowd ? timingAdvice({ dateStr: hero.d.date, lat: hero.z.lat, lon: hero.z.lon, crowd: hero.d.crowd }) : null;
   const a0 = access[hero.z.id]?.[0];
   const [title, sub] = splitName(hero.z);
@@ -886,7 +953,7 @@ function renderSeason() {
   for (const z of zones) {
     const d = dayEntry(z.id, o);
     if (!d) continue;
-    for (const p of scoreZoneDay(z, habitat[z.id], series[z.id], SPECIES, d.i).perSpecies) {
+    for (const p of scoreZoneDay(z, habitat[z.id], series[z.id], selectedSpecies(), d.i).perSpecies) {
       if (!best[p.species.id] || p.score > best[p.species.id].score) best[p.species.id] = { ...p, z };
     }
   }
@@ -946,7 +1013,7 @@ function openPoint(zid, pt) {
     text = 'Parcheggio o slargo da cui partono i boschi della zona.';
     actions = `<a class="btn primary big" href="${gmaps(pt.p.lat, pt.p.lon)}" target="_blank" rel="noopener">${IC.car} Indicazioni stradali fin qui</a>${copyBtn(pt.p.lat, pt.p.lon)}`;
   } else if (pt.kind === 'access') {
-    const ax = d.access;
+    const ax = d?.access;
     ic = `<span class="pt-ic pt-walk">${IC.walk}</span>`; eyebrow = 'Qui lasci l\'auto e prosegui a piedi'; title = ax.road || 'Punto più vicino al bosco adatto';
     text = `In auto ${ax.surface ? `su ${SURF_LABEL[ax.surface]}` : 'su asfalto'} fino a qui, poi ${ax.walkM < 50 ? `il bosco adatto è a bordo strada: ${esc((SHORT[ax.cat] || ax.cat).toLowerCase())} a ${ax.e} m` : `${walkTxt(ax.walkM)} in linea d'aria fino a ${esc((SHORT[ax.cat] || ax.cat).toLowerCase())} a ${ax.e} m`}, adatto a ${esc(d.best.species.name.toLowerCase())}.`;
     actions = `<a class="btn primary big" href="${gmaps(ax.rlat, ax.rlon)}" target="_blank" rel="noopener">${IC.car} Indicazioni stradali fin qui</a>${copyBtn(ax.rlat, ax.rlon)}`;
@@ -1368,7 +1435,7 @@ function planCard(z, d) {
   }
 
   const a0 = access[z.id]?.[0];
-  const ax = d.access;
+  const ax = d?.access;
   if (a0 || ax) {
     const unp = a0?.unpaved_tail_km > 0.2 ? `, ultimi ${fmtKm(a0.unpaved_tail_km)} km su strada bianca` : '';
     rows.push({ sec: 'accesso', icon: 'car', k: 'Come arrivare',
@@ -1400,7 +1467,7 @@ function renderDetail() {
   const box = $('#detail');
   if (!d?.best) {
     const missing = [...new Set((d?.perSpecies || []).flatMap((p) => p.quality?.missing || []))];
-    box.innerHTML = `<h1>${esc(z.title || z.name)}</h1><p class="notice">Indice non calcolabile${missing.length ? ': mancano ' + esc(missing.join(', ')) : ' per questo giorno'}. Un dato mancante non indica assenza di funghi.</p><p><a href="#/mappa/${z.id}">Apri la mappa</a> · <a href="#/metodo">Metodo e limiti</a></p>${z.protection ? `<p class="notice">${esc(z.protection)}</p>` : ''}`; return;
+    box.innerHTML = `<h1>${esc(z.title || z.name)}</h1><p class="notice">${selectedSpecies().length?'Indice non calcolabile':'Indice non ancora disponibile per le specie selezionate'}${missing.length ? ': mancano ' + esc(missing.join(', ')) : ' per questo giorno'}. Un dato mancante non indica assenza di funghi.</p><p><a href="#/mappa/${z.id}">Apri la mappa</a> · <a href="#/metodo">Metodo e limiti</a></p>${z.protection ? `<p class="notice">${esc(z.protection)}</p>` : ''}<p>${linkTrees(z.description)}</p>${section('accesso','Accessi e soste',renderAccess(z,{access:null}))}${section('sentieri','Sentieri della zona',renderTrails(z,null),true)}`; return;
   }
   const best = d.best;
   const s = adjusted(z, d.score, d);
@@ -1539,7 +1606,7 @@ function renderHuman(z, d) {
 function renderAccess(z, d) {
   const acc = access[z.id] || [];
   const a0 = acc[0];
-  const ax = d.access;
+  const ax = d?.access;
   if (!a0 && !ax) return '';
   const lines = [];
   if (a0) {
@@ -1613,11 +1680,11 @@ function trailCard(z, t, d, top = false) {
 }
 
 function renderTrails(z, d) {
-  const list = trailsFor(z, d.best.species, d.best.band).slice(0, 4);
-  if (!list.length) return trails[z.id] ? '<p class="small muted">Nessun sentiero segnato attraversa bosco adatto a questa quota: muoviti fuori sentiero dal punto d\'accesso.</p>' : '';
+  const list = d?.best ? trailsFor(z, d.best.species, d.best.band).slice(0,4) : (trails[z.id]?.trails || []).slice(0,4);
+  if (!list.length) return trails[z.id] ? '<p class="small muted">Non risultano sentieri compatibili in questi dati: verifica tracciati, accessibilità e segnaletica sul posto.</p>' : '';
   return `
-    <ol class="trails">${list.map((t, k) => `<li>${trailCard(z, t, d, k === 0)}${trailLinks(z, t)}</li>`).join('')}</ol>
-    <p class="muted small">Sentieri OpenStreetMap (rete CAI). Il segnavia è il segno bianco e rosso con il numero dipinto su alberi e sassi. I km "adatti" incrociano tracciato, Carta Forestale e quota della specie. Google Maps di norma non mostra i sentieri CAI: sul posto usa un'app con mappe OpenStreetMap (OsmAnd, Organic Maps, Komoot, Locus) e il GPX.</p>`;
+    <ol class="trails">${list.map((t, k) => `<li>${trailCard(z, t, d, !!d?.best && k === 0)}${trailLinks(z, t)}</li>`).join('')}</ol>
+    <p class="muted small">Sentieri OpenStreetMap (rete CAI). ${d?.best ? 'I km adatti incrociano tracciato, Carta Forestale e quota della specie.' : 'Questi percorsi sono elencati senza una valutazione di idoneità per la specie selezionata.'} Google Maps di norma non mostra i sentieri CAI: sul posto usa un'app con mappe OpenStreetMap (OsmAnd, Organic Maps, Komoot, Locus) e il GPX.</p>`;
 }
 
 // imbocchi del sentiero (data/trailheads.json): dove si arriva in auto; prima i piu' vicini alla sosta della zona

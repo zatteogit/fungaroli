@@ -59,6 +59,8 @@ Procedura guidata in 6 passi (zona → giorno → quota → ricerca → cosa e q
 - [Guida d'uso](docs/guida-uso.md): come leggere l'app, diario, regole di raccolta
 - [Dati e architettura](docs/dati-e-architettura.md): fonti, licenze, script, pubblicazione
 
+Il selettore comprende 46 voci commestibili documentate, ricercabili anche per sinonimi; l’indice resta disponibile per le 14 voci con modello. Dettagli e conteggi in [Catalogo dei commestibili](docs/catalogo-commestibili.md).
+
 ## Il modello
 
 Per ogni specie e giorno *d*:

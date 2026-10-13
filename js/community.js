@@ -4,7 +4,7 @@ import { startRegistration, startAuthentication, browserSupportsWebAuthn } from 
 import { communityMultiplier } from './community-signal.js';
 
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-let enabled = false, user = null, summary = null, zones = [], ready = Promise.resolve(), reportDialog, authDialog;
+let enabled = false, user = null, summary = null, zones = [], ready = Promise.resolve(), reportDialog, authDialog, speciesCatalog = SPECIES;
 export const communityEnabled = () => enabled;
 export const currentUser = () => user;
 export const communityReady = () => ready;
@@ -30,8 +30,9 @@ export function communityStatus() {
     : 'Siamo all’inizio: nessuna segnalazione collettiva. Le condizioni di crescita sono stimate; la trovabilità non è ancora validata.';
 }
 export function reportBadge(zoneId, speciesId) {
-  const r = summary?.reports?.find((r) => r.zoneId === zoneId && r.speciesId === speciesId);
-  if (!r) return '';
+  const records = (summary?.reports || []).filter(r => (!zoneId || r.zoneId === zoneId) && r.speciesId === speciesId);
+  if (!records.length) return '';
+  const r = records.reduce((a,r) => ({sightings:a.sightings+r.sightings,zeros:a.zeros+r.zeros,latestDay:r.latestDay>a.latestDay?r.latestDay:a.latestDay}), {sightings:0,zeros:0,latestDay:''});
   return `<span class="community-badge" title="Segnalazioni degli ultimi 7 giorni, dichiarate dagli utenti e non certificate. Ultima: ${esc(r.latestDay)}">${r.sightings ? `${r.sightings} ${r.sightings === 1 ? 'segnalazione' : 'segnalazioni'}` : `${r.zeros} ${r.zeros === 1 ? 'ricerca a vuoto' : 'ricerche a vuoto'}`}</span>`;
 }
 export function communityRank(zoneId, speciesIds) {
@@ -43,8 +44,8 @@ async function session() {
   try { user = (await communityRequest('session')).user; } catch { user = null; }
 }
 
-export function initCommunity({ zoneList }) {
-  zones = zoneList;
+export function initCommunity({ zoneList, speciesList = SPECIES }) {
+  zones = zoneList; speciesCatalog = speciesList;
   document.addEventListener('fungaroli:refresh-community', refreshCommunity);
   ready = (async () => {
     if (globalThis.FUNGAROLI_DATA || globalThis.FUNGAROLI_REVIEW) { changed(); return; }
@@ -115,12 +116,12 @@ export async function openAccount() {
 }
 
 export async function shareDiaryEntry(entry, { identificationChecked = false } = {}) {
-  if (!entry || !Object.entries(entry.finds || {}).some(([id, amount]) => SPECIES.some((s) => s.id === id) && (amount > 0 || (amount === 0 && entry.searched?.includes(id)))))
+  if (!entry || !Object.entries(entry.finds || {}).some(([id, amount]) => speciesCatalog.some((s) => s.id === id) && (amount > 0 || (amount === 0 && entry.searched?.includes(id)))))
     throw new Error('Non ci sono ritrovamenti o ricerche a vuoto esplicite da condividere.');
   await ensureAccount();
   if (!user) return false;
   for (const [speciesId, amount] of Object.entries(entry.finds || {})) {
-    if (!SPECIES.some((s) => s.id === speciesId) || (amount === 0 && !entry.searched?.includes(speciesId))) continue;
+    if (!speciesCatalog.some((s) => s.id === speciesId) || (amount === 0 && !entry.searched?.includes(speciesId))) continue;
     await communityRequest('reports', 'POST', { entryId: entry.id, zoneId: entry.zoneId, day: entry.date,
       speciesId, amount, searched: entry.searched?.includes(speciesId) || false, identificationChecked });
   }
@@ -132,7 +133,7 @@ export async function openQuickReport(zoneId = '', speciesId = '') {
   reportDialog.setAttribute('aria-label', 'Segnala dal bosco');
   reportDialog.innerHTML = `<h2>Un’osservazione dal bosco</h2><p>Aiuta chi verrà dopo di te. La zona resta approssimativa: nessun punto GPS o nome è pubblicato.</p>
     <form><label>Zona <select class="wiz-input" name="zone">${zones.map((z) => `<option value="${z.id}"${z.id === zoneId ? ' selected' : ''}>${esc(z.title || z.name)}</option>`).join('')}</select></label>
-    <label>Specie <select class="wiz-input" name="species">${SPECIES.map((s) => `<option value="${s.id}"${s.id === speciesId ? ' selected' : ''}>${esc(s.name)}</option>`).join('')}</select></label>
+    <label>Specie <select class="wiz-input" name="species">${speciesCatalog.map((s) => `<option value="${s.id}"${s.id === speciesId ? ' selected' : ''}>${esc(s.name)}</option>`).join('')}</select></label>
     <label>Quando <input class="wiz-input" type="date" name="day" value="${todayISO()}" max="${todayISO()}" required></label>
     <fieldset><legend>Cosa hai osservato?</legend><div class="seg">${['Cercata, non trovata', 'Pochi', 'Discreti', 'Tanti'].map((l, i) => `<label><input type="radio" name="amount" value="${i}" required> ${l}</label>`).join('')}</div></fieldset>
     <label class="small"><input type="checkbox" name="checked"> Identità controllata da un micologo (facoltativo)</label>

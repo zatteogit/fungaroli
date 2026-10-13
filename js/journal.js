@@ -156,7 +156,7 @@ const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&l
 const iso = todayISO;
 const fmt = (s) => new Date(s + 'T12:00:00').toLocaleDateString('it-IT', { weekday: 'short', day: 'numeric', month: 'short', year: 'numeric' });
 
-export function initJournal({ zones, predict, captureForecast, getZoneId, zoneImage = () => '' }) {
+export function initJournal({ zones, speciesCatalog = SPECIES, predict, captureForecast, getZoneId, zoneImage = () => '' }) {
   const dlg = document.getElementById('journal-dialog');
   const body = dlg.querySelector('.wiz-body');
   const list = document.getElementById('journal-list');
@@ -248,7 +248,7 @@ export function initJournal({ zones, predict, captureForecast, getZoneId, zoneIm
 
     if (s === 'ricerca') {
       shell('Come hai cercato?', 'Indica le specie cercate, anche quando non le hai trovate. Le altre restano non osservate.',
-        `<div class="filter-panel-groups">${SPECIES.map((sp) => `<button type="button" class="chip" data-searched="${sp.id}" aria-pressed="${draft.searched.includes(sp.id)}">${esc(sp.name)}</button>`).join('')}</div>
+        `<div class="filter-panel-groups">${speciesCatalog.map((sp) => `<button type="button" class="chip" data-searched="${sp.id}" aria-pressed="${draft.searched.includes(sp.id)}">${esc(sp.name)}</button>`).join('')}</div>
          <label>Inizio ricerca (ora del dispositivo) <input class="wiz-input" type="datetime-local" data-effort="startedAt" value="${esc(draft.effort.startedAt || '')}" min="${draft.date}T00:00" max="${draft.date}T23:59"></label>
          <label>Minuti di ricerca <input class="wiz-input" type="number" min="1" max="1440" data-effort="minutes" value="${draft.effort.minutes || ''}"></label>
          <label>Numero di cercatori <input class="wiz-input" type="number" min="1" max="100" data-effort="people" value="${draft.effort.people || ''}"></label>
@@ -259,7 +259,7 @@ export function initJournal({ zones, predict, captureForecast, getZoneId, zoneIm
 
     if (s === 'cosa') {
       const pred = predict(draft.zoneId, draft.date, draft.band) || {};
-      const sorted = [...SPECIES].sort((a, b) => (pred[b.id] ?? -1) - (pred[a.id] ?? -1));
+      const sorted = [...speciesCatalog].sort((a, b) => (pred[b.id] ?? -1) - (pred[a.id] ?? -1));
       const showAll = draft.showAll || sorted.slice(6).some((sp) => draft.finds[sp.id] || draft.searched.includes(sp.id));
       const shown = showAll ? sorted : sorted.slice(0, 6);
       const rows = shown.map((sp) => `
@@ -284,7 +284,7 @@ export function initJournal({ zones, predict, captureForecast, getZoneId, zoneIm
     if (s === 'nota') {
       const found = Object.entries(draft.finds).filter(([, l]) => l);
       const recap = found.length
-        ? found.map(([id, l]) => `${SPECIES.find((x) => x.id === id).name} (${LEVELS[l].toLowerCase()})`).join(', ')
+        ? found.map(([id, l]) => `${speciesCatalog.find((x) => x.id === id).name} (${LEVELS[l].toLowerCase()})`).join(', ')
         : 'niente funghi';
       shell('Vuoi aggiungere una nota?', 'Facoltativo: esposizione, tipo di bosco, com\'era il terreno…',
         `<p class="wiz-recap"><b>${esc(zone.name)}</b> · ${fmt(draft.date)}${draft.band ? ` · ${draft.band} m` : ''}<br>${esc(recap)}</p>
@@ -347,18 +347,18 @@ export function initJournal({ zones, predict, captureForecast, getZoneId, zoneIm
           <button type="button" class="btn light big" data-open-journal-inline>＋ Registra un'uscita</button></div></div>`;
     const rows = entries.map((e) => {
       const z = zones.find((x) => x.id === e.zoneId);
-      const found = Object.entries(e.finds || {}).filter(([, l]) => l > 0).map(([id, l]) => `${SPECIES.find((x) => x.id === id)?.name ?? id} (${LEVELS[l]?.toLowerCase() || l})`).join(', ') || 'nessun ritrovamento annotato';
+      const found = Object.entries(e.finds || {}).filter(([, l]) => l > 0).map(([id, l]) => `${speciesCatalog.find((x) => x.id === id)?.name ?? id} (${LEVELS[l]?.toLowerCase() || l})`).join(', ') || 'nessun ritrovamento annotato';
       const a = agreement(e);
       const top = Object.entries(e.predicted || {}).filter(([, v]) => Number.isFinite(v)).sort((x, y) => y[1] - x[1])[0];
       const badge = e.kind === 'plan' ? '<span class="tag">previsione salvata prima dell’uscita</span>'
-        : a ? a.species.map((x) => `<span class="tag ${x.ok ? 'ok' : 'warn'}">${esc(SPECIES.find((s) => s.id === x.id)?.name || x.id)}: ${x.ok ? 'concordante' : x.said ? 'indice alto, zero osservato' : 'trovata con indice basso'}</span>`).join(' ')
+        : a ? a.species.map((x) => `<span class="tag ${x.ok ? 'ok' : 'warn'}">${esc(speciesCatalog.find((s) => s.id === x.id)?.name || x.id)}: ${x.ok ? 'concordante' : x.said ? 'indice alto, zero osservato' : 'trovata con indice basso'}</span>`).join(' ')
           : '<span class="tag">osservazione senza confronto prospettico</span>';
       const img = zoneImage(e.zoneId);
       return `<li class="j-item">
         <span class="j-img">${img ? `<img src="${img}" alt="" loading="lazy" decoding="async">` : ''}</span>
         <div class="j-body">
           <div class="j-top"><b>${esc(z?.title ?? z?.name ?? e.zoneId)}</b><span class="muted small">${fmt(e.date)}${e.band ? ` · ${esc(e.band)} m` : ''}</span></div>
-          <div class="small">${e.kind === 'plan' ? 'Piano' : 'Trovato: ' + esc(found)}${top ? ` · indice ${formatIndex(top[1])} (${esc(SPECIES.find((x) => x.id === top[0])?.name ?? '')})` : ''}</div>
+          <div class="small">${e.kind === 'plan' ? 'Piano' : 'Trovato: ' + esc(found)}${top ? ` · indice ${formatIndex(top[1])} (${esc(speciesCatalog.find((x) => x.id === top[0])?.name ?? '')})` : ''}</div>
           <div>${badge}</div>
           ${e.note ? `<div class="small muted">${esc(e.note)}</div>` : ''}
           ${store.kind === 'community' && e.kind !== 'plan' ? `<button type="button" class="link-btn small" data-share-entry="${esc(e.id)}">Condividi osservazioni</button> <button type="button" class="link-btn small" data-withdraw-entry="${esc(e.id)}">Ritira segnalazioni</button>` : ''}

@@ -148,3 +148,57 @@ test('i campi del diario importato vengono visualizzati come testo', async ({ pa
   expect(await page.evaluate(()=>window.injected)).toBeUndefined();
   expect(await page.locator('#journal-list [onerror], #journal-list [onload]').count()).toBe(0);
 });
+
+test('autocomplete dei commestibili, selezione individuale, stagione e persistenza', async ({page})=>{
+  await page.setViewportSize({width:390,height:844}); const errors=await setup(page);
+  const baseline=await page.locator('#hero .pc').first().textContent();
+  await page.locator('#active-filters [data-more]').click();
+  const input=page.locator('#species-filter-search'), options=page.locator('#species-filter-options');
+  await input.fill('phalloides'); await expect(options.getByRole('option')).toHaveCount(0);
+  await input.fill('agrocybe aegerita'); await expect(options.getByRole('option')).toHaveCount(1);
+  await input.press('ArrowDown'); await expect(input).toHaveAttribute('aria-activedescendant',/option-0$/);
+  await input.press('Enter'); await expect(page.locator('[data-remove-species="cyclocybe-aegerita"]')).toBeVisible();
+  await input.fill('spugnole');
+  const month=Number(todayISO().slice(5,7));
+  if (![3,4,5,6].includes(month)) await expect(options.getByRole('option').first()).toContainText('Fuori stagione');
+  await options.getByRole('option').first().click();
+  await expect(page.locator('[data-remove-species]')).toHaveCount(2);
+  await page.screenshot({path:'/tmp/fungaroli-species-filter.png',fullPage:true});
+  await page.locator('#full-filters [data-close]').first().click();
+  await expect(page.locator('#hero')).toContainText('indice di crescita non è ancora disponibile');
+  await expect(page.locator('#hero .ring')).toHaveCount(0);
+  await page.locator('#hero .explore-fallback a').first().click();
+  await expect(page.locator('#detail')).toContainText('Indice non ancora disponibile');
+  await expect(page.locator('#detail .trails li').first()).toBeVisible();
+  await page.goto('/'); await expect(page.locator('#followed-species .followed-card')).toHaveCount(2);
+  await page.locator('#followed-species a').first().click();
+  await expect(page.locator('#edible-detail')).toContainText('Pioppino');
+  await expect(page.locator('#edible-detail')).toContainText('non è ancora disponibile');
+  await page.goto('/'); await page.locator('#active-filters [data-more]').click();
+  await input.fill('Boletus pinophilus'); await input.press('Enter');
+  const pref=await page.evaluate(()=>JSON.parse(localStorage.getItem('fungaroli:prefs:v2')));
+  expect(pref.speciesIds).toContain('pinophilus'); expect(pref.speciesIds).not.toContain('edulis');
+  await page.locator('#full-filters [data-close]').first().click();
+  await expect(page.locator('#hero')).toContainText('Porcino rosso');
+  await page.goto('/'); await expect(page.locator('#followed-species .followed-card')).toHaveCount(3);
+  await page.locator('#active-filters [data-more]').click(); await page.locator('#full-filters [data-all]').click();
+  await page.locator('#full-filters [data-close]').first().click();
+  await expect(page.locator('#hero .pc').first()).toHaveText(baseline);
+  expect(errors).toEqual([]);
+});
+
+test('le nuove specie sono segnalabili e i tossici restano esclusi dal server',async({page})=>{
+  const errors=await setup(page);await register(page,'Test nuovo catalogo');
+  await page.locator('#community-intro [data-report]').click();
+  const dlg=page.locator('dialog[aria-label="Segnala dal bosco"]');
+  await expect(dlg.locator('[name="species"] option')).toHaveCount(46);
+  await dlg.locator('[name="species"]').selectOption('cyclocybe-aegerita');
+  await dlg.locator('[name="amount"][value="1"]').check();await dlg.locator('[type="submit"]').click();
+  await expect(dlg.locator('[data-status]')).toContainText('conteggi collettivi');
+  const entries=(await api(page,'entries')).data.entries; expect(entries[0].finds['cyclocybe-aegerita']).toBe(1);
+  expect((await api(page,'reports','POST',{zoneId:'vallonina',speciesId:'amanita-phalloides',day:todayISO(),amount:1})).status).toBe(400);
+  await dlg.locator('[data-close]').click();
+  await page.goto('/#/diario');await expect(page.locator('#journal-list')).toContainText('Pioppino');
+  await api(page,'account','DELETE');expect((await api(page,'summary')).data.totalReports).toBe(0);
+  expect(errors).toEqual([]);
+});
