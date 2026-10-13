@@ -827,8 +827,7 @@
       "check_before_picking": [
         "Pori bianchi o giallini, mai rosa",
         "Reticolo bruno chiaro e fine fino alla base, non scuro e a maglie larghe",
-        "Carne bianca, immutabile, senza gallerie di larve",
-        "Sapore dolce: se un frammento crudo sulla punta della lingua è amaro, è il porcino di fiele (non ingerire)"
+        "Carne bianca, immutabile, senza gallerie di larve"
       ],
       "sources": [
         {
@@ -879,9 +878,7 @@
         ],
         "source": "https://it.wikipedia.org/wiki/Boletus_aestivalis"
       },
-      "notes": [
-        "Il controllo dell'amaro sulla punta della lingua è un uso micologico comune per distinguere Tylopilus felleus; per prudenza l'app lo propone solo per i porcini, mai per funghi a lamelle, e senza ingerire."
-      ],
+      "notes": [],
       "trees": [
         "castagno",
         "cerro",
@@ -8053,5 +8050,6 @@
       "tox_short": "con cautela"
     }
   },
-  "_note_traits_2": "Caratteri aggiunti il 2026-10-12 (sporata, velo, lattice, consistenza, superficie, attaccatura, base): ogni valore verificato su fonti lette, elencate in sources; dubbi e scelte in traits_notes. Taxa tossici e mortali: valori larghi per non escluderli; commestibili: solo valori con fonte."
+  "_note_traits_2": "Caratteri aggiunti il 2026-10-12 (sporata, velo, lattice, consistenza, superficie, attaccatura, base): ogni valore verificato su fonti lette, elencate in sources; dubbi e scelte in traits_notes. Taxa tossici e mortali: valori larghi per non escluderli; commestibili: solo valori con fonte.",
+  "review_note": "Revisione 2026-10-13: nessun assaggio nel percorso pubblico; i caratteri inseriti dall’utente non escludono i taxa mortali. Catalogo incompleto e non validato come strumento diagnostico."
 }

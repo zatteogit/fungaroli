@@ -1,27 +1,31 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { agreement, summary } from '../js/journal.js';
-
-test('agreement: modello positivo e funghi trovati = giusto', () => {
-  assert.deepEqual(agreement({ predicted: { edulis: 70, aereus: 10 }, finds: { edulis: 2 } }), { said: true, found: true, ok: true });
+import { agreement, summary, speciesAgreement } from '../js/journal.js';
+const outing = (data) => ({ kind: 'outing', searched: ['edulis'],
+  forecast: { mode: 'prospective', capturedAt: '2026-10-12T05:00:00Z' },
+  effort: { startedAt: '2026-10-12T08:00:00Z' }, ...data });
+test('il confronto prospettico riguarda ciascuna specie cercata', () => {
+  const e = outing({ predicted: { edulis: 70, mellea: 0 }, finds: { edulis: 0, mellea: 2 } });
+  assert.equal(agreement(e).ok, false); assert.equal(agreement(e).falseAlarm, 1);
+  assert.deepEqual(speciesAgreement(e).map((x) => x.id), ['edulis']);
 });
-
-test('agreement: modello positivo ma niente = ottimista', () => {
-  const a = agreement({ predicted: { edulis: 55 }, finds: {} });
-  assert.equal(a.ok, false);
-  assert.equal(a.said, true);
+test('un ritrovamento concorda solo con la previsione della propria specie', () => {
+  assert.equal(agreement(outing({ predicted: { edulis: 70 }, finds: { edulis: 2 } })).ok, true);
+  assert.equal(agreement(outing({ predicted: { edulis: 5 }, finds: { edulis: 2 } })).missed, 1);
 });
-
-test('agreement: senza previsione non si giudica', () => {
-  assert.equal(agreement({ predicted: {}, finds: { edulis: 1 } }), null);
+test('vecchie voci, ricostruzioni e dati mancanti non diventano validazione', () => {
+  assert.equal(agreement({ predicted: { edulis: 70 }, finds: { edulis: 2 } }), null);
+  assert.equal(agreement(outing({ predicted: { edulis: null }, finds: { edulis: 2 } })), null);
+  assert.equal(agreement(outing({ predicted: { edulis: 70 }, finds: {} })), null);
+  assert.equal(agreement(outing({ forecast: { mode: 'retrospective' }, predicted: { edulis: 70 }, finds: { edulis: 2 } })), null);
 });
-
-test('summary conta giusti, ottimisti e pessimisti', () => {
-  const s = summary([
-    { predicted: { edulis: 70 }, finds: { edulis: 3 } },
-    { predicted: { edulis: 60 }, finds: {} },
-    { predicted: { edulis: 5 }, finds: { mellea: 2 } },
-    { predicted: {}, finds: {} },
-  ]);
-  assert.deepEqual(s, { total: 4, judged: 3, ok: 1, missed: 1, falseAlarm: 1 });
+test('una previsione salvata dopo l’inizio non è prospettica', () => {
+  assert.equal(agreement(outing({ forecast: { mode: 'prospective', capturedAt: '2026-10-12T09:00:00Z' }, predicted: { edulis: 70 }, finds: { edulis: 2 } })), null);
+});
+test('riepilogo per specie e piani esclusi dal numero di uscite', () => {
+  assert.deepEqual(summary([
+    outing({ searched: ['edulis', 'mellea'], predicted: { edulis: 70, mellea: 5 }, finds: { edulis: 2, mellea: 2 } }),
+    outing({ predicted: { edulis: 70 }, finds: { edulis: 0 } }),
+    { kind: 'plan', predicted: { edulis: 70 }, finds: {} }, { predicted: {}, finds: {} },
+  ]), { total: 3, judged: 3, ok: 1, missed: 1, falseAlarm: 1 });
 });

@@ -1,6 +1,7 @@
 // Modello di idoneita' alla fruttificazione (0-100) per specie, zona, quota e giorno.
 // Funzioni pure: nessuna dipendenza dal DOM, testabili con `node --test`.
 
+export const MODEL_VERSION = '2.0.0'; // indice sperimentale; nessuna calibrazione locale
 export const PARAMS = {
   r30Days: 30,          // finestra pioggia cumulata (Salerni et al. 2002: correlazione piu' forte a 30 gg)
   tDays: 20,            // finestra T media (preprint 2025: ~13 °C media dei 20 gg precedenti per B. edulis)
@@ -14,20 +15,22 @@ export const PARAMS = {
 };
 
 const clamp = (x, a = 0, b = 1) => Math.max(a, Math.min(b, x));
-const sum = (arr, from, to) => { let s = 0; for (let i = from; i <= to; i++) s += arr[i] ?? 0; return s; };
+const sum = (arr, from, to) => { let s = 0; for (let i = from; i <= to; i++) if (Number.isFinite(arr?.[i])) s += arr[i]; return s; };
 const mean = (arr, from, to) => {
   let s = 0, n = 0;
-  for (let i = from; i <= to; i++) if (arr[i] != null && !Number.isNaN(arr[i])) { s += arr[i]; n++; }
+  for (let i = from; i <= to; i++) if (Number.isFinite(arr?.[i])) { s += arr[i]; n++; }
   return n ? s / n : null;
 };
 
 // Peso stagionale interpolato sul giorno dell'anno (12 valori mensili centrati al 15).
 export function seasonWeight(months, dateStr) {
-  const d = new Date(dateStr + 'T12:00:00');
-  const m = d.getMonth();
-  const frac = (d.getDate() - 15) / 30;
-  const j = frac >= 0 ? (m + 1) % 12 : (m + 11) % 12;
-  const t = Math.abs(frac);
+  const d = new Date(dateStr + 'T12:00:00Z');
+  const m = d.getUTCMonth(), y = d.getUTCFullYear();
+  const center = Date.UTC(y, m, 15, 12);
+  const next = d.getTime() >= center;
+  const other = Date.UTC(y, m + (next ? 1 : -1), 15, 12);
+  const j = (m + (next ? 1 : 11)) % 12;
+  const t = Math.abs((d.getTime() - center) / (other - center));
   return months[m] * (1 - t) + months[j] * t;
 }
 
@@ -35,9 +38,11 @@ export function seasonWeight(months, dateStr) {
 export function habitatAtBand(hab, band, half = PARAMS.bandHalfWidth) {
   const counts = {};
   let n = 0;
-  for (const [e, c] of hab.samples) {
+  for (const [e, c] of hab?.samples || []) {
+    if (!Number.isFinite(e)) continue;
     if (Math.abs(e - band) > half) continue;
     const name = c >= 0 ? hab.sample_categories[c] : 'non bosco';
+    if (!name) continue;
     counts[name] = (counts[name] || 0) + 1;
     n++;
   }
@@ -66,7 +71,7 @@ export function weatherFactors(species, s, i) {
   const a = Math.max(0, i - lagMax), b = Math.max(0, i - lagMin);
   const effRain = sum(s.p, a, b);
   let maxEvent = 0;
-  for (let k = a; k <= b; k++) maxEvent = Math.max(maxEvent, s.p[k] ?? 0);
+  for (let k = a; k <= b; k++) maxEvent = Math.max(maxEvent, s.p?.[k] ?? 0);
   const r30 = sum(s.p, Math.max(0, i - PARAMS.r30Days), i - 1);
 
   let rain = 0.6 * (1 - Math.exp(-effRain / species.eref)) + 0.4 * (1 - Math.exp(-r30 / (2 * species.eref)));
@@ -79,16 +84,16 @@ export function weatherFactors(species, s, i) {
   const temp = t20 == null ? 0 : Math.exp(-0.5 * ((t20 - species.topt) / species.tsd) ** 2);
 
   const sm = mean(s.soilm, Math.max(0, i - 3), i - 1);
-  const moist = sm == null ? 0.5 : Math.max(0.15, clamp((sm - PARAMS.moistDry) / (PARAMS.moistWet - PARAMS.moistDry)) ** 0.6);
+  const moist = sm == null ? null : Math.max(0.15, clamp((sm - PARAMS.moistDry) / (PARAMS.moistWet - PARAMS.moistDry)) ** 0.6);
 
   let frost = 1;
   let minT = Infinity;
-  for (let k = Math.max(0, i - 4); k <= i; k++) minT = Math.min(minT, s.tmin[k] ?? Infinity);
+  for (let k = Math.max(0, i - 4); k <= i; k++) minT = Math.min(minT, s.tmin?.[k] ?? Infinity);
   if (minT < PARAMS.frostC) frost = species.frostTolerant ? 0.7 : 0.35;
 
   let heat = 1;
   let maxT = -Infinity;
-  for (let k = Math.max(0, i - 3); k <= i - 1; k++) maxT = Math.max(maxT, s.tmax[k] ?? -Infinity);
+  for (let k = Math.max(0, i - 3); k <= i - 1; k++) maxT = Math.max(maxT, s.tmax?.[k] ?? -Infinity);
   if (maxT > PARAMS.heatC) heat = 0.65;
 
   // shock termico: calo di T media tra 4 e 14 giorni prima (euristica da pratica micologica)
@@ -97,33 +102,50 @@ export function weatherFactors(species, s, i) {
     const before = mean(s.tmean, j - 3, j - 1), after = mean(s.tmean, j + 1, j + 3);
     if (before != null && after != null) drop = Math.max(drop, before - after);
   }
-  const shock = drop >= PARAMS.shockDropC ? 1 + 0.075 * (species.shockWeight || 2) : 1;
+  const shock = drop >= PARAMS.shockDropC ? 1 + 0.075 * (species.shockWeight ?? 2) : 1;
 
   return { effRain, maxEvent, r30, triggered, rain, t20, temp, sm, moist, minT, frost, maxT, heat, drop, shock };
 }
 
-// Quota di pioggia efficace che proviene da giorni previsti (non ancora osservati).
-export function confidence(species, s, i) {
-  if (i <= s.todayIndex) return 1;
-  const [lagMin, lagMax] = species.lag;
-  const a = Math.max(0, i - lagMax), b = Math.max(0, i - lagMin);
-  let tot = 0, fc = 0;
-  for (let k = a; k <= b; k++) { tot += s.p[k] ?? 0; if (k > s.todayIndex) fc += s.p[k] ?? 0; }
-  const share = tot > 0 ? fc / tot : 0;
-  return clamp(1 - 0.5 * share - 0.04 * (i - s.todayIndex), 0.2, 1);
+// Completezza degli input, distinta dall'accuratezza (non misurata) del modello.
+// Il giorno di acquisizione contiene ancora previsioni: non va chiamato osservato.
+export function inputQuality(species, s, i) {
+  const windows = [
+    ['p', 'pioggia', i - Math.max(PARAMS.r30Days, species.lag[1]), i - 1],
+    ['tmean', 'temperatura media', i - PARAMS.tDays, i - 1],
+    ['soilm', 'umidità del suolo', i - 3, i - 1],
+    ['tmin', 'temperature minime', i - 4, i],
+    ['tmax', 'temperature massime', i - 3, i - 1],
+  ];
+  const missing = [], futureDays = new Set();
+  const issuedIndex = Number.isInteger(s.issuedIndex) ? s.issuedIndex : s.todayIndex;
+  for (const [key, label, from, to] of windows) {
+    let n = 0;
+    for (let k = from; k <= to; k++) {
+      if (Number.isFinite(s[key]?.[k]) && (key !== 'p' || s[key][k] >= 0)) n++;
+      if (issuedIndex >= 0 && k >= issuedIndex) futureDays.add(k);
+    }
+    if (n !== to - from + 1) missing.push(label);
+  }
+  if (!s.dates?.[i]) missing.push('data');
+  return { complete: missing.length === 0, missing, usesForecast: futureDays.size > 0,
+    forecastDays: futureDays.size, fetchedAt: s.source?.fetchedAt || null, validation: 'non validato localmente' };
 }
 
 export function scoreSpecies(species, s, i, hab, band) {
   const season = seasonWeight(species.months, s.dates[i]);
-  const { frac } = habitatAtBand(hab, band);
+  const { frac, n } = habitatAtBand(hab, band);
   const habitat = habitatScore(species, frac);
   const elev = elevationFit(species, band);
   const w = weatherFactors(species, s, i);
+  const quality = inputQuality(species, s, i);
+  if (!n) { quality.complete = false; quality.missing.push('campioni di habitat'); }
+  if (s.source?.expired && i >= s.todayIndex) { quality.complete = false; quality.missing.push('meteo aggiornato'); }
   const raw = season * habitat.value * elev * w.rain * w.temp * w.moist * w.frost * w.heat * w.shock;
   return {
-    score: Math.round(clamp(raw) * 100),
+    score: quality.complete ? Math.round(clamp(raw) * 100) : null,
     season, habitat: habitat.value, suitableShare: habitat.suitableShare, elev,
-    confidence: confidence(species, s, i),
+    quality, habitatSamples: n, modelVersion: MODEL_VERSION,
     ...w,
   };
 }
@@ -138,38 +160,34 @@ export function scoreZoneDay(zone, hab, seriesByBand, speciesList, i) {
       const s = seriesByBand[bi];
       if (!s) return;
       const r = scoreSpecies(sp, s, i, hab, band);
-      if (!spBest || r.score > spBest.score) spBest = { ...r, band, species: sp };
+      if (!spBest || (r.score ?? -1) > (spBest.score ?? -1)) spBest = { ...r, band, species: sp };
     });
     if (spBest) perSpecies.push(spBest);
-    if (spBest && (!best || spBest.score > best.score)) best = spBest;
+    if (spBest && Number.isFinite(spBest.score) && (!best || spBest.score > best.score)) best = spBest;
   }
-  perSpecies.sort((a, b) => b.score - a.score);
+  perSpecies.sort((a, b) => (b.score ?? -1) - (a.score ?? -1));
   return { best, perSpecies };
 }
 
-// Indice di una zona (o di un riquadro) per piu' funghi insieme: "almeno uno di quelli scelti".
-// Non e' l'unione di eventi indipendenti (lo stesso meteo li fa nascere o no insieme, e con molte specie
-// arriverebbe sempre a 100): il migliore conta pieno, il secondo pesa il 35%, ogni altro la meta' del precedente.
-// Cosi' il bonus resta limitato (anche con tutti gli altri a 100: al massimo meta' della distanza da 100).
-export const COMBINE_WEIGHT = 0.35;
+// La zona mostra il migliore indice calcolabile: aggiungere specie o duplicare un
+// taxon non aumenta il numero. Non rappresenta una probabilità di unione di eventi.
 export function combine(scores) {
-  const a = scores.filter((x) => x > 0).sort((x, y) => y - x);
-  if (!a.length) return 0;
-  let miss = 1 - a[0] / 100, w = COMBINE_WEIGHT;
-  for (const x of a.slice(1)) { miss *= 1 - w * (x / 100); w /= 2; }
-  return Math.round((1 - miss) * 100);
+  const a = scores.filter(Number.isFinite);
+  return a.length ? Math.round(clamp(Math.max(...a) / 100) * 100) : null;
 }
 
 export const CLASSES = [
-  // parole di probabilita' (qualitative: l'indice non e' una probabilita' calibrata)
-  { min: 75, label: 'Molto probabile' },
-  { min: 60, label: 'Probabile' },
-  { min: 45, label: 'Abbastanza probabile' },
-  { min: 30, label: 'Possibile' },
-  { min: 15, label: 'Poco probabile' },
-  { min: 0, label: 'Improbabile' },
+  { min: 75, label: 'Condizioni molto favorevoli' },
+  { min: 60, label: 'Condizioni favorevoli' },
+  { min: 45, label: 'Condizioni discrete' },
+  { min: 30, label: 'Condizioni limitate' },
+  { min: 15, label: 'Condizioni poco favorevoli' },
+  { min: 0, label: 'Condizioni sfavorevoli' },
 ];
-export const classOf = (score) => CLASSES.findIndex((c) => score >= c.min);
+export const classOf = (score) => Number.isFinite(score) ? CLASSES.findIndex((c) => score >= c.min) : -1;
+export const scoreLabel = (score) => CLASSES[classOf(score)]?.label || 'Non calcolabile';
+// Scala interna 0–100 per preservare i dati; presentazione pubblica 0–10.
+export const formatIndex = (score) => Number.isFinite(score) ? (score / 10).toFixed(1).replace('.', ',') : '–';
 
 // Spiegazione leggibile dei fattori principali.
 export function explain(r) {

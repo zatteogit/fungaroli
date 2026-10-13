@@ -44,7 +44,7 @@ export const SPECIES = [
     forest: { [F.FAG]: 1, [F.CAS]: 0.7, [F.CER]: 0.6, [F.CON]: 0.6, [F.ROV]: 0.4, [F.OST]: 0.2, [F.FOR]: 0.4 },
     months: m(0, 0, 0, 0, 0.1, 0.4, 0.6, 0.8, 1, 1, 0.4, 0),
     elev: [700, 1800], topt: 13, tsd: 3.5, lag: [7, 21], eref: 30, minCap: 4,
-    evidence: 'Trigger T e pioggia da letteratura (faggete).',
+    evidence: 'Centro termico e finestre antecedenti informati dalla letteratura in faggeta; curve, latenza, innesco e coefficienti euristici, non calibrati nel Reatino.',
   },
   {
     id: 'pinophilus', group: 'porcini', name: 'Porcino rosso', latin: 'Boletus pinophilus',
@@ -102,7 +102,7 @@ export const SPECIES = [
     forest: { [F.ARB]: 0.7, [F.CAS]: 0.7, [F.CER]: 0.7, [F.ROV]: 0.7, [F.NON]: 0.6, [F.FAG]: 0.4, [F.OST]: 0.4 },
     months: m(0, 0, 0, 0, 0, 0.1, 0.4, 0.7, 1, 1, 0.4, 0),
     elev: [200, 1500], topt: 15, tsd: 4.5, lag: [4, 14], eref: 25, minCap: 5,
-    warning: 'Solo esemplari ≥ 5 cm: le piccole Lepiota sono tossiche o mortali. Gambo non commestibile.',
+    warning: 'Taglia minima di legge 5 cm; la dimensione non garantisce l’identità. Scarta le piccole lepiote e fai controllare il raccolto. Gambo non commestibile.',
     evidence: 'Euristica.',
   },
   {

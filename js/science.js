@@ -1,6 +1,6 @@
 // La scienza dietro l'indice, per chi vuole approfondire: la "ricetta" fattore per fattore con i numeri veri del giorno,
 // i grafici con le soglie della specie, il profilo della specie e la pagina del metodo (docs/metodo-scientifico.md).
-import { PARAMS } from './model.js';
+import { PARAMS, formatIndex } from './model.js';
 
 const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const n1 = (x, d = 1) => (x == null || Number.isNaN(x) ? '–' : x.toLocaleString('it-IT', { minimumFractionDigits: d, maximumFractionDigits: d }));
@@ -18,14 +18,14 @@ function factorRows(r, sp, band, dateStr) {
   const month = ['gennaio', 'febbraio', 'marzo', 'aprile', 'maggio', 'giugno', 'luglio', 'agosto', 'settembre', 'ottobre', 'novembre', 'dicembre'][new Date(dateStr + 'T12:00:00').getMonth()];
   return [
     { k: 'Stagione', v: r.season, tags: ['eur'], why: `${/^[ao]/.test(month) ? 'ad' : 'a'} ${month} ${r.season >= 0.8 ? 'è nel suo periodo' : r.season >= 0.3 ? 'è ai margini del periodo' : 'è fuori stagione'} (curva mensile della specie).` },
-    { k: 'Bosco alla quota', v: r.habitat, tags: ['dato', 'eur'], why: `a ${band} m il ${pct(r.suitableShare)} del bosco è adatto alla specie (Carta Forestale, ±${PARAMS.bandHalfWidth} m). Ne basta il 45% per il massimo.` },
+    { k: 'Bosco alla quota', v: r.habitat, tags: ['dato', 'eur'], why: `a ${band} m l'idoneità ponderata dell'area campionata è ${pct(r.suitableShare)}, inclusi i punti fuori bosco (${r.habitatSamples} campioni, ±${PARAMS.bandHalfWidth} m). Il massimo a 45% è una scelta euristica.` },
     { k: 'Quota', v: r.elev, tags: ['eur'], why: band >= lo && band <= hi ? `${band} m è dentro l'intervallo della specie (${lo}–${hi} m).` : `${band} m è fuori dall'intervallo ${lo}–${hi} m: il fattore cala di 1/200 per metro.` },
     { k: 'Pioggia', v: r.rain, tags: ['lett', 'eur'], why: `${n0(r.effRain)} mm tra ${lagMax} e ${lagMin} giorni prima (la finestra in cui la pioggia "diventa" funghi), evento massimo ${n0(r.maxEvent)} mm${r.triggered ? ': innesco sì' : ` (sotto gli ${PARAMS.triggerMm} mm dell'innesco: vale meno)`}; ${n0(r.r30)} mm nei 30 giorni.` },
-    { k: 'Temperatura', v: r.temp, tags: [sp.id === 'edulis' ? 'lett' : 'eur'], why: `media dei 20 giorni prima ${n1(r.t20)} °C; l'ottimo della specie è ${n1(sp.topt, 0)} ± ${n1(sp.tsd)} °C (curva a campana).` },
-    { k: 'Umidità del suolo', v: r.moist, tags: ['dato', 'eur'], why: r.sm == null ? 'dato non disponibile: vale 0,5.' : `${n1(r.sm, 2)} m³/m³ a 3–9 cm negli ultimi 3 giorni (secco sotto ${n1(PARAMS.moistDry, 2)}, pieno sopra ${n1(PARAMS.moistWet, 2)}).` },
+    { k: 'Temperatura', v: r.temp, tags: sp.id === 'edulis' ? ['lett', 'eur'] : ['eur'], why: `media dei 20 giorni prima ${n1(r.t20)} °C; centro della curva ${n1(sp.topt, 0)} °C, ampiezza euristica ${n1(sp.tsd)} °C. Non è un intervallo di confidenza.` },
+    { k: 'Umidità del suolo', v: r.moist, tags: ['dato', 'eur'], why: r.sm == null ? 'dato non disponibile: indice non calcolabile.' : `${n1(r.sm, 2)} m³/m³ a 3–9 cm negli ultimi 3 giorni (soglie euristiche ${n1(PARAMS.moistDry, 2)}–${n1(PARAMS.moistWet, 2)}). È un dato di modello, non una misura del terreno.` },
     { k: 'Gelo', v: r.frost, tags: ['eur'], why: r.frost < 1 ? `minima di ${n1(r.minT)} °C negli ultimi 5 giorni: sotto ${PARAMS.frostC} °C i carpofori si fermano.` : `minima ${n1(r.minT)} °C negli ultimi 5 giorni: nessuna gelata.` },
     { k: 'Caldo', v: r.heat, tags: ['eur'], why: r.heat < 1 ? `massima di ${n1(r.maxT)} °C negli ultimi 3 giorni: sopra ${PARAMS.heatC} °C lettiera e funghi seccano.` : `massima ${n1(r.maxT)} °C negli ultimi 3 giorni: niente caldo eccessivo.` },
-    { k: 'Shock termico', v: r.shock, tags: ['eur'], bonus: true, why: r.shock > 1 ? `calo di ${n1(r.drop)} °C nella media tra 4 e 14 giorni fa: spesso fa partire le nascite (bonus).` : `nessun calo di almeno ${PARAMS.shockDropC} °C tra 4 e 14 giorni fa: nessun bonus.` },
+    { k: 'Shock termico', v: r.shock, tags: ['eur'], bonus: true, why: r.shock > 1 ? `calo di ${n1(r.drop)} °C nella media tra 4 e 14 giorni fa: bonus ipotizzato, senza validazione locale.` : `nessun calo di almeno ${PARAMS.shockDropC} °C tra 4 e 14 giorni fa: nessun bonus.` },
   ];
 }
 
@@ -34,8 +34,8 @@ const level = (v) => (v >= 0.8 ? 'hi' : v >= 0.5 ? 'mid' : 'lo');
 // grafici piccoli, SVG in linea: niente librerie, leggibili su telefono
 function rainChart(s, i, sp) {
   const from = Math.max(0, i - 35), N = i - from + 1, W = 320, H = 96, bw = W / N;
-  const vals = s.p.slice(from, i + 1).map((v) => v ?? 0);
-  const max = Math.max(PARAMS.triggerMm * 1.6, ...vals);
+  const vals = s.p.slice(from, i + 1);
+  const max = Math.max(PARAMS.triggerMm * 1.6, ...vals.filter(Number.isFinite));
   const Y = (v) => H - 14 - (v / max) * (H - 24);
   const [lagMin, lagMax] = sp.lag;
   const a = Math.max(from, i - lagMax) - from, b = Math.max(from, i - lagMin) - from;
@@ -74,8 +74,8 @@ function speciesProfile(sp) {
     <p class="sci-h">Il profilo di ${esc(sp.name.toLowerCase())} nel modello</p>
     <dl class="sci-params">
       <div><dt>Finestra di latenza</dt><dd>${sp.lag[0]}–${sp.lag[1]} giorni dopo la pioggia</dd></div>
-      <div><dt>Pioggia di riferimento</dt><dd>${sp.eref} mm (a questa quantità il fattore pioggia è al 63%)</dd></div>
-      <div><dt>Temperatura ottimale</dt><dd>${n1(sp.topt, 0)} ± ${n1(sp.tsd)} °C (media di 20 giorni)</dd></div>
+      <div><dt>Pioggia di riferimento</dt><dd>${sp.eref} mm (parametro di saturazione euristico delle due curve)</dd></div>
+      <div><dt>Curva termica</dt><dd>centro ${n1(sp.topt, 0)} °C, ampiezza ${n1(sp.tsd)} °C (media di 20 giorni)</dd></div>
       <div><dt>Quote</dt><dd>${sp.elev[0]}–${sp.elev[1]} m</dd></div>
       ${sp.frostTolerant ? '<div><dt>Gelo</dt><dd>tollerante: il gelo pesa meno</dd></div>' : ''}
     </dl>
@@ -91,22 +91,22 @@ export function renderWhy({ r, s, i, sp, band, dateStr, shown, agg, parts = [], 
   const product = Math.min(1, rows.reduce((a, x) => a * x.v, 1));
   const weakest = rows.filter((x) => !x.bonus).reduce((a, x) => (x.v < a.v ? x : a));
   const raw = Math.round(product * 100);
-  const fc = r.confidence < 1 ? `<p class="sci-note"><b>Affidabilità ${pct(r.confidence)}.</b> Parte della pioggia che conta è prevista, non ancora caduta: più il giorno è lontano, meno ci si può fidare.</p>` : '';
+  const fc = `<p class="sci-note"><b>Dati ${r.quality?.complete ? 'completi per le finestre richieste' : 'incompleti'}.</b> ${r.quality?.usesForecast ? 'Il calcolo include previsioni meteorologiche, anche del giorno di acquisizione.' : 'Il calcolo usa meteo passato di modello, non misure nella fungaia.'} L'accuratezza dei ritrovamenti non è stata misurata nel Reatino. ${r.quality?.fetchedAt ? `Acquisizione: ${esc(new Date(r.quality.fetchedAt).toLocaleString('it-IT', { timeZone: 'Europe/Rome' }))}.` : ''}</p>`;
   return `
-    <p class="sci-lede">L'indice è il <b>prodotto</b> di nove fattori, ognuno tra 0 e 1. Basta un fattore basso per abbassare tutto: oggi pesa di più <b>${esc(weakest.k.toLowerCase())}</b> (${n1(weakest.v, 2)}).</p>
+    <p class="sci-lede">L'indice sperimentale va da <b>0 a 10</b>, con un decimale, e deriva dal prodotto di nove fattori (lo shock può superare 1). Il numero descrive condizioni ambientali, senza misurare la probabilità di ritrovamento. Oggi pesa di più <b>${esc(weakest.k.toLowerCase())}</b> (${n1(weakest.v, 2)}).</p>
     <ol class="sci-factors">${rows.map((x) => `
       <li class="${x === weakest ? 'weak' : ''}">
         <div class="sf-top"><span class="sf-k">${esc(x.k)}</span><span class="sf-bar lv-${x.bonus ? (x.v > 1 ? 'hi' : 'na') : level(x.v)}"><i style="width:${Math.min(100, x.v * 100)}%"></i></span><b class="sf-v">×${n1(x.v, 2)}</b></div>
         <p class="sf-why">${esc(x.why)} ${x.tags.map(tag).join(' ')}</p>
       </li>`).join('')}
     </ol>
-    <p class="sci-eq"><span>100 × ${rows.map((x) => n1(x.v, 2)).join(' × ')}</span> = <b>${raw}</b></p>
-    ${parts.length > 1 ? `<p class="sci-note"><b>Questo è l'indice di ${esc(sp.name.split(' / ')[0].toLowerCase())}</b>, il fungo più probabile. L'indice della zona vale per <b>almeno uno</b> dei funghi che hai scelto (${parts.slice(1, 4).map((x) => `${esc(x.name.toLowerCase())} ${x.score}`).join(', ')}${parts.length > 4 ? '…' : ''}): il secondo fungo pesa il 35% e ogni altro la metà del precedente, perché lo stesso meteo li fa nascere o no insieme e non si possono sommare come eventi indipendenti. Risultato: <b>${agg}</b>.</p>` : ''}
-    ${prefs.length ? `<p class="sci-note">Con le tue preferenze (${prefs.map((p) => `${esc(p.label)} ×${n1(p.mult, 2)}`).join(', ')}) l'indice mostrato è <b>${shown}</b>.</p>` : ''}
+    <p class="sci-eq"><span>10 × ${rows.map((x) => n1(x.v, 2)).join(' × ')}</span> = <b>${formatIndex(raw)}</b></p>
+    ${parts.length > 1 ? `<p class="sci-note">L'indice della zona è il <b>massimo</b> delle specie selezionate. Le altre: ${parts.slice(1).map((x) => `${esc(x.name.toLowerCase())} ${formatIndex(x.score)}`).join(', ')}. Aggiungere specie non aumenta automaticamente il numero. Specie diverse possono avere la quota migliore in luoghi diversi.</p>` : ''}
+    ${prefs.length ? `<p class="sci-note">Le preferenze (${prefs.map((p) => `${esc(p.label)} ×${n1(p.mult, 2)}`).join(', ')}) modificano solo l'ordine dei consigli. L'indice delle condizioni resta <b>${formatIndex(shown)}</b>.</p>` : ''}
     ${outing ? `<p class="sci-note"><b>Il meteo dell'uscita non cambia l'indice</b>: cambia solo l'ordine delle zone (×${n1(outing, 2)} in classifica), perché i funghi nascono lo stesso anche se quel giorno piove.</p>` : ''}
     ${fc}
     ${rainChart(s, i, sp)}
-    ${lineChart({ vals: s.tmean.slice(Math.max(0, i - 35), i + 1), band: [sp.topt - sp.tsd, sp.topt + sp.tsd], bandLabel: `ottimo ${n1(sp.topt, 0)} ± ${n1(sp.tsd)} °C`, unit: '°C', title: 'Temperatura media', note: 'conta la media dei 20 giorni prima' })}
+    ${lineChart({ vals: s.tmean.slice(Math.max(0, i - 35), i + 1), band: [sp.topt - sp.tsd, sp.topt + sp.tsd], bandLabel: 'ampiezza della curva euristica', unit: '°C', title: 'Temperatura media', note: 'conta la media dei 20 giorni prima' })}
     ${lineChart({ vals: s.soilm.slice(Math.max(0, i - 35), i + 1), lo: PARAMS.moistDry, hi: PARAMS.moistWet, unit: 'm³/m³', digits: 2, title: 'Umidità del suolo (3–9 cm)', note: 'sotto la linea bassa è secco, sopra l\'alta pienamente umido' })}
     ${speciesProfile(sp)}
     <p class="sci-more"><a href="#/metodo">Il metodo completo: formule, fonti e limiti ›</a></p>`;

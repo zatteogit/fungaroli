@@ -4,14 +4,14 @@ Documento tecnico: da dove vengono i dati, come si rigenerano, che forma hanno, 
 
 ## In una frase
 
-Un sito statico senza build: HTML, CSS e moduli ES che leggono tre file JSON precalcolati (`data/`) e chiedono il meteo a Open-Meteo dal browser. Gli script in `tools/` rigenerano i JSON quando cambiano le zone. Uno script Node impacchetta tutto in un unico HTML per la versione Artifact.
+Un front-end di moduli ES e un Worker Cloudflare con D1 per la comunità (vedi [community.md](community.md)): HTML, CSS e moduli ES che leggono tre file JSON precalcolati (`data/`) e chiedono il meteo a Open-Meteo dal browser. Gli script in `tools/` rigenerano i JSON quando cambiano le zone. Uno script Node impacchetta tutto in un unico HTML per la versione Artifact.
 
 ## Fonti dati e licenze
 
 | Fonte | Cosa fornisce | Dove si usa | Licenza e condizioni |
 |---|---|---|---|
 | **Regione Lazio, Carta Forestale su base tipologica** | Poligoni dei tipi forestali (campi `categoria`, `tipologia`). WFS e WMS `geonode:tipi_forestali2` su `https://geoportale.regione.lazio.it/geoserver/ows`. | `build_habitat.py`, `build_trails.py` (WFS); `build_basemap.py` e mappa del sito (WMS); legenda (`GetLegendGraphic`) | **Licenza in conflitto, da chiarire con la Regione** (verifica del 12/10/2026). La risorsa SHP su dati.lazio.it è dichiarata CC BY 4.0 e la pagina *Licenze* del portale vale per "tutti i contenuti". La pagina del dataset però dice "Nessuna licenza trovata" e la [scheda metadati PDF](https://dati.lazio.it/dataset/91a9cd67-1a41-4584-b611-960c65d82724/resource/5d8c5060-1242-4422-9e3a-52703cad54ce/download/metadaticartaforestalesubasetipologica.pdf) allegata allo stesso dataset (aggiornata a dicembre 2012), alla voce "Restrizioni d'uso", dice: "La banca dati può essere utilizzata solo per fini non commerciali, previa citazione della fonte. E’ vietata la distribuzione, la riproduzione, la traduzione, l’adattamento e ogni altra modifica". `data/habitat.json`, `data/trails.json` e le immagini in `assets/` sono derivati. Citare sempre "© Regione Lazio". Dataset creato nel 2015, dati modificati nel 2020. Dettagli in `docs/legale.md`. |
-| **Open-Meteo Forecast API** | Pioggia giornaliera, temperatura media/min/max, umidità del suolo 3-9 cm e temperatura del suolo a 6 cm (orarie, aggregate per giorno). Parametri: `past_days=62`, `forecast_days=8`, `elevation` per fascia, `timezone=Europe/Rome`. | `js/weather.js` (sito, dal browser); `build_artifact.mjs` (fotografia) | Dati CC BY 4.0 con attribuzione a Open-Meteo. L'API gratuita è per uso non commerciale, con limiti indicativi di 10.000 chiamate al giorno. L'app fa una sola chiamata per tutte le 21 coppie zona-fascia. |
+| **Open-Meteo Forecast API** | Pioggia giornaliera, temperatura media/min/max, umidità del suolo 3-9 cm e temperatura del suolo a 6 cm (orarie, aggregate per giorno). Parametri: `past_days=62`, `forecast_days=8`, `elevation` per fascia, `timezone=Europe/Rome`. | `js/weather.js` (sito, dal browser); `build_artifact.mjs` (fotografia) | Dati CC BY 4.0 con attribuzione a Open-Meteo. L'API gratuita è per uso non commerciale, con limiti indicativi di 10.000 chiamate al giorno. L'app fa una sola chiamata per tutte le 45 coppie zona-fascia. |
 | **Open-Meteo Elevation API** | Quota dei punti (DEM Copernicus GLO-90, 90 m, modello di superficie). Fino a 100 coordinate per chiamata. | `build_habitat.py`, `build_access.py`, `build_trails.py` | Come sopra; va citato anche il programma Copernicus. |
 | **OpenStreetMap** | Rete stradale e sentieristica. | tramite Valhalla, OSRM, Waymarked Trails, tile | ODbL 1.0, attribuzione "© OpenStreetMap contributors". |
 | **Valhalla** (server pubblico FOSSGIS `valhalla1.openstreetmap.de`) | `/route` e `/trace_attributes` per tempi, strade e fondo del percorso Rieti-sosta; `/locate` per la strada carrozzabile più vicina a ogni punto campione. | `build_access.py`, `build_habitat.py` | Servizio gratuito senza garanzie, da usare con moderazione. Gli script inseriscono pause tra le richieste. |
@@ -32,7 +32,7 @@ Tutti gli script stanno in `tools/`, leggono `data/zones.json` e scrivono un sol
 | `build_access.py` | `data/access.json` | Python 3, `curl` (importa funzioni da `build_habitat.py`, quindi servono comunque `shapely` e `pyproj`) | Quando cambiano i punti di sosta o l'origine; ogni tanto, se OSM cambia la viabilità. |
 | `build_trails.py` | `data/trails.json` | Python 3, `shapely`, `pyproj`, `curl` | Quando cambiano le zone; una o due volte l'anno per aggiornare i sentieri OSM. |
 | `build_basemap.py` | `assets/basemap-topo.webp`, `assets/basemap-forest.webp`, `assets/forest-legend.png`, `assets/basemap.json` | Python 3, Pillow | Solo se una zona esce dal riquadro fisso `BBOX = (12.62, 42.10, 13.46, 42.72)` o se cambia la Carta Forestale. |
-| `build_artifact.mjs` | `dist/fungaroli.html` | Node, `esbuild` 0.24.0 (`npm i`), `curl` | Ogni volta che si vuole aggiornare la versione Artifact (meteo compreso). |
+| `build_artifact.mjs` | `dist/fungaroli.html` | Node, `esbuild` 0.27.3 (`npm i`), `curl` | Ogni volta che si vuole aggiornare la versione Artifact (meteo compreso). |
 
 ### Cache e ripresa
 
@@ -249,17 +249,17 @@ Lo stesso codice si accorge di girare nell'Artifact dalla presenza di `globalThi
 }
 ```
 
-`finds` usa 1 = pochi, 2 = discreti, 3 = tanti. `predicted` contiene l'indice di tutte le 14 specie (non solo dei gruppi attivi) alla quota indicata o alla migliore della zona se `band` è `null`; è vuoto se la data era fuori dai dati meteo. Il file esportato è `{ "version": 1, "entries": [ ... ] }`; l'importazione accetta anche un array semplice.
+`finds` usa 0 = ricerca esplicita senza ritrovamenti, 1 = pochi, 2 = discreti, 3 = tanti. `predicted` contiene l'indice di tutte le 14 specie (non solo dei gruppi attivi) alla quota indicata o alla migliore della zona se `band` è `null`; è vuoto se la data era fuori dai dati meteo. Il file esportato è `{ "version": 2, "internalScoreScale": "0–100", "displayScoreScale": "0–10", "entries": [ ... ] }`; l'importazione accetta anche un array semplice.
 
 ## I test
 
-`npm test` esegue `node --test tests/*.test.mjs` (Node 20 o successivo; il workflow usa Node 22). Nessuna dipendenza da installare.
+`npm test` esegue `node --test tests/*.test.mjs` (Node 20 o successivo; il workflow usa Node 22). I test browser richiedono `npm ci` e Chromium; `npm run test:browser` avvia Worker e D1 locali.
 
 | File | Cosa verifica |
 |---|---|
 | `tests/model.test.mjs` | Pioggia 11-12 giorni prima con 13 °C in faggeta dà indice ≥ 50 per il porcino; senza pioggia < 10; la pioggia di ieri non conta ancora (latenza); le gelate dimezzano almeno l'indice; habitat non idoneo azzera; stagionalità interpolata; filtro per quota di `habitatAtBand`; decadimento di `elevationFit`. |
 | `tests/human.test.mjs` | Alba 07:16 e tramonto 18:33 a Rieti il 12 ottobre 2026; Pasquetta e Santa Barbara; weekend più pesante dei feriali; livelli di folla attesi in tre scenari; buttata appena partita; livelli di comodità; arrivo all'apertura legale con folla alta. |
-| `tests/journal.test.mjs` | Le tre etichette del confronto previsto/trovato e il riepilogo. |
+| `tests/journal.test.mjs` | Confronti prospettici per specie cercata, zeri espliciti, ricostruzioni escluse e riepilogo. |
 
 I test controllano il comportamento qualitativo, non i valori dei parametri: si possono tarare i numeri senza romperli, finché le relazioni restano quelle.
 
@@ -275,9 +275,10 @@ Una volta sola: nel repository su GitHub, *Settings → Pages → Source: GitHub
 
 Il progetto `fungaroli` su Cloudflare è un **Worker con file statici**, collegato al repository: a ogni push sul branch di produzione Cloudflare esegue `npx wrangler deploy`, che legge `wrangler.jsonc`.
 
-- `wrangler.jsonc`: nome, `main` (`worker/index.js`), cartella degli asset (`.`) e binding KV del diario.
+- `wrangler.jsonc`: nome, `main` (`worker/index.js`), cartella degli asset (`.`) binding D1 della community e KV del vecchio diario.
 - `.assetsignore`: cosa NON pubblicare (script, test, cache, configurazione).
-- `worker/index.js`: serve i file statici e inoltra `/api/diario/*` a `handleDiario` (in `functions/api/diario/[[path]].js`, condivisa con la variante Pages).
+- `worker/community.js`: profili con passkey, sessioni, diario privato e aggregati; schema in `migrations/`, dettagli in [community.md](community.md).
+- `worker/index.js`: serve i file statici, inoltra `/api/community/*` al servizio D1 e `/api/diario/*` a `handleDiario` (in `functions/api/diario/[[path]].js`, condivisa con la variante Pages).
 
 Diario sincronizzato: crea il namespace KV `fungaroli-diario` (*Storage & Databases → Workers KV*), metti il suo ID in `wrangler.jsonc` → `"kv_namespaces": [{ "binding": "DIARIO", "id": "<ID>" }]`, e aggiungi il segreto `DIARIO_TOKEN` nel Worker (*Settings → Variables and Secrets → Secret*). I segreti restano tra un deploy e l'altro; i binding invece vanno tenuti in `wrangler.jsonc`, perché il deploy sostituisce quelli aggiunti a mano dal pannello.
 
@@ -316,7 +317,7 @@ Il README indica solo il passo `build_habitat.py`: senza gli altri due la zona f
 3. Se la specie è legata a un bosco non presente in `FOREST_COLORS` di `js/app.js`, la barra della composizione lo mostrerà come "Altro bosco/arbusteto".
 4. Aggiungi un test se la specie ha un comportamento particolare (per esempio tollera il gelo).
 
-Note: i campi `minCap` ed `evidence` oggi non sono mostrati nell'interfaccia. Per legge il verdone (*Russula virescens*) ha taglia minima 4 cm, mentre la voce colombina/verdone in `species.js` riporta `minCap: 3`.
+Note: per il gruppo colombina/verdone `minCap: 4` conserva la soglia più restrittiva. Il raggruppamento non sostituisce l’identificazione della specie.
 
 ## Tarare i parametri
 
@@ -328,11 +329,11 @@ Dove stanno i numeri:
 | Curva della pioggia (pesi 0,6/0,4, innesco 15 mm), soglia habitat 0,45, decadimento quota 200 m, minimo del suolo 0,15, penalità di gelo e caldo, bonus shock 0,075 | dentro le funzioni di `js/model.js` |
 | Classi dell'indice | `CLASSES` in `js/model.js` |
 | Parametri di specie | `SPECIES` in `js/species.js` |
-| Affidabilità (0,5 e 0,04 per giorno, minimo 0,2) | `confidence()` in `js/model.js`; soglie alta/media in `renderRanking()` di `js/app.js` |
+| Completezza degli input e provenienza | `inputQuality()` in `js/model.js`, timestamp in `js/weather.js`; accuratezza non validata |
 | Peso dei giorni, folla, comodità, orari | `js/human.js` |
-| Peso delle preferenze (0,3 distanza, 0,45 folla, 0,55/0,45 comodità) | `adjusted()` in `js/app.js` |
+| Peso delle preferenze (0,3 distanza, 0,45 folla, 0,55/0,45 comodità) | `preferenceRank()` in `js/app.js` |
 | Criteri del punto d'accesso (affinità ≥ 0,6, ±150 m, costo fondo 300 m) e dei sentieri (±250 m, minimo 0,3 km) | `accessFor()` e `trailsFor()` in `js/app.js` |
 | Soglia "il modello dice di andare" | `FOUND_THRESHOLD` in `js/journal.js` |
 | Giorni di storico e di previsione | `PAST_DAYS`, `FORECAST_DAYS` in `js/weather.js`; `HISTORY_DAYS`, `AHEAD_DAYS` in `js/app.js` |
 
-Il metodo di taratura con il diario è descritto in [metodo-scientifico.md](metodo-scientifico.md#come-calibrarlo-con-il-diario). Due accorgimenti tecnici: dopo ogni modifica lancia `npm test`; e tieni presente che le uscite già salvate conservano l'indice calcolato con i parametri di allora, quindi per confrontare vecchio e nuovo modello sulle stesse uscite bisogna ricalcolare `predicted` a partire da zona, data e quota. Il front-end ha solo 62 giorni di meteo passato, quindi per le uscite più vecchie serve scaricare la serie storica a parte (per esempio dall'API storica di Open-Meteo) e riapplicare `scoreSpecies`.
+Il metodo di taratura con il diario è descritto in [metodo-scientifico.md](metodo-scientifico.md#come-calibrarlo-con-il-diario). Due accorgimenti tecnici: dopo ogni modifica lancia `npm test`; e tieni presente che le uscite già salvate conservano l'indice calcolato con i parametri di allora, quindi per confrontare vecchio e nuovo modello sulle stesse uscite bisogna conservare la previsione originale e ricalcolare una variante separata dagli input e dalla versione salvati. Il front-end ha solo 62 giorni di meteo passato, quindi per le uscite più vecchie serve scaricare la serie storica a parte (per esempio dall'API storica di Open-Meteo) e riapplicare `scoreSpecies`.

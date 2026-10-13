@@ -3,6 +3,7 @@
 
 import { openLightbox, captionHtml } from './lightbox.js';
 import { soft, tick, canVT } from './motion.js';
+import { matchTraits, retainCandidate, deadlyWarnings } from './identify-model.js';
 
 const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const norm = (s) => String(s ?? '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
@@ -200,15 +201,7 @@ const QK = (k) => QUESTIONS.find((q) => q.key === k);
 const traitOf = (t, q) => (q.get ? q.get(t) : t.traits?.[q.key]);
 const hitOf = (q, tv, v) => (q.match ? q.match([].concat(tv), v) : Array.isArray(tv) ? tv.includes(v) : tv === v);
 function matches(t, ans = state.ans) {
-  let ok = 0, tot = 0, contra = [];
-  for (const [k, v] of Object.entries(ans)) {
-    if (v == null) continue;
-    const q = QK(k), tv = q && traitOf(t, q);
-    if (tv == null || (Array.isArray(tv) && !tv.length)) continue; // carattere ignoto per il taxon: non penalizza
-    tot++;
-    if (hitOf(q, tv, v)) ok++; else contra.push(k);
-  }
-  return { ok, tot, contra };
+  return matchTraits(t, ans, QUESTIONS);
 }
 
 function textHit(t) {
@@ -224,7 +217,7 @@ function candidates(ans = state.ans) {
     if (state.zone && t.edible_id) prior = 0.4 + 0.6 * (POTENTIAL(t.edible_id, state.zone)?.score ?? 0.5);
     const fit = m.tot ? m.ok / m.tot : 1;
     return { t, ...m, fit, rank: fit * prior };
-  }).filter((c) => !c.contra.length || (c.contra.length === 1 && c.ok >= 2)) // un solo carattere discordante, e solo se almeno due tornano
+  }).filter((c) => retainCandidate(c.t, c))
     .sort((a, b) => b.rank - a.rank || (TOX_ORDER[a.t.toxicity] ?? 9) - (TOX_ORDER[b.t.toxicity] ?? 9));
 }
 
@@ -824,7 +817,7 @@ export function renderIdentify(box) {
   if (ref) { renderCompare(box, ref, state.pick); return; }
   const list = candidates();
   const nq = state.guided ? nextQuestion(list) : null;
-  const deadly = list.filter((c) => c.t.toxicity === 'mortale');
+  const deadly = deadlyWarnings(TAXA);
   const given = QUESTIONS.filter((q) => state.ans[q.key] != null);
   const answered = QUESTIONS.filter((q) => state.ans[q.key] !== undefined);
   const guidedMode = () => {
@@ -845,7 +838,9 @@ export function renderIdentify(box) {
     ${state.guided ? '' : `<div class="idf"><aside class="idf-side" aria-label="Filtri">${facetsHtml()}</aside><div class="idf-main">`}
     <div class="id-head"><h2 class="sec-title">${list.length} ${list.length === 1 ? 'candidato' : 'candidati'}</h2></div>
     <label class="search-box id-search id-filter"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M7 12h10M10 18h4"/></svg><input id="id-q" type="search" placeholder="Filtra i candidati: anello, blu, castagno…" value="${esc(state.q)}" autocomplete="off" aria-label="Filtra i candidati per parola"></label>
-    ${deadly.length ? `<p class="id-deadly"><b>${deadly.length} ${deadly.length === 1 ? 'specie mortale compatibile' : 'specie mortali compatibili'}</b> con quello che hai indicato. Non raccogliere e non assaggiare nulla di cui non sei certo.</p>` : ''}
+    <div class="id-deadly"><b>Le risposte e i filtri non escludono i funghi mortali.</b> Anello e volva possono essere nascosti o danneggiati. Il catalogo è incompleto: anche un solo candidato o nessun mortale nei risultati non conferma la specie né la commestibilità.
+      ${deadly.length ? `<details><summary>Sosia mortali da conoscere (${deadly.length})</summary><ul>${deadly.map((t) => `<li><a href="#/fungo/${esc(t.key)}">${esc(t.name || t.latin)}</a> · <i>${esc(t.latin)}</i></li>`).join('')}</ul></details>` : ''}
+    </div>
     <ul class="id-cards">${list.slice(0, 40).map(resultCard).join('')}</ul>
     ${state.guided ? '' : '</div></div>'}
     ${RULES.length ? `<details class="sec"><summary>Regole generali di sicurezza</summary><div class="sec-body"><ul class="reasons">${RULES.map((r) => `<li${r.severity === 'critico' ? ' class="crit"' : ''}>${esc(r.text)}</li>`).join('')}</ul></div></details>` : ''}`;

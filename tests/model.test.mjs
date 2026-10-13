@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { SPECIES } from '../js/species.js';
-import { scoreSpecies, seasonWeight, habitatAtBand, elevationFit, weatherFactors } from '../js/model.js';
+import { scoreSpecies, seasonWeight, habitatAtBand, elevationFit, weatherFactors, inputQuality, combine, formatIndex, scoreLabel } from '../js/model.js';
 
 const edulis = SPECIES.find((s) => s.id === 'edulis');
 
@@ -17,6 +17,39 @@ function series({ rainAt = {}, t = 13, tmin = 6, tmax = 18, soil = 0.3 } = {}) {
   return { dates, p, tmean: Array(n).fill(t), tmin: Array(n).fill(tmin), tmax: Array(n).fill(tmax), soilm: Array(n).fill(soil), todayIndex: n - 1 };
 }
 const beech = { sample_categories: ['Faggeta'], samples: Array.from({ length: 50 }, () => [1300, 0]) };
+
+test('input mancanti e habitat senza campioni non significano assenza di funghi', () => {
+  for (const key of ['p', 'tmean', 'soilm', 'tmin', 'tmax']) {
+    const s = series({ rainAt: { 12: 40 } }); s[key][38] = null;
+    const r = scoreSpecies(edulis, s, 39, beech, 1300);
+    assert.equal(r.score, null, key); assert.equal(r.quality.complete, false);
+  }
+  assert.equal(scoreSpecies(edulis, series(), 39, { samples: [] }, 1300).score, null);
+});
+test('anche gli estremi del giorno corrente includono previsioni', () => {
+  const s = series();
+  assert.equal(inputQuality(edulis, s, 39).usesForecast, true);
+  assert.equal(inputQuality(edulis, s, 38).usesForecast, false);
+});
+test('meteo scaduto non produce consigli per oggi', () => {
+  const s = series(); s.source = { expired: true };
+  assert.equal(scoreSpecies(edulis, s, 39, beech, 1300).score, null);
+  assert.ok(Number.isFinite(scoreSpecies(edulis, s, 38, beech, 1300).score));
+});
+test('aggiungere specie identiche non gonfia l’indice', () => {
+  assert.equal(combine([50, 50, 50, null]), 50);
+  assert.equal(combine([null]), null); assert.equal(combine([0, null]), 0);
+});
+test('scala pubblica 0–10 con un decimale italiano', () => {
+  assert.equal(formatIndex(72), '7,2'); assert.equal(formatIndex(100), '10,0');
+  assert.equal(formatIndex(0), '0,0'); assert.equal(formatIndex(null), '–');
+  assert.equal(scoreLabel(null), 'Non calcolabile');
+});
+test('interpolazione continua sulle vere date centrali dei mesi', () => {
+  const months = [1, ...Array(11).fill(0)];
+  const a = seasonWeight(months, '2026-01-31'), b = seasonWeight(months, '2026-02-01');
+  assert.ok(Math.abs((a - b) - 1 / 31) < 1e-9);
+});
 
 test('pioggia 10-14 giorni fa + 13 °C in faggeta = indice alto per il porcino', () => {
   const s = series({ rainAt: { 12: 25, 11: 15 } });
