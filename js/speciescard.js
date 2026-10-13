@@ -157,7 +157,7 @@ function attention(id, warn) {
 }
 function checks(id) {
   const c = TRAITS[id]?.check_before_picking || [];
-  return c.length ? `<h3>Prima di raccoglierlo controlla</h3><p class="small muted checks-tip">Spunta mentre guardi il fungo che hai in mano.</p><ul class="checks">${c.map((x) => `<li role="checkbox" aria-checked="false" tabindex="0">${esc(x)}</li>`).join('')}</ul>` : '';
+  return c.length ? `<h3>Cosa controllare</h3><p class="small muted checks-tip">Spunta mentre guardi il fungo che hai in mano.</p><ul class="checks">${c.map((x) => `<li role="checkbox" aria-checked="false" tabindex="0">${esc(x)}</li>`).join('')}</ul>` : '';
 }
 function whereToLook(id) {
   const w = TRAITS[id]?.where_to_look;

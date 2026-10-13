@@ -322,8 +322,7 @@ function resultCard(c) {
       <button type="button" class="id-link" data-taxon="${esc(t.key)}">${name}</button>${t.name && t.name !== t.latin ? `<i>${esc(t.latin)}</i>` : ''}
       ${t.caution ? `<span class="small id-why"><b>Come si mangia:</b> ${esc(t.caution)}</span>` : ''}
       ${c.contra.length ? `<span class="small id-contra">${contraText(c)}</span>` : ''}
-      ${t.check_before_picking?.length ? `<details><summary>Cosa controllare</summary><ul class="reasons small">${t.check_before_picking.map((x) => `<li>${esc(x)}</li>`).join('')}</ul></details>` : ''}
-      <span class="small id-more" aria-hidden="true">Dettagli ›</span>
+      <button type="button" class="small id-more" data-taxon="${esc(t.key)}" aria-label="Dettagli di ${name}">Dettagli ›</button>
     </div></li>`;
 }
 
@@ -529,7 +528,7 @@ export function renderTaxonPage(box, key) {
       ${t.caution ? `<p class="id-why"><b>Come si mangia:</b> ${esc(t.caution)}</p>` : ''}
       <h3>Come riconoscerla</h3>
       ${traitStrip(null, t)}
-      ${t.check_before_picking?.length ? `<ol class="keys">${t.check_before_picking.map((x) => `<li>${esc(x)}</li>`).join('')}</ol>` : ''}
+      ${t.check_before_picking?.length ? `<h3>Cosa controllare</h3><ol class="keys">${t.check_before_picking.map((x) => `<li>${esc(x)}</li>`).join('')}</ol>` : ''}
       ${look.length ? `<h3>Si confonde con</h3><ul class="tx-look">${look.map(({ id, o }) => { const op = photoOf(o); return `<li>
         <a class="tx-look-main" href="#/riconosci/confronta/${esc(t.key)}/${esc(o.key)}">${op ? `<img src="${ASSET(op.thumb || op.file)}" alt="" loading="lazy" decoding="async">` : ''}<span><b>${esc(o.name)}</b><i>${esc(o.latin)}</i><small class="tx-cmp">Confrontali carattere per carattere ›</small></span></a>
         <a class="tx-sheet" href="#/specie/${esc(id)}">Scheda di ${esc(o.name.toLowerCase())} ›</a></li>`; }).join('')}</ul>` : ''}
@@ -731,7 +730,7 @@ export function openTaxon(key) {
     ${look.length ? `<p class="tx-vs-row"><b>Si confonde con</b>${look.join('')}</p>` : ''}
     ${sos.length && state.compare !== t.key ? `<p class="tx-vs-row"><b>Sosia</b><a class="tx-vs" href="#/riconosci/confronta/${esc(t.key)}">Confrontalo con ${sos.length === 1 ? 'il sosia' : `i ${sos.length} sosia`}<span aria-hidden="true">›</span></a></p>` : ''}
     ${t.field_rules?.length ? `<h3>Da sapere</h3><ul class="reasons">${t.field_rules.map((r) => `<li${r.severity === 'critico' ? ' class="crit"' : ''}>${esc(r.text)}</li>`).join('')}</ul>` : ''}
-    ${t.check_before_picking?.length ? `<h3>Come riconoscerla</h3><ul class="reasons">${t.check_before_picking.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>` : ''}
+    ${t.check_before_picking?.length ? `<h3>Cosa controllare</h3><ul class="reasons">${t.check_before_picking.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>` : ''}
     </div>
     <div class="tx-foot"><a class="btn primary big" href="${full}">Scheda completa <span aria-hidden="true">›</span></a></div>`;
   dlg.showModal();
