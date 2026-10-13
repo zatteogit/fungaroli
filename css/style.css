@@ -875,9 +875,23 @@ html.is-offline #updated { color: var(--warn-ink); font-weight: 600; }
 .pt-walk { background: var(--text); color: var(--bg); }
 .pt-trail { background: var(--accent-soft); color: var(--accent); }
 .pt-text { margin: 0; color: var(--text-2); }
-.pt-actions { display: grid; gap: 8px; }
-.pt-actions .btn svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; }
-.pt-actions .btn.ghost { padding: 11px 14px; }
+.pt-actions { display: flex; flex-wrap: wrap; gap: 6px; }
+.pt-actions > .btn { min-height: 44px; padding: 8px 10px; font-size: 13px; line-height: 1.2; gap: 6px; }
+.pt-actions > .btn:not(.pt-copy) { flex: 1; min-width: 0; }
+.pt-actions .btn svg { width: 18px; height: 18px; flex: none; fill: none; stroke: currentColor; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; }
+.pt-actions > .pt-copy { width: 44px; flex: none; padding: 8px; border-color: transparent; color: var(--muted); }
+.pt-actions > .tl-btns { width: 100%; }
+.pt-copy-status { margin: 0; overflow-wrap: anywhere; }
+.pt-copy-status:empty { display: none; }
+.pt-preview { min-width: 0; border-radius: 12px; padding: 10px 12px; background: var(--surface-2); }
+.pt-preview-title, .pt-preview-note { margin: 0; color: var(--muted); font-size: 11.5px; }
+.pt-preview-title { margin-bottom: 6px; }
+.pt-preview .tprof svg { height: 54px; }
+.pt-preview .tprof figcaption { flex-wrap: wrap; gap: 3px 6px; font-size: 10.5px; }
+.pt-preview-note { margin-top: 4px; }
+.pt-preview .walk-sketch { margin: 0; }
+.pt-preview .walk-sketch svg { height: 84px; }
+.pt-preview .walk-sketch figcaption { padding: 4px 0 0; font-size: 10.5px; }
 .sheet-key { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 6px; margin: -4px 0 0; color: var(--text-2); }
 .key-p { width: 18px; height: 18px; border-radius: 5px; background: var(--accent); color: var(--accent-ink); font-weight: 800; font-size: 11px; display: inline-grid; place-items: center; }
 .key-walk { width: 18px; height: 18px; border-radius: 50%; background: var(--text); color: var(--bg); display: inline-grid; place-items: center; margin-left: 6px; }

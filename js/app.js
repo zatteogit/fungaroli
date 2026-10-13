@@ -868,6 +868,8 @@ function coverOf(z, spId) {
 }
 const ring = (s, big = true) => `<span class="ring${big ? '' : ' ring-sm'}" style="--c:var(${scoreVar(s).replace('--s', '--ps')});--p:${s ?? 0}" aria-label="Indice ${formatIndex(s)} su 10, ${scoreLabel(s)}">${big ? '<small class="ring-title">Condizioni</small>' : ''}<b>${scoreText(s)}</b>${big ? `<small>${scoreShortLabel(s)}</small>` : ''}</span>`;
 const IC = {
+  book: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v15M12 5C8 3 5 3 3 4v14c3-1 6-1 9 2 3-3 6-3 9-2V4c-2-1-5-1-9 1Z"/></svg>',
+  copy: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V4H4v12h4"/></svg>',
   unknown: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9 8a3 3 0 0 1 6 0c0 2-3 2-3 5M12 17h.01"/></svg>',
   clock: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>',
   car: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 16v-4.5L7 7h10l2 4.5V16"/><path d="M3.5 16h17"/><circle cx="8" cy="17" r="1.6"/><circle cx="16" cy="17" r="1.6"/></svg>',
@@ -1037,42 +1039,60 @@ function openPoint(zid, pt) {
   const d = dayEntry(zid, state.dayOffset);
   const sh = $('#map-sheet');
   if (!z || !d?.best) return;
-  const copyBtn = (lat, lon) => `<button type="button" class="btn ghost" data-copy="${lat.toFixed(5)}, ${lon.toFixed(5)}">Copia coordinate</button>`;
-  let ic, eyebrow, title, text, actions;
+  const copyBtn = (lat, lon) => `<button type="button" class="btn ghost pt-copy" data-copy="${lat.toFixed(5)}, ${lon.toFixed(5)}" aria-label="Copia coordinate" title="Copia coordinate">${IC.copy}</button>`;
+  let ic, eyebrow, title, text, actions, preview = '';
   if (pt.kind === 'parking') {
     ic = '<span class="pt-ic pt-p">P</span>'; eyebrow = 'Sosta per l\'auto'; title = pt.p.name;
     text = 'Parcheggio o slargo da cui partono i boschi della zona.';
-    actions = `<a class="btn primary big" href="${gmaps(pt.p.lat, pt.p.lon)}" target="_blank" rel="noopener">${IC.car} Indicazioni stradali fin qui</a>${copyBtn(pt.p.lat, pt.p.lon)}`;
+    actions = `<a class="btn primary" href="${gmaps(pt.p.lat, pt.p.lon)}" target="_blank" rel="noopener" aria-label="Indicazioni stradali fin qui">${IC.car} Indicazioni</a>${copyBtn(pt.p.lat, pt.p.lon)}`;
   } else if (pt.kind === 'access') {
     const ax = d?.access;
     ic = `<span class="pt-ic pt-walk">${IC.walk}</span>`; eyebrow = 'Qui lasci l\'auto e prosegui a piedi'; title = ax.road || 'Punto più vicino al bosco adatto';
     text = `In auto ${ax.surface ? `su ${SURF_LABEL[ax.surface]}` : 'su asfalto'} fino a qui, poi ${ax.walkM < 50 ? `il bosco adatto è a bordo strada: ${esc((SHORT[ax.cat] || ax.cat).toLowerCase())} a ${ax.e} m` : `${walkTxt(ax.walkM)} in linea d'aria fino a ${esc((SHORT[ax.cat] || ax.cat).toLowerCase())} a ${ax.e} m`}, adatto a ${esc(d.best.species.name.toLowerCase())}.`;
-    actions = `<a class="btn primary big" href="${gmaps(ax.rlat, ax.rlon)}" target="_blank" rel="noopener">${IC.car} Indicazioni stradali fin qui</a>${copyBtn(ax.rlat, ax.rlon)}`;
+    actions = `<a class="btn primary" href="${gmaps(ax.rlat, ax.rlon)}" target="_blank" rel="noopener" aria-label="Indicazioni stradali fin qui">${IC.car} Indicazioni</a>${copyBtn(ax.rlat, ax.rlon)}`;
   } else if (pt.kind === 'trailhead') {
     const h = pt.h, t = pt.t;
     ic = `<span class="pt-ic pt-th">${segnavia(t)}</span>`; eyebrow = 'Imbocco del sentiero'; title = trailName(t);
     text = `Qui il sentiero incontra una ${h.kind === 'strada' ? 'strada mappata' : 'strada sterrata mappata'}${h.road ? ` (${esc(h.road)})` : ''}${h.ele != null ? `, a circa ${Math.round(h.ele / 25) * 25} m` : ''}. Verifica transitabilità e possibilità di sosta.`;
-    actions = `<a class="btn primary big" href="${gmaps(h.lat, h.lon)}" target="_blank" rel="noopener">${IC.car} Indicazioni stradali fin qui</a>
-      <a class="btn ghost" href="${walkHref(z, state.dayOffset, t)}">Il taccuino di questo sentiero</a>${copyBtn(h.lat, h.lon)}`;
+    preview = pointTrailPreview(z, t, d, h);
+    actions = `<a class="btn primary" href="${gmaps(h.lat, h.lon)}" target="_blank" rel="noopener" aria-label="Indicazioni stradali fin qui">${IC.car} Indicazioni</a>
+      <a class="btn ghost" href="${walkHref(z, state.dayOffset, t)}" aria-label="Il taccuino di questo sentiero">${IC.book} Taccuino</a>${copyBtn(h.lat, h.lon)}`;
   } else {
     const t = pt.t;
     ic = null; eyebrow = 'Sentiero da esplorare'; title = '';
     text = trailCard(z, t, d, false);
-    actions = `<a class="btn primary big" href="${walkHref(z, state.dayOffset, t)}">Il taccuino di questo sentiero</a>${trailLinks(z, t)}`;
+    actions = `<a class="btn primary" href="${walkHref(z, state.dayOffset, t)}" aria-label="Il taccuino di questo sentiero">${IC.book} Taccuino</a>${trailLinks(z, t)}`;
   }
   sh.innerHTML = `
     <div class="sheet-nav"><button type="button" class="sheet-back">‹ ${esc(splitName(z)[0])}</button><button type="button" class="sheet-close" aria-label="Chiudi">✕</button></div>
     ${ic ? `<div class="pt-head">${ic}<div><span class="eyebrow">${eyebrow}</span><b class="sheet-title">${esc(title)}</b></div></div>
     <p class="small pt-text">${text}</p>` : `<span class="eyebrow">${eyebrow}</span>${text}`}
-    <div class="pt-actions">${actions}</div>`;
+    ${preview}<div class="pt-actions">${actions}</div><p class="small muted pt-copy-status" role="status" data-copy-status></p>`;
   sh.hidden = false;
   sh.querySelector('.sheet-back').addEventListener('click', () => openSheet(zid));
   sh.querySelector('.sheet-close').addEventListener('click', () => { sh.hidden = true; sheetZone = null; state.zoneId = null; renderMap(); });
   sh.querySelector('[data-trail]')?.addEventListener('click', () => openPoint(zid, { kind: 'trail', t: pt.t, top: false }));
-  sh.querySelector('[data-copy]')?.addEventListener('click', (e) => {
-    const b = e.currentTarget;
-    navigator.clipboard?.writeText(b.dataset.copy).then(() => { b.textContent = 'Copiate'; }).catch(() => { b.textContent = b.dataset.copy; });
+  sh.querySelector('[data-copy]')?.addEventListener('click', async (e) => {
+    const b = e.currentTarget, status = sh.querySelector('[data-copy-status]');
+    try {
+      if (!navigator.clipboard?.writeText) throw new Error('Clipboard unavailable');
+      await navigator.clipboard.writeText(b.dataset.copy);
+      b.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4 10-10"/></svg>';
+      b.setAttribute('aria-label', 'Coordinate copiate'); b.title = 'Coordinate copiate';
+      status.textContent = 'Coordinate copiate.';
+    } catch { status.textContent = `Coordinate: ${b.dataset.copy}`; }
   });
+}
+
+function pointTrailPreview(z, t, d, h) {
+  const profile = t.lines?.length === 1 && d?.best ? trailProfile(z.id, t, d.best.species, d.best.band, [h]) : '';
+  const sketch = profile ? null : trailSketch(t, h);
+  if (!profile && !sketch) return '';
+  const elevations = (t.samples || []).map(s => s[0]).filter(Number.isFinite);
+  const range = elevations.length ? ` · ${Math.min(...elevations)}–${Math.max(...elevations)} m` : '';
+  return `<div class="pt-preview"><p class="pt-preview-title">Tratto locale · ${fmtKm(t.in_zone_km)} km${range}</p>
+    ${profile || `<figure class="walk-sketch"><svg viewBox="0 0 360 200" role="img" aria-label="Anteprima del tratto locale con imbocco mappato"><text x="330" y="20">N ↑</text>${sketch.paths.map(p => `<polyline points="${p}"/>`).join('')}<circle cx="${sketch.head[0].toFixed(1)}" cy="${sketch.head[1].toFixed(1)}" r="6"/></svg><figcaption>${sketch.paths.length > 1 ? 'Segmenti separati' : 'Traccia locale'} · punto: imbocco</figcaption></figure>`}
+    ${profile ? '<p class="pt-preview-note">1: imbocco mappato</p>' : ''}</div>`;
 }
 
 function initMap() {
