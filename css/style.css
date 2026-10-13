@@ -1732,6 +1732,10 @@ html.theme-swap, html.theme-swap *, html.theme-swap *::before, html.theme-swap *
 .cover .fk3 { display: none; }
 .cover .facts.t2 .fk3, .cover .facts.t3 .fk3 { display: inline; }
 /* ===== Loader iniziale: la sagoma della copertina, un fungo che spunta, i passi veri del caricamento ===== */
+#hero:has(.loader) ~ * { display: none !important; }
+#hero ~ :empty, #hero ~ .rail-host:has(> .rail:empty) { display: none; }
+[data-view="uscite"]:has(#ranking:empty) #others-h,
+[data-view="uscite"]:has(#season:empty) #season-h { display: none; }
 .loader { position: relative; overflow: hidden; display: grid; place-items: center; align-content: center; gap: 18px; min-height: min(560px, calc(100svh - 260px)); padding: 32px 20px; border-radius: var(--r-xl);
   background: radial-gradient(120% 80% at 50% 110%, color-mix(in srgb, var(--forest) 70%, #000) 0%, var(--forest) 55%, color-mix(in srgb, var(--forest) 80%, #fff) 100%); color: #f3efe7; }
 .loader::after { content: ''; position: absolute; inset: 0; background: linear-gradient(105deg, transparent 35%, rgb(255 255 255 / .09) 50%, transparent 65%); transform: translateX(-100%); animation: ld-sweep 2.4s ease-in-out infinite; pointer-events: none; }

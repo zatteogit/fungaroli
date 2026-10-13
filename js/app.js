@@ -1902,5 +1902,7 @@ function captureForecast(zoneId, date, band) {
 }
 
 init().catch((e) => {
-  $('#detail').innerHTML = `<div class="error">Errore di avvio: ${esc(e.message)}</div>`;
+  const message = `<div class="error">Errore di avvio: ${esc(e.message)}</div>`;
+  $('#hero').innerHTML = message;
+  $('#detail').innerHTML = message;
 });
