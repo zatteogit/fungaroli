@@ -8,6 +8,7 @@ import { renderCharts } from './chart.js';
 import { initJournal } from './journal.js';
 import { renderSvgMap } from './svgmap.js';
 import { initSpeciesCards, thumb, renderSpeciesDetail, whereSummary, criticalRule, speciesPhoto } from './speciescard.js';
+import { speciesLink } from './species-link.js';
 import { openLightbox, captionHtml } from './lightbox.js';
 import { initInstall, maybeInvite } from './install.js';
 import { loadOuting, outingFor, OUTING_LABEL, OUTING_SHORT, OUTING_RANK } from './outing.js';
@@ -1026,7 +1027,7 @@ function openPoint(zid, pt) {
   } else if (pt.kind === 'access') {
     const ax = d?.access;
     ic = `<span class="pt-ic pt-walk">${IC.walk}</span>`; eyebrow = 'Qui lasci l\'auto e prosegui a piedi'; title = ax.road || 'Punto più vicino al bosco adatto';
-    text = `In auto ${ax.surface ? `su ${SURF_LABEL[ax.surface]}` : 'su asfalto'} fino a qui, poi ${ax.walkM < 50 ? `il bosco adatto è a bordo strada: ${esc((SHORT[ax.cat] || ax.cat).toLowerCase())} a ${ax.e} m` : `${walkTxt(ax.walkM)} in linea d'aria fino a ${esc((SHORT[ax.cat] || ax.cat).toLowerCase())} a ${ax.e} m`}, adatto a ${esc(d.best.species.name.toLowerCase())}.`;
+    text = `In auto ${ax.surface ? `su ${SURF_LABEL[ax.surface]}` : 'su asfalto'} fino a qui, poi ${ax.walkM < 50 ? `il bosco adatto è a bordo strada: ${esc((SHORT[ax.cat] || ax.cat).toLowerCase())} a ${ax.e} m` : `${walkTxt(ax.walkM)} in linea d'aria fino a ${esc((SHORT[ax.cat] || ax.cat).toLowerCase())} a ${ax.e} m`}, adatto a ${speciesLink(d.best.species, d.best.species.name.toLowerCase())}.`;
     actions = `<a class="btn primary" href="${gmaps(ax.rlat, ax.rlon)}" target="_blank" rel="noopener" aria-label="Indicazioni stradali fin qui">${IC.car} Indicazioni</a>${copyBtn(ax.rlat, ax.rlon)}`;
   } else if (pt.kind === 'trailhead') {
     const h = pt.h, t = pt.t;
@@ -1453,7 +1454,7 @@ function renderWalkFocus(z, d, walk) {
       <div><dt>Itinerario completo</dt><dd>${t.total_km ? `${fmtKm(t.total_km)} km` : 'Lunghezza n.d.'}${t.duration ? ` · ${fmtDur(t.duration)}` : ''}${t.ascent ? ` · +${esc(t.ascent)} m` : ''}</dd></div>
       <div><dt>Imbocco mappato</dt><dd>${h ? `${h.ele != null ? `Circa ${Math.round(h.ele / 25) * 25} m · ` : ''}${esc(h.road || (h.kind === 'strada' ? 'su strada' : 'su sterrata'))}` : 'Non disponibile; le soste indicate riguardano la zona'}</dd></div>
     </dl>
-    ${t.mainCat ? `<p class="small">Lungo il tracciato: ${linkTrees(t.mainCat.toLowerCase())} nei campioni tra circa ${Math.floor(t.lo / 25) * 25} e ${Math.ceil(t.hi / 25) * 25} m, compatibili con l’habitat di ${esc(d.best.species.name.toLowerCase())}.</p>` : ''}
+    ${t.mainCat ? `<p class="small">Lungo il tracciato: ${linkTrees(t.mainCat.toLowerCase())} nei campioni tra circa ${Math.floor(t.lo / 25) * 25} e ${Math.ceil(t.hi / 25) * 25} m, compatibili con l’habitat di ${speciesLink(d.best.species, d.best.species.name.toLowerCase())}.</p>` : ''}
     ${sketch ? `<figure class="walk-sketch"><svg viewBox="0 0 360 200" role="img" aria-label="Schema del tratto di sentiero nella zona${h ? ', con imbocco mappato' : ''}"><text x="330" y="20">N ↑</text>${sketch.paths.map(p => `<polyline points="${p}"/>`).join('')}${sketch.head ? `<circle cx="${sketch.head[0].toFixed(1)}" cy="${sketch.head[1].toFixed(1)}" r="6"/>` : ''}</svg><figcaption>Traccia locale${h ? ' · punto: imbocco mappato' : ''}. Schema orientato a nord; apri la mappa del percorso per orientarti.</figcaption></figure>` : ''}
     ${trailLinks(z, t)}
     <p class="small muted">Il GPX contiene solo il tratto nella zona. Tempi e dislivello, quando disponibili, riguardano l’itinerario completo. Verifica accesso, sosta e stato del sentiero prima di partire.</p>
@@ -1467,7 +1468,7 @@ function planCard(z, d, walk) {
   rows.push({ sec: 'specie', icon: 'find', thumb: best.species.id, k: 'Cosa osservare', v: `<button type="button" class="sp-inline" data-species="${best.species.id}">${esc(best.species.name)}</button> ${intornoA(best.band)} <b>${best.band} m</b>`,
     sub: [whereSummary(best.species.id) && `<span class="plan-where">${linkTrees(whereSummary(best.species.id))}</span>`,
       criticalRule(best.species.id) && `<span class="plan-crit">⚠ ${esc(criticalRule(best.species.id))}</span>`,
-      d.perSpecies.slice(1, 3).map((p) => [p, spScore(z, d, p)]).filter(([, sc]) => sc >= 20).map(([p, sc]) => `${esc(p.species.name)} ${formatIndex(sc)}/10`).join(' · ')].filter(Boolean).join('<br>') || esc(best.species.latin) });
+      d.perSpecies.slice(1, 3).map((p) => [p, spScore(z, d, p)]).filter(([, sc]) => sc >= 20).map(([p, sc]) => `${speciesLink(p.species)} ${formatIndex(sc)}/10`).join(' · ')].filter(Boolean).join('<br>') || esc(best.species.latin) });
   if (d.crowd) {
     const t = timingAdvice({ dateStr: d.date, lat: z.lat, lon: z.lon, crowd: d.crowd });
     rows.push({ sec: 'quando', icon: 'when', k: 'Quando', v: `Arriva <b>entro le ${fmtRough(t.arrive, 15, 'floor')}</b> <span class="badge crowd-${d.crowd.level}">${crowdText(d.crowd)}</span>`,
@@ -1664,7 +1665,7 @@ function renderAccess(z, d) {
     lines.push(txt);
   }
   if (ax) {
-    lines.push(`<b>Punto più comodo per ${esc(d.best.species.name.toLowerCase())}</b>: in auto ${ax.surface === 0 ? 'su asfalto' : `su ${SURF_LABEL[ax.surface]}`}${ax.road ? ` lungo ${esc(ax.road)}` : ''} fino al <a href="${gmaps(ax.rlat, ax.rlon)}" target="_blank" rel="noopener">punto sulla strada</a>, poi ${ax.walkM < 50 ? 'subito, a bordo strada,' : `<b>${fmtM(ax.walkM)} in linea d’aria</b> (in linea d'aria) fino a`} ${esc((SHORT[ax.cat] || ax.cat).toLowerCase())} a ${ax.e} m.`);
+    lines.push(`<b>Punto più comodo per ${speciesLink(d.best.species, d.best.species.name.toLowerCase())}</b>: in auto ${ax.surface === 0 ? 'su asfalto' : `su ${SURF_LABEL[ax.surface]}`}${ax.road ? ` lungo ${esc(ax.road)}` : ''} fino al <a href="${gmaps(ax.rlat, ax.rlon)}" target="_blank" rel="noopener">punto sulla strada</a>, poi ${ax.walkM < 50 ? 'subito, a bordo strada,' : `<b>${fmtM(ax.walkM)} in linea d’aria</b> (in linea d'aria) fino a`} ${esc((SHORT[ax.cat] || ax.cat).toLowerCase())} a ${ax.e} m.`);
   }
   return `
     <p><span class="badge comfort-${d.comfort?.level}">accesso ${d.comfort?.level ?? ''}</span></p>
