@@ -920,7 +920,6 @@ function renderHome() {
   const note = g && g.z.id !== hero.z.id && wg && wg.level !== 'ok'
     ? `<a class="cover-note" href="#/zona/${g.z.id}/${g.o}"><span>${wxi(wg)}<b>${esc(splitName(g.z)[0])}</b> <span class="pc-up">${formatIndex(g.s)}</span> ma ${esc(wg.short || wg.main)}</span><span aria-hidden="true">›</span></a>` : '';
   box.innerHTML = `
-    <p class="small muted">${esc(String(contentCopy.indexExplanation || 'Condizioni di crescita: indice sperimentale 0–10.').replace('Le passeggiate sono ordinate con preferenze, meteo e segnalazioni recenti; i ritrovamenti restano incerti.', '').trim())}</p>
     <div class="cover vtn" style="--vtn:cover">
       ${cov ? `<img class="cover-img" src="${cov.hd}" alt="${esc(cov.alt)}" fetchpriority="high">` : ''}
       <span class="shade"></span>
@@ -1588,6 +1587,7 @@ function renderDetail() {
     ${zoneLegal(z, d)}
     ${z.protection ? `<div class="notice">${esc(z.protection)}</div>` : ''}
     ${section('meteo', 'Perché questo indice', `${renderWhy({ r: best, s: sb, i: d.i, sp: best.species, band: best.band, dateStr: d.date, shown: s, agg: d.score, parts: d.perSpecies.map((p) => ({ name: p.species.name.split(' / ')[0], score: p.score })), prefs: adjParts(z, d), outing: wxRank(z, d) < 1 ? wxRank(z, d) : 0 })}
+      <p class="small muted">${esc(contentCopy.indexExplanation || 'Condizioni di crescita: indice sperimentale 0–10.')}</p>
       <p class="sci-h">L'indice nei giorni</p><div id="charts"></div>${legal?.forecast_note ? `<p class="small muted">${esc(legal.forecast_note)}</p>` : ''}`)}
     ${section('quando', 'Quando andare e affollamento', renderHuman(z, d))}
     ${section('accesso', 'Accesso in auto e a piedi', renderAccess(z, d))}
