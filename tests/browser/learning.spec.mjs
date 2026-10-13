@@ -33,6 +33,11 @@ for(const width of [320,1280]) test(`spiegazioni contestuali, glossario e ricono
   await expect(keyword).toBeVisible();await keyword.click();await expect(panel.locator('h2')).toHaveText('Volva');
   await panel.locator('.learning-related [data-term="anello"]').click();await expect(panel.locator('h2')).toHaveText('Anello');
   await page.keyboard.press('Escape');await expect(panel).toBeHidden();await expect(keyword).toBeFocused();
+  const attention=page.locator('#species-detail .attention');
+  await expect(attention.locator('summary')).toHaveText('Attenzione');
+  await expect(attention.locator(':scope > ul')).toBeHidden();
+  await attention.locator('summary').click();await expect(attention.locator(':scope > ul')).toBeVisible();
+  await attention.locator('summary').click();
   await page.locator('[data-tab="specie"]').click();await expect(page.locator('[data-view="specie"]')).toBeVisible();
   await expect(page.locator('#species-grid .sp-card')).not.toHaveCount(0);
   await expect(page.locator('[data-tab="specie"]')).toContainText('Impara');
@@ -46,7 +51,27 @@ for(const width of [320,1280]) test(`spiegazioni contestuali, glossario e ricono
   await page.locator('#tree-observation-results a').first().click();await expect(page.locator('#tree-detail h1')).toContainText('Pino nero');
   await page.goto('/#/riconosci/bosco');await page.locator('#field-glossary [data-category="Sentiero"]').click();
   await page.locator('#field-glossary-q').fill('segnavia');await expect(page.locator('#field-glossary-results')).toContainText('Segnavia');
-  await page.goto('/#/riconosci');await expect(page.locator('#identify .id-deadly')).toBeVisible();
+  await page.goto('/#/riconosci');
+  const deadly=page.locator('#identify .id-deadly'),notice=page.locator('#identify .id-warn');
+  await expect(deadly).toBeVisible();await expect(deadly).toHaveJSProperty('tagName','DETAILS');
+  await expect(deadly.locator('summary')).toHaveText('Le risposte e i filtri non escludono i funghi mortali.');
+  await expect(deadly.locator('p')).toBeHidden();await expect(deadly.locator('ul,a[href^="#/fungo/"]')).toHaveCount(0);
+  await expect(notice.locator('summary')).toHaveText("Non è un'identificazione.");
+  for(const theme of ['light','dark']){
+    await page.evaluate(t=>document.documentElement.dataset.theme=t,theme);
+    await deadly.screenshot({path:`/tmp/fungaroli-notice-closed-${width}-${theme}.png`});
+  }
+  await deadly.locator('summary').focus();await page.keyboard.press('Enter');
+  await expect(deadly.locator('p')).toBeVisible();await expect(deadly.locator('p')).toContainText('né la commestibilità');
+  await deadly.screenshot({path:`/tmp/fungaroli-notice-open-${width}.png`});
+  await notice.locator('summary').click();await expect(deadly.locator('p')).toBeHidden();
+  await expect(notice.locator('p')).toContainText('Restringe i candidati, velenosi compresi.');
+  await expect(page.locator('#identify > details[open]')).toHaveCount(1);
+  // The same behaviour also works without the browser's native name grouping.
+  await page.locator('#identify > details[name="identify-notices"]').evaluateAll(nodes=>nodes.forEach(el=>el.removeAttribute('name')));
+  await deadly.locator('summary').click();await expect(notice.locator('p')).toBeHidden();
+  await expect(page.locator('#identify > details[open]')).toHaveCount(1);
+  await deadly.locator('summary').click();await page.evaluate(()=>document.documentElement.dataset.theme='light');
   await page.locator('#identify [data-mode="all"]').click();
   const lamelle=page.locator('#identify .idf-primary [data-fk="hymenophore"][data-fv="lamelle"]');
   await lamelle.focus();await page.keyboard.press('Enter');await expect(lamelle).toHaveAttribute('aria-pressed','true');await expect(lamelle).toBeFocused();

@@ -3,7 +3,7 @@
 
 import { openLightbox, captionHtml } from './lightbox.js';
 import { soft, tick, canVT } from './motion.js';
-import { matchTraits, retainCandidate, deadlyWarnings } from './identify-model.js';
+import { matchTraits, retainCandidate } from './identify-model.js';
 
 const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const norm = (s) => String(s ?? '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
@@ -403,24 +403,12 @@ export function traitStrip(edibleId, t = refOf(edibleId)) {
   return `<ul class="trait-strip" aria-label="Caratteri principali">${out.join('')}</ul>`;
 }
 
-// riquadro Attenzione compatto: i punti critici in una riga ciascuno, tutto il resto aprendolo
-const headOf = (t) => {
-  const c = t.indexOf(':');
-  if (c > 12 && c < 95) return t.slice(0, c);
-  const dot = t.search(/[.;](\s|$)/);
-  if (dot > 12 && dot < 95) return t.slice(0, dot);
-  return t.length > 90 ? `${t.slice(0, t.lastIndexOf(' ', 86))}…` : t;
-};
+// Riquadro Attenzione: titolo da chiuso, messaggi completi aprendolo.
 export function attentionBox(rules, extra = '') {
   if (!rules?.length) return '';
   const sorted = [...rules].sort((a, b) => (a.severity === 'critico' ? 0 : 1) - (b.severity === 'critico' ? 0 : 1));
-  const crit = sorted.filter((r) => r.severity === 'critico');
-  const top = (crit.length ? crit : sorted).slice(0, 3);
-  const more = sorted.length - top.length;
   return `<details class="attention att-c" role="note">
-    <summary><span class="att-h">Attenzione</span>
-      <ul class="att-compact">${top.map((r) => `<li class="${r.severity === 'critico' ? 'crit' : ''}">${esc(headOf(r.text))}</li>`).join('')}</ul>
-      <span class="att-more">${more > 0 ? `Tutti i ${sorted.length} punti, con i perché` : 'I dettagli'}</span></summary>
+    <summary><span class="att-h">Attenzione</span></summary>
     <ul>${sorted.map((r) => `<li class="${r.severity === 'critico' ? 'crit' : ''}">${esc(r.text)}</li>`).join('')}</ul>
     ${extra ? `<p class="small">${esc(extra)}</p>` : ''}
   </details>`;
@@ -825,7 +813,6 @@ export function renderIdentify(box) {
   if (ref) { renderCompare(box, ref, state.pick); return; }
   const list = candidates();
   const nq = state.guided ? nextQuestion(list) : null;
-  const deadly = deadlyWarnings(TAXA);
   const given = QUESTIONS.filter((q) => state.ans[q.key] != null);
   const answered = QUESTIONS.filter((q) => state.ans[q.key] !== undefined);
   const guidedMode = () => {
@@ -836,7 +823,7 @@ export function renderIdentify(box) {
     return head + next;
   };
   box.innerHTML = `
-    <details class="id-warn"><summary><b>Non è un'identificazione.</b> Restringe i candidati, velenosi compresi.</summary><p>${BANNER ? esc(BANNER) : "Prima di mangiare qualunque fungo: controllo gratuito all'Ispettorato Micologico ASL."} <a href="#/info">Emergenza</a></p></details>
+    <details class="id-warn" name="identify-notices"><summary><b>Non è un'identificazione.</b></summary><p>Restringe i candidati, velenosi compresi. ${BANNER ? esc(BANNER) : "Prima di mangiare qualunque fungo: controllo gratuito all'Ispettorato Micologico ASL."} <a href="#/info">Emergenza</a></p></details>
     <div class="seg-tabs" role="tablist" aria-label="Modo">
       <button type="button" role="tab" data-mode="guided" aria-selected="${state.guided}">Guidata</button>
       <button type="button" role="tab" data-mode="all" aria-selected="${!state.guided}">Filtri</button>
@@ -845,11 +832,14 @@ export function renderIdentify(box) {
     ${state.guided ? guidedMode() : `<div class="idf-primary" aria-label="Caratteri principali">${facetsHtml([['', PRIMARY_FILTERS]], true)}</div><div class="idf-bar">${activeChips()}<button type="button" class="btn idf-open" data-idf-open aria-haspopup="dialog" aria-controls="identify-filters">Altri${given.filter(q=>!PRIMARY_FILTERS.includes(q.key)).length ? ` <b>${given.filter(q=>!PRIMARY_FILTERS.includes(q.key)).length}</b>` : ''}</button>${given.length ? '<button type="button" class="af-add" data-fall>Azzera</button>' : ''}</div>`}
     <div class="id-head"><h2 class="sec-title">${list.length} ${list.length === 1 ? 'candidato' : 'candidati'}</h2></div>
     <label class="search-box id-search id-filter"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M7 12h10M10 18h4"/></svg><input id="id-q" type="search" placeholder="Filtra i candidati: anello, blu, castagno…" value="${esc(state.q)}" autocomplete="off" aria-label="Filtra i candidati per parola"></label>
-    <div class="id-deadly"><b>Le risposte e i filtri non escludono i funghi mortali.</b> Anello e volva possono essere nascosti o danneggiati. Il catalogo è incompleto: anche un solo candidato o nessun mortale nei risultati non conferma la specie né la commestibilità.
-      ${deadly.length ? `<details><summary>Sosia mortali da conoscere (${deadly.length})</summary><ul>${deadly.map((t) => `<li><a href="#/fungo/${esc(t.key)}">${esc(t.name || t.latin)}</a> · <i>${esc(t.latin)}</i></li>`).join('')}</ul></details>` : ''}
-    </div>
+    <details class="id-deadly" name="identify-notices"><summary><b>Le risposte e i filtri non escludono i funghi mortali.</b></summary><p>Anello e volva possono essere nascosti o danneggiati. Il catalogo è incompleto: anche un solo candidato o nessun mortale nei risultati non conferma la specie né la commestibilità.</p></details>
     <ul class="id-cards">${list.slice(0, 40).map(resultCard).join('')}</ul>
-    ${RULES.length ? `<details class="sec"><summary>Regole generali di sicurezza</summary><div class="sec-body"><ul class="reasons">${RULES.map((r) => `<li${r.severity === 'critico' ? ' class="crit"' : ''}>${esc(r.text)}</li>`).join('')}</ul></div></details>` : ''}`;
+    ${RULES.length ? `<details class="sec" name="identify-notices"><summary>Regole generali di sicurezza</summary><div class="sec-body"><ul class="reasons">${RULES.map((r) => `<li${r.severity === 'critico' ? ' class="crit"' : ''}>${esc(r.text)}</li>`).join('')}</ul></div></details>` : ''}`;
+
+  const notices=[...box.querySelectorAll(':scope > details[name="identify-notices"]')];
+  notices.forEach(el=>el.addEventListener('toggle',()=>{
+    if(el.open)notices.forEach(other=>{if(other!==el)other.open=false;});
+  }));
 
   const rerender = () => renderIdentify(box);
   const rerenderSoft = () => { tick(); soft(() => renderIdentify(box)); };
