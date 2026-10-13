@@ -223,8 +223,9 @@ test('autocomplete dei commestibili, selezione individuale, stagione e persisten
   await page.locator('#hero .explore-fallback a').first().click();
   await expect(page.locator('#detail')).toContainText('Indice non ancora disponibile');
   await expect(page.locator('#detail .trails li').first()).toBeVisible();
-  await page.goto('/'); await expect(page.locator('#followed-species .followed-card')).toHaveCount(2);
-  await page.locator('#followed-species a').first().click();
+  await page.goto('/'); await expect(page.locator('#followed-species')).toHaveCount(0);
+  await page.goto('/#/specie'); await expect(page.locator('#sp-cards .pill')).toHaveCount(0);
+  await page.locator('#sp-cards').getByRole('link',{name:'Pioppino',exact:true}).click();
   await expect(page.locator('#edible-detail')).toContainText('Pioppino');
   await expect(page.locator('#edible-detail')).toContainText('non è ancora disponibile');
   await page.goto('/'); await page.locator('#active-filters [data-more]').click();
@@ -233,8 +234,11 @@ test('autocomplete dei commestibili, selezione individuale, stagione e persisten
   expect(pref.speciesIds).toContain('pinophilus'); expect(pref.speciesIds).not.toContain('edulis');
   await page.locator('#full-filters [data-close]').first().click();
   await expect(page.locator('#hero')).toContainText('Porcino rosso');
-  await page.goto('/'); await expect(page.locator('#followed-species .followed-card')).toHaveCount(3);
-  await page.locator('#active-filters [data-more]').click(); await page.locator('#full-filters [data-all]').click();
+  await page.goto('/'); await expect(page.locator('#followed-species')).toHaveCount(0);
+  await page.locator('#active-filters [data-more]').click();
+  await expect(page.locator('#full-filters [data-remove-species]')).toHaveCount(3);
+  await expect(page.locator('#full-filters [data-remove-species] .season-badge')).toHaveCount(3);
+  await page.locator('#full-filters [data-all]').click();
   await page.locator('#full-filters [data-close]').first().click();
   await expect(page.locator('#hero .pc').first()).toHaveText(baseline);
   expect(errors).toEqual([]);
