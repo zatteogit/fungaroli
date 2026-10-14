@@ -37,6 +37,7 @@ import { buildEdibleCatalog, seasonStatus, seasonLabel } from './edible-catalog.
 import { mountSpeciesAutocomplete } from './species-autocomplete.js';
 import { uniquePlaceProposals, chooseWalkTrail, walkContext, trailSketch } from './walks.js';
 import { cardLatin } from './names.js';
+import { pickCover } from './zone-cover.js';
 
 const HISTORY_DAYS = 30;   // giorni passati mostrati nel grafico
 const AHEAD_DAYS = 7;      // giorni futuri valutati
@@ -460,7 +461,7 @@ function routeNow(r, nav) {
     $('#field-identify').hidden = r.recognizeMode === 'funghi';
     if(r.recognizeMode==='funghi') {setCompare(r.compare,r.pick);renderIdentify($('#identify'));}
     // piante e alberi: lo stesso percorso guidato dei funghi, una domanda alla volta
-    else if(r.recognizeMode==='piante') renderGuidedKey($('#field-identify'),'piante',{items:plants().map(p=>({id:p.id,name:p.name,latin:cardLatin(p.latin),href:`#/pianta/${encodeURIComponent(p.id)}`,danger:p.category==='Pericolose'})),thumb:plantThumb,note:'I fiori aggiunti di recente non hanno ancora i caratteri per il percorso guidato: li trovi in Sfoglia, con il filtro Fiori.'});
+    else if(r.recognizeMode==='piante') renderGuidedKey($('#field-identify'),'piante',{items:plants().map(p=>({id:p.id,name:p.name,latin:cardLatin(p.latin),href:`#/pianta/${encodeURIComponent(p.id)}`,danger:p.category==='Pericolose'})),thumb:plantThumb});
     else if(r.recognizeMode==='alberi') renderGuidedKey($('#field-identify'),'alberi',{items:Object.entries(treesData?.trees||{}).map(([id,t])=>({id,name:t.name,latin:cardLatin(t.latin),href:`#/albero/${encodeURIComponent(id)}`})),thumb:treeThumb});
     else renderFieldIdentify($('#field-identify'));
   }
@@ -1104,8 +1105,9 @@ function buildSearch(idj, trj, embedded) {
   initSearch(items);
 }
 
-function coverOf(z, spId) {
-  const zm = zoneMedia[z.id];
+function coverOf(z, spId, d) {
+  // l'immagine del luogo segue stagione e meteo del giorno scelto (oggi, se non c'è un giorno)
+  const zm = pickCover(zoneMedia[z.id], d?.date || todayISO(), d ? wxIcon(wxOf(z, d)) : 'sun');
   if (zm) return { hd: zm.file_hd || zm.file, small: zm.file, credit: zm, alt: z.name };
   const p = speciesPhoto(spId);
   return p ? { hd: p.file_hd || p.file, small: p.file, credit: p, alt: '' } : null;
@@ -1134,7 +1136,7 @@ const IC = {
 const CROWD = { basso: 'poca gente', medio: 'un po\' di gente', alto: 'molta gente' };
 const crowdText = (c) => CROWD[c?.level] || '';
 const fact = (ic, html) => `<span class="fact">${IC[ic]}${html}</span>`;
-const creditLine = (m) => m ? `Foto: ${esc(m.author || '')}${m.license ? `, ${esc(m.license)}` : ''} · <a href="${esc(m.page)}" target="_blank" rel="noopener">${esc(m.source || 'fonte')}</a>` : '';
+const creditLine = (m) => m ? `${m.generated ? `Stagione elaborata con AI dalla foto di ${esc(m.author || '')}` : `Foto: ${esc(m.author || '')}`}${m.license ? `, ${esc(m.license)}` : ''} · <a href="${esc(m.page)}" target="_blank" rel="noopener">${esc(m.source || 'fonte')}</a>` : '';
 
 const discoveryItems=new Map();let openingDiscovery=null;
 function discoveriesFor(z,d,walk){
@@ -1188,7 +1190,7 @@ function renderHome() {
   const t = state.target==='funghi'&&hero.d.crowd ? timingAdvice({ dateStr: hero.d.date, lat: hero.z.lat, lon: hero.z.lon, crowd: hero.d.crowd }) : null;
   const a0 = access[hero.z.id]?.[0];
   const [title, sub] = splitName(hero.z);
-  const cov = coverOf(hero.z, hero.d.best.species.id);
+  const cov = coverOf(hero.z, hero.d.best.species.id, hero.d);
   // le altre specie: testo con il pallino della classe, non pillole (non sono bottoni)
   const also = hero.d.perSpecies.slice(1, 3).map((p) => [p, spScore(hero.z, hero.d, p)]).filter(([, sc]) => sc >= 20)
     .map(([p, sc], k) => `<span class="sp-also">${k ? ' · ' : ''}${esc(p.species.name.split(' / ')[0].toLowerCase())} <span class="sp-also-score"><i aria-hidden="true" style="background:var(${scoreVar(sc).replace('--s', '--ps')})"></i><b class="pc">${formatIndex(sc)}</b></span></span>`);
@@ -1217,7 +1219,7 @@ function renderHome() {
   renderDiscoveries($('#during-walk'),hero.z,hero.d,hero.walk);
   const ol = $('#ranking');
   const rankingHTML = list.slice(1, 8).map((c) => {
-    const cv = coverOf(c.z, c.d.best.species.id);
+    const cv = coverOf(c.z, c.d.best.species.id, c.d);
     return `<li data-weather-key="${c.z.id}|${c.o}" class="vtn" style="--vtn:t-${c.z.id}-${c.o}"><a class="tile" data-walk-zone="${c.z.id}" href="${walkHref(c.z, c.o, c.walk?.t)}">
       ${cv ? `<img data-src="${cv.small}" alt="" loading="lazy" decoding="async">` : ''}<span class="shade"></span>${ring(c.s, false)}${(() => { const w = wxOf(c.z, c.d); return w && w.level !== 'ok' ? `<span class="tile-wx wx-${w.level}" title="${esc(w.text)}">${wxi(w)}${esc(OUTING_LABEL[w.level])}</span>` : ''; })()}
       <span class="tile-body"><span class="tile-day">${esc(dayLabel(c.o, c.d.date, true))}</span><b>${esc(splitName(c.z)[0])}</b>${c.walk ? `<span class="tile-micro">${esc(c.walk.microzone)}</span><small>${esc(walkBrief(c.walk))}</small>` : ''}<small>${esc(c.d.best.species.name)} · ${c.d.best.band} m</small></span>
@@ -1317,7 +1319,7 @@ function openSheet(zid) {
   const sh = $('#map-sheet');
   if (!z || !d?.best) { sh.hidden = true; return; }
   const sc = adjusted(z, d.score, d);
-  const cv = coverOf(z, d.best.species.id);
+  const cv = coverOf(z, d.best.species.id, d);
   sh.innerHTML = `
     <button type="button" class="sheet-close" aria-label="Chiudi">✕</button>
     <a class="sheet-row" href="#/zona/${zid}/${state.dayOffset}">
@@ -2029,7 +2031,7 @@ function renderDetail() {
   const days = r.days.filter((x) => x.i >= from);
 
   const [title, sub] = splitName(z);
-  const cov = coverOf(z, best.species.id);
+  const cov = coverOf(z, best.species.id, d);
   box.innerHTML = `
     <header class="phero">
       ${cov ? `<button type="button" class="phero-img" data-cover aria-label="Ingrandisci la foto"><img data-src="${cov.hd}" alt="${esc(cov.alt)}"></button>` : ''}
