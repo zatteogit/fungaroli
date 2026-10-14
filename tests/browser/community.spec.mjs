@@ -242,6 +242,14 @@ test('editoriale, filtri completi, passkey, isolamento e condivisione revocabile
   await expect(page.locator('#community-intro')).toContainText('nessuna segnalazione');
   await page.locator('#active-filters [data-more]').click();
   await expect(page.locator('#full-filters [data-group]')).toHaveCount(11);
+  // «Azzera» compare solo quando qualcosa è cambiato e riporta ai valori di partenza
+  await expect(page.locator('#full-filters [data-reset]')).toHaveCount(0);
+  await page.locator('#full-filters [data-pref="avoidCrowd"]').click();
+  await page.locator('#full-filters [data-group]').first().click();
+  await page.locator('#full-filters [data-reset]').click();
+  await expect(page.locator('#full-filters [data-reset]')).toHaveCount(0);
+  await expect(page.locator('#full-filters [data-pref="avoidCrowd"]')).toHaveAttribute('aria-pressed', 'false');
+  await expect(page.locator('#full-filters [data-all]')).toHaveAttribute('aria-pressed', 'true');
   await page.locator('#full-filters [data-close]').first().click();
   await expect(page.locator('[data-view="uscite"] #editorial')).toHaveCount(0);
   await page.locator('[data-tab="specie"]').click();

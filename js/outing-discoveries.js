@@ -21,7 +21,7 @@ export function outingDiscoveries({zone,zoneHabitat,trail,trailCategories,series
    if(r.habitatSamples<3||r.suitableShare<.15||!finite(r.score))continue;
    const current=model.phaseMonths?.includes(Number(date.slice(5,7)))||r.ownObservation?.status==='present';
    const rank=r.score+(current?10:0);
-   if(!best||rank>best.rank)best={kind:'pianta',id:model.plantId,name:model.name,href:model.href,scope,date,zoneId:zone.id,model,r,band,rank,phase:current?`Periodo indicativo: ${model.phaseLabel.toLowerCase()}`:'Ambiente compatibile · fase da verificare'};
+   if(!best||rank>best.rank)best={kind:'pianta',id:model.plantId,name:model.name,href:model.href,scope,date,zoneId:zone.id,model,r,band,rank,phase:current?`Periodo indicativo: ${model.phaseLabel.toLowerCase()}`:'Ambiente compatibile'};
   }
   if(best)candidates.push(best);
  }
@@ -33,7 +33,7 @@ export function outingDiscoveries({zone,zoneHabitat,trail,trailCategories,series
   const share=p.habitatCategories.reduce((sum,c)=>sum+(counts[c]||0),0)/samples.length;
   if(share<.2)continue;
   const flowering=p.flowerMonths?.includes(Number(date.slice(5,7)));
-  candidates.push({kind:'pianta',id:p.id,name:p.name,href:`#/pianta/${p.id}`,scope,date,zoneId:zone.id,rank:share*50+(flowering?10:0),phase:flowering?'Fioritura nel calendario indicativo':'Ambiente compatibile · fase da verificare',mappingNote:p.habitatMappingNote});
+  candidates.push({kind:'pianta',id:p.id,name:p.name,href:`#/pianta/${p.id}`,scope,date,zoneId:zone.id,rank:share*50+(flowering?10:0),phase:flowering?'Fioritura nel calendario indicativo':'Ambiente compatibile',mappingNote:p.habitatMappingNote});
  }
  candidates.sort((a,b)=>b.rank-a.rank||a.name.localeCompare(b.name,'it'));
  const out=candidates.slice(0,2),dominant=Object.entries(counts).filter(([c])=>c!=='non bosco').sort((a,b)=>b[1]-a[1])[0];
