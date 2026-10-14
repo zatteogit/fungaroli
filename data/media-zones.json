@@ -1023,6 +1023,86 @@
      "license": "CC BY 2.0",
      "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
      "page": "https://commons.wikimedia.org/wiki/File:Lago_del_Salto%21%21_%287447648144%29.jpg"
+    },
+    {
+     "season": "inverno",
+     "weather": "sereno",
+     "file": "assets/zones/var/cicolano-inverno-sereno.webp",
+     "file_hd": "assets/zones/var/cicolano-inverno-sereno-hd.webp",
+     "size": [
+      1600,
+      482
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Alessandro Blasi from Rieti, Italy",
+     "license": "CC BY 2.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+     "page": "https://commons.wikimedia.org/wiki/File:Lago_del_Salto%21%21_%287447648144%29.jpg"
+    },
+    {
+     "season": "inverno",
+     "weather": "nuvoloso",
+     "file": "assets/zones/var/cicolano-inverno-nuvoloso.webp",
+     "file_hd": "assets/zones/var/cicolano-inverno-nuvoloso-hd.webp",
+     "size": [
+      1600,
+      482
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Alessandro Blasi from Rieti, Italy",
+     "license": "CC BY 2.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+     "page": "https://commons.wikimedia.org/wiki/File:Lago_del_Salto%21%21_%287447648144%29.jpg"
+    },
+    {
+     "season": "inverno",
+     "weather": "nebbia",
+     "file": "assets/zones/var/cicolano-inverno-nebbia.webp",
+     "file_hd": "assets/zones/var/cicolano-inverno-nebbia-hd.webp",
+     "size": [
+      1600,
+      483
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Alessandro Blasi from Rieti, Italy",
+     "license": "CC BY 2.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+     "page": "https://commons.wikimedia.org/wiki/File:Lago_del_Salto%21%21_%287447648144%29.jpg"
+    },
+    {
+     "season": "inverno",
+     "weather": "pioggia",
+     "file": "assets/zones/var/cicolano-inverno-pioggia.webp",
+     "file_hd": "assets/zones/var/cicolano-inverno-pioggia-hd.webp",
+     "size": [
+      1600,
+      480
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Alessandro Blasi from Rieti, Italy",
+     "license": "CC BY 2.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+     "page": "https://commons.wikimedia.org/wiki/File:Lago_del_Salto%21%21_%287447648144%29.jpg"
+    },
+    {
+     "season": "inverno",
+     "weather": "neve",
+     "file": "assets/zones/var/cicolano-inverno-neve.webp",
+     "file_hd": "assets/zones/var/cicolano-inverno-neve-hd.webp",
+     "size": [
+      1600,
+      483
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Alessandro Blasi from Rieti, Italy",
+     "license": "CC BY 2.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+     "page": "https://commons.wikimedia.org/wiki/File:Lago_del_Salto%21%21_%287447648144%29.jpg"
     }
    ],
    "season": "estate",
@@ -1206,6 +1286,86 @@
      "weather": "pioggia",
      "file": "assets/zones/var/laga-autunno-pioggia.webp",
      "file_hd": "assets/zones/var/laga-autunno-pioggia-hd.webp",
+     "size": [
+      1600,
+      1200
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Mario1952",
+     "license": "CC BY-SA 3.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+     "page": "https://commons.wikimedia.org/wiki/File:Pizzo_di_Sevo.jpg"
+    },
+    {
+     "season": "inverno",
+     "weather": "sereno",
+     "file": "assets/zones/var/laga-inverno-sereno.webp",
+     "file_hd": "assets/zones/var/laga-inverno-sereno-hd.webp",
+     "size": [
+      1600,
+      1200
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Mario1952",
+     "license": "CC BY-SA 3.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+     "page": "https://commons.wikimedia.org/wiki/File:Pizzo_di_Sevo.jpg"
+    },
+    {
+     "season": "inverno",
+     "weather": "nuvoloso",
+     "file": "assets/zones/var/laga-inverno-nuvoloso.webp",
+     "file_hd": "assets/zones/var/laga-inverno-nuvoloso-hd.webp",
+     "size": [
+      1600,
+      1200
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Mario1952",
+     "license": "CC BY-SA 3.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+     "page": "https://commons.wikimedia.org/wiki/File:Pizzo_di_Sevo.jpg"
+    },
+    {
+     "season": "inverno",
+     "weather": "nebbia",
+     "file": "assets/zones/var/laga-inverno-nebbia.webp",
+     "file_hd": "assets/zones/var/laga-inverno-nebbia-hd.webp",
+     "size": [
+      1600,
+      1200
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Mario1952",
+     "license": "CC BY-SA 3.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+     "page": "https://commons.wikimedia.org/wiki/File:Pizzo_di_Sevo.jpg"
+    },
+    {
+     "season": "inverno",
+     "weather": "pioggia",
+     "file": "assets/zones/var/laga-inverno-pioggia.webp",
+     "file_hd": "assets/zones/var/laga-inverno-pioggia-hd.webp",
+     "size": [
+      1600,
+      1200
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Mario1952",
+     "license": "CC BY-SA 3.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+     "page": "https://commons.wikimedia.org/wiki/File:Pizzo_di_Sevo.jpg"
+    },
+    {
+     "season": "inverno",
+     "weather": "neve",
+     "file": "assets/zones/var/laga-inverno-neve.webp",
+     "file_hd": "assets/zones/var/laga-inverno-neve-hd.webp",
      "size": [
       1600,
       1200
@@ -1505,7 +1665,267 @@
     2000,
     1125
    ],
-   "thumb": "assets/zones/tancia-t.webp"
+   "thumb": "assets/zones/tancia-t.webp",
+   "season": "primavera",
+   "weather": "sereno",
+   "variants": [
+    {
+     "season": "primavera",
+     "weather": "nuvoloso",
+     "file": "assets/zones/var/tancia-primavera-nuvoloso.webp",
+     "file_hd": "assets/zones/var/tancia-primavera-nuvoloso-hd.webp",
+     "size": [
+      1600,
+      900
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Christoph Strässler",
+     "license": "CC BY-SA 2.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
+     "page": "https://commons.wikimedia.org/wiki/File%3ABeech_Forest_in_the_Sabina_Hills%2C_Latium%2C_Italy_-_52993979506.jpg"
+    },
+    {
+     "season": "primavera",
+     "weather": "nebbia",
+     "file": "assets/zones/var/tancia-primavera-nebbia.webp",
+     "file_hd": "assets/zones/var/tancia-primavera-nebbia-hd.webp",
+     "size": [
+      1600,
+      900
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Christoph Strässler",
+     "license": "CC BY-SA 2.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
+     "page": "https://commons.wikimedia.org/wiki/File%3ABeech_Forest_in_the_Sabina_Hills%2C_Latium%2C_Italy_-_52993979506.jpg"
+    },
+    {
+     "season": "primavera",
+     "weather": "pioggia",
+     "file": "assets/zones/var/tancia-primavera-pioggia.webp",
+     "file_hd": "assets/zones/var/tancia-primavera-pioggia-hd.webp",
+     "size": [
+      1600,
+      900
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Christoph Strässler",
+     "license": "CC BY-SA 2.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
+     "page": "https://commons.wikimedia.org/wiki/File%3ABeech_Forest_in_the_Sabina_Hills%2C_Latium%2C_Italy_-_52993979506.jpg"
+    },
+    {
+     "season": "estate",
+     "weather": "sereno",
+     "file": "assets/zones/var/tancia-estate-sereno.webp",
+     "file_hd": "assets/zones/var/tancia-estate-sereno-hd.webp",
+     "size": [
+      1600,
+      900
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Christoph Strässler",
+     "license": "CC BY-SA 2.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
+     "page": "https://commons.wikimedia.org/wiki/File%3ABeech_Forest_in_the_Sabina_Hills%2C_Latium%2C_Italy_-_52993979506.jpg"
+    },
+    {
+     "season": "estate",
+     "weather": "nuvoloso",
+     "file": "assets/zones/var/tancia-estate-nuvoloso.webp",
+     "file_hd": "assets/zones/var/tancia-estate-nuvoloso-hd.webp",
+     "size": [
+      1600,
+      900
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Christoph Strässler",
+     "license": "CC BY-SA 2.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
+     "page": "https://commons.wikimedia.org/wiki/File%3ABeech_Forest_in_the_Sabina_Hills%2C_Latium%2C_Italy_-_52993979506.jpg"
+    },
+    {
+     "season": "estate",
+     "weather": "nebbia",
+     "file": "assets/zones/var/tancia-estate-nebbia.webp",
+     "file_hd": "assets/zones/var/tancia-estate-nebbia-hd.webp",
+     "size": [
+      1600,
+      900
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Christoph Strässler",
+     "license": "CC BY-SA 2.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
+     "page": "https://commons.wikimedia.org/wiki/File%3ABeech_Forest_in_the_Sabina_Hills%2C_Latium%2C_Italy_-_52993979506.jpg"
+    },
+    {
+     "season": "estate",
+     "weather": "pioggia",
+     "file": "assets/zones/var/tancia-estate-pioggia.webp",
+     "file_hd": "assets/zones/var/tancia-estate-pioggia-hd.webp",
+     "size": [
+      1600,
+      900
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Christoph Strässler",
+     "license": "CC BY-SA 2.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
+     "page": "https://commons.wikimedia.org/wiki/File%3ABeech_Forest_in_the_Sabina_Hills%2C_Latium%2C_Italy_-_52993979506.jpg"
+    },
+    {
+     "season": "autunno",
+     "weather": "sereno",
+     "file": "assets/zones/var/tancia-autunno-sereno.webp",
+     "file_hd": "assets/zones/var/tancia-autunno-sereno-hd.webp",
+     "size": [
+      1600,
+      900
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Christoph Strässler",
+     "license": "CC BY-SA 2.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
+     "page": "https://commons.wikimedia.org/wiki/File%3ABeech_Forest_in_the_Sabina_Hills%2C_Latium%2C_Italy_-_52993979506.jpg"
+    },
+    {
+     "season": "autunno",
+     "weather": "nuvoloso",
+     "file": "assets/zones/var/tancia-autunno-nuvoloso.webp",
+     "file_hd": "assets/zones/var/tancia-autunno-nuvoloso-hd.webp",
+     "size": [
+      1600,
+      900
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Christoph Strässler",
+     "license": "CC BY-SA 2.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
+     "page": "https://commons.wikimedia.org/wiki/File%3ABeech_Forest_in_the_Sabina_Hills%2C_Latium%2C_Italy_-_52993979506.jpg"
+    },
+    {
+     "season": "autunno",
+     "weather": "nebbia",
+     "file": "assets/zones/var/tancia-autunno-nebbia.webp",
+     "file_hd": "assets/zones/var/tancia-autunno-nebbia-hd.webp",
+     "size": [
+      1600,
+      900
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Christoph Strässler",
+     "license": "CC BY-SA 2.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
+     "page": "https://commons.wikimedia.org/wiki/File%3ABeech_Forest_in_the_Sabina_Hills%2C_Latium%2C_Italy_-_52993979506.jpg"
+    },
+    {
+     "season": "autunno",
+     "weather": "pioggia",
+     "file": "assets/zones/var/tancia-autunno-pioggia.webp",
+     "file_hd": "assets/zones/var/tancia-autunno-pioggia-hd.webp",
+     "size": [
+      1600,
+      900
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Christoph Strässler",
+     "license": "CC BY-SA 2.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
+     "page": "https://commons.wikimedia.org/wiki/File%3ABeech_Forest_in_the_Sabina_Hills%2C_Latium%2C_Italy_-_52993979506.jpg"
+    },
+    {
+     "season": "inverno",
+     "weather": "sereno",
+     "file": "assets/zones/var/tancia-inverno-sereno.webp",
+     "file_hd": "assets/zones/var/tancia-inverno-sereno-hd.webp",
+     "size": [
+      1600,
+      900
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Christoph Strässler",
+     "license": "CC BY-SA 2.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
+     "page": "https://commons.wikimedia.org/wiki/File%3ABeech_Forest_in_the_Sabina_Hills%2C_Latium%2C_Italy_-_52993979506.jpg"
+    },
+    {
+     "season": "inverno",
+     "weather": "nuvoloso",
+     "file": "assets/zones/var/tancia-inverno-nuvoloso.webp",
+     "file_hd": "assets/zones/var/tancia-inverno-nuvoloso-hd.webp",
+     "size": [
+      1600,
+      900
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Christoph Strässler",
+     "license": "CC BY-SA 2.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
+     "page": "https://commons.wikimedia.org/wiki/File%3ABeech_Forest_in_the_Sabina_Hills%2C_Latium%2C_Italy_-_52993979506.jpg"
+    },
+    {
+     "season": "inverno",
+     "weather": "nebbia",
+     "file": "assets/zones/var/tancia-inverno-nebbia.webp",
+     "file_hd": "assets/zones/var/tancia-inverno-nebbia-hd.webp",
+     "size": [
+      1600,
+      900
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Christoph Strässler",
+     "license": "CC BY-SA 2.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
+     "page": "https://commons.wikimedia.org/wiki/File%3ABeech_Forest_in_the_Sabina_Hills%2C_Latium%2C_Italy_-_52993979506.jpg"
+    },
+    {
+     "season": "inverno",
+     "weather": "pioggia",
+     "file": "assets/zones/var/tancia-inverno-pioggia.webp",
+     "file_hd": "assets/zones/var/tancia-inverno-pioggia-hd.webp",
+     "size": [
+      1600,
+      900
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Christoph Strässler",
+     "license": "CC BY-SA 2.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
+     "page": "https://commons.wikimedia.org/wiki/File%3ABeech_Forest_in_the_Sabina_Hills%2C_Latium%2C_Italy_-_52993979506.jpg"
+    },
+    {
+     "season": "inverno",
+     "weather": "neve",
+     "file": "assets/zones/var/tancia-inverno-neve.webp",
+     "file_hd": "assets/zones/var/tancia-inverno-neve-hd.webp",
+     "size": [
+      1600,
+      900
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Christoph Strässler",
+     "license": "CC BY-SA 2.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
+     "page": "https://commons.wikimedia.org/wiki/File%3ABeech_Forest_in_the_Sabina_Hills%2C_Latium%2C_Italy_-_52993979506.jpg"
+    }
+   ]
   }
  }
 }
