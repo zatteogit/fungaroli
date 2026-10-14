@@ -22,7 +22,7 @@ import { initLearning, renderGlossary, renderFieldIdentify, difficultyLink, glos
 import { openLightbox, captionHtml } from './lightbox.js';
 import { initInstall, maybeInvite } from './install.js';
 import { loadOuting, outingFor, OUTING_LABEL, OUTING_SHORT, OUTING_RANK } from './outing.js';
-import { initIdentify, renderIdentify, setCompare, searchTaxa, openTaxon, renderTaxonPage, taxonName } from './identify.js';
+import { initIdentify, renderIdentify, setCompare, searchTaxa, openTaxon, renderTaxonPage, renderTaxonView, taxonName } from './identify.js';
 import { initSearch, openSearch } from './search.js';
 import { renderWhy, renderMethod } from './science.js';
 import { navigate, soft } from './motion.js';
@@ -418,8 +418,8 @@ function routeNow(r, nav) {
   if (r.view === 'albero') renderTreePage($('#tree-detail'), r.treeId);
   if (r.view === 'guide') renderGuide($('#guide-body'), r.guideId);
   if (r.view === 'metodo') renderMethod($('#method-body'));
-  if (r.view === 'commestibile') renderEdiblePage(r.speciesId);
-  if (r.view === 'fungo') renderTaxonPage($('#taxon-detail'), r.taxonId);
+  if (r.view === 'commestibile') { renderEdiblePage(r.speciesId); const s = catalog.find((x) => x.id === r.speciesId); if (s) addNotebookReference($('#edible-detail'), 'commestibile', s.id, s.name); }
+  if (r.view === 'fungo') { renderTaxonPage($('#taxon-detail'), r.taxonId); if (taxonName(r.taxonId)) addNotebookReference($('#taxon-detail'), 'fungo', r.taxonId, taxonName(r.taxonId)); }
   if (r.view === 'glossario') renderGlossary($('#glossary'), r.termId);
   if (r.view === 'riconosci') {
     document.querySelectorAll('[data-recognize-mode]').forEach(a => { if(a.dataset.recognizeMode===r.recognizeMode)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current'); });
@@ -842,18 +842,24 @@ function renderSpeciesGrid() {
     // un solo campo di ricerca nell'app: qui apre la ricerca generale, con funghi e sosia in cima
     box.innerHTML = `<button type="button" id="sp-head" class="search-box search-fake" data-open-search><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg>
         <span>Cerca sentieri, piante, funghi, luoghi…</span></button>
+      <div class="recognize-modes" role="group" aria-label="Quali funghi mostrare">${[['', 'Tutti'], ['edible', 'Commestibili'], ['other', 'Velenosi e sosia']].map(([v, l]) => `<button type="button" class="btn ghost small" data-fungi-group="${v}" aria-pressed="${(state.fungiGroup || '') === v}">${l}</button>`).join('')}</div>
       <div class="card-grid" id="sp-cards"></div>`;
     box.querySelector('#sp-head').addEventListener('click', () => openSearch());
+    box.querySelectorAll('[data-fungi-group]').forEach((b) => b.addEventListener('click', () => {
+      state.fungiGroup = b.dataset.fungiGroup;
+      box.querySelectorAll('[data-fungi-group]').forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+      fillSpecies();
+    }));
   }
   fillSpecies();
 }
 const assetSrc=f=>globalThis.FUNGAROLI_DATA?globalThis.FUNGAROLI_DATA.assets?.[f]||'':f;
-const catalogPhoto = s=>speciesPhoto(s.modelId||s.id)||searchTaxa().find(t=>t.key===s.id)?.photo;
+const catalogPhoto = s=>speciesPhoto(s.modelId||s.id)||searchTaxa().find(t=>t.key===s.id)?.photo||fungusPhotos(s.id)[0];
 // In cima a ogni sezione di Scopri: quante schede ci sono (dagli stessi dati che riempiono la pagina, anche se arrivano dal CMS)
 function fillCatalogCounts() {
   const n = (k, one, many) => `${k} ${k === 1 ? one : many}`;
   const counts = {
-    specie: n(catalog.length, 'specie di funghi in catalogo', 'specie di funghi in catalogo'),
+    specie: `${catalog.length} commestibili · ${otherFungi().length} velenosi e sosia`,
     alberi: n(Object.keys(treesData?.trees || {}).length, 'albero in catalogo', 'alberi in catalogo'),
     piante: n(plants().length, 'pianta in catalogo', 'piante in catalogo'),
     glossario: n(glossaryTerms().length, 'voce', 'voci'),
@@ -864,33 +870,32 @@ function fillCatalogCounts() {
     el.hidden = !k; el.textContent = k ? text : '';
   });
 }
+// velenosi e sosia di Riconosci che non sono gia' nel catalogo dei commestibili, con la loro etichetta di rischio
+const TOX_LABEL = { mortale: 'Mortale', tossico: 'Tossico', 'non commestibile': 'Non commestibile' };
+const otherFungi = () => searchTaxa().filter((t) => TOX_LABEL[t.toxicity] && !catalog.some((c) => c.id === t.key));
 function fillSpecies() {
-  $('#sp-cards').innerHTML = catalog.map(s => {
-    const ph = catalogPhoto(s);
-    return `<a class="sp-card" href="${s.href}" aria-label="${esc(s.name)}">
-      ${ph ? `<img data-src="${assetSrc(ph.file)}" alt="" loading="lazy" decoding="async">` : `<span class="catalog-placeholder" aria-hidden="true">${esc(s.name.slice(0,2))}</span>`}<span class="shade"></span>
-      <span class="sp-card-body"><b>${esc(s.name)}</b><i>${esc(cardLatin(s.latin))}</i></span></a>`;
-  }).join('') || '<p class="muted empty-note">Nessuna specie commestibile nel catalogo.</p>';
+  const group = state.fungiGroup || '';
+  const edible = group === 'other' ? [] : catalog;
+  const others = group === 'edible' ? [] : otherFungi();
+  const card = (href, name, latin, ph, badge = '') => `<a class="sp-card" href="${href}" aria-label="${esc(name)}">
+      ${ph ? `<img data-src="${assetSrc(ph.file)}" alt="" loading="lazy" decoding="async">` : `<span class="catalog-placeholder" aria-hidden="true">${esc(name.slice(0,2))}</span>`}<span class="shade"></span>${badge}
+      <span class="sp-card-body"><b>${esc(name)}</b><i>${esc(cardLatin(latin))}</i></span></a>`;
+  $('#sp-cards').innerHTML = [
+    ...edible.map((s) => card(s.href, s.name, s.latin, catalogPhoto(s))),
+    ...others.map((t) => card(`#/fungo/${encodeURIComponent(t.key)}`, t.name || t.latin, t.latin, t.photo, `<span class="sp-card-tox tox-${esc(t.toxicity.replace(/\s/g, '-'))}">${TOX_LABEL[t.toxicity]}</span>`)),
+  ].join('') || '<p class="muted empty-note">Nessuna specie in questo gruppo.</p>';
 }
 
 function renderEdiblePage(id, box=$('#edible-detail')) {
-  box.dataset.glossaryContext='Funghi';
   const s = catalog.find(x=>x.id===id);
-  if (!s) { box.innerHTML='<p>Specie non presente nel catalogo.</p>';return; }
-  const names=['gen','feb','mar','apr','mag','giu','lug','ago','set','ott','nov','dic'],photos=fungusPhotos(id);
-  const credit=p=>`${esc(p.author)} · ${p.licenseUrl?`<a href="${esc(p.licenseUrl)}" target="_blank" rel="noopener">${esc(p.license)}</a>`:esc(p.license)} · <a href="${esc(p.page)}" target="_blank" rel="noopener">${esc(p.source||'Fotografia originale')}</a>`;
-  box.innerHTML=`${photos[0]?`<header class="phero phero-tall"><button type="button" class="phero-img" data-catalog-photo="0" aria-label="Ingrandisci la foto"><img data-src="${assetSrc(photos[0].file)}" alt="${esc(s.name)}" width="960" height="720"></button><span class="shade"></span><div class="phero-body"><h1 class="phero-title">${esc(s.name)}</h1><p class="phero-sub"><i>${esc(s.latin)}</i></p></div></header>`:''}<article class="editorial-article">
-    ${!photos.length?`<p class="eyebrow">Scheda della specie</p><h1>${esc(s.name)}</h1><p><i>${esc(s.latin)}</i></p>`:''}
-    ${photos.length>1?`<div class="sp-strip">${photos.slice(1).map((p,i)=>`<button type="button" class="zoomable" data-catalog-photo="${i+1}" aria-label="Foto ${i+2}: ingrandisci"><img data-src="${assetSrc(p.thumb||p.file)}" alt="${esc(p.alt||s.name)}" loading="lazy" decoding="async"></button>`).join('')}</div>`:''}
-    <button class="btn ghost" type="button" data-note-kind="commestibile" data-note-id="${id}" data-note-title="${esc(s.name)}">＋ Annota nel taccuino</button>
-    <p>${esc(s.habitat || '')}</p><h2>Quando osservarla</h2><p>${s.months?.length ? s.months.map(m=>names[m-1]).join(' · ') : 'Calendario non ancora documentato.'}</p><p class="small muted">Stagione indicativa da manualistica, non validata nel Reatino: clima e quota possono spostarla. Le coltivazioni seguono cicli diversi.</p>
-    ${s.caution?`<p class="notice">${esc(s.caution)}</p>`:''}
-    <h2>Le osservazioni aiutano a conoscerla</h2><p>L’indice di crescita non è ancora disponibile per questa specie. Puoi annotare ritrovamenti e ricerche a vuoto nel taccuino e scegliere di condividerli.</p><button class="btn primary" type="button" data-report data-species="${s.id}">Segnala un’osservazione</button>
-    <p class="small muted">Commestibilità della specie, non dell’esemplare: foto e schede non confermano l’identità. Il controllo del raccolto e le indicazioni di preparazione spettano all’Ispettorato micologico ASL.</p><details><summary>Fonti e fotografie</summary><ul>${(s.sources||[]).map(x=>`<li><a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.title)}</a></li>`).join('')}${photos.map(p=>`<li>${credit(p)}${p.taxonNote?`<p>${esc(p.taxonNote)}</p>`:''}</li>`).join('')}</ul></details></article>`;
-  const gallery=photos.map(p=>({src:assetSrc(p.file_hd||p.file),alt:p.alt||s.name,caption:captionHtml({title:esc(s.name),text:esc(p.taxonNote||''),credit:credit(p)})}));
-  box.querySelectorAll('[data-catalog-photo]').forEach(b=>b.onclick=()=>openLightbox(gallery,+b.dataset.catalogPhoto,{container:box.closest('dialog')||document.body}));
+  if (!s) { box.dataset.glossaryContext='Funghi'; box.innerHTML='<p>Specie non presente nel catalogo.</p>';return; }
+  // stessa pagina dei taxon di Riconosci: le sezioni senza dati non compaiono
+  const extra = `<p class="small muted">Stagione indicativa da manualistica, non validata nel Reatino: clima e quota possono spostarla.</p>
+    <h3>Le osservazioni aiutano a conoscerla</h3><p>L’indice di crescita non è ancora disponibile per questa specie. Puoi annotare ritrovamenti e ricerche a vuoto nel taccuino e scegliere di condividerli.</p><button class="btn primary" type="button" data-report data-species="${esc(s.id)}">Segnala un'osservazione</button>
+    <p class="small muted">Commestibilità della specie, non dell’esemplare: foto e schede non confermano l’identità. Il controllo del raccolto e le indicazioni di preparazione spettano all’Ispettorato micologico ASL.</p>`;
+  renderTaxonView(box, { key: s.id, name: s.name, latin: s.latin, toxicity: s.toxicity, caution: s.caution, sources: s.sources, traits: s.months?.length ? { season: s.months } : {} },
+    { photos: fungusPhotos(id), habitatText: s.habitat || '', extra });
 }
-
 
 function renderAll() {
   if (!results) return;
@@ -1598,7 +1603,7 @@ function showCellCard(h, preserveTimer = false) {
   if (!preserveTimer) cancelCellCardTimer();
   const { c } = h;
   highlightCell(h);
-  const html = mapCard({ title: `Area di ${c.size} × ${c.size} m`, sub: `${esc(c.cat)} · ${c.e} m s.l.m.`, pct: c.v, interactive: true,
+  const html = mapCard({ title: c.cat, sub: `${c.e} m s.l.m. · area ${c.size} × ${c.size} m`, pct: c.v, interactive: true,
     rows: c.parts.slice(0, 3).map((x) => ({ name: x.sp.name.split(' / ')[0], v: x.v })), more: Math.max(0, c.parts.length - 3),
     foot: 'Campione di habitat: verifica alberi ospiti, divieti e condizioni sul posto.' });
   const content = `${html}<button type="button" class="cell-card-close" data-cell-close aria-label="Chiudi la scheda dell’area">×</button>`;
@@ -1616,7 +1621,7 @@ function showCellCard(h, preserveTimer = false) {
   } else { cellTip.setLatLng(position); if (cellTip._fhtml !== content) cellTip.setContent(content); }
   // Keep the card within the map even when its sample is near an edge.
   const card = cellTip.getElement(), point = map.latLngToContainerPoint(position), size = map.getSize();
-  card.setAttribute('aria-label', `Area di ${c.size} × ${c.size} m`);
+  card.setAttribute('aria-label', `${c.cat}, ${c.e} metri: area di ${c.size} per ${c.size} metri`);
   const halfW = card.offsetWidth / 2, halfH = card.offsetHeight / 2;
   const x = Math.max(halfW + 8, Math.min(size.x - halfW - 8, point.x));
   const above = point.y - halfH - 10;
@@ -1661,6 +1666,8 @@ function renderMap(changed=null) {
   const previousHits=cellHits;
   for(const k in zoneLayers)if(!changed||changed.has(k)||!zones.some(z=>z.id===k)){zoneLayers[k].remove();delete zoneLayers[k];}
   cellHits = changed?previousHits.filter(h=>zoneLayers[h.z.id]):[];peekCellBounds=[];mapEl.classList.remove('cells-peek');
+  // etichette delle zone in un livello sopra i segnavia e i pin: nome e indice restano sempre leggibili
+  if (!map.getPane('zoneLabels')) map.createPane('zoneLabels').style.zIndex = 640;
   // etichette con nome: spostamento verticale greedy (in pixel) per evitare sovrapposizioni
   const placed = [];
   const labelPos = {};
@@ -1703,7 +1710,7 @@ function renderMap(changed=null) {
     }
     L.marker(labelPos[z.id], {
       icon: L.divIcon({ className: '', html: `<span class="zone-label${state.zoneId && !selected ? ' zone-label-min' : ''}${selected ? ' zone-label-sel' : ''}"><span class="dot" style="background:${color}"></span> <b class="pc">${formatIndex(s)}</b>${state.zoneId && !selected ? '' : ` <span class="zone-name">${esc(shortName(z))}</span>`}</span>`, iconSize: null }),
-      interactive: false,
+      interactive: false, pane: 'zoneLabels',
     }).addTo(g);
     if (selected && d?.best) {
       const tl = trailsFor(z, d.best.species, d.best.band);
@@ -1719,10 +1726,32 @@ function renderMap(changed=null) {
       // imbocchi dei sentieri adatti: un segnavia piccolo dove si lascia l'auto (uno per punto, anche se ci passano piu' sentieri)
       const seenTh = [];
       for (const t of tl) for (const h of headsOf(z, t)) {
-        if (seenTh.some((q) => Math.abs(q.lat - h.lat) < 0.0015 && Math.abs(q.lon - h.lon) < 0.002)) continue;
-        seenTh.push(h);
-        L.marker([h.lat, h.lon], { icon: L.divIcon({ className: '', html: `<span class="map-th${h.kind === 'strada' ? '' : ' unpaved'}" aria-hidden="true"><i></i><i></i><i></i></span>`, iconSize: [18, 22], iconAnchor: [9, 11] }), keyboard: true, title: `Imbocco: ${trailName(t)}` })
-          .addTo(g).on('click', () => openPoint(z.id, { kind: 'trailhead', h, t }));
+        const same = seenTh.find((q) => Math.abs(q.h.lat - h.lat) < 0.0015 && Math.abs(q.h.lon - h.lon) < 0.002);
+        if (same) { if (!same.ts.includes(t)) same.ts.push(t); continue; }
+        seenTh.push({ h, ts: [t] });
+      }
+      // Regola anti-sovrapposizione: gli imbocchi a meno di 26 px sullo schermo diventano un solo segnavia
+      // con il conteggio («429 +2»). Toccarlo avvicina la carta finché si separano. Un segnavia che cade
+      // sull'etichetta della zona scende sotto di essa; l'etichetta sta comunque in un livello più alto.
+      const groups = [];
+      for (const it of seenTh) {
+        const pt = map.latLngToContainerPoint([it.h.lat, it.h.lon]);
+        const gr = groups.find((q) => Math.abs(q.pt.x - pt.x) < 26 && Math.abs(q.pt.y - pt.y) < 26);
+        if (gr) gr.items.push(it); else groups.push({ pt, items: [it] });
+      }
+      for (const gr of groups) {
+        const [first] = gr.items, n = gr.items.length, t = first.ts[0];
+        const box = placed.find((b) => Math.abs(b.x - gr.pt.x) < b.w / 2 + 11 && Math.abs(b.y - gr.pt.y) < 13 + 11);
+        const dy = box ? Math.round(box.y + 13 + 14 - gr.pt.y) : 0; // sotto l'etichetta, mai sopra
+        const names = [...new Set(gr.items.flatMap((x) => x.ts.map(trailName)))];
+        const stripes = `<span class="map-th${first.h.kind === 'strada' ? '' : ' unpaved'}" aria-hidden="true"><i></i><i></i><i></i></span>`;
+        const html = n > 1 ? `<span class="map-th-group" aria-hidden="true" style="--th-dy:${dy}px">${stripes}<b>${t.ref ? `${esc(t.ref)} ` : ''}+${n - 1}</b></span>` : stripes;
+        const title = n > 1 ? `${n} imbocchi vicini: ${names.join(', ')}. Avvicina la carta per separarli` : `Imbocco: ${names.join(', ')}`;
+        L.marker([first.h.lat, first.h.lon], { icon: L.divIcon({ className: '', html, iconSize: n > 1 ? null : [18, 22], iconAnchor: n > 1 ? null : [9, 11 - dy] }), keyboard: true, title })
+          .addTo(g).on('click', () => {
+            if (n > 1 && map.getZoom() < map.getMaxZoom()) map.flyToBounds(L.latLngBounds(gr.items.map((x) => [x.h.lat, x.h.lon])).pad(0.5), { maxZoom: Math.min(map.getMaxZoom(), map.getZoom() + 3), duration: 0.4 });
+            else openPoint(z.id, { kind: 'trailhead', h: first.h, t });
+          });
       }
       if (d.access?.rlat) {
         L.polyline([[d.access.rlat, d.access.rlon], [d.access.lat, d.access.lon]], { color: cssVar('--text'), weight: 2, dashArray: '2 5', interactive: false }).addTo(g);

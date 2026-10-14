@@ -2660,3 +2660,26 @@ html.entity-open { overflow: hidden; }
 .ws-forest { display: grid; gap: 6px; }
 .ws-forest .forest { margin: 0; }
 .ws-forest .forest-legend { font-size: 12px; }
+
+/* Funghi: velenosi e sosia nel catalogo, con l'etichetta di rischio sulla card */
+.sp-card-tox { position: absolute; top: 10px; left: 10px; z-index: 2; padding: 3px 9px; border-radius: 999px; font-size: 11px; font-weight: 800; letter-spacing: .05em; text-transform: uppercase; background: var(--surface); color: var(--text); }
+.sp-card-tox.tox-mortale { background: var(--crit); color: #fff; }
+.sp-card-tox.tox-tossico { background: var(--warn-bg); color: var(--warn-ink); }
+#species-grid .recognize-modes { margin: 0 0 var(--sp-4); }
+/* Filtri dei cataloghi di Scopri: stessa chip dei gruppi, piu' un menu Ambiente con lo stesso aspetto */
+.botanical-tools > .recognize-modes { margin: 0; }
+#tree-grid > .catalog-filters { margin: 0 0 var(--sp-2); }
+.catalog-select {
+  min-height: 40px; padding: 8px 32px 8px 14px; border-radius: 999px; border: 1px solid var(--border); background-color: var(--surface);
+  color: var(--text); font: inherit; font-size: 14px; font-weight: 500; max-width: 100%;
+  appearance: none; -webkit-appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, currentColor 50%), linear-gradient(135deg, currentColor 50%, transparent 50%);
+  background-position: calc(100% - 17px) 50%, calc(100% - 12px) 50%; background-size: 5px 5px; background-repeat: no-repeat;
+}
+.catalog-select:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.catalog-empty { display: grid; gap: var(--sp-2); justify-items: start; grid-column: 1 / -1; }
+.catalog-empty p { margin: 0; }
+/* Mappa: imbocchi vicini raggruppati in un solo segnavia con il conteggio */
+.leaflet-zoneLabels-pane { pointer-events: none; }
+.map-th-group { position: absolute; left: 0; top: 0; transform: translate(-9px, calc(-11px + var(--th-dy, 0px))); display: inline-flex; align-items: center; gap: 4px; cursor: pointer; }
+.map-th-group b { background: var(--surface); color: var(--text); border-radius: 999px; padding: 1px 6px; font-size: 11px; font-weight: 800; white-space: nowrap; font-variant-numeric: tabular-nums; box-shadow: 0 1px 4px rgb(0 0 0 / .3); }
