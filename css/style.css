@@ -3180,3 +3180,10 @@ a.src-a:active { opacity: .7; }
 .tree-confusable small.muted { font-size: 13.5px; line-height: 1.45; color: var(--text-2); }
 .tx-look-ph { width: 64px; height: 64px; border-radius: 12px; background: var(--surface-3); font-size: 14px; }
 div.tx-look-main { cursor: default; }
+/* regole generali fuori dal riquadro rosso: testo normale, solo il tipo segnala la gravità */
+.warn-list .att-item { border-top-color: var(--hair); }
+.warn-list .att-t { color: var(--text); }
+.warn-list .att-item p { color: var(--text-2); font-weight: 400; }
+.warn-list .att-k { color: var(--muted); }
+.warn-list .crit > .att-k { color: var(--crit); }
+.warn-list .att-cite { color: var(--muted); }
