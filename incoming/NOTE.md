@@ -113,8 +113,9 @@ Ogni zona ha 17 combinazioni: quattro stagioni × sereno/nuvoloso/nebbia/pioggia
 | Zona | Combinazioni | Generate | Foto reale riusata | Dimensioni |
 |---|---:|---:|---|---|
 | vallonina | 17 | 16 | estate-sereno | 1600×1200 |
+| rascino | 17 | 16 | estate-sereno | 1200×1600 |
 
-Zone ancora in lavorazione: poggio-cantalice, antrodoco, cicolano, laga, rascino, tancia.
+Zone ancora in lavorazione: poggio-cantalice, antrodoco, cicolano, laga, tancia.
 
 Ogni variante deriva dalla foto originale della propria zona, mai da una variante generata. I confronti in sovrapposizione controllano inquadratura, scala e riferimenti fissi; i casi rigenerati e gli eventuali limiti sono registrati sotto. Le immagini restano trasformazioni generate, non fotografie reali della stagione/meteo mostrati. La sorgente di Vallonina misura600×450: singoli alberi, foglie e dettagli fini ricostruiti non possono essere certificati identici alla fonte. Nessun ritaglio o deformazione è usato per mascherare derive di inquadratura.
 

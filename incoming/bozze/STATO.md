@@ -34,6 +34,23 @@ Bozze correnti per revisione. Le versioni definitive sono separate in incoming/i
 | icone/tavola-28.png | agaricus-sylvicola, agaricus-xanthodermus, entoloma-sinuatum | ok | QA anatomica completata; dubbi dei dati da leggere in NOTE. |
 | icone/tavola-29.png | pleurotus-ostreatus, pleurotus-eryngii, pleurotus-cornucopiae | ok | QA anatomica completata; dubbi dei dati da leggere in NOTE. |
 | icone/tavola-30.png | fistulina-hepatica | ok | QA anatomica completata; dubbi dei dati da leggere in NOTE. |
+| luoghi/rascino-autunno-nebbia.webp | rascino: autunno-nebbia | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
+| luoghi/rascino-autunno-nuvoloso.webp | rascino: autunno-nuvoloso | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
+| luoghi/rascino-autunno-pioggia.webp | rascino: autunno-pioggia | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
+| luoghi/rascino-autunno-sereno.webp | rascino: autunno-sereno | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
+| luoghi/rascino-estate-nebbia.webp | rascino: estate-nebbia | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
+| luoghi/rascino-estate-nuvoloso.webp | rascino: estate-nuvoloso | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
+| luoghi/rascino-estate-pioggia.webp | rascino: estate-pioggia | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
+| luoghi/rascino-estate-sereno.webp | rascino: estate-sereno | ok | Foto reale riutilizzata, solo conversione e ridimensionamento. |
+| luoghi/rascino-inverno-nebbia.webp | rascino: inverno-nebbia | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
+| luoghi/rascino-inverno-neve.webp | rascino: inverno-neve | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
+| luoghi/rascino-inverno-nuvoloso.webp | rascino: inverno-nuvoloso | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
+| luoghi/rascino-inverno-pioggia.webp | rascino: inverno-pioggia | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
+| luoghi/rascino-inverno-sereno.webp | rascino: inverno-sereno | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
+| luoghi/rascino-primavera-nebbia.webp | rascino: primavera-nebbia | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
+| luoghi/rascino-primavera-nuvoloso.webp | rascino: primavera-nuvoloso | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
+| luoghi/rascino-primavera-pioggia.webp | rascino: primavera-pioggia | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
+| luoghi/rascino-primavera-sereno.webp | rascino: primavera-sereno | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
 | luoghi/vallonina-autunno-nebbia.webp | vallonina: autunno-nebbia | ok | Approvata da Matteo. |
 | luoghi/vallonina-autunno-nuvoloso.webp | vallonina: autunno-nuvoloso | ok | Approvata da Matteo. |
 | luoghi/vallonina-autunno-pioggia.webp | vallonina: autunno-pioggia | ok | Approvata da Matteo. |
