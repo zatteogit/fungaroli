@@ -251,7 +251,7 @@
       "latin": "Anethum foeniculum L.",
       "category": "Erbe",
       "aliases": [
-        "Foeniculum vulgare",
+        "Foeniculum vulgare Mill.",
         "finocchio selvatico"
       ],
       "habitat": "Ambienti aperti e disturbati mediterranei, generalmente sotto la fascia montana inferiore.",
@@ -278,6 +278,14 @@
         {
           "title": "Università di Trieste · Portale della Flora di Roma",
           "url": "https://dryades.units.it/Roma/index.php?id=3527&procedure=taxon_page"
+        },
+        {
+          "title": "Portale della Flora d'Italia · Anethum foeniculum L. (Foeniculum vulgare Mill. come sinonimo)",
+          "url": "https://dryades.units.it/floritaly/index.php?procedure=taxon_page&tipo=all&id=9820"
+        },
+        {
+          "title": "POWO · Kew: Foeniculum vulgare Mill. come nome accettato a livello mondiale",
+          "url": "https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:842680-1"
         },
         {
           "title": "Thermal time (growing degree days) effects on phenology, yield and quality attributes of fennel",

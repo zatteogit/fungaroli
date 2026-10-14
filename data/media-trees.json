@@ -5,6 +5,18 @@
       "photo_taxon": "Fagus sylvatica",
       "inat": [
         {
+          "file": "assets/species/tree-faggio-free1.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/307003862",
+          "author": "Marco Mussita",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "place": "Province of Bergamo, Italy",
+          "date": "2025-08-16",
+          "file_hd": "assets/species/tree-faggio-free1-hd.webp",
+          "thumb": "assets/species/tree-faggio-free1-t.webp"
+        },
+        {
           "file": "assets/species/tree-faggio-inat1.webp",
           "source": "iNaturalist (research grade)",
           "page": "https://www.inaturalist.org/observations/144659310",
@@ -43,6 +55,18 @@
       "latin": "Castanea sativa",
       "photo_taxon": "Castanea sativa",
       "inat": [
+        {
+          "file": "assets/species/tree-castagno-free1.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/190508845",
+          "author": "Wolfgang Ahlmer",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "place": "54013 Fivizzano, Massa-Carrara, Italien",
+          "date": "2008-09-02",
+          "file_hd": "assets/species/tree-castagno-free1-hd.webp",
+          "thumb": "assets/species/tree-castagno-free1-t.webp"
+        },
         {
           "file": "assets/species/tree-castagno-inat1.webp",
           "source": "iNaturalist (research grade)",
@@ -83,6 +107,18 @@
       "photo_taxon": "Quercus cerris",
       "inat": [
         {
+          "file": "assets/species/tree-cerro-free1.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/137439329",
+          "author": "etrusko25",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "place": "58031 Arcidosso GR, Italia",
+          "date": "2022-10-03",
+          "file_hd": "assets/species/tree-cerro-free1-hd.webp",
+          "thumb": "assets/species/tree-cerro-free1-t.webp"
+        },
+        {
           "file": "assets/species/tree-cerro-inat1.webp",
           "source": "iNaturalist (research grade)",
           "page": "https://www.inaturalist.org/observations/227077592",
@@ -121,6 +157,18 @@
       "latin": "Quercus pubescens",
       "photo_taxon": "Quercus pubescens",
       "inat": [
+        {
+          "file": "assets/species/tree-roverella-free1.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/177041374",
+          "author": "Gilles San Martin",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "place": "Cuneo, Piemonte, Italy",
+          "date": "2023-07-31",
+          "file_hd": "assets/species/tree-roverella-free1-hd.webp",
+          "thumb": "assets/species/tree-roverella-free1-t.webp"
+        },
         {
           "file": "assets/species/tree-roverella-inat1.webp",
           "source": "iNaturalist (research grade)",
@@ -317,6 +365,18 @@
       "photo_taxon": "Fraxinus ornus",
       "inat": [
         {
+          "file": "assets/species/tree-orniello-free1.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/155466983",
+          "author": "ROMAGNOLO Filippo",
+          "license": "CC0 1.0",
+          "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "place": "INCISA SCAPACCINO - Carabinieri, 14045 Incisa Scapaccino AT, Italia",
+          "date": "2023-04-18",
+          "file_hd": "assets/species/tree-orniello-free1-hd.webp",
+          "thumb": "assets/species/tree-orniello-free1-t.webp"
+        },
+        {
           "file": "assets/species/tree-orniello-inat1.webp",
           "source": "iNaturalist (research grade)",
           "page": "https://www.inaturalist.org/observations/258382898",
@@ -434,6 +494,18 @@
       "photo_taxon": "Pinus halepensis",
       "inat": [
         {
+          "file": "assets/species/tree-pino-d-aleppo-free1.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/56962287",
+          "author": "Emanuele Santarelli",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "place": "Provincia di Foggia, Italia",
+          "date": "2020-08-16",
+          "file_hd": "assets/species/tree-pino-d-aleppo-free1-hd.webp",
+          "thumb": "assets/species/tree-pino-d-aleppo-free1-t.webp"
+        },
+        {
           "file": "assets/species/tree-pino-d-aleppo-inat1.webp",
           "source": "iNaturalist (research grade)",
           "page": "https://www.inaturalist.org/observations/369789924",
@@ -472,6 +544,18 @@
       "latin": "Pinus sylvestris",
       "photo_taxon": "Pinus sylvestris",
       "inat": [
+        {
+          "file": "assets/species/tree-pino-silvestre-free1.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/237432061",
+          "author": "Matteo Martini",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "place": "Provincia autonoma di Trento, Italia",
+          "date": "2024-08-22",
+          "file_hd": "assets/species/tree-pino-silvestre-free1-hd.webp",
+          "thumb": "assets/species/tree-pino-silvestre-free1-t.webp"
+        },
         {
           "file": "assets/species/tree-pino-silvestre-inat1.webp",
           "source": "iNaturalist (research grade)",
@@ -668,6 +752,18 @@
       "photo_taxon": "Populus nigra",
       "inat": [
         {
+          "file": "assets/species/tree-pioppo-free1.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/61458837",
+          "author": "Marco Mussita",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "place": "Province of Sondrio, Italy",
+          "date": "2020-09-30",
+          "file_hd": "assets/species/tree-pioppo-free1-hd.webp",
+          "thumb": "assets/species/tree-pioppo-free1-t.webp"
+        },
+        {
           "file": "assets/species/tree-pioppo-inat1.webp",
           "source": "iNaturalist (research grade)",
           "page": "https://www.inaturalist.org/observations/370106232",
@@ -745,6 +841,18 @@
       "latin": "Alnus glutinosa",
       "photo_taxon": "Alnus glutinosa",
       "inat": [
+        {
+          "file": "assets/species/tree-ontano-free1.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/137318452",
+          "author": "Marco Mussita",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "place": "Province of Bergamo, Italy",
+          "date": "2022-10-02",
+          "file_hd": "assets/species/tree-ontano-free1-hd.webp",
+          "thumb": "assets/species/tree-ontano-free1-t.webp"
+        },
         {
           "file": "assets/species/tree-ontano-inat1.webp",
           "source": "iNaturalist (research grade)",
@@ -1056,6 +1164,20 @@
           "sourceCaption": "© Dipartimento di Scienze della Vita, Università di Trieste · Andrea Moro · Comune di Firenze, Giardino dei Semplici, Toscana, Italia · 02/11/2017 · Distributed under CC BY-SA 4.0 license.",
           "source": "Università di Trieste · Dryades",
           "file_hd": "assets/trees/tiglio-nostrano-3.webp"
+        }
+      ],
+      "inat": [
+        {
+          "file": "assets/species/tree-tiglio-nostrano-free1.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/144669935",
+          "author": "Barry Walter",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "place": "Tunbridge Wells Common, Tunbridge Wells",
+          "date": "2022-06-20",
+          "file_hd": "assets/species/tree-tiglio-nostrano-free1-hd.webp",
+          "thumb": "assets/species/tree-tiglio-nostrano-free1-t.webp"
         }
       ]
     },

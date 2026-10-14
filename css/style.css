@@ -2643,3 +2643,20 @@ html.entity-open { overflow: hidden; }
 
 /* Titoli di sezione: un po' piu' di aria sopra, meno sotto (ritmo 8 px) */
 .sec-title { margin: var(--sp-6) 0 var(--sp-3); }
+
+/* Scheda uscita: il giro a colpo d'occhio (dati in riga, profilo, boschi), visibile anche a sezione chiusa */
+.walk-glance { display: grid; gap: var(--sp-3); margin-top: var(--sp-1); }
+.walk-focus[open] .walk-glance { display: none; }
+.walk-stats { list-style: none; margin: 0; padding: var(--sp-2) 0; display: flex; flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; border-block: 1px solid var(--hair); }
+.walk-stats::-webkit-scrollbar { display: none; }
+.walk-stats li { display: grid; gap: 1px; padding: 0 var(--sp-3); flex: none; white-space: nowrap; }
+@media (max-width: 420px) { .walk-stats li { padding: 0 10px; } .ws-v { font-size: 14px; } .ws-k { font-size: 10px; } }
+.walk-stats li:first-child { padding-left: 0; }
+.walk-stats li + li { border-left: 1px solid var(--hair); }
+.ws-k { font-size: 12px; font-weight: 500; color: var(--muted); }
+.ws-v { font-size: 15px; font-weight: 700; font-variant-numeric: tabular-nums; color: var(--text); line-height: 1.25; }
+.ws-diff { display: inline-block; min-width: 26px; padding: 0 6px; margin-right: 2px; border-radius: 6px; background: var(--text); color: var(--bg); font-size: 12px; text-align: center; }
+.walk-glance .tprof svg { height: 64px; }
+.ws-forest { display: grid; gap: 6px; }
+.ws-forest .forest { margin: 0; }
+.ws-forest .forest-legend { font-size: 12px; }
