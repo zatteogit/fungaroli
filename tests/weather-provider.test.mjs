@@ -75,10 +75,33 @@ test('browser requests published zones separately with bounded concurrency and r
 test('one failing zone does not cancel successful forecasts or shift elevations',async()=>{
   const original=global.fetch,document=global.document;global.document={};
   const selection=[{id:'ok-first',lat:42,lon:13,bands:[800,1000]},{id:'missing',lat:43,lon:13,bands:[900]},{id:'ok-last',lat:44,lon:13,bands:[700]}];let failedCalls=0;
-  global.fetch=async url=>{const q=new URL(url,'https://test.local').searchParams;if(q.get('latitude')==='43'){failedCalls++;return Response.json({error:'Temporaneamente non disponibile'},{status:503});}return Response.json(q.get('elevation').split(',').map(e=>({elevation:Number(e),daily:{time:[todayISO()],precipitation_sum:[3]}})),{headers:{'x-weather-fetched-at':new Date(now).toISOString()}});};
+  global.fetch=async url=>{const q=new URL(url,'https://test.local').searchParams;if(q.get('latitude')==='43'){failedCalls++;return Response.json({error:'Temporaneamente non disponibile'},{status:503});}return Response.json(q.get('elevation').split(',').map(e=>({elevation:Number(e),daily:{time:[todayISO()],precipitation_sum:[3],temperature_2m_mean:[13],temperature_2m_min:[8],temperature_2m_max:[18]}})),{headers:{'x-weather-fetched-at':new Date().toISOString()}});};
   try{
     const result=await fetchForecast(forecastParams(selection,'growth'));assert.equal(result.partial,true);assert.equal(failedCalls,2);assert.deepEqual(result.raw.map(r=>r?.elevation??null),[800,1000,null,700]);
     const {loadWeather}=await import('../js/weather.js');const writes=[];const oldStorage=global.localStorage;global.localStorage={getItem:()=>null,setItem:(...x)=>writes.push(x)};
-    try{const weather=await loadWeather(selection);assert.deepEqual(weather.missingZones,['missing']);assert.deepEqual(Object.keys(weather.series),['ok-first','ok-last']);assert.equal(writes.length,0);}finally{if(oldStorage===undefined)delete global.localStorage;else global.localStorage=oldStorage;}
+    try{const weather=await loadWeather(selection);assert.deepEqual(weather.missingZones,['missing']);assert.deepEqual(Object.keys(weather.series),['ok-first','ok-last']);assert.equal(writes.length,2);}finally{if(oldStorage===undefined)delete global.localStorage;else global.localStorage=oldStorage;}
   }finally{global.fetch=original;if(document===undefined)delete global.document;else global.document=document;}
+});
+
+test('stale shared cache is immediate, refresh is coalesced and failures preserve its date',async()=>{
+ const storage=cache(),params=forecastParams(zones,'growth');
+ await cachedForecast(params,{zones,cache:storage,now,fetcher:async()=>Response.json(raw())});
+ let finish,calls=0;const work=[];
+ const options={zones,cache:storage,now:now+3600001,waitUntil:p=>work.push(p),fetcher:()=>{calls++;return new Promise(r=>finish=r);}};
+ const saved=await cachedForecast(params,options);
+ assert.equal(saved.headers.get('x-weather-refreshing'),'1');assert.equal(saved.headers.get('x-weather-fetched-at'),new Date(now).toISOString());
+ const follower=cachedForecast(params,{...options,waitForFresh:true});
+ await new Promise(r=>setTimeout(r,0));assert.equal(calls,1);
+ finish(Response.json(raw()));const fresh=await follower;await Promise.all(work);
+ assert.equal(fresh.headers.get('x-weather-cache'),'miss');assert.equal(fresh.headers.get('x-weather-fetched-at'),new Date(now+3600001).toISOString());
+ const bad=await cachedForecast(params,{...options,now:now+7200002,fetcher:async()=>Response.json({},{status:429})});
+ await Promise.all(work);assert.equal(bad.headers.get('x-weather-fetched-at'),new Date(now+3600001).toISOString());
+});
+test('shared cache survives midnight when its forecast covers the new day',async()=>{
+ const storage=cache(),params=forecastParams(zones,'growth'),before=Date.parse(todayISO()+'T21:59:00Z');let calls=0;
+ const rows=raw();for(const row of rows)for(const group of ['daily','hourly']){const data=row[group];for(const field of Object.keys(data))data[field].push(field==='time'?todayISO(new Date(before+3600000))+(group==='hourly'?'T12:00':''):0);}
+ const fetcher=async()=>{calls++;return Response.json(rows);};
+ await cachedForecast(params,{zones,cache:storage,now:before,fetcher});
+ const hit=await cachedForecast(params,{zones,cache:storage,now:before+120000,fetcher});
+ assert.equal(hit.headers.get('x-weather-cache'),'hit');assert.equal(calls,1);
 });

@@ -3,27 +3,13 @@
 // Il parametro `elevation` applica la correzione di quota (gradiente termico).
 
 import {fetchForecast} from './weather-request.js';
+import {cachedZoneWeather,saveZoneWeather,migrateGrowthCache,validWeatherRows,WEATHER_FRESH_MS} from './weather-cache.js';
+import {compactGrowth} from './weather-data.js';
 export const PAST_DAYS = 62;
 export const FORECAST_DAYS = 8;
-const CACHE_KEY = 'fungaroli:weather:v2';
 const CACHE_TTL_MS = 60 * 60 * 1000;
 export const MAX_FORECAST_AGE_MS = 24 * 60 * 60 * 1000;
 const finite = (v) => Number.isFinite(v) ? v : null;
-
-// anyAge: senza rete va bene anche un meteo vecchio, purche' per le stesse zone e quote
-function readCache(sig, anyAge = false) {
-  try {
-    const c = JSON.parse(localStorage.getItem(CACHE_KEY) || 'null');
-    const where = (x) => x.slice(x.indexOf('|') + 1);
-    if (c && c.sig === sig && Date.now() - c.t < CACHE_TTL_MS) return c;
-    if (anyAge && c && where(c.sig) === where(sig) && Date.now() - c.t < 6 * 864e5) return c;
-  } catch { /* storage non disponibile */ }
-  return null;
-}
-
-function writeCache(sig, data, fetchedAt) {
-  try { localStorage.setItem(CACHE_KEY, JSON.stringify({ sig, t: fetchedAt.getTime(), data })); } catch { /* quota o privato */ }
-}
 
 export function toDaily(loc, todayStr, source = {}) {
   const d = loc.daily;
@@ -58,7 +44,7 @@ export function todayISO(d = new Date()) {
 }
 
 // Ritorna { [zoneId]: [serie per ciascuna fascia di quota] } e l'ora di aggiornamento.
-export async function loadWeather(zones, { force = false,onProgress } = {}) {
+export async function loadWeather(zones, { force = false,onProgress,onUpdate,signal } = {}) {
   // versione Artifact: serie gia' calcolate e incorporate (la pagina non puo' chiamare Open-Meteo)
   // (anche la copia di revisione su claude.ai: FUNGAROLI_REVIEW, solo meteo e mappa di base)
   const snap = globalThis.FUNGAROLI_DATA?.weather || globalThis.FUNGAROLI_REVIEW?.weather;
@@ -80,48 +66,41 @@ export async function loadWeather(zones, { force = false,onProgress } = {}) {
     return { series: snap.series, fetchedAt, snapshot: true, stale };
   }
 
-  const locs = [];
-  for (const z of zones) z.bands.forEach((band, bi) => locs.push({ zid: z.id, bi, lat: z.lat, lon: z.lon, band }));
-  const today = todayISO();
-  const sig = today + '|' + locs.map((l) => `${l.lat},${l.lon},${l.band}`).join(';');
-
-  let raw = null, fetchedAt = null, offline = false;
-  const cached = force ? null : readCache(sig);
-  if (cached) {
-    raw = cached.data; fetchedAt = new Date(cached.t);
-  } else {
-    try {
-    const params = new URLSearchParams({
-      latitude: locs.map((l) => l.lat).join(','),
-      longitude: locs.map((l) => l.lon).join(','),
-      elevation: locs.map((l) => l.band).join(','),
-      daily: 'precipitation_sum,temperature_2m_mean,temperature_2m_min,temperature_2m_max',
-      hourly: 'soil_moisture_3_to_9cm,soil_temperature_6cm',
-      past_days: PAST_DAYS,
-      forecast_days: FORECAST_DAYS,
-      timezone: 'Europe/Rome',
-    });
-    const received=await fetchForecast(params,{onProgress});
-    raw=received.raw; fetchedAt=received.fetchedAt; offline=received.stale;
-    if(raw.length!==locs.length||raw.some(r=>r!==null&&!Array.isArray(r?.daily?.time)))throw new Error('Serie meteo incompleta');
-    if(!received.partial)writeCache(sig, raw, fetchedAt);
-    } catch (err) {
-      // senza campo (o servizio limitato): l'ultimo meteo salvato, dichiarato come tale
-      const old = readCache(sig, true);
-      if (!old) throw err;
-      raw = old.data; fetchedAt = new Date(old.t); offline = true;
+  migrateGrowthCache(zones);
+  const today=todayISO(),records=new Map();
+  for(const z of zones){const saved=cachedZoneWeather(z);if(saved)records.set(z.id,saved);}
+  const snapshot=()=>{
+    const out={},times=[];
+    for(const z of zones){const r=records.get(z.id);if(!r)continue;
+      const age=Date.now()-r.t,expired=!Number.isFinite(age)||age<0||age>MAX_FORECAST_AGE_MS;
+      out[z.id]=r.raw.map((raw,bi)=>toDaily(raw,today,{fetchedAt:new Date(r.t).toISOString(),expired,cached:!!r.local||!!r.stale,requested:{latitude:z.lat,longitude:z.lon,elevation:z.bands[bi]}}));times.push(r.t);
     }
-  }
-
-  const out = {};
-  const expired = Date.now() - fetchedAt.getTime() > MAX_FORECAST_AGE_MS;
-  const missingZones=zones.filter(z=>locs.some((l,k)=>l.zid===z.id&&!raw[k]?.daily?.time)).map(z=>z.id);
-  locs.forEach((l, k) => {
-    if(missingZones.includes(l.zid))return;
-    (out[l.zid] ||= [])[l.bi] = toDaily(raw[k], today, {
-      fetchedAt: fetchedAt.toISOString(), expired, requested: { latitude: l.lat, longitude: l.lon, elevation: l.band },
-    });
+    const missingZones=zones.filter(z=>!out[z.id]).map(z=>z.id);
+    return {series:out,fetchedAt:new Date(Math.min(...times)),cached:[...records.values()].some(r=>r.local||r.stale),stale:[...records.values()].some(r=>r.stale||Date.now()-r.t>=WEATHER_FRESH_MS)||Object.values(out).some(ss=>ss.some(s=>s.todayIndex<0||s.source.expired)),missingZones};
+  };
+  const waiting=zones.filter(z=>{const r=records.get(z.id);return force||!r||r.stale||Date.now()-r.t>=WEATHER_FRESH_MS||!r.raw.every(row=>row.daily.time.includes(today));});
+  if(records.size)onUpdate?.(snapshot(),{phase:'cache',pending:waiting.map(z=>z.id)});
+  if(!waiting.length)return snapshot();
+  const locs=waiting.flatMap(z=>z.bands.map((band,bi)=>({z,bi,band})));
+  const params=new URLSearchParams({
+    latitude:locs.map(l=>l.z.lat).join(','),longitude:locs.map(l=>l.z.lon).join(','),elevation:locs.map(l=>l.band).join(','),
+    daily:'precipitation_sum,temperature_2m_mean,temperature_2m_min,temperature_2m_max',hourly:'soil_moisture_3_to_9cm,soil_temperature_6cm',past_days:PAST_DAYS,forecast_days:FORECAST_DAYS,timezone:'Europe/Rome',
   });
-  const stale = offline || expired || Object.values(out).some((ss) => ss.some((s) => s.todayIndex < 0));
-  return { series: out, fetchedAt, offline, stale,missingZones };
+  let failure;
+  try{
+    await fetchForecast(params,{signal,onProgress,onChunk:chunk=>{
+      if(signal?.aborted)return;
+      const z=locs[chunk.start]?.z;
+      if(!z||!validWeatherRows(chunk.raw,z.bands.length))return;
+      const record={t:chunk.fetchedAt.getTime(),raw:compactGrowth(chunk.raw),stale:chunk.stale};
+      if(records.get(z.id)?.t>record.t)return;
+      records.set(z.id,record);saveZoneWeather(z,'growth',record);
+      onUpdate?.(snapshot(),{phase:'network',zoneId:z.id});
+    }});
+  }catch(err){failure=err;}
+  if(!records.size)throw failure||new Error('Serie meteo incompleta');
+  const result=snapshot();
+  result.failedZones=waiting.filter(z=>!records.get(z.id)||records.get(z.id).local||records.get(z.id).stale).map(z=>z.id);
+  if(failure)result.offline=true;
+  return result;
 }

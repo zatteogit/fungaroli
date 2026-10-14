@@ -326,7 +326,7 @@ test('previsioni datate dal server, immutabili e mutazioni che ritirano dati obs
 test('taccuini e community restano accessibili senza dati meteo', async ({ page }) => {
   await setup(page);
   await page.route('**/api/weather/v1/forecast?**',r=>r.abort());
-  await page.evaluate(()=>{localStorage.removeItem('fungaroli:weather:v2');localStorage.removeItem('fungaroli:outing:v2');});
+  await page.evaluate(()=>{localStorage.removeItem('fungaroli:weather:v2');localStorage.removeItem('fungaroli:outing:v2');localStorage.removeItem('fungaroli:weather:zones:v3');localStorage.removeItem('fungaroli:outing:zones:v3');});
   await page.reload();
   await expect(page.locator('#hero [data-retry]')).toBeVisible();
   await expect(page.locator('#editorial')).toBeHidden();

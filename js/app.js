@@ -5,7 +5,8 @@ import {initPlants,plants,plantName,plantRecord,plantThumb,renderPlants,renderPl
 import {botanicalModels} from './botanical-model.js';
 import './theme.js';
 import './images.js';
-import { consumeFresh, freshDone } from './refresh.js';
+import { consumeFresh, freshDone, toast as weatherToast } from './refresh.js';
+import {updateWeatherHTML,reconcileChildren,keepWeatherReadingPosition} from './weather-dom.js';
 import { SPECIES, GROUPS, FOREST } from './species.js';
 import { scoreZoneDay, scoreSpecies, habitatAtBand, habitatPotential, elevationFit, combine, classOf, scoreLabel, scoreShortLabel, formatIndex, MODEL_VERSION, PARAMS, CLASSES } from './model.js';
 import { todayISO, loadWeather } from './weather.js';
@@ -572,44 +573,89 @@ function prepareCalendarFallback(){
  series=Object.fromEntries(zones.map(z=>[z.id,z.bands.map(()=>({dates,todayIndex:62,issuedIndex:62,source:{expired:true,calendarOnly:true},...Object.fromEntries(['p','tmean','tmin','tmax','soilm','soilt'].map(k=>[k,Array(70).fill(null)]))}))]));
  $('#stale').hidden=false;$('#stale').textContent='Meteo non disponibile: consigli botanici basati sul paesaggio e sul calendario della fase. Nessun contributo climatico.';
 }
-async function refreshWeather(force) {
-  try {
-    $('#updated').textContent = 'Aggiornamento…';
-    loadStep(1);
-    weatherZones??=zones;
-    const w = await loadWeather(weatherZones, { force,onProgress:(done,total)=>{
-      const step=$('.loader [data-step="1"]');if(step)step.textContent=`Scarico il meteo delle zone · ${done}/${total}`;
-    } });
-    loadStep(2);
-    await new Promise((r) => requestAnimationFrame(() => setTimeout(r, 0))); // lascia disegnare il passo prima del calcolo
-    weatherUnavailable=false;series = w.series;
-    zones = weatherZones.filter((z) => series[z.id]);
-    const sameDay = w.fetchedAt.toDateString() === new Date().toDateString();
-    $('#updated').textContent = (w.offline ? 'Dati salvati · ' : '') + 'Aggiornamento meteo · ' + (w.snapshot || !sameDay
-      ? w.fetchedAt.toLocaleString('it-IT', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' })
-      : w.fetchedAt.toLocaleTimeString('it-IT', { hour: '2-digit', minute: '2-digit' }));
-    document.documentElement.classList.toggle('is-offline', !!w.offline);
-    $('#stale').hidden = !w.stale;
-    $('#stale').textContent = 'Meteo salvato o non aggiornato: verifica la data di acquisizione. Oltre 24 ore gli indici dei funghi per oggi e i giorni futuri non vengono calcolati; per le piante restano habitat e calendario, senza contributi climatici.';
-    if(w.missingZones?.length){
-      $('#stale').hidden=false;
-      $('#stale').textContent=`Meteo disponibile per ${zones.length} zone su ${weatherZones.length}. Le altre non vengono valutate. `;
-      const retry=document.createElement('button');retry.type='button';retry.className='link-btn';retry.textContent='Riprova';retry.onclick=()=>refreshWeather(true);$('#stale').append(retry);
+let weatherRevision=0,weatherController=null,weatherBusy=false,weatherPainting=false,deferredWeatherView=false;
+let lastWeatherSnapshot=null,weatherPaintTimer=null;
+const weatherPanelOpen=()=>!!document.querySelector('dialog[open],.learning-panel:popover-open');
+function weatherWork(text,busy=false){
+  const box=$('#weather-work');if(!box)return;
+  box.hidden=!text;box.classList.toggle('busy',busy);box.querySelector('.weather-work-label').textContent=text||'';
+}
+function weatherStamp(w,busy=weatherBusy){
+  if(!w||!Number.isFinite(w.fetchedAt?.getTime()))return;
+  const sameDay=todayISO(w.fetchedAt)===todayISO();
+  $('#updated').textContent=(w.cached||w.offline?'Meteo salvato':'Meteo')+' · '+w.fetchedAt.toLocaleString('it-IT',sameDay?{hour:'2-digit',minute:'2-digit'}:{day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'})+(busy?' · aggiorno':'');
+  $('#refresh').setAttribute('aria-busy',String(busy));
+  $('#refresh').title='Meteo acquisito '+w.fetchedAt.toLocaleString('it-IT')+'. Tocca per aggiornarlo.';
+  $('#stale').hidden=!w.stale&&!w.missingZones?.length;
+  $('#stale').textContent=w.missingZones?.length?`Meteo disponibile per ${weatherZones.length-w.missingZones.length} zone su ${weatherZones.length}. Le altre non vengono valutate. `:busy?'Dati salvati; aggiornamento in corso.':'Dati meteo da aggiornare. Oltre 24 ore l’indice dei funghi non viene calcolato.';
+  if(!$('#stale').hidden&&!busy){const retry=document.createElement('button');retry.type='button';retry.className='link-btn';retry.textContent='Riprova';retry.onclick=()=>refreshWeather(true);$('#stale').append(retry);}
+}
+function paintWeatherView(changed=new Set(zones.map(z=>z.id))){
+  if(!results)return;
+  if(state.view==='zona'||state.view==='mappa'&&sheetZone){
+    const selected=state.view==='zona'?state.zoneId:sheetZone;
+    if(changed.has(selected)&&weatherPanelOpen()){deferredWeatherView=true;weatherWork('Meteo ricevuto. La scheda si aggiorna alla chiusura del pannello.');return;}
+  }
+  weatherPainting=true;
+  try{
+    if(state.view==='uscite'){renderDays();renderHome();}
+    else if(state.view==='zona'&&changed.has(state.zoneId))keepWeatherReadingPosition(renderDetail);
+    else if(state.view==='mappa'){
+      renderMapDays();renderMap(changed);renderLegend();
+      if(sheetZone&&changed.has(sheetZone))keepWeatherReadingPosition(()=>sheetPoint?openPoint(sheetZone,currentSheetPoint()):openSheet(sheetZone));
     }
-    $('#today-kicker').textContent = new Date().toLocaleDateString('it-IT', { weekday: 'long', day: 'numeric', month: 'long' });
-    compute();
-    renderAll();
-    loadOuting(zones, { force }).then((o) => { outing = o; outCache.clear(); renderAll(); }).catch(() => {});
-  } catch (err) {
-    $('#updated').textContent = '';
-    weatherUnavailable=true;prepareCalendarFallback();
+  }finally{weatherPainting=false;}
+}
+function queueWeatherPaint(changed){
+  if(!changed.size)return;
+  const pending=weatherPaintTimer?.changed||new Set();changed.forEach(id=>pending.add(id));
+  if(weatherPaintTimer){weatherPaintTimer.changed=pending;return;}
+  const handle=setTimeout(()=>{const ids=weatherPaintTimer?.changed||pending;weatherPaintTimer=null;paintWeatherView(ids);},100);
+  weatherPaintTimer={handle,changed:pending};
+}
+function receiveWeather(w,meta={}){
+  const changed=new Set();
+  for(const [id,ss] of Object.entries(w.series))if(JSON.stringify(series?.[id])!==JSON.stringify(ss))changed.add(id);
+  const first=!results;
+  weatherUnavailable=false;series=w.series;zones=weatherZones.filter(z=>series[z.id]);lastWeatherSnapshot=w;
+  document.documentElement.classList.toggle('is-offline',!!w.offline);
+  weatherStamp(w);$('#today-kicker').textContent=new Date().toLocaleDateString('it-IT',{weekday:'long',day:'numeric',month:'long'});
+  if(changed.size){compute(first?null:changed);if(first)paintWeatherView(changed);else queueWeatherPaint(changed);}
+}
+async function refreshWeather(force){
+  const revision=++weatherRevision;weatherController?.abort();weatherController=new AbortController();const signal=weatherController.signal;
+  weatherZones??=zones;weatherBusy=true;$('#refresh').setAttribute('aria-busy','true');
+  if(lastWeatherSnapshot)weatherStamp(lastWeatherSnapshot,true);else $('#updated').textContent='Meteo in arrivo…';
+  weatherWork('Aggiorno il meteo in background…',true);loadStep(1);
+  let received=false,mainFailure=null,latest=null,outingPartial=false;
+  const growth=loadWeather(weatherZones,{force,signal,onProgress:(done,total)=>{
+    if(revision!==weatherRevision)return;const step=$('.loader [data-step="1"]');if(step)step.textContent=`Scarico il meteo delle zone · ${done}/${total}`;
+  },onUpdate:(w,meta)=>{if(revision!==weatherRevision)return;received||=meta.phase==='network';receiveWeather(w,meta);}}).then(w=>{if(revision===weatherRevision){latest=w;receiveWeather(w);}}).catch(err=>{mainFailure=err;});
+  const practical=loadOuting(weatherZones,{force,signal,onUpdate:(data,meta)=>{
+    if(revision!==weatherRevision)return;
+    const changed=new Set(Object.keys(data).filter(id=>JSON.stringify(outing?.[id])!==JSON.stringify(data[id])));
+    received||=meta.phase==='network';outing=data;
+    for(const id of changed)for(const k of outCache.keys())if(k.startsWith(id+'|'))outCache.delete(k);
+    if(results)queueWeatherPaint(changed);
+  }}).then(data=>{if(revision!==weatherRevision)return;outing=data;outingPartial=weatherZones.some(z=>!data?.[z.id]||Date.now()-Date.parse(data[z.id].fetchedAt)>=3600000);});
+  await Promise.allSettled([growth,practical]);if(revision!==weatherRevision)return;
+  weatherBusy=false;$('#refresh').setAttribute('aria-busy','false');loadStep(2);
+  if(weatherPaintTimer){clearTimeout(weatherPaintTimer.handle);const changed=weatherPaintTimer.changed;weatherPaintTimer=null;paintWeatherView(changed);}
+  if(latest||lastWeatherSnapshot){
+    weatherStamp(latest||lastWeatherSnapshot,false);
+    const partial=latest?.stale||latest?.missingZones?.length||latest?.failedZones?.length||mainFailure||outingPartial;
+    if(partial){$('#updated').textContent+=' · aggiornamento parziale';}
+    if(!deferredWeatherView)weatherWork(partial?'Aggiornamento parziale · dati salvati':'',false);
+    if(received){weatherToast(partial?'Meteo aggiornato in parte':'Meteo aggiornato',4000,'top');}
+  }else{
+    weatherWork('');$('#updated').textContent='';weatherUnavailable=true;prepareCalendarFallback();
     if(state.target==='piante'){compute();renderAll();return;}
-    const msg = `<div class="error">${esc(weatherErrorMessage(err))} <button type="button" class="link-btn" data-retry>Riprova</button>.</div>`;
-    $('#hero').innerHTML = msg;
-    $('#detail').innerHTML = msg;
-    document.querySelectorAll('[data-retry]').forEach((b) => b.addEventListener('click', () => refreshWeather(true)));
+    const msg=`<div class="error">${esc(weatherErrorMessage(mainFailure))} <button type="button" class="link-btn" data-retry>Riprova</button>.</div>`;
+    $('#hero').innerHTML=msg;$('#detail').innerHTML=msg;document.querySelectorAll('[data-retry]').forEach(b=>b.addEventListener('click',()=>refreshWeather(true)));
   }
 }
+document.addEventListener('close',()=>{if(deferredWeatherView&&!weatherPanelOpen()){deferredWeatherView=false;paintWeatherView();weatherWork(weatherBusy?'Aggiorno il meteo in background…':'',weatherBusy);}},{capture:true});
+document.addEventListener('toggle',e=>{if(e.newState==='closed'&&deferredWeatherView&&!weatherPanelOpen()){deferredWeatherView=false;paintWeatherView();weatherWork(weatherBusy?'Aggiorno il meteo in background…':'',weatherBusy);}},{capture:true});
 
 const selectedSpecies = () => { const ids = new Set(selectedCatalog().map(s=>s.modelId).filter(Boolean)); return (state.target==='piante'?plantModels:SPECIES).filter(s=>ids.has(s.id)); };
 
@@ -617,7 +663,7 @@ const selectedSpecies = () => { const ids = new Set(selectedCatalog().map(s=>s.m
 const outCache = new Map();
 function wxOf(z, d) {
   if (!d) return null;
-  const k = z.id + d.date;
+  const k = z.id + '|' + d.date;
   if (!outCache.has(k)) outCache.set(k, outingFor(outing?.[z.id], z, d.date));
   return outCache.get(k);
 }
@@ -644,10 +690,12 @@ function alternativeFor(z, o, d) {
 const wxi = (w) => `<span class="wxi wxi-${wxIcon(w)}">${IC[wxIcon(w)]}</span>`;
 const wxIcon = (w) => (!w?.available ? 'unknown' : w?.thunder ? 'storm' : w?.snow ? 'snow' : w && (w.rain >= 0.5 || w.prob >= 50) ? 'rain' : 'sun');
 
-function compute() {
+function compute(changed=null) {
   const sp = selectedSpecies();
-  results = {};
+  if(!changed)results={};else results ||= {};
+  for(const id of Object.keys(results))if(!zones.some(z=>z.id===id))delete results[id];
   for (const z of zones) {
+    if(changed&&!changed.has(z.id)&&results[z.id])continue;
     const sb = series[z.id];
     const t = sb[0].todayIndex;
     const days = [];
@@ -818,7 +866,7 @@ function renderAll() {
   if (!results) return;
   if (state.view === 'uscite') { renderDays(); renderHome(); }
   if (state.view === 'zona') renderDetail();
-  if (state.view === 'mappa') { renderMapDays(); renderFilterBox($('#map-filters'), true); renderMap(); renderLegend(); if (sheetZone) openSheet(sheetZone); }
+  if (state.view === 'mappa') { renderMapDays(); renderFilterBox($('#map-filters'), true); renderMap(); renderLegend(); if (sheetZone) sheetPoint?openPoint(sheetZone,currentSheetPoint()):openSheet(sheetZone); }
 }
 
 function bestOfDay(o) {
@@ -837,10 +885,13 @@ const dayLabel = (o, date, long = false) => (o === 0 ? 'Oggi' : o === 1 ? 'Doman
   : fmtDate(date, long ? { weekday: 'long', day: 'numeric' } : { weekday: 'short' }));
 
 function dayChips(box, selected, onPick, { withAll = false } = {}) {
+  const previous=weatherPainting?box:null,railScroll=box.scrollLeft;
+  if(previous)box=document.createElement('div');
   box.innerHTML = '';
   const mk = (top, mid, o, sc) => {
     const b = document.createElement('button');
     b.type = 'button';
+    b.dataset.dayOffset=String(o);
     b.className = 'day';
     b.setAttribute('role', 'tab');
     b.setAttribute('aria-selected', String(selected === o));
@@ -867,7 +918,8 @@ function dayChips(box, selected, onPick, { withAll = false } = {}) {
     const best = bestOfDay(o);
     if (best) mk(o === 0 ? 'Oggi' : o === 1 ? 'Domani' : fmtDate(best.d.date, { weekday: 'short' }).replace('.', ''), fmtDate(best.d.date, { day: 'numeric' }), o, best.s);
   }
-  box.querySelector('[aria-selected="true"]')?.scrollIntoView({ block: 'nearest', inline: 'center' });
+  if(previous){reconcileChildren(previous,box);previous.scrollLeft=railScroll;}
+  else box.querySelector('[aria-selected="true"]')?.scrollIntoView({ block: 'nearest', inline: 'center' });
 }
 
 function renderDays() {
@@ -1017,7 +1069,7 @@ function discoveriesHtml(z,d,walk,items=discoveriesFor(z,d,walk)){
  }).join('')}</ul><a href="#/piante" class="discovery-catalog">Altre piante in Scopri →</a>`;
 }
 function renderDiscoveries(box,z,d,walk){
- if(!box)return;const html=discoveriesHtml(z,d,walk);box.hidden=!html;box.innerHTML=html?`<section class="outing-discoveries" aria-labelledby="during-walk-title"><h2 id="during-walk-title">Durante il giro</h2>${html}</section>`:'';
+ if(!box)return;const html=discoveriesHtml(z,d,walk);box.hidden=!html;const markup=html?`<section class="outing-discoveries" aria-labelledby="during-walk-title"><h2 id="during-walk-title">Durante il giro</h2>${html}</section>`:'';if(weatherPainting)updateWeatherHTML(box,markup);else box.innerHTML=markup;
 }
 function discoverySection(z,d,walk){
  const items=discoveriesFor(z,d,walk);if(!items.length)return '';
@@ -1037,9 +1089,15 @@ document.addEventListener('click',e=>{
  openingDiscovery=item;try{if(openEntitySheet(item.href,link)){e.preventDefault();e.stopImmediatePropagation();}}finally{openingDiscovery=null;}
 },true);
 
+let homeProposalKeys=[];
 function renderHome() {
   for(const el of document.querySelectorAll('#hero,#ranking,#season'))el.dataset.glossaryContext=state.target==='piante'?'Piante':'Funghi';
-  const list = combosList();
+  let list = combosList();
+  if(weatherPainting&&homeProposalKeys.length){
+    const held=homeProposalKeys.map(k=>{const z=zones.find(z=>z.id===k.id),d=dayEntry(k.id,k.o);return z&&d?.best?{z,d,o:k.o,s:adjusted(z,d.score,d),walk:walkFor(z,d,k.trail)}:null;}).filter(Boolean);
+    const used=new Set(held.map(c=>c.z.id+'|'+c.o));list=[...held,...list.filter(c=>!used.has(c.z.id+'|'+c.o))];
+  }
+  homeProposalKeys=list.slice(0,8).map(c=>({id:c.z.id,o:c.o,trail:c.walk?.t.id}));
   const hero = list[0];
   const box = $('#hero');
   if (!hero) { $('#during-walk').hidden=true;$('#during-walk').innerHTML='';box.innerHTML = `<p class="notice">${selectedSpecies().length ? 'Le condizioni di crescita non sono calcolabili: mancano dati o meteo aggiornato.' : 'Per queste specie l’indice di crescita non è ancora disponibile. Puoi consultare le schede e contribuire con le osservazioni.'} Puoi comunque esplorare boschi e sentieri.</p><div class="explore-fallback">${zones.slice(0, 6).map((z) => `<a class="btn ghost" href="#/zona/${z.id}/${state.homeDay || 0}">${esc(z.title || z.name)}</a>`).join('')}</div>`; $('#ranking').innerHTML = ''; $('#others-h').hidden = true; renderSeason(); renderCommunityIntro(); return; }
@@ -1056,7 +1114,7 @@ function renderHome() {
   const g = list.filter((c) => c.o === hero.o).sort((a, b) => b.s - a.s)[0], wg = g && wxOf(g.z, g.d);
   const note = g && g.z.id !== hero.z.id && wg && wg.level !== 'ok'
     ? `<a class="cover-note" href="#/zona/${g.z.id}/${g.o}"><span>${wxi(wg)}<b>${esc(splitName(g.z)[0])}</b> <span class="pc-up">${formatIndex(g.s)}</span> ma ${esc(wg.short || wg.main)}</span><span aria-hidden="true">›</span></a>` : '';
-  box.innerHTML = `
+  const heroHTML = `
     <div class="cover vtn" style="--vtn:cover">
       ${cov ? `<img class="cover-img" data-src="${cov.hd}" alt="${esc(cov.alt)}" fetchpriority="high">` : ''}
       <span class="shade"></span>
@@ -1072,19 +1130,20 @@ function renderHome() {
         <span class="cover-cta" aria-hidden="true">Vedi l’uscita <span>→</span></span>
       </span>
     </div>`;
+  if(weatherPainting)updateWeatherHTML(box,heroHTML);else box.innerHTML=heroHTML;
   renderDiscoveries($('#during-walk'),hero.z,hero.d,hero.walk);
   const ol = $('#ranking');
-  ol.innerHTML = list.slice(1, 8).map((c) => {
+  const rankingHTML = list.slice(1, 8).map((c) => {
     const cv = coverOf(c.z, c.d.best.species.id);
-    return `<li class="vtn" style="--vtn:t-${c.z.id}-${c.o}"><a class="tile" data-walk-zone="${c.z.id}" href="${walkHref(c.z, c.o, c.walk?.t)}">
+    return `<li data-weather-key="${c.z.id}|${c.o}" class="vtn" style="--vtn:t-${c.z.id}-${c.o}"><a class="tile" data-walk-zone="${c.z.id}" href="${walkHref(c.z, c.o, c.walk?.t)}">
       ${cv ? `<img data-src="${cv.small}" alt="" loading="lazy" decoding="async">` : ''}<span class="shade"></span>${ring(c.s, false)}${(() => { const w = wxOf(c.z, c.d); return w && w.level !== 'ok' ? `<span class="tile-wx wx-${w.level}" title="${esc(w.text)}">${wxi(w)}${esc(OUTING_LABEL[w.level])}</span>` : ''; })()}
       <span class="tile-body"><span class="tile-day">${esc(dayLabel(c.o, c.d.date, true))}</span><b>${esc(splitName(c.z)[0])}</b>${c.walk ? `<span class="tile-micro">${esc(c.walk.microzone)}</span><small>${esc(walkBrief(c.walk))}</small>` : ''}<small>${esc(c.d.best.species.name)} · ${c.d.best.band} m</small></span>
     </a></li>`;
   }).join('');
+  if(weatherPainting)updateWeatherHTML(ol,rankingHTML);else ol.innerHTML=rankingHTML;
   $('#others-h').hidden = list.length < 2;
   fitFacts($('#hero .facts'));
-  renderSeason();
-  renderCommunityIntro();
+  if(!weatherPainting){renderSeason();renderCommunityIntro();}
   fitCover();
 }
 
@@ -1157,9 +1216,15 @@ new MutationObserver(() => document.documentElement.classList.toggle('map-sheet-
   .observe(document.getElementById('map-sheet') || document.body, { attributes: true, attributeFilter: ['hidden'] });
 
 // Riquadro dal basso sulla mappa: riassunto della zona e accesso alla scheda
-let sheetZone = null;
+let sheetZone = null, sheetPoint = null;
+function currentSheetPoint(){
+ const pt=sheetPoint;if(!pt?.t)return pt;
+ const z=zones.find(z=>z.id===sheetZone),d=dayEntry(sheetZone,state.dayOffset);
+ const t=d?.best?trailsFor(z,d.best.species,d.best.band).find(t=>String(t.id)===String(pt.t.id)):null;
+ return {...pt,t:t||trails[sheetZone]?.trails.find(t=>String(t.id)===String(pt.t.id))||pt.t};
+}
 function openSheet(zid) {
-  sheetZone = zid;
+  sheetPoint=null;sheetZone = zid;
   if (!results) return; // il meteo non e' ancora arrivato: renderAll riapre il riquadro
   const z = zones.find((x) => x.id === zid);
   const d = dayEntry(zid, state.dayOffset);
@@ -1183,6 +1248,7 @@ function openSheet(zid) {
 }
 
 function openPoint(zid, pt) {
+  sheetZone=zid;sheetPoint=pt;
   const z = zones.find((x) => x.id === zid);
   const d = dayEntry(zid, state.dayOffset);
   const sh = $('#map-sheet');
@@ -1509,7 +1575,7 @@ function showCellCard(h, preserveTimer = false) {
   cellTip._fz = c; cellTip._fhtml = content;
 }
 
-function renderMap() {
+function renderMap(changed=null) {
   if (!hasLeaflet()) {
     renderSvgMap($('#map'), {
       zones, origin,
@@ -1541,9 +1607,9 @@ function renderMap() {
     setTimeout(() => { cellsOut = false; renderMap(); }, 420);
     return;
   }
-  for (const k in zoneLayers) zoneLayers[k].remove();
-  zoneLayers = {};
-  cellHits = []; peekCellBounds=[];mapEl.classList.remove('cells-peek');
+  const previousHits=cellHits;
+  for(const k in zoneLayers)if(!changed||changed.has(k)||!zones.some(z=>z.id===k)){zoneLayers[k].remove();delete zoneLayers[k];}
+  cellHits = changed?previousHits.filter(h=>zoneLayers[h.z.id]):[];peekCellBounds=[];mapEl.classList.remove('cells-peek');
   // etichette con nome: spostamento verticale greedy (in pixel) per evitare sovrapposizioni
   const placed = [];
   const labelPos = {};
@@ -1557,6 +1623,7 @@ function renderMap() {
     labelPos[z.id] = map.containerPointToLatLng([pt.x, y]);
   }
   for (const z of zones) {
+    if(changed&&zoneLayers[z.id])continue;
     const d = dayEntry(z.id, state.dayOffset);
     const s = adjusted(z, d?.score ?? null, d);
     const color = cssVar(mapVar(s));

@@ -19,7 +19,7 @@ async function setup(page,{width=1280,outingGate}={}) {
   });
   await page.addInitScript(()=>localStorage.setItem('fungaroli:legal-accepted','22026-10-12'));
   await page.goto('/#/mappa');await expect(page.locator('#map-filters')).toContainText('Porcini');
-  await page.evaluate(()=>testMap.setView([42.49,12.915],13,{animate:false}));
+  await page.evaluate(()=>{testMap.setView([42.49,12.915],13,{animate:false});});
   await expect(page.locator('#map')).toHaveClass(/cells-on/);
   await page.waitForFunction(()=>Object.values(testMap._layers).some(l=>l instanceof L.Rectangle&&!l.options.stroke));
   const sample=await page.evaluate(()=>{
@@ -75,8 +75,16 @@ test('l’aggiornamento del meteo della mattina conserva il pannello e il link a
   try {
     const {sample,errors}=await setup(page,{outingGate:gate});await page.mouse.click(sample.x,sample.y);const card=page.locator('.cell-card'),link=card.locator('[data-term="habitat"]');
     await link.click();await expect(page.locator('#learning-popover')).toBeVisible();const original=await link.elementHandle();release();
-    await expect.poll(()=>page.evaluate(()=>!!localStorage.getItem('fungaroli:outing:v2'))).toBe(true);
+    await expect.poll(()=>page.evaluate(()=>!!localStorage.getItem('fungaroli:outing:zones:v3'))).toBe(true);
     expect(await original.evaluate(e=>e.isConnected)).toBe(true);await expect(card).toBeVisible();await expect(page.locator('#learning-popover')).toBeVisible();
     await page.locator('[data-learning-close]').click();await expect(link).toBeFocused();await page.keyboard.press('Escape');await expect(card).toHaveCount(0);expect(errors).toEqual([]);
   } finally { release(); }
+});
+
+test('aggiornare il meteo non sostituisce il pannello della sosta con il riepilogo zona',async({page})=>{
+ const {errors}=await setup(page);await expect(page.locator('#refresh')).toHaveAttribute('aria-busy','false');
+ await page.evaluate(()=>{const circle=Object.values(testMap._layers).find(l=>l instanceof L.Circle&&l.getRadius()>100);circle.fire('click',{latlng:L.latLng(0,0)});});
+ await expect(page.locator('#map-sheet .sheet-row')).toBeVisible();await page.evaluate(()=>{const parking=Object.values(testMap._layers).find(l=>l instanceof L.Marker&&l.getElement()?.querySelector('.map-p'));parking.fire('click');});
+ await expect(page.locator('#map-sheet')).toContainText("Sosta per l'auto");const title=await page.locator('#map-sheet .sheet-title').innerText();await page.evaluate(()=>document.querySelector('#refresh').click());await expect(page.locator('#refresh')).toHaveAttribute('aria-busy','false');
+ await expect(page.locator('#map-sheet .sheet-title')).toHaveText(title);await expect(page.locator('#map-sheet .sheet-back')).toBeVisible();expect(errors).toEqual([]);
 });
