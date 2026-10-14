@@ -3080,3 +3080,7 @@ a { text-decoration: none; }
 .trait-strip .ts-art > svg.ts-flesh { width: auto; max-width: 100%; height: 50px; }
 :root[data-theme="dark"] .ts-flesh { filter: drop-shadow(0 0 .6px rgb(255 255 255 / .55)); }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .ts-flesh { filter: drop-shadow(0 0 .6px rgb(255 255 255 / .55)); } }
+.fp-head-actions { display: flex; align-items: center; gap: 4px; }
+.fp-reset { min-height: 44px; padding: 0 12px; border: 0; background: none; color: var(--accent); font: inherit; font-size: 15px; font-weight: 600; cursor: pointer; border-radius: 10px; }
+.fp-reset:hover { background: var(--accent-soft); }
+.fp-reset:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }

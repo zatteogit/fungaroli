@@ -587,7 +587,8 @@ function openFullFilters() {
     const groupChip = (g) => `<button type="button" class="chip" data-group="${g.id}" aria-pressed="${groupSelection(g.id)!=='none'}">${thumb(g.rep,32)}<span>${esc(g.label)}${g.id==='porcini'?' (4 specie)':''}</span>${outOfSeason(g.id)?`<small class="season-badge season-out">${state.target==='piante'?'Fuori calendario':'Fuori stagione'}</small>`:''}</button>`;
     const inSeason = activeGroups().filter((g) => !outOfSeason(g.id)), outSeason = activeGroups().filter((g) => outOfSeason(g.id));
     const sw = (on) => `<span class="switch" aria-hidden="true" data-on="${on}"><i></i></span>`;
-    dlg.innerHTML = `<div class="filter-panel-head"><h2 id="full-filters-title">Filtri</h2><button type="button" class="btn ghost" data-close>Chiudi</button></div>
+    const dirty = activeIds() !== null || PREFS.some(([k]) => state[k]) || !state.showDiscoveries;
+    dlg.innerHTML = `<div class="filter-panel-head"><h2 id="full-filters-title">Filtri</h2><div class="fp-head-actions">${dirty ? '<button type="button" class="fp-reset" data-reset>Azzera</button>' : ''}<button type="button" class="btn ghost" data-close>Chiudi</button></div></div>
       <div class="fp-body">
       <label class="species-search-label sr-only" for="species-filter-search">Aggiungi una specie</label>
       <input id="species-filter-search" class="wiz-input" type="search" placeholder="${state.target==='piante'?'Cerca e aggiungi: ortica, more, Arbutus…':'Cerca e aggiungi: pioppino, spugnola, Boletus…'}" role="combobox" aria-autocomplete="list" aria-controls="species-filter-options" aria-expanded="false" autocomplete="off">
@@ -614,6 +615,8 @@ function openFullFilters() {
       onSelect: s => { addSpecies(s.id); changed('#species-filter-search'); } });
     dlg.querySelector('[data-discoveries-toggle]')?.addEventListener('change',ev=>{state.showDiscoveries=ev.target.checked;changed('[data-discoveries-toggle]');});
     dlg.querySelector('[data-all]').onclick = () => { setActiveIds(null); changed('[data-all]'); };
+    // azzera: tutte le specie, nessuna preferenza, scoperte visibili (i valori di partenza)
+    dlg.querySelector('[data-reset]')?.addEventListener('click', () => { setActiveIds(null); for (const [k] of PREFS) state[k] = false; state.showDiscoveries = true; changed('[data-close]'); });
     dlg.querySelectorAll('[data-group]').forEach(b=>b.onclick=()=>{toggleGroup(b.dataset.group); changed(`[data-group="${b.dataset.group}"]`);});
     dlg.querySelectorAll('[data-remove-species]').forEach(b=>b.onclick=()=>{activeIds().delete(b.dataset.removeSpecies); if (!activeIds().size) setActiveIds(null); changed('#species-filter-search');});
     dlg.querySelectorAll('[data-catalog-id]').forEach(b=>b.onclick=()=>{const id=b.dataset.catalogId; if(activeIds()?.has(id)){activeIds().delete(id);if(!activeIds().size)setActiveIds(null);}else addSpecies(id);changed('#species-filter-search');});

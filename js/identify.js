@@ -479,15 +479,17 @@ function hymArt(h, cols) {
 // Se il dato ammette più esiti, li mostriamo tutti, senza sceglierne uno arbitrariamente.
 // al taglio: il fungo in sezione, nello stile delle icone dei caratteri. A sinistra appena tagliato,
 // a destra dopo qualche minuto; se non cambia, le due metà restano uguali.
+// la carne vira su toni smorzati, non sui colori pieni dei campioni: blu-indaco, rosso vinoso, giallo paglia
+const CUT = { blu: '#7f95c4', rosso: '#c4897a', giallo: '#e6cd78', bruno: '#ab8a66', nero: '#77706a' };
 function fleshArt(changes) {
   const values = [...new Set([].concat(changes))], n = values.length;
   const ink = '#4a2d1a', flesh = '#f3e7cc', w = 56, h = 50;
   const cut = 'M7 25 Q7 6 28 6 Q49 6 49 25 L36 25 L37.5 44 Q28 47.5 18.5 44 L20 25 Z';
   const one = (change, i) => {
-    const id = `fl-${change}-${++swN}`, after = change === 'nessuno' ? flesh : FLESH[change] || flesh;
+    const id = `fl-${change}-${++swN}`, after = change === 'nessuno' ? flesh : CUT[change] || flesh;
     return `<g transform="translate(${i * (w + 4)} 0)">
       <defs><clipPath id="${id}"><rect x="28" y="0" width="28" height="${h}"/></clipPath>
-      <linearGradient id="${id}g" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="${after}" stop-opacity=".55"/><stop offset=".45" stop-color="${after}"/></linearGradient></defs>
+      <linearGradient id="${id}g" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="${after}" stop-opacity=".35"/><stop offset=".6" stop-color="${after}" stop-opacity=".95"/></linearGradient></defs>
       <path d="${cut}" fill="${flesh}"/>
       <path d="${cut}" fill="url(#${id}g)" clip-path="url(#${id})"/>
       <path d="M7.6 21 Q9 7 28 7 Q47 7 48.4 21" fill="none" stroke="#9a6a3e" stroke-width="3.2" stroke-linecap="round" opacity=".9"/>
