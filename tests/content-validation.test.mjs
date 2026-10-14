@@ -77,3 +77,19 @@ test('glossary homonyms require disjoint explicit contexts, including normalized
  const invalid=structuredClone(original);invalid.terms[0].contexts=['bad-context'];assert.throws(()=>validateContent('glossary',invalid,original),/Contesti/);
  const unscoped=structuredClone(original);delete unscoped.terms.find(t=>t.id==='aculei-piante').contexts;unscoped.terms.find(t=>t.id==='aculei-piante').category='Bosco';assert.throws(()=>validateContent('glossary',unscoped,original),/stesso contesto/);
 });
+test('flowers are a plant category: toxic or to observe, never edible parts, with sourced protection',()=>{
+  const data=read('plants');
+  const flowers=Object.values(data.plants).filter(p=>p.category==='Fiori');
+  assert.equal(flowers.length,12);
+  for(const p of flowers){
+    assert.ok(['da osservare','tossico','mortale'].includes(p.foodUse.status));
+    assert.equal(p.foodUse.parts,'');
+    assert.match(p.protection.url,/^https:\/\//);
+    assert.ok(p.photos.every(m=>/CC BY-SA/.test(m.license)&&m.page&&m.licenseUrl));
+  }
+  assert.ok(validateContent('plants',data,read('plants')));
+  const edible=structuredClone(data);edible.plants.bucaneve.foodUse={status:'solo parti e preparazioni indicate',parts:'Fiori',caution:'x'};
+  assert.throws(()=>validateContent('plants',edible,read('plants')),/tossicità/);
+  const noSource=structuredClone(data);delete noSource.plants.bucaneve.protection.url;
+  assert.throws(()=>validateContent('plants',noSource,read('plants')),/tutela/);
+});
