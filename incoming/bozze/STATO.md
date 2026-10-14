@@ -51,6 +51,23 @@ Bozze correnti per revisione. Le versioni definitive sono separate in incoming/i
 | luoghi/antrodoco-primavera-nuvoloso.webp | antrodoco: primavera-nuvoloso | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
 | luoghi/antrodoco-primavera-pioggia.webp | antrodoco: primavera-pioggia | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
 | luoghi/antrodoco-primavera-sereno.webp | antrodoco: primavera-sereno | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
+| luoghi/cicolano-autunno-nebbia.webp | cicolano: autunno-nebbia | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
+| luoghi/cicolano-autunno-nuvoloso.webp | cicolano: autunno-nuvoloso | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
+| luoghi/cicolano-autunno-pioggia.webp | cicolano: autunno-pioggia | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
+| luoghi/cicolano-autunno-sereno.webp | cicolano: autunno-sereno | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
+| luoghi/cicolano-estate-nebbia.webp | cicolano: estate-nebbia | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
+| luoghi/cicolano-estate-nuvoloso.webp | cicolano: estate-nuvoloso | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
+| luoghi/cicolano-estate-pioggia.webp | cicolano: estate-pioggia | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
+| luoghi/cicolano-estate-sereno.webp | cicolano: estate-sereno | ok | Foto reale riutilizzata, solo conversione e ridimensionamento. |
+| luoghi/cicolano-inverno-nebbia.webp | cicolano: inverno-nebbia | da rifare | Nuova regola Matteo: eliminare il manto dal fondovalle/primo piano basso, neve solo in quota; nevicata senza manto coprente in basso. |
+| luoghi/cicolano-inverno-neve.webp | cicolano: inverno-neve | da rifare | Nuova regola Matteo: eliminare il manto dal fondovalle/primo piano basso, neve solo in quota; nevicata senza manto coprente in basso. |
+| luoghi/cicolano-inverno-nuvoloso.webp | cicolano: inverno-nuvoloso | da rifare | Nuova regola Matteo: eliminare il manto dal fondovalle/primo piano basso, neve solo in quota; nevicata senza manto coprente in basso. |
+| luoghi/cicolano-inverno-pioggia.webp | cicolano: inverno-pioggia | da rifare | Nuova regola Matteo: eliminare il manto dal fondovalle/primo piano basso, neve solo in quota; nevicata senza manto coprente in basso. |
+| luoghi/cicolano-inverno-sereno.webp | cicolano: inverno-sereno | da rifare | Nuova regola Matteo: eliminare il manto dal fondovalle/primo piano basso, neve solo in quota; nevicata senza manto coprente in basso. |
+| luoghi/cicolano-primavera-nebbia.webp | cicolano: primavera-nebbia | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
+| luoghi/cicolano-primavera-nuvoloso.webp | cicolano: primavera-nuvoloso | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
+| luoghi/cicolano-primavera-pioggia.webp | cicolano: primavera-pioggia | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
+| luoghi/cicolano-primavera-sereno.webp | cicolano: primavera-sereno | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
 | luoghi/poggio-cantalice-autunno-nebbia.webp | poggio-cantalice: autunno-nebbia | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
 | luoghi/poggio-cantalice-autunno-nuvoloso.webp | poggio-cantalice: autunno-nuvoloso | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
 | luoghi/poggio-cantalice-autunno-pioggia.webp | poggio-cantalice: autunno-pioggia | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
