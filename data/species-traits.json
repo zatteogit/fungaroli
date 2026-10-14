@@ -8167,7 +8167,8 @@
       "dangerous_lookalikes": [
         "amanita-phalloides",
         "amanita-verna",
-        "amanita-virosa"
+        "amanita-virosa",
+        "agaricus-xanthodermus"
       ],
       "caution": "Si confonde con agarici tossici e amanite mortali: fai controllare il raccolto."
     },
@@ -8274,7 +8275,8 @@
       "dangerous_lookalikes": [
         "amanita-phalloides",
         "amanita-verna",
-        "amanita-virosa"
+        "amanita-virosa",
+        "agaricus-xanthodermus"
       ],
       "caution": "Si confonde con Agaricus xanthodermus e altri agarici tossici."
     },
@@ -8355,13 +8357,18 @@
         {
           "title": "Species Fungorum — Agaricus bisporus (nome corrente)",
           "url": "https://www.speciesfungorum.org/Names/NamesRecord.asp?RecordID=531546"
+        },
+        {
+          "title": "ASL Oristano, Ispettorato micologico — Attenzione ai sosia: Agaricus xanthodermus",
+          "url": "https://asl5oristano.it/wp-content/uploads/2024/09/AGARICUS-XANTHODERMUS.pdf"
         }
       ],
       "trees": [],
       "dangerous_lookalikes": [
         "amanita-phalloides",
         "amanita-verna",
-        "amanita-virosa"
+        "amanita-virosa",
+        "agaricus-xanthodermus"
       ],
       "caution": "La familiarità con lo champignon coltivato non identifica un esemplare selvatico."
     },
@@ -8463,13 +8470,18 @@
         {
           "title": "First Nature — Amanita virosa (confronto con Agaricus)",
           "url": "https://www.first-nature.com/fungi/amanita-virosa.php"
+        },
+        {
+          "title": "Agaricus xanthodermus, Wikipedia (en)",
+          "url": "https://en.wikipedia.org/wiki/Agaricus_xanthodermus"
         }
       ],
       "trees": [],
       "dangerous_lookalikes": [
         "amanita-phalloides",
         "amanita-verna",
-        "amanita-virosa"
+        "amanita-virosa",
+        "agaricus-xanthodermus"
       ],
       "caution": "Si confonde con agarici tossici e amanite mortali."
     },
@@ -8963,7 +8975,9 @@
       "trees": [
         "pioppo"
       ],
-      "dangerous_lookalikes": [],
+      "dangerous_lookalikes": [
+        "gyromitra-esculenta"
+      ],
       "caution": "Commestibile solo dopo corretta cottura; cruda o poco cotta può causare intossicazioni. Si confonde con giromitre tossiche."
     },
     "morchella-elata": {
@@ -9047,7 +9061,9 @@
         }
       ],
       "trees": [],
-      "dangerous_lookalikes": [],
+      "dangerous_lookalikes": [
+        "gyromitra-esculenta"
+      ],
       "caution": "Commestibile solo dopo corretta cottura; cruda o poco cotta può causare intossicazioni. Si confonde con giromitre tossiche."
     },
     "calocybe-gambosa": {
@@ -9154,7 +9170,8 @@
       ],
       "dangerous_lookalikes": [
         "inocybe",
-        "entoloma-sinuatum"
+        "entoloma-sinuatum",
+        "clitocybe-rivulosa"
       ],
       "caution": "Può essere confuso con Inocybe erubescens, mortale, e altri funghi tossici."
     },
@@ -9252,13 +9269,18 @@
         {
           "title": "First Nature — Clitocybe rivulosa",
           "url": "https://www.first-nature.com/fungi/clitocybe-rivulosa.php"
+        },
+        {
+          "title": "Clitocybe rivulosa, Wikipedia (it)",
+          "url": "https://it.wikipedia.org/wiki/Clitocybe_rivulosa"
         }
       ],
       "trees": [],
       "dangerous_lookalikes": [
         "lepiota-brunneoincarnata",
         "inocybe",
-        "galerina-marginata"
+        "galerina-marginata",
+        "clitocybe-rivulosa"
       ],
       "caution": "Si confonde con piccole clitocibi tossiche: fai controllare il raccolto."
     },
@@ -9810,7 +9832,9 @@
         "pino d'aleppo",
         "faggio"
       ],
-      "dangerous_lookalikes": [],
+      "dangerous_lookalikes": [
+        "tricholoma-equestre"
+      ],
       "caution": "Si confonde con altre specie di Tricholoma tossiche."
     },
     "coprinus-comatus": {
@@ -10076,11 +10100,16 @@
         {
           "title": "First Nature — Amanita pantherina",
           "url": "https://www.first-nature.com/fungi/amanita-pantherina.php"
+        },
+        {
+          "title": "Amanita pantherina, Wikipedia (it)",
+          "url": "https://it.wikipedia.org/wiki/Amanita_pantherina"
         }
       ],
       "trees": [],
       "dangerous_lookalikes": [
-        "amanita-muscaria"
+        "amanita-muscaria",
+        "amanita-pantherina"
       ],
       "caution": "Tossica da cruda; richiede corretta cottura e controllo micologico. Si confonde con Amanita pantherina, tossica."
     },
@@ -10179,6 +10208,643 @@
         "abete rosso"
       ],
       "dangerous_lookalikes": []
+    },
+    "agaricus-xanthodermus": {
+      "latin": "Agaricus xanthodermus",
+      "name": "Prataiolo ingiallente",
+      "edible_id": null,
+      "toxicity": "tossico",
+      "traits": {
+        "hymenophore": [
+          "lamelle"
+        ],
+        "hymenophore_color": [
+          "bianco",
+          "rosa",
+          "grigio",
+          "bruno",
+          "nero"
+        ],
+        "cap_color": [
+          "bianco",
+          "crema",
+          "grigio",
+          "bruno",
+          "giallo"
+        ],
+        "cap_shape": [
+          "emisferico",
+          "convesso",
+          "piano"
+        ],
+        "cap_size": [
+          "medio",
+          "grande"
+        ],
+        "stem_ring": true,
+        "stem_volva": false,
+        "stem_reticulum": false,
+        "flesh_change": [
+          "giallo",
+          "bruno"
+        ],
+        "smell": [
+          "sgradevole",
+          "nessuno"
+        ],
+        "habitat": [
+          "prati/radure",
+          "latifoglie",
+          "conifere"
+        ],
+        "growth": [
+          "gregario",
+          "singolo"
+        ],
+        "season": [
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "spore_print": [
+          "bruno"
+        ],
+        "cap_veil": false,
+        "latex": false,
+        "flesh_texture": null,
+        "cap_surface": [
+          "liscia",
+          "asciutta",
+          "squamosa"
+        ],
+        "gill_attachment": [
+          "libere"
+        ],
+        "stem_base": [
+          "bulbosa"
+        ]
+      },
+      "field_rules": [
+        {
+          "text": "Carne bianca che alla base del gambo, tagliata o sfregata, diventa subito giallo intenso; odore di inchiostro o fenolo. Sono i caratteri descritti per A. xanthodermus e la sua sezione, tutti tossici.",
+          "severity": "critico",
+          "source": "https://asl5oristano.it/wp-content/uploads/2024/09/AGARICUS-XANTHODERMUS.pdf"
+        },
+        {
+          "text": "Provoca una sindrome gastroenterica più o meno marcata: crampi, nausea, vomito, sudorazione, diarrea. Alcune persone non hanno sintomi, ma questo non rende sicuro il fungo.",
+          "severity": "importante",
+          "source": "https://www.first-nature.com/fungi/agaricus-xanthodermus.php"
+        },
+        {
+          "text": "Cresce negli stessi prati, parchi e margini dei prataioli. Anche A. arvensis e A. sylvicola ingialliscono, più lentamente e con odore di anice: il solo ingiallimento non li separa con sicurezza.",
+          "severity": "importante",
+          "source": "https://en.wikipedia.org/wiki/Agaricus_xanthodermus"
+        }
+      ],
+      "check_before_picking": [
+        "Base del gambo che ingiallisce subito, in modo intenso, al taglio",
+        "Odore di inchiostro, fenolo o iodio, più forte alla base e in cottura",
+        "Gambo con bulbo alla base e anello ampio, bianco",
+        "Lamelle libere: bianche, poi rosate, poi bruno scure"
+      ],
+      "caution": "Si confonde con prataioli e altri Agaricus commestibili: fai controllare tutto il raccolto.",
+      "trees": [],
+      "lookalike_of": [],
+      "sources": [
+        {
+          "title": "ASL Oristano, Ispettorato micologico — Attenzione ai sosia: Agaricus xanthodermus",
+          "url": "https://asl5oristano.it/wp-content/uploads/2024/09/AGARICUS-XANTHODERMUS.pdf"
+        },
+        {
+          "title": "Agaricus xanthodermus, Wikipedia (it)",
+          "url": "https://it.wikipedia.org/wiki/Agaricus_xanthodermus"
+        },
+        {
+          "title": "Agaricus xanthodermus, Wikipedia (en)",
+          "url": "https://en.wikipedia.org/wiki/Agaricus_xanthodermus"
+        },
+        {
+          "title": "First Nature — Agaricus xanthodermus",
+          "url": "https://www.first-nature.com/fungi/agaricus-xanthodermus.php"
+        },
+        {
+          "title": "GBIF — Agaricus xanthodermus Genev. (nome accettato)",
+          "url": "https://www.gbif.org/species/5243412"
+        }
+      ],
+      "traits_notes": "TOSSICO, valori larghi. Nome italiano descrittivo: le fonti consultate non riportano un nome volgare consolidato. Cappello 5-15 cm (en.wiki, First Nature; 6-12 ASL Oristano), bianco poi grigiastro o con centro bruno chiaro, giallo dove sfregato: giallo incluso perché l'utente può vederlo. Lamelle libere bianche, rosate, grigio-brune, bruno nerastre (ASL, First Nature). Anello ampio, base bulbosa (First Nature, en.wiki, ASL). Carne gialla al taglio soprattutto alla base, poi bruna (en.wiki, First Nature). Odore di fenolo/inchiostro, a volte debole (it.wiki): incluso 'nessuno'. Sporata bruno scura. Prati, parchi, siepi e boschi (en.wiki, it.wiki): habitat largo. Stagione giugno-ottobre in Gran Bretagna (First Nature) e autunno (it.wiki): incluso novembre. flesh_texture non documentata nelle fonti lette."
+    },
+    "gyromitra-esculenta": {
+      "latin": "Gyromitra esculenta",
+      "name": "Falsa spugnola",
+      "edible_id": null,
+      "toxicity": "mortale",
+      "traits": {
+        "hymenophore": [
+          "liscio"
+        ],
+        "hymenophore_color": [
+          "bruno",
+          "rosso",
+          "nero"
+        ],
+        "cap_color": [
+          "bruno",
+          "rosso",
+          "nero",
+          "giallo"
+        ],
+        "cap_shape": [
+          "emisferico"
+        ],
+        "cap_size": [
+          "medio",
+          "grande"
+        ],
+        "stem_ring": false,
+        "stem_volva": false,
+        "stem_reticulum": false,
+        "flesh_change": null,
+        "smell": null,
+        "habitat": [
+          "conifere",
+          "latifoglie",
+          "ceppaie/legno",
+          "prati/radure"
+        ],
+        "growth": null,
+        "season": [
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "spore_print": [
+          "crema",
+          "giallo",
+          "bianco"
+        ],
+        "cap_veil": false,
+        "latex": false,
+        "flesh_texture": null,
+        "cap_surface": null,
+        "gill_attachment": null,
+        "stem_base": null
+      },
+      "field_rules": [
+        {
+          "text": "Testa a circonvoluzioni come un cervello, bruno-rossastra, non a nido d’ape con alveoli e costole come nelle spugnole. Dentro, testa e gambo sono divisi in più camere irregolari.",
+          "severity": "critico",
+          "source": "https://www.first-nature.com/fungi/gyromitra-esculenta.php"
+        },
+        {
+          "text": "Contiene giromitrina, che nel corpo diventa monometilidrazina: danneggia fegato, sistema nervoso e talvolta reni. Sono documentati avvelenamenti mortali.",
+          "severity": "critico",
+          "source": "https://en.wikipedia.org/wiki/Gyromitra_esculenta"
+        },
+        {
+          "text": "La cottura e l’essiccazione riducono la tossina ma non la eliminano; i vapori di cottura possono intossicare chi cucina.",
+          "severity": "critico",
+          "source": "https://en.wikipedia.org/wiki/Gyromitra_esculenta"
+        },
+        {
+          "text": "I sintomi della sindrome giromitrica compaiono da 5 a 24 ore e oltre dopo il pasto. In caso di sospetta ingestione contattare subito il 112 o un Centro Antiveleni.",
+          "severity": "critico",
+          "source": "https://www.issalute.it/index.php/la-salute-dalla-a-alla-z-menu/i/intossicazione-da-funghi"
+        }
+      ],
+      "check_before_picking": [
+        "Testa irregolare, a circonvoluzioni come un cervello, non a nido d’ape",
+        "Testa bruno-rossastra che scurisce con l’età",
+        "Tagliata per il lungo: più camere irregolari, non un’unica cavità",
+        "Gambo corto, biancastro, saldato alla testa in più punti",
+        "Cresce in primavera, soprattutto sotto pini, in suolo sabbioso o vicino a ceppi"
+      ],
+      "caution": "Mortale, anche cotta. Si confonde con le spugnole (Morchella) in primavera.",
+      "trees": [
+        "pino silvestre",
+        "pino nero",
+        "pioppo"
+      ],
+      "lookalike_of": [],
+      "sources": [
+        {
+          "title": "Gyromitra esculenta, Wikipedia (it)",
+          "url": "https://it.wikipedia.org/wiki/Gyromitra_esculenta"
+        },
+        {
+          "title": "Gyromitra esculenta, Wikipedia (en)",
+          "url": "https://en.wikipedia.org/wiki/Gyromitra_esculenta"
+        },
+        {
+          "title": "First Nature — Gyromitra esculenta",
+          "url": "https://www.first-nature.com/fungi/gyromitra-esculenta.php"
+        },
+        {
+          "title": "StatPearls (NCBI Bookshelf) — Gyromitra mushroom toxicity",
+          "url": "https://www.ncbi.nlm.nih.gov/books/NBK470580/"
+        },
+        {
+          "title": "ISSalute · Intossicazione da funghi: sindromi e rischi",
+          "url": "https://www.issalute.it/index.php/la-salute-dalla-a-alla-z-menu/i/intossicazione-da-funghi"
+        },
+        {
+          "title": "GBIF — Gyromitra esculenta Pers. ex Fr. (nome accettato)",
+          "url": "https://www.gbif.org/species/5258510"
+        }
+      ],
+      "traits_notes": "MORTALE, valori larghi. Ascomicete senza lamelle: 'liscio' come per le spugnole del catalogo, così il confronto resta possibile. Testa cerebriforme bruno-rossastra (it.wiki, First Nature), a volte castana, porpora o dorata e nera con l'età (en.wiki): incluso giallo per 'dorata'. Forma: 'tondeggiante e irregolare' (it.wiki), resa con 'emisferico'; nessun valore del vocabolario descrive una testa cerebriforme. Dimensione 5-15 cm (First Nature). Sporata giallo chiaro (it.wiki), giallo-camoscio (First Nature), biancastra nella descrizione en.wiki: inclusi crema, giallo, bianco. Habitat: conifere, soprattutto pini, talvolta latifoglie e pioppi tremoli; ceppi e residui legnosi (it.wiki); radure, bordi delle strade e terreni disturbati (en.wiki). Alberi: le fonti dicono Pinus spp.; pino silvestre e pino nero sono un'interpretazione per i pini presenti nel vocabolario. Stagione aprile-luglio (en.wiki), primavera (it.wiki), può comparire allo scioglimento della neve: incluso marzo. Odore 'intenso e vagamente spermatico' (it.wiki): nessun valore del vocabolario corrisponde, lasciato null. Carne fragile ed elastica (it.wiki): flesh_texture null perché il gambo non si spezza come le opzioni descrivono."
+    },
+    "amanita-pantherina": {
+      "latin": "Amanita pantherina",
+      "name": "Tignosa panterina",
+      "edible_id": null,
+      "toxicity": "tossico",
+      "traits": {
+        "hymenophore": [
+          "lamelle"
+        ],
+        "hymenophore_color": [
+          "bianco",
+          "grigio"
+        ],
+        "cap_color": [
+          "bruno",
+          "grigio",
+          "crema"
+        ],
+        "cap_shape": [
+          "conico",
+          "emisferico",
+          "convesso",
+          "piano"
+        ],
+        "cap_size": [
+          "medio",
+          "grande"
+        ],
+        "stem_ring": true,
+        "stem_volva": true,
+        "stem_reticulum": false,
+        "flesh_change": [
+          "nessuno"
+        ],
+        "smell": [
+          "nessuno",
+          "rapa/terroso",
+          "sgradevole"
+        ],
+        "habitat": [
+          "latifoglie",
+          "conifere",
+          "prati/radure"
+        ],
+        "growth": null,
+        "season": [
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "spore_print": [
+          "bianco"
+        ],
+        "cap_veil": null,
+        "latex": false,
+        "flesh_texture": [
+          "soda"
+        ],
+        "cap_surface": [
+          "liscia",
+          "viscida"
+        ],
+        "gill_attachment": [
+          "libere"
+        ],
+        "stem_base": [
+          "bulbosa"
+        ]
+      },
+      "field_rules": [
+        {
+          "text": "Cappello bruno con verruche bianco puro e margine striato; carne bianca che non arrossa. In A. rubescens la carne e il gambo diventano rosa-rossastri dove sono feriti.",
+          "severity": "critico",
+          "source": "https://www.first-nature.com/fungi/amanita-pantherina.php"
+        },
+        {
+          "text": "Le verruche possono mancare, soprattutto dopo la pioggia: un cappello nudo non esclude A. pantherina.",
+          "severity": "critico",
+          "source": "https://www.first-nature.com/fungi/amanita-pantherina.php"
+        },
+        {
+          "text": "Contiene acido ibotenico e muscimolo: la sindrome panterinica (agitazione, confusione, allucinazioni, sonno profondo, convulsioni) compare da 15 minuti a 4 ore dopo il pasto ed è raramente mortale.",
+          "severity": "critico",
+          "source": "https://www.issalute.it/index.php/la-salute-dalla-a-alla-z-menu/i/intossicazione-da-funghi"
+        },
+        {
+          "text": "Alla base, sopra il bulbo, la volva resta come uno o due cercini obliqui: va estratto il fungo intero per vederli.",
+          "severity": "importante",
+          "source": "https://it.wikipedia.org/wiki/Amanita_pantherina"
+        }
+      ],
+      "check_before_picking": [
+        "Verruche bianco puro sul cappello bruno, non grigiastre o rosate",
+        "Margine del cappello finemente striato",
+        "Carne bianca che non cambia colore, nemmeno dove è rosicchiata",
+        "Bulbo con uno o due cercini netti della volva"
+      ],
+      "caution": "Si confonde con Amanita rubescens (amanita arrossante): fai controllare tutto il raccolto.",
+      "trees": [
+        "faggio",
+        "cerro",
+        "roverella"
+      ],
+      "lookalike_of": [],
+      "sources": [
+        {
+          "title": "Amanita pantherina, Wikipedia (it)",
+          "url": "https://it.wikipedia.org/wiki/Amanita_pantherina"
+        },
+        {
+          "title": "Amanita pantherina, Wikipedia (en)",
+          "url": "https://en.wikipedia.org/wiki/Amanita_pantherina"
+        },
+        {
+          "title": "First Nature — Amanita pantherina",
+          "url": "https://www.first-nature.com/fungi/amanita-pantherina.php"
+        },
+        {
+          "title": "First Nature — Amanita rubescens (confronto)",
+          "url": "https://www.first-nature.com/fungi/amanita-rubescens.php"
+        },
+        {
+          "title": "ISSalute · Intossicazione da funghi: sindromi e rischi",
+          "url": "https://www.issalute.it/index.php/la-salute-dalla-a-alla-z-menu/i/intossicazione-da-funghi"
+        },
+        {
+          "title": "GBIF — Amanita pantherina (DC.) Krombh. (nome accettato)",
+          "url": "https://www.gbif.org/species/8961574"
+        }
+      ],
+      "traits_notes": "TOSSICO, valori larghi. Cappello 5-18 cm (en.wiki; 10-15 it.wiki), bruno, grigio-bruno o ocra pallido (First Nature, en.wiki), da conico-campanulato o emisferico a piano (it.wiki). Viscido da umido (en.wiki). Verruche bianche, ma possono mancare con la pioggia (First Nature): cap_veil null. Lamelle bianche, libere, poi grigiastre (en.wiki). Anello presente, volva a cercini sopra il bulbo (it.wiki, First Nature, en.wiki). Carne bianca, soda, immutabile (it.wiki, en.wiki). Odore quasi nullo (it.wiki), di rafano se ferita (First Nature), sgradevole o di patata cruda (en.wiki). Sporata bianca. Latifoglie, soprattutto faggio e querce, meno spesso conifere, margini dei boschi, raramente prati (First Nature, en.wiki, it.wiki). Alberi: 'querce' nelle fonti, resi con cerro e roverella, le querce più diffuse nel Reatino; è un'interpretazione. Stagione estate-autunno (it.wiki), agosto-novembre e più tardi al Sud (First Nature). Modo di crescita non documentato: growth null."
+    },
+    "tricholoma-equestre": {
+      "latin": "Tricholoma equestre s.l.",
+      "name": "Tricoloma equestre",
+      "edible_id": null,
+      "toxicity": "tossico",
+      "traits": {
+        "hymenophore": [
+          "lamelle"
+        ],
+        "hymenophore_color": [
+          "giallo"
+        ],
+        "cap_color": [
+          "giallo",
+          "verde",
+          "bruno"
+        ],
+        "cap_shape": [
+          "conico",
+          "convesso",
+          "piano",
+          "ombrellato"
+        ],
+        "cap_size": [
+          "medio",
+          "grande"
+        ],
+        "stem_ring": false,
+        "stem_volva": false,
+        "stem_reticulum": false,
+        "flesh_change": null,
+        "smell": [
+          "farina",
+          "nessuno"
+        ],
+        "habitat": [
+          "conifere",
+          "latifoglie"
+        ],
+        "growth": null,
+        "season": [
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "spore_print": [
+          "bianco"
+        ],
+        "cap_veil": false,
+        "latex": false,
+        "flesh_texture": null,
+        "cap_surface": [
+          "viscida",
+          "squamosa"
+        ],
+        "gill_attachment": [
+          "smarginate",
+          "libere"
+        ],
+        "stem_base": [
+          "normale",
+          "bulbosa"
+        ]
+      },
+      "field_rules": [
+        {
+          "text": "Dal 2002 raccolta, commercio e conservazione di Tricholoma equestre sono vietati in tutta Italia (ordinanza del Ministro della Salute), dopo casi di rabdomiolisi anche mortali in Francia.",
+          "severity": "critico",
+          "source": "https://faolex.fao.org/docs/pdf/ita33078.pdf"
+        },
+        {
+          "text": "La rabdomiolisi è un danno ai muscoli: debolezza, dolori, urine scure. È stata collegata soprattutto a pasti abbondanti e ripetuti; la sostanza responsabile non è stata identificata.",
+          "severity": "critico",
+          "source": "https://en.wikipedia.org/wiki/Tricholoma_equestre"
+        },
+        {
+          "text": "Lamelle e gambo gialli, cappello giallo con il centro bruno-olivastro e squamoso. T. portentosum, citato dalle fonti come sosia, ha invece cappello grigio con striature scure.",
+          "severity": "importante",
+          "source": "https://www.first-nature.com/fungi/tricholoma-portentosum.php"
+        }
+      ],
+      "check_before_picking": [
+        "Lamelle giallo zolfo, fitte",
+        "Cappello giallo o giallo-verdognolo, con centro bruno-olivastro e piccole squame",
+        "Gambo giallo, senza anello",
+        "Carne bianca o giallo pallido; odore debole di farina o quasi nullo",
+        "Cresce soprattutto sotto pini, in terreni sabbiosi"
+      ],
+      "caution": "Specie un tempo venduta come commestibile, ora vietata in Italia. Si confonde con altri Tricholoma, compreso il portentoso.",
+      "notes": [
+        "Un esperimento polacco del 2018 su dieci volontari non ha rilevato danni; una revisione sistematica del 2020 sconsiglia comunque raccolta e consumo. Il divieto italiano resta in vigore come misura cautelativa (fonti: Wikipedia en, ordinanza 20 agosto 2002)."
+      ],
+      "trees": [
+        "pino silvestre",
+        "betulla"
+      ],
+      "lookalike_of": [],
+      "sources": [
+        {
+          "title": "Ordinanza Ministro della Salute 20 agosto 2002: divieto di raccolta, commercializzazione e conservazione di Tricholoma equestre (testo FAOLEX)",
+          "url": "https://faolex.fao.org/docs/pdf/ita33078.pdf"
+        },
+        {
+          "title": "Tricholoma equestre, Wikipedia (it)",
+          "url": "https://it.wikipedia.org/wiki/Tricholoma_equestre"
+        },
+        {
+          "title": "Tricholoma equestre, Wikipedia (en)",
+          "url": "https://en.wikipedia.org/wiki/Tricholoma_equestre"
+        },
+        {
+          "title": "First Nature — Tricholoma equestre",
+          "url": "https://www.first-nature.com/fungi/tricholoma-equestre.php"
+        },
+        {
+          "title": "First Nature — Tricholoma portentosum (sosia citato: T. equestre)",
+          "url": "https://www.first-nature.com/fungi/tricholoma-portentosum.php"
+        },
+        {
+          "title": "ISSalute · Intossicazione da funghi: sindromi e rischi",
+          "url": "https://www.issalute.it/index.php/la-salute-dalla-a-alla-z-menu/i/intossicazione-da-funghi"
+        },
+        {
+          "title": "GBIF — Tricholoma equestre (L.) P.Kumm. (nome accettato)",
+          "url": "https://www.gbif.org/species/3324883"
+        }
+      ],
+      "traits_notes": "TOSSICO, valori larghi. s.l.: complesso con T. flavovirens e T. auratum, difficili da separare anche al microscopio (revisione in letteratura; it.wiki indica T. auratum 'fortemente sospettato'). Cappello 5-15 cm (en.wiki; 8-12 it.wiki), giallo, giallo-olivastro o giallo-verdognolo con centro bruno, viscido e con squamette (it.wiki, en.wiki, First Nature); da campanulato a spianato, a volte con umbone lieve (it.wiki, First Nature). Lamelle gialle, libere (it.wiki) o smarginate (First Nature). Gambo giallo, senza anello, a volte bulboso (it.wiki). Odore farinoso appena percettibile (it.wiki) o nullo (First Nature). Sporata bianca. Pini, soprattutto pino silvestre su sabbia, anche betulle e talvolta querce (First Nature); conifere e latifoglie (it.wiki). Stagione luglio-ottobre (First Nature), autunno (it.wiki): incluso novembre. Viraggio e consistenza non documentati: null. La foto viene dalla Galizia (Spagna): le osservazioni nordamericane possono appartenere ad altre specie (en.wiki)."
+    },
+    "clitocybe-rivulosa": {
+      "latin": "Clitocybe rivulosa (= Clitocybe dealbata)",
+      "name": "Clitocibe rivulosa",
+      "edible_id": null,
+      "toxicity": "tossico",
+      "traits": {
+        "hymenophore": [
+          "lamelle"
+        ],
+        "hymenophore_color": [
+          "bianco",
+          "rosa",
+          "grigio"
+        ],
+        "cap_color": [
+          "bianco",
+          "crema",
+          "bruno"
+        ],
+        "cap_shape": [
+          "convesso",
+          "piano",
+          "imbuto"
+        ],
+        "cap_size": [
+          "piccolo",
+          "medio"
+        ],
+        "stem_ring": false,
+        "stem_volva": false,
+        "stem_reticulum": false,
+        "flesh_change": null,
+        "smell": [
+          "nessuno",
+          "gradevole"
+        ],
+        "habitat": [
+          "prati/radure"
+        ],
+        "growth": [
+          "gregario",
+          "singolo"
+        ],
+        "season": [
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ],
+        "spore_print": [
+          "bianco"
+        ],
+        "cap_veil": false,
+        "latex": false,
+        "flesh_texture": [
+          "fibrosa"
+        ],
+        "cap_surface": [
+          "asciutta",
+          "liscia"
+        ],
+        "gill_attachment": [
+          "adnate",
+          "decorrenti"
+        ],
+        "stem_base": null
+      },
+      "field_rules": [
+        {
+          "text": "Cresce nei prati e nei parchi, spesso in cerchi, come il gambesecco (Marasmius oreades) e il prugnolo: le fonti indicano entrambi come specie con cui si confonde.",
+          "severity": "critico",
+          "source": "https://it.wikipedia.org/wiki/Clitocybe_rivulosa"
+        },
+        {
+          "text": "Contiene muscarina: salivazione, sudorazione e lacrimazione abbondanti da 15-30 minuti dopo il pasto, poi crampi, diarrea, vista offuscata. Raramente mortale, più pericolosa per chi ha malattie del cuore o del respiro.",
+          "severity": "critico",
+          "source": "https://www.first-nature.com/fungi/clitocybe-rivulosa.php"
+        },
+        {
+          "text": "Nel gambesecco le lamelle sono distanziate e libere e il gambo è tenace ed elastico; in C. rivulosa le lamelle sono fitte, adnate o un po’ decorrenti. Le due specie possono crescere insieme.",
+          "severity": "importante",
+          "source": "https://www.first-nature.com/fungi/marasmius-oreades.php"
+        }
+      ],
+      "check_before_picking": [
+        "Cappello piccolo, bianco o biancastro, come infarinato, poi depresso",
+        "Lamelle fitte, bianche o grigio-rosate, adnate o un po’ decorrenti",
+        "Gambo corto, bianco, senza anello",
+        "Odore e sapore non caratteristici",
+        "Cresce nei prati, spesso in cerchi, in estate e autunno"
+      ],
+      "caution": "Si confonde con il gambesecco e il prugnolo nei prati: fai controllare tutto il raccolto.",
+      "trees": [],
+      "lookalike_of": [],
+      "sources": [
+        {
+          "title": "Clitocybe rivulosa, Wikipedia (it)",
+          "url": "https://it.wikipedia.org/wiki/Clitocybe_rivulosa"
+        },
+        {
+          "title": "Clitocybe dealbata, Wikipedia (en)",
+          "url": "https://en.wikipedia.org/wiki/Clitocybe_dealbata"
+        },
+        {
+          "title": "First Nature — Clitocybe rivulosa",
+          "url": "https://www.first-nature.com/fungi/clitocybe-rivulosa.php"
+        },
+        {
+          "title": "ISSalute · Intossicazione da funghi: sindromi e rischi",
+          "url": "https://www.issalute.it/index.php/la-salute-dalla-a-alla-z-menu/i/intossicazione-da-funghi"
+        },
+        {
+          "title": "GBIF — Clitocybe rivulosa (Pers.) P.Kumm. (nome accettato; C. dealbata sinonimo)",
+          "url": "https://www.gbif.org/species/2531052"
+        }
+      ],
+      "traits_notes": "TOSSICO, valori larghi. Nomenclatura: GBIF e First Nature trattano C. dealbata come sinonimo di C. rivulosa; it.wiki le tiene distinte ma 'fortemente simili'; iNaturalist usa Collybia rivulosa. Cappello 1-6 cm (First Nature; 3-4 it.wiki; 2-4 en.wiki), bianco o con sfumature camoscio, da giovane leggermente brunastro (it.wiki), convesso poi piano o depresso. Superficie infarinata o sericea da secca (First Nature), igrofana (it.wiki): asciutta e liscia. Lamelle bianche poi grigio-rosate (First Nature), screziate di rosa (it.wiki), adnate o un po' decorrenti. Gambo senza anello, fibroso (it.wiki). Odore dolciastro non caratteristico (First Nature), nessuno (en.wiki). Sporata bianca. Prati, parchi, bordi di strade, dune; spesso in cerchi. Stagione luglio-inizio dicembre (First Nature), estate-autunno (it.wiki). Viraggio e base del gambo non documentati: null."
     }
   },
   "_note_traits_2": "Caratteri aggiunti il 2026-10-12 (sporata, velo, lattice, consistenza, superficie, attaccatura, base): ogni valore verificato su fonti lette, elencate in sources; dubbi e scelte in traits_notes. Taxa tossici e mortali: valori larghi per non escluderli; commestibili: solo valori con fonte.",
