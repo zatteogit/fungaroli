@@ -587,7 +587,7 @@ function weatherStamp(w,busy=weatherBusy){
   $('#refresh').setAttribute('aria-busy',String(busy));
   $('#refresh').title='Meteo acquisito '+w.fetchedAt.toLocaleString('it-IT')+'. Tocca per aggiornarlo.';
   $('#stale').hidden=!w.stale&&!w.missingZones?.length;
-  $('#stale').textContent=w.missingZones?.length?`Meteo disponibile per ${weatherZones.length-w.missingZones.length} zone su ${weatherZones.length}. Le altre non vengono valutate. `:busy?'Dati salvati; aggiornamento in corso.':'Dati meteo da aggiornare. Oltre 24 ore l’indice dei funghi non viene calcolato.';
+  $('#stale').textContent=w.missingZones?.length?`Meteo disponibile per ${weatherZones.length-w.missingZones.length} ${weatherZones.length-w.missingZones.length===1?'zona':'zone'} su ${weatherZones.length}. Le altre non vengono valutate. `:busy?'Dati salvati; aggiornamento in corso.':'Dati meteo da aggiornare. Oltre 24 ore l’indice dei funghi non viene calcolato.';
   if(!$('#stale').hidden&&!busy){const retry=document.createElement('button');retry.type='button';retry.className='link-btn';retry.textContent='Riprova';retry.onclick=()=>refreshWeather(true);$('#stale').append(retry);}
 }
 function paintWeatherView(changed=new Set(zones.map(z=>z.id))){
@@ -1095,7 +1095,10 @@ function renderHome() {
   let list = combosList();
   if(weatherPainting&&homeProposalKeys.length){
     const held=homeProposalKeys.map(k=>{const z=zones.find(z=>z.id===k.id),d=dayEntry(k.id,k.o);return z&&d?.best?{z,d,o:k.o,s:adjusted(z,d.score,d),walk:walkFor(z,d,k.trail)}:null;}).filter(Boolean);
-    const used=new Set(held.map(c=>c.z.id+'|'+c.o));list=[...held,...list.filter(c=>!used.has(c.z.id+'|'+c.o))];
+    // Una proposta per zona e per sentiero, come combosList: se il meteo nuovo sposta
+    // il giorno migliore di una zona già mostrata, resta la proposta già letta.
+    const usedZones=new Set(held.map(c=>c.z.id)),usedTrails=new Set(held.map(c=>c.walk&&String(c.walk.t.id)).filter(Boolean));
+    list=[...held,...list.filter(c=>!usedZones.has(c.z.id)&&!(c.walk&&usedTrails.has(String(c.walk.t.id))))];
   }
   homeProposalKeys=list.slice(0,8).map(c=>({id:c.z.id,o:c.o,trail:c.walk?.t.id}));
   const hero = list[0];
@@ -1143,7 +1146,7 @@ function renderHome() {
   if(weatherPainting)updateWeatherHTML(ol,rankingHTML);else ol.innerHTML=rankingHTML;
   $('#others-h').hidden = list.length < 2;
   fitFacts($('#hero .facts'));
-  if(!weatherPainting){renderSeason();renderCommunityIntro();}
+  renderSeason();if(!weatherPainting)renderCommunityIntro();
   fitCover();
 }
 
@@ -1199,12 +1202,15 @@ function renderSeason() {
   }
   const arr = Object.values(best).filter((p) => p.score >= 15).sort((a, b) => b.score - a.score).slice(0, 10);
   $('#season-h').hidden = !arr.length;
-  box.innerHTML = arr.map((p) => {
+  const html = arr.map((p) => {
     const ph = speciesPhoto(p.species.id);
-    return `<li><button type="button" class="portrait" data-species="${p.species.id}">
+    return `<li data-weather-key="season-${p.species.id}"><button type="button" class="portrait" data-species="${p.species.id}">
       ${ph ? `<img data-src="${assetSrc(ph.file)}" alt="" loading="lazy" decoding="async">` : ''}<span class="shade"></span>${ring(p.score, false)}
       <span class="portrait-body"><b>${esc(p.species.name)}</b>${reportBadge(p.z.id, p.species.id)}<small>${esc(splitName(p.z)[0])}</small></span></button></li>`;
   }).join('');
+  // Anche il primo meteo arriva come aggiornamento in background: la sezione va
+  // riconciliata, non saltata, altrimenti resta vuota sotto il suo titolo.
+  if (weatherPainting) updateWeatherHTML(box, html); else box.innerHTML = html;
 }
 
 function renderMapDays() {

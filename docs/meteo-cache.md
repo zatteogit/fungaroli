@@ -19,7 +19,7 @@ Timeout upstream 15 secondi. I grandi batch delle pagine precedenti restano un p
 
 ## Dispositivo
 
-`js/weather-cache.js` conserva record per zona nelle chiavi `fungaroli:weather:zones:v3` e `fungaroli:outing:zones:v3`, con firma di coordinate e quote. Migra le vecchie copie v2 quando la geometria corrisponde. Conservazione massima sei giorni, distinta dalla validità scientifica. JSON malformato, campi obbligatori mancanti, timestamp futuri e geometrie diverse vengono rifiutati; una risposta meno recente non sovrascrive una copia più nuova. Storage disabilitato o pieno non impedisce l'uso dei dati live.
+`js/weather-cache.js` conserva record per zona nelle chiavi `fungaroli:weather:zones:v3` e `fungaroli:outing:zones:v3`, con firma di coordinate e quote. Migra le vecchie copie v2 quando la geometria corrisponde, poi le elimina; elimina anche quelle scadute. Conservazione massima sei giorni, distinta dalla validità scientifica. JSON malformato, campi obbligatori mancanti, timestamp futuri e geometrie diverse vengono rifiutati (la data inviata dal server, se è avanti rispetto all'orologio del dispositivo, viene prima riportata all'ora del dispositivo: altrimenti una copia appena scaricata risulterebbe dal futuro); una risposta meno recente non sovrascrive una copia più nuova. Storage disabilitato o pieno non impedisce l'uso dei dati live.
 
 Il browser esegue al massimo tre richieste per profilo contemporaneamente, con 20 secondi per zona e 45 secondi complessivi per profilo; crescita e uscita partono insieme. Un nuovo aggiornamento annulla quello precedente; le risposte obsolete non devono ridisegnare la pagina.
 
