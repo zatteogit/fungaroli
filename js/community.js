@@ -26,7 +26,7 @@ export async function communityRequest(path, method = 'GET', data, {signal} = {}
 
 const changed = () => {
   setBaseUser(user);
-  document.querySelectorAll('[data-profile-label]').forEach(el=>{el.textContent=user?.handle||'Accedi';});
+  document.querySelectorAll('[data-profile-label]').forEach(el=>{el.textContent=user?.handle||'Accedi';el.closest('.profile-entry')?.classList.toggle('is-user',!!user);});
   document.dispatchEvent(new CustomEvent('fungaroli:community', { detail: { user } }));
 };
 export async function refreshCommunity({signal} = {}) {

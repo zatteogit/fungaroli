@@ -103,7 +103,7 @@ function kitchen(id) {
     ${keep.length || tips.length ? `<details class="k-more"><summary>Conservare, quantità e consigli</summary>
       ${keep.length ? `<dl class="k-keep">${keep.map(([k, v]) => `<div><dt>${k}</dt><dd>${esc(v)}</dd></div>`).join('')}</dl>` : ''}
       ${tips.length ? `<ul class="k-steps k-tips">${tips.map(step).join('')}</ul>` : ''}
-      <p class="small"><a href="#/info">Regole per tutti i funghi: sott'olio, congelamento, chi non deve mangiarli ›</a></p></details>` : ''}
+      <a class="act-row" href="#/info"><span class="ar-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg></span><span class="ar-b"><span class="ar-t">Regole per tutti i funghi</span><span class="ar-s">Sott'olio, congelamento, chi non deve mangiarli</span></span></a></details>` : ''}
     ${c?.uses?.length ? `<details class="k-food"><summary>I classici in cucina</summary>
       ${c.taste ? `<p class="k-taste">${esc(c.taste)}</p>` : ''}
       <ul class="k-uses">${c.uses.map((u) => `<li>${esc(u.text)}</li>`).join('')}</ul>

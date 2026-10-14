@@ -29,7 +29,7 @@ import { renderGuidedKey } from './guided-key.js';
 import { renderWhy, renderMethod } from './science.js';
 import { navigate, soft } from './motion.js';
 import { FOREST_LEGEND } from './forest-legend.js';
-import { initTrees, renderTreeGrid, renderTreePage, linkTrees, treeForCategory, treeThumb, treePhotoSrc } from './trees.js';
+import { initTrees, renderTreeGrid, renderTreePage, linkTrees, treeChips, treeForCategory, treeThumb, treePhotoSrc } from './trees.js';
 import { crowding, comfortScore, timingAdvice, fmtTime, fmtRough, holidayName, intornoA } from './human.js';
 import { initCommunity, communityStatus, communityRank, reportBadge } from './community.js';
 import { guideTitle, renderGuideCards, renderGuide, initGuideContent, guideCount } from './guides.js';
@@ -1235,10 +1235,15 @@ function challengeEntity(kind,id){
 }
 let challengeAsset=f=>f;
 // In fondo a «Durante il giro»: una sola sfida non completata, adatta ai boschi principali della zona e al mese.
+// Componenti da app: riga-azione (icona, titolo, sottotitolo, freccia) e pillola d'azione breve
+const AR_IC={stamp:'<circle cx="12" cy="10" r="6"/><path d="m9.5 10 1.8 1.8L15 8.2M8.5 15.5 7 21l5-2.5 5 2.5-1.5-5.5"/>',rules:'<path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"/><path d="m9 12 2 2 4-4"/>',nav:'<path d="m3 11 18-8-8 18-2-8z"/>',pin:'<path d="M12 21s-6-5.5-6-11a6 6 0 0 1 12 0c0 5.5-6 11-6 11z"/><circle cx="12" cy="10" r="2.2"/>',go:'<path d="M5 12h14M13 6l6 6-6 6"/>'};
+const arIc=k=>`<svg viewBox="0 0 24 24" aria-hidden="true">${AR_IC[k]}</svg>`;
+const actRow=(href,ic,t,sub='',ext=false)=>`<a class="act-row" href="${href}"${ext?' target="_blank" rel="noopener"':''}><span class="ar-ic">${arIc(ic)}</span><span class="ar-b"><span class="ar-t">${t}</span>${sub?`<span class="ar-s">${sub}</span>`:''}</span></a>`;
+const actPill=(href,ic,t,ext=false)=>`<a class="act-pill" href="${href}"${ext?' target="_blank" rel="noopener"':''}>${arIc(ic)}<span>${t}</span></a>`;
 function challengeHint(z,d){
  const date=d?.date||todayISO(new Date(Date.now()+state.dayOffset*864e5)),month=Number(String(date).slice(5,7));
  const ch=suggestedChallenge({forest:habitat?.[z.id]?.forest?.categorie_ha,month});
- return ch?`<a class="discovery-challenge" href="#/sfide/${encodeURIComponent(ch.id)}">Sfida per questo giro: <b>${esc(ch.title)}</b> <span aria-hidden="true">→</span></a>`:'';
+ return ch?actRow(`#/sfide/${encodeURIComponent(ch.id)}`,'stamp','Sfida per questo giro',esc(ch.title)):'';
 }
 function renderDiscoveries(box,z,d,walk){
  if(!box)return;const found=discoveriesHtml(z,d,walk),html=found&&found+challengeHint(z,d);box.hidden=!html;const markup=html?`<section class="outing-discoveries" aria-labelledby="during-walk-title"><h2 id="during-walk-title">Durante il giro</h2>${html}</section>`:'';if(weatherPainting)updateWeatherHTML(box,markup);else box.innerHTML=markup;
@@ -2025,7 +2030,7 @@ function essentialSections(z, d, walk) {
   rows.push({ sec: 'specie', icon: 'find', thumb: best.species.id, k: 'Cosa osservare', v: `<button type="button" class="sp-inline" data-species="${best.species.id}">${esc(best.species.name)}</button> ${intornoA(best.band)} <b>${best.band} m</b>`,
     sub: [whereSummary(best.species.id) && `<span class="plan-where">${linkTrees(whereSummary(best.species.id))}</span>`,
       attentionLine(criticalRuleOf(best.species.id)),
-      d.perSpecies.slice(1, 3).map((p) => [p, spScore(z, d, p)]).filter(([, sc]) => sc >= 20).map(([p, sc]) => `${speciesLink(p.species)} ${idxDot(sc)}`).join(' · ')].filter(Boolean).join('<br>') || esc(best.species.latin) });
+      (() => { const more = d.perSpecies.slice(1, 3).map((p) => [p, spScore(z, d, p)]).filter(([, sc]) => sc >= 20); return more.length ? `<span class="ent-chips">${more.map(([p, sc]) => `<a class="ent-chip" href="${p.species.kind==='plant'?p.species.href:'#/specie/'+encodeURIComponent(p.species.id)}">${thumb(p.species.id,28)}<span>${esc(p.species.name)}</span>${idxDot(sc)}</a>`).join('')}</span>` : ''; })()].filter(Boolean).join('') || esc(best.species.latin) });
   if (d.crowd &&state.target==='funghi') {
     const t = timingAdvice({ dateStr: d.date, lat: z.lat, lon: z.lon, crowd: d.crowd });
     rows.push({ sec: 'quando', icon: 'when', k: 'Quando', v: `Arriva <b>entro le ${fmtRough(t.arrive, 15, 'floor')}</b> <span class="badge crowd-${d.crowd.level}">${crowdText(d.crowd)}</span>`,
@@ -2035,7 +2040,7 @@ function essentialSections(z, d, walk) {
     const alt = alternativeFor(z, state.dayOffset, d);
     rows.push({ sec: 'quando', svg: wxi(w), k: 'Meteo dell\'uscita', badge: `<span class="badge wx-b wx-${w.level}">${OUTING_SHORT[w.level]}</span>`,
       v: `${esc(w.text.replace(/^./, (c) => c.toUpperCase()))}`,
-      sub: alt ? `<span class="plan-alt">Puoi andare a <a href="#/zona/${alt.z.id}/${state.dayOffset}">${esc(splitName(alt.z)[0])}</a>: ${esc(alt.w.main)}, ${state.target==='piante'?'indice piante':'indice funghi'} ${idxDot(alt.s)}.</span>`
+      sub: alt ? `<span class="plan-alt">Tempo migliore a ${esc(splitName(alt.z)[0])}: ${esc(alt.w.main)}, ${state.target==='piante'?'indice piante':'indice funghi'} ${idxDot(alt.s)}.</span>${actPill(`#/zona/${alt.z.id}/${state.dayOffset}`,'go',`Vai a ${esc(splitName(alt.z)[0])}`)}`
         : w.available ? `Mattina, dalle ${w.from}:00 alle 13 · quota centrale. Verifica percorso e rientro${w.thunder ? ' · uscita sconsigliata con temporali' : ''}` : 'Aggiorna le previsioni prima di decidere.' });
   }
 
@@ -2044,8 +2049,8 @@ function essentialSections(z, d, walk) {
   if (a0 || ax) {
     const unp = a0?.unpaved_tail_km > 0.2 ? `, ultimi ${fmtKm(a0.unpaved_tail_km)} km su strada bianca` : '';
     rows.push({ sec: 'accesso', icon: 'car', k: 'Come arrivare',
-      v: walk?.h ? `<a href="${gmaps(walk.h.lat, walk.h.lon)}" target="_blank" rel="noopener">Indicazioni per il sentiero ${esc(walk.t.ref || '')}</a>` : ax ? `In auto ${ax.road ? `su ${esc(ax.road)}` : 'fino al punto più vicino'}${ax.walkM < 50 ? ': habitat campionato vicino alla strada' : `, poi <b>${fmtM(ax.walkM)} in linea d’aria</b>`}` : `${esc(travelText(zoneTrip(z)))} fino a ${esc(a0.parking)}`,
-      sub: `${a0 ? `${esc(travelText(zoneTrip(z,walk)))} da ${esc(currentBase().name)}${customBase()?'':unp}` : ''}${ax ? ` · <a href="${gmaps(ax.rlat, ax.rlon)}" target="_blank" rel="noopener">navigatore</a>` : ''}`,
+      v: walk?.h ? `All’imbocco del sentiero ${esc(walk.t.ref || '')}` : ax ? `In auto ${ax.road ? `su ${esc(ax.road)}` : 'fino al punto più vicino'}${ax.walkM < 50 ? ': habitat campionato vicino alla strada' : `, poi <b>${fmtM(ax.walkM)} in linea d’aria</b>`}` : `${esc(travelText(zoneTrip(z)))} fino a ${esc(a0.parking)}`,
+      sub: `${a0 ? `${esc(travelText(zoneTrip(z,walk)))} da ${esc(currentBase().name)}${customBase()?'':unp}` : ''}${walk?.h ? actPill(gmaps(walk.h.lat, walk.h.lon),'nav','Indicazioni',true) : ax ? actPill(gmaps(ax.rlat, ax.rlon),'nav','Navigatore',true) : ''}`,
       badge: d.comfort ? `<span class="badge comfort-${d.comfort.level}">${d.comfort.level}</span>` : '' });
   }
   const bodies={specie:()=>zoneSpecies(z,d),quando:()=>renderHuman(z,d),accesso:()=>renderAccess(z,d)};
@@ -2138,8 +2143,8 @@ function renderDetail() {
     ${best.kind==='plant'?`<p class="small muted">Indice di contesto sperimentale · fattori disponibili ${best.factors.filter(f=>f.value!=null).length}/${best.factors.length}${best.quality.climateUnavailable?' · meteo non disponibile':''}</p><div class="notice">${esc(best.species.parts)} ${esc(best.species.caution)}</div>`:''}
     <div class="zone-actions">
       ${best.kind==='plant'?`<button type="button" class="btn primary" data-note-kind="pianta" data-note-id="${best.species.plantId}" data-note-zone="${z.id}" data-note-title="${esc(best.species.name)}">Annota la fase nel taccuino</button>`:`<div class="zone-community"><button type="button" class="btn primary" data-report data-zone="${z.id}" data-species="${best.species.id}">Segnala dal bosco</button>${reportBadge(z.id, best.species.id)}</div>
-      <button type="button" class="btn ghost" data-save-plan>Salva le condizioni</button>`}
-      <a class="btn ghost map-link" href="#/mappa/${z.id}">${IC.map} Sentieri e accessi</a>
+      <button type="button" class="btn ghost" data-save-plan aria-label="Salva le condizioni nel taccuino"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4h10v17l-5-3.5L7 21z"/></svg> Salva</button>`}
+      <a class="btn ghost map-link" href="#/mappa/${z.id}" aria-label="Sentieri e accessi sulla mappa">${IC.map} Mappa</a>
     </div>
     ${best.kind==='plant'?'<p class="small muted">Confronta la pianta e verifica regole, tutela e permessi prima della raccolta.</p>':'<p class="small muted" data-plan-status></p>'}
     ${z.protection ? `<div class="notice">${esc(z.protection)}</div>` : ''}
@@ -2149,10 +2154,10 @@ function renderDetail() {
       <p class="sci-h">L'indice nei giorni</p><div id="charts"></div>${legal?.forecast_note ? `<p class="small muted">${esc(legal.forecast_note)}</p>` : ''}`)}
     ${section('sentieri', 'Sentieri della zona', renderTrails(z, d))}
     ${section('bosco', `Bosco a ${best.band} m (Carta Forestale)`, forestBar(hab.frac) + `<p class="small muted">${hab.n} punti nella fascia ±150 m. Campioni spazialmente correlati; composizione indicativa.</p>`)}
-    ${section('zona', 'La zona', `<p class="small">${linkTrees(z.description)}</p>
+    ${section('zona', 'La zona', `<p class="small">${esc(z.description)}</p>${treeChips(z.description)}
       <dl class="kv">
         <dt>Accesso</dt><dd>${esc(z.access)}</dd>
-        <dt>Soste</dt><dd>${z.parking.map((p) => `<a href="https://www.google.com/maps/dir/?api=1&destination=${p.lat},${p.lon}" target="_blank" rel="noopener">${esc(p.name)}</a>`).join(' · ')}</dd>
+        <dt>Soste</dt><dd class="act-pills">${z.parking.map((p) => actPill(`https://www.google.com/maps/dir/?api=1&destination=${p.lat},${p.lon}`,'pin',esc(p.name),true)).join('')}</dd>
         <dt>Quote</dt><dd>${habitat[z.id].elevation.min}–${habitat[z.id].elevation.max} m (mediana ${habitat[z.id].elevation.median})</dd>
       </dl>${zoneMedia[z.id] ? `<p class="small muted">${creditLine(cov?.credit && zoneMedia[z.id] && cov.credit.page === zoneMedia[z.id].page ? cov.credit : zoneMedia[z.id])}</p>` : ''}`)}
     </div>`;
@@ -2416,7 +2421,7 @@ function notebookPrivacyHtml(html) {
 
 function applyLegal() {
   const L = legal || {};
-  if (L.home_strip) $('#home-legal span').textContent = L.home_strip;
+  if (L.home_strip) $('#home-legal .ar-s').textContent = L.home_strip;
   // emergenza e sezioni legali nella pagina Info
   const em = L.emergency;
   $('#emergency').innerHTML = `<h2>${esc(em?.title || 'Sospetto avvelenamento')}</h2>

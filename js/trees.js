@@ -35,6 +35,13 @@ export function linkTrees(text) {
   });
 }
 
+// Testo pulito e, sotto, gli alberi citati come chip con miniatura (niente link dentro le frasi)
+export function treeChips(text) {
+  const ids = [];
+  if (aliasRe) for (const m of String(text || '').matchAll(aliasRe)) { const id = aliasMap[m[2].toLowerCase().replace(/\s+/g, ' ')]; if (id && !ids.includes(id)) ids.push(id); }
+  return ids.length ? `<div class="ent-chips" aria-label="Alberi citati">${ids.map((id) => `<a class="ent-chip" href="#/albero/${encodeURIComponent(id)}" data-entity>${treeThumb(id, 28)}<span>${esc(T[id]?.name || id)}</span></a>`).join('')}</div>` : '';
+}
+
 // Albero dominante di una categoria della Carta Forestale (per legende e barre del bosco)
 export function treeForCategory(cat) {
   return Object.entries(T).find(([, t]) => (t.forest_categories || [])[0] === cat)?.[0]
