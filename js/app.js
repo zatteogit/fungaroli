@@ -14,7 +14,7 @@ import { weatherErrorMessage } from './weather-request.js';
 import { renderCharts } from './chart.js';
 import { initJournal } from './journal.js';
 import { renderSvgMap } from './svgmap.js';
-import { initSpeciesCards, thumb as fungusThumb, renderSpeciesDetail, whereSummary, criticalRule as fungusCriticalRule, speciesPhoto as fungusPhoto, speciesPhotos as fungusPhotos } from './speciescard.js';
+import { initSpeciesCards, thumb as fungusThumb, renderSpeciesDetail, whereSummary, criticalRule as fungusCriticalRule, criticalRuleOf as fungusCriticalRuleOf, speciesPhoto as fungusPhoto, speciesPhotos as fungusPhotos } from './speciescard.js';
 import { speciesLink } from './species-link.js';
 import { initEntitySheets, openEntitySheet } from './entity-sheet.js';
 import {initBaseLocation,currentBase,customBase,travelTo,travelText,directionsTo,BASE_PRIVACY_TEXT} from './base-location.js';
@@ -22,7 +22,7 @@ import { initLearning, renderGlossary, renderFieldIdentify, difficultyLink, glos
 import { openLightbox, captionHtml } from './lightbox.js';
 import { initInstall, maybeInvite } from './install.js';
 import { loadOuting, outingFor, OUTING_LABEL, OUTING_SHORT, OUTING_RANK } from './outing.js';
-import { initIdentify, renderIdentify, setCompare, searchTaxa, openTaxon, renderTaxonPage, renderTaxonView, taxonName, taxonByKey } from './identify.js';
+import { initIdentify, renderIdentify, setCompare, searchTaxa, openTaxon, renderTaxonPage, renderTaxonView, taxonName, taxonByKey, attentionLine } from './identify.js';
 import { initSearch } from './search.js';
 import { searchFieldHtml, matchesQuery, renderAlsoIn } from './catalog-search.js';
 import { renderGuidedKey } from './guided-key.js';
@@ -80,6 +80,7 @@ const botanicalById=id=>plantModels.find(p=>p.id===id);
 const thumb=(id,size)=>botanicalById(id)?plantThumb(botanicalById(id).plantId,size):fungusThumb(id,size);
 const speciesPhoto=id=>botanicalById(id)?botanicalById(id).photos?.[0]:fungusPhoto(id);
 const criticalRule=id=>botanicalById(id)?.caution||fungusCriticalRule(id);
+const criticalRuleOf=id=>botanicalById(id)?.caution?{text:botanicalById(id).caution,severity:'critico'}:fungusCriticalRuleOf(id);
 const activeCatalog=()=>state.target==='piante'?plantModels.map(p=>({...p,modelId:p.id,aliases:plantRecord(p.plantId)?.aliases||[],months:p.phaseMonths})):catalog;
 const activeIds=()=>state.target==='piante'?state.plantIds:state.speciesIds;
 const setActiveIds=ids=>{if(state.target==='piante')state.plantIds=ids;else state.speciesIds=ids;};
@@ -650,6 +651,8 @@ function weatherWork(text,busy=false,done=false){
 // meteo arrivato solo in parte: una nota sotto la riga del meteo, con «Riprova»
 function partialWeatherNotice(missing){
   const body=missing?'Per alcune zone il meteo non è arrivato: per ora non le valutiamo.':'Alcuni dati non sono arrivati: per quelli usiamo l’ultimo meteo salvato.';
+  // zone mancanti: la riga del meteo dice già quante e offre Riprova; qui non la copriamo
+  if(missing)return;
   const box=$('#stale');box.hidden=false;box.textContent=`${body} `;
   const retry=document.createElement('button');retry.type='button';retry.className='link-btn';retry.textContent='Riprova';retry.onclick=()=>refreshWeather(true);box.append(retry);
 }
@@ -1993,7 +1996,7 @@ function essentialSections(z, d, walk) {
   const rows = [];
   rows.push({ sec: 'specie', icon: 'find', thumb: best.species.id, k: 'Cosa osservare', v: `<button type="button" class="sp-inline" data-species="${best.species.id}">${esc(best.species.name)}</button> ${intornoA(best.band)} <b>${best.band} m</b>`,
     sub: [whereSummary(best.species.id) && `<span class="plan-where">${linkTrees(whereSummary(best.species.id))}</span>`,
-      criticalRule(best.species.id) && `<span class="plan-crit" role="note"><b>Attenzione</b>${esc(criticalRule(best.species.id))}</span>`,
+      attentionLine(criticalRuleOf(best.species.id)),
       d.perSpecies.slice(1, 3).map((p) => [p, spScore(z, d, p)]).filter(([, sc]) => sc >= 20).map(([p, sc]) => `${speciesLink(p.species)} ${idxDot(sc)}`).join(' · ')].filter(Boolean).join('<br>') || esc(best.species.latin) });
   if (d.crowd &&state.target==='funghi') {
     const t = timingAdvice({ dateStr: d.date, lat: z.lat, lon: z.lon, crowd: d.crowd });

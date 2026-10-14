@@ -85,6 +85,17 @@ export function validateContent(id, data, previous) {
       }
     }
   }
+  if (id === 'species-traits') {
+    // avvisi: tipo da un elenco chiuso e titolo breve; senza tipo restano validi (vecchi contenuti)
+    const KINDS = ['sosia', 'caratteri', 'regole', 'cottura', 'tossicita', 'ambiente'];
+    const rules = [...(value.general_rules || []), ...Object.values(value.taxa || {}).flatMap((t) => t?.field_rules || [])];
+    for (const r of rules) {
+      if (!r || typeof r.text !== 'string' || !r.text.trim()) err('Ogni avviso richiede un testo.');
+      if (r.kind != null && !KINDS.includes(r.kind)) err(`Tipo di avviso non valido: ${r.kind}.`);
+      if (r.title != null && (typeof r.title !== 'string' || !r.title.trim() || r.title.length > 60)) err('Il titolo di un avviso deve essere breve (al massimo 60 caratteri).');
+    }
+    for (const [url, c] of Object.entries(value.citations || {})) if (!/^https?:\/\//.test(url) || typeof c?.author !== 'string' || !c.author.trim() || typeof c?.year !== 'string' || !c.year.trim()) err('Ogni citazione richiede URL, autore e anno (o s.d.).');
+  }
   if (id==='guides') {
     if (!Array.isArray(value.guides)) err('Elenco articoli non valido.');
     checkIds(value.guides);

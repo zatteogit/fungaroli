@@ -178,6 +178,7 @@ document.addEventListener('click', (e) => {
   const src = (part) => ASSET(`assets/traits/${key}-${part}${v === drawn ? '' : `-${v}`}.webp`);
   for (const part of ['cappello', 'gambo']) strip.querySelector(`[data-ill="${part}"]`)?.setAttribute('src', src(part));
 });
+let CITES = {};
 let HOWTO = () => '', BANNER = '', TAXA = [], RULES = [], MEDIA = {}, ASSET = (f) => f, THUMB = () => '', POTENTIAL = () => null, ZONES = [];
 const state = { q: '', ans: {}, zone: '', guided: true, compare: '', editing: '' };
 
@@ -185,6 +186,7 @@ export function initIdentify({ traits, media, assetUrl, thumb, potential, zones,
   if (howTo) HOWTO = howTo;
   BANNER = banner || '';
   TAXA = Object.entries(traits?.taxa || {}).map(([key, t]) => ({ key, ...t })); simMemo.clear();
+  CITES = traits?.citations || {};
   RULES = traits?.general_rules || [];
   MEDIA = media || {}; if (assetUrl) ASSET = assetUrl; if (thumb) THUMB = thumb; if (potential) POTENTIAL = potential; ZONES = zones || [];
 }
@@ -405,16 +407,29 @@ export function traitStrip(edibleId, t = refOf(edibleId)) {
   return `<ul class="trait-strip" aria-label="Caratteri principali">${out.join('')}</ul>`;
 }
 
-// A short notice is always visible; longer notices disclose their full text.
+// Avvisi: ognuno ha un tipo e un titolo breve (data/species-traits.json, field_rules).
+// Chiuso mostra l'indice tipo · titolo; aperto ogni avviso per intero, con la citazione (Autore, anno).
+const ATT_KIND = { sosia: 'Sosia', caratteri: 'Caratteri', regole: 'Regole', cottura: 'Cottura', tossicita: 'Tossicità', ambiente: 'Ambiente' };
+const citeOf = (url) => { const c = url && CITES[url]; return c ? `${c.author}, ${c.year}` : ''; };
+function attItem(r) {
+  const k = ATT_KIND[r.kind], c = citeOf(r.source);
+  const src = r.source && /^https?:\/\//.test(r.source) ? ` <a class="att-cite" href="${esc(r.source)}" target="_blank" rel="noopener"${CITES[r.source]?.title ? ` title="${esc(CITES[r.source].title)}"` : ''}>${c ? `(${esc(c)})` : 'Fonte'}</a>` : '';
+  return `<li class="att-item${r.severity === 'critico' ? ' crit' : ''}">${k ? `<span class="att-k">${k}</span>` : ''}${r.title ? `<b class="att-t" data-no-glossary>${esc(r.title)}</b>` : ''}<p>${esc(r.text)}${src}</p></li>`;
+}
+// un solo avviso in riga (es. «Cosa osservare» in home): tipo, titolo, testo
+export const attentionLine = (r) => r?.text ? `<span class="plan-crit" role="note"><span class="pc-k">${ATT_KIND[r.kind] || 'Attenzione'}</span>${r.title ? `<b class="pc-t" data-no-glossary>${esc(r.title)}</b>` : ''}<span class="pc-x">${esc(r.text)}</span></span>` : '';
 export function attentionBox(rules, extra = '') {
   if (!rules?.length) return '';
   const sorted = [...rules].sort((a, b) => (a.severity === 'critico' ? 0 : 1) - (b.severity === 'critico' ? 0 : 1));
-  const compact = sorted.length <= 2 && sorted.reduce((n,r)=>n+r.text.length,extra.length) <= 320;
-  return `<${compact?'section':'details'} class="attention att-c${compact?' att-static':''}" role="note"${compact?' aria-label="Attenzione"':''}>
-    ${compact?'<h3 class="att-h">Attenzione</h3>':'<summary><span class="att-h">Attenzione</span></summary>'}
-    <ul>${sorted.map((r) => `<li class="${r.severity === 'critico' ? 'crit' : ''}">${esc(r.text)}</li>`).join('')}</ul>
-    ${extra ? `<p class="small">${esc(extra)}</p>` : ''}
-  </${compact?'section':'details'}>`;
+  const crit = sorted.filter((r) => r.severity === 'critico').length;
+  const n = sorted.length;
+  const count = n === 1 ? '' : crit === n ? `${n} avvisi critici` : crit ? `${crit} ${crit === 1 ? 'critico' : 'critici'} su ${n}` : `${n} avvisi`;
+  const head = `<span class="att-h">Attenzione</span>${count ? `<small class="att-n">${count}</small>` : ''}`;
+  const list = `<ul class="att-list">${sorted.map(attItem).join('')}</ul>${extra ? `<p class="att-extra small">${esc(extra)}</p>` : ''}`;
+  // uno o due avvisi: sempre aperti, niente da toccare
+  if (sorted.length <= 2) return `<section class="attention att-c att-static" role="note" aria-label="Attenzione"><div class="att-top">${head}</div>${list}</section>`;
+  const index = `<ul class="att-index" aria-hidden="true" data-no-glossary>${sorted.map((r) => `<li class="${r.severity === 'critico' ? 'crit' : ''}">${ATT_KIND[r.kind] ? `<span class="att-k">${ATT_KIND[r.kind]}</span>` : ''}<span class="att-it">${esc(r.title || r.text)}</span></li>`).join('')}</ul>`;
+  return `<details class="attention att-c" role="note"><summary><span class="att-top">${head}</span>${index}<span class="att-more"><span class="att-open">Leggi i dettagli e le fonti</span><span class="att-close">Chiudi i dettagli</span></span></summary>${list}</details>`;
 }
 
 // disegni composti per le tessere della scheda

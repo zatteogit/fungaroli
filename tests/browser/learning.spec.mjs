@@ -58,7 +58,7 @@ for(const width of [320,1280]) test(`spiegazioni contestuali, glossario e ricono
   await page.goto('/#/specie/edulis');await expect(page.locator('#species-detail')).toBeVisible();
   await expect(page.locator('#species-detail .trait-strip a.glossary-link')).toHaveCount(0);
   const attention=page.locator('#species-detail .attention');
-  await expect(attention.locator('summary')).toHaveText('Attenzione');
+  await expect(attention.locator('summary .att-h')).toHaveText('Attenzione');await expect(attention.locator('summary .att-index li').first()).toBeVisible();
   await expect(attention.locator(':scope > ul')).toBeHidden();
   await attention.locator('summary').click();await expect(attention.locator(':scope > ul')).toBeVisible();
   await attention.locator('summary').click();
