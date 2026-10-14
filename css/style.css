@@ -2317,6 +2317,9 @@ html.entity-open { overflow: hidden; }
 /* Botanical sheets and a private notebook: readable paper, including dark mode. */
 .botanical-tools { display:grid; gap:12px; margin-bottom:16px; }
 .botanical-tools label,.notebook-form label { display:grid; gap:6px; font-size:14px; }
+.botanical-tools .plant-catalog-search { display:flex; margin-bottom:0; }
+.plant-card .plant-risk { position:absolute; z-index:2; top:8px; left:8px; margin:0; padding:4px 8px; background:var(--warn-bg); color:var(--warn-ink); box-shadow:0 1px 4px rgb(0 0 0 / .25); }
+.plant-card .plant-risk-deadly { background:var(--crit-bg); color:var(--crit-ink); }
 .botanical-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr)); gap:16px; align-items:stretch; }
 .botanical-card { display:flex; flex-direction:column; min-width:0; border:1px solid var(--hair); border-radius:var(--r-md); overflow:hidden; background:var(--surface); }
 .botanical-photo { display:block; aspect-ratio:826/590; overflow:hidden; }

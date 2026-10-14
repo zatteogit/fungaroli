@@ -18,7 +18,7 @@ async function setup(page,width) {
 
 for(const width of [320,768,1280]) test(`le card fotografiche riempiono le colonne del catalogo a ${width}px`,async({page})=>{
   const errors=await setup(page,width);
-  for(const route of ['/#/specie','/#/alberi']){
+  for(const route of ['/#/specie','/#/alberi','/#/piante']){
     await page.goto(route);await page.evaluate(()=>document.fonts.ready);
     const grid=page.locator('.view:not([hidden]) .card-grid');await expect(grid.locator('.sp-card').first()).toBeVisible();
     const metrics=await grid.evaluate(el=>{
@@ -27,7 +27,7 @@ for(const width of [320,768,1280]) test(`le card fotografiche riempiono le colon
     });
     expect(metrics.length).toBeGreaterThan(10);
     for(const card of metrics){expect(Math.abs(card.width-card.expected)).toBeLessThan(1);expect(card.ratio).toBeCloseTo(.8,2);expect(card.titleFits).toBe(true);}
-    await page.screenshot({path:`/tmp/fungaroli-catalog-width-${route.endsWith('alberi')?'trees':'fungi'}-${width}.png`});
+    await page.screenshot({path:`/tmp/fungaroli-catalog-width-${route.endsWith('alberi')?'trees':route.endsWith('piante')?'plants':'fungi'}-${width}.png`});
   }
   expect(errors).toEqual([]);
 });

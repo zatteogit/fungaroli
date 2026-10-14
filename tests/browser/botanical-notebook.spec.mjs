@@ -9,9 +9,9 @@ async function start(page,hash='#/piante',width=390){
  await expect(page.locator('#plant-grid [data-plant-results]')).toBeVisible();return errors;
 }
 test('plants: search, comparison sheets and private simultaneous phenophases on mobile and desktop',async({page})=>{
- const errors=await start(page);await expect(page.locator('.botanical-card')).toHaveCount(54);
+ const errors=await start(page);await expect(page.locator('#plant-grid .sp-card')).toHaveCount(54);
  for(const width of [320,390,1280]){await page.setViewportSize({width,height:900});expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);if(width===1280)await page.screenshot({path:'/tmp/fungaroli-plants-desktop.png'});}
- await page.setViewportSize({width:390,height:900});await page.locator('[data-plant-query]').fill('sambuco');await expect(page.locator('.botanical-card')).toHaveCount(2);
+ await page.setViewportSize({width:390,height:900});await page.locator('[data-plant-query]').fill('sambuco');await expect(page.locator('#plant-grid .sp-card')).toHaveCount(2);
  await page.goto('/#/pianta/sambuco');await expect(page.locator('#plant-detail')).toContainText('Frutti crudi o immaturi');
  await page.locator('#plant-detail a[href="#/pianta/ebbio"]').click();const sheet=page.locator('#entity-sheet[open]');await expect(sheet).toContainText('Tutte le parti sono tossiche');expect(new URL(page.url()).hash).toBe('#/pianta/sambuco');await sheet.locator('[data-entity-close]').click();
  await page.locator('#plant-detail [data-note-kind]').click();const form=page.locator('.notebook-dialog[open]');await form.locator('[name="note"]').fill('Alcuni fiori e frutti ancora verdi.');await form.locator('.notebook-context summary').click();await form.locator('[data-phase="open_flowers"]').selectOption('present');await form.locator('[data-phase="unripe_fruits"]').selectOption('present');await form.screenshot({path:'/tmp/fungaroli-botanical-note-mobile.png'});await form.locator('[type="submit"]').click();await expect(form).toHaveCount(0);
@@ -31,7 +31,7 @@ test('botanical layouts, global search and short note form in both themes',async
   await expect.poll(()=>page.locator('.recognize-modes button').nth(1).evaluate(b=>getComputedStyle(b).color)).toBe(theme==='dark'?'rgb(233, 239, 231)':'rgb(27, 25, 21)');
   for(const width of [320,390,1280]){
    await page.setViewportSize({width,height:900});expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
-   const heights=await page.locator('.botanical-card').evaluateAll(cards=>cards.slice(0,2).map(c=>({top:Math.round(c.getBoundingClientRect().top),height:Math.round(c.getBoundingClientRect().height)})));
+   const heights=await page.locator('#plant-grid .sp-card').evaluateAll(cards=>cards.slice(0,2).map(c=>({top:Math.round(c.getBoundingClientRect().top),height:Math.round(c.getBoundingClientRect().height)})));
    if(heights[0].top===heights[1].top)expect(heights[0].height).toBe(heights[1].height);
    if(width===390||width===1280)await page.screenshot({path:`/tmp/fungaroli-plants-${width}-${theme}.png`});
   }
