@@ -20,7 +20,9 @@ for(const width of [390,1280])test(`cache immediata, aggiornamento discreto e co
  expect(await page.evaluate(()=>savedHero===document.querySelector('#hero .cover-link')&&savedPhoto===document.querySelector('#hero .cover-img'))).toBe(true);
  const placed=await page.locator('#hero [data-walk-zone],#ranking [data-walk-zone]').evaluateAll(n=>n.map(a=>a.dataset.walkZone));expect(new Set(placed).size).toBe(placed.length);await expect(page.locator('#season li').first()).toBeVisible();
  await expect(page.locator('#app-toast')).toContainText('Meteo aggiornato');await page.evaluate(()=>document.dispatchEvent(new Event('fungaroli:community')));await expect(page.locator('#hero .cover-link')).toHaveAttribute('href',href);expect(await page.locator('#hero .ring').innerText()).not.toBe(score);
- fail=true;await page.locator('#refresh').click();await expect(page.locator('#refresh')).toHaveAttribute('aria-busy','false');await expect(page.locator('#hero .cover-link')).toHaveAttribute('href',href);await expect(page.locator('#weather-work')).toContainText('parziale');
+ fail=true;await page.locator('#refresh').click();await expect(page.locator('#refresh')).toHaveAttribute('aria-busy','false');await expect(page.locator('#hero .cover-link')).toHaveAttribute('href',href);await expect(page.locator('#weather-work')).toBeHidden();await expect(page.locator('#updated')).toContainText('parziale');
+ const notice=page.locator('#app-toast.on.has-timer');await expect(notice).toContainText('Meteo aggiornato in parte');await expect(notice.locator('.toast-timer')).toBeAttached();await page.screenshot({path:`/tmp/weather-partial-${width}.png`});await notice.locator('.toast-close').click();await expect(page.locator('#app-toast')).not.toHaveClass(/\bon\b/);
+ await page.locator('#refresh').click();await expect(page.locator('#refresh')).toHaveAttribute('aria-busy','false');await expect(page.locator('#weather-work')).toBeHidden();await expect(page.locator('#app-toast')).not.toHaveClass(/\bon\b/);
  await page.screenshot({path:`/tmp/weather-cached-${width}.png`});expect(errors).toEqual([]);
 });
 

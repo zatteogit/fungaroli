@@ -5,14 +5,29 @@ const FLAG = 'fungaroli:fresh';
 // ogni passo ha un tempo massimo: su Safari l'aggiornamento del service worker a volte non risponde mai
 const within = (p, ms) => Promise.race([Promise.resolve(p).catch(() => {}), new Promise((r) => setTimeout(r, ms))]);
 
-export function toast(html, ms = 3200, placement = 'bottom') {
+export function toast(html, ms = 3200, placement = 'bottom', { countdown = false } = {}) {
   let t = document.getElementById('app-toast');
   if (!t) { t = document.createElement('div'); t.id = 'app-toast'; t.className = 'app-toast'; t.setAttribute('role', 'status'); document.body.append(t); }
   t.classList.toggle('app-toast-top', placement === 'top');
+  t._stop?.();
   t.innerHTML = html;
   t.classList.add('on');
   clearTimeout(t._h);
-  if (ms) t._h = setTimeout(() => t.classList.remove('on'), ms);
+  const hide = () => { t._stop?.(); t.classList.remove('on'); };
+  // con il conto alla rovescia: barra che si svuota, pausa sotto il dito o col focus, chiusura a mano
+  t.classList.toggle('has-timer', !!(countdown && ms));
+  if (countdown && ms) {
+    t.style.setProperty('--toast-ms', `${ms}ms`);
+    t.insertAdjacentHTML('beforeend', '<button type="button" class="toast-close" aria-label="Chiudi avviso">×</button><span class="toast-timer" aria-hidden="true"></span>');
+    t.querySelector('.toast-close').onclick = hide;
+    let left = ms, since = Date.now(), paused = false;
+    const pause = () => { if (paused) return; paused = true; clearTimeout(t._h); left -= Date.now() - since; t.classList.add('paused'); };
+    const resume = () => { if (!paused || t.matches(':hover,:focus-within')) return; paused = false; since = Date.now(); t.classList.remove('paused'); t._h = setTimeout(hide, Math.max(left, 0)); };
+    const events = [['pointerenter', pause], ['focusin', pause], ['pointerleave', resume], ['focusout', () => setTimeout(resume)]];
+    events.forEach(([e, f]) => t.addEventListener(e, f));
+    t._stop = () => { clearTimeout(t._h); events.forEach(([e, f]) => t.removeEventListener(e, f)); t.classList.remove('paused'); t._stop = null; };
+    t._h = setTimeout(hide, ms);
+  } else if (ms) t._h = setTimeout(hide, ms);
   return t;
 }
 

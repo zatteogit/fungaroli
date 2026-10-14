@@ -1,6 +1,7 @@
 // Botanical descriptions are independent of the mushroom weather index.
 import {openLightbox,captionHtml} from './lightbox.js';
 import {searchPlants} from './plant-catalog.js';
+import { cardLatin } from './names.js';
 export {searchPlants} from './plant-catalog.js';
 
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -15,7 +16,7 @@ function plantCatalogCard(p){
   return `<a class="sp-card plant-card" href="#/pianta/${encodeURIComponent(p.id)}" aria-label="${esc(p.name)}${risk?' · '+esc(risk):''}">
     ${photo?`<img data-src="${esc(ASSET(photo.thumb||photo.file))}" alt="" loading="lazy" decoding="async">`:`<span class="catalog-placeholder" aria-hidden="true">${esc(p.name.slice(0,2))}</span>`}<span class="shade"></span>
     ${risk?`<span class="tox plant-risk${risk==='mortale'?' plant-risk-deadly':''}">${esc(risk)}</span>`:''}
-    <span class="sp-card-body"><b>${esc(p.name)}</b><i>${esc(p.latin)}</i></span></a>`;
+    <span class="sp-card-body"><b>${esc(p.name)}</b><i>${esc(cardLatin(p.latin))}</i></span></a>`;
 }
 export function renderPlants(box,{identify=false}={}){
   box.dataset.glossaryContext='Piante';

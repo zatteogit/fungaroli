@@ -23,3 +23,70 @@ export function retainCandidate(taxon, match) {
 
 // Il richiamo ai mortali non dipende dai filtri, dalla zona o da una ricerca testuale.
 export const deadlyWarnings = (taxa) => taxa.filter((t) => t.toxicity === 'mortale');
+
+// --- caratteri e somiglianza tra due funghi ---
+// Pesi e regole di confronto dei caratteri: una sola fonte per Riconosci e per l'ordine dei sosia.
+export const TREE_GROUPS = {
+  faggio: ['faggio'], castagno: ['castagno'], querce: ['cerro', 'roverella', 'rovere', 'farnia', 'farnetto', 'leccio', 'sughera'],
+  pini: ['pino nero', 'pino silvestre', 'pino domestico', "pino d'aleppo", 'pino marittimo'], abeti: ['abete bianco', 'abete rosso'],
+  betulla: ['betulla'], carpino: ['carpino nero', 'carpino bianco', 'nocciolo'], 'legno morto': ['ceppaie e legno morto di latifoglie'],
+};
+const SEASONS = { primavera: [3, 4, 5], estate: [6, 7, 8], autunno: [9, 10, 11], inverno: [12, 1, 2] };
+export const monthsOf = (v, now = new Date()) => (v === 'adesso' ? [now.getMonth() + 1] : SEASONS[v] || []);
+const TRAIT_KEYS = ['hymenophore', 'stem_volva', 'stem_ring', 'cap_color', 'hymenophore_color', 'flesh_change', 'habitat', 'growth', 'cap_shape', 'cap_size',
+  'trees', 'smell', 'season', 'gill_attachment', 'cap_veil', 'cap_surface', 'latex', 'flesh_texture', 'stem_base', 'spore_print', 'stem_reticulum'];
+const TRAIT_CORE = {
+  hymenophore: { weight: 1.4 },
+  trees: { weight: 0.85, values: Object.keys(TREE_GROUPS), get: (t) => t.trees, match: (tv, v) => tv.some((x) => TREE_GROUPS[v]?.includes(x)) },
+  smell: { weight: 0.75 },
+  season: { weight: 0.5, values: Object.keys(SEASONS), match: (tv, v) => monthsOf(v).some((m) => tv.includes(m)) },
+  flesh_texture: { weight: 0.85 },
+  spore_print: { weight: 0.35 },
+};
+const TRAIT_QUESTIONS = TRAIT_KEYS.map((key) => ({ key, ...TRAIT_CORE[key] }));
+export const traitQuestions = () => TRAIT_QUESTIONS;
+
+// Quanto un carattere distingue i funghi del catalogo (0-1): impurita' di Gini dei suoi valori.
+// "Nessuna volva" o "nessun lattice", comuni a quasi tutti, valgono poco; il colore del cappello molto.
+const traitValues = (t, q) => {
+  let v = q.get ? q.get(t) : t.traits?.[q.key];
+  if (v == null) return null;
+  v = [].concat(v);
+  if (q.match && q.values) v = q.values.filter((x) => q.match(v, x));
+  return v.length ? v : null;
+};
+const spreadMemo = new WeakMap();
+export function traitSpread(taxa, questions = TRAIT_QUESTIONS) {
+  if (spreadMemo.has(taxa)) return spreadMemo.get(taxa);
+  const out = {};
+  for (const q of questions) {
+    const share = new Map();let n = 0;
+    for (const t of taxa) {
+      const v = traitValues(t, q);
+      if (!v) continue;
+      n++;
+      for (const x of v) share.set(String(x), (share.get(String(x)) || 0) + 1 / v.length);
+    }
+    out[q.key] = n ? 1 - [...share.values()].reduce((s, c) => s + (c / n) ** 2, 0) : 0;
+  }
+  spreadMemo.set(taxa, out);
+  return out;
+}
+
+// Quanto due funghi si somigliano, da 0 a 1. Non e' mostrato: serve solo a mettere prima i sosia piu' simili.
+// Per ogni carattere noto a entrambi: valori in comune su valori totali (Jaccard). Il carattere pesa come la domanda
+// di Riconosci per quanto distingue nel catalogo (taxa), cosi' le assenze comuni a tutti non appiattiscono l'indice.
+// Con pochi caratteri noti il valore resta vicino a 0,5.
+export function traitSimilarity(a, b, taxa = null, questions = TRAIT_QUESTIONS) {
+  const spread = taxa ? traitSpread(taxa, questions) : null;
+  let s = 0, w = 0;
+  for (const q of questions) {
+    const A = traitValues(a, q), B = traitValues(b, q);
+    if (!A || !B) continue;
+    const U = new Set([...A, ...B].map(String));
+    const wq = (q.weight ?? 1) * (spread ? spread[q.key] : 1);
+    if (!wq) continue;
+    s += (wq * A.filter((v) => B.includes(v)).length) / U.size; w += wq;
+  }
+  return (s + 0.5) / (w + 1);
+}

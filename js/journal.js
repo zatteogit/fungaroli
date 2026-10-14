@@ -334,10 +334,12 @@ export function initJournal({ onEntries=()=>{},zones, speciesCatalog = SPECIES, 
       shell('Vuoi aggiungere una nota?', 'Facoltativo: esposizione, tipo di bosco, com\'era il terreno…',
         `<p class="wiz-recap"><b>${esc(zone.name)}</b> · ${fmt(draft.date)}${draft.band ? ` · ${draft.band} m` : ''}<br>${esc(recap)}</p>
          <textarea class="wiz-input" rows="3" placeholder="Es. versante nord, faggeta, terreno umido">${esc(draft.note)}</textarea>
-         ${store?.kind === 'community' ? `<label class="small"><input type="checkbox" data-share${draft.share ? ' checked' : ''}> Condividi dati della ricerca, zona, giorno, specie e quantità per migliorare i suggerimenti. Le note restano private.</label>` : '<p class="small muted">Questa uscita resta su questo dispositivo. Puoi creare un profilo per tenere il taccuino privato online e scegliere cosa segnalare.</p>'}`,
+         ${store?.kind === 'community' ? `<fieldset class="share-choice"><legend>Chi vede questa uscita?</legend>
+           <label><input type="radio" name="share" value="0"${draft.share ? '' : ' checked'}><span><b>Solo io</b><small>Resta nel tuo taccuino privato.</small></span></label>
+           <label><input type="radio" name="share" value="1"${draft.share ? ' checked' : ''}><span><b>Anche i conteggi della community</b><small>Solo zona, giorno, specie e quantità, nei conteggi aggregati. Le note restano private.</small></span></label></fieldset>` : '<p class="small muted">Questa uscita resta su questo dispositivo. Puoi creare un profilo per tenere il taccuino privato online e scegliere cosa segnalare.</p>'}`,
         { nextLabel: 'Salva uscita' });
       body.querySelector('textarea').addEventListener('input', (e) => { draft.note = e.target.value; });
-      body.querySelector('[data-share]')?.addEventListener('change', (e) => { draft.share = e.target.checked; });
+      body.querySelectorAll('[name="share"]').forEach((r) => r.addEventListener('change', (e) => { if (e.target.checked) draft.share = e.target.value === '1'; }));
     }
   }
 
@@ -367,6 +369,7 @@ export function initJournal({ onEntries=()=>{},zones, speciesCatalog = SPECIES, 
       await store.put(entry);
       if (draft.share && store.kind === 'community') {
         try { shared = await shareDiaryEntry(entry); } catch (e) { shareError = e.message; }
+        entry.shared = !!shared;
       }
     } catch { ok = false; }
     entries = [entry, ...entries];
@@ -379,11 +382,17 @@ export function initJournal({ onEntries=()=>{},zones, speciesCatalog = SPECIES, 
     renderList();
   }
 
+  // dove sta la voce: solo nel taccuino o anche nei conteggi della community (zona, giorno, specie, quantita')
+  function privacyTag(entry){
+    const shared=store?.kind==='community'&&entry.kind==='outing'&&entry.shared;
+    return shared?`<span class="j-privacy is-shared"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8.5" r="3"/><path d="M3.5 19a5.5 5.5 0 0 1 11 0"/><circle cx="17" cy="9.5" r="2.4"/><path d="M15.5 14.2A4.5 4.5 0 0 1 21 18.5"/></svg>Nei conteggi della community · le note restano private</span>`
+      :`<span class="j-privacy"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>Solo per te</span>`;
+  }
   function rowActions(entry){
     const state=actionStates.get(String(entry.id))||{},id=esc(entry.id),disabled=state.busy?' disabled':'';
-    return `<div class="j-actions" aria-busy="${!!state.busy}">
+    return `${privacyTag(entry)}<div class="j-actions" aria-busy="${!!state.busy}">
       ${entry.kind==='note'?`<button type="button" class="link-btn small" data-edit-note="${id}"${disabled}>Modifica</button>`:''}
-      ${store.kind==='community'&&!['note','plan'].includes(entry.kind)?`<button type="button" class="link-btn small" data-share-entry="${id}" aria-label="Condividi osservazioni"${disabled}>${state.busy==='share'?'Condivido…':'Condividi'}</button><button type="button" class="link-btn small" data-withdraw-entry="${id}" aria-label="Ritira segnalazioni"${disabled}>${state.busy==='withdraw'?'Ritiro…':'Ritira'}</button>`:''}
+      ${store.kind==='community'&&!['note','plan'].includes(entry.kind)?(entry.shared?`<button type="button" class="link-btn small" data-withdraw-entry="${id}" aria-label="Ritira le osservazioni dai conteggi"${disabled}>${state.busy==='withdraw'?'Ritiro…':'Ritira dai conteggi'}</button>`:`<button type="button" class="link-btn small" data-share-entry="${id}" aria-label="Condividi osservazioni"${disabled}>${state.busy==='share'?'Condivido…':'Condividi'}</button>`):''}
       <button type="button" class="link-btn small j-delete" data-del="${id}"${disabled}>${state.busy==='delete'?'Elimino…':state.confirmDelete?'Conferma eliminazione':'Elimina'}</button>
       ${state.confirmDelete&&!state.busy?`<button type="button" class="link-btn small" data-cancel-delete="${id}">Annulla</button>`:''}
     </div>${state.message?`<p class="j-action-status${state.error?' is-error':''}" role="${state.error?'alert':'status'}">${esc(state.message)}</p>`:''}`;
@@ -409,9 +418,11 @@ export function initJournal({ onEntries=()=>{},zones, speciesCatalog = SPECIES, 
       let message;
       if(action==='share'){
         if(!await shareDiaryEntry(entry,{signal}))throw new Error('Accedi al tuo profilo per condividere questa osservazione.');
+        entry.shared=true;
         message='Osservazioni condivise: zona, giorno, specie e quantità. Le note restano private.';
       }else if(action==='withdraw'){
         await communityRequest('reports','DELETE',{entryId:id},{signal});
+        entry.shared=false;
         document.dispatchEvent(new CustomEvent('fungaroli:refresh-community'));
         message='Segnalazioni ritirate. L’uscita resta nel taccuino privato.';
       }else{

@@ -31,27 +31,24 @@ async function setup(page,{width=1280,outingGate}={}) {
   expect(sample).toBeTruthy();return {sample,errors};
 }
 
-test('il mouse raggiunge il link del riquadro senza chiuderlo o sostituirlo',async({page})=>{
-  const {sample,errors}=await setup(page);
-  await page.mouse.move(sample.x,sample.y);const card=page.locator('.cell-card');await expect(card).toBeVisible();
+test('il passaggio del mouse mostra solo l’etichetta, il clic apre la scheda',async({page})=>{
+  const {sample,errors}=await setup(page);const card=page.locator('.cell-card'),peek=page.locator('.cell-peek');
+  await page.mouse.move(sample.x,sample.y);await expect(peek).toBeVisible();await expect(peek).toContainText('clic per i dettagli');await expect(card).toHaveCount(0);
+  await page.mouse.move(-20,-20);await expect(peek).toHaveCount(0);
+  await page.mouse.click(sample.x,sample.y);await expect(card).toBeVisible();await expect(peek).toHaveCount(0);await expect(page.locator('#map-sheet')).toBeHidden();
+  await page.mouse.move(-20,-20);await page.waitForTimeout(350);await expect(card).toBeVisible();
+  await page.locator('#map').focus();await page.keyboard.press('Escape');await expect(card).toHaveCount(0);expect(errors).toEqual([]);
+});
+
+test('dalla scheda aperta col clic il mouse raggiunge il link senza chiuderla',async({page})=>{
+  const {sample,errors}=await setup(page);await page.mouse.click(sample.x,sample.y);const card=page.locator('.cell-card');await expect(card).toBeVisible();
   const original=await card.innerText(),bounds=await card.boundingBox();
-  // Cross the gap slowly enough to expose an immediate mouseout regression.
-  await page.mouse.move(sample.x,sample.y-5);await page.waitForTimeout(80);
   await page.mouse.move(bounds.x+bounds.width/2,bounds.y+bounds.height-5,{steps:8});await page.waitForTimeout(350);
-  await expect(card).toHaveText(original,{useInnerText:true});await expect(card.locator('[data-term="habitat"]')).toBeVisible();
+  await expect(card).toHaveText(original,{useInnerText:true});await expect(page.locator('.cell-peek')).toHaveCount(0);
   await card.locator('[data-term="habitat"]').click();await expect(page.locator('#learning-popover')).toBeVisible();
   expect(new URL(page.url()).hash).toBe('#/mappa');await page.locator('[data-learning-close]').click();
   await expect(card.locator('[data-term="habitat"]')).toBeFocused();
-  await page.mouse.move(-20,-20);await page.waitForTimeout(350);await expect(card).toBeVisible();
   await card.locator('[data-cell-close]').click();await expect(card).toHaveCount(0);await expect(page.locator('#map')).toBeFocused();expect(errors).toEqual([]);
-});
-
-test('l’anteprima hover si chiude dopo l’uscita e il clic la mantiene aperta',async({page})=>{
-  const {sample,errors}=await setup(page);const card=page.locator('.cell-card');
-  await page.mouse.move(sample.x,sample.y);await expect(card).toBeVisible();await page.mouse.move(-20,-20);await expect(card).toHaveCount(0);
-  await page.mouse.click(sample.x,sample.y);await expect(card).toBeVisible();await expect(page.locator('#map-sheet')).toBeHidden();
-  await page.mouse.move(-20,-20);await page.waitForTimeout(350);await expect(card).toBeVisible();
-  await page.locator('#map').focus();await page.keyboard.press('Escape');await expect(card).toHaveCount(0);expect(errors).toEqual([]);
 });
 
 for(const width of [320,390])test(`un tap apre un pannello utilizzabile e contenuto nella mappa a ${width}px`,async({browser})=>{

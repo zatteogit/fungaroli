@@ -149,14 +149,14 @@ function attention(id, warn) {
 }
 function checks(id) {
   const c = TRAITS[id]?.check_before_picking || [];
-  return c.length ? `<h3>Cosa osservare</h3><p class="small muted checks-tip">Caratteri descritti per la specie: confrontarli non identifica un esemplare né ne certifica la commestibilità.</p><ol class="keys">${c.map((x) => `<li><span class="key-text">${esc(x)}</span></li>`).join('')}</ol>` : '';
+  return c.length ? `<p class="small muted checks-tip">Caratteri descritti per la specie: confrontarli non identifica un esemplare né ne certifica la commestibilità.</p><ol class="keys">${c.map((x) => `<li><span class="key-text">${esc(x)}</span></li>`).join('')}</ol>` : '';
 }
 function whereToLook(id) {
   const w = TRAITS[id]?.where_to_look;
   if (!w) return '';
   return `<h3>Dove guardare</h3><p>${linkTrees(w.summary || '')}</p>
     ${w.tips?.length ? `<ul class="reasons">${w.tips.map((t) => `<li>${linkTrees(t)}</li>`).join('')}</ul>` : ''}
-    ${w.trees?.length ? `<p class="tree-chips">${w.trees.map((t) => linkTrees(t)).join(' ')}</p>` : ''}`;
+    ${w.trees?.length ? `<p class="tree-chips">${w.trees.map((t) => { const h = linkTrees(t); return h.includes('<a') ? h : `<span class="tree-link">${h}</span>`; }).join(' ')}</p>` : ''}`;
 }
 export const whereSummary = (id) => TRAITS[id]?.where_to_look?.summary || '';
 export const criticalRule = (id) => (TRAITS[id]?.field_rules || []).find((r) => r.severity === 'critico')?.text || '';
@@ -196,9 +196,8 @@ export function renderSpeciesDetail(body, id) {
     <div class="pbody">
     ${photos.length > 1 ? `<div class="sp-strip">${photos.slice(1).map((p, k) => `<button type="button" class="zoomable" data-photo="${k + 1}" aria-label="Foto ${k + 2}: ingrandisci"><img data-src="${ASSET(p.file)}" alt="" loading="lazy" decoding="async"></button>`).join('')}</div>` : ''}
     ${attention(id, warn)}
-    ${d.key_features?.length ? `<h3>Caratteri da confrontare</h3>${traitStrip(id)}<ol class="keys">${d.key_features.map((k) => `<li><span class="key-text">${esc(k)}</span></li>`).join('')}</ol>` : '<p class="notice">Caratteri di confronto in preparazione.</p>'}
+    ${TRAITS[id]?.check_before_picking?.length ? `<h3>Caratteri da confrontare</h3>${traitStrip(id)}${checks(id)}` : d.key_features?.length ? `<h3>Caratteri da confrontare</h3>${traitStrip(id)}<ol class="keys">${d.key_features.map((k) => `<li><span class="key-text">${esc(k)}</span></li>`).join('')}</ol>` : '<p class="notice">Caratteri di confronto in preparazione.</p>'}
     ${TRAITS[id] ? '' : (warn.length ? `<div class="notice">${esc(warn.join(' '))}</div>` : '')}
-    ${checks(id)}
     ${compareCta(id)}
     ${kitchen(id)}
     ${whereToLook(id)}
