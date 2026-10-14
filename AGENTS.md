@@ -30,6 +30,11 @@ La suite browser avvia un solo Wrangler sulla porta 8788: non lanciarne due insi
 - **Gerarchia:** funghi → giro → scoperte. Piante e alberi non cambiano zona, giorno, sentiero o indice.
 - **Linguaggio:** l'app descrive caratteri, ambienti e rischi. Non identifica, non certifica commestibilità, non dice «tieni/scarta». L'indice è sperimentale (0–10), non una probabilità.
 - **Fonti e licenze:** ogni nuovo dato, foto o soglia deve avere fonte e licenza verificabili. Niente soglie inventate, niente bonus numerici da folklore («funghi spia»).
+- **Licenze delle foto:** le foto con licenza non commerciale (CC BY-NC, soprattutto da iNaturalist) restano ammesse finché l'app è gratuita e senza pubblicità. Per le foto nuove preferisci CC0, CC BY o CC BY-SA e registra sempre autore, licenza, link alla licenza e pagina della fonte. Niente immagini generate al posto delle foto delle specie.
+
+## Decisioni
+
+Quando per proseguire serve una decisione del proprietario del progetto, chiedila sempre con domande a scelta (alternative chiare, quella consigliata per prima). Non decidere al suo posto e non fermarti senza chiedere.
 
 ## Testi
 
