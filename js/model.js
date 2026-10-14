@@ -198,11 +198,11 @@ export function explain(r) {
   const out = [];
   out.push(`${Math.round(r.effRain)} mm nella finestra di latenza${r.triggered ? '' : ' (nessun evento ≥ 8 mm)'}`);
   out.push(`${Math.round(r.r30)} mm negli ultimi 30 gg`);
-  if (r.t20 != null) out.push(`T media 20 gg ${r.t20.toFixed(1)} °C`);
+  if (r.t20 != null) out.push(`T media 20 gg ${r.t20.toFixed(1)}\u00a0°C`);
   if (r.sm != null) out.push(`suolo ${r.moist >= 0.8 ? 'umido' : r.moist >= 0.5 ? 'discreto' : 'secco'} (${r.sm.toFixed(2)} m³/m³)`);
-  if (r.frost < 1) out.push(`gelate recenti (min ${r.minT.toFixed(1)} °C)`);
-  if (r.heat < 1) out.push(`caldo eccessivo (max ${r.maxT.toFixed(1)} °C)`);
-  if (r.shock > 1) out.push(`shock termico (−${r.drop.toFixed(1)} °C)`);
+  if (r.frost < 1) out.push(`gelate recenti (min ${r.minT.toFixed(1)}\u00a0°C)`);
+  if (r.heat < 1) out.push(`caldo eccessivo (max ${r.maxT.toFixed(1)}\u00a0°C)`);
+  if (r.shock > 1) out.push(`shock termico (−${r.drop.toFixed(1)}\u00a0°C)`);
   return out;
 }
 

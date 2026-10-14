@@ -81,7 +81,7 @@ export function outingFor(series, z, dateStr, now = Date.now()) {
   if (thunder || snow || rain >= 5 || gust >= 60) level = 'sconsigliata';
   else if (rain >= 1 || prob >= 50 || gust >= 40 || fog) level = 'attenzione';
   const main = parts.length ? parts.join(' · ') : (prob < 20 ? 'asciutto' : 'probabilmente asciutto');
-  const text = `${main} · ${tmin === tmax ? tmin : `${tmin}–${tmax}`} °C`;
+  const text = `${main} · ${tmin === tmax ? tmin : `${tmin}–${tmax}`}\u00a0°C`;
   // short: la ragione principale in due parole, col numero tra parentesi (per le note compatte)
   const stale = now - fetched > TTL;
   return { level: stale && level === 'ok' ? 'non_disponibile' : level,

@@ -2,6 +2,7 @@
 
 import { SPECIES } from './species.js';
 import { openLightbox, captionHtml } from './lightbox.js';
+import { cardLatin } from './names.js';
 
 const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 let T = {}, MEDIA = {}, ASSET = (f) => f, ZONES = [], HAB = {}, THUMB = () => '';
@@ -52,7 +53,7 @@ export function renderTreeGrid(box) {
     const m = treePhotos(id)[0];
     return `<a class="sp-card" href="#/albero/${encodeURIComponent(id)}" aria-label="${esc(t.name)}">
       ${m ? `<img data-src="${ASSET(m.file)}" alt="" loading="lazy" decoding="async">` : ''}<span class="shade"></span>
-      <span class="sp-card-body"><b>${esc(t.name)}</b><i>${esc(t.latin)}</i></span></a>`;
+      <span class="sp-card-body"><b>${esc(t.name)}</b><i>${esc(cardLatin(t.latin))}</i></span></a>`;
   }).join('');
   box.innerHTML = html ? `<div class="card-grid">${html}</div>` : '<p class="muted">Schede degli alberi in preparazione.</p>';
 }

@@ -221,12 +221,14 @@ export async function handleCommunity(request, env, now = Date.now()) {
     }
 
     if (path === 'entries' && request.method === 'GET') {
-      const { results } = await db.prepare('SELECT payload FROM diary_entries WHERE account_id=? ORDER BY saved_at DESC LIMIT 1000').bind(user.id).all();
-      return result({ entries: results.map((r) => JSON.parse(r.payload)) });
+      // shared: l'uscita ha segnalazioni attive nei conteggi della community (calcolato, mai salvato nella voce)
+      const { results } = await db.prepare('SELECT d.payload, EXISTS(SELECT 1 FROM reports r WHERE r.account_id=d.account_id AND r.entry_id=d.id) AS shared FROM diary_entries d WHERE d.account_id=? ORDER BY d.saved_at DESC LIMIT 1000').bind(user.id).all();
+      return result({ entries: results.map((r) => ({ ...JSON.parse(r.payload), shared: !!r.shared })) });
     }
     const entryMatch = path.match(/^entries\/([a-zA-Z0-9-]{4,64})$/);
     if (entryMatch && request.method === 'PUT') {
       let entry = await body(request); const id = entryMatch[1];
+      if (entry && typeof entry === 'object') delete entry.shared;
       const liveIds=await currentCatalogIds(env,url.origin);
       if(entry.kind==='note'){try{entry=normalizeNotebookNote(entry,liveIds);}catch(e){fail(e.message);}}
       if(entry.kind!=null&&!['outing','plan','note'].includes(entry.kind))fail('Tipo di voce non valido.');
@@ -269,7 +271,8 @@ export async function handleCommunity(request, env, now = Date.now()) {
           writes.push(db.prepare('DELETE FROM reports WHERE account_id=? AND entry_id=?').bind(user.id, id));
       }
       await db.batch(writes);
-      return result({ ok: true, entry });
+      const shared = !!(await db.prepare('SELECT 1 AS x FROM reports WHERE account_id=? AND entry_id=? LIMIT 1').bind(user.id, id).first('x'));
+      return result({ ok: true, entry: { ...entry, shared } });
     }
     if (entryMatch && request.method === 'DELETE') {
       await db.prepare('DELETE FROM diary_entries WHERE account_id=? AND id=?').bind(user.id, entryMatch[1]).run();

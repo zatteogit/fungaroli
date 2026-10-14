@@ -34,6 +34,7 @@ import { guideTitle, renderGuideCards, renderGuide, initGuideContent } from './g
 import { buildEdibleCatalog, seasonStatus, seasonLabel } from './edible-catalog.js';
 import { mountSpeciesAutocomplete } from './species-autocomplete.js';
 import { uniquePlaceProposals, chooseWalkTrail, walkContext, trailSketch } from './walks.js';
+import { cardLatin } from './names.js';
 
 const HISTORY_DAYS = 30;   // giorni passati mostrati nel grafico
 const AHEAD_DAYS = 7;      // giorni futuri valutati
@@ -437,8 +438,8 @@ function routeNow(r, nav) {
     requestAnimationFrame(() => {
       map?.invalidateSize();
       const lb = $('.legend-box');
-      // aperta di default solo su schermi grandi (larghi e alti): su telefono e tablet la carta prima di tutto
-      if (lb && !lb.dataset.touched) lb.open = matchMedia('(min-width: 1200px) and (min-height: 760px)').matches;
+      // chiusa di default ovunque: la carta prima di tutto (si apre a mano o accendendo la Carta Forestale)
+      if (lb && !lb.dataset.touched) lb.open = false;
       const z = zones.find((x) => x.id === r.zoneId);
       if (z && map) { map.flyToBounds(L.latLng(z.lat, z.lon).toBounds(z.radius_m * 2.6), { duration: 0.5 }); openSheet(z.id); }
     });
@@ -634,10 +635,12 @@ async function refreshWeather(force){
   weatherZones??=zones;weatherBusy=true;$('#refresh').setAttribute('aria-busy','true');
   if(lastWeatherSnapshot)weatherStamp(lastWeatherSnapshot,true);else $('#updated').textContent='Meteo in arrivo…';
   weatherWork('Aggiorno il meteo in background…',true);loadStep(1);
+  // il messaggio "Meteo aggiornato" serve se l'hai chiesto o se cambia dati gia' sullo schermo, non al primo avvio
+  let announce=force||!!lastWeatherSnapshot;
   let received=false,mainFailure=null,latest=null,outingPartial=false;
   const growth=loadWeather(weatherZones,{force,signal,onProgress:(done,total)=>{
     if(revision!==weatherRevision)return;const step=$('.loader [data-step="1"]');if(step)step.textContent=`Scarico il meteo delle zone · ${done}/${total}`;
-  },onUpdate:(w,meta)=>{if(revision!==weatherRevision)return;received||=meta.phase==='network';receiveWeather(w,meta);}}).then(w=>{if(revision===weatherRevision){latest=w;receiveWeather(w);}}).catch(err=>{mainFailure=err;});
+  },onUpdate:(w,meta)=>{if(revision!==weatherRevision)return;received||=meta.phase==='network';if(meta.phase!=='network')announce=true;receiveWeather(w,meta);}}).then(w=>{if(revision===weatherRevision){latest=w;receiveWeather(w);}}).catch(err=>{mainFailure=err;});
   const practical=loadOuting(weatherZones,{force,signal,onUpdate:(data,meta)=>{
     if(revision!==weatherRevision)return;
     const changed=new Set(Object.keys(data).filter(id=>JSON.stringify(outing?.[id])!==JSON.stringify(data[id])));
@@ -654,7 +657,7 @@ async function refreshWeather(force){
     if(partial){$('#updated').textContent+=' · aggiornamento parziale';}
     if(!deferredWeatherView)weatherWork('',false);
     if(partial)partialWeatherNotice(latest?.missingZones?.length);
-    else if(received)weatherToast('Meteo aggiornato',4000,'top');
+    else if(received&&announce)weatherToast('Meteo aggiornato',4000,'top');
   }else{
     weatherWork('');$('#updated').textContent='';weatherUnavailable=true;prepareCalendarFallback();
     if(state.target==='piante'){compute();renderAll();return;}
@@ -850,7 +853,7 @@ function fillSpecies() {
     const ph = catalogPhoto(s);
     return `<a class="sp-card" href="${s.href}" aria-label="${esc(s.name)}">
       ${ph ? `<img data-src="${assetSrc(ph.file)}" alt="" loading="lazy" decoding="async">` : `<span class="catalog-placeholder" aria-hidden="true">${esc(s.name.slice(0,2))}</span>`}<span class="shade"></span>
-      <span class="sp-card-body"><b>${esc(s.name)}</b><i>${esc(s.latin)}</i></span></a>`;
+      <span class="sp-card-body"><b>${esc(s.name)}</b><i>${esc(cardLatin(s.latin))}</i></span></a>`;
   }).join('') || '<p class="muted empty-note">Nessuna specie commestibile nel catalogo.</p>';
 }
 
@@ -1929,11 +1932,15 @@ function renderDetail() {
     ${renderWalkFocus(z, d, walk)}
     ${essentialSections(z, d, walk)}
     ${discoverySection(z,d,walk)}
-    ${best.kind==='plant'?`<p class="small muted">Indice di contesto sperimentale · fattori disponibili ${best.factors.filter(f=>f.value!=null).length}/${best.factors.length}${best.quality.climateUnavailable?' · meteo non disponibile':''}</p><div class="notice">${esc(best.species.parts)} ${esc(best.species.caution)}</div><button type="button" class="btn ghost" data-note-kind="pianta" data-note-id="${best.species.plantId}" data-note-zone="${z.id}" data-note-title="${esc(best.species.name)}">Annota la fase nel taccuino</button>`:`<div class="zone-community"><button type="button" class="btn primary" data-report data-zone="${z.id}" data-species="${best.species.id}">Segnala dal bosco</button>${reportBadge(z.id, best.species.id)}</div>
-    <button type="button" class="btn ghost big" data-save-plan>Salva le condizioni prima della passeggiata</button><p class="small muted" data-plan-status></p>`}
-    <a class="btn ghost big map-link" href="#/mappa/${z.id}">${IC.map} Sentieri e accessi nella zona</a>
-    ${best.kind==='plant'?'<p class="small muted">Confronta la pianta e verifica regole, tutela e permessi prima della raccolta.</p>':zoneLegal(z,d)}
+    ${best.kind==='plant'?`<p class="small muted">Indice di contesto sperimentale · fattori disponibili ${best.factors.filter(f=>f.value!=null).length}/${best.factors.length}${best.quality.climateUnavailable?' · meteo non disponibile':''}</p><div class="notice">${esc(best.species.parts)} ${esc(best.species.caution)}</div>`:''}
+    <div class="zone-actions">
+      ${best.kind==='plant'?`<button type="button" class="btn primary" data-note-kind="pianta" data-note-id="${best.species.plantId}" data-note-zone="${z.id}" data-note-title="${esc(best.species.name)}">Annota la fase nel taccuino</button>`:`<div class="zone-community"><button type="button" class="btn primary" data-report data-zone="${z.id}" data-species="${best.species.id}">Segnala dal bosco</button>${reportBadge(z.id, best.species.id)}</div>
+      <button type="button" class="btn ghost" data-save-plan>Salva le condizioni</button>`}
+      <a class="btn ghost map-link" href="#/mappa/${z.id}">${IC.map} Sentieri e accessi</a>
+    </div>
+    ${best.kind==='plant'?'<p class="small muted">Confronta la pianta e verifica regole, tutela e permessi prima della raccolta.</p>':'<p class="small muted" data-plan-status></p>'}
     ${z.protection ? `<div class="notice">${esc(z.protection)}</div>` : ''}
+    ${best.kind==='plant'?'':section('regole', 'Regole di raccolta', zoneLegal(z,d))}
     ${section('meteo', 'Perché questo indice', `${renderWhy({ r: best, s: sb, i: d.i, sp: best.species, band: best.band, dateStr: d.date, shown: s, agg: d.score, parts: d.perSpecies.map((p) => ({ name: p.species.name.split(' / ')[0], score: p.score })), prefs: adjParts(z, d), outing: wxRank(z, d) < 1 ? wxRank(z, d) : 0 })}
       <p class="small muted">${esc(best.kind==='plant'?'Indice sperimentale del contesto e della fase: non è una probabilità di raccolta.':contentCopy.indexExplanation || 'Condizioni di crescita: indice sperimentale 0–10.')}</p>
       <p class="sci-h">L'indice nei giorni</p><div id="charts"></div>${legal?.forecast_note ? `<p class="small muted">${esc(legal.forecast_note)}</p>` : ''}`)}
