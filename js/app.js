@@ -651,6 +651,8 @@ function weatherWork(text,busy=false,done=false){
 // meteo arrivato solo in parte: una nota sotto la riga del meteo, con «Riprova»
 function partialWeatherNotice(missing){
   const body=missing?'Per alcune zone il meteo non è arrivato: per ora non le valutiamo.':'Alcuni dati non sono arrivati: per quelli usiamo l’ultimo meteo salvato.';
+  // zone mancanti: la riga del meteo dice già quante e offre Riprova; qui non la copriamo
+  if(missing)return;
   const box=$('#stale');box.hidden=false;box.textContent=`${body} `;
   const retry=document.createElement('button');retry.type='button';retry.className='link-btn';retry.textContent='Riprova';retry.onclick=()=>refreshWeather(true);box.append(retry);
 }
