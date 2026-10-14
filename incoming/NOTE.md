@@ -114,9 +114,10 @@ Ogni zona ha 17 combinazioni: quattro stagioni × sereno/nuvoloso/nebbia/pioggia
 |---|---:|---:|---|---|
 | vallonina | 17 | 16 | estate-sereno | 1600×1200 |
 | poggio-cantalice | 17 | 16 | primavera-nuvoloso | 1600×1200 |
+| antrodoco | 17 | 17 | nessuna: stagione non riconoscibile con certezza | 1600×1198, 1600×1199, 1600×1200 |
 | rascino | 17 | 16 | estate-sereno | 1200×1600 |
 
-Zone ancora in lavorazione: antrodoco, cicolano, laga, tancia.
+Zone ancora in lavorazione: cicolano, laga, tancia.
 
 Ogni variante deriva dalla foto originale della propria zona, mai da una variante generata. I confronti in sovrapposizione controllano inquadratura, scala e riferimenti fissi; i casi rigenerati e gli eventuali limiti sono registrati sotto. Le immagini restano trasformazioni generate, non fotografie reali della stagione/meteo mostrati. La sorgente di Vallonina misura600×450: singoli alberi, foglie e dettagli fini ricostruiti non possono essere certificati identici alla fonte. Nessun ritaglio o deformazione è usato per mascherare derive di inquadratura.
 
@@ -141,6 +142,11 @@ Le derivate delle foto CC BY-SA restano sotto la corrispondente CC BY-SA; per Va
 ### Dubbi, confronti e limiti delle copertine
 
 - vallonina/estate-sereno: Foto originale600x450: il ridimensionamento richiesto a1600px non aggiunge dettaglio fotografico.
+- antrodoco/inverno-nebbia: La nebbia vela parti del crinale e delle rupi, quindi la verifica di corrispondenza riguarda le parti visibili.
+- antrodoco/inverno-neve: La nevicata vela parte del paesaggio, quindi la verifica di corrispondenza riguarda le parti visibili.
+- antrodoco/primavera-nebbia: La nebbia vela parti del crinale e delle rupi, quindi la verifica di corrispondenza riguarda le parti visibili.
+- antrodoco/estate-nebbia: La nebbia vela parti del crinale e delle rupi, quindi la verifica di corrispondenza riguarda le parti visibili.
+- antrodoco/autunno-nebbia: La nebbia vela parti del crinale e delle rupi, quindi la verifica di corrispondenza riguarda le parti visibili.
 
 Controllo incrociato indipendente: Poggio-Cantalice/Tancia (34 immagini) e Laga/Rascino/Antrodoco (51 immagini), incluse le piogge a scala1:1; nessun problema materiale rilevato dopo le correzioni. Rascino: nebbia e nevicata invernali rigenerate per uno spostamento di cima/riva. Tancia: tre prime piogge scartate e rigenerate con precipitazione più leggibile.
 
@@ -149,6 +155,8 @@ Arrotondamenti senza deformazione: Antrodoco ha lato corto1198–1200px rispetto
 Tancia: il WebP effettivo della fonte è1600×900; eventuali dimensioni maggiori riportate nei metadati non aggiungono dettaglio alla copia disponibile.
 
 Il controllo finale decodifica ogni WebP completo e confronta byte per byte la sua bozza. Alcuni file locali erano risultati vuoti dopo un salvataggio precedente: sono stati ripristinati dalle bozze integre o dai PNG selezionati e ricontrollati prima della pubblicazione.
+
+Cicolano: controllo indipendente dei17 finali e delle16 sovrapposizioni generate. Primavera-pioggia rigenerata dalla foto originale dopo il riscontro di precipitazione troppo poco leggibile; la nuova versione passa anche il controllo a600px e nei ritagli a scala nativa. Otto tentativi scartati in totale: sette per proporzioni/fasce del panorama e uno per la leggibilità della pioggia. Nessuna variante mancante.
 
 # Foto candidate da Wikimedia Commons per le otto zone senza foto
 

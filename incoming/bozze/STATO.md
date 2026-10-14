@@ -34,6 +34,23 @@ Bozze correnti per revisione. Le versioni definitive sono separate in incoming/i
 | icone/tavola-28.png | agaricus-sylvicola, agaricus-xanthodermus, entoloma-sinuatum | ok | QA anatomica completata; dubbi dei dati da leggere in NOTE. |
 | icone/tavola-29.png | pleurotus-ostreatus, pleurotus-eryngii, pleurotus-cornucopiae | ok | QA anatomica completata; dubbi dei dati da leggere in NOTE. |
 | icone/tavola-30.png | fistulina-hepatica | ok | QA anatomica completata; dubbi dei dati da leggere in NOTE. |
+| luoghi/antrodoco-autunno-nebbia.webp | antrodoco: autunno-nebbia | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
+| luoghi/antrodoco-autunno-nuvoloso.webp | antrodoco: autunno-nuvoloso | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
+| luoghi/antrodoco-autunno-pioggia.webp | antrodoco: autunno-pioggia | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
+| luoghi/antrodoco-autunno-sereno.webp | antrodoco: autunno-sereno | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
+| luoghi/antrodoco-estate-nebbia.webp | antrodoco: estate-nebbia | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
+| luoghi/antrodoco-estate-nuvoloso.webp | antrodoco: estate-nuvoloso | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
+| luoghi/antrodoco-estate-pioggia.webp | antrodoco: estate-pioggia | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
+| luoghi/antrodoco-estate-sereno.webp | antrodoco: estate-sereno | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
+| luoghi/antrodoco-inverno-nebbia.webp | antrodoco: inverno-nebbia | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
+| luoghi/antrodoco-inverno-neve.webp | antrodoco: inverno-neve | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
+| luoghi/antrodoco-inverno-nuvoloso.webp | antrodoco: inverno-nuvoloso | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
+| luoghi/antrodoco-inverno-pioggia.webp | antrodoco: inverno-pioggia | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
+| luoghi/antrodoco-inverno-sereno.webp | antrodoco: inverno-sereno | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
+| luoghi/antrodoco-primavera-nebbia.webp | antrodoco: primavera-nebbia | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
+| luoghi/antrodoco-primavera-nuvoloso.webp | antrodoco: primavera-nuvoloso | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
+| luoghi/antrodoco-primavera-pioggia.webp | antrodoco: primavera-pioggia | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
+| luoghi/antrodoco-primavera-sereno.webp | antrodoco: primavera-sereno | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
 | luoghi/poggio-cantalice-autunno-nebbia.webp | poggio-cantalice: autunno-nebbia | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
 | luoghi/poggio-cantalice-autunno-nuvoloso.webp | poggio-cantalice: autunno-nuvoloso | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
 | luoghi/poggio-cantalice-autunno-pioggia.webp | poggio-cantalice: autunno-pioggia | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
