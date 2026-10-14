@@ -580,6 +580,13 @@ function weatherWork(text,busy=false){
   const box=$('#weather-work');if(!box)return;
   box.hidden=!text;box.classList.toggle('busy',busy);box.querySelector('.weather-work-label').textContent=text||'';
 }
+// meteo arrivato solo in parte: lo diciamo una volta per sessione, poi resta la nota accanto all'orario
+const PARTIAL_NOTICE='fungaroli:partial-weather-notice';
+function partialWeatherNotice(missing){
+  try{if(sessionStorage.getItem(PARTIAL_NOTICE))return;sessionStorage.setItem(PARTIAL_NOTICE,'1');}catch{/* privato: mostrato a ogni avvio */}
+  const body=missing?'Per alcune zone il meteo non è arrivato: per ora non le valutiamo.':'Alcuni dati non sono arrivati: per quelli usiamo l’ultimo meteo salvato.';
+  weatherToast(`<span class="toast-text"><strong>Meteo aggiornato in parte</strong><span>${body} Non devi fare nulla, riproviamo alla prossima apertura.</span></span>`,9000,'top',{countdown:true});
+}
 function weatherStamp(w,busy=weatherBusy){
   if(!w||!Number.isFinite(w.fetchedAt?.getTime()))return;
   const sameDay=todayISO(w.fetchedAt)===todayISO();
@@ -645,8 +652,9 @@ async function refreshWeather(force){
     weatherStamp(latest||lastWeatherSnapshot,false);
     const partial=latest?.stale||latest?.missingZones?.length||latest?.failedZones?.length||mainFailure||outingPartial;
     if(partial){$('#updated').textContent+=' · aggiornamento parziale';}
-    if(!deferredWeatherView)weatherWork(partial?'Aggiornamento parziale · dati salvati':'',false);
-    if(received){weatherToast(partial?'Meteo aggiornato in parte':'Meteo aggiornato',4000,'top');}
+    if(!deferredWeatherView)weatherWork('',false);
+    if(partial)partialWeatherNotice(latest?.missingZones?.length);
+    else if(received)weatherToast('Meteo aggiornato',4000,'top');
   }else{
     weatherWork('');$('#updated').textContent='';weatherUnavailable=true;prepareCalendarFallback();
     if(state.target==='piante'){compute();renderAll();return;}
@@ -688,7 +696,10 @@ function alternativeFor(z, o, d) {
 }
 // icona meteo con il suo colore (sole ambra, pioggia blu, temporale viola, neve azzurro)
 const wxi = (w) => `<span class="wxi wxi-${wxIcon(w)}">${IC[wxIcon(w)]}</span>`;
-const wxIcon = (w) => (!w?.available ? 'unknown' : w?.thunder ? 'storm' : w?.snow ? 'snow' : w && (w.rain >= 0.5 || w.prob >= 50) ? 'rain' : 'sun');
+// l'icona mostra il problema principale, nello stesso ordine di gravità del testo: mai il sole con vento forte o nebbia
+const wxIcon = (w) => (!w?.available ? 'unknown' : w.thunder ? 'storm' : w.snow ? 'snow' : (w.rain >= 0.5 || w.prob >= 50) ? 'rain' : w.gust >= 40 ? 'wind' : w.fog ? 'fog' : w.prob >= 20 ? 'cloud' : 'sun');
+// indice con il pallino del suo colore: lo stesso segno ovunque compare un indice
+const idxDot = (sc) => `<span class="idx-dot" title="${esc(scoreLabel(sc))}"><i aria-hidden="true" style="background:var(${scoreVar(sc).replace('--s', '--ps')})"></i><b class="pc">${formatIndex(sc)}</b></span>`;
 
 function compute(changed=null) {
   const sp = selectedSpecies();
@@ -1048,6 +1059,9 @@ const IC = {
   sun: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"/></svg>',
   rain: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 15a4 4 0 0 1 .5-8A5.5 5.5 0 0 1 18 8.5 3.5 3.5 0 0 1 17.5 15z"/><path d="M9 18l-1 2.5M13 18l-1 2.5M17 18l-1 2.5"/></svg>',
   storm: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 14a4 4 0 0 1 .5-8A5.5 5.5 0 0 1 18 7.5 3.5 3.5 0 0 1 17.5 14z"/><path d="M12.5 13l-2.5 4h3l-2 4"/></svg>',
+  wind: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9h11a3 3 0 1 0-3-3M3 13h15a3 3 0 1 1-3 3M3 17h7"/></svg>',
+  fog: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 12a4 4 0 0 1 .5-8A5.5 5.5 0 0 1 18 5.5 3.5 3.5 0 0 1 17.5 12z"/><path d="M4 16h16M6 20h12"/></svg>',
+  cloud: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18a4.5 4.5 0 0 1 .5-9A6 6 0 0 1 19 10a4 4 0 0 1-.5 8z"/></svg>',
   snow: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 14a4 4 0 0 1 .5-8A5.5 5.5 0 0 1 18 7.5 3.5 3.5 0 0 1 17.5 14z"/><path d="M9 18h.01M12 20h.01M15 18h.01"/></svg>',
 };
 // affollamento in parole (il livello resta basso/medio/alto per i colori)
@@ -1065,7 +1079,7 @@ function discoveriesHtml(z,d,walk,items=discoveriesFor(z,d,walk)){
  if(!items.length)return '';
  return `<p class="discovery-intro">Potresti incontrare anche queste specie. ${items[0].scope==='tracciato'?'Ambienti campionati sul tratto del sentiero':'Compatibilità con gli ambienti della zona'}: presenza da verificare.</p><ul class="discovery-grid">${items.map(item=>{
   const key=`${z.id}/${item.date}/${item.kind}/${item.id}`;discoveryItems.set(key,item);
-  return `<li><a href="${esc(item.href)}" data-discovery="${esc(key)}" data-entity class="discovery-link">${item.kind==='pianta'?plantThumb(item.id,44):treeThumb(item.id,44)}<span><small>${item.kind==='albero'?'Albero':plantRecord(item.id)?.category||'Pianta'}</small><b>${esc(item.name)}</b><small>${esc(item.phase)}</small></span><span aria-hidden="true">›</span></a><button type="button" class="link-btn small" data-note-kind="${item.kind}" data-note-id="${esc(item.id)}" data-note-zone="${z.id}" data-note-title="${esc(item.name)}">＋ Annota</button></li>`;
+  return `<li><a href="${esc(item.href)}" data-discovery="${esc(key)}" data-entity class="discovery-link">${item.kind==='pianta'?plantThumb(item.id,44):treeThumb(item.id,44)}<span><small>${item.kind==='albero'?'Albero':plantRecord(item.id)?.category||'Pianta'}</small><b>${esc(item.name)}</b><small>${esc(item.phase)}</small></span><span aria-hidden="true">›</span></a></li>`;
  }).join('')}</ul><a href="#/piante" class="discovery-catalog">Altre piante in Scopri →</a>`;
 }
 function renderDiscoveries(box,z,d,walk){
@@ -1126,7 +1140,7 @@ function renderHome() {
       <span class="cover-body">
         <span class="cover-title">${esc(title)}</span>${sub ? `<span class="cover-sub">${esc(sub)}</span>` : ''}
         ${hero.walk ? `<span class="cover-walk"><b>${esc(hero.walk.microzone)}</b><span>${esc(walkBrief(hero.walk))}</span></span>` : ''}
-        <span class="cover-sp">${thumb(hero.d.best.species.id, 44)}<span><small>${hero.d.best.kind==='plant'?'Da osservare · '+esc(hero.d.best.phaseLabel)+' · indice sperimentale':'Da conoscere in questi boschi'}</small><span class="cover-sp-name"><b>${esc(hero.d.best.species.name)}</b> ${reportBadge(hero.z.id, hero.d.best.species.id)}</span>
+        <span class="cover-sp">${thumb(hero.d.best.species.id, 44)}<span><small>${hero.d.best.kind==='plant'?'Da osservare · '+esc(hero.d.best.phaseLabel)+' · indice sperimentale':'Da conoscere in questi boschi'}</small><span class="cover-sp-name"><b>${esc(hero.d.best.species.name)}</b>${Number.isFinite(hero.d.best.score) ? ` <span class="sp-also-score sp-main-score"><i aria-hidden="true" style="background:var(${scoreVar(hero.d.best.score).replace('--s', '--ps')})"></i><b class="pc">${formatIndex(hero.d.best.score)}</b></span>` : ''} ${reportBadge(hero.z.id, hero.d.best.species.id)}</span>
           <small>${intornoA(hero.d.best.band)} ${hero.d.best.band} m${also.length ? ` · anche ${also.join('')}` : ''}</small></span></span>
         <span class="facts" aria-label="L'uscita in breve">${t ? fact('clock', `<span class="fk">entro le </span><b>${fmtRough(t.arrive, 15, 'floor')}</b>`) : ''}${fact('car', `<span><b>${compactTravel(zoneTrip(hero.z,hero.walk))}</b></span>`)}${state.target==='funghi'&&hero.d.crowd ? fact('people', crowdText(hero.d.crowd)) : ''}${w0 ? `<span class="fact wx-${w0.level}" title="${esc(w0.text)}">${wxi(w0)}<span class="fx">${esc(w0.level === 'ok' ? w0.main : (w0.short || w0.main))}</span></span>` : ''}</span>
         ${note}
@@ -1472,11 +1486,29 @@ function mapCard({ title, sub, pct, rows = [], more = 0, foot = '', interactive 
 const canHover = matchMedia('(hover: hover) and (pointer: fine)').matches;
 // i riquadri sono disegnati su una tela che non prende il mouse (sotto ci sono cerchi e sentieri):
 // il riquadro sotto il puntatore si trova dalla posizione (cellHits) e si evidenzia con un contorno a parte
-let cellHits = [], peekCellBounds = [], cellHi = null, cellTip = null;
+let cellHits = [], peekCellBounds = [], cellHi = null, cellTip = null, cellPeek = null;
 let cellCardTimer = null, cellPinned = false, cellDoubleClickZoom = false;
 function cancelCellCardTimer() { clearTimeout(cellCardTimer); cellCardTimer = null; }
+// al passaggio del mouse solo un'etichetta compatta; la scheda completa si apre col clic (o Invio)
+function hideCellPeek() { cellPeek?.remove(); cellPeek = null; if (!cellTip) { cellHi?.remove(); cellHi = null; } map?.getContainer().classList.remove('cell-pointer'); }
+function highlightCell({ c, dLat, dLon }) {
+  const b = [[c.lat - dLat, c.lon - dLon], [c.lat + dLat, c.lon + dLon]];
+  if (!cellHi) cellHi = L.rectangle(b, { interactive: false, color: '#fff', weight: 2.5, fill: false, className: 'cell-hi' }).addTo(map);
+  else cellHi.setBounds(b);
+}
+function showCellPeek(h) {
+  const { c, dLat } = h;
+  if (cellPeek?._fz === c) return;
+  highlightCell(h);
+  const best = c.parts[0];
+  const html = `<span class="cell-peek-p" style="--c:var(${scoreVar(c.v)})"><b class="pc">${scoreText(c.v)}</b>${best ? `<span>${esc(best.sp.name.split(' / ')[0])}</span>` : ''}</span><span class="cell-peek-s">${esc(c.cat)} · ${c.e} m s.l.m. · clic per i dettagli</span>`;
+  const position = [c.lat + dLat, c.lon];
+  if (!cellPeek) cellPeek = L.tooltip({ className: 'zone-tt cell-peek', interactive: false, permanent: true, direction: 'top', offset: [0, -6], opacity: 1 }).setLatLng(position).setContent(html).addTo(map);
+  else cellPeek.setLatLng(position).setContent(html);
+  cellPeek._fz = c; map.getContainer().classList.add('cell-pointer');
+}
 function closeCellCard() {
-  cancelCellCardTimer(); cellPinned = false;
+  cancelCellCardTimer(); cellPinned = false; hideCellPeek();
   const restoreFocus = cellTip?.getElement()?.contains(document.activeElement);
   const card = cellTip?.getElement();
   if (card) { card.inert = true; card.style.pointerEvents = 'none'; }
@@ -1493,12 +1525,12 @@ function deferCellCard(action = closeCellCard) {
 function initCellInteractions() {
   if (canHover) {
     map.on('mousemove', hoverCell);
-    map.getContainer().addEventListener('mouseleave', () => deferCellCard());
+    map.getContainer().addEventListener('mouseleave', hideCellPeek);
   }
   map.on('click', e => { if (!pinCellCard(e)) closeCellCard(); });
-  map.on('dragstart zoomstart', closeCellCard);
+  map.on('dragstart zoomstart', closeCellCard); map.on('dragstart zoomstart', hideCellPeek);
   map.getContainer().setAttribute('aria-keyshortcuts', 'Enter');
-  map.getContainer().setAttribute('aria-label', 'Mappa delle zone. Premi Invio per esplorare il riquadro più vicino al centro.');
+  map.getContainer().setAttribute('aria-label', 'Mappa delle zone. Premi Invio per aprire l’area più vicina al centro.');
   map.getContainer().addEventListener('keydown', e => {
     if (e.key !== 'Enter' || e.target !== map.getContainer() || !$('#map').classList.contains('cells-on')) return;
     const center = map.getCenter(), bounds = map.getBounds();
@@ -1515,7 +1547,7 @@ function initCellInteractions() {
 function pinCellCard(e) {
   const h = $('#map').classList.contains('cells-on') && cellAt(e.latlng);
   if (!h) return false;
-  cancelCellCardTimer(); showCellCard(h); cellPinned = true;
+  cancelCellCardTimer(); cellPeek?.remove(); cellPeek = null; showCellCard(h); cellPinned = true;
   return true;
 }
 function cellsLayer(z, d, interactive = true) {
@@ -1537,34 +1569,26 @@ function cellAt(ll) {
   return null;
 }
 function hoverCell(e) {
-  if (cellPinned || cellTip?.getElement()?.contains(e.originalEvent?.target)) return;
-  if (e.originalEvent?.target?.closest('.leaflet-control')) { deferCellCard(); return; }
-  const h = map && $('#map').classList.contains('cells-on') ? cellAt(e.latlng) : null;
-  if (!h) { deferCellCard(); return; }
-  if (cellTip?._fz === h.c) { cancelCellCardTimer(); return; }
-  // A short grace period lets the pointer cross the gap, or another sample,
-  // on its way into the fixed card without replacing its content underneath it.
-  if (cellTip) deferCellCard(() => {
-    const current = cellHits.find(hit => hit.c.lat === h.c.lat && hit.c.lon === h.c.lon);
-    if (current) showCellCard(current); else closeCellCard();
-  }); else showCellCard(h);
+  // con la scheda aperta l'etichetta non serve: la scheda resta finché non si chiude
+  if (cellTip) { if (cellPeek) { cellPeek.remove(); cellPeek = null; } return; }
+  const target = e.originalEvent?.target;
+  const h = map && $('#map').classList.contains('cells-on') && !target?.closest('.leaflet-control,.leaflet-marker-icon') ? cellAt(e.latlng) : null;
+  if (h) showCellPeek(h); else hideCellPeek();
 }
 function showCellCard(h, preserveTimer = false) {
   if (!preserveTimer) cancelCellCardTimer();
-  const { c, dLat, dLon } = h;
-  const b = [[c.lat - dLat, c.lon - dLon], [c.lat + dLat, c.lon + dLon]];
-  if (!cellHi) cellHi = L.rectangle(b, { interactive: false, color: '#fff', weight: 2.5, fill: false, className: 'cell-hi' }).addTo(map);
-  else cellHi.setBounds(b);
-  const html = mapCard({ title: 'Questo riquadro', sub: `${esc(c.cat)} · ${c.e} m · campione ${c.size} m`, pct: c.v, interactive: true,
+  const { c } = h;
+  highlightCell(h);
+  const html = mapCard({ title: `Area di ${c.size} × ${c.size} m`, sub: `${esc(c.cat)} · ${c.e} m s.l.m.`, pct: c.v, interactive: true,
     rows: c.parts.slice(0, 3).map((x) => ({ name: x.sp.name.split(' / ')[0], v: x.v })), more: Math.max(0, c.parts.length - 3),
     foot: 'Campione di habitat: verifica alberi ospiti, divieti e condizioni sul posto.' });
-  const content = `${html}<button type="button" class="cell-card-close" data-cell-close aria-label="Chiudi il riquadro">×</button>`;
+  const content = `${html}<button type="button" class="cell-card-close" data-cell-close aria-label="Chiudi la scheda dell’area">×</button>`;
   const position = [c.lat, c.lon];
   if (!cellTip) {
     cellDoubleClickZoom ||= map.doubleClickZoom.enabled(); map.doubleClickZoom.disable();
     cellTip = L.tooltip({ className: 'zone-tt cell-card', interactive: true, permanent: true, direction: 'center', opacity: 1 }).setLatLng(position).setContent(content).addTo(map);
     const card = cellTip.getElement();
-    card.setAttribute('role', 'dialog'); card.setAttribute('aria-label', 'Questo riquadro');
+    card.setAttribute('role', 'dialog');
     L.DomEvent.disableClickPropagation(card); L.DomEvent.disableScrollPropagation(card);
     card.addEventListener('mouseenter', cancelCellCardTimer);
     card.addEventListener('mouseleave', () => deferCellCard());
@@ -1573,6 +1597,7 @@ function showCellCard(h, preserveTimer = false) {
   } else { cellTip.setLatLng(position); if (cellTip._fhtml !== content) cellTip.setContent(content); }
   // Keep the card within the map even when its sample is near an edge.
   const card = cellTip.getElement(), point = map.latLngToContainerPoint(position), size = map.getSize();
+  card.setAttribute('aria-label', `Area di ${c.size} × ${c.size} m`);
   const halfW = card.offsetWidth / 2, halfH = card.offsetHeight / 2;
   const x = Math.max(halfW + 8, Math.min(size.x - halfW - 8, point.x));
   const above = point.y - halfH - 10;
@@ -1604,6 +1629,7 @@ function renderMap(changed=null) {
   const revision=++mapRenderRevision;
   const want = map.getZoom() >= 11.5 || !!state.zoneId;
   const displayedCell = cellTip?._fz;
+  if (cellPeek) hideCellPeek(); // l'etichetta torna al prossimo movimento del mouse
   if (!want) closeCellCard();
   const had = mapEl.classList.contains('cells-on');
   const slow = !matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -1793,17 +1819,17 @@ function essentialSections(z, d, walk) {
   rows.push({ sec: 'specie', icon: 'find', thumb: best.species.id, k: 'Cosa osservare', v: `<button type="button" class="sp-inline" data-species="${best.species.id}">${esc(best.species.name)}</button> ${intornoA(best.band)} <b>${best.band} m</b>`,
     sub: [whereSummary(best.species.id) && `<span class="plan-where">${linkTrees(whereSummary(best.species.id))}</span>`,
       criticalRule(best.species.id) && `<span class="plan-crit">⚠ ${esc(criticalRule(best.species.id))}</span>`,
-      d.perSpecies.slice(1, 3).map((p) => [p, spScore(z, d, p)]).filter(([, sc]) => sc >= 20).map(([p, sc]) => `${speciesLink(p.species)} ${formatIndex(sc)}/10`).join(' · ')].filter(Boolean).join('<br>') || esc(best.species.latin) });
+      d.perSpecies.slice(1, 3).map((p) => [p, spScore(z, d, p)]).filter(([, sc]) => sc >= 20).map(([p, sc]) => `${speciesLink(p.species)} ${idxDot(sc)}`).join(' · ')].filter(Boolean).join('<br>') || esc(best.species.latin) });
   if (d.crowd &&state.target==='funghi') {
     const t = timingAdvice({ dateStr: d.date, lat: z.lat, lon: z.lon, crowd: d.crowd });
     rows.push({ sec: 'quando', icon: 'when', k: 'Quando', v: `Arriva <b>entro le ${fmtRough(t.arrive, 15, 'floor')}</b> <span class="badge crowd-${d.crowd.level}">${crowdText(d.crowd)}</span>`,
-      sub: `alba verso le ${fmtRough(t.sunrise, 5)} · raccolta dalle ${fmtRough(t.legal, 5, 'ceil')}` });
+      sub: `alba verso le ${fmtRough(t.sunrise, 5)} · raccolta consentita dalle ${fmtRough(t.legal, 5, 'ceil')}` });
   }  const w = wxOf(z, d);
   if (w) {
     const alt = alternativeFor(z, state.dayOffset, d);
     rows.push({ sec: 'quando', svg: wxi(w), k: 'Meteo dell\'uscita', badge: `<span class="badge wx-b wx-${w.level}">${OUTING_SHORT[w.level]}</span>`,
       v: `${esc(w.text.replace(/^./, (c) => c.toUpperCase()))}`,
-      sub: alt ? `<span class="plan-alt">Puoi andare a <a href="#/zona/${alt.z.id}/${state.dayOffset}">${esc(splitName(alt.z)[0])}</a>: ${esc(alt.w.main)}, indice ${formatIndex(alt.s)}.</span>`
+      sub: alt ? `<span class="plan-alt">Puoi andare a <a href="#/zona/${alt.z.id}/${state.dayOffset}">${esc(splitName(alt.z)[0])}</a>: ${esc(alt.w.main)}, ${state.target==='piante'?'indice piante':'indice funghi'} ${idxDot(alt.s)}.</span>`
         : w.available ? `Mattina, dalle ${w.from}:00 alle 13 · quota centrale. Verifica percorso e rientro${w.thunder ? ' · uscita sconsigliata con temporali' : ''}` : 'Aggiorna le previsioni prima di decidere.' });
   }
 
