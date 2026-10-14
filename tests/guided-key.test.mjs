@@ -68,3 +68,15 @@ test('the next question always splits the remaining candidates until none helps'
   }
   assert.ok(candidatesFor(plantsKey, plantItems, ans).some((c) => c.id === 'ortica'));
 });
+
+test('every flower of the plant catalogue has key traits, and orchid answers bring the spurred purple orchids up', () => {
+  const flowers = Object.entries(read('plants').plants).filter(([, p]) => p.category === 'Fiori').map(([id]) => id);
+  assert.ok(flowers.length >= 12);
+  for (const id of flowers) assert.ok(plantsKey.items[id], `${id}: manca nel percorso guidato`);
+  // fiore con labello tipo orchidea, rosa-viola, con sperone
+  const list = candidatesFor(plantsKey, plantItems, { flower_shape: 'labello', flower_color: 'rosa', special: 'sperone' });
+  assert.ok(list.slice(0, 3).some((c) => c.id === 'orchide-maschia' || c.id === 'orchide-purpurea'));
+  assert.ok(list.slice(0, 3).every((c) => c.traits.flower_shape?.includes('labello')));
+  // le coppie di confronto citano solo schede presenti
+  for (const c of plantsKey.confusables) for (const id of c.ids) assert.ok(plantsKey.items[id], `${c.title}: ${id}`);
+});
