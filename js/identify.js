@@ -4,7 +4,8 @@
 import { openLightbox, captionHtml } from './lightbox.js';
 import { openEntitySheet } from './entity-sheet.js';
 import { soft, tick, canVT } from './motion.js';
-import { matchTraits, retainCandidate } from './identify-model.js';
+import { matchTraits, retainCandidate, traitQuestions, traitSimilarity } from './identify-model.js';
+const TQ = (key) => traitQuestions().find((q) => q.key === key);
 
 const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const norm = (s) => String(s ?? '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
@@ -116,17 +117,10 @@ const BASE = {
   radicante: stemArt('M27 14 V52 L31 62 L33 62 L37 52 V14 Z'),
   assottigliata: stemArt('M25 14 L29 54 H35 L39 14 Z'),
 };
-const SEASONS = { primavera: [3, 4, 5], estate: [6, 7, 8], autunno: [9, 10, 11], inverno: [12, 1, 2] };
 const MESE_IT = ['gennaio', 'febbraio', 'marzo', 'aprile', 'maggio', 'giugno', 'luglio', 'agosto', 'settembre', 'ottobre', 'novembre', 'dicembre'];
-const monthsOf = (v) => (v === 'adesso' ? [new Date().getMonth() + 1] : SEASONS[v] || []);
-const TREE_GROUPS = {
-  faggio: ['faggio'], castagno: ['castagno'], querce: ['cerro', 'roverella', 'rovere', 'farnia', 'farnetto', 'leccio', 'sughera'],
-  pini: ['pino nero', 'pino silvestre', 'pino domestico', "pino d'aleppo", 'pino marittimo'], abeti: ['abete bianco', 'abete rosso'],
-  betulla: ['betulla'], carpino: ['carpino nero', 'carpino bianco', 'nocciolo'], 'legno morto': ['ceppaie e legno morto di latifoglie'],
-};
 const FLESH = { nessuno: '#efe6d0', blu: '#2f5fb3', rosso: '#b23a2c', giallo: '#e2b52f', bruno: '#7a5434', nero: '#2b2826' };
 const QUESTIONS = [
-  { weight: 1.4, key: 'hymenophore', label: 'Cosa c\'è sotto il cappello?', short: 'Sotto il cappello', values: ['lamelle', 'pori', 'aculei', 'pliche', 'liscio'], icon: (v) => HYM_ICON[v], hint: 'Gira il fungo e guarda la parte sotto il cappello.',
+  { ...TQ('hymenophore'), label: 'Cosa c\'è sotto il cappello?', short: 'Sotto il cappello', values: ['lamelle', 'pori', 'aculei', 'pliche', 'liscio'], icon: (v) => HYM_ICON[v], hint: 'Gira il fungo e guarda la parte sotto il cappello.',
     tip: { title: 'Lamelle, pori, aculei: come si distinguono', items: [
       ['lamelle', 'Lamelle', 'Lamine sottili, come le pagine di un libro, che vanno dal gambo al bordo. Es. ovolo, prataiolo.'],
       ['pori', 'Pori', 'Una spugna di tubetti con tanti forellini. Si stacca dalla carne come un cuscinetto. Es. porcino.'],
@@ -145,13 +139,11 @@ const QUESTIONS = [
   { key: 'growth', label: 'Come cresce?', short: 'Crescita', values: ['singolo', 'gregario', 'cespitoso'], art: (v) => ART[v], labels: { singolo: 'da solo', gregario: 'a gruppi sparsi', cespitoso: 'a cespi, uniti alla base' } },
   { key: 'cap_shape', label: 'Che forma ha il cappello?', short: 'Forma', values: Object.keys(SHAPE), art: (v) => SHAPE[v], labels: { imbuto: 'a imbuto, depresso', trombetta: 'a trombetta', ombrellato: 'a ombrello, con umbone', conico: 'conico o a campana' }, hint: 'Guardalo di profilo. Nei funghi giovani il cappello è più chiuso.' },
   { key: 'cap_size', label: 'Quanto è grande il cappello?', short: 'Dimensione', values: ['piccolo', 'medio', 'grande'], art: (v) => SIZE({ piccolo: 0.45, medio: 0.72, grande: 1 }[v]), labels: { piccolo: 'fino a 5 cm', medio: 'da 5 a 12 cm', grande: 'oltre 12 cm' }, hint: 'Il diametro. Una carta di credito è lunga 8,5 cm.' },
-  { weight: 0.85, key: 'trees', label: 'Vicino a quali alberi?', short: 'Alberi', values: Object.keys(TREE_GROUPS), text: true, get: (t) => t.trees,
-    match: (tv, v) => tv.some((x) => TREE_GROUPS[v].includes(x)), labels: { querce: 'querce (cerro, roverella, leccio)', pini: 'pini', abeti: 'abeti', carpino: 'carpino o nocciolo', 'legno morto': 'su legno morto' },
+  { ...TQ('trees'), label: 'Vicino a quali alberi?', short: 'Alberi', text: true, labels: { querce: 'querce (cerro, roverella, leccio)', pini: 'pini', abeti: 'abeti', carpino: 'carpino o nocciolo', 'legno morto': 'su legno morto' },
     hint: 'Molti funghi vivono in simbiosi con alberi precisi: guarda quelli entro pochi metri.' },
-  { weight: 0.75, key: 'smell', label: 'Che odore ha?', short: 'Odore', values: ['gradevole', 'farina', 'anice', 'rapa/terroso', 'sgradevole', 'nessuno'], text: true,
+  { ...TQ('smell'), label: 'Che odore ha?', short: 'Odore', values: ['gradevole', 'farina', 'anice', 'rapa/terroso', 'sgradevole', 'nessuno'], text: true,
     labels: { gradevole: 'gradevole, di fungo', farina: 'di farina', anice: 'di anice', 'rapa/terroso': 'di rapa o terra', sgradevole: 'sgradevole', nessuno: 'quasi nessuno' }, hint: 'Annusa la carne appena tagliata e le lamelle. Non assaggiare.' },
-  { weight: 0.5, key: 'season', label: 'Quando l\'hai trovato?', short: 'Quando', values: ['adesso', 'primavera', 'estate', 'autunno', 'inverno'], text: true,
-    match: (tv, v) => monthsOf(v).some((m) => tv.includes(m)), labels: { adesso: `adesso (${MESE_IT[new Date().getMonth()]})` } },
+  { ...TQ('season'), label: 'Quando l\'hai trovato?', short: 'Quando', values: ['adesso', ...TQ('season').values], text: true, labels: { adesso: `adesso (${MESE_IT[new Date().getMonth()]})` } },
   { key: 'gill_attachment', label: 'Come si attaccano le lamelle al gambo?', short: 'Attaccatura', values: Object.keys(ATTACH), art: (v) => ATTACH[v],
     labels: { libere: 'libere, non toccano il gambo', adnate: 'attaccate dritte', smarginate: 'con una tacca vicino al gambo', decorrenti: 'scendono sul gambo' },
     when: () => ['lamelle', 'pliche'].includes(state.ans.hymenophore), hint: 'Taglia il fungo a metà dall\'alto in basso e guarda dove le lamelle incontrano il gambo.' },
@@ -161,11 +153,11 @@ const QUESTIONS = [
     labels: { asciutta: 'asciutta, opaca', liscia: 'liscia', viscida: 'viscida, appiccica', squamosa: 'con squame', 'vellutata/feltrata': 'vellutata' }, hint: 'Toccala con un dito. Con il bagnato molti cappelli sembrano viscidi.' },
   { key: 'latex', label: 'Spezzando una lamella esce un lattice?', short: 'Lattice', bool: true, art: (v) => LATEX[v], labels: { true: 'sì, gocce di "latte"', false: 'no' },
     when: () => !['pori', 'aculei'].includes(state.ans.hymenophore), hint: 'Rompi il bordo di una lamella o il gambo: nei lattari escono subito gocce bianche o colorate.' },
-  { weight: 0.85, key: 'flesh_texture', label: 'Come si spezza il gambo?', short: 'Gambo', values: Object.keys(TEXTURE), art: (v) => TEXTURE[v],
+  { ...TQ('flesh_texture'), label: 'Come si spezza il gambo?', short: 'Gambo', values: Object.keys(TEXTURE), art: (v) => TEXTURE[v],
     labels: { gessosa: 'netto, come un gessetto', fibrosa: 'si sfilaccia in fibre', 'elastica/coriacea': 'si piega, elastico', soda: 'compatto e sodo' }, hint: 'Piegalo tra le dita finché si rompe.' },
   { key: 'stem_base', label: 'Com\'è la base del gambo?', short: 'Base', values: Object.keys(BASE), art: (v) => BASE[v],
     labels: { normale: 'dritta', bulbosa: 'con un bulbo', radicante: 'si allunga nel terreno', assottigliata: 'si assottiglia' }, hint: 'Estrai il fungo intero, senza tagliarlo: la base è spesso decisiva (le amanite mortali hanno bulbo e volva).' },
-  { weight: 0.35, key: 'spore_print', label: 'Di che colore è la sporata?', short: 'Sporata', values: Object.keys(SPORE), art: (v) => sporeArt(v),
+  { ...TQ('spore_print'), label: 'Di che colore è la sporata?', short: 'Sporata', values: Object.keys(SPORE), art: (v) => sporeArt(v),
     labels: { 'bruno-violaceo': 'bruno-violacea', 'verde-oliva': 'bruno oliva' }, hint: 'Facoltativa: chiede qualche ora. Ma è uno dei caratteri più affidabili.',
     tip: { title: 'Come si fa la sporata', steps: ['Taglia il gambo e appoggia il cappello, lamelle in giù, su un foglio metà bianco e metà nero.', 'Copri con un bicchiere perché non secchi.', 'Dopo 2-6 ore solleva il cappello: la polvere rimasta è il colore delle spore.'] } },
   { key: 'stem_reticulum', label: 'Il gambo ha un reticolo in rilievo?', short: 'Reticolo', bool: true, art: (v) => ART[`ret_${v}`], labels: { true: 'sì, una rete', false: 'no, liscio' } },
@@ -178,7 +170,7 @@ const state = { q: '', ans: {}, zone: '', guided: true, compare: '', editing: ''
 export function initIdentify({ traits, media, assetUrl, thumb, potential, zones, banner, howTo }) {
   if (howTo) HOWTO = howTo;
   BANNER = banner || '';
-  TAXA = Object.entries(traits?.taxa || {}).map(([key, t]) => ({ key, ...t }));
+  TAXA = Object.entries(traits?.taxa || {}).map(([key, t]) => ({ key, ...t })); simMemo.clear();
   RULES = traits?.general_rules || [];
   MEDIA = media || {}; if (assetUrl) ASSET = assetUrl; if (thumb) THUMB = thumb; if (potential) POTENTIAL = potential; ZONES = zones || [];
 }
@@ -329,27 +321,12 @@ function resultCard(c) {
 
 // --- confronto con i sosia (dalla scheda della specie) ---
 const refOf = (edibleId) => TAXA.find((t) => t.edible_id === edibleId && !t.lookalike_of?.length) || TAXA.find((t) => t.edible_id === edibleId);
-// quanto due funghi si somigliano (0-1), non mostrato: per ogni carattere noto a entrambi la sovrapposizione dei valori
-// (intersezione su unione), pesata come le domande di Riconosci. Con pochi caratteri noti resta vicino a meta'.
+// quanto due funghi si somigliano (0-1, non mostrato): calcolo in identify-model.js, qui solo la memoria
 const simMemo = new Map();
 function similarity(a, b) {
   const id = `${a.key}|${b.key}`;
-  if (simMemo.has(id)) return simMemo.get(id);
-  let s = 0, w = 0;
-  for (const q of QUESTIONS) {
-    let A = traitOf(a, q), B = traitOf(b, q);
-    if (A == null || B == null) continue;
-    A = [].concat(A); B = [].concat(B);
-    if (!A.length || !B.length) continue;
-    if (q.match && q.values) { A = q.values.filter((v) => q.match(A, v)); B = q.values.filter((v) => q.match(B, v)); }
-    const U = new Set([...A, ...B]);
-    if (!U.size) continue;
-    const wq = q.weight ?? 1;
-    s += (wq * A.filter((v) => B.includes(v)).length) / U.size; w += wq;
-  }
-  const r = (s + 1) / (w + 2);
-  simMemo.set(id, r);
-  return r;
+  if (!simMemo.has(id)) simMemo.set(id, traitSimilarity(a, b, TAXA));
+  return simMemo.get(id);
 }
 // i sosia piu' somiglianti per primi; a pari somiglianza il piu' pericoloso
 const sosiaOf = (ref) => TAXA.filter((t) => t !== ref && ref.edible_id && t.lookalike_of?.includes(ref.edible_id))
