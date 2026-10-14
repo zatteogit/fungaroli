@@ -1,4 +1,5 @@
 let GUIDES = [], copy = {};
+export const guideCount = () => GUIDES.length;
 const esc = s => String(s ?? '').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 export function initGuideContent(data,labels={}) {
   // Anche le release CMS già pubblicate usano la nuova terminologia di navigazione.

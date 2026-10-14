@@ -30,7 +30,7 @@ import { FOREST_LEGEND } from './forest-legend.js';
 import { initTrees, renderTreeGrid, renderTreePage, linkTrees, treeForCategory, treeThumb } from './trees.js';
 import { crowding, comfortScore, timingAdvice, fmtTime, fmtRough, holidayName, intornoA } from './human.js';
 import { initCommunity, communityStatus, communityRank, reportBadge } from './community.js';
-import { guideTitle, renderGuideCards, renderGuide, initGuideContent } from './guides.js';
+import { guideTitle, renderGuideCards, renderGuide, initGuideContent, guideCount } from './guides.js';
 import { buildEdibleCatalog, seasonStatus, seasonLabel } from './edible-catalog.js';
 import { mountSpeciesAutocomplete } from './species-autocomplete.js';
 import { uniquePlaceProposals, chooseWalkTrail, walkContext, trailSketch } from './walks.js';
@@ -230,6 +230,7 @@ async function init() {
   document.addEventListener('click',e=>{const b=e.target.closest('[data-species]'),p=b&&botanicalById(b.dataset.species);if(p){e.preventDefault();e.stopImmediatePropagation();openEntitySheet(p.href,b);}},true);
   renderTreeGrid($('#tree-grid'));
   treesData = trj; idData = idj;
+  fillCatalogCounts();
 
   renderFilterSummary(); // ora che c'e' il pregio delle specie, riordina i filtri
   buildSearch(idj, trj, embedded);
@@ -848,6 +849,21 @@ function renderSpeciesGrid() {
 }
 const assetSrc=f=>globalThis.FUNGAROLI_DATA?globalThis.FUNGAROLI_DATA.assets?.[f]||'':f;
 const catalogPhoto = s=>speciesPhoto(s.modelId||s.id)||searchTaxa().find(t=>t.key===s.id)?.photo;
+// In cima a ogni sezione di Scopri: quante schede ci sono (dagli stessi dati che riempiono la pagina, anche se arrivano dal CMS)
+function fillCatalogCounts() {
+  const n = (k, one, many) => `${k} ${k === 1 ? one : many}`;
+  const counts = {
+    specie: n(catalog.length, 'specie di funghi in catalogo', 'specie di funghi in catalogo'),
+    alberi: n(Object.keys(treesData?.trees || {}).length, 'albero in catalogo', 'alberi in catalogo'),
+    piante: n(plants().length, 'pianta in catalogo', 'piante in catalogo'),
+    glossario: n(glossaryTerms().length, 'voce', 'voci'),
+    guide: n(guideCount(), 'guida', 'guide'),
+  };
+  document.querySelectorAll('[data-catalog-count]').forEach((el) => {
+    const text = counts[el.dataset.catalogCount], k = parseInt(text, 10);
+    el.hidden = !k; el.textContent = k ? text : '';
+  });
+}
 function fillSpecies() {
   $('#sp-cards').innerHTML = catalog.map(s => {
     const ph = catalogPhoto(s);
@@ -1791,6 +1807,30 @@ const ICON = {
   trail: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 20c2-4 8-3 8-7s-6-3-6-7"/><circle cx="17" cy="5" r="1.5"/></svg>',
 };
 
+// Il giro a colpo d'occhio, come nelle app outdoor: dati in una riga, profilo con la fascia della specie, boschi lungo il tratto.
+// Solo dati del tratto nella zona: niente dislivello ricavato dai campioni (a passo fisso lo gonfierebbe);
+// la salita della fonte riguarda l'itinerario completo e resta nella scheda aperta.
+function walkGlance(z, t, d) {
+  const sm = (t.samples || []).filter((x) => Number.isFinite(x[0]));
+  const es = sm.map((x) => x[0]);
+  // come nelle app outdoor: il numero sopra, l'etichetta piccola sotto (il testo letto resta «5,4 km nella zona»)
+  const stat = (v, k) => `<li><span class="ws-v">${v}</span> <span class="ws-k">${k}</span></li>`;
+  const stats = [
+    stat(`${fmtKm(t.in_zone_km)}\u00a0km`, 'nella zona'),
+    es.length ? stat(`${Math.min(...es)}–${Math.max(...es)}\u00a0m`, 'quote del tratto') : '',
+    stat(t.difficulty ? difficultyLink(t.difficulty, t.difficulty) : 'n.d.', t.difficulty ? esc(DIFF[t.difficulty] || 'difficoltà') : 'difficoltà'),
+  ].join('');
+  const unlink = (html) => html.replace(/<a [^>]*>(.*?)<\/a>/g, '$1');
+  const profile = unlink(trailProfile(z.id, t, d?.best?.species, d?.best?.band));
+  const cats = trails[z.id]?.sample_categories || [];
+  const counts = {};
+  for (const [, c] of sm) { const k = c >= 0 ? cats[c] : 'non bosco'; if (k) counts[k] = (counts[k] || 0) + 1; }
+  const n = Object.values(counts).reduce((a, b) => a + b, 0);
+  // dentro <summary> niente link: la legenda resta testo, i collegamenti sono nella scheda aperta
+  const forest = n >= 4 ? `<span class="ws-forest"><span class="ws-k">Boschi lungo il tratto</span>${unlink(forestBar(Object.fromEntries(Object.entries(counts).map(([k, v]) => [k, v / n]))))}</span>` : '';
+  return `<span class="walk-glance"><ul class="walk-stats">${stats}</ul>${profile}${forest}</span>`;
+}
+
 function renderWalkFocus(z, d, walk) {
   if (!walk) return `<p class="small muted">Non abbiamo ancora un sentiero documentato per questa zona.</p>`;
   const { t, h } = walk;
@@ -1798,7 +1838,7 @@ function renderWalkFocus(z, d, walk) {
     <summary><span class="walk-summary">
       <span class="eyebrow">La passeggiata, più da vicino</span><span class="walk-title">${esc(walk.microzone)}</span>
       <span class="walk-route">${segnavia(t)}<b>${esc(trailName(t))}</b></span>
-      <span class="walk-summary-facts"><span>${fmtKm(t.in_zone_km)} km nella zona</span><span>${t.difficulty ? difficultyLink(t.difficulty, `${t.difficulty} · ${DIFF[t.difficulty] || 'classificazione della fonte'}`) : 'Difficoltà n.d.'}</span></span>
+      ${walkGlance(z, t, d)}
     </span></summary><div class="sec-body">
     <dl class="walk-facts">
       <div><dt>Difficoltà</dt><dd>${t.difficulty ? difficultyLink(t.difficulty, `${t.difficulty} · ${DIFF[t.difficulty] || 'classificazione della fonte'}`) : 'Non indicata nella fonte'}</dd></div>
