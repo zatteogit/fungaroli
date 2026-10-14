@@ -3084,3 +3084,12 @@ a { text-decoration: none; }
 .fp-reset { min-height: 44px; padding: 0 12px; border: 0; background: none; color: var(--accent); font: inherit; font-size: 15px; font-weight: 600; cursor: pointer; border-radius: 10px; }
 .fp-reset:hover { background: var(--accent-soft); }
 .fp-reset:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+/* stato del meteo: in home parla la riga sotto il titolo, la pillola in basso serve alle altre viste */
+body[data-page="uscite"] #weather-work { display: none; }
+.weather-work.done:before { content: '✓'; display: inline-block; margin-right: .45rem; color: var(--accent); font-weight: 700; }
+#refresh.is-done { color: var(--accent); }
+#refresh.is-done svg { display: none; }
+#refresh.is-done::before { content: '✓'; font-weight: 700; }
+/* in home la nota sul meteo è una riga sotto lo stato, non un riquadro sopra il titolo */
+.view-head .stale { margin: 2px 0 0; padding: 0; background: none; border: 0; font-size: 13px; color: var(--text-2); line-height: 1.45; }
+.view-head .stale .link-btn { margin-left: 2px; }

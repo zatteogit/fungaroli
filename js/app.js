@@ -5,7 +5,7 @@ import {initPlants,plants,plantName,plantRecord,plantThumb,renderPlants,renderPl
 import {botanicalModels} from './botanical-model.js';
 import './theme.js';
 import './images.js';
-import { consumeFresh, freshDone, toast as weatherToast } from './refresh.js';
+import { consumeFresh, freshDone } from './refresh.js';
 import {updateWeatherHTML,reconcileChildren,keepWeatherReadingPosition} from './weather-dom.js';
 import { SPECIES, GROUPS, FOREST } from './species.js';
 import { scoreZoneDay, scoreSpecies, habitatAtBand, habitatPotential, elevationFit, combine, classOf, scoreLabel, scoreShortLabel, formatIndex, MODEL_VERSION, PARAMS, CLASSES } from './model.js';
@@ -455,6 +455,7 @@ function routeNow(r, nav) {
   });
   $('.tabbar')?.style.setProperty('--ti', TABS.indexOf(tab));
   document.body.dataset.page = r.view;
+  placeStale(r.view);
   if (r.view === 'specie-dettaglio') renderSpeciesDetail($('#species-detail'), r.speciesId);
   if (r.view === 'piante') renderPlants($('#plant-grid'));
   if (r.view === 'pianta') renderPlantPage($('#plant-detail'),r.plantId);
@@ -637,21 +638,37 @@ function prepareCalendarFallback(){
 let weatherRevision=0,weatherController=null,weatherBusy=false,weatherPainting=false,deferredWeatherView=false;
 let lastWeatherSnapshot=null,weatherPaintTimer=null;
 const weatherPanelOpen=()=>!!document.querySelector('dialog[open],.learning-panel:popover-open');
-function weatherWork(text,busy=false){
-  const box=$('#weather-work');if(!box)return;
-  box.hidden=!text;box.classList.toggle('busy',busy);box.querySelector('.weather-work-label').textContent=text||'';
+// Stato del meteo, con le stesse parole ovunque: in home nella riga sotto il titolo,
+// nelle altre viste nella pillola in basso (in home la pillola resta nascosta, vedi CSS).
+const WX_BUSY='Sto aggiornando il meteo…',WX_DONE='Meteo aggiornato';
+let weatherWorkTimer=null;
+function weatherWork(text,busy=false,done=false){
+  const box=$('#weather-work');if(!box)return;clearTimeout(weatherWorkTimer);
+  box.hidden=!text;box.classList.toggle('busy',busy);box.classList.toggle('done',done);box.querySelector('.weather-work-label').textContent=text||'';
+  if(done)weatherWorkTimer=setTimeout(()=>{box.hidden=true;box.classList.remove('done');},3000);
 }
-// meteo arrivato solo in parte: lo diciamo una volta per sessione, poi resta la nota accanto all'orario
-const PARTIAL_NOTICE='fungaroli:partial-weather-notice';
+// meteo arrivato solo in parte: una nota sotto la riga del meteo, con «Riprova»
 function partialWeatherNotice(missing){
-  try{if(sessionStorage.getItem(PARTIAL_NOTICE))return;sessionStorage.setItem(PARTIAL_NOTICE,'1');}catch{/* privato: mostrato a ogni avvio */}
   const body=missing?'Per alcune zone il meteo non è arrivato: per ora non le valutiamo.':'Alcuni dati non sono arrivati: per quelli usiamo l’ultimo meteo salvato.';
-  weatherToast(`<span class="toast-text"><strong>Meteo aggiornato in parte</strong><span>${body} Non devi fare nulla, riproviamo alla prossima apertura.</span></span>`,9000,'top',{countdown:true});
+  const box=$('#stale');box.hidden=false;box.textContent=`${body} `;
+  const retry=document.createElement('button');retry.type='button';retry.className='link-btn';retry.textContent='Riprova';retry.onclick=()=>refreshWeather(true);box.append(retry);
 }
-function weatherStamp(w,busy=weatherBusy){
+// la nota sul meteo (vecchio, parziale) sta sotto la riga del meteo in home; nelle altre viste resta in cima
+let staleHome=null;
+function placeStale(view){
+  const box=$('#stale'),line=document.querySelector('.view[data-view="uscite"] .view-sub');if(!box||!line)return;
+  staleHome??={parent:box.parentElement,next:box.nextSibling};
+  if(view==='uscite'){if(box.previousElementSibling!==line)line.after(box);}
+  else if(box.parentElement!==staleHome.parent)staleHome.parent.insertBefore(box,staleHome.next);
+}
+let stampTimer=null;
+function weatherStamp(w,busy=weatherBusy,done=false){
+  clearTimeout(stampTimer);if(done)stampTimer=setTimeout(()=>weatherStamp(w,false,false),4000);
   if(!w||!Number.isFinite(w.fetchedAt?.getTime()))return;
   const sameDay=todayISO(w.fetchedAt)===todayISO();
-  $('#updated').textContent=(w.cached||w.offline?'Meteo salvato':'Meteo')+' · '+w.fetchedAt.toLocaleString('it-IT',sameDay?{hour:'2-digit',minute:'2-digit'}:{day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'})+(busy?' · aggiorno':'');
+  const when=w.fetchedAt.toLocaleString('it-IT',sameDay?{hour:'2-digit',minute:'2-digit'}:{day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'});
+  $('#updated').textContent=busy?WX_BUSY:`${done?WX_DONE:w.cached||w.offline?'Meteo salvato':'Meteo'} · ${when}`;
+  $('#refresh').classList.toggle('is-done',!!done);
   $('#refresh').setAttribute('aria-busy',String(busy));
   $('#refresh').title='Meteo acquisito '+w.fetchedAt.toLocaleString('it-IT')+'. Tocca per aggiornarlo.';
   $('#stale').hidden=!w.stale&&!w.missingZones?.length;
@@ -693,8 +710,8 @@ function receiveWeather(w,meta={}){
 async function refreshWeather(force){
   const revision=++weatherRevision;weatherController?.abort();weatherController=new AbortController();const signal=weatherController.signal;
   weatherZones??=zones;weatherBusy=true;$('#refresh').setAttribute('aria-busy','true');
-  if(lastWeatherSnapshot)weatherStamp(lastWeatherSnapshot,true);else $('#updated').textContent='Meteo in arrivo…';
-  weatherWork('Aggiorno il meteo in background…',true);loadStep(1);
+  if(lastWeatherSnapshot)weatherStamp(lastWeatherSnapshot,true);else $('#updated').textContent=WX_BUSY;
+  weatherWork(WX_BUSY,true);loadStep(1);
   // il messaggio "Meteo aggiornato" serve se l'hai chiesto o se cambia dati gia' sullo schermo, non al primo avvio
   let announce=force||!!lastWeatherSnapshot;
   let received=false,mainFailure=null,latest=null,outingPartial=false;
@@ -712,12 +729,12 @@ async function refreshWeather(force){
   weatherBusy=false;$('#refresh').setAttribute('aria-busy','false');loadStep(2);
   if(weatherPaintTimer){clearTimeout(weatherPaintTimer.handle);const changed=weatherPaintTimer.changed;weatherPaintTimer=null;paintWeatherView(changed);}
   if(latest||lastWeatherSnapshot){
-    weatherStamp(latest||lastWeatherSnapshot,false);
     const partial=latest?.stale||latest?.missingZones?.length||latest?.failedZones?.length||mainFailure||outingPartial;
-    if(partial){$('#updated').textContent+=' · aggiornamento parziale';}
-    if(!deferredWeatherView)weatherWork('',false);
+    const done=!partial&&received&&announce;
+    weatherStamp(latest||lastWeatherSnapshot,false,done);
+    if(partial){$('#updated').textContent+=' · in parte';}
+    if(!deferredWeatherView)weatherWork(done?WX_DONE:'',false,done);
     if(partial)partialWeatherNotice(latest?.missingZones?.length);
-    else if(received&&announce)weatherToast('Meteo aggiornato',4000,'top');
   }else{
     weatherWork('');$('#updated').textContent='';weatherUnavailable=true;prepareCalendarFallback();
     if(state.target==='piante'){compute();renderAll();return;}
@@ -725,8 +742,8 @@ async function refreshWeather(force){
     $('#hero').innerHTML=msg;$('#detail').innerHTML=msg;document.querySelectorAll('[data-retry]').forEach(b=>b.addEventListener('click',()=>refreshWeather(true)));
   }
 }
-document.addEventListener('close',()=>{if(deferredWeatherView&&!weatherPanelOpen()){deferredWeatherView=false;paintWeatherView();weatherWork(weatherBusy?'Aggiorno il meteo in background…':'',weatherBusy);}},{capture:true});
-document.addEventListener('toggle',e=>{if(e.newState==='closed'&&deferredWeatherView&&!weatherPanelOpen()){deferredWeatherView=false;paintWeatherView();weatherWork(weatherBusy?'Aggiorno il meteo in background…':'',weatherBusy);}},{capture:true});
+document.addEventListener('close',()=>{if(deferredWeatherView&&!weatherPanelOpen()){deferredWeatherView=false;paintWeatherView();weatherWork(weatherBusy?WX_BUSY:'',weatherBusy);}},{capture:true});
+document.addEventListener('toggle',e=>{if(e.newState==='closed'&&deferredWeatherView&&!weatherPanelOpen()){deferredWeatherView=false;paintWeatherView();weatherWork(weatherBusy?WX_BUSY:'',weatherBusy);}},{capture:true});
 
 const selectedSpecies = () => { const ids = new Set(selectedCatalog().map(s=>s.modelId).filter(Boolean)); return (state.target==='piante'?plantModels:SPECIES).filter(s=>ids.has(s.id)); };
 
