@@ -19,7 +19,7 @@ Bozze correnti per revisione. Le versioni definitive sono separate in incoming/i
 | icone/tavola-13.png | rubroboletus-satanas, caloboletus-radicans, neoboletus-luridiformis | ok | QA anatomica completata; dubbi dei dati da leggere in NOTE. |
 | icone/tavola-14.png | suillus, suillus-bovinus, imleria-badia | ok | QA anatomica completata; dubbi dei dati da leggere in NOTE. |
 | icone/tavola-15.png | virescens, russula-heterophylla, russula-aeruginea | ok | QA finale conclusa; copia definitiva disponibile. |
-| icone/tavola-16.png | russula-olivacea, russula-aurea, nuda | da controllare | QA finale in corso; virescens aggregato e colori gambi non tutti espliciti nei dati. |
+| icone/tavola-16.png | russula-olivacea, russula-aurea, nuda | ok | QA finale conclusa; gambo nuda neutro per colore non specificato, limite nelle NOTE. |
 | icone/tavola-17.png | lactarius-deliciosus, lactarius-deterrimus, laccaria-amethystina | ok | QA anatomica completata; dubbi dei dati da leggere in NOTE. |
 | icone/tavola-18.png | terreum, tricholoma-pardinum, tricholoma-portentosum | ok | QA anatomica completata; dubbi dei dati da leggere in NOTE. |
 | icone/tavola-19.png | tricholoma-virgatum, tricholoma-sciodes, inocybe-lilacina | ok | QA anatomica completata; dubbi dei dati da leggere in NOTE. |
