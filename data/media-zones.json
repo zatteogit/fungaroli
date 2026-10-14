@@ -13,7 +13,267 @@
     600,
     450
    ],
-   "thumb": "assets/zones/vallonina-t.webp"
+   "thumb": "assets/zones/vallonina-t.webp",
+   "variants": [
+    {
+     "season": "primavera",
+     "weather": "sereno",
+     "file": "assets/zones/var/vallonina-primavera-sereno.webp",
+     "file_hd": "assets/zones/var/vallonina-primavera-sereno-hd.webp",
+     "size": [
+      1600,
+      1200
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Idéfix",
+     "license": "CC BY-SA 3.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+     "page": "https://commons.wikimedia.org/wiki/File:SelladiLeonessa001.jpg"
+    },
+    {
+     "season": "primavera",
+     "weather": "nuvoloso",
+     "file": "assets/zones/var/vallonina-primavera-nuvoloso.webp",
+     "file_hd": "assets/zones/var/vallonina-primavera-nuvoloso-hd.webp",
+     "size": [
+      1600,
+      1200
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Idéfix",
+     "license": "CC BY-SA 3.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+     "page": "https://commons.wikimedia.org/wiki/File:SelladiLeonessa001.jpg"
+    },
+    {
+     "season": "primavera",
+     "weather": "nebbia",
+     "file": "assets/zones/var/vallonina-primavera-nebbia.webp",
+     "file_hd": "assets/zones/var/vallonina-primavera-nebbia-hd.webp",
+     "size": [
+      1600,
+      1200
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Idéfix",
+     "license": "CC BY-SA 3.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+     "page": "https://commons.wikimedia.org/wiki/File:SelladiLeonessa001.jpg"
+    },
+    {
+     "season": "primavera",
+     "weather": "pioggia",
+     "file": "assets/zones/var/vallonina-primavera-pioggia.webp",
+     "file_hd": "assets/zones/var/vallonina-primavera-pioggia-hd.webp",
+     "size": [
+      1600,
+      1200
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Idéfix",
+     "license": "CC BY-SA 3.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+     "page": "https://commons.wikimedia.org/wiki/File:SelladiLeonessa001.jpg"
+    },
+    {
+     "season": "estate",
+     "weather": "nuvoloso",
+     "file": "assets/zones/var/vallonina-estate-nuvoloso.webp",
+     "file_hd": "assets/zones/var/vallonina-estate-nuvoloso-hd.webp",
+     "size": [
+      1600,
+      1200
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Idéfix",
+     "license": "CC BY-SA 3.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+     "page": "https://commons.wikimedia.org/wiki/File:SelladiLeonessa001.jpg"
+    },
+    {
+     "season": "estate",
+     "weather": "nebbia",
+     "file": "assets/zones/var/vallonina-estate-nebbia.webp",
+     "file_hd": "assets/zones/var/vallonina-estate-nebbia-hd.webp",
+     "size": [
+      1600,
+      1200
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Idéfix",
+     "license": "CC BY-SA 3.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+     "page": "https://commons.wikimedia.org/wiki/File:SelladiLeonessa001.jpg"
+    },
+    {
+     "season": "estate",
+     "weather": "pioggia",
+     "file": "assets/zones/var/vallonina-estate-pioggia.webp",
+     "file_hd": "assets/zones/var/vallonina-estate-pioggia-hd.webp",
+     "size": [
+      1600,
+      1200
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Idéfix",
+     "license": "CC BY-SA 3.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+     "page": "https://commons.wikimedia.org/wiki/File:SelladiLeonessa001.jpg"
+    },
+    {
+     "season": "autunno",
+     "weather": "sereno",
+     "file": "assets/zones/var/vallonina-autunno-sereno.webp",
+     "file_hd": "assets/zones/var/vallonina-autunno-sereno-hd.webp",
+     "size": [
+      1600,
+      1200
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Idéfix",
+     "license": "CC BY-SA 3.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+     "page": "https://commons.wikimedia.org/wiki/File:SelladiLeonessa001.jpg"
+    },
+    {
+     "season": "autunno",
+     "weather": "nuvoloso",
+     "file": "assets/zones/var/vallonina-autunno-nuvoloso.webp",
+     "file_hd": "assets/zones/var/vallonina-autunno-nuvoloso-hd.webp",
+     "size": [
+      1600,
+      1200
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Idéfix",
+     "license": "CC BY-SA 3.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+     "page": "https://commons.wikimedia.org/wiki/File:SelladiLeonessa001.jpg"
+    },
+    {
+     "season": "autunno",
+     "weather": "nebbia",
+     "file": "assets/zones/var/vallonina-autunno-nebbia.webp",
+     "file_hd": "assets/zones/var/vallonina-autunno-nebbia-hd.webp",
+     "size": [
+      1600,
+      1200
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Idéfix",
+     "license": "CC BY-SA 3.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+     "page": "https://commons.wikimedia.org/wiki/File:SelladiLeonessa001.jpg"
+    },
+    {
+     "season": "autunno",
+     "weather": "pioggia",
+     "file": "assets/zones/var/vallonina-autunno-pioggia.webp",
+     "file_hd": "assets/zones/var/vallonina-autunno-pioggia-hd.webp",
+     "size": [
+      1600,
+      1200
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Idéfix",
+     "license": "CC BY-SA 3.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+     "page": "https://commons.wikimedia.org/wiki/File:SelladiLeonessa001.jpg"
+    },
+    {
+     "season": "inverno",
+     "weather": "sereno",
+     "file": "assets/zones/var/vallonina-inverno-sereno.webp",
+     "file_hd": "assets/zones/var/vallonina-inverno-sereno-hd.webp",
+     "size": [
+      1600,
+      1200
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Idéfix",
+     "license": "CC BY-SA 3.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+     "page": "https://commons.wikimedia.org/wiki/File:SelladiLeonessa001.jpg"
+    },
+    {
+     "season": "inverno",
+     "weather": "nuvoloso",
+     "file": "assets/zones/var/vallonina-inverno-nuvoloso.webp",
+     "file_hd": "assets/zones/var/vallonina-inverno-nuvoloso-hd.webp",
+     "size": [
+      1600,
+      1200
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Idéfix",
+     "license": "CC BY-SA 3.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+     "page": "https://commons.wikimedia.org/wiki/File:SelladiLeonessa001.jpg"
+    },
+    {
+     "season": "inverno",
+     "weather": "nebbia",
+     "file": "assets/zones/var/vallonina-inverno-nebbia.webp",
+     "file_hd": "assets/zones/var/vallonina-inverno-nebbia-hd.webp",
+     "size": [
+      1600,
+      1200
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Idéfix",
+     "license": "CC BY-SA 3.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+     "page": "https://commons.wikimedia.org/wiki/File:SelladiLeonessa001.jpg"
+    },
+    {
+     "season": "inverno",
+     "weather": "pioggia",
+     "file": "assets/zones/var/vallonina-inverno-pioggia.webp",
+     "file_hd": "assets/zones/var/vallonina-inverno-pioggia-hd.webp",
+     "size": [
+      1600,
+      1200
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Idéfix",
+     "license": "CC BY-SA 3.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+     "page": "https://commons.wikimedia.org/wiki/File:SelladiLeonessa001.jpg"
+    },
+    {
+     "season": "inverno",
+     "weather": "neve",
+     "file": "assets/zones/var/vallonina-inverno-neve.webp",
+     "file_hd": "assets/zones/var/vallonina-inverno-neve-hd.webp",
+     "size": [
+      1600,
+      1200
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Idéfix",
+     "license": "CC BY-SA 3.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+     "page": "https://commons.wikimedia.org/wiki/File:SelladiLeonessa001.jpg"
+    }
+   ],
+   "season": "estate",
+   "weather": "sereno"
   },
   "poggio-cantalice": {
    "file": "assets/zones/poggio-cantalice.webp",
@@ -26,20 +286,554 @@
     1600,
     1200
    ],
-   "thumb": "assets/zones/poggio-cantalice-t.webp"
+   "thumb": "assets/zones/poggio-cantalice-t.webp",
+   "variants": [
+    {
+     "season": "primavera",
+     "weather": "sereno",
+     "file": "assets/zones/var/poggio-cantalice-primavera-sereno.webp",
+     "file_hd": "assets/zones/var/poggio-cantalice-primavera-sereno-hd.webp",
+     "size": [
+      1600,
+      1200
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Li vioandronico2013",
+     "license": "CC BY-SA 3.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+     "page": "https://commons.wikimedia.org/wiki/File:Terminillo.JPG"
+    },
+    {
+     "season": "primavera",
+     "weather": "nebbia",
+     "file": "assets/zones/var/poggio-cantalice-primavera-nebbia.webp",
+     "file_hd": "assets/zones/var/poggio-cantalice-primavera-nebbia-hd.webp",
+     "size": [
+      1600,
+      1200
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Li vioandronico2013",
+     "license": "CC BY-SA 3.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+     "page": "https://commons.wikimedia.org/wiki/File:Terminillo.JPG"
+    },
+    {
+     "season": "primavera",
+     "weather": "pioggia",
+     "file": "assets/zones/var/poggio-cantalice-primavera-pioggia.webp",
+     "file_hd": "assets/zones/var/poggio-cantalice-primavera-pioggia-hd.webp",
+     "size": [
+      1600,
+      1200
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Li vioandronico2013",
+     "license": "CC BY-SA 3.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+     "page": "https://commons.wikimedia.org/wiki/File:Terminillo.JPG"
+    },
+    {
+     "season": "estate",
+     "weather": "sereno",
+     "file": "assets/zones/var/poggio-cantalice-estate-sereno.webp",
+     "file_hd": "assets/zones/var/poggio-cantalice-estate-sereno-hd.webp",
+     "size": [
+      1600,
+      1200
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Li vioandronico2013",
+     "license": "CC BY-SA 3.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+     "page": "https://commons.wikimedia.org/wiki/File:Terminillo.JPG"
+    },
+    {
+     "season": "estate",
+     "weather": "nuvoloso",
+     "file": "assets/zones/var/poggio-cantalice-estate-nuvoloso.webp",
+     "file_hd": "assets/zones/var/poggio-cantalice-estate-nuvoloso-hd.webp",
+     "size": [
+      1600,
+      1200
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Li vioandronico2013",
+     "license": "CC BY-SA 3.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+     "page": "https://commons.wikimedia.org/wiki/File:Terminillo.JPG"
+    },
+    {
+     "season": "estate",
+     "weather": "nebbia",
+     "file": "assets/zones/var/poggio-cantalice-estate-nebbia.webp",
+     "file_hd": "assets/zones/var/poggio-cantalice-estate-nebbia-hd.webp",
+     "size": [
+      1600,
+      1200
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Li vioandronico2013",
+     "license": "CC BY-SA 3.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+     "page": "https://commons.wikimedia.org/wiki/File:Terminillo.JPG"
+    },
+    {
+     "season": "estate",
+     "weather": "pioggia",
+     "file": "assets/zones/var/poggio-cantalice-estate-pioggia.webp",
+     "file_hd": "assets/zones/var/poggio-cantalice-estate-pioggia-hd.webp",
+     "size": [
+      1600,
+      1200
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Li vioandronico2013",
+     "license": "CC BY-SA 3.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+     "page": "https://commons.wikimedia.org/wiki/File:Terminillo.JPG"
+    },
+    {
+     "season": "autunno",
+     "weather": "sereno",
+     "file": "assets/zones/var/poggio-cantalice-autunno-sereno.webp",
+     "file_hd": "assets/zones/var/poggio-cantalice-autunno-sereno-hd.webp",
+     "size": [
+      1600,
+      1200
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Li vioandronico2013",
+     "license": "CC BY-SA 3.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+     "page": "https://commons.wikimedia.org/wiki/File:Terminillo.JPG"
+    },
+    {
+     "season": "autunno",
+     "weather": "nuvoloso",
+     "file": "assets/zones/var/poggio-cantalice-autunno-nuvoloso.webp",
+     "file_hd": "assets/zones/var/poggio-cantalice-autunno-nuvoloso-hd.webp",
+     "size": [
+      1600,
+      1200
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Li vioandronico2013",
+     "license": "CC BY-SA 3.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+     "page": "https://commons.wikimedia.org/wiki/File:Terminillo.JPG"
+    },
+    {
+     "season": "autunno",
+     "weather": "nebbia",
+     "file": "assets/zones/var/poggio-cantalice-autunno-nebbia.webp",
+     "file_hd": "assets/zones/var/poggio-cantalice-autunno-nebbia-hd.webp",
+     "size": [
+      1600,
+      1200
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Li vioandronico2013",
+     "license": "CC BY-SA 3.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+     "page": "https://commons.wikimedia.org/wiki/File:Terminillo.JPG"
+    },
+    {
+     "season": "autunno",
+     "weather": "pioggia",
+     "file": "assets/zones/var/poggio-cantalice-autunno-pioggia.webp",
+     "file_hd": "assets/zones/var/poggio-cantalice-autunno-pioggia-hd.webp",
+     "size": [
+      1600,
+      1200
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Li vioandronico2013",
+     "license": "CC BY-SA 3.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+     "page": "https://commons.wikimedia.org/wiki/File:Terminillo.JPG"
+    },
+    {
+     "season": "inverno",
+     "weather": "sereno",
+     "file": "assets/zones/var/poggio-cantalice-inverno-sereno.webp",
+     "file_hd": "assets/zones/var/poggio-cantalice-inverno-sereno-hd.webp",
+     "size": [
+      1600,
+      1200
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Li vioandronico2013",
+     "license": "CC BY-SA 3.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+     "page": "https://commons.wikimedia.org/wiki/File:Terminillo.JPG"
+    },
+    {
+     "season": "inverno",
+     "weather": "nuvoloso",
+     "file": "assets/zones/var/poggio-cantalice-inverno-nuvoloso.webp",
+     "file_hd": "assets/zones/var/poggio-cantalice-inverno-nuvoloso-hd.webp",
+     "size": [
+      1600,
+      1200
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Li vioandronico2013",
+     "license": "CC BY-SA 3.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+     "page": "https://commons.wikimedia.org/wiki/File:Terminillo.JPG"
+    },
+    {
+     "season": "inverno",
+     "weather": "nebbia",
+     "file": "assets/zones/var/poggio-cantalice-inverno-nebbia.webp",
+     "file_hd": "assets/zones/var/poggio-cantalice-inverno-nebbia-hd.webp",
+     "size": [
+      1600,
+      1200
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Li vioandronico2013",
+     "license": "CC BY-SA 3.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+     "page": "https://commons.wikimedia.org/wiki/File:Terminillo.JPG"
+    },
+    {
+     "season": "inverno",
+     "weather": "pioggia",
+     "file": "assets/zones/var/poggio-cantalice-inverno-pioggia.webp",
+     "file_hd": "assets/zones/var/poggio-cantalice-inverno-pioggia-hd.webp",
+     "size": [
+      1600,
+      1200
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Li vioandronico2013",
+     "license": "CC BY-SA 3.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+     "page": "https://commons.wikimedia.org/wiki/File:Terminillo.JPG"
+    },
+    {
+     "season": "inverno",
+     "weather": "neve",
+     "file": "assets/zones/var/poggio-cantalice-inverno-neve.webp",
+     "file_hd": "assets/zones/var/poggio-cantalice-inverno-neve-hd.webp",
+     "size": [
+      1600,
+      1200
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Li vioandronico2013",
+     "license": "CC BY-SA 3.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+     "page": "https://commons.wikimedia.org/wiki/File:Terminillo.JPG"
+    }
+   ],
+   "season": "primavera",
+   "weather": "nuvoloso"
   },
   "antrodoco": {
    "file": "assets/zones/antrodoco.webp",
    "file_hd": "assets/zones/antrodoco-hd.webp",
    "source": "Wikimedia Commons",
    "page": "https://commons.wikimedia.org/wiki/File:Monte_Giano_DVX.JPG",
-   "author": "DVX (Wikimedia Commons)",
-   "license": "CC0",
+   "author": "Iacopo.rossini",
+   "license": "Pubblico dominio (PD-self)",
    "size": [
     1600,
     1199
    ],
-   "thumb": "assets/zones/antrodoco-t.webp"
+   "thumb": "assets/zones/antrodoco-t.webp",
+   "variants": [
+    {
+     "season": "primavera",
+     "weather": "sereno",
+     "file": "assets/zones/var/antrodoco-primavera-sereno.webp",
+     "file_hd": "assets/zones/var/antrodoco-primavera-sereno-hd.webp",
+     "size": [
+      1600,
+      1199
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Iacopo.rossini",
+     "license": "Pubblico dominio (PD-self)",
+     "licenseUrl": "https://commons.wikimedia.org/wiki/Template:PD-self",
+     "page": "https://commons.wikimedia.org/wiki/File:Monte_Giano_DVX.JPG"
+    },
+    {
+     "season": "primavera",
+     "weather": "nuvoloso",
+     "file": "assets/zones/var/antrodoco-primavera-nuvoloso.webp",
+     "file_hd": "assets/zones/var/antrodoco-primavera-nuvoloso-hd.webp",
+     "size": [
+      1600,
+      1198
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Iacopo.rossini",
+     "license": "Pubblico dominio (PD-self)",
+     "licenseUrl": "https://commons.wikimedia.org/wiki/Template:PD-self",
+     "page": "https://commons.wikimedia.org/wiki/File:Monte_Giano_DVX.JPG"
+    },
+    {
+     "season": "primavera",
+     "weather": "nebbia",
+     "file": "assets/zones/var/antrodoco-primavera-nebbia.webp",
+     "file_hd": "assets/zones/var/antrodoco-primavera-nebbia-hd.webp",
+     "size": [
+      1600,
+      1200
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Iacopo.rossini",
+     "license": "Pubblico dominio (PD-self)",
+     "licenseUrl": "https://commons.wikimedia.org/wiki/Template:PD-self",
+     "page": "https://commons.wikimedia.org/wiki/File:Monte_Giano_DVX.JPG"
+    },
+    {
+     "season": "primavera",
+     "weather": "pioggia",
+     "file": "assets/zones/var/antrodoco-primavera-pioggia.webp",
+     "file_hd": "assets/zones/var/antrodoco-primavera-pioggia-hd.webp",
+     "size": [
+      1600,
+      1199
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Iacopo.rossini",
+     "license": "Pubblico dominio (PD-self)",
+     "licenseUrl": "https://commons.wikimedia.org/wiki/Template:PD-self",
+     "page": "https://commons.wikimedia.org/wiki/File:Monte_Giano_DVX.JPG"
+    },
+    {
+     "season": "estate",
+     "weather": "sereno",
+     "file": "assets/zones/var/antrodoco-estate-sereno.webp",
+     "file_hd": "assets/zones/var/antrodoco-estate-sereno-hd.webp",
+     "size": [
+      1600,
+      1199
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Iacopo.rossini",
+     "license": "Pubblico dominio (PD-self)",
+     "licenseUrl": "https://commons.wikimedia.org/wiki/Template:PD-self",
+     "page": "https://commons.wikimedia.org/wiki/File:Monte_Giano_DVX.JPG"
+    },
+    {
+     "season": "estate",
+     "weather": "nuvoloso",
+     "file": "assets/zones/var/antrodoco-estate-nuvoloso.webp",
+     "file_hd": "assets/zones/var/antrodoco-estate-nuvoloso-hd.webp",
+     "size": [
+      1600,
+      1199
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Iacopo.rossini",
+     "license": "Pubblico dominio (PD-self)",
+     "licenseUrl": "https://commons.wikimedia.org/wiki/Template:PD-self",
+     "page": "https://commons.wikimedia.org/wiki/File:Monte_Giano_DVX.JPG"
+    },
+    {
+     "season": "estate",
+     "weather": "nebbia",
+     "file": "assets/zones/var/antrodoco-estate-nebbia.webp",
+     "file_hd": "assets/zones/var/antrodoco-estate-nebbia-hd.webp",
+     "size": [
+      1600,
+      1198
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Iacopo.rossini",
+     "license": "Pubblico dominio (PD-self)",
+     "licenseUrl": "https://commons.wikimedia.org/wiki/Template:PD-self",
+     "page": "https://commons.wikimedia.org/wiki/File:Monte_Giano_DVX.JPG"
+    },
+    {
+     "season": "estate",
+     "weather": "pioggia",
+     "file": "assets/zones/var/antrodoco-estate-pioggia.webp",
+     "file_hd": "assets/zones/var/antrodoco-estate-pioggia-hd.webp",
+     "size": [
+      1600,
+      1199
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Iacopo.rossini",
+     "license": "Pubblico dominio (PD-self)",
+     "licenseUrl": "https://commons.wikimedia.org/wiki/Template:PD-self",
+     "page": "https://commons.wikimedia.org/wiki/File:Monte_Giano_DVX.JPG"
+    },
+    {
+     "season": "autunno",
+     "weather": "sereno",
+     "file": "assets/zones/var/antrodoco-autunno-sereno.webp",
+     "file_hd": "assets/zones/var/antrodoco-autunno-sereno-hd.webp",
+     "size": [
+      1600,
+      1198
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Iacopo.rossini",
+     "license": "Pubblico dominio (PD-self)",
+     "licenseUrl": "https://commons.wikimedia.org/wiki/Template:PD-self",
+     "page": "https://commons.wikimedia.org/wiki/File:Monte_Giano_DVX.JPG"
+    },
+    {
+     "season": "autunno",
+     "weather": "nuvoloso",
+     "file": "assets/zones/var/antrodoco-autunno-nuvoloso.webp",
+     "file_hd": "assets/zones/var/antrodoco-autunno-nuvoloso-hd.webp",
+     "size": [
+      1600,
+      1198
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Iacopo.rossini",
+     "license": "Pubblico dominio (PD-self)",
+     "licenseUrl": "https://commons.wikimedia.org/wiki/Template:PD-self",
+     "page": "https://commons.wikimedia.org/wiki/File:Monte_Giano_DVX.JPG"
+    },
+    {
+     "season": "autunno",
+     "weather": "nebbia",
+     "file": "assets/zones/var/antrodoco-autunno-nebbia.webp",
+     "file_hd": "assets/zones/var/antrodoco-autunno-nebbia-hd.webp",
+     "size": [
+      1600,
+      1198
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Iacopo.rossini",
+     "license": "Pubblico dominio (PD-self)",
+     "licenseUrl": "https://commons.wikimedia.org/wiki/Template:PD-self",
+     "page": "https://commons.wikimedia.org/wiki/File:Monte_Giano_DVX.JPG"
+    },
+    {
+     "season": "autunno",
+     "weather": "pioggia",
+     "file": "assets/zones/var/antrodoco-autunno-pioggia.webp",
+     "file_hd": "assets/zones/var/antrodoco-autunno-pioggia-hd.webp",
+     "size": [
+      1600,
+      1198
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Iacopo.rossini",
+     "license": "Pubblico dominio (PD-self)",
+     "licenseUrl": "https://commons.wikimedia.org/wiki/Template:PD-self",
+     "page": "https://commons.wikimedia.org/wiki/File:Monte_Giano_DVX.JPG"
+    },
+    {
+     "season": "inverno",
+     "weather": "sereno",
+     "file": "assets/zones/var/antrodoco-inverno-sereno.webp",
+     "file_hd": "assets/zones/var/antrodoco-inverno-sereno-hd.webp",
+     "size": [
+      1600,
+      1198
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Iacopo.rossini",
+     "license": "Pubblico dominio (PD-self)",
+     "licenseUrl": "https://commons.wikimedia.org/wiki/Template:PD-self",
+     "page": "https://commons.wikimedia.org/wiki/File:Monte_Giano_DVX.JPG"
+    },
+    {
+     "season": "inverno",
+     "weather": "nuvoloso",
+     "file": "assets/zones/var/antrodoco-inverno-nuvoloso.webp",
+     "file_hd": "assets/zones/var/antrodoco-inverno-nuvoloso-hd.webp",
+     "size": [
+      1600,
+      1198
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Iacopo.rossini",
+     "license": "Pubblico dominio (PD-self)",
+     "licenseUrl": "https://commons.wikimedia.org/wiki/Template:PD-self",
+     "page": "https://commons.wikimedia.org/wiki/File:Monte_Giano_DVX.JPG"
+    },
+    {
+     "season": "inverno",
+     "weather": "nebbia",
+     "file": "assets/zones/var/antrodoco-inverno-nebbia.webp",
+     "file_hd": "assets/zones/var/antrodoco-inverno-nebbia-hd.webp",
+     "size": [
+      1600,
+      1198
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Iacopo.rossini",
+     "license": "Pubblico dominio (PD-self)",
+     "licenseUrl": "https://commons.wikimedia.org/wiki/Template:PD-self",
+     "page": "https://commons.wikimedia.org/wiki/File:Monte_Giano_DVX.JPG"
+    },
+    {
+     "season": "inverno",
+     "weather": "pioggia",
+     "file": "assets/zones/var/antrodoco-inverno-pioggia.webp",
+     "file_hd": "assets/zones/var/antrodoco-inverno-pioggia-hd.webp",
+     "size": [
+      1600,
+      1199
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Iacopo.rossini",
+     "license": "Pubblico dominio (PD-self)",
+     "licenseUrl": "https://commons.wikimedia.org/wiki/Template:PD-self",
+     "page": "https://commons.wikimedia.org/wiki/File:Monte_Giano_DVX.JPG"
+    },
+    {
+     "season": "inverno",
+     "weather": "neve",
+     "file": "assets/zones/var/antrodoco-inverno-neve.webp",
+     "file_hd": "assets/zones/var/antrodoco-inverno-neve-hd.webp",
+     "size": [
+      1600,
+      1198
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Iacopo.rossini",
+     "license": "Pubblico dominio (PD-self)",
+     "licenseUrl": "https://commons.wikimedia.org/wiki/Template:PD-self",
+     "page": "https://commons.wikimedia.org/wiki/File:Monte_Giano_DVX.JPG"
+    }
+   ]
   },
   "cicolano": {
    "file": "assets/zones/cicolano.webp",
@@ -52,7 +846,187 @@
     1600,
     482
    ],
-   "thumb": "assets/zones/cicolano-t.webp"
+   "thumb": "assets/zones/cicolano-t.webp",
+   "variants": [
+    {
+     "season": "primavera",
+     "weather": "sereno",
+     "file": "assets/zones/var/cicolano-primavera-sereno.webp",
+     "file_hd": "assets/zones/var/cicolano-primavera-sereno-hd.webp",
+     "size": [
+      1600,
+      482
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Alessandro Blasi from Rieti, Italy",
+     "license": "CC BY 2.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+     "page": "https://commons.wikimedia.org/wiki/File:Lago_del_Salto%21%21_%287447648144%29.jpg"
+    },
+    {
+     "season": "primavera",
+     "weather": "nuvoloso",
+     "file": "assets/zones/var/cicolano-primavera-nuvoloso.webp",
+     "file_hd": "assets/zones/var/cicolano-primavera-nuvoloso-hd.webp",
+     "size": [
+      1600,
+      481
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Alessandro Blasi from Rieti, Italy",
+     "license": "CC BY 2.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+     "page": "https://commons.wikimedia.org/wiki/File:Lago_del_Salto%21%21_%287447648144%29.jpg"
+    },
+    {
+     "season": "primavera",
+     "weather": "nebbia",
+     "file": "assets/zones/var/cicolano-primavera-nebbia.webp",
+     "file_hd": "assets/zones/var/cicolano-primavera-nebbia-hd.webp",
+     "size": [
+      1600,
+      483
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Alessandro Blasi from Rieti, Italy",
+     "license": "CC BY 2.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+     "page": "https://commons.wikimedia.org/wiki/File:Lago_del_Salto%21%21_%287447648144%29.jpg"
+    },
+    {
+     "season": "primavera",
+     "weather": "pioggia",
+     "file": "assets/zones/var/cicolano-primavera-pioggia.webp",
+     "file_hd": "assets/zones/var/cicolano-primavera-pioggia-hd.webp",
+     "size": [
+      1600,
+      483
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Alessandro Blasi from Rieti, Italy",
+     "license": "CC BY 2.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+     "page": "https://commons.wikimedia.org/wiki/File:Lago_del_Salto%21%21_%287447648144%29.jpg"
+    },
+    {
+     "season": "estate",
+     "weather": "nuvoloso",
+     "file": "assets/zones/var/cicolano-estate-nuvoloso.webp",
+     "file_hd": "assets/zones/var/cicolano-estate-nuvoloso-hd.webp",
+     "size": [
+      1600,
+      483
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Alessandro Blasi from Rieti, Italy",
+     "license": "CC BY 2.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+     "page": "https://commons.wikimedia.org/wiki/File:Lago_del_Salto%21%21_%287447648144%29.jpg"
+    },
+    {
+     "season": "estate",
+     "weather": "nebbia",
+     "file": "assets/zones/var/cicolano-estate-nebbia.webp",
+     "file_hd": "assets/zones/var/cicolano-estate-nebbia-hd.webp",
+     "size": [
+      1600,
+      481
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Alessandro Blasi from Rieti, Italy",
+     "license": "CC BY 2.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+     "page": "https://commons.wikimedia.org/wiki/File:Lago_del_Salto%21%21_%287447648144%29.jpg"
+    },
+    {
+     "season": "estate",
+     "weather": "pioggia",
+     "file": "assets/zones/var/cicolano-estate-pioggia.webp",
+     "file_hd": "assets/zones/var/cicolano-estate-pioggia-hd.webp",
+     "size": [
+      1600,
+      483
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Alessandro Blasi from Rieti, Italy",
+     "license": "CC BY 2.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+     "page": "https://commons.wikimedia.org/wiki/File:Lago_del_Salto%21%21_%287447648144%29.jpg"
+    },
+    {
+     "season": "autunno",
+     "weather": "sereno",
+     "file": "assets/zones/var/cicolano-autunno-sereno.webp",
+     "file_hd": "assets/zones/var/cicolano-autunno-sereno-hd.webp",
+     "size": [
+      1600,
+      483
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Alessandro Blasi from Rieti, Italy",
+     "license": "CC BY 2.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+     "page": "https://commons.wikimedia.org/wiki/File:Lago_del_Salto%21%21_%287447648144%29.jpg"
+    },
+    {
+     "season": "autunno",
+     "weather": "nuvoloso",
+     "file": "assets/zones/var/cicolano-autunno-nuvoloso.webp",
+     "file_hd": "assets/zones/var/cicolano-autunno-nuvoloso-hd.webp",
+     "size": [
+      1600,
+      482
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Alessandro Blasi from Rieti, Italy",
+     "license": "CC BY 2.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+     "page": "https://commons.wikimedia.org/wiki/File:Lago_del_Salto%21%21_%287447648144%29.jpg"
+    },
+    {
+     "season": "autunno",
+     "weather": "nebbia",
+     "file": "assets/zones/var/cicolano-autunno-nebbia.webp",
+     "file_hd": "assets/zones/var/cicolano-autunno-nebbia-hd.webp",
+     "size": [
+      1600,
+      483
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Alessandro Blasi from Rieti, Italy",
+     "license": "CC BY 2.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+     "page": "https://commons.wikimedia.org/wiki/File:Lago_del_Salto%21%21_%287447648144%29.jpg"
+    },
+    {
+     "season": "autunno",
+     "weather": "pioggia",
+     "file": "assets/zones/var/cicolano-autunno-pioggia.webp",
+     "file_hd": "assets/zones/var/cicolano-autunno-pioggia-hd.webp",
+     "size": [
+      1600,
+      483
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Alessandro Blasi from Rieti, Italy",
+     "license": "CC BY 2.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+     "page": "https://commons.wikimedia.org/wiki/File:Lago_del_Salto%21%21_%287447648144%29.jpg"
+    }
+   ],
+   "season": "estate",
+   "weather": "sereno"
   },
   "laga": {
    "file": "assets/zones/laga.webp",
@@ -65,7 +1039,187 @@
     1600,
     1200
    ],
-   "thumb": "assets/zones/laga-t.webp"
+   "thumb": "assets/zones/laga-t.webp",
+   "variants": [
+    {
+     "season": "primavera",
+     "weather": "sereno",
+     "file": "assets/zones/var/laga-primavera-sereno.webp",
+     "file_hd": "assets/zones/var/laga-primavera-sereno-hd.webp",
+     "size": [
+      1600,
+      1200
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Mario1952",
+     "license": "CC BY-SA 3.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+     "page": "https://commons.wikimedia.org/wiki/File:Pizzo_di_Sevo.jpg"
+    },
+    {
+     "season": "primavera",
+     "weather": "nuvoloso",
+     "file": "assets/zones/var/laga-primavera-nuvoloso.webp",
+     "file_hd": "assets/zones/var/laga-primavera-nuvoloso-hd.webp",
+     "size": [
+      1600,
+      1200
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Mario1952",
+     "license": "CC BY-SA 3.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+     "page": "https://commons.wikimedia.org/wiki/File:Pizzo_di_Sevo.jpg"
+    },
+    {
+     "season": "primavera",
+     "weather": "nebbia",
+     "file": "assets/zones/var/laga-primavera-nebbia.webp",
+     "file_hd": "assets/zones/var/laga-primavera-nebbia-hd.webp",
+     "size": [
+      1600,
+      1200
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Mario1952",
+     "license": "CC BY-SA 3.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+     "page": "https://commons.wikimedia.org/wiki/File:Pizzo_di_Sevo.jpg"
+    },
+    {
+     "season": "primavera",
+     "weather": "pioggia",
+     "file": "assets/zones/var/laga-primavera-pioggia.webp",
+     "file_hd": "assets/zones/var/laga-primavera-pioggia-hd.webp",
+     "size": [
+      1600,
+      1200
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Mario1952",
+     "license": "CC BY-SA 3.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+     "page": "https://commons.wikimedia.org/wiki/File:Pizzo_di_Sevo.jpg"
+    },
+    {
+     "season": "estate",
+     "weather": "nuvoloso",
+     "file": "assets/zones/var/laga-estate-nuvoloso.webp",
+     "file_hd": "assets/zones/var/laga-estate-nuvoloso-hd.webp",
+     "size": [
+      1600,
+      1200
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Mario1952",
+     "license": "CC BY-SA 3.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+     "page": "https://commons.wikimedia.org/wiki/File:Pizzo_di_Sevo.jpg"
+    },
+    {
+     "season": "estate",
+     "weather": "nebbia",
+     "file": "assets/zones/var/laga-estate-nebbia.webp",
+     "file_hd": "assets/zones/var/laga-estate-nebbia-hd.webp",
+     "size": [
+      1600,
+      1200
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Mario1952",
+     "license": "CC BY-SA 3.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+     "page": "https://commons.wikimedia.org/wiki/File:Pizzo_di_Sevo.jpg"
+    },
+    {
+     "season": "estate",
+     "weather": "pioggia",
+     "file": "assets/zones/var/laga-estate-pioggia.webp",
+     "file_hd": "assets/zones/var/laga-estate-pioggia-hd.webp",
+     "size": [
+      1600,
+      1200
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Mario1952",
+     "license": "CC BY-SA 3.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+     "page": "https://commons.wikimedia.org/wiki/File:Pizzo_di_Sevo.jpg"
+    },
+    {
+     "season": "autunno",
+     "weather": "sereno",
+     "file": "assets/zones/var/laga-autunno-sereno.webp",
+     "file_hd": "assets/zones/var/laga-autunno-sereno-hd.webp",
+     "size": [
+      1600,
+      1200
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Mario1952",
+     "license": "CC BY-SA 3.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+     "page": "https://commons.wikimedia.org/wiki/File:Pizzo_di_Sevo.jpg"
+    },
+    {
+     "season": "autunno",
+     "weather": "nuvoloso",
+     "file": "assets/zones/var/laga-autunno-nuvoloso.webp",
+     "file_hd": "assets/zones/var/laga-autunno-nuvoloso-hd.webp",
+     "size": [
+      1600,
+      1200
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Mario1952",
+     "license": "CC BY-SA 3.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+     "page": "https://commons.wikimedia.org/wiki/File:Pizzo_di_Sevo.jpg"
+    },
+    {
+     "season": "autunno",
+     "weather": "nebbia",
+     "file": "assets/zones/var/laga-autunno-nebbia.webp",
+     "file_hd": "assets/zones/var/laga-autunno-nebbia-hd.webp",
+     "size": [
+      1600,
+      1200
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Mario1952",
+     "license": "CC BY-SA 3.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+     "page": "https://commons.wikimedia.org/wiki/File:Pizzo_di_Sevo.jpg"
+    },
+    {
+     "season": "autunno",
+     "weather": "pioggia",
+     "file": "assets/zones/var/laga-autunno-pioggia.webp",
+     "file_hd": "assets/zones/var/laga-autunno-pioggia-hd.webp",
+     "size": [
+      1600,
+      1200
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Mario1952",
+     "license": "CC BY-SA 3.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+     "page": "https://commons.wikimedia.org/wiki/File:Pizzo_di_Sevo.jpg"
+    }
+   ],
+   "season": "estate",
+   "weather": "sereno"
   },
   "rascino": {
    "file": "assets/zones/rascino.webp",
@@ -78,7 +1232,267 @@
     1200,
     1600
    ],
-   "thumb": "assets/zones/rascino-t.webp"
+   "thumb": "assets/zones/rascino-t.webp",
+   "variants": [
+    {
+     "season": "primavera",
+     "weather": "sereno",
+     "file": "assets/zones/var/rascino-primavera-sereno.webp",
+     "file_hd": "assets/zones/var/rascino-primavera-sereno-hd.webp",
+     "size": [
+      1200,
+      1600
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Sabina Trekking ASD",
+     "license": "CC BY-SA 3.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+     "page": "https://commons.wikimedia.org/wiki/File:Rascino.jpg"
+    },
+    {
+     "season": "primavera",
+     "weather": "nuvoloso",
+     "file": "assets/zones/var/rascino-primavera-nuvoloso.webp",
+     "file_hd": "assets/zones/var/rascino-primavera-nuvoloso-hd.webp",
+     "size": [
+      1200,
+      1600
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Sabina Trekking ASD",
+     "license": "CC BY-SA 3.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+     "page": "https://commons.wikimedia.org/wiki/File:Rascino.jpg"
+    },
+    {
+     "season": "primavera",
+     "weather": "nebbia",
+     "file": "assets/zones/var/rascino-primavera-nebbia.webp",
+     "file_hd": "assets/zones/var/rascino-primavera-nebbia-hd.webp",
+     "size": [
+      1200,
+      1600
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Sabina Trekking ASD",
+     "license": "CC BY-SA 3.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+     "page": "https://commons.wikimedia.org/wiki/File:Rascino.jpg"
+    },
+    {
+     "season": "primavera",
+     "weather": "pioggia",
+     "file": "assets/zones/var/rascino-primavera-pioggia.webp",
+     "file_hd": "assets/zones/var/rascino-primavera-pioggia-hd.webp",
+     "size": [
+      1200,
+      1600
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Sabina Trekking ASD",
+     "license": "CC BY-SA 3.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+     "page": "https://commons.wikimedia.org/wiki/File:Rascino.jpg"
+    },
+    {
+     "season": "estate",
+     "weather": "nuvoloso",
+     "file": "assets/zones/var/rascino-estate-nuvoloso.webp",
+     "file_hd": "assets/zones/var/rascino-estate-nuvoloso-hd.webp",
+     "size": [
+      1200,
+      1600
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Sabina Trekking ASD",
+     "license": "CC BY-SA 3.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+     "page": "https://commons.wikimedia.org/wiki/File:Rascino.jpg"
+    },
+    {
+     "season": "estate",
+     "weather": "nebbia",
+     "file": "assets/zones/var/rascino-estate-nebbia.webp",
+     "file_hd": "assets/zones/var/rascino-estate-nebbia-hd.webp",
+     "size": [
+      1200,
+      1600
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Sabina Trekking ASD",
+     "license": "CC BY-SA 3.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+     "page": "https://commons.wikimedia.org/wiki/File:Rascino.jpg"
+    },
+    {
+     "season": "estate",
+     "weather": "pioggia",
+     "file": "assets/zones/var/rascino-estate-pioggia.webp",
+     "file_hd": "assets/zones/var/rascino-estate-pioggia-hd.webp",
+     "size": [
+      1200,
+      1600
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Sabina Trekking ASD",
+     "license": "CC BY-SA 3.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+     "page": "https://commons.wikimedia.org/wiki/File:Rascino.jpg"
+    },
+    {
+     "season": "autunno",
+     "weather": "sereno",
+     "file": "assets/zones/var/rascino-autunno-sereno.webp",
+     "file_hd": "assets/zones/var/rascino-autunno-sereno-hd.webp",
+     "size": [
+      1200,
+      1600
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Sabina Trekking ASD",
+     "license": "CC BY-SA 3.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+     "page": "https://commons.wikimedia.org/wiki/File:Rascino.jpg"
+    },
+    {
+     "season": "autunno",
+     "weather": "nuvoloso",
+     "file": "assets/zones/var/rascino-autunno-nuvoloso.webp",
+     "file_hd": "assets/zones/var/rascino-autunno-nuvoloso-hd.webp",
+     "size": [
+      1200,
+      1600
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Sabina Trekking ASD",
+     "license": "CC BY-SA 3.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+     "page": "https://commons.wikimedia.org/wiki/File:Rascino.jpg"
+    },
+    {
+     "season": "autunno",
+     "weather": "nebbia",
+     "file": "assets/zones/var/rascino-autunno-nebbia.webp",
+     "file_hd": "assets/zones/var/rascino-autunno-nebbia-hd.webp",
+     "size": [
+      1200,
+      1600
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Sabina Trekking ASD",
+     "license": "CC BY-SA 3.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+     "page": "https://commons.wikimedia.org/wiki/File:Rascino.jpg"
+    },
+    {
+     "season": "autunno",
+     "weather": "pioggia",
+     "file": "assets/zones/var/rascino-autunno-pioggia.webp",
+     "file_hd": "assets/zones/var/rascino-autunno-pioggia-hd.webp",
+     "size": [
+      1200,
+      1600
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Sabina Trekking ASD",
+     "license": "CC BY-SA 3.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+     "page": "https://commons.wikimedia.org/wiki/File:Rascino.jpg"
+    },
+    {
+     "season": "inverno",
+     "weather": "sereno",
+     "file": "assets/zones/var/rascino-inverno-sereno.webp",
+     "file_hd": "assets/zones/var/rascino-inverno-sereno-hd.webp",
+     "size": [
+      1200,
+      1600
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Sabina Trekking ASD",
+     "license": "CC BY-SA 3.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+     "page": "https://commons.wikimedia.org/wiki/File:Rascino.jpg"
+    },
+    {
+     "season": "inverno",
+     "weather": "nuvoloso",
+     "file": "assets/zones/var/rascino-inverno-nuvoloso.webp",
+     "file_hd": "assets/zones/var/rascino-inverno-nuvoloso-hd.webp",
+     "size": [
+      1200,
+      1600
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Sabina Trekking ASD",
+     "license": "CC BY-SA 3.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+     "page": "https://commons.wikimedia.org/wiki/File:Rascino.jpg"
+    },
+    {
+     "season": "inverno",
+     "weather": "nebbia",
+     "file": "assets/zones/var/rascino-inverno-nebbia.webp",
+     "file_hd": "assets/zones/var/rascino-inverno-nebbia-hd.webp",
+     "size": [
+      1200,
+      1600
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Sabina Trekking ASD",
+     "license": "CC BY-SA 3.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+     "page": "https://commons.wikimedia.org/wiki/File:Rascino.jpg"
+    },
+    {
+     "season": "inverno",
+     "weather": "pioggia",
+     "file": "assets/zones/var/rascino-inverno-pioggia.webp",
+     "file_hd": "assets/zones/var/rascino-inverno-pioggia-hd.webp",
+     "size": [
+      1200,
+      1600
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Sabina Trekking ASD",
+     "license": "CC BY-SA 3.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+     "page": "https://commons.wikimedia.org/wiki/File:Rascino.jpg"
+    },
+    {
+     "season": "inverno",
+     "weather": "neve",
+     "file": "assets/zones/var/rascino-inverno-neve.webp",
+     "file_hd": "assets/zones/var/rascino-inverno-neve-hd.webp",
+     "size": [
+      1200,
+      1600
+     ],
+     "generated": true,
+     "source": "Wikimedia Commons",
+     "author": "Sabina Trekking ASD",
+     "license": "CC BY-SA 3.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+     "page": "https://commons.wikimedia.org/wiki/File:Rascino.jpg"
+    }
+   ],
+   "season": "estate",
+   "weather": "sereno"
   },
   "tancia": {
    "file": "assets/zones/tancia.webp",

@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { readFileSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
 import { seasonOf, pickCover, weatherOf, SEASONS, WEATHERS } from '../js/zone-cover.js';
 
 test('meteorological seasons from the chosen day', () => {
@@ -41,6 +41,7 @@ test('every cover variant has a file, a known season and weather, and the credit
     for (const p of m.variants || []) {
       assert.ok(SEASONS.includes(p.season) && WEATHERS.includes(p.weather), `${id}: ${p.season} ${p.weather}`);
       assert.match(p.file, /^assets\/zones\/.+\.webp$/, `${id}: ${p.file}`);
+      for (const f of [p.file, p.file_hd]) assert.ok(existsSync(new URL(`../${f}`, import.meta.url)), `${id}: manca ${f}`);
       // elaborata o reale, l'attribuzione resta quella della foto di partenza
       assert.ok(p.author && p.license && /^https:\/\//.test(p.page), `${id}: crediti di ${p.file}`);
     }
