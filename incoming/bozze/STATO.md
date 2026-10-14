@@ -17,7 +17,7 @@ Bozze correnti per revisione. Le versioni definitive sono separate in incoming/i
 | icone/tavola-11.png | edulis, pinophilus, aereus | ok | QA anatomica completata; dubbi dei dati da leggere in NOTE. |
 | icone/tavola-12.png | aestivalis, tylopilus-felleus, caloboletus-calopus | ok | QA anatomica completata; dubbi dei dati da leggere in NOTE. |
 | icone/tavola-13.png | rubroboletus-satanas, caloboletus-radicans, neoboletus-luridiformis | ok | QA anatomica completata; dubbi dei dati da leggere in NOTE. |
-| icone/tavola-14.png | suillus, suillus-bovinus, imleria-badia | ok | QA anatomica completata; dubbi dei dati da leggere in NOTE. |
+| icone/tavola-14.png | suillus, suillus-bovinus, imleria-badia | ok | QA conclusa; scala ridotta per uniformarla alla tavola1. Dubbi dati nelle NOTE. |
 | icone/tavola-15.png | virescens, russula-heterophylla, russula-aeruginea | ok | QA finale conclusa; copia definitiva disponibile. |
 | icone/tavola-16.png | russula-olivacea, russula-aurea, nuda | ok | QA finale conclusa; gambo nuda neutro per colore non specificato, limite nelle NOTE. |
 | icone/tavola-17.png | lactarius-deliciosus, lactarius-deterrimus, laccaria-amethystina | ok | QA anatomica completata; dubbi dei dati da leggere in NOTE. |
