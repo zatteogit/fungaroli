@@ -491,10 +491,15 @@ const photosOf = (t) => {
 export const taxonName = (key) => { const t = TAXA.find((x) => x.key === key); return t?.name || t?.latin || ''; };
 export const hasTaxonPage = (key) => { const t = TAXA.find((x) => x.key === key); return !!t && !(t.edible_id && !t.lookalike_of?.length); };
 export function renderTaxonPage(box, key) {
-  box.dataset.glossaryContext='Funghi';
   const t = TAXA.find((x) => x.key === key);
-  if (!t) { box.innerHTML = '<p class="muted">Specie non trovata.</p>'; return; }
-  const ph = photosOf(t), tox = esc(t.toxicity || ''), toxL = esc(t.tox_label || t.toxicity || '');
+  if (!t) { box.dataset.glossaryContext='Funghi'; box.innerHTML = '<p class="muted">Specie non trovata.</p>'; return; }
+  renderTaxonView(box, t);
+}
+// Un solo modello per le schede dei funghi senza indice di crescita: i taxon di Riconosci e le schede brevi del catalogo.
+// Le sezioni compaiono solo se c'e' il dato; extra e' HTML aggiuntivo della scheda (stagione testuale, segnalazioni).
+export function renderTaxonView(box, t, { photos = null, habitatText = '', extra = '' } = {}) {
+  box.dataset.glossaryContext='Funghi';
+  const ph = photos || photosOf(t), tox = esc(t.toxicity || ''), toxL = esc(t.tox_label || t.toxicity || '');
   const look = (t.lookalike_of || []).map((id) => ({ id, o: TAXA.find((x) => x.edible_id === id && !x.lookalike_of?.length) })).filter((x) => x.o).sort((x, y) => similarity(y.o, t) - similarity(x.o, t));
   const months = t.traits?.season?.length ? monthsTxt(t.traits.season) : '';
   const habitat = [].concat(t.traits?.habitat || []).map((v) => optLabel(QK('habitat'), v));
@@ -510,20 +515,20 @@ export function renderTaxonPage(box, key) {
       ${ph.length > 1 ? `<div class="sp-strip">${ph.slice(1, 6).map((p, k) => `<button type="button" class="zoomable" data-photo="${k + 1}" aria-label="Foto ${k + 2}: ingrandisci"><img data-src="${ASSET(p.file)}" alt="" loading="lazy" decoding="async"></button>`).join('')}</div>` : ''}
       ${attentionBox(t.field_rules)}
       ${t.caution ? `<p class="id-why"><b>Cautele della specie:</b> ${esc(t.caution)}</p>` : ''}
-      <h3>Caratteri da confrontare</h3>
-      ${traitStrip(null, t)}
+      ${t.traits && Object.keys(t.traits).some((k) => k !== 'season') ? `<h3>Caratteri da confrontare</h3>${traitStrip(null, t)}` : '<p class="notice">Caratteri di confronto in preparazione: per ora la scheda riporta ambiente, stagione e cautele dalle fonti.</p>'}
       ${t.check_before_picking?.length ? `<h3>Cosa osservare</h3><ol class="keys">${t.check_before_picking.map((x) => `<li><span class="key-text">${esc(x)}</span></li>`).join('')}</ol>` : ''}
       ${look.length ? `<h3>Si confonde con</h3><ul class="tx-look">${look.map(({ id, o }) => { const op = photoOf(o); return `<li>
         <a class="tx-look-main" href="#/riconosci/confronta/${esc(t.key)}/${esc(o.key)}">${op ? `<img data-src="${ASSET(op.thumb || op.file)}" alt="" loading="lazy" decoding="async">` : ''}<span><b>${esc(o.name)}</b><i>${esc(o.latin)}</i><small class="tx-cmp">Confrontali carattere per carattere ›</small></span></a>
         <a class="tx-sheet" data-entity href="#/specie/${esc(id)}">Scheda di ${esc(o.name.toLowerCase())} ›</a></li>`; }).join('')}</ul>` : ''}
       <h3>Dove e quando</h3>
       <dl class="sci-params">
-        ${habitat.length ? `<div><dt>Dove</dt><dd>${esc(orList(habitat))}</dd></div>` : ''}
+        ${habitat.length ? `<div><dt>Dove</dt><dd>${esc(orList(habitat))}</dd></div>` : habitatText ? `<div><dt>Dove</dt><dd>${esc(habitatText)}</dd></div>` : ''}
         ${t.trees?.length ? `<div><dt>Alberi</dt><dd>${esc(t.trees.join(', '))}</dd></div>` : ''}
         ${months ? `<div><dt>Quando</dt><dd>${esc(months)}</dd></div>` : ''}
       </dl>
+      ${extra}
       <p class="small muted">Confrontare questi caratteri non identifica un esemplare: fai controllare tutto il raccolto all'Ispettorato micologico dell'ASL. È gratuito.</p>
-      ${t.sources?.length ? `<details class="sec"><summary>Fonti</summary><div class="sec-body"><ul class="small sources">${t.sources.map((x) => `<li><a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.title)}</a></li>`).join('')}</ul></div></details>` : ''}
+      ${t.sources?.length || ph.length ? `<details class="sec"><summary>Fonti e fotografie</summary><div class="sec-body">${t.sources?.length ? `<ul class="small sources">${t.sources.map((x) => `<li><a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.title)}</a></li>`).join('')}</ul>` : ''}${ph.length ? `<p class="small"><b>Fotografie</b></p><ul class="small sources">${ph.map((p) => `<li>${esc(p.author || 'Autore non indicato')} · ${p.licenseUrl ? `<a href="${esc(p.licenseUrl)}" target="_blank" rel="noopener">${esc(p.license || 'licenza')}</a>` : esc(p.license || '')}${p.page ? ` · <a href="${esc(p.page)}" target="_blank" rel="noopener">${esc(p.source || 'Fotografia originale')}</a>` : ''}</li>`).join('')}</ul>` : ''}</div></details>` : ''}
     </div>`;
   const lb = ph.map((p) => ({ src: ASSET(p.file_hd || p.file), alt: t.name, caption: captionHtml({ title: `<span class="tox">${toxL}</span> ${esc(t.name || '')} <i>${esc(t.latin)}</i>`, credit: `Foto: ${esc(p.author || '')}${p.license ? `, ${esc(p.license)}` : ''}` }) }));
   box.querySelectorAll('[data-photo]').forEach((b) => b.addEventListener('click', () => openLightbox(lb, +b.dataset.photo)));

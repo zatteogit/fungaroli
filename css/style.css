@@ -2660,3 +2660,9 @@ html.entity-open { overflow: hidden; }
 .ws-forest { display: grid; gap: 6px; }
 .ws-forest .forest { margin: 0; }
 .ws-forest .forest-legend { font-size: 12px; }
+
+/* Funghi: velenosi e sosia nel catalogo, con l'etichetta di rischio sulla card */
+.sp-card-tox { position: absolute; top: 10px; left: 10px; z-index: 2; padding: 3px 9px; border-radius: 999px; font-size: 11px; font-weight: 800; letter-spacing: .05em; text-transform: uppercase; background: var(--surface); color: var(--text); }
+.sp-card-tox.tox-mortale { background: var(--crit); color: #fff; }
+.sp-card-tox.tox-tossico { background: var(--warn-bg); color: var(--warn-ink); }
+#species-grid .recognize-modes { margin: 0 0 var(--sp-4); }
