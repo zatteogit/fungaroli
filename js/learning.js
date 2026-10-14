@@ -57,10 +57,13 @@ export function enhanceGlossary(root) {
   root.querySelectorAll('a.tree-link,a.species-link,a[data-entity]').forEach(a=>a.setAttribute('aria-haspopup','dialog'));
   const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {acceptNode(node) {
     const p = node.parentElement;
-    if (!p || !node.textContent.trim() || p.closest('a,button,label,select,textarea,input,code,pre,script,style,svg,h1,h2,h3,h4,summary,[contenteditable],[data-no-glossary]')) return NodeFilter.FILTER_REJECT;
+    // niente link dove si legge a colpo d'occhio: tessere, confronti, risposte, chip ed etichette
+    if (!p || !node.textContent.trim() || p.closest('a,button,label,select,textarea,input,code,pre,script,style,svg,h1,h2,h3,h4,summary,[contenteditable],[data-no-glossary],.trait-strip,.cmp-rows,.id-grid,.id-answers,.tag,.chip,.pill,.sp-card,.tile,.sci-params dt')) return NodeFilter.FILTER_REJECT;
     return p.closest('p,dd,li,.sf-why') ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
   }});
   const nodes = []; while(walker.nextNode()) nodes.push(walker.currentNode);
+  // ogni parola si collega una volta sola nella pagina, e mai due link a ridosso: è un'app, non un ipertesto
+  const linked = new Set([...root.querySelectorAll('a.glossary-link')].map((a) => a.dataset.term));
   for(const node of nodes) {
     const context=node.parentElement.closest('[data-glossary-context]')?.dataset.glossaryContext;
     aliasRe.lastIndex = 0;
@@ -70,7 +73,8 @@ export function enhanceGlossary(root) {
     for(const m of matches) {
       const start = m.index + m[1].length, word = m[2];
       const id = resolveGlossaryTerm(aliasMap,word,context)?.id;
-      if(!id) continue;
+      if(!id || linked.has(id) || (pos && start - pos < 24)) continue;
+      linked.add(id);
       fragment.append(document.createTextNode(node.textContent.slice(pos,start)));
       const a = document.createElement('a'); a.className = 'glossary-link'; a.dataset.term = id; a.href = `#/glossario/${id}`; a.setAttribute('aria-haspopup','dialog'); a.textContent = word;
       fragment.append(a); pos = start + word.length;
