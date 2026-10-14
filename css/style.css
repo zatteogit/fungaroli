@@ -1663,6 +1663,18 @@ html:has(dialog[open]:modal) body { overflow: hidden; }
   .active-filters .chip-ph { padding-left: 5px; gap: 6px; }
   .active-filters .chip-ph .thumb, .active-filters .chip-chk { width: 22px; height: 22px; }
 }
+/* The home header has one rail for fungi and one compact row for preferences. */
+#active-filters { flex-wrap:nowrap; gap:10px; overflow:visible; }
+#active-filters .af-group-row { display:flex; flex:1; min-width:0; align-items:center; gap:6px; overflow-x:auto; scrollbar-width:none; padding:2px 0; }
+#active-filters .af-group-row::-webkit-scrollbar { display:none; }
+#active-filters .af-pref-row { display:flex; flex:none; flex-wrap:nowrap; align-items:center; gap:6px; padding:2px 0; }
+#active-filters .pref-label-short { display:none; }
+@media(max-width:760px) {
+  #active-filters { display:grid; gap:4px; }
+  #active-filters .af-pref-row .chip { padding:6px 8px; min-height:36px; }
+  #active-filters .pref-label-full { display:none; }
+  #active-filters .pref-label-short { display:inline; }
+}
 /* tessere dei caratteri: stesso riquadro per tutti i disegni */
 .trait-strip .ts-art { height: 60px; margin-bottom: 4px; }
 .trait-strip .ts-art > svg.ta { height: 60px; width: auto; max-width: 100%; flex: none; color: var(--text-2); }

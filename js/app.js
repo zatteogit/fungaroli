@@ -450,7 +450,7 @@ function routeNow(r, nav) {
 const go = (hash) => { location.hash = hash; };
 
 // Filtri in una sola riga: tutti i gruppi visibili (si parte da "Tutti" e si restringe) e le preferenze come interruttori
-const PREFS = [['avoidCrowd', 'Poca gente'], ['preferComfort', 'Accesso comodo'], ['distancePenalty', 'Vicino alla base']];
+const PREFS = [['avoidCrowd', 'Poca gente', 'Poca gente'], ['preferComfort', 'Accesso comodo', 'Comodo'], ['distancePenalty', 'Vicino alla base', 'Vicino']];
 // ordine dei funghi: prima quelli in stagione adesso, poi per pregio; i primi CHIPS_SHOWN visibili, gli altri dietro "+ altri"
 let fitN = 99; // quanti funghi entrano nella riga senza tagliare (ricalcolato sulla larghezza)
 const QUALITY = { ottimo: 1, buono: 0.6 };
@@ -467,17 +467,15 @@ function groupOrder() {
 }
 // adatta il numero di funghi visibili alla larghezza: la riga si taglia solo se proprio non c'e' spazio
 function fitChips(box) {
-  const cs = getComputedStyle(box);
-  const W = box.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight) - 2;
+  const row = box.querySelector('.af-group-row') || box;
+  const cs = getComputedStyle(row);
+  const W = row.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight) - 2;
   if (W <= 0) return;
   const gap = parseFloat(cs.columnGap) || 8;
   const w = (el) => (el ? el.getBoundingClientRect().width + gap : 0);
-  // su mobile le preferenze vanno a capo (riga propria): nella prima riga contano solo "Tutti", i funghi e "+ altri"
-  const sep = box.querySelector('.af-sep');
-  const wrap = sep && getComputedStyle(sep).flexBasis === '100%';
-  const fixed = w(box.querySelector('[data-g="all"]')) + (w(box.querySelector('[data-more]')) || 96) + (wrap ? 0 : w(sep) + [...box.querySelectorAll('[data-p]')].reduce((a, el) => a + w(el), 0)); // 112 = "+ altri N"
+  const fixed = w(row.querySelector('[data-g="all"]')) + (w(row.querySelector('[data-more]')) || 96);
   let used = fixed, n = 0;
-  for (const el of box.querySelectorAll('.chip-g')) { if (used + w(el) > W) break; used += w(el); n++; }
+  for (const el of row.querySelectorAll('.chip-g')) { if (used + w(el) > W) break; used += w(el); n++; }
   n = Math.max(1, n);
   if (n !== fitN) { fitN = n; renderFilterSummary(); }
 }
@@ -496,11 +494,11 @@ function renderFilterBox(box, onMap = false) {
   const hidden = order.length - vis.length;
   const bd = onMap && results ? bestOfDay(state.dayOffset) : null;
   const dayChip = bd ? `<button type="button" class="chip chip-day" data-days aria-expanded="${!!box.closest('.map-top')?.classList.contains('days-open')}" style="--dc:var(${scoreVar(bd.s)})"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4M17 3v4M3 11h18"/></svg><span>${esc(fmtDate(bd.d.date, { weekday: 'short' }).replace('.', ''))} ${esc(fmtDate(bd.d.date, { day: 'numeric' }))}</span><span class="chip-day-score"><i aria-hidden="true"></i><b class="pc">${formatIndex(bd.s)}</b></span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>` : '';
-  box.innerHTML = `${dayChip}<button type="button" class="chip" data-g="all" aria-pressed="${all}">Tutti</button>
+  const groups = `<button type="button" class="chip" data-g="all" aria-pressed="${all}">Tutti</button>
     ${vis.map((g) => `<button type="button" class="chip chip-g" data-g="${g.id}" aria-pressed="${!all && groupSelection(g.id) !== 'none'}">${esc(g.label)}</button>`).join('')}
-    <button type="button" class="chip chip-more" data-more aria-haspopup="dialog">Altri</button>
-    <span class="af-sep" aria-hidden="true"></span>
-    ${PREFS.map(([k, label]) => `<button type="button" class="chip pref" data-p="${k}" aria-pressed="${!!state[k]}">${esc(label)}</button>`).join('')}`;
+    <button type="button" class="chip chip-more" data-more aria-haspopup="dialog">Altri</button>`;
+  const prefs = PREFS.map(([k, label, compact]) => `<button type="button" class="chip pref" data-p="${k}" aria-label="${esc(label)}" title="${esc(label)}" aria-pressed="${!!state[k]}">${onMap?esc(label):`<span class="pref-label-full">${esc(label)}</span><span class="pref-label-short" aria-hidden="true">${esc(compact)}</span>`}</button>`).join('');
+  box.innerHTML = onMap ? `${dayChip}${groups}<span class="af-sep" aria-hidden="true"></span>${prefs}` : `<div class="af-group-row" role="group" aria-label="Funghi">${groups}</div><div class="af-pref-row" role="group" aria-label="Preferenze dell’uscita">${prefs}</div>`;
   const changed = () => soft(() => { savePrefs(); renderFilterSummary(); if (series) { compute(); outCache.clear(); renderAll(); } });
 
   box.querySelector('[data-days]')?.addEventListener('click', (e) => {
