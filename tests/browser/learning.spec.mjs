@@ -66,12 +66,14 @@ for(const width of [320,1280]) test(`spiegazioni contestuali, glossario e ricono
   await expect(page.locator('#glossary-results')).toContainText('Micorriza');
   await page.locator('#glossary-q').fill('parola inesistente');await expect(page.locator('#glossary-results')).toContainText('Nessuna voce');
   await page.goto('/#/glossario/dislivello');await expect(page.locator('#glossary-term-dislivello')).toHaveAttribute('open','');
-  await page.goto('/#/riconosci/alberi');await page.locator('[data-observation="aghi a coppie"]').click();
-  await expect(page.locator('#tree-observation-count')).toHaveText('4 schede da confrontare');
-  const treeResult=page.locator('#tree-observation-results a').first();
+  // percorso guidato degli alberi: si parte dalla foglia, gli aghi lasciano solo le conifere
+  await page.goto('/#/riconosci/alberi');await page.locator('#field-identify [data-k="leaf_kind"][data-v="aghi"]').click();
+  await expect(page.locator('#field-identify .id-head h2')).toHaveText('5 candidati');
+  await expect(page.locator('#field-identify .id-answers')).toContainText('Aghi');
+  const treeResult=page.locator('#field-identify .gk-results a',{hasText:'Pino nero'});
   await treeResult.click();await expect(sheet.locator('h1')).toContainText('Pino nero');
   expect(page.url()).toContain('#/riconosci/alberi');await page.keyboard.press('Escape');
-  await expect(treeResult).toBeFocused();await expect(page.locator('#tree-observation-q')).toHaveValue('aghi a coppie');
+  await expect(treeResult).toBeFocused();
   await page.goto('/#/riconosci/bosco');await page.locator('#field-glossary [data-category="Sentiero"]').click();
   await page.locator('#field-glossary-q').fill('segnavia');await expect(page.locator('#field-glossary-results')).toContainText('Segnavia');
   await page.goto('/#/riconosci');
@@ -189,8 +191,9 @@ for(const width of [320,1280]) test(`le keyword non spezzano gli elenchi numerat
   // Anche con le vecchie regole grid, l'intera frase deve restare una sola cella.
   await page.addStyleTag({content:'.keys li{display:grid;position:static;padding-left:0;grid-template-columns:30px 1fr;gap:12px}.keys li::before{position:static}'});
   await verify(row);
-  await page.goto('/#/riconosci/alberi');await page.locator('#tree-observation-q').fill('Farnetto');
-  const trigger=page.locator('#tree-observation-results a').first();await trigger.click();
+  await page.goto('/#/riconosci/alberi');await page.locator('#field-identify [data-k="leaf_kind"][data-v="foglia_larga"]').click();
+  await page.locator('#field-identify [data-k="fruit_type"][data-v="ghianda"]').click();
+  const trigger=page.locator('#field-identify .gk-results a',{hasText:'Farnetto'});await trigger.click();
   const modalRow=page.locator('#entity-sheet .keys > li').nth(3);await verify(modalRow);
   const word=modalRow.locator('a.glossary-link');await word.click();
   const panel=page.locator(width<700?'#learning-sheet':'#learning-popover');await expect(panel).toBeVisible();

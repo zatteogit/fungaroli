@@ -171,27 +171,9 @@ export function initLearning({glossary, trees,media,assetUrl}) {
   observer.observe(main,{childList:true,subtree:true,characterData:true});
 }
 
-export function renderFieldIdentify(box, mode, thumb) {
-  box.dataset.glossaryContext=mode==='bosco'?'Bosco':'Alberi';
-  if(mode==='bosco') {
-    box.innerHTML='<p class="learning-observe">Guarda il substrato, il margine del bosco e i segni sul sentiero. Queste voci aiutano a descrivere ciò che vedi.</p><div id="field-glossary"></div>';
-    renderGlossary(box.querySelector('#field-glossary'), '', ['Bosco','Sentiero']);
-    return;
-  }
-  box.innerHTML=`<p class="learning-observe">Confronta più caratteri: foglia, corteccia, frutto e gemme. Le ${Object.keys(TREES).length} schede disponibili sono un punto di partenza, non una chiave completa della flora.</p>
-    <div class="tree-observation-controls"><label>Che cosa osservi?<select id="tree-part"><option value="">Tutti i caratteri</option><option value="leaf">Foglia</option><option value="bark">Corteccia</option><option value="fruit">Frutto</option><option value="recognize">Caratteri principali</option></select></label><label class="search-box"><input id="tree-observation-q" type="search" placeholder="Es. aghi a coppie, liscia, lobi…" aria-label="Cerca un albero per caratteri osservati" autocomplete="off"></label></div>
-    <div class="learning-filters" role="group" aria-label="Esempi di caratteri"><button class="chip" type="button" data-observation="aghi a coppie">Aghi a coppie</button><button class="chip" type="button" data-observation="lobi">Foglie con lobi</button><button class="chip" type="button" data-observation="liscia">Corteccia liscia</button><button class="chip" type="button" data-observation="riccio">Riccio</button></div>
-    <p class="small muted" id="tree-observation-count" role="status"></p><div id="tree-observation-results" class="field-results"></div>`;
-  const input=box.querySelector('#tree-observation-q'),part=box.querySelector('#tree-part');
-  const paint=()=>{
-    const words=normalizeLearning(input.value).split(/\s+/).filter(Boolean);
-    const text=t=>part.value ? (Array.isArray(t[part.value]) ? t[part.value].join(' ') : t[part.value] || '') : [t.name,t.latin,...(t.aliases||[]),...(t.recognize||[]),t.leaf,t.bark,t.fruit].join(' ');
-    const hits=Object.entries(TREES).filter(([,t])=>words.every(w=>normalizeLearning(text(t)).includes(w)));
-    box.querySelector('#tree-observation-count').textContent=`${hits.length} ${hits.length===1?'scheda da confrontare':'schede da confrontare'}`;
-    box.querySelector('#tree-observation-results').innerHTML=hits.length ? hits.map(([id,t])=>`<article class="field-card"><a class="field-card-head tree-link" href="#/albero/${encodeURIComponent(id)}">${thumb(id,52)}<span><b>${esc(t.name)}</b><i>${esc(t.latin)}</i></span><span aria-hidden="true">→</span></a><p>${esc(part.value ? text(t) : (t.recognize||[]).slice(0,2).join(' · '))}</p></article>`).join('') : '<p class="notice">Nessuna scheda corrisponde. Prova un altro carattere: il catalogo non comprende tutti gli alberi.</p>';
-    box.querySelectorAll('[data-observation]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.observation===input.value)));
-  };
-  input.addEventListener('input',paint);part.addEventListener('change',paint);
-  box.querySelectorAll('[data-observation]').forEach(b=>b.onclick=()=>{part.value='';input.value=b.dataset.observation;paint();});
-  paint();
+// «Bosco e sentiero» in Impara: le voci del glossario di bosco e sentiero (alberi e piante hanno il percorso guidato)
+export function renderFieldIdentify(box) {
+  box.dataset.glossaryContext='Bosco';
+  box.innerHTML='<p class="learning-observe">Guarda il substrato, il margine del bosco e i segni sul sentiero. Queste voci aiutano a descrivere ciò che vedi.</p><div id="field-glossary"></div>';
+  renderGlossary(box.querySelector('#field-glossary'), '', ['Bosco','Sentiero']);
 }

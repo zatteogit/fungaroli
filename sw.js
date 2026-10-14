@@ -13,7 +13,7 @@ const PRECACHE = [
   'js/entity-sheet.js',
   'js/search-select.js',
   'js/weather-request.js', 'js/weather-cache.js', 'js/weather-data.js', 'js/weather-dom.js',
-  'js/images.js', 'js/plants.js','js/botanical-model.js','js/outing-discoveries.js','js/botanical-explanation.js','data/botanical-models.json', 'js/plant-catalog.js', 'js/catalog-search.js', 'js/notebook-entry.js', 'data/plants.json',
+  'js/images.js', 'js/plants.js','js/botanical-model.js','js/outing-discoveries.js','js/botanical-explanation.js','data/botanical-models.json', 'js/plant-catalog.js', 'js/catalog-search.js', 'js/guided-key.js', 'data/recognize-trees.json', 'data/recognize-plants.json', 'js/notebook-entry.js', 'data/plants.json',
   'data/media-glossary.json',
   './', 'index.html', 'manifest.webmanifest', 'css/style.css', 'css/fonts.css',
   'js/learning.js','js/glossary-context.js', 'js/species-link.js', 'js/content-schema.js', 'js/walks.js', 'js/edible-catalog.js', 'js/species-autocomplete.js', 'js/app.js', 'js/community.js', 'js/community-signal.js', 'js/guides.js', 'js/vendor/webauthn.js', 'js/model.js', 'js/species.js', 'js/weather.js', 'js/chart.js', 'js/journal.js', 'js/svgmap.js',

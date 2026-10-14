@@ -25,6 +25,7 @@ import { loadOuting, outingFor, OUTING_LABEL, OUTING_SHORT, OUTING_RANK } from '
 import { initIdentify, renderIdentify, setCompare, searchTaxa, openTaxon, renderTaxonPage, renderTaxonView, taxonName, taxonByKey } from './identify.js';
 import { initSearch } from './search.js';
 import { searchFieldHtml, matchesQuery, renderAlsoIn } from './catalog-search.js';
+import { renderGuidedKey } from './guided-key.js';
 import { renderWhy, renderMethod } from './science.js';
 import { navigate, soft } from './motion.js';
 import { FOREST_LEGEND } from './forest-legend.js';
@@ -458,8 +459,10 @@ function routeNow(r, nav) {
     $('#identify').hidden = r.recognizeMode !== 'funghi';
     $('#field-identify').hidden = r.recognizeMode === 'funghi';
     if(r.recognizeMode==='funghi') {setCompare(r.compare,r.pick);renderIdentify($('#identify'));}
-    else if(r.recognizeMode==='piante') renderPlants($('#field-identify'),{identify:true});
-    else renderFieldIdentify($('#field-identify'),r.recognizeMode,treeThumb);
+    // piante e alberi: lo stesso percorso guidato dei funghi, una domanda alla volta
+    else if(r.recognizeMode==='piante') renderGuidedKey($('#field-identify'),'piante',{items:plants().map(p=>({id:p.id,name:p.name,latin:cardLatin(p.latin),href:`#/pianta/${encodeURIComponent(p.id)}`,danger:p.category==='Pericolose'})),thumb:plantThumb,note:'I fiori aggiunti di recente non hanno ancora i caratteri per il percorso guidato: li trovi in Sfoglia, con il filtro Fiori.'});
+    else if(r.recognizeMode==='alberi') renderGuidedKey($('#field-identify'),'alberi',{items:Object.entries(treesData?.trees||{}).map(([id,t])=>({id,name:t.name,latin:cardLatin(t.latin),href:`#/albero/${encodeURIComponent(id)}`})),thumb:treeThumb});
+    else renderFieldIdentify($('#field-identify'));
   }
   const referenceBox=document.querySelector(`.view[data-view="${r.view}"]`);
   const noteRoute={'albero':['albero',r.treeId],'specie-dettaglio':['specie',r.speciesId],'fungo':['fungo',r.taxonId],'commestibile':['commestibile',r.speciesId],'guide':['guide',r.guideId]}[r.view];

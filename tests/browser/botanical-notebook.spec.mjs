@@ -20,7 +20,13 @@ test('plants: search, comparison sheets and private simultaneous phenophases on 
  await page.reload();await expect(page.locator('#journal-list')).toContainText('Ritorno fra una settimana.');
  await page.locator('[data-new-note]').first().click();await page.locator('.notebook-dialog[open] [name="title"]').fill('Idea per il prossimo giro');await page.locator('.notebook-dialog[open] [name="note"]').fill('Portare il binocolo.');await page.locator('.notebook-dialog[open] [type="submit"]').click();await expect(page.locator('#journal-list .notebook-entry')).toHaveCount(2);await page.screenshot({path:'/tmp/fungaroli-notebook-mobile.png'});
  await page.locator('#notebook-query').fill('binocolo');await expect(page.locator('#journal-list .notebook-entry')).toHaveCount(1);await page.locator('[data-del]').click();await page.locator('[data-del]').click();await expect(page.locator('#journal-list')).not.toContainText('Portare il binocolo.');
- await page.goto('/#/riconosci/piante');await expect(page.locator('#field-identify [data-plant-results]')).toBeVisible();await page.locator('#field-identify [data-plant-query]').fill('Foeniculum vulgare');await expect(page.locator('#field-identify .botanical-card')).toHaveCount(1);await page.locator('#field-identify .botanical-details').click();await expect(page.locator('#entity-sheet[open]')).toContainText('Apiaceae comprendono specie mortali');expect(new URL(page.url()).hash).toBe('#/riconosci/piante');expect(errors).toEqual([]);
+ await page.goto('/#/riconosci/piante');await expect(page.locator('#field-identify .gk-q')).toBeVisible();
+ // percorso guidato: risponde come il finocchietto finché ci sono domande, e la cicuta resta accanto con le differenze
+ const traits=await page.evaluate(()=>fetch('data/recognize-plants.json').then(r=>r.json()).then(d=>d.items.finocchietto.traits));
+ for(let i=0;i<12;i++){const q=page.locator('#field-identify .gk-q [data-k]').first();if(!await q.count())break;const k=await q.getAttribute('data-k'),v=[].concat(traits[k]??[])[0];await page.locator(v?`#field-identify .gk-q [data-k="${k}"][data-v="${v}"]`:`#field-identify .gk-q [data-skip="${k}"]`).click();}
+ await expect(page.locator('#field-identify .gk-results .field-card').first()).toContainText('Finocchietto');
+ await expect(page.locator('#field-identify .gk-results')).toContainText('Cicuta');await expect(page.locator('#field-identify .gk-pair')).toContainText('Finocchietto e cicuta');
+ await page.locator('#field-identify .gk-results a',{hasText:'Finocchietto'}).click();await expect(page.locator('#entity-sheet[open]')).toContainText('Apiaceae comprendono specie mortali');expect(new URL(page.url()).hash).toBe('#/riconosci/piante');expect(errors).toEqual([]);
 });
 
 test('botanical layouts, global search and short note form in both themes',async({page})=>{

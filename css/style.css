@@ -2725,3 +2725,16 @@ body:is([data-page="specie"], [data-page="piante"], [data-page="alberi"]) .tab-s
   .botanical-tools > .plant-groups::-webkit-scrollbar { display: none; }
   .botanical-tools > .plant-groups > * { flex: none; }
 }
+/* percorso guidato di piante e alberi: stesse domande a tessere dei funghi, risultati come schede di campo */
+.gk-results { display: grid; gap: 10px; }
+.gk-results .field-card-head .id-fit { position: static; margin-left: auto; }
+.gk-results .field-card-head .tag { margin-left: auto; }
+.gk-results .field-card-head .tag + .id-fit { margin-left: 6px; }
+.gk-tell { display: block; margin-top: 6px; }
+.gk-pair { margin: 0 0 12px; }
+.gk-pair h3 { margin: 0 0 6px; font-size: 15px; }
+.gk-pair ul { margin: 0; padding-left: 18px; }
+.gk-danger { border-left: 3px solid var(--danger, #b3261e); }
+/* nelle risposte del percorso guidato non ci sono disegni: la colonna del valore prende lo spazio */
+.gk-answers .id-row-main, #field-identify .id-row-main { grid-template-columns: minmax(84px, 38%) 1fr auto; }
+.gk-q h3 { font-size: 21px; line-height: 1.25; }
