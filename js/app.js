@@ -201,7 +201,7 @@ async function init() {
   renderGuideCards($('#editorial'));
   initCommunity({ zoneList: zones, speciesList: catalog });
   renderCommunityIntro();
-  document.addEventListener('fungaroli:community', () => { renderCommunityIntro(); if (results) renderAll(); });
+  document.addEventListener('fungaroli:community', () => { renderCommunityIntro(); if (results) paintWeatherView(); });
   initIdentify({
     traits: stj, media: mj, assetUrl: embedded ? (f) => embedded.assets?.[f] || '' : (f) => f, thumb, zones, banner: legal?.identify_banner,
     howTo: (eid, latin) => idj?.species?.[eid]?.lookalikes?.find((l) => l.latin === latin)?.how_to_tell || '',
@@ -245,7 +245,7 @@ async function init() {
     else if(kind==='fungo')image=searchTaxa().find(t=>t.key===id)?.photo;
     const file=image?.thumb||image?.file;return file?{file:assetSrc(file)}:null;
   };
-  journal = initJournal({ onEntries:entries=>{botanicalNotes=entries.filter(e=>e.kind==='note'&&e.observation);if(series){compute();outCache.clear();renderAll();}},zones, speciesCatalog: catalog, predict, captureForecast, getZoneId: () => state.zoneId || zones[0].id, zoneImage:zid=>assetSrc(zoneMedia[zid]?.file||''),referenceImage:notebookReferenceImage });
+  journal = initJournal({ onEntries:entries=>{botanicalNotes=entries.filter(e=>e.kind==='note'&&e.observation);if(series){compute();outCache.clear();if(weatherBusy)paintWeatherView();else renderAll();}},zones, speciesCatalog: catalog, predict, captureForecast, getZoneId: () => state.zoneId || zones[0].id, zoneImage:zid=>assetSrc(zoneMedia[zid]?.file||''),referenceImage:notebookReferenceImage });
 
   route(); // le pagine che non dipendono dal meteo (specie, diario, info) compaiono subito
   const fresh = consumeFresh(); // ricarica pulita dal logo: anche il meteo da capo
@@ -637,7 +637,7 @@ async function refreshWeather(force){
     received||=meta.phase==='network';outing=data;
     for(const id of changed)for(const k of outCache.keys())if(k.startsWith(id+'|'))outCache.delete(k);
     if(results)queueWeatherPaint(changed);
-  }}).then(data=>{if(revision!==weatherRevision)return;outing=data;outingPartial=weatherZones.some(z=>!data?.[z.id]||Date.now()-Date.parse(data[z.id].fetchedAt)>=3600000);});
+  }}).then(data=>{if(revision!==weatherRevision)return;const changed=new Set(Object.keys(data||{}).filter(id=>JSON.stringify(outing?.[id])!==JSON.stringify(data[id])));outing=data;for(const id of changed)for(const k of outCache.keys())if(k.startsWith(id+'|'))outCache.delete(k);if(results)queueWeatherPaint(changed);outingPartial=weatherZones.some(z=>!data?.[z.id]||Date.now()-Date.parse(data[z.id].fetchedAt)>=3600000);});
   await Promise.allSettled([growth,practical]);if(revision!==weatherRevision)return;
   weatherBusy=false;$('#refresh').setAttribute('aria-busy','false');loadStep(2);
   if(weatherPaintTimer){clearTimeout(weatherPaintTimer.handle);const changed=weatherPaintTimer.changed;weatherPaintTimer=null;paintWeatherView(changed);}

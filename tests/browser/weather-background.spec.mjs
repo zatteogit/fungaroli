@@ -17,7 +17,7 @@ for(const width of [390,1280])test(`cache immediata, aggiornamento discreto e co
  const href=await page.locator('#hero .cover-link').getAttribute('href');await page.evaluate(()=>{window.savedHero=document.querySelector('#hero .cover-link');window.savedPhoto=document.querySelector('#hero .cover-img');});
  rain=1;paused=false;pending.splice(0).forEach(r=>r());await expect(page.locator('#refresh')).toHaveAttribute('aria-busy','false');await expect(page.locator('#hero .cover-link')).toHaveAttribute('href',href);
  expect(await page.evaluate(()=>savedHero===document.querySelector('#hero .cover-link')&&savedPhoto===document.querySelector('#hero .cover-img'))).toBe(true);
- await expect(page.locator('#app-toast')).toContainText('Meteo aggiornato');expect(await page.locator('#hero .ring').innerText()).not.toBe(score);
+ await expect(page.locator('#app-toast')).toContainText('Meteo aggiornato');await page.evaluate(()=>document.dispatchEvent(new Event('fungaroli:community')));await expect(page.locator('#hero .cover-link')).toHaveAttribute('href',href);expect(await page.locator('#hero .ring').innerText()).not.toBe(score);
  fail=true;await page.locator('#refresh').click();await expect(page.locator('#refresh')).toHaveAttribute('aria-busy','false');await expect(page.locator('#hero .cover-link')).toHaveAttribute('href',href);await expect(page.locator('#weather-work')).toContainText('parziale');
  await page.screenshot({path:`/tmp/weather-cached-${width}.png`});expect(errors).toEqual([]);
 });
