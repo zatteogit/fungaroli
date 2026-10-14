@@ -23,7 +23,8 @@ import { openLightbox, captionHtml } from './lightbox.js';
 import { initInstall, maybeInvite } from './install.js';
 import { loadOuting, outingFor, OUTING_LABEL, OUTING_SHORT, OUTING_RANK } from './outing.js';
 import { initIdentify, renderIdentify, setCompare, searchTaxa, openTaxon, renderTaxonPage, renderTaxonView, taxonName, taxonByKey } from './identify.js';
-import { initSearch, openSearch } from './search.js';
+import { initSearch } from './search.js';
+import { searchFieldHtml, matchesQuery, renderAlsoIn } from './catalog-search.js';
 import { renderWhy, renderMethod } from './science.js';
 import { navigate, soft } from './motion.js';
 import { FOREST_LEGEND } from './forest-legend.js';
@@ -276,13 +277,42 @@ function initShell() {
   renderFilterSummary();
 }
 
+// Scopri: tre cataloghi più «Impara». Ogni catalogo ha «Sfoglia | Impara a riconoscere»;
+// Impara raccoglie glossario, guide e i dettagli di bosco e sentiero.
+const SCOPRI = [['funghi', '#/specie', 'Funghi'], ['piante', '#/piante', 'Piante e fiori'], ['alberi', '#/alberi', 'Alberi'], ['impara', '#/glossario', 'Impara']];
+const SCOPRI_SUB = {
+  funghi: [['#/specie', 'Sfoglia'], ['#/riconosci', 'Impara a riconoscere']],
+  piante: [['#/piante', 'Sfoglia'], ['#/riconosci/piante', 'Impara a riconoscere']],
+  alberi: [['#/alberi', 'Sfoglia'], ['#/riconosci/alberi', 'Impara a riconoscere']],
+  impara: [['#/glossario', 'Glossario'], ['#/guide', 'Guide'], ['#/riconosci/bosco', 'Bosco e sentiero']],
+};
+const RECOGNIZE_HEAD = {
+  funghi: ['Funghi', 'Descrivi quello che vedi: le domande restringono il confronto e mostrano i sosia.'],
+  piante: ['Piante e fiori', 'Cerca per caratteri: foglie, fiori, frutti e ambiente.'],
+  alberi: ['Alberi', 'Foglie, corteccia e frutti: confronta i caratteri passo per passo.'],
+  bosco: ['Bosco e sentiero', 'Tracce, segni e dettagli che incontri camminando.'],
+};
+function scopriPlace(r) {
+  if (r.view === 'riconosci') return [r.recognizeMode === 'bosco' ? 'impara' : r.recognizeMode, r.recognizeMode === 'bosco' ? '#/riconosci/bosco' : SCOPRI_SUB[r.recognizeMode][1][0]];
+  return { specie: ['funghi', '#/specie'], piante: ['piante', '#/piante'], alberi: ['alberi', '#/alberi'], glossario: ['impara', '#/glossario'], 'guide-list': ['impara', '#/guide'] }[r.view] || null;
+}
+function paintScopriNav(r) {
+  const place = scopriPlace(r), view = document.querySelector(`.view[data-view="${r.view}"]`);
+  if (!place || !view) return;
+  const [sec, here] = place, cur = (on) => (on ? ' aria-current="page"' : '');
+  const nav = view.querySelector('[data-scopri-nav]'), sub = view.querySelector('[data-scopri-sub]');
+  if (nav) nav.innerHTML = SCOPRI.map(([id, href, label]) => `<a href="${href}" data-section="${id}"${cur(id === sec)}>${label}</a>`).join('');
+  if (sub) sub.innerHTML = SCOPRI_SUB[sec].map(([href, label]) => `<a href="${href}"${cur(href === here)}>${label}</a>`).join('');
+}
+
 function parseRoute() {
   const parts = location.hash.replace(/^#\/?/, '').split('/').filter(Boolean).map((x) => { try { return decodeURIComponent(x); } catch { return x; } });
   const [a, b, c] = parts;
   if (a === 'zona' && (weatherZones||zones).some((z) => z.id === b)) return { view: 'zona', zoneId: b, offset: Math.max(0, Math.min(AHEAD_DAYS, +c || 0)), trailId: parts[3] === 'sentiero' && (trails[b]?.trails || []).some(t => String(t.id) === parts[4]) ? parts[4] : null };
   if (a === 'mappa') return { view: 'mappa', zoneId: b };
   if (a === 'specie' && b) return { view: 'specie-dettaglio', speciesId: b };
-  if (a === 'specie' || a === 'impara' || a === 'scopri') return { view: 'specie' };
+  if (a === 'specie' || a === 'scopri') return { view: 'specie' };
+  if (a === 'impara') return { view: 'glossario' };
   if (a === 'glossario') return { view: 'glossario', termId: b };
   if (a === 'albero' && b) return { view: 'albero', treeId: b };
   if (a === 'piante') return {view:'piante'};
@@ -325,7 +355,7 @@ addEventListener('scroll', onScrollBar, { passive: true });
 
 // tasto indietro in alto a sinistra: freccia + nome della pagina a cui torni
 const navStack = [];
-const TITLES = { piante:'Piante', uscite: 'Uscite', mappa: 'Mappa', specie: 'Funghi', alberi: 'Alberi', riconosci: 'Riconosci', glossario: 'Glossario', 'guide-list': 'Guide', diario: 'Taccuino', info: 'Regole e metodo', metodo: 'Come funziona' };
+const TITLES = { piante:'Piante e fiori', uscite: 'Uscite', mappa: 'Mappa', specie: 'Funghi', alberi: 'Alberi', riconosci: 'Riconosci', glossario: 'Glossario', 'guide-list': 'Guide', diario: 'Taccuino', info: 'Regole e metodo', metodo: 'Come funziona' };
 function titleOf(r) {
   if (!r) return '';
   if (r.view === 'zona') { const z = (weatherZones||zones).find((x) => x.id === r.zoneId); return z ? splitName(z)[0] : 'Zona'; }
@@ -349,7 +379,7 @@ function parentOf(r) {
   if (['specie','alberi','piante','riconosci','glossario','guide-list'].includes(r.view)) return '#/scopri';
   return '#/';
 }
-const PARENT_TITLE = (r) => ({ '#/scopri': 'Scopri', '#/specie': 'Funghi', '#/alberi': 'Alberi', '#/piante':'Piante', '#/riconosci': 'Riconosci', '#/guide': 'Guide', '#/': 'Uscite' }[parentOf(r)]);
+const PARENT_TITLE = (r) => ({ '#/scopri': 'Scopri', '#/specie': 'Funghi', '#/alberi': 'Alberi', '#/piante':'Piante e fiori', '#/riconosci': 'Impara a riconoscere', '#/guide': 'Guide', '#/': 'Uscite' }[parentOf(r)]);
 // modalita' app: quando il titolo grande della pagina passa sotto la barra in alto, la barra lo mostra piccolo al centro (come iOS)
 let titleIO = null;
 function watchTitle() {
@@ -421,8 +451,10 @@ function routeNow(r, nav) {
   if (r.view === 'commestibile') { renderEdiblePage(r.speciesId); const s = catalog.find((x) => x.id === r.speciesId); if (s) addNotebookReference($('#edible-detail'), 'commestibile', s.id, s.name); }
   if (r.view === 'fungo') { renderTaxonPage($('#taxon-detail'), r.taxonId); if (taxonName(r.taxonId)) addNotebookReference($('#taxon-detail'), 'fungo', r.taxonId, taxonName(r.taxonId)); }
   if (r.view === 'glossario') renderGlossary($('#glossary'), r.termId);
+  paintScopriNav(r);
   if (r.view === 'riconosci') {
-    document.querySelectorAll('[data-recognize-mode]').forEach(a => { if(a.dataset.recognizeMode===r.recognizeMode)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current'); });
+    const rt = RECOGNIZE_HEAD[r.recognizeMode];
+    $('[data-recognize-title]').textContent = rt[0]; $('[data-recognize-sub]').textContent = rt[1];
     $('#identify').hidden = r.recognizeMode !== 'funghi';
     $('#field-identify').hidden = r.recognizeMode === 'funghi';
     if(r.recognizeMode==='funghi') {setCompare(r.compare,r.pick);renderIdentify($('#identify'));}
@@ -838,13 +870,14 @@ function renderSpeciesGrid() {
   const box = $('#species-grid');
   if (!box) return;
   box.dataset.glossaryContext='Funghi';
-  if (!box.querySelector('#sp-head')) {
-    // un solo campo di ricerca nell'app: qui apre la ricerca generale, con funghi e sosia in cima
-    box.innerHTML = `<button type="button" id="sp-head" class="search-box search-fake" data-open-search><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg>
-        <span>Cerca sentieri, piante, funghi, luoghi…</span></button>
+  if (!box.querySelector('[data-catalog-search]')) {
+    // ricerca contestuale: il campo filtra i funghi, «Anche in…» rimanda al resto dell'app
+    box.innerHTML = `${searchFieldHtml('Cerca un fungo', 'Porcino, Amanita, nome dialettale…')}
       <div class="recognize-modes" role="group" aria-label="Quali funghi mostrare">${[['', 'Tutti'], ['edible', 'Commestibili'], ['other', 'Velenosi e sosia']].map(([v, l]) => `<button type="button" class="btn ghost small" data-fungi-group="${v}" aria-pressed="${(state.fungiGroup || '') === v}">${l}</button>`).join('')}</div>
-      <div class="card-grid" id="sp-cards"></div>`;
-    box.querySelector('#sp-head').addEventListener('click', () => openSearch());
+      <p class="small muted" data-fungi-count role="status"></p><div class="card-grid" id="sp-cards"></div><div data-also-slot></div>`;
+    const input = box.querySelector('[data-catalog-search]');
+    input.value = state.fungiQuery || '';
+    input.addEventListener('input', () => { state.fungiQuery = input.value; fillSpecies(); });
     box.querySelectorAll('[data-fungi-group]').forEach((b) => b.addEventListener('click', () => {
       state.fungiGroup = b.dataset.fungiGroup;
       box.querySelectorAll('[data-fungi-group]').forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
@@ -875,15 +908,19 @@ const TOX_LABEL = { mortale: 'Mortale', tossico: 'Tossico', 'non commestibile': 
 const otherFungi = () => searchTaxa().filter((t) => TOX_LABEL[t.toxicity] && !catalog.some((c) => c.id === t.key));
 function fillSpecies() {
   const group = state.fungiGroup || '';
-  const edible = group === 'other' ? [] : catalog;
-  const others = group === 'edible' ? [] : otherFungi();
+  const q = state.fungiQuery || '';
+  const edible = group === 'other' ? [] : catalog.filter((s) => matchesQuery([s.name, s.latin, ...(s.aliases || [])], q));
+  const others = group === 'edible' ? [] : otherFungi().filter((t) => matchesQuery([t.name, t.latin, ...(t.look || [])], q));
   const card = (href, name, latin, ph, badge = '') => `<a class="sp-card" href="${href}" aria-label="${esc(name)}">
       ${ph ? `<img data-src="${assetSrc(ph.file)}" alt="" loading="lazy" decoding="async">` : `<span class="catalog-placeholder" aria-hidden="true">${esc(name.slice(0,2))}</span>`}<span class="shade"></span>${badge}
       <span class="sp-card-body"><b>${esc(name)}</b><i>${esc(cardLatin(latin))}</i></span></a>`;
   $('#sp-cards').innerHTML = [
     ...edible.map((s) => card(s.href, s.name, s.latin, catalogPhoto(s))),
     ...others.map((t) => card(`#/fungo/${encodeURIComponent(t.key)}`, t.name || t.latin, t.latin, t.photo, `<span class="sp-card-tox tox-${esc(t.toxicity.replace(/\s/g, '-'))}">${TOX_LABEL[t.toxicity]}</span>`)),
-  ].join('') || '<p class="muted empty-note">Nessuna specie in questo gruppo.</p>';
+  ].join('') || `<p class="muted empty-note">${q.trim() ? `Nessun fungo corrisponde a «${esc(q.trim())}».` : 'Nessuna specie in questo gruppo.'}</p>`;
+  const total = edible.length + others.length, all = catalog.length + otherFungi().length;
+  $('[data-fungi-count]').textContent = q.trim() || group ? `${total} ${total === 1 ? 'scheda' : 'schede'} su ${all}` : '';
+  renderAlsoIn($('#species-grid [data-also-slot]'), q, ['fungo', 'velenoso']);
 }
 
 function renderEdiblePage(id, box=$('#edible-detail')) {
@@ -1045,14 +1082,14 @@ function buildSearch(idj, trj, embedded) {
     items.push({ kind: 'sentiero', title: `${t.ref ? `Sentiero ${t.ref}` : 'Sentiero'}${t.name ? ` · ${t.name}` : ''}`, sub: zs.map((z) => splitName(z)[0]).join(', '), hay: `${(t.itinerary || []).join(' ')} ${t.operator || ''} cai segnavia`, href: walkHref(zs[0], 0, t), img: segnavia(t) });
   }
   const pages = [
-    ['Riconosci un fungo', 'Descrivi quello che vedi, anche se è velenoso', 'identificare trovato velenoso sosia caratteri lamelle pori volva anello sporata', '#/riconosci'],
+    ['Impara a riconoscere i funghi', 'Descrivi quello che vedi, anche se è velenoso', 'identificare trovato velenoso sosia caratteri lamelle pori volva anello sporata', '#/riconosci'],
     ['Emergenza e intossicazione', 'Cosa fare, chi chiamare', 'emergenza intossicazione avvelenamento centro antiveleni 118 112 pronto soccorso sintomi', '#/info'],
     ['Regole di raccolta nel Lazio', 'Attestato, contributo, limiti, orari', 'regole legge tesserino attestato contributo 3 kg limite orari divieti parchi aree protette', '#/info'],
     ['Controllo gratuito all\'ASL', 'Ispettorato micologico', 'asl ispettorato micologico controllo gratuito micologo', '#/info'],
     ['Come funziona l\'indice', 'Formule, parametri, fonti e limiti', 'metodo scienza scientifico indice calcolo formula pioggia temperatura suolo latenza innesco probabilita affidabilita fonti letteratura euristica', '#/metodo'],
     ['Glossario del bosco', 'Definizioni, caratteri e legenda delle difficoltà', 'impara glossario parole significato legenda', '#/glossario'],
-    ['Riconosci un albero', 'Confronta foglie, corteccia e frutti', 'riconoscimento botanica foglia corteccia frutto gemme', '#/riconosci/alberi'],
-    ['Piante, erbe e frutti','Caratteri, parti alimentari e sosia pericolosi','erbe bacche more ortica cicoria piante spontanee botanica','#/piante'],
+    ['Impara a riconoscere gli alberi', 'Confronta foglie, corteccia e frutti', 'riconoscimento botanica foglia corteccia frutto gemme', '#/riconosci/alberi'],
+    ['Piante e fiori','Caratteri, parti alimentari e sosia pericolosi','erbe bacche more ortica cicoria piante spontanee botanica','#/piante'],
     ['Gli alberi', 'Riconoscerli e cosa ci cresce sotto', 'alberi bosco piante', '#/alberi'],
     ['Prepararli e conservarli', 'Crudo, prebollitura, congelare, essiccare, sott\'olio', 'preparazione cucina cuocere cottura crudo prebollitura congelare surgelare essiccare seccare sottolio sott olio botulino conserve vasetti quantita bambini gravidanza alcol', '#/info'],
     ['Il mio taccuino', 'Annota ricerche, ritrovamenti e osservazioni', 'taccuino diario appunti uscite registrare raccolto storico esporta', '#/diario'],

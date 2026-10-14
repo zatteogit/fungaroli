@@ -244,7 +244,8 @@ test('editoriale, filtri completi, passkey, isolamento e condivisione revocabile
   await page.locator('#full-filters [data-close]').first().click();
   await expect(page.locator('[data-view="uscite"] #editorial')).toHaveCount(0);
   await page.locator('[data-tab="specie"]').click();
-  await page.locator('[data-view="specie"] .seg-nav a[href="#/guide"]').click();
+  await page.locator('[data-view="specie"] .seg-nav a[data-section="impara"]').click();
+  await page.locator('[data-view="glossario"] .sub-nav a[href="#/guide"]').click();
   await page.locator('#editorial a').first().click();
   await expect(page.locator('.editorial-article h1')).toBeVisible();
   await expect(page.locator('[data-tab="specie"]')).toHaveAttribute('aria-current','page');

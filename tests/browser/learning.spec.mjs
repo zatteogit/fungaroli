@@ -61,7 +61,7 @@ for(const width of [320,1280]) test(`spiegazioni contestuali, glossario e ricono
   await page.locator('[data-tab="specie"]').click();await expect(page.locator('[data-view="specie"]')).toBeVisible();
   await expect(page.locator('#species-grid .sp-card')).not.toHaveCount(0);
   await expect(page.locator('[data-tab="specie"]')).toContainText('Scopri');
-  await page.locator('[data-view="specie"] .seg-nav a[href="#/glossario"]').click();
+  await page.locator('[data-view="specie"] .seg-nav a[data-section="impara"]').click();await expect(page.locator('[data-view="glossario"] .sub-nav [aria-current="page"]')).toHaveText('Glossario');
   await page.locator('#glossary-q').fill('ectomicorriza');await expect(page.locator('#glossary-results details')).toHaveCount(1);
   await expect(page.locator('#glossary-results')).toContainText('Micorriza');
   await page.locator('#glossary-q').fill('parola inesistente');await expect(page.locator('#glossary-results')).toContainText('Nessuna voce');
@@ -217,9 +217,11 @@ for(const width of [320,1280]) test(`guide in Scopri e taccuino personale distin
   await expect(page.locator('[data-view="uscite"] #editorial')).toHaveCount(0);
   await expect(page.locator('[data-tab="diario"]')).toHaveText('Taccuino');
   await page.locator('[data-tab="specie"]').click();await expect(page.locator('#species-grid')).toBeVisible();
-  await page.locator('[data-view="specie"] .seg-nav a[href="#/guide"]').click();
+  await page.locator('[data-view="specie"] .seg-nav a[data-section="impara"]').click();
+  await page.locator('[data-view="glossario"] .sub-nav a[href="#/guide"]').click();
   const view=page.locator('[data-view="guide-list"]');await expect(view).toBeVisible();
-  await expect(view.locator('.seg-nav [aria-current="page"]')).toHaveText('Guide');
+  await expect(view.locator('.seg-nav [aria-current="page"]')).toHaveText('Impara');
+  await expect(view.locator('.sub-nav [aria-current="page"]')).toHaveText('Guide');
   await expect(page.locator('[data-tab="specie"]')).toHaveAttribute('aria-current','page');
   await expect(page.locator('#editorial .eyebrow').first()).toHaveText('Guide del bosco');
   await expect(page.locator('#editorial .editorial-card')).toHaveCount(3);
@@ -353,4 +355,32 @@ for(const width of [320,1280])test(`omonimi nel glossario: piante, alberi, fungh
  await page.goto('/#/albero/leccio');await page.locator('.view:not([hidden]) [data-term="pollone"]').first().click();await expect(panel).toContainText('non significa necessariamente');await page.keyboard.press('Escape');
  await page.goto('/#/');await page.locator('#hero .cover-link').click();await page.locator('.walk-focus .sec-body').waitFor({state:'attached'});await page.evaluate(()=>{const p=document.createElement('p');p.id='trail-probe';p.textContent='Un percorso ad anello: porta un cappello, controlla il dislivello.';document.querySelector('.walk-focus .sec-body').append(p);});await expect(page.locator('#trail-probe [data-term="dislivello"]')).toHaveCount(1);await expect(page.locator('#trail-probe [data-term="anello"],#trail-probe [data-term="cappello"]')).toHaveCount(0);
  await page.goto('/#/glossario');await page.locator('#glossary-q').fill('aculei');await expect(page.locator('#glossary-term-aculei')).toBeVisible();await expect(page.locator('#glossary-term-aculei-piante')).toBeVisible();expect(errors).toEqual([]);
+});
+
+for(const width of [390,1280]) test(`Scopri: tre cataloghi più Impara e ricerca contestuale a ${width}px`,async({page})=>{
+  const errors=await setup(page,width);
+  const places=[['/#/specie','Funghi','Sfoglia'],['/#/riconosci','Funghi','Impara a riconoscere'],['/#/piante','Piante e fiori','Sfoglia'],['/#/riconosci/piante','Piante e fiori','Impara a riconoscere'],['/#/alberi','Alberi','Sfoglia'],['/#/riconosci/alberi','Alberi','Impara a riconoscere'],['/#/glossario','Impara','Glossario'],['/#/guide','Impara','Guide'],['/#/riconosci/bosco','Impara','Bosco e sentiero']];
+  for(const [route,section,mode] of places){
+    await page.goto(route);const view=page.locator('.view:not([hidden])');
+    await expect(view.locator('.seg-nav [aria-current="page"]')).toHaveText(section);
+    await expect(view.locator('.sub-nav [aria-current="page"]')).toHaveText(mode);
+    await expect(view.locator('.seg-nav a')).toHaveText(['Funghi','Piante e fiori','Alberi','Impara']);
+  }
+  // un solo campo: sui cataloghi la ricerca generale si nasconde e il campo filtra la griglia
+  await page.goto('/#/specie');const field=page.locator('#species-grid [data-catalog-search]');
+  await expect(page.locator('.tab-search')).toBeHidden();
+  await page.keyboard.press('/');await expect(field).toBeFocused();
+  await field.fill('porcino');await expect(page.locator('#sp-cards .sp-card').first()).toContainText('Porcino');
+  const n=await page.locator('#sp-cards .sp-card').count();expect(n).toBeGreaterThan(0);expect(n).toBeLessThan(10);
+  await field.fill('faggio');await expect(page.locator('#sp-cards .sp-card')).toHaveCount(0);
+  const also=page.locator('#species-grid .also-in [data-also="albero"]');await expect(also).toBeVisible();
+  await also.click();await expect(page.locator('dialog.search-dlg[open] input')).toHaveValue('faggio');
+  await expect(page.locator('dialog.search-dlg[open] [data-scope="albero"]')).toHaveAttribute('aria-pressed','true');
+  await page.locator('dialog.search-dlg .search-cancel').click();
+  await page.goto('/#/alberi');await page.locator('#tree-grid [data-catalog-search]').fill('quercus');
+  await expect(page.locator('[data-tree-results] .sp-card').first()).toBeVisible();
+  // fuori dai cataloghi la ricerca generale resta disponibile
+  await page.goto('/#/glossario');await expect(page.locator('.tab-search')).toBeVisible();
+  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+  expect(errors).toEqual([]);
 });

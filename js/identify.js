@@ -634,7 +634,7 @@ function renderCompare(box, ref, pick) {
       ${how ? `<p class="cmp-how"><b>Differenze descritte.</b> ${esc(how)}</p>` : ''}
       <ul class="cmp-legend" aria-hidden="true"><li><span class="cmp-v own"></span>Solo in uno dei due</li><li><span class="cmp-v common"></span>In comune</li></ul>
       ${diff.length ? `<h4 class="cmp-h diff">Caratteri differenti nelle fonti</h4><ul class="cmp-rows">${diff.map((r) => r.html).join('')}</ul>`
-        : '<p class="cmp-none"><b>Nessuna domanda di Riconosci li separa con certezza.</b> Contano i dettagli: leggi le differenze descritte e, nel dubbio, fallo vedere all\'Ispettorato micologico.</p>'}
+        : '<p class="cmp-none"><b>Nessuna domanda di «Impara a riconoscere» li separa con certezza.</b> Contano i dettagli: leggi le differenze descritte e, nel dubbio, fallo vedere all\'Ispettorato micologico.</p>'}
       ${part.length ? `<h4 class="cmp-h part">A volte simili</h4><ul class="cmp-rows">${part.map((r) => r.html).join('')}</ul>` : ''}
       ${same.length ? `<details class="cmp-same"><summary>Uguali in: ${esc(same.map((r) => r.k.toLowerCase()).join(', '))}</summary><ul class="cmp-rows">${same.map((r) => r.html).join('')}</ul></details>` : ''}
       ${[ref,t].some(x=>['mortale','tossico'].includes(x.toxicity)) ? '<p class="cmp-verdict">Questo confronto include specie tossiche o mortali. I caratteri descritti possono variare o essere incompleti: somiglianze e differenze non identificano il tuo esemplare.</p>' : ''}
@@ -650,7 +650,7 @@ function renderCompare(box, ref, pick) {
     <div class="cmp-pick" role="tablist" aria-label="Scegli il sosia">${list.map((t, k) => `<button type="button" role="tab" class="cmp-chip ${toxCls(t)}" data-go="${k}" aria-selected="${k === start}"><span class="cmp-chip-img">${pic(t, true)}</span><span>${esc(t.name || t.latin)}</span></button>`).join('')}</div></div>
     <div class="cmp-track">${list.map(slide).join('')}</div>
     <p class="cmp-dots" aria-hidden="true">${list.map((_, k) => `<i${k === start ? ' class="on"' : ''}></i>`).join('')}</p>
-    <p><a class="btn" href="#/riconosci">Riconosci un altro fungo</a></p>`;
+    <p><a class="btn" href="#/riconosci">Confronta un altro fungo</a></p>`;
 
   const track = box.querySelector('.cmp-track'), chips = [...box.querySelectorAll('.cmp-chip[role="tab"]')], dots = [...box.querySelectorAll('.cmp-dots i')];
   const mark = (i) => {

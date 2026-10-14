@@ -4,6 +4,7 @@ import { SPECIES } from './species.js';
 import { openLightbox, captionHtml } from './lightbox.js';
 import { cardLatin } from './names.js';
 import { treeGroup } from './plant-catalog.js';
+import { searchFieldHtml, matchesQuery, renderAlsoIn } from './catalog-search.js';
 
 const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 let T = {}, MEDIA = {}, ASSET = (f) => f, ZONES = [], HAB = {}, THUMB = () => '';
@@ -49,7 +50,7 @@ export function treeThumb(id, size = 56) {
 }
 
 // Filtro per gruppo, dal campo `type`: resta in memoria per la sessione.
-let TREE_GROUP = '';
+let TREE_GROUP = '', TREE_QUERY = '';
 const TREE_GROUPS = [['', 'Tutti'], ['latifoglie', 'Latifoglie'], ['conifere', 'Conifere']];
 
 export function renderTreeGrid(box) {
@@ -62,13 +63,18 @@ export function renderTreeGrid(box) {
       ${m ? `<img data-src="${ASSET(m.file)}" alt="" loading="lazy" decoding="async">` : ''}<span class="shade"></span>
       <span class="sp-card-body"><b>${esc(t.name)}</b><i>${esc(cardLatin(t.latin))}</i></span></a>`;
   };
-  box.innerHTML = `<div class="recognize-modes catalog-filters" role="group" aria-label="Gruppi di alberi">${TREE_GROUPS.map(([id, name]) => `<button type="button" class="btn ghost small" data-tree-group="${id}" aria-pressed="false">${name}</button>`).join('')}</div><p class="small muted" data-tree-count role="status"></p><div class="card-grid" data-tree-results></div>`;
+  box.innerHTML = `${searchFieldHtml('Cerca un albero', 'Faggio, cerro, nome scientifico…')}<div class="recognize-modes catalog-filters" role="group" aria-label="Gruppi di alberi">${TREE_GROUPS.map(([id, name]) => `<button type="button" class="btn ghost small" data-tree-group="${id}" aria-pressed="false">${name}</button>`).join('')}</div><p class="small muted" data-tree-count role="status"></p><div class="card-grid" data-tree-results></div><div data-also-slot></div>`;
+  const input = box.querySelector('[data-catalog-search]');
+  input.value = TREE_QUERY;
   const update = () => {
-    const hits = rows.filter(([, t]) => !TREE_GROUP || treeGroup(t.type) === TREE_GROUP);
+    const hits = rows.filter(([, t]) => (!TREE_GROUP || treeGroup(t.type) === TREE_GROUP) && matchesQuery([t.name, t.latin, ...(t.aliases || []), t.family], TREE_QUERY));
+    const filtered = TREE_GROUP || TREE_QUERY.trim();
     box.querySelectorAll('[data-tree-group]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.treeGroup === TREE_GROUP)));
-    box.querySelector('[data-tree-count]').textContent = `${hits.length} ${hits.length === 1 ? 'scheda' : 'schede'}${TREE_GROUP ? ` su ${rows.length}` : ''}`;
-    box.querySelector('[data-tree-results]').innerHTML = hits.length ? hits.map(card).join('') : '<p class="notice">Nessuna scheda in questo gruppo.</p>';
+    box.querySelector('[data-tree-count]').textContent = `${hits.length} ${hits.length === 1 ? 'scheda' : 'schede'}${filtered ? ` su ${rows.length}` : ''}`;
+    box.querySelector('[data-tree-results]').innerHTML = hits.length ? hits.map(card).join('') : `<p class="notice">${TREE_QUERY.trim() ? `Nessun albero corrisponde a «${esc(TREE_QUERY.trim())}».` : 'Nessuna scheda in questo gruppo.'}</p>`;
+    renderAlsoIn(box.querySelector('[data-also-slot]'), TREE_QUERY, ['albero']);
   };
+  input.addEventListener('input', () => { TREE_QUERY = input.value; update(); });
   box.querySelectorAll('[data-tree-group]').forEach((b) => b.addEventListener('click', () => { TREE_GROUP = b.dataset.treeGroup; update(); }));
   update();
 }

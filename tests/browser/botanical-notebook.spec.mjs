@@ -25,7 +25,7 @@ test('plants: search, comparison sheets and private simultaneous phenophases on 
 
 test('botanical layouts, global search and short note form in both themes',async({page})=>{
  const errors=await start(page,'#/piante',1280);
- await page.locator('[data-open-search]').first().click();await page.locator('dialog.search-dlg input').fill('Foeniculum vulgare');await expect(page.locator('dialog.search-dlg')).toContainText('Finocchietto selvatico');await page.locator('dialog.search-dlg .search-cancel').click();await expect(page.locator('dialog.search-dlg[open]')).toHaveCount(0);
+ await expect(page.locator('.tab-search')).toBeHidden();await page.keyboard.press('Control+k');await page.locator('dialog.search-dlg input').fill('Foeniculum vulgare');await expect(page.locator('dialog.search-dlg')).toContainText('Finocchietto selvatico');await page.locator('dialog.search-dlg .search-cancel').click();await expect(page.locator('dialog.search-dlg[open]')).toHaveCount(0);
  for(const theme of ['light','dark']){
   await page.evaluate(theme=>document.documentElement.dataset.theme=theme,theme);
   await expect.poll(()=>page.locator('.recognize-modes button').nth(1).evaluate(b=>getComputedStyle(b).color)).toBe(theme==='dark'?'rgb(233, 239, 231)':'rgb(27, 25, 21)');

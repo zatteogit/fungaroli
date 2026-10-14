@@ -5,7 +5,7 @@ const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<
 const norm = (s) => String(s ?? '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/['’]/g, ' ');
 
 const KINDS = {
-  pianta:'Piante, erbe e frutti', zona: 'Zone', fungo: 'Funghi', velenoso: 'Velenosi e sosia', albero: 'Alberi', sentiero: 'Sentieri', termine: 'Glossario', pagina: 'Pagine e regole',
+  pianta:'Piante e fiori', zona: 'Zone', fungo: 'Funghi', velenoso: 'Velenosi e sosia', albero: 'Alberi', sentiero: 'Sentieri', termine: 'Glossario', pagina: 'Pagine e regole',
 };
 const ORDER = Object.keys(KINDS);
 const SUGGEST = ['Terminillo', 'Porcino', 'More', 'Ortica', 'Faggio', 'Emergenza', 'Fragolina', 'Castagno'];
@@ -33,8 +33,24 @@ export function initSearch(items) {
   // "/" o Ctrl/Cmd+K da tastiera, come nei siti che usi
   addEventListener('keydown', (e) => {
     const typing = /^(input|textarea|select)$/i.test(e.target.tagName) || e.target.isContentEditable;
-    if ((e.key === '/' && !typing) || ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k')) { e.preventDefault(); openSearch(); }
+    if ((e.key === '/' && !typing) || ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k')) {
+      e.preventDefault();
+      // sui cataloghi il campo è nella pagina: "/" porta lì, Ctrl/Cmd+K apre comunque la ricerca generale
+      const local = e.key === '/' && document.querySelector('.view:not([hidden]) [data-catalog-search]');
+      if (local) local.focus(); else openSearch();
+    }
   });
+}
+
+// quante voci per tipo trova una ricerca, esclusi i tipi della pagina in cui sei («Anche in…»)
+export function hitsByKind(q, exclude = []) {
+  const words = norm(q).split(/\s+/).filter(Boolean);
+  if (!words.length) return [];
+  const n = {};
+  // qui solo corrispondenze a inizio parola: «more» non deve contare «morchella»
+  const starts = words.map((w) => new RegExp(`(^|[^a-z0-9])${w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}`));
+  for (const it of ITEMS) if (!exclude.includes(it.kind) && starts.every((re) => re.test(it._h))) n[it.kind] = (n[it.kind] || 0) + 1;
+  return ORDER.filter((k) => n[k]).map((k) => [k, KINDS[k], n[k]]);
 }
 
 function score(it, words) {
@@ -117,7 +133,7 @@ function render(q) {
   }
   const hits = ITEMS.map((it, i) => ({ it, i, s: score(it, words) })).filter((h) => h.s > 0 && (!scope || h.it.kind === scope))
     .map((h) => (prio.includes(h.it.kind) ? { ...h, s: h.s + 3 - prio.indexOf(h.it.kind) } : h));
-  if (!hits.length) { box.innerHTML = `<p class="sr-empty">Nessun risultato per <b>${esc(q)}</b>.<br><span class="small muted">Se hai un fungo in mano, prova <a href="#/riconosci" data-close>Riconosci</a>.</span></p>`; box.querySelector('[data-close]')?.addEventListener('click', () => dlg.close()); return; }
+  if (!hits.length) { box.innerHTML = `<p class="sr-empty">Nessun risultato per <b>${esc(q)}</b>.<br><span class="small muted">Se hai un fungo in mano, prova <a href="#/riconosci" data-close>Impara a riconoscere</a>.</span></p>`; box.querySelector('[data-close]')?.addEventListener('click', () => dlg.close()); return; }
   const groups = ORDER.map((k) => [k, hits.filter((h) => h.it.kind === k).sort((a, b) => b.s - a.s).slice(0, scope ? 30 : k === 'velenoso' || k === 'sentiero' ? 5 : 6)]).filter(([, l]) => l.length);
   // il gruppo col risultato migliore va in cima
   groups.sort((a, b) => b[1][0].s - a[1][0].s);
@@ -129,16 +145,16 @@ function render(q) {
     </button></li>`).join('')}</ul></section>`).join('');
 }
 
-export function openSearch() {
+export function openSearch(q = '', sc = '') {
   if (!dlg) build();
   const input = dlg.querySelector('input');
   const page = document.body.dataset.page || '';
   prio = PRIORITY[page] || [];
-  scope = '';
-  dlg.querySelectorAll('[data-scope]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.scope === '')));
+  scope = typeof q === 'string' ? sc : '';
+  dlg.querySelectorAll('[data-scope]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.scope === scope)));
   input.placeholder = PLACEHOLDER[page] || 'Cerca zone, funghi, alberi, sentieri…';
-  input.value = '';
-  render('');
+  input.value = typeof q === 'string' ? q : '';
+  render(input.value);
   dlg.showModal();
   input.focus();
 }
