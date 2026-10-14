@@ -133,7 +133,7 @@ export function renderWhy({ r, s, i, sp, band, dateStr, shown, agg, parts = [], 
     ${rainChart(s, i, sp)}
     ${lineChart({ vals: s.tmean.slice(Math.max(0, i - 35), i + 1), band: [sp.topt - sp.tsd, sp.topt + sp.tsd], bandLabel: 'ampiezza della curva euristica', unit: '°C', title: 'Temperatura media', note: 'conta la media dei 20 giorni prima' })}
     ${lineChart({ vals: s.soilm.slice(Math.max(0, i - 35), i + 1), lo: PARAMS.moistDry, hi: PARAMS.moistWet, unit: 'm³/m³', digits: 2, title: 'Umidità del suolo (3–9 cm)', note: 'sotto la linea bassa è secco, sopra l\'alta pienamente umido' })}
-    <p class="sci-more"><a href="#/metodo">Il metodo completo: formule, fonti e limiti ›</a></p>`;
+    <p class="sci-more"><a class="more-row" href="#/metodo">Il metodo completo: formule, fonti e limiti</a></p>`;
 }
 
 // ---- pagina del metodo: il documento del repository, reso nel nostro stile ----

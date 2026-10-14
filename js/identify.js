@@ -522,7 +522,7 @@ export function renderTaxonView(box, t, { photos = null, habitatText = '', extra
       ${t.check_before_picking?.length ? `<p class="small muted checks-tip">Caratteri descritti per la specie: confrontarli non identifica un esemplare né ne certifica la commestibilità.</p><ol class="keys">${t.check_before_picking.map((x) => `<li><span class="key-text">${esc(x)}</span></li>`).join('')}</ol>` : ''}
       ${look.length ? `<h3>Non confonderlo con</h3><ul class="tx-look">${look.map(({ id, o }) => { const op = photoOf(o); return `<li>
         <a class="tx-look-main" href="#/riconosci/confronta/${esc(t.key)}/${esc(o.key)}">${op ? `<img data-src="${ASSET(op.thumb || op.file)}" alt="" loading="lazy" decoding="async">` : ''}<span><b>${esc(o.name)}</b><i>${esc(o.latin)}</i><small class="tx-cmp">Confrontali carattere per carattere ›</small></span></a>
-        <a class="tx-sheet" data-entity href="#/specie/${esc(id)}">Scheda di ${esc(o.name.toLowerCase())} ›</a></li>`; }).join('')}</ul>` : ''}
+        <a class="tx-sheet more-row" data-entity href="#/specie/${esc(id)}">Scheda di ${esc(o.name.toLowerCase())}</a></li>`; }).join('')}</ul>` : ''}
       ${(() => { // sosia pericolosi segnalati dalle fonti per le schede del catalogo (campo dangerous_lookalikes)
         // e nel verso opposto: dalla scheda del tossico, i commestibili che lo indicano come sosia
         const back = TAXA.filter((x) => x !== t && (x.dangerous_lookalikes || []).includes(t.key) && !look.some((l) => l.o === x));
