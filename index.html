@@ -36,6 +36,7 @@
       <a href="#/" data-tab="uscite"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 6 0 0 1 16 0z"/><path d="M10 12v6a2 2 0 0 0 4 0v-6"/></svg><span>Uscite</span></a>
       <a href="#/mappa" data-tab="mappa"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2z"/><path d="M9 4v14M15 6v14"/></svg><span>Mappa</span></a>
       <a href="#/scopri" data-tab="specie"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="7" height="7" rx="2"/><rect x="13" y="4" width="7" height="7" rx="2"/><rect x="4" y="13" width="7" height="7" rx="2"/><rect x="13" y="13" width="7" height="7" rx="2"/></svg><span>Scopri</span></a>
+      <a href="#/impara" data-tab="impara"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9.5 12 5l9 4.5-9 4.5z"/><path d="M7 11.6V16c0 1.4 2.2 2.8 5 2.8s5-1.4 5-2.8v-4.4"/><path d="M21 9.5V15"/></svg><span>Impara</span></a>
       <a href="#/diario" data-tab="diario"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h11a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H6z"/><path d="M6 3v18M10 8h5M10 12h5"/></svg><span>Taccuino</span></a>
       <button type="button" class="tab-search" data-open-search aria-label="Cerca in tutta l'app" title="Cerca (/)"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg><span class="tsl">Cerca</span><kbd class="tsk">/</kbd></button>
     </nav>
@@ -125,6 +126,10 @@
       <div id="identify"></div><div id="field-identify" hidden></div>
     </section>
 
+    <section class="view" data-view="impara" hidden aria-labelledby="learn-h">
+      <div class="view-head"><div><h1 id="learn-h" class="view-title">Impara</h1><p class="view-sub">Parole, guide e piccole sfide per conoscere il bosco.</p></div></div>
+      <div id="learn-hub" class="learn-hub"></div>
+    </section>
     <section class="view" data-view="guide-list" hidden aria-labelledby="guides-h">
       <div class="view-head"><div><p class="kicker" data-catalog-count="guide" hidden></p><h1 id="guides-h" class="view-title">Guide</h1><p class="view-sub">Piccole letture per conoscere il bosco e preparare la passeggiata.</p></div></div>
       <nav class="seg-nav" data-scopri-nav aria-label="Sezioni di Scopri"></nav><nav class="sub-nav" data-scopri-sub aria-label="Modalità della sezione"></nav>

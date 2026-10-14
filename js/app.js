@@ -38,7 +38,7 @@ import { mountSpeciesAutocomplete } from './species-autocomplete.js';
 import { uniquePlaceProposals, chooseWalkTrail, walkContext, trailSketch } from './walks.js';
 import { cardLatin } from './names.js';
 import { pickCover } from './zone-cover.js';
-import { initChallenges, renderChallengeList, renderChallenge, challengeTitle, challengeList, suggestedChallenge } from './challenges.js';
+import { initChallenges, renderChallengeList, renderChallenge, challengeTitle, challengeList, challengeProgressOf, suggestedChallenge } from './challenges.js';
 
 const HISTORY_DAYS = 30;   // giorni passati mostrati nel grafico
 const AHEAD_DAYS = 7;      // giorni futuri valutati
@@ -288,7 +288,7 @@ function initShell() {
 
 // Scopri: tre cataloghi più «Impara». Ogni catalogo ha «Sfoglia | Impara a riconoscere»;
 // Impara raccoglie glossario, guide e i dettagli di bosco e sentiero.
-const SCOPRI = [['funghi', '#/specie', 'Funghi'], ['piante', '#/piante', 'Piante e fiori'], ['alberi', '#/alberi', 'Alberi'], ['impara', '#/glossario', 'Impara']];
+const SCOPRI = [['funghi', '#/specie', 'Funghi'], ['piante', '#/piante', 'Piante e fiori'], ['alberi', '#/alberi', 'Alberi']];
 const SCOPRI_SUB = {
   funghi: [['#/specie', 'Sfoglia'], ['#/riconosci', 'Impara a riconoscere']],
   piante: [['#/piante', 'Sfoglia'], ['#/riconosci/piante', 'Impara a riconoscere']],
@@ -310,6 +310,8 @@ function paintScopriNav(r) {
   if (!place || !view) return;
   const [sec, here] = place, cur = (on) => (on ? ' aria-current="page"' : '');
   const nav = view.querySelector('[data-scopri-nav]'), sub = view.querySelector('[data-scopri-sub]');
+  // le sezioni di Impara hanno una loro pagina indice: niente segmenti né sotto-schede, solo «indietro»
+  if (sec === 'impara') { if (nav) nav.innerHTML = ''; if (sub) sub.innerHTML = ''; return; }
   if (nav) nav.innerHTML = SCOPRI.map(([id, href, label]) => `<a href="${href}" data-section="${id}"${cur(id === sec)}>${label}</a>`).join('');
   if (sub) sub.innerHTML = SCOPRI_SUB[sec].map(([href, label]) => `<a href="${href}"${cur(href === here)}>${label}</a>`).join('');
 }
@@ -321,7 +323,7 @@ function parseRoute() {
   if (a === 'mappa') return { view: 'mappa', zoneId: b };
   if (a === 'specie' && b) return { view: 'specie-dettaglio', speciesId: b };
   if (a === 'specie' || a === 'scopri') return { view: 'specie' };
-  if (a === 'impara') return { view: 'glossario' };
+  if (a === 'impara') return { view: 'impara' };
   if (a === 'glossario') return { view: 'glossario', termId: b };
   if (a === 'albero' && b) return { view: 'albero', treeId: b };
   if (a === 'piante') return {view:'piante'};
@@ -339,11 +341,11 @@ function parseRoute() {
 }
 
 // profondita' e posizione delle viste: decidono la direzione della transizione
-const LEVEL = { pianta:1, commestibile: 1, guide: 1, zona: 1, 'specie-dettaglio': 1, albero: 1, info: 1, metodo: 2, fungo: 1 };
-const TABS = ['uscite', 'mappa', 'specie', 'diario'];
+const LEVEL = { pianta:1, commestibile: 1, guide: 2, zona: 1, 'specie-dettaglio': 1, albero: 1, info: 1, metodo: 2, fungo: 1, glossario: 1, 'guide-list': 1, sfide: 1 };
+const TABS = ['uscite', 'mappa', 'specie', 'impara', 'diario'];
 const SUB = { specie: 0, alberi: 1, piante:2, riconosci: 3, glossario: 4, 'guide-list': 5, sfide: 6 };
 // una sfida aperta è un livello sotto l'elenco delle sfide
-const levelOf = (r) => (LEVEL[r.view] || 0) + (r.compare ? 2 : 0) + (r.challengeId ? 1 : 0);
+const levelOf = (r) => (LEVEL[r.view] || 0) + (r.compare ? 2 : 0) + (r.challengeId ? 1 : 0) + (r.view === 'riconosci' && r.recognizeMode === 'bosco' ? 1 : 0);
 const scrollMem = new Map();
 let prev = null;
 function navKind(a, b) {
@@ -367,7 +369,7 @@ addEventListener('scroll', onScrollBar, { passive: true });
 
 // tasto indietro in alto a sinistra: freccia + nome della pagina a cui torni
 const navStack = [];
-const TITLES = { piante:'Piante e fiori', uscite: 'Uscite', mappa: 'Mappa', specie: 'Funghi', alberi: 'Alberi', riconosci: 'Riconosci', glossario: 'Glossario', 'guide-list': 'Guide', sfide: 'Sfide', diario: 'Taccuino', info: 'Regole e metodo', metodo: 'Come funziona' };
+const TITLES = { piante:'Piante e fiori', uscite: 'Uscite', mappa: 'Mappa', specie: 'Funghi', alberi: 'Alberi', riconosci: 'Riconosci', impara: 'Impara', glossario: 'Glossario', 'guide-list': 'Guide', sfide: 'Sfide', diario: 'Taccuino', info: 'Regole e metodo', metodo: 'Come funziona' };
 function titleOf(r) {
   if (!r) return '';
   if (r.view === 'zona') { const z = (weatherZones||zones).find((x) => x.id === r.zoneId); return z ? splitName(z)[0] : 'Zona'; }
@@ -388,12 +390,13 @@ function parentOf(r) {
   if (r.view === 'pianta') return '#/piante';
   if (r.view === 'albero') return '#/alberi';
   if (r.view === 'guide') return '#/guide';
+  if (['glossario','guide-list','sfide'].includes(r.view) && !r.challengeId || r.view === 'riconosci' && r.recognizeMode === 'bosco') return '#/impara';
   if (r.view === 'riconosci' && r.compare) return '#/riconosci';
   if (r.view === 'sfide' && r.challengeId) return '#/sfide';
   if (['specie','alberi','piante','riconosci','glossario','guide-list','sfide'].includes(r.view)) return '#/scopri';
   return '#/';
 }
-const PARENT_TITLE = (r) => ({ '#/scopri': 'Scopri', '#/specie': 'Funghi', '#/alberi': 'Alberi', '#/piante':'Piante e fiori', '#/riconosci': 'Impara a riconoscere', '#/guide': 'Guide', '#/sfide': 'Sfide', '#/': 'Uscite' }[parentOf(r)]);
+const PARENT_TITLE = (r) => ({ '#/scopri': 'Scopri', '#/specie': 'Funghi', '#/alberi': 'Alberi', '#/piante':'Piante e fiori', '#/riconosci': 'Impara a riconoscere', '#/guide': 'Guide', '#/sfide': 'Sfide', '#/impara': 'Impara', '#/': 'Uscite' }[parentOf(r)]);
 // modalita' app: quando il titolo grande della pagina passa sotto la barra in alto, la barra lo mostra piccolo al centro (come iOS)
 let titleIO = null;
 function watchTitle() {
@@ -417,8 +420,10 @@ function watchTitle() {
 function updateBack(r, nav) {
   if (nav === 'pop') { while (navStack.length && navStack[navStack.length - 1].hash !== r.hash) navStack.pop(); }
   if (navStack[navStack.length - 1]?.hash !== r.hash) {
-    if (nav === 'left' || nav === 'right') navStack.length = 0; // cambio di scheda: si riparte
-    navStack.push({ hash: r.hash, title: titleOf(r) });
+    if (nav === 'left' || nav === 'right' || navStack.length && navStack[navStack.length - 1].tab !== r.tab && !navStack[navStack.length - 1].level) navStack.length = 0; // cambio di scheda dalla radice di un'altra: si riparte
+    // tra pagine sorelle dello stesso livello si sostituisce: «indietro» porta al genitore, non alla sorella
+    if (nav === 'none' && navStack.length && levelOf(r) > 0) navStack.pop();
+    navStack.push({ hash: r.hash, title: titleOf(r), tab: r.tab, level: levelOf(r) });
   }
   const deep = levelOf(r) > 0;
   const b = $('.appbar-back');
@@ -436,7 +441,7 @@ function updateBack(r, nav) {
 
 function route() {
   const r = parseRoute();
-  r.tab = { piante:'specie', pianta:'specie', zona: 'uscite', glossario: 'specie', 'specie-dettaglio': 'specie', alberi: 'specie', albero: 'specie', riconosci: 'specie', info: '', metodo: '', guide: 'specie', 'guide-list': 'specie', sfide: 'specie', fungo: 'specie', commestibile: 'specie' }[r.view] ?? r.view;
+  r.tab = { piante:'specie', pianta:'specie', zona: 'uscite', glossario: 'impara', 'specie-dettaglio': 'specie', alberi: 'specie', albero: 'specie', riconosci: r.recognizeMode === 'bosco' ? 'impara' : 'specie', info: '', metodo: '', guide: 'impara', 'guide-list': 'impara', sfide: 'impara', fungo: 'specie', commestibile: 'specie' }[r.view] ?? r.view;
   r.hash = location.hash || '#/';
   const nav = navKind(prev, r), back = prev?.hash || '';
   if (prev) scrollMem.set(prev.hash, scrollY);
@@ -466,6 +471,7 @@ function routeNow(r, nav) {
   if (r.view === 'commestibile') { renderEdiblePage(r.speciesId); const s = catalog.find((x) => x.id === r.speciesId); if (s) addNotebookReference($('#edible-detail'), 'commestibile', s.id, s.name); }
   if (r.view === 'fungo') { renderTaxonPage($('#taxon-detail'), r.taxonId); if (taxonName(r.taxonId)) addNotebookReference($('#taxon-detail'), 'fungo', r.taxonId, taxonName(r.taxonId)); }
   if (r.view === 'glossario') renderGlossary($('#glossary'), r.termId);
+  if (r.view === 'impara') renderLearnHub($('#learn-hub'));
   if (r.view === 'sfide') { if (r.challengeId) renderChallenge($('#challenges'), r.challengeId); else renderChallengeList($('#challenges')); }
   paintScopriNav(r);
   if (r.view === 'riconosci') {
@@ -950,6 +956,29 @@ function fillCatalogCounts() {
     const text = counts[el.dataset.catalogCount], k = parseInt(text, 10);
     el.hidden = !k; el.textContent = k ? text : '';
   });
+}
+// Impara: pagina indice a card, al primo livello. Ogni card porta a una sezione con il suo «indietro».
+const LEARN_IC = {
+  glossario: '<path d="M5 4h10l4 4v12H5z"/><path d="M15 4v4h4M8 12h8M8 16h5"/>',
+  guide: '<path d="M12 6C9 4 6 4 4 5v14c2-1 5-1 8 1 3-2 6-2 8-1V5c-2-1-5-1-8 1z"/><path d="M12 6v14"/>',
+  bosco: '<path d="M12 3 6 12h3l-4 6h14l-4-6h3z"/><path d="M12 18v3"/>',
+  sfide: '<circle cx="12" cy="10" r="6"/><path d="m9.5 10 1.8 1.8L15 8.2M8.5 15.5 7 21l5-2.5 5 2.5-1.5-5.5"/>',
+  metodo: '<path d="M4 19V5M4 19h16"/><path d="m7 15 4-5 3 3 5-7"/>',
+  info: '<path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"/><path d="M12 8v5M12 16h.01"/>',
+};
+function renderLearnHub(box) {
+  if (!box) return;
+  const n = (k, one, many) => (k ? `${k} ${k === 1 ? one : many}` : '');
+  const list = challengeList(), done = list.filter((c) => challengeProgressOf(c.id)?.complete).length;
+  const cards = [
+    ['glossario', '#/glossario', 'Glossario', 'Le parole di funghi, alberi e sentieri, con disegni e foto.', n(glossaryTerms().length, 'voce', 'voci')],
+    ['guide', '#/guide', 'Guide', 'Piccole letture sul bosco e sulla passeggiata.', n(guideCount(), 'guida', 'guide')],
+    ['bosco', '#/riconosci/bosco', 'Bosco e sentiero', 'Tracce, segni e dettagli che incontri camminando.', ''],
+    ['sfide', '#/sfide', 'Sfide', 'Osserva, confronta e raccogli i timbri.', list.length ? `${done} di ${list.length} timbri` : ''],
+    ['info', '#/info', 'Regole e sicurezza', 'Raccolta nel Lazio, ispettorato, cosa fare se stai male.', ''],
+    ['metodo', '#/metodo', 'Come funziona l’indice', 'Dati, formule e limiti, per chi vuole approfondire.', ''],
+  ];
+  box.innerHTML = `<ul class="learn-cards">${cards.map(([id, href, t, sub, meta], i) => `<li class="${i < 2 ? 'lc-big' : ''}"><a class="learn-card" href="${href}" data-learn="${id}"><span class="lc-ic" aria-hidden="true"><svg viewBox="0 0 24 24">${LEARN_IC[id]}</svg></span><span class="lc-t">${t}</span><span class="lc-s">${sub}</span>${meta ? `<span class="lc-m">${meta}</span>` : ''}</a></li>`).join('')}</ul>`;
 }
 // velenosi e sosia di Riconosci che non sono gia' nel catalogo dei commestibili, con la loro etichetta di rischio
 const TOX_LABEL = { mortale: 'Mortale', tossico: 'Tossico', 'non commestibile': 'Non commestibile' };
