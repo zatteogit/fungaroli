@@ -2598,6 +2598,126 @@
      "thumb": "assets/species/laccaria-amethystina-inat1-t.webp"
     }
    ]
+  },
+  "Agaricus xanthodermus": {
+   "ref": null,
+   "inat": [
+    {
+     "file": "assets/species/agaricus-xanthodermus-inat1.webp",
+     "file_hd": "assets/species/agaricus-xanthodermus-inat1-hd.webp",
+     "thumb": "assets/species/agaricus-xanthodermus-inat1-t.webp",
+     "source": "iNaturalist (research grade)",
+     "page": "https://www.inaturalist.org/observations/19161864",
+     "author": "Davide Puddu",
+     "license": "CC BY 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+     "photoId": 29424038,
+     "taxonName": "Agaricus xanthodermus",
+     "taxonId": 118394,
+     "qualityGrade": "research",
+     "place": "Cuglieri (OR), Sardegna, IT",
+     "date": "2015-10-15",
+     "originalWidth": 2048,
+     "originalHeight": 1536
+    }
+   ],
+   "photoReview": "Taxon della fonte e licenza verificati sull'API iNaturalist; selezione visiva della foto. Research grade indica consenso della comunità, non certificazione micologica."
+  },
+  "Gyromitra esculenta": {
+   "ref": null,
+   "inat": [
+    {
+     "file": "assets/species/gyromitra-esculenta-inat1.webp",
+     "file_hd": "assets/species/gyromitra-esculenta-inat1-hd.webp",
+     "thumb": "assets/species/gyromitra-esculenta-inat1-t.webp",
+     "source": "iNaturalist (research grade)",
+     "page": "https://www.inaturalist.org/observations/116416175",
+     "author": "Gianluca Congi",
+     "license": "CC BY-SA 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+     "photoId": 196512859,
+     "taxonName": "Gyromitra esculenta",
+     "taxonId": 85120,
+     "qualityGrade": "research",
+     "place": "Bocchigliero (CS), Calabria, IT",
+     "date": "2022-05-10",
+     "originalWidth": 2048,
+     "originalHeight": 1152
+    }
+   ],
+   "photoReview": "Taxon della fonte e licenza verificati sull'API iNaturalist; selezione visiva della foto. Research grade indica consenso della comunità, non certificazione micologica."
+  },
+  "Amanita pantherina": {
+   "ref": null,
+   "inat": [
+    {
+     "file": "assets/species/amanita-pantherina-inat1.webp",
+     "file_hd": "assets/species/amanita-pantherina-inat1-hd.webp",
+     "thumb": "assets/species/amanita-pantherina-inat1-t.webp",
+     "source": "iNaturalist (research grade)",
+     "page": "https://www.inaturalist.org/observations/246292569",
+     "author": "Alessandro Popoli",
+     "license": "CC BY 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+     "photoId": 439658718,
+     "taxonName": "Amanita pantherina",
+     "taxonId": 48418,
+     "qualityGrade": "research",
+     "place": "Riserva Naturale del Lago di Canterno, Trivigliano, Lazio, IT",
+     "date": "2024-10-02",
+     "originalWidth": 1536,
+     "originalHeight": 2048
+    }
+   ],
+   "photoReview": "Taxon della fonte e licenza verificati sull'API iNaturalist; selezione visiva della foto. Research grade indica consenso della comunità, non certificazione micologica."
+  },
+  "Tricholoma equestre": {
+   "ref": null,
+   "inat": [
+    {
+     "file": "assets/species/tricholoma-equestre-inat1.webp",
+     "file_hd": "assets/species/tricholoma-equestre-inat1-hd.webp",
+     "thumb": "assets/species/tricholoma-equestre-inat1-t.webp",
+     "source": "iNaturalist (research grade)",
+     "page": "https://www.inaturalist.org/observations/99968495",
+     "author": "Jose Castro",
+     "license": "CC BY 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+     "photoId": 166773349,
+     "taxonName": "Tricholoma equestre",
+     "taxonId": 118215,
+     "qualityGrade": "research",
+     "place": "Lugo, Galizia, ES",
+     "date": "2021-11-01",
+     "originalWidth": 2048,
+     "originalHeight": 921
+    }
+   ],
+   "photoReview": "Taxon della fonte e licenza verificati sull'API iNaturalist; selezione visiva della foto. Research grade indica consenso della comunità, non certificazione micologica."
+  },
+  "Clitocybe rivulosa": {
+   "ref": null,
+   "inat": [
+    {
+     "file": "assets/species/clitocybe-rivulosa-inat1.webp",
+     "file_hd": "assets/species/clitocybe-rivulosa-inat1-hd.webp",
+     "thumb": "assets/species/clitocybe-rivulosa-inat1-t.webp",
+     "source": "iNaturalist (research grade)",
+     "page": "https://www.inaturalist.org/observations/143564018",
+     "author": "Kristian Bosak",
+     "license": "CC BY 4.0",
+     "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+     "photoId": 246230330,
+     "taxonName": "Collybia rivulosa",
+     "taxonId": 1525557,
+     "qualityGrade": "research",
+     "place": "Verudela, Pola, HR",
+     "date": "2022-11-30",
+     "originalWidth": 2048,
+     "originalHeight": 1536
+    }
+   ],
+   "photoReview": "Taxon della fonte e licenza verificati sull'API iNaturalist; selezione visiva della foto. Research grade indica consenso della comunità, non certificazione micologica."
   }
  }
 }

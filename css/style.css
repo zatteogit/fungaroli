@@ -425,6 +425,12 @@ label.btn { display: inline-flex; }
 .seg-nav { position: relative; display: flex; overflow-x: auto; scrollbar-width: none; padding: 4px; border-radius: 16px; background: var(--surface-2); margin: 0 0 14px; }
 .seg-nav a { flex: 1 0 auto; white-space: nowrap; text-align: center; padding: 9px 10px; border-radius: 12px; text-decoration: none; color: var(--text-2); font-weight: 600; font-size: 14px; }
 .seg-nav a[aria-current="page"] { background: var(--surface); color: var(--text); box-shadow: var(--shadow-1); }
+/* secondo livello di Scopri: «Sfoglia | Impara a riconoscere», oppure le voci di Impara */
+.sub-nav { display: flex; gap: 22px; overflow-x: auto; scrollbar-width: none; margin: -2px 0 16px; border-bottom: 1px solid var(--hair); }
+.sub-nav:empty { display: none; }
+.sub-nav a { flex: none; padding: 8px 0 9px; margin-bottom: -1px; white-space: nowrap; text-decoration: none; color: var(--text-2); font-weight: 600; font-size: 14px; border-bottom: 2px solid transparent; }
+.sub-nav a:hover { color: var(--text); }
+.sub-nav a[aria-current="page"] { color: var(--text); border-bottom-color: var(--accent); }
 .species-grid { display: block; }
 .card-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
 .sp-card { position: relative; display: block; isolation: isolate; overflow: hidden; aspect-ratio: 4 / 5; border: 0; padding: 0; border-radius: 20px; color: #fff; background: var(--forest); cursor: pointer; text-align: left; text-decoration: none; box-shadow: var(--shadow-1); }
@@ -2368,7 +2374,7 @@ html.entity-open { overflow: hidden; }
 /* Botanical sheets and a private notebook: readable paper, including dark mode. */
 .botanical-tools { display:grid; gap:12px; margin-bottom:16px; }
 .botanical-tools label,.notebook-form label { display:grid; gap:6px; font-size:14px; }
-.botanical-tools .plant-catalog-search { display:flex; margin-bottom:0; }
+
 .plant-card .plant-risk { position:absolute; z-index:2; top:8px; left:8px; margin:0; padding:4px 8px; background:var(--warn-bg); color:var(--warn-ink); box-shadow:0 1px 4px rgb(0 0 0 / .25); }
 .plant-card .plant-risk-deadly { background:var(--crit-bg); color:var(--crit-ink); }
 .botanical-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr)); gap:16px; align-items:stretch; }
@@ -2698,3 +2704,37 @@ html.entity-open { overflow: hidden; }
 .leaflet-zoneLabels-pane { pointer-events: none; }
 .map-th-group { position: absolute; left: 0; top: 0; transform: translate(-9px, calc(-11px + var(--th-dy, 0px))); display: inline-flex; align-items: center; gap: 4px; cursor: pointer; }
 .map-th-group b { background: var(--surface); color: var(--text); border-radius: 999px; padding: 1px 6px; font-size: 11px; font-weight: 800; white-space: nowrap; font-variant-numeric: tabular-nums; box-shadow: 0 1px 4px rgb(0 0 0 / .3); }
+
+/* ricerca contestuale: sui cataloghi il campo è nella pagina, la ricerca generale si nasconde (mai due campi insieme) */
+body:is([data-page="specie"], [data-page="piante"], [data-page="alberi"]) .tab-search { display: none; }
+.catalog-search { display: flex; margin: 0 0 12px; }
+.botanical-tools .catalog-search, .botanical-tools label.catalog-search { display: flex; margin-bottom: 0; }
+.also-in { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 8px; margin: 18px 0 0; font-size: 13px; color: var(--text-2); }
+.also-in > span { font-weight: 600; margin-right: 2px; }
+.also-in .chip b { margin-left: 4px; font-variant-numeric: tabular-nums; color: var(--muted); }
+/* piante: gruppi in una riga scorrevole su telefono, gli altri filtri in un pannello richiudibile */
+.more-filters { margin: 0; }
+.more-filters > summary { display: inline-flex; align-items: center; gap: 6px; min-height: 40px; cursor: pointer; font-size: 14px; font-weight: 600; color: var(--text-2); list-style: none; }
+.more-filters > summary::-webkit-details-marker { display: none; }
+.more-filters > summary::before { content: ''; width: 7px; height: 7px; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; transform: rotate(-45deg); transition: transform .2s; margin-right: 2px; }
+.more-filters[open] > summary::before { transform: rotate(45deg); }
+.more-filters [data-filter-n] { color: var(--accent); font-weight: 700; }
+.more-filters > .catalog-filters { margin-top: 4px; }
+@media (max-width: 700px) {
+  .botanical-tools > .plant-groups { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; margin-inline: calc(-1 * var(--gutter)); padding: 2px var(--gutter); }
+  .botanical-tools > .plant-groups::-webkit-scrollbar { display: none; }
+  .botanical-tools > .plant-groups > * { flex: none; }
+}
+/* percorso guidato di piante e alberi: stesse domande a tessere dei funghi, risultati come schede di campo */
+.gk-results { display: grid; gap: 10px; }
+.gk-results .field-card-head .id-fit { position: static; margin-left: auto; }
+.gk-results .field-card-head .tag { margin-left: auto; }
+.gk-results .field-card-head .tag + .id-fit { margin-left: 6px; }
+.gk-tell { display: block; margin-top: 6px; }
+.gk-pair { margin: 0 0 12px; }
+.gk-pair h3 { margin: 0 0 6px; font-size: 15px; }
+.gk-pair ul { margin: 0; padding-left: 18px; }
+.gk-danger { border-left: 3px solid var(--danger, #b3261e); }
+/* nelle risposte del percorso guidato non ci sono disegni: la colonna del valore prende lo spazio */
+.gk-answers .id-row-main, #field-identify .id-row-main { grid-template-columns: minmax(84px, 38%) 1fr auto; }
+.gk-q h3 { font-size: 21px; line-height: 1.25; }

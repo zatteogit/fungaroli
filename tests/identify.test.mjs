@@ -57,3 +57,23 @@ test('prima i sosia più somiglianti: casi di manuale', () => {
   const finferlo = sosiaOf(refOf('cibarius')).map((t) => t.latin);
   assert.ok(finferlo.indexOf('Cortinarius orellanus') > finferlo.indexOf('Hygrophoropsis aurantiaca'));
 });
+test('sosia pericolosi dei commestibili del catalogo: caratteri dal vocabolario e collegamenti validi', () => {
+  const V = JSON.parse(fs.readFileSync(new URL('../data/species-traits.json', import.meta.url))).vocabulary;
+  const keys = new Set(taxa.map((t) => t.key));
+  for (const t of taxa) {
+    assert.ok(V.toxicity[t.toxicity], `${t.key}: tossicità fuori vocabolario`);
+    for (const [k, v] of Object.entries(t.traits || {})) {
+      if (k === 'season' || v == null || typeof v === 'boolean') continue;
+      for (const x of v) assert.ok(V[k]?.[x], `${t.key}: ${k}=${x} fuori vocabolario`);
+    }
+    for (const tr of t.trees || []) assert.ok(V.trees[tr], `${t.key}: albero ${tr} fuori vocabolario`);
+    for (const d of t.dangerous_lookalikes || []) assert.ok(keys.has(d), `${t.key}: sosia ${d} inesistente`);
+  }
+  const dl = (k) => taxa.find((t) => t.key === k).dangerous_lookalikes;
+  assert.ok(dl('agaricus-campestris').includes('agaricus-xanthodermus'));
+  assert.ok(dl('morchella-esculenta').includes('gyromitra-esculenta'));
+  assert.ok(dl('amanita-rubescens').includes('amanita-pantherina'));
+  assert.ok(dl('tricholoma-portentosum').includes('tricholoma-equestre'));
+  assert.ok(dl('marasmius-oreades').includes('clitocybe-rivulosa'));
+  assert.ok(deadlyWarnings(taxa).some((t) => t.key === 'gyromitra-esculenta'));
+});

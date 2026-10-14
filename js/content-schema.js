@@ -5,7 +5,7 @@ export const CONTENT_RESOURCES = [
   {id:'edible-catalog',title:'Catalogo dei commestibili',group:'Specie',collections:['species'],required:['species']},
   {id:'species-id',title:'Schede delle specie modellate',group:'Specie',collections:['species'],required:['species']},
   {id:'botanical-models',title:'Modelli di erbe e frutti',group:'Modelli',collections:['models'],required:['models']},
-  {id:'plants',title:'Piante, erbe e frutti',group:'Bosco',collections:['plants'],required:['plants']},
+  {id:'plants',title:'Piante e fiori',group:'Bosco',collections:['plants'],required:['plants']},
   {id:'trees',title:'Alberi',group:'Bosco',collections:['trees'],required:['trees']},
   {id:'guides',title:'Articoli e taccuini',group:'Redazione',collections:['guides'],required:['guides']},
   {id:'glossary',title:'Glossario e legenda',group:'Scopri',collections:['terms'],required:['terms']},
