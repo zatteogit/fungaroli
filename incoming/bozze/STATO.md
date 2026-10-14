@@ -25,7 +25,7 @@ Bozze correnti per revisione. Le versioni definitive sono separate in incoming/i
 | icone/tavola-19.png | tricholoma-virgatum, tricholoma-sciodes, inocybe-lilacina | ok | QA anatomica completata; dubbi dei dati da leggere in NOTE. |
 | icone/tavola-20.png | cortinarius-orellanus, cortinarius-rubellus, cortinarius-traganus | ok | QA anatomica completata; dubbi dei dati da leggere in NOTE. |
 | icone/tavola-21.png | cortinarius-violaceus, mycena-pura, inocybe | ok | QA anatomica completata; dubbi dei dati da leggere in NOTE. |
-| icone/tavola-22.png | agaricus-campestris, agaricus-arvensis, agaricus-bisporus | da controllare | Caratteri corretti; un angolo ha alpha1/255, quasi trasparente. Cleanup successivo scartato perché aveva cancellato un cappello. |
+| icone/tavola-22.png | agaricus-campestris, agaricus-arvensis, agaricus-bisporus | ok | QA conclusa. Angolo alpha1/255 documentato; scartato edit che cancellava un cappello. |
 | icone/tavola-23.png | marasmius-oreades, calocybe-gambosa, clitocybe-rivulosa | ok | QA anatomica completata; dubbi dei dati da leggere in NOTE. |
 | icone/tavola-24.png | hygrophorus-latitabundus, hygrophorus-marzuolus, tricholoma-equestre | ok | QA anatomica completata; dubbi dei dati da leggere in NOTE. |
 | icone/tavola-25.png | mellea, armillaria-tabescens, galerina-marginata | ok | QA anatomica completata; dubbi dei dati da leggere in NOTE. |
