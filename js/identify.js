@@ -599,8 +599,14 @@ function cmpRows(ref, t) {
     const shared = B.filter((v) => A.includes(v)).length;
     // info: la stagione aiuta poco a distinguere, quindi non diventa mai "qui li distingui"
     const kind = r.info ? 'same' : !shared ? 'diff' : (shared < B.length || shared < A.length) ? 'part' : 'same';
-    const cell = (X, who) => `<div class="cmp-cell">${r.art ? `<span class="cmp-art" aria-hidden="true">${r.art(X, who)}</span>` : ''}<span>${esc(txt(X))}</span></div>`;
-    return { kind, k: r.k, html: `<li class="cmp-row ${kind}"><span class="cmp-k">${esc(r.k)}</span>${cell(A, ref)}${cell(B, t)}</li>` };
+    // caratteri atomizzati: un'etichetta per valore, ognuna col suo disegno.
+    // In comune: attenuate e in testa, nello stesso ordine sui due lati. Solo da un lato: in evidenza.
+    const say = (v) => (r.bool ? withOut(r.key, v) : r.say ? r.say(v) : String(v));
+    const chip = (v, who, common) => `<li class="cmp-v ${common ? 'common' : 'own'}">${r.art ? `<span class="cmp-v-art" aria-hidden="true">${r.art([v], who) || ''}</span>` : ''}<span>${esc(say(v))}</span><span class="sr-only">${common ? ', in comune' : ', solo qui'}</span></li>`;
+    const cell = (X, Y, who) => r.key === 'season'
+      ? `<div class="cmp-cell"><span>${esc(txt(X))}</span></div>`
+      : `<div class="cmp-cell"><ul class="cmp-vals">${[...A.filter((v) => Y.includes(v) && X.includes(v)), ...X.filter((v) => !Y.includes(v))].map((v) => chip(v, who, Y.includes(v))).join('')}</ul></div>`;
+    return { kind, k: r.k, html: `<li class="cmp-row ${kind}"><span class="cmp-k">${esc(r.k)}</span>${cell(A, B, ref)}${cell(B, A, t)}</li>` };
   }).filter(Boolean);
 }
 
@@ -626,6 +632,7 @@ function renderCompare(box, ref, pick) {
         <span class="cmp-vs" aria-hidden="true">vs</span>
       </div>
       ${how ? `<p class="cmp-how"><b>Differenze descritte.</b> ${esc(how)}</p>` : ''}
+      <ul class="cmp-legend" aria-hidden="true"><li><span class="cmp-v own"></span>Solo in uno dei due</li><li><span class="cmp-v common"></span>In comune</li></ul>
       ${diff.length ? `<h4 class="cmp-h diff">Caratteri differenti nelle fonti</h4><ul class="cmp-rows">${diff.map((r) => r.html).join('')}</ul>`
         : '<p class="cmp-none"><b>Nessuna domanda di Riconosci li separa con certezza.</b> Contano i dettagli: leggi le differenze descritte e, nel dubbio, fallo vedere all\'Ispettorato micologico.</p>'}
       ${part.length ? `<h4 class="cmp-h part">A volte simili</h4><ul class="cmp-rows">${part.map((r) => r.html).join('')}</ul>` : ''}
