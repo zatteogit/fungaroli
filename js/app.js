@@ -1934,7 +1934,7 @@ function essentialSections(z, d, walk) {
   const rows = [];
   rows.push({ sec: 'specie', icon: 'find', thumb: best.species.id, k: 'Cosa osservare', v: `<button type="button" class="sp-inline" data-species="${best.species.id}">${esc(best.species.name)}</button> ${intornoA(best.band)} <b>${best.band} m</b>`,
     sub: [whereSummary(best.species.id) && `<span class="plan-where">${linkTrees(whereSummary(best.species.id))}</span>`,
-      criticalRule(best.species.id) && `<span class="plan-crit">⚠ ${esc(criticalRule(best.species.id))}</span>`,
+      criticalRule(best.species.id) && `<span class="plan-crit" role="note"><b>Attenzione</b>${esc(criticalRule(best.species.id))}</span>`,
       d.perSpecies.slice(1, 3).map((p) => [p, spScore(z, d, p)]).filter(([, sc]) => sc >= 20).map(([p, sc]) => `${speciesLink(p.species)} ${idxDot(sc)}`).join(' · ')].filter(Boolean).join('<br>') || esc(best.species.latin) });
   if (d.crowd &&state.target==='funghi') {
     const t = timingAdvice({ dateStr: d.date, lat: z.lat, lon: z.lon, crowd: d.crowd });
