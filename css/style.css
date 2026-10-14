@@ -2738,3 +2738,11 @@ body:is([data-page="specie"], [data-page="piante"], [data-page="alberi"]) .tab-s
 /* nelle risposte del percorso guidato non ci sono disegni: la colonna del valore prende lo spazio */
 .gk-answers .id-row-main, #field-identify .id-row-main { grid-template-columns: minmax(84px, 38%) 1fr auto; }
 .gk-q h3 { font-size: 21px; line-height: 1.25; }
+
+/* velatura meteo sulle copertine dei luoghi: grafica e leggera, non cambia la foto (che segue la stagione) */
+.veil { position: absolute; inset: 0; pointer-events: none; z-index: 0; }
+.cover > .veil, .phero > .veil { border-radius: inherit; }
+.veil-cloud { background: linear-gradient(180deg, rgb(150 156 160 / .38), rgb(120 126 130 / .12) 60%, transparent); backdrop-filter: saturate(.75); -webkit-backdrop-filter: saturate(.75); }
+.veil-fog { background: linear-gradient(0deg, rgb(235 236 232 / .62), rgb(225 227 224 / .42) 45%, rgb(215 218 216 / .25)); backdrop-filter: blur(1.5px) saturate(.6); -webkit-backdrop-filter: blur(1.5px) saturate(.6); }
+.veil-rain { background: repeating-linear-gradient(105deg, rgb(255 255 255 / .0) 0 9px, rgb(220 228 235 / .16) 9px 10px), linear-gradient(180deg, rgb(70 80 92 / .42), rgb(70 80 92 / .15)); backdrop-filter: saturate(.6) brightness(.92); -webkit-backdrop-filter: saturate(.6) brightness(.92); }
+.veil-snow { background: radial-gradient(circle at 20% 30%, rgb(255 255 255 / .85) 0 1.8px, transparent 2.3px) 0 0 / 34px 34px, radial-gradient(circle at 70% 60%, rgb(255 255 255 / .7) 0 1.3px, transparent 1.8px) 0 0 / 23px 23px, linear-gradient(180deg, rgb(225 232 240 / .35), transparent 70%); backdrop-filter: saturate(.7) brightness(1.04); -webkit-backdrop-filter: saturate(.7) brightness(1.04); }
