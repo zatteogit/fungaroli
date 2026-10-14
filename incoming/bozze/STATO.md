@@ -34,22 +34,20 @@ Bozze correnti per revisione. Le versioni definitive sono separate in incoming/i
 | icone/tavola-28.png | agaricus-sylvicola, agaricus-xanthodermus, entoloma-sinuatum | ok | QA anatomica completata; dubbi dei dati da leggere in NOTE. |
 | icone/tavola-29.png | pleurotus-ostreatus, pleurotus-eryngii, pleurotus-cornucopiae | ok | QA anatomica completata; dubbi dei dati da leggere in NOTE. |
 | icone/tavola-30.png | fistulina-hepatica | ok | QA anatomica completata; dubbi dei dati da leggere in NOTE. |
-| luoghi/vallonina-autunno-nebbia.webp | Vallonina: autunno-nebbia | da controllare | Controllo tecnico concluso; approvazione visiva di Matteo richiesta. Fonte600px: singoli alberi e dettagli fini ricostruiti. |
-| luoghi/vallonina-autunno-nuvoloso.webp | Vallonina: autunno-nuvoloso | da controllare | Controllo tecnico concluso; approvazione visiva di Matteo richiesta. Fonte600px: singoli alberi e dettagli fini ricostruiti. |
-| luoghi/vallonina-autunno-pioggia.webp | Vallonina: autunno-pioggia | da controllare | Controllo tecnico concluso; approvazione visiva di Matteo richiesta. Fonte600px: singoli alberi e dettagli fini ricostruiti. |
-| luoghi/vallonina-autunno-sereno.webp | Vallonina: autunno-sereno | da controllare | Controllo tecnico concluso; approvazione visiva di Matteo richiesta. Fonte600px: singoli alberi e dettagli fini ricostruiti. |
-| luoghi/vallonina-estate-nebbia.webp | Vallonina: estate-nebbia | da controllare | Controllo tecnico concluso; approvazione visiva di Matteo richiesta. Fonte600px: singoli alberi e dettagli fini ricostruiti. |
-| luoghi/vallonina-estate-nuvoloso.webp | Vallonina: estate-nuvoloso | da controllare | Controllo tecnico concluso; approvazione visiva di Matteo richiesta. Fonte600px: singoli alberi e dettagli fini ricostruiti. |
-| luoghi/vallonina-estate-pioggia.webp | Vallonina: estate-pioggia | da controllare | Controllo tecnico concluso; approvazione visiva di Matteo richiesta. Fonte600px: singoli alberi e dettagli fini ricostruiti. |
-| luoghi/vallonina-estate-sereno.webp | Vallonina: estate-sereno | ok | Foto reale riutilizzata, ridimensionata e convertita. |
-| luoghi/vallonina-inverno-nebbia.webp | Vallonina: inverno-nebbia | da controllare | Controllo tecnico concluso; approvazione visiva di Matteo richiesta. Fonte600px: singoli alberi e dettagli fini ricostruiti. |
-| luoghi/vallonina-inverno-neve.webp | Vallonina: inverno-neve | da controllare | Controllo tecnico concluso; approvazione visiva di Matteo richiesta. Fonte600px: singoli alberi e dettagli fini ricostruiti. |
-| luoghi/vallonina-inverno-nuvoloso.webp | Vallonina: inverno-nuvoloso | da controllare | Controllo tecnico concluso; approvazione visiva di Matteo richiesta. Fonte600px: singoli alberi e dettagli fini ricostruiti. |
-| luoghi/vallonina-inverno-pioggia.webp | Vallonina: inverno-pioggia | da controllare | Controllo tecnico concluso; approvazione visiva di Matteo richiesta. Fonte600px: singoli alberi e dettagli fini ricostruiti. |
-| luoghi/vallonina-inverno-sereno.webp | Vallonina: inverno-sereno | da controllare | Controllo tecnico concluso; approvazione visiva di Matteo richiesta. Fonte600px: singoli alberi e dettagli fini ricostruiti. |
-| luoghi/vallonina-primavera-nebbia.webp | Vallonina: primavera-nebbia | da controllare | Controllo tecnico concluso; approvazione visiva di Matteo richiesta. Fonte600px: singoli alberi e dettagli fini ricostruiti. |
-| luoghi/vallonina-primavera-nuvoloso.webp | Vallonina: primavera-nuvoloso | da controllare | Controllo tecnico concluso; approvazione visiva di Matteo richiesta. Fonte600px: singoli alberi e dettagli fini ricostruiti. |
-| luoghi/vallonina-primavera-pioggia.webp | Vallonina: primavera-pioggia | da controllare | Controllo tecnico concluso; approvazione visiva di Matteo richiesta. Fonte600px: singoli alberi e dettagli fini ricostruiti. |
-| luoghi/vallonina-primavera-sereno.webp | Vallonina: primavera-sereno | da controllare | Controllo tecnico concluso; approvazione visiva di Matteo richiesta. Fonte600px: singoli alberi e dettagli fini ricostruiti. |
-
-Foto di partenza di tutte le copertine Vallonina: Idéfix, SelladiLeonessa001.jpg (luglio2006), https://commons.wikimedia.org/wiki/File:SelladiLeonessa001.jpg . Licenza fonte nei dati: CC BY-SA2.5 / CC BY-SA3.0. Per le derivate è scelta CC BY-SA3.0: https://creativecommons.org/licenses/by-sa/3.0/ . Modifiche: vegetazione stagionale, luce/cielo/meteo; conversione e ridimensionamento.
+| luoghi/vallonina-autunno-nebbia.webp | vallonina: autunno-nebbia | ok | Approvata da Matteo. |
+| luoghi/vallonina-autunno-nuvoloso.webp | vallonina: autunno-nuvoloso | ok | Approvata da Matteo. |
+| luoghi/vallonina-autunno-pioggia.webp | vallonina: autunno-pioggia | ok | Approvata da Matteo. |
+| luoghi/vallonina-autunno-sereno.webp | vallonina: autunno-sereno | ok | Approvata da Matteo. |
+| luoghi/vallonina-estate-nebbia.webp | vallonina: estate-nebbia | ok | Approvata da Matteo. |
+| luoghi/vallonina-estate-nuvoloso.webp | vallonina: estate-nuvoloso | ok | Approvata da Matteo. |
+| luoghi/vallonina-estate-pioggia.webp | vallonina: estate-pioggia | ok | Approvata da Matteo. |
+| luoghi/vallonina-estate-sereno.webp | vallonina: estate-sereno | ok | Foto reale riutilizzata. |
+| luoghi/vallonina-inverno-nebbia.webp | vallonina: inverno-nebbia | ok | Approvata da Matteo. |
+| luoghi/vallonina-inverno-neve.webp | vallonina: inverno-neve | ok | Approvata da Matteo. |
+| luoghi/vallonina-inverno-nuvoloso.webp | vallonina: inverno-nuvoloso | ok | Approvata da Matteo. |
+| luoghi/vallonina-inverno-pioggia.webp | vallonina: inverno-pioggia | ok | Approvata da Matteo. |
+| luoghi/vallonina-inverno-sereno.webp | vallonina: inverno-sereno | ok | Approvata da Matteo. |
+| luoghi/vallonina-primavera-nebbia.webp | vallonina: primavera-nebbia | ok | Approvata da Matteo. |
+| luoghi/vallonina-primavera-nuvoloso.webp | vallonina: primavera-nuvoloso | ok | Approvata da Matteo. |
+| luoghi/vallonina-primavera-pioggia.webp | vallonina: primavera-pioggia | ok | Approvata da Matteo. |
+| luoghi/vallonina-primavera-sereno.webp | vallonina: primavera-sereno | ok | Correzione primavera-sereno: scala, crinale e rupi verificati in sovrapposizione; versione larga sostituita. |

@@ -104,23 +104,41 @@ Il modello tecnico non è esposto dal generatore integrato: nel manifest è regi
 - Tavola 30: Righe inutilizzate prive di soggetti; file nativo contiene qualche pixel quasi trasparente con alpha=1/255 anche nelle aree vuote, non visibile a schermo. Nessuna soglia o ritocco applicati.
 - estate/sereno: Foto originale600x450: il ridimensionamento richiesto a1600px non aggiunge dettaglio fotografico.
 
-## Vallonina — stagione × meteo
+## Luoghi — stagione × meteo
 
-Quota massima nei dati: 1650 m. 17 combinazioni: quattro condizioni per ciascuna stagione più la nevicata invernale.
-16 varianti generate sempre dalla foto reale originale, più estate-sereno con reale=true. Quest’ultima è solo la foto reale ridimensionata e convertita in WebP, senza generazione.
-Tutti i WebP hanno lato lungo 1600 px (1600×1200). La fonte reale è 600×450: il ridimensionamento non aggiunge dettaglio fotografico originale.
-Inverno: neve al suolo nelle quattro condizioni ordinarie; inverno-neve aggiunge la nevicata in corso. Sereno, nuvoloso, nebbia e pioggia hanno trattamenti distinti. Nessun’altra zona con foto è stata generata: la consegna si ferma qui per l’approvazione richiesta nel nuovo brief.
-Sono state controllate visivamente inquadratura, crinale, rupi, pendio forestale e vegetazione in primo piano. Si tratta di trasformazioni generate della scena, non di fotografie reali delle condizioni meteo rappresentate.
-Limite di fedeltà: la fonte di 600×450 non documenta tutti i dettagli fini. Le varianti ricostruiscono singole chiome, tronchi e dettagli rocciosi, soprattutto nelle invernali spoglie. Il controllo conferma la geometria principale, ma non permette di garantire l’identità esatta di ogni albero o pietra. Questo punto del vincolo di fedeltà resta dubbio e va valutato nell’approvazione prima di estendere alle altre sei zone.
+Vallonina approvata da Matteo; primavera-sereno rigenerata dalla foto reale e verificata in sovrapposizione 50% e con bordi rosso/ciano, senza registrazione/deformazione, prima del caricamento. La versione precedente con inquadratura troppo larga è sostituita. Autorizzata la prosecuzione delle altre sei zone senza ulteriori approvazioni.
 
-### Attribuzione e licenza delle derivate
+Ogni zona ha 17 combinazioni: quattro stagioni × sereno/nuvoloso/nebbia/pioggia, più inverno-neve. Le sette zone con foto hanno tutte quota massima nei bands almeno1000m: neve al suolo nelle quattro varianti invernali ordinarie, nevicata in corso solo in inverno-neve. Nessuna generazione da zero per le otto zone prive di foto.
 
-Foto originale: Idéfix. SelladiLeonessa001.jpg, luglio 2006. https://commons.wikimedia.org/wiki/File:SelladiLeonessa001.jpg
-Nel manifest autore, licenza e pagina sono copiati esattamente da data/media-zones.json. Fra le opzioni della fonte è scelta CC BY-SA 3.0 per le derivate: https://creativecommons.org/licenses/by-sa/3.0/ . Modifiche dichiarate: vegetazione stagionale, luce/cielo/meteo; conversione e ridimensionamento.
+| Zona | Combinazioni | Generate | Foto reale riusata | Dimensioni |
+|---|---:|---:|---|---|
+| vallonina | 17 | 16 | estate-sereno | 1600×1200 |
 
-### Discrepanze da conoscere per le altre zone
+Zone ancora in lavorazione: poggio-cantalice, antrodoco, cicolano, laga, rascino, tancia.
 
-Non tutte le licenze del JSON sono CC BY-SA: Cicolano è CC BY 2.0 e Antrodoco è indicato CC0. La pagina Commons di Monte_Giano_DVX.JPG riporta Iacopo.rossini e pubblico dominio (PD-self), mentre il JSON dice DVX/CC0: nessun campo originale è stato modificato. Prima delle eventuali derivate di Antrodoco va riconciliata questa attribuzione. https://commons.wikimedia.org/wiki/File:Monte_Giano_DVX.JPG
+Ogni variante deriva dalla foto originale della propria zona, mai da una variante generata. I confronti in sovrapposizione controllano inquadratura, scala e riferimenti fissi; i casi rigenerati e gli eventuali limiti sono registrati sotto. Le immagini restano trasformazioni generate, non fotografie reali della stagione/meteo mostrati. La sorgente di Vallonina misura600×450: singoli alberi, foglie e dettagli fini ricostruiti non possono essere certificati identici alla fonte. Nessun ritaglio o deformazione è usato per mascherare derive di inquadratura.
+
+### Attribuzioni e licenze
+
+| Zona | Autore originale | Licenza applicata | Pagina della foto |
+|---|---|---|---|
+| vallonina | Idéfix | [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) | [Commons](https://commons.wikimedia.org/wiki/File:SelladiLeonessa001.jpg) |
+| poggio-cantalice | Li vioandronico2013 | [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) | [Commons](https://commons.wikimedia.org/wiki/File:Terminillo.JPG) |
+| antrodoco | Iacopo.rossini | [Pubblico dominio (PD-self)](https://commons.wikimedia.org/wiki/Template:PD-self) | [Commons](https://commons.wikimedia.org/wiki/File:Monte_Giano_DVX.JPG) |
+| cicolano | Alessandro Blasi from Rieti, Italy | [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/) | [Commons](https://commons.wikimedia.org/wiki/File:Lago_del_Salto%21%21_%287447648144%29.jpg) |
+| laga | Mario1952 | [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) | [Commons](https://commons.wikimedia.org/wiki/File:Pizzo_di_Sevo.jpg) |
+| rascino | Sabina Trekking ASD | [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) | [Commons](https://commons.wikimedia.org/wiki/File:Rascino.jpg) |
+| tancia | Christoph Strässler | [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/) | [Commons](https://commons.wikimedia.org/wiki/File%3ABeech_Forest_in_the_Sabina_Hills%2C_Latium%2C_Italy_-_52993979506.jpg) |
+
+Antrodoco: Commons identifica Iacopo.rossini e il rilascio in pubblico dominio PD-self; data/media-zones.json riporta invece DVX (Wikimedia Commons) e CC0. Nel manifest si applicano i crediti verificati sulla pagina originale, senza modificare quel JSON. Verifica: https://commons.wikimedia.org/w/index.php?title=File:Monte_Giano_DVX.JPG&oldid=1119478106 . La data EXIF non basta a rendere riconoscibile la stagione: nessuna combinazione è etichettata reale=true arbitrariamente.
+
+Cicolano: autore Alessandro Blasi from Rieti, Italy, CC BY2.0; anche le derivate sono CC BY2.0 con attribuzione e indicazione delle modifiche, senza trasformare la licenza in BY-SA. Verifica: https://commons.wikimedia.org/w/index.php?title=File:Lago_del_Salto!!_(7447648144).jpg&oldid=988400961 .
+
+Le derivate delle foto CC BY-SA restano sotto la corrispondente CC BY-SA; per Vallonina, tra le opzioni della fonte, è scelta CC BY-SA3.0. Attribuzione, pagina originale, link di licenza e modifiche sono ripetuti nelle righe del manifest. Antrodoco conserva il riferimento al pubblico dominio della fonte.
+
+### Dubbi, confronti e limiti delle copertine
+
+- vallonina/estate-sereno: Foto originale600x450: il ridimensionamento richiesto a1600px non aggiunge dettaglio fotografico.
 
 # Foto candidate da Wikimedia Commons per le otto zone senza foto
 
