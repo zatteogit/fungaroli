@@ -527,7 +527,8 @@ export function renderTaxonView(box, t, { photos = null, habitatText = '', extra
         // e nel verso opposto: dalla scheda del tossico, i commestibili che lo indicano come sosia
         const back = TAXA.filter((x) => x !== t && (x.dangerous_lookalikes || []).includes(t.key) && !look.some((l) => l.o === x));
         const ds = [...(t.dangerous_lookalikes || []).map((k) => TAXA.find((x) => x.key === k)).filter(Boolean), ...back.filter((x) => !(t.dangerous_lookalikes || []).includes(x.key))];
-        return ds.length ? `<h3>Non confonderlo con</h3><ul class="tx-look">${ds.map((o) => { const op = photoOf(o); return `<li><a class="tx-look-main" data-entity href="#/fungo/${esc(o.key)}">${op ? `<img data-src="${ASSET(op.thumb || op.file)}" alt="" loading="lazy" decoding="async">` : ''}<span><b>${esc(o.name || o.latin)}</b><i>${esc(o.latin)}</i><small class="tx-c tox-${esc((o.toxicity || '').replace(/\s/g, '-'))}"><span class="tox">${esc(o.tox_label || o.toxicity || '')}</span></small></span></a></li>`; }).join('')}</ul>` : '';
+        // se la sezione c'è già (sosia del modello), le schede si aggiungono sotto lo stesso titolo
+        return ds.length ? `${look.length ? '' : '<h3>Non confonderlo con</h3>'}<ul class="tx-look${look.length ? ' tx-look-more' : ''}">${ds.map((o) => { const op = photoOf(o); return `<li><a class="tx-look-main" data-entity href="#/fungo/${esc(o.key)}">${op ? `<img data-src="${ASSET(op.thumb || op.file)}" alt="" loading="lazy" decoding="async">` : ''}<span><b>${esc(o.name || o.latin)}</b><i>${esc(o.latin)}</i><small class="tx-c tox-${esc((o.toxicity || '').replace(/\s/g, '-'))}"><span class="tox">${esc(o.tox_label || o.toxicity || '')}</span></small></span></a></li>`; }).join('')}</ul>` : '';
       })()}
       <h3>Dove e quando</h3>
       <dl class="sci-params">

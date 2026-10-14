@@ -2917,3 +2917,4 @@ body:is([data-page="specie"], [data-page="piante"], [data-page="alberi"]) .tab-s
   .ch-done { flex-direction: column; text-align: center; }
 }
 @media (prefers-reduced-motion: reduce) { .ch-bar > i { transition: none; } }
+.tx-look-more { margin-top: 10px; }
