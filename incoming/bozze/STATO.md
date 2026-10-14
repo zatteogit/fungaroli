@@ -42,11 +42,11 @@ Bozze correnti per revisione. Le versioni definitive sono separate in incoming/i
 | luoghi/antrodoco-estate-nuvoloso.webp | antrodoco: estate-nuvoloso | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
 | luoghi/antrodoco-estate-pioggia.webp | antrodoco: estate-pioggia | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
 | luoghi/antrodoco-estate-sereno.webp | antrodoco: estate-sereno | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
-| luoghi/antrodoco-inverno-nebbia.webp | antrodoco: inverno-nebbia | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
-| luoghi/antrodoco-inverno-neve.webp | antrodoco: inverno-neve | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
-| luoghi/antrodoco-inverno-nuvoloso.webp | antrodoco: inverno-nuvoloso | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
-| luoghi/antrodoco-inverno-pioggia.webp | antrodoco: inverno-pioggia | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
-| luoghi/antrodoco-inverno-sereno.webp | antrodoco: inverno-sereno | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
+| luoghi/antrodoco-inverno-nebbia.webp | antrodoco: inverno-nebbia | da rifare | Nuova regola Matteo: eliminare il manto dal fondovalle/primo piano basso, neve solo in quota; nevicata senza manto coprente in basso. |
+| luoghi/antrodoco-inverno-neve.webp | antrodoco: inverno-neve | da rifare | Nuova regola Matteo: eliminare il manto dal fondovalle/primo piano basso, neve solo in quota; nevicata senza manto coprente in basso. |
+| luoghi/antrodoco-inverno-nuvoloso.webp | antrodoco: inverno-nuvoloso | da rifare | Nuova regola Matteo: eliminare il manto dal fondovalle/primo piano basso, neve solo in quota; nevicata senza manto coprente in basso. |
+| luoghi/antrodoco-inverno-pioggia.webp | antrodoco: inverno-pioggia | da rifare | Nuova regola Matteo: eliminare il manto dal fondovalle/primo piano basso, neve solo in quota; nevicata senza manto coprente in basso. |
+| luoghi/antrodoco-inverno-sereno.webp | antrodoco: inverno-sereno | da rifare | Nuova regola Matteo: eliminare il manto dal fondovalle/primo piano basso, neve solo in quota; nevicata senza manto coprente in basso. |
 | luoghi/antrodoco-primavera-nebbia.webp | antrodoco: primavera-nebbia | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
 | luoghi/antrodoco-primavera-nuvoloso.webp | antrodoco: primavera-nuvoloso | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
 | luoghi/antrodoco-primavera-pioggia.webp | antrodoco: primavera-pioggia | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
@@ -59,11 +59,11 @@ Bozze correnti per revisione. Le versioni definitive sono separate in incoming/i
 | luoghi/poggio-cantalice-estate-nuvoloso.webp | poggio-cantalice: estate-nuvoloso | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
 | luoghi/poggio-cantalice-estate-pioggia.webp | poggio-cantalice: estate-pioggia | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
 | luoghi/poggio-cantalice-estate-sereno.webp | poggio-cantalice: estate-sereno | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
-| luoghi/poggio-cantalice-inverno-nebbia.webp | poggio-cantalice: inverno-nebbia | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
-| luoghi/poggio-cantalice-inverno-neve.webp | poggio-cantalice: inverno-neve | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
-| luoghi/poggio-cantalice-inverno-nuvoloso.webp | poggio-cantalice: inverno-nuvoloso | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
-| luoghi/poggio-cantalice-inverno-pioggia.webp | poggio-cantalice: inverno-pioggia | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
-| luoghi/poggio-cantalice-inverno-sereno.webp | poggio-cantalice: inverno-sereno | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
+| luoghi/poggio-cantalice-inverno-nebbia.webp | poggio-cantalice: inverno-nebbia | da rifare | Nuova regola Matteo: eliminare il manto dal fondovalle/primo piano basso, neve solo in quota; nevicata senza manto coprente in basso. |
+| luoghi/poggio-cantalice-inverno-neve.webp | poggio-cantalice: inverno-neve | da rifare | Nuova regola Matteo: eliminare il manto dal fondovalle/primo piano basso, neve solo in quota; nevicata senza manto coprente in basso. |
+| luoghi/poggio-cantalice-inverno-nuvoloso.webp | poggio-cantalice: inverno-nuvoloso | da rifare | Nuova regola Matteo: eliminare il manto dal fondovalle/primo piano basso, neve solo in quota; nevicata senza manto coprente in basso. |
+| luoghi/poggio-cantalice-inverno-pioggia.webp | poggio-cantalice: inverno-pioggia | da rifare | Nuova regola Matteo: eliminare il manto dal fondovalle/primo piano basso, neve solo in quota; nevicata senza manto coprente in basso. |
+| luoghi/poggio-cantalice-inverno-sereno.webp | poggio-cantalice: inverno-sereno | da rifare | Nuova regola Matteo: eliminare il manto dal fondovalle/primo piano basso, neve solo in quota; nevicata senza manto coprente in basso. |
 | luoghi/poggio-cantalice-primavera-nebbia.webp | poggio-cantalice: primavera-nebbia | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
 | luoghi/poggio-cantalice-primavera-nuvoloso.webp | poggio-cantalice: primavera-nuvoloso | ok | Foto reale riutilizzata, solo conversione e ridimensionamento. |
 | luoghi/poggio-cantalice-primavera-pioggia.webp | poggio-cantalice: primavera-pioggia | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |

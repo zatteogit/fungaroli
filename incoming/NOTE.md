@@ -108,7 +108,7 @@ Il modello tecnico non è esposto dal generatore integrato: nel manifest è regi
 
 Vallonina approvata da Matteo; primavera-sereno rigenerata dalla foto reale e verificata in sovrapposizione 50% e con bordi rosso/ciano, senza registrazione/deformazione, prima del caricamento. La versione precedente con inquadratura troppo larga è sostituita. Autorizzata la prosecuzione delle altre sei zone senza ulteriori approvazioni.
 
-Ogni zona ha 17 combinazioni: quattro stagioni × sereno/nuvoloso/nebbia/pioggia, più inverno-neve. Le sette zone con foto hanno tutte quota massima nei bands almeno1000m: neve al suolo nelle quattro varianti invernali ordinarie, nevicata in corso solo in inverno-neve. Nessuna generazione da zero per le otto zone prive di foto.
+Ogni zona ha 17 combinazioni: quattro stagioni × sereno/nuvoloso/nebbia/pioggia, più inverno-neve. La quota massima nei bands autorizza inverno-neve ma non il manto uniforme nel paesaggio: si applica la correzione di Matteo descritta sotto. Nevicata in corso solo in inverno-neve. Nessuna generazione da zero per le otto zone prive di foto.
 
 | Zona | Combinazioni | Generate | Foto reale riusata | Dimensioni |
 |---|---:|---:|---|---|
@@ -228,3 +228,13 @@ Autori, licenze, date e descrizioni sono stati verificati sulle pagine file di W
 - Domo: non trovate foto esatte; due candidati di area Amatrice/Scandarello solo territoriali, da confermare.
 - Leonessa: panorami urbani corretti ma faggete e raggio specifico non confermati.
 - Tutte le stagioni visibili prive di dichiarazione nel titolo/descrizione restano da verificare visivamente.
+
+
+
+## Correzione neve decisa da Matteo
+
+Dove la foto comprende valle o fondovalle (paesi, piana, campi, versanti bassi), il manto nevoso sta solo sulle cime e sui versanti alti. Fondovalle, paesi, piana e primo piano basso restano senza manto: alberi spogli, prati secchi o brina e cielo invernale. In inverno-neve la precipitazione cade anche davanti alla camera, ma in basso resta al massimo un velo non coprente, con terreno/erba ancora visibili.
+
+La regola sostituisce la precedente interpretazione del solo bands massimo. Si rigenerano tutte e cinque le condizioni invernali di Poggio-Cantalice, Antrodoco, Cicolano e Laga; per Tancia il bosco in primo piano viene trattato come versante basso con lettiera/rocce visibili e brina, senza inventare cime innevate fuori inquadratura. Vallonina e Rascino restano come approvate, poiché il primo piano è già in quota.
+
+Inverni ancora da correggere: antrodoco, cicolano, laga, poggio-cantalice, tancia. Le versioni precedenti sono segnate da rifare in STATO fino alla sostituzione. I controlli della prima consegna si riferiscono alla regola precedente; ogni nuova invernale viene ricontrollata su inquadratura e limite della neve prima della pubblicazione.
