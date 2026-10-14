@@ -1151,6 +1151,70 @@
         ]
       }
     },
+    "/api/cms/v1/metrics/weather": {
+      "get": {
+        "summary": "Misure del servizio meteo per giorno: chiamate e quota stimata di Open-Meteo, errori, latenza, uso della cache; amministratore",
+        "responses": {
+          "200": {
+            "description": "Operazione completata"
+          },
+          "401": {
+            "description": "Identità non autenticata",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Permesso mancante",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "412": {
+            "description": "Revisione o release cambiata",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Documento non valido",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "days",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 180,
+              "default": 30
+            },
+            "description": "Giorni da riassumere (fuso Europe/Rome)."
+          }
+        ]
+      }
+    },
     "/api/cms/v1/audit": {
       "get": {
         "summary": "Log delle operazioni; amministratore",
