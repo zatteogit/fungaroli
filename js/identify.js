@@ -164,6 +164,20 @@ const QUESTIONS = [
 ];
 const TOX_ORDER = { mortale: 0, tossico: 1, 'non commestibile': 2, 'commestibile con cautela': 3, commestibile: 4 };
 
+// icone disegnate dei caratteri (assets/traits): se mancano restano i disegni SVG
+let ICONS = null;
+fetch('data/trait-icons.json').then((r) => (r.ok ? r.json() : null)).then((d) => { ICONS = d?.taxa || null; }).catch(() => {});
+const illus = (key, part, colour) => `<img class="ts-ill" src="${esc(ASSET(`assets/traits/${key}-${part}${colour ? `-${colour}` : ''}.webp`))}" alt="" width="64" height="64" loading="lazy" decoding="async" data-ill="${part}">`;
+// varianti del cappello (colori e forme descritti dalle fonti): cambiano insieme le tessere Cappello e Gambo.
+// Colore e forma non si combinano: scegliere un colore riporta la forma a quella del disegno, e viceversa.
+document.addEventListener('click', (e) => {
+  const b = e.target.closest?.('[data-ill-v]');
+  if (!b) return;
+  const strip = b.closest('.trait-strip'), { illKey: key, illV: v, illDrawn: drawn } = b.dataset;
+  strip.querySelectorAll('[data-ill-v]').forEach((x) => x.setAttribute('aria-pressed', String(x === b || (x.parentElement !== b.parentElement && x.dataset.illV === x.dataset.illDrawn))));
+  const src = (part) => ASSET(`assets/traits/${key}-${part}${v === drawn ? '' : `-${v}`}.webp`);
+  for (const part of ['cappello', 'gambo']) strip.querySelector(`[data-ill="${part}"]`)?.setAttribute('src', src(part));
+});
 let HOWTO = () => '', BANNER = '', TAXA = [], RULES = [], MEDIA = {}, ASSET = (f) => f, THUMB = () => '', POTENTIAL = () => null, ZONES = [];
 const state = { q: '', ans: {}, zone: '', guided: true, compare: '', editing: '' };
 
@@ -349,15 +363,25 @@ function diffs(ref, t) {
 export function traitStrip(edibleId, t = refOf(edibleId)) {
   if (!t) return '';
   const tr = t.traits || {};
-  const tile = (art, k, v, sub = '') => `<li><span class="ts-art" aria-hidden="true">${art}</span><span class="ts-k" data-no-glossary>${esc(k)}</span><span class="ts-v">${esc(v)}</span>${sub ? `<span class="ts-sub">${esc(sub)}</span>` : ''}</li>`;
+  const tile = (art, k, v, sub = '', extra = '') => `<li><span class="ts-art" aria-hidden="true">${art}</span>${extra}<span class="ts-k" data-no-glossary>${esc(k)}</span><span class="ts-v">${esc(v)}</span>${sub ? `<span class="ts-sub">${esc(sub)}</span>` : ''}</li>`;
   const out = [];
   const one = (q, v) => optLabel(q, v);
   const Q = (k) => QUESTIONS.find((q) => q.key === k);
+  const ic = t.key && ICONS?.[t.key];
+  const pick = (field, q, label, dot) => {
+    const g = ic?.[field];
+    if (!g || g.values.length < 2) return '';
+    return `<span class="ts-dots${dot ? '' : ' ts-forms'}" role="group" aria-label="${label}">${g.values.map((v) => {
+      const name = esc(one(Q(q), v));
+      return `<button type="button" class="${dot ? 'ts-dot' : 'ts-form'}"${dot ? ` style="--c:${COLORS[v]?.[1] || '#999'}"` : ''} aria-pressed="${v === g.drawn}" ${dot ? `aria-label="${name}" title="${name}"` : ''} data-ill-key="${esc(t.key)}" data-ill-v="${esc(v)}" data-ill-drawn="${esc(g.drawn)}">${dot ? '' : name}</button>`;
+    }).join('')}</span>`;
+  };
+  const dots = pick('colors', 'cap_color', 'Colori del cappello descritti dalle fonti', true) + pick('shapes', 'cap_shape', 'Forme del cappello descritte dalle fonti', false);
   // cappello: la sua forma, nei suoi colori, con le verruche se ci sono; sotto forma e diametro
   if (tr.cap_color || tr.cap_shape) {
     const shapes = [].concat(tr.cap_shape || ['convesso']), cols = [].concat(tr.cap_color || ['bruno']);
-    out.push(tile(capArt(shapes, cols, tr.cap_veil === true), 'Cappello', orList([].concat(tr.cap_color || []).map((v) => one(Q('cap_color'), v))) || '',
-      [orList([].concat(tr.cap_shape || []).slice(0, 2).map((v) => optLabel(Q('cap_shape'), v))), sizeTxt(tr.cap_size)].filter(Boolean).join(' · ')));
+    out.push(tile(ic ? illus(t.key, 'cappello') : capArt(shapes, cols, tr.cap_veil === true), 'Cappello', orList([].concat(tr.cap_color || []).map((v) => one(Q('cap_color'), v))) || '',
+      [orList([].concat(tr.cap_shape || []).slice(0, 2).map((v) => optLabel(Q('cap_shape'), v))), sizeTxt(tr.cap_size)].filter(Boolean).join(' · '), dots));
   }
   // sotto il cappello e il suo colore in una sola tessera: "Lamelle · bianche o crema"
   if (tr.hymenophore || tr.hymenophore_color) {
@@ -365,7 +389,7 @@ export function traitStrip(edibleId, t = refOf(edibleId)) {
     const k = { lamelle: 'Lamelle', pori: 'Pori', aculei: 'Aculei', pliche: 'Pliche', liscio: 'Sotto il cappello' }[h] || 'Sotto il cappello';
     const g = { lamelle: 'fp', pliche: 'fp', pori: 'mp', aculei: 'mp' }[h] || 'ms';
     const cols = [].concat(tr.hymenophore_color || []);
-    const art = hymArt(h, cols);
+    const art = ic ? illus(t.key, 'sotto') : hymArt(h, cols);
     out.push(tile(art, k, cols.length ? orList(cols.map((c) => agree(c, g))) : (h === 'liscio' ? 'liscio' : '')));
   }
   // gambo: anello, volva, reticolo e base nello stesso disegno
@@ -373,7 +397,7 @@ export function traitStrip(edibleId, t = refOf(edibleId)) {
     const base = [].concat(tr.stem_base || ['normale'])[0];
     const bits = [tr.stem_ring === true ? 'con anello' : tr.stem_ring === false ? 'senza anello' : 'anello variabile',
       tr.stem_volva === true ? 'con volva' : tr.stem_volva === false ? 'senza volva' : null, tr.stem_reticulum === true ? 'con reticolo' : null].filter(Boolean);
-    out.push(tile(stemArt2(base, tr.stem_ring, tr.stem_volva, tr.stem_reticulum, [].concat(tr.cap_color || [])[0], [].concat(tr.cap_shape || [])[0]), 'Gambo', bits.join(', '),
+    out.push(tile(ic ? illus(t.key, 'gambo') : stemArt2(base, tr.stem_ring, tr.stem_volva, tr.stem_reticulum, [].concat(tr.cap_color || [])[0], [].concat(tr.cap_shape || [])[0]), 'Gambo', bits.join(', '),
       tr.stem_base?.length ? `base ${orList(tr.stem_base.map((v) => optLabel(Q('stem_base'), v)))}` : ''));
   }
   if (tr.flesh_change) { const f = [].concat(tr.flesh_change); out.push(tile(fleshArt(f), 'Al taglio', orList(f.map(fleshSay)))); }
@@ -453,15 +477,25 @@ function hymArt(h, cols) {
 // Simbolo del viraggio, non ritratto della specie. Il campione iniziale è neutro:
 // flesh_change non descrive né la forma del fungo né il colore originale della carne.
 // Se il dato ammette più esiti, li mostriamo tutti, senza sceglierne uno arbitrariamente.
+// al taglio: il fungo in sezione, nello stile delle icone dei caratteri. A sinistra appena tagliato,
+// a destra dopo qualche minuto; se non cambia, le due metà restano uguali.
 function fleshArt(changes) {
-  const values = [...new Set([].concat(changes))], height = values.length * 40;
-  const sample = (x, colour) => `<rect x="${x}" y="7" width="24" height="26" rx="6" fill="${colour || 'currentColor'}" fill-opacity="${colour ? '1' : '.12'}" stroke="currentColor" stroke-width="1.5"/>`;
-  const rows = values.map((change, i) => `<g transform="translate(0 ${i * 40})">
-    ${sample(3)}
-    <path d="${change === 'nessuno' ? 'M35 17 H49 M35 23 H49' : 'M34 20 H50 M45 15 L50 20 L45 25'}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-    ${sample(57, change === 'nessuno' ? null : FLESH[change])}
-    </g>`).join('');
-  return svgA(`0 0 84 ${height}`, 84, height, rows);
+  const values = [...new Set([].concat(changes))], n = values.length;
+  const ink = '#4a2d1a', flesh = '#f3e7cc', w = 56, h = 50;
+  const cut = 'M7 25 Q7 6 28 6 Q49 6 49 25 L36 25 L37.5 44 Q28 47.5 18.5 44 L20 25 Z';
+  const one = (change, i) => {
+    const id = `fl-${change}-${++swN}`, after = change === 'nessuno' ? flesh : FLESH[change] || flesh;
+    return `<g transform="translate(${i * (w + 4)} 0)">
+      <defs><clipPath id="${id}"><rect x="28" y="0" width="28" height="${h}"/></clipPath>
+      <linearGradient id="${id}g" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="${after}" stop-opacity=".55"/><stop offset=".45" stop-color="${after}"/></linearGradient></defs>
+      <path d="${cut}" fill="${flesh}"/>
+      <path d="${cut}" fill="url(#${id}g)" clip-path="url(#${id})"/>
+      <path d="M7.6 21 Q9 7 28 7 Q47 7 48.4 21" fill="none" stroke="#9a6a3e" stroke-width="3.2" stroke-linecap="round" opacity=".9"/>
+      <path d="M28 8.5 V44.5" stroke="${ink}" stroke-width="1" stroke-dasharray="2 2.2" opacity=".45"/>
+      <path d="${cut}" fill="none" stroke="${ink}" stroke-width="2" stroke-linejoin="round"/>
+    </g>`;
+  };
+  return `<svg class="ta ts-flesh" viewBox="0 0 ${n * (w + 4) - 4} ${h}" width="${n * (w + 4) - 4}" height="${h}" aria-hidden="true">${values.map(one).join('')}</svg>`;
 }
 const sizeTxt = (sz) => {
   const r = { piccolo: [0, 5], medio: [5, 12], grande: [12, 99] }, a = [].concat(sz || []).map((x) => r[x]).filter(Boolean);

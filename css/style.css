@@ -3055,3 +3055,28 @@ a { text-decoration: none; }
 @media (max-width: 360px) { .notebook-pages { padding-inline: 14px; } .notebook-pages .j-item { padding-left: 0; padding-right: 0; } }
 .notebook-pages .notebook-text { font-weight: 400; }
 @media (min-width: 900px) { .notebook-pages .notebook-text { font-size: 16px; } .entry-title { font-size: 26px; } }
+
+/* Icone disegnate dei caratteri e colori del cappello */
+.trait-strip .ts-art { height: 64px; }
+.ts-ill { width: 64px; height: 64px; object-fit: contain; display: block; }
+.ts-dots { display: flex; justify-content: center; gap: 2px; margin: 2px 0 1px; }
+.ts-dot { width: 24px; height: 24px; padding: 0; border: 0; border-radius: 50%; background: none; cursor: pointer; display: grid; place-items: center; }
+.ts-dot::before { content: ''; width: 12px; height: 12px; border-radius: 50%; background: var(--c); box-shadow: inset 0 0 0 1px rgb(0 0 0 / .18); transition: transform .15s ease, box-shadow .15s ease; }
+.ts-dot[aria-pressed="true"]::before { box-shadow: inset 0 0 0 1px rgb(0 0 0 / .18), 0 0 0 2px var(--surface), 0 0 0 3.5px var(--text-2); }
+.ts-dot:hover::before { transform: scale(1.12); }
+.ts-dot:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+@media (prefers-reduced-motion: reduce) { .ts-dot::before { transition: none; } }
+.ts-forms { flex-wrap: wrap; gap: 4px; }
+.ts-form { min-height: 24px; padding: 2px 8px; border: 1px solid var(--hair); border-radius: 999px; background: none; color: var(--text-2); font: inherit; font-size: 11.5px; cursor: pointer; }
+.ts-form[aria-pressed="true"] { background: var(--text); color: var(--bg); border-color: var(--text); }
+.ts-form:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+:root[data-theme="dark"] .ts-ill { filter: drop-shadow(0 0 .6px rgb(255 255 255 / .55)) drop-shadow(0 0 3px rgb(255 255 255 / .08)); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .ts-ill { filter: drop-shadow(0 0 .6px rgb(255 255 255 / .55)) drop-shadow(0 0 3px rgb(255 255 255 / .08)); } }
+/* icone del meteo: sempre a tratto (fuori dai contenitori che lo dichiarano uscivano piene e nere) */
+.wxi svg { fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+/* sulla foto della copertina servono i toni chiari, come nelle tessere meteo */
+.cover-note .wxi-sun { color: #ffd36b; } .cover-note .wxi-rain { color: #9cc8ff; } .cover-note .wxi-storm { color: #d2bdff; } .cover-note .wxi-snow { color: #c6edff; }
+.cover-note .wxi-wind { color: #ffc28f; } .cover-note :is(.wxi-fog, .wxi-cloud) { color: #dfe6ea; }
+.trait-strip .ts-art > svg.ts-flesh { width: auto; max-width: 100%; height: 50px; }
+:root[data-theme="dark"] .ts-flesh { filter: drop-shadow(0 0 .6px rgb(255 255 255 / .55)); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .ts-flesh { filter: drop-shadow(0 0 .6px rgb(255 255 255 / .55)); } }
