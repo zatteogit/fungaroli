@@ -1391,9 +1391,9 @@ html.is-offline #updated { color: var(--warn-ink); font-weight: 600; }
 .sci-more { margin: 18px 0 4px; } .sci-more a { font-weight: 700; color: var(--accent); text-decoration: none; }
 /* pagina del metodo */
 .method-cta { margin: 4px 0 16px; }
-.md-toc { margin: 8px 0 20px; padding: 12px 14px; border-radius: var(--r-lg); background: var(--surface); border: 1px solid var(--hair); }
-.md-toc ol { margin: 0; padding-left: 20px; display: grid; gap: 4px; font-size: 14px; }
-.md-toc a { color: var(--accent); text-decoration: none; }
+.md-chips { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; margin: 4px calc(-1 * var(--gutter)) 16px; padding: 2px var(--gutter); scroll-padding-inline: var(--gutter); }
+.md-chips::-webkit-scrollbar { display: none; }
+.md-chips .chip { flex: none; padding: 7px 13px; font-size: 13.5px; text-decoration: none; }
 .md { font-size: 15px; line-height: 1.6; }
 .md h2 { display: none; }
 .md h3 { font-family: var(--font-display); font-size: 22px; margin: 28px 0 8px; scroll-margin-top: calc(var(--appbar-h) + 12px); }
