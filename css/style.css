@@ -2679,3 +2679,7 @@ html.entity-open { overflow: hidden; }
 .catalog-select:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 .catalog-empty { display: grid; gap: var(--sp-2); justify-items: start; grid-column: 1 / -1; }
 .catalog-empty p { margin: 0; }
+/* Mappa: imbocchi vicini raggruppati in un solo segnavia con il conteggio */
+.leaflet-zoneLabels-pane { pointer-events: none; }
+.map-th-group { position: absolute; left: 0; top: 0; transform: translate(-9px, calc(-11px + var(--th-dy, 0px))); display: inline-flex; align-items: center; gap: 4px; cursor: pointer; }
+.map-th-group b { background: var(--surface); color: var(--text); border-radius: 999px; padding: 1px 6px; font-size: 11px; font-weight: 800; white-space: nowrap; font-variant-numeric: tabular-nums; box-shadow: 0 1px 4px rgb(0 0 0 / .3); }

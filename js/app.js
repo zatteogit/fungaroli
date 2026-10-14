@@ -1666,6 +1666,8 @@ function renderMap(changed=null) {
   const previousHits=cellHits;
   for(const k in zoneLayers)if(!changed||changed.has(k)||!zones.some(z=>z.id===k)){zoneLayers[k].remove();delete zoneLayers[k];}
   cellHits = changed?previousHits.filter(h=>zoneLayers[h.z.id]):[];peekCellBounds=[];mapEl.classList.remove('cells-peek');
+  // etichette delle zone in un livello sopra i segnavia e i pin: nome e indice restano sempre leggibili
+  if (!map.getPane('zoneLabels')) map.createPane('zoneLabels').style.zIndex = 640;
   // etichette con nome: spostamento verticale greedy (in pixel) per evitare sovrapposizioni
   const placed = [];
   const labelPos = {};
@@ -1708,7 +1710,7 @@ function renderMap(changed=null) {
     }
     L.marker(labelPos[z.id], {
       icon: L.divIcon({ className: '', html: `<span class="zone-label${state.zoneId && !selected ? ' zone-label-min' : ''}${selected ? ' zone-label-sel' : ''}"><span class="dot" style="background:${color}"></span> <b class="pc">${formatIndex(s)}</b>${state.zoneId && !selected ? '' : ` <span class="zone-name">${esc(shortName(z))}</span>`}</span>`, iconSize: null }),
-      interactive: false,
+      interactive: false, pane: 'zoneLabels',
     }).addTo(g);
     if (selected && d?.best) {
       const tl = trailsFor(z, d.best.species, d.best.band);
@@ -1724,10 +1726,32 @@ function renderMap(changed=null) {
       // imbocchi dei sentieri adatti: un segnavia piccolo dove si lascia l'auto (uno per punto, anche se ci passano piu' sentieri)
       const seenTh = [];
       for (const t of tl) for (const h of headsOf(z, t)) {
-        if (seenTh.some((q) => Math.abs(q.lat - h.lat) < 0.0015 && Math.abs(q.lon - h.lon) < 0.002)) continue;
-        seenTh.push(h);
-        L.marker([h.lat, h.lon], { icon: L.divIcon({ className: '', html: `<span class="map-th${h.kind === 'strada' ? '' : ' unpaved'}" aria-hidden="true"><i></i><i></i><i></i></span>`, iconSize: [18, 22], iconAnchor: [9, 11] }), keyboard: true, title: `Imbocco: ${trailName(t)}` })
-          .addTo(g).on('click', () => openPoint(z.id, { kind: 'trailhead', h, t }));
+        const same = seenTh.find((q) => Math.abs(q.h.lat - h.lat) < 0.0015 && Math.abs(q.h.lon - h.lon) < 0.002);
+        if (same) { if (!same.ts.includes(t)) same.ts.push(t); continue; }
+        seenTh.push({ h, ts: [t] });
+      }
+      // Regola anti-sovrapposizione: gli imbocchi a meno di 26 px sullo schermo diventano un solo segnavia
+      // con il conteggio («429 +2»). Toccarlo avvicina la carta finché si separano. Un segnavia che cade
+      // sull'etichetta della zona scende sotto di essa; l'etichetta sta comunque in un livello più alto.
+      const groups = [];
+      for (const it of seenTh) {
+        const pt = map.latLngToContainerPoint([it.h.lat, it.h.lon]);
+        const gr = groups.find((q) => Math.abs(q.pt.x - pt.x) < 26 && Math.abs(q.pt.y - pt.y) < 26);
+        if (gr) gr.items.push(it); else groups.push({ pt, items: [it] });
+      }
+      for (const gr of groups) {
+        const [first] = gr.items, n = gr.items.length, t = first.ts[0];
+        const box = placed.find((b) => Math.abs(b.x - gr.pt.x) < b.w / 2 + 11 && Math.abs(b.y - gr.pt.y) < 13 + 11);
+        const dy = box ? Math.round(box.y + 13 + 14 - gr.pt.y) : 0; // sotto l'etichetta, mai sopra
+        const names = [...new Set(gr.items.flatMap((x) => x.ts.map(trailName)))];
+        const stripes = `<span class="map-th${first.h.kind === 'strada' ? '' : ' unpaved'}" aria-hidden="true"><i></i><i></i><i></i></span>`;
+        const html = n > 1 ? `<span class="map-th-group" aria-hidden="true" style="--th-dy:${dy}px">${stripes}<b>${t.ref ? `${esc(t.ref)} ` : ''}+${n - 1}</b></span>` : stripes;
+        const title = n > 1 ? `${n} imbocchi vicini: ${names.join(', ')}. Avvicina la carta per separarli` : `Imbocco: ${names.join(', ')}`;
+        L.marker([first.h.lat, first.h.lon], { icon: L.divIcon({ className: '', html, iconSize: n > 1 ? null : [18, 22], iconAnchor: n > 1 ? null : [9, 11 - dy] }), keyboard: true, title })
+          .addTo(g).on('click', () => {
+            if (n > 1 && map.getZoom() < map.getMaxZoom()) map.flyToBounds(L.latLngBounds(gr.items.map((x) => [x.h.lat, x.h.lon])).pad(0.5), { maxZoom: Math.min(map.getMaxZoom(), map.getZoom() + 3), duration: 0.4 });
+            else openPoint(z.id, { kind: 'trailhead', h: first.h, t });
+          });
       }
       if (d.access?.rlat) {
         L.polyline([[d.access.rlat, d.access.rlon], [d.access.lat, d.access.lon]], { color: cssVar('--text'), weight: 2, dashArray: '2 5', interactive: false }).addTo(g);
