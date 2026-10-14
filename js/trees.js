@@ -3,6 +3,7 @@
 import { SPECIES } from './species.js';
 import { openLightbox, captionHtml } from './lightbox.js';
 import { cardLatin } from './names.js';
+import { treeGroup } from './plant-catalog.js';
 
 const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 let T = {}, MEDIA = {}, ASSET = (f) => f, ZONES = [], HAB = {}, THUMB = () => '';
@@ -47,15 +48,29 @@ export function treeThumb(id, size = 56) {
     : `<span class="thumb thumb-ph" style="width:${size}px;height:${size}px">${esc((T[id]?.name || '?').slice(0, 2))}</span>`;
 }
 
+// Filtro per gruppo, dal campo `type`: resta in memoria per la sessione.
+let TREE_GROUP = '';
+const TREE_GROUPS = [['', 'Tutti'], ['latifoglie', 'Latifoglie'], ['conifere', 'Conifere']];
+
 export function renderTreeGrid(box) {
   box.dataset.glossaryContext='Alberi';
-  const html = Object.entries(T).map(([id, t]) => {
+  const rows = Object.entries(T);
+  if (!rows.length) { box.innerHTML = '<p class="muted">Schede degli alberi in preparazione.</p>'; return; }
+  const card = ([id, t]) => {
     const m = treePhotos(id)[0];
     return `<a class="sp-card" href="#/albero/${encodeURIComponent(id)}" aria-label="${esc(t.name)}">
       ${m ? `<img data-src="${ASSET(m.file)}" alt="" loading="lazy" decoding="async">` : ''}<span class="shade"></span>
       <span class="sp-card-body"><b>${esc(t.name)}</b><i>${esc(cardLatin(t.latin))}</i></span></a>`;
-  }).join('');
-  box.innerHTML = html ? `<div class="card-grid">${html}</div>` : '<p class="muted">Schede degli alberi in preparazione.</p>';
+  };
+  box.innerHTML = `<div class="recognize-modes catalog-filters" role="group" aria-label="Gruppi di alberi">${TREE_GROUPS.map(([id, name]) => `<button type="button" class="btn ghost small" data-tree-group="${id}" aria-pressed="false">${name}</button>`).join('')}</div><p class="small muted" data-tree-count role="status"></p><div class="card-grid" data-tree-results></div>`;
+  const update = () => {
+    const hits = rows.filter(([, t]) => !TREE_GROUP || treeGroup(t.type) === TREE_GROUP);
+    box.querySelectorAll('[data-tree-group]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.treeGroup === TREE_GROUP)));
+    box.querySelector('[data-tree-count]').textContent = `${hits.length} ${hits.length === 1 ? 'scheda' : 'schede'}${TREE_GROUP ? ` su ${rows.length}` : ''}`;
+    box.querySelector('[data-tree-results]').innerHTML = hits.length ? hits.map(card).join('') : '<p class="notice">Nessuna scheda in questo gruppo.</p>';
+  };
+  box.querySelectorAll('[data-tree-group]').forEach((b) => b.addEventListener('click', () => { TREE_GROUP = b.dataset.treeGroup; update(); }));
+  update();
 }
 
 export function renderTreePage(body, id) {

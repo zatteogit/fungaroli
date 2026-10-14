@@ -2666,3 +2666,16 @@ html.entity-open { overflow: hidden; }
 .sp-card-tox.tox-mortale { background: var(--crit); color: #fff; }
 .sp-card-tox.tox-tossico { background: var(--warn-bg); color: var(--warn-ink); }
 #species-grid .recognize-modes { margin: 0 0 var(--sp-4); }
+/* Filtri dei cataloghi di Scopri: stessa chip dei gruppi, piu' un menu Ambiente con lo stesso aspetto */
+.botanical-tools > .recognize-modes { margin: 0; }
+#tree-grid > .catalog-filters { margin: 0 0 var(--sp-2); }
+.catalog-select {
+  min-height: 40px; padding: 8px 32px 8px 14px; border-radius: 999px; border: 1px solid var(--border); background-color: var(--surface);
+  color: var(--text); font: inherit; font-size: 14px; font-weight: 500; max-width: 100%;
+  appearance: none; -webkit-appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, currentColor 50%), linear-gradient(135deg, currentColor 50%, transparent 50%);
+  background-position: calc(100% - 17px) 50%, calc(100% - 12px) 50%; background-size: 5px 5px; background-repeat: no-repeat;
+}
+.catalog-select:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.catalog-empty { display: grid; gap: var(--sp-2); justify-items: start; grid-column: 1 / -1; }
+.catalog-empty p { margin: 0; }
