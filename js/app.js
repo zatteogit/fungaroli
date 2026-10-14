@@ -322,7 +322,7 @@ addEventListener('scroll', onScrollBar, { passive: true });
 
 // tasto indietro in alto a sinistra: freccia + nome della pagina a cui torni
 const navStack = [];
-const TITLES = { piante:'Piante', uscite: 'A funghi', mappa: 'Mappa', specie: 'Funghi', alberi: 'Alberi', riconosci: 'Riconosci', glossario: 'Glossario', 'guide-list': 'Guide', diario: 'Taccuino', info: 'Regole e metodo', metodo: 'Come funziona' };
+const TITLES = { piante:'Piante', uscite: 'Uscite', mappa: 'Mappa', specie: 'Funghi', alberi: 'Alberi', riconosci: 'Riconosci', glossario: 'Glossario', 'guide-list': 'Guide', diario: 'Taccuino', info: 'Regole e metodo', metodo: 'Come funziona' };
 function titleOf(r) {
   if (!r) return '';
   if (r.view === 'zona') { const z = (weatherZones||zones).find((x) => x.id === r.zoneId); return z ? splitName(z)[0] : 'Zona'; }
@@ -346,7 +346,7 @@ function parentOf(r) {
   if (['specie','alberi','piante','riconosci','glossario','guide-list'].includes(r.view)) return '#/scopri';
   return '#/';
 }
-const PARENT_TITLE = (r) => ({ '#/scopri': 'Scopri', '#/specie': 'Funghi', '#/alberi': 'Alberi', '#/piante':'Piante', '#/riconosci': 'Riconosci', '#/guide': 'Guide', '#/': 'A funghi' }[parentOf(r)]);
+const PARENT_TITLE = (r) => ({ '#/scopri': 'Scopri', '#/specie': 'Funghi', '#/alberi': 'Alberi', '#/piante':'Piante', '#/riconosci': 'Riconosci', '#/guide': 'Guide', '#/': 'Uscite' }[parentOf(r)]);
 // modalita' app: quando il titolo grande della pagina passa sotto la barra in alto, la barra lo mostra piccolo al centro (come iOS)
 let titleIO = null;
 function watchTitle() {
