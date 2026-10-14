@@ -1,6 +1,6 @@
 # Fungaroli · Rieti
 
-App per **passeggiare, esplorare i sentieri e imparare a conoscere i boschi** intorno a Rieti. Il taccuino personale e le segnalazioni collettive hanno lo scopo di migliorare gradualmente la validazione locale. Le condizioni di crescita sono stimate: accuratezza della trovabilità e abbondanza reale non sono ancora misurate.
+App che aiuta a **scegliere dove e quando andare a funghi** intorno a Rieti e a conoscere il bosco durante l'uscita: sentieri, piante e alberi accompagnano la scelta, non la sostituiscono. Il taccuino personale e le segnalazioni collettive hanno lo scopo di migliorare gradualmente la validazione locale. Le condizioni di crescita sono stimate: accuratezza della trovabilità e abbondanza reale non sono ancora misurate.
 
 La parte ambientale incrocia:
 
@@ -12,7 +12,7 @@ Il risultato è un indice sperimentale 0–10 con un decimale italiano (es. 7,2)
 
 ## Uso
 
-**Online:** https://fungaroli.zatteo.workers.dev (Cloudflare Workers, ripubblicato a ogni push sul branch di produzione; configurazione in `wrangler.jsonc`, procedura in `docs/handoff-cloudflare.md`).
+**Online:** https://fungaroli.zatteo.workers.dev (Cloudflare Workers, ripubblicato a ogni push sul branch di produzione; configurazione in `wrangler.jsonc`, workflow attuale in `docs/handoff-2026-10-14.md`, regole per gli agenti in `AGENTS.md`).
 
 ```bash
 python3 -m http.server 8000   # oppure: npm start
@@ -21,7 +21,7 @@ python3 -m http.server 8000   # oppure: npm start
 
 Nessuna build, nessuna chiave API. Serve un server HTTP (i moduli ES e i JSON non si caricano da `file://`).
 
-Pubblicazione: il workflow `.github/workflows/pages.yml` pubblica su GitHub Pages a ogni push su `main`. Va abilitato una volta in *Settings → Pages → Source: GitHub Actions*.
+Controlli: il workflow `.github/workflows/ci.yml` esegue test unitari e `wrangler deploy --dry-run` su ogni pull request e su ogni push nel ramo di produzione `claude/brave-tesla-wu0a2b`. Pubblica Cloudflare, non GitHub.
 
 Test del modello: `npm test` (Node ≥ 22). Per il servizio completo: `npm ci` e `npx wrangler dev`; verifiche passkey e isolamento con `npm run test:browser`.
 
@@ -35,7 +35,7 @@ Un Artifact non può chiamare API esterne né caricare tile di mappa, quindi la 
 
 ## Diario delle uscite
 
-Procedura guidata in 6 passi (zona → giorno → quota → ricerca → cosa e quanto → nota). Prima dell’uscita si può salvare una previsione immutabile con modello e input. Il diario confronta poi le specie cercate, distinguendo zeri espliciti, dati mancanti e ricostruzioni a posteriori. I conteggi sono esplorativi e non misurano l’accuratezza scientifica. Su GitHub Pages il diario resta nel browser: usa *Esporta* / *Importa*.
+Procedura guidata in 6 passi (zona → giorno → quota → ricerca → cosa e quanto → nota). Prima dell’uscita si può salvare una previsione immutabile con modello e input. Il diario confronta poi le specie cercate, distinguendo zeri espliciti, dati mancanti e ricostruzioni a posteriori. I conteggi sono esplorativi e non misurano l’accuratezza scientifica. Con un server statico (per esempio `npm start`, senza Worker) il diario resta nel browser: usa *Esporta* / *Importa*.
 
 ## Zone (prima versione)
 
