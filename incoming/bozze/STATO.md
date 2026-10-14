@@ -93,11 +93,11 @@ Bozze correnti per revisione. Le versioni definitive sono separate in incoming/i
 | luoghi/poggio-cantalice-estate-nuvoloso.webp | poggio-cantalice: estate-nuvoloso | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
 | luoghi/poggio-cantalice-estate-pioggia.webp | poggio-cantalice: estate-pioggia | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
 | luoghi/poggio-cantalice-estate-sereno.webp | poggio-cantalice: estate-sereno | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
-| luoghi/poggio-cantalice-inverno-nebbia.webp | poggio-cantalice: inverno-nebbia | da rifare | Nuova regola Matteo: eliminare il manto dal fondovalle/primo piano basso, neve solo in quota; nevicata senza manto coprente in basso. |
-| luoghi/poggio-cantalice-inverno-neve.webp | poggio-cantalice: inverno-neve | da rifare | Nuova regola Matteo: eliminare il manto dal fondovalle/primo piano basso, neve solo in quota; nevicata senza manto coprente in basso. |
-| luoghi/poggio-cantalice-inverno-nuvoloso.webp | poggio-cantalice: inverno-nuvoloso | da rifare | Nuova regola Matteo: eliminare il manto dal fondovalle/primo piano basso, neve solo in quota; nevicata senza manto coprente in basso. |
-| luoghi/poggio-cantalice-inverno-pioggia.webp | poggio-cantalice: inverno-pioggia | da rifare | Nuova regola Matteo: eliminare il manto dal fondovalle/primo piano basso, neve solo in quota; nevicata senza manto coprente in basso. |
-| luoghi/poggio-cantalice-inverno-sereno.webp | poggio-cantalice: inverno-sereno | da rifare | Nuova regola Matteo: eliminare il manto dal fondovalle/primo piano basso, neve solo in quota; nevicata senza manto coprente in basso. |
+| luoghi/poggio-cantalice-inverno-nebbia.webp | poggio-cantalice: inverno-nebbia | ok | Rigenerata con neve solo in quota, basso senza manto; controllo sovrapposizione e limite neve completato. |
+| luoghi/poggio-cantalice-inverno-neve.webp | poggio-cantalice: inverno-neve | ok | Rigenerata con neve solo in quota, basso senza manto; controllo sovrapposizione e limite neve completato. |
+| luoghi/poggio-cantalice-inverno-nuvoloso.webp | poggio-cantalice: inverno-nuvoloso | ok | Rigenerata con neve solo in quota, basso senza manto; controllo sovrapposizione e limite neve completato. |
+| luoghi/poggio-cantalice-inverno-pioggia.webp | poggio-cantalice: inverno-pioggia | ok | Rigenerata con neve solo in quota, basso senza manto; controllo sovrapposizione e limite neve completato. |
+| luoghi/poggio-cantalice-inverno-sereno.webp | poggio-cantalice: inverno-sereno | ok | Rigenerata con neve solo in quota, basso senza manto; controllo sovrapposizione e limite neve completato. |
 | luoghi/poggio-cantalice-primavera-nebbia.webp | poggio-cantalice: primavera-nebbia | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
 | luoghi/poggio-cantalice-primavera-nuvoloso.webp | poggio-cantalice: primavera-nuvoloso | ok | Foto reale riutilizzata, solo conversione e ridimensionamento. |
 | luoghi/poggio-cantalice-primavera-pioggia.webp | poggio-cantalice: primavera-pioggia | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |

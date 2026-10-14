@@ -144,8 +144,6 @@ Le derivate delle foto CC BY-SA restano sotto la corrispondente CC BY-SA; per Va
 ### Dubbi, confronti e limiti delle copertine
 
 - vallonina/estate-sereno: Foto originale600x450: il ridimensionamento richiesto a1600px non aggiunge dettaglio fotografico.
-- antrodoco/inverno-nebbia: La nebbia vela parti del crinale e delle rupi, quindi la verifica di corrispondenza riguarda le parti visibili.
-- antrodoco/inverno-neve: La nevicata vela parte del paesaggio, quindi la verifica di corrispondenza riguarda le parti visibili.
 - antrodoco/primavera-nebbia: La nebbia vela parti del crinale e delle rupi, quindi la verifica di corrispondenza riguarda le parti visibili.
 - antrodoco/estate-nebbia: La nebbia vela parti del crinale e delle rupi, quindi la verifica di corrispondenza riguarda le parti visibili.
 - antrodoco/autunno-nebbia: La nebbia vela parti del crinale e delle rupi, quindi la verifica di corrispondenza riguarda le parti visibili.
@@ -271,4 +269,4 @@ Dove la foto comprende valle o fondovalle (paesi, piana, campi, versanti bassi),
 
 La regola sostituisce la precedente interpretazione del solo bands massimo. Si rigenerano tutte e cinque le condizioni invernali di Poggio-Cantalice, Antrodoco, Cicolano e Laga; per Tancia il bosco in primo piano viene trattato come versante basso con lettiera/rocce visibili e brina, senza inventare cime innevate fuori inquadratura. Vallonina e Rascino restano come approvate, poiché il primo piano è già in quota.
 
-Inverni ancora da correggere: antrodoco, cicolano, laga, poggio-cantalice, tancia. Le versioni precedenti sono segnate da rifare in STATO fino alla sostituzione. I controlli della prima consegna si riferiscono alla regola precedente; ogni nuova invernale viene ricontrollata su inquadratura e limite della neve prima della pubblicazione.
+Inverni ancora da correggere: antrodoco, cicolano, laga, tancia. Le versioni precedenti sono segnate da rifare in STATO fino alla sostituzione. I controlli della prima consegna si riferiscono alla regola precedente; ogni nuova invernale viene ricontrollata su inquadratura e limite della neve prima della pubblicazione.
