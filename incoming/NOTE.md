@@ -106,22 +106,23 @@ Il modello tecnico non è esposto dal generatore integrato: nel manifest è regi
 
 ## Luoghi — stagione × meteo
 
-Vallonina approvata da Matteo; primavera-sereno rigenerata dalla foto reale e verificata in sovrapposizione 50% e con bordi rosso/ciano, senza registrazione/deformazione, prima del caricamento. La versione precedente con inquadratura troppo larga è sostituita. Autorizzata la prosecuzione delle altre sei zone senza ulteriori approvazioni.
+119 combinazioni locali complete: 7 zone × 17 combinazioni (quattro stagioni × sereno/nuvoloso/nebbia/pioggia, più inverno-neve). 113 derivate generate e 6 foto reali riutilizzate. Nevicata in corso soltanto in inverno-neve. Le otto zone senza foto non ricevono immagini generate da zero; i 18 candidati Commons restano nel capitolo dedicato.
 
-Ogni zona ha 17 combinazioni: quattro stagioni × sereno/nuvoloso/nebbia/pioggia, più inverno-neve. La quota massima nei bands autorizza inverno-neve ma non il manto uniforme nel paesaggio: si applica la correzione di Matteo descritta sotto. Nevicata in corso solo in inverno-neve. Nessuna generazione da zero per le otto zone prive di foto.
-
-| Zona | Combinazioni | Generate | Foto reale riusata | Dimensioni |
+| Zona | Combinazioni | Generate | Foto reale riusata | Dimensioni finali |
 |---|---:|---:|---|---|
 | vallonina | 17 | 16 | estate-sereno | 1600×1200 |
 | poggio-cantalice | 17 | 16 | primavera-nuvoloso | 1600×1200 |
-| antrodoco | 17 | 17 | nessuna: stagione non riconoscibile con certezza | 1600×1198, 1600×1199, 1600×1200 |
-| cicolano | 17 | 16 | estate-sereno | 1600×481, 1600×482, 1600×483 |
+| antrodoco | 17 | 17 | nessuna: stagione della fonte non certa | 1600×1198; 1600×1199; 1600×1200 |
+| cicolano | 17 | 16 | estate-sereno | 1600×480; 1600×481; 1600×482; 1600×483 |
 | laga | 17 | 16 | estate-sereno | 1600×1200 |
 | rascino | 17 | 16 | estate-sereno | 1200×1600 |
+| tancia | 17 | 16 | primavera-sereno | 1600×900 |
 
-Zone ancora in lavorazione: tancia.
+Ogni derivata parte dalla fotografia originale della propria zona. La camera, il campo inquadrato, la scala e i riferimenti fissi sono stati confrontati nelle verifiche registrate nei sidecar. Le immagini generate sono trasformazioni della fonte e non fotografie reali delle condizioni mostrate. Vallonina è stata approvata da Matteo; primavera-sereno è stata rigenerata dalla foto originale, sostituendo la versione troppo larga, e verificata prima del caricamento con overlay al 50% e bordi rosso/ciano: scala, crinale e rupi allineati.
 
-Ogni variante deriva dalla foto originale della propria zona, mai da una variante generata. I confronti in sovrapposizione controllano inquadratura, scala e riferimenti fissi; i casi rigenerati e gli eventuali limiti sono registrati sotto. Le immagini restano trasformazioni generate, non fotografie reali della stagione/meteo mostrati. La sorgente di Vallonina misura600×450: singoli alberi, foglie e dettagli fini ricostruiti non possono essere certificati identici alla fonte. Nessun ritaglio o deformazione è usato per mascherare derive di inquadratura.
+### Stato del caricamento
+
+119 foto e relative bozze sono contrassegnate ok/caricate nel manifest e in STATO. La lista di consegna include tutte le 301 risorse in incoming.
 
 ### Attribuzioni e licenze
 
@@ -135,60 +136,17 @@ Ogni variante deriva dalla foto originale della propria zona, mai da una variant
 | rascino | Sabina Trekking ASD | [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) | [Commons](https://commons.wikimedia.org/wiki/File:Rascino.jpg) |
 | tancia | Christoph Strässler | [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/) | [Commons](https://commons.wikimedia.org/wiki/File%3ABeech_Forest_in_the_Sabina_Hills%2C_Latium%2C_Italy_-_52993979506.jpg) |
 
-Antrodoco: Commons identifica Iacopo.rossini e il rilascio in pubblico dominio PD-self; data/media-zones.json riporta invece DVX (Wikimedia Commons) e CC0. Nel manifest si applicano i crediti verificati sulla pagina originale, senza modificare quel JSON. Verifica: https://commons.wikimedia.org/w/index.php?title=File:Monte_Giano_DVX.JPG&oldid=1119478106 . La data EXIF non basta a rendere riconoscibile la stagione: nessuna combinazione è etichettata reale=true arbitrariamente.
+Antrodoco: la pagina Commons identifica Iacopo.rossini e il rilascio in pubblico dominio PD-self. Il manifest corregge i crediti senza modificare data/media-zones.json, che riportava DVX/CC0. La stagione non è stabilita dalla sola data EXIF: nessuna variante Antrodoco è etichettata reale=true. Cicolano e relative derivate mantengono CC BY 2.0, con autore Alessandro Blasi from Rieti, Italy e indicazione delle modifiche. Le altre derivate CC BY-SA mantengono la corrispondente licenza; per Vallonina, tra le opzioni della fonte, è scelta CC BY-SA 3.0. Attribuzione completa e modifiche sono ripetute in ogni record luogo.
 
-Cicolano: autore Alessandro Blasi from Rieti, Italy, CC BY2.0; anche le derivate sono CC BY2.0 con attribuzione e indicazione delle modifiche, senza trasformare la licenza in BY-SA. Verifica: https://commons.wikimedia.org/w/index.php?title=File:Lago_del_Salto!!_(7447648144).jpg&oldid=988400961 .
+### Recupero dei prompt e limiti delle verifiche
 
-Le derivate delle foto CC BY-SA restano sotto la corrispondente CC BY-SA; per Vallonina, tra le opzioni della fonte, è scelta CC BY-SA3.0. Attribuzione, pagina originale, link di licenza e modifiche sono ripetuti nelle righe del manifest. Antrodoco conserva il riferimento al pubblico dominio della fonte.
+62 prompt generativi integrali non sono stati recuperati dopo il reset. Per quelle righe prompt_originale_recuperato=false e il testo inizia con “Prompt originale non recuperato dopo il reset. Specifica di riferimento ricostruita dal brief:”. Si tratta di specifiche ricostruite e dichiarate, non di trascrizioni del prompt originario. Gli altri prompt generativi recuperati sono conservati esattamente; quello corretto di Vallonina primavera-sereno proviene dal transcript della rigenerazione. Per le 6 fotografie reali il modello è null e il prompt descrive soltanto riuso, resize o conversione/copia, senza prompt generativo applicabile.
 
-### Dubbi, confronti e limiti delle copertine
+Le QA recuperate descrivono i controlli svolti prima della pubblicazione, documentati in NOTE e nei transcript; il recupero dei metadati non costituisce una nuova sovrapposizione. Le 25 nuove invernali di Poggio-Cantalice, Antrodoco, Cicolano, Laga e Tancia riportano le verifiche della regola neve corretta nei rispettivi sidecar. Il builder esegue soltanto decodifica, verifica delle dimensioni e confronto byte per byte tra finale e bozza.
 
-- vallonina/estate-sereno: Foto originale600x450: il ridimensionamento richiesto a1600px non aggiunge dettaglio fotografico.
-- antrodoco/primavera-nebbia: La nebbia vela parti del crinale e delle rupi, quindi la verifica di corrispondenza riguarda le parti visibili.
-- antrodoco/estate-nebbia: La nebbia vela parti del crinale e delle rupi, quindi la verifica di corrispondenza riguarda le parti visibili.
-- antrodoco/autunno-nebbia: La nebbia vela parti del crinale e delle rupi, quindi la verifica di corrispondenza riguarda le parti visibili.
-- cicolano/inverno-sereno: Il generatore limita il rapporto della tela a circa 3:1. Il panorama integrale è stato generato dentro la tela con fasce bianche esterne, poi estratto rimuovendo solo tali fasce. Il lato corto può differire di un pixel per gli arrotondamenti; nessuna deformazione applicata.
-- cicolano/inverno-sereno: La QA visiva conferma inquadratura e punti di riferimento alla scala del panorama; non certifica identità pixel per pixel dei dettagli fini generati di foglie, tetti o strutture lontane.
-- cicolano/inverno-nuvoloso: Il generatore limita il rapporto della tela a circa 3:1. Il panorama integrale è stato generato dentro la tela con fasce bianche esterne, poi estratto rimuovendo solo tali fasce. Il lato corto può differire di un pixel per gli arrotondamenti; nessuna deformazione applicata.
-- cicolano/inverno-nuvoloso: La QA visiva conferma inquadratura e punti di riferimento alla scala del panorama; non certifica identità pixel per pixel dei dettagli fini generati di foglie, tetti o strutture lontane.
-- cicolano/inverno-nebbia: Il generatore limita il rapporto della tela a circa 3:1. Il panorama integrale è stato generato dentro la tela con fasce bianche esterne, poi estratto rimuovendo solo tali fasce. Il lato corto può differire di un pixel per gli arrotondamenti; nessuna deformazione applicata.
-- cicolano/inverno-nebbia: La QA visiva conferma inquadratura e punti di riferimento alla scala del panorama; non certifica identità pixel per pixel dei dettagli fini generati di foglie, tetti o strutture lontane.
-- cicolano/inverno-pioggia: Il generatore limita il rapporto della tela a circa 3:1. Il panorama integrale è stato generato dentro la tela con fasce bianche esterne, poi estratto rimuovendo solo tali fasce. Il lato corto può differire di un pixel per gli arrotondamenti; nessuna deformazione applicata.
-- cicolano/inverno-pioggia: La QA visiva conferma inquadratura e punti di riferimento alla scala del panorama; non certifica identità pixel per pixel dei dettagli fini generati di foglie, tetti o strutture lontane.
-- cicolano/inverno-neve: Il generatore limita il rapporto della tela a circa 3:1. Il panorama integrale è stato generato dentro la tela con fasce bianche esterne, poi estratto rimuovendo solo tali fasce. Il lato corto può differire di un pixel per gli arrotondamenti; nessuna deformazione applicata.
-- cicolano/inverno-neve: La QA visiva conferma inquadratura e punti di riferimento alla scala del panorama; non certifica identità pixel per pixel dei dettagli fini generati di foglie, tetti o strutture lontane.
-- cicolano/primavera-sereno: Il generatore limita il rapporto della tela a circa 3:1. Il panorama integrale è stato generato dentro la tela con fasce bianche esterne, poi estratto rimuovendo solo tali fasce. Il lato corto può differire di un pixel per gli arrotondamenti; nessuna deformazione applicata.
-- cicolano/primavera-sereno: La QA visiva conferma inquadratura e punti di riferimento alla scala del panorama; non certifica identità pixel per pixel dei dettagli fini generati di foglie, tetti o strutture lontane.
-- cicolano/primavera-nuvoloso: Il generatore limita il rapporto della tela a circa 3:1. Il panorama integrale è stato generato dentro la tela con fasce bianche esterne, poi estratto rimuovendo solo tali fasce. Il lato corto può differire di un pixel per gli arrotondamenti; nessuna deformazione applicata.
-- cicolano/primavera-nuvoloso: La QA visiva conferma inquadratura e punti di riferimento alla scala del panorama; non certifica identità pixel per pixel dei dettagli fini generati di foglie, tetti o strutture lontane.
-- cicolano/primavera-nebbia: Il generatore limita il rapporto della tela a circa 3:1. Il panorama integrale è stato generato dentro la tela con fasce bianche esterne, poi estratto rimuovendo solo tali fasce. Il lato corto può differire di un pixel per gli arrotondamenti; nessuna deformazione applicata.
-- cicolano/primavera-nebbia: La QA visiva conferma inquadratura e punti di riferimento alla scala del panorama; non certifica identità pixel per pixel dei dettagli fini generati di foglie, tetti o strutture lontane.
-- cicolano/primavera-pioggia: Il generatore limita il rapporto della tela a circa 3:1. Il panorama integrale è stato generato dentro la tela con fasce bianche esterne, poi estratto rimuovendo solo tali fasce. Il lato corto può differire di un pixel per gli arrotondamenti; nessuna deformazione applicata.
-- cicolano/primavera-pioggia: La QA visiva conferma inquadratura e punti di riferimento alla scala del panorama; non certifica identità pixel per pixel dei dettagli fini generati di foglie, tetti o strutture lontane.
-- cicolano/estate-nuvoloso: Il generatore limita il rapporto della tela a circa 3:1. Il panorama integrale è stato generato dentro la tela con fasce bianche esterne, poi estratto rimuovendo solo tali fasce. Il lato corto può differire di un pixel per gli arrotondamenti; nessuna deformazione applicata.
-- cicolano/estate-nuvoloso: La QA visiva conferma inquadratura e punti di riferimento alla scala del panorama; non certifica identità pixel per pixel dei dettagli fini generati di foglie, tetti o strutture lontane.
-- cicolano/estate-nebbia: Il generatore limita il rapporto della tela a circa 3:1. Il panorama integrale è stato generato dentro la tela con fasce bianche esterne, poi estratto rimuovendo solo tali fasce. Il lato corto può differire di un pixel per gli arrotondamenti; nessuna deformazione applicata.
-- cicolano/estate-nebbia: La QA visiva conferma inquadratura e punti di riferimento alla scala del panorama; non certifica identità pixel per pixel dei dettagli fini generati di foglie, tetti o strutture lontane.
-- cicolano/estate-pioggia: Il generatore limita il rapporto della tela a circa 3:1. Il panorama integrale è stato generato dentro la tela con fasce bianche esterne, poi estratto rimuovendo solo tali fasce. Il lato corto può differire di un pixel per gli arrotondamenti; nessuna deformazione applicata.
-- cicolano/estate-pioggia: La QA visiva conferma inquadratura e punti di riferimento alla scala del panorama; non certifica identità pixel per pixel dei dettagli fini generati di foglie, tetti o strutture lontane.
-- cicolano/autunno-sereno: Il generatore limita il rapporto della tela a circa 3:1. Il panorama integrale è stato generato dentro la tela con fasce bianche esterne, poi estratto rimuovendo solo tali fasce. Il lato corto può differire di un pixel per gli arrotondamenti; nessuna deformazione applicata.
-- cicolano/autunno-sereno: La QA visiva conferma inquadratura e punti di riferimento alla scala del panorama; non certifica identità pixel per pixel dei dettagli fini generati di foglie, tetti o strutture lontane.
-- cicolano/autunno-nuvoloso: Il generatore limita il rapporto della tela a circa 3:1. Il panorama integrale è stato generato dentro la tela con fasce bianche esterne, poi estratto rimuovendo solo tali fasce. Il lato corto può differire di un pixel per gli arrotondamenti; nessuna deformazione applicata.
-- cicolano/autunno-nuvoloso: La QA visiva conferma inquadratura e punti di riferimento alla scala del panorama; non certifica identità pixel per pixel dei dettagli fini generati di foglie, tetti o strutture lontane.
-- cicolano/autunno-nebbia: Il generatore limita il rapporto della tela a circa 3:1. Il panorama integrale è stato generato dentro la tela con fasce bianche esterne, poi estratto rimuovendo solo tali fasce. Il lato corto può differire di un pixel per gli arrotondamenti; nessuna deformazione applicata.
-- cicolano/autunno-nebbia: La QA visiva conferma inquadratura e punti di riferimento alla scala del panorama; non certifica identità pixel per pixel dei dettagli fini generati di foglie, tetti o strutture lontane.
-- cicolano/autunno-pioggia: Il generatore limita il rapporto della tela a circa 3:1. Il panorama integrale è stato generato dentro la tela con fasce bianche esterne, poi estratto rimuovendo solo tali fasce. Il lato corto può differire di un pixel per gli arrotondamenti; nessuna deformazione applicata.
-- cicolano/autunno-pioggia: La QA visiva conferma inquadratura e punti di riferimento alla scala del panorama; non certifica identità pixel per pixel dei dettagli fini generati di foglie, tetti o strutture lontane.
+I confronti controllano inquadratura, scala e riferimenti visibili; non certificano identità pixel per pixel di foglie, rami minuti, tetti o strutture lontane ricostruiti dal generatore. La nebbia può velare crinali e rupi: il confronto riguarda le parti visibili. La fonte Vallonina è 600×450 e il resize a 1600×1200 non aggiunge dettaglio fotografico. La fonte Tancia disponibile è effettivamente 1600×900.
 
-Controllo incrociato indipendente: Poggio-Cantalice/Tancia (34 immagini) e Laga/Rascino/Antrodoco (51 immagini), incluse le piogge a scala1:1; nessun problema materiale rilevato dopo le correzioni. Rascino: nebbia e nevicata invernali rigenerate per uno spostamento di cima/riva. Tancia: tre prime piogge scartate e rigenerate con precipitazione più leggibile.
-
-Arrotondamenti senza deformazione: Antrodoco ha lato corto1198–1200px rispetto ai1199px della fonte. Cicolano mantiene il panorama intero con lato corto481–483px rispetto ai482px della fonte: il generatore usa un contenitore con fasce neutre sopra/sotto, che vengono estratte senza tagliare paesaggio; segue il solo ridimensionamento proporzionale. Le prove con proporzioni più lontane sono scartate. Quindi il rapporto non è identico al singolo pixel, mentre inquadratura e riferimenti fissi sono confrontati per sovrapposizione.
-
-Tancia: il WebP effettivo della fonte è1600×900; eventuali dimensioni maggiori riportate nei metadati non aggiungono dettaglio alla copia disponibile.
-
-Il controllo finale decodifica ogni WebP completo e confronta byte per byte la sua bozza. Alcuni file locali erano risultati vuoti dopo un salvataggio precedente: sono stati ripristinati dalle bozze integre o dai PNG selezionati e ricontrollati prima della pubblicazione.
-
-Cicolano: controllo indipendente dei17 finali e delle16 sovrapposizioni generate. Primavera-pioggia rigenerata dalla foto originale dopo il riscontro di precipitazione troppo poco leggibile; la nuova versione passa anche il controllo a600px e nei ritagli a scala nativa. Otto tentativi scartati in totale: sette per proporzioni/fasce del panorama e uno per la leggibilità della pioggia. Nessuna variante mancante.
+Cicolano conserva il panorama integrale: dove necessario il paesaggio è stato generato in un contenitore con fasce esterne, poi sono state rimosse soltanto le fasce, senza tagliare paesaggio, seguito da resize proporzionale. Gli arrotondamenti del lato corto possono differire fino a 2 px; il rapporto non è identico al singolo pixel. Non è stata applicata deformazione per nascondere derive. Anche Antrodoco presenta arrotondamenti proporzionali del lato corto; le dimensioni effettive sono riportate nel manifest.
 
 # Foto candidate da Wikimedia Commons per le otto zone senza foto
 
@@ -261,12 +219,8 @@ Autori, licenze, date e descrizioni sono stati verificati sulle pagine file di W
 - Leonessa: panorami urbani corretti ma faggete e raggio specifico non confermati.
 - Tutte le stagioni visibili prive di dichiarazione nel titolo/descrizione restano da verificare visivamente.
 
-
-
 ## Correzione neve decisa da Matteo
 
-Dove la foto comprende valle o fondovalle (paesi, piana, campi, versanti bassi), il manto nevoso sta solo sulle cime e sui versanti alti. Fondovalle, paesi, piana e primo piano basso restano senza manto: alberi spogli, prati secchi o brina e cielo invernale. In inverno-neve la precipitazione cade anche davanti alla camera, ma in basso resta al massimo un velo non coprente, con terreno/erba ancora visibili.
+La quota massima nei bands autorizza inverno-neve, ma non il manto uniforme nel paesaggio. Dove la foto comprende valle o fondovalle (paesi, piana, campi e versanti bassi), la neve al suolo resta solo sulle cime e sui versanti alti. Fondovalle, paesi, piana e primo piano basso restano senza manto: alberi decidui spogli, prati secchi, terra visibile o brina e cielo invernale. In inverno-neve la precipitazione cade anche davanti alla camera, ma in basso resta al massimo un velo non coprente, con erba e terreno ancora visibili. Nevicata in corso solo nella condizione inverno-neve; inverno-pioggia richiede precipitazione liquida leggibile.
 
-La regola sostituisce la precedente interpretazione del solo bands massimo. Si rigenerano tutte e cinque le condizioni invernali di Poggio-Cantalice, Antrodoco, Cicolano e Laga; per Tancia il bosco in primo piano viene trattato come versante basso con lettiera/rocce visibili e brina, senza inventare cime innevate fuori inquadratura. Vallonina e Rascino restano come approvate, poiché il primo piano è già in quota.
-
-Inverni ancora da correggere: cicolano, laga, tancia. Le versioni precedenti sono segnate da rifare in STATO fino alla sostituzione. I controlli della prima consegna si riferiscono alla regola precedente; ogni nuova invernale viene ricontrollata su inquadratura e limite della neve prima della pubblicazione.
+Sono state rigenerate e verificate tutte le cinque condizioni invernali di Poggio-Cantalice, Antrodoco, Cicolano, Laga e Tancia: 25 immagini. In Tancia il bosco in primo piano è trattato come versante basso con lettiera, rocce e terreno visibili, eventuale brina e senza inventare cime innevate fuori inquadratura. Vallonina e Rascino restano come approvate, perché il primo piano è già in quota e può essere innevato. Questa regola sostituisce la precedente interpretazione basata sul solo bands massimo.
