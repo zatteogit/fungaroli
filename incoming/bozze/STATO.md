@@ -34,6 +34,23 @@ Bozze correnti per revisione. Le versioni definitive sono separate in incoming/i
 | icone/tavola-28.png | agaricus-sylvicola, agaricus-xanthodermus, entoloma-sinuatum | ok | QA anatomica completata; dubbi dei dati da leggere in NOTE. |
 | icone/tavola-29.png | pleurotus-ostreatus, pleurotus-eryngii, pleurotus-cornucopiae | ok | QA anatomica completata; dubbi dei dati da leggere in NOTE. |
 | icone/tavola-30.png | fistulina-hepatica | ok | QA anatomica completata; dubbi dei dati da leggere in NOTE. |
+| luoghi/poggio-cantalice-autunno-nebbia.webp | poggio-cantalice: autunno-nebbia | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
+| luoghi/poggio-cantalice-autunno-nuvoloso.webp | poggio-cantalice: autunno-nuvoloso | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
+| luoghi/poggio-cantalice-autunno-pioggia.webp | poggio-cantalice: autunno-pioggia | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
+| luoghi/poggio-cantalice-autunno-sereno.webp | poggio-cantalice: autunno-sereno | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
+| luoghi/poggio-cantalice-estate-nebbia.webp | poggio-cantalice: estate-nebbia | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
+| luoghi/poggio-cantalice-estate-nuvoloso.webp | poggio-cantalice: estate-nuvoloso | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
+| luoghi/poggio-cantalice-estate-pioggia.webp | poggio-cantalice: estate-pioggia | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
+| luoghi/poggio-cantalice-estate-sereno.webp | poggio-cantalice: estate-sereno | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
+| luoghi/poggio-cantalice-inverno-nebbia.webp | poggio-cantalice: inverno-nebbia | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
+| luoghi/poggio-cantalice-inverno-neve.webp | poggio-cantalice: inverno-neve | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
+| luoghi/poggio-cantalice-inverno-nuvoloso.webp | poggio-cantalice: inverno-nuvoloso | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
+| luoghi/poggio-cantalice-inverno-pioggia.webp | poggio-cantalice: inverno-pioggia | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
+| luoghi/poggio-cantalice-inverno-sereno.webp | poggio-cantalice: inverno-sereno | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
+| luoghi/poggio-cantalice-primavera-nebbia.webp | poggio-cantalice: primavera-nebbia | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
+| luoghi/poggio-cantalice-primavera-nuvoloso.webp | poggio-cantalice: primavera-nuvoloso | ok | Foto reale riutilizzata, solo conversione e ridimensionamento. |
+| luoghi/poggio-cantalice-primavera-pioggia.webp | poggio-cantalice: primavera-pioggia | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
+| luoghi/poggio-cantalice-primavera-sereno.webp | poggio-cantalice: primavera-sereno | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
 | luoghi/rascino-autunno-nebbia.webp | rascino: autunno-nebbia | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
 | luoghi/rascino-autunno-nuvoloso.webp | rascino: autunno-nuvoloso | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
 | luoghi/rascino-autunno-pioggia.webp | rascino: autunno-pioggia | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
