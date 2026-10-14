@@ -269,4 +269,4 @@ Dove la foto comprende valle o fondovalle (paesi, piana, campi, versanti bassi),
 
 La regola sostituisce la precedente interpretazione del solo bands massimo. Si rigenerano tutte e cinque le condizioni invernali di Poggio-Cantalice, Antrodoco, Cicolano e Laga; per Tancia il bosco in primo piano viene trattato come versante basso con lettiera/rocce visibili e brina, senza inventare cime innevate fuori inquadratura. Vallonina e Rascino restano come approvate, poiché il primo piano è già in quota.
 
-Inverni ancora da correggere: antrodoco, cicolano, laga, tancia. Le versioni precedenti sono segnate da rifare in STATO fino alla sostituzione. I controlli della prima consegna si riferiscono alla regola precedente; ogni nuova invernale viene ricontrollata su inquadratura e limite della neve prima della pubblicazione.
+Inverni ancora da correggere: cicolano, laga, tancia. Le versioni precedenti sono segnate da rifare in STATO fino alla sostituzione. I controlli della prima consegna si riferiscono alla regola precedente; ogni nuova invernale viene ricontrollata su inquadratura e limite della neve prima della pubblicazione.

@@ -42,11 +42,11 @@ Bozze correnti per revisione. Le versioni definitive sono separate in incoming/i
 | luoghi/antrodoco-estate-nuvoloso.webp | antrodoco: estate-nuvoloso | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
 | luoghi/antrodoco-estate-pioggia.webp | antrodoco: estate-pioggia | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
 | luoghi/antrodoco-estate-sereno.webp | antrodoco: estate-sereno | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
-| luoghi/antrodoco-inverno-nebbia.webp | antrodoco: inverno-nebbia | da rifare | Nuova regola Matteo: eliminare il manto dal fondovalle/primo piano basso, neve solo in quota; nevicata senza manto coprente in basso. |
-| luoghi/antrodoco-inverno-neve.webp | antrodoco: inverno-neve | da rifare | Nuova regola Matteo: eliminare il manto dal fondovalle/primo piano basso, neve solo in quota; nevicata senza manto coprente in basso. |
-| luoghi/antrodoco-inverno-nuvoloso.webp | antrodoco: inverno-nuvoloso | da rifare | Nuova regola Matteo: eliminare il manto dal fondovalle/primo piano basso, neve solo in quota; nevicata senza manto coprente in basso. |
-| luoghi/antrodoco-inverno-pioggia.webp | antrodoco: inverno-pioggia | da rifare | Nuova regola Matteo: eliminare il manto dal fondovalle/primo piano basso, neve solo in quota; nevicata senza manto coprente in basso. |
-| luoghi/antrodoco-inverno-sereno.webp | antrodoco: inverno-sereno | da rifare | Nuova regola Matteo: eliminare il manto dal fondovalle/primo piano basso, neve solo in quota; nevicata senza manto coprente in basso. |
+| luoghi/antrodoco-inverno-nebbia.webp | antrodoco: inverno-nebbia | ok | Rigenerata con neve solo in quota, basso senza manto; controllo sovrapposizione e limite neve completato. |
+| luoghi/antrodoco-inverno-neve.webp | antrodoco: inverno-neve | ok | Rigenerata con neve solo in quota, basso senza manto; controllo sovrapposizione e limite neve completato. |
+| luoghi/antrodoco-inverno-nuvoloso.webp | antrodoco: inverno-nuvoloso | ok | Rigenerata con neve solo in quota, basso senza manto; controllo sovrapposizione e limite neve completato. |
+| luoghi/antrodoco-inverno-pioggia.webp | antrodoco: inverno-pioggia | ok | Rigenerata con neve solo in quota, basso senza manto; controllo sovrapposizione e limite neve completato. |
+| luoghi/antrodoco-inverno-sereno.webp | antrodoco: inverno-sereno | ok | Rigenerata con neve solo in quota, basso senza manto; controllo sovrapposizione e limite neve completato. |
 | luoghi/antrodoco-primavera-nebbia.webp | antrodoco: primavera-nebbia | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
 | luoghi/antrodoco-primavera-nuvoloso.webp | antrodoco: primavera-nuvoloso | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
 | luoghi/antrodoco-primavera-pioggia.webp | antrodoco: primavera-pioggia | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
