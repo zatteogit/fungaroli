@@ -165,7 +165,7 @@ for(const width of [320,1280]) test(`schede contestuali complete, ritorno e navi
   // I risultati di Riconosci aprono la scheda completa, mantenendo i caratteri scelti.
   await page.goto('/#/riconosci');await page.locator('#identify [data-mode="all"]').click();
   const candidate=page.locator('#identify [data-taxon]').first();await candidate.click();
-  await expect(sheet).toBeVisible();await expect(sheet.locator('h3',{hasText:'Cosa osservare'})).toBeVisible();
+  await expect(sheet).toBeVisible();await expect(sheet.locator('h3',{hasText:'Caratteri da confrontare'})).toBeVisible();
   expect(page.url()).toContain('#/riconosci');await page.keyboard.press('Escape');await expect(candidate).toBeFocused();
   expect(errors).toEqual([]);
 });
