@@ -2738,3 +2738,9 @@ body:is([data-page="specie"], [data-page="piante"], [data-page="alberi"]) .tab-s
 /* nelle risposte del percorso guidato non ci sono disegni: la colonna del valore prende lo spazio */
 .gk-answers .id-row-main, #field-identify .id-row-main { grid-template-columns: minmax(84px, 38%) 1fr auto; }
 .gk-q h3 { font-size: 21px; line-height: 1.25; }
+/* caroselli: su schermi touch si scorre col dito, le frecce coprirebbero il testo */
+@media (hover: none) { .rail-arrow { display: none !important; } }
+.gk-start { margin: 14px 0 0; }
+.trait-strip-txt { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); }
+.trait-strip-txt li { justify-items: start; text-align: left; padding: 10px 12px; }
+.trait-strip-txt .ts-v { font-size: 14px; font-weight: 600; line-height: 1.3; }

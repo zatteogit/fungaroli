@@ -805,10 +805,12 @@ export function renderIdentify(box) {
     </div>
     ${ZONES.length ? `<div class="filter-rail id-zones" role="group" aria-label="Dove l'hai trovato"><span class="af-label">Zona</span><button type="button" class="chip" data-zone="" aria-pressed="${!state.zone}">Ovunque</button>${ZONES.map((z) => `<button type="button" class="chip" data-zone="${z.id}" aria-pressed="${state.zone === z.id}">${esc(z.title || z.name)}</button>`).join('')}</div>` : ''}
     ${state.guided ? guidedMode() : `<div class="idf-primary" aria-label="Caratteri principali">${facetsHtml([['', PRIMARY_FILTERS]], true)}</div><div class="idf-bar">${activeChips()}<button type="button" class="btn idf-open" data-idf-open aria-haspopup="dialog" aria-controls="identify-filters">Altri${given.filter(q=>!PRIMARY_FILTERS.includes(q.key)).length ? ` <b>${given.filter(q=>!PRIMARY_FILTERS.includes(q.key)).length}</b>` : ''}</button>${given.length ? '<button type="button" class="af-add" data-fall>Azzera</button>' : ''}</div>`}
-    <div class="id-head"><h2 class="sec-title">${list.length} ${list.length === 1 ? 'candidato' : 'candidati'}</h2></div>
+    ${state.guided && !given.length && !state.q && !state.zone ? '' : `<div class="id-head"><h2 class="sec-title">${list.length} ${list.length === 1 ? 'candidato' : 'candidati'}</h2></div>`}
     <label class="search-box id-search id-filter"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M7 12h10M10 18h4"/></svg><input id="id-q" type="search" placeholder="Filtra i candidati: anello, blu, castagno…" value="${esc(state.q)}" autocomplete="off" aria-label="Filtra i candidati per parola"></label>
     <details class="id-deadly" name="identify-notices"><summary><b>Le risposte e i filtri non escludono i funghi mortali.</b></summary><p>Anello e volva possono essere nascosti o danneggiati. Il catalogo è incompleto: anche un solo candidato o nessun mortale nei risultati non conferma la specie né la commestibilità.</p></details>
-    <ul class="id-cards">${list.slice(0, 40).map(resultCard).join('')}</ul>
+    ${state.guided && !given.length && !state.q && !state.zone
+      ? `<p class="small muted gk-start">${list.length} funghi nel catalogo, velenosi compresi. Rispondi alla prima domanda o filtra per parola: i candidati compaiono man mano che restringi.</p>`
+      : `<ul class="id-cards">${list.slice(0, 40).map(resultCard).join('')}</ul>`}
     ${RULES.length ? `<details class="sec" name="identify-notices"><summary>Regole generali di sicurezza</summary><div class="sec-body"><ul class="reasons">${RULES.map((r) => `<li${r.severity === 'critico' ? ' class="crit"' : ''}>${esc(r.text)}</li>`).join('')}</ul></div></details>` : ''}`;
 
   const notices=[...box.querySelectorAll(':scope > details[name="identify-notices"]')];
