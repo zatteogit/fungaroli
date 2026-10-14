@@ -1061,7 +1061,7 @@ function renderHome() {
       ${cov ? `<img class="cover-img" data-src="${cov.hd}" alt="${esc(cov.alt)}" fetchpriority="high">` : ''}
       <span class="shade"></span>
       <a class="cover-link" data-walk-zone="${hero.z.id}" href="${walkHref(hero.z, hero.o, hero.walk?.t)}" aria-label="${esc(title)}, ${esc(hero.walk?.microzone || sub)}, ${esc(dayLabel(hero.o, hero.d.date, true))}: i dettagli della passeggiata"></a>
-      <span class="cover-top"><span class="pill glass">Un’uscita a funghi · ${esc(dayLabel(hero.o, hero.d.date, true))}</span>${ring(hero.s)}</span>
+      <span class="cover-top"><span class="pill glass">${esc(dayLabel(hero.o, hero.d.date, true))}</span>${ring(hero.s)}</span>
       <span class="cover-body">
         <span class="cover-title">${esc(title)}</span>${sub ? `<span class="cover-sub">${esc(sub)}</span>` : ''}
         ${hero.walk ? `<span class="cover-walk"><b>${esc(hero.walk.microzone)}</b><span>${esc(walkBrief(hero.walk))}</span></span>` : ''}
