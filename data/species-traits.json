@@ -1006,7 +1006,7 @@
           "source": "https://faolex.fao.org/docs/pdf/ita21952.pdf"
         },
         {
-          "text": "Lamelle, gambo e anello gialli e volva bianca a sacco sono caratteri descritti per A. caesarea: nessuno, isolatamente, certifica la specie.",
+          "text": "Lamelle, gambo e anello gialli e volva bianca a sacco sono caratteri descritti per l’ovolo buono: nessuno, isolatamente, certifica la specie.",
           "kind": "caratteri",
           "title": "Ovolo: nessun carattere basta da solo",
           "severity": "critico",
@@ -1020,9 +1020,9 @@
           "source": "https://www.ausl.vda.it/Media/AUSL/Hierarchy/64/6481/Opuscolo%20ispettorato%20micologico%202026.pdf"
         },
         {
-          "text": "Amanita muscaria può perdere le verruche con la pioggia: un cappello arancio liscio non identifica A. caesarea.",
+          "text": "L’ovolo malefico (Amanita muscaria) può perdere le verruche con la pioggia: un cappello arancio liscio non identifica l’ovolo buono.",
           "kind": "sosia",
-          "title": "A. muscaria senza verruche",
+          "title": "Ovolo malefico senza verruche",
           "severity": "importante",
           "source": "https://iris.santannapisa.it/retrieve/dd9e0b31-bbe6-709e-e053-3705fe0a83fd/80_vqr_Funghi.pdf"
         },
@@ -1188,9 +1188,9 @@
       },
       "field_rules": [
         {
-          "text": "Omphalotus olearius, tossico, può formare cespi aranciati su legno e radici, talvolta interrati.",
+          "text": "Il fungo dell’olivo (Omphalotus olearius), tossico, può formare cespi aranciati su legno e radici, talvolta interrati.",
           "kind": "sosia",
-          "title": "Sosia tossico: Omphalotus olearius",
+          "title": "Sosia tossico: fungo dell’olivo",
           "severity": "critico",
           "source": "https://asl5oristano.it/wp-content/uploads/2024/09/OMPHALOTUS-OLEARIUS.pdf"
         },
@@ -1662,14 +1662,14 @@
           "source": "https://sabatosera.it/sabatosera/news/2019/09/25/non-tutti-i-funghi-sono-commestibili-a-imola-ha-riaperto-lispettorato-micologico"
         },
         {
-          "text": "Nel Lazio il limite di raccolta di M. procera è 5 cm; una taglia maggiore non certifica l’identità.",
+          "text": "Nel Lazio il limite di raccolta della mazza di tamburo è 5 cm; una taglia maggiore non certifica l’identità.",
           "kind": "regole",
           "title": "Nel Lazio si raccoglie da 5 cm",
           "severity": "critico",
           "source": "https://sabatosera.it/sabatosera/news/2019/09/25/non-tutti-i-funghi-sono-commestibili-a-imola-ha-riaperto-lispettorato-micologico"
         },
         {
-          "text": "Anello doppio e mobile e zigrinature del gambo sono caratteri descritti per M. procera, da confrontare con l’intero fungo.",
+          "text": "Anello doppio e mobile e zigrinature del gambo sono caratteri descritti per la mazza di tamburo, da confrontare con l’intero fungo.",
           "kind": "caratteri",
           "title": "Anello mobile e gambo zigrinato",
           "severity": "critico",
@@ -1683,9 +1683,9 @@
           "source": "https://iris.santannapisa.it/retrieve/dd9e0b31-bbed-709e-e053-3705fe0a83fd/178_vqr_Funghi.pdf"
         },
         {
-          "text": "M. procera è tossica cruda o poco cotta; il gambo è fibroso. Preparazione solo dopo il controllo micologico.",
+          "text": "La mazza di tamburo è tossica cruda o poco cotta; il gambo è fibroso. Preparazione solo dopo il controllo micologico.",
           "kind": "cottura",
-          "title": "M. procera tossica cruda o poco cotta",
+          "title": "Mazza di tamburo: tossica da cruda",
           "severity": "importante",
           "source": "https://iris.santannapisa.it/retrieve/dd9e0b31-bbed-709e-e053-3705fe0a83fd/178_vqr_Funghi.pdf"
         }
@@ -1834,14 +1834,14 @@
       },
       "field_rules": [
         {
-          "text": "Armillaria è tossica cruda o poco cotta. Le fonti sanitarie prevedono prebollitura con eliminazione dell’acqua e successiva cottura, dopo il controllo micologico.",
+          "text": "Il chiodino (Armillaria) è tossico crudo o poco cotto. Le fonti sanitarie prevedono prebollitura con eliminazione dell’acqua e successiva cottura, dopo il controllo micologico.",
           "kind": "cottura",
-          "title": "Tossica cruda: serve la prebollitura",
+          "title": "Tossico crudo: serve la prebollitura",
           "severity": "critico",
           "source": "https://www.ausl.vda.it/Media/AUSL/Hierarchy/64/6481/Opuscolo%20ispettorato%20micologico%202026.pdf"
         },
         {
-          "text": "Galerina marginata, mortale, può crescere sullo stesso legno delle Armillaria: un cespo non garantisce che tutti gli esemplari appartengano alla stessa specie.",
+          "text": "La Galerina marginata, mortale, può crescere sullo stesso legno dei chiodini: un cespo non garantisce che tutti gli esemplari appartengano alla stessa specie.",
           "kind": "sosia",
           "title": "Galerina mortale sullo stesso legno",
           "severity": "critico",
@@ -1855,16 +1855,16 @@
           "source": "https://www.ausl.vda.it/Media/AUSL/Hierarchy/64/6481/Opuscolo%20ispettorato%20micologico%202026.pdf"
         },
         {
-          "text": "Le fonti sanitarie sconsigliano il congelamento delle Armillaria crude e il consumo di esemplari colpiti dal gelo.",
+          "text": "Le fonti sanitarie sconsigliano il congelamento dei chiodini crudi e il consumo di esemplari colpiti dal gelo.",
           "kind": "cottura",
-          "title": "Non congelare Armillaria crude",
+          "title": "Non congelare i chiodini crudi",
           "severity": "importante",
           "source": "https://aslbi.piemonte.it/wp-content/uploads/2025/08/Poster-NON-CONSUMARE-I-CHIODINI-CRUDI.pdf"
         },
         {
-          "text": "Armillaria è frequentemente coinvolta in intossicazioni; quantità elevate, pasti ravvicinati e sensibilità individuale aumentano i problemi.",
+          "text": "Il chiodino è frequentemente coinvolto in intossicazioni; quantità elevate, pasti ravvicinati e sensibilità individuale aumentano i problemi.",
           "kind": "tossicita",
-          "title": "Armillaria spesso causa intossicazioni",
+          "title": "Chiodino: spesso causa intossicazioni",
           "severity": "importante",
           "source": "https://aslbi.piemonte.it/wp-content/uploads/2025/08/Poster-NON-CONSUMARE-I-CHIODINI-CRUDI.pdf"
         }
@@ -2046,9 +2046,9 @@
       },
       "field_rules": [
         {
-          "text": "Amanita phalloides può avere cappello verde e lamelle bianche. Anello e volva possono essere nascosti o danneggiati: la loro apparente assenza non esclude il rischio.",
+          "text": "La tignosa verdognola (Amanita phalloides) può avere cappello verde e lamelle bianche. Anello e volva possono essere nascosti o danneggiati: la loro apparente assenza non esclude il rischio.",
           "kind": "sosia",
-          "title": "Amanita phalloides a cappello verde",
+          "title": "Tignosa verdognola a cappello verde",
           "severity": "critico",
           "source": "https://www.ufficiostampa.provincia.tn.it/Comunicati/FUNGHI-ATTENZIONE-ALLE-INTOSSICAZIONI"
         },
@@ -2233,9 +2233,9 @@
           "source": "https://www.iris.sssup.it/retrieve/dd9e0b31-bbe7-709e-e053-3705fe0a83fd/214_vqr_Funghi.pdf"
         },
         {
-          "text": "Pori bruno-ramati e piccole dimensioni sono caratteri da confrontare con Chalciporus piperatus. Il sapore descritto nelle fonti non è una prova da fare sul campo.",
+          "text": "Pori bruno-ramati e piccole dimensioni sono caratteri da confrontare con il boleto pepato (Chalciporus piperatus). Il sapore descritto nelle fonti non è una prova da fare sul campo.",
           "kind": "sosia",
-          "title": "Confronto con Chalciporus piperatus",
+          "title": "Confronto con il boleto pepato",
           "severity": "importante",
           "source": "https://it.wikipedia.org/wiki/Chalciporus_piperatus"
         }
@@ -2381,7 +2381,7 @@
       },
       "field_rules": [
         {
-          "text": "Tra i tricolomi grigi vi sono sosia tossici come T. pardinum; foto e descrizioni non escludono la confusione.",
+          "text": "Tra i tricolomi grigi vi sono sosia tossici come l’agarico tigrino (Tricholoma pardinum); foto e descrizioni non escludono la confusione.",
           "kind": "sosia",
           "title": "Tricolomi grigi: sosia tossici",
           "severity": "critico",
@@ -2548,21 +2548,21 @@
           "source": "https://comunidad.madrid/sites/default/files/doc/sanidad/sali/a_lepista_nuda.pdf"
         },
         {
-          "text": "La sporata rosa pallido è descritta per L. nuda; la sporata ruggine è un carattere dei cortinari. Nessuna delle due, da sola, identifica l’esemplare.",
+          "text": "La sporata rosa pallido è descritta per l’agarico violetto; la sporata ruggine è un carattere dei cortinari. Nessuna delle due, da sola, identifica l’esemplare.",
           "kind": "caratteri",
           "title": "Sporata rosa o ruggine",
           "severity": "importante",
           "source": "https://iris.santannapisa.it/retrieve/dd9e0b31-bbfe-709e-e053-3705fe0a83fd/174_vqr_Funghi.pdf"
         },
         {
-          "text": "L. nuda è tossica cruda o poco cotta; preparazione solo dopo il controllo micologico.",
+          "text": "L’agarico violetto è tossico crudo o poco cotto; preparazione solo dopo il controllo micologico.",
           "kind": "cottura",
-          "title": "L. nuda tossica cruda o poco cotta",
+          "title": "Agarico violetto: tossico da crudo",
           "severity": "importante",
           "source": "https://iris.santannapisa.it/retrieve/dd9e0b31-bbfe-709e-e053-3705fe0a83fd/174_vqr_Funghi.pdf"
         },
         {
-          "text": "Anche piccoli funghi violetti come Mycena pura e alcune Inocybe sono tossici. Odore e forma non bastano a distinguerli con sicurezza.",
+          "text": "Anche piccoli funghi violetti come la micena pura e alcuni inocibi (Inocybe) sono tossici. Odore e forma non bastano a distinguerli con sicurezza.",
           "kind": "sosia",
           "title": "Piccoli funghi violetti tossici",
           "severity": "importante",
@@ -2707,7 +2707,7 @@
       },
       "field_rules": [
         {
-          "text": "Tylopilus felleus è descritto come molto amaro; pori rosati e reticolo bruno sono caratteri da confrontare. Il sapore non va verificato assaggiando.",
+          "text": "Il porcino di fiele è descritto come molto amaro; pori rosati e reticolo bruno sono caratteri da confrontare. Il sapore non va verificato assaggiando.",
           "kind": "caratteri",
           "title": "Molto amaro: non assaggiare",
           "severity": "importante",
@@ -2825,9 +2825,9 @@
       },
       "field_rules": [
         {
-          "text": "Rubroboletus satanas è tossico e può causare gravi disturbi gastrointestinali. Pori rossi e viraggio al blu compaiono anche in altri boleti e non lo identificano da soli.",
+          "text": "Il boleto satana è tossico e può causare gravi disturbi gastrointestinali. Pori rossi e viraggio al blu compaiono anche in altri boleti e non lo identificano da soli.",
           "kind": "tossicita",
-          "title": "Rubroboletus satanas è tossico",
+          "title": "Il boleto satana è tossico",
           "severity": "critico",
           "source": "https://it.wikipedia.org/wiki/Rubroboletus_satanas"
         }
@@ -2942,9 +2942,9 @@
       },
       "field_rules": [
         {
-          "text": "Gambo rosso reticolato e viraggio al blu sono caratteri di C. calopus, non commestibile. Le descrizioni del sapore non invitano all’assaggio.",
+          "text": "Gambo rosso reticolato e viraggio al blu sono caratteri del boleto dal bel piede, non commestibile. Le descrizioni del sapore non invitano all’assaggio.",
           "kind": "caratteri",
-          "title": "C. calopus: gambo rosso reticolato",
+          "title": "Boleto dal bel piede: gambo rosso a rete",
           "severity": "importante",
           "source": "https://it.wikipedia.org/wiki/Caloboletus_calopus"
         }
@@ -3052,9 +3052,9 @@
       },
       "field_rules": [
         {
-          "text": "Cappello chiaro, pori gialli e viraggio al blu sono caratteri di C. radicans, non commestibile. Non costituiscono da soli un’identificazione.",
+          "text": "Cappello chiaro, pori gialli e viraggio al blu sono caratteri del boleto radicante, non commestibile. Non costituiscono da soli un’identificazione.",
           "kind": "caratteri",
-          "title": "C. radicans: pori gialli e viraggio",
+          "title": "Boleto radicante: pori gialli e viraggio",
           "severity": "importante",
           "source": "https://it.wikipedia.org/wiki/Caloboletus_radicans"
         }
@@ -3165,9 +3165,9 @@
       },
       "field_rules": [
         {
-          "text": "Neoboletus luridiformis è tossico crudo o poco cotto. La classificazione della specie non certifica l’identità di un esemplare.",
+          "text": "Il boleto a piede rosso è tossico crudo o poco cotto. La classificazione della specie non certifica l’identità di un esemplare.",
           "kind": "cottura",
-          "title": "N. luridiformis tossico crudo",
+          "title": "Boleto a piede rosso: tossico crudo",
           "severity": "importante",
           "source": "https://en.wikipedia.org/wiki/Neoboletus_luridiformis"
         }
@@ -3283,7 +3283,7 @@
       },
       "field_rules": [
         {
-          "text": "I pori di Imleria badia possono macchiarsi di blu: il viraggio non è una prova generale di tossicità o commestibilità.",
+          "text": "I pori del boleto baio possono macchiarsi di blu: il viraggio non è una prova generale di tossicità o commestibilità.",
           "kind": "caratteri",
           "title": "Il viraggio al blu non è una prova",
           "severity": "importante",
@@ -3406,16 +3406,16 @@
           "source": "https://it.wikipedia.org/wiki/Amanita_phalloides"
         },
         {
-          "text": "A. phalloides contiene amatossine: l’ingestione anche di piccole quantità può essere mortale. La semplice manipolazione non equivale all’ingestione.",
+          "text": "La tignosa verdognola contiene amatossine: l’ingestione anche di piccole quantità può essere mortale. La semplice manipolazione non equivale all’ingestione.",
           "kind": "tossicita",
-          "title": "A. phalloides: amatossine mortali",
+          "title": "Tignosa verdognola: amatossine mortali",
           "severity": "critico",
           "source": "https://www.ausl.vda.it/Media/AUSL/Hierarchy/64/6481/Opuscolo%20ispettorato%20micologico%202026.pdf"
         },
         {
-          "text": "Gli ovoli chiusi possono confondersi con A. caesarea.",
+          "text": "Gli ovoli chiusi possono confondersi con l’ovolo buono (Amanita caesarea).",
           "kind": "sosia",
-          "title": "Ovoli chiusi simili ad A. caesarea",
+          "title": "Ovoli chiusi simili all’ovolo buono",
           "severity": "critico",
           "source": "https://faolex.fao.org/docs/pdf/ita21952.pdf"
         },
@@ -3576,9 +3576,9 @@
           "source": "https://it.wikipedia.org/wiki/Amanita_phalloides"
         },
         {
-          "text": "A. verna contiene amatossine: l’ingestione anche di piccole quantità può essere mortale. La semplice manipolazione non equivale all’ingestione.",
+          "text": "La tignosa di primavera contiene amatossine: l’ingestione anche di piccole quantità può essere mortale. La semplice manipolazione non equivale all’ingestione.",
           "kind": "tossicita",
-          "title": "A. verna: amatossine mortali",
+          "title": "Tignosa di primavera: amatossine mortali",
           "severity": "critico",
           "source": "https://www.ausl.vda.it/Media/AUSL/Hierarchy/64/6481/Opuscolo%20ispettorato%20micologico%202026.pdf"
         }
@@ -3712,9 +3712,9 @@
           "source": "https://it.wikipedia.org/wiki/Amanita_phalloides"
         },
         {
-          "text": "A. virosa contiene amatossine: l’ingestione anche di piccole quantità può essere mortale. La semplice manipolazione non equivale all’ingestione.",
+          "text": "La tignosa bianca contiene amatossine: l’ingestione anche di piccole quantità può essere mortale. La semplice manipolazione non equivale all’ingestione.",
           "kind": "tossicita",
-          "title": "A. virosa: amatossine mortali",
+          "title": "Tignosa bianca: amatossine mortali",
           "severity": "critico",
           "source": "https://www.ausl.vda.it/Media/AUSL/Hierarchy/64/6481/Opuscolo%20ispettorato%20micologico%202026.pdf"
         }
@@ -3838,9 +3838,9 @@
       },
       "field_rules": [
         {
-          "text": "Lamelle, gambo e anello bianchi e resti della volva sul bulbo sono caratteri da confrontare con A. caesarea.",
+          "text": "Lamelle, gambo e anello bianchi e resti della volva sul bulbo sono caratteri da confrontare con l’ovolo buono (Amanita caesarea).",
           "kind": "sosia",
-          "title": "Confronto con A. caesarea",
+          "title": "Confronto con l’ovolo buono",
           "severity": "critico",
           "source": "https://iris.santannapisa.it/retrieve/dd9e0b31-bbe6-709e-e053-3705fe0a83fd/80_vqr_Funghi.pdf"
         },
@@ -3964,9 +3964,9 @@
       },
       "field_rules": [
         {
-          "text": "A. crocea è tossica cruda.",
+          "text": "L’Amanita crocea è tossica cruda.",
           "kind": "cottura",
-          "title": "A. crocea tossica cruda",
+          "title": "Amanita crocea: tossica cruda",
           "severity": "importante",
           "source": "https://it.wikipedia.org/wiki/Amanita_crocea"
         },
@@ -4096,7 +4096,7 @@
       },
       "field_rules": [
         {
-          "text": "Omphalotus olearius è tossico: cespi aranciati su legno o radici, anche interrati, e vere lamelle sono caratteri da confrontare con i finferli.",
+          "text": "Il fungo dell’olivo è tossico: cespi aranciati su legno o radici, anche interrati, e vere lamelle sono caratteri da confrontare con i finferli.",
           "kind": "sosia",
           "title": "Tossico: confronto con i finferli",
           "severity": "critico",
@@ -4454,7 +4454,7 @@
       },
       "field_rules": [
         {
-          "text": "C. cinereus è classificato commestibile nelle fonti; questo non conferma l’identità o l’idoneità alimentare di un esemplare.",
+          "text": "Il craterello cenerino è classificato commestibile nelle fonti; questo non conferma l’identità o l’idoneità alimentare di un esemplare.",
           "kind": "caratteri",
           "title": "La classificazione non conferma l'identità",
           "severity": "importante",
@@ -4562,7 +4562,7 @@
       },
       "field_rules": [
         {
-          "text": "P. undulatus è classificato commestibile nelle fonti, ma può confondersi con altri piccoli funghi: la scheda non sostituisce il controllo micologico.",
+          "text": "Il craterello sinuoso è classificato commestibile nelle fonti, ma può confondersi con altri piccoli funghi: la scheda non sostituisce il controllo micologico.",
           "kind": "sosia",
           "title": "Simile ad altri piccoli funghi",
           "severity": "importante",
@@ -4669,7 +4669,7 @@
       },
       "field_rules": [
         {
-          "text": "Coppa nera coriacea su rami interrati, a fine inverno: caratteri di Urnula craterium, non commestibile, da confrontare con le trombette.",
+          "text": "Coppa nera coriacea su rami interrati, a fine inverno: caratteri dell’urnula (Urnula craterium), non commestibile, da confrontare con le trombette.",
           "kind": "sosia",
           "title": "Coppa nera: confronto con le trombette",
           "severity": "importante",
@@ -4779,7 +4779,7 @@
       },
       "field_rules": [
         {
-          "text": "Hydnum rufescens è classificato commestibile dopo cottura; identità e preparazione del raccolto richiedono il controllo micologico.",
+          "text": "Lo steccherino rossiccio è classificato commestibile dopo cottura; identità e preparazione del raccolto richiedono il controllo micologico.",
           "kind": "cottura",
           "title": "Classificato commestibile dopo cottura",
           "severity": "importante",
@@ -4888,9 +4888,9 @@
       },
       "field_rules": [
         {
-          "text": "Cappello bruno con grosse squame a tegola e aculei bruno-grigi: caratteri da confrontare con gli Hydnum chiari.",
+          "text": "Cappello bruno con grosse squame a tegola e aculei bruno-grigi: caratteri da confrontare con gli steccherini chiari (Hydnum).",
           "kind": "sosia",
-          "title": "Confronto con gli Hydnum chiari",
+          "title": "Confronto con gli steccherini chiari",
           "severity": "importante",
           "source": "https://it.wikipedia.org/wiki/Sarcodon_imbricatus"
         }
@@ -4993,9 +4993,9 @@
       },
       "field_rules": [
         {
-          "text": "Base del gambo verde-blu e consistenza della carne sono caratteri di S. scabrosus, non commestibile. Le descrizioni del sapore non invitano all’assaggio.",
+          "text": "Base del gambo verde-blu e consistenza della carne sono caratteri del Sarcodon scabroso, non commestibile. Le descrizioni del sapore non invitano all’assaggio.",
           "kind": "caratteri",
-          "title": "S. scabrosus: base verde-blu",
+          "title": "Sarcodon scabroso: base verde-blu",
           "severity": "importante",
           "source": "https://it.wikipedia.org/wiki/Sarcodon_scabrosus"
         }
@@ -5110,9 +5110,9 @@
       },
       "field_rules": [
         {
-          "text": "Consistenza dura e sugherosa e, nei giovani, gocce rosse: caratteri di H. peckii, non commestibile.",
+          "text": "Consistenza dura e sugherosa e, nei giovani, gocce rosse: caratteri dell’idnello di Peck, non commestibile.",
           "kind": "caratteri",
-          "title": "H. peckii: gocce rosse, non commestibile",
+          "title": "Idnello di Peck: non commestibile",
           "severity": "importante",
           "source": "https://it.wikipedia.org/wiki/Hydnellum_peckii"
         }
@@ -5240,7 +5240,7 @@
           "source": "https://sabatosera.it/sabatosera/news/2019/09/25/non-tutti-i-funghi-sono-commestibili-a-imola-ha-riaperto-lispettorato-micologico"
         },
         {
-          "text": "L. brunneoincarnata, mortale, cresce anche in parchi, giardini e bordi di strada. Il luogo non certifica la commestibilità.",
+          "text": "La lepiota bruno-incarnata, mortale, cresce anche in parchi, giardini e bordi di strada. Il luogo non certifica la commestibilità.",
           "kind": "caratteri",
           "title": "Mortale anche in parchi e giardini",
           "severity": "critico",
@@ -5854,7 +5854,7 @@
       },
       "field_rules": [
         {
-          "text": "Galerina marginata contiene amatossine mortali. Piccoli funghi bruni su legno possono crescere anche accanto ai chiodini.",
+          "text": "La Galerina marginata contiene amatossine mortali. Piccoli funghi bruni su legno possono crescere anche accanto ai chiodini.",
           "kind": "tossicita",
           "title": "Galerina marginata: amatossine mortali",
           "severity": "critico",
@@ -5983,9 +5983,9 @@
       },
       "field_rules": [
         {
-          "text": "Cespi giallo zolfo con lamelle verdastre: caratteri di Hypholoma fasciculare, tossico, da confrontare con le Armillaria.",
+          "text": "Cespi giallo zolfo con lamelle verdastre: caratteri del falso chiodino (Hypholoma fasciculare), tossico, da confrontare con i chiodini (Armillaria).",
           "kind": "sosia",
-          "title": "Cespi gialli: confronto con Armillaria",
+          "title": "Cespi gialli: confronto con i chiodini",
           "severity": "importante",
           "source": "https://it.wikipedia.org/wiki/Hypholoma_fasciculare"
         }
@@ -6227,9 +6227,9 @@
       },
       "field_rules": [
         {
-          "text": "Grossi cespi giallo-oro su ceppaie con lamelle ruggine: caratteri di Gymnopilus junonius, da confrontare con le Armillaria.",
+          "text": "Grossi cespi giallo-oro su ceppaie con lamelle ruggine: caratteri della folliota spettabile, da confrontare con i chiodini (Armillaria).",
           "kind": "sosia",
-          "title": "Gymnopilus: confronto con Armillaria",
+          "title": "Folliota spettabile e chiodini",
           "severity": "importante",
           "source": "https://en.wikipedia.org/wiki/Gymnopilus_junonius"
         }
@@ -6339,9 +6339,9 @@
       },
       "field_rules": [
         {
-          "text": "Cespi con grosse squame rialzate su cappello e gambo: caratteri di Pholiota squarrosa, non commestibile, da confrontare con le Armillaria.",
+          "text": "Cespi con grosse squame rialzate su cappello e gambo: caratteri della folliota squarrosa, non commestibile, da confrontare con i chiodini (Armillaria).",
           "kind": "sosia",
-          "title": "Cespi squamosi: confronto con Armillaria",
+          "title": "Cespi squamosi: confronto con i chiodini",
           "severity": "importante",
           "source": "https://en.wikipedia.org/wiki/Pholiota_squarrosa"
         }
@@ -6459,9 +6459,9 @@
       },
       "field_rules": [
         {
-          "text": "Come le altre Armillaria, è tossica cruda o poco cotta; le fonti sanitarie prevedono prebollitura, eliminazione dell’acqua e successiva cottura.",
+          "text": "Come gli altri chiodini (Armillaria), è tossico crudo o poco cotto; le fonti sanitarie prevedono prebollitura, eliminazione dell’acqua e successiva cottura.",
           "kind": "cottura",
-          "title": "Tossica cruda: serve la prebollitura",
+          "title": "Tossico crudo: serve la prebollitura",
           "severity": "critico",
           "source": "https://www.ausl.vda.it/Media/AUSL/Hierarchy/64/6481/Opuscolo%20ispettorato%20micologico%202026.pdf"
         }
@@ -6578,9 +6578,9 @@
       },
       "field_rules": [
         {
-          "text": "Amanita phalloides può avere cappello verde e lamelle bianche. Una base incompleta o resti danneggiati possono nascondere la volva.",
+          "text": "La tignosa verdognola (Amanita phalloides) può avere cappello verde e lamelle bianche. Una base incompleta o resti danneggiati possono nascondere la volva.",
           "kind": "sosia",
-          "title": "Amanita phalloides a cappello verde",
+          "title": "Tignosa verdognola a cappello verde",
           "severity": "critico",
           "source": "https://www.ufficiostampa.provincia.tn.it/Comunicati/FUNGHI-ATTENZIONE-ALLE-INTOSSICAZIONI"
         }
@@ -6695,9 +6695,9 @@
       },
       "field_rules": [
         {
-          "text": "Lamelle e sporata gialle sono caratteri di R. olivacea, coinvolta in disturbi gastrointestinali dopo consumo crudo o poco cotto.",
+          "text": "Lamelle e sporata gialle sono caratteri della Russula olivacea, coinvolta in disturbi gastrointestinali dopo consumo crudo o poco cotto.",
           "kind": "cottura",
-          "title": "R. olivacea: disturbi se poco cotta",
+          "title": "Russula olivacea: disturbi se poco cotta",
           "severity": "importante",
           "source": "https://it.wikipedia.org/wiki/Russula_olivacea"
         }
@@ -6808,9 +6808,9 @@
       },
       "field_rules": [
         {
-          "text": "Amanita phalloides può avere cappello verde e lamelle bianche. Una base incompleta o resti danneggiati possono nascondere la volva.",
+          "text": "La tignosa verdognola (Amanita phalloides) può avere cappello verde e lamelle bianche. Una base incompleta o resti danneggiati possono nascondere la volva.",
           "kind": "sosia",
-          "title": "Amanita phalloides a cappello verde",
+          "title": "Tignosa verdognola a cappello verde",
           "severity": "critico",
           "source": "https://www.ufficiostampa.provincia.tn.it/Comunicati/FUNGHI-ATTENZIONE-ALLE-INTOSSICAZIONI"
         }
@@ -6922,9 +6922,9 @@
       },
       "field_rules": [
         {
-          "text": "Pori bruno-ramati e micelio giallo alla base sono caratteri di Chalciporus piperatus. Il sapore riportato nelle fonti non va verificato assaggiando.",
+          "text": "Pori bruno-ramati e micelio giallo alla base sono caratteri del boleto pepato. Il sapore riportato nelle fonti non va verificato assaggiando.",
           "kind": "caratteri",
-          "title": "Chalciporus piperatus: non assaggiare",
+          "title": "Boleto pepato: non assaggiare",
           "severity": "importante",
           "source": "https://it.wikipedia.org/wiki/Chalciporus_piperatus"
         }
@@ -7142,9 +7142,9 @@
       },
       "field_rules": [
         {
-          "text": "Cappello grigio squamoso e consistenza carnosa sono caratteri di T. pardinum: specie tossica che può causare gravi gastroenteriti.",
+          "text": "Cappello grigio squamoso e consistenza carnosa sono caratteri dell’agarico tigrino: specie tossica che può causare gravi gastroenteriti.",
           "kind": "tossicita",
-          "title": "T. pardinum: gravi gastroenteriti",
+          "title": "Agarico tigrino: gravi gastroenteriti",
           "severity": "critico",
           "source": "https://comunidad.madrid/sites/default/files/doc/sanidad/sali/d_tricholoma_pardinum.pdf"
         }
@@ -7263,9 +7263,9 @@
       },
       "field_rules": [
         {
-          "text": "Cappello grigio lucido con umbone appuntito: caratteri di T. virgatum, tossico. Il sapore descritto nelle fonti non è una prova da fare.",
+          "text": "Cappello grigio lucido con umbone appuntito: caratteri del tricoloma vergato, tossico. Il sapore descritto nelle fonti non è una prova da fare.",
           "kind": "caratteri",
-          "title": "T. virgatum: tossico, umbone appuntito",
+          "title": "Tricoloma vergato: tossico, umbone a punta",
           "severity": "importante",
           "source": "https://en.wikipedia.org/wiki/Tricholoma_virgatum"
         }
@@ -7373,9 +7373,9 @@
       },
       "field_rules": [
         {
-          "text": "Filo delle lamelle annerito e habitat sotto faggio sono caratteri di T. sciodes, tossico, da confrontare con altri tricolomi grigi.",
+          "text": "Filo delle lamelle annerito e habitat sotto faggio sono caratteri del tricoloma sciodes, tossico, da confrontare con altri tricolomi grigi.",
           "kind": "caratteri",
-          "title": "T. sciodes: lamelle a filo annerito",
+          "title": "Tricoloma sciodes: lamelle a filo annerito",
           "severity": "importante",
           "source": "https://it.wikipedia.org/wiki/Tricholoma_sciodes"
         }
@@ -7485,9 +7485,9 @@
       },
       "field_rules": [
         {
-          "text": "Cappello grigio-crema, lamelle giallastre poi rosa e odore di farina: caratteri di E. sinuatum, responsabile di gravi gastroenteriti.",
+          "text": "Cappello grigio-crema, lamelle giallastre poi rosa e odore di farina: caratteri dell’entoloma livido, responsabile di gravi gastroenteriti.",
           "kind": "tossicita",
-          "title": "E. sinuatum: gravi gastroenteriti",
+          "title": "Entoloma livido: gravi gastroenteriti",
           "severity": "critico",
           "source": "https://it.wikipedia.org/wiki/Entoloma_sinuatum"
         }
@@ -7622,9 +7622,9 @@
       },
       "field_rules": [
         {
-          "text": "Molte Inocybe contengono muscarina. Cappello conico e fibroso e lamelle grigio-brune sono caratteri presenti in questo gruppo, senza identificarne da soli una specie.",
+          "text": "Molti inocibi (Inocybe) contengono muscarina. Cappello conico e fibroso e lamelle grigio-brune sono caratteri presenti in questo gruppo, senza identificarne da soli una specie.",
           "kind": "tossicita",
-          "title": "Molte Inocybe contengono muscarina",
+          "title": "Molti inocibi contengono muscarina",
           "severity": "critico",
           "source": "https://it.wikipedia.org/wiki/Inocybe"
         }
@@ -7746,9 +7746,9 @@
       },
       "field_rules": [
         {
-          "text": "Colori lilla, cortina, lamelle ruggine e carne giallo-zafferano: caratteri di C. traganus, tossico, da confrontare con L. nuda.",
+          "text": "Colori lilla, cortina, lamelle ruggine e carne giallo-zafferano: caratteri del cortinario tragano, tossico, da confrontare con l’agarico violetto (Lepista nuda).",
           "kind": "sosia",
-          "title": "C. traganus: confronto con L. nuda",
+          "title": "Cortinario tragano e agarico violetto",
           "severity": "importante",
           "source": "https://en.wikipedia.org/wiki/Cortinarius_traganus"
         }
@@ -7857,7 +7857,7 @@
       },
       "field_rules": [
         {
-          "text": "Il colore viola non indica commestibilità: fra i cortinari vi sono specie tossiche e mortali. C. violaceus è qui trattato come specie da osservare.",
+          "text": "Il colore viola non indica commestibilità: fra i cortinari vi sono specie tossiche e mortali. Il cortinario violaceo è qui trattato come specie da osservare.",
           "kind": "sosia",
           "title": "Il viola non indica commestibilità",
           "severity": "importante",
@@ -7964,9 +7964,9 @@
       },
       "field_rules": [
         {
-          "text": "Piccolo cappello lilla, conico e setoso: caratteri di I. lilacina, segnalata come tossica nelle fonti.",
+          "text": "Piccolo cappello lilla, conico e setoso: caratteri dell’inocibe lilla, segnalata come tossica nelle fonti.",
           "kind": "caratteri",
-          "title": "I. lilacina: piccolo cappello lilla",
+          "title": "Inocibe lilla: piccolo cappello lilla",
           "severity": "critico",
           "source": "https://it.wikipedia.org/wiki/Inocybe_geophylla"
         }
@@ -8090,9 +8090,9 @@
       },
       "field_rules": [
         {
-          "text": "Piccolo fungo lilla, odore di rapa e gambo cavo: caratteri di Mycena pura, tossica.",
+          "text": "Piccolo fungo lilla, odore di rapa e gambo cavo: caratteri della micena pura, tossica.",
           "kind": "caratteri",
-          "title": "Mycena pura: odore di rapa",
+          "title": "Micena pura: odore di rapa",
           "severity": "importante",
           "source": "https://it.wikipedia.org/wiki/Mycena_pura"
         }
@@ -8209,7 +8209,7 @@
       },
       "field_rules": [
         {
-          "text": "L. amethystina può accumulare arsenico dal suolo. Ambiente e colore non certificano l’idoneità alimentare dell’esemplare.",
+          "text": "La laccaria ametistina può accumulare arsenico dal suolo. Ambiente e colore non certificano l’idoneità alimentare dell’esemplare.",
           "kind": "ambiente",
           "title": "Può accumulare arsenico dal suolo",
           "severity": "importante",
@@ -10486,7 +10486,7 @@
       },
       "field_rules": [
         {
-          "text": "Carne bianca che alla base del gambo, tagliata o sfregata, diventa subito giallo intenso; odore di inchiostro o fenolo. Sono i caratteri descritti per A. xanthodermus e la sua sezione, tutti tossici.",
+          "text": "Carne bianca che alla base del gambo, tagliata o sfregata, diventa subito giallo intenso; odore di inchiostro o fenolo. Sono i caratteri descritti per il prataiolo ingiallente (Agaricus xanthodermus) e la sua sezione, tutti tossici.",
           "kind": "caratteri",
           "title": "Carne che ingiallisce alla base",
           "severity": "critico",
@@ -10500,7 +10500,7 @@
           "source": "https://www.first-nature.com/fungi/agaricus-xanthodermus.php"
         },
         {
-          "text": "Cresce negli stessi prati, parchi e margini dei prataioli. Anche A. arvensis e A. sylvicola ingialliscono, più lentamente e con odore di anice: il solo ingiallimento non li separa con sicurezza.",
+          "text": "Cresce negli stessi prati, parchi e margini dei prataioli. Anche il prataiolo maggiore e il prataiolo dei boschi ingialliscono, più lentamente e con odore di anice: il solo ingiallimento non li separa con sicurezza.",
           "kind": "sosia",
           "title": "Ingiallimento: non basta a separarli",
           "severity": "importante",
@@ -10744,14 +10744,14 @@
       },
       "field_rules": [
         {
-          "text": "Cappello bruno con verruche bianco puro e margine striato; carne bianca che non arrossa. In A. rubescens la carne e il gambo diventano rosa-rossastri dove sono feriti.",
+          "text": "Cappello bruno con verruche bianco puro e margine striato; carne bianca che non arrossa. Nell’amanita arrossante (Amanita rubescens) la carne e il gambo diventano rosa-rossastri dove sono feriti.",
           "kind": "caratteri",
           "title": "Verruche bianche, carne che non arrossa",
           "severity": "critico",
           "source": "https://www.first-nature.com/fungi/amanita-pantherina.php"
         },
         {
-          "text": "Le verruche possono mancare, soprattutto dopo la pioggia: un cappello nudo non esclude A. pantherina.",
+          "text": "Le verruche possono mancare, soprattutto dopo la pioggia: un cappello nudo non esclude la tignosa panterina.",
           "kind": "caratteri",
           "title": "Senza verruche dopo la pioggia",
           "severity": "critico",
@@ -10895,9 +10895,9 @@
           "source": "https://en.wikipedia.org/wiki/Tricholoma_equestre"
         },
         {
-          "text": "Lamelle e gambo gialli, cappello giallo con il centro bruno-olivastro e squamoso. T. portentosum, citato dalle fonti come sosia, ha invece cappello grigio con striature scure.",
+          "text": "Lamelle e gambo gialli, cappello giallo con il centro bruno-olivastro e squamoso. Il portentoso (Tricholoma portentosum), citato dalle fonti come sosia, ha invece cappello grigio con striature scure.",
           "kind": "caratteri",
-          "title": "Differenze da T. portentosum",
+          "title": "Differenze dal portentoso",
           "severity": "importante",
           "source": "https://www.first-nature.com/fungi/tricholoma-portentosum.php"
         }
@@ -11036,7 +11036,7 @@
           "source": "https://www.first-nature.com/fungi/clitocybe-rivulosa.php"
         },
         {
-          "text": "Nel gambesecco le lamelle sono distanziate e libere e il gambo è tenace ed elastico; in C. rivulosa le lamelle sono fitte, adnate o un po’ decorrenti. Le due specie possono crescere insieme.",
+          "text": "Nel gambesecco le lamelle sono distanziate e libere e il gambo è tenace ed elastico; nella clitocibe rivulosa le lamelle sono fitte, adnate o un po’ decorrenti. Le due specie possono crescere insieme.",
           "kind": "caratteri",
           "title": "Lamelle diverse dal gambesecco",
           "severity": "importante",

@@ -416,6 +416,37 @@ function attItem(r) {
   const src = r.source && /^https?:\/\//.test(r.source) ? ` <a class="att-cite" href="${esc(r.source)}" target="_blank" rel="noopener"${CITES[r.source]?.title ? ` title="${esc(CITES[r.source].title)}"` : ''}>${c ? `(${esc(c)})` : 'Fonte'}</a>` : '';
   return `<li class="att-item${r.severity === 'critico' ? ' crit' : ''}">${k ? `<span class="att-k">${k}</span>` : ''}${r.title ? `<b class="att-t" data-no-glossary>${esc(r.title)}</b>` : ''}<p>${esc(r.text)}${src}</p></li>`;
 }
+// elenco di avvisi senza riquadro (es. «Regole generali di sicurezza»): stesse righe delle schede
+export const warningList = (rules) => rules?.length ? `<ul class="att-list warn-list">${[...rules].sort((a, b) => (a.severity === 'critico' ? 0 : 1) - (b.severity === 'critico' ? 0 : 1)).map(attItem).join('')}</ul>` : '';
+
+// Fonti come righe: «Autore, anno» in evidenza, titolo completo sotto, icona del link esterno.
+// La citazione viene da species-traits.json (citations); altrimenti si ricava dal titolo.
+const EXT_IC = '<svg class="src-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>';
+export function sourceLabel(src) {
+  const c = src?.url && CITES[src.url];
+  if (c?.author) return c.year ? `${c.author}, ${c.year}` : c.author;
+  const title = String(src?.title || '').trim();
+  const cut = [' · ', ' - ', ' — ', ','].map((s) => title.indexOf(s)).filter((i) => i > 0);
+  const head = (cut.length ? title.slice(0, Math.min(...cut)) : title).trim();
+  const year = title.match(/\b(1[5-9]\d\d|20\d\d)\b/)?.[1];
+  return year && !head.includes(year) ? `${head}, ${year}` : head;
+}
+const srcRow = (href, label, sub, extra = '') => `<li class="src-row"><a class="src-a" href="${esc(href)}" target="_blank" rel="noopener"><span class="src-tx"><b>${esc(label)}</b>${sub ? `<small>${esc(sub)}</small>` : ''}</span>${EXT_IC}</a>${extra}</li>`;
+export function sourceRows(sources) {
+  const list = (sources || []).filter((x, i, a) => x?.url && a.findIndex((y) => y?.url === x.url) === i);
+  return list.length ? `<ul class="src-rows">${list.map((x) => { const l = sourceLabel(x); return srcRow(x.url, l, x.title && x.title !== l ? x.title : ''); }).join('')}</ul>` : '';
+}
+// crediti delle foto: «Autore · Licenza», sotto la fonte; la riga apre la pagina originale
+export function photoRows(photos) {
+  const list = (photos || []).filter((p) => p && (p.author || p.page));
+  return list.length ? `<ul class="src-rows src-photos">${list.map((p) => {
+    const label = [p.author || 'Autore non indicato', p.license].filter(Boolean).join(' · ');
+    const sub = [p.prefix, p.source || 'Fotografia originale'].filter(Boolean).join(' · ');
+    const lic = p.licenseUrl ? `<a class="src-lic" href="${esc(p.licenseUrl)}" target="_blank" rel="noopener" aria-label="Testo della licenza ${esc(p.license || '')}">Licenza</a>` : '';
+    return p.page ? srcRow(p.page, label, sub, lic) : `<li class="src-row"><span class="src-a"><span class="src-tx"><b>${esc(label)}</b><small>${esc(sub)}</small></span></span>${lic}</li>`;
+  }).join('')}</ul>` : '';
+}
+
 // un solo avviso in riga (es. «Cosa osservare» in home): tipo, titolo, testo
 export const attentionLine = (r) => r?.text ? `<span class="plan-crit" role="note"><span class="pc-k">${ATT_KIND[r.kind] || 'Attenzione'}</span>${r.title ? `<b class="pc-t" data-no-glossary>${esc(r.title)}</b>` : ''}<span class="pc-x">${esc(r.text)}</span></span>` : '';
 export function attentionBox(rules, extra = '') {
@@ -589,7 +620,7 @@ export function renderTaxonView(box, t, { photos = null, habitatText = '', extra
       </dl>
       ${extra}
       <p class="small muted">Confrontare questi caratteri non identifica un esemplare: fai controllare tutto il raccolto all'Ispettorato micologico dell'ASL. È gratuito.</p>
-      ${t.sources?.length || ph.length ? `<details class="sec"><summary>Fonti e fotografie</summary><div class="sec-body">${t.sources?.length ? `<ul class="small sources">${t.sources.map((x) => `<li><a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.title)}</a></li>`).join('')}</ul>` : ''}${ph.length ? `<p class="small"><b>Fotografie</b></p><ul class="small sources">${ph.map((p) => `<li>${esc(p.author || 'Autore non indicato')} · ${p.licenseUrl ? `<a href="${esc(p.licenseUrl)}" target="_blank" rel="noopener">${esc(p.license || 'licenza')}</a>` : esc(p.license || '')}${p.page ? ` · <a href="${esc(p.page)}" target="_blank" rel="noopener">${esc(p.source || 'Fotografia originale')}</a>` : ''}</li>`).join('')}</ul>` : ''}</div></details>` : ''}
+      ${t.sources?.length || ph.length ? `<details class="sec"><summary>Fonti e fotografie</summary><div class="sec-body">${sourceRows(t.sources)}${ph.length ? `<p class="src-h">Fotografie</p>${photoRows(ph)}` : ''}</div></details>` : ''}
     </div>`;
   const lb = ph.map((p) => ({ src: ASSET(p.file_hd || p.file), alt: t.name, caption: captionHtml({ title: `<span class="tox">${toxL}</span> ${esc(t.name || '')} <i>${esc(t.latin)}</i>`, credit: `Foto: ${esc(p.author || '')}${p.license ? `, ${p.licenseUrl ? `<a href="${esc(p.licenseUrl)}" target="_blank" rel="noopener">${esc(p.license)}</a>` : esc(p.license)}` : ''}${p.page ? ` · <a href="${esc(p.page)}" target="_blank" rel="noopener">${esc(p.source || 'Fotografia originale')}</a>` : ''}` }) }));
   box.querySelectorAll('[data-photo]').forEach((b) => b.addEventListener('click', () => openLightbox(lb, +b.dataset.photo)));
@@ -863,7 +894,7 @@ export function renderIdentify(box) {
     ${state.guided && !given.length && !state.q && !state.zone
       ? `<p class="small muted gk-start">${list.length} funghi nel catalogo, velenosi compresi. Rispondi alla prima domanda o filtra per parola: i candidati compaiono man mano che restringi.</p>`
       : `<ul class="id-cards">${list.slice(0, 40).map(resultCard).join('')}</ul>`}
-    ${RULES.length ? `<details class="sec" name="identify-notices"><summary>Regole generali di sicurezza</summary><div class="sec-body"><ul class="reasons">${RULES.map((r) => `<li${r.severity === 'critico' ? ' class="crit"' : ''}>${esc(r.text)}</li>`).join('')}</ul></div></details>` : ''}`;
+    ${RULES.length ? `<details class="sec" name="identify-notices"><summary>Regole generali di sicurezza</summary><div class="sec-body">${warningList(RULES)}</div></details>` : ''}`;
 
   const notices=[...box.querySelectorAll(':scope > details[name="identify-notices"]')];
   notices.forEach(el=>el.addEventListener('toggle',()=>{

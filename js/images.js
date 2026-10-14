@@ -16,7 +16,8 @@ function watch(img) {
   img.decoding='async';
   img.addEventListener('load',async()=>{
     const source=img.getAttribute('src');
-    try {await img.decode();}catch { /* il browser può aver già decodificato */ }
+    // se decode() resta in sospeso (possibile con gli SVG in alcuni browser) l’immagine non resta «in caricamento»
+    try {await Promise.race([img.decode(),new Promise(r=>setTimeout(r,800))]);}catch { /* il browser può aver già decodificato */ }
     if(img.getAttribute('src')===source&&img.naturalWidth)finish(img,'ready');
   });
   img.addEventListener('error',()=>{

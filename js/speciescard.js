@@ -1,7 +1,7 @@
 // Scheda dettagliata di una specie: foto reali, riconoscimento, sosia pericolosi,
 // calendario delle osservazioni (GBIF) a confronto con il modello, modello 3D.
 
-import { traitStrip, compareCta, taxonKeyByLatin, openTaxon, attentionBox, compareHref, lookalikeRank } from './identify.js';
+import { traitStrip, compareCta, taxonKeyByLatin, openTaxon, attentionBox, compareHref, lookalikeRank, sourceRows, photoRows } from './identify.js';
 import { SPECIES } from './species.js';
 import { openLightbox, captionHtml } from './lightbox.js';
 import { linkTrees } from './trees.js';
@@ -86,7 +86,6 @@ function lookalikes(d, sid) {
 }
 
 // In cucina: prima cio' che e' obbligatorio (sicurezza), poi conservazione e quantita', infine i classici
-const srcList = (src) => (src || []).map((x) => `<a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.title)}</a>`).join(' · ');
 function kitchen(id) {
   const p = PREP?.species?.[id], c = PREP?.cucina?.[id];
   if (!p && !c) return '';
@@ -110,7 +109,7 @@ function kitchen(id) {
       <ul class="k-uses">${c.uses.map((u) => `<li>${esc(u.text)}</li>`).join('')}</ul>
       ${c.local ? `<p class="k-line"><b>Nel Lazio:</b> ${esc(c.local)}</p>` : ''}
 </details>` : ''}
-    ${srcs.length ? `<details class="k-src-list"><summary>Fonti (${srcs.length})</summary><p class="k-sources small muted">${srcList(srcs)}</p></details>` : ''}
+    ${srcs.length ? `<details class="k-src-list"><summary>Fonti (${srcs.length})</summary>${sourceRows(srcs)}</details>` : ''}
   </section>`;
 }
 
@@ -173,9 +172,9 @@ export function renderSpeciesDetail(body, id) {
   const hd = (p) => ASSET(p.file_hd || p.file);
   const warn = [...(d.warnings || []), ...(d.warnings?.length ? [] : [sp.warning])].filter(Boolean);
   const sec = (title, html) => html ? `<details class="sec"><summary>${title}</summary><div class="sec-body">${html}</div></details>` : '';
-  const credits = [...photos.map((p) => creditText(p)), ...(d.lookalikes || []).flatMap((l) => {
+  const credits = [...photos, ...(d.lookalikes || []).flatMap((l) => {
     const key = (l.latin || '').match(/[A-Z][a-z]+ [a-z]+/)?.[0];
-    return [MEDIA?.lookalikes?.[key]?.ref, ...(MEDIA?.lookalikes?.[key]?.inat || [])].filter(Boolean).map((p) => `${esc(l.latin)}: ${creditText(p)}`);
+    return [MEDIA?.lookalikes?.[key]?.ref, ...(MEDIA?.lookalikes?.[key]?.inat || [])].filter(Boolean).map((p) => ({ ...p, prefix: l.latin }));
   })];
   body.innerHTML = `
     <header class="phero phero-tall">
@@ -212,7 +211,7 @@ export function renderSpeciesDetail(body, id) {
         ? `<div class="sp-3d" data-embed="${esc(model.embed)}"><button type="button" class="btn primary">Apri il modello 3D</button><p class="small muted">Si ruota con un dito, si ingrandisce con due. Scansione di un esemplare reale.</p></div>
            <button type="button" class="btn ghost sp-3d-full" hidden>Schermo intero</button>`
         : ''}<p class="small muted">${esc(model.name)} · ${esc(model.author)} · ${esc(model.license)} · <a href="${esc(model.page)}" target="_blank" rel="noopener">apri su Sketchfab</a></p>`) : ''}
-      ${sec('Fonti e crediti delle foto', `${d.sources?.length ? `<ul class="small sources">${d.sources.map((x) => `<li><a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.title)}</a></li>`).join('')}</ul>` : ''}${credits.length ? `<ul class="small sources">${credits.map((c) => `<li>${c}</li>`).join('')}</ul>` : ''}`)}
+      ${sec('Fonti e crediti delle foto', `${sourceRows(d.sources)}${credits.length ? `<p class="src-h">Fotografie</p>${photoRows(credits)}` : ''}`)}
     </div>
     <p class="small muted sp-foot">${esc(FOOTER || 'Scheda di supporto: non sostituisce il controllo dell\'Ispettorato Micologico ASL. Nel dubbio non si raccoglie e non si mangia.')} <a href="#/info">Emergenza e note legali</a></p>
     </div>`;

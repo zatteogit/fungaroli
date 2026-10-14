@@ -148,7 +148,8 @@ function inline(t) {
 const slug = (t) => t.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 
 export function mdToHtml(md) {
-  const lines = md.replace(/\r/g, '').split('\n');
+  // la sezione «Per chi sviluppa» resta nel documento del repository, non nella pagina dell'app
+  const lines = md.replace(/\r/g, '').split(/\n(?=## Per chi sviluppa\s*$)/m)[0].split('\n');
   const out = [], toc = [];
   let i = 0;
   while (i < lines.length) {
@@ -188,10 +189,12 @@ export async function renderMethod(box) {
       methodCache = mdToHtml(md);
     }
     const { html, toc } = methodCache;
-    box.innerHTML = `<nav class="md-toc" aria-label="Indice del metodo"><p class="sci-h">In questa pagina</p><ol>${toc.map(([id, t]) => `<li><a href="#m-${id}" data-jump="m-${id}">${inline(t)}</a></li>`).join('')}</ol></nav><article class="md">${html}</article>`;
+    // con molte sezioni, una riga di chip che scorre in orizzontale porta alla sezione
+    const chips = toc.length > 6 ? `<nav class="md-chips" aria-label="Sezioni">${toc.map(([id, t]) => `<a class="chip" href="#m-${id}" data-jump="m-${id}">${inline(t)}</a>`).join('')}</nav>` : '';
+    box.innerHTML = `${chips}<article class="md">${html}</article>`;
     // i link interni non cambiano la rotta: scorrono alla sezione
     box.querySelectorAll('[data-jump]').forEach((a) => a.addEventListener('click', (e) => { e.preventDefault(); document.getElementById(a.dataset.jump)?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }));
   } catch {
-    box.innerHTML = '<p class="notice">Non riesco a caricare il metodo senza rete. Lo trovi anche nel repository, in docs/metodo-scientifico.md.</p>';
+    box.innerHTML = '<p class="notice">Non riesco a caricare il metodo senza rete. Riprova quando sei di nuovo connesso.</p>';
   }
 }
