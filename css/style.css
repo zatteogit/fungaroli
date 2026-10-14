@@ -2738,4 +2738,3 @@ body:is([data-page="specie"], [data-page="piante"], [data-page="alberi"]) .tab-s
 /* nelle risposte del percorso guidato non ci sono disegni: la colonna del valore prende lo spazio */
 .gk-answers .id-row-main, #field-identify .id-row-main { grid-template-columns: minmax(84px, 38%) 1fr auto; }
 .gk-q h3 { font-size: 21px; line-height: 1.25; }
-
