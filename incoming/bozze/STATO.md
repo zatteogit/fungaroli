@@ -68,6 +68,23 @@ Bozze correnti per revisione. Le versioni definitive sono separate in incoming/i
 | luoghi/cicolano-primavera-nuvoloso.webp | cicolano: primavera-nuvoloso | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
 | luoghi/cicolano-primavera-pioggia.webp | cicolano: primavera-pioggia | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
 | luoghi/cicolano-primavera-sereno.webp | cicolano: primavera-sereno | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
+| luoghi/laga-autunno-nebbia.webp | laga: autunno-nebbia | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
+| luoghi/laga-autunno-nuvoloso.webp | laga: autunno-nuvoloso | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
+| luoghi/laga-autunno-pioggia.webp | laga: autunno-pioggia | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
+| luoghi/laga-autunno-sereno.webp | laga: autunno-sereno | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
+| luoghi/laga-estate-nebbia.webp | laga: estate-nebbia | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
+| luoghi/laga-estate-nuvoloso.webp | laga: estate-nuvoloso | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
+| luoghi/laga-estate-pioggia.webp | laga: estate-pioggia | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
+| luoghi/laga-estate-sereno.webp | laga: estate-sereno | ok | Foto reale riutilizzata, solo conversione e ridimensionamento. |
+| luoghi/laga-inverno-nebbia.webp | laga: inverno-nebbia | da rifare | Nuova regola Matteo: eliminare il manto dal fondovalle/primo piano basso, neve solo in quota; nevicata senza manto coprente in basso. |
+| luoghi/laga-inverno-neve.webp | laga: inverno-neve | da rifare | Nuova regola Matteo: eliminare il manto dal fondovalle/primo piano basso, neve solo in quota; nevicata senza manto coprente in basso. |
+| luoghi/laga-inverno-nuvoloso.webp | laga: inverno-nuvoloso | da rifare | Nuova regola Matteo: eliminare il manto dal fondovalle/primo piano basso, neve solo in quota; nevicata senza manto coprente in basso. |
+| luoghi/laga-inverno-pioggia.webp | laga: inverno-pioggia | da rifare | Nuova regola Matteo: eliminare il manto dal fondovalle/primo piano basso, neve solo in quota; nevicata senza manto coprente in basso. |
+| luoghi/laga-inverno-sereno.webp | laga: inverno-sereno | da rifare | Nuova regola Matteo: eliminare il manto dal fondovalle/primo piano basso, neve solo in quota; nevicata senza manto coprente in basso. |
+| luoghi/laga-primavera-nebbia.webp | laga: primavera-nebbia | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
+| luoghi/laga-primavera-nuvoloso.webp | laga: primavera-nuvoloso | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
+| luoghi/laga-primavera-pioggia.webp | laga: primavera-pioggia | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
+| luoghi/laga-primavera-sereno.webp | laga: primavera-sereno | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
 | luoghi/poggio-cantalice-autunno-nebbia.webp | poggio-cantalice: autunno-nebbia | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
 | luoghi/poggio-cantalice-autunno-nuvoloso.webp | poggio-cantalice: autunno-nuvoloso | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
 | luoghi/poggio-cantalice-autunno-pioggia.webp | poggio-cantalice: autunno-pioggia | ok | Confronto in sovrapposizione con originale e controllo stagione/meteo completati. |
