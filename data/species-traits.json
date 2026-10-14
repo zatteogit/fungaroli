@@ -8057,6 +8057,2128 @@
       "traits_notes": "Cappello igrofano, quasi glabro o finemente forforaceo/squamuloso al centro ('finely hairy-scaly, or nearly bald'). Lamelle spaziate, sinuate (en.wiki) o adnate, raramente decorrenti (mushroomexpert). Gambo fibroso, cavo, tenace, base uguale o appena ingrossata con fibrille/micelio lilla: 'normale'. Sporata bianca. Pagina it.wiki non disponibile (404).",
       "tox_label": "commestibile con cautela",
       "tox_short": "con cautela"
+    },
+    "agaricus-campestris": {
+      "latin": "Agaricus campestris",
+      "name": "Prataiolo",
+      "edible_id": null,
+      "toxicity": "commestibile",
+      "traits": {
+        "hymenophore": [
+          "lamelle"
+        ],
+        "hymenophore_color": [
+          "rosa",
+          "bruno",
+          "nero"
+        ],
+        "cap_color": [
+          "bianco",
+          "crema",
+          "bruno"
+        ],
+        "cap_shape": [
+          "emisferico",
+          "convesso",
+          "piano"
+        ],
+        "cap_size": [
+          "piccolo",
+          "medio"
+        ],
+        "cap_surface": [
+          "liscia",
+          "squamosa"
+        ],
+        "cap_veil": false,
+        "stem_ring": null,
+        "stem_volva": false,
+        "stem_reticulum": false,
+        "stem_base": [
+          "normale"
+        ],
+        "flesh_change": [
+          "nessuno",
+          "rosso"
+        ],
+        "flesh_texture": null,
+        "smell": [
+          "nessuno"
+        ],
+        "latex": false,
+        "gill_attachment": [
+          "libere"
+        ],
+        "growth": [
+          "singolo",
+          "gregario"
+        ],
+        "habitat": [
+          "prati/radure"
+        ],
+        "season": [
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "spore_print": [
+          "bruno"
+        ]
+      },
+      "check_before_picking": [
+        "Lamelle libere, rosa vivo da giovane, poi bruno scure: mai bianche",
+        "Base del gambo senza volva né sacco: estrai il fungo intero",
+        "Carne della base che non ingiallisce al taglio",
+        "Odore debole, non di inchiostro o di fenolo",
+        "Cresce nei prati e pascoli, non nel bosco"
+      ],
+      "sources": [
+        {
+          "title": "First Nature — Agaricus campestris",
+          "url": "https://www.first-nature.com/fungi/agaricus-campestris.php"
+        },
+        {
+          "title": "Wikipedia (it) — Agaricus campestris (fonte secondaria)",
+          "url": "https://it.wikipedia.org/wiki/Agaricus_campestris"
+        },
+        {
+          "title": "Species Fungorum — Agaricus campestris (nome corrente)",
+          "url": "https://www.speciesfungorum.org/Names/NamesRecord.asp?RecordID=356498"
+        },
+        {
+          "title": "First Nature — Agaricus xanthodermus",
+          "url": "https://www.first-nature.com/fungi/agaricus-xanthodermus.php"
+        },
+        {
+          "title": "First Nature — Amanita phalloides (confronto con Agaricus)",
+          "url": "https://www.first-nature.com/fungi/amanita-phalloides.php"
+        },
+        {
+          "title": "First Nature — Amanita virosa (confronto con Agaricus)",
+          "url": "https://www.first-nature.com/fungi/amanita-virosa.php"
+        }
+      ],
+      "trees": [],
+      "dangerous_lookalikes": [
+        "amanita-phalloides",
+        "amanita-verna",
+        "amanita-virosa"
+      ],
+      "caution": "Si confonde con agarici tossici e amanite mortali: fai controllare il raccolto."
+    },
+    "agaricus-arvensis": {
+      "latin": "Agaricus arvensis",
+      "name": "Prataiolo maggiore",
+      "edible_id": null,
+      "toxicity": "commestibile",
+      "traits": {
+        "hymenophore": [
+          "lamelle"
+        ],
+        "hymenophore_color": [
+          "rosa",
+          "bruno"
+        ],
+        "cap_color": [
+          "bianco",
+          "crema",
+          "giallo"
+        ],
+        "cap_shape": [
+          "emisferico",
+          "convesso",
+          "piano"
+        ],
+        "cap_size": [
+          "medio",
+          "grande"
+        ],
+        "cap_surface": [
+          "liscia",
+          "squamosa"
+        ],
+        "cap_veil": false,
+        "stem_ring": true,
+        "stem_volva": false,
+        "stem_reticulum": false,
+        "stem_base": [
+          "normale",
+          "bulbosa"
+        ],
+        "flesh_change": [
+          "nessuno",
+          "giallo"
+        ],
+        "flesh_texture": [
+          "soda"
+        ],
+        "smell": [
+          "anice"
+        ],
+        "latex": false,
+        "gill_attachment": [
+          "libere"
+        ],
+        "growth": [
+          "gregario"
+        ],
+        "habitat": [
+          "prati/radure"
+        ],
+        "season": [
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "spore_print": [
+          "bruno-violaceo",
+          "bruno"
+        ]
+      },
+      "check_before_picking": [
+        "Odore netto di anice, non di inchiostro o di fenolo",
+        "Base del gambo che al taglio non diventa subito giallo cromo",
+        "Anello ampio, doppio, a ruota dentata sotto",
+        "Lamelle libere rosa pallido poi brune: mai bianche a maturità",
+        "Nessuna volva alla base: estrai il fungo intero"
+      ],
+      "sources": [
+        {
+          "title": "First Nature — Agaricus arvensis",
+          "url": "https://www.first-nature.com/fungi/agaricus-arvensis.php"
+        },
+        {
+          "title": "Wikipedia (it) — Agaricus arvensis (fonte secondaria)",
+          "url": "https://it.wikipedia.org/wiki/Agaricus_arvensis"
+        },
+        {
+          "title": "Species Fungorum — Agaricus arvensis (nome corrente)",
+          "url": "https://www.speciesfungorum.org/Names/NamesRecord.asp?RecordID=325880"
+        },
+        {
+          "title": "First Nature — Agaricus xanthodermus",
+          "url": "https://www.first-nature.com/fungi/agaricus-xanthodermus.php"
+        }
+      ],
+      "trees": [],
+      "dangerous_lookalikes": [
+        "amanita-phalloides",
+        "amanita-verna",
+        "amanita-virosa"
+      ],
+      "caution": "Si confonde con Agaricus xanthodermus e altri agarici tossici."
+    },
+    "agaricus-bisporus": {
+      "latin": "Agaricus bisporus",
+      "name": "Champignon",
+      "edible_id": null,
+      "toxicity": "commestibile",
+      "traits": {
+        "hymenophore": [
+          "lamelle"
+        ],
+        "hymenophore_color": [
+          "rosa",
+          "bruno"
+        ],
+        "cap_color": [
+          "bruno",
+          "bianco"
+        ],
+        "cap_shape": [
+          "emisferico",
+          "convesso",
+          "piano"
+        ],
+        "cap_size": [
+          "medio"
+        ],
+        "cap_surface": null,
+        "cap_veil": false,
+        "stem_ring": true,
+        "stem_volva": false,
+        "stem_reticulum": false,
+        "stem_base": null,
+        "flesh_change": null,
+        "flesh_texture": null,
+        "smell": [
+          "gradevole"
+        ],
+        "latex": false,
+        "gill_attachment": [
+          "libere"
+        ],
+        "growth": [
+          "gregario"
+        ],
+        "habitat": [
+          "prati/radure"
+        ],
+        "season": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "spore_print": [
+          "bruno"
+        ]
+      },
+      "check_before_picking": [
+        "Lamelle libere, rosa poi bruno cioccolato: mai bianche",
+        "Anello membranoso sul gambo, nessuna volva alla base",
+        "Odore fungino, non di inchiostro o di fenolo",
+        "Cresce in prati concimati e terreni ricchi"
+      ],
+      "sources": [
+        {
+          "title": "First Nature — Agaricus bisporus",
+          "url": "https://www.first-nature.com/fungi/agaricus-bisporus.php"
+        },
+        {
+          "title": "Wikipedia (it) — Agaricus bisporus (fonte secondaria)",
+          "url": "https://it.wikipedia.org/wiki/Agaricus_bisporus"
+        },
+        {
+          "title": "Species Fungorum — Agaricus bisporus (nome corrente)",
+          "url": "https://www.speciesfungorum.org/Names/NamesRecord.asp?RecordID=531546"
+        }
+      ],
+      "trees": [],
+      "dangerous_lookalikes": [
+        "amanita-phalloides",
+        "amanita-verna",
+        "amanita-virosa"
+      ],
+      "caution": "La familiarità con lo champignon coltivato non identifica un esemplare selvatico."
+    },
+    "agaricus-sylvicola": {
+      "latin": "Agaricus sylvicola",
+      "name": "Prataiolo dei boschi",
+      "edible_id": null,
+      "toxicity": "commestibile",
+      "traits": {
+        "hymenophore": [
+          "lamelle"
+        ],
+        "hymenophore_color": [
+          "bianco",
+          "grigio",
+          "rosa",
+          "bruno"
+        ],
+        "cap_color": [
+          "bianco",
+          "crema",
+          "giallo"
+        ],
+        "cap_shape": [
+          "emisferico",
+          "convesso",
+          "piano"
+        ],
+        "cap_size": [
+          "medio",
+          "grande"
+        ],
+        "cap_surface": null,
+        "cap_veil": false,
+        "stem_ring": true,
+        "stem_volva": false,
+        "stem_reticulum": false,
+        "stem_base": [
+          "bulbosa"
+        ],
+        "flesh_change": null,
+        "flesh_texture": null,
+        "smell": [
+          "anice"
+        ],
+        "latex": false,
+        "gill_attachment": [
+          "libere"
+        ],
+        "growth": [
+          "singolo",
+          "gregario"
+        ],
+        "habitat": [
+          "latifoglie",
+          "conifere"
+        ],
+        "season": [
+          8,
+          9,
+          10,
+          11,
+          12,
+          1,
+          2
+        ],
+        "spore_print": [
+          "bruno"
+        ]
+      },
+      "check_before_picking": [
+        "Lamelle bianche solo da giovanissimo, poi grigio-rosa e bruno cioccolato",
+        "Piccolo bulbo alla base, ma nessuna volva a sacco: estrai il fungo intero",
+        "Odore di anice, non di inchiostro o di fenolo",
+        "Anello sul gambo",
+        "Base del gambo che al taglio non diventa subito giallo cromo"
+      ],
+      "sources": [
+        {
+          "title": "First Nature — Agaricus sylvicola",
+          "url": "https://www.first-nature.com/fungi/agaricus-sylvicola.php"
+        },
+        {
+          "title": "Wikipedia (it) — Agaricus silvicola (fonte secondaria)",
+          "url": "https://it.wikipedia.org/wiki/Agaricus_silvicola"
+        },
+        {
+          "title": "Species Fungorum — Agaricus sylvicola (nome corrente)",
+          "url": "https://www.speciesfungorum.org/Names/NamesRecord.asp?RecordID=546340"
+        },
+        {
+          "title": "First Nature — Agaricus xanthodermus",
+          "url": "https://www.first-nature.com/fungi/agaricus-xanthodermus.php"
+        },
+        {
+          "title": "First Nature — Amanita phalloides (confronto con Agaricus)",
+          "url": "https://www.first-nature.com/fungi/amanita-phalloides.php"
+        },
+        {
+          "title": "First Nature — Amanita virosa (confronto con Agaricus)",
+          "url": "https://www.first-nature.com/fungi/amanita-virosa.php"
+        }
+      ],
+      "trees": [],
+      "dangerous_lookalikes": [
+        "amanita-phalloides",
+        "amanita-verna",
+        "amanita-virosa"
+      ],
+      "caution": "Si confonde con agarici tossici e amanite mortali."
+    },
+    "cyclocybe-aegerita": {
+      "latin": "Cyclocybe cylindracea (= Cyclocybe aegerita)",
+      "name": "Pioppino",
+      "edible_id": null,
+      "toxicity": "commestibile con cautela",
+      "traits": {
+        "hymenophore": [
+          "lamelle"
+        ],
+        "hymenophore_color": [
+          "crema",
+          "grigio",
+          "bruno"
+        ],
+        "cap_color": [
+          "crema",
+          "bruno"
+        ],
+        "cap_shape": [
+          "emisferico",
+          "convesso",
+          "piano"
+        ],
+        "cap_size": [
+          "piccolo",
+          "medio"
+        ],
+        "cap_surface": null,
+        "cap_veil": false,
+        "stem_ring": true,
+        "stem_volva": false,
+        "stem_reticulum": false,
+        "stem_base": null,
+        "flesh_change": [
+          "nessuno"
+        ],
+        "flesh_texture": [
+          "fibrosa"
+        ],
+        "smell": [
+          "gradevole"
+        ],
+        "latex": false,
+        "gill_attachment": [
+          "adnate",
+          "decorrenti"
+        ],
+        "growth": [
+          "cespitoso"
+        ],
+        "habitat": [
+          "ceppaie/legno",
+          "latifoglie"
+        ],
+        "season": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "spore_print": [
+          "bruno"
+        ]
+      },
+      "check_before_picking": [
+        "Cespi su legno vivo o morto di latifoglie, soprattutto pioppo e salice",
+        "Anello membranoso persistente sul gambo",
+        "Lamelle crema, poi bruno tabacco: sporata bruna",
+        "Cappello nocciola chiaro, più scuro al centro, non viscido"
+      ],
+      "sources": [
+        {
+          "title": "First Nature — Cyclocybe cylindracea",
+          "url": "https://www.first-nature.com/fungi/cyclocybe-cylindracea.php"
+        },
+        {
+          "title": "Wikipedia (it) — Cyclocybe aegerita (fonte secondaria)",
+          "url": "https://it.wikipedia.org/wiki/Cyclocybe_aegerita"
+        },
+        {
+          "title": "MycoDB — Cyclocybe cylindracea",
+          "url": "https://www.mycodb.fr/fiche.php?genre=Cyclocybe&espece=cylindracea"
+        },
+        {
+          "title": "Species Fungorum — Cyclocybe cylindracea (nome corrente)",
+          "url": "https://www.speciesfungorum.org/Names/NamesRecord.asp?RecordID=550605"
+        },
+        {
+          "title": "Wikipedia (it) — Galerina marginata (fonte secondaria)",
+          "url": "https://it.wikipedia.org/wiki/Galerina_marginata"
+        },
+        {
+          "title": "Wikipedia (it) — Hypholoma fasciculare (fonte secondaria)",
+          "url": "https://it.wikipedia.org/wiki/Hypholoma_fasciculare"
+        }
+      ],
+      "trees": [
+        "pioppo",
+        "salice",
+        "ceppaie e legno morto di latifoglie"
+      ],
+      "dangerous_lookalikes": [
+        "galerina-marginata",
+        "hypholoma-fasciculare",
+        "inocybe"
+      ],
+      "caution": "Elimina i gambi fibrosi e cuoci completamente. Fai controllare il raccolto e segui le indicazioni del micologo."
+    },
+    "pleurotus-ostreatus": {
+      "latin": "Pleurotus ostreatus",
+      "name": "Gelone",
+      "edible_id": null,
+      "toxicity": "commestibile",
+      "traits": {
+        "hymenophore": [
+          "lamelle"
+        ],
+        "hymenophore_color": [
+          "bianco",
+          "crema"
+        ],
+        "cap_color": [
+          "bianco",
+          "crema",
+          "bruno",
+          "grigio"
+        ],
+        "cap_shape": [
+          "convesso",
+          "imbuto"
+        ],
+        "cap_size": [
+          "medio",
+          "grande"
+        ],
+        "cap_surface": null,
+        "cap_veil": false,
+        "stem_ring": false,
+        "stem_volva": false,
+        "stem_reticulum": false,
+        "stem_base": [
+          "assottigliata"
+        ],
+        "flesh_change": null,
+        "flesh_texture": null,
+        "smell": [
+          "gradevole"
+        ],
+        "latex": false,
+        "gill_attachment": [
+          "decorrenti"
+        ],
+        "growth": [
+          "gregario",
+          "cespitoso"
+        ],
+        "habitat": [
+          "ceppaie/legno",
+          "latifoglie"
+        ],
+        "season": [
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          1,
+          2
+        ],
+        "spore_print": [
+          "bianco"
+        ]
+      },
+      "check_before_picking": [
+        "Cresce su tronchi e ceppaie di latifoglie, mai a terra",
+        "Lamelle bianche o crema, decorrenti fino al gambo corto e laterale",
+        "Nessun anello sul gambo",
+        "Sporata bianca o grigio-lilla, non bruna"
+      ],
+      "sources": [
+        {
+          "title": "First Nature — Pleurotus ostreatus",
+          "url": "https://www.first-nature.com/fungi/pleurotus-ostreatus.php"
+        },
+        {
+          "title": "Wikipedia (it) — Pleurotus ostreatus (fonte secondaria)",
+          "url": "https://it.wikipedia.org/wiki/Pleurotus_ostreatus"
+        },
+        {
+          "title": "MycoDB — Pleurotus ostreatus",
+          "url": "https://www.mycodb.fr/fiche.php?genre=Pleurotus&espece=ostreatus"
+        },
+        {
+          "title": "Species Fungorum — Pleurotus ostreatus (nome corrente)",
+          "url": "https://www.speciesfungorum.org/Names/NamesRecord.asp?RecordID=174220"
+        }
+      ],
+      "trees": [
+        "faggio",
+        "pioppo",
+        "ceppaie e legno morto di latifoglie"
+      ],
+      "dangerous_lookalikes": []
+    },
+    "pleurotus-eryngii": {
+      "latin": "Pleurotus eryngii",
+      "name": "Cardoncello",
+      "edible_id": null,
+      "toxicity": "commestibile",
+      "traits": {
+        "hymenophore": [
+          "lamelle"
+        ],
+        "hymenophore_color": [
+          "bianco",
+          "grigio",
+          "crema"
+        ],
+        "cap_color": [
+          "bianco",
+          "crema",
+          "bruno",
+          "grigio"
+        ],
+        "cap_shape": [
+          "convesso",
+          "imbuto"
+        ],
+        "cap_size": [
+          "piccolo",
+          "medio"
+        ],
+        "cap_surface": [
+          "vellutata/feltrata"
+        ],
+        "cap_veil": false,
+        "stem_ring": false,
+        "stem_volva": false,
+        "stem_reticulum": false,
+        "stem_base": [
+          "assottigliata"
+        ],
+        "flesh_change": [
+          "nessuno"
+        ],
+        "flesh_texture": [
+          "soda"
+        ],
+        "smell": [
+          "gradevole"
+        ],
+        "latex": false,
+        "gill_attachment": [
+          "decorrenti"
+        ],
+        "growth": null,
+        "habitat": [
+          "prati/radure"
+        ],
+        "season": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          1,
+          2
+        ],
+        "spore_print": [
+          "bianco"
+        ]
+      },
+      "check_before_picking": [
+        "Cresce in prati e pascoli, sulle radici morte di ombrellifere (eringio, ferula)",
+        "Lamelle bianco-grigiastre che scendono sul gambo",
+        "Gambo sodo, spesso eccentrico, senza anello",
+        "Carne bianca e soda, che non cambia colore"
+      ],
+      "sources": [
+        {
+          "title": "Wikipedia (it) — Pleurotus eryngii (fonte secondaria)",
+          "url": "https://it.wikipedia.org/wiki/Pleurotus_eryngii"
+        },
+        {
+          "title": "MycoDB — Pleurotus eryngii",
+          "url": "https://www.mycodb.fr/fiche.php?genre=Pleurotus&espece=eryngii"
+        },
+        {
+          "title": "Species Fungorum — Pleurotus eryngii (nome corrente)",
+          "url": "https://www.speciesfungorum.org/Names/NamesRecord.asp?RecordID=170772"
+        }
+      ],
+      "trees": [],
+      "dangerous_lookalikes": []
+    },
+    "pleurotus-cornucopiae": {
+      "latin": "Pleurotus cornucopiae",
+      "name": "Cornucopia",
+      "edible_id": null,
+      "toxicity": "commestibile",
+      "traits": {
+        "hymenophore": [
+          "lamelle"
+        ],
+        "hymenophore_color": [
+          "bianco",
+          "crema"
+        ],
+        "cap_color": [
+          "crema"
+        ],
+        "cap_shape": [
+          "convesso",
+          "imbuto"
+        ],
+        "cap_size": [
+          "piccolo",
+          "medio"
+        ],
+        "cap_surface": null,
+        "cap_veil": false,
+        "stem_ring": false,
+        "stem_volva": false,
+        "stem_reticulum": false,
+        "stem_base": null,
+        "flesh_change": null,
+        "flesh_texture": null,
+        "smell": [
+          "gradevole",
+          "anice"
+        ],
+        "latex": false,
+        "gill_attachment": [
+          "decorrenti"
+        ],
+        "growth": [
+          "cespitoso"
+        ],
+        "habitat": [
+          "ceppaie/legno",
+          "latifoglie"
+        ],
+        "season": [
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "spore_print": [
+          "bianco",
+          "crema"
+        ]
+      },
+      "check_before_picking": [
+        "Cespi su legno di latifoglie, con gambi uniti alla base",
+        "Lamelle bianche o crema, molto decorrenti, non giallo-arancio",
+        "Cappello crema o ocra chiaro, a imbuto con l'età",
+        "Nessun anello sul gambo"
+      ],
+      "sources": [
+        {
+          "title": "First Nature — Pleurotus cornucopiae",
+          "url": "https://www.first-nature.com/fungi/pleurotus-cornucopiae.php"
+        },
+        {
+          "title": "Wikipedia (it) — Pleurotus cornucopiae (fonte secondaria)",
+          "url": "https://it.wikipedia.org/wiki/Pleurotus_cornucopiae"
+        },
+        {
+          "title": "Species Fungorum — Pleurotus cornucopiae (nome corrente)",
+          "url": "https://www.speciesfungorum.org/Names/NamesRecord.asp?RecordID=355897"
+        },
+        {
+          "title": "Wikipedia (it) — Omphalotus olearius (fonte secondaria)",
+          "url": "https://it.wikipedia.org/wiki/Omphalotus_olearius"
+        }
+      ],
+      "trees": [
+        "faggio",
+        "ceppaie e legno morto di latifoglie"
+      ],
+      "dangerous_lookalikes": [
+        "omphalotus-olearius"
+      ]
+    },
+    "morchella-esculenta": {
+      "latin": "Morchella esculenta s.l.",
+      "name": "Spugnola gialla",
+      "edible_id": null,
+      "toxicity": "commestibile con cautela",
+      "traits": {
+        "hymenophore": [
+          "liscio"
+        ],
+        "hymenophore_color": [
+          "crema",
+          "giallo",
+          "bruno"
+        ],
+        "cap_color": [
+          "crema",
+          "giallo",
+          "bruno"
+        ],
+        "cap_shape": [
+          "conico",
+          "emisferico"
+        ],
+        "cap_size": [
+          "piccolo",
+          "medio"
+        ],
+        "cap_surface": null,
+        "cap_veil": false,
+        "stem_ring": false,
+        "stem_volva": false,
+        "stem_reticulum": false,
+        "stem_base": [
+          "normale",
+          "bulbosa"
+        ],
+        "flesh_change": [
+          "nessuno"
+        ],
+        "flesh_texture": null,
+        "smell": [
+          "nessuno"
+        ],
+        "latex": false,
+        "gill_attachment": null,
+        "growth": null,
+        "habitat": [
+          "latifoglie"
+        ],
+        "season": [
+          3,
+          4,
+          5,
+          6
+        ],
+        "spore_print": [
+          "crema",
+          "ocra"
+        ]
+      },
+      "check_before_picking": [
+        "Testa a nido d'ape, con alveoli e costole, non a circonvoluzioni di cervello",
+        "Testa e gambo cavi, in un'unica camera, se tagliati per il lungo",
+        "Margine della testa saldato al gambo",
+        "Gambo bianco o crema"
+      ],
+      "sources": [
+        {
+          "title": "First Nature — Morchella esculenta",
+          "url": "https://www.first-nature.com/fungi/morchella-esculenta.php"
+        },
+        {
+          "title": "Wikipedia (it) — Morchella esculenta (fonte secondaria)",
+          "url": "https://it.wikipedia.org/wiki/Morchella_esculenta"
+        },
+        {
+          "title": "MycoDB — Morchella esculenta",
+          "url": "https://www.mycodb.fr/fiche.php?genre=Morchella&espece=esculenta"
+        },
+        {
+          "title": "Species Fungorum — Morchella esculenta (nome corrente)",
+          "url": "https://www.speciesfungorum.org/Names/NamesRecord.asp?RecordID=247978"
+        },
+        {
+          "title": "First Nature — Gyromitra esculenta",
+          "url": "https://www.first-nature.com/fungi/gyromitra-esculenta.php"
+        }
+      ],
+      "trees": [
+        "pioppo"
+      ],
+      "dangerous_lookalikes": [],
+      "caution": "Commestibile solo dopo corretta cottura; cruda o poco cotta può causare intossicazioni. Si confonde con giromitre tossiche."
+    },
+    "morchella-elata": {
+      "latin": "Morchella elata s.l.",
+      "name": "Spugnola nera",
+      "edible_id": null,
+      "toxicity": "commestibile con cautela",
+      "traits": {
+        "hymenophore": [
+          "liscio"
+        ],
+        "hymenophore_color": [
+          "bruno",
+          "grigio",
+          "nero"
+        ],
+        "cap_color": [
+          "bruno",
+          "grigio",
+          "nero"
+        ],
+        "cap_shape": [
+          "conico"
+        ],
+        "cap_size": [
+          "piccolo",
+          "medio"
+        ],
+        "cap_surface": null,
+        "cap_veil": false,
+        "stem_ring": false,
+        "stem_volva": false,
+        "stem_reticulum": false,
+        "stem_base": null,
+        "flesh_change": [
+          "nessuno"
+        ],
+        "flesh_texture": null,
+        "smell": [
+          "nessuno"
+        ],
+        "latex": false,
+        "gill_attachment": null,
+        "growth": null,
+        "habitat": [
+          "latifoglie",
+          "conifere",
+          "prati/radure"
+        ],
+        "season": [
+          3,
+          4,
+          5
+        ],
+        "spore_print": [
+          "crema"
+        ]
+      },
+      "check_before_picking": [
+        "Testa conica a nido d'ape, con costole verticali allineate",
+        "Testa e gambo cavi in un'unica camera",
+        "Non a circonvoluzioni di cervello bruno-rossicce",
+        "Gambo liscio in alto, solcato verso la base"
+      ],
+      "sources": [
+        {
+          "title": "First Nature — Morchella elata",
+          "url": "https://www.first-nature.com/fungi/morchella-elata.php"
+        },
+        {
+          "title": "Wikipedia (it) — Morchella conica (fonte secondaria)",
+          "url": "https://it.wikipedia.org/wiki/Morchella_conica"
+        },
+        {
+          "title": "Species Fungorum — Morchella elata (nome corrente)",
+          "url": "https://www.speciesfungorum.org/Names/NamesRecord.asp?RecordID=212987"
+        },
+        {
+          "title": "First Nature — Gyromitra esculenta",
+          "url": "https://www.first-nature.com/fungi/gyromitra-esculenta.php"
+        }
+      ],
+      "trees": [],
+      "dangerous_lookalikes": [],
+      "caution": "Commestibile solo dopo corretta cottura; cruda o poco cotta può causare intossicazioni. Si confonde con giromitre tossiche."
+    },
+    "calocybe-gambosa": {
+      "latin": "Calocybe gambosa",
+      "name": "Prugnolo",
+      "edible_id": null,
+      "toxicity": "commestibile",
+      "traits": {
+        "hymenophore": [
+          "lamelle"
+        ],
+        "hymenophore_color": [
+          "bianco"
+        ],
+        "cap_color": [
+          "bianco",
+          "crema"
+        ],
+        "cap_shape": [
+          "emisferico",
+          "convesso",
+          "piano"
+        ],
+        "cap_size": [
+          "medio",
+          "grande"
+        ],
+        "cap_surface": [
+          "liscia"
+        ],
+        "cap_veil": false,
+        "stem_ring": false,
+        "stem_volva": false,
+        "stem_reticulum": false,
+        "stem_base": [
+          "normale"
+        ],
+        "flesh_change": [
+          "nessuno"
+        ],
+        "flesh_texture": [
+          "soda"
+        ],
+        "smell": [
+          "farina"
+        ],
+        "latex": false,
+        "gill_attachment": [
+          "smarginate"
+        ],
+        "growth": [
+          "gregario"
+        ],
+        "habitat": [
+          "prati/radure",
+          "latifoglie"
+        ],
+        "season": [
+          3,
+          4,
+          5,
+          6
+        ],
+        "spore_print": [
+          "bianco"
+        ]
+      },
+      "check_before_picking": [
+        "Lamelle bianche e molto fitte, che non arrossano al tocco",
+        "Odore forte di farina",
+        "Carne bianca e soda, gambo pieno senza anello",
+        "Fruttifica in primavera, in cerchi nei prati e tra i cespugli"
+      ],
+      "sources": [
+        {
+          "title": "First Nature — Calocybe gambosa",
+          "url": "https://www.first-nature.com/fungi/calocybe-gambosa.php"
+        },
+        {
+          "title": "Wikipedia (it) — Calocybe gambosa (fonte secondaria)",
+          "url": "https://it.wikipedia.org/wiki/Calocybe_gambosa"
+        },
+        {
+          "title": "Species Fungorum — Calocybe gambosa (nome corrente)",
+          "url": "https://www.speciesfungorum.org/Names/NamesRecord.asp?RecordID=293917"
+        },
+        {
+          "title": "First Nature — Entoloma sinuatum",
+          "url": "https://www.first-nature.com/fungi/entoloma-sinuatum.php"
+        },
+        {
+          "title": "First Nature — Inocybe erubescens",
+          "url": "https://www.first-nature.com/fungi/inocybe-erubescens.php"
+        },
+        {
+          "title": "First Nature — Clitocybe rivulosa",
+          "url": "https://www.first-nature.com/fungi/clitocybe-rivulosa.php"
+        }
+      ],
+      "trees": [
+        "nocciolo",
+        "faggio",
+        "betulla"
+      ],
+      "dangerous_lookalikes": [
+        "inocybe",
+        "entoloma-sinuatum"
+      ],
+      "caution": "Può essere confuso con Inocybe erubescens, mortale, e altri funghi tossici."
+    },
+    "marasmius-oreades": {
+      "latin": "Marasmius oreades",
+      "name": "Gambesecche",
+      "edible_id": null,
+      "toxicity": "commestibile",
+      "traits": {
+        "hymenophore": [
+          "lamelle"
+        ],
+        "hymenophore_color": [
+          "bianco",
+          "crema"
+        ],
+        "cap_color": [
+          "crema",
+          "bruno"
+        ],
+        "cap_shape": [
+          "convesso",
+          "ombrellato"
+        ],
+        "cap_size": [
+          "piccolo"
+        ],
+        "cap_surface": [
+          "liscia"
+        ],
+        "cap_veil": false,
+        "stem_ring": false,
+        "stem_volva": false,
+        "stem_reticulum": false,
+        "stem_base": [
+          "normale"
+        ],
+        "flesh_change": [
+          "nessuno"
+        ],
+        "flesh_texture": [
+          "elastica/coriacea"
+        ],
+        "smell": [
+          "gradevole"
+        ],
+        "latex": false,
+        "gill_attachment": [
+          "libere"
+        ],
+        "growth": [
+          "gregario"
+        ],
+        "habitat": [
+          "prati/radure"
+        ],
+        "season": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "spore_print": [
+          "bianco"
+        ]
+      },
+      "check_before_picking": [
+        "Gambo tenace ed elastico: si torce senza spezzarsi",
+        "Lamelle distanziate, bianche o crema, libere",
+        "Cappello piccolo con umbone largo, ocra che schiarisce asciugando",
+        "Cresce nei prati, in cerchi o file; non nel bosco"
+      ],
+      "sources": [
+        {
+          "title": "First Nature — Marasmius oreades",
+          "url": "https://www.first-nature.com/fungi/marasmius-oreades.php"
+        },
+        {
+          "title": "Wikipedia (it) — Marasmius oreades (fonte secondaria)",
+          "url": "https://it.wikipedia.org/wiki/Marasmius_oreades"
+        },
+        {
+          "title": "Species Fungorum — Marasmius oreades (nome corrente)",
+          "url": "https://www.speciesfungorum.org/Names/NamesRecord.asp?RecordID=174712"
+        },
+        {
+          "title": "Wikipedia (it) — Lepiota brunneoincarnata (fonte secondaria)",
+          "url": "https://it.wikipedia.org/wiki/Lepiota_brunneoincarnata"
+        },
+        {
+          "title": "First Nature — Clitocybe rivulosa",
+          "url": "https://www.first-nature.com/fungi/clitocybe-rivulosa.php"
+        }
+      ],
+      "trees": [],
+      "dangerous_lookalikes": [
+        "lepiota-brunneoincarnata",
+        "inocybe",
+        "galerina-marginata"
+      ],
+      "caution": "Si confonde con piccole clitocibi tossiche: fai controllare il raccolto."
+    },
+    "craterellus-lutescens": {
+      "latin": "Craterellus lutescens",
+      "name": "Finferla",
+      "edible_id": null,
+      "toxicity": "commestibile",
+      "traits": {
+        "hymenophore": [
+          "pliche",
+          "liscio"
+        ],
+        "hymenophore_color": [
+          "giallo",
+          "arancio"
+        ],
+        "cap_color": [
+          "bruno",
+          "giallo"
+        ],
+        "cap_shape": [
+          "imbuto",
+          "trombetta"
+        ],
+        "cap_size": [
+          "piccolo",
+          "medio"
+        ],
+        "cap_surface": null,
+        "cap_veil": null,
+        "stem_ring": false,
+        "stem_volva": false,
+        "stem_reticulum": false,
+        "stem_base": null,
+        "flesh_change": null,
+        "flesh_texture": [
+          "fibrosa"
+        ],
+        "smell": [
+          "gradevole"
+        ],
+        "latex": false,
+        "gill_attachment": null,
+        "growth": [
+          "gregario",
+          "cespitoso"
+        ],
+        "habitat": [
+          "conifere",
+          "latifoglie"
+        ],
+        "season": [
+          9,
+          10,
+          11
+        ],
+        "spore_print": [
+          "crema"
+        ]
+      },
+      "check_before_picking": [
+        "Gambo giallo-arancio, cavo, appiattito e solcato",
+        "Sotto il cappello pieghe basse e irregolari, gialle o arancio: non vere lamelle",
+        "Cappello sottile, bruno-giallo, a imbuto",
+        "A gruppi nei boschi umidi e muschiosi"
+      ],
+      "sources": [
+        {
+          "title": "Wikipedia (it) — Cantharellus lutescens (fonte secondaria)",
+          "url": "https://it.wikipedia.org/wiki/Cantharellus_lutescens"
+        },
+        {
+          "title": "MycoDB — Craterellus lutescens",
+          "url": "https://www.mycodb.fr/fiche.php?genre=Craterellus&espece=lutescens"
+        },
+        {
+          "title": "Species Fungorum — Craterellus lutescens (nome corrente)",
+          "url": "https://www.speciesfungorum.org/Names/NamesRecord.asp?RecordID=184644"
+        }
+      ],
+      "trees": [
+        "faggio"
+      ],
+      "dangerous_lookalikes": []
+    },
+    "lactarius-deliciosus": {
+      "latin": "Lactarius deliciosus",
+      "name": "Sanguinello",
+      "edible_id": null,
+      "toxicity": "commestibile",
+      "traits": {
+        "hymenophore": [
+          "lamelle"
+        ],
+        "hymenophore_color": [
+          "arancio"
+        ],
+        "cap_color": [
+          "arancio",
+          "verde"
+        ],
+        "cap_shape": [
+          "convesso",
+          "imbuto"
+        ],
+        "cap_size": [
+          "medio",
+          "grande"
+        ],
+        "cap_surface": [
+          "asciutta",
+          "viscida"
+        ],
+        "cap_veil": false,
+        "stem_ring": false,
+        "stem_volva": false,
+        "stem_reticulum": false,
+        "stem_base": null,
+        "flesh_change": [
+          "rosso"
+        ],
+        "flesh_texture": [
+          "gessosa"
+        ],
+        "smell": [
+          "gradevole"
+        ],
+        "latex": true,
+        "gill_attachment": [
+          "decorrenti"
+        ],
+        "growth": null,
+        "habitat": [
+          "conifere"
+        ],
+        "season": [
+          8,
+          9,
+          10,
+          11
+        ],
+        "spore_print": [
+          "crema",
+          "rosa"
+        ]
+      },
+      "check_before_picking": [
+        "Lattice arancio carota che vira lentamente al rosso vino",
+        "Gambo con fossette arancio vivo (scrobicoli)",
+        "Cappello arancio a zone, con macchie verdi",
+        "Cresce sotto pini"
+      ],
+      "sources": [
+        {
+          "title": "First Nature — Lactarius deliciosus",
+          "url": "https://www.first-nature.com/fungi/lactarius-deliciosus.php"
+        },
+        {
+          "title": "Wikipedia (it) — Lactarius deliciosus (fonte secondaria)",
+          "url": "https://it.wikipedia.org/wiki/Lactarius_deliciosus"
+        },
+        {
+          "title": "Species Fungorum — Lactarius deliciosus (nome corrente)",
+          "url": "https://www.speciesfungorum.org/Names/NamesRecord.asp?RecordID=224737"
+        },
+        {
+          "title": "First Nature — Lactarius deterrimus",
+          "url": "https://www.first-nature.com/fungi/lactarius-deterrimus.php"
+        }
+      ],
+      "trees": [
+        "pino nero",
+        "pino silvestre",
+        "pino domestico",
+        "pino marittimo",
+        "pino d'aleppo"
+      ],
+      "dangerous_lookalikes": [],
+      "caution": "Non tutti i lattari con colori simili sono commestibili."
+    },
+    "lactarius-deterrimus": {
+      "latin": "Lactarius deterrimus",
+      "name": "Lattario degli abeti",
+      "edible_id": null,
+      "toxicity": "commestibile",
+      "traits": {
+        "hymenophore": [
+          "lamelle"
+        ],
+        "hymenophore_color": [
+          "arancio"
+        ],
+        "cap_color": [
+          "arancio",
+          "giallo",
+          "verde"
+        ],
+        "cap_shape": [
+          "convesso",
+          "imbuto"
+        ],
+        "cap_size": [
+          "medio"
+        ],
+        "cap_surface": null,
+        "cap_veil": false,
+        "stem_ring": false,
+        "stem_volva": false,
+        "stem_reticulum": false,
+        "stem_base": null,
+        "flesh_change": [
+          "rosso"
+        ],
+        "flesh_texture": [
+          "gessosa"
+        ],
+        "smell": [
+          "gradevole"
+        ],
+        "latex": true,
+        "gill_attachment": [
+          "decorrenti"
+        ],
+        "growth": null,
+        "habitat": [
+          "conifere"
+        ],
+        "season": [
+          8,
+          9,
+          10,
+          11
+        ],
+        "spore_print": [
+          "crema",
+          "rosa"
+        ]
+      },
+      "check_before_picking": [
+        "Lattice arancio che in mezz'ora vira al rosso vino",
+        "Gambo liscio, senza fossette, con fascia chiara in alto",
+        "Cappello arancio con macchie verdi già da giovane",
+        "Cresce sotto abete rosso"
+      ],
+      "sources": [
+        {
+          "title": "First Nature — Lactarius deterrimus",
+          "url": "https://www.first-nature.com/fungi/lactarius-deterrimus.php"
+        },
+        {
+          "title": "MycoDB — Lactarius deterrimus",
+          "url": "https://www.mycodb.fr/fiche.php?genre=Lactarius&espece=deterrimus"
+        },
+        {
+          "title": "Species Fungorum — Lactarius deterrimus (nome corrente)",
+          "url": "https://www.speciesfungorum.org/Names/NamesRecord.asp?RecordID=332881"
+        }
+      ],
+      "trees": [
+        "abete rosso"
+      ],
+      "dangerous_lookalikes": []
+    },
+    "hygrophorus-marzuolus": {
+      "latin": "Hygrophorus marzuolus",
+      "name": "Marzuolo",
+      "edible_id": null,
+      "toxicity": "commestibile",
+      "traits": {
+        "hymenophore": [
+          "lamelle"
+        ],
+        "hymenophore_color": [
+          "bianco",
+          "grigio"
+        ],
+        "cap_color": [
+          "bianco",
+          "grigio",
+          "nero"
+        ],
+        "cap_shape": [
+          "convesso",
+          "piano"
+        ],
+        "cap_size": [
+          "piccolo",
+          "medio"
+        ],
+        "cap_surface": [
+          "liscia",
+          "viscida"
+        ],
+        "cap_veil": false,
+        "stem_ring": false,
+        "stem_volva": false,
+        "stem_reticulum": false,
+        "stem_base": [
+          "normale"
+        ],
+        "flesh_change": [
+          "nessuno"
+        ],
+        "flesh_texture": [
+          "soda",
+          "fibrosa"
+        ],
+        "smell": [
+          "gradevole",
+          "nessuno"
+        ],
+        "latex": false,
+        "gill_attachment": [
+          "adnate",
+          "decorrenti"
+        ],
+        "growth": [
+          "gregario"
+        ],
+        "habitat": [
+          "conifere",
+          "latifoglie"
+        ],
+        "season": [
+          2,
+          3,
+          4,
+          5
+        ],
+        "spore_print": [
+          "bianco"
+        ]
+      },
+      "check_before_picking": [
+        "Fruttifica a fine inverno, spesso sotto foglie o neve che si scioglie",
+        "Cappello da bianco a grigio scuro, sodo, non igrofano",
+        "Lamelle spesse, spaziate, bianche poi grigie",
+        "Gambo pieno, bianco o grigio, senza anello"
+      ],
+      "sources": [
+        {
+          "title": "Wikipedia (it) — Hygrophorus marzuolus (fonte secondaria)",
+          "url": "https://it.wikipedia.org/wiki/Hygrophorus_marzuolus"
+        },
+        {
+          "title": "MycoDB — Hygrophorus marzuolus",
+          "url": "https://www.mycodb.fr/fiche.php?genre=Hygrophorus&espece=marzuolus"
+        },
+        {
+          "title": "Species Fungorum — Hygrophorus marzuolus (nome corrente)",
+          "url": "https://www.speciesfungorum.org/Names/NamesRecord.asp?RecordID=181113"
+        }
+      ],
+      "trees": [
+        "faggio"
+      ],
+      "dangerous_lookalikes": []
+    },
+    "hygrophorus-latitabundus": {
+      "latin": "Hygrophorus latitabundus",
+      "name": "Lardaiolo",
+      "edible_id": null,
+      "toxicity": "commestibile",
+      "traits": {
+        "hymenophore": [
+          "lamelle"
+        ],
+        "hymenophore_color": [
+          "bianco"
+        ],
+        "cap_color": [
+          "bruno",
+          "grigio",
+          "nero"
+        ],
+        "cap_shape": [
+          "convesso",
+          "piano",
+          "ombrellato"
+        ],
+        "cap_size": [
+          "piccolo",
+          "medio"
+        ],
+        "cap_surface": [
+          "viscida"
+        ],
+        "cap_veil": false,
+        "stem_ring": false,
+        "stem_volva": false,
+        "stem_reticulum": false,
+        "stem_base": [
+          "assottigliata"
+        ],
+        "flesh_change": [
+          "nessuno"
+        ],
+        "flesh_texture": [
+          "soda"
+        ],
+        "smell": [
+          "nessuno",
+          "gradevole"
+        ],
+        "latex": false,
+        "gill_attachment": [
+          "decorrenti"
+        ],
+        "growth": null,
+        "habitat": [
+          "conifere"
+        ],
+        "season": [
+          9,
+          10,
+          11,
+          12,
+          1
+        ],
+        "spore_print": [
+          "bianco"
+        ]
+      },
+      "check_before_picking": [
+        "Cappello bruno scuro, quasi nero al centro, molto viscido",
+        "Gambo viscido, bianco con fibrille brune in alto, fusiforme",
+        "Lamelle cerose, bianche, appena decorrenti",
+        "Cresce sotto pini, su suolo calcareo"
+      ],
+      "sources": [
+        {
+          "title": "First Nature — Hygrophorus latitabundus",
+          "url": "https://www.first-nature.com/fungi/hygrophorus-latitabundus.php"
+        },
+        {
+          "title": "Wikipedia (it) — Hygrophorus latitabundus (fonte secondaria)",
+          "url": "https://it.wikipedia.org/wiki/Hygrophorus_latitabundus"
+        },
+        {
+          "title": "MycoDB — Hygrophorus latitabundus",
+          "url": "https://www.mycodb.fr/fiche.php?genre=Hygrophorus&espece=latitabundus"
+        },
+        {
+          "title": "Species Fungorum — Hygrophorus latitabundus (nome corrente)",
+          "url": "https://www.speciesfungorum.org/Names/NamesRecord.asp?RecordID=167748"
+        }
+      ],
+      "trees": [
+        "pino nero"
+      ],
+      "dangerous_lookalikes": []
+    },
+    "tricholoma-portentosum": {
+      "latin": "Tricholoma portentosum",
+      "name": "Portentoso",
+      "edible_id": null,
+      "toxicity": "commestibile",
+      "traits": {
+        "hymenophore": [
+          "lamelle"
+        ],
+        "hymenophore_color": [
+          "bianco",
+          "giallo"
+        ],
+        "cap_color": [
+          "grigio",
+          "bruno",
+          "giallo"
+        ],
+        "cap_shape": [
+          "convesso",
+          "ombrellato"
+        ],
+        "cap_size": [
+          "medio"
+        ],
+        "cap_surface": [
+          "viscida",
+          "asciutta"
+        ],
+        "cap_veil": false,
+        "stem_ring": false,
+        "stem_volva": false,
+        "stem_reticulum": false,
+        "stem_base": [
+          "normale"
+        ],
+        "flesh_change": [
+          "nessuno"
+        ],
+        "flesh_texture": null,
+        "smell": [
+          "farina",
+          "nessuno"
+        ],
+        "latex": false,
+        "gill_attachment": [
+          "adnate"
+        ],
+        "growth": [
+          "gregario"
+        ],
+        "habitat": [
+          "conifere",
+          "latifoglie"
+        ],
+        "season": [
+          8,
+          9,
+          10,
+          11,
+          12
+        ],
+        "spore_print": [
+          "bianco"
+        ]
+      },
+      "check_before_picking": [
+        "Cappello grigio con fibrille radiali scure e riflessi gialli",
+        "Lamelle bianche che ingialliscono, gambo bianco senza anello",
+        "Odore lieve di farina o quasi nullo",
+        "Cresce sotto pini, in autunno e fino ai primi geli"
+      ],
+      "sources": [
+        {
+          "title": "First Nature — Tricholoma portentosum",
+          "url": "https://www.first-nature.com/fungi/tricholoma-portentosum.php"
+        },
+        {
+          "title": "Wikipedia (it) — Tricholoma portentosum (fonte secondaria)",
+          "url": "https://it.wikipedia.org/wiki/Tricholoma_portentosum"
+        },
+        {
+          "title": "MycoDB — Tricholoma portentosum",
+          "url": "https://www.mycodb.fr/fiche.php?genre=Tricholoma&espece=portentosum"
+        },
+        {
+          "title": "Species Fungorum — Tricholoma portentosum (nome corrente)",
+          "url": "https://www.speciesfungorum.org/Names/NamesRecord.asp?RecordID=248886"
+        }
+      ],
+      "trees": [
+        "pino nero",
+        "pino silvestre",
+        "pino domestico",
+        "pino marittimo",
+        "pino d'aleppo",
+        "faggio"
+      ],
+      "dangerous_lookalikes": [],
+      "caution": "Si confonde con altre specie di Tricholoma tossiche."
+    },
+    "coprinus-comatus": {
+      "latin": "Coprinus comatus",
+      "name": "Coprinus comatus",
+      "edible_id": null,
+      "toxicity": "commestibile con cautela",
+      "traits": {
+        "hymenophore": [
+          "lamelle"
+        ],
+        "hymenophore_color": [
+          "bianco",
+          "rosa",
+          "nero"
+        ],
+        "cap_color": [
+          "bianco",
+          "bruno",
+          "nero"
+        ],
+        "cap_shape": [
+          "conico"
+        ],
+        "cap_size": [
+          "piccolo",
+          "medio"
+        ],
+        "cap_surface": [
+          "squamosa"
+        ],
+        "cap_veil": null,
+        "stem_ring": null,
+        "stem_volva": false,
+        "stem_reticulum": false,
+        "stem_base": [
+          "normale"
+        ],
+        "flesh_change": null,
+        "flesh_texture": null,
+        "smell": [
+          "gradevole",
+          "nessuno"
+        ],
+        "latex": false,
+        "gill_attachment": [
+          "libere"
+        ],
+        "growth": [
+          "singolo",
+          "gregario"
+        ],
+        "habitat": [
+          "prati/radure"
+        ],
+        "season": [
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "spore_print": [
+          "nero"
+        ]
+      },
+      "check_before_picking": [
+        "Cappello alto, cilindrico, bianco con grandi squame rialzate",
+        "Lamelle bianche nel fungo giovane, poi rosa e nere che colano",
+        "Anello mobile che scivola lungo il gambo",
+        "Cresce in prati, bordi di strade e terreni smossi"
+      ],
+      "sources": [
+        {
+          "title": "First Nature — Coprinus comatus",
+          "url": "https://www.first-nature.com/fungi/coprinus-comatus.php"
+        },
+        {
+          "title": "Wikipedia (it) — Coprinus comatus (fonte secondaria)",
+          "url": "https://it.wikipedia.org/wiki/Coprinus_comatus"
+        },
+        {
+          "title": "Species Fungorum — Coprinus comatus (nome corrente)",
+          "url": "https://www.speciesfungorum.org/Names/NamesRecord.asp?RecordID=148667"
+        }
+      ],
+      "trees": [],
+      "dangerous_lookalikes": [],
+      "caution": "Commestibile solo giovane e fresco; non confonderlo con altri coprini."
+    },
+    "fistulina-hepatica": {
+      "latin": "Fistulina hepatica",
+      "name": "Lingua di bue",
+      "edible_id": null,
+      "toxicity": "commestibile",
+      "traits": {
+        "hymenophore": [
+          "pori"
+        ],
+        "hymenophore_color": [
+          "crema",
+          "giallo",
+          "bruno"
+        ],
+        "cap_color": [
+          "rosso",
+          "rosa",
+          "bruno"
+        ],
+        "cap_shape": null,
+        "cap_size": [
+          "medio",
+          "grande"
+        ],
+        "cap_surface": [
+          "squamosa"
+        ],
+        "cap_veil": false,
+        "stem_ring": false,
+        "stem_volva": false,
+        "stem_reticulum": false,
+        "stem_base": null,
+        "flesh_change": null,
+        "flesh_texture": null,
+        "smell": [
+          "nessuno"
+        ],
+        "latex": false,
+        "gill_attachment": null,
+        "growth": null,
+        "habitat": [
+          "ceppaie/legno",
+          "latifoglie"
+        ],
+        "season": [
+          7,
+          8,
+          9,
+          10
+        ],
+        "spore_print": [
+          "rosa"
+        ]
+      },
+      "check_before_picking": [
+        "Mensola a forma di lingua, rosso fegato, sul tronco di querce o castagni",
+        "Sotto tubuli fitti color paglierino, separabili uno a uno",
+        "Carne rossa e succosa, venata come la carne cruda",
+        "Nessun gambo vero, attaccata al legno"
+      ],
+      "sources": [
+        {
+          "title": "First Nature — Fistulina hepatica",
+          "url": "https://www.first-nature.com/fungi/fistulina-hepatica.php"
+        },
+        {
+          "title": "Wikipedia (it) — Fistulina hepatica (fonte secondaria)",
+          "url": "https://it.wikipedia.org/wiki/Fistulina_hepatica"
+        },
+        {
+          "title": "MycoDB — Fistulina hepatica",
+          "url": "https://www.mycodb.fr/fiche.php?genre=Fistulina&espece=hepatica"
+        },
+        {
+          "title": "Species Fungorum — Fistulina hepatica (nome corrente)",
+          "url": "https://www.speciesfungorum.org/Names/NamesRecord.asp?RecordID=193923"
+        }
+      ],
+      "trees": [
+        "castagno",
+        "ceppaie e legno morto di latifoglie"
+      ],
+      "dangerous_lookalikes": []
+    },
+    "amanita-rubescens": {
+      "latin": "Amanita rubescens",
+      "name": "Amanita arrossante",
+      "edible_id": null,
+      "toxicity": "commestibile con cautela",
+      "traits": {
+        "hymenophore": [
+          "lamelle"
+        ],
+        "hymenophore_color": [
+          "bianco"
+        ],
+        "cap_color": [
+          "bruno",
+          "rosa"
+        ],
+        "cap_shape": [
+          "emisferico",
+          "convesso",
+          "piano"
+        ],
+        "cap_size": [
+          "medio",
+          "grande"
+        ],
+        "cap_surface": null,
+        "cap_veil": null,
+        "stem_ring": true,
+        "stem_volva": null,
+        "stem_reticulum": false,
+        "stem_base": [
+          "bulbosa"
+        ],
+        "flesh_change": [
+          "rosso"
+        ],
+        "flesh_texture": null,
+        "smell": [
+          "nessuno"
+        ],
+        "latex": false,
+        "gill_attachment": [
+          "libere",
+          "adnate"
+        ],
+        "growth": [
+          "singolo",
+          "gregario"
+        ],
+        "habitat": [
+          "latifoglie",
+          "conifere"
+        ],
+        "season": [
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ],
+        "spore_print": [
+          "bianco"
+        ]
+      },
+      "check_before_picking": [
+        "Carne che arrossa (rosa vinoso) dove è tagliata o rosicchiata",
+        "Anello striato sul gambo",
+        "Verruche grigiastre o rosate sul cappello, non bianco puro",
+        "Bulbo alla base senza cercini netti"
+      ],
+      "sources": [
+        {
+          "title": "First Nature — Amanita rubescens",
+          "url": "https://www.first-nature.com/fungi/amanita-rubescens.php"
+        },
+        {
+          "title": "Wikipedia (it) — Amanita rubescens (fonte secondaria)",
+          "url": "https://it.wikipedia.org/wiki/Amanita_rubescens"
+        },
+        {
+          "title": "Species Fungorum — Amanita rubescens (nome corrente)",
+          "url": "https://www.speciesfungorum.org/Names/NamesRecord.asp?RecordID=172799"
+        },
+        {
+          "title": "First Nature — Amanita pantherina",
+          "url": "https://www.first-nature.com/fungi/amanita-pantherina.php"
+        }
+      ],
+      "trees": [],
+      "dangerous_lookalikes": [
+        "amanita-muscaria"
+      ],
+      "caution": "Tossica da cruda; richiede corretta cottura e controllo micologico. Si confonde con Amanita pantherina, tossica."
+    },
+    "russula-aurea": {
+      "latin": "Russula aurea",
+      "name": "Colombina dorata",
+      "edible_id": null,
+      "toxicity": "commestibile",
+      "traits": {
+        "hymenophore": [
+          "lamelle"
+        ],
+        "hymenophore_color": [
+          "crema",
+          "giallo"
+        ],
+        "cap_color": [
+          "giallo",
+          "arancio",
+          "rosso"
+        ],
+        "cap_shape": [
+          "emisferico",
+          "convesso",
+          "piano"
+        ],
+        "cap_size": [
+          "piccolo",
+          "medio"
+        ],
+        "cap_surface": null,
+        "cap_veil": false,
+        "stem_ring": false,
+        "stem_volva": false,
+        "stem_reticulum": false,
+        "stem_base": null,
+        "flesh_change": [
+          "nessuno"
+        ],
+        "flesh_texture": [
+          "gessosa"
+        ],
+        "smell": [
+          "nessuno"
+        ],
+        "latex": false,
+        "gill_attachment": [
+          "libere"
+        ],
+        "growth": null,
+        "habitat": [
+          "latifoglie",
+          "conifere"
+        ],
+        "season": [
+          8,
+          9,
+          10,
+          11
+        ],
+        "spore_print": [
+          "ocra",
+          "giallo"
+        ]
+      },
+      "check_before_picking": [
+        "Lamelle crema-ocra con filo giallo oro",
+        "Gambo bianco che diventa giallo dorato",
+        "Cappello giallo, arancio o rosso, con fondo dorato",
+        "Gambo che si spezza netto come un gessetto, senza anello"
+      ],
+      "sources": [
+        {
+          "title": "First Nature — Russula aurea",
+          "url": "https://www.first-nature.com/fungi/russula-aurea.php"
+        },
+        {
+          "title": "Wikipedia (it) — Russula aurea (fonte secondaria)",
+          "url": "https://it.wikipedia.org/wiki/Russula_aurea"
+        },
+        {
+          "title": "MycoDB — Russula aurea",
+          "url": "https://www.mycodb.fr/fiche.php?genre=Russula&espece=aurea"
+        },
+        {
+          "title": "Species Fungorum — Russula aurea (nome corrente)",
+          "url": "https://www.speciesfungorum.org/Names/NamesRecord.asp?RecordID=156423"
+        },
+        {
+          "title": "Wikipedia (it) — Russula emetica (fonte secondaria)",
+          "url": "https://it.wikipedia.org/wiki/Russula_emetica"
+        }
+      ],
+      "trees": [
+        "faggio",
+        "abete rosso"
+      ],
+      "dangerous_lookalikes": []
     }
   },
   "_note_traits_2": "Caratteri aggiunti il 2026-10-12 (sporata, velo, lattice, consistenza, superficie, attaccatura, base): ogni valore verificato su fonti lette, elencate in sources; dubbi e scelte in traits_notes. Taxa tossici e mortali: valori larghi per non escluderli; commestibili: solo valori con fonte.",

@@ -179,6 +179,7 @@ export const hasIdentify = () => TAXA.length > 0;
 const slug = (s) => norm(s).replace(/[^a-z]+/g, '-').replace(/^-|-$/g, '');
 function photoOf(t) {
   if (t.edible_id) { const m = MEDIA.species?.[t.edible_id]; return m?.ref || m?.inat?.[0]; }
+  if (MEDIA.species?.[t.key]) { const m = MEDIA.species[t.key]; return m.ref || m.inat?.[0]; }
   const L = MEDIA.lookalikes || {};
   // per nome latino; se la nomenclatura e' cambiata (es. Desarmillaria), per epiteto o per chiave
   let m = L[t.latin?.match(/[A-Z][a-z]+ [a-z]+/)?.[0]];
@@ -484,10 +485,13 @@ function stemArt2(base, ring, volva, ret, capCol, shape) {
 // pagina completa di un velenoso o di un sosia (le commestibili hanno la loro scheda)
 const photosOf = (t) => {
   if (t.edible_id && !t.lookalike_of?.length) { const m = MEDIA.species?.[t.edible_id]; return [m?.ref, ...(m?.inat || [])].filter(Boolean); }
+  // schede del catalogo diventate taxon: le foto stanno nell'archivio delle specie, con lo stesso id
+  if (MEDIA.species?.[t.key]) { const m = MEDIA.species[t.key]; return [m.ref, ...(m.inat || [])].filter((x, i, a) => x && a.findIndex((y) => y?.file === x.file) === i); }
   const L = MEDIA.lookalikes || {}, b = t.latin?.match(/[A-Z][a-z]+ [a-z]+/)?.[0];
   const m = L[b]; const first = photoOf(t);
   return [first, ...(m?.inat || [])].filter((x, i, a) => x && a.findIndex((y) => y?.file === x.file) === i);
 };
+export const taxonByKey = (key) => TAXA.find((x) => x.key === key) || null;
 export const taxonName = (key) => { const t = TAXA.find((x) => x.key === key); return t?.name || t?.latin || ''; };
 export const hasTaxonPage = (key) => { const t = TAXA.find((x) => x.key === key); return !!t && !(t.edible_id && !t.lookalike_of?.length); };
 export function renderTaxonPage(box, key) {
@@ -513,13 +517,16 @@ export function renderTaxonView(box, t, { photos = null, habitatText = '', extra
     </header>
     <div class="pbody">
       ${ph.length > 1 ? `<div class="sp-strip">${ph.slice(1, 6).map((p, k) => `<button type="button" class="zoomable" data-photo="${k + 1}" aria-label="Foto ${k + 2}: ingrandisci"><img data-src="${ASSET(p.file)}" alt="" loading="lazy" decoding="async"></button>`).join('')}</div>` : ''}
-      ${attentionBox(t.field_rules)}
-      ${t.caution ? `<p class="id-why"><b>Cautele della specie:</b> ${esc(t.caution)}</p>` : ''}
+      ${t.field_rules?.length ? attentionBox(t.field_rules) + (t.caution ? `<p class="id-why"><b>Cautele della specie:</b> ${esc(t.caution)}</p>` : '') : attentionBox(t.caution ? [{ text: t.caution, severity: 'importante' }] : [])}
       ${t.traits && Object.keys(t.traits).some((k) => k !== 'season') ? `<h3>Caratteri da confrontare</h3>${traitStrip(null, t)}` : '<p class="notice">Caratteri di confronto in preparazione: per ora la scheda riporta ambiente, stagione e cautele dalle fonti.</p>'}
-      ${t.check_before_picking?.length ? `<h3>Cosa osservare</h3><ol class="keys">${t.check_before_picking.map((x) => `<li><span class="key-text">${esc(x)}</span></li>`).join('')}</ol>` : ''}
-      ${look.length ? `<h3>Si confonde con</h3><ul class="tx-look">${look.map(({ id, o }) => { const op = photoOf(o); return `<li>
+      ${t.check_before_picking?.length ? `<p class="small muted checks-tip">Caratteri descritti per la specie: confrontarli non identifica un esemplare né ne certifica la commestibilità.</p><ol class="keys">${t.check_before_picking.map((x) => `<li><span class="key-text">${esc(x)}</span></li>`).join('')}</ol>` : ''}
+      ${look.length ? `<h3>Non confonderlo con</h3><ul class="tx-look">${look.map(({ id, o }) => { const op = photoOf(o); return `<li>
         <a class="tx-look-main" href="#/riconosci/confronta/${esc(t.key)}/${esc(o.key)}">${op ? `<img data-src="${ASSET(op.thumb || op.file)}" alt="" loading="lazy" decoding="async">` : ''}<span><b>${esc(o.name)}</b><i>${esc(o.latin)}</i><small class="tx-cmp">Confrontali carattere per carattere ›</small></span></a>
         <a class="tx-sheet" data-entity href="#/specie/${esc(id)}">Scheda di ${esc(o.name.toLowerCase())} ›</a></li>`; }).join('')}</ul>` : ''}
+      ${(() => { // sosia pericolosi segnalati dalle fonti per le schede del catalogo (campo dangerous_lookalikes)
+        const ds = (t.dangerous_lookalikes || []).map((k) => TAXA.find((x) => x.key === k)).filter(Boolean);
+        return ds.length ? `<h3>Non confonderlo con</h3><ul class="tx-look">${ds.map((o) => { const op = photoOf(o); return `<li><a class="tx-look-main" data-entity href="#/fungo/${esc(o.key)}">${op ? `<img data-src="${ASSET(op.thumb || op.file)}" alt="" loading="lazy" decoding="async">` : ''}<span><b>${esc(o.name || o.latin)}</b><i>${esc(o.latin)}</i><small class="tx-c tox-${esc((o.toxicity || '').replace(/\s/g, '-'))}"><span class="tox">${esc(o.tox_label || o.toxicity || '')}</span></small></span></a></li>`; }).join('')}</ul>` : '';
+      })()}
       <h3>Dove e quando</h3>
       <dl class="sci-params">
         ${habitat.length ? `<div><dt>Dove</dt><dd>${esc(orList(habitat))}</dd></div>` : habitatText ? `<div><dt>Dove</dt><dd>${esc(habitatText)}</dd></div>` : ''}
