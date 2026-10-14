@@ -231,7 +231,8 @@ test('riepiloghi essenziali negli accordion sul posto, senza voci duplicate o sa
     const summary=section.locator(':scope > summary');await summary.evaluate(el=>el.scrollIntoView({block:'center'}));
     await summary.click({position:{x:5,y:10}});await expect(section).toHaveAttribute('open','');
     await expect(summary).toBeInViewport();await expect(page.locator('#detail details.sec[open]')).toHaveCount(1);
-    expect(await summary.locator('.glossary-link').evaluateAll(links=>links.every(a=>getComputedStyle(a).textDecorationStyle==='dotted'))).toBe(true);
+    // termini del glossario: niente sottolineatura da sito, un filetto sottile li rende riconoscibili
+    expect(await summary.locator('.glossary-link').evaluateAll(links=>links.every(a=>getComputedStyle(a).textDecorationLine==='none'&&getComputedStyle(a).boxShadow!=='none'))).toBe(true);
   }
   await page.screenshot({path:'/tmp/fungaroli-inline-accordions.png',fullPage:true});expect(errors).toEqual([]);
 });
