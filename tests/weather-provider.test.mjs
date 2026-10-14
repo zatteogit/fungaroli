@@ -37,8 +37,10 @@ test('incomplete or malformed provider data cannot poison the shared cache',asyn
 });
 test('browser request has a timeout and keeps a stale server timestamp',async()=>{
   const original=global.fetch,document=global.document;global.document={};
-  global.fetch=async(url,opts)=>{assert.match(url,/^\/api\/weather\/v1\/forecast\?/);assert.ok(opts.signal instanceof AbortSignal);return Response.json(raw(),{headers:{'x-weather-fetched-at':new Date(now-7200000).toISOString(),'x-weather-cache':'stale'}});};
-  try{const received=await fetchForecast(forecastParams(zones,'growth'));assert.equal(received.fetchedAt.getTime(),now-7200000);assert.equal(received.stale,true);}
+  // Date del client nel passato: il client riporta all'ora del dispositivo quelle future.
+  const stamp=Date.now()-7200000;
+  global.fetch=async(url,opts)=>{assert.match(url,/^\/api\/weather\/v1\/forecast\?/);assert.ok(opts.signal instanceof AbortSignal);return Response.json(raw(),{headers:{'x-weather-fetched-at':new Date(stamp).toISOString(),'x-weather-cache':'stale'}});};
+  try{const received=await fetchForecast(forecastParams(zones,'growth'));assert.equal(received.fetchedAt.getTime(),stamp);assert.equal(received.stale,true);}
   finally{global.fetch=original;if(document===undefined)delete global.document;else global.document=document;}
 });
 test('compact soil series preserve hourly means, incomplete days and all daily climate data',()=>{
@@ -60,16 +62,16 @@ test('small provider batches stay bounded and preserve the requested elevation o
 });
 test('browser requests published zones separately with bounded concurrency and retains the oldest acquisition date',async()=>{
   const original=global.fetch,document=global.document;global.document={};
-  const wide=Array.from({length:8},(_,i)=>({lat:42+i*.01,lon:12+i*.01,bands:[700,900,1100]}));let live=0,max=0,calls=0;
+  const wide=Array.from({length:8},(_,i)=>({lat:42+i*.01,lon:12+i*.01,bands:[700,900,1100]}));let live=0,max=0,calls=0;const base=Date.now()-3600000;
   global.fetch=async url=>{
     const q=new URL(url,'https://example.test').searchParams,elevations=q.get('elevation').split(',').map(Number),i=wide.findIndex(z=>String(z.lat)===q.get('latitude').split(',')[0]);
     assert.equal(elevations.length,3);assert.equal(new Set(q.get('latitude').split(',')).size,1);
     calls++;live++;max=Math.max(max,live);await new Promise(r=>setTimeout(r,i===0?10:1));live--;
-    return Response.json(elevations.map(elevation=>({elevation,latitude:wide[i].lat})),{headers:{'x-weather-fetched-at':new Date(now-i*60000).toISOString()}});
+    return Response.json(elevations.map(elevation=>({elevation,latitude:wide[i].lat})),{headers:{'x-weather-fetched-at':new Date(base-i*60000).toISOString()}});
   };
   try {
     const result=await fetchForecast(forecastParams(wide,'growth'));assert.equal(calls,8);assert.ok(max<=3);
-    assert.deepEqual(result.raw.map(r=>r.latitude),wide.flatMap(z=>z.bands.map(()=>z.lat)));assert.equal(result.fetchedAt.getTime(),now-7*60000);
+    assert.deepEqual(result.raw.map(r=>r.latitude),wide.flatMap(z=>z.bands.map(()=>z.lat)));assert.equal(result.fetchedAt.getTime(),base-7*60000);
   } finally{global.fetch=original;if(document===undefined)delete global.document;else global.document=document;}
 });
 test('one failing zone does not cancel successful forecasts or shift elevations',async()=>{
@@ -90,8 +92,12 @@ test('stale shared cache is immediate, refresh is coalesced and failures preserv
  const options={zones,cache:storage,now:now+3600001,waitUntil:p=>work.push(p),fetcher:()=>{calls++;return new Promise(r=>finish=r);}};
  const saved=await cachedForecast(params,options);
  assert.equal(saved.headers.get('x-weather-refreshing'),'1');assert.equal(saved.headers.get('x-weather-fetched-at'),new Date(now).toISOString());
+ // Il follower calcola lo SHA-256 in modo asincrono: il download si sblocca
+ // solo dopo che ha letto la cache, altrimenti sotto carico troverebbe già la copia nuova.
+ const read=storage.get;let followerRead;const hasRead=new Promise(r=>followerRead=r);
+ storage.get=async(...args)=>{const value=await read(...args);followerRead();return value;};
  const follower=cachedForecast(params,{...options,waitForFresh:true});
- await new Promise(r=>setTimeout(r,0));assert.equal(calls,1);
+ await hasRead;storage.get=read;await new Promise(r=>setTimeout(r,0));assert.equal(calls,1);
  finish(Response.json(raw()));const fresh=await follower;await Promise.all(work);
  assert.equal(fresh.headers.get('x-weather-cache'),'miss');assert.equal(fresh.headers.get('x-weather-fetched-at'),new Date(now+3600001).toISOString());
  const bad=await cachedForecast(params,{...options,now:now+7200002,fetcher:async()=>Response.json({},{status:429})});

@@ -279,7 +279,8 @@ for(const width of [320,1280]) test(`titoletti senza link e keyword complete nel
   for(const theme of ['light','dark']){await page.evaluate(t=>document.documentElement.dataset.theme=t,theme);await page.locator('#species-detail .trait-strip').screenshot({path:`/tmp/fungaroli-traits-${width}-${theme}.png`});}
   await page.goto('/');await expect(page.locator('#hero .cover-link')).toBeVisible();await page.waitForLoadState('networkidle');
   expect(await page.locator('#hero .sp-also').evaluateAll(nodes=>nodes.every(el=>{const score=el.querySelector('.sp-also-score');return !!score&&score.children[0].tagName==='I'&&score.children[1].tagName==='B';}))).toBe(true);
-  await page.locator('#hero .cover-sp').screenshot({path:`/tmp/fungaroli-also-species-${width}.png`});
+  // Screenshot diagnostico: un ridisegno tardivo (community, meteo) può riconciliare il riquadro mentre viene catturato.
+  await expect(async()=>page.locator('#hero .cover-sp').screenshot({path:`/tmp/fungaroli-also-species-${width}.png`,timeout:3000})).toPass({timeout:15000});
   const repeated=await page.locator('#hero .cover-walk,#ranking .tile-body').evaluateAll(nodes=>nodes.some(el=>{const text=el.textContent;const refs=text.match(/sentiero\s+\d+/gi)||[];return new Set(refs.map(x=>x.toLowerCase())).size<refs.length;}));expect(repeated).toBe(false);
   expect(errors).toEqual([]);
 });

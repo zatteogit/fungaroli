@@ -27,23 +27,30 @@ export function saveZoneWeather(z,kind,record,now=Date.now()){
   }catch{/* Storage can be unavailable or full; never discard live data. */}
 }
 
-// Read existing whole-catalog copies once to bootstrap the per-zone cache.
+// Read existing whole-catalog copies once to bootstrap the per-zone cache. The legacy
+// key is dropped once migrated or expired: it would otherwise be parsed on every start
+// and keep a second copy of the catalogue in the storage quota.
+const dropLegacy=k=>{try{localStorage.removeItem(k);}catch{/* storage unavailable */}};
 export function migrateGrowthCache(zones,now=Date.now()){
   try{
     const c=JSON.parse(localStorage.getItem('fungaroli:weather:v2')||'null');
     const sig=zones.flatMap(z=>z.bands.map(b=>`${z.lat},${z.lon},${b}`)).join(';');
-    if(!c?.sig||c.sig.slice(c.sig.indexOf('|')+1)!==sig||!Number.isFinite(c.t)||now-c.t>WEATHER_LOCAL_RETENTION_MS||c.t>now)return;
+    if(c&&(!Number.isFinite(c.t)||now-c.t>WEATHER_LOCAL_RETENTION_MS))return dropLegacy('fungaroli:weather:v2');
+    if(!c?.sig||c.sig.slice(c.sig.indexOf('|')+1)!==sig||c.t>now)return;
     let start=0;
     for(const z of zones){if(!cachedZoneWeather(z,'growth',now))saveZoneWeather(z,'growth',{t:c.t,raw:c.data?.slice(start,start+z.bands.length)},now);start+=z.bands.length;}
+    dropLegacy('fungaroli:weather:v2');
   }catch{/* Invalid legacy data must not prevent startup. */}
 }
 export function migrateOutingCache(zones,now=Date.now()){
   try{
     const c=JSON.parse(localStorage.getItem('fungaroli:outing:v2')||'null');
     const sig=zones.map(z=>`${z.lat},${z.lon},${z.bands[Math.floor(z.bands.length/2)]}`).join(';');
-    if(!c?.sig||c.sig.slice(c.sig.indexOf('|')+1)!==sig||!Number.isFinite(c.t)||now-c.t>WEATHER_LOCAL_RETENTION_MS||c.t>now)return;
+    if(c&&(!Number.isFinite(c.t)||now-c.t>WEATHER_LOCAL_RETENTION_MS))return dropLegacy('fungaroli:outing:v2');
+    if(!c?.sig||c.sig.slice(c.sig.indexOf('|')+1)!==sig||c.t>now)return;
     for(const z of zones){const s=c.data?.[z.id];if(!s||cachedZoneWeather(z,'outing',now))continue;
       saveZoneWeather(z,'outing',{t:Date.parse(s.fetchedAt),raw:[{hourly:{time:s.time,precipitation:s.p,precipitation_probability:s.pp,weather_code:s.wc,wind_gusts_10m:s.g,temperature_2m:s.t}}]},now);
     }
+    dropLegacy('fungaroli:outing:v2');
   }catch{/* Invalid legacy data must not prevent startup. */}
 }

@@ -20,3 +20,5 @@ migrations
 test-results
 playwright-report
 playwright.config.mjs
+AGENTS.md
+CLAUDE.md

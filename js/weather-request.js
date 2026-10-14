@@ -48,8 +48,11 @@ async function requestForecast(params,signal=AbortSignal.timeout(20000),waitForF
       : 'Il servizio meteo non è disponibile. Riprova tra poco.')), {status:response.status});
   }
   const raw=await response.json(), stamp=response.headers?.get('x-weather-fetched-at');
-  const fetchedAt=stamp ? new Date(stamp) : new Date();
-  if(!Number.isFinite(fetchedAt.getTime()))throw new Error('Il meteo ricevuto non ha una data di aggiornamento valida.');
+  const stamped=stamp ? new Date(stamp) : new Date();
+  if(!Number.isFinite(stamped.getTime()))throw new Error('Il meteo ricevuto non ha una data di aggiornamento valida.');
+  // Il server data la risposta con il proprio orologio: se quello del dispositivo è
+  // indietro, una copia appena scaricata risulterebbe "dal futuro" e verrebbe scartata.
+  const fetchedAt=new Date(Math.min(stamped.getTime(),Date.now()));
   return {raw:Array.isArray(raw)?raw:[raw],fetchedAt,stale:response.headers?.get('x-weather-cache')==='stale',refreshing:response.headers?.get('x-weather-refreshing')==='1'};
 }
 export const weatherErrorMessage = err => err?.name==='TimeoutError'||err?.name==='AbortError'

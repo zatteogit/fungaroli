@@ -11,12 +11,14 @@ for(const width of [390,1280])test(`cache immediata, aggiornamento discreto e co
  await page.route('**/api/weather/v1/forecast?**',async r=>{if(paused)await new Promise(resolve=>pending.push(resolve));await r.fulfill(fail?{status:429,json:{error:'Limite'}}:{json:forecast(r.request(),rain)});});
  await page.addInitScript(()=>localStorage.setItem('fungaroli:legal-accepted','22026-10-12'));
  await page.goto('/');await expect(page.locator('#hero .cover-link')).toBeVisible();await expect(page.locator('#refresh')).toHaveAttribute('aria-busy','false');
+ await expect(page.locator('#season li').first()).toBeVisible();await expect(page.locator('#season-h')).toBeVisible();
  await page.evaluate(()=>{for(const k of ['fungaroli:weather:zones:v3','fungaroli:outing:zones:v3']){const c=JSON.parse(localStorage.getItem(k));for(const r of Object.values(c))r.t=Date.now()-7200000;localStorage.setItem(k,JSON.stringify(c));}});
  paused=true;await page.reload();await expect(page.locator('#hero .cover-link')).toBeVisible();await expect(page.locator('#refresh')).toHaveAttribute('aria-busy','true');await expect(page.locator('#updated')).toContainText('salvato');await expect(page.locator('#weather-work.busy')).toBeVisible();
  const score=await page.locator('#hero .ring .ring-num').count()?await page.locator('#hero .ring .ring-num').innerText():await page.locator('#hero .ring').innerText();
  const href=await page.locator('#hero .cover-link').getAttribute('href');await page.evaluate(()=>{window.savedHero=document.querySelector('#hero .cover-link');window.savedPhoto=document.querySelector('#hero .cover-img');});
  rain=1;paused=false;pending.splice(0).forEach(r=>r());await expect(page.locator('#refresh')).toHaveAttribute('aria-busy','false');await expect(page.locator('#hero .cover-link')).toHaveAttribute('href',href);
  expect(await page.evaluate(()=>savedHero===document.querySelector('#hero .cover-link')&&savedPhoto===document.querySelector('#hero .cover-img'))).toBe(true);
+ const placed=await page.locator('#hero [data-walk-zone],#ranking [data-walk-zone]').evaluateAll(n=>n.map(a=>a.dataset.walkZone));expect(new Set(placed).size).toBe(placed.length);await expect(page.locator('#season li').first()).toBeVisible();
  await expect(page.locator('#app-toast')).toContainText('Meteo aggiornato');await page.evaluate(()=>document.dispatchEvent(new Event('fungaroli:community')));await expect(page.locator('#hero .cover-link')).toHaveAttribute('href',href);expect(await page.locator('#hero .ring').innerText()).not.toBe(score);
  fail=true;await page.locator('#refresh').click();await expect(page.locator('#refresh')).toHaveAttribute('aria-busy','false');await expect(page.locator('#hero .cover-link')).toHaveAttribute('href',href);await expect(page.locator('#weather-work')).toContainText('parziale');
  await page.screenshot({path:`/tmp/weather-cached-${width}.png`});expect(errors).toEqual([]);
