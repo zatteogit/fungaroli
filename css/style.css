@@ -2599,3 +2599,47 @@ html.entity-open { overflow: hidden; }
 .share-choice input { margin-top:3px; accent-color:var(--accent); }
 .share-choice span { display:grid; gap:2px; }
 .share-choice small { color:var(--text-2); font-size:12.5px; line-height:1.4; }
+
+/* ================================================================== sistema visivo v2
+   Struttura ispirata alle app outdoor di riferimento (foto in primo piano, dati in riga, meno riquadri),
+   identita' nostra: carta calda, serif solo nei titoli editoriali, sans per dati, numeri e card.
+   Spaziature su griglia di 4/8 px. Contrasti verificati WCAG AA (testo piccolo >= 4,5:1). */
+:root {
+  --sp-1: 4px; --sp-2: 8px; --sp-3: 12px; --sp-4: 16px; --sp-5: 24px; --sp-6: 32px;
+  /* era #887f72 (3,3-3,9:1 sui fondi chiari): ora >= 4,5:1 su bg, surface e surface-2 */
+  --muted: #6e6658;
+  --shadow-card: 0 1px 2px rgb(40 30 15 / .06), 0 6px 18px rgb(40 30 15 / .06);
+}
+:root[data-theme="dark"] { --shadow-card: 0 1px 2px rgb(0 0 0 / .3), 0 6px 18px rgb(0 0 0 / .25); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --shadow-card: 0 1px 2px rgb(0 0 0 / .3), 0 6px 18px rgb(0 0 0 / .25); } }
+:root[data-theme="dark"] { --muted: #86998c; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --muted: #86998c; } }
+
+/* Tipografia: i numeri e i titoli delle card passano al sans (piu' leggibili a colpo d'occhio, come nelle app outdoor) */
+.ring b, .day .d2, .mtt-p b, .tile-body b, .portrait-body b, .sp-card-body b, .mtt-t, .sheet-title {
+  font-family: var(--font-body); letter-spacing: -0.01em;
+}
+.ring b { font-weight: 800; }
+.day .d2 { font-weight: 800; font-size: 20px; }
+.tile-body b { font-size: 20px; font-weight: 800; line-height: 1.15; }
+.portrait-body b, .sp-card-body b { font-weight: 750; line-height: 1.15; }
+.sp-card-body b { font-size: 17px; }
+
+/* Card: niente bordo, la superficie si stacca dal fondo con un'ombra leggera */
+.sec, .plan, .discovery-grid li, .community-intro, .zone-legal { border: 0; box-shadow: var(--shadow-card); }
+.sec { margin-bottom: var(--sp-2); }
+.zone-legal { box-shadow: none; }
+.sec > summary { padding: var(--sp-4) 0; }
+
+/* Chip e filtri: un solo componente. I gruppi di piante e le modalita' usano lo stesso aspetto dei filtri in home */
+.recognize-modes { gap: var(--sp-2); }
+.recognize-modes > .btn, .recognize-modes > button, .recognize-modes > a {
+  min-height: 40px; padding: 8px 14px; border-radius: 999px; border: 1px solid var(--border); background: var(--surface);
+  color: var(--text); font-size: 14px; font-weight: 500; box-shadow: none; text-decoration: none; display: inline-flex; align-items: center;
+}
+.recognize-modes > button[aria-pressed="true"], .recognize-modes > a[aria-current="page"] {
+  background: var(--accent-soft); color: var(--accent); border-color: color-mix(in srgb, var(--accent) 55%, transparent); font-weight: 600;
+}
+
+/* Titoli di sezione: un po' piu' di aria sopra, meno sotto (ritmo 8 px) */
+.sec-title { margin: var(--sp-6) 0 var(--sp-3); }
