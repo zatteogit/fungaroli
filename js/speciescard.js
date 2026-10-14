@@ -159,7 +159,8 @@ function whereToLook(id) {
     ${w.trees?.length ? `<p class="tree-chips">${w.trees.map((t) => { const h = linkTrees(t); return h.includes('<a') ? h : `<span class="tree-link">${h}</span>`; }).join(' ')}</p>` : ''}`;
 }
 export const whereSummary = (id) => TRAITS[id]?.where_to_look?.summary || '';
-export const criticalRule = (id) => (TRAITS[id]?.field_rules || []).find((r) => r.severity === 'critico')?.text || '';
+export const criticalRuleOf = (id) => (TRAITS[id]?.field_rules || []).find((r) => r.severity === 'critico') || null;
+export const criticalRule = (id) => criticalRuleOf(id)?.text || '';
 
 export function renderSpeciesDetail(body, id) {
   body.dataset.glossaryContext='Funghi';
