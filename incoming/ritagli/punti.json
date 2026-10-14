@@ -1,0 +1,1198 @@
+{
+  "assets/zones/vallonina-hd.webp": {
+    "punto": [
+      0.64,
+      0.35
+    ],
+    "riquadro": [
+      0.48,
+      0.22,
+      0.81,
+      0.5
+    ],
+    "soggetto": "cima rocciosa principale della Vallonina",
+    "dubbio": true,
+    "nota": "Nelle quattro varianti nebbia la cima è velata: in autunno e primavera alcuni contorni si perdono; in inverno neve e nebbia riducono il contrasto. Il punto non recupera ciò che il meteo nasconde. Miniatura assets/zones/vallonina-t.webp già ritagliata: 160×160, originale 600×450; queste coordinate non valgono per il thumb.",
+    "varianti": [
+      "incoming/luoghi/vallonina-primavera-sereno.webp",
+      "incoming/luoghi/vallonina-primavera-nuvoloso.webp",
+      "incoming/luoghi/vallonina-primavera-nebbia.webp",
+      "incoming/luoghi/vallonina-primavera-pioggia.webp",
+      "incoming/luoghi/vallonina-estate-sereno.webp",
+      "incoming/luoghi/vallonina-estate-nuvoloso.webp",
+      "incoming/luoghi/vallonina-estate-nebbia.webp",
+      "incoming/luoghi/vallonina-estate-pioggia.webp",
+      "incoming/luoghi/vallonina-autunno-sereno.webp",
+      "incoming/luoghi/vallonina-autunno-nuvoloso.webp",
+      "incoming/luoghi/vallonina-autunno-nebbia.webp",
+      "incoming/luoghi/vallonina-autunno-pioggia.webp",
+      "incoming/luoghi/vallonina-inverno-sereno.webp",
+      "incoming/luoghi/vallonina-inverno-nuvoloso.webp",
+      "incoming/luoghi/vallonina-inverno-nebbia.webp",
+      "incoming/luoghi/vallonina-inverno-pioggia.webp",
+      "incoming/luoghi/vallonina-inverno-neve.webp"
+    ]
+  },
+  "assets/zones/vallonina.webp": {
+    "punto": [
+      0.64,
+      0.35
+    ],
+    "riquadro": [
+      0.48,
+      0.22,
+      0.81,
+      0.5
+    ],
+    "soggetto": "cima rocciosa principale della Vallonina",
+    "dubbio": true,
+    "nota": "Nelle quattro varianti nebbia la cima è velata: in autunno e primavera alcuni contorni si perdono; in inverno neve e nebbia riducono il contrasto. Il punto non recupera ciò che il meteo nasconde. Miniatura assets/zones/vallonina-t.webp già ritagliata: 160×160, originale 600×450; queste coordinate non valgono per il thumb.",
+    "varianti": [
+      "incoming/luoghi/vallonina-primavera-sereno.webp",
+      "incoming/luoghi/vallonina-primavera-nuvoloso.webp",
+      "incoming/luoghi/vallonina-primavera-nebbia.webp",
+      "incoming/luoghi/vallonina-primavera-pioggia.webp",
+      "incoming/luoghi/vallonina-estate-sereno.webp",
+      "incoming/luoghi/vallonina-estate-nuvoloso.webp",
+      "incoming/luoghi/vallonina-estate-nebbia.webp",
+      "incoming/luoghi/vallonina-estate-pioggia.webp",
+      "incoming/luoghi/vallonina-autunno-sereno.webp",
+      "incoming/luoghi/vallonina-autunno-nuvoloso.webp",
+      "incoming/luoghi/vallonina-autunno-nebbia.webp",
+      "incoming/luoghi/vallonina-autunno-pioggia.webp",
+      "incoming/luoghi/vallonina-inverno-sereno.webp",
+      "incoming/luoghi/vallonina-inverno-nuvoloso.webp",
+      "incoming/luoghi/vallonina-inverno-nebbia.webp",
+      "incoming/luoghi/vallonina-inverno-pioggia.webp",
+      "incoming/luoghi/vallonina-inverno-neve.webp"
+    ]
+  },
+  "assets/zones/poggio-cantalice-hd.webp": {
+    "punto": [
+      0.52,
+      0.33
+    ],
+    "riquadro": [
+      0.27,
+      0.25,
+      0.77,
+      0.45
+    ],
+    "soggetto": "cime centrali del Terminillo sullo sfondo",
+    "dubbio": true,
+    "nota": "Nelle quattro varianti nebbia e in estate-pioggia il crinale è velato, soprattutto in estate-nebbia e primavera-nebbia; inverno-neve riduce il contrasto. Conservato il punto delle cime, non quello della pianura. Miniatura assets/zones/poggio-cantalice-t.webp già ritagliata: 160×160, originale 1600×1200; queste coordinate non valgono per il thumb.",
+    "varianti": [
+      "incoming/luoghi/poggio-cantalice-primavera-sereno.webp",
+      "incoming/luoghi/poggio-cantalice-primavera-nuvoloso.webp",
+      "incoming/luoghi/poggio-cantalice-primavera-nebbia.webp",
+      "incoming/luoghi/poggio-cantalice-primavera-pioggia.webp",
+      "incoming/luoghi/poggio-cantalice-estate-sereno.webp",
+      "incoming/luoghi/poggio-cantalice-estate-nuvoloso.webp",
+      "incoming/luoghi/poggio-cantalice-estate-nebbia.webp",
+      "incoming/luoghi/poggio-cantalice-estate-pioggia.webp",
+      "incoming/luoghi/poggio-cantalice-autunno-sereno.webp",
+      "incoming/luoghi/poggio-cantalice-autunno-nuvoloso.webp",
+      "incoming/luoghi/poggio-cantalice-autunno-nebbia.webp",
+      "incoming/luoghi/poggio-cantalice-autunno-pioggia.webp",
+      "incoming/luoghi/poggio-cantalice-inverno-sereno.webp",
+      "incoming/luoghi/poggio-cantalice-inverno-nuvoloso.webp",
+      "incoming/luoghi/poggio-cantalice-inverno-nebbia.webp",
+      "incoming/luoghi/poggio-cantalice-inverno-pioggia.webp",
+      "incoming/luoghi/poggio-cantalice-inverno-neve.webp"
+    ]
+  },
+  "assets/zones/poggio-cantalice.webp": {
+    "punto": [
+      0.52,
+      0.33
+    ],
+    "riquadro": [
+      0.27,
+      0.25,
+      0.77,
+      0.45
+    ],
+    "soggetto": "cime centrali del Terminillo sullo sfondo",
+    "dubbio": true,
+    "nota": "Nelle quattro varianti nebbia e in estate-pioggia il crinale è velato, soprattutto in estate-nebbia e primavera-nebbia; inverno-neve riduce il contrasto. Conservato il punto delle cime, non quello della pianura. Miniatura assets/zones/poggio-cantalice-t.webp già ritagliata: 160×160, originale 1600×1200; queste coordinate non valgono per il thumb.",
+    "varianti": [
+      "incoming/luoghi/poggio-cantalice-primavera-sereno.webp",
+      "incoming/luoghi/poggio-cantalice-primavera-nuvoloso.webp",
+      "incoming/luoghi/poggio-cantalice-primavera-nebbia.webp",
+      "incoming/luoghi/poggio-cantalice-primavera-pioggia.webp",
+      "incoming/luoghi/poggio-cantalice-estate-sereno.webp",
+      "incoming/luoghi/poggio-cantalice-estate-nuvoloso.webp",
+      "incoming/luoghi/poggio-cantalice-estate-nebbia.webp",
+      "incoming/luoghi/poggio-cantalice-estate-pioggia.webp",
+      "incoming/luoghi/poggio-cantalice-autunno-sereno.webp",
+      "incoming/luoghi/poggio-cantalice-autunno-nuvoloso.webp",
+      "incoming/luoghi/poggio-cantalice-autunno-nebbia.webp",
+      "incoming/luoghi/poggio-cantalice-autunno-pioggia.webp",
+      "incoming/luoghi/poggio-cantalice-inverno-sereno.webp",
+      "incoming/luoghi/poggio-cantalice-inverno-nuvoloso.webp",
+      "incoming/luoghi/poggio-cantalice-inverno-nebbia.webp",
+      "incoming/luoghi/poggio-cantalice-inverno-pioggia.webp",
+      "incoming/luoghi/poggio-cantalice-inverno-neve.webp"
+    ]
+  },
+  "assets/zones/antrodoco-hd.webp": {
+    "punto": [
+      0.48,
+      0.49
+    ],
+    "riquadro": [
+      0.08,
+      0.29,
+      0.84,
+      0.75
+    ],
+    "soggetto": "crinale e parete del massiccio sopra Antrodoco",
+    "dubbio": true,
+    "nota": "Nelle quattro varianti nebbia la sommità è parzialmente nascosta, soprattutto primavera-nebbia ed estate-nebbia; estate-pioggia e inverno-neve attenuano il contorno. Scarto di un pixel sul lato corto fra versioni: coordinate normalizzate invariate. Nessun ritaglio 3:4, 4:5, 1:1 può contenere l’intero riquadro, indipendentemente dal punto. Miniatura assets/zones/antrodoco-t.webp già ritagliata: 160×160, originale 1600×1199; queste coordinate non valgono per il thumb.",
+    "varianti": [
+      "incoming/luoghi/antrodoco-primavera-sereno.webp",
+      "incoming/luoghi/antrodoco-primavera-nuvoloso.webp",
+      "incoming/luoghi/antrodoco-primavera-nebbia.webp",
+      "incoming/luoghi/antrodoco-primavera-pioggia.webp",
+      "incoming/luoghi/antrodoco-estate-sereno.webp",
+      "incoming/luoghi/antrodoco-estate-nuvoloso.webp",
+      "incoming/luoghi/antrodoco-estate-nebbia.webp",
+      "incoming/luoghi/antrodoco-estate-pioggia.webp",
+      "incoming/luoghi/antrodoco-autunno-sereno.webp",
+      "incoming/luoghi/antrodoco-autunno-nuvoloso.webp",
+      "incoming/luoghi/antrodoco-autunno-nebbia.webp",
+      "incoming/luoghi/antrodoco-autunno-pioggia.webp",
+      "incoming/luoghi/antrodoco-inverno-sereno.webp",
+      "incoming/luoghi/antrodoco-inverno-nuvoloso.webp",
+      "incoming/luoghi/antrodoco-inverno-nebbia.webp",
+      "incoming/luoghi/antrodoco-inverno-pioggia.webp",
+      "incoming/luoghi/antrodoco-inverno-neve.webp"
+    ]
+  },
+  "assets/zones/antrodoco.webp": {
+    "punto": [
+      0.48,
+      0.49
+    ],
+    "riquadro": [
+      0.08,
+      0.29,
+      0.84,
+      0.75
+    ],
+    "soggetto": "crinale e parete del massiccio sopra Antrodoco",
+    "dubbio": true,
+    "nota": "Nelle quattro varianti nebbia la sommità è parzialmente nascosta, soprattutto primavera-nebbia ed estate-nebbia; estate-pioggia e inverno-neve attenuano il contorno. Scarto di un pixel sul lato corto fra versioni: coordinate normalizzate invariate. Nessun ritaglio 3:4, 4:5, 1:1 può contenere l’intero riquadro, indipendentemente dal punto. Miniatura assets/zones/antrodoco-t.webp già ritagliata: 160×160, originale 1600×1199; queste coordinate non valgono per il thumb.",
+    "varianti": [
+      "incoming/luoghi/antrodoco-primavera-sereno.webp",
+      "incoming/luoghi/antrodoco-primavera-nuvoloso.webp",
+      "incoming/luoghi/antrodoco-primavera-nebbia.webp",
+      "incoming/luoghi/antrodoco-primavera-pioggia.webp",
+      "incoming/luoghi/antrodoco-estate-sereno.webp",
+      "incoming/luoghi/antrodoco-estate-nuvoloso.webp",
+      "incoming/luoghi/antrodoco-estate-nebbia.webp",
+      "incoming/luoghi/antrodoco-estate-pioggia.webp",
+      "incoming/luoghi/antrodoco-autunno-sereno.webp",
+      "incoming/luoghi/antrodoco-autunno-nuvoloso.webp",
+      "incoming/luoghi/antrodoco-autunno-nebbia.webp",
+      "incoming/luoghi/antrodoco-autunno-pioggia.webp",
+      "incoming/luoghi/antrodoco-inverno-sereno.webp",
+      "incoming/luoghi/antrodoco-inverno-nuvoloso.webp",
+      "incoming/luoghi/antrodoco-inverno-nebbia.webp",
+      "incoming/luoghi/antrodoco-inverno-pioggia.webp",
+      "incoming/luoghi/antrodoco-inverno-neve.webp"
+    ]
+  },
+  "assets/zones/cicolano-hd.webp": {
+    "punto": [
+      0.62,
+      0.65
+    ],
+    "riquadro": [
+      0.32,
+      0.42,
+      0.84,
+      0.94
+    ],
+    "soggetto": "ansa centrale del lago e sponda del Cicolano",
+    "dubbio": true,
+    "nota": "Nelle quattro varianti nebbia le sponde sullo sfondo sono velate; il lago centrale resta visibile in tutte e 17. Scarto di un pixel sul lato corto fra versioni: coordinate normalizzate invariate. Nessun ritaglio 5:4, 3:4, 4:5, 4:3, 1:1 può contenere l’intero riquadro, indipendentemente dal punto. Miniatura assets/zones/cicolano-t.webp già ritagliata: 160×160, originale 1600×482; queste coordinate non valgono per il thumb.",
+    "varianti": [
+      "incoming/luoghi/cicolano-primavera-sereno.webp",
+      "incoming/luoghi/cicolano-primavera-nuvoloso.webp",
+      "incoming/luoghi/cicolano-primavera-nebbia.webp",
+      "incoming/luoghi/cicolano-primavera-pioggia.webp",
+      "incoming/luoghi/cicolano-estate-sereno.webp",
+      "incoming/luoghi/cicolano-estate-nuvoloso.webp",
+      "incoming/luoghi/cicolano-estate-nebbia.webp",
+      "incoming/luoghi/cicolano-estate-pioggia.webp",
+      "incoming/luoghi/cicolano-autunno-sereno.webp",
+      "incoming/luoghi/cicolano-autunno-nuvoloso.webp",
+      "incoming/luoghi/cicolano-autunno-nebbia.webp",
+      "incoming/luoghi/cicolano-autunno-pioggia.webp",
+      "incoming/luoghi/cicolano-inverno-sereno.webp",
+      "incoming/luoghi/cicolano-inverno-nuvoloso.webp",
+      "incoming/luoghi/cicolano-inverno-nebbia.webp",
+      "incoming/luoghi/cicolano-inverno-pioggia.webp",
+      "incoming/luoghi/cicolano-inverno-neve.webp"
+    ]
+  },
+  "assets/zones/cicolano.webp": {
+    "punto": [
+      0.62,
+      0.65
+    ],
+    "riquadro": [
+      0.32,
+      0.42,
+      0.84,
+      0.94
+    ],
+    "soggetto": "ansa centrale del lago e sponda del Cicolano",
+    "dubbio": true,
+    "nota": "Nelle quattro varianti nebbia le sponde sullo sfondo sono velate; il lago centrale resta visibile in tutte e 17. Scarto di un pixel sul lato corto fra versioni: coordinate normalizzate invariate. Nessun ritaglio 5:4, 3:4, 4:5, 4:3, 1:1 può contenere l’intero riquadro, indipendentemente dal punto. Miniatura assets/zones/cicolano-t.webp già ritagliata: 160×160, originale 1600×482; queste coordinate non valgono per il thumb.",
+    "varianti": [
+      "incoming/luoghi/cicolano-primavera-sereno.webp",
+      "incoming/luoghi/cicolano-primavera-nuvoloso.webp",
+      "incoming/luoghi/cicolano-primavera-nebbia.webp",
+      "incoming/luoghi/cicolano-primavera-pioggia.webp",
+      "incoming/luoghi/cicolano-estate-sereno.webp",
+      "incoming/luoghi/cicolano-estate-nuvoloso.webp",
+      "incoming/luoghi/cicolano-estate-nebbia.webp",
+      "incoming/luoghi/cicolano-estate-pioggia.webp",
+      "incoming/luoghi/cicolano-autunno-sereno.webp",
+      "incoming/luoghi/cicolano-autunno-nuvoloso.webp",
+      "incoming/luoghi/cicolano-autunno-nebbia.webp",
+      "incoming/luoghi/cicolano-autunno-pioggia.webp",
+      "incoming/luoghi/cicolano-inverno-sereno.webp",
+      "incoming/luoghi/cicolano-inverno-nuvoloso.webp",
+      "incoming/luoghi/cicolano-inverno-nebbia.webp",
+      "incoming/luoghi/cicolano-inverno-pioggia.webp",
+      "incoming/luoghi/cicolano-inverno-neve.webp"
+    ]
+  },
+  "assets/zones/laga-hd.webp": {
+    "punto": [
+      0.51,
+      0.49
+    ],
+    "riquadro": [
+      0.27,
+      0.35,
+      0.73,
+      0.65
+    ],
+    "soggetto": "cima triangolare e spalle del massiccio della Laga",
+    "dubbio": true,
+    "nota": "Nelle quattro varianti nebbia la cima è velata, soprattutto primavera-nebbia; anche estate-pioggia attenua la sommità. In inverno-neve la cima resta leggibile ma con minore contrasto. Miniatura assets/zones/laga-t.webp già ritagliata: 160×160, originale 1600×1200; queste coordinate non valgono per il thumb. In laga-primavera-nebbia.webp la cima non è distinguibile con affidabilità nei sei ritagli: resta dentro il riquadro ma viene nascosta dalla nebbia.",
+    "varianti": [
+      "incoming/luoghi/laga-primavera-sereno.webp",
+      "incoming/luoghi/laga-primavera-nuvoloso.webp",
+      "incoming/luoghi/laga-primavera-nebbia.webp",
+      "incoming/luoghi/laga-primavera-pioggia.webp",
+      "incoming/luoghi/laga-estate-sereno.webp",
+      "incoming/luoghi/laga-estate-nuvoloso.webp",
+      "incoming/luoghi/laga-estate-nebbia.webp",
+      "incoming/luoghi/laga-estate-pioggia.webp",
+      "incoming/luoghi/laga-autunno-sereno.webp",
+      "incoming/luoghi/laga-autunno-nuvoloso.webp",
+      "incoming/luoghi/laga-autunno-nebbia.webp",
+      "incoming/luoghi/laga-autunno-pioggia.webp",
+      "incoming/luoghi/laga-inverno-sereno.webp",
+      "incoming/luoghi/laga-inverno-nuvoloso.webp",
+      "incoming/luoghi/laga-inverno-nebbia.webp",
+      "incoming/luoghi/laga-inverno-pioggia.webp",
+      "incoming/luoghi/laga-inverno-neve.webp"
+    ]
+  },
+  "assets/zones/laga.webp": {
+    "punto": [
+      0.51,
+      0.49
+    ],
+    "riquadro": [
+      0.27,
+      0.35,
+      0.73,
+      0.65
+    ],
+    "soggetto": "cima triangolare e spalle del massiccio della Laga",
+    "dubbio": true,
+    "nota": "Nelle quattro varianti nebbia la cima è velata, soprattutto primavera-nebbia; anche estate-pioggia attenua la sommità. In inverno-neve la cima resta leggibile ma con minore contrasto. Miniatura assets/zones/laga-t.webp già ritagliata: 160×160, originale 1600×1200; queste coordinate non valgono per il thumb. In laga-primavera-nebbia.webp la cima non è distinguibile con affidabilità nei sei ritagli: resta dentro il riquadro ma viene nascosta dalla nebbia.",
+    "varianti": [
+      "incoming/luoghi/laga-primavera-sereno.webp",
+      "incoming/luoghi/laga-primavera-nuvoloso.webp",
+      "incoming/luoghi/laga-primavera-nebbia.webp",
+      "incoming/luoghi/laga-primavera-pioggia.webp",
+      "incoming/luoghi/laga-estate-sereno.webp",
+      "incoming/luoghi/laga-estate-nuvoloso.webp",
+      "incoming/luoghi/laga-estate-nebbia.webp",
+      "incoming/luoghi/laga-estate-pioggia.webp",
+      "incoming/luoghi/laga-autunno-sereno.webp",
+      "incoming/luoghi/laga-autunno-nuvoloso.webp",
+      "incoming/luoghi/laga-autunno-nebbia.webp",
+      "incoming/luoghi/laga-autunno-pioggia.webp",
+      "incoming/luoghi/laga-inverno-sereno.webp",
+      "incoming/luoghi/laga-inverno-nuvoloso.webp",
+      "incoming/luoghi/laga-inverno-nebbia.webp",
+      "incoming/luoghi/laga-inverno-pioggia.webp",
+      "incoming/luoghi/laga-inverno-neve.webp"
+    ]
+  },
+  "assets/zones/rascino-hd.webp": {
+    "punto": [
+      0.52,
+      0.33
+    ],
+    "riquadro": [
+      0.02,
+      0.16,
+      0.98,
+      0.58
+    ],
+    "soggetto": "monte sopra il lago di Rascino e fascia del lago sotto la riva",
+    "dubbio": true,
+    "nota": "Preservare monte, riva e fascia di lago, non tutta la superficie né il riflesso. Nelle quattro varianti nebbia il monte è velato; in inverno-nebbia e inverno-neve il crinale innevato perde contrasto. Il 16:7 non contiene insieme l’intero riquadro. Nessun ritaglio 16:7 può contenere l’intero riquadro, indipendentemente dal punto. Miniatura assets/zones/rascino-t.webp già ritagliata: 160×160, originale 1200×1600; queste coordinate non valgono per il thumb.",
+    "varianti": [
+      "incoming/luoghi/rascino-primavera-sereno.webp",
+      "incoming/luoghi/rascino-primavera-nuvoloso.webp",
+      "incoming/luoghi/rascino-primavera-nebbia.webp",
+      "incoming/luoghi/rascino-primavera-pioggia.webp",
+      "incoming/luoghi/rascino-estate-sereno.webp",
+      "incoming/luoghi/rascino-estate-nuvoloso.webp",
+      "incoming/luoghi/rascino-estate-nebbia.webp",
+      "incoming/luoghi/rascino-estate-pioggia.webp",
+      "incoming/luoghi/rascino-autunno-sereno.webp",
+      "incoming/luoghi/rascino-autunno-nuvoloso.webp",
+      "incoming/luoghi/rascino-autunno-nebbia.webp",
+      "incoming/luoghi/rascino-autunno-pioggia.webp",
+      "incoming/luoghi/rascino-inverno-sereno.webp",
+      "incoming/luoghi/rascino-inverno-nuvoloso.webp",
+      "incoming/luoghi/rascino-inverno-nebbia.webp",
+      "incoming/luoghi/rascino-inverno-pioggia.webp",
+      "incoming/luoghi/rascino-inverno-neve.webp"
+    ]
+  },
+  "assets/zones/rascino.webp": {
+    "punto": [
+      0.52,
+      0.33
+    ],
+    "riquadro": [
+      0.02,
+      0.16,
+      0.98,
+      0.58
+    ],
+    "soggetto": "monte sopra il lago di Rascino e fascia del lago sotto la riva",
+    "dubbio": true,
+    "nota": "Preservare monte, riva e fascia di lago, non tutta la superficie né il riflesso. Nelle quattro varianti nebbia il monte è velato; in inverno-nebbia e inverno-neve il crinale innevato perde contrasto. Il 16:7 non contiene insieme l’intero riquadro. Nessun ritaglio 16:7 può contenere l’intero riquadro, indipendentemente dal punto. Miniatura assets/zones/rascino-t.webp già ritagliata: 160×160, originale 1200×1600; queste coordinate non valgono per il thumb.",
+    "varianti": [
+      "incoming/luoghi/rascino-primavera-sereno.webp",
+      "incoming/luoghi/rascino-primavera-nuvoloso.webp",
+      "incoming/luoghi/rascino-primavera-nebbia.webp",
+      "incoming/luoghi/rascino-primavera-pioggia.webp",
+      "incoming/luoghi/rascino-estate-sereno.webp",
+      "incoming/luoghi/rascino-estate-nuvoloso.webp",
+      "incoming/luoghi/rascino-estate-nebbia.webp",
+      "incoming/luoghi/rascino-estate-pioggia.webp",
+      "incoming/luoghi/rascino-autunno-sereno.webp",
+      "incoming/luoghi/rascino-autunno-nuvoloso.webp",
+      "incoming/luoghi/rascino-autunno-nebbia.webp",
+      "incoming/luoghi/rascino-autunno-pioggia.webp",
+      "incoming/luoghi/rascino-inverno-sereno.webp",
+      "incoming/luoghi/rascino-inverno-nuvoloso.webp",
+      "incoming/luoghi/rascino-inverno-nebbia.webp",
+      "incoming/luoghi/rascino-inverno-pioggia.webp",
+      "incoming/luoghi/rascino-inverno-neve.webp"
+    ]
+  },
+  "assets/zones/tancia-hd.webp": {
+    "punto": [
+      0.73,
+      0.56
+    ],
+    "riquadro": [
+      0.655,
+      0,
+      0.8,
+      1
+    ],
+    "soggetto": "tronco chiaro obliquo in primo piano nella faggeta della Tancia",
+    "dubbio": true,
+    "nota": "Il tronco resta visibile in tutte e 17, anche con nebbia e neve; la nebbia nasconde gli alberi di sfondo. Il tronco entra ed esce dai bordi originali: il riquadro comprende tutta la sua porzione visibile, senza inferire parti mancanti. Nessun ritaglio 16:7 può contenere l’intero riquadro, indipendentemente dal punto. Miniatura assets/zones/tancia-t.webp già ritagliata: 160×160, originale 1600×900; queste coordinate non valgono per il thumb.",
+    "varianti": [
+      "incoming/luoghi/tancia-primavera-sereno.webp",
+      "incoming/luoghi/tancia-primavera-nuvoloso.webp",
+      "incoming/luoghi/tancia-primavera-nebbia.webp",
+      "incoming/luoghi/tancia-primavera-pioggia.webp",
+      "incoming/luoghi/tancia-estate-sereno.webp",
+      "incoming/luoghi/tancia-estate-nuvoloso.webp",
+      "incoming/luoghi/tancia-estate-nebbia.webp",
+      "incoming/luoghi/tancia-estate-pioggia.webp",
+      "incoming/luoghi/tancia-autunno-sereno.webp",
+      "incoming/luoghi/tancia-autunno-nuvoloso.webp",
+      "incoming/luoghi/tancia-autunno-nebbia.webp",
+      "incoming/luoghi/tancia-autunno-pioggia.webp",
+      "incoming/luoghi/tancia-inverno-sereno.webp",
+      "incoming/luoghi/tancia-inverno-nuvoloso.webp",
+      "incoming/luoghi/tancia-inverno-nebbia.webp",
+      "incoming/luoghi/tancia-inverno-pioggia.webp",
+      "incoming/luoghi/tancia-inverno-neve.webp"
+    ]
+  },
+  "assets/zones/tancia.webp": {
+    "punto": [
+      0.73,
+      0.56
+    ],
+    "riquadro": [
+      0.655,
+      0,
+      0.8,
+      1
+    ],
+    "soggetto": "tronco chiaro obliquo in primo piano nella faggeta della Tancia",
+    "dubbio": true,
+    "nota": "Il tronco resta visibile in tutte e 17, anche con nebbia e neve; la nebbia nasconde gli alberi di sfondo. Il tronco entra ed esce dai bordi originali: il riquadro comprende tutta la sua porzione visibile, senza inferire parti mancanti. Nessun ritaglio 16:7 può contenere l’intero riquadro, indipendentemente dal punto. Miniatura assets/zones/tancia-t.webp già ritagliata: 160×160, originale 1600×900; queste coordinate non valgono per il thumb.",
+    "varianti": [
+      "incoming/luoghi/tancia-primavera-sereno.webp",
+      "incoming/luoghi/tancia-primavera-nuvoloso.webp",
+      "incoming/luoghi/tancia-primavera-nebbia.webp",
+      "incoming/luoghi/tancia-primavera-pioggia.webp",
+      "incoming/luoghi/tancia-estate-sereno.webp",
+      "incoming/luoghi/tancia-estate-nuvoloso.webp",
+      "incoming/luoghi/tancia-estate-nebbia.webp",
+      "incoming/luoghi/tancia-estate-pioggia.webp",
+      "incoming/luoghi/tancia-autunno-sereno.webp",
+      "incoming/luoghi/tancia-autunno-nuvoloso.webp",
+      "incoming/luoghi/tancia-autunno-nebbia.webp",
+      "incoming/luoghi/tancia-autunno-pioggia.webp",
+      "incoming/luoghi/tancia-inverno-sereno.webp",
+      "incoming/luoghi/tancia-inverno-nuvoloso.webp",
+      "incoming/luoghi/tancia-inverno-nebbia.webp",
+      "incoming/luoghi/tancia-inverno-pioggia.webp",
+      "incoming/luoghi/tancia-inverno-neve.webp"
+    ]
+  },
+  "assets/species/edulis-inat2-hd.webp": {
+    "punto": [
+      0.45,
+      0.43
+    ],
+    "riquadro": [
+      0.28,
+      0.21,
+      0.69,
+      0.65
+    ],
+    "soggetto": "coppia di porcini, cappelli e gambi visibili",
+    "dubbio": false,
+    "nota": "Il gambo a destra è rivolto verso l’osservatore; mantenere anche il cappello dietro. Miniatura assets/species/edulis-inat2-t.webp già ritagliata: 160×160, originale 1024×746; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/edulis-inat2.webp": {
+    "punto": [
+      0.45,
+      0.43
+    ],
+    "riquadro": [
+      0.28,
+      0.21,
+      0.69,
+      0.65
+    ],
+    "soggetto": "coppia di porcini, cappelli e gambi visibili",
+    "dubbio": false,
+    "nota": "Il gambo a destra è rivolto verso l’osservatore; mantenere anche il cappello dietro. Miniatura assets/species/edulis-inat2-t.webp già ritagliata: 160×160, originale 1024×746; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/edulis-inat3-hd.webp": {
+    "punto": [
+      0.34,
+      0.49
+    ],
+    "riquadro": [
+      0.14,
+      0.25,
+      0.53,
+      0.78
+    ],
+    "soggetto": "porcino a sinistra, cappello e gambo",
+    "dubbio": false,
+    "nota": "Scelto l’esemplare a sinistra: quello a destra è meno completo. Miniatura assets/species/edulis-inat3-t.webp già ritagliata: 160×160, originale 1024×766; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/edulis-inat3.webp": {
+    "punto": [
+      0.34,
+      0.49
+    ],
+    "riquadro": [
+      0.14,
+      0.25,
+      0.53,
+      0.78
+    ],
+    "soggetto": "porcino a sinistra, cappello e gambo",
+    "dubbio": false,
+    "nota": "Scelto l’esemplare a sinistra: quello a destra è meno completo. Miniatura assets/species/edulis-inat3-t.webp già ritagliata: 160×160, originale 1024×766; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/pinophilus-inat1-hd.webp": {
+    "punto": [
+      0.53,
+      0.36
+    ],
+    "riquadro": [
+      0.11,
+      0.1,
+      0.91,
+      0.61
+    ],
+    "soggetto": "coppia ravvicinata di porcini, cappelli e gambi",
+    "dubbio": true,
+    "nota": "Il righello non fa parte del soggetto. Nessun ritaglio 3:4, 4:5, 1:1 può contenere l’intero riquadro, indipendentemente dal punto. Miniatura assets/species/pinophilus-inat1-t.webp già ritagliata: 160×160, originale 1024×768; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/pinophilus-inat1.webp": {
+    "punto": [
+      0.53,
+      0.36
+    ],
+    "riquadro": [
+      0.11,
+      0.1,
+      0.91,
+      0.61
+    ],
+    "soggetto": "coppia ravvicinata di porcini, cappelli e gambi",
+    "dubbio": true,
+    "nota": "Il righello non fa parte del soggetto. Nessun ritaglio 3:4, 4:5, 1:1 può contenere l’intero riquadro, indipendentemente dal punto. Miniatura assets/species/pinophilus-inat1-t.webp già ritagliata: 160×160, originale 1024×768; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/aereus-inat3-hd.webp": {
+    "punto": [
+      0.57,
+      0.6
+    ],
+    "riquadro": [
+      0.3,
+      0.32,
+      0.82,
+      0.88
+    ],
+    "soggetto": "porcino singolo, cappello e gambo",
+    "dubbio": true,
+    "nota": "Nessun ritaglio 16:7 può contenere l’intero riquadro, indipendentemente dal punto. Miniatura assets/species/aereus-inat3-t.webp già ritagliata: 160×160, originale 768×1024; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/aereus-inat3.webp": {
+    "punto": [
+      0.57,
+      0.6
+    ],
+    "riquadro": [
+      0.3,
+      0.32,
+      0.82,
+      0.88
+    ],
+    "soggetto": "porcino singolo, cappello e gambo",
+    "dubbio": true,
+    "nota": "Nessun ritaglio 16:7 può contenere l’intero riquadro, indipendentemente dal punto. Miniatura assets/species/aereus-inat3-t.webp già ritagliata: 160×160, originale 768×1024; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/caesarea-inat1-hd.webp": {
+    "punto": [
+      0.44,
+      0.55
+    ],
+    "riquadro": [
+      0.15,
+      0.27,
+      0.71,
+      0.81
+    ],
+    "soggetto": "ovolo in apertura e involucro basale visibile",
+    "dubbio": true,
+    "nota": "La volva e il piede sono in parte coperti già nella foto originale: non ricostruiti. Nessun ritaglio 16:7 può contenere l’intero riquadro, indipendentemente dal punto. Miniatura assets/species/caesarea-inat1-t.webp già ritagliata: 160×160, originale 768×1024; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/caesarea-inat1.webp": {
+    "punto": [
+      0.44,
+      0.55
+    ],
+    "riquadro": [
+      0.15,
+      0.27,
+      0.71,
+      0.81
+    ],
+    "soggetto": "ovolo in apertura e involucro basale visibile",
+    "dubbio": true,
+    "nota": "La volva e il piede sono in parte coperti già nella foto originale: non ricostruiti. Nessun ritaglio 16:7 può contenere l’intero riquadro, indipendentemente dal punto. Miniatura assets/species/caesarea-inat1-t.webp già ritagliata: 160×160, originale 768×1024; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/caesarea-inat3-hd.webp": {
+    "punto": [
+      0.51,
+      0.5859375
+    ],
+    "riquadro": [
+      0.34,
+      0.45,
+      0.7,
+      0.75
+    ],
+    "soggetto": "ovolo giovane con involucro bianco visibile",
+    "dubbio": false,
+    "nota": "Preservare insieme la parte arancione e l’involucro bianco. Miniatura assets/species/caesarea-inat3-t.webp già ritagliata: 160×160, originale 768×1024; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/caesarea-inat3.webp": {
+    "punto": [
+      0.51,
+      0.5859375
+    ],
+    "riquadro": [
+      0.34,
+      0.45,
+      0.7,
+      0.75
+    ],
+    "soggetto": "ovolo giovane con involucro bianco visibile",
+    "dubbio": false,
+    "nota": "Preservare insieme la parte arancione e l’involucro bianco. Miniatura assets/species/caesarea-inat3-t.webp già ritagliata: 160×160, originale 768×1024; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/cibarius-inat3-hd.webp": {
+    "punto": [
+      0.49,
+      0.47
+    ],
+    "riquadro": [
+      0.14,
+      0.3,
+      0.79,
+      0.69
+    ],
+    "soggetto": "finferlo superiore, cappello, pieghe e gambo",
+    "dubbio": true,
+    "nota": "Scelto il superiore, più completo; il cappello in basso è fuori dal soggetto principale. La mano copre parte del piede originale. Nessun ritaglio 16:7 può contenere l’intero riquadro, indipendentemente dal punto. Miniatura assets/species/cibarius-inat3-t.webp già ritagliata: 160×160, originale 768×1024; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/cibarius-inat3.webp": {
+    "punto": [
+      0.49,
+      0.47
+    ],
+    "riquadro": [
+      0.14,
+      0.3,
+      0.79,
+      0.69
+    ],
+    "soggetto": "finferlo superiore, cappello, pieghe e gambo",
+    "dubbio": true,
+    "nota": "Scelto il superiore, più completo; il cappello in basso è fuori dal soggetto principale. La mano copre parte del piede originale. Nessun ritaglio 16:7 può contenere l’intero riquadro, indipendentemente dal punto. Miniatura assets/species/cibarius-inat3-t.webp già ritagliata: 160×160, originale 768×1024; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/repandum-inat1-hd.webp": {
+    "punto": [
+      0.5,
+      0.45
+    ],
+    "riquadro": [
+      0.2,
+      0.24,
+      0.74,
+      0.7
+    ],
+    "soggetto": "steccherino, cappello, aculei e gambo",
+    "dubbio": true,
+    "nota": "Nessun ritaglio 16:7 può contenere l’intero riquadro, indipendentemente dal punto. Miniatura assets/species/repandum-inat1-t.webp già ritagliata: 160×160, originale 768×1024; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/repandum-inat1.webp": {
+    "punto": [
+      0.5,
+      0.45
+    ],
+    "riquadro": [
+      0.2,
+      0.24,
+      0.74,
+      0.7
+    ],
+    "soggetto": "steccherino, cappello, aculei e gambo",
+    "dubbio": true,
+    "nota": "Nessun ritaglio 16:7 può contenere l’intero riquadro, indipendentemente dal punto. Miniatura assets/species/repandum-inat1-t.webp già ritagliata: 160×160, originale 768×1024; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/procera-ref-hd.webp": {
+    "punto": [
+      0.66,
+      0.49849999999999994
+    ],
+    "riquadro": [
+      0.42,
+      0.2,
+      0.91,
+      0.82
+    ],
+    "soggetto": "mazza di tamburo adulta a destra, cappello e gambo",
+    "dubbio": true,
+    "nota": "Scelto l’esemplare adulto a destra, con cappello aperto. Nessun ritaglio 16:7, 4:3 può contenere l’intero riquadro, indipendentemente dal punto. Miniatura assets/species/procera-ref-t.webp già ritagliata: 160×160, originale 1286×1600; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/procera-ref.webp": {
+    "punto": [
+      0.66,
+      0.49849999999999994
+    ],
+    "riquadro": [
+      0.42,
+      0.2,
+      0.91,
+      0.82
+    ],
+    "soggetto": "mazza di tamburo adulta a destra, cappello e gambo",
+    "dubbio": true,
+    "nota": "Scelto l’esemplare adulto a destra, con cappello aperto. Nessun ritaglio 16:7, 4:3 può contenere l’intero riquadro, indipendentemente dal punto. Miniatura assets/species/procera-ref-t.webp già ritagliata: 160×160, originale 1286×1600; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/procera-inat3-hd.webp": {
+    "punto": [
+      0.49,
+      0.64
+    ],
+    "riquadro": [
+      0.24,
+      0.41,
+      0.71,
+      0.88
+    ],
+    "soggetto": "mazza di tamburo, cappello e gambo fino al terreno",
+    "dubbio": true,
+    "nota": "Nessun ritaglio 16:7 può contenere l’intero riquadro, indipendentemente dal punto. Miniatura assets/species/procera-inat3-t.webp già ritagliata: 160×160, originale 768×1024; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/procera-inat3.webp": {
+    "punto": [
+      0.49,
+      0.64
+    ],
+    "riquadro": [
+      0.24,
+      0.41,
+      0.71,
+      0.88
+    ],
+    "soggetto": "mazza di tamburo, cappello e gambo fino al terreno",
+    "dubbio": true,
+    "nota": "Nessun ritaglio 16:7 può contenere l’intero riquadro, indipendentemente dal punto. Miniatura assets/species/procera-inat3-t.webp già ritagliata: 160×160, originale 768×1024; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/virescens-inat3-hd.webp": {
+    "punto": [
+      0.57,
+      0.56
+    ],
+    "riquadro": [
+      0.23,
+      0.41,
+      0.99,
+      0.71
+    ],
+    "soggetto": "russula rivolta sul fianco, cappello e gambo",
+    "dubbio": true,
+    "nota": "Scelto l’esemplare centrale completo; escluso il gambo tagliato in alto. Nessun ritaglio 16:7 può contenere l’intero riquadro, indipendentemente dal punto. Miniatura assets/species/virescens-inat3-t.webp già ritagliata: 160×160, originale 577×1024; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/virescens-inat3.webp": {
+    "punto": [
+      0.57,
+      0.56
+    ],
+    "riquadro": [
+      0.23,
+      0.41,
+      0.99,
+      0.71
+    ],
+    "soggetto": "russula rivolta sul fianco, cappello e gambo",
+    "dubbio": true,
+    "nota": "Scelto l’esemplare centrale completo; escluso il gambo tagliato in alto. Nessun ritaglio 16:7 può contenere l’intero riquadro, indipendentemente dal punto. Miniatura assets/species/virescens-inat3-t.webp già ritagliata: 160×160, originale 577×1024; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/terreum-ref-hd.webp": {
+    "punto": [
+      0.491796875,
+      0.53
+    ],
+    "riquadro": [
+      0.075,
+      0.11,
+      0.83,
+      0.91
+    ],
+    "soggetto": "coppia di tricolomi, cappelli, gambi e lamelle dell’esemplare girato",
+    "dubbio": true,
+    "nota": "Entrambi sono necessari alla lettura della foto; preservare le lamelle a destra. Nessun ritaglio 3:4, 4:5, 16:7, 1:1 può contenere l’intero riquadro, indipendentemente dal punto. Miniatura assets/species/terreum-ref-t.webp già ritagliata: 160×160, originale 1600×1067; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/terreum-ref.webp": {
+    "punto": [
+      0.491796875,
+      0.53
+    ],
+    "riquadro": [
+      0.075,
+      0.11,
+      0.83,
+      0.91
+    ],
+    "soggetto": "coppia di tricolomi, cappelli, gambi e lamelle dell’esemplare girato",
+    "dubbio": true,
+    "nota": "Entrambi sono necessari alla lettura della foto; preservare le lamelle a destra. Nessun ritaglio 3:4, 4:5, 16:7, 1:1 può contenere l’intero riquadro, indipendentemente dal punto. Miniatura assets/species/terreum-ref-t.webp già ritagliata: 160×160, originale 1600×1067; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/nuda-ref-hd.webp": {
+    "punto": [
+      0.26,
+      0.555625
+    ],
+    "riquadro": [
+      0.105,
+      0.34,
+      0.405,
+      0.79
+    ],
+    "soggetto": "lepista girata a sinistra, lamelle e gambo",
+    "dubbio": false,
+    "nota": "Scelto l’esemplare a sinistra con lamelle esposte; quello grande a destra è visto soltanto dall’alto. Miniatura assets/species/nuda-ref-t.webp già ritagliata: 160×160, originale 750×700; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/nuda-ref.webp": {
+    "punto": [
+      0.26,
+      0.555625
+    ],
+    "riquadro": [
+      0.105,
+      0.34,
+      0.405,
+      0.79
+    ],
+    "soggetto": "lepista girata a sinistra, lamelle e gambo",
+    "dubbio": false,
+    "nota": "Scelto l’esemplare a sinistra con lamelle esposte; quello grande a destra è visto soltanto dall’alto. Miniatura assets/species/nuda-ref-t.webp già ritagliata: 160×160, originale 750×700; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/agaricus-campestris-inat1-hd.webp": {
+    "punto": [
+      0.51,
+      0.49875
+    ],
+    "riquadro": [
+      0.18,
+      0.29,
+      0.83,
+      0.78
+    ],
+    "soggetto": "prataiolo tenuto in mano, lamelle e gambo",
+    "dubbio": true,
+    "nota": "La mano copre parte del piede già nell’originale. Nessun ritaglio 16:7 può contenere l’intero riquadro, indipendentemente dal punto. Miniatura assets/species/agaricus-campestris-inat1-t.webp: proporzioni compatibili con l’originale (arrotondamenti di ridimensionamento)."
+  },
+  "assets/species/agaricus-campestris-inat1.webp": {
+    "punto": [
+      0.51,
+      0.49875
+    ],
+    "riquadro": [
+      0.18,
+      0.29,
+      0.83,
+      0.78
+    ],
+    "soggetto": "prataiolo tenuto in mano, lamelle e gambo",
+    "dubbio": true,
+    "nota": "La mano copre parte del piede già nell’originale. Nessun ritaglio 16:7 può contenere l’intero riquadro, indipendentemente dal punto. Miniatura assets/species/agaricus-campestris-inat1-t.webp: proporzioni compatibili con l’originale (arrotondamenti di ridimensionamento)."
+  },
+  "assets/species/cyclocybe-aegerita-inat1-hd.webp": {
+    "punto": [
+      0.27,
+      0.33
+    ],
+    "riquadro": [
+      0,
+      0.05,
+      0.53,
+      0.69
+    ],
+    "soggetto": "pioppino superiore a sinistra, lamelle e gambo visibile",
+    "dubbio": true,
+    "nota": "Il bordo sinistro del cappello e parte del gambo sono già tagliati o coperti nella foto originale. Non esiste un fungo intero pienamente leggibile: selezione dubbia. Nessun ritaglio 16:7 può contenere l’intero riquadro, indipendentemente dal punto. Miniatura assets/species/cyclocybe-aegerita-inat1-t.webp: proporzioni compatibili con l’originale (arrotondamenti di ridimensionamento)."
+  },
+  "assets/species/cyclocybe-aegerita-inat1.webp": {
+    "punto": [
+      0.27,
+      0.33
+    ],
+    "riquadro": [
+      0,
+      0.05,
+      0.53,
+      0.69
+    ],
+    "soggetto": "pioppino superiore a sinistra, lamelle e gambo visibile",
+    "dubbio": true,
+    "nota": "Il bordo sinistro del cappello e parte del gambo sono già tagliati o coperti nella foto originale. Non esiste un fungo intero pienamente leggibile: selezione dubbia. Nessun ritaglio 16:7 può contenere l’intero riquadro, indipendentemente dal punto. Miniatura assets/species/cyclocybe-aegerita-inat1-t.webp: proporzioni compatibili con l’originale (arrotondamenti di ridimensionamento)."
+  },
+  "assets/species/pleurotus-ostreatus-ref-hd.webp": {
+    "punto": [
+      0.71875,
+      0.47
+    ],
+    "riquadro": [
+      0.515,
+      0.3,
+      1,
+      0.64
+    ],
+    "soggetto": "gruppo ravvicinato di pleuroti a destra sul tronco",
+    "dubbio": false,
+    "nota": "Il gruppo a destra è più leggibile; un cappello arriva al bordo originale destro e la base è in parte nascosta dal tronco. Miniatura assets/species/pleurotus-ostreatus-ref-t.webp: proporzioni compatibili con l’originale (arrotondamenti di ridimensionamento)."
+  },
+  "assets/species/pleurotus-ostreatus-ref.webp": {
+    "punto": [
+      0.71875,
+      0.47
+    ],
+    "riquadro": [
+      0.515,
+      0.3,
+      1,
+      0.64
+    ],
+    "soggetto": "gruppo ravvicinato di pleuroti a destra sul tronco",
+    "dubbio": false,
+    "nota": "Il gruppo a destra è più leggibile; un cappello arriva al bordo originale destro e la base è in parte nascosta dal tronco. Miniatura assets/species/pleurotus-ostreatus-ref-t.webp: proporzioni compatibili con l’originale (arrotondamenti di ridimensionamento)."
+  },
+  "assets/species/morchella-esculenta-inat1-hd.webp": {
+    "punto": [
+      0.52,
+      0.53
+    ],
+    "riquadro": [
+      0.37,
+      0.37,
+      0.64,
+      0.68
+    ],
+    "soggetto": "spugnola centrale, cappello alveolato e gambo visibile",
+    "dubbio": false,
+    "nota": "Il gambo è parzialmente nascosto da foglie già nell’originale. Miniatura assets/species/morchella-esculenta-inat1-t.webp: proporzioni compatibili con l’originale (arrotondamenti di ridimensionamento)."
+  },
+  "assets/species/morchella-esculenta-inat1.webp": {
+    "punto": [
+      0.52,
+      0.53
+    ],
+    "riquadro": [
+      0.37,
+      0.37,
+      0.64,
+      0.68
+    ],
+    "soggetto": "spugnola centrale, cappello alveolato e gambo visibile",
+    "dubbio": false,
+    "nota": "Il gambo è parzialmente nascosto da foglie già nell’originale. Miniatura assets/species/morchella-esculenta-inat1-t.webp: proporzioni compatibili con l’originale (arrotondamenti di ridimensionamento)."
+  },
+  "assets/species/morchella-elata-ref-hd.webp": {
+    "punto": [
+      0.7,
+      0.53
+    ],
+    "riquadro": [
+      0.585,
+      0.105,
+      0.805,
+      0.94
+    ],
+    "soggetto": "spugnola più grande a destra, cappello e gambo",
+    "dubbio": true,
+    "nota": "Scelto l’esemplare grande a destra; la base è in parte nascosta dal terreno. Nessun ritaglio 16:7 può contenere l’intero riquadro, indipendentemente dal punto. Miniatura assets/species/morchella-elata-ref-t.webp: proporzioni compatibili con l’originale (arrotondamenti di ridimensionamento)."
+  },
+  "assets/species/morchella-elata-ref.webp": {
+    "punto": [
+      0.7,
+      0.53
+    ],
+    "riquadro": [
+      0.585,
+      0.105,
+      0.805,
+      0.94
+    ],
+    "soggetto": "spugnola più grande a destra, cappello e gambo",
+    "dubbio": true,
+    "nota": "Scelto l’esemplare grande a destra; la base è in parte nascosta dal terreno. Nessun ritaglio 16:7 può contenere l’intero riquadro, indipendentemente dal punto. Miniatura assets/species/morchella-elata-ref-t.webp: proporzioni compatibili con l’originale (arrotondamenti di ridimensionamento)."
+  },
+  "assets/species/craterellus-lutescens-inat1-hd.webp": {
+    "punto": [
+      0.44,
+      0.36
+    ],
+    "riquadro": [
+      0.2,
+      0.065,
+      0.69,
+      0.68
+    ],
+    "soggetto": "finferlo tubolare in alto a sinistra, cappello e gambo giallo",
+    "dubbio": true,
+    "nota": "Il gambo attraversa rametti già presenti; il fungo in basso a destra è sfocato e non è il soggetto scelto. Nessun ritaglio 5:4, 16:7, 4:3, 1:1 può contenere l’intero riquadro, indipendentemente dal punto. Miniatura assets/species/craterellus-lutescens-inat1-t.webp: proporzioni compatibili con l’originale (arrotondamenti di ridimensionamento)."
+  },
+  "assets/species/craterellus-lutescens-inat1.webp": {
+    "punto": [
+      0.44,
+      0.36
+    ],
+    "riquadro": [
+      0.2,
+      0.065,
+      0.69,
+      0.68
+    ],
+    "soggetto": "finferlo tubolare in alto a sinistra, cappello e gambo giallo",
+    "dubbio": true,
+    "nota": "Il gambo attraversa rametti già presenti; il fungo in basso a destra è sfocato e non è il soggetto scelto. Nessun ritaglio 5:4, 16:7, 4:3, 1:1 può contenere l’intero riquadro, indipendentemente dal punto. Miniatura assets/species/craterellus-lutescens-inat1-t.webp: proporzioni compatibili con l’originale (arrotondamenti di ridimensionamento)."
+  },
+  "assets/species/hygrophorus-marzuolus-inat1-hd.webp": {
+    "punto": [
+      0.29,
+      0.76
+    ],
+    "riquadro": [
+      0.02,
+      0.58,
+      0.56,
+      0.91
+    ],
+    "soggetto": "dormiente coricato in primo piano, cappello e gambo",
+    "dubbio": true,
+    "nota": "Scelto il fungo coricato più vicino; la base a sinistra tocca il bordo e il cappello è in parte coperto da foglie. Nessun ritaglio 16:7 può contenere l’intero riquadro, indipendentemente dal punto. Miniatura assets/species/hygrophorus-marzuolus-inat1-t.webp: proporzioni compatibili con l’originale (arrotondamenti di ridimensionamento)."
+  },
+  "assets/species/hygrophorus-marzuolus-inat1.webp": {
+    "punto": [
+      0.29,
+      0.76
+    ],
+    "riquadro": [
+      0.02,
+      0.58,
+      0.56,
+      0.91
+    ],
+    "soggetto": "dormiente coricato in primo piano, cappello e gambo",
+    "dubbio": true,
+    "nota": "Scelto il fungo coricato più vicino; la base a sinistra tocca il bordo e il cappello è in parte coperto da foglie. Nessun ritaglio 16:7 può contenere l’intero riquadro, indipendentemente dal punto. Miniatura assets/species/hygrophorus-marzuolus-inat1-t.webp: proporzioni compatibili con l’originale (arrotondamenti di ridimensionamento)."
+  },
+  "assets/species/tricholoma-portentosum-inat1-hd.webp": {
+    "punto": [
+      0.52,
+      0.48
+    ],
+    "riquadro": [
+      0.35,
+      0.325,
+      0.69,
+      0.66
+    ],
+    "soggetto": "tricoloma presso il tronco, cappello e gambo visibile",
+    "dubbio": true,
+    "nota": "Il gambo è in parte occultato dal ramo davanti e dalla lettiera già nell’originale. Nessun ritaglio 16:7 può contenere l’intero riquadro, indipendentemente dal punto. Miniatura assets/species/tricholoma-portentosum-inat1-t.webp: proporzioni compatibili con l’originale (arrotondamenti di ridimensionamento)."
+  },
+  "assets/species/tricholoma-portentosum-inat1.webp": {
+    "punto": [
+      0.52,
+      0.48
+    ],
+    "riquadro": [
+      0.35,
+      0.325,
+      0.69,
+      0.66
+    ],
+    "soggetto": "tricoloma presso il tronco, cappello e gambo visibile",
+    "dubbio": true,
+    "nota": "Il gambo è in parte occultato dal ramo davanti e dalla lettiera già nell’originale. Nessun ritaglio 16:7 può contenere l’intero riquadro, indipendentemente dal punto. Miniatura assets/species/tricholoma-portentosum-inat1-t.webp: proporzioni compatibili con l’originale (arrotondamenti di ridimensionamento)."
+  },
+  "assets/species/amanita-muscaria-inat1-hd.webp": {
+    "punto": [
+      0.63,
+      0.47
+    ],
+    "riquadro": [
+      0.42,
+      0.165,
+      0.85,
+      0.795
+    ],
+    "soggetto": "amanita principale a destra, cappello e gambo",
+    "dubbio": true,
+    "nota": "Il piede è parzialmente nascosto nel suolo; l’esemplare dietro a sinistra è escluso dal soggetto principale. Nessun ritaglio 16:7 può contenere l’intero riquadro, indipendentemente dal punto. Miniatura assets/species/amanita-muscaria-inat1-t.webp già ritagliata: 160×160, originale 1024×768; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/amanita-muscaria-inat1.webp": {
+    "punto": [
+      0.63,
+      0.47
+    ],
+    "riquadro": [
+      0.42,
+      0.165,
+      0.85,
+      0.795
+    ],
+    "soggetto": "amanita principale a destra, cappello e gambo",
+    "dubbio": true,
+    "nota": "Il piede è parzialmente nascosto nel suolo; l’esemplare dietro a sinistra è escluso dal soggetto principale. Nessun ritaglio 16:7 può contenere l’intero riquadro, indipendentemente dal punto. Miniatura assets/species/amanita-muscaria-inat1-t.webp già ritagliata: 160×160, originale 1024×768; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/lepiota-cristata-inat1-hd.webp": {
+    "punto": [
+      0.54,
+      0.53
+    ],
+    "riquadro": [
+      0.425,
+      0.46,
+      0.66,
+      0.635
+    ],
+    "soggetto": "piccolo cappello tenuto fra le dita",
+    "dubbio": true,
+    "nota": "Gambo non visibile, cappello solo dall’alto e mano davanti: impossibile delimitare un fungo intero. Riquadro limitato alla parte osservabile; selezione dubbia. Miniatura assets/species/lepiota-cristata-inat1-t.webp già ritagliata: 160×160, originale 768×1024; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/lepiota-cristata-inat1.webp": {
+    "punto": [
+      0.54,
+      0.53
+    ],
+    "riquadro": [
+      0.425,
+      0.46,
+      0.66,
+      0.635
+    ],
+    "soggetto": "piccolo cappello tenuto fra le dita",
+    "dubbio": true,
+    "nota": "Gambo non visibile, cappello solo dall’alto e mano davanti: impossibile delimitare un fungo intero. Riquadro limitato alla parte osservabile; selezione dubbia. Miniatura assets/species/lepiota-cristata-inat1-t.webp già ritagliata: 160×160, originale 768×1024; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/gymnopilus-junonius-inat1-hd.webp": {
+    "punto": [
+      0.43,
+      0.54
+    ],
+    "riquadro": [
+      0.275,
+      0.405,
+      0.57,
+      0.695
+    ],
+    "soggetto": "gimnopilo principale a sinistra, cappello e gambo sul tronco",
+    "dubbio": false,
+    "nota": "Scelto quello a sinistra; l’esemplare a destra ha la base nascosta. Miniatura assets/species/gymnopilus-junonius-inat1-t.webp già ritagliata: 160×160, originale 1024×768; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/gymnopilus-junonius-inat1.webp": {
+    "punto": [
+      0.43,
+      0.54
+    ],
+    "riquadro": [
+      0.275,
+      0.405,
+      0.57,
+      0.695
+    ],
+    "soggetto": "gimnopilo principale a sinistra, cappello e gambo sul tronco",
+    "dubbio": false,
+    "nota": "Scelto quello a sinistra; l’esemplare a destra ha la base nascosta. Miniatura assets/species/gymnopilus-junonius-inat1-t.webp già ritagliata: 160×160, originale 1024×768; queste coordinate non valgono per il thumb."
+  }
+}
