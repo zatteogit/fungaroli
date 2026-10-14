@@ -6,6 +6,7 @@ import { cardLatin } from './names.js';
 import { treeGroup } from './plant-catalog.js';
 import { searchFieldHtml, matchesQuery, renderAlsoIn } from './catalog-search.js';
 import { loadKeyData, traitTilesHtml } from './guided-key.js';
+import { sourceRows, photoRows } from './identify.js';
 
 const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 let T = {}, MEDIA = {}, ASSET = (f) => f, ZONES = [], HAB = {}, THUMB = () => '';
@@ -52,6 +53,17 @@ export function treeThumb(id, size = 56) {
   return m ? `<img class="thumb" data-src="${ASSET(m.thumb || m.file)}" width="${size}" height="${size}" alt="" loading="lazy" decoding="async">`
     : `<span class="thumb thumb-ph" style="width:${size}px;height:${size}px">${esc((T[id]?.name || '?').slice(0, 2))}</span>`;
 }
+
+// «Non confonderlo con»: scheda con foto, nome, latino e differenze; se l'albero è in catalogo la scheda intera apre la sua pagina
+const confusableCard = (self) => (c) => {
+  const cid = Object.keys(T).find((k) => k === c.id || T[k].name.toLowerCase() === String(c.name || '').toLowerCase());
+  const [, nm, lat] = String(c.name || '').match(/^(.*?)\s*(?:\(([^)]+)\))?$/) || [];
+  const name = cid ? T[cid].name : nm, latin = cid ? T[cid].latin : (lat || c.latin || '');
+  const m = cid && treePhotos(cid)[0];
+  const img = m ? `<img data-src="${ASSET(m.thumb || m.file)}" alt="" loading="lazy" decoding="async">` : `<span class="thumb-ph tx-look-ph" aria-hidden="true">${esc(String(name || '?').slice(0, 2))}</span>`;
+  const inner = `${img}<span><b>${esc(name)}</b>${latin ? `<i>${esc(latin)}</i>` : ''}<small class="muted">${esc(c.how_to_tell)}</small></span>`;
+  return `<li>${cid && cid !== self ? `<a class="tx-look-main" data-entity href="#/albero/${encodeURIComponent(cid)}">${inner}</a>` : `<div class="tx-look-main">${inner}</div>`}</li>`;
+};
 
 // Filtro per gruppo, dal campo `type`: resta in memoria per la sessione.
 let TREE_GROUP = '', TREE_QUERY = '';
@@ -112,13 +124,13 @@ export function renderTreePage(body, id) {
     ${photos.length > 1 ? `<div class="sp-strip">${photos.slice(1).map((p, k) => `<button type="button" class="zoomable" data-photo="${k + 1}" aria-label="Foto ${k + 2}: ingrandisci"><img data-src="${ASSET(p.file)}" alt="" loading="lazy" decoding="async"></button>`).join('')}</div>` : ''}
     <h3>Caratteri da confrontare</h3><div data-tree-traits></div>
     ${t.recognize?.length ? `<ol class="keys">${t.recognize.map((k) => `<li><span class="key-text">${esc(k)}</span></li>`).join('')}</ol>` : ''}
-    ${t.confusable?.length ? `<h3>Non confonderlo con</h3><ul class="reasons tree-confusable">${t.confusable.map((c) => { const cid = Object.keys(T).find((k) => k === c.id || T[k].name.toLowerCase() === String(c.name || '').toLowerCase()); return `<li><b>${cid && cid !== id ? `<a class="tree-link" href="#/albero/${encodeURIComponent(cid)}">${esc(c.name)}</a>` : esc(c.name)}</b>: ${esc(c.how_to_tell)}</li>`; }).join('')}</ul>` : ''}
+    ${t.confusable?.length ? `<h3>Non confonderlo con</h3><ul class="tx-look tree-confusable">${t.confusable.map(confusableCard(id)).join('')}</ul>` : ''}
     ${fungi.length ? `<h3>Funghi che ci crescono</h3><div class="tree-fungi">${fungi.map((s) => `<a href="#/specie/${s.id}" class="tf" data-entity>${THUMB(s.id, 52)}<span>${esc(s.name)}</span></a>`).join('')}</div>${t.fungi_note ? `<p class="small muted">${esc(t.fungi_note)}</p>` : ''}` : ''}
     <div class="sp-more">
       ${sec('Nelle zone', zrows.length ? `<p class="small muted">Ettari dei boschi in cui domina (${esc(cats.join(', '))}), dalla Carta Forestale.</p><ul class="where">${zrows.map(({ z, ha }) => `
         <li><a href="#/zona/${z.id}/0"><div class="where-top"><b>${esc(z.name)}</b><span class="small">~${ha.toLocaleString('it-IT')} ha</span></div><div class="bar"><i style="width:${Math.round((ha / maxHa) * 100)}%;background:var(--line)"></i></div></a></li>`).join('')}</ul>` : (t.where_reatino ? '' : ''))}
       ${sec('Foglia, corteccia, frutto', `<dl class="traits">${[['Foglia', t.leaf], ['Corteccia', t.bark], ['Frutto', t.fruit], ['Portamento', t.habit], ["D'inverno", t.season_tip], ['Quota documentata',t.altitudeNote],['Nel Reatino', t.where_reatino]].filter(([, v]) => v).map(([k, v]) => `<dt>${k}</dt><dd>${esc(v)}</dd>`).join('')}</dl>`)}
-      ${sec('Fonti e crediti delle foto', `${t.sources?.length ? `<ul class="small sources">${t.sources.map((x) => `<li><a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.title)}</a></li>`).join('')}</ul>` : ''}${photos.length ? `<ul class="small sources">${photos.map((p) => `<li>${credit(p)}</li>`).join('')}</ul>` : ''}`)}
+      ${sec('Fonti e crediti delle foto', `${sourceRows(t.sources)}${photos.length ? `<p class="src-h">Fotografie</p>${photoRows(photos)}` : ''}`)}
     </div>
     </div>`;
   loadKeyData('alberi').then((d) => { const slot = body.querySelector('[data-tree-traits]'); if (slot && d?.items?.[id]) slot.innerHTML = traitTilesHtml(d, d.items[id].traits); });

@@ -3151,3 +3151,32 @@ body[data-page="uscite"] #weather-work { display: none; }
 /* lo stato del meteo riguarda solo uscite, mappa e luoghi */
 body:not([data-page="uscite"]):not([data-page="mappa"]):not([data-page="zona"]) :is(#stale, #weather-work) { display: none; }
 .seg-nav:empty, .sub-nav:empty { display: none; }
+/* === Fonti e liste come righe ===
+   Fonti, crediti delle foto, regole generali e «Non confonderlo con» degli alberi:
+   righe da app, niente elenchi puntati di link sottolineati. */
+.src-rows { list-style: none; margin: 0; padding: 0; }
+.src-row { display: flex; align-items: center; gap: 8px; border-top: 1px solid var(--hair); }
+.src-row:first-child { border-top: 0; }
+.src-a { flex: 1; min-width: 0; min-height: 48px; display: flex; align-items: center; gap: 12px; padding: 8px 0; color: inherit; text-decoration: none; }
+.src-tx { flex: 1; min-width: 0; display: grid; gap: 2px; }
+.src-tx b { font-size: 14.5px; font-weight: 600; line-height: 1.3; color: var(--text); }
+.src-tx small { font-size: 12.5px; line-height: 1.35; color: var(--muted); overflow-wrap: anywhere; }
+.src-ic { flex: none; width: 16px; height: 16px; fill: none; stroke: var(--muted); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+a.src-a:hover .src-tx b { color: var(--accent); }
+:is(#guide-body, .editorial-article, [data-view="info"], [data-view="metodo"]) .src-rows li.src-row a.src-a, :is(#guide-body, .editorial-article, [data-view="info"], [data-view="metodo"]) .src-rows li.src-row a.src-lic { text-decoration: none; }
+a.src-a:active { opacity: .7; }
+.src-a:focus-visible, .src-lic:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 6px; }
+.src-lic { flex: none; min-height: 32px; display: inline-flex; align-items: center; padding: 0 10px; border-radius: 999px; border: 1px solid var(--hair); font-size: 12px; font-weight: 600; color: var(--muted); text-decoration: none; }
+.src-h { margin: 18px 0 2px; font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+.sec-body > .src-h:first-child { margin-top: 4px; }
+/* «Fonti (n)» dentro le regole di preparazione: chiuse, aperte a tutta larghezza */
+.k-src-d[open], .k-src-list[open] { display: block; flex-basis: 100%; }
+.k-src-d .src-rows, .k-src-list .src-rows { margin-top: 4px; }
+.k-src-d .src-tx b { font-size: 13.5px; }
+/* regole generali di sicurezza: stessi avvisi delle schede, senza riquadro */
+.warn-list { list-style: none; margin: 0; padding: 0; }
+.warn-list .att-item:first-child { border-top: 0; padding-top: 4px; }
+/* alberi: «Non confonderlo con» come le schede dei funghi */
+.tree-confusable small.muted { font-size: 13.5px; line-height: 1.45; color: var(--text-2); }
+.tx-look-ph { width: 64px; height: 64px; border-radius: 12px; background: var(--surface-3); font-size: 14px; }
+div.tx-look-main { cursor: default; }
