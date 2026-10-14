@@ -29,7 +29,7 @@ import { renderGuidedKey } from './guided-key.js';
 import { renderWhy, renderMethod } from './science.js';
 import { navigate, soft } from './motion.js';
 import { FOREST_LEGEND } from './forest-legend.js';
-import { initTrees, renderTreeGrid, renderTreePage, linkTrees, treeForCategory, treeThumb } from './trees.js';
+import { initTrees, renderTreeGrid, renderTreePage, linkTrees, treeForCategory, treeThumb, treePhotoSrc } from './trees.js';
 import { crowding, comfortScore, timingAdvice, fmtTime, fmtRough, holidayName, intornoA } from './human.js';
 import { initCommunity, communityStatus, communityRank, reportBadge } from './community.js';
 import { guideTitle, renderGuideCards, renderGuide, initGuideContent, guideCount } from './guides.js';
@@ -38,6 +38,7 @@ import { mountSpeciesAutocomplete } from './species-autocomplete.js';
 import { uniquePlaceProposals, chooseWalkTrail, walkContext, trailSketch } from './walks.js';
 import { cardLatin } from './names.js';
 import { pickCover } from './zone-cover.js';
+import { initChallenges, renderChallengeList, renderChallenge, challengeTitle, challengeList, suggestedChallenge } from './challenges.js';
 
 const HISTORY_DAYS = 30;   // giorni passati mostrati nel grafico
 const AHEAD_DAYS = 7;      // giorni futuri valutati
@@ -218,6 +219,8 @@ async function init() {
   if(state.plantIds!==null){state.plantIds=new Set([...state.plantIds].filter(id=>plantModels.some(p=>p.id===id)));if(!state.plantIds.size)state.plantIds=null;}
   initPlants(plantData,embedded?(f)=>embedded.assets?.[f]||'':(f)=>f,id=>plantModels.find(m=>m.plantId===id));
   initLearning({ glossary: embedded?.glossary || await load('glossary'), trees: trj,media:embedded?.glossaryMedia||await load('media-glossary'),assetUrl:embedded?(f)=>embedded.assets?.[f]||'':(f)=>f });
+  if (embedded) challengeAsset = (f) => embedded.assets?.[f] || '';
+  initChallenges({ data: embedded?.challenges || await load('challenges'), assetUrl: challengeAsset, entity: challengeEntity });
   initEntitySheets({ enhance: enhanceGlossary, render: (body, href) => {
     const [, kind, encodedId] = href.split('/'), id = decodeURIComponent(encodedId);
     if (kind === 'pianta' && plantName(id)) {renderPlantPage(body,id);enhanceDiscoverySheet(body,href);return plantName(id);}
@@ -286,7 +289,7 @@ const SCOPRI_SUB = {
   funghi: [['#/specie', 'Sfoglia'], ['#/riconosci', 'Impara a riconoscere']],
   piante: [['#/piante', 'Sfoglia'], ['#/riconosci/piante', 'Impara a riconoscere']],
   alberi: [['#/alberi', 'Sfoglia'], ['#/riconosci/alberi', 'Impara a riconoscere']],
-  impara: [['#/glossario', 'Glossario'], ['#/guide', 'Guide'], ['#/riconosci/bosco', 'Bosco e sentiero']],
+  impara: [['#/glossario', 'Glossario'], ['#/guide', 'Guide'], ['#/riconosci/bosco', 'Bosco e sentiero'], ['#/sfide', 'Sfide']],
 };
 const RECOGNIZE_HEAD = {
   funghi: ['Funghi', 'Descrivi quello che vedi: le domande restringono il confronto e mostrano i sosia.'],
@@ -296,7 +299,7 @@ const RECOGNIZE_HEAD = {
 };
 function scopriPlace(r) {
   if (r.view === 'riconosci') return [r.recognizeMode === 'bosco' ? 'impara' : r.recognizeMode, r.recognizeMode === 'bosco' ? '#/riconosci/bosco' : SCOPRI_SUB[r.recognizeMode][1][0]];
-  return { specie: ['funghi', '#/specie'], piante: ['piante', '#/piante'], alberi: ['alberi', '#/alberi'], glossario: ['impara', '#/glossario'], 'guide-list': ['impara', '#/guide'] }[r.view] || null;
+  return { specie: ['funghi', '#/specie'], piante: ['piante', '#/piante'], alberi: ['alberi', '#/alberi'], glossario: ['impara', '#/glossario'], 'guide-list': ['impara', '#/guide'], sfide: ['impara', '#/sfide'] }[r.view] || null;
 }
 function paintScopriNav(r) {
   const place = scopriPlace(r), view = document.querySelector(`.view[data-view="${r.view}"]`);
@@ -322,6 +325,7 @@ function parseRoute() {
   if (a === 'alberi') return { view: 'alberi' };
   if (a === 'riconosci') return { view: 'riconosci', recognizeMode: ['alberi','piante','bosco'].includes(b) ? b : 'funghi', compare: b === 'confronta' ? c : '', pick: b === 'confronta' ? parts[3] : '' };
   if (a === 'guide') return b ? { view: 'guide', guideId: b } : { view: 'guide-list' };
+  if (a === 'sfide') return { view: 'sfide', challengeId: b || '' };
   if (a === 'diario') return { view: 'diario' };
   if (a === 'info') return { view: 'info' };
   if (a === 'metodo') return { view: 'metodo' };
@@ -333,12 +337,14 @@ function parseRoute() {
 // profondita' e posizione delle viste: decidono la direzione della transizione
 const LEVEL = { pianta:1, commestibile: 1, guide: 1, zona: 1, 'specie-dettaglio': 1, albero: 1, info: 1, metodo: 2, fungo: 1 };
 const TABS = ['uscite', 'mappa', 'specie', 'diario'];
-const SUB = { specie: 0, alberi: 1, piante:2, riconosci: 3, glossario: 4, 'guide-list': 5 };
+const SUB = { specie: 0, alberi: 1, piante:2, riconosci: 3, glossario: 4, 'guide-list': 5, sfide: 6 };
+// una sfida aperta è un livello sotto l'elenco delle sfide
+const levelOf = (r) => (LEVEL[r.view] || 0) + (r.compare ? 2 : 0) + (r.challengeId ? 1 : 0);
 const scrollMem = new Map();
 let prev = null;
 function navKind(a, b) {
   if (!a) return 'none';
-  const la = (LEVEL[a.view] || 0) + (a.compare ? 2 : 0), lb = (LEVEL[b.view] || 0) + (b.compare ? 2 : 0);
+  const la = levelOf(a), lb = levelOf(b);
   if (lb > la) return 'push';
   if (lb < la) return 'pop';
   if (a.view === b.view) return 'none';
@@ -357,7 +363,7 @@ addEventListener('scroll', onScrollBar, { passive: true });
 
 // tasto indietro in alto a sinistra: freccia + nome della pagina a cui torni
 const navStack = [];
-const TITLES = { piante:'Piante e fiori', uscite: 'Uscite', mappa: 'Mappa', specie: 'Funghi', alberi: 'Alberi', riconosci: 'Riconosci', glossario: 'Glossario', 'guide-list': 'Guide', diario: 'Taccuino', info: 'Regole e metodo', metodo: 'Come funziona' };
+const TITLES = { piante:'Piante e fiori', uscite: 'Uscite', mappa: 'Mappa', specie: 'Funghi', alberi: 'Alberi', riconosci: 'Riconosci', glossario: 'Glossario', 'guide-list': 'Guide', sfide: 'Sfide', diario: 'Taccuino', info: 'Regole e metodo', metodo: 'Come funziona' };
 function titleOf(r) {
   if (!r) return '';
   if (r.view === 'zona') { const z = (weatherZones||zones).find((x) => x.id === r.zoneId); return z ? splitName(z)[0] : 'Zona'; }
@@ -369,6 +375,7 @@ function titleOf(r) {
   if (r.view === 'pianta') return plantName(r.plantId)||'Pianta';
   if (r.view === 'albero') return treesData?.trees?.[r.treeId]?.name || 'Albero';
   if (r.view === 'riconosci' && r.compare) return 'Confronto';
+  if (r.view === 'sfide' && r.challengeId) return challengeTitle(r.challengeId) || 'Sfida';
   return TITLES[r.view] || '';
 }
 function parentOf(r) {
@@ -378,10 +385,11 @@ function parentOf(r) {
   if (r.view === 'albero') return '#/alberi';
   if (r.view === 'guide') return '#/guide';
   if (r.view === 'riconosci' && r.compare) return '#/riconosci';
-  if (['specie','alberi','piante','riconosci','glossario','guide-list'].includes(r.view)) return '#/scopri';
+  if (r.view === 'sfide' && r.challengeId) return '#/sfide';
+  if (['specie','alberi','piante','riconosci','glossario','guide-list','sfide'].includes(r.view)) return '#/scopri';
   return '#/';
 }
-const PARENT_TITLE = (r) => ({ '#/scopri': 'Scopri', '#/specie': 'Funghi', '#/alberi': 'Alberi', '#/piante':'Piante e fiori', '#/riconosci': 'Impara a riconoscere', '#/guide': 'Guide', '#/': 'Uscite' }[parentOf(r)]);
+const PARENT_TITLE = (r) => ({ '#/scopri': 'Scopri', '#/specie': 'Funghi', '#/alberi': 'Alberi', '#/piante':'Piante e fiori', '#/riconosci': 'Impara a riconoscere', '#/guide': 'Guide', '#/sfide': 'Sfide', '#/': 'Uscite' }[parentOf(r)]);
 // modalita' app: quando il titolo grande della pagina passa sotto la barra in alto, la barra lo mostra piccolo al centro (come iOS)
 let titleIO = null;
 function watchTitle() {
@@ -408,7 +416,7 @@ function updateBack(r, nav) {
     if (nav === 'left' || nav === 'right') navStack.length = 0; // cambio di scheda: si riparte
     navStack.push({ hash: r.hash, title: titleOf(r) });
   }
-  const deep = (LEVEL[r.view] || 0) + (r.compare ? 2 : 0) > 0;
+  const deep = levelOf(r) > 0;
   const b = $('.appbar-back');
   if (b) {
     b.hidden = !deep;
@@ -424,7 +432,7 @@ function updateBack(r, nav) {
 
 function route() {
   const r = parseRoute();
-  r.tab = { piante:'specie', pianta:'specie', zona: 'uscite', glossario: 'specie', 'specie-dettaglio': 'specie', alberi: 'specie', albero: 'specie', riconosci: 'specie', info: '', metodo: '', guide: 'specie', 'guide-list': 'specie', fungo: 'specie', commestibile: 'specie' }[r.view] ?? r.view;
+  r.tab = { piante:'specie', pianta:'specie', zona: 'uscite', glossario: 'specie', 'specie-dettaglio': 'specie', alberi: 'specie', albero: 'specie', riconosci: 'specie', info: '', metodo: '', guide: 'specie', 'guide-list': 'specie', sfide: 'specie', fungo: 'specie', commestibile: 'specie' }[r.view] ?? r.view;
   r.hash = location.hash || '#/';
   const nav = navKind(prev, r), back = prev?.hash || '';
   if (prev) scrollMem.set(prev.hash, scrollY);
@@ -453,6 +461,7 @@ function routeNow(r, nav) {
   if (r.view === 'commestibile') { renderEdiblePage(r.speciesId); const s = catalog.find((x) => x.id === r.speciesId); if (s) addNotebookReference($('#edible-detail'), 'commestibile', s.id, s.name); }
   if (r.view === 'fungo') { renderTaxonPage($('#taxon-detail'), r.taxonId); if (taxonName(r.taxonId)) addNotebookReference($('#taxon-detail'), 'fungo', r.taxonId, taxonName(r.taxonId)); }
   if (r.view === 'glossario') renderGlossary($('#glossary'), r.termId);
+  if (r.view === 'sfide') { if (r.challengeId) renderChallenge($('#challenges'), r.challengeId); else renderChallengeList($('#challenges')); }
   paintScopriNav(r);
   if (r.view === 'riconosci') {
     const rt = RECOGNIZE_HEAD[r.recognizeMode];
@@ -901,6 +910,7 @@ function fillCatalogCounts() {
     piante: n(plants().length, 'pianta in catalogo', 'piante in catalogo'),
     glossario: n(glossaryTerms().length, 'voce', 'voci'),
     guide: n(guideCount(), 'guida', 'guide'),
+    sfide: n(challengeList().length, 'sfida', 'sfide'),
   };
   document.querySelectorAll('[data-catalog-count]').forEach((el) => {
     const text = counts[el.dataset.catalogCount], k = parseInt(text, 10);
@@ -1150,8 +1160,26 @@ function discoveriesHtml(z,d,walk,items=discoveriesFor(z,d,walk)){
   return `<li><a href="${esc(item.href)}" data-discovery="${esc(key)}" data-entity class="discovery-link">${item.kind==='pianta'?plantThumb(item.id,44):treeThumb(item.id,44)}<span><small>${item.kind==='albero'?'Albero':plantRecord(item.id)?.category||'Pianta'}</small><b>${esc(item.name)}</b><small>${esc(item.phase)}</small></span><span aria-hidden="true">›</span></a></li>`;
  }).join('')}</ul><a href="#/piante" class="discovery-catalog">Altre piante in Scopri →</a>`;
 }
+// Sfide: nome, foto e scheda di un albero, una pianta o un fungo (la scheda si apre nel pannello laterale).
+function challengeEntity(kind,id){
+ if(kind==='albero'){const t=treesData?.trees?.[id];return t?{name:t.name,latin:cardLatin(t.latin),href:`#/albero/${encodeURIComponent(id)}`,thumb:s=>treeThumb(id,s),photo:treePhotoSrc(id)}:null;}
+ if(kind==='pianta'){const p=plantRecord(id);return p?{name:p.name,latin:cardLatin(p.latin),href:`#/pianta/${encodeURIComponent(id)}`,thumb:s=>plantThumb(id,s),photo:p.photos?.[0]?challengeAsset(p.photos[0].file):'',protected:p.category==='Fiori'}:null;}
+ if(kind==='fungo'){
+  const t=taxonByKey(id);if(!t)return null;
+  const m=fungusPhotos(id)[0]||searchTaxa().find(x=>x.key===id)?.photo,href=catalog.find(x=>x.id===id)?.href||`#/fungo/${encodeURIComponent(id)}`;
+  return {name:t.name||t.latin,latin:t.latin,href,photo:m?challengeAsset(m.file):''};
+ }
+ return null;
+}
+let challengeAsset=f=>f;
+// In fondo a «Durante il giro»: una sola sfida non completata, adatta ai boschi principali della zona e al mese.
+function challengeHint(z,d){
+ const date=d?.date||todayISO(new Date(Date.now()+state.dayOffset*864e5)),month=Number(String(date).slice(5,7));
+ const ch=suggestedChallenge({forest:habitat?.[z.id]?.forest?.categorie_ha,month});
+ return ch?`<a class="discovery-challenge" href="#/sfide/${encodeURIComponent(ch.id)}">Sfida per questo giro: <b>${esc(ch.title)}</b> <span aria-hidden="true">→</span></a>`:'';
+}
 function renderDiscoveries(box,z,d,walk){
- if(!box)return;const html=discoveriesHtml(z,d,walk);box.hidden=!html;const markup=html?`<section class="outing-discoveries" aria-labelledby="during-walk-title"><h2 id="during-walk-title">Durante il giro</h2>${html}</section>`:'';if(weatherPainting)updateWeatherHTML(box,markup);else box.innerHTML=markup;
+ if(!box)return;const found=discoveriesHtml(z,d,walk),html=found&&found+challengeHint(z,d);box.hidden=!html;const markup=html?`<section class="outing-discoveries" aria-labelledby="during-walk-title"><h2 id="during-walk-title">Durante il giro</h2>${html}</section>`:'';if(weatherPainting)updateWeatherHTML(box,markup);else box.innerHTML=markup;
 }
 function discoverySection(z,d,walk){
  const items=discoveriesFor(z,d,walk);if(!items.length)return '';
@@ -1934,7 +1962,7 @@ function essentialSections(z, d, walk) {
   const rows = [];
   rows.push({ sec: 'specie', icon: 'find', thumb: best.species.id, k: 'Cosa osservare', v: `<button type="button" class="sp-inline" data-species="${best.species.id}">${esc(best.species.name)}</button> ${intornoA(best.band)} <b>${best.band} m</b>`,
     sub: [whereSummary(best.species.id) && `<span class="plan-where">${linkTrees(whereSummary(best.species.id))}</span>`,
-      criticalRule(best.species.id) && `<span class="plan-crit">⚠ ${esc(criticalRule(best.species.id))}</span>`,
+      criticalRule(best.species.id) && `<span class="plan-crit" role="note"><b>Attenzione</b>${esc(criticalRule(best.species.id))}</span>`,
       d.perSpecies.slice(1, 3).map((p) => [p, spScore(z, d, p)]).filter(([, sc]) => sc >= 20).map(([p, sc]) => `${speciesLink(p.species)} ${idxDot(sc)}`).join(' · ')].filter(Boolean).join('<br>') || esc(best.species.latin) });
   if (d.crowd &&state.target==='funghi') {
     const t = timingAdvice({ dateStr: d.date, lat: z.lat, lon: z.lon, crowd: d.crowd });

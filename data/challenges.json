@@ -1,0 +1,242 @@
+{
+  "version": 1,
+  "note": "Sfide didattiche. «L'ho visto» è un'annotazione dell'utente, non un riconoscimento verificato. Ogni hint riprende un carattere della scheda; ogni domanda Confronta è verificata dai test sui caratteri dei dati (species-traits, recognize-plants, recognize-trees). Il campo facoltativo stamp (percorso di un'immagine in assets/) sostituisce il timbro disegnato dal codice.",
+  "challenges": [
+    {
+      "id": "alberi-faggeta",
+      "kind": "osserva",
+      "title": "Gli alberi della faggeta",
+      "stampLabel": "Faggeta",
+      "short": "Faggio e compagni del bosco di montagna.",
+      "intro": "Nella faggeta il faggio domina, ma non è solo. Cerca questi alberi lungo il sentiero e confronta i caratteri con la scheda.",
+      "forest_categories": ["Faggeta"],
+      "target": 4,
+      "items": [
+        { "kind": "albero", "id": "faggio", "hint": "Corteccia liscia grigio-argentea anche sui tronchi grossi" },
+        { "kind": "albero", "id": "abete bianco", "hint": "Aghi piatti con apice smarginato e due bande bianche sotto" },
+        { "kind": "albero", "id": "tiglio nostrano", "hint": "Foglie cuoriformi con base spesso asimmetrica" },
+        { "kind": "albero", "id": "agrifoglio", "hint": "Foglie alterne, lucide e coriacee" },
+        { "kind": "albero", "id": "olmo montano", "hint": "Foglie grandi, ruvide, con base asimmetrica" }
+      ]
+    },
+    {
+      "id": "bosco-querce",
+      "kind": "osserva",
+      "title": "Il bosco delle querce",
+      "stampLabel": "Querce",
+      "short": "Cerro, roverella, farnetto e gli alberi che li accompagnano.",
+      "intro": "Cerrete e querceti a roverella sono boschi luminosi di bassa e media quota. Guarda foglie, gemme e corteccia.",
+      "forest_categories": ["Cerreta", "Querceto a roverella"],
+      "target": 4,
+      "items": [
+        { "kind": "albero", "id": "cerro", "hint": "Gemme circondate da filamenti lunghi e persistenti (stipole a 'baffi')" },
+        { "kind": "albero", "id": "roverella", "hint": "Rametti dell'anno e pagina inferiore della foglia vellutati (pelosi)" },
+        { "kind": "albero", "id": "farnetto", "hint": "Foglia molto grande (fino a 20-25 cm), più larga verso l'apice" },
+        { "kind": "albero", "id": "sorbo domestico", "hint": "Foglie composte da numerose foglioline dentate" },
+        { "kind": "albero", "id": "acero di montpellier", "hint": "Foglie piccole con tre lobi, spesso quasi interi" },
+        { "kind": "albero", "id": "ciliegio", "hint": "Corteccia con lenticelle orizzontali ben visibili" }
+      ]
+    },
+    {
+      "id": "bosco-carpino-nero",
+      "kind": "osserva",
+      "title": "Il bosco del carpino nero",
+      "stampLabel": "Ostrieto",
+      "short": "Alberi e arbusti dei versanti a carpino nero.",
+      "intro": "L'ostrieto copre molti versanti del Reatino. Accanto al carpino nero crescono orniello, aceri e arbusti dalle foglie opposte.",
+      "forest_categories": ["Ostrieto"],
+      "target": 4,
+      "items": [
+        { "kind": "albero", "id": "carpino nero", "hint": "Foglia ovata e acuminata, doppiamente seghettata, 10-15 paia di nervature" },
+        { "kind": "albero", "id": "orniello", "hint": "Foglia composta opposta con 5-9 foglioline" },
+        { "kind": "albero", "id": "acero di montpellier", "hint": "Foglie piccole con tre lobi, spesso quasi interi" },
+        { "kind": "pianta", "id": "corniolo", "hint": "Foglie opposte con nervature arcuate" },
+        { "kind": "pianta", "id": "sanguinello", "hint": "Giovani rami spesso rossastri" },
+        { "kind": "pianta", "id": "primula", "hint": "Foglie in rosetta, rugose e con margine dentellato" }
+      ]
+    },
+    {
+      "id": "margini-radure",
+      "kind": "osserva",
+      "title": "Margini e radure",
+      "stampLabel": "Radure",
+      "short": "Gli arbusti che orlano boschi e sentieri.",
+      "intro": "Ai margini del bosco crescono arbusti spinosi e fioriti. Qui si osserva soltanto: frutti e bacche non vanno assaggiati per riconoscerli.",
+      "forest_categories": ["Arbusteto e macchia alta"],
+      "target": 5,
+      "items": [
+        { "kind": "pianta", "id": "rovo", "hint": "Rami arcuati con aculei" },
+        { "kind": "pianta", "id": "rosa-canina", "hint": "Arbusto con aculei ricurvi" },
+        { "kind": "pianta", "id": "prugnolo", "hint": "Arbusto deciduo con rami spinescenti" },
+        { "kind": "pianta", "id": "biancospino", "hint": "Rami con spine e foglie lobate" },
+        { "kind": "pianta", "id": "corniolo", "hint": "Foglie opposte con nervature arcuate" },
+        { "kind": "pianta", "id": "sanguinello", "hint": "Giovani rami spesso rossastri" },
+        { "kind": "pianta", "id": "ginepro", "hint": "Aghi rigidi e pungenti, riuniti in verticilli di tre" }
+      ]
+    },
+    {
+      "id": "funghi-sosia",
+      "kind": "confronta",
+      "title": "Funghi e i loro sosia",
+      "stampLabel": "Sosia",
+      "short": "Cinque coppie da confrontare carattere per carattere.",
+      "intro": "Un solo carattere non basta mai a riconoscere un fungo. Queste domande allenano lo sguardo: non servono a decidere cosa raccogliere.",
+      "questions": [
+        {
+          "a": "amanita-phalloides", "b": "agaricus-campestris", "kind": "fungo",
+          "trait": "stem_volva", "value": true, "answer": "amanita-phalloides",
+          "ask": "Quale dei due ha la volva alla base del gambo?",
+          "explain": "La tignosa verdognola ha una volva bianca a sacco, spesso interrata. Il prataiolo non ha volva: per vederlo serve estrarre il fungo intero.",
+          "source": { "title": "First Nature — Amanita phalloides (confronto con Agaricus)", "url": "https://www.first-nature.com/fungi/amanita-phalloides.php" }
+        },
+        {
+          "a": "procera", "b": "chlorophyllum-venenatum", "kind": "fungo",
+          "trait": "flesh_change", "value": "rosso", "answer": "chlorophyllum-venenatum",
+          "ask": "Quale dei due ha la carne che arrossa al taglio?",
+          "explain": "La mazza di tamburo velenosa ha carne arrossante, bulbo grosso e squadrato e gambo liscio. La mazza di tamburo ha carne che non arrossa forte e gambo con zigrinature brune.",
+          "source": { "title": "La risorsa FUNGO in Alta Valle del Vara (SSSA Pisa), schede Macrolepiota procera e M. venenata", "url": "https://iris.santannapisa.it/retrieve/dd9e0b31-bbed-709e-e053-3705fe0a83fd/178_vqr_Funghi.pdf" }
+        },
+        {
+          "a": "hygrophoropsis-aurantiaca", "b": "cibarius", "kind": "fungo",
+          "trait": "hymenophore", "value": "pliche", "answer": "cibarius",
+          "ask": "Quale dei due ha pliche spesse e forcate invece di vere lamelle?",
+          "explain": "Il finferlo ha pliche spesse, basse e forcate, che scendono sul gambo. Il falso gallinaccio ha vere lamelle sottili, ripetutamente forcate.",
+          "source": { "title": "Cantharellus cibarius, Wikipedia (it)", "url": "https://it.wikipedia.org/wiki/Cantharellus_cibarius" }
+        },
+        {
+          "a": "edulis", "b": "tylopilus-felleus", "kind": "fungo",
+          "trait": "hymenophore_color", "value": "rosa", "answer": "tylopilus-felleus",
+          "ask": "Quale dei due ha i pori che diventano rosa?",
+          "explain": "Il porcino di fiele ha pori che diventano rosa e un reticolo bruno scuro e grossolano. Nel porcino i pori sono bianchi, crema o giallo-verdastri, mai rosa.",
+          "source": { "title": "Tylopilus felleus, Wikipedia (it)", "url": "https://it.wikipedia.org/wiki/Tylopilus_felleus" }
+        },
+        {
+          "a": "morchella-esculenta", "b": "gyromitra-esculenta", "kind": "fungo",
+          "trait": null, "answer": "morchella-esculenta",
+          "ask": "Quale delle due ha la testa a nido d'ape, con alveoli e costole?",
+          "cite": [
+            { "id": "morchella-esculenta", "text": "Testa a nido d'ape, con alveoli e costole" },
+            { "id": "gyromitra-esculenta", "text": "a circonvoluzioni come un cervello" }
+          ],
+          "explain": "La spugnola ha la testa a nido d'ape, con alveoli e costole, e una sola cavità interna. La falsa spugnola ha la testa a circonvoluzioni come un cervello e più camere irregolari.",
+          "source": { "title": "First Nature — Gyromitra esculenta", "url": "https://www.first-nature.com/fungi/gyromitra-esculenta.php" }
+        }
+      ]
+    },
+    {
+      "id": "querce-faggio-carpini",
+      "kind": "confronta",
+      "title": "Querce, faggio e carpini",
+      "stampLabel": "Alberi simili",
+      "short": "Quattro coppie di alberi che si confondono.",
+      "intro": "Foglie simili, cortecce simili. Guarda il carattere giusto e la differenza si vede.",
+      "questions": [
+        {
+          "a": "cerro", "b": "roverella", "kind": "albero",
+          "trait": "bark", "value": "a_placche", "answer": "roverella",
+          "ask": "Quale delle due querce può avere la corteccia divisa in placche?",
+          "explain": "La corteccia della roverella è solcata e spesso divisa in placche. Il cerro ha solchi profondi, con il fondo arancio-rosato.",
+          "source": { "title": "European Atlas of Forest Tree Species (JRC): Quercus pubescens", "url": "https://forest.jrc.ec.europa.eu/media/atlas/Quercus_pubescens.pdf" }
+        },
+        {
+          "a": "farnetto", "b": "cerro", "kind": "albero",
+          "trait": "bark", "value": "solcata", "answer": "cerro",
+          "ask": "Quale dei due ha la corteccia con solchi profondi lungo il tronco?",
+          "explain": "Il cerro ha la corteccia a solchi profondi, arancio sul fondo. Il farnetto ha la corteccia a piccole placche.",
+          "source": { "title": "European Atlas of Forest Tree Species (JRC): Quercus cerris", "url": "https://forest.jrc.ec.europa.eu/media/atlas/Quercus_cerris.pdf" }
+        },
+        {
+          "a": "faggio", "b": "carpino nero", "kind": "albero",
+          "trait": "leaf_margin", "value": "intero", "answer": "faggio",
+          "ask": "Quale dei due ha il bordo della foglia liscio, solo ondulato?",
+          "explain": "Il faggio ha la foglia a margine intero e ondulato. Il carpino nero ha la foglia doppiamente seghettata.",
+          "source": { "title": "European Atlas of Forest Tree Species (JRC): Fagus sylvatica", "url": "https://forest.jrc.ec.europa.eu/media/atlas/Fagus_sylvatica.pdf" }
+        },
+        {
+          "a": "carpino bianco", "b": "faggio", "kind": "albero",
+          "trait": "fruit_type", "value": "brattea_o_vescicole", "answer": "carpino bianco",
+          "ask": "Quale dei due porta il frutto alla base di una brattea a tre lobi?",
+          "explain": "Nel carpino bianco il frutto sta alla base di una brattea a tre lobi. Il faggio produce faggiole, dentro una cupola con aculei morbidi.",
+          "source": { "title": "European Atlas of Forest Tree Species (JRC, 2016): Carpinus betulus", "url": "https://forest.jrc.ec.europa.eu/media/atlas/Carpinus_betulus.pdf" }
+        }
+      ]
+    },
+    {
+      "id": "erbe-fiori-simili",
+      "kind": "confronta",
+      "title": "Erbe e fiori simili",
+      "stampLabel": "Fiori simili",
+      "short": "Ombrellifere, orchidee, gigli e cornioli.",
+      "intro": "Alcune piante si somigliano molto, e una delle due può essere tossica. I fiori si osservano senza coglierli.",
+      "questions": [
+        {
+          "a": "finocchietto", "b": "cicuta", "kind": "pianta",
+          "trait": "special", "value": "fusto_macchie_porpora", "answer": "cicuta",
+          "ask": "Quale delle due ha il fusto con macchie rosso-viola?",
+          "explain": "La cicuta maggiore ha il fusto cavo con macchie rosso-viola e odore sgradevole. Il finocchietto ha odore aromatico e foglie divise in fili sottili. Le macchie da sole non bastano a riconoscerla.",
+          "source": { "title": "Conium maculatum, Info Flora", "url": "https://www.infoflora.ch/it/flora/conium-maculatum.html" }
+        },
+        {
+          "a": "orchide-purpurea", "b": "orchide-maschia", "kind": "pianta",
+          "trait": "flower_color", "value": "bianco", "answer": "orchide-purpurea",
+          "ask": "Quale delle due ha il labello bianco o rosato, con ciuffetti porpora?",
+          "explain": "L'orchide purpurea ha il casco porpora scuro e il labello bianco o rosato con ciuffetti porpora. L'orchide maschia ha fiori dal porpora-viola al rosa, più uniformi.",
+          "source": { "title": "Orchis purpurea, Info Flora", "url": "https://www.infoflora.ch/it/flora/orchis-purpurea.html" }
+        },
+        {
+          "a": "giglio-rosso", "b": "giglio-martagone", "kind": "pianta",
+          "trait": "flower_shape", "value": "petali_rovesciati", "answer": "giglio-martagone",
+          "ask": "Quale dei due ha i fiori penduli, con i petali ripiegati all'indietro?",
+          "explain": "Il giglio martagone ha fiori penduli, con i tepali ripiegati a turbante. Il giglio rosso ha fiori arancioni rivolti verso l'alto, a coppa.",
+          "source": { "title": "Lilium martagon, Info Flora", "url": "https://www.infoflora.ch/it/flora/lilium-martagon.html" }
+        },
+        {
+          "a": "sanguinello", "b": "corniolo", "kind": "pianta",
+          "trait": "fruit_color", "value": "rosso", "answer": "corniolo",
+          "ask": "Quale dei due ha i frutti rossi?",
+          "explain": "Il corniolo ha drupe rosse allungate e fiori gialli prima delle foglie. Il sanguinello ha frutti neri e fiori bianchi.",
+          "source": { "title": "Cornus mas, Info Flora", "url": "https://www.infoflora.ch/it/flora/cornus-mas.html" }
+        }
+      ]
+    },
+    {
+      "id": "fioriture-primavera",
+      "kind": "stagione",
+      "title": "Fioriture di primavera",
+      "stampLabel": "Primavera",
+      "short": "Fiori e arbusti in fiore da marzo a maggio.",
+      "intro": "In primavera il sottobosco e i margini fioriscono. Osserva e fotografa senza cogliere: molti fiori sono protetti.",
+      "months": [3, 4, 5],
+      "forest_categories": ["Cerreta", "Querceto a roverella", "Ostrieto", "Arbusteto e macchia alta"],
+      "target": 5,
+      "items": [
+        { "kind": "pianta", "id": "primula", "hint": "Foglie in rosetta, rugose e con margine dentellato" },
+        { "kind": "pianta", "id": "viola-mammola", "hint": "Fiori generalmente viola, con sperone posteriore" },
+        { "kind": "pianta", "id": "prugnolo", "hint": "Fiori bianchi primaverili, prima o durante l’emissione delle foglie" },
+        { "kind": "pianta", "id": "biancospino", "hint": "Fiori bianchi con cinque petali" },
+        { "kind": "pianta", "id": "erba-trinita", "hint": "Foglie a tre lobi uguali e interi, spesso violacee sotto" },
+        { "kind": "pianta", "id": "orchide-maschia", "hint": "Spiga di fiori porpora o rosa; sperone orizzontale o rivolto in alto" },
+        { "kind": "pianta", "id": "genziana-primaticcia", "hint": "Fiori singoli blu intenso, con cinque lobi aperti a stella e gola chiara" },
+        { "kind": "pianta", "id": "narciso-dei-poeti", "hint": "Un solo fiore bianco e profumato per stelo" }
+      ]
+    },
+    {
+      "id": "colori-autunno",
+      "kind": "stagione",
+      "title": "I colori dell'autunno nel bosco",
+      "stampLabel": "Autunno",
+      "short": "Foglie, frutti e lettiera degli alberi che perdono le foglie.",
+      "intro": "In autunno gli alberi caducifogli cambiano colore e riempiono la lettiera. Guarda le chiome e quello che cade a terra.",
+      "months": [10, 11],
+      "forest_categories": ["Faggeta", "Cerreta", "Castagneto", "Ostrieto"],
+      "target": 4,
+      "items": [
+        { "kind": "albero", "id": "faggio", "hint": "Lettiera di foglie ramate e intere" },
+        { "kind": "albero", "id": "acero campestre", "hint": "In autunno la chioma gialla" },
+        { "kind": "albero", "id": "orniello", "hint": "In autunno gialla o rosata" },
+        { "kind": "albero", "id": "castagno", "hint": "Ricci e gusci a terra e foglie lunghe dentate nella lettiera" },
+        { "kind": "albero", "id": "cerro", "hint": "Cupole riccioli e ghiande a terra" }
+      ]
+    }
+  ]
+}
