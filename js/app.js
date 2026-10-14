@@ -254,6 +254,9 @@ async function init() {
     const file=image?.thumb||image?.file;return file?{file:assetSrc(file)}:null;
   };
   journal = initJournal({ onEntries:entries=>{botanicalNotes=entries.filter(e=>e.kind==='note'&&e.observation);if(series){compute();outCache.clear();if(weatherBusy)paintWeatherView();else renderAll();}},zones, speciesCatalog: catalog, predict, captureForecast, getZoneId: () => state.zoneId || zones[0].id, zoneImage:zid=>assetSrc(zoneMedia[zid]?.file||''),referenceImage:notebookReferenceImage });
+  // preferenza personale (non un filtro): usare le fasi annotate nel taccuino per le cose da osservare
+  const botanicalToggle = $('[data-botanical-personalize]');
+  if (botanicalToggle) { botanicalToggle.checked = state.useBotanicalNotes; botanicalToggle.addEventListener('change', () => { state.useBotanicalNotes = botanicalToggle.checked; savePrefs(); if (series) { compute(); outCache.clear(); renderAll(); } }); }
 
   route(); // le pagine che non dipendono dal meteo (specie, diario, info) compaiono subito
   const fresh = consumeFresh(); // ricarica pulita dal logo: anche il meteo da capo
@@ -504,7 +507,8 @@ let fitN = 99; // quanti funghi entrano nella riga senza tagliare (ricalcolato s
 const QUALITY = { ottimo: 1, buono: 0.6 };
 let chipsOpen = false;
 function groupOrder() {
-  const m = new Date().getMonth();
+  // la stagione è quella del giorno che stai guardando (oggi, o il giorno scelto)
+  const m = Number(filterDate().slice(5, 7)) - 1;
   const val = (g) => {
     const sp = (state.target==='piante'?plantModels:SPECIES).filter((x) => x.group === g.id);
     const season = Math.max(...sp.map((x) => x.months[m] || 0));
@@ -579,29 +583,36 @@ function openFullFilters() {
     const selected = selectedCatalog(), date = filterDate();
     const season = (s) => `<small class="season-badge ${seasonStatus(s,date)==='out'?'season-out':''}">${state.target==='piante'?({in:'Fase nel calendario',out:'Fuori calendario indicativo',unknown:'Calendario n.d.'})[seasonStatus(s,date)]:seasonLabel(s,date)}</small>`;
     const chip = (s) => `<button type="button" class="chip species-choice" data-catalog-id="${s.id}" aria-pressed="${activeIds() === null || activeIds().has(s.id)}"><span>${esc(s.name)}${s.toxicity==='commestibile con cautela'?'<small>Preparazione specifica</small>':''}</span>${season(s)}</button>`;
-    dlg.innerHTML = `<div class="filter-panel-head"><h2 id="full-filters-title">Tutti i filtri</h2><button type="button" class="btn ghost" data-close>Chiudi</button></div>
-      <p>${state.target==='piante'?'Scegli piante e parti da osservare. Per uso alimentare consulta parti e preparazioni nella scheda.':'Scegli gruppi o singole specie commestibili.'}</p>
-      <label class="species-search-label" for="species-filter-search">Aggiungi una specie</label>
-      <input id="species-filter-search" class="wiz-input" type="search" placeholder="${state.target==='piante'?'Es. ortica, more, Arbutus…':'Es. pioppino, spugnola, Boletus…'}" role="combobox" aria-autocomplete="list" aria-controls="species-filter-options" aria-expanded="false" autocomplete="off">
+    // pannello in stile app: cerca, gruppi in stagione, il resto richiuso; preferenze come interruttori
+    const groupChip = (g) => `<button type="button" class="chip" data-group="${g.id}" aria-pressed="${groupSelection(g.id)!=='none'}">${thumb(g.rep,32)}<span>${esc(g.label)}${g.id==='porcini'?' (4 specie)':''}</span>${outOfSeason(g.id)?`<small class="season-badge season-out">${state.target==='piante'?'Fuori calendario':'Fuori stagione'}</small>`:''}</button>`;
+    const inSeason = activeGroups().filter((g) => !outOfSeason(g.id)), outSeason = activeGroups().filter((g) => outOfSeason(g.id));
+    const sw = (on) => `<span class="switch" aria-hidden="true" data-on="${on}"><i></i></span>`;
+    dlg.innerHTML = `<div class="filter-panel-head"><h2 id="full-filters-title">Filtri</h2><button type="button" class="btn ghost" data-close>Chiudi</button></div>
+      <div class="fp-body">
+      <label class="species-search-label sr-only" for="species-filter-search">Aggiungi una specie</label>
+      <input id="species-filter-search" class="wiz-input" type="search" placeholder="${state.target==='piante'?'Cerca e aggiungi: ortica, more, Arbutus…':'Cerca e aggiungi: pioppino, spugnola, Boletus…'}" role="combobox" aria-autocomplete="list" aria-controls="species-filter-options" aria-expanded="false" autocomplete="off">
       <ul id="species-filter-options" class="species-options" role="listbox" aria-label="Specie commestibili" hidden></ul>
-      <p class="small muted">Da “Tutti”, scegliere una specie restringe la selezione; poi puoi aggiungerne altre.</p>
-      ${activeIds() !== null ? `<div class="filter-panel-groups selected-species" aria-label="Specie selezionate">${selected.map(s=>`<button type="button" class="chip" data-remove-species="${s.id}" aria-label="Rimuovi ${esc(s.name)}"><span>${esc(s.name)}</span>${season(s)}<span aria-hidden="true">×</span></button>`).join('')}</div>` : ''}
+      ${activeIds() !== null ? `<h3 class="fp-h">Scelte</h3><div class="filter-panel-groups selected-species" aria-label="Specie selezionate">${selected.map(s=>`<button type="button" class="chip" data-remove-species="${s.id}" aria-label="Rimuovi ${esc(s.name)}"><span>${esc(s.name)}</span>${season(s)}<span aria-hidden="true">×</span></button>`).join('')}</div>` : ''}
+      <h3 class="fp-h">In stagione <small>${fmtDate(date,{day:'numeric',month:'long'})}</small></h3>
       <div class="filter-panel-groups" role="group" aria-label="Gruppi di specie">
         <button type="button" class="chip" data-all aria-pressed="${activeIds() === null}">${state.target==='piante'?'Tutte le piante':'Tutti i commestibili'}</button>
-        ${activeGroups().map(g=>`<button type="button" class="chip" data-group="${g.id}" aria-pressed="${groupSelection(g.id)!=='none'}">${thumb(g.rep,32)}<span>${esc(g.label)}${g.id==='porcini'?' (4 specie)':''}</span>${outOfSeason(g.id)?`<small class="season-badge season-out">${state.target==='piante'?'Fuori calendario':'Fuori stagione'}</small>`:''}</button>`).join('')}
+        ${inSeason.map(groupChip).join('')}
       </div>
-      <details class="catalog-all"><summary>Tutti i ${activeCatalog().length} ${state.target==='piante'?'piante':'commestibili'} del catalogo</summary><div class="filter-panel-groups">${[...activeCatalog()].sort((a,b)=>a.name.localeCompare(b.name,'it')).map(chip).join('')}</div></details>
-      <p class="small muted">${state.target==='piante'?'Calendario della fase utile':'Stagione'} indicativo per ${fmtDate(date,{day:'numeric',month:'long'})}, variabile con clima e quota. Sono incluse specie che richiedono preparazioni specifiche. Il catalogo si amplia: non comprende ogni specie esistente.</p>
-      <h3>Durante il giro</h3><label class="botanical-personalize"><input type="checkbox" data-discoveries-toggle ${state.showDiscoveries?'checked':''}> Mostra piante, frutti e alberi compatibili</label><p class="small muted">Accompagnano l’uscita a funghi, mantenendo il suo indice e l’ordine dei luoghi.</p><label class="botanical-personalize"><input type="checkbox" data-botanical-personalize ${state.useBotanicalNotes?'checked':''}> Considera le fasi nei miei appunti botanici</label><p class="small muted">Gli appunti restano privati e affinano soltanto le cose da osservare. Non tarano i modelli e non confermano la presenza sul sentiero.</p>
-      <h3>Preferenze per l'uscita</h3><p class="small muted">Cambiano l'ordine dei consigli, mantenendo l'indice delle condizioni.</p>
-      <div class="filter-panel-groups" role="group" aria-label="Preferenze">${PREFS.map(([k,label])=>`<button type="button" class="chip" data-pref="${k}" aria-pressed="${!!state[k]}">${esc(label)}</button>`).join('')}</div>
-      <p class="small muted" aria-live="polite">${selected.length} specie selezionate · ${selected.filter(s=>s.modelId).length} con indice ${state.target==='piante'?'di contesto e fase':'di crescita'}</p><button type="button" class="btn primary big" data-close>Mostra i risultati</button>`;
+      ${outSeason.length ? `<details class="fp-more"><summary>Fuori stagione <small>${outSeason.length}</small></summary><div class="filter-panel-groups" role="group" aria-label="Gruppi fuori stagione">${outSeason.map(groupChip).join('')}</div></details>` : ''}
+      <details class="fp-more catalog-all"><summary>Tutte le specie <small>${activeCatalog().length}</small></summary><div class="filter-panel-groups">${[...activeCatalog()].sort((a,b)=>a.name.localeCompare(b.name,'it')).map(chip).join('')}</div></details>
+      <h3 class="fp-h">Uscita</h3>
+      <ul class="fp-switches">
+        ${PREFS.map(([k,label])=>`<li><button type="button" class="fp-switch" data-pref="${k}" aria-pressed="${!!state[k]}">${esc(label)}${sw(!!state[k])}</button></li>`).join('')}
+        <li><label class="fp-switch"><span>Piante e alberi lungo il giro<small>Si affiancano ai funghi, senza cambiare l'indice.</small></span><input type="checkbox" class="switch-input" data-discoveries-toggle ${state.showDiscoveries?'checked':''}></label></li>
+      </ul>
+      <p class="small muted fp-note">Stagione indicativa: cambia con clima e quota. Il catalogo non comprende ogni specie.</p>
+      </div>
+      <div class="fp-foot"><span class="small muted" aria-live="polite">${selected.length} specie · ${selected.filter(s=>s.modelId).length} con indice</span><button type="button" class="btn primary big" data-close>Mostra i risultati</button></div>`;
     dlg.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',()=>dlg.close()));
     const changed = (focus) => { savePrefs(); if (series) compute(); outCache.clear(); renderFilterSummary(); renderAll(); paint(); dlg.querySelector(focus)?.focus(); };
     mountSpeciesAutocomplete({ input: dlg.querySelector('#species-filter-search'), list: dlg.querySelector('#species-filter-options'), catalog:activeCatalog(), date,
       onSelect: s => { addSpecies(s.id); changed('#species-filter-search'); } });
     dlg.querySelector('[data-discoveries-toggle]')?.addEventListener('change',ev=>{state.showDiscoveries=ev.target.checked;changed('[data-discoveries-toggle]');});
-    dlg.querySelector('[data-botanical-personalize]')?.addEventListener('change',ev=>{state.useBotanicalNotes=ev.target.checked;changed('[data-botanical-personalize]');});
     dlg.querySelector('[data-all]').onclick = () => { setActiveIds(null); changed('[data-all]'); };
     dlg.querySelectorAll('[data-group]').forEach(b=>b.onclick=()=>{toggleGroup(b.dataset.group); changed(`[data-group="${b.dataset.group}"]`);});
     dlg.querySelectorAll('[data-remove-species]').forEach(b=>b.onclick=()=>{activeIds().delete(b.dataset.removeSpecies); if (!activeIds().size) setActiveIds(null); changed('#species-filter-search');});
@@ -1158,7 +1169,7 @@ function discoveriesHtml(z,d,walk,items=discoveriesFor(z,d,walk)){
  return `<p class="discovery-intro">Potresti incontrare anche queste specie. ${items[0].scope==='tracciato'?'Ambienti campionati sul tratto del sentiero':'Compatibilità con gli ambienti della zona'}: presenza da verificare.</p><ul class="discovery-grid">${items.map(item=>{
   const key=`${z.id}/${item.date}/${item.kind}/${item.id}`;discoveryItems.set(key,item);
   return `<li><a href="${esc(item.href)}" data-discovery="${esc(key)}" data-entity class="discovery-link">${item.kind==='pianta'?plantThumb(item.id,44):treeThumb(item.id,44)}<span><small>${item.kind==='albero'?'Albero':plantRecord(item.id)?.category||'Pianta'}</small><b>${esc(item.name)}</b><small>${esc(item.phase)}</small></span><span aria-hidden="true">›</span></a></li>`;
- }).join('')}</ul><a href="#/piante" class="discovery-catalog">Altre piante in Scopri →</a>`;
+ }).join('')}</ul><a href="#/piante" class="discovery-catalog more-row">Altre piante in Scopri</a>`;
 }
 // Sfide: nome, foto e scheda di un albero, una pianta o un fungo (la scheda si apre nel pannello laterale).
 function challengeEntity(kind,id){
@@ -2299,7 +2310,7 @@ function renderTrails(z, d) {
   const list = (walk ? [walk.t, ...candidates.filter(t => t.id !== walk.t.id)] : candidates).slice(0,4);
   if (!list.length) return trails[z.id] ? '<p class="small muted">Non risultano sentieri compatibili in questi dati: verifica tracciati, accessibilità e segnaletica sul posto.</p>' : '';
   return `
-    <ol class="trails">${list.map((t, k) => `<li>${trailCard(z, t, d, k === 0)}<a class="small" href="${walkHref(z, state.dayOffset, t)}">Microzona e dettagli del sentiero →</a>${trailLinks(z, t)}</li>`).join('')}</ol>
+    <ol class="trails">${list.map((t, k) => `<li>${trailCard(z, t, d, k === 0)}<a class="more-row" href="${walkHref(z, state.dayOffset, t)}">Microzona e dettagli del sentiero</a>${trailLinks(z, t)}</li>`).join('')}</ol>
     <p class="muted small">Sentieri OpenStreetMap (rete CAI). ${d?.best ? 'I km adatti incrociano tracciato, Carta Forestale e quota della specie.' : 'Questi percorsi sono elencati senza una valutazione di idoneità per la specie selezionata.'} Google Maps di norma non mostra i sentieri CAI: sul posto usa un'app con mappe OpenStreetMap (OsmAnd, Organic Maps, Komoot, Locus) e il GPX.</p>`;
 }
 
