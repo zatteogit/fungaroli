@@ -22,7 +22,7 @@ const PLACEHOLDER = {
   specie: 'Cerca funghi, sosia, alberi, zone…', 'specie-dettaglio': 'Cerca funghi, sosia, alberi, zone…', riconosci: 'Cerca velenosi, sosia, funghi…',
   alberi: 'Cerca alberi, funghi, zone…', albero: 'Cerca alberi, funghi, zone…', mappa: 'Cerca zone, sentieri, funghi…',
 };
-const SCOPES = [['', 'Tutto'], ['zona', 'Zone'], ['fungo', 'Funghi'], ['velenoso', 'Velenosi'], ['albero', 'Alberi'], ['sentiero', 'Sentieri']];
+const SCOPES = [['', 'Tutto'], ['zona', 'Zone'], ['fungo', 'Funghi'], ['velenoso', 'Velenosi'], ['pianta', 'Piante'], ['albero', 'Alberi'], ['sentiero', 'Sentieri'], ['termine', 'Glossario']];
 let ITEMS = [], dlg = null, sel = -1, scope = '', prio = [];
 
 export function initSearch(items) {

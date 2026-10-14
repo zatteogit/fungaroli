@@ -5,6 +5,7 @@ import { openLightbox, captionHtml } from './lightbox.js';
 import { cardLatin } from './names.js';
 import { treeGroup } from './plant-catalog.js';
 import { searchFieldHtml, matchesQuery, renderAlsoIn } from './catalog-search.js';
+import { loadKeyData, traitTilesHtml } from './guided-key.js';
 
 const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 let T = {}, MEDIA = {}, ASSET = (f) => f, ZONES = [], HAB = {}, THUMB = () => '';
@@ -106,16 +107,18 @@ export function renderTreePage(body, id) {
     </header>
     <div class="pbody">
     ${photos.length > 1 ? `<div class="sp-strip">${photos.slice(1).map((p, k) => `<button type="button" class="zoomable" data-photo="${k + 1}" aria-label="Foto ${k + 2}: ingrandisci"><img data-src="${ASSET(p.file)}" alt="" loading="lazy" decoding="async"></button>`).join('')}</div>` : ''}
-    ${t.recognize?.length ? `<h3>Caratteri da confrontare</h3><ol class="keys">${t.recognize.map((k) => `<li><span class="key-text">${esc(k)}</span></li>`).join('')}</ol>` : ''}
+    <h3>Caratteri da confrontare</h3><div data-tree-traits></div>
+    ${t.recognize?.length ? `<ol class="keys">${t.recognize.map((k) => `<li><span class="key-text">${esc(k)}</span></li>`).join('')}</ol>` : ''}
+    ${t.confusable?.length ? `<h3>Non confonderlo con</h3><ul class="reasons tree-confusable">${t.confusable.map((c) => { const cid = Object.keys(T).find((k) => k === c.id || T[k].name.toLowerCase() === String(c.name || '').toLowerCase()); return `<li><b>${cid && cid !== id ? `<a class="tree-link" href="#/albero/${encodeURIComponent(cid)}">${esc(c.name)}</a>` : esc(c.name)}</b>: ${esc(c.how_to_tell)}</li>`; }).join('')}</ul>` : ''}
     ${fungi.length ? `<h3>Funghi che ci crescono</h3><div class="tree-fungi">${fungi.map((s) => `<a href="#/specie/${s.id}" class="tf" data-entity>${THUMB(s.id, 52)}<span>${esc(s.name)}</span></a>`).join('')}</div>${t.fungi_note ? `<p class="small muted">${esc(t.fungi_note)}</p>` : ''}` : ''}
     <div class="sp-more">
       ${sec('Nelle zone', zrows.length ? `<p class="small muted">Ettari dei boschi in cui domina (${esc(cats.join(', '))}), dalla Carta Forestale.</p><ul class="where">${zrows.map(({ z, ha }) => `
         <li><a href="#/zona/${z.id}/0"><div class="where-top"><b>${esc(z.name)}</b><span class="small">~${ha.toLocaleString('it-IT')} ha</span></div><div class="bar"><i style="width:${Math.round((ha / maxHa) * 100)}%;background:var(--line)"></i></div></a></li>`).join('')}</ul>` : (t.where_reatino ? '' : ''))}
       ${sec('Foglia, corteccia, frutto', `<dl class="traits">${[['Foglia', t.leaf], ['Corteccia', t.bark], ['Frutto', t.fruit], ['Portamento', t.habit], ["D'inverno", t.season_tip], ['Quota documentata',t.altitudeNote],['Nel Reatino', t.where_reatino]].filter(([, v]) => v).map(([k, v]) => `<dt>${k}</dt><dd>${esc(v)}</dd>`).join('')}</dl>`)}
-      ${sec('Con cosa si confonde', t.confusable?.length ? `<ul class="reasons">${t.confusable.map((c) => `<li><b>${esc(c.name)}</b>: ${esc(c.how_to_tell)}</li>`).join('')}</ul>` : '')}
       ${sec('Fonti e crediti delle foto', `${t.sources?.length ? `<ul class="small sources">${t.sources.map((x) => `<li><a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.title)}</a></li>`).join('')}</ul>` : ''}${photos.length ? `<ul class="small sources">${photos.map((p) => `<li>${credit(p)}</li>`).join('')}</ul>` : ''}`)}
     </div>
     </div>`;
+  loadKeyData('alberi').then((d) => { const slot = body.querySelector('[data-tree-traits]'); if (slot && d?.items?.[id]) slot.innerHTML = traitTilesHtml(d, d.items[id].traits); });
   const gallery = photos.map((p) => ({ src: ASSET(p.file_hd || p.file), alt: t.name, caption: captionHtml({ title: esc(t.name), text: esc(t.latin), credit: credit(p) }) }));
   body.querySelectorAll('[data-photo]').forEach((b) => b.addEventListener('click', () => openLightbox(gallery, +b.dataset.photo)));
 }
