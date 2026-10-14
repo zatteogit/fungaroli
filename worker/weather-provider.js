@@ -1,3 +1,5 @@
+import {compactGrowth} from '../js/weather-data.js';
+export {compactGrowth} from '../js/weather-data.js';
 import {todayISO,PAST_DAYS,FORECAST_DAYS} from '../js/weather.js';
 const API='https://api.open-meteo.com/v1/forecast', TTL=3600000;
 const profiles={
@@ -25,25 +27,9 @@ function validate(raw,params,now,compact=false) {
 }
 // Il browser usa soltanto le medie giornaliere del suolo. Aggregare una volta
 // evita di trasferire e serializzare oltre due MB di ore ad ogni apertura.
-export function compactGrowth(rows) {
-  let reference=null,ranges;
-  return rows.map(row=>{
-    const h=row.hourly;
-    if(!reference||h.time.length!==reference.length||!h.time.every((t,i)=>t===reference[i])) {
-      reference=h.time;ranges=new Map();
-      h.time.forEach((t,i)=>{const day=t.slice(0,10);if(!ranges.has(day))ranges.set(day,[]);ranges.get(day).push(i);});
-    }
-    const mean=key=>row.daily.time.map(day=>{
-      let sum=0,count=0;for(const i of ranges.get(day)||[])if(Number.isFinite(h[key][i])){sum+=h[key][i];count++;}
-      return count>=24?sum/count:null;
-    });
-    const {hourly,...rest}=row;
-    return {...rest,daily:{...row.daily,soil_moisture_3_to_9cm_mean:mean('soil_moisture_3_to_9cm'),soil_temperature_6cm_mean:mean('soil_temperature_6cm')}};
-  });
-}
 // Query soltanto per le zone pubblicate e i due profili dell'app: nessun proxy
 // arbitrario, né possibilità di moltiplicare le richieste variando i parametri.
-export async function cachedForecast(query,{zones,cache,fetcher=fetch,now=Date.now()}) {
+export async function cachedForecast(query,{zones,cache,fetcher=fetch,now=Date.now(),waitUntil,waitForFresh=false}) {
   const lat=query.get('latitude')?.split(',')[0],lon=query.get('longitude')?.split(',')[0];
   const local=zones.find(z=>String(z.lat)===lat&&String(z.lon)===lon);
   const kind=Object.keys(profiles).find(k=>{
@@ -63,13 +49,19 @@ export async function cachedForecast(query,{zones,cache,fetcher=fetch,now=Date.n
     return new Response(r.body,{headers:{'content-type':'application/json','cache-control':'no-store','x-weather-fetched-at':new Date(now).toISOString(),'x-weather-cache':'legacy-stream'}});
   }
   const hash=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(params.toString()));
-  const key=`weather:v2:${todayISO(new Date(now))}:${Array.from(new Uint8Array(hash),b=>b.toString(16).padStart(2,'0')).join('')}`;
+  const digest=Array.from(new Uint8Array(hash),b=>b.toString(16).padStart(2,'0')).join('');
+  // The query identifies the place and altitude. Midnight must not discard a
+  // still-valid forecast that already covers the new day.
+  const key=`weather:v3:${digest}`;
   const maxAge=kind==='growth'?86400000:3*TTL;
   let saved=null;
-  try {saved=cache?await cache.get(key,'json'):null;} catch { /* cache opzionale */ }
+  try {
+    saved=cache?await cache.get(key,'json'):null;
+    if(!saved&&cache)saved=await cache.get(`weather:v2:${todayISO(new Date(now))}:${digest}`,'json');
+  } catch { /* cache opzionale */ }
   if(saved&&(!Number.isFinite(saved.t)||now-saved.t<0||now-saved.t>maxAge))saved=null;
   if(saved)try {validate(saved.raw,params,now,kind==='growth');} catch {saved=null;}
-  const response=(data,mode)=>new Response(JSON.stringify(data.raw),{headers:{'content-type':'application/json; charset=utf-8','cache-control':'no-store','x-weather-fetched-at':new Date(data.t).toISOString(),'x-weather-cache':mode,'x-content-type-options':'nosniff'}});
+  const response=(data,mode,refreshing=false)=>new Response(JSON.stringify(data.raw),{headers:{'content-type':'application/json; charset=utf-8','cache-control':'no-store','x-weather-fetched-at':new Date(data.t).toISOString(),'x-weather-cache':mode,'x-weather-refreshing':refreshing?'1':'0','x-content-type-options':'nosniff'}});
   if(saved&&now-saved.t<TTL)return response(saved,'hit');
   if(!pending.has(key))pending.set(key,(async()=>{
     const coords=['latitude','longitude','elevation'].map(name=>params.get(name).split(','));
@@ -90,6 +82,10 @@ export async function cachedForecast(query,{zones,cache,fetcher=fetch,now=Date.n
     try {if(cache)await cache.put(key,JSON.stringify(value),{expirationTtl:maxAge/1000});} catch { /* dati validi anche senza cache */ }
     return value;
   })().finally(()=>pending.delete(key)));
+  if(saved&&waitUntil&&!waitForFresh){
+    waitUntil(pending.get(key).catch(()=>{}));
+    return response(saved,'stale',true);
+  }
   try {return response(await pending.get(key),'miss');}
   catch(e){
     if(saved)return response(saved,'stale');

@@ -2,8 +2,8 @@
 // separate dal meteo passato che fa nascere i funghi. Servono a dire "oggi lì piove, puoi andare altrove".
 import { sunTimes } from './human.js';
 import {fetchForecast} from './weather-request.js';
+import {cachedZoneWeather,saveZoneWeather,migrateOutingCache,validWeatherRows,WEATHER_FRESH_MS} from './weather-cache.js';
 
-const KEY = 'fungaroli:outing:v2';
 const TTL = 60 * 60 * 1000;
 export const MAX_OUTING_AGE_MS = 3 * TTL;
 const HOURLY = 'precipitation,precipitation_probability,weather_code,wind_gusts_10m,temperature_2m';
@@ -13,34 +13,27 @@ const isThunder = (c) => c >= 95;
 const isSnow = (c) => (c >= 71 && c <= 77) || c === 85 || c === 86;
 const isFog = (c) => c === 45 || c === 48;
 
-export async function loadOuting(zones, { force = false } = {}) {
+export async function loadOuting(zones, { force = false,onUpdate,signal } = {}) {
   const snap = globalThis.FUNGAROLI_REVIEW?.outing || globalThis.FUNGAROLI_DATA?.outing;
   if (snap) return snap;
-  const locs = zones.map((z) => ({ zid: z.id, lat: z.lat, lon: z.lon, elev: z.bands[Math.floor(z.bands.length / 2)] }));
-  const sig = new Date().toDateString() + '|' + locs.map((l) => `${l.lat},${l.lon},${l.elev}`).join(';');
-  let c = null;
-  try { c = JSON.parse(localStorage.getItem(KEY) || 'null'); } catch { /* storage non disponibile */ }
-  if (!force && c?.sig === sig && Date.now() - c.t < TTL) return c.data;
-  try {
-    const q = new URLSearchParams({
-      latitude: locs.map((l) => l.lat).join(','), longitude: locs.map((l) => l.lon).join(','), elevation: locs.map((l) => l.elev).join(','),
-      hourly: HOURLY, forecast_days: 8, timezone: 'Europe/Rome',
-    });
-    const {raw,fetchedAt,partial}=await fetchForecast(q);
-    const data = {};
-    locs.forEach((l, k) => {
-      const h = raw[k]?.hourly;
-      if(!h)return;
-      data[l.zid] = { time: h.time, p: h.precipitation, pp: h.precipitation_probability, wc: h.weather_code, g: h.wind_gusts_10m, t: h.temperature_2m,
-        fetchedAt: fetchedAt.toISOString(), elevation: l.elev };
-    });
-    try { if(!partial)localStorage.setItem(KEY, JSON.stringify({ sig, t: fetchedAt.getTime(), data })); } catch { /* quota */ }
-    return data;
-  } catch {
-    // senza rete: l'ultima previsione salvata (stesse zone), se c'e'
-    const where = (x) => x.slice(x.indexOf('|') + 1);
-    return c && where(c.sig) === where(sig) && Date.now() - c.t < MAX_OUTING_AGE_MS ? c.data : null;
-  }
+  migrateOutingCache(zones);
+  const records=new Map();for(const z of zones){const saved=cachedZoneWeather(z,'outing');if(saved)records.set(z.id,saved);}
+  const snapshot=()=>Object.fromEntries(zones.flatMap(z=>{
+    const r=records.get(z.id),h=r?.raw?.[0]?.hourly;if(!h)return [];
+    return [[z.id,{time:h.time,p:h.precipitation,pp:h.precipitation_probability,wc:h.weather_code,g:h.wind_gusts_10m,t:h.temperature_2m,fetchedAt:new Date(r.t).toISOString(),elevation:z.bands[Math.floor(z.bands.length/2)]}]];
+  }));
+  const waiting=zones.filter(z=>{const r=records.get(z.id);return force||!r||r.stale||Date.now()-r.t>=WEATHER_FRESH_MS;});
+  if(records.size)onUpdate?.(snapshot(),{phase:'cache'});
+  if(!waiting.length)return snapshot();
+  const q=new URLSearchParams({latitude:waiting.map(z=>z.lat).join(','),longitude:waiting.map(z=>z.lon).join(','),elevation:waiting.map(z=>z.bands[Math.floor(z.bands.length/2)]).join(','),hourly:HOURLY,forecast_days:8,timezone:'Europe/Rome'});
+  try{
+    await fetchForecast(q,{signal,onChunk:chunk=>{
+      if(signal?.aborted)return;
+      const z=waiting[chunk.start];if(!z||!validWeatherRows(chunk.raw,1,'outing'))return;
+      const record={t:chunk.fetchedAt.getTime(),raw:chunk.raw,stale:chunk.stale};if(records.get(z.id)?.t>record.t)return;records.set(z.id,record);saveZoneWeather(z,'outing',record);onUpdate?.(snapshot(),{phase:'network',zoneId:z.id});
+    }});
+  }catch{/* Keep the saved copy; outingFor independently enforces its age limit. */}
+  return records.size?snapshot():null;
 }
 
 // Valuta la mattina dell'uscita: livello ok / attenzione / sconsigliata, con le ragioni in parole.

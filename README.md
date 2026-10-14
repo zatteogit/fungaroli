@@ -55,6 +55,10 @@ Procedura guidata in 6 passi (zona → giorno → quota → ricerca → cosa e q
 
 ## Documentazione
 
+- [Handoff completo della ripresa del progetto, 14 ottobre 2026](docs/handoff-2026-10-14.md).
+- [Cache meteo e aggiornamento in background](docs/meteo-cache.md).
+
+
 - [Metodo scientifico](docs/metodo-scientifico.md): modello, parametri, fonti, limiti, calibrazione
 - [Guida d'uso](docs/guida-uso.md): come leggere l'app, diario, regole di raccolta
 - [Dati e architettura](docs/dati-e-architettura.md): fonti, licenze, script, pubblicazione

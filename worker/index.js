@@ -6,14 +6,14 @@ import { handleCms, handleContent, publishedResources } from './cms.js';
 import { cachedForecast } from './weather-provider.js';
 
 export default {
-  async fetch(request, env) {
+  async fetch(request, env, ctx) {
     const url = new URL(request.url);
     if(url.pathname==='/api/weather/v1/forecast') {
       if(request.method!=='GET')return new Response('Metodo non consentito.',{status:405});
       try {
         const content=await publishedResources(env,url.origin,['zones'],{initialize:false});
         const zones=content?.zones?.zones||(await (await env.ASSETS.fetch(new Request(new URL('/data/zones.json',url)))).json()).zones;
-        return await cachedForecast(url.searchParams,{zones,cache:env.DIARIO});
+        return await cachedForecast(url.searchParams,{zones,cache:env.DIARIO,waitUntil:ctx?.waitUntil?.bind(ctx),waitForFresh:request.headers.get('x-weather-refresh')==='1'});
       } catch(e) {return Response.json({error:e?.status?e.message:'Il servizio meteo non è disponibile. Riprova tra poco.',...(e?.code?{code:e.code}:{})},{status:e?.status||503,headers:{'cache-control':'no-store'}});}
     }
     if(url.pathname==='/redazione'||url.pathname==='/redazione/')return env.ASSETS.fetch(request);
