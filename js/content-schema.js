@@ -48,7 +48,7 @@ export const FIELD_LABELS = {
   traits:'Caratteri',months:'Mesi della stagione',season:'Stagione',sources:'Fonti',source:'Provenienza',
   file:'File immagine',file_hd:'Immagine grande',thumb:'Miniatura',author:'Autore',license:'Licenza',
   page:'Pagina della fonte',alt:'Testo alternativo',caption:'Didascalia',id:'Identificativo',
-  lat:'Latitudine',lon:'Longitudine',parking:'Soste',access:'Accesso',protection:'Tutela e regole locali',
+  lat:'Latitudine',lon:'Longitudine',parking:'Soste',access:'Accesso',protection:'Tutela e regole locali',law:'Norma',summary:'Sintesi per l’app',lookalikeNote:'Nota sui sosia',presenceNote:'Presenza nel Lazio',
   ref:'Segnavia',operator:'Gestore',difficulty:'Difficoltà',editorialNote:'Nota della redazione',group:'Gruppo',
   homeTitle:'Titolo della home',homeIntro:'Introduzione della home',otherPlacesTitle:'Titolo degli altri luoghi',
   speciesTitle:'Titolo delle specie',editorialEyebrow:'Etichetta dei taccuini',editorialTitle:'Titolo dei taccuini',

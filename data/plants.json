@@ -4130,6 +4130,1003 @@
         "Arbusteto e macchia alta"
       ],
       "habitatMappingNote": "Traduzione editoriale prudente dell’habitat descritto dalla fonte nelle categorie della Carta Forestale Lazio: compatibilità ambientale, non presenza osservata né abbondanza."
+    },
+    "bucaneve": {
+      "name": "Bucaneve",
+      "latin": "Galanthus nivalis L.",
+      "category": "Fiori",
+      "aliases": [
+        "bucaneve comune",
+        "galanto"
+      ],
+      "habitat": "Boschi di latifoglie decidue, dai carpineti alle faggete termofile, su suoli calcarei freschi e profondi.",
+      "recognize": [
+        "Un solo fiore bianco, pendente, su uno stelo sottile.",
+        "Tre tepali esterni bianchi e aperti; tre interni lunghi circa la metà, con una macchia verde a V.",
+        "Di solito due foglie strette e un po’ carnose, verde-grigio."
+      ],
+      "foodUse": {
+        "status": "tossico",
+        "parts": "",
+        "caution": "Tutte le parti, soprattutto i bulbi, contengono alcaloidi tossici. Non raccogliere."
+      },
+      "flowerMonths": [
+        3,
+        4
+      ],
+      "phaseNote": "I mesi indicano la fioritura descritta dalla fonte; non sono un calendario di raccolta e possono variare con quota e stagione. Fiorisce spesso quando la neve non è ancora sciolta.",
+      "lookalikes": [],
+      "lookalikeNote": "Il campanellino (Leucojum vernum) ha sei tepali tutti lunghi uguali, con punta verde.",
+      "presenceNote": "Taxon presente nel Lazio secondo il Portale della Flora d’Italia: presenza regionale, non segnalazione sul sentiero.",
+      "protection": {
+        "status": "protetta (L.R. 61/1974, artt. 1-2)",
+        "law": "L.R. Lazio 19 settembre 1974, n. 61, artt. 1, 2 e 6; Dir. 92/43/CEE all. V; Reg. (CE) 338/97 all. B (Galanthus spp.)",
+        "summary": "In Lazio è protetta (L.R. 61/1974, artt. 1-2): al massimo 5 steli fioriti a persona al giorno, in totale tra le specie protette; vietato estirpare la pianta o prenderne altre parti. Vietata la vendita (art. 6). Nei parchi e nelle riserve valgono anche i divieti dell’area protetta (L. 394/1991, art. 11, c. 3, lett. a).",
+        "url": "https://www.consiglio.regione.lazio.it/consiglio-regionale/?vw=leggiregionalidettaglio&id=7250&sv=vigente"
+      },
+      "sources": [
+        {
+          "title": "Università di Trieste · Portale della Flora d’Italia · Galanthus nivalis",
+          "url": "https://dryades.units.it/floritaly/index.php?procedure=taxon_page&tipo=all&id=6989"
+        },
+        {
+          "title": "Università di Trieste · Portale della Flora di Roma · Galanthus nivalis",
+          "url": "https://dryades.units.it/Roma/index.php?id=6989&procedure=taxon_page"
+        },
+        {
+          "title": "Acta Plantarum · scheda botanica",
+          "url": "https://www.actaplantarum.org/forum/viewtopic.php?t=9010"
+        },
+        {
+          "title": "Info Flora · Galanthus nivalis",
+          "url": "https://www.infoflora.ch/it/flora/galanthus-nivalis.html"
+        },
+        {
+          "title": "Acta Plantarum · IPFI · Galanthus nivalis",
+          "url": "https://www.actaplantarum.org/flora/flora_info.php?id=506989"
+        }
+      ],
+      "photos": [
+        {
+          "file": "assets/plants/bucaneve-1.webp",
+          "thumb": "assets/plants/bucaneve-1-t.webp",
+          "alt": "Bucaneve: fotografia della specie",
+          "caption": "Fotografia originale della specie; i caratteri vanno confrontati insieme.",
+          "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "page": "https://dryades.units.it/floritaly/index.php?procedure=taxon_page&tipo=all&id=6989",
+          "sourceImage": "https://dryades.units.it/dryades/plants/foto/TS238499.jpg",
+          "sourceCaption": "Andrea Moro · © Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Distributed under CC-BY-SA 4.0 license. · Comune di Colloredo di Monte Albano, località Caporiacco, margine della strada , Friuli Venezia Giulia, Italia · 16/02/2019"
+        },
+        {
+          "file": "assets/plants/bucaneve-2.webp",
+          "thumb": "assets/plants/bucaneve-2-t.webp",
+          "alt": "Bucaneve: fotografia della specie",
+          "caption": "Fotografia originale della specie; i caratteri vanno confrontati insieme.",
+          "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "page": "https://dryades.units.it/floritaly/index.php?procedure=taxon_page&tipo=all&id=6989",
+          "sourceImage": "https://dryades.units.it/dryades/plants/foto/IMG1494JPG1710259685.jpg",
+          "sourceCaption": "Andrea Moro · © Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Distributed under CC-BY-SA 4.0 license. · Comune di Trieste, Opicina / Opčine, dolina lungo la strada per Monrupino / Repentabor (TS), Friuli Venezia Giulia, Italia · 12/03/2024"
+        }
+      ]
+    },
+    "erba-trinita": {
+      "name": "Erba trinità",
+      "latin": "Hepatica nobilis Schreb.",
+      "category": "Fiori",
+      "aliases": [
+        "epatica",
+        "anemone epatica"
+      ],
+      "habitat": "Querceti ombrosi e faggete termofile, su suoli argillosi umiferi, soprattutto tra 100 e 1000 m.",
+      "recognize": [
+        "Foglie a tre lobi uguali e interi, spesso violacee sotto; restano anche d’inverno.",
+        "Fiori blu-violetti, a volte rosa o bianchi, con 6-9 tepali. L’anemone degli Appennini ne ha 16-23.",
+        "Tre piccole foglie pelose subito sotto il fiore, simili a un calice."
+      ],
+      "foodUse": {
+        "status": "tossico",
+        "parts": "",
+        "caution": "Pianta tossica (protoanemonina). Non raccogliere e non assaggiare."
+      },
+      "flowerMonths": [
+        3,
+        4,
+        5
+      ],
+      "phaseNote": "I mesi indicano la fioritura descritta dalla fonte; non sono un calendario di raccolta e possono variare con quota e stagione.",
+      "lookalikes": [
+        "anemone-appennini"
+      ],
+      "lookalikeNote": "L’anemone degli Appennini ha foglie molto divise e fiori con 16-23 segmenti stretti.",
+      "presenceNote": "Taxon presente nel Lazio secondo il Portale della Flora d’Italia: presenza regionale, non segnalazione sul sentiero.",
+      "protection": {
+        "status": "nessuna tutela specifica trovata",
+        "law": "L.R. Lazio 61/1974: non elencata (artt. 1 e 3)",
+        "summary": "Nessuna tutela specifica trovata nelle norme del Lazio controllate. Nei parchi e nelle riserve valgono anche i divieti dell’area protetta (L. 394/1991, art. 11, c. 3, lett. a).",
+        "url": "https://www.consiglio.regione.lazio.it/consiglio-regionale/?vw=leggiregionalidettaglio&id=7250&sv=vigente"
+      },
+      "sources": [
+        {
+          "title": "Università di Trieste · Portale della Flora d’Italia · Hepatica nobilis",
+          "url": "https://dryades.units.it/floritaly/index.php?procedure=taxon_page&tipo=all&id=1054"
+        },
+        {
+          "title": "Università di Trieste · Portale della flora delle Foreste Casentinesi · Hepatica nobilis",
+          "url": "https://dryades.units.it/casentinesi/index.php?id=1054&procedure=taxon_page"
+        },
+        {
+          "title": "Acta Plantarum · scheda botanica",
+          "url": "https://www.actaplantarum.org/forum/viewtopic.php?t=2137"
+        },
+        {
+          "title": "Info Flora · Hepatica nobilis",
+          "url": "https://www.infoflora.ch/it/flora/hepatica-nobilis.html"
+        },
+        {
+          "title": "Acta Plantarum · IPFI · Hepatica nobilis",
+          "url": "https://www.actaplantarum.org/flora/flora_info.php?id=501054"
+        },
+        {
+          "title": "Acta Plantarum · IPFI · Hepatica nobilis",
+          "url": "https://www.actaplantarum.org/flora/flora_info.php?id=501046"
+        }
+      ],
+      "photos": [
+        {
+          "file": "assets/plants/erba-trinita-1.webp",
+          "thumb": "assets/plants/erba-trinita-1-t.webp",
+          "alt": "Erba trinità: fotografia della specie",
+          "caption": "Fotografia originale della specie; i caratteri vanno confrontati insieme.",
+          "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "page": "https://dryades.units.it/floritaly/index.php?procedure=taxon_page&tipo=all&id=1054",
+          "sourceImage": "https://dryades.units.it/dryades/plants/foto/TSB73571.jpg",
+          "sourceCaption": "Andrea Moro · © Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Distributed under CC-BY-SA 4.0 license. · Comune di Serle, Lombardia, Italia · 28/03/2010"
+        },
+        {
+          "file": "assets/plants/erba-trinita-2.webp",
+          "thumb": "assets/plants/erba-trinita-2-t.webp",
+          "alt": "Erba trinità: fotografia della specie",
+          "caption": "Fotografia originale della specie; i caratteri vanno confrontati insieme.",
+          "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "page": "https://dryades.units.it/floritaly/index.php?procedure=taxon_page&tipo=all&id=1054",
+          "sourceImage": "https://dryades.units.it/dryades/plants/foto/IMG5042JPG1684750772.jpg",
+          "sourceCaption": "Andrea Moro · © Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Distributed under CC-BY-SA 4.0 license. · Comune di Serle, Monte San Bartolomeo (BS), Lombardia, Italia · 11/04/2023"
+        }
+      ]
+    },
+    "scilla-silvestre": {
+      "name": "Scilla silvestre",
+      "latin": "Scilla bifolia L.",
+      "category": "Fiori",
+      "aliases": [
+        "scilla bifoglia"
+      ],
+      "habitat": "Boschi mesofili di latifoglie su suoli freschi e umiferi, con altre bulbose a fioritura precoce.",
+      "recognize": [
+        "Di solito due foglie strette e lucide, che abbracciano la parte bassa dello stelo.",
+        "Grappolo di 2-10 piccoli fiori a stella, da blu intenso a lilla.",
+        "Pianta bassa, in genere sotto i 25 cm."
+      ],
+      "foodUse": {
+        "status": "tossico",
+        "parts": "",
+        "caution": "Tutte le parti, soprattutto i bulbi, contengono glucosidi tossici. Non raccogliere."
+      },
+      "flowerMonths": [
+        3,
+        4,
+        5,
+        6
+      ],
+      "phaseNote": "I mesi indicano la fioritura descritta dalla fonte; non sono un calendario di raccolta e possono variare con quota e stagione.",
+      "lookalikes": [],
+      "presenceNote": "Taxon presente nel Lazio secondo il Portale della Flora d’Italia: presenza regionale, non segnalazione sul sentiero.",
+      "protection": {
+        "status": "nessuna tutela specifica trovata",
+        "law": "L.R. Lazio 61/1974: non elencata (artt. 1 e 3)",
+        "summary": "Nessuna tutela specifica trovata nelle norme del Lazio controllate. Nei parchi e nelle riserve valgono anche i divieti dell’area protetta (L. 394/1991, art. 11, c. 3, lett. a).",
+        "url": "https://www.consiglio.regione.lazio.it/consiglio-regionale/?vw=leggiregionalidettaglio&id=7250&sv=vigente"
+      },
+      "sources": [
+        {
+          "title": "Università di Trieste · Portale della Flora d’Italia · Scilla bifolia",
+          "url": "https://dryades.units.it/floritaly/index.php?procedure=taxon_page&tipo=all&id=6817"
+        },
+        {
+          "title": "Università di Trieste · Portale della flora delle Foreste Casentinesi · Scilla bifolia",
+          "url": "https://dryades.units.it/casentinesi/index.php?id=6817&procedure=taxon_page"
+        },
+        {
+          "title": "Acta Plantarum · scheda botanica",
+          "url": "https://www.actaplantarum.org/forum/viewtopic.php?t=22864"
+        },
+        {
+          "title": "Info Flora · Scilla bifolia",
+          "url": "https://www.infoflora.ch/it/flora/scilla-bifolia.html"
+        }
+      ],
+      "photos": [
+        {
+          "file": "assets/plants/scilla-silvestre-1.webp",
+          "thumb": "assets/plants/scilla-silvestre-1-t.webp",
+          "alt": "Scilla silvestre: fotografia della specie",
+          "caption": "Fotografia originale della specie; i caratteri vanno confrontati insieme.",
+          "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "page": "https://dryades.units.it/floritaly/index.php?procedure=taxon_page&tipo=all&id=6817",
+          "sourceImage": "https://dryades.units.it/dryades/plants/foto/IMG6507JPG1583772865.jpg",
+          "sourceCaption": "Andrea Moro · © Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Distributed under CC-BY-SA 4.0 license. · Comune di Trieste, località Basovizza, dolina nei pressi della strada per San Lorenzo (TS), Friuli Venezia Giulia, Italia · 08/03/2020"
+        },
+        {
+          "file": "assets/plants/scilla-silvestre-2.webp",
+          "thumb": "assets/plants/scilla-silvestre-2-t.webp",
+          "alt": "Scilla silvestre: fotografia della specie",
+          "caption": "Fotografia originale della specie; i caratteri vanno confrontati insieme.",
+          "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "page": "https://dryades.units.it/floritaly/index.php?procedure=taxon_page&tipo=all&id=6817",
+          "sourceImage": "https://dryades.units.it/dryades/plants/foto/TSB10820.jpg",
+          "sourceCaption": "Andrea Moro · © Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Distributed under CC-BY-SA 4.0 license. · Comune di Serle, località Cariadaghe. , Lombardia, Italia · 8/4/04 0.00.00"
+        }
+      ]
+    },
+    "narciso-dei-poeti": {
+      "name": "Narciso dei poeti",
+      "latin": "Narcissus poeticus L.",
+      "category": "Fiori",
+      "aliases": [
+        "narciso selvatico"
+      ],
+      "habitat": "Prati e pascoli montani, radure e boscaglie aperte, su suoli ricchi di sostanza organica.",
+      "recognize": [
+        "Un solo fiore bianco e profumato per stelo.",
+        "Al centro una corona corta e gialla, con l’orlo rosso.",
+        "Foglie piatte e strette, verdi o un po’ grigie."
+      ],
+      "foodUse": {
+        "status": "tossico",
+        "parts": "",
+        "caution": "Tutte le parti sono velenose per diversi alcaloidi. Non raccogliere."
+      },
+      "flowerMonths": [
+        4,
+        5
+      ],
+      "phaseNote": "I mesi indicano la fioritura descritta dalla fonte; non sono un calendario di raccolta e possono variare con quota e stagione. Fonte riferita alle Prealpi venete: sugli altopiani reatini la fioritura può essere più tardiva (dato non verificato).",
+      "lookalikes": [],
+      "presenceNote": "Taxon presente nel Lazio secondo il Portale della Flora d’Italia: presenza regionale, non segnalazione sul sentiero.",
+      "protection": {
+        "status": "raccolta vietata (L.R. 61/1974, art. 3)",
+        "law": "L.R. Lazio 19 settembre 1974, n. 61, artt. 3, 6 e 8",
+        "summary": "In Lazio la raccolta è vietata (L.R. 61/1974, art. 3), anche di parti della pianta. Nei parchi e nelle riserve valgono anche i divieti dell’area protetta (L. 394/1991, art. 11, c. 3, lett. a).",
+        "url": "https://www.consiglio.regione.lazio.it/consiglio-regionale/?vw=leggiregionalidettaglio&id=7250&sv=vigente"
+      },
+      "sources": [
+        {
+          "title": "Università di Trieste · Portale della Flora d’Italia · Narcissus poeticus",
+          "url": "https://dryades.units.it/floritaly/index.php?procedure=taxon_page&tipo=all&id=7001"
+        },
+        {
+          "title": "Università di Trieste · Portale alla Flora del Massiccio del Grappa · Narcissus poeticus",
+          "url": "https://dryades.units.it/Grappa/index.php?id=7001&procedure=taxon_page"
+        },
+        {
+          "title": "Acta Plantarum · scheda botanica",
+          "url": "https://www.actaplantarum.org/forum/viewtopic.php?t=85030"
+        },
+        {
+          "title": "Acta Plantarum · IPFI · Narcissus poeticus",
+          "url": "https://www.actaplantarum.org/flora/flora_info.php?id=507001"
+        }
+      ],
+      "photos": [
+        {
+          "file": "assets/plants/narciso-dei-poeti-1.webp",
+          "thumb": "assets/plants/narciso-dei-poeti-1-t.webp",
+          "alt": "Narciso dei poeti: fotografia della specie",
+          "caption": "Fotografia originale della specie; i caratteri vanno confrontati insieme.",
+          "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "page": "https://dryades.units.it/floritaly/index.php?procedure=taxon_page&tipo=all&id=7001",
+          "sourceImage": "https://dryades.units.it/dryades/plants/foto/TSB11668.jpg",
+          "sourceCaption": "Andrea Moro · © Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Distributed under CC-BY-SA 4.0 license. · Comune di Monrupino, prato ai piedi del colle del castelliere., FVG, Italia · 6/5/04 0.00.00"
+        },
+        {
+          "file": "assets/plants/narciso-dei-poeti-2.webp",
+          "thumb": "assets/plants/narciso-dei-poeti-2-t.webp",
+          "alt": "Narciso dei poeti: fotografia della specie",
+          "caption": "Fotografia originale della specie; i caratteri vanno confrontati insieme.",
+          "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "page": "https://dryades.units.it/floritaly/index.php?procedure=taxon_page&tipo=all&id=7001",
+          "sourceImage": "https://dryades.units.it/dryades/plants/foto/TSB11026.jpg",
+          "sourceCaption": "Andrea Moro · © Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Distributed under CC-BY-SA 4.0 license. · Comune di Trieste, località Basovizza, lungo la strada per San Lorenzo. , FVG, Italia · 1/5/04 0.00.00"
+        }
+      ]
+    },
+    "giglio-martagone": {
+      "name": "Giglio martagone",
+      "latin": "Lilium martagon L.",
+      "category": "Fiori",
+      "aliases": [
+        "martagone"
+      ],
+      "habitat": "Radure e margini di bosco, soprattutto faggete, su suoli profondi e freschi; optimum nella fascia montana.",
+      "recognize": [
+        "Foglie a metà fusto riunite in giri (verticilli) di 4-10.",
+        "Fiori penduli rosa o porpora chiaro, con macchie scure.",
+        "Tepali ripiegati all’indietro a forma di turbante; stami lunghi e sporgenti."
+      ],
+      "foodUse": {
+        "status": "tossico",
+        "parts": "",
+        "caution": "La fonte indica la pianta come tossica. Non raccogliere bulbi o fiori."
+      },
+      "flowerMonths": [
+        5,
+        6,
+        7
+      ],
+      "phaseNote": "I mesi indicano la fioritura descritta dalla fonte; non sono un calendario di raccolta e possono variare con quota e stagione.",
+      "lookalikes": [],
+      "presenceNote": "Taxon presente nel Lazio secondo il Portale della Flora d’Italia: presenza regionale, non segnalazione sul sentiero.",
+      "protection": {
+        "status": "nessuna tutela specifica trovata",
+        "law": "L.R. Lazio 61/1974: non elencata (artt. 1 e 3)",
+        "summary": "Nessuna tutela specifica trovata nelle norme del Lazio controllate. Nei parchi e nelle riserve valgono anche i divieti dell’area protetta (L. 394/1991, art. 11, c. 3, lett. a).",
+        "url": "https://www.consiglio.regione.lazio.it/consiglio-regionale/?vw=leggiregionalidettaglio&id=7250&sv=vigente"
+      },
+      "sources": [
+        {
+          "title": "Università di Trieste · Portale della Flora d’Italia · Lilium martagon",
+          "url": "https://dryades.units.it/floritaly/index.php?procedure=taxon_page&tipo=all&id=6806"
+        },
+        {
+          "title": "Università di Trieste · Portale della flora delle Foreste Casentinesi · Lilium martagon",
+          "url": "https://dryades.units.it/casentinesi/index.php?id=6806&procedure=taxon_page"
+        },
+        {
+          "title": "Acta Plantarum · scheda botanica",
+          "url": "https://www.actaplantarum.org/forum/viewtopic.php?t=19580"
+        },
+        {
+          "title": "Info Flora · Lilium martagon",
+          "url": "https://www.infoflora.ch/it/flora/lilium-martagon.html"
+        },
+        {
+          "title": "Acta Plantarum · IPFI · Lilium martagon",
+          "url": "https://www.actaplantarum.org/flora/flora_info.php?id=506806"
+        }
+      ],
+      "photos": [
+        {
+          "file": "assets/plants/giglio-martagone-1.webp",
+          "thumb": "assets/plants/giglio-martagone-1-t.webp",
+          "alt": "Giglio martagone: fotografia della specie",
+          "caption": "Fotografia originale della specie; i caratteri vanno confrontati insieme.",
+          "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "page": "https://dryades.units.it/floritaly/index.php?procedure=taxon_page&tipo=all&id=6806",
+          "sourceImage": "https://dryades.units.it/dryades/plants/foto/TSB01200.jpg",
+          "sourceCaption": "Andrea Moro · © Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Distributed under CC-BY-SA 4.0 license. · Comune di Malcesine, versante orientale della cresta del Monte Baldo, nei pressi della Cima Telegrafo. , Veneto, Italia · 3/7/03 0.00.00"
+        },
+        {
+          "file": "assets/plants/giglio-martagone-2.webp",
+          "thumb": "assets/plants/giglio-martagone-2-t.webp",
+          "alt": "Giglio martagone: fotografia della specie",
+          "caption": "Fotografia originale della specie; i caratteri vanno confrontati insieme.",
+          "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "page": "https://dryades.units.it/floritaly/index.php?procedure=taxon_page&tipo=all&id=6806",
+          "sourceImage": "https://dryades.units.it/dryades/plants/foto/TSB13057.jpg",
+          "sourceCaption": "Andrea Moro · © Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Distributed under CC-BY-SA 4.0 license. · Comune di Ampezzo, località Passo del Pura, prato di fronte all'omonimo rifugio. , FVG, Italia · 18/7/04 0.00.00"
+        }
+      ]
+    },
+    "giglio-rosso": {
+      "name": "Giglio rosso",
+      "latin": "Lilium bulbiferum L. subsp. croceum (Chaix) Jan",
+      "category": "Fiori",
+      "aliases": [
+        "giglio di San Giovanni",
+        "giglio bulbifero croceo"
+      ],
+      "habitat": "Orli di querceti, castagneti e faggete, a volte radure prative; di preferenza su calcare.",
+      "recognize": [
+        "Fiori grandi, arancioni, rivolti verso l’alto, a forma di coppa.",
+        "Tepali con piccoli punti scuri in rilievo.",
+        "Foglie strette e numerose lungo il fusto, senza bulbilli all’ascella."
+      ],
+      "foodUse": {
+        "status": "da osservare",
+        "parts": "",
+        "caution": "Specie protetta nel Lazio. Non estirpare bulbi."
+      },
+      "flowerMonths": [
+        5,
+        6,
+        7
+      ],
+      "phaseNote": "I mesi indicano la fioritura descritta dalla fonte; non sono un calendario di raccolta e possono variare con quota e stagione.",
+      "lookalikes": [
+        "giglio-martagone"
+      ],
+      "lookalikeNote": "Il giglio martagone ha fiori rosa, penduli, a turbante. La sottospecie bulbiferum ha bulbilli all’ascella delle foglie alte.",
+      "presenceNote": "Taxon presente nel Lazio secondo il Portale della Flora d’Italia: presenza regionale, non segnalazione sul sentiero.",
+      "protection": {
+        "status": "protetta (L.R. 61/1974, artt. 1-2)",
+        "law": "L.R. Lazio 19 settembre 1974, n. 61, artt. 1, 2 e 6",
+        "summary": "In Lazio è protetta (L.R. 61/1974, artt. 1-2): al massimo 5 steli fioriti a persona al giorno, in totale tra le specie protette; vietato estirpare la pianta o prenderne altre parti. Vietata la vendita (art. 6). Nei parchi e nelle riserve valgono anche i divieti dell’area protetta (L. 394/1991, art. 11, c. 3, lett. a).",
+        "url": "https://www.consiglio.regione.lazio.it/consiglio-regionale/?vw=leggiregionalidettaglio&id=7250&sv=vigente"
+      },
+      "sources": [
+        {
+          "title": "Università di Trieste · Portale della Flora d’Italia · Lilium bulbiferum subsp. croceum",
+          "url": "https://dryades.units.it/floritaly/index.php?procedure=taxon_page&tipo=all&id=6810"
+        },
+        {
+          "title": "Università di Trieste · Portale della Flora di Roma · Lilium bulbiferum subsp. croceum",
+          "url": "https://dryades.units.it/Roma/index.php?id=6810&procedure=taxon_page"
+        },
+        {
+          "title": "Acta Plantarum · scheda botanica",
+          "url": "https://www.actaplantarum.org/forum/viewtopic.php?t=11734"
+        },
+        {
+          "title": "Info Flora · Lilium bulbiferum",
+          "url": "https://www.infoflora.ch/it/flora/lilium-bulbiferum.html"
+        },
+        {
+          "title": "Info Flora · Lilium bulbiferum subsp croceum",
+          "url": "https://www.infoflora.ch/it/flora/lilium-bulbiferum-subsp-croceum.html"
+        },
+        {
+          "title": "Acta Plantarum · scheda botanica",
+          "url": "https://www.actaplantarum.org/forum/viewtopic.php?t=19580"
+        }
+      ],
+      "photos": [
+        {
+          "file": "assets/plants/giglio-rosso-1.webp",
+          "thumb": "assets/plants/giglio-rosso-1-t.webp",
+          "alt": "Giglio rosso: fotografia della specie",
+          "caption": "Fotografia originale della specie; i caratteri vanno confrontati insieme.",
+          "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "page": "https://dryades.units.it/floritaly/index.php?procedure=taxon_page&tipo=all&id=6810",
+          "sourceImage": "https://dryades.units.it/dryades/plants/foto/TS227970.jpg",
+          "sourceCaption": "Andrea Moro · © Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Distributed under CC-BY-SA 4.0 license. · Comune di Gargnano, lungo il sentiero che conduce all'Eremo di San Valentino dalla frazione Sasso, Lombardia, Italia · 20/06/2018"
+        },
+        {
+          "file": "assets/plants/giglio-rosso-2.webp",
+          "thumb": "assets/plants/giglio-rosso-2-t.webp",
+          "alt": "Giglio rosso: fotografia della specie",
+          "caption": "Fotografia originale della specie; i caratteri vanno confrontati insieme.",
+          "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "page": "https://dryades.units.it/floritaly/index.php?procedure=taxon_page&tipo=all&id=6810",
+          "sourceImage": "https://dryades.units.it/dryades/plants/foto/TS227971.jpg",
+          "sourceCaption": "Andrea Moro · © Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Distributed under CC-BY-SA 4.0 license. · Comune di Gargnano, lungo il sentiero che conduce all'Eremo di San Valentino dalla frazione Sasso, Lombardia, Italia · 20/06/2018"
+        }
+      ]
+    },
+    "orchide-sambucina": {
+      "name": "Orchide sambucina",
+      "latin": "Dactylorhiza sambucina (L.) Soó",
+      "category": "Fiori",
+      "aliases": [
+        "dattilorriza sambucina"
+      ],
+      "habitat": "Praterie e radure di altitudine, da 300 a 2300 m, con optimum nella fascia montana.",
+      "recognize": [
+        "Spiga densa di fiori gialli o rosso porpora, spesso mescolati nello stesso prato.",
+        "Sperone robusto, a cono, rivolto verso il basso.",
+        "Alcune foglie (4-8) verde chiaro lungo il fusto, senza macchie."
+      ],
+      "foodUse": {
+        "status": "da osservare",
+        "parts": "",
+        "caution": "Orchidea spontanea: osservare senza cogliere né estirpare."
+      },
+      "flowerMonths": [
+        4,
+        5,
+        6
+      ],
+      "phaseNote": "I mesi indicano la fioritura descritta dalla fonte; non sono un calendario di raccolta e possono variare con quota e stagione.",
+      "lookalikes": [],
+      "presenceNote": "Taxon presente nel Lazio secondo il Portale della Flora d’Italia: presenza regionale, non segnalazione sul sentiero.",
+      "protection": {
+        "status": "commercio regolato (CITES); nessuna tutela regionale specifica trovata",
+        "law": "Reg. (CE) 338/97 come modificato dal Reg. (UE) 2026/1383: ORCHIDACEAE spp. (II); L.R. Lazio 61/1974: non elencata",
+        "summary": "Il commercio delle orchidee selvatiche è regolato dal CITES. Nessuna tutela regionale specifica trovata. Nei parchi e nelle riserve valgono anche i divieti dell’area protetta (L. 394/1991, art. 11, c. 3, lett. a).",
+        "url": "https://eur-lex.europa.eu/eli/reg/2026/1383/oj"
+      },
+      "sources": [
+        {
+          "title": "Università di Trieste · Portale della Flora d’Italia · Dactylorhiza sambucina",
+          "url": "https://dryades.units.it/floritaly/index.php?procedure=taxon_page&tipo=all&id=8191"
+        },
+        {
+          "title": "Università di Trieste · Portale della flora delle Foreste Casentinesi · Dactylorhiza sambucina",
+          "url": "https://dryades.units.it/casentinesi/index.php?id=8191&procedure=taxon_page"
+        },
+        {
+          "title": "Acta Plantarum · scheda botanica",
+          "url": "https://www.actaplantarum.org/forum/viewtopic.php?t=7238"
+        },
+        {
+          "title": "Info Flora · Dactylorhiza sambucina",
+          "url": "https://www.infoflora.ch/it/flora/dactylorhiza-sambucina.html"
+        },
+        {
+          "title": "Acta Plantarum · IPFI · Dactylorhiza sambucina",
+          "url": "https://www.actaplantarum.org/flora/flora_info.php?id=508191"
+        }
+      ],
+      "photos": [
+        {
+          "file": "assets/plants/orchide-sambucina-1.webp",
+          "thumb": "assets/plants/orchide-sambucina-1-t.webp",
+          "alt": "Orchide sambucina: fotografia della specie",
+          "caption": "Fotografia originale della specie; i caratteri vanno confrontati insieme.",
+          "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "page": "https://dryades.units.it/floritaly/index.php?procedure=taxon_page&tipo=all&id=8191",
+          "sourceImage": "https://dryades.units.it/dryades/plants/foto/TS241590.jpg",
+          "sourceCaption": "Andrea Moro · © Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Distributed under CC-BY-SA 4.0 license. · Comune di Serle, Località Calamor, prato su flysch, Lombardia, Italia · 22/04/2019"
+        },
+        {
+          "file": "assets/plants/orchide-sambucina-2.webp",
+          "thumb": "assets/plants/orchide-sambucina-2-t.webp",
+          "alt": "Orchide sambucina: fotografia della specie",
+          "caption": "Fotografia originale della specie; i caratteri vanno confrontati insieme.",
+          "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "page": "https://dryades.units.it/floritaly/index.php?procedure=taxon_page&tipo=all&id=8191",
+          "sourceImage": "https://dryades.units.it/dryades/plants/foto/TSB23245.jpg",
+          "sourceCaption": "Andrea Moro · © Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Distributed under CC-BY-SA 4.0 license. · Comune di Paularo, area prativa esposta a Sud-Est ai margini dell'abitato., FVG, Italia · 22/5/05 0.00.00"
+        }
+      ]
+    },
+    "orchide-maschia": {
+      "name": "Orchide maschia",
+      "latin": "Orchis mascula (L.) L.",
+      "category": "Fiori",
+      "aliases": [
+        "orchidea maschia",
+        "giglio caprino"
+      ],
+      "habitat": "Boschi radi, margini e arbusteti, soprattutto su calcare, dalla fascia submediterranea a quella subalpina.",
+      "recognize": [
+        "Spiga di fiori porpora o rosa; sperone orizzontale o rivolto in alto.",
+        "Labello a tre lobi, chiaro alla base e punteggiato di porpora.",
+        "Foglie basali lucide: a volte con macchie scure, ma non sempre."
+      ],
+      "foodUse": {
+        "status": "da osservare",
+        "parts": "",
+        "caution": "Orchidea spontanea: osservare senza cogliere né estirpare."
+      },
+      "flowerMonths": [
+        4,
+        5,
+        6
+      ],
+      "phaseNote": "I mesi indicano la fioritura descritta dalla fonte; non sono un calendario di raccolta e possono variare con quota e stagione.",
+      "lookalikes": [
+        "orchide-purpurea"
+      ],
+      "lookalikeNote": "L’orchide purpurea ha casco porpora scuro e sperone curvo verso il basso.",
+      "presenceNote": "Taxon presente nel Lazio secondo il Portale della Flora d’Italia: presenza regionale, non segnalazione sul sentiero.",
+      "protection": {
+        "status": "commercio regolato (CITES); nessuna tutela regionale specifica trovata",
+        "law": "Reg. (CE) 338/97 come modificato dal Reg. (UE) 2026/1383: ORCHIDACEAE spp. (II); L.R. Lazio 61/1974: non elencata",
+        "summary": "Il commercio delle orchidee selvatiche è regolato dal CITES. Nessuna tutela regionale specifica trovata. Nei parchi e nelle riserve valgono anche i divieti dell’area protetta (L. 394/1991, art. 11, c. 3, lett. a).",
+        "url": "https://eur-lex.europa.eu/eli/reg/2026/1383/oj"
+      },
+      "sources": [
+        {
+          "title": "Università di Trieste · Portale della Flora d’Italia · Orchis mascula",
+          "url": "https://dryades.units.it/floritaly/index.php?procedure=taxon_page&tipo=all&id=8180"
+        },
+        {
+          "title": "Università di Trieste · Portale della flora delle Foreste Casentinesi · Orchis mascula subsp. mascula",
+          "url": "https://dryades.units.it/casentinesi/index.php?id=8181&procedure=taxon_page"
+        },
+        {
+          "title": "Acta Plantarum · scheda botanica",
+          "url": "https://www.actaplantarum.org/forum/viewtopic.php?t=6665"
+        },
+        {
+          "title": "Info Flora · Orchis mascula subsp mascula",
+          "url": "https://www.infoflora.ch/it/flora/orchis-mascula-subsp-mascula.html"
+        },
+        {
+          "title": "Acta Plantarum · IPFI · Orchis mascula",
+          "url": "https://www.actaplantarum.org/flora/flora_info.php?id=508181"
+        },
+        {
+          "title": "Acta Plantarum · scheda botanica",
+          "url": "https://www.actaplantarum.org/forum/viewtopic.php?t=3550"
+        },
+        {
+          "title": "Info Flora · Orchis purpurea",
+          "url": "https://www.infoflora.ch/it/flora/orchis-purpurea.html"
+        }
+      ],
+      "photos": [
+        {
+          "file": "assets/plants/orchide-maschia-1.webp",
+          "thumb": "assets/plants/orchide-maschia-1-t.webp",
+          "alt": "Orchide maschia: fotografia della specie",
+          "caption": "Fotografia originale della specie; i caratteri vanno confrontati insieme.",
+          "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "page": "https://dryades.units.it/floritaly/index.php?procedure=taxon_page&tipo=all&id=8181",
+          "sourceImage": "https://dryades.units.it/dryades/plants/foto/TSB11639.jpg",
+          "sourceCaption": "Andrea Moro · © Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Distributed under CC-BY-SA 4.0 license. · Comune di Monrupino, ai piedi del colle del Castelliere, FVG, Italia · 6/5/04"
+        },
+        {
+          "file": "assets/plants/orchide-maschia-2.webp",
+          "thumb": "assets/plants/orchide-maschia-2-t.webp",
+          "alt": "Orchide maschia: fotografia della specie",
+          "caption": "Fotografia originale della specie; i caratteri vanno confrontati insieme.",
+          "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "page": "https://dryades.units.it/floritaly/index.php?procedure=taxon_page&tipo=all&id=8181",
+          "sourceImage": "https://dryades.units.it/dryades/plants/foto/TSB11641.jpg",
+          "sourceCaption": "Andrea Moro · © Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Distributed under CC-BY-SA 4.0 license. · Comune di Monrupino, ai piedi del colle del Castelliere, FVG, Italia · 6/5/04"
+        }
+      ]
+    },
+    "orchide-purpurea": {
+      "name": "Orchide purpurea",
+      "latin": "Orchis purpurea Huds.",
+      "category": "Fiori",
+      "aliases": [
+        "orchide maggiore",
+        "giglioni"
+      ],
+      "habitat": "Boschi maturi ma luminosi di latifoglie e prati seminaturali, sotto la fascia montana.",
+      "recognize": [
+        "Spiga grande e densa; il «casco» dei fiori è porpora scuro all’esterno.",
+        "Labello bianco o rosato a tre lobi: i laterali stretti, il centrale largo e diviso in due, con ciuffetti porpora.",
+        "Foglie basali larghe, verde lucido, in rosetta."
+      ],
+      "foodUse": {
+        "status": "da osservare",
+        "parts": "",
+        "caution": "Orchidea spontanea: osservare senza cogliere né estirpare."
+      },
+      "flowerMonths": [
+        4,
+        5,
+        6
+      ],
+      "phaseNote": "I mesi indicano la fioritura descritta dalla fonte; non sono un calendario di raccolta e possono variare con quota e stagione.",
+      "lookalikes": [
+        "orchide-maschia"
+      ],
+      "lookalikeNote": "L’orchide maschia ha fiori porpora più uniformi e sperone orizzontale o rivolto in alto; nella purpurea è curvo verso il basso.",
+      "presenceNote": "Taxon presente nel Lazio secondo il Portale della Flora d’Italia: presenza regionale, non segnalazione sul sentiero.",
+      "protection": {
+        "status": "commercio regolato (CITES); nessuna tutela regionale specifica trovata",
+        "law": "Reg. (CE) 338/97 come modificato dal Reg. (UE) 2026/1383: ORCHIDACEAE spp. (II); L.R. Lazio 61/1974: non elencata",
+        "summary": "Il commercio delle orchidee selvatiche è regolato dal CITES. Nessuna tutela regionale specifica trovata. Nei parchi e nelle riserve valgono anche i divieti dell’area protetta (L. 394/1991, art. 11, c. 3, lett. a).",
+        "url": "https://eur-lex.europa.eu/eli/reg/2026/1383/oj"
+      },
+      "sources": [
+        {
+          "title": "Università di Trieste · Portale della Flora d’Italia · Orchis purpurea",
+          "url": "https://dryades.units.it/floritaly/index.php?procedure=taxon_page&tipo=all&id=8176"
+        },
+        {
+          "title": "Università di Trieste · Portale della Flora di Roma · Orchis purpurea",
+          "url": "https://dryades.units.it/Roma/index.php?id=8176&procedure=taxon_page"
+        },
+        {
+          "title": "Acta Plantarum · scheda botanica",
+          "url": "https://www.actaplantarum.org/forum/viewtopic.php?t=3550"
+        },
+        {
+          "title": "Info Flora · Orchis purpurea",
+          "url": "https://www.infoflora.ch/it/flora/orchis-purpurea.html"
+        },
+        {
+          "title": "Acta Plantarum · IPFI · Orchis purpurea",
+          "url": "https://www.actaplantarum.org/flora/flora_info.php?id=508176"
+        },
+        {
+          "title": "Acta Plantarum · scheda botanica",
+          "url": "https://www.actaplantarum.org/forum/viewtopic.php?t=6665"
+        }
+      ],
+      "photos": [
+        {
+          "file": "assets/plants/orchide-purpurea-1.webp",
+          "thumb": "assets/plants/orchide-purpurea-1-t.webp",
+          "alt": "Orchide purpurea: fotografia della specie",
+          "caption": "Fotografia originale della specie; i caratteri vanno confrontati insieme.",
+          "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "page": "https://dryades.units.it/floritaly/index.php?procedure=taxon_page&tipo=all&id=8176",
+          "sourceImage": "https://dryades.units.it/dryades/plants/foto/IMG2835JPG1713361927.jpg",
+          "sourceCaption": "Andrea Moro · © Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Distributed under CC-BY-SA 4.0 license. · Comune di Trieste, Monte Valerio (TS), Friuli Venezia Giulia, Italia · 17/04/2020"
+        },
+        {
+          "file": "assets/plants/orchide-purpurea-2.webp",
+          "thumb": "assets/plants/orchide-purpurea-2-t.webp",
+          "alt": "Orchide purpurea: fotografia della specie",
+          "caption": "Fotografia originale della specie; i caratteri vanno confrontati insieme.",
+          "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "page": "https://dryades.units.it/floritaly/index.php?procedure=taxon_page&tipo=all&id=8176",
+          "sourceImage": "https://dryades.units.it/dryades/plants/foto/IMG2867JPG1587542032.jpg",
+          "sourceCaption": "Andrea Moro · © Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Distributed under CC-BY-SA 4.0 license. · Comune di Trieste, Bosco del Farneto (TS), Friuli Venezia Giulia, Italia · 19/04/2013"
+        }
+      ]
+    },
+    "cefalantera-maggiore": {
+      "name": "Cefalantera maggiore",
+      "latin": "Cephalanthera longifolia (L.) Fritsch",
+      "category": "Fiori",
+      "aliases": [
+        "elleborina a foglie lunghe",
+        "cefalantera longifoglia"
+      ],
+      "habitat": "Querceti e faggete aperte, boscaglie, su suoli ricchi di basi e ben drenati, spesso in mezz’ombra.",
+      "recognize": [
+        "Fiori bianco puro, di solito socchiusi; dentro, una piccola macchia giallo-arancio.",
+        "Foglie lunghe e strette (circa 10 volte la larghezza), su due file lungo il fusto.",
+        "Spiga rada di 6-20 fiori in cima al fusto."
+      ],
+      "foodUse": {
+        "status": "da osservare",
+        "parts": "",
+        "caution": "Orchidea spontanea: osservare senza cogliere né estirpare."
+      },
+      "flowerMonths": [
+        4,
+        5,
+        6
+      ],
+      "phaseNote": "I mesi indicano la fioritura descritta dalla fonte; non sono un calendario di raccolta e possono variare con quota e stagione.",
+      "lookalikes": [],
+      "lookalikeNote": "La cefalantera bianca (C. damasonium) ha foglie più corte e larghe e fiori bianco-giallastri.",
+      "presenceNote": "Taxon presente nel Lazio secondo il Portale della Flora d’Italia: presenza regionale, non segnalazione sul sentiero.",
+      "protection": {
+        "status": "commercio regolato (CITES); nessuna tutela regionale specifica trovata",
+        "law": "Reg. (CE) 338/97 come modificato dal Reg. (UE) 2026/1383: ORCHIDACEAE spp. (II); L.R. Lazio 61/1974: non elencata",
+        "summary": "Il commercio delle orchidee selvatiche è regolato dal CITES. Nessuna tutela regionale specifica trovata. Nei parchi e nelle riserve valgono anche i divieti dell’area protetta (L. 394/1991, art. 11, c. 3, lett. a).",
+        "url": "https://eur-lex.europa.eu/eli/reg/2026/1383/oj"
+      },
+      "sources": [
+        {
+          "title": "Università di Trieste · Portale della Flora d’Italia · Cephalanthera longifolia",
+          "url": "https://dryades.units.it/floritaly/index.php?procedure=taxon_page&tipo=all&id=8246"
+        },
+        {
+          "title": "Università di Trieste · Portale della Flora di Roma · Cephalanthera longifolia",
+          "url": "https://dryades.units.it/Roma/index.php?id=8246&procedure=taxon_page"
+        },
+        {
+          "title": "Acta Plantarum · scheda botanica",
+          "url": "https://www.actaplantarum.org/forum/viewtopic.php?t=2176"
+        },
+        {
+          "title": "Info Flora · Cephalanthera longifolia",
+          "url": "https://www.infoflora.ch/it/flora/cephalanthera-longifolia.html"
+        }
+      ],
+      "photos": [
+        {
+          "file": "assets/plants/cefalantera-maggiore-1.webp",
+          "thumb": "assets/plants/cefalantera-maggiore-1-t.webp",
+          "alt": "Cefalantera maggiore: fotografia della specie",
+          "caption": "Fotografia originale della specie; i caratteri vanno confrontati insieme.",
+          "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "page": "https://dryades.units.it/floritaly/index.php?procedure=taxon_page&tipo=all&id=8246",
+          "sourceImage": "https://dryades.units.it/dryades/plants/foto/IMG3662JPG1592551184.jpg",
+          "sourceCaption": "Andrea Moro · © Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Distributed under CC-BY-SA 4.0 license. · Comune di Tarvisio, lungo la pista ciclabile per Fusine (UD), Friuli Venezia Giulia, Italia · 02/06/2020"
+        },
+        {
+          "file": "assets/plants/cefalantera-maggiore-2.webp",
+          "thumb": "assets/plants/cefalantera-maggiore-2-t.webp",
+          "alt": "Cefalantera maggiore: fotografia della specie",
+          "caption": "Fotografia originale della specie; i caratteri vanno confrontati insieme.",
+          "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "page": "https://dryades.units.it/floritaly/index.php?procedure=taxon_page&tipo=all&id=8246",
+          "sourceImage": "https://dryades.units.it/dryades/plants/foto/IMG3760jpg1625762707.jpg",
+          "sourceCaption": "Andrea Moro · © Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Distributed under CC-BY-SA 4.0 license. · Comune di Venzone, pendici del Monte Plauris, sentiero per Malga Ungarina. (UD), Friuli-Venezia Giulia, Italia · 06/06/2021"
+        }
+      ]
+    },
+    "genziana-primaticcia": {
+      "name": "Genziana primaticcia",
+      "latin": "Gentiana verna L.",
+      "category": "Fiori",
+      "aliases": [
+        "genziana di primavera",
+        "genzianella"
+      ],
+      "habitat": "Pascoli e prati aridi su calcare, da 500 a 2600 m, soprattutto in quota.",
+      "recognize": [
+        "Fiori singoli blu intenso, con cinque lobi aperti a stella e gola chiara.",
+        "Alla base una rosetta di 2-4 foglie piccole ed ellittiche (1-2 cm).",
+        "Pianta bassa: 5-15 cm."
+      ],
+      "foodUse": {
+        "status": "da osservare",
+        "parts": "",
+        "caution": "Pianta piccola dei pascoli: osservare senza cogliere."
+      },
+      "flowerMonths": [
+        4,
+        5,
+        6
+      ],
+      "phaseNote": "I mesi indicano la fioritura descritta dalla fonte; non sono un calendario di raccolta e possono variare con quota e stagione.",
+      "lookalikes": [],
+      "presenceNote": "Taxon presente nel Lazio secondo il Portale della Flora d’Italia: presenza regionale, non segnalazione sul sentiero. Il Portale riporta la specie per il Lazio senza dettaglio sulle sottospecie.",
+      "protection": {
+        "status": "nessuna tutela specifica trovata",
+        "law": "L.R. Lazio 61/1974: non elencata (artt. 1 e 3)",
+        "summary": "Nessuna tutela specifica trovata nelle norme del Lazio controllate. Nei parchi e nelle riserve valgono anche i divieti dell’area protetta (L. 394/1991, art. 11, c. 3, lett. a).",
+        "url": "https://www.consiglio.regione.lazio.it/consiglio-regionale/?vw=leggiregionalidettaglio&id=7250&sv=vigente"
+      },
+      "sources": [
+        {
+          "title": "Università di Trieste · Portale della Flora d’Italia · Gentiana verna",
+          "url": "https://dryades.units.it/floritaly/index.php?procedure=taxon_page&tipo=all&id=4030"
+        },
+        {
+          "title": "Università di Trieste · Portale della flora delle Foreste Casentinesi · Gentiana verna subsp. verna",
+          "url": "https://dryades.units.it/casentinesi/index.php?id=4031&procedure=taxon_page"
+        },
+        {
+          "title": "Acta Plantarum · scheda botanica",
+          "url": "https://www.actaplantarum.org/forum/viewtopic.php?t=7481"
+        },
+        {
+          "title": "Info Flora · Gentiana verna",
+          "url": "https://www.infoflora.ch/it/flora/gentiana-verna.html"
+        },
+        {
+          "title": "Acta Plantarum · IPFI · Gentiana verna",
+          "url": "https://www.actaplantarum.org/flora/flora_info.php?id=504031"
+        }
+      ],
+      "photos": [
+        {
+          "file": "assets/plants/genziana-primaticcia-1.webp",
+          "thumb": "assets/plants/genziana-primaticcia-1-t.webp",
+          "alt": "Genziana primaticcia: fotografia della specie",
+          "caption": "Fotografia originale della specie; i caratteri vanno confrontati insieme.",
+          "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "page": "https://dryades.units.it/floritaly/index.php?procedure=taxon_page&tipo=all&id=4030",
+          "sourceImage": "https://dryades.units.it/dryades/plants/foto/TSB21512.jpg",
+          "sourceCaption": "Andrea Moro · © Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Distributed under CC-BY-SA 4.0 license. · Valle del Torre, primo tratto della strada che conduce a Villanova delle Grotte. , FVG, Italia · 1/5/05 0.00.00"
+        },
+        {
+          "file": "assets/plants/genziana-primaticcia-2.webp",
+          "thumb": "assets/plants/genziana-primaticcia-2-t.webp",
+          "alt": "Genziana primaticcia: fotografia della specie",
+          "caption": "Fotografia originale della specie; i caratteri vanno confrontati insieme.",
+          "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "page": "https://dryades.units.it/floritaly/index.php?procedure=taxon_page&tipo=all&id=4030",
+          "sourceImage": "https://dryades.units.it/dryades/plants/foto/TS189017.jpg",
+          "sourceCaption": "Andrea Moro · © Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Distributed under CC-BY-SA 4.0 license. · Monte Baldo, nei pressi della stazione superiore della funivia per Malcesine, Veneto, Italia · 03/06/2016"
+        }
+      ]
+    },
+    "digitale-gialla": {
+      "name": "Digitale gialla meridionale",
+      "latin": "Digitalis micrantha Roth ex Schweigg.",
+      "category": "Fiori",
+      "aliases": [
+        "digitale gialla piccola"
+      ],
+      "habitat": "Radure di faggete e boschi misti, pascoli e cespuglieti; optimum nella fascia montana inferiore.",
+      "recognize": [
+        "Lungo grappolo di fiori giallastri, di solito tutti rivolti da un lato.",
+        "Fiori piccoli, circa 1 cm, a tubo, con macchie brune ai lati dell’apertura.",
+        "Foglie alterne, lanceolate, lisce e appena dentate."
+      ],
+      "foodUse": {
+        "status": "tossico",
+        "parts": "",
+        "caution": "Contiene glucosidi cardioattivi: fortemente velenosa. Non toccare per assaggiare, non raccogliere."
+      },
+      "flowerMonths": [
+        5,
+        6,
+        7
+      ],
+      "phaseNote": "I mesi indicano la fioritura descritta dalla fonte; non sono un calendario di raccolta e possono variare con quota e stagione.",
+      "lookalikes": [],
+      "lookalikeNote": "La digitale gialla (D. lutea) ha fiori più lunghi (16-19 mm) e calice con peli ghiandolosi.",
+      "presenceNote": "Taxon presente nel Lazio secondo il Portale della Flora d’Italia: presenza regionale, non segnalazione sul sentiero. Endemica della penisola italiana; la fonte la dice «comunissima sull’Appennino».",
+      "protection": {
+        "status": "nessuna tutela specifica trovata",
+        "law": "L.R. Lazio 61/1974: non elencata (artt. 1 e 3)",
+        "summary": "Nessuna tutela specifica trovata nelle norme del Lazio controllate. Nei parchi e nelle riserve valgono anche i divieti dell’area protetta (L. 394/1991, art. 11, c. 3, lett. a).",
+        "url": "https://www.consiglio.regione.lazio.it/consiglio-regionale/?vw=leggiregionalidettaglio&id=7250&sv=vigente"
+      },
+      "sources": [
+        {
+          "title": "Università di Trieste · Portale della Flora d’Italia · Digitalis micrantha",
+          "url": "https://dryades.units.it/floritaly/index.php?procedure=taxon_page&tipo=all&id=4859"
+        },
+        {
+          "title": "Università di Trieste · Portale della Flora di Roma · Digitalis micrantha",
+          "url": "https://dryades.units.it/Roma/index.php?id=4859&procedure=taxon_page"
+        },
+        {
+          "title": "Acta Plantarum · scheda botanica",
+          "url": "https://www.actaplantarum.org/forum/viewtopic.php?t=9091"
+        },
+        {
+          "title": "Acta Plantarum · IPFI · Digitalis micrantha",
+          "url": "https://www.actaplantarum.org/flora/flora_info.php?id=504859"
+        }
+      ],
+      "photos": [
+        {
+          "file": "assets/plants/digitale-gialla-1.webp",
+          "thumb": "assets/plants/digitale-gialla-1-t.webp",
+          "alt": "Digitale gialla meridionale: fotografia della specie",
+          "caption": "Fotografia originale della specie; i caratteri vanno confrontati insieme.",
+          "author": "Antonio Maffei",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "page": "https://dryades.units.it/floritaly/index.php?procedure=taxon_page&tipo=all&id=4859",
+          "sourceImage": "https://dryades.units.it/dryades/plants/foto/557759138250329107163140518196959474590585085njpg1776007364.jpg",
+          "sourceCaption": "Antonio Maffei - CC BY SA 4.0 · · Colloreto, Morano Calabro, 750 m (Cosenza), Calabria, Italy · 06.2025"
+        },
+        {
+          "file": "assets/plants/digitale-gialla-2.webp",
+          "thumb": "assets/plants/digitale-gialla-2-t.webp",
+          "alt": "Digitale gialla meridionale: fotografia della specie",
+          "caption": "Fotografia originale della specie; i caratteri vanno confrontati insieme.",
+          "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "page": "https://dryades.units.it/floritaly/index.php?procedure=taxon_page&tipo=all&id=4859",
+          "sourceImage": "https://dryades.units.it/dryades/plants/foto/TS112768.jpg",
+          "sourceCaption": "Andrea Moro · © Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Distributed under CC-BY-SA 4.0 license."
+        }
+      ]
     }
   }
 }
