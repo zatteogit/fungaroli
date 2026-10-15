@@ -175,7 +175,7 @@ Schema: `data/recognize-trees.json` su `claude/brave-tesla-wu0a2b`. 48 valori pr
 
 Ordine aggiornato da Matteo il 15/10: completare prima tutte le varianti di colore, mantenendo la priorità del brief; nessuna nuova variante di forma fino ai dati sulle fasi di crescita. Le forme solo generate e non caricate sono sospese.
 
-| icone/varianti-03.png | amanita-verna: colore:crema; amanita-muscaria: colore:arancio; amanita-muscaria: colore:giallo | ok | QA visiva completata; 6 icone, alpha reale, terza colonna vuota. Basi nel manifest. |
+| icone/varianti-03.png | amanita-verna: colore:crema; amanita-muscaria: colore:arancio; amanita-muscaria: colore:giallo | ok | Celle 1 rigenerate: contorno completo; controllo codice dei 4 lati e margine alpha0 di42px (10%) superati. |
 | icone-alberi/tavola-alberi-04.png | 0: leaf_shape/ovale; 1: leaf_shape/lanceolata; 2: leaf_shape/tondeggiante; 3: leaf_shape/cuoriforme; 4: leaf_shape/triangolare; 5: leaf_shape/lobata_a_mano; 6: leaf_shape/lobata_lungo_i_lati | ok, margini corretti | Sette sagome a bordo liscio ricontrollate. Rigenerata per margine10%; controllo codice: fasce42px di9celle senza pixel alpha>1/255, zero opachi; solo residuo generatore alpha1/255. Celle7e8 senza disegni. |
 | icone-alberi/tavola-alberi-03.png | 0: leaf_margin/intero; 1: leaf_margin/dentato; 2: leaf_margin/doppiamente_dentato; 3: leaf_margin/lobato; 4: leaf_margin/spinoso; 6: leaf_base/simmetrica; 7: leaf_base/asimmetrica | ok, margini corretti | Rigenerata per margine10%. Controllo codice su9celle e fasce42px: zero pixel alpha>1/255, zero opachi; residuo generatore alpha1/255. Limite: doppiamente_dentato semplificato, denti secondari poco immediati a48px. Basi simmetrica/asimmetrica verificate. |
 
