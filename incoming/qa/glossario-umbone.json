@@ -1,0 +1,66 @@
+{
+  "file": "incoming/glossario/umbone.png",
+  "size": [
+    1024,
+    1024
+  ],
+  "sha256": "47be5c7008fac35707ba50ef23e91286df9426baf4eda51388625f2353287a3b",
+  "source_bbox_alpha128": [
+    130,
+    224,
+    894,
+    800
+  ],
+  "source_extremes_rgb_max": [
+    [
+      73,
+      27,
+      10
+    ],
+    [
+      83,
+      41,
+      27
+    ],
+    [
+      66,
+      26,
+      13
+    ],
+    [
+      69,
+      26,
+      12
+    ]
+  ],
+  "extremes_rgb_max": [
+    [
+      69,
+      25,
+      8
+    ],
+    [
+      79,
+      38,
+      23
+    ],
+    [
+      68,
+      26,
+      11
+    ],
+    [
+      72,
+      28,
+      13
+    ]
+  ],
+  "margin_required_px": 103,
+  "margin_alpha_max": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "export": "Intero soggetto isolato con2px di antialias e centrato proporzionalmente; nessun ritocco morfologico o ricolore."
+}

@@ -314,3 +314,6 @@ Forme-02: confrontate alle basi; verna/virosa con volva a sacco aperta, pantheri
 
 
 Tavola porcini forme03 completata e controllata: aereus emisferico/piano, aestivalis emisferico. Autorizzazione esplicita di Matteo a caricare su gpt/immagini. Restano approvate e intatte forme01/02. Cappello approvato; priorità corrente glossario e poi esempio guide.
+
+
+Glossario gruppo1: forme generiche senza attribuzione a specie; gambo arancio su cappello spento, umbone centrale evidenziato, imenoforo lamellare evidenziato in vista inferiore/sezione. Margini103px alpha0 e contorno scuro ai4estremi verificati; nessun testo.

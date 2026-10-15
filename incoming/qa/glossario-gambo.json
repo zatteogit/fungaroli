@@ -1,0 +1,66 @@
+{
+  "file": "incoming/glossario/gambo.png",
+  "size": [
+    1024,
+    1024
+  ],
+  "sha256": "1bb444fe5012f76cd2fd379cf97062b23a3874008a8b31cc62abbdee1dcfba9b",
+  "source_bbox_alpha128": [
+    156,
+    130,
+    867,
+    893
+  ],
+  "source_extremes_rgb_max": [
+    [
+      69,
+      28,
+      12
+    ],
+    [
+      69,
+      23,
+      5
+    ],
+    [
+      68,
+      26,
+      9
+    ],
+    [
+      68,
+      27,
+      10
+    ]
+  ],
+  "extremes_rgb_max": [
+    [
+      65,
+      23,
+      7
+    ],
+    [
+      66,
+      22,
+      5
+    ],
+    [
+      67,
+      25,
+      9
+    ],
+    [
+      67,
+      25,
+      8
+    ]
+  ],
+  "margin_required_px": 103,
+  "margin_alpha_max": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "export": "Intero soggetto isolato con2px di antialias e centrato proporzionalmente; nessun ritocco morfologico o ricolore."
+}

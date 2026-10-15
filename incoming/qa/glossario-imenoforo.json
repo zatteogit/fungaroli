@@ -1,0 +1,66 @@
+{
+  "file": "incoming/glossario/imenoforo.png",
+  "size": [
+    1024,
+    1024
+  ],
+  "sha256": "e516dd9a711a95ef83c92ca060ec86f87601b01eb6dd19d69306ca63f427e486",
+  "source_bbox_alpha128": [
+    130,
+    167,
+    894,
+    857
+  ],
+  "source_extremes_rgb_max": [
+    [
+      67,
+      25,
+      11
+    ],
+    [
+      75,
+      33,
+      20
+    ],
+    [
+      66,
+      27,
+      13
+    ],
+    [
+      70,
+      29,
+      15
+    ]
+  ],
+  "extremes_rgb_max": [
+    [
+      65,
+      21,
+      8
+    ],
+    [
+      69,
+      28,
+      17
+    ],
+    [
+      65,
+      26,
+      11
+    ],
+    [
+      71,
+      31,
+      15
+    ]
+  ],
+  "margin_required_px": 103,
+  "margin_alpha_max": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "export": "Intero soggetto isolato con2px di antialias e centrato proporzionalmente; nessun ritocco morfologico o ricolore."
+}

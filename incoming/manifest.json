@@ -15031,5 +15031,41 @@
     "prompt": "Use case: precise-object-edit. Edit the attached approved 3x3 mushroom sprite sheet. Preserve stems, stem reticulum, base, outlines and colors. Change only caps: row1 aereus young hemispherical, row2 aereus adult flat, row3 aestivalis young hemispherical. Left cap, center whole mushroom, right empty. Transparent background, no text, full dark brown contours and at least15% cell margins.",
     "stato": "ok",
     "qa": "incoming/qa/forme-03.json"
+  },
+  {
+    "file": "incoming/glossario/gambo.png",
+    "tipo": "glossario",
+    "soggetto": "gambo",
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case: scientific-educational. One 1024x1024PNG educational glossary illustration for Fungaroli. Reference is the APPROVED STYLE: simple warm flat illustration, thick smooth DARK BROWN contours, restrained warm orange highlight, cream/beige muted supporting elements, one subtle highlight at most. No text, letters, numbers, labels, watermark or UI. Genuine transparent alpha background. WHOLE subject centered, at least15% transparent margin on every side. EVERY outermost visible edge or tip must end in DARK BROWN OUTLINE, no flat fill cutoffs. Keep biological concept anatomically clear, not species identification. SUBJECT: EXACT same generic mushroom silhouette as reference. Highlight ONLY the STEM in full warm orange; cap muted warm cream/beige. Do not color the underside orange. No ring or volva. SOURCE definition: La parte del corpo fruttifero che sostiene il cappello e si collega al micelio. In alcune specie è laterale, molto ridotta o assente.",
+    "stato": "ok",
+    "fonti_dati": [
+      "data/glossary.json:gambo.definition,observe"
+    ],
+    "qa": "incoming/qa/glossario-gambo.json"
+  },
+  {
+    "file": "incoming/glossario/umbone.png",
+    "tipo": "glossario",
+    "soggetto": "umbone",
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case: scientific-educational. One 1024x1024PNG educational glossary illustration for Fungaroli. Reference is the APPROVED STYLE: simple warm flat illustration, thick smooth DARK BROWN contours, restrained warm orange highlight, cream/beige muted supporting elements, one subtle highlight at most. No text, letters, numbers, labels, watermark or UI. Genuine transparent alpha background. WHOLE subject centered, at least15% transparent margin on every side. EVERY outermost visible edge or tip must end in DARK BROWN OUTLINE, no flat fill cutoffs. Keep biological concept anatomically clear, not species identification. SUBJECT: Side profile of a generic mushroom cap with a CLEAR central raised pointed BUMP (umbone). Broad spreading cap sides muted cream; central bump warm orange. Short subdued stem allowed. Show bump as integral cap flesh, not separate object. SOURCE definition: Rilievo centrale del cappello, più o meno evidente e appuntito.",
+    "stato": "ok",
+    "fonti_dati": [
+      "data/glossary.json:umbone.definition,observe"
+    ],
+    "qa": "incoming/qa/glossario-umbone.json"
+  },
+  {
+    "file": "incoming/glossario/imenoforo.png",
+    "tipo": "glossario",
+    "soggetto": "imenoforo",
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case: scientific-educational. One 1024x1024PNG educational glossary illustration for Fungaroli. Reference is the APPROVED STYLE: simple warm flat illustration, thick smooth DARK BROWN contours, restrained warm orange highlight, cream/beige muted supporting elements, one subtle highlight at most. No text, letters, numbers, labels, watermark or UI. Genuine transparent alpha background. WHOLE subject centered, at least15% transparent margin on every side. EVERY outermost visible edge or tip must end in DARK BROWN OUTLINE, no flat fill cutoffs. Keep biological concept anatomically clear, not species identification. SUBJECT: Generic mushroom in underside cutaway view. Emphasize only the LAMELLAR STRUCTURE supporting the fertile layer beneath the cap in orange. Cap flesh and short stem muted cream. A sectional wedge shows the underside gills clearly. Do not depict fertile layer on top of cap. SOURCE definition: Struttura che sostiene lo strato fertile del fungo: può avere lamelle, tubuli, aculei, pliche o una superficie quasi liscia.",
+    "stato": "ok",
+    "fonti_dati": [
+      "data/glossary.json:imenoforo.definition,observe"
+    ],
+    "qa": "incoming/qa/glossario-imenoforo.json"
   }
 ]

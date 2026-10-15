@@ -312,3 +312,10 @@ Ordine aggiornato da Matteo il 15/10: completare prima tutte le varianti di colo
 
 | icone/forme-03.png | ok | Margini trasparenti e contorni verificati col codice; verifica visiva completata. |
 | qa/forme-03.json | ok | Margini trasparenti e contorni verificati col codice; verifica visiva completata. |
+
+| glossario/gambo.png | ok | Margini trasparenti e contorni verificati col codice; verifica visiva completata. |
+| qa/glossario-gambo.json | ok | Margini trasparenti e contorni verificati col codice; verifica visiva completata. |
+| glossario/umbone.png | ok | Margini trasparenti e contorni verificati col codice; verifica visiva completata. |
+| qa/glossario-umbone.json | ok | Margini trasparenti e contorni verificati col codice; verifica visiva completata. |
+| glossario/imenoforo.png | ok | Margini trasparenti e contorni verificati col codice; verifica visiva completata. |
+| qa/glossario-imenoforo.json | ok | Margini trasparenti e contorni verificati col codice; verifica visiva completata. |
