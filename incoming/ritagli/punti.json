@@ -1194,5 +1194,1160 @@
     "soggetto": "gimnopilo principale a sinistra, cappello e gambo sul tronco",
     "dubbio": false,
     "nota": "Scelto quello a sinistra; l’esemplare a destra ha la base nascosta. Miniatura assets/species/gymnopilus-junonius-inat1-t.webp già ritagliata: 160×160, originale 1024×768; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/edulis-ref-hd.webp": {
+    "punto": [
+      0.53,
+      0.515
+    ],
+    "riquadro": [
+      0.3,
+      0.12,
+      0.76,
+      0.91
+    ],
+    "soggetto": "fungo intero a destra, cappello e gambo",
+    "dubbio": false,
+    "nota": "Il riquadro non entra nei formati 16:7. Miniatura assets/species/edulis-ref-t.webp già ritagliata: 160×160, originale 1600×1067; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/edulis-ref.webp": {
+    "punto": [
+      0.53,
+      0.515
+    ],
+    "riquadro": [
+      0.3,
+      0.12,
+      0.76,
+      0.91
+    ],
+    "soggetto": "fungo intero a destra, cappello e gambo",
+    "dubbio": false,
+    "nota": "Il riquadro non entra nei formati 16:7. Miniatura assets/species/edulis-ref-t.webp già ritagliata: 160×160, originale 1600×1067; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/edulis-inat1-hd.webp": {
+    "punto": [
+      0.46,
+      0.49
+    ],
+    "riquadro": [
+      0.27,
+      0.1,
+      0.65,
+      0.88
+    ],
+    "soggetto": "fungo intero coricato, cappello e gambo",
+    "dubbio": false,
+    "nota": "Il riquadro non entra nei formati 16:7. Miniatura assets/species/edulis-inat1-t.webp già ritagliata: 160×160, originale 1024×737; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/edulis-inat1.webp": {
+    "punto": [
+      0.46,
+      0.49
+    ],
+    "riquadro": [
+      0.27,
+      0.1,
+      0.65,
+      0.88
+    ],
+    "soggetto": "fungo intero coricato, cappello e gambo",
+    "dubbio": false,
+    "nota": "Il riquadro non entra nei formati 16:7. Miniatura assets/species/edulis-inat1-t.webp già ritagliata: 160×160, originale 1024×737; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/pinophilus-ref.webp": {
+    "punto": [
+      0.325,
+      0.595
+    ],
+    "riquadro": [
+      0.08,
+      0.22,
+      0.57,
+      0.97
+    ],
+    "soggetto": "fungo coricato a sinistra, cappello, pori e gambo",
+    "dubbio": false,
+    "nota": "Il riquadro non entra nei formati 16:7. Miniatura assets/species/pinophilus-ref-t.webp già ritagliata: 160×160, originale 560×409; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/aereus-ref.webp": {
+    "punto": [
+      0.72,
+      0.61
+    ],
+    "riquadro": [
+      0.44,
+      0.26,
+      1.0,
+      0.96
+    ],
+    "soggetto": "fungo a destra, cappello e gambo",
+    "dubbio": true,
+    "nota": "Piede parzialmente nascosto dalla lettiera. Il riquadro non entra nei formati 5:4, 4:3, 16:7. Miniatura assets/species/aereus-ref-t.webp già ritagliata: 160×160, originale 483×560; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/aereus-inat1-hd.webp": {
+    "punto": [
+      0.495,
+      0.53
+    ],
+    "riquadro": [
+      0.08,
+      0.1,
+      0.91,
+      0.96
+    ],
+    "soggetto": "fungo intero, cappello e gambo",
+    "dubbio": true,
+    "nota": "Il riquadro non entra nei formati 5:4, 4:3, 1:1, 16:7. Miniatura assets/species/aereus-inat1-t.webp già ritagliata: 160×160, originale 849×1024; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/aereus-inat1.webp": {
+    "punto": [
+      0.495,
+      0.53
+    ],
+    "riquadro": [
+      0.08,
+      0.1,
+      0.91,
+      0.96
+    ],
+    "soggetto": "fungo intero, cappello e gambo",
+    "dubbio": true,
+    "nota": "Il riquadro non entra nei formati 5:4, 4:3, 1:1, 16:7. Miniatura assets/species/aereus-inat1-t.webp già ritagliata: 160×160, originale 849×1024; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/aereus-inat2-hd.webp": {
+    "punto": [
+      0.515,
+      0.56
+    ],
+    "riquadro": [
+      0.37,
+      0.39,
+      0.66,
+      0.73
+    ],
+    "soggetto": "cappello inferiore e porzione visibile del gambo",
+    "dubbio": true,
+    "nota": "Gambo nascosto: nessun esemplare intero leggibile. Miniatura assets/species/aereus-inat2-t.webp già ritagliata: 160×160, originale 1024×768; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/aereus-inat2.webp": {
+    "punto": [
+      0.515,
+      0.56
+    ],
+    "riquadro": [
+      0.37,
+      0.39,
+      0.66,
+      0.73
+    ],
+    "soggetto": "cappello inferiore e porzione visibile del gambo",
+    "dubbio": true,
+    "nota": "Gambo nascosto: nessun esemplare intero leggibile. Miniatura assets/species/aereus-inat2-t.webp già ritagliata: 160×160, originale 1024×768; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/aestivalis-ref.webp": {
+    "punto": [
+      0.53,
+      0.5
+    ],
+    "riquadro": [
+      0.08,
+      0.02,
+      0.98,
+      0.98
+    ],
+    "soggetto": "fungo intero, cappello, pori e gambo",
+    "dubbio": true,
+    "nota": "Il riquadro non entra nei formati 5:4, 4:5, 4:3, 1:1, 16:7. Miniatura assets/species/aestivalis-ref-t.webp già ritagliata: 160×160, originale 418×560; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/caesarea-ref-hd.webp": {
+    "punto": [
+      0.73,
+      0.465
+    ],
+    "riquadro": [
+      0.5,
+      0.11,
+      0.96,
+      0.82
+    ],
+    "soggetto": "esemplare destro, lamelle, gambo e volva",
+    "dubbio": false,
+    "nota": "Il riquadro non entra nei formati 16:7. Miniatura assets/species/caesarea-ref-t.webp già ritagliata: 160×160, originale 1600×1200; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/caesarea-ref.webp": {
+    "punto": [
+      0.73,
+      0.465
+    ],
+    "riquadro": [
+      0.5,
+      0.11,
+      0.96,
+      0.82
+    ],
+    "soggetto": "esemplare destro, lamelle, gambo e volva",
+    "dubbio": false,
+    "nota": "Il riquadro non entra nei formati 16:7. Miniatura assets/species/caesarea-ref-t.webp già ritagliata: 160×160, originale 1600×1200; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/caesarea-inat2-hd.webp": {
+    "punto": [
+      0.525,
+      0.465
+    ],
+    "riquadro": [
+      0.3,
+      0.23,
+      0.75,
+      0.7
+    ],
+    "soggetto": "cappello e porzione visibile del gambo",
+    "dubbio": true,
+    "nota": "Vista dall’alto: gambo e volva non leggibili. Miniatura assets/species/caesarea-inat2-t.webp già ritagliata: 160×160, originale 1024×764; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/caesarea-inat2.webp": {
+    "punto": [
+      0.525,
+      0.465
+    ],
+    "riquadro": [
+      0.3,
+      0.23,
+      0.75,
+      0.7
+    ],
+    "soggetto": "cappello e porzione visibile del gambo",
+    "dubbio": true,
+    "nota": "Vista dall’alto: gambo e volva non leggibili. Miniatura assets/species/caesarea-inat2-t.webp già ritagliata: 160×160, originale 1024×764; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/cibarius-ref-hd.webp": {
+    "punto": [
+      0.33,
+      0.695
+    ],
+    "riquadro": [
+      0.12,
+      0.42,
+      0.54,
+      0.97
+    ],
+    "soggetto": "esemplare in primo piano, cappello, pieghe e gambo",
+    "dubbio": false,
+    "nota": "Miniatura assets/species/cibarius-ref-t.webp già ritagliata: 160×160, originale 1342×1008; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/cibarius-ref.webp": {
+    "punto": [
+      0.33,
+      0.695
+    ],
+    "riquadro": [
+      0.12,
+      0.42,
+      0.54,
+      0.97
+    ],
+    "soggetto": "esemplare in primo piano, cappello, pieghe e gambo",
+    "dubbio": false,
+    "nota": "Miniatura assets/species/cibarius-ref-t.webp già ritagliata: 160×160, originale 1342×1008; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/cibarius-inat1-hd.webp": {
+    "punto": [
+      0.565,
+      0.43
+    ],
+    "riquadro": [
+      0.31,
+      0.15,
+      0.82,
+      0.71
+    ],
+    "soggetto": "fungo centrale, cappello e gambo",
+    "dubbio": true,
+    "nota": "Il riquadro non entra nei formati 3:4, 4:5. Miniatura assets/species/cibarius-inat1-t.webp già ritagliata: 160×160, originale 1024×576; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/cibarius-inat1.webp": {
+    "punto": [
+      0.565,
+      0.43
+    ],
+    "riquadro": [
+      0.31,
+      0.15,
+      0.82,
+      0.71
+    ],
+    "soggetto": "fungo centrale, cappello e gambo",
+    "dubbio": true,
+    "nota": "Il riquadro non entra nei formati 3:4, 4:5. Miniatura assets/species/cibarius-inat1-t.webp già ritagliata: 160×160, originale 1024×576; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/cibarius-inat2-hd.webp": {
+    "punto": [
+      0.54,
+      0.43
+    ],
+    "riquadro": [
+      0.42,
+      0.25,
+      0.66,
+      0.61
+    ],
+    "soggetto": "fungo centrale eretto, cappello e gambo",
+    "dubbio": false,
+    "nota": "Miniatura assets/species/cibarius-inat2-t.webp già ritagliata: 160×160, originale 1024×768; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/cibarius-inat2.webp": {
+    "punto": [
+      0.54,
+      0.43
+    ],
+    "riquadro": [
+      0.42,
+      0.25,
+      0.66,
+      0.61
+    ],
+    "soggetto": "fungo centrale eretto, cappello e gambo",
+    "dubbio": false,
+    "nota": "Miniatura assets/species/cibarius-inat2-t.webp già ritagliata: 160×160, originale 1024×768; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/cornucopioides-ref-hd.webp": {
+    "punto": [
+      0.39,
+      0.465
+    ],
+    "riquadro": [
+      0.25,
+      0.11,
+      0.53,
+      0.82
+    ],
+    "soggetto": "esemplare centrale sinistro, tromba e gambo",
+    "dubbio": false,
+    "nota": "Il riquadro non entra nei formati 16:7. Miniatura assets/species/cornucopioides-ref-t.webp già ritagliata: 160×160, originale 1600×1067; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/cornucopioides-ref.webp": {
+    "punto": [
+      0.39,
+      0.465
+    ],
+    "riquadro": [
+      0.25,
+      0.11,
+      0.53,
+      0.82
+    ],
+    "soggetto": "esemplare centrale sinistro, tromba e gambo",
+    "dubbio": false,
+    "nota": "Il riquadro non entra nei formati 16:7. Miniatura assets/species/cornucopioides-ref-t.webp già ritagliata: 160×160, originale 1600×1067; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/cornucopioides-inat1-hd.webp": {
+    "punto": [
+      0.53,
+      0.615
+    ],
+    "riquadro": [
+      0.39,
+      0.38,
+      0.67,
+      0.85
+    ],
+    "soggetto": "fungo coricato inferiore, tromba e gambo",
+    "dubbio": false,
+    "nota": "Il riquadro non entra nei formati 16:7. Miniatura assets/species/cornucopioides-inat1-t.webp già ritagliata: 160×160, originale 768×1024; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/cornucopioides-inat1.webp": {
+    "punto": [
+      0.53,
+      0.615
+    ],
+    "riquadro": [
+      0.39,
+      0.38,
+      0.67,
+      0.85
+    ],
+    "soggetto": "fungo coricato inferiore, tromba e gambo",
+    "dubbio": false,
+    "nota": "Il riquadro non entra nei formati 16:7. Miniatura assets/species/cornucopioides-inat1-t.webp già ritagliata: 160×160, originale 768×1024; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/cornucopioides-inat2-hd.webp": {
+    "punto": [
+      0.335,
+      0.475
+    ],
+    "riquadro": [
+      0.21,
+      0.28,
+      0.46,
+      0.67
+    ],
+    "soggetto": "esemplare sinistro, tromba e gambo",
+    "dubbio": false,
+    "nota": "Miniatura assets/species/cornucopioides-inat2-t.webp già ritagliata: 160×160, originale 1024×768; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/cornucopioides-inat2.webp": {
+    "punto": [
+      0.335,
+      0.475
+    ],
+    "riquadro": [
+      0.21,
+      0.28,
+      0.46,
+      0.67
+    ],
+    "soggetto": "esemplare sinistro, tromba e gambo",
+    "dubbio": false,
+    "nota": "Miniatura assets/species/cornucopioides-inat2-t.webp già ritagliata: 160×160, originale 1024×768; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/cornucopioides-inat3-hd.webp": {
+    "punto": [
+      0.545,
+      0.49
+    ],
+    "riquadro": [
+      0.32,
+      0.18,
+      0.77,
+      0.8
+    ],
+    "soggetto": "cespo centrale e basi visibili",
+    "dubbio": true,
+    "nota": "Gambi sovrapposti e coperti: scelta del cespo. Il riquadro non entra nei formati 16:7. Miniatura assets/species/cornucopioides-inat3-t.webp già ritagliata: 160×160, originale 1024×768; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/cornucopioides-inat3.webp": {
+    "punto": [
+      0.545,
+      0.49
+    ],
+    "riquadro": [
+      0.32,
+      0.18,
+      0.77,
+      0.8
+    ],
+    "soggetto": "cespo centrale e basi visibili",
+    "dubbio": true,
+    "nota": "Gambi sovrapposti e coperti: scelta del cespo. Il riquadro non entra nei formati 16:7. Miniatura assets/species/cornucopioides-inat3-t.webp già ritagliata: 160×160, originale 1024×768; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/repandum-ref-hd.webp": {
+    "punto": [
+      0.525,
+      0.555
+    ],
+    "riquadro": [
+      0.08,
+      0.15,
+      0.97,
+      0.96
+    ],
+    "soggetto": "fungo intero, cappello, aculei e gambo",
+    "dubbio": true,
+    "nota": "Il riquadro non entra nei formati 5:4, 3:4, 4:5, 4:3, 1:1, 16:7. Miniatura assets/species/repandum-ref-t.webp già ritagliata: 160×160, originale 800×533; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/repandum-ref.webp": {
+    "punto": [
+      0.525,
+      0.555
+    ],
+    "riquadro": [
+      0.08,
+      0.15,
+      0.97,
+      0.96
+    ],
+    "soggetto": "fungo intero, cappello, aculei e gambo",
+    "dubbio": true,
+    "nota": "Il riquadro non entra nei formati 5:4, 3:4, 4:5, 4:3, 1:1, 16:7. Miniatura assets/species/repandum-ref-t.webp già ritagliata: 160×160, originale 800×533; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/repandum-inat2-hd.webp": {
+    "punto": [
+      0.455,
+      0.45
+    ],
+    "riquadro": [
+      0.04,
+      0.24,
+      0.87,
+      0.66
+    ],
+    "soggetto": "fungo, cappello, aculei e gambo visibile",
+    "dubbio": false,
+    "nota": "Gambo parzialmente coperto dai rametti. Il riquadro non entra nei formati 16:7. Miniatura assets/species/repandum-inat2-t.webp già ritagliata: 160×160, originale 768×1024; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/repandum-inat2.webp": {
+    "punto": [
+      0.455,
+      0.45
+    ],
+    "riquadro": [
+      0.04,
+      0.24,
+      0.87,
+      0.66
+    ],
+    "soggetto": "fungo, cappello, aculei e gambo visibile",
+    "dubbio": false,
+    "nota": "Gambo parzialmente coperto dai rametti. Il riquadro non entra nei formati 16:7. Miniatura assets/species/repandum-inat2-t.webp già ritagliata: 160×160, originale 768×1024; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/repandum-inat3-hd.webp": {
+    "punto": [
+      0.37,
+      0.54
+    ],
+    "riquadro": [
+      0.25,
+      0.37,
+      0.49,
+      0.71
+    ],
+    "soggetto": "fungo anteriore sinistro, cappello e gambo visibile",
+    "dubbio": true,
+    "nota": "Esemplari molto coperti dalla lettiera, base non leggibile. Miniatura assets/species/repandum-inat3-t.webp già ritagliata: 160×160, originale 1024×768; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/repandum-inat3.webp": {
+    "punto": [
+      0.37,
+      0.54
+    ],
+    "riquadro": [
+      0.25,
+      0.37,
+      0.49,
+      0.71
+    ],
+    "soggetto": "fungo anteriore sinistro, cappello e gambo visibile",
+    "dubbio": true,
+    "nota": "Esemplari molto coperti dalla lettiera, base non leggibile. Miniatura assets/species/repandum-inat3-t.webp già ritagliata: 160×160, originale 1024×768; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/procera-inat1-hd.webp": {
+    "punto": [
+      0.525,
+      0.46
+    ],
+    "riquadro": [
+      0.3,
+      0.08,
+      0.75,
+      0.84
+    ],
+    "soggetto": "fungo intero, cappello e gambo",
+    "dubbio": true,
+    "nota": "Il riquadro non entra nei formati 5:4, 4:3, 1:1, 16:7. Miniatura assets/species/procera-inat1-t.webp già ritagliata: 160×160, originale 768×1024; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/procera-inat1.webp": {
+    "punto": [
+      0.525,
+      0.46
+    ],
+    "riquadro": [
+      0.3,
+      0.08,
+      0.75,
+      0.84
+    ],
+    "soggetto": "fungo intero, cappello e gambo",
+    "dubbio": true,
+    "nota": "Il riquadro non entra nei formati 5:4, 4:3, 1:1, 16:7. Miniatura assets/species/procera-inat1-t.webp già ritagliata: 160×160, originale 768×1024; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/procera-inat2-hd.webp": {
+    "punto": [
+      0.505,
+      0.55
+    ],
+    "riquadro": [
+      0.02,
+      0.16,
+      0.99,
+      0.94
+    ],
+    "soggetto": "cappello visto dall’alto",
+    "dubbio": true,
+    "nota": "Gambo non visibile: impossibile delimitare il fungo intero. Il riquadro non entra nei formati 5:4, 4:3, 1:1, 16:7. Miniatura assets/species/procera-inat2-t.webp già ritagliata: 160×160, originale 768×1024; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/procera-inat2.webp": {
+    "punto": [
+      0.505,
+      0.55
+    ],
+    "riquadro": [
+      0.02,
+      0.16,
+      0.99,
+      0.94
+    ],
+    "soggetto": "cappello visto dall’alto",
+    "dubbio": true,
+    "nota": "Gambo non visibile: impossibile delimitare il fungo intero. Il riquadro non entra nei formati 5:4, 4:3, 1:1, 16:7. Miniatura assets/species/procera-inat2-t.webp già ritagliata: 160×160, originale 768×1024; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/mellea-ref-hd.webp": {
+    "punto": [
+      0.455,
+      0.46
+    ],
+    "riquadro": [
+      0.09,
+      0.1,
+      0.82,
+      0.82
+    ],
+    "soggetto": "cespo con cappelli, lamelle e gambi",
+    "dubbio": true,
+    "nota": "Gambi sovrapposti: nessun individuo isolabile con certezza. Il riquadro non entra nei formati 3:4, 4:5, 16:7. Miniatura assets/species/mellea-ref-t.webp già ritagliata: 160×160, originale 1600×1200; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/mellea-ref.webp": {
+    "punto": [
+      0.455,
+      0.46
+    ],
+    "riquadro": [
+      0.09,
+      0.1,
+      0.82,
+      0.82
+    ],
+    "soggetto": "cespo con cappelli, lamelle e gambi",
+    "dubbio": true,
+    "nota": "Gambi sovrapposti: nessun individuo isolabile con certezza. Il riquadro non entra nei formati 3:4, 4:5, 16:7. Miniatura assets/species/mellea-ref-t.webp già ritagliata: 160×160, originale 1600×1200; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/mellea-inat1-hd.webp": {
+    "punto": [
+      0.295,
+      0.415
+    ],
+    "riquadro": [
+      0.21,
+      0.31,
+      0.38,
+      0.52
+    ],
+    "soggetto": "fungo sul tronco a sinistra, cappello e gambo visibile",
+    "dubbio": false,
+    "nota": "Base nascosta dal legno. Miniatura assets/species/mellea-inat1-t.webp già ritagliata: 160×160, originale 1024×768; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/mellea-inat1.webp": {
+    "punto": [
+      0.295,
+      0.415
+    ],
+    "riquadro": [
+      0.21,
+      0.31,
+      0.38,
+      0.52
+    ],
+    "soggetto": "fungo sul tronco a sinistra, cappello e gambo visibile",
+    "dubbio": false,
+    "nota": "Base nascosta dal legno. Miniatura assets/species/mellea-inat1-t.webp già ritagliata: 160×160, originale 1024×768; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/mellea-inat2-hd.webp": {
+    "punto": [
+      0.555,
+      0.525
+    ],
+    "riquadro": [
+      0.12,
+      0.22,
+      0.99,
+      0.83
+    ],
+    "soggetto": "fungo anteriore, cappello e gambo visibile",
+    "dubbio": true,
+    "nota": "Gambi confusi nella penombra e sovrapposti. Il riquadro non entra nei formati 4:3, 16:7. Miniatura assets/species/mellea-inat2-t.webp già ritagliata: 160×160, originale 819×1024; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/mellea-inat2.webp": {
+    "punto": [
+      0.555,
+      0.525
+    ],
+    "riquadro": [
+      0.12,
+      0.22,
+      0.99,
+      0.83
+    ],
+    "soggetto": "fungo anteriore, cappello e gambo visibile",
+    "dubbio": true,
+    "nota": "Gambi confusi nella penombra e sovrapposti. Il riquadro non entra nei formati 4:3, 16:7. Miniatura assets/species/mellea-inat2-t.webp già ritagliata: 160×160, originale 819×1024; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/mellea-inat3-hd.webp": {
+    "punto": [
+      0.505,
+      0.43
+    ],
+    "riquadro": [
+      0.08,
+      0.13,
+      0.93,
+      0.73
+    ],
+    "soggetto": "cespo con cappelli e gambi",
+    "dubbio": true,
+    "nota": "Numerosi individui sovrapposti: selezione del cespo. Il riquadro non entra nei formati 3:4, 4:5, 1:1, 16:7. Miniatura assets/species/mellea-inat3-t.webp già ritagliata: 160×160, originale 1024×768; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/mellea-inat3.webp": {
+    "punto": [
+      0.505,
+      0.43
+    ],
+    "riquadro": [
+      0.08,
+      0.13,
+      0.93,
+      0.73
+    ],
+    "soggetto": "cespo con cappelli e gambi",
+    "dubbio": true,
+    "nota": "Numerosi individui sovrapposti: selezione del cespo. Il riquadro non entra nei formati 3:4, 4:5, 1:1, 16:7. Miniatura assets/species/mellea-inat3-t.webp già ritagliata: 160×160, originale 1024×768; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/virescens-ref-hd.webp": {
+    "punto": [
+      0.505,
+      0.515
+    ],
+    "riquadro": [
+      0.02,
+      0.07,
+      0.99,
+      0.96
+    ],
+    "soggetto": "cappello e gambo visibile",
+    "dubbio": true,
+    "nota": "Gambo molto scuro e in parte occultato. Il riquadro non entra nei formati 5:4, 3:4, 4:5, 1:1, 16:7. Miniatura assets/species/virescens-ref-t.webp già ritagliata: 160×160, originale 1600×1200; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/virescens-ref.webp": {
+    "punto": [
+      0.505,
+      0.515
+    ],
+    "riquadro": [
+      0.02,
+      0.07,
+      0.99,
+      0.96
+    ],
+    "soggetto": "cappello e gambo visibile",
+    "dubbio": true,
+    "nota": "Gambo molto scuro e in parte occultato. Il riquadro non entra nei formati 5:4, 3:4, 4:5, 1:1, 16:7. Miniatura assets/species/virescens-ref-t.webp già ritagliata: 160×160, originale 1600×1200; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/virescens-inat1-hd.webp": {
+    "punto": [
+      0.51,
+      0.455
+    ],
+    "riquadro": [
+      0.04,
+      0.07,
+      0.98,
+      0.84
+    ],
+    "soggetto": "cappello visto dall’alto",
+    "dubbio": true,
+    "nota": "Gambo non visibile. Il riquadro non entra nei formati 3:4, 4:5, 4:3, 16:7."
+  },
+  "assets/species/virescens-inat1.webp": {
+    "punto": [
+      0.51,
+      0.455
+    ],
+    "riquadro": [
+      0.04,
+      0.07,
+      0.98,
+      0.84
+    ],
+    "soggetto": "cappello visto dall’alto",
+    "dubbio": true,
+    "nota": "Gambo non visibile. Il riquadro non entra nei formati 3:4, 4:5, 4:3, 16:7."
+  },
+  "assets/species/virescens-inat2-hd.webp": {
+    "punto": [
+      0.5,
+      0.455
+    ],
+    "riquadro": [
+      0.0,
+      0.0,
+      1.0,
+      0.91
+    ],
+    "soggetto": "cappello e gambo visibile",
+    "dubbio": true,
+    "nota": "Cappello già tagliato dai bordi originali; piede in ombra. Il riquadro non entra nei formati 5:4, 4:3, 1:1, 16:7. Miniatura assets/species/virescens-inat2-t.webp già ritagliata: 160×160, originale 768×1024; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/virescens-inat2.webp": {
+    "punto": [
+      0.5,
+      0.455
+    ],
+    "riquadro": [
+      0.0,
+      0.0,
+      1.0,
+      0.91
+    ],
+    "soggetto": "cappello e gambo visibile",
+    "dubbio": true,
+    "nota": "Cappello già tagliato dai bordi originali; piede in ombra. Il riquadro non entra nei formati 5:4, 4:3, 1:1, 16:7. Miniatura assets/species/virescens-inat2-t.webp già ritagliata: 160×160, originale 768×1024; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/suillus-ref-hd.webp": {
+    "punto": [
+      0.61,
+      0.465
+    ],
+    "riquadro": [
+      0.47,
+      0.04,
+      0.75,
+      0.89
+    ],
+    "soggetto": "esemplare centrale destro, cappello, pori e gambo",
+    "dubbio": true,
+    "nota": "Conservare anche i pori dell’esemplare capovolto a destra. Il riquadro non entra nei formati 3:4, 4:5. Miniatura assets/species/suillus-ref-t.webp già ritagliata: 160×160, originale 1600×453; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/suillus-ref.webp": {
+    "punto": [
+      0.61,
+      0.465
+    ],
+    "riquadro": [
+      0.47,
+      0.04,
+      0.75,
+      0.89
+    ],
+    "soggetto": "esemplare centrale destro, cappello, pori e gambo",
+    "dubbio": true,
+    "nota": "Conservare anche i pori dell’esemplare capovolto a destra. Il riquadro non entra nei formati 3:4, 4:5. Miniatura assets/species/suillus-ref-t.webp già ritagliata: 160×160, originale 1600×453; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/suillus-inat1-hd.webp": {
+    "punto": [
+      0.295,
+      0.58
+    ],
+    "riquadro": [
+      0.02,
+      0.28,
+      0.57,
+      0.88
+    ],
+    "soggetto": "esemplare capovolto a sinistra, pori e gambo",
+    "dubbio": false,
+    "nota": "Il riquadro non entra nei formati 16:7. Miniatura assets/species/suillus-inat1-t.webp già ritagliata: 160×160, originale 1024×768; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/suillus-inat1.webp": {
+    "punto": [
+      0.295,
+      0.58
+    ],
+    "riquadro": [
+      0.02,
+      0.28,
+      0.57,
+      0.88
+    ],
+    "soggetto": "esemplare capovolto a sinistra, pori e gambo",
+    "dubbio": false,
+    "nota": "Il riquadro non entra nei formati 16:7. Miniatura assets/species/suillus-inat1-t.webp già ritagliata: 160×160, originale 1024×768; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/suillus-inat2-hd.webp": {
+    "punto": [
+      0.56,
+      0.595
+    ],
+    "riquadro": [
+      0.37,
+      0.27,
+      0.75,
+      0.92
+    ],
+    "soggetto": "fungo centrale eretto, cappello, pori e gambo",
+    "dubbio": false,
+    "nota": "Miniatura assets/species/suillus-inat2-t.webp già ritagliata: 160×160, originale 1024×683; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/suillus-inat2.webp": {
+    "punto": [
+      0.56,
+      0.595
+    ],
+    "riquadro": [
+      0.37,
+      0.27,
+      0.75,
+      0.92
+    ],
+    "soggetto": "fungo centrale eretto, cappello, pori e gambo",
+    "dubbio": false,
+    "nota": "Miniatura assets/species/suillus-inat2-t.webp già ritagliata: 160×160, originale 1024×683; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/suillus-inat3-hd.webp": {
+    "punto": [
+      0.505,
+      0.52
+    ],
+    "riquadro": [
+      0.09,
+      0.07,
+      0.92,
+      0.97
+    ],
+    "soggetto": "fungo coricato, cappello, pori e gambo",
+    "dubbio": true,
+    "nota": "Il riquadro non entra nei formati 5:4, 4:3, 1:1, 16:7. Miniatura assets/species/suillus-inat3-t.webp già ritagliata: 160×160, originale 768×1024; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/suillus-inat3.webp": {
+    "punto": [
+      0.505,
+      0.52
+    ],
+    "riquadro": [
+      0.09,
+      0.07,
+      0.92,
+      0.97
+    ],
+    "soggetto": "fungo coricato, cappello, pori e gambo",
+    "dubbio": true,
+    "nota": "Il riquadro non entra nei formati 5:4, 4:3, 1:1, 16:7. Miniatura assets/species/suillus-inat3-t.webp già ritagliata: 160×160, originale 768×1024; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/terreum-inat1-hd.webp": {
+    "punto": [
+      0.57,
+      0.585
+    ],
+    "riquadro": [
+      0.43,
+      0.44,
+      0.71,
+      0.73
+    ],
+    "soggetto": "fungo coricato centrale, lamelle e gambo",
+    "dubbio": false,
+    "nota": "Miniatura assets/species/terreum-inat1-t.webp già ritagliata: 160×160, originale 1024×721; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/terreum-inat1.webp": {
+    "punto": [
+      0.57,
+      0.585
+    ],
+    "riquadro": [
+      0.43,
+      0.44,
+      0.71,
+      0.73
+    ],
+    "soggetto": "fungo coricato centrale, lamelle e gambo",
+    "dubbio": false,
+    "nota": "Miniatura assets/species/terreum-inat1-t.webp già ritagliata: 160×160, originale 1024×721; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/terreum-inat2-hd.webp": {
+    "punto": [
+      0.43,
+      0.55
+    ],
+    "riquadro": [
+      0.3,
+      0.4,
+      0.56,
+      0.7
+    ],
+    "soggetto": "fungo centrale anteriore, cappello e gambo visibile",
+    "dubbio": false,
+    "nota": "Base nascosta nell’erba. Miniatura assets/species/terreum-inat2-t.webp già ritagliata: 160×160, originale 768×1024; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/terreum-inat2.webp": {
+    "punto": [
+      0.43,
+      0.55
+    ],
+    "riquadro": [
+      0.3,
+      0.4,
+      0.56,
+      0.7
+    ],
+    "soggetto": "fungo centrale anteriore, cappello e gambo visibile",
+    "dubbio": false,
+    "nota": "Base nascosta nell’erba. Miniatura assets/species/terreum-inat2-t.webp già ritagliata: 160×160, originale 768×1024; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/terreum-inat3-hd.webp": {
+    "punto": [
+      0.38,
+      0.41
+    ],
+    "riquadro": [
+      0.1,
+      0.16,
+      0.66,
+      0.66
+    ],
+    "soggetto": "fungo grande a sinistra, cappello e gambo",
+    "dubbio": true,
+    "nota": "Gambi del cespo sovrapposti e parzialmente nascosti. Il riquadro non entra nei formati 16:7. Miniatura assets/species/terreum-inat3-t.webp già ritagliata: 160×160, originale 768×1024; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/terreum-inat3.webp": {
+    "punto": [
+      0.38,
+      0.41
+    ],
+    "riquadro": [
+      0.1,
+      0.16,
+      0.66,
+      0.66
+    ],
+    "soggetto": "fungo grande a sinistra, cappello e gambo",
+    "dubbio": true,
+    "nota": "Gambi del cespo sovrapposti e parzialmente nascosti. Il riquadro non entra nei formati 16:7. Miniatura assets/species/terreum-inat3-t.webp già ritagliata: 160×160, originale 768×1024; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/agaricus-campestris-ref-hd.webp": {
+    "punto": [
+      0.515,
+      0.51
+    ],
+    "riquadro": [
+      0.04,
+      0.1,
+      0.99,
+      0.92
+    ],
+    "soggetto": "fungo grande, cappello e gambo visibile",
+    "dubbio": true,
+    "nota": "Base coperta dall’erba e dall’esemplare piccolo. Il riquadro non entra nei formati 5:4, 3:4, 4:5, 1:1, 16:7."
+  },
+  "assets/species/agaricus-campestris-ref.webp": {
+    "punto": [
+      0.515,
+      0.51
+    ],
+    "riquadro": [
+      0.04,
+      0.1,
+      0.99,
+      0.92
+    ],
+    "soggetto": "fungo grande, cappello e gambo visibile",
+    "dubbio": true,
+    "nota": "Base coperta dall’erba e dall’esemplare piccolo. Il riquadro non entra nei formati 5:4, 3:4, 4:5, 1:1, 16:7."
+  },
+  "assets/species/agaricus-arvensis-ref-hd.webp": {
+    "punto": [
+      0.475,
+      0.455
+    ],
+    "riquadro": [
+      0.08,
+      0.05,
+      0.87,
+      0.86
+    ],
+    "soggetto": "fungo coricato, cappello, lamelle e gambo",
+    "dubbio": true,
+    "nota": "Il riquadro non entra nei formati 3:4, 4:5, 1:1, 16:7."
+  },
+  "assets/species/agaricus-arvensis-ref.webp": {
+    "punto": [
+      0.475,
+      0.455
+    ],
+    "riquadro": [
+      0.08,
+      0.05,
+      0.87,
+      0.86
+    ],
+    "soggetto": "fungo coricato, cappello, lamelle e gambo",
+    "dubbio": true,
+    "nota": "Il riquadro non entra nei formati 3:4, 4:5, 1:1, 16:7."
+  },
+  "assets/species/agaricus-arvensis-inat1-hd.webp": {
+    "punto": [
+      0.605,
+      0.405
+    ],
+    "riquadro": [
+      0.34,
+      0.1,
+      0.87,
+      0.71
+    ],
+    "soggetto": "fungo destro, cappello, lamelle e gambo",
+    "dubbio": false,
+    "nota": "Base nascosta nell’erba. Il riquadro non entra nei formati 16:7."
+  },
+  "assets/species/agaricus-arvensis-inat1.webp": {
+    "punto": [
+      0.605,
+      0.405
+    ],
+    "riquadro": [
+      0.34,
+      0.1,
+      0.87,
+      0.71
+    ],
+    "soggetto": "fungo destro, cappello, lamelle e gambo",
+    "dubbio": false,
+    "nota": "Base nascosta nell’erba. Il riquadro non entra nei formati 16:7."
+  },
+  "assets/species/agaricus-bisporus-ref-hd.webp": {
+    "punto": [
+      0.45,
+      0.565
+    ],
+    "riquadro": [
+      0.3,
+      0.32,
+      0.6,
+      0.81
+    ],
+    "soggetto": "fungo centrale capovolto, lamelle e gambo",
+    "dubbio": false,
+    "nota": ""
+  },
+  "assets/species/agaricus-bisporus-ref.webp": {
+    "punto": [
+      0.45,
+      0.565
+    ],
+    "riquadro": [
+      0.3,
+      0.32,
+      0.6,
+      0.81
+    ],
+    "soggetto": "fungo centrale capovolto, lamelle e gambo",
+    "dubbio": false,
+    "nota": ""
+  },
+  "assets/species/agaricus-bisporus-inat1-hd.webp": {
+    "punto": [
+      0.325,
+      0.5
+    ],
+    "riquadro": [
+      0.03,
+      0.06,
+      0.62,
+      0.94
+    ],
+    "soggetto": "fungo capovolto sinistro, lamelle e gambo",
+    "dubbio": true,
+    "nota": "Il riquadro non entra nei formati 3:4, 16:7."
+  },
+  "assets/species/agaricus-bisporus-inat1.webp": {
+    "punto": [
+      0.325,
+      0.5
+    ],
+    "riquadro": [
+      0.03,
+      0.06,
+      0.62,
+      0.94
+    ],
+    "soggetto": "fungo capovolto sinistro, lamelle e gambo",
+    "dubbio": true,
+    "nota": "Il riquadro non entra nei formati 3:4, 16:7."
   }
 }
