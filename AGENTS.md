@@ -37,6 +37,11 @@ La suite browser avvia un solo Wrangler sulla porta 8788: non lanciarne due insi
 - **Gerarchia:** funghi → giro → scoperte. Piante e alberi non cambiano zona, giorno, sentiero o indice.
 - **Linguaggio:** l'app descrive caratteri, ambienti e rischi. Non identifica, non certifica commestibilità, non dice «tieni/scarta». L'indice è sperimentale (0–10), non una probabilità.
 - **Fonti e licenze:** ogni nuovo dato, foto o soglia deve avere fonte e licenza verificabili. Niente soglie inventate, niente bonus numerici da folklore («funghi spia»).
+- **Immagini dai dati:** le immagini si disegnano dai dati, mai il contrario. Ogni carattere disegnato è un campo con valori chiusi in uno schema (`cap_color`, `cap_shape`, `stem_ring`, `stages`, chiavi di `recognize-trees.json`), con fonte verificabile. `null` = «non documentato»: non si disegna né in un senso né nell'altro. Due test lo controllano:
+  - **coerenza** (`tests/asset-coherence.test.mjs`): ogni immagine e ogni voce degli indici (soggetto, tessera, variante, fase, chiave/valore degli alberi, stagione/meteo dei luoghi) corrisponde a un valore che esiste nei dati;
+  - **completezza** (`tests/asset-completeness.test.mjs`): ogni dato ha tutti i suoi asset. Esempi: icone base, varianti di colore, fasi e sezione dell'uovo dei funghi; valori degli alberi; foto con miniatura, punto di ritaglio e crediti; copertine dei luoghi. Ciò che manca sta in `data/asset-pending.json` con il motivo. Le icone il cui dato è cambiato finiscono in «da rifare» (confronto con `data/asset-drawn-from.json`).
+
+  **A ogni aggiunta di dati si verifica che ci siano tutti gli asset:** `node tools/asset-report.mjs` dà il rapporto, da mettere nella descrizione della PR. Gli script d'import rifiutano ciò che non torna con i dati. Prima di nuove immagini si controllano le matrici (es. `docs/controllo-matrici-2026-10-15.md`).
 - **Licenze delle foto:** le foto con licenza non commerciale (CC BY-NC, soprattutto da iNaturalist) restano ammesse finché l'app è gratuita e senza pubblicità. Per le foto nuove preferisci CC0, CC BY o CC BY-SA e registra sempre autore, licenza, link alla licenza e pagina della fonte. Niente immagini generate al posto delle foto delle specie.
 
 ## Decisioni

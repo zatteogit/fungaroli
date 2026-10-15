@@ -12,6 +12,9 @@ vale l'ordine delle righe della stessa tavola, come nelle prime 30 tavole.
 Varianti (docs/handoff-immagini-varianti.md): le righe con `variante` = "colore:<valore>" o
 "forma:<valore>" sono un altro colore o un'altra forma del cappello; `base` = {"colore", "forma"}
 dice cosa mostra il disegno principale. Le tessere di una variante sono «cappello» e «gambo».
+Fasi di crescita (docs/handoff-immagini-fasi.md): le righe con `fase` = "<id>" sono il disegno della
+tessera in quella fase; la fase deve essere in `stages` della specie e la tessera tra le sue `tiles`
+(«taglio» = sezione dell'uovo). File <specie>-<tessera>-fase-<id>.webp. Righe che non tornano: errore.
 Scrive assets/traits/<specie>-<tessera>[-<variante>].webp e data/trait-icons.json.
 """
 import json, sys
@@ -88,13 +91,23 @@ def main(inc):
     OUT.mkdir(parents=True, exist_ok=True)
     for f in OUT.glob("*.webp"):
         f.unlink()
-    have, base, variants, sheets, margins, combos = {}, {}, {}, {}, {}, {}
+    have, base, variants, sheets, margins, combos, stages = {}, {}, {}, {}, {}, {}, {}
     base_size = {}  # (specie, tessera) -> dimensioni del disegno base, per allineare le varianti di colore
-    rows = sorted(rows, key=lambda r: bool(r.get("variante")))  # prima i disegni base
+    rows = sorted(rows, key=lambda r: bool(r.get("variante") or r.get("fase")))  # prima i disegni base
     for r in rows:
         key = r["soggetto"]
         if key not in taxa:
             sys.exit(f"{key}: non è in species-traits.json")
+        if r.get("fase"):
+            st = {f["id"]: f for f in taxa[key].get("stages") or []}
+            if r["fase"] not in st:
+                sys.exit(f"{key}: la fase «{r['fase']}» non è tra le fasi della specie (stages)")
+            if r["tessera"] not in st[r["fase"]]["tiles"]:
+                sys.exit(f"{key}: nella fase «{r['fase']}» la tessera «{r['tessera']}» non cambia (tiles)")
+            if r.get("variante"):
+                sys.exit(f"{key}: una riga ha sia fase sia variante")
+        elif r["tessera"] not in (("cappello", "gambo") if r.get("variante") else PARTS):
+            sys.exit(f"{key}: tessera «{r['tessera']}» non prevista")
         if r["file"] not in sheets:
             im = Image.open(inc.parent / r["file"]).convert("RGBA")
             sheets[r["file"]] = (im, drawings(im, r["file"]))
@@ -104,12 +117,15 @@ def main(inc):
             sys.exit(f"{r['file']}: la cella {cell} è vuota")
         crop = im.crop(boxes[cell])
         var = r.get("variante")
-        if not var:
+        if not var and not r.get("fase"):
             cb = crop.getchannel("A").point(lambda a: 255 if a > 16 else 0).getbbox()
             base_size[(key, r["tessera"])] = (cb[2] - cb[0], cb[3] - cb[1]) if cb else crop.size
         same_frame = var and var.startswith("colore:") and "+" not in var and (key, r["tessera"]) in base_size
         tile = fit_like(crop, base_size[(key, r["tessera"])]) if same_frame else fit(crop)
-        if var and "+" in var:
+        if r.get("fase"):
+            name = f"{key}-{r['tessera']}-fase-{r['fase']}.webp"
+            stages.setdefault(key, {}).setdefault(r["fase"], set()).add(r["tessera"])
+        elif var and "+" in var:
             # combinazione colore + forma (es. "colore:giallo+forma:piano"): file <specie>-<tessera>-<colore>-<forma>
             parts = dict(x.split(":", 1) for x in var.split("+"))
             c, f = parts.get("colore"), parts.get("forma")
@@ -144,6 +160,19 @@ def main(inc):
         done = sorted(k for k, parts in combos.get(key, {}).items() if {"cappello", "gambo"} <= parts)
         if done:
             entry["combos"] = done
+        # fasi complete: tutte le tessere che cambiano in quella fase, nell'ordine dei dati
+        done = [f["id"] for f in taxa[key].get("stages") or [] if set(f["tiles"]) <= stages.get(key, {}).get(f["id"], set())]
+        if done:
+            entry["stages"] = done
+        # cosa mostra il disegno base (dal manifest; con un solo valore nelle fonti, quel valore):
+        # serve al test di completezza (tests/asset-completeness.test.mjs) per sapere quali varianti mancano
+        b = {k: v for k, v in (base.get(key) or {}).items() if k in ("colore", "forma")}
+        for kind, field in (("colore", "cap_color"), ("forma", "cap_shape")):
+            vals = taxa[key]["traits"].get(field) or []
+            if kind not in b and len(vals) == 1:
+                b[kind] = vals[0]
+        if b:
+            entry["base"] = b
         index[key] = entry
     out = {
         "note": "Icone dei caratteri disegnate con AI (image_gen) a partire dai caratteri strutturati di data/species-traits.json, riviste dal proprietario del progetto. Mostrano varianti descritte nelle fonti; non sono foto e non servono a identificare.",
@@ -152,7 +181,7 @@ def main(inc):
         "margins": dict(sorted(margins.items())),
     }
     (ROOT / "data/trait-icons.json").write_text(json.dumps(out, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
-    print(f"{len(index)} specie; varianti di colore per {sum('colors' in e for e in index.values())}, di forma per {sum('shapes' in e for e in index.values())}")
+    print(f"{len(index)} specie; varianti di colore per {sum('colors' in e for e in index.values())}, di forma per {sum('shapes' in e for e in index.values())}, fasi per {sum('stages' in e for e in index.values())}")
 
 
 if __name__ == "__main__":

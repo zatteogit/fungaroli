@@ -1,0 +1,4427 @@
+{
+ "note": "Dati da cui sono state disegnate le icone dei funghi (stato del 15/10, prima delle correzioni del controllo matrici: le icone in produzione sono state approvate su quei dati). Per tessera: i campi che il disegno mostra. Il test tests/asset-completeness.test.mjs confronta con i dati di oggi e produce l'elenco «da rifare». Dopo aver importato le icone ridisegnate: node tools/asset-report.mjs --snapshot.",
+ "generated": "2026-10-15",
+ "icons": {
+  "aereus-cappello-bruno": {
+   "cap_veil": false,
+   "cap_surface": [
+    "vellutata/feltrata",
+    "liscia",
+    "asciutta"
+   ]
+  },
+  "aereus-cappello": {
+   "cap_veil": false,
+   "cap_surface": [
+    "vellutata/feltrata",
+    "liscia",
+    "asciutta"
+   ]
+  },
+  "aereus-gambo-bruno": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": true,
+   "stem_base": [
+    "normale",
+    "bulbosa"
+   ]
+  },
+  "aereus-gambo": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": true,
+   "stem_base": [
+    "normale",
+    "bulbosa"
+   ]
+  },
+  "aereus-sotto": {
+   "hymenophore": [
+    "pori"
+   ],
+   "hymenophore_color": [
+    "bianco",
+    "crema",
+    "giallo",
+    "verde"
+   ]
+  },
+  "aestivalis-cappello-crema": {
+   "cap_veil": false,
+   "cap_surface": [
+    "asciutta",
+    "vellutata/feltrata"
+   ]
+  },
+  "aestivalis-cappello": {
+   "cap_veil": false,
+   "cap_surface": [
+    "asciutta",
+    "vellutata/feltrata"
+   ]
+  },
+  "aestivalis-gambo-crema": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": true,
+   "stem_base": [
+    "normale",
+    "bulbosa"
+   ]
+  },
+  "aestivalis-gambo": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": true,
+   "stem_base": [
+    "normale",
+    "bulbosa"
+   ]
+  },
+  "aestivalis-sotto": {
+   "hymenophore": [
+    "pori"
+   ],
+   "hymenophore_color": [
+    "bianco",
+    "crema",
+    "giallo",
+    "verde"
+   ]
+  },
+  "agaricus-arvensis-cappello-bianco": {
+   "cap_veil": false,
+   "cap_surface": [
+    "liscia",
+    "squamosa"
+   ]
+  },
+  "agaricus-arvensis-cappello-giallo": {
+   "cap_veil": false,
+   "cap_surface": [
+    "liscia",
+    "squamosa"
+   ]
+  },
+  "agaricus-arvensis-cappello": {
+   "cap_veil": false,
+   "cap_surface": [
+    "liscia",
+    "squamosa"
+   ]
+  },
+  "agaricus-arvensis-gambo-bianco": {
+   "stem_ring": true,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale",
+    "bulbosa"
+   ]
+  },
+  "agaricus-arvensis-gambo-giallo": {
+   "stem_ring": true,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale",
+    "bulbosa"
+   ]
+  },
+  "agaricus-arvensis-gambo": {
+   "stem_ring": true,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale",
+    "bulbosa"
+   ]
+  },
+  "agaricus-arvensis-sotto": {
+   "hymenophore": [
+    "lamelle"
+   ],
+   "hymenophore_color": [
+    "rosa",
+    "bruno"
+   ]
+  },
+  "agaricus-bisporus-cappello-bianco": {
+   "cap_veil": false,
+   "cap_surface": null
+  },
+  "agaricus-bisporus-cappello": {
+   "cap_veil": false,
+   "cap_surface": null
+  },
+  "agaricus-bisporus-gambo-bianco": {
+   "stem_ring": true,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": null
+  },
+  "agaricus-bisporus-gambo": {
+   "stem_ring": true,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": null
+  },
+  "agaricus-bisporus-sotto": {
+   "hymenophore": [
+    "lamelle"
+   ],
+   "hymenophore_color": [
+    "rosa",
+    "bruno"
+   ]
+  },
+  "agaricus-campestris-cappello-bruno": {
+   "cap_veil": false,
+   "cap_surface": [
+    "liscia",
+    "squamosa"
+   ]
+  },
+  "agaricus-campestris-cappello-crema": {
+   "cap_veil": false,
+   "cap_surface": [
+    "liscia",
+    "squamosa"
+   ]
+  },
+  "agaricus-campestris-cappello": {
+   "cap_veil": false,
+   "cap_surface": [
+    "liscia",
+    "squamosa"
+   ]
+  },
+  "agaricus-campestris-gambo-bruno": {
+   "stem_ring": null,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale"
+   ]
+  },
+  "agaricus-campestris-gambo-crema": {
+   "stem_ring": null,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale"
+   ]
+  },
+  "agaricus-campestris-gambo": {
+   "stem_ring": null,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale"
+   ]
+  },
+  "agaricus-campestris-sotto": {
+   "hymenophore": [
+    "lamelle"
+   ],
+   "hymenophore_color": [
+    "rosa",
+    "bruno",
+    "nero"
+   ]
+  },
+  "agaricus-sylvicola-cappello-bianco": {
+   "cap_veil": false,
+   "cap_surface": null
+  },
+  "agaricus-sylvicola-cappello-giallo": {
+   "cap_veil": false,
+   "cap_surface": null
+  },
+  "agaricus-sylvicola-cappello": {
+   "cap_veil": false,
+   "cap_surface": null
+  },
+  "agaricus-sylvicola-gambo-bianco": {
+   "stem_ring": true,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "bulbosa"
+   ]
+  },
+  "agaricus-sylvicola-gambo-giallo": {
+   "stem_ring": true,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "bulbosa"
+   ]
+  },
+  "agaricus-sylvicola-gambo": {
+   "stem_ring": true,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "bulbosa"
+   ]
+  },
+  "agaricus-sylvicola-sotto": {
+   "hymenophore": [
+    "lamelle"
+   ],
+   "hymenophore_color": [
+    "bianco",
+    "grigio",
+    "rosa",
+    "bruno"
+   ]
+  },
+  "agaricus-xanthodermus-cappello-bruno": {
+   "cap_veil": false,
+   "cap_surface": [
+    "liscia",
+    "asciutta",
+    "squamosa"
+   ]
+  },
+  "agaricus-xanthodermus-cappello-crema": {
+   "cap_veil": false,
+   "cap_surface": [
+    "liscia",
+    "asciutta",
+    "squamosa"
+   ]
+  },
+  "agaricus-xanthodermus-cappello-giallo": {
+   "cap_veil": false,
+   "cap_surface": [
+    "liscia",
+    "asciutta",
+    "squamosa"
+   ]
+  },
+  "agaricus-xanthodermus-cappello-grigio": {
+   "cap_veil": false,
+   "cap_surface": [
+    "liscia",
+    "asciutta",
+    "squamosa"
+   ]
+  },
+  "agaricus-xanthodermus-cappello": {
+   "cap_veil": false,
+   "cap_surface": [
+    "liscia",
+    "asciutta",
+    "squamosa"
+   ]
+  },
+  "agaricus-xanthodermus-gambo-bruno": {
+   "stem_ring": true,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "bulbosa"
+   ]
+  },
+  "agaricus-xanthodermus-gambo-crema": {
+   "stem_ring": true,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "bulbosa"
+   ]
+  },
+  "agaricus-xanthodermus-gambo-giallo": {
+   "stem_ring": true,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "bulbosa"
+   ]
+  },
+  "agaricus-xanthodermus-gambo-grigio": {
+   "stem_ring": true,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "bulbosa"
+   ]
+  },
+  "agaricus-xanthodermus-gambo": {
+   "stem_ring": true,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "bulbosa"
+   ]
+  },
+  "agaricus-xanthodermus-sotto": {
+   "hymenophore": [
+    "lamelle"
+   ],
+   "hymenophore_color": [
+    "bianco",
+    "rosa",
+    "grigio",
+    "bruno",
+    "nero"
+   ]
+  },
+  "amanita-crocea-cappello-giallo": {
+   "cap_veil": null,
+   "cap_surface": [
+    "viscida",
+    "liscia",
+    "asciutta"
+   ]
+  },
+  "amanita-crocea-cappello": {
+   "cap_veil": null,
+   "cap_surface": [
+    "viscida",
+    "liscia",
+    "asciutta"
+   ]
+  },
+  "amanita-crocea-gambo-giallo": {
+   "stem_ring": false,
+   "stem_volva": true,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale",
+    "bulbosa"
+   ]
+  },
+  "amanita-crocea-gambo": {
+   "stem_ring": false,
+   "stem_volva": true,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale",
+    "bulbosa"
+   ]
+  },
+  "amanita-crocea-sotto": {
+   "hymenophore": [
+    "lamelle"
+   ],
+   "hymenophore_color": [
+    "bianco",
+    "crema"
+   ]
+  },
+  "amanita-muscaria-cappello-arancio": {
+   "cap_veil": null,
+   "cap_surface": [
+    "viscida",
+    "liscia",
+    "asciutta",
+    "squamosa"
+   ]
+  },
+  "amanita-muscaria-cappello-giallo": {
+   "cap_veil": null,
+   "cap_surface": [
+    "viscida",
+    "liscia",
+    "asciutta",
+    "squamosa"
+   ]
+  },
+  "amanita-muscaria-cappello": {
+   "cap_veil": null,
+   "cap_surface": [
+    "viscida",
+    "liscia",
+    "asciutta",
+    "squamosa"
+   ]
+  },
+  "amanita-muscaria-gambo-arancio": {
+   "stem_ring": true,
+   "stem_volva": true,
+   "stem_reticulum": false,
+   "stem_base": [
+    "bulbosa"
+   ]
+  },
+  "amanita-muscaria-gambo-giallo": {
+   "stem_ring": true,
+   "stem_volva": true,
+   "stem_reticulum": false,
+   "stem_base": [
+    "bulbosa"
+   ]
+  },
+  "amanita-muscaria-gambo": {
+   "stem_ring": true,
+   "stem_volva": true,
+   "stem_reticulum": false,
+   "stem_base": [
+    "bulbosa"
+   ]
+  },
+  "amanita-muscaria-sotto": {
+   "hymenophore": [
+    "lamelle"
+   ],
+   "hymenophore_color": [
+    "bianco"
+   ]
+  },
+  "amanita-pantherina-cappello-crema": {
+   "cap_veil": null,
+   "cap_surface": [
+    "liscia",
+    "viscida"
+   ]
+  },
+  "amanita-pantherina-cappello-grigio": {
+   "cap_veil": null,
+   "cap_surface": [
+    "liscia",
+    "viscida"
+   ]
+  },
+  "amanita-pantherina-cappello": {
+   "cap_veil": null,
+   "cap_surface": [
+    "liscia",
+    "viscida"
+   ]
+  },
+  "amanita-pantherina-gambo-crema": {
+   "stem_ring": true,
+   "stem_volva": true,
+   "stem_reticulum": false,
+   "stem_base": [
+    "bulbosa"
+   ]
+  },
+  "amanita-pantherina-gambo-grigio": {
+   "stem_ring": true,
+   "stem_volva": true,
+   "stem_reticulum": false,
+   "stem_base": [
+    "bulbosa"
+   ]
+  },
+  "amanita-pantherina-gambo": {
+   "stem_ring": true,
+   "stem_volva": true,
+   "stem_reticulum": false,
+   "stem_base": [
+    "bulbosa"
+   ]
+  },
+  "amanita-pantherina-sotto": {
+   "hymenophore": [
+    "lamelle"
+   ],
+   "hymenophore_color": [
+    "bianco",
+    "grigio"
+   ]
+  },
+  "amanita-phalloides-cappello-bianco": {
+   "cap_veil": null,
+   "cap_surface": [
+    "liscia",
+    "viscida",
+    "asciutta",
+    "squamosa"
+   ]
+  },
+  "amanita-phalloides-cappello-bruno": {
+   "cap_veil": null,
+   "cap_surface": [
+    "liscia",
+    "viscida",
+    "asciutta",
+    "squamosa"
+   ]
+  },
+  "amanita-phalloides-cappello-emisferico": {
+   "cap_veil": null,
+   "cap_surface": [
+    "liscia",
+    "viscida",
+    "asciutta",
+    "squamosa"
+   ]
+  },
+  "amanita-phalloides-cappello-giallo": {
+   "cap_veil": null,
+   "cap_surface": [
+    "liscia",
+    "viscida",
+    "asciutta",
+    "squamosa"
+   ]
+  },
+  "amanita-phalloides-cappello-grigio": {
+   "cap_veil": null,
+   "cap_surface": [
+    "liscia",
+    "viscida",
+    "asciutta",
+    "squamosa"
+   ]
+  },
+  "amanita-phalloides-cappello-piano": {
+   "cap_veil": null,
+   "cap_surface": [
+    "liscia",
+    "viscida",
+    "asciutta",
+    "squamosa"
+   ]
+  },
+  "amanita-phalloides-cappello": {
+   "cap_veil": null,
+   "cap_surface": [
+    "liscia",
+    "viscida",
+    "asciutta",
+    "squamosa"
+   ]
+  },
+  "amanita-phalloides-gambo-bianco": {
+   "stem_ring": true,
+   "stem_volva": true,
+   "stem_reticulum": false,
+   "stem_base": [
+    "bulbosa"
+   ]
+  },
+  "amanita-phalloides-gambo-bruno": {
+   "stem_ring": true,
+   "stem_volva": true,
+   "stem_reticulum": false,
+   "stem_base": [
+    "bulbosa"
+   ]
+  },
+  "amanita-phalloides-gambo-emisferico": {
+   "stem_ring": true,
+   "stem_volva": true,
+   "stem_reticulum": false,
+   "stem_base": [
+    "bulbosa"
+   ]
+  },
+  "amanita-phalloides-gambo-giallo": {
+   "stem_ring": true,
+   "stem_volva": true,
+   "stem_reticulum": false,
+   "stem_base": [
+    "bulbosa"
+   ]
+  },
+  "amanita-phalloides-gambo-grigio": {
+   "stem_ring": true,
+   "stem_volva": true,
+   "stem_reticulum": false,
+   "stem_base": [
+    "bulbosa"
+   ]
+  },
+  "amanita-phalloides-gambo-piano": {
+   "stem_ring": true,
+   "stem_volva": true,
+   "stem_reticulum": false,
+   "stem_base": [
+    "bulbosa"
+   ]
+  },
+  "amanita-phalloides-gambo": {
+   "stem_ring": true,
+   "stem_volva": true,
+   "stem_reticulum": false,
+   "stem_base": [
+    "bulbosa"
+   ]
+  },
+  "amanita-phalloides-sotto": {
+   "hymenophore": [
+    "lamelle"
+   ],
+   "hymenophore_color": [
+    "bianco"
+   ]
+  },
+  "amanita-rubescens-cappello-bruno": {
+   "cap_veil": null,
+   "cap_surface": null
+  },
+  "amanita-rubescens-cappello": {
+   "cap_veil": null,
+   "cap_surface": null
+  },
+  "amanita-rubescens-gambo-bruno": {
+   "stem_ring": true,
+   "stem_volva": null,
+   "stem_reticulum": false,
+   "stem_base": [
+    "bulbosa"
+   ]
+  },
+  "amanita-rubescens-gambo": {
+   "stem_ring": true,
+   "stem_volva": null,
+   "stem_reticulum": false,
+   "stem_base": [
+    "bulbosa"
+   ]
+  },
+  "amanita-rubescens-sotto": {
+   "hymenophore": [
+    "lamelle"
+   ],
+   "hymenophore_color": [
+    "bianco"
+   ]
+  },
+  "amanita-verna-cappello-crema": {
+   "cap_veil": null,
+   "cap_surface": [
+    "liscia",
+    "viscida",
+    "asciutta"
+   ]
+  },
+  "amanita-verna-cappello": {
+   "cap_veil": null,
+   "cap_surface": [
+    "liscia",
+    "viscida",
+    "asciutta"
+   ]
+  },
+  "amanita-verna-gambo-crema": {
+   "stem_ring": true,
+   "stem_volva": true,
+   "stem_reticulum": false,
+   "stem_base": [
+    "bulbosa",
+    "normale"
+   ]
+  },
+  "amanita-verna-gambo": {
+   "stem_ring": true,
+   "stem_volva": true,
+   "stem_reticulum": false,
+   "stem_base": [
+    "bulbosa",
+    "normale"
+   ]
+  },
+  "amanita-verna-sotto": {
+   "hymenophore": [
+    "lamelle"
+   ],
+   "hymenophore_color": [
+    "bianco"
+   ]
+  },
+  "amanita-virosa-cappello": {
+   "cap_veil": null,
+   "cap_surface": [
+    "liscia",
+    "asciutta",
+    "viscida"
+   ]
+  },
+  "amanita-virosa-gambo": {
+   "stem_ring": true,
+   "stem_volva": true,
+   "stem_reticulum": false,
+   "stem_base": [
+    "bulbosa",
+    "normale"
+   ]
+  },
+  "amanita-virosa-sotto": {
+   "hymenophore": [
+    "lamelle"
+   ],
+   "hymenophore_color": [
+    "bianco"
+   ]
+  },
+  "armillaria-tabescens-cappello-bruno": {
+   "cap_veil": false,
+   "cap_surface": [
+    "asciutta",
+    "squamosa"
+   ]
+  },
+  "armillaria-tabescens-cappello": {
+   "cap_veil": false,
+   "cap_surface": [
+    "asciutta",
+    "squamosa"
+   ]
+  },
+  "armillaria-tabescens-gambo-bruno": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "assottigliata"
+   ]
+  },
+  "armillaria-tabescens-gambo": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "assottigliata"
+   ]
+  },
+  "armillaria-tabescens-sotto": {
+   "hymenophore": [
+    "lamelle"
+   ],
+   "hymenophore_color": [
+    "bianco",
+    "crema",
+    "bruno"
+   ]
+  },
+  "caesarea-cappello-giallo": {
+   "cap_veil": null,
+   "cap_surface": [
+    "liscia",
+    "viscida"
+   ]
+  },
+  "caesarea-cappello-rosso": {
+   "cap_veil": null,
+   "cap_surface": [
+    "liscia",
+    "viscida"
+   ]
+  },
+  "caesarea-cappello": {
+   "cap_veil": null,
+   "cap_surface": [
+    "liscia",
+    "viscida"
+   ]
+  },
+  "caesarea-gambo-giallo": {
+   "stem_ring": true,
+   "stem_volva": true,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale",
+    "bulbosa"
+   ]
+  },
+  "caesarea-gambo-rosso": {
+   "stem_ring": true,
+   "stem_volva": true,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale",
+    "bulbosa"
+   ]
+  },
+  "caesarea-gambo": {
+   "stem_ring": true,
+   "stem_volva": true,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale",
+    "bulbosa"
+   ]
+  },
+  "caesarea-sotto": {
+   "hymenophore": [
+    "lamelle"
+   ],
+   "hymenophore_color": [
+    "giallo"
+   ]
+  },
+  "caloboletus-calopus-cappello-bruno": {
+   "cap_veil": false,
+   "cap_surface": [
+    "asciutta",
+    "vellutata/feltrata",
+    "liscia",
+    "squamosa"
+   ]
+  },
+  "caloboletus-calopus-cappello-crema": {
+   "cap_veil": false,
+   "cap_surface": [
+    "asciutta",
+    "vellutata/feltrata",
+    "liscia",
+    "squamosa"
+   ]
+  },
+  "caloboletus-calopus-cappello-grigio": {
+   "cap_veil": false,
+   "cap_surface": [
+    "asciutta",
+    "vellutata/feltrata",
+    "liscia",
+    "squamosa"
+   ]
+  },
+  "caloboletus-calopus-cappello": {
+   "cap_veil": false,
+   "cap_surface": [
+    "asciutta",
+    "vellutata/feltrata",
+    "liscia",
+    "squamosa"
+   ]
+  },
+  "caloboletus-calopus-gambo-bruno": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": true,
+   "stem_base": [
+    "normale",
+    "bulbosa"
+   ]
+  },
+  "caloboletus-calopus-gambo-crema": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": true,
+   "stem_base": [
+    "normale",
+    "bulbosa"
+   ]
+  },
+  "caloboletus-calopus-gambo-grigio": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": true,
+   "stem_base": [
+    "normale",
+    "bulbosa"
+   ]
+  },
+  "caloboletus-calopus-gambo": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": true,
+   "stem_base": [
+    "normale",
+    "bulbosa"
+   ]
+  },
+  "caloboletus-calopus-sotto": {
+   "hymenophore": [
+    "pori"
+   ],
+   "hymenophore_color": [
+    "giallo"
+   ]
+  },
+  "caloboletus-radicans-cappello-bianco": {
+   "cap_veil": false,
+   "cap_surface": [
+    "asciutta",
+    "vellutata/feltrata"
+   ]
+  },
+  "caloboletus-radicans-cappello-grigio": {
+   "cap_veil": false,
+   "cap_surface": [
+    "asciutta",
+    "vellutata/feltrata"
+   ]
+  },
+  "caloboletus-radicans-cappello": {
+   "cap_veil": false,
+   "cap_surface": [
+    "asciutta",
+    "vellutata/feltrata"
+   ]
+  },
+  "caloboletus-radicans-gambo-bianco": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": true,
+   "stem_base": [
+    "radicante",
+    "bulbosa",
+    "assottigliata"
+   ]
+  },
+  "caloboletus-radicans-gambo-grigio": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": true,
+   "stem_base": [
+    "radicante",
+    "bulbosa",
+    "assottigliata"
+   ]
+  },
+  "caloboletus-radicans-gambo": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": true,
+   "stem_base": [
+    "radicante",
+    "bulbosa",
+    "assottigliata"
+   ]
+  },
+  "caloboletus-radicans-sotto": {
+   "hymenophore": [
+    "pori"
+   ],
+   "hymenophore_color": [
+    "giallo"
+   ]
+  },
+  "calocybe-gambosa-cappello-crema": {
+   "cap_veil": false,
+   "cap_surface": [
+    "liscia"
+   ]
+  },
+  "calocybe-gambosa-cappello": {
+   "cap_veil": false,
+   "cap_surface": [
+    "liscia"
+   ]
+  },
+  "calocybe-gambosa-gambo-crema": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale"
+   ]
+  },
+  "calocybe-gambosa-gambo": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale"
+   ]
+  },
+  "calocybe-gambosa-sotto": {
+   "hymenophore": [
+    "lamelle"
+   ],
+   "hymenophore_color": [
+    "bianco"
+   ]
+  },
+  "chalciporus-piperatus-cappello-bruno": {
+   "cap_veil": false,
+   "cap_surface": [
+    "asciutta",
+    "viscida",
+    "liscia"
+   ]
+  },
+  "chalciporus-piperatus-cappello": {
+   "cap_veil": false,
+   "cap_surface": [
+    "asciutta",
+    "viscida",
+    "liscia"
+   ]
+  },
+  "chalciporus-piperatus-gambo-bruno": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale",
+    "assottigliata"
+   ]
+  },
+  "chalciporus-piperatus-gambo": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale",
+    "assottigliata"
+   ]
+  },
+  "chalciporus-piperatus-sotto": {
+   "hymenophore": [
+    "pori"
+   ],
+   "hymenophore_color": [
+    "bruno",
+    "rosso",
+    "arancio"
+   ]
+  },
+  "chlorophyllum-rhacodes-cappello-bruno": {
+   "cap_veil": null,
+   "cap_surface": [
+    "squamosa",
+    "asciutta",
+    "liscia"
+   ]
+  },
+  "chlorophyllum-rhacodes-cappello": {
+   "cap_veil": null,
+   "cap_surface": [
+    "squamosa",
+    "asciutta",
+    "liscia"
+   ]
+  },
+  "chlorophyllum-rhacodes-gambo-bruno": {
+   "stem_ring": true,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "bulbosa"
+   ]
+  },
+  "chlorophyllum-rhacodes-gambo": {
+   "stem_ring": true,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "bulbosa"
+   ]
+  },
+  "chlorophyllum-rhacodes-sotto": {
+   "hymenophore": [
+    "lamelle"
+   ],
+   "hymenophore_color": [
+    "bianco",
+    "crema"
+   ]
+  },
+  "chlorophyllum-venenatum-cappello-bruno": {
+   "cap_veil": null,
+   "cap_surface": [
+    "squamosa",
+    "asciutta",
+    "liscia"
+   ]
+  },
+  "chlorophyllum-venenatum-cappello": {
+   "cap_veil": null,
+   "cap_surface": [
+    "squamosa",
+    "asciutta",
+    "liscia"
+   ]
+  },
+  "chlorophyllum-venenatum-gambo-bruno": {
+   "stem_ring": true,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "bulbosa"
+   ]
+  },
+  "chlorophyllum-venenatum-gambo": {
+   "stem_ring": true,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "bulbosa"
+   ]
+  },
+  "chlorophyllum-venenatum-sotto": {
+   "hymenophore": [
+    "lamelle"
+   ],
+   "hymenophore_color": [
+    "bianco",
+    "crema",
+    "bruno"
+   ]
+  },
+  "cibarius-cappello-arancio": {
+   "cap_veil": false,
+   "cap_surface": [
+    "liscia",
+    "asciutta"
+   ]
+  },
+  "cibarius-cappello": {
+   "cap_veil": false,
+   "cap_surface": [
+    "liscia",
+    "asciutta"
+   ]
+  },
+  "cibarius-gambo-arancio": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "assottigliata",
+    "normale"
+   ]
+  },
+  "cibarius-gambo": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "assottigliata",
+    "normale"
+   ]
+  },
+  "cibarius-sotto": {
+   "hymenophore": [
+    "pliche"
+   ],
+   "hymenophore_color": [
+    "giallo",
+    "arancio"
+   ]
+  },
+  "clitocybe-rivulosa-cappello-bruno": {
+   "cap_veil": false,
+   "cap_surface": [
+    "asciutta",
+    "liscia"
+   ]
+  },
+  "clitocybe-rivulosa-cappello-crema": {
+   "cap_veil": false,
+   "cap_surface": [
+    "asciutta",
+    "liscia"
+   ]
+  },
+  "clitocybe-rivulosa-cappello": {
+   "cap_veil": false,
+   "cap_surface": [
+    "asciutta",
+    "liscia"
+   ]
+  },
+  "clitocybe-rivulosa-gambo-bruno": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": null
+  },
+  "clitocybe-rivulosa-gambo-crema": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": null
+  },
+  "clitocybe-rivulosa-gambo": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": null
+  },
+  "clitocybe-rivulosa-sotto": {
+   "hymenophore": [
+    "lamelle"
+   ],
+   "hymenophore_color": [
+    "bianco",
+    "rosa",
+    "grigio"
+   ]
+  },
+  "coprinus-comatus-cappello-bruno": {
+   "cap_veil": null,
+   "cap_surface": [
+    "squamosa"
+   ]
+  },
+  "coprinus-comatus-cappello-nero": {
+   "cap_veil": null,
+   "cap_surface": [
+    "squamosa"
+   ]
+  },
+  "coprinus-comatus-cappello": {
+   "cap_veil": null,
+   "cap_surface": [
+    "squamosa"
+   ]
+  },
+  "coprinus-comatus-gambo-bruno": {
+   "stem_ring": true,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale"
+   ]
+  },
+  "coprinus-comatus-gambo-nero": {
+   "stem_ring": true,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale"
+   ]
+  },
+  "coprinus-comatus-gambo": {
+   "stem_ring": true,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale"
+   ]
+  },
+  "coprinus-comatus-sotto": {
+   "hymenophore": [
+    "lamelle"
+   ],
+   "hymenophore_color": [
+    "bianco",
+    "rosa",
+    "nero"
+   ]
+  },
+  "cornucopioides-cappello-bruno": {
+   "cap_veil": false,
+   "cap_surface": [
+    "vellutata/feltrata",
+    "squamosa"
+   ]
+  },
+  "cornucopioides-cappello-grigio": {
+   "cap_veil": false,
+   "cap_surface": [
+    "vellutata/feltrata",
+    "squamosa"
+   ]
+  },
+  "cornucopioides-cappello": {
+   "cap_veil": false,
+   "cap_surface": [
+    "vellutata/feltrata",
+    "squamosa"
+   ]
+  },
+  "cornucopioides-gambo-bruno": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "assottigliata"
+   ]
+  },
+  "cornucopioides-gambo-grigio": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "assottigliata"
+   ]
+  },
+  "cornucopioides-gambo": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "assottigliata"
+   ]
+  },
+  "cornucopioides-sotto": {
+   "hymenophore": [
+    "liscio",
+    "pliche"
+   ],
+   "hymenophore_color": [
+    "grigio"
+   ]
+  },
+  "cortinarius-orellanus-cappello-bruno": {
+   "cap_veil": null,
+   "cap_surface": [
+    "asciutta",
+    "squamosa",
+    "vellutata/feltrata",
+    "liscia"
+   ]
+  },
+  "cortinarius-orellanus-cappello-rosso": {
+   "cap_veil": null,
+   "cap_surface": [
+    "asciutta",
+    "squamosa",
+    "vellutata/feltrata",
+    "liscia"
+   ]
+  },
+  "cortinarius-orellanus-cappello": {
+   "cap_veil": null,
+   "cap_surface": [
+    "asciutta",
+    "squamosa",
+    "vellutata/feltrata",
+    "liscia"
+   ]
+  },
+  "cortinarius-orellanus-gambo-bruno": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "assottigliata",
+    "normale"
+   ]
+  },
+  "cortinarius-orellanus-gambo-rosso": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "assottigliata",
+    "normale"
+   ]
+  },
+  "cortinarius-orellanus-gambo": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "assottigliata",
+    "normale"
+   ]
+  },
+  "cortinarius-orellanus-sotto": {
+   "hymenophore": [
+    "lamelle"
+   ],
+   "hymenophore_color": [
+    "arancio",
+    "bruno"
+   ]
+  },
+  "cortinarius-rubellus-cappello-bruno": {
+   "cap_veil": null,
+   "cap_surface": [
+    "squamosa",
+    "asciutta",
+    "vellutata/feltrata"
+   ]
+  },
+  "cortinarius-rubellus-cappello-rosso": {
+   "cap_veil": null,
+   "cap_surface": [
+    "squamosa",
+    "asciutta",
+    "vellutata/feltrata"
+   ]
+  },
+  "cortinarius-rubellus-cappello": {
+   "cap_veil": null,
+   "cap_surface": [
+    "squamosa",
+    "asciutta",
+    "vellutata/feltrata"
+   ]
+  },
+  "cortinarius-rubellus-gambo-bruno": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale",
+    "bulbosa",
+    "assottigliata"
+   ]
+  },
+  "cortinarius-rubellus-gambo-rosso": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale",
+    "bulbosa",
+    "assottigliata"
+   ]
+  },
+  "cortinarius-rubellus-gambo": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale",
+    "bulbosa",
+    "assottigliata"
+   ]
+  },
+  "cortinarius-rubellus-sotto": {
+   "hymenophore": [
+    "lamelle"
+   ],
+   "hymenophore_color": [
+    "arancio",
+    "bruno"
+   ]
+  },
+  "cortinarius-traganus-cappello": {
+   "cap_veil": null,
+   "cap_surface": [
+    "asciutta",
+    "liscia",
+    "vellutata/feltrata",
+    "squamosa"
+   ]
+  },
+  "cortinarius-traganus-gambo": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "bulbosa",
+    "normale"
+   ]
+  },
+  "cortinarius-traganus-sotto": {
+   "hymenophore": [
+    "lamelle"
+   ],
+   "hymenophore_color": [
+    "giallo",
+    "bruno",
+    "arancio"
+   ]
+  },
+  "cortinarius-violaceus-cappello-nero": {
+   "cap_veil": false,
+   "cap_surface": [
+    "asciutta",
+    "vellutata/feltrata",
+    "squamosa"
+   ]
+  },
+  "cortinarius-violaceus-cappello": {
+   "cap_veil": false,
+   "cap_surface": [
+    "asciutta",
+    "vellutata/feltrata",
+    "squamosa"
+   ]
+  },
+  "cortinarius-violaceus-gambo-nero": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "bulbosa",
+    "normale"
+   ]
+  },
+  "cortinarius-violaceus-gambo": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "bulbosa",
+    "normale"
+   ]
+  },
+  "cortinarius-violaceus-sotto": {
+   "hymenophore": [
+    "lamelle"
+   ],
+   "hymenophore_color": [
+    "violetto",
+    "bruno"
+   ]
+  },
+  "craterellus-cinereus-cappello-bruno": {
+   "cap_veil": false,
+   "cap_surface": [
+    "liscia",
+    "squamosa"
+   ]
+  },
+  "craterellus-cinereus-cappello-nero": {
+   "cap_veil": false,
+   "cap_surface": [
+    "liscia",
+    "squamosa"
+   ]
+  },
+  "craterellus-cinereus-cappello": {
+   "cap_veil": false,
+   "cap_surface": [
+    "liscia",
+    "squamosa"
+   ]
+  },
+  "craterellus-cinereus-gambo-bruno": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "assottigliata",
+    "normale"
+   ]
+  },
+  "craterellus-cinereus-gambo-nero": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "assottigliata",
+    "normale"
+   ]
+  },
+  "craterellus-cinereus-gambo": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "assottigliata",
+    "normale"
+   ]
+  },
+  "craterellus-cinereus-sotto": {
+   "hymenophore": [
+    "pliche"
+   ],
+   "hymenophore_color": [
+    "grigio"
+   ]
+  },
+  "craterellus-lutescens-cappello-giallo": {
+   "cap_veil": null,
+   "cap_surface": null
+  },
+  "craterellus-lutescens-cappello": {
+   "cap_veil": null,
+   "cap_surface": null
+  },
+  "craterellus-lutescens-gambo-giallo": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": null
+  },
+  "craterellus-lutescens-gambo": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": null
+  },
+  "craterellus-lutescens-sotto": {
+   "hymenophore": [
+    "pliche",
+    "liscio"
+   ],
+   "hymenophore_color": [
+    "giallo",
+    "arancio"
+   ]
+  },
+  "cyclocybe-aegerita-cappello-crema": {
+   "cap_veil": false,
+   "cap_surface": null
+  },
+  "cyclocybe-aegerita-cappello": {
+   "cap_veil": false,
+   "cap_surface": null
+  },
+  "cyclocybe-aegerita-gambo-crema": {
+   "stem_ring": true,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": null
+  },
+  "cyclocybe-aegerita-gambo": {
+   "stem_ring": true,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": null
+  },
+  "cyclocybe-aegerita-sotto": {
+   "hymenophore": [
+    "lamelle"
+   ],
+   "hymenophore_color": [
+    "crema",
+    "grigio",
+    "bruno"
+   ]
+  },
+  "edulis-cappello-crema": {
+   "cap_veil": false,
+   "cap_surface": [
+    "liscia",
+    "asciutta",
+    "viscida"
+   ]
+  },
+  "edulis-cappello": {
+   "cap_veil": false,
+   "cap_surface": [
+    "liscia",
+    "asciutta",
+    "viscida"
+   ]
+  },
+  "edulis-gambo-crema": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": true,
+   "stem_base": [
+    "normale",
+    "bulbosa"
+   ]
+  },
+  "edulis-gambo": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": true,
+   "stem_base": [
+    "normale",
+    "bulbosa"
+   ]
+  },
+  "edulis-sotto": {
+   "hymenophore": [
+    "pori"
+   ],
+   "hymenophore_color": [
+    "bianco",
+    "crema",
+    "giallo",
+    "verde"
+   ]
+  },
+  "entoloma-sinuatum-cappello-bianco": {
+   "cap_veil": false,
+   "cap_surface": [
+    "asciutta",
+    "viscida",
+    "liscia",
+    "squamosa"
+   ]
+  },
+  "entoloma-sinuatum-cappello-crema": {
+   "cap_veil": false,
+   "cap_surface": [
+    "asciutta",
+    "viscida",
+    "liscia",
+    "squamosa"
+   ]
+  },
+  "entoloma-sinuatum-cappello": {
+   "cap_veil": false,
+   "cap_surface": [
+    "asciutta",
+    "viscida",
+    "liscia",
+    "squamosa"
+   ]
+  },
+  "entoloma-sinuatum-gambo-bianco": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale",
+    "bulbosa"
+   ]
+  },
+  "entoloma-sinuatum-gambo-crema": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale",
+    "bulbosa"
+   ]
+  },
+  "entoloma-sinuatum-gambo": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale",
+    "bulbosa"
+   ]
+  },
+  "entoloma-sinuatum-sotto": {
+   "hymenophore": [
+    "lamelle"
+   ],
+   "hymenophore_color": [
+    "giallo",
+    "rosa"
+   ]
+  },
+  "fistulina-hepatica-cappello-bruno": {
+   "cap_veil": false,
+   "cap_surface": [
+    "squamosa"
+   ]
+  },
+  "fistulina-hepatica-cappello-rosa": {
+   "cap_veil": false,
+   "cap_surface": [
+    "squamosa"
+   ]
+  },
+  "fistulina-hepatica-cappello": {
+   "cap_veil": false,
+   "cap_surface": [
+    "squamosa"
+   ]
+  },
+  "fistulina-hepatica-gambo-bruno": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": null
+  },
+  "fistulina-hepatica-gambo-rosa": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": null
+  },
+  "fistulina-hepatica-gambo": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": null
+  },
+  "fistulina-hepatica-sotto": {
+   "hymenophore": [
+    "pori"
+   ],
+   "hymenophore_color": [
+    "crema",
+    "giallo",
+    "bruno"
+   ]
+  },
+  "galerina-marginata-cappello-bruno": {
+   "cap_veil": null,
+   "cap_surface": [
+    "liscia",
+    "viscida",
+    "asciutta"
+   ]
+  },
+  "galerina-marginata-cappello-giallo": {
+   "cap_veil": null,
+   "cap_surface": [
+    "liscia",
+    "viscida",
+    "asciutta"
+   ]
+  },
+  "galerina-marginata-cappello": {
+   "cap_veil": null,
+   "cap_surface": [
+    "liscia",
+    "viscida",
+    "asciutta"
+   ]
+  },
+  "galerina-marginata-gambo-bruno": {
+   "stem_ring": true,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale"
+   ]
+  },
+  "galerina-marginata-gambo-giallo": {
+   "stem_ring": true,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale"
+   ]
+  },
+  "galerina-marginata-gambo": {
+   "stem_ring": true,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale"
+   ]
+  },
+  "galerina-marginata-sotto": {
+   "hymenophore": [
+    "lamelle"
+   ],
+   "hymenophore_color": [
+    "giallo",
+    "bruno"
+   ]
+  },
+  "gymnopilus-junonius-cappello-giallo": {
+   "cap_veil": null,
+   "cap_surface": [
+    "squamosa",
+    "asciutta",
+    "liscia"
+   ]
+  },
+  "gymnopilus-junonius-cappello": {
+   "cap_veil": null,
+   "cap_surface": [
+    "squamosa",
+    "asciutta",
+    "liscia"
+   ]
+  },
+  "gymnopilus-junonius-gambo-giallo": {
+   "stem_ring": true,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale",
+    "assottigliata",
+    "bulbosa"
+   ]
+  },
+  "gymnopilus-junonius-gambo": {
+   "stem_ring": true,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale",
+    "assottigliata",
+    "bulbosa"
+   ]
+  },
+  "gymnopilus-junonius-sotto": {
+   "hymenophore": [
+    "lamelle"
+   ],
+   "hymenophore_color": [
+    "giallo",
+    "arancio",
+    "bruno"
+   ]
+  },
+  "gyromitra-esculenta-cappello-bruno": {
+   "cap_veil": false,
+   "cap_surface": null
+  },
+  "gyromitra-esculenta-cappello-giallo": {
+   "cap_veil": false,
+   "cap_surface": null
+  },
+  "gyromitra-esculenta-cappello-nero": {
+   "cap_veil": false,
+   "cap_surface": null
+  },
+  "gyromitra-esculenta-cappello": {
+   "cap_veil": false,
+   "cap_surface": null
+  },
+  "gyromitra-esculenta-gambo-bruno": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": null
+  },
+  "gyromitra-esculenta-gambo-giallo": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": null
+  },
+  "gyromitra-esculenta-gambo-nero": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": null
+  },
+  "gyromitra-esculenta-gambo": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": null
+  },
+  "gyromitra-esculenta-sotto": {
+   "hymenophore": [
+    "liscio"
+   ],
+   "hymenophore_color": [
+    "bruno",
+    "rosso",
+    "nero"
+   ]
+  },
+  "hydnellum-peckii-cappello-bruno": {
+   "cap_veil": false,
+   "cap_surface": [
+    "vellutata/feltrata",
+    "liscia"
+   ]
+  },
+  "hydnellum-peckii-cappello-rosa": {
+   "cap_veil": false,
+   "cap_surface": [
+    "vellutata/feltrata",
+    "liscia"
+   ]
+  },
+  "hydnellum-peckii-cappello": {
+   "cap_veil": false,
+   "cap_surface": [
+    "vellutata/feltrata",
+    "liscia"
+   ]
+  },
+  "hydnellum-peckii-gambo-bruno": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "bulbosa",
+    "radicante",
+    "normale",
+    "assottigliata"
+   ]
+  },
+  "hydnellum-peckii-gambo-rosa": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "bulbosa",
+    "radicante",
+    "normale",
+    "assottigliata"
+   ]
+  },
+  "hydnellum-peckii-gambo": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "bulbosa",
+    "radicante",
+    "normale",
+    "assottigliata"
+   ]
+  },
+  "hydnellum-peckii-sotto": {
+   "hymenophore": [
+    "aculei"
+   ],
+   "hymenophore_color": [
+    "bianco",
+    "rosa",
+    "bruno"
+   ]
+  },
+  "hydnum-rufescens-cappello-bruno": {
+   "cap_veil": false,
+   "cap_surface": [
+    "liscia",
+    "vellutata/feltrata"
+   ]
+  },
+  "hydnum-rufescens-cappello": {
+   "cap_veil": false,
+   "cap_surface": [
+    "liscia",
+    "vellutata/feltrata"
+   ]
+  },
+  "hydnum-rufescens-gambo-bruno": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale"
+   ]
+  },
+  "hydnum-rufescens-gambo": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale"
+   ]
+  },
+  "hydnum-rufescens-sotto": {
+   "hymenophore": [
+    "aculei"
+   ],
+   "hymenophore_color": [
+    "crema",
+    "arancio"
+   ]
+  },
+  "hygrophoropsis-aurantiaca-cappello-bruno": {
+   "cap_veil": false,
+   "cap_surface": [
+    "vellutata/feltrata",
+    "asciutta"
+   ]
+  },
+  "hygrophoropsis-aurantiaca-cappello-giallo": {
+   "cap_veil": false,
+   "cap_surface": [
+    "vellutata/feltrata",
+    "asciutta"
+   ]
+  },
+  "hygrophoropsis-aurantiaca-cappello": {
+   "cap_veil": false,
+   "cap_surface": [
+    "vellutata/feltrata",
+    "asciutta"
+   ]
+  },
+  "hygrophoropsis-aurantiaca-gambo-bruno": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale",
+    "bulbosa"
+   ]
+  },
+  "hygrophoropsis-aurantiaca-gambo-giallo": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale",
+    "bulbosa"
+   ]
+  },
+  "hygrophoropsis-aurantiaca-gambo": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale",
+    "bulbosa"
+   ]
+  },
+  "hygrophoropsis-aurantiaca-sotto": {
+   "hymenophore": [
+    "lamelle"
+   ],
+   "hymenophore_color": [
+    "arancio"
+   ]
+  },
+  "hygrophorus-latitabundus-cappello-bruno": {
+   "cap_veil": false,
+   "cap_surface": [
+    "viscida"
+   ]
+  },
+  "hygrophorus-latitabundus-cappello-grigio": {
+   "cap_veil": false,
+   "cap_surface": [
+    "viscida"
+   ]
+  },
+  "hygrophorus-latitabundus-cappello": {
+   "cap_veil": false,
+   "cap_surface": [
+    "viscida"
+   ]
+  },
+  "hygrophorus-latitabundus-gambo-bruno": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "assottigliata"
+   ]
+  },
+  "hygrophorus-latitabundus-gambo-grigio": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "assottigliata"
+   ]
+  },
+  "hygrophorus-latitabundus-gambo": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "assottigliata"
+   ]
+  },
+  "hygrophorus-latitabundus-sotto": {
+   "hymenophore": [
+    "lamelle"
+   ],
+   "hymenophore_color": [
+    "bianco"
+   ]
+  },
+  "hygrophorus-marzuolus-cappello-bianco": {
+   "cap_veil": false,
+   "cap_surface": [
+    "liscia",
+    "viscida"
+   ]
+  },
+  "hygrophorus-marzuolus-cappello-nero": {
+   "cap_veil": false,
+   "cap_surface": [
+    "liscia",
+    "viscida"
+   ]
+  },
+  "hygrophorus-marzuolus-cappello": {
+   "cap_veil": false,
+   "cap_surface": [
+    "liscia",
+    "viscida"
+   ]
+  },
+  "hygrophorus-marzuolus-gambo-bianco": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale"
+   ]
+  },
+  "hygrophorus-marzuolus-gambo-nero": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale"
+   ]
+  },
+  "hygrophorus-marzuolus-gambo": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale"
+   ]
+  },
+  "hygrophorus-marzuolus-sotto": {
+   "hymenophore": [
+    "lamelle"
+   ],
+   "hymenophore_color": [
+    "bianco",
+    "grigio"
+   ]
+  },
+  "hypholoma-fasciculare-cappello-arancio": {
+   "cap_veil": null,
+   "cap_surface": [
+    "liscia",
+    "asciutta"
+   ]
+  },
+  "hypholoma-fasciculare-cappello": {
+   "cap_veil": null,
+   "cap_surface": [
+    "liscia",
+    "asciutta"
+   ]
+  },
+  "hypholoma-fasciculare-gambo-arancio": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale",
+    "assottigliata"
+   ]
+  },
+  "hypholoma-fasciculare-gambo": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale",
+    "assottigliata"
+   ]
+  },
+  "hypholoma-fasciculare-sotto": {
+   "hymenophore": [
+    "lamelle"
+   ],
+   "hymenophore_color": [
+    "giallo",
+    "verde",
+    "bruno",
+    "nero"
+   ]
+  },
+  "imleria-badia-cappello": {
+   "cap_veil": false,
+   "cap_surface": [
+    "vellutata/feltrata",
+    "asciutta",
+    "viscida",
+    "liscia"
+   ]
+  },
+  "imleria-badia-gambo": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale",
+    "assottigliata"
+   ]
+  },
+  "imleria-badia-sotto": {
+   "hymenophore": [
+    "pori"
+   ],
+   "hymenophore_color": [
+    "crema",
+    "giallo",
+    "verde"
+   ]
+  },
+  "inocybe-cappello-bianco": {
+   "cap_veil": null,
+   "cap_surface": [
+    "asciutta",
+    "squamosa",
+    "vellutata/feltrata",
+    "liscia",
+    "viscida"
+   ]
+  },
+  "inocybe-cappello-crema": {
+   "cap_veil": null,
+   "cap_surface": [
+    "asciutta",
+    "squamosa",
+    "vellutata/feltrata",
+    "liscia",
+    "viscida"
+   ]
+  },
+  "inocybe-cappello-giallo": {
+   "cap_veil": null,
+   "cap_surface": [
+    "asciutta",
+    "squamosa",
+    "vellutata/feltrata",
+    "liscia",
+    "viscida"
+   ]
+  },
+  "inocybe-cappello-grigio": {
+   "cap_veil": null,
+   "cap_surface": [
+    "asciutta",
+    "squamosa",
+    "vellutata/feltrata",
+    "liscia",
+    "viscida"
+   ]
+  },
+  "inocybe-cappello-rosa": {
+   "cap_veil": null,
+   "cap_surface": [
+    "asciutta",
+    "squamosa",
+    "vellutata/feltrata",
+    "liscia",
+    "viscida"
+   ]
+  },
+  "inocybe-cappello-violetto": {
+   "cap_veil": null,
+   "cap_surface": [
+    "asciutta",
+    "squamosa",
+    "vellutata/feltrata",
+    "liscia",
+    "viscida"
+   ]
+  },
+  "inocybe-cappello": {
+   "cap_veil": null,
+   "cap_surface": [
+    "asciutta",
+    "squamosa",
+    "vellutata/feltrata",
+    "liscia",
+    "viscida"
+   ]
+  },
+  "inocybe-gambo-bianco": {
+   "stem_ring": null,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale",
+    "bulbosa"
+   ]
+  },
+  "inocybe-gambo-crema": {
+   "stem_ring": null,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale",
+    "bulbosa"
+   ]
+  },
+  "inocybe-gambo-giallo": {
+   "stem_ring": null,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale",
+    "bulbosa"
+   ]
+  },
+  "inocybe-gambo-grigio": {
+   "stem_ring": null,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale",
+    "bulbosa"
+   ]
+  },
+  "inocybe-gambo-rosa": {
+   "stem_ring": null,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale",
+    "bulbosa"
+   ]
+  },
+  "inocybe-gambo-violetto": {
+   "stem_ring": null,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale",
+    "bulbosa"
+   ]
+  },
+  "inocybe-gambo": {
+   "stem_ring": null,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale",
+    "bulbosa"
+   ]
+  },
+  "inocybe-lilacina-cappello": {
+   "cap_veil": false,
+   "cap_surface": [
+    "asciutta",
+    "liscia",
+    "squamosa",
+    "viscida"
+   ]
+  },
+  "inocybe-lilacina-gambo": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale",
+    "bulbosa"
+   ]
+  },
+  "inocybe-lilacina-sotto": {
+   "hymenophore": [
+    "lamelle"
+   ],
+   "hymenophore_color": [
+    "grigio",
+    "bruno",
+    "crema"
+   ]
+  },
+  "inocybe-sotto": {
+   "hymenophore": [
+    "lamelle"
+   ],
+   "hymenophore_color": [
+    "grigio",
+    "bruno",
+    "crema",
+    "bianco"
+   ]
+  },
+  "laccaria-amethystina-cappello": {
+   "cap_veil": false,
+   "cap_surface": [
+    "asciutta",
+    "liscia",
+    "squamosa"
+   ]
+  },
+  "laccaria-amethystina-gambo": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale"
+   ]
+  },
+  "laccaria-amethystina-sotto": {
+   "hymenophore": [
+    "lamelle"
+   ],
+   "hymenophore_color": [
+    "violetto"
+   ]
+  },
+  "lactarius-deliciosus-cappello-verde": {
+   "cap_veil": false,
+   "cap_surface": [
+    "asciutta",
+    "viscida"
+   ]
+  },
+  "lactarius-deliciosus-cappello": {
+   "cap_veil": false,
+   "cap_surface": [
+    "asciutta",
+    "viscida"
+   ]
+  },
+  "lactarius-deliciosus-gambo-verde": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": null
+  },
+  "lactarius-deliciosus-gambo": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": null
+  },
+  "lactarius-deliciosus-sotto": {
+   "hymenophore": [
+    "lamelle"
+   ],
+   "hymenophore_color": [
+    "arancio"
+   ]
+  },
+  "lactarius-deterrimus-cappello-giallo": {
+   "cap_veil": false,
+   "cap_surface": null
+  },
+  "lactarius-deterrimus-cappello-verde": {
+   "cap_veil": false,
+   "cap_surface": null
+  },
+  "lactarius-deterrimus-cappello": {
+   "cap_veil": false,
+   "cap_surface": null
+  },
+  "lactarius-deterrimus-gambo-giallo": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": null
+  },
+  "lactarius-deterrimus-gambo-verde": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": null
+  },
+  "lactarius-deterrimus-gambo": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": null
+  },
+  "lactarius-deterrimus-sotto": {
+   "hymenophore": [
+    "lamelle"
+   ],
+   "hymenophore_color": [
+    "arancio"
+   ]
+  },
+  "lepiota-brunneoincarnata-cappello-bruno": {
+   "cap_veil": null,
+   "cap_surface": [
+    "squamosa",
+    "vellutata/feltrata",
+    "asciutta",
+    "liscia"
+   ]
+  },
+  "lepiota-brunneoincarnata-cappello-crema": {
+   "cap_veil": null,
+   "cap_surface": [
+    "squamosa",
+    "vellutata/feltrata",
+    "asciutta",
+    "liscia"
+   ]
+  },
+  "lepiota-brunneoincarnata-cappello-rosso": {
+   "cap_veil": null,
+   "cap_surface": [
+    "squamosa",
+    "vellutata/feltrata",
+    "asciutta",
+    "liscia"
+   ]
+  },
+  "lepiota-brunneoincarnata-cappello": {
+   "cap_veil": null,
+   "cap_surface": [
+    "squamosa",
+    "vellutata/feltrata",
+    "asciutta",
+    "liscia"
+   ]
+  },
+  "lepiota-brunneoincarnata-gambo-bruno": {
+   "stem_ring": null,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale",
+    "bulbosa"
+   ]
+  },
+  "lepiota-brunneoincarnata-gambo-crema": {
+   "stem_ring": null,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale",
+    "bulbosa"
+   ]
+  },
+  "lepiota-brunneoincarnata-gambo-rosso": {
+   "stem_ring": null,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale",
+    "bulbosa"
+   ]
+  },
+  "lepiota-brunneoincarnata-gambo": {
+   "stem_ring": null,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale",
+    "bulbosa"
+   ]
+  },
+  "lepiota-brunneoincarnata-sotto": {
+   "hymenophore": [
+    "lamelle"
+   ],
+   "hymenophore_color": [
+    "bianco",
+    "crema"
+   ]
+  },
+  "lepiota-cristata-cappello-bruno": {
+   "cap_veil": null,
+   "cap_surface": [
+    "squamosa",
+    "asciutta",
+    "vellutata/feltrata",
+    "liscia"
+   ]
+  },
+  "lepiota-cristata-cappello": {
+   "cap_veil": null,
+   "cap_surface": [
+    "squamosa",
+    "asciutta",
+    "vellutata/feltrata",
+    "liscia"
+   ]
+  },
+  "lepiota-cristata-gambo-bruno": {
+   "stem_ring": true,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale"
+   ]
+  },
+  "lepiota-cristata-gambo": {
+   "stem_ring": true,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale"
+   ]
+  },
+  "lepiota-cristata-sotto": {
+   "hymenophore": [
+    "lamelle"
+   ],
+   "hymenophore_color": [
+    "bianco",
+    "crema"
+   ]
+  },
+  "lepiota-subincarnata-cappello-bruno": {
+   "cap_veil": null,
+   "cap_surface": [
+    "squamosa",
+    "vellutata/feltrata",
+    "asciutta",
+    "liscia"
+   ]
+  },
+  "lepiota-subincarnata-cappello-crema": {
+   "cap_veil": null,
+   "cap_surface": [
+    "squamosa",
+    "vellutata/feltrata",
+    "asciutta",
+    "liscia"
+   ]
+  },
+  "lepiota-subincarnata-cappello": {
+   "cap_veil": null,
+   "cap_surface": [
+    "squamosa",
+    "vellutata/feltrata",
+    "asciutta",
+    "liscia"
+   ]
+  },
+  "lepiota-subincarnata-gambo-bruno": {
+   "stem_ring": null,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale",
+    "bulbosa"
+   ]
+  },
+  "lepiota-subincarnata-gambo-crema": {
+   "stem_ring": null,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale",
+    "bulbosa"
+   ]
+  },
+  "lepiota-subincarnata-gambo": {
+   "stem_ring": null,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale",
+    "bulbosa"
+   ]
+  },
+  "lepiota-subincarnata-sotto": {
+   "hymenophore": [
+    "lamelle"
+   ],
+   "hymenophore_color": [
+    "bianco",
+    "crema"
+   ]
+  },
+  "marasmius-oreades-cappello-bruno": {
+   "cap_veil": false,
+   "cap_surface": [
+    "liscia"
+   ]
+  },
+  "marasmius-oreades-cappello": {
+   "cap_veil": false,
+   "cap_surface": [
+    "liscia"
+   ]
+  },
+  "marasmius-oreades-gambo-bruno": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale"
+   ]
+  },
+  "marasmius-oreades-gambo": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale"
+   ]
+  },
+  "marasmius-oreades-sotto": {
+   "hymenophore": [
+    "lamelle"
+   ],
+   "hymenophore_color": [
+    "bianco",
+    "crema"
+   ]
+  },
+  "mellea-cappello-bruno": {
+   "cap_veil": false,
+   "cap_surface": [
+    "squamosa",
+    "liscia",
+    "asciutta",
+    "viscida"
+   ]
+  },
+  "mellea-cappello": {
+   "cap_veil": false,
+   "cap_surface": [
+    "squamosa",
+    "liscia",
+    "asciutta",
+    "viscida"
+   ]
+  },
+  "mellea-gambo-bruno": {
+   "stem_ring": true,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "assottigliata",
+    "normale",
+    "bulbosa"
+   ]
+  },
+  "mellea-gambo": {
+   "stem_ring": true,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "assottigliata",
+    "normale",
+    "bulbosa"
+   ]
+  },
+  "mellea-sotto": {
+   "hymenophore": [
+    "lamelle"
+   ],
+   "hymenophore_color": [
+    "bianco",
+    "crema",
+    "bruno"
+   ]
+  },
+  "morchella-elata-cappello-grigio": {
+   "cap_veil": false,
+   "cap_surface": null
+  },
+  "morchella-elata-cappello-nero": {
+   "cap_veil": false,
+   "cap_surface": null
+  },
+  "morchella-elata-cappello": {
+   "cap_veil": false,
+   "cap_surface": null
+  },
+  "morchella-elata-gambo-grigio": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": null
+  },
+  "morchella-elata-gambo-nero": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": null
+  },
+  "morchella-elata-gambo": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": null
+  },
+  "morchella-elata-sotto": {
+   "hymenophore": [
+    "liscio"
+   ],
+   "hymenophore_color": [
+    "bruno",
+    "grigio",
+    "nero"
+   ]
+  },
+  "morchella-esculenta-cappello-bruno": {
+   "cap_veil": false,
+   "cap_surface": null
+  },
+  "morchella-esculenta-cappello-crema": {
+   "cap_veil": false,
+   "cap_surface": null
+  },
+  "morchella-esculenta-cappello": {
+   "cap_veil": false,
+   "cap_surface": null
+  },
+  "morchella-esculenta-gambo-bruno": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale",
+    "bulbosa"
+   ]
+  },
+  "morchella-esculenta-gambo-crema": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale",
+    "bulbosa"
+   ]
+  },
+  "morchella-esculenta-gambo": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale",
+    "bulbosa"
+   ]
+  },
+  "morchella-esculenta-sotto": {
+   "hymenophore": [
+    "liscio"
+   ],
+   "hymenophore_color": [
+    "crema",
+    "giallo",
+    "bruno"
+   ]
+  },
+  "mycena-pura-cappello-bianco": {
+   "cap_veil": false,
+   "cap_surface": [
+    "liscia",
+    "asciutta"
+   ]
+  },
+  "mycena-pura-cappello-grigio": {
+   "cap_veil": false,
+   "cap_surface": [
+    "liscia",
+    "asciutta"
+   ]
+  },
+  "mycena-pura-cappello-violetto": {
+   "cap_veil": false,
+   "cap_surface": [
+    "liscia",
+    "asciutta"
+   ]
+  },
+  "mycena-pura-cappello": {
+   "cap_veil": false,
+   "cap_surface": [
+    "liscia",
+    "asciutta"
+   ]
+  },
+  "mycena-pura-gambo-bianco": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale"
+   ]
+  },
+  "mycena-pura-gambo-grigio": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale"
+   ]
+  },
+  "mycena-pura-gambo-violetto": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale"
+   ]
+  },
+  "mycena-pura-gambo": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale"
+   ]
+  },
+  "mycena-pura-sotto": {
+   "hymenophore": [
+    "lamelle"
+   ],
+   "hymenophore_color": [
+    "bianco",
+    "rosa",
+    "violetto"
+   ]
+  },
+  "neoboletus-luridiformis-cappello-bruno": {
+   "cap_veil": false,
+   "cap_surface": [
+    "vellutata/feltrata",
+    "asciutta",
+    "liscia"
+   ]
+  },
+  "neoboletus-luridiformis-cappello-nero": {
+   "cap_veil": false,
+   "cap_surface": [
+    "vellutata/feltrata",
+    "asciutta",
+    "liscia"
+   ]
+  },
+  "neoboletus-luridiformis-cappello": {
+   "cap_veil": false,
+   "cap_surface": [
+    "vellutata/feltrata",
+    "asciutta",
+    "liscia"
+   ]
+  },
+  "neoboletus-luridiformis-gambo-bruno": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale",
+    "bulbosa"
+   ]
+  },
+  "neoboletus-luridiformis-gambo-nero": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale",
+    "bulbosa"
+   ]
+  },
+  "neoboletus-luridiformis-gambo": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale",
+    "bulbosa"
+   ]
+  },
+  "neoboletus-luridiformis-sotto": {
+   "hymenophore": [
+    "pori"
+   ],
+   "hymenophore_color": [
+    "rosso",
+    "arancio"
+   ]
+  },
+  "nuda-cappello-bruno": {
+   "cap_veil": false,
+   "cap_surface": [
+    "liscia",
+    "viscida",
+    "asciutta"
+   ]
+  },
+  "nuda-cappello-rosa": {
+   "cap_veil": false,
+   "cap_surface": [
+    "liscia",
+    "viscida",
+    "asciutta"
+   ]
+  },
+  "nuda-cappello": {
+   "cap_veil": false,
+   "cap_surface": [
+    "liscia",
+    "viscida",
+    "asciutta"
+   ]
+  },
+  "nuda-gambo-bruno": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale",
+    "bulbosa"
+   ]
+  },
+  "nuda-gambo-rosa": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale",
+    "bulbosa"
+   ]
+  },
+  "nuda-gambo": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale",
+    "bulbosa"
+   ]
+  },
+  "nuda-sotto": {
+   "hymenophore": [
+    "lamelle"
+   ],
+   "hymenophore_color": [
+    "violetto",
+    "rosa",
+    "bruno"
+   ]
+  },
+  "omphalotus-olearius-cappello-bruno": {
+   "cap_veil": false,
+   "cap_surface": [
+    "liscia",
+    "asciutta",
+    "squamosa"
+   ]
+  },
+  "omphalotus-olearius-cappello-giallo": {
+   "cap_veil": false,
+   "cap_surface": [
+    "liscia",
+    "asciutta",
+    "squamosa"
+   ]
+  },
+  "omphalotus-olearius-cappello": {
+   "cap_veil": false,
+   "cap_surface": [
+    "liscia",
+    "asciutta",
+    "squamosa"
+   ]
+  },
+  "omphalotus-olearius-gambo-bruno": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "assottigliata",
+    "normale"
+   ]
+  },
+  "omphalotus-olearius-gambo-giallo": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "assottigliata",
+    "normale"
+   ]
+  },
+  "omphalotus-olearius-gambo": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "assottigliata",
+    "normale"
+   ]
+  },
+  "omphalotus-olearius-sotto": {
+   "hymenophore": [
+    "lamelle"
+   ],
+   "hymenophore_color": [
+    "arancio",
+    "giallo"
+   ]
+  },
+  "pholiota-squarrosa-cappello-bruno": {
+   "cap_veil": null,
+   "cap_surface": [
+    "asciutta",
+    "squamosa"
+   ]
+  },
+  "pholiota-squarrosa-cappello": {
+   "cap_veil": null,
+   "cap_surface": [
+    "asciutta",
+    "squamosa"
+   ]
+  },
+  "pholiota-squarrosa-gambo-bruno": {
+   "stem_ring": true,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale",
+    "assottigliata"
+   ]
+  },
+  "pholiota-squarrosa-gambo": {
+   "stem_ring": true,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale",
+    "assottigliata"
+   ]
+  },
+  "pholiota-squarrosa-sotto": {
+   "hymenophore": [
+    "lamelle"
+   ],
+   "hymenophore_color": [
+    "giallo",
+    "bruno"
+   ]
+  },
+  "pinophilus-cappello-bruno": {
+   "cap_veil": false,
+   "cap_surface": [
+    "liscia",
+    "asciutta",
+    "viscida",
+    "vellutata/feltrata"
+   ]
+  },
+  "pinophilus-cappello": {
+   "cap_veil": false,
+   "cap_surface": [
+    "liscia",
+    "asciutta",
+    "viscida",
+    "vellutata/feltrata"
+   ]
+  },
+  "pinophilus-gambo-bruno": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": true,
+   "stem_base": [
+    "normale",
+    "bulbosa"
+   ]
+  },
+  "pinophilus-gambo": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": true,
+   "stem_base": [
+    "normale",
+    "bulbosa"
+   ]
+  },
+  "pinophilus-sotto": {
+   "hymenophore": [
+    "pori"
+   ],
+   "hymenophore_color": [
+    "bianco",
+    "crema",
+    "giallo",
+    "verde"
+   ]
+  },
+  "pleurotus-cornucopiae-cappello": {
+   "cap_veil": false,
+   "cap_surface": null
+  },
+  "pleurotus-cornucopiae-gambo": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": null
+  },
+  "pleurotus-cornucopiae-sotto": {
+   "hymenophore": [
+    "lamelle"
+   ],
+   "hymenophore_color": [
+    "bianco",
+    "crema"
+   ]
+  },
+  "pleurotus-eryngii-cappello-bianco": {
+   "cap_veil": false,
+   "cap_surface": [
+    "vellutata/feltrata"
+   ]
+  },
+  "pleurotus-eryngii-cappello-crema": {
+   "cap_veil": false,
+   "cap_surface": [
+    "vellutata/feltrata"
+   ]
+  },
+  "pleurotus-eryngii-cappello-grigio": {
+   "cap_veil": false,
+   "cap_surface": [
+    "vellutata/feltrata"
+   ]
+  },
+  "pleurotus-eryngii-cappello": {
+   "cap_veil": false,
+   "cap_surface": [
+    "vellutata/feltrata"
+   ]
+  },
+  "pleurotus-eryngii-gambo-bianco": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "assottigliata"
+   ]
+  },
+  "pleurotus-eryngii-gambo-crema": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "assottigliata"
+   ]
+  },
+  "pleurotus-eryngii-gambo-grigio": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "assottigliata"
+   ]
+  },
+  "pleurotus-eryngii-gambo": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "assottigliata"
+   ]
+  },
+  "pleurotus-eryngii-sotto": {
+   "hymenophore": [
+    "lamelle"
+   ],
+   "hymenophore_color": [
+    "bianco",
+    "grigio",
+    "crema"
+   ]
+  },
+  "pleurotus-ostreatus-cappello-bianco": {
+   "cap_veil": false,
+   "cap_surface": null
+  },
+  "pleurotus-ostreatus-cappello-bruno": {
+   "cap_veil": false,
+   "cap_surface": null
+  },
+  "pleurotus-ostreatus-cappello-crema": {
+   "cap_veil": false,
+   "cap_surface": null
+  },
+  "pleurotus-ostreatus-cappello": {
+   "cap_veil": false,
+   "cap_surface": null
+  },
+  "pleurotus-ostreatus-gambo-bianco": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "assottigliata"
+   ]
+  },
+  "pleurotus-ostreatus-gambo-bruno": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "assottigliata"
+   ]
+  },
+  "pleurotus-ostreatus-gambo-crema": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "assottigliata"
+   ]
+  },
+  "pleurotus-ostreatus-gambo": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "assottigliata"
+   ]
+  },
+  "pleurotus-ostreatus-sotto": {
+   "hymenophore": [
+    "lamelle"
+   ],
+   "hymenophore_color": [
+    "bianco",
+    "crema"
+   ]
+  },
+  "procera-cappello-bruno": {
+   "cap_veil": false,
+   "cap_surface": [
+    "squamosa",
+    "asciutta"
+   ]
+  },
+  "procera-cappello": {
+   "cap_veil": false,
+   "cap_surface": [
+    "squamosa",
+    "asciutta"
+   ]
+  },
+  "procera-gambo-bruno": {
+   "stem_ring": true,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "bulbosa"
+   ]
+  },
+  "procera-gambo": {
+   "stem_ring": true,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "bulbosa"
+   ]
+  },
+  "procera-sotto": {
+   "hymenophore": [
+    "lamelle"
+   ],
+   "hymenophore_color": [
+    "bianco",
+    "crema"
+   ]
+  },
+  "pseudocraterellus-undulatus-cappello-bruno": {
+   "cap_veil": false,
+   "cap_surface": null
+  },
+  "pseudocraterellus-undulatus-cappello": {
+   "cap_veil": false,
+   "cap_surface": null
+  },
+  "pseudocraterellus-undulatus-gambo-bruno": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "assottigliata"
+   ]
+  },
+  "pseudocraterellus-undulatus-gambo": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "assottigliata"
+   ]
+  },
+  "pseudocraterellus-undulatus-sotto": {
+   "hymenophore": [
+    "liscio",
+    "pliche"
+   ],
+   "hymenophore_color": [
+    "grigio"
+   ]
+  },
+  "repandum-cappello-arancio": {
+   "cap_veil": false,
+   "cap_surface": [
+    "liscia",
+    "asciutta",
+    "vellutata/feltrata"
+   ]
+  },
+  "repandum-cappello-crema": {
+   "cap_veil": false,
+   "cap_surface": [
+    "liscia",
+    "asciutta",
+    "vellutata/feltrata"
+   ]
+  },
+  "repandum-cappello": {
+   "cap_veil": false,
+   "cap_surface": [
+    "liscia",
+    "asciutta",
+    "vellutata/feltrata"
+   ]
+  },
+  "repandum-gambo-arancio": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale"
+   ]
+  },
+  "repandum-gambo-crema": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale"
+   ]
+  },
+  "repandum-gambo": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale"
+   ]
+  },
+  "repandum-sotto": {
+   "hymenophore": [
+    "aculei"
+   ],
+   "hymenophore_color": [
+    "bianco",
+    "crema",
+    "arancio",
+    "rosa"
+   ]
+  },
+  "rubroboletus-satanas-cappello-bianco": {
+   "cap_veil": false,
+   "cap_surface": [
+    "vellutata/feltrata",
+    "asciutta",
+    "liscia",
+    "viscida"
+   ]
+  },
+  "rubroboletus-satanas-cappello-grigio": {
+   "cap_veil": false,
+   "cap_surface": [
+    "vellutata/feltrata",
+    "asciutta",
+    "liscia",
+    "viscida"
+   ]
+  },
+  "rubroboletus-satanas-cappello": {
+   "cap_veil": false,
+   "cap_surface": [
+    "vellutata/feltrata",
+    "asciutta",
+    "liscia",
+    "viscida"
+   ]
+  },
+  "rubroboletus-satanas-gambo-bianco": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": true,
+   "stem_base": [
+    "bulbosa",
+    "normale"
+   ]
+  },
+  "rubroboletus-satanas-gambo-grigio": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": true,
+   "stem_base": [
+    "bulbosa",
+    "normale"
+   ]
+  },
+  "rubroboletus-satanas-gambo": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": true,
+   "stem_base": [
+    "bulbosa",
+    "normale"
+   ]
+  },
+  "rubroboletus-satanas-sotto": {
+   "hymenophore": [
+    "pori"
+   ],
+   "hymenophore_color": [
+    "rosso",
+    "arancio"
+   ]
+  },
+  "russula-aeruginea-cappello": {
+   "cap_veil": false,
+   "cap_surface": [
+    "viscida",
+    "liscia",
+    "asciutta"
+   ]
+  },
+  "russula-aeruginea-gambo": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale",
+    "assottigliata"
+   ]
+  },
+  "russula-aeruginea-sotto": {
+   "hymenophore": [
+    "lamelle"
+   ],
+   "hymenophore_color": [
+    "crema",
+    "giallo"
+   ]
+  },
+  "russula-aurea-cappello-giallo": {
+   "cap_veil": false,
+   "cap_surface": null
+  },
+  "russula-aurea-cappello-rosso": {
+   "cap_veil": false,
+   "cap_surface": null
+  },
+  "russula-aurea-cappello": {
+   "cap_veil": false,
+   "cap_surface": null
+  },
+  "russula-aurea-gambo-giallo": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": null
+  },
+  "russula-aurea-gambo-rosso": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": null
+  },
+  "russula-aurea-gambo": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": null
+  },
+  "russula-aurea-sotto": {
+   "hymenophore": [
+    "lamelle"
+   ],
+   "hymenophore_color": [
+    "crema",
+    "giallo"
+   ]
+  },
+  "russula-heterophylla-cappello-bruno": {
+   "cap_veil": false,
+   "cap_surface": [
+    "viscida",
+    "liscia",
+    "asciutta"
+   ]
+  },
+  "russula-heterophylla-cappello-grigio": {
+   "cap_veil": false,
+   "cap_surface": [
+    "viscida",
+    "liscia",
+    "asciutta"
+   ]
+  },
+  "russula-heterophylla-cappello": {
+   "cap_veil": false,
+   "cap_surface": [
+    "viscida",
+    "liscia",
+    "asciutta"
+   ]
+  },
+  "russula-heterophylla-gambo-bruno": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale",
+    "assottigliata"
+   ]
+  },
+  "russula-heterophylla-gambo-grigio": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale",
+    "assottigliata"
+   ]
+  },
+  "russula-heterophylla-gambo": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale",
+    "assottigliata"
+   ]
+  },
+  "russula-heterophylla-sotto": {
+   "hymenophore": [
+    "lamelle"
+   ],
+   "hymenophore_color": [
+    "bianco",
+    "crema"
+   ]
+  },
+  "russula-olivacea-cappello-bruno": {
+   "cap_veil": false,
+   "cap_surface": [
+    "asciutta",
+    "liscia",
+    "vellutata/feltrata"
+   ]
+  },
+  "russula-olivacea-cappello-rosso": {
+   "cap_veil": false,
+   "cap_surface": [
+    "asciutta",
+    "liscia",
+    "vellutata/feltrata"
+   ]
+  },
+  "russula-olivacea-cappello-violetto": {
+   "cap_veil": false,
+   "cap_surface": [
+    "asciutta",
+    "liscia",
+    "vellutata/feltrata"
+   ]
+  },
+  "russula-olivacea-cappello": {
+   "cap_veil": false,
+   "cap_surface": [
+    "asciutta",
+    "liscia",
+    "vellutata/feltrata"
+   ]
+  },
+  "russula-olivacea-gambo-bruno": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale",
+    "assottigliata"
+   ]
+  },
+  "russula-olivacea-gambo-rosso": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale",
+    "assottigliata"
+   ]
+  },
+  "russula-olivacea-gambo-violetto": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale",
+    "assottigliata"
+   ]
+  },
+  "russula-olivacea-gambo": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale",
+    "assottigliata"
+   ]
+  },
+  "russula-olivacea-sotto": {
+   "hymenophore": [
+    "lamelle"
+   ],
+   "hymenophore_color": [
+    "giallo",
+    "crema"
+   ]
+  },
+  "sarcodon-imbricatus-cappello": {
+   "cap_veil": false,
+   "cap_surface": [
+    "squamosa",
+    "asciutta"
+   ]
+  },
+  "sarcodon-imbricatus-gambo": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale",
+    "assottigliata",
+    "bulbosa"
+   ]
+  },
+  "sarcodon-imbricatus-sotto": {
+   "hymenophore": [
+    "aculei"
+   ],
+   "hymenophore_color": [
+    "grigio",
+    "bruno"
+   ]
+  },
+  "sarcodon-scabrosus-cappello": {
+   "cap_veil": false,
+   "cap_surface": [
+    "squamosa",
+    "asciutta",
+    "vellutata/feltrata"
+   ]
+  },
+  "sarcodon-scabrosus-gambo": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "assottigliata",
+    "radicante"
+   ]
+  },
+  "sarcodon-scabrosus-sotto": {
+   "hymenophore": [
+    "aculei"
+   ],
+   "hymenophore_color": [
+    "bruno",
+    "grigio"
+   ]
+  },
+  "suillus-bovinus-cappello-bruno": {
+   "cap_veil": false,
+   "cap_surface": [
+    "viscida",
+    "liscia"
+   ]
+  },
+  "suillus-bovinus-cappello": {
+   "cap_veil": false,
+   "cap_surface": [
+    "viscida",
+    "liscia"
+   ]
+  },
+  "suillus-bovinus-gambo-bruno": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale",
+    "assottigliata"
+   ]
+  },
+  "suillus-bovinus-gambo": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale",
+    "assottigliata"
+   ]
+  },
+  "suillus-bovinus-sotto": {
+   "hymenophore": [
+    "pori"
+   ],
+   "hymenophore_color": [
+    "giallo",
+    "bruno",
+    "verde"
+   ]
+  },
+  "suillus-cappello-arancio": {
+   "cap_veil": null,
+   "cap_surface": [
+    "viscida",
+    "liscia"
+   ]
+  },
+  "suillus-cappello-giallo": {
+   "cap_veil": null,
+   "cap_surface": [
+    "viscida",
+    "liscia"
+   ]
+  },
+  "suillus-cappello-violetto": {
+   "cap_veil": null,
+   "cap_surface": [
+    "viscida",
+    "liscia"
+   ]
+  },
+  "suillus-cappello": {
+   "cap_veil": null,
+   "cap_surface": [
+    "viscida",
+    "liscia"
+   ]
+  },
+  "suillus-gambo-arancio": {
+   "stem_ring": null,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale",
+    "assottigliata"
+   ]
+  },
+  "suillus-gambo-giallo": {
+   "stem_ring": null,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale",
+    "assottigliata"
+   ]
+  },
+  "suillus-gambo-violetto": {
+   "stem_ring": null,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale",
+    "assottigliata"
+   ]
+  },
+  "suillus-gambo": {
+   "stem_ring": null,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale",
+    "assottigliata"
+   ]
+  },
+  "suillus-sotto": {
+   "hymenophore": [
+    "pori"
+   ],
+   "hymenophore_color": [
+    "giallo",
+    "verde"
+   ]
+  },
+  "terreum-cappello-bruno": {
+   "cap_veil": false,
+   "cap_surface": [
+    "asciutta",
+    "squamosa",
+    "vellutata/feltrata"
+   ]
+  },
+  "terreum-cappello": {
+   "cap_veil": false,
+   "cap_surface": [
+    "asciutta",
+    "squamosa",
+    "vellutata/feltrata"
+   ]
+  },
+  "terreum-gambo-bruno": {
+   "stem_ring": null,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale"
+   ]
+  },
+  "terreum-gambo": {
+   "stem_ring": null,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale"
+   ]
+  },
+  "terreum-sotto": {
+   "hymenophore": [
+    "lamelle"
+   ],
+   "hymenophore_color": [
+    "bianco",
+    "grigio"
+   ]
+  },
+  "tricholoma-equestre-cappello-bruno": {
+   "cap_veil": false,
+   "cap_surface": [
+    "viscida",
+    "squamosa"
+   ]
+  },
+  "tricholoma-equestre-cappello-verde": {
+   "cap_veil": false,
+   "cap_surface": [
+    "viscida",
+    "squamosa"
+   ]
+  },
+  "tricholoma-equestre-cappello": {
+   "cap_veil": false,
+   "cap_surface": [
+    "viscida",
+    "squamosa"
+   ]
+  },
+  "tricholoma-equestre-gambo-bruno": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale",
+    "bulbosa"
+   ]
+  },
+  "tricholoma-equestre-gambo-verde": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale",
+    "bulbosa"
+   ]
+  },
+  "tricholoma-equestre-gambo": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale",
+    "bulbosa"
+   ]
+  },
+  "tricholoma-equestre-sotto": {
+   "hymenophore": [
+    "lamelle"
+   ],
+   "hymenophore_color": [
+    "giallo"
+   ]
+  },
+  "tricholoma-pardinum-cappello-bianco": {
+   "cap_veil": null,
+   "cap_surface": [
+    "asciutta",
+    "squamosa",
+    "viscida"
+   ]
+  },
+  "tricholoma-pardinum-cappello-bruno": {
+   "cap_veil": null,
+   "cap_surface": [
+    "asciutta",
+    "squamosa",
+    "viscida"
+   ]
+  },
+  "tricholoma-pardinum-cappello": {
+   "cap_veil": null,
+   "cap_surface": [
+    "asciutta",
+    "squamosa",
+    "viscida"
+   ]
+  },
+  "tricholoma-pardinum-gambo-bianco": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale",
+    "bulbosa"
+   ]
+  },
+  "tricholoma-pardinum-gambo-bruno": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale",
+    "bulbosa"
+   ]
+  },
+  "tricholoma-pardinum-gambo": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale",
+    "bulbosa"
+   ]
+  },
+  "tricholoma-pardinum-sotto": {
+   "hymenophore": [
+    "lamelle"
+   ],
+   "hymenophore_color": [
+    "bianco",
+    "crema"
+   ]
+  },
+  "tricholoma-portentosum-cappello-bruno": {
+   "cap_veil": false,
+   "cap_surface": [
+    "viscida",
+    "asciutta"
+   ]
+  },
+  "tricholoma-portentosum-cappello-giallo": {
+   "cap_veil": false,
+   "cap_surface": [
+    "viscida",
+    "asciutta"
+   ]
+  },
+  "tricholoma-portentosum-cappello": {
+   "cap_veil": false,
+   "cap_surface": [
+    "viscida",
+    "asciutta"
+   ]
+  },
+  "tricholoma-portentosum-gambo-bruno": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale"
+   ]
+  },
+  "tricholoma-portentosum-gambo-giallo": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale"
+   ]
+  },
+  "tricholoma-portentosum-gambo": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale"
+   ]
+  },
+  "tricholoma-portentosum-sotto": {
+   "hymenophore": [
+    "lamelle"
+   ],
+   "hymenophore_color": [
+    "bianco",
+    "giallo"
+   ]
+  },
+  "tricholoma-sciodes-cappello-grigio": {
+   "cap_veil": false,
+   "cap_surface": [
+    "asciutta",
+    "vellutata/feltrata",
+    "liscia",
+    "squamosa"
+   ]
+  },
+  "tricholoma-sciodes-cappello": {
+   "cap_veil": false,
+   "cap_surface": [
+    "asciutta",
+    "vellutata/feltrata",
+    "liscia",
+    "squamosa"
+   ]
+  },
+  "tricholoma-sciodes-gambo-grigio": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale"
+   ]
+  },
+  "tricholoma-sciodes-gambo": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale"
+   ]
+  },
+  "tricholoma-sciodes-sotto": {
+   "hymenophore": [
+    "lamelle"
+   ],
+   "hymenophore_color": [
+    "bianco",
+    "grigio"
+   ]
+  },
+  "tricholoma-virgatum-cappello": {
+   "cap_veil": false,
+   "cap_surface": [
+    "asciutta",
+    "liscia",
+    "squamosa"
+   ]
+  },
+  "tricholoma-virgatum-gambo": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale",
+    "bulbosa"
+   ]
+  },
+  "tricholoma-virgatum-sotto": {
+   "hymenophore": [
+    "lamelle"
+   ],
+   "hymenophore_color": [
+    "bianco",
+    "grigio"
+   ]
+  },
+  "tylopilus-felleus-cappello-bruno": {
+   "cap_veil": false,
+   "cap_surface": [
+    "asciutta",
+    "vellutata/feltrata",
+    "liscia"
+   ]
+  },
+  "tylopilus-felleus-cappello": {
+   "cap_veil": false,
+   "cap_surface": [
+    "asciutta",
+    "vellutata/feltrata",
+    "liscia"
+   ]
+  },
+  "tylopilus-felleus-gambo-bruno": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": true,
+   "stem_base": [
+    "bulbosa",
+    "normale"
+   ]
+  },
+  "tylopilus-felleus-gambo": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": true,
+   "stem_base": [
+    "bulbosa",
+    "normale"
+   ]
+  },
+  "tylopilus-felleus-sotto": {
+   "hymenophore": [
+    "pori"
+   ],
+   "hymenophore_color": [
+    "bianco",
+    "rosa"
+   ]
+  },
+  "urnula-craterium-cappello-bruno": {
+   "cap_veil": false,
+   "cap_surface": [
+    "vellutata/feltrata",
+    "squamosa",
+    "liscia"
+   ]
+  },
+  "urnula-craterium-cappello": {
+   "cap_veil": false,
+   "cap_surface": [
+    "vellutata/feltrata",
+    "squamosa",
+    "liscia"
+   ]
+  },
+  "urnula-craterium-gambo-bruno": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "assottigliata",
+    "normale"
+   ]
+  },
+  "urnula-craterium-gambo": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "assottigliata",
+    "normale"
+   ]
+  },
+  "urnula-craterium-sotto": {
+   "hymenophore": [
+    "liscio"
+   ],
+   "hymenophore_color": [
+    "nero"
+   ]
+  },
+  "virescens-cappello-grigio": {
+   "cap_veil": false,
+   "cap_surface": [
+    "asciutta",
+    "vellutata/feltrata",
+    "viscida",
+    "liscia",
+    "squamosa"
+   ]
+  },
+  "virescens-cappello-rosa": {
+   "cap_veil": false,
+   "cap_surface": [
+    "asciutta",
+    "vellutata/feltrata",
+    "viscida",
+    "liscia",
+    "squamosa"
+   ]
+  },
+  "virescens-cappello-violetto": {
+   "cap_veil": false,
+   "cap_surface": [
+    "asciutta",
+    "vellutata/feltrata",
+    "viscida",
+    "liscia",
+    "squamosa"
+   ]
+  },
+  "virescens-cappello": {
+   "cap_veil": false,
+   "cap_surface": [
+    "asciutta",
+    "vellutata/feltrata",
+    "viscida",
+    "liscia",
+    "squamosa"
+   ]
+  },
+  "virescens-gambo-grigio": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "assottigliata",
+    "normale"
+   ]
+  },
+  "virescens-gambo-rosa": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "assottigliata",
+    "normale"
+   ]
+  },
+  "virescens-gambo-violetto": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "assottigliata",
+    "normale"
+   ]
+  },
+  "virescens-gambo": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "assottigliata",
+    "normale"
+   ]
+  },
+  "virescens-sotto": {
+   "hymenophore": [
+    "lamelle"
+   ],
+   "hymenophore_color": [
+    "bianco",
+    "crema"
+   ]
+  }
+ }
+}

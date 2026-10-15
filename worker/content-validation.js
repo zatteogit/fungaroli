@@ -13,6 +13,34 @@ const cleanOptions = {
   transformTags: {a:(tag,attrs) => ({tagName:tag,attribs:{...attrs,rel:'noopener noreferrer'}})},
 };
 
+// Fasi di crescita (species-traits, taxa.<id>.stages): elenchi chiusi, in quest'ordine.
+// Le tessere sono quelle delle icone dei caratteri; «taglio» è la sezione dell'uovo, solo nella fase «uovo».
+export const STAGE_IDS = ['uovo', 'apertura', 'giovane', 'adulto', 'maturo', 'sciolto'];
+export const STAGE_TILES = ['cappello', 'sotto', 'gambo', 'taglio'];
+const STAGE_KEYS = ['id', 'label', 'desc', 'cap_shape', 'hymenophore_color', 'tiles', 'source'];
+export function stageErrors(key, t) {
+  const out = [], s = t?.stages, tr = t?.traits || {};
+  const urls = new Set((t?.sources || []).map((x) => (typeof x === 'string' ? x : x?.url)));
+  if (!Array.isArray(s) || s.length < 2) return [`${key}: le fasi sono un elenco di almeno due voci.`];
+  let last = -1;
+  const seen = new Set();
+  for (const f of s) {
+    const at = STAGE_IDS.indexOf(f?.id);
+    if (at < 0) { out.push(`${key}: fase «${f?.id}» non prevista (${STAGE_IDS.join(', ')}).`); continue; }
+    if (seen.has(f.id) || at < last) out.push(`${key}: fasi ripetute o fuori ordine (${f.id}).`);
+    seen.add(f.id); last = at;
+    for (const k of Object.keys(f)) if (!STAGE_KEYS.includes(k)) out.push(`${key}/${f.id}: campo non previsto (${k}).`);
+    if (typeof f.label !== 'string' || !f.label.trim() || f.label.length > 24) out.push(`${key}/${f.id}: serve un’etichetta breve.`);
+    if (typeof f.desc !== 'string' || !f.desc.trim() || f.desc.length > 300) out.push(`${key}/${f.id}: serve una descrizione (al massimo 300 caratteri).`);
+    if (!Array.isArray(f.tiles) || !f.tiles.length || new Set(f.tiles).size !== f.tiles.length || f.tiles.some((x) => !STAGE_TILES.includes(x))) out.push(`${key}/${f.id}: tessere non valide (${STAGE_TILES.join(', ')}).`);
+    else if (f.tiles.includes('taglio') && f.id !== 'uovo') out.push(`${key}/${f.id}: la sezione («taglio») è prevista solo nella fase a uovo.`);
+    if (f.cap_shape != null && (![].concat(tr.cap_shape || []).includes(f.cap_shape) || !f.tiles?.includes?.('cappello'))) out.push(`${key}/${f.id}: forma «${f.cap_shape}» non tra le forme della specie o tessera cappello mancante.`);
+    if (f.hymenophore_color != null && (!Array.isArray(f.hymenophore_color) || !f.hymenophore_color.length || f.hymenophore_color.some((c) => ![].concat(tr.hymenophore_color || []).includes(c)) || !f.tiles?.includes?.('sotto'))) out.push(`${key}/${f.id}: colori sotto il cappello non tra quelli della specie o tessera sotto mancante.`);
+    if (typeof f.source !== 'string' || !/^https:\/\/[^\s"'<>]+$/.test(f.source) || !urls.has(f.source)) out.push(`${key}/${f.id}: la fonte deve essere un URL tra le fonti della specie.`);
+  }
+  return out;
+}
+
 export function validateContent(id, data, previous) {
   const schema = resourceOf(id);
   if (!schema || !data || typeof data !== 'object' || Array.isArray(data)) err('Serve un documento del tipo indicato.');
@@ -101,6 +129,16 @@ export function validateContent(id, data, previous) {
       for (const [v, w] of Object.entries(m || {})) {
         if (!FREQ.includes(w)) err(`${key}: «${w}» non è una frequenza ammessa (di solito, spesso, a volte, di rado).`);
         if (![].concat(t.traits?.[field] || []).includes(v)) err(`${key}: frequenza per «${v}», che non è tra i valori della specie.`);
+      }
+    }
+    for (const [key, t] of Object.entries(value.taxa || {})) if (t?.stages != null) stageErrors(key, t).forEach(err);
+    // citazione per valore di colore e forma del cappello: testo e fonte tra le fonti della specie
+    for (const [key, t] of Object.entries(value.taxa || {})) for (const [field, m] of Object.entries(t?.trait_cites || {})) {
+      if (!['cap_color', 'cap_shape'].includes(field)) err(`${key}: citazione per un carattere non previsto (${field}).`);
+      const urls = new Set((t.sources || []).map((s) => (typeof s === 'string' ? s : s?.url)));
+      for (const [v, c] of Object.entries(m || {})) {
+        if (![].concat(t.traits?.[field] || []).includes(v)) err(`${key}: citazione per «${v}», che non è tra i valori della specie.`);
+        if (typeof c?.quote !== 'string' || !c.quote.trim() || c.quote.length > 400 || !urls.has(c?.source)) err(`${key}: la citazione di «${v}» richiede il testo e una fonte tra le fonti della specie.`);
       }
     }
     for (const [url, c] of Object.entries(value.citations || {})) if (!/^https?:\/\//.test(url) || typeof c?.author !== 'string' || !c.author.trim() || typeof c?.year !== 'string' || !c.year.trim()) err('Ogni citazione richiede URL, autore e anno (o s.d.).');

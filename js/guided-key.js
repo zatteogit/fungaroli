@@ -85,13 +85,21 @@ export function traitTilesHtml(data, traits, icons = null) {
   return tiles.length ? `<ul class="trait-strip ${icons ? 'trait-strip-ill' : 'trait-strip-txt'}" aria-label="Caratteri principali">${tiles.join('')}</ul>${special?.length ? `<p class="small" data-glossary><b>Segni particolari:</b> ${esc(special.join(' · '))}</p>` : ''}` : '';
 }
 
+// differenze con i candidati ancora in gioco e nota della scheda (un carattere utile senza confronto
+// con un'altra scheda, es. le ghiandole del ciliegio); solo quando i candidati sono pochi
+export function tellHtml(c, ids, n) {
+  if (n > 6) return '';
+  const tell = (c.confusables || []).filter((x) => ids.has(x.id)).map((x) => `<span class="gk-tell"><b>Rispetto a ${esc(x.name)}:</b> ${esc(x.how_to_tell)}</span>`).join('');
+  return tell + (c.note ? `<span class="gk-tell">${esc(c.note)}</span>` : '');
+}
+
 export async function renderGuidedKey(box, mode, { items, thumb, note = '' }) {
   box.dataset.glossaryContext = mode === 'alberi' ? 'Alberi' : 'Piante';
   if (!box.innerHTML.trim()) box.innerHTML = '<p class="small muted">Carico i caratteri…</p>';
   const [data, icons] = await Promise.all([load(mode), mode === 'alberi' ? loadTreeIcons() : null]);
   if (!data) { box.innerHTML = '<p class="notice">I caratteri per il percorso guidato non sono disponibili in questo momento. Puoi sfogliare il catalogo.</p>'; return; }
   const st = (STATE[mode] ||= { ans: {}, editing: '' });
-  const pool = items.filter((it) => data.items[it.id]).map((it) => ({ ...it, traits: data.items[it.id].traits, confusables: data.items[it.id].confusables || [] }));
+  const pool = items.filter((it) => data.items[it.id]).map((it) => ({ ...it, traits: data.items[it.id].traits, confusables: data.items[it.id].confusables || [], note: data.items[it.id].note || '' }));
   const missing = items.length - pool.length;
   const list = candidatesFor(data, pool, st.ans);
   const nk = st.editing ? null : nextQuestion(data, list, st.ans);
@@ -120,8 +128,7 @@ export async function renderGuidedKey(box, mode, { items, thumb, note = '' }) {
   const pairs = (data.confusables || []).filter((c) => c.ids.length >= 2 && c.ids.every((id) => ids.has(id)));
   const say = (c) => {
     const why = c.contra.map((k) => `<b>Non torna: ${esc(data.schema[k].short.toLowerCase())}.</b> Di solito ${esc([].concat(c.traits[k]).map((v) => label(data.schema[k], v)).join(' o '))}.`).join(' ');
-    const tell = list.length <= 6 ? c.confusables.filter((x) => ids.has(x.id)).map((x) => `<span class="gk-tell"><b>Rispetto a ${esc(x.name)}:</b> ${esc(x.how_to_tell)}</span>`).join('') : '';
-    return why + tell;
+    return why + tellHtml(c, ids, list.length);
   };
   box.innerHTML = `
     <details class="id-warn"><summary><b>Non è un'identificazione.</b></summary><p>Restringe i candidati in base ai caratteri descritti dalle fonti. Il catalogo è incompleto: confronta sempre più caratteri e la scheda completa.${mode === 'piante' ? ' Non assaggiare per riconoscere una pianta.' : ''}</p></details>

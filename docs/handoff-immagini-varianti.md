@@ -24,6 +24,7 @@ Per ogni specie della tabella:
    - piano, imbuto o ombrellato = adulto.
 
    Gambo e proporzioni restano coerenti con la stessa specie a quell'età.
+   **Dal 15/10:** dove la specie ha le fasi di crescita (`stages` in `data/species-traits.json`), le fasi sostituiscono le varianti di forma. Per quelle specie le forme non si disegnano più: vedi «Varianti di forma sostituite dalle fasi» qui sotto e `docs/handoff-immagini-fasi.md`.
 4. **Colore e forma:** in questo giro una variante cambia solo il colore o solo la forma. Dal 15/10 l'app combina le due scelte (decisione di Matteo): le combinazioni si disegnano a parte, come indicato in `docs/handoff-immagini-mancanti.md`, e finché mancano l'app lo dice.
 
 Ogni variante = **2 icone**: cappello visto di lato (come la tessera «cappello» base) e fungo intero (come la tessera «gambo» base).
@@ -70,7 +71,7 @@ Valori da `data/species-traits.json` (`cap_color`, `cap_shape`). Una specie con 
 | Spugnola gialla (`morchella-esculenta`) | tavola-01 | crema, giallo, bruno | conico, emisferico | 3 |
 | Finferlo (`cibarius`) | tavola-01 | giallo, arancio | convesso, imbuto | 2 |
 | Idnello di Peck (`hydnellum-peckii`) | tavola-01 | bianco, rosa, bruno | convesso, piano, imbuto | 4 |
-| Spugnola nera (`morchella-elata`) | tavola-02 | bruno, grigio, nero | conico | 2 |
+| Spugnola nera (`morchella-elata`) | tavola-02 | bruno, grigio (nero tolto il 15/10: nessuna fonte) | conico | 1 |
 | Falsa spugnola (`gyromitra-esculenta`) | tavola-02 | bruno, rosso, nero, giallo | emisferico | 3 |
 | Urnula (`urnula-craterium`) | tavola-02 | nero, bruno | trombetta | 1 |
 | Trombetta dei morti (`cornucopioides`) | tavola-03 | nero, bruno, grigio | trombetta | 2 |
@@ -78,7 +79,7 @@ Valori da `data/species-traits.json` (`cap_color`, `cap_shape`). Una specie con 
 | Craterello sinuoso (`pseudocraterellus-undulatus`) | tavola-03 | grigio, bruno | trombetta, imbuto | 2 |
 | Steccherino dorato (`repandum`) | tavola-04 | crema, giallo, arancio | convesso, piano, imbuto | 4 |
 | Steccherino rossiccio (`hydnum-rufescens`) | tavola-04 | arancio, bruno | convesso, piano, imbuto | 3 |
-| Finferla (`craterellus-lutescens`) | tavola-04 | bruno, giallo | imbuto, trombetta | 2 |
+| Finferla (`craterellus-lutescens`) | tavola-04 | bruno, giallo | imbuto (trombetta tolta il 15/10: nessuna fonte) | 1 |
 | Sarcodon imbricato (`sarcodon-imbricatus`) | tavola-05 | bruno | convesso, imbuto | 1 |
 | Sarcodon scabroso (`sarcodon-scabrosus`) | tavola-05 | bruno | convesso, imbuto | 1 |
 | Boleto pepato (`chalciporus-piperatus`) | tavola-05 | bruno, arancio | convesso, piano | 2 |
@@ -157,6 +158,48 @@ Valori da `data/species-traits.json` (`cap_color`, `cap_shape`). Una specie con 
 | Lingua di bue (`fistulina-hepatica`) | tavola-30 | rosso, rosa, bruno | — | 2 |
 
 Totale varianti: **259** (ognuna = 2 icone: cappello e fungo intero).
+
+## Varianti di forma sostituite dalle fasi (15/10)
+
+Decisione di Matteo: dove le fasi cambiano davvero l'aspetto, la forma del cappello segue la fase. Il brief è `docs/handoff-immagini-fasi.md`. Per queste 33 specie **le varianti di forma non vanno più disegnate**. Le varianti di colore restano. Le varianti di forma della tignosa verdognola sono già in produzione e restano; anche le sue 16 combinazioni colore + forma restano da disegnare (decisione di Matteo, 15/10; `docs/handoff-immagini-mancanti.md`, punto 2).
+
+| Specie | Forma del disegno base | Forme che non si disegnano più come varianti |
+|---|---|---|
+| Porcino (`edulis`) | convesso | emisferico |
+| Porcino rosso (`pinophilus`) | convesso | emisferico |
+| Porcino nero (`aereus`) | convesso | emisferico, piano |
+| Porcino estivo (`aestivalis`) | convesso | emisferico |
+| Ovolo buono (`caesarea`) | convesso | emisferico, piano |
+| Finferlo (`cibarius`) | imbuto | convesso |
+| Mazza di tamburo (`procera`) | ombrellato | emisferico |
+| Chiodino (`mellea`) | convesso | piano |
+| Moretta (`terreum`) | conico | convesso, piano |
+| Porcino di fiele (`tylopilus-felleus`) | convesso | emisferico, piano |
+| Boleto satana (`rubroboletus-satanas`) | convesso | emisferico |
+| Tignosa verdognola (`amanita-phalloides`) | convesso | emisferico, piano |
+| Tignosa di primavera (`amanita-verna`) | convesso | emisferico, piano |
+| Tignosa bianca (`amanita-virosa`) | conico | emisferico, convesso, piano |
+| Ovolo malefico (`amanita-muscaria`) | convesso | emisferico, piano |
+| Amanita crocea (`amanita-crocea`) | convesso | emisferico, piano |
+| Cortinario orellano (`cortinarius-orellanus`) | convesso | piano, conico |
+| Lepiota bruno-incarnata (`lepiota-brunneoincarnata`) | convesso | piano, ombrellato, emisferico |
+| Lepiota crestata (`lepiota-cristata`) | ombrellato | convesso, piano |
+| Mazza di tamburo arrossante (`chlorophyllum-rhacodes`) | ombrellato | emisferico, convesso |
+| Falso chiodino (`hypholoma-fasciculare`) | convesso | piano |
+| Cortinario rubello (`cortinarius-rubellus`) | conico | convesso, piano |
+| Entoloma livido (`entoloma-sinuatum`) | convesso | piano, conico |
+| Prataiolo (`agaricus-campestris`) | convesso | emisferico, piano |
+| Prataiolo maggiore (`agaricus-arvensis`) | convesso | emisferico, piano |
+| Champignon (`agaricus-bisporus`) | convesso | emisferico, piano |
+| Prataiolo dei boschi (`agaricus-sylvicola`) | convesso | emisferico, piano |
+| Pioppino (`cyclocybe-aegerita`) | convesso | emisferico, piano |
+| Gelone (`pleurotus-ostreatus`) | convesso | imbuto |
+| Coprinus comatus (`coprinus-comatus`) | conico | — |
+| Amanita arrossante (`amanita-rubescens`) | convesso | emisferico, piano |
+| Prataiolo ingiallente (`agaricus-xanthodermus`) | convesso | emisferico, piano |
+| Tignosa panterina (`amanita-pantherina`) | convesso | conico, emisferico, piano |
+
+Le forme che restano da disegnare come varianti (specie senza fasi) sono in `docs/handoff-immagini-mancanti.md`, punto 3. L'elenco aggiornato lo dà `node tools/asset-report.mjs` (categoria `funghi-forma`).
 
 ## Icone da ridisegnare (dati corretti dopo l'import)
 
