@@ -15770,5 +15770,28 @@
     ],
     "bytes": 232620,
     "sha256": "3c942bee7d245fc9c298c6944ceb85847c36641a1a361c79d6da01e281d92e1f"
+  },
+  {
+    "file": "incoming/infografiche/nuda.webp",
+    "tipo": "infografica",
+    "soggetto": "nuda",
+    "modello": "image_gen (identificatore tecnico non esposto)",
+    "prompt": "NEW scientific educational plate of Lepista/Clitocybe nuda, vertical4:5 target1600x2000. Reference1 STYLE/layout ONLY dark brown contours few flat colors on ivory paper; reference2 real nuda; reference3 Cortinarius traganus morphology only. NO text letters numbers arrows frames symbols or watermark. All vignettes in CENTRAL75% of canvas,12%blank ivory outer border EVERY side and lower-right38%x24% entirely EMPTY. Top35% two whole robust nuda, convex to slightly depressed fleshy caps with inrolled edge, VIOLET-LILAC becoming paler brownish-lilac at center, smooth bare surface. Cylindrical robust PURPLE stem with slightly swollen base and violet mycelial felt, NO volva, NO ring, absolutely NO COBWEB CORTINA on nuda. Visible gills LILAC/PURPLE, crowded, SINUATE NOTCHED at stem, not brown or rusty. Middle-left cut section with solid pale LILAC-GRAY UNCHANGING flesh throughout cap and stem, not yellow. Middle-right underside with crowded lilac gills and clear small notch near stalk, no ring/cortina. Small center separate PALE PINK-CREAM spore print on ivory paper (subtle radial deposit), NOT rust dust, no lines arrows or text. BottomLEFT intact Cortinarius traganus and small cut half: lilac cap and stem but mature RUST-BROWN GILLS, visible thin WEB-LIKE CORTINA remnants between cap and stem, and SAFFRON-YELLOW flesh in cut stem, unlike lilac main nuda. Do not transfer cobweb, rust dust or yellow flesh to nuda. Ground tiny dry leaves okay but not elaborate scene, no wood stump.",
+    "edits": [],
+    "tentativi": 1,
+    "stato": "verifica illustrativa superata",
+    "checklist_superata": true,
+    "verifica": "Agarico violetto con cappello/lamelle/gambo lilla, centro schiarito; nessuna cortina o anello. Carne lilla-grigia immutabile e sporata rosa pallido, senza polvere ruggine. Tragano distinto per cortina ragnatelosa, lamelle ruggine e carne giallo-zafferano nel gambo sezionato. Nessuna volva, margini liberi e nessun testo. Attacco lamellare reso schematicamente.",
+    "riferimenti": [
+      "assets/species/nuda-ref.webp (autore/licenza in data/media.json)",
+      "assets/species/cortinarius-traganus-inat1.webp (autore/licenza in data/species-traits.json)",
+      "incoming/infografiche/virescens.webp (solo stile/layout)"
+    ],
+    "dimensioni": [
+      1600,
+      2000
+    ],
+    "bytes": 268306,
+    "sha256": "a7fd74a6c1bcd0fb02e0a9ad65927124f14475ed71376d8a0ea0a8d9bd7a5c94"
   }
 ]
