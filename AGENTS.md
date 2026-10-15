@@ -2,6 +2,8 @@
 
 Prima di modificare qualcosa leggi [docs/handoff-2026-10-14.md](docs/handoff-2026-10-14.md): contiene le decisioni di prodotto, i nomi definitivi, dove stanno dati e codice e i limiti noti. Questo file riassume solo le regole che si rompono più facilmente.
 
+Per identità visiva e design system Fronda leggi anche [docs/handoff-fronda-2026-10-15.md](docs/handoff-fronda-2026-10-15.md). Il kit in `docs/fronda/` è uno studio approvato: la sua presenza non implica che il rebranding sia già integrato nell’app.
+
 ## Rami e pubblicazione
 
 - Il ramo di produzione è **`claude/brave-tesla-wu0a2b`**, non `main` (che non esiste). Le PR vanno aperte verso quel ramo.

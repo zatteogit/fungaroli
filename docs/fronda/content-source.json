@@ -1,0 +1,118 @@
+{
+  "repo": "https://github.com/zatteogit/fungaroli",
+  "branch": "claude/brave-tesla-wu0a2b",
+  "commit": "44f1420e5bc08474428e1049cc9ce550799e9bf0",
+  "checked": "2026-10-15",
+  "counts": {
+    "zones": 15,
+    "plants": 70,
+    "trees": 39,
+    "fungalTaxaRecords": 88,
+    "modeledSpecies": 14,
+    "edibleSelector": 46,
+    "glossaryTerms": 47,
+    "guides": 3
+  },
+  "files": [
+    {
+      "path": "README.md",
+      "url": "https://github.com/zatteogit/fungaroli/blob/44f1420e5bc08474428e1049cc9ce550799e9bf0/README.md",
+      "sha256": "1bdacc0a0a67fc33fbdbdff7af6b2aacd4915b7ee7ed0f78f8984975e462e7ca"
+    },
+    {
+      "path": "AGENTS.md",
+      "url": "https://github.com/zatteogit/fungaroli/blob/44f1420e5bc08474428e1049cc9ce550799e9bf0/AGENTS.md",
+      "sha256": "2eaceafe24b26063ce72576b5cea3b74baf5ba227a0bf6161a99ccab1800ef40"
+    },
+    {
+      "path": "docs/handoff-2026-10-14.md",
+      "url": "https://github.com/zatteogit/fungaroli/blob/44f1420e5bc08474428e1049cc9ce550799e9bf0/docs/handoff-2026-10-14.md",
+      "sha256": "97125e132fafb94d8145b84ec4abe614cd88a507353924a494f0b77b254a94b0"
+    },
+    {
+      "path": "docs/ux-navigazione.md",
+      "url": "https://github.com/zatteogit/fungaroli/blob/44f1420e5bc08474428e1049cc9ce550799e9bf0/docs/ux-navigazione.md",
+      "sha256": "0d0db4737f01e411ae020489587386c62af37307cf00035898f32d5ffdcd094a"
+    },
+    {
+      "path": "docs/guida-uso.md",
+      "url": "https://github.com/zatteogit/fungaroli/blob/44f1420e5bc08474428e1049cc9ce550799e9bf0/docs/guida-uso.md",
+      "sha256": "1b5b891512d71665e31d98c7f35c889b606a8699b328c71d05893b9a7762048a"
+    },
+    {
+      "path": "docs/community.md",
+      "url": "https://github.com/zatteogit/fungaroli/blob/44f1420e5bc08474428e1049cc9ce550799e9bf0/docs/community.md",
+      "sha256": "09f1c2f5ca578b886832c9b4ecf5aa1e96805b61d8abc6db90cd48beed2e5ed5"
+    },
+    {
+      "path": "data/ui-copy.json",
+      "url": "https://github.com/zatteogit/fungaroli/blob/44f1420e5bc08474428e1049cc9ce550799e9bf0/data/ui-copy.json",
+      "sha256": "0f02a9a946156056069a975bca9c429436a71d877625c65282e8a2570da14e00"
+    },
+    {
+      "path": "data/zones.json",
+      "url": "https://github.com/zatteogit/fungaroli/blob/44f1420e5bc08474428e1049cc9ce550799e9bf0/data/zones.json",
+      "sha256": "31c4139515c67efa24bc84f26a51bbbd8c4ae0c0e9b8d2efb85177228dd2de0a"
+    },
+    {
+      "path": "data/species-id.json",
+      "url": "https://github.com/zatteogit/fungaroli/blob/44f1420e5bc08474428e1049cc9ce550799e9bf0/data/species-id.json",
+      "sha256": "65d3b21c9d2d171af3f066f90118d2ef8fb841f9f5bbe70fb4046cbdcea5675d"
+    },
+    {
+      "path": "data/species-traits.json",
+      "url": "https://github.com/zatteogit/fungaroli/blob/44f1420e5bc08474428e1049cc9ce550799e9bf0/data/species-traits.json",
+      "sha256": "8c110f53f78b77e1dbceb348f3d92b30606867ee5629ef1f9b3a6cc7d2102a46"
+    },
+    {
+      "path": "data/plants.json",
+      "url": "https://github.com/zatteogit/fungaroli/blob/44f1420e5bc08474428e1049cc9ce550799e9bf0/data/plants.json",
+      "sha256": "e0ec1415febc1b3efe003fb9ef55031f45c288be9c64050cd4340a54e70127ff"
+    },
+    {
+      "path": "data/trees.json",
+      "url": "https://github.com/zatteogit/fungaroli/blob/44f1420e5bc08474428e1049cc9ce550799e9bf0/data/trees.json",
+      "sha256": "09f491010b3817db2c13cde8db54e1e90301a38a13c2a18c37fbca4002a0953b"
+    },
+    {
+      "path": "data/media.json",
+      "url": "https://github.com/zatteogit/fungaroli/blob/44f1420e5bc08474428e1049cc9ce550799e9bf0/data/media.json",
+      "sha256": "81c0e548827edecbe646eb60ab47d6c3601bc2aeba054215f5bba618ea48061e"
+    },
+    {
+      "path": "data/media-zones.json",
+      "url": "https://github.com/zatteogit/fungaroli/blob/44f1420e5bc08474428e1049cc9ce550799e9bf0/data/media-zones.json",
+      "sha256": "4644fb7991c9e24f0bbc41cf58a46fcb7e83c43a0c744bdf1f0c9d70d553ebe0"
+    },
+    {
+      "path": "data/media-trees.json",
+      "url": "https://github.com/zatteogit/fungaroli/blob/44f1420e5bc08474428e1049cc9ce550799e9bf0/data/media-trees.json",
+      "sha256": "62704d1668c5043cc0a1f8e13ca0907b387502c8d6e47a305d4a76fc6113219a"
+    },
+    {
+      "path": "data/guides.json",
+      "url": "https://github.com/zatteogit/fungaroli/blob/44f1420e5bc08474428e1049cc9ce550799e9bf0/data/guides.json",
+      "sha256": "393c3ff411476dd383cbc08fb01e34f47da1073a57cf19fe1f10fa8edba1dd48"
+    },
+    {
+      "path": "data/glossary.json",
+      "url": "https://github.com/zatteogit/fungaroli/blob/44f1420e5bc08474428e1049cc9ce550799e9bf0/data/glossary.json",
+      "sha256": "4502e0b54923dbb0b1e9a685a440bb699ca509f23eee57ceed997e886592f0ef"
+    },
+    {
+      "path": "js/species.js",
+      "url": "https://github.com/zatteogit/fungaroli/blob/44f1420e5bc08474428e1049cc9ce550799e9bf0/js/species.js",
+      "sha256": "d43868bd15e202e57bc0b49ff5c404d985d714543e383d5af59e0ab86c5f3cc7"
+    },
+    {
+      "path": "js/edible-catalog.js",
+      "url": "https://github.com/zatteogit/fungaroli/blob/44f1420e5bc08474428e1049cc9ce550799e9bf0/js/edible-catalog.js",
+      "sha256": "6211ee882a4df956aef36e603104744a13ef5fa181a34be8eaa884875ce9ee73"
+    },
+    {
+      "path": "js/journal.js",
+      "url": "https://github.com/zatteogit/fungaroli/blob/44f1420e5bc08474428e1049cc9ce550799e9bf0/js/journal.js",
+      "sha256": "5a134fcf3069231bf15f188c3529ec3d3600b0d9594dd2a26a7cdae406c9abd4"
+    }
+  ]
+}
