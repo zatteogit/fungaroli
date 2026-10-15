@@ -226,3 +226,5 @@ Ordine aggiornato da Matteo il 15/10: completare prima tutte le varianti di colo
 | icone/varianti-20.png | agaricus-xanthodermus: colore:crema; agaricus-xanthodermus: colore:grigio; agaricus-xanthodermus: colore:bruno | ok | QA visiva completata; 6 icone, alpha reale, terza colonna vuota. Basi nel manifest. |
 
 | icone/varianti-21.png | agaricus-xanthodermus: colore:giallo; omphalotus-olearius: colore:giallo; omphalotus-olearius: colore:bruno | ok | QA visiva completata; 6 icone, alpha reale, terza colonna vuota. Basi nel manifest. |
+
+| icone/varianti-22.png | hygrophoropsis-aurantiaca: colore:bruno; hygrophoropsis-aurantiaca: colore:giallo; cibarius: colore:arancio | ok | QA visiva completata; 6 icone, alpha reale, terza colonna vuota. Basi nel manifest. |
