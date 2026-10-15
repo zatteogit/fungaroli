@@ -48,7 +48,7 @@ export function renderGlossary(box, selected = '', categories = ['Funghi','Piant
   box.querySelector(`#${box.id}-q`).addEventListener('input', paint);
   box.querySelectorAll('[data-category]').forEach(b => b.onclick = () => { current = b.dataset.category; selected = ''; box.querySelectorAll('[data-category]').forEach(x => x.setAttribute('aria-pressed',String(x === b))); paint(); });
   paint();
-  if (selected) requestAnimationFrame(() => box.querySelector(`#${box.id}-term-${CSS.escape(selected)}`)?.scrollIntoView({block:'center'}));
+  // la voce richiesta (#/glossario/<voce>) la porta in vista routeNow, nello stesso passo della transizione: niente scatto dopo
 }
 
 // Modifica soltanto nodi di testo: niente regex sull'HTML, link annidati o controlli alterati.

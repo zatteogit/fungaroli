@@ -56,6 +56,7 @@ const credit = (m) => m ? `Foto: ${esc(m.author)}${m.license ? `, ${esc(m.licens
 const treePhotos=id=>[MEDIA[id]?.ref,...(MEDIA[id]?.inat||[]),...(MEDIA[id]?.commons||[])].filter((p,i,a)=>p&&a.findIndex(x=>x?.file===p.file)===i);
 
 // Foto principale per le card più grandi (sfide Confronta)
+export const treeHeroSrc = (id) => { const m = treePhotos(id)[0]; return m ? ASSET(m.file_hd || m.file) : ''; };
 export const treePhotoSrc = (id) => { const m = treePhotos(id)[0]; return m ? ASSET(m.file) : ''; };
 
 export function treeThumb(id, size = 56) {
