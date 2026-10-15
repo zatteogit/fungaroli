@@ -19415,5 +19415,33 @@
       "Correct ONLY the bottom edge of ROW1 LEFT yellow cap-only icon: add a crisp continuous dark brown outline enclosing all the short orange teeth on its underside. No bright fringe or unoutlined teeth may extend below this outline. Keep six icons, all existing colors, cap shapes, rows and stems exactly unchanged. Fully transparent background, remove any external glow/shadow, no other changes."
     ],
     "stato": "ok"
+  },
+  {
+    "file": "incoming/infografiche/aereus-revisione.webp",
+    "tipo": "infografica",
+    "soggetto": "aereus",
+    "modello": "image_gen (modello integrato, identificatore tecnico non esposto)",
+    "revisiona": "incoming/infografiche/aereus.webp",
+    "prompt": "Change only the insufficiently brown lower-stem reticulation in the Boletus aereus vignettes (the two complete mushrooms at the top and the enlarged stem detail at the center) to a clearly visible FINE BROWN NETWORK on the lower half of each ochre stem, smoothly remaining pale ivory at the top. The brown lines must be connected fine mesh lines, not dots; eliminate the dot-like marks only within those lower stems by making them part of the fine brown mesh. Keep everything else exactly the same: layout, specimens, colors, light, empty margins, no text. This is a precise local edit of the attached existing 1600x2000 infographic. Keep the caps, pore surfaces, white cut flesh, silhouettes, outlines, all background and all bottom red-stemmed look-alike illustrations exactly unchanged. Do not redesign or regenerate the plate, do not add objects. Preserve 1600x2000 dimensions.",
+    "edits": [
+      "Change only the red stem markings in vignette E, the TWO Neoboletus luridiformis illustrations at BOTTOM LEFT (whole mushroom and the visible outer left side of its cut half), to clearly separate SMALL ROUND RED DOTS on the existing yellow/ochre stem background. Each red mark must read as an individual stippled red granule, with clear yellow space between dots. No connected lines, no polygonal shapes, no honeycomb, no network or mesh, no reticulation on these two red-stemmed look-alikes. Keep everything else exactly the same: layout, specimens, colors, light, empty margins, no text. In particular preserve the pale-above/brown-below fine reticulation of all Boletus aereus stems in the top and center, preserve ALL caps, red pore surfaces, yellow and blue cut flesh, outlines, white cut section, background and reserved empty bottom-right area. Precise local edit only, preserve identical composition and 4:5 canvas; intended final 1600x2000."
+    ],
+    "tentativi": 2,
+    "stato": "verifica illustrativa superata",
+    "checklist_superata": true,
+    "verifica": "Due edit mirati consecutivi con image_gen: reticolo fine chiaro in alto e bruno leggibile in basso su gambo adulto, giovane e dettaglio; sosia con punti rossi separati, senza maglie, pori rossi e carne gialla/blu. Checklist generale README §6: 9/9; checklist aereus §7: 5/5. Confrontate le foto assets/species/aereus-ref.webp e neoboletus-luridiformis-ref.webp. Cappelli opachi bruno-nerastri, pori chiari, sezione bianca senza fascia vinosa o viraggio, nessun anello/volva o testo, nessun elemento aggiunto; disposizione e margini conservati. Uscita del generatore 1122×1402 ricampionata a 1600×2000 per la consegna, WebP qualità 85, 213154 byte (<400000), peso verificato con codice. Originale conservato.",
+    "riferimenti": [
+      "docs/infografiche/README.md §6 (claude/brave-tesla-wu0a2b)",
+      "docs/infografiche/aereus.md §2 e §7 (claude/brave-tesla-wu0a2b)",
+      "assets/species/aereus-ref.webp",
+      "assets/species/neoboletus-luridiformis-ref.webp"
+    ],
+    "dimensioni": [
+      1600,
+      2000
+    ],
+    "qualita_webp": 85,
+    "bytes": 213154,
+    "sha256": "5531ea985d6fbb71ce28020d33e0259b1acfe62250de3d45d478bab8aa0ef24e"
   }
 ]
