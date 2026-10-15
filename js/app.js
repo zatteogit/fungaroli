@@ -290,7 +290,7 @@ function initShell() {
 
 // Scopri: tre cataloghi più «Impara». Ogni catalogo ha «Sfoglia | Impara a riconoscere»;
 // Impara raccoglie glossario, guide e i dettagli di bosco e sentiero.
-const SCOPRI = [['funghi', '#/specie', 'Funghi'], ['piante', '#/piante', 'Piante e fiori'], ['alberi', '#/alberi', 'Alberi']];
+const SCOPRI = [['funghi', '#/specie', 'Funghi'], ['piante', '#/piante', 'Piante e fiori'], ['alberi', '#/alberi', 'Alberi'], ['impara', '#/impara', 'Impara']];
 const SCOPRI_SUB = {
   funghi: [['#/specie', 'Sfoglia'], ['#/riconosci', 'Impara a riconoscere']],
   piante: [['#/piante', 'Sfoglia'], ['#/riconosci/piante', 'Impara a riconoscere']],
@@ -305,15 +305,13 @@ const RECOGNIZE_HEAD = {
 };
 function scopriPlace(r) {
   if (r.view === 'riconosci') return [r.recognizeMode === 'bosco' ? 'impara' : r.recognizeMode, r.recognizeMode === 'bosco' ? '#/riconosci/bosco' : SCOPRI_SUB[r.recognizeMode][1][0]];
-  return { specie: ['funghi', '#/specie'], piante: ['piante', '#/piante'], alberi: ['alberi', '#/alberi'], glossario: ['impara', '#/glossario'], 'guide-list': ['impara', '#/guide'], sfide: ['impara', '#/sfide'] }[r.view] || null;
+  return { specie: ['funghi', '#/specie'], piante: ['piante', '#/piante'], alberi: ['alberi', '#/alberi'], impara: ['impara', '#/impara'], glossario: ['impara', '#/glossario'], 'guide-list': ['impara', '#/guide'], sfide: ['impara', '#/sfide'] }[r.view] || null;
 }
 function paintScopriNav(r) {
   const place = scopriPlace(r), view = document.querySelector(`.view[data-view="${r.view}"]`);
   if (!place || !view) return;
   const [sec, here] = place, cur = (on) => (on ? ' aria-current="page"' : '');
   const nav = view.querySelector('[data-scopri-nav]'), sub = view.querySelector('[data-scopri-sub]');
-  // le sezioni di Impara hanno una loro pagina indice: niente segmenti né sotto-schede, solo «indietro»
-  if (sec === 'impara') { if (nav) nav.innerHTML = ''; if (sub) sub.innerHTML = ''; return; }
   if (nav) nav.innerHTML = SCOPRI.map(([id, href, label]) => `<a href="${href}" data-section="${id}"${cur(id === sec)}>${label}</a>`).join('');
   if (sub) sub.innerHTML = SCOPRI_SUB[sec].map(([href, label]) => `<a href="${href}"${cur(href === here)}>${label}</a>`).join('');
 }
@@ -343,8 +341,8 @@ function parseRoute() {
 }
 
 // profondita' e posizione delle viste: decidono la direzione della transizione
-const LEVEL = { pianta:1, commestibile: 1, guide: 2, zona: 1, 'specie-dettaglio': 1, albero: 1, info: 1, metodo: 2, fungo: 1, glossario: 1, 'guide-list': 1, sfide: 1 };
-const TABS = ['uscite', 'mappa', 'specie', 'impara', 'diario'];
+const LEVEL = { mappa: 1, pianta:1, commestibile: 1, guide: 2, zona: 1, 'specie-dettaglio': 1, albero: 1, info: 1, metodo: 2, fungo: 1, glossario: 1, 'guide-list': 1, sfide: 1 };
+const TABS = ['uscite', 'specie', 'diario'];
 const SUB = { specie: 0, alberi: 1, piante:2, riconosci: 3, glossario: 4, 'guide-list': 5, sfide: 6 };
 // una sfida aperta è un livello sotto l'elenco delle sfide
 const levelOf = (r) => (LEVEL[r.view] || 0) + (r.compare ? 2 : 0) + (r.challengeId ? 1 : 0) + (r.view === 'riconosci' && r.recognizeMode === 'bosco' ? 1 : 0);
@@ -445,7 +443,7 @@ function route() {
   // un ridisegno del meteo in sospeso (in home aspetta fino a 6 s) non deve cadere sulla pagina nuova: questa si disegna gia' con i dati aggiornati
   if (weatherPaintTimer) { clearTimeout(weatherPaintTimer.handle); weatherPaintTimer = null; }
   const r = parseRoute();
-  r.tab = { piante:'specie', pianta:'specie', zona: 'uscite', glossario: 'impara', 'specie-dettaglio': 'specie', alberi: 'specie', albero: 'specie', riconosci: r.recognizeMode === 'bosco' ? 'impara' : 'specie', info: '', metodo: '', guide: 'impara', 'guide-list': 'impara', sfide: 'impara', fungo: 'specie', commestibile: 'specie' }[r.view] ?? r.view;
+  r.tab = { mappa: 'uscite', impara: 'specie', piante:'specie', pianta:'specie', zona: 'uscite', glossario: 'specie', 'specie-dettaglio': 'specie', alberi: 'specie', albero: 'specie', riconosci: 'specie', info: '', metodo: '', guide: 'specie', 'guide-list': 'specie', sfide: 'specie', fungo: 'specie', commestibile: 'specie' }[r.view] ?? r.view;
   r.hash = location.hash || '#/';
   const nav = navKind(prev, r), back = prev?.hash || '';
   if (prev) scrollMem.set(prev.hash, scrollY);

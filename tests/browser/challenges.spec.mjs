@@ -22,7 +22,7 @@ for(const width of [390,1280]) test(`sfide: Confronta dà il timbro e le spunte 
   const view=page.locator('.view[data-view="sfide"]');
   await expect(view.locator('h1')).toHaveText('Sfide');
   await expect(page.locator('[data-back]:visible span')).toHaveText('Impara');
-  await expect(page.locator('.tabbar [data-tab="impara"]')).toHaveAttribute('aria-current','page');
+  await expect(page.locator('.tabbar [data-tab="specie"]')).toHaveAttribute('aria-current','page');
   await expect(view.locator('#ch-stamps-h')).toHaveText('I tuoi timbri');
   await expect(view.locator('.ch-stamps-grid')).toHaveCount(0);
 

@@ -2,7 +2,7 @@
 <html lang="it">
 <head>
   <meta charset="utf-8">
-  <meta name="app-version" content="fungaroli-shell-v67">
+  <meta name="app-version" content="fungaroli-shell-v69">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
   <link rel="preload" href="data/crop-points.json" as="fetch" crossorigin>
   <meta name="theme-color" content="#f7f4ea" media="(prefers-color-scheme: light)">
@@ -37,9 +37,7 @@
   <nav class="tabbar" aria-label="Sezioni">
       <span class="tab-pill" aria-hidden="true"></span>
       <a href="#/" data-tab="uscite"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 6 0 0 1 16 0z"/><path d="M10 12v6a2 2 0 0 0 4 0v-6"/></svg><span>Uscite</span></a>
-      <a href="#/mappa" data-tab="mappa"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2z"/><path d="M9 4v14M15 6v14"/></svg><span>Mappa</span></a>
       <a href="#/scopri" data-tab="specie"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="7" height="7" rx="2"/><rect x="13" y="4" width="7" height="7" rx="2"/><rect x="4" y="13" width="7" height="7" rx="2"/><rect x="13" y="13" width="7" height="7" rx="2"/></svg><span>Scopri</span></a>
-      <a href="#/impara" data-tab="impara"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9.5 12 5l9 4.5-9 4.5z"/><path d="M7 11.6V16c0 1.4 2.2 2.8 5 2.8s5-1.4 5-2.8v-4.4"/><path d="M21 9.5V15"/></svg><span>Impara</span></a>
       <a href="#/diario" data-tab="diario"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h11a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H6z"/><path d="M6 3v18M10 8h5M10 12h5"/></svg><span>Taccuino</span></a>
       <button type="button" class="tab-search" data-open-search aria-label="Cerca in tutta l'app" title="Cerca (/)"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg><span class="tsl">Cerca</span><kbd class="tsk">/</kbd></button>
     </nav>
@@ -56,6 +54,7 @@
           <h1 id="home-h" class="view-title">Dove andare</h1>
           <p class="view-sub"><button type="button" id="refresh" class="upd-btn" title="Tocca per ricaricare il meteo"><span id="updated" aria-live="polite"></span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12a8 8 0 1 1-2.34-5.66"/><path d="M20 4v4.5h-4.5"/></svg></button></p>
         </div>
+        <a href="#/mappa" class="map-link" data-map-link><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2z"/><path d="M9 4v14M15 6v14"/></svg><span>Mappa delle zone</span></a>
       </div>
       <div id="active-filters" class="active-filters" role="group" aria-label="Cosa cerchi e preferenze"></div>
       <div id="days" class="days" role="tablist" aria-label="Giorno di uscita"></div>
@@ -132,6 +131,7 @@
 
     <section class="view" data-view="impara" hidden aria-labelledby="learn-h">
       <div class="view-head"><div><h1 id="learn-h" class="view-title">Impara</h1><p class="view-sub">Parole, guide e piccole sfide per conoscere il bosco.</p></div></div>
+      <nav class="seg-nav" data-scopri-nav aria-label="Sezioni di Scopri"></nav><nav class="sub-nav" data-scopri-sub aria-label="Modalità della sezione"></nav>
       <div id="learn-hub" class="learn-hub"></div>
     </section>
     <section class="view" data-view="guide-list" hidden aria-labelledby="guides-h">
