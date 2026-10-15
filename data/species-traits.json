@@ -10064,7 +10064,7 @@
           "squamosa"
         ],
         "cap_veil": null,
-        "stem_ring": null,
+        "stem_ring": true,
         "stem_volva": false,
         "stem_reticulum": false,
         "stem_base": [
@@ -10119,11 +10119,16 @@
         {
           "title": "Species Fungorum — Coprinus comatus (nome corrente)",
           "url": "https://www.speciesfungorum.org/Names/NamesRecord.asp?RecordID=148667"
+        },
+        {
+          "title": "Coprinus comatus, Wikipedia (en)",
+          "url": "https://en.wikipedia.org/wiki/Coprinus_comatus"
         }
       ],
       "trees": [],
       "dangerous_lookalikes": [],
-      "caution": "Commestibile solo giovane e fresco; non confonderlo con altri coprini."
+      "caution": "Commestibile solo giovane e fresco; non confonderlo con altri coprini.",
+      "traits_notes": "Anello presente, mobile e spesso scivolato verso la base: «has a loose ring near the bottom» (en.wikipedia), «Mobile, membranoso, esile e fugace» (it.wikipedia), «it soon becomes movable and often falls down to the base of the stem» (first-nature)."
     },
     "fistulina-hepatica": {
       "latin": "Fistulina hepatica",

@@ -410,6 +410,12 @@ export function traitStrip(edibleId, t = refOf(edibleId)) {
 // Avvisi: ognuno ha un tipo e un titolo breve (data/species-traits.json, field_rules).
 // Chiuso mostra l'indice tipo · titolo; aperto ogni avviso per intero, con la citazione (Autore, anno).
 const ATT_KIND = { sosia: 'Sosia', caratteri: 'Caratteri', regole: 'Regole', cottura: 'Cottura', tossicita: 'Tossicità', ambiente: 'Ambiente' };
+const ATT_COUNT = {
+  sosia: ['sosia pericoloso', 'sosia pericolosi'], caratteri: ['carattere da controllare', 'caratteri da controllare'],
+  regole: ['regola di raccolta', 'regole di raccolta'], cottura: ['cautela in cucina', 'cautele in cucina'],
+  tossicita: ['rischio di intossicazione', 'rischi di intossicazione'], ambiente: ['cautela sul raccolto', 'cautele sul raccolto'],
+  altro: ['avviso', 'avvisi'],
+};
 const citeOf = (url) => { const c = url && CITES[url]; return c ? `${c.author}, ${c.year}` : ''; };
 function attItem(r) {
   const k = ATT_KIND[r.kind], c = citeOf(r.source);
@@ -459,7 +465,14 @@ export function attentionBox(rules, extra = '') {
   const list = `<ul class="att-list">${sorted.map(attItem).join('')}</ul>${extra ? `<p class="att-extra small">${esc(extra)}</p>` : ''}`;
   // uno o due avvisi: sempre aperti, niente da toccare
   if (sorted.length <= 2) return `<section class="attention att-c att-static" role="note" aria-label="Attenzione"><div class="att-top">${head}</div>${list}</section>`;
-  const index = `<ul class="att-index" aria-hidden="true" data-no-glossary>${sorted.map((r) => `<li class="${r.severity === 'critico' ? 'crit' : ''}">${ATT_KIND[r.kind] ? `<span class="att-k">${ATT_KIND[r.kind]}</span>` : ''}<span class="att-it">${esc(r.title || r.text)}</span></li>`).join('')}</ul>`;
+  // chiuso: quanti avvisi per tipo, in parole («2 sosia pericolosi»), i tipi con avvisi critici per primi
+  const groups = [];
+  for (const r of sorted) {
+    const k = ATT_COUNT[r.kind] ? r.kind : 'altro', g = groups.find((x) => x.k === k) || (groups.push({ k, n: 0, crit: false }), groups[groups.length - 1]);
+    g.n++; g.crit ||= r.severity === 'critico';
+  }
+  groups.sort((a, b) => b.crit - a.crit || b.n - a.n);
+  const index = `<ul class="att-index att-sum" aria-hidden="true" data-no-glossary>${groups.map((g) => { const [one, many] = ATT_COUNT[g.k]; return `<li class="${g.crit ? 'crit' : ''}"><span class="att-it">${g.n} ${g.n === 1 ? one : many}</span></li>`; }).join('')}</ul>`;
   return `<details class="attention att-c" role="note"><summary><span class="att-top">${head}</span>${index}<span class="att-more"><span class="att-open">Leggi i dettagli e le fonti</span><span class="att-close">Chiudi i dettagli</span></span></summary>${list}</details>`;
 }
 

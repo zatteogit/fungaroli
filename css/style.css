@@ -3223,3 +3223,36 @@ div.tx-look-main { cursor: default; }
 .profile-entry:not(.is-user) { width: 40px; height: 40px; padding: 0; justify-content: center; }
 .profile-entry:not(.is-user) [data-profile-label] { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 .profile-entry:not(.is-user) svg { width: 19px; height: 19px; }
+/* foto arrivate dalla cache o sostituite a una già visibile: nessuna dissolvenza */
+img[data-image-state="ready"][data-image-fast] { animation: none; }
+/* riquadro avvisi chiuso: una riga per tipo, già parlante («2 sosia pericolosi») */
+.att-sum { gap: 8px; }
+.att-sum li { display: flex; grid-template-columns: none; align-items: baseline; gap: 0; font-size: 15.5px; font-weight: 600; }
+.att-sum li .att-it { display: inline; -webkit-line-clamp: unset; overflow: visible; font-weight: 600; }
+.att-sum li::before { content: ''; flex: none; width: 7px; height: 7px; margin-right: 10px; border-radius: 50%; background: color-mix(in srgb, var(--crit-ink) 45%, transparent); transform: translateY(-1px); }
+.att-sum li.crit::before { background: var(--crit); }
+.att-sum li.crit .att-it::before { content: none; }
+.attention .att-sum li .att-it::before { content: none !important; }
+.att-c:not(.att-static) .att-n { display: none; }
+.attention .att-sum { margin-top: 14px; }
+
+/* iPhone, app installata: la barra di stato è trasparente (black-translucent) e l'intestazione sfocata ci passa sotto.
+   iOS scrive ora e batteria sempre in bianco: nel tema chiaro un velo scuro leggerissimo, solo in quella fascia, le tiene leggibili. */
+.status-veil { display: none; }
+@media (display-mode: standalone) {
+  .status-veil { display: block; position: fixed; z-index: 1100; top: 0; left: 0; right: 0; height: env(safe-area-inset-top, 0px); pointer-events: none; background: linear-gradient(rgb(20 16 10 / .34), rgb(20 16 10 / .14)); }
+  :root[data-theme="dark"] .status-veil { display: none; }
+}
+@media (display-mode: standalone) and (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .status-veil { display: none; } }
+
+/* Punti di ritaglio: ogni contenitore usa la posizione del suo formato (data/crop-points.json via js/images.js);
+   senza dati resta il centro di prima. */
+.tile > img, .notebook-pages .j-img img, .j-img > img { object-position: var(--op-54, 50% 50%); }
+.portrait > img { object-position: var(--op-34, 50% 50%); }
+.sp-card > img { object-position: var(--op-45, 50% 50%); }
+.cover > img { object-position: var(--op-167, 50% 50%); }
+#hero .cover > img.cover-img { object-position: var(--op-167, center 40%); }
+.phero-img > img { object-position: var(--op-34, 50% 50%); }
+@media (min-width: 900px) { .phero-img > img { object-position: var(--op-167, 50% 50%); } }
+.id-card-img img, .tx-img img, .ch-opt-img img, .sheet-img > img { object-position: var(--op-43, 50% 50%); }
+:is(.thumb, .sp-strip img, .look-btn img, .tx-look-main img, .cc-th img, .cmp-chip-img img, .cmp-zoom img, .mapctl-tile img, .wiz-choice.has-img img) { object-position: var(--op-11, 50% 50%); }
