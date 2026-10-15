@@ -15566,5 +15566,30 @@
     ],
     "bytes": 251210,
     "sha256": "1c2613e86dc4e3541cef5e8b656275b91a3669afb431f8ec52ef4340c489d51d"
+  },
+  {
+    "file": "incoming/infografiche/aereus.webp",
+    "tipo": "infografica",
+    "soggetto": "aereus",
+    "modello": "image_gen (identificatore tecnico non esposto)",
+    "prompt": "Create one NEW scientific educational mushroom plate, vertical4:5 target1600x2000. Reference1 STYLE AND LAYOUT ONLY: clean brown outlines, limited flat natural colors, pale ivory paper and floating vignettes. Reference2 main species morphology only; reference3 lookalike morphology only, do not copy photo compositions. Leave outer10% paper EMPTY on every edge and bottom-right38%x24% EMPTY. No text, letters, numbers, arrows, frames or marks. Top40%: whole adult and young main species. Middle-left: clean longitudinal WHITE UNCHANGING flesh section. Middle-right: underside with fine tiny ROUND sponge pores and short tubes, NEVER gills. Small center stem surface detail. Bottom-left: intact and half-cut dangerous lookalike, smaller than main specimens but legible. No ring, no volva on any specimen, no extra roots/caps/stems. MAIN Boletus aereus: very dark chocolate to NEAR BLACK BRONZE cap, MATTE dry slightly uneven/velvety, never shiny reddish. Very stout beige-ochre stem with FINE NETTING, pale upper, light brown lower. Young pores WHITE, adult pale yellow to yellow-olive, no red/orange/blue. Section completely WHITE including under cap skin: NO wine-red line, no pink or blue. LOOKALIKE Neoboletus luridiformis: dark-brown cap, RED PORES, yellow stem covered with RED DOTS, absolutely NO NET on stem; yellow flesh with strong BLUE staining after cutting. Main is netted, lookalike is dotted.",
+    "edits": [
+      "Localized correction of this existing bolete plate. Preserve all vignettes, ivory paper, no text. Keep main aereus cap matte near-black bronze, completely white cut flesh, light young pores and cream adult pores. The FINE NET on main stems should be PALE above and LIGHT BROWN on the lower stem, thin raised mesh, not dark spots. Keep bottom-left Neoboletus RED pores, RED DOTS (no net) and yellow-to-blue cut flesh. Also reduce the entire composition to 85% within same vertical4:5 frame, leaving at least7% EMPTY PAPER margin along ALL four edges. Keep lower-right blank. No new objects or marks."
+    ],
+    "tentativi": 2,
+    "stato": "da rivedere: tinta del reticolo inferiore",
+    "checklist_superata": false,
+    "verifica": "Cappello bruno-nerastro opaco, pori chiari, sezione bianca uniforme senza fascia vinosa. Reticolo fine chiaro in alto che sfuma sul gambo ocra; la tinta brunita della rete in basso resta poco distinta e viene segnalata per revisione. Piede rosso distinto per pori rossi, puntini rossi senza maglie e carne gialla/blu. Margini liberi e nessun testo.",
+    "riferimenti": [
+      "assets/species/aereus-ref.webp (autore/licenza in data/media.json)",
+      "assets/species/neoboletus-luridiformis-ref.webp (autore/licenza in data/species-traits.json)",
+      "incoming/infografiche/edulis.webp (solo stile/layout)"
+    ],
+    "dimensioni": [
+      1600,
+      2000
+    ],
+    "bytes": 250006,
+    "sha256": "fc965c1e171b123cca22e94aefc7fe1c086b110e461e1b9af38eec12c090ef08"
   }
 ]
