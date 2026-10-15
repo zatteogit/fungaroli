@@ -52,6 +52,10 @@ export function renderGlossary(box, selected = '', categories = ['Funghi','Piant
 }
 
 // Modifica soltanto nodi di testo: niente regex sull'HTML, link annidati o controlli alterati.
+// «ago» è anche agosto: un mese abbreviato accanto a un altro mese (giu · lug · ago, ago–ott) non è un termine
+const MON = '(?:gen|feb|mar|apr|mag|giu|lug|ago|set|ott|nov|dic)';
+const MON_WORD = new RegExp(`^${MON}$`, 'i'), MON_BEFORE = new RegExp(`\\b${MON}\\.?\\s*[·•,–-]?\\s*$`, 'i'), MON_AFTER = new RegExp(`^\\.?\\s*[·•,–-]?\\s*${MON}\\b`, 'i');
+export const isMonthAbbr = (text, start, word) => MON_WORD.test(word) && (MON_BEFORE.test(text.slice(0, start)) || MON_AFTER.test(text.slice(start + word.length)));
 export function enhanceGlossary(root) {
   if (!root || !aliasRe) return;
   root.querySelectorAll('a.tree-link,a.species-link,a[data-entity]').forEach(a=>a.setAttribute('aria-haspopup','dialog'));
@@ -77,7 +81,7 @@ export function enhanceGlossary(root) {
     for(const m of matches) {
       const start = m.index + m[1].length, word = m[2];
       const id = resolveGlossaryTerm(aliasMap,word,context)?.id;
-      if(!id || seen.has(id) || (pos && start - pos < 24)) continue;
+      if(!id || seen.has(id) || (pos && start - pos < 24) || isMonthAbbr(node.textContent, start, word)) continue;
       seen.add(id);
       fragment.append(document.createTextNode(node.textContent.slice(pos,start)));
       const a = document.createElement('a'); a.className = 'glossary-link'; a.dataset.term = id; a.href = `#/glossario/${id}`; a.setAttribute('aria-haspopup','dialog'); a.textContent = word;

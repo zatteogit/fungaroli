@@ -47,3 +47,9 @@ test('botanical layouts, global search and short note form in both themes',async
  await page.goto('/#/pianta/corbezzolo');await page.setViewportSize({width:390,height:900});await page.locator('#plant-detail [data-note-kind]').click();const dialog=page.locator('.notebook-dialog[open]');await expect(dialog.locator('[type="submit"]')).toBeInViewport();await expect(dialog.locator('.notebook-context')).not.toHaveAttribute('open','');await dialog.screenshot({path:'/tmp/fungaroli-note-short-dark.png'});await dialog.locator('[data-note-close]').first().click();
  expect(errors).toEqual([]);
 });
+test('i mesi abbreviati non diventano termini del glossario («ago» di agosto non è un ago)',async({page})=>{
+ const errors=await start(page,'#/pianta/ortica');
+ const view=page.locator('.view:not([hidden])');await expect(view).toContainText('ago');
+ await expect(view.locator('a.glossary-link').filter({hasText:/^ago$/i})).toHaveCount(0);
+ expect(errors).toEqual([]);
+});
