@@ -1,4 +1,4 @@
-// Service worker di Fungaroli: l'app si apre anche senza campo.
+// Service worker di Fronda: l'app si apre anche senza campo.
 // - codice e dati dell'app (stessa origine): prima la rete (max 3 s), poi la cache: una nuova versione si vede subito
 // - immagini (assets/): subito dalla cache, aggiornate in background
 // - meteo Open-Meteo: gestito dall'app con data di acquisizione e limite d'età
