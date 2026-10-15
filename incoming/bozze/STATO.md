@@ -269,3 +269,7 @@ Ordine aggiornato da Matteo il 15/10: completare prima tutte le varianti di colo
 | timbri/bosco-querce.png | ok | Foglia lobata arrotondata e ghianda con cupola continua a squame appressate, riferimento roverella; margini52px alpha0, inchiostro integro ai4estremi; Peluria omessa, squame della cupola sintetizzate; non rappresenta tutte le querce della sfida. |
 | bozze/timbri/bosco-querce-verifica.png | ok | Prove64/84/112px su carta e scuro. |
 | qa/2026-10-15-timbro-bosco-querce.json | ok | Controllo automatico del formato, margini e inchiostro ai4estremi. |
+
+| timbri/bosco-carpino-nero.png | ok | Foglia ovato-lanceolata acuminata dentata e infruttescenza pendula di sacche membranose simili al luppolo; peduncolo staccato dall'anello; margini52px alpha0, inchiostro integro ai4estremi; Numero di nervature e denti secondari ridotto per la scala; nucule interne non visibili nelle sacche chiuse. |
+| bozze/timbri/bosco-carpino-nero-verifica.png | ok | Prove64/84/112px su carta e scuro. |
+| qa/2026-10-15-timbro-bosco-carpino-nero.json | ok | Controllo automatico del formato, margini e inchiostro ai4estremi. |

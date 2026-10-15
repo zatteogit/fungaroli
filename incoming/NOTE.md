@@ -259,3 +259,8 @@ Soggetto corretto: foglia ovale-ellittica a margine intero, nervature laterali q
 ### bosco-querce — 15/10, continuazione
 
 Foglia lobata arrotondata e ghianda con cupola continua a squame appressate, riferimento roverella. Fonti interne: data/trees.json: roverella.leaf,fruit,recognize; data/challenges.json: bosco-querce. Peluria omessa, squame della cupola sintetizzate; non rappresenta tutte le querce della sfida. PNG e QA verificati prima del caricamento; anteprima64/84/112px sui due temi in incoming/bozze/timbri/bosco-querce-verifica.png.
+
+
+### bosco-carpino-nero — 15/10, continuazione
+
+Foglia ovato-lanceolata acuminata dentata e infruttescenza pendula di sacche membranose simili al luppolo; peduncolo staccato dall'anello. Fonti interne: data/trees.json: carpino nero.leaf,fruit,recognize; data/challenges.json: bosco-carpino-nero. Numero di nervature e denti secondari ridotto per la scala; nucule interne non visibili nelle sacche chiuse. PNG e QA verificati prima del caricamento; anteprima64/84/112px sui due temi in incoming/bozze/timbri/bosco-carpino-nero-verifica.png.
