@@ -18567,114 +18567,6 @@
     "stato": "ok"
   },
   {
-    "file": "incoming/icone/forme-31.png",
-    "tipo": "illustrazione",
-    "soggetto": "repandum",
-    "tessera": "cappello",
-    "cella": 0,
-    "variante": "forma:piano",
-    "base": {
-      "forma": "convesso",
-      "colore": "giallo"
-    },
-    "modello": "image_gen (identificatore tecnico non esposto)",
-    "prompt": "A transparent PNG sprite sheet, square1254x1254, invisible3x3cells418px each. Use reference1 for EXACT SMALL ICON SIZE, generous TRANSPARENT CELL MARGINS and row positions. Three rows: column1 CAP ONLY side view, column2 WHOLE MUSHROOM, column3 entirely EMPTY. Each separate icon centered in its own cell, at most60% of cell width AND height, at least18% alpha0 padding on EVERY cell edge. No drawn grid, background, shadows, ground, text, numbers or marks. Clean thick dark brown COMPLETE silhouette outline, flat few colors same as species icons. References2 onward show the approved base icons: preserve cap COLOR and all stems, rings, volvas, netting, scales and spots, change ONLY cap SHAPE and age-appropriate proportions. Each row's cap-only and whole must MATCH shape/color. Use EXACT reference cap shade; color labels are broad categories: 'rosso' may be dark red-BROWN. Never borrow anatomical traits or colors between rows. ROW1: repandum, base cap color giallo, target shape FLAT: almost horizontal, expanded cap. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"liscia\",\"asciutta\",\"vellutata/feltrata\"],\"hymenophore\":[\"aculei\"],\"hymenophore_color\":[\"bianco\",\"crema\",\"arancio\",\"rosa\"]}. ROW2: repandum, base cap color giallo, target shape FUNNEL: depressed center with upturned edge. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"liscia\",\"asciutta\",\"vellutata/feltrata\"],\"hymenophore\":[\"aculei\"],\"hymenophore_color\":[\"bianco\",\"crema\",\"arancio\",\"rosa\"]}. ROW3: russula-aeruginea, base cap color verde, target shape FLAT: almost horizontal, expanded cap. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"viscida\",\"liscia\",\"asciutta\"],\"hymenophore\":[\"lamelle\"],\"hymenophore_color\":[\"crema\",\"giallo\"]}. No new anatomical traits. Reference species icons are shape/color authorities except the explicit target cap shape. Cap-only must match whole cap. Last column empty. True alpha background.",
-    "edits": [
-      "Correct rows1 and3 cap shape only: both yellow repandum caps in ROW1 and both green Russula caps in ROW3 must be distinctly FLAT, expanded near-horizontal top, top surface rise no more than one sixth of cap width, NO raised central dome/umbo. Retain slight wavy edge for yellow repandum. Cap-only left icons should show narrow underside band: row1 short pale orange teeth, row3 pale cream gill lines. Whole row1 retain existing teeth and cream stem; whole row3 cream gills and white stem. Keep row2 funnel exactly. Crisp outlines and NO shadows, halos or background; fully transparent."
-    ],
-    "stato": "da rivedere"
-  },
-  {
-    "file": "incoming/icone/forme-31.png",
-    "tipo": "illustrazione",
-    "soggetto": "repandum",
-    "tessera": "gambo",
-    "cella": 1,
-    "variante": "forma:piano",
-    "base": {
-      "forma": "convesso",
-      "colore": "giallo"
-    },
-    "modello": "image_gen (identificatore tecnico non esposto)",
-    "prompt": "A transparent PNG sprite sheet, square1254x1254, invisible3x3cells418px each. Use reference1 for EXACT SMALL ICON SIZE, generous TRANSPARENT CELL MARGINS and row positions. Three rows: column1 CAP ONLY side view, column2 WHOLE MUSHROOM, column3 entirely EMPTY. Each separate icon centered in its own cell, at most60% of cell width AND height, at least18% alpha0 padding on EVERY cell edge. No drawn grid, background, shadows, ground, text, numbers or marks. Clean thick dark brown COMPLETE silhouette outline, flat few colors same as species icons. References2 onward show the approved base icons: preserve cap COLOR and all stems, rings, volvas, netting, scales and spots, change ONLY cap SHAPE and age-appropriate proportions. Each row's cap-only and whole must MATCH shape/color. Use EXACT reference cap shade; color labels are broad categories: 'rosso' may be dark red-BROWN. Never borrow anatomical traits or colors between rows. ROW1: repandum, base cap color giallo, target shape FLAT: almost horizontal, expanded cap. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"liscia\",\"asciutta\",\"vellutata/feltrata\"],\"hymenophore\":[\"aculei\"],\"hymenophore_color\":[\"bianco\",\"crema\",\"arancio\",\"rosa\"]}. ROW2: repandum, base cap color giallo, target shape FUNNEL: depressed center with upturned edge. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"liscia\",\"asciutta\",\"vellutata/feltrata\"],\"hymenophore\":[\"aculei\"],\"hymenophore_color\":[\"bianco\",\"crema\",\"arancio\",\"rosa\"]}. ROW3: russula-aeruginea, base cap color verde, target shape FLAT: almost horizontal, expanded cap. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"viscida\",\"liscia\",\"asciutta\"],\"hymenophore\":[\"lamelle\"],\"hymenophore_color\":[\"crema\",\"giallo\"]}. No new anatomical traits. Reference species icons are shape/color authorities except the explicit target cap shape. Cap-only must match whole cap. Last column empty. True alpha background.",
-    "edits": [
-      "Correct rows1 and3 cap shape only: both yellow repandum caps in ROW1 and both green Russula caps in ROW3 must be distinctly FLAT, expanded near-horizontal top, top surface rise no more than one sixth of cap width, NO raised central dome/umbo. Retain slight wavy edge for yellow repandum. Cap-only left icons should show narrow underside band: row1 short pale orange teeth, row3 pale cream gill lines. Whole row1 retain existing teeth and cream stem; whole row3 cream gills and white stem. Keep row2 funnel exactly. Crisp outlines and NO shadows, halos or background; fully transparent."
-    ],
-    "stato": "da rivedere"
-  },
-  {
-    "file": "incoming/icone/forme-31.png",
-    "tipo": "illustrazione",
-    "soggetto": "repandum",
-    "tessera": "cappello",
-    "cella": 3,
-    "variante": "forma:imbuto",
-    "base": {
-      "forma": "convesso",
-      "colore": "giallo"
-    },
-    "modello": "image_gen (identificatore tecnico non esposto)",
-    "prompt": "A transparent PNG sprite sheet, square1254x1254, invisible3x3cells418px each. Use reference1 for EXACT SMALL ICON SIZE, generous TRANSPARENT CELL MARGINS and row positions. Three rows: column1 CAP ONLY side view, column2 WHOLE MUSHROOM, column3 entirely EMPTY. Each separate icon centered in its own cell, at most60% of cell width AND height, at least18% alpha0 padding on EVERY cell edge. No drawn grid, background, shadows, ground, text, numbers or marks. Clean thick dark brown COMPLETE silhouette outline, flat few colors same as species icons. References2 onward show the approved base icons: preserve cap COLOR and all stems, rings, volvas, netting, scales and spots, change ONLY cap SHAPE and age-appropriate proportions. Each row's cap-only and whole must MATCH shape/color. Use EXACT reference cap shade; color labels are broad categories: 'rosso' may be dark red-BROWN. Never borrow anatomical traits or colors between rows. ROW1: repandum, base cap color giallo, target shape FLAT: almost horizontal, expanded cap. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"liscia\",\"asciutta\",\"vellutata/feltrata\"],\"hymenophore\":[\"aculei\"],\"hymenophore_color\":[\"bianco\",\"crema\",\"arancio\",\"rosa\"]}. ROW2: repandum, base cap color giallo, target shape FUNNEL: depressed center with upturned edge. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"liscia\",\"asciutta\",\"vellutata/feltrata\"],\"hymenophore\":[\"aculei\"],\"hymenophore_color\":[\"bianco\",\"crema\",\"arancio\",\"rosa\"]}. ROW3: russula-aeruginea, base cap color verde, target shape FLAT: almost horizontal, expanded cap. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"viscida\",\"liscia\",\"asciutta\"],\"hymenophore\":[\"lamelle\"],\"hymenophore_color\":[\"crema\",\"giallo\"]}. No new anatomical traits. Reference species icons are shape/color authorities except the explicit target cap shape. Cap-only must match whole cap. Last column empty. True alpha background.",
-    "edits": [
-      "Correct rows1 and3 cap shape only: both yellow repandum caps in ROW1 and both green Russula caps in ROW3 must be distinctly FLAT, expanded near-horizontal top, top surface rise no more than one sixth of cap width, NO raised central dome/umbo. Retain slight wavy edge for yellow repandum. Cap-only left icons should show narrow underside band: row1 short pale orange teeth, row3 pale cream gill lines. Whole row1 retain existing teeth and cream stem; whole row3 cream gills and white stem. Keep row2 funnel exactly. Crisp outlines and NO shadows, halos or background; fully transparent."
-    ],
-    "stato": "da rivedere"
-  },
-  {
-    "file": "incoming/icone/forme-31.png",
-    "tipo": "illustrazione",
-    "soggetto": "repandum",
-    "tessera": "gambo",
-    "cella": 4,
-    "variante": "forma:imbuto",
-    "base": {
-      "forma": "convesso",
-      "colore": "giallo"
-    },
-    "modello": "image_gen (identificatore tecnico non esposto)",
-    "prompt": "A transparent PNG sprite sheet, square1254x1254, invisible3x3cells418px each. Use reference1 for EXACT SMALL ICON SIZE, generous TRANSPARENT CELL MARGINS and row positions. Three rows: column1 CAP ONLY side view, column2 WHOLE MUSHROOM, column3 entirely EMPTY. Each separate icon centered in its own cell, at most60% of cell width AND height, at least18% alpha0 padding on EVERY cell edge. No drawn grid, background, shadows, ground, text, numbers or marks. Clean thick dark brown COMPLETE silhouette outline, flat few colors same as species icons. References2 onward show the approved base icons: preserve cap COLOR and all stems, rings, volvas, netting, scales and spots, change ONLY cap SHAPE and age-appropriate proportions. Each row's cap-only and whole must MATCH shape/color. Use EXACT reference cap shade; color labels are broad categories: 'rosso' may be dark red-BROWN. Never borrow anatomical traits or colors between rows. ROW1: repandum, base cap color giallo, target shape FLAT: almost horizontal, expanded cap. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"liscia\",\"asciutta\",\"vellutata/feltrata\"],\"hymenophore\":[\"aculei\"],\"hymenophore_color\":[\"bianco\",\"crema\",\"arancio\",\"rosa\"]}. ROW2: repandum, base cap color giallo, target shape FUNNEL: depressed center with upturned edge. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"liscia\",\"asciutta\",\"vellutata/feltrata\"],\"hymenophore\":[\"aculei\"],\"hymenophore_color\":[\"bianco\",\"crema\",\"arancio\",\"rosa\"]}. ROW3: russula-aeruginea, base cap color verde, target shape FLAT: almost horizontal, expanded cap. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"viscida\",\"liscia\",\"asciutta\"],\"hymenophore\":[\"lamelle\"],\"hymenophore_color\":[\"crema\",\"giallo\"]}. No new anatomical traits. Reference species icons are shape/color authorities except the explicit target cap shape. Cap-only must match whole cap. Last column empty. True alpha background.",
-    "edits": [
-      "Correct rows1 and3 cap shape only: both yellow repandum caps in ROW1 and both green Russula caps in ROW3 must be distinctly FLAT, expanded near-horizontal top, top surface rise no more than one sixth of cap width, NO raised central dome/umbo. Retain slight wavy edge for yellow repandum. Cap-only left icons should show narrow underside band: row1 short pale orange teeth, row3 pale cream gill lines. Whole row1 retain existing teeth and cream stem; whole row3 cream gills and white stem. Keep row2 funnel exactly. Crisp outlines and NO shadows, halos or background; fully transparent."
-    ],
-    "stato": "da rivedere"
-  },
-  {
-    "file": "incoming/icone/forme-31.png",
-    "tipo": "illustrazione",
-    "soggetto": "russula-aeruginea",
-    "tessera": "cappello",
-    "cella": 6,
-    "variante": "forma:piano",
-    "base": {
-      "forma": "convesso",
-      "colore": "verde"
-    },
-    "modello": "image_gen (identificatore tecnico non esposto)",
-    "prompt": "A transparent PNG sprite sheet, square1254x1254, invisible3x3cells418px each. Use reference1 for EXACT SMALL ICON SIZE, generous TRANSPARENT CELL MARGINS and row positions. Three rows: column1 CAP ONLY side view, column2 WHOLE MUSHROOM, column3 entirely EMPTY. Each separate icon centered in its own cell, at most60% of cell width AND height, at least18% alpha0 padding on EVERY cell edge. No drawn grid, background, shadows, ground, text, numbers or marks. Clean thick dark brown COMPLETE silhouette outline, flat few colors same as species icons. References2 onward show the approved base icons: preserve cap COLOR and all stems, rings, volvas, netting, scales and spots, change ONLY cap SHAPE and age-appropriate proportions. Each row's cap-only and whole must MATCH shape/color. Use EXACT reference cap shade; color labels are broad categories: 'rosso' may be dark red-BROWN. Never borrow anatomical traits or colors between rows. ROW1: repandum, base cap color giallo, target shape FLAT: almost horizontal, expanded cap. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"liscia\",\"asciutta\",\"vellutata/feltrata\"],\"hymenophore\":[\"aculei\"],\"hymenophore_color\":[\"bianco\",\"crema\",\"arancio\",\"rosa\"]}. ROW2: repandum, base cap color giallo, target shape FUNNEL: depressed center with upturned edge. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"liscia\",\"asciutta\",\"vellutata/feltrata\"],\"hymenophore\":[\"aculei\"],\"hymenophore_color\":[\"bianco\",\"crema\",\"arancio\",\"rosa\"]}. ROW3: russula-aeruginea, base cap color verde, target shape FLAT: almost horizontal, expanded cap. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"viscida\",\"liscia\",\"asciutta\"],\"hymenophore\":[\"lamelle\"],\"hymenophore_color\":[\"crema\",\"giallo\"]}. No new anatomical traits. Reference species icons are shape/color authorities except the explicit target cap shape. Cap-only must match whole cap. Last column empty. True alpha background.",
-    "edits": [
-      "Correct rows1 and3 cap shape only: both yellow repandum caps in ROW1 and both green Russula caps in ROW3 must be distinctly FLAT, expanded near-horizontal top, top surface rise no more than one sixth of cap width, NO raised central dome/umbo. Retain slight wavy edge for yellow repandum. Cap-only left icons should show narrow underside band: row1 short pale orange teeth, row3 pale cream gill lines. Whole row1 retain existing teeth and cream stem; whole row3 cream gills and white stem. Keep row2 funnel exactly. Crisp outlines and NO shadows, halos or background; fully transparent."
-    ],
-    "stato": "da rivedere"
-  },
-  {
-    "file": "incoming/icone/forme-31.png",
-    "tipo": "illustrazione",
-    "soggetto": "russula-aeruginea",
-    "tessera": "gambo",
-    "cella": 7,
-    "variante": "forma:piano",
-    "base": {
-      "forma": "convesso",
-      "colore": "verde"
-    },
-    "modello": "image_gen (identificatore tecnico non esposto)",
-    "prompt": "A transparent PNG sprite sheet, square1254x1254, invisible3x3cells418px each. Use reference1 for EXACT SMALL ICON SIZE, generous TRANSPARENT CELL MARGINS and row positions. Three rows: column1 CAP ONLY side view, column2 WHOLE MUSHROOM, column3 entirely EMPTY. Each separate icon centered in its own cell, at most60% of cell width AND height, at least18% alpha0 padding on EVERY cell edge. No drawn grid, background, shadows, ground, text, numbers or marks. Clean thick dark brown COMPLETE silhouette outline, flat few colors same as species icons. References2 onward show the approved base icons: preserve cap COLOR and all stems, rings, volvas, netting, scales and spots, change ONLY cap SHAPE and age-appropriate proportions. Each row's cap-only and whole must MATCH shape/color. Use EXACT reference cap shade; color labels are broad categories: 'rosso' may be dark red-BROWN. Never borrow anatomical traits or colors between rows. ROW1: repandum, base cap color giallo, target shape FLAT: almost horizontal, expanded cap. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"liscia\",\"asciutta\",\"vellutata/feltrata\"],\"hymenophore\":[\"aculei\"],\"hymenophore_color\":[\"bianco\",\"crema\",\"arancio\",\"rosa\"]}. ROW2: repandum, base cap color giallo, target shape FUNNEL: depressed center with upturned edge. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"liscia\",\"asciutta\",\"vellutata/feltrata\"],\"hymenophore\":[\"aculei\"],\"hymenophore_color\":[\"bianco\",\"crema\",\"arancio\",\"rosa\"]}. ROW3: russula-aeruginea, base cap color verde, target shape FLAT: almost horizontal, expanded cap. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"viscida\",\"liscia\",\"asciutta\"],\"hymenophore\":[\"lamelle\"],\"hymenophore_color\":[\"crema\",\"giallo\"]}. No new anatomical traits. Reference species icons are shape/color authorities except the explicit target cap shape. Cap-only must match whole cap. Last column empty. True alpha background.",
-    "edits": [
-      "Correct rows1 and3 cap shape only: both yellow repandum caps in ROW1 and both green Russula caps in ROW3 must be distinctly FLAT, expanded near-horizontal top, top surface rise no more than one sixth of cap width, NO raised central dome/umbo. Retain slight wavy edge for yellow repandum. Cap-only left icons should show narrow underside band: row1 short pale orange teeth, row3 pale cream gill lines. Whole row1 retain existing teeth and cream stem; whole row3 cream gills and white stem. Keep row2 funnel exactly. Crisp outlines and NO shadows, halos or background; fully transparent."
-    ],
-    "stato": "da rivedere"
-  },
-  {
     "file": "incoming/icone/forme-32.png",
     "tipo": "illustrazione",
     "soggetto": "russula-aeruginea",
@@ -19408,6 +19300,120 @@
     "modello": "image_gen (identificatore tecnico non esposto)",
     "prompt": "A transparent PNG sprite sheet, square1254x1254, invisible3x3cells418px each. Use reference1 for EXACT SMALL ICON SIZE, generous TRANSPARENT CELL MARGINS and row positions. Three rows: column1 CAP ONLY side view, column2 WHOLE MUSHROOM, column3 entirely EMPTY. Each separate icon centered in its own cell, at most60% of cell width AND height, at least18% alpha0 padding on EVERY cell edge. No drawn grid, background, shadows, ground, text, numbers or marks. Clean thick dark brown COMPLETE silhouette outline, flat few colors same as species icons. References2 onward show the approved base icons: preserve cap COLOR and all stems, rings, volvas, netting, scales and spots, change ONLY cap SHAPE and age-appropriate proportions. Each row's cap-only and whole must MATCH shape/color. Use EXACT reference cap shade; color labels are broad categories: 'rosso' may be dark red-BROWN. Never borrow anatomical traits or colors between rows. \nFOR THE FINAL SHEET: there are ONLY TWO variant rows. Draw exactly FOUR icons in first two rows. Entire third row and entire third column MUST be empty transparent.ROW1: virescens, base cap color verde, target shape HEMISPHERICAL: rounded half-sphere dome with NO central point or umbo, even if adult base has an umbo. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"asciutta\",\"vellutata/feltrata\",\"viscida\",\"liscia\",\"squamosa\"],\"hymenophore\":[\"lamelle\"],\"hymenophore_color\":[\"bianco\",\"crema\"]}. ROW2: virescens, base cap color verde, target shape FUNNEL: depressed center with upturned edge. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"asciutta\",\"vellutata/feltrata\",\"viscida\",\"liscia\",\"squamosa\"],\"hymenophore\":[\"lamelle\"],\"hymenophore_color\":[\"bianco\",\"crema\"]}. No new anatomical traits. Reference species icons are shape/color authorities except the explicit target cap shape. Cap-only must match whole cap. Last column empty. True alpha background.",
     "edits": [],
+    "stato": "ok"
+  },
+  {
+    "file": "incoming/icone/forme-31.png",
+    "tipo": "illustrazione",
+    "soggetto": "repandum",
+    "tessera": "cappello",
+    "cella": 0,
+    "variante": "forma:piano",
+    "base": {
+      "forma": "convesso",
+      "colore": "giallo"
+    },
+    "modello": "image_gen (identificatore tecnico non esposto)",
+    "prompt": "A transparent PNG sprite sheet, square1254x1254, invisible3x3cells418px each. Use reference1 for EXACT SMALL ICON SIZE, generous TRANSPARENT CELL MARGINS and row positions. Three rows: column1 CAP ONLY side view, column2 WHOLE MUSHROOM, column3 entirely EMPTY. Each separate icon centered in its own cell, at most60% of cell width AND height, at least18% alpha0 padding on EVERY cell edge. No drawn grid, background, shadows, ground, text, numbers or marks. Clean thick dark brown COMPLETE silhouette outline, flat few colors same as species icons. References2 onward show the approved base icons: preserve cap COLOR and all stems, rings, volvas, netting, scales and spots, change ONLY cap SHAPE and age-appropriate proportions. Each row's cap-only and whole must MATCH shape/color. Use EXACT reference cap shade; color labels are broad categories: 'rosso' may be dark red-BROWN. Never borrow anatomical traits or colors between rows. ROW1: repandum, base cap color giallo, target shape FLAT: almost horizontal, expanded cap. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"liscia\",\"asciutta\",\"vellutata/feltrata\"],\"hymenophore\":[\"aculei\"],\"hymenophore_color\":[\"bianco\",\"crema\",\"arancio\",\"rosa\"]}. ROW2: repandum, base cap color giallo, target shape FUNNEL: depressed center with upturned edge. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"liscia\",\"asciutta\",\"vellutata/feltrata\"],\"hymenophore\":[\"aculei\"],\"hymenophore_color\":[\"bianco\",\"crema\",\"arancio\",\"rosa\"]}. ROW3: russula-aeruginea, base cap color verde, target shape FLAT: almost horizontal, expanded cap. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"viscida\",\"liscia\",\"asciutta\"],\"hymenophore\":[\"lamelle\"],\"hymenophore_color\":[\"crema\",\"giallo\"]}. No new anatomical traits. Reference species icons are shape/color authorities except the explicit target cap shape. Cap-only must match whole cap. Last column empty. True alpha background.",
+    "edits": [
+      "Correct rows1 and3 cap shape only: both yellow repandum caps in ROW1 and both green Russula caps in ROW3 must be distinctly FLAT, expanded near-horizontal top, top surface rise no more than one sixth of cap width, NO raised central dome/umbo. Retain slight wavy edge for yellow repandum. Cap-only left icons should show narrow underside band: row1 short pale orange teeth, row3 pale cream gill lines. Whole row1 retain existing teeth and cream stem; whole row3 cream gills and white stem. Keep row2 funnel exactly. Crisp outlines and NO shadows, halos or background; fully transparent.",
+      "Correct ONLY the bottom edge of ROW1 LEFT yellow cap-only icon: add a crisp continuous dark brown outline enclosing all the short orange teeth on its underside. No bright fringe or unoutlined teeth may extend below this outline. Keep six icons, all existing colors, cap shapes, rows and stems exactly unchanged. Fully transparent background, remove any external glow/shadow, no other changes."
+    ],
+    "stato": "ok"
+  },
+  {
+    "file": "incoming/icone/forme-31.png",
+    "tipo": "illustrazione",
+    "soggetto": "repandum",
+    "tessera": "gambo",
+    "cella": 1,
+    "variante": "forma:piano",
+    "base": {
+      "forma": "convesso",
+      "colore": "giallo"
+    },
+    "modello": "image_gen (identificatore tecnico non esposto)",
+    "prompt": "A transparent PNG sprite sheet, square1254x1254, invisible3x3cells418px each. Use reference1 for EXACT SMALL ICON SIZE, generous TRANSPARENT CELL MARGINS and row positions. Three rows: column1 CAP ONLY side view, column2 WHOLE MUSHROOM, column3 entirely EMPTY. Each separate icon centered in its own cell, at most60% of cell width AND height, at least18% alpha0 padding on EVERY cell edge. No drawn grid, background, shadows, ground, text, numbers or marks. Clean thick dark brown COMPLETE silhouette outline, flat few colors same as species icons. References2 onward show the approved base icons: preserve cap COLOR and all stems, rings, volvas, netting, scales and spots, change ONLY cap SHAPE and age-appropriate proportions. Each row's cap-only and whole must MATCH shape/color. Use EXACT reference cap shade; color labels are broad categories: 'rosso' may be dark red-BROWN. Never borrow anatomical traits or colors between rows. ROW1: repandum, base cap color giallo, target shape FLAT: almost horizontal, expanded cap. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"liscia\",\"asciutta\",\"vellutata/feltrata\"],\"hymenophore\":[\"aculei\"],\"hymenophore_color\":[\"bianco\",\"crema\",\"arancio\",\"rosa\"]}. ROW2: repandum, base cap color giallo, target shape FUNNEL: depressed center with upturned edge. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"liscia\",\"asciutta\",\"vellutata/feltrata\"],\"hymenophore\":[\"aculei\"],\"hymenophore_color\":[\"bianco\",\"crema\",\"arancio\",\"rosa\"]}. ROW3: russula-aeruginea, base cap color verde, target shape FLAT: almost horizontal, expanded cap. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"viscida\",\"liscia\",\"asciutta\"],\"hymenophore\":[\"lamelle\"],\"hymenophore_color\":[\"crema\",\"giallo\"]}. No new anatomical traits. Reference species icons are shape/color authorities except the explicit target cap shape. Cap-only must match whole cap. Last column empty. True alpha background.",
+    "edits": [
+      "Correct rows1 and3 cap shape only: both yellow repandum caps in ROW1 and both green Russula caps in ROW3 must be distinctly FLAT, expanded near-horizontal top, top surface rise no more than one sixth of cap width, NO raised central dome/umbo. Retain slight wavy edge for yellow repandum. Cap-only left icons should show narrow underside band: row1 short pale orange teeth, row3 pale cream gill lines. Whole row1 retain existing teeth and cream stem; whole row3 cream gills and white stem. Keep row2 funnel exactly. Crisp outlines and NO shadows, halos or background; fully transparent.",
+      "Correct ONLY the bottom edge of ROW1 LEFT yellow cap-only icon: add a crisp continuous dark brown outline enclosing all the short orange teeth on its underside. No bright fringe or unoutlined teeth may extend below this outline. Keep six icons, all existing colors, cap shapes, rows and stems exactly unchanged. Fully transparent background, remove any external glow/shadow, no other changes."
+    ],
+    "stato": "ok"
+  },
+  {
+    "file": "incoming/icone/forme-31.png",
+    "tipo": "illustrazione",
+    "soggetto": "repandum",
+    "tessera": "cappello",
+    "cella": 3,
+    "variante": "forma:imbuto",
+    "base": {
+      "forma": "convesso",
+      "colore": "giallo"
+    },
+    "modello": "image_gen (identificatore tecnico non esposto)",
+    "prompt": "A transparent PNG sprite sheet, square1254x1254, invisible3x3cells418px each. Use reference1 for EXACT SMALL ICON SIZE, generous TRANSPARENT CELL MARGINS and row positions. Three rows: column1 CAP ONLY side view, column2 WHOLE MUSHROOM, column3 entirely EMPTY. Each separate icon centered in its own cell, at most60% of cell width AND height, at least18% alpha0 padding on EVERY cell edge. No drawn grid, background, shadows, ground, text, numbers or marks. Clean thick dark brown COMPLETE silhouette outline, flat few colors same as species icons. References2 onward show the approved base icons: preserve cap COLOR and all stems, rings, volvas, netting, scales and spots, change ONLY cap SHAPE and age-appropriate proportions. Each row's cap-only and whole must MATCH shape/color. Use EXACT reference cap shade; color labels are broad categories: 'rosso' may be dark red-BROWN. Never borrow anatomical traits or colors between rows. ROW1: repandum, base cap color giallo, target shape FLAT: almost horizontal, expanded cap. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"liscia\",\"asciutta\",\"vellutata/feltrata\"],\"hymenophore\":[\"aculei\"],\"hymenophore_color\":[\"bianco\",\"crema\",\"arancio\",\"rosa\"]}. ROW2: repandum, base cap color giallo, target shape FUNNEL: depressed center with upturned edge. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"liscia\",\"asciutta\",\"vellutata/feltrata\"],\"hymenophore\":[\"aculei\"],\"hymenophore_color\":[\"bianco\",\"crema\",\"arancio\",\"rosa\"]}. ROW3: russula-aeruginea, base cap color verde, target shape FLAT: almost horizontal, expanded cap. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"viscida\",\"liscia\",\"asciutta\"],\"hymenophore\":[\"lamelle\"],\"hymenophore_color\":[\"crema\",\"giallo\"]}. No new anatomical traits. Reference species icons are shape/color authorities except the explicit target cap shape. Cap-only must match whole cap. Last column empty. True alpha background.",
+    "edits": [
+      "Correct rows1 and3 cap shape only: both yellow repandum caps in ROW1 and both green Russula caps in ROW3 must be distinctly FLAT, expanded near-horizontal top, top surface rise no more than one sixth of cap width, NO raised central dome/umbo. Retain slight wavy edge for yellow repandum. Cap-only left icons should show narrow underside band: row1 short pale orange teeth, row3 pale cream gill lines. Whole row1 retain existing teeth and cream stem; whole row3 cream gills and white stem. Keep row2 funnel exactly. Crisp outlines and NO shadows, halos or background; fully transparent.",
+      "Correct ONLY the bottom edge of ROW1 LEFT yellow cap-only icon: add a crisp continuous dark brown outline enclosing all the short orange teeth on its underside. No bright fringe or unoutlined teeth may extend below this outline. Keep six icons, all existing colors, cap shapes, rows and stems exactly unchanged. Fully transparent background, remove any external glow/shadow, no other changes."
+    ],
+    "stato": "ok"
+  },
+  {
+    "file": "incoming/icone/forme-31.png",
+    "tipo": "illustrazione",
+    "soggetto": "repandum",
+    "tessera": "gambo",
+    "cella": 4,
+    "variante": "forma:imbuto",
+    "base": {
+      "forma": "convesso",
+      "colore": "giallo"
+    },
+    "modello": "image_gen (identificatore tecnico non esposto)",
+    "prompt": "A transparent PNG sprite sheet, square1254x1254, invisible3x3cells418px each. Use reference1 for EXACT SMALL ICON SIZE, generous TRANSPARENT CELL MARGINS and row positions. Three rows: column1 CAP ONLY side view, column2 WHOLE MUSHROOM, column3 entirely EMPTY. Each separate icon centered in its own cell, at most60% of cell width AND height, at least18% alpha0 padding on EVERY cell edge. No drawn grid, background, shadows, ground, text, numbers or marks. Clean thick dark brown COMPLETE silhouette outline, flat few colors same as species icons. References2 onward show the approved base icons: preserve cap COLOR and all stems, rings, volvas, netting, scales and spots, change ONLY cap SHAPE and age-appropriate proportions. Each row's cap-only and whole must MATCH shape/color. Use EXACT reference cap shade; color labels are broad categories: 'rosso' may be dark red-BROWN. Never borrow anatomical traits or colors between rows. ROW1: repandum, base cap color giallo, target shape FLAT: almost horizontal, expanded cap. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"liscia\",\"asciutta\",\"vellutata/feltrata\"],\"hymenophore\":[\"aculei\"],\"hymenophore_color\":[\"bianco\",\"crema\",\"arancio\",\"rosa\"]}. ROW2: repandum, base cap color giallo, target shape FUNNEL: depressed center with upturned edge. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"liscia\",\"asciutta\",\"vellutata/feltrata\"],\"hymenophore\":[\"aculei\"],\"hymenophore_color\":[\"bianco\",\"crema\",\"arancio\",\"rosa\"]}. ROW3: russula-aeruginea, base cap color verde, target shape FLAT: almost horizontal, expanded cap. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"viscida\",\"liscia\",\"asciutta\"],\"hymenophore\":[\"lamelle\"],\"hymenophore_color\":[\"crema\",\"giallo\"]}. No new anatomical traits. Reference species icons are shape/color authorities except the explicit target cap shape. Cap-only must match whole cap. Last column empty. True alpha background.",
+    "edits": [
+      "Correct rows1 and3 cap shape only: both yellow repandum caps in ROW1 and both green Russula caps in ROW3 must be distinctly FLAT, expanded near-horizontal top, top surface rise no more than one sixth of cap width, NO raised central dome/umbo. Retain slight wavy edge for yellow repandum. Cap-only left icons should show narrow underside band: row1 short pale orange teeth, row3 pale cream gill lines. Whole row1 retain existing teeth and cream stem; whole row3 cream gills and white stem. Keep row2 funnel exactly. Crisp outlines and NO shadows, halos or background; fully transparent.",
+      "Correct ONLY the bottom edge of ROW1 LEFT yellow cap-only icon: add a crisp continuous dark brown outline enclosing all the short orange teeth on its underside. No bright fringe or unoutlined teeth may extend below this outline. Keep six icons, all existing colors, cap shapes, rows and stems exactly unchanged. Fully transparent background, remove any external glow/shadow, no other changes."
+    ],
+    "stato": "ok"
+  },
+  {
+    "file": "incoming/icone/forme-31.png",
+    "tipo": "illustrazione",
+    "soggetto": "russula-aeruginea",
+    "tessera": "cappello",
+    "cella": 6,
+    "variante": "forma:piano",
+    "base": {
+      "forma": "convesso",
+      "colore": "verde"
+    },
+    "modello": "image_gen (identificatore tecnico non esposto)",
+    "prompt": "A transparent PNG sprite sheet, square1254x1254, invisible3x3cells418px each. Use reference1 for EXACT SMALL ICON SIZE, generous TRANSPARENT CELL MARGINS and row positions. Three rows: column1 CAP ONLY side view, column2 WHOLE MUSHROOM, column3 entirely EMPTY. Each separate icon centered in its own cell, at most60% of cell width AND height, at least18% alpha0 padding on EVERY cell edge. No drawn grid, background, shadows, ground, text, numbers or marks. Clean thick dark brown COMPLETE silhouette outline, flat few colors same as species icons. References2 onward show the approved base icons: preserve cap COLOR and all stems, rings, volvas, netting, scales and spots, change ONLY cap SHAPE and age-appropriate proportions. Each row's cap-only and whole must MATCH shape/color. Use EXACT reference cap shade; color labels are broad categories: 'rosso' may be dark red-BROWN. Never borrow anatomical traits or colors between rows. ROW1: repandum, base cap color giallo, target shape FLAT: almost horizontal, expanded cap. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"liscia\",\"asciutta\",\"vellutata/feltrata\"],\"hymenophore\":[\"aculei\"],\"hymenophore_color\":[\"bianco\",\"crema\",\"arancio\",\"rosa\"]}. ROW2: repandum, base cap color giallo, target shape FUNNEL: depressed center with upturned edge. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"liscia\",\"asciutta\",\"vellutata/feltrata\"],\"hymenophore\":[\"aculei\"],\"hymenophore_color\":[\"bianco\",\"crema\",\"arancio\",\"rosa\"]}. ROW3: russula-aeruginea, base cap color verde, target shape FLAT: almost horizontal, expanded cap. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"viscida\",\"liscia\",\"asciutta\"],\"hymenophore\":[\"lamelle\"],\"hymenophore_color\":[\"crema\",\"giallo\"]}. No new anatomical traits. Reference species icons are shape/color authorities except the explicit target cap shape. Cap-only must match whole cap. Last column empty. True alpha background.",
+    "edits": [
+      "Correct rows1 and3 cap shape only: both yellow repandum caps in ROW1 and both green Russula caps in ROW3 must be distinctly FLAT, expanded near-horizontal top, top surface rise no more than one sixth of cap width, NO raised central dome/umbo. Retain slight wavy edge for yellow repandum. Cap-only left icons should show narrow underside band: row1 short pale orange teeth, row3 pale cream gill lines. Whole row1 retain existing teeth and cream stem; whole row3 cream gills and white stem. Keep row2 funnel exactly. Crisp outlines and NO shadows, halos or background; fully transparent.",
+      "Correct ONLY the bottom edge of ROW1 LEFT yellow cap-only icon: add a crisp continuous dark brown outline enclosing all the short orange teeth on its underside. No bright fringe or unoutlined teeth may extend below this outline. Keep six icons, all existing colors, cap shapes, rows and stems exactly unchanged. Fully transparent background, remove any external glow/shadow, no other changes."
+    ],
+    "stato": "ok"
+  },
+  {
+    "file": "incoming/icone/forme-31.png",
+    "tipo": "illustrazione",
+    "soggetto": "russula-aeruginea",
+    "tessera": "gambo",
+    "cella": 7,
+    "variante": "forma:piano",
+    "base": {
+      "forma": "convesso",
+      "colore": "verde"
+    },
+    "modello": "image_gen (identificatore tecnico non esposto)",
+    "prompt": "A transparent PNG sprite sheet, square1254x1254, invisible3x3cells418px each. Use reference1 for EXACT SMALL ICON SIZE, generous TRANSPARENT CELL MARGINS and row positions. Three rows: column1 CAP ONLY side view, column2 WHOLE MUSHROOM, column3 entirely EMPTY. Each separate icon centered in its own cell, at most60% of cell width AND height, at least18% alpha0 padding on EVERY cell edge. No drawn grid, background, shadows, ground, text, numbers or marks. Clean thick dark brown COMPLETE silhouette outline, flat few colors same as species icons. References2 onward show the approved base icons: preserve cap COLOR and all stems, rings, volvas, netting, scales and spots, change ONLY cap SHAPE and age-appropriate proportions. Each row's cap-only and whole must MATCH shape/color. Use EXACT reference cap shade; color labels are broad categories: 'rosso' may be dark red-BROWN. Never borrow anatomical traits or colors between rows. ROW1: repandum, base cap color giallo, target shape FLAT: almost horizontal, expanded cap. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"liscia\",\"asciutta\",\"vellutata/feltrata\"],\"hymenophore\":[\"aculei\"],\"hymenophore_color\":[\"bianco\",\"crema\",\"arancio\",\"rosa\"]}. ROW2: repandum, base cap color giallo, target shape FUNNEL: depressed center with upturned edge. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"liscia\",\"asciutta\",\"vellutata/feltrata\"],\"hymenophore\":[\"aculei\"],\"hymenophore_color\":[\"bianco\",\"crema\",\"arancio\",\"rosa\"]}. ROW3: russula-aeruginea, base cap color verde, target shape FLAT: almost horizontal, expanded cap. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"viscida\",\"liscia\",\"asciutta\"],\"hymenophore\":[\"lamelle\"],\"hymenophore_color\":[\"crema\",\"giallo\"]}. No new anatomical traits. Reference species icons are shape/color authorities except the explicit target cap shape. Cap-only must match whole cap. Last column empty. True alpha background.",
+    "edits": [
+      "Correct rows1 and3 cap shape only: both yellow repandum caps in ROW1 and both green Russula caps in ROW3 must be distinctly FLAT, expanded near-horizontal top, top surface rise no more than one sixth of cap width, NO raised central dome/umbo. Retain slight wavy edge for yellow repandum. Cap-only left icons should show narrow underside band: row1 short pale orange teeth, row3 pale cream gill lines. Whole row1 retain existing teeth and cream stem; whole row3 cream gills and white stem. Keep row2 funnel exactly. Crisp outlines and NO shadows, halos or background; fully transparent.",
+      "Correct ONLY the bottom edge of ROW1 LEFT yellow cap-only icon: add a crisp continuous dark brown outline enclosing all the short orange teeth on its underside. No bright fringe or unoutlined teeth may extend below this outline. Keep six icons, all existing colors, cap shapes, rows and stems exactly unchanged. Fully transparent background, remove any external glow/shadow, no other changes."
+    ],
     "stato": "ok"
   }
 ]
