@@ -23,4 +23,4 @@ Python è stato usato per scala e centratura delle componenti integre su fondo t
 
 Ramo autorizzato: `gpt/immagini`, senza PR. Il remoto è stato verificato al commit `e4bb29f01656c82c61cfc6dd319c182beffb64c5`: contiene le infografiche e le forme fino alla 34.
 
-Le forme 35–39, la correzione finale della 31 e i report conclusivi sono versionati localmente. Il caricamento successivo è bloccato perché GitHub rifiuta la credenziale disponibile (`Invalid username or token`). Per completarlo, una volta ripristinato l'accesso, eseguire da questa copia: `git push origin HEAD:refs/heads/gpt/immagini`. Non occorre rigenerare alcuna immagine.
+Le forme 35–39, la correzione finale della 31 e i report conclusivi sono stati caricati con il commit `24fed74`. L'errore temporaneo di autenticazione si è risolto al nuovo tentativo. L'intero lotto è quindi disponibile sul ramo autorizzato; questo riepilogo è aggiornato con un successivo commit documentale.
