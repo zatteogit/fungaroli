@@ -284,3 +284,8 @@ Confronto di due foglie intere: faggio a bordo intero a sinistra e carpino bianc
 ### erbe-fiori-simili — 15/10, continuazione
 
 Ombrella composta generica con cinque raggi principali e ombrellette terminali, nessuna attribuzione a una specie. Fonti interne: data/plants.json: cicuta.recognize; finocchietto.recognize; data/challenges.json: erbe-fiori-simili; docs/handoff-immagini-timbri.md: erbe-fiori-simili. Fiori ridotti a gruppi di punti; bianco dei fiori non riprodotto perché il timbro usa un unico inchiostro; foglia di contesto fortemente semplificata, non diagnostica. PNG e QA verificati prima del caricamento; anteprima64/84/112px sui due temi in incoming/bozze/timbri/erbe-fiori-simili-verifica.png.
+
+
+### fioriture-primavera — 15/10, continuazione
+
+Primula con rosetta basale di foglie oblunghe dentellate, fiore a cinque lobi su peduncolo nudo; germoglio separato. Fonti interne: data/plants.json: primula.recognize; data/challenges.json: fioriture-primavera. Rugosità ridotta a poche incisioni, un solo fiore; gradazione gialla del fiore omessa per rispettare l'inchiostro unico. PNG e QA verificati prima del caricamento; anteprima64/84/112px sui due temi in incoming/bozze/timbri/fioriture-primavera-verifica.png.

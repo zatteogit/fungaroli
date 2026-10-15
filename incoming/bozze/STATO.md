@@ -289,3 +289,7 @@ Ordine aggiornato da Matteo il 15/10: completare prima tutte le varianti di colo
 | timbri/erbe-fiori-simili.png | ok | Ombrella composta generica con cinque raggi principali e ombrellette terminali, nessuna attribuzione a una specie; margini52px alpha0, inchiostro integro ai4estremi; Fiori ridotti a gruppi di punti; bianco dei fiori non riprodotto perché il timbro usa un unico inchiostro; foglia di contesto fortemente semplificata, non diagnostica. |
 | bozze/timbri/erbe-fiori-simili-verifica.png | ok | Prove64/84/112px su carta e scuro. |
 | qa/2026-10-15-timbro-erbe-fiori-simili.json | ok | Controllo automatico del formato, margini e inchiostro ai4estremi. |
+
+| timbri/fioriture-primavera.png | ok | Primula con rosetta basale di foglie oblunghe dentellate, fiore a cinque lobi su peduncolo nudo; germoglio separato; margini52px alpha0, inchiostro integro ai4estremi; Rugosità ridotta a poche incisioni, un solo fiore; gradazione gialla del fiore omessa per rispettare l'inchiostro unico. |
+| bozze/timbri/fioriture-primavera-verifica.png | ok | Prove64/84/112px su carta e scuro. |
+| qa/2026-10-15-timbro-fioriture-primavera.json | ok | Controllo automatico del formato, margini e inchiostro ai4estremi. |
