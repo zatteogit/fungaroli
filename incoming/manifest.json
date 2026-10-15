@@ -19555,5 +19555,53 @@
     "modello": "image_gen (modello integrato, identificatore non esposto)",
     "prompt": "Use case: scientific-educational. Create one transparent PNG sprite sheet 1254x1254, invisible equal 3x3 grid, 418px cells. Reference image is ONLY the style/color/scale guide; its top row is Amanita caesarea, ignore all other species and all reference labels. Same flat simple UI icon style, dark brown continuous rounded outlines, few flat colors, orange cap exactly matching reference, golden yellow gills/stem/ring, ivory-white sack volva. No words, letters, numbers, grid, shadows, glow, texture or background. Each icon fully closed intact outline, centered in its own cell, minimum 12% transparent margin all four sides. Same scale across phases; isolated caps about 76% cell width; whole mushrooms about 76% cell height. One stage per row, columns ordered cap-only, whole mushroom, egg-section when requested. Row 1 CAESAREA EGG: cell0 closed WHITE egg, no exposed cap/stem; cell1 closed WHITE egg, same exterior, no exposed cap/stem; cell2 vertical CUTAWAY of intact white egg with white outer veil completely surrounding a tiny already-formed mushroom inside, orange cap embryo, yellow gills and yellow stem, simple thin brown anatomical contours, NO separate loose half. Row 2 CAESAREA OPENING: cell3 only the smooth ORANGE hemispherical cap emerging through torn WHITE veil, cap only, no stem; cell4 compact young whole mushroom with smooth orange hemispherical cap emerging from torn white sack, short golden yellow stem and yellow ring, white sack volva; cell5 completely empty transparent. Row3 CAESAREA YOUNG: cell6 only smooth ORANGE CONVEX cap like reference cap icon, thin yellow rim no stalk; cell7 whole mushroom exactly like top-row reference whole mushroom, orange convex cap, yellow gills and yellow ring/stem, white sack volva; cell8 completely empty transparent. For every cap-only icon draw a complete curved lower boundary, never crop a full mushroom. Exactly 7 icons. Preserve all unchanged reference traits; no white cap warts.",
     "verifica": "Confronto visivo e sovrapposizione con icone base; alpha, griglia, celle vuote, margini >=10%, contorno scuro ai quattro estremi e peso <400000 byte verificati con codice."
+  },
+  {
+    "file": "incoming/infografiche/terreum-revisione.webp",
+    "tipo": "infografica",
+    "soggetto": "terreum",
+    "modello": "image_gen (modello integrato, identificatore tecnico non esposto)",
+    "revisiona": "incoming/infografiche/terreum.webp",
+    "prompt": "Change only the gill-to-stem attachment in the underside-view vignette to clearly sinuate (emarginate) gills: each full-length pale gill approaches the stem, makes a small sharply defined concave notch / upward step just before the stem, then touches the stem with a narrow little tooth. Keep everything else exactly the same: layout, specimens, colors, light, empty margins, no text.",
+    "edits": [
+      "Use case: precise-object-edit. Change only the gill attachment in the attached underside vignette to CLEARLY NOTCHED SINUATE gills. The previous rounded terminations are insufficient. Redraw the small central gill region: on BOTH SIDES of the stem the lower gill edge must rise abruptly upward in a deep narrow concave notch BEFORE meeting the stem, then descend a short distance as a tiny tooth that TOUCHES the stem. This should form a visible shallow stair step or hook at the junction. Show 3–4 such notches on each side. The pale grey gills must remain attached by those small teeth, without a free circular gap or a collar. Keep all gills white or neutral light grey with no pink/brown hues. Keep everything else exactly the same: silhouette, grey felted cap, stem, soil, blank background, size, style, light and composition, no text. This is a local anatomical correction, not a decorative scalloped collar.",
+      "Use case: precise-object-edit. Image 1 is the EDIT TARGET, the longitudinal section vignette of Tricholoma terreum. Change only the gill-to-stem attachment in this section vignette to CLEARLY SINUATE / EMARGINATE gills: on BOTH sides of the cut stem, the bottom edge of the gills is nearly horizontal near the cap edge, then has a DISTINCT small upward V-shaped concave notch just before the stem, and then descends a little as a tiny tooth that touches the stem. The notch must be visibly open and angular, a missing wedge from the bottom edge near the stem, not merely curved smoothly into the stem. Keep white/pale neutral grey gills with no pink, yellow or brown staining. Keep everything else exactly the same: entire cap silhouette, all cap texture, internal thin pale flesh, hollow cut stem, soil, size, composition, light and blank background. No ring, volva, collar, free gills, text or extra elements. Output the same landscape composition."
+    ],
+    "tentativi": 3,
+    "stato": "non approvata",
+    "checklist_superata": false,
+    "verifica": "Tre tentativi con image_gen: primo edit della vista da sotto insufficiente; secondo edit con tacche e dentini più visibili; terzo edit della sezione. Compositing con codice limitato all’attacco lamellare nelle due vignette; prima dell’export nessun pixel modificato fuori dalle vignette, resto della tavola conservato. Vista da sotto migliorata, ma nella sezione la tacca è ancora troppo arrotondata e il dentino d’attacco non è sufficientemente distinto: voce lamelle smarginate NON superata. Checklist generale README §6: 8/9 (riserva sull’attacco lamellare); specifica terreum §7: 4/5. Cappelli piccoli grigi opachi e feltrati, gambo chiaro senza anello/volva, pineta; carne sezionata chiara immutabile e gambo cavo; tigrino più grande, carnoso e squamoso, circa 2:1. Nessuna tinta rosa/bruna aggiunta alle lamelle, nessun testo o elemento extra; margini e spazio inferiore destro conservati. Confrontate terreum-ref.webp e tricholoma-pardinum-inat1.webp. Originale non sovrascritto. WebP qualità 85, 1600×2000, 225974 byte (<400000), peso verificato con codice. Fermato dopo tre tentativi.",
+    "checklist_generale": {
+      "confronto_foto": true,
+      "imenoforo_tipo_colore_e_attacco": false,
+      "anello_volva": true,
+      "sezione": true,
+      "sosia": true,
+      "nessuna_invenzione": true,
+      "scala": true,
+      "niente_testo": true,
+      "spazi_liberi": true
+    },
+    "checklist_specie": {
+      "cappello": true,
+      "lamelle_chiare_smarginate": false,
+      "gambo_senza_anello": true,
+      "pineta": true,
+      "tigrino_scala": true
+    },
+    "riferimenti": [
+      "docs/infografiche/README.md §6 (claude/brave-tesla-wu0a2b)",
+      "docs/infografiche/terreum.md §2 e §7 (claude/brave-tesla-wu0a2b)",
+      "assets/species/terreum-ref.webp",
+      "assets/species/tricholoma-pardinum-inat1.webp"
+    ],
+    "dimensioni": [
+      1600,
+      2000
+    ],
+    "qualita_webp": 85,
+    "bytes": 225974,
+    "sha256": "7d1d5a32fcb2b214940951884f103868e28fee0317044e1754e8c654c20d4f1b",
+    "pixel_modificati_fuori_vignette_prima_export": 0
   }
 ]
