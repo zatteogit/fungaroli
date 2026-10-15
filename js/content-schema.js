@@ -45,7 +45,7 @@ export const FIELD_LABELS = {
   name:'Nome',latin:'Nome scientifico',title:'Titolo',subtitle:'Sottotitolo',description:'Descrizione',
   excerpt:'Introduzione',body:'Testo dell’articolo',html:'Testo formattato',category:'Categoria',
   aliases:'Altri nomi',aka:'Altri nomi',toxicity:'Commestibilità',caution:'Cautele',warning:'Avvertenza',
-  traits:'Caratteri',months:'Mesi della stagione',season:'Stagione',sources:'Fonti',source:'Provenienza',
+  traits:'Caratteri',stages:'Fasi di crescita',tiles:'Tessere che cambiano',desc:'Descrizione',months:'Mesi della stagione',season:'Stagione',sources:'Fonti',source:'Provenienza',
   file:'File immagine',file_hd:'Immagine grande',thumb:'Miniatura',author:'Autore',license:'Licenza',
   page:'Pagina della fonte',alt:'Testo alternativo',caption:'Didascalia',id:'Identificativo',
   lat:'Latitudine',lon:'Longitudine',parking:'Soste',access:'Accesso',protection:'Tutela e regole locali',law:'Norma',summary:'Sintesi per l’app',lookalikeNote:'Nota sui sosia',presenceNote:'Presenza nel Lazio',

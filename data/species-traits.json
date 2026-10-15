@@ -189,7 +189,22 @@
       "bulbosa": "Con bulbo",
       "radicante": "Radicante",
       "assottigliata": "Assottigliata"
-    }
+    },
+    "stages": {
+      "uovo": "Uovo",
+      "apertura": "Si apre",
+      "giovane": "Giovane",
+      "adulto": "Adulto",
+      "maturo": "Maturo",
+      "sciolto": "Si scioglie"
+    },
+    "stage_tiles": {
+      "cappello": "Cappello visto di lato",
+      "sotto": "Sotto il cappello",
+      "gambo": "Fungo intero",
+      "taglio": "Sezione verticale (solo nella fase a uovo)"
+    },
+    "_note_stages": "stages: fasi di crescita in ordine, solo dove cambiano l'aspetto e con fonte. id dall'elenco chiuso «stages»; tiles = tessere che cambiano in quella fase (elenco chiuso «stage_tiles»; «taglio» solo per la fase «uovo»); cap_shape e hymenophore_color, se presenti, sono valori già nei caratteri della specie; source = URL tra le fonti della specie. Dove ci sono fasi, le varianti di forma del cappello non si disegnano (docs/handoff-immagini-fasi.md)."
   },
   "general_rules": [
     {
@@ -336,6 +351,50 @@
           "bulbosa"
         ]
       },
+      "stages": [
+        {
+          "id": "giovane",
+          "label": "Giovane",
+          "desc": "Cappello emisferico, a volte piccolo rispetto al gambo. Tubuli bianchi.",
+          "cap_shape": "emisferico",
+          "hymenophore_color": [
+            "bianco"
+          ],
+          "tiles": [
+            "cappello",
+            "sotto",
+            "gambo"
+          ],
+          "source": "https://it.wikipedia.org/wiki/Boletus_edulis"
+        },
+        {
+          "id": "adulto",
+          "label": "Adulto",
+          "desc": "Cappello piano-convesso. Tubuli giallastri.",
+          "cap_shape": "convesso",
+          "hymenophore_color": [
+            "giallo"
+          ],
+          "tiles": [
+            "cappello",
+            "sotto",
+            "gambo"
+          ],
+          "source": "https://it.wikipedia.org/wiki/Boletus_edulis"
+        },
+        {
+          "id": "maturo",
+          "label": "Maturo",
+          "desc": "Tubuli verdastri.",
+          "hymenophore_color": [
+            "verde"
+          ],
+          "tiles": [
+            "sotto"
+          ],
+          "source": "https://it.wikipedia.org/wiki/Boletus_edulis"
+        }
+      ],
       "field_rules": [
         {
           "text": "Pori rosa, rossi o arancio e carne che vira al blu sono caratteri di altri boleti, anche tossici; il confronto non certifica l’identità di un porcino.",
@@ -518,6 +577,33 @@
           "bulbosa"
         ]
       },
+      "stages": [
+        {
+          "id": "giovane",
+          "label": "Giovane",
+          "desc": "Pori bianchi.",
+          "hymenophore_color": [
+            "bianco"
+          ],
+          "tiles": [
+            "sotto"
+          ],
+          "source": "https://it.wikipedia.org/wiki/Boletus_pinophilus"
+        },
+        {
+          "id": "adulto",
+          "label": "Adulto",
+          "desc": "Pori gialli od olivastri.",
+          "hymenophore_color": [
+            "giallo",
+            "verde"
+          ],
+          "tiles": [
+            "sotto"
+          ],
+          "source": "https://it.wikipedia.org/wiki/Boletus_pinophilus"
+        }
+      ],
       "field_rules": [
         {
           "text": "Pori rosa, rossi o arancio e carne che vira al blu sono caratteri di altri boleti, anche tossici; il confronto non certifica l’identità di un porcino.",
@@ -677,6 +763,53 @@
           "bulbosa"
         ]
       },
+      "stages": [
+        {
+          "id": "giovane",
+          "label": "Giovane",
+          "desc": "Cappello emisferico. Tubuli e pori bianchi.",
+          "cap_shape": "emisferico",
+          "hymenophore_color": [
+            "bianco"
+          ],
+          "tiles": [
+            "cappello",
+            "sotto",
+            "gambo"
+          ],
+          "source": "https://it.wikipedia.org/wiki/Boletus_aereus"
+        },
+        {
+          "id": "adulto",
+          "label": "Adulto",
+          "desc": "Cappello convesso. Pori giallastri.",
+          "cap_shape": "convesso",
+          "hymenophore_color": [
+            "giallo"
+          ],
+          "tiles": [
+            "cappello",
+            "sotto",
+            "gambo"
+          ],
+          "source": "https://it.wikipedia.org/wiki/Boletus_aereus"
+        },
+        {
+          "id": "maturo",
+          "label": "Maturo",
+          "desc": "Cappello aperto e spianato; i pori formano una spugna giallo sporco.",
+          "cap_shape": "piano",
+          "hymenophore_color": [
+            "giallo"
+          ],
+          "tiles": [
+            "cappello",
+            "sotto",
+            "gambo"
+          ],
+          "source": "https://it.wikipedia.org/wiki/Boletus_aereus"
+        }
+      ],
       "field_rules": [
         {
           "text": "Pori rosa, rossi o arancio e carne che vira al blu sono caratteri di altri boleti, anche tossici; il confronto non certifica l’identità di un porcino.",
@@ -834,6 +967,51 @@
           "bulbosa"
         ]
       },
+      "stages": [
+        {
+          "id": "giovane",
+          "label": "Giovane",
+          "desc": "Cappello tondeggiante, poi emisferico. Pori bianchi.",
+          "cap_shape": "emisferico",
+          "hymenophore_color": [
+            "bianco"
+          ],
+          "tiles": [
+            "cappello",
+            "sotto",
+            "gambo"
+          ],
+          "source": "https://it.wikipedia.org/wiki/Boletus_aestivalis"
+        },
+        {
+          "id": "adulto",
+          "label": "Adulto",
+          "desc": "Cappello quasi appiattito, raramente disteso del tutto. Pori giallini.",
+          "cap_shape": "convesso",
+          "hymenophore_color": [
+            "giallo"
+          ],
+          "tiles": [
+            "cappello",
+            "sotto",
+            "gambo"
+          ],
+          "source": "https://it.wikipedia.org/wiki/Boletus_aestivalis"
+        },
+        {
+          "id": "maturo",
+          "label": "Maturo",
+          "desc": "Pori giallo-verdastri.",
+          "hymenophore_color": [
+            "giallo",
+            "verde"
+          ],
+          "tiles": [
+            "sotto"
+          ],
+          "source": "https://it.wikipedia.org/wiki/Boletus_aestivalis"
+        }
+      ],
       "field_rules": [
         {
           "text": "Pori rosa, rossi o arancio e carne che vira al blu sono caratteri di altri boleti, anche tossici; il confronto non certifica l’identità di un porcino.",
@@ -992,6 +1170,52 @@
           "bulbosa"
         ]
       },
+      "stages": [
+        {
+          "id": "uovo",
+          "label": "Uovo",
+          "desc": "Tutto chiuso nel velo bianco, come un uovo. In sezione si vede l’abbozzo del fungo già arancio.",
+          "tiles": [
+            "cappello",
+            "gambo",
+            "taglio"
+          ],
+          "source": "https://it.wikipedia.org/wiki/Amanita_caesarea"
+        },
+        {
+          "id": "apertura",
+          "label": "Si apre",
+          "desc": "Il velo si lacera e il cappello emisferico esce dalla volva bianca.",
+          "cap_shape": "emisferico",
+          "tiles": [
+            "cappello",
+            "gambo"
+          ],
+          "source": "https://en.wikipedia.org/wiki/Amanita_caesarea"
+        },
+        {
+          "id": "giovane",
+          "label": "Giovane",
+          "desc": "Cappello convesso, la volva bianca a sacco resta alla base.",
+          "cap_shape": "convesso",
+          "tiles": [
+            "cappello",
+            "gambo"
+          ],
+          "source": "https://en.wikipedia.org/wiki/Amanita_caesarea"
+        },
+        {
+          "id": "adulto",
+          "label": "Adulto",
+          "desc": "Cappello aperto fino a piano.",
+          "cap_shape": "piano",
+          "tiles": [
+            "cappello",
+            "gambo"
+          ],
+          "source": "https://en.wikipedia.org/wiki/Amanita_caesarea"
+        }
+      ],
       "field_rules": [
         {
           "text": "La raccolta degli ovoli con velo ancora chiuso è vietata nel Lazio (L.R. 32/98, art. 3 c. 4).",
@@ -1195,6 +1419,30 @@
           "normale"
         ]
       },
+      "stages": [
+        {
+          "id": "giovane",
+          "label": "Giovane",
+          "desc": "Cappello convesso.",
+          "cap_shape": "convesso",
+          "tiles": [
+            "cappello",
+            "gambo"
+          ],
+          "source": "https://it.wikipedia.org/wiki/Cantharellus_cibarius"
+        },
+        {
+          "id": "adulto",
+          "label": "Adulto",
+          "desc": "Cappello piano e avvallato, a imbuto.",
+          "cap_shape": "imbuto",
+          "tiles": [
+            "cappello",
+            "gambo"
+          ],
+          "source": "https://it.wikipedia.org/wiki/Cantharellus_cibarius"
+        }
+      ],
       "field_rules": [
         {
           "text": "Il fungo dell’olivo (Omphalotus olearius), tossico, può formare cespi aranciati su legno e radici, talvolta interrati.",
@@ -1662,6 +1910,30 @@
           "bulbosa"
         ]
       },
+      "stages": [
+        {
+          "id": "giovane",
+          "label": "Giovane",
+          "desc": "Cappello quasi sferico, chiuso «a mazza di tamburo», bruno chiaro con il centro più scuro.",
+          "cap_shape": "emisferico",
+          "tiles": [
+            "cappello",
+            "gambo"
+          ],
+          "source": "https://www.first-nature.com/fungi/macrolepiota-procera.php"
+        },
+        {
+          "id": "adulto",
+          "label": "Adulto",
+          "desc": "Cappello aperto fino a piano, con un piccolo umbone al centro: «a ombrello». L’anello diventa mobile.",
+          "cap_shape": "ombrellato",
+          "tiles": [
+            "cappello",
+            "gambo"
+          ],
+          "source": "https://www.first-nature.com/fungi/macrolepiota-procera.php"
+        }
+      ],
       "field_rules": [
         {
           "text": "Le piccole Lepiota comprendono specie mortali.",
@@ -1841,6 +2113,30 @@
           "bulbosa"
         ]
       },
+      "stages": [
+        {
+          "id": "giovane",
+          "label": "Giovane",
+          "desc": "Cappello molto convesso, coperto di squamette fini, soprattutto al centro.",
+          "cap_shape": "convesso",
+          "tiles": [
+            "cappello",
+            "gambo"
+          ],
+          "source": "https://www.first-nature.com/fungi/armillaria-mellea.php"
+        },
+        {
+          "id": "adulto",
+          "label": "Adulto",
+          "desc": "Cappello appiattito, spesso con il margine ondulato e striato; le squamette possono non vedersi più.",
+          "cap_shape": "piano",
+          "tiles": [
+            "cappello",
+            "gambo"
+          ],
+          "source": "https://www.first-nature.com/fungi/armillaria-mellea.php"
+        }
+      ],
       "field_rules": [
         {
           "text": "Il chiodino (Armillaria) è tossico crudo o poco cotto. Le fonti sanitarie prevedono prebollitura con eliminazione dell’acqua e successiva cottura, dopo il controllo micologico.",
@@ -2394,6 +2690,38 @@
           "normale"
         ]
       },
+      "stages": [
+        {
+          "id": "giovane",
+          "label": "Giovane",
+          "desc": "Cappello conico. Lamelle bianche.",
+          "cap_shape": "conico",
+          "hymenophore_color": [
+            "bianco"
+          ],
+          "tiles": [
+            "cappello",
+            "sotto",
+            "gambo"
+          ],
+          "source": "https://www.first-nature.com/fungi/tricholoma-terreum.php"
+        },
+        {
+          "id": "adulto",
+          "label": "Adulto",
+          "desc": "Cappello quasi piatto con un piccolo umbone. Lamelle grigie, spesso con toni gialli.",
+          "cap_shape": "piano",
+          "hymenophore_color": [
+            "grigio"
+          ],
+          "tiles": [
+            "cappello",
+            "sotto",
+            "gambo"
+          ],
+          "source": "https://www.first-nature.com/fungi/tricholoma-terreum.php"
+        }
+      ],
       "field_rules": [
         {
           "text": "Tra i tricolomi grigi vi sono sosia tossici come l’agarico tigrino (Tricholoma pardinum); foto e descrizioni non escludono la confusione.",
@@ -2669,7 +2997,8 @@
         ],
         "cap_shape": [
           "emisferico",
-          "convesso"
+          "convesso",
+          "piano"
         ],
         "cap_size": [
           "medio",
@@ -2720,6 +3049,38 @@
           "normale"
         ]
       },
+      "stages": [
+        {
+          "id": "giovane",
+          "label": "Giovane",
+          "desc": "Cappello emisferico. Tubuli e pori bianchi.",
+          "cap_shape": "emisferico",
+          "hymenophore_color": [
+            "bianco"
+          ],
+          "tiles": [
+            "cappello",
+            "sotto",
+            "gambo"
+          ],
+          "source": "https://it.wikipedia.org/wiki/Tylopilus_felleus"
+        },
+        {
+          "id": "adulto",
+          "label": "Adulto",
+          "desc": "Cappello spianato. Pori rosati.",
+          "cap_shape": "piano",
+          "hymenophore_color": [
+            "rosa"
+          ],
+          "tiles": [
+            "cappello",
+            "sotto",
+            "gambo"
+          ],
+          "source": "https://it.wikipedia.org/wiki/Tylopilus_felleus"
+        }
+      ],
       "field_rules": [
         {
           "text": "Il porcino di fiele è descritto come molto amaro; pori rosati e reticolo bruno sono caratteri da confrontare. Il sapore non va verificato assaggiando.",
@@ -2767,7 +3128,7 @@
         "aereus",
         "aestivalis"
       ],
-      "traits_notes": "Sporata rosa-bruna ('clay-pink', 'brownish pink', 'rosate in massa') -> rosa + bruno. Cappello asciutto, leggermente vellutato da giovane, poi liscio e opaco; nessuna fonte lo dice viscido. Gambo ingrossato alla base, a volte obeso/clavato, con reticolo bruno marcato. Carne: 'soda' e' il valore piu' vicino nel vocabolario, ma en.wiki e mushroomexpert la dicono piu' tenera/morbida degli altri boleti e spugnosa con l'eta'."
+      "traits_notes": "Sporata rosa-bruna ('clay-pink', 'brownish pink', 'rosate in massa') -> rosa + bruno. Cappello asciutto, leggermente vellutato da giovane, poi liscio e opaco; nessuna fonte lo dice viscido. Gambo ingrossato alla base, a volte obeso/clavato, con reticolo bruno marcato. Carne: 'soda' e' il valore piu' vicino nel vocabolario, ma en.wiki e mushroomexpert la dicono piu' tenera/morbida degli altri boleti e spugnosa con l'eta'. Forma piana aggiunta il 15/10: «dapprima emisferico, poi spianato» (it.wiki)."
     },
     "rubroboletus-satanas": {
       "latin": "Rubroboletus satanas",
@@ -2779,8 +3140,9 @@
           "pori"
         ],
         "hymenophore_color": [
-          "rosso",
-          "arancio"
+          "giallo",
+          "arancio",
+          "rosso"
         ],
         "cap_color": [
           "bianco",
@@ -2838,6 +3200,39 @@
           "normale"
         ]
       },
+      "stages": [
+        {
+          "id": "giovane",
+          "label": "Giovane",
+          "desc": "Cappello arrotondato, a cupola. Pori giallastri negli esemplari molto giovani.",
+          "cap_shape": "emisferico",
+          "hymenophore_color": [
+            "giallo"
+          ],
+          "tiles": [
+            "cappello",
+            "sotto",
+            "gambo"
+          ],
+          "source": "https://www.first-nature.com/fungi/rubroboletus-satanas.php"
+        },
+        {
+          "id": "adulto",
+          "label": "Adulto",
+          "desc": "Cappello che può diventare irregolare e lobato. Pori arancio, poi rossi.",
+          "cap_shape": "convesso",
+          "hymenophore_color": [
+            "arancio",
+            "rosso"
+          ],
+          "tiles": [
+            "cappello",
+            "sotto",
+            "gambo"
+          ],
+          "source": "https://www.first-nature.com/fungi/rubroboletus-satanas.php"
+        }
+      ],
       "field_rules": [
         {
           "text": "Il boleto satana è tossico e può causare gravi disturbi gastrointestinali. Pori rossi e viraggio al blu compaiono anche in altri boleti e non lo identificano da soli.",
@@ -2884,7 +3279,7 @@
         "edulis",
         "aestivalis"
       ],
-      "traits_notes": "TOSSICO, valori larghi. Sporata bruno-oliva/verde-oliva (aggiunto anche bruno). Cappello vellutato da giovane, poi glabro e liscio con screpolature; en.wiki: 'often slightly viscid in wet weather' -> incluse tutte. Gambo tozzo, ovale-globoso, ingrossato/bulboso alla base; aggiunto 'normale' per prudenza (esemplari adulti piu' cilindrici). Carne soda e compatta (it.wiki), spugnosa con l'eta' (en.wiki)."
+      "traits_notes": "TOSSICO, valori larghi. Sporata bruno-oliva/verde-oliva (aggiunto anche bruno). Cappello vellutato da giovane, poi glabro e liscio con screpolature; en.wiki: 'often slightly viscid in wet weather' -> incluse tutte. Gambo tozzo, ovale-globoso, ingrossato/bulboso alla base; aggiunto 'normale' per prudenza (esemplari adulti piu' cilindrici). Carne soda e compatta (it.wiki), spugnosa con l'eta' (en.wiki). Pori gialli aggiunti il 15/10: «yellowish in very young fruitbodies» (First Nature)."
     },
     "caloboletus-calopus": {
       "latin": "Caloboletus calopus",
@@ -3412,6 +3807,41 @@
           "bulbosa"
         ]
       },
+      "stages": [
+        {
+          "id": "uovo",
+          "label": "Uovo",
+          "desc": "Ancora chiusa nell’ovolo, più stretto in alto che in basso. In sezione il cappello ha sfumature verdognole.",
+          "tiles": [
+            "cappello",
+            "gambo",
+            "taglio"
+          ],
+          "source": "https://it.wikipedia.org/wiki/Amanita_phalloides"
+        },
+        {
+          "id": "apertura",
+          "label": "Si apre",
+          "desc": "Il velo bianco si rompe e resta alla base come volva; cappello arrotondato, emisferico.",
+          "cap_shape": "emisferico",
+          "tiles": [
+            "cappello",
+            "gambo"
+          ],
+          "source": "https://en.wikipedia.org/wiki/Amanita_phalloides"
+        },
+        {
+          "id": "adulto",
+          "label": "Adulto",
+          "desc": "Cappello appiattito con l’età.",
+          "cap_shape": "piano",
+          "tiles": [
+            "cappello",
+            "gambo"
+          ],
+          "source": "https://en.wikipedia.org/wiki/Amanita_phalloides"
+        }
+      ],
       "field_rules": [
         {
           "text": "Lamelle bianche, anello e volva sono presenti anche nelle amanite mortali. Resti assenti, nascosti o danneggiati non escludono il rischio.",
@@ -3587,6 +4017,30 @@
           "normale"
         ]
       },
+      "stages": [
+        {
+          "id": "giovane",
+          "label": "Giovane",
+          "desc": "Cappello emisferico, bianco o crema pallido.",
+          "cap_shape": "emisferico",
+          "tiles": [
+            "cappello",
+            "gambo"
+          ],
+          "source": "https://iris.santannapisa.it/retrieve/dd9e0b31-bbf8-709e-e053-3705fe0a83fd/92_vqr_Funghi.pdf"
+        },
+        {
+          "id": "adulto",
+          "label": "Adulto",
+          "desc": "Cappello da convesso a quasi piatto.",
+          "cap_shape": "piano",
+          "tiles": [
+            "cappello",
+            "gambo"
+          ],
+          "source": "https://iris.santannapisa.it/retrieve/dd9e0b31-bbf8-709e-e053-3705fe0a83fd/92_vqr_Funghi.pdf"
+        }
+      ],
       "field_rules": [
         {
           "text": "Lamelle bianche, anello e volva sono presenti anche nelle amanite mortali. Resti assenti, nascosti o danneggiati non escludono il rischio.",
@@ -3671,7 +4125,8 @@
         "cap_shape": [
           "conico",
           "emisferico",
-          "convesso"
+          "convesso",
+          "piano"
         ],
         "cap_size": [
           "medio"
@@ -3723,6 +4178,52 @@
           "normale"
         ]
       },
+      "stages": [
+        {
+          "id": "uovo",
+          "label": "Uovo",
+          "desc": "Ancora chiusa ad uovo. Cappello bianco candido e carne bianca: in sezione tutto bianco.",
+          "tiles": [
+            "cappello",
+            "gambo",
+            "taglio"
+          ],
+          "source": "https://it.wikipedia.org/wiki/Amanita_virosa"
+        },
+        {
+          "id": "apertura",
+          "label": "Si apre",
+          "desc": "Il fungo esce dal velo allungandosi; a volte restano lembi di velo al margine. Cappello conico con il margine piegato in dentro.",
+          "cap_shape": "conico",
+          "tiles": [
+            "cappello",
+            "gambo"
+          ],
+          "source": "https://en.wikipedia.org/wiki/Amanita_virosa"
+        },
+        {
+          "id": "giovane",
+          "label": "Giovane",
+          "desc": "Cappello emisferico.",
+          "cap_shape": "emisferico",
+          "tiles": [
+            "cappello",
+            "gambo"
+          ],
+          "source": "https://en.wikipedia.org/wiki/Amanita_virosa"
+        },
+        {
+          "id": "adulto",
+          "label": "Adulto",
+          "desc": "Cappello che si appiattisce.",
+          "cap_shape": "piano",
+          "tiles": [
+            "cappello",
+            "gambo"
+          ],
+          "source": "https://en.wikipedia.org/wiki/Amanita_virosa"
+        }
+      ],
       "field_rules": [
         {
           "text": "Lamelle bianche, anello e volva sono presenti anche nelle amanite mortali. Resti assenti, nascosti o danneggiati non escludono il rischio.",
@@ -3782,7 +4283,7 @@
       "lookalike_of": [
         "caesarea"
       ],
-      "traits_notes": "Sporata bianca (tutte le fonti). Velo: alcuni giovani esemplari hanno resti bianchi del velo universale che la pioggia lava presto (First Nature), resti anche al margine (en.wiki): MORTALE, quindi null per non escluderla mai. Cuticola setosa/glabra, poco vischiosa a tempo umido (it.wiki) -> liscia+asciutta+viscida. Carne fibrosa (it.wiki); 'soda' aggiunto per prudenza (non citato esplicitamente). Lamelle libere. Base bulbosa con volva sacciforme spesso profondamente interrata (First Nature): aggiunto 'normale' perche' se raccolta senza scavare la base puo' sembrare normale."
+      "traits_notes": "Sporata bianca (tutte le fonti). Velo: alcuni giovani esemplari hanno resti bianchi del velo universale che la pioggia lava presto (First Nature), resti anche al margine (en.wiki): MORTALE, quindi null per non escluderla mai. Cuticola setosa/glabra, poco vischiosa a tempo umido (it.wiki) -> liscia+asciutta+viscida. Carne fibrosa (it.wiki); 'soda' aggiunto per prudenza (non citato esplicitamente). Lamelle libere. Base bulbosa con volva sacciforme spesso profondamente interrata (First Nature): aggiunto 'normale' perche' se raccolta senza scavare la base puo' sembrare normale. Forma piana aggiunta il 15/10: «flattening» (en.wiki), «occasionally almost flat» (First Nature)."
     },
     "amanita-muscaria": {
       "latin": "Amanita muscaria",
@@ -3856,6 +4357,41 @@
           "bulbosa"
         ]
       },
+      "stages": [
+        {
+          "id": "uovo",
+          "label": "Uovo",
+          "desc": "Esce dal terreno come un uovo bianco coperto dal velo. In sezione, sotto il velo, uno strato giallastro.",
+          "tiles": [
+            "cappello",
+            "gambo",
+            "taglio"
+          ],
+          "source": "https://en.wikipedia.org/wiki/Amanita_muscaria"
+        },
+        {
+          "id": "apertura",
+          "label": "Si apre",
+          "desc": "Il rosso compare dove il velo si rompe; il cappello è emisferico, con verruche fitte.",
+          "cap_shape": "emisferico",
+          "tiles": [
+            "cappello",
+            "gambo"
+          ],
+          "source": "https://en.wikipedia.org/wiki/Amanita_muscaria"
+        },
+        {
+          "id": "adulto",
+          "label": "Adulto",
+          "desc": "Cappello aperto, quasi piatto; le verruche sembrano più rade. Età e pioggia possono sbiadire il rosso e togliere le verruche.",
+          "cap_shape": "piano",
+          "tiles": [
+            "cappello",
+            "gambo"
+          ],
+          "source": "https://en.wikipedia.org/wiki/Amanita_muscaria"
+        }
+      ],
       "field_rules": [
         {
           "text": "Lamelle, gambo e anello bianchi e resti della volva sul bulbo sono caratteri da confrontare con l’ovolo buono (Amanita caesarea).",
@@ -3989,6 +4525,39 @@
           "bulbosa"
         ]
       },
+      "stages": [
+        {
+          "id": "uovo",
+          "label": "Uovo",
+          "desc": "All’inizio a forma di uovo, liscio.",
+          "tiles": [
+            "cappello",
+            "gambo"
+          ],
+          "source": "https://www.first-nature.com/fungi/amanita-crocea.php"
+        },
+        {
+          "id": "apertura",
+          "label": "Si apre",
+          "desc": "Il gambo si allunga e spinge il cappello fuori dalla volva, il velo generale rotto.",
+          "tiles": [
+            "cappello",
+            "gambo"
+          ],
+          "source": "https://www.first-nature.com/fungi/amanita-crocea.php"
+        },
+        {
+          "id": "adulto",
+          "label": "Adulto",
+          "desc": "Cappello convesso o anche piano, con un piccolo umbone più scuro.",
+          "cap_shape": "convesso",
+          "tiles": [
+            "cappello",
+            "gambo"
+          ],
+          "source": "https://www.first-nature.com/fungi/amanita-crocea.php"
+        }
+      ],
       "field_rules": [
         {
           "text": "L’Amanita crocea è tossica cruda.",
@@ -4303,7 +4872,9 @@
           "lamelle"
         ],
         "hymenophore_color": [
+          "giallo",
           "arancio",
+          "rosso",
           "bruno"
         ],
         "cap_color": [
@@ -4368,6 +4939,38 @@
           "normale"
         ]
       },
+      "stages": [
+        {
+          "id": "giovane",
+          "label": "Giovane",
+          "desc": "Cappello convesso. Lamelle giallo pallido, coperte da una cortina debole.",
+          "cap_shape": "convesso",
+          "hymenophore_color": [
+            "giallo"
+          ],
+          "tiles": [
+            "cappello",
+            "sotto",
+            "gambo"
+          ],
+          "source": "https://www.first-nature.com/fungi/cortinarius-orellanus.php"
+        },
+        {
+          "id": "adulto",
+          "label": "Adulto",
+          "desc": "Cappello appiattito con un leggero umbone. Lamelle rosse.",
+          "cap_shape": "piano",
+          "hymenophore_color": [
+            "rosso"
+          ],
+          "tiles": [
+            "cappello",
+            "sotto",
+            "gambo"
+          ],
+          "source": "https://www.first-nature.com/fungi/cortinarius-orellanus.php"
+        }
+      ],
       "field_rules": [
         {
           "text": "Cortinario orellano: cappello fulvo-aranciato, lamelle e sporata ruggine. L’orellanina può causare danni renali tardivi.",
@@ -4420,7 +5023,7 @@
       "lookalike_of": [
         "cibarius"
       ],
-      "traits_notes": "MORTALE: valori larghi. Sporata ruggine/bruno-rossastra (First Nature, en.wiki, it.wiki testo), taxobox it.wiki 'ocra' -> ruggine+ocra+bruno. Velo: solo cortina debole su lamelle/gambo, nessuna fonte parla di resti sul cappello; null per prudenza (fibre di cortina al margine potrebbero essere scambiate). Cappello asciutto, finemente fibrilloso-squamuloso, sericeo opaco, liscio con l'eta' (First Nature, it/en.wiki) -> asciutta+squamosa+liscia; vellutata/feltrata aggiunto per prudenza. Lamelle adnato-uncinate (it.wiki), adnate o sinuate (en.wiki). Gambo fibroso, sodo, un po' assottigliato alla base (tutte le fonti)."
+      "traits_notes": "MORTALE: valori larghi. Sporata ruggine/bruno-rossastra (First Nature, en.wiki, it.wiki testo), taxobox it.wiki 'ocra' -> ruggine+ocra+bruno. Velo: solo cortina debole su lamelle/gambo, nessuna fonte parla di resti sul cappello; null per prudenza (fibre di cortina al margine potrebbero essere scambiate). Cappello asciutto, finemente fibrilloso-squamuloso, sericeo opaco, liscio con l'eta' (First Nature, it/en.wiki) -> asciutta+squamosa+liscia; vellutata/feltrata aggiunto per prudenza. Lamelle adnato-uncinate (it.wiki), adnate o sinuate (en.wiki). Gambo fibroso, sodo, un po' assottigliato alla base (tutte le fonti). Lamelle gialle aggiunte il 15/10: «pale yellowish at first» (First Nature). Lamelle rosse aggiunte il 15/10: «becoming red as the spores mature» (First Nature)."
     },
     "craterellus-cinereus": {
       "latin": "Craterellus cinereus",
@@ -5214,7 +5817,8 @@
         "cap_shape": [
           "convesso",
           "piano",
-          "ombrellato"
+          "ombrellato",
+          "emisferico"
         ],
         "cap_size": [
           "piccolo"
@@ -5273,6 +5877,30 @@
           "bulbosa"
         ]
       },
+      "stages": [
+        {
+          "id": "giovane",
+          "label": "Giovane",
+          "desc": "Cappello emisferico, con superficie feltrata bruno-rosata.",
+          "cap_shape": "emisferico",
+          "tiles": [
+            "cappello",
+            "gambo"
+          ],
+          "source": "https://www.first-nature.com/fungi/lepiota-brunneoincarnata.php"
+        },
+        {
+          "id": "adulto",
+          "label": "Adulto",
+          "desc": "Cappello largamente convesso, a volte quasi piatto; la superficie si rompe in squamette lanose in cerchi irregolari.",
+          "cap_shape": "convesso",
+          "tiles": [
+            "cappello",
+            "gambo"
+          ],
+          "source": "https://www.first-nature.com/fungi/lepiota-brunneoincarnata.php"
+        }
+      ],
       "field_rules": [
         {
           "text": "Tra le piccole Lepiota vi sono specie con amatossine mortali. Le dimensioni del cappello, da sole, non distinguono specie commestibili e velenose.",
@@ -5328,7 +5956,7 @@
       "lookalike_of": [
         "procera"
       ],
-      "traits_notes": "MORTALE (amatossine). Sporata bianca (tutte le fonti); aggiunto 'crema' per prudenza (sporate biancastre percepite come crema). Squame lanose concentriche derivano dalla rottura della cuticola feltrata, non da velo universale; ma essendo fioccose e facilmente scambiabili per fiocchi di velo, cap_veil=null per non escluderla. Cappello feltrato poi squamoso, disco centrale intero (liscio). Lamelle libere. Gambo cilindrico; una scheda (endemia.nc, vista solo come estratto di ricerca) lo dice da clavato a sub-bulboso -> aggiunto 'bulbosa' per prudenza. Carne 'pastosa' (it.wiki), gambo con squame fibrose -> fibrosa+soda; non gessosa."
+      "traits_notes": "MORTALE (amatossine). Sporata bianca (tutte le fonti); aggiunto 'crema' per prudenza (sporate biancastre percepite come crema). Squame lanose concentriche derivano dalla rottura della cuticola feltrata, non da velo universale; ma essendo fioccose e facilmente scambiabili per fiocchi di velo, cap_veil=null per non escluderla. Cappello feltrato poi squamoso, disco centrale intero (liscio). Lamelle libere. Gambo cilindrico; una scheda (endemia.nc, vista solo come estratto di ricerca) lo dice da clavato a sub-bulboso -> aggiunto 'bulbosa' per prudenza. Carne 'pastosa' (it.wiki), gambo con squame fibrose -> fibrosa+soda; non gessosa. Forma emisferica aggiunta il 15/10: «Initially hemispherical» (First Nature)."
     },
     "lepiota-subincarnata": {
       "latin": "Lepiota subincarnata",
@@ -5526,6 +6154,30 @@
           "normale"
         ]
       },
+      "stages": [
+        {
+          "id": "giovane",
+          "label": "Giovane",
+          "desc": "Cappello da campanulato a convesso.",
+          "cap_shape": "convesso",
+          "tiles": [
+            "cappello",
+            "gambo"
+          ],
+          "source": "https://en.wikipedia.org/wiki/Lepiota_cristata"
+        },
+        {
+          "id": "adulto",
+          "label": "Adulto",
+          "desc": "Cappello appiattito con un umbone, squame bruno-rossastre in cerchi concentrici.",
+          "cap_shape": "ombrellato",
+          "tiles": [
+            "cappello",
+            "gambo"
+          ],
+          "source": "https://en.wikipedia.org/wiki/Lepiota_cristata"
+        }
+      ],
       "field_rules": [
         {
           "text": "Tra le piccole Lepiota vi sono specie con amatossine mortali. Le dimensioni del cappello, da sole, non distinguono specie commestibili e velenose.",
@@ -5652,6 +6304,30 @@
           "bulbosa"
         ]
       },
+      "stages": [
+        {
+          "id": "giovane",
+          "label": "Giovane",
+          "desc": "Cappello a panino, arrotondato.",
+          "cap_shape": "emisferico",
+          "tiles": [
+            "cappello",
+            "gambo"
+          ],
+          "source": "https://www.first-nature.com/fungi/chlorophyllum-rhacodes.php"
+        },
+        {
+          "id": "adulto",
+          "label": "Adulto",
+          "desc": "Cappello espanso e convesso; di rado si apre del tutto piatto.",
+          "cap_shape": "convesso",
+          "tiles": [
+            "cappello",
+            "gambo"
+          ],
+          "source": "https://www.first-nature.com/fungi/chlorophyllum-rhacodes.php"
+        }
+      ],
       "field_rules": [
         {
           "text": "Arrossamento della carne e gambo liscio sono caratteri da confrontare nel gruppo Chlorophyllum: non bastano a identificare il fungo o stabilirne la commestibilità.",
@@ -6023,6 +6699,44 @@
           "assottigliata"
         ]
       },
+      "stages": [
+        {
+          "id": "giovane",
+          "label": "Giovane",
+          "desc": "Lamelle giallo zolfo.",
+          "hymenophore_color": [
+            "giallo"
+          ],
+          "tiles": [
+            "sotto"
+          ],
+          "source": "https://www.first-nature.com/fungi/hypholoma-fasciculare.php"
+        },
+        {
+          "id": "adulto",
+          "label": "Adulto",
+          "desc": "Lamelle verde oliva.",
+          "hymenophore_color": [
+            "verde"
+          ],
+          "tiles": [
+            "sotto"
+          ],
+          "source": "https://www.first-nature.com/fungi/hypholoma-fasciculare.php"
+        },
+        {
+          "id": "maturo",
+          "label": "Maturo",
+          "desc": "Lamelle che anneriscono man mano che le spore maturano.",
+          "hymenophore_color": [
+            "nero"
+          ],
+          "tiles": [
+            "sotto"
+          ],
+          "source": "https://www.first-nature.com/fungi/hypholoma-fasciculare.php"
+        }
+      ],
       "field_rules": [
         {
           "text": "Cespi giallo zolfo con lamelle verdastre: caratteri del falso chiodino (Hypholoma fasciculare), tossico, da confrontare con i chiodini (Armillaria).",
@@ -6081,6 +6795,7 @@
           "lamelle"
         ],
         "hymenophore_color": [
+          "giallo",
           "arancio",
           "bruno"
         ],
@@ -6091,7 +6806,8 @@
         ],
         "cap_shape": [
           "conico",
-          "convesso"
+          "convesso",
+          "piano"
         ],
         "cap_size": [
           "piccolo",
@@ -6148,6 +6864,38 @@
           "assottigliata"
         ]
       },
+      "stages": [
+        {
+          "id": "giovane",
+          "label": "Giovane",
+          "desc": "Cappello convesso. Lamelle giallo pallido, coperte da una cortina simile a una ragnatela.",
+          "cap_shape": "convesso",
+          "hymenophore_color": [
+            "giallo"
+          ],
+          "tiles": [
+            "cappello",
+            "sotto",
+            "gambo"
+          ],
+          "source": "https://www.first-nature.com/fungi/cortinarius-rubellus.php"
+        },
+        {
+          "id": "adulto",
+          "label": "Adulto",
+          "desc": "Cappello appiattito. Lamelle bruno ruggine.",
+          "cap_shape": "piano",
+          "hymenophore_color": [
+            "bruno"
+          ],
+          "tiles": [
+            "cappello",
+            "sotto",
+            "gambo"
+          ],
+          "source": "https://www.first-nature.com/fungi/cortinarius-rubellus.php"
+        }
+      ],
       "field_rules": [
         {
           "text": "Cortinario rubello: cappello fulvo a punta, cortina e lamelle ruggine. L’orellanina può causare danni renali tardivi.",
@@ -6191,7 +6939,7 @@
       "lookalike_of": [
         "mellea"
       ],
-      "traits_notes": "MORTALE (orellanina). Sporata: First Nature bruno-ruggine rossastro, it.wiki ocra; l'infobox di en.wiki dice 'cream to yellow' (probabile errore, ma inclusi crema/giallo per prudenza come da regola 3). Cappello asciutto, finemente squamuloso-fibrilloso, opaco. Cortina giallastra nei giovani, resti gialli sul gambo a bande: residui al margine del cappello non documentati ma possibili -> cap_veil=null. Lamelle: it.wiki 'smarginato-decorrenti, uncinate', infobox 'adnate' -> tutte e tre. Gambo: en.wiki 'bulbous base', it.wiki si allarga a ~2 cm alla base, First Nature 'tapers slightly towards the base' -> normale+bulbosa+assottigliata. Consistenza carne non descritta: fibrosa+soda (gambo fibrilloso tipico dei Cortinarius), per prudenza. Frequenza dei colori (trait_freq) dalle fonti: bruno: «The mushroom is generally tan to brown all over» (Wikipedia en).",
+      "traits_notes": "MORTALE (orellanina). Sporata: First Nature bruno-ruggine rossastro, it.wiki ocra; l'infobox di en.wiki dice 'cream to yellow' (probabile errore, ma inclusi crema/giallo per prudenza come da regola 3). Cappello asciutto, finemente squamuloso-fibrilloso, opaco. Cortina giallastra nei giovani, resti gialli sul gambo a bande: residui al margine del cappello non documentati ma possibili -> cap_veil=null. Lamelle: it.wiki 'smarginato-decorrenti, uncinate', infobox 'adnate' -> tutte e tre. Gambo: en.wiki 'bulbous base', it.wiki si allarga a ~2 cm alla base, First Nature 'tapers slightly towards the base' -> normale+bulbosa+assottigliata. Consistenza carne non descritta: fibrosa+soda (gambo fibrilloso tipico dei Cortinarius), per prudenza. Frequenza dei colori (trait_freq) dalle fonti: bruno: «The mushroom is generally tan to brown all over» (Wikipedia en). Forma piana aggiunta il 15/10: «at first convex, flattening at maturity» (First Nature). Lamelle gialle aggiunte il 15/10: «pale yellowish at first» (First Nature).",
       "trait_freq": {
         "cap_color": {
           "bruno": "di solito"
@@ -7500,7 +8248,8 @@
         ],
         "cap_shape": [
           "convesso",
-          "piano"
+          "piano",
+          "conico"
         ],
         "cap_size": [
           "medio",
@@ -7553,6 +8302,38 @@
           "bulbosa"
         ]
       },
+      "stages": [
+        {
+          "id": "giovane",
+          "label": "Giovane",
+          "desc": "Cappello conico. Lamelle bianco-giallastre.",
+          "cap_shape": "conico",
+          "hymenophore_color": [
+            "giallo"
+          ],
+          "tiles": [
+            "cappello",
+            "sotto",
+            "gambo"
+          ],
+          "source": "https://www.first-nature.com/fungi/entoloma-sinuatum.php"
+        },
+        {
+          "id": "adulto",
+          "label": "Adulto",
+          "desc": "Cappello da convesso a piano, con un umbone ottuso. Lamelle rosate.",
+          "cap_shape": "piano",
+          "hymenophore_color": [
+            "rosa"
+          ],
+          "tiles": [
+            "cappello",
+            "sotto",
+            "gambo"
+          ],
+          "source": "https://www.first-nature.com/fungi/entoloma-sinuatum.php"
+        }
+      ],
       "field_rules": [
         {
           "text": "Cappello grigio-crema, lamelle giallastre poi rosa e odore di farina: caratteri dell’entoloma livido, responsabile di gravi gastroenteriti.",
@@ -7598,7 +8379,7 @@
       "lookalike_of": [
         "terreum"
       ],
-      "traits_notes": "TOSSICO, quindi valori larghi. Sporata rosa-salmone (Wikipedia IT, First Nature), ma il testo di Wikipedia EN dice 'reddish-brown': aggiungo bruno. Cappello fibroso per fibrille innate (Wikipedia IT) e un po' vischioso da giovane (First Nature): metto asciutta, viscida e liscia, più squamosa per prudenza, nel caso le fibrille vengano lette come fibrille in rilievo. Velo nudo, nessun anello. Lamelle sinuate o smarginate, quasi libere (EN), adnate nell'infobox (IT, EN). Gambo cilindrico, a volte bulboso alla base (EN, First Nature). Carne soda ('firme', scheda di Madrid, che ho visto solo nel riassunto della ricerca perché il PDF dà 404). Ho aggiunto 'fibrosa' per prudenza, nessuna fonte la dice."
+      "traits_notes": "TOSSICO, quindi valori larghi. Sporata rosa-salmone (Wikipedia IT, First Nature), ma il testo di Wikipedia EN dice 'reddish-brown': aggiungo bruno. Cappello fibroso per fibrille innate (Wikipedia IT) e un po' vischioso da giovane (First Nature): metto asciutta, viscida e liscia, più squamosa per prudenza, nel caso le fibrille vengano lette come fibrille in rilievo. Velo nudo, nessun anello. Lamelle sinuate o smarginate, quasi libere (EN), adnate nell'infobox (IT, EN). Gambo cilindrico, a volte bulboso alla base (EN, First Nature). Carne soda ('firme', scheda di Madrid, che ho visto solo nel riassunto della ricerca perché il PDF dà 404). Ho aggiunto 'fibrosa' per prudenza, nessuna fonte la dice. Forma conica aggiunta il 15/10: «conical then convex to plane» (First Nature)."
     },
     "inocybe": {
       "latin": "Inocybe spp.",
@@ -8412,6 +9193,39 @@
           "bruno"
         ]
       },
+      "stages": [
+        {
+          "id": "giovane",
+          "label": "Giovane",
+          "desc": "Cappello globoso con il margine unito al gambo, poi emisferico. Lamelle rosa.",
+          "cap_shape": "emisferico",
+          "hymenophore_color": [
+            "rosa"
+          ],
+          "tiles": [
+            "cappello",
+            "sotto",
+            "gambo"
+          ],
+          "source": "https://it.wikipedia.org/wiki/Agaricus_campestris"
+        },
+        {
+          "id": "adulto",
+          "label": "Adulto",
+          "desc": "Cappello piano-convesso. Lamelle bruno scure, quasi nere; l’anello quasi scompare.",
+          "cap_shape": "convesso",
+          "hymenophore_color": [
+            "bruno",
+            "nero"
+          ],
+          "tiles": [
+            "cappello",
+            "sotto",
+            "gambo"
+          ],
+          "source": "https://www.first-nature.com/fungi/agaricus-campestris.php"
+        }
+      ],
       "check_before_picking": [
         "Lamelle libere, rosa vivo da giovane, poi bruno scure: mai bianche",
         "Base del gambo senza volva né sacco: estrai il fungo intero",
@@ -8528,6 +9342,38 @@
           "bruno"
         ]
       },
+      "stages": [
+        {
+          "id": "giovane",
+          "label": "Giovane",
+          "desc": "Cappello quasi sferico. Lamelle rosa pallido.",
+          "cap_shape": "emisferico",
+          "hymenophore_color": [
+            "rosa"
+          ],
+          "tiles": [
+            "cappello",
+            "sotto",
+            "gambo"
+          ],
+          "source": "https://www.first-nature.com/fungi/agaricus-arvensis.php"
+        },
+        {
+          "id": "adulto",
+          "label": "Adulto",
+          "desc": "Cappello aperto fino a piano o quasi. Lamelle brune.",
+          "cap_shape": "piano",
+          "hymenophore_color": [
+            "bruno"
+          ],
+          "tiles": [
+            "cappello",
+            "sotto",
+            "gambo"
+          ],
+          "source": "https://www.first-nature.com/fungi/agaricus-arvensis.php"
+        }
+      ],
       "check_before_picking": [
         "Odore netto di anice, non di inchiostro o di fenolo",
         "Base del gambo che al taglio non diventa subito giallo cromo",
@@ -8627,6 +9473,38 @@
           "bruno"
         ]
       },
+      "stages": [
+        {
+          "id": "giovane",
+          "label": "Giovane",
+          "desc": "Cappello emisferico. Lamelle rosa.",
+          "cap_shape": "emisferico",
+          "hymenophore_color": [
+            "rosa"
+          ],
+          "tiles": [
+            "cappello",
+            "sotto",
+            "gambo"
+          ],
+          "source": "https://www.first-nature.com/fungi/agaricus-bisporus.php"
+        },
+        {
+          "id": "adulto",
+          "label": "Adulto",
+          "desc": "Cappello convesso, poi appiattito. Lamelle bruno cioccolato.",
+          "cap_shape": "piano",
+          "hymenophore_color": [
+            "bruno"
+          ],
+          "tiles": [
+            "cappello",
+            "sotto",
+            "gambo"
+          ],
+          "source": "https://www.first-nature.com/fungi/agaricus-bisporus.php"
+        }
+      ],
       "check_before_picking": [
         "Lamelle libere, rosa poi bruno cioccolato: mai bianche",
         "Anello membranoso sul gambo, nessuna volva alla base",
@@ -8727,6 +9605,54 @@
           "bruno"
         ]
       },
+      "stages": [
+        {
+          "id": "giovane",
+          "label": "Giovane",
+          "desc": "Cappello quasi sferico. Lamelle bianche.",
+          "cap_shape": "emisferico",
+          "hymenophore_color": [
+            "bianco"
+          ],
+          "tiles": [
+            "cappello",
+            "sotto",
+            "gambo"
+          ],
+          "source": "https://www.first-nature.com/fungi/agaricus-sylvicola.php"
+        },
+        {
+          "id": "adulto",
+          "label": "Adulto",
+          "desc": "Cappello convesso. Lamelle grigio-rosa.",
+          "cap_shape": "convesso",
+          "hymenophore_color": [
+            "grigio",
+            "rosa"
+          ],
+          "tiles": [
+            "cappello",
+            "sotto",
+            "gambo"
+          ],
+          "source": "https://www.first-nature.com/fungi/agaricus-sylvicola.php"
+        },
+        {
+          "id": "maturo",
+          "label": "Maturo",
+          "desc": "Cappello del tutto appiattito. Lamelle bruno cioccolato.",
+          "cap_shape": "piano",
+          "hymenophore_color": [
+            "bruno"
+          ],
+          "tiles": [
+            "cappello",
+            "sotto",
+            "gambo"
+          ],
+          "source": "https://www.first-nature.com/fungi/agaricus-sylvicola.php"
+        }
+      ],
       "check_before_picking": [
         "Lamelle bianche solo da giovanissimo, poi grigio-rosa e bruno cioccolato",
         "Piccolo bulbo alla base, ma nessuna volva a sacco: estrai il fungo intero",
@@ -8842,6 +9768,39 @@
           "bruno"
         ]
       },
+      "stages": [
+        {
+          "id": "giovane",
+          "label": "Giovane",
+          "desc": "Cappello emisferico. Lamelle crema.",
+          "cap_shape": "emisferico",
+          "hymenophore_color": [
+            "crema"
+          ],
+          "tiles": [
+            "cappello",
+            "sotto",
+            "gambo"
+          ],
+          "source": "https://www.first-nature.com/fungi/cyclocybe-cylindracea.php"
+        },
+        {
+          "id": "adulto",
+          "label": "Adulto",
+          "desc": "Cappello largamente convesso o piano, margine ondulato, più scuro con l’età. Lamelle grigio-brune, poi brune.",
+          "cap_shape": "piano",
+          "hymenophore_color": [
+            "grigio",
+            "bruno"
+          ],
+          "tiles": [
+            "cappello",
+            "sotto",
+            "gambo"
+          ],
+          "source": "https://www.first-nature.com/fungi/cyclocybe-cylindracea.php"
+        }
+      ],
       "check_before_picking": [
         "Cespi su legno vivo o morto di latifoglie, soprattutto pioppo e salice",
         "Anello membranoso persistente sul gambo",
@@ -8953,6 +9912,30 @@
           "bianco"
         ]
       },
+      "stages": [
+        {
+          "id": "giovane",
+          "label": "Giovane",
+          "desc": "Cappello convesso.",
+          "cap_shape": "convesso",
+          "tiles": [
+            "cappello",
+            "gambo"
+          ],
+          "source": "https://www.first-nature.com/fungi/pleurotus-ostreatus.php"
+        },
+        {
+          "id": "adulto",
+          "label": "Adulto",
+          "desc": "Cappello depresso al centro, con il margine ondulato.",
+          "cap_shape": "imbuto",
+          "tiles": [
+            "cappello",
+            "gambo"
+          ],
+          "source": "https://www.first-nature.com/fungi/pleurotus-ostreatus.php"
+        }
+      ],
       "check_before_picking": [
         "Cresce su tronchi e ceppaie di latifoglie, mai a terra",
         "Lamelle bianche o crema, decorrenti fino al gambo corto e laterale",
@@ -10222,6 +11205,53 @@
           "nero"
         ]
       },
+      "stages": [
+        {
+          "id": "giovane",
+          "label": "Giovane",
+          "desc": "Esce dal terreno come un cilindro bianco: il cappello copre quasi tutto il gambo. Lamelle bianche.",
+          "cap_shape": "conico",
+          "hymenophore_color": [
+            "bianco"
+          ],
+          "tiles": [
+            "cappello",
+            "sotto",
+            "gambo"
+          ],
+          "source": "https://en.wikipedia.org/wiki/Coprinus_comatus"
+        },
+        {
+          "id": "maturo",
+          "label": "Maturo",
+          "desc": "Il cappello si apre a campana allungata; le lamelle diventano rosa.",
+          "cap_shape": "conico",
+          "hymenophore_color": [
+            "rosa"
+          ],
+          "tiles": [
+            "cappello",
+            "sotto",
+            "gambo"
+          ],
+          "source": "https://www.first-nature.com/fungi/coprinus-comatus.php"
+        },
+        {
+          "id": "sciolto",
+          "label": "Si scioglie",
+          "desc": "Le lamelle diventano nere e si sciolgono dal margine in un liquido scuro; l’anello si macchia di nero e scivola in basso.",
+          "cap_shape": "conico",
+          "hymenophore_color": [
+            "nero"
+          ],
+          "tiles": [
+            "cappello",
+            "sotto",
+            "gambo"
+          ],
+          "source": "https://www.first-nature.com/fungi/coprinus-comatus.php"
+        }
+      ],
       "check_before_picking": [
         "Cappello alto, cilindrico, bianco con grandi squame rialzate",
         "Lamelle bianche nel fungo giovane, poi rosa e nere che colano",
@@ -10401,6 +11431,31 @@
           "bianco"
         ]
       },
+      "stages": [
+        {
+          "id": "giovane",
+          "label": "Giovane",
+          "desc": "Cappello a cupola. La volva si vede solo negli esemplari molto giovani.",
+          "cap_shape": "emisferico",
+          "tiles": [
+            "cappello",
+            "gambo"
+          ],
+          "source": "https://www.first-nature.com/fungi/amanita-rubescens.php"
+        },
+        {
+          "id": "adulto",
+          "label": "Adulto",
+          "desc": "Cappello appiattito; restano solo la base ingrossata e, spesso, macchie rosa o rosso ruggine sulle lamelle.",
+          "cap_shape": "piano",
+          "tiles": [
+            "cappello",
+            "sotto",
+            "gambo"
+          ],
+          "source": "https://www.first-nature.com/fungi/amanita-rubescens.php"
+        }
+      ],
       "check_before_picking": [
         "Carne che arrossa (rosa vinoso) dove è tagliata o rosicchiata",
         "Anello striato sul gambo",
@@ -10620,6 +11675,40 @@
           "bulbosa"
         ]
       },
+      "stages": [
+        {
+          "id": "giovane",
+          "label": "Giovane",
+          "desc": "Cappello globoso, spesso con la cima piatta. Lamelle biancastre che presto diventano rosa.",
+          "cap_shape": "emisferico",
+          "hymenophore_color": [
+            "bianco",
+            "rosa"
+          ],
+          "tiles": [
+            "cappello",
+            "sotto",
+            "gambo"
+          ],
+          "source": "https://www.first-nature.com/fungi/agaricus-xanthodermus.php"
+        },
+        {
+          "id": "adulto",
+          "label": "Adulto",
+          "desc": "Cappello largamente convesso, senza margine arrotolato. Lamelle grigio-brune.",
+          "cap_shape": "convesso",
+          "hymenophore_color": [
+            "grigio",
+            "bruno"
+          ],
+          "tiles": [
+            "cappello",
+            "sotto",
+            "gambo"
+          ],
+          "source": "https://www.first-nature.com/fungi/agaricus-xanthodermus.php"
+        }
+      ],
       "field_rules": [
         {
           "text": "Carne bianca che alla base del gambo, tagliata o sfregata, diventa subito giallo intenso; odore di inchiostro o fenolo. Sono i caratteri descritti per il prataiolo ingiallente (Agaricus xanthodermus) e la sua sezione, tutti tossici.",
@@ -10878,6 +11967,30 @@
           "bulbosa"
         ]
       },
+      "stages": [
+        {
+          "id": "giovane",
+          "label": "Giovane",
+          "desc": "Cappello emisferico.",
+          "cap_shape": "emisferico",
+          "tiles": [
+            "cappello",
+            "gambo"
+          ],
+          "source": "https://en.wikipedia.org/wiki/Amanita_pantherina"
+        },
+        {
+          "id": "adulto",
+          "label": "Adulto",
+          "desc": "Cappello che tende ad appiattirsi.",
+          "cap_shape": "piano",
+          "tiles": [
+            "cappello",
+            "gambo"
+          ],
+          "source": "https://www.first-nature.com/fungi/amanita-pantherina.php"
+        }
+      ],
       "field_rules": [
         {
           "text": "Cappello bruno con verruche bianco puro e margine striato; carne bianca che non arrossa. Nell’amanita arrossante (Amanita rubescens) la carne e il gambo diventano rosa-rossastri dove sono feriti.",

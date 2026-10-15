@@ -13,6 +13,10 @@
      "bruno",
      "nero"
     ]
+   },
+   "base": {
+    "colore": "nero",
+    "forma": "convesso"
    }
   },
   "aestivalis": {
@@ -22,6 +26,10 @@
      "bruno",
      "crema"
     ]
+   },
+   "base": {
+    "colore": "bruno",
+    "forma": "convesso"
    }
   },
   "agaricus-arvensis": {
@@ -32,6 +40,10 @@
      "crema",
      "giallo"
     ]
+   },
+   "base": {
+    "colore": "crema",
+    "forma": "convesso"
    }
   },
   "agaricus-bisporus": {
@@ -41,6 +53,10 @@
      "bruno",
      "bianco"
     ]
+   },
+   "base": {
+    "colore": "bruno",
+    "forma": "convesso"
    }
   },
   "agaricus-campestris": {
@@ -51,6 +67,10 @@
      "crema",
      "bruno"
     ]
+   },
+   "base": {
+    "colore": "bianco",
+    "forma": "convesso"
    }
   },
   "agaricus-sylvicola": {
@@ -61,6 +81,10 @@
      "crema",
      "giallo"
     ]
+   },
+   "base": {
+    "colore": "crema",
+    "forma": "convesso"
    }
   },
   "agaricus-xanthodermus": {
@@ -73,6 +97,10 @@
      "bruno",
      "giallo"
     ]
+   },
+   "base": {
+    "colore": "bianco",
+    "forma": "convesso"
    }
   },
   "amanita-crocea": {
@@ -82,6 +110,10 @@
      "arancio",
      "giallo"
     ]
+   },
+   "base": {
+    "colore": "arancio",
+    "forma": "convesso"
    }
   },
   "amanita-muscaria": {
@@ -92,6 +124,10 @@
      "arancio",
      "giallo"
     ]
+   },
+   "base": {
+    "colore": "rosso",
+    "forma": "convesso"
    }
   },
   "amanita-pantherina": {
@@ -102,6 +138,10 @@
      "grigio",
      "crema"
     ]
+   },
+   "base": {
+    "colore": "bruno",
+    "forma": "convesso"
    }
   },
   "amanita-phalloides": {
@@ -122,6 +162,10 @@
      "convesso",
      "piano"
     ]
+   },
+   "base": {
+    "colore": "verde",
+    "forma": "convesso"
    }
   },
   "amanita-rubescens": {
@@ -131,6 +175,10 @@
      "bruno",
      "rosa"
     ]
+   },
+   "base": {
+    "colore": "rosa",
+    "forma": "convesso"
    }
   },
   "amanita-verna": {
@@ -140,9 +188,18 @@
      "bianco",
      "crema"
     ]
+   },
+   "base": {
+    "colore": "bianco",
+    "forma": "convesso"
    }
   },
-  "amanita-virosa": {},
+  "amanita-virosa": {
+   "base": {
+    "colore": "bianco",
+    "forma": "conico"
+   }
+  },
   "armillaria-tabescens": {
    "colors": {
     "drawn": "giallo",
@@ -150,6 +207,10 @@
      "giallo",
      "bruno"
     ]
+   },
+   "base": {
+    "colore": "giallo",
+    "forma": "convesso"
    }
   },
   "caesarea": {
@@ -160,6 +221,10 @@
      "rosso",
      "giallo"
     ]
+   },
+   "base": {
+    "colore": "arancio",
+    "forma": "convesso"
    }
   },
   "caloboletus-calopus": {
@@ -171,6 +236,10 @@
      "crema",
      "bruno"
     ]
+   },
+   "base": {
+    "colore": "bianco",
+    "forma": "convesso"
    }
   },
   "caloboletus-radicans": {
@@ -181,6 +250,10 @@
      "grigio",
      "crema"
     ]
+   },
+   "base": {
+    "colore": "crema",
+    "forma": "convesso"
    }
   },
   "calocybe-gambosa": {
@@ -190,6 +263,10 @@
      "bianco",
      "crema"
     ]
+   },
+   "base": {
+    "colore": "bianco",
+    "forma": "convesso"
    }
   },
   "chalciporus-piperatus": {
@@ -199,6 +276,10 @@
      "bruno",
      "arancio"
     ]
+   },
+   "base": {
+    "colore": "arancio",
+    "forma": "convesso"
    }
   },
   "chlorophyllum-rhacodes": {
@@ -208,6 +289,10 @@
      "bruno",
      "crema"
     ]
+   },
+   "base": {
+    "colore": "crema",
+    "forma": "ombrellato"
    }
   },
   "chlorophyllum-venenatum": {
@@ -217,6 +302,10 @@
      "bruno",
      "crema"
     ]
+   },
+   "base": {
+    "colore": "crema",
+    "forma": "ombrellato"
    }
   },
   "cibarius": {
@@ -226,6 +315,10 @@
      "giallo",
      "arancio"
     ]
+   },
+   "base": {
+    "colore": "giallo",
+    "forma": "imbuto"
    }
   },
   "clitocybe-rivulosa": {
@@ -236,6 +329,10 @@
      "crema",
      "bruno"
     ]
+   },
+   "base": {
+    "colore": "bianco",
+    "forma": "imbuto"
    }
   },
   "coprinus-comatus": {
@@ -246,6 +343,10 @@
      "bruno",
      "nero"
     ]
+   },
+   "base": {
+    "colore": "bianco",
+    "forma": "conico"
    }
   },
   "cornucopioides": {
@@ -256,6 +357,10 @@
      "bruno",
      "grigio"
     ]
+   },
+   "base": {
+    "colore": "nero",
+    "forma": "trombetta"
    }
   },
   "cortinarius-orellanus": {
@@ -266,6 +371,10 @@
      "bruno",
      "rosso"
     ]
+   },
+   "base": {
+    "colore": "arancio",
+    "forma": "convesso"
    }
   },
   "cortinarius-rubellus": {
@@ -276,9 +385,18 @@
      "bruno",
      "rosso"
     ]
+   },
+   "base": {
+    "colore": "arancio",
+    "forma": "conico"
    }
   },
-  "cortinarius-traganus": {},
+  "cortinarius-traganus": {
+   "base": {
+    "colore": "violetto",
+    "forma": "convesso"
+   }
+  },
   "cortinarius-violaceus": {
    "colors": {
     "drawn": "violetto",
@@ -286,6 +404,10 @@
      "violetto",
      "nero"
     ]
+   },
+   "base": {
+    "colore": "violetto",
+    "forma": "convesso"
    }
   },
   "craterellus-cinereus": {
@@ -296,6 +418,10 @@
      "grigio",
      "bruno"
     ]
+   },
+   "base": {
+    "colore": "grigio",
+    "forma": "trombetta"
    }
   },
   "craterellus-lutescens": {
@@ -305,6 +431,10 @@
      "bruno",
      "giallo"
     ]
+   },
+   "base": {
+    "colore": "bruno",
+    "forma": "imbuto"
    }
   },
   "cyclocybe-aegerita": {
@@ -314,6 +444,10 @@
      "crema",
      "bruno"
     ]
+   },
+   "base": {
+    "colore": "bruno",
+    "forma": "convesso"
    }
   },
   "edulis": {
@@ -323,6 +457,10 @@
      "bruno",
      "crema"
     ]
+   },
+   "base": {
+    "colore": "bruno",
+    "forma": "convesso"
    }
   },
   "entoloma-sinuatum": {
@@ -333,6 +471,10 @@
      "crema",
      "bianco"
     ]
+   },
+   "base": {
+    "colore": "grigio",
+    "forma": "convesso"
    }
   },
   "fistulina-hepatica": {
@@ -343,6 +485,9 @@
      "rosa",
      "bruno"
     ]
+   },
+   "base": {
+    "colore": "rosso"
    }
   },
   "galerina-marginata": {
@@ -353,6 +498,10 @@
      "giallo",
      "arancio"
     ]
+   },
+   "base": {
+    "colore": "arancio",
+    "forma": "convesso"
    }
   },
   "gymnopilus-junonius": {
@@ -362,6 +511,10 @@
      "giallo",
      "arancio"
     ]
+   },
+   "base": {
+    "colore": "arancio",
+    "forma": "convesso"
    }
   },
   "gyromitra-esculenta": {
@@ -373,6 +526,10 @@
      "nero",
      "giallo"
     ]
+   },
+   "base": {
+    "colore": "rosso",
+    "forma": "emisferico"
    }
   },
   "hydnellum-peckii": {
@@ -383,6 +540,10 @@
      "rosa",
      "bruno"
     ]
+   },
+   "base": {
+    "colore": "bianco",
+    "forma": "piano"
    }
   },
   "hydnum-rufescens": {
@@ -392,6 +553,10 @@
      "arancio",
      "bruno"
     ]
+   },
+   "base": {
+    "colore": "arancio",
+    "forma": "convesso"
    }
   },
   "hygrophoropsis-aurantiaca": {
@@ -402,6 +567,10 @@
      "bruno",
      "giallo"
     ]
+   },
+   "base": {
+    "colore": "arancio",
+    "forma": "imbuto"
    }
   },
   "hygrophorus-latitabundus": {
@@ -412,6 +581,10 @@
      "grigio",
      "nero"
     ]
+   },
+   "base": {
+    "colore": "nero",
+    "forma": "convesso"
    }
   },
   "hygrophorus-marzuolus": {
@@ -422,6 +595,10 @@
      "grigio",
      "nero"
     ]
+   },
+   "base": {
+    "colore": "grigio",
+    "forma": "convesso"
    }
   },
   "hypholoma-fasciculare": {
@@ -431,9 +608,18 @@
      "giallo",
      "arancio"
     ]
+   },
+   "base": {
+    "colore": "giallo",
+    "forma": "convesso"
    }
   },
-  "imleria-badia": {},
+  "imleria-badia": {
+   "base": {
+    "colore": "bruno",
+    "forma": "convesso"
+   }
+  },
   "inocybe": {
    "colors": {
     "drawn": "bruno",
@@ -446,10 +632,24 @@
      "violetto",
      "rosa"
     ]
+   },
+   "base": {
+    "colore": "bruno",
+    "forma": "conico"
    }
   },
-  "inocybe-lilacina": {},
-  "laccaria-amethystina": {},
+  "inocybe-lilacina": {
+   "base": {
+    "colore": "violetto",
+    "forma": "conico"
+   }
+  },
+  "laccaria-amethystina": {
+   "base": {
+    "colore": "violetto",
+    "forma": "imbuto"
+   }
+  },
   "lactarius-deliciosus": {
    "colors": {
     "drawn": "arancio",
@@ -457,6 +657,10 @@
      "arancio",
      "verde"
     ]
+   },
+   "base": {
+    "colore": "arancio",
+    "forma": "imbuto"
    }
   },
   "lactarius-deterrimus": {
@@ -467,6 +671,10 @@
      "giallo",
      "verde"
     ]
+   },
+   "base": {
+    "colore": "arancio",
+    "forma": "imbuto"
    }
   },
   "lepiota-brunneoincarnata": {
@@ -478,6 +686,10 @@
      "rosso",
      "crema"
     ]
+   },
+   "base": {
+    "colore": "rosa",
+    "forma": "convesso"
    }
   },
   "lepiota-cristata": {
@@ -487,6 +699,10 @@
      "bianco",
      "bruno"
     ]
+   },
+   "base": {
+    "colore": "bianco",
+    "forma": "ombrellato"
    }
   },
   "lepiota-subincarnata": {
@@ -497,6 +713,10 @@
      "bruno",
      "crema"
     ]
+   },
+   "base": {
+    "colore": "rosa",
+    "forma": "convesso"
    }
   },
   "marasmius-oreades": {
@@ -506,6 +726,10 @@
      "crema",
      "bruno"
     ]
+   },
+   "base": {
+    "colore": "crema",
+    "forma": "ombrellato"
    }
   },
   "mellea": {
@@ -515,6 +739,10 @@
      "giallo",
      "bruno"
     ]
+   },
+   "base": {
+    "colore": "giallo",
+    "forma": "convesso"
    }
   },
   "morchella-elata": {
@@ -525,6 +753,10 @@
      "grigio",
      "nero"
     ]
+   },
+   "base": {
+    "colore": "bruno",
+    "forma": "conico"
    }
   },
   "morchella-esculenta": {
@@ -535,6 +767,10 @@
      "giallo",
      "bruno"
     ]
+   },
+   "base": {
+    "colore": "giallo",
+    "forma": "conico"
    }
   },
   "mycena-pura": {
@@ -546,6 +782,10 @@
      "grigio",
      "bianco"
     ]
+   },
+   "base": {
+    "colore": "rosa",
+    "forma": "conico"
    }
   },
   "neoboletus-luridiformis": {
@@ -556,6 +796,10 @@
      "nero",
      "rosso"
     ]
+   },
+   "base": {
+    "colore": "rosso",
+    "forma": "convesso"
    }
   },
   "nuda": {
@@ -566,6 +810,10 @@
      "bruno",
      "rosa"
     ]
+   },
+   "base": {
+    "colore": "violetto",
+    "forma": "convesso"
    }
   },
   "omphalotus-olearius": {
@@ -576,6 +824,10 @@
      "giallo",
      "bruno"
     ]
+   },
+   "base": {
+    "colore": "arancio",
+    "forma": "imbuto"
    }
   },
   "pholiota-squarrosa": {
@@ -585,6 +837,10 @@
      "giallo",
      "bruno"
     ]
+   },
+   "base": {
+    "colore": "giallo",
+    "forma": "convesso"
    }
   },
   "pinophilus": {
@@ -594,9 +850,18 @@
      "rosso",
      "bruno"
     ]
+   },
+   "base": {
+    "colore": "rosso",
+    "forma": "convesso"
    }
   },
-  "pleurotus-cornucopiae": {},
+  "pleurotus-cornucopiae": {
+   "base": {
+    "colore": "crema",
+    "forma": "imbuto"
+   }
+  },
   "pleurotus-eryngii": {
    "colors": {
     "drawn": "bruno",
@@ -606,6 +871,10 @@
      "bruno",
      "grigio"
     ]
+   },
+   "base": {
+    "colore": "bruno",
+    "forma": "convesso"
    }
   },
   "pleurotus-ostreatus": {
@@ -617,6 +886,10 @@
      "bruno",
      "grigio"
     ]
+   },
+   "base": {
+    "colore": "grigio",
+    "forma": "convesso"
    }
   },
   "procera": {
@@ -626,6 +899,10 @@
      "bruno",
      "crema"
     ]
+   },
+   "base": {
+    "colore": "crema",
+    "forma": "ombrellato"
    }
   },
   "pseudocraterellus-undulatus": {
@@ -635,6 +912,10 @@
      "grigio",
      "bruno"
     ]
+   },
+   "base": {
+    "colore": "grigio",
+    "forma": "imbuto"
    }
   },
   "repandum": {
@@ -645,6 +926,10 @@
      "giallo",
      "arancio"
     ]
+   },
+   "base": {
+    "colore": "giallo",
+    "forma": "convesso"
    }
   },
   "rubroboletus-satanas": {
@@ -655,9 +940,18 @@
      "grigio",
      "crema"
     ]
+   },
+   "base": {
+    "colore": "crema",
+    "forma": "convesso"
    }
   },
-  "russula-aeruginea": {},
+  "russula-aeruginea": {
+   "base": {
+    "colore": "verde",
+    "forma": "convesso"
+   }
+  },
   "russula-aurea": {
    "colors": {
     "drawn": "arancio",
@@ -666,6 +960,10 @@
      "arancio",
      "rosso"
     ]
+   },
+   "base": {
+    "colore": "arancio",
+    "forma": "convesso"
    }
   },
   "russula-heterophylla": {
@@ -676,6 +974,10 @@
      "bruno",
      "grigio"
     ]
+   },
+   "base": {
+    "colore": "verde",
+    "forma": "convesso"
    }
   },
   "russula-olivacea": {
@@ -687,10 +989,24 @@
      "rosso",
      "violetto"
     ]
+   },
+   "base": {
+    "colore": "verde",
+    "forma": "convesso"
    }
   },
-  "sarcodon-imbricatus": {},
-  "sarcodon-scabrosus": {},
+  "sarcodon-imbricatus": {
+   "base": {
+    "colore": "bruno",
+    "forma": "convesso"
+   }
+  },
+  "sarcodon-scabrosus": {
+   "base": {
+    "colore": "bruno",
+    "forma": "convesso"
+   }
+  },
   "suillus": {
    "colors": {
     "drawn": "bruno",
@@ -700,6 +1016,10 @@
      "arancio",
      "violetto"
     ]
+   },
+   "base": {
+    "colore": "bruno",
+    "forma": "convesso"
    }
   },
   "suillus-bovinus": {
@@ -709,6 +1029,10 @@
      "arancio",
      "bruno"
     ]
+   },
+   "base": {
+    "colore": "arancio",
+    "forma": "convesso"
    }
   },
   "terreum": {
@@ -718,6 +1042,10 @@
      "grigio",
      "bruno"
     ]
+   },
+   "base": {
+    "colore": "grigio",
+    "forma": "conico"
    }
   },
   "tricholoma-equestre": {
@@ -728,6 +1056,10 @@
      "verde",
      "bruno"
     ]
+   },
+   "base": {
+    "colore": "giallo",
+    "forma": "convesso"
    }
   },
   "tricholoma-pardinum": {
@@ -738,6 +1070,10 @@
      "bruno",
      "bianco"
     ]
+   },
+   "base": {
+    "colore": "grigio",
+    "forma": "convesso"
    }
   },
   "tricholoma-portentosum": {
@@ -748,6 +1084,10 @@
      "bruno",
      "giallo"
     ]
+   },
+   "base": {
+    "colore": "grigio",
+    "forma": "ombrellato"
    }
   },
   "tricholoma-sciodes": {
@@ -757,9 +1097,18 @@
      "grigio",
      "violetto"
     ]
+   },
+   "base": {
+    "colore": "violetto",
+    "forma": "conico"
    }
   },
-  "tricholoma-virgatum": {},
+  "tricholoma-virgatum": {
+   "base": {
+    "colore": "grigio",
+    "forma": "conico"
+   }
+  },
   "tylopilus-felleus": {
    "colors": {
     "drawn": "crema",
@@ -767,6 +1116,10 @@
      "bruno",
      "crema"
     ]
+   },
+   "base": {
+    "colore": "crema",
+    "forma": "convesso"
    }
   },
   "urnula-craterium": {
@@ -776,6 +1129,10 @@
      "nero",
      "bruno"
     ]
+   },
+   "base": {
+    "colore": "nero",
+    "forma": "trombetta"
    }
   },
   "virescens": {
@@ -787,6 +1144,10 @@
      "grigio",
      "rosa"
     ]
+   },
+   "base": {
+    "colore": "verde",
+    "forma": "convesso"
    }
   }
  },
