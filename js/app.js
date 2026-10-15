@@ -271,7 +271,9 @@ async function init() {
   matchMedia('(prefers-color-scheme: dark)').addEventListener('change', renderAll);
   addEventListener('themechange', renderAll);
   let rt;
-  addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(() => results && state.view === 'zona' && renderDetail(), 200); });
+  // la scheda della zona dipende solo dalla larghezza: la barra degli indirizzi che compare o sparisce (cambia l'altezza) non deve ridisegnarla
+  let lastW = innerWidth;
+  addEventListener('resize', () => { if (innerWidth === lastW) return; lastW = innerWidth; clearTimeout(rt); rt = setTimeout(() => results && state.view === 'zona' && renderDetail(), 200); });
 }
 
 // ---------------------------------------------------------------------------
@@ -2451,6 +2453,7 @@ function applyLegal() {
   if (accepted !== ver) {
     const dlg = $('#onboarding');
     dlg.querySelector('h2').textContent = L.onboarding?.title || 'Prima di usare l\'app';
+    const sub = $('#ob-sub'); if (sub) { sub.textContent = L.onboarding?.subtitle || ''; sub.hidden = !sub.textContent; }
     dlg.querySelector('.ob-points').innerHTML = (L.onboarding?.points || [
       'Le previsioni sono stime: non garantiscono che troverai funghi.',
       'Schede e ricerca aiutano a orientarsi ma non sono un\'identificazione: prima di mangiare fai controllare i funghi all\'Ispettorato Micologico ASL.',

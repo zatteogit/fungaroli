@@ -680,6 +680,7 @@ body[data-page="mappa"] #views { max-width: none; padding: 0; }
 .sheet-dlg .chip { padding: 10px 15px; font-size: 14.5px; }
 .sheet-dlg .btn.big { margin-top: 16px; }
 .sheet-grip { width: 40px; height: 5px; border-radius: 3px; background: var(--border); margin: 0 auto 8px; }
+.onboarding .ob-sub { margin: 4px 0 0; color: var(--text-2); font-size: 15px; }
 .onboarding .ob-points { padding-left: 20px; display: grid; gap: 10px; font-size: 15px; margin: 10px 0 16px; }
 
 .wiz { border: 0; border-radius: var(--r-xl); padding: 0; width: min(520px, 100%); max-height: calc(100% - 24px); background: var(--surface); color: var(--text); box-shadow: 0 20px 60px rgb(0 0 0 / .35); }
