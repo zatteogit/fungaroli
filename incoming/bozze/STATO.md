@@ -285,3 +285,7 @@ Ordine aggiornato da Matteo il 15/10: completare prima tutte le varianti di colo
 | timbri/querce-faggio-carpini.png | ok | Confronto di due foglie intere: faggio a bordo intero a sinistra e carpino bianco dentato a destra, nervature parallele e piccioli corti; margini52px alpha0, inchiostro integro ai4estremi; Frutti omessi come previsto dal brief; denti secondari del carpino e pieghe della lamina minuti alla scala64px, confronto concentrato sul bordo intero rispetto a quello dentato. |
 | bozze/timbri/querce-faggio-carpini-verifica.png | ok | Prove64/84/112px su carta e scuro. |
 | qa/2026-10-15-timbro-querce-faggio-carpini.json | ok | Controllo automatico del formato, margini e inchiostro ai4estremi. |
+
+| timbri/erbe-fiori-simili.png | ok | Ombrella composta generica con cinque raggi principali e ombrellette terminali, nessuna attribuzione a una specie; margini52px alpha0, inchiostro integro ai4estremi; Fiori ridotti a gruppi di punti; bianco dei fiori non riprodotto perché il timbro usa un unico inchiostro; foglia di contesto fortemente semplificata, non diagnostica. |
+| bozze/timbri/erbe-fiori-simili-verifica.png | ok | Prove64/84/112px su carta e scuro. |
+| qa/2026-10-15-timbro-erbe-fiori-simili.json | ok | Controllo automatico del formato, margini e inchiostro ai4estremi. |

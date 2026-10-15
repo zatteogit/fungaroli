@@ -279,3 +279,8 @@ Due funghi generici affiancati simili ma diversi per profilo e segni sul cappell
 ### querce-faggio-carpini — 15/10, continuazione
 
 Confronto di due foglie intere: faggio a bordo intero a sinistra e carpino bianco dentato a destra, nervature parallele e piccioli corti. Fonti interne: data/trees.json: faggio.leaf,fruit,recognize; carpino bianco.leaf,fruit,recognize; data/challenges.json: querce-faggio-carpini. Frutti omessi come previsto dal brief; denti secondari del carpino e pieghe della lamina minuti alla scala64px, confronto concentrato sul bordo intero rispetto a quello dentato. PNG e QA verificati prima del caricamento; anteprima64/84/112px sui due temi in incoming/bozze/timbri/querce-faggio-carpini-verifica.png.
+
+
+### erbe-fiori-simili — 15/10, continuazione
+
+Ombrella composta generica con cinque raggi principali e ombrellette terminali, nessuna attribuzione a una specie. Fonti interne: data/plants.json: cicuta.recognize; finocchietto.recognize; data/challenges.json: erbe-fiori-simili; docs/handoff-immagini-timbri.md: erbe-fiori-simili. Fiori ridotti a gruppi di punti; bianco dei fiori non riprodotto perché il timbro usa un unico inchiostro; foglia di contesto fortemente semplificata, non diagnostica. PNG e QA verificati prima del caricamento; anteprima64/84/112px sui due temi in incoming/bozze/timbri/erbe-fiori-simili-verifica.png.

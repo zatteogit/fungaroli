@@ -14443,5 +14443,20 @@
     ],
     "qa": "Confronto di due foglie intere: faggio a bordo intero a sinistra e carpino bianco dentato a destra, nervature parallele e piccioli corti; formato512x512, fasce52px alpha0 e quattro estremi nello stesso inchiostro verificati col codice. Prove64/84/112px sui2temi.",
     "semplificazioni": "Frutti omessi come previsto dal brief; denti secondari del carpino e pieghe della lamina minuti alla scala64px, confronto concentrato sul bordo intero rispetto a quello dentato"
+  },
+  {
+    "file": "incoming/timbri/erbe-fiori-simili.png",
+    "tipo": "timbro",
+    "soggetto": "erbe-fiori-simili",
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case: scientific-educational. Create a NEW512x512PNG achievement INK STAMP for Fungaroli. Attached stamp is the APPROVED STYLE reference ONLY: single muted natural ink, double circular ring (outer heavier, inner thin), restrained irregularity like ink on a field notebook, flat clean pictogram, no photographic realism, no shading. Real alpha transparency everywhere not ink, including all negative spaces. Never add a pale fill or brown outlines. Ink color as specified below is the ONLY hue for rings and subject, with at most minor natural ink variation. No text/letters/numbers/symbol labels. Diameter about390px centered256,256, leave at least56px genuinely transparent on all four sides. Keep entire subject with every petiole/stem INSIDE inner ring, inset at least20px from ring. Simple robust negative-space cuts, readable64,84,112px. No tiny decoration. Anatomy must follow supplied source specification; don't borrow subject from reference.\nNEW SUBJECT FIORI SIMILI: a GENERIC COMPOUND UMBEL inflorescence of white-flowering Apiaceae; source data/plants.json cicuta.recognize says fiori bianchi riuniti in ombrelle. Do notclaim speciesidentity. Ink natural muted TEALGREEN #5c9189, SINGLEink ringsandwholemotif. Draw ONE straight short verticalflowerstalk supporting aTRUE COMPOUNDUMBE L: exactly5slenderrobust mainrays radiatingfromONEcommonpoint likeumbrella spokes; eachray ends inasmallUMBELLET with3–5 tinyroundedflowerheads onshortsecondaryrays, broad negativegapsbetweenclusters. Overallflattish slightlydomedflowercanopy, notsphericaldandelionandnotone daisy. Monochrome flowerheads inkfilled, transparentgaps; whiteflowerconceptrepresentedbystructure, NOwhitefill. OptionalONEsmall dividedleaflowonstem with3simple lobes, no large leaves/no fruit/no dots onstem/no purplemarkings. No detailedpetals required at64px. Entireplantconfinedcentral50%canvas; bothstalkbaseandflowerheads farinsideinnercircle. Keepexactapproveddoublestamp rings, same cleaninkstyle.",
+    "stato": "ok",
+    "fonti_dati": [
+      "data/plants.json: cicuta.recognize; finocchietto.recognize",
+      "data/challenges.json: erbe-fiori-simili",
+      "docs/handoff-immagini-timbri.md: erbe-fiori-simili"
+    ],
+    "qa": "Ombrella composta generica con cinque raggi principali e ombrellette terminali, nessuna attribuzione a una specie; formato512x512, fasce52px alpha0 e quattro estremi nello stesso inchiostro verificati col codice. Prove64/84/112px sui2temi.",
+    "semplificazioni": "Fiori ridotti a gruppi di punti; bianco dei fiori non riprodotto perché il timbro usa un unico inchiostro; foglia di contesto fortemente semplificata, non diagnostica"
   }
 ]
