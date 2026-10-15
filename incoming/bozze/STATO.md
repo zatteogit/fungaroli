@@ -234,3 +234,5 @@ Ordine aggiornato da Matteo il 15/10: completare prima tutte le varianti di colo
 | icone/varianti-23.png | morchella-esculenta: colore:crema; morchella-esculenta: colore:bruno; hydnellum-peckii: colore:rosa | ok | QA visiva completata; 6 icone, alpha reale, terza colonna vuota. Basi nel manifest. |
 
 | icone/varianti-24.png | hydnellum-peckii: colore:bruno; morchella-elata: colore:grigio; morchella-elata: colore:nero | ok | QA visiva completata; 6 icone, alpha reale, terza colonna vuota. Basi nel manifest. |
+
+| icone/varianti-25.png | gyromitra-esculenta: colore:bruno; gyromitra-esculenta: colore:nero; gyromitra-esculenta: colore:giallo | ok | QA visiva completata; 6 icone, alpha reale, terza colonna vuota. Basi nel manifest. |
