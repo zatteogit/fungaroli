@@ -110,6 +110,20 @@ Tutto in `docs/handoff-immagini-glossario-guide.md`, in ordine A → B → C:
 
 Per ogni parte: prima un esempio da mostrare a Matteo, poi il resto nella stessa sessione, per avere uno stile uniforme.
 
+### 6. Copertine di stagione e meteo per due luoghi nuovi
+
+Il 15/10 (decisione D7) sono state trovate su Wikimedia Commons foto reali per due degli otto luoghi che non ne avevano. Sono in `assets/zones/` e in `data/media-zones.json`, con autore, licenza e link alla licenza. Per gli altri sei non c'è una foto adatta: restano eccezioni con il motivo in `data/asset-pending.json`.
+
+- **Cosa:** per ogni luogo le 17 combinazioni (4 stagioni × sereno, nuvoloso, nebbia, pioggia, più inverno con neve), meno quella della foto reale: **16 copertine per luogo, 32 in tutto**.
+- **Come:** stesse regole della Parte B di `docs/handoff-immagini-chrome.md`. Stessa inquadratura e stessi crinali; cambiano solo vegetazione, luce e suolo. La neve solo se la quota più alta della zona arriva almeno a 1000 m. La foto di partenza si scarica dalla pagina Commons indicata.
+- **File e manifest:** come le copertine già consegnate (`incoming/luoghi/`, `incoming/bozze/STATO.md`, `incoming/NOTE.md` con autore e licenza della foto di partenza). Import: `tools/import_zone_variants.py`.
+- **Punti di ritaglio:** servono anche per le due foto reali (ramo `gpt/ritagli`).
+
+| Luogo | Foto reale (pagina, autore, licenza) | Stagione e meteo della foto | Quota più alta | Copertine |
+|---|---|---|---|---:|
+| Pian de' Rosce / Terminillo ovest (`terminillo-ovest`) | [Monte Terminilletto (14936512892).jpg](https://commons.wikimedia.org/wiki/File%3AMonte_Terminilletto_%2814936512892%29.jpg) · Johan Haggi · CC BY-SA 2.0 | estate, sereno | 1390 m | 16 |
+| Cittareale / Alto Velino (`cittareale`) | [Monte Pozzoni (Cittareale-Rieti).jpg](https://commons.wikimedia.org/wiki/File%3AMonte_Pozzoni_%28Cittareale-Rieti%29.jpg) · Skylimitless · CC BY-SA 4.0 | estate, sereno | 1340 m | 16 |
+
 ## Consegna
 
 - Aggiorna `incoming/bozze/STATO.md` con una riga per file (stato, dubbi).

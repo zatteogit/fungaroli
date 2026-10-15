@@ -206,7 +206,7 @@ Prima le amanite, poi i loro sosia e le altre specie mortali, poi gli altri:
   - la fase a uovo della tignosa di primavera (`amanita-verna`): nessuna fonte letta la descrive;
   - la sezione dell'uovo dell'amanita crocea;
   - le fasi della lepiota subincarnata (First Nature non leggibile, Wikipedia en senza età);
-  - le fasi della mazza di tamburo velenosa (forme della fonte non presenti nei dati: domanda D6 in `docs/controllo-matrici-2026-10-15.md`);
+  - le fasi della mazza di tamburo velenosa: Wikipedia it dice «semiovale, poi campanulato», forme che non sono nei dati, e non si è trovata una seconda fonte (D6, `docs/controllo-matrici-2026-10-15.md`);
   - le fasi di colombina verde, cardoncello e cornucopia (non verificate in questo giro).
 
 ## Consegna e controllo

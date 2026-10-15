@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-12",
+ "generated": "2026-10-15",
  "note": "Foto dei luoghi da Wikimedia Commons: solo paesaggi o boschi della zona (niente centri abitati), scelte a mano tra le foto georeferenziate vicine (tools/build_media_zones.py). Dove non c'e' niente di adatto si vede la foto del fungo.",
  "zones": {
   "vallonina": {
@@ -1926,6 +1926,38 @@
      "page": "https://commons.wikimedia.org/wiki/File%3ABeech_Forest_in_the_Sabina_Hills%2C_Latium%2C_Italy_-_52993979506.jpg"
     }
    ]
+  },
+  "terminillo-ovest": {
+   "file": "assets/zones/terminillo-ovest.webp",
+   "file_hd": "assets/zones/terminillo-ovest-hd.webp",
+   "source": "Wikimedia Commons",
+   "page": "https://commons.wikimedia.org/wiki/File%3AMonte_Terminilletto_%2814936512892%29.jpg",
+   "author": "Johan Haggi",
+   "license": "CC BY-SA 2.0",
+   "size": [
+    1280,
+    849
+   ],
+   "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+   "season": "estate",
+   "weather": "sereno",
+   "thumb": "assets/zones/terminillo-ovest-t.webp"
+  },
+  "cittareale": {
+   "file": "assets/zones/cittareale.webp",
+   "file_hd": "assets/zones/cittareale-hd.webp",
+   "source": "Wikimedia Commons",
+   "page": "https://commons.wikimedia.org/wiki/File%3AMonte_Pozzoni_%28Cittareale-Rieti%29.jpg",
+   "author": "Skylimitless",
+   "license": "CC BY-SA 4.0",
+   "size": [
+    1280,
+    853
+   ],
+   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "thumb": "assets/zones/cittareale-t.webp",
+   "season": "estate",
+   "weather": "sereno"
   }
  }
 }

@@ -17,7 +17,7 @@ API = "https://commons.wikimedia.org/w/api.php"
 UA = os.environ.get("COMMONS_UA") or "fungaroli-rieti/1.0 (https://github.com/zatteogit/fungaroli)"
 # larghezza delle immagini scaricate per la foto scelta (COMMONS_WIDTH, predefinita 2000)
 WIDTH = int(os.environ.get("COMMONS_WIDTH") or 2000)
-BAD = re.compile(r"stemma|coat|logo|map|mappa|carta|svg|interno|interior|altare|altar|affresco|fresco|dipinto|painting|statua|statue|lapide|plaque|targa|ritratto|portrait|monumento|caduti|chiesa|church|santuario|eremo|abside|navata|portale|campanile|cartello|sign|bus|treno|auto|car\b|dettaglio|detail|museo|museum|insegna|madonna|santo|san [a-z]+ \(|crocifisso|organo|tomba", re.I)
+BAD = re.compile(r"stemma|coat|logo|map|mappa|carta|svg|interno|interior|altare|altar|affresco|fresco|dipinto|painting|statua|statue|lapide|plaque|targa|ritratto|portrait|monumento|caduti|chiesa|church|santuario|eremo|abside|navata|portale|campanile|cartello|sign|bus|treno|auto|car\b|dettaglio|detail|museo|museum|insegna|madonna|santo|san [a-z]+ \(|crocifisso|organo|tomba|\bISS\d|view of earth", re.I)  # ISS: foto dallo spazio con coordinate del nadir
 GOOD = re.compile(r"monte|monti|panoram|vista|view|bosco|faggi|faggeta|valle|vallone|piana|pian|altopiano|cima|vetta|sentiero|lago|prati|pascol|neve|autunno|autumn|forest|wood|landscape|paesaggio|crinale|sella|colle", re.I)
 LIC_OK = re.compile(r"^(cc[- ]by|cc[- ]by[- ]sa|cc0|public domain|pd)", re.I)
 
@@ -121,7 +121,7 @@ def pick(zid, title):
     if mt["licenseUrl"].startswith("https://"):
         d["zones"][zid]["licenseUrl"] = mt["licenseUrl"]
     d["generated"] = time.strftime("%Y-%m-%d")
-    p.write_text(json.dumps(d, ensure_ascii=False, indent=1))
+    p.write_text(json.dumps(d, ensure_ascii=False, indent=1) + "\n")
     print(zid, "<-", title, mt["license"], mt["author"][:40])
 
 

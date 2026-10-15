@@ -73,7 +73,38 @@ Effetto sulle immagini: nessun disegno da rifare. I valori aggiunti non tolgono 
 - **Fatto:** 70 schede, una per ogni pianta di `plants.json`. Ogni valore è nello schema e ogni scheda ha fonti. I confronti (`confusables`) puntano a schede esistenti.
 - I `null` più frequenti: colore del frutto (48), margine della foglia (20), segni particolari (18), disposizione delle foglie (12). Non sono disegnati: le piante non hanno icone dei caratteri. Vedi la domanda D4.
 
-## Decisioni da chiedere a Matteo
+## Esito delle decisioni (15/10, sera)
+
+Matteo ha risposto alle domande D1–D7 qui sotto. Cosa è stato fatto:
+
+- **D1 (citazione per valore):** nuovo campo `trait_cites` (citazione testuale e fonte per ogni colore e forma del cappello), validato dal CMS. Compilato nei 14 taxa senza `traits_notes`, partendo da quelli con fasi: 59 valori citati. Per 9 valori le fonti leggibili non danno una citazione (mycodb.fr non raggiungibile): vedi D8. Il test di completezza chiede ora una citazione per ogni valore disegnato. I 380 valori ancora senza citazione sono elencati in `data/asset-pending.json` (categoria `citazioni`).
+- **D2 (foglie opposte o alterne):** cercato nel Portale della Flora d'Italia, nella scheda di Acta Plantarum (forum, da Pignatti) e nell'atlante JRC. Nessuna di queste fonti lo scrive in modo esplicito per i 6 alberi. Per l'acero opalo la scheda di Acta Plantarum dice opposti solo i giovani rami. I valori restano `null`, con una nota (`traits_notes`) in `recognize-trees.json`.
+- **D3 (ciliegio):** la voce senza id è uscita dai sosia. Il testo è ora la nota della scheda (`note`): il percorso guidato la mostra tra i candidati (`tellHtml` in `js/guided-key.js`, con un test).
+- **D4 (icone delle piante):** brief `docs/handoff-immagini-piante.md`, 51 icone. Import con `tools/import_tree_icons.py --piante`. Il test di completezza le chiede (categoria `piante-valori`, in pendenza).
+- **D5 (combinazioni della falloide):** tornano nell'ordine di lavoro (`docs/handoff-immagini-mancanti.md`, punto 2) e nel test (categoria `funghi-combinazioni`, 8 combinazioni × 2 tessere).
+- **D6 (mazza di tamburo velenosa):** nessuna seconda fonte trovata. First Nature non ha la scheda; la scheda della Comunidad de Madrid non è raggiungibile. Fasi e forme restano come sono; annotato nei `traits_notes`.
+- **D7 (foto dei luoghi):** cercato su Wikimedia Commons (User-Agent con contatto, immagini a 1280 px). Due foto adatte, entrambe CC BY-SA:
+  - Terminillo ovest (Monte Terminilletto);
+  - Cittareale (Monte Pozzoni dalla Valle Falacrina).
+
+  Sono registrate con autore, licenza, link alla licenza e pagina della fonte. Le 32 copertine di stagione e meteo sono nel brief (`docs/handoff-immagini-mancanti.md`, punto 6). Gli altri sei luoghi restano eccezioni con il motivo: vedi D9 per Pescorocchiano.
+
+## Nuove domande
+
+**D8. Nove valori senza citazione nei taxa del primo passo**
+
+I valori: `agaricus-sylvicola` crema; `craterellus-lutescens` giallo e trombetta; `fistulina-hepatica` rosa e bruno; `hygrophorus-marzuolus` nero; `morchella-elata` nero; `pleurotus-eryngii` crema e grigio.
+1. *(consigliata)* Riprovare su mycodb.fr (elencato nelle loro fonti) e su First Nature. Togliere solo i valori che nessuna fonte dà.
+2. Toglierli subito dai dati: cambiano filtri e varianti già disegnate (colore).
+3. Lasciarli in pendenza senza scadenza.
+
+**D9. Pescorocchiano: foto della valle di Ricetto**
+
+L'unica foto della zona trovata (CC BY-SA 4.0, Marica Massaro) mostra la valle boscosa, ma con alcune case del paese in primo piano.
+1. *(consigliata)* Non usarla, per la regola «niente centri abitati». Resta l'eccezione.
+2. Usarla come foto reale e farne le copertine.
+
+## Decisioni chieste a Matteo (risposte sopra)
 
 Domande a scelta. L'opzione consigliata è la prima.
 

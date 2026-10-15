@@ -284,7 +284,7 @@
   },
   {
    "categoria": "foto-dettagli",
-   "motivo": "Foto di alberi e piante aggiunte il 15/10, dopo il giro dei punti di ritaglio: punti da chiedere sul ramo gpt/ritagli e importare con tools/import_crop_points.py.",
+   "motivo": "Foto di alberi e piante aggiunte il 15/10, dopo il giro dei punti di ritaglio: punti da chiedere sul ramo gpt/ritagli e importare con tools/import_crop_points.py. Anche le foto reali dei luoghi aggiunte il 15/10 (D7).",
    "voci": [
     "assets/plants/aglio-orsino-1.webp (ritaglio)",
     "assets/plants/aglio-orsino-2.webp (ritaglio)",
@@ -347,7 +347,9 @@
     "assets/species/tree-tasso-inat2.webp (ritaglio)",
     "assets/species/tree-tasso-inat3.webp (ritaglio)",
     "assets/species/tree-tasso-inat4.webp (ritaglio)",
-    "assets/species/tree-tasso-inat5.webp (ritaglio)"
+    "assets/species/tree-tasso-inat5.webp (ritaglio)",
+    "assets/zones/cittareale.webp (ritaglio)",
+    "assets/zones/terminillo-ovest.webp (ritaglio)"
    ]
   },
   {
@@ -812,6 +814,44 @@
     "leaf_type-molto_divisa_larga",
     "leaf_type-semplice"
    ]
+  },
+  {
+   "categoria": "luoghi-copertine",
+   "motivo": "Foto reali trovate il 15/10 (D7): copertine di stagione e meteo da produrre sul ramo gpt/immagini, docs/handoff-immagini-mancanti.md, punto 6.",
+   "voci": [
+    "cittareale:autunno-nebbia",
+    "cittareale:autunno-nuvoloso",
+    "cittareale:autunno-pioggia",
+    "cittareale:autunno-sereno",
+    "cittareale:estate-nebbia",
+    "cittareale:estate-nuvoloso",
+    "cittareale:estate-pioggia",
+    "cittareale:inverno-nebbia",
+    "cittareale:inverno-neve",
+    "cittareale:inverno-nuvoloso",
+    "cittareale:inverno-pioggia",
+    "cittareale:inverno-sereno",
+    "cittareale:primavera-nebbia",
+    "cittareale:primavera-nuvoloso",
+    "cittareale:primavera-pioggia",
+    "cittareale:primavera-sereno",
+    "terminillo-ovest:autunno-nebbia",
+    "terminillo-ovest:autunno-nuvoloso",
+    "terminillo-ovest:autunno-pioggia",
+    "terminillo-ovest:autunno-sereno",
+    "terminillo-ovest:estate-nebbia",
+    "terminillo-ovest:estate-nuvoloso",
+    "terminillo-ovest:estate-pioggia",
+    "terminillo-ovest:inverno-nebbia",
+    "terminillo-ovest:inverno-neve",
+    "terminillo-ovest:inverno-nuvoloso",
+    "terminillo-ovest:inverno-pioggia",
+    "terminillo-ovest:inverno-sereno",
+    "terminillo-ovest:primavera-nebbia",
+    "terminillo-ovest:primavera-nuvoloso",
+    "terminillo-ovest:primavera-pioggia",
+    "terminillo-ovest:primavera-sereno"
+   ]
   }
  ],
  "eccezioni": [
@@ -834,16 +874,32 @@
   },
   {
    "categoria": "luoghi-foto",
-   "motivo": "Nessuna foto Commons adatta (solo paesaggi o boschi della zona, data/media-zones.json): la scheda mostra la foto del fungo. Senza foto reale non si fanno copertine di stagione e meteo.",
+   "motivo": "Cercato su Wikimedia Commons il 15/10 (foto georeferenziate vicine e per nome, solo CC0/CC BY/CC BY-SA): solo foto del paese (piazze, fontane, torri), nessun paesaggio o bosco della zona. La scheda mostra la foto del fungo.",
    "voci": [
-    "cittareale (nessuna foto)",
-    "domo (nessuna foto)",
-    "leonessa (nessuna foto)",
+    "leonessa (nessuna foto)"
+   ]
+  },
+  {
+   "categoria": "luoghi-foto",
+   "motivo": "Cercato su Wikimedia Commons il 15/10 (foto georeferenziate vicine e per nome, solo CC0/CC BY/CC BY-SA): le foto vicine ritraggono altri posti (Monti della Duchessa, Castelvecchio, Monte Tancia, conca di Rieti, lago di Scandarello, Sibillini) o paesi; nessuna mostra davvero la zona.",
+   "voci": [
     "malito (nessuna foto)",
-    "pescorocchiano (nessuna foto)",
     "sangiovanni (nessuna foto)",
-    "terminillo-est (nessuna foto)",
-    "terminillo-ovest (nessuna foto)"
+    "domo (nessuna foto)"
+   ]
+  },
+  {
+   "categoria": "luoghi-foto",
+   "motivo": "Cercato su Wikimedia Commons il 15/10 (foto georeferenziate vicine e per nome, solo CC0/CC BY/CC BY-SA): l'unica foto di Cinque Confini è un panorama molto stretto con il campo d'atletica e l'albergo; le foto «Monte Bove» sono dei Sibillini.",
+   "voci": [
+    "terminillo-est (nessuna foto)"
+   ]
+  },
+  {
+   "categoria": "luoghi-foto",
+   "motivo": "Cercato su Wikimedia Commons il 15/10 (foto georeferenziate vicine e per nome, solo CC0/CC BY/CC BY-SA): l'unica foto della zona (valle di Ricetto, CC BY-SA 4.0) ha case del paese in primo piano: esclusa per la regola «niente centri abitati». Da confermare con Matteo.",
+   "voci": [
+    "pescorocchiano (nessuna foto)"
    ]
   }
  ],
