@@ -410,3 +410,5 @@ Tecnica: output nativo del tool 1122×1402, ricampionato a 1600×2000 con LANCZO
 | File | Stato | Verifica |
 |---|---|---|
 | infografiche/caesarea-revisione.webp | Verifica illustrativa superata; da rivedere con un micologo | Edit mirato: carne interna del gambo sezionato bianca. Lamelle/anello/gambo esterni gialli, volva bianca a sacco, cappello arancio striato; sosia con parti bianche e cappello olivastro. Nessun testo o elemento extra; proporzioni e margini conservati. Confronto con i riferimenti fotografici locali già documentati per l’originale. L’originale non approvato è conservato. |
+
+| infografiche/mellea.webp | verifica illustrativa superata | Cespo su legno, cappelli miele con squamette centrali, sporata bianca sulle superfici superiori dei cappelli bassi, anelli membranosi, gambi fibrosi e rizomorfe nere. Sezione bianca; lamelle crema leggermente decorrenti. Galerina più piccola, liscia, bruno-ocra con parti ruggine. Corretti margini e scaglie troppo evidenti sui gambi. Nessun testo; blocco inferiore destro libero. |

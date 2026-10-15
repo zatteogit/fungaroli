@@ -15465,5 +15465,31 @@
     ],
     "bytes": 145020,
     "sha256": "a1f649ca2ffd7d806d32d32d2a8f8a108b613fbd650fc96d4bf036420d8588bf"
+  },
+  {
+    "file": "incoming/infografiche/mellea.webp",
+    "tipo": "infografica",
+    "soggetto": "mellea",
+    "modello": "image_gen (identificatore tecnico non esposto)",
+    "prompt": "Create one NEW educational mushroom plate, vertical 4:5, target 1600x2000, entirely without any writing, letters, numbers, arrows, frames or watermark. Reference 1 (caesarea plate) is STYLE ONLY: reproduce its clean dark brown outlines, few flat warm colors, ivory paper and separated floating vignettes, but replace all subjects and composition as described. Reference 2 is real Armillaria mellea morphology only; reference 3 is real Galerina marginata morphology only. Do not edit/copy photographs or their compositions. Keep 8% blank outer margins and bottom-right 38%x24% fully blank for later labels. Top half: dense natural cluster of 8 Armillaria mellea honey-yellow/brown convex to flat caps, tiny dark hair-like scales concentrated at centers, with slender curved stems joined at the base on oak stump. Each visible stem has a WHITE membranous ring, yellowish woolly underside, stems yellowish above, dark brown lower down. Some lower caps carry visible WHITE spore powder. NOT sulfur-yellow, no green gills. Middle left: one clean longitudinal cap/stem section with WHITE unchanging flesh, no colored staining, no volva. Middle right: underside detail, cream moderately spaced slightly DECURRENT gills meeting the stem, with a membranous ring lower down; no free-gill gap. Below center: joined dark stem bases with thin black bootlace rhizomorph cords beneath lifted bark, no volva. Bottom LEFT: small separate group of Galerina marginata on rotten wood, at half the cap diameter of the main mushrooms: smooth unscaled ochre-brown caps, brown/rust gills, thin brown ring and RUST spore dust. Galerina must not have the white thick ring, white spore powder, or central scales of mellea. No extra stems, fused caps, insects, roots disguised as extra stems, decorative plants. All full specimens entirely contained, dark outlines around silhouettes. Scientific morphological diagram, not a photo, not a definitive identification aid.",
+    "edits": [
+      "Edit this existing Armillaria mellea plate, preserving the same species, vignettes, dark outlines, ivory background and no text. Fix two diagram errors: (1) scale the ENTIRE composition down to about 80% of its present size within the SAME vertical 4:5 canvas so there is at least 8% clean empty paper along all four edges; all objects fully inside. Keep the large lower-right area blank for labels. (2) White spore powder must lie on the UPPER surfaces of some LOWER caps in the TOP mellea cluster. Show two low caps seen from above carrying a dusting of white spore powder; remove the white speckle patches wrongly placed on the undersides/gills of the front cluster. Gill surfaces should be cream, clean, moderately spaced, slightly decurrent. Keep all mellea membranous white rings, small dark central cap scales and black rhizomorphs. Galerina small group bottom-left must have smooth ochre caps and rust-brown gills and thin ring; no white spore powder there. No writing, labels, numbers, arrows or frames.",
+      "Localized scientific correction of Armillaria mellea only in the attached educational plate. Preserve exactly the composition, 4:5 ivory canvas, all blank margins, all caps, the bottom-left Galerina group, white rings, white flesh section, white spore dust on cap tops, black rhizomorph cords, dark outlines and no text. Correct the main mellea STEM SURFACES: remove the numerous large discrete dark raised scales/dots from all main mellea stems, including the stem-base detail, section stem exterior and underside stem detail. Those stems should instead be longitudinally FIBROUS with subtle fine vertical streaks, pale yellowish at the top grading to olive-brown/dark brown toward the joined base. NOT Pholiota-like raised scales on stems. Keep tiny dark hair-like scales concentrated at the CAP centers, and keep all white membranous rings intact. Do not add a volva or any new object."
+    ],
+    "tentativi": 3,
+    "stato": "verifica illustrativa superata",
+    "checklist_superata": true,
+    "verifica": "Cespo su legno, cappelli miele con squamette centrali, sporata bianca sulle superfici superiori dei cappelli bassi, anelli membranosi, gambi fibrosi e rizomorfe nere. Sezione bianca; lamelle crema leggermente decorrenti. Galerina più piccola, liscia, bruno-ocra con parti ruggine. Corretti margini e scaglie troppo evidenti sui gambi. Nessun testo; blocco inferiore destro libero.",
+    "riferimenti": [
+      "assets/species/mellea-ref.webp (tomasz przechlewski, CC BY 2.0)",
+      "assets/species/galerina-marginata-inat1.jpg (Manuela Fiorini, CC BY; dati species-traits)",
+      "incoming/infografiche/caesarea-revisione.webp (solo stile)"
+    ],
+    "dimensioni": [
+      1600,
+      2000
+    ],
+    "bytes": 265796,
+    "sha256": "ace708c10afa2e9cd9e48bc5f4bf2a82d8d4a327ae8dc136b6680d6dc0bf9fb7"
   }
 ]
