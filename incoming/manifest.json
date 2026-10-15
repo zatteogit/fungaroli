@@ -15642,5 +15642,31 @@
     ],
     "bytes": 319960,
     "sha256": "dad944bf6f483f0e398e3f300d809acad9c81d906709a6ba3b7a8e76964e7668"
+  },
+  {
+    "file": "incoming/infografiche/cibarius.webp",
+    "tipo": "infografica",
+    "soggetto": "cibarius",
+    "modello": "image_gen (identificatore tecnico non esposto)",
+    "prompt": "Create a NEW educational natural-history mushroom plate, vertical4:5 target1600x2000. Image1 STYLE ONLY: dark-brown clean outlines, a few FLAT warm natural colors on pale ivory paper. Images2 and3 morphology references only, do not edit/copy photos or composition. No letters, writing, arrows, figures, symbols, frames, watermark or labels. Outer10% margin on every side is EMPTY paper; lower-right38%x24% entirely EMPTY. Layout: whole main species and young specimen in top40%; middle-left longitudinal section; middle-right large underside character detail; bottom-left a small comparison of the specified lookalike. A few habitat leaves/moss only if specified. No rings or volvas on any species. All silhouettes enclosed and fully contained. MAIN Cantharellus cibarius: egg-yellow irregular wavy-lobed funnel cap2-12cm, stout solid yellow stem seamlessly widening into cap, on soil/moss, absolutely NO wood. Underside has LOW THICK BLUNT FORKED and connected RIDGES descending far onto stem, NOT thin blade-like gills. Show round-profile broad blunt branching ridges with wide gaps, not hundreds of straight lines. Section WHITE to pale ivory solid flesh, NO hollow stem. LOOKALIKE Omphalotus olearius bottom-left: larger deep ORANGE mushrooms in a joined cluster ON WOOD/stump, TRUE THIN CROWDED SHARP DECURRENT GILLS and ORANGE cut flesh, clearly unlike thick blunt chanterelle ridges. Include small cut half of lookalike to show orange flesh. No rust spores. Emphasize anatomical ridge versus gill distinction.",
+    "edits": [
+      "Correct this educational plate while preserving species colors and anatomy and no text. Keep thick blunt branched chanterelle RIDGES and white flesh, versus sharp thin crowded ORANGE Omphalotus GILLS and orange flesh. Reduce ONLY the TOP chanterelle whole-specimen group to60% of its current size, centered in top region; it must be smaller in cap diameter than the bottom-left Omphalotus adult (same relative whole-specimen scale). Middle anatomical details may remain enlarged. For the ENTIRE plate reduce composition to85% within SAME4:5 canvas, blank ivory border at least7% all sides and blank bottom-right area. No drawing cut by canvas or vignette edge. No new objects, marks or labels.",
+      "Only expand blank canvas margins around this SAME drawing composition, preserving exact anatomy, colors and relative sizes. Zoom OUT strongly: shrink every drawing as one group to75% of its current size, CENTER within same vertical4:5 ivory canvas. Blank border10% on all four sides; nothing touches borders. Bottom-right blank for text. Keep white flesh and thick blunt branched yellow ridges on main finferlo, thin sharp orange gills/orange cut flesh on Omphalotus below. No letters, text, symbols, arrows or new elements."
+    ],
+    "tentativi": 3,
+    "stato": "verifica illustrativa superata",
+    "checklist_superata": true,
+    "verifica": "Finferli giallo uovo su terra/muschio, pliche basse spesse forcate e anastomizzate, carne bianca. Omphalotus arancio a cespi su legno con vere lamelle fitte e carne arancio; confronto intero più grande del finferlo, dettagli ingranditi separatamente. Margini ampi dopo edit, nessun testo.",
+    "riferimenti": [
+      "assets/species/cibarius-ref.webp (autore/licenza in data/media.json)",
+      "assets/species/omphalotus-olearius-inat1.webp (autore/licenza in data/species-traits.json)",
+      "incoming/infografiche/caesarea-revisione.webp (solo stile)"
+    ],
+    "dimensioni": [
+      1600,
+      2000
+    ],
+    "bytes": 187960,
+    "sha256": "4cce2808ba9488d583f65b968199515a2ce4e16043eb7d8160ceda52c439846e"
   }
 ]
