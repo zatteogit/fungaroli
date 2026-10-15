@@ -1435,6 +1435,324 @@
           "file_hd": "assets/trees/olmo-campestre-3.webp"
         }
       ]
+    },
+    "abete rosso": {
+      "latin": "Picea abies",
+      "photo_taxon": "Picea abies",
+      "inat": [
+        {
+          "file": "assets/species/tree-abete-rosso-inat1.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/56313171",
+          "author": "Emanuele Santarelli",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "place": "Trentino, Italia",
+          "date": "2020-08-07",
+          "file_hd": "assets/species/tree-abete-rosso-inat1-hd.webp",
+          "thumb": "assets/species/tree-abete-rosso-inat1-t.webp"
+        },
+        {
+          "file": "assets/species/tree-abete-rosso-inat2.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/56313171",
+          "author": "Emanuele Santarelli",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "place": "Trentino, Italia",
+          "date": "2020-08-07",
+          "file_hd": "assets/species/tree-abete-rosso-inat2-hd.webp",
+          "thumb": "assets/species/tree-abete-rosso-inat2-t.webp"
+        },
+        {
+          "file": "assets/species/tree-abete-rosso-inat3.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/28726934",
+          "author": "Irene Saltini",
+          "license": "CC0 1.0",
+          "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "place": "Salobbi (Brez), Trento, Italy",
+          "date": "2019-07-13",
+          "file_hd": "assets/species/tree-abete-rosso-inat3-hd.webp",
+          "thumb": "assets/species/tree-abete-rosso-inat3-t.webp"
+        },
+        {
+          "file": "assets/species/tree-abete-rosso-inat4.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/28726934",
+          "author": "Irene Saltini",
+          "license": "CC0 1.0",
+          "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "place": "Salobbi (Brez), Trento, Italy",
+          "date": "2019-07-13",
+          "file_hd": "assets/species/tree-abete-rosso-inat4-hd.webp",
+          "thumb": "assets/species/tree-abete-rosso-inat4-t.webp"
+        },
+        {
+          "file": "assets/species/tree-abete-rosso-inat5.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/235301697",
+          "author": "Matteo Martini",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "place": "Provincia autonoma di Trento, Italia",
+          "date": "2024-08-09",
+          "file_hd": "assets/species/tree-abete-rosso-inat5-hd.webp",
+          "thumb": "assets/species/tree-abete-rosso-inat5-t.webp"
+        }
+      ]
+    },
+    "acero opalo": {
+      "latin": "Acer opalus subsp. obtusatum",
+      "photo_taxon": "Acer opalus subsp. obtusatum",
+      "inat": [
+        {
+          "file": "assets/species/tree-acero-opalo-inat1.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/27288728",
+          "author": "Emanuele Santarelli",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "place": "Provincia di Perugia, Italia",
+          "date": "2019-06-19",
+          "file_hd": "assets/species/tree-acero-opalo-inat1-hd.webp",
+          "thumb": "assets/species/tree-acero-opalo-inat1-t.webp"
+        },
+        {
+          "file": "assets/species/tree-acero-opalo-inat2.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/152712787",
+          "author": "Paolo Ragni",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "place": "61046 Piobbico PU, Italia",
+          "date": "2023-03-28",
+          "file_hd": "assets/species/tree-acero-opalo-inat2-hd.webp",
+          "thumb": "assets/species/tree-acero-opalo-inat2-t.webp"
+        },
+        {
+          "file": "assets/species/tree-acero-opalo-inat3.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/327512843",
+          "author": "Gianluca Congi",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "place": "87060 Bocchigliero CS, Italia",
+          "date": "2025-11-21",
+          "file_hd": "assets/species/tree-acero-opalo-inat3-hd.webp",
+          "thumb": "assets/species/tree-acero-opalo-inat3-t.webp"
+        },
+        {
+          "file": "assets/species/tree-acero-opalo-inat4.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/315071989",
+          "author": "Gianluca Congi",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "place": "87066 Longobucco CS, Italia",
+          "date": "2025-09-19",
+          "file_hd": "assets/species/tree-acero-opalo-inat4-hd.webp",
+          "thumb": "assets/species/tree-acero-opalo-inat4-t.webp"
+        }
+      ]
+    },
+    "frassino maggiore": {
+      "latin": "Fraxinus excelsior",
+      "photo_taxon": "Fraxinus excelsior",
+      "inat": [
+        {
+          "file": "assets/species/tree-frassino-maggiore-inat1.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/250297233",
+          "author": "Isabella Paleari",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "place": "Torino, Piemonte, IT",
+          "date": "2024-11-03",
+          "file_hd": "assets/species/tree-frassino-maggiore-inat1-hd.webp",
+          "thumb": "assets/species/tree-frassino-maggiore-inat1-t.webp"
+        },
+        {
+          "file": "assets/species/tree-frassino-maggiore-inat2.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/308410988",
+          "author": "Matteo Martini",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "place": "Provincia autonoma di Trento, Italia",
+          "date": "2025-08-23",
+          "file_hd": "assets/species/tree-frassino-maggiore-inat2-hd.webp",
+          "thumb": "assets/species/tree-frassino-maggiore-inat2-t.webp"
+        },
+        {
+          "file": "assets/species/tree-frassino-maggiore-inat3.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/250297233",
+          "author": "Isabella Paleari",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "place": "Torino, Piemonte, IT",
+          "date": "2024-11-03",
+          "file_hd": "assets/species/tree-frassino-maggiore-inat3-hd.webp",
+          "thumb": "assets/species/tree-frassino-maggiore-inat3-t.webp"
+        },
+        {
+          "file": "assets/species/tree-frassino-maggiore-inat4.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/293718421",
+          "author": "Marco Mussita",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "place": "24015 San Giovanni Bianco, Province of Bergamo, Italy",
+          "date": "2025-06-29",
+          "file_hd": "assets/species/tree-frassino-maggiore-inat4-hd.webp",
+          "thumb": "assets/species/tree-frassino-maggiore-inat4-t.webp"
+        },
+        {
+          "file": "assets/species/tree-frassino-maggiore-inat5.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/59709449",
+          "author": "Marco Mussita",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "place": "Province of Bergamo, Italy",
+          "date": "2020-09-15",
+          "file_hd": "assets/species/tree-frassino-maggiore-inat5-hd.webp",
+          "thumb": "assets/species/tree-frassino-maggiore-inat5-t.webp"
+        }
+      ]
+    },
+    "sorbo degli uccellatori": {
+      "latin": "Sorbus aucuparia",
+      "photo_taxon": "Sorbus aucuparia",
+      "inat": [
+        {
+          "file": "assets/species/tree-sorbo-degli-uccellatori-inat1.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/155133516",
+          "author": "Andrea Albani",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "place": "Provincia del Verbano-Cusio-Ossola, Italia",
+          "date": "2006-08-28",
+          "file_hd": "assets/species/tree-sorbo-degli-uccellatori-inat1-hd.webp",
+          "thumb": "assets/species/tree-sorbo-degli-uccellatori-inat1-t.webp"
+        },
+        {
+          "file": "assets/species/tree-sorbo-degli-uccellatori-inat2.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/137759827",
+          "author": "Marco Mussita",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "place": "Province of Sondrio, Italy",
+          "date": "2022-10-06",
+          "file_hd": "assets/species/tree-sorbo-degli-uccellatori-inat2-hd.webp",
+          "thumb": "assets/species/tree-sorbo-degli-uccellatori-inat2-t.webp"
+        },
+        {
+          "file": "assets/species/tree-sorbo-degli-uccellatori-inat3.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/93713129",
+          "author": "Andrea Mologni",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "place": "22041 Colverde CO, Italia",
+          "date": "2021-09-04",
+          "file_hd": "assets/species/tree-sorbo-degli-uccellatori-inat3-hd.webp",
+          "thumb": "assets/species/tree-sorbo-degli-uccellatori-inat3-t.webp"
+        },
+        {
+          "file": "assets/species/tree-sorbo-degli-uccellatori-inat4.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/137616776",
+          "author": "Marco Mussita",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "place": "Province of Bergamo, Italy",
+          "date": "2022-10-04",
+          "file_hd": "assets/species/tree-sorbo-degli-uccellatori-inat4-hd.webp",
+          "thumb": "assets/species/tree-sorbo-degli-uccellatori-inat4-t.webp"
+        },
+        {
+          "file": "assets/species/tree-sorbo-degli-uccellatori-inat5.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/97477830",
+          "author": "Caleb Catto",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "place": "Auronzo di Cadore, Veneto, IT",
+          "date": "2021-10-05",
+          "file_hd": "assets/species/tree-sorbo-degli-uccellatori-inat5-hd.webp",
+          "thumb": "assets/species/tree-sorbo-degli-uccellatori-inat5-t.webp"
+        }
+      ]
+    },
+    "tasso": {
+      "latin": "Taxus baccata",
+      "photo_taxon": "Taxus baccata",
+      "inat": [
+        {
+          "file": "assets/species/tree-tasso-inat1.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/4105222",
+          "author": "Peter de Lange",
+          "license": "CC0 1.0",
+          "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "place": "Sardegna,  Genargentu, Rio Aratu",
+          "date": "2013-06-08",
+          "file_hd": "assets/species/tree-tasso-inat1-hd.webp",
+          "thumb": "assets/species/tree-tasso-inat1-t.webp"
+        },
+        {
+          "file": "assets/species/tree-tasso-inat2.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/358965133",
+          "author": "Francesco Santoro",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "place": "Montella AV, Italia",
+          "date": "2026-05-06",
+          "file_hd": "assets/species/tree-tasso-inat2-hd.webp",
+          "thumb": "assets/species/tree-tasso-inat2-t.webp"
+        },
+        {
+          "file": "assets/species/tree-tasso-inat3.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/316564894",
+          "author": "Linzy L.",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "place": "Via Gaetano Donizetti, Tradate, Lombardy, IT",
+          "date": "2025-09-25",
+          "file_hd": "assets/species/tree-tasso-inat3-hd.webp",
+          "thumb": "assets/species/tree-tasso-inat3-t.webp"
+        },
+        {
+          "file": "assets/species/tree-tasso-inat4.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/316564894",
+          "author": "Linzy L.",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "place": "Via Gaetano Donizetti, Tradate, Lombardy, IT",
+          "date": "2025-09-25",
+          "file_hd": "assets/species/tree-tasso-inat4-hd.webp",
+          "thumb": "assets/species/tree-tasso-inat4-t.webp"
+        },
+        {
+          "file": "assets/species/tree-tasso-inat5.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/60228631",
+          "author": "Marco Mussita",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "place": "Province of Bergamo, Italy",
+          "date": "2020-09-20",
+          "file_hd": "assets/species/tree-tasso-inat5-hd.webp",
+          "thumb": "assets/species/tree-tasso-inat5-t.webp"
+        }
+      ]
     }
   }
 }

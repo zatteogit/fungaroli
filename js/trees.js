@@ -12,12 +12,15 @@ const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<
 let T = {}, MEDIA = {}, ASSET = (f) => f, ZONES = [], HAB = {}, THUMB = () => '';
 let aliasRe = null, aliasMap = {};
 
+// nomi che sono anche parole comuni («tasso di umidità», il tasso animale): niente link automatico nei testi
+const NOT_IN_TEXT = new Set(['tasso']);
+
 export function initTrees({ trees, media, assetUrl, zones, habitat, thumb }) {
   T = trees?.trees || {}; MEDIA = media?.trees || {}; if (assetUrl) ASSET = assetUrl;
   ZONES = zones || []; HAB = habitat || {}; if (thumb) THUMB = thumb;
   aliasMap = {};
   for (const [id, t] of Object.entries(T)) {
-    for (const a of [id, t.name, ...(t.aliases || [])]) if (a) aliasMap[a.toLowerCase()] = id;
+    for (const a of [id, t.name, ...(t.aliases || [])]) if (a && !NOT_IN_TEXT.has(a.toLowerCase())) aliasMap[a.toLowerCase()] = id;
   }
   const words = Object.keys(aliasMap).sort((a, b) => b.length - a.length).map((w) => w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&').replace(/ /g, '\\s+'));
   aliasRe = words.length ? new RegExp(`(^|[^\\p{L}])(${words.join('|')})(?=[^\\p{L}]|$)`, 'giu') : null;

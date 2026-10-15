@@ -630,6 +630,7 @@
       "habit": "Alberello di 6-15 m, chioma irregolare; fa polloni dalla ceppaia.",
       "confusable": [
         {
+          "id": "frassino maggiore",
           "name": "Frassino maggiore",
           "how_to_tell": "Gemme nere vellutate e fiori senza petali; luoghi freschi di montagna e forre."
         },
@@ -990,10 +991,12 @@
       "habit": "Albero alto 30-50 m, chioma conica regolare, poi appiattita a 'nido di cicogna' negli esemplari vecchi.",
       "confusable": [
         {
+          "id": "abete rosso",
           "name": "Abete rosso (Picea abies)",
           "how_to_tell": "Aghi a sezione quadrata e pungenti, senza bande bianche; pigne pendenti che cadono intere; corteccia rossastra. Solo piantato in Appennino."
         },
         {
+          "id": "tasso",
           "name": "Tasso",
           "how_to_tell": "Aghi senza bande bianche, frutti con arillo rosso; pianta velenosa."
         }
@@ -1197,6 +1200,7 @@
       "habit": "Alberello di 8-15 m o arbusto in siepi e sottobosco.",
       "confusable": [
         {
+          "id": "acero opalo",
           "name": "Acero opalo",
           "how_to_tell": "Foglie più grandi a lobi larghi e poco profondi, senza latice; samare ad angolo acuto."
         },
@@ -1591,6 +1595,7 @@
       "habit": "Albero a chioma ampia, presente anche come antica pianta da frutto.",
       "confusable": [
         {
+          "id": "sorbo degli uccellatori",
           "name": "Sorbo degli uccellatori",
           "how_to_tell": "Quest’ultimo ha piccoli frutti rosso-aranciati riuniti in gruppi numerosi; non è incluso qui come segnalazione locale."
         }
@@ -1872,6 +1877,413 @@
         }
       ],
       "habitatMappingNote": "Categoria forestale compatibile con l’habitat descritto, non presenza osservata dell’albero."
+    },
+    "abete rosso": {
+      "name": "Abete rosso",
+      "latin": "Picea abies",
+      "aliases": [
+        "abeti rossi",
+        "peccio",
+        "pecci",
+        "pecceta",
+        "peccete",
+        "Picea excelsa"
+      ],
+      "wikidata": "Q145992",
+      "type": "conifera",
+      "recognize": [
+        "Aghi corti (1-2,5 cm), rigidi e appuntiti, a sezione quadrangolare",
+        "Aghi attaccati uno a uno su piccoli cuscinetti sporgenti del rametto",
+        "Pigne cilindriche pendenti di 12-15 cm, che cadono intere",
+        "Corteccia rossastra o arancio-bruna, spesso con gocce di resina",
+        "Chioma conica regolare, con i rami bassi pendenti"
+      ],
+      "leaf": "Aghi singoli, 1-2,5 cm, rigidi e appuntiti, a sezione quadrangolare; verdi, con sottili linee bianche puntiformi. Inseriti su cuscinetti sporgenti.",
+      "bark": "Sottile, rossastra o arancio-bruna; con l'età bruno-grigiastra e divisa in piccole placche. Spesso con gocce di resina.",
+      "fruit": "Pigna cilindrica di 12-15 cm, verde e poi bruna in autunno, pendente dal ramo. Secca si apre e libera semi alati di circa 4 mm; poi cade intera.",
+      "habit": "Albero che può superare i 50 m, con tronco diritto e chioma conica; rami corti, i superiori ascendenti e gli inferiori pendenti.",
+      "confusable": [
+        {
+          "id": "abete bianco",
+          "name": "Abete bianco",
+          "how_to_tell": "Aghi piatti con due bande argentee sotto; pigne erette che si disfano sull'albero; tronco grigio-argenteo."
+        },
+        {
+          "id": "tasso",
+          "name": "Tasso",
+          "how_to_tell": "Aghi piatti e morbidi su due file, verde-giallastri sotto; niente pigne ma semi in un arillo rosso; non resinoso. Pianta tossica."
+        }
+      ],
+      "altitude_m": null,
+      "altitudeNote": "Le fonti consultate danno quote solo per le Alpi, dove supera i 2.300 m; nessuna quota documentata per l'Appennino centrale.",
+      "where_reatino": "Non spontaneo. Nel Lazio il Portale della Flora d'Italia non lo indica né come spontaneo né come naturalizzato. Nel distretto reatino è tra le conifere più usate nei rimboschimenti del Novecento, con pino nero, pino silvestre e abete bianco. In Appennino è spontaneo solo con piccoli nuclei nel Tosco-Emiliano.",
+      "forest_categories": [
+        "Rimboschimenti di pini e/o altre conifere montane"
+      ],
+      "habitatMappingNote": "Categoria dei rimboschimenti di conifere della Carta Forestale. La tesi sul distretto reatino cita l'abete rosso tra le specie piantate, ma la Carta non dice in quali rimboschimenti sia presente.",
+      "fungi": [
+        "edulis"
+      ],
+      "fungi_note": "Forma micorrize con il porcino (Wikipedia, incrocio); nel Reatino è solo piantato e non cambia la scelta della zona. Il JRC cita anche marciumi radicali causati da funghi del genere Armillaria, lo stesso del chiodino.",
+      "season_tip": "Sempreverde: a terra pigne intere, lunghe e cilindriche; rametti con aghi pungenti attaccati a piccoli cuscinetti.",
+      "sources": [
+        {
+          "title": "Acta Plantarum, IPFI: Picea abies",
+          "url": "https://www.actaplantarum.org/flora/flora_info.php?id=500147"
+        },
+        {
+          "title": "Portale della Flora d'Italia (Università di Trieste): Picea abies",
+          "url": "https://dryades.units.it/floritaly/index.php?procedure=taxon_page&tipo=all&id=147"
+        },
+        {
+          "title": "European Atlas of Forest Tree Species (JRC): Picea abies",
+          "url": "https://forest.jrc.ec.europa.eu/media/atlas/Picea_abies.pdf"
+        },
+        {
+          "title": "EUFORGEN, Linee guida per la conservazione genetica e l’uso: Abete rosso (Picea abies)",
+          "url": "https://www.euforgen.org/fileadmin/templates/euforgen.org/upload/Countries/Italy/Technical_guidelines/Picea_abies_ITA.pdf"
+        },
+        {
+          "title": "INFC, Guida alla classificazione della vegetazione forestale (ISAFA, Corpo Forestale dello Stato, 2003)",
+          "url": "https://www.inventarioforestale.org/wp-content/uploads/2017/10/Cla_veg.pdf"
+        },
+        {
+          "title": "Agrillo E., Forme di vegetazione forestale del distretto reatino (Regione Lazio), tesi di dottorato, Università della Tuscia (XXI ciclo)",
+          "url": "https://dspace.unitus.it/handle/2067/962"
+        },
+        {
+          "title": "Carta Forestale su base tipologica, Regione Lazio (layer tipi_forestali2)",
+          "url": "https://geoportale.regione.lazio.it/geoserver/ows?service=WFS&version=1.0.0&request=DescribeFeatureType&typeName=geonode:tipi_forestali2"
+        },
+        {
+          "title": "Wikipedia (incrocio): Picea abies",
+          "url": "https://it.wikipedia.org/wiki/Picea_abies"
+        }
+      ]
+    },
+    "acero opalo": {
+      "name": "Acero opalo",
+      "latin": "Acer opalus subsp. obtusatum",
+      "aliases": [
+        "aceri opali",
+        "acero d'Ungheria",
+        "acero ottuso",
+        "Acer obtusatum"
+      ],
+      "wikidata": "Q9578464",
+      "type": "latifoglia caducifoglia",
+      "recognize": [
+        "Foglia semplice palmata, 5-15 cm, con 3-5 lobi larghi e poco profondi",
+        "Lobi a punta ottusa e denti ottusi sul margine",
+        "Pagina inferiore della foglia pelosa",
+        "Fiori giallo-verdastri su lunghi peduncoli, prima delle foglie",
+        "Samare con le ali aperte a V (60-90 gradi)"
+      ],
+      "leaf": "Semplice, palmata, larga 5-15 cm, con 3-5 lobi larghi e poco profondi a punta ottusa e denti ottusi; pagina inferiore pelosa (tomentosa) nella sottospecie obtusatum.",
+      "bark": "Liscia e grigio chiara da giovane; poi bruno-giallastra e fessurata, si stacca in placche.",
+      "fruit": "Disamara con due ali di circa 2-2,5 cm, allargate verso la punta e aperte a 60-90 gradi.",
+      "habit": "Albero fino a 20-25 m, ma anche alberello o arbusto. Nei boschi misti spesso sotto le chiome di cerro e faggio.",
+      "confusable": [
+        {
+          "id": "acero campestre",
+          "name": "Acero campestre",
+          "how_to_tell": "Foglie a 5 lobi arrotondati con margine intero, senza denti; samare con le ali in linea (180 gradi)."
+        },
+        {
+          "id": "acero di montpellier",
+          "name": "Acero di Montpellier",
+          "how_to_tell": "Foglia piccola (3-6 cm), a 3 lobi, a margine liscio e un po’ coriacea."
+        }
+      ],
+      "altitude_m": null,
+      "altitudeNote": "Dal livello del mare fino all'inizio della faggeta; nel Sud Italia arriva a circa 1.300 m (Wikipedia). Nessun limite numerico per il Reatino.",
+      "where_reatino": "Nel distretto reatino è citato come acero opalo (Acer obtusatum) nelle cerrete, dove forma uno strato sotto il cerro con il carpino nero; anche nei castagneti, negli ostrieti dei pendii ripidi e, meno spesso, nelle faggete. Nel Lazio è presente solo la sottospecie obtusatum secondo il Portale della Flora d'Italia.",
+      "forest_categories": [
+        "Cerreta",
+        "Ostrieto",
+        "Castagneto",
+        "Faggeta"
+      ],
+      "habitatMappingNote": "Traduzione nelle categorie della Carta Forestale dei tipi di bosco in cui la tesi sul distretto reatino cita l'acero opalo; non presenza osservata dell'albero.",
+      "fungi": [],
+      "fungi_note": "Nessuna associazione con i funghi dell'app nelle fonti consultate: la sola presenza dell'albero non indica quella di un fungo.",
+      "season_tip": "In primavera fiorisce giallo-verde prima di mettere le foglie.",
+      "sources": [
+        {
+          "title": "Acta Plantarum, IPFI: Acer opalus subsp. obtusatum",
+          "url": "https://www.actaplantarum.org/flora/flora_info.php?id=503042"
+        },
+        {
+          "title": "Portale della Flora d'Italia (Università di Trieste): Acer opalus subsp. obtusatum",
+          "url": "https://dryades.units.it/floritaly/index.php?procedure=taxon_page&tipo=all&id=3042"
+        },
+        {
+          "title": "Portale della Flora d'Italia (Università di Trieste): Acer opalus subsp. opalus",
+          "url": "https://dryades.units.it/floritaly/index.php?procedure=taxon_page&tipo=all&id=3041"
+        },
+        {
+          "title": "Agrillo E., Forme di vegetazione forestale del distretto reatino (Regione Lazio), tesi di dottorato, Università della Tuscia (XXI ciclo)",
+          "url": "https://dspace.unitus.it/handle/2067/962"
+        },
+        {
+          "title": "Carta Forestale su base tipologica, Regione Lazio (layer tipi_forestali2)",
+          "url": "https://geoportale.regione.lazio.it/geoserver/ows?service=WFS&version=1.0.0&request=DescribeFeatureType&typeName=geonode:tipi_forestali2"
+        },
+        {
+          "title": "European Atlas of Forest Tree Species (JRC): Acer campestre",
+          "url": "https://forest.jrc.ec.europa.eu/media/atlas/Acer_campestre.pdf"
+        },
+        {
+          "title": "Wikipedia (incrocio): Acer opalus",
+          "url": "https://it.wikipedia.org/wiki/Acer_opalus"
+        },
+        {
+          "title": "Wikipedia en (incrocio): Acer opalus",
+          "url": "https://en.wikipedia.org/wiki/Acer_opalus"
+        },
+        {
+          "title": "Wikipedia en (incrocio): Acer monspessulanum",
+          "url": "https://en.wikipedia.org/wiki/Acer_monspessulanum"
+        }
+      ]
+    },
+    "frassino maggiore": {
+      "name": "Frassino maggiore",
+      "latin": "Fraxinus excelsior",
+      "aliases": [
+        "frassini maggiori",
+        "frassino comune"
+      ],
+      "wikidata": "Q156907",
+      "type": "latifoglia caducifoglia",
+      "recognize": [
+        "Foglia composta opposta con 9-13 foglioline seghettate, senza picciolo",
+        "Gemme nere o bruno-nerastre, vellutate",
+        "Fiori senza petali, con antere viola scuro, prima delle foglie",
+        "Samare piatte di 2-5 cm appese a grappoli",
+        "Corteccia liscia grigio chiara da giovane, poi fessurata"
+      ],
+      "leaf": "Opposta, imparipennata, 20-35 cm, con 9-13 foglioline seghettate e senza picciolo, di 3-12 cm. Spunta tardi in primavera.",
+      "bark": "Liscia e grigio chiara negli alberi giovani; con l'età si ispessisce e si fessura in solchi verticali.",
+      "fruit": "Samare ovali e piatte di 2-5 cm, con un solo seme, appese a grappoli dai rami a fine estate.",
+      "habit": "Albero di 20-35 m, chioma a cupola aperta con rami ascendenti. Di solito a gruppi nei boschi misti, di rado in popolamenti puri.",
+      "confusable": [
+        {
+          "id": "orniello",
+          "name": "Orniello",
+          "how_to_tell": "5-9 foglioline; gemme grigio-brune pelose, non nere; fiori bianco-crema profumati insieme alle foglie; corteccia liscia anche da vecchio."
+        },
+        {
+          "id": "sorbo degli uccellatori",
+          "name": "Sorbo degli uccellatori",
+          "how_to_tell": "Foglie composte ma alterne, non opposte; frutti rossi carnosi in grappoli, non samare."
+        }
+      ],
+      "altitude_m": null,
+      "altitudeNote": "Nei Pirenei e sulle Alpi sale fino a 1.600-1.800 m (JRC); per l'Appennino centrale le fonti consultate non danno quote.",
+      "where_reatino": "Nel distretto reatino è citato nei boschi misti a farnia, tigli, acero di monte e carpino bianco delle valli del Turano e del Salto, soprattutto nei fondovalle freschi vicino ai corsi d'acqua. Nel Lazio è presente secondo il Portale della Flora d'Italia.",
+      "forest_categories": [
+        "Bosco di forra",
+        "Bosco alveale e ripariale"
+      ],
+      "habitatMappingNote": "Traduzione nelle categorie della Carta Forestale degli ambienti descritti dalle fonti (forre, pendii freschi, fondovalle umidi e boschi di golena); non presenza osservata dell'albero.",
+      "fungi": [],
+      "fungi_note": "Nessun fungo dell'app è legato al frassino nelle fonti consultate. Il deperimento del frassino è causato dal fungo Hymenoscyphus fraxineus, che non è un fungo da raccolta (Wikipedia, incrocio).",
+      "season_tip": "D'inverno le gemme nere, opposte sui rametti, lo separano dall'orniello, che le ha grigio-brune.",
+      "sources": [
+        {
+          "title": "Acta Plantarum, IPFI: Fraxinus excelsior subsp. excelsior",
+          "url": "https://www.actaplantarum.org/flora/flora_info.php?id=503975"
+        },
+        {
+          "title": "Portale della Flora d'Italia (Università di Trieste): Fraxinus excelsior subsp. excelsior",
+          "url": "https://dryades.units.it/floritaly/index.php?procedure=taxon_page&tipo=all&id=3975"
+        },
+        {
+          "title": "European Atlas of Forest Tree Species (JRC): Fraxinus excelsior",
+          "url": "https://forest.jrc.ec.europa.eu/media/atlas/Fraxinus_excelsior.pdf"
+        },
+        {
+          "title": "European Atlas of Forest Tree Species (JRC): Fraxinus ornus",
+          "url": "https://forest.jrc.ec.europa.eu/media/atlas/Fraxinus_ornus.pdf"
+        },
+        {
+          "title": "INFC, Guida alla classificazione della vegetazione forestale (ISAFA, Corpo Forestale dello Stato, 2003)",
+          "url": "https://www.inventarioforestale.org/wp-content/uploads/2017/10/Cla_veg.pdf"
+        },
+        {
+          "title": "Agrillo E., Forme di vegetazione forestale del distretto reatino (Regione Lazio), tesi di dottorato, Università della Tuscia (XXI ciclo)",
+          "url": "https://dspace.unitus.it/handle/2067/962"
+        },
+        {
+          "title": "Carta Forestale su base tipologica, Regione Lazio (layer tipi_forestali2)",
+          "url": "https://geoportale.regione.lazio.it/geoserver/ows?service=WFS&version=1.0.0&request=DescribeFeatureType&typeName=geonode:tipi_forestali2"
+        },
+        {
+          "title": "Wikipedia (incrocio): Fraxinus excelsior",
+          "url": "https://it.wikipedia.org/wiki/Fraxinus_excelsior"
+        },
+        {
+          "title": "Wikipedia en (incrocio): Fraxinus excelsior",
+          "url": "https://en.wikipedia.org/wiki/Fraxinus_excelsior"
+        },
+        {
+          "title": "Wikipedia en (incrocio): Sorbus aucuparia",
+          "url": "https://en.wikipedia.org/wiki/Sorbus_aucuparia"
+        }
+      ]
+    },
+    "sorbo degli uccellatori": {
+      "name": "Sorbo degli uccellatori",
+      "latin": "Sorbus aucuparia",
+      "aliases": [
+        "sorbi degli uccellatori"
+      ],
+      "wikidata": "Q146198",
+      "type": "latifoglia caducifoglia",
+      "recognize": [
+        "Foglia composta alterna con 9-19 foglioline strette e seghettate",
+        "Fiori bianchi in mazzetti densi a maggio-giugno",
+        "Frutti rotondi rosso scarlatto di circa 1 cm, in grappoli",
+        "I frutti restano sui rami anche in inverno",
+        "Foglie arancioni in autunno"
+      ],
+      "leaf": "Alterna, imparipennata, 10-25 cm; foglioline di 2-6 cm, oblunghe e senza picciolo, con apice acuto e margine seghettato.",
+      "bark": "Grigiastra e liscia da giovane; negli alberi vecchi grigio scura, con fessure lungo il tronco.",
+      "fruit": "Piccoli pomi rotondi di circa 1 cm, rosso scarlatto o arancio, in grappoli; maturano tra agosto e ottobre e restano sull'albero d'inverno, cibo per gli uccelli. Crudi sono amari e astringenti: l'acido parasorbico irrita lo stomaco. Non sono una segnalazione di raccolta.",
+      "habit": "Albero snello, 15-20 m nei siti buoni, arbusto in quelli poveri; chioma stretta. Di rado vive oltre 100 anni.",
+      "confusable": [
+        {
+          "id": "sorbo domestico",
+          "name": "Sorbo domestico",
+          "how_to_tell": "13-21 foglioline; frutti a forma di piccola mela o pera, 2-3 cm."
+        },
+        {
+          "id": "frassino maggiore",
+          "name": "Frassino maggiore",
+          "how_to_tell": "Foglie opposte, non alterne; gemme nere; frutti a samara, non carnosi."
+        }
+      ],
+      "altitude_m": null,
+      "altitudeNote": "Nel Sud Europa, Italia compresa, vive solo in alto (JRC). Nel Reatino è citato al limite superiore della faggeta, dove le faggete più alte arrivano a 1.600-1.900 m; non è un limite misurato per la specie.",
+      "where_reatino": "Nel distretto reatino è citato nelle faggete d'alta quota, con faggio e acero riccio, e nei gruppi di sorbi su rupi e dossi al limite superiore della faggeta. Nel Lazio è presente la sottospecie aucuparia secondo il Portale della Flora d'Italia.",
+      "forest_categories": [
+        "Faggeta"
+      ],
+      "habitatMappingNote": "Categoria forestale compatibile con l'ambiente descritto dalle fonti, non presenza osservata dell'albero.",
+      "fungi": [],
+      "fungi_note": "Nessuna associazione con i funghi dell'app nelle fonti consultate: la sola presenza dell'albero non indica quella di un fungo.",
+      "season_tip": "In autunno le foglie diventano arancioni; i grappoli di frutti rossi restano sui rami anche in inverno.",
+      "sources": [
+        {
+          "title": "Acta Plantarum, IPFI: Sorbus aucuparia subsp. aucuparia",
+          "url": "https://www.actaplantarum.org/flora/flora_info.php?id=502178"
+        },
+        {
+          "title": "Portale della Flora d'Italia (Università di Trieste): Sorbus aucuparia subsp. aucuparia",
+          "url": "https://dryades.units.it/floritaly/index.php?procedure=taxon_page&tipo=all&id=2178"
+        },
+        {
+          "title": "European Atlas of Forest Tree Species (JRC): Sorbus aucuparia",
+          "url": "https://forest.jrc.ec.europa.eu/media/atlas/Sorbus_aucuparia.pdf"
+        },
+        {
+          "title": "European Atlas of Forest Tree Species (JRC): Sorbus domestica",
+          "url": "https://forest.jrc.ec.europa.eu/media/atlas/Sorbus_domestica.pdf"
+        },
+        {
+          "title": "Agrillo E., Forme di vegetazione forestale del distretto reatino (Regione Lazio), tesi di dottorato, Università della Tuscia (XXI ciclo)",
+          "url": "https://dspace.unitus.it/handle/2067/962"
+        },
+        {
+          "title": "Carta Forestale su base tipologica, Regione Lazio (layer tipi_forestali2)",
+          "url": "https://geoportale.regione.lazio.it/geoserver/ows?service=WFS&version=1.0.0&request=DescribeFeatureType&typeName=geonode:tipi_forestali2"
+        },
+        {
+          "title": "Wikipedia en (incrocio): Sorbus aucuparia",
+          "url": "https://en.wikipedia.org/wiki/Sorbus_aucuparia"
+        },
+        {
+          "title": "Wikipedia (incrocio): Sorbus aucuparia",
+          "url": "https://it.wikipedia.org/wiki/Sorbus_aucuparia"
+        }
+      ]
+    },
+    "tasso": {
+      "name": "Tasso",
+      "latin": "Taxus baccata",
+      "aliases": [
+        "tasso comune"
+      ],
+      "wikidata": "Q179729",
+      "type": "conifera",
+      "recognize": [
+        "Aghi piatti e morbidi, 2-3 cm, verde molto scuro sopra e verde-giallastro opaco sotto",
+        "Aghi disposti su due file ai lati del rametto",
+        "Niente pigne: un seme scuro in una coppa carnosa rossa (arillo)",
+        "Corteccia sottile bruno-rossastra che si stacca in scaglie",
+        "Pianta tossica: foglie, corteccia, legno e seme"
+      ],
+      "leaf": "Aghi singoli, piatti e lineari, 2-3 cm e larghi circa 3 mm, con una punta; verde molto scuro sopra, verde-giallastro opaco sotto, senza bande argentee. Inseriti a spirale ma disposti su due file.",
+      "bark": "Sottile, bruno-rossastra; liscia da giovane, poi si solleva e si stacca in piccole scaglie o placche.",
+      "fruit": "Non fa pigne. Il seme bruno-nerastro, di 6-8 mm, è avvolto in parte da un arillo carnoso di circa 7 mm, prima verde e poi rosso vivo. Le piante sono quasi sempre solo maschili o solo femminili: gli arilli si vedono sulle femminili. Il seme e il resto della pianta sono tossici: nessuna parte va assaggiata.",
+      "habit": "Albero o arbusto spesso a più fusti, di rado oltre 20 m; cresce molto lentamente e vive a lungo. Sopporta molta ombra: di solito isolato o a piccoli gruppi sotto le chiome del bosco. Non è resinoso.",
+      "confusable": [
+        {
+          "id": "abete bianco",
+          "name": "Abete bianco",
+          "how_to_tell": "Aghi con due bande argentee sotto; pigne erette sui rami alti; tronco grigio-argenteo."
+        },
+        {
+          "id": "abete rosso",
+          "name": "Abete rosso",
+          "how_to_tell": "Aghi rigidi e pungenti a sezione quadrangolare, su cuscinetti; pigne pendenti; corteccia arancio-bruna con resina."
+        }
+      ],
+      "altitude_m": null,
+      "altitudeNote": "Nell'area mediterranea vive soprattutto in alto, sui versanti a nord (JRC). Nel distretto reatino un modello lega la presenza potenziale a quote sopra la media dell'area (834 m) e a pendii ripidi; non è un limite misurato.",
+      "where_reatino": "Sparso e raro. Nel distretto reatino è segnalato su Monti della Laga, Terminillo e Monte Tancia: nelle faggete a tasso e agrifoglio delle quote medio-basse, su affioramenti rocciosi e nel vallone del Rio Fuggio (Leonessa); anche in lembi di bosco vetusto della bassa Sabina. Le faggete con tasso e agrifoglio sono habitat prioritario Natura 2000 (9210*).",
+      "forest_categories": [
+        "Faggeta"
+      ],
+      "habitatMappingNote": "La categoria Faggeta della Carta Forestale comprende le faggete a tasso e agrifoglio descritte per il Reatino; la Carta non indica dove sia il tasso.",
+      "fungi": [],
+      "fungi_note": "Nessuna associazione con i funghi dell'app nelle fonti consultate: la sola presenza dell'albero non indica quella di un fungo.",
+      "season_tip": "D'inverno, in faggeta, resta verde come l'agrifoglio: aghi su due file, verde-giallastri sotto. Gli arilli rossi compaiono solo sulle piante femminili.",
+      "sources": [
+        {
+          "title": "Acta Plantarum, IPFI: Taxus baccata",
+          "url": "https://www.actaplantarum.org/flora/flora_info.php?id=500177"
+        },
+        {
+          "title": "Portale della Flora d'Italia (Università di Trieste): Taxus baccata",
+          "url": "https://dryades.units.it/floritaly/index.php?procedure=taxon_page&tipo=all&id=177"
+        },
+        {
+          "title": "European Atlas of Forest Tree Species (JRC): Taxus baccata",
+          "url": "https://forest.jrc.ec.europa.eu/media/atlas/Taxus_baccata.pdf"
+        },
+        {
+          "title": "Agrillo E., Forme di vegetazione forestale del distretto reatino (Regione Lazio), tesi di dottorato, Università della Tuscia (XXI ciclo)",
+          "url": "https://dspace.unitus.it/handle/2067/962"
+        },
+        {
+          "title": "INFC, Guida alla classificazione della vegetazione forestale (ISAFA, Corpo Forestale dello Stato, 2003)",
+          "url": "https://www.inventarioforestale.org/wp-content/uploads/2017/10/Cla_veg.pdf"
+        },
+        {
+          "title": "Carta Forestale su base tipologica, Regione Lazio (layer tipi_forestali2)",
+          "url": "https://geoportale.regione.lazio.it/geoserver/ows?service=WFS&version=1.0.0&request=DescribeFeatureType&typeName=geonode:tipi_forestali2"
+        },
+        {
+          "title": "Wikipedia (incrocio): Taxus baccata",
+          "url": "https://it.wikipedia.org/wiki/Taxus_baccata"
+        },
+        {
+          "title": "Wikipedia en (incrocio, tossicità): Taxus baccata",
+          "url": "https://en.wikipedia.org/wiki/Taxus_baccata"
+        }
+      ]
     }
   }
 }
