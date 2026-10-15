@@ -147,7 +147,7 @@
         "GPX",
         "traccia GPX"
       ],
-      "definition": "File con punti geografici di un percorso, leggibile da molte app di navigazione. In Fungaroli può contenere solo il tratto nella zona, anche su segmenti separati.",
+      "definition": "File con punti geografici di un percorso, leggibile da molte app di navigazione. In Fronda può contenere solo il tratto nella zona, anche su segmenti separati.",
       "observe": "Verifica copertura della traccia e mappa offline; un file non certifica transitabilità o sicurezza.",
       "related": [
         "segnavia"

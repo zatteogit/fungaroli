@@ -65,7 +65,7 @@ for(const width of [320,1280]) test(`spiegazioni contestuali, glossario e ricono
   await page.locator('[data-tab="specie"]').click();await expect(page.locator('[data-view="specie"]')).toBeVisible();
   await expect(page.locator('#species-grid .sp-card')).not.toHaveCount(0);
   await expect(page.locator('[data-tab="specie"]')).toContainText('Scopri');
-  await page.locator('[data-tab="impara"]').click();await page.locator('#learn-hub [data-learn="glossario"]').click();await expect(page.locator('[data-view="glossario"] h1')).toHaveText('Glossario');
+  await page.locator('[data-tab="specie"]').click();await page.locator('.view:not([hidden]) .seg-nav [data-section="impara"]').click();await page.locator('#learn-hub [data-learn="glossario"]').click();await expect(page.locator('[data-view="glossario"] h1')).toHaveText('Glossario');
   await page.locator('#glossary-q').fill('ectomicorriza');await expect(page.locator('#glossary-results details')).toHaveCount(1);
   await expect(page.locator('#glossary-results')).toContainText('Micorriza');
   await page.locator('#glossary-q').fill('parola inesistente');await expect(page.locator('#glossary-results')).toContainText('Nessuna voce');
@@ -231,12 +231,12 @@ for(const width of [320,1280]) test(`guide in Scopri e taccuino personale distin
   await expect(page.locator('[data-view="uscite"] #editorial')).toHaveCount(0);
   await expect(page.locator('[data-tab="diario"]')).toHaveText('Taccuino');
   await page.locator('[data-tab="specie"]').click();await expect(page.locator('#species-grid')).toBeVisible();
-  await page.locator('[data-tab="impara"]').click();await expect(page.locator('#learn-hub .learn-card')).toHaveCount(6);
+  await page.locator('[data-tab="specie"]').click();await page.locator('.view:not([hidden]) .seg-nav [data-section="impara"]').click();await expect(page.locator('#learn-hub .learn-card')).toHaveCount(6);
   await page.locator('#learn-hub [data-learn="guide"]').click();
   const view=page.locator('[data-view="guide-list"]');await expect(view).toBeVisible();
-  await expect(view.locator('.seg-nav a, .sub-nav a')).toHaveCount(0);
+  await expect(view.locator('.seg-nav [data-section="impara"]')).toHaveAttribute('aria-current','page');await expect(view.locator('.sub-nav a')).toHaveCount(4);
   await expect(page.locator('[data-back]:visible span')).toHaveText('Impara');
-  await expect(page.locator('[data-tab="impara"]')).toHaveAttribute('aria-current','page');
+  await expect(page.locator('[data-tab="specie"]')).toHaveAttribute('aria-current','page');
   await expect(page.locator('#editorial .eyebrow').first()).toHaveText('Guide del bosco');
   await expect(page.locator('#editorial .editorial-card')).toHaveCount(3);
   await expect(page.locator('#editorial')).not.toContainText('Taccuino');
@@ -375,20 +375,22 @@ for(const width of [320,1280])test(`omonimi nel glossario: piante, alberi, fungh
  await page.goto('/#/glossario');await page.locator('#glossary-q').fill('aculei');await expect(page.locator('#glossary-term-aculei')).toBeVisible();await expect(page.locator('#glossary-term-aculei-piante')).toBeVisible();expect(errors).toEqual([]);
 });
 
-for(const width of [390,1280]) test(`Scopri: tre cataloghi, Impara al primo livello e ricerca contestuale a ${width}px`,async({page})=>{
+for(const width of [390,1280]) test(`Scopri: tre cataloghi più Impara e ricerca contestuale a ${width}px`,async({page})=>{
   const errors=await setup(page,width);
   const places=[['/#/specie','Funghi','Sfoglia'],['/#/riconosci','Funghi','Impara a riconoscere'],['/#/piante','Piante e fiori','Sfoglia'],['/#/riconosci/piante','Piante e fiori','Impara a riconoscere'],['/#/alberi','Alberi','Sfoglia'],['/#/riconosci/alberi','Alberi','Impara a riconoscere']];
   for(const [route,section,mode] of places){
     await page.goto(route);const view=page.locator('.view:not([hidden])');
     await expect(view.locator('.seg-nav [aria-current="page"]')).toHaveText(section);
     await expect(view.locator('.sub-nav [aria-current="page"]')).toHaveText(mode);
-    await expect(view.locator('.seg-nav a')).toHaveText(['Funghi','Piante e fiori','Alberi']);
+    await expect(view.locator('.seg-nav a')).toHaveText(['Funghi','Piante e fiori','Alberi','Impara']);
   }
-  // Impara: pagina indice e sezioni senza sotto-schede, con «indietro»
+  // Impara: quarta sezione di Scopri, con le sue sotto-schede e «indietro»
+  // si arriva dalla pagina indice di Impara: «indietro» riporta lì
   for(const [route,title] of [['/#/glossario','Glossario'],['/#/guide','Guide'],['/#/riconosci/bosco','Bosco e sentiero'],['/#/sfide','Sfide']]){
+    await page.goto('/#/impara');await expect(page.locator('#learn-hub')).toBeVisible();
     await page.goto(route);const view=page.locator('.view:not([hidden])');
-    await expect(view.locator('.seg-nav a, .sub-nav a')).toHaveCount(0);
-    await expect(page.locator('[data-tab="impara"]')).toHaveAttribute('aria-current','page');
+    await expect(view.locator('.seg-nav [data-section="impara"]')).toHaveAttribute('aria-current','page');await expect(view.locator('.sub-nav a')).toHaveCount(4);
+    await expect(page.locator('[data-tab="specie"]')).toHaveAttribute('aria-current','page');
     await expect(page.locator('[data-back]:visible span')).toHaveText('Impara');
   }
   // un solo campo: sui cataloghi la ricerca generale si nasconde e il campo filtra la griglia

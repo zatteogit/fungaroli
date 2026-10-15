@@ -1,0 +1,24 @@
+{
+  "generatedAt": "2026-10-15T14:38:07.595Z",
+  "rules": {
+    "inline-hex": {
+      "total": 307,
+      "byFile": {
+        "css/style.css": 172,
+        "index.html": 2,
+        "js/app.js": 18,
+        "js/forest-legend.js": 36,
+        "js/identify.js": 77,
+        "js/theme.js": 2
+      }
+    },
+    "css-colour-fn": {
+      "total": 164,
+      "byFile": {
+        "css/cms.css": 1,
+        "css/style.css": 160,
+        "js/identify.js": 3
+      }
+    }
+  }
+}
