@@ -3355,3 +3355,10 @@ summary .plan-crit { cursor: auto; -webkit-user-select: text; user-select: text;
 .map-link svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
 @media (hover: hover) { .map-link:hover { background: var(--surface-2); } }
 @media (max-width: 380px) { .map-link span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); } .map-link { padding: 0; width: 40px; justify-content: center; } }
+/* sul telefono la mappa è a tutto schermo: un «indietro» tondo riporta a Uscite */
+.map-back { display: none; }
+@media (max-width: 760px) {
+  .map-back { display: grid; place-items: center; position: absolute; z-index: 601; top: calc(env(safe-area-inset-top, 0px) + 14px); left: 8px; width: 44px; height: 44px; border-radius: 50%; background: var(--surface); color: var(--brand); box-shadow: var(--shadow-1); border: 1px solid var(--hair); }
+  .map-back svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+  .map-top { left: 60px; }
+}

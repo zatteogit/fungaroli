@@ -93,6 +93,7 @@ for (const width of [390, 1280]) test(`tre sezioni: la mappa si apre da Uscite e
   await page.goto('/#/');await page.locator('[data-map-link]').click();
   await expect(page).toHaveURL(/#\/mappa$/);
   await expect(page.locator('.tabbar [data-tab="uscite"]')).toHaveAttribute('aria-current','page');
-  if (width < 900) { await page.locator('[data-back]:visible').click(); await expect(page).toHaveURL(/#\/$/); }
+  if (width < 761) { await page.locator('.map-back').click(); await expect(page).toHaveURL(/#\/$/); await expect(page.locator('#home-h')).toBeVisible(); }
+  else await expect(page.locator('.map-back')).toBeHidden();
   expect(errors).toEqual([]);
 });
