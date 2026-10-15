@@ -1,0 +1,283 @@
+{
+  "file": "incoming/icone/forme-13.png",
+  "stato": "ok",
+  "verifiche": [
+    {
+      "cella": 0,
+      "bbox": [
+        89,
+        137,
+        329,
+        281
+      ],
+      "attesa": true,
+      "margini_px": [
+        89,
+        137,
+        89,
+        137
+      ],
+      "margini_ok": true,
+      "contorno_scuro_estremi": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cella": 1,
+      "bbox": [
+        99,
+        71,
+        319,
+        346
+      ],
+      "attesa": true,
+      "margini_px": [
+        99,
+        71,
+        99,
+        72
+      ],
+      "margini_ok": true,
+      "contorno_scuro_estremi": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cella": 2,
+      "bbox": null,
+      "attesa": false,
+      "vuota": true
+    },
+    {
+      "cella": 3,
+      "bbox": [
+        87,
+        138,
+        331,
+        280
+      ],
+      "attesa": true,
+      "margini_px": [
+        87,
+        138,
+        87,
+        138
+      ],
+      "margini_ok": true,
+      "contorno_scuro_estremi": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cella": 4,
+      "bbox": [
+        96,
+        69,
+        322,
+        348
+      ],
+      "attesa": true,
+      "margini_px": [
+        96,
+        69,
+        96,
+        70
+      ],
+      "margini_ok": true,
+      "contorno_scuro_estremi": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cella": 5,
+      "bbox": null,
+      "attesa": false,
+      "vuota": true
+    },
+    {
+      "cella": 6,
+      "bbox": [
+        83,
+        141,
+        335,
+        277
+      ],
+      "attesa": true,
+      "margini_px": [
+        83,
+        141,
+        83,
+        141
+      ],
+      "margini_ok": true,
+      "contorno_scuro_estremi": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cella": 7,
+      "bbox": [
+        104,
+        62,
+        314,
+        356
+      ],
+      "attesa": true,
+      "margini_px": [
+        104,
+        62,
+        104,
+        62
+      ],
+      "margini_ok": true,
+      "contorno_scuro_estremi": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cella": 8,
+      "bbox": null,
+      "attesa": false,
+      "vuota": true
+    }
+  ],
+  "normalizzazione": [
+    {
+      "cella": 0,
+      "bbox_originale": [
+        100,
+        178,
+        340,
+        322
+      ],
+      "scala": 1,
+      "dimensioni": [
+        240,
+        144
+      ],
+      "posizione": [
+        89,
+        137
+      ]
+    },
+    {
+      "cella": 1,
+      "bbox_originale": [
+        99,
+        110,
+        319,
+        385
+      ],
+      "scala": 1,
+      "dimensioni": [
+        220,
+        275
+      ],
+      "posizione": [
+        517,
+        71
+      ]
+    },
+    {
+      "cella": 3,
+      "bbox_originale": [
+        99,
+        152,
+        343,
+        294
+      ],
+      "scala": 1,
+      "dimensioni": [
+        244,
+        142
+      ],
+      "posizione": [
+        87,
+        556
+      ]
+    },
+    {
+      "cella": 4,
+      "bbox_originale": [
+        96,
+        83,
+        322,
+        362
+      ],
+      "scala": 1,
+      "dimensioni": [
+        226,
+        279
+      ],
+      "posizione": [
+        514,
+        487
+      ]
+    },
+    {
+      "cella": 6,
+      "bbox_originale": [
+        100,
+        127,
+        352,
+        263
+      ],
+      "scala": 1,
+      "dimensioni": [
+        252,
+        136
+      ],
+      "posizione": [
+        83,
+        977
+      ]
+    },
+    {
+      "cella": 7,
+      "bbox_originale": [
+        103,
+        45,
+        315,
+        342
+      ],
+      "scala": 0.98989898989899,
+      "dimensioni": [
+        210,
+        294
+      ],
+      "posizione": [
+        522,
+        898
+      ]
+    }
+  ],
+  "bytes": 53965,
+  "dimensioni": [
+    1254,
+    1254
+  ],
+  "sha256": "7a8be4ebacb8672cb6470bb69c7eb748d99bcfe4a83231268a25346b5b6b172d",
+  "prompt": "A transparent PNG sprite sheet, square1254x1254, invisible3x3cells418px each. Use reference1 for EXACT SMALL ICON SIZE, generous TRANSPARENT CELL MARGINS and row positions. Three rows: column1 CAP ONLY side view, column2 WHOLE MUSHROOM, column3 entirely EMPTY. Each separate icon centered in its own cell, at most60% of cell width AND height, at least18% alpha0 padding on EVERY cell edge. No drawn grid, background, shadows, ground, text, numbers or marks. Clean thick dark brown COMPLETE silhouette outline, flat few colors same as species icons. References2 onward show the approved base icons: preserve cap COLOR and all stems, rings, volvas, netting, scales and spots, change ONLY cap SHAPE and age-appropriate proportions. Each row's cap-only and whole must MATCH shape/color. Use EXACT reference cap shade; color labels are broad categories: 'rosso' may be dark red-BROWN. Never borrow anatomical traits or colors between rows. ROW1: tylopilus-felleus, base cap color crema, target shape HEMISPHERICAL: rounded half-sphere dome with NO central point or umbo, even if adult base has an umbo. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":true,\"cap_surface\":[\"asciutta\",\"vellutata/feltrata\",\"liscia\"],\"hymenophore\":[\"pori\"],\"hymenophore_color\":[\"bianco\",\"rosa\"]}. ROW2: caloboletus-calopus, base cap color bianco, target shape HEMISPHERICAL: rounded half-sphere dome with NO central point or umbo, even if adult base has an umbo. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":true,\"cap_surface\":[\"asciutta\",\"vellutata/feltrata\",\"liscia\",\"squamosa\"],\"hymenophore\":[\"pori\"],\"hymenophore_color\":[\"giallo\"]}. ROW3: caloboletus-radicans, base cap color crema, target shape HEMISPHERICAL: rounded half-sphere dome with NO central point or umbo, even if adult base has an umbo. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":true,\"cap_surface\":[\"asciutta\",\"vellutata/feltrata\"],\"hymenophore\":[\"pori\"],\"hymenophore_color\":[\"giallo\"]}. No new anatomical traits. Reference species icons are shape/color authorities except the explicit target cap shape. Cap-only must match whole cap. Last column empty. True alpha background.",
+  "edits": [],
+  "normalizza": true,
+  "visivo_ok": true,
+  "nota": "Forme emisferiche dei tre boleti: fiele con pori rosa e reticolo bruno; bel piede con pori gialli e gambo rosso a reticolo chiaro; radicante con pori/gambo gialli e base appuntita. Nessun anello o volva. Scala e centratura normalizzate con Python su autorizzazione di Matteo; disegno invariato."
+}
