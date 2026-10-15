@@ -1,0 +1,283 @@
+{
+  "file": "incoming/icone/forme-35.png",
+  "stato": "ok",
+  "verifiche": [
+    {
+      "cella": 0,
+      "bbox": [
+        77,
+        131,
+        340,
+        286
+      ],
+      "attesa": true,
+      "margini_px": [
+        77,
+        131,
+        78,
+        132
+      ],
+      "margini_ok": true,
+      "contorno_scuro_estremi": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cella": 1,
+      "bbox": [
+        95,
+        77,
+        323,
+        340
+      ],
+      "attesa": true,
+      "margini_px": [
+        95,
+        77,
+        95,
+        78
+      ],
+      "margini_ok": true,
+      "contorno_scuro_estremi": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cella": 2,
+      "bbox": null,
+      "attesa": false,
+      "vuota": true
+    },
+    {
+      "cella": 3,
+      "bbox": [
+        62,
+        149,
+        356,
+        268
+      ],
+      "attesa": true,
+      "margini_px": [
+        62,
+        149,
+        62,
+        150
+      ],
+      "margini_ok": true,
+      "contorno_scuro_estremi": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cella": 4,
+      "bbox": [
+        76,
+        86,
+        342,
+        331
+      ],
+      "attesa": true,
+      "margini_px": [
+        76,
+        86,
+        76,
+        87
+      ],
+      "margini_ok": true,
+      "contorno_scuro_estremi": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cella": 5,
+      "bbox": null,
+      "attesa": false,
+      "vuota": true
+    },
+    {
+      "cella": 6,
+      "bbox": [
+        62,
+        150,
+        356,
+        267
+      ],
+      "attesa": true,
+      "margini_px": [
+        62,
+        150,
+        62,
+        151
+      ],
+      "margini_ok": true,
+      "contorno_scuro_estremi": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cella": 7,
+      "bbox": [
+        65,
+        80,
+        352,
+        338
+      ],
+      "attesa": true,
+      "margini_px": [
+        65,
+        80,
+        66,
+        80
+      ],
+      "margini_ok": true,
+      "contorno_scuro_estremi": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cella": 8,
+      "bbox": null,
+      "attesa": false,
+      "vuota": true
+    }
+  ],
+  "normalizzazione": [
+    {
+      "cella": 0,
+      "bbox_originale_immagine": [
+        89,
+        173,
+        352,
+        328
+      ],
+      "scala": 1,
+      "dimensioni": [
+        263,
+        155
+      ],
+      "posizione": [
+        77,
+        131
+      ]
+    },
+    {
+      "cella": 1,
+      "bbox_originale_immagine": [
+        525,
+        120,
+        753,
+        383
+      ],
+      "scala": 1,
+      "dimensioni": [
+        228,
+        263
+      ],
+      "posizione": [
+        513,
+        77
+      ]
+    },
+    {
+      "cella": 3,
+      "bbox_originale_immagine": [
+        72,
+        566,
+        377,
+        689
+      ],
+      "scala": 0.9639344262295082,
+      "dimensioni": [
+        294,
+        119
+      ],
+      "posizione": [
+        62,
+        567
+      ]
+    },
+    {
+      "cella": 4,
+      "bbox_originale_immagine": [
+        507,
+        542,
+        773,
+        787
+      ],
+      "scala": 1,
+      "dimensioni": [
+        266,
+        245
+      ],
+      "posizione": [
+        494,
+        504
+      ]
+    },
+    {
+      "cella": 6,
+      "bbox_originale_immagine": [
+        70,
+        948,
+        386,
+        1074
+      ],
+      "scala": 0.930379746835443,
+      "dimensioni": [
+        294,
+        117
+      ],
+      "posizione": [
+        62,
+        986
+      ]
+    },
+    {
+      "cella": 7,
+      "bbox_originale_immagine": [
+        494,
+        914,
+        781,
+        1172
+      ],
+      "scala": 1,
+      "dimensioni": [
+        287,
+        258
+      ],
+      "posizione": [
+        483,
+        916
+      ]
+    }
+  ],
+  "bytes": 46322,
+  "dimensioni": [
+    1254,
+    1254
+  ],
+  "sha256": "228e2072e4f145cd15a36b3e5dc88c59e7253691130e202a756d0b564693808d",
+  "prompt": "A transparent PNG sprite sheet, square1254x1254, invisible3x3cells418px each. Use reference1 for EXACT SMALL ICON SIZE, generous TRANSPARENT CELL MARGINS and row positions. Three rows: column1 CAP ONLY side view, column2 WHOLE MUSHROOM, column3 entirely EMPTY. Each separate icon centered in its own cell, at most60% of cell width AND height, at least18% alpha0 padding on EVERY cell edge. No drawn grid, background, shadows, ground, text, numbers or marks. Clean thick dark brown COMPLETE silhouette outline, flat few colors same as species icons. References2 onward show the approved base icons: preserve cap COLOR and all stems, rings, volvas, netting, scales and spots, change ONLY cap SHAPE and age-appropriate proportions. Each row's cap-only and whole must MATCH shape/color. Use EXACT reference cap shade; color labels are broad categories: 'rosso' may be dark red-BROWN. Never borrow anatomical traits or colors between rows. ROW1: suillus, base cap color bruno, target shape HEMISPHERICAL: rounded half-sphere dome with NO central point or umbo, even if adult base has an umbo. Keep attached base icon anatomy; scientific constraints: {\"ring\":null,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"viscida\",\"liscia\"],\"hymenophore\":[\"pori\"],\"hymenophore_color\":[\"giallo\",\"verde\"]}. ROW2: suillus, base cap color bruno, target shape FLAT: almost horizontal, expanded cap. Keep attached base icon anatomy; scientific constraints: {\"ring\":null,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"viscida\",\"liscia\"],\"hymenophore\":[\"pori\"],\"hymenophore_color\":[\"giallo\",\"verde\"]}. ROW3: suillus-bovinus, base cap color arancio, target shape FLAT: almost horizontal, expanded cap. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"viscida\",\"liscia\"],\"hymenophore\":[\"pori\"],\"hymenophore_color\":[\"giallo\",\"bruno\",\"verde\"]}. No new anatomical traits. Reference species icons are shape/color authorities except the explicit target cap shape. Cap-only must match whole cap. Last column empty. True alpha background.",
+  "edits": [],
+  "normalizza": true,
+  "visivo_ok": true,
+  "nota": "Suillus emisferico e appianato bruno a pori minuti; bovinus appianato arancio a pori grandi irregolari. Gambi privi di nuovi elementi. Scala e centratura normalizzate con Python su autorizzazione di Matteo; disegno invariato."
+}
