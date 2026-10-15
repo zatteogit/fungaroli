@@ -6519,5 +6519,605 @@
     "soggetto": "foglia della fusaggine",
     "dubbio": true,
     "nota": "Il riquadro non entra nei formati 5:4, 4:3, 1:1, 16:7."
+  },
+  "assets/plants/ligustro-1.webp": {
+    "punto": [
+      0.41,
+      0.45
+    ],
+    "riquadro": [
+      0.09,
+      0.01,
+      0.73,
+      0.89
+    ],
+    "soggetto": "rametto di ligustro con foglie e fiori",
+    "dubbio": true,
+    "nota": "Il riquadro non entra nei formati 5:4, 4:3, 16:7."
+  },
+  "assets/plants/ligustro-2.webp": {
+    "punto": [
+      0.475,
+      0.51
+    ],
+    "riquadro": [
+      0.28,
+      0.28,
+      0.67,
+      0.74
+    ],
+    "soggetto": "gemme opposte del ligustro",
+    "dubbio": false,
+    "nota": ""
+  },
+  "assets/plants/ligustro-3.webp": {
+    "punto": [
+      0.52,
+      0.53
+    ],
+    "riquadro": [
+      0.13,
+      0.11,
+      0.91,
+      0.95
+    ],
+    "soggetto": "portamento del ligustro fiorito",
+    "dubbio": true,
+    "nota": "Il riquadro non entra nei formati 3:4, 4:5, 1:1, 16:7."
+  },
+  "assets/plants/lentaggine-1.webp": {
+    "punto": [
+      0.505,
+      0.49
+    ],
+    "riquadro": [
+      0.03,
+      0.03,
+      0.98,
+      0.95
+    ],
+    "soggetto": "infiorescenza della lentaggine",
+    "dubbio": true,
+    "nota": "Il riquadro non entra nei formati 5:4, 3:4, 4:5, 4:3, 1:1, 16:7."
+  },
+  "assets/plants/lentaggine-2.webp": {
+    "punto": [
+      0.465,
+      0.505
+    ],
+    "riquadro": [
+      0.24,
+      0.32,
+      0.69,
+      0.69
+    ],
+    "soggetto": "fiore centrale della lentaggine",
+    "dubbio": false,
+    "nota": ""
+  },
+  "assets/plants/lentaggine-3.webp": {
+    "punto": [
+      0.53,
+      0.535
+    ],
+    "riquadro": [
+      0.12,
+      0.09,
+      0.94,
+      0.98
+    ],
+    "soggetto": "rametto con foglie opposte della lentaggine",
+    "dubbio": true,
+    "nota": "Il riquadro non entra nei formati 5:4, 4:5, 4:3, 1:1, 16:7."
+  },
+  "assets/plants/vitalba-1.webp": {
+    "punto": [
+      0.46,
+      0.605
+    ],
+    "riquadro": [
+      0.15,
+      0.32,
+      0.77,
+      0.89
+    ],
+    "soggetto": "infiorescenza centrale e foglie della vitalba",
+    "dubbio": true,
+    "nota": "Il riquadro non entra nei formati 3:4, 16:7."
+  },
+  "assets/plants/vitalba-2.webp": {
+    "punto": [
+      0.445,
+      0.485
+    ],
+    "riquadro": [
+      0.21,
+      0.32,
+      0.68,
+      0.65
+    ],
+    "soggetto": "fiore della vitalba",
+    "dubbio": false,
+    "nota": ""
+  },
+  "assets/plants/vitalba-3.webp": {
+    "punto": [
+      0.465,
+      0.54
+    ],
+    "riquadro": [
+      0.28,
+      0.11,
+      0.65,
+      0.97
+    ],
+    "soggetto": "portamento rampicante della vitalba",
+    "dubbio": true,
+    "nota": "Rami intrecciati con gli alberi: individuo non isolabile con certezza. Il riquadro non entra nei formati 5:4, 4:3, 1:1, 16:7."
+  },
+  "assets/plants/edera-1.webp": {
+    "punto": [
+      0.695,
+      0.385
+    ],
+    "riquadro": [
+      0.47,
+      0.04,
+      0.92,
+      0.73
+    ],
+    "soggetto": "ramo fiorito dell’edera e foglie",
+    "dubbio": false,
+    "nota": "Il riquadro non entra nei formati 16:7."
+  },
+  "assets/plants/edera-2.webp": {
+    "punto": [
+      0.465,
+      0.5
+    ],
+    "riquadro": [
+      0.2,
+      0.0,
+      0.73,
+      1.0
+    ],
+    "soggetto": "fusto dell’edera con radici adesive",
+    "dubbio": true,
+    "nota": "Fusto attraversa i bordi originali. Il riquadro non entra nei formati 5:4, 4:3, 1:1, 16:7."
+  },
+  "assets/plants/edera-3.webp": {
+    "punto": [
+      0.575,
+      0.6
+    ],
+    "riquadro": [
+      0.36,
+      0.21,
+      0.79,
+      0.99
+    ],
+    "soggetto": "gemma apicale dell’edera",
+    "dubbio": false,
+    "nota": "Il riquadro non entra nei formati 16:7."
+  },
+  "assets/plants/biancospino-1.webp": {
+    "punto": [
+      0.455,
+      0.55
+    ],
+    "riquadro": [
+      0.19,
+      0.11,
+      0.72,
+      0.99
+    ],
+    "soggetto": "ramo fiorito di biancospino",
+    "dubbio": true,
+    "nota": "Il riquadro non entra nei formati 4:3, 16:7."
+  },
+  "assets/plants/biancospino-2.webp": {
+    "punto": [
+      0.485,
+      0.525
+    ],
+    "riquadro": [
+      0.09,
+      0.19,
+      0.88,
+      0.86
+    ],
+    "soggetto": "gruppo centrale di fiori del biancospino",
+    "dubbio": true,
+    "nota": "Il riquadro non entra nei formati 3:4, 16:7."
+  },
+  "assets/plants/biancospino-3.webp": {
+    "punto": [
+      0.5,
+      0.325
+    ],
+    "riquadro": [
+      0.0,
+      0.0,
+      1.0,
+      0.65
+    ],
+    "soggetto": "fiore del biancospino visto da sotto",
+    "dubbio": true,
+    "nota": "Petali già tagliati dai bordi originali. Il riquadro non entra nei formati 3:4, 4:5, 1:1, 16:7."
+  },
+  "assets/plants/ginepro-1.webp": {
+    "punto": [
+      0.525,
+      0.51
+    ],
+    "riquadro": [
+      0.13,
+      0.05,
+      0.92,
+      0.97
+    ],
+    "soggetto": "ramo di ginepro con aghi e galbuli",
+    "dubbio": true,
+    "nota": "Il riquadro non entra nei formati 5:4, 4:3, 1:1, 16:7."
+  },
+  "assets/plants/ginepro-2.webp": {
+    "punto": [
+      0.61,
+      0.585
+    ],
+    "riquadro": [
+      0.47,
+      0.46,
+      0.75,
+      0.71
+    ],
+    "soggetto": "gruppo di galbuli del ginepro",
+    "dubbio": false,
+    "nota": ""
+  },
+  "assets/plants/ginepro-3.webp": {
+    "punto": [
+      0.53,
+      0.575
+    ],
+    "riquadro": [
+      0.15,
+      0.16,
+      0.91,
+      0.99
+    ],
+    "soggetto": "portamento arbustivo del ginepro",
+    "dubbio": true,
+    "nota": "Il riquadro non entra nei formati 3:4, 4:5, 16:7."
+  },
+  "assets/plants/corniolo-1.webp": {
+    "punto": [
+      0.46,
+      0.63
+    ],
+    "riquadro": [
+      0.27,
+      0.46,
+      0.65,
+      0.8
+    ],
+    "soggetto": "frutto del corniolo",
+    "dubbio": false,
+    "nota": ""
+  },
+  "assets/plants/corniolo-2.webp": {
+    "punto": [
+      0.46,
+      0.575
+    ],
+    "riquadro": [
+      0.1,
+      0.19,
+      0.82,
+      0.96
+    ],
+    "soggetto": "ramo con infiorescenze del corniolo",
+    "dubbio": true,
+    "nota": "Il riquadro non entra nei formati 3:4, 4:5, 16:7."
+  },
+  "assets/plants/corniolo-3.webp": {
+    "punto": [
+      0.52,
+      0.495
+    ],
+    "riquadro": [
+      0.08,
+      0.02,
+      0.96,
+      0.97
+    ],
+    "soggetto": "portamento del corniolo fiorito",
+    "dubbio": true,
+    "nota": "Il riquadro non entra nei formati 5:4, 3:4, 4:5, 4:3, 1:1, 16:7."
+  },
+  "assets/plants/sanguinello-1.webp": {
+    "punto": [
+      0.53,
+      0.505
+    ],
+    "riquadro": [
+      0.21,
+      0.06,
+      0.85,
+      0.95
+    ],
+    "soggetto": "rametto di sanguinello con foglie opposte",
+    "dubbio": true,
+    "nota": "Il riquadro non entra nei formati 5:4, 4:3, 1:1, 16:7."
+  },
+  "assets/plants/sanguinello-2.webp": {
+    "punto": [
+      0.495,
+      0.515
+    ],
+    "riquadro": [
+      0.16,
+      0.09,
+      0.83,
+      0.94
+    ],
+    "soggetto": "foglia del sanguinello, pagina inferiore",
+    "dubbio": true,
+    "nota": "Il riquadro non entra nei formati 3:4, 4:3, 16:7."
+  },
+  "assets/plants/sanguinello-3.webp": {
+    "punto": [
+      0.515,
+      0.53
+    ],
+    "riquadro": [
+      0.12,
+      0.18,
+      0.91,
+      0.88
+    ],
+    "soggetto": "rametto e foglie opposte del sanguinello",
+    "dubbio": true,
+    "nota": "Il riquadro non entra nei formati 3:4, 4:5, 16:7."
+  },
+  "assets/plants/ginestra-carbonai-1.webp": {
+    "punto": [
+      0.5,
+      0.47
+    ],
+    "riquadro": [
+      0.3,
+      0.12,
+      0.7,
+      0.82
+    ],
+    "soggetto": "fiore della ginestra dei carbonai",
+    "dubbio": false,
+    "nota": "Il riquadro non entra nei formati 16:7."
+  },
+  "assets/plants/ginestra-carbonai-2.webp": {
+    "punto": [
+      0.595,
+      0.5
+    ],
+    "riquadro": [
+      0.38,
+      0.19,
+      0.81,
+      0.81
+    ],
+    "soggetto": "foglie trifogliate e fusto scanalato della ginestra dei carbonai",
+    "dubbio": false,
+    "nota": "Il riquadro non entra nei formati 16:7."
+  },
+  "assets/plants/ginestra-carbonai-3.webp": {
+    "punto": [
+      0.545,
+      0.52
+    ],
+    "riquadro": [
+      0.4,
+      0.24,
+      0.69,
+      0.8
+    ],
+    "soggetto": "fiore della ginestra dei carbonai",
+    "dubbio": false,
+    "nota": ""
+  },
+  "assets/plants/ginestra-odorosa-1.webp": {
+    "punto": [
+      0.515,
+      0.51
+    ],
+    "riquadro": [
+      0.04,
+      0.05,
+      0.99,
+      0.97
+    ],
+    "soggetto": "portamento della ginestra odorosa fiorita",
+    "dubbio": true,
+    "nota": "Il riquadro non entra nei formati 3:4, 4:5, 1:1, 16:7."
+  },
+  "assets/plants/ginestra-odorosa-2.webp": {
+    "punto": [
+      0.535,
+      0.545
+    ],
+    "riquadro": [
+      0.2,
+      0.13,
+      0.87,
+      0.96
+    ],
+    "soggetto": "legume della ginestra odorosa",
+    "dubbio": true,
+    "nota": "Il riquadro non entra nei formati 3:4, 16:7."
+  },
+  "assets/plants/ginestra-odorosa-3.webp": {
+    "punto": [
+      0.515,
+      0.595
+    ],
+    "riquadro": [
+      0.32,
+      0.29,
+      0.71,
+      0.9
+    ],
+    "soggetto": "nodo, foglie e fusto della ginestra odorosa",
+    "dubbio": true,
+    "nota": "Il riquadro non entra nei formati 4:3, 16:7."
+  },
+  "assets/plants/erica-arborea-1.webp": {
+    "punto": [
+      0.55,
+      0.52
+    ],
+    "riquadro": [
+      0.11,
+      0.04,
+      0.99,
+      1.0
+    ],
+    "soggetto": "ramo di erica arborea con foglie e boccioli",
+    "dubbio": true,
+    "nota": "Ramo attraversa il bordo inferiore originale. Il riquadro non entra nei formati 5:4, 3:4, 4:5, 4:3, 1:1, 16:7."
+  },
+  "assets/plants/erica-arborea-2.webp": {
+    "punto": [
+      0.55,
+      0.48
+    ],
+    "riquadro": [
+      0.16,
+      0.03,
+      0.94,
+      0.93
+    ],
+    "soggetto": "ramo fiorito dell’erica arborea",
+    "dubbio": true,
+    "nota": "Il riquadro non entra nei formati 3:4, 4:5, 4:3, 16:7."
+  },
+  "assets/plants/erica-arborea-3.webp": {
+    "punto": [
+      0.425,
+      0.53
+    ],
+    "riquadro": [
+      0.16,
+      0.07,
+      0.69,
+      0.99
+    ],
+    "soggetto": "rametti con foglie e frutti dell’erica arborea",
+    "dubbio": true,
+    "nota": "Il riquadro non entra nei formati 4:3, 16:7."
+  },
+  "assets/plants/salsapariglia-1.webp": {
+    "punto": [
+      0.56,
+      0.61
+    ],
+    "riquadro": [
+      0.33,
+      0.36,
+      0.79,
+      0.86
+    ],
+    "soggetto": "grappolo di bacche della salsapariglia",
+    "dubbio": false,
+    "nota": "Il riquadro non entra nei formati 16:7."
+  },
+  "assets/plants/salsapariglia-2.webp": {
+    "punto": [
+      0.615,
+      0.46
+    ],
+    "riquadro": [
+      0.34,
+      0.06,
+      0.89,
+      0.86
+    ],
+    "soggetto": "infiorescenza della salsapariglia e foglie",
+    "dubbio": true,
+    "nota": "Il riquadro non entra nei formati 5:4, 4:3, 16:7."
+  },
+  "assets/plants/salsapariglia-3.webp": {
+    "punto": [
+      0.47,
+      0.5
+    ],
+    "riquadro": [
+      0.09,
+      0.17,
+      0.85,
+      0.83
+    ],
+    "soggetto": "foglia sagittata della salsapariglia",
+    "dubbio": true,
+    "nota": "Il riquadro non entra nei formati 3:4, 4:5, 16:7."
+  },
+  "assets/plants/cisto-montpellier-1.webp": {
+    "punto": [
+      0.485,
+      0.585
+    ],
+    "riquadro": [
+      0.1,
+      0.2,
+      0.87,
+      0.97
+    ],
+    "soggetto": "portamento del cisto di Montpellier fiorito",
+    "dubbio": true,
+    "nota": "Il riquadro non entra nei formati 3:4, 4:5, 1:1, 16:7."
+  },
+  "assets/plants/cisto-montpellier-2.webp": {
+    "punto": [
+      0.565,
+      0.515
+    ],
+    "riquadro": [
+      0.24,
+      0.04,
+      0.89,
+      0.99
+    ],
+    "soggetto": "rametto fiorito e foglie del cisto di Montpellier",
+    "dubbio": true,
+    "nota": "Il riquadro non entra nei formati 5:4, 4:3, 1:1, 16:7."
+  },
+  "assets/plants/cisto-montpellier-3.webp": {
+    "punto": [
+      0.54,
+      0.54
+    ],
+    "riquadro": [
+      0.23,
+      0.13,
+      0.85,
+      0.95
+    ],
+    "soggetto": "rametto con foglie e boccioli del cisto di Montpellier",
+    "dubbio": true,
+    "nota": "Il riquadro non entra nei formati 3:4, 4:5, 16:7."
+  },
+  "assets/plants/cisto-salvia-1.webp": {
+    "punto": [
+      0.455,
+      0.465
+    ],
+    "riquadro": [
+      0.21,
+      0.22,
+      0.7,
+      0.71
+    ],
+    "soggetto": "fiore del cisto a foglie di salvia",
+    "dubbio": false,
+    "nota": "Il riquadro non entra nei formati 16:7."
   }
 }
