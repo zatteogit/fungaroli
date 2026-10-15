@@ -1,0 +1,437 @@
+{
+  "file": "incoming/icone/forme-03.png",
+  "sha256": "b6203af1a3396d58e3b29279a20859ad6acda2a968f1ec78dc5085398b9d64de",
+  "size": [
+    1254,
+    1254
+  ],
+  "cells": [
+    {
+      "cella": 0,
+      "source_bbox": [
+        0,
+        0,
+        282,
+        180
+      ],
+      "source_extremes_rgb_max": [
+        [
+          57,
+          17,
+          7
+        ],
+        [
+          79,
+          39,
+          25
+        ],
+        [
+          56,
+          16,
+          6
+        ],
+        [
+          58,
+          20,
+          7
+        ]
+      ],
+      "target_reference_width": 275,
+      "margin_alpha_max": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "bbox_alpha128": [
+        74,
+        124,
+        343,
+        294
+      ],
+      "extremes_rgb_max": [
+        [
+          56,
+          17,
+          6
+        ],
+        [
+          76,
+          38,
+          24
+        ],
+        [
+          56,
+          17,
+          5
+        ],
+        [
+          60,
+          20,
+          9
+        ]
+      ]
+    },
+    {
+      "cella": 1,
+      "source_bbox": [
+        0,
+        0,
+        261,
+        313
+      ],
+      "source_extremes_rgb_max": [
+        [
+          57,
+          17,
+          7
+        ],
+        [
+          82,
+          44,
+          30
+        ],
+        [
+          56,
+          19,
+          7
+        ],
+        [
+          57,
+          18,
+          7
+        ]
+      ],
+      "target_reference_width": 254,
+      "margin_alpha_max": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "bbox_alpha128": [
+        85,
+        59,
+        333,
+        358
+      ],
+      "extremes_rgb_max": [
+        [
+          58,
+          17,
+          7
+        ],
+        [
+          84,
+          44,
+          34
+        ],
+        [
+          56,
+          20,
+          7
+        ],
+        [
+          56,
+          18,
+          7
+        ]
+      ]
+    },
+    {
+      "cella": 2,
+      "empty": true,
+      "margin_alpha_max": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "cella": 3,
+      "source_bbox": [
+        0,
+        0,
+        309,
+        93
+      ],
+      "source_extremes_rgb_max": [
+        [
+          56,
+          17,
+          5
+        ],
+        [
+          95,
+          57,
+          46
+        ],
+        [
+          51,
+          13,
+          3
+        ],
+        [
+          58,
+          19,
+          8
+        ]
+      ],
+      "target_reference_width": 275,
+      "margin_alpha_max": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "bbox_alpha128": [
+        74,
+        169,
+        344,
+        247
+      ],
+      "extremes_rgb_max": [
+        [
+          55,
+          14,
+          3
+        ],
+        [
+          78,
+          39,
+          26
+        ],
+        [
+          51,
+          13,
+          3
+        ],
+        [
+          56,
+          16,
+          7
+        ]
+      ]
+    },
+    {
+      "cella": 4,
+      "source_bbox": [
+        0,
+        0,
+        311,
+        245
+      ],
+      "source_extremes_rgb_max": [
+        [
+          57,
+          17,
+          7
+        ],
+        [
+          75,
+          36,
+          22
+        ],
+        [
+          54,
+          15,
+          5
+        ],
+        [
+          54,
+          16,
+          3
+        ]
+      ],
+      "target_reference_width": 254,
+      "margin_alpha_max": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "bbox_alpha128": [
+        85,
+        112,
+        334,
+        307
+      ],
+      "extremes_rgb_max": [
+        [
+          57,
+          18,
+          6
+        ],
+        [
+          81,
+          42,
+          29
+        ],
+        [
+          56,
+          15,
+          5
+        ],
+        [
+          55,
+          15,
+          5
+        ]
+      ]
+    },
+    {
+      "cella": 5,
+      "empty": true,
+      "margin_alpha_max": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "cella": 6,
+      "source_bbox": [
+        0,
+        0,
+        283,
+        174
+      ],
+      "source_extremes_rgb_max": [
+        [
+          66,
+          21,
+          5
+        ],
+        [
+          83,
+          46,
+          28
+        ],
+        [
+          60,
+          19,
+          6
+        ],
+        [
+          66,
+          23,
+          7
+        ]
+      ],
+      "target_reference_width": 258,
+      "margin_alpha_max": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "bbox_alpha128": [
+        83,
+        132,
+        335,
+        286
+      ],
+      "extremes_rgb_max": [
+        [
+          68,
+          22,
+          7
+        ],
+        [
+          76,
+          35,
+          23
+        ],
+        [
+          58,
+          17,
+          5
+        ],
+        [
+          67,
+          21,
+          7
+        ]
+      ]
+    },
+    {
+      "cella": 7,
+      "source_bbox": [
+        0,
+        0,
+        270,
+        323
+      ],
+      "source_extremes_rgb_max": [
+        [
+          75,
+          33,
+          13
+        ],
+        [
+          72,
+          32,
+          16
+        ],
+        [
+          66,
+          23,
+          5
+        ],
+        [
+          63,
+          21,
+          3
+        ]
+      ],
+      "target_reference_width": 244,
+      "margin_alpha_max": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "bbox_alpha128": [
+        90,
+        65,
+        328,
+        353
+      ],
+      "extremes_rgb_max": [
+        [
+          75,
+          29,
+          13
+        ],
+        [
+          83,
+          45,
+          26
+        ],
+        [
+          69,
+          23,
+          8
+        ],
+        [
+          65,
+          24,
+          7
+        ]
+      ]
+    },
+    {
+      "cella": 8,
+      "empty": true,
+      "margin_alpha_max": [
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  "export": "Proportional complete-subject export only; no recoloring or morphological edits."
+}

@@ -14493,7 +14493,7 @@
     "soggetto": "cappello",
     "modello": "image_gen (modello integrato, identificatore non esposto)",
     "prompt": "Schema didattico: fungo generico di profilo, cappello evidenziato arancio pieno, resto in tono spento. Pochi colori, contorno bruno scuro, sfondo trasparente, nessun testo; soggetto intero centrato con almeno 10% di margine.",
-    "stato": "esempio da approvare",
+    "stato": "approvato",
     "qa": "1024x1024; fasce esterne 103px alpha0; contorno scuro ai quattro estremi; rapporto incoming/qa/2026-10-15-glossario-cappello.json."
   },
   {
@@ -14935,5 +14935,101 @@
     "prompt": "Use case: precise-object-edit. Edit the attached approved 3x3 mushroom sprite sheet. PRESERVE every stem, ring, volva, basal bulb, stem marking, cap markings, outline and COLOR. ONLY reshape caps and adjust stem proportions to growth stage. DO NOT swap traits between rows. Each row LEFT isolated cap, CENTER WHOLE mushroom, RIGHT transparent EMPTY. Every icon complete with continuous brown outline. Keep genuine transparent background, no text or new detail, all cells 15% margins. ROW 1 amanita-muscaria: change BOTH caps to mature FLAT cap with nearly HORIZONTAL TOP, depth only10%width; no rounded dome. Retain original rosso and EXACT SAME STEM INCLUDING RING/VOLVA. ROW 2 amanita-verna: change BOTH caps to young deep ROUND HEMISPHERE, cap depth around45%width. Retain original bianco and EXACT SAME STEM INCLUDING RING/VOLVA. ROW 3 amanita-verna: change BOTH caps to mature FLAT cap with nearly HORIZONTAL TOP, depth only10%width; no rounded dome. Retain original bianco and EXACT SAME STEM INCLUDING RING/VOLVA. Do not copy underside-only icons. Not new species. No soil/grass.",
     "stato": "ok",
     "qa": "incoming/qa/forme-02.json"
+  },
+  {
+    "file": "incoming/icone/forme-03.png",
+    "tipo": "illustrazione",
+    "soggetto": "aereus",
+    "tessera": "cappello",
+    "cella": 0,
+    "variante": "forma:emisferico",
+    "base": {
+      "colore": "nero",
+      "forma": "convesso"
+    },
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case: precise-object-edit. Edit the attached approved 3x3 mushroom sprite sheet. Preserve stems, stem reticulum, base, outlines and colors. Change only caps: row1 aereus young hemispherical, row2 aereus adult flat, row3 aestivalis young hemispherical. Left cap, center whole mushroom, right empty. Transparent background, no text, full dark brown contours and at least15% cell margins.",
+    "stato": "ok",
+    "qa": "incoming/qa/forme-03.json"
+  },
+  {
+    "file": "incoming/icone/forme-03.png",
+    "tipo": "illustrazione",
+    "soggetto": "aereus",
+    "tessera": "gambo",
+    "cella": 1,
+    "variante": "forma:emisferico",
+    "base": {
+      "colore": "nero",
+      "forma": "convesso"
+    },
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case: precise-object-edit. Edit the attached approved 3x3 mushroom sprite sheet. Preserve stems, stem reticulum, base, outlines and colors. Change only caps: row1 aereus young hemispherical, row2 aereus adult flat, row3 aestivalis young hemispherical. Left cap, center whole mushroom, right empty. Transparent background, no text, full dark brown contours and at least15% cell margins.",
+    "stato": "ok",
+    "qa": "incoming/qa/forme-03.json"
+  },
+  {
+    "file": "incoming/icone/forme-03.png",
+    "tipo": "illustrazione",
+    "soggetto": "aereus",
+    "tessera": "cappello",
+    "cella": 3,
+    "variante": "forma:piano",
+    "base": {
+      "colore": "nero",
+      "forma": "convesso"
+    },
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case: precise-object-edit. Edit the attached approved 3x3 mushroom sprite sheet. Preserve stems, stem reticulum, base, outlines and colors. Change only caps: row1 aereus young hemispherical, row2 aereus adult flat, row3 aestivalis young hemispherical. Left cap, center whole mushroom, right empty. Transparent background, no text, full dark brown contours and at least15% cell margins.",
+    "stato": "ok",
+    "qa": "incoming/qa/forme-03.json"
+  },
+  {
+    "file": "incoming/icone/forme-03.png",
+    "tipo": "illustrazione",
+    "soggetto": "aereus",
+    "tessera": "gambo",
+    "cella": 4,
+    "variante": "forma:piano",
+    "base": {
+      "colore": "nero",
+      "forma": "convesso"
+    },
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case: precise-object-edit. Edit the attached approved 3x3 mushroom sprite sheet. Preserve stems, stem reticulum, base, outlines and colors. Change only caps: row1 aereus young hemispherical, row2 aereus adult flat, row3 aestivalis young hemispherical. Left cap, center whole mushroom, right empty. Transparent background, no text, full dark brown contours and at least15% cell margins.",
+    "stato": "ok",
+    "qa": "incoming/qa/forme-03.json"
+  },
+  {
+    "file": "incoming/icone/forme-03.png",
+    "tipo": "illustrazione",
+    "soggetto": "aestivalis",
+    "tessera": "cappello",
+    "cella": 6,
+    "variante": "forma:emisferico",
+    "base": {
+      "colore": "bruno",
+      "forma": "convesso"
+    },
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case: precise-object-edit. Edit the attached approved 3x3 mushroom sprite sheet. Preserve stems, stem reticulum, base, outlines and colors. Change only caps: row1 aereus young hemispherical, row2 aereus adult flat, row3 aestivalis young hemispherical. Left cap, center whole mushroom, right empty. Transparent background, no text, full dark brown contours and at least15% cell margins.",
+    "stato": "ok",
+    "qa": "incoming/qa/forme-03.json"
+  },
+  {
+    "file": "incoming/icone/forme-03.png",
+    "tipo": "illustrazione",
+    "soggetto": "aestivalis",
+    "tessera": "gambo",
+    "cella": 7,
+    "variante": "forma:emisferico",
+    "base": {
+      "colore": "bruno",
+      "forma": "convesso"
+    },
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case: precise-object-edit. Edit the attached approved 3x3 mushroom sprite sheet. Preserve stems, stem reticulum, base, outlines and colors. Change only caps: row1 aereus young hemispherical, row2 aereus adult flat, row3 aestivalis young hemispherical. Left cap, center whole mushroom, right empty. Transparent background, no text, full dark brown contours and at least15% cell margins.",
+    "stato": "ok",
+    "qa": "incoming/qa/forme-03.json"
   }
 ]

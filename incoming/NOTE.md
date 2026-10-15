@@ -311,3 +311,6 @@ Forme-01: colori base e caratteri del gambo conservati; varianti di forma e prop
 
 
 Forme-02: confrontate alle basi; verna/virosa con volva a sacco aperta, pantherina con anello liscio e base bordata; corretti i trasferimenti di caratteri tra righe nelle bozze.
+
+
+Tavola porcini forme03 completata e controllata: aereus emisferico/piano, aestivalis emisferico. Autorizzazione esplicita di Matteo a caricare su gpt/immagini. Restano approvate e intatte forme01/02. Cappello approvato; priorità corrente glossario e poi esempio guide.

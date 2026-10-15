@@ -309,3 +309,6 @@ Ordine aggiornato da Matteo il 15/10: completare prima tutte le varianti di colo
 | qa/forme-01.json | ok | Margini42px alpha0 e contorno scuro ai quattro estremi verificati per ogni cella; dettagli nel rapporto QA. |
 | icone/forme-02.png | ok | Margini42px alpha0 e contorno scuro ai quattro estremi verificati per ogni cella; dettagli nel rapporto QA. |
 | qa/forme-02.json | ok | Margini42px alpha0 e contorno scuro ai quattro estremi verificati per ogni cella; dettagli nel rapporto QA. |
+
+| icone/forme-03.png | ok | Margini trasparenti e contorni verificati col codice; verifica visiva completata. |
+| qa/forme-03.json | ok | Margini trasparenti e contorni verificati col codice; verifica visiva completata. |
