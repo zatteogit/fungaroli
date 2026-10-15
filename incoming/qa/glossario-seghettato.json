@@ -1,0 +1,66 @@
+{
+  "file": "incoming/glossario/seghettato.png",
+  "size": [
+    1024,
+    1024
+  ],
+  "sha256": "6cb22396b156577b626e937aefbdc2b87c6d6d1d9174898ca517a9e3af4b694f",
+  "source_bbox_alpha128": [
+    130,
+    160,
+    894,
+    864
+  ],
+  "source_extremes_rgb_max": [
+    [
+      69,
+      20,
+      5
+    ],
+    [
+      71,
+      31,
+      10
+    ],
+    [
+      60,
+      16,
+      1
+    ],
+    [
+      60,
+      15,
+      1
+    ]
+  ],
+  "extremes_rgb_max": [
+    [
+      69,
+      19,
+      4
+    ],
+    [
+      70,
+      29,
+      7
+    ],
+    [
+      58,
+      15,
+      1
+    ],
+    [
+      58,
+      15,
+      1
+    ]
+  ],
+  "margin_required_px": 103,
+  "margin_alpha_max": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "export": "Intero soggetto isolato con2px di antialias e centrato proporzionalmente; nessun ritocco morfologico o ricolore."
+}

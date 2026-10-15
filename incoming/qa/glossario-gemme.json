@@ -1,0 +1,66 @@
+{
+  "file": "incoming/glossario/gemme.png",
+  "size": [
+    1024,
+    1024
+  ],
+  "sha256": "ac830a5163cac0981f1828d5986cf3711a426b85bc0385cd6f3c63d163cfaf73",
+  "source_bbox_alpha128": [
+    224,
+    130,
+    800,
+    894
+  ],
+  "source_extremes_rgb_max": [
+    [
+      58,
+      19,
+      4
+    ],
+    [
+      56,
+      19,
+      3
+    ],
+    [
+      67,
+      26,
+      4
+    ],
+    [
+      75,
+      35,
+      24
+    ]
+  ],
+  "extremes_rgb_max": [
+    [
+      59,
+      17,
+      4
+    ],
+    [
+      63,
+      20,
+      5
+    ],
+    [
+      65,
+      24,
+      4
+    ],
+    [
+      71,
+      31,
+      17
+    ]
+  ],
+  "margin_required_px": 103,
+  "margin_alpha_max": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "export": "Intero soggetto isolato con2px di antialias e centrato proporzionalmente; nessun ritocco morfologico o ricolore."
+}

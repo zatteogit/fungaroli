@@ -340,3 +340,10 @@ Ordine aggiornato da Matteo il 15/10: completare prima tutte le varianti di colo
 | qa/glossario-cespitoso.json | ok | Margini trasparenti e contorni verificati col codice; verifica visiva completata. |
 | glossario/lobi.png | ok | Margini trasparenti e contorni verificati col codice; verifica visiva completata. |
 | qa/glossario-lobi.json | ok | Margini trasparenti e contorni verificati col codice; verifica visiva completata. |
+
+| glossario/seghettato.png | ok | Margini trasparenti e contorni verificati col codice; verifica visiva completata. |
+| qa/glossario-seghettato.json | ok | Margini trasparenti e contorni verificati col codice; verifica visiva completata. |
+| glossario/gemme.png | ok | Margini trasparenti e contorni verificati col codice; verifica visiva completata. |
+| qa/glossario-gemme.json | ok | Margini trasparenti e contorni verificati col codice; verifica visiva completata. |
+| glossario/aghi.png | ok | Margini trasparenti e contorni verificati col codice; verifica visiva completata. |
+| qa/glossario-aghi.json | ok | Margini trasparenti e contorni verificati col codice; verifica visiva completata. |

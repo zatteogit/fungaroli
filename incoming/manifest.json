@@ -15175,5 +15175,41 @@
       "data/glossary.json:lobi.definition,observe"
     ],
     "qa": "incoming/qa/glossario-lobi.json"
+  },
+  {
+    "file": "incoming/glossario/seghettato.png",
+    "tipo": "glossario",
+    "soggetto": "seghettato",
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case: scientific-educational. One 1024x1024PNG educational glossary illustration for Fungaroli. Reference is the APPROVED STYLE: simple warm flat illustration, thick smooth DARK BROWN contours, restrained warm orange highlight, cream/beige muted supporting elements, one subtle highlight at most. No text, letters, numbers, labels, watermark or UI. Genuine transparent alpha background. WHOLE subject centered, at least15% transparent margin on every side. EVERY outermost visible edge or tip must end in DARK BROWN OUTLINE, no flat fill cutoffs. Keep biological concept anatomically clear, not species identification. SUBJECT: Two enlarged leaf-edge fragments floating separately, UPPER = SIMPLE serration with evenly sized saw teeth, LOWER = DOUBLE serration: large teeth each bearing2or3 distinctly smaller teeth. Both segments have complete enclosed shapes, dark brown outlines; muted green filling and orange highlighted toothed edges. Strong readable difference, no text/letters/comparison symbols. SOURCE definition: Bordo della foglia con piccoli denti simili a quelli di una sega. Se i denti hanno a loro volta denti più piccoli, è doppiamente seghettato.",
+    "stato": "ok",
+    "fonti_dati": [
+      "data/glossary.json:seghettato.definition,observe"
+    ],
+    "qa": "incoming/qa/glossario-seghettato.json"
+  },
+  {
+    "file": "incoming/glossario/gemme.png",
+    "tipo": "glossario",
+    "soggetto": "gemme",
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case: scientific-educational. One 1024x1024PNG educational glossary illustration for Fungaroli. Reference is the APPROVED STYLE: simple warm flat illustration, thick smooth DARK BROWN contours, restrained warm orange highlight, cream/beige muted supporting elements, one subtle highlight at most. No text, letters, numbers, labels, watermark or UI. Genuine transparent alpha background. WHOLE subject centered, at least15% transparent margin on every side. EVERY outermost visible edge or tip must end in DARK BROWN OUTLINE, no flat fill cutoffs. Keep biological concept anatomically clear, not species identification. SUBJECT: A short entire leafless WINTER TWIG with alternating BUDS along opposite staggered positions, never paired at same node; dark brown twig, orange buds. Add one separate enlarged bud in a brown circular detail bubble, shows simple overlapping bud scales. No leaves/flowers. Every twig tip complete. SOURCE definition: Strutture da cui si sviluppano germogli, foglie o fiori; forma e disposizione aiutano il riconoscimento, soprattutto in inverno.",
+    "stato": "ok",
+    "fonti_dati": [
+      "data/glossary.json:gemme.definition,observe"
+    ],
+    "qa": "incoming/qa/glossario-gemme.json"
+  },
+  {
+    "file": "incoming/glossario/aghi.png",
+    "tipo": "glossario",
+    "soggetto": "aghi",
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case: scientific-educational. One 1024x1024PNG educational glossary illustration for Fungaroli. Reference is the APPROVED STYLE: simple warm flat illustration, thick smooth DARK BROWN contours, restrained warm orange highlight, cream/beige muted supporting elements, one subtle highlight at most. No text, letters, numbers, labels, watermark or UI. Genuine transparent alpha background. WHOLE subject centered, at least15% transparent margin on every side. EVERY outermost visible edge or tip must end in DARK BROWN OUTLINE, no flat fill cutoffs. Keep biological concept anatomically clear, not species identification. SUBJECT: One complete small conifer twig composition: LEFT side simple individually attached FLAT SINGLE NEEDLES; RIGHT a clearly separate basal FASCICLE containing EXACTLY TWO long needle leaves joined at one sheath. Muted green needles, orange accent on shared sheath, dark brown outlines. Distinguish individually attached vs paired bundle. No pine cone, all needle tips complete. SOURCE definition: Foglie strette e allungate, tipiche di molte conifere. Possono essere singole o riunite in fascetti.",
+    "stato": "ok",
+    "fonti_dati": [
+      "data/glossary.json:aghi.definition,observe"
+    ],
+    "qa": "incoming/qa/glossario-aghi.json"
   }
 ]
