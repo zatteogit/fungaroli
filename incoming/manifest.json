@@ -14495,5 +14495,133 @@
     "prompt": "Schema didattico: fungo generico di profilo, cappello evidenziato arancio pieno, resto in tono spento. Pochi colori, contorno bruno scuro, sfondo trasparente, nessun testo; soggetto intero centrato con almeno 10% di margine.",
     "stato": "esempio da approvare",
     "qa": "1024x1024; fasce esterne 103px alpha0; contorno scuro ai quattro estremi; rapporto incoming/qa/2026-10-15-glossario-cappello.json."
+  },
+  {
+    "file": "incoming/icone/combinazioni-01.png",
+    "tipo": "illustrazione",
+    "soggetto": "amanita-phalloides",
+    "tessera": "cappello",
+    "cella": 0,
+    "variante": "colore:giallo+forma:emisferico",
+    "base": {
+      "colore": "verde",
+      "forma": "convesso"
+    },
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case: scientific-educational. Create a production PNG sprite sheet, exact 3x3 equal grid, transparent background, NO visible grid/text. Attached images are approved Amanita phalloides reference icons. Match their brown outlines, restrained flat fills, single highlight, simple anatomy and scale. 8 whole isolated icons in cells0-7, cell8 EMPTY. Each cell must have at least15% empty transparent margin on all sides; every drawing must be complete, fully outlined dark brown, NEVER cropped. Cell order left-right/top-bottom. 0=YELLOW hemispherical isolated cap;1=YELLOW hemispherical cap on whole phalloides.2=WHITE hemispherical isolated cap;3=WHITE hemispherical whole.4=GRAY hemispherical isolated cap;5=GRAY hemispherical whole.6=BROWN hemispherical isolated cap;7=BROWN hemispherical whole. All caps are deep round half-dome hemispheres, young but expanded enough to show underside. The whole mushrooms have exactly the reference's WHITE slender stem, WHITE skirt ring below cap, WHITE open SACK volva enclosing bulb at bottom, all fully drawn. No spots, no scales, no new traits. Keep cream lamellae and entire short stalk and volva enclosed in cell. Only cap shape and color change vs references. Colors yellow #d9b13c, white #ece7da, gray #9d968a,brown #8e5f36. Isolated cap icons viewed side-on like reference left column; whole icons like reference middle column. No shadows/background plate/soil/grass. Keep all eight subjects DISTINCT and unconnected.",
+    "stato": "ok",
+    "qa": "incoming/qa/combinazioni-01.json"
+  },
+  {
+    "file": "incoming/icone/combinazioni-01.png",
+    "tipo": "illustrazione",
+    "soggetto": "amanita-phalloides",
+    "tessera": "gambo",
+    "cella": 1,
+    "variante": "colore:giallo+forma:emisferico",
+    "base": {
+      "colore": "verde",
+      "forma": "convesso"
+    },
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case: scientific-educational. Create a production PNG sprite sheet, exact 3x3 equal grid, transparent background, NO visible grid/text. Attached images are approved Amanita phalloides reference icons. Match their brown outlines, restrained flat fills, single highlight, simple anatomy and scale. 8 whole isolated icons in cells0-7, cell8 EMPTY. Each cell must have at least15% empty transparent margin on all sides; every drawing must be complete, fully outlined dark brown, NEVER cropped. Cell order left-right/top-bottom. 0=YELLOW hemispherical isolated cap;1=YELLOW hemispherical cap on whole phalloides.2=WHITE hemispherical isolated cap;3=WHITE hemispherical whole.4=GRAY hemispherical isolated cap;5=GRAY hemispherical whole.6=BROWN hemispherical isolated cap;7=BROWN hemispherical whole. All caps are deep round half-dome hemispheres, young but expanded enough to show underside. The whole mushrooms have exactly the reference's WHITE slender stem, WHITE skirt ring below cap, WHITE open SACK volva enclosing bulb at bottom, all fully drawn. No spots, no scales, no new traits. Keep cream lamellae and entire short stalk and volva enclosed in cell. Only cap shape and color change vs references. Colors yellow #d9b13c, white #ece7da, gray #9d968a,brown #8e5f36. Isolated cap icons viewed side-on like reference left column; whole icons like reference middle column. No shadows/background plate/soil/grass. Keep all eight subjects DISTINCT and unconnected.",
+    "stato": "ok",
+    "qa": "incoming/qa/combinazioni-01.json"
+  },
+  {
+    "file": "incoming/icone/combinazioni-01.png",
+    "tipo": "illustrazione",
+    "soggetto": "amanita-phalloides",
+    "tessera": "cappello",
+    "cella": 2,
+    "variante": "colore:bianco+forma:emisferico",
+    "base": {
+      "colore": "verde",
+      "forma": "convesso"
+    },
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case: scientific-educational. Create a production PNG sprite sheet, exact 3x3 equal grid, transparent background, NO visible grid/text. Attached images are approved Amanita phalloides reference icons. Match their brown outlines, restrained flat fills, single highlight, simple anatomy and scale. 8 whole isolated icons in cells0-7, cell8 EMPTY. Each cell must have at least15% empty transparent margin on all sides; every drawing must be complete, fully outlined dark brown, NEVER cropped. Cell order left-right/top-bottom. 0=YELLOW hemispherical isolated cap;1=YELLOW hemispherical cap on whole phalloides.2=WHITE hemispherical isolated cap;3=WHITE hemispherical whole.4=GRAY hemispherical isolated cap;5=GRAY hemispherical whole.6=BROWN hemispherical isolated cap;7=BROWN hemispherical whole. All caps are deep round half-dome hemispheres, young but expanded enough to show underside. The whole mushrooms have exactly the reference's WHITE slender stem, WHITE skirt ring below cap, WHITE open SACK volva enclosing bulb at bottom, all fully drawn. No spots, no scales, no new traits. Keep cream lamellae and entire short stalk and volva enclosed in cell. Only cap shape and color change vs references. Colors yellow #d9b13c, white #ece7da, gray #9d968a,brown #8e5f36. Isolated cap icons viewed side-on like reference left column; whole icons like reference middle column. No shadows/background plate/soil/grass. Keep all eight subjects DISTINCT and unconnected.",
+    "stato": "ok",
+    "qa": "incoming/qa/combinazioni-01.json"
+  },
+  {
+    "file": "incoming/icone/combinazioni-01.png",
+    "tipo": "illustrazione",
+    "soggetto": "amanita-phalloides",
+    "tessera": "gambo",
+    "cella": 3,
+    "variante": "colore:bianco+forma:emisferico",
+    "base": {
+      "colore": "verde",
+      "forma": "convesso"
+    },
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case: scientific-educational. Create a production PNG sprite sheet, exact 3x3 equal grid, transparent background, NO visible grid/text. Attached images are approved Amanita phalloides reference icons. Match their brown outlines, restrained flat fills, single highlight, simple anatomy and scale. 8 whole isolated icons in cells0-7, cell8 EMPTY. Each cell must have at least15% empty transparent margin on all sides; every drawing must be complete, fully outlined dark brown, NEVER cropped. Cell order left-right/top-bottom. 0=YELLOW hemispherical isolated cap;1=YELLOW hemispherical cap on whole phalloides.2=WHITE hemispherical isolated cap;3=WHITE hemispherical whole.4=GRAY hemispherical isolated cap;5=GRAY hemispherical whole.6=BROWN hemispherical isolated cap;7=BROWN hemispherical whole. All caps are deep round half-dome hemispheres, young but expanded enough to show underside. The whole mushrooms have exactly the reference's WHITE slender stem, WHITE skirt ring below cap, WHITE open SACK volva enclosing bulb at bottom, all fully drawn. No spots, no scales, no new traits. Keep cream lamellae and entire short stalk and volva enclosed in cell. Only cap shape and color change vs references. Colors yellow #d9b13c, white #ece7da, gray #9d968a,brown #8e5f36. Isolated cap icons viewed side-on like reference left column; whole icons like reference middle column. No shadows/background plate/soil/grass. Keep all eight subjects DISTINCT and unconnected.",
+    "stato": "ok",
+    "qa": "incoming/qa/combinazioni-01.json"
+  },
+  {
+    "file": "incoming/icone/combinazioni-01.png",
+    "tipo": "illustrazione",
+    "soggetto": "amanita-phalloides",
+    "tessera": "cappello",
+    "cella": 4,
+    "variante": "colore:grigio+forma:emisferico",
+    "base": {
+      "colore": "verde",
+      "forma": "convesso"
+    },
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case: scientific-educational. Create a production PNG sprite sheet, exact 3x3 equal grid, transparent background, NO visible grid/text. Attached images are approved Amanita phalloides reference icons. Match their brown outlines, restrained flat fills, single highlight, simple anatomy and scale. 8 whole isolated icons in cells0-7, cell8 EMPTY. Each cell must have at least15% empty transparent margin on all sides; every drawing must be complete, fully outlined dark brown, NEVER cropped. Cell order left-right/top-bottom. 0=YELLOW hemispherical isolated cap;1=YELLOW hemispherical cap on whole phalloides.2=WHITE hemispherical isolated cap;3=WHITE hemispherical whole.4=GRAY hemispherical isolated cap;5=GRAY hemispherical whole.6=BROWN hemispherical isolated cap;7=BROWN hemispherical whole. All caps are deep round half-dome hemispheres, young but expanded enough to show underside. The whole mushrooms have exactly the reference's WHITE slender stem, WHITE skirt ring below cap, WHITE open SACK volva enclosing bulb at bottom, all fully drawn. No spots, no scales, no new traits. Keep cream lamellae and entire short stalk and volva enclosed in cell. Only cap shape and color change vs references. Colors yellow #d9b13c, white #ece7da, gray #9d968a,brown #8e5f36. Isolated cap icons viewed side-on like reference left column; whole icons like reference middle column. No shadows/background plate/soil/grass. Keep all eight subjects DISTINCT and unconnected.",
+    "stato": "ok",
+    "qa": "incoming/qa/combinazioni-01.json"
+  },
+  {
+    "file": "incoming/icone/combinazioni-01.png",
+    "tipo": "illustrazione",
+    "soggetto": "amanita-phalloides",
+    "tessera": "gambo",
+    "cella": 5,
+    "variante": "colore:grigio+forma:emisferico",
+    "base": {
+      "colore": "verde",
+      "forma": "convesso"
+    },
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case: scientific-educational. Create a production PNG sprite sheet, exact 3x3 equal grid, transparent background, NO visible grid/text. Attached images are approved Amanita phalloides reference icons. Match their brown outlines, restrained flat fills, single highlight, simple anatomy and scale. 8 whole isolated icons in cells0-7, cell8 EMPTY. Each cell must have at least15% empty transparent margin on all sides; every drawing must be complete, fully outlined dark brown, NEVER cropped. Cell order left-right/top-bottom. 0=YELLOW hemispherical isolated cap;1=YELLOW hemispherical cap on whole phalloides.2=WHITE hemispherical isolated cap;3=WHITE hemispherical whole.4=GRAY hemispherical isolated cap;5=GRAY hemispherical whole.6=BROWN hemispherical isolated cap;7=BROWN hemispherical whole. All caps are deep round half-dome hemispheres, young but expanded enough to show underside. The whole mushrooms have exactly the reference's WHITE slender stem, WHITE skirt ring below cap, WHITE open SACK volva enclosing bulb at bottom, all fully drawn. No spots, no scales, no new traits. Keep cream lamellae and entire short stalk and volva enclosed in cell. Only cap shape and color change vs references. Colors yellow #d9b13c, white #ece7da, gray #9d968a,brown #8e5f36. Isolated cap icons viewed side-on like reference left column; whole icons like reference middle column. No shadows/background plate/soil/grass. Keep all eight subjects DISTINCT and unconnected.",
+    "stato": "ok",
+    "qa": "incoming/qa/combinazioni-01.json"
+  },
+  {
+    "file": "incoming/icone/combinazioni-01.png",
+    "tipo": "illustrazione",
+    "soggetto": "amanita-phalloides",
+    "tessera": "cappello",
+    "cella": 6,
+    "variante": "colore:bruno+forma:emisferico",
+    "base": {
+      "colore": "verde",
+      "forma": "convesso"
+    },
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case: scientific-educational. Create a production PNG sprite sheet, exact 3x3 equal grid, transparent background, NO visible grid/text. Attached images are approved Amanita phalloides reference icons. Match their brown outlines, restrained flat fills, single highlight, simple anatomy and scale. 8 whole isolated icons in cells0-7, cell8 EMPTY. Each cell must have at least15% empty transparent margin on all sides; every drawing must be complete, fully outlined dark brown, NEVER cropped. Cell order left-right/top-bottom. 0=YELLOW hemispherical isolated cap;1=YELLOW hemispherical cap on whole phalloides.2=WHITE hemispherical isolated cap;3=WHITE hemispherical whole.4=GRAY hemispherical isolated cap;5=GRAY hemispherical whole.6=BROWN hemispherical isolated cap;7=BROWN hemispherical whole. All caps are deep round half-dome hemispheres, young but expanded enough to show underside. The whole mushrooms have exactly the reference's WHITE slender stem, WHITE skirt ring below cap, WHITE open SACK volva enclosing bulb at bottom, all fully drawn. No spots, no scales, no new traits. Keep cream lamellae and entire short stalk and volva enclosed in cell. Only cap shape and color change vs references. Colors yellow #d9b13c, white #ece7da, gray #9d968a,brown #8e5f36. Isolated cap icons viewed side-on like reference left column; whole icons like reference middle column. No shadows/background plate/soil/grass. Keep all eight subjects DISTINCT and unconnected.",
+    "stato": "ok",
+    "qa": "incoming/qa/combinazioni-01.json"
+  },
+  {
+    "file": "incoming/icone/combinazioni-01.png",
+    "tipo": "illustrazione",
+    "soggetto": "amanita-phalloides",
+    "tessera": "gambo",
+    "cella": 7,
+    "variante": "colore:bruno+forma:emisferico",
+    "base": {
+      "colore": "verde",
+      "forma": "convesso"
+    },
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case: scientific-educational. Create a production PNG sprite sheet, exact 3x3 equal grid, transparent background, NO visible grid/text. Attached images are approved Amanita phalloides reference icons. Match their brown outlines, restrained flat fills, single highlight, simple anatomy and scale. 8 whole isolated icons in cells0-7, cell8 EMPTY. Each cell must have at least15% empty transparent margin on all sides; every drawing must be complete, fully outlined dark brown, NEVER cropped. Cell order left-right/top-bottom. 0=YELLOW hemispherical isolated cap;1=YELLOW hemispherical cap on whole phalloides.2=WHITE hemispherical isolated cap;3=WHITE hemispherical whole.4=GRAY hemispherical isolated cap;5=GRAY hemispherical whole.6=BROWN hemispherical isolated cap;7=BROWN hemispherical whole. All caps are deep round half-dome hemispheres, young but expanded enough to show underside. The whole mushrooms have exactly the reference's WHITE slender stem, WHITE skirt ring below cap, WHITE open SACK volva enclosing bulb at bottom, all fully drawn. No spots, no scales, no new traits. Keep cream lamellae and entire short stalk and volva enclosed in cell. Only cap shape and color change vs references. Colors yellow #d9b13c, white #ece7da, gray #9d968a,brown #8e5f36. Isolated cap icons viewed side-on like reference left column; whole icons like reference middle column. No shadows/background plate/soil/grass. Keep all eight subjects DISTINCT and unconnected.",
+    "stato": "ok",
+    "qa": "incoming/qa/combinazioni-01.json"
   }
 ]

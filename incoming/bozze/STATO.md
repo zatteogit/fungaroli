@@ -300,3 +300,6 @@ Ordine aggiornato da Matteo il 15/10: completare prima tutte le varianti di colo
 
 | glossario/cappello.png | esempio da approvare | Cappello evidenziato, gambo spento; PNG 1024px, margini e contorni verificati. Glossario, guide e infografiche sospesi fino all’approvazione di Matteo. |
 | qa/2026-10-15-glossario-cappello.json | ok | Verifica codice di margini e quattro estremi. |
+
+| icone/combinazioni-01.png | ok | Margini42px alpha0 e contorno scuro ai quattro estremi verificati per ogni cella; dettagli nel rapporto QA. |
+| qa/combinazioni-01.json | ok | Margini42px alpha0 e contorno scuro ai quattro estremi verificati per ogni cella; dettagli nel rapporto QA. |

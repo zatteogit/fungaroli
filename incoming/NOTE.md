@@ -299,3 +299,6 @@ Due foglie separate in caduta: faggio ovale a bordo intero e acero campestre con
 ## Glossario — esempio Cappello
 
 Fungo generico senza attribuzione a specie, cappello evidenziato e gambo spento. Dettagli diagnostici omessi per isolare il concetto. Esempio in attesa di approvazione; altri schemi, guide e infografiche non avviati. Prosegue l’ordine aggiornato 07c27ee: combinazioni della falloide e forme del cappello.
+
+
+Combinazioni-01: 4 colori × emisferico; gambo bianco, anello e volva a sacco conservati. Export proporzionale del soggetto completo, senza ricolore automatico. Otto celle usate, cella8 vuota per rispettare le due tavole previste.
