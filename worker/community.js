@@ -136,7 +136,7 @@ export async function handleCommunity(request, env, now = Date.now()) {
       const handle = typeof data.handle === 'string' ? data.handle.trim().slice(0, 32) : '';
       const name = handle || 'Fungarolo ' + id.slice(0, 4);
       const options = register
-        ? await generateRegistrationOptions({ rpName: 'Fungaroli', rpID, userName: name, userID: enc.encode(id), attestationType: 'none',
+        ? await generateRegistrationOptions({ rpName: 'Fronda', rpID, userName: name, userID: enc.encode(id), attestationType: 'none',
           authenticatorSelection: { residentKey: 'required', userVerification: 'required' } })
         : await generateAuthenticationOptions({ rpID, userVerification: 'required' });
       const raw = token();

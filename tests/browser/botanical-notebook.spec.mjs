@@ -34,7 +34,7 @@ test('botanical layouts, global search and short note form in both themes',async
  await expect(page.locator('.tab-search')).toBeHidden();await page.keyboard.press('Control+k');await page.locator('dialog.search-dlg input').fill('Foeniculum vulgare');await expect(page.locator('dialog.search-dlg')).toContainText('Finocchietto selvatico');await page.locator('dialog.search-dlg .search-cancel').click();await expect(page.locator('dialog.search-dlg[open]')).toHaveCount(0);
  for(const theme of ['light','dark']){
   await page.evaluate(theme=>document.documentElement.dataset.theme=theme,theme);
-  await expect.poll(()=>page.locator('.recognize-modes button').nth(1).evaluate(b=>getComputedStyle(b).color)).toBe(theme==='dark'?'rgb(233, 239, 231)':'rgb(27, 25, 21)');
+  await expect.poll(()=>page.locator('.recognize-modes button').nth(1).evaluate(b=>getComputedStyle(b).color)).toBe(theme==='dark'?'rgb(244, 243, 233)':'rgb(24, 56, 44)');
   for(const width of [320,390,1280]){
    await page.setViewportSize({width,height:900});expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
    const heights=await page.locator('#plant-grid .sp-card').evaluateAll(cards=>cards.slice(0,2).map(c=>({top:Math.round(c.getBoundingClientRect().top),height:Math.round(c.getBoundingClientRect().height)})));
@@ -45,5 +45,32 @@ test('botanical layouts, global search and short note form in both themes',async
  await page.goto('/#/pianta/cicuta');await expect(page.locator('#plant-detail img').first()).toHaveAttribute('data-image-state','ready');await page.screenshot({path:'/tmp/fungaroli-cicuta-dark-stable.png',fullPage:true});
  await page.locator('#plant-detail a[href="#/pianta/finocchietto"]').click();const sheet=page.locator('#entity-sheet[open]');await sheet.locator('[data-note-kind]').click();await page.locator('.notebook-dialog[open] [type="submit"]').click();await expect(sheet.locator('.app-toast.on')).toContainText('Salvato nel taccuino');await sheet.locator('[data-entity-close]').click();expect(new URL(page.url()).hash).toBe('#/pianta/cicuta');
  await page.goto('/#/pianta/corbezzolo');await page.setViewportSize({width:390,height:900});await page.locator('#plant-detail [data-note-kind]').click();const dialog=page.locator('.notebook-dialog[open]');await expect(dialog.locator('[type="submit"]')).toBeInViewport();await expect(dialog.locator('.notebook-context')).not.toHaveAttribute('open','');await dialog.screenshot({path:'/tmp/fungaroli-note-short-dark.png'});await dialog.locator('[data-note-close]').first().click();
+ expect(errors).toEqual([]);
+});
+test('i mesi abbreviati non diventano termini del glossario («ago» di agosto non è un ago)',async({page})=>{
+ const errors=await start(page);await page.goto('/#/pianta/ortica');
+ const view=page.locator('.view:not([hidden])');await expect(view.locator('#plant-detail .keys')).toBeVisible();await expect(view).toContainText('ago');
+ await expect(view.locator('a.glossary-link').filter({hasText:/^ago$/i})).toHaveCount(0);
+ expect(errors).toEqual([]);
+});
+// Collegamenti automatici solo nelle zone descrittive dichiarate (data-glossary) e solo con voci del loro ambito.
+const outsideZones=view=>view.locator('a.glossary-link').evaluateAll(links=>links.filter(a=>!a.closest('[data-glossary],.trait-strip')).map(a=>a.textContent));
+test('glossario: parole collegate nelle descrizioni, mai in mesi, fonti e crediti, e solo nel loro ambito',async({page})=>{
+ const errors=await start(page);
+ // scheda albero: «Aghi» nella descrizione è una voce del glossario
+ await page.goto('/#/albero/pino%20nero');const tree=page.locator('#tree-detail');await expect(tree.locator('.keys')).toBeVisible();
+ await expect(tree.locator('.keys a.glossary-link[data-term="aghi"]')).toHaveCount(1);
+ await expect(tree.locator('[data-tree-traits] .trait-strip')).toBeVisible();
+ expect(await outsideZones(tree)).toEqual([]);
+ // fonti e crediti delle foto, aperti: nessun termine collegato
+ await tree.locator('details.sec summary',{hasText:'Fonti e crediti delle foto'}).click();
+ await expect(tree.locator('.src-rows a.glossary-link, .src-h a.glossary-link')).toHaveCount(0);
+ // scheda pianta: mesi della fioritura, tutela e fonti senza termini; gli aculei del rovo sono quelli botanici, non quelli dei funghi
+ await page.goto('/#/pianta/rovo');const plant=page.locator('#plant-detail');await expect(plant.locator('.keys')).toBeVisible();
+ await expect(plant.locator('.keys a.glossary-link[data-term="aculei-piante"]')).toHaveCount(1);
+ await expect(plant.locator('a.glossary-link[data-term="aculei"]')).toHaveCount(0);
+ await expect(plant.locator('.sci-params div',{hasText:'Fioritura'}).locator('a.glossary-link')).toHaveCount(0);
+ for(const term of ['lamelle','pori','gambo','cappello','volva'])await expect(plant.locator(`a.glossary-link[data-term="${term}"]`)).toHaveCount(0);
+ expect(await outsideZones(plant)).toEqual([]);
  expect(errors).toEqual([]);
 });

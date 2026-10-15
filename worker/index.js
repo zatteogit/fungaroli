@@ -1,4 +1,4 @@
-// Worker di Fungaroli Rieti: i file statici sono serviti da Workers Assets (wrangler.jsonc);
+// Worker di Fronda: i file statici sono serviti da Workers Assets (wrangler.jsonc);
 // qui arrivano solo le richieste che non corrispondono a un file, cioe' l'API del diario.
 import { handleDiario } from '../functions/api/diario/[[path]].js';
 import { handleCommunity, cleanupCommunity } from './community.js';

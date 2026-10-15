@@ -1,5 +1,5 @@
 // Lessico di campo e spiegazioni contestuali: i link restano utilizzabili senza popover.
-import {buildGlossaryIndex,resolveGlossaryTerm,relatedGlossaryTerms} from './glossary-context.js';
+import {buildGlossaryIndex,relatedGlossaryTerms,linkableGlossaryTerm,normalizeGlossaryScope,GLOSSARY_CONTEXTS} from './glossary-context.js';
 import { openEntitySheet } from './entity-sheet.js';
 import {openLightbox,captionHtml} from './lightbox.js';
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
@@ -52,14 +52,19 @@ export function renderGlossary(box, selected = '', categories = ['Funghi','Piant
 }
 
 // Modifica soltanto nodi di testo: niente regex sull'HTML, link annidati o controlli alterati.
+// Le parole si collegano solo dentro le zone descrittive dichiarate nel markup con data-glossary="<ambito>"
+// (Funghi, Piante, Alberi, Bosco, Sentiero, Generale; vuoto = ambito del data-glossary-context più vicino).
+// Fuori da quelle zone (mesi, date, misure, crediti, fonti, didascalie, tessere, pulsanti, titoli) niente link automatici.
+// Ambiti compatibili e regola delle parole corte: js/glossary-context.js.
+const NO_LINK='a,button,label,select,textarea,input,code,pre,script,style,svg,h1,h2,h3,h4,summary,figcaption,[contenteditable],[data-no-glossary],.trait-strip,.cmp-rows,.id-grid,.id-answers,.tag,.chip,.pill,.sp-card,.tile,.sci-params dt';
+export const glossaryScopeOf = zone => normalizeGlossaryScope(zone?.dataset.glossary || zone?.closest('[data-glossary-context]')?.dataset.glossaryContext);
 export function enhanceGlossary(root) {
   if (!root || !aliasRe) return;
   root.querySelectorAll('a.tree-link,a.species-link,a[data-entity]').forEach(a=>a.setAttribute('aria-haspopup','dialog'));
   const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {acceptNode(node) {
     const p = node.parentElement;
-    // niente link dove si legge a colpo d'occhio: tessere, confronti, risposte, chip ed etichette
-    if (!p || !node.textContent.trim() || p.closest('a,button,label,select,textarea,input,code,pre,script,style,svg,h1,h2,h3,h4,summary,[contenteditable],[data-no-glossary],.trait-strip,.cmp-rows,.id-grid,.id-answers,.tag,.chip,.pill,.sp-card,.tile,.sci-params dt')) return NodeFilter.FILTER_REJECT;
-    return p.closest('p,dd,li,.sf-why') ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
+    if (!p || !node.textContent.trim() || p.closest(NO_LINK)) return NodeFilter.FILTER_REJECT;
+    return p.closest('[data-glossary]') ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
   }});
   const nodes = []; while(walker.nextNode()) nodes.push(walker.currentNode);
   // ogni parola si collega una volta sola nella pagina, e mai due link a ridosso: è un'app, non un ipertesto
@@ -69,14 +74,14 @@ export function enhanceGlossary(root) {
   const seenFor = (node) => { const d = node.parentElement.closest('details:not([open])'); if (!d) return linked; if (!hidden.has(d)) hidden.set(d, new Set([...d.querySelectorAll('a.glossary-link')].map((a) => a.dataset.term))); return hidden.get(d); };
   for(const node of nodes) {
     const seen = seenFor(node);
-    const context=node.parentElement.closest('[data-glossary-context]')?.dataset.glossaryContext;
+    const scope=glossaryScopeOf(node.parentElement.closest('[data-glossary]'));
     aliasRe.lastIndex = 0;
     const matches = [...node.textContent.matchAll(aliasRe)];
     if(!matches.length) continue;
     const fragment = document.createDocumentFragment(); let pos = 0;
     for(const m of matches) {
       const start = m.index + m[1].length, word = m[2];
-      const id = resolveGlossaryTerm(aliasMap,word,context)?.id;
+      const id = linkableGlossaryTerm(aliasMap,word,scope)?.id;
       if(!id || seen.has(id) || (pos && start - pos < 24)) continue;
       seen.add(id);
       fragment.append(document.createTextNode(node.textContent.slice(pos,start)));
@@ -156,7 +161,9 @@ export function initLearning({glossary, trees,media,assetUrl}) {
     const link=e.target.closest('a.glossary-link,a.tree-link,a.species-link,a[data-entity]');
     if(!link || e.defaultPrevented || e.button!==0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
     const t=TERMS.find(x=>x.id===link.dataset.term);
-    const context=link.closest('[data-glossary-context]')?.dataset.glossaryContext||t?.category;
+    // il pannello usa l'ambito della zona da cui viene la parola, poi quello della pagina
+    const zoneScope=link.closest('[data-glossary]')?glossaryScopeOf(link.closest('[data-glossary]')):'';
+    const context=(GLOSSARY_CONTEXTS.includes(zoneScope)?zoneScope:'')||link.closest('[data-glossary-context]')?.dataset.glossaryContext||t?.category;
     let title,body,href,label;
     if(t) {title=t.term;body=termBody(t,true,context);href=`#/glossario/${t.id}`;label='Nel glossario';}
     else {
@@ -182,6 +189,6 @@ export function initLearning({glossary, trees,media,assetUrl}) {
 // «Bosco e sentiero» in Impara: le voci del glossario di bosco e sentiero (alberi e piante hanno il percorso guidato)
 export function renderFieldIdentify(box) {
   box.dataset.glossaryContext='Bosco';
-  box.innerHTML='<p class="learning-observe">Guarda il substrato, il margine del bosco e i segni sul sentiero. Queste voci aiutano a descrivere ciò che vedi.</p><div id="field-glossary"></div>';
+  box.innerHTML='<p class="learning-observe" data-glossary>Guarda il substrato, il margine del bosco e i segni sul sentiero. Queste voci aiutano a descrivere ciò che vedi.</p><div id="field-glossary"></div>';
   renderGlossary(box.querySelector('#field-glossary'), '', ['Bosco','Sentiero']);
 }

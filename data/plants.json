@@ -2684,18 +2684,6 @@
           "page": "https://dryades.units.it/Roma/index.php?id=333&procedure=taxon_page",
           "sourceImage": "https://dryades.units.it/dryades/plants/foto/IMG2497JPG1589467262.jpg",
           "sourceCaption": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Andrea Moro · Comune di Trieste, Salita di Contovello, a valle dell'abitato di Contovello, TS, Friuli Venezia Giulia, Italia · 08/05/2020 · Distributed under CC BY-SA 4.0 license."
-        },
-        {
-          "file": "assets/plants/aristolochia-3.webp",
-          "thumb": "assets/plants/aristolochia-3-t.webp",
-          "alt": "Aristolochia clematide: fotografia della specie",
-          "caption": "Fotografia originale della specie; i caratteri vanno confrontati insieme.",
-          "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
-          "license": "CC BY-SA 4.0",
-          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "page": "https://dryades.units.it/Roma/index.php?id=333&procedure=taxon_page",
-          "sourceImage": "https://dryades.units.it/dryades/plants/foto/IMG2511JPG1589467257.jpg",
-          "sourceCaption": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Andrea Moro · Comune di Trieste, Salita di Contovello, a valle dell'abitato di Contovello, TS, Friuli Venezia Giulia, Italia · 08/05/2020 · Distributed under CC BY-SA 4.0 license."
         }
       ]
     },
@@ -5118,16 +5106,16 @@
           "sourceCaption": "Antonio Maffei - CC BY SA 4.0 · · Colloreto, Morano Calabro, 750 m (Cosenza), Calabria, Italy · 06.2025"
         },
         {
-          "file": "assets/plants/digitale-gialla-2.webp",
-          "thumb": "assets/plants/digitale-gialla-2-t.webp",
-          "alt": "Digitale gialla meridionale: fotografia della specie",
-          "caption": "Fotografia originale della specie; i caratteri vanno confrontati insieme.",
-          "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
-          "license": "CC BY-SA 4.0",
-          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "page": "https://dryades.units.it/floritaly/index.php?procedure=taxon_page&tipo=all&id=4859",
-          "sourceImage": "https://dryades.units.it/dryades/plants/foto/TS112768.jpg",
-          "sourceCaption": "Andrea Moro · © Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Distributed under CC-BY-SA 4.0 license."
+          "file": "assets/plants/digitale-gialla-3.webp",
+          "thumb": "assets/plants/digitale-gialla-3-t.webp",
+          "alt": "Digitale gialla meridionale: pianta fiorita nel sottobosco",
+          "caption": "Pianta fiorita nel sottobosco: grappolo di piccoli fiori giallastri e foglie lanceolate. Fotografia della specie; i caratteri vanno confrontati insieme.",
+          "author": "Nicolás Lavandero · iNaturalist",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "page": "https://www.inaturalist.org/observations/47224187",
+          "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/74895239/original.jpg",
+          "sourceCaption": "(c) Nicolás Lavandero, some rights reserved (CC BY) · iNaturalist, osservazione «research grade» 47224187 (Digitalis micrantha) · Salerno, Italia · 2019-06-11"
         }
       ]
     },
