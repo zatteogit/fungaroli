@@ -1,0 +1,283 @@
+{
+  "file": "incoming/icone/forme-25.png",
+  "stato": "ok",
+  "verifiche": [
+    {
+      "cella": 0,
+      "bbox": [
+        71,
+        164,
+        347,
+        253
+      ],
+      "attesa": true,
+      "margini_px": [
+        71,
+        164,
+        71,
+        165
+      ],
+      "margini_ok": true,
+      "contorno_scuro_estremi": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cella": 1,
+      "bbox": [
+        73,
+        103,
+        345,
+        315
+      ],
+      "attesa": true,
+      "margini_px": [
+        73,
+        103,
+        73,
+        103
+      ],
+      "margini_ok": true,
+      "contorno_scuro_estremi": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cella": 2,
+      "bbox": null,
+      "attesa": false,
+      "vuota": true
+    },
+    {
+      "cella": 3,
+      "bbox": [
+        88,
+        150,
+        330,
+        267
+      ],
+      "attesa": true,
+      "margini_px": [
+        88,
+        150,
+        88,
+        151
+      ],
+      "margini_ok": true,
+      "contorno_scuro_estremi": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cella": 4,
+      "bbox": [
+        100,
+        95,
+        317,
+        322
+      ],
+      "attesa": true,
+      "margini_px": [
+        100,
+        95,
+        101,
+        96
+      ],
+      "margini_ok": true,
+      "contorno_scuro_estremi": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cella": 5,
+      "bbox": null,
+      "attesa": false,
+      "vuota": true
+    },
+    {
+      "cella": 6,
+      "bbox": [
+        70,
+        147,
+        347,
+        271
+      ],
+      "attesa": true,
+      "margini_px": [
+        70,
+        147,
+        71,
+        147
+      ],
+      "margini_ok": true,
+      "contorno_scuro_estremi": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cella": 7,
+      "bbox": [
+        84,
+        85,
+        333,
+        332
+      ],
+      "attesa": true,
+      "margini_px": [
+        84,
+        85,
+        85,
+        86
+      ],
+      "margini_ok": true,
+      "contorno_scuro_estremi": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cella": 8,
+      "bbox": null,
+      "attesa": false,
+      "vuota": true
+    }
+  ],
+  "normalizzazione": [
+    {
+      "cella": 0,
+      "bbox_originale_immagine": [
+        96,
+        201,
+        372,
+        290
+      ],
+      "scala": 1,
+      "dimensioni": [
+        276,
+        89
+      ],
+      "posizione": [
+        71,
+        164
+      ]
+    },
+    {
+      "cella": 1,
+      "bbox_originale_immagine": [
+        491,
+        141,
+        763,
+        353
+      ],
+      "scala": 1,
+      "dimensioni": [
+        272,
+        212
+      ],
+      "posizione": [
+        491,
+        103
+      ]
+    },
+    {
+      "cella": 3,
+      "bbox_originale_immagine": [
+        114,
+        571,
+        356,
+        688
+      ],
+      "scala": 1,
+      "dimensioni": [
+        242,
+        117
+      ],
+      "posizione": [
+        88,
+        568
+      ]
+    },
+    {
+      "cella": 4,
+      "bbox_originale_immagine": [
+        518,
+        521,
+        735,
+        748
+      ],
+      "scala": 1,
+      "dimensioni": [
+        217,
+        227
+      ],
+      "posizione": [
+        518,
+        513
+      ]
+    },
+    {
+      "cella": 6,
+      "bbox_originale_immagine": [
+        100,
+        952,
+        377,
+        1076
+      ],
+      "scala": 1,
+      "dimensioni": [
+        277,
+        124
+      ],
+      "posizione": [
+        70,
+        983
+      ]
+    },
+    {
+      "cella": 7,
+      "bbox_originale_immagine": [
+        503,
+        896,
+        752,
+        1143
+      ],
+      "scala": 1,
+      "dimensioni": [
+        249,
+        247
+      ],
+      "posizione": [
+        502,
+        921
+      ]
+    }
+  ],
+  "bytes": 44883,
+  "dimensioni": [
+    1254,
+    1254
+  ],
+  "sha256": "3714d5bbd49459518e89f22a90c3d8fd2fe921a636625a50e55700894bed1f21",
+  "prompt": "A transparent PNG sprite sheet, square1254x1254, invisible3x3cells418px each. Use reference1 for EXACT SMALL ICON SIZE, generous TRANSPARENT CELL MARGINS and row positions. Three rows: column1 CAP ONLY side view, column2 WHOLE MUSHROOM, column3 entirely EMPTY. Each separate icon centered in its own cell, at most60% of cell width AND height, at least18% alpha0 padding on EVERY cell edge. No drawn grid, background, shadows, ground, text, numbers or marks. Clean thick dark brown COMPLETE silhouette outline, flat few colors same as species icons. References2 onward show the approved base icons: preserve cap COLOR and all stems, rings, volvas, netting, scales and spots, change ONLY cap SHAPE and age-appropriate proportions. Each row's cap-only and whole must MATCH shape/color. Use EXACT reference cap shade; color labels are broad categories: 'rosso' may be dark red-BROWN. Never borrow anatomical traits or colors between rows. ROW1: imleria-badia, base cap color bruno, target shape FLAT: almost horizontal, expanded cap. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"vellutata/feltrata\",\"asciutta\",\"viscida\",\"liscia\"],\"hymenophore\":[\"pori\"],\"hymenophore_color\":[\"crema\",\"giallo\",\"verde\"]}. ROW2: inocybe, base cap color bruno, target shape CONVEX: low rounded dome. Keep attached base icon anatomy; scientific constraints: {\"ring\":null,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"asciutta\",\"squamosa\",\"vellutata/feltrata\",\"liscia\",\"viscida\"],\"hymenophore\":[\"lamelle\"],\"hymenophore_color\":[\"grigio\",\"bruno\",\"crema\",\"bianco\"]}. ROW3: laccaria-amethystina, base cap color violetto, target shape CONVEX: low rounded dome. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"asciutta\",\"liscia\",\"squamosa\"],\"hymenophore\":[\"lamelle\"],\"hymenophore_color\":[\"violetto\"]}. No new anatomical traits. Reference species icons are shape/color authorities except the explicit target cap shape. Cap-only must match whole cap. Last column empty. True alpha background.",
+  "edits": [],
+  "normalizza": true,
+  "visivo_ok": true,
+  "nota": "Imleria piano a pori gialli; Inocybe convessa fibrillosa; Laccaria convessa violetta. Conservati colori e strutture delle basi. Scala e centratura normalizzate con Python su autorizzazione di Matteo; disegno invariato."
+}

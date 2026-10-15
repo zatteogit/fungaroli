@@ -17941,5 +17941,101 @@
     "prompt": "A transparent PNG sprite sheet, square1254x1254, invisible3x3cells418px each. Use reference1 for EXACT SMALL ICON SIZE, generous TRANSPARENT CELL MARGINS and row positions. Three rows: column1 CAP ONLY side view, column2 WHOLE MUSHROOM, column3 entirely EMPTY. Each separate icon centered in its own cell, at most60% of cell width AND height, at least18% alpha0 padding on EVERY cell edge. No drawn grid, background, shadows, ground, text, numbers or marks. Clean thick dark brown COMPLETE silhouette outline, flat few colors same as species icons. References2 onward show the approved base icons: preserve cap COLOR and all stems, rings, volvas, netting, scales and spots, change ONLY cap SHAPE and age-appropriate proportions. Each row's cap-only and whole must MATCH shape/color. Use EXACT reference cap shade; color labels are broad categories: 'rosso' may be dark red-BROWN. Never borrow anatomical traits or colors between rows. ROW1: hygrophorus-latitabundus, base cap color nero, target shape UMBONATE: expanded umbrella cap with a distinct central raised bump. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"viscida\"],\"hymenophore\":[\"lamelle\"],\"hymenophore_color\":[\"bianco\"]}. ROW2: hygrophorus-marzuolus, base cap color grigio, target shape FLAT: almost horizontal, expanded cap. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"liscia\",\"viscida\"],\"hymenophore\":[\"lamelle\"],\"hymenophore_color\":[\"bianco\",\"grigio\"]}. ROW3: hypholoma-fasciculare, base cap color giallo, target shape FLAT: almost horizontal, expanded cap. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"liscia\",\"asciutta\"],\"hymenophore\":[\"lamelle\"],\"hymenophore_color\":[\"giallo\",\"verde\",\"bruno\",\"nero\"]}. No new anatomical traits. Reference species icons are shape/color authorities except the explicit target cap shape. Cap-only must match whole cap. Last column empty. True alpha background.",
     "edits": [],
     "stato": "ok"
+  },
+  {
+    "file": "incoming/icone/forme-25.png",
+    "tipo": "illustrazione",
+    "soggetto": "imleria-badia",
+    "tessera": "cappello",
+    "cella": 0,
+    "variante": "forma:piano",
+    "base": {
+      "forma": "convesso",
+      "colore": "bruno"
+    },
+    "modello": "image_gen (identificatore tecnico non esposto)",
+    "prompt": "A transparent PNG sprite sheet, square1254x1254, invisible3x3cells418px each. Use reference1 for EXACT SMALL ICON SIZE, generous TRANSPARENT CELL MARGINS and row positions. Three rows: column1 CAP ONLY side view, column2 WHOLE MUSHROOM, column3 entirely EMPTY. Each separate icon centered in its own cell, at most60% of cell width AND height, at least18% alpha0 padding on EVERY cell edge. No drawn grid, background, shadows, ground, text, numbers or marks. Clean thick dark brown COMPLETE silhouette outline, flat few colors same as species icons. References2 onward show the approved base icons: preserve cap COLOR and all stems, rings, volvas, netting, scales and spots, change ONLY cap SHAPE and age-appropriate proportions. Each row's cap-only and whole must MATCH shape/color. Use EXACT reference cap shade; color labels are broad categories: 'rosso' may be dark red-BROWN. Never borrow anatomical traits or colors between rows. ROW1: imleria-badia, base cap color bruno, target shape FLAT: almost horizontal, expanded cap. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"vellutata/feltrata\",\"asciutta\",\"viscida\",\"liscia\"],\"hymenophore\":[\"pori\"],\"hymenophore_color\":[\"crema\",\"giallo\",\"verde\"]}. ROW2: inocybe, base cap color bruno, target shape CONVEX: low rounded dome. Keep attached base icon anatomy; scientific constraints: {\"ring\":null,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"asciutta\",\"squamosa\",\"vellutata/feltrata\",\"liscia\",\"viscida\"],\"hymenophore\":[\"lamelle\"],\"hymenophore_color\":[\"grigio\",\"bruno\",\"crema\",\"bianco\"]}. ROW3: laccaria-amethystina, base cap color violetto, target shape CONVEX: low rounded dome. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"asciutta\",\"liscia\",\"squamosa\"],\"hymenophore\":[\"lamelle\"],\"hymenophore_color\":[\"violetto\"]}. No new anatomical traits. Reference species icons are shape/color authorities except the explicit target cap shape. Cap-only must match whole cap. Last column empty. True alpha background.",
+    "edits": [],
+    "stato": "ok"
+  },
+  {
+    "file": "incoming/icone/forme-25.png",
+    "tipo": "illustrazione",
+    "soggetto": "imleria-badia",
+    "tessera": "gambo",
+    "cella": 1,
+    "variante": "forma:piano",
+    "base": {
+      "forma": "convesso",
+      "colore": "bruno"
+    },
+    "modello": "image_gen (identificatore tecnico non esposto)",
+    "prompt": "A transparent PNG sprite sheet, square1254x1254, invisible3x3cells418px each. Use reference1 for EXACT SMALL ICON SIZE, generous TRANSPARENT CELL MARGINS and row positions. Three rows: column1 CAP ONLY side view, column2 WHOLE MUSHROOM, column3 entirely EMPTY. Each separate icon centered in its own cell, at most60% of cell width AND height, at least18% alpha0 padding on EVERY cell edge. No drawn grid, background, shadows, ground, text, numbers or marks. Clean thick dark brown COMPLETE silhouette outline, flat few colors same as species icons. References2 onward show the approved base icons: preserve cap COLOR and all stems, rings, volvas, netting, scales and spots, change ONLY cap SHAPE and age-appropriate proportions. Each row's cap-only and whole must MATCH shape/color. Use EXACT reference cap shade; color labels are broad categories: 'rosso' may be dark red-BROWN. Never borrow anatomical traits or colors between rows. ROW1: imleria-badia, base cap color bruno, target shape FLAT: almost horizontal, expanded cap. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"vellutata/feltrata\",\"asciutta\",\"viscida\",\"liscia\"],\"hymenophore\":[\"pori\"],\"hymenophore_color\":[\"crema\",\"giallo\",\"verde\"]}. ROW2: inocybe, base cap color bruno, target shape CONVEX: low rounded dome. Keep attached base icon anatomy; scientific constraints: {\"ring\":null,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"asciutta\",\"squamosa\",\"vellutata/feltrata\",\"liscia\",\"viscida\"],\"hymenophore\":[\"lamelle\"],\"hymenophore_color\":[\"grigio\",\"bruno\",\"crema\",\"bianco\"]}. ROW3: laccaria-amethystina, base cap color violetto, target shape CONVEX: low rounded dome. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"asciutta\",\"liscia\",\"squamosa\"],\"hymenophore\":[\"lamelle\"],\"hymenophore_color\":[\"violetto\"]}. No new anatomical traits. Reference species icons are shape/color authorities except the explicit target cap shape. Cap-only must match whole cap. Last column empty. True alpha background.",
+    "edits": [],
+    "stato": "ok"
+  },
+  {
+    "file": "incoming/icone/forme-25.png",
+    "tipo": "illustrazione",
+    "soggetto": "inocybe",
+    "tessera": "cappello",
+    "cella": 3,
+    "variante": "forma:convesso",
+    "base": {
+      "forma": "conico",
+      "colore": "bruno"
+    },
+    "modello": "image_gen (identificatore tecnico non esposto)",
+    "prompt": "A transparent PNG sprite sheet, square1254x1254, invisible3x3cells418px each. Use reference1 for EXACT SMALL ICON SIZE, generous TRANSPARENT CELL MARGINS and row positions. Three rows: column1 CAP ONLY side view, column2 WHOLE MUSHROOM, column3 entirely EMPTY. Each separate icon centered in its own cell, at most60% of cell width AND height, at least18% alpha0 padding on EVERY cell edge. No drawn grid, background, shadows, ground, text, numbers or marks. Clean thick dark brown COMPLETE silhouette outline, flat few colors same as species icons. References2 onward show the approved base icons: preserve cap COLOR and all stems, rings, volvas, netting, scales and spots, change ONLY cap SHAPE and age-appropriate proportions. Each row's cap-only and whole must MATCH shape/color. Use EXACT reference cap shade; color labels are broad categories: 'rosso' may be dark red-BROWN. Never borrow anatomical traits or colors between rows. ROW1: imleria-badia, base cap color bruno, target shape FLAT: almost horizontal, expanded cap. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"vellutata/feltrata\",\"asciutta\",\"viscida\",\"liscia\"],\"hymenophore\":[\"pori\"],\"hymenophore_color\":[\"crema\",\"giallo\",\"verde\"]}. ROW2: inocybe, base cap color bruno, target shape CONVEX: low rounded dome. Keep attached base icon anatomy; scientific constraints: {\"ring\":null,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"asciutta\",\"squamosa\",\"vellutata/feltrata\",\"liscia\",\"viscida\"],\"hymenophore\":[\"lamelle\"],\"hymenophore_color\":[\"grigio\",\"bruno\",\"crema\",\"bianco\"]}. ROW3: laccaria-amethystina, base cap color violetto, target shape CONVEX: low rounded dome. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"asciutta\",\"liscia\",\"squamosa\"],\"hymenophore\":[\"lamelle\"],\"hymenophore_color\":[\"violetto\"]}. No new anatomical traits. Reference species icons are shape/color authorities except the explicit target cap shape. Cap-only must match whole cap. Last column empty. True alpha background.",
+    "edits": [],
+    "stato": "ok"
+  },
+  {
+    "file": "incoming/icone/forme-25.png",
+    "tipo": "illustrazione",
+    "soggetto": "inocybe",
+    "tessera": "gambo",
+    "cella": 4,
+    "variante": "forma:convesso",
+    "base": {
+      "forma": "conico",
+      "colore": "bruno"
+    },
+    "modello": "image_gen (identificatore tecnico non esposto)",
+    "prompt": "A transparent PNG sprite sheet, square1254x1254, invisible3x3cells418px each. Use reference1 for EXACT SMALL ICON SIZE, generous TRANSPARENT CELL MARGINS and row positions. Three rows: column1 CAP ONLY side view, column2 WHOLE MUSHROOM, column3 entirely EMPTY. Each separate icon centered in its own cell, at most60% of cell width AND height, at least18% alpha0 padding on EVERY cell edge. No drawn grid, background, shadows, ground, text, numbers or marks. Clean thick dark brown COMPLETE silhouette outline, flat few colors same as species icons. References2 onward show the approved base icons: preserve cap COLOR and all stems, rings, volvas, netting, scales and spots, change ONLY cap SHAPE and age-appropriate proportions. Each row's cap-only and whole must MATCH shape/color. Use EXACT reference cap shade; color labels are broad categories: 'rosso' may be dark red-BROWN. Never borrow anatomical traits or colors between rows. ROW1: imleria-badia, base cap color bruno, target shape FLAT: almost horizontal, expanded cap. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"vellutata/feltrata\",\"asciutta\",\"viscida\",\"liscia\"],\"hymenophore\":[\"pori\"],\"hymenophore_color\":[\"crema\",\"giallo\",\"verde\"]}. ROW2: inocybe, base cap color bruno, target shape CONVEX: low rounded dome. Keep attached base icon anatomy; scientific constraints: {\"ring\":null,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"asciutta\",\"squamosa\",\"vellutata/feltrata\",\"liscia\",\"viscida\"],\"hymenophore\":[\"lamelle\"],\"hymenophore_color\":[\"grigio\",\"bruno\",\"crema\",\"bianco\"]}. ROW3: laccaria-amethystina, base cap color violetto, target shape CONVEX: low rounded dome. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"asciutta\",\"liscia\",\"squamosa\"],\"hymenophore\":[\"lamelle\"],\"hymenophore_color\":[\"violetto\"]}. No new anatomical traits. Reference species icons are shape/color authorities except the explicit target cap shape. Cap-only must match whole cap. Last column empty. True alpha background.",
+    "edits": [],
+    "stato": "ok"
+  },
+  {
+    "file": "incoming/icone/forme-25.png",
+    "tipo": "illustrazione",
+    "soggetto": "laccaria-amethystina",
+    "tessera": "cappello",
+    "cella": 6,
+    "variante": "forma:convesso",
+    "base": {
+      "forma": "imbuto",
+      "colore": "violetto"
+    },
+    "modello": "image_gen (identificatore tecnico non esposto)",
+    "prompt": "A transparent PNG sprite sheet, square1254x1254, invisible3x3cells418px each. Use reference1 for EXACT SMALL ICON SIZE, generous TRANSPARENT CELL MARGINS and row positions. Three rows: column1 CAP ONLY side view, column2 WHOLE MUSHROOM, column3 entirely EMPTY. Each separate icon centered in its own cell, at most60% of cell width AND height, at least18% alpha0 padding on EVERY cell edge. No drawn grid, background, shadows, ground, text, numbers or marks. Clean thick dark brown COMPLETE silhouette outline, flat few colors same as species icons. References2 onward show the approved base icons: preserve cap COLOR and all stems, rings, volvas, netting, scales and spots, change ONLY cap SHAPE and age-appropriate proportions. Each row's cap-only and whole must MATCH shape/color. Use EXACT reference cap shade; color labels are broad categories: 'rosso' may be dark red-BROWN. Never borrow anatomical traits or colors between rows. ROW1: imleria-badia, base cap color bruno, target shape FLAT: almost horizontal, expanded cap. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"vellutata/feltrata\",\"asciutta\",\"viscida\",\"liscia\"],\"hymenophore\":[\"pori\"],\"hymenophore_color\":[\"crema\",\"giallo\",\"verde\"]}. ROW2: inocybe, base cap color bruno, target shape CONVEX: low rounded dome. Keep attached base icon anatomy; scientific constraints: {\"ring\":null,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"asciutta\",\"squamosa\",\"vellutata/feltrata\",\"liscia\",\"viscida\"],\"hymenophore\":[\"lamelle\"],\"hymenophore_color\":[\"grigio\",\"bruno\",\"crema\",\"bianco\"]}. ROW3: laccaria-amethystina, base cap color violetto, target shape CONVEX: low rounded dome. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"asciutta\",\"liscia\",\"squamosa\"],\"hymenophore\":[\"lamelle\"],\"hymenophore_color\":[\"violetto\"]}. No new anatomical traits. Reference species icons are shape/color authorities except the explicit target cap shape. Cap-only must match whole cap. Last column empty. True alpha background.",
+    "edits": [],
+    "stato": "ok"
+  },
+  {
+    "file": "incoming/icone/forme-25.png",
+    "tipo": "illustrazione",
+    "soggetto": "laccaria-amethystina",
+    "tessera": "gambo",
+    "cella": 7,
+    "variante": "forma:convesso",
+    "base": {
+      "forma": "imbuto",
+      "colore": "violetto"
+    },
+    "modello": "image_gen (identificatore tecnico non esposto)",
+    "prompt": "A transparent PNG sprite sheet, square1254x1254, invisible3x3cells418px each. Use reference1 for EXACT SMALL ICON SIZE, generous TRANSPARENT CELL MARGINS and row positions. Three rows: column1 CAP ONLY side view, column2 WHOLE MUSHROOM, column3 entirely EMPTY. Each separate icon centered in its own cell, at most60% of cell width AND height, at least18% alpha0 padding on EVERY cell edge. No drawn grid, background, shadows, ground, text, numbers or marks. Clean thick dark brown COMPLETE silhouette outline, flat few colors same as species icons. References2 onward show the approved base icons: preserve cap COLOR and all stems, rings, volvas, netting, scales and spots, change ONLY cap SHAPE and age-appropriate proportions. Each row's cap-only and whole must MATCH shape/color. Use EXACT reference cap shade; color labels are broad categories: 'rosso' may be dark red-BROWN. Never borrow anatomical traits or colors between rows. ROW1: imleria-badia, base cap color bruno, target shape FLAT: almost horizontal, expanded cap. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"vellutata/feltrata\",\"asciutta\",\"viscida\",\"liscia\"],\"hymenophore\":[\"pori\"],\"hymenophore_color\":[\"crema\",\"giallo\",\"verde\"]}. ROW2: inocybe, base cap color bruno, target shape CONVEX: low rounded dome. Keep attached base icon anatomy; scientific constraints: {\"ring\":null,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"asciutta\",\"squamosa\",\"vellutata/feltrata\",\"liscia\",\"viscida\"],\"hymenophore\":[\"lamelle\"],\"hymenophore_color\":[\"grigio\",\"bruno\",\"crema\",\"bianco\"]}. ROW3: laccaria-amethystina, base cap color violetto, target shape CONVEX: low rounded dome. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"asciutta\",\"liscia\",\"squamosa\"],\"hymenophore\":[\"lamelle\"],\"hymenophore_color\":[\"violetto\"]}. No new anatomical traits. Reference species icons are shape/color authorities except the explicit target cap shape. Cap-only must match whole cap. Last column empty. True alpha background.",
+    "edits": [],
+    "stato": "ok"
   }
 ]
