@@ -204,3 +204,5 @@ Ordine aggiornato da Matteo il 15/10: completare prima tutte le varianti di colo
 - Manifest e stato aggiornati senza alterare le voci preesistenti di altri lavori; nessuna PR.
 
 | icone/varianti-10.png | cortinarius-rubellus: colore:rosso; cortinarius-violaceus: colore:nero; galerina-marginata: colore:bruno | ok | QA visiva completata; 6 icone, alpha reale, terza colonna vuota. Basi nel manifest. |
+
+| icone/varianti-11.png | galerina-marginata: colore:giallo; mellea: colore:bruno; armillaria-tabescens: colore:bruno | ok | QA visiva completata; 6 icone, alpha reale, terza colonna vuota. Basi nel manifest. |
