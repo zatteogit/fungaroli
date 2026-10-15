@@ -9,7 +9,7 @@ async function start(page,hash='#/piante',width=390){
  await expect(page.locator('#plant-grid [data-plant-results]')).toBeVisible();return errors;
 }
 test('plants: search, comparison sheets and private simultaneous phenophases on mobile and desktop',async({page})=>{
- const errors=await start(page);await expect(page.locator('#plant-grid .sp-card')).toHaveCount(66);
+ const errors=await start(page);await expect(page.locator('#plant-grid .sp-card')).toHaveCount(70);
  for(const width of [320,390,1280]){await page.setViewportSize({width,height:900});expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);if(width===1280)await page.screenshot({path:'/tmp/fungaroli-plants-desktop.png'});}
  await page.setViewportSize({width:390,height:900});await page.locator('[data-plant-query]').fill('sambuco');await expect(page.locator('#plant-grid .sp-card')).toHaveCount(2);
  await page.goto('/#/pianta/sambuco');await expect(page.locator('#plant-detail')).toContainText('Frutti crudi o immaturi');
