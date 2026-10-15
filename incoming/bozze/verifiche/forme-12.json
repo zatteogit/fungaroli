@@ -1,0 +1,283 @@
+{
+  "file": "incoming/icone/forme-12.png",
+  "stato": "ok",
+  "verifiche": [
+    {
+      "cella": 0,
+      "bbox": [
+        87,
+        137,
+        330,
+        280
+      ],
+      "attesa": true,
+      "margini_px": [
+        87,
+        137,
+        88,
+        138
+      ],
+      "margini_ok": true,
+      "contorno_scuro_estremi": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cella": 1,
+      "bbox": [
+        101,
+        83,
+        317,
+        334
+      ],
+      "attesa": true,
+      "margini_px": [
+        101,
+        83,
+        101,
+        84
+      ],
+      "margini_ok": true,
+      "contorno_scuro_estremi": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cella": 2,
+      "bbox": null,
+      "attesa": false,
+      "vuota": true
+    },
+    {
+      "cella": 3,
+      "bbox": [
+        86,
+        140,
+        331,
+        277
+      ],
+      "attesa": true,
+      "margini_px": [
+        86,
+        140,
+        87,
+        141
+      ],
+      "margini_ok": true,
+      "contorno_scuro_estremi": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cella": 4,
+      "bbox": [
+        93,
+        79,
+        324,
+        338
+      ],
+      "attesa": true,
+      "margini_px": [
+        93,
+        79,
+        94,
+        80
+      ],
+      "margini_ok": true,
+      "contorno_scuro_estremi": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cella": 5,
+      "bbox": null,
+      "attesa": false,
+      "vuota": true
+    },
+    {
+      "cella": 6,
+      "bbox": [
+        78,
+        131,
+        339,
+        287
+      ],
+      "attesa": true,
+      "margini_px": [
+        78,
+        131,
+        79,
+        131
+      ],
+      "margini_ok": true,
+      "contorno_scuro_estremi": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cella": 7,
+      "bbox": [
+        86,
+        71,
+        331,
+        346
+      ],
+      "attesa": true,
+      "margini_px": [
+        86,
+        71,
+        87,
+        72
+      ],
+      "margini_ok": true,
+      "contorno_scuro_estremi": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cella": 8,
+      "bbox": null,
+      "attesa": false,
+      "vuota": true
+    }
+  ],
+  "normalizzazione": [
+    {
+      "cella": 0,
+      "bbox_originale": [
+        98,
+        176,
+        341,
+        319
+      ],
+      "scala": 1,
+      "dimensioni": [
+        243,
+        143
+      ],
+      "posizione": [
+        87,
+        137
+      ]
+    },
+    {
+      "cella": 1,
+      "bbox_originale": [
+        110,
+        113,
+        326,
+        364
+      ],
+      "scala": 1,
+      "dimensioni": [
+        216,
+        251
+      ],
+      "posizione": [
+        519,
+        83
+      ]
+    },
+    {
+      "cella": 3,
+      "bbox_originale": [
+        97,
+        139,
+        342,
+        276
+      ],
+      "scala": 1,
+      "dimensioni": [
+        245,
+        137
+      ],
+      "posizione": [
+        86,
+        558
+      ]
+    },
+    {
+      "cella": 4,
+      "bbox_originale": [
+        102,
+        90,
+        333,
+        349
+      ],
+      "scala": 1,
+      "dimensioni": [
+        231,
+        259
+      ],
+      "posizione": [
+        511,
+        497
+      ]
+    },
+    {
+      "cella": 6,
+      "bbox_originale": [
+        92,
+        90,
+        353,
+        246
+      ],
+      "scala": 1,
+      "dimensioni": [
+        261,
+        156
+      ],
+      "posizione": [
+        78,
+        967
+      ]
+    },
+    {
+      "cella": 7,
+      "bbox_originale": [
+        90,
+        46,
+        335,
+        321
+      ],
+      "scala": 1,
+      "dimensioni": [
+        245,
+        275
+      ],
+      "posizione": [
+        504,
+        907
+      ]
+    }
+  ],
+  "bytes": 53193,
+  "dimensioni": [
+    1254,
+    1254
+  ],
+  "sha256": "ca60702f911669792b980783bde7a222608a49ae030c3e29895081d31ebc1e0b",
+  "prompt": "A transparent PNG sprite sheet, square1254x1254, invisible3x3cells418px each. Use reference1 for EXACT SMALL ICON SIZE, generous TRANSPARENT CELL MARGINS and row positions. Three rows: column1 CAP ONLY side view, column2 WHOLE MUSHROOM, column3 entirely EMPTY. Each separate icon centered in its own cell, at most60% of cell width AND height, at least18% alpha0 padding on EVERY cell edge. No drawn grid, background, shadows, ground, text, numbers or marks. Clean thick dark brown COMPLETE silhouette outline, flat few colors same as species icons. References2 onward show the approved base icons: preserve cap COLOR and all stems, rings, volvas, netting, scales and spots, change ONLY cap SHAPE and age-appropriate proportions. Each row's cap-only and whole must MATCH shape/color. Use EXACT reference cap shade; color labels are broad categories: 'rosso' may be dark red-BROWN. For Neoboletus preserve dark brown cap and RED DOTS on stem, no net. For Rubroboletus preserve pale cap, RED pores and RED NET. ROW1: pinophilus, base cap color rosso, target shape HEMISPHERICAL: rounded half-sphere dome with NO central point or umbo, even if adult base has an umbo. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":true,\"cap_surface\":[\"liscia\",\"asciutta\",\"viscida\",\"vellutata/feltrata\"],\"hymenophore\":[\"pori\"],\"hymenophore_color\":[\"bianco\",\"crema\",\"giallo\",\"verde\"]}. ROW2: neoboletus-luridiformis, base cap color rosso, target shape HEMISPHERICAL: rounded half-sphere dome with NO central point or umbo, even if adult base has an umbo. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"vellutata/feltrata\",\"asciutta\",\"liscia\"],\"hymenophore\":[\"pori\"],\"hymenophore_color\":[\"rosso\",\"arancio\"]}. ROW3: rubroboletus-satanas, base cap color crema, target shape HEMISPHERICAL: rounded half-sphere dome with NO central point or umbo, even if adult base has an umbo. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":true,\"cap_surface\":[\"vellutata/feltrata\",\"asciutta\",\"liscia\",\"viscida\"],\"hymenophore\":[\"pori\"],\"hymenophore_color\":[\"rosso\",\"arancio\"]}. No new anatomical traits. Reference species icons are shape/color authorities except the explicit target cap shape. Cap-only must match whole cap. Last column empty. True alpha background.",
+  "edits": [],
+  "normalizza": true,
+  "visivo_ok": true,
+  "nota": "Tre boleti emisferici: pinophilus rosso-bruno con reticolo chiaro; piede rosso bruno con pori rossi e puntini senza rete; satana crema-grigiastro con pori e reticolo rossi. Nessun anello/volva. Scala e centratura normalizzate con Python su autorizzazione di Matteo; disegno invariato."
+}
