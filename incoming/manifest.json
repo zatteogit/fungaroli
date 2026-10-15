@@ -15745,5 +15745,30 @@
     ],
     "bytes": 320838,
     "sha256": "66562e60f03c166754870f52f9ddbb8749f76aab3f67c833135ccab5de126f04"
+  },
+  {
+    "file": "incoming/infografiche/terreum.webp",
+    "tipo": "infografica",
+    "soggetto": "terreum",
+    "modello": "image_gen (identificatore tecnico non esposto)",
+    "prompt": "NEW scientific educational plate of Tricholoma terreum, vertical4:5 target1600x2000. Reference1 style/layout only, clean brown outlines few flat colors ivory paper; reference2 terreum morphology; reference3 pardinum morphology, never copy photo composition. IMPORTANT draw all content in middle75% of canvas with 12% empty ivory border all sides; bottom-right38%x24% empty. No writing, letters, numbers, arrows, frames, symbols or watermark. Top35%: two whole SMALL terreum mushrooms cap3-8cm, mouse-gray uniform dry felted fine gray fibrils and tiny scales, gently convex to flat with LOW SMALL UMBO, not pointed shiny silver cone. Slender whitish-gray cylindrical stem, no true ring or volva; mature specimens no cobweb veil. On PINE NEEDLES with a small pinecone, no wood. Middle-left cut section: thin white/pale-gray UNCHANGING cap flesh, slender HOLLOW stem, no pink/brown/blue staining. Middle-right underside enlarged: moderately spaced WHITE to PALE-GRAY SInUATE GILLS, each with a visible NOTCH just before meeting stem; no pink or brown gills. BottomLEFT: larger stocky Tricholoma pardinum (cap about TWICE diameter of whole terreum above), thick pale stem, fleshy pale cap with LARGE GRAY-BROWN TIGER SCALES on lighter ground; cream gills, no ring or volva. Make main small delicate fine-scaled compared with larger stocky strongly scaled pardinum. Mid anatomical details may be enlarged separately. No extra stems or caps, insects or invented structures.",
+    "edits": [
+      "Correct anatomical detail in terreum educational plate. In the MIDDLE RIGHT underside closeup and MIDDLE LEFT longitudinal section, the white-gray GILLS must be SINUATE/NOTCHED: each gill dips/notches just before joining the stem with a small tooth. Remove the continuous circular free-gill gap/collar wrongly separating them from the stem. No brown/pink gills. Keep hollow white cut flesh. Reduce the TOP whole terreum pair to75% current size so bottom-left stocky pardinum has about TWICE the cap diameter of adult terreum. Keep terreum cap low convex with small LOW umbo, fine matte gray felt, not pointed silver cone. All other anatomy unchanged; no rings or volvas. Also zoom whole composition out slightly within SAME4:5ivory canvas to give at least7% blank outer margins and keep lower-right empty. No writing, labels or arrows."
+    ],
+    "tentativi": 2,
+    "stato": "da rivedere: attacco delle lamelle",
+    "checklist_superata": false,
+    "verifica": "Moretta piccola, grigia opaca e feltrata, gambo bianco senza anello/volva, contesto di pineta e sezione chiara con cavità nel gambo. Tigrino più grande e carnoso, squame marcate, gambo tozzo, scala circa 2:1. Corretto collarino libero iniziale, ma la tacca delle lamelle resta schematica e poco netta: richiede revisione prima dell’approvazione. Nessuna tinta rosa/bruna sulle lamelle. Margini liberi, nessun testo.",
+    "riferimenti": [
+      "assets/species/terreum-ref.webp (autore/licenza in data/media.json)",
+      "assets/species/tricholoma-pardinum-inat1.webp (autore/licenza in data/species-traits.json)",
+      "incoming/infografiche/virescens.webp (solo stile/layout)"
+    ],
+    "dimensioni": [
+      1600,
+      2000
+    ],
+    "bytes": 232620,
+    "sha256": "3c942bee7d245fc9c298c6944ceb85847c36641a1a361c79d6da01e281d92e1f"
   }
 ]
