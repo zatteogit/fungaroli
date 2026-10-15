@@ -63,9 +63,10 @@ export function treeThumb(id, size = 56) {
 
 // «Non confonderlo con»: scheda con foto, nome, latino e differenze; se l'albero è in catalogo la scheda intera apre la sua pagina
 const confusableCard = (self) => (c) => {
-  const cid = Object.keys(T).find((k) => k === c.id || T[k].name.toLowerCase() === String(c.name || '').toLowerCase());
+  // il collegamento passa dall'id (i nomi dei sosia possono essere più specifici della scheda: «Pioppo bianco» → pioppo)
+  const cid = T[c.id] ? c.id : Object.keys(T).find((k) => T[k].name.toLowerCase() === String(c.name || '').toLowerCase());
   const [, nm, lat] = String(c.name || '').match(/^(.*?)\s*(?:\(([^)]+)\))?$/) || [];
-  const name = cid ? T[cid].name : nm, latin = cid ? T[cid].latin : (lat || c.latin || '');
+  const name = nm || (cid ? T[cid].name : ''), latin = cardLatin(lat || c.latin || (cid ? T[cid].latin : ''));
   const m = cid && treePhotos(cid)[0];
   const img = m ? `<img data-src="${ASSET(m.thumb || m.file)}" alt="" loading="lazy" decoding="async">` : `<span class="thumb-ph tx-look-ph" aria-hidden="true">${esc(String(name || '?').slice(0, 2))}</span>`;
   const inner = `${img}<span><b>${esc(name)}</b>${latin ? `<i>${esc(latin)}</i>` : ''}<small class="muted">${esc(c.how_to_tell)}</small></span>`;

@@ -26,10 +26,12 @@
       "habit": "Albero alto 25-40 m, fusto diritto e colonnare in fustaia; nel Reatino spesso ceduo a più polloni sulla stessa ceppaia.",
       "confusable": [
         {
+          "id": "carpino bianco",
           "name": "Carpino bianco",
           "how_to_tell": "Foglia doppiamente seghettata e pieghettata lungo le nervature; corteccia con costolature 'muscolose'; frutti con brattea a tre lobi."
         },
         {
+          "id": "carpino nero",
           "name": "Carpino nero",
           "how_to_tell": "Foglia acuminata e doppiamente seghettata, corteccia bruna che si sfalda; infruttescenze pendule simili al luppolo."
         }
@@ -105,6 +107,7 @@
           "how_to_tell": "Foglia composta palmata a 5-7 foglioline; riccio con poche spine corte; seme non commestibile. Solo piantato in paesi e viali."
         },
         {
+          "id": "cerro",
           "name": "Cerro",
           "how_to_tell": "Foglia lobata, non dentata a sega; ghiande in cupola 'riccioluta' invece dei ricci."
         }
@@ -177,10 +180,12 @@
       "habit": "Albero di 25-35 m, fusto diritto e chioma ovale; frequentissimo come ceduo matricinato.",
       "confusable": [
         {
+          "id": "roverella",
           "name": "Roverella",
           "how_to_tell": "Rametti e pagina inferiore vellutati, gemme senza filamenti, cupola con squame corte e appressate."
         },
         {
+          "id": "farnetto",
           "name": "Farnetto",
           "how_to_tell": "Foglia molto più grande, allargata verso l'apice, con molti lobi profondi e regolari e base a orecchiette; gemme grosse senza filamenti."
         }
@@ -253,10 +258,12 @@
       "habit": "Albero di 10-20 m, spesso basso e tortuoso o a ceduo; isolato nei pascoli assume chioma ampia.",
       "confusable": [
         {
+          "id": "cerro",
           "name": "Cerro",
           "how_to_tell": "Gemme con filamenti, cupola riccioluta, corteccia con fondo rossastro."
         },
         {
+          "id": "leccio",
           "name": "Leccio",
           "how_to_tell": "Sempreverde: foglie coriacee verde scuro tutto l'anno, non lobate."
         }
@@ -328,10 +335,12 @@
       "habit": "Albero alto fino a 30 m, fusto slanciato; di solito misto al cerro.",
       "confusable": [
         {
+          "id": "cerro",
           "name": "Cerro",
           "how_to_tell": "Foglia più piccola e ruvida, lobi irregolari; gemme con filamenti e cupola riccioluta."
         },
         {
+          "id": "roverella",
           "name": "Roverella",
           "how_to_tell": "Foglia piccola a lobi poco profondi, ghiande spesso in gruppi."
         }
@@ -405,10 +414,12 @@
       "habit": "Albero fino a 20 m o, più spesso nel Reatino, ceduo denso e scuro su rupi e versanti calcarei.",
       "confusable": [
         {
+          "id": "agrifoglio",
           "name": "Agrifoglio",
           "how_to_tell": "Foglie lucide e glabre su entrambe le facce, molto spinose; bacche rosse; cresce in faggeta."
         },
         {
+          "id": "olivo",
           "name": "Olivo",
           "how_to_tell": "Foglie opposte, strette, argentate sotto ma non feltrose; frutti a oliva."
         }
@@ -480,10 +491,12 @@
       "habit": "Albero fino a 15-20 m, ma nel Reatino quasi sempre ceduo a più polloni di 5-10 m.",
       "confusable": [
         {
+          "id": "carpino bianco",
           "name": "Carpino bianco",
           "how_to_tell": "Corteccia liscia grigio-acciaio con costolature, frutti con brattea a tre lobi e non a vescica."
         },
         {
+          "id": "nocciolo",
           "name": "Nocciolo",
           "how_to_tell": "Foglia più rotonda, ruvida e pelosa; arbusto a molti fusti; nocciole in involucro frangiato."
         }
@@ -545,10 +558,12 @@
       "habit": "Albero di 15-25 m, chioma ovale; nel Reatino sparso e subordinato.",
       "confusable": [
         {
+          "id": "faggio",
           "name": "Faggio",
           "how_to_tell": "Foglia a margine intero ondulato e lucida; corteccia liscia ma senza costolature."
         },
         {
+          "id": "carpino nero",
           "name": "Carpino nero",
           "how_to_tell": "Corteccia bruna sfaldata; frutti a vescica simili al luppolo."
         }
@@ -619,6 +634,7 @@
           "how_to_tell": "Gemme nere vellutate e fiori senza petali; luoghi freschi di montagna e forre."
         },
         {
+          "id": "sorbo domestico",
           "name": "Sorbo domestico",
           "how_to_tell": "Foglie alterne con 13-21 foglioline; frutti a piccola pera."
         }
@@ -684,10 +700,12 @@
       "habit": "Albero di 20-30 m, chioma conica da giovane e poi piatta; nel Reatino quasi sempre in rimboschimenti densi.",
       "confusable": [
         {
+          "id": "pino silvestre",
           "name": "Pino silvestre",
           "how_to_tell": "Corteccia arancio-rossiccia nella parte alta del tronco; aghi corti (3-7 cm), grigio-azzurri e ritorti."
         },
         {
+          "id": "pino domestico",
           "name": "Pino domestico",
           "how_to_tell": "Chioma a ombrello, pigne grandi e pesanti con pinoli; quote basse."
         }
@@ -762,10 +780,12 @@
       "habit": "Albero di 15-25 m dalla tipica chioma a ombrello; da giovane cespuglioso e globoso.",
       "confusable": [
         {
+          "id": "pino d'aleppo",
           "name": "Pino d'Aleppo",
           "how_to_tell": "Chioma rada e irregolare, aghi sottili verde chiaro, pigne piccole con peduncolo ricurvo."
         },
         {
+          "id": "pino nero",
           "name": "Pino nero",
           "how_to_tell": "Chioma conica o piatta ma non a ombrello, corteccia grigio-scura, pigne piccole."
         }
@@ -835,6 +855,7 @@
       "habit": "Albero di 10-20 m, tronco spesso storto, chioma aperta.",
       "confusable": [
         {
+          "id": "pino domestico",
           "name": "Pino domestico",
           "how_to_tell": "Chioma a ombrello densa, pigne grandi globose senza peduncolo ricurvo."
         },
@@ -901,6 +922,7 @@
       "habit": "Albero di 20-30 m, fusto slanciato e chioma alta.",
       "confusable": [
         {
+          "id": "pino nero",
           "name": "Pino nero",
           "how_to_tell": "Corteccia grigio-scura fino in cima, aghi lunghi 8-16 cm verde scuro."
         }
@@ -1039,12 +1061,16 @@
       "habit": "Albero di 15-25 m, chioma leggera con rami ricadenti; pioniere su radure e pascoli.",
       "confusable": [
         {
+          "id": "pioppo",
           "name": "Pioppo bianco",
-          "how_to_tell": "Foglie lobate, bianco-feltrose sotto; corteccia biancastra con lenticelle a rombo; lungo i fiumi."
+          "how_to_tell": "Foglie lobate, bianco-feltrose sotto; corteccia biancastra con lenticelle a rombo; lungo i fiumi.",
+          "latin": "Populus alba"
         },
         {
+          "id": "pioppo",
           "name": "Pioppo tremolo",
-          "how_to_tell": "Foglia rotonda a denti larghi su picciolo piatto; corteccia grigio-verdastra."
+          "how_to_tell": "Foglia rotonda a denti larghi su picciolo piatto; corteccia grigio-verdastra.",
+          "latin": "Populus tremula"
         }
       ],
       "altitude_m": [
@@ -1106,11 +1132,13 @@
       "habit": "Arbusto o piccolo albero di 3-6 m, policormico; nel sottobosco o a formare macchie ai margini.",
       "confusable": [
         {
+          "id": "ontano",
           "name": "Ontano nero",
           "how_to_tell": "Foglia con apice tronco o smarginato e appiccicosa da giovane; piccole pigne legnose nere; lungo le acque."
         },
         {
-          "name": "Tiglio",
+          "id": "tiglio nostrano",
+          "name": "Tiglio nostrano",
           "how_to_tell": "Albero vero; foglia a base asimmetrica, liscia e glabra."
         }
       ],
@@ -1173,7 +1201,8 @@
           "how_to_tell": "Foglie più grandi a lobi larghi e poco profondi, senza latice; samare ad angolo acuto."
         },
         {
-          "name": "Acero minore",
+          "id": "acero di montpellier",
+          "name": "Acero di Montpellier",
           "how_to_tell": "Foglie piccole e coriacee a 3 lobi; samare quasi parallele; versanti caldi."
         }
       ],
@@ -1234,10 +1263,12 @@
       "habit": "Alberi di 20-30 m a crescita rapida, lungo fiumi e fossi; il tremolo è più piccolo e forma macchie da polloni radicali.",
       "confusable": [
         {
+          "id": "salice",
           "name": "Salice",
           "how_to_tell": "Foglie strette e lanceolate; gemme coperte da un'unica perula a cappuccio."
         },
         {
+          "id": "betulla",
           "name": "Betulla",
           "how_to_tell": "Corteccia bianca con lenticelle orizzontali, rametti penduli; luoghi asciutti di montagna."
         }
@@ -1311,10 +1342,12 @@
       "habit": "Alberi di 10-25 m (salice bianco) o arbusti e alberelli di 3-10 m (salicone, salici di greto).",
       "confusable": [
         {
+          "id": "pioppo",
           "name": "Pioppo",
           "how_to_tell": "Foglia larga su picciolo appiattito; gemme con più squame."
         },
         {
+          "id": "olivo",
           "name": "Olivo",
           "how_to_tell": "Foglie opposte, coriacee e sempreverdi; luoghi asciutti coltivati."
         }
@@ -1391,6 +1424,7 @@
           "how_to_tell": "Foglia cuoriforme lucida con apice acuto, strobili più grossi; nel Reatino solo piantato."
         },
         {
+          "id": "nocciolo",
           "name": "Nocciolo",
           "how_to_tell": "Foglia ruvida con punta acuminata e base cuoriforme; nocciole invece degli strobili."
         }
@@ -1455,10 +1489,12 @@
       "habit": "Albero coltivato di 4-10 m, chioma larga e grigiastra.",
       "confusable": [
         {
+          "id": "leccio",
           "name": "Leccio",
           "how_to_tell": "Foglie alterne, più larghe, feltrose sotto; ghiande."
         },
         {
+          "id": "salice",
           "name": "Salice",
           "how_to_tell": "Foglie alterne e caduche; ambienti umidi."
         }
@@ -1510,6 +1546,7 @@
       "habit": "Piccolo albero o arbusto a chioma arrotondata.",
       "confusable": [
         {
+          "id": "acero campestre",
           "name": "Acero campestre",
           "how_to_tell": "Foglie generalmente a cinque lobi e samare con ali molto divaricate."
         }
@@ -1698,6 +1735,7 @@
       "habit": "Arbusto o piccolo albero sempreverde, anche coltivato.",
       "confusable": [
         {
+          "id": "leccio",
           "name": "Leccio",
           "how_to_tell": "Anche il leccio può avere foglie spinose, ma produce ghiande e la pagina inferiore è spesso grigio-pelosa."
         }
@@ -1770,6 +1808,7 @@
       "habit": "Albero deciduo dei boschi freschi; può essere colpito dalla grafiosi.",
       "confusable": [
         {
+          "id": "olmo campestre",
           "name": "Olmo campestre",
           "how_to_tell": "Il seme nella samara è generalmente più vicino all’apice; foglie spesso meno ruvide e con picciolo più lungo. Esistono ibridi."
         }
@@ -1811,6 +1850,7 @@
       "habit": "Albero o arbusto deciduo; può emettere polloni e ibridarsi con l’olmo montano.",
       "confusable": [
         {
+          "id": "olmo montano",
           "name": "Olmo montano",
           "how_to_tell": "Samara generalmente con seme centrale e foglie più grandi, ruvide e brevemente picciolate. Esistono ibridi."
         }
