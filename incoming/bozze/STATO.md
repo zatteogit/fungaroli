@@ -160,7 +160,7 @@ Il conteggio iniziale riguarda le tavole base e i luoghi. Il brief richiede 259 
 
 | File | Specie o variante | Stato | Motivo / note |
 |---|---|---|---|
-| icone/varianti-01.png | amanita-phalloides: colore:giallo, colore:bianco, colore:grigio | ok | QA visiva completata; 6 icone, alpha reale, terza colonna vuota. Base: verde, convesso. |
+| icone/varianti-01.png | amanita-phalloides: colore:giallo, colore:bianco, colore:grigio | ok | Rigenerata: controllo alfa superato, bordo trasparente 42 px (10%) in tutte le celle; anello e volva invariati. |
 
 ## Icone dei caratteri degli alberi — 15 ottobre 2026
 

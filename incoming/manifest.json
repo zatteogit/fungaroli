@@ -7798,14 +7798,14 @@
     "licenza_foto": null,
     "pagina_foto": null,
     "modello": "image_gen (modello integrato, identificatore non esposto)",
-    "prompt": "Use case: scientific-educational. Produce a PNG sprite sheet of mushroom trait icons, matching the attached APPROVED base sheet exactly in line, warm brown thin outlines, simple flat fills, restrained highlights, proportions and scale. Canvas square, equal invisible 3x3 grid. TRUE TRANSPARENT alpha background. No text, no grid lines, no shadows. The reference TOP ROW is Amanita phalloides: olive-green CONVEX cap, white stalk, white pendant ring and white sac volva around bulb. Make THREE COLOR VARIANTS of ONLY this species, preserving its cap shape, white ring, volva, white gills, stem and every anatomical feature. Each row has cap-only icon in column1, WHOLE mushroom in column2; column3 absolutely EMPTY TRANSPARENT. Thus 6 icons, not 9. Place icons at exactly the same local positions and size as the corresponding cap and whole icons of reference top row (the whole icon moves from col3 to col2). Row1: yellow cap (#d9b13c, mild lighter highlight); row2: white cap (#ece7da); row3: gray cap (#9d968a). Change cap coloration only; stem, ring, sac volva and gills remain white. Caps smooth without warts or scales. Do not draw green caps. Cap-only bottom edge near 74% of cell height, whole mushroom from about24% to90% of cell height; center at50% of cell width. Whole stem ring and open sac volva must be clearly distinct. Match approved icon simplicity, no photorealism. Keep all contents inside each cell. Output same 1254x1254 size as reference if possible.",
+    "prompt": "Edit this existing approved mushroom color sprite sheet, preserving ALL 6 icon identities, anatomy, silhouettes and colors. 1254x1254 transparent PNG invisible3x3 grid, col1 cap-only and col2 whole, col3EMPTY. All3 rows are Amanita phalloides with WHITE gills/stem/ring/sac volva: row1 YELLOW cap, row2 WHITE cap,row3 GRAY cap, all original convex shape. Main correction: REMOVE any faint stray alpha specks outside the drawings. Every icon must be FULLY inside its418x418cell with at least42px of completely transparent margin on ALL four sides. Reduce or reposition slightly if needed to guarantee all cap, stem, ring and volva respect that margin. Exactlyzeroalpha in outer42px cell borderstrips and entirethirdcolumn. Transparent background, no shadows/halos. Retain flat simple fewcolor warmbrown outlines, no text. NO new forms or growth stages.",
     "cella": 0,
     "variante": "colore:giallo",
     "base": {
       "colore": "verde",
       "forma": "convesso"
     },
-    "qa": "Controllo visivo di stile, colore, anello, volva e lamelle; alpha reale; terza colonna vuota; allineamento meccanico dei centri alla base senza ricolore o deformazione."
+    "qa": "Rigenerata su richiesta del 15/10. Controllo visivo: colori, anello, volva e forma convessa invariati. Canale alfa verificato: zero pixel con alpha > 0 nelle fasce di bordo di 42 px (10%) di ciascuna cella, terza colonna completamente trasparente."
   },
   {
     "file": "incoming/icone/varianti-01.png",
@@ -7818,14 +7818,14 @@
     "licenza_foto": null,
     "pagina_foto": null,
     "modello": "image_gen (modello integrato, identificatore non esposto)",
-    "prompt": "Use case: scientific-educational. Produce a PNG sprite sheet of mushroom trait icons, matching the attached APPROVED base sheet exactly in line, warm brown thin outlines, simple flat fills, restrained highlights, proportions and scale. Canvas square, equal invisible 3x3 grid. TRUE TRANSPARENT alpha background. No text, no grid lines, no shadows. The reference TOP ROW is Amanita phalloides: olive-green CONVEX cap, white stalk, white pendant ring and white sac volva around bulb. Make THREE COLOR VARIANTS of ONLY this species, preserving its cap shape, white ring, volva, white gills, stem and every anatomical feature. Each row has cap-only icon in column1, WHOLE mushroom in column2; column3 absolutely EMPTY TRANSPARENT. Thus 6 icons, not 9. Place icons at exactly the same local positions and size as the corresponding cap and whole icons of reference top row (the whole icon moves from col3 to col2). Row1: yellow cap (#d9b13c, mild lighter highlight); row2: white cap (#ece7da); row3: gray cap (#9d968a). Change cap coloration only; stem, ring, sac volva and gills remain white. Caps smooth without warts or scales. Do not draw green caps. Cap-only bottom edge near 74% of cell height, whole mushroom from about24% to90% of cell height; center at50% of cell width. Whole stem ring and open sac volva must be clearly distinct. Match approved icon simplicity, no photorealism. Keep all contents inside each cell. Output same 1254x1254 size as reference if possible.",
+    "prompt": "Edit this existing approved mushroom color sprite sheet, preserving ALL 6 icon identities, anatomy, silhouettes and colors. 1254x1254 transparent PNG invisible3x3 grid, col1 cap-only and col2 whole, col3EMPTY. All3 rows are Amanita phalloides with WHITE gills/stem/ring/sac volva: row1 YELLOW cap, row2 WHITE cap,row3 GRAY cap, all original convex shape. Main correction: REMOVE any faint stray alpha specks outside the drawings. Every icon must be FULLY inside its418x418cell with at least42px of completely transparent margin on ALL four sides. Reduce or reposition slightly if needed to guarantee all cap, stem, ring and volva respect that margin. Exactlyzeroalpha in outer42px cell borderstrips and entirethirdcolumn. Transparent background, no shadows/halos. Retain flat simple fewcolor warmbrown outlines, no text. NO new forms or growth stages.",
     "cella": 1,
     "variante": "colore:giallo",
     "base": {
       "colore": "verde",
       "forma": "convesso"
     },
-    "qa": "Controllo visivo di stile, colore, anello, volva e lamelle; alpha reale; terza colonna vuota; allineamento meccanico dei centri alla base senza ricolore o deformazione."
+    "qa": "Rigenerata su richiesta del 15/10. Controllo visivo: colori, anello, volva e forma convessa invariati. Canale alfa verificato: zero pixel con alpha > 0 nelle fasce di bordo di 42 px (10%) di ciascuna cella, terza colonna completamente trasparente."
   },
   {
     "file": "incoming/icone/varianti-01.png",
@@ -7838,14 +7838,14 @@
     "licenza_foto": null,
     "pagina_foto": null,
     "modello": "image_gen (modello integrato, identificatore non esposto)",
-    "prompt": "Use case: scientific-educational. Produce a PNG sprite sheet of mushroom trait icons, matching the attached APPROVED base sheet exactly in line, warm brown thin outlines, simple flat fills, restrained highlights, proportions and scale. Canvas square, equal invisible 3x3 grid. TRUE TRANSPARENT alpha background. No text, no grid lines, no shadows. The reference TOP ROW is Amanita phalloides: olive-green CONVEX cap, white stalk, white pendant ring and white sac volva around bulb. Make THREE COLOR VARIANTS of ONLY this species, preserving its cap shape, white ring, volva, white gills, stem and every anatomical feature. Each row has cap-only icon in column1, WHOLE mushroom in column2; column3 absolutely EMPTY TRANSPARENT. Thus 6 icons, not 9. Place icons at exactly the same local positions and size as the corresponding cap and whole icons of reference top row (the whole icon moves from col3 to col2). Row1: yellow cap (#d9b13c, mild lighter highlight); row2: white cap (#ece7da); row3: gray cap (#9d968a). Change cap coloration only; stem, ring, sac volva and gills remain white. Caps smooth without warts or scales. Do not draw green caps. Cap-only bottom edge near 74% of cell height, whole mushroom from about24% to90% of cell height; center at50% of cell width. Whole stem ring and open sac volva must be clearly distinct. Match approved icon simplicity, no photorealism. Keep all contents inside each cell. Output same 1254x1254 size as reference if possible.",
+    "prompt": "Edit this existing approved mushroom color sprite sheet, preserving ALL 6 icon identities, anatomy, silhouettes and colors. 1254x1254 transparent PNG invisible3x3 grid, col1 cap-only and col2 whole, col3EMPTY. All3 rows are Amanita phalloides with WHITE gills/stem/ring/sac volva: row1 YELLOW cap, row2 WHITE cap,row3 GRAY cap, all original convex shape. Main correction: REMOVE any faint stray alpha specks outside the drawings. Every icon must be FULLY inside its418x418cell with at least42px of completely transparent margin on ALL four sides. Reduce or reposition slightly if needed to guarantee all cap, stem, ring and volva respect that margin. Exactlyzeroalpha in outer42px cell borderstrips and entirethirdcolumn. Transparent background, no shadows/halos. Retain flat simple fewcolor warmbrown outlines, no text. NO new forms or growth stages.",
     "cella": 3,
     "variante": "colore:bianco",
     "base": {
       "colore": "verde",
       "forma": "convesso"
     },
-    "qa": "Controllo visivo di stile, colore, anello, volva e lamelle; alpha reale; terza colonna vuota; allineamento meccanico dei centri alla base senza ricolore o deformazione."
+    "qa": "Rigenerata su richiesta del 15/10. Controllo visivo: colori, anello, volva e forma convessa invariati. Canale alfa verificato: zero pixel con alpha > 0 nelle fasce di bordo di 42 px (10%) di ciascuna cella, terza colonna completamente trasparente."
   },
   {
     "file": "incoming/icone/varianti-01.png",
@@ -7858,14 +7858,14 @@
     "licenza_foto": null,
     "pagina_foto": null,
     "modello": "image_gen (modello integrato, identificatore non esposto)",
-    "prompt": "Use case: scientific-educational. Produce a PNG sprite sheet of mushroom trait icons, matching the attached APPROVED base sheet exactly in line, warm brown thin outlines, simple flat fills, restrained highlights, proportions and scale. Canvas square, equal invisible 3x3 grid. TRUE TRANSPARENT alpha background. No text, no grid lines, no shadows. The reference TOP ROW is Amanita phalloides: olive-green CONVEX cap, white stalk, white pendant ring and white sac volva around bulb. Make THREE COLOR VARIANTS of ONLY this species, preserving its cap shape, white ring, volva, white gills, stem and every anatomical feature. Each row has cap-only icon in column1, WHOLE mushroom in column2; column3 absolutely EMPTY TRANSPARENT. Thus 6 icons, not 9. Place icons at exactly the same local positions and size as the corresponding cap and whole icons of reference top row (the whole icon moves from col3 to col2). Row1: yellow cap (#d9b13c, mild lighter highlight); row2: white cap (#ece7da); row3: gray cap (#9d968a). Change cap coloration only; stem, ring, sac volva and gills remain white. Caps smooth without warts or scales. Do not draw green caps. Cap-only bottom edge near 74% of cell height, whole mushroom from about24% to90% of cell height; center at50% of cell width. Whole stem ring and open sac volva must be clearly distinct. Match approved icon simplicity, no photorealism. Keep all contents inside each cell. Output same 1254x1254 size as reference if possible.",
+    "prompt": "Edit this existing approved mushroom color sprite sheet, preserving ALL 6 icon identities, anatomy, silhouettes and colors. 1254x1254 transparent PNG invisible3x3 grid, col1 cap-only and col2 whole, col3EMPTY. All3 rows are Amanita phalloides with WHITE gills/stem/ring/sac volva: row1 YELLOW cap, row2 WHITE cap,row3 GRAY cap, all original convex shape. Main correction: REMOVE any faint stray alpha specks outside the drawings. Every icon must be FULLY inside its418x418cell with at least42px of completely transparent margin on ALL four sides. Reduce or reposition slightly if needed to guarantee all cap, stem, ring and volva respect that margin. Exactlyzeroalpha in outer42px cell borderstrips and entirethirdcolumn. Transparent background, no shadows/halos. Retain flat simple fewcolor warmbrown outlines, no text. NO new forms or growth stages.",
     "cella": 4,
     "variante": "colore:bianco",
     "base": {
       "colore": "verde",
       "forma": "convesso"
     },
-    "qa": "Controllo visivo di stile, colore, anello, volva e lamelle; alpha reale; terza colonna vuota; allineamento meccanico dei centri alla base senza ricolore o deformazione."
+    "qa": "Rigenerata su richiesta del 15/10. Controllo visivo: colori, anello, volva e forma convessa invariati. Canale alfa verificato: zero pixel con alpha > 0 nelle fasce di bordo di 42 px (10%) di ciascuna cella, terza colonna completamente trasparente."
   },
   {
     "file": "incoming/icone/varianti-01.png",
@@ -7878,14 +7878,14 @@
     "licenza_foto": null,
     "pagina_foto": null,
     "modello": "image_gen (modello integrato, identificatore non esposto)",
-    "prompt": "Use case: scientific-educational. Produce a PNG sprite sheet of mushroom trait icons, matching the attached APPROVED base sheet exactly in line, warm brown thin outlines, simple flat fills, restrained highlights, proportions and scale. Canvas square, equal invisible 3x3 grid. TRUE TRANSPARENT alpha background. No text, no grid lines, no shadows. The reference TOP ROW is Amanita phalloides: olive-green CONVEX cap, white stalk, white pendant ring and white sac volva around bulb. Make THREE COLOR VARIANTS of ONLY this species, preserving its cap shape, white ring, volva, white gills, stem and every anatomical feature. Each row has cap-only icon in column1, WHOLE mushroom in column2; column3 absolutely EMPTY TRANSPARENT. Thus 6 icons, not 9. Place icons at exactly the same local positions and size as the corresponding cap and whole icons of reference top row (the whole icon moves from col3 to col2). Row1: yellow cap (#d9b13c, mild lighter highlight); row2: white cap (#ece7da); row3: gray cap (#9d968a). Change cap coloration only; stem, ring, sac volva and gills remain white. Caps smooth without warts or scales. Do not draw green caps. Cap-only bottom edge near 74% of cell height, whole mushroom from about24% to90% of cell height; center at50% of cell width. Whole stem ring and open sac volva must be clearly distinct. Match approved icon simplicity, no photorealism. Keep all contents inside each cell. Output same 1254x1254 size as reference if possible.",
+    "prompt": "Edit this existing approved mushroom color sprite sheet, preserving ALL 6 icon identities, anatomy, silhouettes and colors. 1254x1254 transparent PNG invisible3x3 grid, col1 cap-only and col2 whole, col3EMPTY. All3 rows are Amanita phalloides with WHITE gills/stem/ring/sac volva: row1 YELLOW cap, row2 WHITE cap,row3 GRAY cap, all original convex shape. Main correction: REMOVE any faint stray alpha specks outside the drawings. Every icon must be FULLY inside its418x418cell with at least42px of completely transparent margin on ALL four sides. Reduce or reposition slightly if needed to guarantee all cap, stem, ring and volva respect that margin. Exactlyzeroalpha in outer42px cell borderstrips and entirethirdcolumn. Transparent background, no shadows/halos. Retain flat simple fewcolor warmbrown outlines, no text. NO new forms or growth stages.",
     "cella": 6,
     "variante": "colore:grigio",
     "base": {
       "colore": "verde",
       "forma": "convesso"
     },
-    "qa": "Controllo visivo di stile, colore, anello, volva e lamelle; alpha reale; terza colonna vuota; allineamento meccanico dei centri alla base senza ricolore o deformazione."
+    "qa": "Rigenerata su richiesta del 15/10. Controllo visivo: colori, anello, volva e forma convessa invariati. Canale alfa verificato: zero pixel con alpha > 0 nelle fasce di bordo di 42 px (10%) di ciascuna cella, terza colonna completamente trasparente."
   },
   {
     "file": "incoming/icone/varianti-01.png",
@@ -7898,14 +7898,14 @@
     "licenza_foto": null,
     "pagina_foto": null,
     "modello": "image_gen (modello integrato, identificatore non esposto)",
-    "prompt": "Use case: scientific-educational. Produce a PNG sprite sheet of mushroom trait icons, matching the attached APPROVED base sheet exactly in line, warm brown thin outlines, simple flat fills, restrained highlights, proportions and scale. Canvas square, equal invisible 3x3 grid. TRUE TRANSPARENT alpha background. No text, no grid lines, no shadows. The reference TOP ROW is Amanita phalloides: olive-green CONVEX cap, white stalk, white pendant ring and white sac volva around bulb. Make THREE COLOR VARIANTS of ONLY this species, preserving its cap shape, white ring, volva, white gills, stem and every anatomical feature. Each row has cap-only icon in column1, WHOLE mushroom in column2; column3 absolutely EMPTY TRANSPARENT. Thus 6 icons, not 9. Place icons at exactly the same local positions and size as the corresponding cap and whole icons of reference top row (the whole icon moves from col3 to col2). Row1: yellow cap (#d9b13c, mild lighter highlight); row2: white cap (#ece7da); row3: gray cap (#9d968a). Change cap coloration only; stem, ring, sac volva and gills remain white. Caps smooth without warts or scales. Do not draw green caps. Cap-only bottom edge near 74% of cell height, whole mushroom from about24% to90% of cell height; center at50% of cell width. Whole stem ring and open sac volva must be clearly distinct. Match approved icon simplicity, no photorealism. Keep all contents inside each cell. Output same 1254x1254 size as reference if possible.",
+    "prompt": "Edit this existing approved mushroom color sprite sheet, preserving ALL 6 icon identities, anatomy, silhouettes and colors. 1254x1254 transparent PNG invisible3x3 grid, col1 cap-only and col2 whole, col3EMPTY. All3 rows are Amanita phalloides with WHITE gills/stem/ring/sac volva: row1 YELLOW cap, row2 WHITE cap,row3 GRAY cap, all original convex shape. Main correction: REMOVE any faint stray alpha specks outside the drawings. Every icon must be FULLY inside its418x418cell with at least42px of completely transparent margin on ALL four sides. Reduce or reposition slightly if needed to guarantee all cap, stem, ring and volva respect that margin. Exactlyzeroalpha in outer42px cell borderstrips and entirethirdcolumn. Transparent background, no shadows/halos. Retain flat simple fewcolor warmbrown outlines, no text. NO new forms or growth stages.",
     "cella": 7,
     "variante": "colore:grigio",
     "base": {
       "colore": "verde",
       "forma": "convesso"
     },
-    "qa": "Controllo visivo di stile, colore, anello, volva e lamelle; alpha reale; terza colonna vuota; allineamento meccanico dei centri alla base senza ricolore o deformazione."
+    "qa": "Rigenerata su richiesta del 15/10. Controllo visivo: colori, anello, volva e forma convessa invariati. Canale alfa verificato: zero pixel con alpha > 0 nelle fasce di bordo di 42 px (10%) di ciascuna cella, terza colonna completamente trasparente."
   },
   {
     "file": "incoming/icone-alberi/tavola-alberi-01.png",
