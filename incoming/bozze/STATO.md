@@ -206,3 +206,5 @@ Ordine aggiornato da Matteo il 15/10: completare prima tutte le varianti di colo
 | icone/varianti-10.png | cortinarius-rubellus: colore:rosso; cortinarius-violaceus: colore:nero; galerina-marginata: colore:bruno | ok | QA visiva completata; 6 icone, alpha reale, terza colonna vuota. Basi nel manifest. |
 
 | icone/varianti-11.png | galerina-marginata: colore:giallo; mellea: colore:bruno; armillaria-tabescens: colore:bruno | ok | QA visiva completata; 6 icone, alpha reale, terza colonna vuota. Basi nel manifest. |
+
+| icone/varianti-12.png | entoloma-sinuatum: colore:crema; entoloma-sinuatum: colore:bianco; calocybe-gambosa: colore:crema | ok | QA visiva completata; 6 icone, alpha reale, terza colonna vuota. Basi nel manifest. |
