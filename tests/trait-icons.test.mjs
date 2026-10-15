@@ -27,3 +27,12 @@ test('variants use only colours and shapes given by the sources, and have both t
     }
   }
 });
+
+test('ogni icona dei funghi è intera: il disegno non tocca il bordo', () => {
+  const names = Object.keys(icons.margins || {});
+  assert.ok(names.length >= 264);
+  for (const n of names) {
+    assert.ok(file(n), `${n}: file mancante`);
+    assert.ok(icons.margins[n] >= 2, `${n}: il disegno tocca il bordo (tagliato?)`);
+  }
+});
