@@ -1753,6 +1753,272 @@
           "thumb": "assets/species/tree-tasso-inat5-t.webp"
         }
       ]
+    },
+    "carpinella": {
+      "latin": "Carpinus orientalis",
+      "photo_taxon": "Carpinus orientalis",
+      "inat": [
+        {
+          "file": "assets/species/tree-carpinella-inat1.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/119464427",
+          "author": "Francesco Santoro",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "place": "83010 Summonte AV, Italia",
+          "date": "2022-05-30",
+          "file_hd": "assets/species/tree-carpinella-inat1-hd.webp",
+          "thumb": "assets/species/tree-carpinella-inat1-t.webp"
+        },
+        {
+          "file": "assets/species/tree-carpinella-inat2.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/119464427",
+          "author": "Francesco Santoro",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "place": "83010 Summonte AV, Italia",
+          "date": "2022-05-30",
+          "file_hd": "assets/species/tree-carpinella-inat2-hd.webp",
+          "thumb": "assets/species/tree-carpinella-inat2-t.webp"
+        },
+        {
+          "file": "assets/species/tree-carpinella-inat3.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/364370378",
+          "author": "Francesco Santoro",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "place": "Summonte AV, Italia",
+          "date": "2026-05-23",
+          "file_hd": "assets/species/tree-carpinella-inat3-hd.webp",
+          "thumb": "assets/species/tree-carpinella-inat3-t.webp"
+        },
+        {
+          "file": "assets/species/tree-carpinella-inat4.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/283453321",
+          "author": "Lukas Schärer",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "place": "Via Peglio, Sassano, Campania, IT",
+          "date": "2025-05-23",
+          "file_hd": "assets/species/tree-carpinella-inat4-hd.webp",
+          "thumb": "assets/species/tree-carpinella-inat4-t.webp"
+        }
+      ],
+      "commons": [
+        {
+          "file": "assets/species/tree-carpinella-commons5.webp",
+          "source": "Wikimedia Commons",
+          "page": "https://commons.wikimedia.org/wiki/File:Carpinus_orientalis_bark.jpg",
+          "author": "Димитър Найденов / Dimìtar Nàydenov",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "place": "a nord di Izgrev, comune di Elhovo, BG",
+          "date": "2014-01-15",
+          "file_hd": "assets/species/tree-carpinella-commons5-hd.webp",
+          "thumb": "assets/species/tree-carpinella-commons5-t.webp"
+        }
+      ]
+    },
+    "ippocastano": {
+      "latin": "Aesculus hippocastanum",
+      "photo_taxon": "Aesculus hippocastanum",
+      "commons": [
+        {
+          "file": "assets/species/tree-ippocastano-commons1.webp",
+          "source": "Wikimedia Commons",
+          "page": "https://commons.wikimedia.org/wiki/File:Ippocastano_vetusto_(Aesculus_hippocastanum),_Roma.jpg",
+          "author": "Albarubescens",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "place": "Campidoglio, Roma, Lazio, IT",
+          "date": "2022-09-18",
+          "file_hd": "assets/species/tree-ippocastano-commons1-hd.webp",
+          "thumb": "assets/species/tree-ippocastano-commons1-t.webp"
+        },
+        {
+          "file": "assets/species/tree-ippocastano-commons2.webp",
+          "source": "Wikimedia Commons",
+          "page": "https://commons.wikimedia.org/wiki/File:Aesculus_hippocastanum_in_botanical_garden_of_UKW_Bydgoszcz_(2).jpg",
+          "author": "Tournasol7",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "place": "Orto botanico UKW, Bydgoszcz, PL",
+          "date": "2024-04-29",
+          "file_hd": "assets/species/tree-ippocastano-commons2-hd.webp",
+          "thumb": "assets/species/tree-ippocastano-commons2-t.webp"
+        },
+        {
+          "file": "assets/species/tree-ippocastano-commons3.webp",
+          "source": "Wikimedia Commons",
+          "page": "https://commons.wikimedia.org/wiki/File:Aesculus_hippocastanum_-_2_fruits.JPG",
+          "author": "Jan Ainali",
+          "license": "CC BY 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+          "place": "Karlstad, SE",
+          "date": "2008-08-23",
+          "file_hd": "assets/species/tree-ippocastano-commons3-hd.webp",
+          "thumb": "assets/species/tree-ippocastano-commons3-t.webp"
+        },
+        {
+          "file": "assets/species/tree-ippocastano-commons4.webp",
+          "source": "Wikimedia Commons",
+          "page": "https://commons.wikimedia.org/wiki/File:Horse-chestnut_seeds_and_leaf,_Brescia,_Italy_(48336364).jpg",
+          "author": "Valerio Carnevali",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "place": "Castello di Brescia, Lombardia, IT",
+          "date": "6 October ",
+          "file_hd": "assets/species/tree-ippocastano-commons4-hd.webp",
+          "thumb": "assets/species/tree-ippocastano-commons4-t.webp"
+        },
+        {
+          "file": "assets/species/tree-ippocastano-commons5.webp",
+          "source": "Wikimedia Commons",
+          "page": "https://commons.wikimedia.org/wiki/File:Aesculus_hippocastanum_bark_1.JPG",
+          "author": "TOMMES-WIKI",
+          "license": "CC BY 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+          "place": "non indicato",
+          "date": "2010-10-03",
+          "file_hd": "assets/species/tree-ippocastano-commons5-hd.webp",
+          "thumb": "assets/species/tree-ippocastano-commons5-t.webp"
+        }
+      ]
+    },
+    "ontano napoletano": {
+      "latin": "Alnus cordata",
+      "photo_taxon": "Alnus cordata",
+      "inat": [
+        {
+          "file": "assets/species/tree-ontano-napoletano-inat1.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/135111284",
+          "author": "Francesco Santoro",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "place": "83010 Summonte AV, Italia",
+          "date": "2022-09-15",
+          "file_hd": "assets/species/tree-ontano-napoletano-inat1-hd.webp",
+          "thumb": "assets/species/tree-ontano-napoletano-inat1-t.webp"
+        },
+        {
+          "file": "assets/species/tree-ontano-napoletano-inat2.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/329685385",
+          "author": "Gianluca Congi🪶🦆🌲",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "place": "87050 Casali del Manco CS, Italia",
+          "date": "2025-12-06",
+          "file_hd": "assets/species/tree-ontano-napoletano-inat2-hd.webp",
+          "thumb": "assets/species/tree-ontano-napoletano-inat2-t.webp"
+        },
+        {
+          "file": "assets/species/tree-ontano-napoletano-inat3.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/135111284",
+          "author": "Francesco Santoro",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "place": "83010 Summonte AV, Italia",
+          "date": "2022-09-15",
+          "file_hd": "assets/species/tree-ontano-napoletano-inat3-hd.webp",
+          "thumb": "assets/species/tree-ontano-napoletano-inat3-t.webp"
+        },
+        {
+          "file": "assets/species/tree-ontano-napoletano-inat4.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/329685385",
+          "author": "Gianluca Congi🪶🦆🌲",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "place": "87050 Casali del Manco CS, Italia",
+          "date": "2025-12-06",
+          "file_hd": "assets/species/tree-ontano-napoletano-inat4-hd.webp",
+          "thumb": "assets/species/tree-ontano-napoletano-inat4-t.webp"
+        },
+        {
+          "file": "assets/species/tree-ontano-napoletano-inat5.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/329685385",
+          "author": "Gianluca Congi🪶🦆🌲",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "place": "87050 Casali del Manco CS, Italia",
+          "date": "2025-12-06",
+          "file_hd": "assets/species/tree-ontano-napoletano-inat5-hd.webp",
+          "thumb": "assets/species/tree-ontano-napoletano-inat5-t.webp"
+        }
+      ]
+    },
+    "pino marittimo": {
+      "latin": "Pinus pinaster",
+      "photo_taxon": "Pinus pinaster",
+      "inat": [
+        {
+          "file": "assets/species/tree-pino-marittimo-inat1.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/139749343",
+          "author": "etrusko25",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "place": "58100 Grosseto GR, Italia",
+          "date": "2022-10-23",
+          "file_hd": "assets/species/tree-pino-marittimo-inat1-hd.webp",
+          "thumb": "assets/species/tree-pino-marittimo-inat1-t.webp"
+        },
+        {
+          "file": "assets/species/tree-pino-marittimo-inat2.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/139749343",
+          "author": "etrusko25",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "place": "58100 Grosseto GR, Italia",
+          "date": "2022-10-23",
+          "file_hd": "assets/species/tree-pino-marittimo-inat2-hd.webp",
+          "thumb": "assets/species/tree-pino-marittimo-inat2-t.webp"
+        },
+        {
+          "file": "assets/species/tree-pino-marittimo-inat3.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/105834903",
+          "author": "etrusko25",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "place": "58100 Grosseto GR, Italia",
+          "date": "2022-01-30",
+          "file_hd": "assets/species/tree-pino-marittimo-inat3-hd.webp",
+          "thumb": "assets/species/tree-pino-marittimo-inat3-t.webp"
+        },
+        {
+          "file": "assets/species/tree-pino-marittimo-inat4.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/189235057",
+          "author": "Wolfgang Ahlmer",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "place": "58100 Grosseto, Italien",
+          "date": "2014-09-01",
+          "file_hd": "assets/species/tree-pino-marittimo-inat4-hd.webp",
+          "thumb": "assets/species/tree-pino-marittimo-inat4-t.webp"
+        },
+        {
+          "file": "assets/species/tree-pino-marittimo-inat5.webp",
+          "source": "iNaturalist (research grade)",
+          "page": "https://www.inaturalist.org/observations/259865079",
+          "author": "Gianmaria Bonari",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "place": "Provincia di Siena, Italia",
+          "date": "2022-06-01",
+          "file_hd": "assets/species/tree-pino-marittimo-inat5-hd.webp",
+          "thumb": "assets/species/tree-pino-marittimo-inat5-t.webp"
+        }
+      ]
     }
   }
 }
