@@ -1,0 +1,285 @@
+{
+  "file": "incoming/icone/forme-10.png",
+  "stato": "ok",
+  "verifiche": [
+    {
+      "cella": 0,
+      "bbox": [
+        62,
+        156,
+        356,
+        262
+      ],
+      "attesa": true,
+      "margini_px": [
+        62,
+        156,
+        62,
+        156
+      ],
+      "margini_ok": true,
+      "contorno_scuro_estremi": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cella": 1,
+      "bbox": [
+        68,
+        93,
+        349,
+        324
+      ],
+      "attesa": true,
+      "margini_px": [
+        68,
+        93,
+        69,
+        94
+      ],
+      "margini_ok": true,
+      "contorno_scuro_estremi": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cella": 2,
+      "bbox": null,
+      "attesa": false,
+      "vuota": true
+    },
+    {
+      "cella": 3,
+      "bbox": [
+        62,
+        158,
+        356,
+        260
+      ],
+      "attesa": true,
+      "margini_px": [
+        62,
+        158,
+        62,
+        158
+      ],
+      "margini_ok": true,
+      "contorno_scuro_estremi": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cella": 4,
+      "bbox": [
+        62,
+        96,
+        356,
+        321
+      ],
+      "attesa": true,
+      "margini_px": [
+        62,
+        96,
+        62,
+        97
+      ],
+      "margini_ok": true,
+      "contorno_scuro_estremi": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cella": 5,
+      "bbox": null,
+      "attesa": false,
+      "vuota": true
+    },
+    {
+      "cella": 6,
+      "bbox": [
+        62,
+        159,
+        356,
+        258
+      ],
+      "attesa": true,
+      "margini_px": [
+        62,
+        159,
+        62,
+        160
+      ],
+      "margini_ok": true,
+      "contorno_scuro_estremi": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cella": 7,
+      "bbox": [
+        62,
+        93,
+        356,
+        324
+      ],
+      "attesa": true,
+      "margini_px": [
+        62,
+        93,
+        62,
+        94
+      ],
+      "margini_ok": true,
+      "contorno_scuro_estremi": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cella": 8,
+      "bbox": null,
+      "attesa": false,
+      "vuota": true
+    }
+  ],
+  "normalizzazione": [
+    {
+      "cella": 0,
+      "bbox_originale": [
+        90,
+        192,
+        402,
+        304
+      ],
+      "scala": 0.9423076923076923,
+      "dimensioni": [
+        294,
+        106
+      ],
+      "posizione": [
+        62,
+        156
+      ]
+    },
+    {
+      "cella": 1,
+      "bbox_originale": [
+        69,
+        145,
+        350,
+        376
+      ],
+      "scala": 1,
+      "dimensioni": [
+        281,
+        231
+      ],
+      "posizione": [
+        486,
+        93
+      ]
+    },
+    {
+      "cella": 3,
+      "bbox_originale": [
+        83,
+        156,
+        406,
+        268
+      ],
+      "scala": 0.9102167182662538,
+      "dimensioni": [
+        294,
+        102
+      ],
+      "posizione": [
+        62,
+        576
+      ]
+    },
+    {
+      "cella": 4,
+      "bbox_originale": [
+        60,
+        111,
+        361,
+        341
+      ],
+      "scala": 0.9767441860465116,
+      "dimensioni": [
+        294,
+        225
+      ],
+      "posizione": [
+        480,
+        514
+      ]
+    },
+    {
+      "cella": 6,
+      "bbox_originale": [
+        85,
+        128,
+        406,
+        236
+      ],
+      "scala": 0.9158878504672897,
+      "dimensioni": [
+        294,
+        99
+      ],
+      "posizione": [
+        62,
+        995
+      ]
+    },
+    {
+      "cella": 7,
+      "bbox_originale": [
+        61,
+        63,
+        362,
+        300
+      ],
+      "scala": 0.9767441860465116,
+      "dimensioni": [
+        294,
+        231
+      ],
+      "posizione": [
+        480,
+        929
+      ]
+    }
+  ],
+  "bytes": 50757,
+  "dimensioni": [
+    1254,
+    1254
+  ],
+  "sha256": "8742c5a7575f371bce32e72ce87b455864273fb631e3bf188d8067eb0307d0bb",
+  "prompt": "A transparent PNG sprite sheet, square1254x1254, invisible3x3cells418px each. Use reference1 for EXACT SMALL ICON SIZE, generous TRANSPARENT CELL MARGINS and row positions. Three rows: column1 CAP ONLY side view, column2 WHOLE MUSHROOM, column3 entirely EMPTY. Each separate icon centered in its own cell, at most60% of cell width AND height, at least18% alpha0 padding on EVERY cell edge. No drawn grid, background, shadows, ground, text, numbers or marks. Clean thick dark brown COMPLETE silhouette outline, flat few colors same as species icons. References2 onward show the approved base icons: preserve cap COLOR and all stems, rings, volvas, netting, scales and spots, change ONLY cap SHAPE and age-appropriate proportions. Each row's cap-only and whole must MATCH shape/color. ROW1: mellea, base cap color giallo, target shape FLAT: almost horizontal, expanded cap. Keep attached base icon anatomy; scientific constraints: {\"ring\":true,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"squamosa\",\"liscia\",\"asciutta\",\"viscida\"],\"hymenophore\":[\"lamelle\"]}. ROW2: entoloma-sinuatum, base cap color grigio, target shape FLAT: almost horizontal, expanded cap. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"asciutta\",\"viscida\",\"liscia\",\"squamosa\"],\"hymenophore\":[\"lamelle\"]}. ROW3: cortinarius-orellanus, base cap color arancio, target shape FLAT: almost horizontal, expanded cap. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"asciutta\",\"squamosa\",\"vellutata/feltrata\",\"liscia\"],\"hymenophore\":[\"lamelle\"]}. No new anatomical traits. Reference species icons are shape/color authorities except the explicit target cap shape. Cap-only must match whole cap. Last column empty. True alpha background.",
+  "edits": [
+    "Change ONLY the underside GILL COLOR in the TWO icons of ROW3, Cortinarius orellanus: the isolated cap and cap on whole mushroom must have RUST-BROWN gills, not cream/white. Preserve orange cap, pale ochre stem without membranous ring or volva and flat cap shape. All other four icons in rows1/2 unchanged (mellea cream gills and ring, entoloma pink gills no ring). Same transparent3x3sheet, each icon fully inside cell, column3empty, dark outlines, no text or background."
+  ],
+  "normalizza": true,
+  "visivo_ok": true,
+  "nota": "Chiodino piano con squamette e anello, lamelle crema; entoloma piano grigio con lamelle rosa e senza anello; orellano piano arancio con lamelle bruno-ruggine corrette dopo edit. Scala e centratura normalizzate con Python su autorizzazione di Matteo; disegno invariato."
+}
