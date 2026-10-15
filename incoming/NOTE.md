@@ -302,3 +302,6 @@ Fungo generico senza attribuzione a specie, cappello evidenziato e gambo spento.
 
 
 Combinazioni-01: 4 colori × emisferico; gambo bianco, anello e volva a sacco conservati. Export proporzionale del soggetto completo, senza ricolore automatico. Otto celle usate, cella8 vuota per rispettare le due tavole previste.
+
+
+Combinazioni-02: piano maturo con profilo molto basso; invariati gambo bianco, anello e volva a sacco. Rigenerata una bozza troppo convessa; nessuna modifica automatica della forma.
