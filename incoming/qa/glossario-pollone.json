@@ -1,0 +1,66 @@
+{
+  "file": "incoming/glossario/pollone.png",
+  "size": [
+    1024,
+    1024
+  ],
+  "sha256": "2f40e0889e2bad5863db430fff29f2b5d132dcf115da1bf2baaca72df748eb39",
+  "source_bbox_alpha128": [
+    131,
+    203,
+    894,
+    820
+  ],
+  "source_extremes_rgb_max": [
+    [
+      66,
+      21,
+      2
+    ],
+    [
+      61,
+      20,
+      4
+    ],
+    [
+      64,
+      21,
+      3
+    ],
+    [
+      64,
+      20,
+      5
+    ]
+  ],
+  "extremes_rgb_max": [
+    [
+      66,
+      21,
+      2
+    ],
+    [
+      61,
+      20,
+      3
+    ],
+    [
+      62,
+      21,
+      3
+    ],
+    [
+      64,
+      20,
+      4
+    ]
+  ],
+  "margin_required_px": 103,
+  "margin_alpha_max": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "export": "Intero soggetto isolato con2px di antialias e centrato proporzionalmente; nessun ritocco morfologico o ricolore."
+}

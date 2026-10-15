@@ -1,0 +1,66 @@
+{
+  "file": "incoming/glossario/ceppaia.png",
+  "size": [
+    1024,
+    1024
+  ],
+  "sha256": "2e309315302dab7b14893b7d7e300c47d77e8812d5c73ecde4c7010c5afb84bc",
+  "source_bbox_alpha128": [
+    130,
+    265,
+    894,
+    759
+  ],
+  "source_extremes_rgb_max": [
+    [
+      69,
+      19,
+      5
+    ],
+    [
+      73,
+      23,
+      3
+    ],
+    [
+      65,
+      15,
+      0
+    ],
+    [
+      66,
+      16,
+      1
+    ]
+  ],
+  "extremes_rgb_max": [
+    [
+      68,
+      19,
+      5
+    ],
+    [
+      70,
+      20,
+      3
+    ],
+    [
+      67,
+      15,
+      1
+    ],
+    [
+      65,
+      16,
+      1
+    ]
+  ],
+  "margin_required_px": 103,
+  "margin_alpha_max": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "export": "Intero soggetto isolato con2px di antialias e centrato proporzionalmente; nessun ritocco morfologico o ricolore."
+}

@@ -1,0 +1,66 @@
+{
+  "file": "incoming/glossario/segnavia.png",
+  "size": [
+    1024,
+    1024
+  ],
+  "sha256": "3baa217e1b1a47727396149edb687a8da3768a848036dda7c3110201be7640db",
+  "source_bbox_alpha128": [
+    130,
+    202,
+    894,
+    821
+  ],
+  "source_extremes_rgb_max": [
+    [
+      72,
+      29,
+      13
+    ],
+    [
+      71,
+      28,
+      13
+    ],
+    [
+      73,
+      30,
+      14
+    ],
+    [
+      71,
+      28,
+      12
+    ]
+  ],
+  "extremes_rgb_max": [
+    [
+      73,
+      28,
+      11
+    ],
+    [
+      70,
+      27,
+      11
+    ],
+    [
+      73,
+      31,
+      14
+    ],
+    [
+      70,
+      28,
+      13
+    ]
+  ],
+  "margin_required_px": 103,
+  "margin_alpha_max": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "export": "Intero soggetto isolato con2px di antialias e centrato proporzionalmente; nessun ritocco morfologico o ricolore."
+}

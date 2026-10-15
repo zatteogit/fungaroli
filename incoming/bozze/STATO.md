@@ -347,3 +347,10 @@ Ordine aggiornato da Matteo il 15/10: completare prima tutte le varianti di colo
 | qa/glossario-gemme.json | ok | Margini trasparenti e contorni verificati col codice; verifica visiva completata. |
 | glossario/aghi.png | ok | Margini trasparenti e contorni verificati col codice; verifica visiva completata. |
 | qa/glossario-aghi.json | ok | Margini trasparenti e contorni verificati col codice; verifica visiva completata. |
+
+| glossario/ceppaia.png | ok | Margini trasparenti e contorni verificati col codice; verifica visiva completata. |
+| qa/glossario-ceppaia.json | ok | Margini trasparenti e contorni verificati col codice; verifica visiva completata. |
+| glossario/pollone.png | ok | Margini trasparenti e contorni verificati col codice; verifica visiva completata. |
+| qa/glossario-pollone.json | ok | Margini trasparenti e contorni verificati col codice; verifica visiva completata. |
+| glossario/segnavia.png | ok | Margini trasparenti e contorni verificati col codice; verifica visiva completata. |
+| qa/glossario-segnavia.json | ok | Margini trasparenti e contorni verificati col codice; verifica visiva completata. |

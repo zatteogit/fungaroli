@@ -15211,5 +15211,41 @@
       "data/glossary.json:aghi.definition,observe"
     ],
     "qa": "incoming/qa/glossario-aghi.json"
+  },
+  {
+    "file": "incoming/glossario/ceppaia.png",
+    "tipo": "glossario",
+    "soggetto": "ceppaia",
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case: scientific-educational. One 1024x1024PNG educational glossary illustration for Fungaroli. Reference is the APPROVED STYLE: simple warm flat illustration, thick smooth DARK BROWN contours, restrained warm orange highlight, cream/beige muted supporting elements, one subtle highlight at most. No text, letters, numbers, labels, watermark or UI. Genuine transparent alpha background. WHOLE subject centered, at least15% transparent margin on every side. EVERY outermost visible edge or tip must end in DARK BROWN OUTLINE, no flat fill cutoffs. Keep biological concept anatomically clear, not species identification. SUBJECT: A whole CUT TREE STUMP with complete rounded cut surface and broad ROOTS exposed just above ground, 2small new green shoots near base. Muted brown wood, cream cut surface, restrained orange accent. Roots naturally taper with DARK outline, never straight crop. No large tree trunk above cut surface. SOURCE definition: Base e apparato radicale di un albero, spesso visibili dopo il taglio del fusto. Può produrre nuovi germogli o diventare legno morto.",
+    "stato": "ok",
+    "fonti_dati": [
+      "data/glossary.json:ceppaia.definition,observe"
+    ],
+    "qa": "incoming/qa/glossario-ceppaia.json"
+  },
+  {
+    "file": "incoming/glossario/pollone.png",
+    "tipo": "glossario",
+    "soggetto": "pollone",
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case: scientific-educational. One 1024x1024PNG educational glossary illustration for Fungaroli. Reference is the APPROVED STYLE: simple warm flat illustration, thick smooth DARK BROWN contours, restrained warm orange highlight, cream/beige muted supporting elements, one subtle highlight at most. No text, letters, numbers, labels, watermark or UI. Genuine transparent alpha background. WHOLE subject centered, at least15% transparent margin on every side. EVERY outermost visible edge or tip must end in DARK BROWN OUTLINE, no flat fill cutoffs. Keep biological concept anatomically clear, not species identification. SUBJECT: Same conceptual CUT TREE STUMP with roots at ground surface. A SINGLE YOUNG WOODY SHOOT arises from base near cut: highlight this shoot orange, with3small leaves. Stump and roots subdued beige/brown. New shoot visibly CONNECTED to stump base, not separate seedling or fungus. SOURCE definition: Nuovo getto che nasce da una gemma avventizia di una pianta legnosa, per esempio alla base del fusto, dalle radici o vicino a un vecchio taglio.",
+    "stato": "ok",
+    "fonti_dati": [
+      "data/glossary.json:pollone.definition,observe"
+    ],
+    "qa": "incoming/qa/glossario-pollone.json"
+  },
+  {
+    "file": "incoming/glossario/segnavia.png",
+    "tipo": "glossario",
+    "soggetto": "segnavia",
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case: scientific-educational. One 1024x1024PNG educational glossary illustration for Fungaroli. Reference is the APPROVED STYLE: simple warm flat illustration, thick smooth DARK BROWN contours, restrained warm orange highlight, cream/beige muted supporting elements, one subtle highlight at most. No text, letters, numbers, labels, watermark or UI. Genuine transparent alpha background. WHOLE subject centered, at least15% transparent margin on every side. EVERY outermost visible edge or tip must end in DARK BROWN OUTLINE, no flat fill cutoffs. Keep biological concept anatomically clear, not species identification. SUBJECT: One complete rounded irregular stone with a small realistic simplified CAI TRAIL PAINT MARK: horizontal WHITE stripe above RED stripe painted directly on stone. No number, no arrow, no words. Stone muted beige with thick closed dark brown contour. Mark only two horizontal paint bands, no flag pole, no sign board. SOURCE definition: Segno, simbolo o numero che aiuta a seguire un percorso. I sentieri CAI utilizzano segni bianco-rossi e tabelle secondo la rete locale.",
+    "stato": "ok",
+    "fonti_dati": [
+      "data/glossary.json:segnavia.definition,observe"
+    ],
+    "qa": "incoming/qa/glossario-segnavia.json"
   }
 ]
