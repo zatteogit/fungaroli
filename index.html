@@ -2,7 +2,7 @@
 <html lang="it">
 <head>
   <meta charset="utf-8">
-  <meta name="app-version" content="fungaroli-shell-v68">
+  <meta name="app-version" content="fungaroli-shell-v69">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
   <link rel="preload" href="data/crop-points.json" as="fetch" crossorigin>
   <meta name="theme-color" content="#f3efe7" media="(prefers-color-scheme: light)">
@@ -221,6 +221,7 @@
 
   <dialog id="onboarding" class="sheet-dlg onboarding" aria-labelledby="ob-h">
     <h2 id="ob-h">Prima di usare l'app</h2>
+    <p class="ob-sub" id="ob-sub" hidden></p>
     <ul class="ob-points"></ul>
     <button type="button" class="btn primary big" id="ob-accept">Ho capito</button>
     <p class="small muted"><a href="#/info" id="ob-more">Leggi regole e note legali</a></p>
