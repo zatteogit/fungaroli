@@ -289,3 +289,8 @@ Ombrella composta generica con cinque raggi principali e ombrellette terminali, 
 ### fioriture-primavera — 15/10, continuazione
 
 Primula con rosetta basale di foglie oblunghe dentellate, fiore a cinque lobi su peduncolo nudo; germoglio separato. Fonti interne: data/plants.json: primula.recognize; data/challenges.json: fioriture-primavera. Rugosità ridotta a poche incisioni, un solo fiore; gradazione gialla del fiore omessa per rispettare l'inchiostro unico. PNG e QA verificati prima del caricamento; anteprima64/84/112px sui due temi in incoming/bozze/timbri/fioriture-primavera-verifica.png.
+
+
+### colori-autunno — 15/10, continuazione
+
+Due foglie separate in caduta: faggio ovale a bordo intero e acero campestre con lobi palmati arrotondati; inchiostro ruggine arancio. Fonti interne: data/trees.json: faggio.leaf,fruit; acero campestre.leaf,fruit,recognize; data/challenges.json: colori-autunno. Scelte due foglie invece di tre per leggibilità; frutti e nervature minute omessi, nessun gradiente di colore per rispettare l'inchiostro unico. PNG e QA verificati prima del caricamento; anteprima64/84/112px sui due temi in incoming/bozze/timbri/colori-autunno-verifica.png.

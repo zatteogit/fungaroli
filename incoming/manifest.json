@@ -14472,5 +14472,19 @@
     ],
     "qa": "Primula con rosetta basale di foglie oblunghe dentellate, fiore a cinque lobi su peduncolo nudo; germoglio separato; formato512x512, fasce52px alpha0 e quattro estremi nello stesso inchiostro verificati col codice. Prove64/84/112px sui2temi.",
     "semplificazioni": "Rugosità ridotta a poche incisioni, un solo fiore; gradazione gialla del fiore omessa per rispettare l'inchiostro unico"
+  },
+  {
+    "file": "incoming/timbri/colori-autunno.png",
+    "tipo": "timbro",
+    "soggetto": "colori-autunno",
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case: scientific-educational. Create a NEW512x512PNG achievement INK STAMP for Fungaroli. Attached stamp is the APPROVED STYLE reference ONLY: single muted natural ink, double circular ring (outer heavier, inner thin), restrained irregularity like ink on a field notebook, flat clean pictogram, no photographic realism, no shading. Real alpha transparency everywhere not ink, including all negative spaces. Never add a pale fill or brown outlines. Ink color as specified below is the ONLY hue for rings and subject, with at most minor natural ink variation. No text/letters/numbers/symbol labels. Diameter about390px centered256,256, leave at least56px genuinely transparent on all four sides. Keep entire subject with every petiole/stem INSIDE inner ring, inset at least20px from ring. Simple robust negative-space cuts, readable64,84,112px. No tiny decoration. Anatomy must follow supplied source specification; don't borrow subject from reference.\nNEW SUBJECT AUTUNNO: TWO separate autumn leaves drifting/falling, ONEwarm RUSTORANGE ink #ba8956. Source data/trees.json faggio.leaf: ovalelliptic entiregentlywavyedge,5–9pairsstraightveins; acero campestre.leaf: simple PALMATE with3–5BLUNT roundedlobes, ENTIRElobemargins. Draw exactly2WHOLEfallingleaves ondiagonaltrajectory butnotconnected. UpperLEFT: mediumbeechleaf ellipticwithpointedtip,smoothentireedge,5straightpairveins,veryshortpetiole,tiltedabout35degrees. LowerRIGHT: FIELD MAPLEleaf with5BROAD roundedbluntPALMATELOBESradiatingfrombase, sinusesbetween, simplefanmidribs negativecuts, shortcurvedpetiole, tiltedoppositeangle. Bothdifferentclear silhouettes, NOserrationonmaple, NOmaplepointyCanadianflagshape, NOcompoundpalmateleaf withseparateleaflets, NOacorns orfruit, NOtreebranches. Falling impliedbyoffsetandorientation only, NOarrows,motionlines,lettering. Compactwithincentral55%canvas, alltipspetioles safelyseparatedfromdoubleinnercircle. Keepexactapprovedstampstyle.",
+    "stato": "ok",
+    "fonti_dati": [
+      "data/trees.json: faggio.leaf,fruit; acero campestre.leaf,fruit,recognize",
+      "data/challenges.json: colori-autunno"
+    ],
+    "qa": "Due foglie separate in caduta: faggio ovale a bordo intero e acero campestre con lobi palmati arrotondati; inchiostro ruggine arancio; formato512x512, fasce52px alpha0 e quattro estremi nello stesso inchiostro verificati col codice. Prove64/84/112px sui2temi.",
+    "semplificazioni": "Scelte due foglie invece di tre per leggibilità; frutti e nervature minute omessi, nessun gradiente di colore per rispettare l'inchiostro unico"
   }
 ]
