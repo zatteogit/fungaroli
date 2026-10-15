@@ -386,7 +386,9 @@ export function traitStrip(edibleId, t = refOf(edibleId)) {
   // cappello: la sua forma, nei suoi colori, con le verruche se ci sono; sotto forma e diametro
   if (tr.cap_color || tr.cap_shape) {
     const shapes = [].concat(tr.cap_shape || ['convesso']), cols = [].concat(tr.cap_color || ['bruno']);
-    out.push(tile(ic ? illus(t.key, 'cappello') : capArt(shapes, cols, tr.cap_veil === true), 'Cappello', orList([].concat(tr.cap_color || []).map((v) => one(Q('cap_color'), v))) || '',
+    // con la frequenza dalle fonti: «rosso (di solito), arancio (a volte) o giallo (di rado)»
+    const freq = (field, q, v) => { const w = t.trait_freq?.[field]?.[v]; return one(q, v) + (w ? ` (${w})` : ''); };
+    out.push(tile(ic ? illus(t.key, 'cappello') : capArt(shapes, cols, tr.cap_veil === true), 'Cappello', orList([].concat(tr.cap_color || []).map((v) => freq('cap_color', Q('cap_color'), v))) || '',
       [orList([].concat(tr.cap_shape || []).slice(0, 2).map((v) => optLabel(Q('cap_shape'), v))), sizeTxt(tr.cap_size)].filter(Boolean).join(' · '), dots));
   }
   // sotto il cappello e il suo colore in una sola tessera: "Lamelle · bianche o crema"
