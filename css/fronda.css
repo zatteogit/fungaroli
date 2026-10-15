@@ -31,16 +31,19 @@
 }
 .onboarding .ob-sub { margin: 4px 0 0; color: var(--text-2); font-size: 15px; }
 
-/* Alone «ambilight» (js/ambilight.js): i colori dei bordi della foto diventano ombre sfumate attorno alla copertina.
-   Leggero in chiaro, più presente in scuro; spento con «riduci trasparenza». */
-.phero, .cover { --amb-k: 58%; transition: box-shadow .6s ease; }
+/* Alone «ambilight» (js/ambilight.js): i colori dei quattro bordi della foto diventano luce sfumata attorno alla copertina,
+   in modo quasi uniforme su ogni lato, come se la foto si espandesse. Discreto in chiaro, più presente in scuro;
+   spento con «riduci trasparenza». Sul telefono la testata della zona è a tutta larghezza: la luce va sopra e sotto. */
+.phero, .cover { --amb-k: 46%; --amb-x: 30px; --amb-y: 30px; --amb-blur: 96px; --amb-spread: -20px; transition: box-shadow .6s ease; }
 .phero.has-amb, .cover.has-amb {
-  box-shadow: var(--shadow-2),
-    -36px 12px 90px -28px color-mix(in srgb, var(--amb-l) var(--amb-k), transparent),
-    36px 12px 90px -28px color-mix(in srgb, var(--amb-r) var(--amb-k), transparent),
-    0 44px 100px -36px color-mix(in srgb, var(--amb-b) var(--amb-k), transparent);
+  box-shadow: var(--shadow-1),
+    0 calc(-1 * var(--amb-y)) var(--amb-blur) var(--amb-spread) color-mix(in srgb, var(--amb-t, var(--amb-b)) var(--amb-k), transparent),
+    calc(-1 * var(--amb-x)) 0 var(--amb-blur) var(--amb-spread) color-mix(in srgb, var(--amb-l) var(--amb-k), transparent),
+    var(--amb-x) 0 var(--amb-blur) var(--amb-spread) color-mix(in srgb, var(--amb-r) var(--amb-k), transparent),
+    0 var(--amb-y) var(--amb-blur) var(--amb-spread) color-mix(in srgb, var(--amb-b) var(--amb-k), transparent);
 }
-:root[data-theme="dark"] :is(.phero, .cover) { --amb-k: 62%; }
-@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) :is(.phero, .cover) { --amb-k: 62%; } }
+@media (max-width: 760px) { .phero { --amb-x: 0px; --amb-y: 40px; --amb-blur: 110px; --amb-spread: -16px; } }
+:root[data-theme="dark"] :is(.phero, .cover) { --amb-k: 66%; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) :is(.phero, .cover) { --amb-k: 66%; } }
 @media (prefers-reduced-transparency: reduce) { .phero.has-amb, .cover.has-amb { box-shadow: var(--shadow-2); } }
 @media (prefers-reduced-motion: reduce) { .phero, .cover { transition: none; } }

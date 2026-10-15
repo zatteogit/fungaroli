@@ -1,5 +1,5 @@
 // Alone «ambilight» attorno alle copertine a tutta foto: i colori dei bordi della foto, campionati su 8×8 punti,
-// diventano tre ombre sfumate (sinistra, destra, sotto). Le ombre non sono tagliate dagli angoli arrotondati
+// diventano quattro luci sfumate (sopra, sinistra, destra, sotto). Le ombre non sono tagliate dagli angoli arrotondati
 // e non cambiano la struttura della pagina. Spento con «riduci trasparenza».
 const N = 8;
 let canvas;
@@ -17,6 +17,7 @@ export function ambilight(img) {
     const ctx = canvas.getContext('2d', { willReadFrequently: true });
     ctx.drawImage(img, 0, 0, N, N);
     const d = ctx.getImageData(0, 0, N, N).data, col = (x) => Array.from({ length: N }, (_, y) => y * N + x);
+    host.style.setProperty('--amb-t', avg(d, Array.from({ length: N * 2 }, (_, i) => i)));
     host.style.setProperty('--amb-l', avg(d, [...col(0), ...col(1)]));
     host.style.setProperty('--amb-r', avg(d, [...col(N - 1), ...col(N - 2)]));
     host.style.setProperty('--amb-b', avg(d, Array.from({ length: N * 2 }, (_, i) => (N - 2) * N + i)));
