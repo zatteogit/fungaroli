@@ -1,0 +1,66 @@
+{
+  "file": "incoming/glossario/dislivello.png",
+  "size": [
+    1024,
+    1024
+  ],
+  "sha256": "d8f8c82bacabec873ecfdf1f5c37fbc8a922f93197abff8b015cb0d06fc61ef3",
+  "source_bbox_alpha128": [
+    130,
+    367,
+    893,
+    657
+  ],
+  "source_extremes_rgb_max": [
+    [
+      70,
+      22,
+      5
+    ],
+    [
+      70,
+      31,
+      16
+    ],
+    [
+      66,
+      25,
+      9
+    ],
+    [
+      68,
+      29,
+      13
+    ]
+  ],
+  "extremes_rgb_max": [
+    [
+      67,
+      21,
+      4
+    ],
+    [
+      68,
+      27,
+      12
+    ],
+    [
+      65,
+      21,
+      6
+    ],
+    [
+      67,
+      23,
+      9
+    ]
+  ],
+  "margin_required_px": 103,
+  "margin_alpha_max": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "export": "Intero soggetto isolato con2px di antialias e centrato proporzionalmente; nessun ritocco morfologico o ricolore."
+}

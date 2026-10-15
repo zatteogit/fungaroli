@@ -15247,5 +15247,29 @@
       "data/glossary.json:segnavia.definition,observe"
     ],
     "qa": "incoming/qa/glossario-segnavia.json"
+  },
+  {
+    "file": "incoming/glossario/dislivello.png",
+    "tipo": "glossario",
+    "soggetto": "dislivello",
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case: scientific-educational. One 1024x1024PNG educational glossary illustration for Fungaroli. Reference is the APPROVED STYLE: simple warm flat illustration, thick smooth DARK BROWN contours, restrained warm orange highlight, cream/beige muted supporting elements, one subtle highlight at most. No text, letters, numbers, labels, watermark or UI. Genuine transparent alpha background. WHOLE subject centered, at least15% transparent margin on every side. EVERY outermost visible edge or tip must end in DARK BROWN OUTLINE, no flat fill cutoffs. Keep biological concept anatomically clear, not species identification. SUBJECT: A compact clean trail ELEVATION PROFILE with TWO successive climbs separated by descents. Broad muted beige terrain section underneath profile, fully outlined darkbrown, no axes/text/numbers. Warm ORANGE highlight ONLY on BOTH UPHILL profile segments left-to-right; descending segments muted beige/brown. Show all climbs contribute, do not represent only maximum minus minimum. All strokes darkbrown-edged. SOURCE definition: Differenza di quota. Il dislivello positivo cumulato somma tutte le salite lungo il percorso: non coincide necessariamente con quota massima meno quota minima.",
+    "stato": "ok",
+    "fonti_dati": [
+      "data/glossary.json:dislivello.definition,observe"
+    ],
+    "qa": "incoming/qa/glossario-dislivello.json"
+  },
+  {
+    "file": "incoming/glossario/esposizione.png",
+    "tipo": "glossario",
+    "soggetto": "esposizione",
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case: scientific-educational. One 1024x1024PNG educational glossary illustration for Fungaroli. Reference is the APPROVED STYLE: simple warm flat illustration, thick smooth DARK BROWN contours, restrained warm orange highlight, cream/beige muted supporting elements, one subtle highlight at most. No text, letters, numbers, labels, watermark or UI. Genuine transparent alpha background. WHOLE subject centered, at least15% transparent margin on every side. EVERY outermost visible edge or tip must end in DARK BROWN OUTLINE, no flat fill cutoffs. Keep biological concept anatomically clear, not species identification. SUBJECT: A simple whole hill with TWO OPPOSING SLOPES: left NORTH-facing shaded muted blue-green, right SOUTH-facing sunlit warm orange with one small outlined sun above right. Tiny compass rose WITHOUT ANY LETTERS/labels points north toward left slope; an unlettered fourpoint rose only. Clear shade versus sunlight, no mushroom-growth symbols. All hill, sun, compass enclosed dark brown contours. No cut-off terrain. SOURCE definition: Orientamento di un versante rispetto ai punti cardinali. Insieme a pendenza e vegetazione modifica luce, vento e condizioni locali.",
+    "stato": "ok",
+    "fonti_dati": [
+      "data/glossary.json:esposizione.definition,observe"
+    ],
+    "qa": "incoming/qa/glossario-esposizione.json"
   }
 ]

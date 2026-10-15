@@ -354,3 +354,8 @@ Ordine aggiornato da Matteo il 15/10: completare prima tutte le varianti di colo
 | qa/glossario-pollone.json | ok | Margini trasparenti e contorni verificati col codice; verifica visiva completata. |
 | glossario/segnavia.png | ok | Margini trasparenti e contorni verificati col codice; verifica visiva completata. |
 | qa/glossario-segnavia.json | ok | Margini trasparenti e contorni verificati col codice; verifica visiva completata. |
+
+| glossario/dislivello.png | ok | Margini trasparenti e contorni verificati col codice; verifica visiva completata. |
+| qa/glossario-dislivello.json | ok | Margini trasparenti e contorni verificati col codice; verifica visiva completata. |
+| glossario/esposizione.png | ok | Margini trasparenti e contorni verificati col codice; verifica visiva completata. |
+| qa/glossario-esposizione.json | ok | Margini trasparenti e contorni verificati col codice; verifica visiva completata. |
