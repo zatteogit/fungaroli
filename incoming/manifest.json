@@ -15591,5 +15591,31 @@
     ],
     "bytes": 250006,
     "sha256": "fc965c1e171b123cca22e94aefc7fe1c086b110e461e1b9af38eec12c090ef08"
+  },
+  {
+    "file": "incoming/infografiche/aestivalis.webp",
+    "tipo": "infografica",
+    "soggetto": "aestivalis",
+    "modello": "image_gen (identificatore tecnico non esposto)",
+    "prompt": "Create one NEW scientific educational mushroom plate, vertical4:5 target1600x2000. Reference1 STYLE AND LAYOUT ONLY: clean brown outlines, limited flat natural colors, pale ivory paper and floating vignettes. Reference2 main species morphology only; reference3 lookalike morphology only, do not copy photo compositions. Leave outer10% paper EMPTY on every edge and bottom-right38%x24% EMPTY. No text, letters, numbers, arrows, frames or marks. Top40%: whole adult and young main species. Middle-left: clean longitudinal WHITE UNCHANGING flesh section. Middle-right: underside with fine tiny ROUND sponge pores and short tubes, NEVER gills. Small center stem surface detail. Bottom-left: intact and half-cut dangerous lookalike, smaller than main specimens but legible. No ring, no volva on any specimen, no extra roots/caps/stems. MAIN Boletus aestivalis: uniform HAZELNUT BROWN dry MATTE velvety cap, very fine shallow cracks, NO WHITE cap edge. Robust cylindrical to slightly swollen light hazelnut stem with a FINE RAISED BROWN NET extending ALL THE WAY DOWN TO THE BASE, main distinctive trait, not just upper stem and not coarse dark felleus net. Young pores WHITE, adult pale yellow/olive, no pink/red/blue. Cut flesh uniformly WHITE nonstaining. LOOKALIKE Rubroboletus satanas: pale gray-white cap, RED PORES, squat very bulbous yellow-red stem with RED NET, cut cream flesh partly BLUE stained. Main and lookalike must not share cap, pore or net colors.",
+    "edits": [
+      "Localized correction of this existing bolete plate. Preserve all vignettes, ivory paper, no text. The RETICULATION on main aestivalis stem is wrongly WHITE. Make its actual raised net-lines BROWN on slightly lighter hazelnut stem, extending completely DOWN TO BASE, in the top two main specimens and center stem detail and right underside stem. Fine brown mesh, not spots. Top right YOUNG PORES must be WHITE/IVORY. Keep main cap uniform matte hazelnut without white edge, main flesh white. Keep satanas lower-left RED net, RED pores, WHITE cap, BLUE flesh. Also reduce the entire composition to 85% within same vertical4:5 frame, leaving at least7% EMPTY PAPER margin along ALL four edges. Keep lower-right blank. No new objects or marks.",
+      "Change ONLY the reticulation color on the PRIMARY Boletus aestivalis stems in this plate (the two upper mushrooms, the central stem detail and right-middle underside stem). The network of RAISED CONNECTED MESH LINES must itself be DARK TAN/BROWN, NOT WHITE. Think brown thin string net laid over a LIGHTER pale beige stem: brown lines enclose pale beige polygonal spaces. Extend this BROWN line network all the way to the rounded base of the main stems. It is currently inverted (white line net around brown holes): invert that local two-tone relationship. No spots instead of net. Do NOT change the red-netted Satanas lower-left. Keep all cap colors, young white pores, adult cream pores, white flesh, blue staining on satanas only, same layout, margins and blank paper. Absolutely no text."
+    ],
+    "tentativi": 3,
+    "stato": "verifica illustrativa superata",
+    "checklist_superata": true,
+    "verifica": "Reticolo bruno esteso fino alla base, corretto dopo due edit; cappello nocciola opaco con screpolature e senza orlo bianco. Pori chiari e bianchi nel giovane; sezione bianca. Satana con cappello biancastro, pori e rete rossi e carne azzurrata. Nessun anello/volva, margini conservati e nessun testo.",
+    "riferimenti": [
+      "assets/species/aestivalis-ref.webp (autore/licenza in data/media.json)",
+      "assets/species/rubroboletus-satanas-inat1.webp (autore/licenza in data/species-traits.json)",
+      "incoming/infografiche/edulis.webp (solo stile/layout)"
+    ],
+    "dimensioni": [
+      1600,
+      2000
+    ],
+    "bytes": 242726,
+    "sha256": "bd4d0b77eabd8fa49f31d32c8a24403316ee0f6dee88dd0ab70bb75eed2ac11e"
   }
 ]
