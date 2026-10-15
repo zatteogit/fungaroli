@@ -478,3 +478,7 @@ amanita-pantherina giovane; amanita-pantherina adulto; amanita-rubescens giovane
 ### Fasi — tavola 13
 
 amanita-rubescens adulto. Disegni derivati soltanto dalle fasi dell’handoff, con caratteri invariati ripresi dalle icone base. Formato 3×3; tessere ordinate come nella tabella, celle inutilizzate trasparenti. Ricampionamento uniforme dei disegni interi per margini e centratura; quantizzazione PNG a 256 colori con alpha per il limite di peso. Arrossante adulta: cappello appianato rosa-rame con placche chiare come nella base; lamelle prevalentemente crema con poche macchie rosate, senza viraggio uniforme. Anello striato e base ingrossata conservati, nessuna volva o cercine. Due righe della tavola volutamente vuote perché la fase richiede soltanto tre tessere.
+
+### Fasi 20 — procera giovane; procera adulto; chlorophyllum-rhacodes giovane
+
+Fonte: docs/handoff-immagini-fasi.md su claude/brave-tesla-wu0a2b e icone base della stessa specie. Solo i cambiamenti descritti nelle fasi; caratteri invariati conservati. Anatomia semplificata come nelle basi, pochi colori e lamelle schematiche. Scala uniforme e centratura allineate alle basi; quantizzazione a 128 colori per il peso, senza modifiche anatomiche con codice. 

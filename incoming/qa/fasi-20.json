@@ -1,0 +1,242 @@
+{
+  "file": "incoming/icone/fasi-20.png",
+  "size": 74648,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "alpha": true,
+  "palette": 128,
+  "source": "generated_images/exec-c242da90-cc5d-4f94-b17a-518954ceb15e.png",
+  "normalization": "Uniform per-icon scaling and placement; no anatomical pixel edits. Cap width / whole height / underside diameter matched to base; base centers preserved.",
+  "cells": [
+    {
+      "cella": 0,
+      "soggetto": "procera",
+      "fase": "giovane",
+      "tessera": "cappello",
+      "base_bbox": [
+        5,
+        81,
+        306,
+        226
+      ],
+      "base_center": [
+        209.5,
+        207.5
+      ],
+      "normalized_size": [
+        301,
+        239
+      ],
+      "bbox": [
+        60,
+        89,
+        360,
+        326
+      ],
+      "margins": [
+        60,
+        89,
+        58,
+        92
+      ],
+      "extreme_dark_fraction": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "cella": 1,
+      "soggetto": "procera",
+      "fase": "giovane",
+      "tessera": "gambo",
+      "base_bbox": [
+        16,
+        4,
+        294,
+        305
+      ],
+      "base_center": [
+        209,
+        208.5
+      ],
+      "normalized_size": [
+        179,
+        301
+      ],
+      "bbox": [
+        120,
+        59,
+        299,
+        359
+      ],
+      "margins": [
+        120,
+        59,
+        119,
+        59
+      ],
+      "extreme_dark_fraction": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "cella": 3,
+      "soggetto": "procera",
+      "fase": "adulto",
+      "tessera": "cappello",
+      "base_bbox": [
+        5,
+        81,
+        306,
+        226
+      ],
+      "base_center": [
+        209.5,
+        207.5
+      ],
+      "normalized_size": [
+        301,
+        147
+      ],
+      "bbox": [
+        60,
+        135,
+        358,
+        280
+      ],
+      "margins": [
+        60,
+        135,
+        60,
+        138
+      ],
+      "extreme_dark_fraction": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "cella": 4,
+      "soggetto": "procera",
+      "fase": "adulto",
+      "tessera": "gambo",
+      "base_bbox": [
+        16,
+        4,
+        294,
+        305
+      ],
+      "base_center": [
+        209,
+        208.5
+      ],
+      "normalized_size": [
+        280,
+        301
+      ],
+      "bbox": [
+        70,
+        61,
+        349,
+        358
+      ],
+      "margins": [
+        70,
+        61,
+        69,
+        60
+      ],
+      "extreme_dark_fraction": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "cella": 6,
+      "soggetto": "chlorophyllum-rhacodes",
+      "fase": "giovane",
+      "tessera": "cappello",
+      "base_bbox": [
+        4,
+        86,
+        306,
+        224
+      ],
+      "base_center": [
+        209,
+        209
+      ],
+      "normalized_size": [
+        302,
+        163
+      ],
+      "bbox": [
+        59,
+        129,
+        358,
+        290
+      ],
+      "margins": [
+        59,
+        129,
+        60,
+        128
+      ],
+      "extreme_dark_fraction": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "cella": 7,
+      "soggetto": "chlorophyllum-rhacodes",
+      "fase": "giovane",
+      "tessera": "gambo",
+      "base_bbox": [
+        6,
+        4,
+        304,
+        305
+      ],
+      "base_center": [
+        209,
+        208.5
+      ],
+      "normalized_size": [
+        278,
+        301
+      ],
+      "bbox": [
+        71,
+        58,
+        345,
+        359
+      ],
+      "margins": [
+        71,
+        58,
+        73,
+        59
+      ],
+      "extreme_dark_fraction": [
+        1,
+        1,
+        1,
+        1
+      ]
+    }
+  ]
+}
