@@ -170,5 +170,9 @@ Schema: `data/recognize-trees.json` su `claude/brave-tesla-wu0a2b`. 48 valori pr
 |---|---|---|---|
 | icone-alberi/tavola-alberi-01.png | 0: leaf_kind/aghi; 1: leaf_kind/squame; 2: leaf_kind/foglia_larga; 3: needle_arrangement/singoli; 4: needle_arrangement/a_coppie; 5: needle_arrangement/a_fascetti; 6: needle_arrangement/a_ciuffi; 7: needle_length/corti; 8: needle_length/lunghi | ok | Aghi singoli senza guaina comune; coppie con attacco condiviso per due aghi; fascetti di cinque; rosette numerose. Aghi lunghi circa doppi, rametto uguale. Alpha reale verificato. |
 
-| icone/varianti-02.png | amanita-phalloides: colore:bruno, forma:emisferico, forma:piano | ok | QA visiva completata; 6 icone, alpha reale, terza colonna vuota. Base: verde, convesso. |
+| icone/varianti-02.png | amanita-phalloides: colore:bruno; forma:emisferico; forma:piano | in attesa delle fasi | Colore bruno controllato e disponibile. Le due forme già caricate restano in attesa del brief sulle fasi di crescita. |
 | icone-alberi/tavola-alberi-02.png | 0: leaf_persistence/sempreverde; 1: leaf_persistence/caduca; 3: leaf_arrangement/opposte; 4: leaf_arrangement/alterne; 6: leaf_type/semplice; 7: leaf_type/composta_pennata | ok | Verificate coppie opposte sullo stesso nodo, alterne a nodi sfalsati, foglioline su unico rachide verde, rametto invernale spoglio con una foglia secca. RGBA 1254×1254; colonne vuote senza oggetti (sporadico alpha 1/255 del generatore). |
+
+Ordine aggiornato da Matteo il 15/10: completare prima tutte le varianti di colore, mantenendo la priorità del brief; nessuna nuova variante di forma fino ai dati sulle fasi di crescita. Le forme solo generate e non caricate sono sospese.
+
+| icone/varianti-03.png | amanita-verna: colore:crema; amanita-muscaria: colore:arancio; amanita-muscaria: colore:giallo | ok | QA visiva completata; 6 icone, alpha reale, terza colonna vuota. Basi nel manifest. |
