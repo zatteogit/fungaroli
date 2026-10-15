@@ -156,11 +156,41 @@
 
 ## Varianti dei caratteri — 15/10/2026
 
-Il conteggio iniziale riguarda le tavole base e i luoghi. Il brief richiede 259 varianti: avanzamento registrato qui sotto; le varianti non elencate restano da fare.
+Colori completati: **76/141 varianti**. Ogni variante ha cappello e fungo intero. Prima tutti i colori, secondo le priorità del brief.
+
+Le due forme di phalloides già caricate in varianti-02 restano **in attesa delle fasi**. Nessuna nuova forma viene prodotta.
+
+Controlli prima del caricamento: PNG RGBA, celle 418×418 px, almeno 42 px (10%) di bordo completamente trasparente, terza colonna vuota nelle varianti, contorno scuro completo ai quattro estremi. Controllo visivo e numerico. Basi dichiarate nel manifest.
 
 | File | Specie o variante | Stato | Motivo / note |
 |---|---|---|---|
+| icone/tavola-10-anello.png | coprinus-comatus: gambo, cella5 | ok | Anello sottile basso aggiunto secondo brief15/10. Riferimento esplicito cella5 nel manifest; altre icone base invariate. Verifiche dei contorni e dei margini alpha0 di42px superate. |
 | icone/varianti-01.png | amanita-phalloides: colore:giallo, colore:bianco, colore:grigio | ok | Rigenerata: controllo alfa superato, bordo trasparente 42 px (10%) in tutte le celle; anello e volva invariati. |
+| icone/varianti-02.png | amanita-phalloides: colore:bruno; forma:emisferico; forma:piano | in attesa delle fasi | Colore bruno controllato e disponibile. Le due forme già caricate restano in attesa del brief sulle fasi di crescita. |
+| icone/varianti-03.png | amanita-verna: colore:crema; amanita-muscaria: colore:arancio; amanita-muscaria: colore:giallo | ok | Celle 1 rigenerate: contorno completo; controllo codice dei 4 lati e margine alpha0 di42px (10%) superati. |
+| icone/varianti-04.png | caesarea: colore:rosso; caesarea: colore:giallo; amanita-crocea: colore:giallo | ok | QA visiva completata; 6 icone, alpha reale, terza colonna vuota. Basi nel manifest. |
+| icone/varianti-05.png | amanita-rubescens: colore:bruno; amanita-pantherina: colore:grigio; amanita-pantherina: colore:crema | ok | Celle 0,3,6 rigenerate: contorno completo; controllo codice dei 4 lati e margine alpha0 di42px (10%) superati. |
+| icone/varianti-06.png | chlorophyllum-rhacodes: colore:bruno; procera: colore:bruno; lepiota-brunneoincarnata: colore:bruno | ok | QA visiva completata; 6 icone, alpha reale, terza colonna vuota. Basi nel manifest. |
+| icone/varianti-07.png | lepiota-brunneoincarnata: colore:rosso; lepiota-brunneoincarnata: colore:crema; lepiota-subincarnata: colore:bruno | ok | QA visiva completata; 6 icone, alpha reale, terza colonna vuota. Basi nel manifest. |
+| icone/varianti-08.png | lepiota-subincarnata: colore:crema; lepiota-cristata: colore:bruno; chlorophyllum-venenatum: colore:bruno | ok | QA visiva completata; 6 icone, alpha reale, terza colonna vuota. Basi nel manifest. |
+| icone/varianti-09.png | cortinarius-orellanus: colore:bruno; cortinarius-orellanus: colore:rosso; cortinarius-rubellus: colore:bruno | ok | QA visiva completata; 6 icone, alpha reale, terza colonna vuota. Basi nel manifest. |
+| icone/varianti-10.png | cortinarius-rubellus: colore:rosso; cortinarius-violaceus: colore:nero; galerina-marginata: colore:bruno | ok | QA visiva completata; 6 icone, alpha reale, terza colonna vuota. Basi nel manifest. |
+| icone/varianti-11.png | galerina-marginata: colore:giallo; mellea: colore:bruno; armillaria-tabescens: colore:bruno | ok | QA visiva completata; 6 icone, alpha reale, terza colonna vuota. Basi nel manifest. |
+| icone/varianti-12.png | entoloma-sinuatum: colore:crema; entoloma-sinuatum: colore:bianco; calocybe-gambosa: colore:crema | ok | QA visiva completata; 6 icone, alpha reale, terza colonna vuota. Basi nel manifest. |
+| icone/varianti-13.png | rubroboletus-satanas: colore:bianco; rubroboletus-satanas: colore:grigio; neoboletus-luridiformis: colore:bruno | ok | QA visiva completata; 6 icone, alpha reale, terza colonna vuota. Basi nel manifest. |
+| icone/varianti-14.png | neoboletus-luridiformis: colore:nero; caloboletus-calopus: colore:grigio; caloboletus-calopus: colore:crema | ok | QA visiva completata; 6 icone, alpha reale, terza colonna vuota. Basi nel manifest. |
+| icone/varianti-15.png | caloboletus-calopus: colore:bruno; caloboletus-radicans: colore:bianco; caloboletus-radicans: colore:grigio | ok | QA visiva completata; 6 icone, alpha reale, terza colonna vuota. Basi nel manifest. |
+| icone/varianti-16.png | inocybe: colore:crema; inocybe: colore:bianco; inocybe: colore:giallo | ok | QA visiva completata; 6 icone, alpha reale, terza colonna vuota. Basi nel manifest. |
+| icone/varianti-17.png | inocybe: colore:grigio; inocybe: colore:violetto; inocybe: colore:rosa | ok | QA visiva completata; 6 icone, alpha reale, terza colonna vuota. Basi nel manifest. |
+| icone/varianti-18.png | clitocybe-rivulosa: colore:crema; clitocybe-rivulosa: colore:bruno; tricholoma-pardinum: colore:bruno | ok | QA visiva completata; 6 icone, alpha reale, terza colonna vuota. Basi nel manifest. |
+| icone/varianti-19.png | tricholoma-pardinum: colore:bianco; tricholoma-equestre: colore:verde; tricholoma-equestre: colore:bruno | ok | QA visiva completata; 6 icone, alpha reale, terza colonna vuota. Basi nel manifest. |
+| icone/varianti-20.png | agaricus-xanthodermus: colore:crema; agaricus-xanthodermus: colore:grigio; agaricus-xanthodermus: colore:bruno | ok | QA visiva completata; 6 icone, alpha reale, terza colonna vuota. Basi nel manifest. |
+| icone/varianti-21.png | agaricus-xanthodermus: colore:giallo; omphalotus-olearius: colore:giallo; omphalotus-olearius: colore:bruno | ok | QA visiva completata; 6 icone, alpha reale, terza colonna vuota. Basi nel manifest. |
+| icone/varianti-22.png | hygrophoropsis-aurantiaca: colore:bruno; hygrophoropsis-aurantiaca: colore:giallo; cibarius: colore:arancio | ok | QA visiva completata; 6 icone, alpha reale, terza colonna vuota. Basi nel manifest. |
+| icone/varianti-23.png | morchella-esculenta: colore:crema; morchella-esculenta: colore:bruno; hydnellum-peckii: colore:rosa | ok | QA visiva completata; 6 icone, alpha reale, terza colonna vuota. Basi nel manifest. |
+| icone/varianti-24.png | hydnellum-peckii: colore:bruno; morchella-elata: colore:grigio; morchella-elata: colore:nero | ok | QA visiva completata; 6 icone, alpha reale, terza colonna vuota. Basi nel manifest. |
+| icone/varianti-25.png | gyromitra-esculenta: colore:bruno; gyromitra-esculenta: colore:nero; gyromitra-esculenta: colore:giallo | ok | QA visiva completata; 6 icone, alpha reale, terza colonna vuota. Basi nel manifest. |
+| icone/varianti-26.png | urnula-craterium: colore:bruno; cornucopioides: colore:bruno; cornucopioides: colore:grigio | ok | QA visiva completata; 6 icone, alpha reale, terza colonna vuota. Basi nel manifest. |
 
 ## Icone dei caratteri degli alberi — 15 ottobre 2026
 
@@ -170,27 +200,19 @@ Schema: `data/recognize-trees.json` su `claude/brave-tesla-wu0a2b`. 48 valori pr
 |---|---|---|---|
 | icone-alberi/tavola-alberi-01.png | 0: leaf_kind/aghi; 1: leaf_kind/squame; 2: leaf_kind/foglia_larga; 3: needle_arrangement/singoli; 4: needle_arrangement/a_coppie; 5: needle_arrangement/a_fascetti; 6: needle_arrangement/a_ciuffi; 7: needle_length/corti; 8: needle_length/lunghi | ok, margini corretti | Tavola approvata da Matteo, rigenerata per margini10%. Controllo9celle/fasce42px: zero pixel alpha>=128 e zero opachi; solo residui alpha1, due pixel alpha2/255. Riga/colonna estreme della sagoma (alpha>=128) tutte di contorno bruno scuro. Attacchi singoli/coppie/fascetti ricontrollati. |
 
-| icone/varianti-02.png | amanita-phalloides: colore:bruno; forma:emisferico; forma:piano | in attesa delle fasi | Colore bruno controllato e disponibile. Le due forme già caricate restano in attesa del brief sulle fasi di crescita. |
 | icone-alberi/tavola-alberi-02.png | 0: leaf_persistence/sempreverde; 1: leaf_persistence/caduca; 3: leaf_arrangement/opposte; 4: leaf_arrangement/alterne; 6: leaf_type/semplice; 7: leaf_type/composta_pennata | ok, margini corretti | Rigenerata con margini di sicurezza. Controllo codice: nelle fasce di42px di tutte9celle zero pixel con alpha superiore a1/255 (zero opachi); resta solo rumore alpha1/255 del generatore. Opposte su stesso nodo, alterne sfalsate, composta su rachide verde. Ricontrollata visivamente. |
 
 Ordine aggiornato da Matteo il 15/10: completare prima tutte le varianti di colore, mantenendo la priorità del brief; nessuna nuova variante di forma fino ai dati sulle fasi di crescita. Le forme solo generate e non caricate sono sospese.
 
-| icone/varianti-03.png | amanita-verna: colore:crema; amanita-muscaria: colore:arancio; amanita-muscaria: colore:giallo | ok | Celle 1 rigenerate: contorno completo; controllo codice dei 4 lati e margine alpha0 di42px (10%) superati. |
 | icone-alberi/tavola-alberi-04.png | 0: leaf_shape/ovale; 1: leaf_shape/lanceolata; 2: leaf_shape/tondeggiante; 3: leaf_shape/cuoriforme; 4: leaf_shape/triangolare; 5: leaf_shape/lobata_a_mano; 6: leaf_shape/lobata_lungo_i_lati | ok, margini corretti | Sette sagome a bordo liscio ricontrollate. Rigenerata per margine10%; controllo codice: fasce42px di9celle senza pixel alpha>1/255, zero opachi; solo residuo generatore alpha1/255. Celle7e8 senza disegni. |
 | icone-alberi/tavola-alberi-03.png | 0: leaf_margin/intero; 1: leaf_margin/dentato; 2: leaf_margin/doppiamente_dentato; 3: leaf_margin/lobato; 4: leaf_margin/spinoso; 6: leaf_base/simmetrica; 7: leaf_base/asimmetrica | ok, margini corretti | Basi rifatte con foglie intere ovali, contorno continuo su tutti4estremi; asimmetrica con lato sinistro nettamente più basso. Fasce42pxdi9celle senza alpha>1/255 e senza opachi. Contorno scuro verificato col codice (sagoma alpha>=128), anche su02e04. Bordi già approvati da Matteo; limite denti secondari a48px. |
 
-| icone/varianti-04.png | caesarea: colore:rosso; caesarea: colore:giallo; amanita-crocea: colore:giallo | ok | QA visiva completata; 6 icone, alpha reale, terza colonna vuota. Basi nel manifest. |
 
-| icone/varianti-05.png | amanita-rubescens: colore:bruno; amanita-pantherina: colore:grigio; amanita-pantherina: colore:crema | ok | Celle 0,3,6 rigenerate: contorno completo; controllo codice dei 4 lati e margine alpha0 di42px (10%) superati. |
 
-| icone/varianti-06.png | chlorophyllum-rhacodes: colore:bruno; procera: colore:bruno; lepiota-brunneoincarnata: colore:bruno | ok | QA visiva completata; 6 icone, alpha reale, terza colonna vuota. Basi nel manifest. |
 
-| icone/varianti-07.png | lepiota-brunneoincarnata: colore:rosso; lepiota-brunneoincarnata: colore:crema; lepiota-subincarnata: colore:bruno | ok | QA visiva completata; 6 icone, alpha reale, terza colonna vuota. Basi nel manifest. |
 
-| icone/varianti-08.png | lepiota-subincarnata: colore:crema; lepiota-cristata: colore:bruno; chlorophyllum-venenatum: colore:bruno | ok | QA visiva completata; 6 icone, alpha reale, terza colonna vuota. Basi nel manifest. |
 | icone-alberi/tavola-alberi-05.png | 0: bark/liscia_grigia; 1: bark/bianca; 2: bark/lenticelle_orizzontali; 3: bark/solcata; 4: bark/a_placche; 5: bark/sfaldante; 6: bark/rossastra | ok | Sette cortecce su stessa sagoma frontale; sfoglie entro sagoma. Controllo codice42pxsu9celle: zero pixel alpha>1/255, zero opachi. Estremi delle sagome contorno bruno scuro, non riempimento (soglia sagoma alpha>=128). Residuo generatore alpha1/255. QA visiva a64px. |
 
-| icone/varianti-09.png | cortinarius-orellanus: colore:bruno; cortinarius-orellanus: colore:rosso; cortinarius-rubellus: colore:bruno | ok | QA visiva completata; 6 icone, alpha reale, terza colonna vuota. Basi nel manifest. |
 | icone-alberi/tavola-alberi-06.png | 0: fruit_type/ghianda; 1: fruit_type/riccio_spinoso; 2: fruit_type/faggiola; 3: fruit_type/samara; 4: fruit_type/disamara; 5: fruit_type/pigna; 6: fruit_type/amento; 7: fruit_type/carnoso; 8: fruit_type/noce | ok | Nove frutti verificati contro question: riccio aperto con castagne, faggiola legnosa con semi angolari, samara singola/disamara doppia, noce nel mallo verde. Fasce42pxdi9celle: zero alpha>=128/zero opachi; residui alpha1/255 e antialias massimo6/255 sullo stelo dell'amento. Estremi sagome tutti contorno bruno, QA anche64px. |
 | icone-alberi/tavola-alberi-07.png | 0: fruit_type/nocciola; 1: fruit_type/baccello; 2: fruit_type/brattea_o_vescicole | ok | Nocciola con involucro, baccello intero, tre frutticini penduli dalla brattea. Sei celle senza oggetti. Fasce42pxsu9celle: zero alpha>1/255, zero opachi; residui generatore alpha1/255. Tutti4estremi delle sagome contorno scuro, QA anche64px. |
 
@@ -202,37 +224,3 @@ Ordine aggiornato da Matteo il 15/10: completare prima tutte le varianti di colo
 - Verifica codice sui quattro estremi delle sagome (alpha>=128): i pixel della prima/ultima riga e colonna hanno colore di contorno bruno scuro, nessun riempimento esposto. Verifica visiva aggiuntiva di tutte le sagome.
 - Limite di resa: i denti secondari di doppiamente_dentato sono minuti a48px; bordi approvati da Matteo. Nessun valore privo di icona.
 - Manifest e stato aggiornati senza alterare le voci preesistenti di altri lavori; nessuna PR.
-
-| icone/varianti-10.png | cortinarius-rubellus: colore:rosso; cortinarius-violaceus: colore:nero; galerina-marginata: colore:bruno | ok | QA visiva completata; 6 icone, alpha reale, terza colonna vuota. Basi nel manifest. |
-
-| icone/varianti-11.png | galerina-marginata: colore:giallo; mellea: colore:bruno; armillaria-tabescens: colore:bruno | ok | QA visiva completata; 6 icone, alpha reale, terza colonna vuota. Basi nel manifest. |
-
-| icone/varianti-12.png | entoloma-sinuatum: colore:crema; entoloma-sinuatum: colore:bianco; calocybe-gambosa: colore:crema | ok | QA visiva completata; 6 icone, alpha reale, terza colonna vuota. Basi nel manifest. |
-
-| icone/varianti-13.png | rubroboletus-satanas: colore:bianco; rubroboletus-satanas: colore:grigio; neoboletus-luridiformis: colore:bruno | ok | QA visiva completata; 6 icone, alpha reale, terza colonna vuota. Basi nel manifest. |
-
-| icone/varianti-14.png | neoboletus-luridiformis: colore:nero; caloboletus-calopus: colore:grigio; caloboletus-calopus: colore:crema | ok | QA visiva completata; 6 icone, alpha reale, terza colonna vuota. Basi nel manifest. |
-
-| icone/varianti-15.png | caloboletus-calopus: colore:bruno; caloboletus-radicans: colore:bianco; caloboletus-radicans: colore:grigio | ok | QA visiva completata; 6 icone, alpha reale, terza colonna vuota. Basi nel manifest. |
-
-| icone/varianti-16.png | inocybe: colore:crema; inocybe: colore:bianco; inocybe: colore:giallo | ok | QA visiva completata; 6 icone, alpha reale, terza colonna vuota. Basi nel manifest. |
-
-| icone/varianti-17.png | inocybe: colore:grigio; inocybe: colore:violetto; inocybe: colore:rosa | ok | QA visiva completata; 6 icone, alpha reale, terza colonna vuota. Basi nel manifest. |
-
-| icone/varianti-18.png | clitocybe-rivulosa: colore:crema; clitocybe-rivulosa: colore:bruno; tricholoma-pardinum: colore:bruno | ok | QA visiva completata; 6 icone, alpha reale, terza colonna vuota. Basi nel manifest. |
-
-| icone/varianti-19.png | tricholoma-pardinum: colore:bianco; tricholoma-equestre: colore:verde; tricholoma-equestre: colore:bruno | ok | QA visiva completata; 6 icone, alpha reale, terza colonna vuota. Basi nel manifest. |
-
-| icone/varianti-20.png | agaricus-xanthodermus: colore:crema; agaricus-xanthodermus: colore:grigio; agaricus-xanthodermus: colore:bruno | ok | QA visiva completata; 6 icone, alpha reale, terza colonna vuota. Basi nel manifest. |
-
-| icone/varianti-21.png | agaricus-xanthodermus: colore:giallo; omphalotus-olearius: colore:giallo; omphalotus-olearius: colore:bruno | ok | QA visiva completata; 6 icone, alpha reale, terza colonna vuota. Basi nel manifest. |
-
-| icone/varianti-22.png | hygrophoropsis-aurantiaca: colore:bruno; hygrophoropsis-aurantiaca: colore:giallo; cibarius: colore:arancio | ok | QA visiva completata; 6 icone, alpha reale, terza colonna vuota. Basi nel manifest. |
-
-| icone/tavola-10-anello.png | coprinus-comatus: gambo, cella5 | ok | Anello sottile basso aggiunto secondo brief15/10. Riferimento esplicito cella5 nel manifest; altre icone base invariate. Verifiche dei contorni e dei margini alpha0 di42px superate. |
-
-| icone/varianti-23.png | morchella-esculenta: colore:crema; morchella-esculenta: colore:bruno; hydnellum-peckii: colore:rosa | ok | QA visiva completata; 6 icone, alpha reale, terza colonna vuota. Basi nel manifest. |
-
-| icone/varianti-24.png | hydnellum-peckii: colore:bruno; morchella-elata: colore:grigio; morchella-elata: colore:nero | ok | QA visiva completata; 6 icone, alpha reale, terza colonna vuota. Basi nel manifest. |
-
-| icone/varianti-25.png | gyromitra-esculenta: colore:bruno; gyromitra-esculenta: colore:nero; gyromitra-esculenta: colore:giallo | ok | QA visiva completata; 6 icone, alpha reale, terza colonna vuota. Basi nel manifest. |
