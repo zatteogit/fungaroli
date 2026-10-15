@@ -13894,25 +13894,6 @@
     "qa": "Controllo visivo colore e caratteri invarianti; verifiche codice di margini alpha0 di42px (10%) e contorni scuri completi ai4estremi prima dell'upload."
   },
   {
-    "file": "incoming/icone/tavola-10-anello.png",
-    "tipo": "illustrazione",
-    "soggetto": "coprinus-comatus",
-    "tessera": "gambo",
-    "stagione": null,
-    "foto_di_partenza": null,
-    "autore_foto": null,
-    "licenza_foto": null,
-    "pagina_foto": null,
-    "modello": "image_gen (modello integrato, identificatore non esposto)",
-    "prompt": "Precise-object-edit scientific-educational. This is an APPROVED mushroom trait icon sheet in a1254x1254 transparent PNG3x3 grid. Change ONLY CELL5 (middle row RIGHT): the WHOLE Coprinus comatus, shaggy white high-conical cap with brown apex and pale stem. ADD its missing THIN SMALL MOBILE WHITE ANNULUS low on the exposed stem, close to its base (not directly under the cap). It should be a very thin narrow horizontal white/cream collar with brown contour, slipped down to about the lower third of the exposed stem, clearly distinct from the rounded stem foot. Sources describe an annulus mobile and often slipped toward the base. Preserve the whole cap silhouette, shaggy scales, blackish cap margin, stem shape, exact style and scale. NO VOLVA, no other new features. Keep ALL OTHER8CELLS exactly unchanged, including cap-only Coprinus in cell3 and gill disc in cell4. All9drawings must fit ENTIRELY inside their own418pxcells with at least42px alpha0transparent border on every side, no clipping, full dark outline at all4extremes of every icon. Maintain same flat fewcolor style with thin dark brown contour. No text, grid, backgrounds, shadows or new growth phases. Follow-up correction: Edit ONLY the thin ring on the Coprinus comatus WHOLE icon in CELL5 (middle row RIGHT) of this1254x1254sprite sheet. The ring is currently too high on its exposed stem (around global y728). MOVE this SAME SMALL THIN white ring DOWN by about27pixels, so it encircles the lower part of the exposed stem around y755, just above its rounded foot (bottomaroundy789). The ring must be LOW, visibly slipped toward the base, consistent with a mobile annulus. Remove the old higher ring completely and restore smooth pale stem there. Do not enlarge or thicken ring. Preserve cap, scales, blackish cap rim, stem foot, all other8icons, ALL outlines, all silhouettes/colors/positions,1254square canvas, transparent alpha. Maintain minimum42px completely transparent margin at all4cellborders; no clipping or exposed fill at outer silhouette. No text, no new anatomy except relocating this same ring.",
-    "cella": 5,
-    "base": {
-      "colore": "bianco",
-      "forma": "conico"
-    },
-    "qa": "Anello sottile e mobile rappresentato nella parte bassa del gambo; nessuna volva. Contorni completi e42px di margine alpha0 per tutte9celle verificati col codice."
-  },
-  {
     "file": "incoming/icone/varianti-45.png",
     "tipo": "illustrazione",
     "soggetto": "hypholoma-fasciculare",
@@ -14030,6 +14011,145 @@
     },
     "cella": 7,
     "variante": "colore:giallo",
+    "qa": "Controllo visivo colore e caratteri invarianti; verifiche codice di margini alpha0 di42px (10%) e contorni scuri completi ai4estremi prima dell'upload."
+  },
+  {
+    "file": "incoming/icone/tavola-10-anello.png",
+    "tipo": "illustrazione",
+    "soggetto": "coprinus-comatus",
+    "tessera": "gambo",
+    "stagione": null,
+    "foto_di_partenza": null,
+    "autore_foto": null,
+    "licenza_foto": null,
+    "pagina_foto": null,
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Precise-object-edit scientific-educational. This is an APPROVED mushroom trait icon sheet in a1254x1254 transparent PNG3x3 grid. Change ONLY CELL5 (middle row RIGHT): the WHOLE Coprinus comatus, shaggy white high-conical cap with brown apex and pale stem. ADD its missing THIN SMALL MOBILE WHITE ANNULUS low on the exposed stem, close to its base (not directly under the cap). It should be a very thin narrow horizontal white/cream collar with brown contour, slipped down to about the lower third of the exposed stem, clearly distinct from the rounded stem foot. Sources describe an annulus mobile and often slipped toward the base. Preserve the whole cap silhouette, shaggy scales, blackish cap margin, stem shape, exact style and scale. NO VOLVA, no other new features. Keep ALL OTHER8CELLS exactly unchanged, including cap-only Coprinus in cell3 and gill disc in cell4. All9drawings must fit ENTIRELY inside their own418pxcells with at least42px alpha0transparent border on every side, no clipping, full dark outline at all4extremes of every icon. Maintain same flat fewcolor style with thin dark brown contour. No text, grid, backgrounds, shadows or new growth phases. Follow-up correction: Edit ONLY the thin ring on the Coprinus comatus WHOLE icon in CELL5 (middle row RIGHT) of this1254x1254sprite sheet. The ring is currently too high on its exposed stem (around global y728). MOVE this SAME SMALL THIN white ring DOWN by about27pixels, so it encircles the lower part of the exposed stem around y755, just above its rounded foot (bottomaroundy789). The ring must be LOW, visibly slipped toward the base, consistent with a mobile annulus. Remove the old higher ring completely and restore smooth pale stem there. Do not enlarge or thicken ring. Preserve cap, scales, blackish cap rim, stem foot, all other8icons, ALL outlines, all silhouettes/colors/positions,1254square canvas, transparent alpha. Maintain minimum42px completely transparent margin at all4cellborders; no clipping or exposed fill at outer silhouette. No text, no new anatomy except relocating this same ring.",
+    "cella": 5,
+    "base": {
+      "colore": "bianco",
+      "forma": "conico"
+    },
+    "qa": "Anello sottile e mobile rappresentato nella parte bassa del gambo; nessuna volva. Contorni completi e42px di margine alpha0 per tutte9celle verificati col codice."
+  },
+  {
+    "file": "incoming/icone/varianti-46.png",
+    "tipo": "illustrazione",
+    "soggetto": "pleurotus-ostreatus",
+    "tessera": "cappello",
+    "stagione": null,
+    "foto_di_partenza": null,
+    "autore_foto": null,
+    "licenza_foto": null,
+    "pagina_foto": null,
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case precise-object-edit / scientific-educational. Edit this reference sheet of APPROVED flat mushroom icons ONLY in the requested colors. It is already arranged in the REQUIRED output layout: 1254x1254, equal invisible3x3 grid; each row col1 CAP SIDE VIEW ONLY, col2 WHOLE MUSHROOM, col3 EMPTY TRANSPARENT. Keep the exact style, line weight, outlines, proportions, icon center, scale, cap silhouette, age and anatomy. No growth stages and NO SHAPE VARIANTS. Real alpha transparency, clean edges, NO background, NO text, NO frames, NO shadows, NO extra details. Maintain simple broad flat colors and source highlights; use the requested recognizable midtone or a slightly lighter shade. OUTPUT ROW 1: Pleurotus ostreatus (pleurotus-ostreatus). Change only cap color from grigio to bianco #ece7da. Preserve the base convesso cap silhouette EXACTLY, same age, no shape change. Keep all gill/underside, stem, ring, volva, warts and scale colors unchanged; for a scaled cap preserve darker scale/disc contrast on the new cap ground. Preserve these source characteristics: Cresce su tronchi e ceppaie di latifoglie, mai a terra; Lamelle bianche o crema, decorrenti fino al gambo corto e laterale; Nessun anello sul gambo; Sporata bianca o grigio-lilla, non bruna. OUTPUT ROW 2: Pleurotus ostreatus (pleurotus-ostreatus). Change only cap color from grigio to crema #e3cfa3. Preserve the base convesso cap silhouette EXACTLY, same age, no shape change. Keep all gill/underside, stem, ring, volva, warts and scale colors unchanged; for a scaled cap preserve darker scale/disc contrast on the new cap ground. Preserve these source characteristics: Cresce su tronchi e ceppaie di latifoglie, mai a terra; Lamelle bianche o crema, decorrenti fino al gambo corto e laterale; Nessun anello sul gambo; Sporata bianca o grigio-lilla, non bruna. OUTPUT ROW 3: Pleurotus ostreatus (pleurotus-ostreatus). Change only cap color from grigio to bruno #8e5f36. Preserve the base convesso cap silhouette EXACTLY, same age, no shape change. Keep all gill/underside, stem, ring, volva, warts and scale colors unchanged; for a scaled cap preserve darker scale/disc contrast on the new cap ground. Preserve these source characteristics: Cresce su tronchi e ceppaie di latifoglie, mai a terra; Lamelle bianche o crema, decorrenti fino al gambo corto e laterale; Nessun anello sul gambo; Sporata bianca o grigio-lilla, non bruna. Do not borrow anatomy from another row. No additions: preserve only features already visible in each corresponding reference drawing. MANDATORY: each drawing entirely inside its own cell with at least10% completely transparent margin on ALL four sides. Every418px cell must have zero alpha in the outer42px strips. Keep whole mushroom and cap far from cell boundaries. Third column totally empty alpha0. Every drawing must have a COMPLETE CLOSED DARK CONTOUR at its top, bottom, left and right extremes; never a straight cropped fill edge. Do not truncate caps, stalks or basal structures. Restore the full original outline if the reference has a clipped artifact.",
+    "base": {
+      "colore": "grigio",
+      "forma": "convesso"
+    },
+    "cella": 0,
+    "variante": "colore:bianco",
+    "qa": "Controllo visivo colore e caratteri invarianti; verifiche codice di margini alpha0 di42px (10%) e contorni scuri completi ai4estremi prima dell'upload."
+  },
+  {
+    "file": "incoming/icone/varianti-46.png",
+    "tipo": "illustrazione",
+    "soggetto": "pleurotus-ostreatus",
+    "tessera": "gambo",
+    "stagione": null,
+    "foto_di_partenza": null,
+    "autore_foto": null,
+    "licenza_foto": null,
+    "pagina_foto": null,
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case precise-object-edit / scientific-educational. Edit this reference sheet of APPROVED flat mushroom icons ONLY in the requested colors. It is already arranged in the REQUIRED output layout: 1254x1254, equal invisible3x3 grid; each row col1 CAP SIDE VIEW ONLY, col2 WHOLE MUSHROOM, col3 EMPTY TRANSPARENT. Keep the exact style, line weight, outlines, proportions, icon center, scale, cap silhouette, age and anatomy. No growth stages and NO SHAPE VARIANTS. Real alpha transparency, clean edges, NO background, NO text, NO frames, NO shadows, NO extra details. Maintain simple broad flat colors and source highlights; use the requested recognizable midtone or a slightly lighter shade. OUTPUT ROW 1: Pleurotus ostreatus (pleurotus-ostreatus). Change only cap color from grigio to bianco #ece7da. Preserve the base convesso cap silhouette EXACTLY, same age, no shape change. Keep all gill/underside, stem, ring, volva, warts and scale colors unchanged; for a scaled cap preserve darker scale/disc contrast on the new cap ground. Preserve these source characteristics: Cresce su tronchi e ceppaie di latifoglie, mai a terra; Lamelle bianche o crema, decorrenti fino al gambo corto e laterale; Nessun anello sul gambo; Sporata bianca o grigio-lilla, non bruna. OUTPUT ROW 2: Pleurotus ostreatus (pleurotus-ostreatus). Change only cap color from grigio to crema #e3cfa3. Preserve the base convesso cap silhouette EXACTLY, same age, no shape change. Keep all gill/underside, stem, ring, volva, warts and scale colors unchanged; for a scaled cap preserve darker scale/disc contrast on the new cap ground. Preserve these source characteristics: Cresce su tronchi e ceppaie di latifoglie, mai a terra; Lamelle bianche o crema, decorrenti fino al gambo corto e laterale; Nessun anello sul gambo; Sporata bianca o grigio-lilla, non bruna. OUTPUT ROW 3: Pleurotus ostreatus (pleurotus-ostreatus). Change only cap color from grigio to bruno #8e5f36. Preserve the base convesso cap silhouette EXACTLY, same age, no shape change. Keep all gill/underside, stem, ring, volva, warts and scale colors unchanged; for a scaled cap preserve darker scale/disc contrast on the new cap ground. Preserve these source characteristics: Cresce su tronchi e ceppaie di latifoglie, mai a terra; Lamelle bianche o crema, decorrenti fino al gambo corto e laterale; Nessun anello sul gambo; Sporata bianca o grigio-lilla, non bruna. Do not borrow anatomy from another row. No additions: preserve only features already visible in each corresponding reference drawing. MANDATORY: each drawing entirely inside its own cell with at least10% completely transparent margin on ALL four sides. Every418px cell must have zero alpha in the outer42px strips. Keep whole mushroom and cap far from cell boundaries. Third column totally empty alpha0. Every drawing must have a COMPLETE CLOSED DARK CONTOUR at its top, bottom, left and right extremes; never a straight cropped fill edge. Do not truncate caps, stalks or basal structures. Restore the full original outline if the reference has a clipped artifact.",
+    "base": {
+      "colore": "grigio",
+      "forma": "convesso"
+    },
+    "cella": 1,
+    "variante": "colore:bianco",
+    "qa": "Controllo visivo colore e caratteri invarianti; verifiche codice di margini alpha0 di42px (10%) e contorni scuri completi ai4estremi prima dell'upload."
+  },
+  {
+    "file": "incoming/icone/varianti-46.png",
+    "tipo": "illustrazione",
+    "soggetto": "pleurotus-ostreatus",
+    "tessera": "cappello",
+    "stagione": null,
+    "foto_di_partenza": null,
+    "autore_foto": null,
+    "licenza_foto": null,
+    "pagina_foto": null,
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case precise-object-edit / scientific-educational. Edit this reference sheet of APPROVED flat mushroom icons ONLY in the requested colors. It is already arranged in the REQUIRED output layout: 1254x1254, equal invisible3x3 grid; each row col1 CAP SIDE VIEW ONLY, col2 WHOLE MUSHROOM, col3 EMPTY TRANSPARENT. Keep the exact style, line weight, outlines, proportions, icon center, scale, cap silhouette, age and anatomy. No growth stages and NO SHAPE VARIANTS. Real alpha transparency, clean edges, NO background, NO text, NO frames, NO shadows, NO extra details. Maintain simple broad flat colors and source highlights; use the requested recognizable midtone or a slightly lighter shade. OUTPUT ROW 1: Pleurotus ostreatus (pleurotus-ostreatus). Change only cap color from grigio to bianco #ece7da. Preserve the base convesso cap silhouette EXACTLY, same age, no shape change. Keep all gill/underside, stem, ring, volva, warts and scale colors unchanged; for a scaled cap preserve darker scale/disc contrast on the new cap ground. Preserve these source characteristics: Cresce su tronchi e ceppaie di latifoglie, mai a terra; Lamelle bianche o crema, decorrenti fino al gambo corto e laterale; Nessun anello sul gambo; Sporata bianca o grigio-lilla, non bruna. OUTPUT ROW 2: Pleurotus ostreatus (pleurotus-ostreatus). Change only cap color from grigio to crema #e3cfa3. Preserve the base convesso cap silhouette EXACTLY, same age, no shape change. Keep all gill/underside, stem, ring, volva, warts and scale colors unchanged; for a scaled cap preserve darker scale/disc contrast on the new cap ground. Preserve these source characteristics: Cresce su tronchi e ceppaie di latifoglie, mai a terra; Lamelle bianche o crema, decorrenti fino al gambo corto e laterale; Nessun anello sul gambo; Sporata bianca o grigio-lilla, non bruna. OUTPUT ROW 3: Pleurotus ostreatus (pleurotus-ostreatus). Change only cap color from grigio to bruno #8e5f36. Preserve the base convesso cap silhouette EXACTLY, same age, no shape change. Keep all gill/underside, stem, ring, volva, warts and scale colors unchanged; for a scaled cap preserve darker scale/disc contrast on the new cap ground. Preserve these source characteristics: Cresce su tronchi e ceppaie di latifoglie, mai a terra; Lamelle bianche o crema, decorrenti fino al gambo corto e laterale; Nessun anello sul gambo; Sporata bianca o grigio-lilla, non bruna. Do not borrow anatomy from another row. No additions: preserve only features already visible in each corresponding reference drawing. MANDATORY: each drawing entirely inside its own cell with at least10% completely transparent margin on ALL four sides. Every418px cell must have zero alpha in the outer42px strips. Keep whole mushroom and cap far from cell boundaries. Third column totally empty alpha0. Every drawing must have a COMPLETE CLOSED DARK CONTOUR at its top, bottom, left and right extremes; never a straight cropped fill edge. Do not truncate caps, stalks or basal structures. Restore the full original outline if the reference has a clipped artifact.",
+    "base": {
+      "colore": "grigio",
+      "forma": "convesso"
+    },
+    "cella": 3,
+    "variante": "colore:crema",
+    "qa": "Controllo visivo colore e caratteri invarianti; verifiche codice di margini alpha0 di42px (10%) e contorni scuri completi ai4estremi prima dell'upload."
+  },
+  {
+    "file": "incoming/icone/varianti-46.png",
+    "tipo": "illustrazione",
+    "soggetto": "pleurotus-ostreatus",
+    "tessera": "gambo",
+    "stagione": null,
+    "foto_di_partenza": null,
+    "autore_foto": null,
+    "licenza_foto": null,
+    "pagina_foto": null,
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case precise-object-edit / scientific-educational. Edit this reference sheet of APPROVED flat mushroom icons ONLY in the requested colors. It is already arranged in the REQUIRED output layout: 1254x1254, equal invisible3x3 grid; each row col1 CAP SIDE VIEW ONLY, col2 WHOLE MUSHROOM, col3 EMPTY TRANSPARENT. Keep the exact style, line weight, outlines, proportions, icon center, scale, cap silhouette, age and anatomy. No growth stages and NO SHAPE VARIANTS. Real alpha transparency, clean edges, NO background, NO text, NO frames, NO shadows, NO extra details. Maintain simple broad flat colors and source highlights; use the requested recognizable midtone or a slightly lighter shade. OUTPUT ROW 1: Pleurotus ostreatus (pleurotus-ostreatus). Change only cap color from grigio to bianco #ece7da. Preserve the base convesso cap silhouette EXACTLY, same age, no shape change. Keep all gill/underside, stem, ring, volva, warts and scale colors unchanged; for a scaled cap preserve darker scale/disc contrast on the new cap ground. Preserve these source characteristics: Cresce su tronchi e ceppaie di latifoglie, mai a terra; Lamelle bianche o crema, decorrenti fino al gambo corto e laterale; Nessun anello sul gambo; Sporata bianca o grigio-lilla, non bruna. OUTPUT ROW 2: Pleurotus ostreatus (pleurotus-ostreatus). Change only cap color from grigio to crema #e3cfa3. Preserve the base convesso cap silhouette EXACTLY, same age, no shape change. Keep all gill/underside, stem, ring, volva, warts and scale colors unchanged; for a scaled cap preserve darker scale/disc contrast on the new cap ground. Preserve these source characteristics: Cresce su tronchi e ceppaie di latifoglie, mai a terra; Lamelle bianche o crema, decorrenti fino al gambo corto e laterale; Nessun anello sul gambo; Sporata bianca o grigio-lilla, non bruna. OUTPUT ROW 3: Pleurotus ostreatus (pleurotus-ostreatus). Change only cap color from grigio to bruno #8e5f36. Preserve the base convesso cap silhouette EXACTLY, same age, no shape change. Keep all gill/underside, stem, ring, volva, warts and scale colors unchanged; for a scaled cap preserve darker scale/disc contrast on the new cap ground. Preserve these source characteristics: Cresce su tronchi e ceppaie di latifoglie, mai a terra; Lamelle bianche o crema, decorrenti fino al gambo corto e laterale; Nessun anello sul gambo; Sporata bianca o grigio-lilla, non bruna. Do not borrow anatomy from another row. No additions: preserve only features already visible in each corresponding reference drawing. MANDATORY: each drawing entirely inside its own cell with at least10% completely transparent margin on ALL four sides. Every418px cell must have zero alpha in the outer42px strips. Keep whole mushroom and cap far from cell boundaries. Third column totally empty alpha0. Every drawing must have a COMPLETE CLOSED DARK CONTOUR at its top, bottom, left and right extremes; never a straight cropped fill edge. Do not truncate caps, stalks or basal structures. Restore the full original outline if the reference has a clipped artifact.",
+    "base": {
+      "colore": "grigio",
+      "forma": "convesso"
+    },
+    "cella": 4,
+    "variante": "colore:crema",
+    "qa": "Controllo visivo colore e caratteri invarianti; verifiche codice di margini alpha0 di42px (10%) e contorni scuri completi ai4estremi prima dell'upload."
+  },
+  {
+    "file": "incoming/icone/varianti-46.png",
+    "tipo": "illustrazione",
+    "soggetto": "pleurotus-ostreatus",
+    "tessera": "cappello",
+    "stagione": null,
+    "foto_di_partenza": null,
+    "autore_foto": null,
+    "licenza_foto": null,
+    "pagina_foto": null,
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case precise-object-edit / scientific-educational. Edit this reference sheet of APPROVED flat mushroom icons ONLY in the requested colors. It is already arranged in the REQUIRED output layout: 1254x1254, equal invisible3x3 grid; each row col1 CAP SIDE VIEW ONLY, col2 WHOLE MUSHROOM, col3 EMPTY TRANSPARENT. Keep the exact style, line weight, outlines, proportions, icon center, scale, cap silhouette, age and anatomy. No growth stages and NO SHAPE VARIANTS. Real alpha transparency, clean edges, NO background, NO text, NO frames, NO shadows, NO extra details. Maintain simple broad flat colors and source highlights; use the requested recognizable midtone or a slightly lighter shade. OUTPUT ROW 1: Pleurotus ostreatus (pleurotus-ostreatus). Change only cap color from grigio to bianco #ece7da. Preserve the base convesso cap silhouette EXACTLY, same age, no shape change. Keep all gill/underside, stem, ring, volva, warts and scale colors unchanged; for a scaled cap preserve darker scale/disc contrast on the new cap ground. Preserve these source characteristics: Cresce su tronchi e ceppaie di latifoglie, mai a terra; Lamelle bianche o crema, decorrenti fino al gambo corto e laterale; Nessun anello sul gambo; Sporata bianca o grigio-lilla, non bruna. OUTPUT ROW 2: Pleurotus ostreatus (pleurotus-ostreatus). Change only cap color from grigio to crema #e3cfa3. Preserve the base convesso cap silhouette EXACTLY, same age, no shape change. Keep all gill/underside, stem, ring, volva, warts and scale colors unchanged; for a scaled cap preserve darker scale/disc contrast on the new cap ground. Preserve these source characteristics: Cresce su tronchi e ceppaie di latifoglie, mai a terra; Lamelle bianche o crema, decorrenti fino al gambo corto e laterale; Nessun anello sul gambo; Sporata bianca o grigio-lilla, non bruna. OUTPUT ROW 3: Pleurotus ostreatus (pleurotus-ostreatus). Change only cap color from grigio to bruno #8e5f36. Preserve the base convesso cap silhouette EXACTLY, same age, no shape change. Keep all gill/underside, stem, ring, volva, warts and scale colors unchanged; for a scaled cap preserve darker scale/disc contrast on the new cap ground. Preserve these source characteristics: Cresce su tronchi e ceppaie di latifoglie, mai a terra; Lamelle bianche o crema, decorrenti fino al gambo corto e laterale; Nessun anello sul gambo; Sporata bianca o grigio-lilla, non bruna. Do not borrow anatomy from another row. No additions: preserve only features already visible in each corresponding reference drawing. MANDATORY: each drawing entirely inside its own cell with at least10% completely transparent margin on ALL four sides. Every418px cell must have zero alpha in the outer42px strips. Keep whole mushroom and cap far from cell boundaries. Third column totally empty alpha0. Every drawing must have a COMPLETE CLOSED DARK CONTOUR at its top, bottom, left and right extremes; never a straight cropped fill edge. Do not truncate caps, stalks or basal structures. Restore the full original outline if the reference has a clipped artifact.",
+    "base": {
+      "colore": "grigio",
+      "forma": "convesso"
+    },
+    "cella": 6,
+    "variante": "colore:bruno",
+    "qa": "Controllo visivo colore e caratteri invarianti; verifiche codice di margini alpha0 di42px (10%) e contorni scuri completi ai4estremi prima dell'upload."
+  },
+  {
+    "file": "incoming/icone/varianti-46.png",
+    "tipo": "illustrazione",
+    "soggetto": "pleurotus-ostreatus",
+    "tessera": "gambo",
+    "stagione": null,
+    "foto_di_partenza": null,
+    "autore_foto": null,
+    "licenza_foto": null,
+    "pagina_foto": null,
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case precise-object-edit / scientific-educational. Edit this reference sheet of APPROVED flat mushroom icons ONLY in the requested colors. It is already arranged in the REQUIRED output layout: 1254x1254, equal invisible3x3 grid; each row col1 CAP SIDE VIEW ONLY, col2 WHOLE MUSHROOM, col3 EMPTY TRANSPARENT. Keep the exact style, line weight, outlines, proportions, icon center, scale, cap silhouette, age and anatomy. No growth stages and NO SHAPE VARIANTS. Real alpha transparency, clean edges, NO background, NO text, NO frames, NO shadows, NO extra details. Maintain simple broad flat colors and source highlights; use the requested recognizable midtone or a slightly lighter shade. OUTPUT ROW 1: Pleurotus ostreatus (pleurotus-ostreatus). Change only cap color from grigio to bianco #ece7da. Preserve the base convesso cap silhouette EXACTLY, same age, no shape change. Keep all gill/underside, stem, ring, volva, warts and scale colors unchanged; for a scaled cap preserve darker scale/disc contrast on the new cap ground. Preserve these source characteristics: Cresce su tronchi e ceppaie di latifoglie, mai a terra; Lamelle bianche o crema, decorrenti fino al gambo corto e laterale; Nessun anello sul gambo; Sporata bianca o grigio-lilla, non bruna. OUTPUT ROW 2: Pleurotus ostreatus (pleurotus-ostreatus). Change only cap color from grigio to crema #e3cfa3. Preserve the base convesso cap silhouette EXACTLY, same age, no shape change. Keep all gill/underside, stem, ring, volva, warts and scale colors unchanged; for a scaled cap preserve darker scale/disc contrast on the new cap ground. Preserve these source characteristics: Cresce su tronchi e ceppaie di latifoglie, mai a terra; Lamelle bianche o crema, decorrenti fino al gambo corto e laterale; Nessun anello sul gambo; Sporata bianca o grigio-lilla, non bruna. OUTPUT ROW 3: Pleurotus ostreatus (pleurotus-ostreatus). Change only cap color from grigio to bruno #8e5f36. Preserve the base convesso cap silhouette EXACTLY, same age, no shape change. Keep all gill/underside, stem, ring, volva, warts and scale colors unchanged; for a scaled cap preserve darker scale/disc contrast on the new cap ground. Preserve these source characteristics: Cresce su tronchi e ceppaie di latifoglie, mai a terra; Lamelle bianche o crema, decorrenti fino al gambo corto e laterale; Nessun anello sul gambo; Sporata bianca o grigio-lilla, non bruna. Do not borrow anatomy from another row. No additions: preserve only features already visible in each corresponding reference drawing. MANDATORY: each drawing entirely inside its own cell with at least10% completely transparent margin on ALL four sides. Every418px cell must have zero alpha in the outer42px strips. Keep whole mushroom and cap far from cell boundaries. Third column totally empty alpha0. Every drawing must have a COMPLETE CLOSED DARK CONTOUR at its top, bottom, left and right extremes; never a straight cropped fill edge. Do not truncate caps, stalks or basal structures. Restore the full original outline if the reference has a clipped artifact.",
+    "base": {
+      "colore": "grigio",
+      "forma": "convesso"
+    },
+    "cella": 7,
+    "variante": "colore:bruno",
     "qa": "Controllo visivo colore e caratteri invarianti; verifiche codice di margini alpha0 di42px (10%) e contorni scuri completi ai4estremi prima dell'upload."
   }
 ]
