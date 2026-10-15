@@ -1,0 +1,283 @@
+{
+  "file": "incoming/icone/forme-23.png",
+  "stato": "ok",
+  "verifiche": [
+    {
+      "cella": 0,
+      "bbox": [
+        62,
+        146,
+        356,
+        272
+      ],
+      "attesa": true,
+      "margini_px": [
+        62,
+        146,
+        62,
+        146
+      ],
+      "margini_ok": true,
+      "contorno_scuro_estremi": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cella": 1,
+      "bbox": [
+        68,
+        80,
+        350,
+        337
+      ],
+      "attesa": true,
+      "margini_px": [
+        68,
+        80,
+        68,
+        81
+      ],
+      "margini_ok": true,
+      "contorno_scuro_estremi": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cella": 2,
+      "bbox": null,
+      "attesa": false,
+      "vuota": true
+    },
+    {
+      "cella": 3,
+      "bbox": [
+        63,
+        138,
+        355,
+        279
+      ],
+      "attesa": true,
+      "margini_px": [
+        63,
+        138,
+        63,
+        139
+      ],
+      "margini_ok": true,
+      "contorno_scuro_estremi": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cella": 4,
+      "bbox": [
+        71,
+        80,
+        346,
+        337
+      ],
+      "attesa": true,
+      "margini_px": [
+        71,
+        80,
+        72,
+        81
+      ],
+      "margini_ok": true,
+      "contorno_scuro_estremi": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cella": 5,
+      "bbox": null,
+      "attesa": false,
+      "vuota": true
+    },
+    {
+      "cella": 6,
+      "bbox": [
+        62,
+        152,
+        356,
+        266
+      ],
+      "attesa": true,
+      "margini_px": [
+        62,
+        152,
+        62,
+        152
+      ],
+      "margini_ok": true,
+      "contorno_scuro_estremi": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cella": 7,
+      "bbox": [
+        62,
+        85,
+        356,
+        332
+      ],
+      "attesa": true,
+      "margini_px": [
+        62,
+        85,
+        62,
+        86
+      ],
+      "margini_ok": true,
+      "contorno_scuro_estremi": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cella": 8,
+      "bbox": null,
+      "attesa": false,
+      "vuota": true
+    }
+  ],
+  "normalizzazione": [
+    {
+      "cella": 0,
+      "bbox_originale_immagine": [
+        78,
+        185,
+        382,
+        315
+      ],
+      "scala": 0.9671052631578947,
+      "dimensioni": [
+        294,
+        126
+      ],
+      "posizione": [
+        62,
+        146
+      ]
+    },
+    {
+      "cella": 1,
+      "bbox_originale_immagine": [
+        486,
+        124,
+        768,
+        381
+      ],
+      "scala": 1,
+      "dimensioni": [
+        282,
+        257
+      ],
+      "posizione": [
+        486,
+        80
+      ]
+    },
+    {
+      "cella": 3,
+      "bbox_originale_immagine": [
+        84,
+        550,
+        376,
+        691
+      ],
+      "scala": 1,
+      "dimensioni": [
+        292,
+        141
+      ],
+      "posizione": [
+        63,
+        556
+      ]
+    },
+    {
+      "cella": 4,
+      "bbox_originale_immagine": [
+        490,
+        522,
+        765,
+        779
+      ],
+      "scala": 1,
+      "dimensioni": [
+        275,
+        257
+      ],
+      "posizione": [
+        489,
+        498
+      ]
+    },
+    {
+      "cella": 6,
+      "bbox_originale_immagine": [
+        80,
+        951,
+        397,
+        1074
+      ],
+      "scala": 0.9274447949526814,
+      "dimensioni": [
+        294,
+        114
+      ],
+      "posizione": [
+        62,
+        988
+      ]
+    },
+    {
+      "cella": 7,
+      "bbox_originale_immagine": [
+        477,
+        911,
+        776,
+        1162
+      ],
+      "scala": 0.9832775919732442,
+      "dimensioni": [
+        294,
+        247
+      ],
+      "posizione": [
+        480,
+        921
+      ]
+    }
+  ],
+  "bytes": 53450,
+  "dimensioni": [
+    1254,
+    1254
+  ],
+  "sha256": "4880cf3c3bf16902023098af88d6e48b2b14ece3ecc1e028c041a9eabedaa31d",
+  "prompt": "A transparent PNG sprite sheet, square1254x1254, invisible3x3cells418px each. Use reference1 for EXACT SMALL ICON SIZE, generous TRANSPARENT CELL MARGINS and row positions. Three rows: column1 CAP ONLY side view, column2 WHOLE MUSHROOM, column3 entirely EMPTY. Each separate icon centered in its own cell, at most60% of cell width AND height, at least18% alpha0 padding on EVERY cell edge. No drawn grid, background, shadows, ground, text, numbers or marks. Clean thick dark brown COMPLETE silhouette outline, flat few colors same as species icons. References2 onward show the approved base icons: preserve cap COLOR and all stems, rings, volvas, netting, scales and spots, change ONLY cap SHAPE and age-appropriate proportions. Each row's cap-only and whole must MATCH shape/color. Use EXACT reference cap shade; color labels are broad categories: 'rosso' may be dark red-BROWN. Never borrow anatomical traits or colors between rows. ROW1: hydnum-rufescens, base cap color arancio, target shape FUNNEL: depressed center with upturned edge. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"liscia\",\"vellutata/feltrata\"],\"hymenophore\":[\"aculei\"],\"hymenophore_color\":[\"crema\",\"arancio\"]}. ROW2: hygrophoropsis-aurantiaca, base cap color arancio, target shape CONVEX: low rounded dome. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"vellutata/feltrata\",\"asciutta\"],\"hymenophore\":[\"lamelle\"],\"hymenophore_color\":[\"arancio\"]}. ROW3: hygrophorus-latitabundus, base cap color nero, target shape FLAT: almost horizontal, expanded cap. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"viscida\"],\"hymenophore\":[\"lamelle\"],\"hymenophore_color\":[\"bianco\"]}. No new anatomical traits. Reference species icons are shape/color authorities except the explicit target cap shape. Cap-only must match whole cap. Last column empty. True alpha background.",
+  "edits": [],
+  "normalizza": true,
+  "visivo_ok": true,
+  "nota": "Rufescens a imbuto arancio con aculei, falso gallinaccio convesso arancio con lamelle decorrenti, lardaiolo piano scuro con lamelle chiare e fiocchi sul gambo della base. Nessun anello/volva. Scala e centratura normalizzate con Python su autorizzazione di Matteo; disegno invariato."
+}
