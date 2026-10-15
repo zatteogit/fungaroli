@@ -64,7 +64,10 @@ Ogni colore ha un compito. I valori stanno solo in `css/tokens.css` (ruoli pubbl
 - **Selezione e azione** hanno lo stesso giallo ma forme diverse: lo «scelto» sta dentro un gruppo (fila, vassoio, barra), ha il filo `--select-edge` e, nei filtri, la spunta; l’azione è un bottone pieno senza filo, con il segno dell’azione (＋, →). Il polline su avorio ha poco contrasto di forma (1,35:1): per questo il filo ocra (≥3:1 su bg, surface, surface-2, surface-3).
 - **Giorno scelto:** polline con testo bosco notte; il pallino resta nel colore del suo indice, con un anello sottile scuro. Niente più verde pieno né doppio bordo nero.
 - **Tema scuro:** superfici più chiare del fondo (carta 1,37:1 sul fondo, era 1,19; surface-2 1,60:1) e filetti più visibili; il taccuino usa le superfici dei token.
-- La calendula resta per le icone informative (riquadri delle schede, segnalibro del taccuino) e per i bottoni tenui esistenti (es. «Confronta»), da rivedere con calma.
+- La calendula resta per le icone informative (riquadri delle schede, segnalibro del taccuino).
+- **Bottoni tenui** («Confronta», pillole d’azione, righe-invito come «Come funziona l’indice», filtri rimovibili): bosco su fondo neutro (`--link` su `--surface-2`).
+- **Interruttori accesi** (preferenze, livelli della mappa): polline con il filo, come la selezione.
+- **Alone delle pagine di dettaglio** (`js/ambilight.js`): dietro la testata di zona, fungo, pianta e albero una copia della foto (versione normale, mai l’HD) sfocata e più satura; tenue e luminosa in chiaro, ben visibile in scuro. Mai in home. Spenta con «riduci trasparenza».
 
 ## Navigazione di Scopri e Impara
 
