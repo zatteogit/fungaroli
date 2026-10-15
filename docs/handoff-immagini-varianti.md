@@ -71,7 +71,7 @@ Valori da `data/species-traits.json` (`cap_color`, `cap_shape`). Una specie con 
 | Spugnola gialla (`morchella-esculenta`) | tavola-01 | crema, giallo, bruno | conico, emisferico | 3 |
 | Finferlo (`cibarius`) | tavola-01 | giallo, arancio | convesso, imbuto | 2 |
 | Idnello di Peck (`hydnellum-peckii`) | tavola-01 | bianco, rosa, bruno | convesso, piano, imbuto | 4 |
-| Spugnola nera (`morchella-elata`) | tavola-02 | bruno, grigio, nero | conico | 2 |
+| Spugnola nera (`morchella-elata`) | tavola-02 | bruno, grigio (nero tolto il 15/10: nessuna fonte) | conico | 1 |
 | Falsa spugnola (`gyromitra-esculenta`) | tavola-02 | bruno, rosso, nero, giallo | emisferico | 3 |
 | Urnula (`urnula-craterium`) | tavola-02 | nero, bruno | trombetta | 1 |
 | Trombetta dei morti (`cornucopioides`) | tavola-03 | nero, bruno, grigio | trombetta | 2 |
@@ -79,7 +79,7 @@ Valori da `data/species-traits.json` (`cap_color`, `cap_shape`). Una specie con 
 | Craterello sinuoso (`pseudocraterellus-undulatus`) | tavola-03 | grigio, bruno | trombetta, imbuto | 2 |
 | Steccherino dorato (`repandum`) | tavola-04 | crema, giallo, arancio | convesso, piano, imbuto | 4 |
 | Steccherino rossiccio (`hydnum-rufescens`) | tavola-04 | arancio, bruno | convesso, piano, imbuto | 3 |
-| Finferla (`craterellus-lutescens`) | tavola-04 | bruno, giallo | imbuto, trombetta | 2 |
+| Finferla (`craterellus-lutescens`) | tavola-04 | bruno, giallo | imbuto (trombetta tolta il 15/10: nessuna fonte) | 1 |
 | Sarcodon imbricato (`sarcodon-imbricatus`) | tavola-05 | bruno | convesso, imbuto | 1 |
 | Sarcodon scabroso (`sarcodon-scabrosus`) | tavola-05 | bruno | convesso, imbuto | 1 |
 | Boleto pepato (`chalciporus-piperatus`) | tavola-05 | bruno, arancio | convesso, piano | 2 |

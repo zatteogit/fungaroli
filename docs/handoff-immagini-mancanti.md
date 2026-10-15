@@ -37,7 +37,7 @@ Nell'app colore e forma del cappello ora si scelgono insieme. Per *Amanita phall
 
 Il brief delle varianti (`docs/handoff-immagini-varianti.md`, punto 3) chiedeva una variante per ogni forma del cappello descritta dalle fonti. Ne è arrivata una sola specie (la falloide).
 
-**Dal 15/10** le specie in cui le fasi cambiano davvero l'aspetto hanno le fasi di crescita nei dati (`stages`). Per loro la forma segue la fase e si disegna con `docs/handoff-immagini-fasi.md`, non qui. Per questo l'elenco scende da 116 forme per 80 specie a **65 forme per 49 specie**, ognuna con le tessere `cappello` e `gambo` (130 disegni).
+**Dal 15/10** le specie in cui le fasi cambiano davvero l'aspetto hanno le fasi di crescita nei dati (`stages`). Per loro la forma segue la fase e si disegna con `docs/handoff-immagini-fasi.md`, non qui. Per questo l'elenco scende da 116 forme per 80 specie a **64 forme per 48 specie**, ognuna con le tessere `cappello` e `gambo` (128 disegni).
 
 - **Come:** stesso colore del disegno base. Cambia la forma del cappello e, dove serve, le proporzioni del gambo coerenti con quell'età. Stile e scala delle tavole approvate.
 - **File:** tavole 3×3 con fondo trasparente `incoming/icone/forme-NN.png`, un disegno per cella con margine. L'import rifiuta disegni tagliati o a cavallo di due celle.
@@ -57,7 +57,6 @@ Il brief delle varianti (`docs/handoff-immagini-varianti.md`, punto 3) chiedeva 
 | Cortinario tragano (`cortinarius-traganus`) | convesso | emisferico |
 | Cortinario violaceo (`cortinarius-violaceus`) | convesso | piano |
 | Craterello cenerino (`craterellus-cinereus`) | trombetta | imbuto |
-| Finferla (`craterellus-lutescens`) | imbuto | trombetta |
 | Galerina marginata (`galerina-marginata`) | convesso | piano |
 | Folliota spettabile (`gymnopilus-junonius`) | convesso | piano |
 | Idnello di Peck (`hydnellum-peckii`) | piano | convesso, imbuto |

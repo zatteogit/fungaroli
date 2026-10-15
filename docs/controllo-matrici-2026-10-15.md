@@ -104,6 +104,13 @@ L'unica foto della zona trovata (CC BY-SA 4.0, Marica Massaro) mostra la valle b
 1. *(consigliata)* Non usarla, per la regola «niente centri abitati». Resta l'eccezione.
 2. Usarla come foto reale e farne le copertine.
 
+**Risposte (15/10, sera):**
+- **D8:** riprovato su MycoDB (via curl, dopo i 503) e su First Nature.
+  - Citati 7 valori: `agaricus-sylvicola` crema (MycoDB, aggiunta alle fonti della scheda); `fistulina-hepatica` rosa e bruno; `hygrophorus-marzuolus` nero; `pleurotus-eryngii` crema e grigio; `craterellus-lutescens` giallo.
+  - Tolti 2 valori che nessuna fonte riporta: il nero di `morchella-elata` e la trombetta di `craterellus-lutescens`.
+  - Le due icone della variante nera della spugnola nera sono state tolte da `assets/traits` e dall'indice. Sono nell'elenco «da rifare» di `data/asset-pending.json`: vanno tolte anche dal manifest di `gpt/immagini`. La trombetta non era disegnata.
+- **D9:** Pescorocchiano resta un'eccezione dichiarata.
+
 ## Decisioni chieste a Matteo (risposte sopra)
 
 Domande a scelta. L'opzione consigliata è la prima.

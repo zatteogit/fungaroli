@@ -220,7 +220,6 @@
     "cortinarius-traganus:emisferico",
     "cortinarius-violaceus:piano",
     "craterellus-cinereus:imbuto",
-    "craterellus-lutescens:trombetta",
     "galerina-marginata:piano",
     "gymnopilus-junonius:piano",
     "hydnellum-peckii:convesso",
@@ -350,21 +349,6 @@
     "assets/species/tree-tasso-inat5.webp (ritaglio)",
     "assets/zones/cittareale.webp (ritaglio)",
     "assets/zones/terminillo-ovest.webp (ritaglio)"
-   ]
-  },
-  {
-   "categoria": "citazioni",
-   "motivo": "Taxa che non avevano traits_notes (D1, primo passo): per questi valori le fonti della scheda lette il 15/10 non danno una citazione esplicita (mycodb.fr non raggiungibile). Da verificare su un'altra fonte o da togliere: domanda D8 in docs/controllo-matrici-2026-10-15.md.",
-   "voci": [
-    "agaricus-sylvicola:cap_color:crema",
-    "craterellus-lutescens:cap_color:giallo",
-    "craterellus-lutescens:cap_shape:trombetta",
-    "fistulina-hepatica:cap_color:bruno",
-    "fistulina-hepatica:cap_color:rosa",
-    "hygrophorus-marzuolus:cap_color:nero",
-    "morchella-elata:cap_color:nero",
-    "pleurotus-eryngii:cap_color:crema",
-    "pleurotus-eryngii:cap_color:grigio"
    ]
   },
   {
@@ -903,5 +887,14 @@
    ]
   }
  ],
- "da_rifare": []
+ "da_rifare": [
+  {
+   "voce": "morchella-elata-cappello-nero (valore tolto: nero)",
+   "motivo": "Colore nero tolto dai dati il 15/10 (D8: nessuna fonte lo riporta). Variante già tolta da assets/traits e da data/trait-icons.json; va tolta anche dal manifest di gpt/immagini, altrimenti il prossimo import la rifiuta. Poi: node tools/asset-report.mjs --snapshot e togliere questa voce."
+  },
+  {
+   "voce": "morchella-elata-gambo-nero (valore tolto: nero)",
+   "motivo": "Colore nero tolto dai dati il 15/10 (D8: nessuna fonte lo riporta). Variante già tolta da assets/traits e da data/trait-icons.json; va tolta anche dal manifest di gpt/immagini, altrimenti il prossimo import la rifiuta. Poi: node tools/asset-report.mjs --snapshot e togliere questa voce."
+  }
+ ]
 }

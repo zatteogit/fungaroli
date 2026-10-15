@@ -180,13 +180,24 @@ export function snapshot(d = load()) {
   }
   return out;
 }
-// da rifare: un valore booleano o nullo cambiato, oppure un valore disegnato tolto dai dati
+// valori di colore e forma che una variante mostra (<colore>, <forma> o <colore>-<forma>), se non ci sono più nei dati
+function removedVariant(d, m) {
+  if (!m.suffix || m.suffix.startsWith('fase-')) return [];
+  const tr = d.traits.taxa[m.key].traits || {};
+  const vals = m.suffix.split('-');
+  if (vals.length === 2) return vals.filter((v, i) => !list(tr[i ? 'cap_shape' : 'cap_color']).includes(v));
+  return list(tr.cap_color).includes(vals[0]) || list(tr.cap_shape).includes(vals[0]) ? [] : vals;
+}
+// da rifare: un valore booleano o nullo cambiato, un valore disegnato tolto dai dati,
+// oppure una variante il cui colore o forma non c'è più (da togliere anche dal manifest)
 export function redo(d = load()) {
   const out = [];
   for (const [name, then] of Object.entries(d.drawnFrom.icons || {})) {
     const m = parseIcon(name);
     const now = m && d.traits.taxa[m.key] ? drawnValues(d, m.key, m.tile, m.suffix) : null;
     if (!now) { out.push(`${name} (dato tolto)`); continue; }
+    const gone = removedVariant(d, m);
+    if (gone.length) { out.push(`${name} (valore tolto: ${gone.join(', ')})`); continue; }
     const changed = Object.keys({ ...then, ...now }).filter((f) => {
       const a = then[f], b = now[f];
       if (Array.isArray(a) && Array.isArray(b) && f !== 'tiles') return a.some((x) => !b.includes(x));
@@ -255,6 +266,8 @@ export function coherence(d = load()) {
   if (JSON.stringify(Object.keys(voc.stages || {})) !== JSON.stringify(STAGE_IDS)) err.push('species-traits: vocabulary.stages diverso da STAGE_IDS');
   if (JSON.stringify(Object.keys(voc.stage_tiles || {})) !== JSON.stringify(STAGE_TILES)) err.push('species-traits: vocabulary.stage_tiles diverso da STAGE_TILES');
   // istantanea del disegno: solo icone esistenti
-  for (const n of Object.keys(d.drawnFrom.icons || {})) if (!has(traitFile(n))) err.push(`asset-drawn-from: ${n} senza file`);
+  // un'icona registrata può mancare solo se è nell'elenco «da rifare» (variante tolta con il suo valore)
+  const redone = new Set(redo(d).map((x) => x.split(' ')[0]));
+  for (const n of Object.keys(d.drawnFrom.icons || {})) if (!has(traitFile(n)) && !redone.has(n)) err.push(`asset-drawn-from: ${n} senza file`);
   return err;
 }

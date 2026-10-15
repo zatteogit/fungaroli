@@ -750,8 +750,7 @@
     "drawn": "bruno",
     "values": [
      "bruno",
-     "grigio",
-     "nero"
+     "grigio"
     ]
    },
    "base": {
@@ -1506,10 +1505,8 @@
   "mellea-sotto": 4,
   "morchella-elata-cappello": 4,
   "morchella-elata-cappello-grigio": 4,
-  "morchella-elata-cappello-nero": 4,
   "morchella-elata-gambo": 4,
   "morchella-elata-gambo-grigio": 4,
-  "morchella-elata-gambo-nero": 4,
   "morchella-elata-sotto": 5,
   "morchella-esculenta-cappello": 5,
   "morchella-esculenta-cappello-bruno": 4,

@@ -9671,6 +9671,10 @@
           "giallo": {
             "source": "https://www.first-nature.com/fungi/agaricus-sylvicola.php",
             "quote": "Pure white at first, the caps tend to yellow with age."
+          },
+          "crema": {
+            "source": "https://www.mycodb.fr/fiche.php?genre=Agaricus&espece=sylvicola",
+            "quote": "Chapeau Couleur : Blanc, Crème, Jaune"
           }
         },
         "cap_shape": {
@@ -9771,6 +9775,10 @@
         {
           "title": "Agaricus xanthodermus, Wikipedia (en)",
           "url": "https://en.wikipedia.org/wiki/Agaricus_xanthodermus"
+        },
+        {
+          "title": "MycoDB, Agaricus sylvicola (scheda)",
+          "url": "https://www.mycodb.fr/fiche.php?genre=Agaricus&espece=sylvicola"
         }
       ],
       "trees": [],
@@ -10188,6 +10196,14 @@
           "bruno": {
             "source": "https://it.wikipedia.org/wiki/Pleurotus_eryngii",
             "quote": "di colore biancastro, poi brunastro"
+          },
+          "crema": {
+            "source": "https://www.mycodb.fr/fiche.php?genre=Pleurotus&espece=eryngii",
+            "quote": "Chapeau Couleur : Brun, Crème, Gris"
+          },
+          "grigio": {
+            "source": "https://www.mycodb.fr/fiche.php?genre=Pleurotus&espece=eryngii",
+            "quote": "Chapeau Couleur : Brun, Crème, Gris"
           }
         },
         "cap_shape": {
@@ -10452,8 +10468,7 @@
         ],
         "cap_color": [
           "bruno",
-          "grigio",
-          "nero"
+          "grigio"
         ],
         "cap_shape": [
           "conico"
@@ -10538,7 +10553,8 @@
       "dangerous_lookalikes": [
         "gyromitra-esculenta"
       ],
-      "caution": "Commestibile solo dopo corretta cottura; cruda o poco cotta può causare intossicazioni. Si confonde con giromitre tossiche."
+      "caution": "Commestibile solo dopo corretta cottura; cruda o poco cotta può causare intossicazioni. Si confonde con giromitre tossiche.",
+      "traits_notes": "Colore nero del cappello tolto il 15/10 (decisione D8): nessuna fonte lo riporta (First Nature: «pale brown to grey and darkens with age»; Wikipedia it: «grigio-fuligginoso o grigio-brunastro»; MycoDB: «Brun, Crème»)."
     },
     "calocybe-gambosa": {
       "latin": "Calocybe gambosa",
@@ -10805,8 +10821,7 @@
           "giallo"
         ],
         "cap_shape": [
-          "imbuto",
-          "trombetta"
+          "imbuto"
         ],
         "cap_size": [
           "piccolo",
@@ -10849,6 +10864,10 @@
           "bruno": {
             "source": "https://it.wikipedia.org/wiki/Cantharellus_lutescens",
             "quote": "color marroncino, più o meno scuro"
+          },
+          "giallo": {
+            "source": "https://www.mycodb.fr/fiche.php?genre=Craterellus&espece=lutescens",
+            "quote": "Chapeau 1,5-6 cm, en entonnoir, fibreux, ridé radialement, brun jaune"
           }
         },
         "cap_shape": {
@@ -10881,7 +10900,8 @@
       "trees": [
         "faggio"
       ],
-      "dangerous_lookalikes": []
+      "dangerous_lookalikes": [],
+      "traits_notes": "Forma a trombetta tolta il 15/10 (decisione D8): le fonti danno solo l'imbuto (Wikipedia it: «più imbutiforme»; MycoDB: «en entonnoir»)."
     },
     "lactarius-deliciosus": {
       "latin": "Lactarius deliciosus",
@@ -11152,6 +11172,10 @@
           "grigio": {
             "source": "https://it.wikipedia.org/wiki/Hygrophorus_marzuolus",
             "quote": "ha un colore dal bianco al grigio"
+          },
+          "nero": {
+            "source": "https://www.mycodb.fr/fiche.php?genre=Hygrophorus&espece=marzuolus",
+            "quote": "Chapeau Couleur : Blanc, Gris, Noir"
           }
         },
         "cap_shape": {
@@ -11625,6 +11649,14 @@
           "rosso": {
             "source": "https://it.wikipedia.org/wiki/Fistulina_hepatica",
             "quote": "cuticola di colore aranciato oppure rosso sangue"
+          },
+          "rosa": {
+            "source": "https://www.mycodb.fr/fiche.php?genre=Fistulina&espece=hepatica",
+            "quote": "brun rouge à rose orangé"
+          },
+          "bruno": {
+            "source": "https://www.mycodb.fr/fiche.php?genre=Fistulina&espece=hepatica",
+            "quote": "brun rouge à rose orangé"
           }
         }
       },
