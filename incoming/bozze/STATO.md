@@ -359,3 +359,6 @@ Ordine aggiornato da Matteo il 15/10: completare prima tutte le varianti di colo
 | qa/glossario-dislivello.json | ok | Margini trasparenti e contorni verificati col codice; verifica visiva completata. |
 | glossario/esposizione.png | ok | Margini trasparenti e contorni verificati col codice; verifica visiva completata. |
 | qa/glossario-esposizione.json | ok | Margini trasparenti e contorni verificati col codice; verifica visiva completata. |
+
+| guide/leggere-il-bosco.png | esempio da approvare | Margini trasparenti e contorni verificati col codice; verifica visiva completata. |
+| qa/guida-leggere-il-bosco.json | ok | Margini trasparenti e contorni verificati col codice; verifica visiva completata. |

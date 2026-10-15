@@ -335,3 +335,6 @@ Glossario: ceppaia, pollone, segnavia. Schemi didattici generici conformi alle d
 
 
 Glossario: dislivello, esposizione. Schemi didattici generici conformi alle definizioni; dettagli non pertinenti omessi, nessuna etichetta o identificazione di specie. Margini103px alpha0, contorno scuro ai4estremi e verifica visiva; nessun testo.
+
+
+ParteA completata: tutti21schemi (Cappello già approvato) in incoming/glossario, controllati e caricati in gruppi di2–3. Esempio parteB leggere-il-bosco1600x900 su carta: tronchi grigi lisci, lettiera, piccoli funghi generici, luce laterale; chiome e vegetazione semplificate per un’apertura editoriale, non per identificazione botanica. Soggetti interi, contorni e margini verificati. In attesa dell’approvazione di Matteo: non avviate le altre2guide né le infografiche. Forme del cappello rimanenti in coda; forme01/02 intatte, forme03porcini consegnata.

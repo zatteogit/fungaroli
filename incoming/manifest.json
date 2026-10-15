@@ -15271,5 +15271,19 @@
       "data/glossary.json:esposizione.definition,observe"
     ],
     "qa": "incoming/qa/glossario-esposizione.json"
+  },
+  {
+    "file": "incoming/guide/leggere-il-bosco.png",
+    "tipo": "guida",
+    "soggetto": "leggere-il-bosco",
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case: precise-object-edit. Preserve the EXACT forest illustration of this attached image, same beech trunks, foliage, leaf litter, roots and small generic mushrooms, exact style and colors. Change ONLY composition: reduce the entire woodland vignette to85% of its current size, centered on the same landscape16:9 canvas. Leave at least13% empty pale paper at top and bottom,15% at left and right. Extend a SINGLE UNIFORM opaque pale warm paper background #f6f0e4 across the ENTIRE canvas; absolutely NO framed inset, rectangle, mat, panel, border or visible background seam. All tree crowns and leafbed intact, no cropping. Keep lateral sunlight. NO TEXT/labels. Target1600x900PNG.",
+    "stato": "esempio da approvare",
+    "fonti_dati": [
+      "docs/handoff-immagini-glossario-guide.md:parteB",
+      "data/guides.json:leggere-il-bosco"
+    ],
+    "qa": "incoming/qa/guida-leggere-il-bosco.json",
+    "semplificazioni": "Bosco illustrativo: tre tronchi principali con corteccia grigia, chiome e lettiera semplificate; funghi piccoli e generici, nessuna identificazione di specie. Nessun testo."
   }
 ]
