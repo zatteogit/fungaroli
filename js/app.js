@@ -428,10 +428,10 @@ function updateBack(r, nav) {
     navStack.push({ hash: r.hash, title: titleOf(r), tab: r.tab, level: levelOf(r) });
   }
   const deep = levelOf(r) > 0;
-  const b = $('.appbar-back');
-  if (b) {
+  // stesso «indietro» in due posti: nella barra su telefono, sopra il titolo della pagina su desktop (la barra tiene le sezioni)
+  const back = navStack.length > 1 ? navStack[navStack.length - 2].title : PARENT_TITLE(r);
+  for (const b of document.querySelectorAll('.appbar-back, .page-back')) {
     b.hidden = !deep;
-    const back = navStack.length > 1 ? navStack[navStack.length - 2].title : PARENT_TITLE(r);
     b.querySelector('span').textContent = back || 'Indietro';
     b.setAttribute('aria-label', `Indietro: ${back || 'pagina precedente'}`);
   }

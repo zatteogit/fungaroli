@@ -1571,13 +1571,13 @@ html:has(dialog[open]:modal) body { overflow: hidden; }
 .k-badge.mild { background: #d9731c; color: #fff; }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .k-badge.mild { background: #e8893a; color: #1a1208; } }
 
-/* desktop: barra da sito. Logo sempre, sezioni al centro con la lineetta sotto l'attiva, ricerca come campo, indietro accanto al logo */
+/* desktop: barra da sito. Logo sempre, sezioni al centro con la lineetta sotto l'attiva, ricerca come campo; l'indietro sta nella pagina */
 .tsl, .tsk { display: none; }
 @media (min-width: 900px) {
   .brand[hidden] { display: inline !important; }
   .brand { order: 1; }
-  .appbar-back { order: 2; margin-left: 10px; padding-left: 12px; border-left: 1px solid var(--hair); border-radius: 0; max-width: calc(50vw - 360px); min-width: 0; font-size: 15px; }
-  .appbar-back svg { width: 22px; height: 22px; }
+  /* l'indietro non sta nella barra (si schiacciava contro le sezioni): va sopra il titolo della pagina */
+  .appbar .appbar-back { display: none !important; }
   .appbar-actions { order: 3; }
   .tabbar { left: 50%; transform: translateX(-50%); gap: 2px; --tbw: 112px; }
   .tabbar a { width: var(--tbw); justify-content: center; border-radius: 10px; color: var(--text-2); }
@@ -3276,3 +3276,12 @@ img[data-image-state="ready"][data-image-fast] { animation: none; }
 .cover-body .cover-cta, .cover-body .cover-cta * { text-shadow: none; }
 /* avviso dentro il riassunto di una sezione: non è parte del comando che apre la sezione */
 summary .plan-crit { cursor: auto; -webkit-user-select: text; user-select: text; }
+/* desktop: «indietro» sopra il titolo, come una briciola; su telefono resta nella barra */
+.page-back { display: none; }
+@media (min-width: 900px) {
+  .page-back:not([hidden]) { display: inline-flex; align-items: center; gap: 2px; min-height: 36px; max-width: 100%; margin: 0 0 8px -6px; padding: 0 10px 0 2px; border: 0; border-radius: 999px; background: none; color: var(--accent); font: inherit; font-size: 15px; font-weight: 600; cursor: pointer; }
+  .page-back svg { width: 20px; height: 20px; flex: none; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+  .page-back span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  @media (hover: hover) { .page-back:hover { background: var(--surface-2); } }
+  body[data-page="mappa"] .page-back { display: none; }
+}
