@@ -102,6 +102,9 @@ export function renderTreeGrid(box) {
   update();
 }
 
+// «al castagno», «alla roverella», «all'orniello»: preposizione articolata davanti al nome comune
+const alNome = (name) => { const n = name.charAt(0).toLowerCase() + name.slice(1), w = n.split(' ')[0]; return /^[aeiouàèéìòù]/.test(n) ? `all'${n}` : /a$/.test(w) ? `alla ${n}` : `al ${n}`; };
+
 export function renderTreePage(body, id) {
   body.dataset.glossaryContext='Alberi';
   const t = T[id];
@@ -132,7 +135,7 @@ export function renderTreePage(body, id) {
     <h3>Caratteri da confrontare</h3><div data-tree-traits></div>
     ${t.recognize?.length ? `<ol class="keys">${t.recognize.map((k) => `<li><span class="key-text">${esc(k)}</span></li>`).join('')}</ol>` : ''}
     ${t.confusable?.length ? `<h3>Non confonderlo con</h3><ul class="tx-look tree-confusable">${t.confusable.map(confusableCard(id)).join('')}</ul>` : ''}
-    ${fungi.length ? `<h3>Funghi che ci crescono</h3><div class="tree-fungi">${fungi.map((s) => `<a href="#/specie/${s.id}" class="tf" data-entity>${THUMB(s.id, 52)}<span>${esc(s.name)}</span></a>`).join('')}</div>${t.fungi_note ? `<p class="small muted">${esc(t.fungi_note)}</p>` : ''}` : ''}
+    ${fungi.length ? `<h3>Funghi legati ${esc(alNome(t.name))}</h3><div class="tree-fungi">${fungi.map((s) => `<a href="#/specie/${s.id}" class="tf" data-entity>${THUMB(s.id, 52)}<span>${esc(s.name)}</span></a>`).join('')}</div>${t.fungi_note ? `<p class="small muted">${esc(t.fungi_note)}</p>` : ''}` : ''}
     <div class="sp-more">
       ${sec('Nelle zone', zrows.length ? `<p class="small muted">Ettari dei boschi in cui domina (${esc(cats.join(', '))}), dalla Carta Forestale.</p><ul class="where">${zrows.map(({ z, ha }) => `
         <li><a href="#/zona/${z.id}/0"><div class="where-top"><b>${esc(z.name)}</b><span class="small">~${ha.toLocaleString('it-IT')} ha</span></div><div class="bar"><i style="width:${Math.round((ha / maxHa) * 100)}%;background:var(--line)"></i></div></a></li>`).join('')}</ul>` : (t.where_reatino ? '' : ''))}
