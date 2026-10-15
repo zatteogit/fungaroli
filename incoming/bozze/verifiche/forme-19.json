@@ -1,0 +1,286 @@
+{
+  "file": "incoming/icone/forme-19.png",
+  "stato": "ok",
+  "verifiche": [
+    {
+      "cella": 0,
+      "bbox": [
+        86,
+        138,
+        332,
+        279
+      ],
+      "attesa": true,
+      "margini_px": [
+        86,
+        138,
+        86,
+        139
+      ],
+      "margini_ok": true,
+      "contorno_scuro_estremi": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cella": 1,
+      "bbox": [
+        101,
+        85,
+        317,
+        332
+      ],
+      "attesa": true,
+      "margini_px": [
+        101,
+        85,
+        101,
+        86
+      ],
+      "margini_ok": true,
+      "contorno_scuro_estremi": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cella": 2,
+      "bbox": null,
+      "attesa": false,
+      "vuota": true
+    },
+    {
+      "cella": 3,
+      "bbox": [
+        81,
+        161,
+        337,
+        257
+      ],
+      "attesa": true,
+      "margini_px": [
+        81,
+        161,
+        81,
+        161
+      ],
+      "margini_ok": true,
+      "contorno_scuro_estremi": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cella": 4,
+      "bbox": [
+        79,
+        93,
+        339,
+        324
+      ],
+      "attesa": true,
+      "margini_px": [
+        79,
+        93,
+        79,
+        94
+      ],
+      "margini_ok": true,
+      "contorno_scuro_estremi": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cella": 5,
+      "bbox": null,
+      "attesa": false,
+      "vuota": true
+    },
+    {
+      "cella": 6,
+      "bbox": [
+        83,
+        140,
+        335,
+        278
+      ],
+      "attesa": true,
+      "margini_px": [
+        83,
+        140,
+        83,
+        140
+      ],
+      "margini_ok": true,
+      "contorno_scuro_estremi": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cella": 7,
+      "bbox": [
+        92,
+        80,
+        326,
+        338
+      ],
+      "attesa": true,
+      "margini_px": [
+        92,
+        80,
+        92,
+        80
+      ],
+      "margini_ok": true,
+      "contorno_scuro_estremi": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cella": 8,
+      "bbox": null,
+      "attesa": false,
+      "vuota": true
+    }
+  ],
+  "normalizzazione": [
+    {
+      "cella": 0,
+      "bbox_originale": [
+        108,
+        188,
+        354,
+        329
+      ],
+      "scala": 1,
+      "dimensioni": [
+        246,
+        141
+      ],
+      "posizione": [
+        86,
+        138
+      ]
+    },
+    {
+      "cella": 1,
+      "bbox_originale": [
+        101,
+        113,
+        317,
+        360
+      ],
+      "scala": 1,
+      "dimensioni": [
+        216,
+        247
+      ],
+      "posizione": [
+        519,
+        85
+      ]
+    },
+    {
+      "cella": 3,
+      "bbox_originale": [
+        107,
+        181,
+        363,
+        277
+      ],
+      "scala": 1,
+      "dimensioni": [
+        256,
+        96
+      ],
+      "posizione": [
+        81,
+        579
+      ]
+    },
+    {
+      "cella": 4,
+      "bbox_originale": [
+        79,
+        104,
+        339,
+        335
+      ],
+      "scala": 1,
+      "dimensioni": [
+        260,
+        231
+      ],
+      "posizione": [
+        497,
+        511
+      ]
+    },
+    {
+      "cella": 6,
+      "bbox_originale": [
+        105,
+        122,
+        357,
+        260
+      ],
+      "scala": 1,
+      "dimensioni": [
+        252,
+        138
+      ],
+      "posizione": [
+        83,
+        976
+      ]
+    },
+    {
+      "cella": 7,
+      "bbox_originale": [
+        92,
+        48,
+        326,
+        306
+      ],
+      "scala": 1,
+      "dimensioni": [
+        234,
+        258
+      ],
+      "posizione": [
+        510,
+        916
+      ]
+    }
+  ],
+  "bytes": 40253,
+  "dimensioni": [
+    1254,
+    1254
+  ],
+  "sha256": "f299919863ed0f4e284c48c4846586cde4852db28f01103bde7027c5a2231c8b",
+  "prompt": "A transparent PNG sprite sheet, square1254x1254, invisible3x3cells418px each. Use reference1 for EXACT SMALL ICON SIZE, generous TRANSPARENT CELL MARGINS and row positions. Three rows: column1 CAP ONLY side view, column2 WHOLE MUSHROOM, column3 entirely EMPTY. Each separate icon centered in its own cell, at most60% of cell width AND height, at least18% alpha0 padding on EVERY cell edge. No drawn grid, background, shadows, ground, text, numbers or marks. Clean thick dark brown COMPLETE silhouette outline, flat few colors same as species icons. References2 onward show the approved base icons: preserve cap COLOR and all stems, rings, volvas, netting, scales and spots, change ONLY cap SHAPE and age-appropriate proportions. Each row's cap-only and whole must MATCH shape/color. Use EXACT reference cap shade; color labels are broad categories: 'rosso' may be dark red-BROWN. Never borrow anatomical traits or colors between rows. ROW1: clitocybe-rivulosa, base cap color bianco, target shape CONVEX: low rounded dome. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"asciutta\",\"liscia\"],\"hymenophore\":[\"lamelle\"],\"hymenophore_color\":[\"bianco\",\"rosa\",\"grigio\"]}. ROW2: clitocybe-rivulosa, base cap color bianco, target shape FLAT: almost horizontal, expanded cap. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"asciutta\",\"liscia\"],\"hymenophore\":[\"lamelle\"],\"hymenophore_color\":[\"bianco\",\"rosa\",\"grigio\"]}. ROW3: cortinarius-traganus, base cap color violetto, target shape HEMISPHERICAL: rounded half-sphere dome with NO central point or umbo, even if adult base has an umbo. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"asciutta\",\"liscia\",\"vellutata/feltrata\",\"squamosa\"],\"hymenophore\":[\"lamelle\"],\"hymenophore_color\":[\"giallo\",\"bruno\",\"arancio\"]}. No new anatomical traits. Reference species icons are shape/color authorities except the explicit target cap shape. Cap-only must match whole cap. Last column empty. True alpha background.",
+  "edits": [
+    "Correct only underside anatomy/colors. ROW1 and ROW2 Clitocybe rivulosa whole icons: cream gills must be DECURRENT, continuing visibly a short distance DOWN the upper stem, not free or separated by a circular gap. Preserve convex cap row1 and flat cap row2, white color, no ring/volva. ROW3 Cortinarius traganus: underside of BOTH icons must be MUTED OCHRE-BROWN/RUST, not purple; preserve violet cap and pale ochre ringless stem. No new structures, same transparent3x3sheet, thirdcolumnempty, no labels/background/grid.",
+    "Change ONLY the whole Cortinarius traganus in ROW3 COLUMN2. Its rust-brown gills must STOP at the top of the stem with a small NOTCH (sinuate), and must NOT run down the stem. Remove the vertical gill-like streaks from the upper stem of this ROW3 mushroom. Stem remains smooth plain pale ochre, ringless. Keep rust-brown cap UNDERSIDE and violet hemispherical cap. DO NOT change any icon in ROW1/ROW2: those clitocybe MUST retain their cream gills running down stem. Do not alter row3 isolated cap, positions, sizes, outlines, alpha background or empty third column. No text."
+  ],
+  "normalizza": true,
+  "visivo_ok": true,
+  "nota": "Rivulosa convessa/piana bianca con lamelle decorrenti corrette. Tragano emisferico violetto con lamelle ocra-ruggine che si arrestano in alto, gambo liscio ringless; rimosso il trasferimento erroneo della decorrenza. Scala e centratura normalizzate con Python su autorizzazione di Matteo; disegno invariato."
+}
