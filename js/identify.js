@@ -186,7 +186,16 @@ document.addEventListener('click', (e) => {
   if (c && f && c !== c0 && f !== f0) { if (combos.includes(`${c}|${f}`)) suffix = `-${c}-${f}`; else { suffix = `-${f}`; missing = true; } }
   else if (c && c !== c0) suffix = `-${c}`;
   else if (f && f !== f0) suffix = `-${f}`;
-  for (const part of ['cappello', 'gambo']) strip.querySelector(`[data-ill="${part}"]`)?.setAttribute('src', ASSET(`assets/traits/${key}-${part}${suffix}.webp`));
+  // la nuova immagine si scarica prima e poi entra con una breve dissolvenza (niente lampo a vuoto)
+  for (const part of ['cappello', 'gambo']) {
+    const el = strip.querySelector(`[data-ill="${part}"]`), url = ASSET(`assets/traits/${key}-${part}${suffix}.webp`);
+    if (!el || el.getAttribute('src') === url) continue;
+    const pre = new Image(); pre.src = url;
+    (pre.decode ? pre.decode() : Promise.resolve()).catch(() => {}).then(() => {
+      el.setAttribute('src', url);
+      if (!matchMedia('(prefers-reduced-motion: reduce)').matches) el.animate?.([{ opacity: .35, transform: 'scale(.97)' }, { opacity: 1, transform: 'none' }], { duration: 180, easing: 'ease-out' });
+    });
+  }
   const li = strip.querySelector('li:has(.ts-dots)'); let note = li?.querySelector('.ts-note');
   if (li && missing && !note) { note = document.createElement('span'); note.className = 'ts-note'; li.querySelector('.ts-dots').after(note); }
   if (note) { note.hidden = !missing; note.textContent = missing ? 'Colore non ancora disegnato per questa forma' : ''; }

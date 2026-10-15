@@ -707,8 +707,8 @@ function queueWeatherPaint(changed){
   if(!changed.size)return;
   const pending=weatherPaintTimer?.changed||new Set();changed.forEach(id=>pending.add(id));
   if(weatherPaintTimer){weatherPaintTimer.changed=pending;return;}
-  // in home, mentre arriva il meteo: un solo ridisegno a fine scarico (o dopo 6 s), non uno per zona
-  const wait=weatherBusy&&state.view==='uscite'?6000:100;
+  // in home e nella scheda della zona, mentre arriva il meteo: un solo ridisegno a fine scarico (o dopo 6 s), non uno per zona
+  const wait=weatherBusy&&['uscite','zona'].includes(state.view)?6000:100;
   const handle=setTimeout(()=>{const ids=weatherPaintTimer?.changed||pending;weatherPaintTimer=null;paintWeatherView(ids);},wait);
   weatherPaintTimer={handle,changed:pending};
 }
@@ -719,7 +719,7 @@ function receiveWeather(w,meta={}){
   weatherUnavailable=false;series=w.series;zones=weatherZones.filter(z=>series[z.id]);lastWeatherSnapshot=w;
   document.documentElement.classList.toggle('is-offline',!!w.offline);
   weatherStamp(w);$('#today-kicker').textContent=new Date().toLocaleDateString('it-IT',{weekday:'long',day:'numeric',month:'long'});
-  if(changed.size){compute(first?null:changed);if(first&&(meta.phase!=='network'||state.view!=='uscite'))paintWeatherView(changed);else queueWeatherPaint(changed);}
+  if(changed.size){compute(first?null:changed);if(first&&(meta.phase!=='network'||!['uscite','zona'].includes(state.view)))paintWeatherView(changed);else queueWeatherPaint(changed);}
 }
 async function refreshWeather(force){
   const revision=++weatherRevision;weatherController?.abort();weatherController=new AbortController();const signal=weatherController.signal;
