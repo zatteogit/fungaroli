@@ -11,7 +11,6 @@ import { SPECIES, GROUPS, FOREST } from './species.js';
 import { scoreZoneDay, scoreSpecies, habitatAtBand, habitatPotential, elevationFit, combine, classOf, scoreLabel, scoreShortLabel, formatIndex, MODEL_VERSION, PARAMS, CLASSES } from './model.js';
 import { todayISO, loadWeather } from './weather.js';
 import { weatherErrorMessage } from './weather-request.js';
-import { renderCharts } from './chart.js';
 import { initJournal } from './journal.js';
 import { renderSvgMap } from './svgmap.js';
 import { initSpeciesCards, thumb as fungusThumb, renderSpeciesDetail, whereSummary, criticalRule as fungusCriticalRule, criticalRuleOf as fungusCriticalRuleOf, speciesPhoto as fungusPhoto, speciesPhotos as fungusPhotos } from './speciescard.js';
@@ -26,7 +25,7 @@ import { initIdentify, renderIdentify, setCompare, searchTaxa, openTaxon, render
 import { initSearch } from './search.js';
 import { searchFieldHtml, matchesQuery, renderAlsoIn } from './catalog-search.js';
 import { renderGuidedKey } from './guided-key.js';
-import { renderWhy, renderMethod } from './science.js';
+import { renderWhy, renderMethod, drawWhyCharts } from './science.js';
 import { navigate, soft } from './motion.js';
 import { FOREST_LEGEND } from './forest-legend.js';
 import { initTrees, renderTreeGrid, renderTreePage, linkTrees, treeChips, treeForCategory, treeThumb, treePhotoSrc } from './trees.js';
@@ -2138,6 +2137,8 @@ function renderDetail() {
   const sb = series[z.id][bandIndex(z, best.band)];
   const from = Math.max(0, r.todayIndex - HISTORY_DAYS);
   const days = r.days.filter((x) => x.i >= from);
+  // stesso asse dei giorni per tutti i grafici della sezione: ultimi HISTORY_DAYS e i giorni previsti
+  const whyDays = days.map((x) => ({ date: x.date, i: x.i, score: adjusted(z, x.score, x) }));
 
   const [title, sub] = splitName(z);
   const cov = coverOf(z, best.species.id, d);
@@ -2163,9 +2164,9 @@ function renderDetail() {
     ${best.kind==='plant'?'<p class="small muted">Confronta la pianta e verifica regole, tutela e permessi prima della raccolta.</p>':'<p class="small muted" data-plan-status></p>'}
     ${z.protection ? `<div class="notice">${esc(z.protection)}</div>` : ''}
     ${best.kind==='plant'?'':section('regole', 'Regole di raccolta', zoneLegal(z,d))}
-    ${section('meteo', 'Perché questo indice', `${renderWhy({ r: best, s: sb, i: d.i, sp: best.species, band: best.band, dateStr: d.date, shown: s, agg: d.score, parts: d.perSpecies.map((p) => ({ name: p.species.name.split(' / ')[0], score: p.score })), prefs: adjParts(z, d), outing: wxRank(z, d) < 1 ? wxRank(z, d) : 0 })}
+    ${section('meteo', 'Perché questo indice', `${renderWhy({ r: best, s: sb, i: d.i, sp: best.species, band: best.band, dateStr: d.date, shown: s, agg: d.score, parts: d.perSpecies.map((p) => ({ name: p.species.name.split(' / ')[0], score: p.score })), prefs: adjParts(z, d), outing: wxRank(z, d) < 1 ? wxRank(z, d) : 0, days: whyDays, todayIndex: r.todayIndex })}
       <p class="small muted">${esc(best.kind==='plant'?'Indice sperimentale del contesto e della fase: non è una probabilità di raccolta.':contentCopy.indexExplanation || 'Condizioni di crescita: indice sperimentale 0–10.')}</p>
-      <p class="sci-h">L'indice nei giorni</p><div id="charts"></div>${legal?.forecast_note ? `<p class="small muted">${esc(legal.forecast_note)}</p>` : ''}`)}
+      ${legal?.forecast_note ? `<p class="small muted">${esc(legal.forecast_note)}</p>` : ''}`)}
     ${section('sentieri', 'Sentieri della zona', renderTrails(z, d))}
     ${section('bosco', `Bosco a ${best.band} m (Carta Forestale)`, forestBar(hab.frac) + `<p class="small muted">${hab.n} punti nella fascia ±150 m. Campioni spazialmente correlati; composizione indicativa.</p>`)}
     ${section('zona', 'La zona', `<p class="small" data-glossary="Bosco">${esc(z.description)}</p>${treeChips(z.description)}
@@ -2197,13 +2198,7 @@ function renderDetail() {
     zd.appendChild(b);
   }
   zd.querySelector('[aria-selected="true"]')?.scrollIntoView({ block: 'nearest', inline: 'center' });
-  const drawCharts = () => $('#charts') && renderCharts($('#charts'), {
-    dates: days.map((x) => x.date),
-    rain: days.map((x) => sb.p[x.i]),
-    score: days.map((x) => adjusted(z, x.score, x)),
-    todayIndex: r.todayIndex - from,
-    selectedIndex: r.todayIndex + state.dayOffset - from,
-  });
+  const drawCharts = () => drawWhyCharts(box.querySelector('[data-sec="meteo"]'), { s: sb, sp: best.species, days: whyDays, todayIndex: r.todayIndex, i: d.i });
   bindDetailSections(box, id => { if (id === 'meteo') drawCharts(); });
 }
 

@@ -60,7 +60,9 @@ const CONFIG = {
   contrast: {
     minRatio: 4.5,
     conventionRoles: [],
-    pairs: [["--bg", "--text"], ["--surface", "--text"], ["--bg", "--text-2"], ["--surface", "--muted"], ["--bg", "--accent"], ["--surface", "--accent"], ["--brand", "--brand-ink"], ["--bg", "--brand"], ["--action", "--action-ink"], ["--action-hover", "--action-ink"], ["--polline-soft", "--polline-ink"], ["--calendula-soft", "--calendula-ink"], ["--fiordaliso-soft", "--fiordaliso-ink"], ["--germoglio-soft", "--germoglio-ink"], ["--warn-bg", "--warn-ink"], ["--ok-bg", "--ok-ink"], ["--crit-bg", "--crit-ink"]],
+    pairs: [["--bg", "--text"], ["--surface", "--text"], ["--bg", "--text-2"], ["--surface", "--muted"], ["--bg", "--accent"], ["--surface", "--accent"], ["--brand", "--brand-ink"], ["--bg", "--brand"], ["--action", "--action-ink"], ["--action-hover", "--action-ink"], ["--polline-soft", "--polline-ink"], ["--calendula-soft", "--calendula-ink"], ["--fiordaliso-soft", "--fiordaliso-ink"], ["--germoglio-soft", "--germoglio-ink"], ["--warn-bg", "--warn-ink"], ["--ok-bg", "--ok-ink"], ["--crit-bg", "--crit-ink"],
+      // segni dei grafici (barre, linee): 3:1 come da WCAG 1.4.11; il terzo valore sostituisce minRatio
+      ["--surface", "--viz-water", 3], ["--surface", "--viz-heat", 3], ["--surface", "--viz-index", 3], ["--bg", "--viz-water", 3], ["--bg", "--viz-heat", 3], ["--bg", "--viz-index", 3]],
   },
   reserved: {},
   exceptions: {},
@@ -366,13 +368,13 @@ function foundationContracts(allFiles) {
     ...CONFIG.contrast.conventionRoles.flatMap((r) => [[`--${r}`, `--${r}-foreground`], [`--${r}-container`, `--on-${r}-container`]]),
   ];
   for (const [modeName, values] of scopes) {
-    for (const [bgName, fgName] of pairs) {
+    for (const [bgName, fgName, min] of pairs) {
       const bg = parseColor(resolveValue(bgName, values));
       const fg = parseColor(resolveValue(fgName, values));
       if (!bg || !fg) { add("contrast-unresolved", CONFIG.tokens.file, 1, `${modeName} ${fgName}/${bgName}`); continue; }
       const ratio = contrast(bg, fg);
-      if (ratio < CONFIG.contrast.minRatio)
-        add("contrast-aa", CONFIG.tokens.file, 1, `${modeName} ${fgName}/${bgName}: ${ratio.toFixed(2)} < ${CONFIG.contrast.minRatio}`);
+      if (ratio < (min ?? CONFIG.contrast.minRatio))
+        add("contrast-aa", CONFIG.tokens.file, 1, `${modeName} ${fgName}/${bgName}: ${ratio.toFixed(2)} < ${min ?? CONFIG.contrast.minRatio}`);
     }
   }
 

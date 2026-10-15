@@ -135,7 +135,7 @@ for (const width of [320,1280]) test(`passeggiata compatta e accordion esclusivi
   await focus.screenshot({path:`/tmp/fungaroli-walk-accordion-open-${width}.png`});
   const meteo=page.locator('#detail [data-sec="meteo"]');await meteo.locator(':scope > summary').click();
   await expect(focus).not.toHaveAttribute('open','');await expect(page.locator('#detail details.sec[open]')).toHaveCount(1);
-  await expect(page.locator('#charts svg')).not.toHaveCount(0);
+  await expect(meteo.locator('[data-viz] svg')).toHaveCount(4);
   await meteo.locator('.sci-technical > summary').click();await expect(meteo).toHaveAttribute('open','');
   await focus.locator(':scope > summary').click();
   await expect(focus).toHaveAttribute('open','');await expect(meteo).not.toHaveAttribute('open','');
