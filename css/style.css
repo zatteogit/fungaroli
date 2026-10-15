@@ -3223,3 +3223,5 @@ div.tx-look-main { cursor: default; }
 .profile-entry:not(.is-user) { width: 40px; height: 40px; padding: 0; justify-content: center; }
 .profile-entry:not(.is-user) [data-profile-label] { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 .profile-entry:not(.is-user) svg { width: 19px; height: 19px; }
+/* foto arrivate dalla cache o sostituite a una già visibile: nessuna dissolvenza */
+img[data-image-state="ready"][data-image-fast] { animation: none; }

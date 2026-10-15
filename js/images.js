@@ -18,7 +18,11 @@ function watch(img) {
     const source=img.getAttribute('src');
     // se decode() resta in sospeso (possibile con gli SVG in alcuni browser) l’immagine non resta «in caricamento»
     try {await Promise.race([img.decode(),new Promise(r=>setTimeout(r,800))]);}catch { /* il browser può aver già decodificato */ }
-    if(img.getAttribute('src')===source&&img.naturalWidth)finish(img,'ready');
+    if(img.getAttribute('src')===source&&img.naturalWidth){
+      // arrivata subito dalla cache: niente dissolvenza (era il «lampeggio» al caricamento)
+      if(performance.now()-(tracked.get(img)?.started??-1e9)<150)img.dataset.imageFast='1';
+      finish(img,'ready');
+    }
   });
   img.addEventListener('error',()=>{
     if(!img.getAttribute('src'))return;
@@ -30,10 +34,20 @@ function start(img) {
   const source=img.dataset.src;
   if(!source||!img.isConnected)return;
   watch(img);tracked.get(img).source=source;
-  img.dataset.imageState='loading';
   img.loading='eager';
-  img.removeAttribute('data-src');img.src=source;
-  if(img.complete&&img.naturalWidth)finish(img,'ready');
+  img.removeAttribute('data-src');
+  // foto già visibile che cambia (un'altra copertina): la vecchia resta finché la nuova non è pronta
+  if(img.dataset.imageState==='ready'&&img.getAttribute('src')&&img.getAttribute('src')!==source){
+    const next=new Image();next.decoding='async';
+    next.onload=async()=>{try{await next.decode();}catch{/* già decodificata */} if(tracked.get(img)?.source===source){img.dataset.imageFast='1';img.src=source;}};
+    next.onerror=()=>{if(tracked.get(img)?.source===source){img.dataset.imageState='loading';img.src=source;}};
+    next.src=source;return;
+  }
+  img.dataset.imageState='loading';
+  tracked.get(img).started=performance.now();
+  img.src=source;
+  // già in cache: nessuna dissolvenza, la foto c'è e basta
+  if(img.complete&&img.naturalWidth){img.dataset.imageFast='1';finish(img,'ready');}
 }
 export function setImageSource(img,source) {
   observer?.unobserve(img);watch(img);
@@ -45,6 +59,8 @@ export function setImageSource(img,source) {
 function prepare(img) {
   watch(img);
   if(img.dataset.src){
+    // una foto già mostrata che cambia sorgente si sostituisce senza tornare vuota
+    if(img.dataset.imageState==='ready'&&img.getAttribute('src')){start(img);return;}
     img.dataset.imageState='waiting';
     if(img.fetchPriority==='high'||!observer)start(img);else observer.observe(img);
   }else if(img.getAttribute('src')){

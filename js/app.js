@@ -1177,9 +1177,15 @@ function buildSearch(idj, trj, embedded) {
   initSearch(items);
 }
 
+// la copertina scelta per un luogo e un giorno resta quella per tutta la sessione:
+// il meteo che arriva dopo non deve cambiarla sotto gli occhi
+const coverMemo = new Map();
 function coverOf(z, spId, d) {
   // l'immagine del luogo segue stagione e meteo del giorno scelto (oggi, se non c'è un giorno)
-  const zm = pickCover(zoneMedia[z.id], d?.date || todayISO(), d ? wxIcon(wxOf(z, d)) : 'sun');
+  const date = d?.date || todayISO(), key = `${z.id}|${date}`, icon = d ? wxIcon(wxOf(z, d)) : 'sun';
+  // finché il meteo dell'uscita non c'è, non si fissa niente: si usa la scelta provvisoria
+  if (!coverMemo.has(key) && icon !== 'unknown') coverMemo.set(key, pickCover(zoneMedia[z.id], date, icon));
+  const zm = coverMemo.get(key) || pickCover(zoneMedia[z.id], date, icon);
   if (zm) return { hd: zm.file_hd || zm.file, small: zm.file, credit: zm, alt: z.name };
   const p = speciesPhoto(spId);
   return p ? { hd: p.file_hd || p.file, small: p.file, credit: p, alt: '' } : null;
@@ -1385,9 +1391,9 @@ function renderSeason() {
       ${ph ? `<img data-src="${assetSrc(ph.file)}" alt="" loading="lazy" decoding="async">` : ''}<span class="shade"></span>${ring(p.score, false)}
       <span class="portrait-body"><b>${esc(p.species.name)}</b>${reportBadge(p.z.id, p.species.id)}<small>${esc(splitName(p.z)[0])}</small></span></button></li>`;
   }).join('');
-  // Anche il primo meteo arriva come aggiornamento in background: la sezione va
-  // riconciliata, non saltata, altrimenti resta vuota sotto il suo titolo.
-  if (weatherPainting) updateWeatherHTML(box, html); else box.innerHTML = html;
+  // Sempre riconciliata sul posto (le azioni sono delegate): le card che restano tengono la loro foto,
+  // invece di sparire e ricomparire a ogni ridisegno (meteo, filtri, segnalazioni).
+  updateWeatherHTML(box, html);
 }
 
 function renderMapDays() {
