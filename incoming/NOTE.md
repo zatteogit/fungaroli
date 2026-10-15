@@ -254,3 +254,8 @@ QA ripetibile e hash delle tavole in `bozze/verifica_varianti.py` e `bozze/VERIF
 ### alberi-faggeta — 15/10, continuazione
 
 Soggetto corretto: foglia ovale-ellittica a margine intero, nervature laterali quasi rettilinee e parallele, picciolo corto dentro l'anello; cupola aperta con4valve a brevi aculei e una faggiola triangolare. Fonti interne: data/trees.json: faggio.leaf,fruit,recognize; correzioni di Matteo del15/10. Aculei ridotti a pochi segni esterni, volume delle valve sintetizzato; non è una chiave botanica. PNG e QA verificati prima del caricamento; anteprima64/84/112px sui due temi in incoming/bozze/timbri/alberi-faggeta-verifica.png.
+
+
+### bosco-querce — 15/10, continuazione
+
+Foglia lobata arrotondata e ghianda con cupola continua a squame appressate, riferimento roverella. Fonti interne: data/trees.json: roverella.leaf,fruit,recognize; data/challenges.json: bosco-querce. Peluria omessa, squame della cupola sintetizzate; non rappresenta tutte le querce della sfida. PNG e QA verificati prima del caricamento; anteprima64/84/112px sui due temi in incoming/bozze/timbri/bosco-querce-verifica.png.
