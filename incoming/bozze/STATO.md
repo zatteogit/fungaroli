@@ -212,3 +212,5 @@ Ordine aggiornato da Matteo il 15/10: completare prima tutte le varianti di colo
 | icone/varianti-13.png | rubroboletus-satanas: colore:bianco; rubroboletus-satanas: colore:grigio; neoboletus-luridiformis: colore:bruno | ok | QA visiva completata; 6 icone, alpha reale, terza colonna vuota. Basi nel manifest. |
 
 | icone/varianti-14.png | neoboletus-luridiformis: colore:nero; caloboletus-calopus: colore:grigio; caloboletus-calopus: colore:crema | ok | QA visiva completata; 6 icone, alpha reale, terza colonna vuota. Basi nel manifest. |
+
+| icone/varianti-15.png | caloboletus-calopus: colore:bruno; caloboletus-radicans: colore:bianco; caloboletus-radicans: colore:grigio | ok | QA visiva completata; 6 icone, alpha reale, terza colonna vuota. Basi nel manifest. |
