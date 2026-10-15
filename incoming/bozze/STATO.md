@@ -216,3 +216,5 @@ Ordine aggiornato da Matteo il 15/10: completare prima tutte le varianti di colo
 | icone/varianti-15.png | caloboletus-calopus: colore:bruno; caloboletus-radicans: colore:bianco; caloboletus-radicans: colore:grigio | ok | QA visiva completata; 6 icone, alpha reale, terza colonna vuota. Basi nel manifest. |
 
 | icone/varianti-16.png | inocybe: colore:crema; inocybe: colore:bianco; inocybe: colore:giallo | ok | QA visiva completata; 6 icone, alpha reale, terza colonna vuota. Basi nel manifest. |
+
+| icone/varianti-17.png | inocybe: colore:grigio; inocybe: colore:violetto; inocybe: colore:rosa | ok | QA visiva completata; 6 icone, alpha reale, terza colonna vuota. Basi nel manifest. |
