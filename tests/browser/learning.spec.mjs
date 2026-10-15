@@ -228,7 +228,7 @@ for(const width of [320,1280]) test(`guide in Scopri e taccuino personale distin
   await page.locator('#learn-hub [data-learn="guide"]').click();
   const view=page.locator('[data-view="guide-list"]');await expect(view).toBeVisible();
   await expect(view.locator('.seg-nav a, .sub-nav a')).toHaveCount(0);
-  await expect(page.locator('.appbar-back span')).toHaveText('Impara');
+  await expect(page.locator('[data-back]:visible span')).toHaveText('Impara');
   await expect(page.locator('[data-tab="impara"]')).toHaveAttribute('aria-current','page');
   await expect(page.locator('#editorial .eyebrow').first()).toHaveText('Guide del bosco');
   await expect(page.locator('#editorial .editorial-card')).toHaveCount(3);
@@ -237,10 +237,10 @@ for(const width of [320,1280]) test(`guide in Scopri e taccuino personale distin
   await page.evaluate(()=>document.fonts.ready);await page.screenshot({path:`/tmp/fungaroli-guide-navigation-${width}.png`});
   await page.locator('#editorial a').first().click();await expect(page.locator('#guide-body h1')).toHaveText('Una guida dal CMS');
   await expect(page.locator('#guide-body')).toContainText('Conosci gli alberi');
-  await expect(page.locator('.appbar-back')).toHaveAttribute('aria-label','Indietro: Guide');
-  await page.locator('.appbar-back').click();await expect(view).toBeVisible();
-  await page.goto('/#/guide/leggere-il-bosco');await expect(page.locator('.appbar-back')).toHaveAttribute('aria-label','Indietro: Guide');
-  await page.locator('.appbar-back').click();await expect(view).toBeVisible();
+  await expect(page.locator('[data-back]:visible')).toHaveAttribute('aria-label','Indietro: Guide');
+  await page.locator('[data-back]:visible').click();await expect(view).toBeVisible();
+  await page.goto('/#/guide/leggere-il-bosco');await expect(page.locator('[data-back]:visible')).toHaveAttribute('aria-label','Indietro: Guide');
+  await page.locator('[data-back]:visible').click();await expect(view).toBeVisible();
   await page.locator('[data-tab="diario"]').click();await expect(page.locator('#journal-h')).toHaveText('Il mio taccuino');
   await expect(page.locator('#journal-storage')).toContainText('Il taccuino');
   await page.goto('/#/info');await expect(page.locator('#legal-sections')).toContainText('Taccuino privato');
@@ -382,7 +382,7 @@ for(const width of [390,1280]) test(`Scopri: tre cataloghi, Impara al primo live
     await page.goto(route);const view=page.locator('.view:not([hidden])');
     await expect(view.locator('.seg-nav a, .sub-nav a')).toHaveCount(0);
     await expect(page.locator('[data-tab="impara"]')).toHaveAttribute('aria-current','page');
-    if(width<900)await expect(page.locator('.appbar-back span')).toHaveText('Impara');
+    await expect(page.locator('[data-back]:visible span')).toHaveText('Impara');
   }
   // un solo campo: sui cataloghi la ricerca generale si nasconde e il campo filtra la griglia
   await page.goto('/#/specie');const field=page.locator('#species-grid [data-catalog-search]');

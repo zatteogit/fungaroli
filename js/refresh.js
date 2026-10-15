@@ -64,8 +64,14 @@ document.addEventListener('click', (e) => {
 // versione nuova presa dal service worker mentre l'app e' aperta (non al primo avvio)
 if ('serviceWorker' in navigator && navigator.serviceWorker.controller) {
   let shown = false;
-  navigator.serviceWorker.addEventListener('controllerchange', () => {
-    if (shown) return; shown = true;
+  // la pagina arriva prima dalla rete: spesso e' gia' la versione nuova e il cambio di service worker
+  // avviene subito dopo il caricamento. L'avviso serve solo se la versione del nuovo worker e' diversa da questa.
+  const mine = document.querySelector('meta[name="app-version"]')?.content || '';
+  navigator.serviceWorker.addEventListener('controllerchange', async () => {
+    if (shown) return;
+    const next = await fetch('sw.js', { cache: 'no-store' }).then((r) => r.text()).then((t) => t.match(/fungaroli-shell-v\d+/)?.[0] || '').catch(() => '');
+    if (shown || !next || next === mine) return;
+    shown = true;
     const t = toast('C\'è una versione nuova dell\'app <button type="button" class="link-btn">Ricarica</button>', 12000);
     t.querySelector('button')?.addEventListener('click', () => location.reload());
   });

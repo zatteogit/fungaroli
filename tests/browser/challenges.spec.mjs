@@ -21,7 +21,7 @@ for(const width of [390,1280]) test(`sfide: Confronta dà il timbro e le spunte 
   await page.goto('/#/sfide');
   const view=page.locator('.view[data-view="sfide"]');
   await expect(view.locator('h1')).toHaveText('Sfide');
-  await expect(page.locator('.appbar-back span')).toHaveText('Impara');
+  await expect(page.locator('[data-back]:visible span')).toHaveText('Impara');
   await expect(page.locator('.tabbar [data-tab="impara"]')).toHaveAttribute('aria-current','page');
   await expect(view.locator('#ch-stamps-h')).toHaveText('I tuoi timbri');
   await expect(view.locator('.ch-stamps-grid')).toHaveCount(0);
@@ -29,7 +29,10 @@ for(const width of [390,1280]) test(`sfide: Confronta dà il timbro e le spunte 
   // Confronta: rispondi a tutte le domande, la spiegazione cita la fonte, alla fine il timbro
   await view.locator('a.ch-card[data-challenge="funghi-sosia"]').click();
   await expect(page).toHaveURL(/#\/sfide\/funghi-sosia$/);
-  await expect(page.locator('.appbar-back')).toBeVisible();
+  await expect(page.locator('[data-back]:visible')).toBeVisible();
+  // su desktop l'indietro sta nella pagina, sopra il titolo; la barra tiene solo logo, sezioni e ricerca
+  await expect(page.locator(width<900?'.appbar-back':'.page-back')).toBeVisible();
+  if(width>=900)await expect(page.locator('.appbar .appbar-back')).toBeHidden();
   const questions=view.locator('.ch-q');const n=await questions.count();
   expect(n).toBeGreaterThanOrEqual(3);
   for(let i=0;i<n;i++){

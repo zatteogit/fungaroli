@@ -234,6 +234,8 @@ async function init() {
     addNotebookReference(body,kind,id,s.name);
     return s.name;
   }});
+  // l'avviso nel riassunto di una sezione resta un avviso: toccarlo non apre la sezione (sembrerebbe un approfondimento del pericolo)
+  document.addEventListener('click',e=>{if(e.target.closest('summary .plan-crit')&&!e.target.closest('a,button'))e.preventDefault();});
   document.addEventListener('click',e=>{const b=e.target.closest('[data-species]'),p=b&&botanicalById(b.dataset.species);if(p){e.preventDefault();e.stopImmediatePropagation();openEntitySheet(p.href,b);}},true);
   renderTreeGrid($('#tree-grid'));
   treesData = trj; idData = idj;
@@ -426,10 +428,10 @@ function updateBack(r, nav) {
     navStack.push({ hash: r.hash, title: titleOf(r), tab: r.tab, level: levelOf(r) });
   }
   const deep = levelOf(r) > 0;
-  const b = $('.appbar-back');
-  if (b) {
+  // stesso «indietro» in due posti: nella barra su telefono, sopra il titolo della pagina su desktop (la barra tiene le sezioni)
+  const back = navStack.length > 1 ? navStack[navStack.length - 2].title : PARENT_TITLE(r);
+  for (const b of document.querySelectorAll('.appbar-back, .page-back')) {
     b.hidden = !deep;
-    const back = navStack.length > 1 ? navStack[navStack.length - 2].title : PARENT_TITLE(r);
     b.querySelector('span').textContent = back || 'Indietro';
     b.setAttribute('aria-label', `Indietro: ${back || 'pagina precedente'}`);
   }
@@ -440,6 +442,8 @@ function updateBack(r, nav) {
 }
 
 function route() {
+  // un ridisegno del meteo in sospeso (in home aspetta fino a 6 s) non deve cadere sulla pagina nuova: questa si disegna gia' con i dati aggiornati
+  if (weatherPaintTimer) { clearTimeout(weatherPaintTimer.handle); weatherPaintTimer = null; }
   const r = parseRoute();
   r.tab = { piante:'specie', pianta:'specie', zona: 'uscite', glossario: 'impara', 'specie-dettaglio': 'specie', alberi: 'specie', albero: 'specie', riconosci: r.recognizeMode === 'bosco' ? 'impara' : 'specie', info: '', metodo: '', guide: 'impara', 'guide-list': 'impara', sfide: 'impara', fungo: 'specie', commestibile: 'specie' }[r.view] ?? r.view;
   r.hash = location.hash || '#/';
@@ -704,7 +708,9 @@ function queueWeatherPaint(changed){
   if(!changed.size)return;
   const pending=weatherPaintTimer?.changed||new Set();changed.forEach(id=>pending.add(id));
   if(weatherPaintTimer){weatherPaintTimer.changed=pending;return;}
-  const handle=setTimeout(()=>{const ids=weatherPaintTimer?.changed||pending;weatherPaintTimer=null;paintWeatherView(ids);},100);
+  // in home, mentre arriva il meteo: un solo ridisegno a fine scarico (o dopo 6 s), non uno per zona
+  const wait=weatherBusy&&state.view==='uscite'?6000:100;
+  const handle=setTimeout(()=>{const ids=weatherPaintTimer?.changed||pending;weatherPaintTimer=null;paintWeatherView(ids);},wait);
   weatherPaintTimer={handle,changed:pending};
 }
 function receiveWeather(w,meta={}){
@@ -714,7 +720,7 @@ function receiveWeather(w,meta={}){
   weatherUnavailable=false;series=w.series;zones=weatherZones.filter(z=>series[z.id]);lastWeatherSnapshot=w;
   document.documentElement.classList.toggle('is-offline',!!w.offline);
   weatherStamp(w);$('#today-kicker').textContent=new Date().toLocaleDateString('it-IT',{weekday:'long',day:'numeric',month:'long'});
-  if(changed.size){compute(first?null:changed);if(first)paintWeatherView(changed);else queueWeatherPaint(changed);}
+  if(changed.size){compute(first?null:changed);if(first&&(meta.phase!=='network'||state.view!=='uscite'))paintWeatherView(changed);else queueWeatherPaint(changed);}
 }
 async function refreshWeather(force){
   const revision=++weatherRevision;weatherController?.abort();weatherController=new AbortController();const signal=weatherController.signal;
@@ -1226,7 +1232,7 @@ function discoveriesHtml(z,d,walk,items=discoveriesFor(z,d,walk)){
  return `<p class="discovery-intro">Potresti incontrare anche queste specie. ${items[0].scope==='tracciato'?'Ambienti campionati sul tratto del sentiero':'Compatibilità con gli ambienti della zona'}: presenza da verificare.</p><ul class="discovery-grid">${items.map(item=>{
   const key=`${z.id}/${item.date}/${item.kind}/${item.id}`;discoveryItems.set(key,item);
   return `<li><a href="${esc(item.href)}" data-discovery="${esc(key)}" data-entity class="discovery-link">${item.kind==='pianta'?plantThumb(item.id,44):treeThumb(item.id,44)}<span><small>${item.kind==='albero'?'Albero':plantRecord(item.id)?.category||'Pianta'}</small><b>${esc(item.name)}</b><small>${esc(item.phase)}</small></span><span aria-hidden="true">›</span></a></li>`;
- }).join('')}</ul><a href="#/piante" class="discovery-catalog more-row">Altre piante in Scopri</a>`;
+ }).join('')}</ul>${actRow('#/piante','leaf','Altre piante in Scopri','Erbe, fiori, frutti e arbusti')}`;
 }
 // Sfide: nome, foto e scheda di un albero, una pianta o un fungo (la scheda si apre nel pannello laterale).
 function challengeEntity(kind,id){
@@ -1242,7 +1248,7 @@ function challengeEntity(kind,id){
 let challengeAsset=f=>f;
 // In fondo a «Durante il giro»: una sola sfida non completata, adatta ai boschi principali della zona e al mese.
 // Componenti da app: riga-azione (icona, titolo, sottotitolo, freccia) e pillola d'azione breve
-const AR_IC={stamp:'<circle cx="12" cy="10" r="6"/><path d="m9.5 10 1.8 1.8L15 8.2M8.5 15.5 7 21l5-2.5 5 2.5-1.5-5.5"/>',rules:'<path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"/><path d="m9 12 2 2 4-4"/>',nav:'<path d="m3 11 18-8-8 18-2-8z"/>',pin:'<path d="M12 21s-6-5.5-6-11a6 6 0 0 1 12 0c0 5.5-6 11-6 11z"/><circle cx="12" cy="10" r="2.2"/>',go:'<path d="M5 12h14M13 6l6 6-6 6"/>'};
+const AR_IC={stamp:'<circle cx="12" cy="10" r="6"/><path d="m9.5 10 1.8 1.8L15 8.2M8.5 15.5 7 21l5-2.5 5 2.5-1.5-5.5"/>',rules:'<path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"/><path d="m9 12 2 2 4-4"/>',nav:'<path d="m3 11 18-8-8 18-2-8z"/>',pin:'<path d="M12 21s-6-5.5-6-11a6 6 0 0 1 12 0c0 5.5-6 11-6 11z"/><circle cx="12" cy="10" r="2.2"/>',leaf:'<path d="M5 19c0-8 5-13 14-14 0 9-5 14-13 14z"/><path d="M5 19 13 11"/>',go:'<path d="M5 12h14M13 6l6 6-6 6"/>'};
 const arIc=k=>`<svg viewBox="0 0 24 24" aria-hidden="true">${AR_IC[k]}</svg>`;
 const actRow=(href,ic,t,sub='',ext=false)=>`<a class="act-row" href="${href}"${ext?' target="_blank" rel="noopener"':''}><span class="ar-ic">${arIc(ic)}</span><span class="ar-b"><span class="ar-t">${t}</span>${sub?`<span class="ar-s">${sub}</span>`:''}</span></a>`;
 const actPill=(href,ic,t,ext=false)=>`<a class="act-pill" href="${href}"${ext?' target="_blank" rel="noopener"':''}>${arIc(ic)}<span>${t}</span></a>`;
