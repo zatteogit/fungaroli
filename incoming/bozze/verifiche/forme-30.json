@@ -1,0 +1,286 @@
+{
+  "file": "incoming/icone/forme-30.png",
+  "stato": "ok",
+  "verifiche": [
+    {
+      "cella": 0,
+      "bbox": [
+        62,
+        145,
+        356,
+        273
+      ],
+      "attesa": true,
+      "margini_px": [
+        62,
+        145,
+        62,
+        145
+      ],
+      "margini_ok": true,
+      "contorno_scuro_estremi": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cella": 1,
+      "bbox": [
+        62,
+        79,
+        356,
+        339
+      ],
+      "attesa": true,
+      "margini_px": [
+        62,
+        79,
+        62,
+        79
+      ],
+      "margini_ok": true,
+      "contorno_scuro_estremi": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cella": 2,
+      "bbox": null,
+      "attesa": false,
+      "vuota": true
+    },
+    {
+      "cella": 3,
+      "bbox": [
+        62,
+        143,
+        356,
+        275
+      ],
+      "attesa": true,
+      "margini_px": [
+        62,
+        143,
+        62,
+        143
+      ],
+      "margini_ok": true,
+      "contorno_scuro_estremi": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cella": 4,
+      "bbox": [
+        62,
+        113,
+        356,
+        304
+      ],
+      "attesa": true,
+      "margini_px": [
+        62,
+        113,
+        62,
+        114
+      ],
+      "margini_ok": true,
+      "contorno_scuro_estremi": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cella": 5,
+      "bbox": null,
+      "attesa": false,
+      "vuota": true
+    },
+    {
+      "cella": 6,
+      "bbox": [
+        62,
+        144,
+        356,
+        273
+      ],
+      "attesa": true,
+      "margini_px": [
+        62,
+        144,
+        62,
+        145
+      ],
+      "margini_ok": true,
+      "contorno_scuro_estremi": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cella": 7,
+      "bbox": [
+        62,
+        84,
+        356,
+        334
+      ],
+      "attesa": true,
+      "margini_px": [
+        62,
+        84,
+        62,
+        84
+      ],
+      "margini_ok": true,
+      "contorno_scuro_estremi": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cella": 8,
+      "bbox": null,
+      "attesa": false,
+      "vuota": true
+    }
+  ],
+  "normalizzazione": [
+    {
+      "cella": 0,
+      "bbox_originale_immagine": [
+        142,
+        134,
+        589,
+        328
+      ],
+      "scala": 0.6577181208053692,
+      "dimensioni": [
+        294,
+        128
+      ],
+      "posizione": [
+        62,
+        145
+      ]
+    },
+    {
+      "cella": 1,
+      "bbox_originale_immagine": [
+        645,
+        85,
+        1083,
+        472
+      ],
+      "scala": 0.6712328767123288,
+      "dimensioni": [
+        294,
+        260
+      ],
+      "posizione": [
+        480,
+        79
+      ]
+    },
+    {
+      "cella": 3,
+      "bbox_originale_immagine": [
+        139,
+        532,
+        598,
+        738
+      ],
+      "scala": 0.6405228758169934,
+      "dimensioni": [
+        294,
+        132
+      ],
+      "posizione": [
+        62,
+        561
+      ]
+    },
+    {
+      "cella": 4,
+      "bbox_originale_immagine": [
+        674,
+        511,
+        1121,
+        802
+      ],
+      "scala": 0.6577181208053692,
+      "dimensioni": [
+        294,
+        191
+      ],
+      "posizione": [
+        480,
+        531
+      ]
+    },
+    {
+      "cella": 6,
+      "bbox_originale_immagine": [
+        151,
+        913,
+        610,
+        1114
+      ],
+      "scala": 0.6405228758169934,
+      "dimensioni": [
+        294,
+        129
+      ],
+      "posizione": [
+        62,
+        980
+      ]
+    },
+    {
+      "cella": 7,
+      "bbox_originale_immagine": [
+        686,
+        838,
+        1136,
+        1221
+      ],
+      "scala": 0.6533333333333333,
+      "dimensioni": [
+        294,
+        250
+      ],
+      "posizione": [
+        480,
+        920
+      ]
+    }
+  ],
+  "bytes": 43150,
+  "dimensioni": [
+    1254,
+    1254
+  ],
+  "sha256": "9409d6fdffc0ff59ef6fcc304a7b0297d589b6fdf3f724107ab11fe16a33f00f",
+  "prompt": "A transparent PNG sprite sheet, square1254x1254, invisible3x3cells418px each. Use reference1 for EXACT SMALL ICON SIZE, generous TRANSPARENT CELL MARGINS and row positions. Three rows: column1 CAP ONLY side view, column2 WHOLE MUSHROOM, column3 entirely EMPTY. Each separate icon centered in its own cell, at most60% of cell width AND height, at least18% alpha0 padding on EVERY cell edge. No drawn grid, background, shadows, ground, text, numbers or marks. Clean thick dark brown COMPLETE silhouette outline, flat few colors same as species icons. References2 onward show the approved base icons: preserve cap COLOR and all stems, rings, volvas, netting, scales and spots, change ONLY cap SHAPE and age-appropriate proportions. Each row's cap-only and whole must MATCH shape/color. Use EXACT reference cap shade; color labels are broad categories: 'rosso' may be dark red-BROWN. Never borrow anatomical traits or colors between rows. ROW1: pleurotus-eryngii, base cap color bruno, target shape FUNNEL: depressed center with upturned edge. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"vellutata/feltrata\"],\"hymenophore\":[\"lamelle\"],\"hymenophore_color\":[\"bianco\",\"grigio\",\"crema\"]}. ROW2: pleurotus-ostreatus, base cap color grigio, target shape FUNNEL: depressed center with upturned edge. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":false,\"cap_surface\":null,\"hymenophore\":[\"lamelle\"],\"hymenophore_color\":[\"bianco\",\"crema\"]}. ROW3: pseudocraterellus-undulatus, base cap color grigio, target shape TRUMPET: deeply hollow narrow funnel. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":false,\"cap_surface\":null,\"hymenophore\":[\"liscio\",\"pliche\"],\"hymenophore_color\":[\"grigio\"]}. No new anatomical traits. Reference species icons are shape/color authorities except the explicit target cap shape. Cap-only must match whole cap. Last column empty. True alpha background.",
+  "edits": [
+    "Change ONLY ROW2 BOTH gray Pleurotus ostreatus cap profiles to distinctly FUNNEL shaped: outer edges raised and center depressed into a clear shallow U, similar depression to row1 but retaining gray coloring and asymmetric lateral white stem on whole right icon. Current row2 convex central dome must disappear. Keep cream decurrent gill lines beneath. Preserve rows1 and3 exactly. Crisp dark outline, fully transparent background, zero shadows/glow.",
+    "Remove every external gray translucent halo, shadow, colored glow, and stray pixel around all six icons. Keep exactly the drawings INSIDE the dark brown outlines unchanged, including the U-shaped caps in rows1 and2. The outer contour must directly meet completely transparent alpha0 canvas. Six clean isolated flat clipart icons, no blur or shadow, no background, no extra marks."
+  ],
+  "normalizza": true,
+  "visivo_ok": true,
+  "nota": "Pleurotus a imbuto, ostreatus con gambo laterale; Pseudocraterellus a trombetta ondulata. Aloni rimossi dal generatore; componenti integri ricentrati per ordine di riga e colonna. Scala e centratura normalizzate con Python su autorizzazione di Matteo; disegno invariato."
+}
