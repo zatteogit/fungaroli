@@ -400,9 +400,9 @@ for(const width of [390,1280]) test(`Scopri: tre cataloghi più Impara e ricerca
     await expect(page.locator('[data-tab="specie"]')).toHaveAttribute('aria-current','page');
     await expect(page.locator('[data-back]:visible span')).toHaveText('Impara');
   }
-  // un solo campo: sui cataloghi la ricerca generale si nasconde e il campo filtra la griglia
+  // sui cataloghi il campo filtra la griglia; la ricerca generale resta sempre nella barra
   await page.goto('/#/specie');const field=page.locator('#species-grid [data-catalog-search]');
-  await expect(page.locator('.tab-search')).toBeHidden();
+  await expect(page.locator('.tab-search')).toBeVisible();
   await page.keyboard.press('/');await expect(field).toBeFocused();
   await field.fill('porcino');await expect(page.locator('#sp-cards .sp-card').first()).toContainText('Porcino');
   const n=await page.locator('#sp-cards .sp-card').count();expect(n).toBeGreaterThan(0);expect(n).toBeLessThan(10);

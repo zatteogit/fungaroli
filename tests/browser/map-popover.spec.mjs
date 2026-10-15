@@ -86,8 +86,19 @@ test('aggiornare il meteo non sostituisce il pannello della sosta con il riepilo
  await expect(page.locator('#map-sheet .sheet-title')).toHaveText(title);await expect(page.locator('#map-sheet .sheet-back')).toBeVisible();expect(errors).toEqual([]);
 });
 
-for (const width of [390, 1280]) test(`tre sezioni: la mappa si apre da Uscite e torna indietro (${width}px)`, async ({page}) => {
+for (const width of [390, 1280]) test(`quattro sezioni: la mappa è al primo livello della barra (${width}px)`, async ({page}) => {
   const {errors}=await setup(page,{width});
+  await expect(page.locator('.tabbar a[data-tab]')).toHaveCount(4);
+  await expect(page.locator('.tabbar a[data-tab]')).toHaveText(['Uscite','Mappa','Scopri','Taccuino']);
+  await expect(page.locator('.tabbar [data-tab="mappa"]')).toHaveAttribute('aria-current','page');
+  await expect(page.locator('.tab-search')).toBeVisible();
+  await page.goto('/#/');await expect(page.locator('.tabbar [data-tab="uscite"]')).toHaveAttribute('aria-current','page');
+  await expect(page.locator('[data-map-link], .map-back')).toHaveCount(0);
+  await page.locator('.tabbar [data-tab="mappa"]').click();
+  await expect(page).toHaveURL(/#\/mappa$/);
+  await expect(page.locator('.tabbar [data-tab="mappa"]')).toHaveAttribute('aria-current','page');
+  expect(errors).toEqual([]);
+});
   await expect(page.locator('.tabbar a[data-tab]')).toHaveCount(3);
   await expect(page.locator('.tabbar [data-tab="uscite"]')).toHaveAttribute('aria-current','page');
   await page.goto('/#/');await page.locator('[data-map-link]').click();

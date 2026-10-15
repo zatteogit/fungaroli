@@ -40,6 +40,7 @@
   <nav class="tabbar" aria-label="Sezioni">
       <span class="tab-pill" aria-hidden="true"></span>
       <a href="#/" data-tab="uscite"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 6 0 0 1 16 0z"/><path d="M10 12v6a2 2 0 0 0 4 0v-6"/></svg><span>Uscite</span></a>
+      <a href="#/mappa" data-tab="mappa"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2z"/><path d="M9 4v14M15 6v14"/></svg><span>Mappa</span></a>
       <a href="#/scopri" data-tab="specie"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="7" height="7" rx="2"/><rect x="13" y="4" width="7" height="7" rx="2"/><rect x="4" y="13" width="7" height="7" rx="2"/><rect x="13" y="13" width="7" height="7" rx="2"/></svg><span>Scopri</span></a>
       <a href="#/diario" data-tab="diario"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h11a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H6z"/><path d="M6 3v18M10 8h5M10 12h5"/></svg><span>Taccuino</span></a>
       <button type="button" class="tab-search" data-open-search aria-label="Cerca in tutta l'app" title="Cerca (/)"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg><span class="tsl">Cerca</span><kbd class="tsk">/</kbd></button>
@@ -57,7 +58,6 @@
           <h1 id="home-h" class="view-title">Dove andare</h1>
           <p class="view-sub"><button type="button" id="refresh" class="upd-btn" title="Tocca per ricaricare il meteo"><span id="updated" aria-live="polite"></span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12a8 8 0 1 1-2.34-5.66"/><path d="M20 4v4.5h-4.5"/></svg></button></p>
         </div>
-        <a href="#/mappa" class="map-link" data-map-link title="Mappa delle zone"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2z"/><path d="M9 4v14M15 6v14"/></svg><span>Mappa delle zone</span></a>
       </div>
       <div id="active-filters" class="active-filters" role="group" aria-label="Cosa cerchi e preferenze"></div>
       <div id="days" class="days" role="tablist" aria-label="Giorno di uscita"></div>
@@ -90,7 +90,6 @@
     </section>
 
     <section class="view view-map" data-view="mappa" hidden aria-label="Mappa">
-      <a href="#/" class="map-back" aria-label="Torna a Uscite"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 5-7 7 7 7"/></svg></a>
       <div class="map-top">
         <div id="map-days" class="days map-days" role="tablist" aria-label="Giorno"></div>
         <div id="map-filters" class="active-filters map-filters" role="group" aria-label="Cosa cerchi sulla mappa"></div>

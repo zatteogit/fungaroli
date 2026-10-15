@@ -74,7 +74,7 @@ button { font: inherit; color: inherit; }
   position: fixed; z-index: 1000; left: 12px; right: 12px;
   bottom: var(--tabbar-bottom);
   height: var(--tabbar-h); padding: 6px; max-width: 520px; margin: 0 auto;
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px;
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px;
   border-radius: 24px; border: 1px solid color-mix(in srgb, var(--border) 60%, transparent);
   background: color-mix(in srgb, var(--surface) 84%, transparent);
   backdrop-filter: blur(20px) saturate(1.6); -webkit-backdrop-filter: blur(20px) saturate(1.6);
@@ -1122,7 +1122,7 @@ html.is-offline #updated { color: var(--warn-ink); font-weight: 600; }
 
 /* barra delle schede: la pillola scorre sotto la scheda attiva */
 .tabbar { --tbp: 6px; }
-.tab-pill { position: absolute; z-index: 0; top: var(--tbp); bottom: var(--tbp); left: var(--tbp); width: calc((100% - 2 * var(--tbp) - 8px) / 3); border-radius: 18px; background: var(--accent-soft); transform: translateX(calc(var(--ti, 0) * (100% + 4px))); }
+.tab-pill { position: absolute; z-index: 0; top: var(--tbp); bottom: var(--tbp); left: var(--tbp); width: calc((100% - 2 * var(--tbp) - 12px) / 4); border-radius: 18px; background: var(--accent-soft); transform: translateX(calc(var(--ti, 0) * (100% + 4px))); }
 .tabbar a { position: relative; z-index: 1; }
 .tabbar[style*="--ti: -1"] .tab-pill, .tabbar:not([style*="--ti"]) .tab-pill { opacity: 0; }
 @media (orientation: landscape) and (max-height: 520px) { .tabbar { --tbp: 4px; } }
@@ -1274,8 +1274,8 @@ html.is-offline #updated { color: var(--warn-ink); font-weight: 600; }
 }
 
 /* ricerca: tasto a parte nella barra in basso (come la ricerca di iOS) e campo "finto" nelle sezioni */
-.tabbar { --sbw: 50px; grid-template-columns: repeat(3, 1fr) var(--sbw); }
-.tab-pill { width: calc((100% - 2 * var(--tbp) - 12px - var(--sbw)) / 3); }
+.tabbar { --sbw: 50px; grid-template-columns: repeat(4, 1fr) var(--sbw); }
+.tab-pill { width: calc((100% - 2 * var(--tbp) - 16px - var(--sbw)) / 4); }
 .tab-search { position: relative; z-index: 1; display: grid; place-items: center; align-self: center; width: var(--sbw); height: var(--sbw); border-radius: 50%; border: 0; background: var(--text); color: var(--bg); cursor: pointer; box-shadow: 0 4px 12px rgb(0 0 0 / .18); }
 .tab-search svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; }
 @media (orientation: landscape) and (max-height: 520px) { .tabbar { --sbw: 40px; } }
@@ -2638,8 +2638,7 @@ html.entity-open { overflow: hidden; }
 .map-th-group { position: absolute; left: 0; top: 0; transform: translate(-9px, calc(-11px + var(--th-dy, 0px))); display: inline-flex; align-items: center; gap: 4px; cursor: pointer; }
 .map-th-group b { background: var(--surface); color: var(--text); border-radius: 999px; padding: 1px 6px; font-size: 11px; font-weight: 800; white-space: nowrap; font-variant-numeric: tabular-nums; box-shadow: 0 1px 4px rgb(0 0 0 / .3); }
 
-/* ricerca contestuale: sui cataloghi il campo è nella pagina, la ricerca generale si nasconde (mai due campi insieme) */
-body:is([data-page="specie"], [data-page="piante"], [data-page="alberi"]) .tab-search { display: none; }
+/* la ricerca generale resta sempre nella barra; sui cataloghi il campo della pagina filtra la griglia */
 .catalog-search { display: flex; margin: 0 0 12px; }
 .botanical-tools .catalog-search, .botanical-tools label.catalog-search { display: flex; margin-bottom: 0; }
 .also-in { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 8px; margin: 18px 0 0; font-size: 13px; color: var(--text-2); }
