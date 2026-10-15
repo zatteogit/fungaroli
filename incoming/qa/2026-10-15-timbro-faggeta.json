@@ -1,0 +1,50 @@
+{
+  "file": "incoming/timbri/alberi-faggeta.png",
+  "size": [
+    512,
+    512
+  ],
+  "margin_required": 52,
+  "bbox_alpha128": [
+    58,
+    60,
+    455,
+    452
+  ],
+  "margin_alpha_max": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "outer_ink_rgb_max": [
+    [
+      97,
+      120,
+      83
+    ],
+    [
+      98,
+      122,
+      83
+    ],
+    [
+      96,
+      118,
+      82
+    ],
+    [
+      95,
+      118,
+      82
+    ]
+  ],
+  "monochrome_note": "Single green ink with small generator tone variations; ring and symbol use same ink, no separate outline/fill colors.",
+  "proof_sizes": [
+    64,
+    84,
+    112
+  ],
+  "status": "esempio da approvare",
+  "export": "Complete generated stamp isolated with 2px padding beyond alpha>=8, proportionally resized to400px, centered on512px transparent canvas. No anatomical repainting."
+}

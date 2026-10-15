@@ -240,3 +240,12 @@ QA ripetibile e hash delle tavole in `bozze/verifica_varianti.py` e `bozze/VERIF
 - Generazione integrata image_gen; identificatore del modello non esposto. Riferimento di stile: tavola-alberi-02. Usata la prima correzione generata; i successivi tentativi di riposizionamento sono scartati.
 - Esportazione tecnica: sagoma completa prelevata con 2px oltre il riquadro alpha>=8 e traslata senza ridimensionamento nella cella0; residui quasi trasparenti del fondo esterni a quel riquadro esclusi. Non sono stati ridisegnati contorni, foglioline o picciolo.
 - QA codice: RGBA1254×1254; 9celle418px, fasce42px completamente alpha0; celle1–8 completamente alpha0. Sagoma alpha>=128: x102–313,y86–331; contorno bruno scuro su prima/ultima riga/colonna. Rapporto in `incoming/qa/2026-10-15-alberi-08.json`.
+
+
+## Timbri — primo esempio da verificare
+
+- `timbri/alberi-faggeta.png`: primo esempio, non approvato. PNG512×512 con due anelli, foglia di faggio e cupola aperta a4valve con2semi angolari. Un inchiostro verde, con lievi variazioni tonali del generatore; nessun secondo colore per il contorno. È una sintesi didattica, non una foto o una chiave di identificazione.
+- Nervature ridotte a pochi segni; spine minute della cupola omesse per leggibilità. Quattro valve mantenute; semi semplificati. Al64px il frutto è piccolo: valutare la leggibilità con Matteo prima degli altri8timbri.
+- Esportazione proporzionale dell'intero timbro a400px, centrato nel PNG512px, senza ridisegnare la morfologia. Rimossi solo residui di fondo esterni al riquadro del soggetto. Fasce52px alpha0, nessun taglio; primo/ultimo pixel opaco dei4estremi nello stesso inchiostro verde.
+- Anteprima alle dimensioni reali64,84,112px su carta chiara e sfondo scuro in `incoming/bozze/timbri/alberi-faggeta-verifica.png`; rapporto QA in `incoming/qa/2026-10-15-timbro-faggeta.json`.
+- STOP richiesto dall'ordine di lavoro e dal brief timbri: caricato l'esempio, si attende la verifica di Matteo. Altri8timbri e parti A/B/C del glossario/guide/infografiche non avviati.

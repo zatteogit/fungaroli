@@ -258,3 +258,6 @@ Ordine aggiornato da Matteo il 15/10: completare prima tutte le varianti di colo
 |---|---|---|
 | icone-alberi/tavola-alberi-08.png | ok | Composta palmata, cella0; 7foglioline da un punto comune, picciolo lungo. Margini42px alpha0 e contorni bruni ai4estremi verificati; altre8celle alpha0. Nessun dubbio morfologico dal brief. |
 | qa/2026-10-15-alberi-08.json | ok | Rapporto automatico delle9celle della tavola08; alpha128 per contorno, alpha0 per margini e celle vuote. |
+| timbri/alberi-faggeta.png | esempio da approvare | Primo timbro; foglia e cupola4valve/2semi. QA52px alpha0, inchiostro integro ai4estremi. Frutto minuto a64px: verifica di Matteo prima degli altri8. |
+| bozze/timbri/alberi-faggeta-verifica.png | da verificare | Prove64/84/112px su carta e tema scuro; solo anteprima tecnica, non asset dell'app. |
+| qa/2026-10-15-timbro-faggeta.json | ok | Controlli di formato, margini e4estremi; non costituisce approvazione visiva. |
