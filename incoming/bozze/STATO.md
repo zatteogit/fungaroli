@@ -277,3 +277,7 @@ Ordine aggiornato da Matteo il 15/10: completare prima tutte le varianti di colo
 | timbri/margini-radure.png | ok | Rametto di biancospino con due foglie lobate, spine e tre piccoli pomi, accenno di prato alla base; margini52px alpha0, inchiostro integro ai4estremi; Nervature e particolari del seme omessi; nessun fiore mescolato ai frutti. |
 | bozze/timbri/margini-radure-verifica.png | ok | Prove64/84/112px su carta e scuro. |
 | qa/2026-10-15-timbro-margini-radure.json | ok | Controllo automatico del formato, margini e inchiostro ai4estremi. |
+
+| timbri/funghi-sosia.png | ok | Due funghi generici affiancati simili ma diversi per profilo e segni sul cappello, sagome intere; margini52px alpha0, inchiostro integro ai4estremi; Pittogrammi non attribuiti a specie, nessun verdetto di commestibilità; dettagli tassonomici omessi perché il brief richiede un simbolo generico. |
+| bozze/timbri/funghi-sosia-verifica.png | ok | Prove64/84/112px su carta e scuro. |
+| qa/2026-10-15-timbro-funghi-sosia.json | ok | Controllo automatico del formato, margini e inchiostro ai4estremi. |

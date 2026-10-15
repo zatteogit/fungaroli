@@ -14415,5 +14415,19 @@
     ],
     "qa": "Rametto di biancospino con due foglie lobate, spine e tre piccoli pomi, accenno di prato alla base; formato512x512, fasce52px alpha0 e quattro estremi nello stesso inchiostro verificati col codice. Prove64/84/112px sui2temi.",
     "semplificazioni": "Nervature e particolari del seme omessi; nessun fiore mescolato ai frutti"
+  },
+  {
+    "file": "incoming/timbri/funghi-sosia.png",
+    "tipo": "timbro",
+    "soggetto": "funghi-sosia",
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case: scientific-educational. Create a NEW512x512PNG achievement INK STAMP for Fungaroli. Attached stamp is the APPROVED STYLE reference ONLY: single muted natural ink, double circular ring (outer heavier, inner thin), restrained irregularity like ink on a field notebook, flat clean pictogram, no photographic realism, no shading. Real alpha transparency everywhere not ink, including all negative spaces. Never add a pale fill or brown outlines. Ink color as specified below is the ONLY hue for rings and subject, with at most minor natural ink variation. No text/letters/numbers/symbol labels. Diameter about390px centered256,256, leave at least56px genuinely transparent on all four sides. Keep entire subject with every petiole/stem INSIDE inner ring, inset at least20px from ring. Simple robust negative-space cuts, readable64,84,112px. No tiny decoration. Anatomy must follow supplied source specification; don't borrow subject from reference.\nNEW SUBJECT SOSIA, TWO WHOLE GENERIC MUSHROOMS sidebyside, near mirror arrangement but visibly NOT identical. Ink natural warm mushroom BROWN #96806b, onlyoneink. Subjects intentionally generic pictograms, NOT speciesportraits; don'tcopy leaf/fruitsfromreference. Two similarlysized compactmushrooms, both fullintact roundedconvexcaps and shortthickstems withcomplete roundedbases, separated by generousgap. Leftcap smooth broad dome; rightcap similar dome but slightlyflatter with only3wide negative-space ovalmarks oncap. Stem silhouettes slightlydifferent, rightstemslimmer. No ring,no volva,no other taxonomicdetails,no cutsection,nolabels,nocheck/cross,safetysymbols,facesor eyes. One broadnegativecurve beneathcap separatescapfromstem; do not make gilltexture. BOTH subjects fullyinsideinnercircle, central50%canvas, nohalomushroom,growthstagesorgrass. Sameapproved double-ring stamp, fullalphaandmonochrome.",
+    "stato": "ok",
+    "fonti_dati": [
+      "docs/handoff-immagini-timbri.md: funghi-sosia",
+      "data/challenges.json: funghi-sosia.intro,questions"
+    ],
+    "qa": "Due funghi generici affiancati simili ma diversi per profilo e segni sul cappello, sagome intere; formato512x512, fasce52px alpha0 e quattro estremi nello stesso inchiostro verificati col codice. Prove64/84/112px sui2temi.",
+    "semplificazioni": "Pittogrammi non attribuiti a specie, nessun verdetto di commestibilità; dettagli tassonomici omessi perché il brief richiede un simbolo generico"
   }
 ]

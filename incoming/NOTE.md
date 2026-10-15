@@ -269,3 +269,8 @@ Foglia ovato-lanceolata acuminata dentata e infruttescenza pendula di sacche mem
 ### margini-radure — 15/10, continuazione
 
 Rametto di biancospino con due foglie lobate, spine e tre piccoli pomi, accenno di prato alla base. Fonti interne: data/plants.json: biancospino.recognize; data/challenges.json: margini-radure. Nervature e particolari del seme omessi; nessun fiore mescolato ai frutti. PNG e QA verificati prima del caricamento; anteprima64/84/112px sui due temi in incoming/bozze/timbri/margini-radure-verifica.png.
+
+
+### funghi-sosia — 15/10, continuazione
+
+Due funghi generici affiancati simili ma diversi per profilo e segni sul cappello, sagome intere. Fonti interne: docs/handoff-immagini-timbri.md: funghi-sosia; data/challenges.json: funghi-sosia.intro,questions. Pittogrammi non attribuiti a specie, nessun verdetto di commestibilità; dettagli tassonomici omessi perché il brief richiede un simbolo generico. PNG e QA verificati prima del caricamento; anteprima64/84/112px sui due temi in incoming/bozze/timbri/funghi-sosia-verifica.png.
