@@ -1,0 +1,66 @@
+{
+  "file": "incoming/glossario/lobi.png",
+  "size": [
+    1024,
+    1024
+  ],
+  "sha256": "9248a37dd985bab1ad570fbe3a638a6516fef03829491bf63bc35b552c7d2014",
+  "source_bbox_alpha128": [
+    250,
+    130,
+    774,
+    894
+  ],
+  "source_extremes_rgb_max": [
+    [
+      68,
+      21,
+      3
+    ],
+    [
+      62,
+      19,
+      3
+    ],
+    [
+      65,
+      18,
+      1
+    ],
+    [
+      74,
+      24,
+      5
+    ]
+  ],
+  "extremes_rgb_max": [
+    [
+      69,
+      20,
+      3
+    ],
+    [
+      62,
+      18,
+      3
+    ],
+    [
+      67,
+      19,
+      3
+    ],
+    [
+      71,
+      21,
+      3
+    ]
+  ],
+  "margin_required_px": 103,
+  "margin_alpha_max": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "export": "Intero soggetto isolato con2px di antialias e centrato proporzionalmente; nessun ritocco morfologico o ricolore."
+}

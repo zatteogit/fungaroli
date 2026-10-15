@@ -1,0 +1,66 @@
+{
+  "file": "incoming/glossario/micorriza.png",
+  "size": [
+    1024,
+    1024
+  ],
+  "sha256": "c82350129e4742193c6e3fd957a70a1e658d35e72bb919bdd9b8be856662ca4a",
+  "source_bbox_alpha128": [
+    130,
+    130,
+    892,
+    893
+  ],
+  "source_extremes_rgb_max": [
+    [
+      76,
+      22,
+      3
+    ],
+    [
+      69,
+      20,
+      3
+    ],
+    [
+      65,
+      19,
+      3
+    ],
+    [
+      69,
+      21,
+      4
+    ]
+  ],
+  "extremes_rgb_max": [
+    [
+      77,
+      23,
+      3
+    ],
+    [
+      68,
+      20,
+      3
+    ],
+    [
+      65,
+      18,
+      3
+    ],
+    [
+      68,
+      21,
+      3
+    ]
+  ],
+  "margin_required_px": 103,
+  "margin_alpha_max": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "export": "Intero soggetto isolato con2px di antialias e centrato proporzionalmente; nessun ritocco morfologico o ricolore."
+}

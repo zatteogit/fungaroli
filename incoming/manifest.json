@@ -15139,5 +15139,41 @@
       "data/glossary.json:sporata.definition,observe"
     ],
     "qa": "incoming/qa/glossario-sporata.json"
+  },
+  {
+    "file": "incoming/glossario/micorriza.png",
+    "tipo": "glossario",
+    "soggetto": "micorriza",
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case: scientific-educational. One 1024x1024PNG educational glossary illustration for Fungaroli. Reference is the APPROVED STYLE: simple warm flat illustration, thick smooth DARK BROWN contours, restrained warm orange highlight, cream/beige muted supporting elements, one subtle highlight at most. No text, letters, numbers, labels, watermark or UI. Genuine transparent alpha background. WHOLE subject centered, at least15% transparent margin on every side. EVERY outermost visible edge or tip must end in DARK BROWN OUTLINE, no flat fill cutoffs. Keep biological concept anatomically clear, not species identification. SUBJECT: Compact forest soil CUTAWAY: small generic mushroom at surface, a TREE ROOT enters from one side beneath surface and branches. WHITE hyphal threads wrap the root tips as an ectomycorrhizal mantle and branch into soil. Root tan, fungus/mycelium orange/cream. All roots/filament tips enclosed within soil block, no disconnected worms. Clear root versus finer fungal threads. SOURCE definition: Associazione tra un fungo e le radici di una pianta, con scambio di nutrienti. Molti funghi forestali formano ectomicorrize.",
+    "stato": "ok",
+    "fonti_dati": [
+      "data/glossary.json:micorriza.definition,observe"
+    ],
+    "qa": "incoming/qa/glossario-micorriza.json"
+  },
+  {
+    "file": "incoming/glossario/cespitoso.png",
+    "tipo": "glossario",
+    "soggetto": "cespitoso",
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case: scientific-educational. One 1024x1024PNG educational glossary illustration for Fungaroli. Reference is the APPROVED STYLE: simple warm flat illustration, thick smooth DARK BROWN contours, restrained warm orange highlight, cream/beige muted supporting elements, one subtle highlight at most. No text, letters, numbers, labels, watermark or UI. Genuine transparent alpha background. WHOLE subject centered, at least15% transparent margin on every side. EVERY outermost visible edge or tip must end in DARK BROWN OUTLINE, no flat fill cutoffs. Keep biological concept anatomically clear, not species identification. SUBJECT: A DENSE CLUMP of FIVE small generic mushrooms with visibly JOINED or tightly clustered STEM BASES at one shared base. Orange caps, muted cream stems. Individual stems converge at bottom. Entire mushrooms, no crop, no species traits or rings/volvas. SOURCE definition: Crescita in gruppi fitti, spesso con gambi uniti o molto ravvicinati alla base.",
+    "stato": "ok",
+    "fonti_dati": [
+      "data/glossary.json:cespitoso.definition,observe"
+    ],
+    "qa": "incoming/qa/glossario-cespitoso.json"
+  },
+  {
+    "file": "incoming/glossario/lobi.png",
+    "tipo": "glossario",
+    "soggetto": "lobi",
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case: scientific-educational. One 1024x1024PNG educational glossary illustration for Fungaroli. Reference is the APPROVED STYLE: simple warm flat illustration, thick smooth DARK BROWN contours, restrained warm orange highlight, cream/beige muted supporting elements, one subtle highlight at most. No text, letters, numbers, labels, watermark or UI. Genuine transparent alpha background. WHOLE subject centered, at least15% transparent margin on every side. EVERY outermost visible edge or tip must end in DARK BROWN OUTLINE, no flat fill cutoffs. Keep biological concept anatomically clear, not species identification. SUBJECT: One entire generic OAK-LIKE LOBED LEAF, short petiole, 3pairs BROAD rounded protruding lobes separated by clear deep sinuses, green muted lamina; highlight the rounded LOBES warm orange. Keep leaf whole and continuous, no separated leaflets, smooth rounded edges not serrated. SOURCE definition: Parti sporgenti del margine di una foglia, separate da incavi più o meno profondi.",
+    "stato": "ok",
+    "fonti_dati": [
+      "data/glossary.json:lobi.definition,observe"
+    ],
+    "qa": "incoming/qa/glossario-lobi.json"
   }
 ]

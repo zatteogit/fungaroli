@@ -333,3 +333,10 @@ Ordine aggiornato da Matteo il 15/10: completare prima tutte le varianti di colo
 | qa/glossario-spora.json | ok | Margini trasparenti e contorni verificati col codice; verifica visiva completata. |
 | glossario/sporata.png | ok | Margini trasparenti e contorni verificati col codice; verifica visiva completata. |
 | qa/glossario-sporata.json | ok | Margini trasparenti e contorni verificati col codice; verifica visiva completata. |
+
+| glossario/micorriza.png | ok | Margini trasparenti e contorni verificati col codice; verifica visiva completata. |
+| qa/glossario-micorriza.json | ok | Margini trasparenti e contorni verificati col codice; verifica visiva completata. |
+| glossario/cespitoso.png | ok | Margini trasparenti e contorni verificati col codice; verifica visiva completata. |
+| qa/glossario-cespitoso.json | ok | Margini trasparenti e contorni verificati col codice; verifica visiva completata. |
+| glossario/lobi.png | ok | Margini trasparenti e contorni verificati col codice; verifica visiva completata. |
+| qa/glossario-lobi.json | ok | Margini trasparenti e contorni verificati col codice; verifica visiva completata. |

@@ -1,0 +1,66 @@
+{
+  "file": "incoming/glossario/cespitoso.png",
+  "size": [
+    1024,
+    1024
+  ],
+  "sha256": "6c8869686be484f27189c3dcac0d481bc30a4615ee79befab6838d8e95361b36",
+  "source_bbox_alpha128": [
+    130,
+    144,
+    894,
+    879
+  ],
+  "source_extremes_rgb_max": [
+    [
+      72,
+      27,
+      7
+    ],
+    [
+      74,
+      37,
+      21
+    ],
+    [
+      73,
+      28,
+      10
+    ],
+    [
+      72,
+      29,
+      9
+    ]
+  ],
+  "extremes_rgb_max": [
+    [
+      66,
+      21,
+      5
+    ],
+    [
+      68,
+      28,
+      11
+    ],
+    [
+      68,
+      25,
+      7
+    ],
+    [
+      69,
+      24,
+      5
+    ]
+  ],
+  "margin_required_px": 103,
+  "margin_alpha_max": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "export": "Intero soggetto isolato con2px di antialias e centrato proporzionalmente; nessun ritocco morfologico o ricolore."
+}
