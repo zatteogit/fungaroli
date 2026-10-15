@@ -180,3 +180,5 @@ Ordine aggiornato da Matteo il 15/10: completare prima tutte le varianti di colo
 | icone-alberi/tavola-alberi-03.png | 0: leaf_margin/intero; 1: leaf_margin/dentato; 2: leaf_margin/doppiamente_dentato; 3: leaf_margin/lobato; 4: leaf_margin/spinoso; 6: leaf_base/simmetrica; 7: leaf_base/asimmetrica | ok | Confronto bordo su stessa foglia ovale e verde; base in primo piano con asimmetria accentuata. Verificati alpha e resa a64px. Limite: dentatura doppia ancora meno immediata a48px; dettagli dei denti secondari minuti. |
 
 | icone/varianti-04.png | caesarea: colore:rosso; caesarea: colore:giallo; amanita-crocea: colore:giallo | ok | QA visiva completata; 6 icone, alpha reale, terza colonna vuota. Basi nel manifest. |
+
+| icone/varianti-05.png | amanita-rubescens: colore:bruno; amanita-pantherina: colore:grigio; amanita-pantherina: colore:crema | ok | QA visiva completata; 6 icone, alpha reale, terza colonna vuota. Basi nel manifest. |

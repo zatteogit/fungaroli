@@ -8556,5 +8556,125 @@
       "forma": "convesso"
     },
     "qa": "Controllo visivo dei caratteri invarianti. PNG RGBA 1254×1254, griglia 3×3, colonna 3 vuota; controllo del canale alfa: tutte le fasce di bordo di 42 px (almeno 10%) trasparenti su ogni cella."
+  },
+  {
+    "file": "incoming/icone/varianti-05.png",
+    "tipo": "illustrazione",
+    "soggetto": "amanita-rubescens",
+    "tessera": "cappello",
+    "stagione": null,
+    "foto_di_partenza": null,
+    "autore_foto": null,
+    "licenza_foto": null,
+    "pagina_foto": null,
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case scientific-educational. Make a 1254x1254 PNG sprite sheet, true transparent alpha. Invisible3x3 equal grid: each row col1 cap-only SIDE VIEW; col2 WHOLE mushroom; col3 completely empty transparent. Exactly6icons, no text/grid/shadows. Match approved reference flat icon style, thin warm dark brown outline, simple broad flat fills, tiny restrained highlight. COLOR VARIANTS ONLY. Preserve each source cap shape, age, proportions, scale, gills, warts/scales, ring, volva and stem markings. No new growth phases. Same relative cell center and scale as source cap and whole icons. Clean alpha no stray pixels. Image1 baseROW1 Amanita rubescens has rosy-brown convex cap with pale ROSE-GRAY warts, white gills, rosy pale stem with STRIATED pendant ring and bulb WITHOUT sharply delineated basal veil bands; no sac volva. Base color classified ROSA. OUTPUTROW1 rubescens BROWN cap #8e5f36; keep its rose-gray warts, striated ring, rosy stem and non-ringed bulb. Image1 baseROW2 Amanita pantherina has BROWN convex cap, pureWHITE warts and finely striated margin, white gills/stem/pendant ring and bulb with sharply delineated basal veil bands. OUTPUTROW2 pantherina GRAY cap #9d968a; OUTPUTROW3 pantherina CREAM cap #e3cfa3. Preserve pure white warts, fine marginal striae, white ring and basal bands. Never give pantherina sac volva. Strict original silhouettes for all rows.",
+    "cella": 0,
+    "variante": "colore:bruno",
+    "base": {
+      "colore": "rosa",
+      "forma": "convesso"
+    },
+    "qa": "Controllo visivo dei caratteri invarianti. PNG RGBA 1254×1254, griglia 3×3, colonna 3 vuota; controllo del canale alfa: tutte le fasce di bordo di 42 px (almeno 10%) trasparenti su ogni cella."
+  },
+  {
+    "file": "incoming/icone/varianti-05.png",
+    "tipo": "illustrazione",
+    "soggetto": "amanita-rubescens",
+    "tessera": "gambo",
+    "stagione": null,
+    "foto_di_partenza": null,
+    "autore_foto": null,
+    "licenza_foto": null,
+    "pagina_foto": null,
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case scientific-educational. Make a 1254x1254 PNG sprite sheet, true transparent alpha. Invisible3x3 equal grid: each row col1 cap-only SIDE VIEW; col2 WHOLE mushroom; col3 completely empty transparent. Exactly6icons, no text/grid/shadows. Match approved reference flat icon style, thin warm dark brown outline, simple broad flat fills, tiny restrained highlight. COLOR VARIANTS ONLY. Preserve each source cap shape, age, proportions, scale, gills, warts/scales, ring, volva and stem markings. No new growth phases. Same relative cell center and scale as source cap and whole icons. Clean alpha no stray pixels. Image1 baseROW1 Amanita rubescens has rosy-brown convex cap with pale ROSE-GRAY warts, white gills, rosy pale stem with STRIATED pendant ring and bulb WITHOUT sharply delineated basal veil bands; no sac volva. Base color classified ROSA. OUTPUTROW1 rubescens BROWN cap #8e5f36; keep its rose-gray warts, striated ring, rosy stem and non-ringed bulb. Image1 baseROW2 Amanita pantherina has BROWN convex cap, pureWHITE warts and finely striated margin, white gills/stem/pendant ring and bulb with sharply delineated basal veil bands. OUTPUTROW2 pantherina GRAY cap #9d968a; OUTPUTROW3 pantherina CREAM cap #e3cfa3. Preserve pure white warts, fine marginal striae, white ring and basal bands. Never give pantherina sac volva. Strict original silhouettes for all rows.",
+    "cella": 1,
+    "variante": "colore:bruno",
+    "base": {
+      "colore": "rosa",
+      "forma": "convesso"
+    },
+    "qa": "Controllo visivo dei caratteri invarianti. PNG RGBA 1254×1254, griglia 3×3, colonna 3 vuota; controllo del canale alfa: tutte le fasce di bordo di 42 px (almeno 10%) trasparenti su ogni cella."
+  },
+  {
+    "file": "incoming/icone/varianti-05.png",
+    "tipo": "illustrazione",
+    "soggetto": "amanita-pantherina",
+    "tessera": "cappello",
+    "stagione": null,
+    "foto_di_partenza": null,
+    "autore_foto": null,
+    "licenza_foto": null,
+    "pagina_foto": null,
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case scientific-educational. Make a 1254x1254 PNG sprite sheet, true transparent alpha. Invisible3x3 equal grid: each row col1 cap-only SIDE VIEW; col2 WHOLE mushroom; col3 completely empty transparent. Exactly6icons, no text/grid/shadows. Match approved reference flat icon style, thin warm dark brown outline, simple broad flat fills, tiny restrained highlight. COLOR VARIANTS ONLY. Preserve each source cap shape, age, proportions, scale, gills, warts/scales, ring, volva and stem markings. No new growth phases. Same relative cell center and scale as source cap and whole icons. Clean alpha no stray pixels. Image1 baseROW1 Amanita rubescens has rosy-brown convex cap with pale ROSE-GRAY warts, white gills, rosy pale stem with STRIATED pendant ring and bulb WITHOUT sharply delineated basal veil bands; no sac volva. Base color classified ROSA. OUTPUTROW1 rubescens BROWN cap #8e5f36; keep its rose-gray warts, striated ring, rosy stem and non-ringed bulb. Image1 baseROW2 Amanita pantherina has BROWN convex cap, pureWHITE warts and finely striated margin, white gills/stem/pendant ring and bulb with sharply delineated basal veil bands. OUTPUTROW2 pantherina GRAY cap #9d968a; OUTPUTROW3 pantherina CREAM cap #e3cfa3. Preserve pure white warts, fine marginal striae, white ring and basal bands. Never give pantherina sac volva. Strict original silhouettes for all rows.",
+    "cella": 3,
+    "variante": "colore:grigio",
+    "base": {
+      "colore": "bruno",
+      "forma": "convesso"
+    },
+    "qa": "Controllo visivo dei caratteri invarianti. PNG RGBA 1254×1254, griglia 3×3, colonna 3 vuota; controllo del canale alfa: tutte le fasce di bordo di 42 px (almeno 10%) trasparenti su ogni cella."
+  },
+  {
+    "file": "incoming/icone/varianti-05.png",
+    "tipo": "illustrazione",
+    "soggetto": "amanita-pantherina",
+    "tessera": "gambo",
+    "stagione": null,
+    "foto_di_partenza": null,
+    "autore_foto": null,
+    "licenza_foto": null,
+    "pagina_foto": null,
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case scientific-educational. Make a 1254x1254 PNG sprite sheet, true transparent alpha. Invisible3x3 equal grid: each row col1 cap-only SIDE VIEW; col2 WHOLE mushroom; col3 completely empty transparent. Exactly6icons, no text/grid/shadows. Match approved reference flat icon style, thin warm dark brown outline, simple broad flat fills, tiny restrained highlight. COLOR VARIANTS ONLY. Preserve each source cap shape, age, proportions, scale, gills, warts/scales, ring, volva and stem markings. No new growth phases. Same relative cell center and scale as source cap and whole icons. Clean alpha no stray pixels. Image1 baseROW1 Amanita rubescens has rosy-brown convex cap with pale ROSE-GRAY warts, white gills, rosy pale stem with STRIATED pendant ring and bulb WITHOUT sharply delineated basal veil bands; no sac volva. Base color classified ROSA. OUTPUTROW1 rubescens BROWN cap #8e5f36; keep its rose-gray warts, striated ring, rosy stem and non-ringed bulb. Image1 baseROW2 Amanita pantherina has BROWN convex cap, pureWHITE warts and finely striated margin, white gills/stem/pendant ring and bulb with sharply delineated basal veil bands. OUTPUTROW2 pantherina GRAY cap #9d968a; OUTPUTROW3 pantherina CREAM cap #e3cfa3. Preserve pure white warts, fine marginal striae, white ring and basal bands. Never give pantherina sac volva. Strict original silhouettes for all rows.",
+    "cella": 4,
+    "variante": "colore:grigio",
+    "base": {
+      "colore": "bruno",
+      "forma": "convesso"
+    },
+    "qa": "Controllo visivo dei caratteri invarianti. PNG RGBA 1254×1254, griglia 3×3, colonna 3 vuota; controllo del canale alfa: tutte le fasce di bordo di 42 px (almeno 10%) trasparenti su ogni cella."
+  },
+  {
+    "file": "incoming/icone/varianti-05.png",
+    "tipo": "illustrazione",
+    "soggetto": "amanita-pantherina",
+    "tessera": "cappello",
+    "stagione": null,
+    "foto_di_partenza": null,
+    "autore_foto": null,
+    "licenza_foto": null,
+    "pagina_foto": null,
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case scientific-educational. Make a 1254x1254 PNG sprite sheet, true transparent alpha. Invisible3x3 equal grid: each row col1 cap-only SIDE VIEW; col2 WHOLE mushroom; col3 completely empty transparent. Exactly6icons, no text/grid/shadows. Match approved reference flat icon style, thin warm dark brown outline, simple broad flat fills, tiny restrained highlight. COLOR VARIANTS ONLY. Preserve each source cap shape, age, proportions, scale, gills, warts/scales, ring, volva and stem markings. No new growth phases. Same relative cell center and scale as source cap and whole icons. Clean alpha no stray pixels. Image1 baseROW1 Amanita rubescens has rosy-brown convex cap with pale ROSE-GRAY warts, white gills, rosy pale stem with STRIATED pendant ring and bulb WITHOUT sharply delineated basal veil bands; no sac volva. Base color classified ROSA. OUTPUTROW1 rubescens BROWN cap #8e5f36; keep its rose-gray warts, striated ring, rosy stem and non-ringed bulb. Image1 baseROW2 Amanita pantherina has BROWN convex cap, pureWHITE warts and finely striated margin, white gills/stem/pendant ring and bulb with sharply delineated basal veil bands. OUTPUTROW2 pantherina GRAY cap #9d968a; OUTPUTROW3 pantherina CREAM cap #e3cfa3. Preserve pure white warts, fine marginal striae, white ring and basal bands. Never give pantherina sac volva. Strict original silhouettes for all rows.",
+    "cella": 6,
+    "variante": "colore:crema",
+    "base": {
+      "colore": "bruno",
+      "forma": "convesso"
+    },
+    "qa": "Controllo visivo dei caratteri invarianti. PNG RGBA 1254×1254, griglia 3×3, colonna 3 vuota; controllo del canale alfa: tutte le fasce di bordo di 42 px (almeno 10%) trasparenti su ogni cella."
+  },
+  {
+    "file": "incoming/icone/varianti-05.png",
+    "tipo": "illustrazione",
+    "soggetto": "amanita-pantherina",
+    "tessera": "gambo",
+    "stagione": null,
+    "foto_di_partenza": null,
+    "autore_foto": null,
+    "licenza_foto": null,
+    "pagina_foto": null,
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case scientific-educational. Make a 1254x1254 PNG sprite sheet, true transparent alpha. Invisible3x3 equal grid: each row col1 cap-only SIDE VIEW; col2 WHOLE mushroom; col3 completely empty transparent. Exactly6icons, no text/grid/shadows. Match approved reference flat icon style, thin warm dark brown outline, simple broad flat fills, tiny restrained highlight. COLOR VARIANTS ONLY. Preserve each source cap shape, age, proportions, scale, gills, warts/scales, ring, volva and stem markings. No new growth phases. Same relative cell center and scale as source cap and whole icons. Clean alpha no stray pixels. Image1 baseROW1 Amanita rubescens has rosy-brown convex cap with pale ROSE-GRAY warts, white gills, rosy pale stem with STRIATED pendant ring and bulb WITHOUT sharply delineated basal veil bands; no sac volva. Base color classified ROSA. OUTPUTROW1 rubescens BROWN cap #8e5f36; keep its rose-gray warts, striated ring, rosy stem and non-ringed bulb. Image1 baseROW2 Amanita pantherina has BROWN convex cap, pureWHITE warts and finely striated margin, white gills/stem/pendant ring and bulb with sharply delineated basal veil bands. OUTPUTROW2 pantherina GRAY cap #9d968a; OUTPUTROW3 pantherina CREAM cap #e3cfa3. Preserve pure white warts, fine marginal striae, white ring and basal bands. Never give pantherina sac volva. Strict original silhouettes for all rows.",
+    "cella": 7,
+    "variante": "colore:crema",
+    "base": {
+      "colore": "bruno",
+      "forma": "convesso"
+    },
+    "qa": "Controllo visivo dei caratteri invarianti. PNG RGBA 1254×1254, griglia 3×3, colonna 3 vuota; controllo del canale alfa: tutte le fasce di bordo di 42 px (almeno 10%) trasparenti su ogni cella."
   }
 ]
