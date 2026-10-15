@@ -85,3 +85,11 @@ test('foglia composta palmata: l\'ippocastano resta l\'unico candidato fra le la
   const found = candidatesFor(trees, treeItems, { leaf_kind: 'foglia_larga', leaf_type: 'composta_palmata' });
   assert.deepEqual(found.map((x) => x.id), ['ippocastano']);
 });
+
+test('la nota della scheda (ciliegio) si vede tra i candidati; i sosia hanno sempre un id', async () => {
+  const { tellHtml } = await import('../js/guided-key.js');
+  for (const [id, x] of Object.entries(trees.items)) for (const c of x.confusables || []) assert.ok(c.id && trees.items[c.id], `${id}: sosia senza scheda`);
+  const c = { ...trees.items.ciliegio, id: 'ciliegio' };
+  assert.match(tellHtml(c, new Set(['ciliegio']), 3), /ghiandole rossastre/);
+  assert.equal(tellHtml(c, new Set(['ciliegio']), 10), '');
+});

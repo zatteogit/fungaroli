@@ -161,7 +161,7 @@ Totale varianti: **259** (ognuna = 2 icone: cappello e fungo intero).
 
 ## Varianti di forma sostituite dalle fasi (15/10)
 
-Decisione di Matteo: dove le fasi cambiano davvero l'aspetto, la forma del cappello segue la fase. Il brief è `docs/handoff-immagini-fasi.md`. Per queste 33 specie **le varianti di forma non vanno più disegnate**. Le varianti di colore restano. Le varianti di forma della tignosa verdognola sono già in produzione e restano; le sue combinazioni colore + forma sono sospese in attesa di decisione (domanda D5 in `docs/controllo-matrici-2026-10-15.md`).
+Decisione di Matteo: dove le fasi cambiano davvero l'aspetto, la forma del cappello segue la fase. Il brief è `docs/handoff-immagini-fasi.md`. Per queste 33 specie **le varianti di forma non vanno più disegnate**. Le varianti di colore restano. Le varianti di forma della tignosa verdognola sono già in produzione e restano; anche le sue 16 combinazioni colore + forma restano da disegnare (decisione di Matteo, 15/10; `docs/handoff-immagini-mancanti.md`, punto 2).
 
 | Specie | Forma del disegno base | Forme che non si disegnano più come varianti |
 |---|---|---|

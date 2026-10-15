@@ -47,3 +47,15 @@ test('la validazione rifiuta fasi inventate, tessere sconosciute e forme fuori d
   const c = structuredClone(doc); c.taxa.caesarea.stages[0].tiles = ['ombra'];
   assert.throws(() => validateContent('species-traits', c, doc), /tessere/);
 });
+
+test('le citazioni per valore (trait_cites) usano valori della specie e fonti della scheda', () => {
+  const cited = Object.entries(doc.taxa).filter(([, t]) => t.trait_cites);
+  assert.ok(cited.length >= 14);
+  for (const [key, t] of cited) for (const [field, m] of Object.entries(t.trait_cites)) for (const [v, c] of Object.entries(m)) {
+    assert.ok(t.traits[field].includes(v), `${key}: ${field} ${v}`);
+    assert.ok(c.quote.trim() && t.sources.some((s) => s.url === c.source), `${key}: ${v}`);
+  }
+  const bad = structuredClone(doc);
+  bad.taxa['agaricus-campestris'].trait_cites.cap_color.rosso = { source: 'https://example.org/', quote: 'rosso' };
+  assert.throws(() => validateContent('species-traits', bad, doc), /citazione/);
+});

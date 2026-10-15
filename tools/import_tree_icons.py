@@ -13,6 +13,10 @@ alla cella del suo baricentro. La tavola è rifiutata se un disegno è tagliato:
 confine tra due celle o tocca il bordo del foglio, una cella del manifest vuota, una macchia grande in una cella
 che il manifest non usa.
 Scrive assets/tree-traits/<chiave>-<valore>.webp (128 px, margine uguale) e data/tree-trait-icons.json.
+
+Piante (docs/handoff-immagini-piante.md): stesso formato, righe con `soggetto: "piante"`, schema di
+data/recognize-plants.json; scrive assets/plant-traits/ e data/plant-trait-icons.json.
+  python3 tools/import_tree_icons.py /tmp/inc/incoming --piante
 """
 import json, sys
 from pathlib import Path
@@ -89,15 +93,26 @@ def fit(tile):
     return sq.resize((SIZE, SIZE), Image.LANCZOS)
 
 
-def main(inc):
+MODES = {
+    "alberi": ("data/recognize-trees.json", "assets/tree-traits", "data/tree-trait-icons.json", "degli alberi"),
+    "piante": ("data/recognize-plants.json", "assets/plant-traits", "data/plant-trait-icons.json", "delle piante"),
+}
+# chiavi con un'icona per valore: le domande che si pongono, senza taglia, ambiente e segni particolari
+SKIP = ("size", "habitat", "special")
+
+
+def main(inc, mode="alberi"):
+    global OUT
+    src, out_dir, index, who = MODES[mode]
+    OUT = ROOT / out_dir
     inc = Path(inc)
     manifest = json.loads((inc / "manifest.json").read_text(encoding="utf-8"))
-    schema = json.loads((ROOT / "data/recognize-trees.json").read_text(encoding="utf-8"))["schema"]
-    rows = [r for r in manifest if r.get("soggetto") == "alberi" and r.get("tipo") == "illustrazione"]
+    schema = json.loads((ROOT / src).read_text(encoding="utf-8"))["schema"]
+    rows = [r for r in manifest if r.get("soggetto") == mode and r.get("tipo") == "illustrazione"]
     for r in rows:
         q = schema.get(r["chiave"])
-        if not q or r["valore"] not in {v["id"] for v in q["values"]}:
-            sys.exit(f"{r['chiave']}={r['valore']}: non è nello schema di data/recognize-trees.json")
+        if not q or not q.get("ask") or r["chiave"] in SKIP or r["valore"] not in {v["id"] for v in q["values"]}:
+            sys.exit(f"{r['chiave']}={r['valore']}: non è un valore delle domande di {src}")
     OUT.mkdir(parents=True, exist_ok=True)
     for f in OUT.glob("*.webp"):
         f.unlink()
@@ -118,14 +133,15 @@ def main(inc):
             x0, y0, x1, y1 = icon.getchannel("A").point(lambda a: 255 if a > ALPHA else 0).getbbox()
             margins[f"{r['chiave']}-{r['valore']}"] = min(x0, y0, SIZE - x1, SIZE - y1)
     out = {
-        "note": "Icone dei caratteri degli alberi disegnate con AI (image_gen) a partire dallo schema dei caratteri di data/recognize-trees.json, riviste dal proprietario del progetto. Una icona per valore, non per specie: non sono foto e non servono a identificare.",
-        "path": "assets/tree-traits/<chiave>-<valore>.webp",
+        "note": f"Icone dei caratteri {who} disegnate con AI (image_gen) a partire dallo schema dei caratteri di {src}, riviste dal proprietario del progetto. Una icona per valore, non per specie: non sono foto e non servono a identificare.",
+        "path": f"{out_dir}/<chiave>-<valore>.webp",
         "values": {k: [v["id"] for v in schema[k]["values"] if v["id"] in values.get(k, [])] for k in schema if k in values},
         "margins": dict(sorted(margins.items())),
     }
-    (ROOT / "data/tree-trait-icons.json").write_text(json.dumps(out, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    (ROOT / index).write_text(json.dumps(out, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     print(f"{sum(len(v) for v in values.values())} icone da {len(sheets)} tavole")
 
 
 if __name__ == "__main__":
-    main(sys.argv[1] if len(sys.argv) > 1 else "incoming")
+    args = [a for a in sys.argv[1:] if not a.startswith("--")]
+    main(args[0] if args else "incoming", "piante" if "--piante" in sys.argv else "alberi")

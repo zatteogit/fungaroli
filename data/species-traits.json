@@ -204,7 +204,8 @@
       "gambo": "Fungo intero",
       "taglio": "Sezione verticale (solo nella fase a uovo)"
     },
-    "_note_stages": "stages: fasi di crescita in ordine, solo dove cambiano l'aspetto e con fonte. id dall'elenco chiuso «stages»; tiles = tessere che cambiano in quella fase (elenco chiuso «stage_tiles»; «taglio» solo per la fase «uovo»); cap_shape e hymenophore_color, se presenti, sono valori già nei caratteri della specie; source = URL tra le fonti della specie. Dove ci sono fasi, le varianti di forma del cappello non si disegnano (docs/handoff-immagini-fasi.md)."
+    "_note_stages": "stages: fasi di crescita in ordine, solo dove cambiano l'aspetto e con fonte. id dall'elenco chiuso «stages»; tiles = tessere che cambiano in quella fase (elenco chiuso «stage_tiles»; «taglio» solo per la fase «uovo»); cap_shape e hymenophore_color, se presenti, sono valori già nei caratteri della specie; source = URL tra le fonti della specie. Dove ci sono fasi, le varianti di forma del cappello non si disegnano (docs/handoff-immagini-fasi.md).",
+    "_note_trait_cites": "trait_cites: per colore e forma del cappello, la citazione testuale e la fonte (URL tra le fonti della specie) che danno quel valore. Un valore disegnato senza citazione è elencato in data/asset-pending.json (categoria citazioni)."
   },
   "general_rules": [
     {
@@ -6488,7 +6489,7 @@
       "lookalike_of": [
         "procera"
       ],
-      "traits_notes": "Fonti scarse: la pagina it.wiki rinvia a C. rhacodes; en.wiki e First Nature senza pagina dedicata. Scheda Sant'Anna: cappello con centro stellato, squame fibrillo-lanose, gambo clavato, bulboso, da liscio a fibrilloso, anello semplice, sporata biancastra. MycoCharentes (trattato come C. brunneum, sin. M. venenata): grandi squame brune contrastanti, bulbo marginato. Squame cuticolari -> a rigore cap_veil=false, ma per prudenza (tossico) null. Lamelle libere come in tutto il genere (non esplicitato nelle schede lette per questa specie: esteso da C. rhacodes). Consistenza carne non descritta: fibrosa+soda per analogia col gruppo, per prudenza."
+      "traits_notes": "Fonti scarse: la pagina it.wiki rinvia a C. rhacodes; en.wiki e First Nature senza pagina dedicata. Scheda Sant'Anna: cappello con centro stellato, squame fibrillo-lanose, gambo clavato, bulboso, da liscio a fibrilloso, anello semplice, sporata biancastra. MycoCharentes (trattato come C. brunneum, sin. M. venenata): grandi squame brune contrastanti, bulbo marginato. Squame cuticolari -> a rigore cap_veil=false, ma per prudenza (tossico) null. Lamelle libere come in tutto il genere (non esplicitato nelle schede lette per questa specie: esteso da C. rhacodes). Consistenza carne non descritta: fibrosa+soda per analogia col gruppo, per prudenza. Fasi di crescita non inserite (15/10): Wikipedia it dice «semiovale, poi campanulato», forme che non sono tra quelle della scheda; nessuna seconda fonte leggibile trovata (First Nature senza scheda, scheda della Comunidad de Madrid non raggiungibile). Forme lasciate come sono."
     },
     "galerina-marginata": {
       "latin": "Galerina marginata",
@@ -9193,6 +9194,36 @@
           "bruno"
         ]
       },
+      "trait_cites": {
+        "cap_color": {
+          "bianco": {
+            "source": "https://it.wikipedia.org/wiki/Agaricus_campestris",
+            "quote": "cuticola bianco-gialliccia, bruno a maturità"
+          },
+          "crema": {
+            "source": "https://www.first-nature.com/fungi/agaricus-campestris.php",
+            "quote": "the caps of Field Mushrooms are creamy white"
+          },
+          "bruno": {
+            "source": "https://it.wikipedia.org/wiki/Agaricus_campestris",
+            "quote": "cuticola bianco-gialliccia, bruno a maturità"
+          }
+        },
+        "cap_shape": {
+          "emisferico": {
+            "source": "https://it.wikipedia.org/wiki/Agaricus_campestris",
+            "quote": "globuloso con margini uniti al gambo, poi emisferico e infine piano-convesso"
+          },
+          "convesso": {
+            "source": "https://it.wikipedia.org/wiki/Agaricus_campestris",
+            "quote": "poi emisferico e infine piano-convesso"
+          },
+          "piano": {
+            "source": "https://it.wikipedia.org/wiki/Agaricus_campestris",
+            "quote": "poi emisferico e infine piano-convesso"
+          }
+        }
+      },
       "stages": [
         {
           "id": "giovane",
@@ -9473,6 +9504,32 @@
           "bruno"
         ]
       },
+      "trait_cites": {
+        "cap_color": {
+          "bianco": {
+            "source": "https://it.wikipedia.org/wiki/Agaricus_bisporus",
+            "quote": "molto carnoso e di color bianco"
+          },
+          "bruno": {
+            "source": "https://it.wikipedia.org/wiki/Agaricus_bisporus",
+            "quote": "marrone in alcune varietà, note nei Paesi anglosassoni come chestnut mushrooms"
+          }
+        },
+        "cap_shape": {
+          "emisferico": {
+            "source": "https://www.first-nature.com/fungi/agaricus-bisporus.php",
+            "quote": "Initially hemispherical, becoming convex and eventually flattening."
+          },
+          "convesso": {
+            "source": "https://www.first-nature.com/fungi/agaricus-bisporus.php",
+            "quote": "Initially hemispherical, becoming convex and eventually flattening."
+          },
+          "piano": {
+            "source": "https://www.first-nature.com/fungi/agaricus-bisporus.php",
+            "quote": "Initially hemispherical, becoming convex and eventually flattening."
+          }
+        }
+      },
       "stages": [
         {
           "id": "giovane",
@@ -9604,6 +9661,32 @@
         "spore_print": [
           "bruno"
         ]
+      },
+      "trait_cites": {
+        "cap_color": {
+          "bianco": {
+            "source": "https://www.first-nature.com/fungi/agaricus-sylvicola.php",
+            "quote": "Pure white at first, the caps tend to yellow with age."
+          },
+          "giallo": {
+            "source": "https://www.first-nature.com/fungi/agaricus-sylvicola.php",
+            "quote": "Pure white at first, the caps tend to yellow with age."
+          }
+        },
+        "cap_shape": {
+          "emisferico": {
+            "source": "https://www.first-nature.com/fungi/agaricus-sylvicola.php",
+            "quote": "initially spherical and then convex before flattening completely at maturity"
+          },
+          "convesso": {
+            "source": "https://www.first-nature.com/fungi/agaricus-sylvicola.php",
+            "quote": "initially spherical and then convex before flattening completely at maturity"
+          },
+          "piano": {
+            "source": "https://www.first-nature.com/fungi/agaricus-sylvicola.php",
+            "quote": "initially spherical and then convex before flattening completely at maturity"
+          }
+        }
       },
       "stages": [
         {
@@ -9768,6 +9851,32 @@
           "bruno"
         ]
       },
+      "trait_cites": {
+        "cap_color": {
+          "crema": {
+            "source": "https://www.first-nature.com/fungi/cyclocybe-cylindracea.php",
+            "quote": "pale buff, flushed mid brown towards the centre and darkening with age"
+          },
+          "bruno": {
+            "source": "https://it.wikipedia.org/wiki/Cyclocybe_aegerita",
+            "quote": "Inizialmente bruno assai scuro e convesso"
+          }
+        },
+        "cap_shape": {
+          "emisferico": {
+            "source": "https://www.first-nature.com/fungi/cyclocybe-cylindracea.php",
+            "quote": "at first hemispherical, becoming broadly convex or flat"
+          },
+          "convesso": {
+            "source": "https://www.first-nature.com/fungi/cyclocybe-cylindracea.php",
+            "quote": "at first hemispherical, becoming broadly convex or flat"
+          },
+          "piano": {
+            "source": "https://www.first-nature.com/fungi/cyclocybe-cylindracea.php",
+            "quote": "at first hemispherical, becoming broadly convex or flat"
+          }
+        }
+      },
       "stages": [
         {
           "id": "giovane",
@@ -9912,6 +10021,36 @@
           "bianco"
         ]
       },
+      "trait_cites": {
+        "cap_color": {
+          "bianco": {
+            "source": "https://www.first-nature.com/fungi/pleurotus-ostreatus.php",
+            "quote": "White, cream, brown, or blue-grey"
+          },
+          "crema": {
+            "source": "https://www.first-nature.com/fungi/pleurotus-ostreatus.php",
+            "quote": "White, cream, brown, or blue-grey"
+          },
+          "bruno": {
+            "source": "https://www.first-nature.com/fungi/pleurotus-ostreatus.php",
+            "quote": "White, cream, brown, or blue-grey"
+          },
+          "grigio": {
+            "source": "https://www.first-nature.com/fungi/pleurotus-ostreatus.php",
+            "quote": "White, cream, brown, or blue-grey"
+          }
+        },
+        "cap_shape": {
+          "convesso": {
+            "source": "https://www.first-nature.com/fungi/pleurotus-ostreatus.php",
+            "quote": "convex gradually becoming centrally depressed with a wavy margin"
+          },
+          "imbuto": {
+            "source": "https://www.first-nature.com/fungi/pleurotus-ostreatus.php",
+            "quote": "convex gradually becoming centrally depressed with a wavy margin"
+          }
+        }
+      },
       "stages": [
         {
           "id": "giovane",
@@ -10040,6 +10179,28 @@
           "bianco"
         ]
       },
+      "trait_cites": {
+        "cap_color": {
+          "bianco": {
+            "source": "https://it.wikipedia.org/wiki/Pleurotus_eryngii",
+            "quote": "di colore biancastro, poi brunastro"
+          },
+          "bruno": {
+            "source": "https://it.wikipedia.org/wiki/Pleurotus_eryngii",
+            "quote": "di colore biancastro, poi brunastro"
+          }
+        },
+        "cap_shape": {
+          "convesso": {
+            "source": "https://it.wikipedia.org/wiki/Pleurotus_eryngii",
+            "quote": "Carnoso, convesso, poi depresso al centro"
+          },
+          "imbuto": {
+            "source": "https://it.wikipedia.org/wiki/Pleurotus_eryngii",
+            "quote": "Carnoso, convesso, poi depresso al centro"
+          }
+        }
+      },
       "check_before_picking": [
         "Cresce in prati e pascoli, sulle radici morte di ombrellifere (eringio, ferula)",
         "Lamelle bianco-grigiastre che scendono sul gambo",
@@ -10122,6 +10283,24 @@
           "bianco",
           "crema"
         ]
+      },
+      "trait_cites": {
+        "cap_color": {
+          "crema": {
+            "source": "https://it.wikipedia.org/wiki/Pleurotus_cornucopiae",
+            "quote": "può assumere vari colori che vanno dall'ocra al marroncino, dal bianco al giallo-citrino"
+          }
+        },
+        "cap_shape": {
+          "convesso": {
+            "source": "https://it.wikipedia.org/wiki/Pleurotus_cornucopiae",
+            "quote": "Prima convesso, poi depresso, imbutiforme"
+          },
+          "imbuto": {
+            "source": "https://it.wikipedia.org/wiki/Pleurotus_cornucopiae",
+            "quote": "Prima convesso, poi depresso, imbutiforme"
+          }
+        }
       },
       "check_before_picking": [
         "Cespi su legno di latifoglie, con gambi uniti alla base",
@@ -10312,6 +10491,24 @@
         "spore_print": [
           "crema"
         ]
+      },
+      "trait_cites": {
+        "cap_color": {
+          "bruno": {
+            "source": "https://www.first-nature.com/fungi/morchella-elata.php",
+            "quote": "Within the pits the surface varies from pale brown to grey and darkens with age."
+          },
+          "grigio": {
+            "source": "https://it.wikipedia.org/wiki/Morchella_conica",
+            "quote": "di color grigio-fuligginoso o grigio-brunastro"
+          }
+        },
+        "cap_shape": {
+          "conico": {
+            "source": "https://it.wikipedia.org/wiki/Morchella_conica",
+            "quote": "Ovoidale allo stadio giovanile, poi conico o leggermente ottuso"
+          }
+        }
       },
       "check_before_picking": [
         "Testa conica a nido d'ape, con costole verticali allineate",
@@ -10526,6 +10723,28 @@
           "bianco"
         ]
       },
+      "trait_cites": {
+        "cap_color": {
+          "crema": {
+            "source": "https://it.wikipedia.org/wiki/Marasmius_oreades",
+            "quote": "di color cuoio o nocciola o ocra-chiaro o biancastro"
+          },
+          "bruno": {
+            "source": "https://it.wikipedia.org/wiki/Marasmius_oreades",
+            "quote": "di color cuoio o nocciola o ocra-chiaro o biancastro"
+          }
+        },
+        "cap_shape": {
+          "convesso": {
+            "source": "https://it.wikipedia.org/wiki/Marasmius_oreades",
+            "quote": "convesso, poi piano e un po' umbonato"
+          },
+          "ombrellato": {
+            "source": "https://it.wikipedia.org/wiki/Marasmius_oreades",
+            "quote": "convesso, poi piano e un po' umbonato"
+          }
+        }
+      },
       "check_before_picking": [
         "Gambo tenace ed elastico: si torce senza spezzarsi",
         "Lamelle distanziate, bianche o crema, libere",
@@ -10624,6 +10843,20 @@
         "spore_print": [
           "crema"
         ]
+      },
+      "trait_cites": {
+        "cap_color": {
+          "bruno": {
+            "source": "https://it.wikipedia.org/wiki/Cantharellus_lutescens",
+            "quote": "color marroncino, più o meno scuro"
+          }
+        },
+        "cap_shape": {
+          "imbuto": {
+            "source": "https://it.wikipedia.org/wiki/Cantharellus_lutescens",
+            "quote": "convesso ed ondulato, frangiato e più imbutiforme"
+          }
+        }
       },
       "check_before_picking": [
         "Gambo giallo-arancio, cavo, appiattito e solcato",
@@ -10910,6 +11143,28 @@
           "bianco"
         ]
       },
+      "trait_cites": {
+        "cap_color": {
+          "bianco": {
+            "source": "https://it.wikipedia.org/wiki/Hygrophorus_marzuolus",
+            "quote": "ha un colore dal bianco al grigio"
+          },
+          "grigio": {
+            "source": "https://it.wikipedia.org/wiki/Hygrophorus_marzuolus",
+            "quote": "ha un colore dal bianco al grigio"
+          }
+        },
+        "cap_shape": {
+          "convesso": {
+            "source": "https://it.wikipedia.org/wiki/Hygrophorus_marzuolus",
+            "quote": "prima convesso poi aperto"
+          },
+          "piano": {
+            "source": "https://it.wikipedia.org/wiki/Hygrophorus_marzuolus",
+            "quote": "prima convesso poi aperto"
+          }
+        }
+      },
       "check_before_picking": [
         "Fruttifica a fine inverno, spesso sotto foglie o neve che si scioglie",
         "Cappello da bianco a grigio scuro, sodo, non igrofano",
@@ -10999,6 +11254,36 @@
         "spore_print": [
           "bianco"
         ]
+      },
+      "trait_cites": {
+        "cap_color": {
+          "bruno": {
+            "source": "https://www.first-nature.com/fungi/hygrophorus-latitabundus.php",
+            "quote": "grey-brown, reddish brown or olivaceous at the margin"
+          },
+          "grigio": {
+            "source": "https://www.first-nature.com/fungi/hygrophorus-latitabundus.php",
+            "quote": "grey-brown, reddish brown or olivaceous at the margin"
+          },
+          "nero": {
+            "source": "https://www.first-nature.com/fungi/hygrophorus-latitabundus.php",
+            "quote": "increasingly blackish-brown towards the centre of the cap"
+          }
+        },
+        "cap_shape": {
+          "convesso": {
+            "source": "https://www.first-nature.com/fungi/hygrophorus-latitabundus.php",
+            "quote": "Initially convex, expanding to become almost flat with an inrolled margin and a broad low umbo"
+          },
+          "piano": {
+            "source": "https://www.first-nature.com/fungi/hygrophorus-latitabundus.php",
+            "quote": "Initially convex, expanding to become almost flat"
+          },
+          "ombrellato": {
+            "source": "https://www.first-nature.com/fungi/hygrophorus-latitabundus.php",
+            "quote": "almost flat with an inrolled margin and a broad low umbo"
+          }
+        }
       },
       "check_before_picking": [
         "Cappello bruno scuro, quasi nero al centro, molto viscido",
@@ -11335,6 +11620,14 @@
           "rosa"
         ]
       },
+      "trait_cites": {
+        "cap_color": {
+          "rosso": {
+            "source": "https://it.wikipedia.org/wiki/Fistulina_hepatica",
+            "quote": "cuticola di colore aranciato oppure rosso sangue"
+          }
+        }
+      },
       "check_before_picking": [
         "Mensola a forma di lingua, rosso fegato, sul tronco di querce o castagni",
         "Sotto tubuli fitti color paglierino, separabili uno a uno",
@@ -11430,6 +11723,32 @@
         "spore_print": [
           "bianco"
         ]
+      },
+      "trait_cites": {
+        "cap_color": {
+          "bruno": {
+            "source": "https://www.first-nature.com/fungi/amanita-rubescens.php",
+            "quote": "often brownish-pink but very variable"
+          },
+          "rosa": {
+            "source": "https://www.first-nature.com/fungi/amanita-rubescens.php",
+            "quote": "often brownish-pink but very variable"
+          }
+        },
+        "cap_shape": {
+          "emisferico": {
+            "source": "https://it.wikipedia.org/wiki/Amanita_rubescens",
+            "quote": "dapprincipio sferoidale si apre in forma convessa, fino ad appianarsi in molti esemplari"
+          },
+          "convesso": {
+            "source": "https://it.wikipedia.org/wiki/Amanita_rubescens",
+            "quote": "dapprincipio sferoidale si apre in forma convessa"
+          },
+          "piano": {
+            "source": "https://it.wikipedia.org/wiki/Amanita_rubescens",
+            "quote": "fino ad appianarsi in molti esemplari"
+          }
+        }
       },
       "stages": [
         {

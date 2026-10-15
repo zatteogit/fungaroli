@@ -22,6 +22,7 @@ export function load() {
     trees: read('data/trees.json').trees,
     recTrees: read('data/recognize-trees.json'),
     treeIcons: read('data/tree-trait-icons.json'),
+    plantIcons: has('data/plant-trait-icons.json') ? read('data/plant-trait-icons.json') : null,
     plants: read('data/plants.json').plants,
     recPlants: read('data/recognize-plants.json'),
     media: read('data/media.json'),
@@ -92,6 +93,17 @@ export function missing(d = load()) {
         if (['cappello', 'gambo'].some((p) => !has(traitFile(`${key}-${p}-${f}`)))) add('funghi-forma', `${key}:${f}`);
       }
     }
+    // combinazioni colore + forma: dove le varianti di forma sono già disegnate (oggi la falloide),
+    // ogni altro colore anche in ogni altra forma (docs/handoff-immagini-mancanti.md, punto 2)
+    if (ic.shapes && base.colore && base.forma) for (const c of colors) for (const f of shapes) if (c !== base.colore && f !== base.forma) {
+      need('funghi-combinazioni');
+      if (['cappello', 'gambo'].some((p) => !has(traitFile(`${key}-${p}-${c}-${f}`)))) add('funghi-combinazioni', `${key}:${c}+${f}`);
+    }
+    // citazione per ogni valore disegnato di colore e forma (trait_cites)
+    for (const [field, vals] of [['cap_color', colors], ['cap_shape', shapes]]) for (const v of vals) {
+      need('citazioni');
+      if (!t.trait_cites?.[field]?.[v]) add('citazioni', `${key}:${field}:${v}`);
+    }
     // fasi: ogni tessera che cambia; la sezione dell'uovo («taglio») ha la sua categoria
     for (const s of t.stages || []) for (const tile of s.tiles) {
       const cat = tile === 'taglio' ? 'funghi-sezione-uovo' : 'funghi-fasi';
@@ -114,6 +126,11 @@ export function missing(d = load()) {
     need('alberi-foto');
     if (!ph.length) add('alberi-foto', id, 'nessuna foto');
     for (const p of ph) photo(p);
+  }
+  // piante: un'icona per ogni valore delle domande (come gli alberi), docs/handoff-immagini-piante.md
+  for (const [k, q] of TREE_KEYS(d.recPlants.schema)) for (const v of q.values) {
+    need('piante-valori');
+    if (!has(`assets/plant-traits/${k}-${v.id}.webp`) || !list(d.plantIcons?.values?.[k]).includes(v.id)) add('piante-valori', `${k}-${v.id}`);
   }
   // piante: foto con miniatura, ritaglio e crediti
   for (const [id, p] of Object.entries(d.plants)) {
@@ -215,6 +232,12 @@ export function coherence(d = load()) {
   const asked = new Set(TREE_KEYS(d.recTrees.schema).flatMap(([k, q]) => q.values.map((v) => `${k}-${v.id}`)));
   for (const [k, vs] of Object.entries(d.treeIcons.values)) for (const v of vs) if (!asked.has(`${k}-${v}`)) err.push(`tree-trait-icons: ${k}-${v} non è un valore dello schema`);
   for (const f of readdirSync(new URL('assets/tree-traits/', ROOT))) if (!asked.has(f.replace(/\.webp$/, ''))) err.push(`assets/tree-traits/${f}: valore non nello schema`);
+  // piante: indice e file delle icone, quando arrivano
+  const askedP = new Set(TREE_KEYS(d.recPlants.schema).flatMap(([k, q]) => q.values.map((v) => `${k}-${v.id}`)));
+  for (const [k, vs] of Object.entries(d.plantIcons?.values || {})) for (const v of vs) if (!askedP.has(`${k}-${v}`)) err.push(`plant-trait-icons: ${k}-${v} non è un valore dello schema`);
+  if (has('assets/plant-traits/')) for (const f of readdirSync(new URL('assets/plant-traits/', ROOT))) if (!askedP.has(f.replace(/\.webp$/, ''))) err.push(`assets/plant-traits/${f}: valore non nello schema`);
+  // citazioni per valore: valori esistenti
+  for (const [key, t] of Object.entries(taxa)) for (const [field, m] of Object.entries(t.trait_cites || {})) for (const v of Object.keys(m)) if (!list(t.traits?.[field]).includes(v)) err.push(`species-traits: ${key} citazione per ${field} ${v} non nei dati`);
   // schede di riconoscimento: valori dentro lo schema
   for (const [label, rec] of [['recognize-trees', d.recTrees], ['recognize-plants', d.recPlants]]) for (const [id, it] of Object.entries(rec.items)) for (const [k, v] of Object.entries(it.traits)) {
     if (!rec.schema[k]) { err.push(`${label}: ${id} campo ${k} non nello schema`); continue; }

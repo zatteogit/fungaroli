@@ -24,7 +24,7 @@ Le fasi di crescita dei funghi (con la sezione dell'uovo delle amanite) hanno un
 
 ### 2. Combinazioni colore + forma dell'amanita falloide
 
-**Sospeso dal 15/10:** la falloide ora ha le fasi di crescita. Prima di disegnare serve la decisione D5 in `docs/controllo-matrici-2026-10-15.md`.
+**Resta da fare** (decisione di Matteo, 15/10): la falloide ora ha anche le fasi di crescita, ma le sue varianti di forma sono già in produzione e le combinazioni si completano. L'elenco aggiornato è nella categoria `funghi-combinazioni` di `node tools/asset-report.mjs`.
 
 Nell'app colore e forma del cappello ora si scelgono insieme. Per *Amanita phalloides* ci sono il disegno base (verde, convesso), 4 colori sul convesso e 2 forme sul verde. Mancano le altre combinazioni: finché non arrivano, l'app mostra la forma scelta nel colore base con la scritta «Colore non ancora disegnato per questa forma».
 

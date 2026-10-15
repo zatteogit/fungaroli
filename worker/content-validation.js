@@ -132,6 +132,15 @@ export function validateContent(id, data, previous) {
       }
     }
     for (const [key, t] of Object.entries(value.taxa || {})) if (t?.stages != null) stageErrors(key, t).forEach(err);
+    // citazione per valore di colore e forma del cappello: testo e fonte tra le fonti della specie
+    for (const [key, t] of Object.entries(value.taxa || {})) for (const [field, m] of Object.entries(t?.trait_cites || {})) {
+      if (!['cap_color', 'cap_shape'].includes(field)) err(`${key}: citazione per un carattere non previsto (${field}).`);
+      const urls = new Set((t.sources || []).map((s) => (typeof s === 'string' ? s : s?.url)));
+      for (const [v, c] of Object.entries(m || {})) {
+        if (![].concat(t.traits?.[field] || []).includes(v)) err(`${key}: citazione per «${v}», che non è tra i valori della specie.`);
+        if (typeof c?.quote !== 'string' || !c.quote.trim() || c.quote.length > 400 || !urls.has(c?.source)) err(`${key}: la citazione di «${v}» richiede il testo e una fonte tra le fonti della specie.`);
+      }
+    }
     for (const [url, c] of Object.entries(value.citations || {})) if (!/^https?:\/\//.test(url) || typeof c?.author !== 'string' || !c.author.trim() || typeof c?.year !== 'string' || !c.year.trim()) err('Ogni citazione richiede URL, autore e anno (o s.d.).');
   }
   if (id==='guides') {
