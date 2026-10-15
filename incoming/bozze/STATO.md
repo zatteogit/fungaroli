@@ -176,3 +176,4 @@ Schema: `data/recognize-trees.json` su `claude/brave-tesla-wu0a2b`. 48 valori pr
 Ordine aggiornato da Matteo il 15/10: completare prima tutte le varianti di colore, mantenendo la priorità del brief; nessuna nuova variante di forma fino ai dati sulle fasi di crescita. Le forme solo generate e non caricate sono sospese.
 
 | icone/varianti-03.png | amanita-verna: colore:crema; amanita-muscaria: colore:arancio; amanita-muscaria: colore:giallo | ok | QA visiva completata; 6 icone, alpha reale, terza colonna vuota. Basi nel manifest. |
+| icone-alberi/tavola-alberi-04.png | 0: leaf_shape/ovale; 1: leaf_shape/lanceolata; 2: leaf_shape/tondeggiante; 3: leaf_shape/cuoriforme; 4: leaf_shape/triangolare; 5: leaf_shape/lobata_a_mano; 6: leaf_shape/lobata_lungo_i_lati | ok | Sette forme distinte, margini lisci anche nelle due foglie lobate. Forma palmata con lobi radiali e forma quercia con lobi lungo asse. Verificate a 64 px per cella; PNG RGBA 1254×1254. |
