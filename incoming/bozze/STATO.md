@@ -214,6 +214,10 @@ Controlli prima del caricamento: PNG RGBA, celle 418×418 px, almeno 42 px (10%)
 | icone/varianti-47.png | pleurotus-eryngii: colore:bianco; pleurotus-eryngii: colore:crema; pleurotus-eryngii: colore:grigio | ok | QA visiva completata; 6 icone, alpha reale, terza colonna vuota. Basi nel manifest. |
 | icone/varianti-48.png | fistulina-hepatica: colore:rosa; fistulina-hepatica: colore:bruno | ok | QA visiva completata; 4 icone, alpha reale, terza colonna vuota. Basi nel manifest. |
 
+Verifica finale: **141/141 colori, 282 icone**, 48 tavole varianti. Tutte le 88 basi dichiarate nel manifest. Coprinus comatus con anello basso in tavola-10-anello, cella 5. Fistulina senza forma dichiarata perché il brief non ne elenca; nota in NOTE.md.
+
+Controllo ripetibile: `python incoming/bozze/verifica_varianti.py` (Pillow, NumPy). Esito e SHA-256 per tavola in `incoming/bozze/VERIFICHE-varianti.json`. Margini: zero alpha nelle fasce di 42 px; contorni: tutti i pixel dei quattro estremi della sagoma alpha≥128 devono essere scuri. Controllo visivo aggiuntivo contro tagli interni e alterazioni dei caratteri. Il controllo respinge le celle 0, 3, 6 della vecchia tavola 05 e accetta quelle rigenerate.
+
 ## Icone dei caratteri degli alberi — 15 ottobre 2026
 
 Schema: `data/recognize-trees.json` su `claude/brave-tesla-wu0a2b`. 48 valori previsti; tavole PNG RGBA 1254×1254, griglia 3×3, celle 418×418; modello integrato image_gen, identificatore tecnico non esposto. QA visiva contro le question e anteprima a 64 px per cella. Vengono aggiunte soltanto nuove tavole e le corrispondenti registrazioni.

@@ -1,0 +1,701 @@
+{
+  "basi_dichiarate": 88,
+  "colori": 141,
+  "icone_colore": 282,
+  "forme_in_attesa_delle_fasi": 2,
+  "tavole_varianti": 48,
+  "margine_px": 42,
+  "alpha_bordo": 0,
+  "soglia_sagoma": 128,
+  "contorno_estremi": "tutti i pixel, nessuna eccezione per punte",
+  "ok": true,
+  "tavole": [
+    {
+      "file": "incoming/icone/varianti-01.png",
+      "sha256": "bfe4ec747eb6855368beec0e341fad13464a0b7a0821a415b817441e89af519b",
+      "ok": true,
+      "celle": [
+        0,
+        1,
+        3,
+        4,
+        6,
+        7
+      ],
+      "problemi": []
+    },
+    {
+      "file": "incoming/icone/varianti-02.png",
+      "sha256": "0ce70c1035dc0e95f44002bbec3e0d622f134bd8443d28f0442c611aec7ab4b8",
+      "ok": true,
+      "celle": [
+        0,
+        1,
+        3,
+        4,
+        6,
+        7
+      ],
+      "problemi": []
+    },
+    {
+      "file": "incoming/icone/varianti-03.png",
+      "sha256": "ab7fc9fb807d0c8db15c79181a98ee8d475bf8c9656c0ed5d56023087d3cd1c7",
+      "ok": true,
+      "celle": [
+        0,
+        1,
+        3,
+        4,
+        6,
+        7
+      ],
+      "problemi": []
+    },
+    {
+      "file": "incoming/icone/varianti-04.png",
+      "sha256": "ecf6d43be29ea7f1f380d9b4989d0e56957415578a2948c12e65a0771d3c30a0",
+      "ok": true,
+      "celle": [
+        0,
+        1,
+        3,
+        4,
+        6,
+        7
+      ],
+      "problemi": []
+    },
+    {
+      "file": "incoming/icone/varianti-05.png",
+      "sha256": "20b7e6d92d63ebd504215e95245607f0f0ba6dc857aec91cf680c59126e67ebf",
+      "ok": true,
+      "celle": [
+        0,
+        1,
+        3,
+        4,
+        6,
+        7
+      ],
+      "problemi": []
+    },
+    {
+      "file": "incoming/icone/varianti-06.png",
+      "sha256": "47f686b0d26c592031f5913ba079434bc111d0b8b7135ba5231c73cba10c2d24",
+      "ok": true,
+      "celle": [
+        0,
+        1,
+        3,
+        4,
+        6,
+        7
+      ],
+      "problemi": []
+    },
+    {
+      "file": "incoming/icone/varianti-07.png",
+      "sha256": "e84059cd7c72b98bf8110d45862ff57a34f4a630dab86ab4356f8bfe38cbaced",
+      "ok": true,
+      "celle": [
+        0,
+        1,
+        3,
+        4,
+        6,
+        7
+      ],
+      "problemi": []
+    },
+    {
+      "file": "incoming/icone/varianti-08.png",
+      "sha256": "aa102e71ab4a8f39d7e062ddc866a7cabbfc83329e5b48a1dd56b4bca9cc8325",
+      "ok": true,
+      "celle": [
+        0,
+        1,
+        3,
+        4,
+        6,
+        7
+      ],
+      "problemi": []
+    },
+    {
+      "file": "incoming/icone/varianti-09.png",
+      "sha256": "69d7e1e1c9fb4887f4b9e28b61bfbc7757146fbf7553bac926e413a256f5cc3d",
+      "ok": true,
+      "celle": [
+        0,
+        1,
+        3,
+        4,
+        6,
+        7
+      ],
+      "problemi": []
+    },
+    {
+      "file": "incoming/icone/varianti-10.png",
+      "sha256": "4754a5f34147fab79989ea196e58fc25a7268d1fdd905752486a2cf167090b0f",
+      "ok": true,
+      "celle": [
+        0,
+        1,
+        3,
+        4,
+        6,
+        7
+      ],
+      "problemi": []
+    },
+    {
+      "file": "incoming/icone/varianti-11.png",
+      "sha256": "0293a789595198c5fd59bbbea48c9226bbacb6f489b5336b8a599f33dfe44308",
+      "ok": true,
+      "celle": [
+        0,
+        1,
+        3,
+        4,
+        6,
+        7
+      ],
+      "problemi": []
+    },
+    {
+      "file": "incoming/icone/varianti-12.png",
+      "sha256": "a46894e28b7495c154cbf2a8200d7ab93ca3947d68f7b8295b29872759f8028f",
+      "ok": true,
+      "celle": [
+        0,
+        1,
+        3,
+        4,
+        6,
+        7
+      ],
+      "problemi": []
+    },
+    {
+      "file": "incoming/icone/varianti-13.png",
+      "sha256": "5d0ae6414b1a57aa18b288f29a76656d73cac883295af37e7ce4f6ce9ac8af07",
+      "ok": true,
+      "celle": [
+        0,
+        1,
+        3,
+        4,
+        6,
+        7
+      ],
+      "problemi": []
+    },
+    {
+      "file": "incoming/icone/varianti-14.png",
+      "sha256": "29833099abe9681b4435ca5cd8c4a972acbcb103cb06a575270c087b3f78c539",
+      "ok": true,
+      "celle": [
+        0,
+        1,
+        3,
+        4,
+        6,
+        7
+      ],
+      "problemi": []
+    },
+    {
+      "file": "incoming/icone/varianti-15.png",
+      "sha256": "4d7c1e06de614dc62ad599409653067ed0a8e9e82cd20a8b9fd829949e3ef95e",
+      "ok": true,
+      "celle": [
+        0,
+        1,
+        3,
+        4,
+        6,
+        7
+      ],
+      "problemi": []
+    },
+    {
+      "file": "incoming/icone/varianti-16.png",
+      "sha256": "fc93359fc649d2bb9bedd85b3a415f4c37574cdd2378079670c6509645dc97af",
+      "ok": true,
+      "celle": [
+        0,
+        1,
+        3,
+        4,
+        6,
+        7
+      ],
+      "problemi": []
+    },
+    {
+      "file": "incoming/icone/varianti-17.png",
+      "sha256": "f0a47e3198f9c5da70542f1607f62d1b4fd8746031917ed8889e6b219689ba91",
+      "ok": true,
+      "celle": [
+        0,
+        1,
+        3,
+        4,
+        6,
+        7
+      ],
+      "problemi": []
+    },
+    {
+      "file": "incoming/icone/varianti-18.png",
+      "sha256": "ab1fd47aec6d85d91ed8d67a0fc2368874b8b97f606118204ef635a98078c2ae",
+      "ok": true,
+      "celle": [
+        0,
+        1,
+        3,
+        4,
+        6,
+        7
+      ],
+      "problemi": []
+    },
+    {
+      "file": "incoming/icone/varianti-19.png",
+      "sha256": "cd675b3d6b7f51328ef71079025fde5835355b35203e0e861ba96038aeb0fc3c",
+      "ok": true,
+      "celle": [
+        0,
+        1,
+        3,
+        4,
+        6,
+        7
+      ],
+      "problemi": []
+    },
+    {
+      "file": "incoming/icone/varianti-20.png",
+      "sha256": "20dbe5468fa633d678f63e011d894bb34e581a1df07eae73a043ad69b6eaaaae",
+      "ok": true,
+      "celle": [
+        0,
+        1,
+        3,
+        4,
+        6,
+        7
+      ],
+      "problemi": []
+    },
+    {
+      "file": "incoming/icone/varianti-21.png",
+      "sha256": "011e1379e5f0b29d3859d8b012839a47a043a7e4eb93359e7fb1f354f9e02fb9",
+      "ok": true,
+      "celle": [
+        0,
+        1,
+        3,
+        4,
+        6,
+        7
+      ],
+      "problemi": []
+    },
+    {
+      "file": "incoming/icone/varianti-22.png",
+      "sha256": "01f754417a85ae9984de1b7596c7a3bf1655310ea86da9c2322e8130a3cf3713",
+      "ok": true,
+      "celle": [
+        0,
+        1,
+        3,
+        4,
+        6,
+        7
+      ],
+      "problemi": []
+    },
+    {
+      "file": "incoming/icone/varianti-23.png",
+      "sha256": "d0ed953393f640c1a3b04449b13d8551022c4691d07123e9845063bb71bd8e6e",
+      "ok": true,
+      "celle": [
+        0,
+        1,
+        3,
+        4,
+        6,
+        7
+      ],
+      "problemi": []
+    },
+    {
+      "file": "incoming/icone/varianti-24.png",
+      "sha256": "26e1f5ed35291484ef92a7166b93da0d219527e3dd6e0154ad6c20ad58d91e28",
+      "ok": true,
+      "celle": [
+        0,
+        1,
+        3,
+        4,
+        6,
+        7
+      ],
+      "problemi": []
+    },
+    {
+      "file": "incoming/icone/varianti-25.png",
+      "sha256": "bf24d56edd0ec8e9aaa726f2d8e323f3ac1ae2daa34369289a85a282d138fd4c",
+      "ok": true,
+      "celle": [
+        0,
+        1,
+        3,
+        4,
+        6,
+        7
+      ],
+      "problemi": []
+    },
+    {
+      "file": "incoming/icone/varianti-26.png",
+      "sha256": "36328b215f8b0feece9b987bf200e4cd84258a2e7fa680afd0cdd5e7cb43e733",
+      "ok": true,
+      "celle": [
+        0,
+        1,
+        3,
+        4,
+        6,
+        7
+      ],
+      "problemi": []
+    },
+    {
+      "file": "incoming/icone/varianti-27.png",
+      "sha256": "af3c62e4978517d9b6531fc1d7117fb0c04db8c251d3bf43562ec395c51bad4c",
+      "ok": true,
+      "celle": [
+        0,
+        1,
+        3,
+        4,
+        6,
+        7
+      ],
+      "problemi": []
+    },
+    {
+      "file": "incoming/icone/varianti-28.png",
+      "sha256": "aa35f77a2aec5a7e806d35bcf3f5afcf4b638ae5bbd01a58c0b7e04088818e7a",
+      "ok": true,
+      "celle": [
+        0,
+        1,
+        3,
+        4,
+        6,
+        7
+      ],
+      "problemi": []
+    },
+    {
+      "file": "incoming/icone/varianti-29.png",
+      "sha256": "4ec49a6a26d068c4dafa26ce5e4267a132bf635b0440c4ace4bdce0cedeb3e8b",
+      "ok": true,
+      "celle": [
+        0,
+        1,
+        3,
+        4,
+        6,
+        7
+      ],
+      "problemi": []
+    },
+    {
+      "file": "incoming/icone/varianti-30.png",
+      "sha256": "e9650464c3d11435c1b77a3948a8bb5ecc5a05396287f5ebb41bb1559d95251b",
+      "ok": true,
+      "celle": [
+        0,
+        1,
+        3,
+        4,
+        6,
+        7
+      ],
+      "problemi": []
+    },
+    {
+      "file": "incoming/icone/varianti-31.png",
+      "sha256": "0d1928f20198d994b99377964f8193d57e3819774c33ad4ad8d9ea87a33fd5cc",
+      "ok": true,
+      "celle": [
+        0,
+        1,
+        3,
+        4,
+        6,
+        7
+      ],
+      "problemi": []
+    },
+    {
+      "file": "incoming/icone/varianti-32.png",
+      "sha256": "5a79c2f40433e8454fb36d60f70e47b9d748b05f3a49df38c6bb969db8b91be6",
+      "ok": true,
+      "celle": [
+        0,
+        1,
+        3,
+        4,
+        6,
+        7
+      ],
+      "problemi": []
+    },
+    {
+      "file": "incoming/icone/varianti-33.png",
+      "sha256": "55af3d00f532b9ce99f27a3099cbd94d2bcfca2a000449aa0cd037e392f8253c",
+      "ok": true,
+      "celle": [
+        0,
+        1,
+        3,
+        4,
+        6,
+        7
+      ],
+      "problemi": []
+    },
+    {
+      "file": "incoming/icone/varianti-34.png",
+      "sha256": "0e7ddb8c37ddc8114dbfd1a83a451caedd25883b1e4e2a7b031e545bbdbb1a6a",
+      "ok": true,
+      "celle": [
+        0,
+        1,
+        3,
+        4,
+        6,
+        7
+      ],
+      "problemi": []
+    },
+    {
+      "file": "incoming/icone/varianti-35.png",
+      "sha256": "10a2b875480a7457a7660799524c74c92e99715a9fd91ccb91243d973d139c6e",
+      "ok": true,
+      "celle": [
+        0,
+        1,
+        3,
+        4,
+        6,
+        7
+      ],
+      "problemi": []
+    },
+    {
+      "file": "incoming/icone/varianti-36.png",
+      "sha256": "591a074619ed7102f50c5686f113853ff7b4ca371f6fde1cc35a7c9526f2b156",
+      "ok": true,
+      "celle": [
+        0,
+        1,
+        3,
+        4,
+        6,
+        7
+      ],
+      "problemi": []
+    },
+    {
+      "file": "incoming/icone/varianti-37.png",
+      "sha256": "c97ab60d3f0c76c37057b677832f91d13cab29da88308ead504842e830149b19",
+      "ok": true,
+      "celle": [
+        0,
+        1,
+        3,
+        4,
+        6,
+        7
+      ],
+      "problemi": []
+    },
+    {
+      "file": "incoming/icone/varianti-38.png",
+      "sha256": "fbddd6ebe357674cbed31ccc52f8c2ed58ee8ed25dfe6d37a475e90a9caad0b7",
+      "ok": true,
+      "celle": [
+        0,
+        1,
+        3,
+        4,
+        6,
+        7
+      ],
+      "problemi": []
+    },
+    {
+      "file": "incoming/icone/varianti-39.png",
+      "sha256": "97282a80b739c3779047e8c68e1fd8900acf16766ba294108936e46c8a95f65e",
+      "ok": true,
+      "celle": [
+        0,
+        1,
+        3,
+        4,
+        6,
+        7
+      ],
+      "problemi": []
+    },
+    {
+      "file": "incoming/icone/varianti-40.png",
+      "sha256": "6dcc3f497b7ac45ebd6a7b665df904f35b6049784452525fda48e322007eb32c",
+      "ok": true,
+      "celle": [
+        0,
+        1,
+        3,
+        4,
+        6,
+        7
+      ],
+      "problemi": []
+    },
+    {
+      "file": "incoming/icone/varianti-41.png",
+      "sha256": "5ef7c10b3c552f7767a85a8f6d8c967c290848735100ac7c5e4566b93d69de0d",
+      "ok": true,
+      "celle": [
+        0,
+        1,
+        3,
+        4,
+        6,
+        7
+      ],
+      "problemi": []
+    },
+    {
+      "file": "incoming/icone/varianti-42.png",
+      "sha256": "c8bb02f096f5d82bf399fc2c9dc4c483f8a154356b224c819aaf8ad06354b5d4",
+      "ok": true,
+      "celle": [
+        0,
+        1,
+        3,
+        4,
+        6,
+        7
+      ],
+      "problemi": []
+    },
+    {
+      "file": "incoming/icone/varianti-43.png",
+      "sha256": "6ad3b02d61c78a61b7f6e583f1c81c751efcf9e7213ec84760ca4a6a8a5d9f49",
+      "ok": true,
+      "celle": [
+        0,
+        1,
+        3,
+        4,
+        6,
+        7
+      ],
+      "problemi": []
+    },
+    {
+      "file": "incoming/icone/varianti-44.png",
+      "sha256": "d94a77aac0c4c8de38a30ca5f3b6b357d07f1272ad48f74166f463264dc21b35",
+      "ok": true,
+      "celle": [
+        0,
+        1,
+        3,
+        4,
+        6,
+        7
+      ],
+      "problemi": []
+    },
+    {
+      "file": "incoming/icone/varianti-45.png",
+      "sha256": "634cdfee7911127abdbe04865c559d1b0db67eb3d488603caa528dfdc3f59707",
+      "ok": true,
+      "celle": [
+        0,
+        1,
+        3,
+        4,
+        6,
+        7
+      ],
+      "problemi": []
+    },
+    {
+      "file": "incoming/icone/varianti-46.png",
+      "sha256": "3b564103a888f8474ad9cc2a3d9fe3c4bd6d204874f978586eea8b7b09684af3",
+      "ok": true,
+      "celle": [
+        0,
+        1,
+        3,
+        4,
+        6,
+        7
+      ],
+      "problemi": []
+    },
+    {
+      "file": "incoming/icone/varianti-47.png",
+      "sha256": "8817943849647e9a093b7f6947b2102aa833bf1691a64701471591c41ca8c282",
+      "ok": true,
+      "celle": [
+        0,
+        1,
+        3,
+        4,
+        6,
+        7
+      ],
+      "problemi": []
+    },
+    {
+      "file": "incoming/icone/varianti-48.png",
+      "sha256": "f4a329670cc4765b92922534daceafb8dc2c4d3dd2bf3e0a310d5ded440bea9e",
+      "ok": true,
+      "celle": [
+        0,
+        1,
+        3,
+        4
+      ],
+      "problemi": []
+    },
+    {
+      "file": "incoming/icone/tavola-10-anello.png",
+      "sha256": "363186ebdb0f9652989273851e5c5b04b4b8db92d38b1776aeda4f4fcf4770c4",
+      "ok": true,
+      "celle": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "problemi": []
+    }
+  ]
+}

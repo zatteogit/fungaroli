@@ -224,3 +224,11 @@ Autori, licenze, date e descrizioni sono stati verificati sulle pagine file di W
 La quota massima nei bands autorizza inverno-neve, ma non il manto uniforme nel paesaggio. Dove la foto comprende valle o fondovalle (paesi, piana, campi e versanti bassi), la neve al suolo resta solo sulle cime e sui versanti alti. Fondovalle, paesi, piana e primo piano basso restano senza manto: alberi decidui spogli, prati secchi, terra visibile o brina e cielo invernale. In inverno-neve la precipitazione cade anche davanti alla camera, ma in basso resta al massimo un velo non coprente, con erba e terreno ancora visibili. Nevicata in corso solo nella condizione inverno-neve; inverno-pioggia richiede precipitazione liquida leggibile.
 
 Sono state rigenerate e verificate tutte le cinque condizioni invernali di Poggio-Cantalice, Antrodoco, Cicolano, Laga e Tancia: 25 immagini. In Tancia il bosco in primo piano è trattato come versante basso con lettiera, rocce e terreno visibili, eventuale brina e senza inventare cime innevate fuori inquadratura. Vallonina e Rascino restano come approvate, perché il primo piano è già in quota e può essere innevato. Questa regola sostituisce la precedente interpretazione basata sul solo bands massimo.
+
+## Varianti colore — completamento 15/10/2026
+
+Tutte le 88 basi sono dichiarate nel manifest con i valori del brief. Per `fistulina-hepatica`, base colore `rosso`: la colonna forme del brief è «—», quindi il campo `base.forma` è omesso senza inventare un valore. Le varianti rosa e bruno conservano la sagoma approvata.
+
+Completati tutti i 141 colori (282 icone). Le due forme di phalloides già caricate restano **in attesa delle fasi**; nessuna nuova forma. Le celle segnalate di varianti-03 (1) e varianti-05 (0, 3, 6) sono state rigenerate con contorni completi. Coprinus comatus: gambo con anello basso in `icone/tavola-10-anello.png`, cella 5; le altre otto icone della tavola base hanno indici espliciti nel manifest.
+
+QA ripetibile e hash delle tavole in `bozze/verifica_varianti.py` e `bozze/VERIFICHE-varianti.json`. Nessun pixel con alpha>0 nelle fasce esterne di 42 px di ogni cella delle tavole varianti; contorno scuro su tutti i pixel estremi della sagoma alpha≥128, più verifica visiva.
