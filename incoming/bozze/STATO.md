@@ -184,3 +184,5 @@ Ordine aggiornato da Matteo il 15/10: completare prima tutte le varianti di colo
 | icone/varianti-05.png | amanita-rubescens: colore:bruno; amanita-pantherina: colore:grigio; amanita-pantherina: colore:crema | ok | QA visiva completata; 6 icone, alpha reale, terza colonna vuota. Basi nel manifest. |
 
 | icone/varianti-06.png | chlorophyllum-rhacodes: colore:bruno; procera: colore:bruno; lepiota-brunneoincarnata: colore:bruno | ok | QA visiva completata; 6 icone, alpha reale, terza colonna vuota. Basi nel manifest. |
+
+| icone/varianti-07.png | lepiota-brunneoincarnata: colore:rosso; lepiota-brunneoincarnata: colore:crema; lepiota-subincarnata: colore:bruno | ok | QA visiva completata; 6 icone, alpha reale, terza colonna vuota. Basi nel manifest. |

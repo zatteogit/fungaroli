@@ -8796,5 +8796,125 @@
       "forma": "convesso"
     },
     "qa": "Controllo visivo dei caratteri invarianti. PNG RGBA 1254×1254, griglia 3×3, colonna 3 vuota; controllo del canale alfa: tutte le fasce di bordo di 42 px (almeno 10%) trasparenti su ogni cella."
+  },
+  {
+    "file": "incoming/icone/varianti-07.png",
+    "tipo": "illustrazione",
+    "soggetto": "lepiota-brunneoincarnata",
+    "tessera": "cappello",
+    "stagione": null,
+    "foto_di_partenza": null,
+    "autore_foto": null,
+    "licenza_foto": null,
+    "pagina_foto": null,
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case precise-object-edit / scientific-educational. Edit this reference sheet of APPROVED flat mushroom icons ONLY in the requested colors. It is already arranged in the REQUIRED output layout: 1254x1254, equal invisible3x3 grid; each row col1 CAP SIDE VIEW ONLY, col2 WHOLE MUSHROOM, col3 EMPTY TRANSPARENT. Keep the exact style, line weight, outlines, proportions, icon center, scale, cap silhouette, age and anatomy. No growth stages and NO SHAPE VARIANTS. Real alpha transparency, clean edges, NO background, NO text, NO frames, NO shadows, NO extra details. Maintain simple broad flat colors and source highlights; use the requested recognizable midtone or a slightly lighter shade. OUTPUT ROW 1: Lepiota brunneoincarnata (lepiota-brunneoincarnata). Change only cap color from rosa to rosso #bb3226. Preserve the base convesso cap silhouette EXACTLY, same age, no shape change. Keep all gill/underside, stem, ring, volva, warts and scale colors unchanged; for a scaled cap preserve darker scale/disc contrast on the new cap ground. Preserve these source characteristics: Cappello 2-5 cm con squame bruno-rosate; Gambo corto con fasce rosate; Nessun anello scorrevole. OUTPUT ROW 2: Lepiota brunneoincarnata (lepiota-brunneoincarnata). Change only cap color from rosa to crema #e3cfa3. Preserve the base convesso cap silhouette EXACTLY, same age, no shape change. Keep all gill/underside, stem, ring, volva, warts and scale colors unchanged; for a scaled cap preserve darker scale/disc contrast on the new cap ground. Preserve these source characteristics: Cappello 2-5 cm con squame bruno-rosate; Gambo corto con fasce rosate; Nessun anello scorrevole. OUTPUT ROW 3: Lepiota subincarnata (lepiota-subincarnata). Change only cap color from rosa to bruno #8e5f36. Preserve the base convesso cap silhouette EXACTLY, same age, no shape change. Keep all gill/underside, stem, ring, volva, warts and scale colors unchanged; for a scaled cap preserve darker scale/disc contrast on the new cap ground. Preserve these source characteristics: Cappello sotto 5 cm con squame rosate; Gambo con fiocchi rosati; Nessun anello vero. Do not borrow anatomy from another row. No additions: preserve only features already visible in each corresponding reference drawing. MANDATORY: each drawing entirely inside its own cell with at least10% completely transparent margin on ALL four sides. Every418px cell must have zero alpha in the outer42px strips. Keep whole mushroom and cap far from cell boundaries. Third column totally empty alpha0.",
+    "cella": 0,
+    "variante": "colore:rosso",
+    "base": {
+      "colore": "rosa",
+      "forma": "convesso"
+    },
+    "qa": "Controllo visivo di colore, forma della base e caratteri invarianti; griglia 3×3 PNG RGBA 1254×1254. Verifica del canale alfa: zero pixel con alpha > 0 nei bordi di 42 px (10%) di tutte le celle; terza colonna vuota."
+  },
+  {
+    "file": "incoming/icone/varianti-07.png",
+    "tipo": "illustrazione",
+    "soggetto": "lepiota-brunneoincarnata",
+    "tessera": "gambo",
+    "stagione": null,
+    "foto_di_partenza": null,
+    "autore_foto": null,
+    "licenza_foto": null,
+    "pagina_foto": null,
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case precise-object-edit / scientific-educational. Edit this reference sheet of APPROVED flat mushroom icons ONLY in the requested colors. It is already arranged in the REQUIRED output layout: 1254x1254, equal invisible3x3 grid; each row col1 CAP SIDE VIEW ONLY, col2 WHOLE MUSHROOM, col3 EMPTY TRANSPARENT. Keep the exact style, line weight, outlines, proportions, icon center, scale, cap silhouette, age and anatomy. No growth stages and NO SHAPE VARIANTS. Real alpha transparency, clean edges, NO background, NO text, NO frames, NO shadows, NO extra details. Maintain simple broad flat colors and source highlights; use the requested recognizable midtone or a slightly lighter shade. OUTPUT ROW 1: Lepiota brunneoincarnata (lepiota-brunneoincarnata). Change only cap color from rosa to rosso #bb3226. Preserve the base convesso cap silhouette EXACTLY, same age, no shape change. Keep all gill/underside, stem, ring, volva, warts and scale colors unchanged; for a scaled cap preserve darker scale/disc contrast on the new cap ground. Preserve these source characteristics: Cappello 2-5 cm con squame bruno-rosate; Gambo corto con fasce rosate; Nessun anello scorrevole. OUTPUT ROW 2: Lepiota brunneoincarnata (lepiota-brunneoincarnata). Change only cap color from rosa to crema #e3cfa3. Preserve the base convesso cap silhouette EXACTLY, same age, no shape change. Keep all gill/underside, stem, ring, volva, warts and scale colors unchanged; for a scaled cap preserve darker scale/disc contrast on the new cap ground. Preserve these source characteristics: Cappello 2-5 cm con squame bruno-rosate; Gambo corto con fasce rosate; Nessun anello scorrevole. OUTPUT ROW 3: Lepiota subincarnata (lepiota-subincarnata). Change only cap color from rosa to bruno #8e5f36. Preserve the base convesso cap silhouette EXACTLY, same age, no shape change. Keep all gill/underside, stem, ring, volva, warts and scale colors unchanged; for a scaled cap preserve darker scale/disc contrast on the new cap ground. Preserve these source characteristics: Cappello sotto 5 cm con squame rosate; Gambo con fiocchi rosati; Nessun anello vero. Do not borrow anatomy from another row. No additions: preserve only features already visible in each corresponding reference drawing. MANDATORY: each drawing entirely inside its own cell with at least10% completely transparent margin on ALL four sides. Every418px cell must have zero alpha in the outer42px strips. Keep whole mushroom and cap far from cell boundaries. Third column totally empty alpha0.",
+    "cella": 1,
+    "variante": "colore:rosso",
+    "base": {
+      "colore": "rosa",
+      "forma": "convesso"
+    },
+    "qa": "Controllo visivo di colore, forma della base e caratteri invarianti; griglia 3×3 PNG RGBA 1254×1254. Verifica del canale alfa: zero pixel con alpha > 0 nei bordi di 42 px (10%) di tutte le celle; terza colonna vuota."
+  },
+  {
+    "file": "incoming/icone/varianti-07.png",
+    "tipo": "illustrazione",
+    "soggetto": "lepiota-brunneoincarnata",
+    "tessera": "cappello",
+    "stagione": null,
+    "foto_di_partenza": null,
+    "autore_foto": null,
+    "licenza_foto": null,
+    "pagina_foto": null,
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case precise-object-edit / scientific-educational. Edit this reference sheet of APPROVED flat mushroom icons ONLY in the requested colors. It is already arranged in the REQUIRED output layout: 1254x1254, equal invisible3x3 grid; each row col1 CAP SIDE VIEW ONLY, col2 WHOLE MUSHROOM, col3 EMPTY TRANSPARENT. Keep the exact style, line weight, outlines, proportions, icon center, scale, cap silhouette, age and anatomy. No growth stages and NO SHAPE VARIANTS. Real alpha transparency, clean edges, NO background, NO text, NO frames, NO shadows, NO extra details. Maintain simple broad flat colors and source highlights; use the requested recognizable midtone or a slightly lighter shade. OUTPUT ROW 1: Lepiota brunneoincarnata (lepiota-brunneoincarnata). Change only cap color from rosa to rosso #bb3226. Preserve the base convesso cap silhouette EXACTLY, same age, no shape change. Keep all gill/underside, stem, ring, volva, warts and scale colors unchanged; for a scaled cap preserve darker scale/disc contrast on the new cap ground. Preserve these source characteristics: Cappello 2-5 cm con squame bruno-rosate; Gambo corto con fasce rosate; Nessun anello scorrevole. OUTPUT ROW 2: Lepiota brunneoincarnata (lepiota-brunneoincarnata). Change only cap color from rosa to crema #e3cfa3. Preserve the base convesso cap silhouette EXACTLY, same age, no shape change. Keep all gill/underside, stem, ring, volva, warts and scale colors unchanged; for a scaled cap preserve darker scale/disc contrast on the new cap ground. Preserve these source characteristics: Cappello 2-5 cm con squame bruno-rosate; Gambo corto con fasce rosate; Nessun anello scorrevole. OUTPUT ROW 3: Lepiota subincarnata (lepiota-subincarnata). Change only cap color from rosa to bruno #8e5f36. Preserve the base convesso cap silhouette EXACTLY, same age, no shape change. Keep all gill/underside, stem, ring, volva, warts and scale colors unchanged; for a scaled cap preserve darker scale/disc contrast on the new cap ground. Preserve these source characteristics: Cappello sotto 5 cm con squame rosate; Gambo con fiocchi rosati; Nessun anello vero. Do not borrow anatomy from another row. No additions: preserve only features already visible in each corresponding reference drawing. MANDATORY: each drawing entirely inside its own cell with at least10% completely transparent margin on ALL four sides. Every418px cell must have zero alpha in the outer42px strips. Keep whole mushroom and cap far from cell boundaries. Third column totally empty alpha0.",
+    "cella": 3,
+    "variante": "colore:crema",
+    "base": {
+      "colore": "rosa",
+      "forma": "convesso"
+    },
+    "qa": "Controllo visivo di colore, forma della base e caratteri invarianti; griglia 3×3 PNG RGBA 1254×1254. Verifica del canale alfa: zero pixel con alpha > 0 nei bordi di 42 px (10%) di tutte le celle; terza colonna vuota."
+  },
+  {
+    "file": "incoming/icone/varianti-07.png",
+    "tipo": "illustrazione",
+    "soggetto": "lepiota-brunneoincarnata",
+    "tessera": "gambo",
+    "stagione": null,
+    "foto_di_partenza": null,
+    "autore_foto": null,
+    "licenza_foto": null,
+    "pagina_foto": null,
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case precise-object-edit / scientific-educational. Edit this reference sheet of APPROVED flat mushroom icons ONLY in the requested colors. It is already arranged in the REQUIRED output layout: 1254x1254, equal invisible3x3 grid; each row col1 CAP SIDE VIEW ONLY, col2 WHOLE MUSHROOM, col3 EMPTY TRANSPARENT. Keep the exact style, line weight, outlines, proportions, icon center, scale, cap silhouette, age and anatomy. No growth stages and NO SHAPE VARIANTS. Real alpha transparency, clean edges, NO background, NO text, NO frames, NO shadows, NO extra details. Maintain simple broad flat colors and source highlights; use the requested recognizable midtone or a slightly lighter shade. OUTPUT ROW 1: Lepiota brunneoincarnata (lepiota-brunneoincarnata). Change only cap color from rosa to rosso #bb3226. Preserve the base convesso cap silhouette EXACTLY, same age, no shape change. Keep all gill/underside, stem, ring, volva, warts and scale colors unchanged; for a scaled cap preserve darker scale/disc contrast on the new cap ground. Preserve these source characteristics: Cappello 2-5 cm con squame bruno-rosate; Gambo corto con fasce rosate; Nessun anello scorrevole. OUTPUT ROW 2: Lepiota brunneoincarnata (lepiota-brunneoincarnata). Change only cap color from rosa to crema #e3cfa3. Preserve the base convesso cap silhouette EXACTLY, same age, no shape change. Keep all gill/underside, stem, ring, volva, warts and scale colors unchanged; for a scaled cap preserve darker scale/disc contrast on the new cap ground. Preserve these source characteristics: Cappello 2-5 cm con squame bruno-rosate; Gambo corto con fasce rosate; Nessun anello scorrevole. OUTPUT ROW 3: Lepiota subincarnata (lepiota-subincarnata). Change only cap color from rosa to bruno #8e5f36. Preserve the base convesso cap silhouette EXACTLY, same age, no shape change. Keep all gill/underside, stem, ring, volva, warts and scale colors unchanged; for a scaled cap preserve darker scale/disc contrast on the new cap ground. Preserve these source characteristics: Cappello sotto 5 cm con squame rosate; Gambo con fiocchi rosati; Nessun anello vero. Do not borrow anatomy from another row. No additions: preserve only features already visible in each corresponding reference drawing. MANDATORY: each drawing entirely inside its own cell with at least10% completely transparent margin on ALL four sides. Every418px cell must have zero alpha in the outer42px strips. Keep whole mushroom and cap far from cell boundaries. Third column totally empty alpha0.",
+    "cella": 4,
+    "variante": "colore:crema",
+    "base": {
+      "colore": "rosa",
+      "forma": "convesso"
+    },
+    "qa": "Controllo visivo di colore, forma della base e caratteri invarianti; griglia 3×3 PNG RGBA 1254×1254. Verifica del canale alfa: zero pixel con alpha > 0 nei bordi di 42 px (10%) di tutte le celle; terza colonna vuota."
+  },
+  {
+    "file": "incoming/icone/varianti-07.png",
+    "tipo": "illustrazione",
+    "soggetto": "lepiota-subincarnata",
+    "tessera": "cappello",
+    "stagione": null,
+    "foto_di_partenza": null,
+    "autore_foto": null,
+    "licenza_foto": null,
+    "pagina_foto": null,
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case precise-object-edit / scientific-educational. Edit this reference sheet of APPROVED flat mushroom icons ONLY in the requested colors. It is already arranged in the REQUIRED output layout: 1254x1254, equal invisible3x3 grid; each row col1 CAP SIDE VIEW ONLY, col2 WHOLE MUSHROOM, col3 EMPTY TRANSPARENT. Keep the exact style, line weight, outlines, proportions, icon center, scale, cap silhouette, age and anatomy. No growth stages and NO SHAPE VARIANTS. Real alpha transparency, clean edges, NO background, NO text, NO frames, NO shadows, NO extra details. Maintain simple broad flat colors and source highlights; use the requested recognizable midtone or a slightly lighter shade. OUTPUT ROW 1: Lepiota brunneoincarnata (lepiota-brunneoincarnata). Change only cap color from rosa to rosso #bb3226. Preserve the base convesso cap silhouette EXACTLY, same age, no shape change. Keep all gill/underside, stem, ring, volva, warts and scale colors unchanged; for a scaled cap preserve darker scale/disc contrast on the new cap ground. Preserve these source characteristics: Cappello 2-5 cm con squame bruno-rosate; Gambo corto con fasce rosate; Nessun anello scorrevole. OUTPUT ROW 2: Lepiota brunneoincarnata (lepiota-brunneoincarnata). Change only cap color from rosa to crema #e3cfa3. Preserve the base convesso cap silhouette EXACTLY, same age, no shape change. Keep all gill/underside, stem, ring, volva, warts and scale colors unchanged; for a scaled cap preserve darker scale/disc contrast on the new cap ground. Preserve these source characteristics: Cappello 2-5 cm con squame bruno-rosate; Gambo corto con fasce rosate; Nessun anello scorrevole. OUTPUT ROW 3: Lepiota subincarnata (lepiota-subincarnata). Change only cap color from rosa to bruno #8e5f36. Preserve the base convesso cap silhouette EXACTLY, same age, no shape change. Keep all gill/underside, stem, ring, volva, warts and scale colors unchanged; for a scaled cap preserve darker scale/disc contrast on the new cap ground. Preserve these source characteristics: Cappello sotto 5 cm con squame rosate; Gambo con fiocchi rosati; Nessun anello vero. Do not borrow anatomy from another row. No additions: preserve only features already visible in each corresponding reference drawing. MANDATORY: each drawing entirely inside its own cell with at least10% completely transparent margin on ALL four sides. Every418px cell must have zero alpha in the outer42px strips. Keep whole mushroom and cap far from cell boundaries. Third column totally empty alpha0.",
+    "cella": 6,
+    "variante": "colore:bruno",
+    "base": {
+      "colore": "rosa",
+      "forma": "convesso"
+    },
+    "qa": "Controllo visivo di colore, forma della base e caratteri invarianti; griglia 3×3 PNG RGBA 1254×1254. Verifica del canale alfa: zero pixel con alpha > 0 nei bordi di 42 px (10%) di tutte le celle; terza colonna vuota."
+  },
+  {
+    "file": "incoming/icone/varianti-07.png",
+    "tipo": "illustrazione",
+    "soggetto": "lepiota-subincarnata",
+    "tessera": "gambo",
+    "stagione": null,
+    "foto_di_partenza": null,
+    "autore_foto": null,
+    "licenza_foto": null,
+    "pagina_foto": null,
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case precise-object-edit / scientific-educational. Edit this reference sheet of APPROVED flat mushroom icons ONLY in the requested colors. It is already arranged in the REQUIRED output layout: 1254x1254, equal invisible3x3 grid; each row col1 CAP SIDE VIEW ONLY, col2 WHOLE MUSHROOM, col3 EMPTY TRANSPARENT. Keep the exact style, line weight, outlines, proportions, icon center, scale, cap silhouette, age and anatomy. No growth stages and NO SHAPE VARIANTS. Real alpha transparency, clean edges, NO background, NO text, NO frames, NO shadows, NO extra details. Maintain simple broad flat colors and source highlights; use the requested recognizable midtone or a slightly lighter shade. OUTPUT ROW 1: Lepiota brunneoincarnata (lepiota-brunneoincarnata). Change only cap color from rosa to rosso #bb3226. Preserve the base convesso cap silhouette EXACTLY, same age, no shape change. Keep all gill/underside, stem, ring, volva, warts and scale colors unchanged; for a scaled cap preserve darker scale/disc contrast on the new cap ground. Preserve these source characteristics: Cappello 2-5 cm con squame bruno-rosate; Gambo corto con fasce rosate; Nessun anello scorrevole. OUTPUT ROW 2: Lepiota brunneoincarnata (lepiota-brunneoincarnata). Change only cap color from rosa to crema #e3cfa3. Preserve the base convesso cap silhouette EXACTLY, same age, no shape change. Keep all gill/underside, stem, ring, volva, warts and scale colors unchanged; for a scaled cap preserve darker scale/disc contrast on the new cap ground. Preserve these source characteristics: Cappello 2-5 cm con squame bruno-rosate; Gambo corto con fasce rosate; Nessun anello scorrevole. OUTPUT ROW 3: Lepiota subincarnata (lepiota-subincarnata). Change only cap color from rosa to bruno #8e5f36. Preserve the base convesso cap silhouette EXACTLY, same age, no shape change. Keep all gill/underside, stem, ring, volva, warts and scale colors unchanged; for a scaled cap preserve darker scale/disc contrast on the new cap ground. Preserve these source characteristics: Cappello sotto 5 cm con squame rosate; Gambo con fiocchi rosati; Nessun anello vero. Do not borrow anatomy from another row. No additions: preserve only features already visible in each corresponding reference drawing. MANDATORY: each drawing entirely inside its own cell with at least10% completely transparent margin on ALL four sides. Every418px cell must have zero alpha in the outer42px strips. Keep whole mushroom and cap far from cell boundaries. Third column totally empty alpha0.",
+    "cella": 7,
+    "variante": "colore:bruno",
+    "base": {
+      "colore": "rosa",
+      "forma": "convesso"
+    },
+    "qa": "Controllo visivo di colore, forma della base e caratteri invarianti; griglia 3×3 PNG RGBA 1254×1254. Verifica del canale alfa: zero pixel con alpha > 0 nei bordi di 42 px (10%) di tutte le celle; terza colonna vuota."
   }
 ]
