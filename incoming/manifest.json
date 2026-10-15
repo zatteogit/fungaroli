@@ -15516,5 +15516,30 @@
     ],
     "bytes": 209378,
     "sha256": "cfdd935f7fd792ac64d13aebec6fa1c6edfa51c485340f599536cd7130f865f3"
+  },
+  {
+    "file": "incoming/infografiche/edulis.webp",
+    "tipo": "infografica",
+    "soggetto": "edulis",
+    "modello": "image_gen (identificatore tecnico non esposto)",
+    "prompt": "NEW scientific educational plate for Boletus edulis, vertical4:5 target1600x2000. Reference1 STYLE ONLY: clean brown outlines, few flat natural colors on ivory paper, separated vignettes. References2 edulis and3 satanas are morphology only, do not edit/copy photographs. Entire composition centered WITHIN a large blank border: draw nothing in outer10% on all sides. Lower-right38%x24% entirely empty for later text. No text, numbers, labels, letters, arrows, frames or watermark. Top40%: robust adult Boletus edulis and younger one, whole, domed/flat-convex chestnut-hazelnut cap with pale almost white edge. Thick swollen pale buff stems with very FINE WHITE netting on upper part, fading lower down, no brown coarse net, no scales, NO RING OR VOLVA. Visible underside has tiny ROUND CREAM PORES, not gills. Young pores white; older pores yellow-olive. Middle-left: longitudinal cut edulis with clean WHITE NON-STAINING flesh throughout cap and stem, at most a thin wine-brown line immediately beneath brown cuticle, no blue anywhere on edulis. Middle-right: underside disk showing dense tiny round cream to yellow-olive sponge PORES and short visible tube layer at rim, never radial gill lines. Small center detail: upper stem with subtle fine WHITE RETICULATION, not dark thick grid. BottomLEFT: Rubroboletus satanas comparison, one intact squat pale gray-white capped bolete with RED PORES, very bulbous yellow/red stem with RED NET, and one cut half showing localized pale BLUE staining in cream flesh. Satanas cap must not be brown and pores must not be yellow. Whole main specimens without roots, no extra caps or stems, no decorative foliage. Clear anatomical comparisons, not certification of identification.",
+    "edits": [
+      "Preserve this edulis educational plate, make only these precise corrections. All cap/stem silhouettes, layout, dark brown outlines, ivory paper, no text remain. The SMALL young edulis at TOP RIGHT must have a WHITE to very pale IVORY pore surface, not yellow ochre. The larger adult and underside detail retain pale cream/yellow-olive pores, all with tiny round holes and NO gills. Retain WHITE unchanged edulis cut flesh; ONLY satanas bottom-left cut section has pale blue staining. Reduce the entire drawing composition slightly within same4:5canvas, about90% of current scale, to leave at least7% blank ivory margin on ALL four sides, especially top and left. Retain blank lower-right area. No new elements, text, letters, symbols, lines or arrows."
+    ],
+    "tentativi": 2,
+    "stato": "verifica illustrativa superata",
+    "checklist_superata": true,
+    "verifica": "Pori piccoli chiari, bianchi nel giovane e crema/giallo-oliva nell’adulto; reticolo bianco nella parte alta del gambo robusto, cappello castano con orlo chiaro. Sezione bianca senza viraggio. Boleto satana distinto: cappello biancastro, pori e reticolo rossi, gambo bulboso, carne azzurrata. Anello e volva assenti, margini liberi, nessun testo.",
+    "riferimenti": [
+      "assets/species/edulis-ref.webp (autore/licenza in data/media.json)",
+      "assets/species/rubroboletus-satanas-inat1.webp (autore/licenza in data/species-traits.json)",
+      "incoming/infografiche/caesarea-revisione.webp (solo stile)"
+    ],
+    "dimensioni": [
+      1600,
+      2000
+    ],
+    "bytes": 234816,
+    "sha256": "2e67a274fae4720c1a54584ee6c8e2b6a1d3db82af591b382e8ceb6f67ca8863"
   }
 ]
