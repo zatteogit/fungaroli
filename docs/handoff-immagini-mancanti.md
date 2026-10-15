@@ -6,8 +6,8 @@
 
 ## Già consegnato (non rifare)
 
-- 30 tavole delle icone dei funghi e 286 varianti di colore e forma (`incoming/icone/`).
-- Gambo del coprino con l'anello (`incoming/icone/tavola-10-anello.png`).
+- 30 tavole delle icone dei funghi e 286 varianti di colore e forma (`incoming/icone/`): in produzione dalla v65.
+- Gambo del coprino con l'anello (`incoming/icone/tavola-10-anello.png`): in produzione dalla v65.
 - 7 tavole delle icone dei caratteri degli alberi (`incoming/icone-alberi/`): in produzione dalla v64.
 - Copertine dei luoghi per stagione e meteo (`incoming/luoghi/`).
 
