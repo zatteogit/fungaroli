@@ -29,7 +29,9 @@
   --_ref-germoglio-soft: #e9f1d6;
   --_ref-germoglio-ink: #36501d;
   --_ref-rain: #2a78d6;
-  --_ref-rain-fc: #86b6ef;
+  /* grafici giorno per giorno: passi di fiordaliso e calendula validati (≥3:1 su carta e su bosco scuro, dataviz validate_palette) */
+  --_ref-viz-water: #628cd4;
+  --_ref-viz-heat: #d66a03;
   --_ref-line: #326820;
   --_ref-grid: #e6dfd3;
   --_ref-s0: #cfcabf;
@@ -67,7 +69,6 @@
   --_ref-forest-light: #b7d0a6;
   --_ref-fiordaliso-ink-dark: #a0bffa;
   --_ref-rain-dark: #4a93e8;
-  --_ref-rain-fc-dark: #1c5cab;
   --_ref-line-dark: #9fd07a;
   --_ref-grid-dark: #1e3128;
   --_ref-s0-dark: #3c4a42;
@@ -119,7 +120,10 @@
   --on-crit: var(--_ref-white);
 
   --rain: var(--_ref-rain);
-  --rain-fc: var(--_ref-rain-fc);
+  /* grafici: acqua (pioggia e suolo) in fiordaliso, calore in calendula, l'indice in inchiostro bosco */
+  --viz-water: var(--_ref-viz-water);
+  --viz-heat: var(--_ref-viz-heat);
+  --viz-index: var(--_ref-forest);
   --line: var(--_ref-line);
   --grid: var(--_ref-grid);
   /* rampa dell'indice su fondo chiaro: da un verde chiaro a un verde pieno (mai quasi nero) */
@@ -153,7 +157,7 @@
   --brand: var(--_ref-forest-light); --brand-ink: var(--_ref-night); --focus: var(--_ref-polline);
   --polline-soft: var(--_ref-surface-2-dark); --polline-ink: var(--_ref-polline); --calendula-soft: var(--_ref-surface-2-dark); --calendula-ink: var(--_ref-accent-dark);
   --fiordaliso-soft: var(--_ref-surface-2-dark); --fiordaliso-ink: var(--_ref-fiordaliso-ink-dark); --germoglio-soft: var(--_ref-surface-2-dark); --germoglio-ink: var(--_ref-germoglio);
-  --rain: var(--_ref-rain-dark); --rain-fc: var(--_ref-rain-fc-dark); --line: var(--_ref-line-dark); --grid: var(--_ref-grid-dark);
+  --rain: var(--_ref-rain-dark); --viz-index: var(--_ref-forest-light); --line: var(--_ref-line-dark); --grid: var(--_ref-grid-dark);
   --s0: var(--_ref-s0-dark); --s1: var(--_ref-s1-dark); --s2: var(--_ref-s2-dark); --s3: var(--_ref-s3-dark); --s4: var(--_ref-s4-dark); --s5: var(--_ref-s5-dark);
   --warn-bg: var(--_ref-warn-bg-dark); --warn-ink: var(--_ref-warn-ink-dark); --ok-bg: var(--_ref-ok-bg-dark); --ok-ink: var(--_ref-forest-light);
   --crit: var(--_ref-crit-dark); --on-crit: var(--_ref-night); --crit-bg: var(--_ref-crit-bg-dark); --crit-ink: var(--_ref-crit-ink-dark);
@@ -168,7 +172,7 @@
   --brand: var(--_ref-forest-light); --brand-ink: var(--_ref-night); --focus: var(--_ref-polline);
   --polline-soft: var(--_ref-surface-2-dark); --polline-ink: var(--_ref-polline); --calendula-soft: var(--_ref-surface-2-dark); --calendula-ink: var(--_ref-accent-dark);
   --fiordaliso-soft: var(--_ref-surface-2-dark); --fiordaliso-ink: var(--_ref-fiordaliso-ink-dark); --germoglio-soft: var(--_ref-surface-2-dark); --germoglio-ink: var(--_ref-germoglio);
-  --rain: var(--_ref-rain-dark); --rain-fc: var(--_ref-rain-fc-dark); --line: var(--_ref-line-dark); --grid: var(--_ref-grid-dark);
+  --rain: var(--_ref-rain-dark); --viz-index: var(--_ref-forest-light); --line: var(--_ref-line-dark); --grid: var(--_ref-grid-dark);
   --s0: var(--_ref-s0-dark); --s1: var(--_ref-s1-dark); --s2: var(--_ref-s2-dark); --s3: var(--_ref-s3-dark); --s4: var(--_ref-s4-dark); --s5: var(--_ref-s5-dark);
   --warn-bg: var(--_ref-warn-bg-dark); --warn-ink: var(--_ref-warn-ink-dark); --ok-bg: var(--_ref-ok-bg-dark); --ok-ink: var(--_ref-forest-light);
   --crit: var(--_ref-crit-dark); --on-crit: var(--_ref-night); --crit-bg: var(--_ref-crit-bg-dark); --crit-ink: var(--_ref-crit-ink-dark);
