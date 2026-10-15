@@ -3235,3 +3235,12 @@ img[data-image-state="ready"][data-image-fast] { animation: none; }
 .attention .att-sum li .att-it::before { content: none !important; }
 .att-c:not(.att-static) .att-n { display: none; }
 .attention .att-sum { margin-top: 14px; }
+
+/* iPhone, app installata: la barra di stato è trasparente (black-translucent) e l'intestazione sfocata ci passa sotto.
+   iOS scrive ora e batteria sempre in bianco: nel tema chiaro un velo scuro leggerissimo, solo in quella fascia, le tiene leggibili. */
+.status-veil { display: none; }
+@media (display-mode: standalone) {
+  .status-veil { display: block; position: fixed; z-index: 1100; top: 0; left: 0; right: 0; height: env(safe-area-inset-top, 0px); pointer-events: none; background: linear-gradient(rgb(20 16 10 / .34), rgb(20 16 10 / .14)); }
+  :root[data-theme="dark"] .status-veil { display: none; }
+}
+@media (display-mode: standalone) and (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .status-veil { display: none; } }
