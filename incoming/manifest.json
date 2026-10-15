@@ -14743,5 +14743,101 @@
     "modello": "image_gen (modello integrato, identificatore non esposto)",
     "stato": "ok",
     "qa": "incoming/qa/combinazioni-02.json"
+  },
+  {
+    "file": "incoming/icone/forme-01.png",
+    "tipo": "illustrazione",
+    "soggetto": "caesarea",
+    "tessera": "cappello",
+    "cella": 0,
+    "variante": "forma:emisferico",
+    "base": {
+      "colore": "arancio",
+      "forma": "convesso"
+    },
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case: scientific-educational. Production mushroom trait sprite sheet, 3x3 equal grid, PNG transparent alpha, no text/grid. Approved references define exact species anatomy, colors, brown outline weight, simple flat fills and a single highlight. Change ONLY cap shape and age-appropriate stem proportions. Each ROW is ONE variant: LEFT isolated cap viewed side-on (no stem), CENTER WHOLE mushroom with complete stem/base, RIGHT EMPTY transparent. Six icons maximum, keep 16% transparent margins on every side of every cell. All outlines fully closed dark brown, no clipping. Keep base coloration, spots/scales, ring, volva, reticulum and stem color exactly from the stated reference species row. Never copy the reference underside tile. No new diagnostic traits, no ground/soil/grass/shadows. Use same color as the source, not a new color variant. OUTPUT ROW 1: caesarea (Ovolo buono), cap emisferico = young deep HALF-SPHERE, round dome depth about HALF its diameter; stem can be stockier. Base color arancio. Use reference image 1, species in its ROW 1; reference LEFT cap and RIGHT whole mushroom are anatomy targets. Copy all stem characters and markings. OUTPUT ROW 2: caesarea (Ovolo buono), cap piano = adult FLAT broad cap, nearly horizontal top, depth ONLY 10-15% of diameter, NO round dome; mature stem. Base color arancio. Use reference image 1, species in its ROW 1; reference LEFT cap and RIGHT whole mushroom are anatomy targets. Copy all stem characters and markings. OUTPUT ROW 3: amanita-muscaria (Ovolo malefico), cap emisferico = young deep HALF-SPHERE, round dome depth about HALF its diameter; stem can be stockier. Base color rosso. Use reference image 1, species in its ROW 2; reference LEFT cap and RIGHT whole mushroom are anatomy targets. Copy all stem characters and markings. ",
+    "stato": "ok",
+    "qa": "incoming/qa/forme-01.json"
+  },
+  {
+    "file": "incoming/icone/forme-01.png",
+    "tipo": "illustrazione",
+    "soggetto": "caesarea",
+    "tessera": "gambo",
+    "cella": 1,
+    "variante": "forma:emisferico",
+    "base": {
+      "colore": "arancio",
+      "forma": "convesso"
+    },
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case: scientific-educational. Production mushroom trait sprite sheet, 3x3 equal grid, PNG transparent alpha, no text/grid. Approved references define exact species anatomy, colors, brown outline weight, simple flat fills and a single highlight. Change ONLY cap shape and age-appropriate stem proportions. Each ROW is ONE variant: LEFT isolated cap viewed side-on (no stem), CENTER WHOLE mushroom with complete stem/base, RIGHT EMPTY transparent. Six icons maximum, keep 16% transparent margins on every side of every cell. All outlines fully closed dark brown, no clipping. Keep base coloration, spots/scales, ring, volva, reticulum and stem color exactly from the stated reference species row. Never copy the reference underside tile. No new diagnostic traits, no ground/soil/grass/shadows. Use same color as the source, not a new color variant. OUTPUT ROW 1: caesarea (Ovolo buono), cap emisferico = young deep HALF-SPHERE, round dome depth about HALF its diameter; stem can be stockier. Base color arancio. Use reference image 1, species in its ROW 1; reference LEFT cap and RIGHT whole mushroom are anatomy targets. Copy all stem characters and markings. OUTPUT ROW 2: caesarea (Ovolo buono), cap piano = adult FLAT broad cap, nearly horizontal top, depth ONLY 10-15% of diameter, NO round dome; mature stem. Base color arancio. Use reference image 1, species in its ROW 1; reference LEFT cap and RIGHT whole mushroom are anatomy targets. Copy all stem characters and markings. OUTPUT ROW 3: amanita-muscaria (Ovolo malefico), cap emisferico = young deep HALF-SPHERE, round dome depth about HALF its diameter; stem can be stockier. Base color rosso. Use reference image 1, species in its ROW 2; reference LEFT cap and RIGHT whole mushroom are anatomy targets. Copy all stem characters and markings. ",
+    "stato": "ok",
+    "qa": "incoming/qa/forme-01.json"
+  },
+  {
+    "file": "incoming/icone/forme-01.png",
+    "tipo": "illustrazione",
+    "soggetto": "caesarea",
+    "tessera": "cappello",
+    "cella": 3,
+    "variante": "forma:piano",
+    "base": {
+      "colore": "arancio",
+      "forma": "convesso"
+    },
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case: scientific-educational. Production mushroom trait sprite sheet, 3x3 equal grid, PNG transparent alpha, no text/grid. Approved references define exact species anatomy, colors, brown outline weight, simple flat fills and a single highlight. Change ONLY cap shape and age-appropriate stem proportions. Each ROW is ONE variant: LEFT isolated cap viewed side-on (no stem), CENTER WHOLE mushroom with complete stem/base, RIGHT EMPTY transparent. Six icons maximum, keep 16% transparent margins on every side of every cell. All outlines fully closed dark brown, no clipping. Keep base coloration, spots/scales, ring, volva, reticulum and stem color exactly from the stated reference species row. Never copy the reference underside tile. No new diagnostic traits, no ground/soil/grass/shadows. Use same color as the source, not a new color variant. OUTPUT ROW 1: caesarea (Ovolo buono), cap emisferico = young deep HALF-SPHERE, round dome depth about HALF its diameter; stem can be stockier. Base color arancio. Use reference image 1, species in its ROW 1; reference LEFT cap and RIGHT whole mushroom are anatomy targets. Copy all stem characters and markings. OUTPUT ROW 2: caesarea (Ovolo buono), cap piano = adult FLAT broad cap, nearly horizontal top, depth ONLY 10-15% of diameter, NO round dome; mature stem. Base color arancio. Use reference image 1, species in its ROW 1; reference LEFT cap and RIGHT whole mushroom are anatomy targets. Copy all stem characters and markings. OUTPUT ROW 3: amanita-muscaria (Ovolo malefico), cap emisferico = young deep HALF-SPHERE, round dome depth about HALF its diameter; stem can be stockier. Base color rosso. Use reference image 1, species in its ROW 2; reference LEFT cap and RIGHT whole mushroom are anatomy targets. Copy all stem characters and markings. ",
+    "stato": "ok",
+    "qa": "incoming/qa/forme-01.json"
+  },
+  {
+    "file": "incoming/icone/forme-01.png",
+    "tipo": "illustrazione",
+    "soggetto": "caesarea",
+    "tessera": "gambo",
+    "cella": 4,
+    "variante": "forma:piano",
+    "base": {
+      "colore": "arancio",
+      "forma": "convesso"
+    },
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case: scientific-educational. Production mushroom trait sprite sheet, 3x3 equal grid, PNG transparent alpha, no text/grid. Approved references define exact species anatomy, colors, brown outline weight, simple flat fills and a single highlight. Change ONLY cap shape and age-appropriate stem proportions. Each ROW is ONE variant: LEFT isolated cap viewed side-on (no stem), CENTER WHOLE mushroom with complete stem/base, RIGHT EMPTY transparent. Six icons maximum, keep 16% transparent margins on every side of every cell. All outlines fully closed dark brown, no clipping. Keep base coloration, spots/scales, ring, volva, reticulum and stem color exactly from the stated reference species row. Never copy the reference underside tile. No new diagnostic traits, no ground/soil/grass/shadows. Use same color as the source, not a new color variant. OUTPUT ROW 1: caesarea (Ovolo buono), cap emisferico = young deep HALF-SPHERE, round dome depth about HALF its diameter; stem can be stockier. Base color arancio. Use reference image 1, species in its ROW 1; reference LEFT cap and RIGHT whole mushroom are anatomy targets. Copy all stem characters and markings. OUTPUT ROW 2: caesarea (Ovolo buono), cap piano = adult FLAT broad cap, nearly horizontal top, depth ONLY 10-15% of diameter, NO round dome; mature stem. Base color arancio. Use reference image 1, species in its ROW 1; reference LEFT cap and RIGHT whole mushroom are anatomy targets. Copy all stem characters and markings. OUTPUT ROW 3: amanita-muscaria (Ovolo malefico), cap emisferico = young deep HALF-SPHERE, round dome depth about HALF its diameter; stem can be stockier. Base color rosso. Use reference image 1, species in its ROW 2; reference LEFT cap and RIGHT whole mushroom are anatomy targets. Copy all stem characters and markings. ",
+    "stato": "ok",
+    "qa": "incoming/qa/forme-01.json"
+  },
+  {
+    "file": "incoming/icone/forme-01.png",
+    "tipo": "illustrazione",
+    "soggetto": "amanita-muscaria",
+    "tessera": "cappello",
+    "cella": 6,
+    "variante": "forma:emisferico",
+    "base": {
+      "colore": "rosso",
+      "forma": "convesso"
+    },
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case: scientific-educational. Production mushroom trait sprite sheet, 3x3 equal grid, PNG transparent alpha, no text/grid. Approved references define exact species anatomy, colors, brown outline weight, simple flat fills and a single highlight. Change ONLY cap shape and age-appropriate stem proportions. Each ROW is ONE variant: LEFT isolated cap viewed side-on (no stem), CENTER WHOLE mushroom with complete stem/base, RIGHT EMPTY transparent. Six icons maximum, keep 16% transparent margins on every side of every cell. All outlines fully closed dark brown, no clipping. Keep base coloration, spots/scales, ring, volva, reticulum and stem color exactly from the stated reference species row. Never copy the reference underside tile. No new diagnostic traits, no ground/soil/grass/shadows. Use same color as the source, not a new color variant. OUTPUT ROW 1: caesarea (Ovolo buono), cap emisferico = young deep HALF-SPHERE, round dome depth about HALF its diameter; stem can be stockier. Base color arancio. Use reference image 1, species in its ROW 1; reference LEFT cap and RIGHT whole mushroom are anatomy targets. Copy all stem characters and markings. OUTPUT ROW 2: caesarea (Ovolo buono), cap piano = adult FLAT broad cap, nearly horizontal top, depth ONLY 10-15% of diameter, NO round dome; mature stem. Base color arancio. Use reference image 1, species in its ROW 1; reference LEFT cap and RIGHT whole mushroom are anatomy targets. Copy all stem characters and markings. OUTPUT ROW 3: amanita-muscaria (Ovolo malefico), cap emisferico = young deep HALF-SPHERE, round dome depth about HALF its diameter; stem can be stockier. Base color rosso. Use reference image 1, species in its ROW 2; reference LEFT cap and RIGHT whole mushroom are anatomy targets. Copy all stem characters and markings. ",
+    "stato": "ok",
+    "qa": "incoming/qa/forme-01.json"
+  },
+  {
+    "file": "incoming/icone/forme-01.png",
+    "tipo": "illustrazione",
+    "soggetto": "amanita-muscaria",
+    "tessera": "gambo",
+    "cella": 7,
+    "variante": "forma:emisferico",
+    "base": {
+      "colore": "rosso",
+      "forma": "convesso"
+    },
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case: scientific-educational. Production mushroom trait sprite sheet, 3x3 equal grid, PNG transparent alpha, no text/grid. Approved references define exact species anatomy, colors, brown outline weight, simple flat fills and a single highlight. Change ONLY cap shape and age-appropriate stem proportions. Each ROW is ONE variant: LEFT isolated cap viewed side-on (no stem), CENTER WHOLE mushroom with complete stem/base, RIGHT EMPTY transparent. Six icons maximum, keep 16% transparent margins on every side of every cell. All outlines fully closed dark brown, no clipping. Keep base coloration, spots/scales, ring, volva, reticulum and stem color exactly from the stated reference species row. Never copy the reference underside tile. No new diagnostic traits, no ground/soil/grass/shadows. Use same color as the source, not a new color variant. OUTPUT ROW 1: caesarea (Ovolo buono), cap emisferico = young deep HALF-SPHERE, round dome depth about HALF its diameter; stem can be stockier. Base color arancio. Use reference image 1, species in its ROW 1; reference LEFT cap and RIGHT whole mushroom are anatomy targets. Copy all stem characters and markings. OUTPUT ROW 2: caesarea (Ovolo buono), cap piano = adult FLAT broad cap, nearly horizontal top, depth ONLY 10-15% of diameter, NO round dome; mature stem. Base color arancio. Use reference image 1, species in its ROW 1; reference LEFT cap and RIGHT whole mushroom are anatomy targets. Copy all stem characters and markings. OUTPUT ROW 3: amanita-muscaria (Ovolo malefico), cap emisferico = young deep HALF-SPHERE, round dome depth about HALF its diameter; stem can be stockier. Base color rosso. Use reference image 1, species in its ROW 2; reference LEFT cap and RIGHT whole mushroom are anatomy targets. Copy all stem characters and markings. ",
+    "stato": "ok",
+    "qa": "incoming/qa/forme-01.json"
   }
 ]

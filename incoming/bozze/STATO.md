@@ -305,3 +305,5 @@ Ordine aggiornato da Matteo il 15/10: completare prima tutte le varianti di colo
 | qa/combinazioni-01.json | ok | Margini42px alpha0 e contorno scuro ai quattro estremi verificati per ogni cella; dettagli nel rapporto QA. |
 | icone/combinazioni-02.png | ok | Margini42px alpha0 e contorno scuro ai quattro estremi verificati per ogni cella; dettagli nel rapporto QA. |
 | qa/combinazioni-02.json | ok | Margini42px alpha0 e contorno scuro ai quattro estremi verificati per ogni cella; dettagli nel rapporto QA. |
+| icone/forme-01.png | ok | Margini42px alpha0 e contorno scuro ai quattro estremi verificati per ogni cella; dettagli nel rapporto QA. |
+| qa/forme-01.json | ok | Margini42px alpha0 e contorno scuro ai quattro estremi verificati per ogni cella; dettagli nel rapporto QA. |

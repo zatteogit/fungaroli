@@ -305,3 +305,6 @@ Combinazioni-01: 4 colori × emisferico; gambo bianco, anello e volva a sacco co
 
 
 Combinazioni-02: piano maturo con profilo molto basso; invariati gambo bianco, anello e volva a sacco. Rigenerata una bozza troppo convessa; nessuna modifica automatica della forma.
+
+
+Forme-01: colori base e caratteri del gambo conservati; varianti di forma e proporzioni di età.
