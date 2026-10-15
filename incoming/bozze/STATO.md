@@ -362,3 +362,10 @@ Ordine aggiornato da Matteo il 15/10: completare prima tutte le varianti di colo
 
 | guide/leggere-il-bosco.png | esempio da approvare | Margini trasparenti e contorni verificati col codice; verifica visiva completata. |
 | qa/guida-leggere-il-bosco.json | ok | Margini trasparenti e contorni verificati col codice; verifica visiva completata. |
+
+
+## Aperture guide — continuazione 15/10
+
+| File | Stato | Dubbi / controlli |
+|---|---|---|
+| guide/pioggia-e-crescita.webp | ok | 1600×900, sfondo carta opaco; stile dell'apertura leggere-il-bosco approvata da Matteo. Pioggia, strato umido, micelio chiaro e funghi emergenti; nessun testo o taglio. WebP qualità 85, 117568 byte (<400 KB), peso verificato con codice. Gocce nel terreno simboliche, nessuna scala temporale. |
