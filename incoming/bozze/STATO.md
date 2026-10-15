@@ -426,3 +426,5 @@ Tecnica: output nativo del tool 1122×1402, ricampionato a 1600×2000 con LANCZO
 | infografiche/repandum.webp | verifica illustrativa superata | Aculei corti, fitti e separati, anche nel dettaglio, senza pori o lamelle; cappello crema-ocra irregolare e gambo corto leggermente eccentrico. Sezione bianca con lievi macchie arancio al taglio. Sarcodon bruno a grosse squame sollevate con aculei grigio-bruni. Nessuna goccia rossa, margini circa 6% e nessun testo. |
 
 | infografiche/cibarius.webp | verifica illustrativa superata | Finferli giallo uovo su terra/muschio, pliche basse spesse forcate e anastomizzate, carne bianca. Omphalotus arancio a cespi su legno con vere lamelle fitte e carne arancio; confronto intero più grande del finferlo, dettagli ingranditi separatamente. Margini ampi dopo edit, nessun testo. |
+
+| infografiche/cornucopioides.webp | verifica illustrativa superata | Trombe nere/brune opache con esterno grigio cenere quasi liscio; sezione cava continua fino alla base aperta, corretta dopo edit. Crescita tra foglie su terra. Cenerino simile ma con pliche venose forcate evidenti all’esterno. Nessun anello/volva, nessun testo, margini liberi. |

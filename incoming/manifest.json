@@ -15668,5 +15668,31 @@
     ],
     "bytes": 187960,
     "sha256": "4cce2808ba9488d583f65b968199515a2ce4e16043eb7d8160ceda52c439846e"
+  },
+  {
+    "file": "incoming/infografiche/cornucopioides.webp",
+    "tipo": "infografica",
+    "soggetto": "cornucopioides",
+    "modello": "image_gen (identificatore tecnico non esposto)",
+    "prompt": "Create a NEW educational natural-history mushroom plate, vertical4:5 target1600x2000. Image1 STYLE ONLY: dark-brown clean outlines, a few FLAT warm natural colors on pale ivory paper. Images2 and3 morphology references only, do not edit/copy photos or composition. No letters, writing, arrows, figures, symbols, frames, watermark or labels. Outer10% margin on every side is EMPTY paper; lower-right38%x24% entirely EMPTY. Layout: whole main species and young specimen in top40%; middle-left longitudinal section; middle-right large underside character detail; bottom-left a small comparison of the specified lookalike. A few habitat leaves/moss only if specified. No rings or volvas on any species. All silhouettes enclosed and fully contained. MAIN Craterellus cornucopioides: several matte black-brown hollow TRUMPETS2-8cm wide, irregular curled/wavy rim, hollow funnel CONTINUOUS to narrow stem base, no separate cap/stem. Inside dark black-brown subtly fibrillose; OUTER underside ASH GREY, nearly SMOOTH or very faint shallow wrinkles, absolutely NO gills or pronounced ridges. Grow among oak/beech leaves on SOIL, NOT wood/branches. Cutaway must show CONTINUOUS EMPTY central cavity to base, thin gray wall, no solid white mushroom flesh. Middle-right exterior detail smooth ash-gray surface without lines like gills. LOOKALIKE Craterellus cinereus bottom-left: gray-dark funnel with clearly raised FORKED VEIN-LIKE RIDGES outside descending down stem; not a poisonous species, do not add danger symbols or red. Difference is smooth main outer surface versus veined comparison.",
+    "edits": [
+      "Correct this educational plate while preserving species colors and anatomy and no text. Keep main trumpet OUTSIDE nearly SMOOTH ash-gray, black-brown inside; no pronounced ridges or gills. In the middle-left LONGITUDINAL SECTION, depict an OPEN HOLLOW tube continuing through the very bottom: remove any solid flesh plug sealing the lower end. Two thin gray cut walls, empty dark cavity through base. Keep bottom-left cinerEUS exterior clearly FORKED VEINED; no veins on main species. For the ENTIRE plate reduce composition to85% within SAME4:5 canvas, blank ivory border at least7% all sides and blank bottom-right area. No drawing cut by canvas or vignette edge. No new objects, marks or labels.",
+      "Fix ONLY the longitudinal SECTION vignette at middle LEFT of this trumpet mushroom plate. Its bottom is wrongly sealed by a white U-shaped flesh plug. Remove the horizontal white U-shaped material at the very lowest point, so the hollow dark central tube visibly OPENS downward THROUGH the bottom with a gap between two thin gray side walls. It is a hollow thin-walled trumpet, not a solid stem, no white flesh plug. Keep main outside smooth ash-gray, inside dark-brown black and comparison below veined. Same4:5ivory canvas, all other vignettes identical, no text or arrows. Slightly increase side margins to7% if possible."
+    ],
+    "tentativi": 3,
+    "stato": "verifica illustrativa superata",
+    "checklist_superata": true,
+    "verifica": "Trombe nere/brune opache con esterno grigio cenere quasi liscio; sezione cava continua fino alla base aperta, corretta dopo edit. Crescita tra foglie su terra. Cenerino simile ma con pliche venose forcate evidenti all’esterno. Nessun anello/volva, nessun testo, margini liberi.",
+    "riferimenti": [
+      "assets/species/cornucopioides-ref.webp (autore/licenza in data/media.json)",
+      "assets/species/craterellus-cinereus-inat1.webp (autore/licenza in data/species-traits.json)",
+      "incoming/infografiche/caesarea-revisione.webp (solo stile)"
+    ],
+    "dimensioni": [
+      1600,
+      2000
+    ],
+    "bytes": 244330,
+    "sha256": "c5df7d86d543b27e864eff4ec1314f2238909b2a729f943766df2d3bf8a477dc"
   }
 ]
