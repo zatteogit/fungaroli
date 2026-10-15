@@ -264,3 +264,8 @@ Foglia lobata arrotondata e ghianda con cupola continua a squame appressate, rif
 ### bosco-carpino-nero — 15/10, continuazione
 
 Foglia ovato-lanceolata acuminata dentata e infruttescenza pendula di sacche membranose simili al luppolo; peduncolo staccato dall'anello. Fonti interne: data/trees.json: carpino nero.leaf,fruit,recognize; data/challenges.json: bosco-carpino-nero. Numero di nervature e denti secondari ridotto per la scala; nucule interne non visibili nelle sacche chiuse. PNG e QA verificati prima del caricamento; anteprima64/84/112px sui due temi in incoming/bozze/timbri/bosco-carpino-nero-verifica.png.
+
+
+### margini-radure — 15/10, continuazione
+
+Rametto di biancospino con due foglie lobate, spine e tre piccoli pomi, accenno di prato alla base. Fonti interne: data/plants.json: biancospino.recognize; data/challenges.json: margini-radure. Nervature e particolari del seme omessi; nessun fiore mescolato ai frutti. PNG e QA verificati prima del caricamento; anteprima64/84/112px sui due temi in incoming/bozze/timbri/margini-radure-verifica.png.

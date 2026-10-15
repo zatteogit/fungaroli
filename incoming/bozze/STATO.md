@@ -273,3 +273,7 @@ Ordine aggiornato da Matteo il 15/10: completare prima tutte le varianti di colo
 | timbri/bosco-carpino-nero.png | ok | Foglia ovato-lanceolata acuminata dentata e infruttescenza pendula di sacche membranose simili al luppolo; peduncolo staccato dall'anello; margini52px alpha0, inchiostro integro ai4estremi; Numero di nervature e denti secondari ridotto per la scala; nucule interne non visibili nelle sacche chiuse. |
 | bozze/timbri/bosco-carpino-nero-verifica.png | ok | Prove64/84/112px su carta e scuro. |
 | qa/2026-10-15-timbro-bosco-carpino-nero.json | ok | Controllo automatico del formato, margini e inchiostro ai4estremi. |
+
+| timbri/margini-radure.png | ok | Rametto di biancospino con due foglie lobate, spine e tre piccoli pomi, accenno di prato alla base; margini52px alpha0, inchiostro integro ai4estremi; Nervature e particolari del seme omessi; nessun fiore mescolato ai frutti. |
+| bozze/timbri/margini-radure-verifica.png | ok | Prove64/84/112px su carta e scuro. |
+| qa/2026-10-15-timbro-margini-radure.json | ok | Controllo automatico del formato, margini e inchiostro ai4estremi. |

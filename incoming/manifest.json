@@ -14401,5 +14401,19 @@
     ],
     "qa": "Foglia ovato-lanceolata acuminata dentata e infruttescenza pendula di sacche membranose simili al luppolo; peduncolo staccato dall'anello; formato512x512, fasce52px alpha0 e quattro estremi nello stesso inchiostro verificati col codice. Prove64/84/112px sui2temi.",
     "semplificazioni": "Numero di nervature e denti secondari ridotto per la scala; nucule interne non visibili nelle sacche chiuse"
+  },
+  {
+    "file": "incoming/timbri/margini-radure.png",
+    "tipo": "timbro",
+    "soggetto": "margini-radure",
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case: scientific-educational. Create a NEW512x512PNG achievement INK STAMP for Fungaroli. Attached stamp is the APPROVED STYLE reference ONLY: single muted natural ink, double circular ring (outer heavier, inner thin), restrained irregularity like ink on a field notebook, flat clean pictogram, no photographic realism, no shading. Real alpha transparency everywhere not ink, including all negative spaces. Never add a pale fill or brown outlines. Ink color as specified below is the ONLY hue for rings and subject, with at most minor natural ink variation. No text/letters/numbers/symbol labels. Diameter about390px centered256,256, leave at least56px genuinely transparent on all four sides. Keep entire subject with every petiole/stem INSIDE inner ring, inset at least20px from ring. Simple robust negative-space cuts, readable64,84,112px. No tiny decoration. Anatomy must follow supplied source specification; don't borrow subject from reference.\nNEW SUBJECT RADURE/MARGINI. Ink natural muted SLATE BLUE #6c8b9d, onlyoneink. Source data/plants.json biancospino (Crataegus monogyna): thornywoodybranches, LOBED leaves, smallpomes in clusters. Draw ONE short HAWTHORN twig leaning slightly diagonal with exactly2simple LOBEDLEAVES (3–5broadlobes each), TWO short sharp thorns as woodyextensions, and a clusterof3small round pomes on individual shortstalks, eachpome withonlytiny apicalcalyx notch. No acorncaps, NOchestnuts, no beechcupule, no longpinecone. Add just a TINYlow grass tuft atbase to suggest meadowmargin, at most3blades; no scene/background, no soilpatch, allnegative spaces transparent. Whole twig andgrass withincentral50%canvas, noendtouches rings. Clear broad silhouettes readable64px. Keep approved double ring style, NO additional leafvein clutter.",
+    "stato": "ok",
+    "fonti_dati": [
+      "data/plants.json: biancospino.recognize",
+      "data/challenges.json: margini-radure"
+    ],
+    "qa": "Rametto di biancospino con due foglie lobate, spine e tre piccoli pomi, accenno di prato alla base; formato512x512, fasce52px alpha0 e quattro estremi nello stesso inchiostro verificati col codice. Prove64/84/112px sui2temi.",
+    "semplificazioni": "Nervature e particolari del seme omessi; nessun fiore mescolato ai frutti"
   }
 ]
