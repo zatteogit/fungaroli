@@ -15694,5 +15694,30 @@
     ],
     "bytes": 244330,
     "sha256": "c5df7d86d543b27e864eff4ec1314f2238909b2a729f943766df2d3bf8a477dc"
+  },
+  {
+    "file": "incoming/infografiche/virescens.webp",
+    "tipo": "infografica",
+    "soggetto": "virescens",
+    "modello": "image_gen (identificatore tecnico non esposto)",
+    "prompt": "Create ONE NEW scientific illustrated educational plate of Russula virescens, vertical4:5 target1600x2000. Reference1 STYLE only: precise dark brown outlines, few flat colors on ivory paper. Reference2 actual virescens morphology; reference3 phalloides morphology only, no photographic editing/composition copying. Outer10% on all four edges EMPTY paper and lower-right38%x24% EMPTY. No text, letters, numbers, arrows, frames, symbols or watermark. Top40% two whole Russula virescens: firm matte convex to shallow-depressed caps with SMALL IRREGULAR GREEN PLATES separated by WHITE CRACKS, whitish ground, green-gray, no shiny smooth cap. White cylindrical fairly stout stems, BASE ENTIRE and plain rounded, NO BULB, NO RING, NO VOLVA. Underside WHITE to very pale CREAM BRITTLE GILLS, never yellow. Middle-left clean longitudinal cut with WHITE granular NON-STAINING flesh and SOLID STEM. Middle-right underside detail with white/cream gills. Small center: white russula stem snapped clean across like chalk, with granular break surfaces and separate short piece; no fibrous strings. BottomLEFT: whole Amanita phalloides adult, smooth olive-green cap with radial fibrils (not cracked green patches), WHITE GILLS and clearly visible WHITE PENDENT RING and WHITE LOOSE SAC VOLVA at fully extracted base. Distinguish main russula with NO ring/volva from phalloides WITH both. Cap colors true to real photos, no extra cap/stem, no wood or elaborate leaves. This plate describes morphology, does not certify identity.",
+    "edits": [
+      "Preserve this exact Russula virescens anatomical educational plate, all specimens, green cracked mosaic caps, white gills and white chalk-broken stem, plus olive smooth-cap phalloides with ring and sac volva. Only zoom OUT the entire composition strongly: fit every drawing as a centered group at75% of current size within SAME4:5ivory canvas. The actual blank border must be at least10% on all four sides, including top and bottom. No specimen touching border and lower-right area empty. Do not change any anatomy, add new objects, text, arrows or labels."
+    ],
+    "tentativi": 2,
+    "stato": "verifica illustrativa superata",
+    "checklist_superata": true,
+    "verifica": "Russula con placche verdi opache su fondo bianco, gambo bianco intero senza bulbo/anello/volva; sezione bianca e frattura granulosa netta come gesso. Lamelle bianche/crema. Falloide con cappello olivastro liscio fibrilloso, anello e volva bianchi visibili. Margini ampi dopo edit, nessun testo.",
+    "riferimenti": [
+      "assets/species/virescens-ref.webp (autore/licenza in data/media.json)",
+      "assets/species/amanita-phalloides-inat1.webp (autore/licenza in data/species-traits.json)",
+      "incoming/infografiche/caesarea-revisione.webp (solo stile)"
+    ],
+    "dimensioni": [
+      1600,
+      2000
+    ],
+    "bytes": 152824,
+    "sha256": "74a7320c723d5b9794d094cb1c371b929e9ba2389fa32fa52aceadaca22d8388"
   }
 ]
