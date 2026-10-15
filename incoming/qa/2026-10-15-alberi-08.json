@@ -1,0 +1,78 @@
+{
+  "file": "incoming/icone-alberi/tavola-alberi-08.png",
+  "size": [
+    1254,
+    1254
+  ],
+  "cell_size": 418,
+  "margin_required": 42,
+  "packing": "Complete glyph cropped with 2px beyond alpha>=8 bounding box, translated without resizing or repainting; background generator residues excluded outside crop.",
+  "cells": [
+    {
+      "cell": 0,
+      "alpha_max": 255,
+      "bbox_alpha128": [
+        102,
+        86,
+        314,
+        332
+      ],
+      "outer_contour_rgb_max": [
+        [
+          57,
+          28,
+          3
+        ],
+        [
+          61,
+          36,
+          11
+        ],
+        [
+          56,
+          35,
+          3
+        ],
+        [
+          55,
+          23,
+          3
+        ]
+      ],
+      "dark_contour_pass": true,
+      "margin_pass": true
+    },
+    {
+      "cell": 1,
+      "alpha_max": 0
+    },
+    {
+      "cell": 2,
+      "alpha_max": 0
+    },
+    {
+      "cell": 3,
+      "alpha_max": 0
+    },
+    {
+      "cell": 4,
+      "alpha_max": 0
+    },
+    {
+      "cell": 5,
+      "alpha_max": 0
+    },
+    {
+      "cell": 6,
+      "alpha_max": 0
+    },
+    {
+      "cell": 7,
+      "alpha_max": 0
+    },
+    {
+      "cell": 8,
+      "alpha_max": 0
+    }
+  ]
+}

@@ -14347,5 +14347,16 @@
       "forma": "conico"
     },
     "qa": "Anello sottile e mobile rappresentato nella parte bassa del gambo; nessuna volva. Contorni completi e42px di margine alpha0 per tutte9celle verificati col codice."
+  },
+  {
+    "file": "incoming/icone-alberi/tavola-alberi-08.png",
+    "tipo": "illustrazione",
+    "soggetto": "alberi",
+    "chiave": "leaf_type",
+    "valore": "composta_palmata",
+    "cella": 0,
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case: scientific-educational. Create one new botanical flat UI icon SPRITE SHEET for Fungaroli, using attached approved tree sheet as STYLE AND SCALE reference only. Output PNG1254x1254 with real alpha transparency. Invisible equal3x3grid, eachcell418x418. ONLY CELL0 top-left contains a drawing; ALL other8cells entirely empty transparent. New subject: horse-chestnut PALMATELY COMPOUND LEAF. Exactly7 elongated obovate/lanceolate leaflets with pointed tips, the largest central leaflet vertical upward and three progressively smaller leaflets fanning left and three right. All7leaflet bases meet at ONE SINGLE junction atop ONE long petiole pointing downward. No central rachis, no leaflets paired along a stem, no separate branches. Lightly serrated edges, simple single pale midrib per leaflet; few muted flat olive green fills, smooth thick dark brown complete closed outlines, muted tan/olive long petiole outlined dark brown. Same overall icon height about235px as lower-middle pinnate compound leaf in reference. Center entire intact drawing at(209,209), targetbbox x90to328 y85to332, at least42pixels of truly emptyalpha0margin to ALLcell0edges. Full dark outline at every outermost top/bottom/left/right pixel of the subject, no truncated fill edges. No text, letters, numbers, grid lines, panels, shadows, textures, background or watermark. Keep leaflets clearly distinct and all attached to same point like fingers on a palm; upper leafy fan with long bare petiole below. OnlyONE palmate leaf in top-left cell.\nCorrezione finale usata:\nPrecise-object-edit. The attached1254x1254transparent sheet has exactly one7-leaflet palmate horse-chestnut leaf in TOP-LEFT cell0. KEEP its exact anatomy,7leaflets from a single point, colors, darkbrown outlines and style. ONLY make the entire leaf INCLUDING long petiole uniformly25%SMALLER and center the WHOLE drawing at(209,209). Its final full silhouette including all antialias must fit inside x90to328 and y85to333. The petiole must end no lower than y333, not y418. 3x3grid unchanged, everycell418px; all other8cells EMPTY transparent. All outlines intact, NO clipping, NO text/background/grid/shadows. Everycellmust have42pxtransparent margins. Output1254x1254PNG realalpha.",
+    "qa": "7 foglioline da un punto comune, picciolo lungo; sagoma intera, scala senza ridimensionamento (246px). Impaginazione tecnica nella cella 0, nessun ridisegno; escluse tracce di fondo fuori dal riquadro del soggetto. 9 celle controllate, fasce42px alpha0, celle1–8 alpha0, estremi alpha>=128 bruno scuro. Rapporto incoming/qa/2026-10-15-alberi-08.json."
   }
 ]

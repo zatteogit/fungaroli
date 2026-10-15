@@ -232,3 +232,11 @@ Tutte le 88 basi sono dichiarate nel manifest con i valori del brief. Per `fistu
 Completati tutti i 141 colori (282 icone). Le due forme di phalloides già caricate restano **in attesa delle fasi**; nessuna nuova forma. Le celle segnalate di varianti-03 (1) e varianti-05 (0, 3, 6) sono state rigenerate con contorni completi. Coprinus comatus: gambo con anello basso in `icone/tavola-10-anello.png`, cella 5; le altre otto icone della tavola base hanno indici espliciti nel manifest.
 
 QA ripetibile e hash delle tavole in `bozze/verifica_varianti.py` e `bozze/VERIFICHE-varianti.json`. Nessun pixel con alpha>0 nelle fasce esterne di 42 px di ogni cella delle tavole varianti; contorno scuro su tutti i pixel estremi della sagoma alpha≥128, più verifica visiva.
+
+
+## Integrazione 15/10 — foglia composta palmata
+
+- `icone-alberi/tavola-alberi-08.png`: sette foglioline allungate disposte a ventaglio, unite nello stesso punto in cima al picciolo lungo. Nervature secondarie omesse, dentatura semplificata per la scala d'icona.
+- Generazione integrata image_gen; identificatore del modello non esposto. Riferimento di stile: tavola-alberi-02. Usata la prima correzione generata; i successivi tentativi di riposizionamento sono scartati.
+- Esportazione tecnica: sagoma completa prelevata con 2px oltre il riquadro alpha>=8 e traslata senza ridimensionamento nella cella0; residui quasi trasparenti del fondo esterni a quel riquadro esclusi. Non sono stati ridisegnati contorni, foglioline o picciolo.
+- QA codice: RGBA1254×1254; 9celle418px, fasce42px completamente alpha0; celle1–8 completamente alpha0. Sagoma alpha>=128: x102–313,y86–331; contorno bruno scuro su prima/ultima riga/colonna. Rapporto in `incoming/qa/2026-10-15-alberi-08.json`.

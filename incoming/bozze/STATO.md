@@ -250,3 +250,11 @@ Ordine aggiornato da Matteo il 15/10: completare prima tutte le varianti di colo
 - Verifica codice sui quattro estremi delle sagome (alpha>=128): i pixel della prima/ultima riga e colonna hanno colore di contorno bruno scuro, nessun riempimento esposto. Verifica visiva aggiuntiva di tutte le sagome.
 - Limite di resa: i denti secondari di doppiamente_dentato sono minuti a48px; bordi approvati da Matteo. Nessun valore privo di icona.
 - Manifest e stato aggiornati senza alterare le voci preesistenti di altri lavori; nessuna PR.
+
+
+## Integrazione 15/10 — nuovi caratteri e timbri
+
+| File | Stato | Dubbi / controlli |
+|---|---|---|
+| icone-alberi/tavola-alberi-08.png | ok | Composta palmata, cella0; 7foglioline da un punto comune, picciolo lungo. Margini42px alpha0 e contorni bruni ai4estremi verificati; altre8celle alpha0. Nessun dubbio morfologico dal brief. |
+| qa/2026-10-15-alberi-08.json | ok | Rapporto automatico delle9celle della tavola08; alpha128 per contorno, alpha0 per margini e celle vuote. |
