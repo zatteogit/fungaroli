@@ -1,0 +1,242 @@
+{
+  "file": "incoming/icone/fasi-21.png",
+  "size": 75458,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "alpha": true,
+  "palette": 128,
+  "source": "generated_images/exec-6165ec1f-e691-4999-ad9a-55aa91ff20b3.png",
+  "normalization": "Uniform per-icon scaling and placement; no anatomical pixel edits. Cap width / whole height / underside diameter matched to base; base centers preserved.",
+  "cells": [
+    {
+      "cella": 0,
+      "soggetto": "chlorophyllum-rhacodes",
+      "fase": "adulto",
+      "tessera": "cappello",
+      "base_bbox": [
+        4,
+        86,
+        306,
+        224
+      ],
+      "base_center": [
+        209,
+        209
+      ],
+      "normalized_size": [
+        302,
+        139
+      ],
+      "bbox": [
+        58,
+        141,
+        360,
+        278
+      ],
+      "margins": [
+        58,
+        141,
+        58,
+        140
+      ],
+      "extreme_dark_fraction": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "cella": 1,
+      "soggetto": "chlorophyllum-rhacodes",
+      "fase": "adulto",
+      "tessera": "gambo",
+      "base_bbox": [
+        6,
+        4,
+        304,
+        305
+      ],
+      "base_center": [
+        209,
+        208.5
+      ],
+      "normalized_size": [
+        312,
+        301
+      ],
+      "bbox": [
+        54,
+        59,
+        364,
+        359
+      ],
+      "margins": [
+        54,
+        59,
+        54,
+        59
+      ],
+      "extreme_dark_fraction": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "cella": 3,
+      "soggetto": "lepiota-brunneoincarnata",
+      "fase": "giovane",
+      "tessera": "cappello",
+      "base_bbox": [
+        4,
+        84,
+        306,
+        226
+      ],
+      "base_center": [
+        209,
+        209
+      ],
+      "normalized_size": [
+        302,
+        149
+      ],
+      "bbox": [
+        59,
+        135,
+        359,
+        282
+      ],
+      "margins": [
+        59,
+        135,
+        59,
+        136
+      ],
+      "extreme_dark_fraction": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "cella": 4,
+      "soggetto": "lepiota-brunneoincarnata",
+      "fase": "giovane",
+      "tessera": "gambo",
+      "base_bbox": [
+        11,
+        6,
+        299,
+        304
+      ],
+      "base_center": [
+        209,
+        209
+      ],
+      "normalized_size": [
+        268,
+        298
+      ],
+      "bbox": [
+        76,
+        61,
+        342,
+        358
+      ],
+      "margins": [
+        76,
+        61,
+        76,
+        60
+      ],
+      "extreme_dark_fraction": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "cella": 6,
+      "soggetto": "lepiota-brunneoincarnata",
+      "fase": "adulto",
+      "tessera": "cappello",
+      "base_bbox": [
+        4,
+        84,
+        306,
+        226
+      ],
+      "base_center": [
+        209,
+        209
+      ],
+      "normalized_size": [
+        302,
+        137
+      ],
+      "bbox": [
+        59,
+        141,
+        359,
+        276
+      ],
+      "margins": [
+        59,
+        141,
+        59,
+        142
+      ],
+      "extreme_dark_fraction": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "cella": 7,
+      "soggetto": "lepiota-brunneoincarnata",
+      "fase": "adulto",
+      "tessera": "gambo",
+      "base_bbox": [
+        11,
+        6,
+        299,
+        304
+      ],
+      "base_center": [
+        209,
+        209
+      ],
+      "normalized_size": [
+        305,
+        298
+      ],
+      "bbox": [
+        57,
+        61,
+        360,
+        357
+      ],
+      "margins": [
+        57,
+        61,
+        58,
+        61
+      ],
+      "extreme_dark_fraction": [
+        1,
+        1,
+        1,
+        1
+      ]
+    }
+  ]
+}

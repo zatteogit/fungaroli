@@ -482,3 +482,7 @@ amanita-rubescens adulto. Disegni derivati soltanto dalle fasi dell’handoff, c
 ### Fasi 20 — procera giovane; procera adulto; chlorophyllum-rhacodes giovane
 
 Fonte: docs/handoff-immagini-fasi.md su claude/brave-tesla-wu0a2b e icone base della stessa specie. Solo i cambiamenti descritti nelle fasi; caratteri invariati conservati. Anatomia semplificata come nelle basi, pochi colori e lamelle schematiche. Scala uniforme e centratura allineate alle basi; quantizzazione a 128 colori per il peso, senza modifiche anatomiche con codice. 
+
+### Fasi 21 — chlorophyllum-rhacodes adulto; lepiota-brunneoincarnata giovane; lepiota-brunneoincarnata adulto
+
+Fonte: docs/handoff-immagini-fasi.md su claude/brave-tesla-wu0a2b e icone base della stessa specie. Solo i cambiamenti descritti nelle fasi; caratteri invariati conservati. Anatomia semplificata come nelle basi, pochi colori e lamelle schematiche. Scala uniforme e centratura allineate alle basi; quantizzazione a 128 colori per il peso, senza modifiche anatomiche con codice. Rhacodes adulta convessa, senza rendere piano il cappello; lepiota giovane con cupola emisferica e marcature compatte, adulta con squamette in cerchi irregolari. Nessun anello aggiunto alla lepiota.

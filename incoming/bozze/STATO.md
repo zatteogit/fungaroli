@@ -502,3 +502,5 @@ Tecnica: output nativo del tool 1122×1402, ricampionato a 1600×2000 con LANCZO
 | icone/fasi-13.png | ok | amanita-rubescens adulto. 3 disegni, una riga per fase; altre celle trasparenti. PNG alpha 1254×1254, 48531 byte. Margini minimi 50 px; contorno scuro ai quattro estremi verificato per ogni cella. Confronto in sovrapposizione con le basi; nessun testo. |
 
 | icone/fasi-20.png | procera giovane; procera adulto; chlorophyllum-rhacodes giovane | ok | 6 disegni; PNG alpha 1254×1254, 74648 byte, 128 colori. Margine minimo 58 px, quattro estremi scuri verificati in codice per ogni cella. Scala e centro confrontati in sovrapposizione con le basi. Celle inutilizzate trasparenti; nessun testo. Report: incoming/qa/fasi-20.json. |
+
+| icone/fasi-21.png | chlorophyllum-rhacodes adulto; lepiota-brunneoincarnata giovane; lepiota-brunneoincarnata adulto | ok | 6 disegni; PNG alpha 1254×1254, 75458 byte, 128 colori. Margine minimo 54 px, quattro estremi scuri verificati in codice per ogni cella. Scala e centro confrontati in sovrapposizione con le basi. Celle inutilizzate trasparenti; nessun testo. Report: incoming/qa/fasi-21.json. |
