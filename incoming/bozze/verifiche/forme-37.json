@@ -1,0 +1,283 @@
+{
+  "file": "incoming/icone/forme-37.png",
+  "stato": "ok",
+  "verifiche": [
+    {
+      "cella": 0,
+      "bbox": [
+        62,
+        152,
+        356,
+        265
+      ],
+      "attesa": true,
+      "margini_px": [
+        62,
+        152,
+        62,
+        153
+      ],
+      "margini_ok": true,
+      "contorno_scuro_estremi": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cella": 1,
+      "bbox": [
+        64,
+        96,
+        353,
+        321
+      ],
+      "attesa": true,
+      "margini_px": [
+        64,
+        96,
+        65,
+        97
+      ],
+      "margini_ok": true,
+      "contorno_scuro_estremi": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cella": 2,
+      "bbox": null,
+      "attesa": false,
+      "vuota": true
+    },
+    {
+      "cella": 3,
+      "bbox": [
+        62,
+        141,
+        356,
+        277
+      ],
+      "attesa": true,
+      "margini_px": [
+        62,
+        141,
+        62,
+        141
+      ],
+      "margini_ok": true,
+      "contorno_scuro_estremi": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cella": 4,
+      "bbox": [
+        64,
+        86,
+        353,
+        332
+      ],
+      "attesa": true,
+      "margini_px": [
+        64,
+        86,
+        65,
+        86
+      ],
+      "margini_ok": true,
+      "contorno_scuro_estremi": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cella": 5,
+      "bbox": null,
+      "attesa": false,
+      "vuota": true
+    },
+    {
+      "cella": 6,
+      "bbox": [
+        62,
+        143,
+        356,
+        275
+      ],
+      "attesa": true,
+      "margini_px": [
+        62,
+        143,
+        62,
+        143
+      ],
+      "margini_ok": true,
+      "contorno_scuro_estremi": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cella": 7,
+      "bbox": [
+        62,
+        87,
+        356,
+        331
+      ],
+      "attesa": true,
+      "margini_px": [
+        62,
+        87,
+        62,
+        87
+      ],
+      "margini_ok": true,
+      "contorno_scuro_estremi": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cella": 8,
+      "bbox": null,
+      "attesa": false,
+      "vuota": true
+    }
+  ],
+  "normalizzazione": [
+    {
+      "cella": 0,
+      "bbox_originale_immagine": [
+        83,
+        197,
+        387,
+        314
+      ],
+      "scala": 0.9671052631578947,
+      "dimensioni": [
+        294,
+        113
+      ],
+      "posizione": [
+        62,
+        152
+      ]
+    },
+    {
+      "cella": 1,
+      "bbox_originale_immagine": [
+        483,
+        154,
+        772,
+        379
+      ],
+      "scala": 1,
+      "dimensioni": [
+        289,
+        225
+      ],
+      "posizione": [
+        482,
+        96
+      ]
+    },
+    {
+      "cella": 3,
+      "bbox_originale_immagine": [
+        83,
+        557,
+        387,
+        698
+      ],
+      "scala": 0.9671052631578947,
+      "dimensioni": [
+        294,
+        136
+      ],
+      "posizione": [
+        62,
+        559
+      ]
+    },
+    {
+      "cella": 4,
+      "bbox_originale_immagine": [
+        483,
+        526,
+        772,
+        772
+      ],
+      "scala": 1,
+      "dimensioni": [
+        289,
+        246
+      ],
+      "posizione": [
+        482,
+        504
+      ]
+    },
+    {
+      "cella": 6,
+      "bbox_originale_immagine": [
+        79,
+        959,
+        392,
+        1099
+      ],
+      "scala": 0.939297124600639,
+      "dimensioni": [
+        294,
+        132
+      ],
+      "posizione": [
+        62,
+        979
+      ]
+    },
+    {
+      "cella": 7,
+      "bbox_originale_immagine": [
+        476,
+        906,
+        779,
+        1157
+      ],
+      "scala": 0.9702970297029703,
+      "dimensioni": [
+        294,
+        244
+      ],
+      "posizione": [
+        480,
+        923
+      ]
+    }
+  ],
+  "bytes": 62249,
+  "dimensioni": [
+    1254,
+    1254
+  ],
+  "sha256": "06a9639da86d0336ffd5c8a938be4c8045560827356fc40413f539edd20521fe",
+  "prompt": "A transparent PNG sprite sheet, square1254x1254, invisible3x3cells418px each. Use reference1 for EXACT SMALL ICON SIZE, generous TRANSPARENT CELL MARGINS and row positions. Three rows: column1 CAP ONLY side view, column2 WHOLE MUSHROOM, column3 entirely EMPTY. Each separate icon centered in its own cell, at most60% of cell width AND height, at least18% alpha0 padding on EVERY cell edge. No drawn grid, background, shadows, ground, text, numbers or marks. Clean thick dark brown COMPLETE silhouette outline, flat few colors same as species icons. References2 onward show the approved base icons: preserve cap COLOR and all stems, rings, volvas, netting, scales and spots, change ONLY cap SHAPE and age-appropriate proportions. Each row's cap-only and whole must MATCH shape/color. Use EXACT reference cap shade; color labels are broad categories: 'rosso' may be dark red-BROWN. Never borrow anatomical traits or colors between rows. ROW1: tricholoma-equestre, base cap color giallo, target shape FLAT: almost horizontal, expanded cap. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"viscida\",\"squamosa\"],\"hymenophore\":[\"lamelle\"],\"hymenophore_color\":[\"giallo\"]}. ROW2: tricholoma-equestre, base cap color giallo, target shape UMBONATE: expanded umbrella cap with a distinct central raised bump. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"viscida\",\"squamosa\"],\"hymenophore\":[\"lamelle\"],\"hymenophore_color\":[\"giallo\"]}. ROW3: tricholoma-pardinum, base cap color grigio, target shape FLAT: almost horizontal, expanded cap. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"asciutta\",\"squamosa\",\"viscida\"],\"hymenophore\":[\"lamelle\"],\"hymenophore_color\":[\"bianco\",\"crema\"]}. No new anatomical traits. Reference species icons are shape/color authorities except the explicit target cap shape. Cap-only must match whole cap. Last column empty. True alpha background.",
+  "edits": [],
+  "normalizza": true,
+  "visivo_ok": true,
+  "nota": "Equestre appianato e umbonato giallo; pardinum appianato grigio squamoso con gambo robusto chiaro. Lamelle e assenza di veli conservate. Scala e centratura normalizzate con Python su autorizzazione di Matteo; disegno invariato."
+}
