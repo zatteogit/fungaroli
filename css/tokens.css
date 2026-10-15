@@ -21,6 +21,8 @@
   --_ref-night: #10271f;
   --_ref-polline-soft: #fff6c7;
   --_ref-polline-ink: #6b5500;
+  /* bordo della selezione in polline sul chiaro: il polline su avorio ha poco contrasto di forma (1,35:1), il filo ocra sì (≥3:1 su bg, surface, surface-2, surface-3) */
+  --_ref-polline-edge: #957a00;
   --_ref-calendula: #f5822a;
   --_ref-fiordaliso: #7aa5ef;
   --_ref-fiordaliso-soft: #e7eeff;
@@ -56,11 +58,12 @@
   --_ref-shadow-1: 0 1px 2px rgb(16 39 31 / .05), 0 3px 10px rgb(16 39 31 / .05);
   --_ref-shadow-2: 0 2px 6px rgb(16 39 31 / .08), 0 18px 44px rgb(16 39 31 / .14);
   --_ref-glass: rgb(16 39 31 / .34);
-  --_ref-surface-dark: #19352a;
-  --_ref-surface-2-dark: #224335;
-  --_ref-surface-3-dark: #2b5040;
-  --_ref-border-dark: #425c4c;
-  --_ref-hair-dark: #29473a;
+  /* superfici scure staccate dal fondo bosco notte: carta 1,37:1 sul fondo (era 1,19), filetti visibili */
+  --_ref-surface-dark: #213f33;
+  --_ref-surface-2-dark: #284a3c;
+  --_ref-surface-3-dark: #315747;
+  --_ref-border-dark: #4b6a59;
+  --_ref-hair-dark: #36584a;
   --_ref-ivory-light: #f4f3e9;
   --_ref-text-2-dark: #b5c5b8;
   --_ref-muted-dark: #a3b5a5;
@@ -91,7 +94,7 @@
   --font-display: Fraunces, Georgia, 'Times New Roman', serif;
   --font-body: Manrope, system-ui, -apple-system, 'Segoe UI', sans-serif;
 
-  /* Fronda: avorio, carta, verde bosco; l'accento dei link e delle etichette è la calendula scura */
+  /* Fronda: avorio, carta, verde bosco; la calendula scura è l'accento delle etichette (non dei link) */
   --bg: var(--_ref-ivory);
   --surface: var(--_ref-paper);
   --surface-2: var(--_ref-surface-2);
@@ -113,6 +116,10 @@
   --fiordaliso: var(--_ref-fiordaliso); --fiordaliso-soft: var(--_ref-fiordaliso-soft); --fiordaliso-ink: var(--_ref-fiordaliso-ink);
   --germoglio: var(--_ref-germoglio); --germoglio-soft: var(--_ref-germoglio-soft); --germoglio-ink: var(--_ref-germoglio-ink);
   --focus: var(--_ref-fiordaliso-ink);
+  /* semantica dei colori: interazione (link, indietro) in bosco; selezione («scelto») e azione principale in polline;
+     informazione (occhielli, etichette) in calendula; l'indice resta verde (anello, pallini, scala --s*) */
+  --link: var(--_ref-forest);
+  --select: var(--_ref-polline); --select-ink: var(--_ref-night); --select-edge: var(--_ref-polline-edge);
   /* testo sulle foto: sempre chiaro, su una velatura bosco notte che segue il blocco di testo (uguale nei due temi) */
   --on-photo: var(--_ref-white);
   --scrim: var(--_ref-night);
@@ -155,6 +162,7 @@
   --text: var(--_ref-ivory-light); --text-2: var(--_ref-text-2-dark); --muted: var(--_ref-muted-dark);
   --accent: var(--_ref-accent-dark); --accent-ink: var(--_ref-night); --accent-soft: var(--_ref-accent-soft-dark); --forest: var(--_ref-forest-deep);
   --brand: var(--_ref-forest-light); --brand-ink: var(--_ref-night); --focus: var(--_ref-polline);
+  --link: var(--_ref-forest-light); --select-edge: var(--_ref-polline);
   --polline-soft: var(--_ref-surface-2-dark); --polline-ink: var(--_ref-polline); --calendula-soft: var(--_ref-surface-2-dark); --calendula-ink: var(--_ref-accent-dark);
   --fiordaliso-soft: var(--_ref-surface-2-dark); --fiordaliso-ink: var(--_ref-fiordaliso-ink-dark); --germoglio-soft: var(--_ref-surface-2-dark); --germoglio-ink: var(--_ref-germoglio);
   --rain: var(--_ref-rain-dark); --viz-index: var(--_ref-forest-light); --line: var(--_ref-line-dark); --grid: var(--_ref-grid-dark);
@@ -170,6 +178,7 @@
   --text: var(--_ref-ivory-light); --text-2: var(--_ref-text-2-dark); --muted: var(--_ref-muted-dark);
   --accent: var(--_ref-accent-dark); --accent-ink: var(--_ref-night); --accent-soft: var(--_ref-accent-soft-dark); --forest: var(--_ref-forest-deep);
   --brand: var(--_ref-forest-light); --brand-ink: var(--_ref-night); --focus: var(--_ref-polline);
+  --link: var(--_ref-forest-light); --select-edge: var(--_ref-polline);
   --polline-soft: var(--_ref-surface-2-dark); --polline-ink: var(--_ref-polline); --calendula-soft: var(--_ref-surface-2-dark); --calendula-ink: var(--_ref-accent-dark);
   --fiordaliso-soft: var(--_ref-surface-2-dark); --fiordaliso-ink: var(--_ref-fiordaliso-ink-dark); --germoglio-soft: var(--_ref-surface-2-dark); --germoglio-ink: var(--_ref-germoglio);
   --rain: var(--_ref-rain-dark); --viz-index: var(--_ref-forest-light); --line: var(--_ref-line-dark); --grid: var(--_ref-grid-dark);

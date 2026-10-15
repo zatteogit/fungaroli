@@ -49,6 +49,30 @@ Il prototipo non si collega a meteo, account, community o servizi privati. Il ta
 4. **Flussi.** Uscite e zona/mappa; Scopri e confronti/schede/glossario/guide; Taccuino e profilo. Verificare su contenuti reali lunghi e stati vuoto/caricamento/errore/cache/rete lenta.
 5. **Consegna.** Aggiornare handoff e documentazione, presentare PR verso produzione con verifiche. Il merge avvia il deploy; il trasferimento dello studio non è un ordine di deploy o di modifica dei servizi.
 
+## Semantica dei colori nell’app (decisioni di Matteo, 15/10)
+
+Ogni colore ha un compito. I valori stanno solo in `css/tokens.css` (ruoli pubblici sopra primitive `--_ref-*`); `css/fronda.css` usa solo i ruoli e la guardia `tools/ds-guard.mjs` controlla i contrasti delle coppie.
+
+| Compito | Ruolo | Chiaro | Scuro | Dove |
+|---|---|---|---|---|
+| Interazione | `--link` | bosco #24513D | bosco chiaro #B7D0A6 | link, «indietro», link di sezione e nel testo, righe «vai a…» |
+| Selezione («scelto») | `--select` / `--select-ink` / `--select-edge` | polline, testo bosco notte, filo ocra #957A00 | polline, testo bosco notte, filo polline | filtri e chip attivi, giorno scelto (home, zona, mappa), segmenti di Scopri, sotto-schede (sottolineatura), voce attiva della barra in basso e della barra desktop |
+| Azione principale | `--action` / `--action-ink` | polline | polline | bottone pieno dell’azione principale (Vedi l’uscita, Nuovo appunto) |
+| Informazione | `--accent` | calendula scura | calendula chiara | occhielli ed etichette non cliccabili («GIOVEDÌ 15 OTTOBRE», «121 VOCI») |
+| Indice | `--s0…--s5`, `--viz-index` | verdi | verdi | anello, pallini, scala e grafici. Il verde non indica più la selezione |
+
+- **Selezione e azione** hanno lo stesso giallo ma forme diverse: lo «scelto» sta dentro un gruppo (fila, vassoio, barra), ha il filo `--select-edge` e, nei filtri, la spunta; l’azione è un bottone pieno senza filo, con il segno dell’azione (＋, →). Il polline su avorio ha poco contrasto di forma (1,35:1): per questo il filo ocra (≥3:1 su bg, surface, surface-2, surface-3).
+- **Giorno scelto:** polline con testo bosco notte; il pallino resta nel colore del suo indice, con un anello sottile scuro. Niente più verde pieno né doppio bordo nero.
+- **Tema scuro:** superfici più chiare del fondo (carta 1,37:1 sul fondo, era 1,19; surface-2 1,60:1) e filetti più visibili; il taccuino usa le superfici dei token.
+- La calendula resta per le icone informative (riquadri delle schede, segnalibro del taccuino) e per i bottoni tenui esistenti (es. «Confronta»), da rivedere con calma.
+
+## Navigazione di Scopri e Impara
+
+- Scopri ha quattro sezioni: Funghi, Piante e fiori, Alberi, Impara (riga delle sezioni, segmento scelto in polline). Nei cataloghi sotto c’è la riga delle sotto-schede (Sfoglia | Impara a riconoscere).
+- **Impara senza triplo livello:** la pagina indice di Impara mostra la riga delle sezioni; le pagine interne (Glossario, Guide, Bosco e sentiero, Sfide) mostrano **solo** la riga delle sotto-schede. Si torna a Scopri con «indietro» (porta all’indice di Impara) o dalla barra.
+- Testata della home: titolo «Dove andare» su una riga e mappa sulla stessa riga del titolo (tondo da 40 px sotto i 600 px, pillola «Mappa delle zone» da 600 px); riga del meteo e nota a tutta larghezza sotto.
+- Accanto al marchio un’etichetta discreta «Rieti» («pilota · Rieti» da 480 px) porta a Regole e metodo, dove in cima c’è la frase dell’avviso iniziale sulla versione pilota.
+
 ## Vincoli di prodotto da preservare
 
 - Gerarchia funghi → giro → scoperte. Nomi Uscite, Scopri, Taccuino; titoli home come handoff. Guide/glossario in Scopri, mappa nel contesto delle uscite. La shell osservata nello snapshot aveva ancora Mappa/Impara: il manuale propone la riconciliazione con l’handoff, non attesta che sia già stata rilasciata.

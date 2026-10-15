@@ -326,7 +326,10 @@ function paintScopriNav(r) {
   if (!place || !view) return;
   const [sec, here] = place, cur = (on) => (on ? ' aria-current="page"' : '');
   const nav = view.querySelector('[data-scopri-nav]'), sub = view.querySelector('[data-scopri-sub]');
-  if (nav) nav.innerHTML = SCOPRI.map(([id, href, label]) => `<a href="${href}" data-section="${id}"${cur(id === sec)}>${label}</a>`).join('');
+  // dentro Impara (glossario, guide, bosco e sentiero, sfide) niente terzo livello: resta solo la riga delle sotto-schede;
+  // la riga delle sezioni di Scopri sta nella pagina indice di Impara, raggiungibile con «indietro» o dalla barra
+  const inLearning = sec === 'impara' && r.view !== 'impara';
+  if (nav) { nav.hidden = inLearning; nav.innerHTML = inLearning ? '' : SCOPRI.map(([id, href, label]) => `<a href="${href}" data-section="${id}"${cur(id === sec)}>${label}</a>`).join(''); }
   // la pagina indice di Impara mostra già le sue parti come card: sotto-schede solo nelle pagine interne
   if (sub) sub.innerHTML = r.view === 'impara' ? '' : SCOPRI_SUB[sec].map(([href, label]) => `<a href="${href}"${cur(href === here)}>${label}</a>`).join('');
 }
@@ -2594,6 +2597,8 @@ function applyLegal() {
   if (zc.length) $('#zone-credits').innerHTML = `<b>Foto dei luoghi</b> (Wikimedia Commons): ${zc.join(' · ')}.${Object.values(zoneMedia).some((m) => m.variants?.length) ? ' Le copertine delle altre stagioni e del meteo sono elaborate con AI a partire da queste foto, con la stessa attribuzione e licenza.' : ''}`;
   // preparazione e conservazione: regole per tutti i funghi (obbligatorie prima)
   if (prep?.general?.length && $('#prep-general')) $('#prep-general').innerHTML = prepGeneralHtml(prep.general);
+  // versione pilota: la stessa frase dell'avviso iniziale, in cima a Regole e metodo (ci porta l'etichetta «Rieti» della testata)
+  const pilot = $('#info-pilot'); if (pilot) { pilot.textContent = L.onboarding?.subtitle || ''; pilot.hidden = !pilot.textContent; }
   $('#legal-sections').innerHTML = (L.info_sections || []).map((x) => `<details><summary><h2>${esc(x.title)}</h2></summary><div class="method">${x.id==='privacy'?notebookPrivacyHtml(x.html).replace('Non chiediamo la tua posizione','Non richiediamo la posizione per usare l’app')+`<p>${esc(BASE_PRIVACY_TEXT)}</p>`:x.html}</div></details>`).join('');
   // primo avvio: avviso da confermare (si ripresenta se cambia la versione dei testi)
   const ver = String(L.version || 0) + (L.verified_on || '');
