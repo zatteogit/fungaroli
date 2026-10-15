@@ -320,3 +320,6 @@ Glossario gruppo1: forme generiche senza attribuzione a specie; gambo arancio su
 
 
 Glossario: anello, volva, micelio. Schemi didattici generici conformi alle definizioni; dettagli non pertinenti omessi, nessuna etichetta o identificazione di specie. Margini103px alpha0, contorno scuro ai4estremi e verifica visiva; nessun testo.
+
+
+Glossario: ifa, spora, sporata. Schemi didattici generici conformi alle definizioni; dettagli non pertinenti omessi, nessuna etichetta o identificazione di specie. Margini103px alpha0, contorno scuro ai4estremi e verifica visiva; nessun testo.

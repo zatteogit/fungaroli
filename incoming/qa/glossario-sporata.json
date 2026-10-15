@@ -1,0 +1,66 @@
+{
+  "file": "incoming/glossario/sporata.png",
+  "size": [
+    1024,
+    1024
+  ],
+  "sha256": "1fc95d49d44133e62f12956147b913be08503767f2a3c0a0d8167467a95e2749",
+  "source_bbox_alpha128": [
+    130,
+    182,
+    894,
+    841
+  ],
+  "source_extremes_rgb_max": [
+    [
+      73,
+      19,
+      3
+    ],
+    [
+      83,
+      42,
+      28
+    ],
+    [
+      59,
+      15,
+      7
+    ],
+    [
+      56,
+      12,
+      0
+    ]
+  ],
+  "extremes_rgb_max": [
+    [
+      72,
+      18,
+      3
+    ],
+    [
+      79,
+      37,
+      23
+    ],
+    [
+      59,
+      15,
+      5
+    ],
+    [
+      60,
+      12,
+      1
+    ]
+  ],
+  "margin_required_px": 103,
+  "margin_alpha_max": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "export": "Intero soggetto isolato con2px di antialias e centrato proporzionalmente; nessun ritocco morfologico o ricolore."
+}

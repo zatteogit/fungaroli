@@ -326,3 +326,10 @@ Ordine aggiornato da Matteo il 15/10: completare prima tutte le varianti di colo
 | qa/glossario-volva.json | ok | Margini trasparenti e contorni verificati col codice; verifica visiva completata. |
 | glossario/micelio.png | ok | Margini trasparenti e contorni verificati col codice; verifica visiva completata. |
 | qa/glossario-micelio.json | ok | Margini trasparenti e contorni verificati col codice; verifica visiva completata. |
+
+| glossario/ifa.png | ok | Margini trasparenti e contorni verificati col codice; verifica visiva completata. |
+| qa/glossario-ifa.json | ok | Margini trasparenti e contorni verificati col codice; verifica visiva completata. |
+| glossario/spora.png | ok | Margini trasparenti e contorni verificati col codice; verifica visiva completata. |
+| qa/glossario-spora.json | ok | Margini trasparenti e contorni verificati col codice; verifica visiva completata. |
+| glossario/sporata.png | ok | Margini trasparenti e contorni verificati col codice; verifica visiva completata. |
+| qa/glossario-sporata.json | ok | Margini trasparenti e contorni verificati col codice; verifica visiva completata. |

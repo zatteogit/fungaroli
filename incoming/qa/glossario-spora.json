@@ -1,0 +1,66 @@
+{
+  "file": "incoming/glossario/spora.png",
+  "size": [
+    1024,
+    1024
+  ],
+  "sha256": "8ad97c7871b6da6573efca8b2ee5eee40fa09b409f78857c6ce7d541926bd9a3",
+  "source_bbox_alpha128": [
+    130,
+    137,
+    893,
+    887
+  ],
+  "source_extremes_rgb_max": [
+    [
+      71,
+      20,
+      5
+    ],
+    [
+      73,
+      22,
+      7
+    ],
+    [
+      69,
+      19,
+      5
+    ],
+    [
+      70,
+      19,
+      5
+    ]
+  ],
+  "extremes_rgb_max": [
+    [
+      72,
+      19,
+      5
+    ],
+    [
+      72,
+      21,
+      5
+    ],
+    [
+      69,
+      19,
+      3
+    ],
+    [
+      72,
+      20,
+      6
+    ]
+  ],
+  "margin_required_px": 103,
+  "margin_alpha_max": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "export": "Intero soggetto isolato con2px di antialias e centrato proporzionalmente; nessun ritocco morfologico o ricolore."
+}

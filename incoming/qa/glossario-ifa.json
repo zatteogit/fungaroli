@@ -1,0 +1,66 @@
+{
+  "file": "incoming/glossario/ifa.png",
+  "size": [
+    1024,
+    1024
+  ],
+  "sha256": "77fcee352fb86bab62e2a5f81b379a5022e2e7ee7cddadfdad51dcad344a611b",
+  "source_bbox_alpha128": [
+    131,
+    139,
+    894,
+    884
+  ],
+  "source_extremes_rgb_max": [
+    [
+      70,
+      24,
+      9
+    ],
+    [
+      72,
+      26,
+      11
+    ],
+    [
+      71,
+      24,
+      10
+    ],
+    [
+      73,
+      27,
+      11
+    ]
+  ],
+  "extremes_rgb_max": [
+    [
+      69,
+      23,
+      7
+    ],
+    [
+      70,
+      22,
+      7
+    ],
+    [
+      69,
+      24,
+      8
+    ],
+    [
+      70,
+      24,
+      7
+    ]
+  ],
+  "margin_required_px": 103,
+  "margin_alpha_max": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "export": "Intero soggetto isolato con2px di antialias e centrato proporzionalmente; nessun ritocco morfologico o ricolore."
+}

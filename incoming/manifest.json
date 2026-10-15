@@ -15103,5 +15103,41 @@
       "data/glossary.json:micelio.definition,observe"
     ],
     "qa": "incoming/qa/glossario-micelio.json"
+  },
+  {
+    "file": "incoming/glossario/ifa.png",
+    "tipo": "glossario",
+    "soggetto": "ifa",
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case: scientific-educational. One 1024x1024PNG educational glossary illustration for Fungaroli. Reference is the APPROVED STYLE: simple warm flat illustration, thick smooth DARK BROWN contours, restrained warm orange highlight, cream/beige muted supporting elements, one subtle highlight at most. No text, letters, numbers, labels, watermark or UI. Genuine transparent alpha background. WHOLE subject centered, at least15% transparent margin on every side. EVERY outermost visible edge or tip must end in DARK BROWN OUTLINE, no flat fill cutoffs. Keep biological concept anatomically clear, not species identification. SUBJECT: A large circular magnifying lens, dark brown outline, within it ONLY a few tubular branching hyphal FILAMENTS, connected, divided by simple cross-wall SEPTA. Orange main filament, muted cream secondary branch. No cells shaped like leaves, no mushroom/tree, no handles necessary. SOURCE definition: Filamento che costituisce il corpo di molti funghi. L’insieme delle ife forma il micelio.",
+    "stato": "ok",
+    "fonti_dati": [
+      "data/glossary.json:ifa.definition,observe"
+    ],
+    "qa": "incoming/qa/glossario-ifa.json"
+  },
+  {
+    "file": "incoming/glossario/spora.png",
+    "tipo": "glossario",
+    "soggetto": "spora",
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case: scientific-educational. One 1024x1024PNG educational glossary illustration for Fungaroli. Reference is the APPROVED STYLE: simple warm flat illustration, thick smooth DARK BROWN contours, restrained warm orange highlight, cream/beige muted supporting elements, one subtle highlight at most. No text, letters, numbers, labels, watermark or UI. Genuine transparent alpha background. WHOLE subject centered, at least15% transparent margin on every side. EVERY outermost visible edge or tip must end in DARK BROWN OUTLINE, no flat fill cutoffs. Keep biological concept anatomically clear, not species identification. SUBJECT: A large circular magnified view bounded by dark brown outline, with just FOUR separate oval fungal spores, warm orange and cream, outlined brown. Modest simple asymmetric ovals, microscopic concept; no mushroom, no many tiny particles, no text. SOURCE definition: Unità microscopica coinvolta nella riproduzione e dispersione dei funghi. Nei funghi a cappello molte spore vengono prodotte nello strato fertile sotto il cappello.",
+    "stato": "ok",
+    "fonti_dati": [
+      "data/glossary.json:spora.definition,observe"
+    ],
+    "qa": "incoming/qa/glossario-spora.json"
+  },
+  {
+    "file": "incoming/glossario/sporata.png",
+    "tipo": "glossario",
+    "soggetto": "sporata",
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case: precise-object-edit. Correct this educational spore print diagram. Change ONLY the radial spore deposit on the paper to ONE CONSISTENT OCHRE GOLDEN BROWN #c28b4d on BOTH halves of the paper. One mushroom produces one spore-color deposit, not white spores on dark paper and brown spores on white paper. All radial rays must have exactly the same ochre color across the center boundary, strongly visible on both backgrounds. Keep paper LEFT WHITE, RIGHT VERY DARK BROWN. Keep detached cap, warm orange and cream, same shape, gills and pose. Preserve brown outlines, same composition, full objects, transparent background, generous15% margins, no text.",
+    "stato": "ok",
+    "fonti_dati": [
+      "data/glossary.json:sporata.definition,observe"
+    ],
+    "qa": "incoming/qa/glossario-sporata.json"
   }
 ]
