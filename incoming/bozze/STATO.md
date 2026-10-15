@@ -156,7 +156,7 @@
 
 ## Varianti dei caratteri — 15/10/2026
 
-Colori completati: **82/141 varianti**. Ogni variante ha cappello e fungo intero. Prima tutti i colori, secondo le priorità del brief.
+Colori completati: **85/141 varianti**. Ogni variante ha cappello e fungo intero. Prima tutti i colori, secondo le priorità del brief.
 
 Le due forme di phalloides già caricate in varianti-02 restano **in attesa delle fasi**. Nessuna nuova forma viene prodotta.
 
@@ -193,6 +193,7 @@ Controlli prima del caricamento: PNG RGBA, celle 418×418 px, almeno 42 px (10%)
 | icone/varianti-26.png | urnula-craterium: colore:bruno; cornucopioides: colore:bruno; cornucopioides: colore:grigio | ok | QA visiva completata; 6 icone, alpha reale, terza colonna vuota. Basi nel manifest. |
 | icone/varianti-27.png | craterellus-cinereus: colore:nero; craterellus-cinereus: colore:bruno; pseudocraterellus-undulatus: colore:bruno | ok | QA visiva completata; 6 icone, alpha reale, terza colonna vuota. Basi nel manifest. |
 | icone/varianti-28.png | repandum: colore:crema; repandum: colore:arancio; hydnum-rufescens: colore:bruno | ok | QA visiva completata; 6 icone, alpha reale, terza colonna vuota. Basi nel manifest. |
+| icone/varianti-29.png | craterellus-lutescens: colore:giallo; chalciporus-piperatus: colore:bruno; coprinus-comatus: colore:bruno | ok | QA visiva completata; 6 icone, alpha reale, terza colonna vuota. Basi nel manifest. |
 
 ## Icone dei caratteri degli alberi — 15 ottobre 2026
 
