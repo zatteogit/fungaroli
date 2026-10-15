@@ -308,3 +308,6 @@ Combinazioni-02: piano maturo con profilo molto basso; invariati gambo bianco, a
 
 
 Forme-01: colori base e caratteri del gambo conservati; varianti di forma e proporzioni di età.
+
+
+Forme-02: confrontate alle basi; verna/virosa con volva a sacco aperta, pantherina con anello liscio e base bordata; corretti i trasferimenti di caratteri tra righe nelle bozze.

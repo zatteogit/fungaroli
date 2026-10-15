@@ -14839,5 +14839,101 @@
     "prompt": "Use case: scientific-educational. Production mushroom trait sprite sheet, 3x3 equal grid, PNG transparent alpha, no text/grid. Approved references define exact species anatomy, colors, brown outline weight, simple flat fills and a single highlight. Change ONLY cap shape and age-appropriate stem proportions. Each ROW is ONE variant: LEFT isolated cap viewed side-on (no stem), CENTER WHOLE mushroom with complete stem/base, RIGHT EMPTY transparent. Six icons maximum, keep 16% transparent margins on every side of every cell. All outlines fully closed dark brown, no clipping. Keep base coloration, spots/scales, ring, volva, reticulum and stem color exactly from the stated reference species row. Never copy the reference underside tile. No new diagnostic traits, no ground/soil/grass/shadows. Use same color as the source, not a new color variant. OUTPUT ROW 1: caesarea (Ovolo buono), cap emisferico = young deep HALF-SPHERE, round dome depth about HALF its diameter; stem can be stockier. Base color arancio. Use reference image 1, species in its ROW 1; reference LEFT cap and RIGHT whole mushroom are anatomy targets. Copy all stem characters and markings. OUTPUT ROW 2: caesarea (Ovolo buono), cap piano = adult FLAT broad cap, nearly horizontal top, depth ONLY 10-15% of diameter, NO round dome; mature stem. Base color arancio. Use reference image 1, species in its ROW 1; reference LEFT cap and RIGHT whole mushroom are anatomy targets. Copy all stem characters and markings. OUTPUT ROW 3: amanita-muscaria (Ovolo malefico), cap emisferico = young deep HALF-SPHERE, round dome depth about HALF its diameter; stem can be stockier. Base color rosso. Use reference image 1, species in its ROW 2; reference LEFT cap and RIGHT whole mushroom are anatomy targets. Copy all stem characters and markings. ",
     "stato": "ok",
     "qa": "incoming/qa/forme-01.json"
+  },
+  {
+    "file": "incoming/icone/forme-02.png",
+    "tipo": "illustrazione",
+    "soggetto": "amanita-muscaria",
+    "tessera": "cappello",
+    "cella": 0,
+    "variante": "forma:piano",
+    "base": {
+      "colore": "rosso",
+      "forma": "convesso"
+    },
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case: precise-object-edit. Edit the attached approved 3x3 mushroom sprite sheet. PRESERVE every stem, ring, volva, basal bulb, stem marking, cap markings, outline and COLOR. ONLY reshape caps and adjust stem proportions to growth stage. DO NOT swap traits between rows. Each row LEFT isolated cap, CENTER WHOLE mushroom, RIGHT transparent EMPTY. Every icon complete with continuous brown outline. Keep genuine transparent background, no text or new detail, all cells 15% margins. ROW 1 amanita-muscaria: change BOTH caps to mature FLAT cap with nearly HORIZONTAL TOP, depth only10%width; no rounded dome. Retain original rosso and EXACT SAME STEM INCLUDING RING/VOLVA. ROW 2 amanita-verna: change BOTH caps to young deep ROUND HEMISPHERE, cap depth around45%width. Retain original bianco and EXACT SAME STEM INCLUDING RING/VOLVA. ROW 3 amanita-verna: change BOTH caps to mature FLAT cap with nearly HORIZONTAL TOP, depth only10%width; no rounded dome. Retain original bianco and EXACT SAME STEM INCLUDING RING/VOLVA. Do not copy underside-only icons. Not new species. No soil/grass.",
+    "stato": "ok",
+    "qa": "incoming/qa/forme-02.json"
+  },
+  {
+    "file": "incoming/icone/forme-02.png",
+    "tipo": "illustrazione",
+    "soggetto": "amanita-muscaria",
+    "tessera": "gambo",
+    "cella": 1,
+    "variante": "forma:piano",
+    "base": {
+      "colore": "rosso",
+      "forma": "convesso"
+    },
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case: precise-object-edit. Edit the attached approved 3x3 mushroom sprite sheet. PRESERVE every stem, ring, volva, basal bulb, stem marking, cap markings, outline and COLOR. ONLY reshape caps and adjust stem proportions to growth stage. DO NOT swap traits between rows. Each row LEFT isolated cap, CENTER WHOLE mushroom, RIGHT transparent EMPTY. Every icon complete with continuous brown outline. Keep genuine transparent background, no text or new detail, all cells 15% margins. ROW 1 amanita-muscaria: change BOTH caps to mature FLAT cap with nearly HORIZONTAL TOP, depth only10%width; no rounded dome. Retain original rosso and EXACT SAME STEM INCLUDING RING/VOLVA. ROW 2 amanita-verna: change BOTH caps to young deep ROUND HEMISPHERE, cap depth around45%width. Retain original bianco and EXACT SAME STEM INCLUDING RING/VOLVA. ROW 3 amanita-verna: change BOTH caps to mature FLAT cap with nearly HORIZONTAL TOP, depth only10%width; no rounded dome. Retain original bianco and EXACT SAME STEM INCLUDING RING/VOLVA. Do not copy underside-only icons. Not new species. No soil/grass.",
+    "stato": "ok",
+    "qa": "incoming/qa/forme-02.json"
+  },
+  {
+    "file": "incoming/icone/forme-02.png",
+    "tipo": "illustrazione",
+    "soggetto": "amanita-verna",
+    "tessera": "cappello",
+    "cella": 3,
+    "variante": "forma:emisferico",
+    "base": {
+      "colore": "bianco",
+      "forma": "convesso"
+    },
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case: precise-object-edit. Edit the attached approved 3x3 mushroom sprite sheet. PRESERVE every stem, ring, volva, basal bulb, stem marking, cap markings, outline and COLOR. ONLY reshape caps and adjust stem proportions to growth stage. DO NOT swap traits between rows. Each row LEFT isolated cap, CENTER WHOLE mushroom, RIGHT transparent EMPTY. Every icon complete with continuous brown outline. Keep genuine transparent background, no text or new detail, all cells 15% margins. ROW 1 amanita-muscaria: change BOTH caps to mature FLAT cap with nearly HORIZONTAL TOP, depth only10%width; no rounded dome. Retain original rosso and EXACT SAME STEM INCLUDING RING/VOLVA. ROW 2 amanita-verna: change BOTH caps to young deep ROUND HEMISPHERE, cap depth around45%width. Retain original bianco and EXACT SAME STEM INCLUDING RING/VOLVA. ROW 3 amanita-verna: change BOTH caps to mature FLAT cap with nearly HORIZONTAL TOP, depth only10%width; no rounded dome. Retain original bianco and EXACT SAME STEM INCLUDING RING/VOLVA. Do not copy underside-only icons. Not new species. No soil/grass.",
+    "stato": "ok",
+    "qa": "incoming/qa/forme-02.json"
+  },
+  {
+    "file": "incoming/icone/forme-02.png",
+    "tipo": "illustrazione",
+    "soggetto": "amanita-verna",
+    "tessera": "gambo",
+    "cella": 4,
+    "variante": "forma:emisferico",
+    "base": {
+      "colore": "bianco",
+      "forma": "convesso"
+    },
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case: precise-object-edit. Edit the attached approved 3x3 mushroom sprite sheet. PRESERVE every stem, ring, volva, basal bulb, stem marking, cap markings, outline and COLOR. ONLY reshape caps and adjust stem proportions to growth stage. DO NOT swap traits between rows. Each row LEFT isolated cap, CENTER WHOLE mushroom, RIGHT transparent EMPTY. Every icon complete with continuous brown outline. Keep genuine transparent background, no text or new detail, all cells 15% margins. ROW 1 amanita-muscaria: change BOTH caps to mature FLAT cap with nearly HORIZONTAL TOP, depth only10%width; no rounded dome. Retain original rosso and EXACT SAME STEM INCLUDING RING/VOLVA. ROW 2 amanita-verna: change BOTH caps to young deep ROUND HEMISPHERE, cap depth around45%width. Retain original bianco and EXACT SAME STEM INCLUDING RING/VOLVA. ROW 3 amanita-verna: change BOTH caps to mature FLAT cap with nearly HORIZONTAL TOP, depth only10%width; no rounded dome. Retain original bianco and EXACT SAME STEM INCLUDING RING/VOLVA. Do not copy underside-only icons. Not new species. No soil/grass.",
+    "stato": "ok",
+    "qa": "incoming/qa/forme-02.json"
+  },
+  {
+    "file": "incoming/icone/forme-02.png",
+    "tipo": "illustrazione",
+    "soggetto": "amanita-verna",
+    "tessera": "cappello",
+    "cella": 6,
+    "variante": "forma:piano",
+    "base": {
+      "colore": "bianco",
+      "forma": "convesso"
+    },
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case: precise-object-edit. Edit the attached approved 3x3 mushroom sprite sheet. PRESERVE every stem, ring, volva, basal bulb, stem marking, cap markings, outline and COLOR. ONLY reshape caps and adjust stem proportions to growth stage. DO NOT swap traits between rows. Each row LEFT isolated cap, CENTER WHOLE mushroom, RIGHT transparent EMPTY. Every icon complete with continuous brown outline. Keep genuine transparent background, no text or new detail, all cells 15% margins. ROW 1 amanita-muscaria: change BOTH caps to mature FLAT cap with nearly HORIZONTAL TOP, depth only10%width; no rounded dome. Retain original rosso and EXACT SAME STEM INCLUDING RING/VOLVA. ROW 2 amanita-verna: change BOTH caps to young deep ROUND HEMISPHERE, cap depth around45%width. Retain original bianco and EXACT SAME STEM INCLUDING RING/VOLVA. ROW 3 amanita-verna: change BOTH caps to mature FLAT cap with nearly HORIZONTAL TOP, depth only10%width; no rounded dome. Retain original bianco and EXACT SAME STEM INCLUDING RING/VOLVA. Do not copy underside-only icons. Not new species. No soil/grass.",
+    "stato": "ok",
+    "qa": "incoming/qa/forme-02.json"
+  },
+  {
+    "file": "incoming/icone/forme-02.png",
+    "tipo": "illustrazione",
+    "soggetto": "amanita-verna",
+    "tessera": "gambo",
+    "cella": 7,
+    "variante": "forma:piano",
+    "base": {
+      "colore": "bianco",
+      "forma": "convesso"
+    },
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case: precise-object-edit. Edit the attached approved 3x3 mushroom sprite sheet. PRESERVE every stem, ring, volva, basal bulb, stem marking, cap markings, outline and COLOR. ONLY reshape caps and adjust stem proportions to growth stage. DO NOT swap traits between rows. Each row LEFT isolated cap, CENTER WHOLE mushroom, RIGHT transparent EMPTY. Every icon complete with continuous brown outline. Keep genuine transparent background, no text or new detail, all cells 15% margins. ROW 1 amanita-muscaria: change BOTH caps to mature FLAT cap with nearly HORIZONTAL TOP, depth only10%width; no rounded dome. Retain original rosso and EXACT SAME STEM INCLUDING RING/VOLVA. ROW 2 amanita-verna: change BOTH caps to young deep ROUND HEMISPHERE, cap depth around45%width. Retain original bianco and EXACT SAME STEM INCLUDING RING/VOLVA. ROW 3 amanita-verna: change BOTH caps to mature FLAT cap with nearly HORIZONTAL TOP, depth only10%width; no rounded dome. Retain original bianco and EXACT SAME STEM INCLUDING RING/VOLVA. Do not copy underside-only icons. Not new species. No soil/grass.",
+    "stato": "ok",
+    "qa": "incoming/qa/forme-02.json"
   }
 ]
