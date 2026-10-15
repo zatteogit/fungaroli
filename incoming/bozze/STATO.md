@@ -156,7 +156,7 @@
 
 ## Varianti dei caratteri — 15/10/2026
 
-Colori completati: **124/141 varianti**. Ogni variante ha cappello e fungo intero. Prima tutti i colori, secondo le priorità del brief.
+Colori completati: **127/141 varianti**. Ogni variante ha cappello e fungo intero. Prima tutti i colori, secondo le priorità del brief.
 
 Le due forme di phalloides già caricate in varianti-02 restano **in attesa delle fasi**. Nessuna nuova forma viene prodotta.
 
@@ -207,6 +207,7 @@ Controlli prima del caricamento: PNG RGBA, celle 418×418 px, almeno 42 px (10%)
 | icone/varianti-40.png | mycena-pura: colore:grigio; mycena-pura: colore:bianco; agaricus-campestris: colore:crema | ok | QA visiva completata; 6 icone, alpha reale, terza colonna vuota. Basi nel manifest. |
 | icone/varianti-41.png | agaricus-campestris: colore:bruno; agaricus-arvensis: colore:bianco; agaricus-arvensis: colore:giallo | ok | QA visiva completata; 6 icone, alpha reale, terza colonna vuota. Basi nel manifest. |
 | icone/varianti-42.png | agaricus-bisporus: colore:bianco; marasmius-oreades: colore:bruno; hygrophorus-latitabundus: colore:bruno | ok | QA visiva completata; 6 icone, alpha reale, terza colonna vuota. Basi nel manifest. |
+| icone/varianti-43.png | hygrophorus-latitabundus: colore:grigio; hygrophorus-marzuolus: colore:bianco; hygrophorus-marzuolus: colore:nero | ok | QA visiva completata; 6 icone, alpha reale, terza colonna vuota. Basi nel manifest. |
 
 ## Icone dei caratteri degli alberi — 15 ottobre 2026
 
