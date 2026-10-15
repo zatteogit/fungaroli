@@ -1,0 +1,283 @@
+{
+  "file": "incoming/icone/forme-09.png",
+  "stato": "ok",
+  "verifiche": [
+    {
+      "cella": 0,
+      "bbox": [
+        74,
+        138,
+        344,
+        280
+      ],
+      "attesa": true,
+      "margini_px": [
+        74,
+        138,
+        74,
+        138
+      ],
+      "margini_ok": true,
+      "contorno_scuro_estremi": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cella": 1,
+      "bbox": [
+        96,
+        84,
+        321,
+        333
+      ],
+      "attesa": true,
+      "margini_px": [
+        96,
+        84,
+        97,
+        85
+      ],
+      "margini_ok": true,
+      "contorno_scuro_estremi": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cella": 2,
+      "bbox": null,
+      "attesa": false,
+      "vuota": true
+    },
+    {
+      "cella": 3,
+      "bbox": [
+        68,
+        139,
+        349,
+        279
+      ],
+      "attesa": true,
+      "margini_px": [
+        68,
+        139,
+        69,
+        139
+      ],
+      "margini_ok": true,
+      "contorno_scuro_estremi": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cella": 4,
+      "bbox": [
+        83,
+        77,
+        334,
+        341
+      ],
+      "attesa": true,
+      "margini_px": [
+        83,
+        77,
+        84,
+        77
+      ],
+      "margini_ok": true,
+      "contorno_scuro_estremi": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cella": 5,
+      "bbox": null,
+      "attesa": false,
+      "vuota": true
+    },
+    {
+      "cella": 6,
+      "bbox": [
+        62,
+        155,
+        356,
+        263
+      ],
+      "attesa": true,
+      "margini_px": [
+        62,
+        155,
+        62,
+        155
+      ],
+      "margini_ok": true,
+      "contorno_scuro_estremi": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cella": 7,
+      "bbox": [
+        81,
+        82,
+        336,
+        336
+      ],
+      "attesa": true,
+      "margini_px": [
+        81,
+        82,
+        82,
+        82
+      ],
+      "margini_ok": true,
+      "contorno_scuro_estremi": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cella": 8,
+      "bbox": null,
+      "attesa": false,
+      "vuota": true
+    }
+  ],
+  "normalizzazione": [
+    {
+      "cella": 0,
+      "bbox_originale": [
+        86,
+        191,
+        356,
+        333
+      ],
+      "scala": 1,
+      "dimensioni": [
+        270,
+        142
+      ],
+      "posizione": [
+        74,
+        138
+      ]
+    },
+    {
+      "cella": 1,
+      "bbox_originale": [
+        93,
+        123,
+        318,
+        372
+      ],
+      "scala": 1,
+      "dimensioni": [
+        225,
+        249
+      ],
+      "posizione": [
+        514,
+        84
+      ]
+    },
+    {
+      "cella": 3,
+      "bbox_originale": [
+        83,
+        148,
+        364,
+        288
+      ],
+      "scala": 1,
+      "dimensioni": [
+        281,
+        140
+      ],
+      "posizione": [
+        68,
+        557
+      ]
+    },
+    {
+      "cella": 4,
+      "bbox_originale": [
+        81,
+        101,
+        332,
+        365
+      ],
+      "scala": 1,
+      "dimensioni": [
+        251,
+        264
+      ],
+      "posizione": [
+        501,
+        495
+      ]
+    },
+    {
+      "cella": 6,
+      "bbox_originale": [
+        76,
+        135,
+        376,
+        245
+      ],
+      "scala": 0.98,
+      "dimensioni": [
+        294,
+        108
+      ],
+      "posizione": [
+        62,
+        991
+      ]
+    },
+    {
+      "cella": 7,
+      "bbox_originale": [
+        80,
+        67,
+        335,
+        321
+      ],
+      "scala": 1,
+      "dimensioni": [
+        255,
+        254
+      ],
+      "posizione": [
+        499,
+        918
+      ]
+    }
+  ],
+  "bytes": 53115,
+  "dimensioni": [
+    1254,
+    1254
+  ],
+  "sha256": "325adbb8db4b1125476e4a179d9f4f2eb1f6a3827f56bc4634cab5b7247281ab",
+  "prompt": "A transparent PNG sprite sheet, square1254x1254, invisible3x3cells418px each. Use reference1 for EXACT SMALL ICON SIZE, generous TRANSPARENT CELL MARGINS and row positions. Three rows: column1 CAP ONLY side view, column2 WHOLE MUSHROOM, column3 entirely EMPTY. Each separate icon centered in its own cell, at most60% of cell width AND height, at least18% alpha0 padding on EVERY cell edge. No drawn grid, background, shadows, ground, text, numbers or marks. Clean thick dark brown COMPLETE silhouette outline, flat few colors same as species icons. References2 onward show the approved base icons: preserve cap COLOR and all stems, rings, volvas, netting, scales and spots, change ONLY cap SHAPE and age-appropriate proportions. Each row's cap-only and whole must MATCH shape/color. ROW1: chlorophyllum-rhacodes, base cap color crema, target shape CONVEX: low rounded dome. Keep attached base icon anatomy; scientific constraints: {\"ring\":true,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"squamosa\",\"asciutta\",\"liscia\"],\"hymenophore\":[\"lamelle\"]}. ROW2: chlorophyllum-venenatum, base cap color crema, target shape CONVEX: low rounded dome. Keep attached base icon anatomy; scientific constraints: {\"ring\":true,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"squamosa\",\"asciutta\",\"liscia\"],\"hymenophore\":[\"lamelle\"]}. ROW3: galerina-marginata, base cap color arancio, target shape FLAT: almost horizontal, expanded cap. Keep attached base icon anatomy; scientific constraints: {\"ring\":true,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"liscia\",\"viscida\",\"asciutta\"],\"hymenophore\":[\"lamelle\"]}. No new anatomical traits. Reference species icons are shape/color authorities except the explicit target cap shape. Cap-only must match whole cap. Last column empty. True alpha background.",
+  "edits": [],
+  "normalizza": true,
+  "visivo_ok": true,
+  "nota": "Rhacodes e venenatum convessi, gambo liscio e basi distinte: arrotondata e squadrata; galerina piana arancio-bruna con lamelle ruggine e anello sottile. Squame assenti sulla galerina. Scala e centratura normalizzate con Python su autorizzazione di Matteo; disegno invariato."
+}
