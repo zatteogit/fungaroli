@@ -442,6 +442,8 @@ function updateBack(r, nav) {
 }
 
 function route() {
+  // un ridisegno del meteo in sospeso (in home aspetta fino a 6 s) non deve cadere sulla pagina nuova: questa si disegna gia' con i dati aggiornati
+  if (weatherPaintTimer) { clearTimeout(weatherPaintTimer.handle); weatherPaintTimer = null; }
   const r = parseRoute();
   r.tab = { piante:'specie', pianta:'specie', zona: 'uscite', glossario: 'impara', 'specie-dettaglio': 'specie', alberi: 'specie', albero: 'specie', riconosci: r.recognizeMode === 'bosco' ? 'impara' : 'specie', info: '', metodo: '', guide: 'impara', 'guide-list': 'impara', sfide: 'impara', fungo: 'specie', commestibile: 'specie' }[r.view] ?? r.view;
   r.hash = location.hash || '#/';
@@ -718,7 +720,7 @@ function receiveWeather(w,meta={}){
   weatherUnavailable=false;series=w.series;zones=weatherZones.filter(z=>series[z.id]);lastWeatherSnapshot=w;
   document.documentElement.classList.toggle('is-offline',!!w.offline);
   weatherStamp(w);$('#today-kicker').textContent=new Date().toLocaleDateString('it-IT',{weekday:'long',day:'numeric',month:'long'});
-  if(changed.size){compute(first?null:changed);if(first&&meta.phase!=='network')paintWeatherView(changed);else queueWeatherPaint(changed);}
+  if(changed.size){compute(first?null:changed);if(first&&(meta.phase!=='network'||state.view!=='uscite'))paintWeatherView(changed);else queueWeatherPaint(changed);}
 }
 async function refreshWeather(force){
   const revision=++weatherRevision;weatherController?.abort();weatherController=new AbortController();const signal=weatherController.signal;
