@@ -35,7 +35,7 @@ La suite browser avvia un solo Wrangler sulla porta 8788: non lanciarne due insi
 
 - **Cache del service worker:** quando cambia un file dell'app pubblicata, incrementa `SHELL` in `sw.js` (`fungaroli-shell-vNN`), metti lo stesso valore in `<meta name="app-version">` di `index.html` (serve all'avviso «versione nuova»; lo controlla un test) e aggiorna `PRECACHE` se aggiungi moduli.
 - **CMS:** i contenuti pubblici possono arrivare dallo snapshot del CMS (D1 `CMS_DB`). Cambiare solo un JSON in `data/` non sostituisce un contenuto già pubblicato da un autore. Per un campo nuovo aggiorna insieme schema, renderer, seed e snapshot (vedi `docs/cms.md`).
-- **Nomi definitivi:** sezioni **Uscite**, **Scopri**, **Taccuino**; titoli home «Dove andare», «Altre buone uscite», «Nei boschi in questi giorni». Nella storia Git compaiono nomi precedenti: non ripristinarli.
+- **Nomi definitivi:** barra con **Uscite**, **Mappa**, **Scopri**, **Taccuino** e la ricerca sempre visibile (decisione di Matteo del 15/10: la mappa resta al primo livello; Impara sta dentro Scopri); titoli home «Dove andare», «Altre buone uscite», «Nei boschi in questi giorni». Nella storia Git compaiono nomi precedenti: non ripristinarli.
 - **Gerarchia:** funghi → giro → scoperte. Piante e alberi non cambiano zona, giorno, sentiero o indice.
 - **Linguaggio:** l'app descrive caratteri, ambienti e rischi. Non identifica, non certifica commestibilità, non dice «tieni/scarta». L'indice è sperimentale (0–10), non una probabilità.
 - **Fonti e licenze:** ogni nuovo dato, foto o soglia deve avere fonte e licenza verificabili. Niente soglie inventate, niente bonus numerici da folklore («funghi spia»).

@@ -78,7 +78,7 @@ Ogni colore ha un compito. I valori stanno solo in `css/tokens.css` (ruoli pubbl
 
 ## Vincoli di prodotto da preservare
 
-- Gerarchia funghi → giro → scoperte. Nomi Uscite, Scopri, Taccuino; titoli home come handoff. Guide/glossario in Scopri, mappa nel contesto delle uscite. La shell osservata nello snapshot aveva ancora Mappa/Impara: il manuale propone la riconciliazione con l’handoff, non attesta che sia già stata rilasciata.
+- Gerarchia funghi → giro → scoperte. Nomi Uscite, Scopri, Taccuino; titoli home come handoff. Guide/glossario in Scopri. La Mappa è una voce della barra al primo livello (decisione di Matteo, 15/10, dopo la prova con la mappa dentro Uscite); la ricerca generale resta visibile in ogni pagina, anche nei cataloghi. La shell osservata nello snapshot aveva ancora Mappa/Impara: il manuale propone la riconciliazione con l’handoff, non attesta che sia già stata rilasciata.
 - Il confronto descrive e restringe candidati, non identifica o certifica commestibilità. I sosia e gli avvisi di rischio restano visibili. Nessuna sostituzione di foto scientifiche con immagini generate.
 - Indice sperimentale 0–10, virgola decimale; dato assente diverso da zero; indice biologico distinto da ordinamento pratico. Nessun nuovo parametro del modello per esigenze estetiche.
 - Pagina per esplorazione e pannello contestuale per compiti interni, con stesso contenuto, contesto e focus di ritorno. Lente per la foto.
