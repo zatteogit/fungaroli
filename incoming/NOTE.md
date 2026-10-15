@@ -474,3 +474,7 @@ amanita-crocea uovo; amanita-crocea apertura; amanita-crocea adulto. Disegni der
 ### Fasi — tavola 12
 
 amanita-pantherina giovane; amanita-pantherina adulto; amanita-rubescens giovane. Disegni derivati soltanto dalle fasi dell’handoff, con caratteri invariati ripresi dalle icone base. Formato 3×3; tessere ordinate come nella tabella, celle inutilizzate trasparenti. Ricampionamento uniforme dei disegni interi per margini e centratura; quantizzazione PNG a 256 colori con alpha per il limite di peso. Panterina: cappello bruno con verruche bianche, margine striato, anello e cercini della base conservati; giovane emisferica e adulto appianato. Arrossante giovane: cappello emisferico rosa con placche chiare e anello striato della base; residuo volvale basso e fragile solo nell’esemplare molto giovane, come descritto dalla fase, senza trasformarlo in una volva alta a sacco.
+
+### Fasi — tavola 13
+
+amanita-rubescens adulto. Disegni derivati soltanto dalle fasi dell’handoff, con caratteri invariati ripresi dalle icone base. Formato 3×3; tessere ordinate come nella tabella, celle inutilizzate trasparenti. Ricampionamento uniforme dei disegni interi per margini e centratura; quantizzazione PNG a 256 colori con alpha per il limite di peso. Arrossante adulta: cappello appianato rosa-rame con placche chiare come nella base; lamelle prevalentemente crema con poche macchie rosate, senza viraggio uniforme. Anello striato e base ingrossata conservati, nessuna volva o cercine. Due righe della tavola volutamente vuote perché la fase richiede soltanto tre tessere.

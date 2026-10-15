@@ -498,3 +498,5 @@ Tecnica: output nativo del tool 1122×1402, ricampionato a 1600×2000 con LANCZO
 | icone/fasi-11.png | ok | amanita-crocea uovo; amanita-crocea apertura; amanita-crocea adulto. 6 disegni, una riga per fase; altre celle trasparenti. PNG alpha 1254×1254, 58700 byte. Margini minimi 50 px; contorno scuro ai quattro estremi verificato per ogni cella. Confronto in sovrapposizione con le basi; nessun testo. |
 
 | icone/fasi-12.png | ok | amanita-pantherina giovane; amanita-pantherina adulto; amanita-rubescens giovane. 6 disegni, una riga per fase; altre celle trasparenti. PNG alpha 1254×1254, 83393 byte. Margini minimi 50 px; contorno scuro ai quattro estremi verificato per ogni cella. Confronto in sovrapposizione con le basi; nessun testo. |
+
+| icone/fasi-13.png | ok | amanita-rubescens adulto. 3 disegni, una riga per fase; altre celle trasparenti. PNG alpha 1254×1254, 48531 byte. Margini minimi 50 px; contorno scuro ai quattro estremi verificato per ogni cella. Confronto in sovrapposizione con le basi; nessun testo. |
