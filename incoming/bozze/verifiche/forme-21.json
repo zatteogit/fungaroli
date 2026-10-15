@@ -1,0 +1,286 @@
+{
+  "file": "incoming/icone/forme-21.png",
+  "stato": "ok",
+  "verifiche": [
+    {
+      "cella": 0,
+      "bbox": [
+        62,
+        123,
+        356,
+        294
+      ],
+      "attesa": true,
+      "margini_px": [
+        62,
+        123,
+        62,
+        124
+      ],
+      "margini_ok": true,
+      "contorno_scuro_estremi": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cella": 1,
+      "bbox": [
+        94,
+        62,
+        323,
+        356
+      ],
+      "attesa": true,
+      "margini_px": [
+        94,
+        62,
+        95,
+        62
+      ],
+      "margini_ok": true,
+      "contorno_scuro_estremi": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cella": 2,
+      "bbox": null,
+      "attesa": false,
+      "vuota": true
+    },
+    {
+      "cella": 3,
+      "bbox": [
+        62,
+        152,
+        356,
+        266
+      ],
+      "attesa": true,
+      "margini_px": [
+        62,
+        152,
+        62,
+        152
+      ],
+      "margini_ok": true,
+      "contorno_scuro_estremi": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cella": 4,
+      "bbox": [
+        62,
+        84,
+        356,
+        334
+      ],
+      "attesa": true,
+      "margini_px": [
+        62,
+        84,
+        62,
+        84
+      ],
+      "margini_ok": true,
+      "contorno_scuro_estremi": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cella": 5,
+      "bbox": null,
+      "attesa": false,
+      "vuota": true
+    },
+    {
+      "cella": 6,
+      "bbox": [
+        62,
+        162,
+        356,
+        255
+      ],
+      "attesa": true,
+      "margini_px": [
+        62,
+        162,
+        62,
+        163
+      ],
+      "margini_ok": true,
+      "contorno_scuro_estremi": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cella": 7,
+      "bbox": [
+        62,
+        114,
+        356,
+        304
+      ],
+      "attesa": true,
+      "margini_px": [
+        62,
+        114,
+        62,
+        114
+      ],
+      "margini_ok": true,
+      "contorno_scuro_estremi": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cella": 8,
+      "bbox": null,
+      "attesa": false,
+      "vuota": true
+    }
+  ],
+  "normalizzazione": [
+    {
+      "cella": 0,
+      "bbox_originale_immagine": [
+        82,
+        175,
+        377,
+        347
+      ],
+      "scala": 0.9966101694915255,
+      "dimensioni": [
+        294,
+        171
+      ],
+      "posizione": [
+        62,
+        123
+      ]
+    },
+    {
+      "cella": 1,
+      "bbox_originale_immagine": [
+        508,
+        96,
+        742,
+        397
+      ],
+      "scala": 0.9767441860465116,
+      "dimensioni": [
+        229,
+        294
+      ],
+      "posizione": [
+        512,
+        62
+      ]
+    },
+    {
+      "cella": 3,
+      "bbox_originale_immagine": [
+        66,
+        575,
+        395,
+        703
+      ],
+      "scala": 0.8936170212765957,
+      "dimensioni": [
+        294,
+        114
+      ],
+      "posizione": [
+        62,
+        570
+      ]
+    },
+    {
+      "cella": 4,
+      "bbox_originale_immagine": [
+        467,
+        519,
+        785,
+        789
+      ],
+      "scala": 0.9245283018867925,
+      "dimensioni": [
+        294,
+        250
+      ],
+      "posizione": [
+        480,
+        502
+      ]
+    },
+    {
+      "cella": 6,
+      "bbox_originale_immagine": [
+        15,
+        954,
+        430,
+        1085
+      ],
+      "scala": 0.708433734939759,
+      "dimensioni": [
+        294,
+        93
+      ],
+      "posizione": [
+        62,
+        998
+      ]
+    },
+    {
+      "cella": 7,
+      "bbox_originale_immagine": [
+        450,
+        925,
+        844,
+        1179
+      ],
+      "scala": 0.7461928934010152,
+      "dimensioni": [
+        294,
+        190
+      ],
+      "posizione": [
+        480,
+        950
+      ]
+    }
+  ],
+  "bytes": 56763,
+  "dimensioni": [
+    1254,
+    1254
+  ],
+  "sha256": "07b911af4fd7f66cf647049ac0f8fcc16dd0fba0f8aaa8a4ec3f1ac2cf0160da",
+  "prompt": "A transparent PNG sprite sheet, square1254x1254, invisible3x3cells418px each. Use reference1 for EXACT SMALL ICON SIZE, generous TRANSPARENT CELL MARGINS and row positions. Three rows: column1 CAP ONLY side view, column2 WHOLE MUSHROOM, column3 entirely EMPTY. Each separate icon centered in its own cell, at most60% of cell width AND height, at least18% alpha0 padding on EVERY cell edge. No drawn grid, background, shadows, ground, text, numbers or marks. Clean thick dark brown COMPLETE silhouette outline, flat few colors same as species icons. References2 onward show the approved base icons: preserve cap COLOR and all stems, rings, volvas, netting, scales and spots, change ONLY cap SHAPE and age-appropriate proportions. Each row's cap-only and whole must MATCH shape/color. Use EXACT reference cap shade; color labels are broad categories: 'rosso' may be dark red-BROWN. Never borrow anatomical traits or colors between rows. ROW1: cyclocybe-aegerita, base cap color bruno, target shape HEMISPHERICAL: rounded half-sphere dome with NO central point or umbo, even if adult base has an umbo. Keep attached base icon anatomy; scientific constraints: {\"ring\":true,\"volva\":false,\"reticulum\":false,\"cap_surface\":null,\"hymenophore\":[\"lamelle\"],\"hymenophore_color\":[\"crema\",\"grigio\",\"bruno\"]}. ROW2: cyclocybe-aegerita, base cap color bruno, target shape FLAT: almost horizontal, expanded cap. Keep attached base icon anatomy; scientific constraints: {\"ring\":true,\"volva\":false,\"reticulum\":false,\"cap_surface\":null,\"hymenophore\":[\"lamelle\"],\"hymenophore_color\":[\"crema\",\"grigio\",\"bruno\"]}. ROW3: gymnopilus-junonius, base cap color arancio, target shape FLAT: almost horizontal, expanded cap. Keep attached base icon anatomy; scientific constraints: {\"ring\":true,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"squamosa\",\"asciutta\",\"liscia\"],\"hymenophore\":[\"lamelle\"],\"hymenophore_color\":[\"giallo\",\"arancio\",\"bruno\"]}. No new anatomical traits. Reference species icons are shape/color authorities except the explicit target cap shape. Cap-only must match whole cap. Last column empty. True alpha background.",
+  "edits": [
+    "Remove ALL soft gray cast shadows outside the SIX icons in this transparent sprite sheet. Every pixel OUTSIDE the closed dark-brown icon outlines must be fully transparent alpha0, no gray halo or ground. Preserve actual drawings, colors, rings, gills, cap shapes and positions. ROW3 Gymnopilus cap may be flatter expanded profile as requested (low horizontal cap, not rounded young dome); keep orange cap scales/yellow gills. Row1 hemi pioppino and row2 flat pioppino unchanged. Transparent3x3sheet, column3empty, no writing or grid.",
+    "Change ONLY both ROW3 Gymnopilus cap profiles to FLAT EXPANDED mature caps. Make top cap surface almost horizontal, cap profile HEIGHT no more than ONE SIXTH its WIDTH, low broad platter with slight central bump, NOT a rounded dome or hemisphere. Preserve orange background, dark orange scales and yellow gills. Whole row3 stem and ring unchanged. Rows1/2 pioppino unchanged. No shadows/background/text/grid. All icons remain fully within their cells, column3empty, transparent PNG."
+  ],
+  "normalizza": true,
+  "visivo_ok": true,
+  "nota": "Pioppino bruno emisferico/piano con anello e lamelle chiare; Gymnopilus piano arancio a squame con anello e lamelle gialle. Rimossi aloni esterni e appiattita la forma adulta. Oggetti estratti interi per componenti connesse, senza taglio dei contorni. Scala e centratura normalizzate con Python su autorizzazione di Matteo; disegno invariato."
+}
