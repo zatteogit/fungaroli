@@ -46,6 +46,8 @@ Le modifiche alla classificazione micologica, alle cautele o alle regole richied
 | Percorsi di accesso | Consultazione dei dati generati. |
 | Campioni del bosco | Consultazione dei dati generati. |
 
+**Parole del glossario nei testi.** Il collegamento automatico al glossario non dipende dall’autore: lo decide il campo. Si collegano le parole nei campi descrittivi (caratteri, avvisi e cautele, sosia e differenze, ambiente, note di campo, descrizioni di zone e sentieri, testo degli articoli); mai in mesi, date, misure, fonti, crediti, didascalie e titoli. Ogni campo ha un ambito (Funghi, Piante, Alberi, Bosco, Sentiero o Generale per gli articoli) e si collegano solo le voci compatibili: «lamelle» non si collega in una scheda pianta, «ago» solo in piante e alberi. Una voce nuova del glossario segue la sua categoria; il campo `contexts` la rende valida anche in altri ambiti. Il criterio completo è in [handoff-2026-10-14.md](handoff-2026-10-14.md#collegamenti-automatici-al-glossario-zone-e-ambiti-1510).
+
 Le immagini si gestiscono tramite percorsi già presenti in `assets/` o URL, con crediti e licenza. L’upload diretto e la generazione automatica di varianti non fanno parte di questa prima versione. I dati geografici generati si aggiornano tramite i rispettivi script; meteo, coefficienti e formule restano nel processo scientifico e nel repository. Diari, credenziali personali e osservazioni private restano separati dal CMS.
 
 ## Accesso degli agenti

@@ -17,5 +17,5 @@ export function renderGuideCards(box) {
 }
 export function renderGuide(box, id) {
   const g = GUIDES.find((g) => g.id === id);
-  box.innerHTML = `<a class="small" href="#/guide">← Guide</a>` + (g ? `<article class="editorial-article"><p class="eyebrow">${esc(g.category)}</p><h1>${esc(g.title)}</h1><p class="article-lede">${esc(g.excerpt)}</p>${g.body}</article>` : '<p>Questa guida non è disponibile.</p>');
+  box.innerHTML = `<a class="small" href="#/guide">← Guide</a>` + (g ? `<article class="editorial-article" data-glossary="Generale"><p class="eyebrow" data-no-glossary>${esc(g.category)}</p><h1>${esc(g.title)}</h1><p class="article-lede">${esc(g.excerpt)}</p>${g.body}</article>` : '<p>Questa guida non è disponibile.</p>');
 }

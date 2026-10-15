@@ -64,7 +64,7 @@ function traitsTable(d) {
     ['Habitat', d.habitat && [d.habitat]],
     ['Stagione', d.season && [d.season]],
   ].filter(([, v]) => v);
-  return `<dl class="traits">${rows.map(([k, v]) => `<dt>${k}</dt><dd>${linkTrees(v.filter(Boolean).join(' · '))}</dd>`).join('')}</dl>`;
+  return `<dl class="traits">${rows.map(([k, v]) => `<dt>${k}</dt><dd${k === 'Stagione' ? '' : ' data-glossary="Funghi"'}>${linkTrees(v.filter(Boolean).join(' · '))}</dd>`).join('')}</dl>`;
 }
 
 function lookalikes(d, sid) {
@@ -81,7 +81,7 @@ function lookalikes(d, sid) {
       <span class="look-btn">${m ? `<img data-src="${ASSET(m.file)}" alt="" loading="lazy" decoding="async">` : '<span class="look-ph">senza foto</span>'}
         ${m ? `<button type="button" class="id-zoom" data-look="${esc(key || '')}" aria-label="${esc(l.name || l.latin)}: ingrandisci la foto"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6"/><path d="m20 20-5-5M10.5 8v5M8 10.5h5"/></svg></button>` : ''}</span>
       <div><div class="look-name"><span class="tox">${esc(l.toxicity)}</span> ${tk && compareHref(sid, tk) ? `<a class="look-open" href="${compareHref(sid, tk)}">${esc(l.name || '')} <i>${esc(l.latin)}</i><span aria-hidden="true"> ›</span></a>` : tk ? `<button type="button" class="look-open" data-taxon="${esc(tk)}">${esc(l.name || '')} <i>${esc(l.latin)}</i><span aria-hidden="true"> ›</span></button>` : `${esc(l.name || '')} <i>${esc(l.latin)}</i>`}</div>
-      <div class="look-diff">${esc(l.how_to_tell)}</div></div></li>`;
+      <div class="look-diff" data-glossary="Funghi">${esc(l.how_to_tell)}</div></div></li>`;
   }).join('')}</ul>`;
 }
 
@@ -148,13 +148,13 @@ function attention(id, warn) {
 }
 function checks(id) {
   const c = TRAITS[id]?.check_before_picking || [];
-  return c.length ? `<p class="small muted checks-tip">Caratteri descritti per la specie: confrontarli non identifica un esemplare né ne certifica la commestibilità.</p><ol class="keys">${c.map((x) => `<li><span class="key-text">${esc(x)}</span></li>`).join('')}</ol>` : '';
+  return c.length ? `<p class="small muted checks-tip">Caratteri descritti per la specie: confrontarli non identifica un esemplare né ne certifica la commestibilità.</p><ol class="keys" data-glossary="Funghi">${c.map((x) => `<li><span class="key-text">${esc(x)}</span></li>`).join('')}</ol>` : '';
 }
 function whereToLook(id) {
   const w = TRAITS[id]?.where_to_look;
   if (!w) return '';
-  return `<h3>Dove guardare</h3><p>${linkTrees(w.summary || '')}</p>
-    ${w.tips?.length ? `<ul class="reasons">${w.tips.map((t) => `<li>${linkTrees(t)}</li>`).join('')}</ul>` : ''}
+  return `<h3>Dove guardare</h3><p data-glossary="Funghi">${linkTrees(w.summary || '')}</p>
+    ${w.tips?.length ? `<ul class="reasons" data-glossary="Funghi">${w.tips.map((t) => `<li>${linkTrees(t)}</li>`).join('')}</ul>` : ''}
     ${w.trees?.length ? `<p class="tree-chips">${w.trees.map((t) => { const h = linkTrees(t); return h.includes('<a') ? h : `<span class="tree-link">${h}</span>`; }).join(' ')}</p>` : ''}`;
 }
 export const whereSummary = (id) => TRAITS[id]?.where_to_look?.summary || '';
@@ -196,7 +196,7 @@ export function renderSpeciesDetail(body, id) {
     <div class="pbody">
     ${photos.length > 1 ? `<div class="sp-strip">${photos.slice(1).map((p, k) => `<button type="button" class="zoomable" data-photo="${k + 1}" aria-label="Foto ${k + 2}: ingrandisci"><img data-src="${ASSET(p.file)}" alt="" loading="lazy" decoding="async"></button>`).join('')}</div>` : ''}
     ${attention(id, warn)}
-    ${TRAITS[id]?.check_before_picking?.length ? `<h3>Caratteri da confrontare</h3>${traitStrip(id)}${checks(id)}` : d.key_features?.length ? `<h3>Caratteri da confrontare</h3>${traitStrip(id)}<ol class="keys">${d.key_features.map((k) => `<li><span class="key-text">${esc(k)}</span></li>`).join('')}</ol>` : '<p class="notice">Caratteri di confronto in preparazione.</p>'}
+    ${TRAITS[id]?.check_before_picking?.length ? `<h3>Caratteri da confrontare</h3>${traitStrip(id)}${checks(id)}` : d.key_features?.length ? `<h3>Caratteri da confrontare</h3>${traitStrip(id)}<ol class="keys" data-glossary="Funghi">${d.key_features.map((k) => `<li><span class="key-text">${esc(k)}</span></li>`).join('')}</ol>` : '<p class="notice">Caratteri di confronto in preparazione.</p>'}
     ${TRAITS[id] ? '' : (warn.length ? `<div class="notice">${esc(warn.join(' '))}</div>` : '')}
     ${compareCta(id)}
     ${kitchen(id)}
