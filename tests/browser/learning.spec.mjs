@@ -375,16 +375,16 @@ for(const width of [320,1280])test(`omonimi nel glossario: piante, alberi, fungh
  await page.goto('/#/glossario');await page.locator('#glossary-q').fill('aculei');await expect(page.locator('#glossary-term-aculei')).toBeVisible();await expect(page.locator('#glossary-term-aculei-piante')).toBeVisible();expect(errors).toEqual([]);
 });
 
-for(const width of [390,1280]) test(`Scopri: tre cataloghi, Impara al primo livello e ricerca contestuale a ${width}px`,async({page})=>{
+for(const width of [390,1280]) test(`Scopri: tre cataloghi più Impara e ricerca contestuale a ${width}px`,async({page})=>{
   const errors=await setup(page,width);
   const places=[['/#/specie','Funghi','Sfoglia'],['/#/riconosci','Funghi','Impara a riconoscere'],['/#/piante','Piante e fiori','Sfoglia'],['/#/riconosci/piante','Piante e fiori','Impara a riconoscere'],['/#/alberi','Alberi','Sfoglia'],['/#/riconosci/alberi','Alberi','Impara a riconoscere']];
   for(const [route,section,mode] of places){
     await page.goto(route);const view=page.locator('.view:not([hidden])');
     await expect(view.locator('.seg-nav [aria-current="page"]')).toHaveText(section);
     await expect(view.locator('.sub-nav [aria-current="page"]')).toHaveText(mode);
-    await expect(view.locator('.seg-nav a')).toHaveText(['Funghi','Piante e fiori','Alberi']);
+    await expect(view.locator('.seg-nav a')).toHaveText(['Funghi','Piante e fiori','Alberi','Impara']);
   }
-  // Impara: pagina indice e sezioni senza sotto-schede, con «indietro»
+  // Impara: quarta sezione di Scopri, con le sue sotto-schede e «indietro»
   for(const [route,title] of [['/#/glossario','Glossario'],['/#/guide','Guide'],['/#/riconosci/bosco','Bosco e sentiero'],['/#/sfide','Sfide']]){
     await page.goto(route);const view=page.locator('.view:not([hidden])');
     await expect(view.locator('.seg-nav [data-section="impara"]')).toHaveAttribute('aria-current','page');await expect(view.locator('.sub-nav a')).toHaveCount(4);

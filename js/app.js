@@ -575,7 +575,6 @@ function renderFilterBox(box, onMap = false) {
   box.querySelector('[data-more]')?.addEventListener('click', openFullFilters);
   box.classList.toggle('open', chipsOpen);
   box.querySelector('[data-less]')?.addEventListener('click', () => soft(() => { chipsOpen = false; renderFilterSummary(); }));
-  if (!chipsOpen && !onMap) fitChips(box);
   box.querySelectorAll('[data-g]').forEach((b) => b.addEventListener('click', () => {
     const id = b.dataset.g;
     if (id === 'all') setActiveIds(null);
@@ -583,6 +582,8 @@ function renderFilterBox(box, onMap = false) {
     changed();
   }));
   box.querySelectorAll('[data-p]').forEach((b) => b.addEventListener('click', () => soft(() => { state[b.dataset.p] = !state[b.dataset.p]; savePrefs(); renderFilterSummary(); renderAll(); })));
+  // per ultimo: se la riga non ci sta, fitChips ridisegna i chip con i loro gestori; farlo prima agganciava due volte i gestori ai chip nuovi (un tocco accendeva e spegneva)
+  if (!chipsOpen && !onMap) fitChips(box);
 }
 
 // Tutti i gruppi sono sempre raggiungibili, anche quando la riga compatta ne mostra pochi.
