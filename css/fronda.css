@@ -30,3 +30,17 @@
   .map-top { left: 60px; }
 }
 .onboarding .ob-sub { margin: 4px 0 0; color: var(--text-2); font-size: 15px; }
+
+/* Alone «ambilight» (js/ambilight.js): i colori dei bordi della foto diventano ombre sfumate attorno alla copertina.
+   Leggero in chiaro, più presente in scuro; spento con «riduci trasparenza». */
+.phero, .cover { --amb-k: 58%; transition: box-shadow .6s ease; }
+.phero.has-amb, .cover.has-amb {
+  box-shadow: var(--shadow-2),
+    -36px 12px 90px -28px color-mix(in srgb, var(--amb-l) var(--amb-k), transparent),
+    36px 12px 90px -28px color-mix(in srgb, var(--amb-r) var(--amb-k), transparent),
+    0 44px 100px -36px color-mix(in srgb, var(--amb-b) var(--amb-k), transparent);
+}
+:root[data-theme="dark"] :is(.phero, .cover) { --amb-k: 62%; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) :is(.phero, .cover) { --amb-k: 62%; } }
+@media (prefers-reduced-transparency: reduce) { .phero.has-amb, .cover.has-amb { box-shadow: var(--shadow-2); } }
+@media (prefers-reduced-motion: reduce) { .phero, .cover { transition: none; } }

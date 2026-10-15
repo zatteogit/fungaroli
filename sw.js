@@ -10,7 +10,7 @@ const TILES = 'fungaroli-tiles-v1';
 const MAX_TILES = 1500;
 const PRECACHE = [
   'js/base-location.js', 'js/travel-model.js',
-  'js/entity-sheet.js',
+  'js/entity-sheet.js', 'js/ambilight.js',
   'js/search-select.js',
   'js/weather-request.js', 'js/weather-cache.js', 'js/weather-data.js', 'js/weather-dom.js',
   'js/images.js', 'js/plants.js','js/botanical-model.js','js/outing-discoveries.js','js/botanical-explanation.js','data/botanical-models.json', 'js/plant-catalog.js', 'js/catalog-search.js', 'js/guided-key.js', 'data/recognize-trees.json', 'data/recognize-plants.json', 'js/notebook-entry.js', 'data/plants.json', 'js/challenges.js', 'data/challenges.json',

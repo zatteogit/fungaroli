@@ -38,6 +38,7 @@ import { mountSpeciesAutocomplete } from './species-autocomplete.js';
 import { uniquePlaceProposals, chooseWalkTrail, walkContext, trailSketch } from './walks.js';
 import { cardLatin } from './names.js';
 import { pickCover } from './zone-cover.js';
+import { initAmbilight } from './ambilight.js';
 import { initChallenges, renderChallengeList, renderChallenge, challengeTitle, challengeList, challengeProgressOf, suggestedChallenge } from './challenges.js';
 
 const HISTORY_DAYS = 30;   // giorni passati mostrati nel grafico
@@ -159,6 +160,7 @@ function loadStep(n) {
   });
 }
 async function init() {
+  initAmbilight();
   loadStep(0);
   initInstall(); // prima di tutto: non dipende dai dati
   // versione Artifact: dati incorporati nella pagina (niente fetch esterni)

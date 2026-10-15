@@ -63,7 +63,9 @@ const CONFIG = {
     pairs: [["--bg", "--text"], ["--surface", "--text"], ["--bg", "--text-2"], ["--surface", "--muted"], ["--bg", "--accent"], ["--surface", "--accent"], ["--brand", "--brand-ink"], ["--bg", "--brand"], ["--action", "--action-ink"], ["--action-hover", "--action-ink"], ["--polline-soft", "--polline-ink"], ["--calendula-soft", "--calendula-ink"], ["--fiordaliso-soft", "--fiordaliso-ink"], ["--germoglio-soft", "--germoglio-ink"], ["--warn-bg", "--warn-ink"], ["--ok-bg", "--ok-ink"], ["--crit-bg", "--crit-ink"]],
   },
   reserved: {},
-  exceptions: {},
+  exceptions: {
+    "js/ambilight.js": { "css-colour-fn": "colore campionato dalla foto a runtime, non un token di design" },
+  },
   baselineFile: "tools/ds-guard-baseline.json",
   extensions: [".html", ".js", ".css"],
   findingLimit: 60,
