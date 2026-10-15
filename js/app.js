@@ -704,7 +704,9 @@ function queueWeatherPaint(changed){
   if(!changed.size)return;
   const pending=weatherPaintTimer?.changed||new Set();changed.forEach(id=>pending.add(id));
   if(weatherPaintTimer){weatherPaintTimer.changed=pending;return;}
-  const handle=setTimeout(()=>{const ids=weatherPaintTimer?.changed||pending;weatherPaintTimer=null;paintWeatherView(ids);},100);
+  // in home, mentre arriva il meteo: un solo ridisegno a fine scarico (o dopo 6 s), non uno per zona
+  const wait=weatherBusy&&state.view==='uscite'?6000:100;
+  const handle=setTimeout(()=>{const ids=weatherPaintTimer?.changed||pending;weatherPaintTimer=null;paintWeatherView(ids);},wait);
   weatherPaintTimer={handle,changed:pending};
 }
 function receiveWeather(w,meta={}){
@@ -714,7 +716,7 @@ function receiveWeather(w,meta={}){
   weatherUnavailable=false;series=w.series;zones=weatherZones.filter(z=>series[z.id]);lastWeatherSnapshot=w;
   document.documentElement.classList.toggle('is-offline',!!w.offline);
   weatherStamp(w);$('#today-kicker').textContent=new Date().toLocaleDateString('it-IT',{weekday:'long',day:'numeric',month:'long'});
-  if(changed.size){compute(first?null:changed);if(first)paintWeatherView(changed);else queueWeatherPaint(changed);}
+  if(changed.size){compute(first?null:changed);if(first&&meta.phase!=='network')paintWeatherView(changed);else queueWeatherPaint(changed);}
 }
 async function refreshWeather(force){
   const revision=++weatherRevision;weatherController?.abort();weatherController=new AbortController();const signal=weatherController.signal;
@@ -1226,7 +1228,7 @@ function discoveriesHtml(z,d,walk,items=discoveriesFor(z,d,walk)){
  return `<p class="discovery-intro">Potresti incontrare anche queste specie. ${items[0].scope==='tracciato'?'Ambienti campionati sul tratto del sentiero':'Compatibilità con gli ambienti della zona'}: presenza da verificare.</p><ul class="discovery-grid">${items.map(item=>{
   const key=`${z.id}/${item.date}/${item.kind}/${item.id}`;discoveryItems.set(key,item);
   return `<li><a href="${esc(item.href)}" data-discovery="${esc(key)}" data-entity class="discovery-link">${item.kind==='pianta'?plantThumb(item.id,44):treeThumb(item.id,44)}<span><small>${item.kind==='albero'?'Albero':plantRecord(item.id)?.category||'Pianta'}</small><b>${esc(item.name)}</b><small>${esc(item.phase)}</small></span><span aria-hidden="true">›</span></a></li>`;
- }).join('')}</ul><a href="#/piante" class="discovery-catalog more-row">Altre piante in Scopri</a>`;
+ }).join('')}</ul>${actRow('#/piante','leaf','Altre piante in Scopri','Erbe, fiori, frutti e arbusti')}`;
 }
 // Sfide: nome, foto e scheda di un albero, una pianta o un fungo (la scheda si apre nel pannello laterale).
 function challengeEntity(kind,id){
@@ -1242,7 +1244,7 @@ function challengeEntity(kind,id){
 let challengeAsset=f=>f;
 // In fondo a «Durante il giro»: una sola sfida non completata, adatta ai boschi principali della zona e al mese.
 // Componenti da app: riga-azione (icona, titolo, sottotitolo, freccia) e pillola d'azione breve
-const AR_IC={stamp:'<circle cx="12" cy="10" r="6"/><path d="m9.5 10 1.8 1.8L15 8.2M8.5 15.5 7 21l5-2.5 5 2.5-1.5-5.5"/>',rules:'<path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"/><path d="m9 12 2 2 4-4"/>',nav:'<path d="m3 11 18-8-8 18-2-8z"/>',pin:'<path d="M12 21s-6-5.5-6-11a6 6 0 0 1 12 0c0 5.5-6 11-6 11z"/><circle cx="12" cy="10" r="2.2"/>',go:'<path d="M5 12h14M13 6l6 6-6 6"/>'};
+const AR_IC={stamp:'<circle cx="12" cy="10" r="6"/><path d="m9.5 10 1.8 1.8L15 8.2M8.5 15.5 7 21l5-2.5 5 2.5-1.5-5.5"/>',rules:'<path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"/><path d="m9 12 2 2 4-4"/>',nav:'<path d="m3 11 18-8-8 18-2-8z"/>',pin:'<path d="M12 21s-6-5.5-6-11a6 6 0 0 1 12 0c0 5.5-6 11-6 11z"/><circle cx="12" cy="10" r="2.2"/>',leaf:'<path d="M5 19c0-8 5-13 14-14 0 9-5 14-13 14z"/><path d="M5 19 13 11"/>',go:'<path d="M5 12h14M13 6l6 6-6 6"/>'};
 const arIc=k=>`<svg viewBox="0 0 24 24" aria-hidden="true">${AR_IC[k]}</svg>`;
 const actRow=(href,ic,t,sub='',ext=false)=>`<a class="act-row" href="${href}"${ext?' target="_blank" rel="noopener"':''}><span class="ar-ic">${arIc(ic)}</span><span class="ar-b"><span class="ar-t">${t}</span>${sub?`<span class="ar-s">${sub}</span>`:''}</span></a>`;
 const actPill=(href,ic,t,ext=false)=>`<a class="act-pill" href="${href}"${ext?' target="_blank" rel="noopener"':''}>${arIc(ic)}<span>${t}</span></a>`;

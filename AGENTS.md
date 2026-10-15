@@ -29,7 +29,7 @@ La suite browser avvia un solo Wrangler sulla porta 8788: non lanciarne due insi
 
 ## Regole che non si vedono dal codice
 
-- **Cache del service worker:** quando cambia un file dell'app pubblicata, incrementa `SHELL` in `sw.js` (`fungaroli-shell-vNN`) e aggiorna `PRECACHE` se aggiungi moduli.
+- **Cache del service worker:** quando cambia un file dell'app pubblicata, incrementa `SHELL` in `sw.js` (`fungaroli-shell-vNN`), metti lo stesso valore in `<meta name="app-version">` di `index.html` (serve all'avviso «versione nuova»; lo controlla un test) e aggiorna `PRECACHE` se aggiungi moduli.
 - **CMS:** i contenuti pubblici possono arrivare dallo snapshot del CMS (D1 `CMS_DB`). Cambiare solo un JSON in `data/` non sostituisce un contenuto già pubblicato da un autore. Per un campo nuovo aggiorna insieme schema, renderer, seed e snapshot (vedi `docs/cms.md`).
 - **Nomi definitivi:** sezioni **Uscite**, **Scopri**, **Taccuino**; titoli home «Dove andare», «Altre buone uscite», «Nei boschi in questi giorni». Nella storia Git compaiono nomi precedenti: non ripristinarli.
 - **Gerarchia:** funghi → giro → scoperte. Piante e alberi non cambiano zona, giorno, sentiero o indice.
