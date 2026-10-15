@@ -142,11 +142,14 @@ label.btn { display: inline-flex; }
 .thumb { width: 36px; height: 36px; border-radius: 50%; object-fit: cover; flex: none; background: var(--surface-3); display: inline-block; vertical-align: middle; }
 .thumb-ph { display: inline-grid; place-items: center; font-size: 11px; font-weight: 700; color: var(--muted); text-transform: uppercase; }
 
-/* anello dell'indice (sopra le foto) */
+/* anello dell'indice (sopra le foto). --rc è il colore della fascia registrato come colore: cambiando giorno
+   nella scheda della zona arco (--p) e colore passano al nuovo valore con una transizione */
+@property --rc { syntax: '<color>'; inherits: false; initial-value: transparent; }
 .ring {
+  --rc: var(--c);
   --size: 120px; position: relative; flex: none; width: var(--size); height: var(--size); border-radius: 50%;
   display: grid; place-content: center; justify-items: center; row-gap: 6px; text-align: center; line-height: 1; color: #fff;
-  background: conic-gradient(var(--c) calc(var(--p) * 1%), rgb(255 255 255 / .22) 0);
+  background: conic-gradient(var(--rc) calc(var(--p) * 1%), rgb(255 255 255 / .22) 0);
   box-shadow: 0 6px 20px rgb(0 0 0 / .25);
 }
 .ring::before { content: ''; position: absolute; inset: 6px; border-radius: 50%; background: rgb(16 15 12 / .62); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
@@ -257,6 +260,8 @@ label.btn { display: inline-flex; }
 .phero { position: relative; isolation: isolate; overflow: hidden; color: #fff; background: var(--forest); margin: -8px calc(-1 * var(--gutter)) 0; height: 48vh; height: 48svh; min-height: 330px; max-height: 500px; }
 .phero-tall { height: 64vh; height: 64svh; min-height: 400px; max-height: 640px; }
 .phero-img { position: absolute; inset: 0; border: 0; padding: 0; margin: 0; background: none; cursor: zoom-in; }
+/* copertina nuova che sfuma sopra la vecchia quando cambia il giorno (stagione, meteo) */
+.phero-img > .phero-xfade { pointer-events: none; }
 .phero-bar { position: absolute; z-index: 2; top: calc(env(safe-area-inset-top, 0px) + 12px); left: 12px; right: 12px; display: flex; justify-content: space-between; pointer-events: none; }
 .phero-bar > * { pointer-events: auto; }
 .fab { width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; border: 1px solid rgb(255 255 255 / .22); background: var(--glass); color: #fff; cursor: pointer; backdrop-filter: blur(14px) saturate(1.3); -webkit-backdrop-filter: blur(14px) saturate(1.3); text-decoration: none; }
@@ -1144,6 +1149,7 @@ html.is-offline #updated { color: var(--warn-ink); font-weight: 600; }
 
   /* anelli dell'indice: si riempiono quando la vista entra (non a ogni filtro) */
   html.fresh .ring { animation: ring-fill 1.1s var(--ease-out) both; }
+  .phero > .ring { transition: --p .4s var(--nav-ease), --rc .4s ease; }
   @keyframes ring-fill { from { --p: 0; } }
 
   /* liste: entrano in cascata quando arrivi nella vista */

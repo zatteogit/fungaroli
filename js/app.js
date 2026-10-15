@@ -6,7 +6,7 @@ import {botanicalModels} from './botanical-model.js';
 import './theme.js';
 import './images.js';
 import { consumeFresh, freshDone } from './refresh.js';
-import {updateWeatherHTML,reconcileChildren,keepWeatherReadingPosition} from './weather-dom.js';
+import {updateWeatherHTML,updateHTMLTracked,reconcileChildren,keepWeatherReadingPosition} from './weather-dom.js';
 import { SPECIES, GROUPS, FOREST } from './species.js';
 import { scoreZoneDay, scoreSpecies, habitatAtBand, habitatPotential, elevationFit, combine, classOf, scoreLabel, scoreShortLabel, formatIndex, MODEL_VERSION, PARAMS, CLASSES } from './model.js';
 import { todayISO, loadWeather } from './weather.js';
@@ -28,6 +28,7 @@ import { searchFieldHtml, matchesQuery, renderAlsoIn } from './catalog-search.js
 import { renderGuidedKey } from './guided-key.js';
 import { renderWhy, renderMethod } from './science.js';
 import { navigate, soft, setCoverResolver } from './motion.js';
+import { applyCrop } from './images.js';
 import { FOREST_LEGEND } from './forest-legend.js';
 import { initTrees, renderTreeGrid, renderTreePage, linkTrees, treeChips, treeForCategory, treeThumb, treePhotoSrc, treeHeroSrc } from './trees.js';
 import { crowding, comfortScore, timingAdvice, fmtTime, fmtRough, holidayName, intornoA } from './human.js';
@@ -2149,18 +2150,24 @@ const section = (id, title, body, open = false) => body ? `
   </details>` : '';
 const openSecs = new Set();
 
+// Idempotente: la scheda della zona si aggiorna sul posto e le sezioni restano gli stessi nodi, quindi ogni sezione
+// riceve i suoi gestori una volta sola; l'azione all'apertura (es. i grafici del giorno scelto) è sempre l'ultima.
+const boundSecs = new WeakSet();
 function bindDetailSections(box, onOpen = () => {}) {
+  box._onSecOpen = onOpen;
   const sections = [...box.querySelectorAll('details.sec[data-sec]')];
   const sync = (el) => {
     if(!el.isConnected||!box.contains(el))return;
     if (el.open) {
       // Also enforce exclusivity in browsers without native details[name] support.
-      sections.forEach(other => { if (other !== el) other.open = false; });
+      box.querySelectorAll('details.sec[data-sec]').forEach(other => { if (other !== el) other.open = false; });
       openSecs.clear(); openSecs.add(el.dataset.sec);
-      onOpen(el.dataset.sec);
+      box._onSecOpen(el.dataset.sec);
     } else openSecs.delete(el.dataset.sec);
   };
   sections.forEach(el => {
+    if (boundSecs.has(el)) return;
+    boundSecs.add(el);
     el.addEventListener('toggle', () => sync(el));
     const summary=el.querySelector(':scope > summary');
     summary.addEventListener('click',e=>{
@@ -2172,6 +2179,87 @@ function bindDetailSections(box, onOpen = () => {}) {
   });
   const current = sections.find(el => el.open);
   if (current) sync(current); else openSecs.clear();
+}
+
+// ---- scheda della zona: aggiornamento sul posto e azioni delegate
+const reduceMotion = () => matchMedia('(prefers-reduced-motion: reduce)').matches;
+let detailCtx = null, detailAnimate = false;
+// azioni della scheda delegate su #detail: un solo gestore, qualunque cosa venga aggiornata (niente azioni doppie)
+$('#detail')?.addEventListener('click', (e) => {
+  const day = e.target.closest('#zone-days [data-day-offset]');
+  if (day) {
+    const o = +day.dataset.dayOffset, c = detailCtx;
+    if (!c || o === state.dayOffset) return;
+    history.replaceState(null, '', walkHref(c.z, o, state.trailId ? c.walk?.t : null));
+    state.dayOffset = o; detailAnimate = true;
+    try { renderDetail(); } finally { detailAnimate = false; }
+    return;
+  }
+  if (e.target.closest('[data-zone-weather-retry]')) { refreshWeather(true); return; }
+  const c = detailCtx;
+  if (!c) return;
+  if (e.target.closest('[data-cover]') && c.cov) { openLightbox([{ src: c.cov.hd, alt: c.cov.alt, caption: captionHtml({ title: esc(c.z.name), credit: creditLine(c.cov.credit) }) }]); return; }
+  const save = e.target.closest('[data-save-plan]');
+  if (save && !save.disabled) {
+    const status = e.currentTarget.querySelector('[data-plan-status]');
+    save.disabled = true;
+    journal.savePlan(c.z.id, c.d.date, c.best.band)
+      .then(() => { if (status) status.textContent = 'Previsione e dati salvati nel taccuino. Dopo l’uscita registra specie cercate, orario e ritrovamenti.'; })
+      .catch((err) => { if (status) status.textContent = err.message; })
+      .finally(() => { save.disabled = false; });
+  }
+});
+function updateDetailInPlace(box, html, cov) {
+  const ring = box.querySelector(':scope > .phero > .ring'), before = ring?.querySelector('b')?.textContent;
+  // copertina diversa (stagione, meteo): la vecchia resta finché la nuova, già decodificata, non le sfuma sopra
+  const img = box.querySelector(':scope > .phero .phero-img img'), oldSrc = img && (img.getAttribute('data-src') || img.getAttribute('src'));
+  const tpl = document.createElement('template');
+  tpl.innerHTML = html;
+  const nextImg = tpl.content.querySelector('.phero-img img'), newSrc = nextImg?.getAttribute('data-src');
+  const swap = img && newSrc && oldSrc && newSrc !== oldSrc;
+  if (swap) nextImg.setAttribute('data-src', oldSrc);
+  const changed = updateHTMLTracked(box, tpl.innerHTML);
+  if (swap) crossfadeCover(img, newSrc);
+  if (!detailAnimate || reduceMotion()) return;
+  if (ring && before) countRing(ring, before);
+  // il resto: breve dissolvenza dove il testo è cambiato (il numero dell'anello conta, non sfuma)
+  for (const el of changed) {
+    if (el.closest('.ring b') || el.closest('#zone-days') || !el.getClientRects().length) continue;
+    el.animate([{ opacity: .2 }, { opacity: 1 }], { duration: 240, easing: 'ease-out' });
+  }
+}
+// il numero dell'anello conta dal valore di prima al nuovo (~400 ms), con la virgola e cifre a larghezza fissa
+function countRing(ring, fromText) {
+  const b = ring.querySelector('b'), final = b.textContent;
+  const from = Number(String(fromText).replace(',', '.')), to = Number(final.replace(',', '.'));
+  if (!Number.isFinite(from) || !Number.isFinite(to) || from === to) return;
+  const token = ring._count = {}, t0 = performance.now(), dur = 400;
+  const fmt = (v) => v.toLocaleString('it-IT', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+  const step = (t) => {
+    if (ring._count !== token || !b.isConnected) return;
+    const k = Math.min(1, (t - t0) / dur), e = 1 - (1 - k) ** 3;
+    b.textContent = k === 1 ? final : fmt(from + (to - from) * e);
+    if (k < 1) requestAnimationFrame(step);
+  };
+  b.textContent = fmt(from);
+  requestAnimationFrame(step);
+}
+function crossfadeCover(img, src) {
+  const token = img._swap = {};
+  const next = new Image();
+  next.decoding = 'async';
+  next.alt = ''; next.setAttribute('aria-hidden', 'true'); next.className = 'phero-xfade';
+  next.src = src;
+  const done = () => { if (img._swap !== token) return; img.dataset.imageFast = '1'; img.src = src; img.decode?.().catch(() => {}).finally(() => next.remove()); };
+  next.decode().then(() => {
+    if (img._swap !== token || !img.isConnected) return;
+    // la foto nuova entra già pronta: il MutationObserver delle immagini la trova caricata, niente scheletro
+    next.dataset.imageState = 'ready'; next.dataset.imageFast = '1';
+    applyCrop(next);
+    img.after(next);
+    if (reduceMotion()) { done(); return; }
+    next.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 420, easing: 'ease-out' }).finished.then(done, done);
+  }, () => { if (img._swap === token) img.src = src; });
 }
 
 function renderDetail() {
@@ -2186,8 +2274,8 @@ function renderDetail() {
   }
   if (!d?.best) {
     const missing = [...new Set((d?.perSpecies || []).flatMap((p) => p.quality?.missing || []))];
+    delete box.dataset.zone;detailCtx=null;
     box.innerHTML = `<h1>${esc(z.title || z.name)}</h1>${!series[z.id]?'<p class="notice">Meteo non disponibile per questa zona. <button type="button" class="link-btn" data-zone-weather-retry>Riprova</button></p>':''}<p class="notice">${selectedSpecies().length?'Indice non calcolabile':'Indice non ancora disponibile per le specie selezionate'}${missing.length ? ': mancano ' + esc(missing.join(', ')) : ' per questo giorno'}. Un dato mancante non indica assenza di ${state.target==='piante'?'piante':'funghi'}.</p><p><a href="#/mappa/${z.id}">Apri la mappa</a> · <a href="#/metodo">Metodo e limiti</a></p>${renderWalkFocus(z, d, walk)}${discoverySection(z,d,walk)}${z.protection ? `<p class="notice">${esc(z.protection)}</p>` : ''}<p>${linkTrees(z.description)}</p>${section('accesso','Accessi e soste',renderAccess(z,{access:null}))}${section('sentieri','Sentieri della zona',renderTrails(z,null),true)}`;
-    box.querySelector('[data-zone-weather-retry]')?.addEventListener('click',()=>refreshWeather(true));
     bindDetailSections(box); return;
   }
   const best = d.best;
@@ -2209,7 +2297,14 @@ function renderDetail() {
 
   const [title, sub] = splitName(z);
   const cov = coverOf(z, best.species.id, d);
-  box.innerHTML = `
+  // giorni della zona: cambiano il giorno senza aggiungere voci di cronologia (clic delegato su #detail)
+  const zoneDays = Array.from({ length: AHEAD_DAYS + 1 }, (_, o) => {
+    const x = dayEntry(z.id, o);
+    if (!x?.best) return '';
+    const sc = adjusted(z, x.score, x);
+    return `<button type="button" class="day" role="tab" data-day-offset="${o}" aria-selected="${o === state.dayOffset}"><span class="d1">${o === 0 ? 'Oggi' : o === 1 ? 'Dom' : fmtDate(x.date, { weekday: 'short' }).replace('.', '')}</span><span class="d2">${fmtDate(x.date, { day: 'numeric' })}</span><span class="d3"><span class="dot" style="--dc:var(${scoreVar(sc)});--dcs:var(${scoreVar(sc).replace('--s', '--ps')})"></span><b class="pc">${formatIndex(sc)}</b></span></button>`;
+  }).join('');
+  const html = `
     <header class="phero">
       ${cov ? `<button type="button" class="phero-img" data-cover aria-label="Ingrandisci la foto"><img data-src="${cov.hd}" alt="${esc(cov.alt)}"></button>` : ''}
       <span class="shade"></span>
@@ -2218,7 +2313,7 @@ function renderDetail() {
       ${ring(s)}
     </header>
     <div class="pbody">
-    <div id="zone-days" class="days compact" role="tablist" aria-label="Giorno"></div>
+    <div id="zone-days" class="days compact" role="tablist" aria-label="Giorno">${zoneDays}</div>
     ${renderWalkFocus(z, d, walk)}
     ${essentialSections(z, d, walk)}
     ${discoverySection(z,d,walk)}
@@ -2243,28 +2338,15 @@ function renderDetail() {
         <dt>Quote</dt><dd>${habitat[z.id].elevation.min}–${habitat[z.id].elevation.max} m (mediana ${habitat[z.id].elevation.median})</dd>
       </dl>${zoneMedia[z.id] ? `<p class="small muted">${creditLine(cov?.credit && zoneMedia[z.id] && cov.credit.page === zoneMedia[z.id].page ? cov.credit : zoneMedia[z.id])}</p>` : ''}`)}
     </div>`;
-  box.querySelector('[data-cover]')?.addEventListener('click', () => openLightbox([{ src: cov.hd, alt: cov.alt, caption: captionHtml({ title: esc(z.name), credit: creditLine(cov.credit) }) }]));
-  box.querySelector('[data-save-plan]')?.addEventListener('click', async (e) => {
-    const btn = e.currentTarget, status = box.querySelector('[data-plan-status]');
-    btn.disabled = true;
-    try { await journal.savePlan(z.id, d.date, best.band); status.textContent = 'Previsione e dati salvati nel taccuino. Dopo l’uscita registra specie cercate, orario e ritrovamenti.'; }
-    catch (err) { status.textContent = err.message; }
-    finally { btn.disabled = false; }
-  });
-  // giorni della zona: cambiano il giorno senza aggiungere voci di cronologia
-  const zd = $('#zone-days');
-  zd.innerHTML = '';
-  for (let o = 0; o <= AHEAD_DAYS; o++) {
-    const x = dayEntry(z.id, o);
-    if (!x?.best) continue;
-    const sc = adjusted(z, x.score, x);
-    const b = document.createElement('button');
-    b.type = 'button'; b.className = 'day'; b.setAttribute('role', 'tab'); b.setAttribute('aria-selected', String(o === state.dayOffset));
-    b.innerHTML = `<span class="d1">${o === 0 ? 'Oggi' : o === 1 ? 'Dom' : fmtDate(x.date, { weekday: 'short' }).replace('.', '')}</span><span class="d2">${fmtDate(x.date, { day: 'numeric' })}</span><span class="d3"><span class="dot" style="--dc:var(${scoreVar(sc)});--dcs:var(${scoreVar(sc).replace('--s', '--ps')})"></span><b class="pc">${formatIndex(sc)}</b></span>`;
-    b.addEventListener('click', () => soft(() => { history.replaceState(null, '', walkHref(z, o, state.trailId ? walk?.t : null)); state.dayOffset = o; renderDetail(); }));
-    zd.appendChild(b);
-  }
-  zd.querySelector('[aria-selected="true"]')?.scrollIntoView({ block: 'nearest', inline: 'center' });
+  // Stessa zona già sulla pagina (cambio di giorno, meteo nuovo): si aggiornano solo le parti cambiate. Copertina,
+  // anello, titoli, giorni e sezioni aperte restano gli stessi nodi; niente ridisegno completo né scatti.
+  detailCtx = { z, d, best, cov, walk };
+  const inPlace = box.dataset.zone === z.id && !!box.querySelector(':scope > .phero');
+  if (inPlace) updateDetailInPlace(box, html, cov);
+  else { box.innerHTML = html; box.dataset.zone = z.id; }
+  const zd = $('#zone-days'), sel = zd.querySelector('[aria-selected="true"]');
+  // solo in orizzontale, dentro la barra dei giorni: la pagina non si muove
+  if (sel) { const zr = zd.getBoundingClientRect(), br = sel.getBoundingClientRect(); zd.scrollTo({ left: zd.scrollLeft + br.left - zr.left - (zr.width - br.width) / 2, behavior: inPlace && !reduceMotion() ? 'smooth' : 'instant' }); }
   const drawCharts = () => $('#charts') && renderCharts($('#charts'), {
     dates: days.map((x) => x.date),
     rain: days.map((x) => sb.p[x.i]),

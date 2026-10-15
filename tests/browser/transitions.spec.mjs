@@ -130,3 +130,50 @@ test('senza View Transitions la navigazione funziona senza errori',async({page})
   await expect(page.locator('.view:not([hidden]) .phero-title')).toBeVisible();
   expect(errors).toEqual([]);
 });
+
+// Scheda della zona: cambiando giorno copertina, anello e giorni restano gli stessi nodi; l'anello arriva al valore
+// del giorno scelto; nessuno spostamento; le azioni della scheda non si duplicano.
+async function pickDays(page,n) {
+  const offsets=await page.locator('#zone-days [data-day-offset]').evaluateAll(els=>els.filter(b=>b.getAttribute('aria-selected')!=='true').map(b=>b.dataset.dayOffset));
+  return offsets.slice(0,n).reverse();
+}
+const ringState=page=>page.evaluate(()=>{const r=document.querySelector('#detail .phero > .ring');return{same:r===window.__ring,cover:document.querySelector('#detail .phero')===window.__cover,img:document.querySelector('#detail .phero-img img')===window.__img,text:r.querySelector('b').textContent,p:parseFloat(getComputedStyle(r).getPropertyValue('--p')),focus:document.activeElement?.dataset?.dayOffset||''};});
+for(const width of [390,1280]) test(`cambio di giorno nella zona senza ricreare la copertina a ${width}px`,async({page})=>{
+  const errors=await setup(page,width);
+  await step(page,()=>page.locator('#hero .cover-link').click());
+  await page.evaluate(()=>{window.__ring=document.querySelector('#detail .phero > .ring');window.__cover=document.querySelector('#detail .phero');window.__img=document.querySelector('#detail .phero-img img');});
+  const days=await pickDays(page,3);expect(days.length).toBe(3);
+  for(const o of days) {
+    const day=page.locator(`#zone-days [data-day-offset="${o}"]`),expected=await day.locator('.pc').textContent();
+    const r=await step(page,()=>day.click());
+    expect(r.shift).toBeLessThan(SHIFT_MAX);
+    await expect(day).toHaveAttribute('aria-selected','true');
+    const s=await ringState(page);
+    expect(s.same).toBe(true);expect(s.cover).toBe(true);expect(s.img).toBe(true);
+    expect(s.text).toBe(expected);
+    expect(Math.abs(s.p-Number(expected.replace(',','.'))*10)).toBeLessThan(.6);
+    // il giorno toccato resta col focus, la pagina non scorre
+    expect(s.focus).toBe(o);expect(r.y).toBe(0);
+  }
+  expect(page.url()).toContain(`/zona/`);expect(page.url()).toContain(`/${days.at(-1)}`);
+  // dopo tre cambi di giorno un'azione della scheda si esegue una volta sola
+  await page.evaluate(()=>{window.__writes=0;const set=Storage.prototype.setItem;Storage.prototype.setItem=function(k,v){if(/^fungaroli:diario/.test(k))window.__writes++;return set.call(this,k,v);};});
+  await page.locator('#detail [data-save-plan]').click();
+  await expect(page.locator('#detail [data-plan-status]')).toContainText('salvati');
+  await page.waitForTimeout(400);
+  expect(await page.evaluate(()=>window.__writes)).toBe(1);
+  expect(errors).toEqual([]);
+});
+
+test('cambio di giorno con «riduci movimento»: valori subito finali',async({page})=>{
+  const errors=await setup(page,390,{reduced:true});
+  await page.locator('#hero .cover-link').click();await expect(page.locator('#detail .phero > .ring')).toBeVisible();
+  await page.evaluate(()=>{window.__ring=document.querySelector('#detail .phero > .ring');});
+  const [o]=await pickDays(page,1),day=page.locator(`#zone-days [data-day-offset="${o}"]`),expected=await day.locator('.pc').textContent();
+  await day.click();
+  // nessun conteggio e nessuna transizione dell'arco: il valore è già quello finale
+  const s=await page.evaluate(()=>{const r=document.querySelector('#detail .phero > .ring');return{same:r===window.__ring,text:r.querySelector('b').textContent,p:parseFloat(getComputedStyle(r).getPropertyValue('--p')),anims:r.getAnimations().length};});
+  expect(s.same).toBe(true);expect(s.text).toBe(expected);expect(s.anims).toBe(0);
+  expect(Math.abs(s.p-Number(expected.replace(',','.'))*10)).toBeLessThan(.6);
+  expect(errors).toEqual([]);
+});

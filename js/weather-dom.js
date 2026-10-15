@@ -3,9 +3,15 @@
 // or controls with handlers that close over a particular forecast.
 const identity=n=>n.nodeType===1?(n.getAttribute('data-weather-key')||n.id||n.getAttribute('data-day-offset')||''):'';
 function compatible(a,b){return a.nodeType===b.nodeType&&(a.nodeType!==1||a.tagName===b.tagName)&&identity(a)===identity(b);}
+// Elementi il cui testo cambia davvero durante un aggiornamento (per una breve dissolvenza): si annota il testo di
+// prima del genitore alla prima modifica e alla fine si tengono solo quelli diversi (una parola del glossario
+// trasformata in link e poi riportata a testo non conta come cambiamento).
+let tracking=null;
 function patch(a,b){
-  if(a.nodeType===3){if(a.textContent!==b.textContent)a.textContent=b.textContent;return;}
+  if(a.nodeType===3){if(a.textContent!==b.textContent){const p=a.parentElement;if(tracking&&p&&!tracking.text.has(p))tracking.text.set(p,p.textContent);a.textContent=b.textContent;}return;}
   if(a.nodeType!==1)return;
+  // l'alone «ambilight» (js/ambilight.js) è calcolato sulla foto: non sta nell'HTML e va conservato
+  const amb=a.classList.contains('has-amb')?['--amb-t','--amb-l','--amb-r','--amb-b'].map(k=>[k,a.style.getPropertyValue(k)]):null;
   if(a.tagName==='IMG'){
     const src=b.getAttribute('data-src')||b.getAttribute('src');
     if(src&&(a.getAttribute('src')===src||a.getAttribute('data-src')===src)){
@@ -14,15 +20,19 @@ function patch(a,b){
   }
   for(const attr of [...a.attributes])if(!b.hasAttribute(attr.name)&&!['data-counted','data-image-state'].includes(attr.name)&&!(a.matches('a.glossary-link,a[data-entity]')&&['aria-expanded','aria-controls'].includes(attr.name)))a.removeAttribute(attr.name);
   for(const attr of b.attributes)if(a.getAttribute(attr.name)!==attr.value)a.setAttribute(attr.name,attr.value);
+  if(amb){a.classList.add('has-amb');for(const [k,v] of amb)if(v)a.style.setProperty(k,v);}
   reconcileChildren(a,b);
 }
+// js/rails.js avvolge le righe che scorrono (giorni, strisce di foto) in un .rail-host con le frecce: per il confronto
+// conta la riga dentro, e l'involucro si sposta con lei
+const inner=n=>n.nodeType===1&&n.classList.contains('rail-host')?n.querySelector(':scope > :not(.rail-arrow)')||n:n;
 export function reconcileChildren(target,source){
   const unused=[...target.childNodes];let cursor=target.firstChild;
   for(const desired of [...source.childNodes]){
     const key=identity(desired);
-    let actual=key?unused.find(n=>compatible(n,desired)):unused.find(n=>n===cursor&&compatible(n,desired));
-    if(actual){unused.splice(unused.indexOf(actual),1);if(actual!==cursor)target.insertBefore(actual,cursor);patch(actual,desired);}
-    else{actual=desired;target.insertBefore(actual,cursor);}
+    let actual=key?unused.find(n=>compatible(inner(n),desired)):unused.find(n=>n===cursor&&compatible(inner(n),desired));
+    if(actual){unused.splice(unused.indexOf(actual),1);if(actual!==cursor)target.insertBefore(actual,cursor);patch(inner(actual),desired);}
+    else{actual=desired;target.insertBefore(actual,cursor);if(tracking&&actual.nodeType===1)tracking.added.add(actual);}
     cursor=actual.nextSibling;
   }
   unused.forEach(n=>n.remove());
@@ -30,6 +40,16 @@ export function reconcileChildren(target,source){
 export function updateWeatherHTML(target,html){
   const fragment=document.createElement('template');fragment.innerHTML=html;
   reconcileChildren(target,fragment.content);
+}
+
+// Come updateWeatherHTML, e restituisce gli elementi con testo cambiato o nuovi.
+export function updateHTMLTracked(target,html){
+  const t=tracking={text:new Map(),added:new Set()};
+  try{updateWeatherHTML(target,html);}
+  finally{tracking=null;}
+  const out=new Set([...t.added].filter(el=>el.isConnected));
+  for(const [el,before] of t.text)if(el.isConnected&&el.textContent!==before)out.add(el);
+  return out;
 }
 
 export function keepWeatherReadingPosition(render){
