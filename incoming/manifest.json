@@ -16093,5 +16093,101 @@
     "prompt": "A transparent PNG sprite sheet, square1254x1254, invisible3x3cells418px each. Use reference1 for EXACT SMALL ICON SIZE, generous TRANSPARENT CELL MARGINS and row positions. Three rows: column1 CAP ONLY side view, column2 WHOLE MUSHROOM, column3 entirely EMPTY. Each separate icon centered in its own cell, at most60% of cell width AND height, at least18% alpha0 padding on EVERY cell edge. No drawn grid, background, shadows, ground, text, numbers or marks. Clean thick dark brown COMPLETE silhouette outline, flat few colors same as species icons. References2 onward show the approved base icons: preserve cap COLOR and all stems, rings, volvas, netting, scales and spots, change ONLY cap SHAPE and age-appropriate proportions. Each row's cap-only and whole must MATCH shape/color. ROW1: amanita-rubescens, base cap color rosa, target shape FLAT: almost horizontal, expanded cap. Keep attached base icon anatomy; scientific constraints: {\"ring\":true,\"volva\":null,\"reticulum\":false,\"cap_surface\":null,\"hymenophore\":[\"lamelle\"]}. ROW2: amanita-crocea, base cap color arancio, target shape HEMISPHERICAL: rounded half-sphere dome. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":true,\"reticulum\":false,\"cap_surface\":[\"viscida\",\"liscia\",\"asciutta\"],\"hymenophore\":[\"lamelle\"]}. ROW3: amanita-crocea, base cap color arancio, target shape FLAT: almost horizontal, expanded cap. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":true,\"reticulum\":false,\"cap_surface\":[\"viscida\",\"liscia\",\"asciutta\"],\"hymenophore\":[\"lamelle\"]}. No new anatomical traits. Reference species icons are shape/color authorities except the explicit target cap shape. Cap-only must match whole cap. Last column empty. True alpha background.",
     "edits": [],
     "stato": "ok"
+  },
+  {
+    "file": "incoming/icone/forme-07.png",
+    "tipo": "illustrazione",
+    "soggetto": "lepiota-brunneoincarnata",
+    "tessera": "cappello",
+    "cella": 0,
+    "variante": "forma:piano",
+    "base": {
+      "forma": "convesso",
+      "colore": "rosa"
+    },
+    "modello": "image_gen (identificatore tecnico non esposto)",
+    "prompt": "A transparent PNG sprite sheet, square1254x1254, invisible3x3cells418px each. Use reference1 for EXACT SMALL ICON SIZE, generous TRANSPARENT CELL MARGINS and row positions. Three rows: column1 CAP ONLY side view, column2 WHOLE MUSHROOM, column3 entirely EMPTY. Each separate icon centered in its own cell, at most60% of cell width AND height, at least18% alpha0 padding on EVERY cell edge. No drawn grid, background, shadows, ground, text, numbers or marks. Clean thick dark brown COMPLETE silhouette outline, flat few colors same as species icons. References2 onward show the approved base icons: preserve cap COLOR and all stems, rings, volvas, netting, scales and spots, change ONLY cap SHAPE and age-appropriate proportions. Each row's cap-only and whole must MATCH shape/color. ROW1: lepiota-brunneoincarnata, base cap color rosa, target shape FLAT: almost horizontal, expanded cap. Keep attached base icon anatomy; scientific constraints: {\"ring\":null,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"squamosa\",\"vellutata/feltrata\",\"asciutta\",\"liscia\"],\"hymenophore\":[\"lamelle\"]}. ROW2: lepiota-brunneoincarnata, base cap color rosa, target shape UMBONATE: expanded umbrella cap with a distinct central raised bump. Keep attached base icon anatomy; scientific constraints: {\"ring\":null,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"squamosa\",\"vellutata/feltrata\",\"asciutta\",\"liscia\"],\"hymenophore\":[\"lamelle\"]}. ROW3: lepiota-subincarnata, base cap color rosa, target shape FLAT: almost horizontal, expanded cap. Keep attached base icon anatomy; scientific constraints: {\"ring\":null,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"squamosa\",\"vellutata/feltrata\",\"asciutta\",\"liscia\"],\"hymenophore\":[\"lamelle\"]}. No new anatomical traits. Reference species icons are shape/color authorities except the explicit target cap shape. Cap-only must match whole cap. Last column empty. True alpha background.",
+    "edits": [],
+    "stato": "ok"
+  },
+  {
+    "file": "incoming/icone/forme-07.png",
+    "tipo": "illustrazione",
+    "soggetto": "lepiota-brunneoincarnata",
+    "tessera": "gambo",
+    "cella": 1,
+    "variante": "forma:piano",
+    "base": {
+      "forma": "convesso",
+      "colore": "rosa"
+    },
+    "modello": "image_gen (identificatore tecnico non esposto)",
+    "prompt": "A transparent PNG sprite sheet, square1254x1254, invisible3x3cells418px each. Use reference1 for EXACT SMALL ICON SIZE, generous TRANSPARENT CELL MARGINS and row positions. Three rows: column1 CAP ONLY side view, column2 WHOLE MUSHROOM, column3 entirely EMPTY. Each separate icon centered in its own cell, at most60% of cell width AND height, at least18% alpha0 padding on EVERY cell edge. No drawn grid, background, shadows, ground, text, numbers or marks. Clean thick dark brown COMPLETE silhouette outline, flat few colors same as species icons. References2 onward show the approved base icons: preserve cap COLOR and all stems, rings, volvas, netting, scales and spots, change ONLY cap SHAPE and age-appropriate proportions. Each row's cap-only and whole must MATCH shape/color. ROW1: lepiota-brunneoincarnata, base cap color rosa, target shape FLAT: almost horizontal, expanded cap. Keep attached base icon anatomy; scientific constraints: {\"ring\":null,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"squamosa\",\"vellutata/feltrata\",\"asciutta\",\"liscia\"],\"hymenophore\":[\"lamelle\"]}. ROW2: lepiota-brunneoincarnata, base cap color rosa, target shape UMBONATE: expanded umbrella cap with a distinct central raised bump. Keep attached base icon anatomy; scientific constraints: {\"ring\":null,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"squamosa\",\"vellutata/feltrata\",\"asciutta\",\"liscia\"],\"hymenophore\":[\"lamelle\"]}. ROW3: lepiota-subincarnata, base cap color rosa, target shape FLAT: almost horizontal, expanded cap. Keep attached base icon anatomy; scientific constraints: {\"ring\":null,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"squamosa\",\"vellutata/feltrata\",\"asciutta\",\"liscia\"],\"hymenophore\":[\"lamelle\"]}. No new anatomical traits. Reference species icons are shape/color authorities except the explicit target cap shape. Cap-only must match whole cap. Last column empty. True alpha background.",
+    "edits": [],
+    "stato": "ok"
+  },
+  {
+    "file": "incoming/icone/forme-07.png",
+    "tipo": "illustrazione",
+    "soggetto": "lepiota-brunneoincarnata",
+    "tessera": "cappello",
+    "cella": 3,
+    "variante": "forma:ombrellato",
+    "base": {
+      "forma": "convesso",
+      "colore": "rosa"
+    },
+    "modello": "image_gen (identificatore tecnico non esposto)",
+    "prompt": "A transparent PNG sprite sheet, square1254x1254, invisible3x3cells418px each. Use reference1 for EXACT SMALL ICON SIZE, generous TRANSPARENT CELL MARGINS and row positions. Three rows: column1 CAP ONLY side view, column2 WHOLE MUSHROOM, column3 entirely EMPTY. Each separate icon centered in its own cell, at most60% of cell width AND height, at least18% alpha0 padding on EVERY cell edge. No drawn grid, background, shadows, ground, text, numbers or marks. Clean thick dark brown COMPLETE silhouette outline, flat few colors same as species icons. References2 onward show the approved base icons: preserve cap COLOR and all stems, rings, volvas, netting, scales and spots, change ONLY cap SHAPE and age-appropriate proportions. Each row's cap-only and whole must MATCH shape/color. ROW1: lepiota-brunneoincarnata, base cap color rosa, target shape FLAT: almost horizontal, expanded cap. Keep attached base icon anatomy; scientific constraints: {\"ring\":null,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"squamosa\",\"vellutata/feltrata\",\"asciutta\",\"liscia\"],\"hymenophore\":[\"lamelle\"]}. ROW2: lepiota-brunneoincarnata, base cap color rosa, target shape UMBONATE: expanded umbrella cap with a distinct central raised bump. Keep attached base icon anatomy; scientific constraints: {\"ring\":null,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"squamosa\",\"vellutata/feltrata\",\"asciutta\",\"liscia\"],\"hymenophore\":[\"lamelle\"]}. ROW3: lepiota-subincarnata, base cap color rosa, target shape FLAT: almost horizontal, expanded cap. Keep attached base icon anatomy; scientific constraints: {\"ring\":null,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"squamosa\",\"vellutata/feltrata\",\"asciutta\",\"liscia\"],\"hymenophore\":[\"lamelle\"]}. No new anatomical traits. Reference species icons are shape/color authorities except the explicit target cap shape. Cap-only must match whole cap. Last column empty. True alpha background.",
+    "edits": [],
+    "stato": "ok"
+  },
+  {
+    "file": "incoming/icone/forme-07.png",
+    "tipo": "illustrazione",
+    "soggetto": "lepiota-brunneoincarnata",
+    "tessera": "gambo",
+    "cella": 4,
+    "variante": "forma:ombrellato",
+    "base": {
+      "forma": "convesso",
+      "colore": "rosa"
+    },
+    "modello": "image_gen (identificatore tecnico non esposto)",
+    "prompt": "A transparent PNG sprite sheet, square1254x1254, invisible3x3cells418px each. Use reference1 for EXACT SMALL ICON SIZE, generous TRANSPARENT CELL MARGINS and row positions. Three rows: column1 CAP ONLY side view, column2 WHOLE MUSHROOM, column3 entirely EMPTY. Each separate icon centered in its own cell, at most60% of cell width AND height, at least18% alpha0 padding on EVERY cell edge. No drawn grid, background, shadows, ground, text, numbers or marks. Clean thick dark brown COMPLETE silhouette outline, flat few colors same as species icons. References2 onward show the approved base icons: preserve cap COLOR and all stems, rings, volvas, netting, scales and spots, change ONLY cap SHAPE and age-appropriate proportions. Each row's cap-only and whole must MATCH shape/color. ROW1: lepiota-brunneoincarnata, base cap color rosa, target shape FLAT: almost horizontal, expanded cap. Keep attached base icon anatomy; scientific constraints: {\"ring\":null,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"squamosa\",\"vellutata/feltrata\",\"asciutta\",\"liscia\"],\"hymenophore\":[\"lamelle\"]}. ROW2: lepiota-brunneoincarnata, base cap color rosa, target shape UMBONATE: expanded umbrella cap with a distinct central raised bump. Keep attached base icon anatomy; scientific constraints: {\"ring\":null,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"squamosa\",\"vellutata/feltrata\",\"asciutta\",\"liscia\"],\"hymenophore\":[\"lamelle\"]}. ROW3: lepiota-subincarnata, base cap color rosa, target shape FLAT: almost horizontal, expanded cap. Keep attached base icon anatomy; scientific constraints: {\"ring\":null,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"squamosa\",\"vellutata/feltrata\",\"asciutta\",\"liscia\"],\"hymenophore\":[\"lamelle\"]}. No new anatomical traits. Reference species icons are shape/color authorities except the explicit target cap shape. Cap-only must match whole cap. Last column empty. True alpha background.",
+    "edits": [],
+    "stato": "ok"
+  },
+  {
+    "file": "incoming/icone/forme-07.png",
+    "tipo": "illustrazione",
+    "soggetto": "lepiota-subincarnata",
+    "tessera": "cappello",
+    "cella": 6,
+    "variante": "forma:piano",
+    "base": {
+      "forma": "convesso",
+      "colore": "rosa"
+    },
+    "modello": "image_gen (identificatore tecnico non esposto)",
+    "prompt": "A transparent PNG sprite sheet, square1254x1254, invisible3x3cells418px each. Use reference1 for EXACT SMALL ICON SIZE, generous TRANSPARENT CELL MARGINS and row positions. Three rows: column1 CAP ONLY side view, column2 WHOLE MUSHROOM, column3 entirely EMPTY. Each separate icon centered in its own cell, at most60% of cell width AND height, at least18% alpha0 padding on EVERY cell edge. No drawn grid, background, shadows, ground, text, numbers or marks. Clean thick dark brown COMPLETE silhouette outline, flat few colors same as species icons. References2 onward show the approved base icons: preserve cap COLOR and all stems, rings, volvas, netting, scales and spots, change ONLY cap SHAPE and age-appropriate proportions. Each row's cap-only and whole must MATCH shape/color. ROW1: lepiota-brunneoincarnata, base cap color rosa, target shape FLAT: almost horizontal, expanded cap. Keep attached base icon anatomy; scientific constraints: {\"ring\":null,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"squamosa\",\"vellutata/feltrata\",\"asciutta\",\"liscia\"],\"hymenophore\":[\"lamelle\"]}. ROW2: lepiota-brunneoincarnata, base cap color rosa, target shape UMBONATE: expanded umbrella cap with a distinct central raised bump. Keep attached base icon anatomy; scientific constraints: {\"ring\":null,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"squamosa\",\"vellutata/feltrata\",\"asciutta\",\"liscia\"],\"hymenophore\":[\"lamelle\"]}. ROW3: lepiota-subincarnata, base cap color rosa, target shape FLAT: almost horizontal, expanded cap. Keep attached base icon anatomy; scientific constraints: {\"ring\":null,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"squamosa\",\"vellutata/feltrata\",\"asciutta\",\"liscia\"],\"hymenophore\":[\"lamelle\"]}. No new anatomical traits. Reference species icons are shape/color authorities except the explicit target cap shape. Cap-only must match whole cap. Last column empty. True alpha background.",
+    "edits": [],
+    "stato": "ok"
+  },
+  {
+    "file": "incoming/icone/forme-07.png",
+    "tipo": "illustrazione",
+    "soggetto": "lepiota-subincarnata",
+    "tessera": "gambo",
+    "cella": 7,
+    "variante": "forma:piano",
+    "base": {
+      "forma": "convesso",
+      "colore": "rosa"
+    },
+    "modello": "image_gen (identificatore tecnico non esposto)",
+    "prompt": "A transparent PNG sprite sheet, square1254x1254, invisible3x3cells418px each. Use reference1 for EXACT SMALL ICON SIZE, generous TRANSPARENT CELL MARGINS and row positions. Three rows: column1 CAP ONLY side view, column2 WHOLE MUSHROOM, column3 entirely EMPTY. Each separate icon centered in its own cell, at most60% of cell width AND height, at least18% alpha0 padding on EVERY cell edge. No drawn grid, background, shadows, ground, text, numbers or marks. Clean thick dark brown COMPLETE silhouette outline, flat few colors same as species icons. References2 onward show the approved base icons: preserve cap COLOR and all stems, rings, volvas, netting, scales and spots, change ONLY cap SHAPE and age-appropriate proportions. Each row's cap-only and whole must MATCH shape/color. ROW1: lepiota-brunneoincarnata, base cap color rosa, target shape FLAT: almost horizontal, expanded cap. Keep attached base icon anatomy; scientific constraints: {\"ring\":null,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"squamosa\",\"vellutata/feltrata\",\"asciutta\",\"liscia\"],\"hymenophore\":[\"lamelle\"]}. ROW2: lepiota-brunneoincarnata, base cap color rosa, target shape UMBONATE: expanded umbrella cap with a distinct central raised bump. Keep attached base icon anatomy; scientific constraints: {\"ring\":null,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"squamosa\",\"vellutata/feltrata\",\"asciutta\",\"liscia\"],\"hymenophore\":[\"lamelle\"]}. ROW3: lepiota-subincarnata, base cap color rosa, target shape FLAT: almost horizontal, expanded cap. Keep attached base icon anatomy; scientific constraints: {\"ring\":null,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"squamosa\",\"vellutata/feltrata\",\"asciutta\",\"liscia\"],\"hymenophore\":[\"lamelle\"]}. No new anatomical traits. Reference species icons are shape/color authorities except the explicit target cap shape. Cap-only must match whole cap. Last column empty. True alpha background.",
+    "edits": [],
+    "stato": "ok"
   }
 ]

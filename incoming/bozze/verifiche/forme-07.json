@@ -1,0 +1,283 @@
+{
+  "file": "incoming/icone/forme-07.png",
+  "stato": "ok",
+  "verifiche": [
+    {
+      "cella": 0,
+      "bbox": [
+        62,
+        156,
+        356,
+        261
+      ],
+      "attesa": true,
+      "margini_px": [
+        62,
+        156,
+        62,
+        157
+      ],
+      "margini_ok": true,
+      "contorno_scuro_estremi": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cella": 1,
+      "bbox": [
+        62,
+        88,
+        355,
+        329
+      ],
+      "attesa": true,
+      "margini_px": [
+        62,
+        88,
+        63,
+        89
+      ],
+      "margini_ok": true,
+      "contorno_scuro_estremi": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cella": 2,
+      "bbox": null,
+      "attesa": false,
+      "vuota": true
+    },
+    {
+      "cella": 3,
+      "bbox": [
+        62,
+        145,
+        356,
+        273
+      ],
+      "attesa": true,
+      "margini_px": [
+        62,
+        145,
+        62,
+        145
+      ],
+      "margini_ok": true,
+      "contorno_scuro_estremi": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cella": 4,
+      "bbox": [
+        67,
+        85,
+        350,
+        333
+      ],
+      "attesa": true,
+      "margini_px": [
+        67,
+        85,
+        68,
+        85
+      ],
+      "margini_ok": true,
+      "contorno_scuro_estremi": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cella": 5,
+      "bbox": null,
+      "attesa": false,
+      "vuota": true
+    },
+    {
+      "cella": 6,
+      "bbox": [
+        62,
+        154,
+        356,
+        263
+      ],
+      "attesa": true,
+      "margini_px": [
+        62,
+        154,
+        62,
+        155
+      ],
+      "margini_ok": true,
+      "contorno_scuro_estremi": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cella": 7,
+      "bbox": [
+        62,
+        93,
+        356,
+        324
+      ],
+      "attesa": true,
+      "margini_px": [
+        62,
+        93,
+        62,
+        94
+      ],
+      "margini_ok": true,
+      "contorno_scuro_estremi": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cella": 8,
+      "bbox": null,
+      "attesa": false,
+      "vuota": true
+    }
+  ],
+  "normalizzazione": [
+    {
+      "cella": 0,
+      "bbox_originale": [
+        78,
+        207,
+        393,
+        319
+      ],
+      "scala": 0.9333333333333333,
+      "dimensioni": [
+        294,
+        105
+      ],
+      "posizione": [
+        62,
+        156
+      ]
+    },
+    {
+      "cella": 1,
+      "bbox_originale": [
+        63,
+        135,
+        356,
+        376
+      ],
+      "scala": 1,
+      "dimensioni": [
+        293,
+        241
+      ],
+      "posizione": [
+        480,
+        88
+      ]
+    },
+    {
+      "cella": 3,
+      "bbox_originale": [
+        78,
+        146,
+        392,
+        283
+      ],
+      "scala": 0.9363057324840764,
+      "dimensioni": [
+        294,
+        128
+      ],
+      "posizione": [
+        62,
+        563
+      ]
+    },
+    {
+      "cella": 4,
+      "bbox_originale": [
+        68,
+        96,
+        351,
+        344
+      ],
+      "scala": 1,
+      "dimensioni": [
+        283,
+        248
+      ],
+      "posizione": [
+        485,
+        503
+      ]
+    },
+    {
+      "cella": 6,
+      "bbox_originale": [
+        78,
+        135,
+        393,
+        252
+      ],
+      "scala": 0.9333333333333333,
+      "dimensioni": [
+        294,
+        109
+      ],
+      "posizione": [
+        62,
+        990
+      ]
+    },
+    {
+      "cella": 7,
+      "bbox_originale": [
+        61,
+        77,
+        357,
+        310
+      ],
+      "scala": 0.9932432432432432,
+      "dimensioni": [
+        294,
+        231
+      ],
+      "posizione": [
+        480,
+        929
+      ]
+    }
+  ],
+  "bytes": 60358,
+  "dimensioni": [
+    1254,
+    1254
+  ],
+  "sha256": "e4c838ab1d2885efad1fce17557b4fe5f1044536993662b9453ce5bcb19b5df8",
+  "prompt": "A transparent PNG sprite sheet, square1254x1254, invisible3x3cells418px each. Use reference1 for EXACT SMALL ICON SIZE, generous TRANSPARENT CELL MARGINS and row positions. Three rows: column1 CAP ONLY side view, column2 WHOLE MUSHROOM, column3 entirely EMPTY. Each separate icon centered in its own cell, at most60% of cell width AND height, at least18% alpha0 padding on EVERY cell edge. No drawn grid, background, shadows, ground, text, numbers or marks. Clean thick dark brown COMPLETE silhouette outline, flat few colors same as species icons. References2 onward show the approved base icons: preserve cap COLOR and all stems, rings, volvas, netting, scales and spots, change ONLY cap SHAPE and age-appropriate proportions. Each row's cap-only and whole must MATCH shape/color. ROW1: lepiota-brunneoincarnata, base cap color rosa, target shape FLAT: almost horizontal, expanded cap. Keep attached base icon anatomy; scientific constraints: {\"ring\":null,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"squamosa\",\"vellutata/feltrata\",\"asciutta\",\"liscia\"],\"hymenophore\":[\"lamelle\"]}. ROW2: lepiota-brunneoincarnata, base cap color rosa, target shape UMBONATE: expanded umbrella cap with a distinct central raised bump. Keep attached base icon anatomy; scientific constraints: {\"ring\":null,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"squamosa\",\"vellutata/feltrata\",\"asciutta\",\"liscia\"],\"hymenophore\":[\"lamelle\"]}. ROW3: lepiota-subincarnata, base cap color rosa, target shape FLAT: almost horizontal, expanded cap. Keep attached base icon anatomy; scientific constraints: {\"ring\":null,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"squamosa\",\"vellutata/feltrata\",\"asciutta\",\"liscia\"],\"hymenophore\":[\"lamelle\"]}. No new anatomical traits. Reference species icons are shape/color authorities except the explicit target cap shape. Cap-only must match whole cap. Last column empty. True alpha background.",
+  "edits": [],
+  "normalizza": true,
+  "visivo_ok": true,
+  "nota": "Lepiote rosa a squame, bruno-incarnata piana/umbonata e subincarnata piana; gambo corto senza anello scorrevole o volva, caratteri della base conservati. Scala e centratura normalizzate con Python su autorizzazione di Matteo; disegno invariato."
+}
