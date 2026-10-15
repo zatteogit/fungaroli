@@ -3289,3 +3289,15 @@ summary .plan-crit { cursor: auto; -webkit-user-select: text; user-select: text;
 @media (min-width: 600px) {
   #views .phero ~ .pbody { --sheet: color-mix(in srgb, var(--surface) 55%, var(--bg)); background: var(--sheet); padding-bottom: 28px; border-radius: 26px; box-shadow: 0 1px 0 var(--hair), 0 18px 40px -28px rgb(0 0 0 / .35); }
 }
+/* alberi: icone disegnate dei caratteri (una per valore) nelle schede e nella chiave guidata */
+.trait-strip-ill { grid-template-columns: repeat(auto-fill, minmax(104px, 1fr)); }
+.trait-strip-ill li { justify-items: center; text-align: center; padding: 10px 8px; }
+.trait-strip-ill .ts-v { font-size: 13.5px; font-weight: 600; line-height: 1.3; }
+.trait-strip .ts-art-2 { gap: 4px; }
+.trait-strip .ts-art-2 .ts-ill { width: 44px; height: 44px; }
+.gk-grid-ill { grid-template-columns: repeat(auto-fill, minmax(108px, 1fr)); }
+.gk-grid-ill .id-opt { align-content: start; justify-items: center; text-align: center; padding: 12px 8px 10px; gap: 6px; }
+.gk-grid-ill .id-art, .gk-grid-ill .id-art:empty { display: grid; width: 56px; height: 56px; }
+.gk-grid-ill .id-art .ts-ill { width: 56px; height: 56px; }
+.gk-grid-ill .id-opt-dk { align-self: stretch; align-content: center; }
+.gk-row-ill { width: 28px; height: 28px; display: inline-block; vertical-align: middle; margin: -4px 6px -4px 0; }

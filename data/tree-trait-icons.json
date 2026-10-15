@@ -1,0 +1,126 @@
+{
+ "note": "Icone dei caratteri degli alberi disegnate con AI (image_gen) a partire dallo schema dei caratteri di data/recognize-trees.json, riviste dal proprietario del progetto. Una icona per valore, non per specie: non sono foto e non servono a identificare.",
+ "path": "assets/tree-traits/<chiave>-<valore>.webp",
+ "values": {
+  "leaf_kind": [
+   "aghi",
+   "squame",
+   "foglia_larga"
+  ],
+  "needle_arrangement": [
+   "singoli",
+   "a_coppie",
+   "a_fascetti",
+   "a_ciuffi"
+  ],
+  "needle_length": [
+   "corti",
+   "lunghi"
+  ],
+  "leaf_persistence": [
+   "sempreverde",
+   "caduca"
+  ],
+  "leaf_arrangement": [
+   "opposte",
+   "alterne"
+  ],
+  "leaf_type": [
+   "semplice",
+   "composta_pennata"
+  ],
+  "leaf_margin": [
+   "intero",
+   "dentato",
+   "doppiamente_dentato",
+   "lobato",
+   "spinoso"
+  ],
+  "leaf_shape": [
+   "ovale",
+   "lanceolata",
+   "tondeggiante",
+   "cuoriforme",
+   "triangolare",
+   "lobata_a_mano",
+   "lobata_lungo_i_lati"
+  ],
+  "leaf_base": [
+   "simmetrica",
+   "asimmetrica"
+  ],
+  "bark": [
+   "liscia_grigia",
+   "bianca",
+   "lenticelle_orizzontali",
+   "solcata",
+   "a_placche",
+   "sfaldante",
+   "rossastra"
+  ],
+  "fruit_type": [
+   "ghianda",
+   "riccio_spinoso",
+   "faggiola",
+   "samara",
+   "disamara",
+   "pigna",
+   "amento",
+   "carnoso",
+   "noce",
+   "nocciola",
+   "baccello",
+   "brattea_o_vescicole"
+  ]
+ },
+ "margins": {
+  "bark-a_placche": 4,
+  "bark-bianca": 4,
+  "bark-lenticelle_orizzontali": 4,
+  "bark-liscia_grigia": 4,
+  "bark-rossastra": 5,
+  "bark-sfaldante": 4,
+  "bark-solcata": 4,
+  "fruit_type-amento": 4,
+  "fruit_type-baccello": 4,
+  "fruit_type-brattea_o_vescicole": 4,
+  "fruit_type-carnoso": 5,
+  "fruit_type-disamara": 4,
+  "fruit_type-faggiola": 4,
+  "fruit_type-ghianda": 5,
+  "fruit_type-nocciola": 4,
+  "fruit_type-noce": 5,
+  "fruit_type-pigna": 4,
+  "fruit_type-riccio_spinoso": 5,
+  "fruit_type-samara": 4,
+  "leaf_arrangement-alterne": 4,
+  "leaf_arrangement-opposte": 4,
+  "leaf_base-asimmetrica": 5,
+  "leaf_base-simmetrica": 4,
+  "leaf_kind-aghi": 5,
+  "leaf_kind-foglia_larga": 4,
+  "leaf_kind-squame": 4,
+  "leaf_margin-dentato": 4,
+  "leaf_margin-doppiamente_dentato": 4,
+  "leaf_margin-intero": 5,
+  "leaf_margin-lobato": 4,
+  "leaf_margin-spinoso": 4,
+  "leaf_persistence-caduca": 5,
+  "leaf_persistence-sempreverde": 4,
+  "leaf_shape-cuoriforme": 4,
+  "leaf_shape-lanceolata": 5,
+  "leaf_shape-lobata_a_mano": 5,
+  "leaf_shape-lobata_lungo_i_lati": 4,
+  "leaf_shape-ovale": 4,
+  "leaf_shape-tondeggiante": 5,
+  "leaf_shape-triangolare": 5,
+  "leaf_type-composta_pennata": 4,
+  "leaf_type-semplice": 5,
+  "needle_arrangement-a_ciuffi": 5,
+  "needle_arrangement-a_coppie": 4,
+  "needle_arrangement-a_fascetti": 4,
+  "needle_arrangement-singoli": 4,
+  "needle_length-corti": 5,
+  "needle_length-lunghi": 5
+ }
+}
