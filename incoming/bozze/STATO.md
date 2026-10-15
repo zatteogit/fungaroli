@@ -156,7 +156,7 @@
 
 ## Varianti dei caratteri — 15/10/2026
 
-Colori completati: **97/141 varianti**. Ogni variante ha cappello e fungo intero. Prima tutti i colori, secondo le priorità del brief.
+Colori completati: **100/141 varianti**. Ogni variante ha cappello e fungo intero. Prima tutti i colori, secondo le priorità del brief.
 
 Le due forme di phalloides già caricate in varianti-02 restano **in attesa delle fasi**. Nessuna nuova forma viene prodotta.
 
@@ -198,6 +198,7 @@ Controlli prima del caricamento: PNG RGBA, celle 418×418 px, almeno 42 px (10%)
 | icone/varianti-31.png | aereus: colore:bruno; aestivalis: colore:crema; tylopilus-felleus: colore:bruno | ok | QA visiva completata; 6 icone, alpha reale, terza colonna vuota. Basi nel manifest. |
 | icone/varianti-32.png | suillus: colore:giallo; suillus: colore:arancio; suillus: colore:violetto | ok | QA visiva completata; 6 icone, alpha reale, terza colonna vuota. Basi nel manifest. |
 | icone/varianti-33.png | suillus-bovinus: colore:bruno; virescens: colore:violetto; virescens: colore:grigio | ok | QA visiva completata; 6 icone, alpha reale, terza colonna vuota. Basi nel manifest. |
+| icone/varianti-34.png | virescens: colore:rosa; russula-heterophylla: colore:bruno; russula-heterophylla: colore:grigio | ok | QA visiva completata; 6 icone, alpha reale, terza colonna vuota. Basi nel manifest. |
 
 ## Icone dei caratteri degli alberi — 15 ottobre 2026
 
