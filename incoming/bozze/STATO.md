@@ -153,3 +153,11 @@
 | luoghi/tancia-inverno-nebbia.webp | tancia: inverno-nebbia | ok | caricato:true; limite neve corretto e verificato; QA registrata nel manifest; copia finale/bozza verificata. |
 | luoghi/tancia-inverno-pioggia.webp | tancia: inverno-pioggia | ok | caricato:true; limite neve corretto e verificato; QA registrata nel manifest; copia finale/bozza verificata. |
 | luoghi/tancia-inverno-neve.webp | tancia: inverno-neve | ok | caricato:true; limite neve corretto e verificato; QA registrata nel manifest; copia finale/bozza verificata. |
+
+## Varianti dei caratteri — 15/10/2026
+
+Il conteggio iniziale riguarda le tavole base e i luoghi. Il brief richiede 259 varianti: avanzamento registrato qui sotto; le varianti non elencate restano da fare.
+
+| File | Specie o variante | Stato | Motivo / note |
+|---|---|---|---|
+| icone/varianti-01.png | amanita-phalloides: colore:giallo, colore:bianco, colore:grigio | ok | QA visiva completata; 6 icone, alpha reale, terza colonna vuota. Base: verde, convesso. |
