@@ -1,7 +1,7 @@
 import './rails.js';
 import {outingDiscoveries} from './outing-discoveries.js';
 import {renderBotanicalWhy} from './botanical-explanation.js';
-import {initPlants,plants,plantName,plantRecord,plantThumb,renderPlants,renderPlantPage} from './plants.js';
+import {initPlants,plants,plantName,plantRecord,plantThumb,plantHeroSrc,renderPlants,renderPlantPage} from './plants.js';
 import {botanicalModels} from './botanical-model.js';
 import './theme.js';
 import './images.js';
@@ -14,7 +14,7 @@ import { weatherErrorMessage } from './weather-request.js';
 import { renderCharts } from './chart.js';
 import { initJournal } from './journal.js';
 import { renderSvgMap } from './svgmap.js';
-import { initSpeciesCards, thumb as fungusThumb, renderSpeciesDetail, whereSummary, criticalRule as fungusCriticalRule, criticalRuleOf as fungusCriticalRuleOf, speciesPhoto as fungusPhoto, speciesPhotos as fungusPhotos } from './speciescard.js';
+import { initSpeciesCards, thumb as fungusThumb, renderSpeciesDetail, speciesHeroSrc, whereSummary, criticalRule as fungusCriticalRule, criticalRuleOf as fungusCriticalRuleOf, speciesPhoto as fungusPhoto, speciesPhotos as fungusPhotos } from './speciescard.js';
 import { speciesLink } from './species-link.js';
 import { initEntitySheets, openEntitySheet } from './entity-sheet.js';
 import {initBaseLocation,currentBase,customBase,travelTo,travelText,directionsTo,BASE_PRIVACY_TEXT} from './base-location.js';
@@ -22,14 +22,14 @@ import { initLearning, renderGlossary, renderFieldIdentify, difficultyLink, glos
 import { openLightbox, captionHtml } from './lightbox.js';
 import { initInstall, maybeInvite } from './install.js';
 import { loadOuting, outingFor, OUTING_LABEL, OUTING_SHORT, OUTING_RANK } from './outing.js';
-import { initIdentify, renderIdentify, setCompare, searchTaxa, openTaxon, renderTaxonPage, renderTaxonView, taxonName, taxonByKey, attentionLine, sourceRows } from './identify.js';
+import { initIdentify, renderIdentify, setCompare, searchTaxa, openTaxon, renderTaxonPage, renderTaxonView, taxonHeroSrc, taxonName, taxonByKey, attentionLine, sourceRows } from './identify.js';
 import { initSearch } from './search.js';
 import { searchFieldHtml, matchesQuery, renderAlsoIn } from './catalog-search.js';
 import { renderGuidedKey } from './guided-key.js';
 import { renderWhy, renderMethod } from './science.js';
-import { navigate, soft } from './motion.js';
+import { navigate, soft, setCoverResolver } from './motion.js';
 import { FOREST_LEGEND } from './forest-legend.js';
-import { initTrees, renderTreeGrid, renderTreePage, linkTrees, treeChips, treeForCategory, treeThumb, treePhotoSrc } from './trees.js';
+import { initTrees, renderTreeGrid, renderTreePage, linkTrees, treeChips, treeForCategory, treeThumb, treePhotoSrc, treeHeroSrc } from './trees.js';
 import { crowding, comfortScore, timingAdvice, fmtTime, fmtRough, holidayName, intornoA } from './human.js';
 import { initCommunity, communityStatus, communityRank, reportBadge } from './community.js';
 import { guideTitle, renderGuideCards, renderGuide, initGuideContent, guideCount } from './guides.js';
@@ -282,9 +282,19 @@ async function init() {
 // Navigazione: viste con hash (#/, #/zona/<id>/<giorno>, #/mappa[/<id>], #/specie[/<id>], #/diario, #/info)
 // Il tasto indietro del telefono funziona perche' ogni passo e' una voce di cronologia.
 let navDepth = 0;
+// il ritorno ripristina la posizione salvata dall'app, non quella del browser (che arriverebbe prima della transizione, con uno scatto)
+try { history.scrollRestoration = 'manual'; } catch { /* non supportato */ }
+// navigazione partita da un tocco o da un tasto dentro l'app: solo allora il focus segue la pagina nuova
+let userNavAt = -1e9, userNavTo = '';
 function initShell() {
   addEventListener('hashchange', () => { navDepth++; route(); });
   document.addEventListener('click', (e) => {
+    // il link toccato (o «indietro»): conta solo se è proprio lui a cambiare pagina, non se apre una scheda sopra
+    const nav = e.target.closest('a[href^="#/"], [data-back]');
+    if (nav) { userNavAt = performance.now(); userNavTo = nav.matches('[data-back]') ? 'back' : nav.getAttribute('href'); }
+    // sezione già aperta toccata di nuovo nella barra: torna in cima, come nelle app
+    const tab = e.target.closest('.tabbar a[aria-current="page"]');
+    if (tab && tab.getAttribute('href') === (location.hash || '#/')) { e.preventDefault(); scrollTo({ top: 0, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' }); return; }
     if (!e.target.closest('[data-back]')) return;
     // indietro vero se la pagina precedente e' nell'app, altrimenti la pagina "madre"
     if (navStack.length > 1) history.back(); else location.hash = parentOf(prev);
@@ -321,8 +331,8 @@ function paintScopriNav(r) {
   if (sub) sub.innerHTML = r.view === 'impara' ? '' : SCOPRI_SUB[sec].map(([href, label]) => `<a href="${href}"${cur(href === here)}>${label}</a>`).join('');
 }
 
-function parseRoute() {
-  const parts = location.hash.replace(/^#\/?/, '').split('/').filter(Boolean).map((x) => { try { return decodeURIComponent(x); } catch { return x; } });
+function parseRoute(hash = location.hash) {
+  const parts = hash.replace(/^#\/?/, '').split('/').filter(Boolean).map((x) => { try { return decodeURIComponent(x); } catch { return x; } });
   const [a, b, c] = parts;
   if (a === 'zona' && (weatherZones||zones).some((z) => z.id === b)) return { view: 'zona', zoneId: b, offset: Math.max(0, Math.min(AHEAD_DAYS, +c || 0)), trailId: parts[3] === 'sentiero' && (trails[b]?.trails || []).some(t => String(t.id) === parts[4]) ? parts[4] : null };
   if (a === 'mappa') return { view: 'mappa', zoneId: b };
@@ -348,7 +358,8 @@ function parseRoute() {
 // profondita' e posizione delle viste: decidono la direzione della transizione
 const LEVEL = { mappa: 1, pianta:1, commestibile: 1, guide: 2, zona: 1, 'specie-dettaglio': 1, albero: 1, info: 1, metodo: 2, fungo: 1, glossario: 1, 'guide-list': 1, sfide: 1 };
 const TABS = ['uscite', 'specie', 'diario'];
-const SUB = { specie: 0, alberi: 1, piante:2, riconosci: 3, glossario: 4, 'guide-list': 5, sfide: 6 };
+// posizione delle schede di Scopri (Funghi, Piante, Alberi, Impara e le loro sotto-schede): tra loro si passa in dissolvenza
+const SUB = { specie: 0, alberi: 1, piante:2, riconosci: 3, glossario: 4, 'guide-list': 5, sfide: 6, impara: 7 };
 // una sfida aperta è un livello sotto l'elenco delle sfide
 const levelOf = (r) => (LEVEL[r.view] || 0) + (r.compare ? 2 : 0) + (r.challengeId ? 1 : 0) + (r.view === 'riconosci' && r.recognizeMode === 'bosco' ? 1 : 0);
 const scrollMem = new Map();
@@ -356,10 +367,13 @@ let prev = null;
 function navKind(a, b) {
   if (!a) return 'none';
   const la = levelOf(a), lb = levelOf(b);
+  const ta = TABS.indexOf(a.tab), tb = TABS.indexOf(b.tab);
+  // tocco sulla barra delle sezioni (la radice di un'altra sezione): dissolvenza, anche partendo da una pagina interna
+  if (ta !== tb && ta >= 0 && tb >= 0 && lb === 0) return tb > ta ? 'right' : 'left';
   if (lb > la) return 'push';
   if (lb < la) return 'pop';
-  if (a.view === b.view) return 'none';
-  const ta = TABS.indexOf(a.tab), tb = TABS.indexOf(b.tab);
+  // stessa vista: cambia solo il catalogo di «Impara a riconoscere» (funghi, piante, alberi) è una scheda accanto
+  if (a.view === b.view) return a.view === 'riconosci' && a.recognizeMode !== b.recognizeMode ? 'right' : 'none';
   if (ta !== tb && ta >= 0 && tb >= 0) return tb > ta ? 'right' : 'left';
   if (a.view in SUB && b.view in SUB) return SUB[b.view] > SUB[a.view] ? 'right' : 'left';
   return 'none';
@@ -416,6 +430,9 @@ function watchTitle() {
   if (!h || ($('.brand') && !$('.brand').hidden)) return;
   bar.textContent = h.textContent.trim();
   const top = $('.appbar').getBoundingClientRect().bottom;
+  // stato iniziale subito (anche tornando a una pagina già scorsa): la barra entra nella transizione già giusta, senza scatto
+  const hr = h.getBoundingClientRect();
+  document.documentElement.classList.toggle('title-in-bar', hr.height > 0 && hr.bottom <= top);
   titleIO = new IntersectionObserver(([e]) => {
     // fuori dalla vista ma sopra (scorso via), non sotto (pagina corta o non ancora raggiunto)
     document.documentElement.classList.toggle('title-in-bar', !e.isIntersecting && e.boundingClientRect.top < top);
@@ -453,7 +470,36 @@ function route() {
   const nav = navKind(prev, r), back = prev?.hash || '';
   if (prev) scrollMem.set(prev.hash, scrollY);
   prev = r;
-  navigate(() => { routeNow(r, nav); updateBack(r, nav); requestAnimationFrame(watchTitle); }, { nav, back });
+  const user = performance.now() - userNavAt < 1500 && (userNavTo === 'back' || userNavTo === r.hash);
+  userNavAt = -1e9;
+  navigate(() => { muteLive(); routeNow(r, nav); updateBack(r, nav); watchTitle(); focusPage(nav, back, user); }, { nav, back });
+}
+
+// Le regioni live (#hero, #detail) annunciano gli aggiornamenti del meteo dentro la pagina. Cambiando pagina il
+// contenuto nuovo lo legge il titolo che riceve il focus: niente secondo annuncio dell'intera pagina.
+let liveT = null;
+function muteLive() {
+  const live = document.querySelectorAll('#hero, #detail');
+  live.forEach((el) => el.setAttribute('aria-live', 'off'));
+  clearTimeout(liveT);
+  liveT = setTimeout(() => live.forEach((el) => el.setAttribute('aria-live', 'polite')), 800);
+}
+// Focus dopo un cambio di pagina: al titolo della pagina nuova; tornando indietro, alla card da cui eri partito;
+// tra sezioni resta sul comando toccato. Solo per le navigazioni fatte nell'app (o se il focus è rimasto nella pagina nascosta).
+function focusPage(nav, back, user) {
+  const view = document.querySelector('.view:not([hidden])'), active = document.activeElement;
+  if (!view) return;
+  const stranded = !!active?.closest?.('.view[hidden]');
+  if (!user && !stranded) return;
+  if ((nav === 'left' || nav === 'right') && !stranded) return;
+  if (nav === 'pop' && back) {
+    const link = view.querySelector(`a[href="${CSS.escape(back)}"]`);
+    if (link?.getClientRects().length) { link.focus({ preventScroll: true }); return; }
+  }
+  const h = view.querySelector('.cmp-title') || view.querySelector('.phero-title') || view.querySelector('h1, .view-title');
+  if (!h) return;
+  if (!h.hasAttribute('tabindex')) { h.setAttribute('tabindex', '-1'); h.dataset.navFocus = ''; }
+  h.focus({ preventScroll: true });
 }
 
 function routeNow(r, nav) {
@@ -509,9 +555,29 @@ function routeNow(r, nav) {
     });
   }
   renderAll();
-  // indietro: torni dove eri nella lista; avanti: dall'inizio
-  if (r.view !== 'mappa') scrollTo(0, nav === 'pop' ? (scrollMem.get(r.hash) || 0) : 0);
+  // indietro e tra sezioni: torni dove eri; avanti: dall'inizio (o alla voce del glossario richiesta).
+  // Avviene dentro l'aggiornamento della transizione: la pagina nuova entra già nella posizione giusta.
+  if (r.view !== 'mappa') {
+    const keep = nav === 'pop' || nav === 'left' || nav === 'right';
+    scrollTo({ top: keep ? (scrollMem.get(r.hash) || 0) : 0, behavior: 'instant' });
+    if (r.view === 'glossario' && r.termId && nav !== 'pop') document.getElementById(`glossary-term-${r.termId}`)?.scrollIntoView({ block: 'center', behavior: 'instant' });
+  }
 }
+
+// copertina della pagina di destinazione, per prepararla al tocco (motion.js): la stessa scelta dei renderer
+setCoverResolver((hash) => {
+  const r = parseRoute(hash);
+  if (r.view === 'zona') {
+    const z = results && (weatherZones || zones).find((x) => x.id === r.zoneId), d = z && dayEntry(z.id, r.offset);
+    return d?.best ? coverOf(z, d.best.species.id, d)?.hd || '' : '';
+  }
+  if (r.view === 'specie-dettaglio') return speciesHeroSrc(r.speciesId);
+  if (r.view === 'fungo') return taxonHeroSrc(r.taxonId);
+  if (r.view === 'commestibile') return taxonHeroSrc(r.speciesId, fungusPhotos(r.speciesId));
+  if (r.view === 'pianta') return plantHeroSrc(r.plantId);
+  if (r.view === 'albero') return treeHeroSrc(r.treeId);
+  return '';
+});
 
 const go = (hash) => { location.hash = hash; };
 

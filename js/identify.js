@@ -614,6 +614,8 @@ const photosOf = (t) => {
 export const taxonByKey = (key) => TAXA.find((x) => x.key === key) || null;
 export const taxonName = (key) => { const t = TAXA.find((x) => x.key === key); return t?.name || t?.latin || ''; };
 export const hasTaxonPage = (key) => { const t = TAXA.find((x) => x.key === key); return !!t && !(t.edible_id && !t.lookalike_of?.length); };
+// copertina della scheda di un taxon (renderTaxonView): preparata al tocco della card
+export const taxonHeroSrc = (key, photos = null) => { const t = taxonByKey(key), p = (photos || (t ? photosOf(t) : []))[0]; return p ? ASSET(p.file_hd || p.file) : ''; };
 export function renderTaxonPage(box, key) {
   const t = TAXA.find((x) => x.key === key);
   if (!t) { box.dataset.glossaryContext='Funghi'; box.innerHTML = '<p class="muted">Specie non trovata.</p>'; return; }

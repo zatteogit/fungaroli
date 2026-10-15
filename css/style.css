@@ -40,6 +40,8 @@ code { background: var(--surface-2); padding: 1px 5px; border-radius: 6px; font-
 .small { font-size: 13px; }
 button { font: inherit; color: inherit; }
 :focus-visible { outline: 2.5px solid var(--accent); outline-offset: 2px; border-radius: 6px; }
+/* titolo che riceve il focus a ogni cambio di pagina (lettori di schermo): non è un comando, niente anello */
+[data-nav-focus]:focus { outline: none; }
 @media (prefers-reduced-motion: no-preference) {
   .cover, .tile, .sp-card, .portrait, .day, .btn, .chip, .plan li, .fab { transition: transform .18s ease, background-color .18s ease, box-shadow .18s ease; }
   .cover:active, .tile:active, .sp-card:active, .portrait:active { transform: scale(.985); }
@@ -676,7 +678,10 @@ html.lb-open { overflow: hidden; }
 /* ---------------------------------------- pagine con testata fotografica */
 @media (max-width: 899px) {
   /* testata fotografica: la barra resta, trasparente sopra la foto (solo il tasto indietro); piena quando scorri oltre */
-  body:is([data-page="zona"], [data-page="specie-dettaglio"], [data-page="albero"], [data-page="fungo"]) .appbar { position: fixed; left: 0; right: 0; background: transparent; backdrop-filter: none; -webkit-backdrop-filter: none; pointer-events: none; transition: background-color .25s; }
+  /* la barra resta nel flusso (sticky): è la pagina con la foto che sale sotto di lei. Così <main> non cambia posto
+     tra una pagina e l'altra e la transizione non produce spostamenti di layout */
+  body:is([data-page="zona"], [data-page="specie-dettaglio"], [data-page="albero"], [data-page="fungo"]) #views > .view-hero { margin-top: calc(-1 * (var(--appbar-h) + env(safe-area-inset-top, 0px)) - 8px); } /* -8px: il margine negativo della testata si fonde con questo */
+  body:is([data-page="zona"], [data-page="specie-dettaglio"], [data-page="albero"], [data-page="fungo"]) .appbar { background: transparent; backdrop-filter: none; -webkit-backdrop-filter: none; pointer-events: none; transition: background-color .25s; }
   body:is([data-page="zona"], [data-page="specie-dettaglio"], [data-page="albero"], [data-page="fungo"]) .appbar > * { pointer-events: auto; }
   body:is([data-page="zona"], [data-page="specie-dettaglio"], [data-page="albero"], [data-page="fungo"]) .appbar-actions { display: none; }
   body:is([data-page="zona"], [data-page="specie-dettaglio"], [data-page="albero"], [data-page="fungo"]) .appbar-back { color: #fff; background: rgb(16 15 12 / .45); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-radius: 999px; padding: 0 16px 0 6px; margin-left: -4px; box-shadow: 0 2px 10px rgb(0 0 0 / .2); }
@@ -1100,6 +1105,21 @@ html.is-offline #updated { color: var(--warn-ink); font-weight: 600; }
   --ease-out: cubic-bezier(.22, .9, .24, 1);
   --ease-sheet: cubic-bezier(.32, .72, 0, 1);
   --spring: linear(0, .006, .025 2.8%, .101 6.1%, .539 18.9%, .721 25.3%, .849 31.5%, .937 38.1%, .968 41.8%, .991 45.7%, 1.006 50.1%, 1.015 55%, 1.017 63.9%, 1.001 85.9%, 1);
+  /* navigazione tra le pagine: un solo posto per durate, curve e distanze (js/motion.js tiene solo il tetto d'attesa).
+     push/pop: la pagina nuova entra da destra, la vecchia scivola un poco a sinistra e si attenua (parallasse iOS).
+     Sezioni e schede: dissolvenza incrociata breve, senza scorrimento. */
+  --nav-dur: 360ms;
+  --nav-ease: cubic-bezier(.2, .8, .2, 1);
+  --nav-fade-dur: 200ms;
+  --nav-fade-ease: cubic-bezier(.4, 0, .2, 1);
+  --nav-shift: 100%;     /* da dove entra la pagina nuova */
+  --nav-under: -28%;     /* quanto scivola quella sotto */
+  --nav-dim: .62;        /* quanto si attenua quella sotto */
+  --nav-in-opacity: 1;   /* telefono: la pagina che entra è già piena; desktop: sfuma */
+}
+@media (min-width: 900px) {
+  /* su schermi larghi una pagina intera che attraversa lo schermo è troppo: breve spostamento e dissolvenza */
+  :root { --nav-shift: 56px; --nav-under: -20px; --nav-dim: 0; --nav-in-opacity: 0; }
 }
 @property --p { syntax: '<number>'; inherits: true; initial-value: 0; }
 
@@ -1166,25 +1186,29 @@ html.is-offline #updated { color: var(--warn-ink); font-weight: 600; }
   ::view-transition-old(tabbar), ::view-transition-old(appbar) { display: none; }
   ::view-transition-new(tabbar), ::view-transition-new(appbar) { animation: none; }
   ::view-transition-group(tabbar), ::view-transition-group(appbar) { animation: none; z-index: 10; }
-  html[data-nav="push"]::view-transition-old(root) { animation: vt-out-l .3s var(--ease-out) both; }
-  html[data-nav="push"]::view-transition-new(root) { animation: vt-in-r .42s var(--ease-out) both; }
-  html[data-nav="pop"]::view-transition-old(root) { animation: vt-out-r .28s var(--ease-out) both; }
-  html[data-nav="pop"]::view-transition-new(root) { animation: vt-in-l .42s var(--ease-out) both; }
-  html[data-nav="right"]::view-transition-old(root) { animation: vt-fade-l .2s ease-in both; }
-  html[data-nav="right"]::view-transition-new(root) { animation: vt-fade-r .34s var(--ease-out) both; }
-  html[data-nav="left"]::view-transition-old(root) { animation: vt-fade-r-out .2s ease-in both; }
-  html[data-nav="left"]::view-transition-new(root) { animation: vt-fade-l-in .34s var(--ease-out) both; }
-  @keyframes vt-out-l { to { opacity: 0; transform: translateX(-14%); } }
-  @keyframes vt-in-r { from { opacity: 0; transform: translateX(18%); } }
-  @keyframes vt-out-r { to { opacity: 0; transform: translateX(18%); } }
-  @keyframes vt-in-l { from { opacity: 0; transform: translateX(-14%); } }
-  @keyframes vt-fade-l { to { opacity: 0; transform: translateX(-20px); } }
-  @keyframes vt-fade-r { from { opacity: 0; transform: translateX(28px); } }
-  @keyframes vt-fade-r-out { to { opacity: 0; transform: translateX(20px); } }
-  @keyframes vt-fade-l-in { from { opacity: 0; transform: translateX(-28px); } }
+  /* barra in alto: il contenuto cambia con una dissolvenza breve (titolo, indietro, logo) mentre la pagina scorre */
+  ::view-transition-old(appbar) { display: block; animation: vt-fade-out var(--nav-fade-dur) var(--nav-fade-ease) both; }
+  ::view-transition-new(appbar) { animation: vt-fade-in var(--nav-fade-dur) var(--nav-fade-ease) both; }
+  html[data-nav="soft"]::view-transition-old(appbar) { display: none; }
+  html[data-nav="soft"]::view-transition-new(appbar) { animation: none; }
+  /* push: la nuova entra da destra sopra la vecchia, che scivola a sinistra e si attenua */
+  html[data-nav="push"]::view-transition-old(root) { animation: vt-under-out var(--nav-dur) var(--nav-ease) both; }
+  html[data-nav="push"]::view-transition-new(root) { animation: vt-over-in var(--nav-dur) var(--nav-ease) both; box-shadow: var(--shadow-2); }
+  /* pop: l'inverso, la pagina che lasci esce a destra sopra quella a cui torni */
+  html[data-nav="pop"]::view-transition-old(root) { z-index: 1; animation: vt-over-out var(--nav-dur) var(--nav-ease) both; box-shadow: var(--shadow-2); }
+  html[data-nav="pop"]::view-transition-new(root) { animation: vt-under-in var(--nav-dur) var(--nav-ease) both; }
+  /* sezioni della barra e schede di Scopri: dissolvenza incrociata breve */
+  html:is([data-nav="left"], [data-nav="right"])::view-transition-old(root) { animation: vt-fade-out calc(var(--nav-fade-dur) * .75) var(--nav-fade-ease) both; }
+  html:is([data-nav="left"], [data-nav="right"])::view-transition-new(root) { animation: vt-fade-in var(--nav-fade-dur) var(--nav-fade-ease) both; }
+  @keyframes vt-over-in { from { transform: translateX(var(--nav-shift)); opacity: var(--nav-in-opacity); } }
+  @keyframes vt-over-out { to { transform: translateX(var(--nav-shift)); opacity: var(--nav-in-opacity); } }
+  @keyframes vt-under-out { to { transform: translateX(var(--nav-under)); opacity: var(--nav-dim); } }
+  @keyframes vt-under-in { from { transform: translateX(var(--nav-under)); opacity: var(--nav-dim); } }
+  @keyframes vt-fade-out { to { opacity: 0; } }
+  @keyframes vt-fade-in { from { opacity: 0; } }
   /* la foto toccata diventa la testata (e torna nella card quando vai indietro) */
-  ::view-transition-group(hero) { animation-duration: .5s; animation-timing-function: var(--ease-out); z-index: 5; }
-  ::view-transition-old(hero), ::view-transition-new(hero) { width: 100%; height: 100%; object-fit: cover; overflow: clip; animation-duration: .5s; }
+  ::view-transition-group(hero) { animation-duration: var(--nav-dur); animation-timing-function: var(--nav-ease); z-index: 5; }
+  ::view-transition-old(hero), ::view-transition-new(hero) { width: 100%; height: 100%; object-fit: cover; overflow: clip; animation-duration: var(--nav-dur); animation-timing-function: var(--nav-ease); }
   /* aggiornamenti nella stessa vista: le card si spostano, quelle nuove spuntano, quelle tolte sfumano */
   html[data-nav="soft"] .vtn { view-transition-name: var(--vtn); }
   html[data-nav="soft"]::view-transition-old(root), html[data-nav="soft"]::view-transition-new(root) { animation-duration: .18s; }
@@ -2515,7 +2539,13 @@ html.entity-open { overflow: hidden; }
 @keyframes notebook-photo-loading { to { background-position:-200% 0; } }
 .notebook-pocket::after { top:190px; z-index:2; clip-path:polygon(0 0,50% 14%,100% 0,100% 100%,0 100%); }
 .pocket-label { z-index:3; }
-@media(min-width:900px) { body[data-page="diario"] #views { max-width:1080px; } }
+/* Taccuino più largo su desktop. <main> ha sempre la stessa scatola (1080 px) e il margine interno stringe le altre
+   pagine alla colonna: cambiando pagina il contenitore non si sposta né si allarga (nessun layout shift). */
+@media(min-width:900px) {
+  #views { max-width:1080px; padding-inline:max(var(--gutter), calc((min(1080px, 100%) - var(--col)) / 2 + var(--gutter))); }
+  body[data-page="diario"] #views { padding-inline:var(--gutter); }
+  body[data-page="mappa"] #views { max-width:none; padding:0; }
+}
 .notebook-photo:has(img[data-image-state="error"])::after { content:'Foto non disponibile'; position:absolute; top:5px; left:5px; right:5px; aspect-ratio:1.2; display:grid; place-items:center; padding:8px; font-size:10px; text-align:center; color:var(--book-secondary); background:var(--book-paper); pointer-events:none; }
 
 /* Refresh stays quiet while saved weather remains readable. */

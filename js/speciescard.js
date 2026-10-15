@@ -161,6 +161,8 @@ export const whereSummary = (id) => TRAITS[id]?.where_to_look?.summary || '';
 export const criticalRuleOf = (id) => (TRAITS[id]?.field_rules || []).find((r) => r.severity === 'critico') || null;
 export const criticalRule = (id) => criticalRuleOf(id)?.text || '';
 
+// la foto di copertina della scheda, la stessa di renderSpeciesDetail: serve a prepararla al tocco della card (motion.js)
+export const speciesHeroSrc = (id) => { const m = MEDIA?.species?.[id], p = m?.ref || m?.inat?.[0]; return p ? ASSET(p.file_hd || p.file) : ''; };
 export function renderSpeciesDetail(body, id) {
   body.dataset.glossaryContext='Funghi';
   const sp = SPECIES.find((s) => s.id === id);

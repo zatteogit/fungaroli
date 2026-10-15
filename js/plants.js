@@ -13,6 +13,7 @@ export function initPlants(data,assetUrl,modelFor){if(modelFor)MODEL_FOR=modelFo
 export const plants=()=>Object.entries(PLANTS).map(([id,p])=>({...p,id}));
 export const plantRecord=id=>PLANTS[id];
 export const plantName=id=>PLANTS[id]?.name||'';
+export const plantHeroSrc=id=>{const m=PLANTS[id]?.photos?.[0];return m?ASSET(m.file):'';};
 export function plantThumb(id,size=44){const p=PLANTS[id],m=p?.photos?.[0];return m?`<img class="thumb" data-src="${esc(ASSET(m.file))}" width="${size}" height="${size}" alt="" loading="lazy" decoding="async">`:'';}
 // Tossica o mortale: le «Pericolose» e alcuni fiori, che restano da osservare.
 const isToxic=p=>['tossico','mortale'].includes(p.foodUse?.status);
