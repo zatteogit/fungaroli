@@ -105,7 +105,7 @@
         {
           "id": "ippocastano",
           "name": "Ippocastano (Aesculus hippocastanum)",
-          "how_to_tell": "Foglia composta palmata a 5-7 foglioline; riccio con poche spine corte; seme non commestibile. Solo piantato in paesi e viali."
+          "how_to_tell": "Foglia composta palmata a 5-7 foglioline; riccio con poche spine deboli. Semi velenosi, a volte scambiati per castagne. Quasi sempre piantato in paesi, viali e parchi; di rado spontaneo."
         },
         {
           "id": "cerro",
@@ -500,6 +500,11 @@
           "id": "nocciolo",
           "name": "Nocciolo",
           "how_to_tell": "Foglia più rotonda, ruvida e pelosa; arbusto a molti fusti; nocciole in involucro frangiato."
+        },
+        {
+          "id": "carpinella",
+          "name": "Carpinella",
+          "how_to_tell": "Frutti su brattee aperte, non chiusi in vescicole; corteccia grigia e liscia; spesso arbusto."
         }
       ],
       "altitude_m": [
@@ -567,6 +572,11 @@
           "id": "carpino nero",
           "name": "Carpino nero",
           "how_to_tell": "Corteccia bruna sfaldata; frutti a vescica simili al luppolo."
+        },
+        {
+          "id": "carpinella",
+          "name": "Carpinella",
+          "how_to_tell": "Arbusto o alberello con foglie di 3-5 cm; la brattea del frutto è dentata ma non ha tre lobi."
         }
       ],
       "altitude_m": [
@@ -845,15 +855,15 @@
       "wikidata": "Q211457",
       "type": "conifera",
       "recognize": [
-        "Aghi a due, sottili e flessibili, 6-10 cm, verde chiaro",
-        "Pigne di 5-10 cm su un peduncolo ricurvo all'indietro",
+        "Aghi a due, sottili e flessibili, 6-12 cm, verde chiaro",
+        "Pigne di 5-12 cm su un peduncolo ricurvo all'indietro",
         "Pigne vecchie che restano per anni sui rami",
         "Corteccia grigio-argentea da giovane, poi bruno-rossiccia",
         "Chioma rada, irregolare e luminosa"
       ],
-      "leaf": "Aghi a coppie, 6-10 cm, molto sottili e morbidi, verde chiaro-giallastro.",
+      "leaf": "Aghi a coppie, 6-12 cm, molto sottili e morbidi, verde chiaro-giallastro.",
       "bark": "Liscia e grigio-argentea sui rami e da giovane; sul tronco adulto bruno-rossastra e fessurata.",
-      "fruit": "Pigna conico-allungata 5-10 cm, bruno-rossiccia lucida, portata da un peduncolo ripiegato verso la base del ramo.",
+      "fruit": "Pigna conico-allungata 5-12 cm, bruno-rossiccia lucida, portata da un peduncolo ripiegato verso la base del ramo.",
       "habit": "Albero di 10-20 m, tronco spesso storto, chioma aperta.",
       "confusable": [
         {
@@ -864,7 +874,7 @@
         {
           "id": "pino marittimo",
           "name": "Pino marittimo (Pinus pinaster)",
-          "how_to_tell": "Aghi molto più lunghi (15-25 cm) e spessi, pigne grandi 10-20 cm."
+          "how_to_tell": "Aghi molto più lunghi (10-25 cm) e rigidi; pigne grandi (8-22 cm), quasi senza peduncolo."
         }
       ],
       "altitude_m": [
@@ -890,6 +900,10 @@
         {
           "title": "Portale della Flora d'Italia (Università di Trieste): Pinus halepensis",
           "url": "https://dryades.units.it/floritaly/index.php?procedure=taxon_page&tipo=all&id=162"
+        },
+        {
+          "title": "European Atlas of Forest Tree Species (JRC): Pinus halepensis e P. brutia",
+          "url": "https://forest.jrc.ec.europa.eu/media/atlas/Pinus_halepensis_brutia.pdf"
         },
         {
           "title": "PGAF Comune di Greccio (Regione Lazio): leccete, rimboschimenti di pino nero, domestico e d'Aleppo",
@@ -995,7 +1009,7 @@
         {
           "id": "abete rosso",
           "name": "Abete rosso (Picea abies)",
-          "how_to_tell": "Aghi a sezione quadrata e pungenti, senza bande bianche; pigne pendenti che cadono intere; corteccia rossastra. Solo piantato in Appennino."
+          "how_to_tell": "Aghi a sezione quadrata e pungenti, senza bande bianche; pigne pendenti che cadono intere; corteccia rossastra. In Appennino quasi sempre piantato; nuclei naturali relitti solo nell'Appennino tosco-emiliano."
         },
         {
           "id": "tasso",
@@ -1007,7 +1021,7 @@
         900,
         1700
       ],
-      "where_reatino": "Raro: individui sparsi o piantati in faggete e rimboschimenti montani. I nuclei spontanei più vicini sono sul versante teramano dei Monti della Laga.",
+      "where_reatino": "Raro: individui sparsi o piantati in faggete e rimboschimenti montani. Nuclei spontanei sul versante teramano dei Monti della Laga; piccoli nuclei segnalati anche sul versante laziale, verso Amatrice.",
       "forest_categories": [
         "Faggeta"
       ],
@@ -1036,6 +1050,10 @@
         {
           "title": "ISPRA Carta della Natura, habitat E.312 (abetine appenniniche)",
           "url": "https://cartanatura.isprambiente.it/Legenda/StampaSchedeHabitat.php?h=E.312"
+        },
+        {
+          "title": "Agrillo E., Forme di vegetazione forestale del distretto reatino (Regione Lazio), tesi di dottorato, Università della Tuscia (XXI ciclo)",
+          "url": "https://dspace.unitus.it/handle/2067/962"
         },
         {
           "title": "Wikipedia (incrocio): Abies alba",
@@ -1204,7 +1222,7 @@
         {
           "id": "acero opalo",
           "name": "Acero opalo",
-          "how_to_tell": "Foglie più grandi a lobi larghi e poco profondi, senza latice; samare ad angolo acuto."
+          "how_to_tell": "Lobi larghi e poco profondi con denti ottusi, pagina inferiore pelosa; ali delle samare a 60-90 gradi, non distese a 180 gradi come nel campestre."
         },
         {
           "id": "acero di montpellier",
@@ -1428,7 +1446,7 @@
         {
           "id": "ontano napoletano",
           "name": "Ontano napoletano (Alnus cordata)",
-          "how_to_tell": "Foglia cuoriforme lucida con apice acuto, strobili più grossi; nel Reatino solo piantato."
+          "how_to_tell": "Foglia a cuore, lucida, con apice acuto; frutti (strobili) più grossi, 2-3 cm. Spontaneo nel Sud Italia; nel Lazio naturalizzato."
         },
         {
           "id": "nocciolo",

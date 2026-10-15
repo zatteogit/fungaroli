@@ -80,3 +80,8 @@ test('every flower of the plant catalogue has key traits, and orchid answers bri
   // le coppie di confronto citano solo schede presenti
   for (const c of plantsKey.confusables) for (const id of c.ids) assert.ok(plantsKey.items[id], `${c.title}: ${id}`);
 });
+
+test('foglia composta palmata: l\'ippocastano resta l\'unico candidato fra le latifoglie a foglioline a ventaglio', () => {
+  const found = candidatesFor(trees, treeItems, { leaf_kind: 'foglia_larga', leaf_type: 'composta_palmata' });
+  assert.deepEqual(found.map((x) => x.id), ['ippocastano']);
+});
