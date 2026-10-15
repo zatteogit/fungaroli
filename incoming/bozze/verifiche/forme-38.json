@@ -1,0 +1,283 @@
+{
+  "file": "incoming/icone/forme-38.png",
+  "stato": "ok",
+  "verifiche": [
+    {
+      "cella": 0,
+      "bbox": [
+        81,
+        142,
+        336,
+        276
+      ],
+      "attesa": true,
+      "margini_px": [
+        81,
+        142,
+        82,
+        142
+      ],
+      "margini_ok": true,
+      "contorno_scuro_estremi": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cella": 1,
+      "bbox": [
+        91,
+        90,
+        326,
+        328
+      ],
+      "attesa": true,
+      "margini_px": [
+        91,
+        90,
+        92,
+        90
+      ],
+      "margini_ok": true,
+      "contorno_scuro_estremi": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cella": 2,
+      "bbox": null,
+      "attesa": false,
+      "vuota": true
+    },
+    {
+      "cella": 3,
+      "bbox": [
+        78,
+        143,
+        340,
+        274
+      ],
+      "attesa": true,
+      "margini_px": [
+        78,
+        143,
+        78,
+        144
+      ],
+      "margini_ok": true,
+      "contorno_scuro_estremi": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cella": 4,
+      "bbox": [
+        88,
+        92,
+        330,
+        325
+      ],
+      "attesa": true,
+      "margini_px": [
+        88,
+        92,
+        88,
+        93
+      ],
+      "margini_ok": true,
+      "contorno_scuro_estremi": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cella": 5,
+      "bbox": null,
+      "attesa": false,
+      "vuota": true
+    },
+    {
+      "cella": 6,
+      "bbox": [
+        73,
+        140,
+        344,
+        278
+      ],
+      "attesa": true,
+      "margini_px": [
+        73,
+        140,
+        74,
+        140
+      ],
+      "margini_ok": true,
+      "contorno_scuro_estremi": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cella": 7,
+      "bbox": [
+        85,
+        86,
+        332,
+        331
+      ],
+      "attesa": true,
+      "margini_px": [
+        85,
+        86,
+        86,
+        87
+      ],
+      "margini_ok": true,
+      "contorno_scuro_estremi": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cella": 8,
+      "bbox": null,
+      "attesa": false,
+      "vuota": true
+    }
+  ],
+  "normalizzazione": [
+    {
+      "cella": 0,
+      "bbox_originale_immagine": [
+        110,
+        185,
+        365,
+        319
+      ],
+      "scala": 1,
+      "dimensioni": [
+        255,
+        134
+      ],
+      "posizione": [
+        81,
+        142
+      ]
+    },
+    {
+      "cella": 1,
+      "bbox_originale_immagine": [
+        510,
+        128,
+        745,
+        366
+      ],
+      "scala": 1,
+      "dimensioni": [
+        235,
+        238
+      ],
+      "posizione": [
+        509,
+        90
+      ]
+    },
+    {
+      "cella": 3,
+      "bbox_originale_immagine": [
+        106,
+        573,
+        368,
+        704
+      ],
+      "scala": 1,
+      "dimensioni": [
+        262,
+        131
+      ],
+      "posizione": [
+        78,
+        561
+      ]
+    },
+    {
+      "cella": 4,
+      "bbox_originale_immagine": [
+        506,
+        527,
+        748,
+        760
+      ],
+      "scala": 1,
+      "dimensioni": [
+        242,
+        233
+      ],
+      "posizione": [
+        506,
+        510
+      ]
+    },
+    {
+      "cella": 6,
+      "bbox_originale_immagine": [
+        102,
+        962,
+        373,
+        1100
+      ],
+      "scala": 1,
+      "dimensioni": [
+        271,
+        138
+      ],
+      "posizione": [
+        73,
+        976
+      ]
+    },
+    {
+      "cella": 7,
+      "bbox_originale_immagine": [
+        504,
+        903,
+        751,
+        1148
+      ],
+      "scala": 1,
+      "dimensioni": [
+        247,
+        245
+      ],
+      "posizione": [
+        503,
+        922
+      ]
+    }
+  ],
+  "bytes": 60850,
+  "dimensioni": [
+    1254,
+    1254
+  ],
+  "sha256": "4e7ca9d6aa6030f8b2147303f2be6300176d856c40a820b2ff2a6d96e9615c38",
+  "prompt": "A transparent PNG sprite sheet, square1254x1254, invisible3x3cells418px each. Use reference1 for EXACT SMALL ICON SIZE, generous TRANSPARENT CELL MARGINS and row positions. Three rows: column1 CAP ONLY side view, column2 WHOLE MUSHROOM, column3 entirely EMPTY. Each separate icon centered in its own cell, at most60% of cell width AND height, at least18% alpha0 padding on EVERY cell edge. No drawn grid, background, shadows, ground, text, numbers or marks. Clean thick dark brown COMPLETE silhouette outline, flat few colors same as species icons. References2 onward show the approved base icons: preserve cap COLOR and all stems, rings, volvas, netting, scales and spots, change ONLY cap SHAPE and age-appropriate proportions. Each row's cap-only and whole must MATCH shape/color. Use EXACT reference cap shade; color labels are broad categories: 'rosso' may be dark red-BROWN. Never borrow anatomical traits or colors between rows. ROW1: tricholoma-portentosum, base cap color grigio, target shape CONVEX: low rounded dome. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"viscida\",\"asciutta\"],\"hymenophore\":[\"lamelle\"],\"hymenophore_color\":[\"bianco\",\"giallo\"]}. ROW2: tricholoma-sciodes, base cap color violetto, target shape CONVEX: low rounded dome. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"asciutta\",\"vellutata/feltrata\",\"liscia\",\"squamosa\"],\"hymenophore\":[\"lamelle\"],\"hymenophore_color\":[\"bianco\",\"grigio\"]}. ROW3: tricholoma-virgatum, base cap color grigio, target shape CONVEX: low rounded dome. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"asciutta\",\"liscia\",\"squamosa\"],\"hymenophore\":[\"lamelle\"],\"hymenophore_color\":[\"bianco\",\"grigio\"]}. No new anatomical traits. Reference species icons are shape/color authorities except the explicit target cap shape. Cap-only must match whole cap. Last column empty. True alpha background.",
+  "edits": [],
+  "normalizza": true,
+  "visivo_ok": true,
+  "nota": "Tre Tricholoma convessi senza apice conico: portentosum con sfumatura gialla, sciodes grigio-violetto, virgatum grigio. Fibrille e lamelle conservate. Scala e centratura normalizzate con Python su autorizzazione di Matteo; disegno invariato."
+}
