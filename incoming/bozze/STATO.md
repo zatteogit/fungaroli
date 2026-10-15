@@ -230,3 +230,5 @@ Ordine aggiornato da Matteo il 15/10: completare prima tutte le varianti di colo
 | icone/varianti-22.png | hygrophoropsis-aurantiaca: colore:bruno; hygrophoropsis-aurantiaca: colore:giallo; cibarius: colore:arancio | ok | QA visiva completata; 6 icone, alpha reale, terza colonna vuota. Basi nel manifest. |
 
 | icone/tavola-10-anello.png | coprinus-comatus: gambo, cella5 | ok | Anello sottile basso aggiunto secondo brief15/10. Riferimento esplicito cella5 nel manifest; altre icone base invariate. Verifiche dei contorni e dei margini alpha0 di42px superate. |
+
+| icone/varianti-23.png | morchella-esculenta: colore:crema; morchella-esculenta: colore:bruno; hydnellum-peckii: colore:rosa | ok | QA visiva completata; 6 icone, alpha reale, terza colonna vuota. Basi nel manifest. |

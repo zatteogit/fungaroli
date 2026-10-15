@@ -11271,5 +11271,125 @@
       "forma": "conico"
     },
     "qa": "Anello sottile e mobile rappresentato nella parte bassa del gambo; nessuna volva. Contorni completi e42px di margine alpha0 per tutte9celle verificati col codice."
+  },
+  {
+    "file": "incoming/icone/varianti-23.png",
+    "tipo": "illustrazione",
+    "soggetto": "morchella-esculenta",
+    "tessera": "cappello",
+    "stagione": null,
+    "foto_di_partenza": null,
+    "autore_foto": null,
+    "licenza_foto": null,
+    "pagina_foto": null,
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case precise-object-edit / scientific-educational. Edit this reference sheet of APPROVED flat mushroom icons ONLY in the requested colors. It is already arranged in the REQUIRED output layout: 1254x1254, equal invisible3x3 grid; each row col1 CAP SIDE VIEW ONLY, col2 WHOLE MUSHROOM, col3 EMPTY TRANSPARENT. Keep the exact style, line weight, outlines, proportions, icon center, scale, cap silhouette, age and anatomy. No growth stages and NO SHAPE VARIANTS. Real alpha transparency, clean edges, NO background, NO text, NO frames, NO shadows, NO extra details. Maintain simple broad flat colors and source highlights; use the requested recognizable midtone or a slightly lighter shade. OUTPUT ROW 1: Morchella esculenta s.l. (morchella-esculenta). Change only cap color from giallo to crema #e3cfa3. Preserve the base conico cap silhouette EXACTLY, same age, no shape change. Keep all gill/underside, stem, ring, volva, warts and scale colors unchanged; for a scaled cap preserve darker scale/disc contrast on the new cap ground. Preserve these source characteristics: Testa a nido d'ape, con alveoli e costole, non a circonvoluzioni di cervello; Testa e gambo cavi, in un'unica camera, se tagliati per il lungo; Margine della testa saldato al gambo; Gambo bianco o crema. OUTPUT ROW 2: Morchella esculenta s.l. (morchella-esculenta). Change only cap color from giallo to bruno #8e5f36. Preserve the base conico cap silhouette EXACTLY, same age, no shape change. Keep all gill/underside, stem, ring, volva, warts and scale colors unchanged; for a scaled cap preserve darker scale/disc contrast on the new cap ground. Preserve these source characteristics: Testa a nido d'ape, con alveoli e costole, non a circonvoluzioni di cervello; Testa e gambo cavi, in un'unica camera, se tagliati per il lungo; Margine della testa saldato al gambo; Gambo bianco o crema. OUTPUT ROW 3: Hydnellum peckii (hydnellum-peckii). Change only cap color from bianco to rosa #d99aa2. Preserve the base piano cap silhouette EXACTLY, same age, no shape change. Keep all gill/underside, stem, ring, volva, warts and scale colors unchanged; for a scaled cap preserve darker scale/disc contrast on the new cap ground. Preserve these source characteristics: Consistenza dura e sugherosa; Gocce rosse sul cappello; Ingloba aghi e rametti. Do not borrow anatomy from another row. No additions: preserve only features already visible in each corresponding reference drawing. MANDATORY: each drawing entirely inside its own cell with at least10% completely transparent margin on ALL four sides. Every418px cell must have zero alpha in the outer42px strips. Keep whole mushroom and cap far from cell boundaries. Third column totally empty alpha0. Every drawing must have a COMPLETE CLOSED DARK CONTOUR at its top, bottom, left and right extremes; never a straight cropped fill edge. Do not truncate caps, stalks or basal structures. Restore the full original outline if the reference has a clipped artifact.",
+    "base": {
+      "colore": "giallo",
+      "forma": "conico"
+    },
+    "cella": 0,
+    "variante": "colore:crema",
+    "qa": "Controllo visivo colore e caratteri invarianti; verifiche codice di margini alpha0 di42px (10%) e contorni scuri completi ai4estremi prima dell'upload."
+  },
+  {
+    "file": "incoming/icone/varianti-23.png",
+    "tipo": "illustrazione",
+    "soggetto": "morchella-esculenta",
+    "tessera": "gambo",
+    "stagione": null,
+    "foto_di_partenza": null,
+    "autore_foto": null,
+    "licenza_foto": null,
+    "pagina_foto": null,
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case precise-object-edit / scientific-educational. Edit this reference sheet of APPROVED flat mushroom icons ONLY in the requested colors. It is already arranged in the REQUIRED output layout: 1254x1254, equal invisible3x3 grid; each row col1 CAP SIDE VIEW ONLY, col2 WHOLE MUSHROOM, col3 EMPTY TRANSPARENT. Keep the exact style, line weight, outlines, proportions, icon center, scale, cap silhouette, age and anatomy. No growth stages and NO SHAPE VARIANTS. Real alpha transparency, clean edges, NO background, NO text, NO frames, NO shadows, NO extra details. Maintain simple broad flat colors and source highlights; use the requested recognizable midtone or a slightly lighter shade. OUTPUT ROW 1: Morchella esculenta s.l. (morchella-esculenta). Change only cap color from giallo to crema #e3cfa3. Preserve the base conico cap silhouette EXACTLY, same age, no shape change. Keep all gill/underside, stem, ring, volva, warts and scale colors unchanged; for a scaled cap preserve darker scale/disc contrast on the new cap ground. Preserve these source characteristics: Testa a nido d'ape, con alveoli e costole, non a circonvoluzioni di cervello; Testa e gambo cavi, in un'unica camera, se tagliati per il lungo; Margine della testa saldato al gambo; Gambo bianco o crema. OUTPUT ROW 2: Morchella esculenta s.l. (morchella-esculenta). Change only cap color from giallo to bruno #8e5f36. Preserve the base conico cap silhouette EXACTLY, same age, no shape change. Keep all gill/underside, stem, ring, volva, warts and scale colors unchanged; for a scaled cap preserve darker scale/disc contrast on the new cap ground. Preserve these source characteristics: Testa a nido d'ape, con alveoli e costole, non a circonvoluzioni di cervello; Testa e gambo cavi, in un'unica camera, se tagliati per il lungo; Margine della testa saldato al gambo; Gambo bianco o crema. OUTPUT ROW 3: Hydnellum peckii (hydnellum-peckii). Change only cap color from bianco to rosa #d99aa2. Preserve the base piano cap silhouette EXACTLY, same age, no shape change. Keep all gill/underside, stem, ring, volva, warts and scale colors unchanged; for a scaled cap preserve darker scale/disc contrast on the new cap ground. Preserve these source characteristics: Consistenza dura e sugherosa; Gocce rosse sul cappello; Ingloba aghi e rametti. Do not borrow anatomy from another row. No additions: preserve only features already visible in each corresponding reference drawing. MANDATORY: each drawing entirely inside its own cell with at least10% completely transparent margin on ALL four sides. Every418px cell must have zero alpha in the outer42px strips. Keep whole mushroom and cap far from cell boundaries. Third column totally empty alpha0. Every drawing must have a COMPLETE CLOSED DARK CONTOUR at its top, bottom, left and right extremes; never a straight cropped fill edge. Do not truncate caps, stalks or basal structures. Restore the full original outline if the reference has a clipped artifact.",
+    "base": {
+      "colore": "giallo",
+      "forma": "conico"
+    },
+    "cella": 1,
+    "variante": "colore:crema",
+    "qa": "Controllo visivo colore e caratteri invarianti; verifiche codice di margini alpha0 di42px (10%) e contorni scuri completi ai4estremi prima dell'upload."
+  },
+  {
+    "file": "incoming/icone/varianti-23.png",
+    "tipo": "illustrazione",
+    "soggetto": "morchella-esculenta",
+    "tessera": "cappello",
+    "stagione": null,
+    "foto_di_partenza": null,
+    "autore_foto": null,
+    "licenza_foto": null,
+    "pagina_foto": null,
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case precise-object-edit / scientific-educational. Edit this reference sheet of APPROVED flat mushroom icons ONLY in the requested colors. It is already arranged in the REQUIRED output layout: 1254x1254, equal invisible3x3 grid; each row col1 CAP SIDE VIEW ONLY, col2 WHOLE MUSHROOM, col3 EMPTY TRANSPARENT. Keep the exact style, line weight, outlines, proportions, icon center, scale, cap silhouette, age and anatomy. No growth stages and NO SHAPE VARIANTS. Real alpha transparency, clean edges, NO background, NO text, NO frames, NO shadows, NO extra details. Maintain simple broad flat colors and source highlights; use the requested recognizable midtone or a slightly lighter shade. OUTPUT ROW 1: Morchella esculenta s.l. (morchella-esculenta). Change only cap color from giallo to crema #e3cfa3. Preserve the base conico cap silhouette EXACTLY, same age, no shape change. Keep all gill/underside, stem, ring, volva, warts and scale colors unchanged; for a scaled cap preserve darker scale/disc contrast on the new cap ground. Preserve these source characteristics: Testa a nido d'ape, con alveoli e costole, non a circonvoluzioni di cervello; Testa e gambo cavi, in un'unica camera, se tagliati per il lungo; Margine della testa saldato al gambo; Gambo bianco o crema. OUTPUT ROW 2: Morchella esculenta s.l. (morchella-esculenta). Change only cap color from giallo to bruno #8e5f36. Preserve the base conico cap silhouette EXACTLY, same age, no shape change. Keep all gill/underside, stem, ring, volva, warts and scale colors unchanged; for a scaled cap preserve darker scale/disc contrast on the new cap ground. Preserve these source characteristics: Testa a nido d'ape, con alveoli e costole, non a circonvoluzioni di cervello; Testa e gambo cavi, in un'unica camera, se tagliati per il lungo; Margine della testa saldato al gambo; Gambo bianco o crema. OUTPUT ROW 3: Hydnellum peckii (hydnellum-peckii). Change only cap color from bianco to rosa #d99aa2. Preserve the base piano cap silhouette EXACTLY, same age, no shape change. Keep all gill/underside, stem, ring, volva, warts and scale colors unchanged; for a scaled cap preserve darker scale/disc contrast on the new cap ground. Preserve these source characteristics: Consistenza dura e sugherosa; Gocce rosse sul cappello; Ingloba aghi e rametti. Do not borrow anatomy from another row. No additions: preserve only features already visible in each corresponding reference drawing. MANDATORY: each drawing entirely inside its own cell with at least10% completely transparent margin on ALL four sides. Every418px cell must have zero alpha in the outer42px strips. Keep whole mushroom and cap far from cell boundaries. Third column totally empty alpha0. Every drawing must have a COMPLETE CLOSED DARK CONTOUR at its top, bottom, left and right extremes; never a straight cropped fill edge. Do not truncate caps, stalks or basal structures. Restore the full original outline if the reference has a clipped artifact.",
+    "base": {
+      "colore": "giallo",
+      "forma": "conico"
+    },
+    "cella": 3,
+    "variante": "colore:bruno",
+    "qa": "Controllo visivo colore e caratteri invarianti; verifiche codice di margini alpha0 di42px (10%) e contorni scuri completi ai4estremi prima dell'upload."
+  },
+  {
+    "file": "incoming/icone/varianti-23.png",
+    "tipo": "illustrazione",
+    "soggetto": "morchella-esculenta",
+    "tessera": "gambo",
+    "stagione": null,
+    "foto_di_partenza": null,
+    "autore_foto": null,
+    "licenza_foto": null,
+    "pagina_foto": null,
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case precise-object-edit / scientific-educational. Edit this reference sheet of APPROVED flat mushroom icons ONLY in the requested colors. It is already arranged in the REQUIRED output layout: 1254x1254, equal invisible3x3 grid; each row col1 CAP SIDE VIEW ONLY, col2 WHOLE MUSHROOM, col3 EMPTY TRANSPARENT. Keep the exact style, line weight, outlines, proportions, icon center, scale, cap silhouette, age and anatomy. No growth stages and NO SHAPE VARIANTS. Real alpha transparency, clean edges, NO background, NO text, NO frames, NO shadows, NO extra details. Maintain simple broad flat colors and source highlights; use the requested recognizable midtone or a slightly lighter shade. OUTPUT ROW 1: Morchella esculenta s.l. (morchella-esculenta). Change only cap color from giallo to crema #e3cfa3. Preserve the base conico cap silhouette EXACTLY, same age, no shape change. Keep all gill/underside, stem, ring, volva, warts and scale colors unchanged; for a scaled cap preserve darker scale/disc contrast on the new cap ground. Preserve these source characteristics: Testa a nido d'ape, con alveoli e costole, non a circonvoluzioni di cervello; Testa e gambo cavi, in un'unica camera, se tagliati per il lungo; Margine della testa saldato al gambo; Gambo bianco o crema. OUTPUT ROW 2: Morchella esculenta s.l. (morchella-esculenta). Change only cap color from giallo to bruno #8e5f36. Preserve the base conico cap silhouette EXACTLY, same age, no shape change. Keep all gill/underside, stem, ring, volva, warts and scale colors unchanged; for a scaled cap preserve darker scale/disc contrast on the new cap ground. Preserve these source characteristics: Testa a nido d'ape, con alveoli e costole, non a circonvoluzioni di cervello; Testa e gambo cavi, in un'unica camera, se tagliati per il lungo; Margine della testa saldato al gambo; Gambo bianco o crema. OUTPUT ROW 3: Hydnellum peckii (hydnellum-peckii). Change only cap color from bianco to rosa #d99aa2. Preserve the base piano cap silhouette EXACTLY, same age, no shape change. Keep all gill/underside, stem, ring, volva, warts and scale colors unchanged; for a scaled cap preserve darker scale/disc contrast on the new cap ground. Preserve these source characteristics: Consistenza dura e sugherosa; Gocce rosse sul cappello; Ingloba aghi e rametti. Do not borrow anatomy from another row. No additions: preserve only features already visible in each corresponding reference drawing. MANDATORY: each drawing entirely inside its own cell with at least10% completely transparent margin on ALL four sides. Every418px cell must have zero alpha in the outer42px strips. Keep whole mushroom and cap far from cell boundaries. Third column totally empty alpha0. Every drawing must have a COMPLETE CLOSED DARK CONTOUR at its top, bottom, left and right extremes; never a straight cropped fill edge. Do not truncate caps, stalks or basal structures. Restore the full original outline if the reference has a clipped artifact.",
+    "base": {
+      "colore": "giallo",
+      "forma": "conico"
+    },
+    "cella": 4,
+    "variante": "colore:bruno",
+    "qa": "Controllo visivo colore e caratteri invarianti; verifiche codice di margini alpha0 di42px (10%) e contorni scuri completi ai4estremi prima dell'upload."
+  },
+  {
+    "file": "incoming/icone/varianti-23.png",
+    "tipo": "illustrazione",
+    "soggetto": "hydnellum-peckii",
+    "tessera": "cappello",
+    "stagione": null,
+    "foto_di_partenza": null,
+    "autore_foto": null,
+    "licenza_foto": null,
+    "pagina_foto": null,
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case precise-object-edit / scientific-educational. Edit this reference sheet of APPROVED flat mushroom icons ONLY in the requested colors. It is already arranged in the REQUIRED output layout: 1254x1254, equal invisible3x3 grid; each row col1 CAP SIDE VIEW ONLY, col2 WHOLE MUSHROOM, col3 EMPTY TRANSPARENT. Keep the exact style, line weight, outlines, proportions, icon center, scale, cap silhouette, age and anatomy. No growth stages and NO SHAPE VARIANTS. Real alpha transparency, clean edges, NO background, NO text, NO frames, NO shadows, NO extra details. Maintain simple broad flat colors and source highlights; use the requested recognizable midtone or a slightly lighter shade. OUTPUT ROW 1: Morchella esculenta s.l. (morchella-esculenta). Change only cap color from giallo to crema #e3cfa3. Preserve the base conico cap silhouette EXACTLY, same age, no shape change. Keep all gill/underside, stem, ring, volva, warts and scale colors unchanged; for a scaled cap preserve darker scale/disc contrast on the new cap ground. Preserve these source characteristics: Testa a nido d'ape, con alveoli e costole, non a circonvoluzioni di cervello; Testa e gambo cavi, in un'unica camera, se tagliati per il lungo; Margine della testa saldato al gambo; Gambo bianco o crema. OUTPUT ROW 2: Morchella esculenta s.l. (morchella-esculenta). Change only cap color from giallo to bruno #8e5f36. Preserve the base conico cap silhouette EXACTLY, same age, no shape change. Keep all gill/underside, stem, ring, volva, warts and scale colors unchanged; for a scaled cap preserve darker scale/disc contrast on the new cap ground. Preserve these source characteristics: Testa a nido d'ape, con alveoli e costole, non a circonvoluzioni di cervello; Testa e gambo cavi, in un'unica camera, se tagliati per il lungo; Margine della testa saldato al gambo; Gambo bianco o crema. OUTPUT ROW 3: Hydnellum peckii (hydnellum-peckii). Change only cap color from bianco to rosa #d99aa2. Preserve the base piano cap silhouette EXACTLY, same age, no shape change. Keep all gill/underside, stem, ring, volva, warts and scale colors unchanged; for a scaled cap preserve darker scale/disc contrast on the new cap ground. Preserve these source characteristics: Consistenza dura e sugherosa; Gocce rosse sul cappello; Ingloba aghi e rametti. Do not borrow anatomy from another row. No additions: preserve only features already visible in each corresponding reference drawing. MANDATORY: each drawing entirely inside its own cell with at least10% completely transparent margin on ALL four sides. Every418px cell must have zero alpha in the outer42px strips. Keep whole mushroom and cap far from cell boundaries. Third column totally empty alpha0. Every drawing must have a COMPLETE CLOSED DARK CONTOUR at its top, bottom, left and right extremes; never a straight cropped fill edge. Do not truncate caps, stalks or basal structures. Restore the full original outline if the reference has a clipped artifact.",
+    "base": {
+      "colore": "bianco",
+      "forma": "piano"
+    },
+    "cella": 6,
+    "variante": "colore:rosa",
+    "qa": "Controllo visivo colore e caratteri invarianti; verifiche codice di margini alpha0 di42px (10%) e contorni scuri completi ai4estremi prima dell'upload."
+  },
+  {
+    "file": "incoming/icone/varianti-23.png",
+    "tipo": "illustrazione",
+    "soggetto": "hydnellum-peckii",
+    "tessera": "gambo",
+    "stagione": null,
+    "foto_di_partenza": null,
+    "autore_foto": null,
+    "licenza_foto": null,
+    "pagina_foto": null,
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case precise-object-edit / scientific-educational. Edit this reference sheet of APPROVED flat mushroom icons ONLY in the requested colors. It is already arranged in the REQUIRED output layout: 1254x1254, equal invisible3x3 grid; each row col1 CAP SIDE VIEW ONLY, col2 WHOLE MUSHROOM, col3 EMPTY TRANSPARENT. Keep the exact style, line weight, outlines, proportions, icon center, scale, cap silhouette, age and anatomy. No growth stages and NO SHAPE VARIANTS. Real alpha transparency, clean edges, NO background, NO text, NO frames, NO shadows, NO extra details. Maintain simple broad flat colors and source highlights; use the requested recognizable midtone or a slightly lighter shade. OUTPUT ROW 1: Morchella esculenta s.l. (morchella-esculenta). Change only cap color from giallo to crema #e3cfa3. Preserve the base conico cap silhouette EXACTLY, same age, no shape change. Keep all gill/underside, stem, ring, volva, warts and scale colors unchanged; for a scaled cap preserve darker scale/disc contrast on the new cap ground. Preserve these source characteristics: Testa a nido d'ape, con alveoli e costole, non a circonvoluzioni di cervello; Testa e gambo cavi, in un'unica camera, se tagliati per il lungo; Margine della testa saldato al gambo; Gambo bianco o crema. OUTPUT ROW 2: Morchella esculenta s.l. (morchella-esculenta). Change only cap color from giallo to bruno #8e5f36. Preserve the base conico cap silhouette EXACTLY, same age, no shape change. Keep all gill/underside, stem, ring, volva, warts and scale colors unchanged; for a scaled cap preserve darker scale/disc contrast on the new cap ground. Preserve these source characteristics: Testa a nido d'ape, con alveoli e costole, non a circonvoluzioni di cervello; Testa e gambo cavi, in un'unica camera, se tagliati per il lungo; Margine della testa saldato al gambo; Gambo bianco o crema. OUTPUT ROW 3: Hydnellum peckii (hydnellum-peckii). Change only cap color from bianco to rosa #d99aa2. Preserve the base piano cap silhouette EXACTLY, same age, no shape change. Keep all gill/underside, stem, ring, volva, warts and scale colors unchanged; for a scaled cap preserve darker scale/disc contrast on the new cap ground. Preserve these source characteristics: Consistenza dura e sugherosa; Gocce rosse sul cappello; Ingloba aghi e rametti. Do not borrow anatomy from another row. No additions: preserve only features already visible in each corresponding reference drawing. MANDATORY: each drawing entirely inside its own cell with at least10% completely transparent margin on ALL four sides. Every418px cell must have zero alpha in the outer42px strips. Keep whole mushroom and cap far from cell boundaries. Third column totally empty alpha0. Every drawing must have a COMPLETE CLOSED DARK CONTOUR at its top, bottom, left and right extremes; never a straight cropped fill edge. Do not truncate caps, stalks or basal structures. Restore the full original outline if the reference has a clipped artifact.",
+    "base": {
+      "colore": "bianco",
+      "forma": "piano"
+    },
+    "cella": 7,
+    "variante": "colore:rosa",
+    "qa": "Controllo visivo colore e caratteri invarianti; verifiche codice di margini alpha0 di42px (10%) e contorni scuri completi ai4estremi prima dell'upload."
   }
 ]
