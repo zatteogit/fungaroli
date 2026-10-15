@@ -96,7 +96,7 @@ export async function openAccount() {
       <div class="profile-editorial" data-cms-link hidden></div>
       <div class="profile-actions" role="group" aria-label="Azioni del profilo"><button type="button" class="btn ghost" data-logout>Esci dal profilo</button><button type="button" class="btn primary" data-close autofocus>Chiudi</button></div>
       <div class="profile-data"><button type="button" class="link-btn" data-delete-account>Elimina profilo e dati</button></div><p class="profile-status" role="status" data-status></p>`
-      : `<h2>Unisciti a Fungaroli</h2><p>Un profilo senza password o email: usa la passkey del telefono o del computer. Il nome è facoltativo e non appare nelle segnalazioni.</p>
+      : `<h2>Unisciti a Fronda</h2><p>Un profilo senza password o email: usa la passkey del telefono o del computer. Il nome è facoltativo e non appare nelle segnalazioni.</p>
       <label>Come vuoi chiamarti? <input class="wiz-input" maxlength="32" autocomplete="nickname" data-handle placeholder="Un nome, anche inventato"></label>
       <button type="button" class="btn primary big" data-register>Crea profilo con passkey</button><button type="button" class="btn ghost big" data-login>Ho già una passkey</button>
       <p class="small muted">Il taccuino rimane tuo. Zona, specie, giorno e quantità diventano pubblici solo in forma aggregata quando scegli di segnalarli. <a href="#/info">Privacy e condizioni</a></p>
