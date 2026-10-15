@@ -385,7 +385,9 @@ for(const width of [390,1280]) test(`Scopri: tre cataloghi più Impara e ricerca
     await expect(view.locator('.seg-nav a')).toHaveText(['Funghi','Piante e fiori','Alberi','Impara']);
   }
   // Impara: quarta sezione di Scopri, con le sue sotto-schede e «indietro»
+  // si arriva dalla pagina indice di Impara: «indietro» riporta lì
   for(const [route,title] of [['/#/glossario','Glossario'],['/#/guide','Guide'],['/#/riconosci/bosco','Bosco e sentiero'],['/#/sfide','Sfide']]){
+    await page.goto('/#/impara');await expect(page.locator('#learn-hub')).toBeVisible();
     await page.goto(route);const view=page.locator('.view:not([hidden])');
     await expect(view.locator('.seg-nav [data-section="impara"]')).toHaveAttribute('aria-current','page');await expect(view.locator('.sub-nav a')).toHaveCount(4);
     await expect(page.locator('[data-tab="specie"]')).toHaveAttribute('aria-current','page');
