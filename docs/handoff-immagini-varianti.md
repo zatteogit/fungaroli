@@ -157,3 +157,13 @@ Valori da `data/species-traits.json` (`cap_color`, `cap_shape`). Una specie con 
 | Lingua di bue (`fistulina-hepatica`) | tavola-30 | rosso, rosa, bruno | — | 2 |
 
 Totale varianti: **259** (ognuna = 2 icone: cappello e fungo intero).
+
+## Icone da ridisegnare (dati corretti dopo l'import)
+
+Dopo il controllo dei campi `null` di anello e volva (15/10), questi valori sono cambiati con fonte verificabile. L'icona del gambo non mostra ancora il carattere: va ridisegnata nello stesso stile, nella stessa cella della tavola.
+
+| Specie | Campo | Prima → dopo | Cosa deve mostrare il gambo | Fonti |
+|---|---|---|---|---|
+| Coprinus comatus (`coprinus-comatus`) | `stem_ring` | null → true | anello sottile e mobile, basso sul gambo, spesso scivolato verso la base | en.wikipedia, it.wikipedia, first-nature (in `traits_notes`) |
+
+Restano `null`, perché le fonti descrivono strutture fugaci o gruppi misti: `agaricus-campestris`, `suillus`, `lepiota-brunneoincarnata`, `lepiota-subincarnata`, `inocybe` (anello) e `amanita-rubescens` (volva). Per `terreum` le fonti dicono che l'anello manca, ma c'è una cortina grigia nei giovani: decisione in sospeso.

@@ -3244,3 +3244,15 @@ img[data-image-state="ready"][data-image-fast] { animation: none; }
   :root[data-theme="dark"] .status-veil { display: none; }
 }
 @media (display-mode: standalone) and (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .status-veil { display: none; } }
+
+/* Punti di ritaglio: ogni contenitore usa la posizione del suo formato (data/crop-points.json via js/images.js);
+   senza dati resta il centro di prima. */
+.tile > img, .notebook-pages .j-img img, .j-img > img { object-position: var(--op-54, 50% 50%); }
+.portrait > img { object-position: var(--op-34, 50% 50%); }
+.sp-card > img { object-position: var(--op-45, 50% 50%); }
+.cover > img { object-position: var(--op-167, 50% 50%); }
+#hero .cover > img.cover-img { object-position: var(--op-167, center 40%); }
+.phero-img > img { object-position: var(--op-34, 50% 50%); }
+@media (min-width: 900px) { .phero-img > img { object-position: var(--op-167, 50% 50%); } }
+.id-card-img img, .tx-img img, .ch-opt-img img, .sheet-img > img { object-position: var(--op-43, 50% 50%); }
+:is(.thumb, .sp-strip img, .look-btn img, .tx-look-main img, .cc-th img, .cmp-chip-img img, .cmp-zoom img, .mapctl-tile img, .wiz-choice.has-img img) { object-position: var(--op-11, 50% 50%); }

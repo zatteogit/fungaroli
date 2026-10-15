@@ -5,6 +5,16 @@ const observer=typeof IntersectionObserver==='function'?new IntersectionObserver
   for(const {target,isIntersecting} of entries)if(isIntersecting){observer.unobserve(target);start(target);}
 },{rootMargin:'240px 0px'}):null;
 
+// Punti di ritaglio (data/crop-points.json): per ogni foto la posizione CSS nei sei formati dell'app,
+// come variabili sull'<img>; ogni contenitore usa la sua (css/style.css, «Punti di ritaglio»). Senza dati: centro.
+const OP={'5:4':'--op-54','3:4':'--op-34','4:5':'--op-45','16:7':'--op-167','4:3':'--op-43','1:1':'--op-11'};
+let CROPS=null;
+const cropKey=src=>{const i=String(src||'').indexOf('assets/');return i<0?'':src.slice(i).split(/[?#]/)[0];};
+export function applyCrop(img){
+  const c=CROPS?.[cropKey(img.getAttribute('data-src')||img.getAttribute('src'))];
+  for(const [k,v] of Object.entries(OP)){if(c?.[k])img.style.setProperty(v,`${Math.round(c[k][0]*1000)/10}% ${Math.round(c[k][1]*1000)/10}%`);else img.style.removeProperty(v);}
+}
+fetch('data/crop-points.json').then(r=>(r.ok?r.json():null)).then(d=>{CROPS=d?.files||{};document.querySelectorAll('img').forEach(applyCrop);}).catch(()=>{CROPS={};});
 function finish(img,state) {
   if(!img.isConnected)return;
   img.dataset.imageState=state;
@@ -58,6 +68,7 @@ export function setImageSource(img,source) {
 }
 function prepare(img) {
   watch(img);
+  if(CROPS)applyCrop(img);
   if(img.dataset.src){
     // una foto già mostrata che cambia sorgente si sostituisce senza tornare vuota
     if(img.dataset.imageState==='ready'&&img.getAttribute('src')){start(img);return;}
