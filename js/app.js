@@ -1499,7 +1499,7 @@ function pointTrailPreview(z, t, d, h) {
   const elevations = (t.samples || []).map(s => s[0]).filter(Number.isFinite);
   const range = elevations.length ? ` · ${Math.min(...elevations)}–${Math.max(...elevations)} m` : '';
   return `<div class="pt-preview"><p class="pt-preview-title">Tratto locale · ${fmtKm(t.in_zone_km)} km${range}</p>
-    ${trailVisual(z, t, d, [h])}</div>`;
+    ${trailVisual(z, t, d, [h], 'map')}</div>`;
 }
 
 function initMap() {
@@ -2029,7 +2029,7 @@ function renderWalkFocus(z, d, walk) {
       <div><dt>Imbocco mappato</dt><dd>${h ? `${h.ele != null ? `Circa ${Math.round(h.ele / 25) * 25} m · ` : ''}${esc(h.road || (h.kind === 'strada' ? 'su strada' : 'su sterrata'))}` : 'Non disponibile; le soste indicate riguardano la zona'}</dd></div>
     </dl>
     ${t.mainCat ? `<p class="small" data-glossary="${d?.best?.kind==='plant'?'Piante':'Funghi'}">Lungo il tracciato: ${linkTrees(t.mainCat.toLowerCase())} nei campioni tra circa ${Math.floor(t.lo / 25) * 25} e ${Math.ceil(t.hi / 25) * 25} m${d?.best?.species ? `, ${d.best.kind==='plant'?'proxy di paesaggio per':'compatibili con l’habitat di'} ${speciesLink(d.best.species, d.best.species.name.toLowerCase())}` : ''}.</p>` : ''}
-    ${trailVisual(z, t, d, headsOf(z,t))}
+    ${trailVisual(z, t, d, headsOf(z,t), 'focus')}
     <button type="button" class="btn ghost" data-note-kind="zona" data-note-id="${z.id}" data-note-zone="${z.id}" data-note-href="${esc(walkHref(z,state.dayOffset,t))}" data-note-title="${esc(trailName(t))}">＋ Salva il giro nel taccuino</button>
     ${trailLinks(z, t)}
     <p class="small muted">Il GPX contiene solo il tratto nella zona. Tempi e dislivello, quando disponibili, riguardano l’itinerario completo. Verifica accesso, sosta e stato del sentiero prima di partire.</p>
@@ -2106,6 +2106,7 @@ function bindDetailSections(box, onOpen = () => {}) {
   if (current) sync(current); else openSecs.clear();
 }
 
+let lastDetailHtml = '', lastDetailNode = null;
 function renderDetail() {
   $('#detail').dataset.glossaryContext=state.target==='piante'?'Piante':'Funghi';
   const z = (weatherZones||zones).find((x) => x.id === state.zoneId) || zones[0];
@@ -2141,7 +2142,7 @@ function renderDetail() {
 
   const [title, sub] = splitName(z);
   const cov = coverOf(z, best.species.id, d);
-  box.innerHTML = `
+  const detailHtml = `
     <header class="phero">
       ${cov ? `<button type="button" class="phero-img" data-cover aria-label="Ingrandisci la foto"><img data-src="${cov.hd}" alt="${esc(cov.alt)}"></button>` : ''}
       <span class="shade"></span>
@@ -2175,6 +2176,11 @@ function renderDetail() {
         <dt>Quote</dt><dd>${habitat[z.id].elevation.min}–${habitat[z.id].elevation.max} m (mediana ${habitat[z.id].elevation.median})</dd>
       </dl>${zoneMedia[z.id] ? `<p class="small muted">${creditLine(cov?.credit && zoneMedia[z.id] && cov.credit.page === zoneMedia[z.id].page ? cov.credit : zoneMedia[z.id])}</p>` : ''}`)}
     </div>`;
+  // dati che non cambiano ciò che si vede (comunità, taccuino) non devono sostituire la scheda già a schermo:
+  // stesso disegno, stessi nodi, sezioni aperte e lettura intatte
+  if (lastDetailNode && box.firstElementChild === lastDetailNode && detailHtml === lastDetailHtml) return;
+  box.innerHTML = detailHtml;
+  lastDetailHtml = detailHtml; lastDetailNode = box.firstElementChild;
   box.querySelector('[data-cover]')?.addEventListener('click', () => openLightbox([{ src: cov.hd, alt: cov.alt, caption: captionHtml({ title: esc(z.name), credit: creditLine(cov.credit) }) }]));
   box.querySelector('[data-save-plan]')?.addEventListener('click', async (e) => {
     const btn = e.currentTarget, status = box.querySelector('[data-plan-status]');
@@ -2308,10 +2314,10 @@ function trailProfile(zid, t, sp, band, heads = [], visualId = '') {
     <figcaption><span>${es[0]} m</span><span class="tp-key">${habitatKnown ? `<i></i><span>${sp.kind==='plant'?'paesaggio compatibile (proxy) per':'bosco compatibile con'} ${speciesLink(sp, sp.name.toLowerCase())}</span>` : 'Quote del tratto locale'}</span><span>${es[n - 1]} m</span></figcaption></figure>`;
 }
 
-let trailVisualId = 0;
 const trailViews = new Map();
-function trailVisual(z, t, d, heads = []) {
-  const id = `trail-visual-${++trailVisualId}`, key = `${z.id}/${t.id}`;
+// id stabile (punto della pagina, zona, sentiero): un ridisegno con gli stessi dati produce lo stesso HTML
+function trailVisual(z, t, d, heads = [], where = 'list') {
+  const id = `trail-visual-${where}-${`${z.id}-${t.id}`.replace(/[^\w-]/g, '_')}`, key = `${z.id}/${t.id}`;
   const view = trailViews.get(key) || 'profile', sketch = trailSketch(t, heads[0], heads.slice(1));
   const trace = sketch ? `<figure class="walk-sketch"><span class="trail-north" aria-hidden="true">N ↑</span><svg viewBox="${sketch.viewBox.map(n=>n.toFixed(1)).join(' ')}" role="img" aria-label="Schema del tratto locale orientato a nord${heads.length ? ', con accessi mappati numerati' : ''}">${sketch.paths.map(p => `<polyline points="${p}"/>`).join('')}${sketch.heads.map((p,k) => `<g class="trail-access" data-trail-head="${k}" aria-hidden="true"><circle cx="${p[0].toFixed(1)}" cy="${p[1].toFixed(1)}" r="8"/><text x="${p[0].toFixed(1)}" y="${p[1].toFixed(1)}" text-anchor="middle" dominant-baseline="central">${k+1}</text></g>`).join('')}</svg><figcaption>${sketch.paths.length > 1 ? 'Segmenti separati' : 'Tratto locale'}${heads.length ? ' · punti: accessi mappati' : ''}. Schema orientato a nord; usa la mappa del sentiero per orientarti.</figcaption></figure>` : '<p class="small muted">Tracciato non disponibile per questo tratto.</p>';
   const profile = trailProfile(z.id, t, d?.best?.species, d?.best?.band, heads,id) || '<p class="small muted">Profilo altimetrico non disponibile: mancano quote sufficienti per questo tratto.</p>';
