@@ -3256,3 +3256,18 @@ img[data-image-state="ready"][data-image-fast] { animation: none; }
 @media (min-width: 900px) { .phero-img > img { object-position: var(--op-167, 50% 50%); } }
 .id-card-img img, .tx-img img, .ch-opt-img img, .sheet-img > img { object-position: var(--op-43, 50% 50%); }
 :is(.thumb, .sp-strip img, .look-btn img, .tx-look-main img, .cc-th img, .cmp-chip-img img, .cmp-zoom img, .mapctl-tile img, .wiz-choice.has-img img) { object-position: var(--op-11, 50% 50%); }
+
+/* Barra in alto su telefono: il titolo piccolo non deve finire sotto le icone a destra.
+   Senza «indietro» (schede principali) sta a sinistra, dove la barra è vuota, e si ferma prima delle icone;
+   con «indietro» le icone non ci sono e resta al centro. */
+@media (max-width: 760px) {
+  .is-standalone .appbar:not(:has(.appbar-back:not([hidden]))) .appbar-title { left: var(--gutter); right: 140px; max-width: none; text-align: left; transform: translate(0, 6px); }
+  .is-standalone.title-in-bar .appbar:not(:has(.appbar-back:not([hidden]))) .appbar-title { transform: translate(0, 0); }
+  /* profilo: sempre un'icona tonda; con il profilo dentro c'è l'iniziale, il nome completo è nella finestra del profilo */
+  .profile-entry.is-user { width: 40px; height: 40px; padding: 0; justify-content: center; position: relative; }
+  .profile-entry.is-user [data-profile-label] { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .profile-entry.is-user[data-initial]:not([data-initial=""]) svg { display: none; }
+  .profile-entry.is-user[data-initial]:not([data-initial=""])::before { content: attr(data-initial); font-size: 16px; font-weight: 700; color: var(--accent); }
+}
+/* in home c'è il logo a sinistra: niente titolo piccolo */
+.is-standalone .appbar:has(.brand:not([hidden])) .appbar-title { display: none; }
