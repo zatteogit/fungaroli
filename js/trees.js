@@ -67,7 +67,8 @@ const confusableCard = (self) => (c) => {
   const cid = T[c.id] ? c.id : Object.keys(T).find((k) => T[k].name.toLowerCase() === String(c.name || '').toLowerCase());
   const [, nm, lat] = String(c.name || '').match(/^(.*?)\s*(?:\(([^)]+)\))?$/) || [];
   const name = nm || (cid ? T[cid].name : ''), latin = cardLatin(lat || c.latin || (cid ? T[cid].latin : ''));
-  const m = cid && treePhotos(cid)[0];
+  // scheda di genere (pioppo, salice): la sua foto è di un'altra specie, quindi non la si mostra per «Pioppo bianco»
+  const m = cid && (!c.latin || (MEDIA[cid]?.photo_taxon || T[cid].latin) === c.latin) && treePhotos(cid)[0];
   const img = m ? `<img data-src="${ASSET(m.thumb || m.file)}" alt="" loading="lazy" decoding="async">` : `<span class="thumb-ph tx-look-ph" aria-hidden="true">${esc(String(name || '?').slice(0, 2))}</span>`;
   const inner = `${img}<span><b>${esc(name)}</b>${latin ? `<i>${esc(latin)}</i>` : ''}<small class="muted">${esc(c.how_to_tell)}</small></span>`;
   return `<li>${cid && cid !== self ? `<a class="tx-look-main" data-entity href="#/albero/${encodeURIComponent(cid)}">${inner}</a>` : `<div class="tx-look-main">${inner}</div>`}</li>`;
