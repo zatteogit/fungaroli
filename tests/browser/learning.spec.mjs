@@ -74,10 +74,17 @@ for(const width of [320,1280]) test(`spiegazioni contestuali, glossario e ricono
   await page.goto('/#/riconosci/alberi');await page.locator('#field-identify [data-k="leaf_kind"][data-v="aghi"]').click();
   await expect(page.locator('#field-identify .id-head h2')).toHaveText('8 candidati');
   await expect(page.locator('#field-identify .id-answers')).toContainText('Aghi');
+  // icone dei caratteri degli alberi: nella risposta data e nelle opzioni della domanda successiva
+  await expect(page.locator('#field-identify .id-answers img.gk-row-ill')).toHaveAttribute('src',/tree-traits\/leaf_kind-aghi\.webp$/);
+  await expect(page.locator('#field-identify .gk-grid-ill .id-opt img.ts-ill').first()).toBeVisible();
   const treeResult=page.locator('#field-identify .gk-results a',{hasText:'Pino nero'});
   await treeResult.click();await expect(sheet.locator('h1')).toContainText('Pino nero');
   expect(page.url()).toContain('#/riconosci/alberi');await page.keyboard.press('Escape');
   await expect(treeResult).toBeFocused();
+  // scheda del castagno: 8 tessere, ognuna con l'icona del suo valore (riccio spinoso compreso)
+  await page.goto('/#/albero/castagno');const tiles=page.locator('[data-tree-traits] .trait-strip-ill li');
+  await expect(tiles).toHaveCount(8);await expect(page.locator('[data-tree-traits] img.ts-ill')).toHaveCount(8);
+  await expect(page.locator('[data-tree-traits] img[src$="fruit_type-riccio_spinoso.webp"]')).toBeVisible();
   await page.goto('/#/riconosci/bosco');await page.locator('#field-glossary [data-category="Sentiero"]').click();
   await page.locator('#field-glossary-q').fill('segnavia');await expect(page.locator('#field-glossary-results')).toContainText('Segnavia');
   await page.goto('/#/riconosci');

@@ -5,7 +5,7 @@ import { openLightbox, captionHtml } from './lightbox.js';
 import { cardLatin } from './names.js';
 import { treeGroup } from './plant-catalog.js';
 import { searchFieldHtml, matchesQuery, renderAlsoIn } from './catalog-search.js';
-import { loadKeyData, traitTilesHtml } from './guided-key.js';
+import { loadKeyData, loadTreeIcons, traitTilesHtml } from './guided-key.js';
 import { sourceRows, photoRows } from './identify.js';
 
 const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
@@ -148,7 +148,7 @@ export function renderTreePage(body, id) {
       ${sec('Fonti e crediti delle foto', `${sourceRows(t.sources)}${photos.length ? `<p class="src-h">Fotografie</p>${photoRows(photos)}` : ''}`)}
     </div>
     </div>`;
-  loadKeyData('alberi').then((d) => { const slot = body.querySelector('[data-tree-traits]'); if (slot && d?.items?.[id]) slot.innerHTML = traitTilesHtml(d, d.items[id].traits); });
+  Promise.all([loadKeyData('alberi'), loadTreeIcons()]).then(([d, icons]) => { const slot = body.querySelector('[data-tree-traits]'); if (slot && d?.items?.[id]) slot.innerHTML = traitTilesHtml(d, d.items[id].traits, icons); });
   const gallery = photos.map((p) => ({ src: ASSET(p.file_hd || p.file), alt: t.name, caption: captionHtml({ title: esc(t.name), text: esc(t.latin), credit: credit(p) }) }));
   body.querySelectorAll('[data-photo]').forEach((b) => b.addEventListener('click', () => openLightbox(gallery, +b.dataset.photo)));
 }

@@ -167,3 +167,13 @@ Dopo il controllo dei campi `null` di anello e volva (15/10), questi valori sono
 | Coprinus comatus (`coprinus-comatus`) | `stem_ring` | null → true | anello sottile e mobile, basso sul gambo, spesso scivolato verso la base | en.wikipedia, it.wikipedia, first-nature (in `traits_notes`) |
 
 Restano `null`, perché le fonti descrivono strutture fugaci o gruppi misti: `agaricus-campestris`, `suillus`, `lepiota-brunneoincarnata`, `lepiota-subincarnata`, `inocybe` (anello) e `amanita-rubescens` (volva). Per `terreum` le fonti dicono che l'anello manca, ma nei giovani c'è una cortina grigia quasi persistente: per decisione di Matteo (15/10) resta `null`, così la cortina non viene scambiata né per un anello né per la sua assenza.
+
+## Icone dei caratteri degli alberi da disegnare
+
+Le 48 icone delle tavole `incoming/icone-alberi/` sono in `assets/tree-traits/` (import: `tools/import_tree_icons.py`). Manca un valore aggiunto allo schema dopo il giro di disegni:
+
+| Chiave | Valore | Cosa deve mostrare | Usato da |
+|---|---|---|---|
+| `leaf_type` | `composta_palmata` («Composta, foglioline a ventaglio») | foglia con 5-7 foglioline che partono tutte dallo stesso punto, in cima a un lungo picciolo, nello stile della tavola 02 | ippocastano |
+
+Per aggiungerla: nuova riga nel manifest (`soggetto: "alberi"`, `chiave`, `valore`, `cella`) e rilancio dell'import; poi togliere il valore da `PENDING` in `tests/tree-trait-icons.test.mjs`.
