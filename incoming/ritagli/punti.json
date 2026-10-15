@@ -8709,5 +8709,1085 @@
     "soggetto": "chioma e tronco del pino d’Aleppo",
     "dubbio": true,
     "nota": "Tronco e rami già tagliati dai bordi originali. Il riquadro non entra nei formati 5:4, 4:5, 4:3, 1:1, 16:7. Miniatura assets/species/tree-pino-d-aleppo-inat1-t.webp già ritagliata: 160×160, originale 771×1024; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/tree-pino-d-aleppo-inat2-hd.webp": {
+    "punto": [
+      0.54,
+      0.505
+    ],
+    "riquadro": [
+      0.15,
+      0.02,
+      0.93,
+      0.99
+    ],
+    "soggetto": "rami e aghi del giovane pino d’Aleppo",
+    "dubbio": true,
+    "nota": "Il riquadro non entra nei formati 3:4, 4:5, 1:1, 16:7. Miniatura assets/species/tree-pino-d-aleppo-inat2-t.webp già ritagliata: 160×160, originale 1024×768; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/tree-pino-d-aleppo-inat2.webp": {
+    "punto": [
+      0.54,
+      0.505
+    ],
+    "riquadro": [
+      0.15,
+      0.02,
+      0.93,
+      0.99
+    ],
+    "soggetto": "rami e aghi del giovane pino d’Aleppo",
+    "dubbio": true,
+    "nota": "Il riquadro non entra nei formati 3:4, 4:5, 1:1, 16:7. Miniatura assets/species/tree-pino-d-aleppo-inat2-t.webp già ritagliata: 160×160, originale 1024×768; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/tree-pino-d-aleppo-inat3-hd.webp": {
+    "punto": [
+      0.505,
+      0.5
+    ],
+    "riquadro": [
+      0.02,
+      0.0,
+      0.99,
+      1.0
+    ],
+    "soggetto": "chioma e tronco del pino d’Aleppo visti dal basso",
+    "dubbio": true,
+    "nota": "Albero già tagliato ai bordi superiore e inferiore. Il riquadro non entra nei formati 5:4, 4:5, 4:3, 1:1, 16:7. Miniatura assets/species/tree-pino-d-aleppo-inat3-t.webp già ritagliata: 160×160, originale 768×1024; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/tree-pino-d-aleppo-inat3.webp": {
+    "punto": [
+      0.505,
+      0.5
+    ],
+    "riquadro": [
+      0.02,
+      0.0,
+      0.99,
+      1.0
+    ],
+    "soggetto": "chioma e tronco del pino d’Aleppo visti dal basso",
+    "dubbio": true,
+    "nota": "Albero già tagliato ai bordi superiore e inferiore. Il riquadro non entra nei formati 5:4, 4:5, 4:3, 1:1, 16:7. Miniatura assets/species/tree-pino-d-aleppo-inat3-t.webp già ritagliata: 160×160, originale 768×1024; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/tree-pino-silvestre-free1-hd.webp": {
+    "punto": [
+      0.505,
+      0.5
+    ],
+    "riquadro": [
+      0.07,
+      0.0,
+      0.94,
+      1.0
+    ],
+    "soggetto": "tronco e ramificazione del pino silvestre",
+    "dubbio": true,
+    "nota": "Tronco attraversa i bordi originali. Il riquadro non entra nei formati 5:4, 3:4, 4:3, 1:1, 16:7. Miniatura assets/species/tree-pino-silvestre-free1-t.webp già ritagliata: 160×160, originale 925×1024; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/tree-pino-silvestre-free1.webp": {
+    "punto": [
+      0.505,
+      0.5
+    ],
+    "riquadro": [
+      0.07,
+      0.0,
+      0.94,
+      1.0
+    ],
+    "soggetto": "tronco e ramificazione del pino silvestre",
+    "dubbio": true,
+    "nota": "Tronco attraversa i bordi originali. Il riquadro non entra nei formati 5:4, 3:4, 4:3, 1:1, 16:7. Miniatura assets/species/tree-pino-silvestre-free1-t.webp già ritagliata: 160×160, originale 925×1024; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/tree-pino-silvestre-inat1-hd.webp": {
+    "punto": [
+      0.52,
+      0.585
+    ],
+    "riquadro": [
+      0.18,
+      0.22,
+      0.86,
+      0.95
+    ],
+    "soggetto": "giovane pino silvestre tra le erbe",
+    "dubbio": true,
+    "nota": "Fusto nascosto dall’erba; individuo non distinguibile per intero. Il riquadro non entra nei formati 5:4, 4:5, 4:3, 1:1, 16:7. Miniatura assets/species/tree-pino-silvestre-inat1-t.webp già ritagliata: 160×160, originale 576×1024; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/tree-pino-silvestre-inat1.webp": {
+    "punto": [
+      0.52,
+      0.585
+    ],
+    "riquadro": [
+      0.18,
+      0.22,
+      0.86,
+      0.95
+    ],
+    "soggetto": "giovane pino silvestre tra le erbe",
+    "dubbio": true,
+    "nota": "Fusto nascosto dall’erba; individuo non distinguibile per intero. Il riquadro non entra nei formati 5:4, 4:5, 4:3, 1:1, 16:7. Miniatura assets/species/tree-pino-silvestre-inat1-t.webp già ritagliata: 160×160, originale 576×1024; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/tree-pino-silvestre-inat2-hd.webp": {
+    "punto": [
+      0.535,
+      0.5
+    ],
+    "riquadro": [
+      0.19,
+      0.0,
+      0.88,
+      1.0
+    ],
+    "soggetto": "tronco e rami del pino silvestre",
+    "dubbio": true,
+    "nota": "Tronco attraversa i bordi originali. Il riquadro non entra nei formati 5:4, 3:4, 4:5, 4:3, 1:1, 16:7. Miniatura assets/species/tree-pino-silvestre-inat2-t.webp già ritagliata: 160×160, originale 576×1024; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/tree-pino-silvestre-inat2.webp": {
+    "punto": [
+      0.535,
+      0.5
+    ],
+    "riquadro": [
+      0.19,
+      0.0,
+      0.88,
+      1.0
+    ],
+    "soggetto": "tronco e rami del pino silvestre",
+    "dubbio": true,
+    "nota": "Tronco attraversa i bordi originali. Il riquadro non entra nei formati 5:4, 3:4, 4:5, 4:3, 1:1, 16:7. Miniatura assets/species/tree-pino-silvestre-inat2-t.webp già ritagliata: 160×160, originale 576×1024; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/tree-pino-silvestre-inat3-hd.webp": {
+    "punto": [
+      0.535,
+      0.5
+    ],
+    "riquadro": [
+      0.08,
+      0.02,
+      0.99,
+      0.98
+    ],
+    "soggetto": "rametto di pino silvestre con aghi e gemme",
+    "dubbio": true,
+    "nota": "Il riquadro non entra nei formati 5:4, 4:5, 4:3, 1:1, 16:7. Miniatura assets/species/tree-pino-silvestre-inat3-t.webp già ritagliata: 160×160, originale 768×1024; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/tree-pino-silvestre-inat3.webp": {
+    "punto": [
+      0.535,
+      0.5
+    ],
+    "riquadro": [
+      0.08,
+      0.02,
+      0.99,
+      0.98
+    ],
+    "soggetto": "rametto di pino silvestre con aghi e gemme",
+    "dubbio": true,
+    "nota": "Il riquadro non entra nei formati 5:4, 4:5, 4:3, 1:1, 16:7. Miniatura assets/species/tree-pino-silvestre-inat3-t.webp già ritagliata: 160×160, originale 768×1024; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/tree-abete-bianco-inat1-hd.webp": {
+    "punto": [
+      0.52,
+      0.485
+    ],
+    "riquadro": [
+      0.06,
+      0.04,
+      0.98,
+      0.93
+    ],
+    "soggetto": "rametto di abete bianco con aghi",
+    "dubbio": true,
+    "nota": "Il riquadro non entra nei formati 5:4, 4:3, 1:1, 16:7. Miniatura assets/species/tree-abete-bianco-inat1-t.webp già ritagliata: 160×160, originale 768×1024; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/tree-abete-bianco-inat1.webp": {
+    "punto": [
+      0.52,
+      0.485
+    ],
+    "riquadro": [
+      0.06,
+      0.04,
+      0.98,
+      0.93
+    ],
+    "soggetto": "rametto di abete bianco con aghi",
+    "dubbio": true,
+    "nota": "Il riquadro non entra nei formati 5:4, 4:3, 1:1, 16:7. Miniatura assets/species/tree-abete-bianco-inat1-t.webp già ritagliata: 160×160, originale 768×1024; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/tree-abete-bianco-inat2-hd.webp": {
+    "punto": [
+      0.385,
+      0.525
+    ],
+    "riquadro": [
+      0.03,
+      0.09,
+      0.74,
+      0.96
+    ],
+    "soggetto": "rametto pendulo dell’abete bianco con aghi",
+    "dubbio": true,
+    "nota": "Il riquadro non entra nei formati 3:4, 4:5, 16:7. Miniatura assets/species/tree-abete-bianco-inat2-t.webp già ritagliata: 160×160, originale 1024×768; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/tree-abete-bianco-inat2.webp": {
+    "punto": [
+      0.385,
+      0.525
+    ],
+    "riquadro": [
+      0.03,
+      0.09,
+      0.74,
+      0.96
+    ],
+    "soggetto": "rametto pendulo dell’abete bianco con aghi",
+    "dubbio": true,
+    "nota": "Il riquadro non entra nei formati 3:4, 4:5, 16:7. Miniatura assets/species/tree-abete-bianco-inat2-t.webp già ritagliata: 160×160, originale 1024×768; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/tree-abete-bianco-inat3-hd.webp": {
+    "punto": [
+      0.49,
+      0.475
+    ],
+    "riquadro": [
+      0.06,
+      0.11,
+      0.92,
+      0.84
+    ],
+    "soggetto": "giovane abete bianco visto dall’alto",
+    "dubbio": true,
+    "nota": "Il riquadro non entra nei formati 5:4, 3:4, 4:3, 16:7. Miniatura assets/species/tree-abete-bianco-inat3-t.webp già ritagliata: 160×160, originale 922×1024; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/tree-abete-bianco-inat3.webp": {
+    "punto": [
+      0.49,
+      0.475
+    ],
+    "riquadro": [
+      0.06,
+      0.11,
+      0.92,
+      0.84
+    ],
+    "soggetto": "giovane abete bianco visto dall’alto",
+    "dubbio": true,
+    "nota": "Il riquadro non entra nei formati 5:4, 3:4, 4:3, 16:7. Miniatura assets/species/tree-abete-bianco-inat3-t.webp già ritagliata: 160×160, originale 922×1024; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/tree-betulla-inat1-hd.webp": {
+    "punto": [
+      0.51,
+      0.5
+    ],
+    "riquadro": [
+      0.23,
+      0.0,
+      0.79,
+      1.0
+    ],
+    "soggetto": "corteccia e tronco della betulla",
+    "dubbio": true,
+    "nota": "Tronco attraversa i bordi originali. Il riquadro non entra nei formati 5:4, 4:5, 4:3, 1:1, 16:7. Miniatura assets/species/tree-betulla-inat1-t.webp già ritagliata: 160×160, originale 768×1024; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/tree-betulla-inat1.webp": {
+    "punto": [
+      0.51,
+      0.5
+    ],
+    "riquadro": [
+      0.23,
+      0.0,
+      0.79,
+      1.0
+    ],
+    "soggetto": "corteccia e tronco della betulla",
+    "dubbio": true,
+    "nota": "Tronco attraversa i bordi originali. Il riquadro non entra nei formati 5:4, 4:5, 4:3, 1:1, 16:7. Miniatura assets/species/tree-betulla-inat1-t.webp già ritagliata: 160×160, originale 768×1024; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/tree-betulla-inat2-hd.webp": {
+    "punto": [
+      0.61,
+      0.5
+    ],
+    "riquadro": [
+      0.25,
+      0.0,
+      0.97,
+      1.0
+    ],
+    "soggetto": "betulla, tronco e chioma visibile",
+    "dubbio": true,
+    "nota": "Chioma già tagliata in alto e a destra nell’originale. Il riquadro non entra nei formati 3:4, 4:5, 16:7. Miniatura assets/species/tree-betulla-inat2-t.webp già ritagliata: 160×160, originale 1024×768; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/tree-betulla-inat2.webp": {
+    "punto": [
+      0.61,
+      0.5
+    ],
+    "riquadro": [
+      0.25,
+      0.0,
+      0.97,
+      1.0
+    ],
+    "soggetto": "betulla, tronco e chioma visibile",
+    "dubbio": true,
+    "nota": "Chioma già tagliata in alto e a destra nell’originale. Il riquadro non entra nei formati 3:4, 4:5, 16:7. Miniatura assets/species/tree-betulla-inat2-t.webp già ritagliata: 160×160, originale 1024×768; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/tree-betulla-inat3-hd.webp": {
+    "punto": [
+      0.54,
+      0.495
+    ],
+    "riquadro": [
+      0.15,
+      0.0,
+      0.93,
+      0.99
+    ],
+    "soggetto": "tronchi di betulla nel bosco",
+    "dubbio": true,
+    "nota": "Nessun individuo isolabile per intero; chiome fuori foto. Il riquadro non entra nei formati 5:4, 3:4, 4:5, 4:3, 1:1, 16:7. Miniatura assets/species/tree-betulla-inat3-t.webp già ritagliata: 160×160, originale 1024×576; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/tree-betulla-inat3.webp": {
+    "punto": [
+      0.54,
+      0.495
+    ],
+    "riquadro": [
+      0.15,
+      0.0,
+      0.93,
+      0.99
+    ],
+    "soggetto": "tronchi di betulla nel bosco",
+    "dubbio": true,
+    "nota": "Nessun individuo isolabile per intero; chiome fuori foto. Il riquadro non entra nei formati 5:4, 3:4, 4:5, 4:3, 1:1, 16:7. Miniatura assets/species/tree-betulla-inat3-t.webp già ritagliata: 160×160, originale 1024×576; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/tree-nocciolo-inat1-hd.webp": {
+    "punto": [
+      0.52,
+      0.565
+    ],
+    "riquadro": [
+      0.05,
+      0.14,
+      0.99,
+      0.99
+    ],
+    "soggetto": "rametto di nocciolo con foglie",
+    "dubbio": true,
+    "nota": "Il riquadro non entra nei formati 5:4, 4:3, 1:1, 16:7. Miniatura assets/species/tree-nocciolo-inat1-t.webp già ritagliata: 160×160, originale 771×1024; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/tree-nocciolo-inat1.webp": {
+    "punto": [
+      0.52,
+      0.565
+    ],
+    "riquadro": [
+      0.05,
+      0.14,
+      0.99,
+      0.99
+    ],
+    "soggetto": "rametto di nocciolo con foglie",
+    "dubbio": true,
+    "nota": "Il riquadro non entra nei formati 5:4, 4:3, 1:1, 16:7. Miniatura assets/species/tree-nocciolo-inat1-t.webp già ritagliata: 160×160, originale 771×1024; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/tree-nocciolo-inat2-hd.webp": {
+    "punto": [
+      0.455,
+      0.62
+    ],
+    "riquadro": [
+      0.11,
+      0.34,
+      0.8,
+      0.9
+    ],
+    "soggetto": "foglie del nocciolo",
+    "dubbio": true,
+    "nota": "Il riquadro non entra nei formati 3:4, 4:5. Miniatura assets/species/tree-nocciolo-inat2-t.webp già ritagliata: 160×160, originale 1024×768; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/tree-nocciolo-inat2.webp": {
+    "punto": [
+      0.455,
+      0.62
+    ],
+    "riquadro": [
+      0.11,
+      0.34,
+      0.8,
+      0.9
+    ],
+    "soggetto": "foglie del nocciolo",
+    "dubbio": true,
+    "nota": "Il riquadro non entra nei formati 3:4, 4:5. Miniatura assets/species/tree-nocciolo-inat2-t.webp già ritagliata: 160×160, originale 1024×768; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/tree-nocciolo-inat3-hd.webp": {
+    "punto": [
+      0.54,
+      0.435
+    ],
+    "riquadro": [
+      0.19,
+      0.07,
+      0.89,
+      0.8
+    ],
+    "soggetto": "rametto di nocciolo con foglie",
+    "dubbio": true,
+    "nota": "Il riquadro non entra nei formati 3:4, 4:5, 16:7. Miniatura assets/species/tree-nocciolo-inat3-t.webp già ritagliata: 160×160, originale 1024×768; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/tree-nocciolo-inat3.webp": {
+    "punto": [
+      0.54,
+      0.435
+    ],
+    "riquadro": [
+      0.19,
+      0.07,
+      0.89,
+      0.8
+    ],
+    "soggetto": "rametto di nocciolo con foglie",
+    "dubbio": true,
+    "nota": "Il riquadro non entra nei formati 3:4, 4:5, 16:7. Miniatura assets/species/tree-nocciolo-inat3-t.webp già ritagliata: 160×160, originale 1024×768; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/tree-acero-campestre-inat1-hd.webp": {
+    "punto": [
+      0.535,
+      0.545
+    ],
+    "riquadro": [
+      0.16,
+      0.31,
+      0.91,
+      0.78
+    ],
+    "soggetto": "foglie lobate dell’acero campestre",
+    "dubbio": true,
+    "nota": "Il riquadro non entra nei formati 3:4, 4:5. Miniatura assets/species/tree-acero-campestre-inat1-t.webp già ritagliata: 160×160, originale 1024×768; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/tree-acero-campestre-inat1.webp": {
+    "punto": [
+      0.535,
+      0.545
+    ],
+    "riquadro": [
+      0.16,
+      0.31,
+      0.91,
+      0.78
+    ],
+    "soggetto": "foglie lobate dell’acero campestre",
+    "dubbio": true,
+    "nota": "Il riquadro non entra nei formati 3:4, 4:5. Miniatura assets/species/tree-acero-campestre-inat1-t.webp già ritagliata: 160×160, originale 1024×768; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/tree-acero-campestre-inat2-hd.webp": {
+    "punto": [
+      0.475,
+      0.56
+    ],
+    "riquadro": [
+      0.12,
+      0.22,
+      0.83,
+      0.9
+    ],
+    "soggetto": "foglie e fiori dell’acero campestre",
+    "dubbio": true,
+    "nota": "Il riquadro non entra nei formati 3:4, 4:5, 16:7. Miniatura assets/species/tree-acero-campestre-inat2-t.webp già ritagliata: 160×160, originale 1024×768; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/tree-acero-campestre-inat2.webp": {
+    "punto": [
+      0.475,
+      0.56
+    ],
+    "riquadro": [
+      0.12,
+      0.22,
+      0.83,
+      0.9
+    ],
+    "soggetto": "foglie e fiori dell’acero campestre",
+    "dubbio": true,
+    "nota": "Il riquadro non entra nei formati 3:4, 4:5, 16:7. Miniatura assets/species/tree-acero-campestre-inat2-t.webp già ritagliata: 160×160, originale 1024×768; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/tree-acero-campestre-inat3-hd.webp": {
+    "punto": [
+      0.57,
+      0.65
+    ],
+    "riquadro": [
+      0.28,
+      0.39,
+      0.86,
+      0.91
+    ],
+    "soggetto": "rametto con foglie dell’acero campestre",
+    "dubbio": true,
+    "nota": "Il riquadro non entra nei formati 3:4, 4:5, 1:1. Miniatura assets/species/tree-acero-campestre-inat3-t.webp già ritagliata: 160×160, originale 1024×576; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/tree-acero-campestre-inat3.webp": {
+    "punto": [
+      0.57,
+      0.65
+    ],
+    "riquadro": [
+      0.28,
+      0.39,
+      0.86,
+      0.91
+    ],
+    "soggetto": "rametto con foglie dell’acero campestre",
+    "dubbio": true,
+    "nota": "Il riquadro non entra nei formati 3:4, 4:5, 1:1. Miniatura assets/species/tree-acero-campestre-inat3-t.webp già ritagliata: 160×160, originale 1024×576; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/tree-pioppo-free1-hd.webp": {
+    "punto": [
+      0.56,
+      0.46
+    ],
+    "riquadro": [
+      0.2,
+      0.09,
+      0.92,
+      0.83
+    ],
+    "soggetto": "pioppo, chioma e tronco",
+    "dubbio": true,
+    "nota": "Il riquadro non entra nei formati 5:4, 4:3, 16:7. Miniatura assets/species/tree-pioppo-free1-t.webp già ritagliata: 160×160, originale 768×1024; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/tree-pioppo-free1.webp": {
+    "punto": [
+      0.56,
+      0.46
+    ],
+    "riquadro": [
+      0.2,
+      0.09,
+      0.92,
+      0.83
+    ],
+    "soggetto": "pioppo, chioma e tronco",
+    "dubbio": true,
+    "nota": "Il riquadro non entra nei formati 5:4, 4:3, 16:7. Miniatura assets/species/tree-pioppo-free1-t.webp già ritagliata: 160×160, originale 768×1024; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/tree-pioppo-inat1-hd.webp": {
+    "punto": [
+      0.5,
+      0.51
+    ],
+    "riquadro": [
+      0.02,
+      0.03,
+      0.98,
+      0.99
+    ],
+    "soggetto": "rametto e foglie del pioppo",
+    "dubbio": true,
+    "nota": "Il riquadro non entra nei formati 5:4, 4:5, 4:3, 1:1, 16:7. Miniatura assets/species/tree-pioppo-inat1-t.webp già ritagliata: 160×160, originale 768×1024; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/tree-pioppo-inat1.webp": {
+    "punto": [
+      0.5,
+      0.51
+    ],
+    "riquadro": [
+      0.02,
+      0.03,
+      0.98,
+      0.99
+    ],
+    "soggetto": "rametto e foglie del pioppo",
+    "dubbio": true,
+    "nota": "Il riquadro non entra nei formati 5:4, 4:5, 4:3, 1:1, 16:7. Miniatura assets/species/tree-pioppo-inat1-t.webp già ritagliata: 160×160, originale 768×1024; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/tree-pioppo-inat2-hd.webp": {
+    "punto": [
+      0.52,
+      0.51
+    ],
+    "riquadro": [
+      0.06,
+      0.05,
+      0.98,
+      0.97
+    ],
+    "soggetto": "ramificazione e chioma del pioppo",
+    "dubbio": true,
+    "nota": "Chioma e tronco già tagliati ai bordi; più fusti sovrapposti. Il riquadro non entra nei formati 3:4, 4:5, 1:1, 16:7. Miniatura assets/species/tree-pioppo-inat2-t.webp già ritagliata: 160×160, originale 1024×768; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/tree-pioppo-inat2.webp": {
+    "punto": [
+      0.52,
+      0.51
+    ],
+    "riquadro": [
+      0.06,
+      0.05,
+      0.98,
+      0.97
+    ],
+    "soggetto": "ramificazione e chioma del pioppo",
+    "dubbio": true,
+    "nota": "Chioma e tronco già tagliati ai bordi; più fusti sovrapposti. Il riquadro non entra nei formati 3:4, 4:5, 1:1, 16:7. Miniatura assets/species/tree-pioppo-inat2-t.webp già ritagliata: 160×160, originale 1024×768; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/tree-pioppo-inat3-hd.webp": {
+    "punto": [
+      0.525,
+      0.465
+    ],
+    "riquadro": [
+      0.11,
+      0.02,
+      0.94,
+      0.91
+    ],
+    "soggetto": "gruppo di pioppi giovani e chioma",
+    "dubbio": true,
+    "nota": "Più fusti, nessun individuo completo isolabile con certezza. Il riquadro non entra nei formati 3:4, 4:5, 1:1, 16:7. Miniatura assets/species/tree-pioppo-inat3-t.webp già ritagliata: 160×160, originale 1024×768; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/tree-pioppo-inat3.webp": {
+    "punto": [
+      0.525,
+      0.465
+    ],
+    "riquadro": [
+      0.11,
+      0.02,
+      0.94,
+      0.91
+    ],
+    "soggetto": "gruppo di pioppi giovani e chioma",
+    "dubbio": true,
+    "nota": "Più fusti, nessun individuo completo isolabile con certezza. Il riquadro non entra nei formati 3:4, 4:5, 1:1, 16:7. Miniatura assets/species/tree-pioppo-inat3-t.webp già ritagliata: 160×160, originale 1024×768; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/tree-salice-inat1-hd.webp": {
+    "punto": [
+      0.565,
+      0.54
+    ],
+    "riquadro": [
+      0.15,
+      0.1,
+      0.98,
+      0.98
+    ],
+    "soggetto": "ramo di salice con foglie lanceolate",
+    "dubbio": true,
+    "nota": "Il riquadro non entra nei formati 3:4, 4:5, 1:1, 16:7. Miniatura assets/species/tree-salice-inat1-t.webp già ritagliata: 160×160, originale 1024×768; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/tree-salice-inat1.webp": {
+    "punto": [
+      0.565,
+      0.54
+    ],
+    "riquadro": [
+      0.15,
+      0.1,
+      0.98,
+      0.98
+    ],
+    "soggetto": "ramo di salice con foglie lanceolate",
+    "dubbio": true,
+    "nota": "Il riquadro non entra nei formati 3:4, 4:5, 1:1, 16:7. Miniatura assets/species/tree-salice-inat1-t.webp già ritagliata: 160×160, originale 1024×768; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/tree-salice-inat2-hd.webp": {
+    "punto": [
+      0.5,
+      0.5
+    ],
+    "riquadro": [
+      0.0,
+      0.0,
+      1.0,
+      1.0
+    ],
+    "soggetto": "corteccia fessurata del salice",
+    "dubbio": true,
+    "nota": "Dettaglio riempie l’intera foto. Il riquadro non entra nei formati 5:4, 4:5, 4:3, 1:1, 16:7. Miniatura assets/species/tree-salice-inat2-t.webp già ritagliata: 160×160, originale 768×1024; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/tree-salice-inat2.webp": {
+    "punto": [
+      0.5,
+      0.5
+    ],
+    "riquadro": [
+      0.0,
+      0.0,
+      1.0,
+      1.0
+    ],
+    "soggetto": "corteccia fessurata del salice",
+    "dubbio": true,
+    "nota": "Dettaglio riempie l’intera foto. Il riquadro non entra nei formati 5:4, 4:5, 4:3, 1:1, 16:7. Miniatura assets/species/tree-salice-inat2-t.webp già ritagliata: 160×160, originale 768×1024; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/tree-salice-inat3-hd.webp": {
+    "punto": [
+      0.395,
+      0.65
+    ],
+    "riquadro": [
+      0.06,
+      0.31,
+      0.73,
+      0.99
+    ],
+    "soggetto": "foglia del salice, pagina inferiore",
+    "dubbio": true,
+    "nota": "Insetto presente sulla foglia, non soggetto botanico. Il riquadro non entra nei formati 5:4, 4:3, 16:7. Miniatura assets/species/tree-salice-inat3-t.webp già ritagliata: 160×160, originale 768×1024; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/tree-salice-inat3.webp": {
+    "punto": [
+      0.395,
+      0.65
+    ],
+    "riquadro": [
+      0.06,
+      0.31,
+      0.73,
+      0.99
+    ],
+    "soggetto": "foglia del salice, pagina inferiore",
+    "dubbio": true,
+    "nota": "Insetto presente sulla foglia, non soggetto botanico. Il riquadro non entra nei formati 5:4, 4:3, 16:7. Miniatura assets/species/tree-salice-inat3-t.webp già ritagliata: 160×160, originale 768×1024; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/tree-ontano-free1-hd.webp": {
+    "punto": [
+      0.455,
+      0.63
+    ],
+    "riquadro": [
+      0.08,
+      0.3,
+      0.83,
+      0.96
+    ],
+    "soggetto": "ontano, infruttescenze, amenti e foglie",
+    "dubbio": true,
+    "nota": "Il riquadro non entra nei formati 3:4, 4:5, 16:7. Miniatura assets/species/tree-ontano-free1-t.webp già ritagliata: 160×160, originale 1024×768; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/tree-ontano-free1.webp": {
+    "punto": [
+      0.455,
+      0.63
+    ],
+    "riquadro": [
+      0.08,
+      0.3,
+      0.83,
+      0.96
+    ],
+    "soggetto": "ontano, infruttescenze, amenti e foglie",
+    "dubbio": true,
+    "nota": "Il riquadro non entra nei formati 3:4, 4:5, 16:7. Miniatura assets/species/tree-ontano-free1-t.webp già ritagliata: 160×160, originale 1024×768; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/tree-ontano-inat1-hd.webp": {
+    "punto": [
+      0.46,
+      0.555
+    ],
+    "riquadro": [
+      0.09,
+      0.22,
+      0.83,
+      0.89
+    ],
+    "soggetto": "infruttescenze verdi dell’ontano",
+    "dubbio": true,
+    "nota": "Il riquadro non entra nei formati 5:4, 4:3, 16:7. Miniatura assets/species/tree-ontano-inat1-t.webp già ritagliata: 160×160, originale 768×1024; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/tree-ontano-inat1.webp": {
+    "punto": [
+      0.46,
+      0.555
+    ],
+    "riquadro": [
+      0.09,
+      0.22,
+      0.83,
+      0.89
+    ],
+    "soggetto": "infruttescenze verdi dell’ontano",
+    "dubbio": true,
+    "nota": "Il riquadro non entra nei formati 5:4, 4:3, 16:7. Miniatura assets/species/tree-ontano-inat1-t.webp già ritagliata: 160×160, originale 768×1024; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/tree-ontano-inat2-hd.webp": {
+    "punto": [
+      0.49,
+      0.475
+    ],
+    "riquadro": [
+      0.1,
+      0.04,
+      0.88,
+      0.91
+    ],
+    "soggetto": "foglie dell’ontano",
+    "dubbio": true,
+    "nota": "Il riquadro non entra nei formati 3:4, 4:5, 1:1, 16:7. Miniatura assets/species/tree-ontano-inat2-t.webp già ritagliata: 160×160, originale 1024×768; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/tree-ontano-inat2.webp": {
+    "punto": [
+      0.49,
+      0.475
+    ],
+    "riquadro": [
+      0.1,
+      0.04,
+      0.88,
+      0.91
+    ],
+    "soggetto": "foglie dell’ontano",
+    "dubbio": true,
+    "nota": "Il riquadro non entra nei formati 3:4, 4:5, 1:1, 16:7. Miniatura assets/species/tree-ontano-inat2-t.webp già ritagliata: 160×160, originale 1024×768; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/tree-ontano-inat3-hd.webp": {
+    "punto": [
+      0.44,
+      0.47
+    ],
+    "riquadro": [
+      0.21,
+      0.33,
+      0.67,
+      0.61
+    ],
+    "soggetto": "foglia centrale dell’ontano",
+    "dubbio": false,
+    "nota": "Miniatura assets/species/tree-ontano-inat3-t.webp già ritagliata: 160×160, originale 766×1024; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/tree-ontano-inat3.webp": {
+    "punto": [
+      0.44,
+      0.47
+    ],
+    "riquadro": [
+      0.21,
+      0.33,
+      0.67,
+      0.61
+    ],
+    "soggetto": "foglia centrale dell’ontano",
+    "dubbio": false,
+    "nota": "Miniatura assets/species/tree-ontano-inat3-t.webp già ritagliata: 160×160, originale 766×1024; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/tree-olivo-inat1-hd.webp": {
+    "punto": [
+      0.32,
+      0.62
+    ],
+    "riquadro": [
+      0.14,
+      0.4,
+      0.5,
+      0.84
+    ],
+    "soggetto": "olive e foglie sul ramo",
+    "dubbio": false,
+    "nota": "Miniatura assets/species/tree-olivo-inat1-t.webp già ritagliata: 160×160, originale 1024×768; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/tree-olivo-inat1.webp": {
+    "punto": [
+      0.32,
+      0.62
+    ],
+    "riquadro": [
+      0.14,
+      0.4,
+      0.5,
+      0.84
+    ],
+    "soggetto": "olive e foglie sul ramo",
+    "dubbio": false,
+    "nota": "Miniatura assets/species/tree-olivo-inat1-t.webp già ritagliata: 160×160, originale 1024×768; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/tree-olivo-inat2-hd.webp": {
+    "punto": [
+      0.585,
+      0.49
+    ],
+    "riquadro": [
+      0.19,
+      0.03,
+      0.98,
+      0.95
+    ],
+    "soggetto": "portamento dell’olivo",
+    "dubbio": true,
+    "nota": "Chioma prossima al bordo destro; base parzialmente nascosta. Il riquadro non entra nei formati 3:4, 4:5, 1:1, 16:7. Miniatura assets/species/tree-olivo-inat2-t.webp già ritagliata: 160×160, originale 1024×768; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/tree-olivo-inat2.webp": {
+    "punto": [
+      0.585,
+      0.49
+    ],
+    "riquadro": [
+      0.19,
+      0.03,
+      0.98,
+      0.95
+    ],
+    "soggetto": "portamento dell’olivo",
+    "dubbio": true,
+    "nota": "Chioma prossima al bordo destro; base parzialmente nascosta. Il riquadro non entra nei formati 3:4, 4:5, 1:1, 16:7. Miniatura assets/species/tree-olivo-inat2-t.webp già ritagliata: 160×160, originale 1024×768; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/tree-olivo-inat3-hd.webp": {
+    "punto": [
+      0.505,
+      0.52
+    ],
+    "riquadro": [
+      0.18,
+      0.05,
+      0.83,
+      0.99
+    ],
+    "soggetto": "ramo d’olivo con foglie e olive",
+    "dubbio": true,
+    "nota": "Il riquadro non entra nei formati 5:4, 4:5, 4:3, 1:1, 16:7. Miniatura assets/species/tree-olivo-inat3-t.webp già ritagliata: 160×160, originale 768×1024; queste coordinate non valgono per il thumb."
+  },
+  "assets/species/tree-olivo-inat3.webp": {
+    "punto": [
+      0.505,
+      0.52
+    ],
+    "riquadro": [
+      0.18,
+      0.05,
+      0.83,
+      0.99
+    ],
+    "soggetto": "ramo d’olivo con foglie e olive",
+    "dubbio": true,
+    "nota": "Il riquadro non entra nei formati 5:4, 4:5, 4:3, 1:1, 16:7. Miniatura assets/species/tree-olivo-inat3-t.webp già ritagliata: 160×160, originale 768×1024; queste coordinate non valgono per il thumb."
+  },
+  "assets/trees/acero-di-montpellier-1.webp": {
+    "punto": [
+      0.47,
+      0.565
+    ],
+    "riquadro": [
+      0.13,
+      0.22,
+      0.81,
+      0.91
+    ],
+    "soggetto": "samare dell’acero di Montpellier",
+    "dubbio": true,
+    "nota": "Il riquadro non entra nei formati 3:4, 16:7."
+  },
+  "assets/trees/acero-di-montpellier-2.webp": {
+    "punto": [
+      0.395,
+      0.54
+    ],
+    "riquadro": [
+      0.11,
+      0.16,
+      0.68,
+      0.92
+    ],
+    "soggetto": "infiorescenze pendule dell’acero di Montpellier",
+    "dubbio": true,
+    "nota": "Il riquadro non entra nei formati 5:4, 4:3, 1:1, 16:7."
+  },
+  "assets/trees/acero-di-montpellier-3.webp": {
+    "punto": [
+      0.495,
+      0.5
+    ],
+    "riquadro": [
+      0.03,
+      0.0,
+      0.96,
+      1.0
+    ],
+    "soggetto": "corteccia dell’acero di Montpellier",
+    "dubbio": true,
+    "nota": "Dettaglio del tronco, già tagliato dai bordi originali. Il riquadro non entra nei formati 5:4, 3:4, 4:5, 4:3, 1:1, 16:7."
+  },
+  "assets/trees/sorbo-domestico-1.webp": {
+    "punto": [
+      0.595,
+      0.565
+    ],
+    "riquadro": [
+      0.32,
+      0.3,
+      0.87,
+      0.83
+    ],
+    "soggetto": "frutto del sorbo domestico",
+    "dubbio": false,
+    "nota": "Il riquadro non entra nei formati 16:7."
+  },
+  "assets/trees/sorbo-domestico-2.webp": {
+    "punto": [
+      0.53,
+      0.485
+    ],
+    "riquadro": [
+      0.2,
+      0.16,
+      0.86,
+      0.81
+    ],
+    "soggetto": "sorbo domestico, chioma e tronco",
+    "dubbio": true,
+    "nota": "Il riquadro non entra nei formati 3:4, 4:5, 16:7."
+  },
+  "assets/trees/sorbo-domestico-3.webp": {
+    "punto": [
+      0.5,
+      0.48
+    ],
+    "riquadro": [
+      0.08,
+      0.05,
+      0.92,
+      0.91
+    ],
+    "soggetto": "sorbo domestico, foglie composte e frutti",
+    "dubbio": true,
+    "nota": "Il riquadro non entra nei formati 3:4, 4:5, 16:7."
+  },
+  "assets/trees/ciliegio-1.webp": {
+    "punto": [
+      0.575,
+      0.51
+    ],
+    "riquadro": [
+      0.2,
+      0.04,
+      0.95,
+      0.98
+    ],
+    "soggetto": "ciliegio fiorito, chioma e tronco",
+    "dubbio": true,
+    "nota": "Il riquadro non entra nei formati 5:4, 3:4, 4:5, 4:3, 1:1, 16:7."
+  },
+  "assets/trees/ciliegio-2.webp": {
+    "punto": [
+      0.535,
+      0.525
+    ],
+    "riquadro": [
+      0.15,
+      0.11,
+      0.92,
+      0.94
+    ],
+    "soggetto": "foglia dentata del ciliegio",
+    "dubbio": true,
+    "nota": "Il riquadro non entra nei formati 5:4, 4:3, 1:1, 16:7."
   }
 }
