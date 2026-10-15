@@ -1,0 +1,59 @@
+{
+  "file": "incoming/timbri/querce-faggio-carpini.png",
+  "size": [
+    512,
+    512
+  ],
+  "margin_required_px": 52,
+  "bbox_alpha128": [
+    57,
+    58,
+    455,
+    453
+  ],
+  "margin_alpha_max": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "outer_ink_rgb_max": [
+    [
+      150,
+      108,
+      132
+    ],
+    [
+      149,
+      108,
+      132
+    ],
+    [
+      151,
+      107,
+      132
+    ],
+    [
+      152,
+      108,
+      133
+    ]
+  ],
+  "outer_ink_delta_from_median": [
+    5.0,
+    5.0,
+    4.0,
+    5.0
+  ],
+  "single_ink_median_rgb": [
+    147.0,
+    103.0,
+    129.0
+  ],
+  "proof_sizes": [
+    64,
+    84,
+    112
+  ],
+  "export": "Complete generated stamp, isolated with2px padding beyond alpha>=8, proportionally resized to400px, centered on512px transparent canvas; no anatomical repainting. Background residues outside crop excluded."
+}

@@ -274,3 +274,8 @@ Rametto di biancospino con due foglie lobate, spine e tre piccoli pomi, accenno 
 ### funghi-sosia — 15/10, continuazione
 
 Due funghi generici affiancati simili ma diversi per profilo e segni sul cappello, sagome intere. Fonti interne: docs/handoff-immagini-timbri.md: funghi-sosia; data/challenges.json: funghi-sosia.intro,questions. Pittogrammi non attribuiti a specie, nessun verdetto di commestibilità; dettagli tassonomici omessi perché il brief richiede un simbolo generico. PNG e QA verificati prima del caricamento; anteprima64/84/112px sui due temi in incoming/bozze/timbri/funghi-sosia-verifica.png.
+
+
+### querce-faggio-carpini — 15/10, continuazione
+
+Confronto di due foglie intere: faggio a bordo intero a sinistra e carpino bianco dentato a destra, nervature parallele e piccioli corti. Fonti interne: data/trees.json: faggio.leaf,fruit,recognize; carpino bianco.leaf,fruit,recognize; data/challenges.json: querce-faggio-carpini. Frutti omessi come previsto dal brief; denti secondari del carpino e pieghe della lamina minuti alla scala64px, confronto concentrato sul bordo intero rispetto a quello dentato. PNG e QA verificati prima del caricamento; anteprima64/84/112px sui due temi in incoming/bozze/timbri/querce-faggio-carpini-verifica.png.
