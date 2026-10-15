@@ -39,7 +39,8 @@ def main(inc):
     inc = Path(inc)
     manifest = json.loads((inc / "manifest.json").read_text(encoding="utf-8"))
     taxa = json.loads((ROOT / "data/species-traits.json").read_text(encoding="utf-8"))["taxa"]
-    rows = [r for r in manifest if r["tipo"] == "illustrazione"]
+    # le icone degli alberi (soggetto "alberi") hanno il loro import: tools/import_tree_icons.py
+    rows = [r for r in manifest if r["tipo"] == "illustrazione" and r.get("soggetto") != "alberi"]
     OUT.mkdir(parents=True, exist_ok=True)
     for f in OUT.glob("*.webp"):
         f.unlink()

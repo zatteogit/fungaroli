@@ -6,93 +6,788 @@
   "gambo"
  ],
  "taxa": {
-  "aereus": {},
-  "aestivalis": {},
-  "agaricus-arvensis": {},
-  "agaricus-bisporus": {},
-  "agaricus-campestris": {},
-  "agaricus-sylvicola": {},
-  "agaricus-xanthodermus": {},
-  "amanita-crocea": {},
-  "amanita-muscaria": {},
-  "amanita-pantherina": {},
-  "amanita-phalloides": {},
-  "amanita-rubescens": {},
-  "amanita-verna": {},
+  "aereus": {
+   "colors": {
+    "drawn": "nero",
+    "values": [
+     "bruno",
+     "nero"
+    ]
+   }
+  },
+  "aestivalis": {
+   "colors": {
+    "drawn": "bruno",
+    "values": [
+     "bruno",
+     "crema"
+    ]
+   }
+  },
+  "agaricus-arvensis": {
+   "colors": {
+    "drawn": "crema",
+    "values": [
+     "bianco",
+     "crema",
+     "giallo"
+    ]
+   }
+  },
+  "agaricus-bisporus": {
+   "colors": {
+    "drawn": "bruno",
+    "values": [
+     "bruno",
+     "bianco"
+    ]
+   }
+  },
+  "agaricus-campestris": {
+   "colors": {
+    "drawn": "bianco",
+    "values": [
+     "bianco",
+     "crema",
+     "bruno"
+    ]
+   }
+  },
+  "agaricus-sylvicola": {
+   "colors": {
+    "drawn": "crema",
+    "values": [
+     "bianco",
+     "crema",
+     "giallo"
+    ]
+   }
+  },
+  "agaricus-xanthodermus": {
+   "colors": {
+    "drawn": "bianco",
+    "values": [
+     "bianco",
+     "crema",
+     "grigio",
+     "bruno",
+     "giallo"
+    ]
+   }
+  },
+  "amanita-crocea": {
+   "colors": {
+    "drawn": "arancio",
+    "values": [
+     "arancio",
+     "giallo"
+    ]
+   }
+  },
+  "amanita-muscaria": {
+   "colors": {
+    "drawn": "rosso",
+    "values": [
+     "rosso",
+     "arancio",
+     "giallo"
+    ]
+   }
+  },
+  "amanita-pantherina": {
+   "colors": {
+    "drawn": "bruno",
+    "values": [
+     "bruno",
+     "grigio",
+     "crema"
+    ]
+   }
+  },
+  "amanita-phalloides": {
+   "colors": {
+    "drawn": "verde",
+    "values": [
+     "verde",
+     "giallo",
+     "bianco",
+     "grigio",
+     "bruno"
+    ]
+   },
+   "shapes": {
+    "drawn": "convesso",
+    "values": [
+     "emisferico",
+     "convesso",
+     "piano"
+    ]
+   }
+  },
+  "amanita-rubescens": {
+   "colors": {
+    "drawn": "rosa",
+    "values": [
+     "bruno",
+     "rosa"
+    ]
+   }
+  },
+  "amanita-verna": {
+   "colors": {
+    "drawn": "bianco",
+    "values": [
+     "bianco",
+     "crema"
+    ]
+   }
+  },
   "amanita-virosa": {},
-  "armillaria-tabescens": {},
-  "caesarea": {},
-  "caloboletus-calopus": {},
-  "caloboletus-radicans": {},
-  "calocybe-gambosa": {},
-  "chalciporus-piperatus": {},
-  "chlorophyllum-rhacodes": {},
-  "chlorophyllum-venenatum": {},
-  "cibarius": {},
-  "clitocybe-rivulosa": {},
-  "coprinus-comatus": {},
-  "cornucopioides": {},
-  "cortinarius-orellanus": {},
-  "cortinarius-rubellus": {},
+  "armillaria-tabescens": {
+   "colors": {
+    "drawn": "giallo",
+    "values": [
+     "giallo",
+     "bruno"
+    ]
+   }
+  },
+  "caesarea": {
+   "colors": {
+    "drawn": "arancio",
+    "values": [
+     "arancio",
+     "rosso",
+     "giallo"
+    ]
+   }
+  },
+  "caloboletus-calopus": {
+   "colors": {
+    "drawn": "bianco",
+    "values": [
+     "bianco",
+     "grigio",
+     "crema",
+     "bruno"
+    ]
+   }
+  },
+  "caloboletus-radicans": {
+   "colors": {
+    "drawn": "crema",
+    "values": [
+     "bianco",
+     "grigio",
+     "crema"
+    ]
+   }
+  },
+  "calocybe-gambosa": {
+   "colors": {
+    "drawn": "bianco",
+    "values": [
+     "bianco",
+     "crema"
+    ]
+   }
+  },
+  "chalciporus-piperatus": {
+   "colors": {
+    "drawn": "arancio",
+    "values": [
+     "bruno",
+     "arancio"
+    ]
+   }
+  },
+  "chlorophyllum-rhacodes": {
+   "colors": {
+    "drawn": "crema",
+    "values": [
+     "bruno",
+     "crema"
+    ]
+   }
+  },
+  "chlorophyllum-venenatum": {
+   "colors": {
+    "drawn": "crema",
+    "values": [
+     "bruno",
+     "crema"
+    ]
+   }
+  },
+  "cibarius": {
+   "colors": {
+    "drawn": "giallo",
+    "values": [
+     "giallo",
+     "arancio"
+    ]
+   }
+  },
+  "clitocybe-rivulosa": {
+   "colors": {
+    "drawn": "bianco",
+    "values": [
+     "bianco",
+     "crema",
+     "bruno"
+    ]
+   }
+  },
+  "coprinus-comatus": {
+   "colors": {
+    "drawn": "bianco",
+    "values": [
+     "bianco",
+     "bruno",
+     "nero"
+    ]
+   }
+  },
+  "cornucopioides": {
+   "colors": {
+    "drawn": "nero",
+    "values": [
+     "nero",
+     "bruno",
+     "grigio"
+    ]
+   }
+  },
+  "cortinarius-orellanus": {
+   "colors": {
+    "drawn": "arancio",
+    "values": [
+     "arancio",
+     "bruno",
+     "rosso"
+    ]
+   }
+  },
+  "cortinarius-rubellus": {
+   "colors": {
+    "drawn": "arancio",
+    "values": [
+     "arancio",
+     "bruno",
+     "rosso"
+    ]
+   }
+  },
   "cortinarius-traganus": {},
-  "cortinarius-violaceus": {},
-  "craterellus-cinereus": {},
-  "craterellus-lutescens": {},
-  "cyclocybe-aegerita": {},
-  "edulis": {},
-  "entoloma-sinuatum": {},
-  "fistulina-hepatica": {},
-  "galerina-marginata": {},
-  "gymnopilus-junonius": {},
-  "gyromitra-esculenta": {},
-  "hydnellum-peckii": {},
-  "hydnum-rufescens": {},
-  "hygrophoropsis-aurantiaca": {},
-  "hygrophorus-latitabundus": {},
-  "hygrophorus-marzuolus": {},
-  "hypholoma-fasciculare": {},
+  "cortinarius-violaceus": {
+   "colors": {
+    "drawn": "violetto",
+    "values": [
+     "violetto",
+     "nero"
+    ]
+   }
+  },
+  "craterellus-cinereus": {
+   "colors": {
+    "drawn": "grigio",
+    "values": [
+     "nero",
+     "grigio",
+     "bruno"
+    ]
+   }
+  },
+  "craterellus-lutescens": {
+   "colors": {
+    "drawn": "bruno",
+    "values": [
+     "bruno",
+     "giallo"
+    ]
+   }
+  },
+  "cyclocybe-aegerita": {
+   "colors": {
+    "drawn": "bruno",
+    "values": [
+     "crema",
+     "bruno"
+    ]
+   }
+  },
+  "edulis": {
+   "colors": {
+    "drawn": "bruno",
+    "values": [
+     "bruno",
+     "crema"
+    ]
+   }
+  },
+  "entoloma-sinuatum": {
+   "colors": {
+    "drawn": "grigio",
+    "values": [
+     "grigio",
+     "crema",
+     "bianco"
+    ]
+   }
+  },
+  "fistulina-hepatica": {
+   "colors": {
+    "drawn": "rosso",
+    "values": [
+     "rosso",
+     "rosa",
+     "bruno"
+    ]
+   }
+  },
+  "galerina-marginata": {
+   "colors": {
+    "drawn": "arancio",
+    "values": [
+     "bruno",
+     "giallo",
+     "arancio"
+    ]
+   }
+  },
+  "gymnopilus-junonius": {
+   "colors": {
+    "drawn": "arancio",
+    "values": [
+     "giallo",
+     "arancio"
+    ]
+   }
+  },
+  "gyromitra-esculenta": {
+   "colors": {
+    "drawn": "rosso",
+    "values": [
+     "bruno",
+     "rosso",
+     "nero",
+     "giallo"
+    ]
+   }
+  },
+  "hydnellum-peckii": {
+   "colors": {
+    "drawn": "bianco",
+    "values": [
+     "bianco",
+     "rosa",
+     "bruno"
+    ]
+   }
+  },
+  "hydnum-rufescens": {
+   "colors": {
+    "drawn": "arancio",
+    "values": [
+     "arancio",
+     "bruno"
+    ]
+   }
+  },
+  "hygrophoropsis-aurantiaca": {
+   "colors": {
+    "drawn": "arancio",
+    "values": [
+     "arancio",
+     "bruno",
+     "giallo"
+    ]
+   }
+  },
+  "hygrophorus-latitabundus": {
+   "colors": {
+    "drawn": "nero",
+    "values": [
+     "bruno",
+     "grigio",
+     "nero"
+    ]
+   }
+  },
+  "hygrophorus-marzuolus": {
+   "colors": {
+    "drawn": "grigio",
+    "values": [
+     "bianco",
+     "grigio",
+     "nero"
+    ]
+   }
+  },
+  "hypholoma-fasciculare": {
+   "colors": {
+    "drawn": "giallo",
+    "values": [
+     "giallo",
+     "arancio"
+    ]
+   }
+  },
   "imleria-badia": {},
-  "inocybe": {},
+  "inocybe": {
+   "colors": {
+    "drawn": "bruno",
+    "values": [
+     "bruno",
+     "crema",
+     "bianco",
+     "giallo",
+     "grigio",
+     "violetto",
+     "rosa"
+    ]
+   }
+  },
   "inocybe-lilacina": {},
   "laccaria-amethystina": {},
-  "lactarius-deliciosus": {},
-  "lactarius-deterrimus": {},
-  "lepiota-brunneoincarnata": {},
-  "lepiota-cristata": {},
-  "lepiota-subincarnata": {},
-  "marasmius-oreades": {},
-  "mellea": {},
-  "morchella-elata": {},
-  "morchella-esculenta": {},
-  "mycena-pura": {},
-  "neoboletus-luridiformis": {},
-  "nuda": {},
-  "omphalotus-olearius": {},
-  "pholiota-squarrosa": {},
-  "pinophilus": {},
+  "lactarius-deliciosus": {
+   "colors": {
+    "drawn": "arancio",
+    "values": [
+     "arancio",
+     "verde"
+    ]
+   }
+  },
+  "lactarius-deterrimus": {
+   "colors": {
+    "drawn": "arancio",
+    "values": [
+     "arancio",
+     "giallo",
+     "verde"
+    ]
+   }
+  },
+  "lepiota-brunneoincarnata": {
+   "colors": {
+    "drawn": "rosa",
+    "values": [
+     "bruno",
+     "rosa",
+     "rosso",
+     "crema"
+    ]
+   }
+  },
+  "lepiota-cristata": {
+   "colors": {
+    "drawn": "bianco",
+    "values": [
+     "bianco",
+     "bruno"
+    ]
+   }
+  },
+  "lepiota-subincarnata": {
+   "colors": {
+    "drawn": "rosa",
+    "values": [
+     "rosa",
+     "bruno",
+     "crema"
+    ]
+   }
+  },
+  "marasmius-oreades": {
+   "colors": {
+    "drawn": "crema",
+    "values": [
+     "crema",
+     "bruno"
+    ]
+   }
+  },
+  "mellea": {
+   "colors": {
+    "drawn": "giallo",
+    "values": [
+     "giallo",
+     "bruno"
+    ]
+   }
+  },
+  "morchella-elata": {
+   "colors": {
+    "drawn": "bruno",
+    "values": [
+     "bruno",
+     "grigio",
+     "nero"
+    ]
+   }
+  },
+  "morchella-esculenta": {
+   "colors": {
+    "drawn": "giallo",
+    "values": [
+     "crema",
+     "giallo",
+     "bruno"
+    ]
+   }
+  },
+  "mycena-pura": {
+   "colors": {
+    "drawn": "rosa",
+    "values": [
+     "violetto",
+     "rosa",
+     "grigio",
+     "bianco"
+    ]
+   }
+  },
+  "neoboletus-luridiformis": {
+   "colors": {
+    "drawn": "rosso",
+    "values": [
+     "bruno",
+     "nero",
+     "rosso"
+    ]
+   }
+  },
+  "nuda": {
+   "colors": {
+    "drawn": "violetto",
+    "values": [
+     "violetto",
+     "bruno",
+     "rosa"
+    ]
+   }
+  },
+  "omphalotus-olearius": {
+   "colors": {
+    "drawn": "arancio",
+    "values": [
+     "arancio",
+     "giallo",
+     "bruno"
+    ]
+   }
+  },
+  "pholiota-squarrosa": {
+   "colors": {
+    "drawn": "giallo",
+    "values": [
+     "giallo",
+     "bruno"
+    ]
+   }
+  },
+  "pinophilus": {
+   "colors": {
+    "drawn": "rosso",
+    "values": [
+     "rosso",
+     "bruno"
+    ]
+   }
+  },
   "pleurotus-cornucopiae": {},
-  "pleurotus-eryngii": {},
-  "pleurotus-ostreatus": {},
-  "procera": {},
-  "pseudocraterellus-undulatus": {},
-  "repandum": {},
-  "rubroboletus-satanas": {},
+  "pleurotus-eryngii": {
+   "colors": {
+    "drawn": "bruno",
+    "values": [
+     "bianco",
+     "crema",
+     "bruno",
+     "grigio"
+    ]
+   }
+  },
+  "pleurotus-ostreatus": {
+   "colors": {
+    "drawn": "grigio",
+    "values": [
+     "bianco",
+     "crema",
+     "bruno",
+     "grigio"
+    ]
+   }
+  },
+  "procera": {
+   "colors": {
+    "drawn": "crema",
+    "values": [
+     "bruno",
+     "crema"
+    ]
+   }
+  },
+  "pseudocraterellus-undulatus": {
+   "colors": {
+    "drawn": "grigio",
+    "values": [
+     "grigio",
+     "bruno"
+    ]
+   }
+  },
+  "repandum": {
+   "colors": {
+    "drawn": "giallo",
+    "values": [
+     "crema",
+     "giallo",
+     "arancio"
+    ]
+   }
+  },
+  "rubroboletus-satanas": {
+   "colors": {
+    "drawn": "crema",
+    "values": [
+     "bianco",
+     "grigio",
+     "crema"
+    ]
+   }
+  },
   "russula-aeruginea": {},
-  "russula-aurea": {},
-  "russula-heterophylla": {},
-  "russula-olivacea": {},
+  "russula-aurea": {
+   "colors": {
+    "drawn": "arancio",
+    "values": [
+     "giallo",
+     "arancio",
+     "rosso"
+    ]
+   }
+  },
+  "russula-heterophylla": {
+   "colors": {
+    "drawn": "verde",
+    "values": [
+     "verde",
+     "bruno",
+     "grigio"
+    ]
+   }
+  },
+  "russula-olivacea": {
+   "colors": {
+    "drawn": "verde",
+    "values": [
+     "verde",
+     "bruno",
+     "rosso",
+     "violetto"
+    ]
+   }
+  },
   "sarcodon-imbricatus": {},
   "sarcodon-scabrosus": {},
-  "suillus": {},
-  "suillus-bovinus": {},
-  "terreum": {},
-  "tricholoma-equestre": {},
-  "tricholoma-pardinum": {},
-  "tricholoma-portentosum": {},
-  "tricholoma-sciodes": {},
+  "suillus": {
+   "colors": {
+    "drawn": "bruno",
+    "values": [
+     "bruno",
+     "giallo",
+     "arancio",
+     "violetto"
+    ]
+   }
+  },
+  "suillus-bovinus": {
+   "colors": {
+    "drawn": "arancio",
+    "values": [
+     "arancio",
+     "bruno"
+    ]
+   }
+  },
+  "terreum": {
+   "colors": {
+    "drawn": "grigio",
+    "values": [
+     "grigio",
+     "bruno"
+    ]
+   }
+  },
+  "tricholoma-equestre": {
+   "colors": {
+    "drawn": "giallo",
+    "values": [
+     "giallo",
+     "verde",
+     "bruno"
+    ]
+   }
+  },
+  "tricholoma-pardinum": {
+   "colors": {
+    "drawn": "grigio",
+    "values": [
+     "grigio",
+     "bruno",
+     "bianco"
+    ]
+   }
+  },
+  "tricholoma-portentosum": {
+   "colors": {
+    "drawn": "grigio",
+    "values": [
+     "grigio",
+     "bruno",
+     "giallo"
+    ]
+   }
+  },
+  "tricholoma-sciodes": {
+   "colors": {
+    "drawn": "violetto",
+    "values": [
+     "grigio",
+     "violetto"
+    ]
+   }
+  },
   "tricholoma-virgatum": {},
-  "tylopilus-felleus": {},
-  "urnula-craterium": {},
-  "virescens": {}
+  "tylopilus-felleus": {
+   "colors": {
+    "drawn": "crema",
+    "values": [
+     "bruno",
+     "crema"
+    ]
+   }
+  },
+  "urnula-craterium": {
+   "colors": {
+    "drawn": "nero",
+    "values": [
+     "nero",
+     "bruno"
+    ]
+   }
+  },
+  "virescens": {
+   "colors": {
+    "drawn": "verde",
+    "values": [
+     "verde",
+     "violetto",
+     "grigio",
+     "rosa"
+    ]
+   }
+  }
  }
 }

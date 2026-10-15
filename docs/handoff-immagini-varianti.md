@@ -160,7 +160,7 @@ Totale varianti: **259** (ognuna = 2 icone: cappello e fungo intero).
 
 ## Icone da ridisegnare (dati corretti dopo l'import)
 
-Dopo il controllo dei campi `null` di anello e volva (15/10), questi valori sono cambiati con fonte verificabile. L'icona del gambo non mostra ancora il carattere: va ridisegnata nello stesso stile, nella stessa cella della tavola.
+Dopo il controllo dei campi `null` di anello e volva (15/10), questi valori sono cambiati con fonte verificabile. **Fatto:** il gambo ridisegnato (`incoming/icone/tavola-10-anello.png`, cella 5) è in produzione dalla v65, insieme alle 286 varianti di colore e forma.
 
 | Specie | Campo | Prima → dopo | Cosa deve mostrare il gambo | Fonti |
 |---|---|---|---|---|

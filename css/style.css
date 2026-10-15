@@ -3301,3 +3301,6 @@ summary .plan-crit { cursor: auto; -webkit-user-select: text; user-select: text;
 .gk-grid-ill .id-art .ts-ill { width: 56px; height: 56px; }
 .gk-grid-ill .id-opt-dk { align-self: stretch; align-content: center; }
 .gk-row-ill { width: 28px; height: 28px; display: inline-block; vertical-align: middle; margin: -4px 6px -4px 0; }
+/* tessera del cappello con varianti di colore e forma: due colonne, così pallini e forme non vengono tagliati */
+.trait-strip li:has(.ts-dots) { grid-column: span 2; }
+.ts-dots { flex-wrap: wrap; }
