@@ -403,3 +403,10 @@ Errori tipici ricontrollati: nessuna volva a cercini/assente, nessuna lamella bi
 Riferimenti: sei icone `assets/traits/caesarea-{cappello,sotto,gambo}.webp` e `assets/traits/amanita-phalloides-{cappello,sotto,gambo}.webp` su produzione; foto reale di Yaqui, *Oronges.jpg* (CC BY-SA 3.0), e `assets/species/amanita-phalloides-inat1.jpg` già nel repository, usate solo come riferimenti morfologici. Nessuna tavola Bresadola usata come stile. Riferimento scritto: brief, `species-id` e `species-traits`; per l'attacco delle lamelle prevale il brief (libere) sull'insieme largo libere/adnate dei traits. Nessuna contraddizione anatomica riscontrata tra icone e brief.
 
 Tecnica: output nativo del tool 1122×1402, ricampionato a 1600×2000 con LANCZOS; WebP qualità 85/method 6. SHA-256 `b814ff0435e75212e961099e525c9778d52a46bd279a221a7f22cb340b7ab5f1`. Peso e formato verificati con Pillow; controllo visivo ripetuto anche sul file WebP finale. Fase 4 saltata: nessun testo, numero, lettera o freccia. Modello integrato image_gen, identificatore non esposto. Prompt completi e tentativi registrati nel manifest. L'esito è una verifica illustrativa, non una validazione micologica.
+
+
+## Ripresa — revisione caesarea
+
+| File | Stato | Verifica |
+|---|---|---|
+| infografiche/caesarea-revisione.webp | Verifica illustrativa superata; da rivedere con un micologo | Edit mirato: carne interna del gambo sezionato bianca. Lamelle/anello/gambo esterni gialli, volva bianca a sacco, cappello arancio striato; sosia con parti bianche e cappello olivastro. Nessun testo o elemento extra; proporzioni e margini conservati. Confronto con i riferimenti fotografici locali già documentati per l’originale. L’originale non approvato è conservato. |

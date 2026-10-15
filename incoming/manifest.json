@@ -15286,45 +15286,44 @@
     "qa": "incoming/qa/guida-leggere-il-bosco.json",
     "semplificazioni": "Bosco illustrativo: tre tronchi principali con corteccia grigia, chiome e lettiera semplificate; funghi piccoli e generici, nessuna identificazione di specie. Nessun testo."
   },
-{
-  "file": "incoming/guide/pioggia-e-crescita.webp",
-  "tipo": "guida",
-  "soggetto": "pioggia-e-crescita",
-  "modello": "image_gen (modello integrato, identificatore non esposto)",
-  "prompt": "Use case: illustration-story. Asset: Fungaroli guide opener \"pioggia-e-crescita\", landscape 1600x900 (16:9). Image 1 is the APPROVED STYLE REFERENCE ONLY: match its dark warm brown smooth outlines, rounded organic forms, restrained flat olive greens, warm ochres, oranges and gray-beige trunks, pale warm opaque paper background. Create one new illustration of a SOIL CROSS SECTION UNDER A WOODLAND: a few whole small trees above a leaf-litter surface, gentle rainfall above the forest, a clearly visible darker moist upper soil layer beneath the litter, delicate pale branching MYCELIUM within the soil connected to the bases of several small generic mushrooms emerging above the surface. Show rain, retained soil moisture, underground fungal network and emerging fruiting bodies as one coherent scene, not a timeline or instantaneous guaranteed effect. Mycelium fine branching filaments distinct from thick brown tree roots. Make this a compact centered isolated woodland vignette on a seamless full pale paper canvas #f6f0e4, like the reference, with at least 12% clear paper margin on every side. Entire tree crowns, rain/cloud and whole soil cutaway contained within vignette; no cropped objects. Few flat colors, clean continuous dark brown contours, simplified and legible. No realistic rendering, no gradient shading, no inset frame or panel. NO text, labels, letters, numbers, arrows, icons, watermark or legend.",
-  "stato": "ok",
-  "fonti_dati": [
-    "docs/handoff-immagini-glossario-guide.md:parteB",
-    "data/guides.json:pioggia-e-crescita"
-  ],
-  "larghezza": 1600,
-  "altezza": 900,
-  "peso_bytes": 117568,
-  "compressione": "WebP qualità 85, method 6",
-  "caricato": true,
-  "qa": "Verifica visiva: pioggia, lettiera, strato umido, micelio chiaro distinto dalle radici brune, funghi generici emergenti; vignetta intera senza testo su fondo carta. Dimensioni e peso verificati con Pillow.",
-  "semplificazioni": "Sezione schematica del terreno; gocce blu simboliche per l'umidità, nessuna scala temporale né promessa di fruttificazione."
-},
-{
-  "file": "incoming/guide/preparare-la-passeggiata.webp",
-  "tipo": "guida",
-  "soggetto": "preparare-la-passeggiata",
-  "modello": "image_gen (modello integrato, identificatore non esposto)",
-  "prompt": "Use case: illustration-story. Asset: Fungaroli guide opener \"preparare-la-passeggiata\", landscape 1600x900 (16:9). Image 1 is the APPROVED STYLE REFERENCE ONLY: match its warm dark brown continuous outlines, simple rounded organic forms, few flat olive greens, warm ochres, burnt orange, gray beige and cream, pale warm opaque paper background. New subject: preparing for a woodland walk, a coherent still life of an OPEN OLIVE GREEN HIKING BACKPACK with a folded cream paper MAP partly tucked into its open main compartment, a small round COMPASS resting clearly in front of it, a reusable WATER BOTTLE at its side, and an EMPTY WICKER BASKET with a single arched handle beside the backpack. All four equipment types unmistakable, whole objects intact, pleasing three-quarter view, map is large enough to see its accordion folds and simple route line but has NO lettering or symbols resembling text; compass has a simple needle without letters. Basket weave simplified, no excessive small detail. On a tiny patch of forest leaf litter as a ground accent, visually subordinate. Compact centered group occupies about 65-70% canvas width and 65% height, at least 13% seamless pale paper clear margin around all objects including handles, straps and map. Background uniformly pale warm paper #f6f0e4 to every canvas edge, no inset frame/panel or scenery. Match reference illustration's line, palette and visual density; flat colors, clean brown outline enclosing every object, no photorealism, no 3D. No people, no mushrooms inside basket, no extra equipment, no text, letters, numbers, logos, labels, arrows, watermark or legend.",
-  "stato": "ok",
-  "fonti_dati": [
-    "docs/handoff-immagini-glossario-guide.md:parteB",
-    "data/guides.json:preparare-la-passeggiata"
-  ],
-  "larghezza": 1600,
-  "altezza": 900,
-  "peso_bytes": 108300,
-  "compressione": "WebP qualità 85, method 6",
-  "caricato": true,
-  "qa": "Verifica visiva: zaino aperto, mappa piegata senza testo, bussola senza lettere, borraccia e cesto di vimini vuoto. Oggetti interi, contorno bruno, sfondo carta opaco. Dimensioni e peso verificati con Pillow.",
-  "semplificazioni": "Cartografia illustrativa e bussola priva di lettere, intreccio del cesto semplificato; nessun percorso reale rappresentato."
-}
-,
+  {
+    "file": "incoming/guide/pioggia-e-crescita.webp",
+    "tipo": "guida",
+    "soggetto": "pioggia-e-crescita",
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case: illustration-story. Asset: Fungaroli guide opener \"pioggia-e-crescita\", landscape 1600x900 (16:9). Image 1 is the APPROVED STYLE REFERENCE ONLY: match its dark warm brown smooth outlines, rounded organic forms, restrained flat olive greens, warm ochres, oranges and gray-beige trunks, pale warm opaque paper background. Create one new illustration of a SOIL CROSS SECTION UNDER A WOODLAND: a few whole small trees above a leaf-litter surface, gentle rainfall above the forest, a clearly visible darker moist upper soil layer beneath the litter, delicate pale branching MYCELIUM within the soil connected to the bases of several small generic mushrooms emerging above the surface. Show rain, retained soil moisture, underground fungal network and emerging fruiting bodies as one coherent scene, not a timeline or instantaneous guaranteed effect. Mycelium fine branching filaments distinct from thick brown tree roots. Make this a compact centered isolated woodland vignette on a seamless full pale paper canvas #f6f0e4, like the reference, with at least 12% clear paper margin on every side. Entire tree crowns, rain/cloud and whole soil cutaway contained within vignette; no cropped objects. Few flat colors, clean continuous dark brown contours, simplified and legible. No realistic rendering, no gradient shading, no inset frame or panel. NO text, labels, letters, numbers, arrows, icons, watermark or legend.",
+    "stato": "ok",
+    "fonti_dati": [
+      "docs/handoff-immagini-glossario-guide.md:parteB",
+      "data/guides.json:pioggia-e-crescita"
+    ],
+    "larghezza": 1600,
+    "altezza": 900,
+    "peso_bytes": 117568,
+    "compressione": "WebP qualità 85, method 6",
+    "caricato": true,
+    "qa": "Verifica visiva: pioggia, lettiera, strato umido, micelio chiaro distinto dalle radici brune, funghi generici emergenti; vignetta intera senza testo su fondo carta. Dimensioni e peso verificati con Pillow.",
+    "semplificazioni": "Sezione schematica del terreno; gocce blu simboliche per l'umidità, nessuna scala temporale né promessa di fruttificazione."
+  },
+  {
+    "file": "incoming/guide/preparare-la-passeggiata.webp",
+    "tipo": "guida",
+    "soggetto": "preparare-la-passeggiata",
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case: illustration-story. Asset: Fungaroli guide opener \"preparare-la-passeggiata\", landscape 1600x900 (16:9). Image 1 is the APPROVED STYLE REFERENCE ONLY: match its warm dark brown continuous outlines, simple rounded organic forms, few flat olive greens, warm ochres, burnt orange, gray beige and cream, pale warm opaque paper background. New subject: preparing for a woodland walk, a coherent still life of an OPEN OLIVE GREEN HIKING BACKPACK with a folded cream paper MAP partly tucked into its open main compartment, a small round COMPASS resting clearly in front of it, a reusable WATER BOTTLE at its side, and an EMPTY WICKER BASKET with a single arched handle beside the backpack. All four equipment types unmistakable, whole objects intact, pleasing three-quarter view, map is large enough to see its accordion folds and simple route line but has NO lettering or symbols resembling text; compass has a simple needle without letters. Basket weave simplified, no excessive small detail. On a tiny patch of forest leaf litter as a ground accent, visually subordinate. Compact centered group occupies about 65-70% canvas width and 65% height, at least 13% seamless pale paper clear margin around all objects including handles, straps and map. Background uniformly pale warm paper #f6f0e4 to every canvas edge, no inset frame/panel or scenery. Match reference illustration's line, palette and visual density; flat colors, clean brown outline enclosing every object, no photorealism, no 3D. No people, no mushrooms inside basket, no extra equipment, no text, letters, numbers, logos, labels, arrows, watermark or legend.",
+    "stato": "ok",
+    "fonti_dati": [
+      "docs/handoff-immagini-glossario-guide.md:parteB",
+      "data/guides.json:preparare-la-passeggiata"
+    ],
+    "larghezza": 1600,
+    "altezza": 900,
+    "peso_bytes": 108300,
+    "compressione": "WebP qualità 85, method 6",
+    "caricato": true,
+    "qa": "Verifica visiva: zaino aperto, mappa piegata senza testo, bussola senza lettere, borraccia e cesto di vimini vuoto. Oggetti interi, contorno bruno, sfondo carta opaco. Dimensioni e peso verificati con Pillow.",
+    "semplificazioni": "Cartografia illustrativa e bussola priva di lettere, intreccio del cesto semplificato; nessun percorso reale rappresentato."
+  },
   {
     "file": "incoming/infografiche/caesarea.webp",
     "tipo": "infografica",
@@ -15451,5 +15450,20 @@
       "fase4": "saltata, come richiesto"
     },
     "credit": "Illustrazione IA (image_gen integrato); stile: icone dei caratteri dell'app; foto morfologiche: Yaqui (CC BY-SA 3.0) e falloide dal repository. Non approvata; da rivedere con un micologo."
+  },
+  {
+    "file": "incoming/infografiche/caesarea-revisione.webp",
+    "tipo": "infografica",
+    "soggetto": "caesarea",
+    "modello": "image_gen (identificatore non esposto)",
+    "prompt": "Edit mirato della tavola caesarea: solo la carne interna esposta del gambo e del cappello nell’uovo sezionato diventa bianca; cuticola arancio e lamelle gialle restano invariate. Conservare ogni altra vignetta, stile e margine. Nessun testo.",
+    "stato": "verifica illustrativa superata; da rivedere con un micologo",
+    "revisiona": "incoming/infografiche/caesarea.webp",
+    "dimensioni": [
+      1600,
+      2000
+    ],
+    "bytes": 145020,
+    "sha256": "a1f649ca2ffd7d806d32d32d2a8f8a108b613fbd650fc96d4bf036420d8588bf"
   }
 ]

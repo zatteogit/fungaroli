@@ -338,3 +338,5 @@ Glossario: dislivello, esposizione. Schemi didattici generici conformi alle defi
 
 
 ParteA completata: tutti21schemi (Cappello già approvato) in incoming/glossario, controllati e caricati in gruppi di2–3. Esempio parteB leggere-il-bosco1600x900 su carta: tronchi grigi lisci, lettiera, piccoli funghi generici, luce laterale; chiome e vegetazione semplificate per un’apertura editoriale, non per identificazione botanica. Soggetti interi, contorni e margini verificati. In attesa dell’approvazione di Matteo: non avviate le altre2guide né le infografiche. Forme del cappello rimanenti in coda; forme01/02 intatte, forme03porcini consegnata.
+
+Ripresa del programma: recuperate le chat “Genera due immagini”, “Completa immagini GitHub” e “Infografica Caesarea GitHub”. Le guide sono già consegnate. Caesarea corretta con un nuovo edit mirato: carne interna bianca, senza cambiare lamelle gialle. L’originale resta conservato. Verifica visiva illustrativa, non validazione micologica.
