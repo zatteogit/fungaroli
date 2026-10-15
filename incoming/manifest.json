@@ -15793,5 +15793,113 @@
     ],
     "bytes": 268306,
     "sha256": "a7fd74a6c1bcd0fb02e0a9ad65927124f14475ed71376d8a0ea0a8d9bd7a5c94"
+  },
+  {
+    "file": "incoming/icone/forme-04.png",
+    "tipo": "illustrazione",
+    "soggetto": "amanita-virosa",
+    "tessera": "cappello",
+    "cella": 0,
+    "variante": "forma:emisferico",
+    "base": {
+      "forma": "conico",
+      "colore": "bianco"
+    },
+    "modello": "image_gen (identificatore tecnico non esposto)",
+    "prompt": "Produce a square transparent PNG SPRITE SHEET, target1254x1254, exactly invisible3x3grid, each cell418x418. Style and layout from reference1 approved forms sheet: flat few colors, thick dark-brown complete outline, NO background or ground/shadow and NO writing, grid, digits, letters or marks. THREE ROWS; column1 a SIDE-VIEW CAP ONLY with no stem, column2 the WHOLE MUSHROOM, column3 COMPLETELY TRANSPARENT EMPTY. Each icon centered in its own cell, size at most70% of cell width AND height, transparent padding at least15% on all4sides of EVERY CELL. Do not center across whole canvas; center separately at cell centers (209,209),(627,209),(209,627),(627,627),(209,1045),(627,1045). The reference2..4 are approved species whole icons; preserve their cap color, gills/pores, stem, ring, volva, net, scales and outline; change ONLY CAP SHAPE and age-consistent proportions as specified. Cap-only and whole mushroom in same row must have IDENTICAL cap shape and color. ROW1: amanita-virosa, base color bianco, target cap HEMISPHERICAL, a rounded dome approximately a half sphere, clearly not conical. Use the corresponding attached species icon to keep every stem/ring/volva/spot feature. ROW2: amanita-virosa, base color bianco, target cap CONVEX, a low rounded dome broader than tall. Use the corresponding attached species icon to keep every stem/ring/volva/spot feature. ROW3: amanita-pantherina, base color bruno, target cap CONICAL, a distinctly pointed triangular cone. Use the corresponding attached species icon to keep every stem/ring/volva/spot feature. Everything wholly contained in cell with outlined outer edge, never cropped or touching any cell boundary. True transparent alpha, no checkerboard painted.",
+    "edits": [
+      "Edit this transparent3x3 sprite sheet, DO NOT CHANGE drawings/colors/anatomy/shapes, only size and positioning of each separate icon. Whole mushroom icons in column2 are too tall and not centered in their cells. Shrink each whole-mushroom icon to75% of its current size and CENTER it in its own invisible cell: row1 column2 centered at(50%width,16.667%height), row2 col2(50%,50%), row3 col2(50%,83.333%). Every whole icon must fit INSIDE central65% of cell height, leaving at least17% empty transparent space ABOVE AND BELOW inside each cell. Also center isolated caps in column1 at(16.667%,16.667%),(16.667%,50%),(16.667%,83.333%). Isolated cap width at most65% cellwidth. Thirdcolumn entirely transparent. Preserve all six icons: white hemispherical virosa pair, white convex virosa pair, brown-white-wart conical pantherina pair. Dark brown outer contour complete. NO background, ground, text, grid lines, letters, digits or checkerboard, true transparent alpha. Square3x3sheet."
+    ],
+    "stato": "ok"
+  },
+  {
+    "file": "incoming/icone/forme-04.png",
+    "tipo": "illustrazione",
+    "soggetto": "amanita-virosa",
+    "tessera": "gambo",
+    "cella": 1,
+    "variante": "forma:emisferico",
+    "base": {
+      "forma": "conico",
+      "colore": "bianco"
+    },
+    "modello": "image_gen (identificatore tecnico non esposto)",
+    "prompt": "Produce a square transparent PNG SPRITE SHEET, target1254x1254, exactly invisible3x3grid, each cell418x418. Style and layout from reference1 approved forms sheet: flat few colors, thick dark-brown complete outline, NO background or ground/shadow and NO writing, grid, digits, letters or marks. THREE ROWS; column1 a SIDE-VIEW CAP ONLY with no stem, column2 the WHOLE MUSHROOM, column3 COMPLETELY TRANSPARENT EMPTY. Each icon centered in its own cell, size at most70% of cell width AND height, transparent padding at least15% on all4sides of EVERY CELL. Do not center across whole canvas; center separately at cell centers (209,209),(627,209),(209,627),(627,627),(209,1045),(627,1045). The reference2..4 are approved species whole icons; preserve their cap color, gills/pores, stem, ring, volva, net, scales and outline; change ONLY CAP SHAPE and age-consistent proportions as specified. Cap-only and whole mushroom in same row must have IDENTICAL cap shape and color. ROW1: amanita-virosa, base color bianco, target cap HEMISPHERICAL, a rounded dome approximately a half sphere, clearly not conical. Use the corresponding attached species icon to keep every stem/ring/volva/spot feature. ROW2: amanita-virosa, base color bianco, target cap CONVEX, a low rounded dome broader than tall. Use the corresponding attached species icon to keep every stem/ring/volva/spot feature. ROW3: amanita-pantherina, base color bruno, target cap CONICAL, a distinctly pointed triangular cone. Use the corresponding attached species icon to keep every stem/ring/volva/spot feature. Everything wholly contained in cell with outlined outer edge, never cropped or touching any cell boundary. True transparent alpha, no checkerboard painted.",
+    "edits": [
+      "Edit this transparent3x3 sprite sheet, DO NOT CHANGE drawings/colors/anatomy/shapes, only size and positioning of each separate icon. Whole mushroom icons in column2 are too tall and not centered in their cells. Shrink each whole-mushroom icon to75% of its current size and CENTER it in its own invisible cell: row1 column2 centered at(50%width,16.667%height), row2 col2(50%,50%), row3 col2(50%,83.333%). Every whole icon must fit INSIDE central65% of cell height, leaving at least17% empty transparent space ABOVE AND BELOW inside each cell. Also center isolated caps in column1 at(16.667%,16.667%),(16.667%,50%),(16.667%,83.333%). Isolated cap width at most65% cellwidth. Thirdcolumn entirely transparent. Preserve all six icons: white hemispherical virosa pair, white convex virosa pair, brown-white-wart conical pantherina pair. Dark brown outer contour complete. NO background, ground, text, grid lines, letters, digits or checkerboard, true transparent alpha. Square3x3sheet."
+    ],
+    "stato": "ok"
+  },
+  {
+    "file": "incoming/icone/forme-04.png",
+    "tipo": "illustrazione",
+    "soggetto": "amanita-virosa",
+    "tessera": "cappello",
+    "cella": 3,
+    "variante": "forma:convesso",
+    "base": {
+      "forma": "conico",
+      "colore": "bianco"
+    },
+    "modello": "image_gen (identificatore tecnico non esposto)",
+    "prompt": "Produce a square transparent PNG SPRITE SHEET, target1254x1254, exactly invisible3x3grid, each cell418x418. Style and layout from reference1 approved forms sheet: flat few colors, thick dark-brown complete outline, NO background or ground/shadow and NO writing, grid, digits, letters or marks. THREE ROWS; column1 a SIDE-VIEW CAP ONLY with no stem, column2 the WHOLE MUSHROOM, column3 COMPLETELY TRANSPARENT EMPTY. Each icon centered in its own cell, size at most70% of cell width AND height, transparent padding at least15% on all4sides of EVERY CELL. Do not center across whole canvas; center separately at cell centers (209,209),(627,209),(209,627),(627,627),(209,1045),(627,1045). The reference2..4 are approved species whole icons; preserve their cap color, gills/pores, stem, ring, volva, net, scales and outline; change ONLY CAP SHAPE and age-consistent proportions as specified. Cap-only and whole mushroom in same row must have IDENTICAL cap shape and color. ROW1: amanita-virosa, base color bianco, target cap HEMISPHERICAL, a rounded dome approximately a half sphere, clearly not conical. Use the corresponding attached species icon to keep every stem/ring/volva/spot feature. ROW2: amanita-virosa, base color bianco, target cap CONVEX, a low rounded dome broader than tall. Use the corresponding attached species icon to keep every stem/ring/volva/spot feature. ROW3: amanita-pantherina, base color bruno, target cap CONICAL, a distinctly pointed triangular cone. Use the corresponding attached species icon to keep every stem/ring/volva/spot feature. Everything wholly contained in cell with outlined outer edge, never cropped or touching any cell boundary. True transparent alpha, no checkerboard painted.",
+    "edits": [
+      "Edit this transparent3x3 sprite sheet, DO NOT CHANGE drawings/colors/anatomy/shapes, only size and positioning of each separate icon. Whole mushroom icons in column2 are too tall and not centered in their cells. Shrink each whole-mushroom icon to75% of its current size and CENTER it in its own invisible cell: row1 column2 centered at(50%width,16.667%height), row2 col2(50%,50%), row3 col2(50%,83.333%). Every whole icon must fit INSIDE central65% of cell height, leaving at least17% empty transparent space ABOVE AND BELOW inside each cell. Also center isolated caps in column1 at(16.667%,16.667%),(16.667%,50%),(16.667%,83.333%). Isolated cap width at most65% cellwidth. Thirdcolumn entirely transparent. Preserve all six icons: white hemispherical virosa pair, white convex virosa pair, brown-white-wart conical pantherina pair. Dark brown outer contour complete. NO background, ground, text, grid lines, letters, digits or checkerboard, true transparent alpha. Square3x3sheet."
+    ],
+    "stato": "ok"
+  },
+  {
+    "file": "incoming/icone/forme-04.png",
+    "tipo": "illustrazione",
+    "soggetto": "amanita-virosa",
+    "tessera": "gambo",
+    "cella": 4,
+    "variante": "forma:convesso",
+    "base": {
+      "forma": "conico",
+      "colore": "bianco"
+    },
+    "modello": "image_gen (identificatore tecnico non esposto)",
+    "prompt": "Produce a square transparent PNG SPRITE SHEET, target1254x1254, exactly invisible3x3grid, each cell418x418. Style and layout from reference1 approved forms sheet: flat few colors, thick dark-brown complete outline, NO background or ground/shadow and NO writing, grid, digits, letters or marks. THREE ROWS; column1 a SIDE-VIEW CAP ONLY with no stem, column2 the WHOLE MUSHROOM, column3 COMPLETELY TRANSPARENT EMPTY. Each icon centered in its own cell, size at most70% of cell width AND height, transparent padding at least15% on all4sides of EVERY CELL. Do not center across whole canvas; center separately at cell centers (209,209),(627,209),(209,627),(627,627),(209,1045),(627,1045). The reference2..4 are approved species whole icons; preserve their cap color, gills/pores, stem, ring, volva, net, scales and outline; change ONLY CAP SHAPE and age-consistent proportions as specified. Cap-only and whole mushroom in same row must have IDENTICAL cap shape and color. ROW1: amanita-virosa, base color bianco, target cap HEMISPHERICAL, a rounded dome approximately a half sphere, clearly not conical. Use the corresponding attached species icon to keep every stem/ring/volva/spot feature. ROW2: amanita-virosa, base color bianco, target cap CONVEX, a low rounded dome broader than tall. Use the corresponding attached species icon to keep every stem/ring/volva/spot feature. ROW3: amanita-pantherina, base color bruno, target cap CONICAL, a distinctly pointed triangular cone. Use the corresponding attached species icon to keep every stem/ring/volva/spot feature. Everything wholly contained in cell with outlined outer edge, never cropped or touching any cell boundary. True transparent alpha, no checkerboard painted.",
+    "edits": [
+      "Edit this transparent3x3 sprite sheet, DO NOT CHANGE drawings/colors/anatomy/shapes, only size and positioning of each separate icon. Whole mushroom icons in column2 are too tall and not centered in their cells. Shrink each whole-mushroom icon to75% of its current size and CENTER it in its own invisible cell: row1 column2 centered at(50%width,16.667%height), row2 col2(50%,50%), row3 col2(50%,83.333%). Every whole icon must fit INSIDE central65% of cell height, leaving at least17% empty transparent space ABOVE AND BELOW inside each cell. Also center isolated caps in column1 at(16.667%,16.667%),(16.667%,50%),(16.667%,83.333%). Isolated cap width at most65% cellwidth. Thirdcolumn entirely transparent. Preserve all six icons: white hemispherical virosa pair, white convex virosa pair, brown-white-wart conical pantherina pair. Dark brown outer contour complete. NO background, ground, text, grid lines, letters, digits or checkerboard, true transparent alpha. Square3x3sheet."
+    ],
+    "stato": "ok"
+  },
+  {
+    "file": "incoming/icone/forme-04.png",
+    "tipo": "illustrazione",
+    "soggetto": "amanita-pantherina",
+    "tessera": "cappello",
+    "cella": 6,
+    "variante": "forma:conico",
+    "base": {
+      "forma": "convesso",
+      "colore": "bruno"
+    },
+    "modello": "image_gen (identificatore tecnico non esposto)",
+    "prompt": "Produce a square transparent PNG SPRITE SHEET, target1254x1254, exactly invisible3x3grid, each cell418x418. Style and layout from reference1 approved forms sheet: flat few colors, thick dark-brown complete outline, NO background or ground/shadow and NO writing, grid, digits, letters or marks. THREE ROWS; column1 a SIDE-VIEW CAP ONLY with no stem, column2 the WHOLE MUSHROOM, column3 COMPLETELY TRANSPARENT EMPTY. Each icon centered in its own cell, size at most70% of cell width AND height, transparent padding at least15% on all4sides of EVERY CELL. Do not center across whole canvas; center separately at cell centers (209,209),(627,209),(209,627),(627,627),(209,1045),(627,1045). The reference2..4 are approved species whole icons; preserve their cap color, gills/pores, stem, ring, volva, net, scales and outline; change ONLY CAP SHAPE and age-consistent proportions as specified. Cap-only and whole mushroom in same row must have IDENTICAL cap shape and color. ROW1: amanita-virosa, base color bianco, target cap HEMISPHERICAL, a rounded dome approximately a half sphere, clearly not conical. Use the corresponding attached species icon to keep every stem/ring/volva/spot feature. ROW2: amanita-virosa, base color bianco, target cap CONVEX, a low rounded dome broader than tall. Use the corresponding attached species icon to keep every stem/ring/volva/spot feature. ROW3: amanita-pantherina, base color bruno, target cap CONICAL, a distinctly pointed triangular cone. Use the corresponding attached species icon to keep every stem/ring/volva/spot feature. Everything wholly contained in cell with outlined outer edge, never cropped or touching any cell boundary. True transparent alpha, no checkerboard painted.",
+    "edits": [
+      "Edit this transparent3x3 sprite sheet, DO NOT CHANGE drawings/colors/anatomy/shapes, only size and positioning of each separate icon. Whole mushroom icons in column2 are too tall and not centered in their cells. Shrink each whole-mushroom icon to75% of its current size and CENTER it in its own invisible cell: row1 column2 centered at(50%width,16.667%height), row2 col2(50%,50%), row3 col2(50%,83.333%). Every whole icon must fit INSIDE central65% of cell height, leaving at least17% empty transparent space ABOVE AND BELOW inside each cell. Also center isolated caps in column1 at(16.667%,16.667%),(16.667%,50%),(16.667%,83.333%). Isolated cap width at most65% cellwidth. Thirdcolumn entirely transparent. Preserve all six icons: white hemispherical virosa pair, white convex virosa pair, brown-white-wart conical pantherina pair. Dark brown outer contour complete. NO background, ground, text, grid lines, letters, digits or checkerboard, true transparent alpha. Square3x3sheet."
+    ],
+    "stato": "ok"
+  },
+  {
+    "file": "incoming/icone/forme-04.png",
+    "tipo": "illustrazione",
+    "soggetto": "amanita-pantherina",
+    "tessera": "gambo",
+    "cella": 7,
+    "variante": "forma:conico",
+    "base": {
+      "forma": "convesso",
+      "colore": "bruno"
+    },
+    "modello": "image_gen (identificatore tecnico non esposto)",
+    "prompt": "Produce a square transparent PNG SPRITE SHEET, target1254x1254, exactly invisible3x3grid, each cell418x418. Style and layout from reference1 approved forms sheet: flat few colors, thick dark-brown complete outline, NO background or ground/shadow and NO writing, grid, digits, letters or marks. THREE ROWS; column1 a SIDE-VIEW CAP ONLY with no stem, column2 the WHOLE MUSHROOM, column3 COMPLETELY TRANSPARENT EMPTY. Each icon centered in its own cell, size at most70% of cell width AND height, transparent padding at least15% on all4sides of EVERY CELL. Do not center across whole canvas; center separately at cell centers (209,209),(627,209),(209,627),(627,627),(209,1045),(627,1045). The reference2..4 are approved species whole icons; preserve their cap color, gills/pores, stem, ring, volva, net, scales and outline; change ONLY CAP SHAPE and age-consistent proportions as specified. Cap-only and whole mushroom in same row must have IDENTICAL cap shape and color. ROW1: amanita-virosa, base color bianco, target cap HEMISPHERICAL, a rounded dome approximately a half sphere, clearly not conical. Use the corresponding attached species icon to keep every stem/ring/volva/spot feature. ROW2: amanita-virosa, base color bianco, target cap CONVEX, a low rounded dome broader than tall. Use the corresponding attached species icon to keep every stem/ring/volva/spot feature. ROW3: amanita-pantherina, base color bruno, target cap CONICAL, a distinctly pointed triangular cone. Use the corresponding attached species icon to keep every stem/ring/volva/spot feature. Everything wholly contained in cell with outlined outer edge, never cropped or touching any cell boundary. True transparent alpha, no checkerboard painted.",
+    "edits": [
+      "Edit this transparent3x3 sprite sheet, DO NOT CHANGE drawings/colors/anatomy/shapes, only size and positioning of each separate icon. Whole mushroom icons in column2 are too tall and not centered in their cells. Shrink each whole-mushroom icon to75% of its current size and CENTER it in its own invisible cell: row1 column2 centered at(50%width,16.667%height), row2 col2(50%,50%), row3 col2(50%,83.333%). Every whole icon must fit INSIDE central65% of cell height, leaving at least17% empty transparent space ABOVE AND BELOW inside each cell. Also center isolated caps in column1 at(16.667%,16.667%),(16.667%,50%),(16.667%,83.333%). Isolated cap width at most65% cellwidth. Thirdcolumn entirely transparent. Preserve all six icons: white hemispherical virosa pair, white convex virosa pair, brown-white-wart conical pantherina pair. Dark brown outer contour complete. NO background, ground, text, grid lines, letters, digits or checkerboard, true transparent alpha. Square3x3sheet."
+    ],
+    "stato": "ok"
   }
 ]

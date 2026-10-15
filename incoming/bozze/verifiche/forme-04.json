@@ -1,0 +1,174 @@
+{
+  "file": "incoming/icone/forme-04.png",
+  "stato": "ok",
+  "verifiche": [
+    {
+      "cella": 0,
+      "bbox": [
+        90,
+        176,
+        337,
+        331
+      ],
+      "attesa": true,
+      "margini_px": [
+        90,
+        176,
+        81,
+        87
+      ],
+      "margini_ok": true,
+      "contorno_scuro_estremi": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cella": 1,
+      "bbox": [
+        121,
+        111,
+        297,
+        363
+      ],
+      "attesa": true,
+      "margini_px": [
+        121,
+        111,
+        121,
+        55
+      ],
+      "margini_ok": true,
+      "contorno_scuro_estremi": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cella": 2,
+      "bbox": null,
+      "attesa": false,
+      "vuota": true
+    },
+    {
+      "cella": 3,
+      "bbox": [
+        87,
+        159,
+        340,
+        258
+      ],
+      "attesa": true,
+      "margini_px": [
+        87,
+        159,
+        78,
+        160
+      ],
+      "margini_ok": true,
+      "contorno_scuro_estremi": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cella": 4,
+      "bbox": [
+        110,
+        100,
+        309,
+        335
+      ],
+      "attesa": true,
+      "margini_px": [
+        110,
+        100,
+        109,
+        83
+      ],
+      "margini_ok": true,
+      "contorno_scuro_estremi": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cella": 5,
+      "bbox": null,
+      "attesa": false,
+      "vuota": true
+    },
+    {
+      "cella": 6,
+      "bbox": [
+        81,
+        92,
+        346,
+        264
+      ],
+      "attesa": true,
+      "margini_px": [
+        81,
+        92,
+        72,
+        154
+      ],
+      "margini_ok": true,
+      "contorno_scuro_estremi": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cella": 7,
+      "bbox": [
+        109,
+        48,
+        309,
+        318
+      ],
+      "attesa": true,
+      "margini_px": [
+        109,
+        48,
+        109,
+        100
+      ],
+      "margini_ok": true,
+      "contorno_scuro_estremi": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cella": 8,
+      "bbox": null,
+      "attesa": false,
+      "vuota": true
+    }
+  ],
+  "bytes": 47976,
+  "dimensioni": [
+    1254,
+    1254
+  ],
+  "sha256": "5ecf0428daa11035d9b86185dae9374f46242000009a97c489e22d90ceafdcd0",
+  "prompt": "Produce a square transparent PNG SPRITE SHEET, target1254x1254, exactly invisible3x3grid, each cell418x418. Style and layout from reference1 approved forms sheet: flat few colors, thick dark-brown complete outline, NO background or ground/shadow and NO writing, grid, digits, letters or marks. THREE ROWS; column1 a SIDE-VIEW CAP ONLY with no stem, column2 the WHOLE MUSHROOM, column3 COMPLETELY TRANSPARENT EMPTY. Each icon centered in its own cell, size at most70% of cell width AND height, transparent padding at least15% on all4sides of EVERY CELL. Do not center across whole canvas; center separately at cell centers (209,209),(627,209),(209,627),(627,627),(209,1045),(627,1045). The reference2..4 are approved species whole icons; preserve their cap color, gills/pores, stem, ring, volva, net, scales and outline; change ONLY CAP SHAPE and age-consistent proportions as specified. Cap-only and whole mushroom in same row must have IDENTICAL cap shape and color. ROW1: amanita-virosa, base color bianco, target cap HEMISPHERICAL, a rounded dome approximately a half sphere, clearly not conical. Use the corresponding attached species icon to keep every stem/ring/volva/spot feature. ROW2: amanita-virosa, base color bianco, target cap CONVEX, a low rounded dome broader than tall. Use the corresponding attached species icon to keep every stem/ring/volva/spot feature. ROW3: amanita-pantherina, base color bruno, target cap CONICAL, a distinctly pointed triangular cone. Use the corresponding attached species icon to keep every stem/ring/volva/spot feature. Everything wholly contained in cell with outlined outer edge, never cropped or touching any cell boundary. True transparent alpha, no checkerboard painted.",
+  "edits": [
+    "Edit this transparent3x3 sprite sheet, DO NOT CHANGE drawings/colors/anatomy/shapes, only size and positioning of each separate icon. Whole mushroom icons in column2 are too tall and not centered in their cells. Shrink each whole-mushroom icon to75% of its current size and CENTER it in its own invisible cell: row1 column2 centered at(50%width,16.667%height), row2 col2(50%,50%), row3 col2(50%,83.333%). Every whole icon must fit INSIDE central65% of cell height, leaving at least17% empty transparent space ABOVE AND BELOW inside each cell. Also center isolated caps in column1 at(16.667%,16.667%),(16.667%,50%),(16.667%,83.333%). Isolated cap width at most65% cellwidth. Thirdcolumn entirely transparent. Preserve all six icons: white hemispherical virosa pair, white convex virosa pair, brown-white-wart conical pantherina pair. Dark brown outer contour complete. NO background, ground, text, grid lines, letters, digits or checkerboard, true transparent alpha. Square3x3sheet."
+  ],
+  "visivo_ok": true,
+  "nota": "Virosa bianca emisferica/convessa con anello e volva a sacco; panterina bruna con verruche bianche conica, anello e cercini alla base. Corrette scala e centratura. Nessun testo; terza colonna vuota."
+}
