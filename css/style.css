@@ -2559,14 +2559,11 @@ html.entity-open { overflow: hidden; }
    Spaziature su griglia di 4/8 px. Contrasti verificati WCAG AA (testo piccolo >= 4,5:1). */
 :root {
   --sp-1: 4px; --sp-2: 8px; --sp-3: 12px; --sp-4: 16px; --sp-5: 24px; --sp-6: 32px;
-  /* era #887f72 (3,3-3,9:1 sui fondi chiari): ora >= 4,5:1 su bg, surface e surface-2 */
-  --muted: #6e6658;
+  /* --muted: viene dai token Fronda (css/tokens.css), verificato >= 4,5:1 su bg, surface e surface-2 nei due temi */
   --shadow-card: 0 1px 2px rgb(40 30 15 / .06), 0 6px 18px rgb(40 30 15 / .06);
 }
 :root[data-theme="dark"] { --shadow-card: 0 1px 2px rgb(0 0 0 / .3), 0 6px 18px rgb(0 0 0 / .25); }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --shadow-card: 0 1px 2px rgb(0 0 0 / .3), 0 6px 18px rgb(0 0 0 / .25); } }
-:root[data-theme="dark"] { --muted: #86998c; }
-@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --muted: #86998c; } }
 
 /* Tipografia: i numeri e i titoli delle card passano al sans (piu' leggibili a colpo d'occhio, come nelle app outdoor) */
 .ring b, .day .d2, .mtt-p b, .tile-body b, .portrait-body b, .sp-card-body b, .mtt-t, .sheet-title {

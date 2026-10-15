@@ -30,3 +30,44 @@
   .map-top { left: 60px; }
 }
 .onboarding .ob-sub { margin: 4px 0 0; color: var(--text-2); font-size: 15px; }
+
+/* ------------------------------------------------------------------ Leggibilità del testo sulle foto
+   La velatura segue il blocco di testo invece dell'altezza della foto: parte poco sopra la prima riga e
+   arriva all'intensità che serve col caso peggiore del catalogo (foto chiare, neve, nebbia; tools/visual-audit.mjs).
+   Sopra il testo la foto resta pulita. I testi secondari restano pieni (niente opacità) e un po' più pesanti. */
+:is(.cover, .phero, .tile, .sp-card, .portrait) .shade { background: none; }
+:is(.cover-body, .tile-body, .sp-card-body, .portrait-body, .phero-body) { isolation: isolate; color: var(--on-photo); }
+:is(.cover-body, .tile-body, .sp-card-body, .portrait-body, .phero-body)::before {
+  content: ''; position: absolute; z-index: -1; pointer-events: none;
+  inset: calc(-1 * var(--scrim-lead, 72px)) calc(-1 * var(--scrim-x, 18px)) calc(-1 * var(--scrim-b, 18px));
+  background: linear-gradient(180deg, transparent 0, color-mix(in srgb, var(--scrim) 40%, transparent) calc(var(--scrim-lead, 72px) * .6), color-mix(in srgb, var(--scrim) 62%, transparent) var(--scrim-lead, 72px), color-mix(in srgb, var(--scrim) 70%, transparent) 100%);
+}
+.tile-body { --scrim-lead: 56px; --scrim-x: 14px; --scrim-b: 12px; }
+:is(.sp-card-body, .portrait-body) { --scrim-lead: 48px; --scrim-x: 12px; --scrim-b: 11px; }
+.phero-body { --scrim-lead: 64px; --scrim-x: 20px; --scrim-b: 46px; }
+.phero-body::before { right: -9999px; }
+:is(.cover-sub, .cover-walk > span, .cover-sp small, .tile-day, .tile-body small, .sp-card-body i, .portrait-body small, .phero-sub) { opacity: 1; font-weight: 500; }
+.cover-body :is(small, .cover-sub, .cover-walk > span), .tile-body :is(small, .tile-day, .tile-micro), .sp-card-body i, .portrait-body small, .phero-sub { text-shadow: 0 0 2px var(--scrim), 0 1px 3px var(--scrim); }
+/* telefono: in home il testo sta già sotto la foto, su un pannello pieno */
+@media (max-width: 760px) { #hero .cover-body::before { content: none; } }
+/* la barra dei dati sulla copertina scurisce invece di schiarire la foto */
+.cover .facts { background: color-mix(in srgb, var(--scrim) 42%, transparent); border-color: color-mix(in srgb, var(--on-photo) 22%, transparent); }
+
+/* ------------------------------------------------------------------ Leggibilità sui fondi pieni */
+/* etichette di rischio e numero di emergenza: testo che contrasta col rosso in entrambi i temi */
+:is(.tox-deadly, .tox-mortale, .id-card.tox-mortale, .tx-body.tox-mortale, .cmp-fig.tox-mortale) .tox, :is(.sp-card-tox, .sr-badge, .tx-pill).tox-mortale, .lb-cap .tox-mortale, .em-numbers .btn.primary { color: var(--on-crit); }
+/* giorno selezionato sul verde pieno: testo pieno, non velato */
+.day[aria-selected="true"][data-lv="5"] :is(.d1, .d3) { color: inherit; }
+/* numero dell'imbocco sull'accento: inchiostro dell'accento (scuro nel tema scuro) */
+.th-n { color: var(--accent-ink); }
+/* barra di navigazione: le sezioni non attive in testo secondario, non attenuato */
+.tabbar a:not([aria-current="page"]) { color: var(--text-2); }
+/* segnaposto dei campi: il grigio del browser non basta sulle superfici Fronda */
+:is(input, textarea)::placeholder { color: var(--muted); opacity: 1; }
+/* crediti della mappa */
+.leaflet-container .leaflet-control-attribution { background: color-mix(in srgb, var(--surface) 90%, transparent); color: var(--text-2); }
+.leaflet-container .leaflet-control-attribution a { color: var(--accent); }
+/* frecce della fila di card con il mouse: sulla foto, non sopra la prima riga di testo della card */
+.rail-host:has(.tile) > .rail-arrow { top: calc(var(--rail-y, 50%) - 48px); }
+/* barra in basso del telefono: vetro più pieno, le etichette restano leggibili anche sopra foto colorate */
+@media (max-width: 899px) { .tabbar { background: color-mix(in srgb, var(--surface) 94%, transparent); } }

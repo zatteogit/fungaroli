@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-10-15T14:38:07.595Z",
+  "generatedAt": "2026-10-15T21:15:17.631Z",
   "rules": {
     "inline-hex": {
-      "total": 307,
+      "total": 304,
       "byFile": {
-        "css/style.css": 172,
+        "css/style.css": 169,
         "index.html": 2,
         "js/app.js": 18,
         "js/forest-legend.js": 36,
