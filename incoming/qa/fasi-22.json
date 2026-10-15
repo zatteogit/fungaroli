@@ -1,0 +1,280 @@
+{
+  "file": "incoming/icone/fasi-22.png",
+  "size": 87938,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "alpha": true,
+  "palette": 128,
+  "source": "generated_images/exec-8b1a43cf-254e-45aa-9c31-6d430f34d0fc.png",
+  "normalization": "Uniform per-icon scaling and placement; no anatomical pixel edits. Cap width / whole height / underside diameter matched to base; base centers preserved.",
+  "cells": [
+    {
+      "cella": 0,
+      "soggetto": "lepiota-cristata",
+      "fase": "giovane",
+      "tessera": "cappello",
+      "base_bbox": [
+        4,
+        72,
+        306,
+        238
+      ],
+      "base_center": [
+        209,
+        209
+      ],
+      "normalized_size": [
+        302,
+        190
+      ],
+      "bbox": [
+        59,
+        115,
+        359,
+        302
+      ],
+      "margins": [
+        59,
+        115,
+        59,
+        116
+      ],
+      "extreme_dark_fraction": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "cella": 1,
+      "soggetto": "lepiota-cristata",
+      "fase": "giovane",
+      "tessera": "gambo",
+      "base_bbox": [
+        12,
+        4,
+        296,
+        306
+      ],
+      "base_center": [
+        208,
+        209
+      ],
+      "normalized_size": [
+        275,
+        302
+      ],
+      "bbox": [
+        73,
+        59,
+        343,
+        359
+      ],
+      "margins": [
+        73,
+        59,
+        75,
+        59
+      ],
+      "extreme_dark_fraction": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "cella": 3,
+      "soggetto": "lepiota-cristata",
+      "fase": "adulto",
+      "tessera": "cappello",
+      "base_bbox": [
+        4,
+        72,
+        306,
+        238
+      ],
+      "base_center": [
+        209,
+        209
+      ],
+      "normalized_size": [
+        302,
+        151
+      ],
+      "bbox": [
+        59,
+        135,
+        359,
+        285
+      ],
+      "margins": [
+        59,
+        135,
+        59,
+        133
+      ],
+      "extreme_dark_fraction": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "cella": 4,
+      "soggetto": "lepiota-cristata",
+      "fase": "adulto",
+      "tessera": "gambo",
+      "base_bbox": [
+        12,
+        4,
+        296,
+        306
+      ],
+      "base_center": [
+        208,
+        209
+      ],
+      "normalized_size": [
+        323,
+        302
+      ],
+      "bbox": [
+        47,
+        59,
+        367,
+        358
+      ],
+      "margins": [
+        47,
+        59,
+        51,
+        60
+      ],
+      "extreme_dark_fraction": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "cella": 6,
+      "soggetto": "cortinarius-orellanus",
+      "fase": "giovane",
+      "tessera": "cappello",
+      "base_bbox": [
+        4,
+        86,
+        304,
+        223
+      ],
+      "base_center": [
+        208,
+        208.5
+      ],
+      "normalized_size": [
+        300,
+        134
+      ],
+      "bbox": [
+        59,
+        144,
+        357,
+        275
+      ],
+      "margins": [
+        59,
+        144,
+        61,
+        143
+      ],
+      "extreme_dark_fraction": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "cella": 7,
+      "soggetto": "cortinarius-orellanus",
+      "fase": "giovane",
+      "tessera": "sotto",
+      "base_bbox": [
+        4,
+        6,
+        306,
+        304
+      ],
+      "base_center": [
+        209,
+        209
+      ],
+      "normalized_size": [
+        302,
+        297
+      ],
+      "bbox": [
+        61,
+        61,
+        357,
+        356
+      ],
+      "margins": [
+        61,
+        61,
+        61,
+        62
+      ],
+      "extreme_dark_fraction": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "cella": 8,
+      "soggetto": "cortinarius-orellanus",
+      "fase": "giovane",
+      "tessera": "gambo",
+      "base_bbox": [
+        5,
+        18,
+        306,
+        293
+      ],
+      "base_center": [
+        209.5,
+        209.5
+      ],
+      "normalized_size": [
+        298,
+        275
+      ],
+      "bbox": [
+        61,
+        73,
+        357,
+        346
+      ],
+      "margins": [
+        61,
+        73,
+        61,
+        72
+      ],
+      "extreme_dark_fraction": [
+        1,
+        1,
+        1,
+        1
+      ]
+    }
+  ]
+}

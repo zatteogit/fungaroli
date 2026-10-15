@@ -486,3 +486,7 @@ Fonte: docs/handoff-immagini-fasi.md su claude/brave-tesla-wu0a2b e icone base d
 ### Fasi 21 — chlorophyllum-rhacodes adulto; lepiota-brunneoincarnata giovane; lepiota-brunneoincarnata adulto
 
 Fonte: docs/handoff-immagini-fasi.md su claude/brave-tesla-wu0a2b e icone base della stessa specie. Solo i cambiamenti descritti nelle fasi; caratteri invariati conservati. Anatomia semplificata come nelle basi, pochi colori e lamelle schematiche. Scala uniforme e centratura allineate alle basi; quantizzazione a 128 colori per il peso, senza modifiche anatomiche con codice. Rhacodes adulta convessa, senza rendere piano il cappello; lepiota giovane con cupola emisferica e marcature compatte, adulta con squamette in cerchi irregolari. Nessun anello aggiunto alla lepiota.
+
+### Fasi 22 — lepiota-cristata giovane; lepiota-cristata adulto; cortinarius-orellanus giovane
+
+Fonte: docs/handoff-immagini-fasi.md su claude/brave-tesla-wu0a2b e icone base della stessa specie. Solo i cambiamenti descritti nelle fasi; caratteri invariati conservati. Anatomia semplificata come nelle basi, pochi colori e lamelle schematiche. Scala uniforme e centratura allineate alle basi; quantizzazione a 128 colori per il peso, senza modifiche anatomiche con codice. Lepiota giovane convessa con macchia centrale bruna conservata, adulta ombrellata con squame concentriche. Orellano giovane convesso: giallo pallido schematico nelle lamelle e pochi fili chiari per la cortina debole, senza anello.
