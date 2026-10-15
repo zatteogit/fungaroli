@@ -1,0 +1,172 @@
+/* Fronda — token dell'app. Fonte dei valori: docs/fronda/tokens.json e lo studio approvato.
+   Tre livelli: primitive private (--_ref-*, solo qui), ruoli pubblici (--bg, --brand, --action…) e componenti in style.css/fronda.css.
+   Nei fogli di stile si usano solo i ruoli pubblici: lo controlla tools/ds-guard.mjs. */
+:root {
+  --_ref-ivory: #f7f4ea;
+  --_ref-paper: #fffef9;
+  --_ref-surface-2: #ebeee4;
+  --_ref-surface-3: #dde3d5;
+  --_ref-border: #cdd3c6;
+  --_ref-hair: #e2e6da;
+  --_ref-ink: #18382c;
+  --_ref-text-2: #526459;
+  --_ref-muted: #627166;
+  --_ref-calendula-ink: #934211;
+  --_ref-white: #fff;
+  --_ref-accent-soft: #ffead8;
+  --_ref-forest: #24513d;
+  --_ref-forest-deep: #163d2d;
+  --_ref-polline: #f5d21f;
+  --_ref-action-hover: #f9de60;
+  --_ref-night: #10271f;
+  --_ref-polline-soft: #fff6c7;
+  --_ref-polline-ink: #6b5500;
+  --_ref-calendula: #f5822a;
+  --_ref-fiordaliso: #7aa5ef;
+  --_ref-fiordaliso-soft: #e7eeff;
+  --_ref-fiordaliso-ink: #284f85;
+  --_ref-germoglio: #a7c957;
+  --_ref-germoglio-soft: #e9f1d6;
+  --_ref-germoglio-ink: #36501d;
+  --_ref-rain: #2a78d6;
+  --_ref-rain-fc: #86b6ef;
+  --_ref-line: #326820;
+  --_ref-grid: #e6dfd3;
+  --_ref-s0: #cfcabf;
+  --_ref-s1: #c2dea8;
+  --_ref-s2: #9fcb7a;
+  --_ref-s3: #7ab553;
+  --_ref-s4: #5a9c37;
+  --_ref-s5: #3f8424;
+  --_ref-ps0: #8d8a82;
+  --_ref-ps1: #8a9e7c;
+  --_ref-ps2: #8fb66c;
+  --_ref-ps3: #93cb57;
+  --_ref-ps4: #98dc43;
+  --_ref-ps5: #a2ec33;
+  --_ref-warn-bg: #faeecf;
+  --_ref-warn-ink: #785513;
+  --_ref-ok-bg: #e6f0e7;
+  --_ref-ok-ink: #276146;
+  --_ref-crit: #a33335;
+  --_ref-crit-bg: #f8e7e5;
+  --_ref-crit-ink: #6a1c15;
+  --_ref-shadow-1: 0 1px 2px rgb(16 39 31 / .05), 0 3px 10px rgb(16 39 31 / .05);
+  --_ref-shadow-2: 0 2px 6px rgb(16 39 31 / .08), 0 18px 44px rgb(16 39 31 / .14);
+  --_ref-glass: rgb(16 39 31 / .34);
+  --_ref-surface-dark: #19352a;
+  --_ref-surface-2-dark: #224335;
+  --_ref-surface-3-dark: #2b5040;
+  --_ref-border-dark: #425c4c;
+  --_ref-hair-dark: #29473a;
+  --_ref-ivory-light: #f4f3e9;
+  --_ref-text-2-dark: #b5c5b8;
+  --_ref-muted-dark: #8da18f;
+  --_ref-accent-dark: #ffa15b;
+  --_ref-accent-soft-dark: #3a3324;
+  --_ref-forest-light: #b7d0a6;
+  --_ref-fiordaliso-ink-dark: #a0bffa;
+  --_ref-rain-dark: #4a93e8;
+  --_ref-rain-fc-dark: #1c5cab;
+  --_ref-line-dark: #9fd07a;
+  --_ref-grid-dark: #1e3128;
+  --_ref-s0-dark: #3c4a42;
+  --_ref-s1-dark: #3f6a43;
+  --_ref-s2-dark: #4f8c45;
+  --_ref-s3-dark: #64aa49;
+  --_ref-s4-dark: #7fc84e;
+  --_ref-s5-dark: #9be34c;
+  --_ref-warn-bg-dark: #3a3214;
+  --_ref-warn-ink-dark: #e8b18c;
+  --_ref-ok-bg-dark: #1d3d2c;
+  --_ref-crit-dark: #f0786c;
+  --_ref-crit-bg-dark: #33130f;
+  --_ref-crit-ink-dark: #f8d0ca;
+  --_ref-shadow-1-dark: 0 1px 2px rgb(0 0 0 / .45);
+  --_ref-shadow-2-dark: 0 18px 44px rgb(0 0 0 / .55);
+
+  /* ruoli pubblici */
+  color-scheme: light;
+  --font-display: Fraunces, Georgia, 'Times New Roman', serif;
+  --font-body: Manrope, system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  /* Fronda: avorio, carta, verde bosco; l'accento dei link e delle etichette è la calendula scura */
+  --bg: var(--_ref-ivory);
+  --surface: var(--_ref-paper);
+  --surface-2: var(--_ref-surface-2);
+  --surface-3: var(--_ref-surface-3);
+  --border: var(--_ref-border);
+  --hair: var(--_ref-hair);
+  --text: var(--_ref-ink);
+  --text-2: var(--_ref-text-2);
+  --muted: var(--_ref-muted);
+  --accent: var(--_ref-calendula-ink);
+  --accent-ink: var(--_ref-white);
+  --accent-soft: var(--_ref-accent-soft);
+  --forest: var(--_ref-forest);
+  /* ruoli Fronda: marchio, azione principale (polline con testo bosco notte) e i quattro accenti */
+  --brand: var(--_ref-forest); --brand-ink: var(--_ref-ivory); --brand-deep: var(--_ref-forest-deep);
+  --action: var(--_ref-polline); --action-hover: var(--_ref-action-hover); --action-ink: var(--_ref-night);
+  --polline: var(--_ref-polline); --polline-soft: var(--_ref-polline-soft); --polline-ink: var(--_ref-polline-ink);
+  --calendula: var(--_ref-calendula); --calendula-soft: var(--_ref-accent-soft); --calendula-ink: var(--_ref-calendula-ink);
+  --fiordaliso: var(--_ref-fiordaliso); --fiordaliso-soft: var(--_ref-fiordaliso-soft); --fiordaliso-ink: var(--_ref-fiordaliso-ink);
+  --germoglio: var(--_ref-germoglio); --germoglio-soft: var(--_ref-germoglio-soft); --germoglio-ink: var(--_ref-germoglio-ink);
+  --focus: var(--_ref-fiordaliso-ink);
+
+  --rain: var(--_ref-rain);
+  --rain-fc: var(--_ref-rain-fc);
+  --line: var(--_ref-line);
+  --grid: var(--_ref-grid);
+  /* rampa dell'indice su fondo chiaro: da un verde chiaro a un verde pieno (mai quasi nero) */
+  --s0: var(--_ref-s0); --s1: var(--_ref-s1); --s2: var(--_ref-s2); --s3: var(--_ref-s3); --s4: var(--_ref-s4); --s5: var(--_ref-s5);
+  /* su fondo scuro (giorno selezionato, anelli sulle foto): cresce la saturazione, non la chiarezza */
+  --ps0: var(--_ref-ps0); --ps1: var(--_ref-ps1); --ps2: var(--_ref-ps2); --ps3: var(--_ref-ps3); --ps4: var(--_ref-ps4); --ps5: var(--_ref-ps5);
+
+  --warn-bg: var(--_ref-warn-bg); --warn-ink: var(--_ref-warn-ink);
+  --ok-bg: var(--_ref-ok-bg); --ok-ink: var(--_ref-ok-ink);
+  --crit: var(--_ref-crit); --crit-bg: var(--_ref-crit-bg); --crit-ink: var(--_ref-crit-ink);
+
+  --r-xl: 28px; --r-lg: 22px; --r-md: 16px; --r-sm: 12px;
+  --shadow-1: var(--_ref-shadow-1);
+  --shadow-2: var(--_ref-shadow-2);
+  --glass: var(--_ref-glass);
+
+  --appbar-h: 56px;
+  --tabbar-h: 64px;
+  /* la barra in basso si appoggia sopra l'indicatore Home dell'iPhone senza sprecare spazio */
+  --tabbar-bottom: max(10px, calc(env(safe-area-inset-bottom, 0px) - 4px));
+  --tabbar-space: calc(var(--tabbar-h) + var(--tabbar-bottom));
+  --col: 720px;
+  --gutter: 16px;
+  font-family: var(--font-body);
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: var(--_ref-night); --surface: var(--_ref-surface-dark); --surface-2: var(--_ref-surface-2-dark); --surface-3: var(--_ref-surface-3-dark); --border: var(--_ref-border-dark); --hair: var(--_ref-hair-dark);
+  --text: var(--_ref-ivory-light); --text-2: var(--_ref-text-2-dark); --muted: var(--_ref-muted-dark);
+  --accent: var(--_ref-accent-dark); --accent-ink: var(--_ref-night); --accent-soft: var(--_ref-accent-soft-dark); --forest: var(--_ref-forest-deep);
+  --brand: var(--_ref-forest-light); --brand-ink: var(--_ref-night); --focus: var(--_ref-polline);
+  --polline-soft: var(--_ref-surface-2-dark); --polline-ink: var(--_ref-polline); --calendula-soft: var(--_ref-surface-2-dark); --calendula-ink: var(--_ref-accent-dark);
+  --fiordaliso-soft: var(--_ref-surface-2-dark); --fiordaliso-ink: var(--_ref-fiordaliso-ink-dark); --germoglio-soft: var(--_ref-surface-2-dark); --germoglio-ink: var(--_ref-germoglio);
+  --rain: var(--_ref-rain-dark); --rain-fc: var(--_ref-rain-fc-dark); --line: var(--_ref-line-dark); --grid: var(--_ref-grid-dark);
+  --s0: var(--_ref-s0-dark); --s1: var(--_ref-s1-dark); --s2: var(--_ref-s2-dark); --s3: var(--_ref-s3-dark); --s4: var(--_ref-s4-dark); --s5: var(--_ref-s5-dark);
+  --warn-bg: var(--_ref-warn-bg-dark); --warn-ink: var(--_ref-warn-ink-dark); --ok-bg: var(--_ref-ok-bg-dark); --ok-ink: var(--_ref-forest-light);
+  --crit: var(--_ref-crit-dark); --crit-bg: var(--_ref-crit-bg-dark); --crit-ink: var(--_ref-crit-ink-dark);
+  --shadow-1: var(--_ref-shadow-1-dark); --shadow-2: var(--_ref-shadow-2-dark);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+  color-scheme: dark;
+  --bg: var(--_ref-night); --surface: var(--_ref-surface-dark); --surface-2: var(--_ref-surface-2-dark); --surface-3: var(--_ref-surface-3-dark); --border: var(--_ref-border-dark); --hair: var(--_ref-hair-dark);
+  --text: var(--_ref-ivory-light); --text-2: var(--_ref-text-2-dark); --muted: var(--_ref-muted-dark);
+  --accent: var(--_ref-accent-dark); --accent-ink: var(--_ref-night); --accent-soft: var(--_ref-accent-soft-dark); --forest: var(--_ref-forest-deep);
+  --brand: var(--_ref-forest-light); --brand-ink: var(--_ref-night); --focus: var(--_ref-polline);
+  --polline-soft: var(--_ref-surface-2-dark); --polline-ink: var(--_ref-polline); --calendula-soft: var(--_ref-surface-2-dark); --calendula-ink: var(--_ref-accent-dark);
+  --fiordaliso-soft: var(--_ref-surface-2-dark); --fiordaliso-ink: var(--_ref-fiordaliso-ink-dark); --germoglio-soft: var(--_ref-surface-2-dark); --germoglio-ink: var(--_ref-germoglio);
+  --rain: var(--_ref-rain-dark); --rain-fc: var(--_ref-rain-fc-dark); --line: var(--_ref-line-dark); --grid: var(--_ref-grid-dark);
+  --s0: var(--_ref-s0-dark); --s1: var(--_ref-s1-dark); --s2: var(--_ref-s2-dark); --s3: var(--_ref-s3-dark); --s4: var(--_ref-s4-dark); --s5: var(--_ref-s5-dark);
+  --warn-bg: var(--_ref-warn-bg-dark); --warn-ink: var(--_ref-warn-ink-dark); --ok-bg: var(--_ref-ok-bg-dark); --ok-ink: var(--_ref-forest-light);
+  --crit: var(--_ref-crit-dark); --crit-bg: var(--_ref-crit-bg-dark); --crit-ink: var(--_ref-crit-ink-dark);
+  --shadow-1: var(--_ref-shadow-1-dark); --shadow-2: var(--_ref-shadow-2-dark);
+  }
+}

@@ -2450,6 +2450,7 @@ function applyLegal() {
   if (accepted !== ver) {
     const dlg = $('#onboarding');
     dlg.querySelector('h2').textContent = L.onboarding?.title || 'Prima di usare l\'app';
+    const sub = $('#ob-sub'); if (sub) { sub.textContent = L.onboarding?.subtitle || ''; sub.hidden = !sub.textContent; }
     dlg.querySelector('.ob-points').innerHTML = (L.onboarding?.points || [
       'Le previsioni sono stime: non garantiscono che troverai funghi.',
       'Schede e ricerca aiutano a orientarsi ma non sono un\'identificazione: prima di mangiare fai controllare i funghi all\'Ispettorato Micologico ASL.',
