@@ -15491,5 +15491,30 @@
     ],
     "bytes": 265796,
     "sha256": "ace708c10afa2e9cd9e48bc5f4bf2a82d8d4a327ae8dc136b6680d6dc0bf9fb7"
+  },
+  {
+    "file": "incoming/infografiche/procera.webp",
+    "tipo": "infografica",
+    "soggetto": "procera",
+    "modello": "image_gen (identificatore tecnico non esposto)",
+    "prompt": "Create a NEW scientific educational mushroom illustration plate of Macrolepiota procera, vertical 4:5 target1600x2000. Image1 is STYLE ONLY: same dark brown clean outlines, few flat natural colors, ivory paper, floating vignettes, not photographic or watercolor. Image2 is procera morphology authority only; Image3 is Lepiota brunneoincarnata morphology only. Do not edit/copy photo composition. NO text, letters, digits, arrows, leader lines, frames, symbols or watermark. Entire illustration fits inside 8% EMPTY outer margins. Bottom-right 38%width by24%height totally blank paper. Top half: ONE tall slender adult parasol mushroom and ONE young closed drumstick-shaped procera, side by side, both WHOLE including natural rounded slightly swollen bases, no volva. Adult wide umbrella cap (about20cm), creamy background, smooth dark-brown central umbo, many brown scales arranged in concentric rings, sparse toward fringed margin. Very tall slender cylindrical stalk, light ground with distinctive fine BROWN TRANSVERSE SNAKESKIN zigzag bands below ring. A thick DOUBLE-edged white ring loosely surrounds stalk. Young cap is ovoid with scales, NOT round Amanita egg, NO volva. Middle-left: longitudinal cut section, white unchanging cap flesh and hollow slender stem, no red/orange/blue staining. Middle-right: underside closeup of fine crowded white/cream FREE gills ending at a collar with a clear circular gap around the stalk; thick DOUBLE movable ring lower down, and snakeskin marks on stem. Small middle-center detail of thick double ring loose around slender banded stalk, no hand or arrow. Bottom-left: TWO small Lepiota brunneoincarnata, truly at 1:5 cap-diameter scale relative to adult parasol: small2-5cm cream caps with pinkish-brown scales, SHORT pink-banded stems, NO thick sliding ring, NO volva. Do not enlarge this dangerous lookalike. Do not introduce Chlorophyllum traits: no smooth procera stalk, no red flesh, no thick square bulb. No decorative leaves, no insects, no roots, no extra cap/stem. Illustrative morphology for comparison, not certification of identification.",
+    "edits": [
+      "Correct the attached procera mushroom plate, keeping all anatomical details and all vignettes. Expand the pale ivory paper canvas around the composition so ALL drawings have at least 8% blank margin on every side; fit the same entire composition at 80% scale in the final 4:5 frame. Nothing may approach the edges, especially the top cap and middle-right underside. Preserve generous blank bottom-right area. One localized anatomical correction: the DARK CENTRAL UMBO at the very top center of the large procera cap must be SMOOTH solid brown, a small continuous surface without scales. Keep concentric brown scales everywhere else on the cap, the snakeskin stalk, thick double ring, white flesh, hollow stem, small Lepiota, no volva. No new objects and no text, arrows, symbols, letters, numbers or frames."
+    ],
+    "tentativi": 2,
+    "stato": "verifica illustrativa superata",
+    "checklist_superata": true,
+    "verifica": "Procera con zigrinature trasversali, anello doppio spesso, umbone centrale bruno liscio, squame concentriche, base arrotondata senza volva; sezione bianca e gambo cavo, lamelle libere con collarino. Lepiota piccola con gambo corto, senza anello scorrevole, proporzione circa 1:5. Corretto umbone inizialmente squamoso e aumentati i margini, circa 6% o più. Nessun testo, blocco inferiore destro libero.",
+    "riferimenti": [
+      "assets/species/procera-ref.webp (autore/licenza in data/media.json, CC BY-SA 4.0)",
+      "assets/species/lepiota-brunneoincarnata-inat1.webp (autore/licenza in data/species-traits.json)",
+      "incoming/infografiche/caesarea-revisione.webp (solo stile)"
+    ],
+    "dimensioni": [
+      1600,
+      2000
+    ],
+    "bytes": 209378,
+    "sha256": "cfdd935f7fd792ac64d13aebec6fa1c6edfa51c485340f599536cd7130f865f3"
   }
 ]
