@@ -202,3 +202,18 @@
 @media (max-width: 359px) { .brand-place { margin-left: -2px; padding: 0 6px; font-size: 12px; } }
 @media (min-width: 900px) { .brand-place { order: 1; } .brand[hidden] + .brand-place { display: inline-flex; } }
 .info-pilot { margin: 0 0 16px; padding: 10px 14px; border-radius: var(--r-sm); background: var(--surface-2); color: var(--text-2); font-size: 14px; line-height: 1.45; }
+
+/* Bottoni tenui (decisione di Matteo, 16/10): sono interazioni, quindi bosco su fondo neutro, non calendula.
+   «Confronta», pillole d'azione, righe-invito come «Come funziona l'indice», filtri rimovibili. */
+:is(.ts-cta, .cmp-cta, .tx-vs, .act-pill, .tx-cmp-btn, .chip-x) { background: var(--surface-2); color: var(--link); }
+:is(.ts-cta, .cmp-cta) { color: var(--text); }
+.chip-x { border-color: var(--border); }
+@media (hover: hover) {
+  :is(.ts-cta, .cmp-cta, .tx-vs, .act-pill, .tx-cmp-btn, .chip-x):hover { background: var(--surface-3); }
+  :is(.chip-more, .fp-reset):hover { background: var(--surface-2); }
+}
+
+/* Interruttori «acceso» (preferenze, livelli della mappa): polline con il filo, come la selezione;
+   il pomello resta chiaro con il filo ocra, così si legge anche sul polline. */
+:is(.fp-switch[aria-pressed="true"] .switch, .switch-input:checked, .map-toggle[aria-checked="true"] .mt-switch) { background: var(--select); box-shadow: inset 0 0 0 1px var(--select-edge); }
+:is(.fp-switch[aria-pressed="true"] .switch i, .switch-input:checked::before, .map-toggle[aria-checked="true"] .mt-switch i) { background: var(--surface); box-shadow: 0 0 0 1px var(--select-edge); }
