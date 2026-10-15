@@ -261,3 +261,7 @@ Ordine aggiornato da Matteo il 15/10: completare prima tutte le varianti di colo
 | timbri/alberi-faggeta.png | esempio da approvare | Primo timbro; foglia e cupola4valve/2semi. QA52px alpha0, inchiostro integro ai4estremi. Frutto minuto a64px: verifica di Matteo prima degli altri8. |
 | bozze/timbri/alberi-faggeta-verifica.png | da verificare | Prove64/84/112px su carta e tema scuro; solo anteprima tecnica, non asset dell'app. |
 | qa/2026-10-15-timbro-faggeta.json | ok | Controlli di formato, margini e4estremi; non costituisce approvazione visiva. |
+\n\n## Continuazione autorizzata — 15/10\n\nFoglia palmata: approvata da Matteo. Stile dei timbri: approvato; soggetto del primo Faggeta da correggere. Le righe seguenti aggiornano e sostituiscono gli stati precedenti per gli stessi file.\n
+| timbri/alberi-faggeta.png | ok | Soggetto corretto: foglia ovale-ellittica a margine intero, nervature laterali quasi rettilinee e parallele, picciolo corto dentro l'anello; cupola aperta con4valve a brevi aculei e una faggiola triangolare; margini52px alpha0, inchiostro integro ai4estremi; Aculei ridotti a pochi segni esterni, volume delle valve sintetizzato; non è una chiave botanica. |
+| bozze/timbri/alberi-faggeta-verifica.png | ok | Prove64/84/112px su carta e scuro. |
+| qa/2026-10-15-timbro-alberi-faggeta.json | ok | Controllo automatico del formato, margini e inchiostro ai4estremi. |
