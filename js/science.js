@@ -1,8 +1,9 @@
 // La scienza dietro l'indice, per chi vuole approfondire: la "ricetta" fattore per fattore con i numeri veri del giorno,
-// i grafici con le soglie della specie, il profilo della specie e la pagina del metodo (docs/metodo-scientifico.md).
+// i grafici giorno per giorno (un solo componente, js/viz.js), il profilo della specie e la pagina del metodo (docs/metodo-scientifico.md).
 import { PARAMS, formatIndex } from './model.js';
 import { speciesLink } from './species-link.js';
 import {renderBotanicalWhy} from './botanical-explanation.js';
+import { renderViz, niceTicks, textWidth, fmtDay } from './viz.js';
 
 const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const n1 = (x, d = 1) => (x == null || Number.isNaN(x) ? '–' : x.toLocaleString('it-IT', { minimumFractionDigits: d, maximumFractionDigits: d }));
@@ -24,7 +25,7 @@ function factorRows(r, sp, band, dateStr) {
     { k: 'Quota', v: r.elev, inputs: [], brief: `${band} m · intervallo del modello ${lo}–${hi} m`, tags: ['eur'], why: band >= lo && band <= hi ? `${band} m è dentro l'intervallo della specie (${lo}–${hi} m).` : `${band} m è fuori dall'intervallo ${lo}–${hi} m: il fattore cala di 1/200 per metro.` },
     { k: 'Pioggia', v: r.rain, inputs: ['pioggia', 'meteo aggiornato'], brief: `${n0(r.effRain)} mm tra ${lagMax} e ${lagMin} giorni prima`, tags: ['lett', 'eur'], why: `${n0(r.effRain)} mm tra ${lagMax} e ${lagMin} giorni prima (finestra di latenza del modello), evento massimo ${n0(r.maxEvent)} mm${r.triggered ? ': innesco sì' : ` (sotto gli ${PARAMS.triggerMm} mm dell'innesco: vale meno)`}; ${n0(r.r30)} mm nei 30 giorni.` },
     { k: 'Temperatura', v: r.temp, inputs: ['temperatura media', 'meteo aggiornato'], brief: `Media di ${n1(r.t20)}\u00a0°C nei 20 giorni precedenti`, tags: sp.id === 'edulis' ? ['lett', 'eur'] : ['eur'], why: `media dei 20 giorni prima ${n1(r.t20)} °C; centro della curva ${n1(sp.topt, 0)} °C, ampiezza euristica ${n1(sp.tsd)} °C. Non è un intervallo di confidenza.` },
-    { k: 'Umidità del suolo', v: r.moist, inputs: ['umidità del suolo', 'meteo aggiornato'], brief: `${n1(r.sm, 2)} m³/m³ stimati a 3–9 cm`, tags: ['dato', 'eur'], why: r.sm == null ? 'dato non disponibile: indice non calcolabile.' : `${n1(r.sm, 2)} m³/m³ a 3–9 cm negli ultimi 3 giorni (soglie euristiche ${n1(PARAMS.moistDry, 2)}–${n1(PARAMS.moistWet, 2)}). È un dato di modello, non una misura del terreno.` },
+    { k: 'Umidità del suolo', v: r.moist, inputs: ['umidità del suolo', 'meteo aggiornato'], brief: r.sm == null ? 'Dato non disponibile' : `Terreno ${SOIL_TEXT[soilLevel(r.sm)]} negli ultimi 3 giorni (stima a 3–9 cm)`, tags: ['dato', 'eur'], why: r.sm == null ? 'dato non disponibile: indice non calcolabile.' : `${n1(r.sm, 2)} m³/m³ a 3–9 cm negli ultimi 3 giorni (soglie euristiche ${n1(PARAMS.moistDry, 2)}–${n1(PARAMS.moistWet, 2)}). È un dato di modello, non una misura del terreno.` },
     { k: 'Gelo', v: r.frost, inputs: ['temperature minime', 'meteo aggiornato'], brief: `Minima di ${n1(r.minT)}\u00a0°C negli ultimi 5 giorni`, tags: ['eur'], why: r.frost < 1 ? `minima di ${n1(r.minT)}\u00a0°C negli ultimi 5 giorni: il modello penalizza il gelo sotto ${PARAMS.frostC} °C.` : `minima ${n1(r.minT)}\u00a0°C negli ultimi 5 giorni: nessuna penalità per gelo nel modello.` },
     { k: 'Caldo', v: r.heat, inputs: ['temperature massime', 'meteo aggiornato'], brief: `Massima di ${n1(r.maxT)}\u00a0°C negli ultimi 3 giorni`, tags: ['eur'], why: r.heat < 1 ? `massima di ${n1(r.maxT)}\u00a0°C negli ultimi 3 giorni: il modello penalizza il caldo sopra ${PARAMS.heatC} °C.` : `massima ${n1(r.maxT)}\u00a0°C negli ultimi 3 giorni: nessuna penalità per caldo nel modello.` },
     { k: 'Shock termico', v: r.shock, inputs: ['temperatura media', 'meteo aggiornato'], brief: r.shock > 1 ? `Calo di ${n1(r.drop)}\u00a0°C · bonus non validato` : 'Nessun bonus nel modello', tags: ['eur'], bonus: true, why: r.shock > 1 ? `calo di ${n1(r.drop)} °C nella media tra 4 e 14 giorni fa: bonus ipotizzato, senza validazione locale.` : `nessun calo di almeno ${PARAMS.shockDropC} °C tra 4 e 14 giorni fa: nessun bonus.` },
@@ -37,44 +38,6 @@ function factorState(x) {
   if (x.v >= 1) return { label: 'Non penalizza', kind: 'good' };
   if (x.v === 0) return { label: 'Azzera il calcolo', kind: 'low' };
   return x.v >= .8 ? { label: 'Riduce poco', kind: 'mild' } : x.v >= .5 ? { label: 'Riduce', kind: 'moderate' } : { label: 'Riduce molto', kind: 'low' };
-}
-
-// grafici piccoli, SVG in linea: niente librerie, leggibili su telefono
-function rainChart(s, i, sp) {
-  const from = Math.max(0, i - 35), N = i - from + 1, W = 320, H = 96, bw = W / N;
-  const vals = s.p.slice(from, i + 1);
-  if (!vals.some(v => Number.isFinite(v) && v >= 0)) return '<p class="sci-note">Pioggia giornaliera: dati non disponibili per il grafico.</p>';
-  const total30 = r30sum(s, i);
-  const max = Math.max(PARAMS.triggerMm * 1.6, ...vals.filter(Number.isFinite));
-  const Y = (v) => H - 14 - (v / max) * (H - 24);
-  const [lagMin, lagMax] = sp.lag;
-  const a = Math.max(from, i - lagMax) - from, b = Math.max(from, i - lagMin) - from;
-  const bars = vals.map((v, k) => Number.isFinite(v) && v >= 0 ? `<rect x="${(k * bw + 0.6).toFixed(1)}" y="${Y(v).toFixed(1)}" width="${(bw - 1.2).toFixed(1)}" height="${(H - 14 - Y(v)).toFixed(1)}" class="${k + from > s.todayIndex ? 'fc' : k >= a && k <= b ? 'in' : ''}"/>` : '').join('');
-  return `<figure class="sci-chart"><figcaption><b>Pioggia giornaliera</b> · la fascia è la finestra di latenza (${lagMax}–${lagMin} giorni prima)</figcaption>
-    <svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Pioggia degli ultimi ${N} giorni: ${total30 == null ? 'totale degli ultimi 30 non disponibile' : `${n0(total30)} mm negli ultimi 30`}">
-      <rect x="${(a * bw).toFixed(1)}" y="0" width="${((b - a + 1) * bw).toFixed(1)}" height="${H - 14}" class="win"/>
-      <line x1="0" x2="${W}" y1="${Y(PARAMS.triggerMm).toFixed(1)}" y2="${Y(PARAMS.triggerMm).toFixed(1)}" class="thr"/>
-      <text x="${W - 2}" y="${(Y(PARAMS.triggerMm) - 3).toFixed(1)}" text-anchor="end" class="lbl">${PARAMS.triggerMm} mm innesco</text>
-      <g class="bars">${bars}</g>
-      <text x="0" y="${H - 2}" class="lbl">${N - 1} giorni prima</text><text x="${W}" y="${H - 2}" text-anchor="end" class="lbl">giorno scelto</text>
-    </svg></figure>`;
-}
-const r30sum = (s, i) => { let t = 0; if (i < 30) return null; for (let k = i - 30; k < i; k++) { if (!Number.isFinite(s.p[k]) || s.p[k] < 0) return null; t += s.p[k]; } return t; };
-
-function lineChart({ vals, lo, hi, band, unit, title, note, bandLabel, digits = 1 }) {
-  const W = 320, H = 92, N = vals.length;
-  const ok = vals.filter((v) => v != null);
-  if (ok.length < 3) return '';
-  const mn = Math.min(...ok, band ? band[0] : Infinity, lo ?? Infinity), mx = Math.max(...ok, band ? band[1] : -Infinity, hi ?? -Infinity);
-  const pad = (mx - mn) * 0.12 || 1;
-  const Y = (v) => H - 14 - ((v - (mn - pad)) / (mx - mn + 2 * pad)) * (H - 22);
-  const X = (k) => (k / (N - 1)) * W;
-  const path = vals.map((v, k) => (v == null ? '' : `${k && vals[k - 1] != null ? 'L' : 'M'}${X(k).toFixed(1)} ${Y(v).toFixed(1)}`)).join('');
-  const bandR = band ? `<rect x="0" width="${W}" y="${Y(band[1]).toFixed(1)}" height="${(Y(band[0]) - Y(band[1])).toFixed(1)}" class="win"/><text x="${W - 2}" y="${(Y(band[1]) + 10).toFixed(1)}" text-anchor="end" class="lbl">${esc(bandLabel)}</text>` : '';
-  const thr = [lo, hi].filter((x) => x != null).map((x) => `<line x1="0" x2="${W}" y1="${Y(x).toFixed(1)}" y2="${Y(x).toFixed(1)}" class="thr"/><text x="2" y="${(Y(x) - 3).toFixed(1)}" class="lbl">${n1(x, digits)} ${unit}</text>`).join('');
-  return `<figure class="sci-chart"><figcaption><b>${esc(title)}</b>${note ? ` · ${esc(note)}` : ''}</figcaption>
-    <svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(title)}">${bandR}${thr}<path d="${path}" class="ln"/>
-      <text x="0" y="${H - 2}" class="lbl">${N - 1} giorni prima</text><text x="${W}" y="${H - 2}" text-anchor="end" class="lbl">giorno scelto</text></svg></figure>`;
 }
 
 function speciesProfile(sp) {
@@ -95,9 +58,139 @@ function speciesProfile(sp) {
   </div>`;
 }
 
+// ---- le condizioni giorno per giorno: quattro domande, un solo componente grafico (js/viz.js) ----
+
+/** Umidità del suolo a parole, con le soglie del modello (PARAMS.moistDry / moistWet). */
+export function soilLevel(v) {
+  if (!Number.isFinite(v)) return null;
+  return v < PARAMS.moistDry ? 'secco' : v < PARAMS.moistWet ? 'medio' : 'umido';
+}
+const SOIL_TEXT = { secco: 'secco', medio: 'mediamente umido', umido: 'umido' };
+const mm = (v) => `${v === 0 ? '0' : v < 10 ? n1(v, 1) : n0(v)} mm`;
+
+/** Le frasi che rispondono alle quattro domande. Funzione pura: testata in tests/science-story.test.mjs. */
+export function dayStory({ r, sp, rows, days = [], todayIndex, i }) {
+  const name = sp.name.split(' / ')[0].toLowerCase();
+  const [lagMin, lagMax] = sp.lag;
+  const ok = (k) => rows.find((x) => x.k === k && Number.isFinite(x.v));
+  const rain = !ok('Pioggia') ? 'Mancano dati di pioggia per le finestre richieste: il fattore non è calcolabile.'
+    : `${n0(r.effRain)} mm tra ${lagMax} e ${lagMin} giorni prima del giorno scelto: è la finestra in cui la pioggia conta per ${name} nel modello. `
+      + (r.maxEvent >= PARAMS.triggerMm ? `Almeno un giorno ha superato gli ${PARAMS.triggerMm} mm che il modello considera un innesco (massimo ${n0(r.maxEvent)} mm).`
+        : r.triggered ? `Nessun giorno ha raggiunto gli ${PARAMS.triggerMm} mm, ma il totale basta come innesco nel modello.`
+        : `Nessun giorno ha raggiunto gli ${PARAMS.triggerMm} mm dell'innesco (massimo ${n0(r.maxEvent)} mm): la pioggia vale meno.`)
+      + ` Negli ultimi 30 giorni: ${n0(r.r30)} mm.`;
+  const lo = sp.topt - sp.tsd, hi = sp.topt + sp.tsd;
+  const temp = !ok('Temperatura') || r.t20 == null ? 'Mancano dati di temperatura per i 20 giorni richiesti: il fattore non è calcolabile.'
+    : `Media dei 20 giorni prima: ${n1(r.t20)} °C. Per ${name} il modello preferisce medie tra ${n0(lo)} e ${n0(hi)} °C. `
+      + (r.t20 < lo ? 'Ora fa più freddo di così.' : r.t20 > hi ? 'Ora fa più caldo di così.' : 'Siamo dentro questa fascia.')
+      + ' Non è un limite netto: più ci si allontana dal centro, più il fattore riduce l’indice.';
+  const lvl = soilLevel(r.sm);
+  const soil = !ok('Umidità del suolo') || !lvl ? 'Umidità del suolo non disponibile: l’indice non è calcolabile. Un dato mancante non vuol dire terreno secco.'
+    : `Negli ultimi 3 giorni il terreno è ${SOIL_TEXT[lvl]}, secondo il modello meteo (strato tra 3 e 9 cm). È una stima, non una misura sul posto.`;
+  const sel = days.find((d) => d.i === i), ahead = days.filter((d) => d.i > todayIndex && Number.isFinite(d.score));
+  let next = sel && Number.isFinite(sel.score) ? `Il giorno scelto vale ${formatIndex(sel.score)} su 10.` : 'Per il giorno scelto l’indice non è calcolabile.';
+  if (ahead.length) {
+    const best = ahead.reduce((a, b) => (b.score > a.score ? b : a));
+    const lowest = Math.min(...ahead.map((d) => d.score));
+    next += ` Nei prossimi ${ahead.length} giorni va da ${formatIndex(lowest)} a ${formatIndex(best.score)}; il valore più alto è ${new Date(best.date + 'T12:00:00').toLocaleDateString('it-IT', { weekday: 'long', day: 'numeric' })}.`;
+  }
+  next += ' Dopo oggi il calcolo usa previsioni: più sono lontane, meno sono affidabili.';
+  return { rain, temp, soil, next };
+}
+
+const key = (cls, text, fallback) => `<span class="viz-k"${fallback ? ` data-fallback="${fallback}"` : ''}><i class="viz-sw ${cls}" aria-hidden="true"></i>${esc(text)}</span>`;
+const block = (id, q, answer, keys) => `
+    <section class="sci-q" id="sci-q-${id}" aria-labelledby="sci-q-${id}-h">
+      <h3 class="sci-q-h" id="sci-q-${id}-h">${esc(q)}</h3>
+      <p class="sci-q-a">${esc(answer)}</p>
+      <figure class="viz" data-viz="${id}"><div class="viz-plot"></div><figcaption class="viz-key">${keys}</figcaption></figure>
+    </section>`;
+
+function storyHtml({ r, sp, rows, days, todayIndex, i }) {
+  if (!days?.length) return '';
+  const t = dayStory({ r, sp, rows, days, todayIndex, i });
+  const lo = sp.topt - sp.tsd, hi = sp.topt + sp.tsd;
+  return `
+    <div class="sci-days">
+    <h3 class="sci-h" id="sci-giorni">Le condizioni giorno per giorno</h3>
+    <p class="sci-intro">Ultimi ${Math.max(0, todayIndex - days[0].i)} giorni e prossimi ${Math.max(0, days[days.length - 1].i - todayIndex)}. La fascia chiara è la <b>finestra che conta</b> per il giorno scelto. Tocca un grafico per leggere il valore di un giorno.</p>
+    ${block('rain', 'Ha piovuto abbastanza, e al momento giusto?', t.rain, key('sw-water', 'pioggia del giorno (modello)') + key('sw-water is-forecast', 'prevista') + key('sw-threshold', `${PARAMS.triggerMm} mm: innesco nel modello`, 'thr'))}
+    ${block('temp', 'Fa la temperatura giusta?', t.temp, key('sw-heat-line', 'media del giorno') + key('sw-heat-band', `fascia preferita nel modello: ${n0(lo)}–${n0(hi)} °C`))}
+    ${block('soil', 'Il terreno è umido?', t.soil, key('sw-water-line', 'umidità stimata tra 3 e 9 cm') + `<span class="viz-k">secco sotto ${n1(PARAMS.moistDry, 2)} m³/m³, umido sopra ${n1(PARAMS.moistWet, 2)}</span>`)}
+    ${block('index', 'Come va nei prossimi giorni?', t.next, key('sw-index-line', 'indice con meteo passato di modello') + key('sw-index-line is-forecast', 'con previsioni'))}
+    <details class="viz-table"><summary>Tutti i valori giorno per giorno</summary><div class="viz-table-wrap" data-viz-table></div></details>
+    </div>`;
+}
+
+// piante: pioggia di contesto e indice nei giorni, senza le finestre del modello fungino
+function plantDaysHtml({ days, todayIndex, i }) {
+  if (!days?.length) return '';
+  const sel = days.find((d) => d.i === i);
+  return `
+    <div class="sci-days">
+    <h3 class="sci-h" id="sci-giorni">Le condizioni giorno per giorno</h3>
+    ${block('rain', 'Quanto ha piovuto?', 'Pioggia giornaliera di modello: fa da contesto, non decide da sola la fase della pianta.', key('sw-water', 'pioggia del giorno (modello)') + key('sw-water is-forecast', 'prevista'))}
+    ${block('index', 'Come va nei prossimi giorni?', `${sel && Number.isFinite(sel.score) ? `Il giorno scelto vale ${formatIndex(sel.score)} su 10.` : 'Per il giorno scelto l’indice non è calcolabile.'} Dopo oggi il calcolo usa previsioni: più sono lontane, meno sono affidabili.`, key('sw-index-line', 'indice con meteo passato di modello') + key('sw-index-line is-forecast', 'con previsioni'))}
+    <details class="viz-table"><summary>Tutti i valori giorno per giorno</summary><div class="viz-table-wrap" data-viz-table></div></details>
+    </div>`;
+}
+
+/** Disegna i quattro grafici sullo stesso asse dei giorni. Va chiamata a sezione aperta (serve la larghezza reale). */
+export function drawWhyCharts(box, { s, sp, days, todayIndex, i }) {
+  if (!box || !days?.length || !box.querySelector('[data-viz]')) return;
+  const from = days[0].i, at = (k) => k - from;
+  const dates = days.map((d) => d.date), ti = at(todayIndex), si = at(i);
+  const pick = (arr) => days.map((d) => (Number.isFinite(arr?.[d.i]) && arr[d.i] >= 0 ? arr[d.i] : null));
+  const rain = pick(s.p), temp = days.map((d) => (Number.isFinite(s.tmean?.[d.i]) ? s.tmean[d.i] : null)), soil = pick(s.soilm), score = days.map((d) => (Number.isFinite(d.score) ? d.score : null));
+  const fin = (a) => a.filter(Number.isFinite);
+  const fungal = sp.kind !== 'plant' && Array.isArray(sp.lag);
+  const [lagMin, lagMax] = fungal ? sp.lag : [0, 0];
+  const rTicks = niceTicks(0, Math.max(fungal ? PARAMS.triggerMm * 1.5 : 10, ...fin(rain)), 2);
+  const tlo = fungal ? sp.topt - sp.tsd : Infinity, thi = fungal ? sp.topt + sp.tsd : -Infinity;
+  const tTicks = niceTicks(Math.min(tlo, ...fin(temp)), Math.max(thi, ...fin(temp)), 3);
+  const sMax = Math.max(0.4, ...fin(soil));
+  const specs = {
+    rain: { kind: 'bars', name: 'Pioggia giornaliera in millimetri', values: rain, format: mm, y: { min: 0, max: rTicks.max, ticks: rTicks.ticks.map((v, k, a) => ({ v, label: k === a.length - 1 ? `${n0(v)} mm` : n0(v) })) }, ...(fungal ? { window: { from: at(i - lagMax), to: at(i - lagMin), label: 'finestra che conta' }, threshold: { v: PARAMS.triggerMm, label: `${PARAMS.triggerMm} mm innesco` } } : {}) },
+    temp: { kind: 'line', name: 'Temperatura media giornaliera in gradi', values: temp, format: (v) => `${n1(v)} °C`, y: { min: tTicks.min, max: tTicks.max, ticks: tTicks.ticks.map((v) => ({ v, label: `${n0(v)} °C` })) }, window: { from: at(i - PARAMS.tDays), to: at(i - 1), label: 'finestra che conta' }, band: { lo: tlo, hi: thi } },
+    soil: { kind: 'line', name: 'Umidità del suolo stimata', values: soil, format: (v) => soilLevel(v), describe: (v) => `${n1(v, 2)} m³/m³`, y: { min: 0, max: sMax, ticks: [] }, zones: [{ lo: 0, hi: PARAMS.moistDry, label: 'secco' }, { lo: PARAMS.moistDry, hi: PARAMS.moistWet, label: 'medio' }, { lo: PARAMS.moistWet, hi: sMax, label: 'umido' }], window: { from: at(i - 3), to: at(i - 1), label: 'finestra che conta' } },
+    index: { kind: 'line', name: 'Indice sperimentale da 0 a 10', values: score, format: (v) => `${formatIndex(v)} su 10`, y: { min: 0, max: 100, ticks: [0, 50, 100].map((v) => ({ v, label: formatIndex(v).replace(',0', '') })) } },
+  };
+  // stesso margine sinistro per tutti: gli assi dei giorni restano allineati da un grafico all'altro
+  const left = Math.max(24, ...Object.values(specs).flatMap((sp2) => (sp2.zones ? sp2.zones.map((z) => z.label) : sp2.y.ticks.map((t) => t.label))).map((t) => textWidth(t, 11))) + 8;
+  for (const [id, spec] of Object.entries(specs)) {
+    const fig = box.querySelector(`[data-viz="${id}"]`);
+    if (fig) renderViz(fig, { ...spec, left, dates, todayIndex: ti, selectedIndex: si });
+  }
+  const tbl = box.querySelector('[data-viz-table]');
+  if (tbl && !tbl.firstChild) {
+    const dash = '—';
+    tbl.innerHTML = `<table><caption class="sr-only">Valori giornalieri usati nei grafici</caption><thead><tr><th scope="col">Giorno</th><th scope="col">Pioggia</th><th scope="col">Temperatura media</th><th scope="col">Suolo</th><th scope="col">Indice</th></tr></thead><tbody>${days.map((d, k) => `<tr${d.i === i ? ' class="is-selected"' : ''}><th scope="row">${esc(fmtDay(d.date, true))}${d.i === todayIndex ? ' · oggi' : d.i > todayIndex ? ' · prev.' : ''}</th><td>${rain[k] == null ? dash : mm(rain[k])}</td><td>${temp[k] == null ? dash : `${n1(temp[k])} °C`}</td><td>${soil[k] == null ? dash : `${soilLevel(soil[k])} <small>${n1(soil[k], 2)} m³/m³</small>`}</td><td>${score[k] == null ? dash : formatIndex(score[k])}</td></tr>`).join('')}</tbody></table><p class="small muted">${dash} dato assente: non vuol dire zero.</p>`;
+  }
+  // ridisegna quando cambia la larghezza (rotazione, finestra), senza osservatori orfani
+  if (!box._vizObserver && typeof ResizeObserver !== 'undefined') {
+    let w = box.clientWidth, t = 0;
+    box._vizObserver = new ResizeObserver(() => {
+      if (!box.isConnected) { box._vizObserver.disconnect(); return; }
+      if (Math.abs(box.clientWidth - w) < 2) return;
+      w = box.clientWidth; clearTimeout(t);
+      t = setTimeout(() => box._vizDraw?.(), 120);
+    });
+    box._vizObserver.observe(box);
+  }
+  box._vizDraw = () => drawWhyCharts(box, { s, sp, days, todayIndex, i });
+  // aprendo un dettaglio, la sua intestazione resta sotto la barra in alto e non nascosta dietro
+  box.querySelectorAll('.sci-technical, .viz-table').forEach((d) => {
+    d.ontoggle = () => {
+      if (!d.open) return;
+      const bar = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--appbar-h')) || 56;
+      if (d.getBoundingClientRect().top < bar + 8) d.scrollIntoView({ block: 'start' });
+    };
+  });
+}
+
 // la sezione "Perche' questo indice", completa
-export function renderWhy({ r, s, i, sp, band, dateStr, shown, agg, parts = [], prefs = [], outing }) {
-  if(sp.kind==='plant')return renderBotanicalWhy({r,sp,prefs});
+export function renderWhy({ r, s, i, sp, band, dateStr, shown, agg, parts = [], prefs = [], outing, days = [], todayIndex = i }) {
+  if(sp.kind==='plant')return renderBotanicalWhy({r,sp,prefs})+plantDaysHtml({days,todayIndex,i});
   const missing = new Set(r.quality?.missing || []);
   const rows = factorRows(r, sp, band, dateStr).map(x => x.inputs.some(k => missing.has(k)) ? { ...x, v: null, brief: 'Dati mancanti o non aggiornati per il calcolo', why: 'Dati mancanti o non aggiornati per le finestre richieste: il fattore non è utilizzabile.' } : x);
   const complete = r.quality?.complete !== false && rows.every(x => Number.isFinite(x.v));
@@ -116,7 +209,8 @@ export function renderWhy({ r, s, i, sp, band, dateStr, shown, agg, parts = [], 
     <p class="sci-sub">Come incidono le condizioni nel modello</p>
     <ul class="sci-signals" aria-label="Come incidono i fattori nel modello">${main.map(x => { const state = factorState(x); return `<li class="sci-signal ${tied.includes(x) && complete ? 'weak' : ''}"><div class="sci-signal-head"><b>${esc(x.k)}</b><span class="sci-state state-${state.kind}">${state.label}</span></div><p>${esc(x.brief)}</p></li>`; }).join('')}</ul>
     <ul class="sci-checks" aria-label="Altri fattori del modello">${other.map(x => { const state = factorState(x); return `<li><b>${esc(x.k)}</b><span class="sci-state state-${state.kind}">${state.label}</span><small>${esc(x.brief)}</small></li>`; }).join('')}</ul>
-    <details class="sci-technical"><summary>Calcolo e fonti dei 9 fattori</summary><div class="sci-technical-body">
+    ${storyHtml({ r, sp, rows, days, todayIndex, i })}
+    <details class="sci-technical" id="sci-calcolo"><summary>Calcolo e fonti dei 9 fattori</summary><div class="sci-technical-body">
     <p class="sci-note">I fattori si moltiplicano: ×1 non riduce l’indice, un valore inferiore lo abbassa. Lo shock termico può aggiungere un bonus ipotizzato. Le etichette riassumono l’effetto nel modello, senza misurare l’affidabilità dei dati.</p>
     <ol class="sci-factors">${rows.map((x) => `
       <li>
@@ -130,9 +224,6 @@ export function renderWhy({ r, s, i, sp, band, dateStr, shown, agg, parts = [], 
     ${prefs.length ? `<p class="sci-note">Le preferenze (${prefs.map((p) => `${esc(p.label)} ×${n1(p.mult, 2)}`).join(', ')}) modificano solo l'ordine dei consigli. L'indice delle condizioni resta <b>${formatIndex(shown)}</b>.</p>` : ''}
     ${outing ? `<p class="sci-note"><b>Il meteo dell'uscita non cambia l'indice</b>: cambia solo l'ordine delle zone (×${n1(outing, 2)} in classifica). Le condizioni della mattina sono valutate separatamente dalle condizioni di crescita.</p>` : ''}
     ${fc}${speciesProfile(sp)}</div></details>
-    ${rainChart(s, i, sp)}
-    ${lineChart({ vals: s.tmean.slice(Math.max(0, i - 35), i + 1), band: [sp.topt - sp.tsd, sp.topt + sp.tsd], bandLabel: 'ampiezza della curva euristica', unit: '°C', title: 'Temperatura media', note: 'conta la media dei 20 giorni prima' })}
-    ${lineChart({ vals: s.soilm.slice(Math.max(0, i - 35), i + 1), lo: PARAMS.moistDry, hi: PARAMS.moistWet, unit: 'm³/m³', digits: 2, title: 'Umidità del suolo (3–9 cm)', note: 'sotto la linea bassa è secco, sopra l\'alta pienamente umido' })}
     <p class="sci-more"><a class="more-row" href="#/metodo">Il metodo completo: formule, fonti e limiti</a></p>`;
 }
 

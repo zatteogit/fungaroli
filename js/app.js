@@ -1,20 +1,19 @@
 import './rails.js';
 import {outingDiscoveries} from './outing-discoveries.js';
 import {renderBotanicalWhy} from './botanical-explanation.js';
-import {initPlants,plants,plantName,plantRecord,plantThumb,renderPlants,renderPlantPage} from './plants.js';
+import {initPlants,plants,plantName,plantRecord,plantThumb,plantHeroSrc,renderPlants,renderPlantPage} from './plants.js';
 import {botanicalModels} from './botanical-model.js';
 import './theme.js';
 import './images.js';
 import { consumeFresh, freshDone } from './refresh.js';
-import {updateWeatherHTML,reconcileChildren,keepWeatherReadingPosition} from './weather-dom.js';
+import {updateWeatherHTML,updateHTMLTracked,reconcileChildren,keepWeatherReadingPosition} from './weather-dom.js';
 import { SPECIES, GROUPS, FOREST } from './species.js';
 import { scoreZoneDay, scoreSpecies, habitatAtBand, habitatPotential, elevationFit, combine, classOf, scoreLabel, scoreShortLabel, formatIndex, MODEL_VERSION, PARAMS, CLASSES } from './model.js';
 import { todayISO, loadWeather } from './weather.js';
 import { weatherErrorMessage } from './weather-request.js';
-import { renderCharts } from './chart.js';
 import { initJournal } from './journal.js';
 import { renderSvgMap } from './svgmap.js';
-import { initSpeciesCards, thumb as fungusThumb, renderSpeciesDetail, whereSummary, criticalRule as fungusCriticalRule, criticalRuleOf as fungusCriticalRuleOf, speciesPhoto as fungusPhoto, speciesPhotos as fungusPhotos } from './speciescard.js';
+import { initSpeciesCards, thumb as fungusThumb, renderSpeciesDetail, speciesHeroSrc, whereSummary, criticalRule as fungusCriticalRule, criticalRuleOf as fungusCriticalRuleOf, speciesPhoto as fungusPhoto, speciesPhotos as fungusPhotos } from './speciescard.js';
 import { speciesLink } from './species-link.js';
 import { initEntitySheets, openEntitySheet } from './entity-sheet.js';
 import {initBaseLocation,currentBase,customBase,travelTo,travelText,directionsTo,BASE_PRIVACY_TEXT} from './base-location.js';
@@ -22,14 +21,15 @@ import { initLearning, renderGlossary, renderFieldIdentify, difficultyLink, glos
 import { openLightbox, captionHtml } from './lightbox.js';
 import { initInstall, maybeInvite } from './install.js';
 import { loadOuting, outingFor, OUTING_LABEL, OUTING_SHORT, OUTING_RANK } from './outing.js';
-import { initIdentify, renderIdentify, setCompare, searchTaxa, openTaxon, renderTaxonPage, renderTaxonView, taxonName, taxonByKey, attentionLine, sourceRows } from './identify.js';
+import { initIdentify, renderIdentify, setCompare, searchTaxa, openTaxon, renderTaxonPage, renderTaxonView, taxonHeroSrc, taxonName, taxonByKey, attentionLine, sourceRows } from './identify.js';
 import { initSearch } from './search.js';
 import { searchFieldHtml, matchesQuery, renderAlsoIn } from './catalog-search.js';
 import { renderGuidedKey } from './guided-key.js';
-import { renderWhy, renderMethod } from './science.js';
-import { navigate, soft } from './motion.js';
+import { renderWhy, renderMethod, drawWhyCharts } from './science.js';
+import { navigate, soft, setCoverResolver } from './motion.js';
+import { applyCrop } from './images.js';
 import { FOREST_LEGEND } from './forest-legend.js';
-import { initTrees, renderTreeGrid, renderTreePage, linkTrees, treeChips, treeForCategory, treeThumb, treePhotoSrc } from './trees.js';
+import { initTrees, renderTreeGrid, renderTreePage, linkTrees, treeChips, treeForCategory, treeThumb, treePhotoSrc, treeHeroSrc } from './trees.js';
 import { crowding, comfortScore, timingAdvice, fmtTime, fmtRough, holidayName, intornoA } from './human.js';
 import { initCommunity, communityStatus, communityRank, reportBadge } from './community.js';
 import { guideTitle, renderGuideCards, renderGuide, initGuideContent, guideCount } from './guides.js';
@@ -38,6 +38,7 @@ import { mountSpeciesAutocomplete } from './species-autocomplete.js';
 import { uniquePlaceProposals, chooseWalkTrail, walkContext, trailSketch } from './walks.js';
 import { cardLatin } from './names.js';
 import { pickCover } from './zone-cover.js';
+import { initAmbilight } from './ambilight.js';
 import { initChallenges, renderChallengeList, renderChallenge, challengeTitle, challengeList, challengeProgressOf, suggestedChallenge } from './challenges.js';
 
 const HISTORY_DAYS = 30;   // giorni passati mostrati nel grafico
@@ -159,6 +160,7 @@ function loadStep(n) {
   });
 }
 async function init() {
+  initAmbilight();
   loadStep(0);
   initInstall(); // prima di tutto: non dipende dai dati
   // versione Artifact: dati incorporati nella pagina (niente fetch esterni)
@@ -280,9 +282,19 @@ async function init() {
 // Navigazione: viste con hash (#/, #/zona/<id>/<giorno>, #/mappa[/<id>], #/specie[/<id>], #/diario, #/info)
 // Il tasto indietro del telefono funziona perche' ogni passo e' una voce di cronologia.
 let navDepth = 0;
+// il ritorno ripristina la posizione salvata dall'app, non quella del browser (che arriverebbe prima della transizione, con uno scatto)
+try { history.scrollRestoration = 'manual'; } catch { /* non supportato */ }
+// navigazione partita da un tocco o da un tasto dentro l'app: solo allora il focus segue la pagina nuova
+let userNavAt = -1e9, userNavTo = '';
 function initShell() {
   addEventListener('hashchange', () => { navDepth++; route(); });
   document.addEventListener('click', (e) => {
+    // il link toccato (o «indietro»): conta solo se è proprio lui a cambiare pagina, non se apre una scheda sopra
+    const nav = e.target.closest('a[href^="#/"], [data-back]');
+    if (nav) { userNavAt = performance.now(); userNavTo = nav.matches('[data-back]') ? 'back' : nav.getAttribute('href'); }
+    // sezione già aperta toccata di nuovo nella barra: torna in cima, come nelle app
+    const tab = e.target.closest('.tabbar a[aria-current="page"]');
+    if (tab && tab.getAttribute('href') === (location.hash || '#/')) { e.preventDefault(); scrollTo({ top: 0, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' }); return; }
     if (!e.target.closest('[data-back]')) return;
     // indietro vero se la pagina precedente e' nell'app, altrimenti la pagina "madre"
     if (navStack.length > 1) history.back(); else location.hash = parentOf(prev);
@@ -319,8 +331,8 @@ function paintScopriNav(r) {
   if (sub) sub.innerHTML = r.view === 'impara' ? '' : SCOPRI_SUB[sec].map(([href, label]) => `<a href="${href}"${cur(href === here)}>${label}</a>`).join('');
 }
 
-function parseRoute() {
-  const parts = location.hash.replace(/^#\/?/, '').split('/').filter(Boolean).map((x) => { try { return decodeURIComponent(x); } catch { return x; } });
+function parseRoute(hash = location.hash) {
+  const parts = hash.replace(/^#\/?/, '').split('/').filter(Boolean).map((x) => { try { return decodeURIComponent(x); } catch { return x; } });
   const [a, b, c] = parts;
   if (a === 'zona' && (weatherZones||zones).some((z) => z.id === b)) return { view: 'zona', zoneId: b, offset: Math.max(0, Math.min(AHEAD_DAYS, +c || 0)), trailId: parts[3] === 'sentiero' && (trails[b]?.trails || []).some(t => String(t.id) === parts[4]) ? parts[4] : null };
   if (a === 'mappa') return { view: 'mappa', zoneId: b };
@@ -346,7 +358,8 @@ function parseRoute() {
 // profondita' e posizione delle viste: decidono la direzione della transizione
 const LEVEL = { mappa: 1, pianta:1, commestibile: 1, guide: 2, zona: 1, 'specie-dettaglio': 1, albero: 1, info: 1, metodo: 2, fungo: 1, glossario: 1, 'guide-list': 1, sfide: 1 };
 const TABS = ['uscite', 'specie', 'diario'];
-const SUB = { specie: 0, alberi: 1, piante:2, riconosci: 3, glossario: 4, 'guide-list': 5, sfide: 6 };
+// posizione delle schede di Scopri (Funghi, Piante, Alberi, Impara e le loro sotto-schede): tra loro si passa in dissolvenza
+const SUB = { specie: 0, alberi: 1, piante:2, riconosci: 3, glossario: 4, 'guide-list': 5, sfide: 6, impara: 7 };
 // una sfida aperta è un livello sotto l'elenco delle sfide
 const levelOf = (r) => (LEVEL[r.view] || 0) + (r.compare ? 2 : 0) + (r.challengeId ? 1 : 0) + (r.view === 'riconosci' && r.recognizeMode === 'bosco' ? 1 : 0);
 const scrollMem = new Map();
@@ -354,10 +367,13 @@ let prev = null;
 function navKind(a, b) {
   if (!a) return 'none';
   const la = levelOf(a), lb = levelOf(b);
+  const ta = TABS.indexOf(a.tab), tb = TABS.indexOf(b.tab);
+  // tocco sulla barra delle sezioni (la radice di un'altra sezione): dissolvenza, anche partendo da una pagina interna
+  if (ta !== tb && ta >= 0 && tb >= 0 && lb === 0) return tb > ta ? 'right' : 'left';
   if (lb > la) return 'push';
   if (lb < la) return 'pop';
-  if (a.view === b.view) return 'none';
-  const ta = TABS.indexOf(a.tab), tb = TABS.indexOf(b.tab);
+  // stessa vista: cambia solo il catalogo di «Impara a riconoscere» (funghi, piante, alberi) è una scheda accanto
+  if (a.view === b.view) return a.view === 'riconosci' && a.recognizeMode !== b.recognizeMode ? 'right' : 'none';
   if (ta !== tb && ta >= 0 && tb >= 0) return tb > ta ? 'right' : 'left';
   if (a.view in SUB && b.view in SUB) return SUB[b.view] > SUB[a.view] ? 'right' : 'left';
   return 'none';
@@ -414,6 +430,9 @@ function watchTitle() {
   if (!h || ($('.brand') && !$('.brand').hidden)) return;
   bar.textContent = h.textContent.trim();
   const top = $('.appbar').getBoundingClientRect().bottom;
+  // stato iniziale subito (anche tornando a una pagina già scorsa): la barra entra nella transizione già giusta, senza scatto
+  const hr = h.getBoundingClientRect();
+  document.documentElement.classList.toggle('title-in-bar', hr.height > 0 && hr.bottom <= top);
   titleIO = new IntersectionObserver(([e]) => {
     // fuori dalla vista ma sopra (scorso via), non sotto (pagina corta o non ancora raggiunto)
     document.documentElement.classList.toggle('title-in-bar', !e.isIntersecting && e.boundingClientRect.top < top);
@@ -451,7 +470,36 @@ function route() {
   const nav = navKind(prev, r), back = prev?.hash || '';
   if (prev) scrollMem.set(prev.hash, scrollY);
   prev = r;
-  navigate(() => { routeNow(r, nav); updateBack(r, nav); requestAnimationFrame(watchTitle); }, { nav, back });
+  const user = performance.now() - userNavAt < 1500 && (userNavTo === 'back' || userNavTo === r.hash);
+  userNavAt = -1e9;
+  navigate(() => { muteLive(); routeNow(r, nav); updateBack(r, nav); watchTitle(); focusPage(nav, back, user); }, { nav, back });
+}
+
+// Le regioni live (#hero, #detail) annunciano gli aggiornamenti del meteo dentro la pagina. Cambiando pagina il
+// contenuto nuovo lo legge il titolo che riceve il focus: niente secondo annuncio dell'intera pagina.
+let liveT = null;
+function muteLive() {
+  const live = document.querySelectorAll('#hero, #detail');
+  live.forEach((el) => el.setAttribute('aria-live', 'off'));
+  clearTimeout(liveT);
+  liveT = setTimeout(() => live.forEach((el) => el.setAttribute('aria-live', 'polite')), 800);
+}
+// Focus dopo un cambio di pagina: al titolo della pagina nuova; tornando indietro, alla card da cui eri partito;
+// tra sezioni resta sul comando toccato. Solo per le navigazioni fatte nell'app (o se il focus è rimasto nella pagina nascosta).
+function focusPage(nav, back, user) {
+  const view = document.querySelector('.view:not([hidden])'), active = document.activeElement;
+  if (!view) return;
+  const stranded = !!active?.closest?.('.view[hidden]');
+  if (!user && !stranded) return;
+  if ((nav === 'left' || nav === 'right') && !stranded) return;
+  if (nav === 'pop' && back) {
+    const link = view.querySelector(`a[href="${CSS.escape(back)}"]`);
+    if (link?.getClientRects().length) { link.focus({ preventScroll: true }); return; }
+  }
+  const h = view.querySelector('.cmp-title') || view.querySelector('.phero-title') || view.querySelector('h1, .view-title');
+  if (!h) return;
+  if (!h.hasAttribute('tabindex')) { h.setAttribute('tabindex', '-1'); h.dataset.navFocus = ''; }
+  h.focus({ preventScroll: true });
 }
 
 function routeNow(r, nav) {
@@ -507,9 +555,29 @@ function routeNow(r, nav) {
     });
   }
   renderAll();
-  // indietro: torni dove eri nella lista; avanti: dall'inizio
-  if (r.view !== 'mappa') scrollTo(0, nav === 'pop' ? (scrollMem.get(r.hash) || 0) : 0);
+  // indietro e tra sezioni: torni dove eri; avanti: dall'inizio (o alla voce del glossario richiesta).
+  // Avviene dentro l'aggiornamento della transizione: la pagina nuova entra già nella posizione giusta.
+  if (r.view !== 'mappa') {
+    const keep = nav === 'pop' || nav === 'left' || nav === 'right';
+    scrollTo({ top: keep ? (scrollMem.get(r.hash) || 0) : 0, behavior: 'instant' });
+    if (r.view === 'glossario' && r.termId && nav !== 'pop') document.getElementById(`glossary-term-${r.termId}`)?.scrollIntoView({ block: 'center', behavior: 'instant' });
+  }
 }
+
+// copertina della pagina di destinazione, per prepararla al tocco (motion.js): la stessa scelta dei renderer
+setCoverResolver((hash) => {
+  const r = parseRoute(hash);
+  if (r.view === 'zona') {
+    const z = results && (weatherZones || zones).find((x) => x.id === r.zoneId), d = z && dayEntry(z.id, r.offset);
+    return d?.best ? coverOf(z, d.best.species.id, d)?.hd || '' : '';
+  }
+  if (r.view === 'specie-dettaglio') return speciesHeroSrc(r.speciesId);
+  if (r.view === 'fungo') return taxonHeroSrc(r.taxonId);
+  if (r.view === 'commestibile') return taxonHeroSrc(r.speciesId, fungusPhotos(r.speciesId));
+  if (r.view === 'pianta') return plantHeroSrc(r.plantId);
+  if (r.view === 'albero') return treeHeroSrc(r.treeId);
+  return '';
+});
 
 const go = (hash) => { location.hash = hash; };
 
@@ -2081,18 +2149,24 @@ const section = (id, title, body, open = false) => body ? `
   </details>` : '';
 const openSecs = new Set();
 
+// Idempotente: la scheda della zona si aggiorna sul posto e le sezioni restano gli stessi nodi, quindi ogni sezione
+// riceve i suoi gestori una volta sola; l'azione all'apertura (es. i grafici del giorno scelto) è sempre l'ultima.
+const boundSecs = new WeakSet();
 function bindDetailSections(box, onOpen = () => {}) {
+  box._onSecOpen = onOpen;
   const sections = [...box.querySelectorAll('details.sec[data-sec]')];
   const sync = (el) => {
     if(!el.isConnected||!box.contains(el))return;
     if (el.open) {
       // Also enforce exclusivity in browsers without native details[name] support.
-      sections.forEach(other => { if (other !== el) other.open = false; });
+      box.querySelectorAll('details.sec[data-sec]').forEach(other => { if (other !== el) other.open = false; });
       openSecs.clear(); openSecs.add(el.dataset.sec);
-      onOpen(el.dataset.sec);
+      box._onSecOpen(el.dataset.sec);
     } else openSecs.delete(el.dataset.sec);
   };
   sections.forEach(el => {
+    if (boundSecs.has(el)) return;
+    boundSecs.add(el);
     el.addEventListener('toggle', () => sync(el));
     const summary=el.querySelector(':scope > summary');
     summary.addEventListener('click',e=>{
@@ -2106,7 +2180,88 @@ function bindDetailSections(box, onOpen = () => {}) {
   if (current) sync(current); else openSecs.clear();
 }
 
-let lastDetailHtml = '', lastDetailNode = null;
+let lastDetailHtml = '';
+// ---- scheda della zona: aggiornamento sul posto e azioni delegate
+const reduceMotion = () => matchMedia('(prefers-reduced-motion: reduce)').matches;
+let detailCtx = null, detailAnimate = false;
+// azioni della scheda delegate su #detail: un solo gestore, qualunque cosa venga aggiornata (niente azioni doppie)
+$('#detail')?.addEventListener('click', (e) => {
+  const day = e.target.closest('#zone-days [data-day-offset]');
+  if (day) {
+    const o = +day.dataset.dayOffset, c = detailCtx;
+    if (!c || o === state.dayOffset) return;
+    history.replaceState(null, '', walkHref(c.z, o, state.trailId ? c.walk?.t : null));
+    state.dayOffset = o; detailAnimate = true;
+    try { renderDetail(); } finally { detailAnimate = false; }
+    return;
+  }
+  if (e.target.closest('[data-zone-weather-retry]')) { refreshWeather(true); return; }
+  const c = detailCtx;
+  if (!c) return;
+  if (e.target.closest('[data-cover]') && c.cov) { openLightbox([{ src: c.cov.hd, alt: c.cov.alt, caption: captionHtml({ title: esc(c.z.name), credit: creditLine(c.cov.credit) }) }]); return; }
+  const save = e.target.closest('[data-save-plan]');
+  if (save && !save.disabled) {
+    const status = e.currentTarget.querySelector('[data-plan-status]');
+    save.disabled = true;
+    journal.savePlan(c.z.id, c.d.date, c.best.band)
+      .then(() => { if (status) status.textContent = 'Previsione e dati salvati nel taccuino. Dopo l’uscita registra specie cercate, orario e ritrovamenti.'; })
+      .catch((err) => { if (status) status.textContent = err.message; })
+      .finally(() => { save.disabled = false; });
+  }
+});
+function updateDetailInPlace(box, html, cov) {
+  const ring = box.querySelector(':scope > .phero > .ring'), before = ring?.querySelector('b')?.textContent;
+  // copertina diversa (stagione, meteo): la vecchia resta finché la nuova, già decodificata, non le sfuma sopra
+  const img = box.querySelector(':scope > .phero .phero-img img'), oldSrc = img && (img.getAttribute('data-src') || img.getAttribute('src'));
+  const tpl = document.createElement('template');
+  tpl.innerHTML = html;
+  const nextImg = tpl.content.querySelector('.phero-img img'), newSrc = nextImg?.getAttribute('data-src');
+  const swap = img && newSrc && oldSrc && newSrc !== oldSrc;
+  if (swap) nextImg.setAttribute('data-src', oldSrc);
+  const changed = updateHTMLTracked(box, tpl.innerHTML);
+  if (swap) crossfadeCover(img, newSrc);
+  if (!detailAnimate || reduceMotion()) return;
+  if (ring && before) countRing(ring, before);
+  // il resto: breve dissolvenza dove il testo è cambiato (il numero dell'anello conta, non sfuma)
+  for (const el of changed) {
+    if (el.closest('.ring b') || el.closest('#zone-days') || !el.getClientRects().length) continue;
+    el.animate([{ opacity: .2 }, { opacity: 1 }], { duration: 240, easing: 'ease-out' });
+  }
+}
+// il numero dell'anello conta dal valore di prima al nuovo (~400 ms), con la virgola e cifre a larghezza fissa
+function countRing(ring, fromText) {
+  const b = ring.querySelector('b'), final = b.textContent;
+  const from = Number(String(fromText).replace(',', '.')), to = Number(final.replace(',', '.'));
+  if (!Number.isFinite(from) || !Number.isFinite(to) || from === to) return;
+  const token = ring._count = {}, t0 = performance.now(), dur = 400;
+  const fmt = (v) => v.toLocaleString('it-IT', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+  const step = (t) => {
+    if (ring._count !== token || !b.isConnected) return;
+    const k = Math.min(1, (t - t0) / dur), e = 1 - (1 - k) ** 3;
+    b.textContent = k === 1 ? final : fmt(from + (to - from) * e);
+    if (k < 1) requestAnimationFrame(step);
+  };
+  b.textContent = fmt(from);
+  requestAnimationFrame(step);
+}
+function crossfadeCover(img, src) {
+  const token = img._swap = {};
+  const next = new Image();
+  next.decoding = 'async';
+  next.alt = ''; next.setAttribute('aria-hidden', 'true'); next.className = 'phero-xfade';
+  next.src = src;
+  const done = () => { if (img._swap !== token) return; img.dataset.imageFast = '1'; img.src = src; img.decode?.().catch(() => {}).finally(() => next.remove()); };
+  next.decode().then(() => {
+    if (img._swap !== token || !img.isConnected) return;
+    // la foto nuova entra già pronta: il MutationObserver delle immagini la trova caricata, niente scheletro
+    next.dataset.imageState = 'ready'; next.dataset.imageFast = '1';
+    applyCrop(next);
+    img.after(next);
+    if (reduceMotion()) { done(); return; }
+    next.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 420, easing: 'ease-out' }).finished.then(done, done);
+  }, () => { if (img._swap === token) img.src = src; });
+}
+
 function renderDetail() {
   $('#detail').dataset.glossaryContext=state.target==='piante'?'Piante':'Funghi';
   const z = (weatherZones||zones).find((x) => x.id === state.zoneId) || zones[0];
@@ -2119,8 +2274,8 @@ function renderDetail() {
   }
   if (!d?.best) {
     const missing = [...new Set((d?.perSpecies || []).flatMap((p) => p.quality?.missing || []))];
-    box.innerHTML = `<h1>${esc(z.title || z.name)}</h1>${!series[z.id]?'<p class="notice">Meteo non disponibile per questa zona. <button type="button" class="link-btn" data-zone-weather-retry>Riprova</button></p>':''}<p class="notice">${selectedSpecies().length?'Indice non calcolabile':'Indice non ancora disponibile per le specie selezionate'}${missing.length ? ': mancano ' + esc(missing.join(', ')) : ' per questo giorno'}. Un dato mancante non indica assenza di ${state.target==='piante'?'piante':'funghi'}.</p><p><a href="#/mappa/${z.id}">Apri la mappa</a> · <a href="#/metodo">Metodo e limiti</a></p>${renderWalkFocus(z, d, walk)}${discoverySection(z,d,walk)}${z.protection ? `<p class="notice">${esc(z.protection)}</p>` : ''}<p data-glossary="Bosco">${linkTrees(z.description)}</p>${section('accesso','Accessi e soste',renderAccess(z,{access:null}))}${section('sentieri','Sentieri della zona',renderTrails(z,null),true)}`;
-    box.querySelector('[data-zone-weather-retry]')?.addEventListener('click',()=>refreshWeather(true));
+    delete box.dataset.zone;detailCtx=null;lastDetailHtml='';
+    box.innerHTML = `<h1>${esc(z.title || z.name)}</h1>${!series[z.id]?'<p class="notice">Meteo non disponibile per questa zona. <button type="button" class="link-btn" data-zone-weather-retry>Riprova</button></p>':''}<p class="notice">${selectedSpecies().length?'Indice non calcolabile':'Indice non ancora disponibile per le specie selezionate'}${missing.length ? ': mancano ' + esc(missing.join(', ')) : ' per questo giorno'}. Un dato mancante non indica assenza di ${state.target==='piante'?'piante':'funghi'}.</p><p><a href="#/mappa/${z.id}">Apri la mappa</a> · <a href="#/metodo">Metodo e limiti</a></p>${renderWalkFocus(z, d, walk)}${discoverySection(z,d,walk)}${z.protection ? `<p class="notice">${esc(z.protection)}</p>` : ''}<p>${linkTrees(z.description)}</p>${section('accesso','Accessi e soste',renderAccess(z,{access:null}))}${section('sentieri','Sentieri della zona',renderTrails(z,null),true)}`;
     bindDetailSections(box); return;
   }
   const best = d.best;
@@ -2139,10 +2294,19 @@ function renderDetail() {
   const sb = series[z.id][bandIndex(z, best.band)];
   const from = Math.max(0, r.todayIndex - HISTORY_DAYS);
   const days = r.days.filter((x) => x.i >= from);
+  // stesso asse dei giorni per tutti i grafici della sezione: ultimi HISTORY_DAYS e i giorni previsti
+  const whyDays = days.map((x) => ({ date: x.date, i: x.i, score: adjusted(z, x.score, x) }));
 
   const [title, sub] = splitName(z);
   const cov = coverOf(z, best.species.id, d);
-  const detailHtml = `
+  // giorni della zona: cambiano il giorno senza aggiungere voci di cronologia (clic delegato su #detail)
+  const zoneDays = Array.from({ length: AHEAD_DAYS + 1 }, (_, o) => {
+    const x = dayEntry(z.id, o);
+    if (!x?.best) return '';
+    const sc = adjusted(z, x.score, x);
+    return `<button type="button" class="day" role="tab" data-day-offset="${o}" aria-selected="${o === state.dayOffset}"><span class="d1">${o === 0 ? 'Oggi' : o === 1 ? 'Dom' : fmtDate(x.date, { weekday: 'short' }).replace('.', '')}</span><span class="d2">${fmtDate(x.date, { day: 'numeric' })}</span><span class="d3"><span class="dot" style="--dc:var(${scoreVar(sc)});--dcs:var(${scoreVar(sc).replace('--s', '--ps')})"></span><b class="pc">${formatIndex(sc)}</b></span></button>`;
+  }).join('');
+  const html = `
     <header class="phero">
       ${cov ? `<button type="button" class="phero-img" data-cover aria-label="Ingrandisci la foto"><img data-src="${cov.hd}" alt="${esc(cov.alt)}"></button>` : ''}
       <span class="shade"></span>
@@ -2151,7 +2315,7 @@ function renderDetail() {
       ${ring(s)}
     </header>
     <div class="pbody">
-    <div id="zone-days" class="days compact" role="tablist" aria-label="Giorno"></div>
+    <div id="zone-days" class="days compact" role="tablist" aria-label="Giorno">${zoneDays}</div>
     ${renderWalkFocus(z, d, walk)}
     ${essentialSections(z, d, walk)}
     ${discoverySection(z,d,walk)}
@@ -2164,9 +2328,9 @@ function renderDetail() {
     ${best.kind==='plant'?'<p class="small muted">Confronta la pianta e verifica regole, tutela e permessi prima della raccolta.</p>':'<p class="small muted" data-plan-status></p>'}
     ${z.protection ? `<div class="notice">${esc(z.protection)}</div>` : ''}
     ${best.kind==='plant'?'':section('regole', 'Regole di raccolta', zoneLegal(z,d))}
-    ${section('meteo', 'Perché questo indice', `${renderWhy({ r: best, s: sb, i: d.i, sp: best.species, band: best.band, dateStr: d.date, shown: s, agg: d.score, parts: d.perSpecies.map((p) => ({ name: p.species.name.split(' / ')[0], score: p.score })), prefs: adjParts(z, d), outing: wxRank(z, d) < 1 ? wxRank(z, d) : 0 })}
+    ${section('meteo', 'Perché questo indice', `${renderWhy({ r: best, s: sb, i: d.i, sp: best.species, band: best.band, dateStr: d.date, shown: s, agg: d.score, parts: d.perSpecies.map((p) => ({ name: p.species.name.split(' / ')[0], score: p.score })), prefs: adjParts(z, d), outing: wxRank(z, d) < 1 ? wxRank(z, d) : 0, days: whyDays, todayIndex: r.todayIndex })}
       <p class="small muted">${esc(best.kind==='plant'?'Indice sperimentale del contesto e della fase: non è una probabilità di raccolta.':contentCopy.indexExplanation || 'Condizioni di crescita: indice sperimentale 0–10.')}</p>
-      <p class="sci-h">L'indice nei giorni</p><div id="charts"></div>${legal?.forecast_note ? `<p class="small muted">${esc(legal.forecast_note)}</p>` : ''}`)}
+      ${legal?.forecast_note ? `<p class="small muted">${esc(legal.forecast_note)}</p>` : ''}`)}
     ${section('sentieri', 'Sentieri della zona', renderTrails(z, d))}
     ${section('bosco', `Bosco a ${best.band} m (Carta Forestale)`, forestBar(hab.frac) + `<p class="small muted">${hab.n} punti nella fascia ±150 m. Campioni spazialmente correlati; composizione indicativa.</p>`)}
     ${section('zona', 'La zona', `<p class="small" data-glossary="Bosco">${esc(z.description)}</p>${treeChips(z.description)}
@@ -2176,40 +2340,19 @@ function renderDetail() {
         <dt>Quote</dt><dd>${habitat[z.id].elevation.min}–${habitat[z.id].elevation.max} m (mediana ${habitat[z.id].elevation.median})</dd>
       </dl>${zoneMedia[z.id] ? `<p class="small muted">${creditLine(cov?.credit && zoneMedia[z.id] && cov.credit.page === zoneMedia[z.id].page ? cov.credit : zoneMedia[z.id])}</p>` : ''}`)}
     </div>`;
-  // dati che non cambiano ciò che si vede (comunità, taccuino) non devono sostituire la scheda già a schermo:
-  // stesso disegno, stessi nodi, sezioni aperte e lettura intatte
-  if (lastDetailNode && box.firstElementChild === lastDetailNode && detailHtml === lastDetailHtml) return;
-  box.innerHTML = detailHtml;
-  lastDetailHtml = detailHtml; lastDetailNode = box.firstElementChild;
-  box.querySelector('[data-cover]')?.addEventListener('click', () => openLightbox([{ src: cov.hd, alt: cov.alt, caption: captionHtml({ title: esc(z.name), credit: creditLine(cov.credit) }) }]));
-  box.querySelector('[data-save-plan]')?.addEventListener('click', async (e) => {
-    const btn = e.currentTarget, status = box.querySelector('[data-plan-status]');
-    btn.disabled = true;
-    try { await journal.savePlan(z.id, d.date, best.band); status.textContent = 'Previsione e dati salvati nel taccuino. Dopo l’uscita registra specie cercate, orario e ritrovamenti.'; }
-    catch (err) { status.textContent = err.message; }
-    finally { btn.disabled = false; }
-  });
-  // giorni della zona: cambiano il giorno senza aggiungere voci di cronologia
-  const zd = $('#zone-days');
-  zd.innerHTML = '';
-  for (let o = 0; o <= AHEAD_DAYS; o++) {
-    const x = dayEntry(z.id, o);
-    if (!x?.best) continue;
-    const sc = adjusted(z, x.score, x);
-    const b = document.createElement('button');
-    b.type = 'button'; b.className = 'day'; b.setAttribute('role', 'tab'); b.setAttribute('aria-selected', String(o === state.dayOffset));
-    b.innerHTML = `<span class="d1">${o === 0 ? 'Oggi' : o === 1 ? 'Dom' : fmtDate(x.date, { weekday: 'short' }).replace('.', '')}</span><span class="d2">${fmtDate(x.date, { day: 'numeric' })}</span><span class="d3"><span class="dot" style="--dc:var(${scoreVar(sc)});--dcs:var(${scoreVar(sc).replace('--s', '--ps')})"></span><b class="pc">${formatIndex(sc)}</b></span>`;
-    b.addEventListener('click', () => soft(() => { history.replaceState(null, '', walkHref(z, o, state.trailId ? walk?.t : null)); state.dayOffset = o; renderDetail(); }));
-    zd.appendChild(b);
-  }
-  zd.querySelector('[aria-selected="true"]')?.scrollIntoView({ block: 'nearest', inline: 'center' });
-  const drawCharts = () => $('#charts') && renderCharts($('#charts'), {
-    dates: days.map((x) => x.date),
-    rain: days.map((x) => sb.p[x.i]),
-    score: days.map((x) => adjusted(z, x.score, x)),
-    todayIndex: r.todayIndex - from,
-    selectedIndex: r.todayIndex + state.dayOffset - from,
-  });
+  // Stessa zona già sulla pagina (cambio di giorno, meteo nuovo): si aggiornano solo le parti cambiate. Copertina,
+  // anello, titoli, giorni e sezioni aperte restano gli stessi nodi; niente ridisegno completo né scatti.
+  detailCtx = { z, d, best, cov, walk };
+  const inPlace = box.dataset.zone === z.id && !!box.querySelector(':scope > .phero');
+  // dati che non cambiano ciò che si vede (comunità, taccuino): nessun aggiornamento
+  if (inPlace && html === lastDetailHtml) return;
+  lastDetailHtml = html;
+  if (inPlace) updateDetailInPlace(box, html, cov);
+  else { box.innerHTML = html; box.dataset.zone = z.id; }
+  const zd = $('#zone-days'), sel = zd.querySelector('[aria-selected="true"]');
+  // solo in orizzontale, dentro la barra dei giorni: la pagina non si muove
+  if (sel) { const zr = zd.getBoundingClientRect(), br = sel.getBoundingClientRect(); zd.scrollTo({ left: zd.scrollLeft + br.left - zr.left - (zr.width - br.width) / 2, behavior: inPlace && !reduceMotion() ? 'smooth' : 'instant' }); }
+  const drawCharts = () => drawWhyCharts(box.querySelector('[data-sec="meteo"]'), { s: sb, sp: best.species, days: whyDays, todayIndex: r.todayIndex, i: d.i });
   bindDetailSections(box, id => { if (id === 'meteo') drawCharts(); });
 }
 

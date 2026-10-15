@@ -15,8 +15,14 @@ export function applyCrop(img){
   for(const [k,v] of Object.entries(OP)){if(c?.[k])img.style.setProperty(v,`${Math.round(c[k][0]*1000)/10}% ${Math.round(c[k][1]*1000)/10}%`);else img.style.removeProperty(v);}
 }
 fetch('data/crop-points.json').then(r=>(r.ok?r.json():null)).then(d=>{CROPS=d?.files||{};document.querySelectorAll('img').forEach(applyCrop);}).catch(()=>{CROPS={};});
+// Foto già scaricate e decodificate in questa sessione (o preparate al tocco da motion.js): quando ricompaiono
+// in una pagina ridisegnata non aspettano il viewport e non ripassano dallo scheletro, si mostrano subito.
+const known=new Set();
+const abs=src=>{try{return new URL(src,document.baseURI).href;}catch{return '';}};
+export const markKnown=src=>{const u=abs(src);if(u){known.add(u);if(known.size>400)known.delete(known.values().next().value);}};
 function finish(img,state) {
   if(!img.isConnected)return;
+  if(state==='ready')known.add(img.currentSrc||img.src);
   img.dataset.imageState=state;
   img.dispatchEvent(new CustomEvent('fungaroli:image-state',{bubbles:true,detail:{state}}));
 }
@@ -59,6 +65,13 @@ function start(img) {
   // già in cache: nessuna dissolvenza, la foto c'è e basta
   if(img.complete&&img.naturalWidth){img.dataset.imageFast='1';finish(img,'ready');}
 }
+// Carica subito una foto (copertina della pagina che sta entrando) e risolve quando è pronta, in errore o senza foto.
+export function loadNow(img) {
+  if(!img)return Promise.resolve();
+  if(img.dataset.src){observer?.unobserve(img);start(img);}
+  if(img.dataset.imageState==='ready'||img.dataset.imageState==='error'||!img.getAttribute('src'))return Promise.resolve();
+  return new Promise(resolve=>img.addEventListener('fungaroli:image-state',()=>resolve(),{once:true}));
+}
 export function setImageSource(img,source) {
   observer?.unobserve(img);watch(img);
   img.dataset.imageState='loading';
@@ -73,7 +86,7 @@ function prepare(img) {
     // una foto già mostrata che cambia sorgente si sostituisce senza tornare vuota
     if(img.dataset.imageState==='ready'&&img.getAttribute('src')){start(img);return;}
     img.dataset.imageState='waiting';
-    if(img.fetchPriority==='high'||!observer)start(img);else observer.observe(img);
+    if(img.fetchPriority==='high'||!observer||known.has(abs(img.dataset.src)))start(img);else observer.observe(img);
   }else if(img.getAttribute('src')){
     if(img.complete&&img.naturalWidth)finish(img,'ready');
     else img.dataset.imageState='loading';

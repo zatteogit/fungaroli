@@ -22,6 +22,8 @@ CHROMIUM_PATH=/percorso/chromium npx playwright test   # suite browser, Wrangler
 git diff --check
 ```
 
+Leggibilità: `node tools/visual-audit.mjs --base http://127.0.0.1:<porta> --out <cartella> --label <nome>` misura il contrasto di tutti i testi visibili (viste principali, 320/390/768/1280, chiaro e scuro; copertine provate con tutte le foto del catalogo) su un server già avviato. Dura circa 45 minuti; `--views`, `--widths`, `--themes`, `--sweep none` lo restringono. `tests/browser/legibility.spec.mjs` ne controlla le copertine con la foto più chiara.
+
 La suite browser avvia un solo Wrangler sulla porta 8788: non lanciarne due insieme. La CI (`.github/workflows/ci.yml`) esegue test unitari e dry-run su ogni PR.
 
 **Quando lanciare la suite browser** (dura circa 8–10 minuti):
