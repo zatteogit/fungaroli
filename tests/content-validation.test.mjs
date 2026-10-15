@@ -80,12 +80,13 @@ test('glossary homonyms require disjoint explicit contexts, including normalized
 test('flowers are a plant category: toxic or to observe, never edible parts, with sourced protection',()=>{
   const data=read('plants');
   const flowers=Object.values(data.plants).filter(p=>p.category==='Fiori');
-  assert.equal(flowers.length,12);
+  assert.equal(flowers.length,14);
   for(const p of flowers){
     assert.ok(['da osservare','tossico','mortale'].includes(p.foodUse.status));
     assert.equal(p.foodUse.parts,'');
     assert.match(p.protection.url,/^https:\/\//);
-    assert.ok(p.photos.every(m=>/CC BY-SA/.test(m.license)&&m.page&&m.licenseUrl));
+    // licenze aperte e commerciali: CC0, CC BY, CC BY-SA (niente NC/ND sulle foto nuove)
+    assert.ok(p.photos.every(m=>/^(CC0|CC BY(-SA)?) \d/.test(m.license)&&m.page&&m.licenseUrl),p.name);
   }
   assert.ok(validateContent('plants',data,read('plants')));
   const edible=structuredClone(data);edible.plants.bucaneve.foodUse={status:'solo parti e preparazioni indicate',parts:'Fiori',caution:'x'};
