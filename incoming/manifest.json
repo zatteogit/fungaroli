@@ -15719,5 +15719,31 @@
     ],
     "bytes": 152824,
     "sha256": "74a7320c723d5b9794d094cb1c371b929e9ba2389fa32fa52aceadaca22d8388"
+  },
+  {
+    "file": "incoming/infografiche/suillus.webp",
+    "tipo": "infografica",
+    "soggetto": "suillus",
+    "modello": "image_gen (identificatore tecnico non esposto)",
+    "prompt": "NEW scientific illustrated mushroom educational plate for Suillus group, vertical4:5 target1600x2000. Image1 STYLE ONLY brown clean contours, few flat colors on warm ivory; Image2 real Suillus luteus morphology; Image3 Chalciporus morphology. Do not edit/copy photos. Draw all elements as ONE composition in CENTRAL75% of canvas, surrounded by large completely blank border12% on every side. Lower-right38%x24% entirely blank ivory. NO text, letters, numbers, arrows, symbols, frame, watermark. Top35%: two whole Suillus luteus, glossy slimy convex chocolate-purple-brown caps, on PINE NEEDLES with a tiny pine cone, NO deciduous leaves. One cap has a small portion of cap skin peeled back at the edge, attached loose flap, NOT white spots. Yellowish stems with broad membranous white-to-violet-brown rings and tiny brown granules ABOVE ring, no volva. Middle-left cut cap+stem, WHITE to PALE LEMON flesh NONSTAINING and YELLOW tube layer, no blue. Middle-right underside of Suillus GRANULATUS: dense SMALL ROUND YELLOW PORES with tiny MILKY WHITE DROPLETS emerging from pores, short upper stem with small granules and NO RING. Small central bottom detail of Suillus COLLINITUS stem BASE with PINK MYCELIAL FELT (not a volva); beside it a SHORT isolated GRANULATUS upper-stem detail with granules and NO ring, keep these visually separate. BottomLEFT: small Chalciporus piperatus at about half main cap size, cinnamon-brown cap, COPPER/RUST-BROWN pores (not yellow), slender stem and bright YELLOW mycelium at base, no ring. All pores are sponge holes, never gills; none blue. No extra stems, cap fusions, hands or tools.",
+    "edits": [
+      "Edit ONLY the positioning and size of the TWO SMALL STEM DETAILS in lower-middle of this Suillus plate: pink-felt collinitus base and separate ringless granulatus upper-stem segment. Reduce both to80% current size and shift slightly left so their rightmost point lies strictly LEFT of60% canvas width; keep them separate and not touching Chalciporus below-left. This leaves the bottom-right40%width x24%height entirely EMPTY paper for labels. Preserve all anatomy, colors, all other vignettes and outer margins: rings on luteus only, no ring on granulatus/collinitus, pink mycelium on collinitus, yellow-pore white droplets on granulatus only, copper pores and yellow mycelium on Chalciporus, no blue, no text."
+    ],
+    "tentativi": 2,
+    "stato": "verifica illustrativa superata",
+    "checklist_superata": true,
+    "verifica": "Pineta con aghi/pigna, cappelli lucidi e cuticola sollevata. Luteus con anello membranoso bianco-violaceo; sezione bianca/giallina immutabile. Granulatus senza anello, pori gialli con goccioline lattiginose. Base collinitus con feltro rosa senza volva. Pepato piccolo con pori ramati e micelio giallo vivo. Nessun blu; dettagli spostati per liberare la riserva di testo, nessun testo generato.",
+    "riferimenti": [
+      "assets/species/suillus-ref.webp (autore/licenza in data/media.json)",
+      "assets/species/chalciporus-piperatus-inat1.webp (autore/licenza in data/species-traits.json)",
+      "docs/infografiche/suillus.md (distinzioni granulatus/collinitus)",
+      "incoming/infografiche/caesarea-revisione.webp (solo stile)"
+    ],
+    "dimensioni": [
+      1600,
+      2000
+    ],
+    "bytes": 320838,
+    "sha256": "66562e60f03c166754870f52f9ddbb8749f76aab3f67c833135ccab5de126f04"
   }
 ]
