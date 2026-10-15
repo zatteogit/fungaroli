@@ -8676,5 +8676,125 @@
       "forma": "convesso"
     },
     "qa": "Controllo visivo dei caratteri invarianti. PNG RGBA 1254×1254, griglia 3×3, colonna 3 vuota; controllo del canale alfa: tutte le fasce di bordo di 42 px (almeno 10%) trasparenti su ogni cella."
+  },
+  {
+    "file": "incoming/icone/varianti-06.png",
+    "tipo": "illustrazione",
+    "soggetto": "chlorophyllum-rhacodes",
+    "tessera": "cappello",
+    "stagione": null,
+    "foto_di_partenza": null,
+    "autore_foto": null,
+    "licenza_foto": null,
+    "pagina_foto": null,
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case scientific-educational. Make a 1254x1254 PNG sprite sheet, true transparent alpha. Invisible3x3 equal grid: each row col1 cap-only SIDE VIEW; col2 WHOLE mushroom; col3 completely empty transparent. Exactly6icons, no text/grid/shadows. Match approved reference flat icon style, thin warm dark brown outline, simple broad flat fills, tiny restrained highlight. COLOR VARIANTS ONLY. Preserve each source cap shape, age, proportions, scale, gills, warts/scales, ring, volva and stem markings. No new growth phases. Same relative cell center and scale as source cap and whole icons. Clean alpha no stray pixels. Image1 baseROW3 Chlorophyllum rhacodes: CREAM umbrella-shaped cap with large BROWN scales and brown central disc; pale white gills/stem with pendant ring, smooth stem, bulbous base, NO volva. OUTPUTROW1 rhacodes BROWN cap-ground #8e5f36; preserve darker brown scales centraldisc and pale stem ring gills. Image2 baseROW1 Macrolepiota procera: CREAM umbrella cap with BROWN scales/disc, white gills, DOUBLE ring, stem BROWN snakeskin zigzag markings and bulb, NO volva. OUTPUTROW2 procera BROWN cap-ground #8e5f36, darker scales/disc; KEEP double ring and snakeskin stem. Image2 baseROW2 Lepiota brunneoincarnata: ROSA convex cap with reddish-brown scales/disc, short stem with pink/brown bands, NO clearly drawn ring or volva. OUTPUTROW3 brunneoincarnata BROWN cap-ground #8e5f36, retain darker scales and short pink banded stem. No ring added to Lepiota. Keep silhouettes identical to corresponding base, don't alter age. Correzione finale: anello rhacodes semplice e liscio; rimosse striature estranee. Tutte le icone entro i margini 10%.",
+    "cella": 0,
+    "variante": "colore:bruno",
+    "base": {
+      "colore": "crema",
+      "forma": "ombrellato"
+    },
+    "qa": "Controllo visivo dei caratteri invarianti. PNG RGBA 1254×1254, griglia 3×3, colonna 3 vuota; controllo del canale alfa: tutte le fasce di bordo di 42 px (almeno 10%) trasparenti su ogni cella."
+  },
+  {
+    "file": "incoming/icone/varianti-06.png",
+    "tipo": "illustrazione",
+    "soggetto": "chlorophyllum-rhacodes",
+    "tessera": "gambo",
+    "stagione": null,
+    "foto_di_partenza": null,
+    "autore_foto": null,
+    "licenza_foto": null,
+    "pagina_foto": null,
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case scientific-educational. Make a 1254x1254 PNG sprite sheet, true transparent alpha. Invisible3x3 equal grid: each row col1 cap-only SIDE VIEW; col2 WHOLE mushroom; col3 completely empty transparent. Exactly6icons, no text/grid/shadows. Match approved reference flat icon style, thin warm dark brown outline, simple broad flat fills, tiny restrained highlight. COLOR VARIANTS ONLY. Preserve each source cap shape, age, proportions, scale, gills, warts/scales, ring, volva and stem markings. No new growth phases. Same relative cell center and scale as source cap and whole icons. Clean alpha no stray pixels. Image1 baseROW3 Chlorophyllum rhacodes: CREAM umbrella-shaped cap with large BROWN scales and brown central disc; pale white gills/stem with pendant ring, smooth stem, bulbous base, NO volva. OUTPUTROW1 rhacodes BROWN cap-ground #8e5f36; preserve darker brown scales centraldisc and pale stem ring gills. Image2 baseROW1 Macrolepiota procera: CREAM umbrella cap with BROWN scales/disc, white gills, DOUBLE ring, stem BROWN snakeskin zigzag markings and bulb, NO volva. OUTPUTROW2 procera BROWN cap-ground #8e5f36, darker scales/disc; KEEP double ring and snakeskin stem. Image2 baseROW2 Lepiota brunneoincarnata: ROSA convex cap with reddish-brown scales/disc, short stem with pink/brown bands, NO clearly drawn ring or volva. OUTPUTROW3 brunneoincarnata BROWN cap-ground #8e5f36, retain darker scales and short pink banded stem. No ring added to Lepiota. Keep silhouettes identical to corresponding base, don't alter age. Correzione finale: anello rhacodes semplice e liscio; rimosse striature estranee. Tutte le icone entro i margini 10%.",
+    "cella": 1,
+    "variante": "colore:bruno",
+    "base": {
+      "colore": "crema",
+      "forma": "ombrellato"
+    },
+    "qa": "Controllo visivo dei caratteri invarianti. PNG RGBA 1254×1254, griglia 3×3, colonna 3 vuota; controllo del canale alfa: tutte le fasce di bordo di 42 px (almeno 10%) trasparenti su ogni cella."
+  },
+  {
+    "file": "incoming/icone/varianti-06.png",
+    "tipo": "illustrazione",
+    "soggetto": "procera",
+    "tessera": "cappello",
+    "stagione": null,
+    "foto_di_partenza": null,
+    "autore_foto": null,
+    "licenza_foto": null,
+    "pagina_foto": null,
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case scientific-educational. Make a 1254x1254 PNG sprite sheet, true transparent alpha. Invisible3x3 equal grid: each row col1 cap-only SIDE VIEW; col2 WHOLE mushroom; col3 completely empty transparent. Exactly6icons, no text/grid/shadows. Match approved reference flat icon style, thin warm dark brown outline, simple broad flat fills, tiny restrained highlight. COLOR VARIANTS ONLY. Preserve each source cap shape, age, proportions, scale, gills, warts/scales, ring, volva and stem markings. No new growth phases. Same relative cell center and scale as source cap and whole icons. Clean alpha no stray pixels. Image1 baseROW3 Chlorophyllum rhacodes: CREAM umbrella-shaped cap with large BROWN scales and brown central disc; pale white gills/stem with pendant ring, smooth stem, bulbous base, NO volva. OUTPUTROW1 rhacodes BROWN cap-ground #8e5f36; preserve darker brown scales centraldisc and pale stem ring gills. Image2 baseROW1 Macrolepiota procera: CREAM umbrella cap with BROWN scales/disc, white gills, DOUBLE ring, stem BROWN snakeskin zigzag markings and bulb, NO volva. OUTPUTROW2 procera BROWN cap-ground #8e5f36, darker scales/disc; KEEP double ring and snakeskin stem. Image2 baseROW2 Lepiota brunneoincarnata: ROSA convex cap with reddish-brown scales/disc, short stem with pink/brown bands, NO clearly drawn ring or volva. OUTPUTROW3 brunneoincarnata BROWN cap-ground #8e5f36, retain darker scales and short pink banded stem. No ring added to Lepiota. Keep silhouettes identical to corresponding base, don't alter age. Correzione finale: anello rhacodes semplice e liscio; rimosse striature estranee. Tutte le icone entro i margini 10%.",
+    "cella": 3,
+    "variante": "colore:bruno",
+    "base": {
+      "colore": "crema",
+      "forma": "ombrellato"
+    },
+    "qa": "Controllo visivo dei caratteri invarianti. PNG RGBA 1254×1254, griglia 3×3, colonna 3 vuota; controllo del canale alfa: tutte le fasce di bordo di 42 px (almeno 10%) trasparenti su ogni cella."
+  },
+  {
+    "file": "incoming/icone/varianti-06.png",
+    "tipo": "illustrazione",
+    "soggetto": "procera",
+    "tessera": "gambo",
+    "stagione": null,
+    "foto_di_partenza": null,
+    "autore_foto": null,
+    "licenza_foto": null,
+    "pagina_foto": null,
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case scientific-educational. Make a 1254x1254 PNG sprite sheet, true transparent alpha. Invisible3x3 equal grid: each row col1 cap-only SIDE VIEW; col2 WHOLE mushroom; col3 completely empty transparent. Exactly6icons, no text/grid/shadows. Match approved reference flat icon style, thin warm dark brown outline, simple broad flat fills, tiny restrained highlight. COLOR VARIANTS ONLY. Preserve each source cap shape, age, proportions, scale, gills, warts/scales, ring, volva and stem markings. No new growth phases. Same relative cell center and scale as source cap and whole icons. Clean alpha no stray pixels. Image1 baseROW3 Chlorophyllum rhacodes: CREAM umbrella-shaped cap with large BROWN scales and brown central disc; pale white gills/stem with pendant ring, smooth stem, bulbous base, NO volva. OUTPUTROW1 rhacodes BROWN cap-ground #8e5f36; preserve darker brown scales centraldisc and pale stem ring gills. Image2 baseROW1 Macrolepiota procera: CREAM umbrella cap with BROWN scales/disc, white gills, DOUBLE ring, stem BROWN snakeskin zigzag markings and bulb, NO volva. OUTPUTROW2 procera BROWN cap-ground #8e5f36, darker scales/disc; KEEP double ring and snakeskin stem. Image2 baseROW2 Lepiota brunneoincarnata: ROSA convex cap with reddish-brown scales/disc, short stem with pink/brown bands, NO clearly drawn ring or volva. OUTPUTROW3 brunneoincarnata BROWN cap-ground #8e5f36, retain darker scales and short pink banded stem. No ring added to Lepiota. Keep silhouettes identical to corresponding base, don't alter age. Correzione finale: anello rhacodes semplice e liscio; rimosse striature estranee. Tutte le icone entro i margini 10%.",
+    "cella": 4,
+    "variante": "colore:bruno",
+    "base": {
+      "colore": "crema",
+      "forma": "ombrellato"
+    },
+    "qa": "Controllo visivo dei caratteri invarianti. PNG RGBA 1254×1254, griglia 3×3, colonna 3 vuota; controllo del canale alfa: tutte le fasce di bordo di 42 px (almeno 10%) trasparenti su ogni cella."
+  },
+  {
+    "file": "incoming/icone/varianti-06.png",
+    "tipo": "illustrazione",
+    "soggetto": "lepiota-brunneoincarnata",
+    "tessera": "cappello",
+    "stagione": null,
+    "foto_di_partenza": null,
+    "autore_foto": null,
+    "licenza_foto": null,
+    "pagina_foto": null,
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case scientific-educational. Make a 1254x1254 PNG sprite sheet, true transparent alpha. Invisible3x3 equal grid: each row col1 cap-only SIDE VIEW; col2 WHOLE mushroom; col3 completely empty transparent. Exactly6icons, no text/grid/shadows. Match approved reference flat icon style, thin warm dark brown outline, simple broad flat fills, tiny restrained highlight. COLOR VARIANTS ONLY. Preserve each source cap shape, age, proportions, scale, gills, warts/scales, ring, volva and stem markings. No new growth phases. Same relative cell center and scale as source cap and whole icons. Clean alpha no stray pixels. Image1 baseROW3 Chlorophyllum rhacodes: CREAM umbrella-shaped cap with large BROWN scales and brown central disc; pale white gills/stem with pendant ring, smooth stem, bulbous base, NO volva. OUTPUTROW1 rhacodes BROWN cap-ground #8e5f36; preserve darker brown scales centraldisc and pale stem ring gills. Image2 baseROW1 Macrolepiota procera: CREAM umbrella cap with BROWN scales/disc, white gills, DOUBLE ring, stem BROWN snakeskin zigzag markings and bulb, NO volva. OUTPUTROW2 procera BROWN cap-ground #8e5f36, darker scales/disc; KEEP double ring and snakeskin stem. Image2 baseROW2 Lepiota brunneoincarnata: ROSA convex cap with reddish-brown scales/disc, short stem with pink/brown bands, NO clearly drawn ring or volva. OUTPUTROW3 brunneoincarnata BROWN cap-ground #8e5f36, retain darker scales and short pink banded stem. No ring added to Lepiota. Keep silhouettes identical to corresponding base, don't alter age. Correzione finale: anello rhacodes semplice e liscio; rimosse striature estranee. Tutte le icone entro i margini 10%.",
+    "cella": 6,
+    "variante": "colore:bruno",
+    "base": {
+      "colore": "rosa",
+      "forma": "convesso"
+    },
+    "qa": "Controllo visivo dei caratteri invarianti. PNG RGBA 1254×1254, griglia 3×3, colonna 3 vuota; controllo del canale alfa: tutte le fasce di bordo di 42 px (almeno 10%) trasparenti su ogni cella."
+  },
+  {
+    "file": "incoming/icone/varianti-06.png",
+    "tipo": "illustrazione",
+    "soggetto": "lepiota-brunneoincarnata",
+    "tessera": "gambo",
+    "stagione": null,
+    "foto_di_partenza": null,
+    "autore_foto": null,
+    "licenza_foto": null,
+    "pagina_foto": null,
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case scientific-educational. Make a 1254x1254 PNG sprite sheet, true transparent alpha. Invisible3x3 equal grid: each row col1 cap-only SIDE VIEW; col2 WHOLE mushroom; col3 completely empty transparent. Exactly6icons, no text/grid/shadows. Match approved reference flat icon style, thin warm dark brown outline, simple broad flat fills, tiny restrained highlight. COLOR VARIANTS ONLY. Preserve each source cap shape, age, proportions, scale, gills, warts/scales, ring, volva and stem markings. No new growth phases. Same relative cell center and scale as source cap and whole icons. Clean alpha no stray pixels. Image1 baseROW3 Chlorophyllum rhacodes: CREAM umbrella-shaped cap with large BROWN scales and brown central disc; pale white gills/stem with pendant ring, smooth stem, bulbous base, NO volva. OUTPUTROW1 rhacodes BROWN cap-ground #8e5f36; preserve darker brown scales centraldisc and pale stem ring gills. Image2 baseROW1 Macrolepiota procera: CREAM umbrella cap with BROWN scales/disc, white gills, DOUBLE ring, stem BROWN snakeskin zigzag markings and bulb, NO volva. OUTPUTROW2 procera BROWN cap-ground #8e5f36, darker scales/disc; KEEP double ring and snakeskin stem. Image2 baseROW2 Lepiota brunneoincarnata: ROSA convex cap with reddish-brown scales/disc, short stem with pink/brown bands, NO clearly drawn ring or volva. OUTPUTROW3 brunneoincarnata BROWN cap-ground #8e5f36, retain darker scales and short pink banded stem. No ring added to Lepiota. Keep silhouettes identical to corresponding base, don't alter age. Correzione finale: anello rhacodes semplice e liscio; rimosse striature estranee. Tutte le icone entro i margini 10%.",
+    "cella": 7,
+    "variante": "colore:bruno",
+    "base": {
+      "colore": "rosa",
+      "forma": "convesso"
+    },
+    "qa": "Controllo visivo dei caratteri invarianti. PNG RGBA 1254×1254, griglia 3×3, colonna 3 vuota; controllo del canale alfa: tutte le fasce di bordo di 42 px (almeno 10%) trasparenti su ogni cella."
   }
 ]
