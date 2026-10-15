@@ -12,12 +12,15 @@ const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<
 let T = {}, MEDIA = {}, ASSET = (f) => f, ZONES = [], HAB = {}, THUMB = () => '';
 let aliasRe = null, aliasMap = {};
 
+// nomi che sono anche parole comuni («tasso di umidità», il tasso animale): niente link automatico nei testi
+const NOT_IN_TEXT = new Set(['tasso']);
+
 export function initTrees({ trees, media, assetUrl, zones, habitat, thumb }) {
   T = trees?.trees || {}; MEDIA = media?.trees || {}; if (assetUrl) ASSET = assetUrl;
   ZONES = zones || []; HAB = habitat || {}; if (thumb) THUMB = thumb;
   aliasMap = {};
   for (const [id, t] of Object.entries(T)) {
-    for (const a of [id, t.name, ...(t.aliases || [])]) if (a) aliasMap[a.toLowerCase()] = id;
+    for (const a of [id, t.name, ...(t.aliases || [])]) if (a && !NOT_IN_TEXT.has(a.toLowerCase())) aliasMap[a.toLowerCase()] = id;
   }
   const words = Object.keys(aliasMap).sort((a, b) => b.length - a.length).map((w) => w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&').replace(/ /g, '\\s+'));
   aliasRe = words.length ? new RegExp(`(^|[^\\p{L}])(${words.join('|')})(?=[^\\p{L}]|$)`, 'giu') : null;
@@ -63,10 +66,12 @@ export function treeThumb(id, size = 56) {
 
 // «Non confonderlo con»: scheda con foto, nome, latino e differenze; se l'albero è in catalogo la scheda intera apre la sua pagina
 const confusableCard = (self) => (c) => {
-  const cid = Object.keys(T).find((k) => k === c.id || T[k].name.toLowerCase() === String(c.name || '').toLowerCase());
+  // il collegamento passa dall'id (i nomi dei sosia possono essere più specifici della scheda: «Pioppo bianco» → pioppo)
+  const cid = T[c.id] ? c.id : Object.keys(T).find((k) => T[k].name.toLowerCase() === String(c.name || '').toLowerCase());
   const [, nm, lat] = String(c.name || '').match(/^(.*?)\s*(?:\(([^)]+)\))?$/) || [];
-  const name = cid ? T[cid].name : nm, latin = cid ? T[cid].latin : (lat || c.latin || '');
-  const m = cid && treePhotos(cid)[0];
+  const name = nm || (cid ? T[cid].name : ''), latin = cardLatin(lat || c.latin || (cid ? T[cid].latin : ''));
+  // scheda di genere (pioppo, salice): la sua foto è di un'altra specie, quindi non la si mostra per «Pioppo bianco»
+  const m = cid && (!c.latin || (MEDIA[cid]?.photo_taxon || T[cid].latin) === c.latin) && treePhotos(cid)[0];
   const img = m ? `<img data-src="${ASSET(m.thumb || m.file)}" alt="" loading="lazy" decoding="async">` : `<span class="thumb-ph tx-look-ph" aria-hidden="true">${esc(String(name || '?').slice(0, 2))}</span>`;
   const inner = `${img}<span><b>${esc(name)}</b>${latin ? `<i>${esc(latin)}</i>` : ''}<small class="muted">${esc(c.how_to_tell)}</small></span>`;
   return `<li>${cid && cid !== self ? `<a class="tx-look-main" data-entity href="#/albero/${encodeURIComponent(cid)}">${inner}</a>` : `<div class="tx-look-main">${inner}</div>`}</li>`;
@@ -102,6 +107,9 @@ export function renderTreeGrid(box) {
   update();
 }
 
+// «al castagno», «alla roverella», «all'orniello»: preposizione articolata davanti al nome comune
+const alNome = (name) => { const n = name.charAt(0).toLowerCase() + name.slice(1), w = n.split(' ')[0]; return /^[aeiouàèéìòù]/.test(n) ? `all'${n}` : /a$/.test(w) ? `alla ${n}` : `al ${n}`; };
+
 export function renderTreePage(body, id) {
   body.dataset.glossaryContext='Alberi';
   const t = T[id];
@@ -132,7 +140,7 @@ export function renderTreePage(body, id) {
     <h3>Caratteri da confrontare</h3><div data-tree-traits></div>
     ${t.recognize?.length ? `<ol class="keys">${t.recognize.map((k) => `<li><span class="key-text">${esc(k)}</span></li>`).join('')}</ol>` : ''}
     ${t.confusable?.length ? `<h3>Non confonderlo con</h3><ul class="tx-look tree-confusable">${t.confusable.map(confusableCard(id)).join('')}</ul>` : ''}
-    ${fungi.length ? `<h3>Funghi che ci crescono</h3><div class="tree-fungi">${fungi.map((s) => `<a href="#/specie/${s.id}" class="tf" data-entity>${THUMB(s.id, 52)}<span>${esc(s.name)}</span></a>`).join('')}</div>${t.fungi_note ? `<p class="small muted">${esc(t.fungi_note)}</p>` : ''}` : ''}
+    ${fungi.length ? `<h3>Funghi legati ${esc(alNome(t.name))}</h3><div class="tree-fungi">${fungi.map((s) => `<a href="#/specie/${s.id}" class="tf" data-entity>${THUMB(s.id, 52)}<span>${esc(s.name)}</span></a>`).join('')}</div>${t.fungi_note ? `<p class="small muted">${esc(t.fungi_note)}</p>` : ''}` : ''}
     <div class="sp-more">
       ${sec('Nelle zone', zrows.length ? `<p class="small muted">Ettari dei boschi in cui domina (${esc(cats.join(', '))}), dalla Carta Forestale.</p><ul class="where">${zrows.map(({ z, ha }) => `
         <li><a href="#/zona/${z.id}/0"><div class="where-top"><b>${esc(z.name)}</b><span class="small">~${ha.toLocaleString('it-IT')} ha</span></div><div class="bar"><i style="width:${Math.round((ha / maxHa) * 100)}%;background:var(--line)"></i></div></a></li>`).join('')}</ul>` : (t.where_reatino ? '' : ''))}

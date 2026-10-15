@@ -3285,3 +3285,7 @@ summary .plan-crit { cursor: auto; -webkit-user-select: text; user-select: text;
   @media (hover: hover) { .page-back:hover { background: var(--surface-2); } }
   body[data-page="mappa"] .page-back { display: none; }
 }
+/* schede su tablet e desktop: la colonna sotto la foto ha un fondo suo (la linguetta resta), così si legge come un foglio */
+@media (min-width: 600px) {
+  #views .phero ~ .pbody { --sheet: color-mix(in srgb, var(--surface) 55%, var(--bg)); background: var(--sheet); padding-bottom: 28px; border-radius: 26px; box-shadow: 0 1px 0 var(--hair), 0 18px 40px -28px rgb(0 0 0 / .35); }
+}

@@ -72,7 +72,7 @@ for(const width of [320,1280]) test(`spiegazioni contestuali, glossario e ricono
   await page.goto('/#/glossario/dislivello');await expect(page.locator('#glossary-term-dislivello')).toHaveAttribute('open','');
   // percorso guidato degli alberi: si parte dalla foglia, gli aghi lasciano solo le conifere
   await page.goto('/#/riconosci/alberi');await page.locator('#field-identify [data-k="leaf_kind"][data-v="aghi"]').click();
-  await expect(page.locator('#field-identify .id-head h2')).toHaveText('5 candidati');
+  await expect(page.locator('#field-identify .id-head h2')).toHaveText('8 candidati');
   await expect(page.locator('#field-identify .id-answers')).toContainText('Aghi');
   const treeResult=page.locator('#field-identify .gk-results a',{hasText:'Pino nero'});
   await treeResult.click();await expect(sheet.locator('h1')).toContainText('Pino nero');

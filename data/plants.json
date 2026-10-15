@@ -2584,7 +2584,10 @@
         10
       ],
       "phaseNote": "I mesi indicano la fioritura descritta dalla fonte; non sono un calendario di raccolta e possono variare con quota e stagione.",
-      "lookalikes": [],
+      "lookalikes": [
+        "croco",
+        "aglio-orsino"
+      ],
       "sources": [
         {
           "title": "Università di Trieste · Portale della Flora di Roma",
@@ -5125,6 +5128,539 @@
           "page": "https://dryades.units.it/floritaly/index.php?procedure=taxon_page&tipo=all&id=4859",
           "sourceImage": "https://dryades.units.it/dryades/plants/foto/TS112768.jpg",
           "sourceCaption": "Andrea Moro · © Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Distributed under CC-BY-SA 4.0 license."
+        }
+      ]
+    },
+    "veratro": {
+      "name": "Veratro",
+      "latin": "Veratrum lobelianum Bernh.",
+      "category": "Pericolose",
+      "aliases": [
+        "veratro di de L’Obel",
+        "veratro bianco",
+        "Veratrum album subsp. lobelianum"
+      ],
+      "habitat": "Pascoli e prati di montagna, radure e consorzi di alte erbe, su suoli ricchi; soprattutto nella fascia montana e subalpina.",
+      "recognize": [
+        "Pianta robusta, alta 60-150 cm, con un solo fusto eretto.",
+        "Foglie larghe ed ellittiche, pieghettate lungo nervature parallele, inserite a spirale (una per nodo) e pelose sotto.",
+        "Fiori piccoli, verde-giallastri con nervature verde scuro, in una pannocchia densa in cima al fusto.",
+        "Senza fiori le foglie ricordano quelle della genziana maggiore, che però sono opposte, a due a due, e glabre."
+      ],
+      "foodUse": {
+        "status": "mortale",
+        "parts": "",
+        "caution": "Pianta fortemente velenosa: tutte le parti, soprattutto il rizoma, contengono alcaloidi che rallentano il battito del cuore. La fonte botanica indica che l’avvelenamento può essere mortale. Lo scambio con la genziana maggiore (liquori, infusi) e con l’aglio orsino ha causato avvelenamenti con vomito, battito lento e pressione bassa; nei casi clinici citati le persone sono guarite dopo le cure in ospedale."
+      },
+      "flowerMonths": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "phaseNote": "I mesi indicano la fioritura descritta dalla fonte; non sono un calendario di raccolta e possono variare con quota e stagione. La fonte descrive Veratrum album in senso ampio, anche in pianura; in montagna la fioritura è estiva (Flora Helvetica: luglio).",
+      "lookalikes": [
+        "genziana-maggiore",
+        "aglio-orsino"
+      ],
+      "lookalikeNote": "Nel Lazio cresce anche il veratro nero (Veratrum nigrum), con fiori bruno-porpora, ai margini e nelle radure dei boschi di latifoglie. È ugualmente velenoso e non è nel catalogo.",
+      "presenceNote": "Taxon presente nel Lazio secondo il Portale della Flora d’Italia, che per il Lazio indica Veratrum album in senso stretto come segnalazione erronea. Presenza regionale, non segnalazione sul sentiero.",
+      "sources": [
+        {
+          "title": "Università di Trieste · Portale della Flora d’Italia · Veratrum lobelianum",
+          "url": "https://dryades.units.it/floritaly/index.php?procedure=taxon_page&tipo=all&id=13222"
+        },
+        {
+          "title": "Università di Trieste · Portale della Flora d’Italia · Veratrum album (Lazio: segnalazione erronea)",
+          "url": "https://dryades.units.it/floritaly/index.php?procedure=taxon_page&tipo=all&id=6743"
+        },
+        {
+          "title": "Acta Plantarum · IPFI · Veratrum lobelianum",
+          "url": "https://www.actaplantarum.org/flora/flora_info.php?id=13033"
+        },
+        {
+          "title": "Università di Trieste · Guida alla flora del Friuli Venezia Giulia · Veratrum album",
+          "url": "https://dryades.units.it/FVG/index.php?id=6743&procedure=taxon_page"
+        },
+        {
+          "title": "Info Flora · Veratrum album",
+          "url": "https://www.infoflora.ch/it/flora/veratrum-album.html"
+        },
+        {
+          "title": "Info Flora · Veratrum album subsp. lobelianum",
+          "url": "https://www.infoflora.ch/it/flora/veratrum-lobelianum.html"
+        },
+        {
+          "title": "Acta Plantarum · scheda botanica di Gentiana lutea (confusione con il veratro)",
+          "url": "https://www.actaplantarum.org/forum/viewtopic.php?f=95&t=1058"
+        },
+        {
+          "title": "Università di Trieste · Portale della flora delle Foreste Casentinesi · Veratrum nigrum",
+          "url": "https://dryades.units.it/casentinesi/index.php?id=6742&procedure=taxon_page"
+        },
+        {
+          "title": "Zagler e altri (2005) · Avvelenamento da Veratrum album scambiato per genziana · Wien Klin Wochenschr",
+          "url": "https://doi.org/10.1007/s00508-004-0291-x"
+        },
+        {
+          "title": "Rauber-Lüthy e altri (2010) · Bambini esposti a Veratrum album · Clin Toxicol (Tox Info Suisse)",
+          "url": "https://doi.org/10.3109/15563650903575243"
+        },
+        {
+          "title": "Gilotta e Brvar (2010) · Veratrum album scambiato per aglio orsino · Clin Toxicol",
+          "url": "https://doi.org/10.3109/15563650.2010.533675"
+        },
+        {
+          "title": "Festa e altri (1996) · Un caso di avvelenamento da Veratrum · Minerva Anestesiol (PubMed)",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/9045097/"
+        }
+      ],
+      "photos": [
+        {
+          "file": "assets/plants/veratro-1.webp",
+          "thumb": "assets/plants/veratro-1-t.webp",
+          "alt": "Veratro: pianta fiorita con foglie larghe alla base",
+          "caption": "Pianta fiorita: foglie larghe a spirale e pannocchia di fiori verdastri. Fotografia della specie; i caratteri vanno confrontati insieme.",
+          "author": "Franco Folini · iNaturalist",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "page": "https://www.inaturalist.org/observations/15253888",
+          "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/22823250/original.jpg",
+          "sourceCaption": "(c) Franco Folini, some rights reserved (CC BY) · iNaturalist, osservazione «research grade» 15253888 (Veratrum lobelianum) · 39056 Welschnofen, Province of Bolzano - South Tyrol, Italy · 2018-07-27"
+        },
+        {
+          "file": "assets/plants/veratro-2.webp",
+          "thumb": "assets/plants/veratro-2-t.webp",
+          "alt": "Veratro: giovane pianta senza fiori",
+          "caption": "Pianta giovane senza fiori: è la fase in cui si confonde con la genziana maggiore e con l’aglio orsino.",
+          "author": "Nicholas Wei · iNaturalist",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "page": "https://www.inaturalist.org/observations/336642689",
+          "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/611789780/original.jpg",
+          "sourceCaption": "(c) Nicholas Wei, some rights reserved (CC BY-SA) · iNaturalist, osservazione «research grade» 336642689 (Veratrum lobelianum) · Autonomous Province of Bolzano – South Tyrol, Italy · 2024-06-12"
+        },
+        {
+          "file": "assets/plants/veratro-3.webp",
+          "thumb": "assets/plants/veratro-3-t.webp",
+          "alt": "Veratro: foglie pieghettate inserite a spirale",
+          "caption": "Foglie pieghettate lungo le nervature, una per nodo, a spirale. Fotografia della specie; i caratteri vanno confrontati insieme.",
+          "author": "Emanuele Santarelli · iNaturalist",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "page": "https://www.inaturalist.org/observations/56239296",
+          "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/89602448/original.jpg",
+          "sourceCaption": "(c) Emanuele Santarelli, some rights reserved (CC BY-SA) · iNaturalist, osservazione «research grade» 56239296 (Veratrum lobelianum) · Trentino, Italia · 2020-08-06"
+        },
+        {
+          "file": "assets/plants/veratro-4.webp",
+          "thumb": "assets/plants/veratro-4-t.webp",
+          "alt": "Veratro: fiori verde-giallastri",
+          "caption": "Fiori piccoli verde-giallastri con nervature scure. Fotografia della specie; i caratteri vanno confrontati insieme.",
+          "author": "Emanuele Santarelli · iNaturalist",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "page": "https://www.inaturalist.org/observations/56239296",
+          "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/89602425/original.jpg",
+          "sourceCaption": "(c) Emanuele Santarelli, some rights reserved (CC BY-SA) · iNaturalist, osservazione «research grade» 56239296 (Veratrum lobelianum) · Trentino, Italia · 2020-08-06"
+        },
+        {
+          "file": "assets/plants/veratro-5.webp",
+          "thumb": "assets/plants/veratro-5-t.webp",
+          "alt": "Veratro: pianta in un pascolo di montagna",
+          "caption": "Pianta in un pascolo alpino. Fotografia della specie; i caratteri vanno confrontati insieme.",
+          "author": "Irene Saltini · iNaturalist",
+          "license": "CC0 1.0",
+          "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "page": "https://www.inaturalist.org/observations/53464731",
+          "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/85036038/original.jpeg",
+          "sourceCaption": "no rights reserved · iNaturalist, osservazione «research grade» 53464731 (Veratrum lobelianum) · Hofmahdjoch, Bozen, Italy · 2020-07-18"
+        }
+      ]
+    },
+    "genziana-maggiore": {
+      "name": "Genziana maggiore",
+      "latin": "Gentiana lutea L. subsp. lutea",
+      "category": "Fiori",
+      "aliases": [
+        "genziana gialla",
+        "genziana"
+      ],
+      "habitat": "Pascoli soleggiati e sassosi, boscaglie e radure di alte erbe in montagna, di solito su calcare; da 500 a 2200 m.",
+      "recognize": [
+        "Pianta robusta, alta 40-150 cm, con fusto semplice e cavo.",
+        "Foglie larghe, verde-glauco, opposte a due a due, con 5-7 nervature marcate che convergono verso la punta.",
+        "Fiori giallo vivo, a stella con 5-6 lobi stretti, a gruppi di 3-10 all’ascella delle foglie superiori.",
+        "Senza fiori si confonde con il veratro, molto velenoso, che ha foglie a spirale, pieghettate e pelose sotto."
+      ],
+      "foodUse": {
+        "status": "da osservare",
+        "parts": "",
+        "caution": "Pianta da osservare, non da raccogliere: vive molti anni e in molte zone diminuisce per l’eccessiva raccolta della radice. Negli stessi pascoli cresce il veratro, molto velenoso: lo scambio delle radici ha causato avvelenamenti."
+      },
+      "flowerMonths": [
+        6,
+        7,
+        8
+      ],
+      "phaseNote": "I mesi indicano la fioritura descritta dalla fonte; non sono un calendario di raccolta e possono variare con quota e stagione.",
+      "lookalikes": [
+        "veratro"
+      ],
+      "presenceNote": "Taxon presente nel Lazio secondo il Portale della Flora d’Italia (subsp. lutea): presenza regionale, non segnalazione sul sentiero. Nella Lista rossa italiana è «quasi minacciata» (NT).",
+      "protection": {
+        "status": "specie di interesse comunitario (Dir. 92/43/CEE, all. V); nessuna tutela regionale specifica trovata",
+        "law": "Dir. 92/43/CEE, all. V (testo consolidato 1.7.2013); L.R. Lazio 61/1974: non elencata (artt. 1 e 3)",
+        "summary": "La Direttiva Habitat la elenca nell’allegato V: il prelievo in natura può essere oggetto di misure di gestione. Nessuna tutela specifica trovata nelle norme del Lazio controllate. Nei parchi e nelle riserve valgono anche i divieti dell’area protetta (L. 394/1991, art. 11, c. 3, lett. a).",
+        "url": "https://eur-lex.europa.eu/legal-content/IT/TXT/?uri=CELEX:01992L0043-20130701"
+      },
+      "sources": [
+        {
+          "title": "Università di Trieste · Portale della Flora d’Italia · Gentiana lutea subsp. lutea",
+          "url": "https://dryades.units.it/floritaly/index.php?procedure=taxon_page&tipo=all&id=4012"
+        },
+        {
+          "title": "Università di Trieste · Portale della Flora d’Italia · Gentiana lutea",
+          "url": "https://dryades.units.it/floritaly/index.php?procedure=taxon_page&tipo=all&id=4011"
+        },
+        {
+          "title": "Acta Plantarum · scheda botanica",
+          "url": "https://www.actaplantarum.org/forum/viewtopic.php?f=95&t=1058"
+        },
+        {
+          "title": "Acta Plantarum · IPFI · Gentiana lutea",
+          "url": "https://www.actaplantarum.org/flora/flora_info.php?id=3477"
+        },
+        {
+          "title": "Info Flora · Gentiana lutea",
+          "url": "https://www.infoflora.ch/it/flora/gentiana-lutea.html"
+        },
+        {
+          "title": "Festa e altri (1996) · Veratro scambiato per genziana · Minerva Anestesiol (PubMed)",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/9045097/"
+        },
+        {
+          "title": "Regione Lazio · L.R. 19 settembre 1974, n. 61 (testo vigente)",
+          "url": "https://www.consiglio.regione.lazio.it/consiglio-regionale/?vw=leggiregionalidettaglio&id=7250&sv=vigente"
+        },
+        {
+          "title": "EUR-Lex · Direttiva 92/43/CEE, testo consolidato al 1.7.2013 (allegato V)",
+          "url": "https://eur-lex.europa.eu/legal-content/IT/TXT/?uri=CELEX:01992L0043-20130701"
+        }
+      ],
+      "photos": [
+        {
+          "file": "assets/plants/genziana-maggiore-1.webp",
+          "thumb": "assets/plants/genziana-maggiore-1-t.webp",
+          "alt": "Genziana maggiore: pianta fiorita nei Monti della Laga",
+          "caption": "Pianta fiorita nei Monti della Laga, versante reatino: foglie larghe opposte e fiori gialli a gruppi lungo il fusto. Fotografia della specie; i caratteri vanno confrontati insieme.",
+          "author": "Mattia Menchetti · iNaturalist",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "page": "https://www.inaturalist.org/observations/28798166",
+          "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/44915177/original.jpeg",
+          "sourceCaption": "(c) Mattia Menchetti, some rights reserved (CC BY) · iNaturalist, osservazione «research grade» 28798166 (Gentiana lutea) · Gran Sasso e Monti della Laga, IT-RI, Lazio, IT · 2019-07-11"
+        },
+        {
+          "file": "assets/plants/genziana-maggiore-2.webp",
+          "thumb": "assets/plants/genziana-maggiore-2-t.webp",
+          "alt": "Genziana maggiore: gruppi di fiori gialli a stella",
+          "caption": "Fiori gialli a stella, a gruppi all’ascella delle foglie. Fotografia della specie; i caratteri vanno confrontati insieme.",
+          "author": "Peter de Lange · iNaturalist",
+          "license": "CC0 1.0",
+          "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "page": "https://www.inaturalist.org/observations/4092366",
+          "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/4858113/original.jpg",
+          "sourceCaption": "no rights reserved · iNaturalist, osservazione «research grade» 4092366 (Gentiana lutea lutea) · Sardegna, Genargentu, near Puna la Marmora · 2013-06-06"
+        },
+        {
+          "file": "assets/plants/genziana-maggiore-3.webp",
+          "thumb": "assets/plants/genziana-maggiore-3-t.webp",
+          "alt": "Genziana maggiore: giovane pianta senza fiori",
+          "caption": "Pianta senza fiori: foglie con nervature che convergono verso la punta. È la fase in cui si confonde con il veratro.",
+          "author": "fmunoz · iNaturalist",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "page": "https://www.inaturalist.org/observations/305976799",
+          "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/551739103/original.jpg",
+          "sourceCaption": "(c) fmunoz, some rights reserved (CC BY) · iNaturalist, osservazione «research grade» 305976799 (Gentiana lutea) · Province of Cosenza, Italy · 2025-07-17"
+        },
+        {
+          "file": "assets/plants/genziana-maggiore-4.webp",
+          "thumb": "assets/plants/genziana-maggiore-4-t.webp",
+          "alt": "Genziana maggiore: foglie basali e fusto a fine fioritura",
+          "caption": "Foglie basali larghe e fusto a fine fioritura. Fotografia della specie; i caratteri vanno confrontati insieme.",
+          "author": "ROMAGNOLO Filippo · iNaturalist",
+          "license": "CC0 1.0",
+          "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "page": "https://www.inaturalist.org/observations/301160217",
+          "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/542674457/original.jpg",
+          "sourceCaption": "no rights reserved · iNaturalist, osservazione «research grade» 301160217 (Gentiana lutea) · MX4R+75 Cascata, 12020 Pontechianale CN, Italia · 2025-07-26"
+        }
+      ]
+    },
+    "aglio-orsino": {
+      "name": "Aglio orsino",
+      "latin": "Allium ursinum L.",
+      "category": "Erbe",
+      "aliases": [
+        "aglio ursino"
+      ],
+      "habitat": "Boschi di latifoglie freschi e ombrosi, vallecole umide e terreni ricchi di humus, spesso in grandi colonie. Al Sud sale fino a circa 1500 m.",
+      "recognize": [
+        "Di solito due foglie basali, ovali-lanceolate, verde brillante, ciascuna con un lungo picciolo.",
+        "Foglie stropicciate: forte odore di aglio.",
+        "Ombrella quasi sferica di 6-20 fiori bianchi a stella, con sei tepali.",
+        "Bulbo sottile e allungato, avvolto da tuniche biancastre."
+      ],
+      "foodUse": {
+        "status": "solo parti e preparazioni indicate",
+        "parts": "Foglie giovani, prima della fioritura.",
+        "caution": "Colchico (mortale) e veratro (molto velenoso) hanno foglie simili in primavera. Raccogli una foglia alla volta, mai a mazzi, e controlla l’odore di ciascuna: se le foglie sono mescolate, l’odore non basta."
+      },
+      "flowerMonths": [
+        4,
+        5,
+        6
+      ],
+      "phaseNote": "I mesi indicano la fioritura descritta dalla fonte; non sono un calendario di raccolta e possono variare con quota e stagione. Le foglie compaiono prima dei fiori, tra fine inverno e inizio primavera.",
+      "lookalikes": [
+        "colchico",
+        "veratro"
+      ],
+      "lookalikeNote": "Prima della fioritura anche il mughetto (Convallaria majalis), tossico, ha foglie simili. Non è nel catalogo.",
+      "presenceNote": "Taxon presente nel Lazio secondo il Portale della Flora d’Italia: presenza regionale, non segnalazione sul sentiero. Le piante del Centro-Sud sono state riferite alla subsp. ucrainicum, che il Portale non distingue.",
+      "sources": [
+        {
+          "title": "Università di Trieste · Portale della Flora d’Italia · Allium ursinum",
+          "url": "https://dryades.units.it/floritaly/index.php?procedure=taxon_page&tipo=all&id=6901"
+        },
+        {
+          "title": "Acta Plantarum · scheda botanica",
+          "url": "https://www.actaplantarum.org/forum/viewtopic.php?f=95&t=358"
+        },
+        {
+          "title": "Acta Plantarum · IPFI · Allium ursinum",
+          "url": "https://www.actaplantarum.org/flora/flora_info.php?id=559"
+        },
+        {
+          "title": "Info Flora · Allium ursinum",
+          "url": "https://www.infoflora.ch/it/flora/allium-ursinum.html"
+        },
+        {
+          "title": "Università di Trieste · Portale della flora delle Foreste Casentinesi · Allium ursinum",
+          "url": "https://dryades.units.it/casentinesi/index.php?id=6901&procedure=taxon_page"
+        },
+        {
+          "title": "Anses e Centri antiveleni francesi · Confusione tra colchico e aglio orsino (2023)",
+          "url": "https://www.anses.fr/fr/content/actu-confusion-colchique-ail-des-ours"
+        },
+        {
+          "title": "Gilotta e Brvar (2010) · Veratrum album scambiato per aglio orsino · Clin Toxicol",
+          "url": "https://doi.org/10.3109/15563650.2010.533675"
+        }
+      ],
+      "photos": [
+        {
+          "file": "assets/plants/aglio-orsino-1.webp",
+          "thumb": "assets/plants/aglio-orsino-1-t.webp",
+          "alt": "Aglio orsino: piante fiorite nel sottobosco",
+          "caption": "Piante fiorite: foglie larghe con picciolo e ombrelle bianche. Fotografia della specie; i caratteri vanno confrontati insieme.",
+          "author": "Nicolás Lavandero · iNaturalist",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "page": "https://www.inaturalist.org/observations/130897220",
+          "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/222672887/original.jpeg",
+          "sourceCaption": "(c) Nicolás Lavandero, some rights reserved (CC BY) · iNaturalist, osservazione «research grade» 130897220 (Allium ursinum) · Gran Sasso e Monti della Laga, Teramo, Abruzzo, Italy · 2022-05-26"
+        },
+        {
+          "file": "assets/plants/aglio-orsino-2.webp",
+          "thumb": "assets/plants/aglio-orsino-2-t.webp",
+          "alt": "Aglio orsino: foglie prima della fioritura",
+          "caption": "Foglie prima della fioritura, con lungo picciolo: è la fase delle confusioni con colchico e veratro.",
+          "author": "Andrea Mologni · iNaturalist",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "page": "https://www.inaturalist.org/observations/109413288",
+          "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/184400808/original.jpeg",
+          "sourceCaption": "(c) Andrea Mologni, some rights reserved (CC BY-SA) · iNaturalist, osservazione «research grade» 109413288 (Allium ursinum) · 22070 Castelnuovo Bozzente CO, Italia · 2022-03-21"
+        },
+        {
+          "file": "assets/plants/aglio-orsino-3.webp",
+          "thumb": "assets/plants/aglio-orsino-3-t.webp",
+          "alt": "Aglio orsino: foglie giovani tra le foglie secche",
+          "caption": "Foglie giovani a fine inverno. Fotografia della specie; i caratteri vanno confrontati insieme.",
+          "author": "Francesco Santoro · iNaturalist",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "page": "https://www.inaturalist.org/observations/345894971",
+          "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/630435071/original.jpg",
+          "sourceCaption": "(c) Francesco Santoro, some rights reserved (CC BY) · iNaturalist, osservazione «research grade» 345894971 (Allium ursinum) · 82038 Vitulano BN, Italia · 2026-03-29"
+        },
+        {
+          "file": "assets/plants/aglio-orsino-4.webp",
+          "thumb": "assets/plants/aglio-orsino-4-t.webp",
+          "alt": "Aglio orsino: ombrella di fiori bianchi",
+          "caption": "Ombrella di fiori bianchi a sei tepali. Fotografia della specie; i caratteri vanno confrontati insieme.",
+          "author": "Nicolás Lavandero · iNaturalist",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "page": "https://www.inaturalist.org/observations/130897220",
+          "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/222672891/original.jpeg",
+          "sourceCaption": "(c) Nicolás Lavandero, some rights reserved (CC BY) · iNaturalist, osservazione «research grade» 130897220 (Allium ursinum) · Gran Sasso e Monti della Laga, Teramo, Abruzzo, Italy · 2022-05-26"
+        },
+        {
+          "file": "assets/plants/aglio-orsino-5.webp",
+          "thumb": "assets/plants/aglio-orsino-5-t.webp",
+          "alt": "Aglio orsino: colonia fiorita nel bosco",
+          "caption": "Colonia fiorita in un bosco di latifoglie. Fotografia della specie; i caratteri vanno confrontati insieme.",
+          "author": "Matteo Negro · iNaturalist",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "page": "https://www.inaturalist.org/observations/189998816",
+          "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/332973239/original.jpeg",
+          "sourceCaption": "(c) Matteo Negro, some rights reserved (CC BY-SA) · iNaturalist, osservazione «research grade» 189998816 (Allium ursinum) · 13818 Tollegno BI, Italia · 2020-05-17"
+        }
+      ],
+      "habitatCategories": [
+        "Bosco di forra",
+        "Bosco alveale e ripariale"
+      ],
+      "habitatMappingNote": "Traduzione editoriale prudente dell’habitat descritto dalla fonte nelle categorie della Carta Forestale Lazio: compatibilità ambientale, non presenza osservata né abbondanza."
+    },
+    "croco": {
+      "name": "Zafferano napoletano",
+      "latin": "Crocus neapolitanus (Ker Gawl.) Loisel.",
+      "category": "Fiori",
+      "aliases": [
+        "croco",
+        "croco primaverile",
+        "Crocus vernus auct."
+      ],
+      "habitat": "Prati e pascoli di montagna, radure e boschi radi di latifoglie, su suoli profondi e ricchi di humus.",
+      "recognize": [
+        "Un solo fiore a calice, viola, lilla o bianco, spesso striato, su un lungo tubo che esce dal terreno.",
+        "Tre stami e uno stilo diviso in tre stimmi arancio.",
+        "Foglie strette e lineari, già presenti durante la fioritura, con una nervatura centrale bianca."
+      ],
+      "foodUse": {
+        "status": "tossico",
+        "parts": "",
+        "caution": "Il bulbo è indicato come velenoso per Crocus vernus in senso ampio; non abbiamo trovato una fonte specifica per lo zafferano napoletano. Non raccogliere. Il colchico, mortale, ha fiori simili ma sei stami, e in primavera foglie larghe senza fiori."
+      },
+      "flowerMonths": [
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "phaseNote": "I mesi indicano la fioritura descritta dalla fonte; non sono un calendario di raccolta e possono variare con quota e stagione. La fonte descrive Crocus vernus in senso ampio, nelle Foreste Casentinesi.",
+      "lookalikes": [
+        "colchico"
+      ],
+      "lookalikeNote": "Nel Lazio crescono anche altri crochi, non nel catalogo: il croco bifloro (Crocus biflorus), nei prati aridi sotto la fascia montana; il croco d’Imperato (C. imperati), protetto; Crocus longiflorus, che fiorisce in autunno come il colchico.",
+      "presenceNote": "Taxon presente nel Lazio secondo il Portale della Flora d’Italia, che per il Lazio indica Crocus vernus in senso stretto come segnalazione erronea. Presenza regionale, non segnalazione sul sentiero.",
+      "protection": {
+        "status": "nessuna tutela specifica trovata",
+        "law": "L.R. Lazio 61/1974: non elencata (artt. 1 e 3; l’art. 1 elenca Crocus imperati)",
+        "summary": "Nessuna tutela specifica trovata nelle norme del Lazio controllate. La L.R. 61/1974 chiama «zafferano napoletano» un’altra specie, Crocus imperati, che è protetta. Nei parchi e nelle riserve valgono anche i divieti dell’area protetta (L. 394/1991, art. 11, c. 3, lett. a).",
+        "url": "https://www.consiglio.regione.lazio.it/consiglio-regionale/?vw=leggiregionalidettaglio&id=7250&sv=vigente"
+      },
+      "sources": [
+        {
+          "title": "Università di Trieste · Portale della Flora d’Italia · Crocus neapolitanus",
+          "url": "https://dryades.units.it/floritaly/index.php?procedure=taxon_page&tipo=all&id=7050"
+        },
+        {
+          "title": "Università di Trieste · Portale della Flora d’Italia · Crocus vernus (Lazio: segnalazione erronea)",
+          "url": "https://dryades.units.it/floritaly/index.php?procedure=taxon_page&tipo=all&id=7051"
+        },
+        {
+          "title": "Acta Plantarum · IPFI · Crocus neapolitanus",
+          "url": "https://www.actaplantarum.org/flora/flora_info.php?id=10004"
+        },
+        {
+          "title": "Acta Plantarum · forum · chiave del gruppo Crocus vernus (L. Peruzzi)",
+          "url": "https://www.actaplantarum.org/forum/viewtopic.php?p=401837"
+        },
+        {
+          "title": "Info Flora · Crocus albiflorus (C. vernus in senso ampio)",
+          "url": "https://www.infoflora.ch/it/flora/crocus-albiflorus.html"
+        },
+        {
+          "title": "Info Flora · Colchicum autumnale (sei stami)",
+          "url": "https://www.infoflora.ch/it/flora/colchicum-autumnale.html"
+        },
+        {
+          "title": "Università di Trieste · Portale della flora delle Foreste Casentinesi · Crocus vernus",
+          "url": "https://dryades.units.it/casentinesi/index.php?id=7050&procedure=taxon_page"
+        },
+        {
+          "title": "Università di Trieste · Portale della Flora di Roma · Crocus biflorus",
+          "url": "https://dryades.units.it/Roma/index.php?id=7054&procedure=taxon_page"
+        },
+        {
+          "title": "Università di Trieste · Portale della Flora d’Italia · Crocus longiflorus",
+          "url": "https://dryades.units.it/floritaly/index.php?procedure=taxon_page&tipo=all&id=7056"
+        },
+        {
+          "title": "Università di Trieste · Portale della Flora d’Italia · Crocus imperati",
+          "url": "https://dryades.units.it/floritaly/index.php?procedure=taxon_page&tipo=all&id=7045"
+        },
+        {
+          "title": "Regione Lazio · L.R. 19 settembre 1974, n. 61 (testo vigente)",
+          "url": "https://www.consiglio.regione.lazio.it/consiglio-regionale/?vw=leggiregionalidettaglio&id=7250&sv=vigente"
+        }
+      ],
+      "photos": [
+        {
+          "file": "assets/plants/croco-1.webp",
+          "thumb": "assets/plants/croco-1-t.webp",
+          "alt": "Zafferano napoletano: fiore lilla nei Monti della Laga",
+          "caption": "Fiore nei Monti della Laga: tre stami e stimmi arancio. Fotografia della specie; i caratteri vanno confrontati insieme.",
+          "author": "Nicolás Lavandero · iNaturalist",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+          "page": "https://www.inaturalist.org/observations/130897309",
+          "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/222674666/original.jpeg",
+          "sourceCaption": "(c) Nicolás Lavandero, some rights reserved (CC BY) · iNaturalist, osservazione «research grade» 130897309 (Crocus neapolitanus) · Gran Sasso e Monti della Laga, Teramo, Abruzzo, Italy · 2022-05-26"
+        },
+        {
+          "file": "assets/plants/croco-2.webp",
+          "thumb": "assets/plants/croco-2-t.webp",
+          "alt": "Zafferano napoletano: fiore viola con stimmi arancio",
+          "caption": "Fiore viola: tre stami e stimmi arancio. Fotografia della specie; i caratteri vanno confrontati insieme.",
+          "author": "Emanuele Santarelli · iNaturalist",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "page": "https://www.inaturalist.org/observations/20812165",
+          "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/32099367/original.jpeg",
+          "sourceCaption": "(c) Emanuele Santarelli, some rights reserved (CC BY-SA) · iNaturalist, osservazione «research grade» 20812165 (Crocus neapolitanus) · Provincia dell'Aquila, Italia · 2019-02-27"
+        },
+        {
+          "file": "assets/plants/croco-3.webp",
+          "thumb": "assets/plants/croco-3-t.webp",
+          "alt": "Zafferano napoletano: due fiori in un prato di montagna",
+          "caption": "Fiori in un prato di montagna. Fotografia della specie; i caratteri vanno confrontati insieme.",
+          "author": "Emanuele Santarelli · iNaturalist",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "page": "https://www.inaturalist.org/observations/42466705",
+          "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/67427956/original.jpg",
+          "sourceCaption": "(c) Emanuele Santarelli, some rights reserved (CC BY-SA) · iNaturalist, osservazione «research grade» 42466705 (Crocus neapolitanus) · Provincia dell'Aquila, Italia · 2012-04-01"
+        },
+        {
+          "file": "assets/plants/croco-4.webp",
+          "thumb": "assets/plants/croco-4-t.webp",
+          "alt": "Zafferano napoletano: fiore bianco con foglie strette",
+          "caption": "Forma a fiore bianco, con foglie strette a nervatura chiara. Fotografia della specie; i caratteri vanno confrontati insieme.",
+          "author": "Emanuele Santarelli · iNaturalist",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "page": "https://www.inaturalist.org/observations/79862810",
+          "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/130836796/original.jpg",
+          "sourceCaption": "(c) Emanuele Santarelli, some rights reserved (CC BY-SA) · iNaturalist, osservazione «research grade» 79862810 (Crocus neapolitanus) · Provincia dell'Aquila, Italia · 2021-05-22"
         }
       ]
     }
