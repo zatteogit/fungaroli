@@ -1,0 +1,283 @@
+{
+  "file": "incoming/icone/forme-05.png",
+  "stato": "ok",
+  "verifiche": [
+    {
+      "cella": 0,
+      "bbox": [
+        71,
+        123,
+        347,
+        295
+      ],
+      "attesa": true,
+      "margini_px": [
+        71,
+        123,
+        71,
+        123
+      ],
+      "margini_ok": true,
+      "contorno_scuro_estremi": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cella": 1,
+      "bbox": [
+        90,
+        62,
+        327,
+        356
+      ],
+      "attesa": true,
+      "margini_px": [
+        90,
+        62,
+        91,
+        62
+      ],
+      "margini_ok": true,
+      "contorno_scuro_estremi": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cella": 2,
+      "bbox": null,
+      "attesa": false,
+      "vuota": true
+    },
+    {
+      "cella": 3,
+      "bbox": [
+        72,
+        158,
+        346,
+        260
+      ],
+      "attesa": true,
+      "margini_px": [
+        72,
+        158,
+        72,
+        158
+      ],
+      "margini_ok": true,
+      "contorno_scuro_estremi": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cella": 4,
+      "bbox": [
+        71,
+        81,
+        346,
+        337
+      ],
+      "attesa": true,
+      "margini_px": [
+        71,
+        81,
+        72,
+        81
+      ],
+      "margini_ok": true,
+      "contorno_scuro_estremi": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cella": 5,
+      "bbox": null,
+      "attesa": false,
+      "vuota": true
+    },
+    {
+      "cella": 6,
+      "bbox": [
+        72,
+        129,
+        345,
+        289
+      ],
+      "attesa": true,
+      "margini_px": [
+        72,
+        129,
+        73,
+        129
+      ],
+      "margini_ok": true,
+      "contorno_scuro_estremi": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cella": 7,
+      "bbox": [
+        92,
+        62,
+        326,
+        356
+      ],
+      "attesa": true,
+      "margini_px": [
+        92,
+        62,
+        92,
+        62
+      ],
+      "margini_ok": true,
+      "contorno_scuro_estremi": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cella": 8,
+      "bbox": null,
+      "attesa": false,
+      "vuota": true
+    }
+  ],
+  "normalizzazione": [
+    {
+      "cella": 0,
+      "bbox_originale": [
+        87,
+        166,
+        363,
+        338
+      ],
+      "scala": 1,
+      "dimensioni": [
+        276,
+        172
+      ],
+      "posizione": [
+        71,
+        123
+      ]
+    },
+    {
+      "cella": 1,
+      "bbox_originale": [
+        85,
+        88,
+        333,
+        396
+      ],
+      "scala": 0.9545454545454546,
+      "dimensioni": [
+        237,
+        294
+      ],
+      "posizione": [
+        508,
+        62
+      ]
+    },
+    {
+      "cella": 3,
+      "bbox_originale": [
+        88,
+        168,
+        362,
+        270
+      ],
+      "scala": 1,
+      "dimensioni": [
+        274,
+        102
+      ],
+      "posizione": [
+        72,
+        576
+      ]
+    },
+    {
+      "cella": 4,
+      "bbox_originale": [
+        72,
+        102,
+        347,
+        358
+      ],
+      "scala": 1,
+      "dimensioni": [
+        275,
+        256
+      ],
+      "posizione": [
+        489,
+        499
+      ]
+    },
+    {
+      "cella": 6,
+      "bbox_originale": [
+        88,
+        105,
+        361,
+        265
+      ],
+      "scala": 1,
+      "dimensioni": [
+        273,
+        160
+      ],
+      "posizione": [
+        72,
+        965
+      ]
+    },
+    {
+      "cella": 7,
+      "bbox_originale": [
+        88,
+        38,
+        330,
+        342
+      ],
+      "scala": 0.9671052631578947,
+      "dimensioni": [
+        234,
+        294
+      ],
+      "posizione": [
+        510,
+        898
+      ]
+    }
+  ],
+  "bytes": 65005,
+  "dimensioni": [
+    1254,
+    1254
+  ],
+  "sha256": "9e6627ab67f161bb2112a9cb6791c8535e33092563d975efe232d71147be9f08",
+  "prompt": "A transparent PNG sprite sheet, square1254x1254, invisible3x3cells418px each. Use reference1 for EXACT SMALL ICON SIZE, generous TRANSPARENT CELL MARGINS and row positions. Three rows: column1 CAP ONLY side view, column2 WHOLE MUSHROOM, column3 entirely EMPTY. Each separate icon centered in its own cell, at most60% of cell width AND height, at least18% alpha0 padding on EVERY cell edge. No drawn grid, background, shadows, ground, text, numbers or marks. Clean thick dark brown COMPLETE silhouette outline, flat few colors same as species icons. References2 onward show the approved base icons: preserve cap COLOR and all stems, rings, volvas, netting, scales and spots, change ONLY cap SHAPE and age-appropriate proportions. Each row's cap-only and whole must MATCH shape/color. ROW1: amanita-pantherina, base color bruno, target HEMISPHERICAL (round half sphere, not conical), preserve reference anatomical characters. ROW2: amanita-pantherina, base color bruno, target FLAT (nearly horizontal cap), preserve reference anatomical characters. ROW3: amanita-rubescens, base color rosa, target HEMISPHERICAL (round half sphere, not conical), preserve reference anatomical characters. Keep all6icons INSIDE cells with dark outline as outermost pixels. True transparent alpha.",
+  "edits": [],
+  "visivo_ok": true,
+  "nota": "Panterina emisferica/piana con verruche bianche e cercini; arrossante emisferica rosa con anello e senza aggiunta di volva. Anatomia e forme controllate, esito dei margini nel report. Normalizzata solo scala e posizione con Python, su autorizzazione di Matteo.",
+  "normalizza": true
+}
