@@ -313,7 +313,8 @@ function paintScopriNav(r) {
   const [sec, here] = place, cur = (on) => (on ? ' aria-current="page"' : '');
   const nav = view.querySelector('[data-scopri-nav]'), sub = view.querySelector('[data-scopri-sub]');
   if (nav) nav.innerHTML = SCOPRI.map(([id, href, label]) => `<a href="${href}" data-section="${id}"${cur(id === sec)}>${label}</a>`).join('');
-  if (sub) sub.innerHTML = SCOPRI_SUB[sec].map(([href, label]) => `<a href="${href}"${cur(href === here)}>${label}</a>`).join('');
+  // la pagina indice di Impara mostra già le sue parti come card: sotto-schede solo nelle pagine interne
+  if (sub) sub.innerHTML = r.view === 'impara' ? '' : SCOPRI_SUB[sec].map(([href, label]) => `<a href="${href}"${cur(href === here)}>${label}</a>`).join('');
 }
 
 function parseRoute() {
