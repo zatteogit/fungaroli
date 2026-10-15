@@ -36,6 +36,20 @@ def fit(tile):
     return sq.resize((SIZE, SIZE), Image.LANCZOS)
 
 
+def fit_like(tile, size):
+    """Variante di colore: stessa inquadratura del disegno base (stessa altezza e stesso centro nel quadrato),
+    così cambiando colore il fungo non si sposta né cambia scala. size = (larghezza, altezza) del disegno base."""
+    box = tile.getchannel("A").point(lambda a: 255 if a > 16 else 0).getbbox()
+    if box:
+        tile = tile.crop(box)
+    bw, bh = size
+    w = round(tile.size[0] * bh / tile.size[1])
+    side = round(max(bw, bh, w) * 1.08)  # se la variante è più larga, il quadrato si allarga: mai disegni tagliati
+    sq = Image.new("RGBA", (side, side), (0, 0, 0, 0))
+    sq.paste(tile.resize((w, bh), Image.LANCZOS), ((side - w) // 2, (side - bh) // 2))
+    return sq.resize((SIZE, SIZE), Image.LANCZOS)
+
+
 def drawings(im, name):
     """Riquadro di ogni disegno per cella, per componenti: ogni macchia connessa va alla cella del suo baricentro.
     Le tavole non sono una griglia esatta (un gambo può scendere oltre il terzo del foglio): a terzi fissi
@@ -75,6 +89,8 @@ def main(inc):
     for f in OUT.glob("*.webp"):
         f.unlink()
     have, base, variants, sheets, margins, combos = {}, {}, {}, {}, {}, {}
+    base_size = {}  # (specie, tessera) -> dimensioni del disegno base, per allineare le varianti di colore
+    rows = sorted(rows, key=lambda r: bool(r.get("variante")))  # prima i disegni base
     for r in rows:
         key = r["soggetto"]
         if key not in taxa:
@@ -86,8 +102,13 @@ def main(inc):
         cell = r.get("cella", [x for x in rows if x["file"] == r["file"]].index(r))
         if cell not in boxes:
             sys.exit(f"{r['file']}: la cella {cell} è vuota")
-        tile = fit(im.crop(boxes[cell]))
+        crop = im.crop(boxes[cell])
         var = r.get("variante")
+        if not var:
+            cb = crop.getchannel("A").point(lambda a: 255 if a > 16 else 0).getbbox()
+            base_size[(key, r["tessera"])] = (cb[2] - cb[0], cb[3] - cb[1]) if cb else crop.size
+        same_frame = var and var.startswith("colore:") and "+" not in var and (key, r["tessera"]) in base_size
+        tile = fit_like(crop, base_size[(key, r["tessera"])]) if same_frame else fit(crop)
         if var and "+" in var:
             # combinazione colore + forma (es. "colore:giallo+forma:piano"): file <specie>-<tessera>-<colore>-<forma>
             parts = dict(x.split(":", 1) for x in var.split("+"))
