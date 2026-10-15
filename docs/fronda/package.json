@@ -1,0 +1,11 @@
+{
+  "name": "fronda-brand-system",
+  "private": true,
+  "version": "1.1.0",
+  "type": "module",
+  "scripts": {
+    "check": "node scripts/check.mjs",
+    "guard": "node scripts/ds-guard.mjs",
+    "guard:test": "node scripts/guard-test.mjs"
+  }
+}

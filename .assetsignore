@@ -23,3 +23,6 @@ playwright.config.mjs
 AGENTS.md
 CLAUDE.md
 .claude
+
+# Studio Fronda: documentazione nel repo, fuori dagli asset del sito.
+docs/fronda
