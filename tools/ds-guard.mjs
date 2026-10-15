@@ -63,9 +63,7 @@ const CONFIG = {
     pairs: [["--bg", "--text"], ["--surface", "--text"], ["--bg", "--text-2"], ["--surface", "--muted"], ["--bg", "--accent"], ["--surface", "--accent"], ["--brand", "--brand-ink"], ["--bg", "--brand"], ["--action", "--action-ink"], ["--action-hover", "--action-ink"], ["--polline-soft", "--polline-ink"], ["--calendula-soft", "--calendula-ink"], ["--fiordaliso-soft", "--fiordaliso-ink"], ["--germoglio-soft", "--germoglio-ink"], ["--warn-bg", "--warn-ink"], ["--ok-bg", "--ok-ink"], ["--crit-bg", "--crit-ink"], ["--scrim", "--on-photo"], ["--surface-2", "--muted"], ["--surface-2", "--text-2"], ["--crit", "--on-crit"], ["--accent", "--accent-ink"], ["--surface-2", "--accent"], ["--bg", "--focus"], ["--surface", "--focus"], ["--surface", "--viz-water", 3], ["--surface", "--viz-heat", 3], ["--surface", "--viz-index", 3], ["--bg", "--viz-water", 3], ["--bg", "--viz-heat", 3], ["--bg", "--viz-index", 3], ["--bg", "--link"], ["--surface", "--link"], ["--surface-2", "--link"], ["--surface-3", "--link"], ["--select", "--select-ink"], ["--bg", "--select-edge", 3], ["--surface", "--select-edge", 3], ["--surface-2", "--select-edge", 3], ["--surface-3", "--select-edge", 3]],
   },
   reserved: {},
-  exceptions: {
-    "js/ambilight.js": { "css-colour-fn": "colore campionato dalla foto a runtime, non un token di design" },
-  },
+  exceptions: {},
   baselineFile: "tools/ds-guard-baseline.json",
   extensions: [".html", ".js", ".css"],
   findingLimit: 60,

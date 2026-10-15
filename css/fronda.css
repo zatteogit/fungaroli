@@ -174,22 +174,19 @@
 .viz-table tr.is-selected :is(th, td) { background: var(--surface-2); font-weight: 700; color: var(--text); }
 @media (prefers-reduced-motion: reduce) { .viz-tip { transition: none; } }
 
-/* Alone «ambilight» (js/ambilight.js): i colori dei quattro bordi della foto diventano luce sfumata attorno alla copertina,
-   in modo quasi uniforme su ogni lato, come se la foto si espandesse. Discreto in chiaro, più presente in scuro;
-   spento con «riduci trasparenza». Sul telefono la testata della zona è a tutta larghezza: la luce va sopra e sotto. */
-.phero, .cover { --amb-k: 46%; --amb-x: 30px; --amb-y: 30px; --amb-blur: 96px; --amb-spread: -20px; transition: box-shadow .6s ease; }
-.phero.has-amb, .cover.has-amb {
-  box-shadow: var(--shadow-1),
-    0 calc(-1 * var(--amb-y)) var(--amb-blur) var(--amb-spread) color-mix(in srgb, var(--amb-t, var(--amb-b)) var(--amb-k), transparent),
-    calc(-1 * var(--amb-x)) 0 var(--amb-blur) var(--amb-spread) color-mix(in srgb, var(--amb-l) var(--amb-k), transparent),
-    var(--amb-x) 0 var(--amb-blur) var(--amb-spread) color-mix(in srgb, var(--amb-r) var(--amb-k), transparent),
-    0 var(--amb-y) var(--amb-blur) var(--amb-spread) color-mix(in srgb, var(--amb-b) var(--amb-k), transparent);
-}
-@media (max-width: 760px) { .phero { --amb-x: 0px; --amb-y: 40px; --amb-blur: 110px; --amb-spread: -16px; } }
-:root[data-theme="dark"] :is(.phero, .cover) { --amb-k: 66%; }
-@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) :is(.phero, .cover) { --amb-k: 66%; } }
-@media (prefers-reduced-transparency: reduce) { .phero.has-amb, .cover.has-amb { box-shadow: var(--shadow-2); } }
-@media (prefers-reduced-motion: reduce) { .phero, .cover { transition: none; } }
+/* Alone «ambilight» (js/ambilight.js), solo nelle pagine di dettaglio: dietro la testata una copia della foto
+   (versione normale, mai l'HD) sfocata, più satura e ingrandita, che sporge come luce colorata. Il contenitore
+   isola l'alone: sta sopra il fondo della pagina e sotto tutto il resto. In chiaro è luce tenue (opacità bassa,
+   più chiara e più satura, così non sporca l'avorio); in scuro è ben visibile. Spento con «riduci trasparenza»;
+   con «riduci movimento» compare senza dissolvenza ma resta. */
+#views :is(#detail, .sp-page) { position: relative; isolation: isolate; }
+.ambi { position: absolute; z-index: -1; pointer-events: none; opacity: 0; transition: opacity .6s ease; --ambi-o: .4; --ambi-f: blur(56px) saturate(1.7) brightness(1.35); }
+.ambi.on { opacity: var(--ambi-o); }
+.ambi > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: var(--ambi-f); transform: scale(1.1); }
+:root[data-theme="dark"] .ambi { --ambi-o: .8; --ambi-f: blur(60px) saturate(1.35) brightness(.95); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .ambi { --ambi-o: .8; --ambi-f: blur(60px) saturate(1.35) brightness(.95); } }
+@media (prefers-reduced-transparency: reduce) { .ambi { display: none; } }
+@media (prefers-reduced-motion: reduce) { .ambi { transition: none; } }
 
 /* Etichetta «Rieti» accanto al marchio: dice che è una versione pilota e porta a Regole e metodo, dove la frase
    dell'avviso iniziale la spiega. Discreta (testo secondario), segue il marchio: dove il marchio è nascosto

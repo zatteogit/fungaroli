@@ -38,7 +38,7 @@ import { mountSpeciesAutocomplete } from './species-autocomplete.js';
 import { uniquePlaceProposals, chooseWalkTrail, walkContext, trailSketch } from './walks.js';
 import { cardLatin } from './names.js';
 import { pickCover } from './zone-cover.js';
-import { initAmbilight } from './ambilight.js';
+import { initAmbilight, ambiFollow } from './ambilight.js';
 import { initChallenges, renderChallengeList, renderChallenge, challengeTitle, challengeList, challengeProgressOf, suggestedChallenge } from './challenges.js';
 
 const HISTORY_DAYS = 30;   // giorni passati mostrati nel grafico
@@ -2260,6 +2260,8 @@ function crossfadeCover(img, src) {
     next.dataset.imageState = 'ready'; next.dataset.imageFast = '1';
     applyCrop(next);
     img.after(next);
+    // l'alone dietro la testata cambia foto insieme alla copertina, con la stessa dissolvenza
+    ambiFollow(img.closest('.phero'), src);
     if (reduceMotion()) { done(); return; }
     next.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 420, easing: 'ease-out' }).finished.then(done, done);
   }, () => { if (img._swap === token) img.src = src; });
