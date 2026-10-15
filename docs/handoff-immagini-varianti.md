@@ -166,4 +166,4 @@ Dopo il controllo dei campi `null` di anello e volva (15/10), questi valori sono
 |---|---|---|---|---|
 | Coprinus comatus (`coprinus-comatus`) | `stem_ring` | null → true | anello sottile e mobile, basso sul gambo, spesso scivolato verso la base | en.wikipedia, it.wikipedia, first-nature (in `traits_notes`) |
 
-Restano `null`, perché le fonti descrivono strutture fugaci o gruppi misti: `agaricus-campestris`, `suillus`, `lepiota-brunneoincarnata`, `lepiota-subincarnata`, `inocybe` (anello) e `amanita-rubescens` (volva). Per `terreum` le fonti dicono che l'anello manca, ma c'è una cortina grigia nei giovani: decisione in sospeso.
+Restano `null`, perché le fonti descrivono strutture fugaci o gruppi misti: `agaricus-campestris`, `suillus`, `lepiota-brunneoincarnata`, `lepiota-subincarnata`, `inocybe` (anello) e `amanita-rubescens` (volva). Per `terreum` le fonti dicono che l'anello manca, ma nei giovani c'è una cortina grigia quasi persistente: per decisione di Matteo (15/10) resta `null`, così la cortina non viene scambiata né per un anello né per la sua assenza.
