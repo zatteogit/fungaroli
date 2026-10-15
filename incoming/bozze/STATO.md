@@ -186,3 +186,5 @@ Ordine aggiornato da Matteo il 15/10: completare prima tutte le varianti di colo
 | icone/varianti-06.png | chlorophyllum-rhacodes: colore:bruno; procera: colore:bruno; lepiota-brunneoincarnata: colore:bruno | ok | QA visiva completata; 6 icone, alpha reale, terza colonna vuota. Basi nel manifest. |
 
 | icone/varianti-07.png | lepiota-brunneoincarnata: colore:rosso; lepiota-brunneoincarnata: colore:crema; lepiota-subincarnata: colore:bruno | ok | QA visiva completata; 6 icone, alpha reale, terza colonna vuota. Basi nel manifest. |
+
+| icone/varianti-08.png | lepiota-subincarnata: colore:crema; lepiota-cristata: colore:bruno; chlorophyllum-venenatum: colore:bruno | ok | QA visiva completata; 6 icone, alpha reale, terza colonna vuota. Basi nel manifest. |
