@@ -73,7 +73,7 @@ const confusableCard = (self) => (c) => {
   // scheda di genere (pioppo, salice): la sua foto è di un'altra specie, quindi non la si mostra per «Pioppo bianco»
   const m = cid && (!c.latin || (MEDIA[cid]?.photo_taxon || T[cid].latin) === c.latin) && treePhotos(cid)[0];
   const img = m ? `<img data-src="${ASSET(m.thumb || m.file)}" alt="" loading="lazy" decoding="async">` : `<span class="thumb-ph tx-look-ph" aria-hidden="true">${esc(String(name || '?').slice(0, 2))}</span>`;
-  const inner = `${img}<span><b>${esc(name)}</b>${latin ? `<i>${esc(latin)}</i>` : ''}<small class="muted">${esc(c.how_to_tell)}</small></span>`;
+  const inner = `${img}<span><b>${esc(name)}</b>${latin ? `<i>${esc(latin)}</i>` : ''}<small class="muted" data-glossary="Alberi">${esc(c.how_to_tell)}</small></span>`;
   return `<li>${cid && cid !== self ? `<a class="tx-look-main" data-entity href="#/albero/${encodeURIComponent(cid)}">${inner}</a>` : `<div class="tx-look-main">${inner}</div>`}</li>`;
 };
 
@@ -138,13 +138,13 @@ export function renderTreePage(body, id) {
     <div class="pbody">
     ${photos.length > 1 ? `<div class="sp-strip">${photos.slice(1).map((p, k) => `<button type="button" class="zoomable" data-photo="${k + 1}" aria-label="Foto ${k + 2}: ingrandisci"><img data-src="${ASSET(p.file)}" alt="" loading="lazy" decoding="async"></button>`).join('')}</div>` : ''}
     <h3>Caratteri da confrontare</h3><div data-tree-traits></div>
-    ${t.recognize?.length ? `<ol class="keys">${t.recognize.map((k) => `<li><span class="key-text">${esc(k)}</span></li>`).join('')}</ol>` : ''}
+    ${t.recognize?.length ? `<ol class="keys" data-glossary="Alberi">${t.recognize.map((k) => `<li><span class="key-text">${esc(k)}</span></li>`).join('')}</ol>` : ''}
     ${t.confusable?.length ? `<h3>Non confonderlo con</h3><ul class="tx-look tree-confusable">${t.confusable.map(confusableCard(id)).join('')}</ul>` : ''}
-    ${fungi.length ? `<h3>Funghi legati ${esc(alNome(t.name))}</h3><div class="tree-fungi">${fungi.map((s) => `<a href="#/specie/${s.id}" class="tf" data-entity>${THUMB(s.id, 52)}<span>${esc(s.name)}</span></a>`).join('')}</div>${t.fungi_note ? `<p class="small muted">${esc(t.fungi_note)}</p>` : ''}` : ''}
+    ${fungi.length ? `<h3>Funghi legati ${esc(alNome(t.name))}</h3><div class="tree-fungi">${fungi.map((s) => `<a href="#/specie/${s.id}" class="tf" data-entity>${THUMB(s.id, 52)}<span>${esc(s.name)}</span></a>`).join('')}</div>${t.fungi_note ? `<p class="small muted" data-glossary="Alberi">${esc(t.fungi_note)}</p>` : ''}` : ''}
     <div class="sp-more">
       ${sec('Nelle zone', zrows.length ? `<p class="small muted">Ettari dei boschi in cui domina (${esc(cats.join(', '))}), dalla Carta Forestale.</p><ul class="where">${zrows.map(({ z, ha }) => `
         <li><a href="#/zona/${z.id}/0"><div class="where-top"><b>${esc(z.name)}</b><span class="small">~${ha.toLocaleString('it-IT')} ha</span></div><div class="bar"><i style="width:${Math.round((ha / maxHa) * 100)}%;background:var(--line)"></i></div></a></li>`).join('')}</ul>` : (t.where_reatino ? '' : ''))}
-      ${sec('Foglia, corteccia, frutto', `<dl class="traits">${[['Foglia', t.leaf], ['Corteccia', t.bark], ['Frutto', t.fruit], ['Portamento', t.habit], ["D'inverno", t.season_tip], ['Quota documentata',t.altitudeNote],['Nel Reatino', t.where_reatino]].filter(([, v]) => v).map(([k, v]) => `<dt>${k}</dt><dd>${esc(v)}</dd>`).join('')}</dl>`)}
+      ${sec('Foglia, corteccia, frutto', `<dl class="traits">${[['Foglia', t.leaf], ['Corteccia', t.bark], ['Frutto', t.fruit], ['Portamento', t.habit], ["D'inverno", t.season_tip], ['Quota documentata',t.altitudeNote],['Nel Reatino', t.where_reatino]].filter(([, v]) => v).map(([k, v]) => `<dt>${k}</dt><dd${k === 'Quota documentata' ? '' : ' data-glossary="Alberi"'}>${esc(v)}</dd>`).join('')}</dl>`)}
       ${sec('Fonti e crediti delle foto', `${sourceRows(t.sources)}${photos.length ? `<p class="src-h">Fotografie</p>${photoRows(photos)}` : ''}`)}
     </div>
     </div>`;

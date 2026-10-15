@@ -445,7 +445,7 @@ const citeOf = (url) => { const c = url && CITES[url]; return c ? `${c.author}, 
 function attItem(r) {
   const k = ATT_KIND[r.kind], c = citeOf(r.source);
   const src = r.source && /^https?:\/\//.test(r.source) ? ` <a class="att-cite" href="${esc(r.source)}" target="_blank" rel="noopener"${CITES[r.source]?.title ? ` title="${esc(CITES[r.source].title)}"` : ''}>${c ? `(${esc(c)})` : 'Fonte'}</a>` : '';
-  return `<li class="att-item${r.severity === 'critico' ? ' crit' : ''}">${k ? `<span class="att-k">${k}</span>` : ''}${r.title ? `<b class="att-t" data-no-glossary>${esc(r.title)}</b>` : ''}<p>${esc(r.text)}${src}</p></li>`;
+  return `<li class="att-item${r.severity === 'critico' ? ' crit' : ''}">${k ? `<span class="att-k">${k}</span>` : ''}${r.title ? `<b class="att-t" data-no-glossary>${esc(r.title)}</b>` : ''}<p data-glossary>${esc(r.text)}${src}</p></li>`;
 }
 // elenco di avvisi senza riquadro (es. «Regole generali di sicurezza»): stesse righe delle schede
 export const warningList = (rules) => rules?.length ? `<ul class="att-list warn-list">${[...rules].sort((a, b) => (a.severity === 'critico' ? 0 : 1) - (b.severity === 'critico' ? 0 : 1)).map(attItem).join('')}</ul>` : '';
@@ -639,9 +639,9 @@ export function renderTaxonView(box, t, { photos = null, habitatText = '', extra
     </header>
     <div class="pbody">
       ${ph.length > 1 ? `<div class="sp-strip">${ph.slice(1, 6).map((p, k) => `<button type="button" class="zoomable" data-photo="${k + 1}" aria-label="Foto ${k + 2}: ingrandisci"><img data-src="${ASSET(p.file)}" alt="" loading="lazy" decoding="async"></button>`).join('')}</div>` : ''}
-      ${t.field_rules?.length ? attentionBox(t.field_rules) + (t.caution ? `<p class="id-why"><b>Cautele della specie:</b> ${esc(t.caution)}</p>` : '') : attentionBox(t.caution ? [{ text: t.caution, severity: 'importante' }] : [])}
+      ${t.field_rules?.length ? attentionBox(t.field_rules) + (t.caution ? `<p class="id-why" data-glossary><b>Cautele della specie:</b> ${esc(t.caution)}</p>` : '') : attentionBox(t.caution ? [{ text: t.caution, severity: 'importante' }] : [])}
       ${t.traits && Object.keys(t.traits).some((k) => k !== 'season') ? `<h3>Caratteri da confrontare</h3>${traitStrip(null, t)}` : '<p class="notice">Caratteri di confronto in preparazione: per ora la scheda riporta ambiente, stagione e cautele dalle fonti.</p>'}
-      ${t.check_before_picking?.length ? `<p class="small muted checks-tip">Caratteri descritti per la specie: confrontarli non identifica un esemplare né ne certifica la commestibilità.</p><ol class="keys">${t.check_before_picking.map((x) => `<li><span class="key-text">${esc(x)}</span></li>`).join('')}</ol>` : ''}
+      ${t.check_before_picking?.length ? `<p class="small muted checks-tip">Caratteri descritti per la specie: confrontarli non identifica un esemplare né ne certifica la commestibilità.</p><ol class="keys" data-glossary>${t.check_before_picking.map((x) => `<li><span class="key-text">${esc(x)}</span></li>`).join('')}</ol>` : ''}
       ${look.length ? `<h3>${lookTitle}</h3><ul class="tx-look">${look.map(({ id, o }) => { const op = photoOf(o); return `<li>
         <a class="tx-look-main" data-entity href="#/specie/${esc(id)}">${op ? `<img data-src="${ASSET(op.thumb || op.file)}" alt="" loading="lazy" decoding="async">` : ''}<span><b>${esc(o.name)}</b><i>${esc(o.latin)}</i>${o.toxicity ? `<small class="tx-c tox-${esc(o.toxicity.replace(/\s/g, '-'))}"><span class="tox">${esc(o.tox_label || o.toxicity)}</span></small>` : ''}</span></a>
         <a class="tx-cmp-btn" href="#/riconosci/confronta/${esc(t.key)}/${esc(o.key)}" aria-label="Confronta con ${esc(o.name)}, carattere per carattere">Confronta</a></li>`; }).join('')}</ul>` : ''}
@@ -654,7 +654,7 @@ export function renderTaxonView(box, t, { photos = null, habitatText = '', extra
       })()}
       <h3>Dove e quando</h3>
       <dl class="sci-params">
-        ${habitat.length ? `<div><dt>Dove</dt><dd>${esc(orList(habitat))}</dd></div>` : habitatText ? `<div><dt>Dove</dt><dd>${esc(habitatText)}</dd></div>` : ''}
+        ${habitat.length ? `<div><dt>Dove</dt><dd data-glossary>${esc(orList(habitat))}</dd></div>` : habitatText ? `<div><dt>Dove</dt><dd data-glossary>${esc(habitatText)}</dd></div>` : ''}
         ${t.trees?.length ? `<div><dt>Alberi</dt><dd>${esc(t.trees.join(', '))}</dd></div>` : ''}
         ${months ? `<div><dt>Quando</dt><dd>${esc(months)}</dd></div>` : ''}
       </dl>
@@ -756,7 +756,7 @@ function renderCompare(box, ref, pick) {
           <div class="cmp-name">${nameBtn(x)}${x.name !== x.latin ? `<i>${esc(x.latin)}</i>` : ''}</div></div>`).join('')}
         <span class="cmp-vs" aria-hidden="true">vs</span>
       </div>
-      ${how ? `<p class="cmp-how"><b>Differenze descritte.</b> ${esc(how)}</p>` : ''}
+      ${how ? `<p class="cmp-how" data-glossary="Funghi"><b>Differenze descritte.</b> ${esc(how)}</p>` : ''}
       <ul class="cmp-legend" aria-hidden="true"><li><span class="cmp-v own"></span>Solo in uno dei due</li><li><span class="cmp-v common"></span>In comune</li></ul>
       ${diff.length ? `<h4 class="cmp-h diff">Caratteri differenti nelle fonti</h4><ul class="cmp-rows">${diff.map((r) => r.html).join('')}</ul>`
         : '<p class="cmp-none"><b>Nessuna domanda di «Impara a riconoscere» li separa con certezza.</b> Contano i dettagli: leggi le differenze descritte e, nel dubbio, fallo vedere all\'Ispettorato micologico.</p>'}

@@ -48,8 +48,29 @@ test('botanical layouts, global search and short note form in both themes',async
  expect(errors).toEqual([]);
 });
 test('i mesi abbreviati non diventano termini del glossario («ago» di agosto non è un ago)',async({page})=>{
- const errors=await start(page,'#/pianta/ortica');
- const view=page.locator('.view:not([hidden])');await expect(view).toContainText('ago');
+ const errors=await start(page);await page.goto('/#/pianta/ortica');
+ const view=page.locator('.view:not([hidden])');await expect(view.locator('#plant-detail .keys')).toBeVisible();await expect(view).toContainText('ago');
  await expect(view.locator('a.glossary-link').filter({hasText:/^ago$/i})).toHaveCount(0);
+ expect(errors).toEqual([]);
+});
+// Collegamenti automatici solo nelle zone descrittive dichiarate (data-glossary) e solo con voci del loro ambito.
+const outsideZones=view=>view.locator('a.glossary-link').evaluateAll(links=>links.filter(a=>!a.closest('[data-glossary],.trait-strip')).map(a=>a.textContent));
+test('glossario: parole collegate nelle descrizioni, mai in mesi, fonti e crediti, e solo nel loro ambito',async({page})=>{
+ const errors=await start(page);
+ // scheda albero: «Aghi» nella descrizione è una voce del glossario
+ await page.goto('/#/albero/pino%20nero');const tree=page.locator('#tree-detail');await expect(tree.locator('.keys')).toBeVisible();
+ await expect(tree.locator('.keys a.glossary-link[data-term="aghi"]')).toHaveCount(1);
+ await expect(tree.locator('[data-tree-traits] .trait-strip')).toBeVisible();
+ expect(await outsideZones(tree)).toEqual([]);
+ // fonti e crediti delle foto, aperti: nessun termine collegato
+ await tree.locator('details.sec summary',{hasText:'Fonti e crediti delle foto'}).click();
+ await expect(tree.locator('.src-rows a.glossary-link, .src-h a.glossary-link')).toHaveCount(0);
+ // scheda pianta: mesi della fioritura, tutela e fonti senza termini; gli aculei del rovo sono quelli botanici, non quelli dei funghi
+ await page.goto('/#/pianta/rovo');const plant=page.locator('#plant-detail');await expect(plant.locator('.keys')).toBeVisible();
+ await expect(plant.locator('.keys a.glossary-link[data-term="aculei-piante"]')).toHaveCount(1);
+ await expect(plant.locator('a.glossary-link[data-term="aculei"]')).toHaveCount(0);
+ await expect(plant.locator('.sci-params div',{hasText:'Fioritura'}).locator('a.glossary-link')).toHaveCount(0);
+ for(const term of ['lamelle','pori','gambo','cappello','volva'])await expect(plant.locator(`a.glossary-link[data-term="${term}"]`)).toHaveCount(0);
+ expect(await outsideZones(plant)).toEqual([]);
  expect(errors).toEqual([]);
 });

@@ -240,7 +240,7 @@ function optionHtml(q, i, id, ans) {
 function questionHtml(c, q, i, ans) {
   const answered = typeof ans === 'string', right = ans === q.answer, a = ENTITY(q.kind, q.a) || {}, b = ENTITY(q.kind, q.b) || {};
   const result = answered ? `<div class="ch-result ${right ? 'is-right' : 'is-wrong'}" data-ch-result="${i}" tabindex="-1">
-      <p><b>${right ? 'Giusto.' : `Non è questa: è ${esc((ENTITY(q.kind, q.answer) || {}).name || q.answer)}.`}</b> ${esc(q.explain)}</p>
+      <p data-glossary><b>${right ? 'Giusto.' : `Non è questa: è ${esc((ENTITY(q.kind, q.answer) || {}).name || q.answer)}.`}</b> ${esc(q.explain)}</p>
       <p class="ch-source">Fonte: <a href="${esc(q.source.url)}" target="_blank" rel="noopener">${esc(q.source.title)}</a> · Schede: ${[a, b].filter((x) => x.href).map((x) => `<a href="${esc(x.href)}" data-entity>${esc(x.name)}</a>`).join(', ')}</p></div>` : '';
   return `<fieldset class="ch-q" data-ch-q="${i}"><legend><span class="ch-q-n">Domanda ${i + 1} di ${c.questions.length}</span>${esc(q.ask)}</legend>
     <div class="ch-opts">${optionHtml(q, i, q.a, ans)}${optionHtml(q, i, q.b, ans)}</div>${result}</fieldset>`;
@@ -263,7 +263,7 @@ export function renderChallenge(box, id, { focus = '' } = {}) {
     : `<ul class="ch-items">${(c.items || []).map((it) => itemRow(c, it, p.seen[c.id] || {}, open)).join('')}</ul>`;
   box.innerHTML = `<article class="ch-page" data-challenge-page="${esc(c.id)}">
     <p class="ch-kicker">${esc(KIND_LABEL[c.kind])}${c.months?.length ? ` · ${esc(monthsText(c.months))}` : ''}</p>
-    <h2 class="ch-title">${esc(c.title)}</h2><p class="ch-intro">${esc(c.intro)}</p>
+    <h2 class="ch-title">${esc(c.title)}</h2><p class="ch-intro" data-glossary>${esc(c.intro)}</p>
     <div class="ch-progress">${bar(pr)}${c.kind === 'confronta' && pr.count ? `<small class="ch-count">Giuste: ${pr.correct}</small>` : ''}</div>
     ${season}${done}${notice}${body}
     <p class="ch-back"><a href="#/sfide">← Tutte le sfide</a></p></article>`;
