@@ -15617,5 +15617,30 @@
     ],
     "bytes": 242726,
     "sha256": "bd4d0b77eabd8fa49f31d32c8a24403316ee0f6dee88dd0ab70bb75eed2ac11e"
+  },
+  {
+    "file": "incoming/infografiche/repandum.webp",
+    "tipo": "infografica",
+    "soggetto": "repandum",
+    "modello": "image_gen (identificatore tecnico non esposto)",
+    "prompt": "Create a NEW educational natural-history mushroom plate, vertical4:5 target1600x2000. Image1 STYLE ONLY: dark-brown clean outlines, a few FLAT warm natural colors on pale ivory paper. Images2 and3 morphology references only, do not edit/copy photos or composition. No letters, writing, arrows, figures, symbols, frames, watermark or labels. Outer10% margin on every side is EMPTY paper; lower-right38%x24% entirely EMPTY. Layout: whole main species and young specimen in top40%; middle-left longitudinal section; middle-right large underside character detail; bottom-left a small comparison of the specified lookalike. A few habitat leaves/moss only if specified. No rings or volvas on any species. All silhouettes enclosed and fully contained. MAIN Hydnum repandum: pale cream/light ochre matte felted irregular lobed cap3-15cm, thick wavy edge, SHORT STOUT white-cream stem slightly OFF CENTER. Underside covered with dense short downward-pointing CREAM TEETH/SPINES, clearly individual tiny tapered hanging pegs, slightly descending on stem. NOT pores or radial gills and NOT a long hairy beard. Cut section WHITE flesh with small localized pale ORANGE-YELLOW marks where cut, no blue. Middle-right enlarged underside makes separate short fragile spines unmistakable. LOOKALIKE Sarcodon imbricatus bottom-left: brown cap covered in LARGE RAISED OVERLAPPING SHINGLE SCALES, underside short gray-brown spines, brown stout stem. Main repandum must not have brown scales; no red droplets anywhere. No wood base.",
+    "edits": [
+      "Correct this educational plate while preserving species colors and anatomy and no text. Make ALL main Hydnum underside TEETH SHORTER, about half current length: tiny individual short tapered fragile pegs, not beard-like long spikes. Keep main cap cream and stems short slightly off-center, white flesh with tiny pale-orange cut marks. The middle-right underside detail must show WHOLE enclosed cap edge, not clipped/fading abruptly at right edge; enclose every cap with continuous dark outline. Keep lower-left Sarcodon large raised overlapping brown scales and short gray-brown teeth. For the ENTIRE plate reduce composition to85% within SAME4:5 canvas, blank ivory border at least7% all sides and blank bottom-right area. No drawing cut by canvas or vignette edge. No new objects, marks or labels."
+    ],
+    "tentativi": 2,
+    "stato": "verifica illustrativa superata",
+    "checklist_superata": true,
+    "verifica": "Aculei corti, fitti e separati, anche nel dettaglio, senza pori o lamelle; cappello crema-ocra irregolare e gambo corto leggermente eccentrico. Sezione bianca con lievi macchie arancio al taglio. Sarcodon bruno a grosse squame sollevate con aculei grigio-bruni. Nessuna goccia rossa, margini circa 6% e nessun testo.",
+    "riferimenti": [
+      "assets/species/repandum-ref.webp (autore/licenza in data/media.json)",
+      "assets/species/sarcodon-imbricatus-inat1.webp (autore/licenza in data/species-traits.json)",
+      "incoming/infografiche/caesarea-revisione.webp (solo stile)"
+    ],
+    "dimensioni": [
+      1600,
+      2000
+    ],
+    "bytes": 319960,
+    "sha256": "dad944bf6f483f0e398e3f300d809acad9c81d906709a6ba3b7a8e76964e7668"
   }
 ]
