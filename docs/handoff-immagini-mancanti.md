@@ -20,11 +20,20 @@
 - **File:** `incoming/icone-alberi/tavola-alberi-08.png`, 1254×1254 px, griglia 3×3 con fondo trasparente, icona nella cella 0 e le altre celle vuote. Ogni disegno deve restare dentro la sua cella con margine: l'import rifiuta le tavole con disegni tagliati o a cavallo di due celle.
 - **Manifest:** una riga in `incoming/manifest.json` con `tipo: "illustrazione"`, `soggetto: "alberi"`, `chiave: "leaf_type"`, `valore: "composta_palmata"`, `cella: 0`, `modello`, `prompt`.
 
-### 2. Timbri delle sfide
+### 2. Combinazioni colore + forma dell'amanita falloide
+
+Nell'app colore e forma del cappello ora si scelgono insieme. Per *Amanita phalloides* ci sono il disegno base (verde, convesso), 4 colori sul convesso e 2 forme sul verde. Mancano le altre combinazioni: finché non arrivano, l'app mostra la forma scelta nel colore base con la scritta «Colore non ancora disegnato per questa forma».
+
+- **Da disegnare:** colori `giallo`, `bianco`, `grigio`, `bruno` × forme `emisferico`, `piano` = 8 combinazioni, ognuna con le tessere `cappello` e `gambo` (16 disegni).
+- **Come:** partire dalle tavole approvate delle varianti della falloide (stessa scala, stesso tratto). Cambiare solo forma e colore del cappello; gambo, anello e volva restano uguali.
+- **File:** due tavole 3×3 con fondo trasparente (`incoming/icone/combinazioni-01.png`, `-02.png`), un disegno per cella, con margine.
+- **Manifest:** una riga per disegno con `soggetto: "amanita-phalloides"`, `tessera`, `cella` e `variante: "colore:<colore>+forma:<forma>"` (es. `"colore:giallo+forma:piano"`).
+
+### 3. Timbri delle sfide
 
 Tutto in `docs/handoff-immagini-timbri.md`: 9 timbri circolari, uno per sfida di `data/challenges.json`, leggibili a 64, 84 e 112 px su carta chiara e nel tema scuro.
 
-### 3. Glossario, guide e infografiche
+### 4. Glossario, guide e infografiche
 
 Tutto in `docs/handoff-immagini-glossario-guide.md`, in ordine A → B → C:
 - A. 21 schemi del glossario;
