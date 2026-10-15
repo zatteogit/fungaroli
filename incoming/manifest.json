@@ -15541,5 +15541,30 @@
     ],
     "bytes": 234816,
     "sha256": "2e67a274fae4720c1a54584ee6c8e2b6a1d3db82af591b382e8ceb6f67ca8863"
+  },
+  {
+    "file": "incoming/infografiche/pinophilus.webp",
+    "tipo": "infografica",
+    "soggetto": "pinophilus",
+    "modello": "image_gen (identificatore tecnico non esposto)",
+    "prompt": "Create one NEW scientific educational mushroom plate, vertical4:5 target1600x2000. Reference1 STYLE AND LAYOUT ONLY: clean brown outlines, limited flat natural colors, pale ivory paper and floating vignettes. Reference2 main species morphology only; reference3 lookalike morphology only, do not copy photo compositions. Leave outer10% paper EMPTY on every edge and bottom-right38%x24% EMPTY. No text, letters, numbers, arrows, frames or marks. Top40%: whole adult and young main species. Middle-left: clean longitudinal WHITE UNCHANGING flesh section. Middle-right: underside with fine tiny ROUND sponge pores and short tubes, NEVER gills. Small center stem surface detail. Bottom-left: intact and half-cut dangerous lookalike, smaller than main specimens but legible. No ring, no volva on any specimen, no extra roots/caps/stems. MAIN Boletus pinophilus: very fleshy domed cap DARK MAHOGANY/BRICK RED-BROWN, MATTE finely granular/wrinkled, never shiny vivid red. Very stout swollen pale buff stem with reddish-brown tints, PALE TO REDDISH FINE NETTING especially upper stem, not dots. Young pores WHITE, adult cream to yellow-olive, no red/orange. Section WHITE with only a THIN WINE-RED band immediately under cap skin, no blue. LOOKALIKE Neoboletus luridiformis: dark-brown cap, RED PORES, yellow stem covered with RED DOTS, absolutely NO NET on stem; yellow flesh with strong BLUE staining after cutting. Make dotted stem distinct from netted main stem.",
+    "edits": [
+      "Localized correction of this existing bolete plate. Preserve all vignettes, ivory paper, no text. Keep main pinophilus cap matte mahogany, pale/reddish NETTED stem, WHITE flesh with thin wine-red subcuticle. Make the TOP RIGHT young pinophilus PORES WHITE/IVORY, not yellow. Keep main adult pores cream-olive and bottom-left Neoboletus RED pores, RED DOTS (no net) and yellow-to-blue cut flesh. Also reduce the entire composition to 85% within same vertical4:5 frame, leaving at least7% EMPTY PAPER margin along ALL four edges. Keep lower-right blank. No new objects or marks."
+    ],
+    "tentativi": 2,
+    "stato": "verifica illustrativa superata",
+    "checklist_superata": true,
+    "verifica": "Cappello mogano opaco, gambo robusto con reticolo chiaro, pori chiari e bianchi nel giovane; carne bianca con fascia vinosa sotto cuticola. Piede rosso con pori rossi, puntinatura senza reticolo e carne gialla/azzurrata. Nessun anello/volva, margini conservati, nessun testo.",
+    "riferimenti": [
+      "assets/species/pinophilus-ref.webp (autore/licenza in data/media.json)",
+      "assets/species/neoboletus-luridiformis-ref.webp (autore/licenza in data/species-traits.json)",
+      "incoming/infografiche/edulis.webp (solo stile/layout)"
+    ],
+    "dimensioni": [
+      1600,
+      2000
+    ],
+    "bytes": 251210,
+    "sha256": "1c2613e86dc4e3541cef5e8b656275b91a3669afb431f8ec52ef4340c489d51d"
   }
 ]
