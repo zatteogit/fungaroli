@@ -15067,5 +15067,41 @@
       "data/glossary.json:imenoforo.definition,observe"
     ],
     "qa": "incoming/qa/glossario-imenoforo.json"
+  },
+  {
+    "file": "incoming/glossario/anello.png",
+    "tipo": "glossario",
+    "soggetto": "anello",
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case: scientific-educational. One 1024x1024PNG educational glossary illustration for Fungaroli. Reference is the APPROVED STYLE: simple warm flat illustration, thick smooth DARK BROWN contours, restrained warm orange highlight, cream/beige muted supporting elements, one subtle highlight at most. No text, letters, numbers, labels, watermark or UI. Genuine transparent alpha background. WHOLE subject centered, at least15% transparent margin on every side. EVERY outermost visible edge or tip must end in DARK BROWN OUTLINE, no flat fill cutoffs. Keep biological concept anatomically clear, not species identification. SUBJECT: Generic mushroom stalk with a SKIRT RING around it just BELOW cap; highlight only ring orange, rest muted beige. Ring continuous around stem, free hanging edge. NO VOLVA or basal sack in this diagram; stem base simple rounded complete. SOURCE definition: Fascia o membrana intorno al gambo, spesso residuo del velo parziale. Può essere fragile, fugace o danneggiata. CORRECTION: recolor ONLY the entire cap to MUTED PALE CREAM, exactly like stem. ORANGE is used ONLY on the ring skirt. Preserve everything else.",
+    "stato": "ok",
+    "fonti_dati": [
+      "data/glossary.json:anello.definition,observe"
+    ],
+    "qa": "incoming/qa/glossario-anello.json"
+  },
+  {
+    "file": "incoming/glossario/volva.png",
+    "tipo": "glossario",
+    "soggetto": "volva",
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case: scientific-educational. One 1024x1024PNG educational glossary illustration for Fungaroli. Reference is the APPROVED STYLE: simple warm flat illustration, thick smooth DARK BROWN contours, restrained warm orange highlight, cream/beige muted supporting elements, one subtle highlight at most. No text, letters, numbers, labels, watermark or UI. Genuine transparent alpha background. WHOLE subject centered, at least15% transparent margin on every side. EVERY outermost visible edge or tip must end in DARK BROWN OUTLINE, no flat fill cutoffs. Keep biological concept anatomically clear, not species identification. SUBJECT: Close-up lower mushroom stalk enclosed in an OPEN SACK VOLVA, free edges in two lobes, partly buried in small cutaway soil. Highlight sack orange, stem muted cream. NO RING in crop; no cap needed. Entire rounded sack bottom visible in soil crosssection. SOURCE definition: Residuo del velo generale alla base del gambo, a sacco, lembi o cercini secondo la specie. Può essere nascosta nel terreno o danneggiata. CORRECTION to reference: the upper short stem end must be FULLY CLOSED by a dark brown outlined small ellipse, like a schematic cut surface. NO open straight cream fill cutoff. Keep all the rest, sack open free edges and visible soil.",
+    "stato": "ok",
+    "fonti_dati": [
+      "data/glossary.json:volva.definition,observe"
+    ],
+    "qa": "incoming/qa/glossario-volva.json"
+  },
+  {
+    "file": "incoming/glossario/micelio.png",
+    "tipo": "glossario",
+    "soggetto": "micelio",
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case: scientific-educational. One 1024x1024PNG educational glossary illustration for Fungaroli. Reference is the APPROVED STYLE: simple warm flat illustration, thick smooth DARK BROWN contours, restrained warm orange highlight, cream/beige muted supporting elements, one subtle highlight at most. No text, letters, numbers, labels, watermark or UI. Genuine transparent alpha background. WHOLE subject centered, at least15% transparent margin on every side. EVERY outermost visible edge or tip must end in DARK BROWN OUTLINE, no flat fill cutoffs. Keep biological concept anatomically clear, not species identification. SUBJECT: Generic small mushroom above compact soil cross-section. Beneath soil a connected branching NETWORK OF THIN WHITE HYPHAE, brown outlines so tips complete. White mycelium contrasts with muted earth, mushroom subdued orange/cream. No tree roots, no detached worms. Whole soil block enclosed dark contour. SOURCE definition: Insieme dei filamenti del fungo, chiamati ife, che si sviluppano nel substrato. Il fungo visibile è spesso soltanto il corpo fruttifero.",
+    "stato": "ok",
+    "fonti_dati": [
+      "data/glossary.json:micelio.definition,observe"
+    ],
+    "qa": "incoming/qa/glossario-micelio.json"
   }
 ]

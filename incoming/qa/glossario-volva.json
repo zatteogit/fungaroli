@@ -1,0 +1,66 @@
+{
+  "file": "incoming/glossario/volva.png",
+  "size": [
+    1024,
+    1024
+  ],
+  "sha256": "04e88863a860ff754ee95e22bd29b43605bbed6599d2d31e5258657c1ae355fa",
+  "source_bbox_alpha128": [
+    139,
+    130,
+    884,
+    894
+  ],
+  "source_extremes_rgb_max": [
+    [
+      66,
+      29,
+      14
+    ],
+    [
+      65,
+      23,
+      7
+    ],
+    [
+      60,
+      23,
+      6
+    ],
+    [
+      61,
+      21,
+      6
+    ]
+  ],
+  "extremes_rgb_max": [
+    [
+      67,
+      29,
+      13
+    ],
+    [
+      65,
+      23,
+      8
+    ],
+    [
+      61,
+      22,
+      5
+    ],
+    [
+      62,
+      20,
+      5
+    ]
+  ],
+  "margin_required_px": 103,
+  "margin_alpha_max": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "export": "Intero soggetto isolato con2px di antialias e centrato proporzionalmente; nessun ritocco morfologico o ricolore."
+}

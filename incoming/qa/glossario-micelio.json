@@ -1,0 +1,66 @@
+{
+  "file": "incoming/glossario/micelio.png",
+  "size": [
+    1024,
+    1024
+  ],
+  "sha256": "af9b9058f9aede626ba7bcf88dfea4b73e1177bee6cca1a9d04966912669089d",
+  "source_bbox_alpha128": [
+    136,
+    130,
+    886,
+    894
+  ],
+  "source_extremes_rgb_max": [
+    [
+      74,
+      21,
+      7
+    ],
+    [
+      65,
+      18,
+      4
+    ],
+    [
+      66,
+      19,
+      5
+    ],
+    [
+      65,
+      16,
+      5
+    ]
+  ],
+  "extremes_rgb_max": [
+    [
+      73,
+      20,
+      7
+    ],
+    [
+      65,
+      16,
+      5
+    ],
+    [
+      65,
+      19,
+      6
+    ],
+    [
+      69,
+      19,
+      5
+    ]
+  ],
+  "margin_required_px": 103,
+  "margin_alpha_max": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "export": "Intero soggetto isolato con2px di antialias e centrato proporzionalmente; nessun ritocco morfologico o ricolore."
+}

@@ -1,0 +1,66 @@
+{
+  "file": "incoming/glossario/anello.png",
+  "size": [
+    1024,
+    1024
+  ],
+  "sha256": "1ffc2a2eed1c3f93000c94007af77397db977ca12b28d9b24cfd9c9ac81cee05",
+  "source_bbox_alpha128": [
+    174,
+    131,
+    850,
+    893
+  ],
+  "source_extremes_rgb_max": [
+    [
+      59,
+      27,
+      13
+    ],
+    [
+      65,
+      31,
+      17
+    ],
+    [
+      64,
+      32,
+      16
+    ],
+    [
+      67,
+      33,
+      17
+    ]
+  ],
+  "extremes_rgb_max": [
+    [
+      61,
+      26,
+      11
+    ],
+    [
+      63,
+      29,
+      17
+    ],
+    [
+      57,
+      22,
+      6
+    ],
+    [
+      64,
+      25,
+      8
+    ]
+  ],
+  "margin_required_px": 103,
+  "margin_alpha_max": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "export": "Intero soggetto isolato con2px di antialias e centrato proporzionalmente; nessun ritocco morfologico o ricolore."
+}

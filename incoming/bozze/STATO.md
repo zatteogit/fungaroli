@@ -319,3 +319,10 @@ Ordine aggiornato da Matteo il 15/10: completare prima tutte le varianti di colo
 | qa/glossario-umbone.json | ok | Margini trasparenti e contorni verificati col codice; verifica visiva completata. |
 | glossario/imenoforo.png | ok | Margini trasparenti e contorni verificati col codice; verifica visiva completata. |
 | qa/glossario-imenoforo.json | ok | Margini trasparenti e contorni verificati col codice; verifica visiva completata. |
+
+| glossario/anello.png | ok | Margini trasparenti e contorni verificati col codice; verifica visiva completata. |
+| qa/glossario-anello.json | ok | Margini trasparenti e contorni verificati col codice; verifica visiva completata. |
+| glossario/volva.png | ok | Margini trasparenti e contorni verificati col codice; verifica visiva completata. |
+| qa/glossario-volva.json | ok | Margini trasparenti e contorni verificati col codice; verifica visiva completata. |
+| glossario/micelio.png | ok | Margini trasparenti e contorni verificati col codice; verifica visiva completata. |
+| qa/glossario-micelio.json | ok | Margini trasparenti e contorni verificati col codice; verifica visiva completata. |

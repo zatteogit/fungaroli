@@ -317,3 +317,6 @@ Tavola porcini forme03 completata e controllata: aereus emisferico/piano, aestiv
 
 
 Glossario gruppo1: forme generiche senza attribuzione a specie; gambo arancio su cappello spento, umbone centrale evidenziato, imenoforo lamellare evidenziato in vista inferiore/sezione. Margini103px alpha0 e contorno scuro ai4estremi verificati; nessun testo.
+
+
+Glossario: anello, volva, micelio. Schemi didattici generici conformi alle definizioni; dettagli non pertinenti omessi, nessuna etichetta o identificazione di specie. Margini103px alpha0, contorno scuro ai4estremi e verifica visiva; nessun testo.
