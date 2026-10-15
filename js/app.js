@@ -271,7 +271,9 @@ async function init() {
   matchMedia('(prefers-color-scheme: dark)').addEventListener('change', renderAll);
   addEventListener('themechange', renderAll);
   let rt;
-  addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(() => results && state.view === 'zona' && renderDetail(), 200); });
+  // la scheda della zona dipende solo dalla larghezza: la barra degli indirizzi che compare o sparisce (cambia l'altezza) non deve ridisegnarla
+  let lastW = innerWidth;
+  addEventListener('resize', () => { if (innerWidth === lastW) return; lastW = innerWidth; clearTimeout(rt); rt = setTimeout(() => results && state.view === 'zona' && renderDetail(), 200); });
 }
 
 // ---------------------------------------------------------------------------
