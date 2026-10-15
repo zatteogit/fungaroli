@@ -15304,5 +15304,24 @@
   "caricato": true,
   "qa": "Verifica visiva: pioggia, lettiera, strato umido, micelio chiaro distinto dalle radici brune, funghi generici emergenti; vignetta intera senza testo su fondo carta. Dimensioni e peso verificati con Pillow.",
   "semplificazioni": "Sezione schematica del terreno; gocce blu simboliche per l'umidità, nessuna scala temporale né promessa di fruttificazione."
+},
+{
+  "file": "incoming/guide/preparare-la-passeggiata.webp",
+  "tipo": "guida",
+  "soggetto": "preparare-la-passeggiata",
+  "modello": "image_gen (modello integrato, identificatore non esposto)",
+  "prompt": "Use case: illustration-story. Asset: Fungaroli guide opener \"preparare-la-passeggiata\", landscape 1600x900 (16:9). Image 1 is the APPROVED STYLE REFERENCE ONLY: match its warm dark brown continuous outlines, simple rounded organic forms, few flat olive greens, warm ochres, burnt orange, gray beige and cream, pale warm opaque paper background. New subject: preparing for a woodland walk, a coherent still life of an OPEN OLIVE GREEN HIKING BACKPACK with a folded cream paper MAP partly tucked into its open main compartment, a small round COMPASS resting clearly in front of it, a reusable WATER BOTTLE at its side, and an EMPTY WICKER BASKET with a single arched handle beside the backpack. All four equipment types unmistakable, whole objects intact, pleasing three-quarter view, map is large enough to see its accordion folds and simple route line but has NO lettering or symbols resembling text; compass has a simple needle without letters. Basket weave simplified, no excessive small detail. On a tiny patch of forest leaf litter as a ground accent, visually subordinate. Compact centered group occupies about 65-70% canvas width and 65% height, at least 13% seamless pale paper clear margin around all objects including handles, straps and map. Background uniformly pale warm paper #f6f0e4 to every canvas edge, no inset frame/panel or scenery. Match reference illustration's line, palette and visual density; flat colors, clean brown outline enclosing every object, no photorealism, no 3D. No people, no mushrooms inside basket, no extra equipment, no text, letters, numbers, logos, labels, arrows, watermark or legend.",
+  "stato": "ok",
+  "fonti_dati": [
+    "docs/handoff-immagini-glossario-guide.md:parteB",
+    "data/guides.json:preparare-la-passeggiata"
+  ],
+  "larghezza": 1600,
+  "altezza": 900,
+  "peso_bytes": 108300,
+  "compressione": "WebP qualità 85, method 6",
+  "caricato": true,
+  "qa": "Verifica visiva: zaino aperto, mappa piegata senza testo, bussola senza lettere, borraccia e cesto di vimini vuoto. Oggetti interi, contorno bruno, sfondo carta opaco. Dimensioni e peso verificati con Pillow.",
+  "semplificazioni": "Cartografia illustrativa e bussola priva di lettere, intreccio del cesto semplificato; nessun percorso reale rappresentato."
 }
 ]

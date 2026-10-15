@@ -369,3 +369,4 @@ Ordine aggiornato da Matteo il 15/10: completare prima tutte le varianti di colo
 | File | Stato | Dubbi / controlli |
 |---|---|---|
 | guide/pioggia-e-crescita.webp | ok | 1600×900, sfondo carta opaco; stile dell'apertura leggere-il-bosco approvata da Matteo. Pioggia, strato umido, micelio chiaro e funghi emergenti; nessun testo o taglio. WebP qualità 85, 117568 byte (<400 KB), peso verificato con codice. Gocce nel terreno simboliche, nessuna scala temporale. |
+| guide/preparare-la-passeggiata.webp | ok | 1600×900, sfondo carta opaco; stile dell'apertura leggere-il-bosco approvata da Matteo. Zaino aperto con mappa piegata, bussola, borraccia e cesto di vimini vuoto; nessun testo o taglio. WebP qualità 85, 108300 byte (<400 KB), peso verificato con codice. Cartografia solo illustrativa. |
