@@ -1992,33 +1992,33 @@
   },
   "assets/species/suillus-ref-hd.webp": {
     "punto": [
-      0.61,
+      0.73,
       0.465
     ],
     "riquadro": [
       0.47,
       0.04,
-      0.75,
+      0.99,
       0.89
     ],
     "soggetto": "esemplare centrale destro, cappello, pori e gambo",
     "dubbio": true,
-    "nota": "Conservare anche i pori dell’esemplare capovolto a destra. Il riquadro non entra nei formati 3:4, 4:5. Miniatura assets/species/suillus-ref-t.webp già ritagliata: 160×160, originale 1600×453; queste coordinate non valgono per il thumb."
+    "nota": "Conservare anche i pori dell’esemplare capovolto a destra. Il riquadro non entra nei formati 5:4, 3:4, 4:5, 4:3, 1:1. Miniatura assets/species/suillus-ref-t.webp già ritagliata: 160×160, originale 1600×453; queste coordinate non valgono per il thumb."
   },
   "assets/species/suillus-ref.webp": {
     "punto": [
-      0.61,
+      0.73,
       0.465
     ],
     "riquadro": [
       0.47,
       0.04,
-      0.75,
+      0.99,
       0.89
     ],
     "soggetto": "esemplare centrale destro, cappello, pori e gambo",
     "dubbio": true,
-    "nota": "Conservare anche i pori dell’esemplare capovolto a destra. Il riquadro non entra nei formati 3:4, 4:5. Miniatura assets/species/suillus-ref-t.webp già ritagliata: 160×160, originale 1600×453; queste coordinate non valgono per il thumb."
+    "nota": "Conservare anche i pori dell’esemplare capovolto a destra. Il riquadro non entra nei formati 5:4, 3:4, 4:5, 4:3, 1:1. Miniatura assets/species/suillus-ref-t.webp già ritagliata: 160×160, originale 1600×453; queste coordinate non valgono per il thumb."
   },
   "assets/species/suillus-inat1-hd.webp": {
     "punto": [
@@ -2802,33 +2802,33 @@
   },
   "assets/species/lactarius-deliciosus-ref-hd.webp": {
     "punto": [
-      0.33,
-      0.59
+      0.43,
+      0.485
     ],
     "riquadro": [
       0.0,
-      0.31,
-      0.66,
-      0.87
+      0.09,
+      0.86,
+      0.88
     ],
     "soggetto": "fungo capovolto anteriore, lamelle e gambo",
     "dubbio": true,
-    "nota": "Cappello già tagliato dal bordo sinistro; conservare anche le lamelle dell’altro esemplare. Il riquadro non entra nei formati 16:7."
+    "nota": "Cappello già tagliato dal bordo sinistro; conservare anche le lamelle dell’altro esemplare. Il riquadro non entra nei formati 5:4, 4:3, 1:1, 16:7."
   },
   "assets/species/lactarius-deliciosus-ref.webp": {
     "punto": [
-      0.33,
-      0.59
+      0.43,
+      0.485
     ],
     "riquadro": [
       0.0,
-      0.31,
-      0.66,
-      0.87
+      0.09,
+      0.86,
+      0.88
     ],
     "soggetto": "fungo capovolto anteriore, lamelle e gambo",
     "dubbio": true,
-    "nota": "Cappello già tagliato dal bordo sinistro; conservare anche le lamelle dell’altro esemplare. Il riquadro non entra nei formati 16:7."
+    "nota": "Cappello già tagliato dal bordo sinistro; conservare anche le lamelle dell’altro esemplare. Il riquadro non entra nei formati 5:4, 4:3, 1:1, 16:7."
   },
   "assets/species/lactarius-deliciosus-inat1-hd.webp": {
     "punto": [
@@ -3342,11 +3342,11 @@
   },
   "assets/species/caloboletus-calopus-inat1-hd.webp": {
     "punto": [
-      0.575,
+      0.475,
       0.495
     ],
     "riquadro": [
-      0.3,
+      0.1,
       0.07,
       0.85,
       0.92
@@ -3357,11 +3357,11 @@
   },
   "assets/species/caloboletus-calopus-inat1.webp": {
     "punto": [
-      0.575,
+      0.475,
       0.495
     ],
     "riquadro": [
-      0.3,
+      0.1,
       0.07,
       0.85,
       0.92
@@ -9789,5 +9789,320 @@
     "soggetto": "foglia dentata del ciliegio",
     "dubbio": true,
     "nota": "Il riquadro non entra nei formati 5:4, 4:3, 1:1, 16:7."
+  },
+  "assets/trees/ciliegio-3.webp": {
+    "punto": [
+      0.51,
+      0.44
+    ],
+    "riquadro": [
+      0.11,
+      0.13,
+      0.91,
+      0.75
+    ],
+    "soggetto": "fiore del ciliegio visto da sotto",
+    "dubbio": true,
+    "nota": "Il riquadro non entra nei formati 3:4, 16:7."
+  },
+  "assets/trees/noce-1.webp": {
+    "punto": [
+      0.49,
+      0.535
+    ],
+    "riquadro": [
+      0.06,
+      0.08,
+      0.92,
+      0.99
+    ],
+    "soggetto": "foglia composta del noce",
+    "dubbio": true,
+    "nota": "Il riquadro non entra nei formati 3:4, 4:5, 1:1, 16:7."
+  },
+  "assets/trees/noce-2.webp": {
+    "punto": [
+      0.45,
+      0.425
+    ],
+    "riquadro": [
+      0.24,
+      0.19,
+      0.66,
+      0.66
+    ],
+    "soggetto": "fiori femminili del noce e apice del germoglio",
+    "dubbio": false,
+    "nota": "Il riquadro non entra nei formati 16:7."
+  },
+  "assets/trees/noce-3.webp": {
+    "punto": [
+      0.535,
+      0.53
+    ],
+    "riquadro": [
+      0.28,
+      0.09,
+      0.79,
+      0.97
+    ],
+    "soggetto": "amento e foglie del noce",
+    "dubbio": true,
+    "nota": "Il riquadro non entra nei formati 5:4, 3:4, 4:5, 4:3, 1:1, 16:7."
+  },
+  "assets/trees/tiglio-nostrano-1.webp": {
+    "punto": [
+      0.48,
+      0.41
+    ],
+    "riquadro": [
+      0.11,
+      0.07,
+      0.85,
+      0.75
+    ],
+    "soggetto": "tiglio nostrano, chioma e tronco",
+    "dubbio": true,
+    "nota": "Il riquadro non entra nei formati 5:4, 4:3, 16:7."
+  },
+  "assets/trees/tiglio-nostrano-2.webp": {
+    "punto": [
+      0.635,
+      0.345
+    ],
+    "riquadro": [
+      0.43,
+      0.14,
+      0.84,
+      0.55
+    ],
+    "soggetto": "foglia superiore destra del tiglio nostrano",
+    "dubbio": false,
+    "nota": ""
+  },
+  "assets/trees/tiglio-nostrano-3.webp": {
+    "punto": [
+      0.5,
+      0.495
+    ],
+    "riquadro": [
+      0.06,
+      0.02,
+      0.94,
+      0.97
+    ],
+    "soggetto": "tiglio nostrano, chioma e tronco",
+    "dubbio": true,
+    "nota": "Il riquadro non entra nei formati 5:4, 3:4, 4:5, 4:3, 1:1, 16:7."
+  },
+  "assets/species/tree-tiglio-nostrano-free1-hd.webp": {
+    "punto": [
+      0.515,
+      0.56
+    ],
+    "riquadro": [
+      0.08,
+      0.18,
+      0.95,
+      0.94
+    ],
+    "soggetto": "tiglio nostrano, fiori penduli, brattee e foglie",
+    "dubbio": true,
+    "nota": "Il riquadro non entra nei formati 3:4, 4:5, 4:3, 16:7."
+  },
+  "assets/species/tree-tiglio-nostrano-free1.webp": {
+    "punto": [
+      0.515,
+      0.56
+    ],
+    "riquadro": [
+      0.08,
+      0.18,
+      0.95,
+      0.94
+    ],
+    "soggetto": "tiglio nostrano, fiori penduli, brattee e foglie",
+    "dubbio": true,
+    "nota": "Il riquadro non entra nei formati 3:4, 4:5, 4:3, 16:7."
+  },
+  "assets/trees/agrifoglio-1.webp": {
+    "punto": [
+      0.53,
+      0.465
+    ],
+    "riquadro": [
+      0.18,
+      0.18,
+      0.88,
+      0.75
+    ],
+    "soggetto": "rametto di agrifoglio con bacche e foglie",
+    "dubbio": true,
+    "nota": "Il riquadro non entra nei formati 3:4, 4:5."
+  },
+  "assets/trees/agrifoglio-2.webp": {
+    "punto": [
+      0.505,
+      0.555
+    ],
+    "riquadro": [
+      0.07,
+      0.16,
+      0.94,
+      0.95
+    ],
+    "soggetto": "agrifoglio, foglie spinose e bacche",
+    "dubbio": true,
+    "nota": "Il riquadro non entra nei formati 3:4, 4:5, 1:1, 16:7."
+  },
+  "assets/trees/agrifoglio-3.webp": {
+    "punto": [
+      0.485,
+      0.495
+    ],
+    "riquadro": [
+      0.21,
+      0.09,
+      0.76,
+      0.9
+    ],
+    "soggetto": "foglia spinosa dell’agrifoglio",
+    "dubbio": false,
+    "nota": "Il riquadro non entra nei formati 16:7."
+  },
+  "assets/trees/robinia-1.webp": {
+    "punto": [
+      0.585,
+      0.595
+    ],
+    "riquadro": [
+      0.32,
+      0.24,
+      0.85,
+      0.95
+    ],
+    "soggetto": "racemi fioriti della robinia",
+    "dubbio": false,
+    "nota": "Il riquadro non entra nei formati 16:7."
+  },
+  "assets/trees/robinia-2.webp": {
+    "punto": [
+      0.53,
+      0.51
+    ],
+    "riquadro": [
+      0.22,
+      0.32,
+      0.84,
+      0.7
+    ],
+    "soggetto": "bocciolo fiorale della robinia",
+    "dubbio": false,
+    "nota": ""
+  },
+  "assets/trees/robinia-3.webp": {
+    "punto": [
+      0.48,
+      0.525
+    ],
+    "riquadro": [
+      0.18,
+      0.11,
+      0.78,
+      0.94
+    ],
+    "soggetto": "racemo fiorito della robinia",
+    "dubbio": true,
+    "nota": "Il riquadro non entra nei formati 5:4, 4:3, 16:7."
+  },
+  "assets/trees/olmo-montano-1.webp": {
+    "punto": [
+      0.54,
+      0.655
+    ],
+    "riquadro": [
+      0.22,
+      0.33,
+      0.86,
+      0.98
+    ],
+    "soggetto": "rametto di olmo montano con foglie",
+    "dubbio": true,
+    "nota": "Il riquadro non entra nei formati 5:4, 4:3, 16:7."
+  },
+  "assets/trees/olmo-montano-2.webp": {
+    "punto": [
+      0.505,
+      0.47
+    ],
+    "riquadro": [
+      0.27,
+      0.28,
+      0.74,
+      0.66
+    ],
+    "soggetto": "foglia centrale dell’olmo montano",
+    "dubbio": false,
+    "nota": "Il riquadro non entra nei formati 16:7."
+  },
+  "assets/trees/olmo-montano-3.webp": {
+    "punto": [
+      0.46,
+      0.52
+    ],
+    "riquadro": [
+      0.08,
+      0.1,
+      0.84,
+      0.94
+    ],
+    "soggetto": "foglia dell’olmo montano, margine e nervature",
+    "dubbio": true,
+    "nota": "Il riquadro non entra nei formati 5:4, 4:3, 1:1, 16:7."
+  },
+  "assets/trees/olmo-campestre-1.webp": {
+    "punto": [
+      0.45,
+      0.545
+    ],
+    "riquadro": [
+      0.11,
+      0.18,
+      0.79,
+      0.91
+    ],
+    "soggetto": "rametto e foglie dentate dell’olmo campestre",
+    "dubbio": true,
+    "nota": "Il riquadro non entra nei formati 5:4, 4:3, 16:7."
+  },
+  "assets/trees/olmo-campestre-2.webp": {
+    "punto": [
+      0.505,
+      0.5
+    ],
+    "riquadro": [
+      0.03,
+      0.0,
+      0.98,
+      1.0
+    ],
+    "soggetto": "corteccia dell’olmo campestre",
+    "dubbio": true,
+    "nota": "Tronco attraversa i bordi originali. Il riquadro non entra nei formati 5:4, 4:5, 4:3, 1:1, 16:7."
+  },
+  "assets/trees/olmo-campestre-3.webp": {
+    "punto": [
+      0.49,
+      0.485
+    ],
+    "riquadro": [
+      0.06,
+      0.14,
+      0.92,
+      0.83
+    ],
+    "soggetto": "gruppo di samare dell’olmo campestre",
+    "dubbio": true,
+    "nota": "Il riquadro non entra nei formati 5:4, 3:4, 4:5, 1:1, 16:7."
   }
 }
