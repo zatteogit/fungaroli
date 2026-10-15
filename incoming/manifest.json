@@ -8575,7 +8575,7 @@
       "colore": "rosa",
       "forma": "convesso"
     },
-    "qa": "Controllo visivo dei caratteri invarianti. PNG RGBA 1254×1254, griglia 3×3, colonna 3 vuota; controllo del canale alfa: tutte le fasce di bordo di 42 px (almeno 10%) trasparenti su ogni cella."
+    "qa": "Celle 0,3,6 rigenerate il 15/10 per ricostruire il contorno completo. Controllo visivo, margini alpha0 di almeno42px (10%) e analisi numerica del contorno sui quattro estremi superati."
   },
   {
     "file": "incoming/icone/varianti-05.png",
@@ -8595,7 +8595,7 @@
       "colore": "rosa",
       "forma": "convesso"
     },
-    "qa": "Controllo visivo dei caratteri invarianti. PNG RGBA 1254×1254, griglia 3×3, colonna 3 vuota; controllo del canale alfa: tutte le fasce di bordo di 42 px (almeno 10%) trasparenti su ogni cella."
+    "qa": "Celle 0,3,6 rigenerate il 15/10 per ricostruire il contorno completo. Controllo visivo, margini alpha0 di almeno42px (10%) e analisi numerica del contorno sui quattro estremi superati."
   },
   {
     "file": "incoming/icone/varianti-05.png",
@@ -8615,7 +8615,7 @@
       "colore": "bruno",
       "forma": "convesso"
     },
-    "qa": "Controllo visivo dei caratteri invarianti. PNG RGBA 1254×1254, griglia 3×3, colonna 3 vuota; controllo del canale alfa: tutte le fasce di bordo di 42 px (almeno 10%) trasparenti su ogni cella."
+    "qa": "Celle 0,3,6 rigenerate il 15/10 per ricostruire il contorno completo. Controllo visivo, margini alpha0 di almeno42px (10%) e analisi numerica del contorno sui quattro estremi superati."
   },
   {
     "file": "incoming/icone/varianti-05.png",
@@ -8635,7 +8635,7 @@
       "colore": "bruno",
       "forma": "convesso"
     },
-    "qa": "Controllo visivo dei caratteri invarianti. PNG RGBA 1254×1254, griglia 3×3, colonna 3 vuota; controllo del canale alfa: tutte le fasce di bordo di 42 px (almeno 10%) trasparenti su ogni cella."
+    "qa": "Celle 0,3,6 rigenerate il 15/10 per ricostruire il contorno completo. Controllo visivo, margini alpha0 di almeno42px (10%) e analisi numerica del contorno sui quattro estremi superati."
   },
   {
     "file": "incoming/icone/varianti-05.png",
@@ -8655,7 +8655,7 @@
       "colore": "bruno",
       "forma": "convesso"
     },
-    "qa": "Controllo visivo dei caratteri invarianti. PNG RGBA 1254×1254, griglia 3×3, colonna 3 vuota; controllo del canale alfa: tutte le fasce di bordo di 42 px (almeno 10%) trasparenti su ogni cella."
+    "qa": "Celle 0,3,6 rigenerate il 15/10 per ricostruire il contorno completo. Controllo visivo, margini alpha0 di almeno42px (10%) e analisi numerica del contorno sui quattro estremi superati."
   },
   {
     "file": "incoming/icone/varianti-05.png",
@@ -8675,7 +8675,7 @@
       "colore": "bruno",
       "forma": "convesso"
     },
-    "qa": "Controllo visivo dei caratteri invarianti. PNG RGBA 1254×1254, griglia 3×3, colonna 3 vuota; controllo del canale alfa: tutte le fasce di bordo di 42 px (almeno 10%) trasparenti su ogni cella."
+    "qa": "Celle 0,3,6 rigenerate il 15/10 per ricostruire il contorno completo. Controllo visivo, margini alpha0 di almeno42px (10%) e analisi numerica del contorno sui quattro estremi superati."
   },
   {
     "file": "incoming/icone/varianti-06.png",
