@@ -57,10 +57,6 @@ export function renderGlossary(box, selected = '', categories = ['Funghi','Piant
 // Fuori da quelle zone (mesi, date, misure, crediti, fonti, didascalie, tessere, pulsanti, titoli) niente link automatici.
 // Ambiti compatibili e regola delle parole corte: js/glossary-context.js.
 const NO_LINK='a,button,label,select,textarea,input,code,pre,script,style,svg,h1,h2,h3,h4,summary,figcaption,[contenteditable],[data-no-glossary],.trait-strip,.cmp-rows,.id-grid,.id-answers,.tag,.chip,.pill,.sp-card,.tile,.sci-params dt';
-// «ago» è anche agosto: un mese abbreviato accanto a un altro mese (giu · lug · ago, ago–ott) non è un termine
-const MON = '(?:gen|feb|mar|apr|mag|giu|lug|ago|set|ott|nov|dic)';
-const MON_WORD = new RegExp(`^${MON}$`, 'i'), MON_BEFORE = new RegExp(`\\b${MON}\\.?\\s*[·•,–-]?\\s*$`, 'i'), MON_AFTER = new RegExp(`^\\.?\\s*[·•,–-]?\\s*${MON}\\b`, 'i');
-export const isMonthAbbr = (text, start, word) => MON_WORD.test(word) && (MON_BEFORE.test(text.slice(0, start)) || MON_AFTER.test(text.slice(start + word.length)));
 export const glossaryScopeOf = zone => normalizeGlossaryScope(zone?.dataset.glossary || zone?.closest('[data-glossary-context]')?.dataset.glossaryContext);
 export function enhanceGlossary(root) {
   if (!root || !aliasRe) return;
@@ -86,7 +82,7 @@ export function enhanceGlossary(root) {
     for(const m of matches) {
       const start = m.index + m[1].length, word = m[2];
       const id = linkableGlossaryTerm(aliasMap,word,scope)?.id;
-      if(!id || seen.has(id) || (pos && start - pos < 24) || isMonthAbbr(node.textContent, start, word)) continue;
+      if(!id || seen.has(id) || (pos && start - pos < 24)) continue;
       seen.add(id);
       fragment.append(document.createTextNode(node.textContent.slice(pos,start)));
       const a = document.createElement('a'); a.className = 'glossary-link'; a.dataset.term = id; a.href = `#/glossario/${id}`; a.setAttribute('aria-haspopup','dialog'); a.textContent = word;
