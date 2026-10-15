@@ -171,7 +171,10 @@ const illus = (key, part, colour) => `<img class="ts-ill" src="${esc(ASSET(`asse
 // varianti del cappello (colori e forme descritti dalle fonti): cambiano insieme le tessere Cappello e Gambo.
 // Colore e forma non si combinano: scegliere un colore riporta la forma a quella del disegno, e viceversa.
 document.addEventListener('click', (e) => {
-  const b = e.target.closest?.('[data-ill-v]');
+  let b = e.target.closest?.('[data-ill-v]');
+  // toccare il disegno del cappello passa al colore successivo
+  const art = !b && e.target.closest?.('.trait-strip li:has(.ts-dots) .ts-art');
+  if (art) { const all = [...art.closest('li').querySelectorAll('.ts-dot')]; b = all[(all.findIndex((x) => x.getAttribute('aria-pressed') === 'true') + 1) % all.length]; }
   if (!b) return;
   const strip = b.closest('.trait-strip'), { illKey: key, illV: v, illDrawn: drawn } = b.dataset;
   strip.querySelectorAll('[data-ill-v]').forEach((x) => x.setAttribute('aria-pressed', String(x === b || (x.parentElement !== b.parentElement && x.dataset.illV === x.dataset.illDrawn))));
@@ -375,7 +378,8 @@ export function traitStrip(edibleId, t = refOf(edibleId)) {
     if (!g || g.values.length < 2) return '';
     return `<span class="ts-dots${dot ? '' : ' ts-forms'}" role="group" aria-label="${label}">${g.values.map((v) => {
       const name = esc(one(Q(q), v));
-      return `<button type="button" class="${dot ? 'ts-dot' : 'ts-form'}"${dot ? ` style="--c:${COLORS[v]?.[1] || '#999'}"` : ''} aria-pressed="${v === g.drawn}" ${dot ? `aria-label="${name}" title="${name}"` : ''} data-ill-key="${esc(t.key)}" data-ill-v="${esc(v)}" data-ill-drawn="${esc(g.drawn)}">${dot ? '' : name}</button>`;
+      // pillola con il colore e il suo nome: su telefono un pallino da solo è un bersaglio troppo piccolo e muto
+      return `<button type="button" class="${dot ? 'ts-dot ts-chip' : 'ts-form'}"${dot ? ` style="--c:${COLORS[v]?.[1] || '#999'}"` : ''} aria-pressed="${v === g.drawn}" data-ill-key="${esc(t.key)}" data-ill-v="${esc(v)}" data-ill-drawn="${esc(g.drawn)}">${name}</button>`;
     }).join('')}</span>`;
   };
   const dots = pick('colors', 'cap_color', 'Colori del cappello descritti dalle fonti', true) + pick('shapes', 'cap_shape', 'Forme del cappello descritte dalle fonti', false);

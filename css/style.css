@@ -3304,3 +3304,12 @@ summary .plan-crit { cursor: auto; -webkit-user-select: text; user-select: text;
 /* tessera del cappello con varianti di colore e forma: due colonne, così pallini e forme non vengono tagliati */
 .trait-strip li:has(.ts-dots) { grid-column: span 2; }
 .ts-dots { flex-wrap: wrap; }
+/* varianti di colore: pillole con nome (bersaglio di almeno 36 px su telefono); il disegno si tocca per cambiare colore */
+.ts-dots { gap: 6px; margin: 6px 0 4px; }
+.ts-dot.ts-chip { width: auto; height: auto; min-height: 36px; padding: 4px 12px 4px 8px; border: 1px solid var(--hair); border-radius: 999px; display: inline-flex; align-items: center; gap: 6px; font: inherit; font-size: 12.5px; color: var(--text-2); background: none; }
+.ts-dot.ts-chip::before { width: 14px; height: 14px; flex: none; }
+.ts-dot.ts-chip[aria-pressed="true"] { border-color: var(--text); color: var(--text); font-weight: 600; background: var(--surface-2); }
+.ts-dot.ts-chip[aria-pressed="true"]::before { box-shadow: inset 0 0 0 1px rgb(0 0 0 / .18); }
+.ts-form { min-height: 36px; padding: 4px 12px; }
+.trait-strip li:has(.ts-dots) .ts-art { cursor: pointer; }
+.ts-form[aria-pressed="true"] { background: var(--surface-2); color: var(--text); border-color: var(--text); font-weight: 600; }
