@@ -169,3 +169,5 @@ Schema: `data/recognize-trees.json` su `claude/brave-tesla-wu0a2b`. 48 valori pr
 | File | Valori (cella: chiave/valore) | Stato | Controllo / limiti |
 |---|---|---|---|
 | icone-alberi/tavola-alberi-01.png | 0: leaf_kind/aghi; 1: leaf_kind/squame; 2: leaf_kind/foglia_larga; 3: needle_arrangement/singoli; 4: needle_arrangement/a_coppie; 5: needle_arrangement/a_fascetti; 6: needle_arrangement/a_ciuffi; 7: needle_length/corti; 8: needle_length/lunghi | ok | Aghi singoli senza guaina comune; coppie con attacco condiviso per due aghi; fascetti di cinque; rosette numerose. Aghi lunghi circa doppi, rametto uguale. Alpha reale verificato. |
+
+| icone/varianti-02.png | amanita-phalloides: colore:bruno, forma:emisferico, forma:piano | ok | QA visiva completata; 6 icone, alpha reale, terza colonna vuota. Base: verde, convesso. |
