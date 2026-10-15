@@ -171,7 +171,10 @@ const illus = (key, part, colour) => `<img class="ts-ill" src="${esc(ASSET(`asse
 // varianti del cappello (colori e forme descritti dalle fonti): cambiano insieme le tessere Cappello e Gambo.
 // Colore e forma non si combinano: scegliere un colore riporta la forma a quella del disegno, e viceversa.
 document.addEventListener('click', (e) => {
-  const b = e.target.closest?.('[data-ill-v]');
+  let b = e.target.closest?.('[data-ill-v]');
+  // toccare il disegno del cappello passa al colore successivo
+  const art = !b && e.target.closest?.('.trait-strip li:has(.ts-dots) .ts-art');
+  if (art) { const all = [...art.closest('li').querySelectorAll('.ts-dot')]; b = all[(all.findIndex((x) => x.getAttribute('aria-pressed') === 'true') + 1) % all.length]; }
   if (!b) return;
   const strip = b.closest('.trait-strip'), { illKey: key, illV: v, illDrawn: drawn } = b.dataset;
   strip.querySelectorAll('[data-ill-v]').forEach((x) => x.setAttribute('aria-pressed', String(x === b || (x.parentElement !== b.parentElement && x.dataset.illV === x.dataset.illDrawn))));
@@ -375,7 +378,8 @@ export function traitStrip(edibleId, t = refOf(edibleId)) {
     if (!g || g.values.length < 2) return '';
     return `<span class="ts-dots${dot ? '' : ' ts-forms'}" role="group" aria-label="${label}">${g.values.map((v) => {
       const name = esc(one(Q(q), v));
-      return `<button type="button" class="${dot ? 'ts-dot' : 'ts-form'}"${dot ? ` style="--c:${COLORS[v]?.[1] || '#999'}"` : ''} aria-pressed="${v === g.drawn}" ${dot ? `aria-label="${name}" title="${name}"` : ''} data-ill-key="${esc(t.key)}" data-ill-v="${esc(v)}" data-ill-drawn="${esc(g.drawn)}">${dot ? '' : name}</button>`;
+      // pillola con il colore e il suo nome: su telefono un pallino da solo è un bersaglio troppo piccolo e muto
+      return `<button type="button" class="${dot ? 'ts-dot ts-chip' : 'ts-form'}"${dot ? ` style="--c:${COLORS[v]?.[1] || '#999'}"` : ''} aria-pressed="${v === g.drawn}" data-ill-key="${esc(t.key)}" data-ill-v="${esc(v)}" data-ill-drawn="${esc(g.drawn)}">${name}</button>`;
     }).join('')}</span>`;
   };
   const dots = pick('colors', 'cap_color', 'Colori del cappello descritti dalle fonti', true) + pick('shapes', 'cap_shape', 'Forme del cappello descritte dalle fonti', false);
@@ -599,6 +603,8 @@ export function renderTaxonPage(box, key) {
 export function renderTaxonView(box, t, { photos = null, habitatText = '', extra = '' } = {}) {
   box.dataset.glossaryContext='Funghi';
   const ph = photos || photosOf(t), tox = esc(t.toxicity || ''), toxL = esc(t.tox_label || t.toxicity || '');
+  // per una specie senza usi alimentari «non confonderlo con» suonerebbe come un invito a raccoglierla
+  const lookTitle = /^commestibile/.test(t.toxicity || '') ? 'Non confonderlo con' : 'Specie simili';
   const look = (t.lookalike_of || []).map((id) => ({ id, o: TAXA.find((x) => x.edible_id === id && !x.lookalike_of?.length) })).filter((x) => x.o).sort((x, y) => similarity(y.o, t) - similarity(x.o, t));
   const months = t.traits?.season?.length ? monthsTxt(t.traits.season) : '';
   const habitat = [].concat(t.traits?.habitat || []).map((v) => optLabel(QK('habitat'), v));
@@ -615,15 +621,15 @@ export function renderTaxonView(box, t, { photos = null, habitatText = '', extra
       ${t.field_rules?.length ? attentionBox(t.field_rules) + (t.caution ? `<p class="id-why"><b>Cautele della specie:</b> ${esc(t.caution)}</p>` : '') : attentionBox(t.caution ? [{ text: t.caution, severity: 'importante' }] : [])}
       ${t.traits && Object.keys(t.traits).some((k) => k !== 'season') ? `<h3>Caratteri da confrontare</h3>${traitStrip(null, t)}` : '<p class="notice">Caratteri di confronto in preparazione: per ora la scheda riporta ambiente, stagione e cautele dalle fonti.</p>'}
       ${t.check_before_picking?.length ? `<p class="small muted checks-tip">Caratteri descritti per la specie: confrontarli non identifica un esemplare né ne certifica la commestibilità.</p><ol class="keys">${t.check_before_picking.map((x) => `<li><span class="key-text">${esc(x)}</span></li>`).join('')}</ol>` : ''}
-      ${look.length ? `<h3>Non confonderlo con</h3><ul class="tx-look">${look.map(({ id, o }) => { const op = photoOf(o); return `<li>
-        <a class="tx-look-main" data-entity href="#/specie/${esc(id)}">${op ? `<img data-src="${ASSET(op.thumb || op.file)}" alt="" loading="lazy" decoding="async">` : ''}<span><b>${esc(o.name)}</b><i>${esc(o.latin)}</i></span></a>
+      ${look.length ? `<h3>${lookTitle}</h3><ul class="tx-look">${look.map(({ id, o }) => { const op = photoOf(o); return `<li>
+        <a class="tx-look-main" data-entity href="#/specie/${esc(id)}">${op ? `<img data-src="${ASSET(op.thumb || op.file)}" alt="" loading="lazy" decoding="async">` : ''}<span><b>${esc(o.name)}</b><i>${esc(o.latin)}</i>${o.toxicity ? `<small class="tx-c tox-${esc(o.toxicity.replace(/\s/g, '-'))}"><span class="tox">${esc(o.tox_label || o.toxicity)}</span></small>` : ''}</span></a>
         <a class="tx-cmp-btn" href="#/riconosci/confronta/${esc(t.key)}/${esc(o.key)}" aria-label="Confronta con ${esc(o.name)}, carattere per carattere">Confronta</a></li>`; }).join('')}</ul>` : ''}
       ${(() => { // sosia pericolosi segnalati dalle fonti per le schede del catalogo (campo dangerous_lookalikes)
         // e nel verso opposto: dalla scheda del tossico, i commestibili che lo indicano come sosia
         const back = TAXA.filter((x) => x !== t && (x.dangerous_lookalikes || []).includes(t.key) && !look.some((l) => l.o === x));
         const ds = [...(t.dangerous_lookalikes || []).map((k) => TAXA.find((x) => x.key === k)).filter(Boolean), ...back.filter((x) => !(t.dangerous_lookalikes || []).includes(x.key))];
         // se la sezione c'è già (sosia del modello), le schede si aggiungono sotto lo stesso titolo
-        return ds.length ? `${look.length ? '' : '<h3>Non confonderlo con</h3>'}<ul class="tx-look${look.length ? ' tx-look-more' : ''}">${ds.map((o) => { const op = photoOf(o); return `<li><a class="tx-look-main" data-entity href="#/fungo/${esc(o.key)}">${op ? `<img data-src="${ASSET(op.thumb || op.file)}" alt="" loading="lazy" decoding="async">` : ''}<span><b>${esc(o.name || o.latin)}</b><i>${esc(o.latin)}</i><small class="tx-c tox-${esc((o.toxicity || '').replace(/\s/g, '-'))}"><span class="tox">${esc(o.tox_label || o.toxicity || '')}</span></small></span></a></li>`; }).join('')}</ul>` : '';
+        return ds.length ? `${look.length ? '' : `<h3>${lookTitle}</h3>`}<ul class="tx-look${look.length ? ' tx-look-more' : ''}">${ds.map((o) => { const op = photoOf(o); return `<li><a class="tx-look-main" data-entity href="#/fungo/${esc(o.key)}">${op ? `<img data-src="${ASSET(op.thumb || op.file)}" alt="" loading="lazy" decoding="async">` : ''}<span><b>${esc(o.name || o.latin)}</b><i>${esc(o.latin)}</i><small class="tx-c tox-${esc((o.toxicity || '').replace(/\s/g, '-'))}"><span class="tox">${esc(o.tox_label || o.toxicity || '')}</span></small></span></a></li>`; }).join('')}</ul>` : '';
       })()}
       <h3>Dove e quando</h3>
       <dl class="sci-params">
