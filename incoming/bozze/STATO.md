@@ -218,3 +218,5 @@ Ordine aggiornato da Matteo il 15/10: completare prima tutte le varianti di colo
 | icone/varianti-16.png | inocybe: colore:crema; inocybe: colore:bianco; inocybe: colore:giallo | ok | QA visiva completata; 6 icone, alpha reale, terza colonna vuota. Basi nel manifest. |
 
 | icone/varianti-17.png | inocybe: colore:grigio; inocybe: colore:violetto; inocybe: colore:rosa | ok | QA visiva completata; 6 icone, alpha reale, terza colonna vuota. Basi nel manifest. |
+
+| icone/varianti-18.png | clitocybe-rivulosa: colore:crema; clitocybe-rivulosa: colore:bruno; tricholoma-pardinum: colore:bruno | ok | QA visiva completata; 6 icone, alpha reale, terza colonna vuota. Basi nel manifest. |
