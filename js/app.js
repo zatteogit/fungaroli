@@ -234,6 +234,8 @@ async function init() {
     addNotebookReference(body,kind,id,s.name);
     return s.name;
   }});
+  // l'avviso nel riassunto di una sezione resta un avviso: toccarlo non apre la sezione (sembrerebbe un approfondimento del pericolo)
+  document.addEventListener('click',e=>{if(e.target.closest('summary .plan-crit')&&!e.target.closest('a,button'))e.preventDefault();});
   document.addEventListener('click',e=>{const b=e.target.closest('[data-species]'),p=b&&botanicalById(b.dataset.species);if(p){e.preventDefault();e.stopImmediatePropagation();openEntitySheet(p.href,b);}},true);
   renderTreeGrid($('#tree-grid'));
   treesData = trj; idData = idj;

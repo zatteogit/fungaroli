@@ -3274,3 +3274,5 @@ img[data-image-state="ready"][data-image-fast] { animation: none; }
 .is-standalone .appbar:has(.brand:not([hidden])) .appbar-title { display: none; }
 /* pulsante bianco della copertina: niente ombra del testo ereditata dal velo sulla foto */
 .cover-body .cover-cta, .cover-body .cover-cta * { text-shadow: none; }
+/* avviso dentro il riassunto di una sezione: non è parte del comando che apre la sezione */
+summary .plan-crit { cursor: auto; -webkit-user-select: text; user-select: text; }
