@@ -3313,3 +3313,7 @@ summary .plan-crit { cursor: auto; -webkit-user-select: text; user-select: text;
 .ts-form { min-height: 36px; padding: 4px 12px; }
 .trait-strip li:has(.ts-dots) .ts-art { cursor: pointer; }
 .ts-form[aria-pressed="true"] { background: var(--surface-2); color: var(--text); border-color: var(--text); font-weight: 600; }
+/* chiave guidata: termine botanico in grassetto, spiegazione semplice sotto */
+.id-opt-l .gk-term { display: block; font-weight: 700; }
+.id-opt-l .gk-expl { display: block; font-size: 12px; font-weight: 400; color: var(--text-2); line-height: 1.3; margin-top: 2px; }
+.trait-strip .ts-v .glossary-link { color: inherit; text-decoration: underline; text-decoration-color: color-mix(in srgb, currentColor 35%, transparent); text-underline-offset: 3px; }

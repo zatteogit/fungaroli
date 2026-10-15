@@ -50,6 +50,14 @@ export function nextQuestion(data, list, ans) {
 }
 
 const label = (q, v) => q.values.find((x) => x.id === v)?.label || v;
+// termine botanico del valore (Margine: «Intero»); senza termine, la prima parte dell'etichetta
+const termOf = (q, v) => q.values.find((x) => x.id === v)?.term || shortLabel(q, v);
+const glossOf = (q, v) => q.values.find((x) => x.id === v)?.gloss || '';
+// termine con il collegamento alla sua voce del glossario, che lo spiega
+const termHtml = (q, v, lower = false) => {
+  const t = lower ? termOf(q, v).replace(/^\p{Lu}(?!\p{Lu})/u, (c) => c.toLowerCase()) : termOf(q, v), g = glossOf(q, v);
+  return g ? `<a class="glossary-link" data-term="${esc(g)}" href="#/glossario/${esc(g)}" aria-haspopup="dialog">${esc(t)}</a>` : esc(t);
+};
 // nelle risposte basta la prima parte dell'etichetta («tanti fiorellini su un piano, a ombrella…» → «tanti fiorellini su un piano»)
 const shortLabel = (q, v) => label(q, v).split(/,\s|\s\(/)[0];
 const X_IC = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7l10 10M17 7 7 17"/></svg>';
@@ -71,7 +79,7 @@ export function traitTilesHtml(data, traits, icons = null) {
     .map(([k, q]) => {
       const vals = [].concat(traits[k]), srcs = vals.map((v) => iconSrc(icons, k, v)).filter(Boolean).slice(0, 2);
       const art = srcs.length ? `<span class="ts-art${srcs.length > 1 ? ' ts-art-2' : ''}" aria-hidden="true">${srcs.map((s) => ill(s, srcs.length > 1 ? 44 : 64)).join('')}</span>` : '';
-      return `<li>${art}<span class="ts-k" data-no-glossary>${esc(q.short)}</span><span class="ts-v">${esc(vals.map((v) => shortLabel(q, v)).join(' o '))}</span></li>`;
+      return `<li>${art}<span class="ts-k" data-no-glossary>${esc(q.short)}</span><span class="ts-v">${vals.map((v, i) => termHtml(q, v, i > 0)).join(' o ')}</span></li>`;
     });
   const special = data.schema.special && [].concat(traits.special || []).map((v) => label(data.schema.special, v));
   return tiles.length ? `<ul class="trait-strip ${icons ? 'trait-strip-ill' : 'trait-strip-txt'}" aria-label="Caratteri principali">${tiles.join('')}</ul>${special?.length ? `<p class="small"><b>Segni particolari:</b> ${esc(special.join(' · '))}</p>` : ''}` : '';
@@ -88,17 +96,20 @@ export async function renderGuidedKey(box, mode, { items, thumb, note = '' }) {
   const list = candidatesFor(data, pool, st.ans);
   const nk = st.editing ? null : nextQuestion(data, list, st.ans);
   const answered = Object.keys(st.ans).filter((k) => data.schema[k]);
+  // termine botanico in grassetto, sotto la spiegazione in parole semplici (se dice qualcosa in più)
+  const optLabelHtml = (v) => v.term && v.term.toLowerCase() !== v.label.toLowerCase()
+    ? `<span class="id-opt-l"><b class="gk-term">${esc(v.term)}</b><span class="gk-expl">${esc(v.label)}</span></span>` : `<span class="id-opt-l">${esc(v.label)}</span>`;
   const qCard = (k, n) => {
     const q = data.schema[k];
     return `<section class="id-q id-q-big gk-q">${n ? `<p class="eyebrow">Domanda ${n}</p>` : ''}<h3>${esc(q.question)}</h3><p class="small muted">${esc(q.short)}</p>
-      ${(() => { const withArt = q.values.some((v) => iconSrc(icons, k, v.id)); return `<div class="id-grid id-grid-txt${withArt ? ' gk-grid-ill' : ''}">${q.values.map((v) => `<button type="button" class="id-opt" data-k="${esc(k)}" data-v="${esc(v.id)}" aria-pressed="${st.ans[k] === v.id}">${withArt ? `<span class="id-art" aria-hidden="true">${iconSrc(icons, k, v.id) ? ill(iconSrc(icons, k, v.id), 56) : ''}</span>` : ''}<span class="id-opt-l">${esc(v.label)}</span></button>`).join('')}`; })()}
+      ${(() => { const withArt = q.values.some((v) => iconSrc(icons, k, v.id)); return `<div class="id-grid id-grid-txt${withArt ? ' gk-grid-ill' : ''}">${q.values.map((v) => `<button type="button" class="id-opt" data-k="${esc(k)}" data-v="${esc(v.id)}" aria-pressed="${st.ans[k] === v.id}">${withArt ? `<span class="id-art" aria-hidden="true">${iconSrc(icons, k, v.id) ? ill(iconSrc(icons, k, v.id), 56) : ''}</span>` : ''}${optLabelHtml(v)}</button>`).join('')}`; })()}
       <button type="button" class="id-opt id-opt-dk" data-skip="${esc(k)}"><span class="id-opt-l">non lo vedo</span></button></div></section>`;
   };
   const row = (k) => {
     const q = data.schema[k], v = st.ans[k];
     if (st.editing === k) return `</ul>${qCard(k, 0)}<ul class="id-answers">`;
     return `<li class="id-row${v == null ? ' skipped' : ''}"><button type="button" class="id-row-main" data-edit="${esc(k)}" aria-label="${esc(q.short)}: ${esc(v == null ? 'non lo vedo' : label(q, v))}. Cambia">
-      <span class="id-row-k">${esc(q.short)}</span><span class="id-row-v">${v != null && iconSrc(icons, k, v) ? ill(iconSrc(icons, k, v), 28, 'ts-ill gk-row-ill') : ''}${esc(v == null ? 'non lo vedo' : shortLabel(q, v))}</span><span class="id-row-edit" aria-hidden="true">${MORE_IC}</span></button>
+      <span class="id-row-k">${esc(q.short)}</span><span class="id-row-v">${v != null && iconSrc(icons, k, v) ? ill(iconSrc(icons, k, v), 28, 'ts-ill gk-row-ill') : ''}${esc(v == null ? 'non lo vedo' : termOf(q, v))}</span><span class="id-row-edit" aria-hidden="true">${MORE_IC}</span></button>
       <button type="button" class="id-row-x" data-clear="${esc(k)}" aria-label="Togli la risposta">${X_IC}</button></li>`;
   };
   const head = answered.length ? `<div class="id-answers-head"><span>${answered.length === 1 ? 'La tua risposta' : `Le tue ${answered.length} risposte`}</span><button type="button" class="af-add" data-gk-reset>Ricomincia</button></div><ul class="id-answers">${answered.map(row).join('')}</ul>`.replaceAll('<ul class="id-answers"></ul>', '') : '';

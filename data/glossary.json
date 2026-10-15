@@ -777,7 +777,9 @@
       "aliases": [
         "lobo",
         "lobata",
-        "lobate"
+        "lobate",
+        "lobato",
+        "lobati"
       ],
       "definition": "Parti sporgenti del margine di una foglia, separate da incavi più o meno profondi.",
       "observe": "Conta i lobi e guarda forma e profondità degli incavi; nelle querce una singola foglia può essere poco rappresentativa.",
@@ -1051,6 +1053,2101 @@
         {
           "title": "Treccani · Pollone",
           "url": "https://www.treccani.it/vocabolario/pollone/"
+        }
+      ]
+    },
+    {
+      "id": "foglie-squamiformi",
+      "term": "Foglie squamiformi",
+      "category": "Alberi",
+      "aliases": [
+        "squamiforme",
+        "squamiformi",
+        "foglie a squama"
+      ],
+      "contexts": [
+        "Piante",
+        "Alberi"
+      ],
+      "definition": "Foglie piccole e piatte, simili a squame, appoggiate strettamente al rametto e sovrapposte.",
+      "observe": "Nel cipresso il rametto sembra rivestito di scaglie verdi: non vedi aghi liberi né foglie larghe.",
+      "related": [
+        "aghi",
+        "conifere"
+      ],
+      "sources": [
+        {
+          "title": "Treccani · Squamiforme",
+          "url": "https://www.treccani.it/vocabolario/squamiforme/"
+        },
+        {
+          "title": "Wikipedia · Foglia",
+          "url": "https://it.wikipedia.org/wiki/Foglia"
+        }
+      ]
+    },
+    {
+      "id": "aghi-binati",
+      "term": "Aghi binati",
+      "category": "Alberi",
+      "aliases": [
+        "binati",
+        "binato",
+        "binate",
+        "aghi a coppie"
+      ],
+      "contexts": [
+        "Piante",
+        "Alberi"
+      ],
+      "definition": "Aghi che nascono a due a due dallo stesso punto del rametto.",
+      "observe": "Stacca un ciuffetto da un ramo basso e conta gli aghi: due insieme sono tipici dei pini del catalogo.",
+      "related": [
+        "aghi",
+        "brachiblasto"
+      ],
+      "sources": [
+        {
+          "title": "Treccani · Binato",
+          "url": "https://www.treccani.it/vocabolario/binato/"
+        },
+        {
+          "title": "Wikipedia · Pinus",
+          "url": "https://it.wikipedia.org/wiki/Pinus"
+        }
+      ]
+    },
+    {
+      "id": "brachiblasto",
+      "term": "Brachiblasto",
+      "category": "Alberi",
+      "aliases": [
+        "brachiblasti",
+        "su brachiblasti"
+      ],
+      "contexts": [
+        "Piante",
+        "Alberi"
+      ],
+      "definition": "Rametto molto corto, con i nodi ravvicinati. Le foglie che porta sembrano uscire tutte dallo stesso punto, a ciuffo.",
+      "observe": "Nel larice guarda i rami di più anni: gli aghi escono a ciuffi da piccoli cuscinetti. Sui getti lunghi dell’anno sono invece singoli.",
+      "related": [
+        "aghi",
+        "aghi-binati"
+      ],
+      "sources": [
+        {
+          "title": "Treccani · Brachiblasto",
+          "url": "https://www.treccani.it/vocabolario/brachiblasto/"
+        },
+        {
+          "title": "Wikipedia · Brachiblasto",
+          "url": "https://it.wikipedia.org/wiki/Brachiblasto"
+        },
+        {
+          "title": "Wikipedia · Larix decidua",
+          "url": "https://it.wikipedia.org/wiki/Larix_decidua"
+        }
+      ]
+    },
+    {
+      "id": "foglie-marcescenti",
+      "term": "Foglie marcescenti",
+      "category": "Alberi",
+      "aliases": [
+        "marcescente",
+        "marcescenti"
+      ],
+      "contexts": [
+        "Piante",
+        "Alberi"
+      ],
+      "definition": "Foglie che seccano ma restano attaccate ai rami anche per tutto l’inverno, invece di cadere subito.",
+      "observe": "Roverella e giovani faggi tengono spesso le foglie secche fino alla primavera: non sono sempreverdi.",
+      "related": [
+        "caducifoglia",
+        "sempreverde"
+      ],
+      "sources": [
+        {
+          "title": "Treccani · Marcescente",
+          "url": "https://www.treccani.it/vocabolario/marcescente/"
+        }
+      ]
+    },
+    {
+      "id": "fillotassi",
+      "term": "Fillotassi",
+      "category": "Piante",
+      "aliases": [
+        "disposizione delle foglie"
+      ],
+      "contexts": [
+        "Piante",
+        "Alberi"
+      ],
+      "definition": "Il modo in cui le foglie sono disposte lungo il fusto o il rametto. Di solito è costante nella stessa specie.",
+      "observe": "Guarda un rametto giovane e conta quante foglie nascono da ogni nodo: una, due o più.",
+      "related": [
+        "foglie-alterne",
+        "foglie-opposte",
+        "foglie-verticillate",
+        "rosetta-basale"
+      ],
+      "sources": [
+        {
+          "title": "Treccani · Fillotassi",
+          "url": "https://www.treccani.it/vocabolario/fillotassi/"
+        },
+        {
+          "title": "Wikipedia · Fillotassi",
+          "url": "https://it.wikipedia.org/wiki/Fillotassi"
+        }
+      ]
+    },
+    {
+      "id": "foglie-alterne",
+      "term": "Foglie alterne",
+      "category": "Piante",
+      "aliases": [
+        "foglia alterna"
+      ],
+      "contexts": [
+        "Piante",
+        "Alberi"
+      ],
+      "definition": "Una sola foglia per nodo. Le foglie successive nascono a livelli diversi, spesso a zig-zag o a spirale.",
+      "observe": "Segui il rametto dalla punta verso la base: nessuna foglia ha una compagna alla stessa altezza.",
+      "related": [
+        "fillotassi",
+        "foglie-opposte"
+      ],
+      "sources": [
+        {
+          "title": "Treccani · Alterno",
+          "url": "https://www.treccani.it/vocabolario/alterno/"
+        },
+        {
+          "title": "Wikipedia · Foglia",
+          "url": "https://it.wikipedia.org/wiki/Foglia"
+        }
+      ]
+    },
+    {
+      "id": "foglie-opposte",
+      "term": "Foglie opposte",
+      "category": "Piante",
+      "aliases": [
+        "foglia opposta"
+      ],
+      "contexts": [
+        "Piante",
+        "Alberi"
+      ],
+      "definition": "Due foglie per nodo, una di fronte all’altra. Spesso ogni coppia è ruotata rispetto alla precedente.",
+      "observe": "Aceri, frassini e mente hanno foglie opposte. D’inverno guarda le gemme: anche loro sono a coppie.",
+      "related": [
+        "fillotassi",
+        "foglie-alterne",
+        "foglie-verticillate"
+      ],
+      "sources": [
+        {
+          "title": "Treccani · Opposto",
+          "url": "https://www.treccani.it/vocabolario/opposto/"
+        },
+        {
+          "title": "Wikipedia · Foglia",
+          "url": "https://it.wikipedia.org/wiki/Foglia"
+        }
+      ]
+    },
+    {
+      "id": "foglie-verticillate",
+      "term": "Foglie verticillate",
+      "category": "Piante",
+      "aliases": [
+        "verticillate",
+        "verticillata",
+        "verticillo",
+        "verticilli"
+      ],
+      "contexts": [
+        "Piante",
+        "Alberi"
+      ],
+      "definition": "Tre o più foglie che nascono dallo stesso nodo, disposte a raggiera intorno al fusto.",
+      "observe": "Nel ginepro gli aghi sono a tre a tre; nel giglio martagone le foglie formano anelli lungo il fusto.",
+      "related": [
+        "fillotassi",
+        "foglie-opposte"
+      ],
+      "sources": [
+        {
+          "title": "Treccani · Verticillo",
+          "url": "https://www.treccani.it/vocabolario/verticillo/"
+        },
+        {
+          "title": "Wikipedia · Foglia",
+          "url": "https://it.wikipedia.org/wiki/Foglia"
+        }
+      ]
+    },
+    {
+      "id": "rosetta-basale",
+      "term": "Rosetta basale",
+      "category": "Piante",
+      "aliases": [
+        "rosette",
+        "a rosetta",
+        "foglie radicali"
+      ],
+      "contexts": [
+        "Piante",
+        "Alberi"
+      ],
+      "definition": "Gruppo di foglie che nascono tutte alla base della pianta, aperte a raggiera sul terreno.",
+      "observe": "Nel tarassaco e nella primula le foglie partono quasi tutte da terra; il fusto fiorito ne ha poche o nessuna.",
+      "related": [
+        "fillotassi",
+        "acaule"
+      ],
+      "sources": [
+        {
+          "title": "Wikipedia · Glossario botanico",
+          "url": "https://it.wikipedia.org/wiki/Glossario_botanico"
+        },
+        {
+          "title": "Wikipedia · Foglia",
+          "url": "https://it.wikipedia.org/wiki/Foglia"
+        }
+      ]
+    },
+    {
+      "id": "lamina",
+      "term": "Lamina",
+      "category": "Piante",
+      "aliases": [
+        "lamine",
+        "lamina fogliare",
+        "lembo fogliare"
+      ],
+      "contexts": [
+        "Piante",
+        "Alberi"
+      ],
+      "definition": "La parte piatta e allargata della foglia, sostenuta dal picciolo.",
+      "observe": "Forma, base e margine si osservano sulla lamina di foglie adulte e intere, non su una sola foglia.",
+      "related": [
+        "margine-intero",
+        "foglia-composta"
+      ],
+      "sources": [
+        {
+          "title": "Wikipedia · Foglia",
+          "url": "https://it.wikipedia.org/wiki/Foglia"
+        },
+        {
+          "title": "Wikipedia · Glossario botanico",
+          "url": "https://it.wikipedia.org/wiki/Glossario_botanico"
+        },
+        {
+          "title": "Treccani · Picciolo",
+          "url": "https://www.treccani.it/vocabolario/picciolo/"
+        }
+      ]
+    },
+    {
+      "id": "foglia-composta",
+      "term": "Foglia composta",
+      "category": "Piante",
+      "aliases": [
+        "foglie composte",
+        "pennato-composta",
+        "pennato-composte",
+        "palmato-composta",
+        "palmato-composte"
+      ],
+      "contexts": [
+        "Piante",
+        "Alberi"
+      ],
+      "definition": "Foglia divisa in più foglioline separate, portate da un unico picciolo. Se le foglioline sono in fila lungo un asse è pennato-composta; se partono tutte da un punto, a ventaglio, è palmato-composta.",
+      "observe": "Cerca la gemma: si trova alla base di tutta la foglia, non alla base delle singole foglioline.",
+      "related": [
+        "lamina",
+        "pennatosetta"
+      ],
+      "sources": [
+        {
+          "title": "Wikipedia · Glossario botanico",
+          "url": "https://it.wikipedia.org/wiki/Glossario_botanico"
+        },
+        {
+          "title": "Wikipedia · Foglia",
+          "url": "https://it.wikipedia.org/wiki/Foglia"
+        }
+      ]
+    },
+    {
+      "id": "margine-intero",
+      "term": "Margine intero",
+      "category": "Piante",
+      "aliases": [
+        "foglia intera",
+        "foglie intere",
+        "margine liscio"
+      ],
+      "contexts": [
+        "Piante",
+        "Alberi"
+      ],
+      "definition": "Bordo della foglia senza denti né incisioni. Può essere dritto o leggermente ondulato.",
+      "observe": "Guarda il bordo di più foglie adulte: niente dentini, anche se il bordo ondeggia.",
+      "related": [
+        "seghettato",
+        "lobi"
+      ],
+      "sources": [
+        {
+          "title": "Wikipedia · Foglia",
+          "url": "https://it.wikipedia.org/wiki/Foglia"
+        }
+      ]
+    },
+    {
+      "id": "lanceolata",
+      "term": "Lanceolata",
+      "category": "Piante",
+      "aliases": [
+        "lanceolato",
+        "lanceolate",
+        "lanceolati"
+      ],
+      "contexts": [
+        "Piante",
+        "Alberi"
+      ],
+      "definition": "Foglia stretta e allungata, più larga verso il centro e appuntita alle due estremità, come la punta di una lancia.",
+      "observe": "È molto più lunga che larga: nel salice e nell’olivo la differenza si vede subito.",
+      "related": [
+        "ovata",
+        "lamina"
+      ],
+      "sources": [
+        {
+          "title": "Treccani · Lanceolato",
+          "url": "https://www.treccani.it/vocabolario/lanceolato/"
+        },
+        {
+          "title": "Wikipedia · Glossario botanico",
+          "url": "https://it.wikipedia.org/wiki/Glossario_botanico"
+        }
+      ]
+    },
+    {
+      "id": "ovata",
+      "term": "Ovata",
+      "category": "Piante",
+      "aliases": [
+        "ovato",
+        "ovate",
+        "ovati"
+      ],
+      "contexts": [
+        "Piante",
+        "Alberi"
+      ],
+      "definition": "Foglia con il contorno di un uovo: più larga nella metà vicina al picciolo. Se è più larga al centro si dice ellittica.",
+      "observe": "Immagina di piegare la foglia a metà per traverso: in una foglia ovata la metà verso il picciolo è la più larga.",
+      "related": [
+        "lanceolata",
+        "lamina"
+      ],
+      "sources": [
+        {
+          "title": "Treccani · Ovato",
+          "url": "https://www.treccani.it/vocabolario/ovato/"
+        },
+        {
+          "title": "Wikipedia · Foglia",
+          "url": "https://it.wikipedia.org/wiki/Foglia"
+        }
+      ]
+    },
+    {
+      "id": "orbicolare",
+      "term": "Orbicolare",
+      "category": "Piante",
+      "aliases": [
+        "orbicolari"
+      ],
+      "contexts": [
+        "Piante",
+        "Alberi"
+      ],
+      "definition": "Foglia dal contorno quasi rotondo, larga circa quanto è lunga.",
+      "observe": "Confronta lunghezza e larghezza su più foglie: nel nocciolo e nell’ontano la lamina è quasi tonda.",
+      "related": [
+        "cordata",
+        "lamina"
+      ],
+      "sources": [
+        {
+          "title": "Treccani · Orbicolare",
+          "url": "https://www.treccani.it/vocabolario/orbicolare/"
+        }
+      ]
+    },
+    {
+      "id": "cordata",
+      "term": "Cordata",
+      "category": "Piante",
+      "aliases": [
+        "cordato",
+        "cordate",
+        "cuoriforme",
+        "cuoriformi"
+      ],
+      "contexts": [
+        "Piante",
+        "Alberi"
+      ],
+      "definition": "Foglia a forma di cuore: alla base ha due lobi arrotondati, separati da un’incisione dove si attacca il picciolo.",
+      "observe": "Guarda la base vicino al picciolo: nel tiglio e nella viola mammola i due lati scendono oltre il punto di attacco.",
+      "related": [
+        "orbicolare",
+        "lamina"
+      ],
+      "sources": [
+        {
+          "title": "Treccani · Cordato",
+          "url": "https://www.treccani.it/vocabolario/cordato2/"
+        },
+        {
+          "title": "Treccani · Cuoriforme",
+          "url": "https://www.treccani.it/vocabolario/cuoriforme/"
+        },
+        {
+          "title": "Wikipedia · Glossario botanico",
+          "url": "https://it.wikipedia.org/wiki/Glossario_botanico"
+        }
+      ]
+    },
+    {
+      "id": "deltoide",
+      "term": "Deltoide",
+      "category": "Piante",
+      "aliases": [
+        "deltoidi"
+      ],
+      "contexts": [
+        "Piante",
+        "Alberi"
+      ],
+      "definition": "Foglia quasi triangolare, simile alla lettera greca delta (Δ), con la base larga e quasi dritta.",
+      "observe": "Nel pioppo nero e nella betulla la base è larga e la punta si allunga.",
+      "related": [
+        "lamina",
+        "cordata"
+      ],
+      "sources": [
+        {
+          "title": "Treccani · Deltoide",
+          "url": "https://www.treccani.it/vocabolario/deltoide/"
+        }
+      ]
+    },
+    {
+      "id": "palmato-lobata",
+      "term": "Palmato-lobata",
+      "category": "Piante",
+      "aliases": [
+        "palmatolobata",
+        "palmatolobato",
+        "palmato-lobate",
+        "palmato lobata"
+      ],
+      "contexts": [
+        "Piante",
+        "Alberi"
+      ],
+      "definition": "Foglia divisa in lobi che partono dallo stesso punto, aperti come le dita di una mano.",
+      "observe": "Negli aceri conta i lobi e guarda se gli incavi tra un lobo e l’altro sono arrotondati o appuntiti.",
+      "related": [
+        "lobi",
+        "pennato-lobata"
+      ],
+      "sources": [
+        {
+          "title": "Treccani · Palmatolobato",
+          "url": "https://www.treccani.it/vocabolario/palmatolobato/"
+        },
+        {
+          "title": "Wikipedia · Foglia",
+          "url": "https://it.wikipedia.org/wiki/Foglia"
+        }
+      ]
+    },
+    {
+      "id": "pennato-lobata",
+      "term": "Pennato-lobata",
+      "category": "Piante",
+      "aliases": [
+        "pennatolobata",
+        "pennatolobato",
+        "pennato-lobate",
+        "pennato lobata"
+      ],
+      "contexts": [
+        "Piante",
+        "Alberi"
+      ],
+      "definition": "Foglia con lobi disposti in fila ai due lati della nervatura centrale, come nelle querce.",
+      "observe": "Nelle querce guarda profondità e numero dei lobi su più foglie: variano anche sulla stessa pianta.",
+      "related": [
+        "lobi",
+        "palmato-lobata",
+        "pennatosetta"
+      ],
+      "sources": [
+        {
+          "title": "Treccani · Pennatolobato",
+          "url": "https://www.treccani.it/vocabolario/pennatolobato/"
+        },
+        {
+          "title": "Wikipedia · Glossario botanico",
+          "url": "https://it.wikipedia.org/wiki/Glossario_botanico"
+        }
+      ]
+    },
+    {
+      "id": "pennatosetta",
+      "term": "Pennatosetta",
+      "category": "Piante",
+      "aliases": [
+        "pennatosette",
+        "pennatosetto",
+        "foglia pennatosetta"
+      ],
+      "contexts": [
+        "Piante",
+        "Alberi"
+      ],
+      "definition": "Foglia incisa fino alla nervatura centrale in segmenti disposti ai due lati. I segmenti possono essere a loro volta divisi.",
+      "observe": "Nella cicuta e nell’achillea la foglia si divide più volte, come quella del prezzemolo. La cicuta è mortale: osservala senza raccoglierla.",
+      "related": [
+        "pennato-lobata",
+        "foglia-composta",
+        "lacinie"
+      ],
+      "sources": [
+        {
+          "title": "Treccani · Pennatosetto",
+          "url": "https://www.treccani.it/vocabolario/pennatosetto/"
+        },
+        {
+          "title": "Wikipedia · Glossario botanico",
+          "url": "https://it.wikipedia.org/wiki/Glossario_botanico"
+        }
+      ]
+    },
+    {
+      "id": "lacinie",
+      "term": "Lacinie",
+      "category": "Piante",
+      "aliases": [
+        "lacinia",
+        "laciniata",
+        "laciniate",
+        "lacinie filiformi"
+      ],
+      "contexts": [
+        "Piante",
+        "Alberi"
+      ],
+      "definition": "Segmenti stretti e profondi in cui è divisa una foglia o un petalo. Se sono sottili come fili si dicono filiformi.",
+      "observe": "Nel finocchietto selvatico la foglia è un ciuffo di lacinie sottili come capelli.",
+      "related": [
+        "pennatosetta"
+      ],
+      "sources": [
+        {
+          "title": "Wikipedia · Glossario botanico",
+          "url": "https://it.wikipedia.org/wiki/Glossario_botanico"
+        },
+        {
+          "title": "Treccani · Laciniato",
+          "url": "https://www.treccani.it/vocabolario/laciniato/"
+        },
+        {
+          "title": "Treccani · Filiforme",
+          "url": "https://www.treccani.it/vocabolario/filiforme/"
+        }
+      ]
+    },
+    {
+      "id": "lenticelle",
+      "term": "Lenticelle",
+      "category": "Alberi",
+      "aliases": [
+        "lenticella",
+        "lenticelle orizzontali"
+      ],
+      "contexts": [
+        "Piante",
+        "Alberi"
+      ],
+      "definition": "Piccole aperture rialzate sulla corteccia giovane, che permettono gli scambi d’aria con i tessuti interni.",
+      "observe": "Nel ciliegio e nella betulla formano trattini orizzontali ben visibili sulla corteccia lucida.",
+      "related": [
+        "corteccia-esfoliante"
+      ],
+      "sources": [
+        {
+          "title": "Treccani · Lenticella",
+          "url": "https://www.treccani.it/vocabolario/lenticella/"
+        }
+      ]
+    },
+    {
+      "id": "corteccia-esfoliante",
+      "term": "Corteccia esfoliante",
+      "category": "Alberi",
+      "aliases": [
+        "esfoliante",
+        "esfolianti",
+        "esfoliazione"
+      ],
+      "contexts": [
+        "Piante",
+        "Alberi"
+      ],
+      "definition": "Corteccia che si stacca a strati sottili: in sfoglie, strisce o scaglie.",
+      "observe": "Guarda il tronco adulto: sotto le parti staccate la superficie nuova ha spesso un colore diverso.",
+      "related": [
+        "lenticelle"
+      ],
+      "sources": [
+        {
+          "title": "Treccani · Esfoliazione",
+          "url": "https://www.treccani.it/vocabolario/esfoliazione/"
+        }
+      ]
+    },
+    {
+      "id": "faggiola",
+      "term": "Faggiola",
+      "category": "Alberi",
+      "aliases": [
+        "faggiole",
+        "faggina",
+        "faggine"
+      ],
+      "contexts": [
+        "Piante",
+        "Alberi"
+      ],
+      "definition": "Il frutto del faggio: un piccolo frutto secco a tre spigoli, racchiuso con altri in una cupola legnosa che si apre in quattro valve.",
+      "observe": "A terra sotto i faggi cerca le cupole aperte, con la superficie coperta di aculei morbidi.",
+      "related": [
+        "aculei-piante",
+        "indeiscente"
+      ],
+      "sources": [
+        {
+          "title": "Treccani · Faggiola",
+          "url": "https://www.treccani.it/vocabolario/faggiola/"
+        },
+        {
+          "title": "Wikipedia · Fagus sylvatica",
+          "url": "https://it.wikipedia.org/wiki/Fagus_sylvatica"
+        }
+      ]
+    },
+    {
+      "id": "samara",
+      "term": "Samara",
+      "category": "Alberi",
+      "aliases": [
+        "samare"
+      ],
+      "contexts": [
+        "Piante",
+        "Alberi"
+      ],
+      "definition": "Frutto secco che non si apre, con un solo seme e un’ala sottile che lo fa trasportare dal vento.",
+      "observe": "Nel frassino l’ala è allungata come una linguetta; nell’olmo circonda il seme tutto intorno.",
+      "related": [
+        "disamara",
+        "indeiscente"
+      ],
+      "sources": [
+        {
+          "title": "Treccani · Samara",
+          "url": "https://www.treccani.it/vocabolario/samara/"
+        },
+        {
+          "title": "Wikipedia · Frutto",
+          "url": "https://it.wikipedia.org/wiki/Frutto"
+        }
+      ]
+    },
+    {
+      "id": "disamara",
+      "term": "Disamara",
+      "category": "Alberi",
+      "aliases": [
+        "disamare"
+      ],
+      "contexts": [
+        "Piante",
+        "Alberi"
+      ],
+      "definition": "Coppia di samare unite alla base, che a maturità si separano. È il frutto tipico degli aceri.",
+      "observe": "Guarda l’angolo fra le due ali: aiuta a distinguere le specie di acero.",
+      "related": [
+        "samara"
+      ],
+      "sources": [
+        {
+          "title": "Treccani · Disamara",
+          "url": "https://www.treccani.it/vocabolario/disamara/"
+        }
+      ]
+    },
+    {
+      "id": "strobilo",
+      "term": "Strobilo",
+      "category": "Alberi",
+      "aliases": [
+        "strobili"
+      ],
+      "contexts": [
+        "Piante",
+        "Alberi"
+      ],
+      "definition": "La pigna delle conifere: un asse con squame, spesso legnose, disposte a spirale, che proteggono i semi.",
+      "observe": "Guarda se sta eretto o pende dal ramo. Gli ontani hanno piccole infruttescenze legnose simili, ma non sono conifere.",
+      "related": [
+        "conifere",
+        "brattea"
+      ],
+      "sources": [
+        {
+          "title": "Treccani · Strobilo",
+          "url": "https://www.treccani.it/vocabolario/strobilo/"
+        }
+      ]
+    },
+    {
+      "id": "amento",
+      "term": "Amento",
+      "category": "Alberi",
+      "aliases": [
+        "amenti",
+        "gattino",
+        "gattini"
+      ],
+      "contexts": [
+        "Piante",
+        "Alberi"
+      ],
+      "definition": "Infiorescenza allungata, spesso pendula, con molti piccoli fiori di un solo sesso. Il polline è trasportato dal vento.",
+      "observe": "In betulla, nocciolo e pioppo compaiono a fine inverno; nei pioppi e nei salici i frutti liberano semi con una peluria bianca.",
+      "related": [
+        "infiorescenza"
+      ],
+      "sources": [
+        {
+          "title": "Treccani · Amento",
+          "url": "https://www.treccani.it/vocabolario/amento/"
+        },
+        {
+          "title": "Wikipedia · Glossario botanico",
+          "url": "https://it.wikipedia.org/wiki/Glossario_botanico"
+        }
+      ]
+    },
+    {
+      "id": "bacca",
+      "term": "Bacca",
+      "category": "Piante",
+      "aliases": [],
+      "contexts": [
+        "Piante",
+        "Alberi"
+      ],
+      "definition": "Frutto tutto carnoso, senza nocciolo legnoso, con uno o più semi immersi nella polpa.",
+      "observe": "Su un frutto caduto e aperto, semi nella polpa e nessun nocciolo duro indicano una bacca. Le «bacche» di ginepro e tasso non sono veri frutti. Non assaggiare frutti che non conosci.",
+      "related": [
+        "drupa",
+        "pomo",
+        "falso-frutto"
+      ],
+      "sources": [
+        {
+          "title": "Treccani · Bacca",
+          "url": "https://www.treccani.it/vocabolario/bacca/"
+        },
+        {
+          "title": "Wikipedia · Frutto",
+          "url": "https://it.wikipedia.org/wiki/Frutto"
+        }
+      ]
+    },
+    {
+      "id": "drupa",
+      "term": "Drupa",
+      "category": "Piante",
+      "aliases": [
+        "drupe"
+      ],
+      "contexts": [
+        "Piante",
+        "Alberi"
+      ],
+      "definition": "Frutto carnoso con un nocciolo legnoso al centro, che racchiude il seme, come la ciliegia e l’oliva.",
+      "observe": "Il nocciolo duro la distingue dalla bacca: nel prugnolo è grande rispetto alla poca polpa.",
+      "related": [
+        "bacca",
+        "polidrupa"
+      ],
+      "sources": [
+        {
+          "title": "Treccani · Drupa",
+          "url": "https://www.treccani.it/vocabolario/drupa/"
+        },
+        {
+          "title": "Wikipedia · Glossario botanico",
+          "url": "https://it.wikipedia.org/wiki/Glossario_botanico"
+        }
+      ]
+    },
+    {
+      "id": "pomo",
+      "term": "Pomo",
+      "category": "Alberi",
+      "aliases": [
+        "pomi"
+      ],
+      "contexts": [
+        "Piante",
+        "Alberi"
+      ],
+      "definition": "Falso frutto carnoso, come la mela: la polpa nasce dal ricettacolo del fiore e avvolge un torsolo con i semi.",
+      "observe": "Sui frutti dei sorbi guarda l’apice: resta una piccola corona secca, residuo del calice.",
+      "related": [
+        "bacca",
+        "falso-frutto"
+      ],
+      "sources": [
+        {
+          "title": "Treccani · Pomo",
+          "url": "https://www.treccani.it/vocabolario/pomo/"
+        },
+        {
+          "title": "Wikipedia · Frutto",
+          "url": "https://it.wikipedia.org/wiki/Frutto"
+        }
+      ]
+    },
+    {
+      "id": "mallo",
+      "term": "Mallo",
+      "category": "Alberi",
+      "aliases": [
+        "malli"
+      ],
+      "contexts": [
+        "Piante",
+        "Alberi"
+      ],
+      "definition": "Lo strato esterno verde e carnoso che avvolge il guscio legnoso della noce.",
+      "observe": "Sotto il noce cerca i frutti caduti: il mallo verde o annerito avvolge la noce con il guscio.",
+      "related": [],
+      "sources": [
+        {
+          "title": "Treccani · Mallo",
+          "url": "https://www.treccani.it/vocabolario/mallo1/"
+        }
+      ]
+    },
+    {
+      "id": "legume",
+      "term": "Legume",
+      "category": "Piante",
+      "aliases": [
+        "legumi"
+      ],
+      "contexts": [
+        "Piante",
+        "Alberi"
+      ],
+      "definition": "Frutto secco allungato, il baccello, che a maturità si apre in due valve lungo due fessure opposte e contiene più semi.",
+      "observe": "Nella robinia e nelle ginestre i baccelli secchi restano a lungo sui rami.",
+      "related": [
+        "siliqua",
+        "capsula",
+        "papilionaceo"
+      ],
+      "sources": [
+        {
+          "title": "Treccani · Legume",
+          "url": "https://www.treccani.it/vocabolario/legume/"
+        },
+        {
+          "title": "Wikipedia · Frutto",
+          "url": "https://it.wikipedia.org/wiki/Frutto"
+        }
+      ]
+    },
+    {
+      "id": "siliqua",
+      "term": "Siliqua",
+      "category": "Piante",
+      "aliases": [
+        "silique",
+        "siliquetta",
+        "siliquette"
+      ],
+      "contexts": [
+        "Piante",
+        "Alberi"
+      ],
+      "definition": "Frutto secco delle crocifere che si apre in due valve; i semi restano attaccati a una membrana centrale. Se è corto e largo si chiama siliquetta.",
+      "observe": "Nell’alliaria le silique sono lunghe e sottili e stanno erette lungo il fusto.",
+      "related": [
+        "legume",
+        "cruciforme"
+      ],
+      "sources": [
+        {
+          "title": "Treccani · Siliqua",
+          "url": "https://www.treccani.it/vocabolario/siliqua1/"
+        },
+        {
+          "title": "Wikipedia · Frutto",
+          "url": "https://it.wikipedia.org/wiki/Frutto"
+        }
+      ]
+    },
+    {
+      "id": "brattea",
+      "term": "Brattea",
+      "category": "Piante",
+      "aliases": [
+        "brattee"
+      ],
+      "contexts": [
+        "Piante",
+        "Alberi"
+      ],
+      "definition": "Foglia modificata, spesso diversa dalle altre per forma o colore, alla cui ascella nasce un fiore o un’infiorescenza.",
+      "observe": "Nel tiglio una brattea allungata regge il gruppo di frutti; nel carpino bianco ogni frutto ha una brattea a tre lobi.",
+      "related": [
+        "infiorescenza",
+        "spata"
+      ],
+      "sources": [
+        {
+          "title": "Treccani · Brattea",
+          "url": "https://www.treccani.it/vocabolario/brattea/"
+        },
+        {
+          "title": "Wikipedia · Glossario botanico",
+          "url": "https://it.wikipedia.org/wiki/Glossario_botanico"
+        }
+      ]
+    },
+    {
+      "id": "portamento",
+      "term": "Portamento",
+      "category": "Piante",
+      "aliases": [
+        "portamenti"
+      ],
+      "contexts": [
+        "Piante",
+        "Alberi"
+      ],
+      "definition": "La forma generale che una pianta assume crescendo: erba, arbusto, albero, rampicante, eretta o strisciante.",
+      "observe": "Guarda la pianta intera da qualche passo di distanza, prima dei dettagli di foglie e fiori.",
+      "related": [
+        "fillotassi"
+      ],
+      "sources": [
+        {
+          "title": "Wikipedia · Portamento (botanica)",
+          "url": "https://it.wikipedia.org/wiki/Portamento_(botanica)"
+        },
+        {
+          "title": "Wikipedia · Glossario botanico",
+          "url": "https://it.wikipedia.org/wiki/Glossario_botanico"
+        }
+      ]
+    },
+    {
+      "id": "infiorescenza",
+      "term": "Infiorescenza",
+      "category": "Piante",
+      "aliases": [
+        "infiorescenze",
+        "inflorescenza"
+      ],
+      "contexts": [
+        "Piante",
+        "Alberi"
+      ],
+      "definition": "Gruppo di fiori portati sullo stesso ramo con una disposizione tipica: spiga, grappolo, ombrella, capolino e altre.",
+      "observe": "Prima di contare i petali, capisci se stai guardando un solo fiore o tanti fiori piccoli riuniti.",
+      "related": [
+        "ombrella",
+        "corimbo",
+        "capolino",
+        "amento"
+      ],
+      "sources": [
+        {
+          "title": "Treccani · Infiorescenza",
+          "url": "https://www.treccani.it/vocabolario/infiorescenza/"
+        },
+        {
+          "title": "Wikipedia · Infiorescenza",
+          "url": "https://it.wikipedia.org/wiki/Infiorescenza"
+        }
+      ]
+    },
+    {
+      "id": "pentamero",
+      "term": "Pentamero",
+      "category": "Piante",
+      "aliases": [
+        "pentameri",
+        "pentamera",
+        "fiore pentamero"
+      ],
+      "contexts": [
+        "Piante",
+        "Alberi"
+      ],
+      "definition": "Fiore con le parti disposte a gruppi di cinque: cinque petali, oppure una corolla con cinque lobi.",
+      "observe": "Conta petali o lobi su più fiori: un fiore rovinato o doppio può ingannare.",
+      "related": [
+        "cruciforme",
+        "tepali"
+      ],
+      "sources": [
+        {
+          "title": "Treccani · Pentamero",
+          "url": "https://www.treccani.it/vocabolario/pentamero/"
+        },
+        {
+          "title": "Wikipedia · Glossario botanico",
+          "url": "https://it.wikipedia.org/wiki/Glossario_botanico"
+        }
+      ]
+    },
+    {
+      "id": "cruciforme",
+      "term": "Cruciforme",
+      "category": "Piante",
+      "aliases": [
+        "cruciformi",
+        "corolla cruciforme"
+      ],
+      "contexts": [
+        "Piante",
+        "Alberi"
+      ],
+      "definition": "Corolla di quattro petali liberi disposti a croce, tipica delle crocifere.",
+      "observe": "Nell’alliaria i quattro petali bianchi formano una piccola croce; il frutto è una siliqua.",
+      "related": [
+        "siliqua",
+        "pentamero"
+      ],
+      "sources": [
+        {
+          "title": "Treccani · Cruciforme",
+          "url": "https://www.treccani.it/vocabolario/cruciforme/"
+        },
+        {
+          "title": "Treccani · Tetramero",
+          "url": "https://www.treccani.it/vocabolario/tetramero/"
+        }
+      ]
+    },
+    {
+      "id": "tepali",
+      "term": "Tepali",
+      "category": "Piante",
+      "aliases": [
+        "tepalo",
+        "perigonio",
+        "perigoni"
+      ],
+      "contexts": [
+        "Piante",
+        "Alberi"
+      ],
+      "definition": "Parti del fiore tutte simili tra loro, quando non si distinguono sepali e petali. Insieme formano il perigonio.",
+      "observe": "In gigli, narcisi e croco i sei tepali sembrano petali: guardando da dietro non trovi un calice verde distinto.",
+      "related": [
+        "pentamero",
+        "labello"
+      ],
+      "sources": [
+        {
+          "title": "Treccani · Tepalo",
+          "url": "https://www.treccani.it/vocabolario/tepalo/"
+        },
+        {
+          "title": "Treccani · Perigonio",
+          "url": "https://www.treccani.it/vocabolario/perigonio/"
+        },
+        {
+          "title": "Wikipedia · Glossario botanico",
+          "url": "https://it.wikipedia.org/wiki/Glossario_botanico"
+        }
+      ]
+    },
+    {
+      "id": "ombrella",
+      "term": "Ombrella",
+      "category": "Piante",
+      "aliases": [
+        "ombrelle",
+        "ombrelletta",
+        "ombrellette"
+      ],
+      "contexts": [
+        "Piante",
+        "Alberi"
+      ],
+      "definition": "Infiorescenza in cui i peduncoli dei fiori partono tutti dallo stesso punto, come le stecche di un ombrello.",
+      "observe": "Nella famiglia della carota spesso ogni raggio porta una piccola ombrella: è un’ombrella composta. Alcune specie sono mortali: non raccogliere per somiglianza.",
+      "related": [
+        "corimbo",
+        "infiorescenza"
+      ],
+      "sources": [
+        {
+          "title": "Treccani · Ombrella",
+          "url": "https://www.treccani.it/vocabolario/ombrella/"
+        },
+        {
+          "title": "Wikipedia · Glossario botanico",
+          "url": "https://it.wikipedia.org/wiki/Glossario_botanico"
+        }
+      ]
+    },
+    {
+      "id": "corimbo",
+      "term": "Corimbo",
+      "category": "Piante",
+      "aliases": [
+        "corimbi"
+      ],
+      "contexts": [
+        "Piante",
+        "Alberi"
+      ],
+      "definition": "Infiorescenza con peduncoli che partono da altezze diverse ma portano i fiori quasi allo stesso livello, su un piano.",
+      "observe": "Guarda da sotto: se i peduncoli escono da punti diversi è un corimbo, se da un solo punto è un’ombrella.",
+      "related": [
+        "ombrella",
+        "infiorescenza"
+      ],
+      "sources": [
+        {
+          "title": "Treccani · Corimbo",
+          "url": "https://www.treccani.it/vocabolario/corimbo/"
+        },
+        {
+          "title": "Wikipedia · Glossario botanico",
+          "url": "https://it.wikipedia.org/wiki/Glossario_botanico"
+        }
+      ]
+    },
+    {
+      "id": "capolino",
+      "term": "Capolino",
+      "category": "Piante",
+      "aliases": [
+        "capolini"
+      ],
+      "contexts": [
+        "Piante",
+        "Alberi"
+      ],
+      "definition": "Infiorescenza di molti piccoli fiori stretti uno accanto all’altro su una base allargata, così da sembrare un unico fiore.",
+      "observe": "Nella margherita ogni «petalo» bianco è un fiore, e il centro giallo è fatto di tanti fiorellini.",
+      "related": [
+        "infiorescenza",
+        "pappo"
+      ],
+      "sources": [
+        {
+          "title": "Treccani · Capolino",
+          "url": "https://www.treccani.it/vocabolario/capolino/"
+        },
+        {
+          "title": "Wikipedia · Glossario botanico",
+          "url": "https://it.wikipedia.org/wiki/Glossario_botanico"
+        }
+      ]
+    },
+    {
+      "id": "campanulato",
+      "term": "Campanulato",
+      "category": "Piante",
+      "aliases": [
+        "campanulata",
+        "campanulate",
+        "campanulati"
+      ],
+      "contexts": [
+        "Piante",
+        "Alberi"
+      ],
+      "definition": "Fiore o corolla a forma di campana, più largo verso la bocca.",
+      "observe": "Guarda il fiore di profilo: nel raponzolo e nell’erica la corolla si allarga come una piccola campana.",
+      "related": [
+        "imbutiforme",
+        "tubuloso"
+      ],
+      "sources": [
+        {
+          "title": "Treccani · Campanulato",
+          "url": "https://www.treccani.it/vocabolario/campanulato/"
+        }
+      ]
+    },
+    {
+      "id": "imbutiforme",
+      "term": "Imbutiforme",
+      "category": "Piante",
+      "aliases": [
+        "imbutiformi"
+      ],
+      "contexts": [
+        "Piante",
+        "Alberi"
+      ],
+      "definition": "Corolla saldata a forma di imbuto: un tubo stretto che si allarga verso l’apertura.",
+      "observe": "Nello stramonio il fiore bianco è un lungo imbuto. La pianta è tossica: osservala senza toccarla.",
+      "related": [
+        "campanulato",
+        "tubuloso"
+      ],
+      "sources": [
+        {
+          "title": "Treccani · Imbutiforme",
+          "url": "https://www.treccani.it/vocabolario/imbutiforme/"
+        }
+      ]
+    },
+    {
+      "id": "tubuloso",
+      "term": "Tubuloso",
+      "category": "Piante",
+      "aliases": [
+        "tubulosa",
+        "tubulose",
+        "tubulosi"
+      ],
+      "contexts": [
+        "Piante",
+        "Alberi"
+      ],
+      "definition": "Fiore o corolla a forma di tubo, almeno nella parte inferiore.",
+      "observe": "Nella digitale gialla il tubo è lungo e aperto in avanti. Anche la digitale è tossica.",
+      "related": [
+        "labiato",
+        "imbutiforme"
+      ],
+      "sources": [
+        {
+          "title": "Treccani · Tubuloso",
+          "url": "https://www.treccani.it/vocabolario/tubuloso/"
+        }
+      ]
+    },
+    {
+      "id": "labiato",
+      "term": "Labiato",
+      "category": "Piante",
+      "aliases": [
+        "labiata",
+        "labiate",
+        "bilabiata",
+        "bilabiato",
+        "bilabiate"
+      ],
+      "contexts": [
+        "Piante",
+        "Alberi"
+      ],
+      "definition": "Fiore con la corolla divisa in due labbra: quella superiore di due petali, quella inferiore di tre.",
+      "observe": "Menta, origano e melissa hanno fiori labiati e fusto a sezione quadrata.",
+      "related": [
+        "tubuloso",
+        "labello"
+      ],
+      "sources": [
+        {
+          "title": "Treccani · Labiato",
+          "url": "https://www.treccani.it/vocabolario/labiato/"
+        }
+      ]
+    },
+    {
+      "id": "papilionaceo",
+      "term": "Papilionaceo",
+      "category": "Piante",
+      "aliases": [
+        "papilionacea",
+        "papilionacee",
+        "papilionacei",
+        "fiore a farfalla"
+      ],
+      "contexts": [
+        "Piante",
+        "Alberi"
+      ],
+      "definition": "Fiore che ricorda una farfalla, tipico delle leguminose come piselli e ginestre: un petalo grande in alto e gli altri raccolti sotto.",
+      "observe": "Dopo la fioritura cerca i baccelli: confermano che la pianta è una leguminosa.",
+      "related": [
+        "legume"
+      ],
+      "sources": [
+        {
+          "title": "Wikipedia · Glossario botanico",
+          "url": "https://it.wikipedia.org/wiki/Glossario_botanico"
+        }
+      ]
+    },
+    {
+      "id": "labello",
+      "term": "Labello",
+      "category": "Piante",
+      "aliases": [
+        "labelli"
+      ],
+      "contexts": [
+        "Piante",
+        "Alberi"
+      ],
+      "definition": "Nelle orchidee, il tepalo più grande, di solito in basso, diverso dagli altri per forma e colore. Fa da appoggio agli insetti.",
+      "observe": "Guarda disegni e macchie del labello e se dietro il fiore c’è uno sperone. Le orchidee spontanee non vanno raccolte.",
+      "related": [
+        "tepali",
+        "sperone"
+      ],
+      "sources": [
+        {
+          "title": "Treccani · Labello",
+          "url": "https://www.treccani.it/vocabolario/labello/"
+        },
+        {
+          "title": "Wikipedia · Glossario botanico",
+          "url": "https://it.wikipedia.org/wiki/Glossario_botanico"
+        }
+      ]
+    },
+    {
+      "id": "petali-riflessi",
+      "term": "Petali riflessi",
+      "category": "Piante",
+      "aliases": [
+        "tepali riflessi",
+        "petalo riflesso",
+        "riflesse"
+      ],
+      "contexts": [
+        "Piante",
+        "Alberi"
+      ],
+      "definition": "Petali o tepali piegati all’indietro, verso il peduncolo.",
+      "observe": "Nel ciclamino i petali si rovesciano verso l’alto; nel giglio martagone i tepali si arrotolano a turbante.",
+      "related": [
+        "tepali"
+      ],
+      "sources": [
+        {
+          "title": "Treccani · Riflesso",
+          "url": "https://www.treccani.it/vocabolario/riflesso1/"
+        }
+      ]
+    },
+    {
+      "id": "spata",
+      "term": "Spata",
+      "category": "Piante",
+      "aliases": [
+        "spate",
+        "spadice",
+        "spadici"
+      ],
+      "contexts": [
+        "Piante",
+        "Alberi"
+      ],
+      "definition": "Grande brattea a cappuccio che avvolge lo spadice, una spiga carnosa a forma di clava con fiori minuscoli.",
+      "observe": "Nel gigaro la spata si apre in primavera; d’estate restano le bacche rosse sul fusto. La pianta è tossica.",
+      "related": [
+        "brattea",
+        "infiorescenza"
+      ],
+      "sources": [
+        {
+          "title": "Treccani · Spata",
+          "url": "https://www.treccani.it/vocabolario/spata/"
+        },
+        {
+          "title": "Treccani · Spadice",
+          "url": "https://www.treccani.it/vocabolario/spadice/"
+        }
+      ]
+    },
+    {
+      "id": "indeiscente",
+      "term": "Indeiscente",
+      "category": "Piante",
+      "aliases": [
+        "indeiscenti",
+        "frutto indeiscente",
+        "secchi indeiscenti"
+      ],
+      "contexts": [
+        "Piante",
+        "Alberi"
+      ],
+      "definition": "Frutto che a maturità non si apre: il seme resta chiuso dentro e si disperde insieme al frutto.",
+      "observe": "Acheni, samare e ghiande sono indeiscenti; capsule, legumi e silique invece si aprono.",
+      "related": [
+        "achenio",
+        "capsula",
+        "samara"
+      ],
+      "sources": [
+        {
+          "title": "Treccani · Indeiscente",
+          "url": "https://www.treccani.it/vocabolario/indeiscente/"
+        }
+      ]
+    },
+    {
+      "id": "achenio",
+      "term": "Achenio",
+      "category": "Piante",
+      "aliases": [
+        "acheni",
+        "acheni piumosi"
+      ],
+      "contexts": [
+        "Piante",
+        "Alberi"
+      ],
+      "definition": "Piccolo frutto secco che non si apre e contiene un solo seme. Spesso sembra un seme.",
+      "observe": "Nel tarassaco ogni achenio porta un pappo a paracadute; nella vitalba una lunga coda piumosa.",
+      "related": [
+        "pappo",
+        "indeiscente"
+      ],
+      "sources": [
+        {
+          "title": "Treccani · Achenio",
+          "url": "https://www.treccani.it/vocabolario/achenio/"
+        },
+        {
+          "title": "Wikipedia · Glossario botanico",
+          "url": "https://it.wikipedia.org/wiki/Glossario_botanico"
+        },
+        {
+          "title": "Wikipedia · Clematis vitalba",
+          "url": "https://it.wikipedia.org/wiki/Clematis_vitalba"
+        }
+      ]
+    },
+    {
+      "id": "pappo",
+      "term": "Pappo",
+      "category": "Piante",
+      "aliases": [
+        "pappi"
+      ],
+      "contexts": [
+        "Piante",
+        "Alberi"
+      ],
+      "definition": "Ciuffo di peli o di piccole squame sulla punta di alcuni frutti, che li aiuta a volare con il vento.",
+      "observe": "Il «soffione» del tarassaco è fatto di tanti acheni, ognuno con il suo pappo.",
+      "related": [
+        "achenio",
+        "capolino"
+      ],
+      "sources": [
+        {
+          "title": "Treccani · Pappo",
+          "url": "https://www.treccani.it/vocabolario/pappo2/"
+        },
+        {
+          "title": "Wikipedia · Glossario botanico",
+          "url": "https://it.wikipedia.org/wiki/Glossario_botanico"
+        }
+      ]
+    },
+    {
+      "id": "polidrupa",
+      "term": "Polidrupa",
+      "category": "Piante",
+      "aliases": [
+        "polidrupe"
+      ],
+      "contexts": [
+        "Piante",
+        "Alberi"
+      ],
+      "definition": "Frutto formato da tante piccole drupe unite, come la mora del rovo e il lampone.",
+      "observe": "Ogni pallina della mora ha un suo minuscolo nocciolo: è una piccola drupa.",
+      "related": [
+        "drupa",
+        "falso-frutto"
+      ],
+      "sources": [
+        {
+          "title": "Wikipedia · Frutto",
+          "url": "https://it.wikipedia.org/wiki/Frutto"
+        }
+      ]
+    },
+    {
+      "id": "falso-frutto",
+      "term": "Falso frutto",
+      "category": "Piante",
+      "aliases": [
+        "falsi frutti",
+        "pseudocarpo",
+        "pseudocarpi",
+        "cinorrodo",
+        "cinorrodi"
+      ],
+      "contexts": [
+        "Piante",
+        "Alberi"
+      ],
+      "definition": "Struttura carnosa che sembra un frutto ma nasce anche da altre parti del fiore, come il ricettacolo. I veri frutti sono i semini dentro o sopra.",
+      "observe": "Nella fragola i puntini sulla superficie sono acheni; nel cinorrodo della rosa canina sono dentro, tra peli irritanti.",
+      "related": [
+        "achenio",
+        "pomo",
+        "polidrupa"
+      ],
+      "sources": [
+        {
+          "title": "Wikipedia · Falso frutto",
+          "url": "https://it.wikipedia.org/wiki/Falso_frutto"
+        },
+        {
+          "title": "Treccani · Cinorrodo",
+          "url": "https://www.treccani.it/vocabolario/cinorrodo/"
+        },
+        {
+          "title": "Treccani · Pseudocarpo",
+          "url": "https://www.treccani.it/vocabolario/pseudocarpo/"
+        }
+      ]
+    },
+    {
+      "id": "capsula",
+      "term": "Capsula",
+      "category": "Piante",
+      "aliases": [
+        "capsule"
+      ],
+      "contexts": [
+        "Piante",
+        "Alberi"
+      ],
+      "definition": "Frutto secco che a maturità si apre, per fessure, denti o pori, e libera di solito molti semi.",
+      "observe": "Guarda come si apre: a valve, con dentini all’apice o con forellini.",
+      "related": [
+        "indeiscente",
+        "legume"
+      ],
+      "sources": [
+        {
+          "title": "Treccani · Capsula",
+          "url": "https://www.treccani.it/vocabolario/capsula/"
+        },
+        {
+          "title": "Wikipedia · Glossario botanico",
+          "url": "https://it.wikipedia.org/wiki/Glossario_botanico"
+        },
+        {
+          "title": "Wikipedia · Frutto",
+          "url": "https://it.wikipedia.org/wiki/Frutto"
+        }
+      ]
+    },
+    {
+      "id": "peli-urticanti",
+      "term": "Peli urticanti",
+      "category": "Piante",
+      "aliases": [
+        "pelo urticante",
+        "urticante",
+        "urticanti"
+      ],
+      "contexts": [
+        "Piante",
+        "Alberi"
+      ],
+      "definition": "Peli rigidi e sottili che al contatto si rompono e liberano sostanze irritanti, causando bruciore.",
+      "observe": "Nell’ortica sono su fusto e foglie: osservali da vicino senza toccarli.",
+      "related": [
+        "peli-ispidi"
+      ],
+      "sources": [
+        {
+          "title": "Wikipedia · Tricoma",
+          "url": "https://it.wikipedia.org/wiki/Tricoma"
+        },
+        {
+          "title": "Treccani · Tricoma",
+          "url": "https://www.treccani.it/vocabolario/tricoma/"
+        }
+      ]
+    },
+    {
+      "id": "peli-ispidi",
+      "term": "Peli ispidi",
+      "category": "Piante",
+      "aliases": [
+        "ispido",
+        "ispida",
+        "ispidi",
+        "ispide"
+      ],
+      "contexts": [
+        "Piante",
+        "Alberi"
+      ],
+      "definition": "Peli rigidi e ruvidi che rendono la superficie scabra al tatto.",
+      "observe": "Fusti e foglie della borragine sono coperti di peli ispidi.",
+      "related": [
+        "peli-urticanti"
+      ],
+      "sources": [
+        {
+          "title": "Treccani · Ispido",
+          "url": "https://www.treccani.it/vocabolario/ispido/"
+        },
+        {
+          "title": "Wikipedia · Glossario botanico",
+          "url": "https://it.wikipedia.org/wiki/Glossario_botanico"
+        }
+      ]
+    },
+    {
+      "id": "fusto-fistoloso",
+      "term": "Fusto fistoloso",
+      "category": "Piante",
+      "aliases": [
+        "fistoloso",
+        "fistolosa",
+        "fistolosi",
+        "fusto cavo"
+      ],
+      "contexts": [
+        "Piante",
+        "Alberi"
+      ],
+      "definition": "Fusto cavo all’interno, come un tubo.",
+      "observe": "La cicuta ha il fusto cavo con macchie rosso-viola: è mortale, osservala senza raccoglierla.",
+      "related": [
+        "latice"
+      ],
+      "sources": [
+        {
+          "title": "Treccani · Fistoloso",
+          "url": "https://www.treccani.it/vocabolario/fistoloso/"
+        },
+        {
+          "title": "Wikipedia · Glossario botanico",
+          "url": "https://it.wikipedia.org/wiki/Glossario_botanico"
+        }
+      ]
+    },
+    {
+      "id": "latice",
+      "term": "Latice",
+      "category": "Piante",
+      "aliases": [
+        "lattice",
+        "latici"
+      ],
+      "contexts": [
+        "Piante",
+        "Alberi"
+      ],
+      "definition": "Liquido di solito bianco come il latte, contenuto in canali interni della pianta, che esce da fusti o foglie spezzati.",
+      "observe": "Nel tarassaco e nella cicoria esce dal fusto spezzato.",
+      "related": [
+        "fusto-fistoloso"
+      ],
+      "sources": [
+        {
+          "title": "Treccani · Latice",
+          "url": "https://www.treccani.it/vocabolario/latice/"
+        }
+      ]
+    },
+    {
+      "id": "ghiandole-traslucide",
+      "term": "Ghiandole traslucide",
+      "category": "Piante",
+      "aliases": [
+        "ghiandola traslucida",
+        "puntini traslucidi"
+      ],
+      "contexts": [
+        "Piante",
+        "Alberi"
+      ],
+      "definition": "Piccole ghiandole nella foglia che, guardate controluce, sembrano forellini chiari.",
+      "observe": "Nell’iperico la foglia controluce appare bucherellata: da qui il nome «perforatum».",
+      "related": [],
+      "sources": [
+        {
+          "title": "Wikipedia · Hypericum perforatum",
+          "url": "https://it.wikipedia.org/wiki/Hypericum_perforatum"
+        }
+      ]
+    },
+    {
+      "id": "foglie-variegate",
+      "term": "Foglie variegate",
+      "category": "Piante",
+      "aliases": [
+        "variegata",
+        "variegate",
+        "variegato",
+        "variegati"
+      ],
+      "contexts": [
+        "Piante",
+        "Alberi"
+      ],
+      "definition": "Foglie con macchie, strisce o venature di colore diverso dal resto della lamina.",
+      "observe": "Nei ciclamini la foglia ha disegni argentei; nel croco una stria chiara corre al centro.",
+      "related": [
+        "lamina"
+      ],
+      "sources": [
+        {
+          "title": "Treccani · Variegato",
+          "url": "https://www.treccani.it/vocabolario/variegato/"
+        }
+      ]
+    },
+    {
+      "id": "parallelinervia",
+      "term": "Parallelinervia",
+      "category": "Piante",
+      "aliases": [
+        "parallelinervie",
+        "parallelinervio",
+        "nervature parallele"
+      ],
+      "contexts": [
+        "Piante",
+        "Alberi"
+      ],
+      "definition": "Foglia con le nervature principali quasi parallele, dalla base alla punta.",
+      "observe": "È comune nelle erbe, nei gigli e nelle orchidee; nel veratro le nervature formano anche pieghe.",
+      "related": [
+        "curvinervia"
+      ],
+      "sources": [
+        {
+          "title": "Treccani · Parallelinervio",
+          "url": "https://www.treccani.it/vocabolario/parallelinervio/"
+        },
+        {
+          "title": "Wikipedia · Glossario botanico",
+          "url": "https://it.wikipedia.org/wiki/Glossario_botanico"
+        }
+      ]
+    },
+    {
+      "id": "curvinervia",
+      "term": "Curvinervia",
+      "category": "Piante",
+      "aliases": [
+        "curvinervie",
+        "curvinervio",
+        "nervature arcuate"
+      ],
+      "contexts": [
+        "Piante",
+        "Alberi"
+      ],
+      "definition": "Foglia con diverse nervature principali che partono dalla base e curvano ad arco verso la punta, seguendo il bordo.",
+      "observe": "La genziana maggiore è l’esempio classico: segui le nervature dalla base alla punta.",
+      "related": [
+        "parallelinervia"
+      ],
+      "sources": [
+        {
+          "title": "Treccani · Curvinervio",
+          "url": "https://www.treccani.it/vocabolario/curvinervio/"
+        }
+      ]
+    },
+    {
+      "id": "sperone",
+      "term": "Sperone",
+      "category": "Piante",
+      "aliases": [
+        "speroni"
+      ],
+      "contexts": [
+        "Piante",
+        "Alberi"
+      ],
+      "definition": "Prolungamento cavo, a forma di cornetto, di un petalo o di un sepalo, che di solito contiene nettare.",
+      "observe": "Nella viola mammola e in molte orchidee lo sperone sporge dietro il fiore.",
+      "related": [
+        "labello"
+      ],
+      "sources": [
+        {
+          "title": "Wikipedia · Sperone (botanica)",
+          "url": "https://it.wikipedia.org/wiki/Sperone_(botanica)"
+        }
+      ]
+    },
+    {
+      "id": "stolone",
+      "term": "Stolone",
+      "category": "Piante",
+      "aliases": [
+        "stoloni"
+      ],
+      "contexts": [
+        "Piante",
+        "Alberi"
+      ],
+      "definition": "Fusto sottile che striscia sul terreno e mette radici ai nodi, formando nuove piantine.",
+      "observe": "Nella fragolina segui i fili sul terreno fino alle piantine figlie.",
+      "related": [
+        "radici-avventizie"
+      ],
+      "sources": [
+        {
+          "title": "Treccani · Stolone",
+          "url": "https://www.treccani.it/vocabolario/stolone2/"
+        },
+        {
+          "title": "Wikipedia · Glossario botanico",
+          "url": "https://it.wikipedia.org/wiki/Glossario_botanico"
+        }
+      ]
+    },
+    {
+      "id": "isteranzia",
+      "term": "Isteranzia",
+      "category": "Piante",
+      "aliases": [
+        "isteranta",
+        "isterante",
+        "isteranto",
+        "fiori prima delle foglie"
+      ],
+      "contexts": [
+        "Piante",
+        "Alberi"
+      ],
+      "definition": "Carattere delle piante che fioriscono prima di mettere le foglie.",
+      "observe": "Prugnolo e corniolo fioriscono sui rami spogli; il colchico fiorisce in autunno e mette le foglie solo in primavera.",
+      "related": [
+        "acaule"
+      ],
+      "sources": [
+        {
+          "title": "Treccani · Isteranto",
+          "url": "https://www.treccani.it/vocabolario/isteranto/"
+        },
+        {
+          "title": "Treccani · Isteranzia",
+          "url": "https://www.treccani.it/vocabolario/isteranzia/"
+        },
+        {
+          "title": "Wikipedia · Colchicum autumnale",
+          "url": "https://it.wikipedia.org/wiki/Colchicum_autumnale"
+        }
+      ]
+    },
+    {
+      "id": "acaule",
+      "term": "Acaule",
+      "category": "Piante",
+      "aliases": [
+        "acauli"
+      ],
+      "contexts": [
+        "Piante",
+        "Alberi"
+      ],
+      "definition": "Pianta con un fusto così corto da sembrare senza fusto: foglie e fiori paiono uscire direttamente da terra.",
+      "observe": "Nel croco e nel colchico il fiore spunta dal terreno, senza un fusto visibile.",
+      "related": [
+        "rosetta-basale",
+        "isteranzia"
+      ],
+      "sources": [
+        {
+          "title": "Treccani · Acaule",
+          "url": "https://www.treccani.it/vocabolario/acaule/"
+        },
+        {
+          "title": "Wikipedia · Glossario botanico",
+          "url": "https://it.wikipedia.org/wiki/Glossario_botanico"
+        }
+      ]
+    },
+    {
+      "id": "pruina",
+      "term": "Pruina",
+      "category": "Piante",
+      "aliases": [
+        "pruinoso",
+        "pruinosa",
+        "pruinosi",
+        "pruinose"
+      ],
+      "contexts": [
+        "Piante",
+        "Alberi"
+      ],
+      "definition": "Sottile strato di cera, chiaro e opaco, su frutti, foglie o fusti. Si toglie strofinando.",
+      "observe": "Sulle prugnole e sulle coccole del ginepro la patina azzurrina sparisce sotto le dita.",
+      "related": [],
+      "sources": [
+        {
+          "title": "Treccani · Pruina",
+          "url": "https://www.treccani.it/vocabolario/pruina/"
+        },
+        {
+          "title": "Wikipedia · Pruina",
+          "url": "https://it.wikipedia.org/wiki/Pruina"
+        }
+      ]
+    },
+    {
+      "id": "cladodio",
+      "term": "Cladodio",
+      "category": "Piante",
+      "aliases": [
+        "cladodi",
+        "fillocladio",
+        "fillocladi"
+      ],
+      "contexts": [
+        "Piante",
+        "Alberi"
+      ],
+      "definition": "Rametto appiattito che sembra una foglia e ne fa le funzioni.",
+      "observe": "Nel pungitopo fiori e bacche nascono al centro della «foglia»: è un cladodio con la punta pungente.",
+      "related": [
+        "brattea"
+      ],
+      "sources": [
+        {
+          "title": "Treccani · Cladodio",
+          "url": "https://www.treccani.it/vocabolario/cladodio/"
+        },
+        {
+          "title": "Wikipedia · Cladodio",
+          "url": "https://it.wikipedia.org/wiki/Cladodio"
+        }
+      ]
+    },
+    {
+      "id": "giunchiforme",
+      "term": "Giunchiforme",
+      "category": "Piante",
+      "aliases": [
+        "giunchiformi",
+        "rami giunchiformi"
+      ],
+      "contexts": [
+        "Piante",
+        "Alberi"
+      ],
+      "definition": "Ramo o fusto sottile, cilindrico e flessibile come un giunco.",
+      "observe": "La ginestra odorosa ha rami verdi, tondi e quasi senza foglie.",
+      "related": [],
+      "sources": [
+        {
+          "title": "Treccani · Giunchiforme",
+          "url": "https://www.treccani.it/vocabolario/giunchiforme/"
+        }
+      ]
+    },
+    {
+      "id": "radici-avventizie",
+      "term": "Radici avventizie",
+      "category": "Piante",
+      "aliases": [
+        "radice avventizia",
+        "radici aeree"
+      ],
+      "contexts": [
+        "Piante",
+        "Alberi"
+      ],
+      "definition": "Radici che nascono dal fusto o da altre parti della pianta, invece che dalla radice principale.",
+      "observe": "L’edera si aggrappa a tronchi e muri con file di radichette lungo i fusti.",
+      "related": [
+        "stolone",
+        "viticcio"
+      ],
+      "sources": [
+        {
+          "title": "Wikipedia · Radice avventizia",
+          "url": "https://it.wikipedia.org/wiki/Radice_avventizia"
+        }
+      ]
+    },
+    {
+      "id": "viticcio",
+      "term": "Viticcio",
+      "category": "Piante",
+      "aliases": [
+        "viticci",
+        "cirro",
+        "cirri"
+      ],
+      "contexts": [
+        "Piante",
+        "Alberi"
+      ],
+      "definition": "Organo sottile che si avvolge a spirale intorno a un sostegno e permette alla pianta di arrampicarsi.",
+      "observe": "Nella salsapariglia i viticci nascono alla base delle foglie.",
+      "related": [
+        "radici-avventizie"
+      ],
+      "sources": [
+        {
+          "title": "Treccani · Viticcio",
+          "url": "https://www.treccani.it/vocabolario/viticcio/"
+        },
+        {
+          "title": "Wikipedia · Viticcio",
+          "url": "https://it.wikipedia.org/wiki/Viticcio"
         }
       ]
     }

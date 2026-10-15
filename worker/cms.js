@@ -43,8 +43,8 @@ async function init(env,origin) {
         await db.batch(glossaryContextSeedUpdate(db,payload,Date.now(),crypto.randomUUID(),crypto.randomUUID()));
       }}
     }
-    const refreshed=['ui-copy','plants','trees','media','media-trees','media-zones','species-id','species-traits','edible-catalog','preparation'];
-    const untouched=(await db.prepare("SELECT id,version,published FROM cms_documents WHERE draft=published AND version=published_version AND ((version=0 AND updated_by='seed') OR updated_by LIKE 'release:repository-seed:%')").all()).results.filter(r=>refreshed.includes(r.id));
+    const refreshed=['ui-copy','plants','trees','media','media-trees','media-zones','species-id','species-traits','edible-catalog','preparation','glossary'];
+    const untouched=(await db.prepare("SELECT id,version,published FROM cms_documents WHERE draft=published AND version=published_version AND ((version=0 AND updated_by='seed') OR updated_by LIKE 'release:%')").all()).results.filter(r=>refreshed.includes(r.id));
     const sources=await Promise.all(untouched.map(async previous=>{
       const source=await env.ASSETS.fetch(new Request(new URL(`/data/${previous.id}.json`,origin)));
       if(!source.ok)failure(`Aggiornamento iniziale mancante: ${previous.id}.`,503);

@@ -23,3 +23,9 @@ test('a later repository release may advance a managed seed, while identical pay
  const options={actor:'release:repository-seed:discover-v1',version:1,publishedVersion:1,draft:next,published:next};
  assert.equal(run({...options,sql}).row[0],2);assert.equal(run({...options,sql:repositorySeedUpdate(db,'plants',previous,next,20,'third','release-third')}).releases,0);
 });
+test('a document last published by an earlier one-off release (e.g. the glossary contexts) is managed too; an author save is not',()=>{
+ const previous={version:2,published:next},changed='{"plants":{"terms":{}}}',sql=repositorySeedUpdate(db,'plants',previous,changed,30,'fourth','release-fourth');
+ const r=run({actor:'release:glossary-contexts-v3',version:2,publishedVersion:2,draft:next,published:next,sql});
+ assert.deepEqual(r.row,[3,3,changed,changed,'release:repository-seed:discover-v1']);
+ assert.equal(run({actor:'author',version:2,publishedVersion:2,draft:next,published:next,sql}).releases,0);
+});
