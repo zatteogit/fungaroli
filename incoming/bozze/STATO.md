@@ -492,3 +492,5 @@ Tecnica: output nativo del tool 1122×1402, ricampionato a 1600×2000 con LANCZO
 | icone/fasi-04.png | ok | amanita-virosa giovane; amanita-virosa adulto; amanita-verna giovane. 6 disegni, una riga per fase; celle rimanenti trasparenti. PNG alpha 1254×1254, 69340 byte. Margini almeno 49 px (11,7%), contorno scuro ai quattro estremi verificati per cella con codice. Confronto in sovrapposizione con basi della specie, colori e caratteri invariati salvo la fase. Nessun testo. |
 
 | icone/fasi-05.png | ok | amanita-verna adulto. 2 disegni, una riga per fase; celle rimanenti trasparenti. PNG alpha 1254×1254, 21620 byte. Margini almeno 49 px (11,7%), contorno scuro ai quattro estremi verificati per cella con codice. Confronto in sovrapposizione con basi della specie, colori e caratteri invariati salvo la fase. Nessun testo. |
+
+| icone/fasi-10.png | ok | amanita-muscaria uovo; amanita-muscaria apertura; amanita-muscaria adulto. 7 disegni, una riga per fase; altre celle trasparenti. PNG alpha 1254×1254, 76542 byte. Margini minimi 50 px; contorno scuro ai quattro estremi verificato per ogni cella. Confronto in sovrapposizione con le basi; nessun testo. |
