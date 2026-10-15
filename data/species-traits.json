@@ -405,6 +405,10 @@
         {
           "title": "Regione Emilia-Romagna - Funghi commestibili (scheda)",
           "url": "https://ambiente.regione.emilia-romagna.it/it/parchi-natura2000/sistema-regionale/funghi-sottobosco-tartufi/funghi-allegati/funghi-commestibili/@@download/file"
+        },
+        {
+          "title": "Wikipedia en - Boletus edulis",
+          "url": "https://en.wikipedia.org/wiki/Boletus_edulis"
         }
       ],
       "where_to_look": {
@@ -434,7 +438,12 @@
         "abete rosso",
         "pino nero"
       ],
-      "traits_notes": "Sporata bruno-olivastra in massa (tutte le fonti) -> verde-oliva; aggiunto 'bruno' per larghezza. Cuticola liscia o rugosa, brillante/asciutta col secco, vischiosa e lucida con tempo umido. Velo nudo (assente). Carne soda nei giovani, floscia/spugnosa nei vecchi. Gambo clavato/ventricoso, 'ingrossato alla base' (ER): non e' un bulbo netto, quindi messi sia 'normale' sia 'bulbosa'."
+      "traits_notes": "Sporata bruno-olivastra in massa (tutte le fonti) -> verde-oliva; aggiunto 'bruno' per larghezza. Cuticola liscia o rugosa, brillante/asciutta col secco, vischiosa e lucida con tempo umido. Velo nudo (assente). Carne soda nei giovani, floscia/spugnosa nei vecchi. Gambo clavato/ventricoso, 'ingrossato alla base' (ER): non e' un bulbo netto, quindi messi sia 'normale' sia 'bulbosa'. Frequenza dei colori (trait_freq) dalle fonti: bruno: «The colour is generally reddish-brown, sometimes with a paler margin» (Wikipedia en).",
+      "trait_freq": {
+        "cap_color": {
+          "bruno": "di solito"
+        }
+      }
     },
     "pinophilus": {
       "latin": "Boletus pinophilus",
@@ -2306,9 +2315,15 @@
         "pino d'aleppo"
       ],
       "caution": "La cuticola vischiosa può causare disturbi intestinali. Preparazione solo dopo il controllo micologico.",
-      "traits_notes": "Sporata: ocra (luteus), ocra/bruno-siena (granulatus), bruno-oliva (collinitus) -> unione ocra/bruno/verde-oliva. Cappello viscido da umido, liscio/semiopaco da secco in tutte e tre. cap_veil null: S. luteus ha spesso lembi di velo pendenti dal margine (first-nature) mentre granulatus e collinitus hanno velo nudo; il gruppo e' misto. Carne: soda (luteus, gambo sodo in granulatus) ma tenera/molle nel cappello; gambo di luteus descritto anche fibroso. Base: leggermente allargata (luteus, granulatus) = normale; attenuata con micelio rosa in collinitus.",
+      "traits_notes": "Sporata: ocra (luteus), ocra/bruno-siena (granulatus), bruno-oliva (collinitus) -> unione ocra/bruno/verde-oliva. Cappello viscido da umido, liscio/semiopaco da secco in tutte e tre. cap_veil null: S. luteus ha spesso lembi di velo pendenti dal margine (first-nature) mentre granulatus e collinitus hanno velo nudo; il gruppo e' misto. Carne: soda (luteus, gambo sodo in granulatus) ma tenera/molle nel cappello; gambo di luteus descritto anche fibroso. Base: leggermente allargata (luteus, granulatus) = normale; attenuata con micelio rosa in collinitus. Frequenza dei colori (trait_freq) dalle fonti: bruno: «Usually dark chestnut brown, but occasionally quite a lot lighter, the caps of Suillus luteus» (First Nature); giallo: «cappello fino a 12 cm, viscoso, da bruno a cioccolato-porpora, a volte più sbiadito in ocra o giallo» (La risorsa FUNGO in Alta Valle del Vara (SSSA Pisa)).",
       "tox_label": "commestibile senza cuticola",
-      "tox_short": "senza cuticola"
+      "tox_short": "senza cuticola",
+      "trait_freq": {
+        "cap_color": {
+          "bruno": "di solito",
+          "giallo": "a volte"
+        }
+      }
     },
     "terreum": {
       "latin": "Tricholoma terreum",
@@ -3496,7 +3511,12 @@
         "caesarea",
         "virescens"
       ],
-      "traits_notes": "MORTALE, valori larghi. Sporata bianca. Cappello di norma liscio, serico, senza verruche, con fibrille radiali innate (it.wiki); vischioso col tempo umido (en.wiki 'sticky when wet', schede regionali). cap_veil null: di solito nudo, ma first-nature riporta che resti di velo possono persistere come grandi placche bianco-crema -> non deve mai essere escluso. Aggiunti 'asciutta' (da secco) e 'squamosa' (fibrille/placche di velo possono essere percepite come squame) per prudenza. Lamelle libere. Base con bulbo avvolto da volva a sacco membranosa (spesso nascosta nel terreno/lettiera). Carne bianca, soda (it.wiki), 'piuttosto fibrosa' (schede micologiche italiane trovate via ricerca; il PDF regionale non e' stato letto per intero)."
+      "traits_notes": "MORTALE, valori larghi. Sporata bianca. Cappello di norma liscio, serico, senza verruche, con fibrille radiali innate (it.wiki); vischioso col tempo umido (en.wiki 'sticky when wet', schede regionali). cap_veil null: di solito nudo, ma first-nature riporta che resti di velo possono persistere come grandi placche bianco-crema -> non deve mai essere escluso. Aggiunti 'asciutta' (da secco) e 'squamosa' (fibrille/placche di velo possono essere percepite come squame) per prudenza. Lamelle libere. Base con bulbo avvolto da volva a sacco membranosa (spesso nascosta nel terreno/lettiera). Carne bianca, soda (it.wiki), 'piuttosto fibrosa' (schede micologiche italiane trovate via ricerca; il PDF regionale non e' stato letto per intero). Frequenza dei colori (trait_freq) dalle fonti: verde: «the caps are generally greenish in colour with a white stipe and gills» (Wikipedia en).",
+      "trait_freq": {
+        "cap_color": {
+          "verde": "di solito"
+        }
+      }
     },
     "amanita-verna": {
       "latin": "Amanita verna",
@@ -3893,7 +3913,14 @@
       "lookalike_of": [
         "caesarea"
       ],
-      "traits_notes": "Verruche bianche/gialle del velo universale tipiche, ma la pioggia e l'eta' possono asportarle del tutto (en.wiki, First Nature): TOSSICO, quindi cap_veil null per non escluderla quando il cappello e' nudo. Cuticola viscida a tempo umido, staccabile (it.wiki); 'squamosa' aggiunto per prudenza perche' l'utente puo' scambiare le verruche per squame. Gambo 'leggermente fragile, fibroso' (en.wiki) -> fibrosa; 'soda' per prudenza. Lamelle libere. Base nettamente bulbosa con volva dissociata in cercini (it/en.wiki)."
+      "traits_notes": "Verruche bianche/gialle del velo universale tipiche, ma la pioggia e l'eta' possono asportarle del tutto (en.wiki, First Nature): TOSSICO, quindi cap_veil null per non escluderla quando il cappello e' nudo. Cuticola viscida a tempo umido, staccabile (it.wiki); 'squamosa' aggiunto per prudenza perche' l'utente puo' scambiare le verruche per squame. Gambo 'leggermente fragile, fibroso' (en.wiki) -> fibrosa; 'soda' per prudenza. Lamelle libere. Base nettamente bulbosa con volva dissociata in cercini (it/en.wiki). Frequenza dei colori (trait_freq) dalle fonti: rosso: «mushroom typically featuring a bright red cap covered with white warts» (Wikipedia en); arancio: «ranges from 10 to 20cm diameter at maturity; red or occasionally orange» (First Nature); giallo: «colore da rosso vermiglio a rosso acceso, raramente giallastro» (Amanita muscaria).",
+      "trait_freq": {
+        "cap_color": {
+          "rosso": "di solito",
+          "arancio": "a volte",
+          "giallo": "di rado"
+        }
+      }
     },
     "amanita-crocea": {
       "latin": "Amanita crocea",
@@ -4124,6 +4151,10 @@
         {
           "title": "First Nature - Omphalotus olearius",
           "url": "https://www.first-nature.com/fungi/omphalotus-olearius.php"
+        },
+        {
+          "title": "MushroomExpert.com (M. Kuo) - Omphalotus olearius",
+          "url": "https://www.mushroomexpert.com/omphalotus_olearius.html"
         }
       ],
       "trees": [
@@ -4137,7 +4168,13 @@
       "lookalike_of": [
         "cibarius"
       ],
-      "traits_notes": "Sporata crema/bianco-crema (it.wiki 'crema in massa', First Nature 'creamy white'). Carne 'elastica, tenace e fibrosa' (it.wiki). Cuticola 'fibrillosa, lucida' (it.wiki), 'smooth' (First Nature) -> liscia+asciutta; 'squamosa' aggiunto per prudenza (fibrille innate, non vere squame). Lamelle molto decorrenti. Gambo attenuato alla base (entrambe le fonti), spesso cespitoso; 'normale' per prudenza. Pdf ASL Oristano non leggibile (solo immagini)."
+      "traits_notes": "Sporata crema/bianco-crema (it.wiki 'crema in massa', First Nature 'creamy white'). Carne 'elastica, tenace e fibrosa' (it.wiki). Cuticola 'fibrillosa, lucida' (it.wiki), 'smooth' (First Nature) -> liscia+asciutta; 'squamosa' aggiunto per prudenza (fibrille innate, non vere squame). Lamelle molto decorrenti. Gambo attenuato alla base (entrambe le fonti), spesso cespitoso; 'normale' per prudenza. Pdf ASL Oristano non leggibile (solo immagini). Frequenza dei colori (trait_freq) dalle fonti: arancio: «It usually features a bright, brownish orange cap, but colors range from nearly red to nearly brown» (MushroomExpert.com (M. Kuo)); bruno: «bright brownish orange to yellowish orange—or in some collections reddish orange or nearly brown» (MushroomExpert.com (M. Kuo)).",
+      "trait_freq": {
+        "cap_color": {
+          "arancio": "di solito",
+          "bruno": "a volte"
+        }
+      }
     },
     "hygrophoropsis-aurantiaca": {
       "latin": "Hygrophoropsis aurantiaca",
@@ -5148,7 +5185,12 @@
       "lookalike_of": [
         "repandum"
       ],
-      "traits_notes": "Sporata bruna. Cappello feltrato/vellutato da giovane, poi liscio, bitorzoluto, con goccioline rosse da fresco (essudato, non vischiosita': non messo 'viscida'; asciutto non esplicitato dalle fonti). Carne coriacea, zonata, 'tough and fibrous', legnosa a maturita'. Gambo: en.wiki bulboso e radicante nel terreno per alcuni cm; First Nature cilindrico o assottigliato in basso -> tutti i valori. Imenoforo ad aculei -> gill_attachment null."
+      "traits_notes": "Sporata bruna. Cappello feltrato/vellutato da giovane, poi liscio, bitorzoluto, con goccioline rosse da fresco (essudato, non vischiosita': non messo 'viscida'; asciutto non esplicitato dalle fonti). Carne coriacea, zonata, 'tough and fibrous', legnosa a maturita'. Gambo: en.wiki bulboso e radicante nel terreno per alcuni cm; First Nature cilindrico o assottigliato in basso -> tutti i valori. Imenoforo ad aculei -> gill_attachment null. Frequenza dei colori (trait_freq) dalle fonti: rosa: «Although variable in shape and colour, fruitbodies of Hydnellum peckii invariably have pinkish tones» (First Nature).",
+      "trait_freq": {
+        "cap_color": {
+          "rosa": "di solito"
+        }
+      }
     },
     "lepiota-brunneoincarnata": {
       "latin": "Lepiota brunneoincarnata",
@@ -6149,7 +6191,12 @@
       "lookalike_of": [
         "mellea"
       ],
-      "traits_notes": "MORTALE (orellanina). Sporata: First Nature bruno-ruggine rossastro, it.wiki ocra; l'infobox di en.wiki dice 'cream to yellow' (probabile errore, ma inclusi crema/giallo per prudenza come da regola 3). Cappello asciutto, finemente squamuloso-fibrilloso, opaco. Cortina giallastra nei giovani, resti gialli sul gambo a bande: residui al margine del cappello non documentati ma possibili -> cap_veil=null. Lamelle: it.wiki 'smarginato-decorrenti, uncinate', infobox 'adnate' -> tutte e tre. Gambo: en.wiki 'bulbous base', it.wiki si allarga a ~2 cm alla base, First Nature 'tapers slightly towards the base' -> normale+bulbosa+assottigliata. Consistenza carne non descritta: fibrosa+soda (gambo fibrilloso tipico dei Cortinarius), per prudenza."
+      "traits_notes": "MORTALE (orellanina). Sporata: First Nature bruno-ruggine rossastro, it.wiki ocra; l'infobox di en.wiki dice 'cream to yellow' (probabile errore, ma inclusi crema/giallo per prudenza come da regola 3). Cappello asciutto, finemente squamuloso-fibrilloso, opaco. Cortina giallastra nei giovani, resti gialli sul gambo a bande: residui al margine del cappello non documentati ma possibili -> cap_veil=null. Lamelle: it.wiki 'smarginato-decorrenti, uncinate', infobox 'adnate' -> tutte e tre. Gambo: en.wiki 'bulbous base', it.wiki si allarga a ~2 cm alla base, First Nature 'tapers slightly towards the base' -> normale+bulbosa+assottigliata. Consistenza carne non descritta: fibrosa+soda (gambo fibrilloso tipico dei Cortinarius), per prudenza. Frequenza dei colori (trait_freq) dalle fonti: bruno: «The mushroom is generally tan to brown all over» (Wikipedia en).",
+      "trait_freq": {
+        "cap_color": {
+          "bruno": "di solito"
+        }
+      }
     },
     "gymnopilus-junonius": {
       "latin": "Gymnopilus junonius",
@@ -6501,9 +6548,15 @@
         "mellea"
       ],
       "caution": "come il chiodino: tossico crudo, va prebollito e cotto a lungo.",
-      "traits_notes": "Sporata bianca (MushroomExpert) o bianca/crema pallido (Wikipedia IT). Cappello asciutto con squamette più scure. Niente anello e velo nudo, quindi cap_veil false. La carne è fragile nel cappello ed elastica-coriacea, quasi legnosa, nel gambo, che è fibroso. Lamelle appena decorrenti o quasi (adnate-decorrenti). Gambo assottigliato alla base, con basi saldate nel cespo.",
+      "traits_notes": "Sporata bianca (MushroomExpert) o bianca/crema pallido (Wikipedia IT). Cappello asciutto con squamette più scure. Niente anello e velo nudo, quindi cap_veil false. La carne è fragile nel cappello ed elastica-coriacea, quasi legnosa, nel gambo, che è fibroso. Lamelle appena decorrenti o quasi (adnate-decorrenti). Gambo assottigliato alla base, con basi saldate nel cespo. Frequenza dei colori (trait_freq) dalle fonti: bruno: «it is usually a dull, tawny brown, though yellowish collections are not uncommon» (MushroomExpert.com (M. Kuo)); giallo: «usually a dull, tawny brown, though yellowish collections are not uncommon» (MushroomExpert.com (M. Kuo)).",
       "tox_label": "commestibile solo prebollito",
-      "tox_short": "solo prebollito"
+      "tox_short": "solo prebollito",
+      "trait_freq": {
+        "cap_color": {
+          "bruno": "di solito",
+          "giallo": "a volte"
+        }
+      }
     },
     "russula-heterophylla": {
       "latin": "Russula heterophylla",
@@ -6616,7 +6669,12 @@
       "lookalike_of": [
         "virescens"
       ],
-      "traits_notes": "Sporata bianca (Wikipedia IT ed EN). Cuticola un po' viscida con l'umido, lucida e liscia, a volte screpolata col secco. Carne compatta: Wikipedia IT dice anche 'alquanto elastica', ma come tutte le Russula si spezza netta, quindi gessosa più soda. Lamelle annesse, un po' decorrenti. Gambo cilindrico, spesso assottigliato alla base."
+      "traits_notes": "Sporata bianca (Wikipedia IT ed EN). Cuticola un po' viscida con l'umido, lucida e liscia, a volte screpolata col secco. Carne compatta: Wikipedia IT dice anche 'alquanto elastica', ma come tutte le Russula si spezza netta, quindi gessosa più soda. Lamelle annesse, un po' decorrenti. Gambo cilindrico, spesso assottigliato alla base. Frequenza dei colori (trait_freq) dalle fonti: verde: «Appearing with broad-leaved trees in summer to early autumn, it usually has a greenish coloration» (Wikipedia en).",
+      "trait_freq": {
+        "cap_color": {
+          "verde": "di solito"
+        }
+      }
     },
     "russula-olivacea": {
       "latin": "Russula olivacea",
@@ -6732,7 +6790,14 @@
       "lookalike_of": [
         "virescens"
       ],
-      "traits_notes": "Sporata giallo-ocra (Wikipedia IT), gialla (EN), giallo pallido (MykoWeb). Cuticola opaca, asciutta e glabra. Ho aggiunto vellutata/feltrata solo per prudenza, perché è un taxon tossico e la cuticola opaca può sembrare vellutata: nessuna fonte letta lo dice in modo esplicito. Carne soda e compatta, lamelle fragili, gessosa come nel genere. Lamelle adnate o annesse (MykoWeb); con 'libere' copro l'inserzione stretta delle annesse, sempre per prudenza. Gambo cilindrico, base un po' arrotondata (Wikipedia IT) o a volte appuntita (MykoWeb)."
+      "traits_notes": "Sporata giallo-ocra (Wikipedia IT), gialla (EN), giallo pallido (MykoWeb). Cuticola opaca, asciutta e glabra. Ho aggiunto vellutata/feltrata solo per prudenza, perché è un taxon tossico e la cuticola opaca può sembrare vellutata: nessuna fonte letta lo dice in modo esplicito. Carne soda e compatta, lamelle fragili, gessosa come nel genere. Lamelle adnate o annesse (MykoWeb); con 'libere' copro l'inserzione stretta delle annesse, sempre per prudenza. Gambo cilindrico, base un po' arrotondata (Wikipedia IT) o a volte appuntita (MykoWeb). Frequenza dei colori (trait_freq) dalle fonti: rosso: «in age, cap often developing reddish, brownish or purplish areas, occasionally entirely reddish» (MykoWeb); bruno: «in age, cap often developing reddish, brownish or purplish areas» (MykoWeb); violetto: «in age, cap often developing reddish, brownish or purplish areas» (MykoWeb).",
+      "trait_freq": {
+        "cap_color": {
+          "rosso": "spesso",
+          "bruno": "spesso",
+          "violetto": "spesso"
+        }
+      }
     },
     "russula-aeruginea": {
       "latin": "Russula aeruginea",
@@ -7408,7 +7473,12 @@
       "lookalike_of": [
         "terreum"
       ],
-      "traits_notes": "Sporata bianca (First Nature; Wikipedia IT non la riporta). Cuticola 'glabra, asciutta, feltrata' (Wikipedia IT); una scheda francese, vista solo nel riassunto della ricerca e non aperta, la dice fibrillosa o finemente squamulosa. Carne elastica (Wikipedia IT), gambo fibrilloso. Lamelle smarginate con dentino, filo punteggiato di nero. Gambo cilindrico, appena allargato verso la base (First Nature): normale, senza bulbo netto."
+      "traits_notes": "Sporata bianca (First Nature; Wikipedia IT non la riporta). Cuticola 'glabra, asciutta, feltrata' (Wikipedia IT); una scheda francese, vista solo nel riassunto della ricerca e non aperta, la dice fibrillosa o finemente squamulosa. Carne elastica (Wikipedia IT), gambo fibrilloso. Lamelle smarginate con dentino, filo punteggiato di nero. Gambo cilindrico, appena allargato verso la base (First Nature): normale, senza bulbo netto. Frequenza dei colori (trait_freq) dalle fonti: grigio: «the caps are usually grey, darker in the centre and with radial lines» (First Nature).",
+      "trait_freq": {
+        "cap_color": {
+          "grigio": "di solito"
+        }
+      }
     },
     "entoloma-sinuatum": {
       "latin": "Entoloma sinuatum",
@@ -7881,6 +7951,10 @@
         {
           "title": "Wikipedia en - Cortinarius violaceus",
           "url": "https://en.wikipedia.org/wiki/Cortinarius_violaceus"
+        },
+        {
+          "title": "First Nature - Cortinarius violaceus",
+          "url": "https://www.first-nature.com/fungi/cortinarius-violaceus.php"
         }
       ],
       "trees": [
@@ -7891,7 +7965,12 @@
       "lookalike_of": [
         "nuda"
       ],
-      "traits_notes": "Cappello tomentoso, secco, con fini squamette feltrate (en: 'fine, downy scales'), non viscido (talvolta untuoso). Sporata ocra-fulva (it.wiki) / ruggine (en.wiki): messi entrambi. Lamelle sinuato-adnate. Gambo claviforme con base bulbosa fino a 4 cm. Carne descritta 'molle, spugnosa' (it.wiki): 'soda' incluso per il cappello carnoso, ma incerto. Cortina violacea fugace, nessun residuo di velo sul cappello."
+      "traits_notes": "Cappello tomentoso, secco, con fini squamette feltrate (en: 'fine, downy scales'), non viscido (talvolta untuoso). Sporata ocra-fulva (it.wiki) / ruggine (en.wiki): messi entrambi. Lamelle sinuato-adnate. Gambo claviforme con base bulbosa fino a 4 cm. Carne descritta 'molle, spugnosa' (it.wiki): 'soda' incluso per il cappello carnoso, ma incerto. Cortina violacea fugace, nessun residuo di velo sul cappello. Frequenza dei colori (trait_freq) dalle fonti: nero: «entirely violet, purple or blue (sometimes so dark that it appears to be black» (First Nature).",
+      "trait_freq": {
+        "cap_color": {
+          "nero": "a volte"
+        }
+      }
     },
     "inocybe-lilacina": {
       "latin": "Inocybe lilacina",
@@ -8136,7 +8215,13 @@
       "lookalike_of": [
         "nuda"
       ],
-      "traits_notes": "Cappello glabro, liscio, igrofano, striato per trasparenza, 'moist or dry' (mushroomexpert): nessuna fonte lo dice viscido, quindi 'viscida' non incluso. Lamelle adnate, adnexed/uncinate ('attached by a tooth', sinuate-adnate) o leggermente decorrenti (first-nature). Gambo cavo, fragile, liscio, cilindrico, appena piu' largo alla base con fibrille bianche: 'normale'. Consistenza: gambo cartilagineo-fragile, non propriamente fibroso (Galloway Wild Foods lo contrappone al gambo fibroso di Laccaria): messi 'fibrosa' ed 'elastica/coriacea' per essere larghi (taxon tossico). Sporata bianca."
+      "traits_notes": "Cappello glabro, liscio, igrofano, striato per trasparenza, 'moist or dry' (mushroomexpert): nessuna fonte lo dice viscido, quindi 'viscida' non incluso. Lamelle adnate, adnexed/uncinate ('attached by a tooth', sinuate-adnate) o leggermente decorrenti (first-nature). Gambo cavo, fragile, liscio, cilindrico, appena piu' largo alla base con fibrille bianche: 'normale'. Consistenza: gambo cartilagineo-fragile, non propriamente fibroso (Galloway Wild Foods lo contrappone al gambo fibroso di Laccaria): messi 'fibrosa' ed 'elastica/coriacea' per essere larghi (taxon tossico). Sporata bianca. Frequenza dei colori (trait_freq) dalle fonti: violetto: «the caps are usually lilac with a pale, almost white edge, but other colour forms do occur» (First Nature); bianco: «White or yellowish specimens are often encountered» (MushroomExpert.com (M. Kuo)).",
+      "trait_freq": {
+        "cap_color": {
+          "violetto": "di solito",
+          "bianco": "spesso"
+        }
+      }
     },
     "laccaria-amethystina": {
       "latin": "Laccaria amethystina",
@@ -8475,7 +8560,13 @@
         "amanita-virosa",
         "agaricus-xanthodermus"
       ],
-      "caution": "Si confonde con Agaricus xanthodermus e altri agarici tossici."
+      "caution": "Si confonde con Agaricus xanthodermus e altri agarici tossici.",
+      "trait_freq": {
+        "cap_color": {
+          "giallo": "spesso"
+        }
+      },
+      "traits_notes": " Frequenza dei colori (trait_freq) dalle fonti: giallo: «The cap turns yellowish where bruised, and old caps often take on a yellow-brown tinge» (First Nature)."
     },
     "agaricus-bisporus": {
       "latin": "Agaricus bisporus",
@@ -9175,7 +9266,13 @@
       "dangerous_lookalikes": [
         "gyromitra-esculenta"
       ],
-      "caution": "Commestibile solo dopo corretta cottura; cruda o poco cotta può causare intossicazioni. Si confonde con giromitre tossiche."
+      "caution": "Commestibile solo dopo corretta cottura; cruda o poco cotta può causare intossicazioni. Si confonde con giromitre tossiche.",
+      "trait_freq": {
+        "cap_shape": {
+          "conico": "a volte"
+        }
+      },
+      "traits_notes": " Frequenza dei colori (trait_freq) dalle fonti: conico: «sometimes conical, but more often globular or an elongated vertical oval» (First Nature)."
     },
     "morchella-elata": {
       "latin": "Morchella elata s.l.",
@@ -9370,7 +9467,13 @@
         "entoloma-sinuatum",
         "clitocybe-rivulosa"
       ],
-      "caution": "Può essere confuso con Inocybe erubescens, mortale, e altri funghi tossici."
+      "caution": "Può essere confuso con Inocybe erubescens, mortale, e altri funghi tossici.",
+      "trait_freq": {
+        "cap_color": {
+          "bianco": "di solito"
+        }
+      },
+      "traits_notes": " Frequenza dei colori (trait_freq) dalle fonti: bianco: «è tipicamente bianco, ma si possono trovare esemplari di color nocciola chiaro» (Calocybe gambosa)."
     },
     "marasmius-oreades": {
       "latin": "Marasmius oreades",
@@ -9657,7 +9760,13 @@
         "pino d'aleppo"
       ],
       "dangerous_lookalikes": [],
-      "caution": "Non tutti i lattari con colori simili sono commestibili."
+      "caution": "Non tutti i lattari con colori simili sono commestibili.",
+      "trait_freq": {
+        "cap_color": {
+          "verde": "spesso"
+        }
+      },
+      "traits_notes": " Frequenza dei colori (trait_freq) dalle fonti: verde: «Older specimens are vase-shaped with sharpish rims, and they often develop faint pistachio-green irregular patches» (First Nature)."
     },
     "lactarius-deterrimus": {
       "latin": "Lactarius deterrimus",
@@ -9740,7 +9849,13 @@
       "trees": [
         "abete rosso"
       ],
-      "dangerous_lookalikes": []
+      "dangerous_lookalikes": [],
+      "trait_freq": {
+        "cap_color": {
+          "verde": "di solito"
+        }
+      },
+      "traits_notes": " Frequenza dei colori (trait_freq) dalle fonti: verde: «the cap is yellowish orange zoned with darker areas and nearly always with irregular green patches» (First Nature)."
     },
     "hygrophorus-marzuolus": {
       "latin": "Hygrophorus marzuolus",
@@ -10032,7 +10147,13 @@
       "dangerous_lookalikes": [
         "tricholoma-equestre"
       ],
-      "caution": "Si confonde con altre specie di Tricholoma tossiche."
+      "caution": "Si confonde con altre specie di Tricholoma tossiche.",
+      "trait_freq": {
+        "cap_color": {
+          "giallo": "spesso"
+        }
+      },
+      "traits_notes": " Frequenza dei colori (trait_freq) dalle fonti: giallo: «Mouse grey or sometimes slate grey, streaked with darker grey-brown radial fibrils and often yellow highlights» (First Nature)."
     },
     "coprinus-comatus": {
       "latin": "Coprinus comatus",
@@ -10403,13 +10524,23 @@
         {
           "title": "Wikipedia (it) — Russula emetica (fonte secondaria)",
           "url": "https://it.wikipedia.org/wiki/Russula_emetica"
+        },
+        {
+          "title": "Regione Emilia-Romagna - Funghi commestibili (scheda Russula aurata)",
+          "url": "https://ambiente.regione.emilia-romagna.it/it/parchi-natura2000/sistema-regionale/funghi-sottobosco-tartufi/funghi-allegati/funghi-commestibili/@@download/file"
         }
       ],
       "trees": [
         "faggio",
         "abete rosso"
       ],
-      "dangerous_lookalikes": []
+      "dangerous_lookalikes": [],
+      "trait_freq": {
+        "cap_color": {
+          "giallo": "spesso"
+        }
+      },
+      "traits_notes": " Frequenza dei colori (trait_freq) dalle fonti: giallo: «rosso mattone vivo, rosso arancio, spesso con macchie giallo limone o interamente giallo» (Regione Emilia-Romagna)."
     },
     "agaricus-xanthodermus": {
       "latin": "Agaricus xanthodermus",
@@ -10953,7 +11084,12 @@
           "url": "https://www.gbif.org/species/3324883"
         }
       ],
-      "traits_notes": "TOSSICO, valori larghi. s.l.: complesso con T. flavovirens e T. auratum, difficili da separare anche al microscopio (revisione in letteratura; it.wiki indica T. auratum 'fortemente sospettato'). Cappello 5-15 cm (en.wiki; 8-12 it.wiki), giallo, giallo-olivastro o giallo-verdognolo con centro bruno, viscido e con squamette (it.wiki, en.wiki, First Nature); da campanulato a spianato, a volte con umbone lieve (it.wiki, First Nature). Lamelle gialle, libere (it.wiki) o smarginate (First Nature). Gambo giallo, senza anello, a volte bulboso (it.wiki). Odore farinoso appena percettibile (it.wiki) o nullo (First Nature). Sporata bianca. Pini, soprattutto pino silvestre su sabbia, anche betulle e talvolta querce (First Nature); conifere e latifoglie (it.wiki). Stagione luglio-ottobre (First Nature), autunno (it.wiki): incluso novembre. Viraggio e consistenza non documentati: null. La foto viene dalla Galizia (Spagna): le osservazioni nordamericane possono appartenere ad altre specie (en.wiki)."
+      "traits_notes": "TOSSICO, valori larghi. s.l.: complesso con T. flavovirens e T. auratum, difficili da separare anche al microscopio (revisione in letteratura; it.wiki indica T. auratum 'fortemente sospettato'). Cappello 5-15 cm (en.wiki; 8-12 it.wiki), giallo, giallo-olivastro o giallo-verdognolo con centro bruno, viscido e con squamette (it.wiki, en.wiki, First Nature); da campanulato a spianato, a volte con umbone lieve (it.wiki, First Nature). Lamelle gialle, libere (it.wiki) o smarginate (First Nature). Gambo giallo, senza anello, a volte bulboso (it.wiki). Odore farinoso appena percettibile (it.wiki) o nullo (First Nature). Sporata bianca. Pini, soprattutto pino silvestre su sabbia, anche betulle e talvolta querce (First Nature); conifere e latifoglie (it.wiki). Stagione luglio-ottobre (First Nature), autunno (it.wiki): incluso novembre. Viraggio e consistenza non documentati: null. La foto viene dalla Galizia (Spagna): le osservazioni nordamericane possono appartenere ad altre specie (en.wiki). Frequenza dei colori (trait_freq) dalle fonti: giallo: «The cap ranges from 5-15 cm in width and is usually yellow with brownish areas» (Wikipedia en).",
+      "trait_freq": {
+        "cap_color": {
+          "giallo": "di solito"
+        }
+      }
     },
     "clitocybe-rivulosa": {
       "latin": "Clitocybe rivulosa (= Clitocybe dealbata)",
@@ -11080,7 +11216,12 @@
           "url": "https://www.gbif.org/species/2531052"
         }
       ],
-      "traits_notes": "TOSSICO, valori larghi. Nomenclatura: GBIF e First Nature trattano C. dealbata come sinonimo di C. rivulosa; it.wiki le tiene distinte ma 'fortemente simili'; iNaturalist usa Collybia rivulosa. Cappello 1-6 cm (First Nature; 3-4 it.wiki; 2-4 en.wiki), bianco o con sfumature camoscio, da giovane leggermente brunastro (it.wiki), convesso poi piano o depresso. Superficie infarinata o sericea da secca (First Nature), igrofana (it.wiki): asciutta e liscia. Lamelle bianche poi grigio-rosate (First Nature), screziate di rosa (it.wiki), adnate o un po' decorrenti. Gambo senza anello, fibroso (it.wiki). Odore dolciastro non caratteristico (First Nature), nessuno (en.wiki). Sporata bianca. Prati, parchi, bordi di strade, dune; spesso in cerchi. Stagione luglio-inizio dicembre (First Nature), estate-autunno (it.wiki). Viraggio e base del gambo non documentati: null."
+      "traits_notes": "TOSSICO, valori larghi. Nomenclatura: GBIF e First Nature trattano C. dealbata come sinonimo di C. rivulosa; it.wiki le tiene distinte ma 'fortemente simili'; iNaturalist usa Collybia rivulosa. Cappello 1-6 cm (First Nature; 3-4 it.wiki; 2-4 en.wiki), bianco o con sfumature camoscio, da giovane leggermente brunastro (it.wiki), convesso poi piano o depresso. Superficie infarinata o sericea da secca (First Nature), igrofana (it.wiki): asciutta e liscia. Lamelle bianche poi grigio-rosate (First Nature), screziate di rosa (it.wiki), adnate o un po' decorrenti. Gambo senza anello, fibroso (it.wiki). Odore dolciastro non caratteristico (First Nature), nessuno (en.wiki). Sporata bianca. Prati, parchi, bordi di strade, dune; spesso in cerchi. Stagione luglio-inizio dicembre (First Nature), estate-autunno (it.wiki). Viraggio e base del gambo non documentati: null. Frequenza dei colori (trait_freq) dalle fonti: crema: «white, usually developing a slight buffish tinge with age» (First Nature).",
+      "trait_freq": {
+        "cap_color": {
+          "crema": "di solito"
+        }
+      }
     }
   },
   "_note_traits_2": "Caratteri aggiunti il 2026-10-12 (sporata, velo, lattice, consistenza, superficie, attaccatura, base): ogni valore verificato su fonti lette, elencate in sources; dubbi e scelte in traits_notes. Taxa tossici e mortali: valori larghi per non escluderli; commestibili: solo valori con fonte.",

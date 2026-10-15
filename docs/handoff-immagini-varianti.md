@@ -24,7 +24,7 @@ Per ogni specie della tabella:
    - piano, imbuto o ombrellato = adulto.
 
    Gambo e proporzioni restano coerenti con la stessa specie a quell'età.
-4. **Colore e forma non si combinano.** Niente «rosso + piano».
+4. **Colore e forma:** in questo giro una variante cambia solo il colore o solo la forma. Dal 15/10 l'app combina le due scelte (decisione di Matteo): le combinazioni si disegnano a parte, come indicato in `docs/handoff-immagini-mancanti.md`, e finché mancano l'app lo dice.
 
 Ogni variante = **2 icone**: cappello visto di lato (come la tessera «cappello» base) e fungo intero (come la tessera «gambo» base).
 

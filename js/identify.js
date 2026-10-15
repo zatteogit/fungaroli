@@ -176,10 +176,20 @@ document.addEventListener('click', (e) => {
   const art = !b && e.target.closest?.('.trait-strip li:has(.ts-dots) .ts-art');
   if (art) { const all = [...art.closest('li').querySelectorAll('.ts-dot')]; b = all[(all.findIndex((x) => x.getAttribute('aria-pressed') === 'true') + 1) % all.length]; }
   if (!b) return;
-  const strip = b.closest('.trait-strip'), { illKey: key, illV: v, illDrawn: drawn } = b.dataset;
-  strip.querySelectorAll('[data-ill-v]').forEach((x) => x.setAttribute('aria-pressed', String(x === b || (x.parentElement !== b.parentElement && x.dataset.illV === x.dataset.illDrawn))));
-  const src = (part) => ASSET(`assets/traits/${key}-${part}${v === drawn ? '' : `-${v}`}.webp`);
-  for (const part of ['cappello', 'gambo']) strip.querySelector(`[data-ill="${part}"]`)?.setAttribute('src', src(part));
+  const strip = b.closest('.trait-strip'), key = b.dataset.illKey;
+  b.parentElement.querySelectorAll('[data-ill-v]').forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+  // colore e forma si combinano: il disegno è la coppia scelta, se esiste; altrimenti la forma scelta nel colore del disegno
+  const sel = (cls) => { const x = strip.querySelector(`.${cls}[aria-pressed="true"]`); return x ? [x.dataset.illV, x.dataset.illDrawn] : [null, null]; };
+  const [c, c0] = sel('ts-dot'), [f, f0] = sel('ts-form');
+  const combos = (ICONS?.[key]?.combos) || [];
+  let suffix = '', missing = false;
+  if (c && f && c !== c0 && f !== f0) { if (combos.includes(`${c}|${f}`)) suffix = `-${c}-${f}`; else { suffix = `-${f}`; missing = true; } }
+  else if (c && c !== c0) suffix = `-${c}`;
+  else if (f && f !== f0) suffix = `-${f}`;
+  for (const part of ['cappello', 'gambo']) strip.querySelector(`[data-ill="${part}"]`)?.setAttribute('src', ASSET(`assets/traits/${key}-${part}${suffix}.webp`));
+  const li = strip.querySelector('li:has(.ts-dots)'); let note = li?.querySelector('.ts-note');
+  if (li && missing && !note) { note = document.createElement('span'); note.className = 'ts-note'; li.querySelector('.ts-dots').after(note); }
+  if (note) { note.hidden = !missing; note.textContent = missing ? 'Colore non ancora disegnato per questa forma' : ''; }
 });
 let CITES = {};
 let HOWTO = () => '', BANNER = '', TAXA = [], RULES = [], MEDIA = {}, ASSET = (f) => f, THUMB = () => '', POTENTIAL = () => null, ZONES = [];
@@ -386,7 +396,9 @@ export function traitStrip(edibleId, t = refOf(edibleId)) {
   // cappello: la sua forma, nei suoi colori, con le verruche se ci sono; sotto forma e diametro
   if (tr.cap_color || tr.cap_shape) {
     const shapes = [].concat(tr.cap_shape || ['convesso']), cols = [].concat(tr.cap_color || ['bruno']);
-    out.push(tile(ic ? illus(t.key, 'cappello') : capArt(shapes, cols, tr.cap_veil === true), 'Cappello', orList([].concat(tr.cap_color || []).map((v) => one(Q('cap_color'), v))) || '',
+    // con la frequenza dalle fonti: «rosso (di solito), arancio (a volte) o giallo (di rado)»
+    const freq = (field, q, v) => { const w = t.trait_freq?.[field]?.[v]; return one(q, v) + (w ? ` (${w})` : ''); };
+    out.push(tile(ic ? illus(t.key, 'cappello') : capArt(shapes, cols, tr.cap_veil === true), 'Cappello', orList([].concat(tr.cap_color || []).map((v) => freq('cap_color', Q('cap_color'), v))) || '',
       [orList([].concat(tr.cap_shape || []).slice(0, 2).map((v) => optLabel(Q('cap_shape'), v))), sizeTxt(tr.cap_size)].filter(Boolean).join(' · '), dots));
   }
   // sotto il cappello e il suo colore in una sola tessera: "Lamelle · bianche o crema"

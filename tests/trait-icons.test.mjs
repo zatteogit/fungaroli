@@ -36,3 +36,11 @@ test('ogni icona dei funghi è intera: il disegno non tocca il bordo', () => {
     assert.ok(icons.margins[n] >= 2, `${n}: il disegno tocca il bordo (tagliato?)`);
   }
 });
+
+test('le combinazioni colore + forma elencate hanno cappello e gambo e usano valori delle fonti', () => {
+  for (const [key, e] of Object.entries(icons.taxa)) for (const pair of e.combos || []) {
+    const [c, f] = pair.split('|');
+    assert.ok(taxa[key].traits.cap_color.includes(c) && taxa[key].traits.cap_shape.includes(f), `${key}: ${pair} non è nelle fonti`);
+    for (const part of ['cappello', 'gambo']) assert.ok(file(`${key}-${part}-${c}-${f}`), `manca ${key}-${part}-${c}-${f}`);
+  }
+});

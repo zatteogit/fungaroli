@@ -94,3 +94,13 @@ test('flowers are a plant category: toxic or to observe, never edible parts, wit
   const noSource=structuredClone(data);delete noSource.plants.bucaneve.protection.url;
   assert.throws(()=>validateContent('plants',noSource,read('plants')),/tutela/);
 });
+
+test('frequenza di colori e forme: solo la scala chiusa e solo valori della specie', () => {
+  const data = read('species-traits');
+  assert.ok(validateContent('species-traits', data, read('species-traits')));
+  assert.equal(data.taxa['amanita-muscaria'].trait_freq.cap_color.rosso, 'di solito');
+  const bad = structuredClone(data); bad.taxa['amanita-muscaria'].trait_freq.cap_color.rosso = '80%';
+  assert.throws(() => validateContent('species-traits', bad, read('species-traits')), /frequenza ammessa/);
+  const other = structuredClone(data); other.taxa['amanita-muscaria'].trait_freq.cap_color.blu = 'di rado';
+  assert.throws(() => validateContent('species-traits', other, read('species-traits')), /non è tra i valori/);
+});

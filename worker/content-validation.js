@@ -94,6 +94,15 @@ export function validateContent(id, data, previous) {
       if (r.kind != null && !KINDS.includes(r.kind)) err(`Tipo di avviso non valido: ${r.kind}.`);
       if (r.title != null && (typeof r.title !== 'string' || !r.title.trim() || r.title.length > 60)) err('Il titolo di un avviso deve essere breve (al massimo 60 caratteri).');
     }
+    // frequenza di un colore o di una forma: solo parole di una scala chiusa, solo per valori che la specie ha
+    const FREQ = ['di solito', 'spesso', 'a volte', 'di rado'];
+    for (const [key, t] of Object.entries(value.taxa || {})) for (const [field, m] of Object.entries(t?.trait_freq || {})) {
+      if (!['cap_color', 'cap_shape'].includes(field)) err(`${key}: frequenza indicata per un carattere non previsto (${field}).`);
+      for (const [v, w] of Object.entries(m || {})) {
+        if (!FREQ.includes(w)) err(`${key}: «${w}» non è una frequenza ammessa (di solito, spesso, a volte, di rado).`);
+        if (![].concat(t.traits?.[field] || []).includes(v)) err(`${key}: frequenza per «${v}», che non è tra i valori della specie.`);
+      }
+    }
     for (const [url, c] of Object.entries(value.citations || {})) if (!/^https?:\/\//.test(url) || typeof c?.author !== 'string' || !c.author.trim() || typeof c?.year !== 'string' || !c.year.trim()) err('Ogni citazione richiede URL, autore e anno (o s.d.).');
   }
   if (id==='guides') {

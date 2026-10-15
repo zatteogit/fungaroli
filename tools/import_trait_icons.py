@@ -74,7 +74,7 @@ def main(inc):
     OUT.mkdir(parents=True, exist_ok=True)
     for f in OUT.glob("*.webp"):
         f.unlink()
-    have, base, variants, sheets, margins = {}, {}, {}, {}, {}
+    have, base, variants, sheets, margins, combos = {}, {}, {}, {}, {}, {}
     for r in rows:
         key = r["soggetto"]
         if key not in taxa:
@@ -88,7 +88,15 @@ def main(inc):
             sys.exit(f"{r['file']}: la cella {cell} è vuota")
         tile = fit(im.crop(boxes[cell]))
         var = r.get("variante")
-        if var:
+        if var and "+" in var:
+            # combinazione colore + forma (es. "colore:giallo+forma:piano"): file <specie>-<tessera>-<colore>-<forma>
+            parts = dict(x.split(":", 1) for x in var.split("+"))
+            c, f = parts.get("colore"), parts.get("forma")
+            if c not in (taxa[key]["traits"].get("cap_color") or []) or f not in (taxa[key]["traits"].get("cap_shape") or []):
+                sys.exit(f"{key}: {var} non è tra i valori delle fonti")
+            name = f"{key}-{r['tessera']}-{c}-{f}.webp"
+            combos.setdefault(key, {}).setdefault(f"{c}|{f}", set()).add(r["tessera"])
+        elif var:
             kind, value = var.split(":", 1)
             if value not in (taxa[key]["traits"].get("cap_color" if kind == "colore" else "cap_shape") or []):
                 sys.exit(f"{key}: {var} non è tra i valori delle fonti")
@@ -112,6 +120,9 @@ def main(inc):
             if done and drawn:
                 order = taxa[key]["traits"].get("cap_color" if kind == "colore" else "cap_shape") or []
                 entry[field] = {"drawn": drawn, "values": [v for v in order if v == drawn or v in done]}
+        done = sorted(k for k, parts in combos.get(key, {}).items() if {"cappello", "gambo"} <= parts)
+        if done:
+            entry["combos"] = done
         index[key] = entry
     out = {
         "note": "Icone dei caratteri disegnate con AI (image_gen) a partire dai caratteri strutturati di data/species-traits.json, riviste dal proprietario del progetto. Mostrano varianti descritte nelle fonti; non sono foto e non servono a identificare.",
