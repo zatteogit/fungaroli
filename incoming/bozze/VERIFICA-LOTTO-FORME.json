@@ -1,0 +1,3910 @@
+{
+  "tavole": 36,
+  "varianti": 107,
+  "icone": 214,
+  "esito": "superato",
+  "risultati": [
+    {
+      "file": "incoming/icone/forme-04.png",
+      "bytes": 47976,
+      "sha256": "5ecf0428daa11035d9b86185dae9374f46242000009a97c489e22d90ceafdcd0",
+      "celle": [
+        {
+          "cella": 0,
+          "margini_px_alpha_nonzero": [
+            88,
+            174,
+            79,
+            85
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 1,
+          "margini_px_alpha_nonzero": [
+            119,
+            109,
+            119,
+            51
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 2,
+          "vuota": true
+        },
+        {
+          "cella": 3,
+          "margini_px_alpha_nonzero": [
+            85,
+            156,
+            76,
+            157
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 4,
+          "margini_px_alpha_nonzero": [
+            107,
+            96,
+            107,
+            81
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 5,
+          "vuota": true
+        },
+        {
+          "cella": 6,
+          "margini_px_alpha_nonzero": [
+            79,
+            90,
+            70,
+            151
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 7,
+          "margini_px_alpha_nonzero": [
+            107,
+            46,
+            106,
+            97
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 8,
+          "vuota": true
+        }
+      ]
+    },
+    {
+      "file": "incoming/icone/forme-05.png",
+      "bytes": 65005,
+      "sha256": "9e6627ab67f161bb2112a9cb6791c8535e33092563d975efe232d71147be9f08",
+      "celle": [
+        {
+          "cella": 0,
+          "margini_px_alpha_nonzero": [
+            71,
+            123,
+            71,
+            123
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 1,
+          "margini_px_alpha_nonzero": [
+            90,
+            62,
+            91,
+            62
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 2,
+          "vuota": true
+        },
+        {
+          "cella": 3,
+          "margini_px_alpha_nonzero": [
+            72,
+            158,
+            72,
+            158
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 4,
+          "margini_px_alpha_nonzero": [
+            71,
+            81,
+            72,
+            81
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 5,
+          "vuota": true
+        },
+        {
+          "cella": 6,
+          "margini_px_alpha_nonzero": [
+            72,
+            129,
+            73,
+            129
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 7,
+          "margini_px_alpha_nonzero": [
+            92,
+            62,
+            92,
+            62
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 8,
+          "vuota": true
+        }
+      ]
+    },
+    {
+      "file": "incoming/icone/forme-06.png",
+      "bytes": 59040,
+      "sha256": "2dcfbb552e15c317a392aff6b9e49808b23d19d2b9a2a73ef8deee5db04a8353",
+      "celle": [
+        {
+          "cella": 0,
+          "margini_px_alpha_nonzero": [
+            62,
+            156,
+            62,
+            157
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 1,
+          "margini_px_alpha_nonzero": [
+            62,
+            91,
+            62,
+            92
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 2,
+          "vuota": true
+        },
+        {
+          "cella": 3,
+          "margini_px_alpha_nonzero": [
+            78,
+            139,
+            78,
+            140
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 4,
+          "margini_px_alpha_nonzero": [
+            96,
+            64,
+            96,
+            65
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 5,
+          "vuota": true
+        },
+        {
+          "cella": 6,
+          "margini_px_alpha_nonzero": [
+            62,
+            157,
+            62,
+            158
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 7,
+          "margini_px_alpha_nonzero": [
+            62,
+            81,
+            62,
+            81
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 8,
+          "vuota": true
+        }
+      ]
+    },
+    {
+      "file": "incoming/icone/forme-07.png",
+      "bytes": 60358,
+      "sha256": "e4c838ab1d2885efad1fce17557b4fe5f1044536993662b9453ce5bcb19b5df8",
+      "celle": [
+        {
+          "cella": 0,
+          "margini_px_alpha_nonzero": [
+            62,
+            156,
+            62,
+            157
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 1,
+          "margini_px_alpha_nonzero": [
+            62,
+            88,
+            63,
+            89
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 2,
+          "vuota": true
+        },
+        {
+          "cella": 3,
+          "margini_px_alpha_nonzero": [
+            62,
+            145,
+            62,
+            145
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 4,
+          "margini_px_alpha_nonzero": [
+            67,
+            85,
+            68,
+            85
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 5,
+          "vuota": true
+        },
+        {
+          "cella": 6,
+          "margini_px_alpha_nonzero": [
+            62,
+            154,
+            62,
+            155
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 7,
+          "margini_px_alpha_nonzero": [
+            62,
+            93,
+            62,
+            94
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 8,
+          "vuota": true
+        }
+      ]
+    },
+    {
+      "file": "incoming/icone/forme-08.png",
+      "bytes": 69260,
+      "sha256": "494e8c2fa61a5554d98e5811f4393e1ba8c04d9c68843b6c5c3e42d293e5a4b6",
+      "celle": [
+        {
+          "cella": 0,
+          "margini_px_alpha_nonzero": [
+            62,
+            135,
+            62,
+            135
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 1,
+          "margini_px_alpha_nonzero": [
+            64,
+            71,
+            64,
+            71
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 2,
+          "vuota": true
+        },
+        {
+          "cella": 3,
+          "margini_px_alpha_nonzero": [
+            66,
+            118,
+            66,
+            118
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 4,
+          "margini_px_alpha_nonzero": [
+            91,
+            62,
+            92,
+            62
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 5,
+          "vuota": true
+        },
+        {
+          "cella": 6,
+          "margini_px_alpha_nonzero": [
+            62,
+            130,
+            62,
+            130
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 7,
+          "margini_px_alpha_nonzero": [
+            68,
+            62,
+            69,
+            62
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 8,
+          "vuota": true
+        }
+      ]
+    },
+    {
+      "file": "incoming/icone/forme-09.png",
+      "bytes": 53115,
+      "sha256": "325adbb8db4b1125476e4a179d9f4f2eb1f6a3827f56bc4634cab5b7247281ab",
+      "celle": [
+        {
+          "cella": 0,
+          "margini_px_alpha_nonzero": [
+            74,
+            138,
+            74,
+            138
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 1,
+          "margini_px_alpha_nonzero": [
+            96,
+            84,
+            97,
+            85
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 2,
+          "vuota": true
+        },
+        {
+          "cella": 3,
+          "margini_px_alpha_nonzero": [
+            68,
+            139,
+            69,
+            139
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 4,
+          "margini_px_alpha_nonzero": [
+            83,
+            77,
+            84,
+            77
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 5,
+          "vuota": true
+        },
+        {
+          "cella": 6,
+          "margini_px_alpha_nonzero": [
+            62,
+            155,
+            62,
+            155
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 7,
+          "margini_px_alpha_nonzero": [
+            81,
+            82,
+            82,
+            82
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 8,
+          "vuota": true
+        }
+      ]
+    },
+    {
+      "file": "incoming/icone/forme-10.png",
+      "bytes": 50757,
+      "sha256": "8742c5a7575f371bce32e72ce87b455864273fb631e3bf188d8067eb0307d0bb",
+      "celle": [
+        {
+          "cella": 0,
+          "margini_px_alpha_nonzero": [
+            62,
+            156,
+            62,
+            156
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 1,
+          "margini_px_alpha_nonzero": [
+            68,
+            93,
+            69,
+            94
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 2,
+          "vuota": true
+        },
+        {
+          "cella": 3,
+          "margini_px_alpha_nonzero": [
+            62,
+            158,
+            62,
+            158
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 4,
+          "margini_px_alpha_nonzero": [
+            62,
+            96,
+            62,
+            97
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 5,
+          "vuota": true
+        },
+        {
+          "cella": 6,
+          "margini_px_alpha_nonzero": [
+            62,
+            159,
+            62,
+            160
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 7,
+          "margini_px_alpha_nonzero": [
+            62,
+            93,
+            62,
+            94
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 8,
+          "vuota": true
+        }
+      ]
+    },
+    {
+      "file": "incoming/icone/forme-11.png",
+      "bytes": 46580,
+      "sha256": "164110dbe3f40ec7b92ff047c74d9293168711b1d25216d89ed225528c74ebff",
+      "celle": [
+        {
+          "cella": 0,
+          "margini_px_alpha_nonzero": [
+            75,
+            125,
+            75,
+            126
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 1,
+          "margini_px_alpha_nonzero": [
+            88,
+            68,
+            88,
+            68
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 2,
+          "vuota": true
+        },
+        {
+          "cella": 3,
+          "margini_px_alpha_nonzero": [
+            77,
+            146,
+            78,
+            147
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 4,
+          "margini_px_alpha_nonzero": [
+            96,
+            86,
+            96,
+            86
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 5,
+          "vuota": true
+        },
+        {
+          "cella": 6,
+          "margini_px_alpha_nonzero": [
+            74,
+            135,
+            75,
+            136
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 7,
+          "margini_px_alpha_nonzero": [
+            94,
+            77,
+            94,
+            78
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 8,
+          "vuota": true
+        }
+      ]
+    },
+    {
+      "file": "incoming/icone/forme-12.png",
+      "bytes": 53193,
+      "sha256": "ca60702f911669792b980783bde7a222608a49ae030c3e29895081d31ebc1e0b",
+      "celle": [
+        {
+          "cella": 0,
+          "margini_px_alpha_nonzero": [
+            87,
+            137,
+            88,
+            138
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 1,
+          "margini_px_alpha_nonzero": [
+            101,
+            83,
+            101,
+            84
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 2,
+          "vuota": true
+        },
+        {
+          "cella": 3,
+          "margini_px_alpha_nonzero": [
+            86,
+            140,
+            87,
+            141
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 4,
+          "margini_px_alpha_nonzero": [
+            93,
+            79,
+            94,
+            80
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 5,
+          "vuota": true
+        },
+        {
+          "cella": 6,
+          "margini_px_alpha_nonzero": [
+            78,
+            131,
+            79,
+            131
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 7,
+          "margini_px_alpha_nonzero": [
+            86,
+            71,
+            87,
+            72
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 8,
+          "vuota": true
+        }
+      ]
+    },
+    {
+      "file": "incoming/icone/forme-13.png",
+      "bytes": 53965,
+      "sha256": "7a8be4ebacb8672cb6470bb69c7eb748d99bcfe4a83231268a25346b5b6b172d",
+      "celle": [
+        {
+          "cella": 0,
+          "margini_px_alpha_nonzero": [
+            89,
+            137,
+            89,
+            137
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 1,
+          "margini_px_alpha_nonzero": [
+            99,
+            71,
+            99,
+            72
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 2,
+          "vuota": true
+        },
+        {
+          "cella": 3,
+          "margini_px_alpha_nonzero": [
+            87,
+            138,
+            87,
+            138
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 4,
+          "margini_px_alpha_nonzero": [
+            96,
+            69,
+            96,
+            70
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 5,
+          "vuota": true
+        },
+        {
+          "cella": 6,
+          "margini_px_alpha_nonzero": [
+            83,
+            141,
+            83,
+            141
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 7,
+          "margini_px_alpha_nonzero": [
+            104,
+            62,
+            104,
+            62
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 8,
+          "vuota": true
+        }
+      ]
+    },
+    {
+      "file": "incoming/icone/forme-14.png",
+      "bytes": 53051,
+      "sha256": "195eb1620d243599c2e564f04ec179f92c1e72edaf0db1ddb774e1e01a632f7e",
+      "celle": [
+        {
+          "cella": 0,
+          "margini_px_alpha_nonzero": [
+            81,
+            133,
+            82,
+            133
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 1,
+          "margini_px_alpha_nonzero": [
+            86,
+            76,
+            87,
+            77
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 2,
+          "vuota": true
+        },
+        {
+          "cella": 3,
+          "margini_px_alpha_nonzero": [
+            71,
+            158,
+            72,
+            158
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 4,
+          "margini_px_alpha_nonzero": [
+            76,
+            95,
+            76,
+            96
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 5,
+          "vuota": true
+        },
+        {
+          "cella": 6,
+          "margini_px_alpha_nonzero": [
+            78,
+            133,
+            79,
+            133
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 7,
+          "margini_px_alpha_nonzero": [
+            86,
+            78,
+            86,
+            79
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 8,
+          "vuota": true
+        }
+      ]
+    },
+    {
+      "file": "incoming/icone/forme-15.png",
+      "bytes": 50938,
+      "sha256": "8c2a94d88c924c2800699123f66ec7a999a95b4a8392d7b6acfc848b9632aec8",
+      "celle": [
+        {
+          "cella": 0,
+          "margini_px_alpha_nonzero": [
+            62,
+            151,
+            63,
+            151
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 1,
+          "margini_px_alpha_nonzero": [
+            62,
+            94,
+            62,
+            95
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 2,
+          "vuota": true
+        },
+        {
+          "cella": 3,
+          "margini_px_alpha_nonzero": [
+            92,
+            137,
+            93,
+            137
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 4,
+          "margini_px_alpha_nonzero": [
+            97,
+            83,
+            97,
+            83
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 5,
+          "vuota": true
+        },
+        {
+          "cella": 6,
+          "margini_px_alpha_nonzero": [
+            62,
+            156,
+            62,
+            157
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 7,
+          "margini_px_alpha_nonzero": [
+            62,
+            100,
+            62,
+            100
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 8,
+          "vuota": true
+        }
+      ]
+    },
+    {
+      "file": "incoming/icone/forme-16.png",
+      "bytes": 50347,
+      "sha256": "2d115a89858444577b94a1def8dd40e7fe2f250efb437155633ad631b580fabf",
+      "celle": [
+        {
+          "cella": 0,
+          "margini_px_alpha_nonzero": [
+            90,
+            137,
+            91,
+            138
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 1,
+          "margini_px_alpha_nonzero": [
+            108,
+            82,
+            109,
+            82
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 2,
+          "vuota": true
+        },
+        {
+          "cella": 3,
+          "margini_px_alpha_nonzero": [
+            73,
+            160,
+            73,
+            161
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 4,
+          "margini_px_alpha_nonzero": [
+            83,
+            92,
+            84,
+            92
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 5,
+          "vuota": true
+        },
+        {
+          "cella": 6,
+          "margini_px_alpha_nonzero": [
+            79,
+            129,
+            80,
+            129
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 7,
+          "margini_px_alpha_nonzero": [
+            97,
+            75,
+            97,
+            76
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 8,
+          "vuota": true
+        }
+      ]
+    },
+    {
+      "file": "incoming/icone/forme-17.png",
+      "bytes": 56248,
+      "sha256": "700d7c918f85cd4022f90b0b29d5769930d21be42d3d7e58a0e6270d5e767c22",
+      "celle": [
+        {
+          "cella": 0,
+          "margini_px_alpha_nonzero": [
+            62,
+            156,
+            62,
+            156
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 1,
+          "margini_px_alpha_nonzero": [
+            62,
+            95,
+            62,
+            95
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 2,
+          "vuota": true
+        },
+        {
+          "cella": 3,
+          "margini_px_alpha_nonzero": [
+            63,
+            144,
+            63,
+            144
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 4,
+          "margini_px_alpha_nonzero": [
+            73,
+            66,
+            74,
+            67
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 5,
+          "vuota": true
+        },
+        {
+          "cella": 6,
+          "margini_px_alpha_nonzero": [
+            67,
+            133,
+            67,
+            133
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 7,
+          "margini_px_alpha_nonzero": [
+            79,
+            83,
+            80,
+            83
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 8,
+          "vuota": true
+        }
+      ]
+    },
+    {
+      "file": "incoming/icone/forme-18.png",
+      "bytes": 44717,
+      "sha256": "58a4cd7be70d6e96a5978780f5f9afa3905883e2325789764bb4fe7ecc098051",
+      "celle": [
+        {
+          "cella": 0,
+          "margini_px_alpha_nonzero": [
+            62,
+            162,
+            62,
+            163
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 1,
+          "margini_px_alpha_nonzero": [
+            66,
+            108,
+            66,
+            109
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 2,
+          "vuota": true
+        },
+        {
+          "cella": 3,
+          "margini_px_alpha_nonzero": [
+            62,
+            160,
+            62,
+            161
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 4,
+          "margini_px_alpha_nonzero": [
+            66,
+            92,
+            66,
+            93
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 5,
+          "vuota": true
+        },
+        {
+          "cella": 6,
+          "margini_px_alpha_nonzero": [
+            62,
+            151,
+            62,
+            152
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 7,
+          "margini_px_alpha_nonzero": [
+            66,
+            75,
+            66,
+            75
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 8,
+          "vuota": true
+        }
+      ]
+    },
+    {
+      "file": "incoming/icone/forme-19.png",
+      "bytes": 40253,
+      "sha256": "f299919863ed0f4e284c48c4846586cde4852db28f01103bde7027c5a2231c8b",
+      "celle": [
+        {
+          "cella": 0,
+          "margini_px_alpha_nonzero": [
+            86,
+            138,
+            86,
+            139
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 1,
+          "margini_px_alpha_nonzero": [
+            101,
+            85,
+            101,
+            86
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 2,
+          "vuota": true
+        },
+        {
+          "cella": 3,
+          "margini_px_alpha_nonzero": [
+            81,
+            161,
+            81,
+            161
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 4,
+          "margini_px_alpha_nonzero": [
+            79,
+            93,
+            79,
+            94
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 5,
+          "vuota": true
+        },
+        {
+          "cella": 6,
+          "margini_px_alpha_nonzero": [
+            83,
+            140,
+            83,
+            140
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 7,
+          "margini_px_alpha_nonzero": [
+            92,
+            80,
+            92,
+            80
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 8,
+          "vuota": true
+        }
+      ]
+    },
+    {
+      "file": "incoming/icone/forme-20.png",
+      "bytes": 49334,
+      "sha256": "7565ebde18811def83a8b8ad598e567fe03a3edcf895e4e68c428ddab9bb72a6",
+      "celle": [
+        {
+          "cella": 0,
+          "margini_px_alpha_nonzero": [
+            62,
+            152,
+            62,
+            152
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 1,
+          "margini_px_alpha_nonzero": [
+            62,
+            95,
+            62,
+            96
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 2,
+          "vuota": true
+        },
+        {
+          "cella": 3,
+          "margini_px_alpha_nonzero": [
+            62,
+            150,
+            62,
+            151
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 4,
+          "margini_px_alpha_nonzero": [
+            62,
+            73,
+            62,
+            73
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 5,
+          "vuota": true
+        },
+        {
+          "cella": 6,
+          "margini_px_alpha_nonzero": [
+            62,
+            123,
+            62,
+            124
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 7,
+          "margini_px_alpha_nonzero": [
+            72,
+            62,
+            72,
+            62
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 8,
+          "vuota": true
+        }
+      ]
+    },
+    {
+      "file": "incoming/icone/forme-21.png",
+      "bytes": 56763,
+      "sha256": "07b911af4fd7f66cf647049ac0f8fcc16dd0fba0f8aaa8a4ec3f1ac2cf0160da",
+      "celle": [
+        {
+          "cella": 0,
+          "margini_px_alpha_nonzero": [
+            62,
+            123,
+            62,
+            124
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 1,
+          "margini_px_alpha_nonzero": [
+            94,
+            62,
+            95,
+            62
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 2,
+          "vuota": true
+        },
+        {
+          "cella": 3,
+          "margini_px_alpha_nonzero": [
+            62,
+            152,
+            62,
+            152
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 4,
+          "margini_px_alpha_nonzero": [
+            62,
+            84,
+            62,
+            84
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 5,
+          "vuota": true
+        },
+        {
+          "cella": 6,
+          "margini_px_alpha_nonzero": [
+            62,
+            162,
+            62,
+            163
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 7,
+          "margini_px_alpha_nonzero": [
+            62,
+            114,
+            62,
+            114
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 8,
+          "vuota": true
+        }
+      ]
+    },
+    {
+      "file": "incoming/icone/forme-22.png",
+      "bytes": 47773,
+      "sha256": "e1e93a94c8c4fced1484ffb0350641fb4e606b58e12a1632b062e9c82aae9350",
+      "celle": [
+        {
+          "cella": 0,
+          "margini_px_alpha_nonzero": [
+            101,
+            148,
+            101,
+            149
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 1,
+          "margini_px_alpha_nonzero": [
+            103,
+            88,
+            104,
+            89
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 2,
+          "vuota": true
+        },
+        {
+          "cella": 3,
+          "margini_px_alpha_nonzero": [
+            76,
+            157,
+            77,
+            157
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 4,
+          "margini_px_alpha_nonzero": [
+            83,
+            94,
+            83,
+            95
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 5,
+          "vuota": true
+        },
+        {
+          "cella": 6,
+          "margini_px_alpha_nonzero": [
+            62,
+            155,
+            62,
+            155
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 7,
+          "margini_px_alpha_nonzero": [
+            62,
+            90,
+            62,
+            90
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 8,
+          "vuota": true
+        }
+      ]
+    },
+    {
+      "file": "incoming/icone/forme-23.png",
+      "bytes": 53450,
+      "sha256": "4880cf3c3bf16902023098af88d6e48b2b14ece3ecc1e028c041a9eabedaa31d",
+      "celle": [
+        {
+          "cella": 0,
+          "margini_px_alpha_nonzero": [
+            62,
+            146,
+            62,
+            146
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 1,
+          "margini_px_alpha_nonzero": [
+            68,
+            80,
+            68,
+            81
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 2,
+          "vuota": true
+        },
+        {
+          "cella": 3,
+          "margini_px_alpha_nonzero": [
+            63,
+            138,
+            63,
+            139
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 4,
+          "margini_px_alpha_nonzero": [
+            71,
+            80,
+            72,
+            81
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 5,
+          "vuota": true
+        },
+        {
+          "cella": 6,
+          "margini_px_alpha_nonzero": [
+            62,
+            152,
+            62,
+            152
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 7,
+          "margini_px_alpha_nonzero": [
+            62,
+            85,
+            62,
+            86
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 8,
+          "vuota": true
+        }
+      ]
+    },
+    {
+      "file": "incoming/icone/forme-24.png",
+      "bytes": 50479,
+      "sha256": "e5993351b504d7ca39ed86c74e462b4ee9088fb7da9b2aa2a3d77bae9dd0709a",
+      "celle": [
+        {
+          "cella": 0,
+          "margini_px_alpha_nonzero": [
+            67,
+            134,
+            68,
+            135
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 1,
+          "margini_px_alpha_nonzero": [
+            79,
+            73,
+            80,
+            73
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 2,
+          "vuota": true
+        },
+        {
+          "cella": 3,
+          "margini_px_alpha_nonzero": [
+            62,
+            158,
+            62,
+            159
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 4,
+          "margini_px_alpha_nonzero": [
+            62,
+            96,
+            62,
+            96
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 5,
+          "vuota": true
+        },
+        {
+          "cella": 6,
+          "margini_px_alpha_nonzero": [
+            62,
+            148,
+            62,
+            149
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 7,
+          "margini_px_alpha_nonzero": [
+            71,
+            78,
+            72,
+            78
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 8,
+          "vuota": true
+        }
+      ]
+    },
+    {
+      "file": "incoming/icone/forme-25.png",
+      "bytes": 44883,
+      "sha256": "3714d5bbd49459518e89f22a90c3d8fd2fe921a636625a50e55700894bed1f21",
+      "celle": [
+        {
+          "cella": 0,
+          "margini_px_alpha_nonzero": [
+            71,
+            164,
+            71,
+            165
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 1,
+          "margini_px_alpha_nonzero": [
+            73,
+            103,
+            73,
+            103
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 2,
+          "vuota": true
+        },
+        {
+          "cella": 3,
+          "margini_px_alpha_nonzero": [
+            88,
+            150,
+            88,
+            151
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 4,
+          "margini_px_alpha_nonzero": [
+            100,
+            95,
+            101,
+            96
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 5,
+          "vuota": true
+        },
+        {
+          "cella": 6,
+          "margini_px_alpha_nonzero": [
+            70,
+            147,
+            71,
+            147
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 7,
+          "margini_px_alpha_nonzero": [
+            84,
+            85,
+            85,
+            86
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 8,
+          "vuota": true
+        }
+      ]
+    },
+    {
+      "file": "incoming/icone/forme-26.png",
+      "bytes": 51490,
+      "sha256": "06490711a70df0443508521e52bea0c99ff5ff7bf1a6f4783405ad4268366ed6",
+      "celle": [
+        {
+          "cella": 0,
+          "margini_px_alpha_nonzero": [
+            62,
+            162,
+            62,
+            162
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 1,
+          "margini_px_alpha_nonzero": [
+            67,
+            90,
+            67,
+            90
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 2,
+          "vuota": true
+        },
+        {
+          "cella": 3,
+          "margini_px_alpha_nonzero": [
+            62,
+            145,
+            62,
+            145
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 4,
+          "margini_px_alpha_nonzero": [
+            82,
+            73,
+            82,
+            73
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 5,
+          "vuota": true
+        },
+        {
+          "cella": 6,
+          "margini_px_alpha_nonzero": [
+            62,
+            145,
+            62,
+            146
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 7,
+          "margini_px_alpha_nonzero": [
+            79,
+            84,
+            80,
+            84
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 8,
+          "vuota": true
+        }
+      ]
+    },
+    {
+      "file": "incoming/icone/forme-27.png",
+      "bytes": 58511,
+      "sha256": "85f417114b11c5981aa92be11209534c95180c4dc76812fe23cc2d628f849cf1",
+      "celle": [
+        {
+          "cella": 0,
+          "margini_px_alpha_nonzero": [
+            74,
+            132,
+            74,
+            132
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 1,
+          "margini_px_alpha_nonzero": [
+            91,
+            68,
+            91,
+            69
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 2,
+          "vuota": true
+        },
+        {
+          "cella": 3,
+          "margini_px_alpha_nonzero": [
+            62,
+            152,
+            62,
+            152
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 4,
+          "margini_px_alpha_nonzero": [
+            62,
+            82,
+            63,
+            82
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 5,
+          "vuota": true
+        },
+        {
+          "cella": 6,
+          "margini_px_alpha_nonzero": [
+            67,
+            136,
+            68,
+            137
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 7,
+          "margini_px_alpha_nonzero": [
+            90,
+            76,
+            91,
+            77
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 8,
+          "vuota": true
+        }
+      ]
+    },
+    {
+      "file": "incoming/icone/forme-28.png",
+      "bytes": 59848,
+      "sha256": "23ca10b3d13cf582cee800dd05ba83268621e9fadb584bb1b8bc458f8686b22c",
+      "celle": [
+        {
+          "cella": 0,
+          "margini_px_alpha_nonzero": [
+            68,
+            113,
+            69,
+            113
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 1,
+          "margini_px_alpha_nonzero": [
+            81,
+            62,
+            82,
+            62
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 2,
+          "vuota": true
+        },
+        {
+          "cella": 3,
+          "margini_px_alpha_nonzero": [
+            65,
+            143,
+            66,
+            144
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 4,
+          "margini_px_alpha_nonzero": [
+            83,
+            73,
+            84,
+            74
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 5,
+          "vuota": true
+        },
+        {
+          "cella": 6,
+          "margini_px_alpha_nonzero": [
+            62,
+            151,
+            62,
+            152
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 7,
+          "margini_px_alpha_nonzero": [
+            62,
+            95,
+            62,
+            95
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 8,
+          "vuota": true
+        }
+      ]
+    },
+    {
+      "file": "incoming/icone/forme-29.png",
+      "bytes": 57341,
+      "sha256": "e9adb2bf573c6c37727e36b0c9a9214ac8064a638718e052b7c0f791a7283836",
+      "celle": [
+        {
+          "cella": 0,
+          "margini_px_alpha_nonzero": [
+            63,
+            132,
+            63,
+            133
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 1,
+          "margini_px_alpha_nonzero": [
+            65,
+            69,
+            66,
+            69
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 2,
+          "vuota": true
+        },
+        {
+          "cella": 3,
+          "margini_px_alpha_nonzero": [
+            62,
+            150,
+            62,
+            150
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 4,
+          "margini_px_alpha_nonzero": [
+            62,
+            77,
+            62,
+            78
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 5,
+          "vuota": true
+        },
+        {
+          "cella": 6,
+          "margini_px_alpha_nonzero": [
+            62,
+            140,
+            62,
+            141
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 7,
+          "margini_px_alpha_nonzero": [
+            62,
+            76,
+            62,
+            76
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 8,
+          "vuota": true
+        }
+      ]
+    },
+    {
+      "file": "incoming/icone/forme-30.png",
+      "bytes": 43150,
+      "sha256": "9409d6fdffc0ff59ef6fcc304a7b0297d589b6fdf3f724107ab11fe16a33f00f",
+      "celle": [
+        {
+          "cella": 0,
+          "margini_px_alpha_nonzero": [
+            62,
+            145,
+            62,
+            145
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 1,
+          "margini_px_alpha_nonzero": [
+            62,
+            79,
+            62,
+            79
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 2,
+          "vuota": true
+        },
+        {
+          "cella": 3,
+          "margini_px_alpha_nonzero": [
+            62,
+            143,
+            62,
+            143
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 4,
+          "margini_px_alpha_nonzero": [
+            62,
+            113,
+            62,
+            114
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 5,
+          "vuota": true
+        },
+        {
+          "cella": 6,
+          "margini_px_alpha_nonzero": [
+            62,
+            144,
+            62,
+            145
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 7,
+          "margini_px_alpha_nonzero": [
+            62,
+            84,
+            62,
+            84
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 8,
+          "vuota": true
+        }
+      ]
+    },
+    {
+      "file": "incoming/icone/forme-31.png",
+      "bytes": 37326,
+      "sha256": "ea4fe674105a4671d6823fb7b3887aec32c75e46a72cc9d06e63a34fde3c0632",
+      "celle": [
+        {
+          "cella": 0,
+          "margini_px_alpha_nonzero": [
+            62,
+            175,
+            62,
+            175
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 1,
+          "margini_px_alpha_nonzero": [
+            62,
+            119,
+            62,
+            120
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 2,
+          "vuota": true
+        },
+        {
+          "cella": 3,
+          "margini_px_alpha_nonzero": [
+            62,
+            162,
+            62,
+            162
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 4,
+          "margini_px_alpha_nonzero": [
+            62,
+            102,
+            62,
+            102
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 5,
+          "vuota": true
+        },
+        {
+          "cella": 6,
+          "margini_px_alpha_nonzero": [
+            62,
+            172,
+            62,
+            172
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 7,
+          "margini_px_alpha_nonzero": [
+            62,
+            128,
+            62,
+            128
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 8,
+          "vuota": true
+        }
+      ]
+    },
+    {
+      "file": "incoming/icone/forme-32.png",
+      "bytes": 47493,
+      "sha256": "88d2368a3e5eb7549ef6a25c1515ef7c38519c90dacf5a7e4a6333ed1d200e29",
+      "celle": [
+        {
+          "cella": 0,
+          "margini_px_alpha_nonzero": [
+            62,
+            153,
+            62,
+            153
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 1,
+          "margini_px_alpha_nonzero": [
+            66,
+            96,
+            66,
+            96
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 2,
+          "vuota": true
+        },
+        {
+          "cella": 3,
+          "margini_px_alpha_nonzero": [
+            80,
+            140,
+            81,
+            141
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 4,
+          "margini_px_alpha_nonzero": [
+            91,
+            83,
+            92,
+            84
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 5,
+          "vuota": true
+        },
+        {
+          "cella": 6,
+          "margini_px_alpha_nonzero": [
+            62,
+            158,
+            62,
+            159
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 7,
+          "margini_px_alpha_nonzero": [
+            62,
+            107,
+            62,
+            108
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 8,
+          "vuota": true
+        }
+      ]
+    },
+    {
+      "file": "incoming/icone/forme-33.png",
+      "bytes": 50099,
+      "sha256": "aa16f0d0ad471f04e78f3ebd25ad0403bb6f194c1ed13e945bd120c610a49ccd",
+      "celle": [
+        {
+          "cella": 0,
+          "margini_px_alpha_nonzero": [
+            67,
+            155,
+            68,
+            155
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 1,
+          "margini_px_alpha_nonzero": [
+            70,
+            105,
+            71,
+            106
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 2,
+          "vuota": true
+        },
+        {
+          "cella": 3,
+          "margini_px_alpha_nonzero": [
+            62,
+            147,
+            62,
+            147
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 4,
+          "margini_px_alpha_nonzero": [
+            70,
+            97,
+            70,
+            97
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 5,
+          "vuota": true
+        },
+        {
+          "cella": 6,
+          "margini_px_alpha_nonzero": [
+            62,
+            152,
+            62,
+            152
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 7,
+          "margini_px_alpha_nonzero": [
+            62,
+            97,
+            62,
+            97
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 8,
+          "vuota": true
+        }
+      ]
+    },
+    {
+      "file": "incoming/icone/forme-34.png",
+      "bytes": 61739,
+      "sha256": "1c740ae6ad40516f41c1fc89efc9babdf704c3c32d00c14904e99f3f0ad21565",
+      "celle": [
+        {
+          "cella": 0,
+          "margini_px_alpha_nonzero": [
+            62,
+            149,
+            62,
+            149
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 1,
+          "margini_px_alpha_nonzero": [
+            62,
+            83,
+            62,
+            83
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 2,
+          "vuota": true
+        },
+        {
+          "cella": 3,
+          "margini_px_alpha_nonzero": [
+            62,
+            145,
+            62,
+            145
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 4,
+          "margini_px_alpha_nonzero": [
+            62,
+            89,
+            62,
+            90
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 5,
+          "vuota": true
+        },
+        {
+          "cella": 6,
+          "margini_px_alpha_nonzero": [
+            62,
+            139,
+            62,
+            140
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 7,
+          "margini_px_alpha_nonzero": [
+            62,
+            87,
+            62,
+            88
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 8,
+          "vuota": true
+        }
+      ]
+    },
+    {
+      "file": "incoming/icone/forme-35.png",
+      "bytes": 46322,
+      "sha256": "228e2072e4f145cd15a36b3e5dc88c59e7253691130e202a756d0b564693808d",
+      "celle": [
+        {
+          "cella": 0,
+          "margini_px_alpha_nonzero": [
+            77,
+            131,
+            78,
+            132
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 1,
+          "margini_px_alpha_nonzero": [
+            95,
+            77,
+            95,
+            78
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 2,
+          "vuota": true
+        },
+        {
+          "cella": 3,
+          "margini_px_alpha_nonzero": [
+            62,
+            149,
+            62,
+            150
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 4,
+          "margini_px_alpha_nonzero": [
+            76,
+            86,
+            76,
+            87
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 5,
+          "vuota": true
+        },
+        {
+          "cella": 6,
+          "margini_px_alpha_nonzero": [
+            62,
+            150,
+            62,
+            151
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 7,
+          "margini_px_alpha_nonzero": [
+            65,
+            80,
+            66,
+            80
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 8,
+          "vuota": true
+        }
+      ]
+    },
+    {
+      "file": "incoming/icone/forme-36.png",
+      "bytes": 52922,
+      "sha256": "828e537c19424cc5ec916e71e24efabce76acbbcfd6fab8b2892e2c16abb182a",
+      "celle": [
+        {
+          "cella": 0,
+          "margini_px_alpha_nonzero": [
+            77,
+            135,
+            78,
+            136
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 1,
+          "margini_px_alpha_nonzero": [
+            95,
+            80,
+            96,
+            81
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 2,
+          "vuota": true
+        },
+        {
+          "cella": 3,
+          "margini_px_alpha_nonzero": [
+            69,
+            157,
+            69,
+            158
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 4,
+          "margini_px_alpha_nonzero": [
+            63,
+            99,
+            64,
+            99
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 5,
+          "vuota": true
+        },
+        {
+          "cella": 6,
+          "margini_px_alpha_nonzero": [
+            74,
+            133,
+            74,
+            133
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 7,
+          "margini_px_alpha_nonzero": [
+            83,
+            75,
+            84,
+            75
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 8,
+          "vuota": true
+        }
+      ]
+    },
+    {
+      "file": "incoming/icone/forme-37.png",
+      "bytes": 62249,
+      "sha256": "06a9639da86d0336ffd5c8a938be4c8045560827356fc40413f539edd20521fe",
+      "celle": [
+        {
+          "cella": 0,
+          "margini_px_alpha_nonzero": [
+            62,
+            152,
+            62,
+            153
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 1,
+          "margini_px_alpha_nonzero": [
+            64,
+            96,
+            65,
+            97
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 2,
+          "vuota": true
+        },
+        {
+          "cella": 3,
+          "margini_px_alpha_nonzero": [
+            62,
+            141,
+            62,
+            141
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 4,
+          "margini_px_alpha_nonzero": [
+            64,
+            86,
+            65,
+            86
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 5,
+          "vuota": true
+        },
+        {
+          "cella": 6,
+          "margini_px_alpha_nonzero": [
+            62,
+            143,
+            62,
+            143
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 7,
+          "margini_px_alpha_nonzero": [
+            62,
+            87,
+            62,
+            87
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 8,
+          "vuota": true
+        }
+      ]
+    },
+    {
+      "file": "incoming/icone/forme-38.png",
+      "bytes": 60850,
+      "sha256": "4e7ca9d6aa6030f8b2147303f2be6300176d856c40a820b2ff2a6d96e9615c38",
+      "celle": [
+        {
+          "cella": 0,
+          "margini_px_alpha_nonzero": [
+            81,
+            142,
+            82,
+            142
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 1,
+          "margini_px_alpha_nonzero": [
+            91,
+            90,
+            92,
+            90
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 2,
+          "vuota": true
+        },
+        {
+          "cella": 3,
+          "margini_px_alpha_nonzero": [
+            78,
+            143,
+            78,
+            144
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 4,
+          "margini_px_alpha_nonzero": [
+            88,
+            92,
+            88,
+            93
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 5,
+          "vuota": true
+        },
+        {
+          "cella": 6,
+          "margini_px_alpha_nonzero": [
+            73,
+            140,
+            74,
+            140
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 7,
+          "margini_px_alpha_nonzero": [
+            85,
+            86,
+            86,
+            87
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 8,
+          "vuota": true
+        }
+      ]
+    },
+    {
+      "file": "incoming/icone/forme-39.png",
+      "bytes": 47703,
+      "sha256": "faf5fa281bc1686be73d27011cb766e712dd732a1c8729eceb2fefc5624def9e",
+      "celle": [
+        {
+          "cella": 0,
+          "margini_px_alpha_nonzero": [
+            73,
+            123,
+            73,
+            124
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 1,
+          "margini_px_alpha_nonzero": [
+            88,
+            69,
+            89,
+            70
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 2,
+          "vuota": true
+        },
+        {
+          "cella": 3,
+          "margini_px_alpha_nonzero": [
+            62,
+            144,
+            62,
+            144
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 4,
+          "margini_px_alpha_nonzero": [
+            62,
+            97,
+            62,
+            98
+          ],
+          "contorno_scuro_estremi": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "cella": 5,
+          "vuota": true
+        },
+        {
+          "cella": 6,
+          "vuota": true
+        },
+        {
+          "cella": 7,
+          "vuota": true
+        },
+        {
+          "cella": 8,
+          "vuota": true
+        }
+      ]
+    }
+  ]
+}
