@@ -46,6 +46,14 @@ Le modifiche alla classificazione micologica, alle cautele o alle regole richied
 | Percorsi di accesso | Consultazione dei dati generati. |
 | Campioni del bosco | Consultazione dei dati generati. |
 
+**Fasi di crescita (dal 15/10).** In «Specie e sosia» una specie può avere il campo `stages`: le fasi in ordine, ognuna con `id`, `label`, `desc`, `tiles`, `source` e, se cambiano, `cap_shape` e `hymenophore_color`. Il salvataggio rifiuta:
+- fasi fuori dall'elenco chiuso (`uovo`, `apertura`, `giovane`, `adulto`, `maturo`, `sciolto`) o fuori ordine;
+- tessere diverse da `cappello`, `sotto`, `gambo`, `taglio` (la sezione solo nella fase `uovo`);
+- forme e colori che la specie non ha nei caratteri;
+- fonti che non sono tra le fonti della specie.
+
+`species-traits` è tra i documenti che il repository aggiorna se nessun autore li ha toccati, quindi le fasi arrivano in produzione con il deploy. Una fase nuova ha bisogno delle sue icone: lo segnala `tests/asset-completeness.test.mjs`.
+
 Le immagini si gestiscono tramite percorsi già presenti in `assets/` o URL, con crediti e licenza. L’upload diretto e la generazione automatica di varianti non fanno parte di questa prima versione. I dati geografici generati si aggiornano tramite i rispettivi script; meteo, coefficienti e formule restano nel processo scientifico e nel repository. Diari, credenziali personali e osservazioni private restano separati dal CMS.
 
 ## Accesso degli agenti
