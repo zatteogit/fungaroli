@@ -9826,5 +9826,125 @@
       "forma": "convesso"
     },
     "qa": "QA visiva del colore e dei caratteri invarianti; controlli codice di margine alfa0 di42px (10%) per cella e contorno scuro sui4estremi obbligatori prima dell'upload."
+  },
+  {
+    "file": "incoming/icone/varianti-14.png",
+    "tipo": "illustrazione",
+    "soggetto": "neoboletus-luridiformis",
+    "tessera": "cappello",
+    "stagione": null,
+    "foto_di_partenza": null,
+    "autore_foto": null,
+    "licenza_foto": null,
+    "pagina_foto": null,
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case precise-object-edit / scientific-educational. Edit this reference sheet of APPROVED flat mushroom icons ONLY in the requested colors. It is already arranged in the REQUIRED output layout: 1254x1254, equal invisible3x3 grid; each row col1 CAP SIDE VIEW ONLY, col2 WHOLE MUSHROOM, col3 EMPTY TRANSPARENT. Keep the exact style, line weight, outlines, proportions, icon center, scale, cap silhouette, age and anatomy. No growth stages and NO SHAPE VARIANTS. Real alpha transparency, clean edges, NO background, NO text, NO frames, NO shadows, NO extra details. Maintain simple broad flat colors and source highlights; use the requested recognizable midtone or a slightly lighter shade. OUTPUT ROW 1: Neoboletus luridiformis (neoboletus-luridiformis). Change only cap color from rosso to nero #3a3330. Preserve the base convesso cap silhouette EXACTLY, same age, no shape change. Keep all gill/underside, stem, ring, volva, warts and scale colors unchanged; for a scaled cap preserve darker scale/disc contrast on the new cap ground. Preserve these source characteristics: Pori rossi; Gambo punteggiato di rosso, senza reticolo; Carne gialla che diventa subito blu intenso. OUTPUT ROW 2: Caloboletus calopus (caloboletus-calopus). Change only cap color from bianco to grigio #9d968a. Preserve the base convesso cap silhouette EXACTLY, same age, no shape change. Keep all gill/underside, stem, ring, volva, warts and scale colors unchanged; for a scaled cap preserve darker scale/disc contrast on the new cap ground. Preserve these source characteristics: Pori gialli che bluastrano; Gambo rosso con reticolo chiaro. OUTPUT ROW 3: Caloboletus calopus (caloboletus-calopus). Change only cap color from bianco to crema #e3cfa3. Preserve the base convesso cap silhouette EXACTLY, same age, no shape change. Keep all gill/underside, stem, ring, volva, warts and scale colors unchanged; for a scaled cap preserve darker scale/disc contrast on the new cap ground. Preserve these source characteristics: Pori gialli che bluastrano; Gambo rosso con reticolo chiaro. Do not borrow anatomy from another row. No additions: preserve only features already visible in each corresponding reference drawing. MANDATORY: each drawing entirely inside its own cell with at least10% completely transparent margin on ALL four sides. Every418px cell must have zero alpha in the outer42px strips. Keep whole mushroom and cap far from cell boundaries. Third column totally empty alpha0. Every drawing must have a COMPLETE CLOSED DARK CONTOUR at its top, bottom, left and right extremes; never a straight cropped fill edge. Do not truncate caps, stalks or basal structures. Restore the full original outline if the reference has a clipped artifact.",
+    "cella": 0,
+    "variante": "colore:nero",
+    "base": {
+      "colore": "rosso",
+      "forma": "convesso"
+    },
+    "qa": "QA visiva del colore e dei caratteri invarianti; controlli codice di margine alfa0 di42px (10%) per cella e contorno scuro sui4estremi obbligatori prima dell'upload."
+  },
+  {
+    "file": "incoming/icone/varianti-14.png",
+    "tipo": "illustrazione",
+    "soggetto": "neoboletus-luridiformis",
+    "tessera": "gambo",
+    "stagione": null,
+    "foto_di_partenza": null,
+    "autore_foto": null,
+    "licenza_foto": null,
+    "pagina_foto": null,
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case precise-object-edit / scientific-educational. Edit this reference sheet of APPROVED flat mushroom icons ONLY in the requested colors. It is already arranged in the REQUIRED output layout: 1254x1254, equal invisible3x3 grid; each row col1 CAP SIDE VIEW ONLY, col2 WHOLE MUSHROOM, col3 EMPTY TRANSPARENT. Keep the exact style, line weight, outlines, proportions, icon center, scale, cap silhouette, age and anatomy. No growth stages and NO SHAPE VARIANTS. Real alpha transparency, clean edges, NO background, NO text, NO frames, NO shadows, NO extra details. Maintain simple broad flat colors and source highlights; use the requested recognizable midtone or a slightly lighter shade. OUTPUT ROW 1: Neoboletus luridiformis (neoboletus-luridiformis). Change only cap color from rosso to nero #3a3330. Preserve the base convesso cap silhouette EXACTLY, same age, no shape change. Keep all gill/underside, stem, ring, volva, warts and scale colors unchanged; for a scaled cap preserve darker scale/disc contrast on the new cap ground. Preserve these source characteristics: Pori rossi; Gambo punteggiato di rosso, senza reticolo; Carne gialla che diventa subito blu intenso. OUTPUT ROW 2: Caloboletus calopus (caloboletus-calopus). Change only cap color from bianco to grigio #9d968a. Preserve the base convesso cap silhouette EXACTLY, same age, no shape change. Keep all gill/underside, stem, ring, volva, warts and scale colors unchanged; for a scaled cap preserve darker scale/disc contrast on the new cap ground. Preserve these source characteristics: Pori gialli che bluastrano; Gambo rosso con reticolo chiaro. OUTPUT ROW 3: Caloboletus calopus (caloboletus-calopus). Change only cap color from bianco to crema #e3cfa3. Preserve the base convesso cap silhouette EXACTLY, same age, no shape change. Keep all gill/underside, stem, ring, volva, warts and scale colors unchanged; for a scaled cap preserve darker scale/disc contrast on the new cap ground. Preserve these source characteristics: Pori gialli che bluastrano; Gambo rosso con reticolo chiaro. Do not borrow anatomy from another row. No additions: preserve only features already visible in each corresponding reference drawing. MANDATORY: each drawing entirely inside its own cell with at least10% completely transparent margin on ALL four sides. Every418px cell must have zero alpha in the outer42px strips. Keep whole mushroom and cap far from cell boundaries. Third column totally empty alpha0. Every drawing must have a COMPLETE CLOSED DARK CONTOUR at its top, bottom, left and right extremes; never a straight cropped fill edge. Do not truncate caps, stalks or basal structures. Restore the full original outline if the reference has a clipped artifact.",
+    "cella": 1,
+    "variante": "colore:nero",
+    "base": {
+      "colore": "rosso",
+      "forma": "convesso"
+    },
+    "qa": "QA visiva del colore e dei caratteri invarianti; controlli codice di margine alfa0 di42px (10%) per cella e contorno scuro sui4estremi obbligatori prima dell'upload."
+  },
+  {
+    "file": "incoming/icone/varianti-14.png",
+    "tipo": "illustrazione",
+    "soggetto": "caloboletus-calopus",
+    "tessera": "cappello",
+    "stagione": null,
+    "foto_di_partenza": null,
+    "autore_foto": null,
+    "licenza_foto": null,
+    "pagina_foto": null,
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case precise-object-edit / scientific-educational. Edit this reference sheet of APPROVED flat mushroom icons ONLY in the requested colors. It is already arranged in the REQUIRED output layout: 1254x1254, equal invisible3x3 grid; each row col1 CAP SIDE VIEW ONLY, col2 WHOLE MUSHROOM, col3 EMPTY TRANSPARENT. Keep the exact style, line weight, outlines, proportions, icon center, scale, cap silhouette, age and anatomy. No growth stages and NO SHAPE VARIANTS. Real alpha transparency, clean edges, NO background, NO text, NO frames, NO shadows, NO extra details. Maintain simple broad flat colors and source highlights; use the requested recognizable midtone or a slightly lighter shade. OUTPUT ROW 1: Neoboletus luridiformis (neoboletus-luridiformis). Change only cap color from rosso to nero #3a3330. Preserve the base convesso cap silhouette EXACTLY, same age, no shape change. Keep all gill/underside, stem, ring, volva, warts and scale colors unchanged; for a scaled cap preserve darker scale/disc contrast on the new cap ground. Preserve these source characteristics: Pori rossi; Gambo punteggiato di rosso, senza reticolo; Carne gialla che diventa subito blu intenso. OUTPUT ROW 2: Caloboletus calopus (caloboletus-calopus). Change only cap color from bianco to grigio #9d968a. Preserve the base convesso cap silhouette EXACTLY, same age, no shape change. Keep all gill/underside, stem, ring, volva, warts and scale colors unchanged; for a scaled cap preserve darker scale/disc contrast on the new cap ground. Preserve these source characteristics: Pori gialli che bluastrano; Gambo rosso con reticolo chiaro. OUTPUT ROW 3: Caloboletus calopus (caloboletus-calopus). Change only cap color from bianco to crema #e3cfa3. Preserve the base convesso cap silhouette EXACTLY, same age, no shape change. Keep all gill/underside, stem, ring, volva, warts and scale colors unchanged; for a scaled cap preserve darker scale/disc contrast on the new cap ground. Preserve these source characteristics: Pori gialli che bluastrano; Gambo rosso con reticolo chiaro. Do not borrow anatomy from another row. No additions: preserve only features already visible in each corresponding reference drawing. MANDATORY: each drawing entirely inside its own cell with at least10% completely transparent margin on ALL four sides. Every418px cell must have zero alpha in the outer42px strips. Keep whole mushroom and cap far from cell boundaries. Third column totally empty alpha0. Every drawing must have a COMPLETE CLOSED DARK CONTOUR at its top, bottom, left and right extremes; never a straight cropped fill edge. Do not truncate caps, stalks or basal structures. Restore the full original outline if the reference has a clipped artifact.",
+    "cella": 3,
+    "variante": "colore:grigio",
+    "base": {
+      "colore": "bianco",
+      "forma": "convesso"
+    },
+    "qa": "QA visiva del colore e dei caratteri invarianti; controlli codice di margine alfa0 di42px (10%) per cella e contorno scuro sui4estremi obbligatori prima dell'upload."
+  },
+  {
+    "file": "incoming/icone/varianti-14.png",
+    "tipo": "illustrazione",
+    "soggetto": "caloboletus-calopus",
+    "tessera": "gambo",
+    "stagione": null,
+    "foto_di_partenza": null,
+    "autore_foto": null,
+    "licenza_foto": null,
+    "pagina_foto": null,
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case precise-object-edit / scientific-educational. Edit this reference sheet of APPROVED flat mushroom icons ONLY in the requested colors. It is already arranged in the REQUIRED output layout: 1254x1254, equal invisible3x3 grid; each row col1 CAP SIDE VIEW ONLY, col2 WHOLE MUSHROOM, col3 EMPTY TRANSPARENT. Keep the exact style, line weight, outlines, proportions, icon center, scale, cap silhouette, age and anatomy. No growth stages and NO SHAPE VARIANTS. Real alpha transparency, clean edges, NO background, NO text, NO frames, NO shadows, NO extra details. Maintain simple broad flat colors and source highlights; use the requested recognizable midtone or a slightly lighter shade. OUTPUT ROW 1: Neoboletus luridiformis (neoboletus-luridiformis). Change only cap color from rosso to nero #3a3330. Preserve the base convesso cap silhouette EXACTLY, same age, no shape change. Keep all gill/underside, stem, ring, volva, warts and scale colors unchanged; for a scaled cap preserve darker scale/disc contrast on the new cap ground. Preserve these source characteristics: Pori rossi; Gambo punteggiato di rosso, senza reticolo; Carne gialla che diventa subito blu intenso. OUTPUT ROW 2: Caloboletus calopus (caloboletus-calopus). Change only cap color from bianco to grigio #9d968a. Preserve the base convesso cap silhouette EXACTLY, same age, no shape change. Keep all gill/underside, stem, ring, volva, warts and scale colors unchanged; for a scaled cap preserve darker scale/disc contrast on the new cap ground. Preserve these source characteristics: Pori gialli che bluastrano; Gambo rosso con reticolo chiaro. OUTPUT ROW 3: Caloboletus calopus (caloboletus-calopus). Change only cap color from bianco to crema #e3cfa3. Preserve the base convesso cap silhouette EXACTLY, same age, no shape change. Keep all gill/underside, stem, ring, volva, warts and scale colors unchanged; for a scaled cap preserve darker scale/disc contrast on the new cap ground. Preserve these source characteristics: Pori gialli che bluastrano; Gambo rosso con reticolo chiaro. Do not borrow anatomy from another row. No additions: preserve only features already visible in each corresponding reference drawing. MANDATORY: each drawing entirely inside its own cell with at least10% completely transparent margin on ALL four sides. Every418px cell must have zero alpha in the outer42px strips. Keep whole mushroom and cap far from cell boundaries. Third column totally empty alpha0. Every drawing must have a COMPLETE CLOSED DARK CONTOUR at its top, bottom, left and right extremes; never a straight cropped fill edge. Do not truncate caps, stalks or basal structures. Restore the full original outline if the reference has a clipped artifact.",
+    "cella": 4,
+    "variante": "colore:grigio",
+    "base": {
+      "colore": "bianco",
+      "forma": "convesso"
+    },
+    "qa": "QA visiva del colore e dei caratteri invarianti; controlli codice di margine alfa0 di42px (10%) per cella e contorno scuro sui4estremi obbligatori prima dell'upload."
+  },
+  {
+    "file": "incoming/icone/varianti-14.png",
+    "tipo": "illustrazione",
+    "soggetto": "caloboletus-calopus",
+    "tessera": "cappello",
+    "stagione": null,
+    "foto_di_partenza": null,
+    "autore_foto": null,
+    "licenza_foto": null,
+    "pagina_foto": null,
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case precise-object-edit / scientific-educational. Edit this reference sheet of APPROVED flat mushroom icons ONLY in the requested colors. It is already arranged in the REQUIRED output layout: 1254x1254, equal invisible3x3 grid; each row col1 CAP SIDE VIEW ONLY, col2 WHOLE MUSHROOM, col3 EMPTY TRANSPARENT. Keep the exact style, line weight, outlines, proportions, icon center, scale, cap silhouette, age and anatomy. No growth stages and NO SHAPE VARIANTS. Real alpha transparency, clean edges, NO background, NO text, NO frames, NO shadows, NO extra details. Maintain simple broad flat colors and source highlights; use the requested recognizable midtone or a slightly lighter shade. OUTPUT ROW 1: Neoboletus luridiformis (neoboletus-luridiformis). Change only cap color from rosso to nero #3a3330. Preserve the base convesso cap silhouette EXACTLY, same age, no shape change. Keep all gill/underside, stem, ring, volva, warts and scale colors unchanged; for a scaled cap preserve darker scale/disc contrast on the new cap ground. Preserve these source characteristics: Pori rossi; Gambo punteggiato di rosso, senza reticolo; Carne gialla che diventa subito blu intenso. OUTPUT ROW 2: Caloboletus calopus (caloboletus-calopus). Change only cap color from bianco to grigio #9d968a. Preserve the base convesso cap silhouette EXACTLY, same age, no shape change. Keep all gill/underside, stem, ring, volva, warts and scale colors unchanged; for a scaled cap preserve darker scale/disc contrast on the new cap ground. Preserve these source characteristics: Pori gialli che bluastrano; Gambo rosso con reticolo chiaro. OUTPUT ROW 3: Caloboletus calopus (caloboletus-calopus). Change only cap color from bianco to crema #e3cfa3. Preserve the base convesso cap silhouette EXACTLY, same age, no shape change. Keep all gill/underside, stem, ring, volva, warts and scale colors unchanged; for a scaled cap preserve darker scale/disc contrast on the new cap ground. Preserve these source characteristics: Pori gialli che bluastrano; Gambo rosso con reticolo chiaro. Do not borrow anatomy from another row. No additions: preserve only features already visible in each corresponding reference drawing. MANDATORY: each drawing entirely inside its own cell with at least10% completely transparent margin on ALL four sides. Every418px cell must have zero alpha in the outer42px strips. Keep whole mushroom and cap far from cell boundaries. Third column totally empty alpha0. Every drawing must have a COMPLETE CLOSED DARK CONTOUR at its top, bottom, left and right extremes; never a straight cropped fill edge. Do not truncate caps, stalks or basal structures. Restore the full original outline if the reference has a clipped artifact.",
+    "cella": 6,
+    "variante": "colore:crema",
+    "base": {
+      "colore": "bianco",
+      "forma": "convesso"
+    },
+    "qa": "QA visiva del colore e dei caratteri invarianti; controlli codice di margine alfa0 di42px (10%) per cella e contorno scuro sui4estremi obbligatori prima dell'upload."
+  },
+  {
+    "file": "incoming/icone/varianti-14.png",
+    "tipo": "illustrazione",
+    "soggetto": "caloboletus-calopus",
+    "tessera": "gambo",
+    "stagione": null,
+    "foto_di_partenza": null,
+    "autore_foto": null,
+    "licenza_foto": null,
+    "pagina_foto": null,
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case precise-object-edit / scientific-educational. Edit this reference sheet of APPROVED flat mushroom icons ONLY in the requested colors. It is already arranged in the REQUIRED output layout: 1254x1254, equal invisible3x3 grid; each row col1 CAP SIDE VIEW ONLY, col2 WHOLE MUSHROOM, col3 EMPTY TRANSPARENT. Keep the exact style, line weight, outlines, proportions, icon center, scale, cap silhouette, age and anatomy. No growth stages and NO SHAPE VARIANTS. Real alpha transparency, clean edges, NO background, NO text, NO frames, NO shadows, NO extra details. Maintain simple broad flat colors and source highlights; use the requested recognizable midtone or a slightly lighter shade. OUTPUT ROW 1: Neoboletus luridiformis (neoboletus-luridiformis). Change only cap color from rosso to nero #3a3330. Preserve the base convesso cap silhouette EXACTLY, same age, no shape change. Keep all gill/underside, stem, ring, volva, warts and scale colors unchanged; for a scaled cap preserve darker scale/disc contrast on the new cap ground. Preserve these source characteristics: Pori rossi; Gambo punteggiato di rosso, senza reticolo; Carne gialla che diventa subito blu intenso. OUTPUT ROW 2: Caloboletus calopus (caloboletus-calopus). Change only cap color from bianco to grigio #9d968a. Preserve the base convesso cap silhouette EXACTLY, same age, no shape change. Keep all gill/underside, stem, ring, volva, warts and scale colors unchanged; for a scaled cap preserve darker scale/disc contrast on the new cap ground. Preserve these source characteristics: Pori gialli che bluastrano; Gambo rosso con reticolo chiaro. OUTPUT ROW 3: Caloboletus calopus (caloboletus-calopus). Change only cap color from bianco to crema #e3cfa3. Preserve the base convesso cap silhouette EXACTLY, same age, no shape change. Keep all gill/underside, stem, ring, volva, warts and scale colors unchanged; for a scaled cap preserve darker scale/disc contrast on the new cap ground. Preserve these source characteristics: Pori gialli che bluastrano; Gambo rosso con reticolo chiaro. Do not borrow anatomy from another row. No additions: preserve only features already visible in each corresponding reference drawing. MANDATORY: each drawing entirely inside its own cell with at least10% completely transparent margin on ALL four sides. Every418px cell must have zero alpha in the outer42px strips. Keep whole mushroom and cap far from cell boundaries. Third column totally empty alpha0. Every drawing must have a COMPLETE CLOSED DARK CONTOUR at its top, bottom, left and right extremes; never a straight cropped fill edge. Do not truncate caps, stalks or basal structures. Restore the full original outline if the reference has a clipped artifact.",
+    "cella": 7,
+    "variante": "colore:crema",
+    "base": {
+      "colore": "bianco",
+      "forma": "convesso"
+    },
+    "qa": "QA visiva del colore e dei caratteri invarianti; controlli codice di margine alfa0 di42px (10%) per cella e contorno scuro sui4estremi obbligatori prima dell'upload."
   }
 ]
