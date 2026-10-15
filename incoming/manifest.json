@@ -16501,5 +16501,113 @@
       "Change ONLY the underside GILL COLOR in the TWO icons of ROW3, Cortinarius orellanus: the isolated cap and cap on whole mushroom must have RUST-BROWN gills, not cream/white. Preserve orange cap, pale ochre stem without membranous ring or volva and flat cap shape. All other four icons in rows1/2 unchanged (mellea cream gills and ring, entoloma pink gills no ring). Same transparent3x3sheet, each icon fully inside cell, column3empty, dark outlines, no text or background."
     ],
     "stato": "ok"
+  },
+  {
+    "file": "incoming/icone/forme-11.png",
+    "tipo": "illustrazione",
+    "soggetto": "cortinarius-orellanus",
+    "tessera": "cappello",
+    "cella": 0,
+    "variante": "forma:conico",
+    "base": {
+      "forma": "convesso",
+      "colore": "arancio"
+    },
+    "modello": "image_gen (identificatore tecnico non esposto)",
+    "prompt": "A transparent PNG sprite sheet, square1254x1254, invisible3x3cells418px each. Use reference1 for EXACT SMALL ICON SIZE, generous TRANSPARENT CELL MARGINS and row positions. Three rows: column1 CAP ONLY side view, column2 WHOLE MUSHROOM, column3 entirely EMPTY. Each separate icon centered in its own cell, at most60% of cell width AND height, at least18% alpha0 padding on EVERY cell edge. No drawn grid, background, shadows, ground, text, numbers or marks. Clean thick dark brown COMPLETE silhouette outline, flat few colors same as species icons. References2 onward show the approved base icons: preserve cap COLOR and all stems, rings, volvas, netting, scales and spots, change ONLY cap SHAPE and age-appropriate proportions. Each row's cap-only and whole must MATCH shape/color. ROW1: cortinarius-orellanus, base cap color arancio, target shape CONICAL: distinctly pointed cone. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"asciutta\",\"squamosa\",\"vellutata/feltrata\",\"liscia\"],\"hymenophore\":[\"lamelle\"],\"hymenophore_color\":[\"arancio\",\"bruno\"]}. ROW2: cortinarius-rubellus, base cap color arancio, target shape CONVEX: low rounded dome. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"squamosa\",\"asciutta\",\"vellutata/feltrata\"],\"hymenophore\":[\"lamelle\"],\"hymenophore_color\":[\"arancio\",\"bruno\"]}. ROW3: edulis, base cap color bruno, target shape HEMISPHERICAL: rounded half-sphere dome with NO central point or umbo, even if adult base has an umbo. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":true,\"cap_surface\":[\"liscia\",\"asciutta\",\"viscida\"],\"hymenophore\":[\"pori\"],\"hymenophore_color\":[\"bianco\",\"crema\",\"giallo\",\"verde\"]}. No new anatomical traits. Reference species icons are shape/color authorities except the explicit target cap shape. Cap-only must match whole cap. Last column empty. True alpha background.",
+    "edits": [
+      "Change ONLY underside colors in ROWS1and2, both isolated caps and whole mushrooms: Cortinarius orellanus and Cortinarius rubellus need MUTED OCHRE TO RUST-BROWN gills/undersides like their approved reference icons, NOT bright yellow/orange. Keep their orange cap skins, conical orellanus versus convex rubellus, pale ochre ringless stems. Keep ROW3 edulis exactly unchanged, brown hemispherical cap with pale yellow pores and white upper-stem net. Same transparent3x3sprite sheet, no background/text/grid, all icons complete."
+    ],
+    "stato": "ok"
+  },
+  {
+    "file": "incoming/icone/forme-11.png",
+    "tipo": "illustrazione",
+    "soggetto": "cortinarius-orellanus",
+    "tessera": "gambo",
+    "cella": 1,
+    "variante": "forma:conico",
+    "base": {
+      "forma": "convesso",
+      "colore": "arancio"
+    },
+    "modello": "image_gen (identificatore tecnico non esposto)",
+    "prompt": "A transparent PNG sprite sheet, square1254x1254, invisible3x3cells418px each. Use reference1 for EXACT SMALL ICON SIZE, generous TRANSPARENT CELL MARGINS and row positions. Three rows: column1 CAP ONLY side view, column2 WHOLE MUSHROOM, column3 entirely EMPTY. Each separate icon centered in its own cell, at most60% of cell width AND height, at least18% alpha0 padding on EVERY cell edge. No drawn grid, background, shadows, ground, text, numbers or marks. Clean thick dark brown COMPLETE silhouette outline, flat few colors same as species icons. References2 onward show the approved base icons: preserve cap COLOR and all stems, rings, volvas, netting, scales and spots, change ONLY cap SHAPE and age-appropriate proportions. Each row's cap-only and whole must MATCH shape/color. ROW1: cortinarius-orellanus, base cap color arancio, target shape CONICAL: distinctly pointed cone. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"asciutta\",\"squamosa\",\"vellutata/feltrata\",\"liscia\"],\"hymenophore\":[\"lamelle\"],\"hymenophore_color\":[\"arancio\",\"bruno\"]}. ROW2: cortinarius-rubellus, base cap color arancio, target shape CONVEX: low rounded dome. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"squamosa\",\"asciutta\",\"vellutata/feltrata\"],\"hymenophore\":[\"lamelle\"],\"hymenophore_color\":[\"arancio\",\"bruno\"]}. ROW3: edulis, base cap color bruno, target shape HEMISPHERICAL: rounded half-sphere dome with NO central point or umbo, even if adult base has an umbo. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":true,\"cap_surface\":[\"liscia\",\"asciutta\",\"viscida\"],\"hymenophore\":[\"pori\"],\"hymenophore_color\":[\"bianco\",\"crema\",\"giallo\",\"verde\"]}. No new anatomical traits. Reference species icons are shape/color authorities except the explicit target cap shape. Cap-only must match whole cap. Last column empty. True alpha background.",
+    "edits": [
+      "Change ONLY underside colors in ROWS1and2, both isolated caps and whole mushrooms: Cortinarius orellanus and Cortinarius rubellus need MUTED OCHRE TO RUST-BROWN gills/undersides like their approved reference icons, NOT bright yellow/orange. Keep their orange cap skins, conical orellanus versus convex rubellus, pale ochre ringless stems. Keep ROW3 edulis exactly unchanged, brown hemispherical cap with pale yellow pores and white upper-stem net. Same transparent3x3sprite sheet, no background/text/grid, all icons complete."
+    ],
+    "stato": "ok"
+  },
+  {
+    "file": "incoming/icone/forme-11.png",
+    "tipo": "illustrazione",
+    "soggetto": "cortinarius-rubellus",
+    "tessera": "cappello",
+    "cella": 3,
+    "variante": "forma:convesso",
+    "base": {
+      "forma": "conico",
+      "colore": "arancio"
+    },
+    "modello": "image_gen (identificatore tecnico non esposto)",
+    "prompt": "A transparent PNG sprite sheet, square1254x1254, invisible3x3cells418px each. Use reference1 for EXACT SMALL ICON SIZE, generous TRANSPARENT CELL MARGINS and row positions. Three rows: column1 CAP ONLY side view, column2 WHOLE MUSHROOM, column3 entirely EMPTY. Each separate icon centered in its own cell, at most60% of cell width AND height, at least18% alpha0 padding on EVERY cell edge. No drawn grid, background, shadows, ground, text, numbers or marks. Clean thick dark brown COMPLETE silhouette outline, flat few colors same as species icons. References2 onward show the approved base icons: preserve cap COLOR and all stems, rings, volvas, netting, scales and spots, change ONLY cap SHAPE and age-appropriate proportions. Each row's cap-only and whole must MATCH shape/color. ROW1: cortinarius-orellanus, base cap color arancio, target shape CONICAL: distinctly pointed cone. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"asciutta\",\"squamosa\",\"vellutata/feltrata\",\"liscia\"],\"hymenophore\":[\"lamelle\"],\"hymenophore_color\":[\"arancio\",\"bruno\"]}. ROW2: cortinarius-rubellus, base cap color arancio, target shape CONVEX: low rounded dome. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"squamosa\",\"asciutta\",\"vellutata/feltrata\"],\"hymenophore\":[\"lamelle\"],\"hymenophore_color\":[\"arancio\",\"bruno\"]}. ROW3: edulis, base cap color bruno, target shape HEMISPHERICAL: rounded half-sphere dome with NO central point or umbo, even if adult base has an umbo. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":true,\"cap_surface\":[\"liscia\",\"asciutta\",\"viscida\"],\"hymenophore\":[\"pori\"],\"hymenophore_color\":[\"bianco\",\"crema\",\"giallo\",\"verde\"]}. No new anatomical traits. Reference species icons are shape/color authorities except the explicit target cap shape. Cap-only must match whole cap. Last column empty. True alpha background.",
+    "edits": [
+      "Change ONLY underside colors in ROWS1and2, both isolated caps and whole mushrooms: Cortinarius orellanus and Cortinarius rubellus need MUTED OCHRE TO RUST-BROWN gills/undersides like their approved reference icons, NOT bright yellow/orange. Keep their orange cap skins, conical orellanus versus convex rubellus, pale ochre ringless stems. Keep ROW3 edulis exactly unchanged, brown hemispherical cap with pale yellow pores and white upper-stem net. Same transparent3x3sprite sheet, no background/text/grid, all icons complete."
+    ],
+    "stato": "ok"
+  },
+  {
+    "file": "incoming/icone/forme-11.png",
+    "tipo": "illustrazione",
+    "soggetto": "cortinarius-rubellus",
+    "tessera": "gambo",
+    "cella": 4,
+    "variante": "forma:convesso",
+    "base": {
+      "forma": "conico",
+      "colore": "arancio"
+    },
+    "modello": "image_gen (identificatore tecnico non esposto)",
+    "prompt": "A transparent PNG sprite sheet, square1254x1254, invisible3x3cells418px each. Use reference1 for EXACT SMALL ICON SIZE, generous TRANSPARENT CELL MARGINS and row positions. Three rows: column1 CAP ONLY side view, column2 WHOLE MUSHROOM, column3 entirely EMPTY. Each separate icon centered in its own cell, at most60% of cell width AND height, at least18% alpha0 padding on EVERY cell edge. No drawn grid, background, shadows, ground, text, numbers or marks. Clean thick dark brown COMPLETE silhouette outline, flat few colors same as species icons. References2 onward show the approved base icons: preserve cap COLOR and all stems, rings, volvas, netting, scales and spots, change ONLY cap SHAPE and age-appropriate proportions. Each row's cap-only and whole must MATCH shape/color. ROW1: cortinarius-orellanus, base cap color arancio, target shape CONICAL: distinctly pointed cone. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"asciutta\",\"squamosa\",\"vellutata/feltrata\",\"liscia\"],\"hymenophore\":[\"lamelle\"],\"hymenophore_color\":[\"arancio\",\"bruno\"]}. ROW2: cortinarius-rubellus, base cap color arancio, target shape CONVEX: low rounded dome. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"squamosa\",\"asciutta\",\"vellutata/feltrata\"],\"hymenophore\":[\"lamelle\"],\"hymenophore_color\":[\"arancio\",\"bruno\"]}. ROW3: edulis, base cap color bruno, target shape HEMISPHERICAL: rounded half-sphere dome with NO central point or umbo, even if adult base has an umbo. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":true,\"cap_surface\":[\"liscia\",\"asciutta\",\"viscida\"],\"hymenophore\":[\"pori\"],\"hymenophore_color\":[\"bianco\",\"crema\",\"giallo\",\"verde\"]}. No new anatomical traits. Reference species icons are shape/color authorities except the explicit target cap shape. Cap-only must match whole cap. Last column empty. True alpha background.",
+    "edits": [
+      "Change ONLY underside colors in ROWS1and2, both isolated caps and whole mushrooms: Cortinarius orellanus and Cortinarius rubellus need MUTED OCHRE TO RUST-BROWN gills/undersides like their approved reference icons, NOT bright yellow/orange. Keep their orange cap skins, conical orellanus versus convex rubellus, pale ochre ringless stems. Keep ROW3 edulis exactly unchanged, brown hemispherical cap with pale yellow pores and white upper-stem net. Same transparent3x3sprite sheet, no background/text/grid, all icons complete."
+    ],
+    "stato": "ok"
+  },
+  {
+    "file": "incoming/icone/forme-11.png",
+    "tipo": "illustrazione",
+    "soggetto": "edulis",
+    "tessera": "cappello",
+    "cella": 6,
+    "variante": "forma:emisferico",
+    "base": {
+      "forma": "convesso",
+      "colore": "bruno"
+    },
+    "modello": "image_gen (identificatore tecnico non esposto)",
+    "prompt": "A transparent PNG sprite sheet, square1254x1254, invisible3x3cells418px each. Use reference1 for EXACT SMALL ICON SIZE, generous TRANSPARENT CELL MARGINS and row positions. Three rows: column1 CAP ONLY side view, column2 WHOLE MUSHROOM, column3 entirely EMPTY. Each separate icon centered in its own cell, at most60% of cell width AND height, at least18% alpha0 padding on EVERY cell edge. No drawn grid, background, shadows, ground, text, numbers or marks. Clean thick dark brown COMPLETE silhouette outline, flat few colors same as species icons. References2 onward show the approved base icons: preserve cap COLOR and all stems, rings, volvas, netting, scales and spots, change ONLY cap SHAPE and age-appropriate proportions. Each row's cap-only and whole must MATCH shape/color. ROW1: cortinarius-orellanus, base cap color arancio, target shape CONICAL: distinctly pointed cone. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"asciutta\",\"squamosa\",\"vellutata/feltrata\",\"liscia\"],\"hymenophore\":[\"lamelle\"],\"hymenophore_color\":[\"arancio\",\"bruno\"]}. ROW2: cortinarius-rubellus, base cap color arancio, target shape CONVEX: low rounded dome. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"squamosa\",\"asciutta\",\"vellutata/feltrata\"],\"hymenophore\":[\"lamelle\"],\"hymenophore_color\":[\"arancio\",\"bruno\"]}. ROW3: edulis, base cap color bruno, target shape HEMISPHERICAL: rounded half-sphere dome with NO central point or umbo, even if adult base has an umbo. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":true,\"cap_surface\":[\"liscia\",\"asciutta\",\"viscida\"],\"hymenophore\":[\"pori\"],\"hymenophore_color\":[\"bianco\",\"crema\",\"giallo\",\"verde\"]}. No new anatomical traits. Reference species icons are shape/color authorities except the explicit target cap shape. Cap-only must match whole cap. Last column empty. True alpha background.",
+    "edits": [
+      "Change ONLY underside colors in ROWS1and2, both isolated caps and whole mushrooms: Cortinarius orellanus and Cortinarius rubellus need MUTED OCHRE TO RUST-BROWN gills/undersides like their approved reference icons, NOT bright yellow/orange. Keep their orange cap skins, conical orellanus versus convex rubellus, pale ochre ringless stems. Keep ROW3 edulis exactly unchanged, brown hemispherical cap with pale yellow pores and white upper-stem net. Same transparent3x3sprite sheet, no background/text/grid, all icons complete."
+    ],
+    "stato": "ok"
+  },
+  {
+    "file": "incoming/icone/forme-11.png",
+    "tipo": "illustrazione",
+    "soggetto": "edulis",
+    "tessera": "gambo",
+    "cella": 7,
+    "variante": "forma:emisferico",
+    "base": {
+      "forma": "convesso",
+      "colore": "bruno"
+    },
+    "modello": "image_gen (identificatore tecnico non esposto)",
+    "prompt": "A transparent PNG sprite sheet, square1254x1254, invisible3x3cells418px each. Use reference1 for EXACT SMALL ICON SIZE, generous TRANSPARENT CELL MARGINS and row positions. Three rows: column1 CAP ONLY side view, column2 WHOLE MUSHROOM, column3 entirely EMPTY. Each separate icon centered in its own cell, at most60% of cell width AND height, at least18% alpha0 padding on EVERY cell edge. No drawn grid, background, shadows, ground, text, numbers or marks. Clean thick dark brown COMPLETE silhouette outline, flat few colors same as species icons. References2 onward show the approved base icons: preserve cap COLOR and all stems, rings, volvas, netting, scales and spots, change ONLY cap SHAPE and age-appropriate proportions. Each row's cap-only and whole must MATCH shape/color. ROW1: cortinarius-orellanus, base cap color arancio, target shape CONICAL: distinctly pointed cone. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"asciutta\",\"squamosa\",\"vellutata/feltrata\",\"liscia\"],\"hymenophore\":[\"lamelle\"],\"hymenophore_color\":[\"arancio\",\"bruno\"]}. ROW2: cortinarius-rubellus, base cap color arancio, target shape CONVEX: low rounded dome. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"squamosa\",\"asciutta\",\"vellutata/feltrata\"],\"hymenophore\":[\"lamelle\"],\"hymenophore_color\":[\"arancio\",\"bruno\"]}. ROW3: edulis, base cap color bruno, target shape HEMISPHERICAL: rounded half-sphere dome with NO central point or umbo, even if adult base has an umbo. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":true,\"cap_surface\":[\"liscia\",\"asciutta\",\"viscida\"],\"hymenophore\":[\"pori\"],\"hymenophore_color\":[\"bianco\",\"crema\",\"giallo\",\"verde\"]}. No new anatomical traits. Reference species icons are shape/color authorities except the explicit target cap shape. Cap-only must match whole cap. Last column empty. True alpha background.",
+    "edits": [
+      "Change ONLY underside colors in ROWS1and2, both isolated caps and whole mushrooms: Cortinarius orellanus and Cortinarius rubellus need MUTED OCHRE TO RUST-BROWN gills/undersides like their approved reference icons, NOT bright yellow/orange. Keep their orange cap skins, conical orellanus versus convex rubellus, pale ochre ringless stems. Keep ROW3 edulis exactly unchanged, brown hemispherical cap with pale yellow pores and white upper-stem net. Same transparent3x3sprite sheet, no background/text/grid, all icons complete."
+    ],
+    "stato": "ok"
   }
 ]
