@@ -1,0 +1,44 @@
+{
+  "file": "incoming/glossario/cappello.png",
+  "size": [
+    1024,
+    1024
+  ],
+  "bbox_alpha128": [
+    178,
+    154,
+    847,
+    869
+  ],
+  "margin_required_px": 103,
+  "margin_alpha_max": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "extremes_contour_rgb_max": [
+    [
+      70,
+      23,
+      7
+    ],
+    [
+      70,
+      26,
+      10
+    ],
+    [
+      69,
+      22,
+      8
+    ],
+    [
+      70,
+      25,
+      9
+    ]
+  ],
+  "status": "esempio da approvare",
+  "export": "Intero soggetto ridimensionato proporzionalmente e centrato, nessun ridisegno anatomico; esclusi residui alpha quasi trasparenti esterni al bbox alpha8+2px."
+}

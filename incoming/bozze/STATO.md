@@ -297,3 +297,6 @@ Ordine aggiornato da Matteo il 15/10: completare prima tutte le varianti di colo
 | timbri/colori-autunno.png | ok | Due foglie separate in caduta: faggio ovale a bordo intero e acero campestre con lobi palmati arrotondati; inchiostro ruggine arancio; margini52px alpha0, inchiostro integro ai4estremi; Scelte due foglie invece di tre per leggibilità; frutti e nervature minute omessi, nessun gradiente di colore per rispettare l'inchiostro unico. |
 | bozze/timbri/colori-autunno-verifica.png | ok | Prove64/84/112px su carta e scuro. |
 | qa/2026-10-15-timbro-colori-autunno.json | ok | Controllo automatico del formato, margini e inchiostro ai4estremi. |
+
+| glossario/cappello.png | esempio da approvare | Cappello evidenziato, gambo spento; PNG 1024px, margini e contorni verificati. Glossario, guide e infografiche sospesi fino all’approvazione di Matteo. |
+| qa/2026-10-15-glossario-cappello.json | ok | Verifica codice di margini e quattro estremi. |
