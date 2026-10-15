@@ -442,3 +442,7 @@ forme-38: tricholoma-portentosum convesso, tricholoma-sciodes convesso, tricholo
 forme-39: virescens emisferico, virescens imbuto. Virescens emisferica e a imbuto con mosaico verde areolato, lamelle chiare e gambo bianco. Quattro icone, terza riga e colonna vuote. Scala e centratura normalizzate con Python su autorizzazione di Matteo; disegno invariato. Base colore/forma e prompt nel manifest, controlli in bozze/verifiche.
 
 forme-31: repandum piano, repandum imbuto, russula-aeruginea piano. Repandum piano e a imbuto con aculei; Russula appianata verde. Corretto tramite generatore il contorno inferiore del cappello isolato. Scala e centratura normalizzate con Python su autorizzazione di Matteo; disegno invariato. Base colore/forma e prompt nel manifest, controlli in bozze/verifiche.
+
+### Fasi 01 — caesarea uovo; caesarea apertura; caesarea giovane
+
+Fonte operativa: docs/handoff-immagini-fasi.md su claude/brave-tesla-wu0a2b, con fonti delle fasi riportate nel brief. Stile e colori confrontati con assets/traits/<specie>-cappello.webp, -sotto.webp, -gambo.webp di quel ramo. Anatomia semplificata come nelle basi: pochi colori, lamelle schematiche, nessuna funzione diagnostica. Nelle fasi uovo l’esterno resta chiuso nel velo bianco; gli interni sono visibili soltanto nella tessera taglio quando prevista. Sezioni illustrative, non prova di identificazione. Solo scala e centratura normalizzate per la griglia, tavolozza ridotta a 128 colori conservando alpha; nessun carattere aggiunto dal codice. Verifiche geometriche e peso in codice superati.
