@@ -1,0 +1,356 @@
+{
+  "file": "incoming/icone/fasi-23.png",
+  "size": 83532,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "alpha": true,
+  "palette": 128,
+  "source": "generated_images/exec-cd5a7ac9-ecc1-45ae-8f94-cbdf3412a540.png",
+  "normalization": "Uniform per-icon scaling and placement; no anatomical pixel edits. Cap width / whole height / underside diameter matched to base; expanded whole mushrooms fit to base bounds if height matching would exceed cell margins. Base centers preserved.",
+  "cells": [
+    {
+      "cella": 0,
+      "soggetto": "cortinarius-orellanus",
+      "fase": "adulto",
+      "tessera": "cappello",
+      "base_bbox": [
+        4,
+        86,
+        304,
+        223
+      ],
+      "base_center": [
+        208,
+        208.5
+      ],
+      "normalized_size": [
+        300,
+        94
+      ],
+      "bbox": [
+        59,
+        163,
+        358,
+        255
+      ],
+      "margins": [
+        59,
+        163,
+        60,
+        163
+      ],
+      "extreme_dark_fraction": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "cella": 1,
+      "soggetto": "cortinarius-orellanus",
+      "fase": "adulto",
+      "tessera": "sotto",
+      "base_bbox": [
+        4,
+        6,
+        306,
+        304
+      ],
+      "base_center": [
+        209,
+        209
+      ],
+      "normalized_size": [
+        302,
+        299
+      ],
+      "bbox": [
+        59,
+        61,
+        359,
+        358
+      ],
+      "margins": [
+        59,
+        61,
+        59,
+        60
+      ],
+      "extreme_dark_fraction": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "cella": 2,
+      "soggetto": "cortinarius-orellanus",
+      "fase": "adulto",
+      "tessera": "gambo",
+      "base_bbox": [
+        5,
+        18,
+        306,
+        293
+      ],
+      "base_center": [
+        209.5,
+        209.5
+      ],
+      "normalized_size": [
+        301,
+        223
+      ],
+      "bbox": [
+        59,
+        98,
+        359,
+        320
+      ],
+      "margins": [
+        59,
+        98,
+        59,
+        98
+      ],
+      "extreme_dark_fraction": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "cella": 3,
+      "soggetto": "cortinarius-rubellus",
+      "fase": "giovane",
+      "tessera": "cappello",
+      "base_bbox": [
+        4,
+        69,
+        306,
+        238
+      ],
+      "base_center": [
+        209,
+        207.5
+      ],
+      "normalized_size": [
+        302,
+        169
+      ],
+      "bbox": [
+        59,
+        124,
+        359,
+        291
+      ],
+      "margins": [
+        59,
+        124,
+        59,
+        127
+      ],
+      "extreme_dark_fraction": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "cella": 4,
+      "soggetto": "cortinarius-rubellus",
+      "fase": "giovane",
+      "tessera": "sotto",
+      "base_bbox": [
+        4,
+        4,
+        304,
+        306
+      ],
+      "base_center": [
+        208,
+        209
+      ],
+      "normalized_size": [
+        300,
+        299
+      ],
+      "bbox": [
+        60,
+        63,
+        357,
+        358
+      ],
+      "margins": [
+        60,
+        63,
+        61,
+        60
+      ],
+      "extreme_dark_fraction": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "cella": 5,
+      "soggetto": "cortinarius-rubellus",
+      "fase": "giovane",
+      "tessera": "gambo",
+      "base_bbox": [
+        31,
+        4,
+        279,
+        306
+      ],
+      "base_center": [
+        209,
+        209
+      ],
+      "normalized_size": [
+        282,
+        302
+      ],
+      "bbox": [
+        71,
+        59,
+        349,
+        359
+      ],
+      "margins": [
+        71,
+        59,
+        69,
+        59
+      ],
+      "extreme_dark_fraction": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "cella": 6,
+      "soggetto": "cortinarius-rubellus",
+      "fase": "adulto",
+      "tessera": "cappello",
+      "base_bbox": [
+        4,
+        69,
+        306,
+        238
+      ],
+      "base_center": [
+        209,
+        207.5
+      ],
+      "normalized_size": [
+        302,
+        100
+      ],
+      "bbox": [
+        58,
+        159,
+        360,
+        257
+      ],
+      "margins": [
+        58,
+        159,
+        58,
+        161
+      ],
+      "extreme_dark_fraction": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "cella": 7,
+      "soggetto": "cortinarius-rubellus",
+      "fase": "adulto",
+      "tessera": "sotto",
+      "base_bbox": [
+        4,
+        4,
+        304,
+        306
+      ],
+      "base_center": [
+        208,
+        209
+      ],
+      "normalized_size": [
+        300,
+        298
+      ],
+      "bbox": [
+        60,
+        61,
+        357,
+        357
+      ],
+      "margins": [
+        60,
+        61,
+        61,
+        61
+      ],
+      "extreme_dark_fraction": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "cella": 8,
+      "soggetto": "cortinarius-rubellus",
+      "fase": "adulto",
+      "tessera": "gambo",
+      "base_bbox": [
+        31,
+        4,
+        279,
+        306
+      ],
+      "base_center": [
+        209,
+        209
+      ],
+      "normalized_size": [
+        248,
+        191
+      ],
+      "bbox": [
+        85,
+        115,
+        333,
+        305
+      ],
+      "margins": [
+        85,
+        115,
+        85,
+        113
+      ],
+      "extreme_dark_fraction": [
+        1,
+        1,
+        1,
+        1
+      ]
+    }
+  ]
+}
