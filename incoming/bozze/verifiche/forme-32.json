@@ -1,0 +1,283 @@
+{
+  "file": "incoming/icone/forme-32.png",
+  "stato": "ok",
+  "verifiche": [
+    {
+      "cella": 0,
+      "bbox": [
+        62,
+        153,
+        356,
+        265
+      ],
+      "attesa": true,
+      "margini_px": [
+        62,
+        153,
+        62,
+        153
+      ],
+      "margini_ok": true,
+      "contorno_scuro_estremi": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cella": 1,
+      "bbox": [
+        66,
+        96,
+        352,
+        322
+      ],
+      "attesa": true,
+      "margini_px": [
+        66,
+        96,
+        66,
+        96
+      ],
+      "margini_ok": true,
+      "contorno_scuro_estremi": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cella": 2,
+      "bbox": null,
+      "attesa": false,
+      "vuota": true
+    },
+    {
+      "cella": 3,
+      "bbox": [
+        80,
+        140,
+        337,
+        277
+      ],
+      "attesa": true,
+      "margini_px": [
+        80,
+        140,
+        81,
+        141
+      ],
+      "margini_ok": true,
+      "contorno_scuro_estremi": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cella": 4,
+      "bbox": [
+        91,
+        83,
+        326,
+        334
+      ],
+      "attesa": true,
+      "margini_px": [
+        91,
+        83,
+        92,
+        84
+      ],
+      "margini_ok": true,
+      "contorno_scuro_estremi": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cella": 5,
+      "bbox": null,
+      "attesa": false,
+      "vuota": true
+    },
+    {
+      "cella": 6,
+      "bbox": [
+        62,
+        158,
+        356,
+        259
+      ],
+      "attesa": true,
+      "margini_px": [
+        62,
+        158,
+        62,
+        159
+      ],
+      "margini_ok": true,
+      "contorno_scuro_estremi": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cella": 7,
+      "bbox": [
+        62,
+        107,
+        356,
+        310
+      ],
+      "attesa": true,
+      "margini_px": [
+        62,
+        107,
+        62,
+        108
+      ],
+      "margini_ok": true,
+      "contorno_scuro_estremi": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cella": 8,
+      "bbox": null,
+      "attesa": false,
+      "vuota": true
+    }
+  ],
+  "normalizzazione": [
+    {
+      "cella": 0,
+      "bbox_originale_immagine": [
+        79,
+        195,
+        383,
+        311
+      ],
+      "scala": 0.9671052631578947,
+      "dimensioni": [
+        294,
+        112
+      ],
+      "posizione": [
+        62,
+        153
+      ]
+    },
+    {
+      "cella": 1,
+      "bbox_originale_immagine": [
+        486,
+        142,
+        772,
+        368
+      ],
+      "scala": 1,
+      "dimensioni": [
+        286,
+        226
+      ],
+      "posizione": [
+        484,
+        96
+      ]
+    },
+    {
+      "cella": 3,
+      "bbox_originale_immagine": [
+        104,
+        557,
+        361,
+        694
+      ],
+      "scala": 1,
+      "dimensioni": [
+        257,
+        137
+      ],
+      "posizione": [
+        80,
+        558
+      ]
+    },
+    {
+      "cella": 4,
+      "bbox_originale_immagine": [
+        511,
+        501,
+        746,
+        752
+      ],
+      "scala": 1,
+      "dimensioni": [
+        235,
+        251
+      ],
+      "posizione": [
+        509,
+        501
+      ]
+    },
+    {
+      "cella": 6,
+      "bbox_originale_immagine": [
+        71,
+        950,
+        395,
+        1061
+      ],
+      "scala": 0.9074074074074074,
+      "dimensioni": [
+        294,
+        101
+      ],
+      "posizione": [
+        62,
+        994
+      ]
+    },
+    {
+      "cella": 7,
+      "bbox_originale_immagine": [
+        473,
+        911,
+        785,
+        1126
+      ],
+      "scala": 0.9423076923076923,
+      "dimensioni": [
+        294,
+        203
+      ],
+      "posizione": [
+        480,
+        943
+      ]
+    }
+  ],
+  "bytes": 47493,
+  "dimensioni": [
+    1254,
+    1254
+  ],
+  "sha256": "88d2368a3e5eb7549ef6a25c1515ef7c38519c90dacf5a7e4a6333ed1d200e29",
+  "prompt": "A transparent PNG sprite sheet, square1254x1254, invisible3x3cells418px each. Use reference1 for EXACT SMALL ICON SIZE, generous TRANSPARENT CELL MARGINS and row positions. Three rows: column1 CAP ONLY side view, column2 WHOLE MUSHROOM, column3 entirely EMPTY. Each separate icon centered in its own cell, at most60% of cell width AND height, at least18% alpha0 padding on EVERY cell edge. No drawn grid, background, shadows, ground, text, numbers or marks. Clean thick dark brown COMPLETE silhouette outline, flat few colors same as species icons. References2 onward show the approved base icons: preserve cap COLOR and all stems, rings, volvas, netting, scales and spots, change ONLY cap SHAPE and age-appropriate proportions. Each row's cap-only and whole must MATCH shape/color. Use EXACT reference cap shade; color labels are broad categories: 'rosso' may be dark red-BROWN. Never borrow anatomical traits or colors between rows. ROW1: russula-aeruginea, base cap color verde, target shape FUNNEL: depressed center with upturned edge. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"viscida\",\"liscia\",\"asciutta\"],\"hymenophore\":[\"lamelle\"],\"hymenophore_color\":[\"crema\",\"giallo\"]}. ROW2: russula-aurea, base cap color arancio, target shape HEMISPHERICAL: rounded half-sphere dome with NO central point or umbo, even if adult base has an umbo. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":false,\"cap_surface\":null,\"hymenophore\":[\"lamelle\"],\"hymenophore_color\":[\"crema\",\"giallo\"]}. ROW3: russula-aurea, base cap color arancio, target shape FLAT: almost horizontal, expanded cap. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":false,\"cap_surface\":null,\"hymenophore\":[\"lamelle\"],\"hymenophore_color\":[\"crema\",\"giallo\"]}. No new anatomical traits. Reference species icons are shape/color authorities except the explicit target cap shape. Cap-only must match whole cap. Last column empty. True alpha background.",
+  "edits": [],
+  "normalizza": true,
+  "visivo_ok": true,
+  "nota": "Russula aeruginea verde a imbuto; aurea emisferica e appianata arancio-gialla, con lamelle gialline e gambo chiaro sfumato giallo. Anatomia delle basi conservata. Scala e centratura normalizzate con Python su autorizzazione di Matteo; disegno invariato."
+}
