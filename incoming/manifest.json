@@ -9346,5 +9346,125 @@
     "cella": 2,
     "modello": "image_gen (modello integrato, identificatore non esposto)",
     "prompt": "Use case: scientific-educational. Asset: Fungaroli botanical comparison UI icons, MATCH THE STYLE of the two supplied mushroom reference sheets: clean flat simplified botanical objects, thin dark brown outlines, few solid natural colors, at most subtle single shade, no photographic textures. Produce ONE square PNG sprite sheet 1254x1254, a mathematically regular invisible 3x3 grid of equal square cells. TRUE TRANSPARENT background and gaps; no checkerboard painted in, no panels, no grid lines, no text, letters, digits, arrows, badges or scale bars. Each icon completely contained in its cell with generous margins, centered around the cell center, clear at 48-64px. Reference sheets are STYLE REFERENCES ONLY: draw tree characteristics, no mushrooms. Medium muted green foliage and brown twigs. Within a comparison group use EXACTLY the same underlying twig shape, orientation, color and line thickness; vary ONLY the requested character.\nCRITICAL CROP SAFETY: exact regular 3x3 grid 1254x1254 with418x418 cells. ALL VISIBLE PIXELS in each cell MUST be inside its CENTRAL60%: at least84px FULLY TRANSPARENT clear padding from EACH of four cell edges. Max icon bounding box250x250, centered exactly at cell center. All drawings including stems/tips/husks INSIDE this central box. ABSOLUTELY NO pixel of any drawing near cell boundaries. Safety goal20% padding exceeds mandatory10%. Keep empty cells alpha0. Render PURE transparent zero-alpha in every grid gutter, no checkerboard, no nearly-transparent colored backgrounds. Reduce every icon uniformly within ITS OWN cell without moving it to a different cell. Match exact existing cell assignment. No clipping; scale whole drawings including their outlines. Preserve colors and anatomy.\nONLY THREE fruit icons in TOP ROW, other SIX cells completely empty and transparent.\nIMPORTANT optical center points: top-left center209,209; top-center627,209; top-right1045,209. EVERY icon including stems fits within central240x240box, so bottom ends no lower than y329 and top no higher than y89. Never render at fullcellheight. No labels.\nCell0 top-left fruit_type/nocciola: ONE whole hazelnut in its characteristic green leafy involucre. Warm brown roundish ovoid hazelnut with pale basal scar, green overlapping gently jagged husk leaves enclosing its lowerhalf/sides, recognizable entirefruit, no detached loose nut or branch.\nCell1 top-center fruit_type/baccello: ONE whole dry muted brown elongated bean-like legume pod, very slightlycurved, with soft visible seed bulges alongits length. Closedoronlyslightlyopen seam, complete pod fromtip toshort stalk, no separate seeds, diagonallyorientedtofitcentral240square. Robinia-like simplepod,notvegetablepeaillustrationinbrightgreen.\nCell2 top-right fruit_type/brattea_o_vescicole: ONE small cluster of THREE tan rounded tiny fruits suspendedbythin branching stalks from a SINGLE LONG NARROW palegreen LINDEN BRACT. Bract above, danglingfruitcluster below; clearly the fruitstalkattaches along thebract'smidrib. Whole object centrallycontained, bractandfruitswithin240x240. Bract is ONE slender leaf-like papery blade, not a full leafy treebranch.\nNo other leaves except characteristic fruitenclosures and the specifiedbract; no ground orshadow. Empty cells3through8 alpha0.\nEdit this transparent sprite sheet for crop safety ONLY. The three top-row fruit icons are currently too large and two extend into the second row. REDUCE EACH OF THESE THREE DRAWINGS TO60% OF CURRENT SIZE and then center each one at y209 in its OWN original top-rowcell. The grid and canvas stay1254x1254. Do not shrink entiregrid as one object. Preserve exactfruits: hazelnutwithgreenhuskonleft, brownpodinmiddle, hangingthreefruitswithbractonright.\nMandatory final boundingboxes in fullcanvas: leftfruit x89to329,y89to329; middlefruit x507to747,y89to329; rightfruit x925to1165,y89to329. No drawing anywhere outside thoseboxes. Other SIX cells absolutely EMPTY.\nNo object pixels below y340. There must be a wide clean transparent strip across y340to1254. No cropped outlines, no text, no newobjects. Keep thin darkbrowncontinuouscontour allround everyfruit, flatnaturalsobercolors, transparentzeroalpha. Every outermost visible rowandcolumn of drawingmustbe darkoutline, no exposed fill. CRITICAL CROP SAFETY: exact regular 3x3 grid 1254x1254 with418x418 cells. ALL VISIBLE PIXELS in each cell MUST be inside its CENTRAL60%: at least84px FULLY TRANSPARENT clear padding from EACH of four cell edges. Max icon bounding box250x250, centered exactly at cell center. All drawings including stems/tips/husks INSIDE this central box. ABSOLUTELY NO pixel of any drawing near cell boundaries. Safety goal20% padding exceeds mandatory10%. Keep empty cells alpha0. Render PURE transparent zero-alpha in every grid gutter, no checkerboard, no nearly-transparent colored backgrounds. Reduce every icon uniformly within ITS OWN cell without moving it to a different cell. Match exact existing cell assignment. No clipping; scale whole drawings including their outlines. Preserve colors and anatomy."
+  },
+  {
+    "file": "incoming/icone/varianti-10.png",
+    "tipo": "illustrazione",
+    "soggetto": "cortinarius-rubellus",
+    "tessera": "cappello",
+    "stagione": null,
+    "foto_di_partenza": null,
+    "autore_foto": null,
+    "licenza_foto": null,
+    "pagina_foto": null,
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case precise-object-edit / scientific-educational. Edit this reference sheet of APPROVED flat mushroom icons ONLY in the requested colors. It is already arranged in the REQUIRED output layout: 1254x1254, equal invisible3x3 grid; each row col1 CAP SIDE VIEW ONLY, col2 WHOLE MUSHROOM, col3 EMPTY TRANSPARENT. Keep the exact style, line weight, outlines, proportions, icon center, scale, cap silhouette, age and anatomy. No growth stages and NO SHAPE VARIANTS. Real alpha transparency, clean edges, NO background, NO text, NO frames, NO shadows, NO extra details. Maintain simple broad flat colors and source highlights; use the requested recognizable midtone or a slightly lighter shade. OUTPUT ROW 1: Cortinarius rubellus (cortinarius-rubellus). Change only cap color from arancio to rosso #bb3226. Preserve the base conico cap silhouette EXACTLY, same age, no shape change. Keep all gill/underside, stem, ring, volva, warts and scale colors unchanged; for a scaled cap preserve darker scale/disc contrast on the new cap ground. Preserve these source characteristics: Cappello conico a punta, fulvo-aranciato; Cortina e non anello; Sporata ruggine; a terra sotto conifere. OUTPUT ROW 2: Cortinarius violaceus (cortinarius-violaceus). Change only cap color from violetto to nero #3a3330. Preserve the base convesso cap silhouette EXACTLY, same age, no shape change. This species has cap and the body in the same color: also change matching originally cap-colored tissues of the whole fungus to the target color, preserving distinct structures and outlines. Preserve these source characteristics: Viola scurissimo e vellutato; Cortina sul gambo; Sporata ruggine. OUTPUT ROW 3: Galerina marginata (galerina-marginata). Change only cap color from arancio to bruno #8e5f36. Preserve the base convesso cap silhouette EXACTLY, same age, no shape change. Keep all gill/underside, stem, ring, volva, warts and scale colors unchanged; for a scaled cap preserve darker scale/disc contrast on the new cap ground. Preserve these source characteristics: Cappello 1-5 cm bruno-ocra liscio; Anello sottile sporcato di ruggine; Sporata bruno-ruggine. Do not borrow anatomy from another row. No additions: preserve only features already visible in each corresponding reference drawing. MANDATORY: each drawing entirely inside its own cell with at least10% completely transparent margin on ALL four sides. Every418px cell must have zero alpha in the outer42px strips. Keep whole mushroom and cap far from cell boundaries. Third column totally empty alpha0.",
+    "cella": 0,
+    "variante": "colore:rosso",
+    "base": {
+      "colore": "arancio",
+      "forma": "conico"
+    },
+    "qa": "QA visiva dei colori e caratteri invarianti; controllo alfa obbligatorio con margine trasparente di42px (10%) in ogni cella, colonna3 vuota."
+  },
+  {
+    "file": "incoming/icone/varianti-10.png",
+    "tipo": "illustrazione",
+    "soggetto": "cortinarius-rubellus",
+    "tessera": "gambo",
+    "stagione": null,
+    "foto_di_partenza": null,
+    "autore_foto": null,
+    "licenza_foto": null,
+    "pagina_foto": null,
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case precise-object-edit / scientific-educational. Edit this reference sheet of APPROVED flat mushroom icons ONLY in the requested colors. It is already arranged in the REQUIRED output layout: 1254x1254, equal invisible3x3 grid; each row col1 CAP SIDE VIEW ONLY, col2 WHOLE MUSHROOM, col3 EMPTY TRANSPARENT. Keep the exact style, line weight, outlines, proportions, icon center, scale, cap silhouette, age and anatomy. No growth stages and NO SHAPE VARIANTS. Real alpha transparency, clean edges, NO background, NO text, NO frames, NO shadows, NO extra details. Maintain simple broad flat colors and source highlights; use the requested recognizable midtone or a slightly lighter shade. OUTPUT ROW 1: Cortinarius rubellus (cortinarius-rubellus). Change only cap color from arancio to rosso #bb3226. Preserve the base conico cap silhouette EXACTLY, same age, no shape change. Keep all gill/underside, stem, ring, volva, warts and scale colors unchanged; for a scaled cap preserve darker scale/disc contrast on the new cap ground. Preserve these source characteristics: Cappello conico a punta, fulvo-aranciato; Cortina e non anello; Sporata ruggine; a terra sotto conifere. OUTPUT ROW 2: Cortinarius violaceus (cortinarius-violaceus). Change only cap color from violetto to nero #3a3330. Preserve the base convesso cap silhouette EXACTLY, same age, no shape change. This species has cap and the body in the same color: also change matching originally cap-colored tissues of the whole fungus to the target color, preserving distinct structures and outlines. Preserve these source characteristics: Viola scurissimo e vellutato; Cortina sul gambo; Sporata ruggine. OUTPUT ROW 3: Galerina marginata (galerina-marginata). Change only cap color from arancio to bruno #8e5f36. Preserve the base convesso cap silhouette EXACTLY, same age, no shape change. Keep all gill/underside, stem, ring, volva, warts and scale colors unchanged; for a scaled cap preserve darker scale/disc contrast on the new cap ground. Preserve these source characteristics: Cappello 1-5 cm bruno-ocra liscio; Anello sottile sporcato di ruggine; Sporata bruno-ruggine. Do not borrow anatomy from another row. No additions: preserve only features already visible in each corresponding reference drawing. MANDATORY: each drawing entirely inside its own cell with at least10% completely transparent margin on ALL four sides. Every418px cell must have zero alpha in the outer42px strips. Keep whole mushroom and cap far from cell boundaries. Third column totally empty alpha0.",
+    "cella": 1,
+    "variante": "colore:rosso",
+    "base": {
+      "colore": "arancio",
+      "forma": "conico"
+    },
+    "qa": "QA visiva dei colori e caratteri invarianti; controllo alfa obbligatorio con margine trasparente di42px (10%) in ogni cella, colonna3 vuota."
+  },
+  {
+    "file": "incoming/icone/varianti-10.png",
+    "tipo": "illustrazione",
+    "soggetto": "cortinarius-violaceus",
+    "tessera": "cappello",
+    "stagione": null,
+    "foto_di_partenza": null,
+    "autore_foto": null,
+    "licenza_foto": null,
+    "pagina_foto": null,
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case precise-object-edit / scientific-educational. Edit this reference sheet of APPROVED flat mushroom icons ONLY in the requested colors. It is already arranged in the REQUIRED output layout: 1254x1254, equal invisible3x3 grid; each row col1 CAP SIDE VIEW ONLY, col2 WHOLE MUSHROOM, col3 EMPTY TRANSPARENT. Keep the exact style, line weight, outlines, proportions, icon center, scale, cap silhouette, age and anatomy. No growth stages and NO SHAPE VARIANTS. Real alpha transparency, clean edges, NO background, NO text, NO frames, NO shadows, NO extra details. Maintain simple broad flat colors and source highlights; use the requested recognizable midtone or a slightly lighter shade. OUTPUT ROW 1: Cortinarius rubellus (cortinarius-rubellus). Change only cap color from arancio to rosso #bb3226. Preserve the base conico cap silhouette EXACTLY, same age, no shape change. Keep all gill/underside, stem, ring, volva, warts and scale colors unchanged; for a scaled cap preserve darker scale/disc contrast on the new cap ground. Preserve these source characteristics: Cappello conico a punta, fulvo-aranciato; Cortina e non anello; Sporata ruggine; a terra sotto conifere. OUTPUT ROW 2: Cortinarius violaceus (cortinarius-violaceus). Change only cap color from violetto to nero #3a3330. Preserve the base convesso cap silhouette EXACTLY, same age, no shape change. This species has cap and the body in the same color: also change matching originally cap-colored tissues of the whole fungus to the target color, preserving distinct structures and outlines. Preserve these source characteristics: Viola scurissimo e vellutato; Cortina sul gambo; Sporata ruggine. OUTPUT ROW 3: Galerina marginata (galerina-marginata). Change only cap color from arancio to bruno #8e5f36. Preserve the base convesso cap silhouette EXACTLY, same age, no shape change. Keep all gill/underside, stem, ring, volva, warts and scale colors unchanged; for a scaled cap preserve darker scale/disc contrast on the new cap ground. Preserve these source characteristics: Cappello 1-5 cm bruno-ocra liscio; Anello sottile sporcato di ruggine; Sporata bruno-ruggine. Do not borrow anatomy from another row. No additions: preserve only features already visible in each corresponding reference drawing. MANDATORY: each drawing entirely inside its own cell with at least10% completely transparent margin on ALL four sides. Every418px cell must have zero alpha in the outer42px strips. Keep whole mushroom and cap far from cell boundaries. Third column totally empty alpha0.",
+    "cella": 3,
+    "variante": "colore:nero",
+    "base": {
+      "colore": "violetto",
+      "forma": "convesso"
+    },
+    "qa": "QA visiva dei colori e caratteri invarianti; controllo alfa obbligatorio con margine trasparente di42px (10%) in ogni cella, colonna3 vuota."
+  },
+  {
+    "file": "incoming/icone/varianti-10.png",
+    "tipo": "illustrazione",
+    "soggetto": "cortinarius-violaceus",
+    "tessera": "gambo",
+    "stagione": null,
+    "foto_di_partenza": null,
+    "autore_foto": null,
+    "licenza_foto": null,
+    "pagina_foto": null,
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case precise-object-edit / scientific-educational. Edit this reference sheet of APPROVED flat mushroom icons ONLY in the requested colors. It is already arranged in the REQUIRED output layout: 1254x1254, equal invisible3x3 grid; each row col1 CAP SIDE VIEW ONLY, col2 WHOLE MUSHROOM, col3 EMPTY TRANSPARENT. Keep the exact style, line weight, outlines, proportions, icon center, scale, cap silhouette, age and anatomy. No growth stages and NO SHAPE VARIANTS. Real alpha transparency, clean edges, NO background, NO text, NO frames, NO shadows, NO extra details. Maintain simple broad flat colors and source highlights; use the requested recognizable midtone or a slightly lighter shade. OUTPUT ROW 1: Cortinarius rubellus (cortinarius-rubellus). Change only cap color from arancio to rosso #bb3226. Preserve the base conico cap silhouette EXACTLY, same age, no shape change. Keep all gill/underside, stem, ring, volva, warts and scale colors unchanged; for a scaled cap preserve darker scale/disc contrast on the new cap ground. Preserve these source characteristics: Cappello conico a punta, fulvo-aranciato; Cortina e non anello; Sporata ruggine; a terra sotto conifere. OUTPUT ROW 2: Cortinarius violaceus (cortinarius-violaceus). Change only cap color from violetto to nero #3a3330. Preserve the base convesso cap silhouette EXACTLY, same age, no shape change. This species has cap and the body in the same color: also change matching originally cap-colored tissues of the whole fungus to the target color, preserving distinct structures and outlines. Preserve these source characteristics: Viola scurissimo e vellutato; Cortina sul gambo; Sporata ruggine. OUTPUT ROW 3: Galerina marginata (galerina-marginata). Change only cap color from arancio to bruno #8e5f36. Preserve the base convesso cap silhouette EXACTLY, same age, no shape change. Keep all gill/underside, stem, ring, volva, warts and scale colors unchanged; for a scaled cap preserve darker scale/disc contrast on the new cap ground. Preserve these source characteristics: Cappello 1-5 cm bruno-ocra liscio; Anello sottile sporcato di ruggine; Sporata bruno-ruggine. Do not borrow anatomy from another row. No additions: preserve only features already visible in each corresponding reference drawing. MANDATORY: each drawing entirely inside its own cell with at least10% completely transparent margin on ALL four sides. Every418px cell must have zero alpha in the outer42px strips. Keep whole mushroom and cap far from cell boundaries. Third column totally empty alpha0.",
+    "cella": 4,
+    "variante": "colore:nero",
+    "base": {
+      "colore": "violetto",
+      "forma": "convesso"
+    },
+    "qa": "QA visiva dei colori e caratteri invarianti; controllo alfa obbligatorio con margine trasparente di42px (10%) in ogni cella, colonna3 vuota."
+  },
+  {
+    "file": "incoming/icone/varianti-10.png",
+    "tipo": "illustrazione",
+    "soggetto": "galerina-marginata",
+    "tessera": "cappello",
+    "stagione": null,
+    "foto_di_partenza": null,
+    "autore_foto": null,
+    "licenza_foto": null,
+    "pagina_foto": null,
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case precise-object-edit / scientific-educational. Edit this reference sheet of APPROVED flat mushroom icons ONLY in the requested colors. It is already arranged in the REQUIRED output layout: 1254x1254, equal invisible3x3 grid; each row col1 CAP SIDE VIEW ONLY, col2 WHOLE MUSHROOM, col3 EMPTY TRANSPARENT. Keep the exact style, line weight, outlines, proportions, icon center, scale, cap silhouette, age and anatomy. No growth stages and NO SHAPE VARIANTS. Real alpha transparency, clean edges, NO background, NO text, NO frames, NO shadows, NO extra details. Maintain simple broad flat colors and source highlights; use the requested recognizable midtone or a slightly lighter shade. OUTPUT ROW 1: Cortinarius rubellus (cortinarius-rubellus). Change only cap color from arancio to rosso #bb3226. Preserve the base conico cap silhouette EXACTLY, same age, no shape change. Keep all gill/underside, stem, ring, volva, warts and scale colors unchanged; for a scaled cap preserve darker scale/disc contrast on the new cap ground. Preserve these source characteristics: Cappello conico a punta, fulvo-aranciato; Cortina e non anello; Sporata ruggine; a terra sotto conifere. OUTPUT ROW 2: Cortinarius violaceus (cortinarius-violaceus). Change only cap color from violetto to nero #3a3330. Preserve the base convesso cap silhouette EXACTLY, same age, no shape change. This species has cap and the body in the same color: also change matching originally cap-colored tissues of the whole fungus to the target color, preserving distinct structures and outlines. Preserve these source characteristics: Viola scurissimo e vellutato; Cortina sul gambo; Sporata ruggine. OUTPUT ROW 3: Galerina marginata (galerina-marginata). Change only cap color from arancio to bruno #8e5f36. Preserve the base convesso cap silhouette EXACTLY, same age, no shape change. Keep all gill/underside, stem, ring, volva, warts and scale colors unchanged; for a scaled cap preserve darker scale/disc contrast on the new cap ground. Preserve these source characteristics: Cappello 1-5 cm bruno-ocra liscio; Anello sottile sporcato di ruggine; Sporata bruno-ruggine. Do not borrow anatomy from another row. No additions: preserve only features already visible in each corresponding reference drawing. MANDATORY: each drawing entirely inside its own cell with at least10% completely transparent margin on ALL four sides. Every418px cell must have zero alpha in the outer42px strips. Keep whole mushroom and cap far from cell boundaries. Third column totally empty alpha0.",
+    "cella": 6,
+    "variante": "colore:bruno",
+    "base": {
+      "colore": "arancio",
+      "forma": "convesso"
+    },
+    "qa": "QA visiva dei colori e caratteri invarianti; controllo alfa obbligatorio con margine trasparente di42px (10%) in ogni cella, colonna3 vuota."
+  },
+  {
+    "file": "incoming/icone/varianti-10.png",
+    "tipo": "illustrazione",
+    "soggetto": "galerina-marginata",
+    "tessera": "gambo",
+    "stagione": null,
+    "foto_di_partenza": null,
+    "autore_foto": null,
+    "licenza_foto": null,
+    "pagina_foto": null,
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Use case precise-object-edit / scientific-educational. Edit this reference sheet of APPROVED flat mushroom icons ONLY in the requested colors. It is already arranged in the REQUIRED output layout: 1254x1254, equal invisible3x3 grid; each row col1 CAP SIDE VIEW ONLY, col2 WHOLE MUSHROOM, col3 EMPTY TRANSPARENT. Keep the exact style, line weight, outlines, proportions, icon center, scale, cap silhouette, age and anatomy. No growth stages and NO SHAPE VARIANTS. Real alpha transparency, clean edges, NO background, NO text, NO frames, NO shadows, NO extra details. Maintain simple broad flat colors and source highlights; use the requested recognizable midtone or a slightly lighter shade. OUTPUT ROW 1: Cortinarius rubellus (cortinarius-rubellus). Change only cap color from arancio to rosso #bb3226. Preserve the base conico cap silhouette EXACTLY, same age, no shape change. Keep all gill/underside, stem, ring, volva, warts and scale colors unchanged; for a scaled cap preserve darker scale/disc contrast on the new cap ground. Preserve these source characteristics: Cappello conico a punta, fulvo-aranciato; Cortina e non anello; Sporata ruggine; a terra sotto conifere. OUTPUT ROW 2: Cortinarius violaceus (cortinarius-violaceus). Change only cap color from violetto to nero #3a3330. Preserve the base convesso cap silhouette EXACTLY, same age, no shape change. This species has cap and the body in the same color: also change matching originally cap-colored tissues of the whole fungus to the target color, preserving distinct structures and outlines. Preserve these source characteristics: Viola scurissimo e vellutato; Cortina sul gambo; Sporata ruggine. OUTPUT ROW 3: Galerina marginata (galerina-marginata). Change only cap color from arancio to bruno #8e5f36. Preserve the base convesso cap silhouette EXACTLY, same age, no shape change. Keep all gill/underside, stem, ring, volva, warts and scale colors unchanged; for a scaled cap preserve darker scale/disc contrast on the new cap ground. Preserve these source characteristics: Cappello 1-5 cm bruno-ocra liscio; Anello sottile sporcato di ruggine; Sporata bruno-ruggine. Do not borrow anatomy from another row. No additions: preserve only features already visible in each corresponding reference drawing. MANDATORY: each drawing entirely inside its own cell with at least10% completely transparent margin on ALL four sides. Every418px cell must have zero alpha in the outer42px strips. Keep whole mushroom and cap far from cell boundaries. Third column totally empty alpha0.",
+    "cella": 7,
+    "variante": "colore:bruno",
+    "base": {
+      "colore": "arancio",
+      "forma": "convesso"
+    },
+    "qa": "QA visiva dei colori e caratteri invarianti; controllo alfa obbligatorio con margine trasparente di42px (10%) in ogni cella, colonna3 vuota."
   }
 ]

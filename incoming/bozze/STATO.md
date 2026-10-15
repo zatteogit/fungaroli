@@ -202,3 +202,5 @@ Ordine aggiornato da Matteo il 15/10: completare prima tutte le varianti di colo
 - Verifica codice sui quattro estremi delle sagome (alpha>=128): i pixel della prima/ultima riga e colonna hanno colore di contorno bruno scuro, nessun riempimento esposto. Verifica visiva aggiuntiva di tutte le sagome.
 - Limite di resa: i denti secondari di doppiamente_dentato sono minuti a48px; bordi approvati da Matteo. Nessun valore privo di icona.
 - Manifest e stato aggiornati senza alterare le voci preesistenti di altri lavori; nessuna PR.
+
+| icone/varianti-10.png | cortinarius-rubellus: colore:rosso; cortinarius-violaceus: colore:nero; galerina-marginata: colore:bruno | ok | QA visiva completata; 6 icone, alpha reale, terza colonna vuota. Basi nel manifest. |
