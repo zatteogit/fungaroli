@@ -1,0 +1,2346 @@
+{
+  "source": {
+    "repo": "https://github.com/zatteogit/fungaroli",
+    "branch": "claude/brave-tesla-wu0a2b",
+    "commit": "44f1420e5bc08474428e1049cc9ce550799e9bf0",
+    "checked": "2026-10-15",
+    "counts": {
+      "zones": 15,
+      "plants": 70,
+      "trees": 39,
+      "fungalTaxaRecords": 88,
+      "modeledSpecies": 14,
+      "edibleSelector": 46,
+      "glossaryTerms": 47,
+      "guides": 3
+    },
+    "files": [
+      {
+        "path": "README.md",
+        "url": "https://github.com/zatteogit/fungaroli/blob/44f1420e5bc08474428e1049cc9ce550799e9bf0/README.md",
+        "sha256": "1bdacc0a0a67fc33fbdbdff7af6b2aacd4915b7ee7ed0f78f8984975e462e7ca"
+      },
+      {
+        "path": "AGENTS.md",
+        "url": "https://github.com/zatteogit/fungaroli/blob/44f1420e5bc08474428e1049cc9ce550799e9bf0/AGENTS.md",
+        "sha256": "2eaceafe24b26063ce72576b5cea3b74baf5ba227a0bf6161a99ccab1800ef40"
+      },
+      {
+        "path": "docs/handoff-2026-10-14.md",
+        "url": "https://github.com/zatteogit/fungaroli/blob/44f1420e5bc08474428e1049cc9ce550799e9bf0/docs/handoff-2026-10-14.md",
+        "sha256": "97125e132fafb94d8145b84ec4abe614cd88a507353924a494f0b77b254a94b0"
+      },
+      {
+        "path": "docs/ux-navigazione.md",
+        "url": "https://github.com/zatteogit/fungaroli/blob/44f1420e5bc08474428e1049cc9ce550799e9bf0/docs/ux-navigazione.md",
+        "sha256": "0d0db4737f01e411ae020489587386c62af37307cf00035898f32d5ffdcd094a"
+      },
+      {
+        "path": "docs/guida-uso.md",
+        "url": "https://github.com/zatteogit/fungaroli/blob/44f1420e5bc08474428e1049cc9ce550799e9bf0/docs/guida-uso.md",
+        "sha256": "1b5b891512d71665e31d98c7f35c889b606a8699b328c71d05893b9a7762048a"
+      },
+      {
+        "path": "docs/community.md",
+        "url": "https://github.com/zatteogit/fungaroli/blob/44f1420e5bc08474428e1049cc9ce550799e9bf0/docs/community.md",
+        "sha256": "09f1c2f5ca578b886832c9b4ecf5aa1e96805b61d8abc6db90cd48beed2e5ed5"
+      },
+      {
+        "path": "data/ui-copy.json",
+        "url": "https://github.com/zatteogit/fungaroli/blob/44f1420e5bc08474428e1049cc9ce550799e9bf0/data/ui-copy.json",
+        "sha256": "0f02a9a946156056069a975bca9c429436a71d877625c65282e8a2570da14e00"
+      },
+      {
+        "path": "data/zones.json",
+        "url": "https://github.com/zatteogit/fungaroli/blob/44f1420e5bc08474428e1049cc9ce550799e9bf0/data/zones.json",
+        "sha256": "31c4139515c67efa24bc84f26a51bbbd8c4ae0c0e9b8d2efb85177228dd2de0a"
+      },
+      {
+        "path": "data/species-id.json",
+        "url": "https://github.com/zatteogit/fungaroli/blob/44f1420e5bc08474428e1049cc9ce550799e9bf0/data/species-id.json",
+        "sha256": "65d3b21c9d2d171af3f066f90118d2ef8fb841f9f5bbe70fb4046cbdcea5675d"
+      },
+      {
+        "path": "data/species-traits.json",
+        "url": "https://github.com/zatteogit/fungaroli/blob/44f1420e5bc08474428e1049cc9ce550799e9bf0/data/species-traits.json",
+        "sha256": "8c110f53f78b77e1dbceb348f3d92b30606867ee5629ef1f9b3a6cc7d2102a46"
+      },
+      {
+        "path": "data/plants.json",
+        "url": "https://github.com/zatteogit/fungaroli/blob/44f1420e5bc08474428e1049cc9ce550799e9bf0/data/plants.json",
+        "sha256": "e0ec1415febc1b3efe003fb9ef55031f45c288be9c64050cd4340a54e70127ff"
+      },
+      {
+        "path": "data/trees.json",
+        "url": "https://github.com/zatteogit/fungaroli/blob/44f1420e5bc08474428e1049cc9ce550799e9bf0/data/trees.json",
+        "sha256": "09f491010b3817db2c13cde8db54e1e90301a38a13c2a18c37fbca4002a0953b"
+      },
+      {
+        "path": "data/media.json",
+        "url": "https://github.com/zatteogit/fungaroli/blob/44f1420e5bc08474428e1049cc9ce550799e9bf0/data/media.json",
+        "sha256": "81c0e548827edecbe646eb60ab47d6c3601bc2aeba054215f5bba618ea48061e"
+      },
+      {
+        "path": "data/media-zones.json",
+        "url": "https://github.com/zatteogit/fungaroli/blob/44f1420e5bc08474428e1049cc9ce550799e9bf0/data/media-zones.json",
+        "sha256": "4644fb7991c9e24f0bbc41cf58a46fcb7e83c43a0c744bdf1f0c9d70d553ebe0"
+      },
+      {
+        "path": "data/media-trees.json",
+        "url": "https://github.com/zatteogit/fungaroli/blob/44f1420e5bc08474428e1049cc9ce550799e9bf0/data/media-trees.json",
+        "sha256": "62704d1668c5043cc0a1f8e13ca0907b387502c8d6e47a305d4a76fc6113219a"
+      },
+      {
+        "path": "data/guides.json",
+        "url": "https://github.com/zatteogit/fungaroli/blob/44f1420e5bc08474428e1049cc9ce550799e9bf0/data/guides.json",
+        "sha256": "393c3ff411476dd383cbc08fb01e34f47da1073a57cf19fe1f10fa8edba1dd48"
+      },
+      {
+        "path": "data/glossary.json",
+        "url": "https://github.com/zatteogit/fungaroli/blob/44f1420e5bc08474428e1049cc9ce550799e9bf0/data/glossary.json",
+        "sha256": "4502e0b54923dbb0b1e9a685a440bb699ca509f23eee57ceed997e886592f0ef"
+      },
+      {
+        "path": "js/species.js",
+        "url": "https://github.com/zatteogit/fungaroli/blob/44f1420e5bc08474428e1049cc9ce550799e9bf0/js/species.js",
+        "sha256": "d43868bd15e202e57bc0b49ff5c404d985d714543e383d5af59e0ab86c5f3cc7"
+      },
+      {
+        "path": "js/edible-catalog.js",
+        "url": "https://github.com/zatteogit/fungaroli/blob/44f1420e5bc08474428e1049cc9ce550799e9bf0/js/edible-catalog.js",
+        "sha256": "6211ee882a4df956aef36e603104744a13ef5fa181a34be8eaa884875ce9ee73"
+      },
+      {
+        "path": "js/journal.js",
+        "url": "https://github.com/zatteogit/fungaroli/blob/44f1420e5bc08474428e1049cc9ce550799e9bf0/js/journal.js",
+        "sha256": "5a134fcf3069231bf15f188c3529ec3d3600b0d9594dd2a26a7cdae406c9abd4"
+      }
+    ]
+  },
+  "zones": [
+    {
+      "id": "vallonina",
+      "name": "Vallonina / Terminillo",
+      "title": "Vallonina",
+      "subtitle": "Terminillo, versante nord",
+      "lat": 42.485,
+      "lon": 13.005,
+      "bands": [
+        1200,
+        1450,
+        1650
+      ],
+      "description": "Faggeta d'alto fusto continua sul versante nord del Terminillo verso Leonessa. Microclima umido e fresco, nebbie di condensazione e piogge orografiche anche d'estate.",
+      "access": "Da Rieti SS 4 bis del Terminillo, oltre Pian de' Valli, poi SP 10 della Vallonina verso la Sella di Leonessa.",
+      "trails": "CAI 404 (Selletta di Pratorecchia, Iaccio Crudele); CAI 439 (Buco del Merlo, Monte I Porcini).",
+      "drive_min": 55,
+      "drive_km": 34,
+      "parking": [
+        {
+          "name": "Rifugio Maiolica (fondovalle)",
+          "lat": 42.5005,
+          "lon": 13.009
+        },
+        {
+          "name": "Bivio Rifugio Sebastiani",
+          "lat": 42.4697,
+          "lon": 13.0102
+        }
+      ],
+      "photo": {
+        "author": "Idéfix",
+        "license": "CC BY-SA 2.5 / CC BY-SA 3.0",
+        "licenseUrl": null,
+        "source": "Wikimedia Commons",
+        "page": "https://commons.wikimedia.org/wiki/File:SelladiLeonessa001.jpg",
+        "sourceImage": null,
+        "file": "assets/content/zona-vallonina.webp",
+        "sourceFile": "assets/zones/vallonina-hd.webp",
+        "modified": false
+      }
+    },
+    {
+      "id": "poggio-cantalice",
+      "name": "Poggio Bustone / Cantalice",
+      "title": "Poggio Bustone e Cantalice",
+      "subtitle": "Monti Reatini, versante ovest",
+      "lat": 42.49,
+      "lon": 12.915,
+      "bands": [
+        750,
+        950,
+        1200
+      ],
+      "description": "Cintura pedemontana ai piedi del Terminillo: querceti a roverella e ostrieti in basso, faggeta sopra i 1.000 m. Secondo la Carta Forestale i castagneti qui sono marginali.",
+      "access": "Da Rieti SP 2 verso Cantalice e Poggio Bustone, poi strade comunali alte e piste tagliafuoco.",
+      "trails": "Mulattiere e sentieri dal Santuario verso le pendici superiori.",
+      "drive_min": 34,
+      "drive_km": 17,
+      "parking": [
+        {
+          "name": "Poggio Bustone (Santuario)",
+          "lat": 42.5018,
+          "lon": 12.8881
+        }
+      ],
+      "photo": {
+        "author": "Li vioandronico2013",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": null,
+        "source": "Wikimedia Commons",
+        "page": "https://commons.wikimedia.org/wiki/File:Terminillo.JPG",
+        "sourceImage": null,
+        "file": "assets/content/zona-poggio-cantalice.webp",
+        "sourceFile": "assets/zones/poggio-cantalice-hd.webp",
+        "modified": false
+      }
+    },
+    {
+      "id": "antrodoco",
+      "name": "Antrodoco / Media Valle del Velino",
+      "title": "Antrodoco",
+      "subtitle": "Media Valle del Velino",
+      "lat": 42.42,
+      "lon": 13.09,
+      "bands": [
+        650,
+        850,
+        1100
+      ],
+      "description": "Castagneti secolari (Marrone Antrodocano) misti a carpino nero, cerro e roverella; faggeta alle quote superiori. Comprende i castagneti di Colle Rinaldo (Borgo Velino).",
+      "access": "SS 4 Salaria per Antrodoco e Borgo Velino; diramazione per Micigliano e il Colle.",
+      "trails": "Sentieri rurali e mulattiere dai fondivalle verso le pendici.",
+      "drive_min": 42,
+      "drive_km": 31,
+      "parking": [
+        {
+          "name": "Antrodoco",
+          "lat": 42.4033,
+          "lon": 13.1354
+        },
+        {
+          "name": "Micigliano",
+          "lat": 42.4513,
+          "lon": 13.0547
+        }
+      ],
+      "photo": {
+        "author": "Iacopo.rossini",
+        "license": "Pubblico dominio (PD-self)",
+        "licenseUrl": null,
+        "source": "Wikimedia Commons",
+        "page": "https://commons.wikimedia.org/wiki/File:Monte_Giano_DVX.JPG",
+        "sourceImage": null,
+        "file": "assets/content/zona-antrodoco.webp",
+        "sourceFile": "assets/zones/antrodoco-hd.webp",
+        "modified": false
+      }
+    },
+    {
+      "id": "cicolano",
+      "name": "Cicolano – Marcetelli, Ascrea, Collalto",
+      "title": "Cicolano",
+      "subtitle": "Marcetelli, Ascrea, Collalto",
+      "lat": 42.195,
+      "lon": 13.03,
+      "bands": [
+        750,
+        900,
+        1050
+      ],
+      "description": "Collina e media montagna tra i laghi del Salto e del Turano. La Carta Forestale indica una netta prevalenza di castagneto, poi cerrete e ostrieti. Dentro il cerchio anche i castagneti di Tonnicoda, il nucleo di bosco adatto più esteso trovato nella provincia.",
+      "access": "SR 578 Salto-Cicolano, uscite per la diga del Salto, Marcetelli, Pescorocchiano; accessi comunali.",
+      "trails": "Strade comunali e sentieri della Riserva Navegna-Cervia.",
+      "drive_min": 65,
+      "drive_km": 50,
+      "parking": [
+        {
+          "name": "Marcetelli",
+          "lat": 42.2266,
+          "lon": 13.0469
+        },
+        {
+          "name": "Ascrea",
+          "lat": 42.1962,
+          "lon": 12.9966
+        }
+      ],
+      "photo": {
+        "author": "Alessandro Blasi from Rieti, Italy",
+        "license": "CC BY 2.0",
+        "licenseUrl": null,
+        "source": "Wikimedia Commons",
+        "page": "https://commons.wikimedia.org/wiki/File:Lago_del_Salto%21%21_%287447648144%29.jpg",
+        "sourceImage": null,
+        "file": "assets/content/zona-cicolano.webp",
+        "sourceFile": "assets/zones/cicolano-hd.webp",
+        "modified": false
+      }
+    },
+    {
+      "id": "rascino",
+      "name": "Altopiano di Rascino",
+      "title": "Altopiano di Rascino",
+      "subtitle": "Cicolano, sopra Fiamignano",
+      "lat": 42.335,
+      "lon": 13.15,
+      "bands": [
+        1250,
+        1350,
+        1450
+      ],
+      "description": "Altopiano carsico tra Fiamignano e Petrella Salto. La Carta Forestale indica soprattutto faggeta; i rimboschimenti a pino nero sono nuclei limitati ma importanti per Suillus e morette.",
+      "access": "Da Fiamignano per la strada comunale panoramica verso il lago di Rascino.",
+      "trails": "Carrarecce e sentieri attorno alla piana del lago.",
+      "drive_min": 102,
+      "drive_km": 52,
+      "parking": [
+        {
+          "name": "Pianori presso il lago di Rascino",
+          "lat": 42.3466,
+          "lon": 13.1464
+        }
+      ],
+      "photo": {
+        "author": "Sabina Trekking ASD",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": null,
+        "source": "Wikimedia Commons",
+        "page": "https://commons.wikimedia.org/wiki/File:Rascino.jpg",
+        "sourceImage": null,
+        "file": "assets/content/zona-rascino.webp",
+        "sourceFile": "assets/zones/rascino-hd.webp",
+        "modified": false
+      }
+    },
+    {
+      "id": "tancia",
+      "name": "Monte Tancia (Monti Sabini)",
+      "title": "Monte Tancia",
+      "subtitle": "Monti Sabini",
+      "lat": 42.315,
+      "lon": 12.745,
+      "bands": [
+        650,
+        850,
+        1100
+      ],
+      "description": "Dorsale calcarea submediterranea: ostrieti, cerrete, lecci e roverelle; faggeta relitta sopra i 1.100 m verso la cima. Risponde molto rapidamente alle piogge di fine estate.",
+      "access": "Da Rieti SP 46 del Tancia fino al valico (Osteria del Tancia, ~800 m).",
+      "trails": "Sentieri verso Monte Tancia, Monte Ode e le Pozze del Diavolo.",
+      "drive_min": 43,
+      "drive_km": 24,
+      "parking": [
+        {
+          "name": "Osteria del Tancia",
+          "lat": 42.3046,
+          "lon": 12.7497
+        }
+      ],
+      "photo": {
+        "author": "Christoph Strässler",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": null,
+        "source": "Wikimedia Commons",
+        "page": "https://commons.wikimedia.org/wiki/File%3ABeech_Forest_in_the_Sabina_Hills%2C_Latium%2C_Italy_-_52993979506.jpg",
+        "sourceImage": null,
+        "file": "assets/content/zona-tancia.webp",
+        "sourceFile": "assets/zones/tancia-hd.webp",
+        "modified": false
+      }
+    },
+    {
+      "id": "laga",
+      "name": "Monti della Laga (Amatrice)",
+      "title": "Monti della Laga",
+      "subtitle": "Amatrice",
+      "lat": 42.635,
+      "lon": 13.345,
+      "bands": [
+        1100,
+        1350,
+        1600
+      ],
+      "description": "Substrato arenaceo-marnoso acido, ad alta ritenzione idrica e con fossi perenni. Cerrete alle quote basse, faggete continue sopra i 1.200 m.",
+      "access": "SS 4 Salaria fino ad Amatrice, poi viabilità montana verso le frazioni a monte (Capricchia, Sant'Angelo).",
+      "trails": "Accessi alle valli torrentizie dalle frazioni.",
+      "drive_min": 93,
+      "drive_km": 69,
+      "parking": [
+        {
+          "name": "Capricchia",
+          "lat": 42.6222,
+          "lon": 13.3397
+        }
+      ],
+      "photo": {
+        "author": "Mario1952",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": null,
+        "source": "Wikimedia Commons",
+        "page": "https://commons.wikimedia.org/wiki/File:Pizzo_di_Sevo.jpg",
+        "sourceImage": null,
+        "file": "assets/content/zona-laga.webp",
+        "sourceFile": "assets/zones/laga-hd.webp",
+        "modified": false
+      }
+    },
+    {
+      "id": "terminillo-ovest",
+      "name": "Pian de' Rosce / Terminillo ovest",
+      "title": "Pian de' Rosce",
+      "subtitle": "Terminillo, versante di Rieti",
+      "lat": 42.462,
+      "lon": 12.955,
+      "bands": [
+        860,
+        1180,
+        1390
+      ],
+      "description": "Faggeta continua sul versante di Rieti del Terminillo, tra Pian de' Rosce, Monte Cardito e Campoforogna (circa 1000-1600 m). È la zona di montagna più vicina alla città e una delle più frequentate dai cercatori: le cronache locali la citano dal 2010 a oggi.",
+      "access": "Da Rieti SS 4 bis del Terminillo per Vazia e Lisciano fino a Pian de' Rosce (circa 20-25 minuti); Campoforogna poco più su, prima di Pian de' Valli.",
+      "trails": "Sentieri CAI del versante sud-ovest del Terminillo.",
+      "drive_min": null,
+      "drive_km": null,
+      "parking": [
+        {
+          "name": "Pian de' Rosce",
+          "lat": 42.4612,
+          "lon": 12.938
+        },
+        {
+          "name": "Campoforogna",
+          "lat": 42.4537,
+          "lon": 12.9869
+        }
+      ],
+      "photo": null
+    },
+    {
+      "id": "terminillo-est",
+      "name": "Cinque Confini / Monte Bove",
+      "title": "Cinque Confini e Monte Bove",
+      "subtitle": "Terminillo, versante sud-est",
+      "lat": 42.443,
+      "lon": 13.012,
+      "bands": [
+        1000,
+        1310,
+        1490
+      ],
+      "description": "Faggete d'alta quota sopra Micigliano e Borgo Velino, tra Cinque Confini, Fonte Porcini, Monte Bove e Colle delle Scangive (1200-1650 m). Frequentata dai fungaioli (soccorsi nel 2010 e ad agosto 2026), ma più fuori mano di Pian de' Rosce; tratti ripidi e senza segnaletica.",
+      "access": "Da Rieti SS 4 bis fino a Pian de' Valli e Campoforogna, poi al piazzale dei Cinque Confini; da lì a piedi (CAI 407).",
+      "trails": "CAI 407 Cinque Confini - Monte Bove.",
+      "drive_min": null,
+      "drive_km": null,
+      "parking": [
+        {
+          "name": "Cinque Confini",
+          "lat": 42.446,
+          "lon": 12.991
+        }
+      ],
+      "photo": null
+    },
+    {
+      "id": "cittareale",
+      "name": "Cittareale / Alto Velino",
+      "title": "Cittareale",
+      "subtitle": "Alto Velino",
+      "lat": 42.618,
+      "lon": 13.16,
+      "bands": [
+        1000,
+        1210,
+        1340
+      ],
+      "description": "Faggete e cerrete dell'Alto Velino attorno a Cittareale (900-1500 m), al confine con l'Umbria. I Carabinieri Forestali vi controllano spesso i raccoglitori, anche da Roma e Perugia (sequestri di porcini nel 2019 a Fonte Corno e Fosso Builli).",
+      "access": "Da Rieti SS 4 Salaria fino a Posta, poi la strada per Cittareale (circa 50-60 minuti).",
+      "trails": "Sentieri locali dell'Alto Velino.",
+      "drive_min": null,
+      "drive_km": null,
+      "parking": [
+        {
+          "name": "Cittareale",
+          "lat": 42.6182,
+          "lon": 13.1596
+        }
+      ],
+      "photo": null
+    },
+    {
+      "id": "pescorocchiano",
+      "name": "Pescorocchiano / Cicolano est",
+      "title": "Pescorocchiano",
+      "subtitle": "Cicolano orientale",
+      "lat": 42.21,
+      "lon": 13.112,
+      "bands": [
+        710,
+        780,
+        890
+      ],
+      "description": "Castagneti e cerrete delle frazioni di Pescorocchiano (Pace, Colle di Pace, Leofreni, Santa Lucia), 600-1000 m: attorno a Leofreni il castagneto supera il 60% del bosco. Zona di ovoli e porcini estivi; più episodi di cercatori in difficoltà tra 2018 e 2025. Comprende anche i castagneti di Collaralli.",
+      "access": "Da Rieti SR 578 Salto-Cicolano fino a Pescorocchiano, poi le strade per le frazioni (circa 50 minuti).",
+      "trails": "Strade forestali e sentieri tra le frazioni.",
+      "drive_min": null,
+      "drive_km": null,
+      "parking": [
+        {
+          "name": "Pace",
+          "lat": 42.229,
+          "lon": 13.118
+        },
+        {
+          "name": "Leofreni",
+          "lat": 42.197,
+          "lon": 13.125
+        }
+      ],
+      "photo": null
+    },
+    {
+      "id": "malito",
+      "name": "Valle di Malito / Corvaro",
+      "title": "Valle di Malito",
+      "subtitle": "Corvaro di Borgorose",
+      "lat": 42.212,
+      "lon": 13.256,
+      "bands": [
+        880,
+        1110,
+        1290
+      ],
+      "description": "Boschi misti di cerro, roverella, carpino nero e castagno sopra Corvaro (830-1250 m), con faggeta più in alto. Nel 2014 la Forestale di Borgorose vi segnalava porcini, finferli e trombette e molti raccoglitori.",
+      "access": "Da Rieti SR 578 o Salaria e A24 (uscita Valle del Salto) fino a Corvaro di Borgorose, poi verso la chiesa della Madonna di Malito (circa 1 ora - 1 ora e 10).",
+      "trails": "Sentieri della Valle di Malito verso la Duchessa.",
+      "drive_min": null,
+      "drive_km": null,
+      "parking": [
+        {
+          "name": "Madonna di Malito",
+          "lat": 42.219,
+          "lon": 13.255
+        },
+        {
+          "name": "Corvaro",
+          "lat": 42.2058,
+          "lon": 13.2647
+        }
+      ],
+      "photo": null
+    },
+    {
+      "id": "sangiovanni",
+      "name": "Monte San Giovanni in Sabina",
+      "title": "Monte San Giovanni in Sabina",
+      "subtitle": "Monti Sabini, versante di Rieti",
+      "lat": 42.355,
+      "lon": 12.78,
+      "bands": [
+        560,
+        690,
+        810
+      ],
+      "description": "Cerrete e boschi di carpino nero tra Cerchiara, Piediserre e San Giovanni Reatino (440-770 m), sul versante dei Sabini verso Rieti. Quote basse: zona da ovoli e porcini estivi dopo i temporali, frequentata anche da Terni.",
+      "access": "Da Rieti la strada per San Giovanni Reatino o la SP del Tancia (circa 25 minuti).",
+      "trails": "Strade bianche e sentieri dei Monti Sabini.",
+      "drive_min": null,
+      "drive_km": null,
+      "parking": [
+        {
+          "name": "Cerchiara",
+          "lat": 42.36,
+          "lon": 12.779
+        }
+      ],
+      "photo": null
+    },
+    {
+      "id": "leonessa",
+      "name": "Leonessa / faggete nord",
+      "title": "Leonessa",
+      "subtitle": "faggete dei Monti Reatini",
+      "lat": 42.535,
+      "lon": 12.99,
+      "bands": [
+        1120,
+        1340,
+        1590
+      ],
+      "description": "Faggete del versante nord dei Monti Reatini sopra Leonessa (1000-1700 m), estese e continue sulla Carta Forestale. Proposta dai dati: nelle fonti non risultano segnalazioni specifiche di cercatori, quindi probabilmente meno battuta del Terminillo.",
+      "access": "Da Rieti per il Terminillo e la Sella di Leonessa, oppure per la SS 4 bis e la strada di Leonessa (circa 50 minuti).",
+      "trails": "Sentieri CAI tra Leonessa e il Terminillo.",
+      "drive_min": null,
+      "drive_km": null,
+      "parking": [
+        {
+          "name": "Leonessa",
+          "lat": 42.5631,
+          "lon": 12.9638
+        }
+      ],
+      "photo": null
+    },
+    {
+      "id": "domo",
+      "name": "Domo / Valle del Tronto",
+      "title": "Domo",
+      "subtitle": "valle del Tronto, Amatrice",
+      "lat": 42.656,
+      "lon": 13.229,
+      "bands": [
+        920,
+        1000,
+        1040
+      ],
+      "description": "Cerrete e castagneti della valle del Tronto ad ovest di Amatrice, attorno a Domo (860-1170 m): più in basso e più caldi della faggeta della Laga, quindi buoni prima in stagione e per ovoli e porcini estivi. Proposta dai dati, senza segnalazioni specifiche nelle fonti.",
+      "access": "Da Rieti SS 4 Salaria fino ad Amatrice, poi la strada per Domo (circa 1 ora).",
+      "trails": "Sentieri locali dell'Amatriciano.",
+      "drive_min": null,
+      "drive_km": null,
+      "parking": [
+        {
+          "name": "Domo",
+          "lat": 42.6581,
+          "lon": 13.2385
+        }
+      ],
+      "photo": null
+    }
+  ],
+  "catalog": [
+    {
+      "id": "edulis",
+      "kind": "funghi",
+      "name": "Porcino",
+      "latin": "Boletus edulis",
+      "summary": "simbionte di faggio, castagno, querce e conifere (abete, pino). Nel Reatino soprattutto nelle faggete montane (circa 1000-1700 m, es. Terminillo, Monti della Laga) e nei castagneti e cerreti più freschi",
+      "details": [
+        {
+          "label": "Cappello",
+          "text": "emisferico da giovane, poi convesso e piano-convesso, carnoso"
+        },
+        {
+          "label": "Superficie inferiore",
+          "text": "tubuli e pori · bianchi da giovane, poi giallo-crema, infine giallo-verdastri"
+        },
+        {
+          "label": "Gambo",
+          "text": "robusto, panciuto o a clava da giovane, poi cilindrico"
+        },
+        {
+          "label": "Periodo",
+          "text": "giugno-novembre, con picco tra fine agosto e ottobre"
+        }
+      ],
+      "warning": "Scheda per conoscere e confrontare i caratteri. Non conferma l’identità di un esemplare.",
+      "rules": [
+        {
+          "title": "Boleti con pori rossi o viraggio blu",
+          "text": "Pori rosa, rossi o arancio e carne che vira al blu sono caratteri di altri boleti, anche tossici; il confronto non certifica l’identità di un porcino."
+        },
+        {
+          "title": "Porcino di fiele: non assaggiare",
+          "text": "Pori rosati e reticolo bruno grossolano sono caratteri del porcino di fiele, descritto come molto amaro. Non è una prova da fare assaggiando."
+        }
+      ],
+      "photo": {
+        "author": "Holger Krisp",
+        "license": "CC BY 3.0",
+        "licenseUrl": null,
+        "source": "Wikimedia Commons",
+        "page": "https://commons.wikimedia.org/wiki/File:(Gemeine_Steinpilz)_Boletus_edulis.jpg",
+        "sourceImage": null,
+        "file": "assets/content/edulis.webp",
+        "sourceFile": "assets/species/edulis-ref-hd.webp",
+        "modified": false
+      },
+      "sources": [
+        {
+          "title": "Boletus edulis, Wikipedia (it)",
+          "url": "https://it.wikipedia.org/wiki/Boletus_edulis"
+        },
+        {
+          "title": "I porcini, Rivista di Agraria (2006)",
+          "url": "https://www.rivistadiagraria.org/articoli/anno-2006/i-porcini/?print=pdf"
+        },
+        {
+          "title": "L.R. Lazio 5 agosto 1998 n. 32, testo (FAOLEX)",
+          "url": "https://faolex.fao.org/docs/pdf/ita21952.pdf"
+        }
+      ],
+      "route": "#/specie/edulis"
+    },
+    {
+      "id": "cibarius",
+      "kind": "funghi",
+      "name": "Finferlo",
+      "latin": "Cantharellus cibarius",
+      "summary": "a terra, mai sul legno, in faggete, castagneti, cerrete e boschi di conifere, su suoli acidi e muschiosi",
+      "details": [
+        {
+          "label": "Cappello",
+          "text": "convesso, poi a imbuto, con margine sottile, ondulato e lobato"
+        },
+        {
+          "label": "Superficie inferiore",
+          "text": "pliche · dello stesso giallo del cappello"
+        },
+        {
+          "label": "Gambo",
+          "text": "pieno, sodo, che si allarga senza stacco nel cappello"
+        },
+        {
+          "label": "Periodo",
+          "text": "giugno-ottobre"
+        }
+      ],
+      "warning": "Scheda per conoscere e confrontare i caratteri. Non conferma l’identità di un esemplare.",
+      "rules": [
+        {
+          "title": "Sosia tossico: fungo dell’olivo",
+          "text": "Il fungo dell’olivo (Omphalotus olearius), tossico, può formare cespi aranciati su legno e radici, talvolta interrati."
+        },
+        {
+          "title": "Pliche del finferlo, non lamelle",
+          "text": "Le pliche spesse e ramificate del finferlo sono diverse dalle vere lamelle sottili; questo carattere va confrontato con il resto del fungo."
+        }
+      ],
+      "photo": {
+        "author": "autore su Commons",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": null,
+        "source": "Wikimedia Commons",
+        "page": "https://commons.wikimedia.org/wiki/File:Chanterelle_Cantharellus_cibarius.jpg",
+        "sourceImage": null,
+        "file": "assets/content/cibarius.webp",
+        "sourceFile": "assets/species/cibarius-ref-hd.webp",
+        "modified": false
+      },
+      "sources": [
+        {
+          "title": "Cantharellus cibarius, Wikipedia (it)",
+          "url": "https://it.wikipedia.org/wiki/Cantharellus_cibarius"
+        },
+        {
+          "title": "La risorsa FUNGO in Alta Valle del Vara (SSSA Pisa, Gruppo Micologico Lucchese), scheda Cantharellus cibarius",
+          "url": "https://iris.santannapisa.it/retrieve/dd9e0b31-bba4-709e-e053-3705fe0a83fd/116_vqr_Funghi.pdf"
+        },
+        {
+          "title": "ASL Oristano, Ispettorato micologico: Attenzione ai sosia, Omphalotus olearius",
+          "url": "https://asl5oristano.it/wp-content/uploads/2024/09/OMPHALOTUS-OLEARIUS.pdf"
+        }
+      ],
+      "route": "#/specie/cibarius"
+    },
+    {
+      "id": "caesarea",
+      "kind": "funghi",
+      "name": "Ovolo buono",
+      "latin": "Amanita caesarea",
+      "summary": "castagneti, cerrete e querceti a roverella luminosi e asciutti, di solito sotto i 1000 m. Nel Reatino nella cintura collinare e pedemontana (es. Poggio Bustone, Cantalice, Antrodoco)",
+      "details": [
+        {
+          "label": "Cappello",
+          "text": "da giovane chiuso in un 'uovo' bianco, poi emisferico, infine piano"
+        },
+        {
+          "label": "Superficie inferiore",
+          "text": "lamelle · giallo oro"
+        },
+        {
+          "label": "Gambo",
+          "text": "cilindrico, slanciato"
+        },
+        {
+          "label": "Periodo",
+          "text": "giugno-ottobre, soprattutto luglio-settembre dopo piogge calde"
+        }
+      ],
+      "warning": "Scheda per conoscere e confrontare i caratteri. Non conferma l’identità di un esemplare.",
+      "rules": [
+        {
+          "title": "Ovoli chiusi e amanite mortali",
+          "text": "Con il velo ancora chiuso sono possibili confusioni con amanite mortali."
+        },
+        {
+          "title": "Ovolo: nessun carattere basta da solo",
+          "text": "Lamelle, gambo e anello gialli e volva bianca a sacco sono caratteri descritti per l’ovolo buono: nessuno, isolatamente, certifica la specie."
+        }
+      ],
+      "photo": {
+        "author": "Yaqui",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": null,
+        "source": "Wikimedia Commons",
+        "page": "https://commons.wikimedia.org/wiki/File:Oronges.jpg",
+        "sourceImage": null,
+        "file": "assets/content/caesarea.webp",
+        "sourceFile": "assets/species/caesarea-ref-hd.webp",
+        "modified": false
+      },
+      "sources": [
+        {
+          "title": "Amanita caesarea, Wikipedia (it)",
+          "url": "https://it.wikipedia.org/wiki/Amanita_caesarea"
+        },
+        {
+          "title": "La risorsa FUNGO in Alta Valle del Vara (SSSA Pisa, Gruppo Micologico Lucchese), schede Amanita caesarea e A. muscaria",
+          "url": "https://iris.santannapisa.it/retrieve/dd9e0b31-bbe6-709e-e053-3705fe0a83fd/80_vqr_Funghi.pdf"
+        },
+        {
+          "title": "La risorsa FUNGO in Alta Valle del Vara, scheda Amanita verna",
+          "url": "https://iris.santannapisa.it/retrieve/dd9e0b31-bbf8-709e-e053-3705fe0a83fd/92_vqr_Funghi.pdf"
+        }
+      ],
+      "route": "#/specie/caesarea"
+    },
+    {
+      "id": "procera",
+      "kind": "funghi",
+      "name": "Mazza di tamburo",
+      "latin": "Macrolepiota procera",
+      "summary": "prati, pascoli, radure, margini di bosco e strade, in boschi di latifoglie e conifere; anche in pineta",
+      "details": [
+        {
+          "label": "Cappello",
+          "text": "da giovane ovale chiuso 'a mazza di tamburo', poi aperto a ombrello con umbone centrale"
+        },
+        {
+          "label": "Superficie inferiore",
+          "text": "lamelle · bianche o crema, poi un po' rosate"
+        },
+        {
+          "label": "Gambo",
+          "text": "molto alto e sottile, cavo, con bulbo alla base"
+        },
+        {
+          "label": "Periodo",
+          "text": "luglio-novembre"
+        }
+      ],
+      "warning": "Scheda per conoscere e confrontare i caratteri. Non conferma l’identità di un esemplare.",
+      "rules": [
+        {
+          "title": "Piccole Lepiota mortali",
+          "text": "Le piccole Lepiota comprendono specie mortali."
+        },
+        {
+          "title": "Anello mobile e gambo zigrinato",
+          "text": "Anello doppio e mobile e zigrinature del gambo sono caratteri descritti per la mazza di tamburo, da confrontare con l’intero fungo."
+        }
+      ],
+      "photo": {
+        "author": "Chrumps",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": null,
+        "source": "Wikimedia Commons",
+        "page": "https://commons.wikimedia.org/wiki/File:Macrolepiota-procera.jpg",
+        "sourceImage": null,
+        "file": "assets/content/procera.webp",
+        "sourceFile": "assets/species/procera-ref-hd.webp",
+        "modified": false
+      },
+      "sources": [
+        {
+          "title": "Macrolepiota procera, Wikipedia (it)",
+          "url": "https://it.wikipedia.org/wiki/Macrolepiota_procera"
+        },
+        {
+          "title": "La risorsa FUNGO in Alta Valle del Vara (SSSA Pisa, Gruppo Micologico Lucchese), schede Macrolepiota procera e M. venenata",
+          "url": "https://iris.santannapisa.it/retrieve/dd9e0b31-bbed-709e-e053-3705fe0a83fd/178_vqr_Funghi.pdf"
+        },
+        {
+          "title": "Ispettorato micologico di Imola: Lepiota mortali (Sabato Sera, 2019)",
+          "url": "https://sabatosera.it/sabatosera/news/2019/09/25/non-tutti-i-funghi-sono-commestibili-a-imola-ha-riaperto-lispettorato-micologico"
+        }
+      ],
+      "route": "#/specie/procera"
+    },
+    {
+      "id": "ortica",
+      "kind": "piante",
+      "name": "Ortica",
+      "latin": "Urtica dioica L.",
+      "summary": "Schiarite e margini di boschi freschi, ambienti ricchi di nutrienti e suoli umidi.",
+      "details": [
+        {
+          "label": "Da osservare",
+          "text": "Foglie opposte con margine dentato."
+        },
+        {
+          "label": "Da osservare",
+          "text": "Peli urticanti su foglie e fusto: osserva senza toccare."
+        },
+        {
+          "label": "Da osservare",
+          "text": "Piccoli fiori in infiorescenze ramificate."
+        }
+      ],
+      "warning": "Usa guanti. La cottura riguarda una pianta correttamente identificata; non rende sicura una specie sconosciuta.",
+      "photo": {
+        "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "source": null,
+        "page": "https://dryades.units.it/Roma/index.php?id=298&procedure=taxon_page",
+        "sourceImage": "https://dryades.units.it/dryades/plants/foto/TSB68793.jpg",
+        "file": "assets/content/ortica.webp",
+        "sourceFile": "assets/plants/ortica-1.webp",
+        "modified": false
+      },
+      "sources": [
+        {
+          "title": "Università di Trieste · Portale della Flora di Roma",
+          "url": "https://dryades.units.it/Roma/index.php?id=298&procedure=taxon_page"
+        },
+        {
+          "title": "Biological Flora of the British Isles: Urtica dioica L.",
+          "url": "https://besjournals.onlinelibrary.wiley.com/doi/10.1111/j.1365-2745.2009.01575.x"
+        }
+      ],
+      "route": "#/pianta/ortica"
+    },
+    {
+      "id": "cicoria",
+      "kind": "piante",
+      "name": "Cicoria selvatica",
+      "latin": "Cichorium intybus L.",
+      "summary": "Prati, incolti e margini aperti, soprattutto sotto la fascia montana.",
+      "details": [
+        {
+          "label": "Da osservare",
+          "text": "Foglie basali raccolte in una rosetta."
+        },
+        {
+          "label": "Da osservare",
+          "text": "Fusto fiorale ramificato, con poche foglie."
+        },
+        {
+          "label": "Da osservare",
+          "text": "Capolini generalmente azzurri."
+        }
+      ],
+      "warning": "Una rosetta senza fiori può essere difficile da distinguere: confronta l’intera pianta. Non raccogliere vicino a traffico o trattamenti.",
+      "photo": {
+        "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "source": null,
+        "page": "https://dryades.units.it/Roma/index.php?id=6152&procedure=taxon_page",
+        "sourceImage": "https://dryades.units.it/dryades/plants/foto/TSB30079.jpg",
+        "file": "assets/content/cicoria.webp",
+        "sourceFile": "assets/plants/cicoria-1.webp",
+        "modified": false
+      },
+      "sources": [
+        {
+          "title": "Università di Trieste · Portale della Flora di Roma",
+          "url": "https://dryades.units.it/Roma/index.php?id=6152&procedure=taxon_page"
+        },
+        {
+          "title": "Functional Traits, Morphology, and Herbage Production of Vernalised and Non-Vernalised Chicory cv. Choice",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/32403361/"
+        }
+      ],
+      "route": "#/pianta/cicoria"
+    },
+    {
+      "id": "rosa-canina",
+      "kind": "piante",
+      "name": "Rosa canina",
+      "latin": "Rosa canina L.",
+      "summary": "Siepi, arbusteti, boscaglie aperte e pascoli abbandonati, dalla pianura alla montagna.",
+      "details": [
+        {
+          "label": "Da osservare",
+          "text": "Arbusto con aculei ricurvi."
+        },
+        {
+          "label": "Da osservare",
+          "text": "Foglie composte da foglioline dentate."
+        },
+        {
+          "label": "Da osservare",
+          "text": "Fiori a cinque petali e cinorrodi generalmente rossi o aranciati."
+        }
+      ],
+      "warning": "I peli interni sono irritanti. Il gruppo delle rose canine è difficile da determinare; non usare la scheda per preparazioni medicinali.",
+      "photo": {
+        "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "source": null,
+        "page": "https://dryades.units.it/Roma/index.php?id=1972&procedure=taxon_page",
+        "sourceImage": "https://dryades.units.it/dryades/plants/foto/TSB30255jpg1669722706.jpg",
+        "file": "assets/content/rosa-canina.webp",
+        "sourceFile": "assets/plants/rosa-canina-1.webp",
+        "modified": false
+      },
+      "sources": [
+        {
+          "title": "Università di Trieste · Portale della Flora di Roma",
+          "url": "https://dryades.units.it/Roma/index.php?id=1972&procedure=taxon_page"
+        },
+        {
+          "title": "Phenological and Pomological Characteristics of Rosa canina L. Species Cultivated and Naturally Distributed in Amasya Province",
+          "url": "https://dergipark.org.tr/tr/pub/bsagriculture/article/1356222"
+        },
+        {
+          "title": "Changes in Pomological and Physical Parameters in Rosehips during Ripening",
+          "url": "https://www.mdpi.com/2223-7747/12/6/1314"
+        }
+      ],
+      "route": "#/pianta/rosa-canina"
+    },
+    {
+      "id": "corbezzolo",
+      "kind": "piante",
+      "name": "Corbezzolo",
+      "latin": "Arbutus unedo L.",
+      "summary": "Macchia mediterranea, spesso con leccio e substrati silicei; non è una pianta di tutti i boschi montani.",
+      "details": [
+        {
+          "label": "Da osservare",
+          "text": "Foglie sempreverdi, coriacee e dentate."
+        },
+        {
+          "label": "Da osservare",
+          "text": "Fiori chiari a forma di piccola urna."
+        },
+        {
+          "label": "Da osservare",
+          "text": "Frutti sferici con superficie granulosa, rossi a maturità."
+        }
+      ],
+      "warning": "Riconosci l’intera pianta. La presenza regionale non indica che il corbezzolo sia sul percorso scelto.",
+      "photo": {
+        "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "source": null,
+        "page": "https://dryades.units.it/Roma/index.php?id=3730&procedure=taxon_page",
+        "sourceImage": "https://dryades.units.it/dryades/plants/foto/TSB38854.jpg",
+        "file": "assets/content/corbezzolo.webp",
+        "sourceFile": "assets/plants/corbezzolo-1.webp",
+        "modified": false
+      },
+      "sources": [
+        {
+          "title": "Università di Trieste · Portale della Flora di Roma",
+          "url": "https://dryades.units.it/Roma/index.php?id=3730&procedure=taxon_page"
+        },
+        {
+          "title": "Influence of temperature and rainfall on fruit and seed production of Arbutus unedo L.",
+          "url": "https://academic.oup.com/botlinnean/article-abstract/111/1/71/2632487"
+        },
+        {
+          "title": "An Endemic Plant of the Mediterranean Area: Phytochemical Characterization of Strawberry Tree Fruits Extracts at Different Ripening Stages",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9249387/"
+        }
+      ],
+      "route": "#/pianta/corbezzolo"
+    },
+    {
+      "id": "faggio",
+      "kind": "alberi",
+      "name": "Faggio",
+      "latin": "Fagus sylvatica",
+      "summary": "latifoglia caducifoglia",
+      "details": [
+        {
+          "label": "Foglia",
+          "text": "Alterna, ovale-ellittica, 5-10 cm, verde lucido, margine intero ondulato (al massimo piccoli denti all'apice delle nervature), ciglia bianche sul bordo nelle foglie giovani."
+        },
+        {
+          "label": "Corteccia",
+          "text": "Liscia, sottile, grigio-argentea, spesso con macchie di licheni; non si fessura nemmeno da vecchio."
+        },
+        {
+          "label": "Frutto",
+          "text": "Faggiola: 1-3 semi trigoni lucidi in una cupola legnosa con aculei morbidi che si apre in 4 valve; maturano a settembre-ottobre, con annate di pasciona ogni alcuni anni."
+        }
+      ],
+      "warning": "Un singolo carattere può ingannare: confronta foglia, corteccia e frutto.",
+      "photo": {
+        "author": "Marco Mussita",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "source": "iNaturalist (research grade)",
+        "page": "https://www.inaturalist.org/observations/307003862",
+        "sourceImage": null,
+        "file": "assets/content/faggio.webp",
+        "sourceFile": "assets/species/tree-faggio-free1-hd.webp",
+        "modified": false
+      },
+      "sources": [
+        {
+          "title": "Acta Plantarum, IPFI: Fagus sylvatica",
+          "url": "https://www.actaplantarum.org/flora/flora_info.php?id=500259"
+        },
+        {
+          "title": "Portale della Flora d'Italia (Università di Trieste): Fagus sylvatica",
+          "url": "https://dryades.units.it/floritaly/index.php?procedure=taxon_page&tipo=all&id=259"
+        },
+        {
+          "title": "European Atlas of Forest Tree Species (JRC): Fagus sylvatica",
+          "url": "https://forest.jrc.ec.europa.eu/media/atlas/Fagus_sylvatica.pdf"
+        }
+      ],
+      "route": "#/albero/faggio"
+    },
+    {
+      "id": "roverella",
+      "kind": "alberi",
+      "name": "Roverella",
+      "latin": "Quercus pubescens",
+      "summary": "latifoglia caducifoglia",
+      "details": [
+        {
+          "label": "Foglia",
+          "text": "Alterna, ovato-oblunga, (3)5-10 cm, 5-6 paia di lobi poco profondi; da giovane grigio-pelosa, poi verde scuro sopra e pubescente sotto; picciolo peloso."
+        },
+        {
+          "label": "Corteccia",
+          "text": "Grigio-scura, fessurata in piccole placche rettangolari."
+        },
+        {
+          "label": "Frutto",
+          "text": "Ghiande ellittiche di 2-3,5 cm, spesso in gruppi di 2-4, con cupola a squame triangolari pelose e appressate; maturano in un anno."
+        }
+      ],
+      "warning": "Un singolo carattere può ingannare: confronta foglia, corteccia e frutto.",
+      "photo": {
+        "author": "Gilles San Martin",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "source": "iNaturalist (research grade)",
+        "page": "https://www.inaturalist.org/observations/177041374",
+        "sourceImage": null,
+        "file": "assets/content/roverella.webp",
+        "sourceFile": "assets/species/tree-roverella-free1-hd.webp",
+        "modified": false
+      },
+      "sources": [
+        {
+          "title": "Acta Plantarum, IPFI: Quercus pubescens",
+          "url": "https://www.actaplantarum.org/flora/flora_info.php?id=500274"
+        },
+        {
+          "title": "Portale della Flora d'Italia (Università di Trieste): Quercus pubescens",
+          "url": "https://dryades.units.it/floritaly/index.php?procedure=taxon_page&tipo=all&id=274"
+        },
+        {
+          "title": "European Atlas of Forest Tree Species (JRC): Quercus pubescens",
+          "url": "https://forest.jrc.ec.europa.eu/media/atlas/Quercus_pubescens.pdf"
+        }
+      ],
+      "route": "#/albero/roverella"
+    },
+    {
+      "id": "cerro",
+      "kind": "alberi",
+      "name": "Cerro",
+      "latin": "Quercus cerris",
+      "summary": "latifoglia caducifoglia",
+      "details": [
+        {
+          "label": "Foglia",
+          "text": "Alterna, 9-12 cm, molto variabile, con 4-9 paia di lobi da poco a molto profondi e spesso acuti; ruvida sopra, grigio-tomentosa sotto."
+        },
+        {
+          "label": "Corteccia",
+          "text": "Grigio-scura, spessa, con solchi profondi in cui si vede il fondo rossastro o arancio."
+        },
+        {
+          "label": "Frutto",
+          "text": "Ghianda di 2-3,5 cm, matura il secondo anno, in una cupola coperta di squame lunghe, lineari e ricurve."
+        }
+      ],
+      "warning": "Un singolo carattere può ingannare: confronta foglia, corteccia e frutto.",
+      "photo": {
+        "author": "etrusko25",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "source": "iNaturalist (research grade)",
+        "page": "https://www.inaturalist.org/observations/137439329",
+        "sourceImage": null,
+        "file": "assets/content/cerro.webp",
+        "sourceFile": "assets/species/tree-cerro-free1-hd.webp",
+        "modified": false
+      },
+      "sources": [
+        {
+          "title": "Acta Plantarum, IPFI: Quercus cerris",
+          "url": "https://www.actaplantarum.org/flora/flora_info.php?id=500267"
+        },
+        {
+          "title": "Portale della Flora d'Italia (Università di Trieste): Quercus cerris",
+          "url": "https://dryades.units.it/floritaly/index.php?procedure=taxon_page&tipo=all&id=267"
+        },
+        {
+          "title": "European Atlas of Forest Tree Species (JRC): Quercus cerris",
+          "url": "https://forest.jrc.ec.europa.eu/media/atlas/Quercus_cerris.pdf"
+        }
+      ],
+      "route": "#/albero/cerro"
+    },
+    {
+      "id": "castagno",
+      "kind": "alberi",
+      "name": "Castagno",
+      "latin": "Castanea sativa",
+      "summary": "latifoglia caducifoglia",
+      "details": [
+        {
+          "label": "Foglia",
+          "text": "Alterna, oblungo-lanceolata, 8-25 cm, margine con denti acuti terminati da una punta, verde lucido sopra."
+        },
+        {
+          "label": "Corteccia",
+          "text": "Da giovane liscia, bruno-olivastra; da adulta grigio-bruna con fessure longitudinali profonde, spesso a spirale."
+        },
+        {
+          "label": "Frutto",
+          "text": "Riccio (cupola) fittamente spinoso che contiene 1-3 castagne lucide; cade tra settembre e ottobre."
+        }
+      ],
+      "warning": "Un singolo carattere può ingannare: confronta foglia, corteccia e frutto.",
+      "photo": {
+        "author": "Wolfgang Ahlmer",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "source": "iNaturalist (research grade)",
+        "page": "https://www.inaturalist.org/observations/190508845",
+        "sourceImage": null,
+        "file": "assets/content/castagno.webp",
+        "sourceFile": "assets/species/tree-castagno-free1-hd.webp",
+        "modified": false
+      },
+      "sources": [
+        {
+          "title": "Acta Plantarum, IPFI: Castanea sativa",
+          "url": "https://www.actaplantarum.org/flora/flora_info.php?id=500260"
+        },
+        {
+          "title": "Portale della Flora d'Italia (Università di Trieste): Castanea sativa",
+          "url": "https://dryades.units.it/floritaly/index.php?procedure=taxon_page&tipo=all&id=260"
+        },
+        {
+          "title": "European Atlas of Forest Tree Species (JRC): Castanea sativa",
+          "url": "https://forest.jrc.ec.europa.eu/media/atlas/Castanea_sativa.pdf"
+        }
+      ],
+      "route": "#/albero/castagno"
+    }
+  ],
+  "guides": [
+    {
+      "id": "leggere-il-bosco",
+      "category": "Osservare il bosco",
+      "title": "Prima i tronchi, poi il sottobosco",
+      "excerpt": "Faggio, castagno e querce: imparare gli alberi cambia il modo di guardare una passeggiata.",
+      "body": "<p>All’inizio del sentiero guarda in alto. Le chiome, la corteccia e le foglie a terra raccontano quale bosco stai attraversando. I funghi micorrizici vivono in relazione con le radici di alberi ospiti: riconoscere questi alberi aiuta a capire l’habitat.</p>\n      <h2>Tre dettagli da osservare</h2><p>Il faggio ha una corteccia spesso liscia e grigia. Il castagno lascia foglie allungate e dentate, insieme ai ricci. Le querce hanno foglie e ghiande diverse secondo la specie. Un singolo dettaglio può ingannare: confronta foglia, corteccia e frutto.</p>\n      <p>In una radura cambia la luce, la lettiera si interrompe e il terreno può asciugarsi più rapidamente. Sul legno morto trovi un ambiente diverso da quello sotto gli alberi vivi. Il bosco è un mosaico: la categoria della mappa è un punto di partenza, da verificare camminando.</p>\n      <p><a class=\"btn ghost\" href=\"#/alberi\">Conosci gli alberi</a></p><p class=\"small muted\">Approfondimenti: <a href=\"https://dryades.units.it/\" target=\"_blank\" rel=\"noopener\">Università di Trieste, Dryades</a>; <a href=\"https://forest.jrc.ec.europa.eu/en/european-atlas/\" target=\"_blank\" rel=\"noopener\">JRC, European Atlas of Forest Tree Species</a>. Un habitat compatibile non conferma la presenza di una specie.</p>"
+    },
+    {
+      "id": "pioggia-e-crescita",
+      "category": "Il ritmo delle stagioni",
+      "title": "La pioggia lascia una storia nel terreno",
+      "excerpt": "Per leggere le condizioni di crescita contano le settimane precedenti e ciò che il bosco trattiene.",
+      "body": "<p>La pioggia di stamattina e le piogge delle settimane precedenti raccontano due cose diverse. La prima cambia la passeggiata; le altre possono contribuire alle condizioni di fruttificazione. Terreno, lettiera, temperatura e alberi modificano la risposta.</p>\n      <h2>Che cosa racconta il numero</h2><p>L’indice da 0 a 10 riassume quanto il meteo e l’habitat somigliano alle condizioni ipotizzate dal modello. È sperimentale: non misura l’abbondanza reale né la probabilità di trovare un fungo. La fungaia, le ricerche di altre persone e il microclima possono fare la differenza.</p>\n      <p>Durante una passeggiata osserva la lettiera, l’esposizione e i cambiamenti di vegetazione. Se cerchi una specie, annota anche una ricerca a vuoto e quanto tempo le hai dedicato. Sono piccoli dati utili per capire dove il modello funziona e dove va corretto.</p>\n      <p><a class=\"btn ghost\" href=\"#/metodo\">Formule, fonti e limiti</a> <a class=\"btn ghost\" href=\"#/diario\">Apri il tuo taccuino</a></p>"
+    },
+    {
+      "id": "preparare-la-passeggiata",
+      "category": "Sul sentiero",
+      "title": "Scegliere il giro, prima di partire",
+      "excerpt": "Accessi, dislivello, tempo di rientro: una traccia sulla mappa è solo l’inizio del piano.",
+      "body": "<p>Parti dal tempo che hai e dalla familiarità con il terreno. Guarda il percorso completo, il dislivello, l’accesso e un possibile punto di rientro. Le mappe di Fungaroli aiutano a esplorare i sentieri censiti, ma non descrivono tutte le condizioni che incontrerai.</p>\n      <h2>Due meteo da tenere distinti</h2><p>Il meteo passato entra nell’indice di crescita. Per camminare serve invece una previsione aggiornata lungo il percorso e nelle ore del rientro. La previsione della mattina, alla quota centrale della zona, è un’informazione parziale.</p>\n      <p>Controlla la segnaletica, le chiusure e l’accessibilità delle strade. Una distanza in linea d’aria fino al bosco non è una distanza percorribile a piedi. In aree protette, verifica la cartografia e le regole dell’ente prima di raccogliere.</p>\n      <p>Nel tuo taccuino puoi annotare la passeggiata: un albero riconosciuto, un cambio di bosco, una ricerca fatta con calma. Condividi le osservazioni che possono aiutare altri a conoscere il territorio, senza pubblicare punti GPS o fungaie precise.</p>\n      <p><a class=\"btn ghost\" href=\"#/mappa\">Esplora i sentieri</a> <a class=\"btn ghost\" href=\"#/info\">Regole e informazioni utili</a></p>"
+    }
+  ],
+  "glossary": [
+    {
+      "id": "difficolta-t",
+      "term": "T · turistico",
+      "category": "Sentiero",
+      "aliases": [
+        "turistico"
+      ],
+      "definition": "Percorsi generalmente su stradine, mulattiere o sentieri evidenti, senza particolari difficoltà tecniche.",
+      "observe": "Servono comunque calzature adatte e una valutazione di meteo, durata e dislivello.",
+      "related": [
+        "difficolta-e"
+      ],
+      "sources": [
+        {
+          "title": "CAI · Livelli di difficoltà delle attività",
+          "url": "https://www.cai.it/attivita/livelli-difficolta-cai-attivita/"
+        }
+      ]
+    },
+    {
+      "id": "difficolta-e",
+      "term": "E · escursionistico",
+      "category": "Sentiero",
+      "aliases": [
+        "escursionistico"
+      ],
+      "definition": "Sentieri o tracce su terreno vario, anche ripido: richiedono orientamento, abitudine a camminare in montagna e preparazione fisica. Possono esserci brevi tratti esposti protetti.",
+      "observe": "Controlla esperienza richiesta, esposizione e stato del fondo: E non significa privo di rischi.",
+      "related": [
+        "difficolta-t",
+        "difficolta-ee"
+      ],
+      "sources": [
+        {
+          "title": "CAI · Livelli di difficoltà delle attività",
+          "url": "https://www.cai.it/attivita/livelli-difficolta-cai-attivita/"
+        }
+      ]
+    },
+    {
+      "id": "difficolta-ee",
+      "term": "EE · escursionisti esperti",
+      "category": "Sentiero",
+      "aliases": [
+        "escursionisti esperti"
+      ],
+      "definition": "Terreni più impegnativi, ripidi, esposti o con tratti rocciosi: richiedono esperienza, passo sicuro e capacità di orientamento.",
+      "observe": "Valuta la tua esperienza e le condizioni del giorno; una traccia GPX non sostituisce queste capacità.",
+      "related": [
+        "difficolta-e",
+        "difficolta-eea"
+      ],
+      "sources": [
+        {
+          "title": "CAI · Livelli di difficoltà delle attività",
+          "url": "https://www.cai.it/attivita/livelli-difficolta-cai-attivita/"
+        }
+      ]
+    },
+    {
+      "id": "difficolta-eea",
+      "term": "EEA · escursionisti esperti con attrezzatura",
+      "category": "Sentiero",
+      "aliases": [
+        "EEA",
+        "via ferrata",
+        "vie ferrate"
+      ],
+      "definition": "Percorsi attrezzati, come le vie ferrate, che richiedono equipaggiamento specifico e conoscenza delle tecniche per usarlo.",
+      "observe": "Casco, imbracatura e set da ferrata vanno scelti e usati correttamente. La sigla non indica un normale sentiero.",
+      "related": [
+        "difficolta-ee"
+      ],
+      "sources": [
+        {
+          "title": "CAI · Livelli di difficoltà delle attività",
+          "url": "https://www.cai.it/attivita/livelli-difficolta-cai-attivita/"
+        }
+      ]
+    },
+    {
+      "id": "dislivello",
+      "term": "Dislivello",
+      "category": "Sentiero",
+      "aliases": [
+        "dislivelli",
+        "dislivello positivo"
+      ],
+      "definition": "Differenza di quota. Il dislivello positivo cumulato somma tutte le salite lungo il percorso: non coincide necessariamente con quota massima meno quota minima.",
+      "observe": "Un “+714 m” descrive la salita cumulata dell’itinerario indicato; verifica se il dato riguarda il percorso intero.",
+      "related": [
+        "quota"
+      ],
+      "sources": [
+        {
+          "title": "CAI · Livelli di difficoltà delle attività",
+          "url": "https://www.cai.it/attivita/livelli-difficolta-cai-attivita/"
+        }
+      ]
+    },
+    {
+      "id": "quota",
+      "term": "Quota",
+      "category": "Sentiero",
+      "aliases": [
+        "altitudine"
+      ],
+      "definition": "Altezza rispetto al livello del mare, normalmente espressa in metri.",
+      "observe": "La quota influisce su temperatura e vegetazione, ma non identifica da sola un habitat.",
+      "related": [
+        "dislivello"
+      ],
+      "sources": [
+        {
+          "title": "CAI · Livelli di difficoltà delle attività",
+          "url": "https://www.cai.it/attivita/livelli-difficolta-cai-attivita/"
+        }
+      ]
+    },
+    {
+      "id": "segnavia",
+      "term": "Segnavia",
+      "category": "Sentiero",
+      "aliases": [
+        "segnaletica"
+      ],
+      "definition": "Segno, simbolo o numero che aiuta a seguire un percorso. I sentieri CAI utilizzano segni bianco-rossi e tabelle secondo la rete locale.",
+      "observe": "Confronta numero, direzione e destinazione con la mappa: una marcatura non garantisce che il sentiero sia oggi percorribile.",
+      "related": [
+        "gpx"
+      ],
+      "sources": [
+        {
+          "title": "CAI · Livelli di difficoltà delle attività",
+          "url": "https://www.cai.it/attivita/livelli-difficolta-cai-attivita/"
+        }
+      ]
+    },
+    {
+      "id": "gpx",
+      "term": "Traccia GPX",
+      "category": "Sentiero",
+      "aliases": [
+        "GPX",
+        "traccia GPX"
+      ],
+      "definition": "File con punti geografici di un percorso, leggibile da molte app di navigazione. In Fungaroli può contenere solo il tratto nella zona, anche su segmenti separati.",
+      "observe": "Verifica copertura della traccia e mappa offline; un file non certifica transitabilità o sicurezza.",
+      "related": [
+        "segnavia"
+      ],
+      "sources": [
+        {
+          "title": "Topografix · GPX 1.1",
+          "url": "https://www.topografix.com/GPX/1/1/"
+        }
+      ]
+    },
+    {
+      "id": "esposizione",
+      "term": "Esposizione",
+      "category": "Bosco",
+      "aliases": [
+        "esposizioni"
+      ],
+      "definition": "Orientamento di un versante rispetto ai punti cardinali. Insieme a pendenza e vegetazione modifica luce, vento e condizioni locali.",
+      "observe": "Un versante ombreggiato può trattenere l’umidità diversamente da uno soleggiato: osserva il terreno, senza dedurre ritrovamenti certi.",
+      "related": [
+        "microclima"
+      ],
+      "sources": [
+        {
+          "title": "JRC · European Atlas of Forest Tree Species",
+          "url": "https://forest.jrc.ec.europa.eu/en/european-atlas/"
+        }
+      ]
+    },
+    {
+      "id": "microclima",
+      "term": "Microclima",
+      "category": "Bosco",
+      "aliases": [
+        "microclimi"
+      ],
+      "definition": "Condizioni climatiche di un luogo piccolo, diverse da quelle generali della zona: per esempio un impluvio o una radura.",
+      "observe": "Il meteo di modello non misura tutte queste differenze locali.",
+      "related": [
+        "esposizione",
+        "lettiera"
+      ],
+      "sources": [
+        {
+          "title": "JRC · European Atlas of Forest Tree Species",
+          "url": "https://forest.jrc.ec.europa.eu/en/european-atlas/"
+        }
+      ]
+    },
+    {
+      "id": "lettiera",
+      "term": "Lettiera",
+      "category": "Bosco",
+      "aliases": [
+        "lettiere"
+      ],
+      "definition": "Strato superficiale di foglie, aghi, piccoli rami e altro materiale organico caduto sul terreno.",
+      "observe": "Osserva composizione e umidità senza rimuoverla: è habitat e protezione del suolo.",
+      "related": [
+        "saprotrofo",
+        "micelio"
+      ],
+      "sources": [
+        {
+          "title": "JRC · European Atlas of Forest Tree Species",
+          "url": "https://forest.jrc.ec.europa.eu/en/european-atlas/"
+        }
+      ]
+    },
+    {
+      "id": "radura",
+      "term": "Radura",
+      "category": "Bosco",
+      "aliases": [
+        "radure"
+      ],
+      "definition": "Apertura nella copertura degli alberi, all’interno o ai margini del bosco.",
+      "observe": "Luce, erbe e terreno possono differire dal bosco vicino. “Fuori bosco” nella mappa non significa assenza di funghi.",
+      "related": [
+        "habitat"
+      ],
+      "sources": [
+        {
+          "title": "JRC · European Atlas of Forest Tree Species",
+          "url": "https://forest.jrc.ec.europa.eu/en/european-atlas/"
+        }
+      ]
+    },
+    {
+      "id": "habitat",
+      "term": "Habitat",
+      "category": "Bosco",
+      "aliases": [
+        "habitat compatibile"
+      ],
+      "definition": "Ambiente in cui una specie vive, con condizioni fisiche e biologiche adatte. Per i funghi contano anche substrato e possibili alberi ospiti.",
+      "observe": "Un habitat compatibile suggerisce cosa osservare, senza confermare la presenza della specie.",
+      "related": [
+        "substrato",
+        "micorriza"
+      ],
+      "sources": [
+        {
+          "title": "JRC · European Atlas of Forest Tree Species",
+          "url": "https://forest.jrc.ec.europa.eu/en/european-atlas/"
+        }
+      ]
+    },
+    {
+      "id": "substrato",
+      "term": "Substrato",
+      "category": "Funghi",
+      "aliases": [
+        "substrati"
+      ],
+      "definition": "Materiale o superficie su cui cresce un fungo: terreno, lettiera, legno o altri materiali.",
+      "observe": "Annota se il fungo emerge dal terreno o direttamente dal legno; le radici sepolte possono trarre in inganno.",
+      "related": [
+        "saprotrofo"
+      ],
+      "sources": [
+        {
+          "title": "First Nature · Glossary of mycological terms",
+          "url": "https://www.first-nature.com/fungi/~glossary.php"
+        }
+      ],
+      "contexts": [
+        "Funghi"
+      ]
+    },
+    {
+      "id": "micorriza",
+      "term": "Micorriza",
+      "category": "Funghi",
+      "aliases": [
+        "micorrize",
+        "micorrizico",
+        "micorrizici",
+        "ectomicorriza",
+        "ectomicorrize"
+      ],
+      "definition": "Associazione tra un fungo e le radici di una pianta, con scambio di nutrienti. Molti funghi forestali formano ectomicorrize.",
+      "observe": "Riconoscere gli alberi vicini aiuta a leggere l’habitat, ma non identifica il fungo.",
+      "related": [
+        "micelio",
+        "habitat"
+      ],
+      "sources": [
+        {
+          "title": "First Nature · Glossary of mycological terms",
+          "url": "https://www.first-nature.com/fungi/~glossary.php"
+        }
+      ],
+      "contexts": [
+        "Funghi",
+        "Piante",
+        "Alberi",
+        "Bosco"
+      ]
+    },
+    {
+      "id": "saprotrofo",
+      "term": "Saprotrofo",
+      "category": "Funghi",
+      "aliases": [
+        "saprotrofi",
+        "saprofita",
+        "saprofiti"
+      ],
+      "definition": "Organismo che ricava nutrienti dalla materia organica morta, contribuendo alla decomposizione.",
+      "observe": "Legno morto e lettiera ospitano specie diverse: descrivi il substrato.",
+      "related": [
+        "substrato",
+        "lettiera"
+      ],
+      "sources": [
+        {
+          "title": "First Nature · Glossary of mycological terms",
+          "url": "https://www.first-nature.com/fungi/~glossary.php"
+        }
+      ],
+      "contexts": [
+        "Funghi",
+        "Piante",
+        "Alberi",
+        "Bosco"
+      ]
+    },
+    {
+      "id": "micelio",
+      "term": "Micelio",
+      "category": "Funghi",
+      "aliases": [
+        "miceli"
+      ],
+      "definition": "Insieme dei filamenti del fungo, chiamati ife, che si sviluppano nel substrato. Il fungo visibile è spesso soltanto il corpo fruttifero.",
+      "observe": "Non scavare per cercarlo; la presenza di filamenti bianchi non identifica una specie.",
+      "related": [
+        "carpoforo"
+      ],
+      "sources": [
+        {
+          "title": "First Nature · Glossary of mycological terms",
+          "url": "https://www.first-nature.com/fungi/~glossary.php"
+        }
+      ],
+      "contexts": [
+        "Funghi",
+        "Piante",
+        "Alberi",
+        "Bosco"
+      ]
+    },
+    {
+      "id": "carpoforo",
+      "term": "Corpo fruttifero",
+      "category": "Funghi",
+      "aliases": [
+        "carpoforo",
+        "carpofori",
+        "corpi fruttiferi"
+      ],
+      "definition": "Struttura del fungo che produce e disperde le spore; nei funghi a cappello è la parte che osserviamo sopra il substrato.",
+      "observe": "La sua comparsa è fruttificazione: non equivale alla crescita o alla quantità totale del micelio.",
+      "related": [
+        "micelio",
+        "sporata"
+      ],
+      "sources": [
+        {
+          "title": "First Nature · Glossary of mycological terms",
+          "url": "https://www.first-nature.com/fungi/~glossary.php"
+        }
+      ],
+      "contexts": [
+        "Funghi"
+      ]
+    },
+    {
+      "id": "lamelle",
+      "term": "Lamelle",
+      "category": "Funghi",
+      "aliases": [
+        "lamella"
+      ],
+      "definition": "Sottili strutture a lama sotto il cappello, sulle cui superfici si trova lo strato che produce le spore.",
+      "observe": "Osserva colore, distanza e attacco al gambo. Non confonderle con le pliche del finferlo.",
+      "related": [
+        "pliche",
+        "imenoforo"
+      ],
+      "sources": [
+        {
+          "title": "AMINT · Lamelle (Glossario illustrato micologico)",
+          "url": "https://enciclopedia.funghiitaliani.it/termine.php?show=1107"
+        }
+      ],
+      "contexts": [
+        "Funghi"
+      ]
+    },
+    {
+      "id": "pori",
+      "term": "Pori e tubuli",
+      "category": "Funghi",
+      "aliases": [
+        "pori",
+        "poro",
+        "tubuli",
+        "tubulo"
+      ],
+      "definition": "I tubuli sono piccoli canali sotto il cappello; i pori sono le loro aperture visibili. Formano la superficie spugnosa di molti boleti.",
+      "observe": "Osserva il colore dei pori e gli eventuali cambiamenti, senza usarli da soli per decidere la commestibilità.",
+      "related": [
+        "imenoforo",
+        "viraggio"
+      ],
+      "sources": [
+        {
+          "title": "AMINT · Pori (Glossario illustrato micologico)",
+          "url": "https://enciclopedia.funghiitaliani.it/termine.php?show=1526"
+        }
+      ],
+      "contexts": [
+        "Funghi"
+      ]
+    },
+    {
+      "id": "pliche",
+      "term": "Pliche",
+      "category": "Funghi",
+      "aliases": [
+        "plica",
+        "false lamelle"
+      ],
+      "definition": "Pieghe o nervature sotto il cappello, spesso ramificate e collegate tra loro, diverse dalle vere lamelle.",
+      "observe": "Nel finferlo sono un carattere da confrontare con il resto del fungo e con i sosia. Il termine può indicare anche pieghe del cappello.",
+      "related": [
+        "lamelle",
+        "imenoforo"
+      ],
+      "sources": [
+        {
+          "title": "AMINT · Pliche (Glossario illustrato micologico)",
+          "url": "https://enciclopedia.funghiitaliani.it/termine.php?show=2638"
+        }
+      ],
+      "contexts": [
+        "Funghi"
+      ]
+    },
+    {
+      "id": "aculei",
+      "term": "Aculei",
+      "category": "Funghi",
+      "aliases": [
+        "aculeo"
+      ],
+      "definition": "Piccoli elementi appuntiti. In alcuni funghi, come gli steccherini, pendono sotto il cappello e portano lo strato fertile.",
+      "observe": "Nel contesto di un riccio o di una foglia la parola può indicare una struttura vegetale diversa.",
+      "related": [
+        "imenoforo"
+      ],
+      "sources": [
+        {
+          "title": "AMINT · Aculei (Glossario illustrato micologico)",
+          "url": "https://enciclopedia.funghiitaliani.it/termine.php?show=29"
+        }
+      ],
+      "contexts": [
+        "Funghi"
+      ]
+    },
+    {
+      "id": "imenoforo",
+      "term": "Imenoforo",
+      "category": "Funghi",
+      "aliases": [
+        "imenofori"
+      ],
+      "definition": "Struttura che sostiene lo strato fertile del fungo: può avere lamelle, tubuli, aculei, pliche o una superficie quasi liscia.",
+      "observe": "Guarda sotto il cappello senza basarti solo sul suo colore esterno.",
+      "related": [
+        "lamelle",
+        "pori",
+        "pliche"
+      ],
+      "sources": [
+        {
+          "title": "AMINT · Imenoforo (Glossario illustrato micologico)",
+          "url": "https://enciclopedia.funghiitaliani.it/termine.php?show=2651"
+        }
+      ],
+      "contexts": [
+        "Funghi"
+      ]
+    },
+    {
+      "id": "anello",
+      "term": "Anello",
+      "category": "Funghi",
+      "aliases": [
+        "anelli"
+      ],
+      "definition": "Fascia o membrana intorno al gambo, spesso residuo del velo parziale. Può essere fragile, fugace o danneggiata.",
+      "observe": "Non vederlo non prova che sia assente: non usarlo da solo per escludere specie mortali.",
+      "related": [
+        "volva"
+      ],
+      "sources": [
+        {
+          "title": "AMINT · Anello (Glossario illustrato micologico)",
+          "url": "https://enciclopedia.funghiitaliani.it/termine.php?show=109"
+        }
+      ],
+      "contexts": [
+        "Funghi"
+      ]
+    },
+    {
+      "id": "volva",
+      "term": "Volva",
+      "category": "Funghi",
+      "aliases": [
+        "volve",
+        "cercini"
+      ],
+      "definition": "Residuo del velo generale alla base del gambo, a sacco, lembi o cercini secondo la specie. Può essere nascosta nel terreno o danneggiata.",
+      "observe": "L’assenza apparente non esclude un’Amanita mortale. Per il controllo micologico serve l’esemplare intero, base compresa.",
+      "related": [
+        "anello"
+      ],
+      "sources": [
+        {
+          "title": "AMINT · Volva (Glossario illustrato micologico)",
+          "url": "https://enciclopedia.funghiitaliani.it/termine.php?show=2061"
+        }
+      ],
+      "contexts": [
+        "Funghi"
+      ]
+    },
+    {
+      "id": "reticolo",
+      "term": "Reticolo",
+      "category": "Funghi",
+      "aliases": [
+        "reticoli"
+      ],
+      "definition": "Disegno a maglie, simile a una rete, sulla superficie del gambo di alcuni funghi.",
+      "observe": "Osserva posizione, colore e rilievo delle maglie; un solo carattere non conferma la specie.",
+      "related": [
+        "viraggio"
+      ],
+      "sources": [
+        {
+          "title": "Gruppo Micologico Ravenna · Reticolato (Glossarietto)",
+          "url": "https://micologia.racine.ra.it/Demo-chiavi-funghi/Glossarietto.htm"
+        }
+      ],
+      "contexts": [
+        "Funghi"
+      ]
+    },
+    {
+      "id": "sporata",
+      "term": "Sporata",
+      "category": "Funghi",
+      "aliases": [
+        "sporate"
+      ],
+      "definition": "Deposito di spore rilasciate dal fungo, il cui colore può aiutare il confronto tra specie.",
+      "observe": "Il colore del deposito non coincide necessariamente con quello di lamelle o pori; non è una prova di commestibilità.",
+      "related": [
+        "imenoforo"
+      ],
+      "sources": [
+        {
+          "title": "First Nature · Glossary of mycological terms",
+          "url": "https://www.first-nature.com/fungi/~glossary.php"
+        }
+      ],
+      "contexts": [
+        "Funghi"
+      ]
+    },
+    {
+      "id": "viraggio",
+      "term": "Viraggio",
+      "category": "Funghi",
+      "aliases": [
+        "viraggi"
+      ],
+      "definition": "Cambiamento di colore di un tessuto dopo taglio, rottura o pressione.",
+      "observe": "Annota colore, punto e velocità del cambiamento. Blu non significa automaticamente tossico, né assenza di blu significa commestibile.",
+      "related": [
+        "reticolo"
+      ],
+      "sources": [
+        {
+          "title": "First Nature · Glossary of mycological terms",
+          "url": "https://www.first-nature.com/fungi/~glossary.php"
+        }
+      ],
+      "contexts": [
+        "Funghi"
+      ]
+    },
+    {
+      "id": "umbone",
+      "term": "Umbone",
+      "category": "Funghi",
+      "aliases": [
+        "umboni",
+        "umbonato"
+      ],
+      "definition": "Rilievo centrale del cappello, più o meno evidente e appuntito.",
+      "observe": "Confronta profilo e forma dell’intero cappello: età e umidità possono modificarli.",
+      "related": [
+        "carpoforo"
+      ],
+      "sources": [
+        {
+          "title": "First Nature · Glossary of mycological terms",
+          "url": "https://www.first-nature.com/fungi/~glossary.php"
+        }
+      ],
+      "contexts": [
+        "Funghi"
+      ]
+    },
+    {
+      "id": "cespitoso",
+      "term": "Cespitoso",
+      "category": "Funghi",
+      "aliases": [
+        "cespitosa",
+        "cespitosi",
+        "a cespi"
+      ],
+      "definition": "Crescita in gruppi fitti, spesso con gambi uniti o molto ravvicinati alla base.",
+      "observe": "Non equivale a una specie particolare: osserva anche substrato e base dei gambi.",
+      "related": [
+        "substrato"
+      ],
+      "sources": [
+        {
+          "title": "First Nature · Glossary of mycological terms",
+          "url": "https://www.first-nature.com/fungi/~glossary.php"
+        }
+      ],
+      "contexts": [
+        "Funghi"
+      ]
+    },
+    {
+      "id": "latifoglie",
+      "term": "Latifoglie",
+      "category": "Alberi",
+      "aliases": [
+        "latifoglia"
+      ],
+      "definition": "Piante con foglie a lamina generalmente larga, in contrapposizione alle foglie aghiformi o squamiformi di molte conifere. Possono essere decidue o sempreverdi.",
+      "observe": "Faggio, castagno e leccio sono latifoglie, ma non perdono tutti le foglie in inverno.",
+      "related": [
+        "conifere",
+        "caducifoglia",
+        "sempreverde"
+      ],
+      "sources": [
+        {
+          "title": "Acta Plantarum · Glossario botanico",
+          "url": "https://www.actaplantarum.org/glossario/"
+        }
+      ]
+    },
+    {
+      "id": "conifere",
+      "term": "Conifere",
+      "category": "Alberi",
+      "aliases": [
+        "conifera"
+      ],
+      "definition": "Gruppo di piante legnose che produce coni; molte hanno foglie ad ago o a squama. Non tutte sono sempreverdi.",
+      "observe": "Confronta disposizione degli aghi e coni: “conifera” da sola non distingue pino e abete.",
+      "related": [
+        "aghi",
+        "latifoglie"
+      ],
+      "sources": [
+        {
+          "title": "Acta Plantarum · Glossario botanico",
+          "url": "https://www.actaplantarum.org/glossario/"
+        }
+      ]
+    },
+    {
+      "id": "aghi",
+      "term": "Aghi",
+      "category": "Alberi",
+      "aliases": [
+        "ago",
+        "aghiforme"
+      ],
+      "definition": "Foglie strette e allungate, tipiche di molte conifere. Possono essere singole o riunite in fascetti.",
+      "observe": "Nei pini del catalogo cerca coppie di aghi; nell’abete bianco aghi singoli, piatti, con due bande chiare sotto.",
+      "related": [
+        "conifere"
+      ],
+      "sources": [
+        {
+          "title": "Acta Plantarum · Glossario botanico",
+          "url": "https://www.actaplantarum.org/glossario/"
+        }
+      ],
+      "contexts": [
+        "Piante",
+        "Alberi"
+      ]
+    },
+    {
+      "id": "caducifoglia",
+      "term": "Caducifoglia",
+      "category": "Alberi",
+      "aliases": [
+        "caducifoglie",
+        "decidua",
+        "decidue"
+      ],
+      "definition": "Pianta che perde le foglie nella stagione sfavorevole. “Decidua” è un termine equivalente.",
+      "observe": "In inverno usa insieme gemme, corteccia e frutti a terra; alcune foglie secche possono restare sui rami.",
+      "related": [
+        "sempreverde",
+        "gemme"
+      ],
+      "sources": [
+        {
+          "title": "Acta Plantarum · Glossario botanico",
+          "url": "https://www.actaplantarum.org/glossario/"
+        }
+      ]
+    },
+    {
+      "id": "sempreverde",
+      "term": "Sempreverde",
+      "category": "Alberi",
+      "aliases": [
+        "sempreverdi"
+      ],
+      "definition": "Pianta che mantiene foglie vive tutto l’anno, rinnovandole gradualmente.",
+      "observe": "Non conserva ogni singola foglia per sempre. Leccio e olivo sono esempi nel catalogo.",
+      "related": [
+        "caducifoglia"
+      ],
+      "sources": [
+        {
+          "title": "Acta Plantarum · Glossario botanico",
+          "url": "https://www.actaplantarum.org/glossario/"
+        }
+      ]
+    },
+    {
+      "id": "lobi",
+      "term": "Lobi",
+      "category": "Alberi",
+      "aliases": [
+        "lobo",
+        "lobata",
+        "lobate"
+      ],
+      "definition": "Parti sporgenti del margine di una foglia, separate da incavi più o meno profondi.",
+      "observe": "Conta i lobi e guarda forma e profondità degli incavi; nelle querce una singola foglia può essere poco rappresentativa.",
+      "related": [
+        "seghettato"
+      ],
+      "sources": [
+        {
+          "title": "Acta Plantarum · Glossario botanico",
+          "url": "https://www.actaplantarum.org/glossario/"
+        }
+      ],
+      "contexts": [
+        "Piante",
+        "Alberi"
+      ]
+    },
+    {
+      "id": "seghettato",
+      "term": "Margine seghettato",
+      "category": "Alberi",
+      "aliases": [
+        "seghettato",
+        "seghettata",
+        "dentato",
+        "dentata",
+        "doppiamente seghettato"
+      ],
+      "definition": "Bordo della foglia con piccoli denti simili a quelli di una sega. Se i denti hanno a loro volta denti più piccoli, è doppiamente seghettato.",
+      "observe": "Guarda diverse foglie mature: danni o giovani foglie possono rendere il bordo ingannevole.",
+      "related": [
+        "lobi"
+      ],
+      "sources": [
+        {
+          "title": "Acta Plantarum · Glossario botanico",
+          "url": "https://www.actaplantarum.org/glossario/"
+        }
+      ],
+      "contexts": [
+        "Piante",
+        "Alberi"
+      ]
+    },
+    {
+      "id": "gemme",
+      "term": "Gemme",
+      "category": "Alberi",
+      "aliases": [
+        "gemma"
+      ],
+      "definition": "Strutture da cui si sviluppano germogli, foglie o fiori; forma e disposizione aiutano il riconoscimento, soprattutto in inverno.",
+      "observe": "Nel faggio le gemme sono lunghe e sottili: confrontale anche con corteccia e foglie a terra.",
+      "related": [
+        "caducifoglia"
+      ],
+      "sources": [
+        {
+          "title": "Acta Plantarum · Glossario botanico",
+          "url": "https://www.actaplantarum.org/glossario/"
+        }
+      ],
+      "contexts": [
+        "Piante",
+        "Alberi"
+      ]
+    },
+    {
+      "id": "ceduo",
+      "term": "Ceduo",
+      "category": "Bosco",
+      "aliases": [
+        "cedui"
+      ],
+      "definition": "Bosco gestito con tagli dopo i quali molte latifoglie producono nuovi fusti dalla ceppaia. Più polloni possono condividere la stessa base.",
+      "observe": "Il tipo di gestione non identifica da solo l’albero o i funghi presenti.",
+      "related": [
+        "ceppaia",
+        "pollone"
+      ],
+      "sources": [
+        {
+          "title": "JRC · European Atlas of Forest Tree Species",
+          "url": "https://forest.jrc.ec.europa.eu/en/european-atlas/"
+        }
+      ]
+    },
+    {
+      "id": "ceppaia",
+      "term": "Ceppaia",
+      "category": "Bosco",
+      "aliases": [
+        "ceppaie"
+      ],
+      "definition": "Base e apparato radicale di un albero, spesso visibili dopo il taglio del fusto. Può produrre nuovi germogli o diventare legno morto.",
+      "observe": "Distingui il legno dal terreno vicino: funghi su ceppaia e funghi micorrizici hanno relazioni diverse con gli alberi.",
+      "related": [
+        "ceduo",
+        "substrato"
+      ],
+      "sources": [
+        {
+          "title": "JRC · European Atlas of Forest Tree Species",
+          "url": "https://forest.jrc.ec.europa.eu/en/european-atlas/"
+        }
+      ]
+    },
+    {
+      "id": "spora",
+      "term": "Spora",
+      "category": "Funghi",
+      "aliases": [
+        "spore"
+      ],
+      "definition": "Unità microscopica coinvolta nella riproduzione e dispersione dei funghi. Nei funghi a cappello molte spore vengono prodotte nello strato fertile sotto il cappello.",
+      "observe": "La singola spora non si riconosce a occhio nudo. Il deposito di molte spore forma la sporata; non è una prova di commestibilità.",
+      "related": [
+        "sporata",
+        "imenoforo"
+      ],
+      "sources": [
+        {
+          "title": "First Nature · Glossary of mycological terms",
+          "url": "https://www.first-nature.com/fungi/~glossary.php"
+        }
+      ]
+    },
+    {
+      "id": "ifa",
+      "term": "Ifa",
+      "category": "Funghi",
+      "aliases": [
+        "ife"
+      ],
+      "definition": "Filamento che costituisce il corpo di molti funghi. L’insieme delle ife forma il micelio.",
+      "observe": "Filamenti nel terreno o sul legno non permettono da soli di identificare una specie.",
+      "related": [
+        "micelio"
+      ],
+      "sources": [
+        {
+          "title": "First Nature · Glossary of mycological terms",
+          "url": "https://www.first-nature.com/fungi/~glossary.php"
+        }
+      ],
+      "contexts": [
+        "Funghi",
+        "Piante",
+        "Alberi",
+        "Bosco"
+      ]
+    },
+    {
+      "id": "cappello",
+      "term": "Cappello",
+      "category": "Funghi",
+      "aliases": [
+        "cappelli",
+        "pileo"
+      ],
+      "definition": "Nei funghi con gambo è la struttura che lo sovrasta, compresa la superficie inferiore con l’imenoforo. La forma può cambiare con lo sviluppo.",
+      "observe": "Confronta profilo, superficie, margine e diametro; il colore del cappello da solo non identifica una specie.",
+      "related": [
+        "gambo",
+        "imenoforo",
+        "umbone"
+      ],
+      "sources": [
+        {
+          "title": "AMINT · Glossario illustrato: Cappello",
+          "url": "https://enciclopedia.funghiitaliani.it/termine.php?show=335"
+        }
+      ],
+      "contexts": [
+        "Funghi"
+      ]
+    },
+    {
+      "id": "gambo",
+      "term": "Gambo",
+      "category": "Funghi",
+      "aliases": [
+        "gambi",
+        "stipite"
+      ],
+      "definition": "La parte del corpo fruttifero che sostiene il cappello e si collega al micelio. In alcune specie è laterale, molto ridotta o assente.",
+      "observe": "Osserva tutta la lunghezza e la base: forma, superficie, anello e volva sono caratteri da confrontare insieme.",
+      "related": [
+        "cappello",
+        "anello",
+        "volva",
+        "reticolo"
+      ],
+      "sources": [
+        {
+          "title": "AMINT · Glossario illustrato: Gambo",
+          "url": "https://enciclopedia.funghiitaliani.it/termine.php?show=867"
+        }
+      ],
+      "contexts": [
+        "Funghi"
+      ]
+    },
+    {
+      "id": "aculei-piante",
+      "term": "Aculei",
+      "category": "Piante",
+      "aliases": [
+        "aculeo"
+      ],
+      "definition": "Sporgenze appuntite dei tessuti superficiali della pianta, diritte o ricurve. Nei rovi e nelle rose si trovano sui rami; non sono le vere spine, che derivano dalla trasformazione di un organo.",
+      "observe": "Nel rovo e nella rosa canina osserva forma, curvatura e posizione sul ramo. Anche la cupola del faggio porta aculei. Nei funghi la stessa parola indica invece elementi del loro imenoforo.",
+      "related": [],
+      "sources": [
+        {
+          "title": "Treccani · Aculeo, botanica",
+          "url": "https://www.treccani.it/enciclopedia/aculeo/"
+        }
+      ],
+      "contexts": [
+        "Piante",
+        "Alberi"
+      ]
+    },
+    {
+      "id": "substrato-piante",
+      "term": "Substrato",
+      "category": "Piante",
+      "aliases": [
+        "substrati"
+      ],
+      "definition": "Base o materiale su cui vive una pianta. Nelle descrizioni dell’habitat può riferirsi al terreno e alla roccia che contribuisce a formarlo, per esempio substrati calcarei o silicei.",
+      "observe": "Il substrato è una caratteristica dell’ambiente: non coincide con il nome del bosco e non dimostra da solo la presenza di una pianta.",
+      "related": [
+        "habitat"
+      ],
+      "sources": [
+        {
+          "title": "Treccani · Substrato, biologia e geologia",
+          "url": "https://www.treccani.it/enciclopedia/substrato/"
+        }
+      ],
+      "contexts": [
+        "Piante",
+        "Alberi",
+        "Bosco",
+        "Sentiero"
+      ]
+    },
+    {
+      "id": "pollone",
+      "term": "Pollone",
+      "category": "Piante",
+      "aliases": [
+        "polloni"
+      ],
+      "contexts": [
+        "Piante",
+        "Alberi",
+        "Bosco",
+        "Funghi",
+        "Sentiero"
+      ],
+      "definition": "Nuovo getto che nasce da una gemma avventizia di una pianta legnosa, per esempio alla base del fusto, dalle radici o vicino a un vecchio taglio.",
+      "observe": "I polloni possono comparire anche su una singola pianta: la loro presenza non significa necessariamente che l’intero bosco sia gestito a ceduo.",
+      "related": [
+        "gemme",
+        "ceduo"
+      ],
+      "sources": [
+        {
+          "title": "Treccani · Pollone",
+          "url": "https://www.treccani.it/vocabolario/pollone/"
+        }
+      ]
+    }
+  ],
+  "copy": {
+    "homeTitle": "Dove andare",
+    "homeIntro": "",
+    "otherPlacesTitle": "Altre buone uscite",
+    "speciesTitle": "Nei boschi in questi giorni",
+    "editorialEyebrow": "Guide del bosco",
+    "editorialTitle": "Una cosa da imparare, a ogni giro.",
+    "communityEyebrow": "Un bosco da conoscere insieme",
+    "communityTitle": "Ogni passeggiata aggiunge un pezzetto.",
+    "communityIntro": "Fungaroli aiuta a scegliere dove e quando andare a funghi e a conoscere il bosco durante l’uscita. Le segnalazioni, comprese le ricerche senza ritrovamenti, aiutano a migliorare i consigli.",
+    "indexExplanation": "Condizioni di crescita: indice sperimentale 0–10."
+  },
+  "observationSteps": [
+    "Zona",
+    "Giorno",
+    "Quota",
+    "Specie cercate",
+    "Ritrovamenti",
+    "Nota"
+  ],
+  "counts": {
+    "zones": 15,
+    "plants": 70,
+    "trees": 39,
+    "fungalTaxaRecords": 88,
+    "modeledSpecies": 14,
+    "edibleSelector": 46,
+    "glossaryTerms": 47,
+    "guides": 3
+  }
+}

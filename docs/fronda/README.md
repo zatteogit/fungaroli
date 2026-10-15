@@ -1,0 +1,57 @@
+# Fronda — identità e design system 1.1
+
+Direzione C / Lobata scelta il 15 ottobre 2026. Revisione 1.1: bosco più luminoso, base avorio e accenti polline, calendula, fiordaliso e germoglio. Il contorno mantiene pochi lobi ampi e morbidi, senza piccole dentellature. La lettura foglia / sentiero / pennino è il concetto guida.
+
+Apri `index.html` nel browser: guida completa, componenti interattivi, tema chiaro e scuro. I font sono locali. Nella guida le azioni sono dimostrative e non conservano note. Il prototipo separato `product.html` conserva invece le pagine del taccuino solo su questo browser. La preferenza del tema può essere salvata nel browser.
+
+## Contenuto
+
+- `assets/fronda-symbol-*.svg`: simbolo master, verde / avorio / nero.
+- `assets/fronda-wordmark-*.svg`: logotipo in tracciati.
+- `assets/fronda-logo-horizontal-*.svg` e `fronda-logo-stacked-*.svg`: composizioni coordinate.
+- `assets/fronda-app-icon.svg`, `fronda-app-maskable.svg`: icone e PNG corrispondenti quando presenti.
+- `assets/icon-*.svg`: 24 icone funzionali, tratto 1,8 su griglia 24.
+- Template SVG: carta intestata A4, biglietto fronte/retro, taccuino A5, social quadrato, story, adesivo, stampa per tote.
+- `fonts/`: Manrope e Fraunces, con licenze SIL OFL incluse. I template pronti sono in tracciati per non dipendere dai font installati.
+- `tokens.json`: fonte dei token, con alias semantici/componenti e override scuri. Formato JSON del progetto, non un file Figma importabile automaticamente.
+- `styles/tokens.css`: CSS generato dalla fonte; `styles/components.css`: componenti riutilizzabili; `styles/guide.css`: presentazione della guida.
+- `app.js`: interazioni dimostrative, navigazione, tema, dialogo e validazione.
+- `RICERCA.md` / `benchmark.json`: approfondimento funzionale, conservato come appendice alla ricerca visiva.
+- `VERIFICA.md`: esiti e limiti delle verifiche effettuate.
+
+## Aggiornare i token
+
+Modificare `tokens.json`, poi eseguire dalla cartella del kit:
+
+```sh
+node scripts/build-tokens.mjs --write
+node scripts/check.mjs
+node scripts/guard-test.mjs
+```
+
+I componenti consumano token semantici o di componente. I valori primitivi restano privati nel CSS dei token. La verifica controlla riferimenti mancanti, cicli, primitivi orfani, accessi diretti ai primitivi, colori letterali fuori dalla fonte e contrasti dichiarati, nei due temi. Non è una certificazione completa di accessibilità.
+
+## Master e tavole
+
+Gli SVG, la guida e i token sono i riferimenti di produzione. Le tavole generate con imagegen illustrano atmosfera e applicazioni; non sostituiscono geometrie, testi o valori colore esatti. Il master deriva dal concept scelto, ricostruito in curve vettoriali e poi reso più fluido per la piccola dimensione.
+
+I template di stampa hanno dimensioni nominali, senza abbondanze o profilo CMYK. Lo stampatore deve impostare profilo e abbondanze e verificare una prova fisica. I file non attestano la registrabilità del nome o del simbolo. L’app Fungaroli pubblicata non è stata modificata.
+
+
+## Palette 1.1
+
+La base è bosco/avorio. I quattro accenti possono convivere: uno domina la singola composizione e gli altri sostengono il ritmo. Sui colori accesi il testo usa inchiostro scuro; sui fondi chiari le etichette usano varianti “ink”. Gli stati di sistema conservano ruoli separati. I pulsanti principali sono polline, con varianti contestuali esplicite `tone-calendula`, `tone-fiordaliso`, `tone-germoglio`. Il marchio mantiene la stessa geometria.
+
+
+## Studio completo e prototipo
+
+- `Fronda-Identita-Design-System.pdf`: manuale di 26 pagine, A4 orizzontale.
+- `product.html`: prototipo navigabile desktop/mobile, con Uscite, Scopri e Taccuino; include una selezione reale di 12 schede, 15 zone, 3 guide e 47 voci del glossario.
+- `content.json`: selezione dei contenuti del repository, incorporata anche nel prototipo per evitare chiamate di rete ai dati.
+- `FONTI-PROGETTO.md`, `content-source.json`: ramo, commit, inventario, hash delle fonti e attribuzioni delle fotografie.
+- `assets/content/`: fotografie originali e base topografica provenienti dal repository, con attribuzioni e licenze.
+- `product.js`, `styles/product.css`: interazioni e impaginazione del prototipo; usano gli stessi token e componenti della guida.
+
+Aprire `index.html` o `product.html` dopo aver estratto l’intera cartella. Per una prova uniforme del salvataggio locale è preferibile servirla da un server statico e aprirla nel browser. Il prototipo non richiede account, non modifica il taccuino di Fungaroli e non si collega al meteo o alla comunità. Le pagine salvate sono solo su quel browser, nella chiave `fronda:studio:v11:notes`; l’esportazione JSON permette di conservarne una copia. Non è un servizio di backup o sincronizzazione.
+
+Il contenuto deriva dal commit `44f1420e5bc08474428e1049cc9ce550799e9bf0` del 15 ottobre 2026. La nuova navigazione segue l’handoff UX del progetto; le differenze rispetto alla shell esistente sono descritte nelle fonti e nel manuale. Gli stati non collegati a servizi reali sono dichiarati esplicitamente. L’app pubblicata e il repository originale non sono stati modificati.

@@ -1,0 +1,211 @@
+[
+  {
+    "author": "Holger Krisp",
+    "license": "CC BY 3.0",
+    "licenseUrl": null,
+    "source": "Wikimedia Commons",
+    "page": "https://commons.wikimedia.org/wiki/File:(Gemeine_Steinpilz)_Boletus_edulis.jpg",
+    "sourceImage": null,
+    "file": "assets/content/edulis.webp",
+    "sourceFile": "assets/species/edulis-ref-hd.webp",
+    "modified": false
+  },
+  {
+    "author": "autore su Commons",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": null,
+    "source": "Wikimedia Commons",
+    "page": "https://commons.wikimedia.org/wiki/File:Chanterelle_Cantharellus_cibarius.jpg",
+    "sourceImage": null,
+    "file": "assets/content/cibarius.webp",
+    "sourceFile": "assets/species/cibarius-ref-hd.webp",
+    "modified": false
+  },
+  {
+    "author": "Yaqui",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": null,
+    "source": "Wikimedia Commons",
+    "page": "https://commons.wikimedia.org/wiki/File:Oronges.jpg",
+    "sourceImage": null,
+    "file": "assets/content/caesarea.webp",
+    "sourceFile": "assets/species/caesarea-ref-hd.webp",
+    "modified": false
+  },
+  {
+    "author": "Chrumps",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": null,
+    "source": "Wikimedia Commons",
+    "page": "https://commons.wikimedia.org/wiki/File:Macrolepiota-procera.jpg",
+    "sourceImage": null,
+    "file": "assets/content/procera.webp",
+    "sourceFile": "assets/species/procera-ref-hd.webp",
+    "modified": false
+  },
+  {
+    "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "source": null,
+    "page": "https://dryades.units.it/Roma/index.php?id=298&procedure=taxon_page",
+    "sourceImage": "https://dryades.units.it/dryades/plants/foto/TSB68793.jpg",
+    "file": "assets/content/ortica.webp",
+    "sourceFile": "assets/plants/ortica-1.webp",
+    "modified": false
+  },
+  {
+    "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "source": null,
+    "page": "https://dryades.units.it/Roma/index.php?id=6152&procedure=taxon_page",
+    "sourceImage": "https://dryades.units.it/dryades/plants/foto/TSB30079.jpg",
+    "file": "assets/content/cicoria.webp",
+    "sourceFile": "assets/plants/cicoria-1.webp",
+    "modified": false
+  },
+  {
+    "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "source": null,
+    "page": "https://dryades.units.it/Roma/index.php?id=1972&procedure=taxon_page",
+    "sourceImage": "https://dryades.units.it/dryades/plants/foto/TSB30255jpg1669722706.jpg",
+    "file": "assets/content/rosa-canina.webp",
+    "sourceFile": "assets/plants/rosa-canina-1.webp",
+    "modified": false
+  },
+  {
+    "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "source": null,
+    "page": "https://dryades.units.it/Roma/index.php?id=3730&procedure=taxon_page",
+    "sourceImage": "https://dryades.units.it/dryades/plants/foto/TSB38854.jpg",
+    "file": "assets/content/corbezzolo.webp",
+    "sourceFile": "assets/plants/corbezzolo-1.webp",
+    "modified": false
+  },
+  {
+    "author": "Marco Mussita",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "source": "iNaturalist (research grade)",
+    "page": "https://www.inaturalist.org/observations/307003862",
+    "sourceImage": null,
+    "file": "assets/content/faggio.webp",
+    "sourceFile": "assets/species/tree-faggio-free1-hd.webp",
+    "modified": false
+  },
+  {
+    "author": "Gilles San Martin",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "source": "iNaturalist (research grade)",
+    "page": "https://www.inaturalist.org/observations/177041374",
+    "sourceImage": null,
+    "file": "assets/content/roverella.webp",
+    "sourceFile": "assets/species/tree-roverella-free1-hd.webp",
+    "modified": false
+  },
+  {
+    "author": "etrusko25",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "source": "iNaturalist (research grade)",
+    "page": "https://www.inaturalist.org/observations/137439329",
+    "sourceImage": null,
+    "file": "assets/content/cerro.webp",
+    "sourceFile": "assets/species/tree-cerro-free1-hd.webp",
+    "modified": false
+  },
+  {
+    "author": "Wolfgang Ahlmer",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "source": "iNaturalist (research grade)",
+    "page": "https://www.inaturalist.org/observations/190508845",
+    "sourceImage": null,
+    "file": "assets/content/castagno.webp",
+    "sourceFile": "assets/species/tree-castagno-free1-hd.webp",
+    "modified": false
+  },
+  {
+    "author": "Idéfix",
+    "license": "CC BY-SA 2.5 / CC BY-SA 3.0",
+    "licenseUrl": null,
+    "source": "Wikimedia Commons",
+    "page": "https://commons.wikimedia.org/wiki/File:SelladiLeonessa001.jpg",
+    "sourceImage": null,
+    "file": "assets/content/zona-vallonina.webp",
+    "sourceFile": "assets/zones/vallonina-hd.webp",
+    "modified": false
+  },
+  {
+    "author": "Li vioandronico2013",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": null,
+    "source": "Wikimedia Commons",
+    "page": "https://commons.wikimedia.org/wiki/File:Terminillo.JPG",
+    "sourceImage": null,
+    "file": "assets/content/zona-poggio-cantalice.webp",
+    "sourceFile": "assets/zones/poggio-cantalice-hd.webp",
+    "modified": false
+  },
+  {
+    "author": "Iacopo.rossini",
+    "license": "Pubblico dominio (PD-self)",
+    "licenseUrl": null,
+    "source": "Wikimedia Commons",
+    "page": "https://commons.wikimedia.org/wiki/File:Monte_Giano_DVX.JPG",
+    "sourceImage": null,
+    "file": "assets/content/zona-antrodoco.webp",
+    "sourceFile": "assets/zones/antrodoco-hd.webp",
+    "modified": false
+  },
+  {
+    "author": "Alessandro Blasi from Rieti, Italy",
+    "license": "CC BY 2.0",
+    "licenseUrl": null,
+    "source": "Wikimedia Commons",
+    "page": "https://commons.wikimedia.org/wiki/File:Lago_del_Salto%21%21_%287447648144%29.jpg",
+    "sourceImage": null,
+    "file": "assets/content/zona-cicolano.webp",
+    "sourceFile": "assets/zones/cicolano-hd.webp",
+    "modified": false
+  },
+  {
+    "author": "Sabina Trekking ASD",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": null,
+    "source": "Wikimedia Commons",
+    "page": "https://commons.wikimedia.org/wiki/File:Rascino.jpg",
+    "sourceImage": null,
+    "file": "assets/content/zona-rascino.webp",
+    "sourceFile": "assets/zones/rascino-hd.webp",
+    "modified": false
+  },
+  {
+    "author": "Christoph Strässler",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": null,
+    "source": "Wikimedia Commons",
+    "page": "https://commons.wikimedia.org/wiki/File%3ABeech_Forest_in_the_Sabina_Hills%2C_Latium%2C_Italy_-_52993979506.jpg",
+    "sourceImage": null,
+    "file": "assets/content/zona-tancia.webp",
+    "sourceFile": "assets/zones/tancia-hd.webp",
+    "modified": false
+  },
+  {
+    "author": "Mario1952",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": null,
+    "source": "Wikimedia Commons",
+    "page": "https://commons.wikimedia.org/wiki/File:Pizzo_di_Sevo.jpg",
+    "sourceImage": null,
+    "file": "assets/content/zona-laga.webp",
+    "sourceFile": "assets/zones/laga-hd.webp",
+    "modified": false
+  }
+]
