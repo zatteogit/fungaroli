@@ -1,0 +1,116 @@
+{
+  "checked": "2026-10-15",
+  "method": "Desk research on official product documentation and store listings; no installed-app usability or accuracy test.",
+  "apps": [
+    {
+      "name": "iNaturalist",
+      "category": "Naturalismo e comunità",
+      "evidence": "La nuova app iPhone presenta confronto fotografico e suggerimenti anche offline; a settembre 2026 Explore aggiunge filtri e ricerche salvate.",
+      "fronda": "Stato dell’identificazione, confronto e filtri riutilizzabili. Non chiamare “verificata” una semplice proposta automatica.",
+      "url": "https://www.inaturalist.org/blog/136472-check-out-the-improved-explore-page-in-the-inaturalist-iphone-app",
+      "source": "Explore · 23 settembre 2026",
+      "url2": "https://www.inaturalist.org/blog/108940-new-inaturalist-",
+      "source2": "Nuova app · 3 aprile 2025"
+    },
+    {
+      "name": "Seek",
+      "category": "Esplorazione immediata",
+      "evidence": "Avvio senza account, identificazione sul dispositivo, osservazioni private e piccole sfide di scoperta. È distinto da iNaturalist.",
+      "fronda": "Primo valore prima della registrazione. Salvare una nota personale deve rimanere semplice.",
+      "url": "https://help.inaturalist.org/en/support/solutions/articles/151000169914-what-is-the-difference-between-inaturalist-and-seek-by-inaturalist-",
+      "source": "Confronto ufficiale · agosto 2025",
+      "url2": null,
+      "source2": null
+    },
+    {
+      "name": "Pl@ntNet",
+      "category": "Riconoscimento botanico",
+      "evidence": "Un modello scaricabile permette identificazioni offline nell’app mobile; miniature regionali opzionali. Richiede un account per questa modalità.",
+      "fronda": "Mostrare cosa è stato scaricato e quali risultati sono prodotti offline. Separare disponibilità del catalogo e modello di riconoscimento.",
+      "url": "https://docs.plantnet.org/en/tutorials/install-the-offline-embedded-mode/",
+      "source": "Documentazione offline",
+      "url2": null,
+      "source2": null
+    },
+    {
+      "name": "Flora Incognita",
+      "category": "Apprendimento botanico",
+      "evidence": "Schede informative, lista delle osservazioni e mappa personale. App gratuita senza pubblicità, collegata a un progetto di ricerca.",
+      "fronda": "Rendere leggibili i caratteri e la storia delle osservazioni, oltre al nome. I limiti offline richiedono un test della versione attuale.",
+      "url": "https://apps.apple.com/it/app/flora-incognita/id1297860122",
+      "source": "Scheda italiana e cronologia versioni",
+      "url2": null,
+      "source2": null
+    },
+    {
+      "name": "Shroomify",
+      "category": "Funghi: confronto per caratteri",
+      "evidence": "La scheda iOS descrive scelta guidata dei caratteri, suggerimenti fotografici offline, stagionalità e logbook. I dataset dipendono dalla regione.",
+      "fronda": "Conservare un percorso per forma, cappello e superficie inferiore. Verificare copertura italiana e contenuti, senza importare dataset esteri alla cieca.",
+      "url": "https://apps.apple.com/gb/app/shroomify-mushroom-id/id1490594715",
+      "source": "Scheda ufficiale iOS",
+      "url2": null,
+      "source2": null
+    },
+    {
+      "name": "Mushroom Observer",
+      "category": "Documentazione micologica",
+      "evidence": "L’app Android consente di annotare foto nel campo e caricarle quando ritorna la connessione; la comunità contribuisce all’identificazione.",
+      "fronda": "Coda visibile e distinzione fra nota locale, caricata e discussa. È un benchmark di processo, non di ampiezza d’adozione.",
+      "url": "https://play.google.com/store/apps/details?id=org.mushroomobserver",
+      "source": "Scheda ufficiale Android",
+      "url2": null,
+      "source2": null
+    },
+    {
+      "name": "Fieldbook",
+      "category": "Taccuino naturalistico",
+      "evidence": "Su iPhone riunisce foto, note, memo vocali, GPS, mappe e raccolte. Le FAQ distinguono diario offline e identificazione AI con connessione.",
+      "fronda": "Concorrente concettualmente vicino. “Taccuino + riconoscimento” da solo non basta a differenziare Fronda.",
+      "url": "https://www.fieldbook-app.com/",
+      "source": "Sito e FAQ del prodotto",
+      "url2": null,
+      "source2": null
+    },
+    {
+      "name": "Picture Mushroom",
+      "category": "Identificazione fotografica",
+      "evidence": "La scheda prodotto propone confronto con specie simili, raccolta personale e luoghi di osservazione. È un riferimento commerciale verticale sui funghi.",
+      "fronda": "Studiare la rapidità del confronto e il ritorno alla raccolta. Le promesse d’accuratezza del produttore non sono una valutazione indipendente.",
+      "url": "https://play.google.com/store/apps/details?hl=en&id=com.glority.picturemushroom",
+      "source": "Scheda ufficiale Android",
+      "url2": null,
+      "source2": null
+    },
+    {
+      "name": "AllTrails",
+      "category": "Scoperta e preparazione dell’uscita",
+      "evidence": "Il rilascio 2025 include aree offline e punti d’interesse; Plus e Peak comprendono funzionalità a pagamento. Apple l’ha premiata nel 2023.",
+      "fronda": "Separare scoperta, preparazione e uso durante il cammino. Mostrare il perimetro di una zona scaricata.",
+      "url": "https://www.alltrails.com/press/alltrails-expands-membership-offering-with-alltrails-peak",
+      "source": "Annuncio ufficiale · maggio 2025",
+      "url2": "https://www.apple.com/newsroom/2023/11/apple-unveils-app-store-award-winners-the-best-apps-and-games-of-2023/",
+      "source2": "Premio Apple · 2023"
+    },
+    {
+      "name": "komoot",
+      "category": "Pianificazione e mappe",
+      "evidence": "Si possono scaricare itinerari o regioni per l’uso offline. L’accesso ai download regionali dipende dai contenuti sbloccati.",
+      "fronda": "Prima dell’uscita, riepilogo breve: percorso, dati disponibili, ultimo aggiornamento. Evitare ambiguità tra cache e download completo.",
+      "url": "https://support.komoot.com/hc/en-us/articles/360024969212-Region-not-available-for-download",
+      "source": "Supporto · aggiornato febbraio 2026",
+      "url2": null,
+      "source2": null
+    },
+    {
+      "name": "Merlin Bird ID",
+      "category": "Benchmark adiacente: osservazione",
+      "evidence": "My Offline Birds organizza pacchetti regionali scaricabili; Sound ID presenta suggerimenti da confrontare con suoni e dettagli.",
+      "fronda": "Preparazione per zona e passaggio dal suggerimento all’apprendimento. Utile come metodo, senza aggiungere ora il riconoscimento degli uccelli a Fronda.",
+      "url": "https://support.ebird.org/en/support/solutions/articles/48000966223-merlin-bird-packs",
+      "source": "Pacchetti offline",
+      "url2": "https://ebird.freshdesk.com/en/support/solutions/articles/48001185783-sound-id",
+      "source2": "Sound ID · suggerimenti e confronto"
+    }
+  ]
+}
