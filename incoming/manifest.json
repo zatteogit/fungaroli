@@ -18133,5 +18133,119 @@
     "prompt": "A transparent PNG sprite sheet, square1254x1254, invisible3x3cells418px each. Use reference1 for EXACT SMALL ICON SIZE, generous TRANSPARENT CELL MARGINS and row positions. Three rows: column1 CAP ONLY side view, column2 WHOLE MUSHROOM, column3 entirely EMPTY. Each separate icon centered in its own cell, at most60% of cell width AND height, at least18% alpha0 padding on EVERY cell edge. No drawn grid, background, shadows, ground, text, numbers or marks. Clean thick dark brown COMPLETE silhouette outline, flat few colors same as species icons. References2 onward show the approved base icons: preserve cap COLOR and all stems, rings, volvas, netting, scales and spots, change ONLY cap SHAPE and age-appropriate proportions. Each row's cap-only and whole must MATCH shape/color. Use EXACT reference cap shade; color labels are broad categories: 'rosso' may be dark red-BROWN. Never borrow anatomical traits or colors between rows. ROW1: laccaria-amethystina, base cap color violetto, target shape FLAT: almost horizontal, expanded cap. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"asciutta\",\"liscia\",\"squamosa\"],\"hymenophore\":[\"lamelle\"],\"hymenophore_color\":[\"violetto\"]}. ROW2: lactarius-deliciosus, base cap color arancio, target shape CONVEX: low rounded dome. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"asciutta\",\"viscida\"],\"hymenophore\":[\"lamelle\"],\"hymenophore_color\":[\"arancio\"]}. ROW3: lactarius-deterrimus, base cap color arancio, target shape CONVEX: low rounded dome. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":false,\"cap_surface\":null,\"hymenophore\":[\"lamelle\"],\"hymenophore_color\":[\"arancio\"]}. No new anatomical traits. Reference species icons are shape/color authorities except the explicit target cap shape. Cap-only must match whole cap. Last column empty. True alpha background.",
     "edits": [],
     "stato": "ok"
+  },
+  {
+    "file": "incoming/icone/forme-27.png",
+    "tipo": "illustrazione",
+    "soggetto": "lepiota-cristata",
+    "tessera": "cappello",
+    "cella": 0,
+    "variante": "forma:convesso",
+    "base": {
+      "forma": "ombrellato",
+      "colore": "bianco"
+    },
+    "modello": "image_gen (identificatore tecnico non esposto)",
+    "prompt": "A transparent PNG sprite sheet, square1254x1254, invisible3x3cells418px each. Use reference1 for EXACT SMALL ICON SIZE, generous TRANSPARENT CELL MARGINS and row positions. Three rows: column1 CAP ONLY side view, column2 WHOLE MUSHROOM, column3 entirely EMPTY. Each separate icon centered in its own cell, at most60% of cell width AND height, at least18% alpha0 padding on EVERY cell edge. No drawn grid, background, shadows, ground, text, numbers or marks. Clean thick dark brown COMPLETE silhouette outline, flat few colors same as species icons. References2 onward show the approved base icons: preserve cap COLOR and all stems, rings, volvas, netting, scales and spots, change ONLY cap SHAPE and age-appropriate proportions. Each row's cap-only and whole must MATCH shape/color. Use EXACT reference cap shade; color labels are broad categories: 'rosso' may be dark red-BROWN. Never borrow anatomical traits or colors between rows. ROW1: lepiota-cristata, base cap color bianco, target shape CONVEX: low rounded dome. Keep attached base icon anatomy; scientific constraints: {\"ring\":true,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"squamosa\",\"asciutta\",\"vellutata/feltrata\",\"liscia\"],\"hymenophore\":[\"lamelle\"],\"hymenophore_color\":[\"bianco\",\"crema\"]}. ROW2: lepiota-cristata, base cap color bianco, target shape FLAT: almost horizontal, expanded cap. Keep attached base icon anatomy; scientific constraints: {\"ring\":true,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"squamosa\",\"asciutta\",\"vellutata/feltrata\",\"liscia\"],\"hymenophore\":[\"lamelle\"],\"hymenophore_color\":[\"bianco\",\"crema\"]}. ROW3: marasmius-oreades, base cap color crema, target shape CONVEX: low rounded dome. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"liscia\"],\"hymenophore\":[\"lamelle\"],\"hymenophore_color\":[\"bianco\",\"crema\"]}. No new anatomical traits. Reference species icons are shape/color authorities except the explicit target cap shape. Cap-only must match whole cap. Last column empty. True alpha background.",
+    "edits": [
+      "Edit only these details, preserve all six icons, transparent canvas and empty third column. ROW1 LEFT cap-only: add pale cream radial gill lines on its visible underside matching row1 right, no blank smooth underside. ROW3 BOTH Marasmius caps: replace the current central pointed raised umbo with an evenly rounded low CONVEX dome, absolutely no central bump or point. Retain tan cap color, pale gills, slender ringless stem in row3 whole. Rows1 and2 whole and row2 left stay unchanged. No shadows.",
+      "Remove ALL gray translucent cast shadows and colored glow outside the six dark-brown icon outlines. Each icon must have clean crisp dark contour directly adjacent to fully transparent pixels. Preserve every drawing inside contours exactly including cap shape, gill lines, colors and stems. Do not add any shadow, halo, background, extra marks, text or grid. Keep six icons at same positions with true alpha background."
+    ],
+    "stato": "ok"
+  },
+  {
+    "file": "incoming/icone/forme-27.png",
+    "tipo": "illustrazione",
+    "soggetto": "lepiota-cristata",
+    "tessera": "gambo",
+    "cella": 1,
+    "variante": "forma:convesso",
+    "base": {
+      "forma": "ombrellato",
+      "colore": "bianco"
+    },
+    "modello": "image_gen (identificatore tecnico non esposto)",
+    "prompt": "A transparent PNG sprite sheet, square1254x1254, invisible3x3cells418px each. Use reference1 for EXACT SMALL ICON SIZE, generous TRANSPARENT CELL MARGINS and row positions. Three rows: column1 CAP ONLY side view, column2 WHOLE MUSHROOM, column3 entirely EMPTY. Each separate icon centered in its own cell, at most60% of cell width AND height, at least18% alpha0 padding on EVERY cell edge. No drawn grid, background, shadows, ground, text, numbers or marks. Clean thick dark brown COMPLETE silhouette outline, flat few colors same as species icons. References2 onward show the approved base icons: preserve cap COLOR and all stems, rings, volvas, netting, scales and spots, change ONLY cap SHAPE and age-appropriate proportions. Each row's cap-only and whole must MATCH shape/color. Use EXACT reference cap shade; color labels are broad categories: 'rosso' may be dark red-BROWN. Never borrow anatomical traits or colors between rows. ROW1: lepiota-cristata, base cap color bianco, target shape CONVEX: low rounded dome. Keep attached base icon anatomy; scientific constraints: {\"ring\":true,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"squamosa\",\"asciutta\",\"vellutata/feltrata\",\"liscia\"],\"hymenophore\":[\"lamelle\"],\"hymenophore_color\":[\"bianco\",\"crema\"]}. ROW2: lepiota-cristata, base cap color bianco, target shape FLAT: almost horizontal, expanded cap. Keep attached base icon anatomy; scientific constraints: {\"ring\":true,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"squamosa\",\"asciutta\",\"vellutata/feltrata\",\"liscia\"],\"hymenophore\":[\"lamelle\"],\"hymenophore_color\":[\"bianco\",\"crema\"]}. ROW3: marasmius-oreades, base cap color crema, target shape CONVEX: low rounded dome. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"liscia\"],\"hymenophore\":[\"lamelle\"],\"hymenophore_color\":[\"bianco\",\"crema\"]}. No new anatomical traits. Reference species icons are shape/color authorities except the explicit target cap shape. Cap-only must match whole cap. Last column empty. True alpha background.",
+    "edits": [
+      "Edit only these details, preserve all six icons, transparent canvas and empty third column. ROW1 LEFT cap-only: add pale cream radial gill lines on its visible underside matching row1 right, no blank smooth underside. ROW3 BOTH Marasmius caps: replace the current central pointed raised umbo with an evenly rounded low CONVEX dome, absolutely no central bump or point. Retain tan cap color, pale gills, slender ringless stem in row3 whole. Rows1 and2 whole and row2 left stay unchanged. No shadows.",
+      "Remove ALL gray translucent cast shadows and colored glow outside the six dark-brown icon outlines. Each icon must have clean crisp dark contour directly adjacent to fully transparent pixels. Preserve every drawing inside contours exactly including cap shape, gill lines, colors and stems. Do not add any shadow, halo, background, extra marks, text or grid. Keep six icons at same positions with true alpha background."
+    ],
+    "stato": "ok"
+  },
+  {
+    "file": "incoming/icone/forme-27.png",
+    "tipo": "illustrazione",
+    "soggetto": "lepiota-cristata",
+    "tessera": "cappello",
+    "cella": 3,
+    "variante": "forma:piano",
+    "base": {
+      "forma": "ombrellato",
+      "colore": "bianco"
+    },
+    "modello": "image_gen (identificatore tecnico non esposto)",
+    "prompt": "A transparent PNG sprite sheet, square1254x1254, invisible3x3cells418px each. Use reference1 for EXACT SMALL ICON SIZE, generous TRANSPARENT CELL MARGINS and row positions. Three rows: column1 CAP ONLY side view, column2 WHOLE MUSHROOM, column3 entirely EMPTY. Each separate icon centered in its own cell, at most60% of cell width AND height, at least18% alpha0 padding on EVERY cell edge. No drawn grid, background, shadows, ground, text, numbers or marks. Clean thick dark brown COMPLETE silhouette outline, flat few colors same as species icons. References2 onward show the approved base icons: preserve cap COLOR and all stems, rings, volvas, netting, scales and spots, change ONLY cap SHAPE and age-appropriate proportions. Each row's cap-only and whole must MATCH shape/color. Use EXACT reference cap shade; color labels are broad categories: 'rosso' may be dark red-BROWN. Never borrow anatomical traits or colors between rows. ROW1: lepiota-cristata, base cap color bianco, target shape CONVEX: low rounded dome. Keep attached base icon anatomy; scientific constraints: {\"ring\":true,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"squamosa\",\"asciutta\",\"vellutata/feltrata\",\"liscia\"],\"hymenophore\":[\"lamelle\"],\"hymenophore_color\":[\"bianco\",\"crema\"]}. ROW2: lepiota-cristata, base cap color bianco, target shape FLAT: almost horizontal, expanded cap. Keep attached base icon anatomy; scientific constraints: {\"ring\":true,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"squamosa\",\"asciutta\",\"vellutata/feltrata\",\"liscia\"],\"hymenophore\":[\"lamelle\"],\"hymenophore_color\":[\"bianco\",\"crema\"]}. ROW3: marasmius-oreades, base cap color crema, target shape CONVEX: low rounded dome. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"liscia\"],\"hymenophore\":[\"lamelle\"],\"hymenophore_color\":[\"bianco\",\"crema\"]}. No new anatomical traits. Reference species icons are shape/color authorities except the explicit target cap shape. Cap-only must match whole cap. Last column empty. True alpha background.",
+    "edits": [
+      "Edit only these details, preserve all six icons, transparent canvas and empty third column. ROW1 LEFT cap-only: add pale cream radial gill lines on its visible underside matching row1 right, no blank smooth underside. ROW3 BOTH Marasmius caps: replace the current central pointed raised umbo with an evenly rounded low CONVEX dome, absolutely no central bump or point. Retain tan cap color, pale gills, slender ringless stem in row3 whole. Rows1 and2 whole and row2 left stay unchanged. No shadows.",
+      "Remove ALL gray translucent cast shadows and colored glow outside the six dark-brown icon outlines. Each icon must have clean crisp dark contour directly adjacent to fully transparent pixels. Preserve every drawing inside contours exactly including cap shape, gill lines, colors and stems. Do not add any shadow, halo, background, extra marks, text or grid. Keep six icons at same positions with true alpha background."
+    ],
+    "stato": "ok"
+  },
+  {
+    "file": "incoming/icone/forme-27.png",
+    "tipo": "illustrazione",
+    "soggetto": "lepiota-cristata",
+    "tessera": "gambo",
+    "cella": 4,
+    "variante": "forma:piano",
+    "base": {
+      "forma": "ombrellato",
+      "colore": "bianco"
+    },
+    "modello": "image_gen (identificatore tecnico non esposto)",
+    "prompt": "A transparent PNG sprite sheet, square1254x1254, invisible3x3cells418px each. Use reference1 for EXACT SMALL ICON SIZE, generous TRANSPARENT CELL MARGINS and row positions. Three rows: column1 CAP ONLY side view, column2 WHOLE MUSHROOM, column3 entirely EMPTY. Each separate icon centered in its own cell, at most60% of cell width AND height, at least18% alpha0 padding on EVERY cell edge. No drawn grid, background, shadows, ground, text, numbers or marks. Clean thick dark brown COMPLETE silhouette outline, flat few colors same as species icons. References2 onward show the approved base icons: preserve cap COLOR and all stems, rings, volvas, netting, scales and spots, change ONLY cap SHAPE and age-appropriate proportions. Each row's cap-only and whole must MATCH shape/color. Use EXACT reference cap shade; color labels are broad categories: 'rosso' may be dark red-BROWN. Never borrow anatomical traits or colors between rows. ROW1: lepiota-cristata, base cap color bianco, target shape CONVEX: low rounded dome. Keep attached base icon anatomy; scientific constraints: {\"ring\":true,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"squamosa\",\"asciutta\",\"vellutata/feltrata\",\"liscia\"],\"hymenophore\":[\"lamelle\"],\"hymenophore_color\":[\"bianco\",\"crema\"]}. ROW2: lepiota-cristata, base cap color bianco, target shape FLAT: almost horizontal, expanded cap. Keep attached base icon anatomy; scientific constraints: {\"ring\":true,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"squamosa\",\"asciutta\",\"vellutata/feltrata\",\"liscia\"],\"hymenophore\":[\"lamelle\"],\"hymenophore_color\":[\"bianco\",\"crema\"]}. ROW3: marasmius-oreades, base cap color crema, target shape CONVEX: low rounded dome. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"liscia\"],\"hymenophore\":[\"lamelle\"],\"hymenophore_color\":[\"bianco\",\"crema\"]}. No new anatomical traits. Reference species icons are shape/color authorities except the explicit target cap shape. Cap-only must match whole cap. Last column empty. True alpha background.",
+    "edits": [
+      "Edit only these details, preserve all six icons, transparent canvas and empty third column. ROW1 LEFT cap-only: add pale cream radial gill lines on its visible underside matching row1 right, no blank smooth underside. ROW3 BOTH Marasmius caps: replace the current central pointed raised umbo with an evenly rounded low CONVEX dome, absolutely no central bump or point. Retain tan cap color, pale gills, slender ringless stem in row3 whole. Rows1 and2 whole and row2 left stay unchanged. No shadows.",
+      "Remove ALL gray translucent cast shadows and colored glow outside the six dark-brown icon outlines. Each icon must have clean crisp dark contour directly adjacent to fully transparent pixels. Preserve every drawing inside contours exactly including cap shape, gill lines, colors and stems. Do not add any shadow, halo, background, extra marks, text or grid. Keep six icons at same positions with true alpha background."
+    ],
+    "stato": "ok"
+  },
+  {
+    "file": "incoming/icone/forme-27.png",
+    "tipo": "illustrazione",
+    "soggetto": "marasmius-oreades",
+    "tessera": "cappello",
+    "cella": 6,
+    "variante": "forma:convesso",
+    "base": {
+      "forma": "ombrellato",
+      "colore": "crema"
+    },
+    "modello": "image_gen (identificatore tecnico non esposto)",
+    "prompt": "A transparent PNG sprite sheet, square1254x1254, invisible3x3cells418px each. Use reference1 for EXACT SMALL ICON SIZE, generous TRANSPARENT CELL MARGINS and row positions. Three rows: column1 CAP ONLY side view, column2 WHOLE MUSHROOM, column3 entirely EMPTY. Each separate icon centered in its own cell, at most60% of cell width AND height, at least18% alpha0 padding on EVERY cell edge. No drawn grid, background, shadows, ground, text, numbers or marks. Clean thick dark brown COMPLETE silhouette outline, flat few colors same as species icons. References2 onward show the approved base icons: preserve cap COLOR and all stems, rings, volvas, netting, scales and spots, change ONLY cap SHAPE and age-appropriate proportions. Each row's cap-only and whole must MATCH shape/color. Use EXACT reference cap shade; color labels are broad categories: 'rosso' may be dark red-BROWN. Never borrow anatomical traits or colors between rows. ROW1: lepiota-cristata, base cap color bianco, target shape CONVEX: low rounded dome. Keep attached base icon anatomy; scientific constraints: {\"ring\":true,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"squamosa\",\"asciutta\",\"vellutata/feltrata\",\"liscia\"],\"hymenophore\":[\"lamelle\"],\"hymenophore_color\":[\"bianco\",\"crema\"]}. ROW2: lepiota-cristata, base cap color bianco, target shape FLAT: almost horizontal, expanded cap. Keep attached base icon anatomy; scientific constraints: {\"ring\":true,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"squamosa\",\"asciutta\",\"vellutata/feltrata\",\"liscia\"],\"hymenophore\":[\"lamelle\"],\"hymenophore_color\":[\"bianco\",\"crema\"]}. ROW3: marasmius-oreades, base cap color crema, target shape CONVEX: low rounded dome. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"liscia\"],\"hymenophore\":[\"lamelle\"],\"hymenophore_color\":[\"bianco\",\"crema\"]}. No new anatomical traits. Reference species icons are shape/color authorities except the explicit target cap shape. Cap-only must match whole cap. Last column empty. True alpha background.",
+    "edits": [
+      "Edit only these details, preserve all six icons, transparent canvas and empty third column. ROW1 LEFT cap-only: add pale cream radial gill lines on its visible underside matching row1 right, no blank smooth underside. ROW3 BOTH Marasmius caps: replace the current central pointed raised umbo with an evenly rounded low CONVEX dome, absolutely no central bump or point. Retain tan cap color, pale gills, slender ringless stem in row3 whole. Rows1 and2 whole and row2 left stay unchanged. No shadows.",
+      "Remove ALL gray translucent cast shadows and colored glow outside the six dark-brown icon outlines. Each icon must have clean crisp dark contour directly adjacent to fully transparent pixels. Preserve every drawing inside contours exactly including cap shape, gill lines, colors and stems. Do not add any shadow, halo, background, extra marks, text or grid. Keep six icons at same positions with true alpha background."
+    ],
+    "stato": "ok"
+  },
+  {
+    "file": "incoming/icone/forme-27.png",
+    "tipo": "illustrazione",
+    "soggetto": "marasmius-oreades",
+    "tessera": "gambo",
+    "cella": 7,
+    "variante": "forma:convesso",
+    "base": {
+      "forma": "ombrellato",
+      "colore": "crema"
+    },
+    "modello": "image_gen (identificatore tecnico non esposto)",
+    "prompt": "A transparent PNG sprite sheet, square1254x1254, invisible3x3cells418px each. Use reference1 for EXACT SMALL ICON SIZE, generous TRANSPARENT CELL MARGINS and row positions. Three rows: column1 CAP ONLY side view, column2 WHOLE MUSHROOM, column3 entirely EMPTY. Each separate icon centered in its own cell, at most60% of cell width AND height, at least18% alpha0 padding on EVERY cell edge. No drawn grid, background, shadows, ground, text, numbers or marks. Clean thick dark brown COMPLETE silhouette outline, flat few colors same as species icons. References2 onward show the approved base icons: preserve cap COLOR and all stems, rings, volvas, netting, scales and spots, change ONLY cap SHAPE and age-appropriate proportions. Each row's cap-only and whole must MATCH shape/color. Use EXACT reference cap shade; color labels are broad categories: 'rosso' may be dark red-BROWN. Never borrow anatomical traits or colors between rows. ROW1: lepiota-cristata, base cap color bianco, target shape CONVEX: low rounded dome. Keep attached base icon anatomy; scientific constraints: {\"ring\":true,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"squamosa\",\"asciutta\",\"vellutata/feltrata\",\"liscia\"],\"hymenophore\":[\"lamelle\"],\"hymenophore_color\":[\"bianco\",\"crema\"]}. ROW2: lepiota-cristata, base cap color bianco, target shape FLAT: almost horizontal, expanded cap. Keep attached base icon anatomy; scientific constraints: {\"ring\":true,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"squamosa\",\"asciutta\",\"vellutata/feltrata\",\"liscia\"],\"hymenophore\":[\"lamelle\"],\"hymenophore_color\":[\"bianco\",\"crema\"]}. ROW3: marasmius-oreades, base cap color crema, target shape CONVEX: low rounded dome. Keep attached base icon anatomy; scientific constraints: {\"ring\":false,\"volva\":false,\"reticulum\":false,\"cap_surface\":[\"liscia\"],\"hymenophore\":[\"lamelle\"],\"hymenophore_color\":[\"bianco\",\"crema\"]}. No new anatomical traits. Reference species icons are shape/color authorities except the explicit target cap shape. Cap-only must match whole cap. Last column empty. True alpha background.",
+    "edits": [
+      "Edit only these details, preserve all six icons, transparent canvas and empty third column. ROW1 LEFT cap-only: add pale cream radial gill lines on its visible underside matching row1 right, no blank smooth underside. ROW3 BOTH Marasmius caps: replace the current central pointed raised umbo with an evenly rounded low CONVEX dome, absolutely no central bump or point. Retain tan cap color, pale gills, slender ringless stem in row3 whole. Rows1 and2 whole and row2 left stay unchanged. No shadows.",
+      "Remove ALL gray translucent cast shadows and colored glow outside the six dark-brown icon outlines. Each icon must have clean crisp dark contour directly adjacent to fully transparent pixels. Preserve every drawing inside contours exactly including cap shape, gill lines, colors and stems. Do not add any shadow, halo, background, extra marks, text or grid. Keep six icons at same positions with true alpha background."
+    ],
+    "stato": "ok"
   }
 ]
