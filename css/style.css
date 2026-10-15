@@ -3225,3 +3225,13 @@ div.tx-look-main { cursor: default; }
 .profile-entry:not(.is-user) svg { width: 19px; height: 19px; }
 /* foto arrivate dalla cache o sostituite a una già visibile: nessuna dissolvenza */
 img[data-image-state="ready"][data-image-fast] { animation: none; }
+/* riquadro avvisi chiuso: una riga per tipo, già parlante («2 sosia pericolosi») */
+.att-sum { gap: 8px; }
+.att-sum li { display: flex; grid-template-columns: none; align-items: baseline; gap: 0; font-size: 15.5px; font-weight: 600; }
+.att-sum li .att-it { display: inline; -webkit-line-clamp: unset; overflow: visible; font-weight: 600; }
+.att-sum li::before { content: ''; flex: none; width: 7px; height: 7px; margin-right: 10px; border-radius: 50%; background: color-mix(in srgb, var(--crit-ink) 45%, transparent); transform: translateY(-1px); }
+.att-sum li.crit::before { background: var(--crit); }
+.att-sum li.crit .att-it::before { content: none; }
+.attention .att-sum li .att-it::before { content: none !important; }
+.att-c:not(.att-static) .att-n { display: none; }
+.attention .att-sum { margin-top: 14px; }
