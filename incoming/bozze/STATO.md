@@ -370,3 +370,36 @@ Ordine aggiornato da Matteo il 15/10: completare prima tutte le varianti di colo
 |---|---|---|
 | guide/pioggia-e-crescita.webp | ok | 1600×900, sfondo carta opaco; stile dell'apertura leggere-il-bosco approvata da Matteo. Pioggia, strato umido, micelio chiaro e funghi emergenti; nessun testo o taglio. WebP qualità 85, 117568 byte (<400 KB), peso verificato con codice. Gocce nel terreno simboliche, nessuna scala temporale. |
 | guide/preparare-la-passeggiata.webp | ok | 1600×900, sfondo carta opaco; stile dell'apertura leggere-il-bosco approvata da Matteo. Zaino aperto con mappa piegata, bussola, borraccia e cesto di vimini vuoto; nessun testo o taglio. WebP qualità 85, 108300 byte (<400 KB), peso verificato con codice. Cartografia solo illustrativa. |
+
+
+## Infografica caesarea — 15 ottobre 2026
+
+| File | Stato | Verifica / motivo |
+|---|---|---|
+| infografiche/caesarea.webp | **non approvata** | 1600×2000, WebP qualità 85, 151814 byte (<400 KB). Checklist generale 8/9; specifica 5/5. Il cuore del gambo nell'uovo sezionato appare troppo giallo/crema anziché bianco. Tre tentativi totali (due generazioni e un edit dei margini), nessun quarto tentativo. Non usare come tavola approvata; da rivedere con un micologo. |
+
+### Checklist generale (README §6)
+
+- [x] **Confronto con le foto.** Sagoma, proporzioni, colori esterni e superficie confrontati con Oronges.jpg (Yaqui) e foto reale della falloide già nel repository; sezione giudicata contro brief e dati, non certificata da micologo.
+- [x] **Imenoforo.** Lamelle giallo oro nella caesarea, bianche nella falloide; attacco libero reso con spazio anulare nella vista da sotto.
+- [x] **Anello e volva.** Anelli pendenti, giallo nella caesarea e bianco nella falloide; volve bianche a sacco, spesse, libere dal gambo.
+- [ ] **Sezione.** NON CONFORME: il cuore del gambo nell'uovo di caesarea è troppo giallo/crema; deve essere bianco, con giallo limitato a lamelle, superficie del gambo e zona sotto la cuticola. Nessun viraggio blu/rosso. Motivo di non approvazione.
+- [x] **Sosia.** Falloide riconoscibile, cappello olivastro con fibrille, lamelle/anello/gambo/volva bianchi, interno dell'uovo bianco con sottile cuticola verde.
+- [x] **Nessuna invenzione.** Nessun gambo extra, cappello fuso, animale, attrezzo o pianta estranea; lettiera di quercia schematica.
+- [x] **Scala plausibile.** Adulti di ordine dimensionale comparabile; dettaglio di sezione e base schematicamente ingrandito, non misurabile.
+- [x] **Niente testo spurio.** Nessuna lettera, cifra, freccia, linea di richiamo, firma o filigrana visibile.
+- [x] **Spazi liberi.** Margini visivi >6%; blocco inferiore destro libero, nessun disegno tagliato.
+
+### Checklist della specie (caesarea §7)
+
+- [x] Lamelle, gambo e anello giallo oro.
+- [x] Volva bianca a sacco, spessa e libera.
+- [x] Uovo: cuticola arancio e lamelle gialle dentro volva bianca.
+- [x] Cappello arancio-rosso liscio, orlo striato, nessuna verruca.
+- [x] Falloide: cappello verde-oliva fibrilloso, resto bianco, uovo bianco.
+
+Errori tipici ricontrollati: nessuna volva a cercini/assente, nessuna lamella bianca sulla caesarea, nessuna verruca bianca sul cappello arancio, anello presente, nessuna lamella gialla nella falloide, uovo caesarea con strato arancio e lamelle gialle. La specifica sezione bianca/arancio/gialla passa; la checklist generale della carne bianca del gambo invece non passa, quindi prevale lo stato **non approvata**.
+
+Riferimenti: sei icone `assets/traits/caesarea-{cappello,sotto,gambo}.webp` e `assets/traits/amanita-phalloides-{cappello,sotto,gambo}.webp` su produzione; foto reale di Yaqui, *Oronges.jpg* (CC BY-SA 3.0), e `assets/species/amanita-phalloides-inat1.jpg` già nel repository, usate solo come riferimenti morfologici. Nessuna tavola Bresadola usata come stile. Riferimento scritto: brief, `species-id` e `species-traits`; per l'attacco delle lamelle prevale il brief (libere) sull'insieme largo libere/adnate dei traits. Nessuna contraddizione anatomica riscontrata tra icone e brief.
+
+Tecnica: output nativo del tool 1122×1402, ricampionato a 1600×2000 con LANCZOS; WebP qualità 85/method 6. SHA-256 `b814ff0435e75212e961099e525c9778d52a46bd279a221a7f22cb340b7ab5f1`. Peso e formato verificati con Pillow; controllo visivo ripetuto anche sul file WebP finale. Fase 4 saltata: nessun testo, numero, lettera o freccia. Modello integrato image_gen, identificatore non esposto. Prompt completi e tentativi registrati nel manifest. L'esito è una verifica illustrativa, non una validazione micologica.

@@ -15324,4 +15324,132 @@
   "qa": "Verifica visiva: zaino aperto, mappa piegata senza testo, bussola senza lettere, borraccia e cesto di vimini vuoto. Oggetti interi, contorno bruno, sfondo carta opaco. Dimensioni e peso verificati con Pillow.",
   "semplificazioni": "Cartografia illustrativa e bussola priva di lettere, intreccio del cesto semplificato; nessun percorso reale rappresentato."
 }
+,
+  {
+    "file": "incoming/infografiche/caesarea.webp",
+    "tipo": "infografica",
+    "soggetto": "caesarea",
+    "modello": "image_gen (modello integrato, identificatore tecnico non esposto)",
+    "prompt": "USE: One illustrated plate for a mushroom-identification infographic in a foraging-safety app for central Italy (province of Rieti). Audience: amateur foragers viewing it on a phone. Goal: show the features that separate Amanita caesarea (ovolo buono) from the dangerous look-alike Amanita phalloides. Labels, arrows and all text will be added later in a layout program, so the image itself must contain no text.\n\nREFERENCE IMAGES: Image 1 is a contact sheet of six APPROVED trait icons: top row caesarea cap, gills, whole stem; bottom row phalloides cap, gills, whole stem. This is the ONLY STYLE reference: reproduce those clean dark-brown outlines, simple flat warm colors and friendly precise icon drawing, with more anatomical detail at large size. Image 2 is the real caesarea photo by Yaqui, morphology reference ONLY. Image 3 is the real phalloides photo, morphology reference ONLY. Do not copy photographic compositions. The written scientific brief is the authority for anatomy. In the caesarea stem cross-section, core flesh stays WHITE (no staining); golden yellow is gill tissue, stem outer surface and ring, and pale yellow immediately below cap cuticle.\n\nCANVAS: Exactly 1600×2000 pixels, vertical 4:5. Warm ivory paper background, uniform and slightly textured. Soft, even daylight from the upper left, faint contact shadows only. Keep an empty margin of about 6% on every side, and leave the bottom-right block (about 38% of the width x 24% of the height) completely empty for a text box.\n\nLAYOUT (separate vignettes floating on the paper, no frames, no divider lines):\nA. Top, about half of the height: an adult Amanita caesarea at three-quarter view on dry oak and chestnut leaf litter, with a half-open young specimen beside it just breaking out of its white egg. The adult cap is about 14 cm across, flat-convex, smooth and glossy, vivid orange-red becoming more yellow toward the finely striated margin. Gills crowded, free, golden yellow. Stem slender and cylindrical, yellow, with a large, pendulous, membranous yellow ring. At the base, a large, thick, white, sac-like membranous volva, free from the stem.\nB. Middle left: a longitudinal section of a closed egg: a thick white outer volva enclosing an orange cap layer, golden-yellow gills and a yellow stem inside, so the cut shows orange and yellow inside white.\nC. Middle right: a close-up from below of the crowded, free, golden-yellow gills and the underside of the yellow ring.\nD. Below B and C, small: the stem base lifted from the soil: a white, thick, sac-like volva standing loose around the stem like a cup, with a little earth.\nE. Bottom left, about one quarter of the area, slightly apart from the rest: an Amanita phalloides beside a cut egg of the same species. The adult has a smooth olive-green to yellowish-green cap with fine radial fibrils, white gills, a white stem with faint greenish zigzag bands, a white ring and a white sac-like volva; the cut egg is white inside with only a thin greenish cap skin.\n\nSTYLE: EXACTLY match the approved flat trait icons in Image 1. Few flat colors, dark warm brown bold rounded outlines, opaque white volvas distinct from warm pale ivory paper. Flat orange-red caps, golden-yellow gills, yellow stems and rings; olive-green on the phalloides cap only, white phalloides gills/ring/stem/volva. No watercolor, no pencil shading, no Bresadola painting, no photorealism, no gradients, no texture shading. Scientific anatomy remains accurate. Clear white flesh in cut stem cores. Add fine short striations on caesarea cap margin and subtle radial fibrils on phalloides cap.\n\nMUST BE CLEARLY VISIBLE:\n- gills, stem and ring of Amanita caesarea golden yellow\n- the volva of A. caesarea white, large, thick and sac-like\n- the egg section of A. caesarea orange and yellow inside white\n- an orange cap with a striated margin\n- the look-alike with white gills, a white ring, a white volva and a white egg interior\n\nDO NOT INCLUDE: any text, letters, numbers, labels, arrows, leader lines, scale bars, signature or watermark; frames or panel borders; white gills or a white stem on the caesarea; white warts on a red cap (that is Amanita muscaria); a volva reduced to rings or missing; a yellow volva; yellow gills on the phalloides; extra, fused or duplicated stems or caps; insects, larvae, hands or tools; fantasy colors, glossy CGI or 3D-render look.\n\nIMPORTANT COMPOSITION: All silhouettes wholly contained; 6% empty outer margin. Bottom-right rectangle x=62%-100%, y=76%-100% absolutely blank paper. Vignettes isolated without any boxes or boundary lines. Caesarea egg section middle left: white core flesh with orange cap skin and clearly distinct golden gill zone inside thick white egg wrapper. Never show an egg containing a miniature fully expanded umbrella mushroom. The developing mushroom fits closely inside the egg. Phalloides egg section similar natural immature development, entirely WHITE flesh and gills, only a thin olive cap skin. White gills must be visible under the adult phalloides cap.",
+    "prompt_variante_2": "USE: One illustrated plate for a mushroom-identification infographic in a foraging-safety app for central Italy (province of Rieti). Audience: amateur foragers viewing it on a phone. Goal: show the features that separate Amanita caesarea (ovolo buono) from the dangerous look-alike Amanita phalloides. Labels, arrows and all text will be added later in a layout program, so the image itself must contain no text.\n\nREFERENCE IMAGES: Image 1 is a contact sheet of six APPROVED trait icons: top row caesarea cap, gills, whole stem; bottom row phalloides cap, gills, whole stem. This is the ONLY STYLE reference: reproduce those clean dark-brown outlines, simple flat warm colors and friendly precise icon drawing, with more anatomical detail at large size. Image 2 is the real caesarea photo by Yaqui, morphology reference ONLY. Image 3 is the real phalloides photo, morphology reference ONLY. Do not copy photographic compositions. The written scientific brief is the authority for anatomy. In the caesarea stem cross-section, core flesh stays WHITE (no staining); golden yellow is gill tissue, stem outer surface and ring, and pale yellow immediately below cap cuticle.\n\nCANVAS: Exactly 1600×2000 pixels, vertical 4:5. Warm ivory paper background, uniform and slightly textured. Soft, even daylight from the upper left, faint contact shadows only. Keep an empty margin of about 6% on every side, and leave the bottom-right block (about 38% of the width x 24% of the height) completely empty for a text box.\n\nLAYOUT (separate vignettes floating on the paper, no frames, no divider lines):\nA. Top, about half of the height: an adult Amanita caesarea at three-quarter view on dry oak and chestnut leaf litter, with a half-open young specimen beside it just breaking out of its white egg. The adult cap is about 14 cm across, flat-convex, smooth and glossy, vivid orange-red becoming more yellow toward the finely striated margin. Gills crowded, free, golden yellow. Stem slender and cylindrical, yellow, with a large, pendulous, membranous yellow ring. At the base, a large, thick, white, sac-like membranous volva, free from the stem.\nB. Middle left: a longitudinal section of a closed egg: a thick white outer volva enclosing an orange cap layer, golden-yellow gills and a yellow stem inside, so the cut shows orange and yellow inside white.\nC. Middle right: a close-up from below of the crowded, free, golden-yellow gills and the underside of the yellow ring.\nD. Below B and C, small: the stem base lifted from the soil: a white, thick, sac-like volva standing loose around the stem like a cup, with a little earth.\nE. Bottom left, about one quarter of the area, slightly apart from the rest: an Amanita phalloides beside a cut egg of the same species. The adult has a smooth olive-green to yellowish-green cap with fine radial fibrils, white gills, a white stem with faint greenish zigzag bands, a white ring and a white sac-like volva; the cut egg is white inside with only a thin greenish cap skin.\n\nSTYLE: EXACTLY match the approved flat trait icons in Image 1. Few flat colors, dark warm brown bold rounded outlines, opaque white volvas distinct from warm pale ivory paper. Flat orange-red caps, golden-yellow gills, yellow stems and rings; olive-green on the phalloides cap only, white phalloides gills/ring/stem/volva. No watercolor, no pencil shading, no Bresadola painting, no photorealism, no gradients, no texture shading. Scientific anatomy remains accurate. Clear white flesh in cut stem cores. Add fine short striations on caesarea cap margin and subtle radial fibrils on phalloides cap.\n\nMUST BE CLEARLY VISIBLE:\n- gills, stem and ring of Amanita caesarea golden yellow\n- the volva of A. caesarea white, large, thick and sac-like\n- the egg section of A. caesarea orange and yellow inside white\n- an orange cap with a striated margin\n- the look-alike with white gills, a white ring, a white volva and a white egg interior\n\nDO NOT INCLUDE: any text, letters, numbers, labels, arrows, leader lines, scale bars, signature or watermark; frames or panel borders; white gills or a white stem on the caesarea; white warts on a red cap (that is Amanita muscaria); a volva reduced to rings or missing; a yellow volva; yellow gills on the phalloides; extra, fused or duplicated stems or caps; insects, larvae, hands or tools; fantasy colors, glossy CGI or 3D-render look.\n\nIMPORTANT COMPOSITION: All silhouettes wholly contained; 6% empty outer margin. Bottom-right rectangle x=62%-100%, y=76%-100% absolutely blank paper. Vignettes isolated without any boxes or boundary lines. Caesarea egg section middle left: white core flesh with orange cap skin and clearly distinct golden gill zone inside thick white egg wrapper. Never show an egg containing a miniature fully expanded umbrella mushroom. The developing mushroom fits closely inside the egg. Phalloides egg section similar natural immature development, entirely WHITE flesh and gills, only a thin olive cap skin. White gills must be visible under the adult phalloides cap.\nVARIANT 2: Draw more simply and AIRIER. Outer 8% of canvas MUST be blank pale ivory, including top and bottom. Main adult cap must not touch top margin: uppermost cap pixel at 8% height. Every leaf too must stay inside safe rectangle x=8%-92%, y=8%-92%. Substantially reduce leaf litter to 4-6 simple flat oak/chestnut leaves under top pair only. The isolated base is small BELOW the middle two vignettes, not a third large panel. No leaves under isolated detail views or phalloides. All flat colors with no grain, no dotted soil texture, no hatch shading. Precise simplified dark brown linework. A thin clean blank annular space between caesarea gills inner ends and stem in underside view must visibly show FREE gill attachment. White cut stem core inside egg, golden gill tissue. Keep bottom-right block empty.",
+    "prompt_edit_3": "Use case: scientific-educational; image 1 is the edit target, image 2 is the approved trait-icon style reference only. Change ONLY the spacing and overall illustration scale in image 1: scale the ENTIRE collection of drawings uniformly to 88% of its current size, centered on the same warm ivory canvas, to obtain a completely blank margin of at least 7% on all FOUR edges. Preserve every specimen, anatomical feature, color, free gill attachment, clean white cut flesh inside eggs, cap striations and volva, the same relative positions of ALL drawings, same precise warm dark-brown outlines and flat colors, same blank bottom-right block. No cropping, no new objects. The topmost orange cap must start clearly below the top edge, and both phalloides bases must end clearly above the bottom edge. No text, letters, numbers, labels, arrows, symbols, watermark, frames or divider lines. Output exactly 1600x2000 pixels, opaque pale ivory paper.",
+    "stato": "non approvata",
+    "motivo": "Cuore del gambo nella sezione dell'uovo troppo giallo/crema anziché bianco (checklist generale: Sezione). Dopo 3 uscite generative, consegnata senza forzare l'approvazione.",
+    "fonti_dati": [
+      "docs/handoff-immagini-glossario-guide.md:parte C",
+      "docs/infografiche/ISTRUZIONI-GPT.md",
+      "docs/infografiche/README.md:6",
+      "docs/infografiche/caesarea.md:2,7",
+      "docs/infografiche/prompt-gpt.md:caesarea",
+      "data/species-id.json:species.caesarea",
+      "data/species-traits.json:taxa.caesarea,amanita-phalloides"
+    ],
+    "riferimenti_stile": [
+      "assets/traits/amanita-phalloides-cappello.webp",
+      "assets/traits/amanita-phalloides-gambo.webp",
+      "assets/traits/amanita-phalloides-sotto.webp",
+      "assets/traits/caesarea-cappello.webp",
+      "assets/traits/caesarea-gambo.webp",
+      "assets/traits/caesarea-sotto.webp"
+    ],
+    "riferimenti_fotografici": [
+      {
+        "autore": "Yaqui",
+        "url": "https://commons.wikimedia.org/wiki/File:Oronges.jpg",
+        "licenza": "CC BY-SA 3.0",
+        "uso": "morfologia, riferimento allegato, non base fotografica da modificare"
+      },
+      {
+        "url": "assets/species/amanita-phalloides-inat1.jpg",
+        "uso": "morfologia, riferimento allegato, non base fotografica da modificare; metadati nel repository"
+      }
+    ],
+    "larghezza": 1600,
+    "altezza": 2000,
+    "dimensioni_native": [
+      1122,
+      1402
+    ],
+    "compressione": "WebP qualità 85, method 6; ricampionamento LANCZOS a 1600×2000",
+    "peso_bytes": 151814,
+    "sha256": "b814ff0435e75212e961099e525c9778d52a46bd279a221a7f22cb340b7ab5f1",
+    "caricato": true,
+    "qa": {
+      "generale": [
+        [
+          "Confronto con le foto",
+          "x",
+          "Sagoma, proporzioni, colori esterni e superficie confrontati con Oronges.jpg (Yaqui) e foto reale della falloide già nel repository; sezione giudicata contro brief e dati, non certificata da micologo."
+        ],
+        [
+          "Imenoforo",
+          "x",
+          "Lamelle giallo oro nella caesarea, bianche nella falloide; attacco libero reso con spazio anulare nella vista da sotto."
+        ],
+        [
+          "Anello e volva",
+          "x",
+          "Anelli pendenti, giallo nella caesarea e bianco nella falloide; volve bianche a sacco, spesse, libere dal gambo."
+        ],
+        [
+          "Sezione",
+          " ",
+          "NON CONFORME: il cuore del gambo nell'uovo di caesarea è troppo giallo/crema; deve essere bianco, con giallo limitato a lamelle, superficie del gambo e zona sotto la cuticola. Nessun viraggio blu/rosso. Motivo di non approvazione."
+        ],
+        [
+          "Sosia",
+          "x",
+          "Falloide riconoscibile, cappello olivastro con fibrille, lamelle/anello/gambo/volva bianchi, interno dell'uovo bianco con sottile cuticola verde."
+        ],
+        [
+          "Nessuna invenzione",
+          "x",
+          "Nessun gambo extra, cappello fuso, animale, attrezzo o pianta estranea; lettiera di quercia schematica."
+        ],
+        [
+          "Scala plausibile",
+          "x",
+          "Adulti di ordine dimensionale comparabile; dettaglio di sezione e base schematicamente ingrandito, non misurabile."
+        ],
+        [
+          "Niente testo spurio",
+          "x",
+          "Nessuna lettera, cifra, freccia, linea di richiamo, firma o filigrana visibile."
+        ],
+        [
+          "Spazi liberi",
+          "x",
+          "Margini visivi >6%; blocco inferiore destro libero, nessun disegno tagliato."
+        ]
+      ],
+      "specifica": [
+        [
+          "Lamelle, gambo e anello giallo oro",
+          "x"
+        ],
+        [
+          "Volva bianca a sacco, spessa e libera",
+          "x"
+        ],
+        [
+          "Uovo: cuticola arancio e lamelle gialle dentro volva bianca",
+          "x"
+        ],
+        [
+          "Cappello arancio-rosso liscio, orlo striato, nessuna verruca",
+          "x"
+        ],
+        [
+          "Falloide: cappello verde-oliva fibrilloso, resto bianco, uovo bianco",
+          "x"
+        ]
+      ],
+      "errori_tipici": "Nessuna volva assente/a cercini, lamella bianca sulla caesarea, verruca da muscaria, gambo senza anello da crocea, lamella gialla sulla falloide o uovo caesarea tutto bianco. Resta la carne del gambo troppo gialla nella sezione.",
+      "tentativi": 3,
+      "varianti_nuove": 2,
+      "edit_mirati": 1,
+      "fase4": "saltata, come richiesto"
+    },
+    "credit": "Illustrazione IA (image_gen integrato); stile: icone dei caratteri dell'app; foto morfologiche: Yaqui (CC BY-SA 3.0) e falloide dal repository. Non approvata; da rivedere con un micologo."
+  }
 ]
