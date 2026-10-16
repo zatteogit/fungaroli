@@ -260,6 +260,8 @@ export function collectTextItems({ root = 'body', minImg = 80 } = {}) {
     let bgSolid = base.slice(0, 3);
     for (const l of layers.reverse()) bgSolid = blendIn(l.c, bgSolid);
     if (filtered && !complex) complex = { el: filtered, why: 'filtro CSS' };
+    // La selezione della barra è un fratello posizionato sotto il link: si misura il fondo reale.
+    if (el.closest('.tabbar a[aria-current="page"]') && document.querySelector('.tab-pill')) complex = {el: el.closest('.tabbar'), why: 'selezione sovrapposta'};
     const host = photo ? hostId(photo.closest('.cover, .phero, .tile, .sp-card, .portrait') || photo) : complex ? hostId(complex.el) : null;
     items.push({
       id, text: g.text.replace(/\s+/g, ' ').trim().slice(0, 80), where: describe(el), field: g.field || null,

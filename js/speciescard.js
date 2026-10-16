@@ -99,7 +99,7 @@ function kitchen(id) {
   ].filter(Boolean);
   const srcs = [...(p?.sources || []), ...must.flatMap((x) => x.sources || []), ...(c?.uses || []).flatMap((u) => u.sources || [])].filter((x, i, a) => x?.url && a.findIndex((y) => y.url === x.url) === i);
   return `<section class="kitchen" aria-labelledby="k-h-${id}">
-    <h3 id="k-h-${id}">In cucina</h3><p class="small muted">Indicazioni per la specie, dopo il controllo del raccolto all’Ispettorato micologico. Questa scheda non identifica l’esemplare.</p>
+    <h3 id="k-h-${id}">In cucina</h3><p class="small muted">Solo dopo il controllo del raccolto all’Ispettorato micologico.</p>
     ${p ? `<p class="k-raw"><span class="k-badge${p.raw === 'mai crudo' ? (p.raw_level === 'lieve' ? ' mild' : ' never') : ''}">${p.raw === 'mai crudo' ? (p.raw_level === 'lieve' ? 'Leggermente tossico crudo' : 'Tossico crudo') : 'Solo cotto'}</span>${esc(p.raw_why || '')}</p>` : ''}
     ${must.length ? `<p class="k-h">Obbligatorio</p><ol class="k-steps k-must">${must.map(step).join('')}</ol>` : ''}
     ${p?.discard ? `<p class="k-line"><b>Parti da rimuovere nella preparazione:</b> ${esc(p.discard)}</p>` : ''}
@@ -159,13 +159,13 @@ function attention(id, warn) {
 }
 function checks(id) {
   const c = TRAITS[id]?.check_before_picking || [];
-  return c.length ? `<p class="small muted checks-tip">Caratteri descritti per la specie: confrontarli non identifica un esemplare né ne certifica la commestibilità.</p><ol class="keys" data-glossary="Funghi">${c.map((x) => `<li><span class="key-text">${esc(x)}</span></li>`).join('')}</ol>` : '';
+  return c.length ? `<details class="sec character-details"><summary>Cosa controllare da vicino</summary><div class="sec-body"><ol class="keys" data-glossary="Funghi">${c.map((x) => `<li><span class="key-text">${esc(x)}</span></li>`).join('')}</ol></div></details>` : '';
 }
 function whereToLook(id) {
   const w = TRAITS[id]?.where_to_look;
   if (!w) return '';
   return `<h3>Dove guardare</h3><p data-glossary="Funghi">${linkTrees(w.summary || '')}</p>
-    ${w.tips?.length ? `<ul class="reasons" data-glossary="Funghi">${w.tips.map((t) => `<li>${linkTrees(t)}</li>`).join('')}</ul>` : ''}
+    ${w.tips?.length ? `<details class="sec"><summary>Indizi nell’ambiente</summary><div class="sec-body"><ul class="reasons" data-glossary="Funghi">${w.tips.map((t) => `<li>${linkTrees(t)}</li>`).join('')}</ul></div></details>` : ''}
     ${w.trees?.length ? `<p class="tree-chips">${w.trees.map((t) => { const h = linkTrees(t); return h.includes('<a') ? h : `<span class="tree-link">${h}</span>`; }).join(' ')}</p>` : ''}`;
 }
 export const whereSummary = (id) => TRAITS[id]?.where_to_look?.summary || '';
@@ -226,7 +226,7 @@ export function renderSpeciesDetail(body, id) {
         : `<p class="small muted">${esc(provenanceText(model))}</p>`}<p class="small muted">${esc(model.name)} · ${esc(model.author)} · ${esc(model.license)}${model.provenance_note ? ` · ${esc(String(model.provenance_note).replace(/\.\s*$/, ''))}` : ''} · <a href="${esc(model.page)}" target="_blank" rel="noopener">apri su Sketchfab</a></p>`) : ''}
       ${sec('Fonti e crediti delle foto', `${sourceRows(d.sources)}${credits.length ? `<p class="src-h">Fotografie</p>${photoRows(credits)}` : ''}`)}
     </div>
-    <p class="small muted sp-foot">${esc(FOOTER || 'Scheda di supporto: non sostituisce il controllo dell\'Ispettorato Micologico ASL. Nel dubbio non si raccoglie e non si mangia.')} <a href="#/info">Emergenza e note legali</a></p>
+    <details class="context-note sp-foot species-safety"><summary>Prima del consumo: controllo micologico ASL</summary><p>${esc(FOOTER || 'Foto e descrizioni non identificano un esemplare. Fai controllare il raccolto all’Ispettorato micologico ASL: per i privati è gratuito.')} <a href="#/info">Regole ed emergenze</a></p></details>
     </div>`;
   body.querySelector('.sp-3d button')?.addEventListener('click', (e) => {
     const box = e.target.closest('.sp-3d');

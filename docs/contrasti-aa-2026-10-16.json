@@ -1,0 +1,2998 @@
+{
+  "date": "2026-10-16",
+  "source": "Local Worker; local content and simulated forecast/account reads",
+  "text": {
+    "measurements": 37948,
+    "contexts": [
+      {
+        "view": "alberi",
+        "width": 320,
+        "theme": "dark",
+        "measurements": 94,
+        "exempt": 1,
+        "below": 0
+      },
+      {
+        "view": "alberi",
+        "width": 320,
+        "theme": "light",
+        "measurements": 94,
+        "exempt": 1,
+        "below": 0
+      },
+      {
+        "view": "alberi",
+        "width": 390,
+        "theme": "dark",
+        "measurements": 95,
+        "exempt": 1,
+        "below": 0
+      },
+      {
+        "view": "alberi",
+        "width": 390,
+        "theme": "light",
+        "measurements": 95,
+        "exempt": 1,
+        "below": 0
+      },
+      {
+        "view": "alberi",
+        "width": 768,
+        "theme": "dark",
+        "measurements": 95,
+        "exempt": 1,
+        "below": 0
+      },
+      {
+        "view": "alberi",
+        "width": 768,
+        "theme": "light",
+        "measurements": 95,
+        "exempt": 1,
+        "below": 0
+      },
+      {
+        "view": "alberi",
+        "width": 1280,
+        "theme": "dark",
+        "measurements": 99,
+        "exempt": 1,
+        "below": 0
+      },
+      {
+        "view": "alberi",
+        "width": 1280,
+        "theme": "light",
+        "measurements": 99,
+        "exempt": 1,
+        "below": 0
+      },
+      {
+        "view": "albero",
+        "width": 320,
+        "theme": "dark",
+        "measurements": 131,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "albero",
+        "width": 320,
+        "theme": "light",
+        "measurements": 131,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "albero",
+        "width": 390,
+        "theme": "dark",
+        "measurements": 131,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "albero",
+        "width": 390,
+        "theme": "light",
+        "measurements": 131,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "albero",
+        "width": 768,
+        "theme": "dark",
+        "measurements": 131,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "albero",
+        "width": 768,
+        "theme": "light",
+        "measurements": 131,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "albero",
+        "width": 1280,
+        "theme": "dark",
+        "measurements": 135,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "albero",
+        "width": 1280,
+        "theme": "light",
+        "measurements": 135,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "appunto",
+        "width": 320,
+        "theme": "dark",
+        "measurements": 12,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "appunto",
+        "width": 320,
+        "theme": "light",
+        "measurements": 12,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "appunto",
+        "width": 390,
+        "theme": "dark",
+        "measurements": 12,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "appunto",
+        "width": 390,
+        "theme": "light",
+        "measurements": 12,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "appunto",
+        "width": 768,
+        "theme": "dark",
+        "measurements": 12,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "appunto",
+        "width": 768,
+        "theme": "light",
+        "measurements": 12,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "appunto",
+        "width": 1280,
+        "theme": "dark",
+        "measurements": 12,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "appunto",
+        "width": 1280,
+        "theme": "light",
+        "measurements": 12,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "avvisi",
+        "width": 320,
+        "theme": "dark",
+        "measurements": 9,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "avvisi",
+        "width": 320,
+        "theme": "light",
+        "measurements": 9,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "avvisi",
+        "width": 390,
+        "theme": "dark",
+        "measurements": 9,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "avvisi",
+        "width": 390,
+        "theme": "light",
+        "measurements": 9,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "avvisi",
+        "width": 768,
+        "theme": "dark",
+        "measurements": 9,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "avvisi",
+        "width": 768,
+        "theme": "light",
+        "measurements": 9,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "avvisi",
+        "width": 1280,
+        "theme": "dark",
+        "measurements": 9,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "avvisi",
+        "width": 1280,
+        "theme": "light",
+        "measurements": 9,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "confronto",
+        "width": 320,
+        "theme": "dark",
+        "measurements": 320,
+        "exempt": 5,
+        "below": 0
+      },
+      {
+        "view": "confronto",
+        "width": 320,
+        "theme": "light",
+        "measurements": 320,
+        "exempt": 5,
+        "below": 0
+      },
+      {
+        "view": "confronto",
+        "width": 390,
+        "theme": "dark",
+        "measurements": 320,
+        "exempt": 5,
+        "below": 0
+      },
+      {
+        "view": "confronto",
+        "width": 390,
+        "theme": "light",
+        "measurements": 320,
+        "exempt": 5,
+        "below": 0
+      },
+      {
+        "view": "confronto",
+        "width": 768,
+        "theme": "dark",
+        "measurements": 320,
+        "exempt": 5,
+        "below": 0
+      },
+      {
+        "view": "confronto",
+        "width": 768,
+        "theme": "light",
+        "measurements": 320,
+        "exempt": 5,
+        "below": 0
+      },
+      {
+        "view": "confronto",
+        "width": 1280,
+        "theme": "dark",
+        "measurements": 324,
+        "exempt": 5,
+        "below": 0
+      },
+      {
+        "view": "confronto",
+        "width": 1280,
+        "theme": "light",
+        "measurements": 324,
+        "exempt": 5,
+        "below": 0
+      },
+      {
+        "view": "filtri-caratteri",
+        "width": 320,
+        "theme": "dark",
+        "measurements": 228,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "filtri-caratteri",
+        "width": 320,
+        "theme": "light",
+        "measurements": 228,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "filtri-caratteri",
+        "width": 390,
+        "theme": "dark",
+        "measurements": 228,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "filtri-caratteri",
+        "width": 390,
+        "theme": "light",
+        "measurements": 228,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "filtri-caratteri",
+        "width": 768,
+        "theme": "dark",
+        "measurements": 228,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "filtri-caratteri",
+        "width": 768,
+        "theme": "light",
+        "measurements": 228,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "filtri-caratteri",
+        "width": 1280,
+        "theme": "dark",
+        "measurements": 228,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "filtri-caratteri",
+        "width": 1280,
+        "theme": "light",
+        "measurements": 228,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "filtri-home",
+        "width": 320,
+        "theme": "dark",
+        "measurements": 28,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "filtri-home",
+        "width": 320,
+        "theme": "light",
+        "measurements": 28,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "filtri-home",
+        "width": 390,
+        "theme": "dark",
+        "measurements": 28,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "filtri-home",
+        "width": 390,
+        "theme": "light",
+        "measurements": 28,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "filtri-home",
+        "width": 768,
+        "theme": "dark",
+        "measurements": 28,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "filtri-home",
+        "width": 768,
+        "theme": "light",
+        "measurements": 28,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "filtri-home",
+        "width": 1280,
+        "theme": "dark",
+        "measurements": 28,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "filtri-home",
+        "width": 1280,
+        "theme": "light",
+        "measurements": 28,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "funghi",
+        "width": 320,
+        "theme": "dark",
+        "measurements": 234,
+        "exempt": 2,
+        "below": 0
+      },
+      {
+        "view": "funghi",
+        "width": 320,
+        "theme": "light",
+        "measurements": 234,
+        "exempt": 2,
+        "below": 0
+      },
+      {
+        "view": "funghi",
+        "width": 390,
+        "theme": "dark",
+        "measurements": 235,
+        "exempt": 2,
+        "below": 0
+      },
+      {
+        "view": "funghi",
+        "width": 390,
+        "theme": "light",
+        "measurements": 235,
+        "exempt": 2,
+        "below": 0
+      },
+      {
+        "view": "funghi",
+        "width": 768,
+        "theme": "dark",
+        "measurements": 235,
+        "exempt": 2,
+        "below": 0
+      },
+      {
+        "view": "funghi",
+        "width": 768,
+        "theme": "light",
+        "measurements": 235,
+        "exempt": 2,
+        "below": 0
+      },
+      {
+        "view": "funghi",
+        "width": 1280,
+        "theme": "dark",
+        "measurements": 239,
+        "exempt": 2,
+        "below": 0
+      },
+      {
+        "view": "funghi",
+        "width": 1280,
+        "theme": "light",
+        "measurements": 239,
+        "exempt": 2,
+        "below": 0
+      },
+      {
+        "view": "fungo",
+        "width": 320,
+        "theme": "dark",
+        "measurements": 289,
+        "exempt": 6,
+        "below": 0
+      },
+      {
+        "view": "fungo",
+        "width": 320,
+        "theme": "light",
+        "measurements": 289,
+        "exempt": 6,
+        "below": 0
+      },
+      {
+        "view": "fungo",
+        "width": 390,
+        "theme": "dark",
+        "measurements": 289,
+        "exempt": 6,
+        "below": 0
+      },
+      {
+        "view": "fungo",
+        "width": 390,
+        "theme": "light",
+        "measurements": 289,
+        "exempt": 6,
+        "below": 0
+      },
+      {
+        "view": "fungo",
+        "width": 768,
+        "theme": "dark",
+        "measurements": 289,
+        "exempt": 6,
+        "below": 0
+      },
+      {
+        "view": "fungo",
+        "width": 768,
+        "theme": "light",
+        "measurements": 289,
+        "exempt": 6,
+        "below": 0
+      },
+      {
+        "view": "fungo",
+        "width": 1280,
+        "theme": "dark",
+        "measurements": 293,
+        "exempt": 6,
+        "below": 0
+      },
+      {
+        "view": "fungo",
+        "width": 1280,
+        "theme": "light",
+        "measurements": 293,
+        "exempt": 6,
+        "below": 0
+      },
+      {
+        "view": "glossario",
+        "width": 320,
+        "theme": "dark",
+        "measurements": 432,
+        "exempt": 130,
+        "below": 0
+      },
+      {
+        "view": "glossario",
+        "width": 320,
+        "theme": "light",
+        "measurements": 432,
+        "exempt": 130,
+        "below": 0
+      },
+      {
+        "view": "glossario",
+        "width": 390,
+        "theme": "dark",
+        "measurements": 433,
+        "exempt": 130,
+        "below": 0
+      },
+      {
+        "view": "glossario",
+        "width": 390,
+        "theme": "light",
+        "measurements": 433,
+        "exempt": 130,
+        "below": 0
+      },
+      {
+        "view": "glossario",
+        "width": 768,
+        "theme": "dark",
+        "measurements": 433,
+        "exempt": 130,
+        "below": 0
+      },
+      {
+        "view": "glossario",
+        "width": 768,
+        "theme": "light",
+        "measurements": 433,
+        "exempt": 130,
+        "below": 0
+      },
+      {
+        "view": "glossario",
+        "width": 1280,
+        "theme": "dark",
+        "measurements": 437,
+        "exempt": 130,
+        "below": 0
+      },
+      {
+        "view": "glossario",
+        "width": 1280,
+        "theme": "light",
+        "measurements": 437,
+        "exempt": 130,
+        "below": 0
+      },
+      {
+        "view": "guida",
+        "width": 320,
+        "theme": "dark",
+        "measurements": 21,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "guida",
+        "width": 320,
+        "theme": "light",
+        "measurements": 21,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "guida",
+        "width": 390,
+        "theme": "dark",
+        "measurements": 21,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "guida",
+        "width": 390,
+        "theme": "light",
+        "measurements": 21,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "guida",
+        "width": 768,
+        "theme": "dark",
+        "measurements": 21,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "guida",
+        "width": 768,
+        "theme": "light",
+        "measurements": 21,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "guida",
+        "width": 1280,
+        "theme": "dark",
+        "measurements": 25,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "guida",
+        "width": 1280,
+        "theme": "light",
+        "measurements": 25,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "guide",
+        "width": 320,
+        "theme": "dark",
+        "measurements": 25,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "guide",
+        "width": 320,
+        "theme": "light",
+        "measurements": 25,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "guide",
+        "width": 390,
+        "theme": "dark",
+        "measurements": 26,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "guide",
+        "width": 390,
+        "theme": "light",
+        "measurements": 26,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "guide",
+        "width": 768,
+        "theme": "dark",
+        "measurements": 26,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "guide",
+        "width": 768,
+        "theme": "light",
+        "measurements": 26,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "guide",
+        "width": 1280,
+        "theme": "dark",
+        "measurements": 30,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "guide",
+        "width": 1280,
+        "theme": "light",
+        "measurements": 30,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "impara",
+        "width": 320,
+        "theme": "dark",
+        "measurements": 25,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "impara",
+        "width": 320,
+        "theme": "light",
+        "measurements": 25,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "impara",
+        "width": 390,
+        "theme": "dark",
+        "measurements": 25,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "impara",
+        "width": 390,
+        "theme": "light",
+        "measurements": 25,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "impara",
+        "width": 768,
+        "theme": "dark",
+        "measurements": 25,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "impara",
+        "width": 768,
+        "theme": "light",
+        "measurements": 25,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "impara",
+        "width": 1280,
+        "theme": "dark",
+        "measurements": 29,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "impara",
+        "width": 1280,
+        "theme": "light",
+        "measurements": 29,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "info",
+        "width": 320,
+        "theme": "dark",
+        "measurements": 326,
+        "exempt": 1,
+        "below": 0
+      },
+      {
+        "view": "info",
+        "width": 320,
+        "theme": "light",
+        "measurements": 326,
+        "exempt": 1,
+        "below": 0
+      },
+      {
+        "view": "info",
+        "width": 390,
+        "theme": "dark",
+        "measurements": 326,
+        "exempt": 1,
+        "below": 0
+      },
+      {
+        "view": "info",
+        "width": 390,
+        "theme": "light",
+        "measurements": 326,
+        "exempt": 1,
+        "below": 0
+      },
+      {
+        "view": "info",
+        "width": 768,
+        "theme": "dark",
+        "measurements": 326,
+        "exempt": 1,
+        "below": 0
+      },
+      {
+        "view": "info",
+        "width": 768,
+        "theme": "light",
+        "measurements": 326,
+        "exempt": 1,
+        "below": 0
+      },
+      {
+        "view": "info",
+        "width": 1280,
+        "theme": "dark",
+        "measurements": 330,
+        "exempt": 1,
+        "below": 0
+      },
+      {
+        "view": "info",
+        "width": 1280,
+        "theme": "light",
+        "measurements": 330,
+        "exempt": 1,
+        "below": 0
+      },
+      {
+        "view": "mappa",
+        "width": 320,
+        "theme": "dark",
+        "measurements": 48,
+        "exempt": 4,
+        "below": 0
+      },
+      {
+        "view": "mappa",
+        "width": 320,
+        "theme": "light",
+        "measurements": 48,
+        "exempt": 4,
+        "below": 0
+      },
+      {
+        "view": "mappa",
+        "width": 390,
+        "theme": "dark",
+        "measurements": 48,
+        "exempt": 4,
+        "below": 0
+      },
+      {
+        "view": "mappa",
+        "width": 390,
+        "theme": "light",
+        "measurements": 48,
+        "exempt": 4,
+        "below": 0
+      },
+      {
+        "view": "mappa",
+        "width": 768,
+        "theme": "dark",
+        "measurements": 77,
+        "exempt": 3,
+        "below": 0
+      },
+      {
+        "view": "mappa",
+        "width": 768,
+        "theme": "light",
+        "measurements": 77,
+        "exempt": 3,
+        "below": 0
+      },
+      {
+        "view": "mappa",
+        "width": 1280,
+        "theme": "dark",
+        "measurements": 81,
+        "exempt": 3,
+        "below": 0
+      },
+      {
+        "view": "mappa",
+        "width": 1280,
+        "theme": "light",
+        "measurements": 81,
+        "exempt": 3,
+        "below": 0
+      },
+      {
+        "view": "metodo",
+        "width": 320,
+        "theme": "dark",
+        "measurements": 585,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "metodo",
+        "width": 320,
+        "theme": "light",
+        "measurements": 585,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "metodo",
+        "width": 390,
+        "theme": "dark",
+        "measurements": 585,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "metodo",
+        "width": 390,
+        "theme": "light",
+        "measurements": 585,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "metodo",
+        "width": 768,
+        "theme": "dark",
+        "measurements": 585,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "metodo",
+        "width": 768,
+        "theme": "light",
+        "measurements": 585,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "metodo",
+        "width": 1280,
+        "theme": "dark",
+        "measurements": 589,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "metodo",
+        "width": 1280,
+        "theme": "light",
+        "measurements": 589,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "osservazione",
+        "width": 320,
+        "theme": "dark",
+        "measurements": 28,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "osservazione",
+        "width": 320,
+        "theme": "light",
+        "measurements": 28,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "osservazione",
+        "width": 390,
+        "theme": "dark",
+        "measurements": 28,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "osservazione",
+        "width": 390,
+        "theme": "light",
+        "measurements": 28,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "osservazione",
+        "width": 768,
+        "theme": "dark",
+        "measurements": 28,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "osservazione",
+        "width": 768,
+        "theme": "light",
+        "measurements": 28,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "osservazione",
+        "width": 1280,
+        "theme": "dark",
+        "measurements": 28,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "osservazione",
+        "width": 1280,
+        "theme": "light",
+        "measurements": 28,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "pianta",
+        "width": 320,
+        "theme": "dark",
+        "measurements": 70,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "pianta",
+        "width": 320,
+        "theme": "light",
+        "measurements": 70,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "pianta",
+        "width": 390,
+        "theme": "dark",
+        "measurements": 70,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "pianta",
+        "width": 390,
+        "theme": "light",
+        "measurements": 70,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "pianta",
+        "width": 768,
+        "theme": "dark",
+        "measurements": 70,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "pianta",
+        "width": 768,
+        "theme": "light",
+        "measurements": 70,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "pianta",
+        "width": 1280,
+        "theme": "dark",
+        "measurements": 74,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "pianta",
+        "width": 1280,
+        "theme": "light",
+        "measurements": 74,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "piante",
+        "width": 320,
+        "theme": "dark",
+        "measurements": 187,
+        "exempt": 1,
+        "below": 0
+      },
+      {
+        "view": "piante",
+        "width": 320,
+        "theme": "light",
+        "measurements": 187,
+        "exempt": 1,
+        "below": 0
+      },
+      {
+        "view": "piante",
+        "width": 390,
+        "theme": "dark",
+        "measurements": 188,
+        "exempt": 1,
+        "below": 0
+      },
+      {
+        "view": "piante",
+        "width": 390,
+        "theme": "light",
+        "measurements": 188,
+        "exempt": 1,
+        "below": 0
+      },
+      {
+        "view": "piante",
+        "width": 768,
+        "theme": "dark",
+        "measurements": 188,
+        "exempt": 1,
+        "below": 0
+      },
+      {
+        "view": "piante",
+        "width": 768,
+        "theme": "light",
+        "measurements": 188,
+        "exempt": 1,
+        "below": 0
+      },
+      {
+        "view": "piante",
+        "width": 1280,
+        "theme": "dark",
+        "measurements": 192,
+        "exempt": 1,
+        "below": 0
+      },
+      {
+        "view": "piante",
+        "width": 1280,
+        "theme": "light",
+        "measurements": 192,
+        "exempt": 1,
+        "below": 0
+      },
+      {
+        "view": "profilo",
+        "width": 320,
+        "theme": "dark",
+        "measurements": 10,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "profilo",
+        "width": 320,
+        "theme": "light",
+        "measurements": 10,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "profilo",
+        "width": 390,
+        "theme": "dark",
+        "measurements": 10,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "profilo",
+        "width": 390,
+        "theme": "light",
+        "measurements": 10,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "profilo",
+        "width": 768,
+        "theme": "dark",
+        "measurements": 10,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "profilo",
+        "width": 768,
+        "theme": "light",
+        "measurements": 10,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "profilo",
+        "width": 1280,
+        "theme": "dark",
+        "measurements": 10,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "profilo",
+        "width": 1280,
+        "theme": "light",
+        "measurements": 10,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "profilo-con-base",
+        "width": 320,
+        "theme": "dark",
+        "measurements": 15,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "profilo-con-base",
+        "width": 320,
+        "theme": "light",
+        "measurements": 15,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "profilo-con-base",
+        "width": 390,
+        "theme": "dark",
+        "measurements": 15,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "profilo-con-base",
+        "width": 390,
+        "theme": "light",
+        "measurements": 15,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "profilo-con-base",
+        "width": 768,
+        "theme": "dark",
+        "measurements": 15,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "profilo-con-base",
+        "width": 768,
+        "theme": "light",
+        "measurements": 15,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "profilo-con-base",
+        "width": 1280,
+        "theme": "dark",
+        "measurements": 15,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "profilo-con-base",
+        "width": 1280,
+        "theme": "light",
+        "measurements": 15,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "ricerca",
+        "width": 320,
+        "theme": "dark",
+        "measurements": 40,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "ricerca",
+        "width": 320,
+        "theme": "light",
+        "measurements": 40,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "ricerca",
+        "width": 390,
+        "theme": "dark",
+        "measurements": 40,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "ricerca",
+        "width": 390,
+        "theme": "light",
+        "measurements": 40,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "ricerca",
+        "width": 768,
+        "theme": "dark",
+        "measurements": 40,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "ricerca",
+        "width": 768,
+        "theme": "light",
+        "measurements": 40,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "ricerca",
+        "width": 1280,
+        "theme": "dark",
+        "measurements": 40,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "ricerca",
+        "width": 1280,
+        "theme": "light",
+        "measurements": 40,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "riconosci",
+        "width": 320,
+        "theme": "dark",
+        "measurements": 221,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "riconosci",
+        "width": 320,
+        "theme": "light",
+        "measurements": 221,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "riconosci",
+        "width": 390,
+        "theme": "dark",
+        "measurements": 221,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "riconosci",
+        "width": 390,
+        "theme": "light",
+        "measurements": 221,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "riconosci",
+        "width": 768,
+        "theme": "dark",
+        "measurements": 221,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "riconosci",
+        "width": 768,
+        "theme": "light",
+        "measurements": 221,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "riconosci",
+        "width": 1280,
+        "theme": "dark",
+        "measurements": 225,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "riconosci",
+        "width": 1280,
+        "theme": "light",
+        "measurements": 225,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "riconosci-alberi",
+        "width": 320,
+        "theme": "dark",
+        "measurements": 24,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "riconosci-alberi",
+        "width": 320,
+        "theme": "light",
+        "measurements": 24,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "riconosci-alberi",
+        "width": 390,
+        "theme": "dark",
+        "measurements": 24,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "riconosci-alberi",
+        "width": 390,
+        "theme": "light",
+        "measurements": 24,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "riconosci-alberi",
+        "width": 768,
+        "theme": "dark",
+        "measurements": 24,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "riconosci-alberi",
+        "width": 768,
+        "theme": "light",
+        "measurements": 24,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "riconosci-alberi",
+        "width": 1280,
+        "theme": "dark",
+        "measurements": 28,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "riconosci-alberi",
+        "width": 1280,
+        "theme": "light",
+        "measurements": 28,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "riconosci-filtri",
+        "width": 320,
+        "theme": "dark",
+        "measurements": 226,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "riconosci-filtri",
+        "width": 320,
+        "theme": "light",
+        "measurements": 226,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "riconosci-filtri",
+        "width": 390,
+        "theme": "dark",
+        "measurements": 226,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "riconosci-filtri",
+        "width": 390,
+        "theme": "light",
+        "measurements": 226,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "riconosci-filtri",
+        "width": 768,
+        "theme": "dark",
+        "measurements": 226,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "riconosci-filtri",
+        "width": 768,
+        "theme": "light",
+        "measurements": 226,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "riconosci-filtri",
+        "width": 1280,
+        "theme": "dark",
+        "measurements": 230,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "riconosci-filtri",
+        "width": 1280,
+        "theme": "light",
+        "measurements": 230,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "riconosci-piante",
+        "width": 320,
+        "theme": "dark",
+        "measurements": 44,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "riconosci-piante",
+        "width": 320,
+        "theme": "light",
+        "measurements": 44,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "riconosci-piante",
+        "width": 390,
+        "theme": "dark",
+        "measurements": 44,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "riconosci-piante",
+        "width": 390,
+        "theme": "light",
+        "measurements": 44,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "riconosci-piante",
+        "width": 768,
+        "theme": "dark",
+        "measurements": 44,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "riconosci-piante",
+        "width": 768,
+        "theme": "light",
+        "measurements": 44,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "riconosci-piante",
+        "width": 1280,
+        "theme": "dark",
+        "measurements": 48,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "riconosci-piante",
+        "width": 1280,
+        "theme": "light",
+        "measurements": 48,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "sfide",
+        "width": 320,
+        "theme": "dark",
+        "measurements": 77,
+        "exempt": 24,
+        "below": 0
+      },
+      {
+        "view": "sfide",
+        "width": 320,
+        "theme": "light",
+        "measurements": 77,
+        "exempt": 24,
+        "below": 0
+      },
+      {
+        "view": "sfide",
+        "width": 390,
+        "theme": "dark",
+        "measurements": 78,
+        "exempt": 24,
+        "below": 0
+      },
+      {
+        "view": "sfide",
+        "width": 390,
+        "theme": "light",
+        "measurements": 78,
+        "exempt": 24,
+        "below": 0
+      },
+      {
+        "view": "sfide",
+        "width": 768,
+        "theme": "dark",
+        "measurements": 78,
+        "exempt": 24,
+        "below": 0
+      },
+      {
+        "view": "sfide",
+        "width": 768,
+        "theme": "light",
+        "measurements": 78,
+        "exempt": 24,
+        "below": 0
+      },
+      {
+        "view": "sfide",
+        "width": 1280,
+        "theme": "dark",
+        "measurements": 82,
+        "exempt": 24,
+        "below": 0
+      },
+      {
+        "view": "sfide",
+        "width": 1280,
+        "theme": "light",
+        "measurements": 82,
+        "exempt": 24,
+        "below": 0
+      },
+      {
+        "view": "taccuino",
+        "width": 320,
+        "theme": "dark",
+        "measurements": 14,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "taccuino",
+        "width": 320,
+        "theme": "light",
+        "measurements": 14,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "taccuino",
+        "width": 390,
+        "theme": "dark",
+        "measurements": 14,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "taccuino",
+        "width": 390,
+        "theme": "light",
+        "measurements": 14,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "taccuino",
+        "width": 768,
+        "theme": "dark",
+        "measurements": 14,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "taccuino",
+        "width": 768,
+        "theme": "light",
+        "measurements": 14,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "taccuino",
+        "width": 1280,
+        "theme": "dark",
+        "measurements": 23,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "taccuino",
+        "width": 1280,
+        "theme": "light",
+        "measurements": 23,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "termine",
+        "width": 320,
+        "theme": "dark",
+        "measurements": 10,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "termine",
+        "width": 320,
+        "theme": "light",
+        "measurements": 10,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "termine",
+        "width": 390,
+        "theme": "dark",
+        "measurements": 10,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "termine",
+        "width": 390,
+        "theme": "light",
+        "measurements": 10,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "termine",
+        "width": 768,
+        "theme": "dark",
+        "measurements": 10,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "termine",
+        "width": 768,
+        "theme": "light",
+        "measurements": 10,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "termine",
+        "width": 1280,
+        "theme": "dark",
+        "measurements": 10,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "termine",
+        "width": 1280,
+        "theme": "light",
+        "measurements": 10,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "uscite",
+        "width": 320,
+        "theme": "dark",
+        "measurements": 155,
+        "exempt": 6,
+        "below": 0
+      },
+      {
+        "view": "uscite",
+        "width": 320,
+        "theme": "light",
+        "measurements": 155,
+        "exempt": 6,
+        "below": 0
+      },
+      {
+        "view": "uscite",
+        "width": 390,
+        "theme": "dark",
+        "measurements": 158,
+        "exempt": 6,
+        "below": 0
+      },
+      {
+        "view": "uscite",
+        "width": 390,
+        "theme": "light",
+        "measurements": 158,
+        "exempt": 6,
+        "below": 0
+      },
+      {
+        "view": "uscite",
+        "width": 768,
+        "theme": "dark",
+        "measurements": 166,
+        "exempt": 5,
+        "below": 0
+      },
+      {
+        "view": "uscite",
+        "width": 768,
+        "theme": "light",
+        "measurements": 166,
+        "exempt": 5,
+        "below": 0
+      },
+      {
+        "view": "uscite",
+        "width": 1280,
+        "theme": "dark",
+        "measurements": 169,
+        "exempt": 5,
+        "below": 0
+      },
+      {
+        "view": "uscite",
+        "width": 1280,
+        "theme": "light",
+        "measurements": 169,
+        "exempt": 5,
+        "below": 0
+      },
+      {
+        "view": "zona",
+        "width": 320,
+        "theme": "dark",
+        "measurements": 760,
+        "exempt": 15,
+        "below": 0
+      },
+      {
+        "view": "zona",
+        "width": 320,
+        "theme": "light",
+        "measurements": 760,
+        "exempt": 15,
+        "below": 0
+      },
+      {
+        "view": "zona",
+        "width": 390,
+        "theme": "dark",
+        "measurements": 769,
+        "exempt": 15,
+        "below": 0
+      },
+      {
+        "view": "zona",
+        "width": 390,
+        "theme": "light",
+        "measurements": 769,
+        "exempt": 15,
+        "below": 0
+      },
+      {
+        "view": "zona",
+        "width": 768,
+        "theme": "dark",
+        "measurements": 770,
+        "exempt": 15,
+        "below": 0
+      },
+      {
+        "view": "zona",
+        "width": 768,
+        "theme": "light",
+        "measurements": 770,
+        "exempt": 15,
+        "below": 0
+      },
+      {
+        "view": "zona",
+        "width": 1280,
+        "theme": "dark",
+        "measurements": 774,
+        "exempt": 15,
+        "below": 0
+      },
+      {
+        "view": "zona",
+        "width": 1280,
+        "theme": "light",
+        "measurements": 774,
+        "exempt": 15,
+        "below": 0
+      }
+    ],
+    "below": 0
+  },
+  "interactive": {
+    "measurements": 13013,
+    "contexts": [
+      {
+        "view": "alberi",
+        "width": 390,
+        "theme": "dark",
+        "measurements": 76,
+        "exempt": 4,
+        "below": 0
+      },
+      {
+        "view": "alberi",
+        "width": 390,
+        "theme": "light",
+        "measurements": 76,
+        "exempt": 4,
+        "below": 0
+      },
+      {
+        "view": "alberi",
+        "width": 1280,
+        "theme": "dark",
+        "measurements": 98,
+        "exempt": 4,
+        "below": 0
+      },
+      {
+        "view": "alberi",
+        "width": 1280,
+        "theme": "light",
+        "measurements": 98,
+        "exempt": 4,
+        "below": 0
+      },
+      {
+        "view": "albero",
+        "width": 390,
+        "theme": "dark",
+        "measurements": 109,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "albero",
+        "width": 390,
+        "theme": "light",
+        "measurements": 109,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "albero",
+        "width": 1280,
+        "theme": "dark",
+        "measurements": 146,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "albero",
+        "width": 1280,
+        "theme": "light",
+        "measurements": 146,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "appunto",
+        "width": 390,
+        "theme": "dark",
+        "measurements": 35,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "appunto",
+        "width": 390,
+        "theme": "light",
+        "measurements": 35,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "appunto",
+        "width": 1280,
+        "theme": "dark",
+        "measurements": 35,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "appunto",
+        "width": 1280,
+        "theme": "light",
+        "measurements": 35,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "avvisi",
+        "width": 390,
+        "theme": "dark",
+        "measurements": 10,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "avvisi",
+        "width": 390,
+        "theme": "light",
+        "measurements": 10,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "avvisi",
+        "width": 1280,
+        "theme": "dark",
+        "measurements": 10,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "avvisi",
+        "width": 1280,
+        "theme": "light",
+        "measurements": 10,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "confronto",
+        "width": 390,
+        "theme": "dark",
+        "measurements": 88,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "confronto",
+        "width": 390,
+        "theme": "light",
+        "measurements": 93,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "confronto",
+        "width": 1280,
+        "theme": "dark",
+        "measurements": 110,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "confronto",
+        "width": 1280,
+        "theme": "light",
+        "measurements": 110,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "filtri-caratteri",
+        "width": 390,
+        "theme": "dark",
+        "measurements": 55,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "filtri-caratteri",
+        "width": 390,
+        "theme": "light",
+        "measurements": 55,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "filtri-caratteri",
+        "width": 1280,
+        "theme": "dark",
+        "measurements": 46,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "filtri-caratteri",
+        "width": 1280,
+        "theme": "light",
+        "measurements": 46,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "filtri-home",
+        "width": 390,
+        "theme": "dark",
+        "measurements": 44,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "filtri-home",
+        "width": 390,
+        "theme": "light",
+        "measurements": 44,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "filtri-home",
+        "width": 1280,
+        "theme": "dark",
+        "measurements": 44,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "filtri-home",
+        "width": 1280,
+        "theme": "light",
+        "measurements": 44,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "funghi",
+        "width": 390,
+        "theme": "dark",
+        "measurements": 132,
+        "exempt": 8,
+        "below": 0
+      },
+      {
+        "view": "funghi",
+        "width": 390,
+        "theme": "light",
+        "measurements": 132,
+        "exempt": 8,
+        "below": 0
+      },
+      {
+        "view": "funghi",
+        "width": 1280,
+        "theme": "dark",
+        "measurements": 154,
+        "exempt": 8,
+        "below": 0
+      },
+      {
+        "view": "funghi",
+        "width": 1280,
+        "theme": "light",
+        "measurements": 154,
+        "exempt": 8,
+        "below": 0
+      },
+      {
+        "view": "fungo",
+        "width": 390,
+        "theme": "dark",
+        "measurements": 215,
+        "exempt": 12,
+        "below": 0
+      },
+      {
+        "view": "fungo",
+        "width": 390,
+        "theme": "light",
+        "measurements": 215,
+        "exempt": 12,
+        "below": 0
+      },
+      {
+        "view": "fungo",
+        "width": 1280,
+        "theme": "dark",
+        "measurements": 252,
+        "exempt": 12,
+        "below": 0
+      },
+      {
+        "view": "fungo",
+        "width": 1280,
+        "theme": "light",
+        "measurements": 252,
+        "exempt": 12,
+        "below": 0
+      },
+      {
+        "view": "glossario",
+        "width": 390,
+        "theme": "dark",
+        "measurements": 87,
+        "exempt": 5,
+        "below": 0
+      },
+      {
+        "view": "glossario",
+        "width": 390,
+        "theme": "light",
+        "measurements": 87,
+        "exempt": 5,
+        "below": 0
+      },
+      {
+        "view": "glossario",
+        "width": 1280,
+        "theme": "dark",
+        "measurements": 109,
+        "exempt": 5,
+        "below": 0
+      },
+      {
+        "view": "glossario",
+        "width": 1280,
+        "theme": "light",
+        "measurements": 109,
+        "exempt": 5,
+        "below": 0
+      },
+      {
+        "view": "guida",
+        "width": 390,
+        "theme": "dark",
+        "measurements": 68,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "guida",
+        "width": 390,
+        "theme": "light",
+        "measurements": 68,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "guida",
+        "width": 1280,
+        "theme": "dark",
+        "measurements": 90,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "guida",
+        "width": 1280,
+        "theme": "light",
+        "measurements": 90,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "guide",
+        "width": 390,
+        "theme": "dark",
+        "measurements": 87,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "guide",
+        "width": 390,
+        "theme": "light",
+        "measurements": 104,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "guide",
+        "width": 1280,
+        "theme": "dark",
+        "measurements": 126,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "guide",
+        "width": 1280,
+        "theme": "light",
+        "measurements": 126,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "impara",
+        "width": 390,
+        "theme": "dark",
+        "measurements": 74,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "impara",
+        "width": 390,
+        "theme": "light",
+        "measurements": 74,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "impara",
+        "width": 1280,
+        "theme": "dark",
+        "measurements": 96,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "impara",
+        "width": 1280,
+        "theme": "light",
+        "measurements": 96,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "info",
+        "width": 390,
+        "theme": "dark",
+        "measurements": 115,
+        "exempt": 4,
+        "below": 0
+      },
+      {
+        "view": "info",
+        "width": 390,
+        "theme": "light",
+        "measurements": 115,
+        "exempt": 4,
+        "below": 0
+      },
+      {
+        "view": "info",
+        "width": 1280,
+        "theme": "dark",
+        "measurements": 137,
+        "exempt": 4,
+        "below": 0
+      },
+      {
+        "view": "info",
+        "width": 1280,
+        "theme": "light",
+        "measurements": 137,
+        "exempt": 4,
+        "below": 0
+      },
+      {
+        "view": "mappa",
+        "width": 390,
+        "theme": "dark",
+        "measurements": 85,
+        "exempt": 6,
+        "below": 0
+      },
+      {
+        "view": "mappa",
+        "width": 390,
+        "theme": "light",
+        "measurements": 84,
+        "exempt": 6,
+        "below": 0
+      },
+      {
+        "view": "mappa",
+        "width": 1280,
+        "theme": "dark",
+        "measurements": 175,
+        "exempt": 6,
+        "below": 0
+      },
+      {
+        "view": "mappa",
+        "width": 1280,
+        "theme": "light",
+        "measurements": 175,
+        "exempt": 6,
+        "below": 0
+      },
+      {
+        "view": "metodo",
+        "width": 390,
+        "theme": "dark",
+        "measurements": 48,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "metodo",
+        "width": 390,
+        "theme": "light",
+        "measurements": 48,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "metodo",
+        "width": 1280,
+        "theme": "dark",
+        "measurements": 70,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "metodo",
+        "width": 1280,
+        "theme": "light",
+        "measurements": 70,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "osservazione",
+        "width": 390,
+        "theme": "dark",
+        "measurements": 50,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "osservazione",
+        "width": 390,
+        "theme": "light",
+        "measurements": 50,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "osservazione",
+        "width": 1280,
+        "theme": "dark",
+        "measurements": 50,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "osservazione",
+        "width": 1280,
+        "theme": "light",
+        "measurements": 50,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "pianta",
+        "width": 390,
+        "theme": "dark",
+        "measurements": 97,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "pianta",
+        "width": 390,
+        "theme": "light",
+        "measurements": 97,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "pianta",
+        "width": 1280,
+        "theme": "dark",
+        "measurements": 119,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "pianta",
+        "width": 1280,
+        "theme": "light",
+        "measurements": 119,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "piante",
+        "width": 390,
+        "theme": "dark",
+        "measurements": 112,
+        "exempt": 4,
+        "below": 0
+      },
+      {
+        "view": "piante",
+        "width": 390,
+        "theme": "light",
+        "measurements": 112,
+        "exempt": 4,
+        "below": 0
+      },
+      {
+        "view": "piante",
+        "width": 1280,
+        "theme": "dark",
+        "measurements": 134,
+        "exempt": 4,
+        "below": 0
+      },
+      {
+        "view": "piante",
+        "width": 1280,
+        "theme": "light",
+        "measurements": 134,
+        "exempt": 4,
+        "below": 0
+      },
+      {
+        "view": "profilo",
+        "width": 390,
+        "theme": "dark",
+        "measurements": 30,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "profilo",
+        "width": 390,
+        "theme": "light",
+        "measurements": 30,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "profilo",
+        "width": 1280,
+        "theme": "dark",
+        "measurements": 30,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "profilo",
+        "width": 1280,
+        "theme": "light",
+        "measurements": 30,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "profilo-con-base",
+        "width": 390,
+        "theme": "dark",
+        "measurements": 34,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "profilo-con-base",
+        "width": 390,
+        "theme": "light",
+        "measurements": 34,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "profilo-con-base",
+        "width": 1280,
+        "theme": "dark",
+        "measurements": 34,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "profilo-con-base",
+        "width": 1280,
+        "theme": "light",
+        "measurements": 34,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "ricerca",
+        "width": 390,
+        "theme": "dark",
+        "measurements": 64,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "ricerca",
+        "width": 390,
+        "theme": "light",
+        "measurements": 64,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "ricerca",
+        "width": 1280,
+        "theme": "dark",
+        "measurements": 64,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "ricerca",
+        "width": 1280,
+        "theme": "light",
+        "measurements": 64,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "riconosci",
+        "width": 390,
+        "theme": "dark",
+        "measurements": 121,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "riconosci",
+        "width": 390,
+        "theme": "light",
+        "measurements": 121,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "riconosci",
+        "width": 1280,
+        "theme": "dark",
+        "measurements": 143,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "riconosci",
+        "width": 1280,
+        "theme": "light",
+        "measurements": 143,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "riconosci-alberi",
+        "width": 390,
+        "theme": "dark",
+        "measurements": 63,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "riconosci-alberi",
+        "width": 390,
+        "theme": "light",
+        "measurements": 63,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "riconosci-alberi",
+        "width": 1280,
+        "theme": "dark",
+        "measurements": 85,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "riconosci-alberi",
+        "width": 1280,
+        "theme": "light",
+        "measurements": 85,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "riconosci-filtri",
+        "width": 390,
+        "theme": "dark",
+        "measurements": 111,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "riconosci-filtri",
+        "width": 390,
+        "theme": "light",
+        "measurements": 111,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "riconosci-filtri",
+        "width": 1280,
+        "theme": "dark",
+        "measurements": 133,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "riconosci-filtri",
+        "width": 1280,
+        "theme": "light",
+        "measurements": 133,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "riconosci-piante",
+        "width": 390,
+        "theme": "dark",
+        "measurements": 68,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "riconosci-piante",
+        "width": 390,
+        "theme": "light",
+        "measurements": 68,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "riconosci-piante",
+        "width": 1280,
+        "theme": "dark",
+        "measurements": 90,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "riconosci-piante",
+        "width": 1280,
+        "theme": "light",
+        "measurements": 90,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "sfide",
+        "width": 390,
+        "theme": "dark",
+        "measurements": 82,
+        "exempt": 12,
+        "below": 0
+      },
+      {
+        "view": "sfide",
+        "width": 390,
+        "theme": "light",
+        "measurements": 82,
+        "exempt": 12,
+        "below": 0
+      },
+      {
+        "view": "sfide",
+        "width": 1280,
+        "theme": "dark",
+        "measurements": 104,
+        "exempt": 12,
+        "below": 0
+      },
+      {
+        "view": "sfide",
+        "width": 1280,
+        "theme": "light",
+        "measurements": 104,
+        "exempt": 12,
+        "below": 0
+      },
+      {
+        "view": "taccuino",
+        "width": 390,
+        "theme": "dark",
+        "measurements": 49,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "taccuino",
+        "width": 390,
+        "theme": "light",
+        "measurements": 49,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "taccuino",
+        "width": 1280,
+        "theme": "dark",
+        "measurements": 71,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "taccuino",
+        "width": 1280,
+        "theme": "light",
+        "measurements": 71,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "termine",
+        "width": 390,
+        "theme": "dark",
+        "measurements": 20,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "termine",
+        "width": 390,
+        "theme": "light",
+        "measurements": 20,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "termine",
+        "width": 1280,
+        "theme": "dark",
+        "measurements": 20,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "termine",
+        "width": 1280,
+        "theme": "light",
+        "measurements": 20,
+        "exempt": 0,
+        "below": 0
+      },
+      {
+        "view": "uscite",
+        "width": 390,
+        "theme": "dark",
+        "measurements": 201,
+        "exempt": 8,
+        "below": 0
+      },
+      {
+        "view": "uscite",
+        "width": 390,
+        "theme": "light",
+        "measurements": 201,
+        "exempt": 8,
+        "below": 0
+      },
+      {
+        "view": "uscite",
+        "width": 1280,
+        "theme": "dark",
+        "measurements": 213,
+        "exempt": 4,
+        "below": 0
+      },
+      {
+        "view": "uscite",
+        "width": 1280,
+        "theme": "light",
+        "measurements": 213,
+        "exempt": 4,
+        "below": 0
+      },
+      {
+        "view": "zona",
+        "width": 390,
+        "theme": "dark",
+        "measurements": 523,
+        "exempt": 4,
+        "below": 0
+      },
+      {
+        "view": "zona",
+        "width": 390,
+        "theme": "light",
+        "measurements": 523,
+        "exempt": 4,
+        "below": 0
+      },
+      {
+        "view": "zona",
+        "width": 1280,
+        "theme": "dark",
+        "measurements": 555,
+        "exempt": 4,
+        "below": 0
+      },
+      {
+        "view": "zona",
+        "width": 1280,
+        "theme": "light",
+        "measurements": 555,
+        "exempt": 4,
+        "below": 0
+      }
+    ],
+    "below": 0
+  },
+  "photos": {
+    "variants": 136,
+    "combinations": 1632,
+    "below": 0
+  },
+  "errors": []
+}

@@ -45,5 +45,5 @@ test('catalogo botanico e calendario accessibili senza meteo, senza falsi indici
  const errors=[];page.on('pageerror',e=>errors.push(e.message));
  await page.route('https://**/*',r=>r.abort());await page.route('**/api/weather/v1/forecast?**',r=>r.fulfill({status:503,json:{error:'Servizio temporaneamente indisponibile'}}));
  await page.addInitScript(()=>localStorage.setItem('fungaroli:legal-accepted','32026-10-16'));await page.goto('/');await expect(page.locator('#hero .error')).toBeVisible();await expect(page.locator('[data-target]')).toHaveCount(0);
- await page.goto('/#/pianta/ortica');await expect(page.locator('#plant-detail h1')).toHaveText('Ortica');await page.locator('[data-botanical-method]>summary').click();await expect(page.locator('[data-botanical-method]')).toContainText('calendario');await expect(page.locator('#plant-detail .ring')).toHaveCount(0);expect(errors).toEqual([]);
+ await page.goto('/#/pianta/ortica');await expect(page.locator('#plant-detail h1')).toHaveText('Ortica');await page.locator('[data-botanical-method]>summary').click();await expect(page.locator('[data-botanical-method]')).toContainText(/calendario/i);await expect(page.locator('#plant-detail .ring')).toHaveCount(0);expect(errors).toEqual([]);
 });

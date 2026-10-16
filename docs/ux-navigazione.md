@@ -15,12 +15,12 @@ Ridondanze tenute di proposito:
 
 ## Intento dell’uscita — decisione del 16 ottobre 2026
 
-La richiesta di Matteo sostituisce la priorità fissa funghi → giro → scoperte. La barra principale espone **A funghi / Piante spontanee / Passeggiata** e **Filtri avanzati**, in home e mappa. La navigazione Uscite, Mappa, Scopri e Taccuino resta la stessa.
+La richiesta di Matteo sostituisce la priorità fissa funghi → giro → scoperte. La barra principale espone **A funghi / Piante spontanee / Passeggiata** e **Altri**, in home e mappa. Le preferenze Poca gente, Accesso comodo e Vicino alla base sono visibili con icona, sostituita dalla spunta quando selezionate; Altri precede i filtri sulle specie. La navigazione Uscite, Mappa, Scopri e Taccuino resta la stessa.
 
 | Intento | Home | Mappa e dettagli |
 | --- | --- | --- |
 | A funghi | Proposta con indice, altre uscite, scoperte e specie | Indice e habitat potenziale fungino con i limiti esistenti |
-| Piante spontanee | Fascia botanica prima della proposta, fase indicativa e ambiente nelle card, altri sentieri | Spunti botanici associati agli ambienti campionati; nessuna densità, probabilità o posizione di presenza attribuita alle piante |
+| Piante spontanee | Fascia botanica prima della proposta; hero con lo stesso impianto fotografico dei funghi, nome e fase indicativa; altri sentieri con card sintetiche | Spunti botanici associati agli ambienti campionati; nessuna densità, probabilità o posizione di presenza attribuita alle piante |
 | Passeggiata | Sentiero, difficoltà, tratto mappato, accesso e meteo; scoperte dopo la proposta, poi alternative | Zone, tracciati e imbocchi senza indice fungino |
 
 ### Stato e filtri
@@ -42,3 +42,9 @@ Un calendario sconosciuto, un indice basso, meteo mancante o dati incompleti non
 ### Verifica
 
 Test unitari dedicati a calendari parziali/sconosciuti e finestre tra mesi, filtri con dati mancanti, separazione dell’ordinamento pratico dall’indice. Test browser per persistenza, dialog/ripristino, tre intenti, ordine delle fasce, nessun indice fungino in piante/passeggiata, assenza di meteo, larghezze 320/390/768/1280 e temi chiaro/scuro, mappa schematica e Leaflet. La pubblicazione richiede comunque la suite completa prevista in AGENTS.md.
+
+### Rifiniture del 16 ottobre
+
+Funghi, Piante e Passeggiata usano `homeCover` per la stessa struttura della hero. Solo Funghi include l’anello dell’indice; Piante mostra lo spunto e il periodo indicativo, senza attribuire presenza certa. Le card delle alternative riportano giorno, luogo, difficoltà e km del tratto mappato; i dettagli sono nella scheda. Le eventuali allerte meteo restano visibili. Su schermi stretti i nomi compatti Funghi/Piante/Giro mantengono le etichette accessibili complete.
+
+Calendario centrato quando non scorre; bordi delle righe sfumati sul contenuto; pannello livelli sopra i filtri della mappa. Il glossario riparte dall’inizio, salvo link a un termine preciso. La ricerca mostra Cmd+K su Mac e Ctrl+K sulle altre piattaforme. Senza scelta del tema si segue il dispositivo.

@@ -35,10 +35,10 @@ export async function refreshCommunity({signal} = {}) {
   changed();
 }
 export function communityStatus() {
-  if (!enabled) return 'Le segnalazioni collettive saranno disponibili quando il servizio è attivo.';
+  if (!enabled) return 'Condivisione delle osservazioni non ancora attiva.';
   if (!summary) return 'Segnalazioni temporaneamente non disponibili.';
-  return summary.totalReports ? `${summary.totalReports} osservazioni raccolte: stiamo costruendo la validazione locale. L’accuratezza della trovabilità non è ancora misurata.`
-    : 'Siamo all’inizio: nessuna segnalazione collettiva. Le condizioni di crescita sono stimate; la trovabilità non è ancora validata.';
+  return summary.totalReports ? `${summary.totalReports} ${summary.totalReports === 1 ? 'osservazione condivisa' : 'osservazioni condivise'}.`
+    : 'Ancora nessuna osservazione condivisa.';
 }
 export function reportBadge(zoneId, speciesId) {
   const records = (summary?.reports || []).filter(r => (!zoneId || r.zoneId === zoneId) && r.speciesId === speciesId);
@@ -96,11 +96,11 @@ export async function openAccount() {
       <div class="profile-editorial" data-cms-link hidden></div>
       <div class="profile-actions" role="group" aria-label="Azioni del profilo"><button type="button" class="btn ghost" data-logout>Esci dal profilo</button><button type="button" class="btn primary" data-close autofocus>Chiudi</button></div>
       <div class="profile-data"><button type="button" class="link-btn" data-delete-account>Elimina profilo e dati</button></div><p class="profile-status" role="status" data-status></p>`
-      : `<h2>Unisciti a Fronda</h2><p>Un profilo senza password o email: usa la passkey del telefono o del computer. Il nome è facoltativo e non appare nelle segnalazioni.</p>
-      <label>Come vuoi chiamarti? <input class="wiz-input" maxlength="32" autocomplete="nickname" data-handle placeholder="Un nome, anche inventato"></label>
+      : `<h2>Unisciti a Fronda</h2><p>Accedi con la passkey del dispositivo, senza password o email.</p>
+      <label>Nome facoltativo <input class="wiz-input" maxlength="32" autocomplete="nickname" data-handle placeholder="Un nome, anche inventato"></label>
       <button type="button" class="btn primary big" data-register>Crea profilo con passkey</button><button type="button" class="btn ghost big" data-login>Ho già una passkey</button>
       <p class="small muted">Il taccuino rimane tuo. Zona, specie, giorno e quantità diventano pubblici solo in forma aggregata quando scegli di segnalarli. <a href="#/info">Privacy e condizioni</a></p>
-      <p class="small muted">Per ritrovare il profilo usa la stessa passkey, eventualmente sincronizzata dal tuo dispositivo. Se la perdi, non possiamo recuperarla tramite email.</p>
+      <details class="context-note"><summary>Come ritrovare il profilo</summary><p>Usa la stessa passkey, anche sincronizzata fra i tuoi dispositivi. Se la perdi, non possiamo recuperarla tramite email. Il nome non appare nelle segnalazioni.</p></details>
       <p role="status" data-status></p><button type="button" class="btn ghost" data-close>Continua senza profilo</button>`;
     authDialog.setAttribute('aria-label', user ? 'Il tuo profilo' : 'Accedi o crea un profilo');
     const status = authDialog.querySelector('[data-status]');

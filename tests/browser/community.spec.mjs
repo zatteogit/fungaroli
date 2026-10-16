@@ -194,7 +194,12 @@ test('un itinerario con lunghezza intera incoerente mostra «n.d.» e il titolo 
 for(const width of [320,1280]) test(`tracciato e profilo nello stesso riquadro a ${width}px`,async({page})=>{
   await page.setViewportSize({width,height:900});await page.emulateMedia({reducedMotion:'reduce'});
   const errors=await setup(page);await page.goto('/#/zona/tancia/0/sentiero/12313366');
-  const focus=page.locator('#detail .walk-focus');await focus.locator(':scope > summary').click();
+  const focus=page.locator('#detail .walk-focus'),summary=focus.locator(':scope > summary');
+  await expect(summary.locator('.walk-entrance').first()).toBeVisible();
+  await expect(summary.locator('.tprof,.ws-forest')).toHaveCount(0);
+  const summaryText=await summary.innerText();await summary.click();
+  expect(await summary.innerText()).toBe(summaryText);await expect(summary.locator('.walk-entrance').first()).toBeVisible();
+  await expect(focus.locator('.sec-body > .ws-forest')).toBeVisible();
   const visual=focus.locator('.trail-visual'),trace=visual.getByRole('tab',{name:'Tracciato',exact:true,includeHidden:true}),profile=visual.getByRole('tab',{name:'Profilo',exact:true,includeHidden:true});
   await expect(profile).toHaveAttribute('aria-selected','true');
   await expect(visual.getByRole('tabpanel',{name:'Profilo',exact:true})).toBeVisible();
@@ -255,7 +260,7 @@ test('riepiloghi essenziali negli accordion sul posto, senza voci duplicate o sa
 
 test('editoriale, filtri completi, passkey, isolamento e condivisione revocabile', async ({ browser, page }) => {
   const errors = await setup(page);
-  await expect(page.locator('#community-intro')).toContainText('nessuna segnalazione');
+  await expect(page.locator('#community-intro')).toContainText('Ancora nessuna osservazione condivisa.');
   await page.locator('#active-filters [data-more]').click();
   await expect(page.locator('#full-filters [data-group]')).toHaveCount(11);
   // «Azzera» compare solo quando qualcosa è cambiato e riporta ai valori di partenza
@@ -359,7 +364,7 @@ test('taccuini e community restano accessibili senza dati meteo', async ({ page 
   await expect(page.locator('#editorial')).toBeHidden();
   await page.goto('/#/guide');await expect(page.locator('#editorial a')).toHaveCount(3);
   await page.goto('/');
-  await expect(page.locator('#community-intro')).toContainText('nessuna segnalazione');
+  await expect(page.locator('#community-intro')).toContainText('Ancora nessuna osservazione condivisa.');
   await page.locator('#community-intro [data-community-account]').click();
   await expect(page.locator('[data-register]')).toBeVisible();
 });
@@ -418,7 +423,7 @@ test('autocomplete dei commestibili, selezione individuale, stagione e persisten
   await page.goto('/#/specie'); await expect(page.locator('#sp-cards .pill')).toHaveCount(0);
   await page.locator('#sp-cards').getByRole('link',{name:'Pioppino',exact:true}).click();
   await expect(page.locator('#edible-detail')).toContainText('Pioppino');
-  await expect(page.locator('#edible-detail')).toContainText('non è ancora disponibile');
+  await expect(page.locator('#edible-detail')).toContainText('Indice non ancora disponibile');
   await page.goto('/'); await page.locator('#active-filters [data-more]').click();
   await input.fill('Boletus pinophilus'); await input.press('Enter');
   const pref=await page.evaluate(()=>JSON.parse(localStorage.getItem('fungaroli:prefs:v2')));

@@ -84,8 +84,10 @@
 }
 .tile-body { --scrim-lead: 56px; --scrim-x: 14px; --scrim-b: 12px; }
 :is(.sp-card-body, .portrait-body) { --scrim-lead: 48px; --scrim-x: 12px; --scrim-b: 11px; }
-.phero-body { --scrim-lead: 64px; --scrim-x: 20px; --scrim-b: 46px; }
-.phero-body::before { right: -9999px; }
+.phero-body { --scrim-lead: 144px; --scrim-x: 20px; --scrim-b: 46px; }
+.phero-body::before { right: -9999px;
+  background: linear-gradient(180deg, transparent 0, color-mix(in srgb, var(--scrim) 12%, transparent) calc(var(--scrim-lead) * .35), color-mix(in srgb, var(--scrim) 38%, transparent) calc(var(--scrim-lead) * .7), color-mix(in srgb, var(--scrim) 62%, transparent) var(--scrim-lead), color-mix(in srgb, var(--scrim) 70%, transparent) 100%);
+}
 :is(.cover-sub, .cover-walk > span, .cover-sp small, .tile-day, .tile-body small, .sp-card-body i, .portrait-body small, .phero-sub) { opacity: 1; font-weight: 500; }
 .cover-body :is(small, .cover-sub, .cover-walk > span), .tile-body :is(small, .tile-day, .tile-micro), .sp-card-body i, .portrait-body small, .phero-sub { text-shadow: 0 0 2px var(--scrim), 0 1px 3px var(--scrim); }
 /* telefono: in home il testo sta già sotto la foto, su un pannello pieno */
@@ -103,7 +105,7 @@
 /* segnaposto dei campi: il grigio del browser non basta sulle superfici Fronda */
 :is(input, textarea)::placeholder { color: var(--muted); opacity: 1; }
 /* crediti della mappa */
-.leaflet-container .leaflet-control-attribution { background: color-mix(in srgb, var(--surface) 90%, transparent); color: var(--text-2); }
+.leaflet-container .leaflet-control-attribution { background: var(--surface); color: var(--text-2); }
 .leaflet-container .leaflet-control-attribution a { color: var(--link); }
 /* frecce della fila di card con il mouse: sulla foto, non sopra la prima riga di testo della card */
 .rail-host:has(.tile) > .rail-arrow { top: calc(var(--rail-y, 50%) - 48px); }
@@ -129,25 +131,25 @@
 .viz-tick, .viz-note { font-size: 11px; fill: var(--muted); font-variant-numeric: tabular-nums; }
 .viz-note { fill: var(--text-2); }
 .viz-gridline { stroke: var(--hair); stroke-width: 1; shape-rendering: crispEdges; }
-.viz-baseline { stroke: var(--border); stroke-width: 1; shape-rendering: crispEdges; }
+.viz-baseline { stroke: var(--muted); stroke-width: 1; shape-rendering: crispEdges; }
 .viz-window { fill: var(--surface-2); }
 .viz-band { fill: color-mix(in srgb, var(--viz-heat) 12%, transparent); }
-.viz-bar { fill: var(--viz-water); }
-.viz-bar.is-forecast { fill-opacity: .45; }
+.viz-bar { fill: var(--viz-water); stroke: var(--fiordaliso-ink); stroke-width: 1; vector-effect: non-scaling-stroke; }
+.viz-bar.is-forecast { fill: var(--surface); fill-opacity: 1; stroke-dasharray: 3 2; }
 .viz-line { fill: none; stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
 .viz-line.is-forecast { stroke-dasharray: 4 4; }
-[data-viz="rain"] .viz-line, [data-viz="soil"] .viz-line { stroke: var(--viz-water); }
-[data-viz="temp"] .viz-line { stroke: var(--viz-heat); }
+[data-viz="rain"] .viz-line, [data-viz="soil"] .viz-line { stroke: var(--fiordaliso-ink); }
+[data-viz="temp"] .viz-line { stroke: var(--calendula-ink); }
 [data-viz="index"] .viz-line { stroke: var(--viz-index); }
 .viz-dot { fill: var(--viz-index); stroke: var(--surface); stroke-width: 2; }
-[data-viz="temp"] .viz-dot { fill: var(--viz-heat); }
-[data-viz="soil"] .viz-dot { fill: var(--viz-water); }
+[data-viz="temp"] .viz-dot { fill: var(--calendula-ink); }
+[data-viz="soil"] .viz-dot { fill: var(--fiordaliso-ink); }
 .viz-missing { fill: none; stroke: var(--muted); stroke-width: 1; }
 .viz-threshold { stroke: var(--text-2); stroke-width: 1; stroke-dasharray: 3 3; }
 .viz-selected { stroke: var(--text-2); stroke-width: 1; }
-.viz-today { stroke: var(--border); stroke-width: 1; }
+.viz-today { stroke: var(--muted); stroke-width: 1; }
 .viz-cross { stroke: var(--text); stroke-width: 1; opacity: 0; pointer-events: none; }
-.viz-cross.on { opacity: .45; }
+.viz-cross.on { opacity: 1; }
 .viz-hit { fill: transparent; cursor: crosshair; }
 .viz-tip { position: absolute; top: 0; left: 0; z-index: 3; display: grid; gap: 1px; min-width: 96px; padding: 6px 10px; border-radius: 10px; background: var(--surface); border: 1px solid var(--border); box-shadow: var(--shadow-1); color: var(--text-2); font-size: 12px; line-height: 1.35; white-space: nowrap; pointer-events: none; transform: translateY(-100%); opacity: 0; transition: opacity .1s; }
 .viz-tip.on { opacity: 1; }
@@ -156,10 +158,10 @@
 .viz-k { display: inline-flex; align-items: center; gap: 6px; }
 .viz-k[hidden] { display: none; }
 .viz-sw { flex: none; display: inline-block; width: 10px; height: 10px; border-radius: 2px; }
-.viz-sw.sw-water { background: var(--viz-water); }
-.viz-sw.sw-water.is-forecast { background: color-mix(in srgb, var(--viz-water) 45%, transparent); }
-.viz-sw:is(.sw-water-line, .sw-heat-line, .sw-index-line, .sw-threshold) { width: 16px; height: 0; border-radius: 0; border-top: 2px solid var(--viz-water); }
-.viz-sw.sw-heat-line { border-top-color: var(--viz-heat); }
+.viz-sw.sw-water { background: var(--viz-water); box-shadow: inset 0 0 0 1px var(--fiordaliso-ink); }
+.viz-sw.sw-water.is-forecast { background: var(--surface); border: 1px dashed var(--fiordaliso-ink); box-shadow: none; }
+.viz-sw:is(.sw-water-line, .sw-heat-line, .sw-index-line, .sw-threshold) { width: 16px; height: 0; border-radius: 0; border-top: 2px solid var(--fiordaliso-ink); }
+.viz-sw.sw-heat-line { border-top-color: var(--calendula-ink); }
 .viz-sw.sw-index-line { border-top-color: var(--viz-index); }
 .viz-sw.is-forecast:is(.sw-index-line, .sw-water-line) { border-top-style: dashed; }
 .viz-sw.sw-threshold { border-top: 1px dashed var(--text-2); }
@@ -176,16 +178,16 @@
 @media (prefers-reduced-motion: reduce) { .viz-tip { transition: none; } }
 
 /* Alone «ambilight» (js/ambilight.js), solo nelle pagine di dettaglio: dietro la testata una copia della foto
-   (versione normale, mai l'HD) sfocata, più satura e ingrandita, che sporge come luce colorata. Il contenitore
+   (versione normale, mai l'HD) sfocata, poco satura e ingrandita, che sporge come luce colorata. Il contenitore
    isola l'alone: sta sopra il fondo della pagina e sotto tutto il resto. In chiaro è luce tenue (opacità bassa,
-   più chiara e più satura, così non sporca l'avorio); in scuro è ben visibile. Spento con «riduci trasparenza»;
+   con colori appena ravvivati, così non sporca l'avorio); in scuro resta soffusa. Spento con «riduci trasparenza»;
    con «riduci movimento» compare senza dissolvenza ma resta. */
 #views :is(#detail, .sp-page) { position: relative; isolation: isolate; }
-.ambi { position: absolute; z-index: -1; pointer-events: none; opacity: 0; transition: opacity .6s ease; --ambi-o: .4; --ambi-f: blur(56px) saturate(1.7) brightness(1.35); }
+.ambi { position: absolute; z-index: -1; pointer-events: none; opacity: 0; transition: opacity .6s ease; --ambi-o: .24; --ambi-f: blur(80px) saturate(1.1) brightness(1.1); }
 .ambi.on { opacity: var(--ambi-o); }
 .ambi > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: var(--ambi-f); transform: scaleY(1.1); } /* solo in altezza: in larghezza allargava la pagina di qualche pixel */
-:root[data-theme="dark"] .ambi { --ambi-o: .8; --ambi-f: blur(60px) saturate(1.35) brightness(.95); }
-@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .ambi { --ambi-o: .8; --ambi-f: blur(60px) saturate(1.35) brightness(.95); } }
+:root[data-theme="dark"] .ambi { --ambi-o: .42; --ambi-f: blur(88px) saturate(1.05) brightness(.85); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .ambi { --ambi-o: .42; --ambi-f: blur(88px) saturate(1.05) brightness(.85); } }
 @media (prefers-reduced-transparency: reduce) { .ambi { display: none; } }
 @media (prefers-reduced-motion: reduce) { .ambi { transition: none; } }
 
@@ -212,16 +214,54 @@
 }
 
 /* Interruttori «acceso» (preferenze, livelli della mappa): polline con il filo, come la selezione;
-   il pomello resta chiaro con il filo ocra, così si legge anche sul polline. */
+   il pomello usa la superficie del tema e un contorno, così si legge anche sul polline. */
 :is(.fp-switch[aria-pressed="true"] .switch, .switch-input:checked, .map-toggle[aria-checked="true"] .mt-switch) { background: var(--select); box-shadow: inset 0 0 0 1px var(--select-edge); }
-:is(.fp-switch[aria-pressed="true"] .switch i, .switch-input:checked::before, .map-toggle[aria-checked="true"] .mt-switch i) { background: var(--surface); box-shadow: 0 0 0 1px var(--select-edge); }
+.switch-input:checked::before,
+:is(.fp-switch[aria-pressed="true"] .switch i, .map-toggle[aria-checked="true"] .mt-switch i) { background: var(--surface); box-shadow: 0 0 0 1px var(--select-edge); }
+
+/* AA: colori dello stato selezionato anche nei testi secondari e durante l'hover. */
+.th-chip.is-active small { color: var(--select-ink); }
+@media (hover: hover) {
+  .btn.ghost[aria-pressed="true"]:hover,
+  .seg-nav a[aria-current="page"]:hover,
+  .th-chip.is-active:hover { background: var(--select); color: var(--select-ink); border-color: var(--select-edge); }
+  .fab:hover { background: var(--surface-2); color: var(--text); }
+}
+/* Il doppio contorno resta distinguibile sia sulla foto chiara sia su quella scura. */
+.phero :is(button, a):focus-visible { outline-color: var(--on-photo); box-shadow: 0 0 0 5px var(--scrim); }
+/* I campi devono essere riconoscibili anche prima del focus. */
+:is(.search-box, .wiz-input, .notebook-search, .catalog-select, textarea, select) { border-color: var(--control-edge); }
+:is(.switch, .switch-input, .mt-switch) { box-shadow: inset 0 0 0 1px var(--control-edge); }
+
+/* La pressione del link non deve attenuare il testo delle fonti. */
+a.src-a:active { opacity: 1; text-decoration-style: solid; }
+/* La manopola deve staccarsi dal binario anche con interruttore acceso. */
+.fp-switch[aria-pressed] .switch i,
+.map-toggle[aria-checked] .mt-switch i,
+.switch i, .mt-switch i,
+:is(.switch-input, .switch-input:checked)::before { box-shadow: 0 0 0 1px var(--control-edge); }
+/* Evidenziazione della ricerca e azione d'emergenza hanno una coppia di colori propria. */
+.sr-txt mark { background: var(--polline-soft); color: var(--text); font-weight: 700; }
+@media (hover: hover) {
+  .em-numbers .btn.primary:hover { background: var(--crit); border-color: var(--crit); color: var(--on-crit); }
+}
+/* Risultato attivo e focus della ricerca: contorno visibile anche con il fondo tenue. */
+.sr-item[aria-selected="true"], .sr-item:focus-visible { box-shadow: inset 0 0 0 2px var(--focus); }
+/* Testo e fondo selezionati cambiano insieme, senza passare da coppie illeggibili. */
+:is(.chip, .btn.ghost, .seg-nav a, .tabbar a, .fo, .day, .th-chip, .seg-tabs button, .trail-view-tabs button, .switch, .switch-input, .mt-switch) { transition-property: transform, box-shadow, border-color; }
+.tab-pill { visibility: hidden; }
+.tabbar a[aria-current="page"] { background: var(--select); color: var(--select-ink); box-shadow: inset 0 0 0 1px var(--select-edge); }
+@media (min-width: 900px) {
+  .tabbar a[aria-current="page"] { border-radius: 999px; }
+  @media (hover: hover) { .tabbar a[aria-current="page"]:hover { background: var(--select); } }
+}
 
 /* L'intento resta lo stesso in Uscite e Mappa. I dettagli sono nel pannello. */
 .active-filters .intent-row { display:flex; flex-wrap:wrap; gap:8px; width:100%; overflow:visible; }
 .intent-row .chip { flex:none; }
 .map-filters .intent-row { flex-wrap:nowrap; width:max-content; }
-.outdoor-tile { min-height:300px; }
-.outdoor-tile .tile-body { gap:8px; }
+.outdoor-tile { min-height:0; }
+.outdoor-tile .tile-body { gap:4px; }
 .outdoor-tile .tile-body small { line-height:1.45; }
 .outdoor-tile.outdoor-hero { min-height:380px; width:100%; margin-bottom:20px; }
 .outdoor-hero .tile-body > b { font-size:clamp(26px,4vw,42px); }
@@ -238,3 +278,13 @@
   .outdoor-tile.outdoor-hero { min-height:360px; }
 }
 .outdoor-plant .thumb { width:100%; height:140px; object-fit:cover; border-radius:12px; }
+
+.intent-short { display:none; }
+#active-filters { flex-wrap:wrap; }
+#active-filters .af-pref-row { width:100%; }
+@media(max-width:760px) {
+  .intent-row .intent-full { display:none; }
+  .intent-row .intent-short { display:inline; }
+  #active-filters .intent-row { flex-wrap:nowrap; gap:6px; }
+  #active-filters .intent-row .chip { min-height:36px; padding:6px 8px; }
+}

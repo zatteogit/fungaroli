@@ -134,7 +134,7 @@ export function renderTreePage(body, id) {
     <div class="pbody">
     ${photos.length > 1 ? `<div class="sp-strip">${photos.slice(1).map((p, k) => `<button type="button" class="zoomable" data-photo="${k + 1}" aria-label="Foto ${k + 2}: ingrandisci"><img data-src="${ASSET(p.file)}" alt="" loading="lazy" decoding="async"></button>`).join('')}</div>` : ''}
     <h3>Caratteri da confrontare</h3><div data-tree-traits></div>
-    ${t.recognize?.length ? `<ol class="keys" data-glossary="Alberi">${t.recognize.map((k) => `<li><span class="key-text">${esc(k)}</span></li>`).join('')}</ol>` : ''}
+    ${t.recognize?.length ? `<details class="sec character-details"><summary>Cosa controllare da vicino</summary><div class="sec-body"><ol class="keys" data-glossary="Alberi">${t.recognize.map((k) => `<li><span class="key-text">${esc(k)}</span></li>`).join('')}</ol></div></details>` : ''}
     ${t.confusable?.length ? `<h3>Non confonderlo con</h3><ul class="tx-look tree-confusable">${t.confusable.map(confusableCard(id)).join('')}</ul>` : ''}
     ${fungi.length ? `<h3>Funghi legati ${esc(alNome(t.name))}</h3><div class="tree-fungi">${fungi.map((s) => `<a href="#/specie/${s.id}" class="tf" data-entity>${THUMB(s.id, 52)}<span>${esc(s.name)}</span></a>`).join('')}</div>${t.fungi_note ? `<p class="small muted" data-glossary="Alberi">${esc(t.fungi_note)}</p>` : ''}` : ''}
     <div class="sp-more">
