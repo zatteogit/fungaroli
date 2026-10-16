@@ -17,6 +17,10 @@ async function json(req) {
   try{return JSON.parse(new TextDecoder().decode(buffer));}catch{failure('JSON non valido.');}
 }
 
+// Documenti che un deploy aggiorna dal repository finché nessun autore li ha toccati (seed o ultima
+// scrittura di una release). Ognuno deve passare validateContent: un errore qui ferma init() e lo snapshot.
+export const REPOSITORY_REFRESHED=['ui-copy','plants','trees','media','media-trees','media-zones','species-id','species-traits','edible-catalog','preparation','glossary','guides','legal','media-glossary','trails','zones'];
+
 async function init(env,origin) {
   const db=env.CMS_DB;
   if(!db) failure('La redazione non è configurata.',503);
@@ -43,8 +47,7 @@ async function init(env,origin) {
         await db.batch(glossaryContextSeedUpdate(db,payload,Date.now(),crypto.randomUUID(),crypto.randomUUID()));
       }}
     }
-    const refreshed=['ui-copy','plants','trees','media','media-trees','media-zones','species-id','species-traits','edible-catalog','preparation','glossary','guides','legal','media-glossary'];
-    const untouched=(await db.prepare("SELECT id,version,published FROM cms_documents WHERE draft=published AND version=published_version AND ((version=0 AND updated_by='seed') OR updated_by LIKE 'release:%')").all()).results.filter(r=>refreshed.includes(r.id));
+    const untouched=(await db.prepare("SELECT id,version,published FROM cms_documents WHERE draft=published AND version=published_version AND ((version=0 AND updated_by='seed') OR updated_by LIKE 'release:%')").all()).results.filter(r=>REPOSITORY_REFRESHED.includes(r.id));
     const sources=await Promise.all(untouched.map(async previous=>{
       const source=await env.ASSETS.fetch(new Request(new URL(`/data/${previous.id}.json`,origin)));
       if(!source.ok)failure(`Aggiornamento iniziale mancante: ${previous.id}.`,503);
@@ -193,6 +196,17 @@ export async function handleCms(req,env,now=Date.now()) {
   }catch(e){return response({error:e.status?e.message:'Redazione temporaneamente non disponibile.'},e.status||503);}
 }
 
+// If-None-Match usa il confronto debole (RFC 9110 §13.1.2 e §8.8.3.2): W/"x" equivale a "x".
+// Cloudflare indebolisce l'ETag quando comprime la risposta, e il browser rimanda W/"…".
+// Il campo può contenere una lista di ETag oppure «*».
+export function noneMatch(header,tag) {
+  if(!header)return false;
+  if(header.trim()==='*')return true;
+  const opaque=tag.replace(/^W\//,'');
+  // ogni elemento della lista è un entity-tag intero; un elemento malformato non corrisponde a nulla
+  return (header.match(/(?:W\/)?"[^"]*"|[^,\s]+/g)||[]).some(t=>/^(?:W\/)?"[^"]*"$/.test(t)&&t.replace(/^W\//,'')===opaque);
+}
+
 export async function handleContent(req,env) {
   const url=new URL(req.url);
   try {
@@ -200,7 +214,7 @@ export async function handleContent(req,env) {
     const snapshot=await publishedContent(env,url.origin);
     if(!snapshot)return response({error:'Contenuti non configurati.'},503);
     const tag=`"${snapshot.release}"`;
-    if(req.headers.get('if-none-match')===tag)return new Response(null,{status:304,headers:{etag:tag,'cache-control':'public, max-age=30'}});
+    if(noneMatch(req.headers.get('if-none-match'),tag))return new Response(null,{status:304,headers:{etag:tag,'cache-control':'public, max-age=30'}});
     return response(snapshot,200,{etag:tag,'cache-control':'public, max-age=30'});
   }catch{return response({error:'Contenuti temporaneamente non disponibili.'},503);}
 }

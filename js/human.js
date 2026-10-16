@@ -98,11 +98,11 @@ export function timingAdvice({ dateStr, lat, lon, crowd }) {
   const end = new Date(sunset.getTime() + 3600e3);
   let arrive, why;
   if (crowd.level === 'alto') {
-    arrive = legal;
-    why = 'Giornata affollata: chi arriva per primo trova i funghi nati nella notte.';
+    arrive = roundTime(legal, 15, 'ceil'); // mai prima dell'apertura della raccolta
+    why = 'Giornata che stimiamo affollata: arrivare all’apertura può evitare parcheggi pieni e sentieri frequentati. A quell’ora è ancora buio: porta una luce.';
   } else if (crowd.level === 'medio') {
     arrive = sunrise;
-    why = 'Affollamento medio: arrivare con la luce del mattino ti mette davanti alla maggior parte dei cercatori.';
+    why = 'Affollamento medio stimato: arrivare con la prima luce può evitare le ore più frequentate.';
   } else {
     arrive = new Date(sunrise.getTime() + 2 * 3600e3);
     why = 'Poca concorrenza prevista: puoi partire con calma.';
