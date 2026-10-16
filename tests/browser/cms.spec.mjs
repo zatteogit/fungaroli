@@ -32,7 +32,7 @@ test('ruoli del profilo: utente, editor delle bozze e amministratore',async({bro
     page.on('pageerror',e=>errors.push(e.message));
     await page.route('https://**/*',r=>r.abort());
   await page.route('**/api/weather/v1/forecast?**',r=>r.fulfill({status:503,json:{error:'Meteo non disponibile nella prova CMS.'}}));
-    await page.addInitScript(()=>localStorage.setItem('fungaroli:legal-accepted','22026-10-12'));
+    await page.addInitScript(()=>localStorage.setItem('fungaroli:legal-accepted','32026-10-16'));
     await loginFixture(page,id);await page.goto('/');
     const me=await cms(page,'me');expect(me.status).toBe(200);expect(me.data.user.role).toBe(role);
     if(role==='member'){
@@ -79,7 +79,7 @@ test('redazione, bozze, pubblicazione, conflitti, agenti e catalogo condiviso',a
   const errors=[];page.on('pageerror',e=>errors.push(e.message));
   await page.route('https://**/*',r=>r.abort());
   await page.route('**/api/weather/v1/forecast?**',r=>r.fulfill({status:503,json:{error:'Meteo non disponibile nella prova CMS.'}}));
-  await page.addInitScript(()=>localStorage.setItem('fungaroli:legal-accepted','22026-10-12'));
+  await page.addInitScript(()=>localStorage.setItem('fungaroli:legal-accepted','32026-10-16'));
   await page.goto('/redazione');
   await expect(page.locator('#cms-access-status')).toContainText('Accedi');
   expect((await cms(page,'items')).status).toBe(401);

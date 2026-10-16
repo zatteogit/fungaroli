@@ -9,7 +9,7 @@ for(const width of [390,1280])test(`cache immediata, aggiornamento discreto e co
  await page.setViewportSize({width,height:900});const errors=[];page.on('pageerror',e=>errors.push(e.message));let paused=false,fail=false,rain=7;const pending=[];
  await page.route('https://**/*',r=>r.abort());
  await page.route('**/api/weather/v1/forecast?**',async r=>{if(paused)await new Promise(resolve=>pending.push(resolve));await r.fulfill(fail?{status:429,json:{error:'Limite'}}:{json:forecast(r.request(),rain)});});
- await page.addInitScript(()=>localStorage.setItem('fungaroli:legal-accepted','22026-10-12'));
+ await page.addInitScript(()=>localStorage.setItem('fungaroli:legal-accepted','32026-10-16'));
  await page.goto('/');await expect(page.locator('#hero .cover-link')).toBeVisible();await expect(page.locator('#refresh')).toHaveAttribute('aria-busy','false');
  await expect(page.locator('#season li').first()).toBeVisible();await expect(page.locator('#season-h')).toBeVisible();
  await page.evaluate(()=>{for(const k of ['fungaroli:weather:zones:v3','fungaroli:outing:zones:v3']){const c=JSON.parse(localStorage.getItem(k));for(const r of Object.values(c))r.t=Date.now()-7200000;localStorage.setItem(k,JSON.stringify(c));}});
@@ -29,7 +29,7 @@ for(const width of [390,1280])test(`cache immediata, aggiornamento discreto e co
 test('aggiornamento della scheda conserva accordion aperto e pannello contestuale',async({page})=>{
  const errors=[];page.on('pageerror',e=>errors.push(e.message));let paused=false;const pending=[];
  await page.route('https://**/*',r=>r.abort());await page.route('**/api/weather/v1/forecast?**',async r=>{if(paused)await new Promise(resolve=>pending.push(resolve));await r.fulfill({json:forecast(r.request())});});
- await page.addInitScript(()=>localStorage.setItem('fungaroli:legal-accepted','22026-10-12'));await page.goto('/');await expect(page.locator('#refresh')).toHaveAttribute('aria-busy','false');await page.locator('#hero .cover-link').click();
+ await page.addInitScript(()=>localStorage.setItem('fungaroli:legal-accepted','32026-10-16'));await page.goto('/');await expect(page.locator('#refresh')).toHaveAttribute('aria-busy','false');await page.locator('#hero .cover-link').click();
  const section=page.locator('#detail details.sec[data-sec="sentieri"]');await section.locator('summary').click();await expect(section).toHaveAttribute('open','');
  const keyword=section.locator('.glossary-link').first();await keyword.click();await expect(page.locator('#learning-popover')).toBeVisible();const opener=await keyword.elementHandle();
  paused=true;await page.evaluate(()=>document.querySelector('#refresh').click());await expect(page.locator('#refresh')).toHaveAttribute('aria-busy','true');paused=false;pending.splice(0).forEach(r=>r());await expect(page.locator('#refresh')).toHaveAttribute('aria-busy','false');

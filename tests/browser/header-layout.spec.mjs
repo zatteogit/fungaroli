@@ -3,7 +3,7 @@ for(const width of [320,390,768,1280])test(`filtri della testata compatti con tu
   await page.setViewportSize({width,height:900});await page.emulateMedia({reducedMotion:'reduce'});
   const errors=[];page.on('pageerror',e=>errors.push(e.message));
   await page.route('https://**/*',r=>r.abort());await page.route('**/api/weather/v1/forecast?**',r=>r.fulfill({status:503,json:{error:'No forecast needed for header layout'}}));
-  await page.addInitScript(()=>{localStorage.setItem('fungaroli:legal-accepted','22026-10-12');localStorage.setItem('fungaroli:prefs:v2',JSON.stringify({avoidCrowd:true,preferComfort:true,distancePenalty:true}));});
+  await page.addInitScript(()=>{localStorage.setItem('fungaroli:legal-accepted','32026-10-16');localStorage.setItem('fungaroli:prefs:v2',JSON.stringify({avoidCrowd:true,preferComfort:true,distancePenalty:true}));});
   await page.goto('/');const header=page.locator('#active-filters'),prefs=header.locator('[data-p]');await expect(prefs).toHaveCount(3);for(const pref of await prefs.all())await expect(pref).toHaveAttribute('aria-pressed','true');
   const geometry=()=>header.evaluate(e=>{
     const r=e.getBoundingClientRect(),buttons=[...e.querySelectorAll('[data-p]')].map(b=>b.getBoundingClientRect());

@@ -1,10 +1,12 @@
-> Aggiornamento del 13 ottobre 2026: questa analisi descrive la versione precedente senza account. Per profili con passkey, cookie tecnici, diario D1 e osservazioni condivise, fanno riferimento `data/legal.json` versione 2 e [community.md](community.md). Non si presume un’esenzione domestica per la comunità aperta. Le conclusioni sul vecchio diario KV restano riferite solo a quel servizio.
+> Aggiornamento del 13 ottobre 2026: questa analisi descrive la versione precedente senza account. Per profili con passkey, cookie tecnici, diario D1 e osservazioni condivise, fanno riferimento `data/legal.json` (oggi versione 3) e [community.md](community.md). Non si presume un’esenzione domestica per la comunità aperta. Le conclusioni sul vecchio diario KV restano riferite solo a quel servizio.
+>
+> Aggiornamento del 16 ottobre 2026: dopo due controlli esterni sono state riviste le parti sulle norme (§1), sulle aree protette delle 15 zone (§2), sulla geolocalizzazione (§6.1 e §6.2), sulle verifiche aperte (§8) e la tabella delle discrepanze (§9). `data/legal.json` è passato alla versione 3 (`verified_on` 2026-10-16). Le fonti nuove sono in fondo alla sezione 11.
 
 # Note legali e di sicurezza
 
 Documento di riferimento per i testi legali di Fungaroli Rieti (`data/legal.json`). Raccoglie le norme vigenti, le fonti consultate, i punti che non è stato possibile verificare e i rischi che l'app presenta oggi.
 
-- **Verifica eseguita il:** 12 ottobre 2026. Tutti gli URL sono stati consultati in quella data, salvo dove indicato diversamente.
+- **Verifica eseguita il:** 12 ottobre 2026. Tutti gli URL sono stati consultati in quella data, salvo dove indicato diversamente. **Aggiornamento:** 15-16 ottobre 2026 per le sezioni 1, 2, 6, 8 e 9; le date di lettura sono indicate accanto alle fonti nuove.
 - **Autore dell'app:** Matteo Sgambato, privato. App gratuita, personale e non commerciale, pensata per sé, per la famiglia e per chi riceve il link.
 - **Avvertenza:** questo documento non è un parere legale. Riassume fonti ufficiali e indica dove servono verifiche. Prima di diffondere l'app pubblicamente va fatto rivedere da un avvocato (vedi la nota in fondo).
 
@@ -59,7 +61,8 @@ Bisogna avere con sé tre cose:
 Altre regole:
 
 - **Minori di 14 anni:** possono raccogliere solo se accompagnati da una persona che ha attestato, ricevuta e documento (art. 4, c. 2).
-- **Autorizzazioni straordinarie:** i residenti nel Lazio senza attestato possono chiedere alla Regione fino a cinque autorizzazioni nominative, gratuite e giornaliere per anno solare. Valgono solo se accompagnati da chi ha attestato e ricevuta (art. 4, c. 3). Modulo: regione.lazio.it/modulistica/879.
+- **Autorizzazioni straordinarie:** i residenti nel Lazio senza attestato possono chiedere alla Regione fino a cinque autorizzazioni nominative, gratuite e giornaliere per anno solare. Valgono solo se accompagnati da chi ha attestato e ricevuta (art. 4, c. 3). Modulo: regione.lazio.it/modulistica/879. «Gratuite» vuol dire senza contributo: il modulo regionale chiede **due marche da bollo da 16 €** (una sulla domanda, una sull'autorizzazione), i giorni richiesti e il nome di chi accompagna; la domanda va all'Area decentrata agricoltura (modulo letto il 15/10/2026). In app: «senza contributo», con le marche da bollo.
+- **Non residenti:** pagano 40 € e servono attestato e documento (art. 4, c. 1). Il Lazio non prevede permessi turistici o giornalieri per loro: le autorizzazioni straordinarie valgono solo per i residenti. Nel 2020 è sparita la clausola del 2017 che accettava i tesserini della regione di provenienza. **Interpretazione:** alla lettera (corso «sulla base di uno schema unico» approvato dalla Regione Lazio, c. 1 lett. a; tesserino «rilasciato dalla Regione», c. 4) i titoli di altre regioni probabilmente non bastano. Non c'è una fonte ufficiale che lo dica: va chiesto per iscritto all'Area decentrata agricoltura di Rieti. In app: «Per tesserini o attestati rilasciati da altre regioni chiedi conferma alla Regione Lazio».
 - **Come pagare** (pagina della Regione Lazio): piattaforma PagaOnline (pagaonline.regione.lazio.it), bollettino postale c/c n. 63101000 intestato a Regione Lazio - Servizio Tesoreria, o bonifico all'IBAN IT75C0760103200000063101000. Causale: "L.R. n. 32/98-raccolta funghi anno …".
 
 ### 1.3 Quantità, taglie, ovoli (art. 3)
@@ -69,19 +72,20 @@ Altre regole:
 - **Nessuna taglia minima** (c. 2 bis) per: *Cyclocybe cylindracea* (pioppino), *Armillaria mellea* (chiodino), tutte le specie di *Cantharellus* (finferli, gallinacci), *Craterellus cornucopioides* (trombetta dei morti), *Hydnum repandum* e *H. rufescens* (steccherini), *Marasmius oreades* (gambesecca), *Armillaria tabescens*.
 - Un solo cespo concresciuto può superare i limiti di taglia (c. 3).
 - **Ovolo chiuso:** vietata la raccolta di *Amanita caesarea* allo stato di ovolo chiuso, cioè con il velo universale senza lacerazione naturale e spontanea (c. 4).
-- I funghi **non commestibili** si possono raccogliere solo per studio, e solo da chi ha l'autorizzazione speciale permanente dell'art. 8 bis, massimo cinque esemplari per specie (c. 5).
+- I funghi **non commestibili** si possono raccogliere solo per studio, e solo da chi ha l'autorizzazione speciale permanente dell'art. 8 bis, massimo cinque esemplari per specie (c. 5). L'art. 8 bis riguarda i micologi con attestato, residenti nel Lazio, iscritti al Registro nazionale e a un'associazione. Il limite di 3 kg del c. 1 vale per i funghi **commestibili**.
+- **Altri prodotti del sottobosco** (art. 2 e art. 3, c. 6), a persona e al giorno: asparagi selvatici 1 kg, bacche di ginepro 0,2 kg, bacche di mirto 0,2 kg, corbezzoli 2 kg, fragole 1 kg, lamponi 1 kg, mirtilli 1 kg. Per questi valgono anche gli orari e il divieto di attrezzi dell'art. 9 e i luoghi vietati dell'art. 10. Le more non sono nell'elenco dell'art. 2.
 
 ### 1.4 Giorni e orari
 
 - **Giorni:** l'art. 21 della L.R. 20/2024 ha abrogato l'art. 4, c. 5, che fissava i quattro giorni settimanali. La pagina della Regione dice che ora si raccoglie **tutti i giorni**. La stessa L.R. 20/2024 ha aggiunto l'art. 11, c. 2 bis: la Giunta regionale può stabilire i giorni della settimana in cui si raccoglie, per motivi di salvaguardia dell'ecosistema. Non ho trovato delibere di questo tipo. La pagina regionale non ne cita e gli atti annuali sui giorni trovati arrivano alla Determinazione G00042 dell'8 gennaio 2024, precedente all'abrogazione.
-- **Orari:** vietata la raccolta "durante le ore notturne, da un'ora dopo il tramonto a un'ora prima della levata del sole" (art. 9, c. 1).
+- **Orari:** vietata la raccolta "durante le ore notturne, da un'ora dopo il tramonto a un'ora prima della levata del sole" (art. 9, c. 1). Nei testi scriviamo «sorgere del sole», non «alba»: nell'uso comune l'alba è la prima luce, che viene prima del sorgere del sole (Treccani, voce «alba»). Il calcolo dell'app usa già il sorgere del sole.
 - **Limitazioni temporanee:** la Giunta può vietare la raccolta in certe zone per periodi definiti, o vietare per periodi limitati singole specie in pericolo (art. 11, cc. 1-2).
 
 ### 1.5 Come si raccoglie (art. 9; L. 352/1993, art. 5)
 
 - Vietati rastrelli, uncini e altri mezzi che danneggiano lo strato umifero, il micelio o le radici (art. 9, c. 2).
 - Vietato calpestare, danneggiare o distruggere i funghi, anche quelli non commestibili (art. 9, c. 3).
-- I funghi raccolti devono conservare tutte le caratteristiche che servono a riconoscere la specie con sicurezza. Vanno puliti sommariamente sul posto e trasportati in **contenitori rigidi e aerati** (art. 9, c. 4). La legge quadro vieta "in ogni caso" i contenitori di plastica (L. 352/1993, art. 5, c. 4).
+- I funghi raccolti devono conservare tutte le caratteristiche che servono a riconoscere la specie con sicurezza. Vanno puliti sommariamente sul posto e trasportati in **contenitori rigidi e aerati** (art. 9, c. 4). La legge quadro vieta "in ogni caso" i contenitori di plastica (L. 352/1993, art. 5, c. 4, letto su Normattiva il 15/10/2026): quindi anche una cassetta di plastica rigida e forata non va bene. Fino alla versione 2 `legal.json` vietava solo i «sacchetti di plastica»; dalla versione 3 dice «contenitori di plastica, anche rigidi o forati».
 - Vietato asportare la cotica superficiale del terreno (art. 9, c. 5).
 
 ### 1.6 Dove è vietato (art. 10)
@@ -89,11 +93,16 @@ Altre regole:
 - Nelle **riserve naturali integrali** regionali (c. 1, lett. a).
 - Nelle aree dei parchi e delle riserve regionali individuate dai rispettivi enti di gestione (c. 1, lett. b).
 - Nelle aree interdette dalla Giunta regionale per motivi silvo-colturali o di particolare valore naturalistico (c. 1, lett. c).
-- Nei **parchi nazionali** e nelle riserve statali, salvo diverse disposizioni degli enti di gestione (c. 1, lett. d).
+- Nei **parchi nazionali** e nelle riserve statali, salvo diverse disposizioni degli enti di gestione (c. 1, lett. d). Qui il divieto è la regola e il permesso l'eccezione: la legge regionale è più restrittiva della L. 352/1993 (art. 6), che vieta solo nelle aree indicate dagli enti. Fino alla versione 2 `legal.json` riassumeva solo le lettere a) e b); dalla versione 3 riporta tutte e quattro le lettere.
 - Nei giardini e nei parchi privati per tutta la loro estensione, e nei terreni di pertinenza delle abitazioni per un raggio di almeno 100 metri, salvo che ai proprietari (c. 2).
 - Nel verde pubblico urbano, in una fascia di **10 metri dal margine delle strade di viabilità pubblica**, nelle aree recuperate da ex discariche e nelle zone industriali (c. 3).
 
-**Accesso ai boschi.** La L.R. 28 ottobre 2002, n. 39 (gestione delle risorse forestali), art. 43, c. 1, consente l'accesso del pubblico ai boschi senza recinzione e senza cartelli di divieto. La circolazione sulle strade e piste forestali è regolata dalla L.R. 29/1987 (art. 41, c. 3), che non ho verificato nel dettaglio. Le piste forestali si possono usare a piedi, senza mezzi a motore né biciclette (art. 43, c. 3). Per l'app questo conta perché suggerisce accessi e strade bianche.
+**Accesso ai boschi.** La L.R. 28 ottobre 2002, n. 39 (gestione delle risorse forestali), art. 43, c. 1, consente l'accesso del pubblico ai boschi senza recinzione e senza segnaletica di divieto di accesso e transito. Il c. 3 dice che la rete di piste forestali «può essere sempre utilizzata» per attività sportive e ricreative senza mezzi a motore o biciclette: è un permesso per chi va a piedi, non un divieto. La circolazione su strade e piste forestali segue la L.R. 29/1987 (L.R. 39/2002, art. 41, c. 3), letta nel testo coordinato il 15/10/2026:
+
+- l'art. 2, lett. e ter, aggiunto dalla L.R. 20/2024 (art. 22), consente la circolazione fuori strada dei mezzi «utilizzati per l'attività di raccolta dei funghi epigei spontanei e di altri prodotti del sottobosco»;
+- restano «comunque fermi i divieti di circolazione previsti da altre leggi» (L.R. 29/1987, art. 1), le regole delle aree protette (L.R. 39/2002, art. 41, c. 6; per la Duchessa L.R. 70/1990, art. 12, lett. c; per Navegna-Cervia L.R. 56/1988, art. 11, lett. c) e la proprietà privata.
+
+**Interpretazione:** l'app indica strade bianche e punti di sosta, non percorsi fuoristrada, e non deve suggerire di percorrere piste in auto senza una verifica caso per caso. Per l'app conta anche l'accesso: dove ci sono recinzioni o cartelli di divieto non si entra.
 
 ### 1.7 Sanzioni (art. 16)
 
@@ -106,7 +115,9 @@ Sanzioni amministrative pecuniarie, salvo pene più gravi previste da altre legg
 | Raccolta senza attestato, ricevuta e documento; raccolta nelle aree vietate (art. 10); violazione delle modalità dell'art. 9 (orari, attrezzi, contenitori) | da 200 a 600 € (c. 1, lett. c) |
 | Altre violazioni del capo I | da 50 a 100 € (c. 1, lett. d) |
 
-Ogni violazione comporta anche la **confisca** del raccolto (c. 3). In caso di recidiva nella raccolta in aree vietate o nelle violazioni delle modalità, l'autorizzazione alla raccolta è sospesa per un anno (c. 4). Si applicano la L. 689/1981 e la L.R. 30/1994 (c. 5). La vigilanza spetta, tra gli altri, ai Carabinieri forestali (ex Corpo forestale), alle polizie locali, alle guardie venatorie e giurate e al personale ASL (art. 15).
+Ogni violazione comporta anche la **confisca** del raccolto (c. 3), «fermo restando l'obbligo della denuncia all'autorità giudiziaria per i reati previsti dalla legge». In caso di recidiva nella raccolta in aree vietate o nelle violazioni delle modalità, l'autorizzazione alla raccolta è sospesa per un anno (c. 4). Si applicano la L. 689/1981 e la L.R. 30/1994 (c. 5). La vigilanza spetta, tra gli altri, ai Carabinieri forestali (ex Corpo forestale), alle polizie locali, alle guardie venatorie e giurate e al personale ASL; nelle aree protette si svolge con il coordinamento degli enti di gestione (art. 15).
+
+**Nelle aree protette** possono aggiungersi altre sanzioni: nelle aree protette regionali, comprese le riserve, da 50 a 3.000 € per le violazioni della L.R. 29/1997 e delle leggi istitutive, «salvo che il fatto costituisca un reato» (L.R. 29/1997, art. 38, letto nel testo coordinato il 15/10/2026); nei parchi nazionali la L. 394/1991, art. 30, prevede sanzioni amministrative per chi viola le disposizioni degli enti di gestione (c. 2) e arresto o ammenda per chi viola gli artt. 6 e 13 e l'art. 11, c. 3 (c. 1). **Interpretazione:** che raccogliere funghi in zona «a» di un parco nazionale sia un reato non è dimostrato né escluso. Dipende dal fatto che i funghi rientrino nelle «specie vegetali» dell'art. 11, c. 3, e non ho trovato sentenze su questo. Per questo i testi dell'app non scrivono «reato» e nemmeno «solo multa»: dicono «vietato, con sanzioni e confisca del raccolto».
 
 ### 1.8 Vendita e certificazione
 
@@ -116,13 +127,27 @@ La vendita di funghi freschi spontanei richiede la SCIA e una persona riconosciu
 
 ## 2. Aree protette delle zone dell'app
 
-Regola generale: la L.R. 32/1998 cede il passo alle regole dell'ente gestore (art. 10, c. 1, lett. b e d). Le leggi istitutive e i piani delle aree protette prevalgono sulle norme forestali (L.R. 39/2002, artt. 41, 42 e 43, "fatta salva la normativa specifica"). Lo stato delle regole di ciascuna area, per quanto verificato:
+Regola generale (L.R. 32/1998, art. 10, c. 1): nelle riserve integrali regionali la raccolta è vietata (lett. a); nei parchi e nelle riserve regionali è vietata nelle aree indicate dagli enti di gestione (lett. b); nei parchi nazionali e nelle riserve statali è vietata salvo diverse disposizioni degli enti (lett. d). Le leggi istitutive e i piani delle aree protette prevalgono sulle norme forestali (L.R. 39/2002, artt. 41, 42 e 43, "fatta salva la normativa specifica").
+
+### 2.0 Quali zone toccano aree protette (verifica del 15/10/2026)
+
+Due controlli indipendenti hanno incrociato i cerchi delle 15 zone e i circa 315 punti campione per zona (`data/habitat.json`) con gli strati del Geoportale della Regione Lazio (WFS: aree naturali protette, zonazione del Parco Gran Sasso-Laga, zonazione della Duchessa, rete Natura 2000), con un calcolo punto-in-poligono. I risultati dei due controlli coincidono entro pochi decimi di punto.
+
+| Zona | Area protetta | Quota del cerchio | Note |
+|---|---|---|---|
+| Laga | Parco Nazionale del Gran Sasso e Monti della Laga | 92% circa | Zona «a» 6,7-6,8% (23 punti, tutti fuori bosco tra 2.098 e 2.434 m); zona «b» 46,9% (74 punti di bosco su 152). Nelle fasce dell'app sono in zona «b» 37 punti di bosco su 48 a 1.350 m e 35 su 35 a 1.600 m. |
+| Cicolano | Riserva Monte Navegna e Monte Cervia | 38,7-38,9% | 122 punti su 317. Nessuna zonazione digitalizzata (vedi 2.1). |
+| Malito | Riserva Montagne della Duchessa | 2,3% | Quasi tutto in zona C1 (2,1%; 0,2% in zona B2). I 7 punti campione dentro la riserva sono tutti in C1. La zona A è a circa 4 km dal centro, fuori dal raggio di 3 km. |
+| Domo | nessuna | 0% | Il confine del Parco Gran Sasso-Laga è tangente al cerchio. |
+| Le altre 11 zone | nessuna | 0% | Vallonina, Poggio Bustone, Antrodoco, Rascino, Tancia, Terminillo ovest ed est, Cittareale, Pescorocchiano, San Giovanni, Leonessa. |
+
+**Limiti del controllo.** I confini del Geoportale «non hanno valenza giuridica e/o probatoria» (nota del dataset): fa fede la cartografia dell'ente. Licenze: perimetri «creativecommons» senza versione, zonazioni «not_specified». Per questo l'app non ridistribuisce queste geometrie e scrive solo frasi nei testi delle zone. Gli strati si fermano al confine del Lazio: fuori regione cadono 20 punti della Laga (quasi certamente nel Parco, versante abruzzese e marchigiano; non verificato), 35 di Rascino, 4 di Cittareale e 3 di Antrodoco. Per la Laga le quote di Parco e di zona «a» sono quindi limiti inferiori.
 
 ### 2.1 Riserva naturale Monte Navegna e Monte Cervia (zona Cicolano)
 
 - **Legge istitutiva:** L.R. 9 settembre 1988, n. 56. L'ampliamento del 1997 ha aggiunto altri comuni, tra cui Ascrea e Collalto Sabino.
 - **Norma sui funghi:** l'art. 11, c. 1, lett. i) vieta la raccolta di specie vegetali spontanee "ad eccezione di quanto previsto nel regolamento di attuazione. Nelle more dell'approvazione del suddetto regolamento **è consentita esclusivamente la raccolta dei funghi secondo le normative vigenti in materia**".
-- **Cosa ne segue:** finché non c'è il regolamento della riserva, i funghi si possono raccogliere secondo la L.R. 32/1998. Non ho trovato un **regolamento** né un **piano di assetto approvato** per questa riserva, e nemmeno un divieto specifico per le "Zone A" riferito ai funghi. L'art. 10 della L.R. 56/1988 distingue zone A, B e C, ma le norme che ho letto per la zona A riguardano edifici e sentieri, non la raccolta.
+- **Cosa ne segue:** finché non c'è il regolamento della riserva, i funghi si possono raccogliere secondo la L.R. 32/1998. Non ho trovato un **regolamento** né un **piano di assetto approvato** per questa riserva, e nemmeno un divieto specifico per le "Zone A" riferito ai funghi. L'art. 10 della L.R. 56/1988 divide la riserva in zone A e B (cartografia nell'allegato C), con norme transitorie che riguardano edifici, piste e sentieri, non la raccolta. La zona A di Navegna non è una riserva integrale. La zonazione non è digitalizzata sul Geoportale.
 - **Da fare:** chiedere all'ente gestore (navegnacervia.it) se esistono un regolamento, un piano o divieti locali, e tenere conto di eventuali divieti fissati ai sensi dell'art. 10, c. 1, lett. b) della L.R. 32/1998.
 
 ### 2.2 Riserva naturale Montagne della Duchessa (Borgorose)
@@ -130,18 +155,27 @@ Regola generale: la L.R. 32/1998 cede il passo alle regole dell'ente gestore (ar
 - **Legge istitutiva:** L.R. 7 giugno 1990, n. 70. L'art. 12, c. 1, lett. m) vieta, fino all'entrata in vigore di piano e regolamento, "la raccolta di specie vegetali spontanee"; nel frattempo la raccolta "potrà essere autorizzata dall'ente gestore", che ne fissa quantità e modalità.
 - **Piano della riserva:** approvato con **Deliberazione del Consiglio regionale 15 settembre 2021, n. 16**, pubblicata sul BURL n. 93, supplemento n. 1, del 30 settembre 2021. Gli elaborati comprendono Norme tecniche di attuazione e un Regolamento ("RS RR Regolamento"), adottati dal Comune di Borgorose con la delibera consiliare 20/2014.
 - **Regolamento non approvato (verifica del 12/10/2026):** la DCR 16/2021 approva il solo Piano. Gli elaborati elencati nel dispositivo sono Relazione generale, Norme tecniche di attuazione, Schede degli interventi e sette tavole: il Regolamento non c'è (testo della DCR, pp. 8-9). Il testo del PDF ha una codifica dei caratteri sfasata. Una volta decodificato, l'unica occorrenza di "funghi" è descrittiva ("produzioni non legnose (es. funghi)"). **Interpretazione:** il Piano non contiene regole sulla raccolta e valgono le misure di salvaguardia dell'art. 12 della L.R. 70/1990. La decodifica può essere incompleta, quindi le NTA vanno controllate a mano. Non so nemmeno se la legge istitutiva comprenda i funghi tra le "specie vegetali spontanee".
-- **Nota:** nessuna delle sette zone dell'app sembra ricadere nella Duchessa: Rascino è nel territorio di Fiamignano, non di Borgorose. La riserva compare nel README e nelle regole perché è vicina.
+- **Zonazione:** la legge istitutiva (art. 8) prevede zone A (riserva integrale, fruizione solo per la ricerca scientifica), B, C e D. L'art. 12 non distingue tra le zone: le misure di salvaguardia valgono in tutta la riserva.
+- **Ente gestore:** il Comune di Borgorose (L.R. 70/1990, art. 5; sito della riserva, letto il 16/10/2026). Ufficio della riserva a Corvaro, via Boscareccia 2: tel. 0746 306493, riservaduchessa@regione.lazio.it, PEC riservamontagneduchessa@pec.regione.lazio.it.
+- **Zone dell'app:** oggi c'è la zona **Malito** (Corvaro di Borgorose). Circa il 2,3% del suo cerchio è nella riserva, quasi tutto in zona C1 (vedi 2.0); Rascino resta fuori (Fiamignano). **Testo in app** (`data/zones.json`, malito, e `legal.json` dalla versione 3): il Piano non risulta contenere regole sui funghi, il regolamento non è approvato, valgono le norme di salvaguardia dell'art. 12, che vietano la raccolta di specie vegetali spontanee salvo autorizzazione dell'ente gestore; prima di raccogliere funghi chiedi all'ente se serve l'autorizzazione. Il testo cita la legge com'è scritta («specie vegetali») e lascia all'ente la domanda sui funghi (vedi sopra e 8, punto 5). La frase precedente di `zones.json` («nella zona A di riserva integrale la raccolta è vietata») è stata tolta: la zona A è fuori dal cerchio e l'art. 12 non la nomina.
 
 ### 2.3 Parco Nazionale del Gran Sasso e Monti della Laga (zona Laga - Amatrice)
 
-- **Decreto istitutivo:** D.P.R. 5 giugno 1995 (G.U. 4 agosto 1995, n. 181, S.O.). Le misure di salvaguardia (Allegato A, art. 3, c. 1, lett. b) vietano la raccolta della flora spontanea ma consentono "il pascolo e la raccolta di funghi, tartufi ed altri prodotti del bosco, nel rispetto delle vigenti normative, degli usi civici e consuetudini locali".
-- **Piano per il Parco:** approvato dalle tre Regioni (per il Lazio DCR n. 7 del 7 agosto 2019, BURL n. 84 suppl. del 17 ottobre 2019); avviso di approvazione sulla G.U. parte II n. 124 del 22 ottobre 2020. Nelle **zone a (riserva integrale)** "sono esclusi il prelievo e l'utilizzo delle risorse naturali abiotiche e biotiche", fatti salvi diritti reali e usi civici (Normativa di attuazione, art. 7, c. 7). La raccolta dei funghi nelle zone a va quindi considerata esclusa, salvo usi civici. La Normativa non contiene una disciplina specifica dei funghi per le altre zone.
+- **Regola regionale:** il Parco è un parco nazionale, quindi per la L.R. 32/1998 (art. 10, c. 1, lett. d) la raccolta è vietata salvo diverse disposizioni dell'Ente Parco. Non ho trovato disposizioni dell'Ente che la consentano.
+- **Decreto istitutivo:** D.P.R. 5 giugno 1995 (G.U. 4 agosto 1995, n. 181, S.O.). Le misure di salvaguardia (Allegato A, art. 3, c. 1, lett. b) vietavano la raccolta della flora spontanea ma consentivano "il pascolo e la raccolta di funghi, tartufi ed altri prodotti del bosco, nel rispetto delle vigenti normative, degli usi civici e consuetudini locali". **Non sono più in vigore:** valevano «fino all'approvazione del piano del parco» (D.P.R., art. 1, c. 6), approvato nel 2019-2020.
+- **Piano per il Parco:** approvato dalle tre Regioni (per il Lazio DCR n. 7 del 7 agosto 2019, BURL n. 84 suppl. del 17 ottobre 2019); avviso di approvazione sulla G.U. parte II n. 124 del 22 ottobre 2020. Nelle **zone a (riserva integrale)** "sono esclusi il prelievo e l'utilizzo delle risorse naturali abiotiche e biotiche", fatti salvi diritti reali e usi civici (Normativa di attuazione, art. 7, c. 7). La raccolta dei funghi nelle zone a va quindi considerata esclusa, salvo usi civici. **Anche nelle zone b (riserva generale orientata)** la Normativa usa la stessa formula: «Sono esclusi il prelievo e l'utilizzo delle risorse naturali abiotiche e biotiche», salvi diritti reali e usi civici (art. 8, c. 7). Nelle zone c i prelievi «non possono contrastare» con le finalità di conservazione della zona (art. 9, c. 7). Il Piano è «immediatamente vincolante» anche per i privati (L. 394/1991, art. 12, c. 8). **Interpretazione:** con la stessa lettura data alla zona a, anche la zona b va considerata esclusa, salvo usi civici. Conta molto per l'app: nella zona Laga la zona b copre circa metà del cerchio e gran parte del bosco alle fasce di 1.350 e 1.600 m (vedi 2.0). Fino alla versione 2 i testi dell'app citavano solo la zona a; dalla versione 3 `legal.json` e `zones.json` (laga) citano anche la zona b, gli usi civici e la regola regionale.
 - **Regolamento del Parco:** sul sito dell'Ente c'è una **bozza** (2019) che all'art. 16 vieta la raccolta di funghi e tartufi nella zona a e la riserva, nelle zone b, c e d, "agli aventi titolo rilasciato dagli enti competenti". Non risulta approvata: la pagina "Regolamenti in vigore" dell'Ente non elenca un regolamento generale né uno sui funghi.
+- **Usi civici:** Piano e bozza fanno salvi gli usi civici nelle zone a e b. Nella Laga (Amatrice) i residenti titolari possono avere diritti di raccolta: l'app non può saperlo e lo dice con «salvi gli usi civici».
 - **Da fare prima di uscire:** consultare la zonazione del Piano (gransassolagapark.it, pdf "ZONAZIONE") e chiedere all'Ente Parco se ci sono regole per la raccolta dei funghi in vigore.
+- **Domande da fare per iscritto all'Ente Parco:** la raccolta in zona b è esclusa (art. 8, c. 7)? Valgono gli usi civici per i residenti delle frazioni di Amatrice? Nelle zone c e d esiste una «diversa disposizione» ai sensi della L.R. 32/1998, art. 10, lett. d? Le risposte vanno registrate qui.
 
 ### 2.4 Altre zone
 
-Non ho controllato in modo sistematico se Vallonina/Terminillo, Poggio Bustone/Cantalice, Antrodoco, Rascino e Monte Tancia ricadano in altre aree protette o in siti Natura 2000 con misure di conservazione sulla raccolta. L'app non segnala vincoli per queste zone. Vanno controllati anche i **terreni a uso civico**, dove i comuni o le università agrarie possono avere regolamenti propri (L.R. 39/2002, art. 42, c. 3, per i prodotti diversi dai funghi; per i funghi non ho trovato una norma regionale specifica).
+Aggiornamento del 15/10/2026 (vedi 2.0). Le 12 zone senza campo `protection` non ricadono in parchi o riserve del Lazio; Domo è tangente al Parco Gran Sasso-Laga. Il parco regionale più vicino, i Monti Lucretili, è a 9 km dal centro del Cicolano e non tocca nessun cerchio; la Riserva Laghi Lungo e Ripasottile è a circa 0,6 km dal bordo del cerchio di Poggio Bustone.
+
+**Rete Natura 2000.** La ZPS Monti Reatini copre quasi tutta la Vallonina (99,9%), l'88% di Terminillo est e l'85% di Leonessa; la ZSC Tancia-Pizzuto il 56% del Tancia. Le misure di conservazione delle ZSC reatine (DGR 161/2016, all. 1) e quelle generali delle ZPS e ZSC (DGR 612/2011) non contengono la parola «fung»: nessuna regola sulla raccolta dei funghi.
+
+**Usi civici e regole locali.** Ricerche mirate su Leonessa, Amatrice, Accumoli, Cittareale, Borgorose, Fiamignano e sulle ASBUC non hanno trovato regolamenti comunali o di usi civici sui funghi. L'assenza di risultati non prova che non esistano: albi pretori e regolamenti delle ASBUC sono poco indicizzati. La base regionale per le aree tabellate a raccolta riservata (art. 6 originario della L.R. 32/1998) è stata abrogata nel 2017 (L.R. 9/2017, art. 17, c. 22, lett. d); restano solo due richiami senza oggetto nell'art. 16. Sui domini collettivi la L. 168/2017 (art. 1) riconosce una «capacità di autonormazione»: se ne derivi il potere di riservare la raccolta ai titolari non è verificato. Per i prodotti diversi dai funghi vale la L.R. 39/2002, art. 42, c. 3. **In app:** una riga generica nelle regole di ogni zona («Rispetta cartelli e divieti di accesso: comuni, amministrazioni di usi civici (ASBUC) e aree protette possono avere regole proprie»), appoggiata alla L.R. 39/2002, art. 43, c. 1. Nessuna regola locale specifica finché non è verificata.
 
 ---
 
@@ -237,7 +271,7 @@ Non contiene esclusioni assolute, rinunce a diritti, deroghe al foro, decadenze 
 
 ### 6.1 Cosa tratta l'app (verificato nel codice il 12 ottobre 2026)
 
-Ho cercato in `index.html`, `js/`, `css/`, `worker/` e `functions/` i termini analytics, gtag, googletagmanager, plausible, matomo, umami, cookie e sendBeacon: **nessuna occorrenza**. L'app non usa account, non chiede la geolocalizzazione e non imposta cookie propri.
+Ho cercato in `index.html`, `js/`, `css/`, `worker/` e `functions/` i termini analytics, gtag, googletagmanager, plausible, matomo, umami, cookie e sendBeacon: **nessuna occorrenza**. In quella versione l'app non usava account e non impostava cookie propri (per i profili vedi la nota in testa). **Geolocalizzazione (verificata nel codice il 16/10/2026):** l'app la chiede solo su comando, con «La mia posizione» sulla mappa (`map.locate` di Leaflet in `js/app.js`) e con «Usa la posizione attuale» per la base di partenza (`js/base-location.js`). Sulla mappa la posizione serve a centrare la carta e non viene inviata al server dell'app; la base di partenza, se salvata, va nel profilo su D1. L'informativa in `legal.json` (sezione privacy, dalla versione 3) lo dice.
 
 | Dato | Dove | Chi lo vede |
 |---|---|---|
@@ -259,9 +293,10 @@ Ogni richiesta a un server esterno gli trasmette l'**indirizzo IP**, lo user age
 |---|---|---|---|
 | fonts.googleapis.com / fonts.gstatic.com (Google) | A ogni apertura | Richiesta dei font Public Sans e Literata | Vedi 6.4 |
 | cdnjs.cloudflare.com (Cloudflare) | A ogni apertura | Richiesta di Leaflet 1.9.4 | |
-| api.open-meteo.com | All'avvio e con "Aggiorna meteo" | Coordinate delle 7 zone (non la posizione dell'utente) | Termini Open-Meteo: per l'API gratuita gli IP possono essere registrati per motivi tecnici o di prevenzione abusi, non collegati all'identità, e i log sono cancellati dopo 90 giorni |
-| {a,b,c}.tile.opentopomap.org | Mappa topografica | Tile richieste, cioè l'area guardata | La pagina del progetto non contiene un'informativa privacy |
-| tile.openstreetmap.org (OSMF) | Mappa OSM, se scelta | Tile richieste | Si applica la privacy policy di OSMF |
+| api.open-meteo.com | All'avvio e con "Aggiorna meteo" | Coordinate delle 15 zone (non la posizione dell'utente) | Termini Open-Meteo: per l'API gratuita gli IP possono essere registrati per motivi tecnici o di prevenzione abusi, non collegati all'identità, e i log sono cancellati dopo 90 giorni |
+| {a,b,c}.tile.opentopomap.org | Mappa topografica | Tile richieste, cioè l'area guardata; anche l'area intorno a te se premi «La mia posizione» (tessere di circa 2 km a livello 14) | La pagina del progetto non contiene un'informativa privacy. Le tessere restano nella cache del service worker |
+| tile.openstreetmap.org (OSMF) | Mappa OSM, se scelta | Tile richieste; anche l'area intorno a te se premi «La mia posizione» | Si applica la privacy policy di OSMF |
+| photon.komoot.io, routing.openstreetmap.de (dal server dell'app) | Base di partenza, solo con un profilo | Testo della località cercata; coordinate della base e delle zone per i percorsi, senza nome o ID del profilo | Chiamati dal Worker, non dal browser (`worker/travel-provider.js`) |
 | geoportale.regione.lazio.it | Livello Carta Forestale e legenda | Area guardata | |
 | sketchfab.com | Solo se si tocca "Apri il modello 3D" | Iframe del visore | Sketchfab può impostare cookie propri; non verificato |
 | Google Maps, iNaturalist, Wikipedia, Waymarked Trails, OpenStreetMap, GBIF | Solo cliccando un link | Navigazione verso il sito esterno | Link in uscita, non incorporati |
@@ -326,34 +361,61 @@ Conteggio: CC-BY-NC 56, CC-BY 14, CC BY-SA 3.0 6, CC BY-SA 4.0 3, CC0 3, CC BY 3
 
 1. **Sito ASL Rieti**: orari verificati sulla pagina ufficiale del 24/09/2026 (vedi sezione 3). Restano da confermare il periodo di apertura e la gratuità indicata dal Ministero.
 2. **Pagina del Centro Antiveleni del Policlinico Umberto I:** irraggiungibile (503 e certificato TLS non valido). Il numero è confermato da Salute Lazio (2026) e dall'ISS (2016).
-3. **Delibere della Giunta regionale sui giorni di raccolta** (art. 11, c. 2 bis, L.R. 32/1998) adottate dopo la L.R. 20/2024: non ne ho trovate, ma non ho consultato tutti i BURL del 2025 e 2026.
-4. **Riserva Monte Navegna e Monte Cervia:** esistenza di regolamento, piano di assetto o divieti specifici sui funghi. Il divieto nelle "Zone A" citato dall'app non trova riscontro nella legge istitutiva.
-5. **Riserva Montagne della Duchessa:** contenuto delle Norme tecniche e del Regolamento sui funghi (PDF scansionato) e vigenza del Regolamento.
-6. **Parco Gran Sasso e Monti della Laga:** esistenza di un regolamento del Parco in vigore sulla raccolta dei funghi. Ho trovato solo la bozza del 2019.
-7. **Altri vincoli** (siti Natura 2000, usi civici, regolamenti comunali) per le zone diverse da Cicolano e Laga.
-8. **Accordo d'uso di GBIF** e condizioni di Sketchfab: pagine non accessibili o non lette.
-9. **Sentenza del LG München I** del 20 gennaio 2022: letta solo attraverso commenti di terzi.
-10. **Workers Logs e analytics di Cloudflare** attivi sull'account: si controllano solo dal pannello. Il codice non li attiva.
-11. **Tempo d'attesa del 118** e instradamento delle chiamate al 112 nel Reatino: non verificati su una fonte primaria aggiornata.
-12. **L.R. 29/1987** sulla circolazione fuoristrada: richiamata dalla L.R. 39/2002, non letta.
+3. **Delibere della Giunta regionale sui giorni di raccolta** (art. 11, c. 2 bis, L.R. 32/1998) adottate dopo la L.R. 20/2024: non ne ho trovate (ricerche ripetute il 15 e 16/10/2026; la pagina Funghi della Regione, aggiornata il 15/10/2026, dice «tutti i giorni»), ma non ho consultato tutti i BURL del 2025 e 2026. Il Decreto T00126 del 25/08/2026 rinnova soltanto la Commissione tecnico-consultiva. Da ricontrollare a ogni stagione, insieme agli atti basati sull'art. 10, c. 1, lett. c e sull'art. 11, cc. 1-2.
+4. **Riserva Monte Navegna e Monte Cervia:** esistenza di regolamento, piano di assetto o divieti specifici sui funghi. Il sito dell'ente era in manutenzione durante la verifica del 15/10/2026.
+5. **Riserva Montagne della Duchessa:** se l'ente rilascia autorizzazioni secondo la L.R. 70/1990, art. 12, lett. m, e se le considera necessarie anche per i funghi; contenuto delle Norme tecniche (PDF con codifica sfasata: una lettura decodificata del 16/10/2026 trova «funghi» solo come esempio di produzione non legnosa).
+6. **Parco Gran Sasso e Monti della Laga:** esistenza di un regolamento del Parco in vigore sulla raccolta dei funghi (ho trovato solo la bozza del 2019); risposta scritta dell'Ente su zona b, usi civici e zone c e d (domande in 2.3).
+7. **Regole locali:** regolamenti comunali e di usi civici (ASBUC) nelle 15 zone: nessuno trovato (vedi 2.4). Aree protette di Abruzzo, Marche e Umbria nelle parti dei cerchi fuori dal Lazio (Laga, Rascino, Cittareale, Antrodoco).
+8. **Titoli di altre regioni:** se un attestato o tesserino di Umbria, Abruzzo o Marche vale nel Lazio. Va chiesto per iscritto all'Area decentrata agricoltura di Rieti (vedi 1.2).
+9. **Reato o illecito amministrativo** per la raccolta in zona «a» di un parco nazionale: nessuna sentenza trovata (vedi 1.7). Banche dati di giurisprudenza non consultate.
+10. **Accordo d'uso di GBIF** e condizioni di Sketchfab: pagine non accessibili o non lette.
+11. **Sentenza del LG München I** del 20 gennaio 2022: letta solo attraverso commenti di terzi.
+12. **Workers Logs e analytics di Cloudflare** attivi sull'account: si controllano solo dal pannello. Il codice non li attiva.
+13. **Tempo d'attesa del 118** e instradamento delle chiamate al 112 nel Reatino: non verificati su una fonte primaria aggiornata.
+14. **L.R. 29/1987** sulla circolazione fuoristrada: letta nel testo coordinato il 15/10/2026 (vedi 1.6). Resta da verificare caso per caso quali piste sono vietate da comuni, aree protette o proprietari.
 
 ---
 
 ## 9. Discrepanze tra l'app attuale e le norme
 
-Elenco per chi gestisce il codice e i dati. I testi di `legal.json` sono già allineati alla norma; questi punti stanno in altri file.
+Elenco per chi gestisce il codice e i dati. Controllato sul codice il 16 ottobre 2026 (produzione v77 e copia di lavoro del rilascio successivo).
 
-| Dove | Testo attuale | Norma vigente |
+### 9.1 Risolte
+
+Le righe della tabella del 12 ottobre risultano risolte nel codice attuale:
+
+| Dove | Problema del 12/10 | Stato al 16/10 |
 |---|---|---|
-| `js/species.js`: `minCap: 3` per finferlo, trombetta dei morti, steccherino dorato, chiodino | Badge "cappello ≥ 3 cm" | Per queste specie non c'è taglia minima (L.R. 32/1998, art. 3, c. 2 bis). Il badge presenta come obbligo di legge un limite che non esiste. |
-| `index.html`, regole: "altre specie 3 cm" | Omette le eccezioni | Aggiungere: 4 cm anche per agarico geotropo e prataiolo; nessun minimo per le specie dell'art. 3, c. 2 bis. |
-| `index.html` e README: "esenti i residenti over 65" | "over 65" | La legge dice "che abbiano compiuto il sessantacinquesimo anno di età": l'esenzione parte dal compimento dei 65 anni. La pagina della Regione scrive "di età superiore a 65 anni"; meglio seguire la legge. |
-| `index.html`: "entro 10 m dalle strade carrabili, entro 100 m da fabbricati abitati" | Semplificazione | "10 metri dal margine delle strade di viabilità pubblica"; "terreni di pertinenza degli immobili ad uso abitativo per un raggio di almeno 100 metri, salvo che ai proprietari"; più giardini, parchi privati, verde pubblico urbano, ex discariche e zone industriali. |
-| `index.html`: "Zone A delle riserve" | Divieto generico | La L.R. 32/1998 vieta nelle riserve **integrali** e nelle aree individuate dagli enti gestori. Per Navegna-Cervia la legge istitutiva consente i funghi in attesa del regolamento. |
-| `data/zones.json`, Cicolano: "raccolta vietata nelle Zone A, consentita in B e C" | Affermazione precisa | Non trova riscontro nella L.R. 56/1988 (vedi 2.1). Meglio un testo prudente: "Parte dell'area è nella Riserva Monte Navegna e Monte Cervia: verifica con l'ente gestore eventuali divieti". |
-| `index.html`: "Sintesi dal documento di partenza (fonte AMER, 2025)" | Fonte secondaria | Fonti primarie in sezione 11. |
-| Piè di pagina | "Mappe © OpenStreetMap, OpenTopoMap (CC-BY-SA)…" | Aggiungere i link a openstreetmap.org/copyright, alla licenza CC BY-SA di OpenTopoMap, a open-meteo.com e alla CC BY 4.0, e l'attribuzione completa della Carta Forestale (sezione 7). |
-| `README.md`: contenitori | "Cesti rigidi e aerati" | Corretto; si può aggiungere che la legge quadro vieta in ogni caso la plastica (L. 352/1993, art. 5, c. 4). |
+| `js/species.js` | `minCap: 3` per finferlo, trombetta dei morti, steccherino, chiodino | Risolto: `minCap: 0` (art. 3, c. 2 bis). |
+| `index.html`, regole | «altre specie 3 cm» senza eccezioni; «over 65»; distanze semplificate; «Zone A delle riserve»; fonte AMER | Risolto: le frasi non ci sono più; le regole complete stanno in `legal.json`. |
+| `data/zones.json`, Cicolano | «raccolta vietata nelle Zone A, consentita in B e C» | Risolto: testo prudente sulla L.R. 56/1988. |
+| Piè di pagina | Link alle licenze mancanti | Risolto per OpenStreetMap, OpenTopoMap e Open-Meteo. La Carta Forestale è citata in breve; l'attribuzione completa è nella sezione «Fonti dei dati, licenze e crediti» di `legal.json`. |
+| `README.md`, contenitori | — | Il README non parla più di contenitori. |
+
+Risolte in `legal.json` versione 3 e in `data/zones.json` (16/10): regola dei parchi nazionali e lettera c dell'art. 10; zona b del Parco Gran Sasso-Laga e usi civici; Duchessa (Piano senza regole sui funghi, salvaguardia dell'art. 12, ente gestore); contenitori di plastica anche rigidi; «3 kg di funghi commestibili» e regola sui non commestibili; limiti degli altri prodotti del sottobosco; marche da bollo delle autorizzazioni straordinarie; non residenti; «sorgere del sole»; riga su cartelli e regole locali; informativa sulla posizione.
+
+### 9.2 Corrette nello stesso rilascio, in altri file
+
+Verificato sulla copia di lavoro del rilascio, prima del merge (16/10/2026). Se uno di questi file non entra nel rilascio, la riga torna in 9.3.
+
+| Dove | Problema | Correzione |
+|---|---|---|
+| `index.html` (testo fisso della striscia in home e riga sugli orari) e ripieghi di `js/app.js` (onboarding, regole di zona, etichette dell'orario) | Senza documento; «un'ora prima dell'alba», «Alba» | Striscia uguale a `home_strip`, con il documento; «sorgere del sole» (art. 4, c. 1, lett. c; art. 9, c. 1). |
+| `data/species-traits.json`, `data/species-id.json` | Fonte https://faolex.fao.org/docs/pdf/ita21952.pdf (testo del 2000 circa) | Sostituita con il testo coordinato del Consiglio regionale (id=8275). |
+| `data/species-traits.json`, regola del verdone | 4 cm anche per *Russula cyanoxantha* | 4 cm per *R. virescens*, 3 cm per *R. cyanoxantha* (art. 3, c. 2). |
+| `data/species-traits.json`, regola sul trasporto | «Mai sacchetti di plastica» | Niente contenitori di plastica, nemmeno rigidi o forati (L. 352/1993, art. 5, c. 4). |
+| `data/plants.json` (fragolina, asparago selvatico, corbezzolo) | Nessun limite di quantità in scheda | Campo `protection` con i limiti dell'art. 3, c. 6. |
+| `worker/cms.js`, elenco `REPOSITORY_REFRESHED` | `zones` non c'era | Aggiunto: le correzioni di `data/zones.json` (Laga, Malito, accessi) arrivano allo snapshot se nessun autore ha toccato il documento. Da controllare in `/api/content/v1/snapshot` dopo il deploy. |
+
+### 9.3 Ancora aperte
+
+| Dove | Testo attuale | Norma o fatto |
+|---|---|---|
+| `data/species-traits.json`, «esemplare dubbio in un contenitore separato» | Presuppone la raccolta di esemplari non riconosciuti | Art. 3, c. 5: i non commestibili si raccolgono solo con l'autorizzazione dell'art. 8 bis. Va riformulato, non tolto (l'art. 13 affida agli Ispettorati il controllo dei funghi dei privati). |
+| Catalogo dei commestibili | Nessuna taglia minima indicata | Art. 3, cc. 2 e 2 bis (per esempio prataiolo 4 cm; pioppino e gambesecca senza minimo). |
+| `js/identify.js`, chiave guidata | Base, taglio e sporata presuppongono la raccolta | Art. 3, c. 5 (vedi sopra): basta una nota di legge, senza dire «scarta». |
+| `docs/fronda/content.json`, `docs/fronda/product.html` | Fonte https://faolex.fao.org/docs/pdf/ita21952.pdf | Come sopra: testo del 2000 circa. Kit di studio, non pubblicato (`.assetsignore`). |
+| `inbox/zone-candidate.md` (non pubblicato) | Quattro giorni settimanali indicati come «[FATTO]» | Abrogati dal 13/12/2024. |
 
 ---
 
@@ -366,7 +428,7 @@ In ordine di importanza:
 3. **Consigli su accessi, orari e affollamento.** Suggerire strade bianche, punti di sosta e orari d'arrivo è utile, ma può portare in zone con divieti di transito, proprietà private, usi civici o pericoli (strade dissestate, buio, maltempo). Servono indicazioni chiaramente di massima e il richiamo a cartelli e regole locali.
 4. **Privacy, se il link si diffonde.** Google Fonts dinamici (rischio di contestazioni sul modello tedesco), mancanza di un recapito del titolare, assenza di un'informativa completa se cade l'esenzione domestica. Il rischio è basso finché l'uso resta familiare e cresce con la diffusione pubblica.
 5. **Licenze delle immagini.** Manca il link al testo della licenza e la versione è incompleta. Il rischio è basso perché autore e fonte sono indicati; diventa alto se l'app assume caratteri commerciali (immagini NC e API gratuita di Open-Meteo).
-6. **Pubblicazione dell'intero repository.** Workers Assets serve anche `docs/`, `data/` e `README.md`. Non ci sono segreti (il codice diario è un secret del Worker e l'ID del namespace KV non è riservato). Conviene comunque evitare di mettere in `docs/` informazioni che non devono essere pubbliche.
+6. **Pubblicazione dell'intero repository.** Fino a v77 Workers Assets serviva anche `docs/`, `data/` e `README.md`. Nel rilascio preparato il 16/10/2026 `.assetsignore` esclude `docs/*`, tranne `metodo-scientifico.md`, `cms.md` e `cms.openapi.json`: questo documento e le note di ricerca non sono più pubblici (da controllare dopo il deploy). Non ci sono segreti (il codice diario è un secret del Worker e l'ID del namespace KV non è riservato). Conviene comunque evitare di mettere nel repository informazioni che non devono essere pubbliche.
 7. **Diario condiviso.** Chi ha il codice può cancellare le uscite di tutti e non c'è limite ai tentativi sull'API. Basso rischio legale, ma va detto agli utenti.
 
 ---
@@ -425,8 +487,28 @@ Tutte consultate il 12 ottobre 2026.
 - GBIF, Citation guidelines: https://www.gbif.org/citation-guidelines (risposta 403 durante la verifica)
 - LG München I, 20 gennaio 2022, 3 O 17493/20, commento dell'Università di Regensburg: https://www.uni-regensburg.de/universitaet/aktuelles/nachrichten/nachricht/04-04-2022_dynamische-einbindung-von-google-fonts-ohne-einwilligung-verstoesst-gegen-dsgvo
 
+**Fonti aggiunte il 15-16 ottobre 2026**
+
+- L.R. 32/1998, testo coordinato, riletto il 16/10/2026 (artt. 3, 4, 9, 10, 16): https://www.consiglio.regione.lazio.it/consiglio-regionale/?vw=leggiregionalidettaglio&id=8275&sv=vigente
+- Regione Lazio, pagina *Funghi* (aggiornata il 15/10/2026, letta il 16/10/2026): https://www.regione.lazio.it/cittadini/agricoltura/Funghi
+- Regione Lazio, modulo di richiesta dell'autorizzazione straordinaria nominativa (due marche da bollo da 16 €): https://www.regione.lazio.it/sites/default/files/modulistica/richiesta-autorizzazione-straordinaria-nominativa.docx
+- Legge 23 agosto 1993, n. 352, art. 5 (contenitori di plastica) e art. 6 (Normattiva): https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1993-08-23;352~art5
+- L.R. Lazio 14 agosto 2017, n. 9, art. 17, c. 22 (testo storico): https://www.consiglio.regione.lazio.it/consiglio-regionale/?vw=leggiregionalidettaglio&id=2328&sv=storico
+- L.R. Lazio 27 febbraio 2020, n. 1, art. 9 (testo storico): https://www.consiglio.regione.lazio.it/consiglio-regionale/?vw=leggiregionalidettaglio&id=2381&sv=storico
+- L.R. Lazio 10 dicembre 2024, n. 20, artt. 21, 22 e 77: https://www.consiglio.regione.lazio.it/consiglio-regionale/?vw=leggiregionalidettaglio&id=9499&sv=vigente
+- L.R. Lazio 30 marzo 1987, n. 29, circolazione fuoristrada, testo coordinato (art. 2, lett. e ter): https://www.consiglio.regione.lazio.it/consiglio-regionale/?vw=leggiregionalidettaglio&id=8794&sv=vigente
+- L. 6 dicembre 1991, n. 394, artt. 11, 12 e 30 (Normattiva): https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1991-12-06;394~art30
+- L. 20 novembre 2017, n. 168, domini collettivi, art. 1 (Normattiva): https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:2017-11-20;168~art1
+- Ente Parco Gran Sasso e Monti della Laga, Normativa di attuazione del Piano, artt. 7, 8 e 9 (c. 7): https://www.gransassolagapark.it/pdf/Piano-Parco/Normativa-Attuazione.pdf
+- Riserva Montagne della Duchessa, sito dell'ente (ente gestore e contatti, letto il 16/10/2026): https://www.riservaduchessa.it/
+- DCR Lazio 15 settembre 2021, n. 16 (Piano della Duchessa), copia del Consiglio regionale: https://www.consiglio.regione.lazio.it/binary/consiglio_regionale/tbl_trasparenzaContenuti/DC_2021_16.pdf
+- Regione Lazio, Geoportale, servizi WFS e WMS (aree naturali protette, zonazione PNGSL e Duchessa, Natura 2000), scaricati il 15/10/2026: https://geoportale.regione.lazio.it/geoserver/ows?service=WFS&request=GetCapabilities; metadati e licenze: https://geoportale.regione.lazio.it/api/v2/datasets/846, https://geoportale.regione.lazio.it/api/v2/datasets/1182, https://geoportale.regione.lazio.it/api/v2/datasets/1221
+- Regione Lazio, DGR 161/2016, all. 1 (misure di conservazione delle ZSC di Rieti): https://www.regione.lazio.it/sites/default/files/documentazione/AMB_DGR_161_14_04_2016_All1.pdf; DGR 612/2011: https://www.regione.lazio.it/sites/default/files/documentazione/AMB_DGR_612_16_12_2011.pdf
+- Treccani, Vocabolario, voce «alba»: https://www.treccani.it/vocabolario/alba1/
+- Leaflet, `Map.locate` (usa la geolocalizzazione del browser): https://leafletjs.com/reference.html#map-locate
+
 ---
 
 ## 12. Revisione legale
 
-Questo documento e i testi di `data/legal.json` sono stati preparati con cura su fonti primarie, ma **non sostituiscono il parere di un avvocato**. L'app è nata per uso personale e familiare. Prima di diffonderla pubblicamente (pubblicazione del link, social, forum, associazioni, stampa), o prima di qualunque uso con anche un minimo carattere commerciale, va fatta rivedere da un avvocato esperto di responsabilità civile e protezione dei dati. Andrebbero rivisti in particolare la formula di responsabilità, l'informativa privacy (con un recapito del titolare), l'uso di Google Fonts e degli altri servizi terzi, le licenze NC e le indicazioni sulle aree protette. Le norme sulla raccolta cambiano spesso: i testi vanno ricontrollati a ogni stagione, sul testo coordinato del Consiglio regionale e sulla pagina *Funghi* della Regione Lazio, aggiornando `verified_on` in `legal.json`.
+Questo documento e i testi di `data/legal.json` sono stati preparati con cura su fonti primarie, ma **non sostituiscono il parere di un avvocato**. L'app è nata per uso personale e familiare. Prima di diffonderla pubblicamente (pubblicazione del link, social, forum, associazioni, stampa), o prima di qualunque uso con anche un minimo carattere commerciale, va fatta rivedere da un avvocato esperto di responsabilità civile e protezione dei dati. Andrebbero rivisti in particolare la formula di responsabilità, l'informativa privacy (con un recapito del titolare), l'uso di Google Fonts e degli altri servizi terzi, le licenze NC e le indicazioni sulle aree protette. Le norme sulla raccolta cambiano spesso: i testi vanno ricontrollati a ogni stagione, sul testo coordinato del Consiglio regionale e sulla pagina *Funghi* della Regione Lazio, aggiornando `verified_on` in `legal.json`. Attenzione: la chiave dell'avviso iniziale è `version` + `verified_on` e il CMS rifiuta una modifica di `legal` senza un aumento di `version`. Ogni modifica fa quindi ricomparire l'avviso a tutti: conviene raccogliere le correzioni in un solo rilascio.
