@@ -3326,3 +3326,6 @@ details.context-note { margin: 12px 0 16px; padding: 0; border: 0; border-radius
 .plant-filter-panel .filter-panel-head { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
 .plant-habitat-label { display: grid; gap: 8px; margin-top: 20px; color: var(--text); font-size: 14px; font-weight: 600; }
 .plant-habitat-label select { width: 100%; }
+/* Nel form compatto la nota non deve scivolare sotto le azioni fisse. */
+.report-dialog details.context-note { margin: 4px 0; font-size: 12px; }
+.report-dialog .context-note > summary { padding-block: 4px; font-size: 12px; gap: 8px; }
