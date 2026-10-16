@@ -20872,5 +20872,35 @@
   "fase": "giovane",
   "modello": "image_gen (identificatore tecnico non esposto)",
   "prompt": "1254x1254 transparent PNG 3x3 flat icon sheet exactly 9 icons. Copy style and exact cap colors of attached approved references. Columns cap side only / circular underside radial gills with central stem stub / whole mushroom. Each icon centered in 418px cell max size290px leaving15% margins. Continuous dark brown outer outline. No text texture shadow grid. ROW1 AGARICUS XANTHODERMUS YOUNG: reference1 ivory white cap with same subtle tan center, globose hemispherical dome with FLATTISH TOP (tall rounded shoulders). Gills WHITISH #ece7da with delicate pale PINK #d99aa2 tint on outer area. Keep broad ring and pear-shaped stem from reference. ROW2 XANTHODERMUS ADULT: broadly CONVEX cap, margin unrolled, same ivory color and tan center. Gills predominantly GRAY #9d968a shading BROWN #8e5f36, retain same ring and stem. ROW3 ENTOLOMA SINUATUM YOUNG reference2: cap distinctly CONICAL with gently rounded pointed apex, gray taupe same reference color. Gills pale whitish YELLOW (light version #d9b13c). Preserve its ringless thick stem, no ring anywhere in row3. Only these stage changes; no extra stains scales or features.\n"
+},
+{
+  "file": "incoming/icone/fasi-34.png",
+  "tipo": "illustrazione",
+  "soggetto": "entoloma-sinuatum",
+  "tessera": "cappello",
+  "cella": 0,
+  "fase": "adulto",
+  "modello": "image_gen (identificatore tecnico non esposto)",
+  "prompt": "Transparent1254x1254 PNG 3x3 grid but ONLY TOP ROW has three icons, bottom six cells completely transparent empty. Same approved ENTOLOMA SINUATUM as reference: gray taupe cap exact reference hue, cream thick ringless stem with bulbous base. ADULT stage only: cap FLATTENED horizontal with low broad blunt umbo in center, pink gills reference. Top left cap only side view low flat plate with broad blunt umbo, max height25% width. Top middle circular underside, PINK gills #d99aa2 with lighter pink areas, cream outer rim and central double stem stub identical reference. Top right whole mushroom gray flattened cap with broad blunt central umbo, pink gills visible, same ringless stem. Each icon max290px in418px cell centered at (209,209),(627,209),(1045,209). Continuous dark brown outline all around, 15% empty margins, few flat colors and simple shading exactly reference, NO text labels frames grid shadows texture. Bottom two rows absolutely empty alpha.\n"
+},
+{
+  "file": "incoming/icone/fasi-34.png",
+  "tipo": "illustrazione",
+  "soggetto": "entoloma-sinuatum",
+  "tessera": "sotto",
+  "cella": 1,
+  "fase": "adulto",
+  "modello": "image_gen (identificatore tecnico non esposto)",
+  "prompt": "Transparent1254x1254 PNG 3x3 grid but ONLY TOP ROW has three icons, bottom six cells completely transparent empty. Same approved ENTOLOMA SINUATUM as reference: gray taupe cap exact reference hue, cream thick ringless stem with bulbous base. ADULT stage only: cap FLATTENED horizontal with low broad blunt umbo in center, pink gills reference. Top left cap only side view low flat plate with broad blunt umbo, max height25% width. Top middle circular underside, PINK gills #d99aa2 with lighter pink areas, cream outer rim and central double stem stub identical reference. Top right whole mushroom gray flattened cap with broad blunt central umbo, pink gills visible, same ringless stem. Each icon max290px in418px cell centered at (209,209),(627,209),(1045,209). Continuous dark brown outline all around, 15% empty margins, few flat colors and simple shading exactly reference, NO text labels frames grid shadows texture. Bottom two rows absolutely empty alpha.\n"
+},
+{
+  "file": "incoming/icone/fasi-34.png",
+  "tipo": "illustrazione",
+  "soggetto": "entoloma-sinuatum",
+  "tessera": "gambo",
+  "cella": 2,
+  "fase": "adulto",
+  "modello": "image_gen (identificatore tecnico non esposto)",
+  "prompt": "Transparent1254x1254 PNG 3x3 grid but ONLY TOP ROW has three icons, bottom six cells completely transparent empty. Same approved ENTOLOMA SINUATUM as reference: gray taupe cap exact reference hue, cream thick ringless stem with bulbous base. ADULT stage only: cap FLATTENED horizontal with low broad blunt umbo in center, pink gills reference. Top left cap only side view low flat plate with broad blunt umbo, max height25% width. Top middle circular underside, PINK gills #d99aa2 with lighter pink areas, cream outer rim and central double stem stub identical reference. Top right whole mushroom gray flattened cap with broad blunt central umbo, pink gills visible, same ringless stem. Each icon max290px in418px cell centered at (209,209),(627,209),(1045,209). Continuous dark brown outline all around, 15% empty margins, few flat colors and simple shading exactly reference, NO text labels frames grid shadows texture. Bottom two rows absolutely empty alpha.\n"
 }
 ]

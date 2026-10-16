@@ -502,3 +502,5 @@ fasi-31: agaricus-arvensis adulto; agaricus-bisporus giovane; agaricus-bisporus 
 fasi-32: agaricus-sylvicola giovane; agaricus-sylvicola adulto; agaricus-sylvicola maturo. Disegni generati dalle basi approvate; solo cambiamenti descritti nelle fasi. Tavolozza 128 colori; composizione centrata nelle celle. Lamelle semplificate in raggi, colori intermedi resi con due toni. Nessuna sezione uovo prevista per queste specie.
 
 fasi-33: agaricus-xanthodermus giovane; agaricus-xanthodermus adulto; entoloma-sinuatum giovane. Disegni generati dalle basi approvate; solo cambiamenti descritti nelle fasi. Tavolozza 128 colori; composizione centrata nelle celle. Lamelle semplificate in raggi, colori intermedi resi con due toni. Nessuna sezione uovo prevista per queste specie.
+
+fasi-34: entoloma-sinuatum adulto. Disegni generati dalle basi approvate; solo cambiamenti descritti nelle fasi. Tavolozza 128 colori; composizione centrata nelle celle. Lamelle semplificate in raggi, colori intermedi resi con due toni. Nessuna sezione uovo prevista per queste specie.
