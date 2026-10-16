@@ -48,3 +48,5 @@ Test unitari dedicati a calendari parziali/sconosciuti e finestre tra mesi, filt
 Funghi, Piante e Passeggiata usano `homeCover` per la stessa struttura della hero. Solo Funghi include l’anello dell’indice; Piante mostra lo spunto e il periodo indicativo, senza attribuire presenza certa. Le card delle alternative riportano giorno, luogo, difficoltà e km del tratto mappato; i dettagli sono nella scheda. Le eventuali allerte meteo restano visibili. Su schermi stretti i nomi compatti Funghi/Piante/Giro mantengono le etichette accessibili complete.
 
 Calendario centrato quando non scorre; bordi delle righe sfumati sul contenuto; pannello livelli sopra i filtri della mappa. Il glossario riparte dall’inizio, salvo link a un termine preciso. La ricerca mostra Cmd+K su Mac e Ctrl+K sulle altre piattaforme. Senza scelta del tema si segue il dispositivo.
+
+Se manca una foto del luogo, Piante e Passeggiata usano come ripiego la foto di una specie associata al percorso (prima una pianta o un albero, secondo l’intento). La foto non è attribuita al luogo. Un segnaposto neutro copre anche l’assenza di immagini e gli errori di caricamento, senza spostare testi o controlli.

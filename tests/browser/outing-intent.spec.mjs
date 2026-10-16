@@ -60,3 +60,19 @@ for(const intent of ['piante','passeggiata'])test(`mappa Leaflet: ${intent}, sen
  await page.locator('#map-sheet .sheet-close').click();await page.locator('#map-filters [data-intent="funghi"]').click();await expect(page.locator('#legend')).toContainText('habitat potenziale');
  await page.evaluate(()=>{testMap.setZoom(13,{animate:false});});await expect(page.locator('#map')).toHaveClass(/cells-on/);expect(errors).toEqual([]);
 });
+
+for(const intent of ['piante','passeggiata'])test(`copertine ${intent}: ripiego contestuale e foto in errore`,async({page})=>{
+ await page.route('**/api/content/v1/snapshot',r=>r.fulfill({status:503,json:{error:'offline'}}));
+ await page.route('**/data/media-zones.json',r=>r.fulfill({json:{zones:{}}}));
+ await start(page,{target:intent});
+ const hero=page.locator('#hero .outdoor-hero');await expect(hero).toBeVisible();
+ await expect(hero.locator('> img')).toHaveCount(1);
+ const cards=page.locator('#ranking .outdoor-tile');expect(await cards.count()).toBeGreaterThan(0);
+ for(const card of await cards.all())await expect(card.locator('.outdoor-backdrop')).toHaveCount(1);
+ await expect(cards.locator('> img').first()).toHaveCount(1);
+ await hero.locator('> img').evaluate(img=>{img.dataset.imageState='error';img.removeAttribute('src');img.removeAttribute('data-src');});
+ await expect(hero.locator('> img')).toHaveCSS('visibility','hidden');
+ await expect(hero.locator('.outdoor-backdrop svg')).toBeVisible();
+ await page.setViewportSize({width:390,height:844});
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+});

@@ -698,13 +698,25 @@ function arrangeHome() {
 function homeCover({c,photo,body,score=null,extraClass=''}) {
   const title=splitName(c.z)[0];
   return `<div class="cover vtn ${extraClass}" style="--vtn:cover">
-    ${photo?`<img class="cover-img" data-src="${photo.hd}" alt="${esc(photo.alt||'')}" fetchpriority="high">`:''}<span class="shade"></span>
+    ${extraClass.includes('outdoor-hero')?outdoorBackdrop():''}${photo?`<img class="cover-img" data-src="${photo.hd}" alt="${esc(photo.alt||'')}" fetchpriority="high">`:''}<span class="shade"></span>
     <a class="cover-link" data-walk-zone="${c.z.id}" href="${walkHref(c.z,c.o,c.walk?.t)}" aria-label="${esc(title)}, ${esc(dayLabel(c.o,c.d.date,true))}: i dettagli della passeggiata"></a>
     <span class="cover-top"><span class="pill glass">${esc(dayLabel(c.o,c.d.date,true))}</span>${score===null?'':ring(score)}</span>
     <span class="cover-body">${body}</span></div>`;
 }
+function outdoorCover(c) {
+  const zone=coverOf(c.z,null,c.d);
+  if(zone)return zone;
+  // A contextual species photo is a fallback, never a photo of the place.
+  const preferred=state.target==='piante'?'pianta':'albero';
+  for(const item of [...c.items.filter(i=>i.kind===preferred),...c.items.filter(i=>i.kind!==preferred)]){
+    const hd=item.kind==='pianta'?plantHeroSrc(item.id):item.kind==='albero'?treeHeroSrc(item.id):'';
+    if(hd)return {hd,small:hd,alt:item.name};
+  }
+  return null;
+}
+const outdoorBackdrop=()=>`<span class="outdoor-backdrop" aria-hidden="true">${IC.map}</span>`;
 function outdoorTile(c,hero=false) {
-  const cv=coverOf(c.z,null,c.d),w=wxOf(c.z,c.d),plant=c.items.find(i=>i.kind==='pianta');
+  const cv=outdoorCover(c),w=wxOf(c.z,c.d),plant=c.items.find(i=>i.kind==='pianta');
   if(hero){
     const [title,sub]=splitName(c.z);
     const body=`<span class="cover-title">${esc(title)}</span>${sub?`<span class="cover-sub">${esc(sub)}</span>`:''}
@@ -715,7 +727,7 @@ function outdoorTile(c,hero=false) {
     return homeCover({c,photo:cv,body,extraClass:'outdoor-hero'});
   }
   const brief=`${c.walk.t.difficulty||'Difficoltà n.d.'} · ${fmtKm(c.walk.t.in_zone_km)} km nel tratto`;
-  return `<a class="tile outdoor-tile" data-walk-zone="${c.z.id}" href="${walkHref(c.z,c.o,c.walk.t)}">${cv?`<img data-src="${cv.small}" alt="" loading="lazy">`:''}<span class="shade"></span>${w&&w.level!=='ok'?`<span class="tile-wx wx-${w.level}" title="${esc(w.text)}">${wxi(w)}${esc(OUTING_LABEL[w.level])}</span>`:''}<span class="tile-body"><span class="tile-day">${esc(dayLabel(c.o,c.d.date,true))}</span><b>${esc(splitName(c.z)[0])}</b><small>${esc(brief)}</small></span></a>`;
+  return `<a class="tile outdoor-tile" data-walk-zone="${c.z.id}" href="${walkHref(c.z,c.o,c.walk.t)}">${outdoorBackdrop()}${cv?`<img data-src="${cv.small}" alt="" loading="lazy">`:''}<span class="shade"></span>${w&&w.level!=='ok'?`<span class="tile-wx wx-${w.level}" title="${esc(w.text)}">${wxi(w)}${esc(OUTING_LABEL[w.level])}</span>`:''}<span class="tile-body"><span class="tile-day">${esc(dayLabel(c.o,c.d.date,true))}</span><b>${esc(splitName(c.z)[0])}</b><small>${esc(brief)}</small></span></a>`;
 }
 function outdoorPlantRail(list) {
   const seen=new Set(),items=list.flatMap(c=>c.items).filter(i=>i.kind==='pianta'&&!seen.has(i.id)&&seen.add(i.id)).slice(0,8);
