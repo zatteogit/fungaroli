@@ -132,7 +132,7 @@ export async function renderGuidedKey(box, mode, { items, thumb, note = '' }) {
     return why + tellHtml(c, ids, list.length);
   };
   box.innerHTML = `
-    <details class="id-warn"><summary><b>Non è un'identificazione.</b></summary><p>Restringe i candidati in base ai caratteri descritti dalle fonti. Il catalogo è incompleto: confronta sempre più caratteri e la scheda completa.${mode === 'piante' ? ' Non assaggiare per riconoscere una pianta.' : ''}</p></details>
+    <details class="id-warn context-note"><summary><b>Non è un'identificazione.</b></summary><p>Restringe i candidati in base ai caratteri descritti dalle fonti. Il catalogo è incompleto: confronta sempre più caratteri e la scheda completa.${mode === 'piante' ? ' Non assaggiare per riconoscere una pianta.' : ''}</p></details>
     ${head}${next}
     ${!answered.some((k) => st.ans[k] != null) ? `<p class="small muted gk-start">${pool.length} schede nel catalogo. Rispondi alla prima domanda: i candidati compaiono man mano che restringi.</p>` : `<div class="id-head"><h2 class="sec-title">${list.length} ${list.length === 1 ? 'candidato' : 'candidati'}</h2></div>
     ${pairs.length && list.length <= 12 ? pairs.map((p) => `<section class="notice gk-pair" data-glossary><h3>${esc(p.title)}</h3><ul>${p.differences.map(([k, t]) => `<li><b>${esc(data.schema[k]?.short || k)}:</b> ${esc(t)}</li>`).join('')}</ul>${p.caution ? `<p class="small">${esc(p.caution)}</p>` : ''}</section>`).join('') : ''}

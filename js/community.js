@@ -175,7 +175,7 @@ export async function openQuickReport(zoneId = '', speciesId = '') {
   const today=todayISO(),yesterday=todayISO(new Date(Date.now()-864e5));
   reportDialog.setAttribute('aria-label', 'Segnala dal bosco');
   reportDialog.innerHTML = `<header class="report-header"><div><p class="eyebrow">Dal bosco al taccuino</p><h2>Osservazione</h2></div><button class="profile-close" type="button" data-report-dismiss aria-label="Chiudi">×</button></header>
-    <p class="report-intro">Nel tuo taccuino, e nei conteggi della community.</p>
+    <p class="report-intro">Nel taccuino e nei conteggi collettivi.</p>
     <form class="report-form">
       <div class="report-fields">
         <div class="report-field search-select"><label id="report-zone-label" for="report-zone">Zona</label><input id="report-zone" class="wiz-input" type="text" placeholder="Cerca una zona…" autocomplete="off" required><input name="zone" type="hidden"><ul id="report-zone-options" class="search-select-options" aria-labelledby="report-zone-label" hidden></ul></div>
@@ -187,7 +187,7 @@ export async function openQuickReport(zoneId = '', speciesId = '') {
       ].map(([label,hint],i)=>`<label class="report-quantity"><input type="radio" name="amount" value="${i}" required><span><b>${label}</b><small>${hint}</small></span></label>`).join('')}</div></fieldset>
       <details class="report-extra"><summary>Controllo dell’identità <span class="small muted">facoltativo</span></summary><label class="report-check"><input type="checkbox" name="checked"><span>Identità controllata da un micologo</span></label></details>
       <p class="report-privacy">È pubblica solo la zona: nessun punto preciso o nome personale.</p>
-      <details class="report-safety"><summary>L’app non certifica la commestibilità.</summary><p>Segnala solo specie che sai riconoscere. Foto e schede non identificano l’esemplare: fai controllare il raccolto all’Ispettorato micologico ASL prima del consumo. Quantità e ritrovamenti sono dichiarazioni degli utenti; scegli “Nessuno” solo se hai cercato questa specie senza trovarla.</p></details>
+      <details class="report-safety context-note"><summary>L’app non certifica la commestibilità.</summary><p>Segnala solo specie che sai riconoscere. Foto e schede non identificano l’esemplare: fai controllare il raccolto all’Ispettorato micologico ASL prima del consumo. Quantità e ritrovamenti sono dichiarazioni degli utenti; scegli “Nessuno” solo se hai cercato questa specie senza trovarla.</p></details>
       <p role="status" class="report-status" data-status></p>
       <footer class="report-actions"><button class="btn primary" type="submit">Condividi</button><button class="btn ghost" type="button" data-close>Annulla</button></footer>
     </form>`;

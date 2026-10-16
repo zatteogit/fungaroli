@@ -23,7 +23,6 @@ import { initInstall, maybeInvite } from './install.js';
 import { loadOuting, outingFor, OUTING_LABEL, OUTING_SHORT, OUTING_RANK } from './outing.js';
 import { initIdentify, renderIdentify, setCompare, searchTaxa, openTaxon, renderTaxonPage, renderTaxonView, taxonHeroSrc, taxonName, taxonByKey, attentionLine, sourceRows } from './identify.js';
 import { initSearch } from './search.js';
-import { searchFieldHtml, matchesQuery, renderAlsoIn } from './catalog-search.js';
 import { renderGuidedKey } from './guided-key.js';
 import { renderWhy, renderMethod, drawWhyCharts } from './science.js';
 import { navigate, soft, setCoverResolver } from './motion.js';
@@ -336,8 +335,35 @@ function paintScopriNav(r) {
   const inLearning = sec === 'impara' && r.view !== 'impara';
   if (nav) { nav.hidden = inLearning; nav.innerHTML = inLearning ? '' : SCOPRI.map(([id, href, label]) => `<a href="${href}" data-section="${id}"${cur(id === sec)}>${label}</a>`).join(''); }
   // la pagina indice di Impara mostra già le sue parti come card: sotto-schede solo nelle pagine interne
-  if (sub) sub.innerHTML = r.view === 'impara' ? '' : SCOPRI_SUB[sec].map(([href, label]) => `<a href="${href}"${cur(href === here)}>${label}</a>`).join('');
+  if (sub) {
+    const catalog = ['specie','piante','alberi'].includes(r.view);
+    sub.classList.toggle('recognize-entry', catalog);
+    sub.innerHTML = catalog ? `<button type="button" class="btn ghost" data-open-recognition="${sec}" aria-haspopup="dialog">Impara a riconoscere <span aria-hidden="true">→</span></button>` : sec !== 'impara' || r.view === 'impara' ? '' : SCOPRI_SUB[sec].map(([href, label]) => `<a href="${href}"${cur(href === here)}>${label}</a>`).join('');
+  }
 }
+
+let recognitionDialog, recognitionOrigin;
+document.addEventListener('click', e => {
+  const trigger=e.target.closest('[data-open-recognition]');if(!trigger)return;
+  const mode=trigger.dataset.openRecognition;
+  if(!recognitionDialog){
+    recognitionDialog=document.createElement('dialog');recognitionDialog.className='entity-sheet recognition-sheet';recognitionDialog.setAttribute('aria-labelledby','recognition-title');
+    recognitionDialog.innerHTML='<header class="entity-toolbar"><h2 id="recognition-title"></h2><button type="button" class="icon-btn" data-close-recognition aria-label="Chiudi Impara a riconoscere">×</button></header><div class="recognition-content"></div>';
+    document.body.append(recognitionDialog);
+    recognitionDialog.querySelector('[data-close-recognition]').addEventListener('click',()=>recognitionDialog.close());
+    recognitionDialog.addEventListener('close',()=>{recognitionDialog.querySelector('.recognition-content').replaceChildren();document.documentElement.classList.remove('recognition-open');recognitionOrigin?.isConnected&&recognitionOrigin.focus({preventScroll:true});});
+    addEventListener('hashchange',()=>recognitionDialog.close());
+  }
+  recognitionOrigin=trigger;
+  recognitionDialog.querySelector('#recognition-title').textContent=`Impara a riconoscere · ${RECOGNIZE_HEAD[mode][0]}`;
+  const box=document.createElement('div');box.className='recognition-content';recognitionDialog.querySelector('.recognition-content').replaceWith(box);
+  // Un solo percorso attivo: evita ID duplicati con le pagine raggiunte da vecchi link.
+  $('#identify').replaceChildren();$('#field-identify').replaceChildren();
+  if(mode==='funghi'){setCompare('','');renderIdentify(box);}
+  else if(mode==='piante')renderGuidedKey(box,'piante',{items:plants().map(p=>({id:p.id,name:p.name,latin:cardLatin(p.latin),href:`#/pianta/${encodeURIComponent(p.id)}`,danger:p.category==='Pericolose'})),thumb:plantThumb});
+  else renderGuidedKey(box,'alberi',{items:Object.entries(treesData?.trees||{}).map(([id,t])=>({id,name:t.name,latin:cardLatin(t.latin),href:`#/albero/${encodeURIComponent(id)}`})),thumb:treeThumb});
+  recognitionDialog.showModal();document.documentElement.classList.add('recognition-open');enhanceGlossary(box);
+});
 
 function parseRoute(hash = location.hash) {
   const parts = hash.replace(/^#\/?/, '').split('/').filter(Boolean).map((x) => { try { return decodeURIComponent(x); } catch { return x; } });
@@ -426,7 +452,7 @@ function parentOf(r) {
   return '#/';
 }
 const PARENT_TITLE = (r) => ({ '#/scopri': 'Scopri', '#/specie': 'Funghi', '#/alberi': 'Alberi', '#/piante':'Piante e fiori', '#/riconosci': 'Impara a riconoscere', '#/guide': 'Guide', '#/sfide': 'Sfide', '#/impara': 'Impara', '#/': 'Uscite' }[parentOf(r)]);
-// modalita' app: quando il titolo grande della pagina passa sotto la barra in alto, la barra lo mostra piccolo al centro (come iOS)
+// Quando il titolo della pagina passa sotto la barra, lo mostriamo compatto al centro su telefono e tablet.
 let titleIO = null;
 function watchTitle() {
   const bar = $('.appbar-title');
@@ -1017,14 +1043,9 @@ function renderSpeciesGrid() {
   const box = $('#species-grid');
   if (!box) return;
   box.dataset.glossaryContext='Funghi';
-  if (!box.querySelector('[data-catalog-search]')) {
-    // ricerca contestuale: il campo filtra i funghi, «Anche in…» rimanda al resto dell'app
-    box.innerHTML = `${searchFieldHtml('Cerca un fungo', 'Porcino, Amanita, nome dialettale…')}
-      <div class="recognize-modes" role="group" aria-label="Quali funghi mostrare">${[['', 'Tutti'], ['edible', 'Commestibili'], ['other', 'Velenosi e sosia']].map(([v, l]) => `<button type="button" class="btn ghost small" data-fungi-group="${v}" aria-pressed="${(state.fungiGroup || '') === v}">${l}</button>`).join('')}</div>
-      <p class="small muted" data-fungi-count role="status"></p><div class="card-grid" id="sp-cards"></div><div data-also-slot></div>`;
-    const input = box.querySelector('[data-catalog-search]');
-    input.value = state.fungiQuery || '';
-    input.addEventListener('input', () => { state.fungiQuery = input.value; fillSpecies(); });
+  if (!box.querySelector('#sp-cards')) {
+    box.innerHTML = `      <div class="recognize-modes" role="group" aria-label="Quali funghi mostrare">${[['', 'Tutti'], ['edible', 'Commestibili'], ['other', 'Velenosi e sosia']].map(([v, l]) => `<button type="button" class="btn ghost small" data-fungi-group="${v}" aria-pressed="${(state.fungiGroup || '') === v}">${l}</button>`).join('')}</div>
+      <p class="small muted" data-fungi-count role="status"></p><div class="card-grid" id="sp-cards"></div>`;
     box.querySelectorAll('[data-fungi-group]').forEach((b) => b.addEventListener('click', () => {
       state.fungiGroup = b.dataset.fungiGroup;
       box.querySelectorAll('[data-fungi-group]').forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
@@ -1079,19 +1100,17 @@ const TOX_LABEL = { mortale: 'Mortale', tossico: 'Tossico', 'non commestibile': 
 const otherFungi = () => searchTaxa().filter((t) => TOX_LABEL[t.toxicity] && !catalog.some((c) => c.id === t.key));
 function fillSpecies() {
   const group = state.fungiGroup || '';
-  const q = state.fungiQuery || '';
-  const edible = group === 'other' ? [] : catalog.filter((s) => matchesQuery([s.name, s.latin, ...(s.aliases || [])], q));
-  const others = group === 'edible' ? [] : otherFungi().filter((t) => matchesQuery([t.name, t.latin, ...(t.look || [])], q));
+  const edible = group === 'other' ? [] : catalog;
+  const others = group === 'edible' ? [] : otherFungi();
   const card = (href, name, latin, ph, badge = '') => `<a class="sp-card" href="${href}" aria-label="${esc(name)}">
       ${ph ? `<img data-src="${assetSrc(ph.file)}" alt="" loading="lazy" decoding="async">` : `<span class="catalog-placeholder" aria-hidden="true">${esc(name.slice(0,2))}</span>`}<span class="shade"></span>${badge}
       <span class="sp-card-body"><b>${esc(name)}</b><i>${esc(cardLatin(latin))}</i></span></a>`;
   $('#sp-cards').innerHTML = [
     ...edible.map((s) => card(s.href, s.name, s.latin, catalogPhoto(s))),
     ...others.map((t) => card(`#/fungo/${encodeURIComponent(t.key)}`, t.name || t.latin, t.latin, t.photo, `<span class="sp-card-tox tox-${esc(t.toxicity.replace(/\s/g, '-'))}">${TOX_LABEL[t.toxicity]}</span>`)),
-  ].join('') || `<p class="muted empty-note">${q.trim() ? `Nessun fungo corrisponde a «${esc(q.trim())}».` : 'Nessuna specie in questo gruppo.'}</p>`;
+  ].join('') || `<p class="muted empty-note">Nessuna specie in questo gruppo.</p>`;
   const total = edible.length + others.length, all = catalog.length + otherFungi().length;
-  $('[data-fungi-count]').textContent = q.trim() || group ? `${total} ${total === 1 ? 'scheda' : 'schede'} su ${all}` : '';
-  renderAlsoIn($('#species-grid [data-also-slot]'), q, ['fungo', 'velenoso']);
+  $('[data-fungi-count]').textContent = group ? `${total} ${total === 1 ? 'scheda' : 'schede'} su ${all}` : '';
 }
 
 function renderEdiblePage(id, box=$('#edible-detail')) {
@@ -1349,8 +1368,9 @@ function challengeHint(z,d){
 function renderDiscoveries(box,z,d,walk){
  if(!box)return;const found=discoveriesHtml(z,d,walk),html=found&&found+challengeHint(z,d);box.hidden=!html;const markup=html?`<section class="outing-discoveries" aria-labelledby="during-walk-title"><h2 id="during-walk-title">Durante il giro</h2>${html}</section>`:'';if(weatherPainting)updateWeatherHTML(box,markup);else box.innerHTML=markup;
 }
-function discoverySection(z,d,walk){
+function discoverySection(z,d,walk,embedded=false){
  const items=discoveriesFor(z,d,walk);if(!items.length)return '';
+ if(embedded)return `<section class="observation-discoveries" aria-label="Durante il giro"><h3>Piante e alberi lungo il giro</h3>${discoveriesHtml(z,d,walk,items)}</section>`;
  return section('scoperte',`<span class="discovery-summary"><b>Durante il giro</b><small>${items.map(i=>esc(i.name)).join(' · ')}</small></span>`,discoveriesHtml(z,d,walk,items));
 }
 function enhanceDiscoverySheet(body,href){
@@ -2156,7 +2176,7 @@ function essentialSections(z, d, walk) {
       sub: `${a0 ? `${esc(travelText(zoneTrip(z,walk)))} da ${esc(currentBase().name)}${customBase()?'':unp}` : ''}${walk?.h ? actPill(gmaps(walk.h.lat, walk.h.lon),'nav','Indicazioni',true) : ax ? actPill(gmaps(ax.rlat, ax.rlon),'nav','Navigatore',true) : ''}`,
       badge: d.comfort ? `<span class="badge comfort-${d.comfort.level}">${d.comfort.level}</span>` : '' });
   }
-  const bodies={specie:()=>zoneSpecies(z,d),quando:()=>renderHuman(z,d),accesso:()=>renderAccess(z,d)};
+  const bodies={specie:()=>zoneSpecies(z,d)+discoverySection(z,d,walk,true),quando:()=>renderHuman(z,d),accesso:()=>renderAccess(z,d)};
   return `<div class="essential-sections">${Object.keys(bodies).map(id=>{
     const group=rows.filter(r=>r.sec===id);if(!group.length)return '';
     const summary=group.map(r=>`<span class="essential-summary"><span class="plan-ic${r.thumb?' has-thumb':''}">${r.thumb?thumb(r.thumb,48):r.svg||ICON[r.icon]}</span><span class="plan-body"><span class="plan-k">${r.k}${r.badge?' '+r.badge:''}</span><span class="plan-v">${r.v}</span>${r.sub?`<span class="plan-sub">${r.sub}</span>`:''}</span></span>`).join('');
@@ -2342,7 +2362,6 @@ function renderDetail() {
     ${weatherAgeHtml(z, best.band)}
     ${renderWalkFocus(z, d, walk)}
     ${essentialSections(z, d, walk)}
-    ${discoverySection(z,d,walk)}
     ${best.kind==='plant'?`<p class="small muted">Indice di contesto sperimentale · fattori disponibili ${best.factors.filter(f=>f.value!=null).length}/${best.factors.length}${best.quality.climateUnavailable?' · meteo non disponibile':''}</p><div class="notice">${esc(best.species.parts)} ${esc(best.species.caution)}</div>`:''}
     <div class="zone-actions">
       ${best.kind==='plant'?`<button type="button" class="btn primary" data-note-kind="pianta" data-note-id="${best.species.plantId}" data-note-zone="${z.id}" data-note-title="${esc(best.species.name)}">Annota la fase nel taccuino</button>`:`<div class="zone-community"><button type="button" class="btn primary" data-report data-zone="${z.id}" data-species="${best.species.id}">Segnala dal bosco</button>${reportBadge(z.id, best.species.id)}</div>

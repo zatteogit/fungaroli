@@ -74,3 +74,13 @@ test('glossario: parole collegate nelle descrizioni, mai in mesi, fonti e credit
  expect(await outsideZones(plant)).toEqual([]);
  expect(errors).toEqual([]);
 });
+for(const width of [390,1280])test(`filtri aggiuntivi delle piante nel pannello a ${width}px`,async({page})=>{
+ const errors=await start(page,'#/piante',width),opener=page.locator('[data-open-plant-filters]'),panel=page.locator('.plant-filter-panel');
+ await expect(panel).not.toHaveAttribute('open','');await opener.click();await expect(panel).toBeVisible();
+ await panel.locator('[data-plant-filter="lookalikes"]').click();await expect(opener.locator('[data-filter-n]')).toContainText('1 attivo');
+ await expect(panel.locator('[data-plant-filter-results]')).toContainText(/Mostra \d+ schede?/);
+ await panel.locator('[data-plant-filter-results]').click();await expect(panel).not.toHaveAttribute('open','');await expect(opener).toBeFocused();
+ await opener.click();await expect(panel.locator('[data-plant-filter="lookalikes"]')).toHaveAttribute('aria-pressed','true');
+ await panel.locator('[data-reset-plant-filters]').click();await expect(opener.locator('[data-filter-n]')).toBeEmpty();await expect(page.locator('[data-plant-results] .sp-card')).toHaveCount(70);
+ await page.keyboard.press('Escape');await expect(opener).toBeFocused();expect(errors).toEqual([]);
+});

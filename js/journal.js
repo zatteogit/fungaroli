@@ -391,6 +391,7 @@ export function initJournal({ onEntries=()=>{},zones, speciesCatalog = SPECIES, 
   function rowActions(entry){
     const state=actionStates.get(String(entry.id))||{},id=esc(entry.id),disabled=state.busy?' disabled':'';
     return `${privacyTag(entry)}<div class="j-actions" aria-busy="${!!state.busy}">
+      ${entry.kind==='note'?`<button type="button" class="btn notebook-share" data-share-note="${id}"${disabled}><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16V3m-5 5 5-5 5 5M5 13v7h14v-7"/></svg>Condividi appunto</button>`:''}
       ${entry.kind==='note'?`<button type="button" class="link-btn small" data-edit-note="${id}"${disabled}>Modifica</button>`:''}
       ${store.kind==='community'&&!['note','plan'].includes(entry.kind)?(entry.shared?`<button type="button" class="link-btn small" data-withdraw-entry="${id}" aria-label="Ritira le osservazioni dai conteggi"${disabled}>${state.busy==='withdraw'?'Ritiro…':'Ritira dai conteggi'}</button>`:`<button type="button" class="link-btn small" data-share-entry="${id}" aria-label="Condividi osservazioni"${disabled}>${state.busy==='share'?'Condivido…':'Condividi'}</button>`):''}
       <button type="button" class="link-btn small j-delete" data-del="${id}"${disabled}>${state.busy==='delete'?'Elimino…':state.confirmDelete?'Conferma eliminazione':'Elimina'}</button>
@@ -399,6 +400,27 @@ export function initJournal({ onEntries=()=>{},zones, speciesCatalog = SPECIES, 
   }
   const currentStore=target=>target===store&&(target.kind!=='community'||target.ownerId===currentUser()?.id);
   const focusAction=(id,attr)=>list.querySelector(`[${attr}="${CSS.escape(id)}"]`)?.focus({preventScroll:true});
+  const shareDialog=document.createElement('dialog');shareDialog.className='wiz notebook-share-dialog';shareDialog.setAttribute('aria-label','Condividi appunto');document.body.append(shareDialog);
+  let shareOrigin=null;
+  shareDialog.addEventListener('close',()=>shareOrigin?.isConnected&&shareOrigin.focus({preventScroll:true}));
+  addEventListener('hashchange',()=>shareDialog.close());
+  list.addEventListener('click',async event=>{
+    const button=event.target.closest('[data-share-note]');if(!button||button.disabled)return;
+    const entry=entries.find(e=>String(e.id)===button.dataset.shareNote);if(!entry)return;
+    const zone=zones.find(z=>z.id===entry.zoneId),title=entry.title||'Appunto dal bosco';
+    const text=[title,[entry.date,zone?.title||zone?.name].filter(Boolean).join(' · '),entry.note,entry.reference?.title,entry.reference?.href?new URL(entry.reference.href,location.href).href:''].filter(Boolean).join('\n\n');
+    shareOrigin=button;
+    if(navigator.share){
+      try{await navigator.share({title,text});return;}catch(error){if(error.name==='AbortError')return;}
+    }
+    shareDialog.innerHTML=`<div class="wiz-body"><h2>Condividi appunto</h2><p>Copia il testo e invialo a chi vuoi.</p><label for="note-share-text" class="sr-only">Testo da condividere</label><textarea id="note-share-text" readonly rows="8">${esc(text)}</textarea><p class="small" role="status" data-copy-status></p><div class="wiz-nav"><button class="btn ghost" type="button" data-share-close>Chiudi</button><button class="btn primary" type="button" data-copy-note>Copia appunto</button></div></div>`;
+    shareDialog.querySelector('[data-share-close]').addEventListener('click',()=>shareDialog.close());
+    shareDialog.querySelector('[data-copy-note]').addEventListener('click',async()=>{
+      const status=shareDialog.querySelector('[data-copy-status]');
+      try{await navigator.clipboard.writeText(text);status.textContent='Appunto copiato. Incollalo nella chat o nel messaggio che preferisci.';}catch{shareDialog.querySelector('textarea').select();status.textContent='Seleziona e copia il testo, poi incollalo nel tuo messaggio.';}
+    });
+    shareDialog.showModal();
+  });
   list.addEventListener('click',async event=>{
     const button=event.target.closest('[data-share-entry],[data-withdraw-entry],[data-del],[data-cancel-delete]');
     if(!button||!list.contains(button)||button.disabled)return;

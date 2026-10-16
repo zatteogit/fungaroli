@@ -688,7 +688,11 @@ const monthsTxt = (m) => { const a = [...m].sort((x, y) => x - y); return a.leng
 const fleshSay = (v) => (v === 'nessuno' ? 'non cambia colore' : `vira al ${v}`);
 const CMP = [
   { key: 'hymenophore', k: 'Sotto il cappello', art: (a) => `<span class="id-hym">${HYM_ICON[a[0]] || ''}</span>`, say: (v) => v },
-  { key: 'hymenophore_color', k: 'Colore di lamelle o pori', art: (a, t) => a.slice(0, 3).map((v) => swatch(hymKind(t.traits?.hymenophore), v)).join(''), say: (v) => v },
+  { key: 'hymenophore_color', k: 'Colore sotto il cappello', label: (t) => {
+    const terms = { lamelle: 'delle lamelle', pori: 'dei pori', aculei: 'degli aculei', pliche: 'delle pliche', liscio: 'della superficie liscia' };
+    const types = [].concat(t.traits?.hymenophore ?? []);
+    return types.length === 1 && terms[types[0]] ? `Colore ${terms[types[0]]}` : 'Colore sotto il cappello';
+  }, art: (a, t) => a.slice(0, 3).map((v) => swatch(hymKind(t.traits?.hymenophore), v)).join(''), say: (v) => v },
   { key: 'flesh_change', k: 'Carne al taglio', art: fleshArt, say: fleshSay },
   { key: 'cap_color', k: 'Cappello', art: (a) => a.slice(0, 3).map((v) => swatch('cap', v)).join(''), say: (v) => v },
   { key: 'stem_ring', k: 'Anello', bool: true, art: (a) => ART[`ring_${a[0]}`] },
@@ -715,17 +719,18 @@ function cmpRows(ref, t) {
     if (a == null || b == null || (Array.isArray(a) && !a.length) || (Array.isArray(b) && !b.length)) return null;
     const A = [].concat(a), B = [].concat(b);
     const txt = (X) => (r.key === 'season' ? monthsTxt(X) : r.bool ? withOut(r.key, X[0]) : orList(X.map(r.say)));
-    const shared = B.filter((v) => A.includes(v)).length;
+    const differentStructure = r.key === 'hymenophore_color' && JSON.stringify([].concat(ref.traits?.hymenophore ?? []).sort()) !== JSON.stringify([].concat(t.traits?.hymenophore ?? []).sort());
+    const shared = differentStructure ? 0 : B.filter((v) => A.includes(v)).length;
     // info: la stagione aiuta poco a distinguere, quindi non diventa mai "qui li distingui"
     const kind = r.info ? 'same' : !shared ? 'diff' : (shared < B.length || shared < A.length) ? 'part' : 'same';
     // caratteri atomizzati: un'etichetta per valore, ognuna col suo disegno.
     // In comune: attenuate e in testa, nello stesso ordine sui due lati. Solo da un lato: in evidenza.
     const say = (v) => (r.bool ? withOut(r.key, v) : r.say ? r.say(v) : String(v));
-    const chip = (v, who, common) => `<li class="cmp-v ${common ? 'common' : 'own'}">${r.art ? `<span class="cmp-v-art" aria-hidden="true">${r.art([v], who) || ''}</span>` : ''}<span>${esc(say(v))}</span><span class="sr-only">${common ? ', in comune' : ', solo qui'}</span></li>`;
+    const chip = (v, who, common, alternative) => `<li class="cmp-option">${alternative ? '<span class="cmp-or">oppure</span>' : ''}<span class="cmp-v ${common ? 'common' : 'own'}">${r.art ? `<span class="cmp-v-art" aria-hidden="true">${r.art([v], who) || ''}</span>` : ''}<span>${esc(say(v))}</span><span class="sr-only">${common ? ', in comune' : ', solo qui'}</span></span></li>`;
     const cell = (X, Y, who) => r.key === 'season'
       ? `<div class="cmp-cell"><span>${esc(txt(X))}</span></div>`
-      : `<div class="cmp-cell"><ul class="cmp-vals">${[...A.filter((v) => Y.includes(v) && X.includes(v)), ...X.filter((v) => !Y.includes(v))].map((v) => chip(v, who, Y.includes(v))).join('')}</ul></div>`;
-    return { kind, k: r.k, html: `<li class="cmp-row ${kind}"><span class="cmp-k">${esc(r.k)}</span>${cell(A, B, ref)}${cell(B, A, t)}</li>` };
+      : `<div class="cmp-cell">${r.label ? `<span class="cmp-k">${esc(r.label(who))}</span>` : ''}<ul class="cmp-vals">${[...A.filter((v) => Y.includes(v) && X.includes(v)), ...X.filter((v) => !Y.includes(v))].map((v, i) => chip(v, who, !differentStructure && Y.includes(v), i > 0 && !['habitat', 'trees'].includes(r.key))).join('')}</ul></div>`;
+    return { kind, k: r.k, html: `<li class="cmp-row ${kind}" data-trait="${r.key}">${r.label ? '' : `<span class="cmp-k">${esc(r.k)}</span>`}${cell(A, B, ref)}${cell(B, A, t)}</li>` };
   }).filter(Boolean);
 }
 
@@ -740,7 +745,7 @@ function renderCompare(box, ref, pick) {
   const toxCls = (t) => `tox-${String(t.toxicity || '').replace(/\s/g, '-')}`;
   const nameBtn = (t) => `<button type="button" data-taxon="${esc(t.key)}">${esc(t.name || t.latin)}</button>`; // nel confronto: anteprima, per tutti
   const slide = (t, k) => {
-    const rows = cmpRows(ref, t), diff = rows.filter((r) => r.kind === 'diff'), part = rows.filter((r) => r.kind === 'part'), same = rows.filter((r) => r.kind === 'same');
+    const rows = cmpRows(ref, t), diff = rows.filter((r) => r.kind === 'diff'), part = rows.filter((r) => r.kind === 'part');
     const how = fromToxic ? HOWTO(t.edible_id, ref.latin) : HOWTO(ref.edible_id, t.latin);
     return `<section class="cmp-slide" id="cmp-${esc(t.key)}" data-i="${k}" aria-label="${esc(ref.name)} e ${esc(t.name || t.latin)}">
       <div class="cmp-pair">
@@ -751,11 +756,10 @@ function renderCompare(box, ref, pick) {
         <span class="cmp-vs" aria-hidden="true">vs</span>
       </div>
       ${how ? `<p class="cmp-how" data-glossary="Funghi"><b>Differenze descritte.</b> ${esc(how)}</p>` : ''}
-      <ul class="cmp-legend" aria-hidden="true"><li><span class="cmp-v own"></span>Solo in uno dei due</li><li><span class="cmp-v common"></span>In comune</li></ul>
+      <ul class="cmp-legend" aria-label="Come leggere il confronto"><li><span class="cmp-v common" aria-hidden="true"></span><span><b>Fondo colorato: in comune</b><br>Lo stesso valore nelle due specie</span></li><li><span class="cmp-v own" aria-hidden="true"></span><span><b>Solo contorno: differenze</b><br>Valore riportato solo per questa specie</span></li></ul>
       ${diff.length ? `<h4 class="cmp-h diff">Caratteri differenti nelle fonti</h4><ul class="cmp-rows">${diff.map((r) => r.html).join('')}</ul>`
         : '<p class="cmp-none"><b>Nessuna domanda di «Impara a riconoscere» li separa con certezza.</b> Contano i dettagli: leggi le differenze descritte e, nel dubbio, fallo vedere all\'Ispettorato micologico.</p>'}
       ${part.length ? `<h4 class="cmp-h part">A volte simili</h4><ul class="cmp-rows">${part.map((r) => r.html).join('')}</ul>` : ''}
-      ${same.length ? `<details class="cmp-same"><summary>Uguali in: ${esc(same.map((r) => r.k.toLowerCase()).join(', '))}</summary><ul class="cmp-rows">${same.map((r) => r.html).join('')}</ul></details>` : ''}
       ${[ref,t].some(x=>['mortale','tossico'].includes(x.toxicity)) ? '<p class="cmp-verdict">Questo confronto include specie tossiche o mortali. I caratteri descritti possono variare o essere incompleti: somiglianze e differenze non identificano il tuo esemplare.</p>' : ''}
     </section>`;
   };
@@ -768,12 +772,11 @@ function renderCompare(box, ref, pick) {
     <div class="cmp-pickbar"><span class="cmp-ref-l ${toxCls(ref)}"><b>${esc(ref.name || ref.latin)}</b> <i aria-hidden="true">vs</i></span>
     <div class="cmp-pick" role="tablist" aria-label="Scegli il sosia">${list.map((t, k) => `<button type="button" role="tab" class="cmp-chip ${toxCls(t)}" data-go="${k}" aria-selected="${k === start}"><span class="cmp-chip-img">${pic(t, true)}</span><span>${esc(t.name || t.latin)}</span></button>`).join('')}</div></div>
     <div class="cmp-track">${list.map(slide).join('')}</div>
-    <p class="cmp-dots" aria-hidden="true">${list.map((_, k) => `<i${k === start ? ' class="on"' : ''}></i>`).join('')}</p>
     <p><a class="btn" href="#/riconosci">Confronta un altro fungo</a></p>`;
 
-  const track = box.querySelector('.cmp-track'), chips = [...box.querySelectorAll('.cmp-chip[role="tab"]')], dots = [...box.querySelectorAll('.cmp-dots i')];
+  const track = box.querySelector('.cmp-track'), chips = [...box.querySelectorAll('.cmp-chip[role="tab"]')];
   const mark = (i) => {
-    chips.forEach((c, k) => c.setAttribute('aria-selected', k === i)); dots.forEach((d, k) => d.classList.toggle('on', k === i));
+    chips.forEach((c, k) => c.setAttribute('aria-selected', k === i));
     chips[i]?.scrollIntoView({ block: 'nearest', inline: 'center', behavior: 'smooth' });
     history.replaceState(null, '', `#/riconosci/confronta/${ref.key}/${list[i].key}`);
   };
@@ -915,16 +918,13 @@ export function renderIdentify(box) {
     return head + next;
   };
   box.innerHTML = `
-    <details class="id-warn" name="identify-notices"><summary><b>Non è un'identificazione.</b></summary><p>Restringe i candidati, velenosi compresi. ${BANNER ? esc(BANNER) : "Prima di mangiare qualunque fungo: controllo gratuito all'Ispettorato Micologico ASL."} <a href="#/info">Emergenza</a></p></details>
-    <div class="seg-tabs" role="tablist" aria-label="Modo">
-      <button type="button" role="tab" data-mode="guided" aria-selected="${state.guided}">Guidata</button>
-      <button type="button" role="tab" data-mode="all" aria-selected="${!state.guided}">Filtri</button>
-    </div>
+    <details class="id-warn context-note" name="identify-notices"><summary><b>Non è un'identificazione.</b></summary><p>Restringe i candidati, velenosi compresi. ${BANNER ? esc(BANNER) : "Prima di mangiare qualunque fungo: controllo gratuito all'Ispettorato Micologico ASL."} <a href="#/info">Emergenza</a></p></details>
+    <div class="identify-mode-action"><button type="button" class="link-btn" data-mode="${state.guided ? 'all' : 'guided'}">${state.guided ? 'Mostra tutti i filtri' : '← Torna alle domande'}</button></div>
     ${ZONES.length ? `<div class="filter-rail id-zones" role="group" aria-label="Dove l'hai trovato"><span class="af-label">Zona</span><button type="button" class="chip" data-zone="" aria-pressed="${!state.zone}">Ovunque</button>${ZONES.map((z) => `<button type="button" class="chip" data-zone="${z.id}" aria-pressed="${state.zone === z.id}">${esc(z.title || z.name)}</button>`).join('')}</div>` : ''}
     ${state.guided ? guidedMode() : `<div class="idf-primary" aria-label="Caratteri principali">${facetsHtml([['', PRIMARY_FILTERS]], true)}</div><div class="idf-bar">${activeChips()}<button type="button" class="btn idf-open" data-idf-open aria-haspopup="dialog" aria-controls="identify-filters">Altri${given.filter(q=>!PRIMARY_FILTERS.includes(q.key)).length ? ` <b>${given.filter(q=>!PRIMARY_FILTERS.includes(q.key)).length}</b>` : ''}</button>${given.length ? '<button type="button" class="af-add" data-fall>Azzera</button>' : ''}</div>`}
     ${state.guided && !given.length && !state.q && !state.zone ? '' : `<div class="id-head"><h2 class="sec-title">${list.length} ${list.length === 1 ? 'candidato' : 'candidati'}</h2></div>`}
     <label class="search-box id-search id-filter"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M7 12h10M10 18h4"/></svg><input id="id-q" type="search" placeholder="Filtra i candidati: anello, blu, castagno…" value="${esc(state.q)}" autocomplete="off" aria-label="Filtra i candidati per parola"></label>
-    <details class="id-deadly" name="identify-notices"><summary><b>Le risposte e i filtri non escludono i funghi mortali.</b></summary><p>Anello e volva possono essere nascosti o danneggiati. Il catalogo è incompleto: anche un solo candidato o nessun mortale nei risultati non conferma la specie né la commestibilità.</p></details>
+    <details class="id-deadly context-note" name="identify-notices"><summary><b>Le risposte e i filtri non escludono i funghi mortali.</b></summary><p>Anello e volva possono essere nascosti o danneggiati. Il catalogo è incompleto: anche un solo candidato o nessun mortale nei risultati non conferma la specie né la commestibilità.</p></details>
     ${state.guided && !given.length && !state.q && !state.zone
       ? `<p class="small muted gk-start">${list.length} funghi nel catalogo, velenosi compresi. Rispondi alla prima domanda o filtra per parola: i candidati compaiono man mano che restringi.</p>`
       : `<ul class="id-cards">${list.slice(0, 40).map(resultCard).join('')}</ul>`}
@@ -938,7 +938,7 @@ export function renderIdentify(box) {
   const rerender = () => renderIdentify(box);
   const rerenderSoft = () => { tick(); soft(() => renderIdentify(box)); };
   box.querySelector('#id-q').addEventListener('input', (e) => { state.q = e.target.value; clearTimeout(box._t); box._t = setTimeout(() => { rerender(); const i = box.querySelector('#id-q'); i.focus(); i.setSelectionRange(i.value.length, i.value.length); }, 250); });
-  box.querySelectorAll('[data-mode]').forEach((b) => b.addEventListener('click', () => { state.guided = b.dataset.mode === 'guided'; rerender(); }));
+  box.querySelectorAll('[data-mode]').forEach((b) => b.addEventListener('click', () => { state.guided = b.dataset.mode === 'guided'; rerender(); box.querySelector('[data-mode]')?.focus({preventScroll:true}); }));
   if (!state.guided) {
     wireFacets(box, selector => soft(() => { renderIdentify(box); focusFilter(box, selector); }));
     box.querySelector('[data-idf-open]')?.addEventListener('click', () => openFilterSheet(box));
