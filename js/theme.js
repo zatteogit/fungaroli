@@ -1,4 +1,4 @@
-// Tema: chiaro (predefinito), scuro ("notte nel bosco") o automatico (segue il telefono).
+// Tema: automatico (predefinito, segue il dispositivo), chiaro o scuro.
 // Un bottone piccolo nella barra in alto passa dall'uno all'altro e dice a quale sei passato.
 import { toast } from './refresh.js';
 const KEY = 'fungaroli:theme';
@@ -12,8 +12,8 @@ const ICON = {
   dark: '<path d="M19.5 14.5A8 8 0 0 1 9.5 4.5a8 8 0 1 0 10 10z"/>',
 };
 const BG = { light: '#f7f4ea', dark: '#10271f' };
-// chi non ha mai scelto parte dal chiaro
-const read = () => { try { return localStorage.getItem(KEY) || 'light'; } catch { return 'light'; } };
+// Senza una scelta valida si segue il tema del dispositivo.
+const read = () => { try { const saved = localStorage.getItem(KEY); return MODES.includes(saved) ? saved : 'auto'; } catch { return 'auto'; } };
 
 function apply(mode) {
   if (mode === 'auto') delete root.dataset.theme; else root.dataset.theme = mode;

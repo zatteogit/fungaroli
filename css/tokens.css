@@ -104,6 +104,7 @@
   --text: var(--_ref-ink);
   --text-2: var(--_ref-text-2);
   --muted: var(--_ref-muted);
+  --control-edge: var(--muted);
   --accent: var(--_ref-calendula-ink);
   --accent-ink: var(--_ref-white);
   --accent-soft: var(--_ref-accent-soft);

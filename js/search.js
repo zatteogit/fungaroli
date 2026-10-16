@@ -14,8 +14,9 @@ const RECENT_KEY = 'fungaroli:search-recent';
 // la sezione in cui sei decide cosa viene prima (la ricerca resta su tutto)
 const PRIORITY = {
   piante:['pianta'],pianta:['pianta'],glossario: ['termine'],
+  fungo: ['velenoso', 'fungo'], commestibile: ['fungo', 'velenoso'],
   specie: ['fungo', 'velenoso'], 'specie-dettaglio': ['fungo', 'velenoso'], riconosci: ['velenoso', 'fungo'],
-  alberi: ['albero'], albero: ['albero'], uscite: ['zona', 'sentiero'], zona: ['sentiero', 'zona'], mappa: ['zona', 'sentiero'], diario: ['zona', 'fungo'], info: ['pagina'],
+  alberi: ['albero'], albero: ['albero'], uscite: ['zona', 'sentiero'], zona: ['sentiero', 'zona'], mappa: ['zona', 'sentiero'], diario: ['zona', 'fungo'], info: ['pagina'], impara: ['pagina', 'termine'], 'guide-list': ['pagina'], guide: ['pagina'], metodo: ['pagina'], sfide: ['pagina'],
 };
 const PLACEHOLDER = {
   piante:'Cerca piante, erbe e frutti…',pianta:'Cerca piante, erbe e frutti…',glossario: 'Cerca una parola del glossario…',
@@ -27,17 +28,22 @@ let ITEMS = [], dlg = null, sel = -1, scope = '', prio = [];
 
 export function initSearch(items) {
   ITEMS = items.map((it) => ({ ...it, _t: norm(it.title), _h: norm([it.title, it.sub, it.hay].join(' ')) }));
-  document.querySelectorAll('[data-open-search]').forEach((b) => b.addEventListener('click', openSearch));
+  const apple = /Mac|iPhone|iPad/i.test(navigator.userAgentData?.platform || navigator.platform || '');
+  document.querySelectorAll('[data-open-search]').forEach((b) => {
+    b.addEventListener('click', openSearch);
+    b.title = `Cerca (${apple ? '⌘ K' : 'Ctrl+K'})`;
+    b.setAttribute('aria-keyshortcuts', apple ? 'Meta+K' : 'Control+K');
+    const hint = b.querySelector('kbd');
+    if (hint) hint.textContent = apple ? '⌘ K' : 'Ctrl K';
+  });
   // se cambi pagina (indietro del telefono, link), la ricerca si chiude
   addEventListener('hashchange', () => { if (dlg?.open) dlg.close(); });
-  // "/" o Ctrl/Cmd+K da tastiera, come nei siti che usi
+  // Ctrl/Cmd+K funziona anche sul layout italiano; "/" resta un’alternativa.
   addEventListener('keydown', (e) => {
     const typing = /^(input|textarea|select)$/i.test(e.target.tagName) || e.target.isContentEditable;
     if ((e.key === '/' && !typing) || ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k')) {
       e.preventDefault();
-      // sui cataloghi il campo è nella pagina: "/" porta lì, Ctrl/Cmd+K apre comunque la ricerca generale
-      const local = e.key === '/' && document.querySelector('.view:not([hidden]) [data-catalog-search]');
-      if (local) local.focus(); else openSearch();
+      openSearch();
     }
   });
 }
@@ -136,7 +142,7 @@ function render(q) {
   if (!hits.length) { box.innerHTML = `<p class="sr-empty">Nessun risultato per <b>${esc(q)}</b>.<br><span class="small muted">Se hai un fungo in mano, prova <a href="#/riconosci" data-close>Impara a riconoscere</a>.</span></p>`; box.querySelector('[data-close]')?.addEventListener('click', () => dlg.close()); return; }
   const groups = ORDER.map((k) => [k, hits.filter((h) => h.it.kind === k).sort((a, b) => b.s - a.s).slice(0, scope ? 30 : k === 'velenoso' || k === 'sentiero' ? 5 : 6)]).filter(([, l]) => l.length);
   // il gruppo col risultato migliore va in cima
-  groups.sort((a, b) => b[1][0].s - a[1][0].s);
+  groups.sort((a, b) => Number(prio.includes(b[0])) - Number(prio.includes(a[0])) || b[1][0].s - a[1][0].s);
   box.innerHTML = groups.map(([k, l]) => `<section class="sr-group"><p class="sr-h">${KINDS[k]}</p><ul>${l.map(({ it, i }) => `
     <li><button type="button" class="sr-item" role="option" data-i="${i}" aria-selected="false">
       <span class="sr-img">${it.img || ''}</span>
@@ -149,10 +155,13 @@ export function openSearch(q = '', sc = '') {
   if (!dlg) build();
   const input = dlg.querySelector('input');
   const page = document.body.dataset.page || '';
-  prio = PRIORITY[page] || [];
+  const recognition = document.querySelector('#entity-sheet[open]') || document.querySelector('.recognition-sheet[open]');
+  const key = recognition?.querySelector('[data-glossary-context]')?.dataset.glossaryContext;
+  const context = key === 'Piante' ? 'piante' : key === 'Alberi' ? 'alberi' : key === 'Funghi' ? 'riconosci' : page;
+  prio = PRIORITY[context] || [];
   scope = typeof q === 'string' ? sc : '';
   dlg.querySelectorAll('[data-scope]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.scope === scope)));
-  input.placeholder = PLACEHOLDER[page] || 'Cerca zone, funghi, alberi, sentieri…';
+  input.placeholder = PLACEHOLDER[context] || 'Cerca zone, funghi, alberi, sentieri…';
   input.value = typeof q === 'string' ? q : '';
   render(input.value);
   dlg.showModal();

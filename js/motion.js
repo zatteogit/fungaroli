@@ -101,6 +101,12 @@ export function navigate(update, { nav = 'none', back = '' } = {}) {
   if (nav === 'pop' && readyPhoto(heroImg()) && inView(heroImg())) from = heroBox(heroImg());
   if (from) from.style.viewTransitionName = 'hero';
   let to = null;
+  const sheets = [];
+  const liftSheet = hero => {
+    const sheet = hero?.parentElement?.querySelector('.pbody');
+    if (sheet) { sheet.style.viewTransitionName = 'detail-sheet'; sheets.push(sheet); }
+  };
+  if (from && nav === 'pop') liftSheet(from);
   const vt = document.startViewTransition(async () => {
     if (from) from.style.viewTransitionName = '';
     if(current!==revision)return;
@@ -113,9 +119,9 @@ export function navigate(update, { nav = 'none', back = '' } = {}) {
     if (nav === 'pop' && back) { photo = cardPhoto(back); if (photo && !inView(photo)) photo = null; }
     await ready(photo);
     if (current !== revision) return;
-    if (from && readyPhoto(photo)) { to = nav === 'push' ? heroBox(photo) : photo; to.style.viewTransitionName = 'hero'; }
+    if (from && readyPhoto(photo)) { to = nav === 'push' ? heroBox(photo) : photo; to.style.viewTransitionName = 'hero'; if (nav === 'push') liftSheet(to); }
   });
-  settle(vt,()=>{if(from)from.style.viewTransitionName='';if(to)to.style.viewTransitionName='';});
+  settle(vt,()=>{if(from)from.style.viewTransitionName='';if(to)to.style.viewTransitionName='';for(const sheet of sheets)sheet.style.viewTransitionName='';});
   tapped = null;
 }
 

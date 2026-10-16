@@ -11,7 +11,7 @@ async function start(page,hash='#/piante',width=390){
 test('plants: search, comparison sheets and private simultaneous phenophases on mobile and desktop',async({page})=>{
  const errors=await start(page);await expect(page.locator('#plant-grid .sp-card')).toHaveCount(70);
  for(const width of [320,390,1280]){await page.setViewportSize({width,height:900});expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);if(width===1280)await page.screenshot({path:'/tmp/fungaroli-plants-desktop.png'});}
- await page.setViewportSize({width:390,height:900});await page.locator('[data-plant-query]').fill('sambuco');await expect(page.locator('#plant-grid .sp-card')).toHaveCount(2);
+ await page.setViewportSize({width:390,height:900});await expect(page.locator('#plant-grid input[type="search"]')).toHaveCount(0);await page.keyboard.press('/');const search=page.locator('dialog.search-dlg[open]');await search.locator('input').fill('sambuco');await expect(search.locator('.sr-group > .sr-h').first()).toHaveText('Piante e fiori');await expect(search.locator('.sr-item').filter({hasText:'Sambuco'}).first()).toBeVisible();await page.keyboard.press('Escape');
  await page.goto('/#/pianta/sambuco');await expect(page.locator('#plant-detail')).toContainText('Frutti crudi o immaturi');
  await page.locator('#plant-detail a[href="#/pianta/ebbio"]').click();const sheet=page.locator('#entity-sheet[open]');await expect(sheet).toContainText('Tutte le parti sono tossiche');expect(new URL(page.url()).hash).toBe('#/pianta/sambuco');await sheet.locator('[data-entity-close]').click();
  await page.locator('#plant-detail [data-note-kind]').click();const form=page.locator('.notebook-dialog[open]');await form.locator('[name="note"]').fill('Alcuni fiori e frutti ancora verdi.');await form.locator('.notebook-context summary').click();await form.locator('[data-phase="open_flowers"]').selectOption('present');await form.locator('[data-phase="unripe_fruits"]').selectOption('present');await form.screenshot({path:'/tmp/fungaroli-botanical-note-mobile.png'});await form.locator('[type="submit"]').click();await expect(form).toHaveCount(0);
@@ -49,6 +49,7 @@ test('botanical layouts, global search and short note form in both themes',async
 });
 test('i mesi abbreviati non diventano termini del glossario («ago» di agosto non è un ago)',async({page})=>{
  const errors=await start(page);await page.goto('/#/pianta/ortica');
+ await page.locator('#plant-detail .character-details > summary').click();
  const view=page.locator('.view:not([hidden])');await expect(view.locator('#plant-detail .keys')).toBeVisible();await expect(view).toContainText('ago');
  await expect(view.locator('a.glossary-link').filter({hasText:/^ago$/i})).toHaveCount(0);
  expect(errors).toEqual([]);
@@ -58,7 +59,7 @@ const outsideZones=view=>view.locator('a.glossary-link').evaluateAll(links=>link
 test('glossario: parole collegate nelle descrizioni, mai in mesi, fonti e crediti, e solo nel loro ambito',async({page})=>{
  const errors=await start(page);
  // scheda albero: «Aghi» nella descrizione è una voce del glossario
- await page.goto('/#/albero/pino%20nero');const tree=page.locator('#tree-detail');await expect(tree.locator('.keys')).toBeVisible();
+ await page.goto('/#/albero/pino%20nero');const tree=page.locator('#tree-detail');await tree.locator('.character-details > summary').click();await expect(tree.locator('.keys')).toBeVisible();
  await expect(tree.locator('.keys a.glossary-link[data-term="aghi"]')).toHaveCount(1);
  await expect(tree.locator('[data-tree-traits] .trait-strip')).toBeVisible();
  expect(await outsideZones(tree)).toEqual([]);
@@ -66,7 +67,7 @@ test('glossario: parole collegate nelle descrizioni, mai in mesi, fonti e credit
  await tree.locator('details.sec summary',{hasText:'Fonti e crediti delle foto'}).click();
  await expect(tree.locator('.src-rows a.glossary-link, .src-h a.glossary-link')).toHaveCount(0);
  // scheda pianta: mesi della fioritura, tutela e fonti senza termini; gli aculei del rovo sono quelli botanici, non quelli dei funghi
- await page.goto('/#/pianta/rovo');const plant=page.locator('#plant-detail');await expect(plant.locator('.keys')).toBeVisible();
+ await page.goto('/#/pianta/rovo');const plant=page.locator('#plant-detail');await plant.locator('.character-details > summary').click();await expect(plant.locator('.keys')).toBeVisible();
  await expect(plant.locator('.keys a.glossary-link[data-term="aculei-piante"]')).toHaveCount(1);
  await expect(plant.locator('a.glossary-link[data-term="aculei"]')).toHaveCount(0);
  await expect(plant.locator('.sci-params div',{hasText:'Fioritura'}).locator('a.glossary-link')).toHaveCount(0);

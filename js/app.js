@@ -45,7 +45,7 @@ const AHEAD_DAYS = 7;      // giorni futuri valutati
 const PREFS_KEY = 'fungaroli:prefs:v2'; // v2: si parte con tutti i gruppi
 
 const $ = (s) => document.querySelector(s);
-function addNotebookReference(box,kind,id,title){if(!box||!title||box.querySelector('[data-note-kind]'))return;const button=box.querySelector('.notebook-context-action')||document.createElement('button');button.type='button';button.className='btn ghost notebook-context-action';button.dataset.noteKind=kind;button.dataset.noteId=id;button.dataset.noteTitle=title;button.textContent='＋ Annota nel taccuino';const target=box.querySelector('.pbody'),lead=box.querySelector('.article-lede');if(target)target.prepend(button);else if(lead)lead.after(button);else box.append(button);}
+function addNotebookReference(box,kind,id,title){if(!box||!title||box.querySelector('[data-note-kind]'))return;const button=box.querySelector('.notebook-context-action')||document.createElement('button');button.type='button';button.className='btn ghost notebook-context-action';button.dataset.noteKind=kind;button.dataset.noteId=id;button.dataset.noteTitle=title;button.textContent='＋ Annota nel taccuino';const hero=box.querySelector('.phero-body'),target=box.querySelector('.pbody'),lead=box.querySelector('.article-lede');if(hero){button.classList.add('notebook-hero-action');hero.append(button);}else if(target)target.prepend(button);else if(lead)lead.after(button);else box.append(button);}
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const cssVar = (name) => getComputedStyle(document.documentElement).getPropertyValue(name).trim();
 const scoreVar = (score) => Number.isFinite(score) ? `--s${5 - classOf(score)}` : '--muted';
@@ -101,7 +101,9 @@ const state = {
 try {
   const p = JSON.parse(localStorage.getItem(PREFS_KEY) || 'null');
   if (p) {
-    state.useBotanicalNotes=p.useBotanicalNotes===true;state.showDiscoveries=p.showDiscoveries!==false; // Old botanical mode no longer replaces mushroom recommendations.
+    state.useBotanicalNotes=p.useBotanicalNotes===true;state.showDiscoveries=p.showDiscoveries!==false;
+    state.target=p.target==='piante'?'piante':'funghi';
+    state.plantIds=Array.isArray(p.plantIds)?new Set(p.plantIds.filter(id=>typeof id==='string')):null;
     if ('speciesIds' in p) state.speciesIds = Array.isArray(p.speciesIds) ? new Set(p.speciesIds.filter(x => typeof x === 'string')) : null;
     else {
       const groups = (p.groups || []).filter(g => GROUPS.some(x => x.id === g));
@@ -111,7 +113,7 @@ try {
   }
 } catch { /* preferenze non disponibili */ }
 const savePrefs = () => {
-  try { localStorage.setItem(PREFS_KEY, JSON.stringify({ target:'funghi',showDiscoveries:state.showDiscoveries,useBotanicalNotes:state.useBotanicalNotes,plantIds:state.plantIds===null?null:[...state.plantIds],speciesIds: state.speciesIds === null ? null : [...state.speciesIds], distancePenalty: state.distancePenalty, avoidCrowd: state.avoidCrowd, preferComfort: state.preferComfort })); } catch { /* ignora */ }
+  try { localStorage.setItem(PREFS_KEY, JSON.stringify({ target:state.target,showDiscoveries:state.showDiscoveries,useBotanicalNotes:state.useBotanicalNotes,plantIds:state.plantIds===null?null:[...state.plantIds],speciesIds: state.speciesIds === null ? null : [...state.speciesIds], distancePenalty: state.distancePenalty, avoidCrowd: state.avoidCrowd, preferComfort: state.preferComfort })); } catch { /* ignora */ }
 };
 const selectedCatalog = () => activeIds()===null?activeCatalog():activeCatalog().filter(s=>activeIds().has(s.id));
 const filterDate = () => todayISO(new Date(Date.now() + (state.view === 'uscite' ? state.homeDay || 0 : state.dayOffset) * 864e5));
@@ -306,14 +308,13 @@ function initShell() {
   renderFilterSummary();
 }
 
-// Scopri: tre cataloghi più «Impara». Ogni catalogo ha «Sfoglia | Impara a riconoscere»;
-// Impara raccoglie glossario, guide e i dettagli di bosco e sentiero.
-const SCOPRI = [['funghi', '#/specie', 'Funghi'], ['piante', '#/piante', 'Piante e fiori'], ['alberi', '#/alberi', 'Alberi'], ['impara', '#/impara', 'Impara']];
+// Scopri: tre cataloghi con riconoscimento in pannello; Guide raccoglie i contenuti sul bosco.
+const SCOPRI = [['funghi', '#/specie', 'Funghi'], ['piante', '#/piante', 'Piante e fiori'], ['alberi', '#/alberi', 'Alberi'], ['impara', '#/impara', 'Guide']];
 const SCOPRI_SUB = {
   funghi: [['#/specie', 'Sfoglia'], ['#/riconosci', 'Impara a riconoscere']],
   piante: [['#/piante', 'Sfoglia'], ['#/riconosci/piante', 'Impara a riconoscere']],
   alberi: [['#/alberi', 'Sfoglia'], ['#/riconosci/alberi', 'Impara a riconoscere']],
-  impara: [['#/glossario', 'Glossario'], ['#/guide', 'Guide'], ['#/riconosci/bosco', 'Bosco e sentiero'], ['#/sfide', 'Sfide']],
+  impara: [['#/glossario', 'Glossario'], ['#/guide', 'Approfondimenti'], ['#/riconosci/bosco', 'Bosco e sentiero'], ['#/sfide', 'Sfide']],
 };
 const RECOGNIZE_HEAD = {
   funghi: ['Funghi', 'Descrivi quello che vedi: le domande restringono il confronto e mostrano i sosia.'],
@@ -338,7 +339,7 @@ function paintScopriNav(r) {
   if (sub) {
     const catalog = ['specie','piante','alberi'].includes(r.view);
     sub.classList.toggle('recognize-entry', catalog);
-    sub.innerHTML = catalog ? `<button type="button" class="btn ghost" data-open-recognition="${sec}" aria-haspopup="dialog">Impara a riconoscere <span aria-hidden="true">→</span></button>` : sec !== 'impara' || r.view === 'impara' ? '' : SCOPRI_SUB[sec].map(([href, label]) => `<a href="${href}"${cur(href === here)}>${label}</a>`).join('');
+    sub.innerHTML = catalog ? `<button type="button" class="btn ghost" data-open-recognition="${sec}" aria-haspopup="dialog"><svg class="recognize-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="7"/><path d="m15 15 6 6"/>${sec === 'funghi' ? '<path d="M6 11c0-5 8-5 8 0ZM9 11v3h2v-3"/>' : '<path d="M7 13c-2-4 0-7 6-7 0 6-2 8-6 7Zm0 0 4-4"/>'}</svg><span>Impara a riconoscere</span><span aria-hidden="true">→</span></button>` : sec !== 'impara' || r.view === 'impara' ? '' : SCOPRI_SUB[sec].map(([href, label]) => `<a href="${href}"${cur(href === here)}>${label}</a>`).join('');
   }
 }
 
@@ -422,7 +423,7 @@ addEventListener('scroll', onScrollBar, { passive: true });
 
 // tasto indietro in alto a sinistra: freccia + nome della pagina a cui torni
 const navStack = [];
-const TITLES = { piante:'Piante e fiori', uscite: 'Uscite', mappa: 'Mappa', specie: 'Funghi', alberi: 'Alberi', riconosci: 'Riconosci', impara: 'Impara', glossario: 'Glossario', 'guide-list': 'Guide', sfide: 'Sfide', diario: 'Taccuino', info: 'Regole e metodo', metodo: 'Come funziona' };
+const TITLES = { piante:'Piante e fiori', uscite: 'Uscite', mappa: 'Mappa', specie: 'Funghi', alberi: 'Alberi', riconosci: 'Riconosci', impara: 'Guide', glossario: 'Glossario', 'guide-list': 'Approfondimenti', sfide: 'Sfide', diario: 'Taccuino', info: 'Regole e metodo', metodo: 'Come funziona' };
 function titleOf(r) {
   if (!r) return '';
   if (r.view === 'zona') { const z = (weatherZones||zones).find((x) => x.id === r.zoneId); return z ? splitName(z)[0] : 'Zona'; }
@@ -451,7 +452,7 @@ function parentOf(r) {
   if (['specie','alberi','piante','riconosci','glossario','guide-list','sfide'].includes(r.view)) return '#/scopri';
   return '#/';
 }
-const PARENT_TITLE = (r) => ({ '#/scopri': 'Scopri', '#/specie': 'Funghi', '#/alberi': 'Alberi', '#/piante':'Piante e fiori', '#/riconosci': 'Impara a riconoscere', '#/guide': 'Guide', '#/sfide': 'Sfide', '#/impara': 'Impara', '#/': 'Uscite' }[parentOf(r)]);
+const PARENT_TITLE = (r) => ({ '#/scopri': 'Scopri', '#/specie': 'Funghi', '#/alberi': 'Alberi', '#/piante':'Piante e fiori', '#/riconosci': 'Impara a riconoscere', '#/guide': 'Approfondimenti', '#/sfide': 'Sfide', '#/impara': 'Guide', '#/': 'Uscite' }[parentOf(r)]);
 // Quando il titolo della pagina passa sotto la barra, lo mostriamo compatto al centro su telefono e tablet.
 let titleIO = null;
 function watchTitle() {
@@ -594,9 +595,10 @@ function routeNow(r, nav) {
   // indietro e tra sezioni: torni dove eri; avanti: dall'inizio (o alla voce del glossario richiesta).
   // Avviene dentro l'aggiornamento della transizione: la pagina nuova entra già nella posizione giusta.
   if (r.view !== 'mappa') {
-    const keep = nav === 'pop' || nav === 'left' || nav === 'right';
+    // Il glossario riparte dall’inizio; un termine esplicito resta una destinazione precisa.
+    const keep = r.view !== 'glossario' && (nav === 'pop' || nav === 'left' || nav === 'right');
     scrollTo({ top: keep ? (scrollMem.get(r.hash) || 0) : 0, behavior: 'instant' });
-    if (r.view === 'glossario' && r.termId && nav !== 'pop') document.getElementById(`glossary-term-${r.termId}`)?.scrollIntoView({ block: 'center', behavior: 'instant' });
+    if (r.view === 'glossario' && r.termId) document.getElementById(`glossary-term-${r.termId}`)?.scrollIntoView({ block: 'center', behavior: 'instant' });
   }
 }
 
@@ -642,7 +644,7 @@ function fitChips(box) {
   if (W <= 0) return;
   const gap = parseFloat(cs.columnGap) || 8;
   const w = (el) => (el ? el.getBoundingClientRect().width + gap : 0);
-  const fixed = w(row.querySelector('[data-g="all"]')) + (w(row.querySelector('[data-more]')) || 96);
+  const fixed = w(row.querySelector('[data-g="all"]')) + w(row.querySelector('[data-more]'));
   let used = fixed, n = 0;
   for (const el of row.querySelectorAll('.chip-g')) { if (used + w(el) > W) break; used += w(el); n++; }
   n = Math.max(1, n);
@@ -664,10 +666,11 @@ function renderFilterBox(box, onMap = false) {
   const bd = onMap && results ? bestOfDay(state.dayOffset) : null;
   const dayChip = bd ? `<button type="button" class="chip chip-day" data-days aria-expanded="${!!box.closest('.map-top')?.classList.contains('days-open')}" style="--dc:var(${scoreVar(bd.s)})"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4M17 3v4M3 11h18"/></svg><span>${esc(fmtDate(bd.d.date, { weekday: 'short' }).replace('.', ''))} ${esc(fmtDate(bd.d.date, { day: 'numeric' }))}</span><span class="chip-day-score"><i aria-hidden="true"></i><b class="pc">${formatIndex(bd.s)}</b></span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>` : '';
   const groups = `<button type="button" class="chip" data-g="all" aria-pressed="${all}">Tutti</button>
-    ${vis.map((g) => `<button type="button" class="chip chip-g" data-g="${g.id}" aria-pressed="${!all && groupSelection(g.id) !== 'none'}">${esc(g.label)}</button>`).join('')}
-    <button type="button" class="chip chip-more" data-more aria-haspopup="dialog">Altri</button>`;
-  const prefs = PREFS.map(([k, label, compact]) => `<button type="button" class="chip pref" data-p="${k}" aria-label="${esc(label)}" title="${esc(label)}" aria-pressed="${!!state[k]}">${onMap?esc(label):`<span class="pref-label-full">${esc(label)}</span><span class="pref-label-short" aria-hidden="true">${esc(compact)}</span>`}</button>`).join('');
-  box.innerHTML = onMap ? `${dayChip}${groups}<span class="af-sep" aria-hidden="true"></span>${prefs}` : `<div class="af-group-row" role="group" aria-label="Funghi">${groups}</div><div class="af-pref-row" role="group" aria-label="Preferenze dell’uscita">${prefs}</div>`;
+    ${vis.map((g) => `<button type="button" class="chip chip-g" data-g="${g.id}" aria-pressed="${!all && groupSelection(g.id) !== 'none'}">${esc(g.label)}</button>`).join('')}`;
+  const more = '<button type="button" class="chip chip-more" data-more aria-haspopup="dialog">Altri</button>';
+  const prefIcons = { avoidCrowd: IC.people, preferComfort: IC.walk, distancePenalty: IC.home };
+  const prefs = PREFS.map(([k, label, compact]) => `<button type="button" class="chip pref" data-p="${k}" aria-label="${esc(label)}" title="${esc(label)}" aria-pressed="${!!state[k]}"><span class="pref-icon" aria-hidden="true">${prefIcons[k]}</span>${onMap?esc(label):`<span class="pref-label-full">${esc(label)}</span><span class="pref-label-short" aria-hidden="true">${esc(compact)}</span>`}</button>`).join('');
+  box.innerHTML = onMap ? `${dayChip}${more}${prefs}<span class="af-sep" aria-hidden="true"></span>${groups}` : `<div class="af-pref-row" role="group" aria-label="Preferenze dell’uscita">${prefs}</div><div class="af-group-row" role="group" aria-label="Filtri e ${state.target}">${more}${groups}</div>`;
   const changed = () => soft(() => { savePrefs(); renderFilterSummary(); if (series) { compute(); outCache.clear(); renderAll(); } });
 
   box.querySelector('[data-days]')?.addEventListener('click', (e) => {
@@ -708,6 +711,7 @@ function openFullFilters() {
     const dirty = activeIds() !== null || PREFS.some(([k]) => state[k]) || !state.showDiscoveries;
     dlg.innerHTML = `<div class="filter-panel-head"><h2 id="full-filters-title">Filtri</h2><div class="fp-head-actions">${dirty ? '<button type="button" class="fp-reset" data-reset>Azzera</button>' : ''}<button type="button" class="btn ghost" data-close>Chiudi</button></div></div>
       <div class="fp-body">
+      <label class="home-target">Cerco<select class="catalog-select" data-target><option value="funghi"${state.target==='funghi'?' selected':''}>Funghi</option><option value="piante"${state.target==='piante'?' selected':''}>Piante</option></select></label>
       <label class="species-search-label sr-only" for="species-filter-search">Aggiungi una specie</label>
       <input id="species-filter-search" class="wiz-input" type="search" placeholder="${state.target==='piante'?'Cerca e aggiungi: ortica, more, Arbutus…':'Cerca e aggiungi: pioppino, spugnola, Boletus…'}" role="combobox" aria-autocomplete="list" aria-controls="species-filter-options" aria-expanded="false" autocomplete="off">
       <ul id="species-filter-options" class="species-options" role="listbox" aria-label="Specie commestibili" hidden></ul>
@@ -722,13 +726,14 @@ function openFullFilters() {
       <h3 class="fp-h">Uscita</h3>
       <ul class="fp-switches">
         ${PREFS.map(([k,label])=>`<li><button type="button" class="fp-switch" data-pref="${k}" aria-pressed="${!!state[k]}">${esc(label)}${sw(!!state[k])}</button></li>`).join('')}
-        <li><label class="fp-switch"><span>Piante e alberi lungo il giro<small>Si affiancano ai funghi, senza cambiare l'indice.</small></span><input type="checkbox" class="switch-input" data-discoveries-toggle ${state.showDiscoveries?'checked':''}></label></li>
+        <li><label class="fp-switch"><span>Piante e alberi lungo il giro<small>Scoperte aggiuntive, senza cambiare l’indice.</small></span><input type="checkbox" class="switch-input" data-discoveries-toggle ${state.showDiscoveries?'checked':''}></label></li>
       </ul>
       <p class="small muted fp-note">${state.target==='piante'?'Stagione indicativa: cambia con clima e quota.':'Mesi indicativi da manuali europei, non verificati nel Reatino: clima e quota li spostano.'} Il catalogo non comprende ogni specie.</p>
       </div>
       <div class="fp-foot"><span class="small muted" aria-live="polite">${selected.length} specie · ${selected.filter(s=>s.modelId).length} con indice</span><button type="button" class="btn primary big" data-close>Mostra i risultati</button></div>`;
     dlg.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',()=>dlg.close()));
     const changed = (focus) => { savePrefs(); if (series) compute(); outCache.clear(); renderFilterSummary(); renderAll(); paint(); dlg.querySelector(focus)?.focus(); };
+    dlg.querySelector('[data-target]').addEventListener('change',ev=>{state.target=ev.target.value==='piante'?'piante':'funghi';fitN=99;prepareCalendarFallback();changed('[data-target]');if(weatherUnavailable&&state.target==='funghi')refreshWeather(false);});
     mountSpeciesAutocomplete({ input: dlg.querySelector('#species-filter-search'), list: dlg.querySelector('#species-filter-options'), catalog:activeCatalog(), date,
       onSelect: s => { addSpecies(s.id); changed('#species-filter-search'); } });
     dlg.querySelector('[data-discoveries-toggle]')?.addEventListener('change',ev=>{state.showDiscoveries=ev.target.checked;changed('[data-discoveries-toggle]');});
@@ -1064,7 +1069,7 @@ function fillCatalogCounts() {
     alberi: n(Object.keys(treesData?.trees || {}).length, 'albero in catalogo', 'alberi in catalogo'),
     piante: n(plants().length, 'pianta in catalogo', 'piante in catalogo'),
     glossario: n(glossaryTerms().length, 'voce', 'voci'),
-    guide: n(guideCount(), 'guida', 'guide'),
+    guide: n(guideCount(), 'approfondimento', 'approfondimenti'),
     sfide: n(challengeList().length, 'sfida', 'sfide'),
   };
   document.querySelectorAll('[data-catalog-count]').forEach((el) => {
@@ -1087,7 +1092,7 @@ function renderLearnHub(box) {
   const list = challengeList(), done = list.filter((c) => challengeProgressOf(c.id)?.complete).length;
   const cards = [
     ['glossario', '#/glossario', 'Glossario', 'Le parole di funghi, alberi e sentieri, con disegni e foto.', n(glossaryTerms().length, 'voce', 'voci')],
-    ['guide', '#/guide', 'Guide', 'Piccole letture sul bosco e sulla passeggiata.', n(guideCount(), 'guida', 'guide')],
+    ['guide', '#/guide', 'Approfondimenti', 'Piccole letture sul bosco e sulla passeggiata.', n(guideCount(), 'approfondimento', 'approfondimenti')],
     ['bosco', '#/riconosci/bosco', 'Bosco e sentiero', 'Tracce, segni e dettagli che incontri camminando.', ''],
     ['sfide', '#/sfide', 'Sfide', 'Osserva, confronta e raccogli i timbri.', list.length ? `${done} di ${list.length} timbri` : ''],
     ['info', '#/info', 'Regole e sicurezza', 'Raccolta nel Lazio, ispettorato, cosa fare se stai male.', ''],
@@ -1117,9 +1122,9 @@ function renderEdiblePage(id, box=$('#edible-detail')) {
   const s = catalog.find(x=>x.id===id);
   if (!s) { box.dataset.glossaryContext='Funghi'; box.innerHTML='<p>Specie non presente nel catalogo.</p>';return; }
   // stessa pagina dei taxon di Riconosci: le sezioni senza dati non compaiono
-  const extra = `<p class="small muted">Stagione indicativa da manualistica, non validata nel Reatino: clima e quota possono spostarla.</p>
-    <h3>Le osservazioni aiutano a conoscerla</h3><p>L’indice di crescita non è ancora disponibile per questa specie. Puoi annotare ritrovamenti e ricerche a vuoto nel taccuino e scegliere di condividerli.</p><button class="btn primary" type="button" data-report data-species="${esc(s.id)}">Segnala un'osservazione</button>
-    <p class="small muted">Commestibilità della specie, non dell’esemplare: foto e schede non confermano l’identità. Il controllo del raccolto e le indicazioni di preparazione spettano all’Ispettorato micologico ASL.</p>`;
+  const extra = `<p class="small muted">Indice non ancora disponibile per questa specie.</p>
+    <button class="btn primary" type="button" data-report data-species="${esc(s.id)}">Condividi un’osservazione</button>
+    <details class="context-note"><summary>Stagione e osservazioni</summary><p>La stagione è indicativa: clima e quota possono spostarla. Non è ancora validata nel Reatino.</p><p>Puoi registrare anche le ricerche senza ritrovamenti. Le osservazioni restano nel taccuino; scegli tu se condividerle.</p></details>`;
   // se la scheda breve ha gia' i caratteri completi (taxon con lo stesso id) usa quelli
   const full = taxonByKey(s.id);
   renderTaxonView(box, full ? { ...full, sources: s.sources?.length ? s.sources : full.sources } : { key: s.id, name: s.name, latin: s.latin, toxicity: s.toxicity, caution: s.caution, sources: s.sources, traits: s.months?.length ? { season: s.months } : {} },
@@ -1283,7 +1288,7 @@ function buildSearch(idj, trj, embedded) {
     ['Gli alberi', 'Riconoscerli e cosa ci cresce sotto', 'alberi bosco piante', '#/alberi'],
     ['Prepararli e conservarli', 'Crudo, prebollitura, congelare, essiccare, sott\'olio', 'preparazione cucina cuocere cottura crudo prebollitura congelare surgelare essiccare seccare sottolio sott olio botulino conserve vasetti quantita bambini gravidanza alcol', '#/info'],
     ['Il mio taccuino', 'Annota ricerche, ritrovamenti e osservazioni', 'taccuino diario appunti uscite registrare raccolto storico esporta', '#/diario'],
-    ['Guide del bosco', 'Alberi, piogge e preparazione della passeggiata', 'imparare guide passeggiate boschi editoriale', '#/guide'],
+    ['Approfondimenti sul bosco', 'Alberi, piogge e preparazione della passeggiata', 'imparare guide passeggiate boschi editoriale', '#/guide'],
     ['La mappa', 'Zone, parcheggi, sentieri, Carta Forestale', 'mappa carta forestale parcheggio sosta', '#/mappa'],
     ['Installa l\'app', 'A tutto schermo e senza campo', 'installa app schermo home offline', '#/info'],
   ];
@@ -1304,8 +1309,9 @@ function coverOf(z, spId, d) {
   const p = speciesPhoto(spId);
   return p ? { hd: p.file_hd || p.file, small: p.file, credit: p, alt: '' } : null;
 }
-const ring = (s, big = true) => `<span class="ring${big ? '' : ' ring-sm'}" style="--c:var(${scoreVar(s).replace('--s', '--ps')});--p:${s ?? 0}" aria-label="Indice ${formatIndex(s)} su 10, ${scoreLabel(s)}">${big ? `<small class="ring-title">${state.target==='piante'?'Contesto':'Condizioni'}</small>` : ''}<b>${scoreText(s)}</b>${big ? `<small>${scoreShortLabel(s)}</small>` : ''}</span>`;
+const ring = (s, big = true) => `<span class="ring${big ? '' : ' ring-sm'}" style="--c:var(${scoreVar(s).replace('--s', '--ps')});--p:${s ?? 0}" aria-label="${state.target==='piante'?'Indice botanico sperimentale':'Indice'} ${formatIndex(s)} su 10, ${scoreLabel(s)}">${big ? `<small class="ring-title">${state.target==='piante'?'Contesto':'Condizioni'}</small>` : ''}<b>${scoreText(s)}</b>${big ? `<small>${scoreShortLabel(s)}</small>` : ''}</span>`;
 const IC = {
+  home: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7M5 9v12h5v-7h4v7h5V9"/></svg>',
   book: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v15M12 5C8 3 5 3 3 4v14c3-1 6-1 9 2 3-3 6-3 9-2V4c-2-1-5-1-9 1Z"/></svg>',
   copy: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V4H4v12h4"/></svg>',
   unknown: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9 8a3 3 0 0 1 6 0c0 2-3 2-3 5M12 17h.01"/></svg>',
@@ -1340,7 +1346,7 @@ function discoveriesHtml(z,d,walk,items=discoveriesFor(z,d,walk)){
  return `<p class="discovery-intro">Potresti incontrare anche queste specie. ${items[0].scope==='tracciato'?'Ambienti campionati sul tratto del sentiero':'Compatibilità con gli ambienti della zona'}: presenza da verificare.</p><ul class="discovery-grid">${items.map(item=>{
   const key=`${z.id}/${item.date}/${item.kind}/${item.id}`;discoveryItems.set(key,item);
   return `<li><a href="${esc(item.href)}" data-discovery="${esc(key)}" data-entity class="discovery-link">${item.kind==='pianta'?plantThumb(item.id,44):treeThumb(item.id,44)}<span><small>${item.kind==='albero'?'Albero':plantRecord(item.id)?.category||'Pianta'}</small><b>${esc(item.name)}</b><small>${esc(item.phase)}</small></span><span aria-hidden="true">›</span></a></li>`;
- }).join('')}</ul>${actRow('#/piante','leaf','Altre piante in Scopri','Erbe, fiori, frutti e arbusti')}`;
+ }).join('')}</ul>${actRow('#/piante','leaf','Scopri altre piante','Erbe, fiori, frutti e arbusti')}`;
 }
 // Sfide: nome, foto e scheda di un albero, una pianta o un fungo (la scheda si apre nel pannello laterale).
 function challengeEntity(kind,id){
@@ -1368,9 +1374,17 @@ function challengeHint(z,d){
 function renderDiscoveries(box,z,d,walk){
  if(!box)return;const found=discoveriesHtml(z,d,walk),html=found&&found+challengeHint(z,d);box.hidden=!html;const markup=html?`<section class="outing-discoveries" aria-labelledby="during-walk-title"><h2 id="during-walk-title">Durante il giro</h2>${html}</section>`:'';if(weatherPainting)updateWeatherHTML(box,markup);else box.innerHTML=markup;
 }
+const expandedObservations=new Set();
+document.addEventListener('toggle',e=>{
+ const el=e.target;if(!el.matches?.('.observation-discoveries'))return;
+ if(el.open)expandedObservations.add(el.dataset.discoveryGroup);else expandedObservations.delete(el.dataset.discoveryGroup);
+},{capture:true});
 function discoverySection(z,d,walk,embedded=false){
  const items=discoveriesFor(z,d,walk);if(!items.length)return '';
- if(embedded)return `<section class="observation-discoveries" aria-label="Durante il giro"><h3>Piante e alberi lungo il giro</h3>${discoveriesHtml(z,d,walk,items)}</section>`;
+ if(embedded){
+  const key=`${z.id}/${walk?.t?.id||'zona'}`;
+  return `<details class="observation-discoveries" data-discovery-group="${esc(key)}"${expandedObservations.has(key)?' open':''}><summary><span class="discovery-summary"><b>Piante e alberi lungo il giro</b><small>${items.map(i=>esc(i.name)).join(' · ')}</small></span></summary><div class="observation-discovery-body">${discoveriesHtml(z,d,walk,items)}</div></details>`;
+ }
  return section('scoperte',`<span class="discovery-summary"><b>Durante il giro</b><small>${items.map(i=>esc(i.name)).join(' · ')}</small></span>`,discoveriesHtml(z,d,walk,items));
 }
 function enhanceDiscoverySheet(body,href){
@@ -1424,8 +1438,8 @@ function renderHome() {
       <span class="cover-body">
         <span class="cover-title">${esc(title)}</span>${sub ? `<span class="cover-sub">${esc(sub)}</span>` : ''}
         ${hero.walk ? `<span class="cover-walk"><b>${esc(hero.walk.microzone)}</b><span>${esc(walkBrief(hero.walk))}</span></span>` : ''}
-        <span class="cover-sp">${thumb(hero.d.best.species.id, 44)}<span><small>${hero.d.best.kind==='plant'?'Da osservare · '+esc(hero.d.best.phaseLabel)+' · indice sperimentale':'Da conoscere in questi boschi'}</small><span class="cover-sp-name"><b>${esc(hero.d.best.species.name)}</b>${Number.isFinite(hero.d.best.score) ? ` <span class="sp-also-score sp-main-score"><i aria-hidden="true" style="background:var(${scoreVar(hero.d.best.score).replace('--s', '--ps')})"></i><b class="pc">${formatIndex(hero.d.best.score)}</b></span>` : ''} ${reportBadge(hero.z.id, hero.d.best.species.id)}</span>
-          <small>${intornoA(hero.d.best.band)} ${hero.d.best.band} m${also.length ? ` · anche ${also.join('')}` : ''}${pineHostUnsure(hero.z, hero.d.best.species, hero.d.best.band) ? ' · la carta non conferma i pini' : ''}</small></span></span>
+        <span class="cover-sp">${thumb(hero.d.best.species.id, 44)}<span><small>${hero.d.best.kind==='plant'?'Da osservare':'Da conoscere in questi boschi'}</small><span class="cover-sp-name"><b>${esc(hero.d.best.species.name)}</b>${Number.isFinite(hero.d.best.score) ? ` <span class="sp-also-score sp-main-score"><i aria-hidden="true" style="background:var(${scoreVar(hero.d.best.score).replace('--s', '--ps')})"></i><b class="pc">${formatIndex(hero.d.best.score)}</b></span>` : ''} ${reportBadge(hero.z.id, hero.d.best.species.id)}</span>
+          <small>${hero.d.best.kind==='plant'?`Periodo indicativo: ${esc(hero.d.best.phaseLabel.toLowerCase())}`:`${intornoA(hero.d.best.band)} ${hero.d.best.band} m`}${also.length ? ` · anche ${also.join('')}` : ''}${hero.d.best.kind!=='plant' && pineHostUnsure(hero.z, hero.d.best.species, hero.d.best.band) ? ' · la carta non conferma i pini' : ''}</small></span></span>
         <span class="facts" aria-label="L'uscita in breve">${t ? fact('clock', `<span class="fk">entro le </span><b>${fmtRough(t.arrive, 15, 'floor')}</b>`) : ''}${fact('car', `<span><b>${compactTravel(zoneTrip(hero.z,hero.walk))}</b></span>`)}${state.target==='funghi'&&hero.d.crowd ? `<span class="fact" title="${esc(crowdText(hero.d.crowd))}">${IC.people}<span class="fc">${crowdText(hero.d.crowd)}</span></span>` : ''}${w0 ? `<span class="fact wx-${w0.level}" title="${esc(w0.text)}">${wxi(w0)}<span class="fx">${esc(w0.level === 'ok' ? w0.main : (w0.short || w0.main))}</span></span>` : ''}</span>
         ${note}
         <span class="cover-cta" aria-hidden="true">Vedi l’uscita <span>→</span></span>
@@ -1436,9 +1450,11 @@ function renderHome() {
   const ol = $('#ranking');
   const rankingHTML = list.slice(1, 8).map((c) => {
     const cv = coverOf(c.z, c.d.best.species.id, c.d);
+    const trail = c.walk?.t;
+    const brief = trail ? `${trail.difficulty || 'Difficoltà n.d.'} · ${fmtKm(trail.in_zone_km)} km nel tratto` : '';
     return `<li data-weather-key="${c.z.id}|${c.o}" class="vtn" style="--vtn:t-${c.z.id}-${c.o}"><a class="tile" data-walk-zone="${c.z.id}" href="${walkHref(c.z, c.o, c.walk?.t)}">
       ${cv ? `<img data-src="${cv.small}" alt="" loading="lazy" decoding="async">` : ''}<span class="shade"></span>${ring(c.s, false)}${(() => { const w = wxOf(c.z, c.d); return w && w.level !== 'ok' ? `<span class="tile-wx wx-${w.level}" title="${esc(w.text)}">${wxi(w)}${esc(OUTING_LABEL[w.level])}</span>` : ''; })()}
-      <span class="tile-body"><span class="tile-day">${esc(dayLabel(c.o, c.d.date, true))}</span><b>${esc(splitName(c.z)[0])}</b>${c.walk ? `<span class="tile-micro">${esc(c.walk.microzone)}</span><small>${esc(walkBrief(c.walk))}</small>` : ''}<small>${esc(c.d.best.species.name)} · ${c.d.best.band} m</small></span>
+      <span class="tile-body"><span class="tile-day">${esc(dayLabel(c.o, c.d.date, true))}</span><b>${esc(splitName(c.z)[0])}</b>${brief ? `<small>${esc(brief)}</small>` : ''}</span>
     </a></li>`;
   }).join('');
   if(weatherPainting)updateWeatherHTML(ol,rankingHTML);else ol.innerHTML=rankingHTML;
@@ -1450,7 +1466,7 @@ function renderHome() {
 
 function renderCommunityIntro() {
   const box = $('#community-intro');
-  if (box) box.innerHTML = `<p class="eyebrow">${esc(contentCopy.communityEyebrow || 'Un bosco da conoscere insieme')}</p><h2>${esc(contentCopy.communityTitle || 'Ogni passeggiata aggiunge un pezzetto.')}</h2><p>${esc(contentCopy.communityIntro || 'Fronda aiuta a scegliere dove e quando andare a funghi e a conoscere il bosco durante l’uscita. Le segnalazioni, comprese le ricerche senza ritrovamenti, aiutano a migliorare i consigli.')}</p><p class="small muted">${esc(communityStatus())}</p><button class="btn primary" type="button" data-report>Segnala dal bosco</button> <button class="btn ghost" type="button" data-community-account>Il tuo profilo</button>`;
+  if (box) box.innerHTML = `<h2>${esc(contentCopy.communityTitle || 'Condividi dal bosco')}</h2><p class="small muted">${esc(communityStatus())}</p><button class="btn primary" type="button" data-report>Segnala dal bosco</button> <button class="btn ghost" type="button" data-community-account>Il tuo profilo</button><details class="context-note"><summary>Perché condividere un’osservazione</summary><p>${esc(contentCopy.communityIntro || 'Anche una ricerca senza ritrovamenti aiuta a conoscere il bosco.')}</p><p>L’indice è sperimentale: le osservazioni aiutano a verificarlo, ma l’accuratezza dei consigli non è ancora misurata.</p></details>`;
 }
 
 // barra delle info: se non ci sta, toglie prima "entro le", poi "min", poi il testo del meteo quando e' bello (resta l'icona)
@@ -2097,10 +2113,10 @@ const ICON = {
   trail: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 20c2-4 8-3 8-7s-6-3-6-7"/><circle cx="17" cy="5" r="1.5"/></svg>',
 };
 
-// Il giro a colpo d'occhio, come nelle app outdoor: dati in una riga, profilo con la fascia della specie, boschi lungo il tratto.
+// Il riepilogo resta uguale aperto o chiuso: dati del tratto e imbocchi numerati come nel grafico.
 // Solo dati del tratto nella zona: niente dislivello ricavato dai campioni (a passo fisso lo gonfierebbe);
 // la salita della fonte riguarda l'itinerario completo e resta nella scheda aperta.
-function walkGlance(z, t, d) {
+function walkGlance(z, t) {
   const sm = (t.samples || []).filter((x) => Number.isFinite(x[0]));
   const es = sm.map((x) => x[0]);
   // come nelle app outdoor: il numero sopra, l'etichetta piccola sotto (il testo letto resta «5,4 km nella zona»)
@@ -2110,34 +2126,35 @@ function walkGlance(z, t, d) {
     es.length ? stat(`${Math.min(...es)}–${Math.max(...es)}\u00a0m`, 'quote del tratto') : '',
     stat(t.difficulty ? difficultyLink(t.difficulty, t.difficulty) : 'n.d.', t.difficulty ? esc(DIFF[t.difficulty] || 'difficoltà') : 'difficoltà'),
   ].join('');
-  const unlink = (html) => html.replace(/<a [^>]*>(.*?)<\/a>/g, '$1');
-  const profile = unlink(trailProfile(z.id, t, d?.best?.species, d?.best?.band));
-  const cats = trails[z.id]?.sample_categories || [];
-  const counts = {};
-  for (const [, c] of sm) { const k = c >= 0 ? cats[c] : 'non bosco'; if (k) counts[k] = (counts[k] || 0) + 1; }
-  const n = Object.values(counts).reduce((a, b) => a + b, 0);
-  // dentro <summary> niente link: la legenda resta testo, i collegamenti sono nella scheda aperta
-  const forest = n >= 4 ? `<span class="ws-forest"><span class="ws-k">Boschi lungo il tratto</span>${unlink(forestBar(Object.fromEntries(Object.entries(counts).map(([k, v]) => [k, v / n]))))}</span>` : '';
-  return `<span class="walk-glance"><ul class="walk-stats">${stats}</ul>${profile}${forest}</span>`;
+  const heads=headsOf(z,t);
+  const entrances=heads.length?`<span class="walk-entrances"><span class="ws-k">${heads.length===1?'Imbocco mappato':'Imbocchi mappati'}</span><span class="walk-entrance-list">${heads.map((h,i)=>`<span class="walk-entrance"><i class="th-n">${i+1}</i><span><b>${esc(h.road||(h.kind==='strada'?'Su strada':'Su sterrata'))}</b>${h.ele!=null?`<small>${h.ele.toLocaleString('it-IT')} m</small>`:''}</span></span>`).join('')}</span></span>`:'<span class="walk-entrances"><span class="ws-k">Imbocco mappato</span><span class="small muted">Non disponibile; le soste indicate riguardano la zona</span></span>';
+  return `<span class="walk-glance"><ul class="walk-stats">${stats}</ul>${entrances}</span>`;
+}
+
+function walkForest(z,t){
+  const cats=trails[z.id]?.sample_categories||[],counts={};
+  for(const [,c] of (t.samples||[]).filter(x=>Number.isFinite(x[0]))){const k=c>=0?cats[c]:'non bosco';if(k)counts[k]=(counts[k]||0)+1;}
+  const n=Object.values(counts).reduce((a,b)=>a+b,0);
+  return n>=4?`<div class="ws-forest"><p class="small muted">Boschi lungo il tratto</p>${forestBar(Object.fromEntries(Object.entries(counts).map(([k,v])=>[k,v/n])))}</div>`:'';
 }
 
 function renderWalkFocus(z, d, walk) {
   if (!walk) return `<p class="small muted">Non abbiamo ancora un sentiero documentato per questa zona.</p>`;
-  const { t, h } = walk;
+  const { t } = walk;
   return `<details class="sec walk-focus" data-glossary-context="Sentiero" name="zone-details" data-sec="passeggiata" data-walk-trail="${t.id}"${openSecs.has('passeggiata') ? ' open' : ''}>
     <summary><span class="walk-summary">
       <span class="eyebrow">La passeggiata, più da vicino</span><span class="walk-title">${esc(walk.microzone)}</span>
       <span class="walk-route">${segnavia(t)}<b>${esc(trailName(t))}</b></span>
-      ${walkGlance(z, t, d)}
+      ${walkGlance(z, t)}
     </span></summary><div class="sec-body">
     <dl class="walk-facts">
       <div><dt>Difficoltà</dt><dd>${t.difficulty ? difficultyLink(t.difficulty, `${t.difficulty} · ${DIFF[t.difficulty] || 'classificazione della fonte'}`) : 'Non indicata nella fonte'}</dd></div>
       <div><dt>Tratto nella zona</dt><dd>${fmtKm(t.in_zone_km)} km${t.lines?.length > 1 ? ' · più segmenti separati' : ''}</dd></div>
       <div><dt>Itinerario completo</dt><dd>${fullTrailKm(t) ? `${fmtKm(fullTrailKm(t))} km` : 'Lunghezza n.d.'}${t.duration ? ` · ${fmtDur(t.duration)}` : ''}${t.ascent ? ` · +${esc(t.ascent)} m` : ''}</dd></div>
-      <div><dt>Imbocco mappato</dt><dd>${h ? `${h.ele != null ? `Circa ${Math.round(h.ele / 25) * 25} m · ` : ''}${esc(h.road || (h.kind === 'strada' ? 'su strada' : 'su sterrata'))}` : 'Non disponibile; le soste indicate riguardano la zona'}</dd></div>
     </dl>
     ${t.mainCat ? `<p class="small" data-glossary="${d?.best?.kind==='plant'?'Piante':'Funghi'}">Lungo il tracciato: ${linkTrees(t.mainCat.toLowerCase())} nei campioni tra circa ${Math.floor(t.lo / 25) * 25} e ${Math.ceil(t.hi / 25) * 25} m${d?.best?.species ? `, ${d.best.kind==='plant'?'proxy di paesaggio per':'compatibili con l’habitat di'} ${speciesLink(d.best.species, d.best.species.name.toLowerCase())}` : ''}.</p>` : ''}
     ${trailVisual(z, t, d, headsOf(z,t), 'focus')}
+    ${walkForest(z,t)}
     <button type="button" class="btn ghost" data-note-kind="zona" data-note-id="${z.id}" data-note-zone="${z.id}" data-note-href="${esc(walkHref(z,state.dayOffset,t))}" data-note-title="${esc(trailName(t))}">＋ Salva il giro nel taccuino</button>
     ${trailLinks(z, t)}
     <p class="small muted">Il GPX contiene solo il tratto nella zona. Tempi e dislivello, quando disponibili, riguardano l’itinerario completo. Verifica accesso, sosta e stato del sentiero prima di partire.</p>
@@ -2508,7 +2525,7 @@ const trailViews = new Map();
 function trailVisual(z, t, d, heads = [], where = 'list') {
   const id = `trail-visual-${where}-${`${z.id}-${t.id}`.replace(/[^\w-]/g, '_')}`, key = `${z.id}/${t.id}`;
   const view = trailViews.get(key) || 'profile', sketch = trailSketch(t, heads[0], heads.slice(1));
-  const trace = sketch ? `<figure class="walk-sketch"><span class="trail-north" aria-hidden="true">N ↑</span><svg viewBox="${sketch.viewBox.map(n=>n.toFixed(1)).join(' ')}" role="img" aria-label="Schema del tratto locale orientato a nord${heads.length ? ', con accessi mappati numerati' : ''}">${sketch.paths.map(p => `<polyline points="${p}"/>`).join('')}${sketch.heads.map((p,k) => `<g class="trail-access" data-trail-head="${k}" aria-hidden="true"><circle cx="${p[0].toFixed(1)}" cy="${p[1].toFixed(1)}" r="8"/><text x="${p[0].toFixed(1)}" y="${p[1].toFixed(1)}" text-anchor="middle" dominant-baseline="central">${k+1}</text></g>`).join('')}</svg><figcaption>${sketch.paths.length > 1 ? 'Segmenti separati' : 'Tratto locale'}${heads.length ? ' · punti: accessi mappati' : ''}. Schema orientato a nord; usa la mappa del sentiero per orientarti.</figcaption></figure>` : '<p class="small muted">Tracciato non disponibile per questo tratto.</p>';
+  const trace = sketch ? `<figure class="walk-sketch"><span class="trail-north" aria-hidden="true">N ↑</span><svg viewBox="${sketch.viewBox.map(n=>n.toFixed(1)).join(' ')}" role="img" aria-label="Schema del tratto locale orientato a nord${heads.length ? ', con accessi mappati numerati' : ''}">${sketch.paths.map(p => `<polyline points="${p}"/>`).join('')}${sketch.heads.map((p,k) => `<g class="trail-access" data-trail-head="${k}" aria-hidden="true"><circle cx="${p[0].toFixed(1)}" cy="${p[1].toFixed(1)}" r="8"/><text x="${p[0].toFixed(1)}" y="${p[1].toFixed(1)}" text-anchor="middle" dominant-baseline="central">${k+1}</text></g>`).join('')}</svg><figcaption><details class="trail-sketch-info"><summary>Info sul tracciato</summary><p>${sketch.paths.length > 1 ? 'Segmenti separati. ' : ''}${heads.length ? 'I numeri indicano gli imbocchi mappati. ' : ''}Schema orientato a nord: per orientarti usa la mappa del sentiero.</p></details></figcaption></figure>` : '<p class="small muted">Tracciato non disponibile per questo tratto.</p>';
   const profile = trailProfile(z.id, t, d?.best?.species, d?.best?.band, heads,id) || '<p class="small muted">Profilo altimetrico non disponibile: mancano quote sufficienti per questo tratto.</p>';
   return `<div class="trail-visual" data-trail-view-key="${esc(key)}">
     <div class="trail-view-tabs" role="tablist" aria-label="Vista del tratto di ${esc(trailName(t))}">${[['profile','Profilo'],['trace','Tracciato']].map(([v,label]) => `<button type="button" role="tab" id="${id}-${v}-tab" data-trail-view="${v}" aria-selected="${view===v}" aria-controls="${id}-${v}" tabindex="${view===v?0:-1}">${label}</button>`).join('')}</div>
@@ -2736,11 +2753,11 @@ function zoneSpecies(z, d) {
     const p = scores[sp.id] || { score: combine(z.bands.map((b, bi) => scoreSpecies(sp, sb[bi], d.i, habitat[z.id], b).score)) };
     return { sp, pot, score: p.score, band: p.band, host: pineHostNote(z, sp) };
   }).filter((r) => r.pot.level !== 'scarsa').sort((a, b) => b.score - a.score || b.pot.score - a.pot.score);
-  return `<ul class="zsp">${rows.map(({ sp, pot, score, host }) => `
+  return `<h3 class="observation-heading">Funghi nel bosco</h3><p class="small muted observation-caption">Condizioni del giorno · habitat e segnalazioni degli ultimi 7 giorni</p><ul class="zsp">${rows.map(({ sp, pot, score, host }) => `
     <li><a href="#/specie/${sp.id}" class="zsp-row">${thumb(sp.id, 40)}
       <span class="zsp-body"><b>${esc(sp.name)}</b>${reportBadge(z.id, sp.id)}<span class="small muted">${POT_LABEL[pot.level]}${pot.ha ? ` · ~${pot.ha.toLocaleString('it-IT')} ha` : ''}</span>${host ? `<span class="small zsp-host">${esc(host)}</span>` : ''}</span>
       <span class="score-pill"><span class="dot" style="background:var(${scoreVar(score)})"></span>${scoreText(score)}</span></a></li>`).join('')}</ul>
-    <p class="small muted">Ordinate per condizioni nel giorno scelto; sotto il nome, habitat e segnalazioni dichiarate degli ultimi 7 giorni.</p>`;
+    `;
 }
 
 // Indice previsto per tutte le specie in una zona/data (per il diario).

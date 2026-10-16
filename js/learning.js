@@ -35,17 +35,33 @@ function termBody(t, legend = false, context=t.category) {
 
 export function renderGlossary(box, selected = '', categories = ['Funghi','Piante','Alberi','Bosco','Sentiero']) {
   const category = TERMS.find(t => t.id === selected)?.category || '';
-  box.innerHTML = `<label class="search-box"><input id="${box.id}-q" type="search" placeholder="Cerca una parola: volva, dislivello, micorriza…" aria-label="Cerca nel glossario" autocomplete="off"></label>
-    <div class="learning-filters" role="group" aria-label="Argomento del glossario">${['', ...categories].map(c => `<button type="button" class="chip" data-category="${c}" aria-pressed="${c === category}">${c || 'Tutto'}</button>`).join('')}</div>
+  box.innerHTML = `<div class="learning-filters" role="group" aria-label="Argomento del glossario">${['', ...categories].map(c => `<button type="button" class="chip" data-category="${c}" aria-pressed="${c === category}">${c || 'Tutto'}</button>`).join('')}</div>
+    <div class="glossary-index"><nav class="glossary-alphabet filter-rail" aria-label="Indice alfabetico"></nav></div>
     <p id="${box.id}-count" class="small muted" role="status"></p><div id="${box.id}-results" data-no-glossary></div>`;
   let current = category;
+  const initial = t => normalizeLearning(t.term).charAt(0).toUpperCase();
   const paint = () => {
-    const words = normalizeLearning(box.querySelector(`#${box.id}-q`).value).split(/\s+/).filter(Boolean);
-    const hits = TERMS.filter(t => categories.includes(t.category) && (!current || t.category === current) && words.every(w => normalizeLearning([t.term,...t.aliases,t.definition,t.observe].join(' ')).includes(w))).sort((a,b) => a.term.localeCompare(b.term, 'it'));
+    const hits = TERMS.filter(t => categories.includes(t.category) && (!current || t.category === current)).sort((a,b) => a.term.localeCompare(b.term, 'it'));
+    const letters = new Set(hits.map(initial));
+    box.querySelector('.glossary-alphabet').innerHTML = Array.from('ABCDEFGHIJKLMNOPQRSTUVWXYZ', letter => `<button type="button" class="glossary-letter-link" data-letter="${letter}" aria-label="Vai alla lettera ${letter}"${letters.has(letter) ? '' : ' disabled'}>${letter}</button>`).join('');
     box.querySelector(`#${box.id}-count`).textContent = `${hits.length} ${hits.length === 1 ? 'voce' : 'voci'}`;
-    box.querySelector(`#${box.id}-results`).innerHTML = hits.length ? hits.map(t => `<details class="glossary-entry" id="${box.id}-term-${t.id}"${selected === t.id ? ' open' : ''}><summary><span><small>${esc(t.category)}</small><b>${esc(t.term)}</b></span><span aria-hidden="true">+</span></summary><div>${termBody(t, true)}</div></details>`).join('') : '<p class="notice">Nessuna voce corrisponde. Prova una parola più breve o un altro argomento.</p>';
+    let previous = '';
+    box.querySelector(`#${box.id}-results`).innerHTML = hits.length ? hits.map(t => {
+      const letter = initial(t), heading = letter !== previous ? `<h2 class="glossary-letter" id="${box.id}-letter-${letter}" tabindex="-1">${letter}</h2>` : '';
+      previous = letter;
+      return `${heading}<details class="glossary-entry" id="${box.id}-term-${t.id}"${selected === t.id ? ' open' : ''}><summary><span><small>${esc(t.category)}</small><b>${esc(t.term)}</b></span><span aria-hidden="true">+</span></summary><div>${termBody(t, true)}</div></details>`;
+    }).join('') : '<p class="notice">Nessuna voce in questo argomento.</p>';
   };
-  box.querySelector(`#${box.id}-q`).addEventListener('input', paint);
+  box.querySelector('.glossary-alphabet').addEventListener('click', e => {
+    const button = e.target.closest('[data-letter]');
+    if (!button || button.disabled) return;
+    const heading = box.querySelector(`#${box.id}-letter-${button.dataset.letter}`);
+    if (!heading) return;
+    box.querySelectorAll('[data-letter]').forEach(b => b.removeAttribute('aria-current'));
+    button.setAttribute('aria-current', 'location');
+    heading.focus({preventScroll:true});
+    heading.scrollIntoView({block:'start',behavior:matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth'});
+  });
   box.querySelectorAll('[data-category]').forEach(b => b.onclick = () => { current = b.dataset.category; selected = ''; box.querySelectorAll('[data-category]').forEach(x => x.setAttribute('aria-pressed',String(x === b))); paint(); });
   paint();
   // la voce richiesta (#/glossario/<voce>) la porta in vista routeNow, nello stesso passo della transizione: niente scatto dopo

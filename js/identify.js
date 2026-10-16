@@ -443,7 +443,7 @@ const citeOf = (url) => { const c = url && CITES[url]; return c ? `${c.author}, 
 function attItem(r) {
   const k = ATT_KIND[r.kind], c = citeOf(r.source);
   const src = r.source && /^https?:\/\//.test(r.source) ? ` <a class="att-cite" href="${esc(r.source)}" target="_blank" rel="noopener"${CITES[r.source]?.title ? ` title="${esc(CITES[r.source].title)}"` : ''}>${c ? `(${esc(c)})` : 'Fonte'}</a>` : '';
-  return `<li class="att-item${r.severity === 'critico' ? ' crit' : ''}">${k ? `<span class="att-k">${k}</span>` : ''}${r.title ? `<b class="att-t" data-no-glossary>${esc(r.title)}</b>` : ''}<p data-glossary>${esc(r.text)}${src}</p></li>`;
+  return `<li class="att-item${r.severity === 'critico' ? ' crit' : ''}">${k ? `<span class="att-k">${k}</span>` : ''}${r.title && r.text.length > 120 ? `<b class="att-t" data-no-glossary>${esc(r.title)}</b>` : ''}<p data-glossary>${esc(r.text)}${src}</p></li>`;
 }
 // elenco di avvisi senza riquadro (es. «Regole generali di sicurezza»): stesse righe delle schede
 export const warningList = (rules) => rules?.length ? `<ul class="att-list warn-list">${[...rules].sort((a, b) => (a.severity === 'critico' ? 0 : 1) - (b.severity === 'critico' ? 0 : 1)).map(attItem).join('')}</ul>` : '';
@@ -477,7 +477,7 @@ export function photoRows(photos) {
 }
 
 // un solo avviso in riga (es. «Cosa osservare» in home): tipo, titolo, testo
-export const attentionLine = (r) => r?.text ? `<span class="plan-crit" role="note"><span class="pc-k">${ATT_KIND[r.kind] || 'Attenzione'}</span>${r.title ? `<b class="pc-t" data-no-glossary>${esc(r.title)}</b>` : ''}<span class="pc-x">${esc(r.text)}</span></span>` : '';
+export const attentionLine = (r) => r?.text ? `<span class="plan-crit${r.text.length<=120?' is-brief':''}" role="note"><span class="pc-k">${ATT_KIND[r.kind] || 'Attenzione'}</span>${r.title && r.text.length>120 ? `<b class="pc-t" data-no-glossary>${esc(r.title)}</b>` : ''}<span class="pc-x">${esc(r.text)}</span></span>` : '';
 export function attentionBox(rules, extra = '') {
   if (!rules?.length) return '';
   const sorted = [...rules].sort((a, b) => (a.severity === 'critico' ? 0 : 1) - (b.severity === 'critico' ? 0 : 1));
@@ -634,8 +634,8 @@ export function renderTaxonView(box, t, { photos = null, habitatText = '', extra
     <div class="pbody">
       ${ph.length > 1 ? `<div class="sp-strip">${ph.slice(1, 6).map((p, k) => `<button type="button" class="zoomable" data-photo="${k + 1}" aria-label="Foto ${k + 2}: ingrandisci"><img data-src="${ASSET(p.file)}" alt="" loading="lazy" decoding="async"></button>`).join('')}</div>` : ''}
       ${t.field_rules?.length ? attentionBox(t.field_rules) + (t.caution ? `<p class="id-why" data-glossary><b>Cautele della specie:</b> ${esc(t.caution)}</p>` : '') : attentionBox(t.caution ? [{ text: t.caution, severity: 'importante' }] : [])}
-      ${t.traits && Object.keys(t.traits).some((k) => k !== 'season') ? `<h3>Caratteri da confrontare</h3>${traitStrip(null, t)}` : '<p class="notice">Caratteri di confronto in preparazione: per ora la scheda riporta ambiente, stagione e cautele dalle fonti.</p>'}
-      ${t.check_before_picking?.length ? `<p class="small muted checks-tip">Caratteri descritti per la specie: confrontarli non identifica un esemplare né ne certifica la commestibilità.</p><ol class="keys" data-glossary>${t.check_before_picking.map((x) => `<li><span class="key-text">${esc(x)}</span></li>`).join('')}</ol>` : ''}
+      ${t.traits && Object.keys(t.traits).some((k) => k !== 'season') ? `<h3>Caratteri da confrontare</h3>${traitStrip(null, t)}` : '<p class="notice">Caratteri di confronto in preparazione.</p>'}
+      ${t.check_before_picking?.length ? `<details class="sec character-details"><summary>Cosa controllare da vicino</summary><div class="sec-body"><ol class="keys" data-glossary>${t.check_before_picking.map((x) => `<li><span class="key-text">${esc(x)}</span></li>`).join('')}</ol></div></details>` : ''}
       ${look.length ? `<h3>${lookTitle}</h3><ul class="tx-look">${look.map(({ id, o }) => { const op = photoOf(o); return `<li>
         <a class="tx-look-main" data-entity href="#/specie/${esc(id)}">${op ? `<img data-src="${ASSET(op.thumb || op.file)}" alt="" loading="lazy" decoding="async">` : ''}<span><b>${esc(o.name)}</b><i>${esc(o.latin)}</i>${o.toxicity ? `<small class="tx-c tox-${esc(o.toxicity.replace(/\s/g, '-'))}"><span class="tox">${esc(o.tox_label || o.toxicity)}</span></small>` : ''}</span></a>
         <a class="tx-cmp-btn" href="#/riconosci/confronta/${esc(t.key)}/${esc(o.key)}" aria-label="Confronta con ${esc(o.name)}, carattere per carattere">Confronta</a></li>`; }).join('')}</ul>` : ''}
@@ -653,7 +653,7 @@ export function renderTaxonView(box, t, { photos = null, habitatText = '', extra
         ${months ? `<div><dt>Quando</dt><dd>${esc(months)}</dd></div>` : ''}
       </dl>
       ${extra}
-      <p class="small muted">Confrontare questi caratteri non identifica un esemplare: fai controllare tutto il raccolto all'Ispettorato micologico dell'ASL. È gratuito.</p>
+      <details class="context-note species-safety"><summary>Prima del consumo: controllo micologico ASL</summary><p>Foto e caratteri non identificano un esemplare. La commestibilità descritta riguarda la specie, non il fungo raccolto.</p><p>Fai controllare tutto il raccolto all’Ispettorato micologico ASL: per i privati è gratuito. Chiedi anche le indicazioni di preparazione. <a href="#/info">Regole ed emergenze</a></p></details>
       ${t.sources?.length || ph.length ? `<details class="sec"><summary>Fonti e fotografie</summary><div class="sec-body">${sourceRows(t.sources)}${ph.length ? `<p class="src-h">Fotografie</p>${photoRows(ph)}` : ''}</div></details>` : ''}
     </div>`;
   const lb = ph.map((p) => ({ src: ASSET(p.file_hd || p.file), alt: t.name, caption: captionHtml({ title: `<span class="tox">${toxL}</span> ${esc(t.name || '')} <i>${esc(t.latin)}</i>`, credit: `Foto: ${esc(p.author || '')}${p.license ? `, ${p.licenseUrl ? `<a href="${esc(p.licenseUrl)}" target="_blank" rel="noopener">${esc(p.license)}</a>` : esc(p.license)}` : ''}${p.page ? ` · <a href="${esc(p.page)}" target="_blank" rel="noopener">${esc(p.source || 'Fotografia originale')}</a>` : ''}` }) }));
@@ -918,7 +918,7 @@ export function renderIdentify(box) {
     return head + next;
   };
   box.innerHTML = `
-    <details class="id-warn context-note" name="identify-notices"><summary><b>Non è un'identificazione.</b></summary><p>Restringe i candidati, velenosi compresi. ${BANNER ? esc(BANNER) : "Prima di mangiare qualunque fungo: controllo gratuito all'Ispettorato Micologico ASL."} <a href="#/info">Emergenza</a></p></details>
+    <details class="id-warn context-note" name="identify-notices"><summary><b>Non è un'identificazione.</b></summary><p>${BANNER ? esc(BANNER) : "La ricerca restringe i candidati, velenosi compresi. Prima del consumo: controllo gratuito all’Ispettorato micologico ASL."} <a href="#/info">Emergenza</a></p></details>
     <div class="identify-mode-action"><button type="button" class="link-btn" data-mode="${state.guided ? 'all' : 'guided'}">${state.guided ? 'Mostra tutti i filtri' : '← Torna alle domande'}</button></div>
     ${ZONES.length ? `<div class="filter-rail id-zones" role="group" aria-label="Dove l'hai trovato"><span class="af-label">Zona</span><button type="button" class="chip" data-zone="" aria-pressed="${!state.zone}">Ovunque</button>${ZONES.map((z) => `<button type="button" class="chip" data-zone="${z.id}" aria-pressed="${state.zone === z.id}">${esc(z.title || z.name)}</button>`).join('')}</div>` : ''}
     ${state.guided ? guidedMode() : `<div class="idf-primary" aria-label="Caratteri principali">${facetsHtml([['', PRIMARY_FILTERS]], true)}</div><div class="idf-bar">${activeChips()}<button type="button" class="btn idf-open" data-idf-open aria-haspopup="dialog" aria-controls="identify-filters">Altri${given.filter(q=>!PRIMARY_FILTERS.includes(q.key)).length ? ` <b>${given.filter(q=>!PRIMARY_FILTERS.includes(q.key)).length}</b>` : ''}</button>${given.length ? '<button type="button" class="af-add" data-fall>Azzera</button>' : ''}</div>`}
