@@ -10,8 +10,6 @@ let tracking=null;
 function patch(a,b){
   if(a.nodeType===3){if(a.textContent!==b.textContent){const p=a.parentElement;if(tracking&&p&&!tracking.text.has(p))tracking.text.set(p,p.textContent);a.textContent=b.textContent;}return;}
   if(a.nodeType!==1)return;
-  // l'alone «ambilight» (js/ambilight.js) è calcolato sulla foto: non sta nell'HTML e va conservato
-  const amb=a.classList.contains('has-amb')?['--amb-t','--amb-l','--amb-r','--amb-b'].map(k=>[k,a.style.getPropertyValue(k)]):null;
   if(a.tagName==='IMG'){
     const src=b.getAttribute('data-src')||b.getAttribute('src');
     if(src&&(a.getAttribute('src')===src||a.getAttribute('data-src')===src)){
@@ -20,20 +18,22 @@ function patch(a,b){
   }
   for(const attr of [...a.attributes])if(!b.hasAttribute(attr.name)&&!['data-counted','data-image-state'].includes(attr.name)&&!(a.matches('a.glossary-link,a[data-entity]')&&['aria-expanded','aria-controls'].includes(attr.name)))a.removeAttribute(attr.name);
   for(const attr of b.attributes)if(a.getAttribute(attr.name)!==attr.value)a.setAttribute(attr.name,attr.value);
-  if(amb){a.classList.add('has-amb');for(const [k,v] of amb)if(v)a.style.setProperty(k,v);}
   reconcileChildren(a,b);
 }
 // js/rails.js avvolge le righe che scorrono (giorni, strisce di foto) in un .rail-host con le frecce: per il confronto
 // conta la riga dentro, e l'involucro si sposta con lei
 const inner=n=>n.nodeType===1&&n.classList.contains('rail-host')?n.querySelector(':scope > :not(.rail-arrow)')||n:n;
+// I nodi con data-dom-keep (l'alone dietro la testata, js/ambilight.js) non stanno nell'HTML: restano dove sono.
+const kept=n=>n?.nodeType===1&&n.hasAttribute('data-dom-keep');
+const skipKept=n=>{while(kept(n))n=n.nextSibling;return n;};
 export function reconcileChildren(target,source){
-  const unused=[...target.childNodes];let cursor=target.firstChild;
+  const unused=[...target.childNodes].filter(n=>!kept(n));let cursor=skipKept(target.firstChild);
   for(const desired of [...source.childNodes]){
     const key=identity(desired);
     let actual=key?unused.find(n=>compatible(inner(n),desired)):unused.find(n=>n===cursor&&compatible(inner(n),desired));
     if(actual){unused.splice(unused.indexOf(actual),1);if(actual!==cursor)target.insertBefore(actual,cursor);patch(inner(actual),desired);}
     else{actual=desired;target.insertBefore(actual,cursor);if(tracking&&actual.nodeType===1)tracking.added.add(actual);}
-    cursor=actual.nextSibling;
+    cursor=skipKept(actual.nextSibling);
   }
   unused.forEach(n=>n.remove());
 }

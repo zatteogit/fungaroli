@@ -91,6 +91,8 @@ test('vetrina varia e sentiero stabile passando dalla proposta ai giorni del tac
   await page.setViewportSize({width:390,height:844});
   const errors = await setup(page);
   const proposals = page.locator('#hero [data-walk-zone], #ranking [data-walk-zone]');
+  // la classifica arriva dopo la proposta principale: si aspetta che sia disegnata prima di leggerla
+  await expect.poll(() => proposals.count()).toBeGreaterThan(3);
   const places = await proposals.evaluateAll(nodes => nodes.map(n => n.dataset.walkZone));
   expect(places.length).toBeGreaterThan(3);
   expect(new Set(places).size).toBe(places.length);
@@ -238,7 +240,7 @@ for(const width of [320,1280]) test(`tracciato e profilo nello stesso riquadro a
 
 test('riepiloghi essenziali negli accordion sul posto, senza voci duplicate o salti',async({page})=>{
   await page.emulateMedia({reducedMotion:'reduce'});
-  const errors=await setup(page);await page.goto('/#/zona/tancia/0');await page.waitForLoadState('networkidle');
+  const errors=await setup(page);await page.goto('/#/zona/tancia/0');await expect(page.locator('#detail details[data-sec="specie"]')).toBeVisible();
   await expect(page.locator('#detail [data-sec-open],#detail .plan')).toHaveCount(0);
   for(const id of ['specie','quando','accesso']){
     const section=page.locator(`#detail details[data-sec="${id}"]`);await expect(section).toHaveCount(1);

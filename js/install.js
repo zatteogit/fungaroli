@@ -155,7 +155,7 @@ function render() {
   if (banner) {
     // banner solo su telefono e tablet: sul computer l'installazione resta in Info
     banner.hidden = !canOffer() || dismissed() || !(isIOS || isAndroid);
-    banner.innerHTML = `<img src="assets/icon-192.png" alt="" width="44" height="44">
+    banner.innerHTML = `<img src="assets/fronda-icon-192.png" alt="" width="44" height="44">
       <div><b>Fronda come app</b><span>A tutto schermo e anche senza campo</span></div>
       <button type="button" class="btn primary" data-install>Installa</button>
       <button type="button" class="ib-close" aria-label="Non ora">✕</button>`;
@@ -183,7 +183,7 @@ function openInvite(fromButton) {
   const g = guide();
   const native = !!deferred && !g?.inapp;
   dlg.innerHTML = `<div class="iv-in">
-    <img class="iv-icon" src="assets/icon-192.png" alt="" width="84" height="84">
+    <img class="iv-icon" src="assets/fronda-icon-192.png" alt="" width="84" height="84">
     <h2 tabindex="-1" autofocus>${g?.inapp ? 'Aprila nel browser,<br>poi installala' : 'Fronda è meglio<br>come app'}</h2>
     <ul class="iv-why">
       <li>Si apre in un tocco, a tutto schermo</li>
