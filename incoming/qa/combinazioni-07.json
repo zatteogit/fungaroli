@@ -1,0 +1,258 @@
+{
+  "riferimenti_forma": [
+    {
+      "soggetto": "inocybe",
+      "forma": "convesso",
+      "riferimenti": {
+        "cappello": {
+          "file": "incoming/icone/forme-25.png",
+          "cella": 3,
+          "stato": "ok"
+        },
+        "gambo": {
+          "file": "incoming/icone/forme-25.png",
+          "cella": 4,
+          "stato": "ok"
+        }
+      }
+    },
+    {
+      "soggetto": "inocybe",
+      "forma": "convesso",
+      "riferimenti": {
+        "cappello": {
+          "file": "incoming/icone/forme-25.png",
+          "cella": 3,
+          "stato": "ok"
+        },
+        "gambo": {
+          "file": "incoming/icone/forme-25.png",
+          "cella": 4,
+          "stato": "ok"
+        }
+      }
+    },
+    {
+      "soggetto": "mycena-pura",
+      "forma": "convesso",
+      "riferimenti": {
+        "cappello": {
+          "file": "incoming/icone/forme-28.png",
+          "cella": 3,
+          "stato": "ok"
+        },
+        "gambo": {
+          "file": "incoming/icone/forme-28.png",
+          "cella": 4,
+          "stato": "ok"
+        }
+      }
+    },
+    {
+      "soggetto": "mycena-pura",
+      "forma": "convesso",
+      "riferimenti": {
+        "cappello": {
+          "file": "incoming/icone/forme-28.png",
+          "cella": 3,
+          "stato": "ok"
+        },
+        "gambo": {
+          "file": "incoming/icone/forme-28.png",
+          "cella": 4,
+          "stato": "ok"
+        }
+      }
+    }
+  ],
+  "file": "incoming/icone/combinazioni-07.png",
+  "sha256": "cbc280927163c41d5254799b1bf062df5752cced60ee751a145892759878c45c",
+  "size": [
+    1254,
+    1254
+  ],
+  "bytes": 71031,
+  "cells": [
+    {
+      "cella": 0,
+      "bbox": [
+        77,
+        142,
+        341,
+        275
+      ],
+      "margini_px": [
+        77,
+        142,
+        77,
+        143
+      ],
+      "contorno_scuro_estremi": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "copertura_contorno_scuro": 1.0
+    },
+    {
+      "cella": 1,
+      "bbox": [
+        82,
+        77,
+        336,
+        341
+      ],
+      "margini_px": [
+        82,
+        77,
+        82,
+        77
+      ],
+      "contorno_scuro_estremi": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "copertura_contorno_scuro": 1.0
+    },
+    {
+      "cella": 2,
+      "bbox": [
+        77,
+        142,
+        341,
+        275
+      ],
+      "margini_px": [
+        77,
+        142,
+        77,
+        143
+      ],
+      "contorno_scuro_estremi": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "copertura_contorno_scuro": 1.0
+    },
+    {
+      "cella": 3,
+      "bbox": [
+        78,
+        77,
+        340,
+        341
+      ],
+      "margini_px": [
+        78,
+        77,
+        78,
+        77
+      ],
+      "contorno_scuro_estremi": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "copertura_contorno_scuro": 1.0
+    },
+    {
+      "cella": 4,
+      "bbox": [
+        77,
+        141,
+        341,
+        276
+      ],
+      "margini_px": [
+        77,
+        141,
+        77,
+        142
+      ],
+      "contorno_scuro_estremi": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "copertura_contorno_scuro": 1.0
+    },
+    {
+      "cella": 5,
+      "bbox": [
+        85,
+        77,
+        332,
+        341
+      ],
+      "margini_px": [
+        85,
+        77,
+        86,
+        77
+      ],
+      "contorno_scuro_estremi": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "copertura_contorno_scuro": 1.0
+    },
+    {
+      "cella": 6,
+      "bbox": [
+        77,
+        143,
+        341,
+        275
+      ],
+      "margini_px": [
+        77,
+        143,
+        77,
+        143
+      ],
+      "contorno_scuro_estremi": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "copertura_contorno_scuro": 1.0
+    },
+    {
+      "cella": 7,
+      "bbox": [
+        82,
+        77,
+        336,
+        341
+      ],
+      "margini_px": [
+        82,
+        77,
+        82,
+        77
+      ],
+      "contorno_scuro_estremi": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "copertura_contorno_scuro": 1.0
+    },
+    {
+      "cella": 8,
+      "vuota": true
+    }
+  ],
+  "visuale": "confronto con riferimenti approvati; pronta da integrare"
+}
