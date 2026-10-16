@@ -263,7 +263,7 @@
       "foodUse": {
         "status": "solo parti e preparazioni indicate",
         "parts": "Frutti aromatici, nella pianta correttamente identificata.",
-        "caution": "Le Apiaceae comprendono specie mortali. Non usare odore, assaggio o un solo carattere come prova di identità; confronta anche la cicuta."
+        "caution": "Le Apiaceae comprendono specie mortali. Non usare odore, assaggio o un solo carattere come prova di identità; confronta anche la cicuta e la ferula."
       },
       "flowerMonths": [
         6,
@@ -274,6 +274,7 @@
       "lookalikes": [
         "cicuta"
       ],
+      "lookalikeNote": "Anche la ferula (Ferula communis), tossica, ha ombrelle gialle e foglie divise in lacinie sottili: il colore giallo non esclude una specie pericolosa. È più massiccia, alta 1-3 m, con fusto largo fino a 10 cm, e fiorisce da aprile a giugno. Non è nel catalogo.",
       "sources": [
         {
           "title": "Università di Trieste · Portale della Flora di Roma",
@@ -290,6 +291,14 @@
         {
           "title": "Thermal time (growing degree days) effects on phenology, yield and quality attributes of fennel",
           "url": "https://epubs.icar.org.in/index.php/IJSS/article/view/175975"
+        },
+        {
+          "title": "CNR · Mondo vegetale del Lazio e non solo (2021), pp. 135 e 138-139: finocchietto e ferula",
+          "url": "https://www.cnr.it/sites/default/files/public/media/attivita/editoria/Mondo%20vegetale%20del%20Lazio%20e%20non%20solo_22_NOV-2021.pdf"
+        },
+        {
+          "title": "POWO · Kew: Ferula communis L.",
+          "url": "https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:842235-1"
         }
       ],
       "photos": [
@@ -362,6 +371,12 @@
       ],
       "phaseNote": "Fioritura e maturazione dipendono da temperatura, fotoperiodo e popolazione; non usare parametri delle fragole coltivate.",
       "lookalikes": [],
+      "protection": {
+        "status": "raccolta limitata (L.R. 32/1998, art. 3, c. 6)",
+        "law": "L.R. Lazio 5 agosto 1998, n. 32, artt. 2, 3 (c. 6), 9 e 10",
+        "summary": "Nel Lazio la raccolta è limitata a 1 kg di fragole a persona al giorno. È vietata di notte, con rastrelli o attrezzi che danneggiano il terreno e nei luoghi elencati dall’art. 10. Nei parchi e nelle riserve valgono anche i divieti dell’area protetta (L. 394/1991, art. 11, c. 3, lett. a).",
+        "url": "https://www.consiglio.regione.lazio.it/consiglio-regionale/?vw=leggiregionalidettaglio&id=8275&sv=vigente"
+      },
       "sources": [
         {
           "title": "Università di Trieste · Portale della Flora di Roma",
@@ -617,6 +632,12 @@
       ],
       "phaseNote": "La maturazione avviene circa un anno dopo la fioritura: sulla stessa pianta possono esserci fiori e frutti di coorti diverse.",
       "lookalikes": [],
+      "protection": {
+        "status": "raccolta limitata (L.R. 32/1998, art. 3, c. 6)",
+        "law": "L.R. Lazio 5 agosto 1998, n. 32, artt. 2, 3 (c. 6), 9 e 10",
+        "summary": "Nel Lazio la raccolta è limitata a 2 kg di corbezzoli a persona al giorno. È vietata di notte, con rastrelli o attrezzi che danneggiano il terreno e nei luoghi elencati dall’art. 10. Nei parchi e nelle riserve valgono anche i divieti dell’area protetta (L. 394/1991, art. 11, c. 3, lett. a).",
+        "url": "https://www.consiglio.regione.lazio.it/consiglio-regionale/?vw=leggiregionalidettaglio&id=8275&sv=vigente"
+      },
       "sources": [
         {
           "title": "Università di Trieste · Portale della Flora di Roma",
@@ -1090,7 +1111,7 @@
       "aliases": [],
       "habitat": "Macchia mediterranea e margini di boschi termofili, soprattutto a quote basse.",
       "recognize": [
-        "Ramificazioni legnose con piccoli cladodi rigidi e pungenti.",
+        "Ramificazioni legnose con piccoli cladodi ad ago, rigidi e pungenti, riuniti a ciuffetti.",
         "Giovani germogli allungati, poi molto ramificati.",
         "Piccoli frutti scuri a maturità: sono tossici."
       ],
@@ -1108,10 +1129,20 @@
         "pungitopo",
         "salsapariglia"
       ],
+      "protection": {
+        "status": "raccolta limitata (L.R. 32/1998, art. 3, c. 6)",
+        "law": "L.R. Lazio 5 agosto 1998, n. 32, artt. 2, 3 (c. 6), 9 e 10",
+        "summary": "Nel Lazio la raccolta è limitata a 1 kg di asparagi selvatici a persona al giorno. È vietata di notte, con rastrelli o attrezzi che danneggiano il terreno e nei luoghi elencati dall’art. 10. Nei parchi e nelle riserve valgono anche i divieti dell’area protetta (L. 394/1991, art. 11, c. 3, lett. a).",
+        "url": "https://www.consiglio.regione.lazio.it/consiglio-regionale/?vw=leggiregionalidettaglio&id=8275&sv=vigente"
+      },
       "sources": [
         {
           "title": "Università di Trieste · Portale della Flora di Roma",
           "url": "https://dryades.units.it/Roma/index.php?id=6963&procedure=taxon_page"
+        },
+        {
+          "title": "Università di Trieste · Flora dell’Asinara, chiave delle piante con cladodi",
+          "url": "https://dryades.units.it/online_books/Asinara_Book_ita/files/assets/basic-html/page18.html"
         }
       ],
       "presenceNote": "Taxon documentato nel Portale della Flora di Roma: presenza regionale, non segnalazione sul sentiero.",
@@ -3230,7 +3261,7 @@
       "habitat": "Siepi, margini e boschi umidi, dalla pianura alle faggete più calde.",
       "recognize": [
         "Liana con foglie composte opposte.",
-        "Piccoli fiori bianco-crema con numerosi stami.",
+        "Piccoli fiori bianco-crema: 4 sepali simili a petali (a volte 5) e numerosi stami.",
         "Frutti con lunghe appendici piumose."
       ],
       "foodUse": {
@@ -3249,6 +3280,10 @@
         {
           "title": "Università di Trieste · Portale della Flora di Roma",
           "url": "https://dryades.units.it/Roma/index.php?id=1066&procedure=taxon_page"
+        },
+        {
+          "title": "Acta Plantarum · scheda botanica",
+          "url": "https://www.actaplantarum.org/forum/viewtopic.php?f=95&t=4802"
         }
       ],
       "presenceNote": "Taxon documentato nel Portale della Flora di Roma: presenza regionale, non segnalazione sul sentiero.",
@@ -4557,7 +4592,7 @@
         "giglio-martagone"
       ],
       "lookalikeNote": "Il giglio martagone ha fiori rosa, penduli, a turbante. La sottospecie bulbiferum ha bulbilli all’ascella delle foglie alte.",
-      "presenceNote": "Taxon presente nel Lazio secondo il Portale della Flora d’Italia: presenza regionale, non segnalazione sul sentiero.",
+      "presenceNote": "Il Portale della Flora d’Italia la elenca nel Lazio, ma la segna come «taxon incerto»: non è certo che sia una sottospecie distinta da quella con bulbilli. Presenza regionale, non segnalazione sul sentiero.",
       "protection": {
         "status": "protetta (L.R. 61/1974, artt. 1-2)",
         "law": "L.R. Lazio 19 settembre 1974, n. 61, artt. 1, 2 e 6",
@@ -4588,6 +4623,10 @@
         {
           "title": "Acta Plantarum · scheda botanica",
           "url": "https://www.actaplantarum.org/forum/viewtopic.php?t=19580"
+        },
+        {
+          "title": "Acta Plantarum · Scheda IPFI (taxon di dubbio valore tassonomico)",
+          "url": "https://www.actaplantarum.org/flora/flora_info.php?id=506810"
         }
       ],
       "photos": [
@@ -5066,7 +5105,7 @@
       ],
       "phaseNote": "I mesi indicano la fioritura descritta dalla fonte; non sono un calendario di raccolta e possono variare con quota e stagione.",
       "lookalikes": [],
-      "lookalikeNote": "La digitale gialla (D. lutea) ha fiori più lunghi (16-19 mm) e calice con peli ghiandolosi.",
+      "lookalikeNote": "La digitale gialla piccola (Digitalis lutea) ha fiori più lunghi (16-19 mm) e calice con peli ghiandolosi.",
       "presenceNote": "Taxon presente nel Lazio secondo il Portale della Flora d’Italia: presenza regionale, non segnalazione sul sentiero. Endemica della penisola italiana; la fonte la dice «comunissima sull’Appennino».",
       "protection": {
         "status": "nessuna tutela specifica trovata",
@@ -5404,7 +5443,7 @@
       "foodUse": {
         "status": "solo parti e preparazioni indicate",
         "parts": "Foglie giovani, prima della fioritura.",
-        "caution": "Colchico (mortale) e veratro (molto velenoso) hanno foglie simili in primavera. Raccogli una foglia alla volta, mai a mazzi, e controlla l’odore di ciascuna: se le foglie sono mescolate, l’odore non basta."
+        "caution": "Colchico (mortale) e veratro (molto velenoso) hanno foglie simili in primavera. Raccogli una foglia alla volta, mai a mazzi. L’odore di aglio non prova l’identità: dopo le prime foglie resta sulle dita e può sembrare che venga anche da una foglia tossica. Confronta sempre più caratteri."
       },
       "flowerMonths": [
         4,
@@ -5446,6 +5485,10 @@
         {
           "title": "Gilotta e Brvar (2010) · Veratrum album scambiato per aglio orsino · Clin Toxicol",
           "url": "https://doi.org/10.3109/15563650.2010.533675"
+        },
+        {
+          "title": "BfR · Bärlauch: Vorsicht vor Verwechslungen (10 marzo 2026)",
+          "url": "https://www.bfr.bund.de/presseinformation/baerlauch-vorsicht-vor-verwechslungen/"
         }
       ],
       "photos": [

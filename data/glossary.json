@@ -28,10 +28,11 @@
         "escursionistico"
       ],
       "definition": "Sentieri o tracce su terreno vario, anche ripido: richiedono orientamento, abitudine a camminare in montagna e preparazione fisica. Possono esserci brevi tratti esposti protetti.",
-      "observe": "Controlla esperienza richiesta, esposizione e stato del fondo: E non significa privo di rischi.",
+      "observe": "Controlla esperienza richiesta, tratti esposti e stato del fondo: E non significa privo di rischi.",
       "related": [
         "difficolta-t",
-        "difficolta-ee"
+        "difficolta-ee",
+        "tratto-esposto"
       ],
       "sources": [
         {
@@ -51,7 +52,8 @@
       "observe": "Valuta la tua esperienza e le condizioni del giorno; una traccia GPX non sostituisce queste capacità.",
       "related": [
         "difficolta-e",
-        "difficolta-eea"
+        "difficolta-eea",
+        "tratto-esposto"
       ],
       "sources": [
         {
@@ -96,6 +98,14 @@
       ],
       "sources": [
         {
+          "title": "OpenStreetMap Wiki · Key:ascent, salita cumulata di un itinerario",
+          "url": "https://wiki.openstreetmap.org/wiki/Key:ascent"
+        },
+        {
+          "title": "Treccani · Vocabolario, dislivello",
+          "url": "https://www.treccani.it/vocabolario/dislivello/"
+        },
+        {
           "title": "CAI · Livelli di difficoltà delle attività",
           "url": "https://www.cai.it/attivita/livelli-difficolta-cai-attivita/"
         }
@@ -115,8 +125,8 @@
       ],
       "sources": [
         {
-          "title": "CAI · Livelli di difficoltà delle attività",
-          "url": "https://www.cai.it/attivita/livelli-difficolta-cai-attivita/"
+          "title": "Treccani · Vocabolario, quota (topografia)",
+          "url": "https://www.treccani.it/vocabolario/quota/"
         }
       ]
     },
@@ -134,8 +144,8 @@
       ],
       "sources": [
         {
-          "title": "CAI · Livelli di difficoltà delle attività",
-          "url": "https://www.cai.it/attivita/livelli-difficolta-cai-attivita/"
+          "title": "CAI · Sentieri: pianificazione, segnaletica e manutenzione (Quaderni di escursionismo 1, 2011), pp. 52–54",
+          "url": "https://archivio.cai.it/wp-content/uploads/2021/11/Quaderno_1_Sentieri.pdf"
         }
       ]
     },
@@ -160,11 +170,49 @@
       ]
     },
     {
+      "id": "tratto-esposto",
+      "term": "Tratto esposto",
+      "category": "Sentiero",
+      "aliases": [
+        "tratti esposti",
+        "passaggio esposto",
+        "passaggi esposti",
+        "esposizione al vuoto",
+        "esposizione"
+      ],
+      "contexts": [
+        "Sentiero"
+      ],
+      "definition": "Tratto di sentiero aperto sul vuoto, dove una caduta può avere conseguenze gravi.",
+      "observe": "Nella scala CAI i punti esposti possono comparire già nei sentieri E, di solito protetti, e sono più frequenti negli EE. Valuta esperienza, bagnato e vento prima di affrontarli.",
+      "related": [
+        "difficolta-e",
+        "difficolta-ee"
+      ],
+      "sources": [
+        {
+          "title": "CAI · Livelli di difficoltà delle attività",
+          "url": "https://www.cai.it/attivita/livelli-difficolta-cai-attivita/"
+        },
+        {
+          "title": "Treccani · Vocabolario, esposizione (alpinismo)",
+          "url": "https://www.treccani.it/vocabolario/esposizione/"
+        }
+      ]
+    },
+    {
       "id": "esposizione",
-      "term": "Esposizione",
+      "term": "Esposizione del versante",
       "category": "Bosco",
       "aliases": [
+        "esposizione",
         "esposizioni"
+      ],
+      "contexts": [
+        "Funghi",
+        "Piante",
+        "Alberi",
+        "Bosco"
       ],
       "definition": "Orientamento di un versante rispetto ai punti cardinali. Insieme a pendenza e vegetazione modifica luce, vento e condizioni locali.",
       "observe": "Un versante ombreggiato può trattenere l’umidità diversamente da uno soleggiato: osserva il terreno, senza dedurre ritrovamenti certi.",
@@ -175,6 +223,10 @@
         {
           "title": "JRC · European Atlas of Forest Tree Species",
           "url": "https://forest.jrc.ec.europa.eu/en/european-atlas/"
+        },
+        {
+          "title": "Treccani · Vocabolario, esposizione (geografia)",
+          "url": "https://www.treccani.it/vocabolario/esposizione/"
         }
       ]
     },
@@ -2134,6 +2186,7 @@
       "definition": "Fiore con le parti disposte a gruppi di cinque: cinque petali, oppure una corolla con cinque lobi.",
       "observe": "Conta petali o lobi su più fiori: un fiore rovinato o doppio può ingannare.",
       "related": [
+        "tetramero",
         "cruciforme",
         "tepali"
       ],
@@ -2164,6 +2217,7 @@
       "observe": "Nell’alliaria i quattro petali bianchi formano una piccola croce; il frutto è una siliqua.",
       "related": [
         "siliqua",
+        "tetramero",
         "pentamero"
       ],
       "sources": [
@@ -2174,6 +2228,40 @@
         {
           "title": "Treccani · Tetramero",
           "url": "https://www.treccani.it/vocabolario/tetramero/"
+        }
+      ]
+    },
+    {
+      "id": "tetramero",
+      "term": "Tetramero",
+      "category": "Piante",
+      "aliases": [
+        "tetrameri",
+        "tetramera",
+        "fiore tetramero"
+      ],
+      "contexts": [
+        "Piante",
+        "Alberi"
+      ],
+      "definition": "Fiore con le parti disposte a gruppi di quattro: quattro petali, oppure quattro sepali che sembrano petali.",
+      "observe": "Nell’alliaria i quattro petali formano una croce: è un fiore cruciforme. Nella vitalba le quattro parti bianche sono sepali, i petali mancano.",
+      "related": [
+        "cruciforme",
+        "pentamero"
+      ],
+      "sources": [
+        {
+          "title": "Treccani · Tetramero",
+          "url": "https://www.treccani.it/vocabolario/tetramero/"
+        },
+        {
+          "title": "Treccani · Cruciforme",
+          "url": "https://www.treccani.it/vocabolario/cruciforme/"
+        },
+        {
+          "title": "Acta Plantarum · Clematis vitalba, scheda botanica",
+          "url": "https://www.actaplantarum.org/forum/viewtopic.php?f=95&t=4802"
         }
       ]
     },
@@ -2388,8 +2476,8 @@
         "Piante",
         "Alberi"
       ],
-      "definition": "Fiore con la corolla divisa in due labbra: quella superiore di due petali, quella inferiore di tre.",
-      "observe": "Menta, origano e melissa hanno fiori labiati e fusto a sezione quadrata.",
+      "definition": "Fiore con la corolla a tubo che si apre in due labbra: quella di sopra formata da due petali saldati, quella di sotto da tre.",
+      "observe": "Origano e melissa hanno fiori labiati e fusto a sezione quadrata. La menta è della stessa famiglia, ma la sua corolla ha quattro lobi quasi uguali.",
       "related": [
         "tubuloso",
         "labello"
@@ -2398,6 +2486,14 @@
         {
           "title": "Treccani · Labiato",
           "url": "https://www.treccani.it/vocabolario/labiato/"
+        },
+        {
+          "title": "Acta Plantarum · Melissa officinalis, scheda botanica",
+          "url": "https://www.actaplantarum.org/forum/viewtopic.php?f=95&t=6143"
+        },
+        {
+          "title": "Info Flora · Mentha longifolia",
+          "url": "https://www.infoflora.ch/it/flora/mentha-longifolia.html"
         }
       ]
     },
@@ -3059,8 +3155,8 @@
         "Piante",
         "Alberi"
       ],
-      "definition": "Rametto appiattito che sembra una foglia e ne fa le funzioni.",
-      "observe": "Nel pungitopo fiori e bacche nascono al centro della «foglia»: è un cladodio con la punta pungente.",
+      "definition": "Fusto o rametto verde che fa il lavoro delle foglie, quando le vere foglie mancano o sono minuscole. Può essere sottile come un ago o appiattito come una foglia.",
+      "observe": "Nel pungitopo il cladodio è piatto, con la punta pungente, e porta al centro fiori e bacche. Nell’asparago selvatico i cladodi sono piccoli aghi rigidi, riuniti a ciuffetti.",
       "related": [
         "brattea"
       ],
@@ -3072,6 +3168,10 @@
         {
           "title": "Wikipedia · Cladodio",
           "url": "https://it.wikipedia.org/wiki/Cladodio"
+        },
+        {
+          "title": "Università di Trieste · Flora dell’Asinara, chiave delle piante con cladodi",
+          "url": "https://dryades.units.it/online_books/Asinara_Book_ita/files/assets/basic-html/page18.html"
         }
       ]
     },
