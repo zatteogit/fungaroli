@@ -511,7 +511,7 @@ Tecnica: output nativo del tool 1122×1402, ricampionato a 1600×2000 con LANCZO
 
 | incoming/icone/fasi-30.png | agaricus-campestris giovane; agaricus-campestris adulto; agaricus-arvensis giovane | pronta da integrare | 9 disegni; alpha 1254×1254, 105530 byte. Margini ≥10% e quattro estremi con contorno scuro verificati col codice; confronto in sovrapposizione con le basi. |
 
-| incoming/icone/fasi-31.png | agaricus-arvensis adulto; agaricus-bisporus giovane; agaricus-bisporus adulto | pronta da integrare | 9 disegni; alpha 1254×1254, 96574 byte. Margini ≥10% e quattro estremi con contorno scuro verificati col codice; confronto in sovrapposizione con le basi. |
+| incoming/icone/fasi-31.png | agaricus-arvensis adulto; agaricus-bisporus giovane; agaricus-bisporus adulto | pronta da integrare | 9 disegni; alpha 1254×1254, 93744 byte. Margini ≥10% e quattro estremi con contorno scuro verificati col codice; confronto in sovrapposizione con le basi. |
 
 | incoming/icone/fasi-32.png | agaricus-sylvicola giovane; agaricus-sylvicola adulto; agaricus-sylvicola maturo | pronta da integrare | 9 disegni; alpha 1254×1254, 104727 byte. Margini ≥10% e quattro estremi con contorno scuro verificati col codice; confronto in sovrapposizione con le basi. |
 
