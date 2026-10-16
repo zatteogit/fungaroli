@@ -20862,5 +20862,133 @@
   "prompt": "Educational flat MOREL icons, approved reference attached is exact COLOR and STYLE authority. Transparent 1254 square 3x3 sheet, ONLY TWO icons in cell0 and cell1 top row; other seven cells empty alpha. Icon0 isolated MOREL HEAD, icon1 whole MOREL. Change head shape from elongated reference to HEMISPHERICAL half sphere rounded, keep exact GOLDEN YELLOW OCHRE reference honeycomb color, pale golden thick ridges and irregular deep brown alveoli/pits. Whole morel: rounded half sphere head is FUSED DIRECTLY to cream stalk along its entire lower junction, no free projecting cap edge, NO overhanging umbrella brim, NO gills, no visible underside disc. It should resemble a rounded honeycomb knob joined seamlessly to its stalk; base of head tapers smoothly inward at the stem junction rather than jutting beyond it. Cream stalk same reference shape/color. Isolated head shows same half sphere golden honeycomb. Continuous dark brown outer contour. Simple flat icon few solid colors no gradients no texture, no shadow/soil/text/grid. Center each in its 418px cell with minimum18% transparent margin, maximum icon dimension260px. Cell2 and bottom six cells empty.\n",
   "stato": "pronta da integrare",
   "qa": "incoming/qa/forme-40.json"
+},
+{
+  "file": "incoming/icone/combinazioni-03.png",
+  "tipo": "illustrazione",
+  "soggetto": "galerina-marginata",
+  "tessera": "cappello",
+  "cella": 0,
+  "variante": "colore:bruno+forma:piano",
+  "base": {
+    "colore": "arancio",
+    "forma": "convesso"
+  },
+  "modello": "image_gen (identificatore tecnico non esposto)",
+  "prompt": "Create a transparent1254x1254 PNG sprite sheet, invisible3x3 grid,8 icons in cells0-7; cell8 empty alpha. Exact approved flat icon style, continuous DARK BROWN outer outlines, few solid fills and one highlight. NO text labels grid texture shadows ground. Each separate drawing max264px wide AND tall in its418px cell, at least15% empty transparent margins on every edge. Cell order left-right top-bottom. Each attached reference strip corresponds to one combination, left=APPROVED SHAPE cap, middle=APPROVED SHAPE whole mushroom, right=APPROVED COLOR cap. Copy the left/middle drawings with ONLY cap color changed to the EXACT right reference hue. All stem anatomy, rings, volvas, netting, scales, gills/pores, attachments and cap surface marks MUST remain like shape reference, not invented. Do NOT recolor gills or stem. No mixing anatomy across species. Preserve same scale and center.  REFERENCE1: galerina-marginata, cap color bruno, shape piano. CELL0=isolated cap SIDE VIEW, CELL1=whole mushroom.  REFERENCE2: galerina-marginata, cap color giallo, shape piano. CELL2=isolated cap SIDE VIEW, CELL3=whole mushroom.  REFERENCE3: lepiota-subincarnata, cap color bruno, shape ombrellato. CELL4=isolated cap SIDE VIEW, CELL5=whole mushroom.  REFERENCE4: lepiota-subincarnata, cap color bruno, shape piano. CELL6=isolated cap SIDE VIEW, CELL7=whole mushroom. Exactly8 fully enclosed icons; CELL8 EMPTY. Color applies only to cap upper skin, unchanged species-specific details.\nCorrection: undefined\n",
+  "stato": "pronta da integrare",
+  "qa": "incoming/qa/combinazioni-03.json"
+},
+{
+  "file": "incoming/icone/combinazioni-03.png",
+  "tipo": "illustrazione",
+  "soggetto": "galerina-marginata",
+  "tessera": "gambo",
+  "cella": 1,
+  "variante": "colore:bruno+forma:piano",
+  "base": {
+    "colore": "arancio",
+    "forma": "convesso"
+  },
+  "modello": "image_gen (identificatore tecnico non esposto)",
+  "prompt": "Create a transparent1254x1254 PNG sprite sheet, invisible3x3 grid,8 icons in cells0-7; cell8 empty alpha. Exact approved flat icon style, continuous DARK BROWN outer outlines, few solid fills and one highlight. NO text labels grid texture shadows ground. Each separate drawing max264px wide AND tall in its418px cell, at least15% empty transparent margins on every edge. Cell order left-right top-bottom. Each attached reference strip corresponds to one combination, left=APPROVED SHAPE cap, middle=APPROVED SHAPE whole mushroom, right=APPROVED COLOR cap. Copy the left/middle drawings with ONLY cap color changed to the EXACT right reference hue. All stem anatomy, rings, volvas, netting, scales, gills/pores, attachments and cap surface marks MUST remain like shape reference, not invented. Do NOT recolor gills or stem. No mixing anatomy across species. Preserve same scale and center.  REFERENCE1: galerina-marginata, cap color bruno, shape piano. CELL0=isolated cap SIDE VIEW, CELL1=whole mushroom.  REFERENCE2: galerina-marginata, cap color giallo, shape piano. CELL2=isolated cap SIDE VIEW, CELL3=whole mushroom.  REFERENCE3: lepiota-subincarnata, cap color bruno, shape ombrellato. CELL4=isolated cap SIDE VIEW, CELL5=whole mushroom.  REFERENCE4: lepiota-subincarnata, cap color bruno, shape piano. CELL6=isolated cap SIDE VIEW, CELL7=whole mushroom. Exactly8 fully enclosed icons; CELL8 EMPTY. Color applies only to cap upper skin, unchanged species-specific details.\nCorrection: undefined\n",
+  "stato": "pronta da integrare",
+  "qa": "incoming/qa/combinazioni-03.json"
+},
+{
+  "file": "incoming/icone/combinazioni-03.png",
+  "tipo": "illustrazione",
+  "soggetto": "galerina-marginata",
+  "tessera": "cappello",
+  "cella": 2,
+  "variante": "colore:giallo+forma:piano",
+  "base": {
+    "colore": "arancio",
+    "forma": "convesso"
+  },
+  "modello": "image_gen (identificatore tecnico non esposto)",
+  "prompt": "Create a transparent1254x1254 PNG sprite sheet, invisible3x3 grid,8 icons in cells0-7; cell8 empty alpha. Exact approved flat icon style, continuous DARK BROWN outer outlines, few solid fills and one highlight. NO text labels grid texture shadows ground. Each separate drawing max264px wide AND tall in its418px cell, at least15% empty transparent margins on every edge. Cell order left-right top-bottom. Each attached reference strip corresponds to one combination, left=APPROVED SHAPE cap, middle=APPROVED SHAPE whole mushroom, right=APPROVED COLOR cap. Copy the left/middle drawings with ONLY cap color changed to the EXACT right reference hue. All stem anatomy, rings, volvas, netting, scales, gills/pores, attachments and cap surface marks MUST remain like shape reference, not invented. Do NOT recolor gills or stem. No mixing anatomy across species. Preserve same scale and center.  REFERENCE1: galerina-marginata, cap color bruno, shape piano. CELL0=isolated cap SIDE VIEW, CELL1=whole mushroom.  REFERENCE2: galerina-marginata, cap color giallo, shape piano. CELL2=isolated cap SIDE VIEW, CELL3=whole mushroom.  REFERENCE3: lepiota-subincarnata, cap color bruno, shape ombrellato. CELL4=isolated cap SIDE VIEW, CELL5=whole mushroom.  REFERENCE4: lepiota-subincarnata, cap color bruno, shape piano. CELL6=isolated cap SIDE VIEW, CELL7=whole mushroom. Exactly8 fully enclosed icons; CELL8 EMPTY. Color applies only to cap upper skin, unchanged species-specific details.\nCorrection: undefined\n",
+  "stato": "pronta da integrare",
+  "qa": "incoming/qa/combinazioni-03.json"
+},
+{
+  "file": "incoming/icone/combinazioni-03.png",
+  "tipo": "illustrazione",
+  "soggetto": "galerina-marginata",
+  "tessera": "gambo",
+  "cella": 3,
+  "variante": "colore:giallo+forma:piano",
+  "base": {
+    "colore": "arancio",
+    "forma": "convesso"
+  },
+  "modello": "image_gen (identificatore tecnico non esposto)",
+  "prompt": "Create a transparent1254x1254 PNG sprite sheet, invisible3x3 grid,8 icons in cells0-7; cell8 empty alpha. Exact approved flat icon style, continuous DARK BROWN outer outlines, few solid fills and one highlight. NO text labels grid texture shadows ground. Each separate drawing max264px wide AND tall in its418px cell, at least15% empty transparent margins on every edge. Cell order left-right top-bottom. Each attached reference strip corresponds to one combination, left=APPROVED SHAPE cap, middle=APPROVED SHAPE whole mushroom, right=APPROVED COLOR cap. Copy the left/middle drawings with ONLY cap color changed to the EXACT right reference hue. All stem anatomy, rings, volvas, netting, scales, gills/pores, attachments and cap surface marks MUST remain like shape reference, not invented. Do NOT recolor gills or stem. No mixing anatomy across species. Preserve same scale and center.  REFERENCE1: galerina-marginata, cap color bruno, shape piano. CELL0=isolated cap SIDE VIEW, CELL1=whole mushroom.  REFERENCE2: galerina-marginata, cap color giallo, shape piano. CELL2=isolated cap SIDE VIEW, CELL3=whole mushroom.  REFERENCE3: lepiota-subincarnata, cap color bruno, shape ombrellato. CELL4=isolated cap SIDE VIEW, CELL5=whole mushroom.  REFERENCE4: lepiota-subincarnata, cap color bruno, shape piano. CELL6=isolated cap SIDE VIEW, CELL7=whole mushroom. Exactly8 fully enclosed icons; CELL8 EMPTY. Color applies only to cap upper skin, unchanged species-specific details.\nCorrection: undefined\n",
+  "stato": "pronta da integrare",
+  "qa": "incoming/qa/combinazioni-03.json"
+},
+{
+  "file": "incoming/icone/combinazioni-03.png",
+  "tipo": "illustrazione",
+  "soggetto": "lepiota-subincarnata",
+  "tessera": "cappello",
+  "cella": 4,
+  "variante": "colore:bruno+forma:ombrellato",
+  "base": {
+    "colore": "rosa",
+    "forma": "convesso"
+  },
+  "modello": "image_gen (identificatore tecnico non esposto)",
+  "prompt": "Create a transparent1254x1254 PNG sprite sheet, invisible3x3 grid,8 icons in cells0-7; cell8 empty alpha. Exact approved flat icon style, continuous DARK BROWN outer outlines, few solid fills and one highlight. NO text labels grid texture shadows ground. Each separate drawing max264px wide AND tall in its418px cell, at least15% empty transparent margins on every edge. Cell order left-right top-bottom. Each attached reference strip corresponds to one combination, left=APPROVED SHAPE cap, middle=APPROVED SHAPE whole mushroom, right=APPROVED COLOR cap. Copy the left/middle drawings with ONLY cap color changed to the EXACT right reference hue. All stem anatomy, rings, volvas, netting, scales, gills/pores, attachments and cap surface marks MUST remain like shape reference, not invented. Do NOT recolor gills or stem. No mixing anatomy across species. Preserve same scale and center.  REFERENCE1: galerina-marginata, cap color bruno, shape piano. CELL0=isolated cap SIDE VIEW, CELL1=whole mushroom.  REFERENCE2: galerina-marginata, cap color giallo, shape piano. CELL2=isolated cap SIDE VIEW, CELL3=whole mushroom.  REFERENCE3: lepiota-subincarnata, cap color bruno, shape ombrellato. CELL4=isolated cap SIDE VIEW, CELL5=whole mushroom.  REFERENCE4: lepiota-subincarnata, cap color bruno, shape piano. CELL6=isolated cap SIDE VIEW, CELL7=whole mushroom. Exactly8 fully enclosed icons; CELL8 EMPTY. Color applies only to cap upper skin, unchanged species-specific details.\nCorrection: undefined\n",
+  "stato": "pronta da integrare",
+  "qa": "incoming/qa/combinazioni-03.json"
+},
+{
+  "file": "incoming/icone/combinazioni-03.png",
+  "tipo": "illustrazione",
+  "soggetto": "lepiota-subincarnata",
+  "tessera": "gambo",
+  "cella": 5,
+  "variante": "colore:bruno+forma:ombrellato",
+  "base": {
+    "colore": "rosa",
+    "forma": "convesso"
+  },
+  "modello": "image_gen (identificatore tecnico non esposto)",
+  "prompt": "Create a transparent1254x1254 PNG sprite sheet, invisible3x3 grid,8 icons in cells0-7; cell8 empty alpha. Exact approved flat icon style, continuous DARK BROWN outer outlines, few solid fills and one highlight. NO text labels grid texture shadows ground. Each separate drawing max264px wide AND tall in its418px cell, at least15% empty transparent margins on every edge. Cell order left-right top-bottom. Each attached reference strip corresponds to one combination, left=APPROVED SHAPE cap, middle=APPROVED SHAPE whole mushroom, right=APPROVED COLOR cap. Copy the left/middle drawings with ONLY cap color changed to the EXACT right reference hue. All stem anatomy, rings, volvas, netting, scales, gills/pores, attachments and cap surface marks MUST remain like shape reference, not invented. Do NOT recolor gills or stem. No mixing anatomy across species. Preserve same scale and center.  REFERENCE1: galerina-marginata, cap color bruno, shape piano. CELL0=isolated cap SIDE VIEW, CELL1=whole mushroom.  REFERENCE2: galerina-marginata, cap color giallo, shape piano. CELL2=isolated cap SIDE VIEW, CELL3=whole mushroom.  REFERENCE3: lepiota-subincarnata, cap color bruno, shape ombrellato. CELL4=isolated cap SIDE VIEW, CELL5=whole mushroom.  REFERENCE4: lepiota-subincarnata, cap color bruno, shape piano. CELL6=isolated cap SIDE VIEW, CELL7=whole mushroom. Exactly8 fully enclosed icons; CELL8 EMPTY. Color applies only to cap upper skin, unchanged species-specific details.\nCorrection: undefined\n",
+  "stato": "pronta da integrare",
+  "qa": "incoming/qa/combinazioni-03.json"
+},
+{
+  "file": "incoming/icone/combinazioni-03.png",
+  "tipo": "illustrazione",
+  "soggetto": "lepiota-subincarnata",
+  "tessera": "cappello",
+  "cella": 6,
+  "variante": "colore:bruno+forma:piano",
+  "base": {
+    "colore": "rosa",
+    "forma": "convesso"
+  },
+  "modello": "image_gen (identificatore tecnico non esposto)",
+  "prompt": "Create a transparent1254x1254 PNG sprite sheet, invisible3x3 grid,8 icons in cells0-7; cell8 empty alpha. Exact approved flat icon style, continuous DARK BROWN outer outlines, few solid fills and one highlight. NO text labels grid texture shadows ground. Each separate drawing max264px wide AND tall in its418px cell, at least15% empty transparent margins on every edge. Cell order left-right top-bottom. Each attached reference strip corresponds to one combination, left=APPROVED SHAPE cap, middle=APPROVED SHAPE whole mushroom, right=APPROVED COLOR cap. Copy the left/middle drawings with ONLY cap color changed to the EXACT right reference hue. All stem anatomy, rings, volvas, netting, scales, gills/pores, attachments and cap surface marks MUST remain like shape reference, not invented. Do NOT recolor gills or stem. No mixing anatomy across species. Preserve same scale and center.  REFERENCE1: galerina-marginata, cap color bruno, shape piano. CELL0=isolated cap SIDE VIEW, CELL1=whole mushroom.  REFERENCE2: galerina-marginata, cap color giallo, shape piano. CELL2=isolated cap SIDE VIEW, CELL3=whole mushroom.  REFERENCE3: lepiota-subincarnata, cap color bruno, shape ombrellato. CELL4=isolated cap SIDE VIEW, CELL5=whole mushroom.  REFERENCE4: lepiota-subincarnata, cap color bruno, shape piano. CELL6=isolated cap SIDE VIEW, CELL7=whole mushroom. Exactly8 fully enclosed icons; CELL8 EMPTY. Color applies only to cap upper skin, unchanged species-specific details.\nCorrection: undefined\n",
+  "stato": "pronta da integrare",
+  "qa": "incoming/qa/combinazioni-03.json"
+},
+{
+  "file": "incoming/icone/combinazioni-03.png",
+  "tipo": "illustrazione",
+  "soggetto": "lepiota-subincarnata",
+  "tessera": "gambo",
+  "cella": 7,
+  "variante": "colore:bruno+forma:piano",
+  "base": {
+    "colore": "rosa",
+    "forma": "convesso"
+  },
+  "modello": "image_gen (identificatore tecnico non esposto)",
+  "prompt": "Create a transparent1254x1254 PNG sprite sheet, invisible3x3 grid,8 icons in cells0-7; cell8 empty alpha. Exact approved flat icon style, continuous DARK BROWN outer outlines, few solid fills and one highlight. NO text labels grid texture shadows ground. Each separate drawing max264px wide AND tall in its418px cell, at least15% empty transparent margins on every edge. Cell order left-right top-bottom. Each attached reference strip corresponds to one combination, left=APPROVED SHAPE cap, middle=APPROVED SHAPE whole mushroom, right=APPROVED COLOR cap. Copy the left/middle drawings with ONLY cap color changed to the EXACT right reference hue. All stem anatomy, rings, volvas, netting, scales, gills/pores, attachments and cap surface marks MUST remain like shape reference, not invented. Do NOT recolor gills or stem. No mixing anatomy across species. Preserve same scale and center.  REFERENCE1: galerina-marginata, cap color bruno, shape piano. CELL0=isolated cap SIDE VIEW, CELL1=whole mushroom.  REFERENCE2: galerina-marginata, cap color giallo, shape piano. CELL2=isolated cap SIDE VIEW, CELL3=whole mushroom.  REFERENCE3: lepiota-subincarnata, cap color bruno, shape ombrellato. CELL4=isolated cap SIDE VIEW, CELL5=whole mushroom.  REFERENCE4: lepiota-subincarnata, cap color bruno, shape piano. CELL6=isolated cap SIDE VIEW, CELL7=whole mushroom. Exactly8 fully enclosed icons; CELL8 EMPTY. Color applies only to cap upper skin, unchanged species-specific details.\nCorrection: undefined\n",
+  "stato": "pronta da integrare",
+  "qa": "incoming/qa/combinazioni-03.json"
 }
 ]
