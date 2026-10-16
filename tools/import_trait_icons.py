@@ -18,7 +18,8 @@ Varianti (docs/handoff-immagini-varianti.md): le righe con `variante` = "colore:
 dice cosa mostra il disegno principale. Le tessere di una variante sono «cappello» e «gambo».
 "colore:<c>+forma:<f>" è una combinazione (docs/handoff-immagini-mancanti.md, punto 2).
 Dove la specie ha le fasi di crescita (`stages`), le fasi sostituiscono le varianti di forma (decisione del
-15/10): quelle righe si saltano, salvo le forme della falloide già in produzione (KEEP_SHAPES).
+15/10): quelle forme non vanno in assets/ né nell'indice, ma si conservano in archive/forme-con-fasi/ con la loro
+provenienza (decisione del 16/10), salvo le forme della falloide già in produzione (KEEP_SHAPES).
 Fasi di crescita: righe con `fase`, importate da tools/import_stage_icons.py (chiamato da qui).
 
 Le righe che non tornano con i dati (specie, tessera, valore o fase che non esistono) sono rifiutate
@@ -129,6 +130,26 @@ def valid_name(taxa, name):
     return len(vals) == 2 and vals[0] in (tr.get("cap_color") or []) and vals[1] in (tr.get("cap_shape") or [])
 
 
+ARCHIVE = ROOT / "archive/forme-con-fasi"
+
+
+def archive_shape(r, key, shape, tile, archived):
+    """Forma di una specie con le fasi: fuori da assets/ e dall'indice dell'app, conservata come alternativa
+    in archive/forme-con-fasi/ (escluso dal deploy da .assetsignore), con la provenienza nel suo indice."""
+    ARCHIVE.mkdir(parents=True, exist_ok=True)
+    name = f"{key}-{r['tessera']}-{shape}"
+    tile.save(ARCHIVE / f"{name}.webp", "WEBP", quality=90, method=6)
+    path = ARCHIVE / "index.json"
+    idx = json.loads(path.read_text(encoding="utf-8")) if path.exists() else {}
+    items = idx.get("items", {})
+    items[name] = {"specie": key, "tessera": r["tessera"], "forma": shape, "tavola": r["file"], "cella": r.get("cella"),
+                   "base": r.get("base"), "modello": r.get("modello"), "prompt": r.get("prompt")}
+    idx = {"note": "Forme del cappello disegnate per specie che hanno le fasi di crescita: fuori dall'app (le fasi sostituiscono le forme, decisione del 15/10), conservate come alternativa (decisione di Matteo, 16/10). Cartella esclusa dal deploy (.assetsignore); non entrano in data/trait-icons.json né nel rapporto degli asset.",
+           **LICENSE, "items": dict(sorted(items.items()))}
+    path.write_text(json.dumps(idx, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    archived.append(name)
+
+
 def write_index(taxa, base_rows=None):
     """Ricostruisce data/trait-icons.json dai file presenti in assets/traits.
     base_rows: {specie: {"colore", "forma"}} dichiarate dal manifest; altrimenti resta quella dell'indice."""
@@ -186,7 +207,7 @@ def main(inc, stato=False, stati=(STATE_OK,)):
     rows, skipped, all_rows = load_rows(inc, stato, stati)
     OUT.mkdir(parents=True, exist_ok=True)
     sheets = Sheets(inc)
-    rejected, written, base = [], [], {}
+    rejected, written, base, archived = [], [], {}, []
     def base_size(key, tile):
         """Dimensioni del disegno base (anche da una tavola non importata ora), per allineare le varianti di colore.
         Vale l'ultima riga del manifest (es. il gambo del coprino ridisegnato con l'anello)."""
@@ -210,7 +231,8 @@ def main(inc, stato=False, stati=(STATE_OK,)):
             if bad:
                 rejected.append(f"{where}: {', '.join(bad)} non è tra i valori delle fonti"); continue
             if "forma" in parts and "colore" not in parts and taxa[key].get("stages") and key not in KEEP_SHAPES:
-                rejected.append(f"{where}: la specie ha le fasi di crescita, che sostituiscono le forme (15/10)"); continue
+                # fuori dall'app (le fasi sostituiscono le forme, 15/10), ma conservate come alternativa (16/10)
+                archive_shape(r, key, parts["forma"], fit(sheets.crop(r, all_rows)[0]), archived); continue
         crop, _ = sheets.crop(r, all_rows)
         if not var:
             name = f"{key}-{r['tessera']}"
@@ -230,6 +252,8 @@ def main(inc, stato=False, stati=(STATE_OK,)):
           f"varianti di colore per {sum('colors' in e for e in index.values())}, di forma per {sum('shapes' in e for e in index.values())}, "
           f"combinazioni per {sum('combos' in e for e in index.values())}, fasi per {sum('stages' in e for e in index.values())}")
     report(skipped, rejected + st_rejected, removed)
+    if archived:
+        print(f"\nForme di specie con le fasi, conservate in {ARCHIVE.relative_to(ROOT)}/ (non pubblicate): {len(archived)}")
 
 
 def report(skipped, rejected, removed):

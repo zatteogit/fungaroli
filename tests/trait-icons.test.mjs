@@ -44,3 +44,20 @@ test('le combinazioni colore + forma elencate hanno cappello e gambo e usano val
     for (const part of ['cappello', 'gambo']) assert.ok(file(`${key}-${part}-${c}-${f}`), `manca ${key}-${part}-${c}-${f}`);
   }
 });
+
+test('le forme delle specie con le fasi restano in archivio: fuori da assets, dall\'indice e dal deploy', () => {
+  const dir = new URL('../archive/forme-con-fasi/', import.meta.url);
+  const arch = JSON.parse(readFileSync(new URL('index.json', dir)));
+  assert.ok(Object.keys(arch.items).length > 0);
+  for (const [name, r] of Object.entries(arch.items)) {
+    assert.ok(taxa[r.specie]?.stages?.length, `${name}: la specie non ha le fasi`);
+    assert.ok(taxa[r.specie].traits.cap_shape.includes(r.forma), `${name}: forma non nei dati`);
+    assert.equal(name, `${r.specie}-${r.tessera}-${r.forma}`);
+    assert.ok(existsSync(new URL(`${name}.webp`, dir)), `${name}: file mancante`);
+    assert.ok(r.tavola && Number.isInteger(r.cella) && r.prompt, `${name}: provenienza incompleta`);
+    assert.ok(!file(name), `${name}: non deve stare in assets/traits`);
+    assert.ok(!(icons.taxa[r.specie]?.shapes?.values || []).includes(r.forma) || r.specie === 'amanita-phalloides', `${name}: non deve stare nell'indice`);
+  }
+  const ignore = readFileSync(new URL('../.assetsignore', import.meta.url), 'utf8').split('\n').map((x) => x.trim());
+  assert.ok(ignore.includes('archive'), '.assetsignore deve escludere archive/');
+});

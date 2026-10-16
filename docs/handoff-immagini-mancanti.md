@@ -18,7 +18,7 @@
 - `tools/import_tree_icons.py` (alberi; `--piante` per le piante);
 - `tools/import_illustrations.py` (glossario, guide, timbri, infografiche).
 
-Il ritaglio è per componenti (`tools/sheet_cells.py`), non a terzi fissi. Le righe che non tornano con i dati sono rifiutate una per una, con il motivo. Le forme delle specie con le fasi di crescita si saltano: le fasi le sostituiscono. Dopo ogni lotto: `node tools/asset-report.mjs`.
+Il ritaglio è per componenti (`tools/sheet_cells.py`), non a terzi fissi. Le righe che non tornano con i dati sono rifiutate una per una, con il motivo. Le forme delle specie con le fasi di crescita restano fuori dall'app (le fasi le sostituiscono) ma si conservano come alternativa in `archive/forme-con-fasi/`, con la provenienza in `index.json`; la cartella è esclusa dal deploy (`.assetsignore`). Dopo ogni lotto: `node tools/asset-report.mjs`.
 
 ## Da fare, in quest'ordine
 
