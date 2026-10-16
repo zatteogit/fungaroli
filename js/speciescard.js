@@ -38,8 +38,8 @@ export const speciesPhotos = id => [MEDIA?.species?.[id]?.ref,...(MEDIA?.species
 export const speciesPhoto = (id) => MEDIA?.species?.[id]?.ref || MEDIA?.species?.[id]?.inat?.[0] || null;
 
 const creditText = (m) => m ? `Foto: ${esc(m.author)}${m.license ? `, ${esc(m.license)}` : ''} · <a href="${esc(m.page)}" target="_blank" rel="noopener">${esc(m.source)}</a>` : '';
-// crediti dell'infografica, con la licenza e il suo link
-const infoCredit = (m) => [esc(m.credit || ''), m.license ? (/^https:\/\//.test(m.licenseUrl || '') ? `<a href="${esc(m.licenseUrl)}" target="_blank" rel="noopener">${esc(m.license)}</a>` : esc(m.license)) : ''].filter(Boolean).join(' · ');
+// crediti dell'infografica: licenza con il link, segno «da rivedere» se c'è
+const infoCredit = (m) => [esc(m.credit || ''), m.license ? (/^https:\/\//.test(m.licenseUrl || '') ? `<a href="${esc(m.licenseUrl)}" target="_blank" rel="noopener">${esc(m.license)}</a>` : esc(m.license)) : '', m.review ? esc(m.review) : ''].filter(Boolean).join(' · ');
 const credit = (m) => m ? `<span class="credit">Foto: ${esc(m.author)}${m.license ? `, ${esc(m.license)}` : ''} · <a href="${esc(m.page)}" target="_blank" rel="noopener">${esc(m.source)}</a></span>` : '';
 
 function phenology(id) {
@@ -206,7 +206,7 @@ export function renderSpeciesDetail(body, id) {
     ${kitchen(id)}
     ${whereToLook(id)}
     ${lookalikes(d, id)}
-    ${INFO[id]?.file ? `<h3>Infografica</h3><button type="button" class="zoomable sp-info" data-info="1" aria-label="Apri l'infografica"><img data-src="${ASSET(INFO[id].file)}" alt="Infografica di riconoscimento: ${esc(sp.name)}" loading="lazy" decoding="async"><span class="zoom-ic" aria-hidden="true">⤢</span></button>` : ''}
+    ${INFO[id]?.file ? `<h3>Infografica</h3>${INFO[id].review ? `<p class="sp-info-review">${esc(INFO[id].review)}</p>` : ''}<button type="button" class="zoomable sp-info" data-info="1" aria-label="Apri l'infografica"><img data-src="${ASSET(INFO[id].file)}" alt="Infografica di riconoscimento: ${esc(sp.name)}" loading="lazy" decoding="async"><span class="zoom-ic" aria-hidden="true">⤢</span></button>` : ''}
     <div class="sp-more">
       ${sec('Dove trovarlo nelle zone', WHERE(id))}
       ${sec('Tutti i caratteri', d.cap ? traitsTable(d) + (d.aka?.length ? `<p class="small"><b>Nomi locali:</b> ${esc(d.aka.join(', '))}</p>` : '') : '')}

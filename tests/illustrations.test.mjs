@@ -43,3 +43,9 @@ test('timbri e icone dei caratteri: licenza del progetto', () => {
     assert.ok(d.license === LICENSE && d.licenseUrl === LICENSE_URL && /senza opere di terzi/.test(d.note), f);
   }
 });
+
+test('il segno «da rivedere con un micologo» resta sull\'ovolo buono finché non è rivisto', () => {
+  const info = read('infografiche').species;
+  assert.equal(info.caesarea.review, 'Da rivedere con un micologo');
+  for (const m of Object.values(info)) if (m.review) assert.match(m.review, /micologo/);
+});

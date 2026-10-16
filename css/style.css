@@ -422,6 +422,7 @@ li.crit { font-weight: 600; }
 .sp-3d-full { margin-top: 8px; }
 .sp-info { margin: 0; }
 .sp-info img { border-radius: var(--r-md); }
+.sp-info-review { margin: -4px 0 8px; font-size: .8rem; line-height: 1.4; color: var(--muted); }
 .sources { padding-left: 18px; }
 .credit { display: block; font-size: 11px; color: var(--muted); line-height: 1.3; }
 .tree-link, .species-link, .glossary-link { color: var(--link); font-weight: inherit; text-decoration: underline dotted; text-decoration-thickness: 1px; text-underline-offset: .2em; background: transparent; border-radius: 2px; padding: 0; margin: 0; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
