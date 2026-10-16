@@ -3,34 +3,50 @@
 
 Uso:
   git archive origin/gpt/immagini incoming | tar -x -C /tmp/inc
-  python3 tools/import_trait_icons.py /tmp/inc/incoming
+  python3 tools/import_trait_icons.py /tmp/inc/incoming [--stato] [--stati "ok,pronta da integrare"]
 
 Ogni riga «illustrazione» del manifest indica tavola, specie (chiave di data/species-traits.json),
 tessera e cella. La cella è `cella` (0-8, da sinistra a destra e dall'alto in basso); se manca,
 vale l'ordine delle righe della stessa tavola, come nelle prime 30 tavole.
+Il ritaglio è per componenti (tools/sheet_cells.py), non a terzi fissi: nessun disegno tagliato.
+
+--stato: si importano solo le tavole che incoming/bozze/STATO.md segna «pronta da integrare» (regola di
+Matteo del 16/10); --stati cambia l'elenco degli stati accettati. Le icone già presenti restano.
 
 Varianti (docs/handoff-immagini-varianti.md): le righe con `variante` = "colore:<valore>" o
 "forma:<valore>" sono un altro colore o un'altra forma del cappello; `base` = {"colore", "forma"}
 dice cosa mostra il disegno principale. Le tessere di una variante sono «cappello» e «gambo».
-Fasi di crescita (docs/handoff-immagini-fasi.md): le righe con `fase` = "<id>" sono il disegno della
-tessera in quella fase; la fase deve essere in `stages` della specie e la tessera tra le sue `tiles`
-(«taglio» = sezione dell'uovo). File <specie>-<tessera>-fase-<id>.webp. Righe che non tornano: errore.
-Scrive assets/traits/<specie>-<tessera>[-<variante>].webp e data/trait-icons.json.
+"colore:<c>+forma:<f>" è una combinazione (docs/handoff-immagini-mancanti.md, punto 2).
+Dove la specie ha le fasi di crescita (`stages`), le fasi sostituiscono le varianti di forma (decisione del
+15/10): quelle righe si saltano, salvo le forme della falloide già in produzione (KEEP_SHAPES).
+Fasi di crescita: righe con `fase`, importate da tools/import_stage_icons.py (chiamato da qui).
+
+Le righe che non tornano con i dati (specie, tessera, valore o fase che non esistono) sono rifiutate
+una per una, con il motivo; le tavole con un disegno tagliato o una cella vuota fermano l'import.
+Scrive assets/traits/<specie>-<tessera>[-<variante>].webp e data/trait-icons.json. L'indice si ricostruisce
+dai file presenti: un file che i dati non giustificano più (valore o fase tolti) viene cancellato.
 """
 import json, sys
 from pathlib import Path
 from PIL import Image
 
 ROOT = Path(__file__).resolve().parent.parent
-sys.path.insert(0, str(ROOT / "tools"))  # ritaglio per componenti condiviso con import_tree_icons.py
+sys.path.insert(0, str(ROOT / "tools"))
+from sheet_cells import drawings, ready_sheets, STATE_OK  # noqa: E402
+
 OUT = ROOT / "assets/traits"
 PARTS = ("cappello", "sotto", "gambo")
 SIZE = 128
+KEEP_SHAPES = {"amanita-phalloides"}  # forme in produzione prima delle fasi (docs/handoff-immagini-varianti.md)
+
+
+def bbox(tile):
+    return tile.getchannel("A").point(lambda a: 255 if a > 16 else 0).getbbox()
 
 
 def fit(tile):
     """Ritaglia il disegno (i fogli hanno margini ampi e diversi) e lo centra in un quadrato con margine uguale."""
-    box = tile.getchannel("A").point(lambda a: 255 if a > 16 else 0).getbbox()
+    box = bbox(tile)
     if box:
         tile = tile.crop(box)
     side = round(max(tile.size) * 1.08)
@@ -42,7 +58,7 @@ def fit(tile):
 def fit_like(tile, size):
     """Variante di colore: stessa inquadratura del disegno base (stessa altezza e stesso centro nel quadrato),
     così cambiando colore il fungo non si sposta né cambia scala. size = (larghezza, altezza) del disegno base."""
-    box = tile.getchannel("A").point(lambda a: 255 if a > 16 else 0).getbbox()
+    box = bbox(tile)
     if box:
         tile = tile.crop(box)
     bw, bh = size
@@ -53,124 +69,103 @@ def fit_like(tile, size):
     return sq.resize((SIZE, SIZE), Image.LANCZOS)
 
 
-def drawings(im, name):
-    """Riquadro di ogni disegno per cella, per componenti: ogni macchia connessa va alla cella del suo baricentro.
-    Le tavole non sono una griglia esatta (un gambo può scendere oltre il terzo del foglio): a terzi fissi
-    il disegno restava tagliato. Errore se un disegno tocca il bordo del foglio o due celle si sovrappongono."""
-    import numpy as np
-    from import_tree_icons import components, ALPHA, NOISE
-    W, H = im.size
-    k = 2
-    lab, n = components(np.array(im.getchannel("A").resize((W // k, H // k), Image.NEAREST)) > ALPHA)
-    boxes = {}
-    for i in range(1, n + 1):
-        ys, xs = np.nonzero(lab == i)
-        if len(ys) * k * k < NOISE * W * H:
-            continue
-        x0, x1, y0, y1 = xs.min() * k, (xs.max() + 1) * k, ys.min() * k, (ys.max() + 1) * k
-        if x0 <= 1 or y0 <= 1 or x1 >= W - 1 or y1 >= H - 1:
-            sys.exit(f"{name}: un disegno tocca il bordo del foglio")
-        cell = min(int(ys.mean() * k // (H / 3)), 2) * 3 + min(int(xs.mean() * k // (W / 3)), 2)
-        b = boxes.get(cell)
-        boxes[cell] = (x0, y0, x1, y1) if not b else (min(b[0], x0), min(b[1], y0), max(b[2], x1), max(b[3], y1))
-    cells = sorted(boxes)
-    for i, c in enumerate(cells):
-        for d in cells[i + 1:]:
-            a, b = boxes[c], boxes[d]
-            if a[0] < b[2] and b[0] < a[2] and a[1] < b[3] and b[1] < a[3]:
-                sys.exit(f"{name}: i disegni delle celle {c} e {d} si sovrappongono")
-    return boxes
+def margin(path):
+    """Margine vuoto attorno al disegno nell'icona finale: il test lo usa per dire che l'icona è intera."""
+    x0, y0, x1, y1 = bbox(Image.open(path).convert("RGBA"))
+    return min(x0, y0, SIZE - x1, SIZE - y1)
 
 
-def main(inc):
-    inc = Path(inc)
-    manifest = json.loads((inc / "manifest.json").read_text(encoding="utf-8"))
-    taxa = json.loads((ROOT / "data/species-traits.json").read_text(encoding="utf-8"))["taxa"]
-    # le icone degli alberi (soggetto "alberi") hanno il loro import: tools/import_tree_icons.py
-    rows = [r for r in manifest if r["tipo"] == "illustrazione" and r.get("soggetto") != "alberi"]
-    OUT.mkdir(parents=True, exist_ok=True)
-    for f in OUT.glob("*.webp"):
-        f.unlink()
-    have, base, variants, sheets, margins, combos, stages = {}, {}, {}, {}, {}, {}, {}
-    base_size = {}  # (specie, tessera) -> dimensioni del disegno base, per allineare le varianti di colore
-    rows = sorted(rows, key=lambda r: bool(r.get("variante") or r.get("fase")))  # prima i disegni base
-    for r in rows:
-        key = r["soggetto"]
-        if key not in taxa:
-            sys.exit(f"{key}: non è in species-traits.json")
-        if r.get("fase"):
-            st = {f["id"]: f for f in taxa[key].get("stages") or []}
-            if r["fase"] not in st:
-                sys.exit(f"{key}: la fase «{r['fase']}» non è tra le fasi della specie (stages)")
-            if r["tessera"] not in st[r["fase"]]["tiles"]:
-                sys.exit(f"{key}: nella fase «{r['fase']}» la tessera «{r['tessera']}» non cambia (tiles)")
-            if r.get("variante"):
-                sys.exit(f"{key}: una riga ha sia fase sia variante")
-        elif r["tessera"] not in (("cappello", "gambo") if r.get("variante") else PARTS):
-            sys.exit(f"{key}: tessera «{r['tessera']}» non prevista")
-        if r["file"] not in sheets:
-            im = Image.open(inc.parent / r["file"]).convert("RGBA")
-            sheets[r["file"]] = (im, drawings(im, r["file"]))
-        im, boxes = sheets[r["file"]]
+class Sheets:
+    """Tavole aperte una volta sola, con i riquadri dei disegni per cella."""
+    def __init__(self, inc):
+        self.inc, self.cache = Path(inc), {}
+
+    def crop(self, r, rows):
+        if r["file"] not in self.cache:
+            im = Image.open(self.inc.parent / r["file"]).convert("RGBA")
+            self.cache[r["file"]] = (im, drawings(im, r["file"]))
+        im, boxes = self.cache[r["file"]]
         cell = r.get("cella", [x for x in rows if x["file"] == r["file"]].index(r))
         if cell not in boxes:
             sys.exit(f"{r['file']}: la cella {cell} è vuota")
-        crop = im.crop(boxes[cell])
-        var = r.get("variante")
-        if not var and not r.get("fase"):
-            cb = crop.getchannel("A").point(lambda a: 255 if a > 16 else 0).getbbox()
-            base_size[(key, r["tessera"])] = (cb[2] - cb[0], cb[3] - cb[1]) if cb else crop.size
-        same_frame = var and var.startswith("colore:") and "+" not in var and (key, r["tessera"]) in base_size
-        tile = fit_like(crop, base_size[(key, r["tessera"])]) if same_frame else fit(crop)
-        if r.get("fase"):
-            name = f"{key}-{r['tessera']}-fase-{r['fase']}.webp"
-            stages.setdefault(key, {}).setdefault(r["fase"], set()).add(r["tessera"])
-        elif var and "+" in var:
-            # combinazione colore + forma (es. "colore:giallo+forma:piano"): file <specie>-<tessera>-<colore>-<forma>
-            parts = dict(x.split(":", 1) for x in var.split("+"))
-            c, f = parts.get("colore"), parts.get("forma")
-            if c not in (taxa[key]["traits"].get("cap_color") or []) or f not in (taxa[key]["traits"].get("cap_shape") or []):
-                sys.exit(f"{key}: {var} non è tra i valori delle fonti")
-            name = f"{key}-{r['tessera']}-{c}-{f}.webp"
-            combos.setdefault(key, {}).setdefault(f"{c}|{f}", set()).add(r["tessera"])
-        elif var:
-            kind, value = var.split(":", 1)
-            if value not in (taxa[key]["traits"].get("cap_color" if kind == "colore" else "cap_shape") or []):
-                sys.exit(f"{key}: {var} non è tra i valori delle fonti")
-            name = f"{key}-{r['tessera']}-{value}.webp"
-            variants.setdefault(key, {}).setdefault(kind, {}).setdefault(value, set()).add(r["tessera"])
-        else:
-            name = f"{key}-{r['tessera']}.webp"
-            have.setdefault(key, set()).add(r["tessera"])
-        if r.get("base"):
-            base[key] = r["base"]
-        tile.save(OUT / name, "WEBP", quality=90, method=6)
-        # margine vuoto attorno al disegno: il test lo usa per dire che l'icona è intera
-        x0, y0, x1, y1 = tile.getchannel("A").point(lambda a: 255 if a > 16 else 0).getbbox()
-        margins[name[:-5]] = min(x0, y0, SIZE - x1, SIZE - y1)
+        return im.crop(boxes[cell]), boxes[cell]
+
+
+def load_rows(inc, stato=False, stati=(STATE_OK,)):
+    """Righe «illustrazione» dei funghi; con stato, solo quelle delle tavole accettate.
+    Restituisce (righe da importare, tavole saltate con il loro stato, tutte le righe)."""
+    inc = Path(inc)
+    manifest = json.loads((inc / "manifest.json").read_text(encoding="utf-8"))
+    rows = [r for r in manifest if r["tipo"] == "illustrazione" and r.get("soggetto") != "alberi"]
+    if not stato:
+        return rows, {}, rows
+    from sheet_cells import sheet_states
+    states = sheet_states(inc / "bozze/STATO.md")
+    ok = ready_sheets(inc / "bozze/STATO.md", stati)
+    keep = [r for r in rows if r["file"].removeprefix("incoming/") in ok]
+    skipped = {r["file"]: states.get(r["file"].removeprefix("incoming/"), "senza stato") for r in rows if r not in keep}
+    return keep, skipped, rows
+
+
+def valid_name(taxa, name):
+    """Il nome di un file delle icone corrisponde ancora a un valore dei dati?"""
+    import re
+    m = re.match(r"^(.+?)-(cappello|sotto|gambo|taglio)(?:-(.+))?$", name)
+    t = m and taxa.get(m.group(1))
+    if not t:
+        return False
+    key, tile, rest = m.groups()
+    tr = t.get("traits") or {}
+    if not rest:
+        return tile in PARTS
+    if rest.startswith("fase-"):
+        s = next((x for x in t.get("stages") or [] if x["id"] == rest[5:]), None)
+        return bool(s and tile in s["tiles"])
+    vals = rest.split("-")
+    if tile not in ("cappello", "gambo"):
+        return False
+    if len(vals) == 1:
+        return vals[0] in (tr.get("cap_color") or []) or vals[0] in (tr.get("cap_shape") or [])
+    return len(vals) == 2 and vals[0] in (tr.get("cap_color") or []) and vals[1] in (tr.get("cap_shape") or [])
+
+
+def write_index(taxa, base_rows=None):
+    """Ricostruisce data/trait-icons.json dai file presenti in assets/traits.
+    base_rows: {specie: {"colore", "forma"}} dichiarate dal manifest; altrimenti resta quella dell'indice."""
+    path = ROOT / "data/trait-icons.json"
+    old = json.loads(path.read_text(encoding="utf-8")) if path.exists() else {"taxa": {}}
+    files = {f.stem for f in OUT.glob("*.webp")}
+    removed = sorted(n for n in files if not valid_name(taxa, n))
+    for n in removed:
+        (OUT / f"{n}.webp").unlink()
+    files -= set(removed)
+    has = lambda n: n in files  # noqa: E731
     index = {}
-    for key in sorted(k for k, v in have.items() if set(PARTS) <= v):
-        entry = {}
-        for kind, field in (("colore", "colors"), ("forma", "shapes")):
-            done = [v for v, parts in variants.get(key, {}).get(kind, {}).items() if {"cappello", "gambo"} <= parts]
-            drawn = base.get(key, {}).get(kind)
-            if done and drawn:
-                order = taxa[key]["traits"].get("cap_color" if kind == "colore" else "cap_shape") or []
-                entry[field] = {"drawn": drawn, "values": [v for v in order if v == drawn or v in done]}
-        done = sorted(k for k, parts in combos.get(key, {}).items() if {"cappello", "gambo"} <= parts)
-        if done:
-            entry["combos"] = done
-        # fasi complete: tutte le tessere che cambiano in quella fase, nell'ordine dei dati
-        done = [f["id"] for f in taxa[key].get("stages") or [] if set(f["tiles"]) <= stages.get(key, {}).get(f["id"], set())]
-        if done:
-            entry["stages"] = done
-        # cosa mostra il disegno base (dal manifest; con un solo valore nelle fonti, quel valore):
-        # serve al test di completezza (tests/asset-completeness.test.mjs) per sapere quali varianti mancano
-        b = {k: v for k, v in (base.get(key) or {}).items() if k in ("colore", "forma")}
+    for key in sorted(taxa):
+        if not all(has(f"{key}-{p}") for p in PARTS):
+            continue
+        tr = taxa[key].get("traits") or {}
+        declared = {**(old["taxa"].get(key, {}).get("base") or {}), **((base_rows or {}).get(key) or {})}
+        b = {k: v for k, v in declared.items() if k in ("colore", "forma")}
         for kind, field in (("colore", "cap_color"), ("forma", "cap_shape")):
-            vals = taxa[key]["traits"].get(field) or []
+            vals = tr.get(field) or []
             if kind not in b and len(vals) == 1:
                 b[kind] = vals[0]
+        entry = {}
+        for kind, field, trait in (("colore", "colors", "cap_color"), ("forma", "shapes", "cap_shape")):
+            order = tr.get(trait) or []
+            done = [v for v in order if has(f"{key}-cappello-{v}") and has(f"{key}-gambo-{v}")]
+            if done and b.get(kind):
+                entry[field] = {"drawn": b[kind], "values": [v for v in order if v == b[kind] or v in done]}
+        combos = sorted(f"{c}|{f}" for c in tr.get("cap_color") or [] for f in tr.get("cap_shape") or []
+                        if has(f"{key}-cappello-{c}-{f}") and has(f"{key}-gambo-{c}-{f}"))
+        if combos:
+            entry["combos"] = combos
+        # fasi complete: tutte le tessere che cambiano in quella fase, nell'ordine dei dati
+        stages = [s["id"] for s in taxa[key].get("stages") or [] if all(has(f"{key}-{t}-fase-{s['id']}") for t in s["tiles"])]
+        if stages:
+            entry["stages"] = stages
+        # cosa mostra il disegno base: serve al test di completezza per sapere quali varianti mancano
         if b:
             entry["base"] = b
         index[key] = entry
@@ -178,11 +173,85 @@ def main(inc):
         "note": "Icone dei caratteri disegnate con AI (image_gen) a partire dai caratteri strutturati di data/species-traits.json, riviste dal proprietario del progetto. Mostrano varianti descritte nelle fonti; non sono foto e non servono a identificare.",
         "parts": list(PARTS),
         "taxa": index,
-        "margins": dict(sorted(margins.items())),
+        "margins": {n: margin(OUT / f"{n}.webp") for n in sorted(files)},
     }
-    (ROOT / "data/trait-icons.json").write_text(json.dumps(out, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
-    print(f"{len(index)} specie; varianti di colore per {sum('colors' in e for e in index.values())}, di forma per {sum('shapes' in e for e in index.values())}, fasi per {sum('stages' in e for e in index.values())}")
+    path.write_text(json.dumps(out, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    return index, removed
+
+
+def main(inc, stato=False, stati=(STATE_OK,)):
+    import import_stage_icons
+    taxa = json.loads((ROOT / "data/species-traits.json").read_text(encoding="utf-8"))["taxa"]
+    rows, skipped, all_rows = load_rows(inc, stato, stati)
+    OUT.mkdir(parents=True, exist_ok=True)
+    sheets = Sheets(inc)
+    rejected, written, base = [], [], {}
+    def base_size(key, tile):
+        """Dimensioni del disegno base (anche da una tavola non importata ora), per allineare le varianti di colore.
+        Vale l'ultima riga del manifest (es. il gambo del coprino ridisegnato con l'anello)."""
+        r = next((x for x in reversed(all_rows) if x["soggetto"] == key and x["tessera"] == tile and not x.get("variante") and not x.get("fase")), None)
+        if not r:
+            return None
+        cb = bbox(sheets.crop(r, all_rows)[0])
+        return (cb[2] - cb[0], cb[3] - cb[1])
+    plain = [r for r in rows if not r.get("fase")]
+    for r in plain:
+        key, var = r["soggetto"], r.get("variante")
+        where = f"{r['file'].removeprefix('incoming/')} cella {r.get('cella', '?')} {key} {var or r['tessera']}"
+        if key not in taxa:
+            rejected.append(f"{where}: la specie non è in species-traits.json"); continue
+        tr = taxa[key].get("traits") or {}
+        if r["tessera"] not in (("cappello", "gambo") if var else PARTS):
+            rejected.append(f"{where}: tessera «{r['tessera']}» non prevista"); continue
+        if var:
+            parts = dict(x.split(":", 1) for x in var.split("+"))
+            bad = [f"{k}:{v}" for k, v in parts.items() if k not in ("colore", "forma") or v not in (tr.get("cap_color" if k == "colore" else "cap_shape") or [])]
+            if bad:
+                rejected.append(f"{where}: {', '.join(bad)} non è tra i valori delle fonti"); continue
+            if "forma" in parts and "colore" not in parts and taxa[key].get("stages") and key not in KEEP_SHAPES:
+                rejected.append(f"{where}: la specie ha le fasi di crescita, che sostituiscono le forme (15/10)"); continue
+        crop, _ = sheets.crop(r, all_rows)
+        if not var:
+            name = f"{key}-{r['tessera']}"
+        elif "+" in var:
+            name = f"{key}-{r['tessera']}-{parts['colore']}-{parts['forma']}"
+        else:
+            name = f"{key}-{r['tessera']}-{var.split(':', 1)[1]}"
+        size = var and var.startswith("colore:") and "+" not in var and base_size(key, r["tessera"])
+        tile = fit_like(crop, size) if size else fit(crop)
+        if r.get("base"):
+            base[key] = r["base"]
+        tile.save(OUT / f"{name}.webp", "WEBP", quality=90, method=6)
+        written.append(name)
+    st_written, st_rejected = import_stage_icons.import_rows([r for r in rows if r.get("fase")], all_rows, taxa, sheets)
+    index, removed = write_index(taxa, base)
+    print(f"{len(written)} icone di base e varianti, {len(st_written)} di fase; {len(index)} specie; "
+          f"varianti di colore per {sum('colors' in e for e in index.values())}, di forma per {sum('shapes' in e for e in index.values())}, "
+          f"combinazioni per {sum('combos' in e for e in index.values())}, fasi per {sum('stages' in e for e in index.values())}")
+    report(skipped, rejected + st_rejected, removed)
+
+
+def report(skipped, rejected, removed):
+    if skipped:
+        print(f"\nTavole saltate (stato in STATO.md non accettato): {len(skipped)}")
+        for f, s in sorted(skipped.items()):
+            print(f"  {f}: {s}")
+    if rejected:
+        print(f"\nRighe rifiutate: {len(rejected)}")
+        for x in rejected:
+            print(f"  {x}")
+    if removed:
+        print(f"\nFile cancellati perché i dati non li giustificano più: {', '.join(removed)}")
+
+
+def cli(fn):
+    args = [a for a in sys.argv[1:] if not a.startswith("--")]
+    stati = next((sys.argv[i + 1] for i, a in enumerate(sys.argv) if a == "--stati" and i + 1 < len(sys.argv)), None)
+    if stati:
+        args.remove(stati)
+    fn(args[0] if args else "incoming", "--stato" in sys.argv or bool(stati),
+       tuple(s.strip() for s in stati.split(",")) if stati else (STATE_OK,))
 
 
 if __name__ == "__main__":
-    main(sys.argv[1] if len(sys.argv) > 1 else "incoming")
+    cli(main)

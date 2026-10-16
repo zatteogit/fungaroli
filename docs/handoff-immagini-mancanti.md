@@ -10,6 +10,15 @@
 - Gambo del coprino con l'anello (`incoming/icone/tavola-10-anello.png`): in produzione dalla v65.
 - 7 tavole delle icone dei caratteri degli alberi (`incoming/icone-alberi/`): in produzione dalla v64.
 - Copertine dei luoghi per stagione e meteo (`incoming/luoghi/`).
+- **Integrati il 16/10 (v80):** 64 forme del cappello (manca la forma emisferica della spugnola gialla, scartata al controllo), 8 combinazioni della tignosa verdognola, foglia composta palmata, 9 timbri, 21 schemi del glossario, 3 aperture delle guide, 13 infografiche (caesarea e aereus dalle revisioni; terreum non pubblicata), fasi di crescita di 16 specie (88 disegni con le 4 sezioni dell'uovo).
+
+**Regola dal 16/10 (Matteo):** GPT segna ogni tavola nuova «pronta da integrare» in `incoming/bozze/STATO.md`. Gli import la leggono con `--stato` e prendono solo quelle tavole (`--stati` cambia gli stati accettati):
+- `tools/import_trait_icons.py` (icone dei funghi: base, varianti, combinazioni; chiama anche l'import delle fasi);
+- `tools/import_stage_icons.py` (solo le righe con `fase`, controllate su `stages`);
+- `tools/import_tree_icons.py` (alberi; `--piante` per le piante);
+- `tools/import_illustrations.py` (glossario, guide, timbri, infografiche).
+
+Il ritaglio è per componenti (`tools/sheet_cells.py`), non a terzi fissi. Le righe che non tornano con i dati sono rifiutate una per una, con il motivo. Le forme delle specie con le fasi di crescita si saltano: le fasi le sostituiscono. Dopo ogni lotto: `node tools/asset-report.mjs`.
 
 ## Da fare, in quest'ordine
 
