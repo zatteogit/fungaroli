@@ -7,7 +7,7 @@ for(const width of [390,1280]) test(`hero comune e filtro piante persistente a $
  const sectionOrder=()=>page.locator('[data-view="uscite"] > :is(#hero,#others-h,#ranking,#during-walk,#season-h,#season)').evaluateAll(es=>es.map(e=>e.id));
  const order=await sectionOrder();
  const structure=await page.locator('#hero .cover').evaluate(e=>[...e.children].filter(c=>!c.classList.contains('outdoor-backdrop')).map(c=>c.className));
- await page.locator('#active-filters [data-more]').click();await page.locator('#full-filters [data-intent="piante"]').click();
+ await page.locator('#active-filters [data-more]').click();await page.locator('#full-filters [data-intent="piante"]').click();await page.locator('#full-filters [data-intent="funghi"]').click();
  await page.locator('#full-filters [data-close]').first().click();
  await expect(page.locator('#hero .cover-sp')).toContainText('Da osservare');await expect(page.locator('#hero .cover-sp')).toContainText('Periodo indicativo:');
  expect(await page.locator('#hero .cover').evaluate(e=>[...e.children].filter(c=>!c.classList.contains('outdoor-backdrop')).map(c=>c.className))).toEqual(structure);
@@ -21,6 +21,6 @@ for(const width of [390,1280]) test(`hero comune e filtro piante persistente a $
  await page.locator('#hero .cover').screenshot({path:`/tmp/fronda-home-plants-${width}.png`});
  await page.reload();await expect(page.locator('#hero .cover-sp')).toContainText('Da osservare');
  await page.locator('#active-filters [data-more]').click();await expect(page.locator('#full-filters [data-intent="piante"]')).toHaveAttribute('aria-pressed','true');
- await page.locator('#full-filters [data-intent="funghi"]').click();await page.locator('#full-filters [data-close]').first().click();
+ await page.locator('#full-filters [data-intent="funghi"]').click();await page.locator('#full-filters [data-intent="piante"]').click();await page.locator('#full-filters [data-close]').first().click();
  await expect(page.locator('#hero .cover-sp')).toContainText('Da conoscere');expect(await sectionOrder()).toEqual(order);expect(errors).toEqual([]);await context.close();
 });

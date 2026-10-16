@@ -1,11 +1,18 @@
 import { seasonStatus } from './edible-catalog.js';
 
 export const INTENTS = [
-  { id: 'funghi', label: 'A funghi' },
-  { id: 'piante', label: 'Piante spontanee' },
-  { id: 'passeggiata', label: 'Passeggiata' },
+  { id: 'funghi', label: 'Funghi' },
+  { id: 'piante', label: 'Piante' },
+  { id: 'passeggiata', label: 'Sentieri' },
 ];
 export const validIntent = value => INTENTS.some(i => i.id === value) ? value : 'funghi';
+
+// Preserve old preferences while allowing independent, combinable interests.
+export function normalizeInterests(values, legacy='funghi') {
+  return Array.isArray(values) ? INTENTS.filter(i=>values.includes(i.id)).map(i=>i.id) : [validIntent(legacy)];
+}
+export const primaryInterest = values => values.includes('funghi')?'funghi':values.includes('piante')?'piante':'passeggiata';
+export const toggleInterest = (values,id) => normalizeInterests(values.includes(id)?values.filter(v=>v!==id):[...values,id]);
 
 // Only documented calendars can suspend a saved selection. Missing weather,
 // missing models and low scores never establish that a season is over.
