@@ -19,7 +19,17 @@
     },
     "dislivello": {
       "name": "Dislivello",
-      "illustrations": []
+      "illustrations": [
+        {
+          "file": "assets/glossary/dislivello.webp",
+          "alt": "Schema del profilo di un sentiero con salite e discese, le salite evidenziate",
+          "caption": "Schema: il dislivello positivo somma tutte le salite del percorso, non solo la differenza tra punto più alto e più basso.",
+          "author": "Fungaroli, con image_gen, rivista dal progetto",
+          "license": "senza opere di terzi",
+          "kind": "diagram",
+          "generated": true
+        }
+      ]
     },
     "quota": {
       "name": "Quota",
@@ -27,7 +37,17 @@
     },
     "segnavia": {
       "name": "Segnavia",
-      "illustrations": []
+      "illustrations": [
+        {
+          "file": "assets/glossary/segnavia.webp",
+          "alt": "Schema di un segnavia bianco e rosso dipinto su una pietra",
+          "caption": "Schema: segnavia bianco-rosso dipinto su una pietra. Confrontalo sempre con la mappa.",
+          "author": "Fungaroli, con image_gen, rivista dal progetto",
+          "license": "senza opere di terzi",
+          "kind": "diagram",
+          "generated": true
+        }
+      ]
     },
     "gpx": {
       "name": "Traccia GPX",
@@ -35,7 +55,17 @@
     },
     "esposizione": {
       "name": "Esposizione",
-      "illustrations": []
+      "illustrations": [
+        {
+          "file": "assets/glossary/esposizione.webp",
+          "alt": "Schema di una collina con un versante in ombra e uno al sole, con una piccola rosa dei venti",
+          "caption": "Schema: due versanti con esposizione diversa. Il versante al sole e quello in ombra hanno luce e umidità diverse.",
+          "author": "Fungaroli, con image_gen, rivista dal progetto",
+          "license": "senza opere di terzi",
+          "kind": "diagram",
+          "generated": true
+        }
+      ]
     },
     "microclima": {
       "name": "Microclima",
@@ -59,7 +89,17 @@
     },
     "micorriza": {
       "name": "Micorriza",
-      "illustrations": []
+      "illustrations": [
+        {
+          "file": "assets/glossary/micorriza.webp",
+          "alt": "Schema di una radice d’albero avvolta da filamenti del fungo, con il fungo in superficie",
+          "caption": "Schema: nella micorriza i filamenti del fungo avvolgono le radici dell’albero. Conoscere l’albero aiuta a leggere l’ambiente, non identifica il fungo.",
+          "author": "Fungaroli, con image_gen, rivista dal progetto",
+          "license": "senza opere di terzi",
+          "kind": "diagram",
+          "generated": true
+        }
+      ]
     },
     "saprotrofo": {
       "name": "Saprotrofo",
@@ -67,7 +107,17 @@
     },
     "micelio": {
       "name": "Micelio",
-      "illustrations": []
+      "illustrations": [
+        {
+          "file": "assets/glossary/micelio.webp",
+          "alt": "Schema di un fungo sopra il terreno; sotto, una rete di filamenti bianchi",
+          "caption": "Schema: il micelio è la rete di filamenti nel terreno. Il fungo che vediamo è solo il corpo fruttifero.",
+          "author": "Fungaroli, con image_gen, rivista dal progetto",
+          "license": "senza opere di terzi",
+          "kind": "diagram",
+          "generated": true
+        }
+      ]
     },
     "carpoforo": {
       "name": "Corpo fruttifero",
@@ -141,6 +191,15 @@
       "name": "Imenoforo",
       "illustrations": [
         {
+          "file": "assets/glossary/imenoforo.webp",
+          "alt": "Schema di un fungo con una parte del cappello aperta: sotto si vedono le lamelle colorate",
+          "caption": "Schema: l’imenoforo è lo strato sotto il cappello. Qui sono lamelle; in altre specie sono tubuli, aculei o pliche.",
+          "author": "Fungaroli, con image_gen, rivista dal progetto",
+          "license": "senza opere di terzi",
+          "kind": "diagram",
+          "generated": true
+        },
+        {
           "file": "assets/glossary/lamelle.jpg",
           "alt": "Lamelle rosa disposte a raggera sotto il cappello di Agaricus campestris",
           "caption": "Lamelle di un prataiolo: sottili lamine disposte a raggera. Colore e disposizione cambiano tra specie e con l’età.",
@@ -190,6 +249,15 @@
       "name": "Anello",
       "illustrations": [
         {
+          "file": "assets/glossary/anello.webp",
+          "alt": "Schema di un fungo con un anello a gonnellina sul gambo, sotto il cappello",
+          "caption": "Schema: l’anello circonda il gambo sotto il cappello. Può essere fragile o sparire con l’età.",
+          "author": "Fungaroli, con image_gen, rivista dal progetto",
+          "license": "senza opere di terzi",
+          "kind": "diagram",
+          "generated": true
+        },
+        {
           "file": "assets/glossary/anello-volva.svg",
           "alt": "Schema di un gambo con anello nella parte superiore e volva a sacco alla base",
           "caption": "Schema: l’anello circonda il gambo nella parte superiore; la volva a sacco è alla base. La forma e la posizione dell’anello variano tra specie.",
@@ -205,6 +273,15 @@
     "volva": {
       "name": "Volva",
       "illustrations": [
+        {
+          "file": "assets/glossary/volva.webp",
+          "alt": "Schema della base di un gambo chiusa in una volva a sacco, mezza interrata",
+          "caption": "Schema: la volva avvolge la base del gambo e può restare nascosta nel terreno. Per vederla serve l’esemplare intero.",
+          "author": "Fungaroli, con image_gen, rivista dal progetto",
+          "license": "senza opere di terzi",
+          "kind": "diagram",
+          "generated": true
+        },
         {
           "file": "assets/glossary/anello-volva.svg",
           "alt": "Schema di un gambo con anello nella parte superiore e volva a sacco alla base",
@@ -236,7 +313,17 @@
     },
     "sporata": {
       "name": "Sporata",
-      "illustrations": []
+      "illustrations": [
+        {
+          "file": "assets/glossary/sporata.webp",
+          "alt": "Schema di un cappello appoggiato su un foglio metà bianco e metà nero, con il deposito di spore a raggiera",
+          "caption": "Schema: il deposito di spore su un foglio metà chiaro e metà scuro. Il colore aiuta il confronto, non dice se un fungo è commestibile.",
+          "author": "Fungaroli, con image_gen, rivista dal progetto",
+          "license": "senza opere di terzi",
+          "kind": "diagram",
+          "generated": true
+        }
+      ]
     },
     "viraggio": {
       "name": "Viraggio",
@@ -244,11 +331,31 @@
     },
     "umbone": {
       "name": "Umbone",
-      "illustrations": []
+      "illustrations": [
+        {
+          "file": "assets/glossary/umbone.webp",
+          "alt": "Schema di un cappello visto di profilo con un rilievo al centro",
+          "caption": "Schema: l’umbone è il rilievo al centro del cappello. Può essere più o meno evidente.",
+          "author": "Fungaroli, con image_gen, rivista dal progetto",
+          "license": "senza opere di terzi",
+          "kind": "diagram",
+          "generated": true
+        }
+      ]
     },
     "cespitoso": {
       "name": "Cespitoso",
-      "illustrations": []
+      "illustrations": [
+        {
+          "file": "assets/glossary/cespitoso.webp",
+          "alt": "Schema di un gruppo fitto di funghi con i gambi uniti alla base",
+          "caption": "Schema: crescita cespitosa, con molti funghi uniti alla base. Non indica una specie precisa.",
+          "author": "Fungaroli, con image_gen, rivista dal progetto",
+          "license": "senza opere di terzi",
+          "kind": "diagram",
+          "generated": true
+        }
+      ]
     },
     "latifoglie": {
       "name": "Latifoglie",
@@ -260,7 +367,17 @@
     },
     "aghi": {
       "name": "Aghi",
-      "illustrations": []
+      "illustrations": [
+        {
+          "file": "assets/glossary/aghi.webp",
+          "alt": "Schema di un rametto di conifera con foglie ad ago",
+          "caption": "Schema: foglie ad ago di una conifera. Possono essere singole o riunite in fascetti: contale sul rametto.",
+          "author": "Fungaroli, con image_gen, rivista dal progetto",
+          "license": "senza opere di terzi",
+          "kind": "diagram",
+          "generated": true
+        }
+      ]
     },
     "caducifoglia": {
       "name": "Caducifoglia",
@@ -272,15 +389,45 @@
     },
     "lobi": {
       "name": "Lobi",
-      "illustrations": []
+      "illustrations": [
+        {
+          "file": "assets/glossary/lobi.webp",
+          "alt": "Schema di una foglia lobata, tipo quercia, con i lobi evidenziati",
+          "caption": "Schema: i lobi sono le parti sporgenti del margine, separate da incavi.",
+          "author": "Fungaroli, con image_gen, rivista dal progetto",
+          "license": "senza opere di terzi",
+          "kind": "diagram",
+          "generated": true
+        }
+      ]
     },
     "seghettato": {
       "name": "Margine seghettato",
-      "illustrations": []
+      "illustrations": [
+        {
+          "file": "assets/glossary/seghettato.webp",
+          "alt": "Schema di due margini di foglia: sopra denti semplici, sotto denti doppi",
+          "caption": "Schema: margine seghettato, sopra semplice e sotto doppio, con denti più piccoli sui denti grandi.",
+          "author": "Fungaroli, con image_gen, rivista dal progetto",
+          "license": "senza opere di terzi",
+          "kind": "diagram",
+          "generated": true
+        }
+      ]
     },
     "gemme": {
       "name": "Gemme",
-      "illustrations": []
+      "illustrations": [
+        {
+          "file": "assets/glossary/gemme.webp",
+          "alt": "Schema di un rametto invernale con gemme alterne e una gemma ingrandita",
+          "caption": "Schema: gemme alterne su un rametto d’inverno; nel cerchio, una gemma ingrandita.",
+          "author": "Fungaroli, con image_gen, rivista dal progetto",
+          "license": "senza opere di terzi",
+          "kind": "diagram",
+          "generated": true
+        }
+      ]
     },
     "ceduo": {
       "name": "Ceduo",
@@ -288,23 +435,87 @@
     },
     "ceppaia": {
       "name": "Ceppaia",
-      "illustrations": []
+      "illustrations": [
+        {
+          "file": "assets/glossary/ceppaia.webp",
+          "alt": "Schema di un ceppo tagliato con le radici in superficie e qualche getto nuovo",
+          "caption": "Schema: la ceppaia è la base di un albero tagliato, con le radici. Può ributtare o diventare legno morto.",
+          "author": "Fungaroli, con image_gen, rivista dal progetto",
+          "license": "senza opere di terzi",
+          "kind": "diagram",
+          "generated": true
+        }
+      ]
     },
     "spora": {
       "name": "Spora",
-      "illustrations": []
+      "illustrations": [
+        {
+          "file": "assets/glossary/spora.webp",
+          "alt": "Schema ingrandito in una lente: alcune spore ovali",
+          "caption": "Schema ingrandito: le spore sono microscopiche. Molte spore insieme formano la sporata.",
+          "author": "Fungaroli, con image_gen, rivista dal progetto",
+          "license": "senza opere di terzi",
+          "kind": "diagram",
+          "generated": true
+        }
+      ]
     },
     "ifa": {
       "name": "Ifa",
-      "illustrations": []
+      "illustrations": [
+        {
+          "file": "assets/glossary/ifa.webp",
+          "alt": "Schema ingrandito in una lente: pochi filamenti ramificati e divisi in segmenti",
+          "caption": "Schema ingrandito: le ife sono i filamenti che formano il micelio. A occhio nudo non si distinguono una per una.",
+          "author": "Fungaroli, con image_gen, rivista dal progetto",
+          "license": "senza opere di terzi",
+          "kind": "diagram",
+          "generated": true
+        }
+      ]
     },
     "cappello": {
       "name": "Cappello",
-      "illustrations": []
+      "illustrations": [
+        {
+          "file": "assets/glossary/cappello.webp",
+          "alt": "Schema di un fungo di profilo con il cappello colorato e il gambo in tono spento",
+          "caption": "Schema: il cappello è la parte che sta sopra il gambo. Forma e colore cambiano tra specie e con l’età.",
+          "author": "Fungaroli, con image_gen, rivista dal progetto",
+          "license": "senza opere di terzi",
+          "kind": "diagram",
+          "generated": true
+        }
+      ]
     },
     "gambo": {
       "name": "Gambo",
-      "illustrations": []
+      "illustrations": [
+        {
+          "file": "assets/glossary/gambo.webp",
+          "alt": "Schema di un fungo di profilo con il gambo colorato e il cappello in tono spento",
+          "caption": "Schema: il gambo sostiene il cappello. Osserva tutta la lunghezza, fino alla base.",
+          "author": "Fungaroli, con image_gen, rivista dal progetto",
+          "license": "senza opere di terzi",
+          "kind": "diagram",
+          "generated": true
+        }
+      ]
+    },
+    "pollone": {
+      "name": "Pollone",
+      "illustrations": [
+        {
+          "file": "assets/glossary/pollone.webp",
+          "alt": "Schema di una ceppaia con un getto giovane evidenziato",
+          "caption": "Schema: il pollone è un getto nuovo che nasce dalla base o da un vecchio taglio.",
+          "author": "Fungaroli, con image_gen, rivista dal progetto",
+          "license": "senza opere di terzi",
+          "kind": "diagram",
+          "generated": true
+        }
+      ]
     }
   }
 }

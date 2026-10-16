@@ -174,7 +174,7 @@ async function init() {
   }
   const load = (f) => snapshot?.resources?.[f] ? Promise.resolve(structuredClone(snapshot.resources[f])) : fetch(`data/${f}.json`).then((r) => (r.ok ? r.json() : null)).catch(() => null);
   contentCopy = embedded?.contentCopy || await load('ui-copy') || {};
-  initGuideContent(embedded?.guides || await load('guides'),contentCopy);
+  initGuideContent(embedded?.guides || await load('guides'),contentCopy,embedded?(f)=>embedded.assets?.[f]||'':null);
   for(const[selector,key]of [['#home-h','homeTitle'],['#others-h','otherPlacesTitle'],['#season-h','speciesTitle']])if(contentCopy[key]&&$(selector))$(selector).textContent=contentCopy[key];
   legal = embedded ? embedded.legal : await load('legal');
   const [zj, hj, aj, tj, idj, mj, ij, trj, stj, mtj, mzj, prj, thj, ecj] = embedded

@@ -147,6 +147,8 @@ export function validateContent(id, data, previous) {
     if (!Array.isArray(value.guides)) err('Elenco articoli non valido.');
     checkIds(value.guides);
     if (value.guides.some(g=>typeof g.title!=='string'||!g.title.trim()||typeof g.body!=='string')) err('Ogni articolo richiede titolo e testo.');
+    // illustrazione d'apertura facoltativa: file in assets/, testo alternativo, autore e licenza
+    if (value.guides.some(g=>g.image!=null&&(typeof g.image!=='object'||!/^\/?assets\/[a-zA-Z0-9_/-]+\.(?:webp|png|jpe?g)$/.test(g.image.file||'')||!['alt','author','license'].every(k=>typeof g.image[k]==='string'&&g.image[k].trim())||typeof g.image.generated!=='boolean'))) err('L’immagine di un articolo richiede file in assets, testo alternativo, autore, licenza e se è generata.');
   }
   if(id==='plants'){
     if(!value.plants||typeof value.plants!=='object'||Array.isArray(value.plants))err('Elenco piante non valido.');
