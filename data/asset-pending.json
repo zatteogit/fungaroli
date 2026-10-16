@@ -559,14 +559,14 @@
     },
     {
       "categoria": "funghi-forma",
-      "motivo": "Forma emisferica della spugnola gialla arrivata il 16/10 (forme-28, cella 0-1) e scartata al controllo a occhio: il cappello sporge sul gambo come in un fungo a lamelle (nella spugnola testa e gambo sono uniti) e il colore è più scuro del giallo del disegno base. Da ridisegnare sul ramo gpt/immagini.",
+      "motivo": "Da ridisegnare (GPT). Forma emisferica della spugnola gialla arrivata il 16/10 (forme-28, celle 0-1) e scartata al controllo a occhio: il cappello sporge sul gambo come in un fungo a lamelle (nella spugnola testa e gambo sono uniti) e il colore è più scuro del giallo del disegno base.",
       "voci": [
         "morchella-esculenta:emisferico"
       ]
     },
     {
       "categoria": "funghi-combinazioni",
-      "motivo": "Combinazioni colore + forma da disegnare per le specie senza fasi: le loro varianti di forma sono arrivate il 16/10 e l'app combina colore e forma (regola del 15/10, docs/handoff-immagini-mancanti.md, punto 2). Finché mancano, l'app mostra la forma nel colore base con «Colore non ancora disegnato per questa forma». Da confermare con Matteo.",
+      "motivo": "Richieste a GPT il 16/10, in ordine di priorità: combinazioni colore + forma per le specie senza fasi, nate dalle forme arrivate il 16/10 (regola del 15/10, docs/handoff-immagini-mancanti.md, punto 2). Finché mancano, l'app mostra la forma nel colore base con «Colore non ancora disegnato per questa forma».",
       "voci": [
         "armillaria-tabescens:bruno+piano",
         "caloboletus-calopus:bruno+emisferico",
