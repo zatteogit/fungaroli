@@ -41,6 +41,9 @@
      "giallo"
     ]
    },
+   "stages": [
+    "giovane"
+   ],
    "base": {
     "colore": "crema",
     "forma": "convesso"
@@ -68,6 +71,10 @@
      "bruno"
     ]
    },
+   "stages": [
+    "giovane",
+    "adulto"
+   ],
    "base": {
     "colore": "bianco",
     "forma": "convesso"
@@ -111,6 +118,11 @@
      "giallo"
     ]
    },
+   "stages": [
+    "uovo",
+    "apertura",
+    "adulto"
+   ],
    "base": {
     "colore": "arancio",
     "forma": "convesso"
@@ -125,6 +137,11 @@
      "giallo"
     ]
    },
+   "stages": [
+    "uovo",
+    "apertura",
+    "adulto"
+   ],
    "base": {
     "colore": "rosso",
     "forma": "convesso"
@@ -139,6 +156,10 @@
      "crema"
     ]
    },
+   "stages": [
+    "giovane",
+    "adulto"
+   ],
    "base": {
     "colore": "bruno",
     "forma": "convesso"
@@ -173,6 +194,11 @@
     "grigio|emisferico",
     "grigio|piano"
    ],
+   "stages": [
+    "uovo",
+    "apertura",
+    "adulto"
+   ],
    "base": {
     "colore": "verde",
     "forma": "convesso"
@@ -186,6 +212,10 @@
      "rosa"
     ]
    },
+   "stages": [
+    "giovane",
+    "adulto"
+   ],
    "base": {
     "colore": "rosa",
     "forma": "convesso"
@@ -199,12 +229,22 @@
      "crema"
     ]
    },
+   "stages": [
+    "giovane",
+    "adulto"
+   ],
    "base": {
     "colore": "bianco",
     "forma": "convesso"
    }
   },
   "amanita-virosa": {
+   "stages": [
+    "uovo",
+    "apertura",
+    "giovane",
+    "adulto"
+   ],
    "base": {
     "colore": "bianco",
     "forma": "conico"
@@ -239,6 +279,12 @@
      "giallo"
     ]
    },
+   "stages": [
+    "uovo",
+    "apertura",
+    "giovane",
+    "adulto"
+   ],
    "base": {
     "colore": "arancio",
     "forma": "convesso"
@@ -336,6 +382,10 @@
      "crema"
     ]
    },
+   "stages": [
+    "giovane",
+    "adulto"
+   ],
    "base": {
     "colore": "crema",
     "forma": "ombrellato"
@@ -433,6 +483,10 @@
      "rosso"
     ]
    },
+   "stages": [
+    "giovane",
+    "adulto"
+   ],
    "base": {
     "colore": "arancio",
     "forma": "convesso"
@@ -447,6 +501,10 @@
      "rosso"
     ]
    },
+   "stages": [
+    "giovane",
+    "adulto"
+   ],
    "base": {
     "colore": "arancio",
     "forma": "conico"
@@ -857,6 +915,10 @@
      "crema"
     ]
    },
+   "stages": [
+    "giovane",
+    "adulto"
+   ],
    "base": {
     "colore": "rosa",
     "forma": "convesso"
@@ -870,6 +932,10 @@
      "bruno"
     ]
    },
+   "stages": [
+    "giovane",
+    "adulto"
+   ],
    "base": {
     "colore": "bianco",
     "forma": "ombrellato"
@@ -1133,6 +1199,10 @@
      "crema"
     ]
    },
+   "stages": [
+    "giovane",
+    "adulto"
+   ],
    "base": {
     "colore": "crema",
     "forma": "ombrellato"
@@ -1518,11 +1588,14 @@
   "aestivalis-sotto": 4,
   "agaricus-arvensis-cappello": 4,
   "agaricus-arvensis-cappello-bianco": 5,
+  "agaricus-arvensis-cappello-fase-giovane": 4,
   "agaricus-arvensis-cappello-giallo": 5,
   "agaricus-arvensis-gambo": 5,
   "agaricus-arvensis-gambo-bianco": 5,
+  "agaricus-arvensis-gambo-fase-giovane": 4,
   "agaricus-arvensis-gambo-giallo": 4,
   "agaricus-arvensis-sotto": 4,
+  "agaricus-arvensis-sotto-fase-giovane": 4,
   "agaricus-bisporus-cappello": 4,
   "agaricus-bisporus-cappello-bianco": 5,
   "agaricus-bisporus-gambo": 4,
@@ -1531,10 +1604,16 @@
   "agaricus-campestris-cappello": 4,
   "agaricus-campestris-cappello-bruno": 6,
   "agaricus-campestris-cappello-crema": 7,
+  "agaricus-campestris-cappello-fase-adulto": 4,
+  "agaricus-campestris-cappello-fase-giovane": 4,
   "agaricus-campestris-gambo": 4,
   "agaricus-campestris-gambo-bruno": 4,
   "agaricus-campestris-gambo-crema": 4,
+  "agaricus-campestris-gambo-fase-adulto": 4,
+  "agaricus-campestris-gambo-fase-giovane": 4,
   "agaricus-campestris-sotto": 5,
+  "agaricus-campestris-sotto-fase-adulto": 4,
+  "agaricus-campestris-sotto-fase-giovane": 4,
   "agaricus-sylvicola-cappello": 4,
   "agaricus-sylvicola-cappello-bianco": 4,
   "agaricus-sylvicola-cappello-giallo": 5,
@@ -1554,22 +1633,39 @@
   "agaricus-xanthodermus-gambo-grigio": 5,
   "agaricus-xanthodermus-sotto": 4,
   "amanita-crocea-cappello": 5,
+  "amanita-crocea-cappello-fase-adulto": 4,
+  "amanita-crocea-cappello-fase-apertura": 4,
+  "amanita-crocea-cappello-fase-uovo": 4,
   "amanita-crocea-cappello-giallo": 6,
   "amanita-crocea-gambo": 4,
+  "amanita-crocea-gambo-fase-adulto": 4,
+  "amanita-crocea-gambo-fase-apertura": 4,
+  "amanita-crocea-gambo-fase-uovo": 4,
   "amanita-crocea-gambo-giallo": 4,
   "amanita-crocea-sotto": 4,
   "amanita-muscaria-cappello": 4,
   "amanita-muscaria-cappello-arancio": 4,
+  "amanita-muscaria-cappello-fase-adulto": 4,
+  "amanita-muscaria-cappello-fase-apertura": 4,
+  "amanita-muscaria-cappello-fase-uovo": 4,
   "amanita-muscaria-cappello-giallo": 4,
   "amanita-muscaria-gambo": 4,
   "amanita-muscaria-gambo-arancio": 4,
+  "amanita-muscaria-gambo-fase-adulto": 4,
+  "amanita-muscaria-gambo-fase-apertura": 4,
+  "amanita-muscaria-gambo-fase-uovo": 4,
   "amanita-muscaria-gambo-giallo": 4,
   "amanita-muscaria-sotto": 4,
+  "amanita-muscaria-taglio-fase-uovo": 4,
   "amanita-pantherina-cappello": 4,
   "amanita-pantherina-cappello-crema": 4,
+  "amanita-pantherina-cappello-fase-adulto": 4,
+  "amanita-pantherina-cappello-fase-giovane": 4,
   "amanita-pantherina-cappello-grigio": 5,
   "amanita-pantherina-gambo": 4,
   "amanita-pantherina-gambo-crema": 4,
+  "amanita-pantherina-gambo-fase-adulto": 4,
+  "amanita-pantherina-gambo-fase-giovane": 4,
   "amanita-pantherina-gambo-grigio": 4,
   "amanita-pantherina-sotto": 4,
   "amanita-phalloides-cappello": 4,
@@ -1580,6 +1676,9 @@
   "amanita-phalloides-cappello-bruno-emisferico": 4,
   "amanita-phalloides-cappello-bruno-piano": 5,
   "amanita-phalloides-cappello-emisferico": 4,
+  "amanita-phalloides-cappello-fase-adulto": 4,
+  "amanita-phalloides-cappello-fase-apertura": 4,
+  "amanita-phalloides-cappello-fase-uovo": 4,
   "amanita-phalloides-cappello-giallo": 5,
   "amanita-phalloides-cappello-giallo-emisferico": 4,
   "amanita-phalloides-cappello-giallo-piano": 5,
@@ -1595,6 +1694,9 @@
   "amanita-phalloides-gambo-bruno-emisferico": 4,
   "amanita-phalloides-gambo-bruno-piano": 4,
   "amanita-phalloides-gambo-emisferico": 4,
+  "amanita-phalloides-gambo-fase-adulto": 4,
+  "amanita-phalloides-gambo-fase-apertura": 4,
+  "amanita-phalloides-gambo-fase-uovo": 4,
   "amanita-phalloides-gambo-giallo": 5,
   "amanita-phalloides-gambo-giallo-emisferico": 4,
   "amanita-phalloides-gambo-giallo-piano": 4,
@@ -1603,19 +1705,38 @@
   "amanita-phalloides-gambo-grigio-piano": 4,
   "amanita-phalloides-gambo-piano": 4,
   "amanita-phalloides-sotto": 4,
+  "amanita-phalloides-taglio-fase-uovo": 4,
   "amanita-rubescens-cappello": 4,
   "amanita-rubescens-cappello-bruno": 4,
+  "amanita-rubescens-cappello-fase-adulto": 4,
+  "amanita-rubescens-cappello-fase-giovane": 4,
   "amanita-rubescens-gambo": 4,
   "amanita-rubescens-gambo-bruno": 4,
+  "amanita-rubescens-gambo-fase-adulto": 4,
+  "amanita-rubescens-gambo-fase-giovane": 4,
   "amanita-rubescens-sotto": 4,
+  "amanita-rubescens-sotto-fase-adulto": 4,
   "amanita-verna-cappello": 4,
   "amanita-verna-cappello-crema": 4,
+  "amanita-verna-cappello-fase-adulto": 4,
+  "amanita-verna-cappello-fase-giovane": 4,
   "amanita-verna-gambo": 4,
   "amanita-verna-gambo-crema": 4,
+  "amanita-verna-gambo-fase-adulto": 4,
+  "amanita-verna-gambo-fase-giovane": 4,
   "amanita-verna-sotto": 4,
   "amanita-virosa-cappello": 4,
+  "amanita-virosa-cappello-fase-adulto": 4,
+  "amanita-virosa-cappello-fase-apertura": 5,
+  "amanita-virosa-cappello-fase-giovane": 4,
+  "amanita-virosa-cappello-fase-uovo": 4,
   "amanita-virosa-gambo": 4,
+  "amanita-virosa-gambo-fase-adulto": 4,
+  "amanita-virosa-gambo-fase-apertura": 4,
+  "amanita-virosa-gambo-fase-giovane": 4,
+  "amanita-virosa-gambo-fase-uovo": 4,
   "amanita-virosa-sotto": 5,
+  "amanita-virosa-taglio-fase-uovo": 4,
   "armillaria-tabescens-cappello": 4,
   "armillaria-tabescens-cappello-bruno": 6,
   "armillaria-tabescens-cappello-piano": 4,
@@ -1624,12 +1745,21 @@
   "armillaria-tabescens-gambo-piano": 5,
   "armillaria-tabescens-sotto": 4,
   "caesarea-cappello": 4,
+  "caesarea-cappello-fase-adulto": 4,
+  "caesarea-cappello-fase-apertura": 4,
+  "caesarea-cappello-fase-giovane": 4,
+  "caesarea-cappello-fase-uovo": 4,
   "caesarea-cappello-giallo": 5,
   "caesarea-cappello-rosso": 4,
   "caesarea-gambo": 4,
+  "caesarea-gambo-fase-adulto": 4,
+  "caesarea-gambo-fase-apertura": 4,
+  "caesarea-gambo-fase-giovane": 4,
+  "caesarea-gambo-fase-uovo": 4,
   "caesarea-gambo-giallo": 4,
   "caesarea-gambo-rosso": 4,
   "caesarea-sotto": 4,
+  "caesarea-taglio-fase-uovo": 4,
   "caloboletus-calopus-cappello": 4,
   "caloboletus-calopus-cappello-bruno": 4,
   "caloboletus-calopus-cappello-crema": 4,
@@ -1668,8 +1798,12 @@
   "chalciporus-piperatus-sotto": 4,
   "chlorophyllum-rhacodes-cappello": 4,
   "chlorophyllum-rhacodes-cappello-bruno": 4,
+  "chlorophyllum-rhacodes-cappello-fase-adulto": 4,
+  "chlorophyllum-rhacodes-cappello-fase-giovane": 4,
   "chlorophyllum-rhacodes-gambo": 4,
   "chlorophyllum-rhacodes-gambo-bruno": 4,
+  "chlorophyllum-rhacodes-gambo-fase-adulto": 4,
+  "chlorophyllum-rhacodes-gambo-fase-giovane": 4,
   "chlorophyllum-rhacodes-sotto": 4,
   "chlorophyllum-venenatum-cappello": 4,
   "chlorophyllum-venenatum-cappello-bruno": 5,
@@ -1710,18 +1844,30 @@
   "cornucopioides-sotto": 4,
   "cortinarius-orellanus-cappello": 4,
   "cortinarius-orellanus-cappello-bruno": 5,
+  "cortinarius-orellanus-cappello-fase-adulto": 4,
+  "cortinarius-orellanus-cappello-fase-giovane": 4,
   "cortinarius-orellanus-cappello-rosso": 5,
   "cortinarius-orellanus-gambo": 4,
   "cortinarius-orellanus-gambo-bruno": 4,
+  "cortinarius-orellanus-gambo-fase-adulto": 4,
+  "cortinarius-orellanus-gambo-fase-giovane": 4,
   "cortinarius-orellanus-gambo-rosso": 4,
   "cortinarius-orellanus-sotto": 4,
+  "cortinarius-orellanus-sotto-fase-adulto": 4,
+  "cortinarius-orellanus-sotto-fase-giovane": 4,
   "cortinarius-rubellus-cappello": 4,
   "cortinarius-rubellus-cappello-bruno": 5,
+  "cortinarius-rubellus-cappello-fase-adulto": 4,
+  "cortinarius-rubellus-cappello-fase-giovane": 4,
   "cortinarius-rubellus-cappello-rosso": 5,
   "cortinarius-rubellus-gambo": 5,
   "cortinarius-rubellus-gambo-bruno": 4,
+  "cortinarius-rubellus-gambo-fase-adulto": 4,
+  "cortinarius-rubellus-gambo-fase-giovane": 4,
   "cortinarius-rubellus-gambo-rosso": 4,
   "cortinarius-rubellus-sotto": 4,
+  "cortinarius-rubellus-sotto-fase-adulto": 4,
+  "cortinarius-rubellus-sotto-fase-giovane": 4,
   "cortinarius-traganus-cappello": 4,
   "cortinarius-traganus-cappello-emisferico": 4,
   "cortinarius-traganus-gambo": 4,
@@ -1902,16 +2048,24 @@
   "lepiota-brunneoincarnata-cappello": 4,
   "lepiota-brunneoincarnata-cappello-bruno": 7,
   "lepiota-brunneoincarnata-cappello-crema": 6,
+  "lepiota-brunneoincarnata-cappello-fase-adulto": 4,
+  "lepiota-brunneoincarnata-cappello-fase-giovane": 5,
   "lepiota-brunneoincarnata-cappello-rosso": 5,
   "lepiota-brunneoincarnata-gambo": 5,
   "lepiota-brunneoincarnata-gambo-bruno": 4,
   "lepiota-brunneoincarnata-gambo-crema": 4,
+  "lepiota-brunneoincarnata-gambo-fase-adulto": 4,
+  "lepiota-brunneoincarnata-gambo-fase-giovane": 4,
   "lepiota-brunneoincarnata-gambo-rosso": 5,
   "lepiota-brunneoincarnata-sotto": 5,
   "lepiota-cristata-cappello": 4,
   "lepiota-cristata-cappello-bruno": 4,
+  "lepiota-cristata-cappello-fase-adulto": 4,
+  "lepiota-cristata-cappello-fase-giovane": 4,
   "lepiota-cristata-gambo": 4,
   "lepiota-cristata-gambo-bruno": 4,
+  "lepiota-cristata-gambo-fase-adulto": 5,
+  "lepiota-cristata-gambo-fase-giovane": 4,
   "lepiota-cristata-sotto": 4,
   "lepiota-subincarnata-cappello": 4,
   "lepiota-subincarnata-cappello-bruno": 6,
@@ -2025,8 +2179,12 @@
   "pleurotus-ostreatus-sotto": 4,
   "procera-cappello": 4,
   "procera-cappello-bruno": 6,
+  "procera-cappello-fase-adulto": 4,
+  "procera-cappello-fase-giovane": 4,
   "procera-gambo": 4,
   "procera-gambo-bruno": 4,
+  "procera-gambo-fase-adulto": 4,
+  "procera-gambo-fase-giovane": 4,
   "procera-sotto": 4,
   "pseudocraterellus-undulatus-cappello": 4,
   "pseudocraterellus-undulatus-cappello-bruno": 5,
