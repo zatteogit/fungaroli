@@ -1,0 +1,268 @@
+{
+  "permutazione_celle_sorgente": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "riferimenti_forma": [
+    {
+      "soggetto": "neoboletus-luridiformis",
+      "forma": "emisferico",
+      "riferimenti": {
+        "cappello": {
+          "file": "incoming/icone/forme-12.png",
+          "cella": 3,
+          "stato": "ok"
+        },
+        "gambo": {
+          "file": "incoming/icone/forme-12.png",
+          "cella": 4,
+          "stato": "ok"
+        }
+      }
+    },
+    {
+      "soggetto": "nuda",
+      "forma": "piano",
+      "riferimenti": {
+        "cappello": {
+          "file": "incoming/icone/forme-28.png",
+          "cella": 6,
+          "stato": "ok"
+        },
+        "gambo": {
+          "file": "incoming/icone/forme-28.png",
+          "cella": 7,
+          "stato": "ok"
+        }
+      }
+    },
+    {
+      "soggetto": "nuda",
+      "forma": "piano",
+      "riferimenti": {
+        "cappello": {
+          "file": "incoming/icone/forme-28.png",
+          "cella": 6,
+          "stato": "ok"
+        },
+        "gambo": {
+          "file": "incoming/icone/forme-28.png",
+          "cella": 7,
+          "stato": "ok"
+        }
+      }
+    },
+    {
+      "soggetto": "pholiota-squarrosa",
+      "forma": "piano",
+      "riferimenti": {
+        "cappello": {
+          "file": "incoming/icone/forme-29.png",
+          "cella": 3,
+          "stato": "ok"
+        },
+        "gambo": {
+          "file": "incoming/icone/forme-29.png",
+          "cella": 4,
+          "stato": "ok"
+        }
+      }
+    }
+  ],
+  "file": "incoming/icone/combinazioni-20.png",
+  "sha256": "12c05e29ab04f07e13e0838712e0e42838ab17eea09acf8bc33b10a1e214313e",
+  "size": [
+    1254,
+    1254
+  ],
+  "bytes": 64749,
+  "cells": [
+    {
+      "cella": 0,
+      "bbox": [
+        77,
+        136,
+        341,
+        282
+      ],
+      "margini_px": [
+        77,
+        136,
+        77,
+        136
+      ],
+      "contorno_scuro_estremi": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "copertura_contorno_scuro": 1.0
+    },
+    {
+      "cella": 1,
+      "bbox": [
+        88,
+        77,
+        329,
+        341
+      ],
+      "margini_px": [
+        88,
+        77,
+        89,
+        77
+      ],
+      "contorno_scuro_estremi": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "copertura_contorno_scuro": 1.0
+    },
+    {
+      "cella": 2,
+      "bbox": [
+        77,
+        152,
+        341,
+        266
+      ],
+      "margini_px": [
+        77,
+        152,
+        77,
+        152
+      ],
+      "contorno_scuro_estremi": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "copertura_contorno_scuro": 1.0
+    },
+    {
+      "cella": 3,
+      "bbox": [
+        77,
+        101,
+        341,
+        317
+      ],
+      "margini_px": [
+        77,
+        101,
+        77,
+        101
+      ],
+      "contorno_scuro_estremi": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "copertura_contorno_scuro": 1.0
+    },
+    {
+      "cella": 4,
+      "bbox": [
+        77,
+        152,
+        341,
+        265
+      ],
+      "margini_px": [
+        77,
+        152,
+        77,
+        153
+      ],
+      "contorno_scuro_estremi": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "copertura_contorno_scuro": 1.0
+    },
+    {
+      "cella": 5,
+      "bbox": [
+        77,
+        101,
+        341,
+        316
+      ],
+      "margini_px": [
+        77,
+        101,
+        77,
+        102
+      ],
+      "contorno_scuro_estremi": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "copertura_contorno_scuro": 1.0
+    },
+    {
+      "cella": 6,
+      "bbox": [
+        77,
+        151,
+        341,
+        266
+      ],
+      "margini_px": [
+        77,
+        151,
+        77,
+        152
+      ],
+      "contorno_scuro_estremi": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "copertura_contorno_scuro": 1.0
+    },
+    {
+      "cella": 7,
+      "bbox": [
+        77,
+        84,
+        341,
+        333
+      ],
+      "margini_px": [
+        77,
+        84,
+        77,
+        85
+      ],
+      "contorno_scuro_estremi": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "copertura_contorno_scuro": 1.0
+    },
+    {
+      "cella": 8,
+      "vuota": true
+    }
+  ],
+  "visuale": "confronto con riferimenti approvati; pronta da integrare"
+}
