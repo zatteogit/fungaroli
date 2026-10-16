@@ -46,6 +46,12 @@ La suite browser avvia un solo Wrangler sulla porta 8788: non lanciarne due insi
   **A ogni aggiunta di dati si verifica che ci siano tutti gli asset:** `node tools/asset-report.mjs` dà il rapporto, da mettere nella descrizione della PR. Gli script d'import rifiutano ciò che non torna con i dati. Prima di nuove immagini si controllano le matrici (es. `docs/controllo-matrici-2026-10-15.md`).
 - **Licenze delle foto:** le foto con licenza non commerciale (CC BY-NC, soprattutto da iNaturalist) restano ammesse finché l'app è gratuita e senza pubblicità. Per le foto nuove preferisci CC0, CC BY o CC BY-SA e registra sempre autore, licenza, link alla licenza e pagina della fonte. Niente immagini generate al posto delle foto delle specie.
 
+## Lavori di altri agenti
+
+- Le proposte di altri agenti o di altre IA (rami `codex/*`, `gpt/*`, documenti di ricerca, PR aperte da altre sessioni) sono **ipotesi**. Non si uniscono e non cambiano app, dati o indice senza una valutazione scritta e una decisione del proprietario.
+- Il registro e le valutazioni stanno in [docs/ipotesi/](docs/ipotesi/README.md). Prima di riprendere un lavoro trovato in un altro ramo controlla lì il suo stato.
+- Fanno fede il ramo di produzione e i documenti in `docs/`. Ciò che sta solo in un altro ramo non è una decisione presa.
+
 ## Decisioni
 
 Quando per proseguire serve una decisione del proprietario del progetto, chiedila sempre con domande a scelta (alternative chiare, quella consigliata per prima). Non decidere al suo posto e non fermarti senza chiedere.

@@ -1,0 +1,13 @@
+import fs from 'node:fs';
+const FIX = process.env.FRONDA_DIR || process.cwd();
+const {scoreSpecies}=await import(FIX+'/js/model.js');
+const {SPECIES}=await import(FIX+'/js/species.js');
+const habitat=JSON.parse(fs.readFileSync(FIX+'/data/habitat.json','utf8')).zones;
+const [file,idsFile]=process.argv.slice(2);
+const data=JSON.parse(fs.readFileSync(file,'utf8')), ids=JSON.parse(fs.readFileSync(idsFile,'utf8'));
+const fin=v=>Number.isFinite(v)?v:null; const days=new Set();
+data.forEach((loc,k)=>{const [zid,band]=ids[k].split('|');const d=loc.daily,h=loc.hourly;const by={};
+ h.time.forEach((t,j)=>{const day=t.slice(0,10),v=h.soil_moisture_3_to_9cm[j];const b=(by[day]||={m:0,n:0});if(Number.isFinite(v)&&v>=0&&v<=1){b.m+=v;b.n++;}});
+ const s={dates:d.time,p:d.time.map((_,j)=>d.precipitation_sum[j]>=0?fin(d.precipitation_sum[j]):null),tmean:d.temperature_2m_mean.map(fin),tmin:d.temperature_2m_min.map(fin),tmax:d.temperature_2m_max.map(fin),soilm:d.time.map(x=>by[x]?.n>=24?by[x].m/by[x].n:null),todayIndex:d.time.length-1,issuedIndex:d.time.length-1,source:{}};
+ for(let i=0;i<s.dates.length;i++){const r=scoreSpecies(SPECIES.find(x=>x.kind!=='plant'),s,i,habitat[zid],+band,{}); if(r.score!=null)days.add(s.dates[i]);}});
+const a=[...days].sort(); console.log(a.length, a[0], a.at(-1));
