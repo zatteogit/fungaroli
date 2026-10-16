@@ -30,7 +30,7 @@ import { navigate, soft, setCoverResolver } from './motion.js';
 import { applyCrop } from './images.js';
 import { FOREST_LEGEND } from './forest-legend.js';
 import { initTrees, renderTreeGrid, renderTreePage, linkTrees, treeChips, treeForCategory, treeThumb, treePhotoSrc, treeHeroSrc } from './trees.js';
-import { crowding, comfortScore, timingAdvice, fmtTime, fmtRough, holidayName, intornoA } from './human.js';
+import { crowding, comfortScore, timingAdvice, fmtTime, fmtRough, intornoA } from './human.js';
 import { initCommunity, communityStatus, communityRank, reportBadge } from './community.js';
 import { guideTitle, renderGuideCards, renderGuide, initGuideContent, guideCount } from './guides.js';
 import { buildEdibleCatalog, seasonStatus, seasonLabel } from './edible-catalog.js';
@@ -2330,15 +2330,13 @@ function essentialSections(z, d, walk) {
       (() => { const more = d.perSpecies.slice(1, 3).map((p) => [p, spScore(z, d, p)]).filter(([, sc]) => sc >= 20); return more.length ? `<span class="ent-chips">${more.map(([p, sc]) => `<a class="ent-chip" href="${p.species.kind==='plant'?p.species.href:'#/specie/'+encodeURIComponent(p.species.id)}">${thumb(p.species.id,28)}<span>${esc(p.species.name)}</span>${idxDot(sc)}</a>`).join('')}</span>` : ''; })()].filter(Boolean).join('') || esc(best.species.latin) });
   if (d.crowd &&state.target==='funghi') {
     const t = timingAdvice({ dateStr: d.date, lat: z.lat, lon: z.lon, crowd: d.crowd });
-    rows.push({ sec: 'quando', icon: 'when', k: 'Quando', v: `Arriva <b>entro le ${fmtRough(t.arrive, 15, 'floor')}</b> <span class="badge crowd-${d.crowd.level}">${crowdText(d.crowd)}</span>`,
-      sub: `sorgere del sole verso le ${fmtRough(t.sunrise, 5)} · raccolta consentita dalle ${fmtRough(t.legal, 5, 'ceil')}` });
-  }  const w = wxOf(z, d);
-  if (w) {
-    const alt = alternativeFor(z, state.dayOffset, d);
-    rows.push({ sec: 'quando', svg: wxi(w), k: 'Meteo dell\'uscita', badge: `<span class="badge wx-b wx-${w.level}">${OUTING_SHORT[w.level]}</span>`,
-      v: `${esc(w.text.replace(/^./, (c) => c.toUpperCase()))}`,
-      sub: alt ? `<span class="plan-alt">Tempo migliore a ${esc(splitName(alt.z)[0])}: ${esc(alt.w.main)}, ${state.target==='piante'?'indice piante':'indice funghi'} ${idxDot(alt.s)}.</span>${actPill(`#/zona/${alt.z.id}/${state.dayOffset}`,'go',`Vai a ${esc(splitName(alt.z)[0])}`)}`
-        : w.available ? `Mattina, dalle ${w.from}:00 alle 13 · quota centrale. Verifica percorso e rientro${w.thunder ? ' · uscita sconsigliata con temporali' : ''}` : 'Aggiorna le previsioni prima di decidere.' });
+    rows.push({ sec: 'quando', icon: 'when', k: 'Quando', v: `Arriva <b>entro le ${fmtRough(t.arrive, 15, 'floor')}</b> <span class="badge crowd-${d.crowd.level}">${crowdText(d.crowd)}</span>` });
+  }
+  const w=wxOf(z,d);
+  if(w){
+    const weatherText=esc(w.text.replace(/^./,c=>c.toUpperCase())),when=rows.find(r=>r.sec==='quando');
+    if(when)when.sub=`<span class="when-weather wx-${w.level}">${wxi(w)}<span>${weatherText}</span></span>`;
+    else rows.push({sec:'quando',svg:wxi(w),k:'Quando',v:weatherText});
   }
 
   const a0 = access[z.id]?.[0];
@@ -2350,7 +2348,7 @@ function essentialSections(z, d, walk) {
       sub: `${a0 ? `${esc(travelText(zoneTrip(z,walk)))} da ${esc(currentBase().name)}${customBase()?'':unp}` : ''}${walk?.h ? actPill(gmaps(walk.h.lat, walk.h.lon),'nav','Indicazioni',true) : ax ? actPill(gmaps(ax.rlat, ax.rlon),'nav','Navigatore',true) : ''}`,
       badge: d.comfort ? `<span class="badge comfort-${d.comfort.level}">${d.comfort.level}</span>` : '' });
   }
-  const bodies={specie:()=>zoneSpecies(z,d)+discoverySection(z,d,walk,true),quando:()=>renderHuman(z,d),accesso:()=>renderAccess(z,d)};
+  const bodies={specie:()=>zoneSpecies(z,d)+discoverySection(z,d,walk,true),quando:()=>renderHuman(z,d)||renderWhenWeather(z,d),accesso:()=>renderAccess(z,d)};
   return `<div class="essential-sections">${Object.keys(bodies).map(id=>{
     const group=rows.filter(r=>r.sec===id);if(!group.length)return '';
     const summary=group.map(r=>`<span class="essential-summary"><span class="plan-ic${r.thumb?' has-thumb':''}">${r.thumb?thumb(r.thumb,48):r.svg||ICON[r.icon]}</span><span class="plan-body"><span class="plan-k">${r.k}${r.badge?' '+r.badge:''}</span><span class="plan-v">${r.v}</span>${r.sub?`<span class="plan-sub">${r.sub}</span>`:''}</span></span>`).join('');
@@ -2584,10 +2582,15 @@ const ACCESS_CHECK = 'Verifica transitabilità e divieti sul posto: le piste for
 const driveTo = (ax) => ax.surface === 2 ? 'su sentiero o pista (transito in auto da verificare)' : `in auto ${ax.surface === 0 ? 'su asfalto' : `su ${SURF_LABEL[ax.surface]}`}`;
 const gmaps = directionsTo;
 
+function renderWhenWeather(z,d) {
+  const w=wxOf(z,d);if(!w)return '';
+  const alt=alternativeFor(z,state.dayOffset,d);
+  return `<div class="when-weather-details"><p class="small muted">${w.available?`Previsioni della mattina, dalle ${w.from}:00 alle 13, alla quota centrale della zona. Verifica anche il rientro.`:'Aggiorna le previsioni prima di decidere.'}</p>${w.thunder?'<p class="small">Uscita sconsigliata con temporali.</p>':''}${alt?`<p>Tempo migliore a ${esc(splitName(alt.z)[0])}: ${esc(alt.w.main)}.</p>${actPill(`#/zona/${alt.z.id}/${state.dayOffset}`,'go',`Vai a ${esc(splitName(alt.z)[0])}`)}`:''}</div>`;
+}
+
 function renderHuman(z, d) {
   if (!d.crowd) return '';
   const t = timingAdvice({ dateStr: d.date, lat: z.lat, lon: z.lon, crowd: d.crowd });
-  const hol = holidayName(d.date);
   // alternativa: un giorno con meno gente e indice simile
   let alt = null;
   for (let o = 0; o <= AHEAD_DAYS; o++) {
@@ -2603,14 +2606,12 @@ function renderHuman(z, d) {
   if ((series[z.id][bandIndex(z, d.best.band)].p[d.i] ?? 0) >= 5) tips.push('È prevista pioggia: meno gente, ma porta il necessario e attenzione al fondo scivoloso.');
   return `
     <div class="human">
-      <p><span class="badge crowd-${d.crowd.level}">${crowdText(d.crowd).replace(/^./, (c) => c.toUpperCase())}</span> <span class="muted small">${esc(hol || d.crowd.day.label)}</span></p>
-      <p class="muted small">Stima indicativa per la zona: giorno e festivi, notorietà stimata, facilità d’accesso, pioggia e andamento recente dell’indice. Non misuriamo le presenze.</p>
       <dl class="kv">
         <dt>Sorgere del sole</dt><dd>verso le ${fmtRough(t.sunrise, 5)} · raccolta consentita dalle <b>${fmtRough(t.legal, 5, 'ceil')}</b> alle ${fmtRough(t.end, 5, 'floor')}</dd>
-        <dt>Arrivo consigliato</dt><dd><b>entro le ${fmtRough(t.arrive, 15, 'floor')}</b>. ${esc(t.why)}</dd>
         ${(() => { const minutes=zoneTrip(z,walkFor(z,d,state.trailId)).minutes;if(!Number.isFinite(minutes))return `<dt>Partenza da ${esc(currentBase().name)}</dt><dd>Tempo in auto non disponibile: verifica nel navigatore.</dd>`;const dep = new Date(t.arrive.getTime() - (minutes + 10) * 6e4); return `<dt>Partenza da ${esc(currentBase().name)}</dt><dd>verso le ${fmtRough(dep, 15, 'floor')}</dd>`; })()}
       </dl>
-      ${tips.length ? `<ul class="reasons">${tips.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>` : ''}
+      ${renderWhenWeather(z,d)}
+      <details class="context-note timing-method"><summary>Come stimiamo orari e affollamento</summary><p>${esc(t.why)}</p><p class="small muted">La stima usa giorno e festivi, notorietà del luogo, accesso, pioggia e andamento dell’indice. Non misuriamo le presenze.</p>${tips.length?`<ul class="reasons">${tips.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`:''}</details>
     </div>`;
 }
 

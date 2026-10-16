@@ -343,3 +343,7 @@ a.src-a:active { opacity: 1; text-decoration-style: solid; }
 #map-sheet { z-index:1100; max-height:min(70svh, calc(100% - 24px)); overflow-y:auto; overscroll-behavior:contain; }
 #map-sheet > p { margin:0; }
 #map-sheet > h2 { padding-right:36px; }
+
+.when-weather { display:inline-flex; align-items:baseline; gap:7px; }
+.when-weather .wxi { flex:none; align-self:center; }
+.when-weather-details > p:first-child { margin-top:0; }

@@ -13,7 +13,7 @@ for path in pathlib.Path(sys.argv[1]).rglob('*.sqlite'):
  db.close()
 `,process.env.FUNGAROLI_BROWSER_PERSIST]));
 
-async function setup(page) {
+async function setup(page,{gust=8}={}) {
   await page.route('**/*', async (route) => {
     const u = new URL(route.request().url());
     if(u.pathname!=='/api/weather/v1/forecast'&&u.hostname!=='api.open-meteo.com')return u.protocol==='https:'?route.abort():route.fallback();
@@ -21,7 +21,7 @@ async function setup(page) {
     const dates = Array.from({ length: 70 }, (_, i) => todayISO(new Date(Date.now() + (i - 62) * 864e5)));
     const time = dates.flatMap((d) => Array.from({ length: 24 }, (_, h) => `${d}T${String(h).padStart(2, '0')}:00`));
     const fill = (v) => Array(time.length).fill(v);
-    const out = Array.from({ length: count }, () => ({ daily: { time: dates, precipitation_sum: dates.map((_, i) => i % 4 ? 3 : 12), temperature_2m_mean: Array(70).fill(13), temperature_2m_min: Array(70).fill(8), temperature_2m_max: Array(70).fill(18) }, hourly: { time, soil_moisture_3_to_9cm: fill(.3), soil_temperature_6cm: fill(13), precipitation: fill(0), precipitation_probability: fill(0), weather_code: fill(1), wind_gusts_10m: fill(8), temperature_2m: fill(13) } }));
+    const out = Array.from({ length: count }, () => ({ daily: { time: dates, precipitation_sum: dates.map((_, i) => i % 4 ? 3 : 12), temperature_2m_mean: Array(70).fill(13), temperature_2m_min: Array(70).fill(8), temperature_2m_max: Array(70).fill(18) }, hourly: { time, soil_moisture_3_to_9cm: fill(.3), soil_temperature_6cm: fill(13), precipitation: fill(0), precipitation_probability: fill(0), weather_code: fill(1), wind_gusts_10m: fill(gust), temperature_2m: fill(13) } }));
     return route.fulfill({ json: out });
   });
   await page.addInitScript(() => localStorage.setItem('fungaroli:legal-accepted', '32026-10-16'));
@@ -241,6 +241,18 @@ for(const width of [320,1280]) test(`tracciato e profilo nello stesso riquadro a
   await expect(visual.getByRole('tabpanel',{name:'Profilo',exact:true})).toContainText('mancano quote sufficienti');
   await expect(visual.getByRole('tabpanel',{name:'Profilo',exact:true}).locator('svg')).toHaveCount(0);
   expect(errors).toEqual([]);
+});
+
+test('Quando ha una sola testata, mantiene gli avvisi meteo e aggiunge solo dettagli',async({page})=>{
+ await page.setViewportSize({width:390,height:900});await page.emulateMedia({reducedMotion:'reduce'});
+ const errors=await setup(page,{gust:46});await page.goto('/#/zona/tancia/0');
+ const section=page.locator('#detail details[data-sec="quando"]'),summary=section.locator(':scope > summary');
+ await expect(summary.locator('.essential-summary')).toHaveCount(1);await expect(summary.locator('.plan-k')).toHaveText('Quando');
+ await expect(summary).toContainText('Arriva');await expect(summary).toContainText('46 km/h');await expect(summary).not.toContainText("Meteo dell'uscita");
+ await summary.click();await expect(section).toHaveAttribute('open','');
+ const body=section.locator(':scope > .sec-body');await expect(body).toContainText('raccolta consentita');await expect(body).toContainText('Partenza da');await expect(body).not.toContainText('Arrivo consigliato');await expect(body.locator('.badge.crowd-basso,.badge.crowd-medio,.badge.crowd-alto')).toHaveCount(0);
+ const method=body.locator('.timing-method');await expect(method).not.toHaveAttribute('open','');await method.locator('summary').click();await expect(method).toContainText('Non misuriamo le presenze');await method.locator('summary').click();
+ await section.screenshot({path:'/tmp/fronda-when-accordion.png'});expect(errors).toEqual([]);
 });
 
 test('riepiloghi essenziali negli accordion sul posto, senza voci duplicate o salti',async({page})=>{

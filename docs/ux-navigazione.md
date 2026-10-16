@@ -56,3 +56,5 @@ Se manca una foto del luogo, Piante e Passeggiata usano come ripiego la foto di 
 ### Spunti botanici sulla mappa
 
 La foglia indica spunti botanici disponibili per gli ambienti del percorso; il pannello mostra specie e fase, anche insieme ai funghi. Non si mostrano conteggi «0 spunti» o un indice delle piante. Una sola nota richiusa in legenda spiega copertura parziale, calendari indicativi e differenza dagli avvistamenti confermati. L’assenza di uno spunto non è presentata come assenza della specie. I percorsi rispettano gli stessi interessi e filtri della home.
+
+L’accordion «Quando» ha una sola testata: arrivo consigliato, affollamento e sintesi meteo, con le condizioni avverse visibili anche da chiuso. L’apertura aggiunge partenza, luce e orari di raccolta, ambito delle previsioni ed eventuale alternativa. Metodo e motivi delle stime restano in una nota richiusa; arrivo e badge non vengono ripetuti nel corpo.
