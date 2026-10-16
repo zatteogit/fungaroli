@@ -16,7 +16,7 @@ Ogni elemento del modello porta una di queste etichette. Le uso in modo stretto:
 | **Interpretazione** | Una lettura, mia o del codice, che collega un risultato di letteratura a una scelta del modello. |
 | **Parere** | Un'opinione su cosa conviene fare. |
 
-In sintesi, prima di entrare nel dettaglio: i dati di ingresso (bosco, quote, meteo, strade) sono solidi come fonte. La relazione tra meteo e nascite è sostenuta dalla letteratura solo per *Boletus edulis* in faggeta, e anche lì solo in parte. Quasi tutto il resto è euristica dichiarata.
+In sintesi, prima di entrare nel dettaglio: i dati di ingresso (bosco, quote, meteo, strade) sono solidi come fonte, ma ognuno ha una data e una scala da conoscere. La relazione tra meteo e nascite ha un appoggio in letteratura soprattutto per *Boletus edulis*: una faggeta tedesca (preprint 2025) e abetine di abete bianco sul Monte Amiata (Salerni et al. 2023, effetto dei picchi di caldo). Anche lì l'appoggio è parziale. *B. edulis* non vive solo in faggeta: in una pineta di pino silvestre in Spagna ha fruttificato ogni anno dal 1995 al 2004 (Martínez-Peña et al. 2012). Per i macromiceti nel loro insieme c'è la finestra di 30 giorni dei querceti toscani (Salerni et al. 2002). Quasi tutto il resto è euristica dichiarata.
 
 ## Che cosa calcola
 
@@ -51,7 +51,7 @@ Una conseguenza del prodotto, da tenere a mente: basta un fattore vicino a zero 
 | Sopra questo valore il suolo è pienamente umido | 0,26 m³/m³ | Euristica |
 | Minima che blocca o danneggia i carpofori | −1 °C | Euristica |
 | Massima che secca lettiera e carpofori | 30 °C | Euristica |
-| Calo di temperatura media che conta come shock | 4 °C | Euristica |
+| Calo di temperatura media che conta come shock | 4 °C | Euristica (la fonte trovata osserva circa 5 °C nel suolo, non nell'aria) |
 | Semiampiezza della fascia di quota per leggere il bosco | 150 m | Euristica |
 
 ## I fattori, uno per uno
@@ -70,7 +70,13 @@ Le due grandezze entrano con curve a saturazione:
 pioggia = 0,6 × (1 − e^(−latenza / eref)) + 0,4 × (1 − e^(−cumulata30 / (2 × eref)))
 ```
 
-`eref` è specifico per specie (30 mm per i porcini *edulis* e *pinophilus*, 28 per *aereus*, *aestivalis* e ovolo, 25 per le specie a latenza breve). Più pioggia aumenta sempre il fattore, ma con rendimenti decrescenti.
+`eref` è specifico per specie:
+
+- 30 mm per porcino (*edulis*), porcino rosso (*pinophilus*), finferlo, trombetta dei morti e steccherino dorato;
+- 28 mm per porcino nero (*aereus*), porcino estivo (*aestivalis*) e ovolo buono;
+- 25 mm per mazza di tamburo, chiodino, colombina e pinarolo, che hanno latenze brevi (da 4–5 a 14–15 giorni), e per moretta e agarico violetto, che hanno latenza 7–18 giorni.
+
+Più pioggia aumenta sempre il fattore, ma con rendimenti decrescenti.
 
 **L'innesco.** Pioggia diffusa e debole vale meno di un evento vero. L'app calcola
 
@@ -116,9 +122,11 @@ Con `topt = 13 °C` e `tsd = 3,5 °C` per il porcino: a 13 °C il fattore vale 1
 | Moretta (*T. terreum*) | 9 | 3,5 | Euristica |
 | Agarico violetto (*L. nuda*) | 8 | 3,5 | Euristica |
 
-**La base per il porcino.** Brejon Lamartinière e Hoffman (2025) hanno analizzato dieci anni (2015-2024) di conteggi giornalieri di carpofori di *B. edulis* in una faggeta vicino a Bielefeld, in Germania, con modelli lineari generalizzati misti. Il picco di fruttificazione coincide con una temperatura media di circa 13 °C calcolata sui 20 giorni precedenti. Qui si usa la versione **bioRxiv v2**; al 13 ottobre 2026 la pagina del laboratorio degli autori indica il lavoro **in stampa su Fungal Ecology** (https://thehoffmanlab.com/publications/). Questo aggiornamento non valida il modello dell’app, e riguarda un solo sito di pianura centro-europea. Nella versione 2 (giugno 2026), che sostituisce la prima: ottimo termico di circa 13 °C sulla media dei 20 giorni (13,7 °C nella didascalia della Fig. 4: testo e figura non coincidono); effetto lineare e positivo della pioggia cumulata su 26 giorni (26-32 nei due siti più produttivi), **senza soglia di innesco né soglia superiore**; fruttificazioni concentrate tra 10 e 15 °C e 2-4 mm di pioggia media al giorno nella finestra. L'umidità del suolo non è misurata e lo **shock termico non compare** nel modello. **Conseguenza per l'app**: le soglie di innesco a 8 e 15 mm e il bonus per shock termico non vengono da questo lavoro; restano euristiche di pratica micologica. **Interpretazione**: applicarlo alle faggete del Terminillo o della Laga è un'estrapolazione ragionevole per la specie e l'habitat, meno per il clima (l'Appennino ha estati più calde e secche e un regime di piogge diverso).
+**La base per il porcino.** Brejon Lamartinière e Hoffman (2025) hanno analizzato dieci anni (2015-2024) di conteggi giornalieri di carpofori di *B. edulis* in una faggeta vicino a Bielefeld, in Germania, con modelli lineari generalizzati misti. Il picco di fruttificazione coincide con una temperatura media di circa 13 °C calcolata sui 20 giorni precedenti. Qui si usa la versione **bioRxiv v2**; al 13 ottobre 2026 la pagina del laboratorio degli autori indica il lavoro **in stampa su Fungal Ecology** (https://thehoffmanlab.com/publications/). Questo aggiornamento non valida il modello dell’app, e riguarda un solo sito di pianura centro-europea. Nella versione 2 (giugno 2026), che sostituisce la prima: ottimo termico di circa 13 °C sulla media dei 20 giorni (13,7 °C nella didascalia della Fig. 4: testo e figura non coincidono); effetto lineare e positivo della pioggia cumulata su 26 giorni (26-32 nei due siti più produttivi), **senza soglia di innesco né soglia superiore**; fruttificazioni concentrate tra 10 e 15 °C e 2-4 mm di pioggia media al giorno nella finestra. L'umidità del suolo non è misurata e lo **shock termico non compare** nel modello. **Conseguenza per l'app**: le soglie di innesco a 8 e 15 mm e il bonus per shock termico non vengono da questo lavoro; restano euristiche di pratica micologica (per lo shock vedi la sezione 6). **Interpretazione**: applicarlo alle faggete del Terminillo o della Laga è un'estrapolazione ragionevole per la specie e l'habitat, meno per il clima (l'Appennino ha estati più calde e secche e un regime di piogge diverso).
 
-**Le altre specie.** Gli ottimi termici sono stime coerenti con la stagionalità nota (specie estive e termofile più alte, specie tardive più basse) ma non hanno una fonte puntuale. Sono il primo candidato alla taratura.
+**Il lato freddo, da verificare.** Nello stesso preprint le fruttificazioni di *B. edulis* sono quasi assenti con medie tra 5 e 10 °C. La curva dell'app è simmetrica: con `tsd` 3,5 dà ancora 0,61 a 9,5 °C e 0,36 a 8 °C. Anche Olivier et al. (1997) non osservano fruttificazioni di *B. edulis* con la temperatura del suolo sotto 10 °C, ma è un'altra grandezza. **Interpretazione**: la curva può essere troppo generosa sul lato freddo. È un limite da verificare con le uscite, non un parametro cambiato: il dato viene da un solo sito di pianura.
+
+**Le altre specie.** Gli ottimi termici sono stime coerenti con la stagionalità nota (specie estive e termofile più alte, specie tardive più basse) ma non hanno una fonte puntuale. Per i quattro porcini Olivier et al. (1997) danno solo un ordine qualitativo: porcino nero "relativamente termofilo", porcino estivo più precoce nella stagione, porcino rosso soprattutto montano. È coerente con i valori dell'app, ma non li sostiene come numeri. Sono il primo candidato alla taratura.
 
 ### 3. Umidità del suolo
 
@@ -132,10 +140,20 @@ Sotto 0,10 il fattore resta a 0,15 (non scende a zero), sopra 0,26 vale 1. Se un
 
 | Elemento | Etichetta | Note |
 |---|---|---|
-| Variabile di umidità del suolo | **Dato ufficiale** | È l'uscita di un modello meteorologico, non una misura. Non conosce il suolo reale: una faggeta su arenaria della Laga e un querceto su calcare del Tancia trattengono l'acqua in modo diverso. |
+| Variabile di umidità del suolo | **Dato ufficiale** | È l'uscita di un modello meteorologico, non una misura. Non conosce il suolo reale né il substrato: calcari e flysch trattengono l'acqua in modo diverso (vedi sotto). |
 | Soglie 0,10 / 0,26, esponente 0,6, minimo 0,15 | **Euristica** | Nessuna fonte. Il minimo a 0,15 serve a non annullare l'indice quando il modello di suolo sbaglia. |
 
-**Interpretazione**: questo fattore si sovrappone in parte alla pioggia. Serve soprattutto a cogliere i casi in cui la pioggia è caduta ma il suolo si è già asciugato per caldo o vento.
+**Da dove viene il dato.** L'app non sceglie un modello: Open-Meteo usa la combinazione predefinita (*best match*). In una verifica del 15 ottobre 2026 a Vallonina lo strato 3–9 cm veniva dal modello tedesco DWD ICON: ICON-EU (celle di circa 7 km) fino a circa 5 giorni di previsione, poi ICON globale (circa 11 km). Gli altri modelli interrogati non davano questa variabile. Nel modello ICON questo è uno strato di suolo minerale: ogni cella ha una sola classe di tessitura, dalla sabbia all'argilla, presa dalla carta mondiale dei suoli FAO e uguale a tutte le profondità. Non c'è uno strato di lettiera, cioè di foglie a terra. Una volta al giorno un'analisi corregge l'umidità del suolo per migliorare la previsione della temperatura a 2 m. **Dato ufficiale** (documentazione Open-Meteo e manuale del modello ICON).
+
+Open-Meteo annuncia che dopo il 30 novembre 2026 i modelli ICON useranno le griglie native: celle e serie possono cambiare. Va annotato per i confronti con le previsioni salvate.
+
+**Il vento.** L'indice non ha un fattore vento. Vento, sole e aria secca agiscono solo attraverso l'evaporazione e la traspirazione calcolate dal modello di suolo. Per esempio, a Vallonina dopo circa 45 mm di pioggia (6–12 ottobre 2026) lo strato 3–9 cm del modello è sceso da 0,225 a 0,190 in circa 42 ore di vento (13–14 ottobre): un calo graduale. Non ho trovato studi che misurino un effetto del vento sulla fruttificazione, quindi l'app non aggiunge penalità per il vento.
+
+**Le soglie sono uguali, le celle no.** Le soglie 0,10 e 0,26 valgono per tutte le zone, ma ogni cella ha una sua classe di suolo e quindi un suo intervallo. Tra il 3 e il 15 ottobre 2026, a 3–9 cm: Tancia (850 m) da 0,149 a 0,367; Laga (1350 m) da 0,100 a 0,235; Cicolano (900 m) da 0,110 a 0,310; Vallonina (1450 m) da 0,104 a 0,266. **Interpretazione**: con le stesse soglie il fattore suolo del Tancia difficilmente scende sotto 0,5, mentre quello della Laga arriva a fatica sopra 0,9. La differenza dipende dalla classe di suolo della cella, non dalla geologia reale.
+
+**Il substrato.** Secondo la Carta Geologica d'Italia 1:100.000 (ISPRA), al centro delle zone non ci sono rocce vulcaniche come i tufi del Viterbese o dei Castelli Romani. Il contrasto vero è tra rocce carbonatiche, cioè calcari e dolomie (Vallonina, Leonessa, Poggio Bustone e Cantalice, Tancia, Antrodoco, Pian de' Rosce, Cinque Confini, Valle di Malito, Rascino), e rocce arenacee o marnose come i flysch (Laga, Cittareale, Domo, Cicolano, Pescorocchiano, Monte San Giovanni in Sabina). Dentro ogni cerchio le rocce possono essere miste. Non ho trovato studi che diano un peso numerico al substrato nella risposta dei funghi alla pioggia: resta un limite dichiarato, senza fattore nell'indice.
+
+**Interpretazione**: questo fattore si sovrappone in parte alla pioggia. Serve soprattutto a cogliere i casi in cui la pioggia è caduta ma il suolo del modello si è già asciugato per caldo o vento.
 
 ### 4. Gelo
 
@@ -151,21 +169,33 @@ Se la massima di uno dei 3 giorni precedenti (da *d − 3* a *d − 1*) supera 3
 
 ### 6. Shock termico
 
-L'app cerca, tra 14 e 4 giorni prima di *d*, un giorno *j* in cui la media dei 3 giorni successivi è più bassa di almeno 4 °C rispetto alla media dei 3 giorni precedenti. Se lo trova applica un bonus:
+L'app cerca, tra 14 e 4 giorni prima di *d*, un giorno *j* in cui la temperatura media dell'aria dei 3 giorni successivi è più bassa di almeno 4 °C rispetto alla media dei 3 giorni precedenti. Se lo trova applica un bonus:
 
 ```
 shock = 1 + 0,075 × peso_shock      (peso_shock predefinito 2, quindi ×1,15)
 ```
 
-**Etichetta: Euristica** da pratica micologica. L'idea che un calo brusco di temperatura dopo la pioggia "sblocchi" le nascite è molto diffusa tra i cercatori e nei siti di previsione, ma non ho trovato studi che la quantifichino.
+Il chiodino ha peso_shock 3, quindi bonus ×1,225. Le altre 13 specie hanno il peso predefinito.
 
-Il chiodino ha peso_shock 3, quindi bonus ×1,225. Questo valore è un’euristica da sottoporre a confronto con una variante senza shock.
+**Etichetta: Euristica** per il bonus, con un appoggio preliminare per l'idea. Che un calo brusco di temperatura dopo la pioggia "sblocchi" le nascite è un'idea molto diffusa tra i cercatori e nei siti di previsione. L'unica osservazione di campo sui porcini che ho trovato a sostegno di questa idea è di Olivier, Guinberteau, Rondet e Mamoun (1997). Su circa 50 parcelle di porcini nella Francia sud-occidentale e occidentale (Aquitania, Midi-Pirenei, Limosino, Poitou-Charentes), con termometri nel suolo e nell'aria, riportano che:
+
+- serve una pioggia forte, oltre 50 mm in dieci giorni, che tenga umido il suolo;
+- le nascite partono di solito dopo un calo di circa 5 °C della temperatura del suolo nei primi 10 cm, che dura in tutto circa 20 ore in 3–5 notti;
+- il calo arriva in genere durante o dopo la pioggia;
+- i primi carpofori compaiono dopo 6–15 giorni (6–10 con temperature sopra 15 °C, 8–15 sotto);
+- un nuovo calo di almeno 3 °C durante la buttata la ferma;
+- da giugno a metà agosto, per porcino nero e porcino estivo, lo shock sembra contare poco e conta soprattutto l'acqua;
+- per i pinaroli (*Suillus*) non serve un vero shock termico.
+
+Gli autori presentano questi dati come una base da affinare: sono osservazioni preliminari, senza analisi statistica, in un clima diverso da quello dell'Appennino. Il preprint di Brejon Lamartinière e Hoffman non considera lo shock: non lo conferma e non lo smentisce.
+
+**Cosa fa l'app rispetto a questa fonte.** Usa la temperatura dell'aria, non quella del suolo, e un calo di 4 °C. Non chiede che ci sia stata pioggia. Applica il bonus a tutte le 14 specie (più forte al chiodino), anche in estate e anche ai pinaroli, e lo applica anche a un calo che, secondo la fonte, fermerebbe una buttata già partita. **Interpretazione**: la finestra di 4–14 giorni è vicina ai tempi osservati, ma il resto non segue la fonte. Il moltiplicatore ×1,15 (×1,225 per il chiodino) resta senza fonte. Le previsioni salvate conservano 31 giorni di meteo per fascia e i parametri del modello: una variante senza shock si può ricalcolare sulle uscite del Taccuino e confrontare con quella attuale.
 
 ### 7. Habitat: la Carta Forestale campionata per fascia di quota
 
 Questo è il fattore più solido come dato e il più originale come costruzione.
 
-**Il dato.** Per ogni zona la preparazione dei dati scarica i poligoni della *Carta Forestale su base tipologica* della Regione Lazio (servizio WFS del geoportale regionale) dentro un cerchio attorno al centro della zona, con il raggio della zona. Poi posa una griglia regolare di 21 × 21 punti sul quadrato che contiene il cerchio e tiene i punti che cadono nel cerchio (tra 313 e 317 per zona nei dati attuali). Per ogni punto registra la quota (Open-Meteo Elevation API, DEM Copernicus GLO-90 a 90 m) e la categoria forestale del poligono che lo contiene, oppure "non bosco".
+**Il dato.** Per ogni zona la preparazione dei dati scarica i poligoni della *Carta Forestale su base tipologica* della Regione Lazio (servizio WFS del geoportale regionale; descrive il bosco del 2005–2007) dentro un cerchio attorno al centro della zona, con il raggio della zona. Poi posa una griglia regolare di 21 × 21 punti sul quadrato che contiene il cerchio e tiene i punti che cadono nel cerchio (tra 313 e 317 per zona nei dati attuali). Per ogni punto registra la quota (Open-Meteo Elevation API, DEM Copernicus GLO-90 a 90 m) e la categoria forestale del poligono che lo contiene, oppure "non bosco".
 
 **Il calcolo.** Per una fascia di quota (per esempio 1200 m) l'app prende i punti con quota entro ±150 m (1050-1350 m), calcola la frazione di ciascuna categoria e la pesa con l'affinità della specie:
 
@@ -180,9 +210,10 @@ Il 45% di bosco pienamente idoneo nella fascia basta per un habitat "pieno".
 
 | Elemento | Etichetta | Note |
 |---|---|---|
-| Poligoni e categorie forestali | **Dato ufficiale** | Regione Lazio. Derivata dalla carta delle formazioni naturali e seminaturali con approfondimento al IV e V livello Corine Land Cover (metadati del dataset). |
+| Poligoni e categorie forestali | **Dato ufficiale** | Regione Lazio. Derivata dalla carta delle formazioni naturali e seminaturali con approfondimento al IV e V livello Corine Land Cover (metadati del dataset). Fotointerpretazione di immagini aeree del 2005–2007 e satellitari del 2005–2006, collaudo finale nel febbraio 2011: tagli, incendi e cambi successivi non si vedono. Scala nominale 1:10.000 (tavole di stampa 1:25.000), unità minima 0,5 ettari. |
+| Ceduo o fustaia | **Dato ufficiale**, non usato | Ogni poligono ha anche la struttura del bosco (campo `strutt`: ceduo, fustaia o struttura composita) e il grado di copertura delle chiome. L'app oggi non li usa. Nei cerchi delle zone le faggete sono quasi tutte fustaie (96%), cerrete e querceti di roverella quasi tutti cedui (calcolo sui dati del WFS, ottobre 2026). Non c'è un dato sull'età o sull'anno del taglio. |
 | Quote dei punti | **Dato ufficiale** | Copernicus GLO-90 è un modello di superficie (include la chioma degli alberi), a 90 m di risoluzione. In un bosco d'alto fusto la quota può risultare qualche metro più alta del suolo; su un campionamento per fasce di 300 m l'errore è trascurabile. |
-| Affinità specie-bosco | **Euristica** | Dalla manualistica micologica e dal documento di partenza. Sono plausibili come ordine (il porcino ama la faggeta, i pinaroli solo i pini) ma i valori intermedi sono scelte. |
+| Affinità specie-bosco | **Euristica** | Dalla manualistica micologica e dal documento di partenza. Sono plausibili come ordine (il porcino ama la faggeta, i pinaroli solo i pini) ma i valori intermedi sono scelte. Per i quattro porcini Olivier et al. (1997) confermano l'ordine solo a parole: porcino sotto latifoglie e conifere, in pianura e in media montagna; porcino nero ed estivo soprattutto sotto querce e castagni; porcino rosso sotto conifere, a volte sotto faggio. |
 | Fascia ±150 m, soglia 45% | **Euristica** | |
 
 **Perché per fascia di quota e non per area.** Una zona di montagna mescola boschi molto diversi: a Poggio Bustone la roverella domina in basso e la faggeta sopra i 1000 m. Una composizione media della zona direbbe "un po' di tutto"; il campionamento per quota dice quale bosco trovi alla quota a cui pensi di andare. **Parere**: è la scelta che rende l'app utile sul campo, più dell'accuratezza dei parametri meteo.
@@ -218,15 +249,16 @@ La cache conserva il timestamp originale. Dati biologici più vecchi di 24 ore n
 
 ## Il meteo dell'uscita
 
-L'indice usa il meteo **passato** (che fa nascere i funghi). Separatamente l'app legge le **previsioni orarie** Open-Meteo per la mattina dell'uscita, alla quota centrale di ogni zona, da un'ora prima dell'alba alle 13: pioggia, probabilità di pioggia, temporali, neve, nebbia (codici WMO), raffiche e temperatura.
+L'indice usa il meteo **passato** (che fa nascere i funghi). Separatamente l'app legge le **previsioni orarie** Open-Meteo per la mattina dell'uscita, alla quota centrale di ogni zona, dall’ora intera di apertura della raccolta (un’ora prima del sorgere del sole) alle 13: pioggia, probabilità di pioggia, temporali, neve, nebbia (codici WMO), raffiche e temperatura. Pioggia, probabilità e raffiche orarie di Open-Meteo si riferiscono all’ora precedente: la finestra effettiva comincia quindi un’ora prima. Con il sorgere del sole alle 7:16, per esempio, pioggia e raffiche vengono lette dalle 5 alle 13.
 
 | Livello | Quando | Effetto |
 |---|---|---|
-| tempo buono | nessuna delle condizioni sotto | nessuno |
-| tempo incerto | pioggia da 1 mm, probabilità almeno 50%, raffiche da 40 km/h, nebbia | ordine dei consigli × 0,85 |
+| meteo senza criticità segnalate | nessuna delle condizioni sotto, previsione aggiornata | nessuno |
+| tempo incerto | pioggia da 1 mm nella finestra, probabilità almeno 50%, raffiche da 40 km/h, nebbia per almeno due ore | ordine dei consigli × 0,85 |
 | uscita sconsigliata | temporali, neve, pioggia da 5 mm, raffiche da 60 km/h | ordine dei consigli × 0,55 |
+| meteo non verificabile | previsione mancante, incompleta, senza data o più vecchia di 3 ore; oppure senza criticità ma più vecchia di un’ora | ordine dei consigli × 0,75 |
 
-**Euristica**: soglie scelte per sicurezza e comodità in bosco, non da letteratura. Il livello cambia solo l’ordine dei consigli, non l’indice mostrato. La finestra mattutina alla quota centrale non sostituisce la previsione del percorso e del rientro. Serie incomplete o senza data valida non producono “tempo buono”; oltre tre ore vengono scartate e già dopo un’ora è segnalato l’aggiornamento necessario. Quando una zona ha tempo incerto o sconsigliato, l'app propone un'alternativa nello stesso giorno con tempo migliore e indice almeno il 70% (e non sotto 30): "Puoi andare a…".
+**Euristica**: soglie e pesi scelti per sicurezza e comodità in bosco, non da letteratura. Il livello cambia solo l’ordine dei consigli, non l’indice mostrato. La finestra mattutina alla quota centrale non sostituisce la previsione del percorso e del rientro. Una previsione incompleta o senza data valida non diventa mai «senza criticità». Una previsione con criticità resta in uso fino a tre ore dall’acquisizione; dopo la prima ora porta l’avviso che va aggiornata. Quando il meteo di una zona non è senza criticità, l’app propone un’alternativa nello stesso giorno: una zona senza criticità segnalate, con indice almeno il 70% di quello della prima e non sotto 3,0. Nella scheda compare come «Tempo migliore a …».
 
 ## Come sono state scelte le zone
 
@@ -245,9 +277,9 @@ Colle Rinaldo (Borgo Velino) e i castagneti di Tonnicoda (Petrella Salto), il nu
 
 Questi fattori non entrano nell'indice di fruttificazione. Servono a correggere la classifica in base alle preferenze attive e a dare consigli pratici. **Sono tutti euristiche**: non esistono studi sull'affollamento dei boschi reatini.
 
-### Orari di raccolta e alba
+### Orari di raccolta, sorgere e tramonto del sole
 
-**Fatto (Dato ufficiale e norma)**: la raccolta nel Lazio è vietata da un'ora dopo il tramonto a un'ora prima dell'alba (L.R. 32/1998, art. 9 c.1, testo vigente). L'app calcola alba e tramonto per il centro della zona con le formule NOAA (errore di 1-2 minuti, rifrazione standard di 90,833°), e il test verifica per Rieti il 12 ottobre 2026 alba alle 07:16 e tramonto alle 18:33.
+**Fatto (Dato ufficiale e norma)**: la raccolta nel Lazio è vietata da un'ora dopo il tramonto a un'ora prima del sorgere del sole (L.R. 32/1998, art. 9 c.1, testo vigente: «levata del sole»). L'app calcola sorgere e tramonto per il centro della zona con le formule NOAA (errore di 1-2 minuti, rifrazione standard di 90,833°), e il test verifica per Rieti il 12 ottobre 2026 sorgere alle 07:16 e tramonto alle 18:33.
 
 L'app non tiene conto dell'orizzonte reale: in una valle stretta il sole arriva più tardi, ma la formula usa il sorgere convenzionale del sole a un orizzonte standard (non il crepuscolo astronomico). Non certifica l’illuminazione del sentiero.
 
@@ -268,9 +300,10 @@ folla = notorietà × peso_giorno × (0,45 + 0,55 × passaparola) × (0,6 + 0,4 
 - `notorietà`: da 0,4 (Rascino) a 1 (Vallonina). Euristica locale: Terminillo e Tancia più frequentati per vicinanza a Rieti e Roma.
 - `passaparola`: quanti degli ultimi 7 giorni hanno avuto indice ≥ 45, diviso 4 (massimo 1). Più giorni buoni di fila, più la notizia gira.
 - `buttata appena partita`: indice di oggi ≥ 45 e indice di due giorni prima < 30.
+- `comodità`: quella calcolata da Rieti (vedi sotto), anche con una base personale.
 - Livelli: alto da 0,5, medio da 0,25, basso sotto.
 
-Con la preferenza **Poca gente** (nelle versioni precedenti *Evita la folla*) la priorità in classifica viene moltiplicata per `1 − 0,45 × folla`, con un effetto massimo del 45% sull’ordine; il valore biologico rimane invariato.
+Con la preferenza **Poca gente** la priorità in classifica viene moltiplicata per `1 − 0,45 × folla`, con un effetto massimo del 45% sull’ordine; il valore biologico rimane invariato.
 
 **Etichetta: Euristica** in ogni sua parte. **Interpretazione** da Egli et al. (2006): in uno studio di lungo periodo in due riserve svizzere la raccolta in sé non ha ridotto le raccolte degli anni successivi, mentre il calpestio, in esperimenti precedenti richiamati dallo stesso lavoro, ha avuto effetti negativi sulla produzione di carpofori. La folla quindi conta per quello che trovi tu quel giorno (concorrenza) più che per la salute della fungaia. Non ho potuto leggere il testo integrale, quindi non riporto numeri sul calpestio.
 
@@ -288,21 +321,24 @@ Livelli: comodo da 0,7, medio da 0,45, impegnativo sotto.
 
 Da dove vengono i dati:
 
-- **minuti d'auto e km di strada bianca**: percorso Valhalla (router su dati OpenStreetMap) da Rieti al primo punto di sosta della zona. **Dato ufficiale** nel senso di dato OSM elaborato da un router; i tempi reali in montagna sono spesso più lunghi.
-- **metri a piedi**: per ogni punto campione della Carta Forestale è stata chiesta a Valhalla la strada carrozzabile più vicina. L'app sceglie il punto di bosco adatto alla specie (affinità ≥ 0,6, quota compatibile ±50 m, possibilmente entro ±150 m dalla fascia) che minimizza `distanza + 300 × fondo`. La distanza è **in linea d'aria**, non lungo un sentiero, e non tiene conto del dislivello.
+- **minuti d'auto e km di strada bianca, da Rieti**: percorso Valhalla (router su dati OpenStreetMap) da Rieti al primo punto di sosta della zona. **Dato ufficiale** nel senso di dato OSM elaborato da un router; i tempi reali in montagna sono spesso più lunghi.
+- **minuti d'auto, da una base personale**: li calcola un altro motore, OSRM, sempre su dati OpenStreetMap. I km di strada bianca non sono noti e contano come zero. I due motori danno tempi diversi: in un confronto sugli stessi tragitti, da Rieti alle prime soste, i tempi di un server OSRM calcolati durante la preparazione dei dati erano più brevi di quelli di Valhalla dal 9 al 35%. Se il percorso non è disponibile, la comodità non viene calcolata.
+- **metri a piedi**: per ogni punto campione della Carta Forestale, Valhalla ha indicato l'arco carrozzabile più vicino. Può essere una strada asfaltata, una strada bianca o una pista: Valhalla tratta come percorribili in auto anche le piste di OpenStreetMap senza divieti mappati. Una pista sulla mappa non è per questo aperta alle auto: transito e sosta vanno verificati sul posto. La L.R. Lazio 29/1987, art. 1, vieta di circolare con veicoli a motore fuori dalle strade carrozzabili nelle aree vincolate che elenca, tra cui i boschi; nelle stesse aree il divieto vale anche per sentieri, mulattiere, piste di esbosco segnalate e viali tagliafuoco. L'app sceglie il punto di bosco adatto alla specie (affinità ≥ 0,6, quota compatibile ±50 m, possibilmente entro ±150 m dalla fascia) che minimizza `distanza + 300 × fondo`. La distanza va dal punto campione al punto più vicino su quell'arco ed è **in linea d'aria**, non lungo un sentiero. Non tiene conto del dislivello: sui punti ad almeno 50 m dalla strada la pendenza lungo la linea d'aria è in mediana del 29% (stima sul modello di superficie Copernicus a 30 m, che include la chioma).
+- **fondo**: è il fondo dell'arco più vicino al punto di bosco scelto, non quello del percorso da Rieti.
+- **il tratto che manca**: il punto d'accesso non coincide con la sosta. Il tratto in auto dalla prima sosta al punto d'accesso non entra né nei minuti d'auto né nei km di strada bianca. In mediana è di 2,0 km in linea d'aria, fino a 7,7 km.
 - **pesi e soglie**: **Euristica**.
 
-Con la preferenza **Accesso comodo** (prima *Preferisci accessi comodi*) la priorità in classifica viene moltiplicata per `0,55 + 0,45 × comodità`. Con **Vicino a Rieti** (prima *Pesa la distanza da Rieti*) viene moltiplicato per `1 − 0,3 × min(1, minuti / 120)`.
+Con la preferenza **Accesso comodo** la priorità in classifica viene moltiplicata per `0,55 + 0,45 × comodità`. Con **Vicino alla base** viene moltiplicata per `1 − 0,3 × min(1, minuti / 120)` se parti da Rieti; con una base personale per `1 − 0,3 × min(1, km / 100)`, con i km su strada di OSRM o, se mancano, in linea d'aria.
 
-L'interfaccia, nella sezione "Come funziona l'indice", etichetta la comodità come "dati OSM". I dati di ingresso lo sono, la formula no.
+Nel riepilogo di «Regole e metodo» la comodità ha due etichette: dati OSM per gli ingressi e formula euristica per il calcolo.
 
 ### Orario di arrivo consigliato
 
-- folla alta: arrivare all'apertura legale (alba − 1 h);
-- folla media: arrivare all'alba;
-- folla bassa: alba + 2 h.
+- folla alta: arrivare all'apertura legale (sorgere del sole − 1 h), arrotondata al quarto d'ora successivo;
+- folla media: arrivare al sorgere del sole;
+- folla bassa: sorgere del sole + 2 h.
 
-La partenza suggerita è l'arrivo meno i minuti d'auto meno 10 minuti. **Parere** codificato come euristica: chi arriva per primo trova i funghi nati nella notte.
+All'apertura legale è ancora buio: il crepuscolo civile comincia circa mezz'ora prima del sorgere del sole. Per questo la scheda invita a portare una luce. La partenza suggerita è l'arrivo meno i minuti d'auto dalla base meno 10 minuti, arrotondata al quarto d'ora precedente. **Parere** codificato come euristica: quando sono attese più persone conviene arrivare presto per trovare parcheggio e sentieri meno frequentati; non è una stima dei ritrovamenti.
 
 ## Un esempio numerico
 
@@ -327,8 +363,8 @@ Messi in ordine di importanza, secondo me.
 
 1. **Nessuna validazione locale.** Nessun parametro è stato confrontato con raccolte reali nel Reatino. Gli unici numeri presi da uno studio sul porcino vengono da un preprint su una faggeta tedesca.
 2. **Meteo da modello, non da stazione.** Open-Meteo fornisce dati di modelli meteorologici con correzione statistica per la quota. In montagna i temporali estivi molto locali possono essere sbagliati di decine di millimetri, e il fattore pioggia ne risente subito.
-3. **Un solo punto meteo per zona.** Le tre fasce usano la stessa coordinata (il centro della zona) con quote diverse. Un versante esposto alla pioggia e uno in ombra pluviometrica nello stesso cerchio ricevono gli stessi dati.
-4. **Cosa il modello non vede.** Esposizione e pendenza, età e struttura del bosco, diradamenti, suolo reale, microclima di valle, singole fungaie, pressione di raccolta reale. Salerni et al. (2023) mostrano che la gestione forestale cambia la risposta al caldo: è un esempio concreto di variabile che manca.
+3. **Pochi punti meteo per zona, scelti dal servizio.** La richiesta usa il centro della zona con le tre quote delle fasce. Open-Meteo sceglie la cella del modello anche in base alla quota: le tre fasce possono ricevere celle diverse, a qualche chilometro dal centro e anche fuori dal cerchio della zona. Il 15 ottobre 2026 a Vallonina la fascia dei 1200 m aveva una cella e quelle dei 1450 e 1650 m un'altra, entrambe a circa 5 km dal centro; per l'8 ottobre davano 19,2 e 6,3 mm di pioggia. Le fasce possono quindi avere pioggia e suolo diversi, ma non per questo rappresentano i versanti: un versante esposto alla pioggia e uno in ombra pluviometrica nello stesso cerchio non vengono distinti.
+4. **Cosa il modello non vede.** Esposizione e pendenza, età e struttura del bosco (la Carta distingue ceduo e fustaia, ma l'app non usa questo campo e il rilievo è del 2005–2007), diradamenti, substrato e suolo reale, microclima di valle, singole fungaie, pressione di raccolta reale. Salerni et al. (2023) mostrano che la gestione forestale cambia la risposta al caldo: è un esempio concreto di variabile che manca. Per l'esposizione ci sono studi su pinete di pino silvestre dei Pirenei: Bonet et al. (2008) trovano più funghi con quota maggiore e versanti a nord e meno con pendenze forti; Bonet et al. (2010) indicano pendenza, quota ed esposizione tra i fattori importanti. I loro coefficienti non sono trasferibili alle faggete e ai querceti dell'Appennino.
 5. **Specie diverse dal porcino.** Ottimi termici, latenze e affinità sono euristiche. Per ovolo, finferlo, chiodino e le specie di pineta anche la struttura comune va confrontata con risposte specifiche per specie e gruppo trofico.
 6. **Stagionalità rigida.** I pesi mensili non si adattano agli anni anomali né alla tendenza documentata verso stagioni più lunghe.
 7. **Indice relativo, non quantità.** 7,0 non vuol dire "il doppio dei funghi di 3,5". Vuol dire "condizioni più vicine all'ottimo".
@@ -355,11 +391,18 @@ La futura taratura richiede riferimenti semplici (calendario e habitat; pioggia 
 Studi peer-reviewed, verificati (ho controllato almeno titolo, autori, rivista e abstract):
 
 - Boddy L., Büntgen U., Egli S., Gange A.C., Heegaard E., Kirk P.M., Mohammad A., Kauserud H. (2014). *Climate variation effects on fungal fruiting*. Fungal Ecology 10: 20-33. https://doi.org/10.1016/j.funeco.2013.10.006
+- Bonet J.A., Pukkala T., Fischer C.R., Palahí M., Martínez de Aragón J., Colinas C. (2008). *Empirical models for predicting the production of wild mushrooms in Scots pine (Pinus sylvestris L.) forests in the Central Pyrenees*. Annals of Forest Science 65(2): 206. https://doi.org/10.1051/forest:2007089 (citazione verificata su Crossref; il risultato su quota, esposizione e pendenza viene dalla lettura del testo nella verifica del 15/10/2026.)
+- Bonet J.A., Palahí M., Colinas C., Pukkala T., Fischer C.R., Miina J., Martínez de Aragón J. (2010). *Modelling the production and species richness of wild mushrooms in pine forests of the Central Pyrenees in northeastern Spain*. Canadian Journal of Forest Research 40(2): 347-356. https://doi.org/10.1139/X09-198
 - Büntgen U., Peter M., Kauserud H., Egli S. (2013). *Unraveling environmental drivers of a recent increase in Swiss fungi fruiting*. Global Change Biology 19(9): 2785-2794. https://boris.unibe.ch/49641
 - Egli S., Peter M., Buser C., Stahel W., Ayer F. (2006). *Mushroom picking does not impair future harvests: results of a long-term study in Switzerland*. Biological Conservation 129: 271-276. (Verificati citazione e conclusione principale tramite fonti secondarie e il titolo; il testo integrale non era raggiungibile.)
 - Kauserud H., Heegaard E., Büntgen U. et al. (2012). *Warming-induced shift in European mushroom fruiting phenology*. PNAS 109(36): 14488-14493. https://doi.org/10.1073/pnas.1200789109
+- Martínez-Peña F., Ágreda T., Águeda B., Ortega-Martínez P., Fernández-Toirán L.M. (2012). *Edible sporocarp production by age class in a Scots pine stand in Northern Spain*. Mycorrhiza 22(3): 167-174. https://doi.org/10.1007/s00572-011-0389-8 (letto l'abstract su PubMed. Il sito è una pineta di pino silvestre che l'abstract colloca nella «zona nord-orientale della penisola iberica»; gli autori sono del centro di ricerca forestale di Valonsadero, a Soria. *B. edulis* ha fruttificato ogni anno dal 1995 al 2004, in media 40 kg/ha l'anno. L'abstract non parla del meteo.)
 - Salerni E., Laganà A., Perini C., Loppi S., De Dominicis V. (2002). *Effects of temperature and rainfall on fruiting of macrofungi in oak forests of the Mediterranean area*. Israel Journal of Plant Sciences 50(3): 189-198. https://doi.org/10.1092/GV8J-VPKL-UV98-WVU1 ; https://usiena-air.unisi.it/handle/11365/3048
 - Salerni E., Paoli L., Perini C. (2023). *Combined impact of forest management and climate change on Boletus edulis productivity: may mycosilviculture mitigate the effects of climate extremes?* Italian Journal of Mycology 52(1): 76-88. https://doi.org/10.6092/issn.2531-7342/16464
+
+Rivista tecnica forestale, testo integrale letto:
+
+- Olivier J.-M., Guinberteau J., Rondet J., Mamoun M. (1997). *Vers l'inoculation contrôlée des cèpes et bolets comestibles ?* Revue forestière française XLIX, numero speciale: 222-234. https://doi.org/10.4267/2042/5671 ; testo su HAL (hal-03443958): https://hal.science/hal-03443958 (letto il 16/10/2026). Osservazioni preliminari su una rete di parcelle, senza analisi statistica.
 
 Versione bibliografica usata dal modello:
 
@@ -368,30 +411,36 @@ Versione bibliografica usata dal modello:
 Dati e servizi:
 
 - Regione Lazio. *Carta Forestale su base tipologica*, WFS/WMS `geonode:tipi_forestali2`. https://geoportale.regione.lazio.it ; https://dati.lazio.it/dataset/carta-forestale-su-base-tipologica-della-regione-lazio
-- Open-Meteo. Forecast API (https://open-meteo.com/en/docs) ed Elevation API, basata su Copernicus DEM GLO-90 (https://open-meteo.com/en/docs/elevation-api). Dati CC BY 4.0.
+- Regione Lazio. *Informazioni tecniche e metadatazione sulla Carta forestale* (date del rilievo, scala, unità minima, attributi struttura e copertura). https://geoportale.regione.lazio.it/api/v2/assets/94/link
+- Open-Meteo. Forecast API (https://open-meteo.com/en/docs), pagina dei modelli DWD ICON (https://open-meteo.com/en/docs/dwd-api) ed Elevation API, basata su Copernicus DEM GLO-90 (https://open-meteo.com/en/docs/elevation-api). Dati CC BY 4.0.
+- DWD. *ICON Database Reference* (strati e classi di suolo del modello ICON). https://www.dwd.de/DWD/forschung/nwv/fepub/icon_database_main.pdf
+- ISPRA. *Carta Geologica d'Italia 1:100.000*, servizio di consultazione (interrogato il 15/10/2026). https://sinacloud.isprambiente.it/arcgisgeo/rest/services/geo/SGI_ISPRA_geologia100K/MapServer
 - Valhalla su server FOSSGIS (`valhalla1.openstreetmap.de`), dati OpenStreetMap (ODbL).
+- OSRM su server FOSSGIS (`routing.openstreetmap.de`), dati OpenStreetMap (ODbL), per i percorsi da una base personale.
 - NOAA Global Monitoring Laboratory, *General Solar Position Calculations* (formule usate per alba e tramonto).
 
 Norma:
 
 - L.R. Lazio 5 agosto 1998, n. 32 e successive modifiche, testo coordinato vigente (Consiglio regionale del Lazio). https://www.consiglio.regione.lazio.it/consiglio-regionale/?vw=leggiregionalidettaglio&id=8275&sv=vigente
+- L.R. Lazio 30 marzo 1987, n. 29, *Disciplina della circolazione fuoristrada dei veicoli a motore*, art. 1, testo vigente (Consiglio regionale del Lazio). https://www.consiglio.regione.lazio.it/?vw=leggiregionalidettaglio&id=8794&sv=vigente
 
 Fonti che ho cercato ma non ho potuto verificare nei contenuti, e che quindi non uso a sostegno di nessun parametro:
 
 - Martínez de Aragón J., Bonet J.A., Fischer C.R., Colinas C. (2007). *Productivity of ectomycorrhizal and selected edible saprotrophic fungi in pine forests of the pre-Pyrenees mountains, Spain*. Forest Ecology and Management 252: 239-256. Citazione confermata, abstract non letto.
-- Martínez-Peña F., Ágreda T., Águeda B., Ortega-Martínez P., Fernández-Toirán L.M. (2012). *Edible sporocarp production by age class in a Scots pine stand in Northern Spain*. Mycorrhiza 22(3): 167-174. Studio su Pinar Grande (Soria); citazione confermata, risultati non letti.
 
 ## Per chi sviluppa
 
 Questa sezione non compare nella pagina «Come funziona l'indice» dell'app: il renderer in `js/science.js` si ferma a questo titolo. Qui stanno i riferimenti al codice tolti dal testo per gli utenti.
 
-- I valori citati sono quelli di `js/model.js`, `js/species.js`, `js/human.js` e `js/app.js`. Se cambiate un parametro nel codice, questo documento va aggiornato.
+- I valori citati sono quelli di `js/model.js`, `js/species.js`, `js/human.js`, `js/outing.js` e `js/app.js`. Se cambiate un parametro nel codice, questo documento va aggiornato.
 - Fasce di quota delle zone: `data/zones.json`, campo `bands`. Notorietà: campo `popularity` nello stesso file. Zone proposte solo dai dati: `proposed_by: "dati"`.
 - Parametri globali: `PARAMS` in `js/model.js` — `r30Days` (30 giorni), `tDays` (20), `triggerMm` (8 mm), `moistDry` (0,10), `moistWet` (0,26), `frostC` (−1 °C), `heatC` (30 °C), `shockDropC` (4 °C), `bandHalfWidth` (150 m).
 - Specie che tollerano il gelo: flag `frostTolerant`. Peso dello shock: `shockWeight` (predefinito 2; chiodino 3). Quote della specie: `elev`. Affinità per categoria forestale: `js/species.js`. La vecchia percentuale rimossa si chiamava `confidence`.
 - Il README descrive lo shock termico come "pratica micologica, non verificata".
 - Habitat: script `tools/build_habitat.py`, servizio WFS `geonode:tipi_forestali2`, raggio della zona `radius_m`. Accessi: `data/access.json`.
 - Scelta delle zone: `inbox/zone-candidate.md` (testate locali) e `tools/scan_province.py` (scanner).
-- Meteo dell'uscita: `js/outing.js`. Fattore umano: commento in testa a `js/human.js`; peso del giorno `dayFactor`; alba e tramonto in `sunTimes`.
-- Open-Meteo: la correzione per la quota usa il parametro `elevation`.
+- Meteo dell'uscita: `js/outing.js`, livelli in `OUTING_LABEL`, pesi in `OUTING_RANK`. Fattore umano: commento in testa a `js/human.js`; peso del giorno `dayFactor`; alba e tramonto in `sunTimes`; arrivo in `timingAdvice`.
+- Comodità e preferenza «Vicino alla base»: `compute()` e `proximityMultiplier()` in `js/app.js`; percorsi da una base personale in `js/base-location.js` e `worker/travel-provider.js` (OSRM).
+- Open-Meteo: il parametro `elevation` serve alla correzione statistica per la quota e, con `cell_selection=land` predefinito, sceglie anche la cella del modello. Il profilo `growth` di `worker/weather-provider.js` non passa `models`, quindi vale *best match*.
+- Shock termico: la temperatura del suolo a 6 cm (`soilt`) è già scaricata e salvata nelle previsioni datate (`captureForecast` in `js/app.js`), ma il modello non la usa.
 - Lettura del preprint Brejon Lamartinière e Hoffman: note in `inbox/README.md`.
