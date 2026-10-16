@@ -20602,5 +20602,95 @@
   "fase": "giovane",
   "modello": "image_gen (identificatore tecnico non esposto)",
   "prompt": "Create transparent 1254x1254 PNG 3x3 icon sheet. Exactly 9 isolated flat mushroom icons, brown dark continuous outer outlines, simple few colors, NO text/grid/shadows. Columns: side cap only, circular underside gills with central stem stub, whole mushroom. Each cell centered with 15% empty margins, max icon dimension 290 px. Match attached approved references precisely in colors, drawing language, scale, stem and cap identity; only alter stage features. ROW 1 Agaricus campestris YOUNG: white ivory smooth hemispherical rounded cap, margin approaching stem, pink gills, stem as reference with only tiny fragile ring. ROW 2 campestris ADULT: white smooth broadly convex almost flat cap, very dark brown gills shading near black, ring almost disappeared. ROW 3 Agaricus arvensis YOUNG from SECOND reference: cream cap with same pale tan small marks, almost spherical hemisphere, pale pink gills; preserve its hanging ring and rounded stem base. One row per stage. Cap only drawings must show correct dome outline. Underside rim preserves cap color.\n"
+},
+{
+  "file": "incoming/icone/fasi-31.png",
+  "tipo": "illustrazione",
+  "soggetto": "agaricus-arvensis",
+  "tessera": "cappello",
+  "cella": 0,
+  "fase": "adulto",
+  "modello": "image_gen (identificatore tecnico non esposto)",
+  "prompt": "Transparent 1254x1254 PNG, 3x3 sheet exactly 9 flat mushroom icons. Use approved references: first Agaricus arvensis cream with tiny tan markings and hanging ring; second Agaricus bisporus brown smooth cap and hanging ring. Columns side cap only / circular underside radial gills central stem stub / whole mushroom. All dark brown continuous outlines, few solid colors, NO texture, text, shadows, grid. Each centered with 15% margins. ROW1 arvensis ADULT: cap fully opened nearly FLAT, cream and same tan marks, brown gills, preserve stem ring. ROW2 bisporus YOUNG: strongly HEMISPHERICAL rounded brown cap, pink gills, reference ring stem. ROW3 bisporus ADULT: FLAT opened brown cap, chocolate brown gills, same ring stem. Preserve exact base cap colors and stem identity. Maximum icon size 290 px in 418px cell. Underside outer rim same cap color as species.\n"
+},
+{
+  "file": "incoming/icone/fasi-31.png",
+  "tipo": "illustrazione",
+  "soggetto": "agaricus-arvensis",
+  "tessera": "sotto",
+  "cella": 1,
+  "fase": "adulto",
+  "modello": "image_gen (identificatore tecnico non esposto)",
+  "prompt": "Transparent 1254x1254 PNG, 3x3 sheet exactly 9 flat mushroom icons. Use approved references: first Agaricus arvensis cream with tiny tan markings and hanging ring; second Agaricus bisporus brown smooth cap and hanging ring. Columns side cap only / circular underside radial gills central stem stub / whole mushroom. All dark brown continuous outlines, few solid colors, NO texture, text, shadows, grid. Each centered with 15% margins. ROW1 arvensis ADULT: cap fully opened nearly FLAT, cream and same tan marks, brown gills, preserve stem ring. ROW2 bisporus YOUNG: strongly HEMISPHERICAL rounded brown cap, pink gills, reference ring stem. ROW3 bisporus ADULT: FLAT opened brown cap, chocolate brown gills, same ring stem. Preserve exact base cap colors and stem identity. Maximum icon size 290 px in 418px cell. Underside outer rim same cap color as species.\n"
+},
+{
+  "file": "incoming/icone/fasi-31.png",
+  "tipo": "illustrazione",
+  "soggetto": "agaricus-arvensis",
+  "tessera": "gambo",
+  "cella": 2,
+  "fase": "adulto",
+  "modello": "image_gen (identificatore tecnico non esposto)",
+  "prompt": "Transparent 1254x1254 PNG, 3x3 sheet exactly 9 flat mushroom icons. Use approved references: first Agaricus arvensis cream with tiny tan markings and hanging ring; second Agaricus bisporus brown smooth cap and hanging ring. Columns side cap only / circular underside radial gills central stem stub / whole mushroom. All dark brown continuous outlines, few solid colors, NO texture, text, shadows, grid. Each centered with 15% margins. ROW1 arvensis ADULT: cap fully opened nearly FLAT, cream and same tan marks, brown gills, preserve stem ring. ROW2 bisporus YOUNG: strongly HEMISPHERICAL rounded brown cap, pink gills, reference ring stem. ROW3 bisporus ADULT: FLAT opened brown cap, chocolate brown gills, same ring stem. Preserve exact base cap colors and stem identity. Maximum icon size 290 px in 418px cell. Underside outer rim same cap color as species.\n"
+},
+{
+  "file": "incoming/icone/fasi-31.png",
+  "tipo": "illustrazione",
+  "soggetto": "agaricus-bisporus",
+  "tessera": "cappello",
+  "cella": 3,
+  "fase": "giovane",
+  "modello": "image_gen (identificatore tecnico non esposto)",
+  "prompt": "Transparent 1254x1254 PNG, 3x3 sheet exactly 9 flat mushroom icons. Use approved references: first Agaricus arvensis cream with tiny tan markings and hanging ring; second Agaricus bisporus brown smooth cap and hanging ring. Columns side cap only / circular underside radial gills central stem stub / whole mushroom. All dark brown continuous outlines, few solid colors, NO texture, text, shadows, grid. Each centered with 15% margins. ROW1 arvensis ADULT: cap fully opened nearly FLAT, cream and same tan marks, brown gills, preserve stem ring. ROW2 bisporus YOUNG: strongly HEMISPHERICAL rounded brown cap, pink gills, reference ring stem. ROW3 bisporus ADULT: FLAT opened brown cap, chocolate brown gills, same ring stem. Preserve exact base cap colors and stem identity. Maximum icon size 290 px in 418px cell. Underside outer rim same cap color as species.\n"
+},
+{
+  "file": "incoming/icone/fasi-31.png",
+  "tipo": "illustrazione",
+  "soggetto": "agaricus-bisporus",
+  "tessera": "sotto",
+  "cella": 4,
+  "fase": "giovane",
+  "modello": "image_gen (identificatore tecnico non esposto)",
+  "prompt": "Transparent 1254x1254 PNG, 3x3 sheet exactly 9 flat mushroom icons. Use approved references: first Agaricus arvensis cream with tiny tan markings and hanging ring; second Agaricus bisporus brown smooth cap and hanging ring. Columns side cap only / circular underside radial gills central stem stub / whole mushroom. All dark brown continuous outlines, few solid colors, NO texture, text, shadows, grid. Each centered with 15% margins. ROW1 arvensis ADULT: cap fully opened nearly FLAT, cream and same tan marks, brown gills, preserve stem ring. ROW2 bisporus YOUNG: strongly HEMISPHERICAL rounded brown cap, pink gills, reference ring stem. ROW3 bisporus ADULT: FLAT opened brown cap, chocolate brown gills, same ring stem. Preserve exact base cap colors and stem identity. Maximum icon size 290 px in 418px cell. Underside outer rim same cap color as species.\n"
+},
+{
+  "file": "incoming/icone/fasi-31.png",
+  "tipo": "illustrazione",
+  "soggetto": "agaricus-bisporus",
+  "tessera": "gambo",
+  "cella": 5,
+  "fase": "giovane",
+  "modello": "image_gen (identificatore tecnico non esposto)",
+  "prompt": "Transparent 1254x1254 PNG, 3x3 sheet exactly 9 flat mushroom icons. Use approved references: first Agaricus arvensis cream with tiny tan markings and hanging ring; second Agaricus bisporus brown smooth cap and hanging ring. Columns side cap only / circular underside radial gills central stem stub / whole mushroom. All dark brown continuous outlines, few solid colors, NO texture, text, shadows, grid. Each centered with 15% margins. ROW1 arvensis ADULT: cap fully opened nearly FLAT, cream and same tan marks, brown gills, preserve stem ring. ROW2 bisporus YOUNG: strongly HEMISPHERICAL rounded brown cap, pink gills, reference ring stem. ROW3 bisporus ADULT: FLAT opened brown cap, chocolate brown gills, same ring stem. Preserve exact base cap colors and stem identity. Maximum icon size 290 px in 418px cell. Underside outer rim same cap color as species.\n"
+},
+{
+  "file": "incoming/icone/fasi-31.png",
+  "tipo": "illustrazione",
+  "soggetto": "agaricus-bisporus",
+  "tessera": "cappello",
+  "cella": 6,
+  "fase": "adulto",
+  "modello": "image_gen (identificatore tecnico non esposto)",
+  "prompt": "Transparent 1254x1254 PNG, 3x3 sheet exactly 9 flat mushroom icons. Use approved references: first Agaricus arvensis cream with tiny tan markings and hanging ring; second Agaricus bisporus brown smooth cap and hanging ring. Columns side cap only / circular underside radial gills central stem stub / whole mushroom. All dark brown continuous outlines, few solid colors, NO texture, text, shadows, grid. Each centered with 15% margins. ROW1 arvensis ADULT: cap fully opened nearly FLAT, cream and same tan marks, brown gills, preserve stem ring. ROW2 bisporus YOUNG: strongly HEMISPHERICAL rounded brown cap, pink gills, reference ring stem. ROW3 bisporus ADULT: FLAT opened brown cap, chocolate brown gills, same ring stem. Preserve exact base cap colors and stem identity. Maximum icon size 290 px in 418px cell. Underside outer rim same cap color as species.\n"
+},
+{
+  "file": "incoming/icone/fasi-31.png",
+  "tipo": "illustrazione",
+  "soggetto": "agaricus-bisporus",
+  "tessera": "sotto",
+  "cella": 7,
+  "fase": "adulto",
+  "modello": "image_gen (identificatore tecnico non esposto)",
+  "prompt": "Transparent 1254x1254 PNG, 3x3 sheet exactly 9 flat mushroom icons. Use approved references: first Agaricus arvensis cream with tiny tan markings and hanging ring; second Agaricus bisporus brown smooth cap and hanging ring. Columns side cap only / circular underside radial gills central stem stub / whole mushroom. All dark brown continuous outlines, few solid colors, NO texture, text, shadows, grid. Each centered with 15% margins. ROW1 arvensis ADULT: cap fully opened nearly FLAT, cream and same tan marks, brown gills, preserve stem ring. ROW2 bisporus YOUNG: strongly HEMISPHERICAL rounded brown cap, pink gills, reference ring stem. ROW3 bisporus ADULT: FLAT opened brown cap, chocolate brown gills, same ring stem. Preserve exact base cap colors and stem identity. Maximum icon size 290 px in 418px cell. Underside outer rim same cap color as species.\n"
+},
+{
+  "file": "incoming/icone/fasi-31.png",
+  "tipo": "illustrazione",
+  "soggetto": "agaricus-bisporus",
+  "tessera": "gambo",
+  "cella": 8,
+  "fase": "adulto",
+  "modello": "image_gen (identificatore tecnico non esposto)",
+  "prompt": "Transparent 1254x1254 PNG, 3x3 sheet exactly 9 flat mushroom icons. Use approved references: first Agaricus arvensis cream with tiny tan markings and hanging ring; second Agaricus bisporus brown smooth cap and hanging ring. Columns side cap only / circular underside radial gills central stem stub / whole mushroom. All dark brown continuous outlines, few solid colors, NO texture, text, shadows, grid. Each centered with 15% margins. ROW1 arvensis ADULT: cap fully opened nearly FLAT, cream and same tan marks, brown gills, preserve stem ring. ROW2 bisporus YOUNG: strongly HEMISPHERICAL rounded brown cap, pink gills, reference ring stem. ROW3 bisporus ADULT: FLAT opened brown cap, chocolate brown gills, same ring stem. Preserve exact base cap colors and stem identity. Maximum icon size 290 px in 418px cell. Underside outer rim same cap color as species.\n"
 }
 ]
