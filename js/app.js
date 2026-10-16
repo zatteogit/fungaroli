@@ -779,12 +779,22 @@ function renderOutdoorDetail() {
 function openOutdoorSheet(zid) {
   sheetPoint=null;sheetZone=zid;const z=(weatherZones||zones).find(z=>z.id===zid);if(!z)return;
   const d=outdoorDay(z,state.dayOffset),walk=walkFor(z,d,state.trailId),items=walk?outdoorDiscoveries(z,d,walk):[],sh=$('#map-sheet');
-  sh.innerHTML=`<button type="button" class="sheet-close" aria-label="Chiudi">✕</button><h2>${esc(splitName(z)[0])}</h2><p>${esc(walkBrief(walk))}</p><p>${esc(wxOf(z,d)?.text||'Meteo non disponibile')}</p>${state.target==='piante'?discoveriesHtml(z,d,walk,items):''}${forestOn?forestHere(zid):''}<a class="btn primary" href="${walkHref(z,state.dayOffset,walk?.t)}">Esplora l’uscita</a>`;
+  sh.innerHTML=`<button type="button" class="sheet-close" aria-label="Chiudi">✕</button><h2>${esc(splitName(z)[0])}</h2><p>${esc(walkBrief(walk))}</p><p>${esc(wxOf(z,d)?.text||'Meteo non disponibile')}</p>${hasInterest('piante')?discoveriesHtml(z,d,walk,mapPlants(z,d,walk),{compact:true}):''}${forestOn?forestHere(zid):''}<a class="btn primary" href="${walkHref(z,state.dayOffset,walk?.t)}">Esplora l’uscita</a>`;
   sh.hidden=false;sh.querySelector('.sheet-close').onclick=()=>{sh.hidden=true;sheetZone=null;state.zoneId=null;renderMap();};
   if(state.zoneId!==zid){state.zoneId=zid;renderMap();}
 }
+function mapPlants(z,d,walk) {
+  return hasInterest('piante')?outdoorDiscoveries(z,d||{date:filterDate()},walk).filter(i=>i.kind==='pianta'):[];
+}
+function mapPlantBadge(z,d,walk) {
+  const found=mapPlants(z,d,walk);
+  return found.length?`<span class="map-plant-badge" title="${esc('Da osservare: '+found.map(i=>i.name).join(', '))}">${arIc('leaf')}</span>`:'';
+}
+function mapPlantNote() {
+  return hasInterest('piante')?`<details class="context-note map-plant-note"><summary>Piante: come leggere la mappa</summary><p>Gli spunti collegano specie, ambienti campionati e calendari indicativi. Non sono avvistamenti confermati. La copertura è parziale: puoi incontrare anche altre piante.</p></details>`:'';
+}
 function renderOutdoorMap() {
-  const all=weatherZones||zones,items=all.filter(z=>{const d=outdoorDay(z,state.dayOffset);return matchesInterests(z,d,walkFor(z,d));}).map(z=>{const d=outdoorDay(z,state.dayOffset),walk=walkFor(z,d,z.id===state.zoneId?state.trailId:null),found=walk?outdoorDiscoveries(z,d,walk):[];return {z,walk,found,score:null,color:'var(--link)',selected:z.id===state.zoneId,label:state.target==='piante'?`${found.filter(i=>i.kind==='pianta').length} spunti`:'Sentieri',tooltip:`${z.name} · ${walkBrief(walk)}`};});
+  const all=weatherZones||zones,items=all.filter(z=>{const d=outdoorDay(z,state.dayOffset);return matchesInterests(z,d,walkFor(z,d));}).map(z=>{const d=outdoorDay(z,state.dayOffset),walk=walkFor(z,d,z.id===state.zoneId?state.trailId:null),found=walk?outdoorDiscoveries(z,d,walk):[];return {z,walk,found,score:null,color:'var(--link)',selected:z.id===state.zoneId,label:hasInterest('piante')?'Piante da osservare':'Sentieri',tooltip:`${z.name} · ${walkBrief(walk)}`};});
   if(!hasLeaflet()){renderSvgMap($('#map'),{zones:all,origin,items,onSelect:openOutdoorSheet});return;}
   baseMarker?.remove();baseMarker=null;
   if(customBase())baseMarker=L.marker([origin.lat,origin.lon],{icon:L.divIcon({className:'map-base',html:'<span aria-hidden="true">⌂</span>',iconSize:[32,32],iconAnchor:[16,16]}),title:`Base di partenza: ${origin.name}`}).addTo(map);
@@ -794,9 +804,9 @@ function renderOutdoorMap() {
   for(const it of items){
     const {z,walk,found}=it,g=L.layerGroup().addTo(map);zoneLayers[z.id]=g;
     L.circle([z.lat,z.lon],{radius:z.radius_m,color:cssVar('--link'),weight:it.selected?3:1,fillOpacity:.06,dashArray:'5 5'}).addTo(g).on('click',()=>openOutdoorSheet(z.id));
-    L.marker([z.lat,z.lon],{icon:L.divIcon({className:'',html:`<span class="zone-label"><span class="zone-name">${esc(shortName(z))}</span> · ${walk?esc(it.label):'Nessun sentiero'}</span>`,iconSize:null}),pane:'zoneLabels',title:`${z.name}: ${it.label}`}).addTo(g).on('click',()=>openOutdoorSheet(z.id));
+    L.marker([z.lat,z.lon],{icon:L.divIcon({className:'',html:`<span class="zone-label">${mapPlantBadge(z,outdoorDay(z,state.dayOffset),walk)}<span class="zone-name">${esc(shortName(z))}</span></span>`,iconSize:null}),pane:'zoneLabels',title:[z.name,...found.filter(i=>i.kind==='pianta').map(i=>'Da osservare: '+i.name)].join(' · ')}).addTo(g).on('click',()=>openOutdoorSheet(z.id));
     if(!it.selected&&map.getZoom()<11.5)continue;
-    for(const t of (trails[z.id]?.trails||[]).filter(t=>matchesWalk(t,state))){
+    for(const t of (trails[z.id]?.trails||[]).filter(t=>matchesWalk(t,state)&&matchesInterests(z,outdoorDay(z,state.dayOffset),walkContext(z,t,headsOf(z,t))))){
       for(const line of t.lines||[])L.polyline(line,{color:cssVar('--link'),weight:walk?.t.id===t.id?5:3,opacity:.8}).addTo(g).on('click',()=>{state.trailId=t.id;openOutdoorSheet(z.id);renderMap();}).bindTooltip(esc(trailName(t)));
       for(const h of headsOf(z,t))L.marker([h.lat,h.lon],{icon:L.divIcon({className:'',html:'<span class="map-p">↗</span>',iconSize:[28,28]}),title:`Imbocco: ${trailName(t)}`}).addTo(g).on('click',()=>{location.hash=walkHref(z,state.dayOffset,t);});
     }
@@ -893,7 +903,7 @@ function prepareCalendarFallback(){
  const dates=Array.from({length:70},(_,i)=>todayISO(new Date(Date.now()+(i-62)*864e5)));
  weatherZones??=zones;zones=weatherZones;
  series=Object.fromEntries(zones.map(z=>[z.id,z.bands.map(()=>({dates,todayIndex:62,issuedIndex:62,source:{expired:true,calendarOnly:true},...Object.fromEntries(['p','tmean','tmin','tmax','soilm','soilt'].map(k=>[k,Array(70).fill(null)]))}))]));
- $('#stale').hidden=false;$('#stale').textContent='Meteo non disponibile: consigli botanici basati sul paesaggio e sul calendario della fase. Nessun contributo climatico.';
+ $('#stale').hidden=false;$('#stale').textContent='Meteo non disponibile. Sentieri e spunti botanici restano consultabili.';
 }
 let weatherRevision=0,weatherController=null,weatherBusy=false,weatherPainting=false,deferredWeatherView=false;
 let lastWeatherSnapshot=null,weatherPaintTimer=null;
@@ -1483,12 +1493,12 @@ function discoveriesFor(z,d,walk){
  if(hasInterest('piante'))return outdoorDiscoveries(z,d,walk);
  return outingDiscoveries({zone:z,zoneHabitat:habitat[z.id],trail:walk?.t,trailCategories:trails[z.id]?.sample_categories,seriesByBand:series?.[z.id],date:d?.date||todayISO(new Date(Date.now()+state.dayOffset*864e5)),models:plantModels,flora:plants(),trees:treesData?.trees,observations:state.useBotanicalNotes?botanicalNotes:[]});
 }
-function discoveriesHtml(z,d,walk,items=discoveriesFor(z,d,walk)){
+function discoveriesHtml(z,d,walk,items=discoveriesFor(z,d,walk),{compact=false}={}){
  if(!items.length)return '';
- return `<p class="discovery-intro">Potresti incontrare anche queste specie. ${items[0].scope==='tracciato'?'Ambienti campionati sul tratto del sentiero':'Compatibilità con gli ambienti della zona'}: presenza da verificare.</p><ul class="discovery-grid">${items.map(item=>{
+ return `${compact?'<h3 class="map-discoveries-title">Da osservare</h3>':`<p class="discovery-intro">Potresti incontrare anche queste specie. ${items[0].scope==='tracciato'?'Ambienti campionati sul tratto del sentiero':'Compatibilità con gli ambienti della zona'}: presenza da verificare.</p>`}<ul class="discovery-grid">${items.map(item=>{
   const key=`${z.id}/${item.date}/${item.kind}/${item.id}`;discoveryItems.set(key,item);
   return `<li><a href="${esc(item.href)}" data-discovery="${esc(key)}" data-entity class="discovery-link">${item.kind==='pianta'?plantThumb(item.id,44):treeThumb(item.id,44)}<span><small>${item.kind==='albero'?'Albero':plantRecord(item.id)?.category||'Pianta'}</small><b>${esc(item.name)}</b><small>${esc(item.phase)}</small></span><span aria-hidden="true">›</span></a></li>`;
- }).join('')}</ul>${actRow('#/piante','leaf','Scopri altre piante','Erbe, fiori, frutti e arbusti')}`;
+ }).join('')}</ul>${compact?'':actRow('#/piante','leaf','Scopri altre piante','Erbe, fiori, frutti e arbusti')}`;
 }
 // Sfide: nome, foto e scheda di un albero, una pianta o un fungo (la scheda si apre nel pannello laterale).
 function challengeEntity(kind,id){
@@ -1694,7 +1704,7 @@ function openSheet(zid) {
   const sh = $('#map-sheet');
   if (!z || !d?.best) { sh.hidden = true; return; }
   const sc = adjusted(z, d.score, d);
-  const cv = coverOf(z, d.best.species.id, d);
+  const cv = coverOf(z, d.best.species.id, d),walk=walkFor(z,d,state.trailId);
   sh.innerHTML = `
     <button type="button" class="sheet-close" aria-label="Chiudi">✕</button>
     <a class="sheet-row" href="#/zona/${zid}/${state.dayOffset}">
@@ -1702,6 +1712,7 @@ function openSheet(zid) {
       <span class="sheet-txt"><span class="eyebrow">${esc(dayLabel(state.dayOffset, d.date, true))}</span><b class="sheet-title">${esc(splitName(z)[0])}</b>
         <span class="small">${esc(d.best.species.name)} ~${d.best.band} m · ${esc(travelText(zoneTrip(z)))}${d.crowd ? ` · ${crowdText(d.crowd)}` : ''}</span>${wxOf(z, d) ? `<span class="small wx-line wx-${wxOf(z, d).level}">${wxi(wxOf(z, d))}${esc(wxOf(z, d).text)}</span>` : ''}</span>
     </a>
+    ${hasInterest('piante')?discoveriesHtml(z,d,walk,mapPlants(z,d,walk),{compact:true}):''}
     ${forestOn ? forestHere(zid) : ''}
     <p class="sheet-key small"><span class="key-p">P</span> sosta <span class="key-walk">${IC.walk}</span> qui lasci l'auto <span class="key-trail"></span> sentiero consigliato <span class="muted">· tocca un segno</span></p>
     <a class="btn primary big" href="#/zona/${zid}/${state.dayOffset}">Apri il piano dell'uscita</a>`;
@@ -2094,7 +2105,7 @@ function renderMap(changed=null) {
   const labelPos = {};
   for (const z of zones) {
     const pt = map.latLngToContainerPoint([z.lat, z.lon]);
-    const w = 40 + shortName(z).length * 7;
+    const w = 40 + shortName(z).length * 7 + (hasInterest('piante')?22:0);
     let y = pt.y;
     const hit = (yy) => placed.some((b) => Math.abs(b.x - pt.x) < (b.w + w) / 2 + 4 && Math.abs(b.y - yy) < 26);
     for (let k = 1; hit(y) && k < 8; k++) y = pt.y + (k % 2 ? 1 : -1) * Math.ceil(k / 2) * 26;
@@ -2131,9 +2142,9 @@ function renderMap(changed=null) {
         foot: 'Tocca per aprire la zona' }), { className: 'zone-tt', sticky: true, direction: 'top', offset: [0, -14], opacity: 1 });
     }
     L.marker(labelPos[z.id], {
-      icon: L.divIcon({ className: '', html: `<span class="zone-label${state.zoneId && !selected ? ' zone-label-min' : ''}${selected ? ' zone-label-sel' : ''}"><span class="dot" style="background:${color}"></span> <b class="pc">${formatIndex(s)}</b>${state.zoneId && !selected ? '' : ` <span class="zone-name">${esc(shortName(z))}</span>`}</span>`, iconSize: null }),
-      interactive: false, pane: 'zoneLabels',
-    }).addTo(g);
+      icon: L.divIcon({ className: '', html: `<span class="zone-label${state.zoneId && !selected ? ' zone-label-min' : ''}${selected ? ' zone-label-sel' : ''}">${mapPlantBadge(z,d,walkFor(z,d))}<span class="dot" style="background:${color}"></span> <b class="pc">${formatIndex(s)}</b>${state.zoneId && !selected ? '' : ` <span class="zone-name">${esc(shortName(z))}</span>`}</span>`, iconSize: null }),
+      interactive:hasInterest('piante'),pane:'zoneLabels',title:z.name,
+    }).addTo(g).on('click',()=>openSheet(z.id));
     if (selected && d?.best) {
       const tl = trailsFor(z, d.best.species, d.best.band);
       const topId = tl[0]?.id;
@@ -2199,12 +2210,12 @@ function renderMap(changed=null) {
 }
 
 function renderLegend() {
-  if(state.target!=='funghi'){$('#legend').innerHTML=`<span>${state.target==='piante'?'Ambienti compatibili con le piante selezionate; presenza da verificare. Nessuna densità o probabilità.':'Zone e sentieri mappati, senza indice fungino.'}</span><span>Le linee mostrano i tratti nella zona, non giri completi.</span><div class="wms"${forestOn?'':' hidden'}>${forestLegend()}</div>`;return;}
+  if(state.target!=='funghi'){$('#legend').innerHTML=`<span>${hasInterest('piante')?'Ambienti e piante da osservare.':'Zone e sentieri mappati.'}</span><span>Le linee mostrano i tratti nella zona, non giri completi.</span>${mapPlantNote()}<div class="wms"${forestOn?'':' hidden'}>${forestLegend()}</div>`;return;}
   const items = [...CLASSES].reverse().map((c) => `<span><span class="sw" style="background:var(${mapVar(c.min)})"></span>${c.label}${c.min ? ' ≥' + formatIndex(c.min) : ''}</span>`);
-  $('#legend').innerHTML = (hasInterest('piante')?'<span>Indice dei funghi; piante associate agli ambienti, presenza da verificare.</span>':'') + items.join('') +
+  $('#legend').innerHTML = (hasInterest('piante')?'<span>Indice dei funghi · piante da osservare</span>':'') + items.join('') +
     (hasLeaflet() || !globalThis.FUNGAROLI_DATA ? '' : `<span class="muted">Schema: cerchi = zone, anelli = distanza in linea d’aria da ${esc(currentBase().name)}</span>`) +
     (hasLeaflet() &&state.target==='funghi' ? '<span class="lg-cells"><span class="sw sw-cell"></span>Riquadri campionati da 300–500 m: habitat potenziale, senza verifica di presenza o permesso di raccolta. Avvicinati o apri una zona per vederli.</span>' : '') +
-    `<div class="wms"${forestOn ? '' : ' hidden'}>${forestLegend()}</div>`;
+    mapPlantNote()+`<div class="wms"${forestOn ? '' : ' hidden'}>${forestLegend()}</div>`;
 }
 
 // legenda della Carta Forestale nel nostro carattere: prima i tipi della zona aperta (con la quota), poi quelli delle altre zone

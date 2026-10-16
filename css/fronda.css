@@ -332,3 +332,14 @@ a.src-a:active { opacity: 1; text-decoration-style: solid; }
   .map-top .map-filters [data-p] { padding-inline:5px; gap:4px; font-size:11.5px; }
   .map-top .map-filters [data-p]::before, .map-top .map-filters .pref-icon { width:13px; height:13px; }
 }
+
+.map-plant-badge { display:inline-flex; vertical-align:middle; color:var(--link); margin-right:5px; }
+.map-plant-badge svg { width:16px; height:16px; fill:none; stroke:currentColor; stroke-width:1.8; }
+.map-discoveries-title { font:650 14px var(--font-body); margin:16px 0 8px; }
+#map-sheet .discovery-grid { margin-bottom:16px; }
+.map-plant-note { width:100%; }
+
+/* Botanical previews stay above map controls and scroll within the viewport. */
+#map-sheet { z-index:1100; max-height:min(70svh, calc(100% - 24px)); overflow-y:auto; overscroll-behavior:contain; }
+#map-sheet > p { margin:0; }
+#map-sheet > h2 { padding-right:36px; }

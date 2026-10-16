@@ -23,8 +23,8 @@ test('tre intenti: home, filtri, mappa, dettaglio e memoria coerenti',async({pag
  await filters.locator('[data-pref="shortTrails"]').click();await filters.locator('[data-close]').last().click();
  await page.reload();await expect(page.locator('#active-filters [data-intent="passeggiata"]')).toHaveAttribute('aria-pressed','true');
  await page.locator('#hero .outdoor-hero').click();await expect(page.locator('#detail h1')).toBeVisible();await expect(page.locator('#detail .ring')).toHaveCount(0);
- await page.goto('/#/mappa');await expect(page.locator('#legend')).toContainText('senza indice fungino');
- await page.locator('#map-filters [data-intent="piante"]').click();await page.locator('#map-filters [data-intent="passeggiata"]').click();await expect(page.locator('#legend')).toContainText('presenza da verificare');
+ await page.goto('/#/mappa');await expect(page.locator('#map .pc')).toHaveCount(0);
+ await page.locator('#map-filters [data-intent="piante"]').click();await page.locator('#map-filters [data-intent="passeggiata"]').click();await expect(page.locator('#legend .map-plant-note')).toHaveCount(1);await expect(page.locator('#legend .map-plant-note')).not.toHaveAttribute('open','');
  await page.goto('/#/uscite');await expect(page.locator('#season .outdoor-plant').first()).toBeVisible();
  expect(await page.evaluate(()=>!!(document.querySelector('#hero').compareDocumentPosition(document.querySelector('#season'))&Node.DOCUMENT_POSITION_FOLLOWING))).toBe(true);
  await page.locator('#active-filters [data-more]').click();await expect(page.locator('#species-filter-search')).toBeVisible();await page.keyboard.press('Escape');
