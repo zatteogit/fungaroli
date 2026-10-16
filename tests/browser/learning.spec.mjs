@@ -282,8 +282,8 @@ for(const width of [320,1280]) test(`illustrazioni del glossario, fonti e ingran
   await zoom.click();await expect(page.locator('dialog.lb')).toBeVisible();
   await page.keyboard.press('Escape');await expect(panel).toBeVisible();await expect(zoom).toBeFocused();
   await page.keyboard.press('Escape');await expect(panel).toBeHidden();await expect(keyword).toBeFocused();
-  await page.goto('/#/glossario/imenoforo');await expect(page.locator('#glossary-term-imenoforo .learning-image')).toHaveCount(4);
-  await page.goto('/#/glossario/volva');await expect(page.locator('#glossary-term-volva .learning-diagram img')).toBeVisible();
+  await page.goto('/#/glossario/imenoforo');await expect(page.locator('#glossary-term-imenoforo .learning-image')).toHaveCount(5);
+  await page.goto('/#/glossario/volva');await expect(page.locator('#glossary-term-volva .learning-diagram img')).toHaveCount(2);await expect(page.locator('#glossary-term-volva .learning-diagram img').first()).toHaveAttribute('alt',/volva a sacco, mezza interrata/);await expect(page.locator('#glossary-term-volva figcaption').first()).toContainText('Schema generato');
   expect(errors).toEqual([]);
 });
 

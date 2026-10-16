@@ -45,7 +45,7 @@ for(const width of [390,1280]) test(`sfide: Confronta dà il timbro e le spunte 
   }
   await expect(view.locator('.ch-done')).toContainText('Sfida completata');
   await expect(view.locator('.ch-done')).toContainText(/Risposte giuste: \d su \d/);
-  await expect(view.locator('.ch-done svg.ch-stamp.is-earned')).toBeVisible();
+  await expect(view.locator('.ch-done img.ch-stamp-img')).toBeVisible();await expect(view.locator('.ch-done img.ch-stamp-img')).toHaveAttribute('src',/assets\/stamps\/funghi-sosia\.webp$/);
 
   await page.goto('/#/sfide');
   await expect(view.locator('.ch-stamps-grid li')).toHaveCount(1);
