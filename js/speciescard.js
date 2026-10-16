@@ -67,6 +67,9 @@ function traitsTable(d) {
   return `<dl class="traits">${rows.map(([k, v]) => `<dt>${k}</dt><dd${k === 'Stagione' ? '' : ' data-glossary="Funghi"'}>${linkTrees(v.filter(Boolean).join(' · '))}</dd>`).join('')}</dl>`;
 }
 
+// etichetta del sosia: quella della sua scheda in Riconosci, se dice il motivo (es. «tossica cruda»); la classe resta per i colori
+const toxOf = (l) => TRAITS[taxonKeyByLatin(l.latin)]?.tox_label || l.toxicity;
+
 function lookalikes(d, sid) {
   if (!d.lookalikes?.length) return '';
   const order = { mortale: 0, tossico: 1, 'non commestibile': 2, commestibile: 3 };
@@ -80,7 +83,7 @@ function lookalikes(d, sid) {
     return `<li class="${TOX[l.toxicity] || ''}${tk ? ' look-link' : ''}">
       <span class="look-btn">${m ? `<img data-src="${ASSET(m.file)}" alt="" loading="lazy" decoding="async">` : '<span class="look-ph">senza foto</span>'}
         ${m ? `<button type="button" class="id-zoom" data-look="${esc(key || '')}" aria-label="${esc(l.name || l.latin)}: ingrandisci la foto"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6"/><path d="m20 20-5-5M10.5 8v5M8 10.5h5"/></svg></button>` : ''}</span>
-      <div><div class="look-name"><span class="tox">${esc(l.toxicity)}</span> ${tk && compareHref(sid, tk) ? `<a class="look-open" href="${compareHref(sid, tk)}">${esc(l.name || '')} <i>${esc(l.latin)}</i><span aria-hidden="true"> ›</span></a>` : tk ? `<button type="button" class="look-open" data-taxon="${esc(tk)}">${esc(l.name || '')} <i>${esc(l.latin)}</i><span aria-hidden="true"> ›</span></button>` : `${esc(l.name || '')} <i>${esc(l.latin)}</i>`}</div>
+      <div><div class="look-name"><span class="tox">${esc(toxOf(l))}</span> ${tk && compareHref(sid, tk) ? `<a class="look-open" href="${compareHref(sid, tk)}">${esc(l.name || '')} <i>${esc(l.latin)}</i><span aria-hidden="true"> ›</span></a>` : tk ? `<button type="button" class="look-open" data-taxon="${esc(tk)}">${esc(l.name || '')} <i>${esc(l.latin)}</i><span aria-hidden="true"> ›</span></button>` : `${esc(l.name || '')} <i>${esc(l.latin)}</i>`}</div>
       <div class="look-diff" data-glossary="Funghi">${esc(l.how_to_tell)}</div></div></li>`;
   }).join('')}</ul>`;
 }
@@ -112,6 +115,14 @@ function kitchen(id) {
     ${srcs.length ? `<details class="k-src-list"><summary>Fonti (${srcs.length})</summary>${sourceRows(srcs)}</details>` : ''}
   </section>`;
 }
+
+// Provenienza del modello 3D (data/media.json, model3d.provenance): un fungo vero, un modello da museo o non detto dalla fonte.
+const PROVENANCE = {
+  esemplare: 'Scansione di un fungo vero.',
+  riproduzione: 'Scansione di un modello da museo, non di un fungo raccolto: forma e colori sono quelli del modello.',
+  'non dichiarata': 'La fonte non dice se è un fungo vero o un modello.',
+};
+const provenanceText = (model) => PROVENANCE[model?.provenance] || PROVENANCE['non dichiarata'];
 
 // Modello 3D: Viewer API di Sketchfab per sostituire lo sfondo scelto dall'autore con il fondo dell'app.
 // Il colore pieno e' consentito a tutti; il trasparente richiede un account Pro (docs Viewer API, setBackground).
@@ -210,9 +221,9 @@ export function renderSpeciesDetail(body, id) {
       ${sec('Tutti i caratteri', d.cap ? traitsTable(d) + (d.aka?.length ? `<p class="small"><b>Nomi locali:</b> ${esc(d.aka.join(', '))}</p>` : '') : '')}
       ${sec('Quando si trova', phenology(id))}
       ${model ? sec('Modello 3D', `${EMBED_3D
-        ? `<div class="sp-3d" data-embed="${esc(model.embed)}"><button type="button" class="btn primary">Apri il modello 3D</button><p class="small muted">Si ruota con un dito, si ingrandisce con due. Scansione di un esemplare reale.</p></div>
+        ? `<div class="sp-3d" data-embed="${esc(model.embed)}"><button type="button" class="btn primary">Apri il modello 3D</button><p class="small muted">Si ruota con un dito, si ingrandisce con due. ${esc(provenanceText(model))}</p></div>
            <button type="button" class="btn ghost sp-3d-full" hidden>Schermo intero</button>`
-        : ''}<p class="small muted">${esc(model.name)} · ${esc(model.author)} · ${esc(model.license)} · <a href="${esc(model.page)}" target="_blank" rel="noopener">apri su Sketchfab</a></p>`) : ''}
+        : `<p class="small muted">${esc(provenanceText(model))}</p>`}<p class="small muted">${esc(model.name)} · ${esc(model.author)} · ${esc(model.license)}${model.provenance_note ? ` · ${esc(String(model.provenance_note).replace(/\.\s*$/, ''))}` : ''} · <a href="${esc(model.page)}" target="_blank" rel="noopener">apri su Sketchfab</a></p>`) : ''}
       ${sec('Fonti e crediti delle foto', `${sourceRows(d.sources)}${credits.length ? `<p class="src-h">Fotografie</p>${photoRows(credits)}` : ''}`)}
     </div>
     <p class="small muted sp-foot">${esc(FOOTER || 'Scheda di supporto: non sostituisce il controllo dell\'Ispettorato Micologico ASL. Nel dubbio non si raccoglie e non si mangia.')} <a href="#/info">Emergenza e note legali</a></p>
@@ -238,7 +249,7 @@ export function renderSpeciesDetail(body, id) {
   }).filter((x) => x.ph.length);
   const lookItems = looks.flatMap((x) => x.ph.map((p) => ({
     key: x.key, src: hd(p), alt: x.l.name || x.l.latin,
-    caption: captionHtml({ title: `<span class="tox tox-${esc(x.l.toxicity).replace(/\s/g, '-')}">${esc(x.l.toxicity)}</span> ${esc(x.l.name || '')} <i>${esc(x.l.latin)}</i>`, text: `Differenza: ${esc(x.l.how_to_tell)}`,
+    caption: captionHtml({ title: `<span class="tox tox-${esc(x.l.toxicity).replace(/\s/g, '-')}">${esc(toxOf(x.l))}</span> ${esc(x.l.name || '')} <i>${esc(x.l.latin)}</i>`, text: `Differenza: ${esc(x.l.how_to_tell)}`,
       credit: `${creditText(p)} · <a href="https://www.inaturalist.org/taxa/search?q=${encodeURIComponent(x.key)}" target="_blank" rel="noopener">altre foto</a> · <a href="https://it.wikipedia.org/w/index.php?search=${encodeURIComponent(x.key)}" target="_blank" rel="noopener">Wikipedia</a>` }),
   })));
   body.querySelector('[data-jump-k]')?.addEventListener('click', (e) => body.querySelector(`#${CSS.escape(e.currentTarget.dataset.jumpK)}`)?.closest('.kitchen')?.scrollIntoView({ behavior: 'smooth', block: 'start' }));

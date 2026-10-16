@@ -882,7 +882,7 @@
     },
     "suillus": {
       "raw": "sconsigliato",
-      "raw_why": "Nessuna fonte lo indica come tossico crudo, ma i funghi spontanei non vanno mangiati crudi; inoltre può essere lassativo anche cotto.",
+      "raw_why": "Per S. granulatus l’agenzia sanitaria francese (ANSES) descrive intossicazioni anche dopo la cottura: nessun trattamento noto le esclude. Va sempre cotto a fondo. Può essere lassativo anche cotto.",
       "steps": [
         {
           "text": "Togli la cuticola viscosa del cappello prima di cucinarlo (usa guanti: macchia le dita).",
@@ -943,10 +943,18 @@
         {
           "title": "Scuola Sant'Anna Pisa – La risorsa FUNGO in Alta Valle del Vara, scheda Suillus luteus (p. 214)",
           "url": "https://www.iris.sssup.it/retrieve/dd9e0b31-bbe7-709e-e053-3705fe0a83fd/214_vqr_Funghi.pdf"
+        },
+        {
+          "title": "ANSES – Avis 2014-SA-0256 su Suillus granulatus, Russula olivacea e Armillaria mellea (29 luglio 2015)",
+          "url": "https://www.anses.fr/fr/system/files/ERCA2014sa0256.pdf"
+        },
+        {
+          "title": "ANSES – Avis 2015-SA-0180 sulle varietà commestibili di funghi (4 aprile 2017)",
+          "url": "https://www.anses.fr/system/files/ERCA2015SA0180.pdf"
         }
       ],
-      "notes": "ATS Milano dà la regola a livello di genere (Suillus – pinarello: la cuticola 'devè essere scartata); AUSL Bologna (scheda S. granulatus) dice 'si consiglià e avverte dell'effetto lassativo anche da cotto; Sant'Anna (S. luteus) collega alcune intossicazioni al fungo non decorticato. Per S. collinitus nessuna fonte specifica: applicata la regola di genere. Essiccazione: solo uso tradizionale (Sant'Anna), non una raccomandazione sanitaria; la parte 'dopo aver tolto la cuticolà è una mia deduzione dalla regola principale.",
-      "label": "commestibile senza cuticola"
+      "notes": "ATS Milano dà la regola a livello di genere (Suillus – pinarello: la cuticola 'devè essere scartata); AUSL Bologna (scheda S. granulatus) dice 'si consiglià e avverte dell'effetto lassativo anche da cotto; Sant'Anna (S. luteus) collega alcune intossicazioni al fungo non decorticato. Per S. collinitus nessuna fonte specifica: applicata la regola di genere. Essiccazione: solo uso tradizionale (Sant'Anna), non una raccomandazione sanitaria; la parte 'dopo aver tolto la cuticolà è una mia deduzione dalla regola principale. ANSES (pareri del 2015 e del 2017) descrive per S. granulatus 25 casi di intossicazione in Francia tra il 1999 e il 2015, anche dopo la cottura, e scrive che nessun trattamento noto (cottura prolungata, appertizzazione) elimina il rischio. Le fonti sanitarie italiane citate ammettono il consumo dopo aver tolto la cuticola: le due posizioni divergono. Il dato ANSES riguarda S. granulatus, non S. luteus né S. collinitus.",
+      "label": "con cautela: senza cuticola e ben cotto"
     },
     "nuda": {
       "raw": "mai crudo",

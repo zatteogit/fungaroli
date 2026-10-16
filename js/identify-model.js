@@ -24,6 +24,27 @@ export function retainCandidate(taxon, match) {
 // Il richiamo ai mortali non dipende dai filtri, dalla zona o da una ricerca testuale.
 export const deadlyWarnings = (taxa) => taxa.filter((t) => t.toxicity === 'mortale');
 
+// Indice chiuso degli avvisi di una scheda (field_rules): quanti per tipo, in parole.
+// Si contano gli avvisi, non le specie: un solo avviso può valere per più sosia («amanite mortali»).
+export const ATT_COUNT = {
+  sosia: ['avviso sui sosia', 'avvisi sui sosia'], caratteri: ['carattere da controllare', 'caratteri da controllare'],
+  regole: ['regola di raccolta', 'regole di raccolta'], cottura: ['cautela in cucina', 'cautele in cucina'],
+  tossicita: ['rischio di intossicazione', 'rischi di intossicazione'], ambiente: ['cautela sul raccolto', 'cautele sul raccolto'],
+  altro: ['avviso', 'avvisi'],
+};
+// gruppi nell'ordine di arrivo degli avvisi, poi prima i tipi con avvisi critici e i più numerosi
+export function attentionGroups(rules) {
+  const groups = [];
+  for (const r of rules || []) {
+    const k = ATT_COUNT[r?.kind] ? r.kind : 'altro';
+    let g = groups.find((x) => x.k === k);
+    if (!g) groups.push(g = { k, n: 0, crit: false });
+    g.n++; g.crit ||= r?.severity === 'critico';
+  }
+  groups.sort((a, b) => b.crit - a.crit || b.n - a.n);
+  return groups.map((g) => ({ ...g, text: `${g.n} ${ATT_COUNT[g.k][g.n === 1 ? 0 : 1]}` }));
+}
+
 // --- caratteri e somiglianza tra due funghi ---
 // Pesi e regole di confronto dei caratteri: una sola fonte per Riconosci e per l'ordine dei sosia.
 export const TREE_GROUPS = {
