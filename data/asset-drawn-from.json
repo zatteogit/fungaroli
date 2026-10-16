@@ -1,6 +1,6 @@
 {
  "note": "Dati da cui sono state disegnate le icone dei funghi (stato del 15/10, prima delle correzioni del controllo matrici: le icone in produzione sono state approvate su quei dati). Per tessera: i campi che il disegno mostra. Il test tests/asset-completeness.test.mjs confronta con i dati di oggi e produce l'elenco «da rifare». Dopo aver importato le icone ridisegnate: node tools/asset-report.mjs --snapshot.",
- "generated": "2026-10-15",
+ "generated": "2026-10-16",
  "icons": {
   "aereus-cappello-bruno": {
    "cap_veil": false,
@@ -526,7 +526,43 @@
     "grigio"
    ]
   },
+  "amanita-phalloides-cappello-bianco-emisferico": {
+   "cap_veil": null,
+   "cap_surface": [
+    "liscia",
+    "viscida",
+    "asciutta",
+    "squamosa"
+   ]
+  },
+  "amanita-phalloides-cappello-bianco-piano": {
+   "cap_veil": null,
+   "cap_surface": [
+    "liscia",
+    "viscida",
+    "asciutta",
+    "squamosa"
+   ]
+  },
   "amanita-phalloides-cappello-bianco": {
+   "cap_veil": null,
+   "cap_surface": [
+    "liscia",
+    "viscida",
+    "asciutta",
+    "squamosa"
+   ]
+  },
+  "amanita-phalloides-cappello-bruno-emisferico": {
+   "cap_veil": null,
+   "cap_surface": [
+    "liscia",
+    "viscida",
+    "asciutta",
+    "squamosa"
+   ]
+  },
+  "amanita-phalloides-cappello-bruno-piano": {
    "cap_veil": null,
    "cap_surface": [
     "liscia",
@@ -553,7 +589,43 @@
     "squamosa"
    ]
   },
+  "amanita-phalloides-cappello-giallo-emisferico": {
+   "cap_veil": null,
+   "cap_surface": [
+    "liscia",
+    "viscida",
+    "asciutta",
+    "squamosa"
+   ]
+  },
+  "amanita-phalloides-cappello-giallo-piano": {
+   "cap_veil": null,
+   "cap_surface": [
+    "liscia",
+    "viscida",
+    "asciutta",
+    "squamosa"
+   ]
+  },
   "amanita-phalloides-cappello-giallo": {
+   "cap_veil": null,
+   "cap_surface": [
+    "liscia",
+    "viscida",
+    "asciutta",
+    "squamosa"
+   ]
+  },
+  "amanita-phalloides-cappello-grigio-emisferico": {
+   "cap_veil": null,
+   "cap_surface": [
+    "liscia",
+    "viscida",
+    "asciutta",
+    "squamosa"
+   ]
+  },
+  "amanita-phalloides-cappello-grigio-piano": {
    "cap_veil": null,
    "cap_surface": [
     "liscia",
@@ -589,7 +661,39 @@
     "squamosa"
    ]
   },
+  "amanita-phalloides-gambo-bianco-emisferico": {
+   "stem_ring": true,
+   "stem_volva": true,
+   "stem_reticulum": false,
+   "stem_base": [
+    "bulbosa"
+   ]
+  },
+  "amanita-phalloides-gambo-bianco-piano": {
+   "stem_ring": true,
+   "stem_volva": true,
+   "stem_reticulum": false,
+   "stem_base": [
+    "bulbosa"
+   ]
+  },
   "amanita-phalloides-gambo-bianco": {
+   "stem_ring": true,
+   "stem_volva": true,
+   "stem_reticulum": false,
+   "stem_base": [
+    "bulbosa"
+   ]
+  },
+  "amanita-phalloides-gambo-bruno-emisferico": {
+   "stem_ring": true,
+   "stem_volva": true,
+   "stem_reticulum": false,
+   "stem_base": [
+    "bulbosa"
+   ]
+  },
+  "amanita-phalloides-gambo-bruno-piano": {
    "stem_ring": true,
    "stem_volva": true,
    "stem_reticulum": false,
@@ -613,7 +717,39 @@
     "bulbosa"
    ]
   },
+  "amanita-phalloides-gambo-giallo-emisferico": {
+   "stem_ring": true,
+   "stem_volva": true,
+   "stem_reticulum": false,
+   "stem_base": [
+    "bulbosa"
+   ]
+  },
+  "amanita-phalloides-gambo-giallo-piano": {
+   "stem_ring": true,
+   "stem_volva": true,
+   "stem_reticulum": false,
+   "stem_base": [
+    "bulbosa"
+   ]
+  },
   "amanita-phalloides-gambo-giallo": {
+   "stem_ring": true,
+   "stem_volva": true,
+   "stem_reticulum": false,
+   "stem_base": [
+    "bulbosa"
+   ]
+  },
+  "amanita-phalloides-gambo-grigio-emisferico": {
+   "stem_ring": true,
+   "stem_volva": true,
+   "stem_reticulum": false,
+   "stem_base": [
+    "bulbosa"
+   ]
+  },
+  "amanita-phalloides-gambo-grigio-piano": {
    "stem_ring": true,
    "stem_volva": true,
    "stem_reticulum": false,
@@ -759,6 +895,13 @@
     "squamosa"
    ]
   },
+  "armillaria-tabescens-cappello-piano": {
+   "cap_veil": false,
+   "cap_surface": [
+    "asciutta",
+    "squamosa"
+   ]
+  },
   "armillaria-tabescens-cappello": {
    "cap_veil": false,
    "cap_surface": [
@@ -767,6 +910,14 @@
    ]
   },
   "armillaria-tabescens-gambo-bruno": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "assottigliata"
+   ]
+  },
+  "armillaria-tabescens-gambo-piano": {
    "stem_ring": false,
    "stem_volva": false,
    "stem_reticulum": false,
@@ -866,6 +1017,15 @@
     "squamosa"
    ]
   },
+  "caloboletus-calopus-cappello-emisferico": {
+   "cap_veil": false,
+   "cap_surface": [
+    "asciutta",
+    "vellutata/feltrata",
+    "liscia",
+    "squamosa"
+   ]
+  },
   "caloboletus-calopus-cappello-grigio": {
    "cap_veil": false,
    "cap_surface": [
@@ -894,6 +1054,15 @@
    ]
   },
   "caloboletus-calopus-gambo-crema": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": true,
+   "stem_base": [
+    "normale",
+    "bulbosa"
+   ]
+  },
+  "caloboletus-calopus-gambo-emisferico": {
    "stem_ring": false,
    "stem_volva": false,
    "stem_reticulum": true,
@@ -935,6 +1104,13 @@
     "vellutata/feltrata"
    ]
   },
+  "caloboletus-radicans-cappello-emisferico": {
+   "cap_veil": false,
+   "cap_surface": [
+    "asciutta",
+    "vellutata/feltrata"
+   ]
+  },
   "caloboletus-radicans-cappello-grigio": {
    "cap_veil": false,
    "cap_surface": [
@@ -950,6 +1126,16 @@
    ]
   },
   "caloboletus-radicans-gambo-bianco": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": true,
+   "stem_base": [
+    "radicante",
+    "bulbosa",
+    "assottigliata"
+   ]
+  },
+  "caloboletus-radicans-gambo-emisferico": {
    "stem_ring": false,
    "stem_volva": false,
    "stem_reticulum": true,
@@ -993,6 +1179,18 @@
     "liscia"
    ]
   },
+  "calocybe-gambosa-cappello-emisferico": {
+   "cap_veil": false,
+   "cap_surface": [
+    "liscia"
+   ]
+  },
+  "calocybe-gambosa-cappello-piano": {
+   "cap_veil": false,
+   "cap_surface": [
+    "liscia"
+   ]
+  },
   "calocybe-gambosa-cappello": {
    "cap_veil": false,
    "cap_surface": [
@@ -1000,6 +1198,22 @@
    ]
   },
   "calocybe-gambosa-gambo-crema": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale"
+   ]
+  },
+  "calocybe-gambosa-gambo-emisferico": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale"
+   ]
+  },
+  "calocybe-gambosa-gambo-piano": {
    "stem_ring": false,
    "stem_volva": false,
    "stem_reticulum": false,
@@ -1031,6 +1245,14 @@
     "liscia"
    ]
   },
+  "chalciporus-piperatus-cappello-piano": {
+   "cap_veil": false,
+   "cap_surface": [
+    "asciutta",
+    "viscida",
+    "liscia"
+   ]
+  },
   "chalciporus-piperatus-cappello": {
    "cap_veil": false,
    "cap_surface": [
@@ -1040,6 +1262,15 @@
    ]
   },
   "chalciporus-piperatus-gambo-bruno": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale",
+    "assottigliata"
+   ]
+  },
+  "chalciporus-piperatus-gambo-piano": {
    "stem_ring": false,
    "stem_volva": false,
    "stem_reticulum": false,
@@ -1116,6 +1347,14 @@
     "liscia"
    ]
   },
+  "chlorophyllum-venenatum-cappello-convesso": {
+   "cap_veil": null,
+   "cap_surface": [
+    "squamosa",
+    "asciutta",
+    "liscia"
+   ]
+  },
   "chlorophyllum-venenatum-cappello": {
    "cap_veil": null,
    "cap_surface": [
@@ -1125,6 +1364,14 @@
    ]
   },
   "chlorophyllum-venenatum-gambo-bruno": {
+   "stem_ring": true,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "bulbosa"
+   ]
+  },
+  "chlorophyllum-venenatum-gambo-convesso": {
    "stem_ring": true,
    "stem_volva": false,
    "stem_reticulum": false,
@@ -1198,7 +1445,21 @@
     "liscia"
    ]
   },
+  "clitocybe-rivulosa-cappello-convesso": {
+   "cap_veil": false,
+   "cap_surface": [
+    "asciutta",
+    "liscia"
+   ]
+  },
   "clitocybe-rivulosa-cappello-crema": {
+   "cap_veil": false,
+   "cap_surface": [
+    "asciutta",
+    "liscia"
+   ]
+  },
+  "clitocybe-rivulosa-cappello-piano": {
    "cap_veil": false,
    "cap_surface": [
     "asciutta",
@@ -1218,7 +1479,19 @@
    "stem_reticulum": false,
    "stem_base": null
   },
+  "clitocybe-rivulosa-gambo-convesso": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": null
+  },
   "clitocybe-rivulosa-gambo-crema": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": null
+  },
+  "clitocybe-rivulosa-gambo-piano": {
    "stem_ring": false,
    "stem_volva": false,
    "stem_reticulum": false,
@@ -1405,7 +1678,9 @@
     "lamelle"
    ],
    "hymenophore_color": [
+    "giallo",
     "arancio",
+    "rosso",
     "bruno"
    ]
   },
@@ -1468,8 +1743,18 @@
     "lamelle"
    ],
    "hymenophore_color": [
+    "giallo",
     "arancio",
     "bruno"
+   ]
+  },
+  "cortinarius-traganus-cappello-emisferico": {
+   "cap_veil": null,
+   "cap_surface": [
+    "asciutta",
+    "liscia",
+    "vellutata/feltrata",
+    "squamosa"
    ]
   },
   "cortinarius-traganus-cappello": {
@@ -1479,6 +1764,15 @@
     "liscia",
     "vellutata/feltrata",
     "squamosa"
+   ]
+  },
+  "cortinarius-traganus-gambo-emisferico": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "bulbosa",
+    "normale"
    ]
   },
   "cortinarius-traganus-gambo": {
@@ -1508,6 +1802,14 @@
     "squamosa"
    ]
   },
+  "cortinarius-violaceus-cappello-piano": {
+   "cap_veil": false,
+   "cap_surface": [
+    "asciutta",
+    "vellutata/feltrata",
+    "squamosa"
+   ]
+  },
   "cortinarius-violaceus-cappello": {
    "cap_veil": false,
    "cap_surface": [
@@ -1517,6 +1819,15 @@
    ]
   },
   "cortinarius-violaceus-gambo-nero": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "bulbosa",
+    "normale"
+   ]
+  },
+  "cortinarius-violaceus-gambo-piano": {
    "stem_ring": false,
    "stem_volva": false,
    "stem_reticulum": false,
@@ -1550,6 +1861,13 @@
     "squamosa"
    ]
   },
+  "craterellus-cinereus-cappello-imbuto": {
+   "cap_veil": false,
+   "cap_surface": [
+    "liscia",
+    "squamosa"
+   ]
+  },
   "craterellus-cinereus-cappello-nero": {
    "cap_veil": false,
    "cap_surface": [
@@ -1565,6 +1883,15 @@
    ]
   },
   "craterellus-cinereus-gambo-bruno": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "assottigliata",
+    "normale"
+   ]
+  },
+  "craterellus-cinereus-gambo-imbuto": {
    "stem_ring": false,
    "stem_volva": false,
    "stem_reticulum": false,
@@ -1829,6 +2156,14 @@
     "asciutta"
    ]
   },
+  "galerina-marginata-cappello-piano": {
+   "cap_veil": null,
+   "cap_surface": [
+    "liscia",
+    "viscida",
+    "asciutta"
+   ]
+  },
   "galerina-marginata-cappello": {
    "cap_veil": null,
    "cap_surface": [
@@ -1846,6 +2181,14 @@
    ]
   },
   "galerina-marginata-gambo-giallo": {
+   "stem_ring": true,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale"
+   ]
+  },
+  "galerina-marginata-gambo-piano": {
    "stem_ring": true,
    "stem_volva": false,
    "stem_reticulum": false,
@@ -1878,6 +2221,14 @@
     "liscia"
    ]
   },
+  "gymnopilus-junonius-cappello-piano": {
+   "cap_veil": null,
+   "cap_surface": [
+    "squamosa",
+    "asciutta",
+    "liscia"
+   ]
+  },
   "gymnopilus-junonius-cappello": {
    "cap_veil": null,
    "cap_surface": [
@@ -1887,6 +2238,16 @@
    ]
   },
   "gymnopilus-junonius-gambo-giallo": {
+   "stem_ring": true,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale",
+    "assottigliata",
+    "bulbosa"
+   ]
+  },
+  "gymnopilus-junonius-gambo-piano": {
    "stem_ring": true,
    "stem_volva": false,
    "stem_reticulum": false,
@@ -1973,6 +2334,20 @@
     "liscia"
    ]
   },
+  "hydnellum-peckii-cappello-convesso": {
+   "cap_veil": false,
+   "cap_surface": [
+    "vellutata/feltrata",
+    "liscia"
+   ]
+  },
+  "hydnellum-peckii-cappello-imbuto": {
+   "cap_veil": false,
+   "cap_surface": [
+    "vellutata/feltrata",
+    "liscia"
+   ]
+  },
   "hydnellum-peckii-cappello-rosa": {
    "cap_veil": false,
    "cap_surface": [
@@ -1988,6 +2363,28 @@
    ]
   },
   "hydnellum-peckii-gambo-bruno": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "bulbosa",
+    "radicante",
+    "normale",
+    "assottigliata"
+   ]
+  },
+  "hydnellum-peckii-gambo-convesso": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "bulbosa",
+    "radicante",
+    "normale",
+    "assottigliata"
+   ]
+  },
+  "hydnellum-peckii-gambo-imbuto": {
    "stem_ring": false,
    "stem_volva": false,
    "stem_reticulum": false,
@@ -2037,6 +2434,20 @@
     "vellutata/feltrata"
    ]
   },
+  "hydnum-rufescens-cappello-imbuto": {
+   "cap_veil": false,
+   "cap_surface": [
+    "liscia",
+    "vellutata/feltrata"
+   ]
+  },
+  "hydnum-rufescens-cappello-piano": {
+   "cap_veil": false,
+   "cap_surface": [
+    "liscia",
+    "vellutata/feltrata"
+   ]
+  },
   "hydnum-rufescens-cappello": {
    "cap_veil": false,
    "cap_surface": [
@@ -2045,6 +2456,22 @@
    ]
   },
   "hydnum-rufescens-gambo-bruno": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale"
+   ]
+  },
+  "hydnum-rufescens-gambo-imbuto": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale"
+   ]
+  },
+  "hydnum-rufescens-gambo-piano": {
    "stem_ring": false,
    "stem_volva": false,
    "stem_reticulum": false,
@@ -2076,6 +2503,13 @@
     "asciutta"
    ]
   },
+  "hygrophoropsis-aurantiaca-cappello-convesso": {
+   "cap_veil": false,
+   "cap_surface": [
+    "vellutata/feltrata",
+    "asciutta"
+   ]
+  },
   "hygrophoropsis-aurantiaca-cappello-giallo": {
    "cap_veil": false,
    "cap_surface": [
@@ -2091,6 +2525,15 @@
    ]
   },
   "hygrophoropsis-aurantiaca-gambo-bruno": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale",
+    "bulbosa"
+   ]
+  },
+  "hygrophoropsis-aurantiaca-gambo-convesso": {
    "stem_ring": false,
    "stem_volva": false,
    "stem_reticulum": false,
@@ -2137,6 +2580,18 @@
     "viscida"
    ]
   },
+  "hygrophorus-latitabundus-cappello-ombrellato": {
+   "cap_veil": false,
+   "cap_surface": [
+    "viscida"
+   ]
+  },
+  "hygrophorus-latitabundus-cappello-piano": {
+   "cap_veil": false,
+   "cap_surface": [
+    "viscida"
+   ]
+  },
   "hygrophorus-latitabundus-cappello": {
    "cap_veil": false,
    "cap_surface": [
@@ -2152,6 +2607,22 @@
    ]
   },
   "hygrophorus-latitabundus-gambo-grigio": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "assottigliata"
+   ]
+  },
+  "hygrophorus-latitabundus-gambo-ombrellato": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "assottigliata"
+   ]
+  },
+  "hygrophorus-latitabundus-gambo-piano": {
    "stem_ring": false,
    "stem_volva": false,
    "stem_reticulum": false,
@@ -2189,6 +2660,13 @@
     "viscida"
    ]
   },
+  "hygrophorus-marzuolus-cappello-piano": {
+   "cap_veil": false,
+   "cap_surface": [
+    "liscia",
+    "viscida"
+   ]
+  },
   "hygrophorus-marzuolus-cappello": {
    "cap_veil": false,
    "cap_surface": [
@@ -2205,6 +2683,14 @@
    ]
   },
   "hygrophorus-marzuolus-gambo-nero": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale"
+   ]
+  },
+  "hygrophorus-marzuolus-gambo-piano": {
    "stem_ring": false,
    "stem_volva": false,
    "stem_reticulum": false,
@@ -2272,6 +2758,15 @@
     "nero"
    ]
   },
+  "imleria-badia-cappello-piano": {
+   "cap_veil": false,
+   "cap_surface": [
+    "vellutata/feltrata",
+    "asciutta",
+    "viscida",
+    "liscia"
+   ]
+  },
   "imleria-badia-cappello": {
    "cap_veil": false,
    "cap_surface": [
@@ -2279,6 +2774,15 @@
     "asciutta",
     "viscida",
     "liscia"
+   ]
+  },
+  "imleria-badia-gambo-piano": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale",
+    "assottigliata"
    ]
   },
   "imleria-badia-gambo": {
@@ -2301,6 +2805,16 @@
    ]
   },
   "inocybe-cappello-bianco": {
+   "cap_veil": null,
+   "cap_surface": [
+    "asciutta",
+    "squamosa",
+    "vellutata/feltrata",
+    "liscia",
+    "viscida"
+   ]
+  },
+  "inocybe-cappello-convesso": {
    "cap_veil": null,
    "cap_surface": [
     "asciutta",
@@ -2371,6 +2885,15 @@
    ]
   },
   "inocybe-gambo-bianco": {
+   "stem_ring": null,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale",
+    "bulbosa"
+   ]
+  },
+  "inocybe-gambo-convesso": {
    "stem_ring": null,
    "stem_volva": false,
    "stem_reticulum": false,
@@ -2472,12 +2995,44 @@
     "bianco"
    ]
   },
+  "laccaria-amethystina-cappello-convesso": {
+   "cap_veil": false,
+   "cap_surface": [
+    "asciutta",
+    "liscia",
+    "squamosa"
+   ]
+  },
+  "laccaria-amethystina-cappello-piano": {
+   "cap_veil": false,
+   "cap_surface": [
+    "asciutta",
+    "liscia",
+    "squamosa"
+   ]
+  },
   "laccaria-amethystina-cappello": {
    "cap_veil": false,
    "cap_surface": [
     "asciutta",
     "liscia",
     "squamosa"
+   ]
+  },
+  "laccaria-amethystina-gambo-convesso": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale"
+   ]
+  },
+  "laccaria-amethystina-gambo-piano": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale"
    ]
   },
   "laccaria-amethystina-gambo": {
@@ -2496,6 +3051,13 @@
     "violetto"
    ]
   },
+  "lactarius-deliciosus-cappello-convesso": {
+   "cap_veil": false,
+   "cap_surface": [
+    "asciutta",
+    "viscida"
+   ]
+  },
   "lactarius-deliciosus-cappello-verde": {
    "cap_veil": false,
    "cap_surface": [
@@ -2509,6 +3071,12 @@
     "asciutta",
     "viscida"
    ]
+  },
+  "lactarius-deliciosus-gambo-convesso": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": null
   },
   "lactarius-deliciosus-gambo-verde": {
    "stem_ring": false,
@@ -2530,6 +3098,10 @@
     "arancio"
    ]
   },
+  "lactarius-deterrimus-cappello-convesso": {
+   "cap_veil": false,
+   "cap_surface": null
+  },
   "lactarius-deterrimus-cappello-giallo": {
    "cap_veil": false,
    "cap_surface": null
@@ -2541,6 +3113,12 @@
   "lactarius-deterrimus-cappello": {
    "cap_veil": false,
    "cap_surface": null
+  },
+  "lactarius-deterrimus-gambo-convesso": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": null
   },
   "lactarius-deterrimus-gambo-giallo": {
    "stem_ring": false,
@@ -2710,6 +3288,24 @@
     "liscia"
    ]
   },
+  "lepiota-subincarnata-cappello-ombrellato": {
+   "cap_veil": null,
+   "cap_surface": [
+    "squamosa",
+    "vellutata/feltrata",
+    "asciutta",
+    "liscia"
+   ]
+  },
+  "lepiota-subincarnata-cappello-piano": {
+   "cap_veil": null,
+   "cap_surface": [
+    "squamosa",
+    "vellutata/feltrata",
+    "asciutta",
+    "liscia"
+   ]
+  },
   "lepiota-subincarnata-cappello": {
    "cap_veil": null,
    "cap_surface": [
@@ -2729,6 +3325,24 @@
    ]
   },
   "lepiota-subincarnata-gambo-crema": {
+   "stem_ring": null,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale",
+    "bulbosa"
+   ]
+  },
+  "lepiota-subincarnata-gambo-ombrellato": {
+   "stem_ring": null,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale",
+    "bulbosa"
+   ]
+  },
+  "lepiota-subincarnata-gambo-piano": {
    "stem_ring": null,
    "stem_volva": false,
    "stem_reticulum": false,
@@ -2761,6 +3375,12 @@
     "liscia"
    ]
   },
+  "marasmius-oreades-cappello-convesso": {
+   "cap_veil": false,
+   "cap_surface": [
+    "liscia"
+   ]
+  },
   "marasmius-oreades-cappello": {
    "cap_veil": false,
    "cap_surface": [
@@ -2768,6 +3388,14 @@
    ]
   },
   "marasmius-oreades-gambo-bruno": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale"
+   ]
+  },
+  "marasmius-oreades-gambo-convesso": {
    "stem_ring": false,
    "stem_volva": false,
    "stem_reticulum": false,
@@ -2844,21 +3472,11 @@
    "cap_veil": false,
    "cap_surface": null
   },
-  "morchella-elata-cappello-nero": {
-   "cap_veil": false,
-   "cap_surface": null
-  },
   "morchella-elata-cappello": {
    "cap_veil": false,
    "cap_surface": null
   },
   "morchella-elata-gambo-grigio": {
-   "stem_ring": false,
-   "stem_volva": false,
-   "stem_reticulum": false,
-   "stem_base": null
-  },
-  "morchella-elata-gambo-nero": {
    "stem_ring": false,
    "stem_volva": false,
    "stem_reticulum": false,
@@ -2936,6 +3554,13 @@
     "asciutta"
    ]
   },
+  "mycena-pura-cappello-convesso": {
+   "cap_veil": false,
+   "cap_surface": [
+    "liscia",
+    "asciutta"
+   ]
+  },
   "mycena-pura-cappello-grigio": {
    "cap_veil": false,
    "cap_surface": [
@@ -2958,6 +3583,14 @@
    ]
   },
   "mycena-pura-gambo-bianco": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale"
+   ]
+  },
+  "mycena-pura-gambo-convesso": {
    "stem_ring": false,
    "stem_volva": false,
    "stem_reticulum": false,
@@ -3007,6 +3640,14 @@
     "liscia"
    ]
   },
+  "neoboletus-luridiformis-cappello-emisferico": {
+   "cap_veil": false,
+   "cap_surface": [
+    "vellutata/feltrata",
+    "asciutta",
+    "liscia"
+   ]
+  },
   "neoboletus-luridiformis-cappello-nero": {
    "cap_veil": false,
    "cap_surface": [
@@ -3024,6 +3665,15 @@
    ]
   },
   "neoboletus-luridiformis-gambo-bruno": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale",
+    "bulbosa"
+   ]
+  },
+  "neoboletus-luridiformis-gambo-emisferico": {
    "stem_ring": false,
    "stem_volva": false,
    "stem_reticulum": false,
@@ -3067,6 +3717,14 @@
     "asciutta"
    ]
   },
+  "nuda-cappello-piano": {
+   "cap_veil": false,
+   "cap_surface": [
+    "liscia",
+    "viscida",
+    "asciutta"
+   ]
+  },
   "nuda-cappello-rosa": {
    "cap_veil": false,
    "cap_surface": [
@@ -3084,6 +3742,15 @@
    ]
   },
   "nuda-gambo-bruno": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale",
+    "bulbosa"
+   ]
+  },
+  "nuda-gambo-piano": {
    "stem_ring": false,
    "stem_volva": false,
    "stem_reticulum": false,
@@ -3128,6 +3795,14 @@
     "squamosa"
    ]
   },
+  "omphalotus-olearius-cappello-convesso": {
+   "cap_veil": false,
+   "cap_surface": [
+    "liscia",
+    "asciutta",
+    "squamosa"
+   ]
+  },
   "omphalotus-olearius-cappello-giallo": {
    "cap_veil": false,
    "cap_surface": [
@@ -3145,6 +3820,15 @@
    ]
   },
   "omphalotus-olearius-gambo-bruno": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "assottigliata",
+    "normale"
+   ]
+  },
+  "omphalotus-olearius-gambo-convesso": {
    "stem_ring": false,
    "stem_volva": false,
    "stem_reticulum": false,
@@ -3187,6 +3871,13 @@
     "squamosa"
    ]
   },
+  "pholiota-squarrosa-cappello-piano": {
+   "cap_veil": null,
+   "cap_surface": [
+    "asciutta",
+    "squamosa"
+   ]
+  },
   "pholiota-squarrosa-cappello": {
    "cap_veil": null,
    "cap_surface": [
@@ -3195,6 +3886,15 @@
    ]
   },
   "pholiota-squarrosa-gambo-bruno": {
+   "stem_ring": true,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale",
+    "assottigliata"
+   ]
+  },
+  "pholiota-squarrosa-gambo-piano": {
    "stem_ring": true,
    "stem_volva": false,
    "stem_reticulum": false,
@@ -3268,9 +3968,19 @@
     "verde"
    ]
   },
+  "pleurotus-cornucopiae-cappello-convesso": {
+   "cap_veil": false,
+   "cap_surface": null
+  },
   "pleurotus-cornucopiae-cappello": {
    "cap_veil": false,
    "cap_surface": null
+  },
+  "pleurotus-cornucopiae-gambo-convesso": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": null
   },
   "pleurotus-cornucopiae-gambo": {
    "stem_ring": false,
@@ -3305,6 +4015,12 @@
     "vellutata/feltrata"
    ]
   },
+  "pleurotus-eryngii-cappello-imbuto": {
+   "cap_veil": false,
+   "cap_surface": [
+    "vellutata/feltrata"
+   ]
+  },
   "pleurotus-eryngii-cappello": {
    "cap_veil": false,
    "cap_surface": [
@@ -3328,6 +4044,14 @@
    ]
   },
   "pleurotus-eryngii-gambo-grigio": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "assottigliata"
+   ]
+  },
+  "pleurotus-eryngii-gambo-imbuto": {
    "stem_ring": false,
    "stem_volva": false,
    "stem_reticulum": false,
@@ -3453,11 +4177,23 @@
    "cap_veil": false,
    "cap_surface": null
   },
+  "pseudocraterellus-undulatus-cappello-trombetta": {
+   "cap_veil": false,
+   "cap_surface": null
+  },
   "pseudocraterellus-undulatus-cappello": {
    "cap_veil": false,
    "cap_surface": null
   },
   "pseudocraterellus-undulatus-gambo-bruno": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "assottigliata"
+   ]
+  },
+  "pseudocraterellus-undulatus-gambo-trombetta": {
    "stem_ring": false,
    "stem_volva": false,
    "stem_reticulum": false,
@@ -3498,6 +4234,22 @@
     "vellutata/feltrata"
    ]
   },
+  "repandum-cappello-imbuto": {
+   "cap_veil": false,
+   "cap_surface": [
+    "liscia",
+    "asciutta",
+    "vellutata/feltrata"
+   ]
+  },
+  "repandum-cappello-piano": {
+   "cap_veil": false,
+   "cap_surface": [
+    "liscia",
+    "asciutta",
+    "vellutata/feltrata"
+   ]
+  },
   "repandum-cappello": {
    "cap_veil": false,
    "cap_surface": [
@@ -3515,6 +4267,22 @@
    ]
   },
   "repandum-gambo-crema": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale"
+   ]
+  },
+  "repandum-gambo-imbuto": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale"
+   ]
+  },
+  "repandum-gambo-piano": {
    "stem_ring": false,
    "stem_volva": false,
    "stem_reticulum": false,
@@ -3600,8 +4368,25 @@
     "pori"
    ],
    "hymenophore_color": [
-    "rosso",
-    "arancio"
+    "giallo",
+    "arancio",
+    "rosso"
+   ]
+  },
+  "russula-aeruginea-cappello-imbuto": {
+   "cap_veil": false,
+   "cap_surface": [
+    "viscida",
+    "liscia",
+    "asciutta"
+   ]
+  },
+  "russula-aeruginea-cappello-piano": {
+   "cap_veil": false,
+   "cap_surface": [
+    "viscida",
+    "liscia",
+    "asciutta"
    ]
   },
   "russula-aeruginea-cappello": {
@@ -3610,6 +4395,24 @@
     "viscida",
     "liscia",
     "asciutta"
+   ]
+  },
+  "russula-aeruginea-gambo-imbuto": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale",
+    "assottigliata"
+   ]
+  },
+  "russula-aeruginea-gambo-piano": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale",
+    "assottigliata"
    ]
   },
   "russula-aeruginea-gambo": {
@@ -3630,7 +4433,15 @@
     "giallo"
    ]
   },
+  "russula-aurea-cappello-emisferico": {
+   "cap_veil": false,
+   "cap_surface": null
+  },
   "russula-aurea-cappello-giallo": {
+   "cap_veil": false,
+   "cap_surface": null
+  },
+  "russula-aurea-cappello-piano": {
    "cap_veil": false,
    "cap_surface": null
   },
@@ -3642,7 +4453,19 @@
    "cap_veil": false,
    "cap_surface": null
   },
+  "russula-aurea-gambo-emisferico": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": null
+  },
   "russula-aurea-gambo-giallo": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": null
+  },
+  "russula-aurea-gambo-piano": {
    "stem_ring": false,
    "stem_volva": false,
    "stem_reticulum": false,
@@ -3685,6 +4508,22 @@
     "asciutta"
    ]
   },
+  "russula-heterophylla-cappello-imbuto": {
+   "cap_veil": false,
+   "cap_surface": [
+    "viscida",
+    "liscia",
+    "asciutta"
+   ]
+  },
+  "russula-heterophylla-cappello-piano": {
+   "cap_veil": false,
+   "cap_surface": [
+    "viscida",
+    "liscia",
+    "asciutta"
+   ]
+  },
   "russula-heterophylla-cappello": {
    "cap_veil": false,
    "cap_surface": [
@@ -3703,6 +4542,24 @@
    ]
   },
   "russula-heterophylla-gambo-grigio": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale",
+    "assottigliata"
+   ]
+  },
+  "russula-heterophylla-gambo-imbuto": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale",
+    "assottigliata"
+   ]
+  },
+  "russula-heterophylla-gambo-piano": {
    "stem_ring": false,
    "stem_volva": false,
    "stem_reticulum": false,
@@ -3737,6 +4594,22 @@
     "vellutata/feltrata"
    ]
   },
+  "russula-olivacea-cappello-imbuto": {
+   "cap_veil": false,
+   "cap_surface": [
+    "asciutta",
+    "liscia",
+    "vellutata/feltrata"
+   ]
+  },
+  "russula-olivacea-cappello-piano": {
+   "cap_veil": false,
+   "cap_surface": [
+    "asciutta",
+    "liscia",
+    "vellutata/feltrata"
+   ]
+  },
   "russula-olivacea-cappello-rosso": {
    "cap_veil": false,
    "cap_surface": [
@@ -3762,6 +4635,24 @@
    ]
   },
   "russula-olivacea-gambo-bruno": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale",
+    "assottigliata"
+   ]
+  },
+  "russula-olivacea-gambo-imbuto": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale",
+    "assottigliata"
+   ]
+  },
+  "russula-olivacea-gambo-piano": {
    "stem_ring": false,
    "stem_volva": false,
    "stem_reticulum": false,
@@ -3806,11 +4697,28 @@
     "crema"
    ]
   },
+  "sarcodon-imbricatus-cappello-imbuto": {
+   "cap_veil": false,
+   "cap_surface": [
+    "squamosa",
+    "asciutta"
+   ]
+  },
   "sarcodon-imbricatus-cappello": {
    "cap_veil": false,
    "cap_surface": [
     "squamosa",
     "asciutta"
+   ]
+  },
+  "sarcodon-imbricatus-gambo-imbuto": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale",
+    "assottigliata",
+    "bulbosa"
    ]
   },
   "sarcodon-imbricatus-gambo": {
@@ -3832,12 +4740,29 @@
     "bruno"
    ]
   },
+  "sarcodon-scabrosus-cappello-imbuto": {
+   "cap_veil": false,
+   "cap_surface": [
+    "squamosa",
+    "asciutta",
+    "vellutata/feltrata"
+   ]
+  },
   "sarcodon-scabrosus-cappello": {
    "cap_veil": false,
    "cap_surface": [
     "squamosa",
     "asciutta",
     "vellutata/feltrata"
+   ]
+  },
+  "sarcodon-scabrosus-gambo-imbuto": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "assottigliata",
+    "radicante"
    ]
   },
   "sarcodon-scabrosus-gambo": {
@@ -3865,6 +4790,13 @@
     "liscia"
    ]
   },
+  "suillus-bovinus-cappello-piano": {
+   "cap_veil": false,
+   "cap_surface": [
+    "viscida",
+    "liscia"
+   ]
+  },
   "suillus-bovinus-cappello": {
    "cap_veil": false,
    "cap_surface": [
@@ -3873,6 +4805,15 @@
    ]
   },
   "suillus-bovinus-gambo-bruno": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale",
+    "assottigliata"
+   ]
+  },
+  "suillus-bovinus-gambo-piano": {
    "stem_ring": false,
    "stem_volva": false,
    "stem_reticulum": false,
@@ -3907,7 +4848,21 @@
     "liscia"
    ]
   },
+  "suillus-cappello-emisferico": {
+   "cap_veil": null,
+   "cap_surface": [
+    "viscida",
+    "liscia"
+   ]
+  },
   "suillus-cappello-giallo": {
+   "cap_veil": null,
+   "cap_surface": [
+    "viscida",
+    "liscia"
+   ]
+  },
+  "suillus-cappello-piano": {
    "cap_veil": null,
    "cap_surface": [
     "viscida",
@@ -3937,7 +4892,25 @@
     "assottigliata"
    ]
   },
+  "suillus-gambo-emisferico": {
+   "stem_ring": null,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale",
+    "assottigliata"
+   ]
+  },
   "suillus-gambo-giallo": {
+   "stem_ring": null,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale",
+    "assottigliata"
+   ]
+  },
+  "suillus-gambo-piano": {
    "stem_ring": null,
    "stem_volva": false,
    "stem_reticulum": false,
@@ -4021,6 +4994,27 @@
     "squamosa"
    ]
   },
+  "tricholoma-equestre-cappello-conico": {
+   "cap_veil": false,
+   "cap_surface": [
+    "viscida",
+    "squamosa"
+   ]
+  },
+  "tricholoma-equestre-cappello-ombrellato": {
+   "cap_veil": false,
+   "cap_surface": [
+    "viscida",
+    "squamosa"
+   ]
+  },
+  "tricholoma-equestre-cappello-piano": {
+   "cap_veil": false,
+   "cap_surface": [
+    "viscida",
+    "squamosa"
+   ]
+  },
   "tricholoma-equestre-cappello-verde": {
    "cap_veil": false,
    "cap_surface": [
@@ -4036,6 +5030,33 @@
    ]
   },
   "tricholoma-equestre-gambo-bruno": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale",
+    "bulbosa"
+   ]
+  },
+  "tricholoma-equestre-gambo-conico": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale",
+    "bulbosa"
+   ]
+  },
+  "tricholoma-equestre-gambo-ombrellato": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale",
+    "bulbosa"
+   ]
+  },
+  "tricholoma-equestre-gambo-piano": {
    "stem_ring": false,
    "stem_volva": false,
    "stem_reticulum": false,
@@ -4086,6 +5107,14 @@
     "viscida"
    ]
   },
+  "tricholoma-pardinum-cappello-piano": {
+   "cap_veil": null,
+   "cap_surface": [
+    "asciutta",
+    "squamosa",
+    "viscida"
+   ]
+  },
   "tricholoma-pardinum-cappello": {
    "cap_veil": null,
    "cap_surface": [
@@ -4104,6 +5133,15 @@
    ]
   },
   "tricholoma-pardinum-gambo-bruno": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale",
+    "bulbosa"
+   ]
+  },
+  "tricholoma-pardinum-gambo-piano": {
    "stem_ring": false,
    "stem_volva": false,
    "stem_reticulum": false,
@@ -4137,6 +5175,13 @@
     "asciutta"
    ]
   },
+  "tricholoma-portentosum-cappello-convesso": {
+   "cap_veil": false,
+   "cap_surface": [
+    "viscida",
+    "asciutta"
+   ]
+  },
   "tricholoma-portentosum-cappello-giallo": {
    "cap_veil": false,
    "cap_surface": [
@@ -4152,6 +5197,14 @@
    ]
   },
   "tricholoma-portentosum-gambo-bruno": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale"
+   ]
+  },
+  "tricholoma-portentosum-gambo-convesso": {
    "stem_ring": false,
    "stem_volva": false,
    "stem_reticulum": false,
@@ -4184,6 +5237,15 @@
     "giallo"
    ]
   },
+  "tricholoma-sciodes-cappello-convesso": {
+   "cap_veil": false,
+   "cap_surface": [
+    "asciutta",
+    "vellutata/feltrata",
+    "liscia",
+    "squamosa"
+   ]
+  },
   "tricholoma-sciodes-cappello-grigio": {
    "cap_veil": false,
    "cap_surface": [
@@ -4200,6 +5262,14 @@
     "vellutata/feltrata",
     "liscia",
     "squamosa"
+   ]
+  },
+  "tricholoma-sciodes-gambo-convesso": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale"
    ]
   },
   "tricholoma-sciodes-gambo-grigio": {
@@ -4227,12 +5297,29 @@
     "grigio"
    ]
   },
+  "tricholoma-virgatum-cappello-convesso": {
+   "cap_veil": false,
+   "cap_surface": [
+    "asciutta",
+    "liscia",
+    "squamosa"
+   ]
+  },
   "tricholoma-virgatum-cappello": {
    "cap_veil": false,
    "cap_surface": [
     "asciutta",
     "liscia",
     "squamosa"
+   ]
+  },
+  "tricholoma-virgatum-gambo-convesso": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "normale",
+    "bulbosa"
    ]
   },
   "tricholoma-virgatum-gambo": {
@@ -4338,7 +5425,27 @@
     "nero"
    ]
   },
+  "virescens-cappello-emisferico": {
+   "cap_veil": false,
+   "cap_surface": [
+    "asciutta",
+    "vellutata/feltrata",
+    "viscida",
+    "liscia",
+    "squamosa"
+   ]
+  },
   "virescens-cappello-grigio": {
+   "cap_veil": false,
+   "cap_surface": [
+    "asciutta",
+    "vellutata/feltrata",
+    "viscida",
+    "liscia",
+    "squamosa"
+   ]
+  },
+  "virescens-cappello-imbuto": {
    "cap_veil": false,
    "cap_surface": [
     "asciutta",
@@ -4378,7 +5485,25 @@
     "squamosa"
    ]
   },
+  "virescens-gambo-emisferico": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "assottigliata",
+    "normale"
+   ]
+  },
   "virescens-gambo-grigio": {
+   "stem_ring": false,
+   "stem_volva": false,
+   "stem_reticulum": false,
+   "stem_base": [
+    "assottigliata",
+    "normale"
+   ]
+  },
+  "virescens-gambo-imbuto": {
    "stem_ring": false,
    "stem_volva": false,
    "stem_reticulum": false,

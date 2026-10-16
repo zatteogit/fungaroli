@@ -163,6 +163,16 @@
      "piano"
     ]
    },
+   "combos": [
+    "bianco|emisferico",
+    "bianco|piano",
+    "bruno|emisferico",
+    "bruno|piano",
+    "giallo|emisferico",
+    "giallo|piano",
+    "grigio|emisferico",
+    "grigio|piano"
+   ],
    "base": {
     "colore": "verde",
     "forma": "convesso"
@@ -208,6 +218,13 @@
      "bruno"
     ]
    },
+   "shapes": {
+    "drawn": "convesso",
+    "values": [
+     "convesso",
+     "piano"
+    ]
+   },
    "base": {
     "colore": "giallo",
     "forma": "convesso"
@@ -237,6 +254,13 @@
      "bruno"
     ]
    },
+   "shapes": {
+    "drawn": "convesso",
+    "values": [
+     "emisferico",
+     "convesso"
+    ]
+   },
    "base": {
     "colore": "bianco",
     "forma": "convesso"
@@ -249,6 +273,13 @@
      "bianco",
      "grigio",
      "crema"
+    ]
+   },
+   "shapes": {
+    "drawn": "convesso",
+    "values": [
+     "emisferico",
+     "convesso"
     ]
    },
    "base": {
@@ -264,6 +295,14 @@
      "crema"
     ]
    },
+   "shapes": {
+    "drawn": "convesso",
+    "values": [
+     "emisferico",
+     "convesso",
+     "piano"
+    ]
+   },
    "base": {
     "colore": "bianco",
     "forma": "convesso"
@@ -275,6 +314,13 @@
     "values": [
      "bruno",
      "arancio"
+    ]
+   },
+   "shapes": {
+    "drawn": "convesso",
+    "values": [
+     "convesso",
+     "piano"
     ]
    },
    "base": {
@@ -303,6 +349,13 @@
      "crema"
     ]
    },
+   "shapes": {
+    "drawn": "ombrellato",
+    "values": [
+     "ombrellato",
+     "convesso"
+    ]
+   },
    "base": {
     "colore": "crema",
     "forma": "ombrellato"
@@ -328,6 +381,14 @@
      "bianco",
      "crema",
      "bruno"
+    ]
+   },
+   "shapes": {
+    "drawn": "imbuto",
+    "values": [
+     "convesso",
+     "piano",
+     "imbuto"
     ]
    },
    "base": {
@@ -392,6 +453,13 @@
    }
   },
   "cortinarius-traganus": {
+   "shapes": {
+    "drawn": "convesso",
+    "values": [
+     "convesso",
+     "emisferico"
+    ]
+   },
    "base": {
     "colore": "violetto",
     "forma": "convesso"
@@ -403,6 +471,13 @@
     "values": [
      "violetto",
      "nero"
+    ]
+   },
+   "shapes": {
+    "drawn": "convesso",
+    "values": [
+     "convesso",
+     "piano"
     ]
    },
    "base": {
@@ -417,6 +492,13 @@
      "nero",
      "grigio",
      "bruno"
+    ]
+   },
+   "shapes": {
+    "drawn": "trombetta",
+    "values": [
+     "trombetta",
+     "imbuto"
     ]
    },
    "base": {
@@ -499,6 +581,13 @@
      "arancio"
     ]
    },
+   "shapes": {
+    "drawn": "convesso",
+    "values": [
+     "convesso",
+     "piano"
+    ]
+   },
    "base": {
     "colore": "arancio",
     "forma": "convesso"
@@ -510,6 +599,13 @@
     "values": [
      "giallo",
      "arancio"
+    ]
+   },
+   "shapes": {
+    "drawn": "convesso",
+    "values": [
+     "convesso",
+     "piano"
     ]
    },
    "base": {
@@ -541,6 +637,14 @@
      "bruno"
     ]
    },
+   "shapes": {
+    "drawn": "piano",
+    "values": [
+     "convesso",
+     "piano",
+     "imbuto"
+    ]
+   },
    "base": {
     "colore": "bianco",
     "forma": "piano"
@@ -552,6 +656,14 @@
     "values": [
      "arancio",
      "bruno"
+    ]
+   },
+   "shapes": {
+    "drawn": "convesso",
+    "values": [
+     "convesso",
+     "piano",
+     "imbuto"
     ]
    },
    "base": {
@@ -568,6 +680,13 @@
      "giallo"
     ]
    },
+   "shapes": {
+    "drawn": "imbuto",
+    "values": [
+     "convesso",
+     "imbuto"
+    ]
+   },
    "base": {
     "colore": "arancio",
     "forma": "imbuto"
@@ -582,6 +701,14 @@
      "nero"
     ]
    },
+   "shapes": {
+    "drawn": "convesso",
+    "values": [
+     "convesso",
+     "piano",
+     "ombrellato"
+    ]
+   },
    "base": {
     "colore": "nero",
     "forma": "convesso"
@@ -594,6 +721,13 @@
      "bianco",
      "grigio",
      "nero"
+    ]
+   },
+   "shapes": {
+    "drawn": "convesso",
+    "values": [
+     "convesso",
+     "piano"
     ]
    },
    "base": {
@@ -615,6 +749,13 @@
    }
   },
   "imleria-badia": {
+   "shapes": {
+    "drawn": "convesso",
+    "values": [
+     "convesso",
+     "piano"
+    ]
+   },
    "base": {
     "colore": "bruno",
     "forma": "convesso"
@@ -633,6 +774,13 @@
      "rosa"
     ]
    },
+   "shapes": {
+    "drawn": "conico",
+    "values": [
+     "conico",
+     "convesso"
+    ]
+   },
    "base": {
     "colore": "bruno",
     "forma": "conico"
@@ -645,6 +793,14 @@
    }
   },
   "laccaria-amethystina": {
+   "shapes": {
+    "drawn": "imbuto",
+    "values": [
+     "convesso",
+     "imbuto",
+     "piano"
+    ]
+   },
    "base": {
     "colore": "violetto",
     "forma": "imbuto"
@@ -656,6 +812,13 @@
     "values": [
      "arancio",
      "verde"
+    ]
+   },
+   "shapes": {
+    "drawn": "imbuto",
+    "values": [
+     "convesso",
+     "imbuto"
     ]
    },
    "base": {
@@ -670,6 +833,13 @@
      "arancio",
      "giallo",
      "verde"
+    ]
+   },
+   "shapes": {
+    "drawn": "imbuto",
+    "values": [
+     "convesso",
+     "imbuto"
     ]
    },
    "base": {
@@ -714,6 +884,14 @@
      "crema"
     ]
    },
+   "shapes": {
+    "drawn": "convesso",
+    "values": [
+     "convesso",
+     "piano",
+     "ombrellato"
+    ]
+   },
    "base": {
     "colore": "rosa",
     "forma": "convesso"
@@ -725,6 +903,13 @@
     "values": [
      "crema",
      "bruno"
+    ]
+   },
+   "shapes": {
+    "drawn": "ombrellato",
+    "values": [
+     "convesso",
+     "ombrellato"
     ]
    },
    "base": {
@@ -782,6 +967,13 @@
      "bianco"
     ]
    },
+   "shapes": {
+    "drawn": "conico",
+    "values": [
+     "conico",
+     "convesso"
+    ]
+   },
    "base": {
     "colore": "rosa",
     "forma": "conico"
@@ -794,6 +986,13 @@
      "bruno",
      "nero",
      "rosso"
+    ]
+   },
+   "shapes": {
+    "drawn": "convesso",
+    "values": [
+     "emisferico",
+     "convesso"
     ]
    },
    "base": {
@@ -810,6 +1009,13 @@
      "rosa"
     ]
    },
+   "shapes": {
+    "drawn": "convesso",
+    "values": [
+     "convesso",
+     "piano"
+    ]
+   },
    "base": {
     "colore": "violetto",
     "forma": "convesso"
@@ -824,6 +1030,13 @@
      "bruno"
     ]
    },
+   "shapes": {
+    "drawn": "imbuto",
+    "values": [
+     "convesso",
+     "imbuto"
+    ]
+   },
    "base": {
     "colore": "arancio",
     "forma": "imbuto"
@@ -835,6 +1048,13 @@
     "values": [
      "giallo",
      "bruno"
+    ]
+   },
+   "shapes": {
+    "drawn": "convesso",
+    "values": [
+     "convesso",
+     "piano"
     ]
    },
    "base": {
@@ -856,6 +1076,13 @@
    }
   },
   "pleurotus-cornucopiae": {
+   "shapes": {
+    "drawn": "imbuto",
+    "values": [
+     "convesso",
+     "imbuto"
+    ]
+   },
    "base": {
     "colore": "crema",
     "forma": "imbuto"
@@ -869,6 +1096,13 @@
      "crema",
      "bruno",
      "grigio"
+    ]
+   },
+   "shapes": {
+    "drawn": "convesso",
+    "values": [
+     "convesso",
+     "imbuto"
     ]
    },
    "base": {
@@ -912,6 +1146,13 @@
      "bruno"
     ]
    },
+   "shapes": {
+    "drawn": "imbuto",
+    "values": [
+     "trombetta",
+     "imbuto"
+    ]
+   },
    "base": {
     "colore": "grigio",
     "forma": "imbuto"
@@ -924,6 +1165,14 @@
      "crema",
      "giallo",
      "arancio"
+    ]
+   },
+   "shapes": {
+    "drawn": "convesso",
+    "values": [
+     "convesso",
+     "piano",
+     "imbuto"
     ]
    },
    "base": {
@@ -946,6 +1195,14 @@
    }
   },
   "russula-aeruginea": {
+   "shapes": {
+    "drawn": "convesso",
+    "values": [
+     "convesso",
+     "piano",
+     "imbuto"
+    ]
+   },
    "base": {
     "colore": "verde",
     "forma": "convesso"
@@ -960,6 +1217,14 @@
      "rosso"
     ]
    },
+   "shapes": {
+    "drawn": "convesso",
+    "values": [
+     "emisferico",
+     "convesso",
+     "piano"
+    ]
+   },
    "base": {
     "colore": "arancio",
     "forma": "convesso"
@@ -972,6 +1237,14 @@
      "verde",
      "bruno",
      "grigio"
+    ]
+   },
+   "shapes": {
+    "drawn": "convesso",
+    "values": [
+     "convesso",
+     "piano",
+     "imbuto"
     ]
    },
    "base": {
@@ -989,18 +1262,40 @@
      "violetto"
     ]
    },
+   "shapes": {
+    "drawn": "convesso",
+    "values": [
+     "convesso",
+     "piano",
+     "imbuto"
+    ]
+   },
    "base": {
     "colore": "verde",
     "forma": "convesso"
    }
   },
   "sarcodon-imbricatus": {
+   "shapes": {
+    "drawn": "convesso",
+    "values": [
+     "convesso",
+     "imbuto"
+    ]
+   },
    "base": {
     "colore": "bruno",
     "forma": "convesso"
    }
   },
   "sarcodon-scabrosus": {
+   "shapes": {
+    "drawn": "convesso",
+    "values": [
+     "convesso",
+     "imbuto"
+    ]
+   },
    "base": {
     "colore": "bruno",
     "forma": "convesso"
@@ -1016,6 +1311,14 @@
      "violetto"
     ]
    },
+   "shapes": {
+    "drawn": "convesso",
+    "values": [
+     "emisferico",
+     "convesso",
+     "piano"
+    ]
+   },
    "base": {
     "colore": "bruno",
     "forma": "convesso"
@@ -1027,6 +1330,13 @@
     "values": [
      "arancio",
      "bruno"
+    ]
+   },
+   "shapes": {
+    "drawn": "convesso",
+    "values": [
+     "convesso",
+     "piano"
     ]
    },
    "base": {
@@ -1056,6 +1366,15 @@
      "bruno"
     ]
    },
+   "shapes": {
+    "drawn": "convesso",
+    "values": [
+     "conico",
+     "convesso",
+     "piano",
+     "ombrellato"
+    ]
+   },
    "base": {
     "colore": "giallo",
     "forma": "convesso"
@@ -1068,6 +1387,13 @@
      "grigio",
      "bruno",
      "bianco"
+    ]
+   },
+   "shapes": {
+    "drawn": "convesso",
+    "values": [
+     "convesso",
+     "piano"
     ]
    },
    "base": {
@@ -1084,6 +1410,13 @@
      "giallo"
     ]
    },
+   "shapes": {
+    "drawn": "ombrellato",
+    "values": [
+     "convesso",
+     "ombrellato"
+    ]
+   },
    "base": {
     "colore": "grigio",
     "forma": "ombrellato"
@@ -1097,12 +1430,26 @@
      "violetto"
     ]
    },
+   "shapes": {
+    "drawn": "conico",
+    "values": [
+     "conico",
+     "convesso"
+    ]
+   },
    "base": {
     "colore": "violetto",
     "forma": "conico"
    }
   },
   "tricholoma-virgatum": {
+   "shapes": {
+    "drawn": "conico",
+    "values": [
+     "conico",
+     "convesso"
+    ]
+   },
    "base": {
     "colore": "grigio",
     "forma": "conico"
@@ -1142,6 +1489,14 @@
      "violetto",
      "grigio",
      "rosa"
+    ]
+   },
+   "shapes": {
+    "drawn": "convesso",
+    "values": [
+     "emisferico",
+     "convesso",
+     "imbuto"
     ]
    },
    "base": {
@@ -1219,17 +1574,33 @@
   "amanita-pantherina-sotto": 4,
   "amanita-phalloides-cappello": 4,
   "amanita-phalloides-cappello-bianco": 5,
+  "amanita-phalloides-cappello-bianco-emisferico": 4,
+  "amanita-phalloides-cappello-bianco-piano": 4,
   "amanita-phalloides-cappello-bruno": 7,
+  "amanita-phalloides-cappello-bruno-emisferico": 4,
+  "amanita-phalloides-cappello-bruno-piano": 5,
   "amanita-phalloides-cappello-emisferico": 4,
   "amanita-phalloides-cappello-giallo": 5,
+  "amanita-phalloides-cappello-giallo-emisferico": 4,
+  "amanita-phalloides-cappello-giallo-piano": 5,
   "amanita-phalloides-cappello-grigio": 7,
+  "amanita-phalloides-cappello-grigio-emisferico": 4,
+  "amanita-phalloides-cappello-grigio-piano": 4,
   "amanita-phalloides-cappello-piano": 4,
   "amanita-phalloides-gambo": 4,
   "amanita-phalloides-gambo-bianco": 5,
+  "amanita-phalloides-gambo-bianco-emisferico": 4,
+  "amanita-phalloides-gambo-bianco-piano": 4,
   "amanita-phalloides-gambo-bruno": 4,
+  "amanita-phalloides-gambo-bruno-emisferico": 4,
+  "amanita-phalloides-gambo-bruno-piano": 4,
   "amanita-phalloides-gambo-emisferico": 4,
   "amanita-phalloides-gambo-giallo": 5,
+  "amanita-phalloides-gambo-giallo-emisferico": 4,
+  "amanita-phalloides-gambo-giallo-piano": 4,
   "amanita-phalloides-gambo-grigio": 5,
+  "amanita-phalloides-gambo-grigio-emisferico": 4,
+  "amanita-phalloides-gambo-grigio-piano": 4,
   "amanita-phalloides-gambo-piano": 4,
   "amanita-phalloides-sotto": 4,
   "amanita-rubescens-cappello": 4,
@@ -1247,8 +1618,10 @@
   "amanita-virosa-sotto": 5,
   "armillaria-tabescens-cappello": 4,
   "armillaria-tabescens-cappello-bruno": 6,
+  "armillaria-tabescens-cappello-piano": 4,
   "armillaria-tabescens-gambo": 4,
   "armillaria-tabescens-gambo-bruno": 4,
+  "armillaria-tabescens-gambo-piano": 5,
   "armillaria-tabescens-sotto": 4,
   "caesarea-cappello": 4,
   "caesarea-cappello-giallo": 5,
@@ -1260,28 +1633,38 @@
   "caloboletus-calopus-cappello": 4,
   "caloboletus-calopus-cappello-bruno": 4,
   "caloboletus-calopus-cappello-crema": 4,
+  "caloboletus-calopus-cappello-emisferico": 4,
   "caloboletus-calopus-cappello-grigio": 4,
   "caloboletus-calopus-gambo": 4,
   "caloboletus-calopus-gambo-bruno": 4,
   "caloboletus-calopus-gambo-crema": 4,
+  "caloboletus-calopus-gambo-emisferico": 4,
   "caloboletus-calopus-gambo-grigio": 4,
   "caloboletus-calopus-sotto": 5,
   "caloboletus-radicans-cappello": 5,
   "caloboletus-radicans-cappello-bianco": 4,
+  "caloboletus-radicans-cappello-emisferico": 4,
   "caloboletus-radicans-cappello-grigio": 4,
   "caloboletus-radicans-gambo": 4,
   "caloboletus-radicans-gambo-bianco": 4,
+  "caloboletus-radicans-gambo-emisferico": 4,
   "caloboletus-radicans-gambo-grigio": 4,
   "caloboletus-radicans-sotto": 4,
   "calocybe-gambosa-cappello": 4,
   "calocybe-gambosa-cappello-crema": 4,
+  "calocybe-gambosa-cappello-emisferico": 4,
+  "calocybe-gambosa-cappello-piano": 4,
   "calocybe-gambosa-gambo": 4,
   "calocybe-gambosa-gambo-crema": 5,
+  "calocybe-gambosa-gambo-emisferico": 4,
+  "calocybe-gambosa-gambo-piano": 4,
   "calocybe-gambosa-sotto": 4,
   "chalciporus-piperatus-cappello": 4,
   "chalciporus-piperatus-cappello-bruno": 5,
+  "chalciporus-piperatus-cappello-piano": 4,
   "chalciporus-piperatus-gambo": 4,
   "chalciporus-piperatus-gambo-bruno": 4,
+  "chalciporus-piperatus-gambo-piano": 4,
   "chalciporus-piperatus-sotto": 4,
   "chlorophyllum-rhacodes-cappello": 4,
   "chlorophyllum-rhacodes-cappello-bruno": 4,
@@ -1290,8 +1673,10 @@
   "chlorophyllum-rhacodes-sotto": 4,
   "chlorophyllum-venenatum-cappello": 4,
   "chlorophyllum-venenatum-cappello-bruno": 5,
+  "chlorophyllum-venenatum-cappello-convesso": 4,
   "chlorophyllum-venenatum-gambo": 4,
   "chlorophyllum-venenatum-gambo-bruno": 4,
+  "chlorophyllum-venenatum-gambo-convesso": 4,
   "chlorophyllum-venenatum-sotto": 4,
   "cibarius-cappello": 4,
   "cibarius-cappello-arancio": 6,
@@ -1300,10 +1685,14 @@
   "cibarius-sotto": 4,
   "clitocybe-rivulosa-cappello": 4,
   "clitocybe-rivulosa-cappello-bruno": 4,
+  "clitocybe-rivulosa-cappello-convesso": 4,
   "clitocybe-rivulosa-cappello-crema": 5,
+  "clitocybe-rivulosa-cappello-piano": 4,
   "clitocybe-rivulosa-gambo": 4,
   "clitocybe-rivulosa-gambo-bruno": 4,
+  "clitocybe-rivulosa-gambo-convesso": 5,
   "clitocybe-rivulosa-gambo-crema": 4,
+  "clitocybe-rivulosa-gambo-piano": 5,
   "clitocybe-rivulosa-sotto": 5,
   "coprinus-comatus-cappello": 4,
   "coprinus-comatus-cappello-bruno": 4,
@@ -1334,18 +1723,24 @@
   "cortinarius-rubellus-gambo-rosso": 4,
   "cortinarius-rubellus-sotto": 4,
   "cortinarius-traganus-cappello": 4,
+  "cortinarius-traganus-cappello-emisferico": 4,
   "cortinarius-traganus-gambo": 4,
+  "cortinarius-traganus-gambo-emisferico": 4,
   "cortinarius-traganus-sotto": 4,
   "cortinarius-violaceus-cappello": 4,
   "cortinarius-violaceus-cappello-nero": 5,
+  "cortinarius-violaceus-cappello-piano": 4,
   "cortinarius-violaceus-gambo": 5,
   "cortinarius-violaceus-gambo-nero": 5,
+  "cortinarius-violaceus-gambo-piano": 5,
   "cortinarius-violaceus-sotto": 4,
   "craterellus-cinereus-cappello": 4,
   "craterellus-cinereus-cappello-bruno": 4,
+  "craterellus-cinereus-cappello-imbuto": 4,
   "craterellus-cinereus-cappello-nero": 4,
   "craterellus-cinereus-gambo": 4,
   "craterellus-cinereus-gambo-bruno": 4,
+  "craterellus-cinereus-gambo-imbuto": 4,
   "craterellus-cinereus-gambo-nero": 4,
   "craterellus-cinereus-sotto": 5,
   "craterellus-lutescens-cappello": 4,
@@ -1380,14 +1775,18 @@
   "galerina-marginata-cappello": 4,
   "galerina-marginata-cappello-bruno": 4,
   "galerina-marginata-cappello-giallo": 4,
+  "galerina-marginata-cappello-piano": 4,
   "galerina-marginata-gambo": 4,
   "galerina-marginata-gambo-bruno": 4,
   "galerina-marginata-gambo-giallo": 4,
+  "galerina-marginata-gambo-piano": 4,
   "galerina-marginata-sotto": 4,
   "gymnopilus-junonius-cappello": 4,
   "gymnopilus-junonius-cappello-giallo": 6,
+  "gymnopilus-junonius-cappello-piano": 4,
   "gymnopilus-junonius-gambo": 4,
   "gymnopilus-junonius-gambo-giallo": 4,
+  "gymnopilus-junonius-gambo-piano": 4,
   "gymnopilus-junonius-sotto": 4,
   "gyromitra-esculenta-cappello": 4,
   "gyromitra-esculenta-cappello-bruno": 5,
@@ -1400,36 +1799,52 @@
   "gyromitra-esculenta-sotto": 4,
   "hydnellum-peckii-cappello": 4,
   "hydnellum-peckii-cappello-bruno": 6,
+  "hydnellum-peckii-cappello-convesso": 4,
+  "hydnellum-peckii-cappello-imbuto": 4,
   "hydnellum-peckii-cappello-rosa": 6,
   "hydnellum-peckii-gambo": 4,
   "hydnellum-peckii-gambo-bruno": 5,
+  "hydnellum-peckii-gambo-convesso": 5,
+  "hydnellum-peckii-gambo-imbuto": 4,
   "hydnellum-peckii-gambo-rosa": 4,
   "hydnellum-peckii-sotto": 4,
   "hydnum-rufescens-cappello": 4,
   "hydnum-rufescens-cappello-bruno": 6,
+  "hydnum-rufescens-cappello-imbuto": 4,
+  "hydnum-rufescens-cappello-piano": 4,
   "hydnum-rufescens-gambo": 4,
   "hydnum-rufescens-gambo-bruno": 5,
+  "hydnum-rufescens-gambo-imbuto": 4,
+  "hydnum-rufescens-gambo-piano": 4,
   "hydnum-rufescens-sotto": 4,
   "hygrophoropsis-aurantiaca-cappello": 4,
   "hygrophoropsis-aurantiaca-cappello-bruno": 6,
+  "hygrophoropsis-aurantiaca-cappello-convesso": 4,
   "hygrophoropsis-aurantiaca-cappello-giallo": 6,
   "hygrophoropsis-aurantiaca-gambo": 4,
   "hygrophoropsis-aurantiaca-gambo-bruno": 4,
+  "hygrophoropsis-aurantiaca-gambo-convesso": 4,
   "hygrophoropsis-aurantiaca-gambo-giallo": 4,
   "hygrophoropsis-aurantiaca-sotto": 4,
   "hygrophorus-latitabundus-cappello": 4,
   "hygrophorus-latitabundus-cappello-bruno": 4,
   "hygrophorus-latitabundus-cappello-grigio": 7,
+  "hygrophorus-latitabundus-cappello-ombrellato": 4,
+  "hygrophorus-latitabundus-cappello-piano": 4,
   "hygrophorus-latitabundus-gambo": 4,
   "hygrophorus-latitabundus-gambo-bruno": 4,
   "hygrophorus-latitabundus-gambo-grigio": 4,
+  "hygrophorus-latitabundus-gambo-ombrellato": 4,
+  "hygrophorus-latitabundus-gambo-piano": 5,
   "hygrophorus-latitabundus-sotto": 4,
   "hygrophorus-marzuolus-cappello": 5,
   "hygrophorus-marzuolus-cappello-bianco": 6,
   "hygrophorus-marzuolus-cappello-nero": 6,
+  "hygrophorus-marzuolus-cappello-piano": 4,
   "hygrophorus-marzuolus-gambo": 4,
   "hygrophorus-marzuolus-gambo-bianco": 4,
   "hygrophorus-marzuolus-gambo-nero": 4,
+  "hygrophorus-marzuolus-gambo-piano": 4,
   "hygrophorus-marzuolus-sotto": 4,
   "hypholoma-fasciculare-cappello": 4,
   "hypholoma-fasciculare-cappello-arancio": 4,
@@ -1437,10 +1852,13 @@
   "hypholoma-fasciculare-gambo-arancio": 4,
   "hypholoma-fasciculare-sotto": 4,
   "imleria-badia-cappello": 4,
+  "imleria-badia-cappello-piano": 4,
   "imleria-badia-gambo": 4,
+  "imleria-badia-gambo-piano": 4,
   "imleria-badia-sotto": 4,
   "inocybe-cappello": 4,
   "inocybe-cappello-bianco": 4,
+  "inocybe-cappello-convesso": 4,
   "inocybe-cappello-crema": 4,
   "inocybe-cappello-giallo": 4,
   "inocybe-cappello-grigio": 4,
@@ -1448,6 +1866,7 @@
   "inocybe-cappello-violetto": 5,
   "inocybe-gambo": 4,
   "inocybe-gambo-bianco": 4,
+  "inocybe-gambo-convesso": 5,
   "inocybe-gambo-crema": 4,
   "inocybe-gambo-giallo": 4,
   "inocybe-gambo-grigio": 4,
@@ -1458,17 +1877,25 @@
   "inocybe-lilacina-sotto": 4,
   "inocybe-sotto": 5,
   "laccaria-amethystina-cappello": 4,
+  "laccaria-amethystina-cappello-convesso": 4,
+  "laccaria-amethystina-cappello-piano": 4,
   "laccaria-amethystina-gambo": 4,
+  "laccaria-amethystina-gambo-convesso": 4,
+  "laccaria-amethystina-gambo-piano": 4,
   "laccaria-amethystina-sotto": 4,
   "lactarius-deliciosus-cappello": 4,
+  "lactarius-deliciosus-cappello-convesso": 4,
   "lactarius-deliciosus-cappello-verde": 4,
   "lactarius-deliciosus-gambo": 4,
+  "lactarius-deliciosus-gambo-convesso": 4,
   "lactarius-deliciosus-gambo-verde": 4,
   "lactarius-deliciosus-sotto": 4,
   "lactarius-deterrimus-cappello": 4,
+  "lactarius-deterrimus-cappello-convesso": 4,
   "lactarius-deterrimus-cappello-giallo": 4,
   "lactarius-deterrimus-cappello-verde": 5,
   "lactarius-deterrimus-gambo": 5,
+  "lactarius-deterrimus-gambo-convesso": 4,
   "lactarius-deterrimus-gambo-giallo": 4,
   "lactarius-deterrimus-gambo-verde": 4,
   "lactarius-deterrimus-sotto": 4,
@@ -1489,14 +1916,20 @@
   "lepiota-subincarnata-cappello": 4,
   "lepiota-subincarnata-cappello-bruno": 6,
   "lepiota-subincarnata-cappello-crema": 6,
+  "lepiota-subincarnata-cappello-ombrellato": 5,
+  "lepiota-subincarnata-cappello-piano": 4,
   "lepiota-subincarnata-gambo": 4,
   "lepiota-subincarnata-gambo-bruno": 5,
   "lepiota-subincarnata-gambo-crema": 6,
+  "lepiota-subincarnata-gambo-ombrellato": 4,
+  "lepiota-subincarnata-gambo-piano": 4,
   "lepiota-subincarnata-sotto": 4,
   "marasmius-oreades-cappello": 4,
   "marasmius-oreades-cappello-bruno": 5,
+  "marasmius-oreades-cappello-convesso": 4,
   "marasmius-oreades-gambo": 5,
   "marasmius-oreades-gambo-bruno": 4,
+  "marasmius-oreades-gambo-convesso": 4,
   "marasmius-oreades-sotto": 4,
   "mellea-cappello": 4,
   "mellea-cappello-bruno": 4,
@@ -1517,38 +1950,48 @@
   "morchella-esculenta-sotto": 4,
   "mycena-pura-cappello": 5,
   "mycena-pura-cappello-bianco": 6,
+  "mycena-pura-cappello-convesso": 4,
   "mycena-pura-cappello-grigio": 5,
   "mycena-pura-cappello-violetto": 4,
   "mycena-pura-gambo": 4,
   "mycena-pura-gambo-bianco": 4,
+  "mycena-pura-gambo-convesso": 5,
   "mycena-pura-gambo-grigio": 4,
   "mycena-pura-gambo-violetto": 4,
   "mycena-pura-sotto": 4,
   "neoboletus-luridiformis-cappello": 4,
   "neoboletus-luridiformis-cappello-bruno": 5,
+  "neoboletus-luridiformis-cappello-emisferico": 4,
   "neoboletus-luridiformis-cappello-nero": 5,
   "neoboletus-luridiformis-gambo": 4,
   "neoboletus-luridiformis-gambo-bruno": 4,
+  "neoboletus-luridiformis-gambo-emisferico": 4,
   "neoboletus-luridiformis-gambo-nero": 4,
   "neoboletus-luridiformis-sotto": 4,
   "nuda-cappello": 4,
   "nuda-cappello-bruno": 4,
+  "nuda-cappello-piano": 4,
   "nuda-cappello-rosa": 5,
   "nuda-gambo": 4,
   "nuda-gambo-bruno": 4,
+  "nuda-gambo-piano": 5,
   "nuda-gambo-rosa": 4,
   "nuda-sotto": 4,
   "omphalotus-olearius-cappello": 4,
   "omphalotus-olearius-cappello-bruno": 4,
+  "omphalotus-olearius-cappello-convesso": 4,
   "omphalotus-olearius-cappello-giallo": 4,
   "omphalotus-olearius-gambo": 4,
   "omphalotus-olearius-gambo-bruno": 5,
+  "omphalotus-olearius-gambo-convesso": 4,
   "omphalotus-olearius-gambo-giallo": 4,
   "omphalotus-olearius-sotto": 4,
   "pholiota-squarrosa-cappello": 4,
   "pholiota-squarrosa-cappello-bruno": 4,
+  "pholiota-squarrosa-cappello-piano": 5,
   "pholiota-squarrosa-gambo": 4,
   "pholiota-squarrosa-gambo-bruno": 4,
+  "pholiota-squarrosa-gambo-piano": 4,
   "pholiota-squarrosa-sotto": 4,
   "pinophilus-cappello": 4,
   "pinophilus-cappello-bruno": 4,
@@ -1556,16 +1999,20 @@
   "pinophilus-gambo-bruno": 4,
   "pinophilus-sotto": 4,
   "pleurotus-cornucopiae-cappello": 4,
+  "pleurotus-cornucopiae-cappello-convesso": 4,
   "pleurotus-cornucopiae-gambo": 4,
+  "pleurotus-cornucopiae-gambo-convesso": 4,
   "pleurotus-cornucopiae-sotto": 4,
   "pleurotus-eryngii-cappello": 5,
   "pleurotus-eryngii-cappello-bianco": 4,
   "pleurotus-eryngii-cappello-crema": 4,
   "pleurotus-eryngii-cappello-grigio": 4,
+  "pleurotus-eryngii-cappello-imbuto": 5,
   "pleurotus-eryngii-gambo": 4,
   "pleurotus-eryngii-gambo-bianco": 4,
   "pleurotus-eryngii-gambo-crema": 4,
   "pleurotus-eryngii-gambo-grigio": 4,
+  "pleurotus-eryngii-gambo-imbuto": 4,
   "pleurotus-eryngii-sotto": 4,
   "pleurotus-ostreatus-cappello": 4,
   "pleurotus-ostreatus-cappello-bianco": 6,
@@ -1583,15 +2030,21 @@
   "procera-sotto": 4,
   "pseudocraterellus-undulatus-cappello": 4,
   "pseudocraterellus-undulatus-cappello-bruno": 5,
+  "pseudocraterellus-undulatus-cappello-trombetta": 4,
   "pseudocraterellus-undulatus-gambo": 4,
   "pseudocraterellus-undulatus-gambo-bruno": 4,
+  "pseudocraterellus-undulatus-gambo-trombetta": 5,
   "pseudocraterellus-undulatus-sotto": 4,
   "repandum-cappello": 4,
   "repandum-cappello-arancio": 6,
   "repandum-cappello-crema": 6,
+  "repandum-cappello-imbuto": 5,
+  "repandum-cappello-piano": 4,
   "repandum-gambo": 4,
   "repandum-gambo-arancio": 4,
   "repandum-gambo-crema": 4,
+  "repandum-gambo-imbuto": 4,
+  "repandum-gambo-piano": 4,
   "repandum-sotto": 4,
   "rubroboletus-satanas-cappello": 4,
   "rubroboletus-satanas-cappello-bianco": 4,
@@ -1601,49 +2054,75 @@
   "rubroboletus-satanas-gambo-grigio": 4,
   "rubroboletus-satanas-sotto": 4,
   "russula-aeruginea-cappello": 4,
+  "russula-aeruginea-cappello-imbuto": 5,
+  "russula-aeruginea-cappello-piano": 4,
   "russula-aeruginea-gambo": 4,
+  "russula-aeruginea-gambo-imbuto": 4,
+  "russula-aeruginea-gambo-piano": 5,
   "russula-aeruginea-sotto": 4,
   "russula-aurea-cappello": 4,
+  "russula-aurea-cappello-emisferico": 4,
   "russula-aurea-cappello-giallo": 6,
+  "russula-aurea-cappello-piano": 4,
   "russula-aurea-cappello-rosso": 6,
   "russula-aurea-gambo": 4,
+  "russula-aurea-gambo-emisferico": 4,
   "russula-aurea-gambo-giallo": 4,
+  "russula-aurea-gambo-piano": 4,
   "russula-aurea-gambo-rosso": 4,
   "russula-aurea-sotto": 4,
   "russula-heterophylla-cappello": 4,
   "russula-heterophylla-cappello-bruno": 6,
   "russula-heterophylla-cappello-grigio": 5,
+  "russula-heterophylla-cappello-imbuto": 4,
+  "russula-heterophylla-cappello-piano": 4,
   "russula-heterophylla-gambo": 4,
   "russula-heterophylla-gambo-bruno": 4,
   "russula-heterophylla-gambo-grigio": 4,
+  "russula-heterophylla-gambo-imbuto": 4,
+  "russula-heterophylla-gambo-piano": 4,
   "russula-heterophylla-sotto": 4,
   "russula-olivacea-cappello": 4,
   "russula-olivacea-cappello-bruno": 6,
+  "russula-olivacea-cappello-imbuto": 4,
+  "russula-olivacea-cappello-piano": 5,
   "russula-olivacea-cappello-rosso": 6,
   "russula-olivacea-cappello-violetto": 7,
   "russula-olivacea-gambo": 4,
   "russula-olivacea-gambo-bruno": 4,
+  "russula-olivacea-gambo-imbuto": 4,
+  "russula-olivacea-gambo-piano": 4,
   "russula-olivacea-gambo-rosso": 4,
   "russula-olivacea-gambo-violetto": 4,
   "russula-olivacea-sotto": 4,
   "sarcodon-imbricatus-cappello": 4,
+  "sarcodon-imbricatus-cappello-imbuto": 4,
   "sarcodon-imbricatus-gambo": 4,
+  "sarcodon-imbricatus-gambo-imbuto": 4,
   "sarcodon-imbricatus-sotto": 4,
   "sarcodon-scabrosus-cappello": 4,
+  "sarcodon-scabrosus-cappello-imbuto": 4,
   "sarcodon-scabrosus-gambo": 4,
+  "sarcodon-scabrosus-gambo-imbuto": 4,
   "sarcodon-scabrosus-sotto": 4,
   "suillus-bovinus-cappello": 4,
   "suillus-bovinus-cappello-bruno": 5,
+  "suillus-bovinus-cappello-piano": 4,
   "suillus-bovinus-gambo": 4,
   "suillus-bovinus-gambo-bruno": 4,
+  "suillus-bovinus-gambo-piano": 4,
   "suillus-bovinus-sotto": 4,
   "suillus-cappello": 5,
   "suillus-cappello-arancio": 5,
+  "suillus-cappello-emisferico": 4,
   "suillus-cappello-giallo": 5,
+  "suillus-cappello-piano": 5,
   "suillus-cappello-violetto": 5,
   "suillus-gambo": 4,
   "suillus-gambo-arancio": 5,
+  "suillus-gambo-emisferico": 4,
   "suillus-gambo-giallo": 4,
+  "suillus-gambo-piano": 4,
   "suillus-gambo-violetto": 5,
   "suillus-sotto": 5,
   "terreum-cappello": 4,
@@ -1653,32 +2132,46 @@
   "terreum-sotto": 4,
   "tricholoma-equestre-cappello": 4,
   "tricholoma-equestre-cappello-bruno": 4,
+  "tricholoma-equestre-cappello-conico": 4,
+  "tricholoma-equestre-cappello-ombrellato": 5,
+  "tricholoma-equestre-cappello-piano": 5,
   "tricholoma-equestre-cappello-verde": 6,
   "tricholoma-equestre-gambo": 5,
   "tricholoma-equestre-gambo-bruno": 4,
+  "tricholoma-equestre-gambo-conico": 4,
+  "tricholoma-equestre-gambo-ombrellato": 4,
+  "tricholoma-equestre-gambo-piano": 4,
   "tricholoma-equestre-gambo-verde": 4,
   "tricholoma-equestre-sotto": 4,
   "tricholoma-pardinum-cappello": 4,
   "tricholoma-pardinum-cappello-bianco": 6,
   "tricholoma-pardinum-cappello-bruno": 6,
+  "tricholoma-pardinum-cappello-piano": 5,
   "tricholoma-pardinum-gambo": 5,
   "tricholoma-pardinum-gambo-bianco": 4,
   "tricholoma-pardinum-gambo-bruno": 5,
+  "tricholoma-pardinum-gambo-piano": 5,
   "tricholoma-pardinum-sotto": 4,
   "tricholoma-portentosum-cappello": 5,
   "tricholoma-portentosum-cappello-bruno": 5,
+  "tricholoma-portentosum-cappello-convesso": 5,
   "tricholoma-portentosum-cappello-giallo": 7,
   "tricholoma-portentosum-gambo": 4,
   "tricholoma-portentosum-gambo-bruno": 5,
+  "tricholoma-portentosum-gambo-convesso": 4,
   "tricholoma-portentosum-gambo-giallo": 5,
   "tricholoma-portentosum-sotto": 4,
   "tricholoma-sciodes-cappello": 4,
+  "tricholoma-sciodes-cappello-convesso": 5,
   "tricholoma-sciodes-cappello-grigio": 4,
   "tricholoma-sciodes-gambo": 4,
+  "tricholoma-sciodes-gambo-convesso": 4,
   "tricholoma-sciodes-gambo-grigio": 5,
   "tricholoma-sciodes-sotto": 4,
   "tricholoma-virgatum-cappello": 4,
+  "tricholoma-virgatum-cappello-convesso": 5,
   "tricholoma-virgatum-gambo": 4,
+  "tricholoma-virgatum-gambo-convesso": 5,
   "tricholoma-virgatum-sotto": 4,
   "tylopilus-felleus-cappello": 5,
   "tylopilus-felleus-cappello-bruno": 7,
@@ -1691,11 +2184,15 @@
   "urnula-craterium-gambo-bruno": 4,
   "urnula-craterium-sotto": 5,
   "virescens-cappello": 4,
+  "virescens-cappello-emisferico": 4,
   "virescens-cappello-grigio": 5,
+  "virescens-cappello-imbuto": 4,
   "virescens-cappello-rosa": 7,
   "virescens-cappello-violetto": 5,
   "virescens-gambo": 4,
+  "virescens-gambo-emisferico": 4,
   "virescens-gambo-grigio": 4,
+  "virescens-gambo-imbuto": 4,
   "virescens-gambo-rosa": 4,
   "virescens-gambo-violetto": 4,
   "virescens-sotto": 4
