@@ -767,7 +767,7 @@ html.kb-open body { padding-bottom: 16px; }
 [data-view="specie"] .search-box { position: sticky; top: calc(var(--appbar-h) + env(safe-area-inset-top, 0px) + 6px); z-index: 5; }
 @media (max-width: 899px) {
   .wiz { height: var(--vvh, 100%); max-height: var(--vvh, 100%); }
-  .sheet-dlg { max-height: calc(var(--vvh, 100dvh) - 12px); overflow-y: auto; }
+  .sheet-dlg { max-height: calc(var(--vvh, 100dvh) - env(safe-area-inset-top, 0px) - 12px); overflow-y: auto; }
 }
 
 /* installazione */
@@ -942,7 +942,7 @@ html.is-offline #updated { color: var(--warn-ink); font-weight: 600; }
 .id-more { color: var(--link); font-weight: 600; }
 .id-zoom { position: absolute; right: 8px; top: 8px; width: 34px; height: 34px; border-radius: 50%; border: 0; display: grid; place-items: center; background: rgb(20 18 14 / .55); color: #fff; cursor: zoom-in; backdrop-filter: blur(4px); }
 .id-zoom svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; }
-.taxon-dlg { padding: 0 0 calc(20px + env(safe-area-inset-bottom, 0px)); max-height: calc(var(--vvh, 100dvh) - 24px); overflow-y: auto; }
+.taxon-dlg { padding: 0 0 calc(20px + env(safe-area-inset-bottom, 0px)); max-height: calc(var(--vvh, 100dvh) - env(safe-area-inset-top, 0px) - 24px); overflow-y: auto; }
 .taxon-dlg .wiz-close { position: sticky; top: 10px; float: right; margin: 10px 10px -44px 0; z-index: 2; }
 .tx-img { margin: 0; position: relative; }
 .tx-img img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 28px 28px 0 0; }
@@ -1404,10 +1404,14 @@ html.is-offline #updated { color: var(--warn-ink); font-weight: 600; }
 .look-open::before { content: ''; position: absolute; inset: 0; z-index: 1; }
 
 /* pannello aperto: la pagina dietro resta ferma (lo scroll arriva solo al pannello) */
-html:has(dialog[open]:modal) { overflow: hidden; }
+/* Su iPhone (Safari e app installata) togliere e rimettere overflow: hidden alla pagina sposta barra in basso e intestazione
+   a metà schermo dopo la chiusura del pannello: lì basta overscroll-behavior sul pannello. */
+@supports not (-webkit-touch-callout: none) {
+  html:has(dialog[open]:modal) { overflow: hidden; }
+  html:has(dialog[open]:modal) body { overflow: hidden; }
+}
 html { scrollbar-gutter: stable; }
 dialog { overscroll-behavior: contain; }
-html:has(dialog[open]:modal) body { overflow: hidden; }
 
 /* pannello del velenoso: anteprima che si trascina su per aprire la scheda completa */
 .tx-handle { position: absolute; top: 0; left: 0; right: 0; height: 26px; z-index: 3; display: grid; place-items: center; touch-action: none; }
@@ -1747,6 +1751,8 @@ html.theme-swap, html.theme-swap *, html.theme-swap *::before, html.theme-swap *
 .cover .facts.t1 .fk, .cover .facts.t2 .fk, .cover .facts.t3 .fk { display: none; }
 .cover .facts.t2 .fk2, .cover .facts.t3 .fk2 { display: none; }
 .cover .facts.t3 .fact.wx-ok .fx { display: none; }
+/* ultimo passo: la gente resta come icona (con il testo nel titolo), il meteo che avvisa resta scritto per intero */
+.cover .facts.t4 .fc { display: none; }
 @media (max-width: 760px) { .cover .sp-also + .sp-also { display: none; } }
 .cover .fk3 { display: none; }
 .cover .facts.t2 .fk3, .cover .facts.t3 .fk3 { display: inline; }
@@ -1993,7 +1999,7 @@ html.theme-swap, html.theme-swap *, html.theme-swap *::before, html.theme-swap *
 .fo[aria-pressed="true"] .fo-n { color: inherit; }
 @media (hover: hover) and (pointer: fine) { .fo:not([aria-pressed="true"]):hover { background: var(--surface-2); border-color: var(--border); } }
 /* pannello dal basso (telefono) */
-.idf-sheet { padding: 0; display: flex; flex-direction: column; max-height: 88dvh; }
+.idf-sheet { padding: 0; display: flex; flex-direction: column; max-height: min(88dvh, calc(100dvh - env(safe-area-inset-top, 0px) - 12px)); }
 .idf-sheet:not([open]) { display: none; }
 .idf-sh-h { display: flex; flex: none; justify-content: space-between; align-items: center; padding: 26px 18px 6px; }
 .idf-sh-h h2 { margin: 0; font-family: var(--font-display); font-size: 22px; }
@@ -2243,7 +2249,7 @@ html.entity-open { overflow: hidden; }
 .entity-body details, .entity-body .kitchen { scroll-margin-top: 80px; }
 .entity-sheet > footer { padding: 12px 20px 20px; }
 @media(max-width:699px) {
-  .entity-sheet { width: 100%; max-height: calc(100dvh - 12px); margin: auto auto 0; border-radius: 24px 24px 0 0; padding-bottom: env(safe-area-inset-bottom,0px); }
+  .entity-sheet { width: 100%; max-height: calc(100dvh - env(safe-area-inset-top, 0px) - 12px); margin: auto auto 0; border-radius: 24px 24px 0 0; padding-bottom: env(safe-area-inset-bottom,0px); }
   .entity-toolbar { gap: 8px; font-size: 14px; }
   .entity-toolbar .btn { font-size: 13px; }
   .entity-body .pbody { padding-inline: 16px; }
@@ -3169,13 +3175,7 @@ img[data-image-state="ready"][data-image-fast] { animation: none; }
 .attention .att-sum { margin-top: 14px; }
 
 /* iPhone, app installata: la barra di stato è trasparente (black-translucent) e l'intestazione sfocata ci passa sotto.
-   iOS scrive ora e batteria sempre in bianco: nel tema chiaro un velo scuro leggerissimo, solo in quella fascia, le tiene leggibili. */
-.status-veil { display: none; }
-@media (display-mode: standalone) {
-  .status-veil { display: block; position: fixed; z-index: 1100; top: 0; left: 0; right: 0; height: env(safe-area-inset-top, 0px); pointer-events: none; background: linear-gradient(rgb(20 16 10 / .34), rgb(20 16 10 / .14)); }
-  :root[data-theme="dark"] .status-veil { display: none; }
-}
-@media (display-mode: standalone) and (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .status-veil { display: none; } }
+   iOS sceglie da solo ora e batteria scure sul fondo chiaro: niente velo, che faceva una fascia grigia sopra la barra. */
 
 /* Punti di ritaglio: ogni contenitore usa la posizione del suo formato (data/crop-points.json via js/images.js);
    senza dati resta il centro di prima. */
