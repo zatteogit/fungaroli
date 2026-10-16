@@ -37,7 +37,8 @@ for (const width of [390, 1280]) for (const theme of ['light', 'dark']) {
     const errors = []; page.on('pageerror', (e) => errors.push(e.message));
     await page.goto('/');
     await expect(page.locator('#hero .cover-link')).toBeVisible();
-    await page.waitForLoadState('networkidle');
+    // attese su elementi precisi, non sulla rete ferma: con la macchina carica «networkidle» può non arrivare mai
+    await expect(page.locator('#ranking li:first-child .tile > img')).toBeAttached();
     await loadAllImages(page);
     const bright = await brightestPhoto(page);
     expect(bright).toBeTruthy();
@@ -56,7 +57,7 @@ for (const width of [390, 1280]) for (const theme of ['light', 'dark']) {
     // copertina della scheda del luogo
     await page.goto('/#/zona/tancia/0');
     await expect(page.locator('[data-view="zona"] .phero-title')).toBeVisible();
-    await page.waitForLoadState('networkidle');
+    await expect(page.locator('[data-view="zona"] .phero-img > img')).toBeAttached();
     await loadAllImages(page);
     const zone = await sweepCover(page, { host: '[data-view="zona"] .phero', img: '[data-view="zona"] .phero-img > img', size: 'hd', photos: hard });
     expect(zone.items.length).toBeGreaterThan(2);
