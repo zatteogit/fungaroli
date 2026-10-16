@@ -1,0 +1,82 @@
+{
+  "file": "incoming/icone/forme-40.png",
+  "sha256": "6d7134a4266bfab257d4748852cbd3ba03f392f962399478021e440be4917dee",
+  "size": [
+    1254,
+    1254
+  ],
+  "bytes": 26742,
+  "cells": [
+    {
+      "cella": 0,
+      "bbox": [
+        77,
+        99,
+        341,
+        318
+      ],
+      "margini_px": [
+        77,
+        99,
+        77,
+        100
+      ],
+      "contorno_scuro_estremi": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "cella": 1,
+      "bbox": [
+        111,
+        77,
+        306,
+        341
+      ],
+      "margini_px": [
+        111,
+        77,
+        112,
+        77
+      ],
+      "contorno_scuro_estremi": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "cella": 2,
+      "vuota": true
+    },
+    {
+      "cella": 3,
+      "vuota": true
+    },
+    {
+      "cella": 4,
+      "vuota": true
+    },
+    {
+      "cella": 5,
+      "vuota": true
+    },
+    {
+      "cella": 6,
+      "vuota": true
+    },
+    {
+      "cella": 7,
+      "vuota": true
+    },
+    {
+      "cella": 8,
+      "vuota": true
+    }
+  ],
+  "visuale": "confronto con riferimenti approvati; pronta da integrare"
+}

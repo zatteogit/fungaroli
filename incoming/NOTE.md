@@ -506,3 +506,7 @@ fasi-33: agaricus-xanthodermus giovane; agaricus-xanthodermus adulto; entoloma-s
 fasi-34: entoloma-sinuatum adulto. Disegni generati dalle basi approvate; solo cambiamenti descritti nelle fasi. Tavolozza 128 colori; composizione centrata nelle celle. Lamelle semplificate in raggi, colori intermedi resi con due toni. Nessuna sezione uovo prevista per queste specie.
 
 fasi-31, revisione finale: cappelli adulti di arvensis e bisporus appiattiti; ripristinato il bordo avorio delle tessere sotto di bisporus come nelle basi. Prompt di correzione: "Flatten adult caps to a horizontal plate; preserve cream underside rim of bisporus; keep young hemisphere, cap colors, stems and rings unchanged." Modello image_gen. Nuovi controlli su tutte le 9 celle: margini minimi 64 px, quattro estremi scuri in ogni cella; 93744 byte. Manifest invariato per evitare doppioni: le 39 righe aggiunte restano le stesse.
+
+16/10/2026 — Eliminati dal manifest soltanto i 4 record obsoleti: morchella-elata colore:nero (2) e craterellus-lutescens forma:trombetta (2). Gli altri record sono preservati. Il nuovo lotto comprende 104 combinazioni/208 disegni, come confermato, più 2 disegni della spugnola.
+
+forme-40: morchella-esculenta emisferico. Riferimenti approvati di forma e colore; palette ridotta a 128 colori. Nessun carattere anatomico aggiunto. Spugnola ridisegnata con testa saldata, alveoli irregolari, senza bordo libero né lamelle; sostituisce le celle 0–1 scartate di forme-28.

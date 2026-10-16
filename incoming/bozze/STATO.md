@@ -518,3 +518,5 @@ Tecnica: output nativo del tool 1122×1402, ricampionato a 1600×2000 con LANCZO
 | incoming/icone/fasi-33.png | agaricus-xanthodermus giovane; agaricus-xanthodermus adulto; entoloma-sinuatum giovane | pronta da integrare | 9 disegni; alpha 1254×1254, 116207 byte. Margini ≥10% e quattro estremi con contorno scuro verificati col codice; confronto in sovrapposizione con le basi. |
 
 | incoming/icone/fasi-34.png | entoloma-sinuatum adulto | pronta da integrare | 3 disegni; alpha 1254×1254, 38295 byte. Margini ≥10% e quattro estremi con contorno scuro verificati col codice; confronto in sovrapposizione con le basi. |
+
+| incoming/icone/forme-40.png | morchella-esculenta emisferico | pronta da integrare | 2 icone, 1254×1254 alpha, 26742 byte. Margini ≥15%, contorni scuri ai quattro estremi e celle vuote verificati col codice; confronto con riferimenti approvati. QA: incoming/qa/forme-40.json. |
