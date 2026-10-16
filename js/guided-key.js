@@ -107,10 +107,11 @@ export async function renderGuidedKey(box, mode, { items, thumb, note = '' }) {
   // termine botanico in grassetto, sotto la spiegazione in parole semplici (se dice qualcosa in più)
   const optLabelHtml = (v) => v.term && v.term.toLowerCase() !== v.label.toLowerCase()
     ? `<span class="id-opt-l"><b class="gk-term">${esc(v.term)}</b><span class="gk-expl">${esc(v.label)}</span></span>` : `<span class="id-opt-l">${esc(v.label)}</span>`;
+  // una sola carta domanda per volta: la riga sui disegni (alberi) compare quindi una volta per pagina
   const qCard = (k, n) => {
-    const q = data.schema[k];
-    return `<section class="id-q id-q-big gk-q">${n ? `<p class="eyebrow">Domanda ${n}</p>` : ''}<h3>${esc(q.question)}</h3><p class="small muted">${esc(q.short)}</p>
-      ${(() => { const withArt = q.values.some((v) => iconSrc(icons, k, v.id)); return `<div class="id-grid id-grid-txt${withArt ? ' gk-grid-ill' : ''}">${q.values.map((v) => `<button type="button" class="id-opt" data-k="${esc(k)}" data-v="${esc(v.id)}" aria-pressed="${st.ans[k] === v.id}">${withArt ? `<span class="id-art" aria-hidden="true">${iconSrc(icons, k, v.id) ? ill(iconSrc(icons, k, v.id), 56) : ''}</span>` : ''}${optLabelHtml(v)}</button>`).join('')}`; })()}
+    const q = data.schema[k], withArt = q.values.some((v) => iconSrc(icons, k, v.id));
+    return `<section class="id-q id-q-big gk-q">${n ? `<p class="eyebrow">Domanda ${n}</p>` : ''}<h3>${esc(q.question)}</h3><p class="small muted">${esc(q.short)}</p>${withArt ? '<p class="small muted gk-ill-note">Disegni schematici, non foto: confronta con il testo e le foto.</p>' : ''}
+      <div class="id-grid id-grid-txt${withArt ? ' gk-grid-ill' : ''}">${q.values.map((v) => `<button type="button" class="id-opt" data-k="${esc(k)}" data-v="${esc(v.id)}" aria-pressed="${st.ans[k] === v.id}">${withArt ? `<span class="id-art" aria-hidden="true">${iconSrc(icons, k, v.id) ? ill(iconSrc(icons, k, v.id), 56) : ''}</span>` : ''}${optLabelHtml(v)}</button>`).join('')}
       <button type="button" class="id-opt id-opt-dk" data-skip="${esc(k)}"><span class="id-opt-l">non lo vedo</span></button></div></section>`;
   };
   const row = (k) => {

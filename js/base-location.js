@@ -35,7 +35,7 @@ async function flush(){
 const decimal=n=>Number.isFinite(n)?n.toLocaleString('it-IT',{maximumFractionDigits:1}):'–';
 export const travelText=t=>Number.isFinite(t.minutes)?`${t.minutes} min${Number.isFinite(t.km)?` · ${decimal(t.km)} km`:''}`:`${decimal(t.airKm)} km in linea d’aria`;
 export const directionsTo=(lat,lon)=>drivingDirections(currentBase(),{lat,lon});
-export const BASE_PRIVACY_TEXT='La base di partenza è facoltativa e privata: nome e coordinate vengono salvati nel tuo profilo su Cloudflare D1. La posizione del dispositivo viene richiesta solo se premi “Usa la posizione attuale”. Per cercare una località usiamo Photon; per i percorsi inviamo le coordinate a OSRM/OpenStreetMap, senza nome o ID del profilo. Aprendo il navigatore, la partenza viene inviata anche a Google Maps. La base non entra nelle segnalazioni pubbliche e puoi rimuoverla dal profilo.';
+export const BASE_PRIVACY_TEXT='La base di partenza è facoltativa e privata: nome e coordinate vengono salvati nel tuo profilo su Cloudflare D1. Per la base, la posizione del dispositivo viene richiesta solo se premi “Usa la posizione attuale”. Per cercare una località usiamo Photon; per i percorsi inviamo le coordinate a OSRM/OpenStreetMap, senza nome o ID del profilo. Aprendo il navigatore, la partenza viene inviata anche a Google Maps. La base non entra nelle segnalazioni pubbliche e puoi rimuoverla dal profilo.';
 
 export function mountBaseEditor(root,{value,save}){
   let selected=null;

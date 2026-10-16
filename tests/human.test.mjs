@@ -38,8 +38,28 @@ test('comodità: vicino e su asfalto = comodo; lontano e a piedi = impegnativo',
   assert.equal(comfortScore({ driveMin: 100, walkM: 2000, surface: 1, unpavedKm: 4 }).level, 'impegnativo');
 });
 
-test('con folla alta si arriva all\'apertura legale (alba − 1 h)', () => {
+test('con folla alta si arriva al primo quarto d\'ora dopo l\'apertura legale (alba − 1 h), mai prima', () => {
   const crowd = { level: 'alto' };
   const t = timingAdvice({ dateStr: '2026-10-18', lat: 42.4, lon: 12.86, crowd });
-  assert.equal(t.arrive.getTime(), t.sunrise.getTime() - 3600e3);
+  assert.equal(t.legal.getTime(), t.sunrise.getTime() - 3600e3);
+  assert.ok(t.arrive >= t.legal);
+  assert.ok(t.arrive - t.legal < 15 * 6e4);
+  assert.equal(t.arrive.getTime() % (15 * 6e4), 0); // la scheda arrotonda per difetto: l'orario resta questo
+  assert.equal(hm(t.arrive), '06:30'); // apertura 6:23 (scheda: «raccolta consentita dalle 6:25»)
+  assert.doesNotMatch(t.why, /trova|nati nella notte/);
+  assert.match(t.why, /stimiamo/);
+  // in tutto l'anno l'arrivo consigliato non precede l'apertura della raccolta
+  for (let d = Date.UTC(2026, 0, 1); d < Date.UTC(2027, 0, 1); d += 864e5) {
+    const x = timingAdvice({ dateStr: new Date(d).toISOString().slice(0, 10), lat: 42.4, lon: 12.86, crowd });
+    assert.ok(x.arrive >= x.legal && x.arrive - x.legal < 15 * 6e4);
+  }
+});
+
+test('i consigli d\'orario non parlano di funghi trovati: descrivono solo la folla stimata', () => {
+  for (const level of ['alto', 'medio', 'basso']) {
+    const t = timingAdvice({ dateStr: '2026-10-18', lat: 42.4, lon: 12.86, crowd: { level } });
+    assert.doesNotMatch(t.why, /trova|nati|davanti/);
+  }
+  const medio = timingAdvice({ dateStr: '2026-10-18', lat: 42.4, lon: 12.86, crowd: { level: 'medio' } });
+  assert.equal(medio.arrive.getTime(), medio.sunrise.getTime());
 });

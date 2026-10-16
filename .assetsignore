@@ -24,5 +24,13 @@ AGENTS.md
 CLAUDE.md
 .claude
 
-# Studio Fronda: documentazione nel repo, fuori dagli asset del sito.
-docs/fronda
+# Documentazione del repository (handoff, studio Fronda, brief, schermate): fuori dagli asset del sito.
+# Restano pubblici solo i file che l'app carica o collega:
+# - metodo-scientifico.md: pagina «Come funziona l'indice» (js/science.js) e precache di sw.js;
+# - cms.md: «Guida e API» della redazione (redazione.html);
+# - cms.openapi.json: contratto delle API citato da cms.md, per gli agenti.
+# «docs/*» e non «docs/»: con una cartella esclusa per intero i file non si possono riammettere.
+docs/*
+!docs/metodo-scientifico.md
+!docs/cms.md
+!docs/cms.openapi.json

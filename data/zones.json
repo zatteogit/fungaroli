@@ -211,7 +211,7 @@
    "trails": "Accessi alle valli torrentizie dalle frazioni.",
    "drive_min": 93,
    "drive_km": 69,
-   "protection": "Area nel Parco Nazionale del Gran Sasso e Monti della Laga. Il Piano del Parco (2020) esclude il prelievo nelle zone \"a\" di riserva integrale e il regolamento sui funghi è ancora in bozza: verifica con l'Ente Parco prima dell'uscita.",
+   "protection": "Area nel Parco Nazionale del Gran Sasso e Monti della Laga. Per la legge regionale qui la raccolta è vietata, salvo diverse disposizioni dell'Ente Parco. Il Piano del Parco (2020) esclude il prelievo nelle zone «a» e «b», salvi gli usi civici; il regolamento sui funghi è ancora in bozza. Secondo la cartografia della Regione, che è indicativa, la zona «b» comprende gran parte del bosco di quest'area alle quote di 1.350 e 1.600 m. Chiedi all'Ente Parco prima dell'uscita.",
    "popularity": 0.5,
    "title": "Monti della Laga",
    "subtitle": "Amatrice"
@@ -224,7 +224,7 @@
    "radius_m": 3000,
    "popularity": 0.9,
    "description": "Faggeta continua sul versante di Rieti del Terminillo, tra Pian de' Rosce, Monte Cardito e Campoforogna (circa 1000-1600 m). È la zona di montagna più vicina alla città e una delle più frequentate dai cercatori: le cronache locali la citano dal 2010 a oggi.",
-   "access": "Da Rieti SS 4 bis del Terminillo per Vazia e Lisciano fino a Pian de' Rosce (circa 20-25 minuti); Campoforogna poco più su, prima di Pian de' Valli.",
+   "access": "Da Rieti SS 4 bis del Terminillo per Vazia e Lisciano fino a Pian de' Rosce (circa 30 minuti). Campoforogna è più in alto, oltre Pian de' Valli (circa 40 minuti).",
    "parking": [
     {
      "name": "Pian de' Rosce",
@@ -283,7 +283,7 @@
    "radius_m": 4000,
    "popularity": 0.7,
    "description": "Faggete e cerrete dell'Alto Velino attorno a Cittareale (900-1500 m), al confine con l'Umbria. I Carabinieri Forestali vi controllano spesso i raccoglitori, anche da Roma e Perugia (sequestri di porcini nel 2019 a Fonte Corno e Fosso Builli).",
-   "access": "Da Rieti SS 4 Salaria fino a Posta, poi la strada per Cittareale (circa 50-60 minuti).",
+   "access": "Da Rieti SS 4 Salaria fino a Posta, poi la strada per Cittareale (circa 70 minuti).",
    "parking": [
     {
      "name": "Cittareale",
@@ -356,7 +356,7 @@
     }
    ],
    "trails": "Sentieri della Valle di Malito verso la Duchessa.",
-   "protection": "La parte alta della valle confina con la Riserva Naturale Montagne della Duchessa (L.R. 70/1990): nella zona A di riserva integrale la raccolta è vietata, altrove la legge istitutiva la subordina all'autorizzazione dell'ente gestore. Verifica i confini e chiedi all'ente (riservaduchessa@regione.lazio.it, 0746 306493).",
+   "protection": "La parte alta della valle confina con la Riserva Naturale Montagne della Duchessa (L.R. 70/1990) e una piccola parte della zona è dentro la riserva. Il Piano della riserva (2021) non risulta contenere regole sui funghi e il regolamento non è approvato. Valgono quindi le norme di salvaguardia della legge istitutiva (art. 12): la raccolta di specie vegetali spontanee è vietata, salvo autorizzazione dell'ente gestore. Verifica i confini e, prima di raccogliere funghi, chiedi all'ente se serve l'autorizzazione (Comune di Borgorose; ufficio della riserva: riservaduchessa@regione.lazio.it, 0746 306493).",
    "bands": [
     880,
     1110,
@@ -374,7 +374,7 @@
    "radius_m": 3000,
    "popularity": 0.45,
    "description": "Cerrete e boschi di carpino nero tra Cerchiara, Piediserre e San Giovanni Reatino (440-770 m), sul versante dei Sabini verso Rieti. Quote basse: zona da ovoli e porcini estivi dopo i temporali, frequentata anche da Terni.",
-   "access": "Da Rieti la strada per San Giovanni Reatino o la SP del Tancia (circa 25 minuti).",
+   "access": "Da Rieti la strada per San Giovanni Reatino o la SP del Tancia (circa 30 minuti).",
    "parking": [
     {
      "name": "Cerchiara",
@@ -401,7 +401,7 @@
    "radius_m": 3000,
    "popularity": 0.4,
    "description": "Faggete del versante nord dei Monti Reatini sopra Leonessa (1000-1700 m), estese e continue sulla Carta Forestale. Proposta dai dati: nelle fonti non risultano segnalazioni specifiche di cercatori, quindi probabilmente meno battuta del Terminillo.",
-   "access": "Da Rieti per il Terminillo e la Sella di Leonessa, oppure per la SS 4 bis e la strada di Leonessa (circa 50 minuti).",
+   "access": "Da Rieti per la SR 79 verso Terni e poi la SR 521 di Morro (circa 55 minuti). In alternativa per il Terminillo: SS 4 bis fino a Pian de' Valli, poi SP 10 per la Sella di Leonessa, strada di valico in quota. Dal 9 ottobre 2026 un tratto della SR 521 è a senso unico alternato con semaforo, in attesa della messa in sicurezza del versante: possibili code (Comune di Leonessa, 7 ottobre 2026). Verifica la viabilità prima di partire.",
    "parking": [
     {
      "name": "Leonessa",
@@ -428,7 +428,7 @@
    "radius_m": 3000,
    "popularity": 0.3,
    "description": "Cerrete e castagneti della valle del Tronto ad ovest di Amatrice, attorno a Domo (860-1170 m): più in basso e più caldi della faggeta della Laga, quindi buoni prima in stagione e per ovoli e porcini estivi. Proposta dai dati, senza segnalazioni specifiche nelle fonti.",
-   "access": "Da Rieti SS 4 Salaria fino ad Amatrice, poi la strada per Domo (circa 1 ora).",
+   "access": "Da Rieti SS 4 Salaria fino ad Amatrice, poi la strada per Domo (circa 1 ora e 25 minuti).",
    "parking": [
     {
      "name": "Domo",

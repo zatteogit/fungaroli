@@ -22,7 +22,7 @@
       ],
       "leaf": "Alterna, ovale-ellittica, 5-10 cm, verde lucido, margine intero ondulato (al massimo piccoli denti all'apice delle nervature), ciglia bianche sul bordo nelle foglie giovani.",
       "bark": "Liscia, sottile, grigio-argentea, spesso con macchie di licheni; non si fessura nemmeno da vecchio.",
-      "fruit": "Faggiola: 1-3 semi trigoni lucidi in una cupola legnosa con aculei morbidi che si apre in 4 valve; maturano a settembre-ottobre, con annate di pasciona ogni alcuni anni.",
+      "fruit": "Faggiole: 1-3 piccoli frutti secchi a tre spigoli, lucidi, in una cupola legnosa con aculei morbidi che si apre in 4 valve; maturano a settembre-ottobre, con annate di pasciona ogni alcuni anni.",
       "habit": "Albero alto 25-40 m, fusto diritto e colonnare in fustaia; nel Reatino spesso ceduo a più polloni sulla stessa ceppaia.",
       "confusable": [
         {
@@ -439,7 +439,7 @@
         "mellea"
       ],
       "fungi_note": "Micorrizico del porcino nero e dell'ovolo nelle leccete aperte e miste a roverella; chiodino sulle ceppaie. Attenzione: sulle ceppaie di leccio e querce cresce anche il fungo dell'olivo, tossico e simile al finferlo.",
-      "season_tip": "Facile tutto l'anno: è l'unica quercia verde scura in inverno; la lettiera è fatta di foglie piccole, dure e grigie sotto.",
+      "season_tip": "Facile tutto l'anno: fra le querce di questo catalogo è l'unica sempreverde, verde scura anche in inverno; la lettiera è fatta di foglie piccole, dure e grigie sotto.",
       "sources": [
         {
           "title": "Acta Plantarum, IPFI: Quercus ilex",
@@ -1162,7 +1162,7 @@
         {
           "id": "tiglio nostrano",
           "name": "Tiglio nostrano",
-          "how_to_tell": "Albero vero; foglia a base asimmetrica, liscia e glabra."
+          "how_to_tell": "Albero alto, con un solo tronco. Foglia a cuore con base spesso asimmetrica, pelosa sotto, con ciuffi di peli biancastri dove si incontrano le nervature. Fiori e frutti appesi a una lunga brattea chiara."
         }
       ],
       "altitude_m": [
@@ -1738,6 +1738,14 @@
         {
           "title": "Università di Trieste · Portale della Flora di Roma",
           "url": "https://dryades.units.it/Roma/index.php?id=3089&procedure=taxon_page"
+        },
+        {
+          "title": "Info Flora · Tilia platyphyllos",
+          "url": "https://www.infoflora.ch/it/flora/tilia-platyphyllos.html"
+        },
+        {
+          "title": "Università di Udine · Tilia platyphyllos subsp. platyphyllos",
+          "url": "https://flora.uniud.it/scheda.php?id=1569"
         }
       ],
       "habitatMappingNote": "Categoria forestale compatibile con l’habitat descritto, non presenza osservata dell’albero."
@@ -2419,7 +2427,7 @@
         {
           "id": "castagno",
           "name": "Castagno",
-          "how_to_tell": "Foglia semplice, lunga e dentata, alterna. Riccio coperto di spine sottili e molto fitte; seme più appuntito, meno sferico."
+          "how_to_tell": "Foglia semplice, lunga e dentata, alterna. Riccio coperto di spine sottili e molto fitte; la castagna è un frutto, non un seme: è più appuntita e meno sferica del seme dell'ippocastano."
         }
       ],
       "altitude_m": null,
@@ -2428,7 +2436,7 @@
       "forest_categories": [],
       "fungi": [],
       "fungi_note": "Nessun fungo dell'app è legato all'ippocastano nelle fonti lette.",
-      "season_tip": "In autunno, sotto gli alberi, capsule spinose aperte e semi bruni lucidi: non sono castagne e crudi sono velenosi. D'inverno grosse gemme opposte, rossastre e appiccicose.",
+      "season_tip": "In autunno, sotto gli alberi, capsule spinose aperte e semi bruni lucidi: non sono castagne e sono velenosi, anche cotti. D'inverno grosse gemme opposte, rossastre e appiccicose.",
       "sources": [
         {
           "title": "Acta Plantarum, IPFI: Aesculus hippocastanum",
@@ -2457,6 +2465,10 @@
         {
           "title": "Wikipedia (incrocio): Aesculus hippocastanum",
           "url": "https://it.wikipedia.org/wiki/Aesculus_hippocastanum"
+        },
+        {
+          "title": "National Capital Poison Center · Horse chestnuts are toxic",
+          "url": "https://www.poison.org/articles/horse-chestnuts-are-toxic-214"
         }
       ]
     },

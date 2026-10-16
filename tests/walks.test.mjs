@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { uniquePlaceProposals, chooseWalkTrail, walkContext, trailSketch } from '../js/walks.js';
+import { uniquePlaceProposals, chooseWalkTrail, walkContext, trailSketch, fullTrailKm } from '../js/walks.js';
 
 test('one proposal per place, with its best day; ties favour the earlier day', () => {
   const rows = [
@@ -20,6 +20,23 @@ test('trail selection keeps compatibility and exposes fallback without inventing
   assert.equal(chooseWalkTrail([], [local], () => []).id, 2);
   assert.equal(chooseWalkTrail([local, long], [], t => t.id === 1 ? [{}] : []).id, 1);
   assert.equal(chooseWalkTrail([], [], () => []), null);
+});
+
+test('un «intero» più corto del tratto locale non è una lunghezza né rende locale il sentiero', () => {
+  // Caso reale: CAP «Con le Ali ai Piedi» (OSM 21004687) ha distance=1 ma 6,9 km nella zona.
+  const cap = { id: 9, difficulty: 'E', total_km: 1, in_zone_km: 6.9 };
+  const local = { id: 2, difficulty: 'E', total_km: 5, in_zone_km: 4.8 };
+  assert.equal(fullTrailKm(cap), null);
+  assert.equal(fullTrailKm(local), 5);
+  assert.equal(fullTrailKm({ total_km: 4.1, in_zone_km: 4.1 }), 4.1);
+  assert.equal(fullTrailKm({ total_km: null, in_zone_km: 2.4 }), null);
+  assert.equal(fullTrailKm({ total_km: 0, in_zone_km: 0 }), null);
+  assert.equal(fullTrailKm({ total_km: 3 }), 3);
+  assert.equal(fullTrailKm(null), null);
+  assert.equal(chooseWalkTrail([cap, local], [], () => []).id, 2);
+  // con la lunghezza n.d. il cammino resta scelto solo se non ci sono alternative locali
+  assert.equal(chooseWalkTrail([{ ...cap, total_km: null }, local], [], () => []).id, 2);
+  assert.equal(chooseWalkTrail([{ ...cap, total_km: null }], [], () => []).id, 9);
 });
 
 test('microzone only names a nearby parking or a documented road; no invented trailhead', () => {

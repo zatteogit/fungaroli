@@ -74,7 +74,9 @@
     "author": "Natural History Museum Vienna",
     "license": "CC Attribution-NonCommercial",
     "page": "https://sketchfab.com/3d-models/none-e1e8e767f3ec4ed288426392e2f83baf",
-    "embed": "https://sketchfab.com/models/e1e8e767f3ec4ed288426392e2f83baf/embed?autostart=0&ui_infos=0&ui_watermark=0"
+    "embed": "https://sketchfab.com/models/e1e8e767f3ec4ed288426392e2f83baf/embed?autostart=0&ui_infos=0&ui_watermark=0",
+    "provenance": "riproduzione",
+    "provenance_note": "Modello in legno intagliato, Naturhistorisches Museum Wien (inv. NHMW-AFW-DING-0135-008)."
    }
   },
   "pinophilus": {
@@ -294,7 +296,9 @@
     "author": "Natural History Museum Vienna",
     "license": "CC Attribution-NonCommercial",
     "page": "https://sketchfab.com/3d-models/none-2b9f531098804b569929417ccc80d704",
-    "embed": "https://sketchfab.com/models/2b9f531098804b569929417ccc80d704/embed?autostart=0&ui_infos=0&ui_watermark=0"
+    "embed": "https://sketchfab.com/models/2b9f531098804b569929417ccc80d704/embed?autostart=0&ui_infos=0&ui_watermark=0",
+    "provenance": "riproduzione",
+    "provenance_note": "Modello storico in cera, collezione Trattinnick, Naturhistorisches Museum Wien (inv. NHMW-AFW-DING-0091-001)."
    }
   },
   "cibarius": {
@@ -369,7 +373,9 @@
     "author": "Vincent Lagardère",
     "license": "CC Attribution-NonCommercial-NoDerivs",
     "page": "https://sketchfab.com/3d-models/none-49540b02812f4473bd39579e4d4948cc",
-    "embed": "https://sketchfab.com/models/49540b02812f4473bd39579e4d4948cc/embed?autostart=0&ui_infos=0&ui_watermark=0"
+    "embed": "https://sketchfab.com/models/49540b02812f4473bd39579e4d4948cc/embed?autostart=0&ui_infos=0&ui_watermark=0",
+    "provenance": "esemplare",
+    "provenance_note": "Secondo la fonte, «Real fungus 3D scan» di un finferlo della Vienne (Francia)."
    }
   },
   "cornucopioides": {
@@ -580,7 +586,9 @@
     "author": "Tadeas Kribek",
     "license": "CC Attribution",
     "page": "https://sketchfab.com/3d-models/none-80edb9e8104f4995aac3dd0dcd3fc4d6",
-    "embed": "https://sketchfab.com/models/80edb9e8104f4995aac3dd0dcd3fc4d6/embed?autostart=0&ui_infos=0&ui_watermark=0"
+    "embed": "https://sketchfab.com/models/80edb9e8104f4995aac3dd0dcd3fc4d6/embed?autostart=0&ui_infos=0&ui_watermark=0",
+    "provenance": "esemplare",
+    "provenance_note": "Descrizione della fonte: «3D scan of Parasol mushroom»."
    }
   },
   "mellea": {
@@ -655,7 +663,9 @@
     "author": "3D_UTPL",
     "license": "CC Attribution-NonCommercial-ShareAlike",
     "page": "https://sketchfab.com/3d-models/none-2bb23136394a4362a061f8a6d8b1cd8e",
-    "embed": "https://sketchfab.com/models/2bb23136394a4362a061f8a6d8b1cd8e/embed?autostart=0&ui_infos=0&ui_watermark=0"
+    "embed": "https://sketchfab.com/models/2bb23136394a4362a061f8a6d8b1cd8e/embed?autostart=0&ui_infos=0&ui_watermark=0",
+    "provenance": "non dichiarata",
+    "provenance_note": "La descrizione della fonte riporta solo il nome e l’habitat della specie."
    }
   },
   "virescens": {
@@ -730,7 +740,9 @@
     "author": "Prirodoslovni muzej Slovenije",
     "license": "CC Attribution",
     "page": "https://sketchfab.com/3d-models/none-7da28231cfa4437ba81a011fb8aa26c1",
-    "embed": "https://sketchfab.com/models/7da28231cfa4437ba81a011fb8aa26c1/embed?autostart=0&ui_infos=0&ui_watermark=0"
+    "embed": "https://sketchfab.com/models/7da28231cfa4437ba81a011fb8aa26c1/embed?autostart=0&ui_infos=0&ui_watermark=0",
+    "provenance": "non dichiarata",
+    "provenance_note": "La descrizione del museo riporta solo il nome della specie."
    }
   },
   "suillus": {

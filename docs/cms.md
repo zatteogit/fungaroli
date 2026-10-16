@@ -35,7 +35,7 @@ Le modifiche alla classificazione micologica, alle cautele o alle regole richied
 | Articoli e taccuini | Le tre guide iniziali, ora estratte dal codice, e nuovi articoli. |
 | Testi della home | Introduzione, titoli delle sezioni, testo della community e spiegazione delle condizioni. |
 | Luoghi e microzone | Le 15 zone iniziali, descrizioni, soste e informazioni geografiche. |
-| Sentieri | Nomi, informazioni descrittive e note editoriali. Geometrie, campioni e lunghezze di fonte restano protetti. |
+| Sentieri | Nomi, informazioni descrittive e note editoriali. Geometrie, campioni e lunghezze di fonte restano protetti. `total_km` è `null` quando la fonte non dà una lunghezza credibile: l'app mostra «Lunghezza n.d.». |
 | Foto di funghi e sosia | Riferimenti alle immagini e metadati delle foto. |
 | Foto dei luoghi | File, varianti, autore, licenza e pagina della fonte. |
 | Foto degli alberi | Immagini e metadati delle schede degli alberi. |
@@ -54,7 +54,7 @@ Le modifiche alla classificazione micologica, alle cautele o alle regole richied
 
 `species-traits` è tra i documenti che il repository aggiorna se nessun autore li ha toccati, quindi le fasi arrivano in produzione con il deploy. Una fase nuova ha bisogno delle sue icone: lo segnala `tests/asset-completeness.test.mjs`.
 
-**Parole del glossario nei testi.** Il collegamento automatico al glossario non dipende dall’autore: lo decide il campo. Si collegano le parole nei campi descrittivi (caratteri, avvisi e cautele, sosia e differenze, ambiente, note di campo, descrizioni di zone e sentieri, testo degli articoli); mai in mesi, date, misure, fonti, crediti, didascalie e titoli. Ogni campo ha un ambito (Funghi, Piante, Alberi, Bosco, Sentiero o Generale per gli articoli) e si collegano solo le voci compatibili: «lamelle» non si collega in una scheda pianta, «ago» solo in piante e alberi. Una voce nuova del glossario segue la sua categoria; il campo `contexts` la rende valida anche in altri ambiti. Il criterio completo è in [handoff-2026-10-14.md](handoff-2026-10-14.md#collegamenti-automatici-al-glossario-zone-e-ambiti-1510).
+**Parole del glossario nei testi.** Il collegamento automatico al glossario non dipende dall’autore: lo decide il campo. Si collegano le parole nei campi descrittivi (caratteri, avvisi e cautele, sosia e differenze, ambiente, note di campo, descrizioni di zone e sentieri, testo degli articoli); mai in mesi, date, misure, fonti, crediti, didascalie e titoli. Ogni campo ha un ambito (Funghi, Piante, Alberi, Bosco, Sentiero o Generale per gli articoli) e si collegano solo le voci compatibili: «lamelle» non si collega in una scheda pianta, «ago» solo in piante e alberi. Una voce nuova del glossario segue la sua categoria; il campo `contexts` la rende valida anche in altri ambiti. Il criterio completo è in [handoff-2026-10-14.md](https://github.com/zatteogit/fungaroli/blob/claude/brave-tesla-wu0a2b/docs/handoff-2026-10-14.md#collegamenti-automatici-al-glossario-zone-e-ambiti-1510).
 
 Le immagini si gestiscono tramite percorsi già presenti in `assets/` o URL, con crediti e licenza. L’upload diretto e la generazione automatica di varianti non fanno parte di questa prima versione. I dati geografici generati si aggiornano tramite i rispettivi script; meteo, coefficienti e formule restano nel processo scientifico e nel repository. Diari, credenziali personali e osservazioni private restano separati dal CMS.
 
@@ -97,11 +97,22 @@ Il contratto è in [cms.openapi.json](cms.openapi.json). Gli endpoint principali
 | `GET, POST /api/cms/v1/tokens` | Gestisce le credenziali degli agenti; solo amministratori. |
 | `DELETE /api/cms/v1/tokens/{id}` | Revoca una credenziale; solo amministratori. |
 | `GET /api/cms/v1/audit` | Log delle operazioni; solo amministratori. |
-| `GET /api/content/v1/snapshot` | Export pubblico e coerente dei soli contenuti pubblicati. |
+| `GET /api/content/v1/snapshot` | Export pubblico e coerente dei soli contenuti pubblicati. L'ETag è l'ID della release: con `If-None-Match` uguale risponde 304, anche se l'ETag torna debole (`W/"…"`, come lo rimanda il browser dopo la compressione di Cloudflare). |
 
 ## Architettura e gestione
 
 Il Worker usa il database D1 dedicato `fungaroli-content`, binding `CMS_DB`; il database della comunità conserva passkey e sessioni. `CMS_ADMIN_IDS` contiene gli amministratori e `CMS_EDITOR_IDS` gli editor autorizzati alle bozze. La migrazione `0002_cms.sql` viene applicata in modo idempotente al primo accesso. I JSON presenti nel deploy inizializzano una sola volta documenti e revisioni originali; il database diventa poi la fonte dei contenuti pubblicati. Un nuovo deploy non sovrascrive le modifiche della redazione.
+
+**Aggiornamenti dal repository.** Alcuni documenti si aggiornano dal repository a ogni deploy, finché nessun autore li ha toccati. L'elenco è `REPOSITORY_REFRESHED` in `worker/cms.js`:
+- testi della home, piante, alberi;
+- foto di funghi, alberi, luoghi e glossario;
+- schede delle specie, specie e sosia, catalogo dei commestibili;
+- preparazione, glossario, articoli, regole;
+- dal 16/10 anche **sentieri** (`trails`) e **luoghi e microzone** (`zones`).
+
+Al primo avvio dopo il deploy il Worker confronta con il pubblicato il JSON in `data/` di ogni documento dell'elenco. Se è cambiato, pubblica una nuova revisione (autore `release:repository-seed:discover-v1`) e conserva l'originale in cronologia. Un documento salvato da un autore, o con una bozza non pubblicata, non si aggiorna più dal repository: da lì in poi si corregge dal CMS. Per i sentieri vuol dire che, dopo una nota editoriale salvata dal CMS, un nuovo `tools/build_trails.py` non arriva più al sito. Ogni documento dell'elenco deve passare `validateContent`: se fallisce, lo snapshot risponde 503 e l'app ripiega sull'ultima copia salvata o sui JSON statici. Lo controlla `tests/cms-content.test.mjs`.
+
+Imbocchi, percorsi di accesso e campioni del bosco (`trailheads`, `access`, `habitat`) restano fuori dall'elenco e sono in sola lettura nel CMS. Limite noto: un loro JSON rigenerato non arriva allo snapshot pubblicato.
 
 `cms_documents` conserva bozza e pubblicato; `cms_revisions` le revisioni immutabili; `cms_releases` gli ID e le revisioni di una pubblicazione; `cms_agent_tokens` gli hash delle credenziali e i permessi; `cms_audit` autore e operazione. I controlli di revisione e il cambio della release avvengono in batch transazionali D1.
 

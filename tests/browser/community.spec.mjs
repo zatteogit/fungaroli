@@ -24,7 +24,7 @@ async function setup(page) {
     const out = Array.from({ length: count }, () => ({ daily: { time: dates, precipitation_sum: dates.map((_, i) => i % 4 ? 3 : 12), temperature_2m_mean: Array(70).fill(13), temperature_2m_min: Array(70).fill(8), temperature_2m_max: Array(70).fill(18) }, hourly: { time, soil_moisture_3_to_9cm: fill(.3), soil_temperature_6cm: fill(13), precipitation: fill(0), precipitation_probability: fill(0), weather_code: fill(1), wind_gusts_10m: fill(8), temperature_2m: fill(13) } }));
     return route.fulfill({ json: out });
   });
-  await page.addInitScript(() => localStorage.setItem('fungaroli:legal-accepted', '22026-10-12'));
+  await page.addInitScript(() => localStorage.setItem('fungaroli:legal-accepted', '32026-10-16'));
   const errors=[]; page.on('pageerror', (e) => errors.push(e.message));
   await page.goto('/');
   await expect(page.locator('#editorial')).toBeHidden();
@@ -174,6 +174,20 @@ test('tratto locale distinto dal percorso intero, segmenti separati e imbocco ma
   await page.goto('/#/zona/sangiovanni/0/sentiero/12313439');
   await expect(focus).toContainText('Non disponibile; le soste indicate riguardano la zona');
   await expect(focus).toContainText('Punto sulla traccia');
+  expect(errors).toEqual([]);
+});
+
+test('un itinerario con lunghezza intera incoerente mostra «n.d.» e il titolo della scheda segue la pagina', async ({ page }) => {
+  const errors = await setup(page);
+  // CAP «Con le Ali ai Piedi»: in OSM distance=1 su un cammino di circa 530 km (audit OUT-01)
+  await page.goto('/#/zona/poggio-cantalice/0/sentiero/21004687');
+  const focus = page.locator('#detail .walk-focus');
+  await focus.locator(':scope > summary').click();
+  await expect(focus.locator('.walk-facts')).toContainText('Lunghezza n.d.');
+  await expect(focus.locator('.walk-facts')).not.toContainText(/\b1 km\b/);
+  await expect(page).toHaveTitle(/ · Fronda$/);
+  await page.goto('/#/specie/caesarea');
+  await expect(page).toHaveTitle('Ovolo buono · Fronda');
   expect(errors).toEqual([]);
 });
 
@@ -390,7 +404,7 @@ test('autocomplete dei commestibili, selezione individuale, stagione e persisten
   await input.press('Enter'); await expect(page.locator('[data-remove-species="cyclocybe-aegerita"]')).toBeVisible();
   await input.fill('spugnole');
   const month=Number(todayISO().slice(5,7));
-  if (![3,4,5,6].includes(month)) await expect(options.getByRole('option').first()).toContainText('Fuori stagione');
+  if (![3,4,5,6].includes(month)) await expect(options.getByRole('option').first()).toContainText('Fuori periodo tipico');
   await options.getByRole('option').first().click();
   await expect(page.locator('[data-remove-species]')).toHaveCount(2);
   await page.screenshot({path:'/tmp/fungaroli-species-filter.png',fullPage:true});

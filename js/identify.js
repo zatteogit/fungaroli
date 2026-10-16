@@ -4,7 +4,7 @@
 import { openLightbox, captionHtml } from './lightbox.js';
 import { openEntitySheet } from './entity-sheet.js';
 import { soft, tick, canVT } from './motion.js';
-import { matchTraits, retainCandidate, traitQuestions, traitSimilarity } from './identify-model.js';
+import { matchTraits, retainCandidate, traitQuestions, traitSimilarity, attentionGroups } from './identify-model.js';
 const TQ = (key) => traitQuestions().find((q) => q.key === key);
 
 const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
@@ -121,12 +121,14 @@ const MESE_IT = ['gennaio', 'febbraio', 'marzo', 'aprile', 'maggio', 'giugno', '
 const FLESH = { nessuno: '#efe6d0', blu: '#2f5fb3', rosso: '#b23a2c', giallo: '#e2b52f', bruno: '#7a5434', nero: '#2b2826' };
 const QUESTIONS = [
   { ...TQ('hymenophore'), label: 'Cosa c\'è sotto il cappello?', short: 'Sotto il cappello', values: ['lamelle', 'pori', 'aculei', 'pliche', 'liscio'], icon: (v) => HYM_ICON[v], hint: 'Gira il fungo e guarda la parte sotto il cappello.',
+    // link scritto nel markup: la domanda non è una zona del glossario automatico
+    hintHtml: 'In micologia si chiama <a class="glossary-link" data-term="imenoforo" href="#/glossario/imenoforo" aria-haspopup="dialog">imenoforo</a>.',
     tip: { title: 'Lamelle, pori, aculei: come si distinguono', items: [
       ['lamelle', 'Lamelle', 'Lamine sottili, come le pagine di un libro, che vanno dal gambo al bordo. Es. ovolo, prataiolo.'],
       ['pori', 'Pori', 'Una spugna di tubetti con tanti forellini. Si stacca dalla carne come un cuscinetto. Es. porcino.'],
       ['aculei', 'Aculei', 'Tante piccole punte morbide che pendono verso il basso. Es. steccherino.'],
       ['pliche', 'Pliche', 'Costolature basse e ramificate, scendono sul gambo: sembrano lamelle "sciolte". Es. finferlo.'],
-      ['liscio', 'Liscio', 'Nessuna struttura: superficie liscia o appena rugosa. Es. trombetta dei morti.'],
+      ['liscio', 'Liscio', 'Nessuna struttura: superficie liscia o appena rugosa. Es. trombetta dei morti. Vale anche per spugnole e false spugnole (giromitre): sotto la testa non c’è nulla. La testa è a nido d’ape nelle spugnole, a pieghe come un cervello nella falsa spugnola, che è mortale.'],
     ] } },
   { key: 'stem_volva', label: 'Alla base del gambo c\'è una volva?', short: 'Volva', bool: true, art: (v) => ART[`volva_${v}`], labels: { true: 'sì, un sacco o un bulbo con orlo', false: 'no, base semplice' }, hint: 'Per vederla bisogna estrarre il fungo intero, senza tagliarlo.' },
   { key: 'stem_ring', label: 'C\'è un anello sul gambo?', short: 'Anello', bool: true, art: (v) => ART[`ring_${v}`], labels: { true: 'sì, una gonnellina', false: 'no' } },
@@ -159,7 +161,7 @@ const QUESTIONS = [
     labels: { normale: 'dritta', bulbosa: 'con un bulbo', radicante: 'si allunga nel terreno', assottigliata: 'si assottiglia' }, hint: 'Estrai il fungo intero, senza tagliarlo: la base è spesso decisiva (le amanite mortali hanno bulbo e volva).' },
   { ...TQ('spore_print'), label: 'Di che colore è la sporata?', short: 'Sporata', values: Object.keys(SPORE), art: (v) => sporeArt(v),
     labels: { 'bruno-violaceo': 'bruno-violacea', 'verde-oliva': 'bruno oliva' }, hint: 'Facoltativa: chiede qualche ora. Ma è uno dei caratteri più affidabili.',
-    tip: { title: 'Come si fa la sporata', steps: ['Taglia il gambo e appoggia il cappello, lamelle in giù, su un foglio metà bianco e metà nero.', 'Copri con un bicchiere perché non secchi.', 'Dopo 2-6 ore solleva il cappello: la polvere rimasta è il colore delle spore.'] } },
+    tip: { title: 'Come si fa la sporata', steps: ['Taglia il gambo e appoggia il cappello, lamelle in giù, su un foglio metà bianco e metà nero.', 'Copri con un bicchiere perché non secchi.', 'Dopo 2-6 ore solleva il cappello: la polvere rimasta è il colore delle spore.', 'Base, taglio e sporata richiedono di raccogliere il fungo. Nel Lazio i funghi non commestibili si raccolgono solo con l\'autorizzazione per studio (L.R. 32/1998, art. 3, c. 5).'] } },
   { key: 'stem_reticulum', label: 'Il gambo ha un reticolo in rilievo?', short: 'Reticolo', bool: true, art: (v) => ART[`ret_${v}`], labels: { true: 'sì, una rete', false: 'no, liscio' } },
 ];
 const TOX_ORDER = { mortale: 0, tossico: 1, 'non commestibile': 2, 'commestibile con cautela': 3, commestibile: 4 };
@@ -302,7 +304,7 @@ function answerRow(q) {
     </button><button type="button" class="id-row-x" data-clear="${q.key}" aria-label="Togli la risposta">${X_IC}</button></li>`;
 }
 const questionCard = (q, { big = false, n = 0 } = {}) => `<section class="id-q vtn${big ? ' id-q-big' : ''}${state.editing === q.key ? ' editing' : ''}" style="--vtn:q-${q.key}">
-  ${big && n ? `<p class="eyebrow">Domanda ${n}</p>` : ''}<h3>${esc(qLabel(q))}</h3>${big && q.hint ? `<p class="small muted">${esc(q.hint)}</p>` : ''}${tipHtml(q)}${options(q, { big })}</section>`;
+  ${big && n ? `<p class="eyebrow">Domanda ${n}</p>` : ''}<h3>${esc(qLabel(q))}</h3>${big && q.hint ? `<p class="small muted">${esc(q.hint)}${q.hintHtml ? ` ${q.hintHtml}` : ''}</p>` : ''}${tipHtml(q)}${options(q, { big })}</section>`;
 
 // tessere illustrate di una domanda
 function options(q, { big = false } = {}) {
@@ -429,18 +431,14 @@ export function traitStrip(edibleId, t = refOf(edibleId)) {
   }
   if (tr.flesh_change) { const f = [].concat(tr.flesh_change); out.push(tile(fleshArt(f), 'Al taglio', orList(f.map(fleshSay)))); }
   if (tr.spore_print?.length) out.push(tile(sporeArt(tr.spore_print[0]), 'Sporata', orList(tr.spore_print.map((v) => Q('spore_print').labels?.[v] || agree(v, 'fs')))));
-  return `<ul class="trait-strip" aria-label="Caratteri principali">${out.join('')}</ul>`;
+  // le tessere di cappello, sotto e gambo sono disegni AI (assets/traits): detto una volta, sotto la fila
+  const ai = out.some((h) => h.includes('class="ts-ill"')) ? '<p class="small muted ts-ai">Disegni schematici fatti con AI, non foto: confronta con le foto e con il testo.</p>' : '';
+  return `<ul class="trait-strip" aria-label="Caratteri principali">${out.join('')}</ul>${ai}`;
 }
 
 // Avvisi: ognuno ha un tipo e un titolo breve (data/species-traits.json, field_rules).
 // Chiuso mostra l'indice tipo · titolo; aperto ogni avviso per intero, con la citazione (Autore, anno).
 const ATT_KIND = { sosia: 'Sosia', caratteri: 'Caratteri', regole: 'Regole', cottura: 'Cottura', tossicita: 'Tossicità', ambiente: 'Ambiente' };
-const ATT_COUNT = {
-  sosia: ['sosia pericoloso', 'sosia pericolosi'], caratteri: ['carattere da controllare', 'caratteri da controllare'],
-  regole: ['regola di raccolta', 'regole di raccolta'], cottura: ['cautela in cucina', 'cautele in cucina'],
-  tossicita: ['rischio di intossicazione', 'rischi di intossicazione'], ambiente: ['cautela sul raccolto', 'cautele sul raccolto'],
-  altro: ['avviso', 'avvisi'],
-};
 const citeOf = (url) => { const c = url && CITES[url]; return c ? `${c.author}, ${c.year}` : ''; };
 function attItem(r) {
   const k = ATT_KIND[r.kind], c = citeOf(r.source);
@@ -490,14 +488,8 @@ export function attentionBox(rules, extra = '') {
   const list = `<ul class="att-list">${sorted.map(attItem).join('')}</ul>${extra ? `<p class="att-extra small">${esc(extra)}</p>` : ''}`;
   // uno o due avvisi: sempre aperti, niente da toccare
   if (sorted.length <= 2) return `<section class="attention att-c att-static" role="note" aria-label="Attenzione"><div class="att-top">${head}</div>${list}</section>`;
-  // chiuso: quanti avvisi per tipo, in parole («2 sosia pericolosi»), i tipi con avvisi critici per primi
-  const groups = [];
-  for (const r of sorted) {
-    const k = ATT_COUNT[r.kind] ? r.kind : 'altro', g = groups.find((x) => x.k === k) || (groups.push({ k, n: 0, crit: false }), groups[groups.length - 1]);
-    g.n++; g.crit ||= r.severity === 'critico';
-  }
-  groups.sort((a, b) => b.crit - a.crit || b.n - a.n);
-  const index = `<ul class="att-index att-sum" aria-hidden="true" data-no-glossary>${groups.map((g) => { const [one, many] = ATT_COUNT[g.k]; return `<li class="${g.crit ? 'crit' : ''}"><span class="att-it">${g.n} ${g.n === 1 ? one : many}</span></li>`; }).join('')}</ul>`;
+  // chiuso: quanti avvisi per tipo, in parole («2 avvisi sui sosia»), i tipi con avvisi critici per primi (identify-model.js)
+  const index = `<ul class="att-index att-sum" aria-hidden="true" data-no-glossary>${attentionGroups(sorted).map((g) => `<li class="${g.crit ? 'crit' : ''}"><span class="att-it">${esc(g.text)}</span></li>`).join('')}</ul>`;
   return `<details class="attention att-c" role="note"><summary><span class="att-top">${head}</span>${index}<span class="att-more"><span class="att-open">Leggi i dettagli e le fonti</span><span class="att-close">Chiudi i dettagli</span></span></summary>${list}</details>`;
 }
 
@@ -687,7 +679,7 @@ export const taxonKeyByLatin = (latin) => {
   for (const b of String(latin || '').match(/[A-Z][a-z]+ [a-z]+/g) || []) { const t = TAXA.find((x) => x.latin?.includes(b)); if (t) return t.key; }
   return '';
 };
-export const searchTaxa = () => TAXA.filter((t) => !t.edible_id || t.lookalike_of?.length).map((t) => ({ key: t.key, name: t.name, latin: t.latin, toxicity: t.toxicity, photo: photoOf(t), look: t.lookalike_of || [] }));
+export const searchTaxa = () => TAXA.filter((t) => !t.edible_id || t.lookalike_of?.length).map((t) => ({ key: t.key, name: t.name, latin: t.latin, toxicity: t.toxicity, tox_label: t.tox_label || '', photo: photoOf(t), look: t.lookalike_of || [] }));
 export function setCompare(key, pick) { state.compare = key || ''; state.pick = pick || ''; }
 
 // righe del confronto: stessi disegni di Riconosci, un valore per lato
@@ -825,7 +817,7 @@ function renderCompare(box, ref, pick) {
   requestAnimationFrame(() => { track.scrollLeft = start * track.clientWidth; fit(); });
   box.querySelectorAll('[data-taxon]').forEach((b) => b.addEventListener('click', () => openTaxon(b.dataset.taxon)));
   const all = [ref, ...list].map((t) => ({ t, ph: photoOf(t) })).filter((y) => y.ph);
-  const lb = all.map(({ t, ph }) => ({ key: t.key, src: ASSET(ph.file_hd || ph.file), alt: t.name, caption: captionHtml({ title: `<span class="tox">${esc(t.toxicity)}</span> ${esc(t.name || '')} <i>${esc(t.latin)}</i>`, text: '', credit: `Foto: ${esc(ph.author)}, ${esc(ph.license)}` }) }));
+  const lb = all.map(({ t, ph }) => ({ key: t.key, src: ASSET(ph.file_hd || ph.file), alt: t.name, caption: captionHtml({ title: `<span class="tox">${esc(t.tox_label || t.toxicity)}</span> ${esc(t.name || '')} <i>${esc(t.latin)}</i>`, text: '', credit: `Foto: ${esc(ph.author)}, ${esc(ph.license)}` }) }));
   box.querySelectorAll('[data-photo]').forEach((b) => b.addEventListener('click', () => { const i = lb.findIndex((y) => y.key === b.dataset.photo); if (i >= 0) openLightbox(lb, i); }));
 }
 
@@ -968,7 +960,7 @@ export function renderIdentify(box) {
   box.querySelectorAll('[data-clear]').forEach((b) => b.addEventListener('click', () => { delete state.ans[b.dataset.clear]; if (b.dataset.clear === 'hymenophore') delete state.ans.hymenophore_color; state.editing = ''; rerenderSoft(); }));
   box.querySelectorAll('[data-skip]').forEach((b) => b.addEventListener('click', () => answer(b.dataset.skip, null)));
   const items = list.slice(0, 40).map((c) => ({ c, ph: photoOf(c.t) })).filter((y) => y.ph);
-  const lb = items.map(({ c, ph }) => ({ key: c.t.key, src: ASSET(ph.file_hd || ph.file), alt: c.t.name, caption: captionHtml({ title: `<span class="tox">${esc(c.t.toxicity)}</span> ${esc(c.t.name || '')} <i>${esc(c.t.latin)}</i>`, text: esc((c.t.check_before_picking || []).join(' · ')), credit: `Foto: ${esc(ph.author)}, ${esc(ph.license)}` }) }));
+  const lb = items.map(({ c, ph }) => ({ key: c.t.key, src: ASSET(ph.file_hd || ph.file), alt: c.t.name, caption: captionHtml({ title: `<span class="tox">${esc(c.t.tox_label || c.t.toxicity)}</span> ${esc(c.t.name || '')} <i>${esc(c.t.latin)}</i>`, text: esc((c.t.check_before_picking || []).join(' · ')), credit: `Foto: ${esc(ph.author)}, ${esc(ph.license)}` }) }));
   box.querySelectorAll('[data-taxon]').forEach((b) => b.addEventListener('click', () => openTaxon(b.dataset.taxon)));
   box.querySelectorAll('[data-photo]').forEach((b) => b.addEventListener('click', () => { const i = lb.findIndex((y) => y.key === b.dataset.photo); if (i >= 0) openLightbox(lb, i); }));
 }

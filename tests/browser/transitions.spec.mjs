@@ -18,7 +18,7 @@ async function setup(page,width,{reduced=false,noVT=false}={}) {
     await route.fulfill({json:out});
   });
   await page.addInitScript(noVT=>{
-    localStorage.setItem('fungaroli:legal-accepted','22026-10-12');
+    localStorage.setItem('fungaroli:legal-accepted','32026-10-16');
     if(noVT)delete Document.prototype.startViewTransition;
     // registro delle direzioni (<html data-nav>) e degli spostamenti di layout, anche quelli dopo un tocco
     window.__navs=[];window.__shifts=[];

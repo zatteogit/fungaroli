@@ -8,6 +8,10 @@ export function uniquePlaceProposals(combos) {
   });
 }
 
+// Lunghezza dell'itinerario completo, solo se coerente: un intero non è più corto del suo tratto
+// nella zona. Altrimenti null («Lunghezza n.d.»): protegge anche dai dati futuri del CMS.
+export const fullTrailKm = t => (t?.total_km > 0 && t.total_km >= (t.in_zone_km || 0)) ? t.total_km : null;
+
 // Within the compatible trails, prefer T/E routes with mapped access, then local routes.
 // Keep the supplied environmental order as a tie-break. Difficulty remains visible.
 export function chooseWalkTrail(compatible, all, headsFor) {
@@ -15,7 +19,7 @@ export function chooseWalkTrail(compatible, all, headsFor) {
   const priority = t => [
     ['T', 'E'].includes(t.difficulty) ? 0 : 1,
     headsFor(t).length ? 0 : 1,
-    t.total_km > 0 && t.in_zone_km / t.total_km >= .75 ? 0 : 1,
+    fullTrailKm(t) && t.in_zone_km / fullTrailKm(t) >= .75 ? 0 : 1,
   ];
   return candidates.map((t, i) => ({ t, i, p: priority(t) })).sort((a, b) =>
     a.p[0] - b.p[0] || a.p[1] - b.p[1] || a.p[2] - b.p[2] || a.i - b.i

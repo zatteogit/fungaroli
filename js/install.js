@@ -124,13 +124,15 @@ function guide() {
 
 export function initInstall() {
   if ('serviceWorker' in navigator && (location.protocol === 'https:' || ['localhost', '127.0.0.1'].includes(location.hostname)) && !globalThis.FUNGAROLI_REVIEW && !globalThis.FUNGAROLI_DATA) {
-    navigator.serviceWorker.register('sw.js').then((reg) => {
+    const register = () => navigator.serviceWorker.register('sw.js').then((reg) => {
       // l'app installata spesso viene solo ripresa dalla memoria, senza ricaricarsi: si controlla se c'e' una versione nuova
       // ogni volta che torna in primo piano e ogni mezz'ora (l'avviso "versione nuova" e' in refresh.js)
       const check = () => reg.update().catch(() => {});
       document.addEventListener('visibilitychange', () => { if (!document.hidden) check(); });
       setInterval(check, 30 * 60e3);
     }).catch(() => { /* senza service worker l'app funziona lo stesso */ });
+    // dopo l'evento load: alla prima visita il precache non contende la banda ai file dell'avvio (web.dev, «Service worker registration»)
+    if (document.readyState === 'complete') register(); else addEventListener('load', register, { once: true });
   }
   addEventListener('beforeinstallprompt', (e) => { e.preventDefault(); deferred = e; render(); });
   addEventListener('appinstalled', () => { deferred = null; markMode(); render(); document.getElementById('install-invite')?.close(); });

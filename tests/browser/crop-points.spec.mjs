@@ -13,7 +13,7 @@ for (const width of [320, 390, 768, 1280]) test(`punti di ritaglio su copertina 
   const errors = []; page.on('pageerror', (e) => errors.push(e.message));
   await page.route('**/api/weather/v1/forecast?**', (r) => r.fulfill({ json: forecast(r.request()) }));
   await page.route('https://**', (r) => r.abort());
-  await page.addInitScript(() => localStorage.setItem('fungaroli:legal-accepted', '22026-10-12'));
+  await page.addInitScript(() => localStorage.setItem('fungaroli:legal-accepted', '32026-10-16'));
   const crops = (await (await page.request.get('/data/crop-points.json')).json()).files;
   // copertina di Rascino nella scheda del luogo: la posizione è quella del suo formato, non il centro
   await page.goto('/#/zona/rascino/0');
