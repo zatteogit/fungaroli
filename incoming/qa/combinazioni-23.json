@@ -1,0 +1,268 @@
+{
+  "permutazione_celle_sorgente": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "riferimenti_forma": [
+    {
+      "soggetto": "russula-aurea",
+      "forma": "emisferico",
+      "riferimenti": {
+        "cappello": {
+          "file": "incoming/icone/forme-32.png",
+          "cella": 3,
+          "stato": "ok"
+        },
+        "gambo": {
+          "file": "incoming/icone/forme-32.png",
+          "cella": 4,
+          "stato": "ok"
+        }
+      }
+    },
+    {
+      "soggetto": "russula-aurea",
+      "forma": "piano",
+      "riferimenti": {
+        "cappello": {
+          "file": "incoming/icone/forme-32.png",
+          "cella": 6,
+          "stato": "ok"
+        },
+        "gambo": {
+          "file": "incoming/icone/forme-32.png",
+          "cella": 7,
+          "stato": "ok"
+        }
+      }
+    },
+    {
+      "soggetto": "russula-aurea",
+      "forma": "emisferico",
+      "riferimenti": {
+        "cappello": {
+          "file": "incoming/icone/forme-32.png",
+          "cella": 3,
+          "stato": "ok"
+        },
+        "gambo": {
+          "file": "incoming/icone/forme-32.png",
+          "cella": 4,
+          "stato": "ok"
+        }
+      }
+    },
+    {
+      "soggetto": "russula-aurea",
+      "forma": "piano",
+      "riferimenti": {
+        "cappello": {
+          "file": "incoming/icone/forme-32.png",
+          "cella": 6,
+          "stato": "ok"
+        },
+        "gambo": {
+          "file": "incoming/icone/forme-32.png",
+          "cella": 7,
+          "stato": "ok"
+        }
+      }
+    }
+  ],
+  "file": "incoming/icone/combinazioni-23.png",
+  "sha256": "0ff4987a9287a5e542dc1f33d18c395df74d035311bbf4ee54822b1611144192",
+  "size": [
+    1254,
+    1254
+  ],
+  "bytes": 62625,
+  "cells": [
+    {
+      "cella": 0,
+      "bbox": [
+        77,
+        139,
+        341,
+        278
+      ],
+      "margini_px": [
+        77,
+        139,
+        77,
+        140
+      ],
+      "contorno_scuro_estremi": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "copertura_contorno_scuro": 1.0
+    },
+    {
+      "cella": 1,
+      "bbox": [
+        87,
+        77,
+        331,
+        341
+      ],
+      "margini_px": [
+        87,
+        77,
+        87,
+        77
+      ],
+      "contorno_scuro_estremi": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "copertura_contorno_scuro": 1.0
+    },
+    {
+      "cella": 2,
+      "bbox": [
+        77,
+        160,
+        341,
+        257
+      ],
+      "margini_px": [
+        77,
+        160,
+        77,
+        161
+      ],
+      "contorno_scuro_estremi": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "copertura_contorno_scuro": 1.0
+    },
+    {
+      "cella": 3,
+      "bbox": [
+        77,
+        108,
+        341,
+        309
+      ],
+      "margini_px": [
+        77,
+        108,
+        77,
+        109
+      ],
+      "contorno_scuro_estremi": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "copertura_contorno_scuro": 1.0
+    },
+    {
+      "cella": 4,
+      "bbox": [
+        78,
+        138,
+        341,
+        279
+      ],
+      "margini_px": [
+        78,
+        138,
+        77,
+        139
+      ],
+      "contorno_scuro_estremi": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "copertura_contorno_scuro": 1.0
+    },
+    {
+      "cella": 5,
+      "bbox": [
+        83,
+        77,
+        334,
+        341
+      ],
+      "margini_px": [
+        83,
+        77,
+        84,
+        77
+      ],
+      "contorno_scuro_estremi": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "copertura_contorno_scuro": 1.0
+    },
+    {
+      "cella": 6,
+      "bbox": [
+        77,
+        162,
+        341,
+        255
+      ],
+      "margini_px": [
+        77,
+        162,
+        77,
+        163
+      ],
+      "contorno_scuro_estremi": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "copertura_contorno_scuro": 1.0
+    },
+    {
+      "cella": 7,
+      "bbox": [
+        77,
+        117,
+        341,
+        300
+      ],
+      "margini_px": [
+        77,
+        117,
+        77,
+        118
+      ],
+      "contorno_scuro_estremi": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "copertura_contorno_scuro": 1.0
+    },
+    {
+      "cella": 8,
+      "vuota": true
+    }
+  ],
+  "visuale": "confronto con riferimenti approvati; pronta da integrare"
+}
