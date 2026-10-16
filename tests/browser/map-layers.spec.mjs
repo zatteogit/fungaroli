@@ -23,7 +23,7 @@ for(const width of [390,1280]) test(`filtri generali prima dei funghi sulla mapp
  const context=await browser.newContext({viewport:{width,height:900},serviceWorkers:'block'});
  const page=await preparePage(context);await page.goto('/#/mappa/tancia');
  const bar=page.locator('#map-filters');await expect(bar.locator('[data-more]')).toBeVisible();
- const order=await bar.locator('button').evaluateAll(els=>els.map(el=>el.hasAttribute('data-more')?'more':el.hasAttribute('data-p')?'pref':el.hasAttribute('data-g')?'fungo':'day'));
+ const order=await bar.locator('button').evaluateAll(els=>els.map(el=>el.hasAttribute('data-more')?'more':el.hasAttribute('data-p')?'pref':el.hasAttribute('data-intent')?'fungo':'day'));
  expect(order.indexOf('more')).toBeLessThan(order.indexOf('pref'));expect(order.lastIndexOf('pref')).toBeLessThan(order.indexOf('fungo'));
  await bar.locator('[data-more]').click();await expect(page.locator('#full-filters[open]')).toBeVisible();await context.close();
 });

@@ -53,3 +53,7 @@ Questa verifica riguarda il contrasto: non equivale a una certificazione WCAG co
 - **217 test unitari**, dry-run del Worker e guardia del design system superati. **12 casi browser mirati** superati: copertine (4), stati interattivi (4), grafici (2), interruttori accesi/spenti (2). Un’attesa iniziale della copertina è scaduta durante il carico delle verifiche parallele; la ripetizione isolata è passata.
 
 [Riepilogo quantitativo per contesto](contrasti-aa-2026-10-16.json). I report analitici della sessione sono conservati in `/tmp/fronda-aa-final/report.json`; le singole misure includono selettore, testo, stato, tema e rapporto. La misura delle 248 viste precede l’ultima uniformazione dei testi critici al ruolo `crit-ink`: le relative coppie finali sono verificate dalla guardia del design system.
+
+## Integrazione per il rilascio
+
+Il rapporto quantitativo descrive lo snapshot `0032168`, prima dell’integrazione della PR101 sugli intenti dell’uscita. Nel risultato integrato la hero condivisa è usata anche da Piante e Passeggiata; i test browser del rilascio verificano nuovamente copertine, grafici e stati, e aggiungono la hero Piante nei due temi. I conteggi delle 248 visite non sono una nuova scansione della versione integrata.

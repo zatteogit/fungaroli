@@ -37,7 +37,7 @@ La suite browser avvia un solo Wrangler sulla porta 8788: non lanciarne due insi
 - **CMS:** i contenuti pubblici possono arrivare dallo snapshot del CMS (D1 `CMS_DB`). Cambiare solo un JSON in `data/` non sostituisce un contenuto già pubblicato da un autore. Per un campo nuovo aggiorna insieme schema, renderer, seed e snapshot (vedi `docs/cms.md`).
 - **Nomi definitivi:** barra con **Uscite**, **Mappa**, **Scopri**, **Taccuino** e la ricerca sempre visibile (decisione di Matteo del 15/10: la mappa resta al primo livello; Impara sta dentro Scopri); titoli home «Dove andare», «Altre buone uscite», «Nei boschi in questi giorni». Nella storia Git compaiono nomi precedenti: non ripristinarli.
 - **Ricerca:** un solo cerca globale, anche per il glossario. Cerca in tutta l’app e dà precedenza ai risultati della sezione da cui viene aperto, senza escludere gli altri. Il glossario si sfoglia per argomento e lettera; i filtri sui candidati restano parte del percorso per caratteri.
-- **Gerarchia:** funghi → giro → scoperte. La home resta filtrabile per Funghi o Piante (conferma di Matteo del 16/10): le due modalità usano la stessa hero; il contesto botanico è sperimentale. Le scoperte aggiuntive di piante e alberi lungo un giro non cambiano zona, giorno, sentiero o indice della modalità scelta.
+- **Intento dell’uscita (decisione di Matteo, 16/10):** A funghi / Piante spontanee / Passeggiata sono scelte principali, ricordate nel browser e condivise da home e mappa. Ogni intento ha gerarchia, card e ordinamento pertinenti. Solo A funghi mostra l’indice fungino; piante = contesto botanico sperimentale, mai presenza certa; passeggiata = sentieri e condizioni pratiche. Le scoperte secondarie non alterano l’indice biologico. I filtri sulle specie sono separati per intento. Le vecchie istruzioni «funghi → giro → scoperte» negli handoff sono superate da questa decisione. Vedi docs/ux-navigazione.md, sezione Intento dell’uscita. Le hero Funghi e Piante condividono struttura e stile; cambia il contenuto pertinente.
 - **Linguaggio:** l'app descrive caratteri, ambienti e rischi. Non identifica, non certifica commestibilità, non dice «tieni/scarta». L'indice è sperimentale (0–10), non una probabilità.
 - **Fonti e licenze:** ogni nuovo dato, foto o soglia deve avere fonte e licenza verificabili. Niente soglie inventate, niente bonus numerici da folklore («funghi spia»).
 - **Immagini dai dati:** le immagini si disegnano dai dati, mai il contrario. Ogni carattere disegnato è un campo con valori chiusi in uno schema (`cap_color`, `cap_shape`, `stem_ring`, `stages`, chiavi di `recognize-trees.json`), con fonte verificabile. `null` = «non documentato»: non si disegna né in un senso né nell'altro. Due test lo controllano:
@@ -60,3 +60,7 @@ Quando per proseguire serve una decisione del proprietario del progetto, chiedil
 ## Testi
 
 Italiano, frasi brevi, senza gergo. Decimale con la virgola (7,2). Distinguere sempre fatto verificato, interpretazione e dato non verificato.
+
+## Knowledge base · Kipi
+
+Per `kipi init`, `scan`, `process`, `update` o `status`, usa la [skill locale](.agents/skills/kipi/SKILL.md), adattata all’intero repository Fungaroli. Leggi prima indice e stato in `knowledge/`. Il riepilogo di ingresso è in [agents/kipi.md](agents/kipi.md).

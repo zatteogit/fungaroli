@@ -3396,5 +3396,3 @@ details.context-note { margin: 12px 0 16px; padding: 0; border: 0; border-radius
 .pref-icon svg { width: 100%; height: 100%; fill: none; stroke: currentColor; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; }
 .chip.pref[aria-pressed="true"] .pref-icon { display: none; }
 
-.home-target { display: grid; gap: 6px; margin-bottom: 16px; font-weight: 600; }
-.home-target select { width: 100%; }
