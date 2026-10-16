@@ -10,8 +10,9 @@
 .tab-pill { background: var(--select); box-shadow: inset 0 0 0 1px var(--select-edge); }
 .tabbar a[aria-current="page"] { color: var(--select-ink); }
 @media (min-width: 900px) {
-  .tabbar a[aria-current="page"] { background: var(--select); color: var(--select-ink); border-radius: 999px; box-shadow: inset 0 0 0 1px var(--select-edge); }
-  @media (hover: hover) { .tabbar a[aria-current="page"]:hover { background: var(--select); } }
+  .tab-pill { border-radius: 999px; }
+  .tabbar a[aria-current="page"] { color: var(--select-ink); }
+  @media (hover: hover) { .tabbar a[aria-current="page"]:hover { background: none; } }
 }
 .btn.primary { background: var(--action); color: var(--action-ink); border-color: var(--action); }
 @media (hover: hover) { .btn.primary:hover { background: var(--action-hover); border-color: var(--action-hover); filter: none; } }

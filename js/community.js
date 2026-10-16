@@ -187,7 +187,7 @@ export async function openQuickReport(zoneId = '', speciesId = '') {
       ].map(([label,hint],i)=>`<label class="report-quantity"><input type="radio" name="amount" value="${i}" required><span><b>${label}</b><small>${hint}</small></span></label>`).join('')}</div></fieldset>
       <details class="report-extra"><summary>Controllo dell’identità <span class="small muted">facoltativo</span></summary><label class="report-check"><input type="checkbox" name="checked"><span>Identità controllata da un micologo</span></label></details>
       <p class="report-privacy">È pubblica solo la zona: nessun punto preciso o nome personale.</p>
-      <details class="report-safety"><summary>L’app non certifica la commestibilità.</summary><p>Segnala solo specie che sai riconoscere. Foto e schede non identificano l’esemplare: fai controllare il raccolto all’Ispettorato micologico ASL prima del consumo. Quantità e ritrovamenti sono dichiarazioni degli utenti; scegli “Nessuno” solo se hai cercato questa specie senza trovarla.</p></details>
+      <details class="report-safety context-note"><summary>L’app non certifica la commestibilità.</summary><p>Segnala solo specie che sai riconoscere. Foto e schede non identificano l’esemplare: fai controllare il raccolto all’Ispettorato micologico ASL prima del consumo. Quantità e ritrovamenti sono dichiarazioni degli utenti; scegli “Nessuno” solo se hai cercato questa specie senza trovarla.</p></details>
       <p role="status" class="report-status" data-status></p>
       <footer class="report-actions"><button class="btn primary" type="submit">Condividi</button><button class="btn ghost" type="button" data-close>Annulla</button></footer>
     </form>`;

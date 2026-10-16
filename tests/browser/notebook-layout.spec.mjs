@@ -21,3 +21,18 @@ test('prima pagina vuota e appunto lungo leggibile senza perdere il testo',async
  await page.emulateMedia({reducedMotion:'reduce'});
  await page.route('https://**/*',r=>r.abort());await page.route('**/api/weather/v1/forecast?**',r=>r.fulfill({status:503,json:{error:'No forecast'}}));await page.addInitScript(()=>localStorage.setItem('fungaroli:legal-accepted','32026-10-16'));await page.goto('/#/diario');await expect(page.locator('.notebook-first-page')).toBeVisible();await expect(page.locator('.j-item')).toHaveCount(0);await page.screenshot({path:'/tmp/notebook-pages-empty.png',fullPage:true});await page.locator('[data-new-note]').first().click();const dialog=page.locator('.notebook-dialog[open]'),text='Un ricordo da conservare. '.repeat(35);await dialog.locator('[name="title"]').fill('Un appunto lungo');await dialog.locator('[name="note"]').fill(text);await dialog.locator('[type="submit"]').click();await expect(page.locator('.notebook-full-note')).toBeVisible();await expect(page.locator('.notebook-full-note')).not.toHaveAttribute('open','');await page.locator('.notebook-full-note summary').click();await expect(page.locator('.notebook-full-note .notebook-text')).toHaveText(text.trim());await expect(page.locator('.notebook-page-number')).toHaveText('01');
 });
+test('condividere un appunto: testo completo, annullamento e copia senza pubblicazione',async({page})=>{
+ await page.setViewportSize({width:390,height:900});
+ await page.route('https://**/*',r=>r.abort());await page.route('**/api/weather/v1/forecast?**',r=>r.fulfill({status:503,json:{error:'test'}}));
+ await page.addInitScript(data=>{localStorage.setItem('fungaroli:legal-accepted','32026-10-16');localStorage.setItem('fungaroli:diario:v1',JSON.stringify(data));Object.defineProperty(navigator,'share',{configurable:true,value:async payload=>{window.sharedNote=payload;throw new DOMException('Cancelled','AbortError');}});},entries(todayISO()));
+ await page.goto('/#/diario');const note=page.locator('[data-journal-id="layout-idea"]'),before=await page.evaluate(()=>localStorage.getItem('fungaroli:diario:v1'));
+ await note.locator('[data-share-note]').click();
+ expect(await page.evaluate(()=>window.sharedNote.text)).toContain('La prossima volta vorrei fermarmi più a lungo');
+ await expect(page.locator('.notebook-share-dialog')).not.toHaveAttribute('open','');
+ expect(await page.evaluate(()=>localStorage.getItem('fungaroli:diario:v1'))).toBe(before);
+ await page.evaluate(()=>{Object.defineProperty(navigator,'share',{configurable:true,value:undefined});Object.defineProperty(navigator,'clipboard',{configurable:true,value:{writeText:async text=>window.copiedNote=text}});});
+ await note.locator('[data-share-note]').click();const dialog=page.locator('.notebook-share-dialog[open]');await expect(dialog.locator('textarea')).toContainText('Il bosco dopo la pioggia');
+ await dialog.locator('[data-copy-note]').click();await expect(dialog.locator('[role="status"]')).toContainText('Appunto copiato');expect(await page.evaluate(()=>window.copiedNote)).toBe(await page.evaluate(()=>window.sharedNote.text));
+ await dialog.locator('[data-share-close]').click();await expect(note.locator('[data-share-note]')).toBeFocused();
+ expect(await page.evaluate(()=>localStorage.getItem('fungaroli:diario:v1'))).toBe(before);
+});
