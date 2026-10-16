@@ -108,11 +108,14 @@ Il Worker usa il database D1 dedicato `fungaroli-content`, binding `CMS_DB`; il 
 - foto di funghi, alberi, luoghi e glossario;
 - schede delle specie, specie e sosia, catalogo dei commestibili;
 - preparazione, glossario, articoli, regole;
-- dal 16/10 anche **sentieri** (`trails`) e **luoghi e microzone** (`zones`).
+- dal 16/10 anche **sentieri** (`trails`) e **luoghi e microzone** (`zones`);
+- dal 16/10 anche i dati generati: **campioni del bosco** (`habitat`), **percorsi di accesso** (`access`) e **imbocchi mappati** (`trailheads`).
 
 Al primo avvio dopo il deploy il Worker confronta con il pubblicato il JSON in `data/` di ogni documento dell'elenco. Se è cambiato, pubblica una nuova revisione (autore `release:repository-seed:discover-v1`) e conserva l'originale in cronologia. Un documento salvato da un autore, o con una bozza non pubblicata, non si aggiorna più dal repository: da lì in poi si corregge dal CMS. Per i sentieri vuol dire che, dopo una nota editoriale salvata dal CMS, un nuovo `tools/build_trails.py` non arriva più al sito. Ogni documento dell'elenco deve passare `validateContent`: se fallisce, lo snapshot risponde 503 e l'app ripiega sull'ultima copia salvata o sui JSON statici. Lo controlla `tests/cms-content.test.mjs`.
 
-Imbocchi, percorsi di accesso e campioni del bosco (`trailheads`, `access`, `habitat`) restano fuori dall'elenco e sono in sola lettura nel CMS. Limite noto: un loro JSON rigenerato non arriva allo snapshot pubblicato.
+Imbocchi, percorsi di accesso e campioni del bosco (`trailheads`, `access`, `habitat`) sono in sola lettura nel CMS: nessun autore può salvarli, pubblicarli o ripristinarne una revisione. Si aggiornano solo rigenerando il JSON con il loro script (`tools/build_trailheads.py`, `tools/build_access.py`, `tools/build_habitat.py`): al deploy successivo il Worker pubblica la nuova revisione e conserva la precedente in cronologia. Fino al 15/10 restavano fuori dall'elenco e un JSON rigenerato non arrivava allo snapshot.
+
+`data/access-info.json` (punto strada che non sia una pista, percorso a piedi e dislivello per ogni campione di bosco, da `tools/build_access_info.py`) è invece statico: non passa dal CMS, come `data/crop-points.json`. È allineato per indice ai campioni di `habitat.json` e porta in testa un controllo (`check`): se `habitat.json` viene rigenerato, va rigenerato anche lui.
 
 `cms_documents` conserva bozza e pubblicato; `cms_revisions` le revisioni immutabili; `cms_releases` gli ID e le revisioni di una pubblicazione; `cms_agent_tokens` gli hash delle credenziali e i permessi; `cms_audit` autore e operazione. I controlli di revisione e il cambio della release avvengono in batch transazionali D1.
 

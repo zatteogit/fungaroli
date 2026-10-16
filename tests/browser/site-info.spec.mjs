@@ -1,0 +1,190 @@
+// Aree protette, informazioni sul bosco e punto d'accesso (data/habitat-info.json, data/access-info.json).
+// Decisioni del 16/10/2026: nessun punto proposto per la raccolta in zona A o B del Gran Sasso-Laga, avviso nella
+// scheda, livello «Aree protette» sulla mappa, informazioni sul bosco fuori dall'indice, piste mai proposte in auto.
+// Scritto senza eseguirlo (la suite gira altrove): da lanciare con
+//   npx playwright test tests/browser/site-info.spec.mjs
+import { test, expect } from '@playwright/test';
+import { readFileSync } from 'node:fs';
+import { todayISO } from '../../js/weather.js';
+import { chooseAccess, accessFieldIndex, accessRow } from '../../js/human.js';
+import { prepareSiteInfo, excludedFn, infoRow, RESERVE_BAND_TEXT } from '../../js/site-info.js';
+import { SPECIES } from '../../js/species.js';
+test.use({ locale: 'it-IT', timezoneId: 'Europe/Rome' });
+
+const json = (f) => JSON.parse(readFileSync(new URL(`../../data/${f}`, import.meta.url), 'utf8'));
+const habitat = json('habitat.json'), habitatInfo = json('habitat-info.json'), accessInfo = json('access-info.json');
+const leafletJS = readFileSync(new URL('../../node_modules/leaflet/dist/leaflet.js', import.meta.url), 'utf8');
+const leafletCSS = readFileSync(new URL('../../node_modules/leaflet/dist/leaflet.css', import.meta.url), 'utf8');
+const PNG = Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==', 'base64');
+// ora fissa: metà ottobre, mattina (il porcino rosso è in stagione e la fascia dei 1600 m vince a meteo uguale)
+const NOW = new Date('2026-10-16T06:00:00Z');
+
+// Il punto atteso, calcolato qui con gli stessi moduli e gli stessi dati dell'app
+const si = prepareSiteInfo(habitatInfo, habitat), aidx = accessFieldIndex(accessInfo);
+const rows = (zid) => (i) => accessRow(accessInfo.zones[zid].samples[i], aidx, accessInfo.zones[zid].strade);
+const pinophilus = SPECIES.find((s) => s.id === 'pinophilus');
+const allowed = chooseAccess({ hab: habitat.zones.laga, sp: pinophilus, band: 1600, rows: rows('laga'), excluded: excludedFn(si, 'laga') });
+const forbidden = chooseAccess({ hab: habitat.zones.laga, sp: pinophilus, band: 1600, rows: rows('laga') });
+
+async function setup(page, { species = ['pinophilus'], width = 390, map = false, geoportale = null } = {}) {
+  await page.setViewportSize({ width, height: 900 });
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  await page.clock.setFixedTime(NOW);
+  const errors = []; page.on('pageerror', (e) => errors.push(e.message));
+  await page.route('https://**/*', (r) => r.abort());
+  if (map) {
+    await page.route('**/leaflet.min.js', (r) => r.fulfill({ contentType: 'text/javascript', body: leafletJS + '\n;const originalMap=L.map;L.map=(...args)=>(window.testMap=originalMap(...args));' }));
+    await page.route('**/leaflet.min.css', (r) => r.fulfill({ contentType: 'text/css', body: leafletCSS }));
+  }
+  if (geoportale) await page.route('https://geoportale.regione.lazio.it/**', (r) => { geoportale.push(r.request().url()); return r.fulfill({ contentType: 'image/png', body: PNG }); });
+  await page.route('**/api/weather/v1/forecast?**', (r) => {
+    const dates = Array.from({ length: 70 }, (_, i) => todayISO(new Date(NOW.getTime() + (i - 62) * 864e5)));
+    const time = dates.flatMap((d) => Array.from({ length: 24 }, (_, h) => `${d}T${String(h).padStart(2, '0')}:00`)), fill = (v) => Array(time.length).fill(v);
+    const out = Array.from({ length: new URL(r.request().url()).searchParams.get('latitude').split(',').length }, () => ({
+      daily: { time: dates, precipitation_sum: Array(70).fill(7), temperature_2m_mean: Array(70).fill(13), temperature_2m_min: Array(70).fill(8), temperature_2m_max: Array(70).fill(18) },
+      hourly: { time, soil_moisture_3_to_9cm: fill(0.3), soil_temperature_6cm: fill(13), soil_moisture_9_to_27cm: fill(0.32), precipitation: fill(0), precipitation_probability: fill(0), weather_code: fill(1), wind_gusts_10m: fill(8), temperature_2m: fill(13) } }));
+    return r.fulfill({ json: out });
+  });
+  await page.addInitScript((ids) => {
+    localStorage.setItem('fungaroli:legal-accepted', '32026-10-16');
+    localStorage.setItem('fungaroli:prefs:v2', JSON.stringify({ speciesIds: ids }));
+  }, species);
+  return errors;
+}
+const ready = async (page, v = 'ok') => {
+  await expect(page.locator('html')).toHaveAttribute('data-site-info', v);
+  await expect(page.locator('html')).toHaveAttribute('data-access-info', v);
+};
+const openSec = async (page, id) => {
+  const sec = page.locator(`#detail [data-sec="${id}"]`);
+  if (await sec.getAttribute('open') === null) await sec.locator(':scope > summary').click({ position: { x: 5, y: 10 } });
+  await expect(sec).toHaveAttribute('open', '');
+  return sec;
+};
+
+test('Laga, porcino rosso a 1600 m: nessun punto proposto in zona B, avviso e punto consentito con la sua quota', async ({ page }) => {
+  // i dati di partenza: senza esclusione il punto più comodo era in zona B, dentro la fascia
+  expect(infoRow(si, 'laga', forbidden.i).zona).toBe('B');
+  expect(allowed.outOfBand).toBe(true);
+  expect(['A', 'B']).not.toContain(infoRow(si, 'laga', allowed.i).zona);
+  const errors = await setup(page);
+  await page.goto('/#/zona/laga/1');
+  await ready(page);
+  const plan = page.locator('#detail .essential-sections');
+  await expect(plan.locator('[data-sec="specie"] summary')).toContainText('1600 m');
+  await expect(plan.locator('[data-sec="specie"] summary .plan-reserve')).toHaveText(RESERVE_BAND_TEXT);
+  // l'avviso della zona (data/zones.json, protection) resta
+  await expect(page.locator('#detail .notice').first()).toContainText('Parco Nazionale del Gran Sasso e Monti della Laga');
+  // il punto proposto è quello consentito, mai quello in zona B
+  const acc = await openSec(page, 'accesso');
+  await expect(acc).toContainText(RESERVE_BAND_TEXT);
+  await expect(acc).toContainText('Punto consentito più comodo');
+  await expect(acc).toContainText(`a ${allowed.e} m`);
+  await expect(acc).toContainText('fuori dalla fascia dell’indice');
+  const href = await acc.locator('a', { hasText: 'punto sulla strada' }).getAttribute('href');
+  const dest = new URL(href).searchParams.get('destination');
+  expect(dest).toBe(`${allowed.rlat},${allowed.rlon}`);
+  expect(dest).not.toBe(`${forbidden.rlat},${forbidden.rlon}`);
+  // mai «in auto su sentiero o pista»: il punto è su una strada; la pista, se c'è, è un'avvertenza
+  await expect(acc).not.toContainText('In auto su sentiero o pista');
+  await expect(acc).toContainText('Transito e sosta da verificare sul posto');
+  await expect(acc).toContainText(/fuori sentiero, da verificare|a piedi su sentieri e strade mappati|a bordo strada/);
+  await expect(acc).toContainText('DIN 33466');
+  // home: la proposta dice che la fascia è in zona di riserva
+  await page.goto('/#/');
+  const laga = page.locator('[data-walk-zone="laga"]');
+  if (await laga.count()) await expect(laga.first().locator('xpath=ancestor-or-self::*[self::li or contains(@class,"cover")][1]')).toContainText('in zona di riserva del Parco');
+  expect(errors).toEqual([]);
+});
+
+test('informazioni sul bosco della fascia: struttura, esposizione, disturbi, aree protette e fonti, fuori dall’indice', async ({ page }) => {
+  const errors = await setup(page);
+  await page.goto('/#/zona/laga/1');
+  await ready(page);
+  const ring = await page.locator('#detail .phero > .ring b').textContent();
+  const bosco = await openSec(page, 'bosco');
+  const info = bosco.locator('[data-site-info="band"]');
+  await expect(info).toContainText('Informazioni sul bosco, fuori dall’indice');
+  await expect(info).toContainText(/Struttura: (fustaia|ceduo)/);
+  await expect(info).toContainText(/Nella fascia dei 1600 m il bosco adatto è per il \d+% su versanti esposti a/);
+  await expect(info).toContainText(/disturbo rilevato da satellite|Nessun disturbo rilevato da satellite/i);
+  await expect(info).toContainText('In zona B il Piano del Parco esclude la raccolta');
+  await expect(info).toContainText('TINITALY');
+  await expect(info).toContainText('European Forest Disturbance Atlas');
+  await expect(info.locator('a[href^="https://"]')).toHaveCount(4);
+  const zona = await openSec(page, 'zona');
+  await expect(zona.locator('[data-site-info="zone"]')).toContainText('fuori dal Lazio');
+  // l'indice non cambia aprendo le informazioni
+  expect(await page.locator('#detail .phero > .ring b').textContent()).toBe(ring);
+  // una zona fuori dai parchi: niente righe sulle aree protette
+  await page.goto('/#/zona/vallonina/1');
+  const v = await openSec(page, 'bosco');
+  await expect(v.locator('[data-site-info="band"]')).toContainText('Struttura:');
+  await expect(v.locator('[data-site-info="band"]')).not.toContainText('Parco');
+  expect(errors).toEqual([]);
+});
+
+for (const variant of ['mancanti', 'non allineati']) test(`file statici ${variant}: l'app parte, nessuna esclusione, punto e testi di prima`, async ({ page }) => {
+  const errors = await setup(page);
+  for (const f of ['habitat-info', 'access-info']) {
+    await page.route(`**/data/${f}.json`, (r) => variant === 'mancanti' ? r.fulfill({ status: 404, body: '' })
+      : r.fulfill({ json: { ...json(`${f}.json`), habitat: { ...json(`${f}.json`).habitat, generated: '2000-01-01' } } }));
+  }
+  await page.goto('/#/zona/laga/1');
+  await ready(page, 'no');
+  await expect(page.locator('#detail .essential-sections .plan-reserve')).toHaveCount(0);
+  await expect(page.locator('#detail .notice').first()).toContainText('Parco Nazionale del Gran Sasso e Monti della Laga');
+  const acc = await openSec(page, 'accesso');
+  await expect(acc).toContainText('Punto più comodo');
+  await expect(acc).toContainText('in linea d’aria');
+  await expect(acc).not.toContainText('Punto consentito');
+  const bosco = await openSec(page, 'bosco');
+  await expect(bosco.locator('[data-site-info]')).toHaveCount(0);
+  expect(errors).toEqual([]);
+});
+
+test('mappa: livello «Aree protette» dal Geoportale con legenda A/B/C/D e attribuzione', async ({ page }) => {
+  const requests = [];
+  const errors = await setup(page, { width: 1280, map: true, geoportale: requests });
+  await page.goto('/#/mappa/laga');
+  await expect(page.locator('#map-filters')).toBeVisible();
+  await ready(page);
+  await page.locator('.mapctl [data-act="layers"]').first().click();
+  const tile = page.locator('.mapctl [data-act="protected"]');
+  await expect(tile).toContainText('Aree protette');
+  await tile.click();
+  await expect(tile).toHaveAttribute('aria-pressed', 'true');
+  await expect.poll(() => requests.some((u) => /request=GetMap/i.test(u) && u.includes('geonode%3Azoning_pngsl') || u.includes('geonode:zoning_pngsl'))).toBe(true);
+  const legend = page.locator('#legend .wms-pa');
+  await expect(legend).toBeVisible();
+  await expect(legend).toContainText('Aree protette e zone dei piani');
+  for (const t of ['riserva integrale', 'riserva generale orientata', 'aree di protezione', 'fa fede la cartografia dell’ente']) await expect(legend).toContainText(t);
+  await expect(legend.locator('img.pa-leg-img')).toHaveCount(3);
+  await expect(page.locator('.leaflet-control-attribution')).toContainText('Aree protette © Regione Lazio');
+  // riquadro della zona: quanta parte è nel Parco (senza geometrie, solo conteggi del file)
+  await expect(page.locator('#map-sheet .pa-sheet')).toContainText('Parco nazionale Gran Sasso e Monti della Laga');
+  // spento: niente legenda; nessuna geolocalizzazione chiesta
+  await tile.click();
+  await expect(tile).toHaveAttribute('aria-pressed', 'false');
+  await expect(legend).toBeHidden();
+  expect(await page.evaluate(() => typeof navigator.geolocation?.watchPosition)).toBe('function');
+  expect(errors).toEqual([]);
+});
+
+test('piano salvato nel Taccuino: indice con e senza il bonus del calo del suolo, serie 9–27 cm', async ({ page }) => {
+  const errors = await setup(page);
+  await page.goto('/#/zona/laga/1');
+  await ready(page);
+  await page.locator('#detail [data-save-plan]').click();
+  await expect(page.locator('#detail [data-plan-status]')).toContainText('salvati');
+  const plan = await page.evaluate(() => JSON.parse(localStorage.getItem('fungaroli:diario:v1') || '[]').find((e) => e.kind === 'plan'));
+  expect(plan).toBeTruthy();
+  for (const k of ['scores', 'scoresNoShock', 'scoresByBand', 'scoresByBandNoShock']) expect(plan.forecast[k]).toBeTruthy();
+  expect(Object.keys(plan.forecast.scoresNoShock).sort()).toEqual(Object.keys(plan.forecast.scores).sort());
+  // suolo a temperatura costante: nessun calo, i due valori coincidono
+  expect(plan.forecast.scoresNoShock.pinophilus).toBe(plan.forecast.scores.pinophilus);
+  expect(plan.forecast.shock.byBand['1600'].pinophilus.status).toBe('nessun calo');
+  expect(plan.forecast.inputs[0].soilt).toHaveLength(31);
+  expect('soilm9to27' in plan.forecast.inputs[0]).toBe(true);
+  expect(errors).toEqual([]);
+});

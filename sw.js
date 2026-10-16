@@ -4,7 +4,7 @@
 // - meteo Open-Meteo: gestito dall'app con data di acquisizione e limite d'età
 // - mappe: dalla cache se gia' viste, con un limite di tessere
 // - diario (/api/): mai in cache
-const SHELL = 'fungaroli-shell-v78';
+const SHELL = 'fungaroli-shell-v79';
 const RUNTIME = 'fungaroli-runtime-v1';
 const TILES = 'fungaroli-tiles-v1';
 const MAX_TILES = 1500;
@@ -14,7 +14,8 @@ const PRECACHE = [
   'js/search-select.js',
   'js/weather-request.js', 'js/weather-cache.js', 'js/weather-data.js', 'js/weather-dom.js',
   'js/images.js', 'js/plants.js','js/botanical-model.js','js/outing-discoveries.js','js/botanical-explanation.js','data/botanical-models.json', 'js/plant-catalog.js', 'js/catalog-search.js', 'js/guided-key.js', 'data/recognize-trees.json', 'data/recognize-plants.json', 'js/notebook-entry.js', 'data/plants.json', 'js/challenges.js', 'data/challenges.json',
-  'data/media-glossary.json', 'data/crop-points.json', 'data/trait-icons.json', 'data/tree-trait-icons.json',
+  'data/media-glossary.json', 'data/crop-points.json', 'data/habitat-info.json', 'data/access-info.json', 'data/trait-icons.json', 'data/tree-trait-icons.json',
+  'js/site-info.js', 'js/forecast-capture.js',
   './', 'index.html', 'manifest.webmanifest', 'css/tokens.css', 'css/style.css', 'css/fronda.css', 'css/fonts.css',
   'js/learning.js','js/glossary-context.js', 'js/species-link.js', 'js/content-schema.js', 'js/walks.js', 'js/edible-catalog.js', 'js/species-autocomplete.js', 'js/app.js', 'js/community.js', 'js/community-signal.js', 'js/guides.js', 'js/vendor/webauthn.js', 'js/model.js', 'js/species.js', 'js/weather.js', 'js/journal.js', 'js/svgmap.js',
   'js/speciescard.js', 'js/identify.js', 'js/identify-model.js', 'js/trees.js', 'js/human.js', 'js/lightbox.js', 'js/install.js', 'js/outing.js', 'js/motion.js', 'js/rails.js', 'js/theme.js', 'js/refresh.js', 'js/names.js', 'js/zone-cover.js', 'js/forest-legend.js', 'js/search.js', 'js/science.js', 'js/viz.js', 'docs/metodo-scientifico.md',

@@ -28,8 +28,28 @@ function factorRows(r, sp, band, dateStr) {
     { k: 'Umidità del suolo', v: r.moist, inputs: ['umidità del suolo', 'meteo aggiornato'], brief: r.sm == null ? 'Dato non disponibile' : `Terreno ${SOIL_TEXT[soilLevel(r.sm)]} negli ultimi 3 giorni (stima a 3–9 cm)`, tags: ['dato', 'eur'], why: r.sm == null ? 'dato non disponibile: indice non calcolabile.' : `${n1(r.sm, 2)} m³/m³ a 3–9 cm negli ultimi 3 giorni (soglie euristiche ${n1(PARAMS.moistDry, 2)}–${n1(PARAMS.moistWet, 2)}). È un dato di modello, non una misura del terreno.` },
     { k: 'Gelo', v: r.frost, inputs: ['temperature minime', 'meteo aggiornato'], brief: `Minima di ${n1(r.minT)}\u00a0°C negli ultimi 5 giorni`, tags: ['eur'], why: r.frost < 1 ? `minima di ${n1(r.minT)}\u00a0°C negli ultimi 5 giorni: il modello penalizza il gelo sotto ${PARAMS.frostC} °C.` : `minima ${n1(r.minT)}\u00a0°C negli ultimi 5 giorni: nessuna penalità per gelo nel modello.` },
     { k: 'Caldo', v: r.heat, inputs: ['temperature massime', 'meteo aggiornato'], brief: `Massima di ${n1(r.maxT)}\u00a0°C negli ultimi 3 giorni`, tags: ['eur'], why: r.heat < 1 ? `massima di ${n1(r.maxT)}\u00a0°C negli ultimi 3 giorni: il modello penalizza il caldo sopra ${PARAMS.heatC} °C.` : `massima ${n1(r.maxT)}\u00a0°C negli ultimi 3 giorni: nessuna penalità per caldo nel modello.` },
-    { k: 'Shock termico', v: r.shock, inputs: ['temperatura media', 'meteo aggiornato'], brief: r.shock > 1 ? `Calo di ${n1(r.drop)}\u00a0°C · bonus non validato` : 'Nessun bonus nel modello', tags: ['eur'], bonus: true, why: r.shock > 1 ? `calo di ${n1(r.drop)} °C nella media tra 4 e 14 giorni fa: bonus ipotizzato, senza validazione locale.` : `nessun calo di almeno ${PARAMS.shockDropC} °C tra 4 e 14 giorni fa: nessun bonus.` },
+    { k: 'Calo di temperatura del suolo', v: r.shock, inputs: ['meteo aggiornato'], ...shockText(r, sp), tags: ['eur'], bonus: true },
   ];
+}
+
+// Il calo della temperatura del suolo (js/model.js, soilTemperatureShock): bonus solo per porcino e porcino rosso.
+// Peso giusto per un'evidenza debole (decisione del 16/10/2026): al massimo ×1,15, mai cumulato; nelle ragioni
+// compare per ultimo e come «possibile innesco, osservazione preliminare», con l'etichetta Euristica (mai Letteratura).
+const SHOCK_LABEL = 'possibile innesco, osservazione preliminare (Olivier et al. 1997)';
+const SHOCK_SOURCE = 'Appoggio: osservazione preliminare in Francia sud-occidentale (Olivier et al. 1997); il bonus è euristico, non validato nel Reatino.';
+function shockText(r, sp) {
+  const [lagMin, lagMax] = PARAMS.shockLagDays, x = PARAMS.shockSoilDropC;
+  const day = r.shockDate ? new Date(r.shockDate + 'T12:00:00').toLocaleDateString('it-IT', { day: 'numeric', month: 'long' }) : '';
+  switch (r.shockStatus) {
+    case 'calo': return { brief: `Calo della temperatura del suolo di ${n1(r.drop)}\u00a0°C ${r.shockDaysBefore} giorni prima: ${SHOCK_LABEL} · bonus non validato`,
+      why: `il ${day} (${r.shockDaysBefore} giorni prima) la temperatura del suolo stimata a 6 cm è scesa a ${n1(r.shockTo)}\u00a0°C di media, ${n1(r.drop)}\u00a0°C sotto la media dei giorni precedenti (${n1(r.shockFrom)}\u00a0°C). Il modello aggiunge ×${n1(PARAMS.shockBonus, 2)} da ${lagMin} a ${lagMax} giorni dopo un calo di almeno ${x}\u00a0°C. ${SHOCK_SOURCE}` };
+    case 'nessun calo': return { brief: `Nessun calo della temperatura del suolo: nessun bonus (${SHOCK_LABEL})`,
+      why: `nessun calo della temperatura del suolo di almeno ${x}\u00a0°C tra ${lagMax} e ${lagMin} giorni prima${Number.isFinite(r.drop) && r.drop > 0 ? ` (calo massimo ${n1(r.drop)}\u00a0°C)` : ''}: nessun bonus. ${SHOCK_SOURCE}` };
+    case 'dati incompleti': return { brief: `Temperatura del suolo incompleta: nessun bonus (${SHOCK_LABEL})`,
+      why: `mancano dati della temperatura del suolo per i giorni richiesti: il bonus non si applica. L’indice resta calcolabile, perché questo fattore può solo aggiungere. ${SHOCK_SOURCE}` };
+    default: return { brief: 'Non usato per questa specie',
+      why: `per ${sp.name.split(' / ')[0].toLowerCase()} il modello non usa il calo della temperatura del suolo: l’osservazione trovata (Olivier et al. 1997) riguarda i porcini. Nessun bonus.` };
+  }
 }
 
 function factorState(x) {
@@ -51,6 +71,7 @@ function speciesProfile(sp) {
       <div><dt>Curva termica</dt><dd>centro ${n1(sp.topt, 0)}\u00a0°C, ampiezza ${n1(sp.tsd)}\u00a0°C (media di 20 giorni)</dd></div>
       <div><dt>Quote</dt><dd>${sp.elev[0]}–${sp.elev[1]} m</dd></div>
       ${sp.frostTolerant ? '<div><dt>Gelo</dt><dd>tollerante: il gelo pesa meno</dd></div>' : ''}
+      ${sp.soilShock ? `<div><dt>Calo di temperatura del suolo</dt><dd>bonus ×${n1(PARAMS.shockBonus, 2)} da ${PARAMS.shockLagDays[0]} a ${PARAMS.shockLagDays[1]} giorni dopo un calo di ${PARAMS.shockSoilDropC}\u00a0°C (euristica)</dd></div>` : ''}
     </dl>
     <p class="sci-sub">Mesi (peso stagionale)</p><div class="sp-months" aria-hidden="true">${months}</div>
     <p class="sci-sub">Boschi (idoneità da 0 a 1)</p><ul class="sp-forest">${forest}</ul>
@@ -192,17 +213,19 @@ export function drawWhyCharts(box, { s, sp, days, todayIndex, i }) {
 export function renderWhy({ r, s, i, sp, band, dateStr, shown, agg, parts = [], prefs = [], outing, days = [], todayIndex = i }) {
   if(sp.kind==='plant')return renderBotanicalWhy({r,sp,prefs})+plantDaysHtml({days,todayIndex,i});
   const missing = new Set(r.quality?.missing || []);
-  const rows = factorRows(r, sp, band, dateStr).map(x => x.inputs.some(k => missing.has(k)) ? { ...x, v: null, brief: 'Dati mancanti o non aggiornati per il calcolo', why: 'Dati mancanti o non aggiornati per le finestre richieste: il fattore non è utilizzabile.' } : x);
+  const all = factorRows(r, sp, band, dateStr).map(x => x.inputs.some(k => missing.has(k)) ? { ...x, v: null, brief: 'Dati mancanti o non aggiornati per il calcolo', why: 'Dati mancanti o non aggiornati per le finestre richieste: il fattore non è utilizzabile.' } : x);
+  const rows = [...all.filter(x => !x.bonus), ...all.filter(x => x.bonus)];
   const complete = r.quality?.complete !== false && rows.every(x => Number.isFinite(x.v));
   const product = complete ? Math.min(1, rows.reduce((a, x) => a * x.v, 1)) : null;
   const limiting = rows.filter(x => !x.bonus && Number.isFinite(x.v) && x.v < 1).sort((a, b) => a.v - b.v);
   const weakest = limiting[0];
   const tied = weakest ? limiting.filter(x => Math.abs(x.v - weakest.v) < 1e-9) : [];
-  const main = [...tied, ...rows.slice(0, 6).filter(x => !tied.includes(x))].slice(0, 6);
-  const other = rows.filter(x => !main.includes(x));
+  // il bonus (calo del suolo) non è mai tra le condizioni principali e resta l'ultimo di ogni elenco
+  const main = [...tied, ...rows.filter(x => !x.bonus).slice(0, 6).filter(x => !tied.includes(x))].slice(0, 6);
+  const other = [...rows.filter(x => !main.includes(x) && !x.bonus), ...rows.filter(x => x.bonus)];
   const raw = complete ? Math.round(product * 100) : null;
   const takeaway = !complete ? 'Mancano dati per un indice completo.' : tied.length ? `Nel modello ${tied.map(x => x.k.toLowerCase()).join(' e ')} ${tied.length > 1 ? 'sono i fattori che riducono' : 'è il fattore che riduce'} di più l’indice.` : 'Nessun fattore riduce l’indice nel modello.';
-  const fc = `<p class="sci-note"><b>Dati ${r.quality?.complete ? 'completi per le finestre richieste' : 'incompleti'}.</b> ${r.quality?.usesForecast ? 'Il calcolo include previsioni meteorologiche, anche del giorno di acquisizione.' : 'Il calcolo usa meteo passato di modello, non misure nella fungaia.'} L'accuratezza dei ritrovamenti non è stata misurata nel Reatino. ${r.quality?.fetchedAt ? `Acquisizione: ${esc(new Date(r.quality.fetchedAt).toLocaleString('it-IT', { timeZone: 'Europe/Rome' }))}.` : ''}</p>`;
+  const fc = `<p class="sci-note"><b>Dati ${r.quality?.complete ? 'completi per le finestre richieste' : 'incompleti'}.</b> ${r.quality?.usesForecast ? 'Il calcolo include previsioni meteorologiche, anche del giorno di acquisizione.' : 'Il calcolo usa meteo passato di modello, non misure nella fungaia.'} ${r.quality?.bonusUnavailable?.length ? 'La temperatura del suolo è incompleta: il bonus per il suo calo non è stato valutato. ' : ''}L'accuratezza dei ritrovamenti non è stata misurata nel Reatino. ${r.quality?.fetchedAt ? `Acquisizione: ${esc(new Date(r.quality.fetchedAt).toLocaleString('it-IT', { timeZone: 'Europe/Rome' }))}.` : ''}</p>`;
   return `
     <p class="sci-lede">${Number.isFinite(shown) && complete ? `Indice sperimentale <b>${formatIndex(shown)}/10</b>` : '<b>Indice non disponibile</b>'} per ${speciesLink(sp, sp.name.toLowerCase())} a ${band} m. Descrive condizioni ambientali stimate, non la probabilità di trovare funghi.</p>
     <p class="sci-takeaway">${esc(takeaway)}</p>
@@ -211,7 +234,7 @@ export function renderWhy({ r, s, i, sp, band, dateStr, shown, agg, parts = [], 
     <ul class="sci-checks" aria-label="Altri fattori del modello">${other.map(x => { const state = factorState(x); return `<li><b>${esc(x.k)}</b><span class="sci-state state-${state.kind}">${state.label}</span><small>${esc(x.brief)}</small></li>`; }).join('')}</ul>
     ${storyHtml({ r, sp, rows, days, todayIndex, i })}
     <details class="sci-technical" id="sci-calcolo"><summary>Calcolo e fonti dei 9 fattori</summary><div class="sci-technical-body">
-    <p class="sci-note">I fattori si moltiplicano: ×1 non riduce l’indice, un valore inferiore lo abbassa. Lo shock termico può aggiungere un bonus ipotizzato. Le etichette riassumono l’effetto nel modello, senza misurare l’affidabilità dei dati.</p>
+    <p class="sci-note">I fattori si moltiplicano: ×1 non riduce l’indice, un valore inferiore lo abbassa. Il calo della temperatura del suolo può aggiungere un bonus ipotizzato, solo per porcino e porcino rosso. Le etichette riassumono l’effetto nel modello, senza misurare l’affidabilità dei dati.</p>
     <ol class="sci-factors">${rows.map((x) => `
       <li>
         <div class="sf-top"><span class="sf-k">${esc(x.k)}</span><b class="sf-v" title="Moltiplicatore del fattore">${Number.isFinite(x.v) ? `×${n1(x.v, 2)}` : 'Non disponibile'}</b></div>

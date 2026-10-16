@@ -5,6 +5,9 @@ export const WEATHER_LOCAL_RETENTION_MS=6*86400000;
 const key=kind=>`fungaroli:${kind==='growth'?'weather':'outing'}:zones:v3`;
 export const zoneWeatherSignature=(z,kind='growth')=>`${z.id}|${z.lat},${z.lon}|${(kind==='growth'?z.bands:[z.bands[Math.floor(z.bands.length/2)]]).join(',')}`;
 const read=kind=>{try{return JSON.parse(localStorage.getItem(key(kind))||'{}');}catch{return {};}};
+// I campi obbligatori sono quelli che servono all'indice. Le medie del suolo, compresa quella
+// tra 9 e 27 cm aggiunta dopo la v78, sono facoltative: le copie salvate prima restano valide
+// con la stessa chiave e si rinnovano alla scadenza normale, senza essere scartate.
 export function validWeatherRows(raw,count,kind='growth'){
   if(!Array.isArray(raw)||raw.length!==count)return false;
   const group=kind==='growth'?'daily':'hourly';

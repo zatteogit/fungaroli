@@ -19,7 +19,9 @@ async function json(req) {
 
 // Documenti che un deploy aggiorna dal repository finché nessun autore li ha toccati (seed o ultima
 // scrittura di una release). Ognuno deve passare validateContent: un errore qui ferma init() e lo snapshot.
-export const REPOSITORY_REFRESHED=['ui-copy','plants','trees','media','media-trees','media-zones','species-id','species-traits','edible-catalog','preparation','glossary','guides','legal','media-glossary','trails','zones'];
+// habitat, access e trailheads sono dati generati dagli script in tools/, in sola lettura nel CMS: senza
+// questo elenco un JSON rigenerato non arriverebbe mai allo snapshot pubblicato.
+export const REPOSITORY_REFRESHED=['ui-copy','plants','trees','media','media-trees','media-zones','species-id','species-traits','edible-catalog','preparation','glossary','guides','legal','media-glossary','trails','zones','habitat','access','trailheads'];
 
 async function init(env,origin) {
   const db=env.CMS_DB;

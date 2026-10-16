@@ -26,3 +26,12 @@ test('meteo incompleto o scaduto non diventa tempo buono', () => {
   assert.equal(outingFor({ fetchedAt: '2026-10-11T00:00:00Z' }, z, '2026-10-12', now).level, 'non_disponibile');
   assert.equal(outingFor({ fetchedAt: new Date(now).toISOString(), time: ['2026-10-12T08:00'], p: [0], pp: [0], wc: [0], g: [0], t: [13] }, z, '2026-10-12', now).level, 'non_disponibile');
 });
+test('lo strato 9–27 cm è una media giornaliera; le istantanee senza strati del suolo ricevono serie vuote, non errori', async () => {
+  const r = raw(); r.hourly.soil_moisture_9_to_27cm = Array(24).fill(.27);
+  const s = toDaily(r, '2026-10-12'); assert.ok(Math.abs(s.soilm9to27[0] - .27) < 1e-12);
+  r.hourly.soil_moisture_9_to_27cm[5] = null; assert.equal(toDaily(r, '2026-10-12').soilm9to27[0], null);
+  const old = toDaily(raw(), '2026-10-12'); delete old.soilm9to27; delete old.soilt;
+  globalThis.FUNGAROLI_DATA = { weather: { fetchedAt: '2026-10-12T06:00:00Z', series: { test: [old] } } };
+  try { const w = await loadWeather([]); assert.deepEqual(w.series.test[0].soilm9to27, [null]); assert.deepEqual(w.series.test[0].soilt, [null]); }
+  finally { delete globalThis.FUNGAROLI_DATA; }
+});

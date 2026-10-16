@@ -52,8 +52,27 @@ test('ogni documento aggiornato dal repository passa la validazione del CMS e ne
     const { value } = validateContent(id, data);
     if (!['guides', 'legal'].includes(id)) assert.equal(JSON.stringify(value), JSON.stringify(data), `${id}: la validazione non deve cambiare il seed`);
   }
-  // i generati in sola lettura restano fuori: si aggiornano dai loro script, non dal CMS
-  for (const id of ['access', 'habitat', 'trailheads']) assert.equal(REPOSITORY_REFRESHED.includes(id), false);
+  // i dati generati (sola lettura nel CMS) si aggiornano dai loro script: devono essere nell'elenco
+  for (const id of ['access', 'habitat', 'trailheads']) assert.equal(REPOSITORY_REFRESHED.includes(id), true, id);
+});
+
+test('dati generati: un JSON rigenerato arriva allo snapshot al deploy successivo', async () => {
+  const ids = ['habitat', 'access', 'trailheads'];
+  const current = Object.fromEntries(ids.map(id => [id, JSON.parse(read(id))]));
+  const old = structuredClone(current);
+  old.habitat.generated = '2000-01-01';
+  old.access.generated = '2000-01-01';
+  old.trailheads.generated = '2000-01-01';
+  const oldFiles = Object.fromEntries(ids.map(id => [id, JSON.stringify(old[id])]));
+  const sql = new DatabaseSync(':memory:');
+  const first = await publishedContent(env(sql, oldFiles), ORIGIN);
+  for (const id of ids) assert.equal(first.versions[id], 0, id);
+  const s = await publishedContent(env(sql), ORIGIN); // nuovo deploy con i JSON rigenerati
+  for (const id of ids) {
+    assert.equal(s.versions[id], 1, id);
+    assert.deepEqual(s.resources[id], current[id], id);
+    assert.equal(row(sql, id).updated_by, 'release:repository-seed:discover-v1');
+  }
 });
 
 test('primo avvio: i seed entrano come versione 0, senza release aggiuntive', async () => {

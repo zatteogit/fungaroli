@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import {cachedForecast,forecastParams,compactGrowth} from '../worker/weather-provider.js';
 import {fetchForecast} from '../js/weather-request.js';
 import {todayISO,toDaily} from '../js/weather.js';
+import {LEGACY_GROWTH_HOURLY} from '../js/weather-data.js';
 const now=Date.parse(todayISO()+'T10:00:00Z'),zones=[{lat:42.4,lon:12.8,bands:[800,1000]}];
 const cache=()=>{const data=new Map();return{data,get:async k=>data.has(k)?JSON.parse(data.get(k)):null,put:async(k,v)=>data.set(k,v)};};
 const raw=(kind='growth')=>Array.from({length:kind==='growth'?2:1},()=>Object.fromEntries(['daily','hourly'].filter(g=>forecastParams(zones,kind).has(g)).map(g=>[g,{time:[todayISO(new Date(now))+(g==='hourly'?'T12:00':'')],...Object.fromEntries(forecastParams(zones,kind).get(g).split(',').map(f=>[f,[0]]))}])));
@@ -110,4 +111,52 @@ test('shared cache survives midnight when its forecast covers the new day',async
  await cachedForecast(params,{zones,cache:storage,now:before,fetcher});
  const hit=await cachedForecast(params,{zones,cache:storage,now:before+120000,fetcher});
  assert.equal(hit.headers.get('x-weather-cache'),'hit');assert.equal(calls,1);
+});
+
+// ---- Strato 9–27 cm: registrato, non usato nell'indice; compatibilità con copie e pagine precedenti ----
+const legacyRaw=()=>raw().map(row=>{delete row.hourly.soil_moisture_9_to_27cm;return row;});
+const legacyQuery=()=>{const q=forecastParams(zones,'growth');q.set('hourly',LEGACY_GROWTH_HOURLY);return q;};
+test('lo strato 9–27 cm diventa una media giornaliera; le righe che non lo hanno restano valide',()=>{
+  const hours=Array.from({length:48},(_,i)=>`2026-10-${i<24?'12':'13'}T${String(i%24).padStart(2,'0')}:00`);
+  const row={daily:{time:['2026-10-12','2026-10-13'],precipitation_sum:[4,1],temperature_2m_mean:[13,14],temperature_2m_min:[8,9],temperature_2m_max:[18,19]},
+    hourly:{time:hours,soil_moisture_3_to_9cm:Array(48).fill(.3),soil_temperature_6cm:Array(48).fill(13),soil_moisture_9_to_27cm:hours.map((_,i)=>i<24?.25:.35)}};
+  row.hourly.soil_moisture_9_to_27cm[40]=null; // giorno incompleto: media nulla, non inventata
+  const small=compactGrowth([row])[0],deep=small.daily.soil_moisture_9_to_27cm_mean;
+  assert.ok(Math.abs(deep[0]-.25)<1e-12);assert.equal(deep[1],null);
+  assert.deepEqual(toDaily(small,'2026-10-13').soilm9to27,toDaily(row,'2026-10-13').soilm9to27);
+  const old=structuredClone(row);delete old.hourly.soil_moisture_9_to_27cm;
+  const oldSmall=compactGrowth([old])[0];
+  assert.equal('soil_moisture_9_to_27cm_mean' in oldSmall.daily,false);
+  assert.deepEqual(toDaily(oldSmall,'2026-10-13').soilm9to27,[null,null]);
+  for(const key of ['soilm','soilt'])assert.deepEqual(toDaily(oldSmall,'2026-10-13')[key],toDaily(small,'2026-10-13')[key]);
+});
+test('il profilo di crescita chiede lo strato 9–27 cm; una pagina aperta con la richiesta precedente non riceve 422',async()=>{
+  assert.equal(forecastParams(zones,'growth').get('hourly'),'soil_moisture_3_to_9cm,soil_temperature_6cm,soil_moisture_9_to_27cm');
+  let asked;
+  const res=await cachedForecast(legacyQuery(),{zones,cache:cache(),now,fetcher:async url=>{asked=new URL(url).searchParams.get('hourly');return Response.json(legacyRaw());}});
+  assert.equal(res.status,200);assert.equal(asked,LEGACY_GROWTH_HOURLY);
+  const rows=await res.json();assert.ok(Array.isArray(rows[0].daily.soil_moisture_3_to_9cm_mean));assert.equal('soil_moisture_9_to_27cm_mean' in rows[0].daily,false);
+});
+test('la copia condivisa salvata con la richiesta precedente si usa subito, ma parte l’aggiornamento che porta lo strato nuovo',async()=>{
+  const storage=cache();
+  await cachedForecast(legacyQuery(),{zones,cache:storage,now,fetcher:async()=>Response.json(legacyRaw())});
+  const params=forecastParams(zones,'growth');let calls=0;const work=[];
+  const fetcher=async()=>{calls++;return Response.json(raw());};
+  const first=await cachedForecast(params,{zones,cache:storage,now:now+60000,waitUntil:p=>work.push(p),fetcher});
+  assert.equal(first.headers.get('x-weather-cache'),'stale');assert.equal(first.headers.get('x-weather-refreshing'),'1');
+  assert.equal(first.headers.get('x-weather-fetched-at'),new Date(now).toISOString());
+  assert.equal('soil_moisture_9_to_27cm_mean' in (await first.json())[0].daily,false);
+  await Promise.all(work);assert.equal(calls,1);
+  const hit=await cachedForecast(params,{zones,cache:storage,now:now+120000,fetcher});
+  assert.equal(hit.headers.get('x-weather-cache'),'hit');assert.equal(calls,1);
+  assert.ok(Array.isArray((await hit.json())[0].daily.soil_moisture_9_to_27cm_mean));
+  // se l'aggiornamento non riesce, resta la copia datata della richiesta precedente
+  const other=cache();await cachedForecast(legacyQuery(),{zones,cache:other,now,fetcher:async()=>Response.json(legacyRaw())});
+  const kept=await cachedForecast(params,{zones,cache:other,now:now+60000,fetcher:async()=>Response.json({},{status:429})});
+  assert.equal(kept.headers.get('x-weather-cache'),'stale');assert.equal(kept.headers.get('x-weather-fetched-at'),new Date(now).toISOString());
+});
+test('una risposta nuova senza lo strato richiesto non entra nella cache condivisa',async()=>{
+  const storage=cache();
+  await assert.rejects(cachedForecast(forecastParams(zones,'growth'),{zones,cache:storage,now,fetcher:async()=>Response.json(legacyRaw())}),e=>e.status===502);
+  assert.equal(storage.data.size,0);
 });
