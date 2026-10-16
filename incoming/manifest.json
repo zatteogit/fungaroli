@@ -20782,5 +20782,95 @@
   "fase": "maturo",
   "modello": "image_gen (identificatore tecnico non esposto)",
   "prompt": "Generate 1254 square transparent 3x3 PNG sheet, 9 flat icons, no text grid texture shadow. All same species AGARICUS SYLVICOLA from attached reference; preserve EXACT ivory cream cap color, offwhite stem bulb shape and small hanging ring. Three columns: cap side only, underside circular radial gills central double stem stub like reference, whole mushroom. Max icon 290px, centered inside each 418px cell, 15% margins. Thick continuous dark brown outline. ROW1 YOUNG: cap almost spherical, tall hemispherical dome with curved inward margins (height half cap diameter), gills WHITE ivory; same stem ring. ROW2 ADULT: cap convex exactly reference shape, gills GRAY with subtle PINK shading (dominant gray), ring stem unchanged. ROW3 MATURE: cap ENTIRELY FLATTENED horizontal plate, only very slight raised center; cap side height at most 20% width, whole mushroom cap equally flat. Gills chocolate BROWN. Preserve flat few-color reference style and same center/scale. No additional characters or yellow stains.\n"
+},
+{
+  "file": "incoming/icone/fasi-33.png",
+  "tipo": "illustrazione",
+  "soggetto": "agaricus-xanthodermus",
+  "tessera": "cappello",
+  "cella": 0,
+  "fase": "giovane",
+  "modello": "image_gen (identificatore tecnico non esposto)",
+  "prompt": "1254x1254 transparent PNG 3x3 flat icon sheet exactly 9 icons. Copy style and exact cap colors of attached approved references. Columns cap side only / circular underside radial gills with central stem stub / whole mushroom. Each icon centered in 418px cell max size290px leaving15% margins. Continuous dark brown outer outline. No text texture shadow grid. ROW1 AGARICUS XANTHODERMUS YOUNG: reference1 ivory white cap with same subtle tan center, globose hemispherical dome with FLATTISH TOP (tall rounded shoulders). Gills WHITISH #ece7da with delicate pale PINK #d99aa2 tint on outer area. Keep broad ring and pear-shaped stem from reference. ROW2 XANTHODERMUS ADULT: broadly CONVEX cap, margin unrolled, same ivory color and tan center. Gills predominantly GRAY #9d968a shading BROWN #8e5f36, retain same ring and stem. ROW3 ENTOLOMA SINUATUM YOUNG reference2: cap distinctly CONICAL with gently rounded pointed apex, gray taupe same reference color. Gills pale whitish YELLOW (light version #d9b13c). Preserve its ringless thick stem, no ring anywhere in row3. Only these stage changes; no extra stains scales or features.\n"
+},
+{
+  "file": "incoming/icone/fasi-33.png",
+  "tipo": "illustrazione",
+  "soggetto": "agaricus-xanthodermus",
+  "tessera": "sotto",
+  "cella": 1,
+  "fase": "giovane",
+  "modello": "image_gen (identificatore tecnico non esposto)",
+  "prompt": "1254x1254 transparent PNG 3x3 flat icon sheet exactly 9 icons. Copy style and exact cap colors of attached approved references. Columns cap side only / circular underside radial gills with central stem stub / whole mushroom. Each icon centered in 418px cell max size290px leaving15% margins. Continuous dark brown outer outline. No text texture shadow grid. ROW1 AGARICUS XANTHODERMUS YOUNG: reference1 ivory white cap with same subtle tan center, globose hemispherical dome with FLATTISH TOP (tall rounded shoulders). Gills WHITISH #ece7da with delicate pale PINK #d99aa2 tint on outer area. Keep broad ring and pear-shaped stem from reference. ROW2 XANTHODERMUS ADULT: broadly CONVEX cap, margin unrolled, same ivory color and tan center. Gills predominantly GRAY #9d968a shading BROWN #8e5f36, retain same ring and stem. ROW3 ENTOLOMA SINUATUM YOUNG reference2: cap distinctly CONICAL with gently rounded pointed apex, gray taupe same reference color. Gills pale whitish YELLOW (light version #d9b13c). Preserve its ringless thick stem, no ring anywhere in row3. Only these stage changes; no extra stains scales or features.\n"
+},
+{
+  "file": "incoming/icone/fasi-33.png",
+  "tipo": "illustrazione",
+  "soggetto": "agaricus-xanthodermus",
+  "tessera": "gambo",
+  "cella": 2,
+  "fase": "giovane",
+  "modello": "image_gen (identificatore tecnico non esposto)",
+  "prompt": "1254x1254 transparent PNG 3x3 flat icon sheet exactly 9 icons. Copy style and exact cap colors of attached approved references. Columns cap side only / circular underside radial gills with central stem stub / whole mushroom. Each icon centered in 418px cell max size290px leaving15% margins. Continuous dark brown outer outline. No text texture shadow grid. ROW1 AGARICUS XANTHODERMUS YOUNG: reference1 ivory white cap with same subtle tan center, globose hemispherical dome with FLATTISH TOP (tall rounded shoulders). Gills WHITISH #ece7da with delicate pale PINK #d99aa2 tint on outer area. Keep broad ring and pear-shaped stem from reference. ROW2 XANTHODERMUS ADULT: broadly CONVEX cap, margin unrolled, same ivory color and tan center. Gills predominantly GRAY #9d968a shading BROWN #8e5f36, retain same ring and stem. ROW3 ENTOLOMA SINUATUM YOUNG reference2: cap distinctly CONICAL with gently rounded pointed apex, gray taupe same reference color. Gills pale whitish YELLOW (light version #d9b13c). Preserve its ringless thick stem, no ring anywhere in row3. Only these stage changes; no extra stains scales or features.\n"
+},
+{
+  "file": "incoming/icone/fasi-33.png",
+  "tipo": "illustrazione",
+  "soggetto": "agaricus-xanthodermus",
+  "tessera": "cappello",
+  "cella": 3,
+  "fase": "adulto",
+  "modello": "image_gen (identificatore tecnico non esposto)",
+  "prompt": "1254x1254 transparent PNG 3x3 flat icon sheet exactly 9 icons. Copy style and exact cap colors of attached approved references. Columns cap side only / circular underside radial gills with central stem stub / whole mushroom. Each icon centered in 418px cell max size290px leaving15% margins. Continuous dark brown outer outline. No text texture shadow grid. ROW1 AGARICUS XANTHODERMUS YOUNG: reference1 ivory white cap with same subtle tan center, globose hemispherical dome with FLATTISH TOP (tall rounded shoulders). Gills WHITISH #ece7da with delicate pale PINK #d99aa2 tint on outer area. Keep broad ring and pear-shaped stem from reference. ROW2 XANTHODERMUS ADULT: broadly CONVEX cap, margin unrolled, same ivory color and tan center. Gills predominantly GRAY #9d968a shading BROWN #8e5f36, retain same ring and stem. ROW3 ENTOLOMA SINUATUM YOUNG reference2: cap distinctly CONICAL with gently rounded pointed apex, gray taupe same reference color. Gills pale whitish YELLOW (light version #d9b13c). Preserve its ringless thick stem, no ring anywhere in row3. Only these stage changes; no extra stains scales or features.\n"
+},
+{
+  "file": "incoming/icone/fasi-33.png",
+  "tipo": "illustrazione",
+  "soggetto": "agaricus-xanthodermus",
+  "tessera": "sotto",
+  "cella": 4,
+  "fase": "adulto",
+  "modello": "image_gen (identificatore tecnico non esposto)",
+  "prompt": "1254x1254 transparent PNG 3x3 flat icon sheet exactly 9 icons. Copy style and exact cap colors of attached approved references. Columns cap side only / circular underside radial gills with central stem stub / whole mushroom. Each icon centered in 418px cell max size290px leaving15% margins. Continuous dark brown outer outline. No text texture shadow grid. ROW1 AGARICUS XANTHODERMUS YOUNG: reference1 ivory white cap with same subtle tan center, globose hemispherical dome with FLATTISH TOP (tall rounded shoulders). Gills WHITISH #ece7da with delicate pale PINK #d99aa2 tint on outer area. Keep broad ring and pear-shaped stem from reference. ROW2 XANTHODERMUS ADULT: broadly CONVEX cap, margin unrolled, same ivory color and tan center. Gills predominantly GRAY #9d968a shading BROWN #8e5f36, retain same ring and stem. ROW3 ENTOLOMA SINUATUM YOUNG reference2: cap distinctly CONICAL with gently rounded pointed apex, gray taupe same reference color. Gills pale whitish YELLOW (light version #d9b13c). Preserve its ringless thick stem, no ring anywhere in row3. Only these stage changes; no extra stains scales or features.\n"
+},
+{
+  "file": "incoming/icone/fasi-33.png",
+  "tipo": "illustrazione",
+  "soggetto": "agaricus-xanthodermus",
+  "tessera": "gambo",
+  "cella": 5,
+  "fase": "adulto",
+  "modello": "image_gen (identificatore tecnico non esposto)",
+  "prompt": "1254x1254 transparent PNG 3x3 flat icon sheet exactly 9 icons. Copy style and exact cap colors of attached approved references. Columns cap side only / circular underside radial gills with central stem stub / whole mushroom. Each icon centered in 418px cell max size290px leaving15% margins. Continuous dark brown outer outline. No text texture shadow grid. ROW1 AGARICUS XANTHODERMUS YOUNG: reference1 ivory white cap with same subtle tan center, globose hemispherical dome with FLATTISH TOP (tall rounded shoulders). Gills WHITISH #ece7da with delicate pale PINK #d99aa2 tint on outer area. Keep broad ring and pear-shaped stem from reference. ROW2 XANTHODERMUS ADULT: broadly CONVEX cap, margin unrolled, same ivory color and tan center. Gills predominantly GRAY #9d968a shading BROWN #8e5f36, retain same ring and stem. ROW3 ENTOLOMA SINUATUM YOUNG reference2: cap distinctly CONICAL with gently rounded pointed apex, gray taupe same reference color. Gills pale whitish YELLOW (light version #d9b13c). Preserve its ringless thick stem, no ring anywhere in row3. Only these stage changes; no extra stains scales or features.\n"
+},
+{
+  "file": "incoming/icone/fasi-33.png",
+  "tipo": "illustrazione",
+  "soggetto": "entoloma-sinuatum",
+  "tessera": "cappello",
+  "cella": 6,
+  "fase": "giovane",
+  "modello": "image_gen (identificatore tecnico non esposto)",
+  "prompt": "1254x1254 transparent PNG 3x3 flat icon sheet exactly 9 icons. Copy style and exact cap colors of attached approved references. Columns cap side only / circular underside radial gills with central stem stub / whole mushroom. Each icon centered in 418px cell max size290px leaving15% margins. Continuous dark brown outer outline. No text texture shadow grid. ROW1 AGARICUS XANTHODERMUS YOUNG: reference1 ivory white cap with same subtle tan center, globose hemispherical dome with FLATTISH TOP (tall rounded shoulders). Gills WHITISH #ece7da with delicate pale PINK #d99aa2 tint on outer area. Keep broad ring and pear-shaped stem from reference. ROW2 XANTHODERMUS ADULT: broadly CONVEX cap, margin unrolled, same ivory color and tan center. Gills predominantly GRAY #9d968a shading BROWN #8e5f36, retain same ring and stem. ROW3 ENTOLOMA SINUATUM YOUNG reference2: cap distinctly CONICAL with gently rounded pointed apex, gray taupe same reference color. Gills pale whitish YELLOW (light version #d9b13c). Preserve its ringless thick stem, no ring anywhere in row3. Only these stage changes; no extra stains scales or features.\n"
+},
+{
+  "file": "incoming/icone/fasi-33.png",
+  "tipo": "illustrazione",
+  "soggetto": "entoloma-sinuatum",
+  "tessera": "sotto",
+  "cella": 7,
+  "fase": "giovane",
+  "modello": "image_gen (identificatore tecnico non esposto)",
+  "prompt": "1254x1254 transparent PNG 3x3 flat icon sheet exactly 9 icons. Copy style and exact cap colors of attached approved references. Columns cap side only / circular underside radial gills with central stem stub / whole mushroom. Each icon centered in 418px cell max size290px leaving15% margins. Continuous dark brown outer outline. No text texture shadow grid. ROW1 AGARICUS XANTHODERMUS YOUNG: reference1 ivory white cap with same subtle tan center, globose hemispherical dome with FLATTISH TOP (tall rounded shoulders). Gills WHITISH #ece7da with delicate pale PINK #d99aa2 tint on outer area. Keep broad ring and pear-shaped stem from reference. ROW2 XANTHODERMUS ADULT: broadly CONVEX cap, margin unrolled, same ivory color and tan center. Gills predominantly GRAY #9d968a shading BROWN #8e5f36, retain same ring and stem. ROW3 ENTOLOMA SINUATUM YOUNG reference2: cap distinctly CONICAL with gently rounded pointed apex, gray taupe same reference color. Gills pale whitish YELLOW (light version #d9b13c). Preserve its ringless thick stem, no ring anywhere in row3. Only these stage changes; no extra stains scales or features.\n"
+},
+{
+  "file": "incoming/icone/fasi-33.png",
+  "tipo": "illustrazione",
+  "soggetto": "entoloma-sinuatum",
+  "tessera": "gambo",
+  "cella": 8,
+  "fase": "giovane",
+  "modello": "image_gen (identificatore tecnico non esposto)",
+  "prompt": "1254x1254 transparent PNG 3x3 flat icon sheet exactly 9 icons. Copy style and exact cap colors of attached approved references. Columns cap side only / circular underside radial gills with central stem stub / whole mushroom. Each icon centered in 418px cell max size290px leaving15% margins. Continuous dark brown outer outline. No text texture shadow grid. ROW1 AGARICUS XANTHODERMUS YOUNG: reference1 ivory white cap with same subtle tan center, globose hemispherical dome with FLATTISH TOP (tall rounded shoulders). Gills WHITISH #ece7da with delicate pale PINK #d99aa2 tint on outer area. Keep broad ring and pear-shaped stem from reference. ROW2 XANTHODERMUS ADULT: broadly CONVEX cap, margin unrolled, same ivory color and tan center. Gills predominantly GRAY #9d968a shading BROWN #8e5f36, retain same ring and stem. ROW3 ENTOLOMA SINUATUM YOUNG reference2: cap distinctly CONICAL with gently rounded pointed apex, gray taupe same reference color. Gills pale whitish YELLOW (light version #d9b13c). Preserve its ringless thick stem, no ring anywhere in row3. Only these stage changes; no extra stains scales or features.\n"
 }
 ]
