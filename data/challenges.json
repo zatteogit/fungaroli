@@ -1,6 +1,7 @@
 {
   "version": 1,
   "note": "Sfide didattiche. «L'ho visto» è un'annotazione dell'utente, non un riconoscimento verificato. Ogni hint riprende un carattere della scheda; ogni domanda Confronta è verificata dai test sui caratteri dei dati (species-traits, recognize-plants, recognize-trees). Il campo facoltativo stamp (percorso di un'immagine in assets/) sostituisce il timbro disegnato dal codice. I timbri in assets/stamps/ sono illustrazioni generate con AI (image_gen) dal brief docs/handoff-immagini-timbri.md e riviste dal proprietario del progetto, senza opere di terzi.",
+  "stamps": { "author": "Fronda/Fungaroli, rivista dal progetto", "license": "CC BY-SA 4.0", "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.it", "note": "Illustrazione generata con AI (image_gen), senza opere di terzi" },
   "challenges": [
     {
       "id": "alberi-faggeta",

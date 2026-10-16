@@ -32,7 +32,7 @@ from PIL import Image
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "tools"))
-from sheet_cells import drawings, ready_sheets, STATE_OK  # noqa: E402
+from sheet_cells import LICENSE, drawings, ready_sheets, STATE_OK  # noqa: E402
 
 OUT = ROOT / "assets/traits"
 PARTS = ("cappello", "sotto", "gambo")
@@ -170,7 +170,8 @@ def write_index(taxa, base_rows=None):
             entry["base"] = b
         index[key] = entry
     out = {
-        "note": "Icone dei caratteri disegnate con AI (image_gen) a partire dai caratteri strutturati di data/species-traits.json, riviste dal proprietario del progetto. Mostrano varianti descritte nelle fonti; non sono foto e non servono a identificare.",
+        "note": "Icone dei caratteri disegnate con AI (image_gen) a partire dai caratteri strutturati di data/species-traits.json, riviste dal proprietario del progetto, senza opere di terzi. Mostrano varianti descritte nelle fonti; non sono foto e non servono a identificare.",
+        **LICENSE,
         "parts": list(PARTS),
         "taxa": index,
         "margins": {n: margin(OUT / f"{n}.webp") for n in sorted(files)},

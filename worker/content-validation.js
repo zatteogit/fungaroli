@@ -148,7 +148,7 @@ export function validateContent(id, data, previous) {
     checkIds(value.guides);
     if (value.guides.some(g=>typeof g.title!=='string'||!g.title.trim()||typeof g.body!=='string')) err('Ogni articolo richiede titolo e testo.');
     // illustrazione d'apertura facoltativa: file in assets/, testo alternativo, autore e licenza
-    if (value.guides.some(g=>g.image!=null&&(typeof g.image!=='object'||!/^\/?assets\/[a-zA-Z0-9_/-]+\.(?:webp|png|jpe?g)$/.test(g.image.file||'')||!['alt','author','license'].every(k=>typeof g.image[k]==='string'&&g.image[k].trim())||typeof g.image.generated!=='boolean'))) err('L’immagine di un articolo richiede file in assets, testo alternativo, autore, licenza e se è generata.');
+    if (value.guides.some(g=>g.image!=null&&(typeof g.image!=='object'||!/^\/?assets\/[a-zA-Z0-9_/-]+\.(?:webp|png|jpe?g)$/.test(g.image.file||'')||!['alt','author','license'].every(k=>typeof g.image[k]==='string'&&g.image[k].trim())||!/^https:\/\/[^\s"'<>]+$/.test(g.image.licenseUrl||'')||typeof g.image.generated!=='boolean'))) err('L’immagine di un articolo richiede file in assets, testo alternativo, autore, licenza con il link e se è generata.');
   }
   if(id==='plants'){
     if(!value.plants||typeof value.plants!=='object'||Array.isArray(value.plants))err('Elenco piante non valido.');
@@ -200,6 +200,7 @@ export function validateContent(id, data, previous) {
         if(!['file','alt','caption','author','license'].every(k=>typeof image[k]==='string'&&image[k].trim()))err(`Completa immagine, testo alternativo, didascalia, autore e licenza per ${term}.`);
         if(!/^(?:https:\/\/[^\s"'<>]+|\/?assets\/[a-zA-Z0-9_/-]+\.(?:svg|webp|png|jpe?g))$/.test(image.file))err('Usa un’immagine HTTPS o un file nella cartella assets.');
         if(!image.generated&&(!/^https:\/\/[^\s"'<>]+$/.test(image.page||'')||!/^https:\/\/[^\s"'<>]+$/.test(image.licenseUrl||'')))err('Per le immagini trovate indica la pagina di origine e il link alla licenza.');
+        if(image.generated&&!/^https:\/\/[^\s"'<>]+$/.test(image.licenseUrl||''))err('Per gli schemi generati indica il link alla licenza.');
         for(const k of ['page','licenseUrl'])if(image[k]&&!/^https:\/\/[^\s"'<>]+$/.test(image[k]))err('Fonte e licenza devono avere collegamenti HTTPS validi.');
       }
     }

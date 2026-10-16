@@ -1,5 +1,8 @@
 {
- "note": "Icone dei caratteri degli alberi disegnate con AI (image_gen) a partire dallo schema dei caratteri di data/recognize-trees.json, riviste dal proprietario del progetto. Una icona per valore, non per specie: non sono foto e non servono a identificare.",
+ "note": "Icone dei caratteri degli alberi disegnate con AI (image_gen) a partire dallo schema dei caratteri di data/recognize-trees.json, riviste dal proprietario del progetto, senza opere di terzi. Una icona per valore, non per specie: non sono foto e non servono a identificare.",
+ "author": "Fronda/Fungaroli, rivista dal progetto",
+ "license": "CC BY-SA 4.0",
+ "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.it",
  "path": "assets/tree-traits/<chiave>-<valore>.webp",
  "values": {
   "leaf_kind": [

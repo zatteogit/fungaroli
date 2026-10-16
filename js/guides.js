@@ -14,7 +14,7 @@ export function initGuideContent(data,labels={},assetUrl) {
 // illustrazione d'apertura (facoltativa): file in assets/, testo alternativo e crediti
 const IMG_RE = /^assets\/[a-zA-Z0-9_/-]+\.(?:webp|png|jpe?g)$/;
 const imageOf = (g) => (g.image && IMG_RE.test(g.image.file || '') && ASSET(g.image.file)) ? g.image : null;
-const credit = (m) => `${m.generated ? 'Illustrazione generata' : 'Immagine'}: ${esc(m.author)} · ${esc(m.license)}`;
+const credit = (m) => `${m.generated ? 'Illustrazione generata' : 'Immagine'}: ${esc(m.author)} · ${/^https:\/\//.test(m.licenseUrl || '') ? `<a href="${esc(m.licenseUrl)}" target="_blank" rel="noopener noreferrer">${esc(m.license)}</a>` : esc(m.license)}${m.note ? ` · ${esc(m.note)}` : ''}`;
 
 export const guideTitle = (id) => GUIDES.find((g) => g.id === id)?.title || 'Guide';
 export function renderGuideCards(box) {

@@ -1,5 +1,8 @@
 {
- "note": "Icone dei caratteri disegnate con AI (image_gen) a partire dai caratteri strutturati di data/species-traits.json, riviste dal proprietario del progetto. Mostrano varianti descritte nelle fonti; non sono foto e non servono a identificare.",
+ "note": "Icone dei caratteri disegnate con AI (image_gen) a partire dai caratteri strutturati di data/species-traits.json, riviste dal proprietario del progetto, senza opere di terzi. Mostrano varianti descritte nelle fonti; non sono foto e non servono a identificare.",
+ "author": "Fronda/Fungaroli, rivista dal progetto",
+ "license": "CC BY-SA 4.0",
+ "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.it",
  "parts": [
   "cappello",
   "sotto",

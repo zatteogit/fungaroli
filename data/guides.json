@@ -8,8 +8,10 @@
       "image": {
         "file": "assets/guides/leggere-il-bosco.webp",
         "alt": "Illustrazione: sottobosco di faggeta con tronchi grigi, foglie a terra e qualche piccolo fungo",
-        "author": "Fungaroli, con image_gen, rivista dal progetto",
-        "license": "senza opere di terzi",
+        "author": "Fronda/Fungaroli, rivista dal progetto",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.it",
+        "note": "Illustrazione generata con AI (image_gen), senza opere di terzi",
         "generated": true
       },
       "body": "<p>All’inizio del sentiero guarda in alto. Le chiome, la corteccia e le foglie a terra raccontano quale bosco stai attraversando. I funghi micorrizici vivono in relazione con le radici di alberi ospiti: riconoscere questi alberi aiuta a capire l’habitat.</p>\n      <h2>Tre dettagli da osservare</h2><p>Il faggio ha una corteccia spesso liscia e grigia. Il castagno lascia foglie allungate e dentate, insieme ai ricci. Le querce hanno foglie e ghiande diverse secondo la specie. Un singolo dettaglio può ingannare: confronta foglia, corteccia e frutto.</p>\n      <p>In una radura cambia la luce, la lettiera si interrompe e il terreno può asciugarsi più rapidamente. Sul legno morto trovi un ambiente diverso da quello sotto gli alberi vivi. Il bosco è un mosaico: la categoria della mappa è un punto di partenza, da verificare camminando.</p>\n      <p><a class=\"btn ghost\" href=\"#/alberi\">Conosci gli alberi</a></p><p class=\"small muted\">Approfondimenti: <a href=\"https://dryades.units.it/\" target=\"_blank\" rel=\"noopener\">Università di Trieste, Dryades</a>; <a href=\"https://forest.jrc.ec.europa.eu/en/european-atlas/\" target=\"_blank\" rel=\"noopener\">JRC, European Atlas of Forest Tree Species</a>. Un habitat compatibile non conferma la presenza di una specie.</p>"
@@ -22,8 +24,10 @@
       "image": {
         "file": "assets/guides/pioggia-e-crescita.webp",
         "alt": "Illustrazione: sezione del terreno sotto il bosco, con la pioggia, lo strato umido, il micelio e funghi che spuntano",
-        "author": "Fungaroli, con image_gen, rivista dal progetto",
-        "license": "senza opere di terzi",
+        "author": "Fronda/Fungaroli, rivista dal progetto",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.it",
+        "note": "Illustrazione generata con AI (image_gen), senza opere di terzi",
         "generated": true
       },
       "body": "<p>La pioggia di stamattina e le piogge delle settimane precedenti raccontano due cose diverse. La prima cambia la passeggiata; le altre possono contribuire alle condizioni di fruttificazione. Terreno, lettiera, temperatura e alberi modificano la risposta.</p>\n      <h2>Che cosa racconta il numero</h2><p>L’indice da 0 a 10 riassume quanto il meteo e l’habitat somigliano alle condizioni ipotizzate dal modello. È sperimentale: non misura l’abbondanza reale né la probabilità di trovare un fungo. La fungaia, le ricerche di altre persone e il microclima possono fare la differenza.</p>\n      <p>Durante una passeggiata osserva la lettiera, l’esposizione e i cambiamenti di vegetazione. Se cerchi una specie, annota anche una ricerca a vuoto e quanto tempo le hai dedicato. Sono piccoli dati utili per capire dove il modello funziona e dove va corretto.</p>\n      <p><a class=\"btn ghost\" href=\"#/metodo\">Formule, fonti e limiti</a> <a class=\"btn ghost\" href=\"#/diario\">Apri il tuo taccuino</a></p>"
@@ -36,8 +40,10 @@
       "image": {
         "file": "assets/guides/preparare-la-passeggiata.webp",
         "alt": "Illustrazione: zaino aperto con mappa piegata, bussola, borraccia e cesto di vimini",
-        "author": "Fungaroli, con image_gen, rivista dal progetto",
-        "license": "senza opere di terzi",
+        "author": "Fronda/Fungaroli, rivista dal progetto",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.it",
+        "note": "Illustrazione generata con AI (image_gen), senza opere di terzi",
         "generated": true
       },
       "body": "<p>Parti dal tempo che hai e dalla familiarità con il terreno. Guarda il percorso completo, il dislivello, l’accesso e un possibile punto di rientro. Le mappe di Fronda aiutano a esplorare i sentieri censiti, ma non descrivono tutte le condizioni che incontrerai.</p>\n      <h2>Due meteo da tenere distinti</h2><p>Il meteo passato entra nell’indice di crescita. Per camminare serve invece una previsione aggiornata lungo il percorso e nelle ore del rientro. La previsione della mattina, alla quota centrale della zona, è un’informazione parziale.</p>\n      <p>Controlla la segnaletica, le chiusure e l’accessibilità delle strade. Una distanza in linea d’aria fino al bosco non è una distanza percorribile a piedi. In aree protette, verifica la cartografia e le regole dell’ente prima di raccogliere.</p>\n      <p>Nel tuo taccuino puoi annotare la passeggiata: un albero riconosciuto, un cambio di bosco, una ricerca fatta con calma. Condividi le osservazioni che possono aiutare altri a conoscere il territorio, senza pubblicare punti GPS o fungaie precise.</p>\n      <p><a class=\"btn ghost\" href=\"#/mappa\">Esplora i sentieri</a> <a class=\"btn ghost\" href=\"#/info\">Regole e informazioni utili</a></p>"

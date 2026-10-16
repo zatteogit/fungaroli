@@ -26,7 +26,7 @@ from PIL import Image
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "tools"))
-from sheet_cells import ALPHA, STATE_OK, drawings, ready_sheets, sheet_states  # noqa: E402
+from sheet_cells import ALPHA, LICENSE, STATE_OK, drawings, ready_sheets, sheet_states  # noqa: E402
 
 OUT = ROOT / "assets/tree-traits"
 SIZE = 128
@@ -106,7 +106,8 @@ def main(inc, mode="alberi", stato=False, stati=(STATE_OK,)):
         x0, y0, x1, y1 = Image.open(f).getchannel("A").point(lambda a: 255 if a > ALPHA else 0).getbbox()
         margins[f.stem] = min(x0, y0, SIZE - x1, SIZE - y1)
     out = {
-        "note": f"Icone dei caratteri {who} disegnate con AI (image_gen) a partire dallo schema dei caratteri di {src}, riviste dal proprietario del progetto. Una icona per valore, non per specie: non sono foto e non servono a identificare.",
+        "note": f"Icone dei caratteri {who} disegnate con AI (image_gen) a partire dallo schema dei caratteri di {src}, riviste dal proprietario del progetto, senza opere di terzi. Una icona per valore, non per specie: non sono foto e non servono a identificare.",
+        **LICENSE,
         "path": f"{out_dir}/<chiave>-<valore>.webp",
         "values": {k: [v["id"] for v in schema[k]["values"] if v["id"] in values.get(k, [])] for k in schema if k in values},
         "margins": dict(sorted(margins.items())),

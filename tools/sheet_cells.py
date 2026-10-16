@@ -15,6 +15,9 @@ from PIL import Image
 ALPHA = 16
 NOISE = 0.0002  # macchie sotto lo 0,02% del foglio: polvere dell'antialias
 STATE_OK = "pronta da integrare"
+# licenza delle illustrazioni generate (icone, timbri, schemi, guide, infografiche)
+LICENSE = {"author": "Fronda/Fungaroli, rivista dal progetto", "license": "CC BY-SA 4.0",
+           "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.it"}  # decisione di Matteo, 16/10
 
 
 def components(mask):
