@@ -1,5 +1,7 @@
 # Handoff Fronda — identità e design system
 
+> Aggiornamento del 16/10: la nuova scelta A funghi / Piante spontanee / Passeggiata supera la gerarchia fissa funghi → giro → scoperte descritta in questo handoff storico. Riferimento corrente: [Intento dell’uscita](ux-navigazione.md#intento-delluscita--decisione-del-16-ottobre-2026).
+
 15 ottobre 2026. Studio approvato da Matteo in questa chat; trasferimento nel repository, non integrazione del rebranding nell’app.
 
 Leggere insieme a [handoff di prodotto](handoff-2026-10-14.md) e [AGENTS.md](../AGENTS.md). Per iniziare l’implementazione usare il [prompt operativo](prompt-agente-fronda.md).

@@ -18,7 +18,7 @@ async function setup(page,{width=1280,outingGate}={}) {
     return r.fulfill({json:out});
   });
   await page.addInitScript(()=>localStorage.setItem('fungaroli:legal-accepted','32026-10-16'));
-  await page.goto('/#/mappa');await expect(page.locator('#map-filters')).toContainText('Porcini');
+  await page.goto('/#/mappa');await expect(page.locator('#map-filters')).toContainText('A funghi');
   await page.evaluate(()=>{testMap.setView([42.49,12.915],13,{animate:false});});
   await expect(page.locator('#map')).toHaveClass(/cells-on/);
   await page.waitForFunction(()=>Object.values(testMap._layers).some(l=>l instanceof L.Rectangle&&!l.options.stroke));

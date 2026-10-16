@@ -1,6 +1,6 @@
 # Fungaroli · Rieti
 
-App che aiuta a **scegliere dove e quando andare a funghi** intorno a Rieti e a conoscere il bosco durante l'uscita: sentieri, piante e alberi accompagnano la scelta, non la sostituiscono. Il taccuino personale e le segnalazioni collettive hanno lo scopo di migliorare gradualmente la validazione locale. Le condizioni di crescita sono stimate: accuratezza della trovabilità e abbondanza reale non sono ancora misurate.
+App per scegliere un’uscita nei boschi intorno a Rieti: **A funghi, Piante spontanee o Passeggiata**. La scelta è ricordata nel browser e guida home, filtri avanzati, mappa e dettagli. A funghi mette in primo piano l’indice sperimentale; Piante spontanee evidenzia fase e compatibilità ambientale documentata; Passeggiata privilegia sentieri, accessi e meteo pratico. Il taccuino e le segnalazioni conservano il loro funzionamento. Le condizioni di crescita sono stimate: accuratezza della trovabilità e abbondanza reale non sono ancora misurate.
 
 La parte ambientale incrocia:
 
