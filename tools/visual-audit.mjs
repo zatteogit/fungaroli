@@ -62,6 +62,11 @@ function forecast(url) {
   return Array.from({ length: count }, () => ({ daily: { time: days, precipitation_sum: days.map((_, i) => (i % 4 ? 3 : 12)), temperature_2m_mean: Array(70).fill(13), temperature_2m_min: Array(70).fill(8), temperature_2m_max: Array(70).fill(18) }, hourly: { time, soil_moisture_3_to_9cm: fill(0.3), soil_temperature_6cm: fill(13), precipitation: fill(0), precipitation_probability: fill(0), weather_code: fill(1), wind_gusts_10m: fill(8), temperature_2m: fill(13) } }));
 }
 
+// Chiave dell'avviso legale accettato, calcolata come in js/app.js (version + verified_on): così non
+// invecchia quando cambiano le regole.
+const LEGAL = JSON.parse(readFileSync(join(ROOT, 'data/legal.json'), 'utf8'));
+const LEGAL_KEY = String(LEGAL.version || 0) + (LEGAL.verified_on || '');
+
 export async function preparePage(context, { legal = true, theme = 'light' } = {}) {
   const page = await context.newPage();
   const leafletJS = readFileSync(join(ROOT, 'node_modules/leaflet/dist/leaflet.js'), 'utf8');
@@ -73,12 +78,12 @@ export async function preparePage(context, { legal = true, theme = 'light' } = {
     if (u.pathname === '/api/weather/v1/forecast' || u.hostname === 'api.open-meteo.com') return route.fulfill({ json: forecast(u.href) });
     return u.protocol === 'https:' ? route.abort() : route.fallback();
   });
-  await page.addInitScript(([legalOk, th]) => {
+  await page.addInitScript(([legalOk, th, key]) => {
     try {
-      if (legalOk) localStorage.setItem('fungaroli:legal-accepted', '22026-10-12'); else localStorage.removeItem('fungaroli:legal-accepted');
+      if (legalOk) localStorage.setItem('fungaroli:legal-accepted', key); else localStorage.removeItem('fungaroli:legal-accepted');
       localStorage.setItem('fungaroli:theme', th);
     } catch { /* storage non disponibile */ }
-  }, [legal, theme]);
+  }, [legal, theme, LEGAL_KEY]);
   return page;
 }
 
