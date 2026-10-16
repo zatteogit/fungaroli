@@ -91,6 +91,8 @@ test('vetrina varia e sentiero stabile passando dalla proposta ai giorni del tac
   await page.setViewportSize({width:390,height:844});
   const errors = await setup(page);
   const proposals = page.locator('#hero [data-walk-zone], #ranking [data-walk-zone]');
+  // la classifica arriva dopo la proposta principale: si aspetta che sia disegnata prima di leggerla
+  await expect.poll(() => proposals.count()).toBeGreaterThan(3);
   const places = await proposals.evaluateAll(nodes => nodes.map(n => n.dataset.walkZone));
   expect(places.length).toBeGreaterThan(3);
   expect(new Set(places).size).toBe(places.length);
