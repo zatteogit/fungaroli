@@ -522,3 +522,5 @@ Tecnica: output nativo del tool 1122×1402, ricampionato a 1600×2000 con LANCZO
 | incoming/icone/forme-40.png | morchella-esculenta emisferico | pronta da integrare | 2 icone, 1254×1254 alpha, 26742 byte. Margini ≥15%, contorni scuri ai quattro estremi e celle vuote verificati col codice; confronto con riferimenti approvati. QA: incoming/qa/forme-40.json. |
 
 | incoming/icone/combinazioni-03.png | galerina-marginata bruno piano; galerina-marginata giallo piano; lepiota-subincarnata bruno ombrellato; lepiota-subincarnata bruno piano | pronta da integrare | 8 icone, 1254×1254 alpha, 61505 byte. Margini ≥15%, contorni scuri ai quattro estremi e celle vuote verificati col codice; confronto con riferimenti approvati. QA: incoming/qa/combinazioni-03.json. |
+
+| incoming/icone/combinazioni-04.png | lepiota-subincarnata crema ombrellato; lepiota-subincarnata crema piano; chlorophyllum-venenatum bruno convesso; clitocybe-rivulosa bruno convesso | pronta da integrare | 8 icone, 1254×1254 alpha, 59194 byte. Margini ≥15%, contorni scuri ai quattro estremi e celle vuote verificati col codice; confronto con riferimenti approvati. QA: incoming/qa/combinazioni-04.json. |
