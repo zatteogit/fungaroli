@@ -97,6 +97,12 @@ button { font: inherit; color: inherit; }
 .stale { margin: 8px var(--gutter) 0; }
 .loading { padding: 80px 20px; text-align: center; color: var(--muted); border-radius: var(--r-xl); background: var(--surface-2); }
 .error { background: var(--warn-bg); color: var(--warn-ink); padding: 14px 16px; border-radius: var(--r-md); }
+/* avvio non riuscito o senza JavaScript (index.html, init in js/app.js): messaggio con «Riprova» al posto del caricamento */
+#hero.boot-stalled .loader { display: none; }
+.boot-fail, .boot-error { display: grid; gap: 12px; justify-items: start; }
+.boot-fail p, .boot-error p { margin: 0; }
+.boot-fail:not(.error) { padding: 18px 16px; border-radius: var(--r-md); background: var(--surface); color: var(--text); }
+.boot-fail h2 { margin: 0; font-family: var(--font-display); font-size: 22px; }
 
 /* ------------------------------------------------------------- componenti */
 .btn { font: inherit; font-size: 14px; font-weight: 600; border-radius: 999px; padding: 9px 16px; cursor: pointer; border: 1px solid var(--border); background: var(--surface); color: var(--text); text-decoration: none; display: inline-flex; align-items: center; justify-content: center; gap: 8px; }
@@ -298,6 +304,10 @@ label.btn { display: inline-flex; }
 .essential-sections .sec > summary::after { position: absolute; right: 16px; top: 22px; }
 .plan .ref, .trails .ref { display: inline-block; font-size: 11.5px; font-weight: 700; padding: 1px 7px; border-radius: 6px; background: var(--surface-2); box-shadow: inset 0 0 0 1px var(--border); vertical-align: 1px; font-variant-numeric: tabular-nums; }
 .plan-where { color: var(--text-2); }
+/* albero ospite non confermato dalla Carta Forestale (pinarolo, moretta): accanto al consiglio, senza cambiare l'indice */
+.plan-host, .zsp-host { display: block; margin-top: 4px; color: var(--warn-ink); }
+/* età del meteo nella scheda della zona, subito sotto i giorni */
+.wx-age { margin: -4px 0 12px; }
 .plan-crit { display: block; margin: 6px 0 2px; padding: 8px 10px; border-radius: 10px; background: var(--crit-bg); color: var(--crit-ink, var(--crit)); font-size: 13px; font-weight: 500; line-height: 1.45; }
 .chev { color: var(--muted); font-size: 22px; line-height: 1; }
 .sp-inline { font-weight: 700; background: none; border: 0; padding: 0; cursor: pointer; text-decoration: underline; text-decoration-color: var(--border); text-underline-offset: 3px; }
@@ -2547,7 +2557,7 @@ html.entity-open { overflow: hidden; }
 @media(prefers-reduced-motion:reduce){.weather-work.busy:before,#refresh[aria-busy=true] svg{animation:none}}
 
 /* Home: "Durante il giro" come striscia orizzontale compatta (la scheda della zona resta a griglia) */
-#during-walk .discovery-grid { display:flex; gap:8px; overflow-x:auto; scroll-snap-type:x mandatory; scrollbar-width:none; margin:0 -16px; padding:0 16px 4px; }
+#during-walk .discovery-grid { display:flex; gap:8px; overflow-x:auto; scroll-snap-type:x mandatory; scrollbar-width:none; margin:0 calc(-1 * var(--gutter)); padding:0 var(--gutter) 4px; }
 #during-walk .discovery-grid::-webkit-scrollbar { display:none; }
 #during-walk .discovery-grid li { flex:0 0 min(240px,72%); scroll-snap-align:start; padding:10px 12px; }
 #during-walk .discovery-link b { font-size:15px; }
@@ -2775,7 +2785,7 @@ body:is([data-page="specie"], [data-page="piante"], [data-page="alberi"]) .tab-s
 .tprof figcaption .tp-key { order: 3; flex-basis: 100%; display: flex; align-items: center; gap: 6px; }
 .tprof figcaption .tp-key i { flex: none; }
 /* carosello di «Durante il giro»: la prima scheda resta sul margine anche con lo scatto dello scorrimento */
-#during-walk .discovery-grid { scroll-padding-inline: 16px; }
+#during-walk .discovery-grid { scroll-padding-inline: var(--gutter); }
 /* «Altri» filtri: un chip come gli altri, non tratteggiato */
 .chip-more { border-style: solid; color: var(--text-2); }
 .chip-more::after { content: ' ›'; }

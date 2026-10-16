@@ -2,7 +2,7 @@
 <html lang="it">
 <head>
   <meta charset="utf-8">
-  <meta name="app-version" content="fungaroli-shell-v77">
+  <meta name="app-version" content="fungaroli-shell-v78">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
   <link rel="preload" href="data/crop-points.json" as="fetch" crossorigin>
   <meta name="theme-color" content="#f7f4ea" media="(prefers-color-scheme: light)">
@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/fronda.css">
   <script>try{var t=localStorage.getItem('fungaroli:theme')||'light';if(t==='light'||t==='dark')document.documentElement.dataset.theme=t}catch(e){document.documentElement.dataset.theme='light'}</script>
+  <noscript><style>#hero .loader { display: none; }</style></noscript>
 </head>
 <body>
   <div class="status-veil" aria-hidden="true"></div>
@@ -73,7 +74,11 @@
           <li data-step="1">Scarico il meteo delle zone</li>
           <li data-step="2">Calcolo dove conviene andare</li>
         </ol>
-      </div></div>
+      </div><noscript><div class="boot-fail">
+        <h2>Fronda ha bisogno di JavaScript</h2>
+        <p>Fronda aiuta a scegliere dove e quando uscire per funghi nei boschi del Reatino e a conoscere il bosco durante la passeggiata. Per mostrare zone, meteo e schede serve JavaScript: attivalo nel browser e ricarica la pagina.</p>
+        <p><strong>Regola essenziale.</strong> Nel Lazio si raccoglie con attestato micologico, ricevuta del contributo regionale annuale e documento d'identità (L.R. 32/1998). In caso di dubbio non raccogliere e non mangiare: fai controllare i funghi all'Ispettorato micologico della ASL, gratuito per i privati.</p>
+      </div></noscript></div>
       <div id="install-banner" class="install-banner" hidden></div>
       <h2 class="sec-title" id="others-h">Altre buone uscite</h2>
       <ol id="ranking" class="rail" aria-labelledby="others-h"></ol>
@@ -81,7 +86,7 @@
       <h2 class="sec-title" id="season-h">Nei boschi in questi giorni</h2>
       <ul id="season" class="rail rail-portrait" aria-labelledby="season-h"></ul>
       <section id="community-intro" class="community-intro" aria-label="La community di Fronda"></section>
-      <a class="act-row legal-strip" id="home-legal" href="#/info"><span class="ar-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg></span><span class="ar-b"><span class="ar-t">Regole di raccolta</span><span class="ar-s">Per raccogliere servono l'attestato micologico e il contributo regionale annuale.</span></span></a>
+      <a class="act-row legal-strip" id="home-legal" href="#/info"><span class="ar-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg></span><span class="ar-b"><span class="ar-t">Regole di raccolta</span><span class="ar-s">Nel Lazio si raccoglie con attestato micologico, ricevuta del contributo regionale annuale e documento d'identità (L.R. 32/1998).</span></span></a>
     </section>
 
     <section class="view view-hero" data-view="zona" hidden>
@@ -196,14 +201,14 @@
         <p>Per ogni zona l'app scarica il meteo a <strong>tre quote</strong> (Open-Meteo, correzione altimetrica) e calcola per ogni specie un indice sperimentale 0–10 come prodotto di fattori:</p>
         <ul>
           <li><strong>Pioggia</strong>: millimetri caduti nella finestra di latenza della specie (es. 7–21 giorni prima per i porcini) + cumulata 30 giorni. Senza un evento ≥ 8 mm (o almeno 15 mm nella finestra) il fattore scende gradualmente fino a dimezzarsi. <span class="tag ok">letteratura (30 gg)</span> <span class="tag warn">euristica (latenza, soglie)</span></li>
-          <li><strong>Temperatura</strong>: media dell'aria nei 20 giorni precedenti, confrontata con l'ottimo della specie (porcino ≈ 13 °C). <span class="tag ok">letteratura (B. edulis)</span> <span class="tag warn">euristica per le altre</span></li>
+          <li><strong>Temperatura</strong>: media dell'aria nei 20 giorni precedenti, confrontata con l'ottimo della specie: porcino (B. edulis) ≈ 13 °C da letteratura; porcino rosso assimilato; porcino nero 18 °C e porcino estivo 17 °C euristici. <span class="tag ok">letteratura (B. edulis)</span> <span class="tag warn">euristica per le altre</span></li>
           <li><strong>Suolo</strong>: umidità 3–9 cm degli ultimi 3 giorni (modello). <span class="tag warn">euristica</span></li>
           <li><strong>Penalità</strong> per gelate (min &lt; −1 °C) e caldo (max &gt; 30 °C); <strong>bonus</strong> per shock termico (calo ≥ 4 °C 4–14 giorni prima). <span class="tag warn">pratica micologica</span></li>
           <li><strong>Habitat</strong>: quota di bosco idoneo alla specie nella fascia ±150 m, calcolata su ~315 punti campione per zona dalla <em>Carta Forestale su base tipologica</em> della Regione Lazio. <span class="tag ok">dato ufficiale</span></li>
           <li><strong>Stagione</strong> e <strong>quota</strong> della specie. <span class="tag warn">manualistica</span></li>
-          </ul><p>Separatamente, le indicazioni pratiche aiutano a scegliere la passeggiata e non modificano l’indice:</p><ul><li><strong>Affollamento</strong>: giorno (weekend e festivi), notorietà della zona, da quanti giorni l'indice è alto, facilità d'accesso, pioggia. Con "Evita la folla" pesa fino al −45%. <span class="tag warn">euristica</span></li>
+          </ul><p>Separatamente, le indicazioni pratiche aiutano a scegliere la passeggiata e non modificano l’indice:</p><ul><li><strong>Affollamento</strong>: giorno (weekend e festivi), notorietà della zona, da quanti giorni l'indice è alto, facilità d'accesso, pioggia. Con «Poca gente» pesa fino al −45%. <span class="tag warn">euristica</span></li>
           <li><strong>Comodità</strong>: minuti d'auto, strada bianca, distanza in linea d’aria dalla strada carrozzabile più vicina al bosco adatto. <span class="tag ok">dati OSM (Valhalla)</span> <span class="tag warn">formula euristica</span></li>
-          <li><strong>Orari</strong>: alba e tramonto calcolati (algoritmo NOAA); la raccolta è consentita da un'ora prima dell'alba a un'ora dopo il tramonto. <span class="tag ok">L.R. 32/98</span></li>
+          <li><strong>Orari</strong>: sorgere e tramonto del sole calcolati (algoritmo NOAA); la raccolta è consentita da un'ora prima del sorgere del sole a un'ora dopo il tramonto. <span class="tag ok">L.R. 32/98</span></li>
         </ul>
         <p>L’indice descrive condizioni di crescita e fruttificazione, senza stimare quantità reali o probabilità di ritrovamento. La validazione locale è iniziale. Se mancano dati necessari il numero non è calcolabile; le previsioni meteorologiche e le segnalazioni degli utenti sono dichiarate separatamente.</p><p>Le segnalazioni recenti influenzano in modo limitato l’ordine delle passeggiate dopo un numero minimo di contributori e giorni distinti. I parametri biologici richiederanno una verifica su dati indipendenti prima di essere tarati.</p>
         <p class="muted">Limiti: il modello non conosce esposizione, pendenza, età del bosco, pressione di raccolta, né le singole fungaie. Usalo per scegliere zona, quota e giorno, non come promessa. I parametri delle specie vanno ancora calibrati con uscite reali.</p>
@@ -213,8 +218,8 @@
 
   <div id="legal-sections"></div>
   <p class="small muted" id="zone-credits"></p>
-  <p class="small muted">Le <b>icone dei caratteri</b> nelle schede dei funghi (cappello, sotto, gambo) sono disegnate con AI a partire dai caratteri descritti dalle fonti e riviste a mano. Mostrano una forma tipica: non sono foto e non servono a identificare.</p>
-  <p class="small muted">Le <b>icone dei caratteri degli alberi</b> (foglia, aghi, corteccia, frutto), nelle schede e nel percorso guidato, sono disegnate con AI a partire dallo schema dei caratteri e riviste a mano. Ce n'è una per ogni valore, uguale per tutti gli alberi che lo hanno: non sono foto e non servono a identificare.</p>
+  <p class="small muted">Le <b>icone dei caratteri</b> nelle schede dei funghi (il cappello, la parte sotto il cappello vista dal basso, il fungo intero con il gambo) sono disegni schematici fatti con AI a partire dai caratteri descritti dalle fonti, rivisti dal gestore del progetto e non da un micologo. Mostrano una forma tipica: non sono foto e non servono a identificare. Confrontale sempre con le foto e con il testo della scheda.</p>
+  <p class="small muted">Le <b>icone dei caratteri degli alberi</b> (foglia, aghi, corteccia, frutto), nelle schede e nel percorso guidato, sono disegni schematici fatti con AI a partire dallo schema dei caratteri, rivisti dal gestore del progetto. Ce n'è uno per ogni valore, uguale per tutti gli alberi che lo hanno: non sono foto e non servono a identificare. Confrontali con le foto e con il testo della scheda.</p>
   <footer class="foot muted small">
     Strumento di supporto, non di identificazione. Nessun fungo va consumato senza certezza: in caso di dubbio, Ispettorato Micologico ASL.
     Mappe © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">contributori OpenStreetMap</a> (ODbL), stile <a href="https://opentopomap.org/about" target="_blank" rel="noopener">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC BY-SA</a>). Meteo: <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo.com</a> (<a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>). Carta Forestale su base tipologica: Regione Lazio. Dettagli in "Fonti dei dati, licenze e crediti".
@@ -235,7 +240,22 @@
     <div class="wiz-body"></div>
   </dialog>
 
+  <script>
+    // Avvio fermo prima che app.js parta (modulo non arrivato o rete bloccata): al posto del caricamento un messaggio con «Riprova».
+    // Sta prima di Leaflet: se la CDN non risponde il parser si ferma lì, ma il controllo a tempo parte lo stesso.
+    // Se l'avvio riprende, app.js (loadStep) toglie il messaggio e rimette il caricamento.
+    function frondaBootFail() {
+      var hero = document.getElementById('hero'), loader = hero && hero.querySelector('.loader');
+      if (!loader || hero.querySelector('.boot-fail')) return;
+      var box = document.createElement('div');
+      box.className = 'error boot-fail'; box.setAttribute('role', 'alert');
+      box.innerHTML = '<p>Il caricamento non è riuscito. Controlla la connessione.</p><button type="button" class="btn primary">Riprova</button>';
+      box.querySelector('button').onclick = function () { location.reload(); };
+      hero.classList.add('boot-stalled'); loader.after(box);
+    }
+    setTimeout(function () { if (!document.querySelector('#hero .loader .ld-steps li.done')) frondaBootFail(); }, 20000);
+  </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
-  <script type="module" src="js/app.js"></script>
+  <script type="module" src="js/app.js" onerror="frondaBootFail()"></script>
 </body>
 </html>

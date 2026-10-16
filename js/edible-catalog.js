@@ -36,7 +36,8 @@ export function seasonStatus(species, date) {
   if (!species?.months?.length || !Number.isInteger(month) || month < 1 || month > 12) return 'unknown';
   return species.months.includes(month) ? 'in' : 'out';
 }
-export const seasonLabel = (s, date) => ({ in: 'In stagione', out: 'Fuori stagione', unknown: 'Stagione n.d.' })[seasonStatus(s, date)];
+// I mesi vengono da manuali europei, non verificati nel Reatino (data/edible-catalog.json, note): «periodo tipico», non «stagione».
+export const seasonLabel = (s, date) => ({ in: 'Nel periodo tipico', out: 'Fuori periodo tipico', unknown: 'Periodo n.d.' })[seasonStatus(s, date)];
 
 export function searchEdibleCatalog(catalog, query, { date, limit = 12 } = {}) {
   const q = normalizeSpeciesText(query);
