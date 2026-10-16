@@ -1,7 +1,7 @@
 import {test,expect} from '@playwright/test';
 import {todayISO} from '../../js/weather.js';
 
-async function setup(page,width) {
+async function setup(page,width,heroSelector='#hero .cover-link') {
   await page.setViewportSize({width,height:900});
   await page.emulateMedia({reducedMotion:'reduce'});
   const errors=[];page.on('pageerror',e=>errors.push(e.message));
@@ -13,7 +13,7 @@ async function setup(page,width) {
     await route.fulfill({json:out});
   });
   await page.addInitScript(()=>localStorage.setItem('fungaroli:legal-accepted','32026-10-16'));
-  await page.goto('/');await expect(page.locator('#hero .cover-link')).toBeVisible();return errors;
+  await page.goto('/');await expect(page.locator(heroSelector)).toBeVisible();return errors;
 }
 
 for(const width of [320,768,1280]) test(`le card fotografiche riempiono le colonne del catalogo a ${width}px`,async({page})=>{
@@ -360,9 +360,9 @@ for(const width of [320,1280])test(`funghi al centro, scoperte contestuali e tac
  await page.goto('/#/scopri');await expect(page.locator('[data-tab="specie"]')).toContainText('Scopri');await expect(page.locator('#species-grid .sp-card').first()).toBeVisible();
  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);expect(errors).toEqual([]);
 });
-test('le vecchie preferenze botaniche non sostituiscono l’uscita a funghi',async({page})=>{
- await page.addInitScript(()=>localStorage.setItem('fungaroli:prefs:v2',JSON.stringify({target:'piante',plantIds:['ortica']})));
- const errors=await setup(page,390);await expect(page.locator('#hero .cover-sp')).toContainText('Da conoscere');await expect(page.locator('[data-target]')).toHaveCount(0);expect(errors).toEqual([]);
+test('la preferenza botanica salvata riconfigura la home',async({page})=>{
+ await page.addInitScript(()=>localStorage.setItem('fungaroli:prefs:v2',JSON.stringify({target:'piante',plantIds:null})));
+ const errors=await setup(page,390,'#hero .outdoor-hero');await expect(page.locator('#active-filters [data-intent="piante"]')).toHaveAttribute('aria-pressed','true');await expect(page.locator('#hero .outdoor-hero')).toBeVisible();await expect(page.locator('#hero .ring')).toHaveCount(0);expect(errors).toEqual([]);
 });
 for(const width of [320,1280])test(`avvisi brevi visibili e caratteri senza verdetti di raccolta a ${width}px`,async({page})=>{
  const errors=await setup(page,width);await page.goto('/#/fungo/cortinarius-rubellus');const warning=page.locator('#taxon-detail .attention');await expect(warning).toBeVisible();await expect(warning.locator('summary')).toHaveCount(0);await expect(warning.locator('ul')).toContainText('danni renali tardivi');await expect(warning).not.toContainText(/scarta/i);await expect(warning.locator('[data-term="cappello"]')).toBeVisible();

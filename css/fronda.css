@@ -215,3 +215,26 @@
    il pomello resta chiaro con il filo ocra, così si legge anche sul polline. */
 :is(.fp-switch[aria-pressed="true"] .switch, .switch-input:checked, .map-toggle[aria-checked="true"] .mt-switch) { background: var(--select); box-shadow: inset 0 0 0 1px var(--select-edge); }
 :is(.fp-switch[aria-pressed="true"] .switch i, .switch-input:checked::before, .map-toggle[aria-checked="true"] .mt-switch i) { background: var(--surface); box-shadow: 0 0 0 1px var(--select-edge); }
+
+/* L'intento resta lo stesso in Uscite e Mappa. I dettagli sono nel pannello. */
+.active-filters .intent-row { display:flex; flex-wrap:wrap; gap:8px; width:100%; overflow:visible; }
+.intent-row .chip { flex:none; }
+.map-filters .intent-row { flex-wrap:nowrap; width:max-content; }
+.outdoor-tile { min-height:300px; }
+.outdoor-tile .tile-body { gap:8px; }
+.outdoor-tile .tile-body small { line-height:1.45; }
+.outdoor-tile.outdoor-hero { min-height:380px; width:100%; margin-bottom:20px; }
+.outdoor-hero .tile-body > b { font-size:clamp(26px,4vw,42px); }
+.outdoor-phase { font-weight:600; }
+.outdoor-cta { display:block; font-weight:700; text-decoration:underline; text-underline-offset:4px; }
+.outdoor-plant { display:flex; flex-direction:column; gap:12px; min-height:250px; padding:18px; background:var(--surface); border:1px solid var(--border); border-radius:18px; color:var(--text); text-decoration:none; }
+.outdoor-plant > span { display:grid; gap:8px; }
+.outdoor-plant small { color:var(--text-2); line-height:1.45; }
+.outdoor-plant img { border-radius:12px; }
+.season-dialog .fp-head-actions { flex-wrap:wrap; margin-top:20px; }
+@media(max-width:599px) {
+  .active-filters .intent-row { gap:6px; }
+  .active-filters .intent-row .chip { padding:9px 11px; font-size:13px; min-height:42px; }
+  .outdoor-tile.outdoor-hero { min-height:360px; }
+}
+.outdoor-plant .thumb { width:100%; height:140px; object-fit:cover; border-radius:12px; }
