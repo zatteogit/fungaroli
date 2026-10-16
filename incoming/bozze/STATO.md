@@ -508,3 +508,5 @@ Tecnica: output nativo del tool 1122×1402, ricampionato a 1600×2000 con LANCZO
 | icone/fasi-22.png | lepiota-cristata giovane; lepiota-cristata adulto; cortinarius-orellanus giovane | ok | 7 disegni; PNG alpha 1254×1254, 87938 byte, 128 colori. Margine minimo 47 px, quattro estremi scuri verificati in codice per ogni cella. Scala e centro confrontati in sovrapposizione con le basi. Celle inutilizzate trasparenti; nessun testo. Report: incoming/qa/fasi-22.json. |
 
 | icone/fasi-23.png | cortinarius-orellanus adulto; cortinarius-rubellus giovane; cortinarius-rubellus adulto | ok | 9 disegni; PNG alpha 1254×1254, 83532 byte, 128 colori. Margine minimo 58 px, quattro estremi scuri verificati in codice per ogni cella. Scala e centro confrontati in sovrapposizione con le basi. Celle inutilizzate trasparenti; nessun testo. Report: incoming/qa/fasi-23.json. |
+
+| incoming/icone/fasi-30.png | agaricus-campestris giovane; agaricus-campestris adulto; agaricus-arvensis giovane | pronta da integrare | 9 disegni; alpha 1254×1254, 105530 byte. Margini ≥10% e quattro estremi con contorno scuro verificati col codice; confronto in sovrapposizione con le basi. |

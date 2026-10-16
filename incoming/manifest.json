@@ -20512,5 +20512,95 @@
     "modello": "image_gen (modello integrato, identificatore non esposto)",
     "prompt": "Use case: scientific-educational precise-object-edit. Edit reference sprite sheet into requested growth stages. EXACT same flat UI icon language, smooth bright ORANGE caps from the reference (do not turn the caps brown or red), cream stems, dark brown continuous complete contours. 1254x1254 genuine transparent PNG with invisible equal 3x3 grid. All NINE icons, one phase per row, columns cap-only side profile WITHOUT stalk, circular UNDERSIDE disc with tiny stem nub, ENTIRE mushroom. Same centers and scale as reference, each drawing max 75% of cell size with at least 12% transparent margins. TOP ROW Cortinarius orellanus ADULT: change caps to FLATTENED with only a very slight broad low central umbo, not convex dome. Retain smooth bright orange cap, same plain cream stem and normal rounded base, no ring or volva. Change gills in underside disc AND whole mushroom to RED / muted earthy brick red, visibly red rather than orange, pale cream central stem nub; schematic radial lamellae. NO cortina in adult. MIDDLE ROW Cortinarius rubellus YOUNG: change the pointed conical reference caps to rounded CONVEX dome WITHOUT pointed tip, retaining their exact bright orange color. Gills in underside disc AND whole mushroom PALE YELLOW; a delicate CORTINA LIKE SPIDER WEB covers parts of gills as a few very thin cream threads crossing radial gills, and on whole mushroom connects cap edge to upper stem, not a solid ring or skirt. Preserve reference cream smooth stem and rounded expanded base, no additional stem banding, no volva, no ring. BOTTOM ROW Cortinarius rubellus ADULT: change conical caps to FLATTENED caps, orange same as reference, no conical tip. Gills in underside disc AND whole mushroom now BROWN RUST, clearly brown instead of orange, same pale cream stem and rounded base, no cortina, no ring, no volva. Underside discs stay perfectly round, bordered in dark brown, thin radial gill pattern. Cap-only icons show no gills, stem or web. Flat fills, no added textures or details, no shadows, no glow, no ground, no grid, text, symbols or numbers. Every drawing intact with complete dark brown outline on every outer extreme. Preserve all unchanged reference anatomy.",
     "verifica": "Sovrapposizione con le basi, normalizzazione di scala e centro; QA per cella in incoming/qa/fasi-23.json: alpha, margini >=10%, contorno scuro ai quattro estremi, peso <400000 byte."
-  }
+  },
+{
+  "file": "incoming/icone/fasi-30.png",
+  "tipo": "illustrazione",
+  "soggetto": "agaricus-campestris",
+  "tessera": "cappello",
+  "cella": 0,
+  "fase": "giovane",
+  "modello": "image_gen (identificatore tecnico non esposto)",
+  "prompt": "Create transparent 1254x1254 PNG 3x3 icon sheet. Exactly 9 isolated flat mushroom icons, brown dark continuous outer outlines, simple few colors, NO text/grid/shadows. Columns: side cap only, circular underside gills with central stem stub, whole mushroom. Each cell centered with 15% empty margins, max icon dimension 290 px. Match attached approved references precisely in colors, drawing language, scale, stem and cap identity; only alter stage features. ROW 1 Agaricus campestris YOUNG: white ivory smooth hemispherical rounded cap, margin approaching stem, pink gills, stem as reference with only tiny fragile ring. ROW 2 campestris ADULT: white smooth broadly convex almost flat cap, very dark brown gills shading near black, ring almost disappeared. ROW 3 Agaricus arvensis YOUNG from SECOND reference: cream cap with same pale tan small marks, almost spherical hemisphere, pale pink gills; preserve its hanging ring and rounded stem base. One row per stage. Cap only drawings must show correct dome outline. Underside rim preserves cap color.\n"
+},
+{
+  "file": "incoming/icone/fasi-30.png",
+  "tipo": "illustrazione",
+  "soggetto": "agaricus-campestris",
+  "tessera": "sotto",
+  "cella": 1,
+  "fase": "giovane",
+  "modello": "image_gen (identificatore tecnico non esposto)",
+  "prompt": "Create transparent 1254x1254 PNG 3x3 icon sheet. Exactly 9 isolated flat mushroom icons, brown dark continuous outer outlines, simple few colors, NO text/grid/shadows. Columns: side cap only, circular underside gills with central stem stub, whole mushroom. Each cell centered with 15% empty margins, max icon dimension 290 px. Match attached approved references precisely in colors, drawing language, scale, stem and cap identity; only alter stage features. ROW 1 Agaricus campestris YOUNG: white ivory smooth hemispherical rounded cap, margin approaching stem, pink gills, stem as reference with only tiny fragile ring. ROW 2 campestris ADULT: white smooth broadly convex almost flat cap, very dark brown gills shading near black, ring almost disappeared. ROW 3 Agaricus arvensis YOUNG from SECOND reference: cream cap with same pale tan small marks, almost spherical hemisphere, pale pink gills; preserve its hanging ring and rounded stem base. One row per stage. Cap only drawings must show correct dome outline. Underside rim preserves cap color.\n"
+},
+{
+  "file": "incoming/icone/fasi-30.png",
+  "tipo": "illustrazione",
+  "soggetto": "agaricus-campestris",
+  "tessera": "gambo",
+  "cella": 2,
+  "fase": "giovane",
+  "modello": "image_gen (identificatore tecnico non esposto)",
+  "prompt": "Create transparent 1254x1254 PNG 3x3 icon sheet. Exactly 9 isolated flat mushroom icons, brown dark continuous outer outlines, simple few colors, NO text/grid/shadows. Columns: side cap only, circular underside gills with central stem stub, whole mushroom. Each cell centered with 15% empty margins, max icon dimension 290 px. Match attached approved references precisely in colors, drawing language, scale, stem and cap identity; only alter stage features. ROW 1 Agaricus campestris YOUNG: white ivory smooth hemispherical rounded cap, margin approaching stem, pink gills, stem as reference with only tiny fragile ring. ROW 2 campestris ADULT: white smooth broadly convex almost flat cap, very dark brown gills shading near black, ring almost disappeared. ROW 3 Agaricus arvensis YOUNG from SECOND reference: cream cap with same pale tan small marks, almost spherical hemisphere, pale pink gills; preserve its hanging ring and rounded stem base. One row per stage. Cap only drawings must show correct dome outline. Underside rim preserves cap color.\n"
+},
+{
+  "file": "incoming/icone/fasi-30.png",
+  "tipo": "illustrazione",
+  "soggetto": "agaricus-campestris",
+  "tessera": "cappello",
+  "cella": 3,
+  "fase": "adulto",
+  "modello": "image_gen (identificatore tecnico non esposto)",
+  "prompt": "Create transparent 1254x1254 PNG 3x3 icon sheet. Exactly 9 isolated flat mushroom icons, brown dark continuous outer outlines, simple few colors, NO text/grid/shadows. Columns: side cap only, circular underside gills with central stem stub, whole mushroom. Each cell centered with 15% empty margins, max icon dimension 290 px. Match attached approved references precisely in colors, drawing language, scale, stem and cap identity; only alter stage features. ROW 1 Agaricus campestris YOUNG: white ivory smooth hemispherical rounded cap, margin approaching stem, pink gills, stem as reference with only tiny fragile ring. ROW 2 campestris ADULT: white smooth broadly convex almost flat cap, very dark brown gills shading near black, ring almost disappeared. ROW 3 Agaricus arvensis YOUNG from SECOND reference: cream cap with same pale tan small marks, almost spherical hemisphere, pale pink gills; preserve its hanging ring and rounded stem base. One row per stage. Cap only drawings must show correct dome outline. Underside rim preserves cap color.\n"
+},
+{
+  "file": "incoming/icone/fasi-30.png",
+  "tipo": "illustrazione",
+  "soggetto": "agaricus-campestris",
+  "tessera": "sotto",
+  "cella": 4,
+  "fase": "adulto",
+  "modello": "image_gen (identificatore tecnico non esposto)",
+  "prompt": "Create transparent 1254x1254 PNG 3x3 icon sheet. Exactly 9 isolated flat mushroom icons, brown dark continuous outer outlines, simple few colors, NO text/grid/shadows. Columns: side cap only, circular underside gills with central stem stub, whole mushroom. Each cell centered with 15% empty margins, max icon dimension 290 px. Match attached approved references precisely in colors, drawing language, scale, stem and cap identity; only alter stage features. ROW 1 Agaricus campestris YOUNG: white ivory smooth hemispherical rounded cap, margin approaching stem, pink gills, stem as reference with only tiny fragile ring. ROW 2 campestris ADULT: white smooth broadly convex almost flat cap, very dark brown gills shading near black, ring almost disappeared. ROW 3 Agaricus arvensis YOUNG from SECOND reference: cream cap with same pale tan small marks, almost spherical hemisphere, pale pink gills; preserve its hanging ring and rounded stem base. One row per stage. Cap only drawings must show correct dome outline. Underside rim preserves cap color.\n"
+},
+{
+  "file": "incoming/icone/fasi-30.png",
+  "tipo": "illustrazione",
+  "soggetto": "agaricus-campestris",
+  "tessera": "gambo",
+  "cella": 5,
+  "fase": "adulto",
+  "modello": "image_gen (identificatore tecnico non esposto)",
+  "prompt": "Create transparent 1254x1254 PNG 3x3 icon sheet. Exactly 9 isolated flat mushroom icons, brown dark continuous outer outlines, simple few colors, NO text/grid/shadows. Columns: side cap only, circular underside gills with central stem stub, whole mushroom. Each cell centered with 15% empty margins, max icon dimension 290 px. Match attached approved references precisely in colors, drawing language, scale, stem and cap identity; only alter stage features. ROW 1 Agaricus campestris YOUNG: white ivory smooth hemispherical rounded cap, margin approaching stem, pink gills, stem as reference with only tiny fragile ring. ROW 2 campestris ADULT: white smooth broadly convex almost flat cap, very dark brown gills shading near black, ring almost disappeared. ROW 3 Agaricus arvensis YOUNG from SECOND reference: cream cap with same pale tan small marks, almost spherical hemisphere, pale pink gills; preserve its hanging ring and rounded stem base. One row per stage. Cap only drawings must show correct dome outline. Underside rim preserves cap color.\n"
+},
+{
+  "file": "incoming/icone/fasi-30.png",
+  "tipo": "illustrazione",
+  "soggetto": "agaricus-arvensis",
+  "tessera": "cappello",
+  "cella": 6,
+  "fase": "giovane",
+  "modello": "image_gen (identificatore tecnico non esposto)",
+  "prompt": "Create transparent 1254x1254 PNG 3x3 icon sheet. Exactly 9 isolated flat mushroom icons, brown dark continuous outer outlines, simple few colors, NO text/grid/shadows. Columns: side cap only, circular underside gills with central stem stub, whole mushroom. Each cell centered with 15% empty margins, max icon dimension 290 px. Match attached approved references precisely in colors, drawing language, scale, stem and cap identity; only alter stage features. ROW 1 Agaricus campestris YOUNG: white ivory smooth hemispherical rounded cap, margin approaching stem, pink gills, stem as reference with only tiny fragile ring. ROW 2 campestris ADULT: white smooth broadly convex almost flat cap, very dark brown gills shading near black, ring almost disappeared. ROW 3 Agaricus arvensis YOUNG from SECOND reference: cream cap with same pale tan small marks, almost spherical hemisphere, pale pink gills; preserve its hanging ring and rounded stem base. One row per stage. Cap only drawings must show correct dome outline. Underside rim preserves cap color.\n"
+},
+{
+  "file": "incoming/icone/fasi-30.png",
+  "tipo": "illustrazione",
+  "soggetto": "agaricus-arvensis",
+  "tessera": "sotto",
+  "cella": 7,
+  "fase": "giovane",
+  "modello": "image_gen (identificatore tecnico non esposto)",
+  "prompt": "Create transparent 1254x1254 PNG 3x3 icon sheet. Exactly 9 isolated flat mushroom icons, brown dark continuous outer outlines, simple few colors, NO text/grid/shadows. Columns: side cap only, circular underside gills with central stem stub, whole mushroom. Each cell centered with 15% empty margins, max icon dimension 290 px. Match attached approved references precisely in colors, drawing language, scale, stem and cap identity; only alter stage features. ROW 1 Agaricus campestris YOUNG: white ivory smooth hemispherical rounded cap, margin approaching stem, pink gills, stem as reference with only tiny fragile ring. ROW 2 campestris ADULT: white smooth broadly convex almost flat cap, very dark brown gills shading near black, ring almost disappeared. ROW 3 Agaricus arvensis YOUNG from SECOND reference: cream cap with same pale tan small marks, almost spherical hemisphere, pale pink gills; preserve its hanging ring and rounded stem base. One row per stage. Cap only drawings must show correct dome outline. Underside rim preserves cap color.\n"
+},
+{
+  "file": "incoming/icone/fasi-30.png",
+  "tipo": "illustrazione",
+  "soggetto": "agaricus-arvensis",
+  "tessera": "gambo",
+  "cella": 8,
+  "fase": "giovane",
+  "modello": "image_gen (identificatore tecnico non esposto)",
+  "prompt": "Create transparent 1254x1254 PNG 3x3 icon sheet. Exactly 9 isolated flat mushroom icons, brown dark continuous outer outlines, simple few colors, NO text/grid/shadows. Columns: side cap only, circular underside gills with central stem stub, whole mushroom. Each cell centered with 15% empty margins, max icon dimension 290 px. Match attached approved references precisely in colors, drawing language, scale, stem and cap identity; only alter stage features. ROW 1 Agaricus campestris YOUNG: white ivory smooth hemispherical rounded cap, margin approaching stem, pink gills, stem as reference with only tiny fragile ring. ROW 2 campestris ADULT: white smooth broadly convex almost flat cap, very dark brown gills shading near black, ring almost disappeared. ROW 3 Agaricus arvensis YOUNG from SECOND reference: cream cap with same pale tan small marks, almost spherical hemisphere, pale pink gills; preserve its hanging ring and rounded stem base. One row per stage. Cap only drawings must show correct dome outline. Underside rim preserves cap color.\n"
+}
 ]
