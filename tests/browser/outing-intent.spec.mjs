@@ -26,7 +26,7 @@ test('tre intenti: home, filtri, mappa, dettaglio e memoria coerenti',async({pag
  await page.goto('/#/mappa');await expect(page.locator('#legend')).toContainText('senza indice fungino');
  await page.locator('#map-filters [data-intent="piante"]').click();await expect(page.locator('#legend')).toContainText('presenza da verificare');
  await page.goto('/#/uscite');await expect(page.locator('#season .outdoor-plant').first()).toBeVisible();
- expect(await page.evaluate(()=>!!(document.querySelector('#season').compareDocumentPosition(document.querySelector('#hero'))&Node.DOCUMENT_POSITION_FOLLOWING))).toBe(true);
+ expect(await page.evaluate(()=>!!(document.querySelector('#hero').compareDocumentPosition(document.querySelector('#season'))&Node.DOCUMENT_POSITION_FOLLOWING))).toBe(true);
  await page.locator('#active-filters [data-more]').click();await expect(page.locator('#species-filter-search')).toBeVisible();await page.keyboard.press('Escape');
  for(const theme of ['light','dark'])for(const width of [320,390,768,1280]){
  await page.setViewportSize({width,height:900});await page.evaluate(t=>document.documentElement.dataset.theme=t,theme);

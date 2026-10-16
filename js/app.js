@@ -683,16 +683,15 @@ function outdoorProposals(day=state.homeDay) {
 }
 function arrangeHome() {
   const view=$('[data-view="uscite"]');view.dataset.intent=state.target;
-  const hero=$('#hero'),during=$('#during-walk');
+  const during=$('#during-walk');
   const legalStrip=$('#home-legal'),legalTitle=legalStrip.querySelector('.ar-t'),legalText=legalStrip.querySelector('.ar-s');
   legalStrip._fungiCopy||=[legalTitle.textContent,legalText.textContent];
   legalTitle.textContent=state.target==='funghi'?legalStrip._fungiCopy[0]:'Prima di uscire';
   legalText.textContent=state.target==='funghi'?legalStrip._fungiCopy[1]:'Accessi, aree protette e regole locali: verifica le indicazioni per il luogo e l’attività.';
-  if(state.target==='piante'){view.insertBefore($('#season-h'),hero);view.insertBefore($('#season'),hero);}
-  else {view.insertBefore($('#season-h'),$('#community-intro'));view.insertBefore($('#season'),$('#community-intro'));}
+  // Keep the same hierarchy when switching between fungi and plants.
+  view.insertBefore($('#season-h'),$('#community-intro'));view.insertBefore($('#season'),$('#community-intro'));
   // In walking mode the discoveries follow the main proposal, before alternatives.
   view.insertBefore(during,state.target==='passeggiata'?$('#others-h'):$('#season-h'));
-  if(state.target==='piante')view.insertBefore(during,$('#community-intro'));
   $('#others-h').textContent=state.target==='piante'?'Altri sentieri da esplorare':contentCopy.otherPlacesTitle||'Altre buone uscite';
   $('#season-h').textContent=state.target==='piante'?'Piante da osservare in questo periodo':contentCopy.speciesTitle||'Nei boschi in questi giorni';
 }
@@ -721,7 +720,7 @@ function outdoorTile(c,hero=false) {
 function outdoorPlantRail(list) {
   const seen=new Set(),items=list.flatMap(c=>c.items).filter(i=>i.kind==='pianta'&&!seen.has(i.id)&&seen.add(i.id)).slice(0,8);
   $('#season-h').hidden=!items.length;
-  updateWeatherHTML($('#season'),items.map(i=>`<li data-weather-key="plant-${i.id}"><a class="outdoor-plant discovery-link" href="${esc(i.href)}" data-entity>${plantThumb(i.id,100)}<span><b>${esc(i.name)}</b><small>${esc(i.phase)}</small><small>Ambiente compatibile · presenza da verificare</small></span></a></li>`).join(''));
+  updateWeatherHTML($('#season'),items.map(i=>`<li data-weather-key="plant-${i.id}"><a class="portrait outdoor-plant" href="${esc(i.href)}" data-entity>${plantHeroSrc(i.id)?`<img data-src="${esc(plantHeroSrc(i.id))}" alt="" loading="lazy" decoding="async">`:''}<span class="shade"></span><span class="portrait-body"><b>${esc(i.name)}</b><small>${esc(i.phase)}</small><small>Presenza da verificare</small></span></a></li>`).join(''));
 }
 function renderOutdoorHome() {
   let list=outdoorProposals();

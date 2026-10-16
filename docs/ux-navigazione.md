@@ -20,7 +20,7 @@ La richiesta di Matteo sostituisce la priorità fissa funghi → giro → scoper
 | Intento | Home | Mappa e dettagli |
 | --- | --- | --- |
 | A funghi | Proposta con indice, altre uscite, scoperte e specie | Indice e habitat potenziale fungino con i limiti esistenti |
-| Piante spontanee | Fascia botanica prima della proposta; hero con lo stesso impianto fotografico dei funghi, nome e fase indicativa; altri sentieri con card sintetiche | Spunti botanici associati agli ambienti campionati; nessuna densità, probabilità o posizione di presenza attribuita alle piante |
+| Piante spontanee | Stesso ordine dei funghi: proposta, alternative, scoperte e specie; hero e card fotografiche condivise, con nome e fase indicativa | Spunti botanici associati agli ambienti campionati; nessuna densità, probabilità o posizione di presenza attribuita alle piante |
 | Passeggiata | Sentiero, difficoltà, tratto mappato, accesso e meteo; scoperte dopo la proposta, poi alternative | Zone, tracciati e imbocchi senza indice fungino |
 
 ### Stato e filtri
