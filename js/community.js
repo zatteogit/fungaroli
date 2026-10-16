@@ -175,7 +175,7 @@ export async function openQuickReport(zoneId = '', speciesId = '') {
   const today=todayISO(),yesterday=todayISO(new Date(Date.now()-864e5));
   reportDialog.setAttribute('aria-label', 'Segnala dal bosco');
   reportDialog.innerHTML = `<header class="report-header"><div><p class="eyebrow">Dal bosco al taccuino</p><h2>Osservazione</h2></div><button class="profile-close" type="button" data-report-dismiss aria-label="Chiudi">×</button></header>
-    <p class="report-intro">Nel tuo taccuino, e nei conteggi della community.</p>
+    <p class="report-intro">Nel taccuino e nei conteggi collettivi.</p>
     <form class="report-form">
       <div class="report-fields">
         <div class="report-field search-select"><label id="report-zone-label" for="report-zone">Zona</label><input id="report-zone" class="wiz-input" type="text" placeholder="Cerca una zona…" autocomplete="off" required><input name="zone" type="hidden"><ul id="report-zone-options" class="search-select-options" aria-labelledby="report-zone-label" hidden></ul></div>

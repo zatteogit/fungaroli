@@ -3329,3 +3329,4 @@ details.context-note { margin: 12px 0 16px; padding: 0; border: 0; border-radius
 /* Nel form compatto la nota non deve scivolare sotto le azioni fisse. */
 .report-dialog details.context-note { margin: 4px 0; font-size: 12px; }
 .report-dialog .context-note > summary { padding-block: 4px; font-size: 12px; gap: 8px; }
+.report-dialog .report-intro { margin: 8px 0 12px; }
