@@ -20692,5 +20692,95 @@
   "fase": "adulto",
   "modello": "image_gen (identificatore tecnico non esposto)",
   "prompt": "Transparent 1254x1254 PNG, 3x3 sheet exactly 9 flat mushroom icons. Use approved references: first Agaricus arvensis cream with tiny tan markings and hanging ring; second Agaricus bisporus brown smooth cap and hanging ring. Columns side cap only / circular underside radial gills central stem stub / whole mushroom. All dark brown continuous outlines, few solid colors, NO texture, text, shadows, grid. Each centered with 15% margins. ROW1 arvensis ADULT: cap fully opened nearly FLAT, cream and same tan marks, brown gills, preserve stem ring. ROW2 bisporus YOUNG: strongly HEMISPHERICAL rounded brown cap, pink gills, reference ring stem. ROW3 bisporus ADULT: FLAT opened brown cap, chocolate brown gills, same ring stem. Preserve exact base cap colors and stem identity. Maximum icon size 290 px in 418px cell. Underside outer rim same cap color as species.\n"
+},
+{
+  "file": "incoming/icone/fasi-32.png",
+  "tipo": "illustrazione",
+  "soggetto": "agaricus-sylvicola",
+  "tessera": "cappello",
+  "cella": 0,
+  "fase": "giovane",
+  "modello": "image_gen (identificatore tecnico non esposto)",
+  "prompt": "Generate 1254 square transparent 3x3 PNG sheet, 9 flat icons, no text grid texture shadow. All same species AGARICUS SYLVICOLA from attached reference; preserve EXACT ivory cream cap color, offwhite stem bulb shape and small hanging ring. Three columns: cap side only, underside circular radial gills central double stem stub like reference, whole mushroom. Max icon 290px, centered inside each 418px cell, 15% margins. Thick continuous dark brown outline. ROW1 YOUNG: cap almost spherical, tall hemispherical dome with curved inward margins (height half cap diameter), gills WHITE ivory; same stem ring. ROW2 ADULT: cap convex exactly reference shape, gills GRAY with subtle PINK shading (dominant gray), ring stem unchanged. ROW3 MATURE: cap ENTIRELY FLATTENED horizontal plate, only very slight raised center; cap side height at most 20% width, whole mushroom cap equally flat. Gills chocolate BROWN. Preserve flat few-color reference style and same center/scale. No additional characters or yellow stains.\n"
+},
+{
+  "file": "incoming/icone/fasi-32.png",
+  "tipo": "illustrazione",
+  "soggetto": "agaricus-sylvicola",
+  "tessera": "sotto",
+  "cella": 1,
+  "fase": "giovane",
+  "modello": "image_gen (identificatore tecnico non esposto)",
+  "prompt": "Generate 1254 square transparent 3x3 PNG sheet, 9 flat icons, no text grid texture shadow. All same species AGARICUS SYLVICOLA from attached reference; preserve EXACT ivory cream cap color, offwhite stem bulb shape and small hanging ring. Three columns: cap side only, underside circular radial gills central double stem stub like reference, whole mushroom. Max icon 290px, centered inside each 418px cell, 15% margins. Thick continuous dark brown outline. ROW1 YOUNG: cap almost spherical, tall hemispherical dome with curved inward margins (height half cap diameter), gills WHITE ivory; same stem ring. ROW2 ADULT: cap convex exactly reference shape, gills GRAY with subtle PINK shading (dominant gray), ring stem unchanged. ROW3 MATURE: cap ENTIRELY FLATTENED horizontal plate, only very slight raised center; cap side height at most 20% width, whole mushroom cap equally flat. Gills chocolate BROWN. Preserve flat few-color reference style and same center/scale. No additional characters or yellow stains.\n"
+},
+{
+  "file": "incoming/icone/fasi-32.png",
+  "tipo": "illustrazione",
+  "soggetto": "agaricus-sylvicola",
+  "tessera": "gambo",
+  "cella": 2,
+  "fase": "giovane",
+  "modello": "image_gen (identificatore tecnico non esposto)",
+  "prompt": "Generate 1254 square transparent 3x3 PNG sheet, 9 flat icons, no text grid texture shadow. All same species AGARICUS SYLVICOLA from attached reference; preserve EXACT ivory cream cap color, offwhite stem bulb shape and small hanging ring. Three columns: cap side only, underside circular radial gills central double stem stub like reference, whole mushroom. Max icon 290px, centered inside each 418px cell, 15% margins. Thick continuous dark brown outline. ROW1 YOUNG: cap almost spherical, tall hemispherical dome with curved inward margins (height half cap diameter), gills WHITE ivory; same stem ring. ROW2 ADULT: cap convex exactly reference shape, gills GRAY with subtle PINK shading (dominant gray), ring stem unchanged. ROW3 MATURE: cap ENTIRELY FLATTENED horizontal plate, only very slight raised center; cap side height at most 20% width, whole mushroom cap equally flat. Gills chocolate BROWN. Preserve flat few-color reference style and same center/scale. No additional characters or yellow stains.\n"
+},
+{
+  "file": "incoming/icone/fasi-32.png",
+  "tipo": "illustrazione",
+  "soggetto": "agaricus-sylvicola",
+  "tessera": "cappello",
+  "cella": 3,
+  "fase": "adulto",
+  "modello": "image_gen (identificatore tecnico non esposto)",
+  "prompt": "Generate 1254 square transparent 3x3 PNG sheet, 9 flat icons, no text grid texture shadow. All same species AGARICUS SYLVICOLA from attached reference; preserve EXACT ivory cream cap color, offwhite stem bulb shape and small hanging ring. Three columns: cap side only, underside circular radial gills central double stem stub like reference, whole mushroom. Max icon 290px, centered inside each 418px cell, 15% margins. Thick continuous dark brown outline. ROW1 YOUNG: cap almost spherical, tall hemispherical dome with curved inward margins (height half cap diameter), gills WHITE ivory; same stem ring. ROW2 ADULT: cap convex exactly reference shape, gills GRAY with subtle PINK shading (dominant gray), ring stem unchanged. ROW3 MATURE: cap ENTIRELY FLATTENED horizontal plate, only very slight raised center; cap side height at most 20% width, whole mushroom cap equally flat. Gills chocolate BROWN. Preserve flat few-color reference style and same center/scale. No additional characters or yellow stains.\n"
+},
+{
+  "file": "incoming/icone/fasi-32.png",
+  "tipo": "illustrazione",
+  "soggetto": "agaricus-sylvicola",
+  "tessera": "sotto",
+  "cella": 4,
+  "fase": "adulto",
+  "modello": "image_gen (identificatore tecnico non esposto)",
+  "prompt": "Generate 1254 square transparent 3x3 PNG sheet, 9 flat icons, no text grid texture shadow. All same species AGARICUS SYLVICOLA from attached reference; preserve EXACT ivory cream cap color, offwhite stem bulb shape and small hanging ring. Three columns: cap side only, underside circular radial gills central double stem stub like reference, whole mushroom. Max icon 290px, centered inside each 418px cell, 15% margins. Thick continuous dark brown outline. ROW1 YOUNG: cap almost spherical, tall hemispherical dome with curved inward margins (height half cap diameter), gills WHITE ivory; same stem ring. ROW2 ADULT: cap convex exactly reference shape, gills GRAY with subtle PINK shading (dominant gray), ring stem unchanged. ROW3 MATURE: cap ENTIRELY FLATTENED horizontal plate, only very slight raised center; cap side height at most 20% width, whole mushroom cap equally flat. Gills chocolate BROWN. Preserve flat few-color reference style and same center/scale. No additional characters or yellow stains.\n"
+},
+{
+  "file": "incoming/icone/fasi-32.png",
+  "tipo": "illustrazione",
+  "soggetto": "agaricus-sylvicola",
+  "tessera": "gambo",
+  "cella": 5,
+  "fase": "adulto",
+  "modello": "image_gen (identificatore tecnico non esposto)",
+  "prompt": "Generate 1254 square transparent 3x3 PNG sheet, 9 flat icons, no text grid texture shadow. All same species AGARICUS SYLVICOLA from attached reference; preserve EXACT ivory cream cap color, offwhite stem bulb shape and small hanging ring. Three columns: cap side only, underside circular radial gills central double stem stub like reference, whole mushroom. Max icon 290px, centered inside each 418px cell, 15% margins. Thick continuous dark brown outline. ROW1 YOUNG: cap almost spherical, tall hemispherical dome with curved inward margins (height half cap diameter), gills WHITE ivory; same stem ring. ROW2 ADULT: cap convex exactly reference shape, gills GRAY with subtle PINK shading (dominant gray), ring stem unchanged. ROW3 MATURE: cap ENTIRELY FLATTENED horizontal plate, only very slight raised center; cap side height at most 20% width, whole mushroom cap equally flat. Gills chocolate BROWN. Preserve flat few-color reference style and same center/scale. No additional characters or yellow stains.\n"
+},
+{
+  "file": "incoming/icone/fasi-32.png",
+  "tipo": "illustrazione",
+  "soggetto": "agaricus-sylvicola",
+  "tessera": "cappello",
+  "cella": 6,
+  "fase": "maturo",
+  "modello": "image_gen (identificatore tecnico non esposto)",
+  "prompt": "Generate 1254 square transparent 3x3 PNG sheet, 9 flat icons, no text grid texture shadow. All same species AGARICUS SYLVICOLA from attached reference; preserve EXACT ivory cream cap color, offwhite stem bulb shape and small hanging ring. Three columns: cap side only, underside circular radial gills central double stem stub like reference, whole mushroom. Max icon 290px, centered inside each 418px cell, 15% margins. Thick continuous dark brown outline. ROW1 YOUNG: cap almost spherical, tall hemispherical dome with curved inward margins (height half cap diameter), gills WHITE ivory; same stem ring. ROW2 ADULT: cap convex exactly reference shape, gills GRAY with subtle PINK shading (dominant gray), ring stem unchanged. ROW3 MATURE: cap ENTIRELY FLATTENED horizontal plate, only very slight raised center; cap side height at most 20% width, whole mushroom cap equally flat. Gills chocolate BROWN. Preserve flat few-color reference style and same center/scale. No additional characters or yellow stains.\n"
+},
+{
+  "file": "incoming/icone/fasi-32.png",
+  "tipo": "illustrazione",
+  "soggetto": "agaricus-sylvicola",
+  "tessera": "sotto",
+  "cella": 7,
+  "fase": "maturo",
+  "modello": "image_gen (identificatore tecnico non esposto)",
+  "prompt": "Generate 1254 square transparent 3x3 PNG sheet, 9 flat icons, no text grid texture shadow. All same species AGARICUS SYLVICOLA from attached reference; preserve EXACT ivory cream cap color, offwhite stem bulb shape and small hanging ring. Three columns: cap side only, underside circular radial gills central double stem stub like reference, whole mushroom. Max icon 290px, centered inside each 418px cell, 15% margins. Thick continuous dark brown outline. ROW1 YOUNG: cap almost spherical, tall hemispherical dome with curved inward margins (height half cap diameter), gills WHITE ivory; same stem ring. ROW2 ADULT: cap convex exactly reference shape, gills GRAY with subtle PINK shading (dominant gray), ring stem unchanged. ROW3 MATURE: cap ENTIRELY FLATTENED horizontal plate, only very slight raised center; cap side height at most 20% width, whole mushroom cap equally flat. Gills chocolate BROWN. Preserve flat few-color reference style and same center/scale. No additional characters or yellow stains.\n"
+},
+{
+  "file": "incoming/icone/fasi-32.png",
+  "tipo": "illustrazione",
+  "soggetto": "agaricus-sylvicola",
+  "tessera": "gambo",
+  "cella": 8,
+  "fase": "maturo",
+  "modello": "image_gen (identificatore tecnico non esposto)",
+  "prompt": "Generate 1254 square transparent 3x3 PNG sheet, 9 flat icons, no text grid texture shadow. All same species AGARICUS SYLVICOLA from attached reference; preserve EXACT ivory cream cap color, offwhite stem bulb shape and small hanging ring. Three columns: cap side only, underside circular radial gills central double stem stub like reference, whole mushroom. Max icon 290px, centered inside each 418px cell, 15% margins. Thick continuous dark brown outline. ROW1 YOUNG: cap almost spherical, tall hemispherical dome with curved inward margins (height half cap diameter), gills WHITE ivory; same stem ring. ROW2 ADULT: cap convex exactly reference shape, gills GRAY with subtle PINK shading (dominant gray), ring stem unchanged. ROW3 MATURE: cap ENTIRELY FLATTENED horizontal plate, only very slight raised center; cap side height at most 20% width, whole mushroom cap equally flat. Gills chocolate BROWN. Preserve flat few-color reference style and same center/scale. No additional characters or yellow stains.\n"
 }
 ]

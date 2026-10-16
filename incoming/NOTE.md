@@ -498,3 +498,5 @@ Fonte: docs/handoff-immagini-fasi.md su claude/brave-tesla-wu0a2b e icone base d
 fasi-30: agaricus-campestris giovane; agaricus-campestris adulto; agaricus-arvensis giovane. Disegni generati dalle basi approvate; solo cambiamenti descritti nelle fasi. Tavolozza 128 colori; composizione centrata nelle celle. Lamelle semplificate in raggi, colori intermedi resi con due toni. Nessuna sezione uovo prevista per queste specie.
 
 fasi-31: agaricus-arvensis adulto; agaricus-bisporus giovane; agaricus-bisporus adulto. Disegni generati dalle basi approvate; solo cambiamenti descritti nelle fasi. Tavolozza 128 colori; composizione centrata nelle celle. Lamelle semplificate in raggi, colori intermedi resi con due toni. Nessuna sezione uovo prevista per queste specie.
+
+fasi-32: agaricus-sylvicola giovane; agaricus-sylvicola adulto; agaricus-sylvicola maturo. Disegni generati dalle basi approvate; solo cambiamenti descritti nelle fasi. Tavolozza 128 colori; composizione centrata nelle celle. Lamelle semplificate in raggi, colori intermedi resi con due toni. Nessuna sezione uovo prevista per queste specie.
