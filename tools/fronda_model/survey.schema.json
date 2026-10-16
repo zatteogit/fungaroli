@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Fronda ricerca uscita per taxon",
+  "description": "Una riga per visita e taxon cercato. Non esportare automaticamente appunti privati o conteggi community.",
+  "type": "object",
+  "required": ["survey_id", "site_id", "spatial_block", "observer_id", "date", "target_taxon", "taxon_id", "searched", "result", "duration_minutes", "effort_basis", "observer_count", "protocol_version", "identification_status", "research_consent", "features", "features_as_of", "started_at", "weather_provenance", "split"],
+  "properties": {
+    "survey_id": {"type": "string", "minLength": 1},
+    "site_id": {"type": "string", "minLength": 1},
+    "spatial_block": {"type": "string", "minLength": 1},
+    "observer_id": {"type": "string", "minLength": 1},
+    "date": {"type": "string", "format": "date"},
+    "target_taxon": {"type": "string", "minLength": 1},
+    "taxon_id": {"type": "string", "minLength": 1},
+    "searched": {"const": true},
+    "result": {"enum": ["detected", "not_detected", "unknown"], "description": "not_detected richiede ricerca conclusa del taxon bersaglio. Ricerca interrotta senza rilevazione: unknown. Taxa omessi da checklist incomplete non sono assenze."},
+    "duration_minutes": {"type": "number", "exclusiveMinimum": 0, "maximum": 1440, "description": "Durata pianificata prima di conoscere l'esito; non la durata effettiva fino al primo successo."},
+    "effort_basis": {"const": "planned_protocol"},
+    "search_completed": {"type": "boolean", "description": "Ricerca del taxon conclusa secondo il protocollo. Obbligatorio e true per not_detected; non necessario per una rilevazione positiva."},
+    "observer_count": {"type": "integer", "minimum": 1, "maximum": 100},
+    "protocol_version": {"type": "string", "minLength": 1},
+    "identification_status": {"enum": ["unreviewed", "self_reported_checked", "expert_verified"]},
+    "verification_ref": {"type": ["string", "null"]},
+    "research_consent": {"const": true},
+    "features": {"type": "object", "additionalProperties": {"type": ["number", "null"]}},
+    "features_as_of": {"type": "string", "format": "date-time"},
+    "started_at": {"type": "string", "format": "date-time"},
+    "weather_provenance": {"enum": ["forecast_archive", "reanalysis"]},
+    "split": {"enum": ["train", "calibration", "test"]}
+  },
+  "allOf": [
+    {"if": {"properties": {"identification_status": {"const": "expert_verified"}}}, "then": {"properties": {"verification_ref": {"type": "string", "minLength": 1}}, "required": ["verification_ref"]}},
+    {"if": {"properties": {"result": {"const": "not_detected"}}}, "then": {"properties": {"search_completed": {"const": true}}, "required": ["search_completed"]}}
+  ],
+  "additionalProperties": true
+}

@@ -1,0 +1,686 @@
+{
+  "metadata": {
+    "provider": "Open-Meteo",
+    "source_url": "https://open-meteo.com/en/docs",
+    "request_url": "https://api.open-meteo.com/v1/forecast?latitude=42.4&longitude=12.86&daily=precipitation_sum%2Ctemperature_2m_mean%2Ctemperature_2m_min%2Ctemperature_2m_max%2Cet0_fao_evapotranspiration&past_days=75&forecast_days=7&timezone=Europe%2FRome",
+    "fetched_at": "2026-10-15T23:38:26.838905+00:00",
+    "fetched_at_note": "Istante locale di salvataggio della risposta API; non è il tempo di emissione del modello meteorologico.",
+    "timezone": "Europe/Rome",
+    "coordinates_requested": {
+      "latitude": 42.4,
+      "longitude": 12.86
+    },
+    "coordinates_returned": {
+      "latitude": 42.43701,
+      "longitude": 12.8441725
+    },
+    "elevation_m_model": 395.0,
+    "weather_provenance": "current_api_snapshot",
+    "forecast_run_issued_at": null,
+    "historical_availability_verified": false,
+    "kind": "weather_model_output_not_ground_measurements",
+    "licence": "CC BY 4.0",
+    "licence_url": "https://open-meteo.com/en/licence",
+    "terms_url": "https://open-meteo.com/en/terms",
+    "transformation": "daily JSON API rinominato; null preservati; nessuna interpolazione. Nessun dato suolo scaricato.",
+    "sha256_rows": "aa1cca037e3a29fc8c4a00f2b5499ea3a5f253850063abf8053d472f1afa5bb0"
+  },
+  "rows": [
+    {
+      "date": "2026-08-02",
+      "precipitation_mm": null,
+      "temperature_mean_c": null,
+      "temperature_min_c": null,
+      "temperature_max_c": null,
+      "et0_mm": null
+    },
+    {
+      "date": "2026-08-03",
+      "precipitation_mm": null,
+      "temperature_mean_c": null,
+      "temperature_min_c": null,
+      "temperature_max_c": null,
+      "et0_mm": null
+    },
+    {
+      "date": "2026-08-04",
+      "precipitation_mm": null,
+      "temperature_mean_c": null,
+      "temperature_min_c": null,
+      "temperature_max_c": null,
+      "et0_mm": null
+    },
+    {
+      "date": "2026-08-05",
+      "precipitation_mm": null,
+      "temperature_mean_c": null,
+      "temperature_min_c": null,
+      "temperature_max_c": null,
+      "et0_mm": null
+    },
+    {
+      "date": "2026-08-06",
+      "precipitation_mm": null,
+      "temperature_mean_c": null,
+      "temperature_min_c": null,
+      "temperature_max_c": null,
+      "et0_mm": null
+    },
+    {
+      "date": "2026-08-07",
+      "precipitation_mm": null,
+      "temperature_mean_c": null,
+      "temperature_min_c": null,
+      "temperature_max_c": null,
+      "et0_mm": null
+    },
+    {
+      "date": "2026-08-08",
+      "precipitation_mm": null,
+      "temperature_mean_c": null,
+      "temperature_min_c": null,
+      "temperature_max_c": null,
+      "et0_mm": null
+    },
+    {
+      "date": "2026-08-09",
+      "precipitation_mm": null,
+      "temperature_mean_c": null,
+      "temperature_min_c": null,
+      "temperature_max_c": null,
+      "et0_mm": null
+    },
+    {
+      "date": "2026-08-10",
+      "precipitation_mm": null,
+      "temperature_mean_c": null,
+      "temperature_min_c": null,
+      "temperature_max_c": null,
+      "et0_mm": null
+    },
+    {
+      "date": "2026-08-11",
+      "precipitation_mm": null,
+      "temperature_mean_c": null,
+      "temperature_min_c": null,
+      "temperature_max_c": null,
+      "et0_mm": null
+    },
+    {
+      "date": "2026-08-12",
+      "precipitation_mm": null,
+      "temperature_mean_c": null,
+      "temperature_min_c": null,
+      "temperature_max_c": null,
+      "et0_mm": null
+    },
+    {
+      "date": "2026-08-13",
+      "precipitation_mm": null,
+      "temperature_mean_c": null,
+      "temperature_min_c": null,
+      "temperature_max_c": null,
+      "et0_mm": null
+    },
+    {
+      "date": "2026-08-14",
+      "precipitation_mm": null,
+      "temperature_mean_c": null,
+      "temperature_min_c": null,
+      "temperature_max_c": null,
+      "et0_mm": null
+    },
+    {
+      "date": "2026-08-15",
+      "precipitation_mm": null,
+      "temperature_mean_c": null,
+      "temperature_min_c": null,
+      "temperature_max_c": null,
+      "et0_mm": null
+    },
+    {
+      "date": "2026-08-16",
+      "precipitation_mm": null,
+      "temperature_mean_c": null,
+      "temperature_min_c": null,
+      "temperature_max_c": null,
+      "et0_mm": null
+    },
+    {
+      "date": "2026-08-17",
+      "precipitation_mm": null,
+      "temperature_mean_c": null,
+      "temperature_min_c": 21.0,
+      "temperature_max_c": 22.1,
+      "et0_mm": null
+    },
+    {
+      "date": "2026-08-18",
+      "precipitation_mm": 0.0,
+      "temperature_mean_c": 24.5,
+      "temperature_min_c": 18.4,
+      "temperature_max_c": 31.0,
+      "et0_mm": 4.7
+    },
+    {
+      "date": "2026-08-19",
+      "precipitation_mm": 0.0,
+      "temperature_mean_c": 25.3,
+      "temperature_min_c": 18.8,
+      "temperature_max_c": 32.4,
+      "et0_mm": 5.34
+    },
+    {
+      "date": "2026-08-20",
+      "precipitation_mm": 0.0,
+      "temperature_mean_c": 25.5,
+      "temperature_min_c": 18.3,
+      "temperature_max_c": 32.4,
+      "et0_mm": 5.24
+    },
+    {
+      "date": "2026-08-21",
+      "precipitation_mm": 19.6,
+      "temperature_mean_c": 24.1,
+      "temperature_min_c": 21.1,
+      "temperature_max_c": 28.9,
+      "et0_mm": 2.89
+    },
+    {
+      "date": "2026-08-22",
+      "precipitation_mm": 0.2,
+      "temperature_mean_c": 24.7,
+      "temperature_min_c": 19.6,
+      "temperature_max_c": 30.7,
+      "et0_mm": 4.75
+    },
+    {
+      "date": "2026-08-23",
+      "precipitation_mm": 0.0,
+      "temperature_mean_c": 25.0,
+      "temperature_min_c": 18.0,
+      "temperature_max_c": 32.4,
+      "et0_mm": 5.17
+    },
+    {
+      "date": "2026-08-24",
+      "precipitation_mm": 0.0,
+      "temperature_mean_c": 25.1,
+      "temperature_min_c": 17.5,
+      "temperature_max_c": 33.4,
+      "et0_mm": 5.39
+    },
+    {
+      "date": "2026-08-25",
+      "precipitation_mm": 11.9,
+      "temperature_mean_c": 23.7,
+      "temperature_min_c": 20.4,
+      "temperature_max_c": 28.0,
+      "et0_mm": 2.74
+    },
+    {
+      "date": "2026-08-26",
+      "precipitation_mm": 0.0,
+      "temperature_mean_c": 24.6,
+      "temperature_min_c": 16.0,
+      "temperature_max_c": 32.5,
+      "et0_mm": 4.92
+    },
+    {
+      "date": "2026-08-27",
+      "precipitation_mm": 0.0,
+      "temperature_mean_c": 26.8,
+      "temperature_min_c": 18.4,
+      "temperature_max_c": 36.5,
+      "et0_mm": 5.26
+    },
+    {
+      "date": "2026-08-28",
+      "precipitation_mm": 0.0,
+      "temperature_mean_c": 27.8,
+      "temperature_min_c": 19.9,
+      "temperature_max_c": 37.8,
+      "et0_mm": 6.17
+    },
+    {
+      "date": "2026-08-29",
+      "precipitation_mm": 0.8,
+      "temperature_mean_c": 25.6,
+      "temperature_min_c": 19.5,
+      "temperature_max_c": 33.1,
+      "et0_mm": 4.93
+    },
+    {
+      "date": "2026-08-30",
+      "precipitation_mm": 0.0,
+      "temperature_mean_c": 26.2,
+      "temperature_min_c": 18.0,
+      "temperature_max_c": 33.7,
+      "et0_mm": 5.18
+    },
+    {
+      "date": "2026-08-31",
+      "precipitation_mm": 0.0,
+      "temperature_mean_c": 25.8,
+      "temperature_min_c": 18.8,
+      "temperature_max_c": 33.0,
+      "et0_mm": 5.14
+    },
+    {
+      "date": "2026-09-01",
+      "precipitation_mm": 0.0,
+      "temperature_mean_c": 25.5,
+      "temperature_min_c": 17.5,
+      "temperature_max_c": 33.2,
+      "et0_mm": 5.27
+    },
+    {
+      "date": "2026-09-02",
+      "precipitation_mm": 0.0,
+      "temperature_mean_c": 24.6,
+      "temperature_min_c": 17.8,
+      "temperature_max_c": 32.5,
+      "et0_mm": 5.09
+    },
+    {
+      "date": "2026-09-03",
+      "precipitation_mm": 0.0,
+      "temperature_mean_c": 25.0,
+      "temperature_min_c": 18.0,
+      "temperature_max_c": 33.0,
+      "et0_mm": 5.21
+    },
+    {
+      "date": "2026-09-04",
+      "precipitation_mm": 0.0,
+      "temperature_mean_c": 24.8,
+      "temperature_min_c": 17.2,
+      "temperature_max_c": 33.0,
+      "et0_mm": 5.35
+    },
+    {
+      "date": "2026-09-05",
+      "precipitation_mm": 0.0,
+      "temperature_mean_c": 24.1,
+      "temperature_min_c": 15.3,
+      "temperature_max_c": 33.5,
+      "et0_mm": 5.34
+    },
+    {
+      "date": "2026-09-06",
+      "precipitation_mm": 0.0,
+      "temperature_mean_c": 24.2,
+      "temperature_min_c": 15.7,
+      "temperature_max_c": 33.1,
+      "et0_mm": 4.93
+    },
+    {
+      "date": "2026-09-07",
+      "precipitation_mm": 0.5,
+      "temperature_mean_c": 26.1,
+      "temperature_min_c": 19.1,
+      "temperature_max_c": 34.0,
+      "et0_mm": 4.43
+    },
+    {
+      "date": "2026-09-08",
+      "precipitation_mm": 0.0,
+      "temperature_mean_c": 25.7,
+      "temperature_min_c": 18.8,
+      "temperature_max_c": 33.2,
+      "et0_mm": 5.01
+    },
+    {
+      "date": "2026-09-09",
+      "precipitation_mm": 0.0,
+      "temperature_mean_c": 22.9,
+      "temperature_min_c": 15.6,
+      "temperature_max_c": 30.7,
+      "et0_mm": 4.19
+    },
+    {
+      "date": "2026-09-10",
+      "precipitation_mm": 3.7,
+      "temperature_mean_c": 22.0,
+      "temperature_min_c": 17.9,
+      "temperature_max_c": 28.1,
+      "et0_mm": 2.25
+    },
+    {
+      "date": "2026-09-11",
+      "precipitation_mm": 0.4,
+      "temperature_mean_c": 22.1,
+      "temperature_min_c": 17.3,
+      "temperature_max_c": 27.4,
+      "et0_mm": 3.89
+    },
+    {
+      "date": "2026-09-12",
+      "precipitation_mm": 0.0,
+      "temperature_mean_c": 21.4,
+      "temperature_min_c": 15.3,
+      "temperature_max_c": 28.4,
+      "et0_mm": 4.18
+    },
+    {
+      "date": "2026-09-13",
+      "precipitation_mm": 0.0,
+      "temperature_mean_c": 21.2,
+      "temperature_min_c": 14.3,
+      "temperature_max_c": 28.9,
+      "et0_mm": 4.47
+    },
+    {
+      "date": "2026-09-14",
+      "precipitation_mm": 0.0,
+      "temperature_mean_c": 20.2,
+      "temperature_min_c": 13.9,
+      "temperature_max_c": 27.7,
+      "et0_mm": 3.34
+    },
+    {
+      "date": "2026-09-15",
+      "precipitation_mm": 0.0,
+      "temperature_mean_c": 21.4,
+      "temperature_min_c": 14.6,
+      "temperature_max_c": 29.0,
+      "et0_mm": 4.09
+    },
+    {
+      "date": "2026-09-16",
+      "precipitation_mm": 0.0,
+      "temperature_mean_c": 20.6,
+      "temperature_min_c": 12.7,
+      "temperature_max_c": 28.6,
+      "et0_mm": 4.23
+    },
+    {
+      "date": "2026-09-17",
+      "precipitation_mm": 0.1,
+      "temperature_mean_c": 20.1,
+      "temperature_min_c": 12.5,
+      "temperature_max_c": 27.8,
+      "et0_mm": 3.63
+    },
+    {
+      "date": "2026-09-18",
+      "precipitation_mm": 4.8,
+      "temperature_mean_c": 20.1,
+      "temperature_min_c": 13.8,
+      "temperature_max_c": 27.2,
+      "et0_mm": 3.09
+    },
+    {
+      "date": "2026-09-19",
+      "precipitation_mm": 1.8,
+      "temperature_mean_c": 20.6,
+      "temperature_min_c": 14.8,
+      "temperature_max_c": 27.0,
+      "et0_mm": 3.33
+    },
+    {
+      "date": "2026-09-20",
+      "precipitation_mm": 0.0,
+      "temperature_mean_c": 21.3,
+      "temperature_min_c": 16.0,
+      "temperature_max_c": 27.5,
+      "et0_mm": 3.39
+    },
+    {
+      "date": "2026-09-21",
+      "precipitation_mm": 0.0,
+      "temperature_mean_c": 21.1,
+      "temperature_min_c": 14.5,
+      "temperature_max_c": 28.4,
+      "et0_mm": 3.8
+    },
+    {
+      "date": "2026-09-22",
+      "precipitation_mm": 0.0,
+      "temperature_mean_c": 20.1,
+      "temperature_min_c": 14.2,
+      "temperature_max_c": 26.4,
+      "et0_mm": 3.82
+    },
+    {
+      "date": "2026-09-23",
+      "precipitation_mm": 0.0,
+      "temperature_mean_c": 16.9,
+      "temperature_min_c": 10.7,
+      "temperature_max_c": 24.0,
+      "et0_mm": 3.8
+    },
+    {
+      "date": "2026-09-24",
+      "precipitation_mm": 0.6,
+      "temperature_mean_c": 16.7,
+      "temperature_min_c": 9.5,
+      "temperature_max_c": 24.8,
+      "et0_mm": 3.32
+    },
+    {
+      "date": "2026-09-25",
+      "precipitation_mm": 0.3,
+      "temperature_mean_c": 18.8,
+      "temperature_min_c": 13.2,
+      "temperature_max_c": 25.0,
+      "et0_mm": 3.85
+    },
+    {
+      "date": "2026-09-26",
+      "precipitation_mm": 0.0,
+      "temperature_mean_c": 16.9,
+      "temperature_min_c": 9.5,
+      "temperature_max_c": 25.9,
+      "et0_mm": 3.63
+    },
+    {
+      "date": "2026-09-27",
+      "precipitation_mm": 0.0,
+      "temperature_mean_c": 17.6,
+      "temperature_min_c": 10.6,
+      "temperature_max_c": 25.5,
+      "et0_mm": 3.73
+    },
+    {
+      "date": "2026-09-28",
+      "precipitation_mm": 0.0,
+      "temperature_mean_c": 17.7,
+      "temperature_min_c": 10.6,
+      "temperature_max_c": 26.2,
+      "et0_mm": 3.43
+    },
+    {
+      "date": "2026-09-29",
+      "precipitation_mm": 0.0,
+      "temperature_mean_c": 18.1,
+      "temperature_min_c": 11.3,
+      "temperature_max_c": 26.6,
+      "et0_mm": 3.39
+    },
+    {
+      "date": "2026-09-30",
+      "precipitation_mm": 0.0,
+      "temperature_mean_c": 18.3,
+      "temperature_min_c": 12.5,
+      "temperature_max_c": 24.9,
+      "et0_mm": 2.84
+    },
+    {
+      "date": "2026-10-01",
+      "precipitation_mm": 0.0,
+      "temperature_mean_c": 18.6,
+      "temperature_min_c": 12.3,
+      "temperature_max_c": 26.2,
+      "et0_mm": 3.53
+    },
+    {
+      "date": "2026-10-02",
+      "precipitation_mm": 0.0,
+      "temperature_mean_c": 18.8,
+      "temperature_min_c": 13.7,
+      "temperature_max_c": 26.0,
+      "et0_mm": 2.99
+    },
+    {
+      "date": "2026-10-03",
+      "precipitation_mm": 0.0,
+      "temperature_mean_c": 18.7,
+      "temperature_min_c": 13.0,
+      "temperature_max_c": 25.5,
+      "et0_mm": 2.97
+    },
+    {
+      "date": "2026-10-04",
+      "precipitation_mm": 0.0,
+      "temperature_mean_c": 18.2,
+      "temperature_min_c": 12.2,
+      "temperature_max_c": 25.3,
+      "et0_mm": 2.89
+    },
+    {
+      "date": "2026-10-05",
+      "precipitation_mm": 0.0,
+      "temperature_mean_c": 17.4,
+      "temperature_min_c": 11.8,
+      "temperature_max_c": 23.9,
+      "et0_mm": 2.21
+    },
+    {
+      "date": "2026-10-06",
+      "precipitation_mm": 3.9,
+      "temperature_mean_c": 17.8,
+      "temperature_min_c": 14.1,
+      "temperature_max_c": 22.2,
+      "et0_mm": 1.27
+    },
+    {
+      "date": "2026-10-07",
+      "precipitation_mm": 0.1,
+      "temperature_mean_c": 18.6,
+      "temperature_min_c": 11.8,
+      "temperature_max_c": 25.9,
+      "et0_mm": 2.7
+    },
+    {
+      "date": "2026-10-08",
+      "precipitation_mm": 4.5,
+      "temperature_mean_c": 19.6,
+      "temperature_min_c": 17.7,
+      "temperature_max_c": 21.8,
+      "et0_mm": 1.86
+    },
+    {
+      "date": "2026-10-09",
+      "precipitation_mm": 3.4,
+      "temperature_mean_c": 17.5,
+      "temperature_min_c": 15.2,
+      "temperature_max_c": 20.1,
+      "et0_mm": 1.18
+    },
+    {
+      "date": "2026-10-10",
+      "precipitation_mm": 3.1,
+      "temperature_mean_c": 15.7,
+      "temperature_min_c": 13.1,
+      "temperature_max_c": 18.4,
+      "et0_mm": 1.08
+    },
+    {
+      "date": "2026-10-11",
+      "precipitation_mm": 0.0,
+      "temperature_mean_c": 16.2,
+      "temperature_min_c": 11.1,
+      "temperature_max_c": 22.3,
+      "et0_mm": 2.48
+    },
+    {
+      "date": "2026-10-12",
+      "precipitation_mm": 0.3,
+      "temperature_mean_c": 15.9,
+      "temperature_min_c": 9.7,
+      "temperature_max_c": 21.7,
+      "et0_mm": 2.12
+    },
+    {
+      "date": "2026-10-13",
+      "precipitation_mm": 0.0,
+      "temperature_mean_c": 13.2,
+      "temperature_min_c": 5.6,
+      "temperature_max_c": 22.6,
+      "et0_mm": 2.93
+    },
+    {
+      "date": "2026-10-14",
+      "precipitation_mm": 0.0,
+      "temperature_mean_c": 15.4,
+      "temperature_min_c": 7.3,
+      "temperature_max_c": 25.6,
+      "et0_mm": 2.96
+    },
+    {
+      "date": "2026-10-15",
+      "precipitation_mm": 0.0,
+      "temperature_mean_c": 15.9,
+      "temperature_min_c": 9.2,
+      "temperature_max_c": 24.9,
+      "et0_mm": 2.87
+    },
+    {
+      "date": "2026-10-16",
+      "precipitation_mm": 0.0,
+      "temperature_mean_c": 15.5,
+      "temperature_min_c": 9.3,
+      "temperature_max_c": 24.0,
+      "et0_mm": 2.66
+    },
+    {
+      "date": "2026-10-17",
+      "precipitation_mm": 0.0,
+      "temperature_mean_c": 14.9,
+      "temperature_min_c": 8.5,
+      "temperature_max_c": 22.8,
+      "et0_mm": 2.1
+    },
+    {
+      "date": "2026-10-18",
+      "precipitation_mm": 0.0,
+      "temperature_mean_c": 15.3,
+      "temperature_min_c": 9.7,
+      "temperature_max_c": 22.0,
+      "et0_mm": 1.58
+    },
+    {
+      "date": "2026-10-19",
+      "precipitation_mm": 0.0,
+      "temperature_mean_c": 15.1,
+      "temperature_min_c": 8.6,
+      "temperature_max_c": 24.1,
+      "et0_mm": 2.28
+    },
+    {
+      "date": "2026-10-20",
+      "precipitation_mm": 0.5,
+      "temperature_mean_c": 15.1,
+      "temperature_min_c": 7.4,
+      "temperature_max_c": 22.9,
+      "et0_mm": 2.03
+    },
+    {
+      "date": "2026-10-21",
+      "precipitation_mm": 1.0,
+      "temperature_mean_c": 17.2,
+      "temperature_min_c": 14.5,
+      "temperature_max_c": 19.7,
+      "et0_mm": 1.31
+    },
+    {
+      "date": "2026-10-22",
+      "precipitation_mm": 1.5,
+      "temperature_mean_c": 16.5,
+      "temperature_min_c": 13.4,
+      "temperature_max_c": 20.8,
+      "et0_mm": 1.75
+    }
+  ]
+}

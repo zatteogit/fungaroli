@@ -1,0 +1,1228 @@
+{
+  "checked_at": "2026-10-16",
+  "scope": "Confronto delle 31 voci fornite dall’utente con 19 studi iniziali e approfondimenti correnti. Le voci bibliografiche non equivalgono a studi indipendenti.",
+  "priority_additions": [
+    1,
+    15
+  ],
+  "supporting_additions": [
+    12,
+    31
+  ],
+  "already_initial": [
+    2,
+    3
+  ],
+  "already_in_current_deepening": [
+    7
+  ],
+  "unresolved_or_ambiguous": [
+    6,
+    23,
+    25,
+    26,
+    27,
+    29
+  ],
+  "entries": [
+    {
+      "number": 1,
+      "provided_title": "Biotic and abiotic factors influencing macrofungal diversity and biomass in Mediterranean forests with a focus on the Porcini group",
+      "assessment": "Nuovo, prioritario",
+      "role_for_fronda": "Suolo e habitat italiani",
+      "review": {
+        "original_number": 1,
+        "supplied_title": "Biotic and abiotic factors influencing macrofungal diversity and biomass in Mediterranean forests with a focus on the Porcini group",
+        "verified_title": "Biotic and abiotic factors influencing macrofungal diversity and biomass in Mediterranean forests with a focus on the Porcini group",
+        "bibliographic_status": "Verificato sul PDF editoriale: articolo primario peer reviewed, Dendrobiology 91:16–31 (2024).",
+        "authors": [
+          "Elia Ambrosio",
+          "Marcin Pietras",
+          "Alan Feest"
+        ],
+        "year": 2024,
+        "doi": "10.12657/denbio.091.002",
+        "sourceurl": "https://www.idpan.poznan.pl/images/stories/dendrobiology/vol91/denbio091002.pdf",
+        "fulltext": {
+          "status": "aperto e letto via strumento web",
+          "version": "PDF editoriale, 16 pagine",
+          "sections_read": [
+            "Abstract",
+            "Materials and methods",
+            "Results",
+            "Discussion",
+            "Conclusions",
+            "Tabelle 2–5"
+          ],
+          "local_file_acquired": false,
+          "supplements": "Appendici e tabelle supplementari citate nel testo; file separati non acquisiti.",
+          "license": "Licenza di riuso non verificata nel PDF letto."
+        },
+        "overlap": {
+          "studies_json": false,
+          "access_manifest_json": false,
+          "prior_search": "Era emerso nella prima ricerca ma non era stato selezionato nel corpus: omissione rilevante, ora verificata."
+        },
+        "relevance": "Alta, fonte italiana direttamente pertinente ai porcini e alle latifoglie; aggiunta prioritaria.",
+        "verified_content": "Sessanta plot in tre boschi di latifoglie presso Sassello, Liguria, monitorati nel 2012–2014. Indice di biomassa stimato dalla dimensione dei cappelli. Analisi locali Pearson/PCA; separato MaxEnt europeo su presenze GBIF e 19 variabili climatiche, test casuale 10%.",
+        "rettifica": "Le associazioni geochimiche osservate non dimostrano causalità né superiorità predittiva generale rispetto al meteo. Il clima locale deriva dalla stessa stazione e da aggregati annuali, inadatti a stabilire il peso delle piogge recenti. Il 50,8% è contributo relativo MaxEnt, non varianza spiegata o probabilità giornaliera; AUC 0,918 senza test spaziale indipendente.",
+        "implication": "Integrare substrato, suolo, ospiti e struttura forestale come candidati del livello habitat; stimarne il valore predittivo su luoghi esclusi dall'addestramento.",
+        "additional_limit": "Gli autori segnalano raccolta intensa e possibili effetti sui conteggi dei commestibili. Il testo presenta anche un'incongruenza nell'area campionata: usare 20 plot per sito, 60 totali, evitando l'area testuale errata.",
+        "data_code": "Non individuato deposito pubblico di dati grezzi/codice; presenti sintesi tabellari e rimandi alle appendici.",
+        "recommended_action": "Aggiungere al corpus principale; nessuna soglia o peso trasferibile direttamente."
+      }
+    },
+    {
+      "number": 2,
+      "provided_title": "Primary productivity and climate control mushroom yields in Mediterranean pine forests",
+      "assessment": "Già nei 19 iniziali",
+      "role_for_fronda": "NDVI e memoria ecologica",
+      "review": {
+        "number": 2,
+        "verifiedcitation": "Olano et al. (2020), Agricultural and Forest Meteorology 288–289:108015",
+        "doi": "10.1016/j.agrformet.2020.108015",
+        "sourceurl": "https://interlace-hub.com/sites/default/files/NDVIFungiInpress1-s2.0-S0168192320301179-main.pdf",
+        "overlap": {
+          "initial19": true,
+          "matched_id": "olano_2020"
+        },
+        "access_status": "PDF completo letto, metodi e risultati.",
+        "correction": "Il meccanismo in due fasi è un’interpretazione da verificare, non prova sperimentale di trasferimento del carbonio al micelio. Il target è resa annua; nessun holdout indipendente descritto nel metodo letto."
+      }
+    },
+    {
+      "number": 3,
+      "provided_title": "Effect of climatic and soil moisture conditions on mushroom productivity and related ecosystem services in Mediterranean pine stands facing climate change",
+      "assessment": "Già nei 19 iniziali",
+      "role_for_fronda": "Bilancio idrico",
+      "review": {
+        "number": 3,
+        "verifiedcitation": "Karavani et al. (2018), Agricultural and Forest Meteorology 248:432–440",
+        "doi": "10.1016/j.agrformet.2017.10.024",
+        "sourceurl": "https://doi.org/10.1016/j.agrformet.2017.10.024",
+        "overlap": {
+          "initial19": true,
+          "matched_id": "karavani_2018"
+        },
+        "access_status": "Abstract finale verificato; precursore MEDFOR2016 letto integralmente, distinto dal finale2018 non aperto.",
+        "correction": "Bilancio idrico e produttività annuale delle pinete iberiche non forniscono direttamente soglie giornaliere o probabilità di ritrovamento italiane."
+      }
+    },
+    {
+      "number": 4,
+      "provided_title": "Contrasting continental patterns of adaptive population divergence in the holarctic ectomycorrhizal fungus Boletus edulis",
+      "assessment": "Nuovo, contesto",
+      "role_for_fronda": "Genetica e tassonomia",
+      "review": {
+        "original_number": 4,
+        "supplied_title": "Contrasting continental patterns of adaptive population divergence in the holarctic ectomycorrhizal fungus Boletus edulis",
+        "verified_title": "Contrasting continental patterns of adaptive population divergence in the holarctic ectomycorrhizal fungus Boletus edulis",
+        "bibliographic_status": "Verificato su testo editoriale: New Phytologist 237(1):295–309, 2023; prima pubblicazione online 5 ottobre 2022.",
+        "authors": [
+          "Keaton Tremble",
+          "J. I. Hoffman",
+          "Bryn T. M. Dentinger"
+        ],
+        "year": 2023,
+        "first_online": "2022-10-05",
+        "doi": "10.1111/nph.18521",
+        "sourceurl": "https://nph.onlinelibrary.wiley.com/doi/10.1111/nph.18521",
+        "fulltext": {
+          "status": "aperto e letto",
+          "version": "HTML editoriale, Free Access",
+          "sections_read": [
+            "Summary",
+            "Materials and Methods: genomica e distanze ambientali",
+            "Results and Discussion: struttura della popolazione",
+            "Conclusioni",
+            "Data availability"
+          ],
+          "local_file_acquired": false,
+          "supplements": "Elenco dei DOCX/XLSX visibile; contenuto non acquisito.",
+          "license": "Accesso libero verificato; licenza di redistribuzione non accertata."
+        },
+        "overlap": {
+          "studies_json": false,
+          "access_manifest_json": false
+        },
+        "relevance": "Contesto genomico, utilità indiretta per eterogeneità ecologica e tassonomia; priorità bassa per previsione operativa.",
+        "verified_content": "Riconosce sei linee geografiche in B. edulis, una europea e cinque che includono anche la linea Russia/Alaska. Dei 160 campioni risequenziati iniziali ne conserva 147 dopo la rimozione di identificazioni errate. Confronta distanza genetica, geografica e ambientale; trova evidenze compatibili con adattamento locale e introgressione.",
+        "rettifica": "La frase «dimostra che la divergenza è guidata dall'adattamento locale» è troppo categorica. L'evidenza sostiene tale interpretazione, senza derivare coefficienti di fruttificazione italiani. Non tratta soltanto campioni europei e nordamericani.",
+        "implication": "Motiva tassonomia verificata e risposte regionali flessibili. Non giustifica inventare ecotipi italiani o parametri di crescita per regione.",
+        "data_code": "Genomi/short reads pubblici in SRA/GenBank; accession del genoma JAIQWV000000000. Nessun riuso o download eseguito.",
+        "recommended_action": "Eventuale appendice di contesto, evitando di contarlo tra gli studi di nowcasting."
+      }
+    },
+    {
+      "number": 5,
+      "provided_title": "Edible Ectomycorrhizal Mushrooms: Current Knowledge and Future Prospects",
+      "assessment": "Libro di riferimento",
+      "role_for_fronda": "Contesto; accesso parziale",
+      "review": {
+        "original_number": 5,
+        "supplied_title": "Edible Ectomycorrhizal Mushrooms: Current Knowledge and Future Prospects",
+        "verified_title": "Edible Ectomycorrhizal Mushrooms: Current Knowledge and Future Prospects",
+        "bibliographic_status": "Volume collettaneo Springer, Soil Biology 34, XII+409 pagine; non singolo studio primario. eBook 30 gennaio 2013, hardcover 31 gennaio 2013; copyright 2012.",
+        "editors": [
+          "Alessandra Zambonelli",
+          "Gregory M. Bonito"
+        ],
+        "year": 2013,
+        "copyright_year": 2012,
+        "doi": "10.1007/978-3-642-33823-6",
+        "sourceurl": "https://link.springer.com/book/10.1007/978-3-642-33823-6",
+        "fulltext": {
+          "status": "solo scheda, presentazione e indice aperti; testo integrale richiede accesso istituzionale o acquisto",
+          "version": "Scheda editoriale",
+          "sections_read": [
+            "Presentazione",
+            "Indice dei capitoli",
+            "Informazioni bibliografiche"
+          ],
+          "local_file_acquired": false,
+          "license": "Copyright Springer; nessuna licenza OA verificata."
+        },
+        "overlap": {
+          "studies_json": false,
+          "access_manifest_json": false
+        },
+        "relevance": "Riferimento generale per ecologia e coltivazione dei commestibili ectomicorrizici; inferiore agli articoli primari pertinenti alla previsione.",
+        "rettifica": "Non descriverlo come esperimento unico o prova quantitativa. I dettagli su primer, micelio certificato e riforestazione richiedono lettura dei singoli capitoli: non verificati dalla sola presentazione.",
+        "implication": "Usare i capitoli pertinenti come orientamento bibliografico; nessun coefficiente previsionale estratto.",
+        "data_code": "Nessun dataset o codice identificato nella scheda.",
+        "recommended_action": "Bibliografia di contesto; dichiarare chiaramente accesso parziale."
+      }
+    },
+    {
+      "number": 6,
+      "provided_title": "Modelli Predittivi Avanzati e Dinamiche Ecofisiologiche per la Mappatura Macrofungina: Probabilità di Crescita e Zonizzazione Habitat",
+      "assessment": "Sintesi non identificata",
+      "role_for_fronda": "Richiede fonte originale",
+      "review": {
+        "number": 6,
+        "requestedtitle": "Modelli Predittivi Avanzati e Dinamiche Ecofisiologiche per la Mappatura Macrofungina: Probabilità di Crescita e Zonizzazione Habitat",
+        "verifiedcitation": null,
+        "sourceurl": null,
+        "document_type": "Documento di sintesi secondo la descrizione fornita dall'utente; identità bibliografica non verificabile.",
+        "access_status": "Disponibile soltanto titolo e breve descrizione nell'allegato dell'utente. Nessun autore, anno, editore, DOI o URL fornito; nessuna corrispondenza primaria individuata con la ricerca del titolo esatto.",
+        "overlap": {
+          "initial19": false,
+          "additional7": false,
+          "status": "Non determinabile come identità bibliografica; nessuna corrispondenza di titolo nei due registri."
+        },
+        "relevance": "Può organizzare le ipotesi progettuali di Fronda, ma non costituisce da solo evidenza scientifica primaria, né una validazione di probabilità o algoritmo.",
+        "correction": "Non elencarlo come paper scientifico verificato. La descrizione lo presenta già come sintesi: attribuire separatamente ciascun risultato agli studi originali. Mancanza di riscontro non dimostra che il documento non esista."
+      }
+    },
+    {
+      "number": 7,
+      "provided_title": "Integrating Soil Properties Into Species Distribution Models Enhances Predictive Accuracy for Terricolous Macrofungi",
+      "assessment": "Già nell’approfondimento",
+      "role_for_fronda": "Suolo e idoneità statica",
+      "review": {
+        "number": 7,
+        "requestedtitle": "Integrating Soil Properties Into Species Distribution Models Enhances Predictive Accuracy for Terricolous Macrofungi",
+        "verifiedcitation": "Li, X., Rota, F., Peter, M., Gross, A., Scherrer, D. & Baltensweiler, A. (2025). Integrating Soil Properties Into Species Distribution Models Enhances Predictive Accuracy for Terricolous Macrofungi. Journal of Biogeography, 52, e15124. https://doi.org/10.1111/jbi.15124",
+        "authors": [
+          "Xinhang Li",
+          "Francesco Rota",
+          "Martina Peter",
+          "Andrin Gross",
+          "Daniel Scherrer",
+          "Andri Baltensweiler"
+        ],
+        "year": 2025,
+        "doi": "10.1111/jbi.15124",
+        "sourceurl": "https://onlinelibrary.wiley.com/doi/full/10.1111/jbi.15124",
+        "additional_sources": [
+          "https://www.dora.lib4ri.ch/wsl/islandora/object/wsl%3A39510/datastream/PDF/Li-2025-Integrating_soil_properties_into_species-%28published_version%29.pdf",
+          "https://datadryad.org/dataset/doi:10.5061/dryad.9p8cz8wrv",
+          "https://www.envidat.ch/metadata/soil-property-maps-for-the-swiss-forest"
+        ],
+        "document_type": "Articolo scientifico originale.",
+        "access_status": "Testo integrale HTML e PDF editoriale nel deposito ufficiale WSL/DORA effettivamente letti. Riletti abstract, metodi e sezione 3.3 del PDF per questa verifica. Articolo CC BY 4.0. Metadata e README Dryad accessibili, ma file dati/codice non scaricati: download 403/401; nessuna riproduzione completa dichiarata.",
+        "overlap": {
+          "initial19": false,
+          "additional7": true,
+          "matched_id": "li_2025_soil_sdm",
+          "status": "Aggiunta già presente nel manifest di approfondimento di 7 fonti; non faceva parte dei 19 studi iniziali."
+        },
+        "relevance": "Diretta per il livello statico di idoneità dei macrofunghi e l'inclusione di proprietà del suolo. Indiretta per trasferire il modello in Italia; non valuta previsione giornaliera della fruttificazione o probabilità di ritrovamento per uscita.",
+        "correction": "Confermati 162 taxa e mappe delle proprietà del suolo a 25 m nelle foreste svizzere. Il valore 11% deriva dal partizionamento della varianza dell'indice modellato di idoneità dell'habitat (sezione 3.3, Figura 4): è la componente indipendente attribuita al suolo, non un incremento di 11 punti di accuratezza né di probabilità di trovare funghi. I dati sono presenze/background, non visite negative. 25 m è la risoluzione delle mappe, non accuratezza spaziale dimostrata né copertura italiana.",
+        "claim_checks": {
+          "162_species": "Confermato; il gruppo chiamato ectomicorrizico include 109 ectomicorrizici e 2 parassiti, oltre a 51 saprotrofi.",
+          "25_m": "Confermato per le mappe digitali svizzere del suolo e proiezioni selezionate; non tutti i predittori climatici originano a questa risoluzione.",
+          "11_percent": "Confermato come quota indipendente della varianza dell'indice di idoneità modellato, non come miglioramento uniforme delle prestazioni.",
+          "validation": "5-fold ripetuta 20 volte; nessun blocco spaziale o temporale riportato. Il dataset Red List è usato per discutere il bias relativo alla pendenza, non come test esterno delle previsioni italiane.",
+          "data": "Dryad CC0 documenta CSV di presenze/background e predittori con coordinate rimosse, più script R. Mappe EnviDat CC BY-SA 4.0 limitate alle foreste svizzere."
+        }
+      }
+    },
+    {
+      "number": 8,
+      "provided_title": "Climate-Driven Distribution of Edible Fungi in Central Mexico: Implications for Forest Sustainability",
+      "assessment": "Nuovo, SDM messicano",
+      "role_for_fronda": "Metodo, non soglie italiane",
+      "review": {
+        "number": 8,
+        "requestedtitle": "Climate-Driven Distribution of Edible Fungi in Central Mexico: Implications for Forest Sustainability",
+        "verifiedcitation": "Solano-Gómez, A.; Burrola-Aguilar, C.; Zepeda-Gómez, C.; Sunny, A. (2026). Climate-Driven Distribution of Edible Fungi in Central Mexico: Implications for Forest Sustainability. Sustainability, 18(7), 3571. https://doi.org/10.3390/su18073571",
+        "authors": [
+          "Amanda Solano-Gómez",
+          "Cristina Burrola-Aguilar",
+          "Carmen Zepeda-Gómez",
+          "Armando Sunny"
+        ],
+        "year": 2026,
+        "publication_date": "2026-04-06",
+        "doi": "10.3390/su18073571",
+        "sourceurl": "https://www.mdpi.com/2071-1050/18/7/3571",
+        "additional_sources": [
+          "https://api.crossref.org/works/10.3390/su18073571",
+          "https://www.mdpi.com/2071-1050/18/7/3571/notes"
+        ],
+        "access_status": "Articolo open access CC-BY-4.0 secondo Crossref. Citazione, abstract e ampi estratti della pagina ufficiale letti nei risultati indicizzati. Apertura diretta web: 429; lettura URL Desktop Commander: 403. Fulltext diretto non acquisito né dati scaricati.",
+        "verified_content": "Maxent per distribuzioni potenziali di dieci funghi commestibili messicani, con scenari 2061–2080 e 2081–2100; 19 variabili bioclimatiche. Estratti ufficiali indicizzati descrivono cross-validation a blocchi spaziali e tuning mediante AICc/partial ROC, senza che sia stato acquisito il testo integrale. I dati sono dichiarati disponibili dagli autori su richiesta.",
+        "relevance": "Utile per il livello statico di idoneità ambientale e per validazione spaziale/tuning; trasferibilità metodologica maggiore rispetto alle voci13/14 perché include taxa commestibili interessanti per Fronda. Non è una previsione giornaliera della fruttificazione, della crescita o della probabilità di ritrovamento in Italia. Nomi condivisi fra continenti non dimostrano identità ecologica o tassonomica trasferibile.",
+        "correction": "Titolo esatto e identificazione non ambigua. Anno verificato 2026, non 2025 o precedente. Scenari di lungo periodo e variazioni di area idonea non sono incrementi della probabilità di trovare funghi.",
+        "overlap": {
+          "initial19": false,
+          "additional7": false,
+          "status": "Nessun duplicato bibliografico nei due registri. Studi distinti anche se usano MaxEnt come metodo."
+        },
+        "confidence": "high_for_identity_and_abstract; full_methodological_audit_not_performed",
+        "document_type": "Articolo scientifico originale."
+      }
+    },
+    {
+      "number": 9,
+      "provided_title": "Predictive capacity of nine algorithms and an ensemble model to determine the geographic distribution of tree species",
+      "assessment": "Studio su alberi",
+      "role_for_fronda": "Confronto algoritmi",
+      "review": {
+        "number": 9,
+        "requestedtitle": "Predictive capacity of nine algorithms and an ensemble model to determine the geographic distribution of tree species",
+        "verifiedcitation": "Montoya-Jiménez, J.C., Valdez-Lazalde, J.R., Ángeles-Pérez, G., De Los Santos-Posadas, H.M. & Cruz-Cárdenas, G. (2022). Predictive capacity of nine algorithms and an ensemble model to determine the geographic distribution of tree species. iForest, 15, 363–371. https://doi.org/10.3832/ifor4084-015",
+        "year": 2022,
+        "doi": "10.3832/ifor4084-015",
+        "sourceurl": "https://iforest.sisef.org/contents/?id=ifor4084-015",
+        "additional_sources": [
+          "https://iforest.sisef.org/abstract/?id=ifor4084-015",
+          "https://iforest.sisef.org/pdf/?id=ifor4084-015"
+        ],
+        "document_type": "Articolo scientifico originale.",
+        "access_status": "Pagina ufficiale e testo integrale pubblico dell'editore consultati; licenza CC BY-NC 4.0 dichiarata dall'editore.",
+        "overlap": {
+          "initial19": false,
+          "additional7": false,
+          "status": "Nessun duplicato bibliografico nei due registri."
+        },
+        "relevance": "Indiretta: confronto di algoritmi SDM per 17 specie di pini messicani, utile come riferimento di metodo o per distribuzioni degli ospiti. Non è uno studio di funghi.",
+        "correction": "Specificare il target arboreo e il contesto messicano. Le prestazioni TSS/AUC riportate e il vantaggio dell'ensemble in questo esperimento non dimostrano una superiorità universale né l'accuratezza di un modello micologico italiano."
+      }
+    },
+    {
+      "number": 10,
+      "provided_title": "Presence-Only Prediction (MaxEnt) 101: Using GIS to model species distribution",
+      "assessment": "Tutorial Esri",
+      "role_for_fronda": "Implementazione GIS",
+      "review": {
+        "number": 10,
+        "requestedtitle": "Presence-Only Prediction (MaxEnt) 101: Using GIS to model species distribution",
+        "verifiedcitation": "Liu, J. (2022, 15 marzo). Presence-Only Prediction (MaxEnt) 101: Using GIS to model species distribution. Esri ArcGIS Blog.",
+        "authors": [
+          "Jie Liu"
+        ],
+        "year": 2022,
+        "doi": null,
+        "sourceurl": "https://www.esri.com/arcgis-blog/products/arcgis-pro/analytics/presence-only-prediction-maxent-101-using-gis-to-model-species-distribution",
+        "document_type": "Tutorial ufficiale del produttore software; non articolo scientifico peer-reviewed.",
+        "access_status": "Pagina pubblica completa effettivamente letta. La disponibilità della documentazione non implica una licenza gratuita del software ArcGIS.",
+        "overlap": {
+          "initial19": false,
+          "additional7": false,
+          "status": "Nessun duplicato bibliografico nei due registri."
+        },
+        "relevance": "Indiretta: documenta lo strumento Presence-only/MaxEnt di ArcGIS Pro 2.9 e un esempio sulla tartaruga del deserto; utile per implementazione e interpretazione di dati presence-background.",
+        "correction": "Classificarlo come tutorial. Il background non rappresenta assenze biologiche osservate e l'output MaxEnt non diventa automaticamente probabilità calibrata di trovare funghi durante una passeggiata."
+      }
+    },
+    {
+      "number": 11,
+      "provided_title": "Perform species distribution modeling | Learn ArcGIS",
+      "assessment": "Tutorial Esri",
+      "role_for_fronda": "Implementazione GIS",
+      "review": {
+        "number": 11,
+        "requestedtitle": "Perform species distribution modeling | Learn ArcGIS",
+        "verifiedcitation": "Esri, Learn ArcGIS. Perform species distribution modeling. Tutorial ufficiale, senza anno di pubblicazione esplicitato; pagina testata il 14 gennaio 2026 con ArcGIS Pro 3.6.1.",
+        "authors": [
+          "Esri / Learn ArcGIS"
+        ],
+        "year": null,
+        "doi": null,
+        "sourceurl": "https://learn.arcgis.com/en/projects/perform-species-distribution-modeling/",
+        "document_type": "Tutorial ufficiale; non paper scientifico.",
+        "access_status": "Pagina pubblica completa effettivamente letta. La pagina dichiara requisiti ArcGIS Pro Standard/Advanced e Spatial Analyst.",
+        "overlap": {
+          "initial19": false,
+          "additional7": false,
+          "status": "Nessun duplicato bibliografico nei due registri."
+        },
+        "relevance": "Indiretta: workflow SDM illustrato sui maiali inselvatichiti in California, con osservazioni iNaturalist, RF/boosting e presenza-only. Nessuna prova di accuratezza micologica.",
+        "correction": "Il 14 gennaio 2026 è la data dell'ultimo test del tutorial, non l'anno originario di pubblicazione verificato. Pseudo-assenze e background non equivalgono a uscite concluse senza ritrovamento; l'esempio non calibra previsioni italiane."
+      }
+    },
+    {
+      "number": 12,
+      "provided_title": "Topographic Wetness Index as a Proxy for Soil Moisture in a Hillslope Catena: Flow Algorithms and Map Generalization",
+      "assessment": "Nuovo, supporto idrologico",
+      "role_for_fronda": "TWI candidato, non misura",
+      "review": {
+        "number": 12,
+        "requestedtitle": "Topographic Wetness Index as a Proxy for Soil Moisture in a Hillslope Catena: Flow Algorithms and Map Generalization",
+        "verifiedcitation": "Winzeler, H.E., Owens, P.R., Read, Q.D., Libohova, Z., Ashworth, A.J. & Sauer, T.J. (2022). Topographic Wetness Index as a Proxy for Soil Moisture in a Hillslope Catena: Flow Algorithms and Map Generalization. Land, 11(11), 2018. https://doi.org/10.3390/land11112018",
+        "authors": [
+          "Hans E. Winzeler",
+          "Phillip R. Owens",
+          "Quentin D. Read",
+          "Zamir Libohova",
+          "Amanda J. Ashworth",
+          "Thomas J. Sauer"
+        ],
+        "year": 2022,
+        "doi": "10.3390/land11112018",
+        "sourceurl": "https://www.mdpi.com/2073-445X/11/11/2018",
+        "additional_sources": [
+          "https://www.ars.usda.gov/research/publications/publication/?seqNo115=399289",
+          "https://agdatacommons.nal.usda.gov/articles/dataset/Data_and_code_from_Topographic_wetness_index_as_a_proxy_for_soil_moisture_in_a_hillslope_catena_flow_algorithms_and_map_generalization/24668328"
+        ],
+        "document_type": "Articolo scientifico originale di idrologia/topografia.",
+        "access_status": "Citazione, abstract e descrizione metodologica verificati nelle fonti primarie editore e USDA. Dati/codice segnalati dal deposito ufficiale USDA, DOI 10.15482/USDA.ADC/1528088; non scaricati per questa verifica.",
+        "overlap": {
+          "initial19": false,
+          "additional7": false,
+          "status": "Nessun duplicato bibliografico nei due registri. Non confondere con lavori TWI di Riihimäki del 2021."
+        },
+        "relevance": "Indiretta ma utile alla scelta dei predittori: confronto tra TWI e umidità volumetrica misurata per cinque anni in 42 punti di una catena agroforestale in Arkansas.",
+        "correction": "Il TWI è un indice derivato dalla topografia e un proxy condizionato da DEM, algoritmo di flusso e generalizzazione; non è una misura di umidità attuale del suolo. Il sito è agroforestale, non una dimostrazione generale sui pendii forestali italiani. Il paper non stabilisce soglie di fruttificazione fungina."
+      }
+    },
+    {
+      "number": 13,
+      "provided_title": "Optimized MaxEnt Model Predicts Future Suitable Habitats for Chinese Caterpillar Fungus Under Climate Change",
+      "assessment": "SDM fungo diverso",
+      "role_for_fronda": "Metodo periferico",
+      "review": {
+        "number": 13,
+        "requestedtitle": "Optimized MaxEnt Model Predicts Future Suitable Habitats for Chinese Caterpillar Fungus Under Climate Change",
+        "verifiedcitation": "Peng, Y.; Zhuo, Z.; Qian, Q.; Xu, D. (2025). Optimized MaxEnt Model Predicts Future Suitable Habitats for Chinese Caterpillar Fungus Under Climate Change. Agriculture, 15(11), 1144. https://doi.org/10.3390/agriculture15111144",
+        "authors": [
+          "Yaqin Peng",
+          "Zhihang Zhuo",
+          "Qianqian Qian",
+          "Danping Xu"
+        ],
+        "year": 2025,
+        "publication_date": "2025-05-26",
+        "doi": "10.3390/agriculture15111144",
+        "sourceurl": "https://www.mdpi.com/2077-0472/15/11/1144",
+        "additional_sources": [
+          "https://api.crossref.org/works/10.3390/agriculture15111144"
+        ],
+        "access_status": "Articolo open access CC-BY-4.0 secondo Crossref. Citazione e abstract verificati nella fonte ufficiale indicizzata e nel deposito Crossref. Apertura diretta web: 429; lettura URL Desktop Commander: 403. Nessuna pretesa di lettura integrale.",
+        "verified_content": "MaxEnt ottimizzato con ENMeval per habitat attuale e futuro del Chinese Caterpillar Fungus in Cina; abstract con altitudine, bioclima, pendenza, pH e influenza umana fra i predittori. Proiezioni fino agli anni 2090 e spostamenti delle aree idonee.",
+        "relevance": "Periferico per Fronda: esempio di tuning e combinazione clima/suolo/topografia; sistema biologico e geografico diverso dai macrofunghi commestibili italiani. È SDM di habitat e scenari climatici, non modello dinamico giornaliero di crescita o probabilità di ritrovamento.",
+        "correction": "Titolo esatto e DOI non ambiguo. Non confondere 'future suitable habitats' con previsione meteo a pochi giorni. Le variazioni percentuali dell'area altamente idonea non sono percentuali di accuratezza né probabilità di raccolta.",
+        "overlap": {
+          "initial19": false,
+          "additional7": false,
+          "status": "Nessun duplicato bibliografico nei due registri. Studi distinti anche se usano MaxEnt come metodo."
+        },
+        "confidence": "high_for_identity_and_abstract; no_detailed_split_or_code_audit",
+        "document_type": "Articolo scientifico originale."
+      }
+    },
+    {
+      "number": 14,
+      "provided_title": "Maxent modeling for predicting the potential distribution of Sanghuang, an important group of medicinal fungi in China",
+      "assessment": "SDM funghi medicinali",
+      "role_for_fronda": "Metodo periferico",
+      "review": {
+        "number": 14,
+        "requestedtitle": "Maxent modeling for predicting the potential distribution of Sanghuang, an important group of medicinal fungi in China",
+        "verifiedcitation": "Yuan, H.-S.; Wei, Y.-L.; Wang, X.-G. (2015). Maxent modeling for predicting the potential distribution of Sanghuang, an important group of medicinal fungi in China. Fungal Ecology, 17, 140–145. https://doi.org/10.1016/j.funeco.2015.06.001",
+        "authors": [
+          "Hai-Sheng Yuan",
+          "Yu-Lian Wei",
+          "Xu-Gao Wang"
+        ],
+        "year": 2015,
+        "publication_date": "2015-10",
+        "doi": "10.1016/j.funeco.2015.06.001",
+        "sourceurl": "https://www.sciencedirect.com/science/article/abs/pii/S1754504815000793",
+        "additional_sources": [
+          "https://api.crossref.org/works/10.1016/j.funeco.2015.06.001"
+        ],
+        "access_status": "Abstract e metadati della pagina ufficiale Elsevier letti nei risultati indicizzati, identità confermata da Crossref. Apertura diretta ScienceDirect:403. Fulltext non acquisito, nessun aggiramento di accesso; licenza aperta non verificata.",
+        "verified_content": "Modelli Maxent per tre taxa denominati Phellinus baumii, P. igniarius e P. vaninii, con 89 presenze, 19 variabili bioclimatiche WorldClim e altitudine. Target: distribuzione geografica potenziale di funghi medicinali cinesi.",
+        "relevance": "Periferico: precedente metodologico per SDM presence-only, non evidenza diretta su fruttificazione giornaliera, biomassa o probabilità di ritrovare funghi commestibili in Italia. AUC riportati nell'abstract non trasferibili al modello Fronda.",
+        "correction": "Titolo esatto e riferimento non ambiguo. Anno 2015, non il diverso studio del 2022 'Modeling current geographic distribution and future range shifts of Sanghuangporus under multiple climate change scenarios in China' (DOI 10.3389/fmicb.2022.1064451). Conservare i nomi tassonomici usati nell'articolo quando lo si cita.",
+        "overlap": {
+          "initial19": false,
+          "additional7": false,
+          "status": "Nessun duplicato bibliografico nei due registri. Studi distinti anche se usano MaxEnt come metodo."
+        },
+        "confidence": "high_for_identity_and_abstract; fulltext_not_read",
+        "document_type": "Articolo scientifico originale."
+      }
+    },
+    {
+      "number": 15,
+      "provided_title": "Predicted Effects of Climate Change on Future Distributions of Ectomycorrhizal Fungi",
+      "assessment": "Nuovo, prioritario",
+      "role_for_fronda": "Ospiti, suolo e clima",
+      "review": {
+        "original_number": 15,
+        "supplied_title": "Predicted Effects of Climate Change on Future Distributions of Ectomycorrhizal Fungi",
+        "verified_title": "Predicted Effects of Climate Change on Future Distributions of Ectomycorrhizal Fungi",
+        "bibliographic_status": "Verificato sul testo editoriale: Ecology and Evolution 15(12):e72743, prima pubblicazione 17 dicembre 2025.",
+        "authors": [
+          "Muyao Qi",
+          "Martin I. Bidartondo",
+          "Laura M. Suz",
+          "C. David L. Orme",
+          "Ricardo Arraiano-Castilho",
+          "Carolina Tovar"
+        ],
+        "year": 2025,
+        "first_online": "2025-12-17",
+        "doi": "10.1002/ece3.72743",
+        "sourceurl": "https://onlinelibrary.wiley.com/doi/full/10.1002/ece3.72743",
+        "fulltext": {
+          "status": "aperto e letto",
+          "version": "HTML editoriale Open Access",
+          "sections_read": [
+            "Abstract",
+            "Methods §§2.1–2.5",
+            "Results §§3.1–3.4",
+            "Discussion §§4.1–4.5",
+            "Conclusion",
+            "Data Availability"
+          ],
+          "local_file_acquired": false,
+          "supplements": "DOCX elencato nel testo; non acquisito né letto.",
+          "license": "Open Access verificato; esatta licenza dell'articolo non esposta nel testo accessibile."
+        },
+        "overlap": {
+          "studies_json": false,
+          "access_manifest_json": false
+        },
+        "relevance": "Alta per il livello habitat e per materiale riproducibile; aggiunta prioritaria, distinta dalla previsione giornaliera.",
+        "verified_content": "Combina presenze di radici e sporocarpi: 66 specie iniziali, 60 con modelli finali validi. Europa, griglia 2,5 minuti; clima, pH, azoto, carbonio organico e cinque alberi ospiti. Ensemble GLM/GBM/RF/MaxEnt; 10.000 pseudoassenze, CV cinque fold 80/20. L'inclusione degli ospiti migliora le prestazioni riportate.",
+        "support_geography": {
+          "extent_wgs84": {
+            "west": -11,
+            "east": 41,
+            "south": 35,
+            "north": 72
+          },
+          "resolution": "2,5 minuti d'arco, circa 5 km",
+          "observations": "Presenze GBIF/PlutoF e radici da 136 plot ICP Forests in 20 paesi europei",
+          "hosts": [
+            "Fagus sylvatica",
+            "Quercus robur",
+            "Quercus petraea",
+            "Picea abies",
+            "Pinus sylvestris"
+          ]
+        },
+        "validation": {
+          "folds": 5,
+          "train_fraction": 0.8,
+          "test_fraction": 0.2,
+          "blocked_spatial_or_environmental": "Non descritto un blocco spaziale o ambientale nel metodo letto; non trattare la CV come validazione in regioni nuove.",
+          "model_retention": "TSS>=0,7 e ROC>=0,8 per i modelli individuali; ensemble TSS>=0,7."
+        },
+        "rettifica": "Proietta idoneità distributiva pluridecennale, non sporocarpi disponibili durante un'uscita. Ospiti incompleti per l'Italia mediterranea; un solo GCM e suolo futuro statico. Le perdite di areale sono scenari dipendenti dal modello, non declini osservati.",
+        "implication": "Importare l'impostazione ospite-suolo-clima come ipotesi del livello habitat, confrontandola con CV spaziale/ambientale e più ospiti italiani; non convertire l'idoneità in probabilità di raccolta.",
+        "data_code": {
+          "doi": "10.5061/dryad.bcc2fqzpp",
+          "url": "https://datadryad.org/dataset/doi:10.5061/dryad.bcc2fqzpp",
+          "version_date": "2026-05-05",
+          "access_status": "Pagina, elenco file e README effettivamente aperti. Manifest verificato, archivi non scaricati, codice non eseguito.",
+          "total_size": "144,80 MB secondo manifest",
+          "listed_files": [
+            "Fungal_traits.csv",
+            "README.md",
+            "SDM_of_ECM_fungi.zip",
+            "SDM_of_hosts.zip",
+            "nitrogen.tif",
+            "ocs.tif",
+            "ph.tif",
+            "Current_Bioclim.zip",
+            "2050_SSP126_Bioclim.zip",
+            "2050_SSP370_Bioclim.zip",
+            "2050_SSP585_Bioclim.zip",
+            "2080_SSP126_Bioclim.zip",
+            "2080_SSP370_Bioclim.zip",
+            "2080_SSP585_Bioclim.zip"
+          ],
+          "scripts_status": "Il README identifica script R per funghi e ospiti; contenuti degli ZIP non letti.",
+          "license": "Dataset pubblicato sotto CC0 secondo i termini Dryad, sezione 1.1; pagina termini effettivamente letta. I diritti del sito e dell'articolo sono distinti.",
+          "license_source": "https://datadryad.org/terms",
+          "limitation": "Il README esclude dal deposito le presenze degli alberi per restrizioni di licenza GBIF e indica di reperirle alla fonte. Non affermare che il deposito contenga tutti i record grezzi necessari.",
+          "local_files_acquired": []
+        },
+        "recommended_action": "Aggiungere al corpus habitat e manifest accessi, mantenendo distinto lo stato di accesso al manifest dall'acquisizione degli archivi."
+      }
+    },
+    {
+      "number": 16,
+      "provided_title": "Maxent Predictive Species Distribution Models and Model Accuracy Assessment for Two Species of Psilochalcis Kieffer...",
+      "assessment": "Studio su insetti",
+      "role_for_fronda": "Solo analogia metodologica",
+      "review": {
+        "number": 16,
+        "requestedtitle": "Maxent Predictive Species Distribution Models and Model Accuracy Assessment for Two Species of Psilochalcis Kieffer...",
+        "verifiedcitation": "Petersen, M.J., Ortiz Cano, H.G., Gomez, T., Johnson, R.L., Anderson, V.J. & Petersen, S.L. (2024). Maxent Predictive Species Distribution Models and Model Accuracy Assessment for Two Species of Psilochalcis Kieffer (Hymenoptera: Chalcididae) Occurring in the Eastern Great Basin of Utah, USA. Diversity, 16(6), 348. https://doi.org/10.3390/d16060348",
+        "authors": [
+          "Mark J. Petersen",
+          "Hector G. Ortiz Cano",
+          "Teresa Gomez",
+          "Robert L. Johnson",
+          "Val Jo Anderson",
+          "Steven L. Petersen"
+        ],
+        "year": 2024,
+        "doi": "10.3390/d16060348",
+        "sourceurl": "https://www.mdpi.com/1424-2818/16/6/348",
+        "additional_sources": [
+          "https://api.crossref.org/works/10.3390/d16060348"
+        ],
+        "document_type": "Articolo scientifico originale.",
+        "access_status": "Citazione completa e metadati verificati mediante deposito Crossref dell'editore; abstract della pagina ufficiale letto nei risultati indicizzati. Apertura diretta della pagina non riuscita; testo integrale non acquisito.",
+        "overlap": {
+          "initial19": false,
+          "additional7": false,
+          "status": "Nessun duplicato bibliografico nei due registri."
+        },
+        "relevance": "Soltanto metodologica: distribuzione di due vespe parassitoidi dello Utah, Psilochalcis minuta e P. quadratis; nessuna evidenza diretta micologica.",
+        "correction": "Esplicitare gli insetti come target. Il riferimento è valido, ma non deve comparire tra le prove empiriche sulla crescita dei funghi, sulle loro soglie ambientali o sulla precisione di Fronda."
+      }
+    },
+    {
+      "number": 17,
+      "provided_title": "Big data help to define climate change challenges for the typical Mediterranean species Cistus ladanifer L.",
+      "assessment": "Studio su Cistus",
+      "role_for_fronda": "Contesto degli ospiti",
+      "review": {
+        "original_number": 17,
+        "supplied_title": "Big data help to define climate change challenges for the typical Mediterranean species Cistus ladanifer L.",
+        "verified_title": "Big data help to define climate change challenges for the typical Mediterranean species Cistus ladanifer L.",
+        "bibliographic_status": "Verificato sul testo editoriale: Frontiers in Ecology and Evolution 11:1136224, 16 marzo 2023.",
+        "authors": [
+          "Alice Maria Almeida",
+          "Maria Margarida Ribeiro",
+          "Miguel R. Ferreira",
+          "Natália Roque",
+          "Celestino Quintela-Sabarís",
+          "Paulo Fernandez"
+        ],
+        "year": 2023,
+        "first_online": "2023-03-16",
+        "doi": "10.3389/fevo.2023.1136224",
+        "sourceurl": "https://www.frontiersin.org/journals/ecology-and-evolution/articles/10.3389/fevo.2023.1136224/full",
+        "fulltext": {
+          "status": "aperto e letto",
+          "version": "HTML editoriale Open Access",
+          "sections_read": [
+            "Abstract",
+            "Materials and methods §§2.2–2.5",
+            "Results §3.1",
+            "Data availability"
+          ],
+          "local_file_acquired": false,
+          "supplements": "Indicati nella pagina; non letti.",
+          "license": "Accesso OA verificato; licenza esatta non controllata."
+        },
+        "overlap": {
+          "studies_json": false,
+          "access_manifest_json": false
+        },
+        "relevance": "Bassa per Fronda Italia: distribuzione di un arbusto soprattutto iberico/nordafricano, non studio micologico o di fruttificazione.",
+        "verified_content": "Modella 2.833 presenze di Cistus ladanifer con sei bioclimatiche e quattro algoritmi; proiezioni paleoclimatiche e 2050/2070. Elimina le osservazioni delle isole mediterranee e riduce le presenze a una per cella. Usa pseudoassenze casuali e ripartizioni train/test senza blocco spaziale descritto.",
+        "rettifica": "Alta risoluzione dei layer non prova accuratezza della previsione micologica locale. Il testo chiama la procedura cinque fold ma indica anche 75/25: evitare di presentarla come protocollo spaziale rigoroso. Nessuna probabilità di funghi ricavabile da questo articolo.",
+        "implication": "Può illustrare un SDM dell'ospite; non è una fonte essenziale per il modello dei porcini italiani.",
+        "data_code": "Disponibilità dichiarata in articolo/supplementi; nessun archivio di codice separato verificato né download eseguito.",
+        "recommended_action": "Contesto facoltativo; non aggiungere tra i principali studi micologici applicabili."
+      }
+    },
+    {
+      "number": 18,
+      "provided_title": "The value of terrain pattern, high-resolution data and ensemble modeling for landslide susceptibility prediction",
+      "assessment": "Studio su frane",
+      "role_for_fronda": "Solo analogia metodologica",
+      "review": {
+        "number": 18,
+        "requestedtitle": "The value of terrain pattern, high-resolution data and ensemble modeling for landslide susceptibility prediction",
+        "verifiedcitation": "Liu, J., Shen, C., Pei, T., Kifer, D. & Lawson, K. (2025). The Value of Terrain Pattern, High-Resolution Data and Ensemble Modeling for Landslide Susceptibility Prediction. Journal of Geophysical Research: Machine Learning and Computation, 2(3), e2024JH000460. https://doi.org/10.1029/2024JH000460",
+        "authors": [
+          "Jiangtao Liu",
+          "Chaopeng Shen",
+          "Te Pei",
+          "Daniel Kifer",
+          "Kathryn Lawson"
+        ],
+        "year": 2025,
+        "doi": "10.1029/2024JH000460",
+        "sourceurl": "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2024JH000460",
+        "additional_sources": [
+          "https://pure.psu.edu/en/publications/the-value-of-terrain-pattern-high-resolution-data-and-ensemble-mo/"
+        ],
+        "document_type": "Articolo scientifico originale su suscettibilità alle frane.",
+        "access_status": "Pagina ufficiale fulltext accessibile e sezioni pertinenti consultate; citazione e autori confermati dal catalogo istituzionale Penn State. Non svolto audit riproduttivo di dati/codice.",
+        "overlap": {
+          "initial19": false,
+          "additional7": false,
+          "status": "Nessun duplicato bibliografico nei due registri."
+        },
+        "relevance": "Soltanto analogia metodologica per dati di terreno, CNN ed ensemble geospaziali; il fenomeno studiato sono frane.",
+        "correction": "Il lavoro editoriale è del 2025 (25 settembre), pur contenendo 2024 nel DOI. Nessun risultato di accuratezza o rilevanza dei predittori di questo studio si trasferisce come prova alla previsione micologica."
+      }
+    },
+    {
+      "number": 19,
+      "provided_title": "(PDF) Ecosystems supporting Tuber magnatum Pico production in Serbia experience specific soil environment seasonality...",
+      "assessment": "Studio sui tartufi",
+      "role_for_fronda": "Futuro modulo separato",
+      "review": {
+        "original_number": 19,
+        "supplied_title": "(PDF) Ecosystems supporting Tuber magnatum Pico production in Serbia experience specific soil environment seasonality...",
+        "bibliographic_id": "marjanovic_2015_tuber_seasonality",
+        "status": "identified_research_article",
+        "citation": {
+          "title": "Ecosystems supporting Tuber magnatum Pico production in Serbia experience specific soil environment seasonality that may facilitate truffle lifecycle completion",
+          "authors": [
+            "Ž. Marjanović",
+            "A. Glišić",
+            "D. Mutavdžić",
+            "E. Saljnikov",
+            "G. Bragato"
+          ],
+          "year": 2015,
+          "journal": "Applied Soil Ecology",
+          "volume": "95",
+          "pages": "179–190",
+          "doi": "10.1016/j.apsoil.2015.05.007"
+        },
+        "verified_links": [
+          {
+            "url": "https://www.sciencedirect.com/science/article/pii/S0929139315300111",
+            "kind": "publisher_record_indexed",
+            "access": "abstract_and_metadata_indexed; direct_open_403"
+          },
+          {
+            "url": "https://www.researchgate.net/publication/280546750_Ecosystems_supporting_Tuber_magnatum_Pico_production_in_Serbia_experience_specific_soil_environment_seasonality_that_may_facilitate_truffle_lifecycle_completion",
+            "kind": "author_paper_record",
+            "access": "metadata_and_abstract_indexed"
+          },
+          {
+            "url": "https://www.imsi.bg.ac.rs/en/researchers/dragosav-mutavdzic/",
+            "kind": "author_institution_record",
+            "access": "indexed_bibliographic_confirmation"
+          }
+        ],
+        "existing_corpus_match": null,
+        "related_existing_ids": [
+          "karavani_2018",
+          "li_2025_soil_sdm"
+        ],
+        "relevance": {
+          "category": "future_separate_hypogeous_truffle_module",
+          "priority": "high_for_future_Tuber_magnatum_module",
+          "direct_for_current_epigeous_mushroom_model": false
+        },
+        "correction": "Studio reale e pertinente a stagionalità edafica di Tuber magnatum in habitat serbi. Non dimostra una legge causale generale per tutti i funghi né soglie trasferibili ai porcini italiani. Nutrienti, acqua e aerazione vanno trattati come ipotesi specifiche del tartufo e misurati con profondità/protocollo espliciti. La formulazione del titolo è prudente: possibile facilitazione del ciclo, non dimostrazione che le fluttuazioni lo completino.",
+        "action": "Aggiungere al registro come evidenza per un futuro modulo tartufi separato; nessun coefficiente aggiunto al modello corrente."
+      }
+    },
+    {
+      "number": 20,
+      "provided_title": "Soil Characteristics for Tuber magnatum",
+      "assessment": "Capitolo del libro 21",
+      "role_for_fronda": "Non prova indipendente",
+      "review": {
+        "original_number": 20,
+        "supplied_title": "Soil Characteristics for Tuber magnatum",
+        "bibliographic_id": "bragato_marjanovic_2016_tuber_soil_chapter",
+        "status": "identified_book_chapter",
+        "citation": {
+          "title": "Soil Characteristics for Tuber magnatum",
+          "authors": [
+            "Gilberto Bragato",
+            "Žaklina S. Marjanović"
+          ],
+          "year": 2016,
+          "container_title": "True Truffle (Tuber spp.) in the World: Soil Ecology, Systematics and Biochemistry",
+          "series": "Soil Biology",
+          "volume": "47",
+          "pages": "191–209",
+          "doi": "10.1007/978-3-319-31436-5_12"
+        },
+        "verified_links": [
+          {
+            "url": "https://link.springer.com/chapter/10.1007/978-3-319-31436-5_12",
+            "kind": "publisher_chapter",
+            "access": "metadata_and_abstract_read; fulltext_subscription_preview_only"
+          },
+          {
+            "url": "https://link.springer.com/book/10.1007/978-3-319-31436-5",
+            "kind": "publisher_container_book",
+            "access": "table_of_contents_and_metadata_read"
+          }
+        ],
+        "existing_corpus_match": null,
+        "related_existing_ids": [
+          "karavani_2018",
+          "li_2025_soil_sdm"
+        ],
+        "relevance": {
+          "category": "future_separate_Tuber_magnatum_habitat_module",
+          "priority": "high_for_future_Tuber_magnatum_module",
+          "direct_for_current_epigeous_mushroom_model": false
+        },
+        "correction": "È un capitolo scientifico di sintesi, non un nuovo esperimento o un articolo autonomo. Fa parte della voce 21: non contarli come due conferme indipendenti. Le proprietà del suolo di T. magnatum non si generalizzano a tutti i macrofunghi; idoneità stazionaria non equivale a probabilità giornaliera di ritrovamento.",
+        "action": "Registrare il capitolo con DOI specifico e relazione part_of alla voce 21; usarlo per progettare dati su porosità, drenaggio e regimi idrici del futuro modulo tartufi.",
+        "relationships": [
+          {
+            "type": "part_of",
+            "original_number": 21
+          },
+          {
+            "type": "cites_overlapping_subject_evidence",
+            "original_number": 19
+          }
+        ]
+      }
+    },
+    {
+      "number": 21,
+      "provided_title": "True Truffle (Tuber spp.) in the World: Soil Ecology, Systematics and Biochemistry",
+      "assessment": "Libro sui tartufi",
+      "role_for_fronda": "Contesto specialistico",
+      "review": {
+        "original_number": 21,
+        "supplied_title": "True Truffle (Tuber spp.) in the World: Soil Ecology, Systematics and Biochemistry",
+        "bibliographic_id": "zambonelli_iotti_murat_2016_true_truffle_book",
+        "status": "identified_edited_reference_book",
+        "citation": {
+          "title": "True Truffle (Tuber spp.) in the World: Soil Ecology, Systematics and Biochemistry",
+          "editors": [
+            "Alessandra Zambonelli",
+            "Mirco Iotti",
+            "Claude Murat"
+          ],
+          "year": 2016,
+          "publisher": "Springer Cham",
+          "series": "Soil Biology",
+          "volume": "47",
+          "pages": "XIV, 436",
+          "doi": "10.1007/978-3-319-31436-5",
+          "ebook_isbn": "978-3-319-31436-5"
+        },
+        "verified_links": [
+          {
+            "url": "https://link.springer.com/book/10.1007/978-3-319-31436-5",
+            "kind": "publisher_book",
+            "access": "metadata_table_of_contents_and_description_read; complete_book_not_obtained"
+          }
+        ],
+        "existing_corpus_match": null,
+        "related_existing_ids": [],
+        "relevance": {
+          "category": "truffle_reference_background",
+          "priority": "medium_for_future_truffle_module",
+          "direct_for_current_epigeous_mushroom_model": false
+        },
+        "correction": "È un volume collettaneo di riferimento, non una singola revisione con un unico disegno sperimentale. Citare il capitolo pertinente quando si sostiene una proprietà specifica. Include la voce 20, da non duplicare nel conteggio delle prove.",
+        "action": "Tenere come fonte di contesto per Tuber; utilizzare capitoli e studi primari per le singole ipotesi."
+      }
+    },
+    {
+      "number": 22,
+      "provided_title": "What is the best method for preserving the genuine black truffle (Tuber melanosporum) aroma? An olfactometric and sensory approach",
+      "assessment": "Conservazione aroma",
+      "role_for_fronda": "Fuori dal forecasting",
+      "review": {
+        "original_number": 22,
+        "supplied_title": "What is the best method for preserving the genuine black truffle (Tuber melanosporum) aroma? An olfactometric and sensory approach",
+        "bibliographic_id": "campo_2017_black_truffle_aroma_preservation",
+        "status": "identified_research_article_outside_forecast_target",
+        "citation": {
+          "title": "What is the best method for preserving the genuine black truffle (Tuber melanosporum) aroma? An olfactometric and sensory approach",
+          "authors": [
+            "Eva Campo",
+            "Pedro Marco",
+            "Rosa Oria",
+            "Domingo Blanco",
+            "María E. Venturini"
+          ],
+          "year": 2017,
+          "journal": "LWT - Food Science and Technology",
+          "volume": "80",
+          "pages": "84–91",
+          "doi": "10.1016/j.lwt.2017.02.009"
+        },
+        "verified_links": [
+          {
+            "url": "https://www.sciencedirect.com/science/article/pii/S0023643817300981",
+            "kind": "publisher_record_indexed",
+            "access": "metadata_and_abstract_indexed"
+          },
+          {
+            "url": "https://zaguan.unizar.es/record/75596",
+            "kind": "institutional_repository",
+            "access": "indexed_metadata_DOI_confirmed; direct_open_intermittent"
+          },
+          {
+            "url": "https://zaguan.unizar.es/record/75596/files/texto_completo.pdf?version=1",
+            "kind": "institutional_fulltext_location",
+            "access": "fulltext_location_indexed; paper_not_read_in_full_for_this_comparison"
+          }
+        ],
+        "existing_corpus_match": null,
+        "related_existing_ids": [],
+        "relevance": {
+          "category": "postharvest_food_aroma",
+          "priority": "exclude_from_growth_and_encounter_model",
+          "direct_for_current_epigeous_mushroom_model": false
+        },
+        "correction": "Studio reale di conservazione dopo raccolta. Non contiene evidenza utile a stimare dove/quando fruttifica T. melanosporum o la probabilità di trovarlo. Il tipo di fungo non basta a renderlo pertinente al forecasting.",
+        "action": "Escludere dal corpus del modello; eventualmente catalogare separatamente come conservazione/aroma."
+      }
+    },
+    {
+      "number": 23,
+      "provided_title": "Morchella esculenta (Common Morel)",
+      "assessment": "Titolo non identificato",
+      "role_for_fronda": "Serve URL o autore",
+      "review": {
+        "original_number": 23,
+        "supplied_title": "Morchella esculenta (Common Morel)",
+        "bibliographic_id": null,
+        "status": "unidentified_generic_species_entry",
+        "citation": null,
+        "verified_links": [],
+        "existing_corpus_match": null,
+        "related_existing_ids": [],
+        "relevance": {
+          "category": "possible_species_background_only",
+          "priority": "await_original_link",
+          "direct_for_current_epigeous_mushroom_model": "not_assessable_without_source"
+        },
+        "correction": "Il titolo coincide con il nome di una specie/scheda diffusa in molte fonti, non identifica uno studio. Ricerca per titolo ha restituito più schede differenti. Nessun autore, anno, DOI o pagina può essere attribuito con sicurezza dal solo elenco. Anche il concetto tassonomico di M. esculenta va verificato nella fonte e nella regione.",
+        "action": "Lasciare non identificato e richiedere URL o PDF originale del notebook; non trasformare l'abstract fornito in evidenza sperimentale."
+      }
+    },
+    {
+      "number": 24,
+      "provided_title": "Effect of culture parameters on the production of the edible mushroom Grifola frondosa (maitake) in tropical weathers",
+      "assessment": "Coltivazione maitake",
+      "role_for_fronda": "Non taratura dei selvatici",
+      "review": {
+        "original_number": 24,
+        "supplied_title": "Effect of culture parameters on the production of the edible mushroom Grifola frondosa (maitake) in tropical weathers",
+        "bibliographic_id": "barreto_lopez_levin_2008_maitake_culture",
+        "status": "identified_research_article_cultivation",
+        "citation": {
+          "title": "Effect of culture parameters on the production of the edible mushroom Grifola frondosa (maitake) in tropical weathers",
+          "authors": [
+            "S. M. Barreto",
+            "M. V. López",
+            "L. Levin"
+          ],
+          "year": 2008,
+          "journal": "World Journal of Microbiology and Biotechnology",
+          "volume": "24",
+          "issue": "8",
+          "pages": "1361–1366",
+          "doi": "10.1007/s11274-007-9616-z"
+        },
+        "verified_links": [
+          {
+            "url": "https://bibliotecadigital.exactas.uba.ar/collection/paper/document/paper_09593993_v24_n8_p1361_Barreto",
+            "kind": "author_institutional_record",
+            "access": "citation_DOI_and_abstract_read"
+          }
+        ],
+        "existing_corpus_match": null,
+        "related_existing_ids": [],
+        "relevance": {
+          "category": "controlled_maitake_cultivation",
+          "priority": "exclude_from_wild_forecast_parameters",
+          "direct_for_current_epigeous_mushroom_model": false
+        },
+        "correction": "Esperimento su substrati artificiali per coltivazione commerciale di G. frondosa in Colombia. Il trattamento di freddo e le temperature del protocollo non sono soglie universali per funghi selvatici italiani, porcini o tutte le fasi miceliari. Non usarlo per giustificare il bonus shock termico del modello corrente.",
+        "action": "Registrare solo come coltivazione/fisiologia di quella specie e protocollo; nessun trasferimento numerico ai selvatici."
+      }
+    },
+    {
+      "number": 25,
+      "provided_title": "How to Grow Artist's Conk (Ganoderma applanatum)",
+      "assessment": "Guida non identificata",
+      "role_for_fronda": "Serve fonte originale",
+      "review": {
+        "original_number": 25,
+        "supplied_title": "How to Grow Artist's Conk (Ganoderma applanatum)",
+        "bibliographic_id": null,
+        "status": "unidentified_growing_guide",
+        "citation": null,
+        "verified_links": [],
+        "existing_corpus_match": null,
+        "related_existing_ids": [],
+        "relevance": {
+          "category": "possible_cultivation_guide",
+          "priority": "await_original_link; exclude_from_growth_coefficients",
+          "direct_for_current_epigeous_mushroom_model": false
+        },
+        "correction": "Non identificato in modo univoco il titolo esatto. Esistono numerose guide commerciali su Ganoderma applanatum, ma non sono state sostituite alla fonte dell'utente. Senza URL/autore non è verificabile se sia una guida, un testo tecnico o altro. Nessuna soglia di coltivazione può essere trasferita al modello dei selvatici.",
+        "action": "Conservare il titolo non identificato; occorre il link originale del notebook."
+      }
+    },
+    {
+      "number": 26,
+      "provided_title": "Shiitake Cultivation",
+      "assessment": "Titolo non identificato",
+      "role_for_fronda": "Coltivazione, fonte incerta",
+      "review": {
+        "original_number": 26,
+        "supplied_title": "Shiitake Cultivation",
+        "bibliographic_id": null,
+        "status": "unidentified_generic_cultivation_title",
+        "citation": null,
+        "verified_links": [],
+        "existing_corpus_match": null,
+        "related_existing_ids": [],
+        "relevance": {
+          "category": "cultivation_background",
+          "priority": "await_original_link; exclude_from_wild_growth_parameters",
+          "direct_for_current_epigeous_mushroom_model": false
+        },
+        "correction": "Titolo troppo generico: guide, manuali e articoli diversi trattano la coltivazione dello shiitake. Non è possibile attribuirgli autore/anno/DOI né assumere che sia uno specifico manuale noto. Incubazione su tronchi o blocchi, ammollo e induzione in coltivazione non convalidano soglie meteo per fruttificazione spontanea di altre specie.",
+        "action": "Richiedere il riferimento originale; mantenere separato dal corpus sul forecasting dei selvatici."
+      }
+    },
+    {
+      "number": 27,
+      "provided_title": "Mushrooms and Mushroom Cultivation",
+      "assessment": "Due versioni possibili",
+      "role_for_fronda": "Identità non risolta",
+      "review": {
+        "original_number": 27,
+        "supplied_title": "Mushrooms and Mushroom Cultivation",
+        "bibliographic_id": null,
+        "status": "ambiguous_same_title_multiple_reference_chapters",
+        "citation": null,
+        "verified_candidates": [
+          {
+            "bibliographic_id": "chang_2001_els_mushroom_cultivation",
+            "title": "Mushrooms and Mushroom Cultivation",
+            "authors": [
+              "Shu-Ting Chang"
+            ],
+            "year": 2001,
+            "container_title": "eLS",
+            "doi": "10.1038/npg.els.0000370"
+          },
+          {
+            "bibliographic_id": "chang_2007_vse_mushroom_cultivation",
+            "title": "Mushrooms and Mushroom Cultivation",
+            "authors": [
+              "Shu-Ting Chang"
+            ],
+            "year": 2007,
+            "container_title": "Van Nostrand's Scientific Encyclopedia",
+            "doi": "10.1002/9780471743989.vse10049"
+          }
+        ],
+        "verified_links": [
+          {
+            "url": "https://onlinelibrary.wiley.com/doi/abs/10.1038/npg.els.0000370",
+            "kind": "publisher_candidate_2001",
+            "access": "title_date_DOI_indexed; direct_fulltext_unavailable"
+          },
+          {
+            "url": "https://onlinelibrary.wiley.com/doi/10.1002/9780471743989.vse10049",
+            "kind": "publisher_candidate_2007",
+            "access": "title_date_DOI_indexed; direct_fulltext_unavailable"
+          },
+          {
+            "url": "https://www.researchgate.net/publication/229481331_Mushrooms_and_Mushroom_Cultivation",
+            "kind": "candidate_2001_metadata",
+            "access": "author_abstract_and_metadata_read; no_fulltext_available"
+          }
+        ],
+        "existing_corpus_match": null,
+        "related_existing_ids": [],
+        "relevance": {
+          "category": "general_cultivation_reference",
+          "priority": "resolve_version_before_citation; no_wild_parameters",
+          "direct_for_current_epigeous_mushroom_model": false
+        },
+        "correction": "Il titolo esiste realmente per almeno due capitoli di riferimento. Non è corretto sceglierne automaticamente uno per il notebook. È materiale enciclopedico generale sulla coltivazione, non un trattato sperimentale unico o una validazione della trovabilità. Specificare DOI/versione prima di citare.",
+        "action": "Mantenere entrambi come candidati verificati e l'identità del riferimento utente non risolta."
+      }
+    },
+    {
+      "number": 28,
+      "provided_title": "Optimal temperatures for each stage of mushroom growth",
+      "assessment": "Blog commerciale",
+      "role_for_fronda": "Non fonte di soglie",
+      "review": {
+        "original_number": 28,
+        "supplied_title": "Optimal temperatures for each stage of mushroom growth",
+        "bibliographic_id": "naturnext_2025_temperature_stages_blog",
+        "status": "identified_nonacademic_commercial_blog",
+        "citation": {
+          "title": "Optimal temperatures for each stage of mushroom growth",
+          "authors": null,
+          "site": "NaturNext",
+          "published_on": "2025-10-06",
+          "year": 2025,
+          "doi": null
+        },
+        "verified_links": [
+          {
+            "url": "https://www.naturnext.eu/en/optimal-temperatures-for-each-stage-of-mushroom-growth",
+            "kind": "exact_title_original_blog",
+            "access": "full_blog_read"
+          }
+        ],
+        "existing_corpus_match": null,
+        "related_existing_ids": [],
+        "relevance": {
+          "category": "commercial_cultivation_explainer",
+          "priority": "exclude_as_scientific_parameter_evidence",
+          "direct_for_current_epigeous_mushroom_model": false
+        },
+        "correction": "Non è uno studio né una metanalisi scientifica identificabile: è una pagina di blog commerciale. Dichiara tabelle derivanti da molti studi ma nella pagina letta non fornisce riferimenti bibliografici verificabili per ogni soglia. Distingue varie fasi e presenta soprattutto specie/protocolli coltivati. Non attribuire questi ottimi termici o shock a funghi selvatici, né trattare i numeri come soglie validate in Italia.",
+        "action": "Etichettare divulgazione commerciale e non importare coefficienti, soglie o bonus nel modello."
+      }
+    },
+    {
+      "number": 29,
+      "provided_title": "Hysteresis and mushrooms: humidity without expensive hygrometers",
+      "assessment": "Titolo non identificato",
+      "role_for_fronda": "Nessun parametro importato",
+      "review": {
+        "original_number": 29,
+        "supplied_title": "Hysteresis and mushrooms: humidity without expensive hygrometers",
+        "bibliographic_id": null,
+        "status": "unidentified_exact_title",
+        "citation": null,
+        "verified_links": [],
+        "existing_corpus_match": null,
+        "related_existing_ids": [],
+        "relevance": {
+          "category": "purported_cultivation_humidity_control",
+          "priority": "await_original_link; exclude_from_biological_coefficients",
+          "direct_for_current_epigeous_mushroom_model": false
+        },
+        "correction": "Il riferimento esatto non è stato identificato. Risultati su controller con isteresi non sono stati assunti come la fonte originale. Dal titolo non è possibile stabilire autore, anno o qualità dell'evidenza. Isteresi di un sistema di controllo, umidità relativa dell'aria e ritenzione idrica del suolo sono concetti diversi: non usarli come parametro fungino unico.",
+        "action": "Lasciare non identificato in attesa di URL/PDF; nessun autore o DOI assegnato."
+      }
+    },
+    {
+      "number": 30,
+      "provided_title": "Seasons and mushrooms: following the natural calendar",
+      "assessment": "Blog commerciale",
+      "role_for_fronda": "Non evidenza fenologica",
+      "review": {
+        "original_number": 30,
+        "supplied_title": "Seasons and mushrooms: following the natural calendar",
+        "bibliographic_id": "naturnext_2025_mushroom_calendar_blog",
+        "status": "identified_nonacademic_commercial_blog",
+        "citation": {
+          "title": "Seasons and mushrooms: following the natural calendar",
+          "authors": null,
+          "site": "NaturNext",
+          "published_on": "2025-10-08",
+          "year": 2025,
+          "doi": null
+        },
+        "verified_links": [
+          {
+            "url": "https://www.naturnext.eu/fr/saisons-et-champignons-suivez-le-calendrier-naturel",
+            "kind": "exact_English_heading_on_original_multilingual_blog",
+            "access": "full_blog_read; page_date_8_October_2025"
+          }
+        ],
+        "existing_corpus_match": null,
+        "related_existing_ids": [
+          "andrew_2018",
+          "kauserud_2012",
+          "boddy_2014"
+        ],
+        "relevance": {
+          "category": "seasonal_popular_calendar",
+          "priority": "do_not_use_as_quantitative_evidence",
+          "direct_for_current_epigeous_mushroom_model": false
+        },
+        "correction": "Il titolo corrisponde a un blog commerciale, non a uno studio fenologico. La pagina fornisce tabelle di rese italiane e spostamenti storici del calendario senza dataset/metodo/fonti puntuali verificabili. Non usare quelle quantità, soglie o trend per taratura nazionale. La fenologia stagionale è già coperta nel corpus da lavori scientifici identificati.",
+        "action": "Eventuale testo divulgativo da verificare, senza sostituire Andrew/Kauserud/Boddy e senza importare numeri."
+      }
+    },
+    {
+      "number": 31,
+      "provided_title": "Soil moisture patterns in a forested catchment: A hydropedological perspective",
+      "assessment": "Nuovo, supporto idrologico",
+      "role_for_fronda": "Suolo–topografia–acqua",
+      "review": {
+        "original_number": 31,
+        "supplied_title": "Soil moisture patterns in a forested catchment: A hydropedological perspective",
+        "bibliographic_id": "lin_2006_forest_catchment_hydropedology",
+        "status": "identified_research_article_methodological_support",
+        "citation": {
+          "title": "Soil moisture patterns in a forested catchment: A hydropedological perspective",
+          "authors": [
+            "H. S. Lin",
+            "W. Kogelmann",
+            "C. Walker",
+            "M. A. Bruns"
+          ],
+          "year": 2006,
+          "journal": "Geoderma",
+          "volume": "131",
+          "issue": "3–4",
+          "pages": "345–368",
+          "doi": "10.1016/j.geoderma.2005.03.013"
+        },
+        "verified_links": [
+          {
+            "url": "https://www.sciencedirect.com/science/article/pii/S0016706105000868",
+            "kind": "publisher_record",
+            "access": "indexed_abstract"
+          },
+          {
+            "url": "https://pure.psu.edu/en/publications/soil-moisture-patterns-in-a-forested-catchment-a-hydropedological/",
+            "kind": "author_institutional_record",
+            "access": "bibliography_and_abstract_read"
+          }
+        ],
+        "existing_corpus_match": null,
+        "related_existing_ids": [
+          "karavani_2018",
+          "li_2025_soil_sdm"
+        ],
+        "relevance": {
+          "category": "hydropedological_feature_and_sampling_design",
+          "priority": "high_methodological_addition",
+          "direct_for_current_epigeous_mushroom_model": "indirect_environmental_support_only"
+        },
+        "correction": "Studio idropedologico reale in un bacino forestale di 7,9 ha in Pennsylvania: supporta il ruolo congiunto di suolo, profondità e topografia nella variabilità idrica. Non misura fruttificazioni o probabilità di incontro, non calibra soglie per l'Italia e non dimostra che il solo TWI sostituisca l'umidità del suolo.",
+        "action": "Aggiungere come fondamento metodologico per dati su profondità del suolo, pendenza, posizione topografica e campionamento idrico; tenere separato dalle prove biologiche su funghi."
+      }
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "verified_at": "2026-10-16",
+  "study": {
+    "title": "Integrating Soil Properties Into Species Distribution Models Enhances Predictive Accuracy for Terricolous Macrofungi",
+    "authors": "Li, Rota, Peter, Gross, Scherrer, Baltensweiler",
+    "year": 2025,
+    "doi": "10.1111/jbi.15124",
+    "fulltext_url": "https://onlinelibrary.wiley.com/doi/full/10.1111/jbi.15124",
+    "official_repository_pdf": "https://www.dora.lib4ri.ch/wsl/islandora/object/wsl%3A39510/datastream/PDF/Li-2025-Integrating_soil_properties_into_species-%28published_version%29.pdf",
+    "access": "Fulltext HTML and official WSL/DORA published PDF accessed and substantive sections read. No paywall bypass. Supplementary DOCX returned HTTP403 in web and remote URL reader.",
+    "license": "CC-BY-4.0; confirmed through Crossref license metadata, also Attribution notice on first PDF page",
+    "license_evidence": "https://api.crossref.org/works/10.1111/jbi.15124"
+  },
+  "target": "Regional habitat suitability/distribution of 162 terricolous macrofungal species in Swiss forests; presence-background modelling, not daily fruiting or probability of finding mushrooms on an outing.",
+  "study_details": {
+    "area": "Swiss forests, approximately12000km2",
+    "taxa": "162species;51saprotrophic;111reported as ectomycorrhizal group, including109true ectomycorrhizal and2parasites",
+    "minimum_presences": 60,
+    "models": ["GLM", "MAXENT", "RandomForest"],
+    "predictors": "83candidates:23climate,29topography,31soil. Species/algorithm selection of2from each class, pairwise absolute correlation below0.7.",
+    "soil": "Depth, gravel, clay, sand, fine-earth density, pH, SOC. Six standard soil layers in source; analysis omitted100–200cm, retaining0–100cm.",
+    "climate": "Primarily1981–2010normals at250m; growing degree days1961–1990at25m. No operational weather forecast.",
+    "background": "1000random forest background points for GLM/MAXENT, at least1kmfrom presences; RF background downsampled to presence count. Background is not surveyed absence.",
+    "validation": "5-fold cross-validation repeated20times after parameter selection; same folds used with real and randomized soil predictors. No spatial or temporal blocking reported in methods. Scripts could not be downloaded, so exact fold code was not inspected.",
+    "external_red_list": "189randomly selected100x100mplots on regular Swiss grid, August–midNovember fruitbody surveys, presence-only. Used to compare slope distributions and evaluate slope-related sampling-bias explanation; not independent validation of predictive TSS, temporal forecasts, or Italian transfer. Raw Red List dataset explicitly not public.",
+    "reported_result": "With-soil TSS0.53±0.13overall; relative TSS change by species ranges−4%to31%. Soil contribution11%is variance in habitat suitability, not11percentagepoints of finding probability.",
+    "limitations": "Citizen-science sampling bias was not corrected; host information omitted; soil predictors limited. Model comparison intentionally constrained predictors, not best possible predictive model."
+  },
+  "public_data_code": {
+    "doi": "10.5061/dryad.9p8cz8wrv",
+    "url": "https://datadryad.org/dataset/doi:10.5061/dryad.9p8cz8wrv",
+    "metadata_api": "https://datadryad.org/api/v2/datasets/doi%3A10.5061%2Fdryad.9p8cz8wrv",
+    "files_api": "https://datadryad.org/api/v2/versions/355609/files",
+    "license": "CC0-1.0; exact dataset API license field verified",
+    "files": [
+      {"name": "Fungi_Environmental_Data.zip", "bytes":123175371, "id":3991171},
+      {"name": "Predictor_Discription.xlsx", "bytes":14936, "id":3991176},
+      {"name": "Predictor_GLM.csv", "bytes":48130, "id":3991173},
+      {"name": "Predictor_MAXENT.csv", "bytes":47597, "id":3991174},
+      {"name": "Predictor_RF.csv", "bytes":47646, "id":3991175},
+      {"name": "R_Scripts.zip", "bytes":45313, "id":3991172},
+      {"name": "README.md", "bytes":1683, "id":3991177}
+    ],
+    "documented_schema": "162CSVfiles, species name in filename, presence/background labels and corresponding environmental values; geographical coordinates removed. Predictor description workbook and selected-predictor tables provided. Exact column headers not verified because file bytes were inaccessible.",
+    "code_documentation": "R scripts documented for data cleaning, variable selection, calibration, analysis/visualisation.",
+    "access_status": "Landing page, embedded README and JSON metadata/file manifest read. Public download file_stream links returned403; API download endpoint returned401. No dataset or code bytes acquired. Do not claim ready local training dataset or fully reproduced study."
+  },
+  "envidat": {
+    "doi": "10.16904/envidat.484",
+    "url": "https://www.envidat.ch/metadata/soil-property-maps-for-the-swiss-forest",
+    "metadata_api": "https://www.envidat.ch/api/3/action/package_show?id=soil-property-maps-for-the-swiss-forest",
+    "access_status": "Public landing page and complete CKAN JSON metadata read;15resources listed as public. Raster bytes not downloaded.",
+    "license": "CC-BY-SA-4.0, explicitly verified in CKAN license_url",
+    "resolution": "25mGeoTIFFs for Swiss forest only, including90%prediction-interval uncertainty maps; not Italian coverage",
+    "source_profiles": 2071,
+    "schema": "SoilMaps_description.xlsx plus seven soil map archives(clay,density,depth,gravel,pH,sand,SOC) and seven uncertainty archives. Six standard depths0–5,5–15,15–30,30–60,60–100,100–200cm, except total depth."
+  },
+  "italy_cold_start_inference": {
+    "usable": "Supports including soil pH, SOC, texture, depth and uncertainty alongside climate, topography and host vegetation in a static habitat prior, using legally reusable Italian-coverage layers.",
+    "not_supported": "Swiss raster maps do not cover Italy. Coordinate-stripped CSVs cannot support independent spatial refolding. This study does not calibrate Italian daily fruiting, biomass, availability or search-success probability without Italian observations and effort.",
+    "validation_needed": "Nested spatial/temporal validation, Italian external field observations, explicit searched-but-not-found outings, effort/detection model and calibration. Keep static habitat suitability separate from daily fruiting and finding probability.",
+    "status": "Inference for Fronda architecture; not a finding validated in this paper."
+  }
+}

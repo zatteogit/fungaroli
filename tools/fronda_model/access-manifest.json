@@ -1,0 +1,997 @@
+{
+  "checked_at": "2026-10-16",
+  "timezone": "Europe/Rome",
+  "definition": "Accesso al testo effettivamente letto; non implica download binario o licenza dei dati.",
+  "priority_readings": {
+    "checked_at": "2026-10-16",
+    "cutoff": "2026-10-16",
+    "scope": "Accessi pubblici effettivi tramite strumento web; nessun paywall aggirato, pagamento o contatto con autori. Cinque articoli peer-reviewed e un precursore distinto.",
+    "fulltext_opened_count": 6,
+    "sources": [
+      {
+        "id": "morera_2021",
+        "priority": 1,
+        "title": "Performance of statistical and machine learning-based methods for predicting biogeographical patterns of fungal productivity in forest ecosystems",
+        "doi": "10.1186/s40663-021-00297-w",
+        "version": "Version of record, 2021-03-15",
+        "fulltext_url": "https://link.springer.com/article/10.1186/s40663-021-00297-w",
+        "access_status": "opened_fulltext_html",
+        "sections_read": [
+          "Methods",
+          "Results",
+          "Discussion",
+          "Conclusions",
+          "Availability of data and materials",
+          "Supplementary Information",
+          "Rights"
+        ],
+        "target": "Biomassa annua kg/ha; 98 parcelle, 1997–2019",
+        "features": [
+          "piogge agosto-ottobre",
+          "temperature",
+          "quota",
+          "pendenza",
+          "esposizione",
+          "area basimetrica"
+        ],
+        "models": [
+          "GLMM",
+          "GWR",
+          "RF",
+          "XGB",
+          "SVM",
+          "ANN"
+        ],
+        "validation": "10 fold: casuale, spaziale, ambientale; tuning con strategie corrispondenti; scelta finale con blocchi ambientali",
+        "data": "Non pubblici per vincoli di proprietà istituzionale; su richiesta",
+        "code": "Pacchetti/versioni documentati; repository pubblico non individuato",
+        "license": "CC BY 4.0 del paper; non del dataset",
+        "supplements": [
+          {
+            "url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1186%2Fs40663-021-00297-w/MediaObjects/40663_2021_297_MOESM1_ESM.docx",
+            "status": "link_resolved_content_type_unsupported_not_read",
+            "contents_described_by_article": "Coefficienti GLMM/GWR, iperparametri, variabili e mappe"
+          }
+        ],
+        "coefficients_recovered": false,
+        "limitation": "Produzione annua in pinete catalane; nessuna validazione prospettica italiana o probabilità personale."
+      },
+      {
+        "id": "olano_2020",
+        "priority": 2,
+        "title": "Primary productivity and climate control mushroom yields in Mediterranean pine forests",
+        "doi": "10.1016/j.agrformet.2020.108015",
+        "version": "PDF editoriale in press, accettato 2020-04-22; articolo finale 2020",
+        "fulltext_url": "https://interlace-hub.com/sites/default/files/NDVIFungiInpress1-s2.0-S0168192320301179-main.pdf",
+        "access_status": "opened_pdf_8_pages",
+        "sections_read": [
+          "2.1–2.3 Methods",
+          "3 Results",
+          "4 Discussion",
+          "5 Conclusions",
+          "Supplementary materials"
+        ],
+        "target": "Rese annue totali e due specie; serie 22/24 anni",
+        "features": [
+          "pioggia",
+          "temperature minime",
+          "ESA CCI suolo 0,25°",
+          "Landsat NDVI 30 m: estate meno inverno; lag 0/1/2 anni"
+        ],
+        "models": [
+          "lineari",
+          "trasformazione radice se necessaria",
+          "selezione BIC"
+        ],
+        "validation": "Selezione per correlazioni e BIC; fit/R² aggiustato; nessuno split indipendente descritto nel metodo letto",
+        "data": "Serie fungine non scaricabili nel PDF; nessun deposito verificato",
+        "code": "R/MuMIn citati; repository non individuato",
+        "license": "PDF indica copyright Elsevier; licenza di redistribuzione non accertata",
+        "supplements": [
+          {
+            "url": "https://doi.org/10.1016/j.agrformet.2020.108015",
+            "status": "mentioned_by_pdf_not_opened"
+          }
+        ],
+        "coefficients_recovered": false,
+        "limitation": "R² pubblicati non sono errore su luoghi nuovi."
+      },
+      {
+        "id": "sanchez_gonzalez_2019",
+        "priority": 3,
+        "title": "Yield models for predicting aboveground ectomycorrhizal fungal productivity in Pinus sylvestris and Pinus pinaster stands of northern Spain",
+        "doi": "10.1186/s40663-019-0211-1",
+        "version": "Version of record, 2019-12-16",
+        "fulltext_url": "https://link.springer.com/article/10.1186/s40663-019-0211-1",
+        "access_status": "opened_fulltext_html",
+        "sections_read": [
+          "Methods",
+          "Results",
+          "Discussion",
+          "Conclusions",
+          "Availability",
+          "Supplementary information",
+          "Rights"
+        ],
+        "target": "Presenza annuale e biomassa positiva; tre gruppi",
+        "features": [
+          "meteo mensile",
+          "area basimetrica",
+          "gruppi di siti"
+        ],
+        "models": [
+          "hurdle logistico + Gamma",
+          "effetti casuali anno"
+        ],
+        "validation": "Bootstrap 2000; AUC sugli stessi dati del fit, sovrastima ammessa dagli autori",
+        "data": "Non pubblici, proprietà istituzionale; su richiesta",
+        "code": "SAS NLMIXED documentato; repository non individuato",
+        "license": "CC BY 4.0 del paper",
+        "supplements": [
+          {
+            "url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1186%2Fs40663-019-0211-1/MediaObjects/40663_2019_211_MOESM1_ESM.docx",
+            "status": "link_resolved_content_type_unsupported_not_read",
+            "contents_described_by_article": "Sintesi meteo per gruppi di parcelle"
+          }
+        ],
+        "coefficients_recovered": false,
+        "limitation": "Architettura utile; AUC non dimostra generalizzazione."
+      },
+      {
+        "id": "salerni_2023_full",
+        "priority": 4,
+        "title": "Combined impact of forest management and climate change on Boletus edulis productivity: may mycosilviculture mitigate the effects of climate extremes?",
+        "doi": "10.6092/issn.2531-7342/16464",
+        "version": "Articolo finale, 2023; osservazioni 2000–2002",
+        "fulltext_url": "https://italianmycology.unibo.it/article/download/16464/15846",
+        "access_status": "opened_pdf_13_pages",
+        "sections_read": [
+          "Material and Methods",
+          "Results",
+          "Table 1",
+          "Table 2",
+          "Discussion"
+        ],
+        "target": "Conteggi giornalieri B. edulis s.s.",
+        "features": [
+          "36 parcelle Amiata",
+          "diradamento",
+          "lettiera",
+          "R20",
+          "TXx",
+          "TNn",
+          "lag 1–21 giorni"
+        ],
+        "models": [
+          "correlazioni Pearson"
+        ],
+        "validation": "Associazioni entro il campione; split predittivo assente",
+        "data": "Tabelle aggregate nel paper; dati grezzi non individuati",
+        "code": "Non individuato",
+        "license": "CC BY 4.0, verificata pagina rivista",
+        "supplements": [],
+        "coefficients_recovered": "Correlazioni in Table 2 leggibili, non trascritte come coefficienti predittivi",
+        "limitation": "Tre anni, siti vicini, correlazioni multiple; R20=20mm è indice di evento estremo, non innesco universale."
+      },
+      {
+        "id": "ponce_2026",
+        "priority": 5,
+        "title": "Forest management modulates the fungal species number-productivity relationship",
+        "doi": "10.1007/s10342-025-01840-y",
+        "version": "Version of record, 2026-01-20",
+        "fulltext_url": "https://link.springer.com/article/10.1007/s10342-025-01840-y",
+        "access_status": "opened_fulltext_html",
+        "sections_read": [
+          "Materials and methods",
+          "Results",
+          "Discussion",
+          "Data availability",
+          "Code availability",
+          "Appendix captions",
+          "Rights"
+        ],
+        "target": "Biomassa secca annua e ricchezza",
+        "features": [
+          "18 parcelle appaiate P. uncinata",
+          "2015–2024",
+          "rimozione area basimetrica",
+          "numero specie"
+        ],
+        "models": [
+          "GAMM",
+          "intercette casuali sito/anno",
+          "differenze controllo-trattato"
+        ],
+        "validation": "Analisi sperimentale delle associazioni; nessuno split previsionale esterno descritto",
+        "data": "Su richiesta, nessun download pubblico dichiarato",
+        "code": "Su richiesta, non ottenuto",
+        "license": "CC BY 4.0 del paper",
+        "supplements": [
+          {
+            "url": "https://link.springer.com/article/10.1007/s10342-025-01840-y#Appendices",
+            "status": "appendix_captions_read_tables_not_transcribed"
+          }
+        ],
+        "coefficients_recovered": false,
+        "limitation": "Recente e pertinente alla gestione; non nowcast per specie o ritrovamenti."
+      },
+      {
+        "id": "karavani_2016_precursor",
+        "priority": 6,
+        "title": "Effect of climatic and micro-climatic conditions on the provisioning of fungal-based ecosystem services in Mediterranean pine stands",
+        "doi": null,
+        "related_paper_doi": "10.1016/j.agrformet.2017.10.024",
+        "version": "MEDFOR master work, 2016-07-21; distinto dal paper finale 2018",
+        "fulltext_url": "https://www.medfor.eu/sites/default/files/editor/karavani_et_al_final.pdf",
+        "access_status": "opened_pdf_24_pages",
+        "sections_read": [
+          "2 Materials and Method",
+          "3 Results",
+          "Tables 3–4",
+          "Discussion"
+        ],
+        "target": "Resa annua e presenza, totale/commestibile/commerciale",
+        "features": [
+          "28 parcelle Poblet",
+          "meteo",
+          "umidità 12–15cm",
+          "medfate",
+          "suolo relativo alla capacità di campo"
+        ],
+        "models": [
+          "due parti",
+          "GLMM logistico + LMM log-resa",
+          "effetto parcella",
+          "correzione Snowdon"
+        ],
+        "validation": "Fit AIC/BIC/ROC/MSD; nessun holdout indipendente descritto nel metodo letto",
+        "data": "Non individuati file pubblici",
+        "code": "R lme4 e medfate documentati; script non individuato",
+        "license": "Non individuata sul PDF; consultazione pubblica distinta dal riuso",
+        "coefficients_recovered": [
+          {
+            "table": 3,
+            "model": "log-resa totale climate-based",
+            "parameter": "precipitazione settembre, mm",
+            "estimate": 0.022,
+            "se": 0.002,
+            "warning": "Versione2016 e scala annuale locale; non applicare a Fronda"
+          }
+        ],
+        "supplements": [],
+        "limitation": "Precursore non sostitutivo del testo peer-reviewed 2018."
+      }
+    ],
+    "unresolved_fulltext_access": [
+      {
+        "id": "morera_2024",
+        "doi": "10.1016/j.ecoinf.2024.102557",
+        "urls_tried": [
+          "https://www.sciencedirect.com/science/article/pii/S1574954124000992",
+          "https://repositori.udl.cat/handle/10459.1/465411",
+          "https://www.tesisenred.net/bitstream/handle/10803/691268/Tamm1de1.pdf?isAllowed=y&sequence=3"
+        ],
+        "result": "Fulltext non aperto: 403/access denied/502; abstract verificato, sezioni solo indicizzate. Nessun coefficiente o validazione di dettaglio derivato come lettura integrale."
+      },
+      {
+        "id": "karavani_2018_final",
+        "doi": "10.1016/j.agrformet.2017.10.024",
+        "url": "https://repositori.udl.cat/server/api/core/bitstreams/3f28f90d-38b0-40e8-9ef0-ad14c415ea2c/content",
+        "result": "Accepted manuscript individuato ma accesso non riuscito; abstract verificato. Precursore2016 letto separatamente."
+      }
+    ],
+    "application_note": "La previsione in luoghi senza storico è possibile tramite covariate, analoghi e pooling. La calibrazione su dati indipendenti misura affidabilità e aggiornamento, non è prerequisito per iniziare a stimare probabilità preliminari."
+  },
+  "porcini": {
+    "manifest_version": "fronda-research-access-v1",
+    "checked_on": "2026-10-16",
+    "timezone": "Europe/Rome",
+    "study": {
+      "title": "Predicting porcini: a decade of sporocarp monitoring reveals the meteorological triggers of Boletus edulis fruiting in central European beech forests",
+      "authors": [
+        "Etienne Brejon Lamartinière",
+        "Joseph Ivan Hoffman"
+      ],
+      "preprint_doi": "10.64898/2025.12.12.693895",
+      "preprint_version": "v2",
+      "preprint_posted_on": "2026-06-08",
+      "canonical_url": "https://www.biorxiv.org/content/10.64898/2025.12.12.693895v2",
+      "publication_status": "authors_lab_lists_in_press_Fungal_Ecology",
+      "publication_status_source": "https://thehoffmanlab.com/publications/",
+      "final_published_doi": null,
+      "final_version_verified": false,
+      "geographic_domain": "Beech-dominated woodland near Bielefeld, Germany",
+      "taxon": "Boletus edulis",
+      "study_years": [
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024
+      ]
+    },
+    "fulltext_access": {
+      "status": "read_complete_author_uploaded_copy",
+      "url": "https://www.researchgate.net/publication/398679307_Predicting_porcini_a_decade_of_sporocarp_monitoring_reveals_the_meteorological_triggers_of_Boletus_edulis_fruiting_in_central_European_beech_forests",
+      "host": "ResearchGate",
+      "uploaded_by": "Etienne Brejon Lamartinière",
+      "uploaded_on": "2026-06-09",
+      "access_method": "public_web_text_extraction",
+      "pdf_binary_downloaded": false,
+      "paper_license": "CC-BY-NC-4.0",
+      "paper_license_verified": true,
+      "license_evidence_urls": [
+        "https://www.biorxiv.org/content/10.64898/2025.12.12.693895v2",
+        "https://www.researchgate.net/publication/398679307_Predicting_porcini_a_decade_of_sporocarp_monitoring_reveals_the_meteorological_triggers_of_Boletus_edulis_fruiting_in_central_European_beech_forests"
+      ],
+      "canonical_fulltext_direct_access": "403_or_unavailable_in_session",
+      "supplement": {
+        "name": "Table S1: sensitivity of model fit and parameter estimates to temperature and precipitation window lengths",
+        "status": "read_embedded_in_same_author_uploaded_fulltext",
+        "url": "https://www.researchgate.net/publication/398679307_Predicting_porcini_a_decade_of_sporocarp_monitoring_reveals_the_meteorological_triggers_of_Boletus_edulis_fruiting_in_central_European_beech_forests",
+        "separate_file_downloaded": false,
+        "is_complete_fitted_model_artifact": false
+      }
+    },
+    "archives": {
+      "current": {
+        "doi": "10.5281/zenodo.20591123",
+        "url": "https://zenodo.org/records/20591123",
+        "title": "ebrejonl/Boletus_fruiting_triggers: Expansion of analysis",
+        "published_on": "2026-06-08",
+        "version": "V1.2",
+        "resource_type": "software",
+        "file_name": "ebrejonl/Boletus_fruiting_triggers-V1.2.zip",
+        "file_size_reported_kb": 712.9,
+        "md5_reported_by_zenodo": "a5299db56022af2620635a36274e811f",
+        "archive_binary_downloaded": false,
+        "specific_license_verified": false,
+        "license_status": "record_specific_license_not_exposed_by_accessible_text; API/export_unavailable"
+      },
+      "initial": [
+        {
+          "doi": "10.5281/zenodo.17881340",
+          "url": "https://zenodo.org/records/17881340",
+          "published_on": "2025-12-10",
+          "version": "v1.0.0",
+          "resource_type": "software",
+          "file_name": "ebrejonl/Boletus_fruiting_triggers-v1.0.0.zip",
+          "specific_license_verified": false
+        },
+        {
+          "doi": "10.5281/zenodo.17881359",
+          "url": "https://zenodo.org/records/17881359",
+          "published_on": "2025-12-10",
+          "version": "v2",
+          "resource_type": "dataset",
+          "file_name": "Data_ready.csv",
+          "specific_license_verified": false,
+          "superseded_record_message_observed": true
+        }
+      ]
+    },
+    "repository": {
+      "url": "https://github.com/ebrejonl/Boletus_fruiting_triggers",
+      "release_url": "https://github.com/ebrejonl/Boletus_fruiting_triggers/releases/tag/V1.2",
+      "commit": "7967c6d1ed61ac9cce802bdd7ba08d7d8df59064",
+      "commit_date": "2026-06-08T11:28:42+02:00",
+      "main_and_release_same_commit": true,
+      "remote_refs_checked": true,
+      "remote_tags": [
+        "V1.2",
+        "v1.0.0"
+      ],
+      "newer_remote_branch_or_release_found": false,
+      "license_file_present": false,
+      "citation_or_zenodo_license_metadata_file_present": false,
+      "data_and_software_license": null,
+      "redistribution_allowed_verified": false,
+      "files_read": [
+        {
+          "path": "Code_clean_Jun8.R",
+          "sha256": "d71755e659194d93b396ace6c9c98a1093014241aa4b02ec2b4d7ae790ba300b",
+          "executed": false
+        },
+        {
+          "path": "Data/Environmental_fruiting_data_jun8.csv",
+          "sha256": "63148586ad0cd2533fb741070e95f900e53343f54a4ccdfe0944f3a8f0000e4c",
+          "rows": 3660,
+          "columns": 32,
+          "unique_dates": 1220
+        }
+      ]
+    },
+    "independent_csv_audit": {
+      "method": "Python_standard_library_read_only",
+      "granularity": "one_date_per_aggregation; All_includes_A_and_B",
+      "aggregation_labels": [
+        "All",
+        "Site_A",
+        "Site_B"
+      ],
+      "rows_per_aggregation": 1220,
+      "raw_calendar_each_year": "08-01/11-30",
+      "unique_site_date_key": true,
+      "environment_identical_across_aggregations_for_same_date": true,
+      "all_greater_equal_A_plus_B_every_date": true,
+      "all_count_total": 1905,
+      "all_positive_dates": 155,
+      "all_zero_dates": 1065,
+      "site_A_count_total": 545,
+      "site_B_count_total": 283,
+      "all_residual_count_after_A_and_B": 1077,
+      "no_missing_cells_in_supplied_csv": true,
+      "explicit_survey_effort_or_visit_log_present": false,
+      "zero_semantics": "no_registered_event_after_calendar_left_join; searched_nondetection_not_established",
+      "season_sensitivity": {
+        "raw_All_rows": 1220,
+        "raw_All_zeros": 1065,
+        "methods_interval": "08-05/11-21",
+        "methods_interval_All_rows": 1090,
+        "methods_interval_All_zeros": 935,
+        "methods_interval_zero_fraction": 0.8577981651376146,
+        "outside_methods_interval_All_rows": 130,
+        "outside_methods_interval_positive_events": 0,
+        "fitting_interval_reconciliation_pending": true
+      },
+      "rolling_features": {
+        "include_target_day": true,
+        "inclusion_verified_numerically": true,
+        "precipitation_feature_unit": "mean_mm_per_day",
+        "temperature_feature_unit": "mean_degrees_Celsius",
+        "windows_days": [
+          2,
+          5,
+          8,
+          11,
+          14,
+          17,
+          20,
+          23,
+          26,
+          29,
+          32,
+          35
+        ],
+        "max_absolute_reconstruction_error_inclusive_rollT20": 5.3290705182007514e-14,
+        "max_absolute_reconstruction_error_inclusive_rollP26": 5.773159728050814e-15,
+        "july_raw_weather_absent_for_early_august_reconstruction": true
+      }
+    },
+    "model_audit": {
+      "family": "negative_binomial_NB1",
+      "conditional_mean_link": "log",
+      "formula_description": "daily_registered_count ~ precipitation_window_mean + temperature_window_mean + squared_temperature_window_mean + random_intercept_year",
+      "family_documentation_url": "https://glmmtmb.github.io/glmmTMB/reference/nbinom2.html",
+      "precipitation_linear_on_log_predictor_not_original_count_scale": true,
+      "window_candidates_per_aggregation": 144,
+      "model_selection": "AIC_in_sample_window_screen",
+      "independent_Italian_validation_present": false,
+      "complete_fitted_artifact_available_verified": false,
+      "best_All_windows": {
+        "temperature_days": 20,
+        "precipitation_days": 26
+      },
+      "best_site_A_windows": {
+        "temperature_days": 20,
+        "precipitation_days": 32
+      },
+      "best_site_B_windows": {
+        "temperature_days": 20,
+        "precipitation_days": 26
+      },
+      "fitted_comparison_curves_use_common_20_26_windows": true,
+      "code_reproducibility_issues": [
+        "script_reads_absent_Note_data_no_env_Nov21_csv",
+        "script_reads_absent_Climate_csv",
+        "script_does_not_directly_read_supplied_processed_csv",
+        "calendar_filter_differs_from_methods_interval",
+        "no_renv_lockfile",
+        "Figures_output_directory_not_present",
+        "jitter_without_explicit_seed",
+        "mclapply_fixed_20_cores",
+        "converged_flag_does_not_fully_check_Hessian_and_optimizer_diagnostics"
+      ]
+    },
+    "benchmark_recommendation": {
+      "admissible_initial_target": "registered_sighting_day_or_registered_count_in_German_calendar",
+      "not_admissible_target": "Italian_forager_encounter_probability_or_survey_nondetection_without_effort",
+      "temporal_validation": "whole_year_blocks; forward_chaining_for_operational_forecasting; tuning_within_training_only",
+      "all_A_B_combination_forbidden_as_independent_rows": true,
+      "prospective_evaluation_requires_lagged_or_as_of_vintage_weather": true,
+      "visit_log_needed_for_occupancy_detection_or_effort_conditioned_encounter": true,
+      "national_transfer_claim_supported": false,
+      "raw_data_or_author_code_published_by_this_task": false
+    },
+    "authors_contacted": false,
+    "app_or_repository_files_modified": false,
+    "biological_performance_claim_made": false,
+    "audit_report": "audit-porcini.md"
+  },
+  "additional_readings_and_data": {
+    "checked_at": "2026-10-16",
+    "timezone": "Europe/Rome",
+    "scope": "Advanced mushroom forecasting literature and public dataset access; no purchases, contacts or paywall bypass; no repository application changes",
+    "sources": [
+      {
+        "id": "somfalvi_toth_2024_ann",
+        "title": "Verification study on how macrofungal fruitbody formation can be predicted by artificial neural network",
+        "doi": "10.1038/s41598-023-50638-8",
+        "year": 2024,
+        "version": "Version of record, 2024-01-02",
+        "full_text_url": "https://www.nature.com/articles/s41598-023-50638-8",
+        "access_level": "full_text_read",
+        "article_license": {
+          "id": "CC-BY-4.0",
+          "verified": true
+        },
+        "target": "Per-species binary fruitbody detection in a field survey; not amount or daily growth",
+        "data": {
+          "access": "not_public; reasonable_request_only",
+          "license": null,
+          "schema": "13 species x 28 visits, two forest areas; binary detections/nondetections. Counts not measured."
+        },
+        "code": {
+          "access": "No standalone executable repository located in full text; R neuralnet and architecture/weights figures described",
+          "license": null
+        },
+        "validation": {
+          "split": "Random 70/30, shuffled; 100 ANN calculations, minimum error chosen",
+          "feature_selection": "Correlation screening described before train/test split",
+          "geographic_transfer_test": false,
+          "temporal_forecast_test": false
+        },
+        "applicability_priority": "method_comparison_only",
+        "material_limits": [
+          "28 survey records per species, two similar-climate sites",
+          "Feature selection before splitting risks leakage",
+          "Proprietary data cannot be imported now; reported accuracy is not national or prospective calibration"
+        ],
+        "supplementary_urls": [
+          "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41598-023-50638-8/MediaObjects/41598_2023_50638_MOESM1_ESM.docx",
+          "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41598-023-50638-8/MediaObjects/41598_2023_50638_MOESM2_ESM.docx",
+          "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41598-023-50638-8/MediaObjects/41598_2023_50638_MOESM3_ESM.docx",
+          "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41598-023-50638-8/MediaObjects/41598_2023_50638_MOESM4_ESM.docx",
+          "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41598-023-50638-8/MediaObjects/41598_2023_50638_MOESM5_ESM.docx",
+          "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41598-023-50638-8/MediaObjects/41598_2023_50638_MOESM6_ESM.docx"
+        ],
+        "supplementary_access": "First DOCX URL returned ZIP bytes in reader, not decoded/read; remaining files not acquired"
+      },
+      {
+        "id": "andrew_2025_optima",
+        "title": "Not always optimal: Fungal fruiting triggers indicate climate sensitivity in cooler regions",
+        "doi": "10.1016/j.funeco.2025.101416",
+        "year": 2025,
+        "version": "Fungal Ecology 75, 101416; June 2025",
+        "full_text_url": "https://www.sciencedirect.com/science/article/pii/S1754504825000066",
+        "access_level": "abstract_and_primary_metadata_only",
+        "primary_license_metadata_url": "https://api.elsevier.com/content/article/pii/S1754504825000066?httpAccept=text/xml",
+        "article_license": {
+          "id": "CC-BY-NC-4.0",
+          "verified": true,
+          "verification": "openaccessUserLicense in publisher API response"
+        },
+        "target": "Species-specific climatic/weather optima associated with fruitbody occurrence, 127 European taxa (abstract only)",
+        "data": {
+          "access": "not_verified",
+          "license": null,
+          "schema": null
+        },
+        "code": {
+          "access": "not_verified",
+          "license": null
+        },
+        "validation": {
+          "split": null,
+          "geographic_transfer_test": null,
+          "temporal_forecast_test": null
+        },
+        "applicability_priority": "read_fulltext_and_supplements_before_any_numeric_import",
+        "material_limits": [
+          "Publisher HTML/PDF returned HTTP403; FULL API request429",
+          "No claim made about methods, coefficients, code availability or validation from abstract alone",
+          "Evidence about climate sensitivity is not an encounter-probability model"
+        ]
+      },
+      {
+        "id": "martinez_rodrigo_2024_ml",
+        "title": "Assessment of Mycological Possibility Using Machine Learning Models for Effective Inclusion in Sustainable Forest Management",
+        "doi": "10.3390/su16135656",
+        "year": 2024,
+        "version": "Version of record, 2024-07-02",
+        "full_text_url": "https://www.mdpi.com/2071-1050/16/13/5656",
+        "full_text_xml_url": "https://mdpi-res.com/d_attachment/sustainability/sustainability-16-05656/article_deploy/sustainability-16-05656.xml",
+        "full_text_pdf_url": "https://mdpi-res.com/d_attachment/sustainability/sustainability-16-05656/article_deploy/sustainability-16-05656.pdf",
+        "institutional_copy_url": "https://uvadoc.uva.es/handle/10324/70415",
+        "access_level": "full_text_xml_and_pdf_read",
+        "article_license": {
+          "id": "CC-BY-4.0",
+          "verified": true
+        },
+        "target": "Annual plot-level Lactarius deliciosus presence and positive production in grams; two-stage classification/regression",
+        "data": {
+          "access": "mycological_data_not_public_and_authors_cannot_redistribute",
+          "license": null,
+          "schema": "17 fenced 150m2 Pinus pinaster plots, weekly harvest Sep-Dec 1997-2021 aggregated by plot-year; 60 monthly weather + 40 Landsat +4 stand predictors"
+        },
+        "code": {
+          "access": "No standalone scripts/weights archive located in full text; caret/rpart/model families described",
+          "license": null
+        },
+        "validation": {
+          "split": "Random70/30; caret trainControl cross-validation; no blocked site/year test described",
+          "feature_selection": "40/104 predictors selected through rpart; no nested selection documented",
+          "geographic_transfer_test": false,
+          "temporal_forecast_test": false
+        },
+        "applicability_priority": "high_for_candidate_features_low_for_ready_model",
+        "material_limits": [
+          "Annual target cannot directly answer daily outing success",
+          "Predictors include all months of target year; unavailable future months cannot be used for an earlier issued forecast",
+          "No measured incremental national forecasting skill",
+          "Raw mycological labels unavailable"
+        ]
+      },
+      {
+        "id": "martinez_rodrigo_2024_sentinel1",
+        "title": "Exploring the Relationship Between Time Series of Sentinel-1 Interferometric Coherence Data and Wild Edible Mushroom Yields in Mediterranean Forests",
+        "doi": "10.1007/s41651-024-00199-9",
+        "year": 2024,
+        "version": "Version of record, 2024-11-08",
+        "full_text_url": "https://link.springer.com/article/10.1007/s41651-024-00199-9",
+        "access_level": "full_text_read",
+        "article_license": {
+          "id": "CC-BY-4.0",
+          "verified": true
+        },
+        "target": "Exploratory relationship of weekly guild-level harvests and first emergence with SAR time series",
+        "data": {
+          "access": "Sentinel1 public sensor data; plot-level labels/derived series archive not located",
+          "license": "Article CC BY4.0; sensor and field data license not independently established here",
+          "schema": "17 fenced150m2 pine plots,2018-2021; ECM/saprotroph weekly yields; VV/VH backscatter10m and6-day VV coherence40m"
+        },
+        "code": {
+          "access": "SNAP and ASF HyP3 workflows described; no deposited executable scripts/weights found",
+          "license": null
+        },
+        "validation": {
+          "split": "No predictive train/test split; correlations,STL,Theil-Sen,FFT and lag exploration",
+          "geographic_transfer_test": false,
+          "temporal_forecast_test": false
+        },
+        "applicability_priority": "high_candidate_for_causal_feature_ablation",
+        "material_limits": [
+          "Not a validated predictor of outing success",
+          "Backscatter noisy and precipitation-dependent; coherence more promising",
+          "Polynomial interpolation and full-series STL must be made causal for forecast evaluation",
+          "40m coherence pixel larger than150m2 plot; no universal4-week trigger justified"
+        ]
+      },
+      {
+        "id": "morera_2024_biomass",
+        "title": "Species-specific biomass dataset of fungal fruiting bodies of Mediterranean forest ecosystems",
+        "doi": "10.34810/DATA1293",
+        "year": 2024,
+        "version": "1.0; published2024-04-25; README2024-04-24",
+        "landing_url": "https://dataverse.csuc.cat/dataset.xhtml?persistentId=doi:10.34810/DATA1293",
+        "institutional_metadata_url": "https://portalrecerca.udl.cat/documentos/668fc496b9e7c03b01be1f2b?lang=en",
+        "access_level": "readme_and_raw_tab_acquired_and_inspected",
+        "article_license": {
+          "id": null,
+          "verified": false
+        },
+        "data": {
+          "access": "public",
+          "license": "CC-BY-4.0 verified in repository and README",
+          "readme_url": "https://dataverse.csuc.cat/api/access/datafile/95652",
+          "tab_url": "https://dataverse.csuc.cat/api/access/datafile/95651",
+          "rows": 837,
+          "unique_taxon_names": 836,
+          "columns": 23,
+          "schema": "Taxonomy/IndexFungorum ID; fresh/dry mean biomass(g),SD,n individuals,ratio,humidity,guild; no event/site/date/zero columns",
+          "provenance": "Weekly collections from132 plots in Catalonia1995-2023, but only taxon aggregates published"
+        },
+        "code": {
+          "access": "not_applicable; data table, no prediction software",
+          "license": null
+        },
+        "validation": {
+          "split": "not_a_prediction_study"
+        },
+        "applicability_priority": "trait_and_biomass_prior_only",
+        "material_limits": [
+          "Not an open25-year event panel; cannot train fruiting/encounter forecast",
+          "One repeated Taxonname Clitocybe phyllophila in837 rows; reconcile before join",
+          "Guild/mean biomass does not establish local species presence"
+        ]
+      },
+      {
+        "id": "filippova_2026_bog_panel",
+        "title": "Plot-based observations of macrofungi in raised bogs in Western Siberia (2014-2024)",
+        "doi": "10.15468/e9g5ri",
+        "year": 2026,
+        "version": "1.45, published2026-02-04; GBIF API inspected2026-10-16 Europe/Rome",
+        "landing_url": "https://www.gbif.org/dataset/acd76923-54da-4799-b4b0-cfe585c2c0b8",
+        "metadata_url": "https://api.gbif.org/v1/dataset/acd76923-54da-4799-b4b0-cfe585c2c0b8",
+        "eml_url": "http://ipt.ugrasu.ru:8080/eml.do?r=bogfunplots",
+        "dwca_url": "http://ipt.ugrasu.ru:8080/archive.do?r=bogfunplots",
+        "access_level": "current_metadata_and_eml_read_raw_event_tables_not_downloaded",
+        "data": {
+          "access": "public_DarwinCoreArchive_endpoint_verified_in_current_registry; bytes_not_acquired",
+          "license": "CC-BY-4.0 verified in2026GBIF metadata",
+          "schema": "Event core +Occurrence extension joined eventID; fixed plot/date/area/habitat; per-taxon counts; Event with no Occurrence is valid zero within protocol scope",
+          "approximate_event_count": 30000,
+          "gbif_occurrence_count": 9852,
+          "coverage": "2014-06-14 to2024-09-23;263 circular5m2 plots,110 count rounds stated;2023barcode revision"
+        },
+        "code": {
+          "access": "No predictive code/model deposited with data paper",
+          "license": null
+        },
+        "descriptor": {
+          "doi": "10.3897/BDJ.7.e35674",
+          "year": 2019,
+          "full_text_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6684528/",
+          "access_level": "full_text_read",
+          "article_license": "CC-BY-4.0",
+          "old_data_license": "CC0 stated in2019paper; do not substitute for current version's CC BY4.0"
+        },
+        "validation": {
+          "split": "dataset_not_validated_forecast; can_construct_leave_plot/year_out_benchmark"
+        },
+        "applicability_priority": "high_for_protocol_and_pipeline_benchmark_low_for_direct_Italy_coefficients",
+        "material_limits": [
+          "Boreal bog ecosystem cannot calibrate Mediterranean forest encounter probability",
+          "Raw event/occurrence counts must be verified after archive download",
+          "Counted sporocarps removed except protected taxa; target differs from standing crop during casual outing",
+          "Paper2019has263plots in methods but163in one data-description sentence; use actual archive rather than reproduce typo"
+        ]
+      },
+      {
+        "id": "li_2025_soil_sdm",
+        "title": "Integrating Soil Properties Into Species Distribution Models Enhances Predictive Accuracy for Terricolous Macrofungi",
+        "doi": "10.1111/jbi.15124",
+        "year": 2025,
+        "version": "Published version; first published2025-03-24",
+        "full_text_url": "https://onlinelibrary.wiley.com/doi/full/10.1111/jbi.15124",
+        "full_text_pdf_url": "https://www.dora.lib4ri.ch/wsl/islandora/object/wsl%3A39510/datastream/PDF/Li-2025-Integrating_soil_properties_into_species-%28published_version%29.pdf",
+        "access_level": "full_text_and_repository_pdf_read_by_subagent",
+        "article_license": {
+          "id": "CC-BY-4.0",
+          "verified": true,
+          "evidence_url": "https://api.crossref.org/works/10.1111/jbi.15124"
+        },
+        "target": "Regional habitat suitability/distribution of 162 terricolous macrofungal species in Swiss forests; presence-background modelling, not daily fruiting or probability of finding mushrooms on an outing.",
+        "data": {
+          "doi": "10.5061/dryad.9p8cz8wrv",
+          "url": "https://datadryad.org/dataset/doi:10.5061/dryad.9p8cz8wrv",
+          "metadata_api": "https://datadryad.org/api/v2/datasets/doi%3A10.5061%2Fdryad.9p8cz8wrv",
+          "files_api": "https://datadryad.org/api/v2/versions/355609/files",
+          "license": "CC0-1.0; exact dataset API license field verified",
+          "files": [
+            {
+              "name": "Fungi_Environmental_Data.zip",
+              "bytes": 123175371,
+              "id": 3991171
+            },
+            {
+              "name": "Predictor_Discription.xlsx",
+              "bytes": 14936,
+              "id": 3991176
+            },
+            {
+              "name": "Predictor_GLM.csv",
+              "bytes": 48130,
+              "id": 3991173
+            },
+            {
+              "name": "Predictor_MAXENT.csv",
+              "bytes": 47597,
+              "id": 3991174
+            },
+            {
+              "name": "Predictor_RF.csv",
+              "bytes": 47646,
+              "id": 3991175
+            },
+            {
+              "name": "R_Scripts.zip",
+              "bytes": 45313,
+              "id": 3991172
+            },
+            {
+              "name": "README.md",
+              "bytes": 1683,
+              "id": 3991177
+            }
+          ],
+          "documented_schema": "162CSVfiles, species name in filename, presence/background labels and corresponding environmental values; geographical coordinates removed. Predictor description workbook and selected-predictor tables provided. Exact column headers not verified because file bytes were inaccessible.",
+          "code_documentation": "R scripts documented for data cleaning, variable selection, calibration, analysis/visualisation.",
+          "access_status": "Landing page, embedded README and JSON metadata/file manifest read. Public download file_stream links returned403; API download endpoint returned401. No dataset or code bytes acquired. Do not claim ready local training dataset or fully reproduced study."
+        },
+        "soil_covariates": {
+          "doi": "10.16904/envidat.484",
+          "url": "https://www.envidat.ch/metadata/soil-property-maps-for-the-swiss-forest",
+          "metadata_api": "https://www.envidat.ch/api/3/action/package_show?id=soil-property-maps-for-the-swiss-forest",
+          "access_status": "Public landing page and complete CKAN JSON metadata read;15resources listed as public. Raster bytes not downloaded.",
+          "license": "CC-BY-SA-4.0, explicitly verified in CKAN license_url",
+          "resolution": "25mGeoTIFFs for Swiss forest only, including90%prediction-interval uncertainty maps; not Italian coverage",
+          "source_profiles": 2071,
+          "schema": "SoilMaps_description.xlsx plus seven soil map archives(clay,density,depth,gravel,pH,sand,SOC) and seven uncertainty archives. Six standard depths0–5,5–15,15–30,30–60,60–100,100–200cm, except total depth."
+        },
+        "validation": {
+          "area": "Swiss forests, approximately12000km2",
+          "taxa": "162species;51saprotrophic;111reported as ectomycorrhizal group, including109true ectomycorrhizal and2parasites",
+          "minimum_presences": 60,
+          "models": [
+            "GLM",
+            "MAXENT",
+            "RandomForest"
+          ],
+          "predictors": "83candidates:23climate,29topography,31soil. Species/algorithm selection of2from each class, pairwise absolute correlation below0.7.",
+          "soil": "Depth, gravel, clay, sand, fine-earth density, pH, SOC. Six standard soil layers in source; analysis omitted100–200cm, retaining0–100cm.",
+          "climate": "Primarily1981–2010normals at250m; growing degree days1961–1990at25m. No operational weather forecast.",
+          "background": "1000random forest background points for GLM/MAXENT, at least1kmfrom presences; RF background downsampled to presence count. Background is not surveyed absence.",
+          "validation": "5-fold cross-validation repeated20times after parameter selection; same folds used with real and randomized soil predictors. No spatial or temporal blocking reported in methods. Scripts could not be downloaded, so exact fold code was not inspected.",
+          "external_red_list": "189randomly selected100x100mplots on regular Swiss grid, August–midNovember fruitbody surveys, presence-only. Used to compare slope distributions and evaluate slope-related sampling-bias explanation; not independent validation of predictive TSS, temporal forecasts, or Italian transfer. Raw Red List dataset explicitly not public.",
+          "reported_result": "With-soil TSS0.53±0.13overall; relative TSS change by species ranges−4%to31%. Soil contribution11%is variance in habitat suitability, not11percentagepoints of finding probability.",
+          "limitations": "Citizen-science sampling bias was not corrected; host information omitted; soil predictors limited. Model comparison intentionally constrained predictors, not best possible predictive model."
+        },
+        "applicability_priority": "high_for_static_habitat_prior; not_a_daily_encounter_model",
+        "material_limits": [
+          "No spatial/temporal blocking documented; scripts not acquired",
+          "Red List189plots tests slope/bias interpretation, not external predictive TSS",
+          "Coordinate-stripped CSVs cannot support new spatial refolding",
+          "Swiss soils do not cover Italy"
+        ],
+        "subagent_detail_manifest": "soil-sdm.json"
+      }
+    ]
+  },
+  "user_list_priority_additions": {
+    "checked_at": "2026-10-16",
+    "sources": [
+      {
+        "original_number": 1,
+        "supplied_title": "Biotic and abiotic factors influencing macrofungal diversity and biomass in Mediterranean forests with a focus on the Porcini group",
+        "verified_title": "Biotic and abiotic factors influencing macrofungal diversity and biomass in Mediterranean forests with a focus on the Porcini group",
+        "bibliographic_status": "Verificato sul PDF editoriale: articolo primario peer reviewed, Dendrobiology 91:16–31 (2024).",
+        "authors": [
+          "Elia Ambrosio",
+          "Marcin Pietras",
+          "Alan Feest"
+        ],
+        "year": 2024,
+        "doi": "10.12657/denbio.091.002",
+        "sourceurl": "https://www.idpan.poznan.pl/images/stories/dendrobiology/vol91/denbio091002.pdf",
+        "fulltext": {
+          "status": "aperto e letto via strumento web",
+          "version": "PDF editoriale, 16 pagine",
+          "sections_read": [
+            "Abstract",
+            "Materials and methods",
+            "Results",
+            "Discussion",
+            "Conclusions",
+            "Tabelle 2–5"
+          ],
+          "local_file_acquired": false,
+          "supplements": "Appendici e tabelle supplementari citate nel testo; file separati non acquisiti.",
+          "license": "Licenza di riuso non verificata nel PDF letto."
+        },
+        "overlap": {
+          "studies_json": false,
+          "access_manifest_json": false,
+          "prior_search": "Era emerso nella prima ricerca ma non era stato selezionato nel corpus: omissione rilevante, ora verificata."
+        },
+        "relevance": "Alta, fonte italiana direttamente pertinente ai porcini e alle latifoglie; aggiunta prioritaria.",
+        "verified_content": "Sessanta plot in tre boschi di latifoglie presso Sassello, Liguria, monitorati nel 2012–2014. Indice di biomassa stimato dalla dimensione dei cappelli. Analisi locali Pearson/PCA; separato MaxEnt europeo su presenze GBIF e 19 variabili climatiche, test casuale 10%.",
+        "rettifica": "Le associazioni geochimiche osservate non dimostrano causalità né superiorità predittiva generale rispetto al meteo. Il clima locale deriva dalla stessa stazione e da aggregati annuali, inadatti a stabilire il peso delle piogge recenti. Il 50,8% è contributo relativo MaxEnt, non varianza spiegata o probabilità giornaliera; AUC 0,918 senza test spaziale indipendente.",
+        "implication": "Integrare substrato, suolo, ospiti e struttura forestale come candidati del livello habitat; stimarne il valore predittivo su luoghi esclusi dall'addestramento.",
+        "additional_limit": "Gli autori segnalano raccolta intensa e possibili effetti sui conteggi dei commestibili. Il testo presenta anche un'incongruenza nell'area campionata: usare 20 plot per sito, 60 totali, evitando l'area testuale errata.",
+        "data_code": "Non individuato deposito pubblico di dati grezzi/codice; presenti sintesi tabellari e rimandi alle appendici.",
+        "recommended_action": "Aggiungere al corpus principale; nessuna soglia o peso trasferibile direttamente."
+      },
+      {
+        "original_number": 15,
+        "supplied_title": "Predicted Effects of Climate Change on Future Distributions of Ectomycorrhizal Fungi",
+        "verified_title": "Predicted Effects of Climate Change on Future Distributions of Ectomycorrhizal Fungi",
+        "bibliographic_status": "Verificato sul testo editoriale: Ecology and Evolution 15(12):e72743, prima pubblicazione 17 dicembre 2025.",
+        "authors": [
+          "Muyao Qi",
+          "Martin I. Bidartondo",
+          "Laura M. Suz",
+          "C. David L. Orme",
+          "Ricardo Arraiano-Castilho",
+          "Carolina Tovar"
+        ],
+        "year": 2025,
+        "first_online": "2025-12-17",
+        "doi": "10.1002/ece3.72743",
+        "sourceurl": "https://onlinelibrary.wiley.com/doi/full/10.1002/ece3.72743",
+        "fulltext": {
+          "status": "aperto e letto",
+          "version": "HTML editoriale Open Access",
+          "sections_read": [
+            "Abstract",
+            "Methods §§2.1–2.5",
+            "Results §§3.1–3.4",
+            "Discussion §§4.1–4.5",
+            "Conclusion",
+            "Data Availability"
+          ],
+          "local_file_acquired": false,
+          "supplements": "DOCX elencato nel testo; non acquisito né letto.",
+          "license": "Open Access verificato; esatta licenza dell'articolo non esposta nel testo accessibile."
+        },
+        "overlap": {
+          "studies_json": false,
+          "access_manifest_json": false
+        },
+        "relevance": "Alta per il livello habitat e per materiale riproducibile; aggiunta prioritaria, distinta dalla previsione giornaliera.",
+        "verified_content": "Combina presenze di radici e sporocarpi: 66 specie iniziali, 60 con modelli finali validi. Europa, griglia 2,5 minuti; clima, pH, azoto, carbonio organico e cinque alberi ospiti. Ensemble GLM/GBM/RF/MaxEnt; 10.000 pseudoassenze, CV cinque fold 80/20. L'inclusione degli ospiti migliora le prestazioni riportate.",
+        "support_geography": {
+          "extent_wgs84": {
+            "west": -11,
+            "east": 41,
+            "south": 35,
+            "north": 72
+          },
+          "resolution": "2,5 minuti d'arco, circa 5 km",
+          "observations": "Presenze GBIF/PlutoF e radici da 136 plot ICP Forests in 20 paesi europei",
+          "hosts": [
+            "Fagus sylvatica",
+            "Quercus robur",
+            "Quercus petraea",
+            "Picea abies",
+            "Pinus sylvestris"
+          ]
+        },
+        "validation": {
+          "folds": 5,
+          "train_fraction": 0.8,
+          "test_fraction": 0.2,
+          "blocked_spatial_or_environmental": "Non descritto un blocco spaziale o ambientale nel metodo letto; non trattare la CV come validazione in regioni nuove.",
+          "model_retention": "TSS>=0,7 e ROC>=0,8 per i modelli individuali; ensemble TSS>=0,7."
+        },
+        "rettifica": "Proietta idoneità distributiva pluridecennale, non sporocarpi disponibili durante un'uscita. Ospiti incompleti per l'Italia mediterranea; un solo GCM e suolo futuro statico. Le perdite di areale sono scenari dipendenti dal modello, non declini osservati.",
+        "implication": "Importare l'impostazione ospite-suolo-clima come ipotesi del livello habitat, confrontandola con CV spaziale/ambientale e più ospiti italiani; non convertire l'idoneità in probabilità di raccolta.",
+        "data_code": {
+          "doi": "10.5061/dryad.bcc2fqzpp",
+          "url": "https://datadryad.org/dataset/doi:10.5061/dryad.bcc2fqzpp",
+          "version_date": "2026-05-05",
+          "access_status": "Pagina, elenco file e README effettivamente aperti. Manifest verificato, archivi non scaricati, codice non eseguito.",
+          "total_size": "144,80 MB secondo manifest",
+          "listed_files": [
+            "Fungal_traits.csv",
+            "README.md",
+            "SDM_of_ECM_fungi.zip",
+            "SDM_of_hosts.zip",
+            "nitrogen.tif",
+            "ocs.tif",
+            "ph.tif",
+            "Current_Bioclim.zip",
+            "2050_SSP126_Bioclim.zip",
+            "2050_SSP370_Bioclim.zip",
+            "2050_SSP585_Bioclim.zip",
+            "2080_SSP126_Bioclim.zip",
+            "2080_SSP370_Bioclim.zip",
+            "2080_SSP585_Bioclim.zip"
+          ],
+          "scripts_status": "Il README identifica script R per funghi e ospiti; contenuti degli ZIP non letti.",
+          "license": "Dataset pubblicato sotto CC0 secondo i termini Dryad, sezione 1.1; pagina termini effettivamente letta. I diritti del sito e dell'articolo sono distinti.",
+          "license_source": "https://datadryad.org/terms",
+          "limitation": "Il README esclude dal deposito le presenze degli alberi per restrizioni di licenza GBIF e indica di reperirle alla fonte. Non affermare che il deposito contenga tutti i record grezzi necessari.",
+          "local_files_acquired": []
+        },
+        "recommended_action": "Aggiungere al corpus habitat e manifest accessi, mantenendo distinto lo stato di accesso al manifest dall'acquisizione degli archivi."
+      }
+    ],
+    "full_comparison": "confronto-fonti-utente.json"
+  }
+}
