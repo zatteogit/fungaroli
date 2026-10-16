@@ -1,0 +1,147 @@
+{
+  "schema_version": 1,
+  "project": "fungaroli",
+  "initialized_at": "2026-10-16",
+  "updated_at": "2026-10-16",
+  "initialization_commit": "d93d03382d8b119e354aa8873c894634eb383e45",
+  "scope": "Intero repository del checkout corrente; nessuna verifica della produzione",
+  "source_roots": [
+    "js",
+    "worker",
+    "functions",
+    "data",
+    "css",
+    "assets",
+    "tools",
+    "tests",
+    "migrations",
+    "docs",
+    "inbox",
+    ".github"
+  ],
+  "inbox": "raw_data",
+  "last_scanned_chapter": null,
+  "next_recommended_chapter": "01-architettura",
+  "coverage": {
+    "unit": "chapters",
+    "complete": 0,
+    "partial": 0,
+    "pending": 7,
+    "total": 7,
+    "percent_complete": 0
+  },
+  "chapters": [
+    {
+      "id": "01-architettura",
+      "title": "Architettura e avvio",
+      "status": "pending",
+      "source_paths": [
+        "README.md",
+        "index.html",
+        "package.json",
+        "js/app.js",
+        "worker/index.js"
+      ],
+      "documented_files": [],
+      "baseline_commit": null,
+      "updated_at": null
+    },
+    {
+      "id": "02-modelli",
+      "title": "Modelli, meteo e scoperte",
+      "status": "pending",
+      "source_paths": [
+        "js/model.js",
+        "js/species.js",
+        "js/botanical-model.js",
+        "js/outing-discoveries.js",
+        "js/weather.js",
+        "worker/weather-provider.js",
+        "docs/metodo-scientifico.md"
+      ],
+      "documented_files": [],
+      "baseline_commit": null,
+      "updated_at": null
+    },
+    {
+      "id": "03-dati-contenuti",
+      "title": "Dati, cataloghi, fonti e CMS",
+      "status": "pending",
+      "source_paths": [
+        "data",
+        "js/content-schema.js",
+        "js/cms.js",
+        "worker/cms.js",
+        "worker/content-validation.js",
+        "docs/cms.md"
+      ],
+      "documented_files": [],
+      "baseline_commit": null,
+      "updated_at": null
+    },
+    {
+      "id": "04-interfaccia",
+      "title": "Interfaccia, percorsi e accessibilità",
+      "status": "pending",
+      "source_paths": [
+        "index.html",
+        "css",
+        "js/app.js",
+        "js/walks.js",
+        "js/entity-sheet.js",
+        "js/travel-model.js",
+        "docs/ux-navigazione.md"
+      ],
+      "documented_files": [],
+      "baseline_commit": null,
+      "updated_at": null
+    },
+    {
+      "id": "05-taccuino-community",
+      "title": "Taccuino, account e community",
+      "status": "pending",
+      "source_paths": [
+        "js/journal.js",
+        "js/notebook-entry.js",
+        "js/community.js",
+        "worker/community.js",
+        "functions",
+        "migrations",
+        "docs/community.md"
+      ],
+      "documented_files": [],
+      "baseline_commit": null,
+      "updated_at": null
+    },
+    {
+      "id": "06-pwa-verifiche",
+      "title": "PWA, configurazione e verifiche",
+      "status": "pending",
+      "source_paths": [
+        "sw.js",
+        "manifest.webmanifest",
+        "wrangler.jsonc",
+        "tests",
+        "playwright.config.mjs",
+        ".github/workflows/ci.yml"
+      ],
+      "documented_files": [],
+      "baseline_commit": null,
+      "updated_at": null
+    },
+    {
+      "id": "07-asset-pipeline",
+      "title": "Asset, infografiche e strumenti",
+      "status": "pending",
+      "source_paths": [
+        "assets",
+        "inbox",
+        "tools",
+        "docs/infografiche"
+      ],
+      "documented_files": [],
+      "baseline_commit": null,
+      "updated_at": null
+    }
+  ]
+}

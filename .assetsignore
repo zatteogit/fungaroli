@@ -34,3 +34,10 @@ docs/*
 !docs/metodo-scientifico.md
 !docs/cms.md
 !docs/cms.openapi.json
+
+# Kipi: istruzioni, knowledge base e materiali di lavoro locali.
+.agents
+agents
+knowledge
+raw_data
+ready-for-classify
