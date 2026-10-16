@@ -1,0 +1,268 @@
+{
+  "riferimenti_forma": [
+    {
+      "soggetto": "clitocybe-rivulosa",
+      "forma": "piano",
+      "riferimenti": {
+        "cappello": {
+          "file": "incoming/icone/forme-19.png",
+          "cella": 3,
+          "stato": "ok"
+        },
+        "gambo": {
+          "file": "incoming/icone/forme-19.png",
+          "cella": 4,
+          "stato": "ok"
+        }
+      }
+    },
+    {
+      "soggetto": "clitocybe-rivulosa",
+      "forma": "convesso",
+      "riferimenti": {
+        "cappello": {
+          "file": "incoming/icone/forme-19.png",
+          "cella": 0,
+          "stato": "ok"
+        },
+        "gambo": {
+          "file": "incoming/icone/forme-19.png",
+          "cella": 1,
+          "stato": "ok"
+        }
+      }
+    },
+    {
+      "soggetto": "clitocybe-rivulosa",
+      "forma": "piano",
+      "riferimenti": {
+        "cappello": {
+          "file": "incoming/icone/forme-19.png",
+          "cella": 3,
+          "stato": "ok"
+        },
+        "gambo": {
+          "file": "incoming/icone/forme-19.png",
+          "cella": 4,
+          "stato": "ok"
+        }
+      }
+    },
+    {
+      "soggetto": "gymnopilus-junonius",
+      "forma": "piano",
+      "riferimenti": {
+        "cappello": {
+          "file": "incoming/icone/forme-21.png",
+          "cella": 6,
+          "stato": "ok"
+        },
+        "gambo": {
+          "file": "incoming/icone/forme-21.png",
+          "cella": 7,
+          "stato": "ok"
+        }
+      }
+    }
+  ],
+  "file": "incoming/icone/combinazioni-05.png",
+  "sha256": "661917d11d61b1fd638ed6bd30814b3b81bea019cd3a15cc3aa158b25bbff95f",
+  "size": [
+    1254,
+    1254
+  ],
+  "bytes": 57493,
+  "cells": [
+    {
+      "cella": 0,
+      "bbox": [
+        77,
+        162,
+        341,
+        256
+      ],
+      "margini_px": [
+        77,
+        162,
+        77,
+        162
+      ],
+      "contorno_scuro_estremi": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "copertura_contorno_scuro": 1.0
+    },
+    {
+      "cella": 1,
+      "bbox": [
+        77,
+        96,
+        341,
+        322
+      ],
+      "margini_px": [
+        77,
+        96,
+        77,
+        96
+      ],
+      "contorno_scuro_estremi": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "copertura_contorno_scuro": 1.0
+    },
+    {
+      "cella": 2,
+      "bbox": [
+        78,
+        143,
+        341,
+        274
+      ],
+      "margini_px": [
+        78,
+        143,
+        77,
+        144
+      ],
+      "contorno_scuro_estremi": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "copertura_contorno_scuro": 1.0
+    },
+    {
+      "cella": 3,
+      "bbox": [
+        79,
+        77,
+        339,
+        341
+      ],
+      "margini_px": [
+        79,
+        77,
+        79,
+        77
+      ],
+      "contorno_scuro_estremi": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "copertura_contorno_scuro": 1.0
+    },
+    {
+      "cella": 4,
+      "bbox": [
+        77,
+        162,
+        341,
+        255
+      ],
+      "margini_px": [
+        77,
+        162,
+        77,
+        163
+      ],
+      "contorno_scuro_estremi": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "copertura_contorno_scuro": 1.0
+    },
+    {
+      "cella": 5,
+      "bbox": [
+        77,
+        99,
+        341,
+        318
+      ],
+      "margini_px": [
+        77,
+        99,
+        77,
+        100
+      ],
+      "contorno_scuro_estremi": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "copertura_contorno_scuro": 1.0
+    },
+    {
+      "cella": 6,
+      "bbox": [
+        77,
+        164,
+        341,
+        253
+      ],
+      "margini_px": [
+        77,
+        164,
+        77,
+        165
+      ],
+      "contorno_scuro_estremi": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "copertura_contorno_scuro": 1.0
+    },
+    {
+      "cella": 7,
+      "bbox": [
+        77,
+        116,
+        341,
+        301
+      ],
+      "margini_px": [
+        77,
+        116,
+        77,
+        117
+      ],
+      "contorno_scuro_estremi": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "copertura_contorno_scuro": 1.0
+    },
+    {
+      "cella": 8,
+      "vuota": true
+    }
+  ],
+  "visuale": "confronto con riferimenti approvati; pronta da integrare",
+  "permutazione_celle_sorgente": [
+    0,
+    1,
+    4,
+    2,
+    3,
+    5,
+    6,
+    7
+  ]
+}
