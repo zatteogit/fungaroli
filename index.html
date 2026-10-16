@@ -2,7 +2,7 @@
 <html lang="it">
 <head>
   <meta charset="utf-8">
-  <meta name="app-version" content="fungaroli-shell-v99">
+  <meta name="app-version" content="fungaroli-shell-v100">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
   <link rel="preload" href="data/crop-points.json" as="fetch" crossorigin>
   <meta name="theme-color" content="#f7f4ea" media="(prefers-color-scheme: light)">
@@ -85,6 +85,7 @@
       <div id="during-walk" hidden></div>
       <h2 class="sec-title" id="season-h">Nei boschi in questi giorni</h2>
       <ul id="season" class="rail rail-portrait" aria-labelledby="season-h"></ul>
+      <aside class="story-invite story-blue" aria-labelledby="home-guide-title"><div><h2 id="home-guide-title">Guarda più vicino.</h2><p>Le parole del bosco, quando ti servono.</p><a class="btn primary" href="#/impara">Apri le Guide <span aria-hidden="true">→</span></a></div><figure class="story-photo"><img src="assets/plants/ginestra-odorosa-1.webp" alt="" loading="lazy" decoding="async"><figcaption><a href="#/pianta/ginestra-odorosa">Foto e crediti</a></figcaption></figure></aside>
       <section id="community-intro" class="community-intro" aria-label="La community di Fronda"></section>
       <a class="act-row legal-strip" id="home-legal" href="#/info"><span class="ar-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg></span><span class="ar-b"><span class="ar-t">Regole di raccolta</span><span class="ar-s">Nel Lazio si raccoglie con attestato micologico, ricevuta del contributo regionale annuale e documento d'identità (L.R. 32/1998).</span></span></a>
     </section>
@@ -113,6 +114,7 @@
       <div class="view-head"><div><p class="kicker" data-catalog-count="specie" hidden></p><h1 id="sp-h" class="view-title">Funghi</h1>
         <p class="view-sub">Caratteri, sosia e ambienti.</p></div></div>
       <nav class="seg-nav" data-scopri-nav aria-label="Sezioni di Scopri"></nav><nav class="sub-nav" data-scopri-sub aria-label="Modalità della sezione"></nav>
+      <aside class="story-invite story-blue catalog-invite"><div><h2>Guarda più vicino.</h2><p>Caratteri, parole e piccoli dettagli del bosco.</p><a class="btn primary" href="#/impara">Apri le Guide <span aria-hidden="true">→</span></a></div><figure class="story-photo"><img src="assets/plants/ginestra-odorosa-1.webp" alt="" loading="lazy" decoding="async"><figcaption><a href="#/pianta/ginestra-odorosa">Foto e crediti</a></figcaption></figure></aside>
       <div id="species-grid" class="species-grid"></div>
     </section>
 
@@ -120,12 +122,14 @@
       <div class="view-head"><div><p class="kicker" data-catalog-count="alberi" hidden></p><h1 id="tr-h" class="view-title">Alberi</h1>
         <p class="view-sub">Foglie, corteccia, frutti e habitat.</p></div></div>
       <nav class="seg-nav" data-scopri-nav aria-label="Sezioni di Scopri"></nav><nav class="sub-nav" data-scopri-sub aria-label="Modalità della sezione"></nav>
+      <aside class="story-invite story-blue catalog-invite"><div><h2>Guarda più vicino.</h2><p>Caratteri, parole e piccoli dettagli del bosco.</p><a class="btn primary" href="#/impara">Apri le Guide <span aria-hidden="true">→</span></a></div><figure class="story-photo"><img src="assets/plants/ginestra-odorosa-1.webp" alt="" loading="lazy" decoding="async"><figcaption><a href="#/pianta/ginestra-odorosa">Foto e crediti</a></figcaption></figure></aside>
       <div id="tree-grid" class="species-grid"></div>
     </section>
 
     <section class="view" data-view="piante" hidden aria-labelledby="plants-h">
       <div class="view-head"><div><p class="kicker" data-catalog-count="piante" hidden></p><h1 id="plants-h" class="view-title">Piante e fiori</h1><p class="view-sub">Erbe, fiori, frutti e arbusti.</p></div></div>
       <nav class="seg-nav" data-scopri-nav aria-label="Sezioni di Scopri"></nav><nav class="sub-nav" data-scopri-sub aria-label="Modalità della sezione"></nav>
+      <aside class="story-invite story-blue catalog-invite"><div><h2>Guarda più vicino.</h2><p>Caratteri, parole e piccoli dettagli del bosco.</p><a class="btn primary" href="#/impara">Apri le Guide <span aria-hidden="true">→</span></a></div><figure class="story-photo"><img src="assets/plants/ginestra-odorosa-1.webp" alt="" loading="lazy" decoding="async"><figcaption><a href="#/pianta/ginestra-odorosa">Foto e crediti</a></figcaption></figure></aside>
       <div id="plant-grid" class="species-grid"></div>
     </section>
     <section class="view view-hero" data-view="pianta" hidden><div id="plant-detail" class="sp-page"></div></section>
@@ -166,9 +170,10 @@
 
     <section class="view notebook-view" data-view="diario" hidden aria-labelledby="journal-h">
       <header class="notebook-heading"><div><p class="kicker">Appunti di campo</p><h1 id="journal-h" class="view-title">Il mio taccuino</h1>
-        <p class="view-sub">Appunti, giri e uscite. Condividili con chi vuoi.</p></div>
-        <div class="notebook-toolbar"><button class="btn primary" type="button" data-new-note>＋ Nuovo appunto</button><button class="btn ghost" type="button" data-open-journal>Registra un'uscita</button></div>
+        <p class="view-sub">Appunti e giri da ritrovare.</p></div>
+        <div class="notebook-toolbar"><button class="btn ghost" type="button" data-open-journal>Registra un'uscita</button></div>
       </header>
+      <aside class="story-invite story-orange notebook-invite" aria-labelledby="notebook-invite-title"><div><h2 id="notebook-invite-title">Segui la curiosità.</h2><p>Un dettaglio, un’idea, un giro da ricordare.</p><button class="btn primary" type="button" data-new-note>＋ Nuovo appunto</button></div></aside>
       <div class="notebook-cover"><div id="journal-list" class="notebook-pages" aria-live="off"></div></div>
       <details class="notebook-storage" id="notebook-storage-panel"><summary>Profilo, sincronizzazione e copie del taccuino</summary><div class="notebook-storage-body">
         <ul class="fp-switches notebook-prefs"><li><label class="fp-switch"><span>Usa le fasi dei miei appunti botanici<small>Privati. Aiutano a scegliere cosa osservare; non modificano l’indice.</small></span><input type="checkbox" class="switch-input" data-botanical-personalize></label></li></ul>

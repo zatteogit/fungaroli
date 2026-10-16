@@ -8,7 +8,7 @@ for(const width of [320,1280])test(`interessi indipendenti: tutte le combinazion
   const selected=ids.filter((id,i)=>mask&(1<<i));
   for(const id of ids){const b=page.locator(`#active-filters [data-intent="${id}"]`);if((await b.getAttribute('aria-pressed')==='true')!==selected.includes(id))await b.click();}
   await expect(page.locator('#hero .cover')).toBeVisible();
-  await expect(page.locator('#hero .ring')).toHaveCount(selected.includes('funghi')?1:0);
+  await expect(page.locator('#hero .cover-index')).toHaveCount(selected.includes('funghi')?1:0);
   if(selected.includes('piante'))await expect(page.locator('#hero .cover-plant')).toBeVisible();
   expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
   await page.goto('/#/mappa');

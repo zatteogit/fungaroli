@@ -246,7 +246,8 @@ for(const width of [320,1280]) test(`guide in Scopri e taccuino personale distin
   await expect(view.locator('.sub-nav a')).toHaveCount(4);await expect(view.locator('.sub-nav [aria-current="page"]')).toHaveText('Approfondimenti');
   await expect(page.locator('[data-back]:visible span')).toHaveText('Guide');
   await expect(page.locator('[data-tab="specie"]')).toHaveAttribute('aria-current','page');
-  await expect(page.locator('#editorial .eyebrow').first()).toHaveText('Approfondimenti sul bosco');
+  await expect(view.locator('h1')).toHaveText('Approfondimenti');
+  await expect(page.locator('#editorial .eyebrow').first()).toHaveText('Osservare il bosco');
   await expect(page.locator('#editorial .editorial-card')).toHaveCount(3);
   await expect(page.locator('#editorial')).not.toContainText('Taccuino');
   expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
@@ -303,8 +304,8 @@ for(const width of [320,1280]) test(`titoletti senza link e keyword complete nel
   await cap.click();const panel=page.locator(width<700?'#learning-sheet':'#learning-popover');await expect(panel.locator('h2')).toHaveText('Cappello');
   await page.keyboard.press('Escape');await expect(cap).toBeFocused();
   for(const theme of ['light','dark']){await page.evaluate(t=>document.documentElement.dataset.theme=t,theme);await page.locator('#species-detail .trait-strip').screenshot({path:`/tmp/fungaroli-traits-${width}-${theme}.png`});}
-  await page.goto('/');await expect(page.locator('#hero .cover-link')).toBeVisible();await expect(page.locator('#hero .sp-also').first()).toBeVisible();
-  expect(await page.locator('#hero .sp-also').evaluateAll(nodes=>nodes.every(el=>{const score=el.querySelector('.sp-also-score');return !!score&&score.children[0].tagName==='I'&&score.children[1].tagName==='B';}))).toBe(true);
+  await page.goto('/');await expect(page.locator('#hero .cover-link')).toBeVisible();await expect(page.locator('#hero .sp-main-score')).toBeVisible();
+  expect(await page.locator('#hero .cover-sp-name').evaluateAll(nodes=>nodes.every(el=>{const score=el.querySelector('.sp-also-score');return !!score&&score.children[0].tagName==='I'&&score.children[1].tagName==='B';}))).toBe(true);
   // Screenshot diagnostico: un ridisegno tardivo (community, meteo) può riconciliare il riquadro mentre viene catturato.
   await expect(async()=>page.locator('#hero .cover-sp').screenshot({path:`/tmp/fungaroli-also-species-${width}.png`,timeout:3000})).toPass({timeout:15000});
   const repeated=await page.locator('#hero .cover-walk,#ranking .tile-body').evaluateAll(nodes=>nodes.some(el=>{const text=el.textContent;const refs=text.match(/sentiero\s+\d+/gi)||[];return new Set(refs.map(x=>x.toLowerCase())).size<refs.length;}));expect(repeated).toBe(false);
@@ -331,7 +332,7 @@ test('foto fuori vista differite, skeleton stabili e visore recuperabile dopo un
 
 test('tocchi rapidi nelle transizioni mantengono l’ultima vista e i decimali dell’indice',async({page})=>{
   const errors=await setup(page,1280);await page.emulateMedia({reducedMotion:'no-preference'});
-  const final=await page.locator('#hero .ring b').innerText();
+  const final=await page.locator('#hero .cover-index b').innerText();
   await page.evaluate(async()=>{
     const {navigate,soft}=await import('/js/motion.js');
     navigate(()=>{location.hash='#/specie';},{nav:'push'});
@@ -340,13 +341,13 @@ test('tocchi rapidi nelle transizioni mantengono l’ultima vista e i decimali d
   });
   await expect(page.locator('[data-view="glossario"]')).toBeVisible();
   await expect.poll(()=>page.evaluate(()=>document.documentElement.dataset.nav||'')).toBe('');
-  await page.goto('/');await expect(page.locator('#hero .ring b')).toHaveText(final);expect(final).toMatch(/^\d,\d$/);expect(errors).toEqual([]);
+  await page.goto('/');await expect(page.locator('#hero .cover-index b')).toHaveText(final);expect(final).toMatch(/^\d,\d$/);expect(errors).toEqual([]);
 });
 
 for(const width of [320,1280])test(`funghi al centro, scoperte contestuali e taccuino a ${width}px`,async({page})=>{
  const errors=await setup(page,width);
  await expect(page.locator('[data-target]')).toHaveCount(0);await expect(page.locator('#during-walk')).toBeVisible();
- const hero=await page.locator('#hero .cover-link').getAttribute('href'),index=await page.locator('#hero .ring b').innerText();
+ const hero=await page.locator('#hero .cover-link').getAttribute('href'),index=await page.locator('#hero .cover-index b').innerText();
  const cards=page.locator('#during-walk .discovery-grid>li');expect(await cards.count()).toBeGreaterThan(0);expect(await cards.count()).toBeLessThanOrEqual(3);await expect(page.locator('#during-walk .ring')).toHaveCount(0);
  const link=page.locator('#during-walk [data-discovery]').first(),href=await link.getAttribute('href'),original=page.url();await link.click();const sheet=page.locator('#entity-sheet[open]');await expect(sheet.locator('.discovery-context')).toContainText('presenza');expect(page.url()).toBe(original);await expect(sheet.locator('[data-note-kind]').first()).toHaveAttribute('data-note-zone',/\S+/);
  await sheet.locator('[data-entity-close]').click();await expect(link).toBeFocused();
@@ -367,7 +368,7 @@ for(const width of [320,1280])test(`funghi al centro, scoperte contestuali e tac
  await expect(page.locator('#full-filters [data-botanical-personalize]')).toHaveCount(0);
  await page.goto('/#/diario');await page.locator('#notebook-storage-panel > summary').click();const notesToggle=page.locator('[data-botanical-personalize]');await expect(notesToggle).not.toBeChecked();await notesToggle.check();
  await page.goto('/#/');await expect(page.locator('#hero .cover-link')).toBeVisible();
- await page.locator('#active-filters [data-more]').click();await page.locator('[data-discoveries-toggle]').uncheck();await page.locator('#full-filters [data-close]').first().click();await expect(page.locator('#during-walk')).toBeHidden();await expect(page.locator('#hero .cover-link')).toHaveAttribute('href',hero);await expect(page.locator('#hero .ring b')).toHaveText(index);
+ await page.locator('#active-filters [data-more]').click();await page.locator('[data-discoveries-toggle]').uncheck();await page.locator('#full-filters [data-close]').first().click();await expect(page.locator('#during-walk')).toBeHidden();await expect(page.locator('#hero .cover-link')).toHaveAttribute('href',hero);await expect(page.locator('#hero .cover-index b')).toHaveText(index);
  await page.reload();await expect(page.locator('#during-walk')).toBeHidden();await expect(page.locator('#hero .cover-link')).toHaveAttribute('href',hero);
  await page.goto('/#/pianta/ortica');await expect(page.locator('#plant-detail [data-botanical-discover]')).toHaveCount(0);await page.locator('[data-botanical-method]>summary').click();await expect(page.locator('[data-botanical-method]')).toContainText('non confermano presenza, maturità o quantità');
  await page.goto('/#/scopri');await expect(page.locator('[data-tab="specie"]')).toContainText('Scopri');await expect(page.locator('#species-grid .sp-card').first()).toBeVisible();
@@ -375,7 +376,7 @@ for(const width of [320,1280])test(`funghi al centro, scoperte contestuali e tac
 });
 test('la preferenza botanica salvata riconfigura la home',async({page})=>{
  await page.addInitScript(()=>localStorage.setItem('fungaroli:prefs:v2',JSON.stringify({target:'piante',plantIds:null})));
- const errors=await setup(page,390,'#hero .cover');await expect(page.locator('#active-filters [data-intent="piante"]')).toHaveAttribute('aria-pressed','true');await expect(page.locator('#hero .outdoor-hero')).toBeVisible();await expect(page.locator('#hero .ring')).toHaveCount(0);expect(errors).toEqual([]);
+ const errors=await setup(page,390,'#hero .cover');await expect(page.locator('#active-filters [data-intent="piante"]')).toHaveAttribute('aria-pressed','true');await expect(page.locator('#hero .outdoor-hero')).toBeVisible();await expect(page.locator('#hero .cover-index')).toHaveCount(0);expect(errors).toEqual([]);
 });
 for(const width of [320,1280])test(`avvisi brevi visibili e caratteri senza verdetti di raccolta a ${width}px`,async({page})=>{
  const errors=await setup(page,width);await page.goto('/#/fungo/cortinarius-rubellus');const warning=page.locator('#taxon-detail .attention');await expect(warning).toBeVisible();await expect(warning.locator('summary')).toHaveCount(0);await expect(warning.locator('ul')).toContainText('danni renali tardivi');await expect(warning).not.toContainText(/scarta/i);await expect(warning.locator('[data-term="cappello"]')).toBeVisible();

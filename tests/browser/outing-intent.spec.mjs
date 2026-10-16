@@ -16,13 +16,13 @@ async function start(page,prefs={},offline=false) {
 }
 test('tre intenti: home, filtri, mappa, dettaglio e memoria coerenti',async({page})=>{
  const errors=[];page.on('pageerror',e=>errors.push(e.message));await start(page);
- await expect(page.locator('#hero .ring')).toBeVisible();
+ await expect(page.locator('#hero .cover-index')).toBeVisible();
  await page.locator('#active-filters [data-intent="passeggiata"]').click();await page.locator('#active-filters [data-intent="funghi"]').click();
- await expect(page.locator('#hero .outdoor-hero')).toBeVisible();await expect(page.locator('#hero .ring')).toHaveCount(0);
+ await expect(page.locator('#hero .outdoor-hero')).toBeVisible();await expect(page.locator('#hero .cover-index')).toHaveCount(0);
  await page.locator('#active-filters [data-more]').click();const filters=page.locator('#full-filters[open]');await expect(filters.locator('#species-filter-search')).toHaveCount(0);
  await filters.locator('[data-pref="shortTrails"]').click();await filters.locator('[data-close]').last().click();
  await page.reload();await expect(page.locator('#active-filters [data-intent="passeggiata"]')).toHaveAttribute('aria-pressed','true');
- await page.locator('#hero .outdoor-hero').click();await expect(page.locator('#detail h1')).toBeVisible();await expect(page.locator('#detail .ring')).toHaveCount(0);
+ await page.locator('#hero .outdoor-hero').click();await expect(page.locator('#detail h1')).toBeVisible();await expect(page.locator('#detail .hero-indicators > .ring')).toHaveCount(0);await expect(page.locator('#detail .weather-ring')).toHaveCount(1);
  await page.goto('/#/mappa');await expect(page.locator('#map .pc')).toHaveCount(0);
  await page.locator('#map-filters [data-intent="piante"]').click();await page.locator('#map-filters [data-intent="passeggiata"]').click();await expect(page.locator('#legend .map-plant-note')).toHaveCount(1);await expect(page.locator('#legend .map-plant-note')).not.toHaveAttribute('open','');
  await page.goto('/#/uscite');await expect(page.locator('#season .outdoor-plant').first()).toBeVisible();
@@ -33,7 +33,7 @@ test('tre intenti: home, filtri, mappa, dettaglio e memoria coerenti',async({pag
  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
  if(width===390)await page.screenshot({path:`/tmp/intent-plants-${theme}.png`,fullPage:true});
  }
- await page.locator('#active-filters [data-intent="funghi"]').click();await page.locator('#active-filters [data-intent="piante"]').click();await expect(page.locator('#hero .ring')).toBeVisible();expect(errors).toEqual([]);
+ await page.locator('#active-filters [data-intent="funghi"]').click();await page.locator('#active-filters [data-intent="piante"]').click();await expect(page.locator('#hero .cover-index')).toBeVisible();expect(errors).toEqual([]);
 });
 test('scelta di specie fuori calendario sospesa una volta e ripristinabile',async({page})=>{
  await start(page,{target:'funghi',speciesIds:['morchella-esculenta']});
@@ -73,6 +73,11 @@ for(const intent of ['piante','passeggiata'])test(`copertine ${intent}: ripiego 
  await hero.locator('> img').evaluate(img=>{img.dataset.imageState='error';img.removeAttribute('src');img.removeAttribute('data-src');});
  await expect(hero.locator('> img')).toHaveCSS('visibility','hidden');
  await expect(hero.locator('.outdoor-backdrop svg')).toBeVisible();
+ const failedCard=page.locator('#ranking .outdoor-tile:has(> img)').first();
+ const height=await failedCard.evaluate(e=>e.getBoundingClientRect().height);
+ await failedCard.locator('> img').evaluate(img=>{img.dataset.imageState='error';img.removeAttribute('src');img.removeAttribute('data-src');});
+ await expect(failedCard.locator('.outdoor-backdrop svg')).toBeVisible();
+ expect(Math.abs(await failedCard.evaluate(e=>e.getBoundingClientRect().height)-height)).toBeLessThan(1);
  await page.setViewportSize({width:390,height:844});
  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
 });

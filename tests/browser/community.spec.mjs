@@ -57,7 +57,7 @@ test('base privata del profilo: salvataggio, distanze, navigatori, isolamento e 
     await r.fulfill({json:{base:data.user.base,routes:targets.map(p=>({key:`${p.lat.toFixed(5)},${p.lon.toFixed(5)}`,minutes:111,km:77})),source:'OSRM / OpenStreetMap',traffic:false}});
   });
   await register(page,'Base');const owner=(await api(page,'session')).data.user.id;
-  const score=await page.locator('#hero .ring b').textContent();
+  const score=await page.locator('#hero .cover-index b').textContent();
   await page.locator('[data-community-account]').first().click();const profile=page.locator('dialog.profile-dialog[open]');
   await profile.locator('.base-settings summary').click();expect(await page.evaluate(()=>globalThis.baseGpsCalls)).toBe(0);await profile.locator('[data-base-gps]').click();expect(await page.evaluate(()=>globalThis.baseGpsCalls)).toBe(1);expect((await api(page,'session')).data.user.base).toBe(null);
   await profile.locator('[data-base-query]').fill('Roma');await profile.locator('[data-base-search]').click();
@@ -65,7 +65,7 @@ test('base privata del profilo: salvataggio, distanze, navigatori, isolamento e 
   expect((await api(page,'session')).data.user.base).toEqual(rome);
   for(const width of[320,390,1280]){await page.setViewportSize({width,height:900});expect(await profile.evaluate(el=>el.scrollWidth<=el.clientWidth)).toBe(true);if(width===390)await profile.screenshot({path:'/tmp/fungaroli-profile-base-mobile.png'});}
   await profile.locator('.profile-actions [data-close]').click();await expect(page.locator('#hero .facts')).toContainText('111 min');
-  expect(await page.locator('#hero .ring b').textContent()).toBe(score);
+  expect(await page.locator('#hero .cover-index b').textContent()).toBe(score);
   await page.locator('#hero .cover-link').click();await page.locator('#detail [data-sec="accesso"] summary').click({position:{x:5,y:10}});
   await expect(page.locator('#detail [data-sec="accesso"]')).toContainText('Da Roma 111 min · 77 km');
   const href=await page.locator('#detail a[href*="google.com/maps/dir"]').first().getAttribute('href');expect(new URL(href).searchParams.get('origin')).toBe('41.9028,12.4964');
@@ -427,7 +427,7 @@ test('autocomplete dei commestibili, selezione individuale, stagione e persisten
   await page.screenshot({path:'/tmp/fungaroli-species-filter.png',fullPage:true});
   await page.locator('#full-filters [data-close]').first().click();
   await expect(page.locator('#hero')).toContainText('indice di crescita non è ancora disponibile');
-  await expect(page.locator('#hero .ring')).toHaveCount(0);
+  await expect(page.locator('#hero .cover-index')).toHaveCount(0);
   await page.locator('#hero .explore-fallback a').first().click();
   await expect(page.locator('#detail')).toContainText('Indice non ancora disponibile');
   await expect(page.locator('#detail .trails li').first()).toBeVisible();

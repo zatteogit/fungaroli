@@ -44,15 +44,16 @@ for (const width of [390, 1280]) for (const theme of ['light', 'dark']) {
     expect(bright).toBeTruthy();
     const hard = [bright, photos.find((p) => p.key === 'tancia · autunno sereno')].filter(Boolean);
 
-    // proposta in home: testi sulla foto (desktop) e testi sul pannello pieno (telefono)
+    // Proposta e alternative: misurare sia vetro/foto sia i nuovi pannelli pieni.
     const hero = await sweepCover(page, { host: '#hero .cover', img: '#hero .cover > img', size: 'hd', photos: hard });
     const heroSolid = (await auditState(page, { root: '#hero' })).filter((r) => r.method === 'pieno');
     expect(hero.items.length + heroSolid.length).toBeGreaterThan(8);
     expect(describeBelow([...hero.items, ...heroSolid])).toEqual([]);
     // prima card di «Altre buone uscite»
     const tile = await sweepCover(page, { host: '#ranking li:first-child .tile', img: '#ranking li:first-child .tile > img', size: 'small', photos: hard });
-    expect(tile.items.length).toBeGreaterThan(2);
-    expect(describeBelow(tile.items)).toEqual([]);
+    const tileSolid=(await auditState(page,{root:'#ranking li:first-child .tile'})).filter(r=>r.method==='pieno');
+    expect(tile.items.length+tileSolid.length).toBeGreaterThan(2);
+    expect(describeBelow([...tile.items,...tileSolid])).toEqual([]);
 
     // copertina della scheda del luogo
     await page.goto('/#/zona/tancia/0');

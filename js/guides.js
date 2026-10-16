@@ -13,7 +13,7 @@ export function initGuideContent(data,labels={}) {
 export const guideTitle = (id) => GUIDES.find((g) => g.id === id)?.title || 'Approfondimenti';
 export function renderGuideCards(box) {
   if (!box) return;
-  box.innerHTML = `<p class="eyebrow">${esc(copy.editorialEyebrow || "Approfondimenti sul bosco")}</p><h2>${esc(copy.editorialTitle || "Una cosa da imparare, a ogni giro.")}</h2><div class="editorial-cards">${GUIDES.map((g, i) => `<a class="editorial-card ec-${i}" href="#/guide/${g.id}"><span class="eyebrow">${esc(g.category)}</span><h3>${esc(g.title)}</h3><p>${esc(g.excerpt)}</p><span class="editorial-read">Leggi →</span></a>`).join('')}</div>`;
+  box.innerHTML = `<div class="editorial-cards">${GUIDES.map((g, i) => `<a class="editorial-card ec-${i}" href="#/guide/${g.id}"><span class="eyebrow">${esc(g.category)}</span><h3>${esc(g.title)}</h3><p>${esc(g.excerpt)}</p><span class="editorial-read">Leggi →</span></a>`).join('')}</div>`;
 }
 export function renderGuide(box, id) {
   const g = GUIDES.find((g) => g.id === id);
