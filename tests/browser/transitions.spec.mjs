@@ -140,8 +140,13 @@ async function pickDays(page,n) {
 const ringState=page=>page.evaluate(()=>{const r=document.querySelector('#detail .phero > .ring');return{same:r===window.__ring,cover:document.querySelector('#detail .phero')===window.__cover,img:document.querySelector('#detail .phero-img img')===window.__img,text:r.querySelector('b').textContent,p:parseFloat(getComputedStyle(r).getPropertyValue('--p')),focus:document.activeElement?.dataset?.dayOffset||''};});
 for(const width of [390,1280]) test(`cambio di giorno nella zona senza ricreare la copertina a ${width}px`,async({page})=>{
   const errors=await setup(page,width);
+  // alone «ambilight»: mai in home (proposta e card), sì dietro la testata della zona, come fratello prima di .phero
+  await expect(page.locator('[data-view="uscite"] .ambi')).toHaveCount(0);
   await step(page,()=>page.locator('#hero .cover-link').click());
-  await page.evaluate(()=>{window.__ring=document.querySelector('#detail .phero > .ring');window.__cover=document.querySelector('#detail .phero');window.__img=document.querySelector('#detail .phero-img img');});
+  await expect(page.locator('#detail > .ambi.on + .phero')).toHaveCount(1);
+  await expect(page.locator('#detail > .ambi img')).toHaveCount(1);
+  expect(await page.locator('#detail > .ambi').evaluate(a=>getComputedStyle(a).pointerEvents==='none'&&a.getAttribute('aria-hidden')==='true')).toBe(true);
+  await page.evaluate(()=>{window.__ring=document.querySelector('#detail .phero > .ring');window.__cover=document.querySelector('#detail .phero');window.__img=document.querySelector('#detail .phero-img img');window.__ambi=document.querySelector('#detail > .ambi');});
   const days=await pickDays(page,3);expect(days.length).toBe(3);
   for(const o of days) {
     const day=page.locator(`#zone-days [data-day-offset="${o}"]`),expected=await day.locator('.pc').textContent();
@@ -150,6 +155,8 @@ for(const width of [390,1280]) test(`cambio di giorno nella zona senza ricreare 
     await expect(day).toHaveAttribute('aria-selected','true');
     const s=await ringState(page);
     expect(s.same).toBe(true);expect(s.cover).toBe(true);expect(s.img).toBe(true);
+    // l'alone resta lo stesso nodo, prima della testata, anche dopo l'aggiornamento sul posto
+    expect(await page.evaluate(()=>document.querySelector('#detail > .ambi')===window.__ambi&&window.__ambi.nextElementSibling===window.__cover)).toBe(true);
     expect(s.text).toBe(expected);
     expect(Math.abs(s.p-Number(expected.replace(',','.'))*10)).toBeLessThan(.6);
     // il giorno toccato resta col focus, la pagina non scorre

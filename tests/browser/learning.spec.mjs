@@ -1,7 +1,7 @@
 import {test,expect} from '@playwright/test';
 import {todayISO} from '../../js/weather.js';
 
-async function setup(page,width) {
+async function setup(page,width,heroSelector='#hero .cover-link') {
   await page.setViewportSize({width,height:900});
   await page.emulateMedia({reducedMotion:'reduce'});
   const errors=[];page.on('pageerror',e=>errors.push(e.message));
@@ -13,7 +13,7 @@ async function setup(page,width) {
     await route.fulfill({json:out});
   });
   await page.addInitScript(()=>localStorage.setItem('fungaroli:legal-accepted','32026-10-16'));
-  await page.goto('/');await expect(page.locator('#hero .cover-link')).toBeVisible();return errors;
+  await page.goto('/');await expect(page.locator(heroSelector)).toBeVisible();return errors;
 }
 
 for(const width of [320,768,1280]) test(`le card fotografiche riempiono le colonne del catalogo a ${width}px`,async({page})=>{
@@ -234,7 +234,9 @@ for(const width of [320,1280]) test(`guide in Scopri e taccuino personale distin
   await page.locator('[data-tab="specie"]').click();await page.locator('.view:not([hidden]) .seg-nav [data-section="impara"]').click();await expect(page.locator('#learn-hub .learn-card')).toHaveCount(6);
   await page.locator('#learn-hub [data-learn="guide"]').click();
   const view=page.locator('[data-view="guide-list"]');await expect(view).toBeVisible();
-  await expect(view.locator('.seg-nav [data-section="impara"]')).toHaveAttribute('aria-current','page');await expect(view.locator('.sub-nav a')).toHaveCount(4);
+  // dentro Impara niente riga delle sezioni di Scopri: solo le quattro sotto-schede, con Guide scelta
+  await expect(view.locator('.seg-nav')).toBeHidden();await expect(view.locator('.seg-nav a')).toHaveCount(0);
+  await expect(view.locator('.sub-nav a')).toHaveCount(4);await expect(view.locator('.sub-nav [aria-current="page"]')).toHaveText('Guide');
   await expect(page.locator('[data-back]:visible span')).toHaveText('Impara');
   await expect(page.locator('[data-tab="specie"]')).toHaveAttribute('aria-current','page');
   await expect(page.locator('#editorial .eyebrow').first()).toHaveText('Guide del bosco');
@@ -293,7 +295,7 @@ for(const width of [320,1280]) test(`titoletti senza link e keyword complete nel
   await cap.click();const panel=page.locator(width<700?'#learning-sheet':'#learning-popover');await expect(panel.locator('h2')).toHaveText('Cappello');
   await page.keyboard.press('Escape');await expect(cap).toBeFocused();
   for(const theme of ['light','dark']){await page.evaluate(t=>document.documentElement.dataset.theme=t,theme);await page.locator('#species-detail .trait-strip').screenshot({path:`/tmp/fungaroli-traits-${width}-${theme}.png`});}
-  await page.goto('/');await expect(page.locator('#hero .cover-link')).toBeVisible();await page.waitForLoadState('networkidle');
+  await page.goto('/');await expect(page.locator('#hero .cover-link')).toBeVisible();await expect(page.locator('#hero .sp-also').first()).toBeVisible();
   expect(await page.locator('#hero .sp-also').evaluateAll(nodes=>nodes.every(el=>{const score=el.querySelector('.sp-also-score');return !!score&&score.children[0].tagName==='I'&&score.children[1].tagName==='B';}))).toBe(true);
   // Screenshot diagnostico: un ridisegno tardivo (community, meteo) può riconciliare il riquadro mentre viene catturato.
   await expect(async()=>page.locator('#hero .cover-sp').screenshot({path:`/tmp/fungaroli-also-species-${width}.png`,timeout:3000})).toPass({timeout:15000});
@@ -340,6 +342,14 @@ for(const width of [320,1280])test(`funghi al centro, scoperte contestuali e tac
  const cards=page.locator('#during-walk .discovery-grid>li');expect(await cards.count()).toBeGreaterThan(0);expect(await cards.count()).toBeLessThanOrEqual(3);await expect(page.locator('#during-walk .ring')).toHaveCount(0);
  const link=page.locator('#during-walk [data-discovery]').first(),href=await link.getAttribute('href'),original=page.url();await link.click();const sheet=page.locator('#entity-sheet[open]');await expect(sheet.locator('.discovery-context')).toContainText('presenza');expect(page.url()).toBe(original);await expect(sheet.locator('[data-note-kind]').first()).toHaveAttribute('data-note-zone',/\S+/);
  await sheet.locator('[data-entity-close]').click();await expect(link).toBeFocused();
+ await page.goto('/'+hero);
+ const observations=page.locator('#detail [data-sec="specie"]');
+ if(await observations.getAttribute('open')===null)await observations.locator(':scope > summary').click({position:{x:5,y:5}});
+ await expect(observations.locator('.observation-discoveries')).toBeVisible();
+ await expect(page.locator('#detail [data-sec="scoperte"]')).toHaveCount(0);
+ const discovery=observations.locator('[data-discovery]').first(),zoneUrl=page.url();
+ await discovery.click();await expect(sheet).toBeVisible();expect(page.url()).toBe(zoneUrl);
+ await sheet.locator('[data-entity-close]').click();await expect(discovery).toBeFocused();
  // la preferenza sugli appunti botanici sta nel taccuino, non tra i filtri
  await expect(page.locator('#full-filters [data-botanical-personalize]')).toHaveCount(0);
  await page.goto('/#/diario');await page.locator('#notebook-storage-panel > summary').click();const notesToggle=page.locator('[data-botanical-personalize]');await expect(notesToggle).not.toBeChecked();await notesToggle.check();
@@ -350,9 +360,9 @@ for(const width of [320,1280])test(`funghi al centro, scoperte contestuali e tac
  await page.goto('/#/scopri');await expect(page.locator('[data-tab="specie"]')).toContainText('Scopri');await expect(page.locator('#species-grid .sp-card').first()).toBeVisible();
  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);expect(errors).toEqual([]);
 });
-test('le vecchie preferenze botaniche non sostituiscono l’uscita a funghi',async({page})=>{
- await page.addInitScript(()=>localStorage.setItem('fungaroli:prefs:v2',JSON.stringify({target:'piante',plantIds:['ortica']})));
- const errors=await setup(page,390);await expect(page.locator('#hero .cover-sp')).toContainText('Da conoscere');await expect(page.locator('[data-target]')).toHaveCount(0);expect(errors).toEqual([]);
+test('la preferenza botanica salvata riconfigura la home',async({page})=>{
+ await page.addInitScript(()=>localStorage.setItem('fungaroli:prefs:v2',JSON.stringify({target:'piante',plantIds:null})));
+ const errors=await setup(page,390,'#hero .outdoor-hero');await expect(page.locator('#active-filters [data-intent="piante"]')).toHaveAttribute('aria-pressed','true');await expect(page.locator('#hero .outdoor-hero')).toBeVisible();await expect(page.locator('#hero .ring')).toHaveCount(0);expect(errors).toEqual([]);
 });
 for(const width of [320,1280])test(`avvisi brevi visibili e caratteri senza verdetti di raccolta a ${width}px`,async({page})=>{
  const errors=await setup(page,width);await page.goto('/#/fungo/cortinarius-rubellus');const warning=page.locator('#taxon-detail .attention');await expect(warning).toBeVisible();await expect(warning.locator('summary')).toHaveCount(0);await expect(warning.locator('ul')).toContainText('danni renali tardivi');await expect(warning).not.toContainText(/scarta/i);await expect(warning.locator('[data-term="cappello"]')).toBeVisible();
@@ -382,33 +392,58 @@ for(const width of [390,1280]) test(`Scopri: tre cataloghi più Impara e ricerca
   for(const [route,section,mode] of places){
     await page.goto(route);const view=page.locator('.view:not([hidden])');
     await expect(view.locator('.seg-nav [aria-current="page"]')).toHaveText(section);
-    await expect(view.locator('.sub-nav [aria-current="page"]')).toHaveText(mode);
+    await expect(view.locator('.sub-nav a')).toHaveCount(0);
+    if(mode==='Sfoglia'){
+      const trigger=view.locator('[data-open-recognition]');await expect(trigger).toBeVisible();const before=page.url();
+      await trigger.click();const panel=page.locator('.recognition-sheet[open]');await expect(panel).toBeVisible();
+      await expect(panel.locator('.id-q').first()).toBeVisible();expect(page.url()).toBe(before);
+      await page.keyboard.press('Escape');await expect(panel).toHaveCount(0);await expect(trigger).toBeFocused();expect(page.url()).toBe(before);
+    }
     await expect(view.locator('.seg-nav a')).toHaveText(['Funghi','Piante e fiori','Alberi','Impara']);
   }
-  // Impara: quarta sezione di Scopri, con le sue sotto-schede e «indietro»
+  // Impara: quarta sezione di Scopri. La pagina indice ha la riga delle sezioni (Impara scelta); le pagine interne
+  // hanno solo le sotto-schede e «indietro» (niente terzo livello)
   // si arriva dalla pagina indice di Impara: «indietro» riporta lì
   for(const [route,title] of [['/#/glossario','Glossario'],['/#/guide','Guide'],['/#/riconosci/bosco','Bosco e sentiero'],['/#/sfide','Sfide']]){
     await page.goto('/#/impara');await expect(page.locator('#learn-hub')).toBeVisible();
+    const hub=page.locator('.view:not([hidden])');
+    await expect(hub.locator('.seg-nav a')).toHaveText(['Funghi','Piante e fiori','Alberi','Impara']);await expect(hub.locator('.seg-nav [data-section="impara"]')).toHaveAttribute('aria-current','page');
     await page.goto(route);const view=page.locator('.view:not([hidden])');
-    await expect(view.locator('.seg-nav [data-section="impara"]')).toHaveAttribute('aria-current','page');await expect(view.locator('.sub-nav a')).toHaveCount(4);
+    await expect(view.locator('.seg-nav')).toBeHidden();await expect(view.locator('.seg-nav a')).toHaveCount(0);
+    await expect(view.locator('.sub-nav a')).toHaveCount(4);await expect(view.locator('.sub-nav [aria-current="page"]')).toHaveText(title);
     await expect(page.locator('[data-tab="specie"]')).toHaveAttribute('aria-current','page');
     await expect(page.locator('[data-back]:visible span')).toHaveText('Impara');
   }
-  // un solo campo: sui cataloghi la ricerca generale si nasconde e il campo filtra la griglia
-  await page.goto('/#/specie');const field=page.locator('#species-grid [data-catalog-search]');
-  await expect(page.locator('.tab-search')).toBeHidden();
-  await page.keyboard.press('/');await expect(field).toBeFocused();
-  await field.fill('porcino');await expect(page.locator('#sp-cards .sp-card').first()).toContainText('Porcino');
-  const n=await page.locator('#sp-cards .sp-card').count();expect(n).toBeGreaterThan(0);expect(n).toBeLessThan(10);
-  await field.fill('faggio');await expect(page.locator('#sp-cards .sp-card')).toHaveCount(0);
-  const also=page.locator('#species-grid .also-in [data-also="albero"]');await expect(also).toBeVisible();
-  await also.click();await expect(page.locator('dialog.search-dlg[open] input')).toHaveValue('faggio');
-  await expect(page.locator('dialog.search-dlg[open] [data-scope="albero"]')).toHaveAttribute('aria-pressed','true');
+  // Nei Funghi si usa la ricerca generale, senza un secondo campo nel catalogo.
+  await page.goto('/#/specie');await expect(page.locator('#species-grid [data-catalog-search]')).toHaveCount(0);
+  await expect(page.locator('.tab-search')).toBeVisible();
+  await page.keyboard.press('/');await expect(page.locator('dialog.search-dlg[open] input')).toBeFocused();
+  await page.locator('dialog.search-dlg[open] input').fill('porcino');
+  await expect(page.locator('dialog.search-dlg[open]')).toContainText('Porcino');
   await page.locator('dialog.search-dlg .search-cancel').click();
-  await page.goto('/#/alberi');await page.locator('#tree-grid [data-catalog-search]').fill('quercus');
-  await expect(page.locator('[data-tree-results] .sp-card').first()).toBeVisible();
+  await page.goto('/#/alberi');await expect(page.locator('#tree-grid [data-catalog-search]')).toHaveCount(0);
+  await page.locator('[data-tree-group="conifere"]').click();await expect(page.locator('[data-tree-results] .sp-card').first()).toBeVisible();
+  await page.locator('[data-tree-group=""]').click();await expect(page.locator('[data-tree-results] .sp-card')).toHaveCount(39);
   // fuori dai cataloghi la ricerca generale resta disponibile
   await page.goto('/#/glossario');await expect(page.locator('.tab-search')).toBeVisible();
   expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
   expect(errors).toEqual([]);
+});
+test('confronto: colore etichettato per struttura in ciascuna colonna',async({page})=>{
+ await setup(page,390);
+ for(const [ref,pick,labels] of [['edulis','tylopilus-felleus',['Colore dei pori','Colore dei pori']],['cibarius','omphalotus-olearius',['Colore delle pliche','Colore delle lamelle']]]){
+  await page.goto(`/#/riconosci/confronta/${ref}/${pick}`);
+  const slide=page.locator(`#cmp-${pick}`),row=slide.locator('[data-trait="hymenophore_color"]');
+  await expect(slide.locator('.cmp-same')).toHaveCount(0);
+  await expect(slide.locator('.cmp-legend')).toContainText('Fondo colorato: in comune');
+  await expect(slide.locator('.cmp-legend')).toContainText('Solo contorno: differenze');
+  const legend=await slide.locator('.cmp-legend').evaluate(el=>({common:getComputedStyle(el.querySelector('.common')).backgroundColor,own:getComputedStyle(el.querySelector('.own')).backgroundColor}));
+  expect(legend.common).not.toBe('rgba(0, 0, 0, 0)');expect(legend.own).toBe('rgba(0, 0, 0, 0)');
+  await expect(row.locator('.cmp-cell > .cmp-k')).toHaveText(labels);
+  for(const cell of await row.locator('.cmp-cell').all()){
+   const values=await cell.locator('.cmp-v').count();
+   await expect(cell.locator('.cmp-or')).toHaveCount(Math.max(0,values-1));
+  }
+  if(ref==='cibarius'){await expect(row).toHaveClass(/diff/);await expect(row.locator('.cmp-v.common')).toHaveCount(0);}
+ }
 });

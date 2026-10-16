@@ -1,31 +1,71 @@
 /* Fronda: componenti condivisi sopra lo stile esistente. Perimetro a tolleranza zero di tools/ds-guard.mjs: solo ruoli pubblici dei token. */
 /* ------------------------------------------------------------------ Fronda: componenti
-   Dal kit (docs/fronda): sezione attiva in pillola piena verde bosco, azione principale in polline con testo
-   bosco notte, scelte attive piene, sottoschede sottolineate in fiordaliso, focus unico. Solo ruoli, niente
-   colori scritti a mano: i valori stanno nei token in cima al file. */
-.tab-pill { background: var(--brand); }
-.tabbar a[aria-current="page"] { color: var(--brand-ink); }
+   Semantica dei colori (decisione di Matteo, 15/10): interazione = bosco (--link), selezione = polline
+   (--select, testo --select-ink, filo --select-edge), azione principale = polline (--action), informazione =
+   calendula (--accent: occhielli, etichette), indice = verde (--s*, anello, pallini). Solo ruoli, niente
+   colori scritti a mano: i valori stanno in css/tokens.css.
+   Azione e selezione hanno lo stesso giallo ma forme diverse: l'azione è un bottone pieno senza filo, in
+   grassetto, con il segno dell'azione (＋, →); il «scelto» sta sempre dentro un gruppo (fila, vassoio, barra),
+   ha il filo ocra --select-edge e, nei filtri, la spunta. */
+.tab-pill { background: var(--select); box-shadow: inset 0 0 0 1px var(--select-edge); }
+.tabbar a[aria-current="page"] { color: var(--select-ink); }
 @media (min-width: 900px) {
-  .tabbar a[aria-current="page"] { background: var(--brand); color: var(--brand-ink); border-radius: 999px; }
-  @media (hover: hover) { .tabbar a[aria-current="page"]:hover { background: var(--brand); } }
+  .tab-pill { border-radius: 999px; }
+  .tabbar a[aria-current="page"] { color: var(--select-ink); }
+  @media (hover: hover) { .tabbar a[aria-current="page"]:hover { background: none; } }
 }
 .btn.primary { background: var(--action); color: var(--action-ink); border-color: var(--action); }
 @media (hover: hover) { .btn.primary:hover { background: var(--action-hover); border-color: var(--action-hover); filter: none; } }
 .cover-cta { background: var(--action); color: var(--action-ink); }
-:is(.chip.pref, .chip, .ts-form, .ts-dot.ts-chip)[aria-pressed="true"] { background: var(--brand); color: var(--brand-ink); border-color: var(--brand); }
-.chip[aria-pressed="true"] svg { color: currentColor; }
-.sub-nav a[aria-current="page"] { border-bottom-color: var(--fiordaliso); }
+/* filtri e scelte attive: polline con il filo ocra; la spunta (style.css) prende il colore del testo */
+:is(.chip.pref, .chip, .ts-form, .ts-dot.ts-chip)[aria-pressed="true"],
+:is(.recognize-modes a[aria-current="page"], .recognize-modes button[aria-pressed="true"], .fo[aria-pressed="true"], .seg button[aria-pressed="true"], .cmp-chip[aria-selected="true"], .report-days [aria-pressed="true"], .th-chip.is-active) {
+  background: var(--select); color: var(--select-ink); border-color: var(--select-edge); box-shadow: none;
+}
+.fo[aria-pressed="true"] .fo-n { color: inherit; }
+.chip[aria-pressed="true"] svg, .th-chip.is-active svg { color: currentColor; }
+/* segmenti (Scopri, percorso guidato, vista del sentiero): il segmento scelto è polline nel vassoio */
+:is(.seg-nav a[aria-current="page"], .seg-tabs button[aria-selected="true"], .trail-view-tabs [aria-selected="true"]) { background: var(--select); color: var(--select-ink); box-shadow: inset 0 0 0 1px var(--select-edge); }
+/* sotto-schede: testo pieno e sottolineatura ocra/polline (il polline puro su avorio non si vede abbastanza) */
+.sub-nav a[aria-current="page"] { color: var(--text); border-bottom: 3px solid var(--select-edge); padding-bottom: 8px; }
+.notebook-tabs button[aria-pressed="true"] { border-bottom-color: var(--select-edge); }
+/* scelte grandi (risposte del percorso guidato, procedure): fondo polline tenue e filo ocra */
+:is(.id-opt[aria-pressed="true"], .wiz-choice.sel, .report-quantity:has(:checked), .mapctl-base[aria-pressed="true"]) { border-color: var(--select-edge); background: var(--polline-soft); box-shadow: inset 0 0 0 1px var(--select-edge); }
+.id-opt[aria-pressed="true"] .id-art { color: var(--text); }
+.share-choice label:has(input:checked) { border-color: var(--select-edge); box-shadow: inset 0 0 0 1px var(--select-edge); }
+.mapctl-tile[aria-pressed="true"] { color: var(--text); }
+.mapctl-tile[aria-pressed="true"] img { box-shadow: 0 0 0 3px var(--select-edge); }
+/* giorno scelto (home, zona, mappa): polline con testo bosco notte; il pallino resta nel colore del suo indice */
+.day[aria-selected="true"] { background: var(--select); color: var(--select-ink); border-color: var(--select-edge); box-shadow: var(--shadow-1); }
+.day[aria-selected="true"] :is(.d1, .d3) { color: var(--select-ink); }
+.day[aria-selected="true"] .dot { background: var(--dc); box-shadow: 0 0 0 1.5px var(--select-ink); }
 :where(a, button, input, select, textarea, summary, [tabindex]):focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
 
-/* Fronda: la mappa sta dentro Uscite, raggiungibile dalla testata della home */
-.map-link { flex: none; display: inline-flex; align-items: center; gap: 8px; min-height: 40px; padding: 0 14px; border-radius: 999px; border: 1px solid var(--hair); background: var(--surface); color: var(--brand); font-weight: 650; font-size: 14px; text-decoration: none; }
+/* Fronda: la mappa sta dentro Uscite, raggiungibile dalla testata della home.
+   La testata è una griglia: occhiello in alto, titolo e mappa sulla stessa riga, poi la riga del meteo e la nota
+   a tutta larghezza. Così «Dove andare» resta su una riga e la riga di stato non si stringe accanto al bottone.
+   Sotto i 600 px la mappa è un bottone tondo da 40 px allineato al titolo (nome nell'etichetta accessibile e nel
+   suggerimento); da 600 px in su torna la pillola con il testo «Mappa delle zone». */
+.view[data-view="uscite"] > .view-head { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 0 12px; align-items: center; }
+.view[data-view="uscite"] > .view-head > div { display: contents; }
+.view[data-view="uscite"] > .view-head > div > * { grid-column: 1 / -1; }
+.view[data-view="uscite"] > .view-head .kicker { grid-row: 1; }
+.view[data-view="uscite"] > .view-head .view-title { grid-row: 2; grid-column: 1; }
+.view[data-view="uscite"] > .view-head .map-link { grid-row: 2; grid-column: 2; }
+.view[data-view="uscite"] > .view-head .view-sub { grid-row: 3; }
+.view[data-view="uscite"] > .view-head .stale { grid-row: 4; }
+.map-link { flex: none; display: inline-flex; align-items: center; gap: 8px; min-height: 40px; padding: 0 14px; border-radius: 999px; border: 1px solid var(--hair); background: var(--surface); color: var(--link); font-weight: 650; font-size: 14px; text-decoration: none; }
+.map-link[data-map-link] { margin: 0; box-shadow: var(--shadow-1); }
 .map-link svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
 @media (hover: hover) { .map-link:hover { background: var(--surface-2); } }
-@media (max-width: 380px) { .map-link span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); } .map-link { padding: 0; width: 40px; justify-content: center; } }
+@media (max-width: 599px) {
+  .map-link[data-map-link] span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .map-link[data-map-link] { padding: 0; width: 40px; height: 40px; justify-content: center; }
+}
 /* sul telefono la mappa è a tutto schermo: un «indietro» tondo riporta a Uscite */
 .map-back { display: none; }
 @media (max-width: 760px) {
-  .map-back { display: grid; place-items: center; position: absolute; z-index: 601; top: calc(env(safe-area-inset-top, 0px) + 14px); left: 8px; width: 44px; height: 44px; border-radius: 50%; background: var(--surface); color: var(--brand); box-shadow: var(--shadow-1); border: 1px solid var(--hair); }
+  .map-back { display: grid; place-items: center; position: absolute; z-index: 601; top: calc(env(safe-area-inset-top, 0px) + 14px); left: 8px; width: 44px; height: 44px; border-radius: 50%; background: var(--surface); color: var(--link); box-shadow: var(--shadow-1); border: 1px solid var(--hair); }
   .map-back svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
   .map-top { left: 60px; }
 }
@@ -56,8 +96,6 @@
 /* ------------------------------------------------------------------ Leggibilità sui fondi pieni */
 /* etichette di rischio e numero di emergenza: testo che contrasta col rosso in entrambi i temi */
 :is(.tox-deadly, .tox-mortale, .id-card.tox-mortale, .tx-body.tox-mortale, .cmp-fig.tox-mortale) .tox, :is(.sp-card-tox, .sr-badge, .tx-pill).tox-mortale, .lb-cap .tox-mortale, .em-numbers .btn.primary { color: var(--on-crit); }
-/* giorno selezionato sul verde pieno: testo pieno, non velato */
-.day[aria-selected="true"][data-lv="5"] :is(.d1, .d3) { color: inherit; }
 /* numero dell'imbocco sull'accento: inchiostro dell'accento (scuro nel tema scuro) */
 .th-n { color: var(--accent-ink); }
 /* barra di navigazione: le sezioni non attive in testo secondario, non attenuato */
@@ -66,7 +104,7 @@
 :is(input, textarea)::placeholder { color: var(--muted); opacity: 1; }
 /* crediti della mappa */
 .leaflet-container .leaflet-control-attribution { background: color-mix(in srgb, var(--surface) 90%, transparent); color: var(--text-2); }
-.leaflet-container .leaflet-control-attribution a { color: var(--accent); }
+.leaflet-container .leaflet-control-attribution a { color: var(--link); }
 /* frecce della fila di card con il mouse: sulla foto, non sopra la prima riga di testo della card */
 .rail-host:has(.tile) > .rail-arrow { top: calc(var(--rail-y, 50%) - 48px); }
 /* barra in basso del telefono: vetro più pieno, le etichette restano leggibili anche sopra foto colorate */
@@ -137,19 +175,66 @@
 .viz-table tr.is-selected :is(th, td) { background: var(--surface-2); font-weight: 700; color: var(--text); }
 @media (prefers-reduced-motion: reduce) { .viz-tip { transition: none; } }
 
-/* Alone «ambilight» (js/ambilight.js): i colori dei quattro bordi della foto diventano luce sfumata attorno alla copertina,
-   in modo quasi uniforme su ogni lato, come se la foto si espandesse. Discreto in chiaro, più presente in scuro;
-   spento con «riduci trasparenza». Sul telefono la testata della zona è a tutta larghezza: la luce va sopra e sotto. */
-.phero, .cover { --amb-k: 46%; --amb-x: 30px; --amb-y: 30px; --amb-blur: 96px; --amb-spread: -20px; transition: box-shadow .6s ease; }
-.phero.has-amb, .cover.has-amb {
-  box-shadow: var(--shadow-1),
-    0 calc(-1 * var(--amb-y)) var(--amb-blur) var(--amb-spread) color-mix(in srgb, var(--amb-t, var(--amb-b)) var(--amb-k), transparent),
-    calc(-1 * var(--amb-x)) 0 var(--amb-blur) var(--amb-spread) color-mix(in srgb, var(--amb-l) var(--amb-k), transparent),
-    var(--amb-x) 0 var(--amb-blur) var(--amb-spread) color-mix(in srgb, var(--amb-r) var(--amb-k), transparent),
-    0 var(--amb-y) var(--amb-blur) var(--amb-spread) color-mix(in srgb, var(--amb-b) var(--amb-k), transparent);
+/* Alone «ambilight» (js/ambilight.js), solo nelle pagine di dettaglio: dietro la testata una copia della foto
+   (versione normale, mai l'HD) sfocata, più satura e ingrandita, che sporge come luce colorata. Il contenitore
+   isola l'alone: sta sopra il fondo della pagina e sotto tutto il resto. In chiaro è luce tenue (opacità bassa,
+   più chiara e più satura, così non sporca l'avorio); in scuro è ben visibile. Spento con «riduci trasparenza»;
+   con «riduci movimento» compare senza dissolvenza ma resta. */
+#views :is(#detail, .sp-page) { position: relative; isolation: isolate; }
+.ambi { position: absolute; z-index: -1; pointer-events: none; opacity: 0; transition: opacity .6s ease; --ambi-o: .4; --ambi-f: blur(56px) saturate(1.7) brightness(1.35); }
+.ambi.on { opacity: var(--ambi-o); }
+.ambi > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: var(--ambi-f); transform: scaleY(1.1); } /* solo in altezza: in larghezza allargava la pagina di qualche pixel */
+:root[data-theme="dark"] .ambi { --ambi-o: .8; --ambi-f: blur(60px) saturate(1.35) brightness(.95); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .ambi { --ambi-o: .8; --ambi-f: blur(60px) saturate(1.35) brightness(.95); } }
+@media (prefers-reduced-transparency: reduce) { .ambi { display: none; } }
+@media (prefers-reduced-motion: reduce) { .ambi { transition: none; } }
+
+/* Etichetta «Rieti» accanto al marchio: dice che è una versione pilota e porta a Regole e metodo, dove la frase
+   dell'avviso iniziale la spiega. Discreta (testo secondario), segue il marchio: dove il marchio è nascosto
+   (pagine interne sul telefono) sparisce anche lei. «pilota ·» solo quando c'è spazio. */
+.brand-place { flex: none; display: inline-flex; align-items: center; min-height: 32px; margin-left: -6px; padding: 0 8px; border-radius: 999px; color: var(--text-2); font-size: 12.5px; font-weight: 600; letter-spacing: .01em; text-decoration: none; white-space: nowrap; }
+.brand-place .bp-pre { color: var(--muted); font-weight: 500; }
+.brand[hidden] + .brand-place { display: none; }
+@media (hover: hover) { .brand-place:hover { color: var(--link); background: var(--surface-2); } }
+@media (max-width: 479px) { .brand-place .bp-pre { display: none; } }
+@media (max-width: 359px) { .brand-place { margin-left: -2px; padding: 0 6px; font-size: 12px; } }
+@media (min-width: 900px) { .brand-place { order: 1; } .brand[hidden] + .brand-place { display: inline-flex; } }
+.info-pilot { margin: 0 0 16px; padding: 10px 14px; border-radius: var(--r-sm); background: var(--surface-2); color: var(--text-2); font-size: 14px; line-height: 1.45; }
+
+/* Bottoni tenui (decisione di Matteo, 16/10): sono interazioni, quindi bosco su fondo neutro, non calendula.
+   «Confronta», pillole d'azione, righe-invito come «Come funziona l'indice», filtri rimovibili. */
+:is(.ts-cta, .cmp-cta, .tx-vs, .act-pill, .tx-cmp-btn, .chip-x) { background: var(--surface-2); color: var(--link); }
+:is(.ts-cta, .cmp-cta) { color: var(--text); }
+.chip-x { border-color: var(--border); }
+@media (hover: hover) {
+  :is(.ts-cta, .cmp-cta, .tx-vs, .act-pill, .tx-cmp-btn, .chip-x):hover { background: var(--surface-3); }
+  :is(.chip-more, .fp-reset):hover { background: var(--surface-2); }
 }
-@media (max-width: 760px) { .phero { --amb-x: 0px; --amb-y: 40px; --amb-blur: 110px; --amb-spread: -16px; } }
-:root[data-theme="dark"] :is(.phero, .cover) { --amb-k: 66%; }
-@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) :is(.phero, .cover) { --amb-k: 66%; } }
-@media (prefers-reduced-transparency: reduce) { .phero.has-amb, .cover.has-amb { box-shadow: var(--shadow-2); } }
-@media (prefers-reduced-motion: reduce) { .phero, .cover { transition: none; } }
+
+/* Interruttori «acceso» (preferenze, livelli della mappa): polline con il filo, come la selezione;
+   il pomello resta chiaro con il filo ocra, così si legge anche sul polline. */
+:is(.fp-switch[aria-pressed="true"] .switch, .switch-input:checked, .map-toggle[aria-checked="true"] .mt-switch) { background: var(--select); box-shadow: inset 0 0 0 1px var(--select-edge); }
+:is(.fp-switch[aria-pressed="true"] .switch i, .switch-input:checked::before, .map-toggle[aria-checked="true"] .mt-switch i) { background: var(--surface); box-shadow: 0 0 0 1px var(--select-edge); }
+
+/* L'intento resta lo stesso in Uscite e Mappa. I dettagli sono nel pannello. */
+.active-filters .intent-row { display:flex; flex-wrap:wrap; gap:8px; width:100%; overflow:visible; }
+.intent-row .chip { flex:none; }
+.map-filters .intent-row { flex-wrap:nowrap; width:max-content; }
+.outdoor-tile { min-height:300px; }
+.outdoor-tile .tile-body { gap:8px; }
+.outdoor-tile .tile-body small { line-height:1.45; }
+.outdoor-tile.outdoor-hero { min-height:380px; width:100%; margin-bottom:20px; }
+.outdoor-hero .tile-body > b { font-size:clamp(26px,4vw,42px); }
+.outdoor-phase { font-weight:600; }
+.outdoor-cta { display:block; font-weight:700; text-decoration:underline; text-underline-offset:4px; }
+.outdoor-plant { display:flex; flex-direction:column; gap:12px; min-height:250px; padding:18px; background:var(--surface); border:1px solid var(--border); border-radius:18px; color:var(--text); text-decoration:none; }
+.outdoor-plant > span { display:grid; gap:8px; }
+.outdoor-plant small { color:var(--text-2); line-height:1.45; }
+.outdoor-plant img { border-radius:12px; }
+.season-dialog .fp-head-actions { flex-wrap:wrap; margin-top:20px; }
+@media(max-width:599px) {
+  .active-filters .intent-row { gap:6px; }
+  .active-filters .intent-row .chip { padding:9px 11px; font-size:13px; min-height:42px; }
+  .outdoor-tile.outdoor-hero { min-height:360px; }
+}
+.outdoor-plant .thumb { width:100%; height:140px; object-fit:cover; border-radius:12px; }

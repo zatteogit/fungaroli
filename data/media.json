@@ -749,13 +749,15 @@
    "latin": "Suillus luteus",
    "wikidata": "Q816730",
    "ref": {
-    "file": "assets/species/suillus-ref.webp",
-    "source": "Wikimedia Commons",
-    "page": "https://commons.wikimedia.org/wiki/File:Ruhland,_Grenzstra%C3%9Fe_bei_Hausnr._1,_Butterpilz_am_Parkplatzrand,_Entwicklungsreihe,_Herbst,_02.jpg",
-    "author": "Wilhelm Zimmerling PAR",
-    "license": "CC BY-SA 4.0",
-    "file_hd": "assets/species/suillus-ref-hd.webp",
-    "thumb": "assets/species/suillus-ref-t.webp"
+    "file": "assets/species/suillus-inat2.webp",
+    "source": "iNaturalist (research grade)",
+    "page": "https://www.inaturalist.org/observations/138249938",
+    "author": "Marco Floriani",
+    "license": "CC-BY-NC",
+    "place": "Maderlina, Cembra-Lisignago, IT-TN, Italy",
+    "date": "2022-10-10",
+    "file_hd": "assets/species/suillus-inat2-hd.webp",
+    "thumb": "assets/species/suillus-inat2-t.webp"
    },
    "inat": [
     {
@@ -768,17 +770,6 @@
      "date": "2025-10-31",
      "file_hd": "assets/species/suillus-inat1-hd.webp",
      "thumb": "assets/species/suillus-inat1-t.webp"
-    },
-    {
-     "file": "assets/species/suillus-inat2.webp",
-     "source": "iNaturalist (research grade)",
-     "page": "https://www.inaturalist.org/observations/138249938",
-     "author": "Marco Floriani",
-     "license": "CC-BY-NC",
-     "place": "Maderlina, Cembra-Lisignago, IT-TN, Italy",
-     "date": "2022-10-10",
-     "file_hd": "assets/species/suillus-inat2-hd.webp",
-     "thumb": "assets/species/suillus-inat2-t.webp"
     },
     {
      "file": "assets/species/suillus-inat3.webp",

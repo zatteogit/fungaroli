@@ -55,7 +55,7 @@ export function renderSvgMap(container, { zones, origin, items, onSelect }) {
     const z = it.z;
     const [x, y0] = P(z.lat, z.lon);
     const name0 = z.name.split(/[/–(]/)[0].trim();
-    const w0 = 14 + (`${formatIndex(it.score)}  ${name0}`).length * 6.4;
+    const w0 = 14 + (`${it.label||formatIndex(it.score)}  ${name0}`).length * 6.4;
     let y = y0;
     const hit = (yy) => placed.some((b) => Math.abs(b.x - x) < (b.w + w0) / 2 + 4 && Math.abs(b.y - yy) < 26);
     for (let k = 1; hit(y) && k < 8; k++) y = y0 + (k % 2 ? 1 : -1) * Math.ceil(k / 2) * 26;
@@ -67,14 +67,14 @@ export function renderSvgMap(container, { zones, origin, items, onSelect }) {
     const z = it.z;
     const [x, yc] = P(z.lat, z.lon);
     const y = it.labelY;
-    const g = el('g', { class: 'zone' + (it.selected ? ' sel' : ''), tabindex: 0, role: 'button', 'aria-label': `${z.name}, indice ${formatIndex(it.score)}` }, svg);
+    const g = el('g', { class: 'zone' + (it.selected ? ' sel' : ''), tabindex: 0, role: 'button', 'aria-label': `${z.name}, ${it.label||"indice "+formatIndex(it.score)}` }, svg);
     el('circle', {
       cx: x, cy: yc, r: (z.radius_m / 1000) * s, fill: it.color, 'fill-opacity': 0.55,
       stroke: it.selected ? 'var(--text)' : it.color, 'stroke-width': it.selected ? 3 : 1.5,
     }, g);
     const label = el('g', { transform: `translate(${x},${y})` }, g);
     const name = z.name.split(/[/–(]/)[0].trim();
-    const text = `${formatIndex(it.score)}  ${name}`;
+    const text = `${it.label||formatIndex(it.score)}  ${name}`;
     const w = 14 + text.length * 6.4;
     el('rect', { x: -w / 2, y: -11, width: w, height: 22, rx: 7, fill: 'var(--surface)', stroke: 'var(--border)' }, label);
     el('circle', { cx: -w / 2 + 10, cy: 0, r: 4.5, fill: it.color }, label);

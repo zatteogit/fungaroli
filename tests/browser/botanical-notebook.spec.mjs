@@ -31,7 +31,7 @@ test('plants: search, comparison sheets and private simultaneous phenophases on 
 
 test('botanical layouts, global search and short note form in both themes',async({page})=>{
  const errors=await start(page,'#/piante',1280);
- await expect(page.locator('.tab-search')).toBeHidden();await page.keyboard.press('Control+k');await page.locator('dialog.search-dlg input').fill('Foeniculum vulgare');await expect(page.locator('dialog.search-dlg')).toContainText('Finocchietto selvatico');await page.locator('dialog.search-dlg .search-cancel').click();await expect(page.locator('dialog.search-dlg[open]')).toHaveCount(0);
+ await expect(page.locator('.tab-search')).toBeVisible();await page.keyboard.press('Control+k');await page.locator('dialog.search-dlg input').fill('Foeniculum vulgare');await expect(page.locator('dialog.search-dlg')).toContainText('Finocchietto selvatico');await page.locator('dialog.search-dlg .search-cancel').click();await expect(page.locator('dialog.search-dlg[open]')).toHaveCount(0);
  for(const theme of ['light','dark']){
   await page.evaluate(theme=>document.documentElement.dataset.theme=theme,theme);
   await expect.poll(()=>page.locator('.recognize-modes button').nth(1).evaluate(b=>getComputedStyle(b).color)).toBe(theme==='dark'?'rgb(244, 243, 233)':'rgb(24, 56, 44)');
@@ -73,4 +73,14 @@ test('glossario: parole collegate nelle descrizioni, mai in mesi, fonti e credit
  for(const term of ['lamelle','pori','gambo','cappello','volva'])await expect(plant.locator(`a.glossary-link[data-term="${term}"]`)).toHaveCount(0);
  expect(await outsideZones(plant)).toEqual([]);
  expect(errors).toEqual([]);
+});
+for(const width of [390,1280])test(`filtri aggiuntivi delle piante nel pannello a ${width}px`,async({page})=>{
+ const errors=await start(page,'#/piante',width),opener=page.locator('[data-open-plant-filters]'),panel=page.locator('.plant-filter-panel');
+ await expect(panel).not.toHaveAttribute('open','');await opener.click();await expect(panel).toBeVisible();
+ await panel.locator('[data-plant-filter="lookalikes"]').click();await expect(opener.locator('[data-filter-n]')).toContainText('1 attivo');
+ await expect(panel.locator('[data-plant-filter-results]')).toContainText(/Mostra \d+ schede?/);
+ await panel.locator('[data-plant-filter-results]').click();await expect(panel).not.toHaveAttribute('open','');await expect(opener).toBeFocused();
+ await opener.click();await expect(panel.locator('[data-plant-filter="lookalikes"]')).toHaveAttribute('aria-pressed','true');
+ await panel.locator('[data-reset-plant-filters]').click();await expect(opener.locator('[data-filter-n]')).toBeEmpty();await expect(page.locator('[data-plant-results] .sp-card')).toHaveCount(70);
+ await page.keyboard.press('Escape');await expect(opener).toBeFocused();expect(errors).toEqual([]);
 });
