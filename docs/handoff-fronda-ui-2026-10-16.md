@@ -14,7 +14,7 @@ Direzione approvata: [Più luce, più vita](https://www.figma.com/design/FCjz72x
 
 ## Implementazione
 
-Ruoli cromatici in css/tokens.css, componenti in css/fronda.css. Tabler Icons (MIT) per meteo e fungo pieno; licenza in assets/tabler-LICENSE.txt. Shell v100 e precache aggiornati insieme. La home sposta le righe scorrevoli insieme ai loro contenitori, evitando frecce orfane.
+Ruoli cromatici in css/tokens.css, componenti in css/fronda.css. Tabler Icons (MIT) per meteo e fungo pieno; licenza in assets/tabler-LICENSE.txt. Shell v101 e precache aggiornati insieme. La home sposta le righe scorrevoli insieme ai loro contenitori, evitando frecce orfane.
 
 Fonti: dataset e contenuti CMS correnti; nessuna nuova foto o dato scientifico. Le immagini editoriali provengono dal catalogo esistente e rimandano ai crediti della specie. Nuove frasi di interfaccia nei template; nessuna modifica ai record pubblicati del CMS.
 
@@ -33,3 +33,5 @@ Gli anelli usano un fondo bosco all’88% e blur interno; con riduzione della tr
 Il controllo della home Piante ha evidenziato due problemi degli strumenti di verifica: l’audit campionava le frecce sovrapposte alle card parzialmente visibili e il confronto dell’ordine delle sezioni dipendeva dal momento in cui veniva creato il contenitore delle righe scorrevoli. L’audit ora centra ogni card con scorrimento istantaneo; il confronto considera le sezioni anche dentro quel contenitore. Soglie di contrasto e verifiche dell’ordine restano invariate. Nessuna modifica al codice dell’app per queste correzioni.
 
 La fixture community assegna inoltre un indirizzo client distinto a ogni contesto del browser locale: i budget delle registrazioni rimangono separati senza azzerare i contatori con una seconda connessione SQLite. La scrittura diretta nel database in uso poteva arrestare workerd con `SQLITE_BUSY`. I limiti del Worker restano invariati.
+
+Il test di transizione ha poi mostrato un salto di layout riproducibile tornando dal Taccuino alla home mobile: il selettore della vecchia copertina imponeva `height:auto` alla foto, prevalendo per specificità sulla regola del nuovo template. I selettori aggiornati riservano l’altezza prevista anche prima del caricamento. Un test con le foto dei luoghi bloccate controlla che il pannello del testo non si sposti quando l’immagine arriva. Cache e meta aggiornati a v101.

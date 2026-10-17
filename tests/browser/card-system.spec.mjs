@@ -2,6 +2,23 @@ import {test,expect} from '@playwright/test';
 import {parseCssColor,contrastRatio} from '../../tools/legibility.mjs';
 import {preparePage,loadAllImages,auditState} from '../../tools/visual-audit.mjs';
 
+test('la foto della home mobile conserva lo spazio prima del caricamento',async({browser})=>{
+ const context=await browser.newContext({viewport:{width:390,height:920},reducedMotion:'reduce',serviceWorkers:'block'});
+ const page=await preparePage(context);let release;
+ const pending=new Promise(resolve=>{release=resolve;});
+ await page.route('**/assets/zones/**',async route=>{await pending;await route.continue();});
+ try{
+  await page.goto('/');await expect(page.locator('#hero .cover-title')).toBeVisible();
+  const photo=page.locator('#hero .cover-img');
+  await expect.poll(()=>photo.evaluate(e=>e.getBoundingClientRect().height)).toBeGreaterThanOrEqual(196);
+  const before=await page.locator('#hero .cover-body').boundingBox();
+  expect(await photo.evaluate(e=>e.naturalWidth)).toBe(0);
+  release();await expect.poll(()=>photo.evaluate(e=>e.complete&&e.naturalWidth>0)).toBe(true);
+  const after=await page.locator('#hero .cover-body').boundingBox();
+  expect(after.y).toBe(before.y);expect(after.height).toBe(before.height);
+ }finally{release();await context.close();}
+});
+
 for(const theme of ['light','dark']) test(`template editoriali: testi lunghi, tastiera e contrasto in ${theme}`,async({browser})=>{
  const context=await browser.newContext({viewport:{width:390,height:920},reducedMotion:'reduce',serviceWorkers:'block'});
  const page=await preparePage(context,{theme}),errors=[];page.on('pageerror',e=>errors.push(e.message));
