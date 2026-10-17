@@ -316,13 +316,13 @@ const H_FIELDS = [
   { t: 'open', k: 'avoided', path: 'risks.avoided', short: 'Quali e perché', label: 'Quali, e perché?', when: (o) => o.avoidsSpecies === 'sì' },
   { t: 'open', k: 'mountainDangers', path: 'risks.mountainDangers', short: 'Pericoli in montagna', label: 'Quali pericoli ci sono in montagna?' },
 ];
-const KNOWS_FIELD = { t: 'open', of: 'followUp', k: 'knowsOthers', path: 'followUp.knowsOthers', short: 'Altri esperti', label: 'Conosci altri cercatori esperti che potrebbero rispondere?', hint: 'Non scrivere nomi o contatti di altre persone: gira loro il link.' };
+const KNOWS_FIELD = { t: 'open', of: 'followUp', k: 'knowsOthers', path: 'followUp.knowsOthers', short: 'Altri amici', label: 'Conosci qualcuno a cui potrebbe far piacere rispondere?', hint: 'Non scrivere nomi o contatti di altre persone: gira loro il link.' };
 const I_FIELDS = [
-  { t: 'choice', of: 'consent', k: 'diary', short: 'Taccuino delle uscite', label: 'Nella prossima stagione ti va di annotare le tue uscite e mandarcele?', hint: 'Data, zona, cosa hai trovato o non trovato. Ti spieghiamo noi come.', options: YES_NO },
+  { t: 'choice', of: 'consent', k: 'diary', short: 'Taccuino delle uscite', label: 'Nella prossima stagione ti va di annotare le tue uscite e mandarmele?', hint: 'Data, zona, cosa hai trovato o non trovato. Ti spiego io come.', options: YES_NO },
   KNOWS_FIELD,
-  { t: 'choice', of: 'consent', k: 'recontact', short: 'Ricontatto', label: 'Possiamo ricontattarti per qualche domanda in più?', options: YES_NO },
+  { t: 'choice', of: 'consent', k: 'recontact', short: 'Ricontatto', label: 'Posso ricontattarti per qualche domanda in più?', options: YES_NO },
   { t: 'text', of: 'respondent', k: 'name', short: 'Nome', label: 'Il tuo nome', hint: 'Facoltativo. Anche solo un soprannome: serve a collegare le risposte alla tua testimonianza durante lo studio. Non comparirà nei risultati.', autocomplete: 'name' },
-  { t: 'text', of: 'respondent', k: 'contact', short: 'Contatto', label: 'Come ti ricontattiamo?', hint: 'Facoltativo. Telefono o email.', when: contactOn },
+  { t: 'text', of: 'respondent', k: 'contact', short: 'Contatto', label: 'Come posso ricontattarti?', hint: 'Facoltativo. Telefono o email.', when: contactOn },
   { t: 'consent' },
 ];
 
@@ -353,8 +353,8 @@ const PARTS = [
   { key: 'A', id: 'profile', title: 'Chi sei', brief: true, intro: 'Qualche domanda su di te e su come vai per funghi. Se non vuoi rispondere a una domanda, lasciala vuota.', fields: A_FIELDS, owner: () => state.profile },
   { key: 'B', title: 'Le specie che conosci bene', brief: true, intro: 'Scegli le specie che conosci bene: per ognuna si apre una scheda. Bastano mese e quota indicativa, anche a occhio.', render: renderSpeciesPart, summary: speciesSummary, collect: collectSpecies },
   { key: 'C', id: 'rain', title: 'Pioggia', intro: 'Come la pioggia cambia le uscite, secondo la tua esperienza.', fields: C_FIELDS, owner: () => state.rain },
-  { key: 'D', title: 'Temperatura, vento e secco', intro: 'Ci interessano episodi precisi, anche vecchi: un freddo improvviso, una gelata, un vento secco, un caldo fuori stagione.', render: renderWeatherPart, summary: weatherSummary, collect: collectWeather },
-  { key: 'E', title: 'Gli ultimi anni', brief: true, briefAll: true, intro: ['Pensa agli ultimi anni: ci servono le buttate e anche le uscite andate a vuoto.', 'Niente posti precisi: basta la zona e la quota indicativa.'], render: renderRecentPart, summary: recentSummary, collect: collectRecent },
+  { key: 'D', title: 'Temperatura, vento e secco', intro: 'Mi interessano episodi che ricordi, anche vecchi: un freddo improvviso, una gelata, un vento secco, un caldo fuori stagione.', render: renderWeatherPart, summary: weatherSummary, collect: collectWeather },
+  { key: 'E', title: 'Gli ultimi anni', brief: true, briefAll: true, intro: ['Pensa agli ultimi anni: raccontami le uscite in cui hai trovato tanti funghi e anche quelle andate a vuoto.', 'Niente posti precisi: basta la zona e la quota indicativa.'], render: renderRecentPart, summary: recentSummary, collect: collectRecent },
   { key: 'F', id: 'forest', title: 'Bosco, versante e terreno', intro: 'Dove guardi e perché. Non servono posti precisi.', fields: F_FIELDS, owner: () => state.forest },
   { key: 'G', id: 'access', title: 'Accessi e regole locali', intro: 'Cosa deve sapere chi va in quelle zone: strade, permessi, parcheggi. Non servono posti precisi.', fields: G_FIELDS, owner: () => state.access },
   { key: 'H', id: 'risks', title: 'Rischi', intro: 'I rischi che vedi in zona, per chi cerca funghi.', fields: H_FIELDS, owner: () => state.risks },
@@ -1193,14 +1193,15 @@ function render() {
 function readReceipts() { try { const r = JSON.parse(store.get(RECEIPTS_KEY) || '[]'); return Array.isArray(r) ? r : []; } catch { return []; } }
 
 function renderIntro(host) {
-  const sec = stepSection('Prima di cominciare');
+  const sec = stepSection('Mi dai una mano?');
   sec.append(
-    h('p', {}, 'Cerchiamo chi va per funghi nel Reatino da molti anni. Vogliamo capire quando e dove escono, e che cosa li fa uscire: pioggia, freddo, bosco, quota.'),
+    h('p', {}, 'Sto raccogliendo le esperienze degli amici che vanno a funghi nel Reatino. Mi interessa capire come scegli quando uscire, che cosa trovi e come cambiano le cose con la stagione, la pioggia e il bosco.'),
+    h('p', {}, 'Non serve essere esperti: raccontami quello che conosci, anche se vai a funghi solo ogni tanto. Puoi rispondere solo alle domande che vuoi.'),
     h('ul', { class: 'q-points' },
-      h('li', {}, 'Non chiediamo posti precisi: basta la zona e la quota indicativa.'),
-      h('li', {}, 'Se non sai una cosa, lasciala vuota o tocca «Non so». Va bene anche rispondere solo in parte.'),
+      h('li', {}, 'I tuoi posti restano tuoi: bastano la zona e la quota indicativa.'),
+      h('li', {}, 'Se non ricordi o non sai una cosa, lascia vuoto o tocca «Non so». Nessun problema.'),
       h('li', {}, 'Non serve registrarsi. Il nome è facoltativo.'),
-      h('li', {}, 'Mentre scrivi, le risposte restano su questo dispositivo. Ci arrivano solo quando premi «Invia», alla fine.')));
+      h('li', {}, 'Puoi fermarti e riprendere quando vuoi da questo dispositivo. Ricevo le risposte solo quando premi «Invia», alla fine.')));
   const receipts = readReceipts();
   if (receipts.length) {
     const last = receipts[receipts.length - 1];
@@ -1217,7 +1218,7 @@ function renderIntro(host) {
       state.mode === mode ? h('span', { class: 'q-big-text' }, 'È quella che stai usando.') : null);
     sec.append(h('div', { class: 'q-versions', role: 'group', 'aria-labelledby': vid },
       h('h3', { id: vid }, 'Quanto tempo hai?'),
-      big('breve', 'Versione breve', 'circa 10 minuti', 'Chi sei, quando e a che quota escono fino a 3 specie, qualche buttata.'),
+      big('breve', 'Versione breve', 'circa 10 minuti', 'La tua esperienza, fino a 3 specie che conosci e qualche uscita da raccontare.'),
       big('completa', 'Versione completa', 'circa 30–40 minuti', 'Tutte le domande: anche pioggia, freddo e vento, bosco, accessi e rischi.'),
       h('p', { class: 'q-hint' }, 'Puoi passare dall’una all’altra quando vuoi, senza perdere niente.')));
   }
@@ -1321,7 +1322,7 @@ function renderSent(host) {
       h('p', {}, 'Il tuo codice ricevuta:'),
       h('p', { class: 'q-receipt', 'data-receipt': '' }, sent.receipt),
       h('div', { class: 'q-row' }, copy),
-      h('p', {}, 'Conservalo. Se un giorno vuoi farci cancellare le risposte, manda questo codice a Matteo Sgambato: ', ...contactLink(), '.')));
+      h('p', {}, 'Conservalo. Se un giorno vuoi cancellare le risposte, scrivimi e mandami questo codice: ', ...contactLink(), '.')));
   }
   sec.append(h('p', { class: 'q-muted' }, 'La bozza su questo dispositivo è stata cancellata.'),
     h('div', { class: 'q-row' }, h('button', { type: 'button', class: 'q-btn', onclick: () => { sent = null; state = blank(); go('intro'); } }, 'Compila un altro questionario')));
