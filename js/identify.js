@@ -809,7 +809,7 @@ function renderCompare(box, ref, pick) {
       <div class="cmp-kind-tabs" role="tablist" aria-label="Caratteri da confrontare">${groups.map(g=>`<button type="button" role="tab" id="cmp-${esc(t.key)}-tab-${g.kind}" data-cmp-group="${g.kind}" aria-controls="cmp-${esc(t.key)}-panel-${g.kind}" aria-selected="${g.kind==='diff'}" tabindex="${g.kind==='diff'?0:-1}">${g.label}</button>`).join('')}</div>
       <p class="cmp-legend" hidden><span><span class="cmp-relation" aria-hidden="true">=</span> Valore in comune</span><span><span class="cmp-relation" aria-hidden="true">≠</span> Valore diverso</span></p>
       ${groups.map(g=>{const items=rows.filter(r=>!r.info&&r.kind===g.kind);return `<section class="cmp-panel" id="cmp-${esc(t.key)}-panel-${g.kind}" data-cmp-panel="${g.kind}" role="tabpanel" aria-labelledby="cmp-${esc(t.key)}-tab-${g.kind}" tabindex="0"${g.kind==='diff'?'':' hidden'}>${items.length?`<div class="cmp-column-head" aria-hidden="true"><span>${esc(ref.name||ref.latin)}</span><span>${esc(t.name||t.latin)}</span></div><ul class="cmp-rows">${items.map(r=>r.html).join('')}</ul>`:`<p class="cmp-none">${g.empty}</p>`}</section>`;}).join('')}
-      ${info.length?`<details class="context-note cmp-season" open><summary>Periodo</summary><ul class="cmp-rows">${info.map(r=>r.html).join('')}</ul></details>`:''}
+      ${info.length?`<div class="cmp-season"><ul class="cmp-rows">${info.map(r=>r.html).join('')}</ul></div>`:''}
       <details class="sec cmp-sources"><summary>Fonti del confronto</summary><div class="sec-body">${sourceRows([...(ref.sources || []), ...(t.sources || [])])}</div></details>
       <p class="cmp-verdict">${[ref,t].some(x=>['mortale','tossico'].includes(x.toxicity)) ? 'Il confronto include specie tossiche o mortali; i caratteri possono variare o essere incompleti. ' : ''}Somiglianze e differenze non identificano il tuo esemplare. Fai controllare il raccolto all’Ispettorato micologico ASL.</p>
     </section>`;
@@ -908,7 +908,7 @@ function renderCompare(box, ref, pick) {
       e.preventDefault();selectGroup(tabs[next].dataset.cmpGroup);tabs[next].focus({preventScroll:true});
     });
   });
-  box.querySelectorAll('.cmp-sources,.cmp-season').forEach(d=>d.addEventListener('toggle',fit));
+  box.querySelectorAll('.cmp-sources').forEach(d=>d.addEventListener('toggle',fit));
   const trackSize = new ResizeObserver(fit);
   trackSize.observe(track);
   box.querySelectorAll('.cmp-slide img').forEach(im => im.addEventListener('load', fit, {once:true}));
