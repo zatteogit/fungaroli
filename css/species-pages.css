@@ -224,3 +224,89 @@ body[data-page="mappa"] .view-map { border-radius:0; }
   .fungus-page .species-context-body { padding:0 12px 16px; }
 }
 @media(prefers-reduced-motion:reduce) { .fungus-page .species-context > summary, .fungus-page .species-context > summary::after { transition:none; } }
+
+/* Piano dell'uscita: tre livelli distinti, senza pulsanti lunghi a forma di pillola. */
+#detail .outing-section-title { margin:0 0 14px; color:var(--text); font:600 22px/1.3 var(--font-display); }
+#detail .essential-sections { display:grid; gap:12px; margin:24px 0; }
+#detail .essential-sections > .outing-section-title { margin-bottom:2px; }
+#detail .essential-sections > .sec { margin:0; padding:0; border:1px solid var(--hair); border-radius:18px; background:var(--surface); overflow:clip; }
+#detail .essential-sections > .sec > summary { display:block; position:relative; margin:0; padding:18px 16px; }
+#detail .essential-sections .essential-summary { grid-template-columns:36px minmax(0,1fr); gap:12px; padding-right:24px; }
+#detail .essential-sections .plan-ic { width:36px; height:36px; border-radius:11px; background:var(--surface-2); color:var(--link); }
+#detail .essential-sections .plan-ic svg { width:21px; height:21px; }
+#detail .essential-sections .plan-ic :is(.thumb-btn,.thumb) { width:36px; height:36px; border-radius:50%; }
+#detail .essential-sections .plan-k { font:600 10px/1.5 var(--font-body); letter-spacing:.08em; gap:8px; margin-bottom:5px; }
+#detail .essential-sections .plan-v { font-size:17px; line-height:1.5; }
+#detail .essential-sections .plan-sub { margin-top:10px; font-size:13px; line-height:1.55; }
+#detail .essential-sections [data-sec="quando"] .plan-v { display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+#detail .essential-sections .plan-v .badge { margin:0; font-size:11px; }
+#detail .essential-sections [data-sec="accesso"] .plan-sub { display:flex; flex-wrap:wrap; align-items:center; gap:10px 14px; }
+#detail .essential-sections .plan-travel { display:block; }
+#detail .essential-sections > .sec > summary::after { position:absolute; top:18px; right:14px; order:0; margin:0; width:20px; height:20px; border:0; background:currentColor; mask:url('../assets/ui/chevron-right.svg') center / contain no-repeat; -webkit-mask:url('../assets/ui/chevron-right.svg') center / contain no-repeat; transform:rotate(90deg); transition:transform .2s ease; }
+#detail .essential-sections > .sec[open] > summary::after { transform:rotate(270deg); }
+#detail .essential-sections > .sec > .sec-body { padding:0 16px 18px; border-top:1px solid var(--hair); }
+#detail .zone-actions { display:grid; gap:12px; margin:28px 0; padding:20px; border:1px solid var(--hair); border-radius:20px; background:var(--surface-2); }
+#detail .zone-actions > .outing-section-title { margin:0 0 2px; font-size:21px; }
+#detail .zone-actions .zone-community { display:grid; gap:8px; margin:0; }
+#detail .zone-actions .zone-note-action { display:flex; align-items:center; justify-content:flex-start; gap:10px; width:100%; min-height:50px; padding:12px 16px; border-radius:13px; font:600 14px/1.45 var(--font-body); text-align:left; }
+#detail .zone-note-action > .ui-icon { width:20px; height:20px; }
+#detail .zone-note-action > span:last-child { margin-left:auto; font-size:20px; }
+#detail .zone-secondary-actions { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; }
+#detail .zone-secondary-action { display:flex; align-items:center; justify-content:flex-start; min-width:0; min-height:66px; gap:10px; margin:0; padding:12px; border:1px solid var(--border); border-radius:13px; background:var(--surface); color:var(--text); text-align:left; text-decoration:none; font-family:var(--font-body); cursor:pointer; }
+#detail .zone-secondary-action > svg { flex:0 0 20px; width:20px; height:20px; fill:none; stroke:currentColor; stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round; color:var(--link); }
+#detail .zone-secondary-action > span { display:grid; gap:3px; min-width:0; }
+#detail .zone-secondary-action b { font:600 13px/1.4 var(--font-body); }
+#detail .zone-secondary-action small { font:400 11px/1.4 var(--font-body); color:var(--text-2); }
+#detail .zone-secondary-actions > :only-child { grid-column:1/-1; }
+#detail .zone-actions > p { margin:0; font-size:12px; line-height:1.6; }
+#detail [data-plan-status]:empty { display:none; }
+#detail .zone-more { margin:32px 0 12px; padding:20px; border:1px solid var(--hair); border-radius:20px; background:var(--surface); }
+#detail .zone-more > .outing-section-title { margin:0 0 6px; }
+#detail .zone-more > .sec { padding:0; margin:0; border:0; border-bottom:1px solid var(--hair); border-radius:0; background:none; }
+#detail .zone-more > .sec:last-child { border-bottom:0; }
+#detail .zone-more > .sec > summary { display:grid; grid-template-columns:minmax(0,1fr) 20px; gap:12px; align-items:center; padding:18px 0; }
+#detail .zone-more .section-preview { gap:6px; }
+#detail .zone-more .section-preview-title { font-size:18px; line-height:1.35; }
+#detail .zone-more .section-preview-detail { font:400 13px/1.5 var(--font-body); }
+#detail .zone-more > .sec > summary::after { order:0; margin:0; width:20px; height:20px; border:0; background:currentColor; mask:url('../assets/ui/chevron-right.svg') center / contain no-repeat; -webkit-mask:url('../assets/ui/chevron-right.svg') center / contain no-repeat; transform:rotate(90deg); transition:transform .2s ease; }
+#detail .zone-more > .sec[open] > summary::after { transform:rotate(270deg); }
+#detail .zone-secondary-action:focus-visible { outline:3px solid var(--focus); outline-offset:3px; }
+@media(hover:hover) {
+  #detail .zone-secondary-action:hover { border-color:var(--link); }
+  #detail .zone-more > .sec > summary:hover .section-preview-title { color:var(--link); }
+}
+@media(max-width:599px) {
+  #detail .zone-actions, #detail .zone-more { padding:16px; }
+  #detail .outing-section-title { font-size:21px; }
+}
+@media(max-width:359px) { #detail .zone-secondary-actions { grid-template-columns:minmax(0,1fr); } }
+
+/* Un carattere per riga, due colonne nominate: il confronto si legge senza perdere il riferimento. */
+.fungus-compare .cmp-column-head { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:20px; padding:0 16px 12px; color:var(--text-2); font:600 12px/1.45 var(--font-body); text-wrap:pretty; }
+.fungus-compare .cmp-column-head > span { min-width:0; }
+.fungus-compare .cmp-rows { gap:10px; }
+.fungus-compare .cmp-row { min-width:0; gap:12px 0; padding:16px; border:1px solid var(--hair); border-radius:15px; background:var(--surface); }
+.fungus-compare .cmp-row > .cmp-k { padding-bottom:10px; margin:0; border-bottom:1px solid var(--hair); font:600 13px/1.5 var(--font-body); color:var(--text); }
+.fungus-compare .cmp-row > .cmp-cell { min-width:0; padding-right:12px; }
+.fungus-compare .cmp-row > .cmp-cell:last-child { border-left:1px solid var(--hair); padding:0 0 0 12px; }
+.fungus-compare .cmp-cell > .cmp-k { margin-bottom:4px; font-size:12px; color:var(--text-2); }
+.fungus-compare .cmp-vals { flex-direction:column; align-items:flex-start; gap:8px; }
+.fungus-compare .cmp-v { align-items:center; gap:7px; min-height:30px; font-size:14px; line-height:1.5; }
+.fungus-compare .cmp-v-art { color:var(--text); }
+.fungus-compare .cmp-v-art svg :is([opacity=".15"],[opacity=".2"],[opacity=".22"],[opacity=".25"]) { opacity:.5; }
+.fungus-compare .cmp-value-text { overflow-wrap:anywhere; }
+.fungus-compare .cmp-or { color:var(--text-2); font-size:11px; }
+.fungus-compare .cmp-panel { margin-top:20px; }
+.fungus-compare .cmp-kind-tabs { margin-bottom:0; }
+@media(max-width:599px) {
+  .fungus-compare .cmp-column-head { gap:16px; padding-inline:12px; font-size:12px; }
+  .fungus-compare .cmp-row { padding:12px; gap:10px 0; }
+  .fungus-compare .cmp-row > .cmp-cell { padding-right:10px; }
+  .fungus-compare .cmp-row > .cmp-cell:last-child { padding-left:10px; }
+  .fungus-compare .cmp-v-art { min-width:22px; }
+  .fungus-compare .cmp-v-art svg { width:24px; max-width:24px; height:24px; }
+  .fungus-compare .cmp-v { font-size:14px; gap:6px; }
+  body[data-page="riconosci"] .appbar:has(.appbar-back:not([hidden])) .appbar-title { left:calc(28% + 8px); right:140px; max-width:none; text-align:center; transform:translateY(6px); }
+  .title-in-bar body[data-page="riconosci"] .appbar:has(.appbar-back:not([hidden])) .appbar-title { transform:translateY(0); }
+}
+@media(prefers-reduced-motion:reduce) { #detail .essential-sections > .sec > summary::after, #detail .zone-more > .sec > summary::after { transition:none; } }

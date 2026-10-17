@@ -827,48 +827,50 @@ button.cover-index:focus-visible { outline:3px solid var(--focus); outline-offse
 
 .community-purpose { max-width:52ch; font-size:16px; line-height:1.6; }
 
-/* Testata Uscite: scelte rapide distinte dal pulsante dei filtri avanzati. */
-.view[data-view="uscite"] > .view-head { margin-block:0 14px; gap:4px 16px; }
+/* Testata compatta: filtri accanto al titolo, due righe di scelte senza label ripetute. */
+.view[data-view="uscite"] > .view-head { margin-block:0 12px; gap:4px 12px; }
 #today-kicker { margin:0; font-size:13px; text-transform:none; }
 #today-kicker::first-letter { text-transform:uppercase; }
-.view[data-view="uscite"] > .view-head .view-title { margin:0; font-size:32px; line-height:1.15; }
-.view[data-view="uscite"] > .view-head .view-sub { font-size:12px; }
-#active-filters { display:grid; grid-template-columns:minmax(0,1fr); gap:12px; margin:0 0 16px; padding:0; overflow:visible; }
+.view[data-view="uscite"] > .view-head .view-title { margin:0; grid-column:1; font-size:32px; line-height:1.15; }
+.view[data-view="uscite"] > .view-head .view-sub { grid-column:2; grid-row:1; margin:0; font-size:11px; align-self:center; }
+#home-filter-action { grid-column:2; grid-row:2; justify-self:end; }
+.home-filter-button { display:inline-flex; align-items:center; justify-content:center; gap:6px; min-height:44px; padding:8px 10px; border:0; border-radius:999px; background:var(--surface-2); color:var(--text); font:600 12px/1.3 var(--font-body); white-space:nowrap; cursor:pointer; transition:background .18s ease; }
+.home-filter-button > svg { width:18px; height:18px; flex:none; }
+.home-filter-button .af-filter-count { display:grid; place-items:center; min-width:18px; height:18px; padding:0 4px; border-radius:50%; background:var(--text); color:var(--surface); font:700 10px/1 var(--font-body); }
+.home-filter-button:focus-visible { outline:3px solid var(--focus); outline-offset:3px; }
+@media(hover:hover) { .home-filter-button:hover { background:var(--surface-3); } }
+#active-filters { display:grid; grid-template-columns:minmax(0,1fr); gap:8px; margin:0 0 14px; padding:0; overflow:visible; }
 #active-filters :is(.intent-row,.af-pref-row) { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:6px; width:100%; min-width:0; padding:0; }
-#active-filters .af-group-head { grid-column:1/-1; display:flex; justify-content:space-between; align-items:center; gap:12px; min-width:0; }
-#active-filters :is(.af-group-label,.af-pref-label) { display:flex; align-items:center; min-height:20px; padding:0; color:var(--text-2); font:500 12px/1.4 var(--font-body); }
-#active-filters .af-pref-label { grid-column:1/-1; }
-#active-filters .intent-row .chip-more { display:inline-flex; justify-content:center; align-items:center; flex:none; gap:7px; width:auto; min-height:44px; padding:8px 12px; margin:0; border:1px solid var(--control-edge); border-radius:12px; background:var(--surface); color:var(--text); font:600 12px/1.4 var(--font-body); white-space:nowrap; text-align:center; cursor:pointer; transition:background .18s ease,border-color .18s ease; }
-#active-filters .chip-more::after { content:none; }
-#active-filters .chip-more > svg { width:18px; height:18px; flex:0 0 18px; }
-#active-filters .af-filter-count { display:grid; place-items:center; min-width:18px; height:18px; padding:0 4px; background:var(--surface-3); color:var(--text); border-radius:50%; font:700 10px/1 var(--font-body); }
 #active-filters :is([data-intent],[data-p]) { min-width:0; min-height:44px; width:100%; justify-content:center; gap:6px; padding:8px; font:500 13px/1.3 var(--font-body); }
 #active-filters [data-p] { font-size:12px; }
 #active-filters .pref-icon, #active-filters .pref-icon svg { width:15px; height:15px; }
 #active-filters .pref-label-full { display:inline; white-space:normal; }
 #active-filters .pref-label-short { display:none; }
-#active-filters .chip-more:focus-visible { outline:3px solid var(--focus); outline-offset:3px; }
-@media(hover:hover) { #active-filters .chip-more:hover { background:var(--surface-2); border-color:var(--text-2); } }
 @media(min-width:768px) {
-  #active-filters { grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:24px; align-items:end; }
-  #active-filters .af-pref-label { min-height:44px; }
+  #active-filters { grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:24px; align-items:center; }
 }
 @media(min-width:1100px) {
   #active-filters { grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr); gap:36px; }
   #active-filters :is([data-intent],[data-p]) { padding-inline:14px; }
 }
 @media(max-width:599px) {
-  .view[data-view="uscite"] > .view-head .view-title { grid-column:1/-1; font-size:30px; }
-  .view[data-view="uscite"] > .view-head .view-sub { grid-column:2; grid-row:1; align-self:center; margin:0; }
-  .view[data-view="uscite"] > .view-head .upd-btn { max-width:130px; text-align:right; justify-content:flex-end; font-size:11px; }
+  .view[data-view="uscite"] > .view-head .view-title { font-size:28px; }
+  .view[data-view="uscite"] > .view-head .upd-btn { max-width:none; text-align:right; justify-content:flex-end; font-size:10px; }
+  #active-filters .pref-label-full { display:none; }
+  #active-filters .pref-label-short { display:inline; }
 }
 @media(max-width:359px) {
+  .view[data-view="uscite"] > .view-head .view-title { font-size:25px; }
   #active-filters :is([data-intent],[data-p]) { gap:4px; padding-inline:5px; font-size:12px; }
   #active-filters [data-p] { font-size:11px; }
   #active-filters [data-p]::before, #active-filters .pref-icon { width:13px; height:13px; }
-  #active-filters .intent-row .chip-more { padding-inline:9px; gap:5px; }
+  .home-filter-button { padding-inline:8px; gap:4px; }
 }
-@media(prefers-reduced-motion:reduce) { #active-filters .intent-row .chip-more { transition:none; } }
+@media(prefers-reduced-motion:reduce) { .home-filter-button { transition:none; } }
+
+/* Il primo giorno segue il margine della pagina, senza riservare spazio alla freccia nascosta. */
+#days { justify-content:flex-start; margin-inline:0; padding-inline:0; scroll-padding-inline:0; }
+.rail-host:has(> #days) { padding-left:0; }
 
 /* Le card del carosello escono gradualmente sullo sfondo della pagina. */
 @media(hover:hover) and (pointer:fine) {
