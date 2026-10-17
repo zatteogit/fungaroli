@@ -377,3 +377,13 @@ body[data-page="mappa"] .view-map { border-radius:0; }
 
 /* La fascia sicura sopra i nomi resta coperta anche quando la barra principale è fuori vista. */
 .cmp-pair-nav.is-stuck .cmp-nav-content::before { content:''; position:absolute; bottom:100%; left:0; right:0; height:env(safe-area-inset-top,0px); background:var(--bg); pointer-events:none; }
+
+/* La parte della specie si vede una volta per colonna; i valori restano separati. */
+.fungus-compare .cmp-part-art { display:flex; align-items:center; justify-content:flex-start; min-height:72px; margin:8px 0 12px; }
+.fungus-compare .cmp-part-art:empty { display:none; }
+.fungus-compare .cmp-part-art img { display:block; width:72px; height:72px; object-fit:contain; }
+.fungus-compare .cmp-cell:has(.cmp-part-art img) .cmp-v-art { display:none; }
+.fungus-compare .cmp-color-dot { display:none; flex:0 0 10px; width:10px; height:10px; border:1px solid var(--control-edge); border-radius:50%; background:var(--cmp-color); }
+.fungus-compare .cmp-cell:has(.cmp-part-art img) .cmp-color-dot { display:block; }
+.fungus-compare .cmp-illustration-note { display:none; max-width:65ch; margin:12px 0 16px; color:var(--text-2); font:400 13px/1.55 var(--font-body); }
+.fungus-compare .cmp-slide:has(.cmp-part-art img) .cmp-illustration-note { display:block; }
