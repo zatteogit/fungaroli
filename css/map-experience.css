@@ -10,7 +10,7 @@ body[data-page="mappa"] #views { padding:0; }
 .map-query-copy small { font-size:11px; line-height:1.35; font-weight:500; color:var(--text-2); }
 .map-query-copy b { font-size:14px; line-height:1.4; overflow:hidden; text-overflow:ellipsis; white-space:normal; }
 .map-query .ui-icon { width:20px; height:20px; }
-.map-date { gap:6px; background:var(--surface-2); }
+.map-date { gap:10px; background:var(--surface-2); }
 .map-filter-count { display:grid; place-items:center; min-width:24px; height:24px; border-radius:50%; background:var(--select); color:var(--select-ink); font-size:12px; }
 .map-top .map-days .day { min-width:80px; min-height:80px; padding:10px 8px; border-radius:18px; }
 .map-top .map-days .day .d2 { font-size:24px; }
@@ -21,8 +21,9 @@ body[data-page="mappa"] #views { padding:0; }
 .map-top > .rail-host:has(> #map-days) { overflow:hidden; border-top:1px solid var(--hair); margin-top:6px; }
 .map-top #map-days { min-width:0; max-width:100%; }
 .map-top .map-days .day { flex:none; min-width:90px; min-height:80px; }
-.map-date > span { transition:transform .15s; }
-.map-date[aria-expanded="true"] > span { transform:rotate(180deg); }
+.map-date > .map-date-chevron { display:block; width:20px; height:20px; flex:0 0 20px; transform-origin:center; transition:transform .2s ease; }
+.map-date[aria-expanded="true"] > .map-date-chevron { transform:rotate(180deg); }
+@media(prefers-reduced-motion:reduce) { .map-date > .map-date-chevron { transition:none; } }
 .map-top.days-open #map-filters { border:0; }
 .map-weather-status { font-size:12px; line-height:1.5; margin:0 6px; }
 .map-weather-status > summary { cursor:pointer; padding:6px; min-height:32px; color:var(--warn-ink); }
