@@ -111,3 +111,12 @@ test('shared cache survives midnight when its forecast covers the new day',async
  const hit=await cachedForecast(params,{zones,cache:storage,now:before+120000,fetcher});
  assert.equal(hit.headers.get('x-weather-cache'),'hit');assert.equal(calls,1);
 });
+
+test('fresh shared outing cache serves another client without calling the provider',async()=>{
+ const storage=cache(),params=forecastParams(zones,'outing');let calls=0;
+ const fetcher=async()=>{calls++;return Response.json(raw('outing'));};
+ await cachedForecast(params,{zones,cache:storage,now,fetcher});
+ const second=await cachedForecast(params,{zones,cache:storage,now:now+60000,fetcher});
+ assert.equal(calls,1);assert.equal(second.headers.get('x-weather-cache'),'hit');
+ assert.equal(second.headers.get('x-weather-fetched-at'),new Date(now).toISOString());assert.deepEqual(await second.json(),raw('outing'));
+});

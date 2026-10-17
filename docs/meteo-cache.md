@@ -29,6 +29,8 @@ La data e il pulsante di aggiornamento indicano il lavoro in corso; una piccola 
 
 Durante l'aggiornamento rimane l'ordine delle proposte già visualizzate; i valori vengono ricalcolati. Cambiare giorno o filtri ricalcola anche l'ordine. Le foto e i link corrispondenti della home vengono conservati. Nelle schede rimangono accordion e posizione di lettura; le schede sotto un pannello contestuale si aggiornano quando viene chiuso. Sulla mappa si aggiornano le zone interessate e rimane il tipo di pannello aperto (zona, sentiero o imbocco).
 
+Il calendario della home e della zona usa tre righe: giorno, data, indice e meteo affiancati. Lo spazio del meteo resta vuoto quando i dati mancano; il loro arrivo non sposta data e indice né cambia l'altezza delle tile. Le tessere sono alte 88 px, con nomi dei giorni per esteso e un solo simbolo del fungo accanto all'indice. «Settimana» centra il proprio indice, senza inventare un meteo unico per l'intero periodo. Il calendario della mappa, composto solo dalle date, rimane distinto.
+
 - Oltre **24 ore** non viene calcolato l'indice fungino per oggi e il futuro.
 - Il meteo pratico più vecchio di **un'ora** viene dichiarato non aggiornato; oltre **tre ore** non è utilizzabile.
 - Dati mancanti non significano tempo asciutto, assenza di funghi o assenza di piante.

@@ -726,7 +726,7 @@ const CMP = [
     return types.length === 1 && terms[types[0]] ? `Colore ${terms[types[0]]}` : 'Colore sotto il cappello';
   }, art: (a, t) => a.slice(0, 3).map((v) => swatch(hymKind(t.traits?.hymenophore), v)).join(''), say: (v) => v },
   { key: 'flesh_change', k: 'Carne al taglio', art: fleshArt, say: fleshSay },
-  { key: 'cap_color', k: 'Cappello', art: (a) => a.slice(0, 3).map((v) => swatch('cap', v)).join(''), say: (v) => v },
+  { key: 'cap_color', k: 'Colore del cappello', art: (a) => a.slice(0, 3).map((v) => swatch('cap', v)).join(''), say: (v) => v },
   { key: 'stem_ring', k: 'Anello', bool: true, art: (a) => ART[`ring_${a[0]}`] },
   { key: 'stem_volva', k: 'Volva', bool: true, art: (a) => ART[`volva_${a[0]}`] },
   { key: 'stem_reticulum', k: 'Reticolo sul gambo', bool: true, art: (a) => ART[`ret_${a[0]}`] },
@@ -755,14 +755,14 @@ function cmpRows(ref, t) {
     const shared = differentStructure ? 0 : B.filter((v) => A.includes(v)).length;
     // info: la stagione aiuta poco a distinguere, quindi non diventa mai "qui li distingui"
     const kind = r.info ? 'same' : !shared ? 'diff' : (shared < B.length || shared < A.length) ? 'part' : 'same';
-    // caratteri atomizzati: un'etichetta per valore, ognuna col suo disegno.
-    // In comune: attenuate e in testa, nello stesso ordine sui due lati. Solo da un lato: in evidenza.
+    // Valori descrittivi con disegno e alternative esplicite, senza sembrare filtri.
+    // I valori comuni precedono gli altri, nello stesso ordine sui due lati.
     const say = (v) => (r.bool ? withOut(r.key, v) : r.say ? r.say(v) : String(v));
-    const chip = (v, who, common, alternative) => `<li class="cmp-option">${alternative ? '<span class="cmp-or">oppure</span>' : ''}<span class="cmp-v ${common ? 'common' : 'own'}">${r.art ? `<span class="cmp-v-art" aria-hidden="true">${r.art([v], who) || ''}</span>` : ''}<span>${esc(say(v))}</span><span class="sr-only">${common ? ', in comune' : ', solo qui'}</span></span></li>`;
+    const value = (v, who, common, alternative) => `<li class="cmp-option">${alternative ? '<span class="cmp-or">o</span>' : ''}<span class="cmp-v ${common ? 'common' : 'own'}"><span class="cmp-relation" aria-hidden="true">${common?'=':'≠'}</span>${r.art ? `<span class="cmp-v-art" aria-hidden="true">${r.art([v], who) || ''}</span>` : ''}<span class="cmp-value-text">${esc(say(v))}</span><span class="sr-only">${common ? ', in comune' : ', valore diverso nel confronto'}</span></span></li>`;
     const cell = (X, Y, who) => r.key === 'season'
       ? `<div class="cmp-cell"><span>${esc(txt(X))}</span></div>`
-      : `<div class="cmp-cell">${r.label ? `<span class="cmp-k">${esc(r.label(who))}</span>` : ''}<ul class="cmp-vals">${[...A.filter((v) => Y.includes(v) && X.includes(v)), ...X.filter((v) => !Y.includes(v))].map((v, i) => chip(v, who, !differentStructure && Y.includes(v), i > 0 && !['habitat', 'trees'].includes(r.key))).join('')}</ul></div>`;
-    return { kind, k: r.k, html: `<li class="cmp-row ${kind}" data-trait="${r.key}">${r.label ? '' : `<span class="cmp-k">${esc(r.k)}</span>`}${cell(A, B, ref)}${cell(B, A, t)}</li>` };
+      : `<div class="cmp-cell">${r.label ? `<span class="cmp-k">${esc(r.label(who))}</span>` : ''}<ul class="cmp-vals">${[...A.filter((v) => Y.includes(v) && X.includes(v)), ...X.filter((v) => !Y.includes(v))].map((v, i) => value(v, who, !differentStructure && Y.includes(v), i > 0 && !['habitat', 'trees'].includes(r.key))).join('')}</ul></div>`;
+    return { kind, info:!!r.info, k: r.k, html: `<li class="cmp-row ${kind}" data-trait="${r.key}">${r.label ? '' : `<span class="cmp-k">${esc(r.k)}</span>`}${cell(A, B, ref)}${cell(B, A, t)}</li>` };
   }).filter(Boolean);
 }
 
@@ -777,7 +777,11 @@ function renderCompare(box, ref, pick) {
   const toxCls = (t) => `tox-${String(t.toxicity || '').replace(/\s/g, '-')}`;
   const nameBtn = (t) => `<button type="button" data-taxon="${esc(t.key)}">${esc(t.name || t.latin)}</button>`; // nel confronto: anteprima, per tutti
   const slide = (t, k) => {
-    const rows = cmpRows(ref, t), diff = rows.filter((r) => r.kind === 'diff'), part = rows.filter((r) => r.kind === 'part'), same = rows.filter((r) => r.kind === 'same');
+    const rows = cmpRows(ref, t), groups = [
+      {kind:'diff',label:'Differenti',empty:'Nessun carattere completamente diverso nei dati disponibili. Le somiglianze non confermano l’identità.'},
+      {kind:'part',label:'A volte simili',empty:'Nessuna somiglianza parziale documentata.'},
+      {kind:'same',label:'In comune',empty:'Nessun carattere interamente condiviso nei dati disponibili.'},
+    ], info = rows.filter(r=>r.info);
     const how = fromToxic ? HOWTO(t.edible_id, ref.latin) : HOWTO(ref.edible_id, t.latin);
     return `<section class="cmp-slide" id="cmp-${esc(t.key)}" data-i="${k}" role="tabpanel" aria-labelledby="cmp-tab-${esc(t.key)}" ${t.key === list[start]?.key ? '' : 'inert'}>
       <div class="cmp-pair">
@@ -785,14 +789,13 @@ function renderCompare(box, ref, pick) {
           <figure class="cmp-fig ${toxCls(x)}"><span class="cmp-zoom">${pic(x)}</span><span class="tox">${esc(x.tox_label || x.toxicity)}</span>
             ${photoOf(x) ? `<button type="button" class="id-zoom" data-photo="${esc(x.key)}" aria-label="Ingrandisci la foto di ${esc(x.name || x.latin)}"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6"/><path d="m20 20-5-5M10.5 8v5M8 10.5h5"/></svg></button>` : ''}</figure>
           <div class="cmp-name">${nameBtn(x)}${x.name !== x.latin ? `<i>${esc(x.latin)}</i>` : ''}</div></div>`).join('')}
-
+        <span class="cmp-vs" aria-hidden="true">vs</span>
       </div>
       ${how ? `<p class="cmp-how" data-glossary="Funghi"><b>Differenze descritte.</b> ${esc(how)}</p>` : ''}
-      <p class="cmp-legend">Fondo colorato: in comune. Solo contorno: differenze.</p>
-      ${diff.length ? `<h4 class="cmp-h diff">Caratteri differenti nelle fonti</h4><ul class="cmp-rows">${diff.map((r) => r.html).join('')}</ul>`
-        : '<p class="cmp-none"><b>Nessuna domanda di «Impara a riconoscere» li separa con certezza.</b> Contano i dettagli: leggi le differenze descritte e, nel dubbio, fallo vedere all\'Ispettorato micologico.</p>'}
-      ${part.length ? `<h4 class="cmp-h part">A volte simili</h4><ul class="cmp-rows">${part.map((r) => r.html).join('')}</ul>` : ''}
-      ${same.length ? `<details class="sec cmp-same"><summary>Tutti i caratteri in comune</summary><div class="sec-body"><ul class="cmp-rows">${same.map(r => r.html).join('')}</ul></div></details>` : ''}
+      <div class="cmp-kind-tabs" role="tablist" aria-label="Caratteri da confrontare">${groups.map(g=>`<button type="button" role="tab" id="cmp-${esc(t.key)}-tab-${g.kind}" data-cmp-group="${g.kind}" aria-controls="cmp-${esc(t.key)}-panel-${g.kind}" aria-selected="${g.kind==='diff'}" tabindex="${g.kind==='diff'?0:-1}">${g.label}</button>`).join('')}</div>
+      <p class="cmp-legend" hidden><span><span class="cmp-relation" aria-hidden="true">=</span> Valore in comune</span><span><span class="cmp-relation" aria-hidden="true">≠</span> Valore diverso</span></p>
+      ${groups.map(g=>{const items=rows.filter(r=>!r.info&&r.kind===g.kind);return `<section class="cmp-panel" id="cmp-${esc(t.key)}-panel-${g.kind}" data-cmp-panel="${g.kind}" role="tabpanel" aria-labelledby="cmp-${esc(t.key)}-tab-${g.kind}" tabindex="0"${g.kind==='diff'?'':' hidden'}>${items.length?`<ul class="cmp-rows">${items.map(r=>r.html).join('')}</ul>`:`<p class="cmp-none">${g.empty}</p>`}</section>`;}).join('')}
+      ${info.length?`<details class="context-note cmp-season"><summary>Periodo nelle fonti</summary><ul class="cmp-rows">${info.map(r=>r.html).join('')}</ul></details>`:''}
       <details class="sec cmp-sources"><summary>Fonti del confronto</summary><div class="sec-body">${sourceRows([...(ref.sources || []), ...(t.sources || [])])}</div></details>
       <p class="cmp-verdict">${[ref,t].some(x=>['mortale','tossico'].includes(x.toxicity)) ? 'Il confronto include specie tossiche o mortali; i caratteri possono variare o essere incompleti. ' : ''}Somiglianze e differenze non identificano il tuo esemplare. Fai controllare il raccolto all’Ispettorato micologico ASL.</p>
     </section>`;
@@ -831,7 +834,24 @@ function renderCompare(box, ref, pick) {
   };
   track.addEventListener('scroll', () => { clearTimeout(settleT); settleT = setTimeout(settle, 160); }, { passive: true });
   track.addEventListener('scrollend', settle);
-  box.querySelectorAll('.cmp-same').forEach((d) => d.addEventListener('toggle', fit));
+  const selectGroup = kind => {
+    for(const sl of slides){
+      sl.querySelectorAll('[data-cmp-group]').forEach(b=>{const on=b.dataset.cmpGroup===kind;b.setAttribute('aria-selected',String(on));b.tabIndex=on?0:-1;});
+      sl.querySelectorAll('[data-cmp-panel]').forEach(panel=>panel.hidden=panel.dataset.cmpPanel!==kind);
+      sl.querySelector('.cmp-legend').hidden=kind!=='part';
+    }
+    fit();
+  };
+  box.querySelectorAll('[data-cmp-group]').forEach(button=>{
+    button.addEventListener('click',()=>selectGroup(button.dataset.cmpGroup));
+    button.addEventListener('keydown',e=>{
+      const tabs=[...button.parentElement.querySelectorAll('[data-cmp-group]')],i=tabs.indexOf(button);
+      const next={ArrowRight:(i+1)%tabs.length,ArrowLeft:(i+tabs.length-1)%tabs.length,Home:0,End:tabs.length-1}[e.key];
+      if(next===undefined)return;
+      e.preventDefault();selectGroup(tabs[next].dataset.cmpGroup);tabs[next].focus({preventScroll:true});
+    });
+  });
+  box.querySelectorAll('.cmp-sources,.cmp-season').forEach(d=>d.addEventListener('toggle',fit));
   // A viewport or scrollbar change must keep the selected pair aligned.
   let trackWidth = track.clientWidth;
   const align = () => {

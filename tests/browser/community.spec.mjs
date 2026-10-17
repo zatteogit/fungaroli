@@ -61,9 +61,9 @@ test('base privata del profilo: salvataggio, distanze, navigatori, isolamento e 
   await profile.locator('.profile-actions [data-close]').click();await expect(page.locator('#hero .facts')).toContainText('111 min');
   expect(await page.locator('#hero .cover-index b').textContent()).toBe(score);
   await page.locator('#hero .cover-link').click();await page.locator('#detail [data-sec="accesso"] summary').click({position:{x:5,y:10}});
-  await expect(page.locator('#detail [data-sec="accesso"]')).toContainText('Da Roma 111 min · 77 km');
+  await expect(page.locator('#detail [data-sec="accesso"] > summary')).toContainText('111 min · 77 km da Roma');
   const href=await page.locator('#detail a[href*="google.com/maps/dir"]').first().getAttribute('href');expect(new URL(href).searchParams.get('origin')).toBe('41.9028,12.4964');
-  await page.reload();await expect(page.locator('#detail [data-sec="accesso"]')).toContainText('Da Roma');
+  await page.reload();await expect(page.locator('#detail [data-sec="accesso"] > summary')).toContainText('da Roma');
   expect((await api(page,'profile','PUT',{accountId:owner,base:{name:'Errata',lat:91,lon:0}})).status).toBe(422);
   expect((await page.request.post('/api/community/travel',{headers:{origin:'http://localhost:8788'},data:{targets:[]}})).status()).toBe(422);
   const csrf=await page.request.put('/api/community/profile',{headers:{origin:'https://evil.example'},data:{accountId:owner,base:null}});expect(csrf.status()).toBe(403);
@@ -159,14 +159,18 @@ test('tratto locale distinto dal percorso intero, segmenti separati e imbocco ma
   await expect(focus.getByRole('tabpanel',{name:'Profilo',exact:true})).toContainText('Non costituiscono un profilo continuo');
   await expect(focus.getByRole('tabpanel',{name:'Profilo',exact:true}).locator('svg')).toHaveCount(0);
   const values = await focus.locator('.walk-facts dd').allTextContents();
-  expect(values[1]).toContain('4,1 km');
-  expect(values[2]).toContain('9,9 km');
+  await expect(focus.locator('summary .walk-stats li').first()).toContainText('4,1 km');
+  expect(values).toHaveLength(1);
+  expect(values[0]).toContain('9,9 km');
   const gpx = await focus.locator('a[download]').getAttribute('href');
   const xml = decodeURIComponent(gpx.split(',').slice(1).join(','));
   expect(xml.match(/<trkseg>/g)).toHaveLength(2);
   expect(xml).toContain('Tratto nella zona');
   await page.goto('/#/zona/sangiovanni/0/sentiero/12313439');
   await expect(focus).toContainText('Non disponibile; le soste indicate riguardano la zona');
+  if(!await focus.evaluate(el=>el.open))await focus.locator(':scope > summary').click();
+  await expect(focus).toHaveAttribute('open','');
+  await expect(focus.locator('summary .walk-entrances')).toBeVisible();
   await expect(focus).toContainText('Punto sulla traccia');
   expect(errors).toEqual([]);
 });
@@ -191,8 +195,9 @@ for(const width of [320,1280]) test(`tracciato e profilo nello stesso riquadro a
   const focus=page.locator('#detail .walk-focus'),summary=focus.locator(':scope > summary');
   await expect(summary.locator('.walk-entrance').first()).toBeVisible();
   await expect(summary.locator('.tprof,.ws-forest')).toHaveCount(0);
-  const summaryText=await summary.innerText();await summary.click();
-  expect(await summary.innerText()).toBe(summaryText);await expect(summary.locator('.walk-entrance').first()).toBeVisible();
+  await summary.click();
+  await expect(summary.locator('.walk-entrance').first()).toBeHidden();
+  await expect(summary.locator('.walk-title')).toBeVisible();
   await expect(focus.locator('.sec-body > .ws-forest')).toBeVisible();
   const visual=focus.locator('.trail-visual'),trace=visual.getByRole('tab',{name:'Tracciato',exact:true,includeHidden:true}),profile=visual.getByRole('tab',{name:'Profilo',exact:true,includeHidden:true});
   await expect(profile).toHaveAttribute('aria-selected','true');
@@ -558,4 +563,27 @@ test('azioni del taccuino: timeout, errori accanto alla voce e riprova senza per
  await row.locator('[data-share-entry]').click();await expect(row.locator('.j-action-status')).toContainText('Osservazioni condivise');expect((await api(page,'summary')).data.totalReports).toBe(1);
  await page.route('**/api/community/reports',route=>route.request().method()==='DELETE'?route.fulfill({status:503,json:{error:'Ritiro non disponibile: riprova.'}}):route.fallback());await row.locator('[data-withdraw-entry]').click();await expect(row.locator('[role="alert"]')).toContainText('Ritiro non disponibile');expect((await api(page,'summary')).data.totalReports).toBe(1);await page.unroute('**/api/community/reports');await row.locator('[data-withdraw-entry]').click();await expect(row.locator('.j-action-status')).toContainText('Segnalazioni ritirate');
  await page.route('**/api/community/entries/'+id,route=>route.request().method()==='DELETE'?route.fulfill({status:503,json:{error:'Eliminazione non disponibile: riprova.'}}):route.fallback());await row.locator('[data-del]').click();await row.locator('[data-del]').click();await expect(row.locator('[role="alert"]')).toContainText('Eliminazione non disponibile');expect((await api(page,'entries')).data.entries).toHaveLength(1);await page.unroute('**/api/community/entries/'+id);await row.locator('[data-del]').click();await row.locator('[data-del]').click();await expect(row).toHaveCount(0);expect((await api(page,'entries')).data.entries).toHaveLength(0);await api(page,'account','DELETE');expect(errors).toEqual([]);
+});
+
+test('accordion: riepilogo e dettaglio si completano senza duplicare tratto, imbocchi e accesso',async({page})=>{
+ const errors=await setup(page);await page.emulateMedia({reducedMotion:'reduce'});await page.goto('/#/zona/poggio-cantalice/0');
+ const focus=page.locator('#detail .walk-focus'),summary=focus.locator(':scope > summary');
+ await expect(summary.locator('.walk-entrance-list')).toBeVisible();
+ const stats=await summary.locator('.walk-stats').innerText();
+ await summary.focus();await page.keyboard.press('Enter');await expect(focus).toHaveAttribute('open','');
+ await expect(summary.locator('.walk-stats')).toHaveText(stats,{useInnerText:true});await expect(summary.locator('.walk-entrances')).toBeHidden();
+ const body=focus.locator(':scope > .sec-body');await expect(body.locator('.walk-facts dt')).toHaveText(['Itinerario completo']);
+ await expect(body.locator('.th-chip').first()).toBeVisible();
+ await summary.press('Enter');await expect(summary.locator('.walk-entrance-list')).toBeVisible();
+ const access=page.locator('#detail .essential-sections [data-sec="accesso"]');
+ await access.locator(':scope > summary').click({position:{x:5,y:10}});await expect(access.locator(':scope > .sec-body')).toContainText('transitabilità');
+ await expect(access.locator(':scope > .sec-body .badge')).toHaveCount(0);
+ await expect(access.locator('summary .plan-sub .act-pill')).toBeVisible();
+ const species=page.locator('#detail .essential-sections [data-sec="specie"]');
+ await species.locator(':scope > summary').click({position:{x:5,y:10}});
+ await expect(species.locator('summary .ent-chips')).toBeHidden();
+ await expect(species.locator(':scope > .sec-body .zsp')).toBeVisible();
+ // L'avviso sul sosia rimane nel riepilogo anche quando è aperto.
+ if(await species.locator('summary .plan-crit').count())await expect(species.locator('summary .plan-crit')).toBeVisible();
+ expect(errors).toEqual([]);
 });

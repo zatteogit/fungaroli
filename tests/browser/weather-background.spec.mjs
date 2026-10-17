@@ -21,7 +21,7 @@ for(const width of [390,1280])test(`cache immediata, aggiornamento discreto e co
  const placed=await page.locator('#hero [data-walk-zone],#ranking [data-walk-zone]').evaluateAll(n=>n.map(a=>a.dataset.walkZone));expect(new Set(placed).size).toBe(placed.length);await expect(page.locator('#season li').first()).toBeVisible();
  await expect(page.locator('#updated')).toContainText('Meteo aggiornato');await expect(page.locator('#app-toast.on')).toHaveCount(0);await page.evaluate(()=>document.dispatchEvent(new Event('fungaroli:community')));await expect(page.locator('#hero .cover-link')).toHaveAttribute('href',href);expect(await page.locator('#hero .cover-index').innerText()).not.toBe(score);
  fail=true;await page.locator('#refresh').click();await expect(page.locator('#refresh')).toHaveAttribute('aria-busy','false');await expect(page.locator('#hero .cover-link')).toHaveAttribute('href',href);await expect(page.locator('#weather-work')).toBeHidden();await expect(page.locator('#updated')).toContainText('in parte');
- await expect(page.locator('#stale')).toContainText('non sono arrivati');await expect(page.locator('#stale button')).toHaveText('Riprova');await expect(page.locator('#app-toast.on')).toHaveCount(0);await page.screenshot({path:`/tmp/weather-partial-${width}.png`});
+ await expect(page.locator('#stale')).toBeHidden();await expect(page.locator('#refresh')).toBeVisible();await expect(page.locator('#app-toast.on')).toHaveCount(0);await page.screenshot({path:`/tmp/weather-partial-${width}.png`});
  await page.locator('#refresh').click();await expect(page.locator('#refresh')).toHaveAttribute('aria-busy','false');await expect(page.locator('#weather-work')).toBeHidden();await expect(page.locator('#app-toast.on')).toHaveCount(0);
  await page.screenshot({path:`/tmp/weather-cached-${width}.png`});expect(errors).toEqual([]);
 });
@@ -34,4 +34,25 @@ test('aggiornamento della scheda conserva accordion aperto e pannello contestual
  const keyword=section.locator('.glossary-link').first();await keyword.click();await expect(page.locator('#learning-popover')).toBeVisible();const opener=await keyword.elementHandle();
  paused=true;await page.evaluate(()=>document.querySelector('#refresh').click());await expect(page.locator('#refresh')).toHaveAttribute('aria-busy','true');paused=false;pending.splice(0).forEach(r=>r());await expect(page.locator('#refresh')).toHaveAttribute('aria-busy','false');
  await expect(page.locator('#learning-popover')).toBeVisible();expect(await opener.evaluate(e=>e.isConnected)).toBe(true);await page.locator('[data-learning-close]').click();await expect(section).toHaveAttribute('open','');expect(errors).toEqual([]);
+});
+
+for(const width of [390,1280])test(`calendario fermo mentre arriva il meteo e cache al riavvio a ${width}px`,async({page})=>{
+ await page.setViewportSize({width,height:900});let release;const gate=new Promise(r=>release=r);let outingCalls=0;
+ await page.emulateMedia({reducedMotion:'reduce'});
+ await page.route('https://**/*',r=>r.abort());
+ await page.route('**/api/weather/v1/forecast?**',async r=>{
+  if(!new URL(r.request().url()).searchParams.has('daily')){outingCalls++;await gate;}
+  await r.fulfill({json:forecast(r.request())});
+ });
+ await page.addInitScript(()=>localStorage.setItem('fungaroli:legal-accepted','32026-10-16'));
+ const geometry=()=>page.locator('#days .day').evaluateAll(buttons=>buttons.map(b=>{
+  const box=b.getBoundingClientRect();return {day:b.dataset.dayOffset,width:box.width,height:box.height,rows:[...b.querySelectorAll('.d1,.d2,.d3')].map(e=>e.getBoundingClientRect().top-box.top)};
+ }));
+ try{
+  await page.goto('/');await expect(page.locator('#hero .cover-link')).toBeVisible();await expect(page.locator('#days .day')).toHaveCount(9);await expect(page.locator('#days .d-weather')).toHaveCount(0);
+  const before=await geometry();release();await expect(page.locator('#refresh')).toHaveAttribute('aria-busy','false');await expect(page.locator('#days .d-weather')).toHaveCount(8);
+  expect(await geometry()).toEqual(before);
+  const calls=outingCalls;await page.reload();await expect(page.locator('#days .d-weather')).toHaveCount(8);await expect(page.locator('#refresh')).toHaveAttribute('aria-busy','false');await expect(page.locator('#days .day').first()).toBeVisible();
+  expect(outingCalls).toBe(calls);await expect.poll(geometry).toEqual(before);
+ }finally{release();}
 });
