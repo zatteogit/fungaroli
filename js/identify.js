@@ -1,3 +1,4 @@
+import {mountCompareStart,openComparePicker} from './compare-picker.js';
 import {enhanceEntityAccordions} from './entity-accordions.js';
 import {speciesHabitat, speciesSafetyNote} from './species-context.js';
 import { alertTriangleGlyph } from './ui-icons.js';
@@ -869,13 +870,25 @@ function cmpRows(ref, t) {
 }
 
 let disposeCompareHeader = () => {};
+export function renderComparisonStart(box, left='', right='') {
+  disposeCompareHeader();
+  box.classList.remove('fungus-compare');
+  box.dataset.glossaryContext='Funghi';
+  mountCompareStart(box,{taxa:TAXA,photo:photoOf,asset:ASSET,related:sosiaOf,left,right});
+}
 function renderCompare(box, ref, pick) {
   disposeCompareHeader();
   comparisonVariants.clear();
   // fungo fisso a sinistra: un commestibile con i suoi sosia, oppure un velenoso con i commestibili con cui si confonde
   const fromToxic = !!ref.lookalike_of?.length;
-  const list = sosiaOf(ref);
-  if (!list.length) { box.innerHTML = '<h1 class="sec-title">Confronto non disponibile</h1><p>Nessun sosia documentato nel catalogo per questo fungo.</p><a href="#/riconosci">Esplora i funghi</a>'; return; }
+  const documented = sosiaOf(ref), documentedKeys = new Set(documented.map(t=>t.key));
+  const selected = TAXA.find(t=>t.key===pick && t.key!==ref.key);
+  const list = selected && !documentedKeys.has(selected.key) ? [...documented,selected] : documented;
+  if (!list.length) { location.hash=`#/confronta/${encodeURIComponent(ref.key)}`; return; }
+  const heading = () => !(selected && !documentedKeys.has(selected.key))
+    ? (/^Prataiolo\b/i.test(ref.name||'')?`Sosia del ${ref.name}`:`Sosia di ${ref.name||ref.latin}`)
+    : `${ref.name||ref.latin} a confronto`;
+  const editHref = t => `#/confronta/${encodeURIComponent(ref.key)}/${encodeURIComponent(t.key)}`;
   const pic = (t, small = false) => { const ph = photoOf(t); return ph ? `<img data-src="${ASSET(small ? ph.thumb || ph.file : ph.file)}" alt="" loading="lazy" decoding="async">` : '<span class="look-ph">senza foto</span>'; };
   const toxCls = (t) => `tox-${String(t.toxicity || '').replace(/\s/g, '-')}`;
   const nameBtn = (t) => `<button type="button" data-taxon="${esc(t.key)}">${esc(t.name || t.latin)}</button>`; // nel confronto: anteprima, per tutti
@@ -885,7 +898,7 @@ function renderCompare(box, ref, pick) {
       {kind:'part',label:'A volte simili',empty:'Nessuna somiglianza parziale documentata.'},
       {kind:'same',label:'In comune',empty:'Nessun carattere interamente condiviso nei dati disponibili.'},
     ], info = rows.filter(r=>r.info);
-    const how = fromToxic ? HOWTO(t.edible_id, ref.latin) : HOWTO(ref.edible_id, t.latin);
+    const how = documentedKeys.has(t.key) ? (fromToxic ? HOWTO(t.edible_id, ref.latin) : HOWTO(ref.edible_id, t.latin)) : '';
     return `<section class="cmp-slide" id="cmp-${esc(t.key)}" data-i="${k}" role="group" aria-roledescription="confronto" aria-label="${esc(ref.name || ref.latin)} e ${esc(t.name || t.latin)}" ${t.key === list[start]?.key ? '' : 'hidden inert'}>
       <div class="cmp-pair">
         ${[ref, t].map((x) => `<div class="cmp-side">
@@ -894,6 +907,7 @@ function renderCompare(box, ref, pick) {
           <div class="cmp-name">${nameBtn(x)}${x.name !== x.latin ? `<i>${esc(x.latin)}</i>` : ''}</div></div>`).join('')}
         <span class="cmp-vs" aria-hidden="true">vs</span>
       </div>
+      ${documentedKeys.has(t.key)?'':'<p class="cmp-free-note"><b>Confronto libero</b><span>Relazione di sosia non documentata nel catalogo. Confrontiamo solo i caratteri disponibili per entrambe le specie.</span></p>'}
       ${how ? `<p class="cmp-how" data-glossary="Funghi"><b>Differenze descritte.</b> ${esc(how)}</p>` : ''}
       <div class="cmp-kind-tabs" role="tablist" aria-label="Caratteri da confrontare">${groups.map(g=>`<button type="button" role="tab" id="cmp-${esc(t.key)}-tab-${g.kind}" data-cmp-group="${g.kind}" aria-controls="cmp-${esc(t.key)}-panel-${g.kind}" aria-selected="${g.kind==='diff'}" tabindex="${g.kind==='diff'?0:-1}">${g.label}</button>`).join('')}</div>
       <p class="cmp-illustration-note">Disegni schematici generati con AI: mostrano un esempio. Leggi tutte le varianti elencate e confronta con le foto.</p>
@@ -906,13 +920,14 @@ function renderCompare(box, ref, pick) {
   };
   const start = Math.max(0, list.findIndex((t) => t.key === pick));
   box.innerHTML = `
-    <h1 class="sec-title cmp-title">${/^Prataiolo\b/i.test(ref.name || '') ? `Sosia del ${esc(ref.name)}` : `Sosia di ${esc(ref.name || ref.latin)}`}</h1>
-    <dialog class="cmp-chooser" aria-labelledby="cmp-chooser-title"><div class="cmp-chooser-head"><h2 id="cmp-chooser-title">Confronta con…</h2><button type="button" data-close-chooser aria-label="Chiudi">×</button></div><div class="cmp-choices">${list.map((t,k)=>`<button type="button" class="cmp-chip ${toxCls(t)}" data-go="${k}" aria-pressed="${k===start}"><span class="cmp-chip-img">${pic(t,true)}</span><span><b>${esc(t.name||t.latin)}</b><small>${esc(t.tox_label||t.toxicity)}</small></span><span class="cmp-choice-check" aria-hidden="true">✓</span></button>`).join('')}</div></dialog>
+    <h1 class="sec-title cmp-title">${esc(heading(list[start]))}</h1>
+    <div class="cmp-edit-line"><a class="btn ghost" data-edit-comparison href="${editHref(list[start])}">Cambia i due funghi <span aria-hidden="true">↗</span></a></div>
+    <dialog class="cmp-chooser" aria-labelledby="cmp-chooser-title"><div class="cmp-chooser-head"><h2 id="cmp-chooser-title">Confronta con…</h2><button type="button" data-close-chooser aria-label="Chiudi">×</button></div><div class="cmp-choices">${list.map((t,k)=>`<button type="button" class="cmp-chip ${toxCls(t)}" data-go="${k}" aria-pressed="${k===start}"><span class="cmp-chip-img">${pic(t,true)}</span><span><b>${esc(t.name||t.latin)}</b><small>${esc(t.tox_label||t.toxicity)} · ${documentedKeys.has(t.key)?'sosia documentato':'confronto libero'}</small></span><span class="cmp-choice-check" aria-hidden="true">✓</span></button>`).join('')}</div><button type="button" class="cmp-picker-all" data-pick-any>Tutti i funghi del catalogo <span aria-hidden="true">→</span></button></dialog>
     <div class="cmp-gallery" role="group" aria-roledescription="carosello" aria-label="Confronti con ${esc(ref.name || ref.latin)}">
-    <div class="cmp-pair-nav${list.length===1?' is-single':''}" role="group" aria-label="Specie a confronto"><div class="cmp-nav-content"><span class="cmp-nav-master">${list.length>1?`<span class="cmp-sosia-total">${list.length} sosia</span>`:''}<b class="cmp-master-name">${esc(ref.name||ref.latin)}</b></span><i class="cmp-nav-vs" aria-hidden="true">vs</i>${list.length>1?`<button type="button" class="cmp-pair-menu" data-change-lookalike aria-haspopup="dialog" aria-label="Scegli il sosia: ${esc(list[start].name||list[start].latin)}"><span data-current-lookalike>${esc(list[start].name||list[start].latin)}</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>`:`<b class="cmp-current-single">${esc(list[0].name||list[0].latin)}</b>`}</div></div>
-    ${list.length>1?`<div class="cmp-edge-arrows"><button type="button" data-cmp-step="-1" aria-label="Sosia precedente"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 6-6 6 6 6"/></svg></button><button type="button" data-cmp-step="1" aria-label="Sosia successivo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m10 6 6 6-6 6"/></svg></button></div>`:''}
+    <div class="cmp-pair-nav${list.length===1?' is-single':''}" role="group" aria-label="Specie a confronto"><div class="cmp-nav-content"><span class="cmp-nav-master">${list.length>1?`<span class="cmp-sosia-total">${documentedKeys.has(list[start].key)?`${documented.length} sosia`:'Confronto libero'}</span>`:''}<b class="cmp-master-name">${esc(ref.name||ref.latin)}</b></span><i class="cmp-nav-vs" aria-hidden="true">vs</i>${list.length>1?`<button type="button" class="cmp-pair-menu" data-change-lookalike aria-haspopup="dialog" aria-label="Scegli il fungo: ${esc(list[start].name||list[start].latin)}"><span data-current-lookalike>${esc(list[start].name||list[start].latin)}</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>`:`<b class="cmp-current-single">${esc(list[0].name||list[0].latin)}</b>`}</div></div>
+    ${list.length>1?`<div class="cmp-edge-arrows"><button type="button" data-cmp-step="-1" aria-label="Fungo precedente"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 6-6 6 6 6"/></svg></button><button type="button" data-cmp-step="1" aria-label="Fungo successivo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m10 6 6 6-6 6"/></svg></button></div>`:''}
     <div class="cmp-track">${list.map(slide).join('')}</div><p class="sr-only" data-cmp-announcement role="status" aria-atomic="true"></p></div>
-    <p><a class="btn primary" href="#/riconosci">Confronta un altro fungo</a></p>`;
+    <p><a class="btn primary" href="#/confronta">Scegli un nuovo confronto</a></p>`;
 
   const track = box.querySelector('.cmp-track'), chips = [...box.querySelectorAll('[data-go]')];
   track.addEventListener('click', event => {
@@ -921,10 +936,14 @@ function renderCompare(box, ref, pick) {
   });
   const mark = (i) => {
     chips.forEach(c => c.setAttribute('aria-pressed', String(Number(c.dataset.go) === i)));
+    box.querySelector('.cmp-title').textContent=heading(list[i]);
+    box.querySelector('[data-edit-comparison]').href=editHref(list[i]);
+    const count=box.querySelector('.cmp-sosia-total');
+    if(count)count.textContent=documentedKeys.has(list[i].key)?`${documented.length} sosia`:'Confronto libero';
     const currentName = box.querySelector('[data-current-lookalike]');
     if (currentName) {
       currentName.textContent = list[i].name || list[i].latin;
-      currentName.closest('button').setAttribute('aria-label', `Scegli il sosia: ${list[i].name || list[i].latin}`);
+      currentName.closest('button').setAttribute('aria-label', `Scegli il fungo: ${list[i].name || list[i].latin}`);
     }
     for (const [k, slide] of [...track.children].entries()) { slide.inert = k !== i; slide.hidden = k !== i; }
     history.replaceState(null, '', `#/riconosci/confronta/${ref.key}/${list[i].key}`);
@@ -1052,6 +1071,12 @@ function renderCompare(box, ref, pick) {
     chooser.querySelector(`[data-go="${cur}"]`)?.focus({preventScroll:true});
   });
   chooser.querySelector('[data-close-chooser]').onclick = () => chooser.close();
+  chooser.querySelector('[data-pick-any]').onclick = () => {
+    chooser.close();
+    openComparePicker({taxa:TAXA,photo:photoOf,asset:ASSET,title:'Confronta con un altro fungo',current:list[cur].key,exclude:ref.key,onSelect:t=>{
+      location.hash=`#/riconosci/confronta/${encodeURIComponent(ref.key)}/${encodeURIComponent(t.key)}`;
+    }});
+  };
   chooser.addEventListener('close', () => chooserTrigger?.focus({preventScroll:true}));
   chips.forEach(c => c.onclick = async () => {
     const i = Number(c.dataset.go);
