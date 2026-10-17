@@ -23,9 +23,9 @@
 .fungus-page .ts-k { font-size:12px; font-weight:500; line-height:1.5; letter-spacing:0; text-transform:none; }
 .fungus-page .ts-v { font-size:16px; font-weight:400; line-height:1.5; }
 .fungus-page .ts-sub, .fungus-page .ts-note { font-size:12px; line-height:1.5; }
-.fungus-page .ts-dots { justify-content:flex-start; gap:6px; margin:0; }
-.fungus-page .ts-dot.ts-chip, .fungus-page .ts-form { min-height:44px; font-size:12px; padding:8px; }
-.fungus-page :is(.ts-dot.ts-chip,.ts-form)[aria-pressed="true"] { background:var(--select); color:var(--select-ink); border-color:var(--select-edge); }
+:is(.fungus-page,.fungus-compare) .ts-dots { justify-content:flex-start; gap:6px; margin:0; }
+:is(.fungus-page,.fungus-compare) .ts-dot.ts-chip, :is(.fungus-page,.fungus-compare) .ts-form { min-height:44px; font-size:12px; padding:8px; }
+:is(.fungus-page,.fungus-compare) :is(.ts-dot.ts-chip,.ts-form)[aria-pressed="true"] { background:var(--select); color:var(--select-ink); border-color:var(--select-edge); }
 .fungus-page .trait-strip .ts-art { height:64px; justify-content:flex-start; }
 .fungus-page .attention { margin:0 0 24px; padding:20px; border-radius:24px; }
 .fungus-page .attention .att-top { gap:8px; align-items:center; }
@@ -144,7 +144,7 @@ body[data-page="mappa"] .view-map { border-radius:0; }
 }
 @media(hover:hover) {
   .fungus-page .tx-cmp-btn:hover { background:var(--action-hover); color:var(--action-ink); }
-  .fungus-page :is(.ts-dot.ts-chip,.ts-form):hover { border-color:var(--control-edge); }
+  :is(.fungus-page,.fungus-compare) :is(.ts-dot.ts-chip,.ts-form):hover { border-color:var(--control-edge); }
 }
 .fungus-page .tx-cmp-btn:focus-visible { outline:3px solid var(--focus); outline-offset:3px; }
 .tabbar .fungus-glyph { fill:currentColor; stroke:none; }
@@ -401,9 +401,6 @@ body[data-page="mappa"] .view-map { border-radius:0; }
 .fungus-compare .cmp-variant-controls:empty { display:none; }
 .fungus-compare .cmp-variant-controls { margin:8px 0 16px; }
 .fungus-compare .cmp-variant-fields { display:grid; gap:8px; }
-.fungus-compare .cmp-variant-fields label { display:grid; gap:4px; min-width:0; margin:0; color:var(--text-2); font:600 12px/1.4 var(--font-body); }
-.fungus-compare .cmp-variant-fields select { width:100%; min-width:0; min-height:44px; padding:8px 24px 8px 9px; margin:0; border:1px solid var(--border); border-radius:9px; background-color:var(--surface-2); color:var(--text); font:500 13px/1.4 var(--font-body); }
-.fungus-compare .cmp-variant-fields select:focus-visible { outline:2px solid var(--focus); outline-offset:2px; }
 .fungus-compare .cmp-variant-status { display:block; margin-top:8px; color:var(--text-2); font:400 12px/1.5 var(--font-body); }
 .fungus-compare .cmp-variant-status:empty { display:none; }
 @supports(grid-template-rows:subgrid) {
@@ -412,3 +409,7 @@ body[data-page="mappa"] .view-map { border-radius:0; }
   .fungus-compare .cmp-row[data-trait="cap_color"]:has(.cmp-variant-fields) > .cmp-cell > .cmp-variant-controls { grid-row:2; }
   .fungus-compare .cmp-row[data-trait="cap_color"]:has(.cmp-variant-fields) > .cmp-cell > .cmp-vals { grid-row:3; align-self:start; }
 }
+
+.fungus-compare .cmp-variant-fields .ts-dots { min-width:0; flex-wrap:wrap; }
+.fungus-compare .cmp-variant-fields button { max-width:100%; overflow-wrap:anywhere; }
+.fungus-compare .cmp-variant-fields button:focus-visible { outline:2px solid var(--focus); outline-offset:2px; }

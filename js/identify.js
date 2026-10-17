@@ -213,7 +213,7 @@ function comparisonControls(t, preview=false) {
   const fields = [['color','colors','cap_color','Colore'],['shape','shapes','cap_shape','Forma']].map(([key,field,trait,label]) => {
     const values = (record[field]?.values || []).filter(v => [].concat(t.traits?.[trait] || []).includes(v));
     if (values.length < 2) return '';
-    return `<label><span>${label} del disegno</span><select data-cmp-variant="${key}" data-cmp-variant-key="${esc(t.key)}" aria-label="${label} del disegno: ${esc(t.name||t.latin)}">${values.map(v=>`<option value="${esc(v)}"${chosen[key]===v?' selected':''}>${esc(optLabel(QK(trait),v))}</option>`).join('')}</select></label>`;
+    return `<div class="ts-dots${key==='shape'?' ts-forms':''}" role="group" aria-label="${label} del disegno: ${esc(t.name||t.latin)}">${values.map(v=>`<button type="button" class="${key==='color'?'ts-dot ts-chip':'ts-form'}"${key==='color'?` style="--c:${esc(COLORS[v]?.[1] || 'var(--muted)')}"`:''} data-cmp-variant="${key}" data-cmp-variant-key="${esc(t.key)}" value="${esc(v)}" aria-pressed="${chosen[key]===v}">${esc(optLabel(QK(trait),v))}</button>`).join('')}</div>`;
   }).join('');
   if (!fields) return '';
   return `${preview?`<span class="cmp-part-art" data-cmp-ill-key="${esc(t.key)}" data-cmp-ill-part="cappello" aria-hidden="true">${comparisonIllustration(t.key,'cappello')}</span>`:''}<div class="cmp-variant-fields">${fields}</div><span class="cmp-variant-status" role="status"></span>`;
@@ -233,7 +233,7 @@ function updateComparisonVariant(control, gallery) {
   else if (f && f!==f0) suffix = `-${f}`;
   const controls = [...gallery.querySelectorAll('[data-cmp-controls]')].filter(el=>el.dataset.cmpControls===key);
   for (const group of controls) {
-    group.querySelectorAll('select').forEach(select=>select.value=chosen[select.dataset.cmpVariant]);
+    group.querySelectorAll('[data-cmp-variant]').forEach(button=>button.setAttribute('aria-pressed',String(button.value===chosen[button.dataset.cmpVariant])));
     group.querySelector('.cmp-variant-status').textContent = missing ? 'Questa combinazione non è disegnata: la forma è mostrata nel colore di base.' : '';
   }
   gallery.querySelectorAll('[data-cmp-ill-key]').forEach(slot=>{
@@ -915,8 +915,8 @@ function renderCompare(box, ref, pick) {
     <p><a class="btn primary" href="#/riconosci">Confronta un altro fungo</a></p>`;
 
   const track = box.querySelector('.cmp-track'), chips = [...box.querySelectorAll('[data-go]')];
-  track.addEventListener('change', event => {
-    const control = event.target.closest('select[data-cmp-variant]');
+  track.addEventListener('click', event => {
+    const control = event.target.closest('button[data-cmp-variant]');
     if (control) updateComparisonVariant(control,track);
   });
   const mark = (i) => {
