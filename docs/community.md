@@ -8,7 +8,9 @@ Il Worker esistente serve il sito e `/api/community/*`. **Cloudflare D1**, bindi
 
 Wrangler 4.149.0 può creare automaticamente il database `fungaroli-community` al deploy quando il binding non ha `database_id`. Il token usato dal build Cloudflare deve poter creare e scrivere database D1. La migrazione idempotente `migrations/0001_community.sql` viene applicata al primo accesso all’API con un batch di istruzioni complete. Questa configurazione non garantisce una collocazione esclusivamente europea: per un vincolo di giurisdizione occorre configurare il servizio nel pannello Cloudflare.
 
-`APP_ORIGIN` fissa origine autorizzata e RP ID delle passkey. Modificarla cambia il dominio su cui funzionano le credenziali: non farlo a caso. Il nome del Worker e la configurazione del vecchio KV vengono preservati. Il cron quotidiano rimuove sfide, sessioni e contatori scaduti.
+Lo stesso database ospita le risposte al questionario per i cercatori esperti (`/questionario`, tabelle `survey_responses` e `survey_rate`, migrazione `0004_survey.sql`): invio senza profilo, lettura e cancellazione solo per gli amministratori del CMS. Vedi [questionario.md](questionario.md).
+
+`APP_ORIGIN` fissa origine autorizzata e RP ID delle passkey. Modificarla cambia il dominio su cui funzionano le credenziali: non farlo a caso. Il nome del Worker e la configurazione del vecchio KV vengono preservati. Il cron quotidiano rimuove sfide, sessioni e contatori scaduti, compresi quelli del questionario.
 
 ## Identità e privacy
 

@@ -1,19 +1,13 @@
 import { test, expect } from '@playwright/test';
 import { todayISO } from '../../js/weather.js';
-import {execFileSync} from 'node:child_process';
+import {randomBytes} from 'node:crypto';
 test.use({locale:'it-IT'});
-// Ogni prova ha il proprio budget di registrazioni nel database locale isolato.
-// Le molte passkey virtuali della suite non sono dieci iscrizioni dello stesso utente.
-test.beforeEach(()=>execFileSync('python3',['-c',`
-import pathlib,sqlite3,sys
-for path in pathlib.Path(sys.argv[1]).rglob('*.sqlite'):
- db=sqlite3.connect(path,timeout=20)
- if db.execute("SELECT COUNT(*) FROM sqlite_master WHERE name='rate_limits'").fetchone()[0]:
-  db.execute("DELETE FROM rate_limits WHERE key LIKE 'auth:%'");db.commit()
- db.close()
-`,process.env.FUNGAROLI_BROWSER_PERSIST]));
 
 async function setup(page,{gust=8}={}) {
+  // Un client locale distinto per ogni contesto mantiene separati i limiti delle
+  // passkey senza scrivere nel file SQLite mentre il Worker lo sta usando.
+  const ip='fd00:'+randomBytes(14).toString('hex').match(/.{4}/g).join(':');
+  await page.context().setExtraHTTPHeaders({'CF-Connecting-IP':ip});
   await page.route('**/*', async (route) => {
     const u = new URL(route.request().url());
     if(u.pathname!=='/api/weather/v1/forecast'&&u.hostname!=='api.open-meteo.com')return u.protocol==='https:'?route.abort():route.fallback();

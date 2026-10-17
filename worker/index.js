@@ -2,6 +2,7 @@
 // qui arrivano solo le richieste che non corrispondono a un file, cioe' l'API del diario.
 import { handleDiario } from '../functions/api/diario/[[path]].js';
 import { handleCommunity, cleanupCommunity } from './community.js';
+import { handleSurvey, cleanupSurvey } from './survey.js';
 import { handleCms, handleContent, publishedResources } from './cms.js';
 import { cachedForecast } from './weather-provider.js';
 
@@ -20,9 +21,11 @@ export default {
     if(url.pathname.startsWith('/api/cms/v1/'))return handleCms(request,env);
     if(url.pathname==='/api/content/v1/snapshot')return handleContent(request,env);
     if (url.pathname.startsWith('/api/community/')) return handleCommunity(request, env);
+    if (url.pathname.startsWith('/api/survey/v1/')) return handleSurvey(request, env);
     const m = url.pathname.match(/^\/api\/diario\/?(.*)$/);
     if (m) return handleDiario(request, env, m[1] ? m[1].split('/').filter(Boolean) : []);
     return env.ASSETS.fetch(request);
   },
-  async scheduled(event, env, ctx) { ctx.waitUntil(cleanupCommunity(env)); },
+  // Il cron rimuove anche i contatori del questionario di 2 giorni fa o prima, se nessuno invia.
+  async scheduled(event, env, ctx) { ctx.waitUntil(Promise.all([cleanupCommunity(env), cleanupSurvey(env)])); },
 };
