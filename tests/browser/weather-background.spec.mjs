@@ -49,10 +49,10 @@ for(const width of [390,1280])test(`calendario fermo mentre arriva il meteo e ca
   const box=b.getBoundingClientRect();return {day:b.dataset.dayOffset,width:box.width,height:box.height,rows:[...b.querySelectorAll('.d1,.d2,.d3')].map(e=>e.getBoundingClientRect().top-box.top)};
  }));
  try{
-  await page.goto('/');await expect(page.locator('#days .day')).toHaveCount(9);await expect(page.locator('#days .d-weather')).toHaveCount(0);
+  await page.goto('/');await expect(page.locator('#hero .cover-link')).toBeVisible();await expect(page.locator('#days .day')).toHaveCount(9);await expect(page.locator('#days .d-weather')).toHaveCount(0);
   const before=await geometry();release();await expect(page.locator('#refresh')).toHaveAttribute('aria-busy','false');await expect(page.locator('#days .d-weather')).toHaveCount(8);
   expect(await geometry()).toEqual(before);
   const calls=outingCalls;await page.reload();await expect(page.locator('#days .d-weather')).toHaveCount(8);await expect(page.locator('#refresh')).toHaveAttribute('aria-busy','false');await expect(page.locator('#days .day').first()).toBeVisible();
-  expect(outingCalls).toBe(calls);expect(await geometry()).toEqual(before);
+  expect(outingCalls).toBe(calls);await expect.poll(geometry).toEqual(before);
  }finally{release();}
 });
