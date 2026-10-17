@@ -1251,7 +1251,7 @@ let prep = null, trailheads = {}, treesData = null, idData = null;
 function prepGeneralHtml(rules) {
   const ord = [...rules].sort((a, b) => (a.level === 'obbligatorio' ? 0 : 1) - (b.level === 'obbligatorio' ? 0 : 1));
   return `<details class="prep-gen"><summary><h2>Prepararli e conservarli: le regole per tutti</h2></summary>
-    <ol class="content-prep-rules">${ord.map(r=>`<li><span class="content-prep-kind">${r.level==='obbligatorio'?'Indicazione di sicurezza':'Indicazione prudenziale'}</span><h3>${esc(r.title)}</h3><p>${esc(r.text)}</p>${r.why?`<aside class="content-observe"><b>Perché</b><p>${esc(r.why)}</p></aside>`:''}${r.sources?.length?`<details class="content-explain"><summary>Fonti (${r.sources.length})</summary>${sourceRows(r.sources)}</details>`:''}</li>`).join('')}</ol>
+    <ol class="content-prep-rules">${ord.map(r=>`<li${r.level==='obbligatorio'?' class="content-prep-required"':''}><span class="content-prep-kind">${r.level==='obbligatorio'?'Indicazione di sicurezza':'Indicazione prudenziale'}</span><h3>${esc(r.title)}</h3><p>${esc(r.text)}</p>${r.why?`<aside class="content-observe"><b>Perché</b><p>${esc(r.why)}</p></aside>`:''}${r.sources?.length?`<details class="content-explain"><summary>Fonti (${r.sources.length})</summary>${sourceRows(r.sources)}</details>`:''}</li>`).join('')}</ol>
   </details>`;
 }
 const adjParts = (zone, d) => {

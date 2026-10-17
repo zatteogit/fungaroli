@@ -535,10 +535,10 @@ export function attentionBox(rules, extra = '') {
   const head = `${alertTriangleGlyph}<span class="att-h">Attenzione</span>${count ? `<small class="att-n">${count}</small>` : ''}`;
   const list = `<ul class="att-list">${sorted.map(attItem).join('')}</ul>${extra ? `<p class="att-extra small">${esc(extra)}</p>` : ''}`;
   // uno o due avvisi: sempre aperti, niente da toccare
-  if (sorted.length <= 2) return `<section class="attention att-c att-static" role="note" aria-label="Attenzione"><div class="att-top">${head}</div>${list}</section>`;
+  if (sorted.length <= 2) return `<section class="attention att-c att-static${crit ? '' : ' attention-caution'}" role="note" aria-label="Attenzione"><div class="att-top">${head}</div>${list}</section>`;
   // chiuso: quanti avvisi per tipo, in parole («2 avvisi sui sosia»), i tipi con avvisi critici per primi (identify-model.js)
   const index = `<ul class="att-index att-sum" aria-hidden="true" data-no-glossary>${attentionGroups(sorted).map((g) => `<li class="${g.crit ? 'crit' : ''}"><span class="att-it">${esc(g.text)}</span></li>`).join('')}</ul>`;
-  return `<details class="attention att-c" role="note"><summary><span class="att-top">${head}</span>${index}<span class="att-more"><span class="att-open">Leggi i dettagli e le fonti</span><span class="att-close">Chiudi i dettagli</span></span></summary>${list}</details>`;
+  return `<details class="attention att-c${crit ? '' : ' attention-caution'}" role="note"><summary><span class="att-top">${head}</span>${index}<span class="att-more"><span class="att-open">Leggi i dettagli e le fonti</span><span class="att-close">Chiudi i dettagli</span></span></summary>${list}</details>`;
 }
 
 // disegni composti per le tessere della scheda
