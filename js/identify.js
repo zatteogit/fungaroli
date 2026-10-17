@@ -389,7 +389,12 @@ function similarity(a, b) {
   return simMemo.get(id);
 }
 // i sosia piu' somiglianti per primi; a pari somiglianza il piu' pericoloso
-const sosiaOf = (ref) => TAXA.filter((t) => t !== ref && ref.edible_id && t.lookalike_of?.includes(ref.edible_id))
+// Entrambe le relazioni documentate, anche per i funghi fuori dal modello dell’indice.
+const sosiaOf = (ref) => TAXA.filter((t) => t !== ref && (
+  (ref.edible_id && t.lookalike_of?.includes(ref.edible_id)) ||
+  (t.edible_id && ref.lookalike_of?.includes(t.edible_id)) ||
+  ref.dangerous_lookalikes?.includes(t.key) || t.dangerous_lookalikes?.includes(ref.key)
+))
   .sort((a, b) => (similarity(ref, b) - similarity(ref, a)) || ((TOX_ORDER[a.toxicity] ?? 9) - (TOX_ORDER[b.toxicity] ?? 9)));
 // per la scheda della specie: lo stesso ordine dei sosia, dato il nome latino
 export const lookalikeRank = (edibleId, latin) => { const ref = refOf(edibleId), k = taxonKeyByLatin(latin), t = k && TAXA.find((x) => x.key === k); return ref && t ? similarity(ref, t) : 0; };
@@ -677,6 +682,7 @@ export function renderTaxonView(box, t, { photos = null, habitatText = '', extra
       ${ph.length > 1 ? `<div class="sp-strip">${ph.slice(1, 6).map((p, k) => `<button type="button" class="zoomable" data-photo="${k + 1}" aria-label="Foto ${k + 2}: ingrandisci"><img data-src="${ASSET(p.file)}" alt="" loading="lazy" decoding="async"></button>`).join('')}</div>` : ''}
       ${t.field_rules?.length ? attentionBox(t.field_rules) + (t.caution ? `<p class="id-why" data-glossary><b>Cautele della specie:</b> ${esc(t.caution)}</p>` : '') : attentionBox(t.caution ? [{ text: t.caution, severity: 'importante' }] : [])}
       ${t.traits && Object.keys(t.traits).some((k) => k !== 'season') ? `<h3>Caratteri da confrontare</h3>${growthTraits(null, t)}` : '<p class="notice">Caratteri di confronto in preparazione.</p>'}
+      ${compareCta(null, t)}
       ${t.check_before_picking?.length ? `<details class="sec character-details"><summary>Cosa controllare da vicino</summary><div class="sec-body"><ol class="keys" data-glossary>${t.check_before_picking.map((x) => `<li><span class="key-text">${esc(x)}</span></li>`).join('')}</ol></div></details>` : ''}
       ${look.length ? `<h3>${lookTitle}</h3><ul class="tx-look">${look.map(({ id, o }) => { const op = photoOf(o); return `<li>
         <a class="tx-look-main" data-entity href="#/specie/${esc(id)}">${op ? `<img data-src="${ASSET(op.thumb || op.file)}" alt="" loading="lazy" decoding="async">` : ''}<span><b>${esc(o.name)}</b><i>${esc(o.latin)}</i>${o.toxicity ? `<small class="tx-c tox-${esc(o.toxicity.replace(/\s/g, '-'))}"><span class="tox">${esc(o.tox_label || o.toxicity)}</span></small>` : ''}</span></a>
@@ -686,7 +692,7 @@ export function renderTaxonView(box, t, { photos = null, habitatText = '', extra
         const back = TAXA.filter((x) => x !== t && (x.dangerous_lookalikes || []).includes(t.key) && !look.some((l) => l.o === x));
         const ds = [...(t.dangerous_lookalikes || []).map((k) => TAXA.find((x) => x.key === k)).filter(Boolean), ...back.filter((x) => !(t.dangerous_lookalikes || []).includes(x.key))];
         // se la sezione c'è già (sosia del modello), le schede si aggiungono sotto lo stesso titolo
-        return ds.length ? `${look.length ? '' : `<h3>${lookTitle}</h3>`}<ul class="tx-look${look.length ? ' tx-look-more' : ''}">${ds.map((o) => { const op = photoOf(o); return `<li><a class="tx-look-main" data-entity href="#/fungo/${esc(o.key)}">${op ? `<img data-src="${ASSET(op.thumb || op.file)}" alt="" loading="lazy" decoding="async">` : ''}<span><b>${esc(o.name || o.latin)}</b><i>${esc(o.latin)}</i><small class="tx-c tox-${esc((o.toxicity || '').replace(/\s/g, '-'))}"><span class="tox">${esc(o.tox_label || o.toxicity || '')}</span></small></span></a></li>`; }).join('')}</ul>` : '';
+        return ds.length ? `${look.length ? '' : `<h3>${lookTitle}</h3>`}<ul class="tx-look${look.length ? ' tx-look-more' : ''}">${ds.map((o) => { const op = photoOf(o); return `<li><a class="tx-look-main" data-entity href="#/fungo/${esc(o.key)}">${op ? `<img data-src="${ASSET(op.thumb || op.file)}" alt="" loading="lazy" decoding="async">` : ''}<span><b>${esc(o.name || o.latin)}</b><i>${esc(o.latin)}</i><small class="tx-c tox-${esc((o.toxicity || '').replace(/\s/g, '-'))}"><span class="tox">${esc(o.tox_label || o.toxicity || '')}</span></small></span></a><a class="tx-cmp-btn" href="#/riconosci/confronta/${esc(t.key)}/${esc(o.key)}" aria-label="Confronta con ${esc(o.name || o.latin)}, carattere per carattere">Confronta</a></li>`; }).join('')}</ul>` : '';
       })()}
       <h3>Dove e quando</h3>
       <dl class="sci-params">
@@ -701,8 +707,8 @@ export function renderTaxonView(box, t, { photos = null, habitatText = '', extra
   const lb = ph.map((p) => ({ src: ASSET(p.file_hd || p.file), alt: t.name, caption: captionHtml({ title: `<span class="tox">${toxL}</span> ${esc(t.name || '')} <i>${esc(t.latin)}</i>`, credit: `Foto: ${esc(p.author || '')}${p.license ? `, ${p.licenseUrl ? `<a href="${esc(p.licenseUrl)}" target="_blank" rel="noopener">${esc(p.license)}</a>` : esc(p.license)}` : ''}${p.page ? ` · <a href="${esc(p.page)}" target="_blank" rel="noopener">${esc(p.source || 'Fotografia originale')}</a>` : ''}` }) }));
   box.querySelectorAll('[data-photo]').forEach((b) => b.addEventListener('click', () => openLightbox(lb, +b.dataset.photo)));
 }
-export function compareCta(edibleId) {
-  const t = refOf(edibleId);
+export function compareCta(edibleId, taxon = null) {
+  const t = taxon || refOf(edibleId);
   const list = t ? sosiaOf(t) : [];
   if (!list.length) return '';
   // fotografico: lui e i sosia in miniatura (oltre 4, un "+N")
@@ -776,13 +782,11 @@ function cmpRows(ref, t) {
   }).filter(Boolean);
 }
 
-// i commestibili con cui si confonde un velenoso (o un sosia): per il confronto visto dalla sua parte
-const mimicsOf = (ref) => (ref.lookalike_of || []).map(refOf).filter((o) => o && o !== ref)
-  .sort((a, b) => similarity(b, ref) - similarity(a, ref));
 function renderCompare(box, ref, pick) {
   // fungo fisso a sinistra: un commestibile con i suoi sosia, oppure un velenoso con i commestibili con cui si confonde
   const fromToxic = !!ref.lookalike_of?.length;
-  const list = fromToxic ? mimicsOf(ref) : sosiaOf(ref);
+  const list = sosiaOf(ref);
+  if (!list.length) { box.innerHTML = '<h1 class="sec-title">Confronto non disponibile</h1><p>Nessun sosia documentato nel catalogo per questo fungo.</p><a href="#/riconosci">Esplora i funghi</a>'; return; }
   const pic = (t, small = false) => { const ph = photoOf(t); return ph ? `<img data-src="${ASSET(small ? ph.thumb || ph.file : ph.file)}" alt="" loading="lazy" decoding="async">` : '<span class="look-ph">senza foto</span>'; };
   const toxCls = (t) => `tox-${String(t.toxicity || '').replace(/\s/g, '-')}`;
   const nameBtn = (t) => `<button type="button" data-taxon="${esc(t.key)}">${esc(t.name || t.latin)}</button>`; // nel confronto: anteprima, per tutti
