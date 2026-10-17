@@ -1,3 +1,4 @@
+import {factCards,monthCalendar} from './content-ui.js';
 import {enhanceEntityAccordions} from './entity-accordions.js';
 import {speciesSafetyNote} from './species-context.js';
 // Scheda dettagliata di una specie: foto reali, riconoscimento, sosia pericolosi,
@@ -68,7 +69,7 @@ function traitsTable(d) {
     ['Habitat', d.habitat && [d.habitat]],
     ['Stagione', d.season && [d.season]],
   ].filter(([, v]) => v);
-  return `<dl class="traits">${rows.map(([k, v]) => `<dt>${k}</dt><dd${k === 'Stagione' ? '' : ' data-glossary="Funghi"'}>${linkTrees(v.filter(Boolean).join(' · '))}</dd>`).join('')}</dl>`;
+  return factCards(rows.map(([label,values])=>({label,icon:label==='Habitat'?'pin':'eye',html:`<ul class="content-values">${values.filter(Boolean).map(v=>`<li>${linkTrees(v)}</li>`).join('')}</ul>`})),{glossary:'Funghi'});
 }
 
 // etichetta del sosia: quella della sua scheda in Riconosci, se dice il motivo (es. «tossica cruda»); la classe resta per i colori
@@ -108,7 +109,7 @@ function kitchen(id) {
     ${must.length ? `<p class="k-h">Obbligatorio</p><ol class="k-steps k-must">${must.map(step).join('')}</ol>` : ''}
     ${p?.discard ? `<p class="k-line"><b>Parti da rimuovere nella preparazione:</b> ${esc(p.discard)}</p>` : ''}
     ${keep.length || tips.length ? `<details class="k-more"><summary>Conservare, quantità e consigli</summary>
-      ${keep.length ? `<dl class="k-keep">${keep.map(([k, v]) => `<div><dt>${k}</dt><dd>${esc(v)}</dd></div>`).join('')}</dl>` : ''}
+      ${keep.length ? `${factCards(keep.map(([label,value])=>({label,value,icon:'shield'})))}` : ''}
       ${tips.length ? `<ul class="k-steps k-tips">${tips.map(step).join('')}</ul>` : ''}
       <a class="act-row" href="#/info"><span class="ar-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg></span><span class="ar-b"><span class="ar-t">Regole per tutti i funghi</span><span class="ar-s">Sott'olio, congelamento, chi non deve mangiarli</span></span></a></details>` : ''}
     ${c?.uses?.length ? `<details class="k-food"><summary>I classici in cucina</summary>
@@ -168,8 +169,8 @@ function checks(id) {
 function whereToLook(id) {
   const w = TRAITS[id]?.where_to_look;
   if (!w) return '';
-  return `<h3>Dove guardare</h3><p data-glossary="Funghi">${linkTrees(w.summary || '')}</p>
-    ${w.tips?.length ? `<details class="sec"><summary>Indizi nell’ambiente</summary><div class="sec-body"><ul class="reasons" data-glossary="Funghi">${w.tips.map((t) => `<li>${linkTrees(t)}</li>`).join('')}</ul></div></details>` : ''}
+  return `<section class="species-habitat"><h3>Dove e quando</h3>${factCards([{label:'Ambiente',html:linkTrees(w.summary||''),icon:'pin',wide:true}],{glossary:'Funghi'})}${monthCalendar(TRAITS[id]?.traits?.season||[])} </section>
+    ${w.tips?.length ? `<details class="sec"><summary>Indizi nell’ambiente</summary><div class="sec-body"><ul class="content-points" data-glossary="Funghi">${w.tips.map((t) => `<li>${linkTrees(t)}</li>`).join('')}</ul></div></details>` : ''}
     ${w.trees?.length ? `<p class="tree-chips">${w.trees.map((t) => { const h = linkTrees(t); return h.includes('<a') ? h : `<span class="tree-link">${h}</span>`; }).join(' ')}</p>` : ''}`;
 }
 export const whereSummary = (id) => TRAITS[id]?.where_to_look?.summary || '';

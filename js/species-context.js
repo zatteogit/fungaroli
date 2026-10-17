@@ -1,3 +1,4 @@
+import {factCards,monthCalendar} from './content-ui.js';
 // Shared presentation for factual context and expandable notes on fungus pages.
 const esc = value => String(value ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const paths = {
@@ -10,12 +11,12 @@ const glyph = name => `<svg class="species-context-icon" viewBox="0 0 24 24" fil
 
 export function speciesHabitat({habitat = '', trees = '', months = ''} = {}) {
   const facts = [
-    habitat && ['habitat', 'Ambiente', habitat],
-    months && ['calendar', 'Periodo', months],
-    trees && ['habitat', 'Alberi associati', trees],
+    habitat?.length && {icon:'pin',label:'Ambiente',...(Array.isArray(habitat)?{items:habitat}:{value:habitat}),wide:true},
+    trees?.length && {icon:'leaf',label:'Alberi associati',...(Array.isArray(trees)?{items:trees}:{value:trees})},
+    typeof months==='string' && months && {icon:'calendar',label:'Periodo indicativo',value:months},
   ].filter(Boolean);
-  if (!facts.length) return '';
-  return `<section class="species-habitat"><h3>Dove e quando</h3><dl class="species-facts">${facts.map(([icon, label, value]) => `<div><dt>${glyph(icon)}${label}</dt><dd${icon === 'habitat' ? ' data-glossary="Funghi"' : ''}>${esc(value)}</dd></div>`).join('')}</dl></section>`;
+  if (!facts.length && !months?.length) return '';
+  return `<section class="species-habitat"><h3>Dove e quando</h3>${factCards(facts,{glossary:'Funghi'})}${Array.isArray(months)?monthCalendar(months):''}</section>`;
 }
 
 function contextNote({icon, title, preview, body, extraClass = ''}) {

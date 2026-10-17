@@ -1,3 +1,5 @@
+import {factCards,enhanceContentReading} from './content-ui.js';
+import {enhanceEntityAccordions} from './entity-accordions.js';
 import {plannedDeparture, recommendedStartAvailable, calendarDate} from './planning-time.js';
 import {speciesObservationContext} from './species-context.js';
 import { mapQuery, mountMapResults, compactMapFilters } from './map-experience.js';
@@ -1249,7 +1251,7 @@ let prep = null, trailheads = {}, treesData = null, idData = null;
 function prepGeneralHtml(rules) {
   const ord = [...rules].sort((a, b) => (a.level === 'obbligatorio' ? 0 : 1) - (b.level === 'obbligatorio' ? 0 : 1));
   return `<details class="prep-gen"><summary><h2>Prepararli e conservarli: le regole per tutti</h2></summary>
-    <ol class="k-steps">${ord.map((r) => `<li class="${r.level === 'obbligatorio' ? 'must' : 'tip'}"><b>${esc(r.title)}</b> ${esc(r.text)}${r.why ? `<small>${esc(r.why)}</small>` : ''}<span class="k-src">${r.level === 'obbligatorio' ? '<span class="k-lv">indicazione di sicurezza</span>' : '<span class="k-lv tip">prudenziale</span>'}${r.sources?.length ? `<details class="k-src-d"><summary>Fonti (${r.sources.length})</summary>${sourceRows(r.sources)}</details>` : ''}</span></li>`).join('')}</ol>
+    <ol class="content-prep-rules">${ord.map(r=>`<li><span class="content-prep-kind">${r.level==='obbligatorio'?'Indicazione di sicurezza':'Indicazione prudenziale'}</span><h3>${esc(r.title)}</h3><p>${esc(r.text)}</p>${r.why?`<aside class="content-observe"><b>Perché</b><p>${esc(r.why)}</p></aside>`:''}${r.sources?.length?`<details class="content-explain"><summary>Fonti (${r.sources.length})</summary>${sourceRows(r.sources)}</details>`:''}</li>`).join('')}</ol>
   </details>`;
 }
 const adjParts = (zone, d) => {
@@ -2812,8 +2814,8 @@ function renderDetail() {
       <p class="small muted">${esc(best.kind==='plant'?'Indice sperimentale del contesto e della fase: non è una probabilità di raccolta.':contentCopy.indexExplanation || 'Condizioni di crescita: indice sperimentale 0–10.')}</p>
       ${legal?.forecast_note ? `<p class="small muted">${esc(legal.forecast_note)}</p>` : ''}`)}
     ${section('sentieri', preview('Sentieri della zona',(trails[z.id]?.trails?.length||0)+' tratti mappati · difficoltà e profili'), renderTrails(z, d))}
-    ${section('bosco', preview(`Boschi intorno a ${best.band} m`,forestNames||'Composizione indicativa sulla carta'), forestBar(hab.frac) + `<p class="small muted">Carta Forestale · ${hab.n} punti tra ${best.band-150} e ${best.band+150} m. Le percentuali descrivono i punti sulla carta, non il numero degli alberi. Punti vicini possono descrivere lo stesso bosco: la composizione è indicativa.</p>`)}
-    ${section('zona', preview('Paesaggio e alberi',zonePreview||`${habitat[z.id].elevation.min}–${habitat[z.id].elevation.max} m`), `<p class="small" data-glossary="Bosco">${esc(z.description)}</p>${zoneTrees}<p class="small muted">Quote della zona: ${habitat[z.id].elevation.min}–${habitat[z.id].elevation.max} m.</p>`)}
+    ${section('bosco', preview(`Boschi intorno a ${best.band} m`,forestNames||'Composizione indicativa sulla carta'), forestBar(hab.frac) + factCards([{label:'Carta Forestale',value:`${hab.n} punti campionati`,icon:'leaf'},{label:'Fascia osservata',value:`${best.band-150}–${best.band+150} m`,icon:'pin'}]) + `<p class="small muted">Le percentuali descrivono i punti sulla carta, non il numero degli alberi. Punti vicini possono descrivere lo stesso bosco: la composizione è indicativa.</p>`)}
+    ${section('zona', preview('Paesaggio e alberi',zonePreview||`${habitat[z.id].elevation.min}–${habitat[z.id].elevation.max} m`), `${factCards([{label:'Paesaggio',value:z.description,icon:'leaf',wide:true},{label:'Quote della zona',value:`${habitat[z.id].elevation.min}–${habitat[z.id].elevation.max} m`,icon:'pin'}],{glossary:'Bosco'})}${zoneTrees}`)}
     </section>
     </div>`;
   // Stessa zona già sulla pagina (cambio di giorno, meteo nuovo): si aggiornano solo le parti cambiate. Copertina,
@@ -3089,7 +3091,7 @@ function applyLegal() {
   // emergenza e sezioni legali nella pagina Info
   const em = L.emergency;
   $('#emergency').innerHTML = `<h2>${esc(em?.title || 'Sospetto avvelenamento')}</h2>
-    <ul class="reasons">${(em?.steps || ['Chiama subito il 112, anche senza sintomi.', 'Conserva i funghi avanzati, gli scarti e il resto del raccolto per i medici.']).map((x) => `<li>${esc(x)}</li>`).join('')}</ul>
+    <ol class="content-action-steps">${(em?.steps || ['Chiama subito il 112, anche senza sintomi.', 'Conserva i funghi avanzati, gli scarti e il resto del raccolto per i medici.']).map((x) => `<li>${esc(x)}</li>`).join('')}</ol>
     <div class="em-numbers">${(em?.numbers || [{ label: 'Numero unico di emergenza', number: '112' }]).map((n) => `<a class="btn ${n.number === '112' ? 'primary' : 'ghost'}" href="tel:${esc(n.number.replace(/\s/g, ''))}">${esc(n.label)} · <b>${esc(n.number)}</b></a>`).join('')}</div>`;
   const zc = Object.entries(zoneMedia).map(([zid, m]) => `${esc(zones.find((z) => z.id === zid)?.name || zid)}: ${creditLine(m)}`);
   if (zc.length) $('#zone-credits').innerHTML = `<b>Foto dei luoghi</b> (Wikimedia Commons): ${zc.join(' · ')}.${Object.values(zoneMedia).some((m) => m.variants?.length) ? ' Le copertine delle altre stagioni e del meteo sono elaborate con AI a partire da queste foto, con la stessa attribuzione e licenza.' : ''}`;
@@ -3097,7 +3099,9 @@ function applyLegal() {
   if (prep?.general?.length && $('#prep-general')) $('#prep-general').innerHTML = prepGeneralHtml(prep.general);
   // versione pilota: la stessa frase dell'avviso iniziale, in cima a Regole e metodo (ci porta l'etichetta «Rieti» della testata)
   const pilot = $('#info-pilot'); if (pilot) { pilot.textContent = L.onboarding?.subtitle || ''; pilot.hidden = !pilot.textContent; }
-  $('#legal-sections').innerHTML = (L.info_sections || []).map((x) => `<details><summary><h2>${esc(x.title)}</h2></summary><div class="method">${x.id==='privacy'?privacyHtml(x.html):x.html}</div></details>`).join('');
+  $('#legal-sections').innerHTML = (L.info_sections || []).map((x) => `<details><summary><h2>${esc(x.title)}</h2></summary><div class="method">${x.id==='normativa'?zoneLegal({}):''}${x.id==='privacy'?privacyHtml(x.html):x.html}</div></details>`).join('');
+  $('#legal-sections').querySelectorAll('.method').forEach(enhanceContentReading);
+  enhanceEntityAccordions($('#legal-sections'));
   // primo avvio: avviso da confermare (si ripresenta se cambia la versione dei testi)
   const ver = String(L.version || 0) + (L.verified_on || '');
   let accepted = null;
@@ -3135,7 +3139,7 @@ function zoneLegal(z) {
     return [text.split(/\s+/).slice(0,7).join(' ')+'…','Leggi condizioni e dettagli'];
   };
   const card=(title,hint,text)=>`<li><button type="button" class="legal-fact" data-legal-rule data-legal-title="${esc(title)}" data-legal-text="${esc(text)}"><b>${esc(title)}</b><span>${esc(hint)}</span><small>Dettagli <span aria-hidden="true">↗</span></small></button></li>`;
-  return `<div class="zone-legal"><ul class="legal-facts">${items.map(text=>card(...brief(text),text)).join('')}${z.protection?card('Area protetta','Verifica le regole dell’ente',z.protection+' '+(L.protected_area_note||'')):''}</ul><a class="small" href="#/info">Regole complete e fonti</a></div>`;
+  return `<div class="zone-legal"><ul class="legal-facts">${items.map(text=>card(...brief(text),text)).join('')}${z.protection?card('Area protetta','Verifica le regole dell’ente',z.protection+' '+(L.protected_area_note||'')):''}</ul>${z.id?'<a class="small" href="#/info">Regole complete e fonti</a>':''}</div>`;
 }
 
 // Un dettaglio alla volta: il testo normativo completo resta quello del contenuto pubblicato.

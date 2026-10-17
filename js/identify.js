@@ -696,7 +696,7 @@ export function renderTaxonView(box, t, { photos = null, habitatText = '', extra
         // se la sezione c'è già (sosia del modello), le schede si aggiungono sotto lo stesso titolo
         return ds.length ? `${look.length ? '' : `<h3>${lookTitle}</h3>`}<ul class="tx-look${look.length ? ' tx-look-more' : ''}">${ds.map((o) => { const op = photoOf(o); return `<li><a class="tx-look-main" data-entity href="#/fungo/${esc(o.key)}">${op ? `<img data-src="${ASSET(op.thumb || op.file)}" alt="" loading="lazy" decoding="async">` : ''}<span><b>${esc(o.name || o.latin)}</b><i>${esc(o.latin)}</i><small class="tx-c tox-${esc((o.toxicity || '').replace(/\s/g, '-'))}"><span class="tox">${esc(o.tox_label || o.toxicity || '')}</span></small></span></a><a class="tx-cmp-btn" href="#/riconosci/confronta/${esc(t.key)}/${esc(o.key)}" aria-label="Confronta con ${esc(o.name || o.latin)}, carattere per carattere">Confronta</a></li>`; }).join('')}</ul>` : '';
       })()}
-      ${speciesHabitat({habitat:habitat.length ? orList(habitat) : habitatText, trees:t.trees?.join(', ') || '', months})}
+      ${speciesHabitat({habitat:habitat.length ? habitat : habitatText, trees:t.trees||[], months:t.traits?.season||months})}
       ${extra}
       ${speciesSafetyNote()}
       ${t.sources?.length || ph.length ? `<details class="sec"><summary>Fonti e fotografie</summary><div class="sec-body">${sourceRows(t.sources)}${ph.length ? `<p class="src-h">Fotografie</p>${photoRows(ph)}` : ''}</div></details>` : ''}
