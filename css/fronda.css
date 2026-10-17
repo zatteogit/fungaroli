@@ -917,3 +917,12 @@ button.cover-index:focus-visible { outline:3px solid var(--focus); outline-offse
 @media(prefers-reduced-motion:no-preference) {
   .days .day { transition:background-color .2s ease,color .2s ease,border-color .2s ease,box-shadow .2s ease,transform .18s ease; }
 }
+
+/* Anche con il tocco la sfumatura segue i lati che hanno ancora contenuto.
+   È una maschera, quindi lascia trasparire il vero sfondo nei due temi. */
+@media(hover:none), (pointer:coarse) {
+  .rail-host > :is(.days,.rail,.sp-strip,.tree-fungi) {
+    -webkit-mask-image:linear-gradient(to right, transparent, var(--text) min(32px,var(--rail-fade-start)), var(--text) calc(100% - min(32px,var(--rail-fade-end))), transparent);
+    mask-image:linear-gradient(to right, transparent, var(--text) min(32px,var(--rail-fade-start)), var(--text) calc(100% - min(32px,var(--rail-fade-end))), transparent);
+  }
+}

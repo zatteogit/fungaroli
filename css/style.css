@@ -1723,7 +1723,7 @@ dialog { overscroll-behavior: contain; }
 .rail-host:has(> :is(.days, .active-filters, .cmp-pick, .filter-rail)) > .rail-prev { left: 4px; }
 .rail-host:has(> :is(.days, .active-filters, .cmp-pick, .filter-rail)) > .rail-next { right: 4px; }
 @media (hover: none), (pointer: coarse) { .rail-arrow { display: none; } }
-@media (hover: none), (pointer: coarse) { .rail-host > :is(.days, .active-filters, .cmp-pick, .filter-rail) { -webkit-mask-image: none; mask-image: none; } }
+
 /* filtri aperti su desktop: vanno a capo invece di scorrere */
 @media (min-width: 761px) { .active-filters.open { flex-wrap: wrap; row-gap: 8px; overflow: visible; } }
 
