@@ -41,7 +41,7 @@ async function open(page) {
   const errors = [];
   page.on('pageerror', (e) => errors.push(e.message));
   await page.goto('/questionario');
-  await expect(page.getByRole('heading', { level: 2, name: 'Prima di cominciare' })).toBeVisible();
+  await expect(page.getByRole('heading', { level: 2, name: 'Mi dai una mano?' })).toBeVisible();
   return errors;
 }
 const title = (page) => page.locator('#q-step-title');

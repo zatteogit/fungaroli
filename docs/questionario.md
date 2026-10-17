@@ -4,7 +4,9 @@ Aggiornato al 16/10/2026. Versione dello schema: **1**.
 
 ## Scopo
 
-Raccogliere le conoscenze di chi va per funghi nel Reatino da molti anni: quando e a che quota escono le specie, che cosa fanno pioggia, freddo, vento e secco, quali boschi e versanti contano, accessi, regole locali e rischi. Servono a confrontare il modello con l'esperienza sul campo.
+Raccogliere le esperienze degli amici che vanno a funghi nel Reatino, anche occasionalmente: quando e a che quota escono le specie, che cosa fanno pioggia, freddo, vento e secco, quali boschi e versanti contano, accessi, regole locali e rischi. Servono a confrontare il modello con l'esperienza sul campo.
+
+Tono personale, da Matteo agli amici: titolo «La tua esperienza a funghi nel Reatino», apertura «Mi dai una mano?», nessun requisito di essere esperti. L’esperienza si descrive con le risposte, non si presume. Decisione di Matteo del 17/10/2026.
 
 Il questionario è neutro: non parla dell'app e non chiede di provarla (la prova dell'app verrà dopo). Si compila da soli, anche da telefono, senza login. Il nome è facoltativo. Le risposte restano a noi, nel database D1 del sito.
 

@@ -266,7 +266,7 @@ test('ricevuta dopo l’invio: il contatto è il link dell’informativa, non un
   assert.doesNotMatch(page, /[\w.+-]+@[\w-]+\.[a-z]{2,}/i, 'nessun indirizzo email nel codice della pagina');
   assert.doesNotMatch(page, /pagina Info del sito/);
   assert.match(page, /document\.querySelector\('#informativa a\[href\^="mailto:"\]'\)/);
-  assert.match(page, /manda questo codice a Matteo Sgambato: ', \.\.\.contactLink\(\)/);
+  assert.match(page, /scrivimi e mandami questo codice: ', \.\.\.contactLink\(\)/);
 });
 
 test('informativa (art. 13 GDPR): elementi obbligatori e coerenza con il codice', async () => {
