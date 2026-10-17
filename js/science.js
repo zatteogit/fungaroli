@@ -1,3 +1,4 @@
+import {enhanceContentReading} from './content-ui.js';
 // La scienza dietro l'indice, per chi vuole approfondire: la "ricetta" fattore per fattore con i numeri veri del giorno,
 // i grafici giorno per giorno (un solo componente, js/viz.js), il profilo della specie e la pagina del metodo (docs/metodo-scientifico.md).
 import { PARAMS, formatIndex } from './model.js';
@@ -283,6 +284,7 @@ export async function renderMethod(box) {
     // con molte sezioni, una riga di chip che scorre in orizzontale porta alla sezione
     const chips = toc.length > 6 ? `<nav class="md-chips" aria-label="Sezioni">${toc.map(([id, t]) => `<a class="chip" href="#m-${id}" data-jump="m-${id}">${inline(t)}</a>`).join('')}</nav>` : '';
     box.innerHTML = `${chips}<article class="md">${html}</article>`;
+    enhanceContentReading(box.querySelector('.md'));
     // i link interni non cambiano la rotta: scorrono alla sezione
     box.querySelectorAll('[data-jump]').forEach((a) => a.addEventListener('click', (e) => { e.preventDefault(); document.getElementById(a.dataset.jump)?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }));
   } catch {

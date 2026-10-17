@@ -3,13 +3,13 @@ body[data-page="mappa"] { overflow:hidden; }
 body[data-page="mappa"] #weather-work { display:none; }
 body[data-page="mappa"] #views { padding:0; }
 .map-top { width:auto; max-width:540px; left:12px; right:12px; padding:6px; grid-template-columns:minmax(0,1fr); border-radius:22px; box-shadow:var(--shadow-1); }
-.map-top #map-filters { order:-1; min-width:0; display:grid; grid-template-columns:minmax(0,1fr) auto; gap:6px; padding:0; overflow:visible; }
+.map-top #map-filters { order:-1; min-width:0; display:grid; grid-template-columns:auto minmax(0,1fr); gap:6px; padding:0; overflow:visible; }
 .map-query, .map-date { display:flex; align-items:center; min-height:48px; border:0; border-radius:16px; padding:8px 12px; font:600 14px/1.4 var(--font-body); background:var(--surface); color:var(--text); cursor:pointer; }
 .map-query { gap:8px; text-align:left; min-width:0; }
 .map-query-copy { display:grid; gap:1px; flex:1; min-width:0; }
 .map-query-copy small { font-size:11px; line-height:1.35; font-weight:500; color:var(--text-2); }
 .map-query-copy b { font-size:14px; line-height:1.4; overflow:hidden; text-overflow:ellipsis; white-space:normal; }
-.map-query .ui-icon { width:20px; height:20px; }
+.map-query .ui-icon, .map-query-icon { flex:0 0 20px; width:20px; height:20px; }
 .map-date { gap:10px; background:var(--surface-2); }
 .map-filter-count { display:grid; place-items:center; min-width:24px; height:24px; border-radius:50%; background:var(--select); color:var(--select-ink); font-size:12px; }
 .map-top .map-days .day { min-width:80px; min-height:80px; padding:10px 8px; border-radius:18px; }

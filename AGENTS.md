@@ -61,6 +61,8 @@ Quando per proseguire serve una decisione del proprietario del progetto, chiedil
 
 Italiano, frasi brevi, senza gergo. Decimale con la virgola (7,2). Distinguere sempre fatto verificato, interpretazione e dato non verificato.
 
+**Presentazione dei contenuti (decisione di Matteo):** Fronda è un’app, non una voce enciclopedica. Mostra prima i dati consultabili a colpo d’occhio: schede con etichette, valori e icone; calendari mensili o «Tutto l’anno» quando tutti i mesi sono documentati. Evita colonne strette con lunghi paragrafi e liste di mesi testuali. Usa `js/content-ui.js` e `css/content-ui.css` per mantenere lo stesso linguaggio nelle schede, nelle guide e nelle informazioni. Separa le spiegazioni dai dati principali senza inventare categorie o riassunti scientifici; conserva testi, link e fonti. Cautele, condizioni e istruzioni di sicurezza restano leggibili integralmente. Gli approfondimenti principali delle schede usano `js/entity-accordions.js`: intestazione riconoscibile e una sola sezione aperta alla volta.
+
 ## Knowledge base · Kipi
 
 Per `kipi init`, `scan`, `process`, `update` o `status`, usa la [skill locale](.agents/skills/kipi/SKILL.md), adattata all’intero repository Fungaroli. Leggi prima indice e stato in `knowledge/`. Il riepilogo di ingresso è in [agents/kipi.md](agents/kipi.md).

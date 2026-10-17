@@ -28,7 +28,7 @@ function termImages(id) {
 function termBody(t, legend = false, context=t.category, categoryShown = false) {
   const related=relatedGlossaryTerms(aliasMap,TERMS,t,context);
   if(legend && t.id.startsWith('difficolta-')) return `<div class="difficulty-legend" aria-label="Legenda delle difficoltà">${Object.values(difficultyIds).map(id => TERMS.find(x => x.id === id)).filter(Boolean).map(x => `<div${x.id === t.id ? ' class="current"' : ''}><b>${esc(x.term)}</b><p>${esc(x.definition)}</p></div>`).join('')}</div><p class="learning-observe">${esc(t.observe)}</p><p class="small muted">Sigla dalla fonte del percorso: verifica stato del sentiero, meteo, tempi e dislivelli prima di partire.</p><p class="learning-sources small muted">Fonte: ${sourceLinks(t.sources)}</p>`;
-  return `${categoryShown?'':`<p class="small muted learning-category">${esc(t.category)}</p>`}<p>${esc(t.definition)}</p>${termImages(t.id)}${t.observe ? `<p class="learning-observe">${esc(t.observe)}</p>` : ''}
+  return `${categoryShown?'':`<p class="small muted learning-category">${esc(t.category)}</p>`}<p>${esc(t.definition)}</p>${termImages(t.id)}${t.observe ? `<aside class="content-observe"><b>Sul campo</b><p class="learning-observe">${esc(t.observe)}</p></aside>` : ''}
     ${related.length ? `<div class="learning-related">${related.map(x => `<a class="glossary-link" data-term="${x.id}" href="#/glossario/${x.id}">${esc(x.term)}</a>`).join('')}</div>` : ''}
     <p class="learning-sources small muted">Fonti: ${sourceLinks(t.sources)}</p>`;
 }
@@ -49,7 +49,7 @@ export function renderGlossary(box, selected = '', categories = ['Funghi','Piant
     box.querySelector(`#${box.id}-results`).innerHTML = hits.length ? hits.map(t => {
       const letter = initial(t), heading = letter !== previous ? `<h2 class="glossary-letter" id="${box.id}-letter-${letter}" tabindex="-1">${letter}</h2>` : '';
       previous = letter;
-      return `${heading}<details class="glossary-entry" id="${box.id}-term-${t.id}"${selected === t.id ? ' open' : ''}><summary><span><small>${esc(t.category)}</small><b>${esc(t.term)}</b></span><span aria-hidden="true">+</span></summary><div>${termBody(t, true, t.category, true)}</div></details>`;
+      return `${heading}<details class="glossary-entry" name="glossary-${box.id}" id="${box.id}-term-${t.id}"${selected === t.id ? ' open' : ''}><summary><span><small>${esc(t.category)}</small><b>${esc(t.term)}</b></span><span aria-hidden="true">+</span></summary><div>${termBody(t, true, t.category, true)}</div></details>`;
     }).join('') : '<p class="notice">Nessuna voce in questo argomento.</p>';
   };
   box.querySelector('.glossary-alphabet').addEventListener('click', e => {

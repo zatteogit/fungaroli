@@ -903,3 +903,17 @@ button.cover-index:focus-visible { outline:3px solid var(--focus); outline-offse
   #active-filters [data-intent][aria-pressed="true"]:hover { background:var(--story-germoglio); color:var(--story-ink); }
   #active-filters [data-p][aria-pressed="true"]:hover { background:var(--surface-3); color:var(--link); }
 }
+
+/* Il contenuto di ogni voce resta centrato nella sagoma attiva, anche su Safari. */
+@media(max-width:899px) {
+  .tabbar a { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:3px; min-width:0; padding:0; line-height:1.15; }
+  .tabbar a > :is(svg,span) { flex:none; margin:0; }
+  .appbar { transition:transform .22s var(--ease-out); }
+  .header-away .appbar { transform:translateY(-100%); pointer-events:none; }
+  .header-away :is(.cmp-pickbar,.glossary-index) { top:0; }
+}
+@media(prefers-reduced-motion:reduce) { .appbar { transition:none; } }
+
+@media(prefers-reduced-motion:no-preference) {
+  .days .day { transition:background-color .2s ease,color .2s ease,border-color .2s ease,box-shadow .2s ease,transform .18s ease; }
+}
