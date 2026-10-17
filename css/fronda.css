@@ -5,7 +5,8 @@
    (--select, testo --select-ink, filo --select-edge), azione principale = polline (--action), informazione =
    calendula (--accent: occhielli, etichette), indice = verde (--s*, anello, pallini). Solo ruoli, niente
    colori scritti a mano: i valori stanno in css/tokens.css.
-   Azione e selezione hanno lo stesso giallo ma forme diverse: l'azione è un bottone pieno senza filo, in
+   Nella home, gli interessi usano germoglio, le preferenze un contorno e il giorno scelto avorio.
+   Negli altri contesti, azione e selezione hanno lo stesso giallo ma forme diverse: l'azione è un bottone pieno senza filo, in
    grassetto, con il segno dell'azione (＋, →); il «scelto» sta sempre dentro un gruppo (fila, vassoio, barra),
    ha il filo ocra --select-edge e, nei filtri, la spunta. */
 .tab-pill { background: var(--select); box-shadow: inset 0 0 0 1px var(--select-edge); }
@@ -874,3 +875,14 @@ button.cover-index:focus-visible { outline:3px solid var(--focus); outline-offse
 }
 
 @media(prefers-reduced-motion:no-preference) { .cell-card.is-leaving { opacity:0 !important; transition:opacity .12s ease; } .cell-card.is-leaving .mtt { animation:none; } }
+
+/* Uscite: il polline resta sulla proposta e sulla navigazione, le scelte rapide respirano. */
+#active-filters [data-intent][aria-pressed="true"] { background:var(--story-germoglio); color:var(--story-ink); border-color:var(--story-ink); }
+#active-filters [data-p][aria-pressed="true"] { background:var(--surface-2); color:var(--link); border-color:var(--link); box-shadow:inset 0 0 0 1px var(--link); }
+#days .day[aria-selected="true"] { background:var(--story-avorio); color:var(--story-ink); border-color:var(--story-ink); box-shadow:var(--shadow-1); }
+#days .day[aria-selected="true"] :is(.d1,.d3) { color:var(--story-ink); }
+#days .day[aria-selected="true"] .dot { box-shadow:0 0 0 1.5px var(--story-ink); }
+@media(hover:hover) {
+  #active-filters [data-intent][aria-pressed="true"]:hover { background:var(--story-germoglio); color:var(--story-ink); }
+  #active-filters [data-p][aria-pressed="true"]:hover { background:var(--surface-3); color:var(--link); }
+}
