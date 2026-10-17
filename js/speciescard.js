@@ -1,3 +1,4 @@
+import {enhanceEntityAccordions} from './entity-accordions.js';
 import {speciesSafetyNote} from './species-context.js';
 // Scheda dettagliata di una specie: foto reali, riconoscimento, sosia pericolosi,
 // calendario delle osservazioni (GBIF) a confronto con il modello, modello 3D.
@@ -232,6 +233,7 @@ export function renderSpeciesDetail(body, id) {
     </div>
     ${speciesSafetyNote(FOOTER)}
     </div>`;
+  enhanceEntityAccordions(body);
   body.querySelector('.sp-3d button')?.addEventListener('click', (e) => {
     const box = e.target.closest('.sp-3d');
     open3d(box, model, sp.name);

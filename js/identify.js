@@ -1,3 +1,4 @@
+import {enhanceEntityAccordions} from './entity-accordions.js';
 import {speciesHabitat, speciesSafetyNote} from './species-context.js';
 import { alertTriangleGlyph } from './ui-icons.js';
 import { availableGrowthStages } from './fungus-stages.js';
@@ -700,6 +701,7 @@ export function renderTaxonView(box, t, { photos = null, habitatText = '', extra
       ${speciesSafetyNote()}
       ${t.sources?.length || ph.length ? `<details class="sec"><summary>Fonti e fotografie</summary><div class="sec-body">${sourceRows(t.sources)}${ph.length ? `<p class="src-h">Fotografie</p>${photoRows(ph)}` : ''}</div></details>` : ''}
     </div>`;
+  enhanceEntityAccordions(box);
   const lb = ph.map((p) => ({ src: ASSET(p.file_hd || p.file), alt: t.name, caption: captionHtml({ title: `<span class="tox">${toxL}</span> ${esc(t.name || '')} <i>${esc(t.latin)}</i>`, credit: `Foto: ${esc(p.author || '')}${p.license ? `, ${p.licenseUrl ? `<a href="${esc(p.licenseUrl)}" target="_blank" rel="noopener">${esc(p.license)}</a>` : esc(p.license)}` : ''}${p.page ? ` · <a href="${esc(p.page)}" target="_blank" rel="noopener">${esc(p.source || 'Fotografia originale')}</a>` : ''}` }) }));
   box.querySelectorAll('[data-photo]').forEach((b) => b.addEventListener('click', () => openLightbox(lb, +b.dataset.photo)));
 }

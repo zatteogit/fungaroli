@@ -360,3 +360,17 @@ body[data-page="mappa"] .view-map { border-radius:0; }
     .fungus-compare .cmp-name i { padding:0 10px 14px; }
   }
 }
+
+/* Le intestazioni degli approfondimenti dichiarano visivamente che si possono aprire. */
+.entity-accordion-root [data-entity-accordion] { margin:12px 0; padding:0; border:1px solid var(--hair); border-radius:16px; background:var(--surface); overflow:clip; }
+.entity-accordion-root [data-entity-accordion] > summary { display:flex; justify-content:space-between; align-items:center; gap:12px; min-height:56px; margin:0; padding:14px 16px; color:var(--text); font:600 16px/1.4 var(--font-body); list-style:none; cursor:pointer; transition:background .18s ease; }
+.entity-accordion-root [data-entity-accordion] > summary::-webkit-details-marker { display:none; }
+.entity-accordion-root [data-entity-accordion] > summary::before { content:none; }
+.entity-accordion-root [data-entity-accordion] > summary::after { content:''; order:0; flex:0 0 24px; width:24px; height:24px; margin:0 0 0 auto; border:0; color:var(--link); background:currentColor; mask:url('../assets/ui/chevron-right.svg') center / 20px no-repeat; -webkit-mask:url('../assets/ui/chevron-right.svg') center / 20px no-repeat; transform:rotate(90deg); transition:transform .18s ease; }
+.entity-accordion-root [data-entity-accordion][open] > summary { background:var(--surface-2); border-bottom:1px solid var(--hair); }
+.entity-accordion-root [data-entity-accordion][open] > summary::after { transform:rotate(270deg); }
+.entity-accordion-root [data-entity-accordion] > :is(.sec-body,.species-context-body) { padding:16px; }
+.entity-accordion-root [data-entity-accordion] > :not(summary):not(.sec-body):not(.species-context-body) { margin:14px 16px; }
+.entity-accordion-root [data-entity-accordion] > summary:focus-visible { outline:3px solid var(--focus); outline-offset:-3px; border-radius:15px; }
+@media(hover:hover) { .entity-accordion-root [data-entity-accordion] > summary:hover { background:var(--surface-2); } }
+@media(prefers-reduced-motion:reduce) { .entity-accordion-root [data-entity-accordion] > summary, .entity-accordion-root [data-entity-accordion] > summary::after { transition:none; } }
