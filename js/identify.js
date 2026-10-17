@@ -7,7 +7,7 @@ import { availableGrowthStages } from './fungus-stages.js';
 
 import { openLightbox, captionHtml } from './lightbox.js';
 import { openEntitySheet } from './entity-sheet.js';
-import { soft, tick, canVT } from './motion.js';
+import { soft, tick } from './motion.js';
 import { matchTraits, retainCandidate, traitQuestions, traitSimilarity, attentionGroups } from './identify-model.js';
 const TQ = (key) => traitQuestions().find((q) => q.key === key);
 
@@ -797,7 +797,7 @@ function renderCompare(box, ref, pick) {
       {kind:'same',label:'In comune',empty:'Nessun carattere interamente condiviso nei dati disponibili.'},
     ], info = rows.filter(r=>r.info);
     const how = fromToxic ? HOWTO(t.edible_id, ref.latin) : HOWTO(ref.edible_id, t.latin);
-    return `<section class="cmp-slide" id="cmp-${esc(t.key)}" data-i="${k}" role="group" aria-roledescription="confronto" aria-label="${esc(ref.name || ref.latin)} e ${esc(t.name || t.latin)}" ${t.key === list[start]?.key ? '' : 'inert'}>
+    return `<section class="cmp-slide" id="cmp-${esc(t.key)}" data-i="${k}" role="group" aria-roledescription="confronto" aria-label="${esc(ref.name || ref.latin)} e ${esc(t.name || t.latin)}" ${t.key === list[start]?.key ? '' : 'hidden inert'}>
       <div class="cmp-pair">
         ${[ref, t].map((x) => `<div class="cmp-side">
           <figure class="cmp-fig ${toxCls(x)}"><span class="cmp-zoom">${pic(x)}</span><span class="tox">${esc(x.tox_label || x.toxicity)}</span>
@@ -820,7 +820,7 @@ function renderCompare(box, ref, pick) {
     <dialog class="cmp-chooser" aria-labelledby="cmp-chooser-title"><div class="cmp-chooser-head"><h2 id="cmp-chooser-title">Confronta con…</h2><button type="button" data-close-chooser aria-label="Chiudi">×</button></div><div class="cmp-choices">${list.map((t,k)=>`<button type="button" class="cmp-chip ${toxCls(t)}" data-go="${k}" aria-pressed="${k===start}"><span class="cmp-chip-img">${pic(t,true)}</span><span><b>${esc(t.name||t.latin)}</b><small>${esc(t.tox_label||t.toxicity)}</small></span><span class="cmp-choice-check" aria-hidden="true">✓</span></button>`).join('')}</div></dialog>
     <div class="cmp-gallery" role="group" aria-roledescription="carosello" aria-label="Confronti con ${esc(ref.name || ref.latin)}">
     <div class="cmp-pair-nav${list.length===1?' is-single':''}" role="group" aria-label="Specie a confronto"><div class="cmp-nav-content"><span class="cmp-nav-master">${list.length>1?`<span class="cmp-sosia-total">${list.length} sosia</span>`:''}<b class="cmp-master-name">${esc(ref.name||ref.latin)}</b></span><i class="cmp-nav-vs" aria-hidden="true">vs</i>${list.length>1?`<button type="button" class="cmp-pair-menu" data-change-lookalike aria-haspopup="dialog" aria-label="Scegli il sosia: ${esc(list[start].name||list[start].latin)}"><span data-current-lookalike>${esc(list[start].name||list[start].latin)}</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>`:`<b class="cmp-current-single">${esc(list[0].name||list[0].latin)}</b>`}</div></div>
-    ${list.length>1?`<div class="cmp-edge-arrows"><button type="button" data-cmp-step="-1" aria-label="Coppia precedente"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 6-6 6 6 6"/></svg></button><button type="button" data-cmp-step="1" aria-label="Coppia successiva"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m10 6 6 6-6 6"/></svg></button></div>`:''}
+    ${list.length>1?`<div class="cmp-edge-arrows"><button type="button" data-cmp-step="-1" aria-label="Sosia precedente"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 6-6 6 6 6"/></svg></button><button type="button" data-cmp-step="1" aria-label="Sosia successivo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m10 6 6 6-6 6"/></svg></button></div>`:''}
     <div class="cmp-track">${list.map(slide).join('')}</div><p class="sr-only" data-cmp-announcement role="status" aria-atomic="true"></p></div>
     <p><a class="btn primary" href="#/riconosci">Confronta un altro fungo</a></p>`;
 
@@ -832,7 +832,7 @@ function renderCompare(box, ref, pick) {
       currentName.textContent = list[i].name || list[i].latin;
       currentName.closest('button').setAttribute('aria-label', `Scegli il sosia: ${list[i].name || list[i].latin}`);
     }
-    for (const [k, slide] of [...track.children].entries()) slide.inert = k !== i;
+    for (const [k, slide] of [...track.children].entries()) { slide.inert = k !== i; slide.hidden = k !== i; }
     history.replaceState(null, '', `#/riconosci/confronta/${ref.key}/${list[i].key}`);
     box.querySelector('[data-cmp-announcement]').textContent = `Confronto ${i+1} di ${list.length}: ${list[i].name || list[i].latin}`;
   };
@@ -866,10 +866,10 @@ function renderCompare(box, ref, pick) {
     removeEventListener('scroll', syncCompareHeader);
     removeEventListener('resize', syncCompareHeader);
     headerChanges.disconnect(); headerSize.disconnect();
+    ro.disconnect(); trackSize.disconnect();
+    candidateAnimation?.cancel();
   };
   const fit = () => {
-    const h = slides[cur]?.offsetHeight;
-    if (h) track.style.height = `${h}px`;
     const photo = slides[cur]?.querySelector('.cmp-zoom');
     if (photo) {
       const rect = photo.getBoundingClientRect();
@@ -880,17 +880,6 @@ function renderCompare(box, ref, pick) {
   // l'altezza segue la slide visibile anche quando cresce dopo (foto caricate, sezioni aperte): mai uno scroll dentro lo scroll
   const ro = new ResizeObserver(() => fit());
   slides.forEach((sl) => ro.observe(sl));
-  // si aggiorna solo a scorrimento finito: cambiare altezza o pillole mentre il dito trascina interrompe lo scatto (iOS)
-  // e la slide resta a meta'. Se per qualunque motivo non e' allineata, la si porta sulla piu' vicina.
-  let settleT;
-  const settle = () => {
-    clearTimeout(settleT);
-    const w = track.clientWidth, i = Math.round(track.scrollLeft / w);
-    if (Math.abs(track.scrollLeft - i * w) > 2) { track.scrollTo({ left: i * w, behavior: 'smooth' }); return; }
-    if (i !== cur && list[i]) { cur = i; mark(i); fit(); }
-  };
-  track.addEventListener('scroll', () => { clearTimeout(settleT); settleT = setTimeout(settle, 160); }, { passive: true });
-  track.addEventListener('scrollend', settle);
   const selectGroup = kind => {
     for(const sl of slides){
       sl.querySelectorAll('[data-cmp-group]').forEach(b=>{const on=b.dataset.cmpGroup===kind;b.setAttribute('aria-selected',String(on));b.tabIndex=on?0:-1;});
@@ -909,32 +898,43 @@ function renderCompare(box, ref, pick) {
     });
   });
   box.querySelectorAll('.cmp-sources,.cmp-season').forEach(d=>d.addEventListener('toggle',fit));
-  // A viewport or scrollbar change must keep the selected pair aligned.
-  let trackWidth = track.clientWidth;
-  const align = () => {
-    const width = track.clientWidth;
-    if (width !== trackWidth) { trackWidth = width; track.scrollTo({ left: cur * width, behavior: 'instant' }); }
-    fit();
+  const trackSize = new ResizeObserver(fit);
+  trackSize.observe(track);
+  box.querySelectorAll('.cmp-slide img').forEach(im => im.addEventListener('load', fit, {once:true}));
+  // Il riferimento è lo stesso nodo DOM: resta fermo mentre cambia il candidato.
+  // Animazione locale, anche su Safari, senza transizioni dell'intera pagina.
+  let candidateAnimation;
+  const go = k => {
+    if (k === cur || !slides[k]) return;
+    candidateAnimation?.cancel();
+    const reference = slides[cur].querySelector('.cmp-side');
+    const replacement = slides[k].querySelector('.cmp-side');
+    const slot = document.createComment('reference');
+    reference.replaceWith(slot);
+    replacement.replaceWith(reference);
+    slot.replaceWith(replacement);
+    cur = k; mark(k); fit();
+    const candidate = slides[k].querySelectorAll('.cmp-side')[1];
+    if (!matchMedia('(prefers-reduced-motion: reduce)').matches && candidate.animate) {
+      candidateAnimation = candidate.animate([
+        {opacity:0, transform:'scale(.985)'},
+        {opacity:1, transform:'scale(1)'},
+      ], {duration:260, easing:'cubic-bezier(.2,.8,.2,1)'});
+    }
   };
-  new ResizeObserver(align).observe(track);
-  addEventListener('resize', align, { passive: true });
-  box.querySelectorAll('.cmp-slide img').forEach((im) => im.addEventListener('load', fit, { once: true }));
-  // tocco su un sosia: il fungo di riferimento resta fermo, cambia solo il sosia (entra dal lato giusto) e sotto la tabella sfuma
-  const names = (i) => slides.forEach((sl, j) => {
-    const on = j === i, sides = sl.querySelectorAll('.cmp-side');
-    sides[0].style.viewTransitionName = on ? 'cmp-ref' : '';
-    sides[1].style.viewTransitionName = on ? 'cmp-pick' : '';
-    const vs = sl.querySelector('.cmp-vs'); if (vs) vs.style.viewTransitionName = on ? 'cmp-vs' : '';
+  // Il gesto sceglie il sosia successivo: non trascina la coppia su un binario.
+  let swipe;
+  track.addEventListener('pointerdown', event => {
+    swipe = event.pointerType !== 'mouse' && !event.target.closest('button,a,input,summary')
+      ? {id:event.pointerId,x:event.clientX,y:event.clientY} : null;
   });
-  const go = (k) => {
-    if (k === cur) return;
-    if (!canVT()) { cur = k; track.scrollTo({ left: k * track.clientWidth, behavior: 'instant' }); mark(k); fit(); return; }
-    document.documentElement.dataset.cmpDir = k > cur ? 'next' : 'prev';
-    names(cur);
-    const vt = document.startViewTransition(() => { track.scrollTo({ left: k * track.clientWidth, behavior: 'instant' }); cur = k; mark(k); fit(); names(k); });
-    vt.finished.finally(() => { names(-1); delete document.documentElement.dataset.cmpDir; });
-    return vt.updateCallbackDone;
-  };
+  track.addEventListener('pointercancel', () => { swipe = null; });
+  track.addEventListener('pointerup', event => {
+    const start = swipe; swipe = null;
+    if (!start || start.id !== event.pointerId) return;
+    const dx = event.clientX-start.x, dy = event.clientY-start.y;
+    if (Math.abs(dx)>48 && Math.abs(dx)>Math.abs(dy)*1.5) go((cur+(dx<0?1:-1)+list.length)%list.length);
+  });
   box.querySelectorAll('[data-cmp-step]').forEach(button => button.onclick = async () => {
     const step = Number(button.dataset.cmpStep);
     await go((cur + step + list.length) % list.length);
@@ -953,7 +953,7 @@ function renderCompare(box, ref, pick) {
     await go(i);
     if (chooser.open) chooser.close();
   });
-  requestAnimationFrame(() => { track.scrollLeft = start * track.clientWidth; fit(); });
+  requestAnimationFrame(fit);
   box.querySelectorAll('[data-taxon]').forEach((b) => b.addEventListener('click', () => openTaxon(b.dataset.taxon)));
   const all = [ref, ...list].map((t) => ({ t, ph: photoOf(t) })).filter((y) => y.ph);
   const lb = all.map(({ t, ph }) => ({ key: t.key, src: ASSET(ph.file_hd || ph.file), alt: t.name, caption: captionHtml({ title: `<span class="tox">${esc(t.tox_label || t.toxicity)}</span> ${esc(t.name || '')} <i>${esc(t.latin)}</i>`, text: '', credit: `Foto: ${esc(ph.author)}, ${esc(ph.license)}` }) }));

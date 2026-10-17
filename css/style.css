@@ -2034,20 +2034,6 @@ html.theme-swap, html.theme-swap *, html.theme-swap *::before, html.theme-swap *
   .idf-sheet .tx-handle { display: none; }
   .idf-sh-h { padding-top: 16px; }
 }
-/* confronto: cambio sosia con il fungo di riferimento fermo */
-::view-transition-group(cmp-ref), ::view-transition-group(cmp-vs) { animation: none; }
-::view-transition-old(cmp-ref), ::view-transition-new(cmp-ref), ::view-transition-old(cmp-vs), ::view-transition-new(cmp-vs) { animation: none; }
-::view-transition-new(cmp-ref), ::view-transition-new(cmp-vs) { opacity: 1; }
-::view-transition-old(cmp-ref), ::view-transition-old(cmp-vs) { opacity: 0; }
-::view-transition-group(cmp-pick) { animation-duration: .32s; }
-::view-transition-old(cmp-pick) { animation: cmp-out .22s cubic-bezier(.4, 0, 1, 1) both; }
-::view-transition-new(cmp-pick) { animation: cmp-in .34s cubic-bezier(.2, .8, .2, 1) both; }
-html[data-cmp-dir="prev"]::view-transition-old(cmp-pick) { animation-name: cmp-out-r; }
-html[data-cmp-dir="prev"]::view-transition-new(cmp-pick) { animation-name: cmp-in-l; }
-@keyframes cmp-out { to { opacity: 0; transform: translateX(-24px); } }
-@keyframes cmp-in { from { opacity: 0; transform: translateX(32px); } }
-@keyframes cmp-out-r { to { opacity: 0; transform: translateX(24px); } }
-@keyframes cmp-in-l { from { opacity: 0; transform: translateX(-32px); } }
 .cmp-chip-ref.tox-mortale .cmp-chip-img { box-shadow: 0 0 0 2px var(--bg), 0 0 0 3.5px var(--crit); }
 .cmp-chip-ref.tox-tossico .cmp-chip-img { box-shadow: 0 0 0 2px var(--bg), 0 0 0 3.5px var(--warn-ink); }
 .cmp-chip-ref:is(.tox-non-commestibile) .cmp-chip-img { box-shadow: 0 0 0 2px var(--bg), 0 0 0 3.5px var(--border); }

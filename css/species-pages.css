@@ -154,7 +154,7 @@ body[data-page="mappa"] .view-map { border-radius:0; }
 .fungus-compare :is(.cmp-same,.cmp-sources) { margin-top:24px; }
 .fungus-compare .sec > summary { min-height:56px; font-size:16px; line-height:1.5; }
 .view:has(> .fungus-compare) > :is(.view-head,.seg-nav,.sub-nav) { display:none; }
-.fungus-compare .cmp-track { scroll-behavior:auto; }
+.fungus-compare .cmp-track { display:block; overflow:visible; touch-action:pan-y pinch-zoom; transition:none; }
 /* A label is a value, not an extra illustration: retain source details on request. */
 .growth-selector { display:flex; flex-wrap:wrap; gap:8px; margin:0 0 16px; }
 .growth-selector button { min-height:44px; padding:10px 14px; border:1px solid var(--control-edge); border-radius:22px; color:var(--text); background:var(--surface); font:600 14px/1.5 var(--font-body); cursor:pointer; }
@@ -183,7 +183,7 @@ body[data-page="mappa"] .view-map { border-radius:0; }
 .mapctl-stack .mapctl-btn:hover { background:var(--surface-2); }
 .mapctl-x { width:44px; height:44px; }
 @media(max-width:359px) { .map-top .map-filters [data-intent] { padding-inline:6px; gap:4px; font-size:13px; } }
-/* JS settles each pair after a swipe; native snap can move the compositor during resize. */
+/* Una coppia alla volta: nessun binario orizzontale, anche durante il gesto touch. */
 .fungus-compare .cmp-track { scroll-snap-type:none; }
 
 /* Context: read the fact first, open the explanation when needed. */
