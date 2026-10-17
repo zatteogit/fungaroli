@@ -30,7 +30,7 @@ async function register(page, name) {
   const cdp = await page.context().newCDPSession(page);
   await cdp.send('WebAuthn.enable');
   await cdp.send('WebAuthn.addVirtualAuthenticator', { options: { protocol: 'ctap2', transport: 'internal', hasResidentKey: true, hasUserVerification: true, isUserVerified: true, automaticPresenceSimulation: true } });
-  await page.locator('#community-intro [data-community-account]').click();
+  await page.locator('.appbar [data-community-account]').click();
   await page.locator('[data-handle]').fill(name);
   await page.locator('[data-register]').click();
   await expect(page.locator('dialog.community-dialog[open]')).toHaveCount(0);
@@ -249,8 +249,8 @@ test('Quando ha una sola testata, mantiene gli avvisi meteo e aggiunge solo dett
  await expect(summary.locator('.essential-summary')).toHaveCount(1);await expect(summary.locator('.plan-k')).toHaveText('Quando');
  await expect(summary).toContainText('Arriva');await expect(summary).toContainText('46 km/h');await expect(summary).not.toContainText("Meteo dell'uscita");
  await summary.click();await expect(section).toHaveAttribute('open','');
- const body=section.locator(':scope > .sec-body');await expect(body).toContainText('raccolta consentita');await expect(body).toContainText('Partenza da');await expect(body).not.toContainText('Arrivo consigliato');await expect(body.locator('.badge.crowd-basso,.badge.crowd-medio,.badge.crowd-alto')).toHaveCount(0);
- const method=body.locator('.timing-method');await expect(method).not.toHaveAttribute('open','');await method.locator('summary').click();await expect(method).toContainText('Non misuriamo le presenze');await method.locator('summary').click();
+ const body=section.locator(':scope > .sec-body');await expect(body).toContainText('Orario consentito di raccolta');await expect(body).toContainText('Partenza ·');await expect(body).not.toContainText('Arrivo consigliato');await expect(body.locator('.badge.crowd-basso,.badge.crowd-medio,.badge.crowd-alto')).toHaveCount(0);
+ const method=body.locator('.timing-method');await expect(body.locator('details')).toHaveCount(0);await expect(method).toContainText('presenze e passaparola non misurati');
  await section.screenshot({path:'/tmp/fronda-when-accordion.png'});expect(errors).toEqual([]);
 });
 
@@ -310,7 +310,7 @@ test('editoriale, filtri completi, passkey, isolamento e condivisione revocabile
   expect((await api(page,'summary')).data.totalReports).toBe(0); expect((await api(page,'entries')).data.entries).toHaveLength(1);
   await api(page,'auth/logout','POST',{}); expect((await api(page,'entries')).status).toBe(401);
   await page.goto('/');
-  await page.locator('#community-intro [data-community-account]').click(); await page.locator('[data-login]').click();
+  await page.locator('.appbar [data-community-account]').click(); await page.locator('[data-login]').click();
   await expect(page.locator('dialog.community-dialog[open]')).toHaveCount(0);
   expect((await api(page,'entries')).data.entries).toHaveLength(1);
   await api(page,'account','DELETE'); expect((await api(page,'session')).status).toBe(401);
@@ -324,7 +324,7 @@ test('segnalazione rapida su telefono, conteggi e ritiro dal diario', async ({ p
   await page.screenshot({path:'/tmp/fungaroli-mobile-home.png',fullPage:true});
   await register(page,'Test rapido');
   await page.locator('#community-intro [data-report]').click();
-  const dlg=page.locator('dialog[aria-label="Segnala dal bosco"]');
+  const dlg=page.locator('dialog[aria-label="Annota un’osservazione nel taccuino"]');
   await dlg.locator('#report-zone').fill('vallonina'); await dlg.locator('#report-zone-options [role="option"]').click();
   await dlg.locator('#report-species').fill('mazza'); await dlg.locator('#report-species-options [role="option"]').click();
   await dlg.locator('[name="amount"][value="1"]').check(); await dlg.locator('[type="submit"]').click();
@@ -376,7 +376,7 @@ test('taccuini e community restano accessibili senza dati meteo', async ({ page 
   await page.goto('/#/guide');await expect(page.locator('#editorial a')).toHaveCount(3);
   await page.goto('/');
   await expect(page.locator('#community-intro')).toContainText('Ancora nessuna osservazione condivisa.');
-  await page.locator('#community-intro [data-community-account]').click();
+  await page.locator('.appbar [data-community-account]').click();
   await expect(page.locator('[data-register]')).toBeVisible();
 });
 
@@ -454,7 +454,7 @@ test('autocomplete dei commestibili, selezione individuale, stagione e persisten
 test('le nuove specie sono segnalabili e i tossici restano esclusi dal server',async({page})=>{
   const errors=await setup(page);await register(page,'Test nuovo catalogo');
   await page.locator('#community-intro [data-report]').click();
-  const dlg=page.locator('dialog[aria-label="Segnala dal bosco"]');
+  const dlg=page.locator('dialog[aria-label="Annota un’osservazione nel taccuino"]');
   await dlg.locator('#report-species').click();await expect(dlg.locator('#report-species-options [role="option"]')).toHaveCount(46);
   await dlg.locator('#report-zone').fill('vallonina');await dlg.locator('#report-zone-options [role="option"]').click();
   await dlg.locator('#report-species').fill('cyclocybe');await dlg.locator('#report-species-options [role="option"]').click();
@@ -473,7 +473,7 @@ for(const width of [320,1280]) test(`form osservazioni: autocomplete, contesto e
   await page.setViewportSize({width,height:900});await page.emulateMedia({reducedMotion:'reduce'});
   const errors=await setup(page);await register(page,'Form '+width);
   await page.locator('#community-intro [data-report]').click();
-  const dlg=page.locator('dialog[aria-label="Segnala dal bosco"]'),zone=dlg.locator('#report-zone'),species=dlg.locator('#report-species');
+  const dlg=page.locator('dialog[aria-label="Annota un’osservazione nel taccuino"]'),zone=dlg.locator('#report-zone'),species=dlg.locator('#report-species');
   await expect(dlg.locator('[name="zone"]')).toHaveValue('');await expect(dlg.locator('[name="species"]')).toHaveValue('');
   await zone.fill('vallon');await expect(dlg.locator('#report-zone-options [role="option"]')).toHaveCount(1);
   await page.keyboard.press('ArrowDown');await expect(zone).toHaveAttribute('aria-activedescendant',/report-zone-options/);

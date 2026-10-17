@@ -350,6 +350,17 @@ function contraText(c) {
   }).join(' ');
 }
 
+function matchedKeys(c) {
+  return Object.entries(state.ans).filter(([key,value])=>{
+    const q=QK(key),tv=q&&traitOf(c.t,q);
+    return value!=null && q && tv!=null && (!Array.isArray(tv)||tv.length) && !c.contra.includes(key);
+  }).map(([key])=>key);
+}
+function matchSummary(c) {
+  if(!c.tot)return Object.values(state.ans).some(v=>v!=null)?'<p class="small id-why">Caratteri non documentati per queste risposte.</p>':'';
+  const names=keys=>keys.length?keys.slice(0,2).map(k=>esc(qShort(QK(k)))).join(', ')+(keys.length>2?` · +${keys.length-2}`:''):'nessuno';
+  return `<dl class="id-match-summary" aria-label="Rispetto alle tue risposte"><div><dt>In comune · ${c.ok}</dt><dd>${names(matchedKeys(c))}</dd></div><div class="id-match-different"><dt>Diversi · ${c.contra.length}</dt><dd>${names(c.contra)}</dd></div></dl>`;
+}
 function resultCard(c) {
   const t = c.t, ph = photoOf(t);
   const tox = esc(t.toxicity || ''), toxL = esc(t.tox_short || t.tox_label || t.toxicity || '');
@@ -360,11 +371,10 @@ function resultCard(c) {
     <div class="id-card-img">
       ${ph ? `<img data-src="${ASSET(ph.file)}" alt="" loading="lazy" decoding="async">` : ''}<span class="tox">${toxL}</span>
       ${ph ? `<button type="button" class="id-zoom" data-photo="${esc(t.key)}" aria-label="${name}: ingrandisci la foto"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6"/><path d="m20 20-5-5M10.5 8v5M8 10.5h5"/></svg></button>` : ''}
-      ${c.tot ? `<span class="id-fit${c.contra.length ? ' warn' : ''}">${c.ok}/${c.tot}</span>` : ''}</div>
+      </div>
     <div class="id-card-body">
       <button type="button" class="id-link" data-taxon="${esc(t.key)}">${name}</button>${t.name && t.name !== t.latin ? `<i>${esc(t.latin)}</i>` : ''}
-      ${t.caution ? `<span class="small id-why"><b>Cautele della specie:</b> ${esc(t.caution)}</span>` : ''}
-      ${c.contra.length ? `<span class="small id-contra">${contraText(c)}</span>` : ''}
+      ${matchSummary(c)}
       <button type="button" class="small id-more" data-taxon="${esc(t.key)}" aria-label="Dettagli di ${name}">Dettagli ›</button>
     </div></li>`;
 }
@@ -893,11 +903,18 @@ function renderCompare(box, ref, pick) {
 }
 
 // scheda breve per le specie senza pagina propria (velenose e sosia)
-export function openTaxon(key) {
+export function openTaxon(key, {answers = false} = {}) {
   const t = TAXA.find(x => x.key === key);
   if (!t) return;
   const href = t.edible_id && !t.lookalike_of?.length ? `#/specie/${t.edible_id}` : `#/fungo/${t.key}`;
-  if (!openEntitySheet(href)) location.hash = href;
+  const decorate=answers?body=>{
+    const c={t,...matches(t)};
+    if(!c.tot)return;
+    const section=document.createElement('section');section.className='id-answer-details';
+    section.innerHTML=`<h3>Rispetto alle tue risposte</h3><p class="small muted">Confronto con i caratteri documentati: non identifica il fungo e non ne certifica la commestibilità.</p><h4>In comune · ${c.ok}</h4>${c.ok?`<ul>${matchedKeys(c).map(k=>`<li><b>${esc(qShort(QK(k)))}</b>: ${esc(optLabel(QK(k),state.ans[k]))}</li>`).join('')}</ul>`:'<p>Nessun carattere in comune fra quelli confrontabili.</p>'}<h4>Diversi · ${c.contra.length}</h4>${c.contra.length?`<ul>${c.contra.map(k=>`<li>${contraText({...c,contra:[k]})}</li>`).join('')}</ul>`:'<p>Nessuna differenza nei caratteri confrontabili. Non è una conferma dell’identità.</p>'}`;
+    (body.querySelector('.pbody')||body).prepend(section);
+  }:undefined;
+  if (!openEntitySheet(href,document.activeElement,{decorate})) location.hash = href;
 }
 
 // --- Modo "Filtri": i caratteri come filtro avanzato (gruppi per parte del fungo, chip con il conteggio) ---
@@ -1030,6 +1047,6 @@ export function renderIdentify(box) {
   box.querySelectorAll('[data-skip]').forEach((b) => b.addEventListener('click', () => answer(b.dataset.skip, null)));
   const items = list.slice(0, 40).map((c) => ({ c, ph: photoOf(c.t) })).filter((y) => y.ph);
   const lb = items.map(({ c, ph }) => ({ key: c.t.key, src: ASSET(ph.file_hd || ph.file), alt: c.t.name, caption: captionHtml({ title: `<span class="tox">${esc(c.t.tox_label || c.t.toxicity)}</span> ${esc(c.t.name || '')} <i>${esc(c.t.latin)}</i>`, text: esc((c.t.check_before_picking || []).join(' · ')), credit: `Foto: ${esc(ph.author)}, ${esc(ph.license)}` }) }));
-  box.querySelectorAll('[data-taxon]').forEach((b) => b.addEventListener('click', () => openTaxon(b.dataset.taxon)));
+  box.querySelectorAll('[data-taxon]').forEach((b) => b.addEventListener('click', () => openTaxon(b.dataset.taxon,{answers:!!b.closest('.id-card')})));
   box.querySelectorAll('[data-photo]').forEach((b) => b.addEventListener('click', () => { const i = lb.findIndex((y) => y.key === b.dataset.photo); if (i >= 0) openLightbox(lb, i); }));
 }

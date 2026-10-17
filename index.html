@@ -2,7 +2,7 @@
 <html lang="it">
 <head>
   <meta charset="utf-8">
-  <meta name="app-version" content="fungaroli-shell-v108">
+  <meta name="app-version" content="fungaroli-shell-v109">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
   <link rel="preload" href="data/crop-points.json" as="fetch" crossorigin>
   <meta name="theme-color" content="#f7f4ea" media="(prefers-color-scheme: light)">
@@ -41,10 +41,29 @@
   </header>
   <nav class="tabbar" aria-label="Sezioni">
       <span class="tab-pill" aria-hidden="true"></span>
-      <a href="#/" data-tab="uscite"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 6 0 0 1 16 0z"/><path d="M10 12v6a2 2 0 0 0 4 0v-6"/></svg><span>Uscite</span></a>
-      <a href="#/mappa" data-tab="mappa"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2z"/><path d="M9 4v14M15 6v14"/></svg><span>Mappa</span></a>
-      <a href="#/scopri" data-tab="specie"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="7" height="7" rx="2"/><rect x="13" y="4" width="7" height="7" rx="2"/><rect x="4" y="13" width="7" height="7" rx="2"/><rect x="13" y="13" width="7" height="7" rx="2"/></svg><span>Scopri</span></a>
-      <a href="#/diario" data-tab="diario"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h11a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H6z"/><path d="M6 3v18M10 8h5M10 12h5"/></svg><span>Taccuino</span></a>
+      <a href="#/" data-tab="uscite"><svg class="fungus-glyph" aria-hidden="true"
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="currentColor"
+>
+  <path d="M15 15v4a3 3 0 0 1 -5.995 .176l-.005 -.176v-4h6zm-10.1 -2a1.9 1.9 0 0 1 -1.894 -1.752l-.006 -.148c0 -5.023 4.027 -9.1 9 -9.1s9 4.077 9 9.1a1.9 1.9 0 0 1 -1.752 1.894l-.148 .006h-14.2z" />
+</svg><span>Uscite</span></a>
+      <a href="#/mappa" data-tab="mappa"><svg class="nav-glyph" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M3 7L9 4L15 7L21 4V17L15 20L9 17L3 20V7Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M9 4V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M15 7V20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg><span>Mappa</span></a>
+      <a href="#/scopri" data-tab="specie"><svg class="nav-glyph" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M5 21C5.5 16.5 7.5 13 12 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M9.00033 18C15.2183 18 19.5003 14.712 20.0003 6V4H15.9863C6.98633 4 4.00033 8 3.98633 13C3.98633 14 3.98633 16 5.98633 18H8.98633H9.00033Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg><span>Scopri</span></a>
+      <a href="#/diario" data-tab="diario"><svg class="nav-glyph" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M9 4V22M6 4H17C17.5304 4 18.0391 4.21071 18.4142 4.58579C18.7893 4.96086 19 5.46957 19 6V18C19 18.5304 18.7893 19.0391 18.4142 19.4142C18.0391 19.7893 17.5304 20 17 20H6C5.73478 20 5.48043 19.8946 5.29289 19.7071C5.10536 19.5196 5 19.2652 5 19V5C5 4.73478 5.10536 4.48043 5.29289 4.29289C5.48043 4.10536 5.73478 4 6 4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M13 8H15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M13 12H15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg><span>Taccuino</span></a>
       <button type="button" class="tab-search" data-open-search aria-label="Cerca in tutta l'app" title="Cerca (Ctrl+K)" aria-keyshortcuts="Control+K"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg><span class="tsl">Cerca</span><kbd class="tsk" aria-hidden="true">Ctrl K</kbd></button>
     </nav>
 
@@ -87,7 +106,7 @@
       <div id="during-walk" hidden></div>
       <h2 class="sec-title" id="season-h">Nei boschi in questi giorni</h2>
       <ul id="season" class="rail rail-portrait" aria-labelledby="season-h"></ul>
-      <aside class="story-invite story-blue" aria-labelledby="home-guide-title"><div><h2 id="home-guide-title">Guarda più vicino.</h2><p>Le parole del bosco, quando ti servono.</p><a class="btn primary" href="#/impara">Apri le Guide <span aria-hidden="true">→</span></a></div><figure class="story-photo"><a href="#/pianta/ginestra-odorosa" aria-label="Ginestra odorosa: apri la scheda"><img src="assets/plants/ginestra-odorosa-1.webp" alt="" loading="lazy" decoding="async"></a></figure></aside>
+      <aside class="story-invite story-blue" aria-labelledby="home-guide-title"><div><h2 id="home-guide-title">Guarda più vicino.</h2><p>Le parole del bosco, quando ti servono.</p><a class="btn primary" href="#/impara">Scopri le nostre guide <span aria-hidden="true">→</span></a></div><figure class="story-photo"><a href="#/pianta/ginestra-odorosa" aria-label="Ginestra odorosa: apri la scheda"><img src="assets/plants/ginestra-odorosa-1.webp" alt="" loading="lazy" decoding="async"></a></figure></aside>
       <section id="community-intro" class="community-intro" aria-label="La community di Fronda"></section>
       <a class="act-row legal-strip" id="home-legal" href="#/info"><span class="ar-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg></span><span class="ar-b"><span class="ar-t">Regole di raccolta</span><span class="ar-s">Nel Lazio si raccoglie con attestato micologico, ricevuta del contributo regionale annuale e documento d'identità (L.R. 32/1998).</span></span></a>
     </section>
@@ -117,7 +136,7 @@
       <div class="view-head"><div><p class="kicker" data-catalog-count="specie" hidden></p><h1 id="sp-h" class="view-title">Funghi</h1>
         <p class="view-sub">Caratteri, sosia e ambienti.</p></div></div>
       <nav class="seg-nav" data-scopri-nav aria-label="Sezioni di Scopri"></nav><nav class="sub-nav" data-scopri-sub aria-label="Modalità della sezione"></nav>
-      <aside class="story-invite story-blue catalog-invite"><div><h2>Guarda più vicino.</h2><p>Caratteri, parole e piccoli dettagli del bosco.</p><a class="btn primary" href="#/impara">Apri le Guide <span aria-hidden="true">→</span></a></div><figure class="story-photo"><a href="#/pianta/ginestra-odorosa" aria-label="Ginestra odorosa: apri la scheda"><img src="assets/plants/ginestra-odorosa-1.webp" alt="" loading="lazy" decoding="async"></a></figure></aside>
+      <aside class="story-invite story-blue catalog-invite"><div><h2>Guarda più vicino.</h2><p>Caratteri, parole e piccoli dettagli del bosco.</p><a class="btn primary" href="#/impara">Scopri le nostre guide <span aria-hidden="true">→</span></a></div><figure class="story-photo"><a href="#/pianta/ginestra-odorosa" aria-label="Ginestra odorosa: apri la scheda"><img src="assets/plants/ginestra-odorosa-1.webp" alt="" loading="lazy" decoding="async"></a></figure></aside>
       <div id="species-grid" class="species-grid"></div>
     </section>
 
@@ -125,14 +144,14 @@
       <div class="view-head"><div><p class="kicker" data-catalog-count="alberi" hidden></p><h1 id="tr-h" class="view-title">Alberi</h1>
         <p class="view-sub">Foglie, corteccia, frutti e habitat.</p></div></div>
       <nav class="seg-nav" data-scopri-nav aria-label="Sezioni di Scopri"></nav><nav class="sub-nav" data-scopri-sub aria-label="Modalità della sezione"></nav>
-      <aside class="story-invite story-blue catalog-invite"><div><h2>Guarda più vicino.</h2><p>Caratteri, parole e piccoli dettagli del bosco.</p><a class="btn primary" href="#/impara">Apri le Guide <span aria-hidden="true">→</span></a></div><figure class="story-photo"><a href="#/pianta/ginestra-odorosa" aria-label="Ginestra odorosa: apri la scheda"><img src="assets/plants/ginestra-odorosa-1.webp" alt="" loading="lazy" decoding="async"></a></figure></aside>
+      <aside class="story-invite story-blue catalog-invite"><div><h2>Guarda più vicino.</h2><p>Caratteri, parole e piccoli dettagli del bosco.</p><a class="btn primary" href="#/impara">Scopri le nostre guide <span aria-hidden="true">→</span></a></div><figure class="story-photo"><a href="#/pianta/ginestra-odorosa" aria-label="Ginestra odorosa: apri la scheda"><img src="assets/plants/ginestra-odorosa-1.webp" alt="" loading="lazy" decoding="async"></a></figure></aside>
       <div id="tree-grid" class="species-grid"></div>
     </section>
 
     <section class="view" data-view="piante" hidden aria-labelledby="plants-h">
       <div class="view-head"><div><p class="kicker" data-catalog-count="piante" hidden></p><h1 id="plants-h" class="view-title">Piante e fiori</h1><p class="view-sub">Erbe, fiori, frutti e arbusti.</p></div></div>
       <nav class="seg-nav" data-scopri-nav aria-label="Sezioni di Scopri"></nav><nav class="sub-nav" data-scopri-sub aria-label="Modalità della sezione"></nav>
-      <aside class="story-invite story-blue catalog-invite"><div><h2>Guarda più vicino.</h2><p>Caratteri, parole e piccoli dettagli del bosco.</p><a class="btn primary" href="#/impara">Apri le Guide <span aria-hidden="true">→</span></a></div><figure class="story-photo"><a href="#/pianta/ginestra-odorosa" aria-label="Ginestra odorosa: apri la scheda"><img src="assets/plants/ginestra-odorosa-1.webp" alt="" loading="lazy" decoding="async"></a></figure></aside>
+      <aside class="story-invite story-blue catalog-invite"><div><h2>Guarda più vicino.</h2><p>Caratteri, parole e piccoli dettagli del bosco.</p><a class="btn primary" href="#/impara">Scopri le nostre guide <span aria-hidden="true">→</span></a></div><figure class="story-photo"><a href="#/pianta/ginestra-odorosa" aria-label="Ginestra odorosa: apri la scheda"><img src="assets/plants/ginestra-odorosa-1.webp" alt="" loading="lazy" decoding="async"></a></figure></aside>
       <div id="plant-grid" class="species-grid"></div>
     </section>
     <section class="view view-hero" data-view="pianta" hidden><div id="plant-detail" class="sp-page"></div></section>
@@ -174,9 +193,9 @@
     <section class="view notebook-view" data-view="diario" hidden aria-labelledby="journal-h">
       <header class="notebook-heading"><div><p class="kicker">Appunti di campo</p><h1 id="journal-h" class="view-title">Il mio taccuino</h1>
         <p class="view-sub">Appunti e giri da ritrovare.</p></div>
-        <div class="notebook-toolbar"><button class="btn ghost" type="button" data-open-journal>Registra un'uscita</button></div>
+
       </header>
-      <aside class="story-invite story-orange notebook-invite" aria-labelledby="notebook-invite-title"><div><h2 id="notebook-invite-title">Segui la curiosità.</h2><p>Un dettaglio, un’idea, un giro da ricordare.</p><button class="btn primary" type="button" data-new-note>＋ Nuovo appunto</button></div></aside>
+      <aside class="story-invite story-orange notebook-invite" aria-labelledby="notebook-invite-title"><div><h2 id="notebook-invite-title">Segui la curiosità.</h2><p>Un dettaglio, un’idea, un giro da ricordare.</p><button class="btn primary" type="button" data-new-note>＋ Aggiungi una nota</button></div></aside>
       <div class="notebook-cover"><div id="journal-list" class="notebook-pages" aria-live="off"></div></div>
       <details class="notebook-storage" id="notebook-storage-panel"><summary>Profilo, sincronizzazione e copie del taccuino</summary><div class="notebook-storage-body">
         <ul class="fp-switches notebook-prefs"><li><label class="fp-switch"><span>Usa le fasi dei miei appunti botanici<small>Privati. Aiutano a scegliere cosa osservare; non modificano l’indice.</small></span><input type="checkbox" class="switch-input" data-botanical-personalize></label></li></ul>

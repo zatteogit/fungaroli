@@ -1,6 +1,6 @@
 // Righe che scorrono di lato (giorni, filtri, card, sosia): con il mouse non basta la rotella,
 // quindi ai bordi compaiono due frecce, solo quando c'e' altro da vedere in quella direzione.
-const SEL = '.days, .active-filters, .rail, .sp-strip, .tree-fungi, .cmp-pick, .filter-rail';
+const SEL = '.days, .active-filters:not(.map-filters), .rail, .sp-strip, .tree-fungi, .cmp-pick, .filter-rail';
 const fine = matchMedia('(hover: hover) and (pointer: fine)');
 const reduce = matchMedia('(prefers-reduced-motion: reduce)');
 const CHEV = (d) => `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="${d}"/></svg>`;

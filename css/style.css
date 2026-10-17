@@ -1142,8 +1142,6 @@ html.is-offline #updated { color: var(--warn-ink); font-weight: 600; }
 
 @media (prefers-reduced-motion: no-preference) {
   .tab-pill { transition: transform .55s var(--spring), opacity .2s; }
-  .tabbar a[aria-current="page"] svg { animation: tab-pop .55s var(--spring); }
-  @keyframes tab-pop { from { transform: scale(.72) translateY(3px); } }
 
   /* tocco: tutto cio' che si preme risponde, e torna con una piccola molla */
   :is(.id-opt, .id-card, .chip, .day, .cmp-chip, .ts-cta, .btn, .fab, .af-pill, .af-add, .id-row-main, .tile, .sp-card, .cover, .portrait, .tabbar a, .seg-tabs button, .icon-btn, .mapctl-tile, .tree-link, .wiz-choice) {
@@ -1196,6 +1194,7 @@ html.is-offline #updated { color: var(--warn-ink); font-weight: 600; }
   .tabbar { view-transition-name: tabbar; }
   ::view-transition-old(tabbar), ::view-transition-old(appbar) { display: none; }
   ::view-transition-new(tabbar), ::view-transition-new(appbar) { animation: none; }
+  ::view-transition-new(tabbar) { mix-blend-mode:normal; opacity:1; }
   ::view-transition-group(tabbar), ::view-transition-group(appbar) { animation: none; z-index: 10; }
   /* barra in alto: il contenuto cambia con una dissolvenza breve (titolo, indietro, logo) mentre la pagina scorre */
   ::view-transition-old(appbar) { display: block; animation: vt-fade-out var(--nav-fade-dur) var(--nav-fade-ease) both; }
@@ -1425,7 +1424,7 @@ html.is-offline #updated { color: var(--warn-ink); font-weight: 600; }
    a metà schermo dopo la chiusura del pannello: lì basta overscroll-behavior sul pannello. */
 @supports not (-webkit-touch-callout: none) {
   html:has(dialog[open]:modal) { overflow: hidden; }
-  html:has(dialog[open]:modal) body { overflow: hidden; }
+  /* Il blocco sul solo elemento radice conserva il riferimento viewport della testata sticky. */
 }
 html { scrollbar-gutter: stable; }
 dialog { overscroll-behavior: contain; }
