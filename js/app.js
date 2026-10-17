@@ -1752,7 +1752,7 @@ function currentSheetPoint(){
  return {...pt,t:t||trails[sheetZone]?.trails.find(t=>String(t.id)===String(pt.t.id))||pt.t};
 }
 function openSheet(zid) {
-  cancelCellSelection();closeCellCard();
+  closeCellCard();
   if(state.target!=='funghi'){openOutdoorSheet(zid);return;}
   sheetPoint=null;sheetZone = zid;
   if (!results) { openOutdoorSheet(zid); return; }
@@ -1780,7 +1780,7 @@ function openSheet(zid) {
 }
 
 function openPoint(zid, pt) {
-  cancelCellSelection();closeCellCard();
+  closeCellCard();
   sheetZone=zid;sheetPoint=pt;
   const z = zones.find((x) => x.id === zid);
   const d = dayEntry(zid, state.dayOffset);
@@ -2109,49 +2109,43 @@ function initCellInteractions() {
     map.on('mousemove', hoverCell);
     map.getContainer().addEventListener('mouseleave', hideCellPeek);
   }
-  map.on('click', e => { if (!pinCellCard(e)) {cancelCellSelection();closeCellCard();} });
-  map.on('dragstart',cancelCellSelection);
+  map.on('click', e => { if (!pinCellCard(e)) {closeCellCard();} });
   map.on('dragstart zoomstart', closeCellCard); map.on('dragstart zoomstart', hideCellPeek);
   map.getContainer().setAttribute('aria-keyshortcuts', 'Enter');
-  map.getContainer().setAttribute('aria-label', 'Mappa delle zone. Premi Invio per aprire l’area più vicina al centro.');
+  map.getContainer().setAttribute('aria-label', 'Mappa delle zone. Premi Invio per selezionare la zona più vicina al centro; con una zona selezionata, premi Invio per aprire un’area al suo interno.');
   map.getContainer().addEventListener('keydown', e => {
-    if (e.key !== 'Enter' || e.target !== map.getContainer() || !$('#map').classList.contains('cells-on')) return;
+    if (e.key !== 'Enter' || e.target !== map.getContainer()) return;
     const center = map.getCenter(), bounds = map.getBounds();
-    const nearest = cellHits.filter(h => bounds.contains([h.c.lat, h.c.lon])).sort((a, b) => center.distanceTo([a.c.lat, a.c.lon]) - center.distanceTo([b.c.lat, b.c.lon]))[0];
+    if(!state.zoneId){
+      const zone=mapCandidates().filter(r=>bounds.contains([r.z.lat,r.z.lon])).sort((a,b)=>center.distanceTo([a.z.lat,a.z.lon])-center.distanceTo([b.z.lat,b.z.lon]))[0]?.z;
+      if(zone){e.preventDefault();chooseMapZone(zone.id);}
+      return;
+    }
+    if(!$('#map').classList.contains('cells-on'))return;
+    const nearest = cellHits.filter(h => h.z.id===state.zoneId && bounds.contains([h.c.lat, h.c.lon])).sort((a, b) => center.distanceTo([a.c.lat, a.c.lon]) - center.distanceTo([b.c.lat, b.c.lon]))[0];
     if (nearest) { e.preventDefault(); selectCell(nearest,{keyboard:true}); }
   });
   document.addEventListener('keydown', e => {
-    if (e.key === 'Escape' && (cellTip||cellSelectionCleanup) && !document.querySelector('dialog[open],.learning-panel:popover-open')) {
-      e.preventDefault();cancelCellSelection(); closeCellCard();
+    if (e.key === 'Escape' && cellTip && !document.querySelector('dialog[open],.learning-panel:popover-open')) {
+      e.preventDefault(); closeCellCard();
     }
   });
-  addEventListener('hashchange',()=>{cancelCellSelection();closeCellCard();});
+  addEventListener('hashchange',()=>{closeCellCard();});
 }
-let cellSelectionCleanup=null;
-function cancelCellSelection(){cellSelectionCleanup?.();cellSelectionCleanup=null;}
 function selectCell(h,{keyboard=false}={}){
-  cancelCellSelection();map.stop();closeCellCard();
-  const changed=state.zoneId!==h.z.id;
-  state.zoneId=h.z.id;sheetZone=null;sheetPoint=null;
+  // Il campione approfondisce una zona già scelta; non seleziona una zona implicitamente.
+  if(!h||h.z.id!==state.zoneId)return;
+  map.stop();closeCellCard();
+  sheetZone=null;sheetPoint=null;
   const toolbar=$('.map-top');toolbar.classList.remove('days-open');toolbar.querySelector('[data-days]')?.setAttribute('aria-expanded','false');
   $('#map-sheet').hidden=true;
   if(mapExperience)mapExperience.host.open=false;
-  if(changed)renderMap();
-  const reveal=()=>{
-    cancelCellSelection();
-    if(state.view!=='mappa'||state.zoneId!==h.z.id)return;
-    const current=cellHits.find(x=>x.z.id===h.z.id&&x.c.lat===h.c.lat&&x.c.lon===h.c.lon);
-    if(!current)return;
-    showCellCard(current);cellPinned=true;
-    if(keyboard)cellTip?.getElement()?.querySelector('[data-cell-close]')?.focus({preventScroll:true});
-  };
-  if(!changed){reveal();return;}
-  // Prima si legge la zona selezionata, poi il campione. I clic successivi nella stessa zona non muovono la carta.
-  map.once('moveend',reveal);
-  const timer=setTimeout(reveal,420);
-  cellSelectionCleanup=()=>{clearTimeout(timer);map.off('moveend',reveal);};
-  map.fitBounds(L.latLng(h.z.lat,h.z.lon).toBounds(h.z.radius_m*2.3),mapCameraOptions({maxZoom:12.5}));
+  const current=cellHits.find(x=>x.z.id===h.z.id&&x.c.lat===h.c.lat&&x.c.lon===h.c.lon);
+  if(!current)return;
+  showCellCard(current);cellPinned=true;
+  if(keyboard)cellTip?.getElement()?.querySelector('[data-cell-close]')?.focus({preventScroll:true});
 }
+
 function pinCellCard(e) {
   if(e.originalEvent?._frondaCellHandled)return true;
   const h = $('#map').classList.contains('cells-on') && cellAt(e.latlng,e.target?.options?.zoneId);
@@ -2167,18 +2161,17 @@ function cellsLayer(z, d, interactive = true) {
   const dLat = size / 2 / 111320, dLon = size / 2 / (111320 * Math.cos(z.lat * Math.PI / 180));
   for (const c of zoneCells(z, d)) {
     L.rectangle([[c.lat - dLat, c.lon - dLon], [c.lat + dLat, c.lon + dLon]], {
-      renderer: cellRenderer, interactive: false, stroke: false, fillColor: cssVar(mapVar(c.v)), fillOpacity: 0.5 + 0.4 * Math.min(1, c.v / 80),
+      renderer: cellRenderer, interactive: false, stroke: false, zoneId:z.id, fillColor: cssVar(mapVar(c.v)), fillOpacity: 0.5 + 0.4 * Math.min(1, c.v / 80),
     }).addTo(lg);
     if (interactive) cellHits.push({ z, c, dLat, dLon });
   }
   return lg;
 }
 function cellAt(ll,preferred=state.zoneId) {
-  const hits=cellHits.filter(h=>Math.abs(ll.lat-h.c.lat)<=h.dLat&&Math.abs(ll.lng-h.c.lon)<=h.dLon);
-  return hits.find(h=>h.z.id===preferred)||hits[0]||null;
+  if(!state.zoneId||preferred!==state.zoneId)return null;
+  return cellHits.find(h=>h.z.id===state.zoneId&&Math.abs(ll.lat-h.c.lat)<=h.dLat&&Math.abs(ll.lng-h.c.lon)<=h.dLon)||null;
 }
 function hoverCell(e) {
-  if(cellSelectionCleanup){hideCellPeek();return;}
   // con la scheda aperta l'etichetta non serve: la scheda resta finché non si chiude
   if (cellTip) { if (cellPeek) { cellPeek.remove(); cellPeek = null; } return; }
   const target = e.originalEvent?.target;
@@ -2285,7 +2278,12 @@ function renderMap(changed=null) {
     const circle = L.circle([z.lat, z.lon], {
       radius: z.radius_m, pane:selected?'zoneFocus':'overlayPane', color: selected ? cssVar('--text') : color, weight: selected ? 2.5 : 2,
       dashArray: showCells ? '6 6' : null, fillColor: color, fillOpacity: 0.28, zoneId:z.id,className: `zone-c${showCells ? ' has-cells' : ''}${selected?' is-selected':''}`,
-    }).addTo(g).on('click', e => { if (!pinCellCard(e)) chooseMapZone(z.id); });
+    }).addTo(g).on('click', e => {
+      if(z.id===state.zoneId&&pinCellCard(e))return;
+      // Lo stesso clic non deve selezionare il cerchio e aprire anche il campione nel bubbling.
+      if(e.originalEvent)e.originalEvent._frondaCellHandled=true;
+      chooseMapZone(z.id);
+    });
     if (showCells && d) cellsLayer(z, d).addTo(g);
     else if (d && canHover) {
       // a volo d'uccello: passandoci sopra la zona si accende e mostra in anteprima i suoi riquadri

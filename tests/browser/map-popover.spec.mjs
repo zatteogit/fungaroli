@@ -4,7 +4,7 @@ import {todayISO} from '../../js/weather.js';
 
 const leafletJS=readFileSync(new URL('../../node_modules/leaflet/dist/leaflet.js',import.meta.url),'utf8');
 const leafletCSS=readFileSync(new URL('../../node_modules/leaflet/dist/leaflet.css',import.meta.url),'utf8');
-async function setup(page,{width=1280,outingGate}={}) {
+async function setup(page,{width=1280,outingGate,selectZone=true}={}) {
   await page.setViewportSize({width,height:900});await page.emulateMedia({reducedMotion:'reduce'});
   const errors=[];page.on('pageerror',e=>errors.push(e.message));
   await page.route('https://**/*',r=>r.abort());
@@ -22,15 +22,30 @@ async function setup(page,{width=1280,outingGate}={}) {
   await page.evaluate(()=>{testMap.setView([42.49,12.915],13,{animate:false});});
   await expect(page.locator('#map')).toHaveClass(/cells-on/);
   await page.waitForFunction(()=>Object.values(testMap._layers).some(l=>l instanceof L.Rectangle&&!l.options.stroke));
+  if(selectZone){
+    await page.evaluate(()=>{const center=testMap.getCenter(),circles=Object.values(testMap._layers).filter(l=>l instanceof L.Circle&&l.options.zoneId);circles.sort((a,b)=>center.distanceTo(a.getLatLng())-center.distanceTo(b.getLatLng()));circles[0].fire('click',{latlng:circles[0].getLatLng()});});
+    await expect(page.locator('#map .zone-c.is-selected')).toHaveCount(1);
+  }
+  const sample=await mapSample(page);
+  expect(sample).toBeTruthy();return {sample,errors};
+}
+async function mapSample(page){
   // Le etichette ora sono tappabili: lascia margine anche per il touch targeting del browser.
-  const sample=await page.evaluate(()=>{
+  return page.evaluate(()=>{
+    const selected=Object.values(testMap._layers).find(l=>l instanceof L.Circle&&l.getElement()?.classList.contains('is-selected'))?.options.zoneId;
     const map=testMap,rect=map.getContainer().getBoundingClientRect(),center=map.getCenter();
-    const cells=Object.values(map._layers).filter(l=>l instanceof L.Rectangle&&!l.options.stroke&&map.getBounds().contains(l.getBounds().getCenter()));
+    const cells=Object.values(map._layers).filter(l=>l instanceof L.Rectangle&&!l.options.stroke&&(!selected||l.options.zoneId===selected)&&map.getBounds().contains(l.getBounds().getCenter()));
     cells.sort((a,b)=>center.distanceTo(a.getBounds().getCenter())-center.distanceTo(b.getBounds().getCenter()));
     for(const c of cells){const ll=c.getBounds().getCenter(),p=map.latLngToContainerPoint(ll),x=rect.left+p.x,y=rect.top+p.y,target=document.elementFromPoint(x,y);if(target?.closest('#map')&&[-18,0,18].every(dx=>[-18,0,18].every(dy=>{const hit=document.elementFromPoint(x+dx,y+dy);return hit?.closest('#map')&&!hit.closest('.leaflet-marker-icon,.leaflet-control');})))return{x,y,lat:ll.lat,lon:ll.lng};}
   });
-  expect(sample).toBeTruthy();return {sample,errors};
 }
+
+test('prima si seleziona il cerchio, poi si apre un campione della zona',async({page})=>{
+  const {sample,errors}=await setup(page,{selectZone:false});
+  await page.mouse.move(sample.x,sample.y);await expect(page.locator('.cell-peek')).toHaveCount(0);
+  await page.mouse.click(sample.x,sample.y);await expect(page.locator('#map .zone-c.is-selected')).toHaveCount(1);await expect(page.locator('#map-sheet')).toBeVisible();await expect(page.locator('.cell-card')).toHaveCount(0);
+  const next=await mapSample(page);expect(next).toBeTruthy();await page.mouse.click(next.x,next.y);await expect(page.locator('.cell-card')).toBeVisible();await expect(page.locator('#map-sheet')).toBeHidden();expect(errors).toEqual([]);
+});
 
 test('il passaggio del mouse mostra solo l’etichetta, il clic apre la scheda',async({page})=>{
   const {sample,errors}=await setup(page);const card=page.locator('.cell-card'),peek=page.locator('.cell-peek');
