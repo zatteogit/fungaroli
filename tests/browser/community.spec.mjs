@@ -61,9 +61,9 @@ test('base privata del profilo: salvataggio, distanze, navigatori, isolamento e 
   await profile.locator('.profile-actions [data-close]').click();await expect(page.locator('#hero .facts')).toContainText('111 min');
   expect(await page.locator('#hero .cover-index b').textContent()).toBe(score);
   await page.locator('#hero .cover-link').click();await page.locator('#detail [data-sec="accesso"] summary').click({position:{x:5,y:10}});
-  await expect(page.locator('#detail [data-sec="accesso"]')).toContainText('Da Roma 111 min · 77 km');
+  await expect(page.locator('#detail [data-sec="accesso"] > summary')).toContainText('111 min · 77 km da Roma');
   const href=await page.locator('#detail a[href*="google.com/maps/dir"]').first().getAttribute('href');expect(new URL(href).searchParams.get('origin')).toBe('41.9028,12.4964');
-  await page.reload();await expect(page.locator('#detail [data-sec="accesso"]')).toContainText('Da Roma');
+  await page.reload();await expect(page.locator('#detail [data-sec="accesso"] > summary')).toContainText('da Roma');
   expect((await api(page,'profile','PUT',{accountId:owner,base:{name:'Errata',lat:91,lon:0}})).status).toBe(422);
   expect((await page.request.post('/api/community/travel',{headers:{origin:'http://localhost:8788'},data:{targets:[]}})).status()).toBe(422);
   const csrf=await page.request.put('/api/community/profile',{headers:{origin:'https://evil.example'},data:{accountId:owner,base:null}});expect(csrf.status()).toBe(403);
@@ -195,8 +195,9 @@ for(const width of [320,1280]) test(`tracciato e profilo nello stesso riquadro a
   const focus=page.locator('#detail .walk-focus'),summary=focus.locator(':scope > summary');
   await expect(summary.locator('.walk-entrance').first()).toBeVisible();
   await expect(summary.locator('.tprof,.ws-forest')).toHaveCount(0);
-  const summaryText=await summary.innerText();await summary.click();
-  expect(await summary.innerText()).toBe(summaryText);await expect(summary.locator('.walk-entrance').first()).toBeVisible();
+  await summary.click();
+  await expect(summary.locator('.walk-entrance').first()).toBeHidden();
+  await expect(summary.locator('.walk-title')).toBeVisible();
   await expect(focus.locator('.sec-body > .ws-forest')).toBeVisible();
   const visual=focus.locator('.trail-visual'),trace=visual.getByRole('tab',{name:'Tracciato',exact:true,includeHidden:true}),profile=visual.getByRole('tab',{name:'Profilo',exact:true,includeHidden:true});
   await expect(profile).toHaveAttribute('aria-selected','true');
