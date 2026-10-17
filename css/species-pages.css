@@ -311,23 +311,15 @@ body[data-page="mappa"] .view-map { border-radius:0; }
 }
 @media(prefers-reduced-motion:reduce) { #detail .essential-sections > .sec > summary::after, #detail .zone-more > .sec > summary::after { transition:none; } }
 
-/* La scelta appartiene alla specie a destra; le alternative si aprono solo su richiesta. */
-.fungus-compare .cmp-pair-head { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:4px 12px; align-items:start; margin:0 1px 12px; color:var(--text); font:600 15px/1.4 var(--font-body); }
-.cmp-head-reference { grid-column:1; grid-row:1; padding-block:10px; }
-.cmp-head-selected { grid-column:2; grid-row:1; padding-block:10px; }
-.cmp-pair-head.has-choices > .cmp-head-selected { display:none; }
-.cmp-head-reference, .cmp-head-selected { min-width:0; overflow-wrap:anywhere; }
-.cmp-head-change { grid-column:2; grid-row:1; justify-self:stretch; display:flex; align-items:baseline; justify-content:space-between; gap:8px; min-width:0; min-height:44px; margin:0; padding:10px 0; border:0; border-radius:6px; background:transparent; color:var(--link); font:inherit; text-align:left; cursor:pointer; }
-.cmp-head-change svg { flex:0 0 16px; align-self:center; width:16px; height:16px; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
-.cmp-head-change:focus-visible, .cmp-desktop-choice:focus-visible { outline:3px solid var(--focus); outline-offset:3px; }
-.cmp-desktop-choices { display:none; }
-@media(min-width:768px) {
-  .cmp-pair-head.has-choices > .cmp-head-selected, .cmp-head-change { display:none; }
-  .cmp-pair-head.has-choices > .cmp-head-reference { padding-block:12px; }
-  .cmp-desktop-choices { grid-column:2; grid-row:1; display:flex; flex-wrap:wrap; gap:8px; min-width:0; }
-  .cmp-desktop-choice { min-height:44px; max-width:100%; padding:10px 14px; border:1px solid var(--hair); border-radius:999px; background:var(--surface); color:var(--text); font:600 14px/1.4 var(--font-body); text-align:left; cursor:pointer; }
-  .cmp-desktop-choice[aria-pressed="true"] { background:var(--select); color:var(--select-ink); border-color:var(--select-edge); }
-}
+/* Una sola barra per navigare la coppia; i nomi restano nelle didascalie. */
+.cmp-pair-nav { display:flex; align-items:center; justify-content:space-between; gap:12px; margin:0 1px 12px; }
+.cmp-pair-menu { display:inline-flex; align-items:center; gap:10px; min-height:44px; padding:8px 0; border:0; border-radius:8px; background:transparent; color:var(--text); font:500 13px/1.4 var(--font-body); cursor:pointer; }
+.cmp-pair-menu b { margin-left:4px; font-weight:700; font-variant-numeric:tabular-nums; }
+.cmp-pair-arrows { display:flex; gap:8px; }
+.cmp-pair-arrows button { display:grid; place-items:center; width:44px; height:44px; padding:0; border:1px solid var(--hair); border-radius:50%; background:var(--surface); color:var(--link); cursor:pointer; }
+.cmp-pair-nav svg { width:18px; height:18px; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
+.cmp-pair-nav button:focus-visible { outline:3px solid var(--focus); outline-offset:3px; }
+@media(hover:hover) { .cmp-pair-arrows button:hover { background:var(--surface-2); } .cmp-pair-menu:hover { color:var(--link); } }
 .cmp-chooser { width:min(440px,calc(100% - 32px)); max-height:80svh; margin:auto; padding:20px; border:1px solid var(--hair); border-radius:24px; color:var(--text); background:var(--bg); box-shadow:var(--shadow-2); }
 .cmp-chooser::backdrop { background:rgb(0 0 0 / .45); }
 .cmp-chooser-head { display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:16px; }
@@ -341,7 +333,6 @@ body[data-page="mappa"] .view-map { border-radius:0; }
 .cmp-choices .cmp-choice-check { visibility:hidden; width:20px; flex:0 0 20px; text-align:center; }
 .fungus-compare .cmp-choices [aria-pressed="true"] { border-color:var(--link); background:var(--surface-2); }
 .cmp-choices [aria-pressed="true"] .cmp-choice-check { visibility:visible; }
-@media(max-width:599px) { .fungus-compare .cmp-pair-head { font-size:13px; } }
 
 /* Le due didascalie condividono le righe: nomi comuni e latini restano allineati. */
 @supports(grid-template-rows:subgrid) {
@@ -355,12 +346,3 @@ body[data-page="mappa"] .view-map { border-radius:0; }
     .fungus-compare .cmp-name i { padding:0 10px 14px; }
   }
 }
-
-/* Contatore e frecce sulla foto del sosia: nessuna riga aggiunta sopra il confronto. */
-.fungus-compare .cmp-zoom { position:relative; }
-.cmp-photo-pager { position:absolute; z-index:2; bottom:8px; left:50%; transform:translateX(-50%); display:flex; align-items:center; justify-content:center; max-width:calc(100% - 12px); padding:0 2px; border:1px solid var(--hair); border-radius:999px; background:var(--surface); color:var(--text); box-shadow:var(--shadow-1); cursor:default; }
-.cmp-photo-pager > span { flex:none; min-width:36px; text-align:center; white-space:nowrap; font:600 11px/1.3 var(--font-body); font-variant-numeric:tabular-nums; }
-.cmp-photo-pager button { display:grid; place-items:center; flex:0 0 36px; width:36px; min-height:44px; padding:0; border:0; border-radius:999px; background:transparent; color:var(--link); cursor:pointer; }
-.cmp-photo-pager svg { width:18px; height:18px; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
-.cmp-photo-pager button:focus-visible { outline:3px solid var(--focus); outline-offset:-3px; }
-@media(hover:hover) { .cmp-photo-pager button:hover { background:var(--surface-2); } }

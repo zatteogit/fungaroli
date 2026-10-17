@@ -794,10 +794,10 @@ function renderCompare(box, ref, pick) {
     ], info = rows.filter(r=>r.info);
     const how = fromToxic ? HOWTO(t.edible_id, ref.latin) : HOWTO(ref.edible_id, t.latin);
     return `<section class="cmp-slide" id="cmp-${esc(t.key)}" data-i="${k}" role="group" aria-label="${esc(ref.name || ref.latin)} e ${esc(t.name || t.latin)}" ${t.key === list[start]?.key ? '' : 'inert'}>
-      <div class="cmp-pair-head${list.length>1?' has-choices':''}"><b class="cmp-head-reference">${esc(ref.name || ref.latin)}</b><b class="cmp-head-selected">${esc(t.name || t.latin)}</b>${list.length>1?`<button type="button" class="cmp-head-change" data-change-lookalike aria-haspopup="dialog" aria-label="Cambia specie a confronto: ${esc(t.name || t.latin)}">${esc(t.name || t.latin)}<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button><div class="cmp-desktop-choices" role="group" aria-label="Specie da confrontare con ${esc(ref.name || ref.latin)}">${list.map((option,i)=>`<button type="button" class="cmp-desktop-choice" data-go="${i}" aria-pressed="${i===k}">${esc(option.name||option.latin)}</button>`).join('')}</div>`:''}</div>
+      ${list.length>1?`<div class="cmp-pair-nav" role="group" aria-label="Navigazione del confronto"><button type="button" class="cmp-pair-menu" data-change-lookalike aria-haspopup="dialog" aria-label="Confronto ${k+1} di ${list.length}: scegli il sosia"><span>Confronto <b>${k+1} di ${list.length}</b></span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button><span class="cmp-pair-arrows"><button type="button" data-cmp-step="-1" aria-label="Coppia precedente"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 6-6 6 6 6"/></svg></button><button type="button" data-cmp-step="1" aria-label="Coppia successiva"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m10 6 6 6-6 6"/></svg></button></span></div>`:''}
       <div class="cmp-pair">
-        ${[ref, t].map((x, side) => `<div class="cmp-side">
-          <figure class="cmp-fig ${toxCls(x)}"><span class="cmp-zoom">${pic(x)}${side===1&&list.length>1?`<span class="cmp-photo-pager" role="group" aria-label="Scorri i ${list.length} sosia"><button type="button" data-cmp-step="-1" aria-label="Sosia precedente"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 6-6 6 6 6"/></svg></button><span aria-label="Confronto ${k+1} di ${list.length}">${k+1} di ${list.length}</span><button type="button" data-cmp-step="1" aria-label="Sosia successivo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m10 6 6 6-6 6"/></svg></button></span>`:''}</span><span class="tox">${esc(x.tox_label || x.toxicity)}</span>
+        ${[ref, t].map((x) => `<div class="cmp-side">
+          <figure class="cmp-fig ${toxCls(x)}"><span class="cmp-zoom">${pic(x)}</span><span class="tox">${esc(x.tox_label || x.toxicity)}</span>
             ${photoOf(x) ? `<button type="button" class="id-zoom" data-photo="${esc(x.key)}" aria-label="Ingrandisci la foto di ${esc(x.name || x.latin)}"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6"/><path d="m20 20-5-5M10.5 8v5M8 10.5h5"/></svg></button>` : ''}</figure>
           <div class="cmp-name">${nameBtn(x)}${x.name !== x.latin ? `<i>${esc(x.latin)}</i>` : ''}</div></div>`).join('')}
         <span class="cmp-vs" aria-hidden="true">vs</span>
@@ -905,7 +905,6 @@ function renderCompare(box, ref, pick) {
     const i = Number(c.dataset.go);
     await go(i);
     if (chooser.open) chooser.close();
-    else slides[cur].querySelector(`.cmp-desktop-choice[data-go="${i}"]`)?.focus({preventScroll:true});
   });
   requestAnimationFrame(() => { track.scrollLeft = start * track.clientWidth; fit(); });
   box.querySelectorAll('[data-taxon]').forEach((b) => b.addEventListener('click', () => openTaxon(b.dataset.taxon)));
