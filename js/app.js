@@ -1,3 +1,4 @@
+import { mapGlyph, leafGlyph, notebookGlyph } from './ui-icons.js';
 import {fungusGlyph, progressCircle, weatherGlyphs} from './indicators.js';
 import { INTENTS, validIntent, normalizeInterests, primaryInterest, toggleInterest, seasonalSelection, matchesWalk, compareOutdoor } from './outing-intent.js';
 import './rails.js';
@@ -47,6 +48,10 @@ const AHEAD_DAYS = 7;      // giorni futuri valutati
 const PREFS_KEY = 'fungaroli:prefs:v2'; // v2: si parte con tutti i gruppi
 
 const $ = (s) => document.querySelector(s);
+for (const [tab, glyph] of [['uscite', fungusGlyph], ['mappa', mapGlyph], ['specie', leafGlyph], ['diario', notebookGlyph]]) {
+  document.querySelector(`.tabbar [data-tab="${tab}"] svg`)?.replaceWith(document.createRange().createContextualFragment(glyph));
+}
+
 function addNotebookReference(box,kind,id,title){if(!box||!title||box.querySelector('[data-note-kind]'))return;const button=box.querySelector('.notebook-context-action')||document.createElement('button');button.type='button';button.className='btn ghost notebook-context-action';button.dataset.noteKind=kind;button.dataset.noteId=id;button.dataset.noteTitle=title;button.textContent='＋ Annota nel taccuino';const hero=box.querySelector('.phero-body'),target=box.querySelector('.pbody'),lead=box.querySelector('.article-lede');if(hero){button.classList.add('notebook-hero-action');hero.append(button);}else if(target)target.prepend(button);else if(lead)lead.after(button);else box.append(button);}
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const cssVar = (name) => getComputedStyle(document.documentElement).getPropertyValue(name).trim();
@@ -829,10 +834,10 @@ function renderFilterBox(box, onMap = false) {
   if(onMap&&box.closest('.map-top'))mapToolbarObserver.observe(box.closest('.map-top'));
   const count = (hasInterest('funghi')?state.speciesIds?.size||0:0)+(hasInterest('piante')?state.plantIds?.size||0:0) + PREFS.filter(([k])=>state[k]).length + Number(state.easyTrails) + Number(state.shortTrails);
   const day=onMap?`<button type="button" class="chip chip-day" data-days aria-expanded="${!!box.closest('.map-top')?.classList.contains('days-open')}" aria-controls="map-days">${esc(fmtDate(outdoorDate(state.dayOffset),{weekday:'short',day:'numeric'}))} ▾</button>`:'';
-  const more=`<button type="button" class="chip chip-more" data-more aria-haspopup="dialog"${count?` title="${count} filtri attivi"`:''}>Alla ricerca di…</button>`;
+  const more=`<button type="button" class="chip chip-more" data-more aria-haspopup="dialog"${count?` title="${count} filtri attivi"`:''}>${onMap?'Altri filtri':'Alla ricerca di…'}</button>`;
   const icons={avoidCrowd:IC.people,preferComfort:IC.walk,distancePenalty:IC.home};
   const prefs=PREFS.map(([k,label,short])=>`<button type="button" class="chip pref" data-p="${k}" aria-label="${esc(k==='avoidCrowd'?'Poca gente':label)}" title="${esc(label)}" aria-pressed="${!!state[k]}"><span class="pref-icon" aria-hidden="true">${icons[k]}</span><span class="pref-label-full">${esc(label)}</span><span class="pref-label-short" aria-hidden="true">${esc(short)}</span></button>`).join('');
-  box.innerHTML=`<div class="af-group-row intent-row" role="group" aria-label="Alla ricerca di">${day}${more}${intentButtons()}</div><div class="af-pref-row" role="group" aria-label="Preferenze dell’uscita">${prefs}</div>`;
+  box.innerHTML=`<div class="af-group-row intent-row" role="group" aria-label="Alla ricerca di">${onMap?'':more}${intentButtons()}</div><div class="af-pref-row" role="group" aria-label="Preferenze dell’uscita">${onMap?day+more:''}${prefs}</div>`;
   box.querySelector('[data-days]')?.addEventListener('click',e=>{const open=box.closest('.map-top').classList.toggle('days-open');e.currentTarget.setAttribute('aria-expanded',String(open));});
   box.querySelectorAll('[data-intent]').forEach(b=>b.onclick=()=>changeIntent(b.dataset.intent));
   box.querySelectorAll('[data-p]').forEach(b=>b.onclick=()=>soft(()=>{state[b.dataset.p]=!state[b.dataset.p];savePrefs();outCache.clear();renderFilterSummary();renderAll();}));

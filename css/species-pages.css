@@ -1,0 +1,133 @@
+/* Pagine reali Fronda · Figma 103:6279. Stesse foto e caratteri, nessun dato duplicato. */
+.ui-icon { display:inline-block; width:24px; height:24px; flex:none; background:currentColor; mask:var(--ui-icon) center / contain no-repeat; -webkit-mask:var(--ui-icon) center / contain no-repeat; }
+.ui-icon-chevron-right { --ui-icon:url('../assets/ui/chevron-right.svg'); }
+.ui-icon-alert-triangle { --ui-icon:url('../assets/ui/alert-triangle.svg'); }
+.ui-icon-map { --ui-icon:url('../assets/ui/map.svg'); }
+.ui-icon-leaf { --ui-icon:url('../assets/ui/leaf.svg'); }
+.ui-icon-notebook { --ui-icon:url('../assets/ui/notebook.svg'); }
+.tabbar :is(.ui-icon,.fungus-glyph) { width:24px; height:24px; }
+.fungus-page { max-width:772px; margin-inline:auto; }
+.fungus-page .phero { display:flex; flex-direction:column; justify-content:flex-end; height:auto; min-height:640px; max-height:none; padding:240px 20px 44px; margin:0; border-radius:24px; }
+.fungus-page .phero-body { position:relative; inset:auto; width:100%; gap:12px; }
+.fungus-page .phero-body::before { --scrim-lead:100px; --scrim-x:20px; --scrim-b:44px; }
+.fungus-page .phero-title { font-size:clamp(34px,4vw,44px); line-height:1.23; font-weight:600; letter-spacing:-.015em; text-wrap:pretty; }
+.fungus-page .phero-sub { font:italic 400 15px/1.5 var(--font-display); margin:0; }
+.fungus-page .phero-body .pill { font-size:14px; line-height:1.45; text-transform:none; letter-spacing:0; }
+.fungus-page .phero-body .notebook-hero-action { min-height:48px; padding:12px 20px; margin:0; font-size:14px; font-weight:700; border-radius:24px; }
+#views .fungus-page > .pbody, .entity-body .fungus-page > .pbody { position:relative; margin:-24px 0 0; max-width:none; padding:16px; border-radius:24px; background:var(--bg); box-shadow:none; }
+.fungus-page .pbody > h3 { margin:28px 0 18px; padding:0; border:0; font-size:28px; line-height:1.28; }
+.fungus-page .trait-strip { grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; margin:0 0 16px; }
+.fungus-page .trait-strip > li { padding:12px; gap:8px; align-content:start; justify-items:start; text-align:left; border:1px solid var(--control-edge); border-radius:24px; background:var(--surface); }
+.fungus-page .trait-strip > li:first-child { grid-column:span 2; }
+.fungus-page .trait-strip > li:has(.ts-dots) { grid-column:span 2; }
+.fungus-page .ts-k { font-size:12px; font-weight:500; line-height:1.5; letter-spacing:0; text-transform:none; }
+.fungus-page .ts-v { font-size:16px; font-weight:400; line-height:1.5; }
+.fungus-page .ts-sub, .fungus-page .ts-note { font-size:12px; line-height:1.5; }
+.fungus-page .ts-dots { justify-content:flex-start; gap:6px; margin:0; }
+.fungus-page .ts-dot.ts-chip, .fungus-page .ts-form { min-height:44px; font-size:12px; padding:8px; }
+.fungus-page :is(.ts-dot.ts-chip,.ts-form)[aria-pressed="true"] { background:var(--select); color:var(--select-ink); border-color:var(--select-edge); }
+.fungus-page .trait-strip .ts-art { height:64px; justify-content:flex-start; }
+.fungus-page .attention { margin:0 0 24px; padding:20px; border-radius:24px; }
+.fungus-page .attention .att-top { gap:8px; align-items:center; }
+.attention .att-top > .ui-icon { width:22px; height:22px; color:var(--crit-ink); }
+.fungus-page .att-h { font:700 14px/1.45 var(--font-body); letter-spacing:0; text-transform:none; }
+.fungus-page .att-h::before { content:none; }
+.fungus-page .att-static .att-k { display:none; }
+.fungus-page .attention :is(.att-text,.att-item) { line-height:1.5; }
+.fungus-page .sp-strip { margin:0 0 24px; gap:12px; }
+.fungus-page .sp-strip button { width:80px; height:80px; border-radius:16px; }
+.fungus-page .tx-look { padding:0; border:0; background:none; display:grid; gap:12px; }
+.fungus-page .tx-look > li { padding:12px; border:0; border-radius:24px; background:var(--surface); display:flex; flex-wrap:wrap; gap:12px; }
+.fungus-page .tx-look-main { flex:1 1 200px; gap:12px; }
+.fungus-page .tx-look-main img { width:64px; height:64px; border-radius:12px; }
+.fungus-page .tx-look-main b { font-size:14px; line-height:1.45; }
+.fungus-page .tx-look-main i { font:italic 400 15px/1.4 var(--font-display); }
+.fungus-page .tx-cmp-btn { min-height:48px; padding:12px 20px; border:1px solid var(--action); background:var(--action); color:var(--action-ink); border-radius:12px; font-size:14px; font-weight:700; }
+.fungus-page :is(.sec,.context-note) > summary { min-height:56px; padding-block:16px; font-size:16px; line-height:1.5; }
+.fungus-page :is(.sec,.context-note) > summary::after { width:20px; height:20px; border:0; margin:0; background:currentColor; mask:url('../assets/ui/chevron-right.svg') center / contain no-repeat; -webkit-mask:url('../assets/ui/chevron-right.svg') center / contain no-repeat; transform:none; }
+.fungus-page :is(.sec,.context-note)[open] > summary::after { transform:rotate(90deg); }
+.fungus-compare { max-width:1000px; margin-inline:auto; }
+.fungus-compare .cmp-title { font:600 34px/1.23 var(--font-display); margin:24px 0; }
+.fungus-compare .cmp-lede { font-size:16px; line-height:1.5; margin:0 0 24px; color:var(--text); }
+.fungus-compare .cmp-pickbar { margin:0 0 24px; padding:8px 0; background:var(--bg); }
+.fungus-compare .cmp-ref-l { display:none; }
+.fungus-compare .cmp-chip { min-height:48px; padding:8px 16px; font-size:14px; }
+.fungus-compare .cmp-chip-img { display:none; }
+.fungus-compare .cmp-chip[aria-selected="true"] { background:var(--select); color:var(--select-ink); border-color:var(--select-edge); }
+.fungus-compare .cmp-pair, .fungus-compare .cmp-row { gap:12px; }
+.fungus-compare .cmp-side { min-width:0; }
+.fungus-compare .cmp-zoom { display:flex; align-items:center; justify-content:center; aspect-ratio:1; max-height:360px; background:none; border-radius:16px; box-shadow:none; }
+.fungus-compare .cmp-zoom img { object-fit:contain; max-height:360px; }
+.fungus-compare .cmp-fig .tox { position:static; display:inline-block; margin:12px 0 8px; background:none; color:var(--text-2); box-shadow:none; font-size:12px; padding:0; border:0; }
+.fungus-compare .cmp-name { gap:8px; }
+.fungus-compare .cmp-name :is(a,button) { font:600 24px/1.3 var(--font-display); }
+.fungus-compare .cmp-name i { font:italic 400 15px/1.4 var(--font-display); }
+.fungus-compare .cmp-how { padding:20px; margin:24px 0; background:var(--surface); border:0; border-radius:24px; font-size:16px; line-height:1.5; }
+.fungus-compare .cmp-how b { display:block; font-size:14px; margin-bottom:12px; }
+.fungus-compare .cmp-legend { display:block; margin:24px 0; font-size:14px; line-height:1.5; }
+.fungus-compare .cmp-h { display:block; margin:28px 0 24px; color:var(--text); font:600 28px/1.28 var(--font-display); text-transform:none; letter-spacing:0; }
+.fungus-compare .cmp-h::before { content:none; }
+.fungus-compare .cmp-rows { gap:24px; }
+.fungus-compare .cmp-row { border:0; padding:0; }
+.fungus-compare .cmp-k { font-size:14px; line-height:1.5; }
+.fungus-compare .cmp-vals { flex-direction:column; align-items:flex-start; gap:8px; }
+.fungus-compare .cmp-v { font-size:14px; min-height:36px; padding:7px 12px; line-height:1.4; }
+.fungus-compare .cmp-or, .fungus-compare :is(.cmp-art,.cmp-v-art) { display:none; }
+.fungus-compare .cmp-v.own { border-color:var(--control-edge); }
+.fungus-compare .cmp-slide > .cmp-verdict { margin-top:24px; font-size:14px; line-height:1.6; }
+/* Map retains real layers, dates and ranking. Floating controls never share space. */
+html:has(body[data-page="mappa"]) { scrollbar-gutter:auto; }
+body[data-page="mappa"] .view-map { border-radius:0; }
+.map-top { background:var(--surface); border-radius:24px; }
+.view-map .leaflet-top, .view-map .leaflet-top.leaflet-right { top:var(--map-toolbar-bottom,190px); }
+.map-top .map-filters .chip { min-height:44px; }
+.legend-box summary { min-height:44px; display:flex; align-items:center; }
+@media(min-width:600px) {
+  #views .fungus-page > .pbody { margin-inline:44px; padding:24px; }
+}
+@media(min-width:900px) {
+  .fungus-page .trait-strip { grid-template-columns:repeat(6,minmax(0,1fr)); }
+  .fungus-page .trait-strip > li:first-child { grid-column:span 2; }
+}
+@media(max-width:599px) {
+  .fungus-page .phero { margin-inline:calc(-1 * var(--gutter)); border-radius:0 0 24px 24px; }
+  #views .fungus-page > .pbody { margin-inline:calc(-1 * var(--gutter)); }
+  .fungus-page .tx-cmp-btn { flex-basis:100%; text-align:center; }
+  .fungus-compare .cmp-name :is(a,button) { font-size:22px; }
+}
+@media(max-width:359px) {
+  .fungus-page .trait-strip { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .fungus-page .trait-strip > li:first-child { grid-column:span 2; }
+  .fungus-page .phero-title { font-size:32px; }
+}
+@media(hover:hover) {
+  .fungus-page .tx-cmp-btn:hover { background:var(--action-hover); color:var(--action-ink); }
+  .fungus-page :is(.ts-dot.ts-chip,.ts-form):hover { border-color:var(--control-edge); }
+}
+.fungus-page .tx-cmp-btn:focus-visible { outline:3px solid var(--focus); outline-offset:3px; }
+.tabbar .fungus-glyph { fill:currentColor; stroke:none; }
+.att-top:has(> .ui-icon) .att-h::before { content:none; }
+.entity-body.fungus-page .phero { margin-inline:0; }
+.entity-body.fungus-page > .pbody { margin:-24px 0 0; padding:16px; background:var(--bg); box-shadow:none; }
+.fungus-compare :is(.cmp-same,.cmp-sources) { margin-top:24px; }
+.fungus-compare .sec > summary { min-height:56px; font-size:16px; line-height:1.5; }
+.view:has(> .fungus-compare) > :is(.view-head,.seg-nav,.sub-nav) { display:none; }
+.fungus-compare .cmp-track { scroll-behavior:auto; }
+/* A label is a value, not an extra illustration: retain source details on request. */
+.fungus-compare .cmp-same .cmp-row { margin-bottom:16px; }
+.map-top { left:12px; right:12px; width:auto; max-width:1100px; margin-inline:auto; padding:8px; }
+.map-top .map-filters { padding:4px; border:0; }
+.map-top .map-filters .intent-row { display:flex; gap:8px; }
+.map-top .map-filters [data-intent] { flex:1; min-width:0; justify-content:center; font-size:14px; padding:10px; }
+.map-top .map-filters .af-pref-row { flex-wrap:wrap; overflow:visible; padding-top:4px; }
+.map-top .map-filters .chip-day { display:inline-flex; }
+.map-top .map-days, .map-top .rail-host:has(> .map-days) { display:none; }
+.map-top.days-open .map-days { display:flex; }
+.map-top.days-open .rail-host:has(> .map-days) { display:block; }
+.mapctl-stack { gap:8px; background:none; box-shadow:none; overflow:visible; }
+.mapctl-stack .mapctl-btn { width:48px; height:48px; border:1px solid var(--hair); border-radius:50%; background:var(--surface); box-shadow:var(--shadow-1); }
+.mapctl-stack .mapctl-btn:hover { background:var(--surface-2); }
+.mapctl-x { width:44px; height:44px; }
+@media(max-width:359px) { .map-top .map-filters [data-intent] { padding-inline:6px; gap:4px; font-size:13px; } }
+/* JS settles each pair after a swipe; native snap can move the compositor during resize. */
+.fungus-compare .cmp-track { scroll-snap-type:none; }

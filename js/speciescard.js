@@ -176,6 +176,7 @@ export const criticalRule = (id) => criticalRuleOf(id)?.text || '';
 export const speciesHeroSrc = (id) => { const m = MEDIA?.species?.[id], p = m?.ref || m?.inat?.[0]; return p ? ASSET(p.file_hd || p.file) : ''; };
 export function renderSpeciesDetail(body, id) {
   body.dataset.glossaryContext='Funghi';
+  body.classList.add('fungus-page');
   const sp = SPECIES.find((s) => s.id === id);
   if (!sp) { body.innerHTML = '<p class="muted">Specie non trovata.</p>'; return; }
   const d = ID?.species?.[id] || {};

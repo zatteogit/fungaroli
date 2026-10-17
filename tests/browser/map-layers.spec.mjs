@@ -4,6 +4,7 @@ for(const width of [390,1280]) test(`il pannello livelli supera filtri e frecce 
  const context=await browser.newContext({viewport:{width,height:900},serviceWorkers:'block'});
  const page=await preparePage(context,{theme:'dark'});
  await page.goto('/#/mappa/tancia');
+ await expect.poll(()=>page.locator('#map').evaluate(el=>Math.abs(el.getBoundingClientRect().width-innerWidth))).toBeLessThan(1);
  await page.locator('.mapctl [data-act="layers"]').first().click();
  const panel=page.locator('.mapctl-panel');await expect(panel).toBeVisible();
  // Riproduce la sovrapposizione con la barra espansa, indipendentemente dal numero di pillole.

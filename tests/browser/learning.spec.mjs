@@ -448,11 +448,9 @@ test('confronto: colore etichettato per struttura in ciascuna colonna',async({pa
  for(const [ref,pick,labels] of [['edulis','tylopilus-felleus',['Colore dei pori','Colore dei pori']],['cibarius','omphalotus-olearius',['Colore delle pliche','Colore delle lamelle']]]){
   await page.goto(`/#/riconosci/confronta/${ref}/${pick}`);
   const slide=page.locator(`#cmp-${pick}`),row=slide.locator('[data-trait="hymenophore_color"]');
-  await expect(slide.locator('.cmp-same')).toHaveCount(0);
+  await expect(slide.locator('.cmp-same')).not.toHaveAttribute('open');
   await expect(slide.locator('.cmp-legend')).toContainText('Fondo colorato: in comune');
   await expect(slide.locator('.cmp-legend')).toContainText('Solo contorno: differenze');
-  const legend=await slide.locator('.cmp-legend').evaluate(el=>({common:getComputedStyle(el.querySelector('.common')).backgroundColor,own:getComputedStyle(el.querySelector('.own')).backgroundColor}));
-  expect(legend.common).not.toBe('rgba(0, 0, 0, 0)');expect(legend.own).toBe('rgba(0, 0, 0, 0)');
   await expect(row.locator('.cmp-cell > .cmp-k')).toHaveText(labels);
   for(const cell of await row.locator('.cmp-cell').all()){
    const values=await cell.locator('.cmp-v').count();

@@ -1,3 +1,4 @@
+import { alertTriangleGlyph } from './ui-icons.js';
 // Riconosci: ricerca per caratteristiche (visiva, testuale, guidata) su commestibili E velenose.
 // Non e' un'identificazione: restringe i candidati e dice sempre cosa controllare.
 
@@ -484,7 +485,7 @@ export function attentionBox(rules, extra = '') {
   const crit = sorted.filter((r) => r.severity === 'critico').length;
   const n = sorted.length;
   const count = n === 1 ? '' : crit === n ? `${n} avvisi critici` : crit ? `${crit} ${crit === 1 ? 'critico' : 'critici'} su ${n}` : `${n} avvisi`;
-  const head = `<span class="att-h">Attenzione</span>${count ? `<small class="att-n">${count}</small>` : ''}`;
+  const head = `${alertTriangleGlyph}<span class="att-h">Attenzione</span>${count ? `<small class="att-n">${count}</small>` : ''}`;
   const list = `<ul class="att-list">${sorted.map(attItem).join('')}</ul>${extra ? `<p class="att-extra small">${esc(extra)}</p>` : ''}`;
   // uno o due avvisi: sempre aperti, niente da toccare
   if (sorted.length <= 2) return `<section class="attention att-c att-static" role="note" aria-label="Attenzione"><div class="att-top">${head}</div>${list}</section>`;
@@ -617,6 +618,7 @@ export function renderTaxonPage(box, key) {
 // Le sezioni compaiono solo se c'e' il dato; extra e' HTML aggiuntivo della scheda (stagione testuale, segnalazioni).
 export function renderTaxonView(box, t, { photos = null, habitatText = '', extra = '' } = {}) {
   box.dataset.glossaryContext='Funghi';
+  box.classList.add('fungus-page');
   const ph = photos || photosOf(t), tox = esc(t.toxicity || ''), toxL = esc(t.tox_label || t.toxicity || '');
   // per una specie senza usi alimentari «non confonderlo con» suonerebbe come un invito a raccoglierla
   const lookTitle = /^commestibile/.test(t.toxicity || '') ? 'Non confonderlo con' : 'Specie simili';
@@ -745,38 +747,39 @@ function renderCompare(box, ref, pick) {
   const toxCls = (t) => `tox-${String(t.toxicity || '').replace(/\s/g, '-')}`;
   const nameBtn = (t) => `<button type="button" data-taxon="${esc(t.key)}">${esc(t.name || t.latin)}</button>`; // nel confronto: anteprima, per tutti
   const slide = (t, k) => {
-    const rows = cmpRows(ref, t), diff = rows.filter((r) => r.kind === 'diff'), part = rows.filter((r) => r.kind === 'part');
+    const rows = cmpRows(ref, t), diff = rows.filter((r) => r.kind === 'diff'), part = rows.filter((r) => r.kind === 'part'), same = rows.filter((r) => r.kind === 'same');
     const how = fromToxic ? HOWTO(t.edible_id, ref.latin) : HOWTO(ref.edible_id, t.latin);
-    return `<section class="cmp-slide" id="cmp-${esc(t.key)}" data-i="${k}" aria-label="${esc(ref.name)} e ${esc(t.name || t.latin)}">
+    return `<section class="cmp-slide" id="cmp-${esc(t.key)}" data-i="${k}" role="tabpanel" aria-labelledby="cmp-tab-${esc(t.key)}" ${t.key === list[start]?.key ? '' : 'inert'}>
       <div class="cmp-pair">
         ${[ref, t].map((x) => `<div class="cmp-side">
           <figure class="cmp-fig ${toxCls(x)}"><span class="cmp-zoom">${pic(x)}</span><span class="tox">${esc(x.tox_label || x.toxicity)}</span>
             ${photoOf(x) ? `<button type="button" class="id-zoom" data-photo="${esc(x.key)}" aria-label="Ingrandisci la foto di ${esc(x.name || x.latin)}"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6"/><path d="m20 20-5-5M10.5 8v5M8 10.5h5"/></svg></button>` : ''}</figure>
           <div class="cmp-name">${nameBtn(x)}${x.name !== x.latin ? `<i>${esc(x.latin)}</i>` : ''}</div></div>`).join('')}
-        <span class="cmp-vs" aria-hidden="true">vs</span>
+
       </div>
       ${how ? `<p class="cmp-how" data-glossary="Funghi"><b>Differenze descritte.</b> ${esc(how)}</p>` : ''}
-      <ul class="cmp-legend" aria-label="Come leggere il confronto"><li><span class="cmp-v common" aria-hidden="true"></span><span><b>Fondo colorato: in comune</b><br>Lo stesso valore nelle due specie</span></li><li><span class="cmp-v own" aria-hidden="true"></span><span><b>Solo contorno: differenze</b><br>Valore riportato solo per questa specie</span></li></ul>
+      <p class="cmp-legend">Fondo colorato: in comune. Solo contorno: differenze.</p>
       ${diff.length ? `<h4 class="cmp-h diff">Caratteri differenti nelle fonti</h4><ul class="cmp-rows">${diff.map((r) => r.html).join('')}</ul>`
         : '<p class="cmp-none"><b>Nessuna domanda di «Impara a riconoscere» li separa con certezza.</b> Contano i dettagli: leggi le differenze descritte e, nel dubbio, fallo vedere all\'Ispettorato micologico.</p>'}
       ${part.length ? `<h4 class="cmp-h part">A volte simili</h4><ul class="cmp-rows">${part.map((r) => r.html).join('')}</ul>` : ''}
-      ${[ref,t].some(x=>['mortale','tossico'].includes(x.toxicity)) ? '<p class="cmp-verdict">Questo confronto include specie tossiche o mortali. I caratteri descritti possono variare o essere incompleti: somiglianze e differenze non identificano il tuo esemplare.</p>' : ''}
+      ${same.length ? `<details class="sec cmp-same"><summary>Tutti i caratteri in comune</summary><div class="sec-body"><ul class="cmp-rows">${same.map(r => r.html).join('')}</ul></div></details>` : ''}
+      <details class="sec cmp-sources"><summary>Fonti del confronto</summary><div class="sec-body">${sourceRows([...(ref.sources || []), ...(t.sources || [])])}</div></details>
+      <p class="cmp-verdict">${[ref,t].some(x=>['mortale','tossico'].includes(x.toxicity)) ? 'Il confronto include specie tossiche o mortali; i caratteri possono variare o essere incompleti. ' : ''}Somiglianze e differenze non identificano il tuo esemplare. Fai controllare il raccolto all’Ispettorato micologico ASL.</p>
     </section>`;
   };
   const start = Math.max(0, list.findIndex((t) => t.key === pick));
   box.innerHTML = `
-    <h2 class="sec-title cmp-title">${fromToxic ? `${esc(ref.name || ref.latin)}: con cosa si confonde` : `${esc(ref.name)} o sosia?`}</h2>
-    <p class="small muted cmp-lede">${fromToxic
-      ? `Si confonde con ${list.length === 1 ? 'un fungo commestibile' : `${list.length} funghi commestibili`}. A sinistra ${esc((ref.name || ref.latin).toLowerCase())}, a destra il fungo con cui si scambia${list.length > 1 ? ': scorri di lato per vederli tutti' : ''}.`
-      : `${list.length} ${list.length === 1 ? 'fungo che gli somiglia' : 'funghi che gli somigliano'}. Scorri di lato per confrontarli uno alla volta: a sinistra ${esc(ref.name.toLowerCase())}, a destra il sosia.`}</p>
+    <h1 class="sec-title cmp-title">${fromToxic ? `${esc(ref.name || ref.latin)}: con cosa si confonde` : `${esc(ref.name)} o sosia?`}</h1>
+    <p class="cmp-lede">A sinistra ${esc((ref.name || ref.latin).toLowerCase())}, a destra ${fromToxic ? 'la specie simile' : 'il sosia'}. Confronta un fungo alla volta.</p>
     <div class="cmp-pickbar"><span class="cmp-ref-l ${toxCls(ref)}"><b>${esc(ref.name || ref.latin)}</b> <i aria-hidden="true">vs</i></span>
-    <div class="cmp-pick" role="tablist" aria-label="Scegli il sosia">${list.map((t, k) => `<button type="button" role="tab" class="cmp-chip ${toxCls(t)}" data-go="${k}" aria-selected="${k === start}"><span class="cmp-chip-img">${pic(t, true)}</span><span>${esc(t.name || t.latin)}</span></button>`).join('')}</div></div>
+    <div class="cmp-pick" role="tablist" aria-label="Scegli il sosia">${list.map((t, k) => `<button type="button" role="tab" id="cmp-tab-${esc(t.key)}" aria-controls="cmp-${esc(t.key)}" tabindex="${k === start ? 0 : -1}" class="cmp-chip ${toxCls(t)}" data-go="${k}" aria-selected="${k === start}"><span class="cmp-chip-img">${pic(t, true)}</span><span>${esc(t.name || t.latin)}</span></button>`).join('')}</div></div>
     <div class="cmp-track">${list.map(slide).join('')}</div>
-    <p><a class="btn" href="#/riconosci">Confronta un altro fungo</a></p>`;
+    <p><a class="btn primary" href="#/riconosci">Confronta un altro fungo</a></p>`;
 
   const track = box.querySelector('.cmp-track'), chips = [...box.querySelectorAll('.cmp-chip[role="tab"]')];
   const mark = (i) => {
-    chips.forEach((c, k) => c.setAttribute('aria-selected', k === i));
+    chips.forEach((c, k) => { c.setAttribute('aria-selected', k === i); c.tabIndex = k === i ? 0 : -1; });
+    for (const [k, slide] of [...track.children].entries()) slide.inert = k !== i;
     chips[i]?.scrollIntoView({ block: 'nearest', inline: 'center', behavior: 'smooth' });
     history.replaceState(null, '', `#/riconosci/confronta/${ref.key}/${list[i].key}`);
   };
@@ -799,7 +802,15 @@ function renderCompare(box, ref, pick) {
   track.addEventListener('scroll', () => { clearTimeout(settleT); settleT = setTimeout(settle, 160); }, { passive: true });
   track.addEventListener('scrollend', settle);
   box.querySelectorAll('.cmp-same').forEach((d) => d.addEventListener('toggle', fit));
-  addEventListener('resize', fit, { passive: true });
+  // A viewport or scrollbar change must keep the selected pair aligned.
+  let trackWidth = track.clientWidth;
+  const align = () => {
+    const width = track.clientWidth;
+    if (width !== trackWidth) { trackWidth = width; track.scrollTo({ left: cur * width, behavior: 'instant' }); }
+    fit();
+  };
+  new ResizeObserver(align).observe(track);
+  addEventListener('resize', align, { passive: true });
   box.querySelectorAll('.cmp-slide img').forEach((im) => im.addEventListener('load', fit, { once: true }));
   // tocco su un sosia: il fungo di riferimento resta fermo, cambia solo il sosia (entra dal lato giusto) e sotto la tabella sfuma
   const names = (i) => slides.forEach((sl, j) => {
@@ -810,13 +821,20 @@ function renderCompare(box, ref, pick) {
   });
   const go = (k) => {
     if (k === cur) return;
-    if (!canVT()) { track.scrollTo({ left: k * track.clientWidth, behavior: 'auto' }); return; }
+    if (!canVT()) { cur = k; track.scrollTo({ left: k * track.clientWidth, behavior: 'instant' }); mark(k); fit(); return; }
     document.documentElement.dataset.cmpDir = k > cur ? 'next' : 'prev';
     names(cur);
     const vt = document.startViewTransition(() => { track.scrollTo({ left: k * track.clientWidth, behavior: 'instant' }); cur = k; mark(k); fit(); names(k); });
     vt.finished.finally(() => { names(-1); delete document.documentElement.dataset.cmpDir; });
   };
-  chips.forEach((c) => c.addEventListener('click', () => go(+c.dataset.go)));
+  chips.forEach((c, i) => {
+    c.addEventListener('click', () => go(i));
+    c.addEventListener('keydown', e => {
+      const next = { ArrowRight: (i + 1) % chips.length, ArrowLeft: (i + chips.length - 1) % chips.length, Home: 0, End: chips.length - 1 }[e.key];
+      if (next === undefined) return;
+      e.preventDefault(); go(next); chips[next].focus({ preventScroll: true });
+    });
+  });
   requestAnimationFrame(() => { track.scrollLeft = start * track.clientWidth; fit(); });
   box.querySelectorAll('[data-taxon]').forEach((b) => b.addEventListener('click', () => openTaxon(b.dataset.taxon)));
   const all = [ref, ...list].map((t) => ({ t, ph: photoOf(t) })).filter((y) => y.ph);
@@ -905,6 +923,7 @@ export function renderIdentify(box) {
   box.dataset.glossaryContext='Funghi';
   if (!TAXA.length) { box.innerHTML = '<p class="notice">I caratteri delle specie sono in preparazione: la ricerca sarà disponibile a breve.</p>'; return; }
   const ref = state.compare && TAXA.find((t) => t.key === state.compare);
+  box.classList.toggle('fungus-compare', !!ref);
   if (ref) { renderCompare(box, ref, state.pick); return; }
   const list = candidates();
   const nq = state.guided ? nextQuestion(list) : null;
