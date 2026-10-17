@@ -6,7 +6,7 @@ const read = (p) => JSON.parse(readFileSync(new URL(`../${p}`, import.meta.url),
 const { schema } = read('data/recognize-trees.json');
 const icons = read('data/tree-trait-icons.json');
 // valori aggiunti allo schema dopo il giro di disegni: icona da disegnare (docs/handoff-immagini-varianti.md)
-const PENDING = new Set(['leaf_type-composta_palmata']);
+const PENDING = new Set([]);
 const asked = Object.entries(schema).filter(([k, q]) => q.ask && !['size', 'habitat', 'special'].includes(k))
   .flatMap(([k, q]) => q.values.map((v) => `${k}-${v.id}`));
 

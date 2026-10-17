@@ -17,7 +17,7 @@ export function difficultyLink(code, label) {
 
 const sourceLinks = sources => (sources || []).filter(s => /^https?:\/\//.test(s?.url || '')).map(s => `<a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.title)}</a>`).join(' · ');
 const imagesFor=id=>(ILLUSTRATIONS[id]?.illustrations||[]).filter(m=>m?.alt&&/^(?:https:\/\/[^\s"'<>]+|\/?assets\/[a-zA-Z0-9_/-]+\.(?:svg|webp|png|jpe?g))$/.test(m.file||''));
-const imageCredit=m=>`${m.generated?'Schema generato':m.kind==='diagram'?'Schema':'Foto'}: ${esc(m.author)} · ${/^https:\/\//.test(m.licenseUrl||'')?`<a href="${esc(m.licenseUrl)}" target="_blank" rel="noopener noreferrer">${esc(m.license)}</a>`:esc(m.license)}${/^https:\/\//.test(m.page||'')?` · <a href="${esc(m.page)}" target="_blank" rel="noopener noreferrer">Originale</a>`:''}`;
+const imageCredit=m=>`${m.generated?'Schema generato':m.kind==='diagram'?'Schema':'Foto'}: ${esc(m.author)} · ${/^https:\/\//.test(m.licenseUrl||'')?`<a href="${esc(m.licenseUrl)}" target="_blank" rel="noopener noreferrer">${esc(m.license)}</a>`:esc(m.license)}${/^https:\/\//.test(m.page||'')?` · <a href="${esc(m.page)}" target="_blank" rel="noopener noreferrer">Originale</a>`:''}${m.note?` · ${esc(m.note)}`:''}`;
 function termImages(id) {
   const images=imagesFor(id);
   if(!images.length)return '';
