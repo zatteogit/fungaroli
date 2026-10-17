@@ -114,6 +114,18 @@ body[data-page="mappa"] .view-map { border-radius:0; }
 .view:has(> .fungus-compare) > :is(.view-head,.seg-nav,.sub-nav) { display:none; }
 .fungus-compare .cmp-track { scroll-behavior:auto; }
 /* A label is a value, not an extra illustration: retain source details on request. */
+.growth-selector { display:flex; flex-wrap:wrap; gap:8px; margin:0 0 16px; }
+.growth-selector button { min-height:44px; padding:10px 14px; border:1px solid var(--control-edge); border-radius:22px; color:var(--text); background:var(--surface); font:600 14px/1.5 var(--font-body); cursor:pointer; }
+.growth-selector button[aria-pressed="true"] { background:var(--select); color:var(--select-ink); border-color:var(--select-edge); }
+.growth-selector button:focus-visible { outline:3px solid var(--focus); outline-offset:3px; }
+@media(hover:hover) { .growth-selector button:not([aria-pressed="true"]):hover { background:var(--surface-2); } }
+.growth-description { font-size:16px; line-height:1.6; margin:0 0 16px; }
+.growth-warning { padding:14px 16px; margin:0 0 16px; border:1px solid var(--warn-ink); border-radius:16px; background:var(--warn-bg); color:var(--warn-ink); font-size:14px; line-height:1.6; }
+.fungus-page .trait-strip.growth-gallery { grid-template-columns:repeat(auto-fit,minmax(110px,1fr)); }
+.fungus-page .trait-strip.growth-gallery > li:first-child { grid-column:auto; }
+.fungus-page .growth-gallery .ts-art { height:96px; width:100%; justify-content:center; }
+.fungus-page .growth-gallery .ts-ill { width:96px; height:96px; max-width:100%; object-fit:contain; }
+.growth-source { display:inline-flex; align-items:center; min-height:44px; font-size:14px; margin:0 0 12px; }
 .fungus-compare .cmp-same .cmp-row { margin-bottom:16px; }
 .map-top { left:12px; right:12px; width:auto; max-width:1100px; margin-inline:auto; padding:8px; }
 .map-top .map-filters { padding:4px; border:0; }

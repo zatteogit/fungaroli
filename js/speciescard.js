@@ -1,7 +1,7 @@
 // Scheda dettagliata di una specie: foto reali, riconoscimento, sosia pericolosi,
 // calendario delle osservazioni (GBIF) a confronto con il modello, modello 3D.
 
-import { traitStrip, compareCta, taxonKeyByLatin, openTaxon, attentionBox, compareHref, lookalikeRank, sourceRows, photoRows } from './identify.js';
+import { growthTraits, compareCta, taxonKeyByLatin, openTaxon, attentionBox, compareHref, lookalikeRank, sourceRows, photoRows } from './identify.js';
 import { SPECIES } from './species.js';
 import { openLightbox, captionHtml } from './lightbox.js';
 import { linkTrees } from './trees.js';
@@ -212,7 +212,7 @@ export function renderSpeciesDetail(body, id) {
     <div class="pbody">
     ${photos.length > 1 ? `<div class="sp-strip">${photos.slice(1).map((p, k) => `<button type="button" class="zoomable" data-photo="${k + 1}" aria-label="Foto ${k + 2}: ingrandisci"><img data-src="${ASSET(p.file)}" alt="" loading="lazy" decoding="async"></button>`).join('')}</div>` : ''}
     ${attention(id, warn)}
-    ${TRAITS[id]?.check_before_picking?.length ? `<h3>Caratteri da confrontare</h3>${traitStrip(id)}${checks(id)}` : d.key_features?.length ? `<h3>Caratteri da confrontare</h3>${traitStrip(id)}<ol class="keys" data-glossary="Funghi">${d.key_features.map((k) => `<li><span class="key-text">${esc(k)}</span></li>`).join('')}</ol>` : '<p class="notice">Caratteri di confronto in preparazione.</p>'}
+    ${TRAITS[id]?.check_before_picking?.length ? `<h3>Caratteri da confrontare</h3>${growthTraits(id)}${checks(id)}` : d.key_features?.length ? `<h3>Caratteri da confrontare</h3>${growthTraits(id)}<ol class="keys" data-glossary="Funghi">${d.key_features.map((k) => `<li><span class="key-text">${esc(k)}</span></li>`).join('')}</ol>` : '<p class="notice">Caratteri di confronto in preparazione.</p>'}
     ${TRAITS[id] ? '' : (warn.length ? `<div class="notice">${esc(warn.join(' '))}</div>` : '')}
     ${compareCta(id)}
     ${kitchen(id)}

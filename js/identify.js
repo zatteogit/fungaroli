@@ -1,4 +1,5 @@
 import { alertTriangleGlyph } from './ui-icons.js';
+import { availableGrowthStages } from './fungus-stages.js';
 // Riconosci: ricerca per caratteristiche (visiva, testuale, guidata) su commestibili E velenose.
 // Non e' un'identificazione: restringe i candidati e dice sempre cosa controllare.
 
@@ -169,7 +170,14 @@ const TOX_ORDER = { mortale: 0, tossico: 1, 'non commestibile': 2, 'commestibile
 
 // icone disegnate dei caratteri (assets/traits): se mancano restano i disegni SVG
 let ICONS = null;
-fetch('data/trait-icons.json').then((r) => (r.ok ? r.json() : null)).then((d) => { ICONS = d?.taxa || null; }).catch(() => {});
+fetch('data/trait-icons.json').then((r) => (r.ok ? r.json() : null)).then((d) => {
+  ICONS = d?.taxa || null;
+  // Il catalogo delle immagini è facoltativo: se arriva dopo la scheda aggiorna solo i caratteri.
+  document.querySelectorAll('[data-growth-key]').forEach(root => {
+    const t = TAXA.find(t => t.key === root.dataset.growthKey);
+    if (t) root.innerHTML = growthBody(t);
+  });
+}).catch(() => {});
 const illus = (key, part, colour) => `<img class="ts-ill" src="${esc(ASSET(`assets/traits/${key}-${part}${colour ? `-${colour}` : ''}.webp`))}" alt="" width="64" height="64" loading="lazy" decoding="async" data-ill="${part}">`;
 // varianti del cappello (colori e forme descritti dalle fonti): cambiano insieme le tessere Cappello e Gambo.
 // Colore e forma non si combinano: scegliere un colore riporta la forma a quella del disegno, e viceversa.
@@ -437,6 +445,28 @@ export function traitStrip(edibleId, t = refOf(edibleId)) {
   return `<ul class="trait-strip" aria-label="Caratteri principali">${out.join('')}</ul>${ai}`;
 }
 
+const growthStages = t => availableGrowthStages(t, ICONS?.[t.key]);
+function growthBody(t) {
+  const stages = growthStages(t);
+  return `${stages.length ? `<div class="growth-selector" role="group" aria-label="Fasi di crescita"><button type="button" data-growth-stage="" aria-pressed="true">Panoramica</button>${stages.map(s=>`<button type="button" data-growth-stage="${esc(s.id)}" aria-pressed="false">${esc(s.label)}</button>`).join('')}</div>` : ''}<div data-growth-content>${traitStrip(null,t)}</div>`;
+}
+export function growthTraits(edibleId, t = refOf(edibleId)) {
+  return t ? `<div class="growth-traits" data-growth-key="${esc(t.key)}">${growthBody(t)}</div>` : '';
+}
+document.addEventListener('click', e => {
+  const button = e.target.closest?.('[data-growth-stage]');
+  if (!button) return;
+  const root = button.closest('[data-growth-key]'), t = TAXA.find(t => t.key === root?.dataset.growthKey);
+  if (!t) return;
+  const stage = growthStages(t).find(s => s.id === button.dataset.growthStage);
+  if (button.dataset.growthStage && !stage) return;
+  root.querySelectorAll('[data-growth-stage]').forEach(b=>b.setAttribute('aria-pressed',String(b===button)));
+  const content = root.querySelector('[data-growth-content]');
+  if (!stage) { content.innerHTML = traitStrip(null,t); return; }
+  const names = {cappello:'Cappello',sotto:'Sotto il cappello',gambo:'Fungo intero',taglio:'Sezione dell’uovo'};
+  content.innerHTML = `<p class="growth-description" role="status">${esc(stage.desc)}</p>${stage.id==='uovo'?'<p class="growth-warning">Nel Lazio è vietato raccogliere ovoli chiusi. Aprirli non conferma la specie e non rende lecita la raccolta.</p>':''}<ul class="trait-strip growth-gallery" aria-label="Disegni della fase: ${esc(stage.label)}">${stage.tiles.map(part=>`<li><span class="ts-art"><img class="ts-ill" src="${esc(ASSET(`assets/traits/${t.key}-${part}-fase-${stage.id}.webp`))}" alt="${esc(names[part])}: ${esc(stage.label)}" width="96" height="96" decoding="async"></span><span class="ts-k" data-no-glossary>${esc(names[part])}</span></li>`).join('')}</ul><p class="small muted ts-ai">Disegni schematici fatti con AI, non foto: confronta con le foto e con il testo.</p><a class="growth-source" href="${esc(stage.source)}" target="_blank" rel="noopener">Fonte della fase</a>`;
+});
+
 // Avvisi: ognuno ha un tipo e un titolo breve (data/species-traits.json, field_rules).
 // Chiuso mostra l'indice tipo · titolo; aperto ogni avviso per intero, con la citazione (Autore, anno).
 const ATT_KIND = { sosia: 'Sosia', caratteri: 'Caratteri', regole: 'Regole', cottura: 'Cottura', tossicita: 'Tossicità', ambiente: 'Ambiente' };
@@ -636,7 +666,7 @@ export function renderTaxonView(box, t, { photos = null, habitatText = '', extra
     <div class="pbody">
       ${ph.length > 1 ? `<div class="sp-strip">${ph.slice(1, 6).map((p, k) => `<button type="button" class="zoomable" data-photo="${k + 1}" aria-label="Foto ${k + 2}: ingrandisci"><img data-src="${ASSET(p.file)}" alt="" loading="lazy" decoding="async"></button>`).join('')}</div>` : ''}
       ${t.field_rules?.length ? attentionBox(t.field_rules) + (t.caution ? `<p class="id-why" data-glossary><b>Cautele della specie:</b> ${esc(t.caution)}</p>` : '') : attentionBox(t.caution ? [{ text: t.caution, severity: 'importante' }] : [])}
-      ${t.traits && Object.keys(t.traits).some((k) => k !== 'season') ? `<h3>Caratteri da confrontare</h3>${traitStrip(null, t)}` : '<p class="notice">Caratteri di confronto in preparazione.</p>'}
+      ${t.traits && Object.keys(t.traits).some((k) => k !== 'season') ? `<h3>Caratteri da confrontare</h3>${growthTraits(null, t)}` : '<p class="notice">Caratteri di confronto in preparazione.</p>'}
       ${t.check_before_picking?.length ? `<details class="sec character-details"><summary>Cosa controllare da vicino</summary><div class="sec-body"><ol class="keys" data-glossary>${t.check_before_picking.map((x) => `<li><span class="key-text">${esc(x)}</span></li>`).join('')}</ol></div></details>` : ''}
       ${look.length ? `<h3>${lookTitle}</h3><ul class="tx-look">${look.map(({ id, o }) => { const op = photoOf(o); return `<li>
         <a class="tx-look-main" data-entity href="#/specie/${esc(id)}">${op ? `<img data-src="${ASSET(op.thumb || op.file)}" alt="" loading="lazy" decoding="async">` : ''}<span><b>${esc(o.name)}</b><i>${esc(o.latin)}</i>${o.toxicity ? `<small class="tx-c tox-${esc(o.toxicity.replace(/\s/g, '-'))}"><span class="tox">${esc(o.tox_label || o.toxicity)}</span></small>` : ''}</span></a>
