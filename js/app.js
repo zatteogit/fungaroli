@@ -1,3 +1,4 @@
+import {plannedDeparture, recommendedStartAvailable, calendarDate} from './planning-time.js';
 import {speciesObservationContext} from './species-context.js';
 import { mapQuery, mountMapResults, compactMapFilters } from './map-experience.js';
 import './index-tip.js';
@@ -35,7 +36,7 @@ import { navigate, soft, setCoverResolver } from './motion.js';
 import { applyCrop } from './images.js';
 import { FOREST_LEGEND } from './forest-legend.js';
 import { initTrees, renderTreeGrid, renderTreePage, linkTrees, treeChips, treeForCategory, treeThumb, treePhotoSrc, treeHeroSrc } from './trees.js';
-import { crowding, comfortScore, timingAdvice, fmtTime, fmtRough, intornoA } from './human.js';
+import { crowding, comfortScore, timingAdvice, sunTimes, fmtTime, fmtRough, intornoA } from './human.js';
 import { initCommunity, communityStatus, communityRank, communityHasZone, communityDataAvailable, reportBadge } from './community.js';
 import { guideTitle, renderGuideCards, renderGuide, initGuideContent, guideCount } from './guides.js';
 import { buildEdibleCatalog, seasonStatus, seasonLabel } from './edible-catalog.js';
@@ -99,17 +100,18 @@ const activeIds=()=>{
 };
 const setActiveIds=ids=>{if(hasInterest('funghi'))state.speciesIds=ids===null?null:new Set([...ids].filter(id=>!botanicalById(id)));if(hasInterest('piante'))state.plantIds=ids===null?null:new Set([...ids].filter(id=>botanicalById(id)));};
 const activeGroups=()=>[...(hasInterest('funghi')?GROUPS:[]),...(hasInterest('piante')?plantModels.map(p=>({id:p.group,label:p.name,rep:p.id})):[])];
+let homeDateManual = false, mapDateManual = false;
 const state = {
   target: 'funghi',interests:['funghi'],easyTrails:false,shortTrails:false,seasonOverride:null,seasonSuspended:null,plantIds:null,useBotanicalNotes:false,showDiscoveries:true,communityOnly:false,
   speciesIds: null, // null = tutto il catalogo; Set = selezione individuale
-  // giorno della mappa e della scheda: dalle 14 (ora italiana) si guarda a domani, oggi l'uscita e' ormai andata
-  dayOffset: +new Intl.DateTimeFormat('it-IT', { hour: 'numeric', hourCycle: 'h23', timeZone: 'Europe/Rome' }).format(new Date()) >= 14 ? 1 : 0,
+  // La prima data viene adattata agli orari pratici appena i dati sono disponibili.
+  dayOffset: 0,
   zoneId: null,
   trailId: null,
   distancePenalty: false,
   avoidCrowd: false,
   preferComfort: false,
-  homeDay: null,   // null = tutti i prossimi giorni
+  homeDay: 0,   // null = settimana, quando scelta esplicitamente
   view: 'uscite',
 };
 try {
@@ -129,7 +131,7 @@ const savePrefs = () => {
   try { localStorage.setItem(PREFS_KEY, JSON.stringify({ interests:state.interests,target:state.target,easyTrails:state.easyTrails,shortTrails:state.shortTrails,seasonOverride:state.seasonOverride,seasonSuspended:state.seasonSuspended,showDiscoveries:state.showDiscoveries,communityOnly:state.communityOnly,useBotanicalNotes:state.useBotanicalNotes,plantIds:state.plantIds===null?null:[...state.plantIds],speciesIds: state.speciesIds === null ? null : [...state.speciesIds], distancePenalty: state.distancePenalty, avoidCrowd: state.avoidCrowd, preferComfort: state.preferComfort })); } catch { /* ignora */ }
 };
 const selectedCatalog = () => activeIds()===null?activeCatalog():activeCatalog().filter(s=>activeIds().has(s.id));
-const filterDate = () => todayISO(new Date(Date.now() + (state.view === 'uscite' ? state.homeDay || 0 : state.dayOffset) * 864e5));
+const filterDate = () => calendarDate(todayISO(), state.view === 'uscite' ? state.homeDay || 0 : state.dayOffset);
 const groupMembers = (id) => activeCatalog().filter(s => s.group === id);
 const groupSelection = (id) => {
   const selection=activeIds(),members = groupMembers(id), n = members.filter(s => selection === null || selection.has(s.id)).length;
@@ -158,6 +160,50 @@ function zoneTrip(z,walk=null) {
   const a=access?.[z.id]?.[0],target=customBase()&&walk?.h ? walk.h : a||z.parking?.[0]||z;
   return travelTo(target,{minutes:a?.minutes??z.drive_min,km:a?.km??z.drive_km});
 }
+function practicalTiming(z, d, walk = null) {
+  const trip = zoneTrip(z, walk);
+  let arrive;
+  if (state.target === 'funghi' || !walk?.t?.duration) {
+    arrive = timingAdvice({dateStr:d.date, lat:z.lat, lon:z.lon, crowd:d.crowd || {level:'basso'}}).arrive;
+  } else {
+    const [hours, minutes = 0] = String(walk.t.duration).split(':').map(Number);
+    const duration = hours * 60 + minutes;
+    const sunset = sunTimes(d.date, z.lat, z.lon).sunset;
+    arrive = new Date(sunset.getTime() - (Number.isFinite(duration) ? duration : 0) * 60000);
+  }
+  const departure = plannedDeparture(arrive, trip.minutes);
+  return {arrive, departure, available:recommendedStartAvailable({date:d.date, today:todayISO(), arrive, travelMinutes:trip.minutes})};
+}
+function syncAutomaticDates() {
+  if (!results || !zones?.length) return false;
+  const availableToday = bestOfDay(0, true);
+  let day = availableToday ? 0 : 1;
+  if (!availableToday) {
+    for (let o = 1; o <= AHEAD_DAYS; o++) if (bestOfDay(o)) { day = o; break; }
+  }
+  let changed = false;
+  if (!homeDateManual && state.homeDay !== day) {
+    state.homeDay = day; homeProposalKeys = []; changed = true;
+  }
+  if (!mapDateManual) {
+    const zone = zones.find(z => z.id === state.zoneId), today = zone && dayEntry(zone.id, 0);
+    const mapDay = today ? (practicalTiming(zone, today, walkFor(zone,today)).available ? 0 : 1) : day;
+    if (state.dayOffset !== mapDay) { state.dayOffset = mapDay; changed = true; }
+  }
+  return changed;
+}
+let planningDate = todayISO();
+function refreshPlanningClock() {
+  if (document.hidden || !results) return;
+  const nextDate = todayISO(), newDate = nextDate !== planningDate;
+  planningDate = nextDate;
+  if (newDate) homeProposalKeys = [];
+  if (syncAutomaticDates() || newDate) { renderAll(); renderFilterSummary(); }
+}
+setInterval(refreshPlanningClock, 60000);
+document.addEventListener('visibilitychange', refreshPlanningClock);
+addEventListener('focus', refreshPlanningClock);
+
 const compactTravel=t=>Number.isFinite(t.minutes)?`${t.minutes}<span class="fk2"> min</span><span class="fk3">′</span>`:`${fmtKm(t.airKm)} km <abbr title="In linea d’aria" aria-label="in linea d’aria">l.d.</abbr>`;
 function proximityMultiplier(z) {
   const t=zoneTrip(z),distance=customBase()?(t.km??t.airKm)/100:(t.minutes??0)/120;
@@ -605,7 +651,7 @@ function routeNow(r, nav) {
   state.view = r.view;
   if (r.zoneId) state.zoneId = r.zoneId;
   if (r.view === 'zona' || r.view === 'mappa') state.trailId = r.trailId || null;
-  if (r.view === 'zona') state.dayOffset = r.offset;
+  if (r.view === 'zona') { state.dayOffset = r.offset; mapDateManual = true; }
   document.querySelectorAll('[data-view]').forEach((v) => { v.hidden = v.dataset.view !== r.view; });
   const tab = r.tab;
   document.querySelectorAll('[data-tab]').forEach((t) => {
@@ -722,7 +768,7 @@ function restoreSeason() {
   state.interests=[validIntent(prev.target)];state.target=primaryInterest(state.interests);setActiveIds(Array.isArray(prev.ids)?new Set(prev.ids):null);
   state.seasonSuspended=null;state.seasonOverride=seasonKey();savePrefs();prepareCalendarFallback();if(series)compute();renderFilterSummary();renderAll();
 }
-function outdoorDate(o) {return todayISO(new Date(Date.now()+o*864e5));}
+function outdoorDate(o) {return calendarDate(todayISO(),o);}
 function outdoorDay(z,o) {const d=dayEntry(z.id,o);return {...d,date:d?.date||outdoorDate(o),best:null,perSpecies:[],score:null};}
 function outdoorDiscoveries(z,d,walk) {
   const models=hasInterest('piante')?plantModels.filter(m=>state.plantIds===null||state.plantIds.has(m.id)):plantModels;
@@ -736,7 +782,7 @@ function matchesInterests(z,d,walk) {
   if((hasInterest('passeggiata')||state.easyTrails||state.shortTrails)&&!walk)return false;
   return !hasInterest('piante')||state.plantIds===null||outdoorDiscoveries(z,d||{date:filterDate()},walk).some(i=>i.kind==='pianta');
 }
-function outdoorProposals(day=state.homeDay) {
+function outdoorProposals(day=state.homeDay, onlyUpcoming=false) {
   const list=[];
   for(const z of weatherZones||zones){
     for(const o of day==null?Array.from({length:AHEAD_DAYS+1},(_,i)=>i):[day]){
@@ -745,6 +791,7 @@ function outdoorProposals(day=state.homeDay) {
         const walk=walkContext(z,t,headsOf(z,t)),items=outdoorDiscoveries(z,d,walk),botanical=items.filter(i=>i.kind==='pianta');
         // An explicit botanical selection may have no compatible mapped trail.
         if(!matchesInterests(z,d,walk))continue;
+        if(o===0 && (onlyUpcoming || day==null) && !practicalTiming(z,d,walk).available)continue;
         list.push({z,d,o,walk,items,botanicalRank:Math.max(0,...botanical.map(i=>i.rank||0)),weatherRank:wxRank(z,d),minutes:zoneTrip(z,walk).minutes,crowd:d.crowd?.value??z.popularity,comfort:d.comfort?.value});
       }
     }
@@ -815,7 +862,7 @@ function outdoorPlantRail(list) {
   updateWeatherHTML($('#season'),plantRailHtml(items));
 }
 function renderOutdoorHome() {
-  let list=outdoorProposals();
+  let list=outdoorProposals(state.homeDay,!homeDateManual);
   if(weatherPainting&&homeProposalKeys.length){
     const held=homeProposalKeys.map(k=>list.find(c=>c.z.id===k.id)).filter(Boolean),seen=new Set(held.map(c=>c.z.id));
     list=[...held,...list.filter(c=>!seen.has(c.z.id))];
@@ -1035,12 +1082,13 @@ function paintWeatherView(changed=new Set(zones.map(z=>z.id))){
     const selected=state.view==='zona'?state.zoneId:sheetZone;
     if(changed.has(selected)&&weatherPanelOpen()){deferredWeatherView=true;weatherWork('Meteo ricevuto. La scheda si aggiorna alla chiusura del pannello.');return;}
   }
+  syncAutomaticDates();
   weatherPainting=true;
   try{
     if(state.view==='uscite'){renderDays();renderHome();}
     else if(state.view==='zona'&&changed.has(state.zoneId))keepWeatherReadingPosition(renderDetail);
     else if(state.view==='mappa'){
-      renderMapDays();renderMap(changed);renderLegend();
+      renderMapDays();renderFilterBox($('#map-filters'),true);renderMap(changed);renderLegend();
       if(sheetZone&&changed.has(sheetZone))keepWeatherReadingPosition(()=>sheetPoint?openPoint(sheetZone,currentSheetPoint()):openSheet(sheetZone));
     }
   }finally{weatherPainting=false;}
@@ -1192,7 +1240,8 @@ function compute(changed=null) {
 
 const dayEntry = (zid, offset) => {
   const r = results?.[zid];
-  return r?.days.find((d) => d.i === r.todayIndex + offset);
+  const date = outdoorDate(offset);
+  return r?.days.find(d => d.date === date);
 };
 // indice "opportunita'": l'indice di fruttificazione corretto con le preferenze attive
 // le stesse correzioni di adjusted(), una per una, per spiegarle
@@ -1366,17 +1415,19 @@ function renderEdiblePage(id, box=$('#edible-detail')) {
 
 function renderAll() {
   if (!results && state.view !== 'mappa') return;
+  syncAutomaticDates();
   if (state.view === 'uscite') { renderDays(); renderHome(); }
   if (state.view === 'zona') renderDetail();
   if (state.view === 'mappa') { renderMapDays(); renderFilterBox($('#map-filters'), true); renderMap(); renderLegend(); if (sheetZone) sheetPoint?openPoint(sheetZone,currentSheetPoint()):openSheet(sheetZone); }
 }
 
-function bestOfDay(o) {
-  if(state.target!=='funghi'){const c=outdoorProposals(o)[0];return c?{...c,s:null}:null;}
+function bestOfDay(o, onlyUpcoming=false) {
+  if(state.target!=='funghi'){const c=outdoorProposals(o, onlyUpcoming)[0];return c?{...c,s:null}:null;}
   let best = null;
   for (const z of zones) {
     const d = dayEntry(z.id, o);
     if (!d?.best||!matchesInterests(z,d,walkFor(z,d))) continue;
+    if(onlyUpcoming && o===0 && !practicalTiming(z,d,walkFor(z,d)).available)continue;
     const sc = adjusted(z, d.score, d);
     const rank = preferenceRank(z, sc, d) * wxRank(z, d) * communityRank(z.id, selectedCatalog().filter(s=>!botanicalById(s.id)).map(s=>s.id));
     if (!best || rank > best.rank) best = { s: sc, rank, z, d, o };
@@ -1411,7 +1462,7 @@ function dayChips(box, selected, onPick, { withAll = false } = {}) {
   };
   if (withAll) {
     // la settimana intera: intervallo di date e miglior indice del periodo
-    const bests = [...Array(AHEAD_DAYS + 1).keys()].map((o) => bestOfDay(o)).filter(Boolean);
+    const bests = [...Array(AHEAD_DAYS + 1).keys()].map((o) => bestOfDay(o, o === 0)).filter(Boolean);
     if (bests.length) {
       const d0 = bests[0].d.date, d1 = bests[bests.length - 1].d.date;
       const same = d0.slice(5, 7) === d1.slice(5, 7);
@@ -1446,7 +1497,7 @@ function dateChangeFeedback(calendar, content = '') {
 }
 
 function renderDays() {
-  dayChips($('#days'), state.homeDay, (o) => { if (o === state.homeDay) return; soft(() => { state.homeDay = o; checkSavedSeason(); renderAll(); dateChangeFeedback('#days [aria-selected="true"]', '#hero .cover-body, #hero .cover-index'); }); }, { withAll: true });
+  dayChips($('#days'), state.homeDay, (o) => { homeDateManual = true; if (o === state.homeDay) return; soft(() => { state.homeDay = o; checkSavedSeason(); renderAll(); dateChangeFeedback('#days [aria-selected="true"]', '#hero .cover-body, #hero .cover-index'); }); }, { withAll: true });
 }
 
 function combosList() {
@@ -1455,7 +1506,7 @@ function combosList() {
     for (let o = 0; o <= AHEAD_DAYS; o++) {
       if (state.homeDay != null && o !== state.homeDay) continue;
       const d = dayEntry(z.id, o);
-      if (d?.best) { const s = adjusted(z, d.score, d); combos.push({ z, o, d, s, r: preferenceRank(z, s, d) * wxRank(z, d) * communityRank(z.id, selectedCatalog().filter(s=>!botanicalById(s.id)).map(s=>s.id)) }); }
+      if (d?.best) { if(o===0 && (state.homeDay==null || !homeDateManual) && !practicalTiming(z,d,walkFor(z,d)).available)continue; const s = adjusted(z, d.score, d); combos.push({ z, o, d, s, r: preferenceRank(z, s, d) * wxRank(z, d) * communityRank(z.id, selectedCatalog().filter(s=>!botanicalById(s.id)).map(s=>s.id)) }); }
     }
   }
   const seenTrails = new Set(), list = [];
@@ -1668,7 +1719,7 @@ function renderHome() {
   for(const el of document.querySelectorAll('#hero,#ranking,#season'))el.dataset.glossaryContext=state.target==='piante'?'Piante':'Funghi';
   let list = combosList();
   if(weatherPainting&&homeProposalKeys.length){
-    const held=homeProposalKeys.map(k=>{const z=zones.find(z=>z.id===k.id),d=dayEntry(k.id,k.o);return z&&d?.best&&(!state.communityOnly||communityHasZone(z.id))?{z,d,o:k.o,s:adjusted(z,d.score,d),walk:walkFor(z,d,k.trail)}:null;}).filter(Boolean);
+    const held=homeProposalKeys.map(k=>{const z=zones.find(z=>z.id===k.id),d=dayEntry(k.id,k.o);return z&&d?.best&&(!state.communityOnly||communityHasZone(z.id))&&(k.o!==0||(homeDateManual&&state.homeDay===0)||practicalTiming(z,d,walkFor(z,d,k.trail)).available)?{z,d,o:k.o,s:adjusted(z,d.score,d),walk:walkFor(z,d,k.trail)}:null;}).filter(Boolean);
     // Una proposta per zona e per sentiero, come combosList: se il meteo nuovo sposta
     // il giorno migliore di una zona già mostrata, resta la proposta già letta.
     const usedZones=new Set(held.map(c=>c.z.id)),usedTrails=new Set(held.map(c=>c.walk&&String(c.walk.t.id)).filter(Boolean));
@@ -1695,7 +1746,7 @@ function renderHome() {
         <span class="cover-sp">${thumb(hero.d.best.species.id, 44)}<span><small>${hero.d.best.kind==='plant'?'Da osservare':'Da conoscere in questi boschi'}</small><span class="cover-sp-name"><b>${esc(hero.d.best.species.name)}</b>${Number.isFinite(hero.d.best.score) ? ` <span class="sp-also-score sp-main-score"><i aria-hidden="true" style="background:var(${scoreVar(hero.d.best.score).replace('--s', '--ps')})"></i><b class="pc">${formatIndex(hero.d.best.score)}</b></span>` : ''} ${reportBadge(hero.z.id, hero.d.best.species.id)}</span>
           <small>${hero.d.best.kind==='plant'?`Periodo indicativo: ${esc(hero.d.best.phaseLabel.toLowerCase())}`:`${intornoA(hero.d.best.band)} ${hero.d.best.band} m`}${hero.d.best.kind!=='plant' && pineHostUnsure(hero.z, hero.d.best.species, hero.d.best.band) ? ' · la carta non conferma i pini' : ''}</small></span></span>
         ${plantCoverHint(hero)}
-        <span class="facts" aria-label="L'uscita in breve">${t ? fact('clock', `<span class="fk">entro le </span><b>${fmtRough(t.arrive, 15, 'floor')}</b>`) : ''}${fact('car', `<span><b>${compactTravel(zoneTrip(hero.z,hero.walk))}</b></span>`)}${state.target==='funghi'&&hero.d.crowd ? `<span class="fact" title="${esc(crowdText(hero.d.crowd))}">${IC.people}<span class="fc">${crowdText(hero.d.crowd)}</span></span>` : ''}${w0 ? `<span class="fact wx-${w0.level}" title="${esc(w0.text)}">${wxi(w0)}<span class="fx">${esc(w0.level === 'ok' ? w0.main : (w0.short || w0.main))}</span></span>` : ''}</span>
+        <span class="facts" aria-label="L'uscita in breve">${t ? fact('clock', practicalTiming(hero.z,hero.d,hero.walk).available ? `<span class="fk">entro le </span><b>${fmtRough(t.arrive,15,'floor')}</b>` : '<b>Orario superato</b>') : ''}${fact('car', `<span><b>${compactTravel(zoneTrip(hero.z,hero.walk))}</b></span>`)}${state.target==='funghi'&&hero.d.crowd ? `<span class="fact" title="${esc(crowdText(hero.d.crowd))}">${IC.people}<span class="fc">${crowdText(hero.d.crowd)}</span></span>` : ''}${w0 ? `<span class="fact wx-${w0.level}" title="${esc(w0.text)}">${wxi(w0)}<span class="fx">${esc(w0.level === 'ok' ? w0.main : (w0.short || w0.main))}</span></span>` : ''}</span>
         ${note}
         <span class="cover-cta" aria-hidden="true">Dai uno sguardo <span>→</span></span>`})}`;
   if(weatherPainting)updateWeatherHTML(box,heroHTML);else box.innerHTML=heroHTML;
@@ -1787,7 +1838,7 @@ function renderMapDays() {
   const box = $('#map-days');
   const html = Array.from({length:AHEAD_DAYS+1}, (_,o) => { const date = outdoorDate(o); return `<button type="button" class="day" role="tab" data-day-offset="${o}" aria-selected="${o === state.dayOffset}" aria-label="${esc(fmtDate(date,{weekday:'long',day:'numeric',month:'long'}))}"><span class="d1">${o===0?'Oggi':o===1?'Domani':esc(fmtDate(date,{weekday:'long'}))}</span><span class="d2">${esc(fmtDate(date,{day:'numeric'}))}</span></button>`; }).join('');
   if (box.innerHTML !== html) box.innerHTML = html;
-  box.querySelectorAll('[data-day-offset]').forEach(b => b.onclick = () => { if(state.dayOffset===Number(b.dataset.dayOffset))return;state.dayOffset=Number(b.dataset.dayOffset);checkSavedSeason();$('.map-top').classList.remove('days-open');renderAll();renderFilterSummary();dateChangeFeedback('#map-filters [data-days]', '#map-results');$('#map-filters [data-days]')?.focus({preventScroll:true}); });
+  box.querySelectorAll('[data-day-offset]').forEach(b => b.onclick = () => { mapDateManual=true;if(state.dayOffset===Number(b.dataset.dayOffset))return;state.dayOffset=Number(b.dataset.dayOffset);checkSavedSeason();$('.map-top').classList.remove('days-open');renderAll();renderFilterSummary();dateChangeFeedback('#map-filters [data-days]', '#map-results');$('#map-filters [data-days]')?.focus({preventScroll:true}); });
 }
 // riquadro della zona aperto: su telefono la barra delle sezioni si toglie di mezzo (come fa Google Maps)
 new MutationObserver(() => document.documentElement.classList.toggle('map-sheet-open', !$('#map-sheet')?.hidden))
@@ -2534,7 +2585,7 @@ function essentialSections(z, d, walk) {
       (() => { const more = d.perSpecies.slice(1, 3).map((p) => [p, spScore(z, d, p)]).filter(([, sc]) => sc >= 20); return more.length ? `<span class="ent-chips">${more.map(([p, sc]) => `<a class="ent-chip" href="${p.species.kind==='plant'?p.species.href:'#/specie/'+encodeURIComponent(p.species.id)}">${thumb(p.species.id,28)}<span>${esc(p.species.name)}</span>${idxDot(sc)}</a>`).join('')}</span>` : ''; })()].filter(Boolean).join('') || esc(best.species.latin) });
   if (d.crowd &&state.target==='funghi') {
     const t = timingAdvice({ dateStr: d.date, lat: z.lat, lon: z.lon, crowd: d.crowd });
-    rows.push({ sec: 'quando', icon: 'when', k: 'Quando', v: `<span>Arriva <b>entro le ${fmtRough(t.arrive, 15, 'floor')}</b></span><span class="badge crowd-${d.crowd.level}">${crowdText(d.crowd)}</span>` });
+    rows.push({ sec: 'quando', icon: 'when', k: 'Quando', v: `<span>${practicalTiming(z,d,walk).available?`Arriva <b>entro le ${fmtRough(t.arrive,15,'floor')}</b>`:'<b>Orario consigliato superato</b>'}</span><span class="badge crowd-${d.crowd.level}">${crowdText(d.crowd)}</span>` });
   }
   const w=wxOf(z,d);
   if(w){
@@ -2608,7 +2659,7 @@ $('#detail')?.addEventListener('click', (e) => {
     const o = +day.dataset.dayOffset, c = detailCtx;
     if (!c || o === state.dayOffset) return;
     history.replaceState(null, '', walkHref(c.z, o, state.trailId ? c.walk?.t : null));
-    state.dayOffset = o; detailAnimate = true;
+    mapDateManual = true; state.dayOffset = o; detailAnimate = true;
     try { renderDetail(); dateChangeFeedback('#zone-days [aria-selected="true"]'); } finally { detailAnimate = false; }
     return;
   }
@@ -2804,7 +2855,7 @@ function renderHuman(z, d) {
   let alt = null;
   for (let o = 0; o <= AHEAD_DAYS; o++) {
     const x = dayEntry(z.id, o);
-    if (!x?.crowd || x.date === d.date) continue;
+    if (!x?.crowd || x.date === d.date || !practicalTiming(z,x,walkFor(z,x)).available) continue;
     if (x.crowd.value < d.crowd.value - 0.15 && x.score >= d.score - 10 && (!alt || x.score > alt.score)) alt = x;
   }
   const tips = [];
@@ -2812,10 +2863,12 @@ function renderHuman(z, d) {
   else if (d.crowd.goodDays >= 3) tips.push(`Indice favorevole da ${d.crowd.goodDays} giorni: possibile maggiore affluenza.`);
   if ((series[z.id][bandIndex(z, d.best.band)].p[d.i] ?? 0) >= 5) tips.push('Pioggia prevista: attrezzati e verifica il fondo.');
   const minutes=zoneTrip(z,walkFor(z,d,state.trailId)).minutes;
-  const departure=Number.isFinite(minutes)?fmtRough(new Date(t.arrive.getTime()-(minutes+10)*6e4),15,'floor'):null;
+  const planned=plannedDeparture(t.arrive,minutes), available=practicalTiming(z,d,walkFor(z,d,state.trailId)).available;
+  const departure=planned?fmtTime(planned):null;
   return `<div class="human timing-layout">
+    ${!available?`<p class="notice">L’orario consigliato è passato. Puoi consultare le condizioni di oggi oppure <a href="${walkHref(z,1,state.trailId)}">vedere domani</a>.</p>`:''}
     <dl class="timing-facts">
-      <div><dt>Partenza · ${esc(currentBase().name)}</dt><dd>${departure?`verso le <b>${departure}</b>`:'Verifica nel navigatore'}</dd></div>
+      <div><dt>Partenza · ${esc(currentBase().name)}</dt><dd>${departure?`${available?'verso le':'era verso le'} <b>${departure}</b>`:'Verifica nel navigatore'}</dd></div>
       <div><dt>Alba</dt><dd>verso le <b>${fmtRough(t.sunrise,5)}</b></dd></div>
       <div><dt>Orario consentito di raccolta</dt><dd><b>${fmtRough(t.legal,5,'ceil')}–${fmtRough(t.end,5,'floor')}</b></dd></div>
     </dl>

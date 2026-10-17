@@ -3,7 +3,8 @@ const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;',
 
 export function mapQuery({ interests, day, count }) {
   const label = interests.length ? interests.join(' + ') : 'Esplora le zone';
-  return `<button type="button" class="map-query" data-more aria-haspopup="dialog" aria-label="Filtri della mappa: ${esc(label)}${count ? `, ${count} filtri attivi` : ''}"><span class="map-query-copy"><small>Alla ricerca di…</small><b>${esc(label)}</b></span>${count ? `<span class="map-filter-count">${count}</span>` : ''}<span class="ui-icon ui-icon-chevron-right" aria-hidden="true"></span></button><button type="button" class="map-date" data-days aria-expanded="false" aria-controls="map-days" aria-label="Cambia giorno: ${esc(day)}">${esc(day)}<svg class="map-date-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>`;
+  const date = `<button type="button" class="map-date" data-days aria-expanded="false" aria-controls="map-days" aria-label="Cambia giorno: ${esc(day)}">${esc(day)}<svg class="map-date-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>`;
+  return `${date}<button type="button" class="map-query" data-more aria-haspopup="dialog" aria-label="Filtri della mappa: ${esc(label)}${count ? `, ${count} filtri attivi` : ''}"><span class="map-query-copy"><small>Filtri${count ? ` · ${count} attivi` : ''}</small><b>${esc(label)}</b></span><svg class="map-query-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="M3 7h5m4 0h9M3 17h9m4 0h5"/><circle cx="10" cy="7" r="2"/><circle cx="14" cy="17" r="2"/></svg></button>`;
 }
 
 export function mountMapResults(root, { choose, fit, filters }) {
