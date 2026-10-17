@@ -396,3 +396,19 @@ body[data-page="mappa"] .view-map { border-radius:0; }
 .fungus-compare .cmp-shape-art { flex:0 0 44px; width:44px; height:44px; align-items:center; justify-content:center; }
 .fungus-compare .cmp-shape-art img { display:block; width:44px; height:44px; object-fit:contain; }
 .fungus-compare .cmp-shape-art svg { width:40px; max-width:40px; height:40px; }
+
+/* Varianti del solo disegno: due controlli compatti nelle colonne del confronto. */
+.fungus-compare .cmp-variant-controls:empty { display:none; }
+.fungus-compare .cmp-variant-controls { margin:8px 0 16px; }
+.fungus-compare .cmp-variant-fields { display:grid; gap:8px; }
+.fungus-compare .cmp-variant-fields label { display:grid; gap:4px; min-width:0; margin:0; color:var(--text-2); font:600 12px/1.4 var(--font-body); }
+.fungus-compare .cmp-variant-fields select { width:100%; min-width:0; min-height:44px; padding:8px 24px 8px 9px; margin:0; border:1px solid var(--border); border-radius:9px; background-color:var(--surface-2); color:var(--text); font:500 13px/1.4 var(--font-body); }
+.fungus-compare .cmp-variant-fields select:focus-visible { outline:2px solid var(--focus); outline-offset:2px; }
+.fungus-compare .cmp-variant-status { display:block; margin-top:8px; color:var(--text-2); font:400 12px/1.5 var(--font-body); }
+.fungus-compare .cmp-variant-status:empty { display:none; }
+@supports(grid-template-rows:subgrid) {
+  .fungus-compare .cmp-row[data-trait="cap_color"]:has(.cmp-variant-fields) > .cmp-cell { display:grid; grid-template-rows:subgrid; grid-row:span 3; row-gap:0; }
+  .fungus-compare .cmp-row[data-trait="cap_color"]:has(.cmp-variant-fields) > .cmp-cell > .cmp-part-art { grid-row:1; }
+  .fungus-compare .cmp-row[data-trait="cap_color"]:has(.cmp-variant-fields) > .cmp-cell > .cmp-variant-controls { grid-row:2; }
+  .fungus-compare .cmp-row[data-trait="cap_color"]:has(.cmp-variant-fields) > .cmp-cell > .cmp-vals { grid-row:3; align-self:start; }
+}

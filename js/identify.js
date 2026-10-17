@@ -198,7 +198,69 @@ function comparisonIllustration(key, part, shape) {
   }
   return illus(key, part);
 }
+const comparisonVariants = new Map();
+function comparisonVariantState(key) {
+  if (!comparisonVariants.has(key)) {
+    const record = ICONS?.[key];
+    comparisonVariants.set(key, {color:record?.colors?.drawn || record?.base?.colore, shape:record?.shapes?.drawn || record?.base?.forma});
+  }
+  return comparisonVariants.get(key);
+}
+function comparisonControls(t, preview=false) {
+  const record = ICONS?.[t.key];
+  if (!record) return '';
+  const chosen = comparisonVariantState(t.key);
+  const fields = [['color','colors','cap_color','Colore'],['shape','shapes','cap_shape','Forma']].map(([key,field,trait,label]) => {
+    const values = (record[field]?.values || []).filter(v => [].concat(t.traits?.[trait] || []).includes(v));
+    if (values.length < 2) return '';
+    return `<label><span>${label} del disegno</span><select data-cmp-variant="${key}" data-cmp-variant-key="${esc(t.key)}" aria-label="${label} del disegno: ${esc(t.name||t.latin)}">${values.map(v=>`<option value="${esc(v)}"${chosen[key]===v?' selected':''}>${esc(optLabel(QK(trait),v))}</option>`).join('')}</select></label>`;
+  }).join('');
+  if (!fields) return '';
+  return `${preview?`<span class="cmp-part-art" data-cmp-ill-key="${esc(t.key)}" data-cmp-ill-part="cappello" aria-hidden="true">${comparisonIllustration(t.key,'cappello')}</span>`:''}<div class="cmp-variant-fields">${fields}</div><span class="cmp-variant-status" role="status"></span>`;
+}
+function updateComparisonVariant(control, gallery) {
+  const key = control.dataset.cmpVariantKey, record = ICONS?.[key];
+  if (!record) return;
+  const chosen = comparisonVariantState(key);
+  chosen[control.dataset.cmpVariant] = control.value;
+  const c0 = record.colors?.drawn || record.base?.colore, f0 = record.shapes?.drawn || record.base?.forma;
+  const c = chosen.color, f = chosen.shape;
+  let suffix = '', missing = false;
+  if (c && f && c!==c0 && f!==f0) {
+    if (record.combos?.includes(`${c}|${f}`)) suffix = `-${c}-${f}`;
+    else { suffix = `-${f}`; missing = true; }
+  } else if (c && c!==c0) suffix = `-${c}`;
+  else if (f && f!==f0) suffix = `-${f}`;
+  const controls = [...gallery.querySelectorAll('[data-cmp-controls]')].filter(el=>el.dataset.cmpControls===key);
+  for (const group of controls) {
+    group.querySelectorAll('select').forEach(select=>select.value=chosen[select.dataset.cmpVariant]);
+    group.querySelector('.cmp-variant-status').textContent = missing ? 'Questa combinazione non è disegnata: la forma è mostrata nel colore di base.' : '';
+  }
+  gallery.querySelectorAll('[data-cmp-ill-key]').forEach(slot=>{
+    const part = slot.dataset.cmpIllPart;
+    if (slot.dataset.cmpIllKey!==key || slot.dataset.cmpIllValue || !['cappello','gambo'].includes(part)) return;
+    const image = slot.querySelector('img');
+    if (!image) return;
+    const url = ASSET(`assets/traits/${key}-${part}${suffix}.webp`);
+    slot.dataset.variantWanted = url;
+    if (image.getAttribute('src')===url) return;
+    const pre = new Image(); pre.src = url;
+    pre.decode().then(()=>{
+      if (!slot.isConnected || slot.dataset.variantWanted!==url) return;
+      image.src = url;
+      if (!matchMedia('(prefers-reduced-motion: reduce)').matches) image.animate?.([{opacity:.35},{opacity:1}],{duration:180,easing:'ease-out'});
+    }).catch(()=>{
+      if (slot.dataset.variantWanted!==url) return;
+      for (const group of controls) group.querySelector('.cmp-variant-status').textContent = 'Disegno non disponibile. Resta visibile l’ultima immagine caricata.';
+    });
+  });
+}
 function refreshComparisonParts() {
+  document.querySelectorAll('[data-cmp-controls]').forEach(slot=>{
+    if (slot.firstElementChild) return;
+    const t = TAXA.find(t=>t.key===slot.dataset.cmpControls);
+    if (t) slot.innerHTML = comparisonControls(t,slot.dataset.cmpPreview==='1');
+  });
   document.querySelectorAll('[data-cmp-ill-key]').forEach(slot => {
     if (slot.querySelector('img')) return;
     const image = comparisonIllustration(slot.dataset.cmpIllKey, slot.dataset.cmpIllPart, slot.dataset.cmpIllValue);
@@ -784,6 +846,7 @@ const CMP = [
   { key: 'season', k: 'Stagione', info: true },
 ];
 function cmpRows(ref, t) {
+  const hasColorRow = ref.traits?.cap_color?.length && t.traits?.cap_color?.length;
   return CMP.map((r) => {
     const a = r.get ? r.get(ref) : ref.traits?.[r.key], b = r.get ? r.get(t) : t.traits?.[r.key];
     if (a == null || b == null || (Array.isArray(a) && !a.length) || (Array.isArray(b) && !b.length)) return null;
@@ -800,7 +863,7 @@ function cmpRows(ref, t) {
     const illustration = who => CMP_PARTS[r.key] ? `<span class="cmp-part-art" data-cmp-ill-key="${esc(who.key)}" data-cmp-ill-part="${CMP_PARTS[r.key]}" aria-hidden="true">${ICONS?.[who.key] ? illus(who.key,CMP_PARTS[r.key]) : ''}</span>` : '';
     const cell = (X, Y, who) => r.key === 'season'
       ? `<div class="cmp-cell" role="group" aria-label="${esc(who.name||who.latin)}"><span>${esc(txt(X))}</span></div>`
-      : `<div class="cmp-cell${['hymenophore','stem_ring','stem_volva','stem_reticulum','stem_base','gill_attachment','cap_size'].includes(r.key)?' cmp-cell-miniature':''}" role="group" aria-label="${esc(who.name||who.latin)}">${r.label ? `<span class="cmp-k">${esc(r.label(who))}</span>` : ''}${illustration(who)}<ul class="cmp-vals">${[...A.filter((v) => Y.includes(v) && X.includes(v)), ...X.filter((v) => !Y.includes(v))].map(v => value(v, who, !differentStructure && Y.includes(v))).join('')}</ul></div>`;
+      : `<div class="cmp-cell${['hymenophore','stem_ring','stem_volva','stem_reticulum','stem_base','gill_attachment','cap_size'].includes(r.key)?' cmp-cell-miniature':''}" role="group" aria-label="${esc(who.name||who.latin)}">${r.label ? `<span class="cmp-k">${esc(r.label(who))}</span>` : ''}${illustration(who)}${r.key==='cap_color'||r.key==='cap_shape'&&!hasColorRow?`<div class="cmp-variant-controls" data-cmp-controls="${esc(who.key)}" data-cmp-preview="${r.key==='cap_shape'?'1':'0'}">${comparisonControls(who,r.key==='cap_shape')}</div>`:''}<ul class="cmp-vals">${[...A.filter((v) => Y.includes(v) && X.includes(v)), ...X.filter((v) => !Y.includes(v))].map(v => value(v, who, !differentStructure && Y.includes(v))).join('')}</ul></div>`;
     return { kind, info:!!r.info, k: r.k, html: `<li class="cmp-row ${kind}" data-trait="${r.key}">${r.label ? '' : `<span class="cmp-k">${esc(r.k)}</span>`}${cell(A, B, ref)}${cell(B, A, t)}</li>` };
   }).filter(Boolean);
 }
@@ -808,6 +871,7 @@ function cmpRows(ref, t) {
 let disposeCompareHeader = () => {};
 function renderCompare(box, ref, pick) {
   disposeCompareHeader();
+  comparisonVariants.clear();
   // fungo fisso a sinistra: un commestibile con i suoi sosia, oppure un velenoso con i commestibili con cui si confonde
   const fromToxic = !!ref.lookalike_of?.length;
   const list = sosiaOf(ref);
@@ -851,6 +915,10 @@ function renderCompare(box, ref, pick) {
     <p><a class="btn primary" href="#/riconosci">Confronta un altro fungo</a></p>`;
 
   const track = box.querySelector('.cmp-track'), chips = [...box.querySelectorAll('[data-go]')];
+  track.addEventListener('change', event => {
+    const control = event.target.closest('select[data-cmp-variant]');
+    if (control) updateComparisonVariant(control,track);
+  });
   const mark = (i) => {
     chips.forEach(c => c.setAttribute('aria-pressed', String(Number(c.dataset.go) === i)));
     const currentName = box.querySelector('[data-current-lookalike]');
@@ -962,7 +1030,7 @@ function renderCompare(box, ref, pick) {
   // Il gesto sceglie il sosia successivo: non trascina la coppia su un binario.
   let swipe;
   track.addEventListener('pointerdown', event => {
-    swipe = event.pointerType !== 'mouse' && !event.target.closest('button,a,input,summary')
+    swipe = event.pointerType !== 'mouse' && !event.target.closest('button,a,input,select,textarea,label,summary')
       ? {id:event.pointerId,x:event.clientX,y:event.clientY} : null;
   });
   track.addEventListener('pointercancel', () => { swipe = null; });
