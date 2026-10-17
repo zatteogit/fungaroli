@@ -1,6 +1,7 @@
 import { initCommunity, communityReady, currentUser } from './community.js';
 import './images.js';
 import { CONTENT_RESOURCES, CONTENT_TEMPLATES, FIELD_LABELS, isLockedField } from './content-schema.js';
+import { SURVEY_ID, SURVEY_ENDPOINT } from './survey-schema.js';
 
 const $=s=>document.querySelector(s);
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -24,7 +25,7 @@ async function access() {
     if(!allowed){$('#cms-access-status').textContent=`Il profilo ${actor.name} non ha ancora un ruolo di redazione. Il tuo ID è ${actor.id}.`;return;}
     const role={admin:'Amministratore',editor:'Editor'}[actor.role]||'Redazione';
     $('#cms-identity').textContent=`${actor.name} · ${role} · accesso con passkey`;
-    $('#cms-agents').hidden=!can('admin');
+    $('#cms-agents').hidden=!can('admin');$('#cms-survey').hidden=!can('admin');
     await refreshItems();
     if(!doc)await openItem(items.find(i=>!i.readonly)?.id);
   }catch(e){if(n!==opening)return;$('#cms-workspace').hidden=true;$('#cms-access').hidden=false;$('#cms-access-status').textContent=e.status===401?'Accedi con il pulsante in alto.':e.message;}
@@ -168,6 +169,56 @@ $('#cms-token-form').onsubmit=async e=>{
   try{const r=await api('tokens','POST',{name:form.elements.name.value,days:Number(form.elements.days.value),scopes:['read',...Array.from(form.querySelectorAll('[name=scope]:checked:not(:disabled)'),el=>el.value)],resources:Array.from(form.querySelectorAll('[name=resource]:checked'),el=>el.value)});$('#cms-token-result').innerHTML='<p>Conserva questa chiave: non sarà mostrata di nuovo.</p>';const code=document.createElement('div');code.className='cms-token-code';code.textContent=r.token;$('#cms-token-result').append(code);await tokens();}catch(err){$('#cms-token-result').textContent=err.message;}finally{b.disabled=false;}
 };
 $('#cms-token-list').onclick=async e=>{const b=e.target.closest('[data-revoke]');if(b){try{await api('tokens/'+b.dataset.revoke,'DELETE');await tokens();}catch(err){$('#cms-token-result').textContent=err.message;}}};
+// Risposte al questionario (/questionario): conteggio, esportazione e cancellazione su richiesta.
+// Solo amministratori: il server (worker/survey.js) ricontrolla sessione e ruolo a ogni richiesta.
+const surveyUrl=q=>`${SURVEY_ENDPOINT}?survey=${encodeURIComponent(SURVEY_ID)}${q}`;
+async function surveyApi(url,method='GET'){
+  const r=await fetch(url,{method,credentials:'same-origin',cache:'no-store'});
+  if(!r.ok){const out=await r.json().catch(()=>({}));throw Object.assign(new Error(out.error||'Richiesta non riuscita.'),{status:r.status});}
+  return r;
+}
+const surveyWhen=iso=>new Date(iso).toLocaleString('it-IT',{dateStyle:'long',timeStyle:'short'});
+function surveyNote(text,error=false){const el=$('#cms-survey-count');el.textContent=text;el.classList.toggle('error',error);}
+async function surveyCount(){
+  surveyNote('Conto le risposte…');
+  // format=count: solo numero e data dell'ultima, senza scaricare le risposte (né nomi né contatti)
+  try{const r=await(await surveyApi(surveyUrl('&format=count'))).json();
+    surveyNote(r.count?`${r.count===1?'Una risposta':`${r.count} risposte`}. L’ultima è arrivata il ${surveyWhen(r.lastAt)}.`:'Nessuna risposta per ora.');}
+  catch(e){surveyNote(e.message,true);}
+}
+function surveyRow(x){
+  const row=document.createElement('div');row.className='cms-survey-row';
+  const info=document.createElement('p');info.textContent=`Ricevuta ${x.receipt} · arrivata il ${surveyWhen(x.createdAt)} · ${x.name?`nome: ${x.name}`:'senza nome'}${x.contact?' · con contatto':''}.`;
+  const err=document.createElement('p');err.className='small';
+  const del=document.createElement('button');del.type='button';del.className='btn ghost';del.textContent='Cancella questa risposta';
+  del.onclick=async()=>{
+    if(del.dataset.confirm!=='1'){del.dataset.confirm='1';del.textContent='Conferma: cancella per sempre';err.textContent='La cancellazione non si può annullare.';return;}
+    del.disabled=true;
+    try{await surveyApi(`${SURVEY_ENDPOINT}/${encodeURIComponent(x.id)}`,'DELETE');const done=document.createElement('p');done.textContent=`Risposta ${x.receipt} cancellata. Puoi confermarlo a chi l’ha chiesto.`;row.replaceChildren(done);surveyCount();}
+    catch(e){del.disabled=false;err.textContent=e.message;}
+  };
+  row.append(info,del,err);return row;
+}
+$('#cms-survey').onclick=()=>{$('#cms-survey-result').textContent='';$('#cms-survey-find').reset();$('#cms-survey-dialog').showModal();surveyCount();};
+$('#cms-survey-dialog [data-close]').onclick=()=>$('#cms-survey-dialog').close();
+$('#cms-survey-dialog').addEventListener('click',async e=>{
+  const b=e.target.closest('[data-survey-download]');if(!b)return;
+  // csv-excel: separatore «;» per Excel in italiano (&sep=semicolon); csv: virgola (RFC 4180); json: dati esatti.
+  const kind=b.dataset.surveyDownload,format=kind==='json'?'json':'csv',excel=kind==='csv-excel';b.disabled=true;
+  try{
+    const blob=await(await surveyApi(surveyUrl('&format='+format+(excel?'&sep=semicolon':'')))).blob();
+    const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=`questionario-${SURVEY_ID}-${new Date().toISOString().slice(0,10)}${excel?'-excel':''}.${format}`;
+    document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),1000);
+  }catch(err){surveyNote(err.message,true);}finally{b.disabled=false;}
+});
+$('#cms-survey-find').onsubmit=async e=>{
+  e.preventDefault();const box=$('#cms-survey-result');box.textContent='Cerco la risposta…';
+  try{
+    const r=await(await surveyApi(surveyUrl('&format=json&receipt='+encodeURIComponent(e.currentTarget.elements.receipt.value)))).json();
+    if(!r.responses.length){box.textContent='Nessuna risposta con questo codice: forse è già stata cancellata.';return;}
+    box.replaceChildren(...r.responses.map(surveyRow));
+  }catch(err){box.textContent=err.message;}
+};
 addEventListener('beforeunload',e=>{if(dirty){e.preventDefault();e.returnValue='';}});
 document.addEventListener('fungaroli:community',()=>{if(currentUser()?.id!==actor?.id){doc=null;dirty=false;editor.textContent='';access();}});
 initCommunity({zoneList:[]});await communityReady();await access();

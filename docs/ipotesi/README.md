@@ -13,8 +13,9 @@ Il ramo di produzione e i documenti in `docs/` fanno fede. Ciò che sta solo in 
 
 ## Registro
 
-| Lavoro | Dove | Stato (16/10/2026) |
-|---|---|---|
+| Lavoro | Dove | Stato (17/10/2026) |
+|---|---|
+| Questionario per cercatori esperti del Reatino | Recupero dalla sessione Claude, ramo `codex/questionario-esperti` | **Valutato e approvato** da Matteo il 17/10; quattro scelte applicate. [Valutazione](valutazione-questionario-esperti.md) |
 | Pacchetto di ricerca «modello micologico v3» (Codex): covariate, logistica con calibrazione, schema delle uscite, audit delle fonti e dei porcini tedeschi | ramo `codex/fronda-modello-micologico-v3`, commit `4465d2f` | **Valutato**: banco di prova ben costruito, senza modello addestrato né dati. Non si unisce così com'è. Da correggere prima dell'uso (dominio congiunto, meteo previsto, minimi di dati, licenze). [Valutazione](valutazione-modello-v3.md) |
 | Documento «Fronda 3.0»: modello a due stadi, trovabilità in percentuale, penalità del vento, tabella delle specie | ramo `claude/ricerca-modello-micologico`, commit `8c0ba55`, `docs/ricerca-modello-micologico-italia.md` | **Valutato, non adottabile**: citazioni inesistenti o sbagliate, soglie senza fonte, percentuali senza coefficienti. Restano idee da misurare: P−ET₀, pioggia massima, fine stagione guidata dalla temperatura. [Valutazione](valutazione-modello-v3.md), sezione 3.2 |
 | Prima integrazione proposta dalla valutazione: archivio delle previsioni, piano con 60 giorni di ingressi, protocollo d'uscita, etichette separate, prova offline sui porcini tedeschi | — | **Decisa** il 16/10 (D1–D4, sezione 9 della valutazione). Da costruire. L'indice non cambia. |

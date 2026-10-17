@@ -25,6 +25,8 @@ async function api(page,path,method='GET',data,headers={}) {
   return page.evaluate(async({path,method,data,headers})=>{const r=await fetch(path,{method,cache:'no-store',headers:{...(data===undefined?{}:{'content-type':'application/json'}),...headers},body:data===undefined?undefined:JSON.stringify(data)});return{status:r.status,data:await r.json()};},{path,method,data,headers});
 }
 const cms=(page,path,method='GET',data,headers)=>api(page,'/api/cms/v1/'+path,method,data,headers);
+// CSV con virgolette (RFC 4180), separatore a scelta: per leggere le esportazioni del questionario.
+function parseCsv(text,sep){const rows=[];let row=[],cell='',quoted=false;for(let i=0;i<text.length;i++){const c=text[i];if(quoted){if(c==='"'&&text[i+1]==='"'){cell+='"';i++;}else if(c==='"')quoted=false;else cell+=c;}else if(c==='"')quoted=true;else if(c===sep){row.push(cell);cell='';}else if(c==='\r'&&text[i+1]==='\n'){row.push(cell);rows.push(row);row=[];cell='';i++;}else cell+=c;}if(cell||row.length){row.push(cell);rows.push(row);}return rows;}
 
 test('ruoli del profilo: utente, editor delle bozze e amministratore',async({browser})=>{
   for(const[id,role,label]of[['cms-test-reader','member','Utente'],['cms-test-editor','editor','Editor'],['cms-test-admin','admin','Amministratore']]){
@@ -68,7 +70,7 @@ test('ruoli del profilo: utente, editor delle bozze e amministratore',async({bro
     }
     if(role==='editor'){
       await page.goto('/redazione');await expect(page.locator('#cms-workspace')).toBeVisible();await expect(page.locator('#cms-identity')).toContainText('Editor');
-      await expect(page.locator('[data-save]')).toBeEnabled();await expect(page.locator('[data-publish]')).toBeDisabled();await expect(page.locator('#cms-agents')).toBeHidden();
+      await expect(page.locator('[data-save]')).toBeEnabled();await expect(page.locator('[data-publish]')).toBeDisabled();await expect(page.locator('#cms-agents')).toBeHidden();await expect(page.locator('#cms-survey')).toBeHidden();
       await page.locator('[data-resource="species-traits"]').click();await expect(page.locator('[data-reviewed]')).toHaveCount(0);
     }
     expect(errors).toEqual([]);await context.close();
@@ -89,6 +91,37 @@ test('redazione, bozze, pubblicazione, conflitti, agenti e catalogo condiviso',a
   await expect(page.locator('#cms-workspace')).toBeVisible();
   await expect(page.locator('[data-profile-label]')).toHaveText('Matteo');
   await expect(page.locator('[data-resource]')).toHaveCount(21);
+  // Risposte al questionario: pannello solo per gli amministratori (conteggio, esportazione, ricerca e cancellazione per ricevuta).
+  // Una risposta vera, inviata dalla stessa origine come fa la pagina /questionario, con un testo che sembra una formula.
+  const sent=await api(page,'/api/survey/v1/responses','POST',{survey:'esperti-reatino',version:1,website:'',respondent:{name:'Prova redazione'},consent:{anonymousUse:true,recontact:false,diary:false},answers:{profile:{years:30},risks:{knowsPoisonings:'sì',poisonings:'=SOMMA(1;2), -3'}}});
+  expect(sent.status).toBe(201);const receipt=sent.data.receipt;
+  const surveyGets=[];page.on('request',r=>{if(r.url().includes('/api/survey/v1/responses?'))surveyGets.push(new URL(r.url()).searchParams.get('format'));});
+  await page.locator('#cms-survey').click();const survey=page.locator('#cms-survey-dialog');await expect(survey).toBeVisible();
+  await expect(survey.locator('#cms-survey-count')).toContainText(/rispost[ae]\. L’ultima è arrivata il /);
+  // il conteggio non scarica le risposte (format=count): nomi e contatti restano sul server finché non si esporta
+  expect(surveyGets).toEqual(['count']);
+  const fs=await import('node:fs');
+  const download=async name=>{const d=page.waitForEvent('download');await survey.getByRole('button',{name,exact:true}).click();const file=await d;return{name:file.suggestedFilename(),text:fs.readFileSync(await file.path(),'utf8')};};
+  const comma=await download('CSV con la virgola'),excel=await download('CSV per Excel');
+  expect(comma.name).toMatch(/^questionario-esperti-reatino-\d{4}-\d{2}-\d{2}\.csv$/);expect(excel.name).toMatch(/^questionario-esperti-reatino-\d{4}-\d{2}-\d{2}-excel\.csv$/);
+  expect(comma.text.startsWith('\uFEFFid,created_at,survey,')).toBe(true);expect(excel.text.startsWith('\uFEFFid;created_at;survey;')).toBe(true);
+  // stesse colonne con i due separatori; l'apostrofo contro le formule a inizio cella, e nel file per Excel anche dopo la virgola
+  const [hc,...rc]=parseCsv(comma.text.slice(1),','),[hx,...rx]=parseCsv(excel.text.slice(1),';');expect(hx).toEqual(hc);
+  const row=(rows,head)=>rows.find(r=>r[head.indexOf('receipt')]===receipt),rowC=row(rc,hc),rowX=row(rx,hx);
+  expect(rowC).toHaveLength(hc.length);expect(rowX).toHaveLength(hx.length);
+  expect(rowC[hc.indexOf('name')]).toBe('Prova redazione');expect(rowX[hx.indexOf('name')]).toBe('Prova redazione');
+  expect(rowC[hc.indexOf('risks.poisonings.text')]).toBe("'=SOMMA(1;2), -3");expect(rowX[hx.indexOf('risks.poisonings.text')]).toBe("'=SOMMA(1;2),' -3");
+  expect(rowX[hx.indexOf('risks.knowsPoisonings')]).toBe('sì');
+  // richiesta di cancellazione: il codice si trova anche in minuscolo e con il trattino, si cancella dopo una conferma
+  const find=async code=>{await survey.getByLabel('Richiesta di cancellazione: codice ricevuta').fill(code);await survey.getByRole('button',{name:'Cerca la risposta'}).click();};
+  await find(`${receipt.slice(0,4)}-${receipt.slice(4)}`.toLowerCase());
+  const result=survey.locator('#cms-survey-result');await expect(result).toContainText(`Ricevuta ${receipt}`);await expect(result).toContainText('nome: Prova redazione');
+  await result.getByRole('button',{name:'Cancella questa risposta'}).click();await expect(result).toContainText('La cancellazione non si può annullare.');
+  expect((await api(page,`/api/survey/v1/responses?survey=esperti-reatino&format=json&receipt=${receipt}`)).data.count).toBe(1);
+  await result.getByRole('button',{name:'Conferma: cancella per sempre'}).click();await expect(result).toContainText(`Risposta ${receipt} cancellata.`);
+  expect((await api(page,`/api/survey/v1/responses?survey=esperti-reatino&format=json&receipt=${receipt}`)).data.count).toBe(0);
+  await find(receipt);await expect(result).toContainText('Nessuna risposta con questo codice');
+  await survey.locator('[data-close]').click();await expect(survey).toBeHidden();
   const original=(await api(page,'/api/content/v1/snapshot')).data;
   await page.locator('[data-resource="guides"]').click();
   await expect(page.locator('#cms-editor > h2')).toHaveText('Articoli e taccuini');
