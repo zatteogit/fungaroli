@@ -555,5 +555,5 @@ test('invio vuoto: messaggio utile, nessuna richiesta e bozza conservata', async
   await page.getByRole('button', {name:'Invia',exact:true}).click();
   await expect(page.getByText(/Per inviare, rispondi ad almeno una domanda/)).toBeVisible();
   expect(posts).toHaveLength(0);
-  expect(await page.evaluate(key=>!!localStorage.getItem(key), KEY)).toBe(true);
+  await expect.poll(() => page.evaluate(key=>!!localStorage.getItem(key), KEY)).toBe(true);
 });
