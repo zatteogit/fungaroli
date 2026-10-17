@@ -557,3 +557,68 @@ test('invio vuoto: messaggio utile, nessuna richiesta e bozza conservata', async
   expect(posts).toHaveLength(0);
   await expect.poll(() => page.evaluate(key=>!!localStorage.getItem(key), KEY)).toBe(true);
 });
+
+test('scopo dell’app, niente durate, informativa apribile e precisazioni salvate fino a D1', async ({page}) => {
+  await open(page);
+  await expect(page.locator('.q-step')).toContainText('Stiamo preparando un’app');
+  await expect(page.locator('.q-step')).not.toContainText(/circa \d+|Quanto tempo hai/);
+  const privacy=page.locator('footer details#informativa');
+  await expect(privacy).not.toHaveAttribute('open');
+  await privacy.locator('summary').click();
+  await expect(privacy.getByRole('heading',{name:'Informativa sul trattamento dei dati'})).toBeVisible();
+  await privacy.locator('summary').click();
+  await page.getByRole('button',{name:/Versione breve/}).click();
+  const years=page.locator('[data-question="years"]');
+  await years.getByRole('textbox').fill('12');
+  await years.getByRole('checkbox',{name:'Non pertinente per me',exact:true}).check();
+  await expect(years.getByRole('textbox').first()).toBeDisabled();
+  await years.getByText('Vuoi spiegare perché?',{exact:true}).click();
+  await years.getByLabel('Perché non è pertinente?',{exact:true}).fill('Accompagno gli amici, non raccolgo personalmente.');
+  const sought=page.locator('[data-question="speciesSought"]');
+  await sought.getByText('Altro / specifica',{exact:true}).click();
+  await sought.getByLabel('Specifica una risposta diversa',{exact:true}).fill('Una specie conosciuta con un nome locale.');
+  await expect.poll(async()=> (await draft(page))?.state.profile._clarifications.years.kind).toBe('not_applicable');
+  await page.reload();
+  await page.getByRole('button',{name:'Riprendi la bozza'}).click();
+  await expect(years.getByRole('checkbox',{name:'Non pertinente per me',exact:true})).toBeChecked();
+  await next(page);
+  await page.getByRole('checkbox',{name:'Porcino (Boletus edulis)',exact:true}).check();
+  const quota=page.locator('[data-question="elevMode"]');
+  await quota.getByRole('checkbox',{name:'Non pertinente per me',exact:true}).check();
+  await next(page);await next(page);
+  await page.getByRole('button',{name:'Vai al riepilogo'}).click();
+  await expect(page.locator('.q-step')).toContainText('Accompagno gli amici, non raccolgo personalmente.');
+  await expect(page.locator('.q-step')).toContainText('Una specie conosciuta con un nome locale.');
+  await page.getByRole('link',{name:'Leggi l’informativa',exact:true}).click();
+  await expect(privacy).toHaveAttribute('open','');
+  await page.getByRole('checkbox',{name:/Acconsento all’uso delle mie risposte/}).check();
+  const [response]=await Promise.all([page.waitForResponse(r=>r.url().endsWith(ENDPOINT)&&r.request().method()==='POST'),page.getByRole('button',{name:'Invia',exact:true}).click()]);
+  expect(response.status()).toBe(201);
+  const [[stored]]=await d1(page,'SELECT answers FROM survey_responses WHERE receipt=?',[(await response.json()).receipt]);
+  const a=JSON.parse(stored);
+  expect(a.profile.years).toBeUndefined();
+  expect(a.profile.clarifications).toEqual(expect.arrayContaining([
+    {field:'years',kind:'not_applicable',text:'Accompagno gli amici, non raccolgo personalmente.'},
+    {field:'speciesSought',kind:'other',text:'Una specie conosciuta con un nome locale.'},
+  ]));
+  expect(a.species[0].clarifications).toEqual([{field:'elevMode',kind:'not_applicable',text:null}]);
+});
+
+test('non pertinenza di un episodio o di una parte intera: distinta da una parte saltata', async ({page})=>{
+  await open(page);
+  await page.getByRole('button',{name:/Versione completa/}).click();
+  for(let i=0;i<3;i++)await next(page);
+  const weather=page.locator('[data-question="remembers"]');
+  await weather.getByRole('checkbox',{name:'Non pertinente per me',exact:true}).check();
+  await next(page);
+  await page.getByRole('button',{name:'Questa parte non è pertinente per me',exact:true}).click();
+  await next(page);
+  await page.getByRole('button',{name:'Questa parte non è pertinente per me',exact:true}).click();
+  await next(page);
+  await page.getByRole('button',{name:'Vai al riepilogo'}).click();
+  await expect(page.locator('.q-step')).toContainText('Non pertinente per me: questa scelta viene inviata.');
+  await page.getByRole('checkbox',{name:/Acconsento all’uso delle mie risposte/}).check();
+  const [request,response]=await Promise.all([page.waitForRequest(r=>r.url().endsWith(ENDPOINT)&&r.method()==='POST'),page.waitForResponse(r=>r.url().endsWith(ENDPOINT)&&r.request().method()==='POST'),page.getByRole('button',{name:'Invia',exact:true}).click()]);
+  expect(response.status()).toBe(201);
+  expect(request.postDataJSON().answers).toEqual({clarifications:[{field:'weatherRemembers',kind:'not_applicable',text:''}],notApplicableParts:['E','G']});
+});

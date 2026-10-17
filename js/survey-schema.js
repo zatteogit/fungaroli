@@ -200,6 +200,25 @@ const month = { t: 'month' };
 const list = (max, item, check) => ({ t: 'list', max, item, check });
 const obj = (fields, check) => ({ t: 'obj', fields, check });
 
+// Le precisazioni restano accanto alle risposte della stessa scheda, senza cambiare il tipo dei valori.
+// «Non pertinente» è distinto da una casella lasciata vuota. «Altro» può accompagnare una risposta.
+const questions = (fields, check) => obj({ ...fields,
+  clarifications: list(Object.keys(fields).length, obj({
+    field: oneOf(Object.keys(fields).filter((k) => !fields[k].required && k !== 'notApplicableParts'), true),
+    kind: oneOf(['other', 'not_applicable'], true), text: text(600),
+  })),
+}, (item, err) => {
+  check?.(item, err);
+  const seen = new Set();
+  for (const note of item.clarifications || []) {
+    if (seen.has(note.field)) err('clarifications', 'Una sola precisazione per domanda.');
+    seen.add(note.field);
+    if (note.kind === 'other' && !note.text) err('clarifications', 'Specifica la risposta «Altro».');
+    if (note.kind === 'not_applicable' && hasSurveyAnswers(item[note.field]))
+      err('clarifications', 'Una domanda non pertinente non può avere anche una risposta.');
+  }
+});
+
 // Cancello → domanda che apre (parte «Rischi»).
 export const RISK_GATES = Object.freeze([['knowsPoisonings', 'poisonings'], ['avoidsSpecies', 'avoided']]);
 
@@ -212,13 +231,14 @@ function ordered(item, keys) {
   return values.every((v, i) => i === 0 || values[i - 1] <= v);
 }
 
-export const ANSWERS_SPEC = obj({
-  profile: obj({
+export const ANSWERS_SPEC = questions({
+  notApplicableParts: setOf(['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H']),
+  profile: questions({
     years: int(0, 80), mentor: open(300, 'profile.mentor'), zones: setOf(ZONES), zonesOther: text(200),
     tripsGoodYear: int(0, 300), tripsBadYear: int(0, 300), speciesSought: setOf(SPECIES_IDS),
     attestato: oneOf(ATTESTATO), aslCheck: oneOf(ASL_CHECK), notes: setOf(NOTE_KINDS, ['niente']), notesSince: int(NOTES_SINCE_MIN, YEAR_MAX),
   }),
-  species: list(LIST_LIMITS.species, obj({
+  species: list(LIST_LIMITS.species, questions({
     id: oneOf([...SPECIES_IDS, OTHER_SPECIES], true), name: text(60),
     start: month, peak: month, end: month, seasonChanged: oneOf(SEASON_GATE), changed: open(300, 'species.changed'),
     elevMin: elev, elevMax: elev, elevMode: elev, forests: setOf(FORESTS), forestsNever: setOf(FORESTS),
@@ -236,24 +256,24 @@ export const ANSWERS_SPEC = obj({
     const twice = ids.filter((id, i) => ids.indexOf(id) !== i);
     if (twice.length) err(`${describe([...new Set(twice)].map(speciesLabel))}: c'è già una scheda per questa specie.`);
   }),
-  rain: obj({
+  rain: questions({
     goodRain: open(600, 'rain.goodRain'), drySummer: open(600, 'rain.drySummer'),
     flushEnd: open(600, 'rain.flushEnd'), lowRainSpecies: open(600, 'rain.lowRainSpecies'),
   }),
   weatherRemembers: oneOf(WEATHER_GATE),
-  weatherEvents: list(LIST_LIMITS.weatherEvents, obj({
+  weatherEvents: list(LIST_LIMITS.weatherEvents, questions({
     year, month: monthNum, zone: zoneText, kind: oneOf(EVENT_KINDS), effect: open(400, 'weatherEvents.effect'),
     daysAfter: lag, seen: oneOf(SEEN),
   })),
-  flushes: list(LIST_LIMITS.flushes, obj({
+  flushes: list(LIST_LIMITS.flushes, questions({
     year, month: monthNum, week, zone: zoneText, elev, forest: oneOf(FORESTS), species: text(60),
     quantity: oneOf(QUANTITIES), hours, weatherBefore: open(300, 'flushes.weatherBefore'), dateFrom: oneOf(DATE_FROM),
   })),
-  emptyTrips: list(LIST_LIMITS.emptyTrips, obj({
+  emptyTrips: list(LIST_LIMITS.emptyTrips, questions({
     year, month: monthNum, week, zone: zoneText, elev, forest: oneOf(FORESTS), speciesSought: setOf(SPECIES_IDS),
     hours, why: open(300, 'emptyTrips.why'), dateFrom: oneOf(DATE_FROM),
   })),
-  forest: obj({
+  forest: questions({
     aspect: open(600, 'forest.aspect'), cutAge: open(600, 'forest.cutAge'), microsites: open(600, 'forest.microsites'),
     soil: open(600, 'forest.soil'), reliableSpots: open(600, 'forest.reliableSpots'), indicators: open(600, 'forest.indicators'),
     ranking: obj(Object.fromEntries(RANKING_FACTORS.map((f) => [f.key, int(1, RANKING_FACTORS.length)])), (item, err) => {
@@ -266,13 +286,13 @@ export const ANSWERS_SPEC = obj({
       }
     }),
   }),
-  access: obj({
+  access: questions({
     gates: open(800, 'access.gates'), navigators: open(600, 'access.navigators'), localRules: open(800, 'access.localRules'),
     parks: open(600, 'access.parks'), crowding: open(600, 'access.crowding'), parking: open(600, 'access.parking'),
   }),
   // knowsPoisonings e avoidsSpecies: cancelli aggiunti il 16/10/2026, facoltativi. Una risposta senza cancello
   // (testo e basta) resta valida; con «no» o «non dico» il testo non c'è.
-  risks: obj({
+  risks: questions({
     confusions: open(800, 'risks.confusions'), knowsPoisonings: oneOf(RISK_GATE), poisonings: open(800, 'risks.poisonings'),
     beginnerErrors: open(800, 'risks.beginnerErrors'), avoidsSpecies: oneOf(RISK_GATE), avoided: open(600, 'risks.avoided'),
     mountainDangers: open(800, 'risks.mountainDangers'),
@@ -280,8 +300,11 @@ export const ANSWERS_SPEC = obj({
     for (const [gate, key] of RISK_GATES) if (item[gate] && item[gate] !== 'sì' && item[key] != null)
       err(key, 'Hai risposto «No» o «Preferisco non dirlo»: questa risposta va lasciata vuota.');
   }),
-  followUp: obj({ knowsOthers: open(300, 'followUp.knowsOthers') }),
+  followUp: questions({ knowsOthers: open(300, 'followUp.knowsOthers') }),
 }, (item, err) => {
+  const partFields = {A:['profile'], B:['species'], C:['rain'], D:['weatherRemembers','weatherEvents'], E:['flushes','emptyTrips'], F:['forest'], G:['access'], H:['risks']};
+  for (const part of item.notApplicableParts || [])
+    if (partFields[part].some((key) => hasSurveyAnswers(item[key]))) err('notApplicableParts', 'Una parte non pertinente non può contenere risposte.');
   if (item.weatherRemembers === 'no' && item.weatherEvents?.length) err('weatherEvents', 'Hai risposto di non ricordare episodi: l’elenco va lasciato vuoto.');
 });
 

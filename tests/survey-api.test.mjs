@@ -558,3 +558,21 @@ test('dal 2028 non si raccolgono nuovi recapiti, neanche da una pagina vecchia',
   const row=sql.prepare('SELECT name,contact,consent_recontact,consent_diary FROM survey_responses').get();
   assert.deepEqual({...row}, {name:'Mario', contact:null, consent_recontact:0, consent_diary:0});
 });
+
+
+test('precisazioni e non pertinenza sono salvate in D1 ed esportate in JSON e CSV', async () => {
+  const {env,sql}=setup();
+  const answers={profile:{clarifications:[{field:'years',kind:'not_applicable',text:'Non vado a funghi personalmente.'}]},
+    flushes:[{zone:'Terminillo',clarifications:[{field:'forest',kind:'other',text:'Un bosco misto.'}]}],notApplicableParts:['B']};
+  const response=await post(env,valid({answers}));
+  assert.equal(response.status,201);
+  const stored=JSON.parse(sql.prepare('SELECT answers FROM survey_responses').get().answers);
+  assert.deepEqual(stored,answers);
+  const result=await get(env,'?format=json',cookie(ADMIN));
+  assert.deepEqual((await result.json()).responses[0].answers,answers);
+  const csv=await (await get(env,'?format=csv',cookie(ADMIN))).text();
+  assert.match(csv,/profile.clarifications/);
+  assert.match(csv,/Non vado a funghi personalmente/);
+  assert.match(csv,/Un bosco misto/);
+  assert.match(csv,/notApplicableParts/);
+});
