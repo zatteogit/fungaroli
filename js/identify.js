@@ -838,18 +838,31 @@ function renderCompare(box, ref, pick) {
   const slides = [...track.children];
   // l'altezza segue la slide visibile: niente vuoto sotto i confronti corti
   const gallery = box.querySelector('.cmp-gallery'), header = box.querySelector('.cmp-pair-nav');
+  const headerContent = header.querySelector('.cmp-nav-content');
   const syncCompareHeader = () => {
     if (!gallery.getClientRects().length) return;
-    const top = parseFloat(getComputedStyle(header).top) || 0;
-    header.classList.toggle('is-stuck', gallery.getBoundingClientRect().top < top - 1);
+    const appbarHidden = matchMedia('(max-width:899px)').matches && document.documentElement.classList.contains('header-away');
+    const top = appbarHidden ? 0 : document.querySelector('.appbar')?.offsetHeight || 0;
+    const columns = slides[cur]?.querySelector('.cmp-panel:not([hidden]) .cmp-column-head') || slides[cur]?.querySelector('.cmp-kind-tabs');
+    const rect = header.getBoundingClientRect();
+    const pastColumns = columns && columns.getBoundingClientRect().bottom <= top;
+    const onScreen = gallery.getBoundingClientRect().bottom > top;
+    if (!header.classList.contains('is-stuck') && !header.classList.contains('is-single')) {
+      header.style.setProperty('--cmp-nav-height', `${headerContent.offsetHeight}px`);
+    }
+    header.style.setProperty('--cmp-header-left', `${rect.left}px`);
+    header.style.setProperty('--cmp-header-width', `${rect.width}px`);
+    header.classList.toggle('is-stuck', !!pastColumns && onScreen);
   };
   addEventListener('scroll', syncCompareHeader, {passive:true});
+  addEventListener('resize', syncCompareHeader, {passive:true});
   const headerChanges = new MutationObserver(syncCompareHeader);
   headerChanges.observe(document.documentElement, {attributes:true, attributeFilter:['class']});
   const headerSize = new ResizeObserver(syncCompareHeader);
   headerSize.observe(header);
   disposeCompareHeader = () => {
     removeEventListener('scroll', syncCompareHeader);
+    removeEventListener('resize', syncCompareHeader);
     headerChanges.disconnect(); headerSize.disconnect();
   };
   const fit = () => {

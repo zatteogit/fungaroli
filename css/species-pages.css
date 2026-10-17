@@ -313,7 +313,7 @@ body[data-page="mappa"] .view-map { border-radius:0; }
 
 /* Nomi sempre nella colonna corretta; frecce sui bordi della coppia. */
 .cmp-gallery { position:relative; }
-.cmp-pair-nav { position:sticky; top:calc(var(--appbar-h) + env(safe-area-inset-top,0px)); z-index:30; margin:0 1px 12px; background:var(--bg); }
+.cmp-pair-nav { --cmp-header-top:calc(var(--appbar-h) + env(safe-area-inset-top,0px)); position:relative; z-index:30; min-height:var(--cmp-nav-height,52px); margin:0 1px 12px; background:var(--bg); }
 .cmp-nav-content { display:grid; grid-template-columns:minmax(0,1fr) 28px minmax(0,1fr); align-items:center; gap:8px; min-height:52px; padding:4px 0; background:var(--bg); color:var(--text); font:600 13px/1.4 var(--font-body); }
 .cmp-nav-master, .cmp-current-single { min-width:0; overflow-wrap:anywhere; }
 .cmp-master-name { display:none; }
@@ -326,13 +326,13 @@ body[data-page="mappa"] .view-map { border-radius:0; }
 .cmp-pair-menu svg { flex:0 0 16px; width:16px; height:16px; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
 .cmp-pair-nav.is-single { height:0; min-height:0; margin-bottom:0; }
 .cmp-pair-nav.is-single .cmp-nav-content { position:absolute; top:0; left:0; width:100%; visibility:hidden; pointer-events:none; }
-.cmp-pair-nav.is-single.is-stuck .cmp-nav-content { visibility:visible; }
+.cmp-pair-nav.is-single.is-stuck .cmp-nav-content { position:fixed; top:var(--cmp-header-top); left:var(--cmp-header-left); width:var(--cmp-header-width); visibility:visible; }
 .cmp-edge-arrows { position:absolute; z-index:4; top:var(--cmp-photo-mid,140px); inset-inline:-12px; display:flex; justify-content:space-between; transform:translateY(-50%); pointer-events:none; }
 .cmp-edge-arrows button { display:grid; place-items:center; width:44px; height:44px; padding:0; border:1px solid var(--hair); border-radius:50%; background:var(--surface); color:var(--link); box-shadow:var(--shadow-1); cursor:pointer; pointer-events:auto; }
 .cmp-edge-arrows svg { width:20px; height:20px; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
 .cmp-pair-menu:focus-visible, .cmp-edge-arrows button:focus-visible { outline:3px solid var(--focus); outline-offset:3px; }
-.cmp-pair-nav.is-stuck .cmp-nav-content { box-shadow:0 1px 0 var(--hair); }
-@media(max-width:899px) { .header-away .cmp-pair-nav { top:0; } }
+.cmp-pair-nav.is-stuck .cmp-nav-content { position:fixed; top:var(--cmp-header-top); left:var(--cmp-header-left); width:var(--cmp-header-width); box-shadow:0 1px 0 var(--hair); }
+@media(max-width:899px) { .header-away .cmp-pair-nav { --cmp-header-top:0px; } }
 @media(hover:hover) { .cmp-edge-arrows button:hover { background:var(--surface-2); } }
 .cmp-chooser { width:min(440px,calc(100% - 32px)); max-height:80svh; margin:auto; padding:20px; border:1px solid var(--hair); border-radius:24px; color:var(--text); background:var(--bg); box-shadow:var(--shadow-2); }
 .cmp-chooser::backdrop { background:rgb(0 0 0 / .45); }
