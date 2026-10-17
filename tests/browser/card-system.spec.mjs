@@ -24,7 +24,7 @@ for(const theme of ['light','dark']) test(`template editoriali: testi lunghi, ta
  const page=await preparePage(context,{theme}),errors=[];page.on('pageerror',e=>errors.push(e.message));
  await page.goto('/');await expect(page.locator('#hero .cover-editorial')).toBeVisible();await loadAllImages(page);
  await expect(page.locator('#days [data-day-offset="1"] .d1')).toHaveText('Domani');
- for(const day of await page.locator('#days .day').all())expect(await day.evaluate(e=>{const r=e.getBoundingClientRect();return r.width>=80&&r.height>=132;})).toBe(true);
+ for(const day of await page.locator('#days .day').all())expect(await day.evaluate(e=>{const r=e.getBoundingClientRect();return r.width>=80&&r.height>=44&&r.height<=100;})).toBe(true);
  // A long place name must grow the panel and leave the action fully reachable.
  await page.locator('#hero .cover-title').evaluate(e=>e.textContent='Poggio Bustone e Cantalice, sentieri del versante occidentale');
  await page.locator('#hero .cover-cta').scrollIntoViewIfNeeded();
@@ -74,4 +74,61 @@ for(const offline of [false,true])test(`hero botanica con ${offline?'nessun indi
  await expect(page.locator('#detail .weather-indicator')).toHaveCount(offline?0:1);
  if(offline)await expect(page.locator('#detail .hero-indicators')).toHaveCount(0);
  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);await c.close();
+});
+
+for(const width of [390,1280])for(const theme of ['light','dark'])test(`badge meteo sulle foto: AA e spazio per l'indice a ${width}px ${theme}`,async({browser})=>{
+ const context=await browser.newContext({viewport:{width,height:920},reducedMotion:'reduce',serviceWorkers:'block'});
+ const page=await preparePage(context,{theme});await page.goto('/');
+ // Copia della card reale: gli aggiornamenti meteo non devono sostituire gli stati di prova.
+ await expect(page.locator('#ranking .tile').first()).toBeVisible();
+ const markup=await page.locator('#ranking .tile').first().evaluate(el=>el.outerHTML);
+ await page.goto('/#/info');
+ await page.evaluate(html=>{document.querySelector('#ranking').removeAttribute('id');const host=document.createElement('ul');host.id='ranking';host.innerHTML=`<li>${html}</li>`;document.body.append(host);},markup);
+ const tile=page.locator('#ranking .tile').first();await expect(tile).toBeVisible();
+ for(const [level,label,icon] of [['non_disponibile','meteo non verificabile','unknown'],['attenzione','tempo incerto','rain'],['sconsigliata','uscita sconsigliata','storm']]){
+  await tile.evaluate(async(el,{level,label,icon})=>{
+   const {weatherGlyphs}=await import('/js/indicators.js');el.querySelector('.tile-wx')?.remove();
+   const badge=document.createElement('span');badge.className=`tile-wx wx-${level}`;
+   badge.innerHTML=`<span class="wxi wxi-${icon}">${weatherGlyphs[icon]}</span>`;badge.append(label);el.append(badge);
+  },{level,label,icon});
+  const badge=tile.locator('.tile-wx');
+  for(const state of ['normal','hover','focus']){
+   if(state==='hover')await tile.hover();if(state==='focus')await tile.focus();
+   const records=await auditState(page,{root:'#ranking li:first-child .tile-wx'});
+   expect(records.length).toBeGreaterThan(0);expect(records.filter(r=>r.ratio<r.threshold)).toEqual([]);
+   const paints=await badge.evaluate(el=>{const s=getComputedStyle(el);return {bg:s.backgroundColor,ink:s.color,icon:getComputedStyle(el.querySelector('.wxi')).color};});
+   expect(parseCssColor(paints.bg)[3]).toBe(1);expect(paints.icon).toBe(paints.ink);
+   expect(contrastRatio(parseCssColor(paints.ink),parseCssColor(paints.bg))).toBeGreaterThanOrEqual(4.5);
+  }
+  const box=await badge.boundingBox(),ring=await tile.locator('.ring').boundingBox();expect(box.x+box.width).toBeLessThanOrEqual(ring.x-4);
+ }
+ await context.close();
+});
+
+for(const width of [320,390,768,1280])test(`testata home: filtri interi e separati a ${width}px`,async({browser})=>{
+ const context=await browser.newContext({viewport:{width,height:900},reducedMotion:'reduce',serviceWorkers:'block'});
+ const page=await preparePage(context);await page.goto('/');await expect(page.locator('#refresh')).toHaveAttribute('aria-busy','false');
+ const issues=await page.locator('#active-filters button').evaluateAll(buttons=>buttons.flatMap(b=>{
+  const r=b.getBoundingClientRect(),g=b.parentElement.getBoundingClientRect();
+  return r.left<g.left-1||r.right>g.right+1||r.height<(b.matches('[data-more]')?24:44)?[b.textContent]:[];
+ }));expect(issues).toEqual([]);
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+ const heading=await page.locator('#home-h').boundingBox(),status=await page.locator('.view[data-view="uscite"] .view-sub').boundingBox();
+ expect(heading.x+heading.width<=status.x||heading.y+heading.height<=status.y||status.y+status.height<=heading.y).toBe(true);
+ await context.close();
+});
+
+for(const width of [390,1280])for(const theme of ['light','dark'])test(`invito community e accordion leggibili a ${width}px ${theme}`,async({browser})=>{
+ const context=await browser.newContext({viewport:{width,height:900},reducedMotion:'reduce',serviceWorkers:'block'});
+ const page=await preparePage(context,{theme});await page.goto('/');const card=page.locator('#community-intro');await expect(card.locator('h2')).toBeVisible();await card.scrollIntoViewIfNeeded();
+ const summary=card.locator('summary');
+ for(const state of ['closed','hover','open']){
+  if(state==='hover')await card.locator('.btn.primary').hover();
+  if(state==='open'){await summary.focus();await page.keyboard.press('Enter');await expect(card.locator('details')).toHaveAttribute('open','');}
+  const records=await auditState(page,{root:'#community-intro'});expect(records.length).toBeGreaterThan(2);expect(records.filter(r=>r.ratio<r.threshold)).toEqual([]);
+ }
+ expect(await summary.evaluate(el=>({order:getComputedStyle(el,'::after').order,margin:getComputedStyle(el,'::after').marginLeft}))).toEqual({order:'-1',margin:'2px'});
+ expect(await card.evaluate(el=>{const r=el.getBoundingClientRect();return [...el.querySelectorAll('.btn')].every(b=>{const x=b.getBoundingClientRect();return x.height>=44&&x.right<=r.right;});})).toBe(true);
+ await summary.press('Enter');await expect(card.locator('details')).not.toHaveAttribute('open','');
+ await context.close();
 });

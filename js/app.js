@@ -1,4 +1,5 @@
 import { mapQuery, mountMapResults, compactMapFilters } from './map-experience.js';
+import './index-tip.js';
 import { mapGlyph, leafGlyph, notebookGlyph } from './ui-icons.js';
 import {fungusGlyph, progressCircle, weatherGlyphs} from './indicators.js';
 import { INTENTS, validIntent, normalizeInterests, primaryInterest, toggleInterest, seasonalSelection, matchesWalk, compareOutdoor } from './outing-intent.js';
@@ -716,7 +717,7 @@ function homeCover({c,photo,body,score=null,extraClass=''}) {
   return `<div class="cover cover-editorial vtn ${extraClass}" style="--vtn:cover">
     ${extraClass.includes('outdoor-hero')?outdoorBackdrop():''}${photo?`<img class="cover-img" data-src="${photo.hd}" alt="${esc(photo.alt||'')}" fetchpriority="high">`:''}<span class="shade"></span>
     <a class="cover-link" data-walk-zone="${c.z.id}" href="${walkHref(c.z,c.o,c.walk?.t)}" aria-label="${esc(title)}, ${esc(dayLabel(c.o,c.d.date,true))}: i dettagli della passeggiata"></a>
-    <span class="cover-top"><span class="pill glass">${esc(dayLabel(c.o,c.d.date,true))}</span>${score===null?'':`<span class="cover-index" aria-label="Indice funghi ${formatIndex(score)} su 10">${fungusGlyph}<b>${formatIndex(score)}</b><span>Funghi</span></span>`}</span>
+    <span class="cover-top"><span class="pill glass">${esc(dayLabel(c.o,c.d.date,true))}</span>${score===null?'':`<button type="button" class="cover-index" data-index-tip aria-expanded="false" aria-label="Indice funghi ${formatIndex(score)} su 10: come leggerlo">${fungusGlyph}<b>${formatIndex(score)}</b></button>`}</span>
     <span class="cover-body">${body}</span></div>`;
 }
 function outdoorCover(c) {
@@ -939,14 +940,6 @@ function weatherWork(text,busy=false,done=false){
   box.hidden=!text;box.classList.toggle('busy',busy);box.classList.toggle('done',done);box.querySelector('.weather-work-label').textContent=text||'';
   if(done)weatherWorkTimer=setTimeout(()=>{box.hidden=true;box.classList.remove('done');},3000);
 }
-// meteo arrivato solo in parte: una nota sotto la riga del meteo, con «Riprova»
-function partialWeatherNotice(missing){
-  const body=missing?'Per alcune zone il meteo non è arrivato: per ora non le valutiamo.':'Alcuni dati non sono arrivati: per quelli usiamo l’ultimo meteo salvato.';
-  // zone mancanti: la riga del meteo dice già quante e offre Riprova; qui non la copriamo
-  if(missing)return;
-  const box=$('#stale');box.hidden=false;box.textContent=`${body} `;
-  const retry=document.createElement('button');retry.type='button';retry.className='link-btn';retry.textContent='Riprova';retry.onclick=()=>refreshWeather(true);box.append(retry);
-}
 // la nota sul meteo (vecchio, parziale) sta sotto la riga del meteo in home; nelle altre viste resta in cima
 let staleHome=null;
 function placeStale(view){
@@ -1040,7 +1033,6 @@ async function refreshWeather(force){
     weatherStamp(latest||lastWeatherSnapshot,false,done);
     if(partial){$('#updated').textContent+=' · in parte';}
     if(!deferredWeatherView)weatherWork(done?WX_DONE:'',false,done);
-    if(partial)partialWeatherNotice(latest?.missingZones?.length);
   }else{
     weatherWork('');$('#updated').textContent='';weatherUnavailable=true;prepareCalendarFallback();
     if(state.target!=='funghi'){compute();renderAll();return;}
@@ -1657,7 +1649,7 @@ function renderHome() {
 function renderCommunityIntro() {
   const box = $('#community-intro');
   const intro=state.target==='piante'?'Annota le fasi che osservi e ritrovale nel taccuino.':'Conserva i tuoi giri e le scoperte nel taccuino.';
-  if (box) box.innerHTML = `<h2>${esc(contentCopy.communityTitle || 'Condividi dal bosco')}</h2><p class="small muted">${esc(communityStatus())}</p>${state.target==='funghi'?'<button class="btn primary" type="button" data-report>Segnala dal bosco</button>':'<button class="btn primary" type="button" data-new-note>＋ Aggiungi un appunto</button>'} <button class="btn ghost" type="button" data-community-account>Il tuo profilo</button>${state.target!=='funghi'?`<p class="small muted">${esc(intro)}</p>`:''}<details class="context-note"><summary>Perché condividere un’osservazione</summary><p>${esc(contentCopy.communityIntro || 'Anche una ricerca senza ritrovamenti aiuta a conoscere il bosco.')}</p><p>L’indice è sperimentale: le osservazioni aiutano a verificarlo, ma l’accuratezza dei consigli non è ancora misurata.</p></details>`;
+  if (box) box.innerHTML = `<span class="community-leaf" aria-hidden="true">${leafGlyph}</span><h2>${esc(contentCopy.communityTitle || 'Condividi dal bosco')}</h2><p class="small muted">${esc(communityStatus())}</p><div class="community-actions">${state.target==='funghi'?'<button class="btn primary" type="button" data-report>Segnala dal bosco</button>':'<button class="btn primary" type="button" data-new-note>＋ Aggiungi un appunto</button>'} <button class="btn ghost" type="button" data-community-account>Il tuo profilo</button></div>${state.target!=='funghi'?`<p class="small muted">${esc(intro)}</p>`:''}<details class="context-note"><summary>Perché condividere un’osservazione</summary><p>${esc(contentCopy.communityIntro || 'Anche una ricerca senza ritrovamenti aiuta a conoscere il bosco.')}</p><p>L’indice è sperimentale: le osservazioni aiutano a verificarlo, ma l’accuratezza dei consigli non è ancora misurata.</p></details>`;
 }
 
 // barra delle info: se non ci sta, toglie prima "entro le", poi "min", poi il testo del meteo quando e' bello (resta l'icona)
@@ -2361,7 +2353,7 @@ const ICON = {
   trail: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 20c2-4 8-3 8-7s-6-3-6-7"/><circle cx="17" cy="5" r="1.5"/></svg>',
 };
 
-// Il riepilogo resta uguale aperto o chiuso: dati del tratto e imbocchi numerati come nel grafico.
+// Dati del tratto sempre in testata; gli imbocchi sono un'anteprima del selettore nel grafico aperto.
 // Solo dati del tratto nella zona: niente dislivello ricavato dai campioni (a passo fisso lo gonfierebbe);
 // la salita della fonte riguarda l'itinerario completo e resta nella scheda aperta.
 function walkGlance(z, t) {
@@ -2395,18 +2387,15 @@ function renderWalkFocus(z, d, walk) {
       <span class="walk-route">${segnavia(t)}<b>${esc(trailName(t))}</b></span>
       ${walkGlance(z, t)}
     </span></summary><div class="sec-body">
-    <dl class="walk-facts">
-      <div><dt>Difficoltà</dt><dd>${t.difficulty ? difficultyLink(t.difficulty, `${t.difficulty} · ${DIFF[t.difficulty] || 'classificazione della fonte'}`) : 'Non indicata nella fonte'}</dd></div>
-      <div><dt>Tratto nella zona</dt><dd>${fmtKm(t.in_zone_km)} km${t.lines?.length > 1 ? ' · più segmenti separati' : ''}</dd></div>
-      <div><dt>Itinerario completo</dt><dd>${fullTrailKm(t) ? `${fmtKm(fullTrailKm(t))} km` : 'Lunghezza n.d.'}${t.duration ? ` · ${fmtDur(t.duration)}` : ''}${t.ascent ? ` · +${esc(t.ascent)} m` : ''}</dd></div>
-    </dl>
+    <dl class="walk-facts"><div><dt>Itinerario completo</dt><dd>${fullTrailKm(t) ? `${fmtKm(fullTrailKm(t))} km` : 'Lunghezza n.d.'}${t.duration ? ` · ${fmtDur(t.duration)}` : ''}${t.ascent ? ` · +${esc(t.ascent)} m` : ''}</dd></div></dl>
+    ${t.lines?.length > 1 ? '<p class="small muted">Il tratto nella zona comprende più segmenti separati.</p>' : ''}
     ${t.mainCat ? `<p class="small" data-glossary="${d?.best?.kind==='plant'?'Piante':'Funghi'}">Lungo il tracciato: ${linkTrees(t.mainCat.toLowerCase())} nei campioni tra circa ${Math.floor(t.lo / 25) * 25} e ${Math.ceil(t.hi / 25) * 25} m${d?.best?.species ? `, ${d.best.kind==='plant'?'proxy di paesaggio per':'compatibili con l’habitat di'} ${speciesLink(d.best.species, d.best.species.name.toLowerCase())}` : ''}.</p>` : ''}
     ${trailVisual(z, t, d, headsOf(z,t), 'focus')}
     ${walkForest(z,t)}
     <button type="button" class="btn ghost" data-note-kind="zona" data-note-id="${z.id}" data-note-zone="${z.id}" data-note-href="${esc(walkHref(z,state.dayOffset,t))}" data-note-title="${esc(trailName(t))}">＋ Salva il giro nel taccuino</button>
     ${trailLinks(z, t)}
-    <p class="small muted">Il GPX contiene solo il tratto nella zona. Tempi e dislivello, quando disponibili, riguardano l’itinerario completo. Verifica accesso, sosta e stato del sentiero prima di partire.</p>
-    <p class="small muted">Tracciato OpenStreetMap / Waymarked Trails · imbocchi ricavati dalla rete stradale mappata.${state.target==='funghi'?' L’indice e le segnalazioni riguardano la zona, non questo singolo sentiero.':''}</p>
+    <p class="small muted">Verifica accesso, sosta e stato del sentiero prima di partire.</p>
+    <details class="context-note walk-data"><summary>Tracciato e limiti dei dati</summary><p>Il GPX contiene solo il tratto nella zona. Tempi e dislivello, quando disponibili, riguardano l’itinerario completo.</p><p>Tracciato OpenStreetMap / Waymarked Trails · imbocchi ricavati dalla rete stradale mappata.${state.target==='funghi'?' L’indice e le segnalazioni riguardano la zona, non questo singolo sentiero.':''}</p></details>
     </div>
   </details>`;
 }
@@ -2439,7 +2428,7 @@ function essentialSections(z, d, walk) {
       sub: `${a0 ? `${esc(travelText(zoneTrip(z,walk)))} da ${esc(currentBase().name)}${customBase()?'':unp}` : ''}${walk?.h ? actPill(gmaps(walk.h.lat, walk.h.lon),'nav','Indicazioni',true) : ax ? actPill(gmaps(ax.rlat, ax.rlon),'nav','Navigatore',true) : ''}`,
       badge: d.comfort ? `<span class="badge comfort-${d.comfort.level}">${d.comfort.level}</span>` : '' });
   }
-  const bodies={specie:()=>zoneSpecies(z,d)+discoverySection(z,d,walk,true),quando:()=>renderHuman(z,d)||renderWhenWeather(z,d),accesso:()=>renderAccess(z,d)};
+  const bodies={specie:()=>zoneSpecies(z,d)+discoverySection(z,d,walk,true),quando:()=>renderHuman(z,d)||renderWhenWeather(z,d),accesso:()=>renderAccess(z,d,{summarized:true,walk})};
   return `<div class="essential-sections">${Object.keys(bodies).map(id=>{
     const group=rows.filter(r=>r.sec===id);if(!group.length)return '';
     const summary=group.map(r=>`<span class="essential-summary"><span class="plan-ic${r.thumb?' has-thumb':''}">${r.thumb?thumb(r.thumb,48):r.svg||ICON[r.icon]}</span><span class="plan-body"><span class="plan-k">${r.k}${r.badge?' '+r.badge:''}</span><span class="plan-v">${r.v}</span>${r.sub?`<span class="plan-sub">${r.sub}</span>`:''}</span></span>`).join('');
@@ -2706,14 +2695,17 @@ function renderHuman(z, d) {
     </div>`;
 }
 
-function renderAccess(z, d) {
+function renderAccess(z, d, {summarized=false,walk=null} = {}) {
   const acc = access[z.id] || [];
   const a0 = acc[0];
-  const ax = d?.access;
-  if (!a0 && !ax) return '';
+  const ax = walk?.h ? null : d?.access;
+  if (!a0 && !ax && !walk?.h) return '';
   const lines = [];
-  if (a0) {
-    let txt = `Da ${esc(currentBase().name)} ${esc(travelText(travelTo(a0,a0)))}${!customBase()&&a0.roads.length ? ` via ${a0.roads.join(', ')}` : ''}.`;
+  if(walk?.h){
+    const h=walk.h;
+    lines.push(`${h.road?`Accesso da ${esc(h.road)}.`:h.kind==='strada'?'Imbocco collegato alla rete stradale mappata.':'Imbocco su sterrata: verifica dove lasciare l’auto.'} ${ACCESS_CHECK} La presenza di un imbocco non garantisce una sosta consentita.`);
+  } else if (a0) {
+    let txt = summarized ? (!customBase()&&a0.roads.length ? `Strade di accesso: ${esc(a0.roads.join(', '))}.` : '') : `Da ${esc(currentBase().name)} ${esc(travelText(travelTo(a0,a0)))}${!customBase()&&a0.roads.length ? ` via ${esc(a0.roads.join(', '))}` : ''}.`;
     if(customBase())txt += ` Fino a ${esc(a0.parking)} (${a0.elevation} m). Verifica il fondo dell’ultimo accesso.`;
     else if (a0.unpaved_tail_km > 0.2) txt += ` Asfalto per ${fmtKm(a0.paved_km)} km${a0.transition?.after ? ` (fino a ${a0.transition.after})` : ''}, poi <b>${fmtKm(a0.unpaved_tail_km)} km di strada bianca</b>${a0.unpaved_surfaces.length ? ` (${a0.unpaved_surfaces.map((x) => ({ gravel: 'ghiaia', dirt: 'sterrato', compacted: 'fondo compatto' }[x] || x)).join(', ')})` : ''} fino a ${esc(a0.parking)}.`;
     else txt += ` Tutto su asfalto fino a ${esc(a0.parking)} (${a0.elevation} m).`;
@@ -2723,9 +2715,9 @@ function renderAccess(z, d) {
     lines.push(`<b>Punto più comodo per ${speciesLink(d.best.species, d.best.species.name.toLowerCase())}</b>: ${driveTo(ax)}${ax.road ? ` lungo ${esc(ax.road)}` : ''} fino al <a href="${gmaps(ax.rlat, ax.rlon)}" target="_blank" rel="noopener">${ax.surface === 2 ? 'punto d’accesso' : 'punto sulla strada'}</a>, poi ${ax.walkM < 50 ? (ax.surface === 2 ? 'subito, lì accanto,' : 'subito, a bordo strada,') :`<b>${fmtM(ax.walkM)} in linea d’aria</b> fino a`} ${esc((SHORT[ax.cat] || ax.cat || 'paesaggio non classificato').toLowerCase())} a ${ax.e} m.${ax.surface ? ` ${ACCESS_CHECK}` : ''}`);
   }
   return `
-    ${d.comfort ? `<p><span class="badge comfort-${d.comfort.level}">accesso ${d.comfort.level}</span></p>` : ''}
+    ${d.comfort && !summarized ? `<p><span class="badge comfort-${d.comfort.level}">accesso ${d.comfort.level}</span></p>` : ''}
     <ul class="reasons access">${lines.map((x) => `<li>${x}</li>`).join('')}</ul>${customBase()?'<p class="small muted">Percorsi OSRM/OpenStreetMap, senza traffico. Se il percorso manca, la distanza è indicata in linea d’aria.</p>':''}
-    ${acc.length > 1 ? `<p class="small muted">Altre soste: ${acc.slice(1).map((a) => `<a href="${gmaps(a.lat, a.lon)}" target="_blank" rel="noopener">${esc(a.parking)}</a> (${esc(travelText(travelTo(a,a)))}${!customBase()&&a.unpaved_tail_km > 0.2 ? `, ${fmtKm(a.unpaved_tail_km)} km di strada bianca` : ''})`).join(' · ')}</p>` : ''}`;
+    ${(walk?.h?acc:acc.slice(1)).length ? `<p class="small muted">Altre soste nella zona: ${(walk?.h?acc:acc.slice(1)).map((a) => `<a href="${gmaps(a.lat, a.lon)}" target="_blank" rel="noopener">${esc(a.parking)}</a> (${esc(travelText(travelTo(a,a)))}${!customBase()&&a.unpaved_tail_km > 0.2 ? `, ${fmtKm(a.unpaved_tail_km)} km di strada bianca` : ''})`).join(' · ')}</p>` : ''}`;
 }
 
 // Sentieri: segnavia CAI, difficolta' in parole, dati dell'itinerario e profilo del tratto nella zona

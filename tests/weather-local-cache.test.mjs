@@ -46,3 +46,13 @@ test('legacy whole-catalogue copies migrate once, expired ones are dropped, othe
  localStorage.setItem('fungaroli:weather:v2',JSON.stringify({sig:'x|other',t,data:[]}));migrateGrowthCache(zones);assert.equal(data.has('fungaroli:weather:v2'),true);
  delete global.localStorage;
 });
+
+test('fresh outing forecasts are reused on reopening without a network call',async()=>{
+ storage();const {loadOuting}=await import('../js/outing.js');const original=global.fetch;global.document={};let calls=0;
+ const hourly={time:[todayISO()+'T12:00'],precipitation:[0],precipitation_probability:[0],weather_code:[1],wind_gusts_10m:[8],temperature_2m:[13]};
+ global.fetch=async()=>{calls++;return Response.json([{hourly}]);};
+ try{
+  const first=await loadOuting([zones[0]]);assert.equal(calls,1);assert.ok(cachedZoneWeather(zones[0],'outing'));
+  const second=await loadOuting([zones[0]]);assert.deepEqual(second,first);assert.equal(calls,1);
+ }finally{global.fetch=original;delete global.document;delete global.localStorage;}
+});

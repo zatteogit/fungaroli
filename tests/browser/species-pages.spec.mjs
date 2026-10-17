@@ -21,13 +21,13 @@ for(const width of [320,390,768,1440])for(const theme of ['light','dark'])test(`
  }
  await page.goto('/#/riconosci/confronta/edulis/caloboletus-calopus');
  const slide=page.locator('#cmp-caloboletus-calopus');await expect(slide).toBeVisible();
- await expect(slide.locator('.cmp-legend')).toContainText('Solo contorno: differenze');
- await expect(slide.locator('.cmp-v.common').first()).toBeVisible();await expect(slide.locator('.cmp-v.own').first()).toBeVisible();
+ await expect(slide.locator('.cmp-legend')).toContainText('Valore diverso');
+ await expect(slide.locator('[data-cmp-panel="diff"]')).toBeVisible();await expect(slide.locator('[data-cmp-panel="diff"] .cmp-v.own').first()).toBeVisible();
  await page.setViewportSize({width:width+20,height:900});
  await expect.poll(()=>slide.evaluate(el=>Math.abs(el.getBoundingClientRect().left-el.parentElement.getBoundingClientRect().left))).toBeLessThan(2);
  await page.setViewportSize({width,height:900});
  await expect.poll(()=>slide.evaluate(el=>Math.abs(el.getBoundingClientRect().left-el.parentElement.getBoundingClientRect().left))).toBeLessThan(2);
- const same=slide.locator('.cmp-same');await expect(same).not.toHaveAttribute('open');await same.locator('summary').click();await expect(same.locator('.cmp-rows')).toBeVisible();
+ const same=slide.locator('[data-cmp-panel="same"]');await expect(same).toBeHidden();await slide.getByRole('tab',{name:'In comune',exact:true}).click();await expect(same.locator('.cmp-rows')).toBeVisible();
  await slide.locator('.cmp-sources > summary').click();await expect(slide.locator('.cmp-sources a').first()).toBeVisible();
  const currentTab=page.locator('.cmp-chip[aria-selected="true"]');await currentTab.focus();await page.keyboard.press('ArrowRight');
  await expect.poll(()=>page.locator('.cmp-slide:not([inert])').count()).toBe(1);

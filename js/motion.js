@@ -5,7 +5,11 @@ import { loadNow, markKnown } from './images.js';
 
 const reduce = matchMedia('(prefers-reduced-motion: reduce)');
 const root = document.documentElement;
-export const canVT = () => typeof document.startViewTransition === 'function' && !reduce.matches;
+// Sui dispositivi iOS le snapshot di navigazione possono disancorare la barra fissa
+// durante lo scroll o il ridimensionamento del viewport. Restano le microanimazioni CSS.
+const iosSnapshots = /iPad|iPhone|iPod/.test(navigator.userAgent)
+  || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+export const canVT = () => typeof document.startViewTransition === 'function' && !reduce.matches && !iosSnapshots;
 if (canVT()) root.classList.add('vt');
 
 // Durate e curve stanno nei token CSS (--nav-*, css/style.css «movimento»). Qui solo il tetto di attesa:

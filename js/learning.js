@@ -28,7 +28,7 @@ function termImages(id) {
 function termBody(t, legend = false, context=t.category) {
   const related=relatedGlossaryTerms(aliasMap,TERMS,t,context);
   if(legend && t.id.startsWith('difficolta-')) return `<div class="difficulty-legend" aria-label="Legenda delle difficoltà">${Object.values(difficultyIds).map(id => TERMS.find(x => x.id === id)).filter(Boolean).map(x => `<div${x.id === t.id ? ' class="current"' : ''}><b>${esc(x.term)}</b><p>${esc(x.definition)}</p></div>`).join('')}</div><p class="learning-observe">${esc(t.observe)}</p><p class="small muted">Sigla dalla fonte del percorso: verifica stato del sentiero, meteo, tempi e dislivelli prima di partire.</p><p class="learning-sources small muted">Fonte: ${sourceLinks(t.sources)}</p>`;
-  return `<p class="small muted learning-category">${esc(t.category)}</p><p>${esc(t.definition)}</p>${termImages(t.id)}${t.observe ? `<p class="learning-observe">${esc(t.observe)}</p>` : ''}
+  return `${legend?'':`<p class="small muted learning-category">${esc(t.category)}</p>`}<p>${esc(t.definition)}</p>${termImages(t.id)}${t.observe ? `<p class="learning-observe">${esc(t.observe)}</p>` : ''}
     ${related.length ? `<div class="learning-related">${related.map(x => `<a class="glossary-link" data-term="${x.id}" href="#/glossario/${x.id}">${esc(x.term)}</a>`).join('')}</div>` : ''}
     <p class="learning-sources small muted">Fonti: ${sourceLinks(t.sources)}</p>`;
 }

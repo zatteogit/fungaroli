@@ -70,3 +70,9 @@ Etichette e righe aprono lo stesso riepilogo della zona; il riepilogo nasconde l
 Analisi, misure e procedura di cattura: [audit della mappa](ux-mappa-2026-10-17.md).
 
 L’accordion «Quando» ha una sola testata: arrivo consigliato, affollamento e sintesi meteo, con le condizioni avverse visibili anche da chiuso. L’apertura aggiunge partenza, luce e orari di raccolta, ambito delle previsioni ed eventuale alternativa. Metodo e motivi delle stime restano in una nota richiusa; arrivo e badge non vengono ripetuti nel corpo.
+
+### Barra mobile e transizioni iOS
+
+La barra mantiene il posizionamento fisso e un proprio livello di composizione. Su iPhone e iPad le transizioni di pagina tramite snapshot sono disabilitate come mitigazione del distacco segnalato dopo lo scroll; restano le microanimazioni CSS. Non vengono aggiunte correzioni manuali al bordo inferiore tramite VisualViewport. La tastiera continua a nascondere la barra durante l’inserimento e a ripristinarla alla chiusura.
+
+I controlli automatici coprono scroll, ridimensionamento, cambio pagina e ciclo tastiera simulato in Chromium. La conferma su Safari reale resta necessaria: nell’ambiente di lavoro il download del motore WebKit è bloccato dal proxy.
