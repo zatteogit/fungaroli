@@ -1,4 +1,4 @@
-import {enhanceContentReading} from './content-ui.js';
+import {enhanceContentReading,emphasizeContent} from './content-ui.js';
 let GUIDES = [], copy = {}, ASSET = (f) => f;
 export const guideCount = () => GUIDES.length;
 const esc = s => String(s ?? '').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
@@ -25,5 +25,17 @@ export function renderGuideCards(box) {
 export function renderGuide(box, id) {
   const g = GUIDES.find((g) => g.id === id);
   box.innerHTML = `<a class="small" href="#/guide">← Approfondimenti</a>` + (g ? `<article class="editorial-article" data-glossary="Generale"><p class="eyebrow" data-no-glossary>${esc(g.category)}</p><h1>${esc(g.title)}</h1><p class="article-lede">${esc(g.excerpt)}</p>${imageOf(g) ? `<figure class="guide-hero" data-no-glossary><img src="${esc(ASSET(g.image.file))}" alt="${esc(g.image.alt)}" width="1600" height="900" decoding="async"><figcaption>${credit(g.image)}</figcaption></figure>` : ''}${g.body}</article>` : '<p>Questo approfondimento non è disponibile.</p>');
-  enhanceContentReading(box.querySelector('.editorial-article'));
+  const article=box.querySelector('.editorial-article');
+  enhanceContentReading(article);
+  // Enfasi limitate ai concetti della guida; il testo CMS resta quello pubblicato.
+  const emphasis={
+    'leggere-il-bosco':['alberi ospiti','faggio','castagno','querce','foglia, corteccia e frutto','legno morto'],
+    'pioggia-e-crescita':['settimane precedenti','da 0 a 10','sperimentale','ricerca a vuoto'],
+    'preparare-la-passeggiata':['percorso completo','meteo passato','previsione aggiornata','ore del rientro','regole dell’ente'],
+  };
+  emphasizeContent(article,emphasis[id]);
+  // La limitazione resta accanto ai tre caratteri: non è un quarto carattere.
+  if(id==='leggere-il-bosco') article?.querySelectorAll('.content-points > li').forEach(li=>{
+    if(li.textContent.startsWith('Un singolo dettaglio può ingannare:')) li.classList.add('content-point-note');
+  });
 }
