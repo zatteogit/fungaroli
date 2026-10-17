@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="referrer" content="same-origin">
+  <!-- Nessuno script in linea e nessuna risorsa esterna: il questionario parla solo con il proprio sito. -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <meta name="color-scheme" content="light dark">
+  <title>Questionario per cercatori esperti del Reatino</title>
+  <meta name="description" content="Domande per chi va per funghi nel Reatino da anni: stagioni, quote, pioggia, boschi.">
+  <link rel="icon" href="/assets/icon.svg">
+  <link rel="stylesheet" href="/css/fonts.css">
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/questionario.css">
+  <script type="module" src="/js/questionario.js"></script>
+</head>
+<body class="q-page">
+  <a class="q-skip" href="#q-main">Vai al questionario</a>
+  <header class="q-header">
+    <h1>Questionario per cercatori esperti del Reatino</h1>
+  </header>
+
+  <main id="q-main" class="q-main" tabindex="-1">
+    <noscript>
+      <div class="q-box q-box-warn">
+        <p><strong>Per compilare il questionario serve JavaScript.</strong> Attivalo nel browser e ricarica la pagina.</p>
+        <p>Se non puoi, chiedi a chi ti ha mandato il link un altro modo per rispondere.</p>
+      </div>
+    </noscript>
+    <p id="q-loading" class="q-muted">Preparo le domande…</p>
+    <p id="q-fail" class="q-box q-box-warn" role="alert" hidden>Il questionario non si è aperto. Ricarica la pagina; se non va, prova con un altro browser.</p>
+
+    <form id="q-form" class="q-form" novalidate autocomplete="off" hidden>
+      <!-- Campo trappola per i programmi automatici: le persone non lo vedono e non lo compilano. -->
+      <!-- Nome neutro: con «website», «url» o simili il browser o il gestore di password potrebbe riempirlo, e l'invio andrebbe perso. -->
+      <div class="q-trap" aria-hidden="true">
+        <label for="q-lascia-vuoto">Lascia vuoto questo campo</label>
+        <input id="q-lascia-vuoto" name="lascia_vuoto" type="text" tabindex="-1" autocomplete="off" data-1p-ignore data-lpignore="true" data-bwignore data-form-type="other">
+      </div>
+      <div id="q-progress" class="q-progress"></div>
+      <div id="q-mode-line" class="q-mode-line"></div>
+      <div id="q-step"></div>
+    </form>
+
+    <p id="q-announce" class="q-sr" aria-live="polite"></p>
+    <p id="q-saved" class="q-saved q-muted"></p>
+    <datalist id="q-zone-list"></datalist>
+    <datalist id="q-species-list"></datalist>
+  </main>
+
+  <section id="informativa" class="q-privacy" aria-labelledby="informativa-title" tabindex="-1">
+    <h2 id="informativa-title">Informativa sul trattamento dei dati</h2>
+    <p class="q-muted">Ai sensi dell’articolo 13 del Regolamento europeo 2016/679 (GDPR).</p>
+    <dl>
+      <dt>Chi tratta i dati</dt>
+      <dd>Matteo Sgambato, titolare del trattamento. È un progetto personale e gratuito. Per scrivergli: <a href="mailto:zatteo@gmail.com">zatteo@gmail.com</a>.</dd>
+      <dt>Perché</dt>
+      <dd>Per studiare le stagioni e le condizioni dei funghi nel Reatino. Nei risultati le risposte compaiono senza nome né contatto. Il nome o soprannome, sempre facoltativo, serve a collegare le risposte alla tua testimonianza durante il confronto e la revisione delle conoscenze raccolte. Il contatto serve solo a ricontattarti o per il taccuino delle uscite, se ci dici di sì. Nessuna decisione automatica ti riguarda.</dd>
+      <dt>Quali dati</dt>
+      <dd>Le tue risposte: ogni domanda è facoltativa. Il nome e il contatto solo se decidi di darli. Salviamo anche quando hai inviato e quanto tempo hai impiegato a compilare. Non scrivere nomi o dati di altre persone. Nelle domande sui rischi non scrivere dati sulla salute, tuoi o di altri: bastano specie, periodo e zona.</dd>
+      <dt>Su che base</dt>
+      <dd>Il tuo consenso (art. 6, par. 1, lett. a). Senza consenso non puoi inviare. Puoi ritirarlo quando vuoi chiedendo la cancellazione: vale da quel momento.</dd>
+      <dt>Dove stanno</dt>
+      <dd>Nel database Cloudflare D1 del sito. Cloudflare è il fornitore del servizio e può trattare i dati anche fuori dall’Unione europea, per esempio negli Stati Uniti. Per questi trasferimenti si basa sul Data Privacy Framework UE-USA e, se viene meno, sulle clausole contrattuali standard (<a href="https://www.cloudflare.com/privacypolicy/" rel="noopener noreferrer">informativa di Cloudflare</a>). Non cediamo i dati a nessuno.</dd>
+      <dt>Per quanto tempo</dt>
+      <dd>Le risposte e il nome, se lo dai, si conservano al più tardi fino al 31/12/2028. Il contatto si cancella quando non serve più per il ricontatto o il taccuino, comunque entro il 31/12/2027. Puoi chiedere prima la cancellazione. Le copie di sicurezza di Cloudflare possono durare ancora per il periodo previsto dal servizio.</dd>
+      <dt>Indirizzo IP</dt>
+      <dd>Non lo salviamo. Ne ricaviamo un’impronta crittografica, diversa ogni giorno, che non contiene l’indirizzo: serve solo a limitare gli invii e si cancella dopo circa 2 giorni (le copie di sicurezza di Cloudflare durano il periodo previsto dal servizio). Cloudflare riceve comunque i dati tecnici della connessione, secondo la propria informativa.</dd>
+      <dt>Su questo dispositivo</dt>
+      <dd>Mentre compili, le risposte restano nella memoria del browser, così puoi riprendere. Dopo l’invio la bozza si cancella; «Ricomincia» la cancella subito. Resta il codice ricevuta, per chiedere la cancellazione.</dd>
+      <dt>I tuoi diritti</dt>
+      <dd>Puoi chiedere di vedere le tue risposte, averne una copia (anche in un formato leggibile da computer), correggerle, limitarne l’uso o cancellarle. Per farlo manda il codice ricevuta a Matteo Sgambato: scrivi a <a href="mailto:zatteo@gmail.com">zatteo@gmail.com</a>. Puoi anche fare reclamo al <a href="https://www.garanteprivacy.it/" rel="noopener noreferrer">Garante per la protezione dei dati personali</a>.</dd>
+    </dl>
+  </section>
+
+  <footer class="q-footer">
+    <p>Raccolto sul sito di Fronda, progetto personale e gratuito · <a href="#informativa">Informativa</a></p>
+  </footer>
+</body>
+</html>

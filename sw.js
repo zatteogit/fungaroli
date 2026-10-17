@@ -4,7 +4,7 @@
 // - meteo Open-Meteo: gestito dall'app con data di acquisizione e limite d'età
 // - mappe: dalla cache se gia' viste, con un limite di tessere
 // - diario (/api/): mai in cache
-const SHELL = 'fungaroli-shell-v101';
+const SHELL = 'fungaroli-shell-v102';
 const RUNTIME = 'fungaroli-runtime-v1';
 const TILES = 'fungaroli-tiles-v1';
 const MAX_TILES = 1500;
@@ -83,6 +83,8 @@ self.addEventListener('fetch', (e) => {
   if (url.origin === location.origin) {
     if(url.pathname==='/api/content/v1/snapshot'){e.respondWith(networkFirst(req,RUNTIME));return;}
     if(url.pathname.startsWith('/redazione')||url.pathname.startsWith('/api/cms/'))return;
+    // Il questionario è una pagina a sé: senza rete non deve aprirsi l'app (ripiego su index.html).
+    if(/^\/questionario(\.html|\/)?$/.test(url.pathname))return;
     if (url.pathname.startsWith('/api/')) return;
     e.respondWith(url.pathname.startsWith('/assets/') ? staleWhileRevalidate(req, RUNTIME) : networkFirstFast(req, SHELL));
   } else if (url.hostname === 'api.open-meteo.com') {

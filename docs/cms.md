@@ -18,6 +18,8 @@ Scegli una sezione, poi una voce. I campi descrivono nomi, testi, caratteri, imm
 
 **Salva bozza** registra una revisione privata. **Anteprima e controlli** mostra il risultato e le differenze rispetto al pubblicato. **Pubblica bozza** aggiorna il sito al prossimo caricamento. Ogni sezione è un documento: la pubblicazione include tutte le sue voci modificate. Una pubblicazione tramite API può includere più sezioni, aggiornandole insieme.
 
+**Risposte al questionario (dal 16/10).** Gli amministratori hanno anche il pulsante **Risposte al questionario**: conteggio, download in «CSV per Excel» (punto e virgola, si apre con un doppio clic in Excel in italiano), CSV con la virgola e JSON, ricerca per codice ricevuta e cancellazione su richiesta. Le risposte non sono contenuti del CMS: stanno nel database della comunità e non entrano nello snapshot. Dettagli in [questionario.md](https://github.com/zatteogit/fungaroli/blob/claude/brave-tesla-wu0a2b/docs/questionario.md).
+
 La cronologia recupera una revisione precedente come nuova bozza. Controlla il risultato e pubblicalo per ripristinare il sito: la cronologia rimane disponibile. Se una scheda è cambiata mentre lavoravi, il server rifiuta la sovrascrittura; rileggi e riconcilia le modifiche. I conflitti vengono controllati a livello di sezione in questa prima versione.
 
 Le modifiche alla classificazione micologica, alle cautele o alle regole richiedono fonti e conferma della verifica quando indicato. I controlli automatici verificano struttura e riferimenti: non certificano la commestibilità di un esemplare o la correttezza scientifica di una fonte. Una nuova specie nel catalogo non acquisisce automaticamente parametri del modello.

@@ -50,4 +50,9 @@
 .cms-close { float: right; font: inherit; font-size: 24px; border: 0; color: var(--text); background: none; cursor: pointer; }
 .cms-token-code { width: 100%; overflow-wrap: anywhere; font-family: monospace; padding: 16px; background: var(--surface-2); border-radius: 12px; }
 .cms-token-row { padding: 12px 0; border-bottom: 1px solid var(--border); font-size: 13px; }
+.cms-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.cms-dialog .cms-actions { margin: 14px 0 6px; }
+#cms-survey-dialog .btn { min-height: 44px; }
+#cms-survey-find { margin-top: 18px; }
+.cms-survey-row { padding: 12px 0; border-bottom: 1px solid var(--border); font-size: 13px; display: grid; gap: 8px; }
 @media(max-width:780px) { .cms-layout { grid-template-columns: minmax(0,1fr); } .cms-sidebar { position: static; } #cms-resources { max-height: 190px; overflow-y: auto; } .cms-intro { align-items: start; flex-direction: column; } .cms-editor { padding: 16px; } .cms-header { padding: 14px 16px; } .cms-header .brand { font-size: 18px; } .cms-header .brand span { display: none; } .cms-header .btn { font-size: 12px; } .cms-record-picker { grid-template-columns: minmax(0,1fr); } }
