@@ -355,3 +355,12 @@ body[data-page="mappa"] .view-map { border-radius:0; }
     .fungus-compare .cmp-name i { padding:0 10px 14px; }
   }
 }
+
+/* Contatore e frecce sulla foto del sosia: nessuna riga aggiunta sopra il confronto. */
+.fungus-compare .cmp-zoom { position:relative; }
+.cmp-photo-pager { position:absolute; z-index:2; bottom:8px; left:50%; transform:translateX(-50%); display:flex; align-items:center; justify-content:center; max-width:calc(100% - 12px); padding:0 2px; border:1px solid var(--hair); border-radius:999px; background:var(--surface); color:var(--text); box-shadow:var(--shadow-1); cursor:default; }
+.cmp-photo-pager > span { flex:none; min-width:36px; text-align:center; white-space:nowrap; font:600 11px/1.3 var(--font-body); font-variant-numeric:tabular-nums; }
+.cmp-photo-pager button { display:grid; place-items:center; flex:0 0 36px; width:36px; min-height:44px; padding:0; border:0; border-radius:999px; background:transparent; color:var(--link); cursor:pointer; }
+.cmp-photo-pager svg { width:18px; height:18px; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
+.cmp-photo-pager button:focus-visible { outline:3px solid var(--focus); outline-offset:-3px; }
+@media(hover:hover) { .cmp-photo-pager button:hover { background:var(--surface-2); } }
