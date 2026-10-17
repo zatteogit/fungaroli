@@ -464,7 +464,7 @@ for(const width of [320,1280]) test(`testi delle schede: sintesi, cautele e dett
   const errors=await setup(page,width);
   await page.goto('/#/commestibile/morchella-esculenta');
   const view=page.locator('.view:not([hidden])');
-  await expect(view.locator('[data-report]')).toHaveText('Condividi un’osservazione');
+  await expect(view.locator('[data-report]')).toContainText('Annota nel taccuino');
   await expect(view).not.toContainText('Le osservazioni aiutano a conoscerla');
   const safety=view.locator('.species-safety');
   await expect(safety).toHaveCount(1);await expect(safety).not.toHaveAttribute('open');

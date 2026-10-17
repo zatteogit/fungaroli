@@ -1,3 +1,4 @@
+import {speciesObservationContext} from './species-context.js';
 import { mapQuery, mountMapResults, compactMapFilters } from './map-experience.js';
 import './index-tip.js';
 import { leafGlyph } from './ui-icons.js';
@@ -1315,9 +1316,7 @@ function renderEdiblePage(id, box=$('#edible-detail')) {
   const s = catalog.find(x=>x.id===id);
   if (!s) { box.dataset.glossaryContext='Funghi'; box.innerHTML='<p>Specie non presente nel catalogo.</p>';return; }
   // stessa pagina dei taxon di Riconosci: le sezioni senza dati non compaiono
-  const extra = `<p class="small muted">Indice non ancora disponibile per questa specie.</p>
-    <button class="btn primary" type="button" data-report data-species="${esc(s.id)}">Condividi un’osservazione</button>
-    <details class="context-note"><summary>Stagione e osservazioni</summary><p>La stagione è indicativa: clima e quota possono spostarla. Non è ancora validata nel Reatino.</p><p>Puoi registrare anche le ricerche senza ritrovamenti. Le osservazioni restano nel taccuino; scegli tu se condividerle.</p></details>`;
+  const extra = `<p class="species-index-unavailable"><span aria-hidden="true">—</span> Indice non ancora disponibile per questa specie.</p>${speciesObservationContext(s.id)}`;
   // se la scheda breve ha gia' i caratteri completi (taxon con lo stesso id) usa quelli
   const full = taxonByKey(s.id);
   renderTaxonView(box, full ? { ...full, sources: s.sources?.length ? s.sources : full.sources } : { key: s.id, name: s.name, latin: s.latin, toxicity: s.toxicity, caution: s.caution, sources: s.sources, traits: s.months?.length ? { season: s.months } : {} },

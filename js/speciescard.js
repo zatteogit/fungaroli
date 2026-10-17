@@ -1,3 +1,4 @@
+import {speciesSafetyNote} from './species-context.js';
 // Scheda dettagliata di una specie: foto reali, riconoscimento, sosia pericolosi,
 // calendario delle osservazioni (GBIF) a confronto con il modello, modello 3D.
 
@@ -229,7 +230,7 @@ export function renderSpeciesDetail(body, id) {
         : `<p class="small muted">${esc(provenanceText(model))}</p>`}<p class="small muted">${esc(model.name)} · ${esc(model.author)} · ${esc(model.license)}${model.provenance_note ? ` · ${esc(String(model.provenance_note).replace(/\.\s*$/, ''))}` : ''} · <a href="${esc(model.page)}" target="_blank" rel="noopener">apri su Sketchfab</a></p>`) : ''}
       ${sec('Fonti e crediti delle foto', `${sourceRows(d.sources)}${credits.length ? `<p class="src-h">Fotografie</p>${photoRows(credits)}` : ''}`)}
     </div>
-    <details class="context-note sp-foot species-safety"><summary>Prima del consumo: controllo micologico ASL</summary><p>${esc(FOOTER || 'Foto e descrizioni non identificano un esemplare. Fai controllare il raccolto all’Ispettorato micologico ASL: per i privati è gratuito.')} <a href="#/info">Regole ed emergenze</a></p></details>
+    ${speciesSafetyNote(FOOTER)}
     </div>`;
   body.querySelector('.sp-3d button')?.addEventListener('click', (e) => {
     const box = e.target.closest('.sp-3d');

@@ -185,3 +185,42 @@ body[data-page="mappa"] .view-map { border-radius:0; }
 @media(max-width:359px) { .map-top .map-filters [data-intent] { padding-inline:6px; gap:4px; font-size:13px; } }
 /* JS settles each pair after a swipe; native snap can move the compositor during resize. */
 .fungus-compare .cmp-track { scroll-snap-type:none; }
+
+/* Context: read the fact first, open the explanation when needed. */
+.fungus-page .species-habitat { margin:28px 0 12px; }
+.fungus-page .species-habitat > h3 { margin:0 0 14px; font:600 28px/1.28 var(--font-display); }
+.species-facts { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; margin:0; }
+.species-facts > div { min-width:0; padding:16px; border-radius:16px; background:var(--surface); }
+.species-facts > div:nth-child(3) { grid-column:1/-1; }
+.species-facts dt { display:flex; align-items:center; gap:8px; color:var(--text-2); font:500 13px/1.4 var(--font-body); }
+.species-facts dd { margin:10px 0 0; color:var(--text); font:600 17px/1.45 var(--font-body); text-wrap:pretty; overflow-wrap:break-word; }
+.species-context-icon { display:block; width:22px; height:22px; flex:0 0 22px; color:var(--link); }
+.species-facts .species-context-icon { width:18px; height:18px; flex-basis:18px; color:var(--text-2); }
+.fungus-page .species-index-unavailable { display:flex; align-items:center; gap:8px; margin:12px 0 20px; color:var(--text-2); font:400 13px/1.5 var(--font-body); }
+.species-index-unavailable > span { display:grid; place-items:center; flex:0 0 24px; height:24px; background:var(--surface-2); border-radius:50%; }
+.fungus-page details.species-context { margin:12px 0; border:1px solid var(--hair); border-radius:16px; background:var(--surface); overflow:clip; }
+.fungus-page .species-context > summary { display:flex; align-items:center; gap:12px; padding:16px; min-height:76px; color:var(--text); transition:background .18s ease; }
+.fungus-page .species-context > summary::before { content:none; }
+.fungus-page .species-context > summary::after { order:0; flex:0 0 20px; width:20px; height:20px; margin:0 0 0 auto; color:var(--text-2); transition:transform .2s ease; }
+.species-context-heading { display:grid; gap:3px; min-width:0; }
+.fungus-page .species-context-heading b { font:600 15px/1.4 var(--font-body); }
+.species-context-heading > span { color:var(--text-2); font:400 13px/1.5 var(--font-body); text-wrap:pretty; }
+.fungus-page .species-context-body { padding:0 16px 18px 50px; font:400 14px/1.6 var(--font-body); }
+.fungus-page .species-context-body p { margin:0 0 10px; max-width:60ch; font:inherit; }
+.species-context-body a { font-weight:600; }
+.fungus-page .species-context > summary:focus-visible { outline:2px solid var(--focus); outline-offset:-3px; border-radius:14px; }
+.species-observations { margin:20px 0; padding:20px; border-radius:16px; background:var(--surface-2); }
+.species-observations-heading { display:flex; align-items:center; gap:10px; }
+.fungus-page .species-observations h3 { margin:0; font:600 19px/1.4 var(--font-display); }
+.fungus-page .species-observations p { margin:10px 0 14px; font:400 14px/1.5 var(--font-body); }
+.species-observations .btn { display:inline-flex; align-items:center; justify-content:center; gap:16px; min-height:44px; margin:0; font-size:14px; }
+.species-observations small { display:block; margin-top:12px; color:var(--text-2); font:400 12px/1.5 var(--font-body); }
+@media(hover:hover) { .fungus-page .species-context > summary:hover { color:var(--text); background:var(--surface-2); } }
+@media(max-width:359px) {
+  .species-facts { gap:8px; }
+  .species-facts > div { padding:12px; }
+  .species-facts dd { font-size:16px; }
+  .fungus-page .species-context > summary { gap:10px; padding:14px 12px; }
+  .fungus-page .species-context-body { padding:0 12px 16px; }
+}
+@media(prefers-reduced-motion:reduce) { .fungus-page .species-context > summary, .fungus-page .species-context > summary::after { transition:none; } }
