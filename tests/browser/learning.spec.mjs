@@ -266,7 +266,7 @@ for(const width of [320,1280]) test(`guide in Scopri e taccuino personale distin
   await expect(page.locator('.walk-focus > summary')).not.toContainText('taccuino');
   await expect(page.locator('.walk-focus [data-note-kind="zona"]')).toContainText('Salva il giro nel taccuino');
   await page.locator('.walk-focus [data-note-kind="zona"]').click();await page.locator('.notebook-dialog[open] [type="submit"]').click();await expect(page.locator('.notebook-dialog[open]')).toHaveCount(0);
-  await page.goto('/#/diario');await page.locator('[data-notebook-filter="percorso"]').click();await expect(page.locator('#journal-list .notebook-entry')).toHaveCount(1);await expect(page.locator('#journal-list .notebook-entry .notebook-reference-link')).toHaveAttribute('href',/^#\/zona\/.+\/sentiero\//);
+  await page.goto('/#/diario');await page.locator('[data-notebook-filter="salvati"]').click();await expect(page.locator('#journal-list .diary-card')).toHaveCount(1);await page.locator('.diary-card-link').click();await expect(page.locator('.diary-reference')).toHaveAttribute('href',/^#\/zona\/.+\/sentiero\//);
   expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),JSON.stringify(await page.evaluate(()=>[...document.querySelectorAll('body *')].filter(e=>{const r=e.getBoundingClientRect();return r.right>innerWidth+1&&r.width>0}).slice(0,15).map(e=>({tag:e.tagName,cls:e.className,width:e.getBoundingClientRect().width}))))).toBe(true);expect(errors).toEqual([]);
 });
 
@@ -464,7 +464,7 @@ for(const width of [320,1280]) test(`testi delle schede: sintesi, cautele e dett
   const errors=await setup(page,width);
   await page.goto('/#/commestibile/morchella-esculenta');
   const view=page.locator('.view:not([hidden])');
-  await expect(view.locator('[data-report]')).toHaveText('Condividi un’osservazione');
+  await expect(view.locator('[data-report]')).toContainText('Annota nel taccuino');
   await expect(view).not.toContainText('Le osservazioni aiutano a conoscerla');
   const safety=view.locator('.species-safety');
   await expect(safety).toHaveCount(1);await expect(safety).not.toHaveAttribute('open');

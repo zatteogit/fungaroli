@@ -331,7 +331,7 @@ test('segnalazione rapida su telefono, conteggi e ritiro dal diario', async ({ p
   await expect(dlg.locator('[data-status]')).toContainText('conteggi collettivi');
   await dlg.locator('[data-close]').click();
   expect((await api(page,'summary')).data.reports.find(r=>r.speciesId==='procera').sightings).toBe(1);
-  await page.goto('/#/diario'); await expect(page.locator('[data-withdraw-entry]')).toHaveCount(1);
+  await page.goto('/#/diario');await page.locator('.diary-card-link').first().click(); await expect(page.locator('[data-withdraw-entry]')).toHaveCount(1);
   await page.locator('[data-withdraw-entry]').click();
   await expect(page.locator('#journal-list .j-action-status')).toContainText('Segnalazioni ritirate');
   expect((await api(page,'summary')).data.totalReports).toBe(0);
@@ -545,18 +545,18 @@ for(const width of [390,1280])test(`azioni del taccuino su uscita esistente: con
  await page.setViewportSize({width,height:900});const errors=await setup(page);await register(page,'Azioni');
  const entry={id:'notebook-action-test',kind:'outing',zoneId:'rascino',date:todayISO(),band:null,finds:{'agaricus-campestris':3},searched:['agaricus-campestris'],note:'',predicted:{},savedAt:new Date().toISOString()};
  expect((await api(page,'entries/'+entry.id,'PUT',entry)).status).toBe(200);
- await page.goto('/#/diario');await page.reload();await expect(page.locator('#journal-list')).toContainText('Prataiolo');
+ await page.goto('/#/diario/pagina/'+entry.id);await page.reload();await expect(page.locator('#journal-list')).toContainText('Prataiolo');
  await page.locator('[data-share-entry]').click();await expect(page.locator('[data-journal-id] .j-action-status')).toContainText('Osservazioni condivise');expect((await api(page,'summary')).data.totalReports).toBe(1);
  await page.locator('[data-withdraw-entry]').click();await expect(page.locator('[data-journal-id] .j-action-status')).toContainText('Segnalazioni ritirate');expect((await api(page,'summary')).data.totalReports).toBe(0);
  await page.locator('[data-del]').click();await expect(page.locator('[data-del]')).toContainText('Conferma eliminazione');const refresh=page.waitForResponse(r=>r.url().endsWith('/api/community/entries'));await page.evaluate(()=>document.dispatchEvent(new CustomEvent('fungaroli:refresh-community')));await refresh;await expect(page.locator('[data-del]')).toContainText('Conferma eliminazione');await page.locator('[data-cancel-delete]').click();await expect(page.locator('[data-del]')).toHaveText('Elimina');await page.locator('[data-del]').click();await page.locator('[data-journal-id]').screenshot({path:`/tmp/notebook-actions-confirm-${width}.png`});
- let release,seen;const gate=new Promise(r=>release=r),ready=new Promise(r=>seen=r);await page.route('**/api/community/entries',async route=>{const old=await route.fetch();seen();await gate;await route.fulfill({response:old});});await page.evaluate(()=>document.dispatchEvent(new CustomEvent('fungaroli:refresh-community')));await ready;await page.locator('[data-del]').click();await expect(page.locator('#journal-list .j-item')).toHaveCount(0);release();await page.waitForResponse(r=>r.url().endsWith('/api/community/entries'));await expect(page.locator('#journal-list .j-item')).toHaveCount(0);expect((await api(page,'entries')).data.entries).toHaveLength(0);
+ let release,seen;const gate=new Promise(r=>release=r),ready=new Promise(r=>seen=r);await page.route('**/api/community/entries',async route=>{const old=await route.fetch();seen();await gate;await route.fulfill({response:old});});await page.evaluate(()=>document.dispatchEvent(new CustomEvent('fungaroli:refresh-community')));await ready;await page.locator('[data-del]').click();await expect(page.locator('#journal-list .diary-card')).toHaveCount(0);release();await page.waitForResponse(r=>r.url().endsWith('/api/community/entries'));await expect(page.locator('#journal-list .diary-card')).toHaveCount(0);expect((await api(page,'entries')).data.entries).toHaveLength(0);
  await api(page,'account','DELETE');expect(errors).toEqual([]);
 });
 
 test('azioni del taccuino: timeout, errori accanto alla voce e riprova senza perdita dei dati',async({page})=>{
  const errors=await setup(page);await register(page,'Riprova');const id='notebook-timeout-test';
  expect((await api(page,'entries/'+id,'PUT',{id,kind:'outing',zoneId:'rascino',date:todayISO(),band:null,finds:{'agaricus-campestris':3},searched:['agaricus-campestris'],note:'',predicted:{},savedAt:new Date().toISOString()})).status).toBe(200);
- await page.goto('/#/diario');await page.reload();const row=page.locator('[data-journal-id]');await expect(row).toBeVisible();
+ await page.goto('/#/diario/pagina/'+id);await page.reload();const row=page.locator('[data-journal-id]');await expect(row).toBeVisible();
  let release;const gate=new Promise(r=>release=r);await page.route('**/api/community/reports',async route=>{if(route.request().method()!=='POST')return route.fallback();await gate;try{await route.fulfill({status:503,json:{error:'Non disponibile'}});}catch{/* cancelled by the request timeout */}});
  await page.evaluate(()=>{const timeout=AbortSignal.timeout;globalThis.restoreActionTimeout=()=>AbortSignal.timeout=timeout;AbortSignal.timeout=ms=>timeout.call(AbortSignal,ms===15000?150:ms);});await row.locator('[data-share-entry]').click();await expect(row.locator('.j-action-status')).toContainText('impiega troppo tempo');await expect(row.locator('[data-share-entry]')).toBeEnabled();await expect(row.locator('[role="alert"]')).toBeVisible();release();await page.unroute('**/api/community/reports');await page.evaluate(()=>globalThis.restoreActionTimeout());
  await page.route('**/api/community/reports',route=>route.request().method()==='POST'?route.fulfill({status:200,contentType:'text/html',body:'Servizio temporaneamente indisponibile'}):route.fallback());await row.locator('[data-share-entry]').click();await expect(row.locator('[role="alert"]')).toContainText('risposta non valida');expect((await api(page,'summary')).data.totalReports).toBe(0);await page.unroute('**/api/community/reports');

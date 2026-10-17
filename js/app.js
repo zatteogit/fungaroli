@@ -1,3 +1,4 @@
+import {speciesObservationContext} from './species-context.js';
 import { mapQuery, mountMapResults, compactMapFilters } from './map-experience.js';
 import './index-tip.js';
 import { leafGlyph } from './ui-icons.js';
@@ -272,9 +273,9 @@ async function init() {
     else if(kind==='albero'){const m=mj.trees?.[id];image=m?.ref||m?.inat?.[0]||m?.commons?.[0];}
     else if(['specie','commestibile'].includes(kind))image=fungusPhoto(id);
     else if(kind==='fungo')image=searchTaxa().find(t=>t.key===id)?.photo;
-    const file=image?.thumb||image?.file;return file?{file:assetSrc(file)}:null;
+    const file=image?.file_hd||image?.file||image?.thumb;return file?{file:assetSrc(file)}:null;
   };
-  journal = initJournal({ noteCatalogs:()=>({fungo:Object.entries(stj.taxa).map(([id,t])=>({name:t.name||t.latin,latin:t.latin,href:t.edible_id&&!t.lookalike_of?.length?'#/specie/'+t.edible_id:'#/fungo/'+id})),botanica:plants().map(p=>({name:p.name,latin:p.latin,href:'#/pianta/'+p.id})),albero:Object.entries(trj.trees).map(([id,t])=>({name:t.name,latin:t.latin,href:'#/albero/'+id}))}),onEntries:entries=>{botanicalNotes=entries.filter(e=>e.kind==='note'&&e.observation);if(series){compute();outCache.clear();if(weatherBusy)paintWeatherView();else renderAll();}},zones, speciesCatalog: catalog, predict, captureForecast, getZoneId: () => state.zoneId || zones[0].id, zoneImage:zid=>assetSrc(zoneMedia[zid]?.file||''),referenceImage:notebookReferenceImage });
+  journal = initJournal({ noteCatalogs:()=>({fungo:Object.entries(stj.taxa).map(([id,t])=>({name:t.name||t.latin,latin:t.latin,href:t.edible_id&&!t.lookalike_of?.length?'#/specie/'+t.edible_id:'#/fungo/'+id})),botanica:plants().map(p=>({name:p.name,latin:p.latin,href:'#/pianta/'+p.id})),albero:Object.entries(trj.trees).map(([id,t])=>({name:t.name,latin:t.latin,href:'#/albero/'+id}))}),onEntries:entries=>{botanicalNotes=entries.filter(e=>e.kind==='note'&&e.observation);if(series){compute();outCache.clear();if(weatherBusy)paintWeatherView();else renderAll();}},zones, speciesCatalog: catalog, predict, captureForecast, getZoneId: () => state.zoneId || zones[0].id, zoneImage:zid=>assetSrc(zoneMedia[zid]?.file_hd||zoneMedia[zid]?.file||''),referenceImage:notebookReferenceImage });
   // preferenza personale (non un filtro): usare le fasi annotate nel taccuino per le cose da osservare
   const botanicalToggle = $('[data-botanical-personalize]');
   if (botanicalToggle) { botanicalToggle.checked = state.useBotanicalNotes; botanicalToggle.addEventListener('change', () => { state.useBotanicalNotes = botanicalToggle.checked; savePrefs(); if (series) { compute(); outCache.clear(); renderAll(); } }); }
@@ -394,7 +395,7 @@ function parseRoute(hash = location.hash) {
   if (a === 'riconosci') return { view: 'riconosci', recognizeMode: ['alberi','piante','bosco'].includes(b) ? b : 'funghi', compare: b === 'confronta' ? c : '', pick: b === 'confronta' ? parts[3] : '' };
   if (a === 'guide') return b ? { view: 'guide', guideId: b } : { view: 'guide-list' };
   if (a === 'sfide') return { view: 'sfide', challengeId: b || '' };
-  if (a === 'diario') return { view: 'diario' };
+  if (a === 'diario') return { view: 'diario', notebookDemo:b==='esempio', notebookEntry:['pagina','esempio'].includes(b)?c||'':'' };
   if (a === 'info') return { view: 'info' };
   if (a === 'metodo') return { view: 'metodo' };
   if (a === 'commestibile' && b) return { view: 'commestibile', speciesId: b };
@@ -408,7 +409,7 @@ const TABS = ['uscite', 'mappa', 'specie', 'diario'];
 // posizione delle schede di Scopri (Funghi, Piante, Alberi, Impara e le loro sotto-schede): tra loro si passa in dissolvenza
 const SUB = { specie: 0, alberi: 1, piante:2, riconosci: 3, glossario: 4, 'guide-list': 5, sfide: 6, impara: 7 };
 // una sfida aperta è un livello sotto l'elenco delle sfide
-const levelOf = (r) => (LEVEL[r.view] || 0) + (r.compare ? 2 : 0) + (r.challengeId ? 1 : 0) + (r.view === 'riconosci' && r.recognizeMode === 'bosco' ? 1 : 0);
+const levelOf = (r) => (LEVEL[r.view] || 0) + (r.compare ? 2 : 0) + (r.challengeId ? 1 : 0) + (r.notebookEntry ? 1 : 0) + (r.view === 'riconosci' && r.recognizeMode === 'bosco' ? 1 : 0);
 const scrollMem = new Map();
 let prev = null;
 function navKind(a, b) {
@@ -420,6 +421,7 @@ function navKind(a, b) {
   if (lb > la) return 'push';
   if (lb < la) return 'pop';
   // stessa vista: cambia solo il catalogo di «Impara a riconoscere» (funghi, piante, alberi) è una scheda accanto
+  if(a.view==='diario'&&b.view==='diario'&&(a.notebookEntry!==b.notebookEntry||a.notebookDemo!==b.notebookDemo))return 'right';
   if (a.view === b.view) return a.view === 'riconosci' && a.recognizeMode !== b.recognizeMode ? 'right' : 'none';
   if (ta !== tb && ta >= 0 && tb >= 0) return tb > ta ? 'right' : 'left';
   if (a.view in SUB && b.view in SUB) return SUB[b.view] > SUB[a.view] ? 'right' : 'left';
@@ -438,6 +440,8 @@ const navStack = [];
 const TITLES = { piante:'Piante e fiori', uscite: 'Uscite', mappa: 'Mappa', specie: 'Funghi', alberi: 'Alberi', riconosci: 'Riconosci', impara: 'Guide', glossario: 'Glossario', 'guide-list': 'Approfondimenti', sfide: 'Sfide', diario: 'Taccuino', info: 'Regole e metodo', metodo: 'Come funziona' };
 function titleOf(r) {
   if (!r) return '';
+  if (r.view === 'diario' && r.notebookEntry) return journal?.entryTitle(r.notebookEntry,r.notebookDemo)||'Pagina del taccuino';
+  if (r.view === 'diario' && r.notebookDemo) return 'Diario di prova';
   if (r.view === 'zona') { const z = (weatherZones||zones).find((x) => x.id === r.zoneId); return z ? splitName(z)[0] : 'Zona'; }
   if (r.view === 'specie-dettaglio') return SPECIES.find((x) => x.id === r.speciesId)?.name || 'Specie';
   if (r.view === 'commestibile') return catalog.find(s => s.id === r.speciesId)?.name || 'Specie';
@@ -454,6 +458,8 @@ function titleOf(r) {
 function pageTitle(r) { const t = r.view === 'uscite' ? '' : titleOf(r); return t ? `${t} · Fronda` : 'Fronda'; }
 function parentOf(r) {
   if (!r) return '#/';
+  if(r.view==='diario' && r.notebookEntry) return r.notebookDemo?'#/diario/esempio':'#/diario';
+  if(r.view==='diario' && r.notebookDemo) return '#/diario';
   if (r.view === 'specie-dettaglio' || r.view === 'fungo' || r.view === 'commestibile') return '#/specie';
   if (r.view === 'pianta') return '#/piante';
   if (r.view === 'albero') return '#/alberi';
@@ -464,7 +470,7 @@ function parentOf(r) {
   if (['specie','alberi','piante','riconosci','glossario','guide-list','sfide'].includes(r.view)) return '#/scopri';
   return '#/';
 }
-const PARENT_TITLE = (r) => ({ '#/scopri': 'Scopri', '#/specie': 'Funghi', '#/alberi': 'Alberi', '#/piante':'Piante e fiori', '#/riconosci': 'Impara a riconoscere', '#/guide': 'Approfondimenti', '#/sfide': 'Sfide', '#/impara': 'Guide', '#/': 'Uscite' }[parentOf(r)]);
+const PARENT_TITLE = (r) => ({ '#/diario':'Taccuino', '#/diario/esempio':'Diario di prova', '#/scopri': 'Scopri', '#/specie': 'Funghi', '#/alberi': 'Alberi', '#/piante':'Piante e fiori', '#/riconosci': 'Impara a riconoscere', '#/guide': 'Approfondimenti', '#/sfide': 'Sfide', '#/impara': 'Guide', '#/': 'Uscite' }[parentOf(r)]);
 // Quando il titolo della pagina passa sotto la barra, lo mostriamo compatto al centro su telefono e tablet.
 let titleIO = null;
 function watchTitle() {
@@ -575,6 +581,7 @@ function routeNow(r, nav) {
   document.body.dataset.page = r.view;
   syncNavIndicator();
   placeStale(r.view);
+  if(r.view==='diario')journal?.refresh();
   if (r.view === 'specie-dettaglio') renderSpeciesDetail($('#species-detail'), r.speciesId);
   if (r.view === 'piante') renderPlants($('#plant-grid'));
   if (r.view === 'pianta') renderPlantPage($('#plant-detail'),r.plantId);
@@ -858,12 +865,11 @@ function renderFilterBox(box, onMap = false) {
     day.onclick = () => { const open = box.closest('.map-top').classList.toggle('days-open'); day.setAttribute('aria-expanded', String(open)); if (open) $('#map-days [aria-selected="true"]')?.focus({preventScroll:true}); };
     return;
   }
-  const day=onMap?`<button type="button" class="chip chip-day" data-days aria-expanded="${!!box.closest('.map-top')?.classList.contains('days-open')}" aria-controls="map-days">${esc(fmtDate(outdoorDate(state.dayOffset),{weekday:'short',day:'numeric'}))} ▾</button>`:'';
-  const more=`<button type="button" class="chip chip-more" data-more aria-haspopup="dialog"${count?` title="${count} filtri attivi"`:''}>${onMap?'Altri filtri':'Alla ricerca di…'}</button>`;
+  const sliders='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="M3 7h5m4 0h9M3 17h9m4 0h5"/><circle cx="10" cy="7" r="2"/><circle cx="14" cy="17" r="2"/></svg>';
+  const more=`<button type="button" class="chip chip-more" data-more aria-haspopup="dialog"${count?` title="${count} filtri attivi"`:''}>${sliders}<span>Filtri avanzati</span>${count?`<span class="af-filter-count" aria-hidden="true">${count}</span>`:''}</button>`;
   const icons={avoidCrowd:IC.people,preferComfort:IC.walk,distancePenalty:IC.home};
   const prefs=PREFS.map(([k,label,short])=>`<button type="button" class="chip pref" data-p="${k}" aria-label="${esc(k==='avoidCrowd'?'Poca gente':label)}" title="${esc(label)}" aria-pressed="${!!state[k]}"><span class="pref-icon" aria-hidden="true">${icons[k]}</span><span class="pref-label-full">${esc(label)}</span><span class="pref-label-short" aria-hidden="true">${esc(short)}</span></button>`).join('');
-  box.innerHTML=`<div class="af-group-row intent-row" role="group" aria-label="Alla ricerca di">${onMap?'':more}${intentButtons()}</div><div class="af-pref-row" role="group" aria-label="Preferenze dell’uscita">${onMap?day+more:'<span class="af-pref-label">Preferenze</span>'}${prefs}</div>`;
-  box.querySelector('[data-days]')?.addEventListener('click',e=>{const open=box.closest('.map-top').classList.toggle('days-open');e.currentTarget.setAttribute('aria-expanded',String(open));});
+  box.innerHTML=`<div class="af-group-row intent-row" role="group" aria-label="Cosa cerchi"><div class="af-group-head"><span class="af-group-label">Cosa cerchi</span>${more}</div>${intentButtons()}</div><div class="af-pref-row" role="group" aria-label="Preferenze dell’uscita"><span class="af-pref-label">Preferenze</span>${prefs}</div>`;
   box.querySelectorAll('[data-intent]').forEach(b=>b.onclick=()=>changeIntent(b.dataset.intent));
   box.querySelectorAll('[data-p]').forEach(b=>b.onclick=()=>soft(()=>{state[b.dataset.p]=!state[b.dataset.p];savePrefs();outCache.clear();renderFilterSummary();renderAll();}));
   box.querySelector('[data-more]').onclick=openFullFilters;
@@ -1315,9 +1321,7 @@ function renderEdiblePage(id, box=$('#edible-detail')) {
   const s = catalog.find(x=>x.id===id);
   if (!s) { box.dataset.glossaryContext='Funghi'; box.innerHTML='<p>Specie non presente nel catalogo.</p>';return; }
   // stessa pagina dei taxon di Riconosci: le sezioni senza dati non compaiono
-  const extra = `<p class="small muted">Indice non ancora disponibile per questa specie.</p>
-    <button class="btn primary" type="button" data-report data-species="${esc(s.id)}">Condividi un’osservazione</button>
-    <details class="context-note"><summary>Stagione e osservazioni</summary><p>La stagione è indicativa: clima e quota possono spostarla. Non è ancora validata nel Reatino.</p><p>Puoi registrare anche le ricerche senza ritrovamenti. Le osservazioni restano nel taccuino; scegli tu se condividerle.</p></details>`;
+  const extra = `<p class="species-index-unavailable"><span aria-hidden="true">—</span> Indice non ancora disponibile per questa specie.</p>${speciesObservationContext(s.id)}`;
   // se la scheda breve ha gia' i caratteri completi (taxon con lo stesso id) usa quelli
   const full = taxonByKey(s.id);
   renderTaxonView(box, full ? { ...full, sources: s.sources?.length ? s.sources : full.sources } : { key: s.id, name: s.name, latin: s.latin, toxicity: s.toxicity, caution: s.caution, sources: s.sources, traits: s.months?.length ? { season: s.months } : {} },
@@ -1748,7 +1752,7 @@ function currentSheetPoint(){
  return {...pt,t:t||trails[sheetZone]?.trails.find(t=>String(t.id)===String(pt.t.id))||pt.t};
 }
 function openSheet(zid) {
-  cancelCellSelection();closeCellCard();
+  closeCellCard();
   if(state.target!=='funghi'){openOutdoorSheet(zid);return;}
   sheetPoint=null;sheetZone = zid;
   if (!results) { openOutdoorSheet(zid); return; }
@@ -1776,7 +1780,7 @@ function openSheet(zid) {
 }
 
 function openPoint(zid, pt) {
-  cancelCellSelection();closeCellCard();
+  closeCellCard();
   sheetZone=zid;sheetPoint=pt;
   const z = zones.find((x) => x.id === zid);
   const d = dayEntry(zid, state.dayOffset);
@@ -2105,49 +2109,43 @@ function initCellInteractions() {
     map.on('mousemove', hoverCell);
     map.getContainer().addEventListener('mouseleave', hideCellPeek);
   }
-  map.on('click', e => { if (!pinCellCard(e)) {cancelCellSelection();closeCellCard();} });
-  map.on('dragstart',cancelCellSelection);
+  map.on('click', e => { if (!pinCellCard(e)) {closeCellCard();} });
   map.on('dragstart zoomstart', closeCellCard); map.on('dragstart zoomstart', hideCellPeek);
   map.getContainer().setAttribute('aria-keyshortcuts', 'Enter');
-  map.getContainer().setAttribute('aria-label', 'Mappa delle zone. Premi Invio per aprire l’area più vicina al centro.');
+  map.getContainer().setAttribute('aria-label', 'Mappa delle zone. Premi Invio per selezionare la zona più vicina al centro; con una zona selezionata, premi Invio per aprire un’area al suo interno.');
   map.getContainer().addEventListener('keydown', e => {
-    if (e.key !== 'Enter' || e.target !== map.getContainer() || !$('#map').classList.contains('cells-on')) return;
+    if (e.key !== 'Enter' || e.target !== map.getContainer()) return;
     const center = map.getCenter(), bounds = map.getBounds();
-    const nearest = cellHits.filter(h => bounds.contains([h.c.lat, h.c.lon])).sort((a, b) => center.distanceTo([a.c.lat, a.c.lon]) - center.distanceTo([b.c.lat, b.c.lon]))[0];
+    if(!state.zoneId){
+      const zone=mapCandidates().filter(r=>bounds.contains([r.z.lat,r.z.lon])).sort((a,b)=>center.distanceTo([a.z.lat,a.z.lon])-center.distanceTo([b.z.lat,b.z.lon]))[0]?.z;
+      if(zone){e.preventDefault();chooseMapZone(zone.id);}
+      return;
+    }
+    if(!$('#map').classList.contains('cells-on'))return;
+    const nearest = cellHits.filter(h => h.z.id===state.zoneId && bounds.contains([h.c.lat, h.c.lon])).sort((a, b) => center.distanceTo([a.c.lat, a.c.lon]) - center.distanceTo([b.c.lat, b.c.lon]))[0];
     if (nearest) { e.preventDefault(); selectCell(nearest,{keyboard:true}); }
   });
   document.addEventListener('keydown', e => {
-    if (e.key === 'Escape' && (cellTip||cellSelectionCleanup) && !document.querySelector('dialog[open],.learning-panel:popover-open')) {
-      e.preventDefault();cancelCellSelection(); closeCellCard();
+    if (e.key === 'Escape' && cellTip && !document.querySelector('dialog[open],.learning-panel:popover-open')) {
+      e.preventDefault(); closeCellCard();
     }
   });
-  addEventListener('hashchange',()=>{cancelCellSelection();closeCellCard();});
+  addEventListener('hashchange',()=>{closeCellCard();});
 }
-let cellSelectionCleanup=null;
-function cancelCellSelection(){cellSelectionCleanup?.();cellSelectionCleanup=null;}
 function selectCell(h,{keyboard=false}={}){
-  cancelCellSelection();map.stop();closeCellCard();
-  const changed=state.zoneId!==h.z.id;
-  state.zoneId=h.z.id;sheetZone=null;sheetPoint=null;
+  // Il campione approfondisce una zona già scelta; non seleziona una zona implicitamente.
+  if(!h||h.z.id!==state.zoneId)return;
+  map.stop();closeCellCard();
+  sheetZone=null;sheetPoint=null;
   const toolbar=$('.map-top');toolbar.classList.remove('days-open');toolbar.querySelector('[data-days]')?.setAttribute('aria-expanded','false');
   $('#map-sheet').hidden=true;
   if(mapExperience)mapExperience.host.open=false;
-  if(changed)renderMap();
-  const reveal=()=>{
-    cancelCellSelection();
-    if(state.view!=='mappa'||state.zoneId!==h.z.id)return;
-    const current=cellHits.find(x=>x.z.id===h.z.id&&x.c.lat===h.c.lat&&x.c.lon===h.c.lon);
-    if(!current)return;
-    showCellCard(current);cellPinned=true;
-    if(keyboard)cellTip?.getElement()?.querySelector('[data-cell-close]')?.focus({preventScroll:true});
-  };
-  if(!changed){reveal();return;}
-  // Prima si legge la zona selezionata, poi il campione. I clic successivi nella stessa zona non muovono la carta.
-  map.once('moveend',reveal);
-  const timer=setTimeout(reveal,420);
-  cellSelectionCleanup=()=>{clearTimeout(timer);map.off('moveend',reveal);};
-  map.fitBounds(L.latLng(h.z.lat,h.z.lon).toBounds(h.z.radius_m*2.3),mapCameraOptions({maxZoom:12.5}));
+  const current=cellHits.find(x=>x.z.id===h.z.id&&x.c.lat===h.c.lat&&x.c.lon===h.c.lon);
+  if(!current)return;
+  showCellCard(current);cellPinned=true;
+  if(keyboard)cellTip?.getElement()?.querySelector('[data-cell-close]')?.focus({preventScroll:true});
 }
+
 function pinCellCard(e) {
   if(e.originalEvent?._frondaCellHandled)return true;
   const h = $('#map').classList.contains('cells-on') && cellAt(e.latlng,e.target?.options?.zoneId);
@@ -2163,18 +2161,17 @@ function cellsLayer(z, d, interactive = true) {
   const dLat = size / 2 / 111320, dLon = size / 2 / (111320 * Math.cos(z.lat * Math.PI / 180));
   for (const c of zoneCells(z, d)) {
     L.rectangle([[c.lat - dLat, c.lon - dLon], [c.lat + dLat, c.lon + dLon]], {
-      renderer: cellRenderer, interactive: false, stroke: false, fillColor: cssVar(mapVar(c.v)), fillOpacity: 0.5 + 0.4 * Math.min(1, c.v / 80),
+      renderer: cellRenderer, interactive: false, stroke: false, zoneId:z.id, fillColor: cssVar(mapVar(c.v)), fillOpacity: 0.5 + 0.4 * Math.min(1, c.v / 80),
     }).addTo(lg);
     if (interactive) cellHits.push({ z, c, dLat, dLon });
   }
   return lg;
 }
 function cellAt(ll,preferred=state.zoneId) {
-  const hits=cellHits.filter(h=>Math.abs(ll.lat-h.c.lat)<=h.dLat&&Math.abs(ll.lng-h.c.lon)<=h.dLon);
-  return hits.find(h=>h.z.id===preferred)||hits[0]||null;
+  if(!state.zoneId||preferred!==state.zoneId)return null;
+  return cellHits.find(h=>h.z.id===state.zoneId&&Math.abs(ll.lat-h.c.lat)<=h.dLat&&Math.abs(ll.lng-h.c.lon)<=h.dLon)||null;
 }
 function hoverCell(e) {
-  if(cellSelectionCleanup){hideCellPeek();return;}
   // con la scheda aperta l'etichetta non serve: la scheda resta finché non si chiude
   if (cellTip) { if (cellPeek) { cellPeek.remove(); cellPeek = null; } return; }
   const target = e.originalEvent?.target;
@@ -2281,7 +2278,12 @@ function renderMap(changed=null) {
     const circle = L.circle([z.lat, z.lon], {
       radius: z.radius_m, pane:selected?'zoneFocus':'overlayPane', color: selected ? cssVar('--text') : color, weight: selected ? 2.5 : 2,
       dashArray: showCells ? '6 6' : null, fillColor: color, fillOpacity: 0.28, zoneId:z.id,className: `zone-c${showCells ? ' has-cells' : ''}${selected?' is-selected':''}`,
-    }).addTo(g).on('click', e => { if (!pinCellCard(e)) chooseMapZone(z.id); });
+    }).addTo(g).on('click', e => {
+      if(z.id===state.zoneId&&pinCellCard(e))return;
+      // Lo stesso clic non deve selezionare il cerchio e aprire anche il campione nel bubbling.
+      if(e.originalEvent)e.originalEvent._frondaCellHandled=true;
+      chooseMapZone(z.id);
+    });
     if (showCells && d) cellsLayer(z, d).addTo(g);
     else if (d && canHover) {
       // a volo d'uccello: passandoci sopra la zona si accende e mostra in anteprima i suoi riquadri

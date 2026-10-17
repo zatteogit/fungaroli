@@ -1,0 +1,27 @@
+// Fictional display fixtures. Never saved to the notebook or sent to community/model inputs.
+export function notebookDemo({zones, catalogs, species}) {
+  const zone = key => zones.find(z => z.id.includes(key)) || zones[0];
+  const ref = (kind, key) => catalogs[kind]?.find(r => r.href.endsWith('/'+key)) || catalogs[kind]?.[0];
+  const day = ago => { const d = new Date(); d.setUTCDate(d.getUTCDate()-ago); return d.toISOString().slice(0,10); };
+  const reference = item => item ? {href:item.href,title:item.name} : null;
+  const note = (n, ago, title, category, text, area, item, record) => ({id:`demo-page-${n}`,kind:'note',category,title,note:text,date:day(ago),zoneId:area?.id||null,reference:reference(item),...(record?{record}:{}),demo:true});
+  const observed = (habitat, minutes, amount=1) => ({presence:'observed',habitat,minutes,amount,people:1,elevation:null});
+  const tancia=zone('tancia'), leonessa=zone('leonessa'), rascino=zone('rascino'), vallonina=zone('vallonina');
+  const porcino=ref('fungo','edulis'), trombetta=ref('fungo','cornucopioides'), mazza=ref('fungo','procera');
+  return [
+    note(1,0,'La luce tra i faggi','appunto','Il sentiero era ancora in ombra quando siamo arrivati. Poi il sole ha attraversato le chiome, una foglia alla volta.\n\nDa ricordare per il prossimo giro: fermarsi un momento prima della curva e ascoltare. Il tratto più bello non era quello in cima, ma quello dove abbiamo smesso di guardare l’orologio.',vallonina,{href:`#/zona/${vallonina.id}`,name:vallonina.title||vallonina.name}),
+    note(2,1,'Una sosta nel bosco','fungo','Appunto di esempio: alcuni esemplari vicino al margine del sentiero. Ho annotato il contesto e lasciato tutto sul posto.\n\nIl nome è un’ipotesi da verificare: confrontare le foto dei caratteri e chiedere un parere esperto.',leonessa,porcino,observed('broadleaf',35,2)),
+    {id:'demo-page-3',kind:'outing',title:'Una mattina sull’altopiano',date:day(3),zoneId:rascino.id,band:1000,finds:{[species.find(s=>s.id==='procera')?.id||species[0].id]:1},searched:[species[0].id],effort:{minutes:95,people:2},note:'Siamo partiti presto e abbiamo fatto il giro senza fretta. Prati aperti, una sosta lunga vicino al lago e qualche appunto sul margine del bosco.\n\nPer tornare: portare il binocolo e lasciare più tempo alla parte finale. Tutti i ritrovamenti di questo diario sono inventati per provare l’interfaccia.',demo:true},
+    note(4,4,'Cercate, non osservate','fungo','Una ricerca a vuoto da ricordare quanto le altre. Nel tratto percorso non abbiamo osservato esemplari. Non significa che fossero assenti in tutta la zona.',tancia,trombetta,{presence:'searched_absent',habitat:'broadleaf',minutes:40,people:2,amount:0}),
+    note(5,5,'Il margine cambia colore','albero','Appunto dimostrativo sulle foglie e sulla luce del pomeriggio. Da confrontare con un’altra visita, tornando nello stesso punto.\n\nHo collegato la scheda dell’albero per ritrovare i caratteri da osservare.',leonessa,ref('albero','faggio'),observed('broadleaf',15)),
+    note(6,6,'Un giro da rifare con calma','percorso','Un percorso da tenere per una mattina libera: partire presto, fermarsi al valico e tornare prima del pomeriggio. Da verificare condizioni e accessi prima di uscire.',tancia,{href:`#/zona/${tancia.id}`,name:tancia.title||tancia.name}),
+    note(7,8,'Piccoli dettagli lungo il sentiero','botanica','Una pausa per osservare una pianta comune senza limitarsi al nome: disposizione delle foglie, fusto, margine e ambiente.\n\nEsempio di osservazione proposta, non verificata.',vallonina,ref('botanica','ortica'),observed('other',10)),
+    note(8,10,'Cosa portare la prossima volta','appunto','Torcia carica, acqua, una lente e un sacchetto per i rifiuti trovati sul percorso.\n\nAggiungere una maglia asciutta. Controllare il rientro e salvare la mappa prima di perdere il segnale.',null,null),
+    note(9,12,'Una forma da confrontare','fungo','Scheda collegata per studiare i caratteri, non per confermare un’identificazione. Guardare con attenzione anche gambo e base, poi leggere le differenze con i sosia.',rascino,mazza,observed('grassland',20)),
+    {id:'demo-page-10',kind:'plan',title:'Il prossimo giro in faggeta',date:day(14),zoneId:vallonina.id,band:1450,note:'Ho salvato il luogo per tornarci con più tempo. Prima di partire ricontrollare meteo, accessi e orario del tramonto.',finds:{},demo:true},
+    note(11,17,'Riconoscere richiede tempo','lettura','Una frase da tenere a mente dopo aver letto le schede: un carattere da solo non basta.\n\nLa prossima volta proverò a descrivere quello che vedo prima di cercare un nome.',null,null),
+    note(12,20,'Il bosco dopo la pioggia','appunto','Terra scura, foglie lucide e un silenzio diverso. Abbiamo accorciato il giro perché il fondo era scivoloso.\n\nUn buon promemoria: il programma si può cambiare anche a metà strada.',tancia,{href:`#/zona/${tancia.id}`,name:tancia.title||tancia.name}),
+    note(13,24,'Un albero da ritrovare','albero','Ritornare qui in un’altra stagione e osservare che cosa cambia. Per ora ho segnato soltanto il luogo e collegato una scheda da approfondire.',tancia,ref('albero','cerro'),observed('broadleaf',12)),
+    note(14,29,'La prima pagina','appunto','Non serve una grande scoperta per scrivere una nota. A volte basta un bivio da ricordare, una domanda o il posto in cui vorresti tornare.\n\nQuesto diario di prova comincia da qui.',null,null),
+  ];
+}

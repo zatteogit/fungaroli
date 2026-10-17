@@ -1,3 +1,4 @@
+import {speciesHabitat, speciesSafetyNote} from './species-context.js';
 import { alertTriangleGlyph } from './ui-icons.js';
 import { availableGrowthStages } from './fungus-stages.js';
 // Riconosci: ricerca per caratteristiche (visiva, testuale, guidata) su commestibili E velenose.
@@ -694,14 +695,9 @@ export function renderTaxonView(box, t, { photos = null, habitatText = '', extra
         // se la sezione c'è già (sosia del modello), le schede si aggiungono sotto lo stesso titolo
         return ds.length ? `${look.length ? '' : `<h3>${lookTitle}</h3>`}<ul class="tx-look${look.length ? ' tx-look-more' : ''}">${ds.map((o) => { const op = photoOf(o); return `<li><a class="tx-look-main" data-entity href="#/fungo/${esc(o.key)}">${op ? `<img data-src="${ASSET(op.thumb || op.file)}" alt="" loading="lazy" decoding="async">` : ''}<span><b>${esc(o.name || o.latin)}</b><i>${esc(o.latin)}</i><small class="tx-c tox-${esc((o.toxicity || '').replace(/\s/g, '-'))}"><span class="tox">${esc(o.tox_label || o.toxicity || '')}</span></small></span></a><a class="tx-cmp-btn" href="#/riconosci/confronta/${esc(t.key)}/${esc(o.key)}" aria-label="Confronta con ${esc(o.name || o.latin)}, carattere per carattere">Confronta</a></li>`; }).join('')}</ul>` : '';
       })()}
-      <h3>Dove e quando</h3>
-      <dl class="sci-params">
-        ${habitat.length ? `<div><dt>Dove</dt><dd data-glossary>${esc(orList(habitat))}</dd></div>` : habitatText ? `<div><dt>Dove</dt><dd data-glossary>${esc(habitatText)}</dd></div>` : ''}
-        ${t.trees?.length ? `<div><dt>Alberi</dt><dd>${esc(t.trees.join(', '))}</dd></div>` : ''}
-        ${months ? `<div><dt>Quando</dt><dd>${esc(months)}</dd></div>` : ''}
-      </dl>
+      ${speciesHabitat({habitat:habitat.length ? orList(habitat) : habitatText, trees:t.trees?.join(', ') || '', months})}
       ${extra}
-      <details class="context-note species-safety"><summary>Prima del consumo: controllo micologico ASL</summary><p>Foto e caratteri non identificano un esemplare. La commestibilità descritta riguarda la specie, non il fungo raccolto.</p><p>Fai controllare tutto il raccolto all’Ispettorato micologico ASL: per i privati è gratuito. Chiedi anche le indicazioni di preparazione. <a href="#/info">Regole ed emergenze</a></p></details>
+      ${speciesSafetyNote()}
       ${t.sources?.length || ph.length ? `<details class="sec"><summary>Fonti e fotografie</summary><div class="sec-body">${sourceRows(t.sources)}${ph.length ? `<p class="src-h">Fotografie</p>${photoRows(ph)}` : ''}</div></details>` : ''}
     </div>`;
   const lb = ph.map((p) => ({ src: ASSET(p.file_hd || p.file), alt: t.name, caption: captionHtml({ title: `<span class="tox">${toxL}</span> ${esc(t.name || '')} <i>${esc(t.latin)}</i>`, credit: `Foto: ${esc(p.author || '')}${p.license ? `, ${p.licenseUrl ? `<a href="${esc(p.licenseUrl)}" target="_blank" rel="noopener">${esc(p.license)}</a>` : esc(p.license)}` : ''}${p.page ? ` · <a href="${esc(p.page)}" target="_blank" rel="noopener">${esc(p.source || 'Fotografia originale')}</a>` : ''}` }) }));

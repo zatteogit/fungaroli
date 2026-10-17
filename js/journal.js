@@ -1,3 +1,5 @@
+import {renderNotebook, notebookRoute, notebookTitle} from './notebook-view.js';
+import {notebookDemo} from './notebook-demo.js';
 // Diario delle uscite: procedura guidata a passi + elenco con confronto previsto/trovato.
 // Archivio: nella versione Artifact usa il db privato dell'utente (persistente, leggibile
 // da Claude per la taratura); altrove localStorage del browser, da esportare ogni tanto.
@@ -169,6 +171,8 @@ export function initJournal({ onEntries=()=>{},zones, speciesCatalog = SPECIES, 
   let listMessage = '';
   const actionStates=new Map();let entriesRevision=0;
   let listFilter='',listQuery='',noteControls=[];
+  let demoEntries=null,lastDemoMode=false;
+  const getDemoEntries=()=>demoEntries ||= notebookDemo({zones,catalogs:noteCatalogs(),species:speciesCatalog});
   const sortEntries = () => entries.sort((a, b) => String(b.date||'').localeCompare(String(a.date||'')) || String(b.savedAt||'').localeCompare(String(a.savedAt||'')));
   const noteDialog=document.createElement('dialog');noteDialog.className='wiz notebook-dialog';noteDialog.setAttribute('aria-label','Appunto privato');document.body.append(noteDialog);
   const savedNotice=document.createElement('div');savedNotice.className='app-toast';savedNotice.setAttribute('role','status');document.body.append(savedNotice);let noticeTimer;
@@ -376,10 +380,11 @@ export function initJournal({ onEntries=()=>{},zones, speciesCatalog = SPECIES, 
   function rowActions(entry){
     const state=actionStates.get(String(entry.id))||{},id=esc(entry.id),disabled=state.busy?' disabled':'';
     let canPublish=entry.kind!=='note';if(entry.kind==='note')try{sharedObservation(entry);canPublish=true;}catch{/* Contesto incompleto: modifica prima di condividere. */}
-    return `${privacyTag(entry)}<div class="j-actions" aria-busy="${!!state.busy}">
+    const publicControl=store.kind==='community'&&entry.kind!=='plan'&&(entry.shared||canPublish)?`<button type="button" class="diary-community-switch" role="switch" aria-checked="${!!entry.shared}" ${entry.shared?'data-withdraw-entry':'data-share-entry'}="${id}"${disabled}><span class="diary-switch-track" aria-hidden="true"></span><span><b>Condividi con community Fronda</b><small>Solo dati di osservazione. Il testo resta privato.</small></span></button>`:'';
+    return `${privacyTag(entry)}${publicControl}<div class="j-actions" aria-busy="${!!state.busy}">
       ${entry.kind==='note'?`<button type="button" class="btn notebook-share" data-share-note="${id}"${disabled}><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16V3m-5 5 5-5 5 5M5 13v7h14v-7"/></svg>Invia una copia</button>`:''}
       ${entry.kind==='note'?`<button type="button" class="link-btn small" data-edit-note="${id}"${disabled}>Modifica</button>`:''}
-      ${store.kind==='community'&&entry.kind!=='plan'&&(entry.shared||canPublish)?(entry.shared?`<button type="button" class="link-btn small" data-withdraw-entry="${id}" aria-label="Ritira le osservazioni dai conteggi"${disabled}>${state.busy==='withdraw'?'Ritiro…':'Ritira dai conteggi'}</button>`:`<button type="button" class="link-btn small" data-share-entry="${id}" aria-label="Condividi con Fronda"${disabled}>${state.busy==='share'?'Condivido…':'Condividi'}</button>`):''}
+
       <button type="button" class="link-btn small j-delete" data-del="${id}"${disabled}>${state.busy==='delete'?'Elimino…':state.confirmDelete?'Conferma eliminazione':'Elimina'}</button>
       ${state.confirmDelete&&!state.busy?`<button type="button" class="link-btn small" data-cancel-delete="${id}">Annulla</button>`:''}
     </div>${state.message?`<p class="j-action-status${state.error?' is-error':''}" role="${state.error?'alert':'status'}">${esc(state.message)}</p>`:''}`;
@@ -437,6 +442,7 @@ export function initJournal({ onEntries=()=>{},zones, speciesCatalog = SPECIES, 
         await target.remove(entry.id,{signal});
         if(!currentStore(target))return;
         entries=entries.filter(e=>String(e.id)!==id);actionStates.delete(id);entriesRevision++;
+        if(notebookRoute().id===id)location.hash='#/diario';
         renderList(entry.kind==='note'?'Appunto eliminato.':'Voce e segnalazioni eliminate.');if(target.kind==='community')document.dispatchEvent(new CustomEvent('fungaroli:refresh-community'));return;
       }
       if(!currentStore(target))return;
@@ -450,40 +456,33 @@ export function initJournal({ onEntries=()=>{},zones, speciesCatalog = SPECIES, 
 
   function renderList(msg) {
     if (msg !== undefined) listMessage = msg;
-    msg = listMessage;
-    if (!store) { list.innerHTML = '<p class="muted">Carico il taccuino…</p>'; return; }
-    // Search, filters and action feedback do not change the saved observations.
-    if(notifiedEntries!==entries){notifiedEntries=entries;onEntries(entries);}
-    const sm = summary(entries);
-    const nnotes=entries.filter(e=>e.kind==='note').length;
-    const head = entries.length ? `<div class="notebook-index"><p class="j-sum"><span class="notebook-page-total">${entries.length} ${entries.length===1?'pagina':'pagine'}</span> <span aria-hidden="true">·</span> ${nnotes} ${nnotes===1?'appunto':'appunti'} <span aria-hidden="true">·</span> ${sm.total} ${sm.total===1?'uscita':'uscite'}</p><label class="notebook-search" for="notebook-query"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4 4"/></svg><span class="sr-only">Cerca nel taccuino</span><input id="notebook-query" type="search" placeholder="Cerca nel taccuino…" value="${esc(listQuery)}"></label><div class="notebook-tabs" aria-label="Pagine del taccuino">${[['','Tutto'],['note','Appunti'],['percorso','Giri salvati'],['outing','Uscite']].map(([id,label])=>`<button type="button" data-notebook-filter="${id}" aria-pressed="${listFilter===id}">${label}</button>`).join('')}</div></div>${sm.judged?`<details class="notebook-comparison"><summary>Confronto fra condizioni salvate e osservazioni</summary><p>Concordanze esplorative per specie: ${sm.ok} su ${sm.judged}${sm.falseAlarm?` · ${sm.falseAlarm} falsi allarmi`:''}${sm.missed?` · ${sm.missed} ritrovamenti con indice basso`:''}.</p><p>Confronto a soglia 3,0 su 10, non calibrata. Le osservazioni non sono indipendenti: questi conteggi non misurano l’accuratezza scientifica.</p></details>`:''}` : '';
-    const matchesType=e=>!listFilter|| (listFilter==='percorso'?e.kind==='note'&&e.category==='percorso':listFilter==='outing'?!['plan','note'].includes(e.kind):e.kind==='note');
-    const visible=entries.filter(e=>matchesType(e)&&JSON.stringify([e.title,e.note,e.reference?.title,zones.find(z=>z.id===e.zoneId)?.name]).toLowerCase().includes(listQuery.toLowerCase().trim()));
-    const noteText=text=>!text?'':text.length<=360?`<p class="notebook-text">${esc(text)}</p>`:`<div class="notebook-note"><p class="notebook-text notebook-preview">${esc(text.slice(0,320).replace(/\s+\S*$/,''))}…</p><details class="notebook-full-note"><summary><span class="note-expand">Leggi tutto l’appunto</span><span class="note-collapse">Chiudi l’appunto</span></summary><p class="notebook-text">${esc(text)}</p></details></div>`;
-    const photo=(src,alt,href,label)=>src?`<figure class="j-img notebook-photo">${href?`<a href="${esc(href)}" data-entity aria-label="${esc(alt)}"><img data-src="${esc(src)}" alt="${esc(alt)}" loading="lazy" decoding="async"></a>`:`<img data-src="${esc(src)}" alt="${esc(alt)}" loading="lazy" decoding="async">`}<figcaption>${esc(label)}</figcaption></figure>`:'';
-    const rows=visible.map(e=>{
-      const number=entries.length-entries.indexOf(e),z=zones.find(x=>x.id===e.zoneId),note=e.kind==='note';
-      const kind=note?({botanica:'Osservazione botanica',albero:'Alberi',fungo:'Funghi',percorso:'Giro salvato',lettura:'Lettura'})[e.category]||'Appunto':e.kind==='plan'?'Condizioni salvate':'Uscita';
-      const title=note?e.title:z?.title||z?.name||e.zoneId;
-      const refPhoto=note&&e.reference?referenceImage(e.reference.href):null;
-      const photograph=refPhoto?.file?photo(refPhoto.file,`Foto dalla scheda: ${e.reference.title}`,e.reference.href,'Dalla scheda collegata'):!note&&zoneImage(e.zoneId)?photo(zoneImage(e.zoneId),`Immagine del luogo: ${title}`,'','Il luogo dell’uscita'):'';
-      const found=Object.entries(e.finds||{}).filter(([,l])=>l>0).map(([id,l])=>`${speciesCatalog.find(x=>x.id===id)?.name??id} (${LEVELS[l]?.toLowerCase()||l})`).join(', ')||'nessun ritrovamento annotato';
+    const route=notebookRoute(),inNotebook=location.hash.startsWith('#/diario');
+    if(route.demo!==lastDemoMode){listFilter='';listQuery='';lastDemoMode=route.demo;}
+    if (!store&&!route.demo) { list.innerHTML = '<p class="muted">Carico il taccuino…</p>'; return; }
+    // Fictional pages never enter personalisation, storage, exports or community requests.
+    if(store&&notifiedEntries!==entries){notifiedEntries=entries;onEntries(entries);}
+    const analysis=e=>{
       const a=agreement(e),top=Object.entries(e.predicted||{}).filter(([,v])=>Number.isFinite(v)).sort((x,y)=>y[1]-x[1])[0];
-      const comparison=a?a.species.map(x=>`<p>${esc(speciesCatalog.find(s=>s.id===x.id)?.name||x.id)}: ${x.ok?'concordante':x.said?'indice alto, zero osservato':'trovata con indice basso'}</p>`).join(''):'<p>Osservazione senza confronto prospettico.</p>';
-      return `<li class="j-item notebook-page${note?' notebook-entry':''}${photograph?' has-photo':''}" data-journal-id="${esc(e.id)}"><div class="entry-meta"><span class="entry-kind">${kind}</span><time datetime="${esc(e.date)}">${fmt(e.date)}</time></div><div class="j-body">${photograph}<h2 class="entry-title">${esc(title)}</h2>
-        ${note?`${e.reference?`<a class="notebook-reference-link" href="${esc(e.reference.href)}" data-entity>${esc(e.reference.title)} <svg class="notebook-reference-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></a>`:''}${e.zoneId?`<p class="entry-place">${esc(z?.name||e.zoneId)}</p>`:''}${noteText(e.note)}`:`<p class="entry-found">${e.kind==='plan'?'Da ritrovare al prossimo giro.':'Trovato: '+esc(found)}</p>${e.band?`<p class="entry-place">${esc(e.band)} m</p>`:''}${noteText(e.note)}`}
-        ${e.record?`<p class="composer-field-summary">${esc(({unknown:'Osservazione non indicata',observed:'Osservato',searched_absent:'Cercato, non osservato'})[e.record.presence])}${e.record.amount>0?' · '+LEVELS[e.record.amount]:''}${e.record.minutes?' · '+e.record.minutes+' min':''}</p>`:''}${e.observation?`<ul class="notebook-phases">${e.observation.phases.filter(p=>p.status!=='unsure').map(p=>`<li>${esc(PHENO_PHASES.find(([code])=>code===p.code)?.[1]||p.code)}: ${p.status==='present'?'presente':'cercato, non osservato'}</li>`).join('')}</ul>${e.observation.availability!=='unknown'?`<p class="small">Frutti maturi rimasti: ${{none:'nessuno osservato',few:'pochi',many:'molti'}[e.observation.availability]||'non indicato'}</p>`:''}<p class="entry-caution">Identificazione proposta · non verificata</p>`:''}
-        ${!note?`<details class="notebook-analysis"><summary>Condizioni ${e.kind==='plan'?'salvate':'dell’uscita'}</summary>${top?`<p>Indice ${formatIndex(top[1])} · ${esc(speciesCatalog.find(x=>x.id===top[0])?.name||top[0])}</p>`:''}${e.kind==='plan'?'<p>Previsione salvata prima dell’uscita.</p>':comparison}</details>`:''}
-        </div><footer class="notebook-page-footer"><div class="notebook-page-actions">${rowActions(e)}</div><span class="notebook-page-number" aria-label="Pagina ${number}">${String(number).padStart(2,'0')}</span></footer></li>`;
-    }).join('');
-    const empty=`<div class="notebook-first-page"><div><p class="entry-kind">Le tue pagine</p><h2>Un posto per le tue scoperte.</h2><p>Qui ritroverai appunti, schede e giri salvati. Restano privati finché scegli di condividerli.</p></div></div>`;
-    const hasRowMessage=[...actionStates.values()].some(state=>state.message===msg);
-    list.innerHTML=(msg&&!hasRowMessage?`<p class="notice notebook-feedback" role="status">${esc(msg)}</p>`:'')+head+(rows?`<ul class="j-list">${rows}</ul>`:entries.length?'<p class="notebook-no-results" role="status">Nessuna pagina corrisponde. Prova un’altra parola o un altro filtro.</p>':empty);
-    list.querySelectorAll('[data-edit-note]').forEach(b=>b.onclick=()=>openNote({},entries.find(e=>e.id===b.dataset.editNote)));
+      return `<details class="notebook-analysis"><summary>Condizioni ${e.kind==='plan'?'salvate':'dell’uscita'}</summary>${top?`<p>Indice salvato ${formatIndex(top[1])} · ${esc(speciesCatalog.find(x=>x.id===top[0])?.name||top[0])}</p><p class="small muted">Valore storico: non descrive le condizioni attuali.</p>`:''}${e.kind==='plan'?'<p>Previsione salvata prima dell’uscita.</p>':a?a.species.map(x=>`<p>${esc(speciesCatalog.find(s=>s.id===x.id)?.name||x.id)}: ${x.ok?'concordante':x.said?'indice alto, zero osservato':'trovata con indice basso'}</p>`).join(''):'<p>Osservazione senza confronto prospettico.</p>'}</details>`;
+    };
+    const result=renderNotebook({entries:route.demo?getDemoEntries():entries,zones,species:speciesCatalog,zoneImage,referenceImage,route,filter:listFilter,query:listQuery,actions:rowActions,analysis,shared:e=>store?.kind==='community'&&e.shared});
+    const heading=document.querySelector('.notebook-heading');
+    heading.querySelector('h1').textContent=result.title;
+    heading.querySelector('.kicker').textContent=result.kicker;
+    heading.querySelector('.view-sub').textContent=result.subtitle;
+    heading.querySelector('.diary-header-actions').hidden=route.demo||result.detail;
+    heading.querySelector('[data-new-note]').hidden=route.demo||result.detail;
+    heading.querySelector('.diary-demo-link').hidden=route.demo||result.detail;
+    document.querySelector('.notebook-view').classList.toggle('is-detail',result.detail);
+    document.querySelector('.notebook-view').classList.toggle('is-demo',route.demo);
+    document.getElementById('notebook-storage-panel').hidden=route.demo||result.detail;
+    const hasRowMessage=[...actionStates.values()].some(state=>state.message===listMessage);
+    list.innerHTML=(!route.demo&&listMessage&&!hasRowMessage?`<p class="notice notebook-feedback" role="status">${esc(listMessage)}</p>`:'')+result.html;
+    if(inNotebook)document.title=`${result.detail?result.title:route.demo?'Diario di prova':'Taccuino'} · Fronda`;
+    list.querySelectorAll('[data-edit-note]').forEach(b=>b.onclick=()=>openNote({},entries.find(e=>String(e.id)===b.dataset.editNote)));
     list.querySelectorAll('[data-notebook-filter]').forEach(b=>b.onclick=()=>{listFilter=b.dataset.notebookFilter;renderList();list.querySelector(`[data-notebook-filter="${CSS.escape(listFilter)}"]`)?.focus({preventScroll:true});});
-    list.querySelector('#notebook-query')?.addEventListener('input',ev=>{const pos=ev.target.selectionStart;listQuery=ev.target.value;renderList();const input=list.querySelector('#notebook-query');input.focus({preventScroll:true});if(pos!=null)try{input.setSelectionRange(pos,pos);}catch{/* search inputs may not expose selection */}});
-    list.querySelector('[data-open-journal-inline]')?.addEventListener('click', open);
-    const legacyButton=document.querySelector('[data-open-journal]');if(legacyButton)legacyButton.hidden=false;
+    list.querySelector('[data-notebook-reset]')?.addEventListener('click',()=>{listFilter='';listQuery='';renderList();list.querySelector('#notebook-query')?.focus({preventScroll:true});});
+    list.querySelector('#notebook-query')?.addEventListener('input',ev=>{const pos=ev.target.selectionStart;listQuery=ev.target.value;renderList();const input=list.querySelector('#notebook-query');input.focus({preventScroll:true});if(pos!=null)try{input.setSelectionRange(pos,pos);}catch{/* Search inputs may not expose selection. */}});
   }
 
   async function exportFile() {
@@ -666,7 +665,7 @@ export function initJournal({ onEntries=()=>{},zones, speciesCatalog = SPECIES, 
     const loading = store;
     try { const fresh = await loading.list(); if (loading !== store) return; entries = fresh; sortEntries(); renderStorage('none'); renderList(); } catch { if (loading === store) renderList('Taccuino non disponibile. Riprova.'); }
   });
-  return { refresh: renderList, async savePlan(zoneId, date, band) {
+  return { refresh: renderList, entryTitle:(id,demo=false)=>{const e=(demo?getDemoEntries():entries).find(e=>String(e.id)===id);return e?notebookTitle(e,zones):'Pagina del taccuino';}, async savePlan(zoneId, date, band) {
     if (!store) throw new Error('Il taccuino sta ancora caricando. Riprova tra poco.');
     const forecast = captureForecast?.(zoneId, date, band);
     if (!forecast) throw new Error('Non ci sono dati completi e aggiornati per salvare questa previsione.');
