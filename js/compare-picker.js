@@ -2,7 +2,7 @@
 const esc = value => String(value ?? '').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const normalize = value => String(value || '').normalize('NFD').replace(/\p{M}/gu,'').toLocaleLowerCase('it');
 const name = t => t.name || t.latin;
-const image = (t,photo,asset) => { const p=photo(t); return p?`<img data-src="${esc(asset(p.thumb||p.file))}" alt="" loading="lazy" decoding="async">`:'<span class="cmp-picker-placeholder" aria-hidden="true">?</span>'; };
+const image = (t,photo,asset,full=false) => { const p=photo(t); return p?`<img data-src="${esc(asset(full?(p.file||p.thumb):(p.thumb||p.file)))}" alt="" loading="lazy" decoding="async">`:'<span class="cmp-picker-placeholder" aria-hidden="true">?</span>'; };
 
 export function openComparePicker({taxa,photo,asset,title='Scegli un fungo',current='',exclude='',related=[],onSelect}) {
   const origin=document.activeElement, initialHash=location.hash;
@@ -41,9 +41,9 @@ export function mountCompareStart(box,{taxa,photo,asset,related,left='',right=''
   let a=taxa.find(t=>t.key===left)||null,b=taxa.find(t=>t.key===right)||null;
   if(a?.key===b?.key)b=null;
   const paint=()=>{
-    const field=(t,side,label)=>`<button type="button" class="cmp-start-choice${t?' is-filled':''}" data-pick-side="${side}" aria-haspopup="dialog"><span class="cmp-start-label">${label}</span>${t?`${image(t,photo,asset)}<b>${esc(name(t))}</b><i>${esc(t.latin||'')}</i><span class="cmp-start-change">Cambia fungo <span aria-hidden="true">↗</span></span>`:'<span class="cmp-start-empty" aria-hidden="true">＋</span><b>Scegli un fungo</b><span class="cmp-start-change">Sfoglia o cerca nel catalogo</span>'}</button>`;
+    const field=(t,side,label)=>`<button type="button" class="cmp-start-choice${t?' is-filled':''}" data-pick-side="${side}" aria-haspopup="dialog">${t?`${image(t,photo,asset,true)}<span class="cmp-start-label">${label}</span><b>${esc(name(t))}</b><i>${esc(t.latin||'')}</i><span class="cmp-start-change">Cambia fungo <span aria-hidden="true">↗</span></span>`:`<span class="cmp-start-empty" aria-hidden="true">＋</span><span class="cmp-start-label">${label}</span><b>Scegli un fungo</b><span class="cmp-start-change">Sfoglia o cerca nel catalogo</span>`}</button>`;
     const documented=a&&b&&related(a).some(t=>t.key===b.key);
-    box.innerHTML=`<div class="cmp-start-pair">${field(a,'left','1 · Riferimento')}<span class="cmp-start-vs" aria-hidden="true">vs</span>${field(b,'right','2 · Da confrontare')}</div>
+    box.innerHTML=`<div class="cmp-start-pair">${field(a,'left','1 · Riferimento')}<span class="cmp-start-vs" aria-hidden="true"><i>vs</i></span>${field(b,'right','2 · Da confrontare')}</div>
       <div class="cmp-start-actions"><button type="button" class="btn ghost" data-swap-pair${a&&b?'':' disabled'}>Inverti i due funghi</button><button type="button" class="btn primary" data-start-compare${a&&b?'':' disabled'}>Confronta i caratteri <span aria-hidden="true">→</span></button></div>
       <p class="cmp-start-context" role="status">${a&&b?(documented?'Sosia documentati nel catalogo.':'Confronto libero: relazione di sosia non documentata nel catalogo.'):'Puoi scegliere due specie diverse, anche fuori dalle relazioni di sosia.'}</p>
       <aside class="cmp-start-note"><b>Confrontare per osservare meglio</b><p>Vedrai differenze e somiglianze nei caratteri documentati per entrambe le specie. Il confronto non identifica un esemplare né ne certifica la commestibilità.</p></aside>`;
