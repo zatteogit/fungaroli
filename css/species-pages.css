@@ -310,3 +310,15 @@ body[data-page="mappa"] .view-map { border-radius:0; }
   .title-in-bar body[data-page="riconosci"] .appbar:has(.appbar-back:not([hidden])) .appbar-title { transform:translateY(0); }
 }
 @media(prefers-reduced-motion:reduce) { #detail .essential-sections > .sec > summary::after, #detail .zone-more > .sec > summary::after { transition:none; } }
+
+/* Il selettore del sosia occupa la stessa colonna destra delle foto e dei caratteri. */
+.fungus-compare .cmp-pickbar { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); align-items:center; gap:12px; }
+.fungus-compare .cmp-ref-l { width:auto; max-width:none; min-width:0; padding:8px 0; }
+.fungus-compare .cmp-ref-l > i { display:none; }
+.fungus-compare .cmp-pickbar > :is(.cmp-pick,.rail-host) { grid-column:2; width:100%; min-width:0; }
+.fungus-compare .cmp-pickbar .cmp-pick { padding:2px 0; scroll-padding-inline:0; }
+.fungus-compare .cmp-pickbar .cmp-chip { max-width:100%; white-space:normal; text-align:left; }
+@media(max-width:599px) {
+  .fungus-compare .cmp-pickbar { margin-bottom:16px; }
+  .fungus-compare .cmp-pickbar .cmp-chip { padding:8px 12px; min-height:44px; font-size:13px; line-height:1.35; }
+}
