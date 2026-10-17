@@ -1,3 +1,4 @@
+import './modal-scroll.js';
 import {factCards,enhanceContentReading} from './content-ui.js';
 import {enhanceEntityAccordions} from './entity-accordions.js';
 import {plannedDeparture, recommendedStartAvailable, calendarDate} from './planning-time.js';

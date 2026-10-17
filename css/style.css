@@ -1419,13 +1419,8 @@ html.is-offline #updated { color: var(--warn-ink); font-weight: 600; }
 .look-open span { color: var(--link); }
 .look-open::before { content: ''; position: absolute; inset: 0; z-index: 1; }
 
-/* pannello aperto: la pagina dietro resta ferma (lo scroll arriva solo al pannello) */
-/* Su iPhone (Safari e app installata) togliere e rimettere overflow: hidden alla pagina sposta barra in basso e intestazione
-   a metà schermo dopo la chiusura del pannello: lì basta overscroll-behavior sul pannello. */
-@supports not (-webkit-touch-callout: none) {
-  html:has(dialog[open]:modal) { overflow: hidden; }
-  /* Il blocco sul solo elemento radice conserva il riferimento viewport della testata sticky. */
-}
+/* Il blocco è condiviso da tutti i dialog: il body conserva il riferimento viewport. */
+html.modal-scroll-locked { overflow:hidden; overscroll-behavior:none; }
 html { scrollbar-gutter: stable; }
 dialog { overscroll-behavior: contain; }
 

@@ -1,3 +1,4 @@
+import './modal-scroll.js';
 import { initCommunity, communityReady, currentUser } from './community.js';
 import './images.js';
 import { CONTENT_RESOURCES, CONTENT_TEMPLATES, FIELD_LABELS, isLockedField } from './content-schema.js';

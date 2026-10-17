@@ -33,6 +33,7 @@ La suite browser avvia un solo Wrangler sulla porta 8788: non lanciarne due insi
 
 ## Regole che non si vedono dal codice
 
+- **Modali:** `js/modal-scroll.js` blocca lo scroll sottostante per tutti i `dialog` aperti con `showModal()`, inclusi quelli sovrapposti. Mantieni lo scroll interno, il ritorno alla posizione precedente e il riferimento viewport di intestazione/navbar; non escludere Safari dal blocco né usare `position:fixed` sul body. I dialog non modali e i popover non bloccano la pagina.
 - **Cache del service worker:** quando cambia un file dell'app pubblicata, incrementa `SHELL` in `sw.js` (`fungaroli-shell-vNN`), metti lo stesso valore in `<meta name="app-version">` di `index.html` (serve all'avviso «versione nuova»; lo controlla un test) e aggiorna `PRECACHE` se aggiungi moduli.
 - **CMS:** i contenuti pubblici possono arrivare dallo snapshot del CMS (D1 `CMS_DB`). Cambiare solo un JSON in `data/` non sostituisce un contenuto già pubblicato da un autore. Per un campo nuovo aggiorna insieme schema, renderer, seed e snapshot (vedi `docs/cms.md`).
 - **Nomi definitivi:** barra con **Uscite**, **Mappa**, **Scopri**, **Taccuino** e la ricerca sempre visibile (decisione di Matteo del 15/10: la mappa resta al primo livello; Impara sta dentro Scopri); titoli home «Dove andare», «Altre buone uscite», «Nei boschi in questi giorni». Nella storia Git compaiono nomi precedenti: non ripristinarli.
