@@ -17,6 +17,10 @@ h1 { font-family: var(--font-display); font-weight: 700; letter-spacing: -0.015e
 h2 { font-size: 17px; font-weight: 600; margin-bottom: 12px; }
 h3 { font-size: 15px; font-weight: 600; margin: 18px 0 8px; }
 p { text-wrap: pretty; }
+/* titoli brevi che non sono h1-h3: righe pareggiate, niente parola sola in fondo */
+:is(.walk-title, .walk-route b, .cover-title, .phero-title, .sheet-title, .wiz-title, .entry-title, .ch-title, .ch-group-title, .look-name, .tc-name b, .cmp-name a, .cmp-name button, .tile-body b, .portrait-body b, .sp-card-body b) { text-wrap: balance; }
+/* testi di più righe fuori dai paragrafi: niente orfane */
+:is(li, dd, figcaption, .small) { text-wrap: pretty; }
 a { color: var(--link); text-underline-offset: 2px; }
 img { max-width: 100%; }
 /* La foto conserva lo spazio della card mentre viene scaricata e decodificata. */
