@@ -547,7 +547,7 @@ test('invio vuoto: messaggio utile, nessuna richiesta e bozza conservata', async
   await page.getByRole('button', {name:/Versione breve/}).click();
   for (let i=0;i<3;i++) await next(page);
   await expect(page.getByLabel('Il tuo nome', {exact:true})).toBeVisible();
-  await expect(page.getByText(/serve a collegare le risposte alla tua testimonianza/)).toBeVisible();
+  await expect(page.locator('.q-hint').filter({hasText:'serve a collegare le risposte alla tua testimonianza'})).toBeVisible();
   await page.getByRole('button', {name:'Vai al riepilogo'}).click();
   await page.getByRole('checkbox', {name:/Acconsento all’uso delle mie risposte/}).check();
   const posts=[];
