@@ -5,6 +5,7 @@ import { handleCommunity, cleanupCommunity } from './community.js';
 import { handleSurvey, cleanupSurvey } from './survey.js';
 import { handleCms, handleContent, publishedResources } from './cms.js';
 import { cachedForecast } from './weather-provider.js';
+import { recordWeatherMetric, cleanupWeatherMetrics } from './weather-metrics.js';
 
 export default {
   async fetch(request, env, ctx) {
@@ -14,7 +15,8 @@ export default {
       try {
         const content=await publishedResources(env,url.origin,['zones'],{initialize:false});
         const zones=content?.zones?.zones||(await (await env.ASSETS.fetch(new Request(new URL('/data/zones.json',url)))).json()).zones;
-        return await cachedForecast(url.searchParams,{zones,cache:env.DIARIO,waitUntil:ctx?.waitUntil?.bind(ctx),waitForFresh:request.headers.get('x-weather-refresh')==='1'});
+        const metrics=env.CMS_DB&&ctx?.waitUntil?m=>ctx.waitUntil(recordWeatherMetric(env.CMS_DB,m)):undefined;
+        return await cachedForecast(url.searchParams,{zones,cache:env.DIARIO,waitUntil:ctx?.waitUntil?.bind(ctx),waitForFresh:request.headers.get('x-weather-refresh')==='1',metrics});
       } catch(e) {return Response.json({error:e?.status?e.message:'Il servizio meteo non è disponibile. Riprova tra poco.',...(e?.code?{code:e.code}:{})},{status:e?.status||503,headers:{'cache-control':'no-store'}});}
     }
     if(url.pathname==='/redazione'||url.pathname==='/redazione/')return env.ASSETS.fetch(request);
@@ -26,6 +28,6 @@ export default {
     if (m) return handleDiario(request, env, m[1] ? m[1].split('/').filter(Boolean) : []);
     return env.ASSETS.fetch(request);
   },
-  // Il cron rimuove anche i contatori del questionario di 2 giorni fa o prima, se nessuno invia.
-  async scheduled(event, env, ctx) { ctx.waitUntil(Promise.all([cleanupCommunity(env), cleanupSurvey(env)])); },
+  // Pulizie indipendenti: community, questionario e contatori meteo.
+  async scheduled(event, env, ctx) { ctx.waitUntil(cleanupCommunity(env)); ctx.waitUntil(cleanupSurvey(env)); ctx.waitUntil(cleanupWeatherMetrics(env.CMS_DB)); },
 };

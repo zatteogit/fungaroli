@@ -99,6 +99,7 @@ Il contratto è in [cms.openapi.json](cms.openapi.json). Gli endpoint principali
 | `GET, POST /api/cms/v1/tokens` | Gestisce le credenziali degli agenti; solo amministratori. |
 | `DELETE /api/cms/v1/tokens/{id}` | Revoca una credenziale; solo amministratori. |
 | `GET /api/cms/v1/audit` | Log delle operazioni; solo amministratori. |
+| `GET /api/cms/v1/metrics/weather?days=30` | Misure del servizio meteo per giorno (chiamate e quota stimata di Open-Meteo, errori, latenza, uso della cache); solo amministratori. Dettagli in [meteo-cache.md](meteo-cache.md#misure). |
 | `GET /api/content/v1/snapshot` | Export pubblico e coerente dei soli contenuti pubblicati. L'ETag è l'ID della release: con `If-None-Match` uguale risponde 304, anche se l'ETag torna debole (`W/"…"`, come lo rimanda il browser dopo la compressione di Cloudflare). |
 
 ## Architettura e gestione
