@@ -13,4 +13,4 @@ Recuperati 25 file originali dalla sessione Claude «Analisi critica app Fronda�
 
 ## Rilascio
 
-Verifiche definitive e collegamento alla PR sono nella descrizione del rilascio; produzione solo dopo la suite browser completa verde. Cache shell v102. Il questionario si distribuisce con `/questionario`, senza inserirlo nella navigazione generale dell'app.
+Verifiche definitive e collegamento alla PR sono nella descrizione del rilascio; Per questo rilascio Matteo ha chiesto esplicitamente di interrompere la suite generale dell’app e proseguire con le verifiche mirate del questionario e della redazione. La suite generale interrotta non si dichiara superata. Cache shell v102. Il questionario si distribuisce con `/questionario`, senza inserirlo nella navigazione generale dell'app.
