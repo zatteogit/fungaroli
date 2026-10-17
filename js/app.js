@@ -428,8 +428,42 @@ function navKind(a, b) {
   return 'none';
 }
 
-// sulle pagine con la foto in testata la barra diventa piena solo dopo la foto
+// La barra mobile lascia spazio scendendo e torna dopo un breve movimento verso l'alto.
+const mobileHeader = matchMedia('(max-width:899px)');
+let headerScrollAnchor = 0;
+let headerScrollDirection = 0;
+let headerLastY = 0;
+function revealHeader() {
+  document.documentElement.classList.remove('header-away');
+  headerScrollAnchor = Math.max(0, scrollY);
+  headerScrollDirection = 0;
+  headerLastY = headerScrollAnchor;
+}
+function updateHeaderScroll() {
+  const y = Math.max(0, scrollY);
+  if (!mobileHeader.matches || y < 64 || document.body.dataset.page === 'mappa' || document.querySelector('.appbar :focus-visible')) {
+    revealHeader();
+    return;
+  }
+  const direction = Math.sign(y - headerLastY);
+  const previousY = headerLastY;
+  headerLastY = y;
+  if (!direction) return;
+  if (direction !== headerScrollDirection) {
+    headerScrollDirection = direction;
+    headerScrollAnchor = previousY;
+  }
+  if (Math.abs(y - headerScrollAnchor) >= 20) {
+    document.documentElement.classList.toggle('header-away', direction > 0);
+    headerScrollAnchor = y;
+  }
+}
+$('.appbar').addEventListener('focusin', revealHeader);
+addEventListener('hashchange', revealHeader);
+mobileHeader.addEventListener('change', revealHeader);
+// Sulle pagine con la foto in testata la barra diventa piena solo dopo la foto.
 function onScrollBar() {
+  updateHeaderScroll();
   const h = document.querySelector('.view:not([hidden]) .phero');
   document.documentElement.classList.toggle('scrolled', !h || scrollY > h.offsetHeight - 70);
 }
