@@ -865,12 +865,11 @@ function renderFilterBox(box, onMap = false) {
     day.onclick = () => { const open = box.closest('.map-top').classList.toggle('days-open'); day.setAttribute('aria-expanded', String(open)); if (open) $('#map-days [aria-selected="true"]')?.focus({preventScroll:true}); };
     return;
   }
-  const day=onMap?`<button type="button" class="chip chip-day" data-days aria-expanded="${!!box.closest('.map-top')?.classList.contains('days-open')}" aria-controls="map-days">${esc(fmtDate(outdoorDate(state.dayOffset),{weekday:'short',day:'numeric'}))} ▾</button>`:'';
-  const more=`<button type="button" class="chip chip-more" data-more aria-haspopup="dialog"${count?` title="${count} filtri attivi"`:''}>${onMap?'Altri filtri':'Alla ricerca di…'}</button>`;
+  const sliders='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="M3 7h5m4 0h9M3 17h9m4 0h5"/><circle cx="10" cy="7" r="2"/><circle cx="14" cy="17" r="2"/></svg>';
+  const more=`<button type="button" class="chip chip-more" data-more aria-haspopup="dialog"${count?` title="${count} filtri attivi"`:''}>${sliders}<span>Filtri avanzati</span>${count?`<span class="af-filter-count" aria-hidden="true">${count}</span>`:''}</button>`;
   const icons={avoidCrowd:IC.people,preferComfort:IC.walk,distancePenalty:IC.home};
   const prefs=PREFS.map(([k,label,short])=>`<button type="button" class="chip pref" data-p="${k}" aria-label="${esc(k==='avoidCrowd'?'Poca gente':label)}" title="${esc(label)}" aria-pressed="${!!state[k]}"><span class="pref-icon" aria-hidden="true">${icons[k]}</span><span class="pref-label-full">${esc(label)}</span><span class="pref-label-short" aria-hidden="true">${esc(short)}</span></button>`).join('');
-  box.innerHTML=`<div class="af-group-row intent-row" role="group" aria-label="Alla ricerca di">${onMap?'':more}${intentButtons()}</div><div class="af-pref-row" role="group" aria-label="Preferenze dell’uscita">${onMap?day+more:'<span class="af-pref-label">Preferenze</span>'}${prefs}</div>`;
-  box.querySelector('[data-days]')?.addEventListener('click',e=>{const open=box.closest('.map-top').classList.toggle('days-open');e.currentTarget.setAttribute('aria-expanded',String(open));});
+  box.innerHTML=`<div class="af-group-row intent-row" role="group" aria-label="Cosa cerchi"><div class="af-group-head"><span class="af-group-label">Cosa cerchi</span>${more}</div>${intentButtons()}</div><div class="af-pref-row" role="group" aria-label="Preferenze dell’uscita"><span class="af-pref-label">Preferenze</span>${prefs}</div>`;
   box.querySelectorAll('[data-intent]').forEach(b=>b.onclick=()=>changeIntent(b.dataset.intent));
   box.querySelectorAll('[data-p]').forEach(b=>b.onclick=()=>soft(()=>{state[b.dataset.p]=!state[b.dataset.p];savePrefs();outCache.clear();renderFilterSummary();renderAll();}));
   box.querySelector('[data-more]').onclick=openFullFilters;
