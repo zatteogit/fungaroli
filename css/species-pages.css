@@ -311,14 +311,24 @@ body[data-page="mappa"] .view-map { border-radius:0; }
 }
 @media(prefers-reduced-motion:reduce) { #detail .essential-sections > .sec > summary::after, #detail .zone-more > .sec > summary::after { transition:none; } }
 
-/* Il selettore del sosia occupa la stessa colonna destra delle foto e dei caratteri. */
-.fungus-compare .cmp-pickbar { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); align-items:center; gap:12px; }
-.fungus-compare .cmp-ref-l { width:auto; max-width:none; min-width:0; padding:8px 0; }
-.fungus-compare .cmp-ref-l > i { display:none; }
-.fungus-compare .cmp-pickbar > :is(.cmp-pick,.rail-host) { grid-column:2; width:100%; min-width:0; }
-.fungus-compare .cmp-pickbar .cmp-pick { padding:2px 0; scroll-padding-inline:0; }
-.fungus-compare .cmp-pickbar .cmp-chip { max-width:100%; white-space:normal; text-align:left; }
-@media(max-width:599px) {
-  .fungus-compare .cmp-pickbar { margin-bottom:16px; }
-  .fungus-compare .cmp-pickbar .cmp-chip { padding:8px 12px; min-height:44px; font-size:13px; line-height:1.35; }
-}
+/* La scelta appartiene alla specie a destra; le alternative si aprono solo su richiesta. */
+.fungus-compare .cmp-pair-head { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; align-items:center; margin:0 1px 12px; color:var(--text); font:600 15px/1.4 var(--font-body); }
+.cmp-pair-head > b { padding:10px 0; }
+.cmp-pair-head > button { display:grid; gap:5px; width:100%; min-height:60px; padding:10px 12px; border:1px solid var(--hair); border-radius:14px; background:var(--surface); color:var(--text); font:inherit; text-align:left; cursor:pointer; }
+.cmp-pair-head > button > span { display:flex; align-items:center; justify-content:space-between; color:var(--link); font:600 12px/1.3 var(--font-body); }
+.cmp-pair-head > button > span > span { font-size:18px; line-height:12px; }
+.cmp-pair-head > button:focus-visible { outline:3px solid var(--focus); outline-offset:3px; }
+.cmp-chooser { width:min(440px,calc(100% - 32px)); max-height:80svh; margin:auto; padding:20px; border:1px solid var(--hair); border-radius:24px; color:var(--text); background:var(--bg); box-shadow:var(--shadow-2); }
+.cmp-chooser::backdrop { background:rgb(0 0 0 / .45); }
+.cmp-chooser-head { display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:16px; }
+.cmp-chooser-head h2 { margin:0; font:600 24px/1.3 var(--font-display); }
+.cmp-chooser-head button { min-width:44px; min-height:44px; border:0; border-radius:50%; background:var(--surface-2); color:var(--text); font-size:24px; cursor:pointer; }
+.cmp-choices { display:grid; gap:8px; }
+.fungus-compare .cmp-choices .cmp-chip { width:100%; padding:10px; border-radius:15px; gap:12px; text-align:left; }
+.fungus-compare .cmp-choices .cmp-chip-img { display:block; width:44px; height:44px; flex:none; }
+.cmp-choices .cmp-chip > span:nth-child(2) { display:grid; gap:4px; flex:1; }
+.cmp-choices .cmp-chip small { font:400 12px/1.4 var(--font-body); }
+.cmp-choices .cmp-choice-check { visibility:hidden; }
+.fungus-compare .cmp-choices [aria-pressed="true"] { border-color:var(--link); background:var(--surface-2); }
+.cmp-choices [aria-pressed="true"] .cmp-choice-check { visibility:visible; }
+@media(max-width:599px) { .fungus-compare .cmp-pair-head { font-size:13px; } }

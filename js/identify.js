@@ -793,7 +793,8 @@ function renderCompare(box, ref, pick) {
       {kind:'same',label:'In comune',empty:'Nessun carattere interamente condiviso nei dati disponibili.'},
     ], info = rows.filter(r=>r.info);
     const how = fromToxic ? HOWTO(t.edible_id, ref.latin) : HOWTO(ref.edible_id, t.latin);
-    return `<section class="cmp-slide" id="cmp-${esc(t.key)}" data-i="${k}" role="tabpanel" aria-labelledby="cmp-tab-${esc(t.key)}" ${t.key === list[start]?.key ? '' : 'inert'}>
+    return `<section class="cmp-slide" id="cmp-${esc(t.key)}" data-i="${k}" role="group" aria-label="${esc(ref.name || ref.latin)} e ${esc(t.name || t.latin)}" ${t.key === list[start]?.key ? '' : 'inert'}>
+      <div class="cmp-pair-head"><b>${esc(ref.name || ref.latin)}</b>${list.length>1?`<button type="button" data-change-lookalike aria-haspopup="dialog" aria-label="Cambia specie a confronto: ${esc(t.name || t.latin)}"><b>${esc(t.name || t.latin)}</b><span>Cambia <span aria-hidden="true">⌄</span></span></button>`:`<b>${esc(t.name || t.latin)}</b>`}</div>
       <div class="cmp-pair">
         ${[ref, t].map((x) => `<div class="cmp-side">
           <figure class="cmp-fig ${toxCls(x)}"><span class="cmp-zoom">${pic(x)}</span><span class="tox">${esc(x.tox_label || x.toxicity)}</span>
@@ -813,17 +814,14 @@ function renderCompare(box, ref, pick) {
   const start = Math.max(0, list.findIndex((t) => t.key === pick));
   box.innerHTML = `
     <h1 class="sec-title cmp-title">${fromToxic ? `${esc(ref.name || ref.latin)}: con cosa si confonde` : `${esc(ref.name)} o sosia?`}</h1>
-    <p class="cmp-lede">A sinistra ${esc((ref.name || ref.latin).toLowerCase())}, a destra ${fromToxic ? 'la specie simile' : 'il sosia'}. Confronta un fungo alla volta.</p>
-    <div class="cmp-pickbar"><span class="cmp-ref-l ${toxCls(ref)}"><b>${esc(ref.name || ref.latin)}</b> <i aria-hidden="true">vs</i></span>
-    <div class="cmp-pick" role="tablist" aria-label="Scegli il sosia">${list.map((t, k) => `<button type="button" role="tab" id="cmp-tab-${esc(t.key)}" aria-controls="cmp-${esc(t.key)}" tabindex="${k === start ? 0 : -1}" class="cmp-chip ${toxCls(t)}" data-go="${k}" aria-selected="${k === start}"><span class="cmp-chip-img">${pic(t, true)}</span><span>${esc(t.name || t.latin)}</span></button>`).join('')}</div></div>
+    <dialog class="cmp-chooser" aria-labelledby="cmp-chooser-title"><div class="cmp-chooser-head"><h2 id="cmp-chooser-title">Confronta con…</h2><button type="button" data-close-chooser aria-label="Chiudi">×</button></div><div class="cmp-choices">${list.map((t,k)=>`<button type="button" class="cmp-chip ${toxCls(t)}" data-go="${k}" aria-pressed="${k===start}"><span class="cmp-chip-img">${pic(t,true)}</span><span><b>${esc(t.name||t.latin)}</b><small>${esc(t.tox_label||t.toxicity)}</small></span><span class="cmp-choice-check" aria-hidden="true">✓</span></button>`).join('')}</div></dialog>
     <div class="cmp-track">${list.map(slide).join('')}</div>
     <p><a class="btn primary" href="#/riconosci">Confronta un altro fungo</a></p>`;
 
-  const track = box.querySelector('.cmp-track'), chips = [...box.querySelectorAll('.cmp-chip[role="tab"]')];
+  const track = box.querySelector('.cmp-track'), chips = [...box.querySelectorAll('.cmp-chip[data-go]')];
   const mark = (i) => {
-    chips.forEach((c, k) => { c.setAttribute('aria-selected', k === i); c.tabIndex = k === i ? 0 : -1; });
+    chips.forEach((c, k) => c.setAttribute('aria-pressed', String(k === i)));
     for (const [k, slide] of [...track.children].entries()) slide.inert = k !== i;
-    chips[i]?.scrollIntoView({ block: 'nearest', inline: 'center', behavior: 'smooth' });
     history.replaceState(null, '', `#/riconosci/confronta/${ref.key}/${list[i].key}`);
   };
   let cur = start;
@@ -886,14 +884,20 @@ function renderCompare(box, ref, pick) {
     names(cur);
     const vt = document.startViewTransition(() => { track.scrollTo({ left: k * track.clientWidth, behavior: 'instant' }); cur = k; mark(k); fit(); names(k); });
     vt.finished.finally(() => { names(-1); delete document.documentElement.dataset.cmpDir; });
+    return vt.updateCallbackDone;
   };
-  chips.forEach((c, i) => {
-    c.addEventListener('click', () => go(i));
-    c.addEventListener('keydown', e => {
-      const next = { ArrowRight: (i + 1) % chips.length, ArrowLeft: (i + chips.length - 1) % chips.length, Home: 0, End: chips.length - 1 }[e.key];
-      if (next === undefined) return;
-      e.preventDefault(); go(next); chips[next].focus({ preventScroll: true });
-    });
+  const chooser = box.querySelector('.cmp-chooser');
+  let chooserTrigger;
+  box.querySelectorAll('[data-change-lookalike]').forEach(button => button.onclick = () => {
+    chooserTrigger = button;
+    chooser.showModal();
+    chips[cur]?.focus({preventScroll:true});
+  });
+  chooser.querySelector('[data-close-chooser]').onclick = () => chooser.close();
+  chooser.addEventListener('close', () => (slides[cur].querySelector('[data-change-lookalike]') || chooserTrigger)?.focus({preventScroll:true}));
+  chips.forEach((c,i) => c.onclick = async () => {
+    await go(i);
+    chooser.close();
   });
   requestAnimationFrame(() => { track.scrollLeft = start * track.clientWidth; fit(); });
   box.querySelectorAll('[data-taxon]').forEach((b) => b.addEventListener('click', () => openTaxon(b.dataset.taxon)));
