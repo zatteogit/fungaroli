@@ -31,3 +31,5 @@ Gli anelli usano un fondo bosco all’88% e blur interno; con riduzione della tr
 ### Verifica di rilascio del 17 ottobre
 
 Il controllo della home Piante ha evidenziato due problemi degli strumenti di verifica: l’audit campionava le frecce sovrapposte alle card parzialmente visibili e il confronto dell’ordine delle sezioni dipendeva dal momento in cui veniva creato il contenitore delle righe scorrevoli. L’audit ora centra ogni card con scorrimento istantaneo; il confronto considera le sezioni anche dentro quel contenitore. Soglie di contrasto e verifiche dell’ordine restano invariate. Nessuna modifica al codice dell’app per queste correzioni.
+
+La fixture community assegna inoltre un indirizzo client distinto a ogni contesto del browser locale: i budget delle registrazioni rimangono separati senza azzerare i contatori con una seconda connessione SQLite. La scrittura diretta nel database in uso poteva arrestare workerd con `SQLITE_BUSY`. I limiti del Worker restano invariati.
