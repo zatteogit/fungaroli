@@ -868,6 +868,10 @@ button.cover-index:focus-visible { outline:3px solid var(--focus); outline-offse
 }
 @media(prefers-reduced-motion:reduce) { .home-filter-button { transition:none; } }
 
+/* Il primo giorno segue il margine della pagina, senza riservare spazio alla freccia nascosta. */
+#days { justify-content:flex-start; margin-inline:0; padding-inline:0; scroll-padding-inline:0; }
+.rail-host:has(> #days) { padding-left:0; }
+
 /* Le card del carosello escono gradualmente sullo sfondo della pagina. */
 @media(hover:hover) and (pointer:fine) {
   .rail-host > :is(.rail, .sp-strip, .tree-fungi) {
