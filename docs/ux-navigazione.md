@@ -88,3 +88,9 @@ Le sezioni richiuse devono anticipare il contenuto con titolo specifico e dati o
 ### Inquadratura della mappa
 
 Al primo ingresso si inquadrano le zone compatibili con i filtri, comprese le loro aree; un link a una zona inquadra direttamente quella. Cerchi, etichette ed elenco usano lo stesso movimento breve e considerano testata, barra di navigazione e scheda aperta. Niente volo iniziale o ricentratura durante aggiornamenti meteo, filtri, cambio giorno e ritorno alla mappa. «Mostra tutte le zone» ripristina esplicitamente la panoramica. I campioni selezionano la zona di appartenenza; il dettaglio compare a movimento concluso.
+
+### Taccuino: indice e pagine
+
+L’indice `#/diario` mostra card sintetiche con data, luogo, due righe di testo e pochi dati strutturati. Ogni card apre una pagina `#/diario/pagina/<id>`: testo completo, scheda collegata, dati di campo e azioni. Modifica, copia, eliminazione e condivisione stanno nel dettaglio. Il ritorno conserva ricerca e filtro. Le fotografie di catalogo sono dichiarate come tali e rimandano alla scheda con i crediti.
+
+“Diario di prova” apre `#/diario/esempio`, con 14 pagine fittizie e dettagli navigabili. Gli esempi restano esclusivamente nel renderer: non vengono scritti nello storage, esportati, passati alla personalizzazione o inviati alla community. Nel dettaglio reale, quando l’osservazione è condivisibile, uno switch mostra il consenso alla condivisione con community Fronda; il testo resta privato.
