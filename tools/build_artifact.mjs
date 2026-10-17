@@ -71,6 +71,8 @@ const body = html.match(/<body>([\s\S]*)<\/body>/)[1]
 const extra = Object.fromEntries(Object.entries({ botanicalModels:'botanical-models',plants:'plants',glossary:'glossary',glossaryMedia:'media-glossary',guides:'guides',contentCopy:'ui-copy',edibleCatalog: 'edible-catalog', legal: 'legal', traits: 'species-traits', trees: 'trees', infographics: 'infografiche', preparation: 'preparation', trailheads: 'trailheads', challenges: 'challenges' }).map(([k,f]) => [k, readOpt('data/' + f + '.json')]));
 for(const p of Object.values(extra.plants?.plants||{}))for(const m of p.photos||[])collect(m);
 for(const row of Object.values(extra.glossaryMedia?.terms||{}))for(const m of row.illustrations||[])put(m.file);
+for(const g of extra.guides?.guides||[])put(g.image?.file);
+for(const c of extra.challenges?.challenges||[])put(c.stamp);
 const data = JSON.stringify({ zones, habitat, access, trails, speciesId, media, assets, basemap, ...extra, outing, weather: { series: w.series, fetchedAt: w.fetchedAt.toISOString() } })
   .replace(/</g, '\\u003c');
 

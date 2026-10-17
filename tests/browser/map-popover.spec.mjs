@@ -18,15 +18,16 @@ async function setup(page,{width=1280,outingGate}={}) {
     return r.fulfill({json:out});
   });
   await page.addInitScript(()=>localStorage.setItem('fungaroli:legal-accepted','32026-10-16'));
-  await page.goto('/#/mappa');await expect(page.locator('#map-filters [data-intent="funghi"]')).toHaveText('Funghi');
+  await page.goto('/#/mappa');await expect(page.locator('#map-filters [data-more]')).toContainText('Funghi');
   await page.evaluate(()=>{testMap.setView([42.49,12.915],13,{animate:false});});
   await expect(page.locator('#map')).toHaveClass(/cells-on/);
   await page.waitForFunction(()=>Object.values(testMap._layers).some(l=>l instanceof L.Rectangle&&!l.options.stroke));
+  // Le etichette ora sono tappabili: lascia margine anche per il touch targeting del browser.
   const sample=await page.evaluate(()=>{
     const map=testMap,rect=map.getContainer().getBoundingClientRect(),center=map.getCenter();
     const cells=Object.values(map._layers).filter(l=>l instanceof L.Rectangle&&!l.options.stroke&&map.getBounds().contains(l.getBounds().getCenter()));
     cells.sort((a,b)=>center.distanceTo(a.getBounds().getCenter())-center.distanceTo(b.getBounds().getCenter()));
-    for(const c of cells){const ll=c.getBounds().getCenter(),p=map.latLngToContainerPoint(ll),x=rect.left+p.x,y=rect.top+p.y,target=document.elementFromPoint(x,y);if(target?.closest('#map')&&!target.closest('.leaflet-marker-icon,.leaflet-control'))return{x,y,lat:ll.lat,lon:ll.lng};}
+    for(const c of cells){const ll=c.getBounds().getCenter(),p=map.latLngToContainerPoint(ll),x=rect.left+p.x,y=rect.top+p.y,target=document.elementFromPoint(x,y);if(target?.closest('#map')&&[-18,0,18].every(dx=>[-18,0,18].every(dy=>{const hit=document.elementFromPoint(x+dx,y+dy);return hit?.closest('#map')&&!hit.closest('.leaflet-marker-icon,.leaflet-control');})))return{x,y,lat:ll.lat,lon:ll.lng};}
   });
   expect(sample).toBeTruthy();return {sample,errors};
 }

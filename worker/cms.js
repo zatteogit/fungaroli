@@ -3,6 +3,7 @@ import { CONTENT_RESOURCES, CONTENT_SCHEMA_VERSION, resourceOf } from '../js/con
 import { readCommunityUser } from './community.js';
 import { validateContent } from './content-validation.js';
 import {glossaryContextSeedUpdate,repositorySeedUpdate} from './seed-update.js';
+import { weatherMetrics } from './weather-metrics.js';
 
 const initialized=new WeakMap(), enc=new TextEncoder();
 const hash=async s=>Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',enc.encode(s))),b=>b.toString(16).padStart(2,'0')).join('');
@@ -19,7 +20,7 @@ async function json(req) {
 
 // Documenti che un deploy aggiorna dal repository finché nessun autore li ha toccati (seed o ultima
 // scrittura di una release). Ognuno deve passare validateContent: un errore qui ferma init() e lo snapshot.
-export const REPOSITORY_REFRESHED=['ui-copy','plants','trees','media','media-trees','media-zones','species-id','species-traits','edible-catalog','preparation','glossary','guides','legal','media-glossary','trails','zones'];
+export const REPOSITORY_REFRESHED=['ui-copy','plants','trees','media','media-trees','media-zones','species-id','species-traits','edible-catalog','preparation','glossary','guides','legal','media-glossary','trails','zones','infografiche'];
 
 async function init(env,origin) {
   const db=env.CMS_DB;
@@ -191,6 +192,7 @@ export async function handleCms(req,env,now=Date.now()) {
     if(revoke&&req.method==='DELETE') {
       permit(actor,'admin');await db.batch([db.prepare('UPDATE cms_agent_tokens SET revoked_at=? WHERE id=?').bind(now,revoke[1]),db.prepare("INSERT INTO cms_audit(actor,action,created_at) VALUES(?,'token_revoke',?)").bind(actor.id,now)]);return response({ok:true});
     }
+    if(path==='metrics/weather'&&req.method==='GET'){permit(actor,'admin');return response(await weatherMetrics(db,Number(url.searchParams.get('days'))||30));}
     if(path==='audit'&&req.method==='GET'){permit(actor,'admin');return response({events:(await db.prepare('SELECT * FROM cms_audit ORDER BY id DESC LIMIT 100').all()).results});}
     failure('Percorso non trovato.',404);
   }catch(e){return response({error:e.status?e.message:'Redazione temporaneamente non disponibile.'},e.status||503);}

@@ -276,11 +276,12 @@ Ho cercato in `index.html`, `js/`, `css/`, `worker/` e `functions/` i termini an
 | Dato | Dove | Chi lo vede |
 |---|---|---|
 | Preferenze (`fungaroli:prefs:v1`) | `localStorage` del browser | Solo il dispositivo |
-| Cache meteo (`fungaroli:weather:v1`) | `localStorage` | Solo il dispositivo |
+| Cache meteo per zona (`fungaroli:weather:zones:v3`, `fungaroli:outing:zones:v3`) | `localStorage` | Solo il dispositivo |
 | Diario (`fungaroli:diario:v1`): data, zona, fascia di quota, specie trovate, nota libera fino a 2000 caratteri, indice previsto, ora di salvataggio | `localStorage` | Solo il dispositivo, finché non lo si sincronizza o esporta |
 | Codice diario (`fungaroli:diario-token`) | `localStorage`, in chiaro | Solo il dispositivo |
 | Conferma dell'avviso iniziale (`fungaroli:legal-accepted`) | `localStorage` | Solo il dispositivo |
 | Diario sincronizzato | Cloudflare Workers KV, namespace `fungaroli-diario`, account Cloudflare di Matteo Sgambato | Chiunque abbia il codice diario: legge, modifica e cancella **tutte** le uscite. Non c'è separazione tra persone. |
+| Contatori orari del servizio meteo (esito e durata delle chiamate a Open-Meteo, uso della cache), aggiornamento del 14/10/2026 | Cloudflare D1, tabella `weather_metrics`, conservati 180 giorni | Amministratori. Nessun IP, account o identificativo: solo giorno, ora, profilo ed esito. |
 | Dati tecnici delle richieste (IP, user agent, URL) | Infrastruttura Cloudflare | Cloudflare. `wrangler.jsonc` non attiva i Workers Logs; va controllato nel pannello che non siano attivi. |
 
 L'**art. 122 del Codice privacy** (D.Lgs. 196/2003) richiede il consenso per archiviare informazioni nel dispositivo, salvo che siano "strettamente necessarie" a un servizio richiesto dall'utente. Le chiavi elencate servono a funzioni richieste dall'utente: ricordare le preferenze, non riscaricare il meteo, tenere il diario, ricordare il codice e l'avviso letto. Rientrano nell'eccezione e non serve un banner di consenso, in linea con le Linee guida del Garante sui cookie e altri strumenti di tracciamento del 10 giugno 2021.
@@ -293,7 +294,7 @@ Ogni richiesta a un server esterno gli trasmette l'**indirizzo IP**, lo user age
 |---|---|---|---|
 | fonts.googleapis.com / fonts.gstatic.com (Google) | A ogni apertura | Richiesta dei font Public Sans e Literata | Vedi 6.4 |
 | cdnjs.cloudflare.com (Cloudflare) | A ogni apertura | Richiesta di Leaflet 1.9.4 | |
-| api.open-meteo.com | All'avvio e con "Aggiorna meteo" | Coordinate delle 15 zone (non la posizione dell'utente) | Termini Open-Meteo: per l'API gratuita gli IP possono essere registrati per motivi tecnici o di prevenzione abusi, non collegati all'identità, e i log sono cancellati dopo 90 giorni |
+| api.open-meteo.com | Non più dal browser (aggiornamento del 14/10/2026): lo chiama il Worker di Fungaroli, quindi Open-Meteo riceve l'IP di Cloudflare, non quello dell'utente | Coordinate e quote delle zone (non la posizione dell'utente) | Termini Open-Meteo: per l'API gratuita gli IP possono essere registrati per motivi tecnici o di prevenzione abusi, non collegati all'identità, e i log sono cancellati dopo 90 giorni |
 | {a,b,c}.tile.opentopomap.org | Mappa topografica | Tile richieste, cioè l'area guardata; anche l'area intorno a te se premi «La mia posizione» (tessere di circa 2 km a livello 14) | La pagina del progetto non contiene un'informativa privacy. Le tessere restano nella cache del service worker |
 | tile.openstreetmap.org (OSMF) | Mappa OSM, se scelta | Tile richieste; anche l'area intorno a te se premi «La mia posizione» | Si applica la privacy policy di OSMF |
 | photon.komoot.io, routing.openstreetmap.de (dal server dell'app) | Base di partenza, solo con un profilo | Testo della località cercata; coordinate della base e delle zone per i percorsi, senza nome o ID del profilo | Chiamati dal Worker, non dal browser (`worker/travel-provider.js`) |

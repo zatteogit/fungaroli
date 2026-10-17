@@ -1,7 +1,7 @@
 // Scheda dettagliata di una specie: foto reali, riconoscimento, sosia pericolosi,
 // calendario delle osservazioni (GBIF) a confronto con il modello, modello 3D.
 
-import { traitStrip, compareCta, taxonKeyByLatin, openTaxon, attentionBox, compareHref, lookalikeRank, sourceRows, photoRows } from './identify.js';
+import { growthTraits, compareCta, taxonKeyByLatin, openTaxon, attentionBox, compareHref, lookalikeRank, sourceRows, photoRows } from './identify.js';
 import { SPECIES } from './species.js';
 import { openLightbox, captionHtml } from './lightbox.js';
 import { linkTrees } from './trees.js';
@@ -38,6 +38,8 @@ export const speciesPhotos = id => [MEDIA?.species?.[id]?.ref,...(MEDIA?.species
 export const speciesPhoto = (id) => MEDIA?.species?.[id]?.ref || MEDIA?.species?.[id]?.inat?.[0] || null;
 
 const creditText = (m) => m ? `Foto: ${esc(m.author)}${m.license ? `, ${esc(m.license)}` : ''} · <a href="${esc(m.page)}" target="_blank" rel="noopener">${esc(m.source)}</a>` : '';
+// crediti dell'infografica: licenza con il link, segno «da rivedere» se c'è
+const infoCredit = (m) => [esc(m.credit || ''), m.license ? (/^https:\/\//.test(m.licenseUrl || '') ? `<a href="${esc(m.licenseUrl)}" target="_blank" rel="noopener">${esc(m.license)}</a>` : esc(m.license)) : '', m.review ? esc(m.review) : ''].filter(Boolean).join(' · ');
 const credit = (m) => m ? `<span class="credit">Foto: ${esc(m.author)}${m.license ? `, ${esc(m.license)}` : ''} · <a href="${esc(m.page)}" target="_blank" rel="noopener">${esc(m.source)}</a></span>` : '';
 
 function phenology(id) {
@@ -176,6 +178,7 @@ export const criticalRule = (id) => criticalRuleOf(id)?.text || '';
 export const speciesHeroSrc = (id) => { const m = MEDIA?.species?.[id], p = m?.ref || m?.inat?.[0]; return p ? ASSET(p.file_hd || p.file) : ''; };
 export function renderSpeciesDetail(body, id) {
   body.dataset.glossaryContext='Funghi';
+  body.classList.add('fungus-page');
   const sp = SPECIES.find((s) => s.id === id);
   if (!sp) { body.innerHTML = '<p class="muted">Specie non trovata.</p>'; return; }
   const d = ID?.species?.[id] || {};
@@ -209,13 +212,13 @@ export function renderSpeciesDetail(body, id) {
     <div class="pbody">
     ${photos.length > 1 ? `<div class="sp-strip">${photos.slice(1).map((p, k) => `<button type="button" class="zoomable" data-photo="${k + 1}" aria-label="Foto ${k + 2}: ingrandisci"><img data-src="${ASSET(p.file)}" alt="" loading="lazy" decoding="async"></button>`).join('')}</div>` : ''}
     ${attention(id, warn)}
-    ${TRAITS[id]?.check_before_picking?.length ? `<h3>Caratteri da confrontare</h3>${traitStrip(id)}${checks(id)}` : d.key_features?.length ? `<h3>Caratteri da confrontare</h3>${traitStrip(id)}<ol class="keys" data-glossary="Funghi">${d.key_features.map((k) => `<li><span class="key-text">${esc(k)}</span></li>`).join('')}</ol>` : '<p class="notice">Caratteri di confronto in preparazione.</p>'}
+    ${TRAITS[id]?.check_before_picking?.length ? `<h3>Caratteri da confrontare</h3>${growthTraits(id)}${checks(id)}` : d.key_features?.length ? `<h3>Caratteri da confrontare</h3>${growthTraits(id)}<ol class="keys" data-glossary="Funghi">${d.key_features.map((k) => `<li><span class="key-text">${esc(k)}</span></li>`).join('')}</ol>` : '<p class="notice">Caratteri di confronto in preparazione.</p>'}
     ${TRAITS[id] ? '' : (warn.length ? `<div class="notice">${esc(warn.join(' '))}</div>` : '')}
     ${compareCta(id)}
     ${kitchen(id)}
     ${whereToLook(id)}
     ${lookalikes(d, id)}
-    ${INFO[id]?.file ? `<h3>Infografica</h3><button type="button" class="zoomable sp-info" data-info="1" aria-label="Apri l'infografica"><img data-src="${ASSET(INFO[id].file)}" alt="Infografica di riconoscimento: ${esc(sp.name)}" loading="lazy" decoding="async"><span class="zoom-ic" aria-hidden="true">⤢</span></button>` : ''}
+    ${INFO[id]?.file ? `<h3>Infografica</h3>${INFO[id].review ? `<p class="sp-info-review">${esc(INFO[id].review)}</p>` : ''}<button type="button" class="zoomable sp-info" data-info="1" aria-label="Apri l'infografica"><img data-src="${ASSET(INFO[id].file)}" alt="Infografica di riconoscimento: ${esc(sp.name)}" loading="lazy" decoding="async"><span class="zoom-ic" aria-hidden="true">⤢</span></button>` : ''}
     <div class="sp-more">
       ${sec('Dove trovarlo nelle zone', WHERE(id))}
       ${sec('Tutti i caratteri', d.cap ? traitsTable(d) + (d.aka?.length ? `<p class="small"><b>Nomi locali:</b> ${esc(d.aka.join(', '))}</p>` : '') : '')}
@@ -240,7 +243,7 @@ export function renderSpeciesDetail(body, id) {
   // foto della specie: visore con zoom e swipe tra tutte le foto
   const gallery = photos.map((p) => ({ src: hd(p), alt: sp.name, caption: captionHtml({ title: esc(d.name || sp.name), text: esc([p.place, p.date].filter(Boolean).join(' · ')), credit: creditText(p) }) }));
   body.querySelectorAll('[data-photo]').forEach((b) => b.addEventListener('click', () => openLightbox(gallery, +b.dataset.photo)));
-  body.querySelectorAll('[data-info]').forEach((b) => b.addEventListener('click', () => openLightbox([{ src: ASSET(INFO[id].file), alt: `Infografica ${sp.name}`, caption: captionHtml({ title: `Infografica · ${esc(sp.name)}`, credit: esc(INFO[id].credit || '') }) }])));
+  body.querySelectorAll('[data-info]').forEach((b) => b.addEventListener('click', () => openLightbox([{ src: ASSET(INFO[id].file), alt: `Infografica ${sp.name}`, caption: captionHtml({ title: `Infografica · ${esc(sp.name)}`, credit: infoCredit(INFO[id]) }) }])));
   // sosia: foto grande con pericolosita' e differenza da guardare
   const looks = (d.lookalikes || []).map((l) => {
     const key = (l.latin || '').match(/[A-Z][a-z]+ [a-z]+/)?.[0];

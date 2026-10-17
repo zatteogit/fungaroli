@@ -13,6 +13,8 @@ Il ramo di produzione e i documenti in `docs/` fanno fede. Ciò che sta solo in 
 
 ## Registro
 
+Rilascio delle parti verificate su richiesta di Matteo del 17/10: [valutazione dei rami sospesi](valutazione-rilascio-2026-10-17.md). Include le PR #93, #60 e #98 nel candidato di rilascio; non adotta i due modelli micologici di ricerca né i pacchetti grezzi delle immagini.
+
 | Lavoro | Dove | Stato (17/10/2026) |
 |---|---|
 | Questionario per cercatori esperti del Reatino | Recupero dalla sessione Claude, ramo `codex/questionario-esperti` | **Valutato e approvato** da Matteo il 17/10; quattro scelte applicate. [Valutazione](valutazione-questionario-esperti.md) |

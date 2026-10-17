@@ -15,7 +15,7 @@ Ridondanze tenute di proposito:
 
 ## Interessi dell’uscita — decisione del 16 ottobre 2026
 
-La barra espone **Alla ricerca di… › Funghi / Piante / Sentieri**: sono interessi indipendenti, combinabili e ricordati tra home e mappa. «Alla ricerca di…» apre i filtri avanzati. Sotto compaiono **Poca gente / Accesso comodo / Vicino a casa**, con icona sostituita dalla spunta quando selezionati. «Poca gente» mantiene un testo fisso, come richiesto nella revisione finale. La navigazione Uscite, Mappa, Scopri e Taccuino resta la stessa.
+Nella home la barra espone **Alla ricerca di… › Funghi / Piante / Sentieri**: sono interessi indipendenti, combinabili e ricordati tra home e mappa. «Alla ricerca di…» apre i filtri avanzati. Sotto compaiono **Poca gente / Accesso comodo / Vicino a casa**, con icona sostituita dalla spunta quando selezionati. «Poca gente» mantiene un testo fisso, come richiesto nella revisione finale. La navigazione Uscite, Mappa, Scopri e Taccuino resta la stessa.
 
 Con Funghi attivo l’indice e l’ordine biologico restano esclusivamente fungini. Piante aggiunge gli spunti botanici nella stessa proposta e nella fascia delle specie; una selezione esplicita di piante restringe i percorsi a quelli con ambienti compatibili. Sentieri richiede un tratto mappato e abilita la ricerca pratica insieme agli altri interessi. Senza interessi selezionati si esplorano le proposte pratiche, senza indice. Non si sommano punteggi biologici diversi.
 
@@ -56,5 +56,17 @@ Se manca una foto del luogo, Piante e Passeggiata usano come ripiego la foto di 
 ### Spunti botanici sulla mappa
 
 La foglia indica spunti botanici disponibili per gli ambienti del percorso; il pannello mostra specie e fase, anche insieme ai funghi. Non si mostrano conteggi «0 spunti» o un indice delle piante. Una sola nota richiusa in legenda spiega copertura parziale, calendari indicativi e differenza dagli avvistamenti confermati. L’assenza di uno spunto non è presentata come assenza della specie. I percorsi rispettano gli stessi interessi e filtri della home.
+
+### Mappa: scegliere, confrontare, approfondire — 17 ottobre
+
+La carta occupa tutto lo spazio disponibile. In alto restano due comandi: riepilogo degli interessi/filtri e giorno. La dialog conserva gli stessi interessi combinabili della home; specie e caratteristiche dei sentieri sono sezioni richiuse. Le preferenze pratiche spiegano che modificano l’ordine dell’elenco, non l’indice fungino.
+
+L’elenco richiudibile mostra solo le zone il cui centro è nell’area inquadrata. Una riga contiene luogo, eventuale indice fungino, tempo in auto e difficoltà/km del tratto locale quando documentati. Spostando la carta si aggiorna l’elenco; cambiando filtri si conserva l’inquadratura. «Mostra tutte le zone» cambia esplicitamente l’inquadratura. Si distinguono un’area senza zone e filtri senza corrispondenze.
+
+Il calendario seleziona la data: non mostra un indice o meteo unico per tutta la mappa. Giorno e mese sono nell’etichetta accessibile; Oggi, Domani e i nomi dei giorni sono distinti. Meteo e indice restano dati del singolo luogo. Senza previsioni si possono comunque aprire zone e sentieri, senza un valore numerico inventato. Lo stato del meteo è compatto, con spiegazione su richiesta.
+
+Etichette e righe aprono lo stesso riepilogo della zona; il riepilogo nasconde l’elenco. Avvicinandosi restano disponibili campioni di habitat, tracciati e imbocchi. La legenda è dentro Livelli. I vincoli «Solo difficoltà T» e «entro 5 km nel tratto locale» escludono anche dati mancanti e valgono indipendentemente dall’interesse Sentieri.
+
+Analisi, misure e procedura di cattura: [audit della mappa](ux-mappa-2026-10-17.md).
 
 L’accordion «Quando» ha una sola testata: arrivo consigliato, affollamento e sintesi meteo, con le condizioni avverse visibili anche da chiuso. L’apertura aggiunge partenza, luce e orari di raccolta, ambito delle previsioni ed eventuale alternativa. Metodo e motivi delle stime restano in una nota richiusa; arrivo e badge non vengono ripetuti nel corpo.

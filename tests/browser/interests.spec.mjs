@@ -1,3 +1,4 @@
+import {mapToggle,mapLegend} from './map-helpers.mjs';
 import {test,expect} from '@playwright/test';
 import {preparePage,loadAllImages,auditState} from '../../tools/visual-audit.mjs';
 const ids=['funghi','piante','passeggiata'];
@@ -12,10 +13,12 @@ for(const width of [320,1280])test(`interessi indipendenti: tutte le combinazion
   if(selected.includes('piante'))await expect(page.locator('#hero .cover-plant')).toBeVisible();
   expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
   await page.goto('/#/mappa');
-  for(const id of ids)await expect(page.locator(`#map-filters [data-intent="${id}"]`)).toHaveAttribute('aria-pressed',String(selected.includes(id)));
+  await page.locator('#map-filters [data-more]').click();
+  for(const id of ids)await expect(page.locator(`#full-filters [data-intent="${id}"]`)).toHaveAttribute('aria-pressed',String(selected.includes(id)));
+  await page.locator('#full-filters [data-close]').last().click();
   if(selected.includes('funghi')&&selected.includes('piante'))await expect(page.locator('#legend')).toContainText('Indice dei funghi · piante');
   expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
-  expect(await page.locator('#map-filters .af-pref-row').evaluate(e=>{const r=e.getBoundingClientRect();return [...e.children].every(b=>{const p=b.getBoundingClientRect();return p.left>=r.left&&p.right<=r.right+1;});})).toBe(true);
+  await expect(page.locator('#map-filters > button')).toHaveCount(2);
   await page.goto('/#/uscite');
  }
  await page.reload();for(const id of ids)await expect(page.locator(`#active-filters [data-intent="${id}"]`)).toHaveAttribute('aria-pressed','true');
@@ -53,9 +56,9 @@ test('mappa botanica: spunti concreti e spiegazione progressiva',async({browser}
  await expect(page.locator('#map-sheet')).not.toContainText('presenza da verificare');
  await loadAllImages(page);await page.locator('#map-sheet').screenshot({path:'/tmp/fronda-v98-plant-sheet-final.png'});
  await page.locator('#map-sheet .sheet-close').click();
- await page.locator('#map-filters [data-intent="funghi"]').click();await expect(page.locator('#map .pc').first()).toBeVisible();
+ await mapToggle(page,'funghi');await expect(page.locator('#map .pc').first()).toBeVisible();
  await page.locator('#map .map-plant-badge').first().click();await expect(page.locator('#map-sheet .ring')).toBeVisible();await expect(page.locator('#map-sheet .discovery-link').first()).toBeVisible();
- await page.locator('#map-sheet .sheet-close').click();if(await page.locator('.legend-box').getAttribute('open')===null)await page.locator('.legend-box > summary').click();await note.locator('summary').click();await expect(note).toHaveAttribute('open','');await expect(note).toContainText('Non sono avvistamenti confermati');
+ await page.locator('#map-sheet .sheet-close').click();await mapLegend(page);await note.locator('summary').click();await expect(note).toHaveAttribute('open','');await expect(note).toContainText('Non sono avvistamenti confermati');
  await context.close();
 });
 test('Poca gente mantiene testo, icona e selezione',async({browser})=>{

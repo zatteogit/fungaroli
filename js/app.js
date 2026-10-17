@@ -1,3 +1,5 @@
+import { mapQuery, mountMapResults, compactMapFilters } from './map-experience.js';
+import { mapGlyph, leafGlyph, notebookGlyph } from './ui-icons.js';
 import {fungusGlyph, progressCircle, weatherGlyphs} from './indicators.js';
 import { INTENTS, validIntent, normalizeInterests, primaryInterest, toggleInterest, seasonalSelection, matchesWalk, compareOutdoor } from './outing-intent.js';
 import './rails.js';
@@ -47,6 +49,10 @@ const AHEAD_DAYS = 7;      // giorni futuri valutati
 const PREFS_KEY = 'fungaroli:prefs:v2'; // v2: si parte con tutti i gruppi
 
 const $ = (s) => document.querySelector(s);
+for (const [tab, glyph] of [['uscite', fungusGlyph], ['mappa', mapGlyph], ['specie', leafGlyph], ['diario', notebookGlyph]]) {
+  document.querySelector(`.tabbar [data-tab="${tab}"] svg`)?.replaceWith(document.createRange().createContextualFragment(glyph));
+}
+
 function addNotebookReference(box,kind,id,title){if(!box||!title||box.querySelector('[data-note-kind]'))return;const button=box.querySelector('.notebook-context-action')||document.createElement('button');button.type='button';button.className='btn ghost notebook-context-action';button.dataset.noteKind=kind;button.dataset.noteId=id;button.dataset.noteTitle=title;button.textContent='＋ Annota nel taccuino';const hero=box.querySelector('.phero-body'),target=box.querySelector('.pbody'),lead=box.querySelector('.article-lede');if(hero){button.classList.add('notebook-hero-action');hero.append(button);}else if(target)target.prepend(button);else if(lead)lead.after(button);else box.append(button);}
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const cssVar = (name) => getComputedStyle(document.documentElement).getPropertyValue(name).trim();
@@ -185,7 +191,7 @@ async function init() {
   }
   const load = (f) => snapshot?.resources?.[f] ? Promise.resolve(structuredClone(snapshot.resources[f])) : fetch(`data/${f}.json`).then((r) => (r.ok ? r.json() : null)).catch(() => null);
   contentCopy = embedded?.contentCopy || await load('ui-copy') || {};
-  initGuideContent(embedded?.guides || await load('guides'),contentCopy);
+  initGuideContent(embedded?.guides || await load('guides'),contentCopy,embedded?(f)=>embedded.assets?.[f]||'':null);
   for(const[selector,key]of [['#home-h','homeTitle'],['#others-h','otherPlacesTitle'],['#season-h','speciesTitle']])if(contentCopy[key]&&$(selector))$(selector).textContent=contentCopy[key];
   legal = embedded ? embedded.legal : await load('legal');
   const [zj, hj, aj, tj, idj, mj, ij, trj, stj, mtj, mzj, prj, thj, ecj] = embedded
@@ -671,7 +677,7 @@ function outdoorDiscoveries(z,d,walk) {
     flora:hasInterest('piante')&&state.plantIds!==null?[]:plants(),trees:treesData?.trees,observations:state.useBotanicalNotes?botanicalNotes:[]});
 }
 function matchesInterests(z,d,walk) {
-  if(hasInterest('passeggiata')&&!walk)return false;
+  if((hasInterest('passeggiata')||state.easyTrails||state.shortTrails)&&!walk)return false;
   return !hasInterest('piante')||state.plantIds===null||outdoorDiscoveries(z,d||{date:filterDate()},walk).some(i=>i.kind==='pianta');
 }
 function outdoorProposals(day=state.homeDay) {
@@ -796,6 +802,7 @@ function mapPlantNote() {
   return hasInterest('piante')?`<details class="context-note map-plant-note"><summary>Piante: come leggere la mappa</summary><p>Gli spunti collegano specie, ambienti campionati e calendari indicativi. Non sono avvistamenti confermati. La copertura è parziale: puoi incontrare anche altre piante.</p></details>`:'';
 }
 function renderOutdoorMap() {
+  scheduleMapResults();
   const all=weatherZones||zones,items=all.filter(z=>{const d=outdoorDay(z,state.dayOffset);return matchesInterests(z,d,walkFor(z,d));}).map(z=>{const d=outdoorDay(z,state.dayOffset),walk=walkFor(z,d,z.id===state.zoneId?state.trailId:null),found=walk?outdoorDiscoveries(z,d,walk):[];return {z,walk,found,score:null,color:'var(--link)',selected:z.id===state.zoneId,label:hasInterest('piante')?'Piante da osservare':'Sentieri',tooltip:`${z.name} · ${walkBrief(walk)}`};});
   if(!hasLeaflet()){renderSvgMap($('#map'),{zones:all,origin,items,onSelect:openOutdoorSheet});return;}
   baseMarker?.remove();baseMarker=null;
@@ -828,11 +835,19 @@ function renderFilterBox(box, onMap = false) {
   if (!box) return;
   if(onMap&&box.closest('.map-top'))mapToolbarObserver.observe(box.closest('.map-top'));
   const count = (hasInterest('funghi')?state.speciesIds?.size||0:0)+(hasInterest('piante')?state.plantIds?.size||0:0) + PREFS.filter(([k])=>state[k]).length + Number(state.easyTrails) + Number(state.shortTrails);
+  if (onMap) {
+    box.innerHTML = mapQuery({ interests: INTENTS.filter(i => hasInterest(i.id)).map(i => i.label), day: dayLabel(state.dayOffset, outdoorDate(state.dayOffset), true), count });
+    box.querySelector('[data-more]').onclick = openFullFilters;
+    const day = box.querySelector('[data-days]');
+    day.setAttribute('aria-expanded', String(box.closest('.map-top').classList.contains('days-open')));
+    day.onclick = () => { const open = box.closest('.map-top').classList.toggle('days-open'); day.setAttribute('aria-expanded', String(open)); if (open) $('#map-days [aria-selected="true"]')?.focus({preventScroll:true}); };
+    return;
+  }
   const day=onMap?`<button type="button" class="chip chip-day" data-days aria-expanded="${!!box.closest('.map-top')?.classList.contains('days-open')}" aria-controls="map-days">${esc(fmtDate(outdoorDate(state.dayOffset),{weekday:'short',day:'numeric'}))} ▾</button>`:'';
-  const more=`<button type="button" class="chip chip-more" data-more aria-haspopup="dialog"${count?` title="${count} filtri attivi"`:''}>Alla ricerca di…</button>`;
+  const more=`<button type="button" class="chip chip-more" data-more aria-haspopup="dialog"${count?` title="${count} filtri attivi"`:''}>${onMap?'Altri filtri':'Alla ricerca di…'}</button>`;
   const icons={avoidCrowd:IC.people,preferComfort:IC.walk,distancePenalty:IC.home};
   const prefs=PREFS.map(([k,label,short])=>`<button type="button" class="chip pref" data-p="${k}" aria-label="${esc(k==='avoidCrowd'?'Poca gente':label)}" title="${esc(label)}" aria-pressed="${!!state[k]}"><span class="pref-icon" aria-hidden="true">${icons[k]}</span><span class="pref-label-full">${esc(label)}</span><span class="pref-label-short" aria-hidden="true">${esc(short)}</span></button>`).join('');
-  box.innerHTML=`<div class="af-group-row intent-row" role="group" aria-label="Alla ricerca di">${day}${more}${intentButtons()}</div><div class="af-pref-row" role="group" aria-label="Preferenze dell’uscita">${prefs}</div>`;
+  box.innerHTML=`<div class="af-group-row intent-row" role="group" aria-label="Alla ricerca di">${onMap?'':more}${intentButtons()}</div><div class="af-pref-row" role="group" aria-label="Preferenze dell’uscita">${onMap?day+more:''}${prefs}</div>`;
   box.querySelector('[data-days]')?.addEventListener('click',e=>{const open=box.closest('.map-top').classList.toggle('days-open');e.currentTarget.setAttribute('aria-expanded',String(open));});
   box.querySelectorAll('[data-intent]').forEach(b=>b.onclick=()=>changeIntent(b.dataset.intent));
   box.querySelectorAll('[data-p]').forEach(b=>b.onclick=()=>soft(()=>{state[b.dataset.p]=!state[b.dataset.p];savePrefs();outCache.clear();renderFilterSummary();renderAll();}));
@@ -846,7 +861,11 @@ function openFullFilters() {
     dlg = document.createElement('dialog'); dlg.id = 'full-filters'; dlg.className = 'full-filters';
     dlg.setAttribute('aria-labelledby', 'full-filters-title'); document.body.appendChild(dlg);
   }
+  const mapMode = state.view === 'mappa';
+  dlg.classList.toggle('map-filter-panel', mapMode);
   const paint = () => {
+    const expanded = [...dlg.querySelectorAll('.map-filter-section[open] > summary')].map(s=>s.textContent);
+    const filterScroll = dlg.querySelector('.fp-body')?.scrollTop || 0;
     const selected = selectedCatalog(), explicitSelected=selected.filter(s=>selectionFor(s.id)!==null), date = filterDate();
     const season = (s) => `<small class="season-badge ${seasonStatus(s,date)==='out'?'season-out':''}">${botanicalById(s.id)?({in:'Fase nel calendario',out:'Fuori calendario indicativo',unknown:'Calendario n.d.'})[seasonStatus(s,date)]:seasonLabel(s,date)}</small>`;
     const chip = (s) => `<button type="button" class="chip species-choice" data-catalog-id="${s.id}" aria-pressed="${activeIds() === null || activeIds().has(s.id)}"><span>${esc(s.name)}${s.toxicity==='commestibile con cautela'?'<small>Preparazione specifica</small>':''}</span>${season(s)}</button>`;
@@ -880,6 +899,7 @@ function openFullFilters() {
       <p class="small muted fp-note">${state.target==='piante'?'Stagione indicativa: cambia con clima e quota.':'Mesi indicativi da manuali europei, non verificati nel Reatino: clima e quota li spostano.'} Il catalogo non comprende ogni specie.</p>
       </div>
       <div class="fp-foot"><span class="small muted" aria-live="polite">${state.target==='passeggiata'?'Sentieri e accessi':hasInterest('funghi')&&hasInterest('piante')?selected.filter(s=>!botanicalById(s.id)).length+' funghi · '+selected.filter(s=>botanicalById(s.id)).length+' piante':state.target==='piante'?selected.length+' piante · calendario indicativo':selected.length+' specie · '+selected.filter(s=>s.modelId).length+' con indice'}</span><button type="button" class="btn primary big" data-close>Mostra i risultati</button></div>`;
+    if (mapMode) { compactMapFilters(dlg); for (const d of dlg.querySelectorAll('.map-filter-section')) d.open=expanded.includes(d.querySelector('summary').textContent); dlg.querySelector('.fp-body').scrollTop=filterScroll; }
     dlg.querySelector('[data-filter-season-restore]')?.addEventListener('click',()=>{restoreSeason();paint();});
     dlg.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',()=>dlg.close()));
     const changed = (focus) => { state.seasonOverride=seasonKey();savePrefs(); if (series) compute(); outCache.clear(); renderFilterSummary(); renderAll(); paint(); dlg.querySelector(focus)?.focus(); };
@@ -933,6 +953,7 @@ function placeStale(view){
   const box=$('#stale'),line=document.querySelector('.view[data-view="uscite"] .view-sub');if(!box||!line)return;
   staleHome??={parent:box.parentElement,next:box.nextSibling};
   if(view==='uscite'){if(box.previousElementSibling!==line)line.after(box);}
+  else if(view==='mappa'){ const target=$('#map-weather-detail'); if(target&&box.parentElement!==target)target.append(box); }
   else if(box.parentElement!==staleHome.parent)staleHome.parent.insertBefore(box,staleHome.next);
 }
 let stampTimer=null;
@@ -1023,6 +1044,7 @@ async function refreshWeather(force){
   }else{
     weatherWork('');$('#updated').textContent='';weatherUnavailable=true;prepareCalendarFallback();
     if(state.target!=='funghi'){compute();renderAll();return;}
+    if(state.view==='mappa'){renderAll();$('#stale').hidden=false;$('#stale').textContent='Meteo non disponibile. Puoi esplorare zone, sentieri e accessi.';}
     const msg=`<div class="error">${esc(weatherErrorMessage(mainFailure))} <button type="button" class="link-btn" data-retry>Riprova</button>.</div>`;
     $('#hero').innerHTML=msg;$('#detail').innerHTML=msg;document.querySelectorAll('[data-retry]').forEach(b=>b.addEventListener('click',()=>refreshWeather(true)));
   }
@@ -1296,7 +1318,7 @@ function renderEdiblePage(id, box=$('#edible-detail')) {
 }
 
 function renderAll() {
-  if (!results) return;
+  if (!results && state.view !== 'mappa') return;
   if (state.view === 'uscite') { renderDays(); renderHome(); }
   if (state.view === 'zona') renderDetail();
   if (state.view === 'mappa') { renderMapDays(); renderFilterBox($('#map-filters'), true); renderMap(); renderLegend(); if (sheetZone) sheetPoint?openPoint(sheetZone,currentSheetPoint()):openSheet(sheetZone); }
@@ -1699,8 +1721,10 @@ function renderSeason() {
 }
 
 function renderMapDays() {
-  // scelto il giorno, su telefono la fila si richiude (resta il chip del giorno in testa ai filtri)
-  dayChips($('#map-days'), state.dayOffset, (o) => { state.dayOffset = o; checkSavedSeason(); $('.map-top')?.classList.remove('days-open'); renderAll(); renderFilterSummary(); });
+  const box = $('#map-days');
+  const html = Array.from({length:AHEAD_DAYS+1}, (_,o) => { const date = outdoorDate(o); return `<button type="button" class="day" role="tab" data-day-offset="${o}" aria-selected="${o === state.dayOffset}" aria-label="${esc(fmtDate(date,{weekday:'long',day:'numeric',month:'long'}))}"><span class="d1">${o===0?'Oggi':o===1?'Domani':esc(fmtDate(date,{weekday:'long'}))}</span><span class="d2">${esc(fmtDate(date,{day:'numeric'}))}</span></button>`; }).join('');
+  if (box.innerHTML !== html) box.innerHTML = html;
+  box.querySelectorAll('[data-day-offset]').forEach(b => b.onclick = () => { state.dayOffset=Number(b.dataset.dayOffset);checkSavedSeason();$('.map-top').classList.remove('days-open');renderAll();renderFilterSummary();$('#map-filters [data-days]')?.focus({preventScroll:true}); });
 }
 // riquadro della zona aperto: su telefono la barra delle sezioni si toglie di mezzo (come fa Google Maps)
 new MutationObserver(() => document.documentElement.classList.toggle('map-sheet-open', !$('#map-sheet')?.hidden))
@@ -1717,11 +1741,12 @@ function currentSheetPoint(){
 function openSheet(zid) {
   if(state.target!=='funghi'){openOutdoorSheet(zid);return;}
   sheetPoint=null;sheetZone = zid;
-  if (!results) return; // il meteo non e' ancora arrivato: renderAll riapre il riquadro
+  if (!results) { openOutdoorSheet(zid); return; }
   const z = zones.find((x) => x.id === zid);
   const d = dayEntry(zid, state.dayOffset);
   const sh = $('#map-sheet');
-  if (!z || !d?.best) { sh.hidden = true; return; }
+  if (!z) { sh.hidden = true; return; }
+  if (!d?.best) { openOutdoorSheet(zid); return; }
   const sc = adjusted(z, d.score, d);
   const cv = coverOf(z, d.best.species.id, d),walk=walkFor(z,d,state.trailId);
   sh.innerHTML = `
@@ -1799,7 +1824,51 @@ function pointTrailPreview(z, t, d, h) {
     ${trailVisual(z, t, d, [h], 'map')}</div>`;
 }
 
+let mapExperience=null,mapResultsQueued=false;
+function mapCandidates() {
+  return (weatherZones||zones||[]).map(z=>{
+    const d=dayEntry(z.id,state.dayOffset),day=d||{date:outdoorDate(state.dayOffset)},walk=walkFor(z,day,z.id===state.zoneId?state.trailId:null);
+    if(!matchesInterests(z,day,walk))return null;
+    const score=hasInterest('funghi')?d?.score:null,trip=zoneTrip(z,walk);
+    return {z,d,walk,score,trip,o:state.dayOffset,rank:Number.isFinite(score)?preferenceRank(z,score,d)*wxRank(z,d)*communityRank(z.id,selectedCatalog().filter(s=>!botanicalById(s.id)).map(s=>s.id)):-Infinity,weatherRank:wxRank(z,day),botanicalRank:hasInterest('piante')?Math.max(0,...mapPlants(z,day,walk).map(i=>i.rank||0)):0,minutes:trip.minutes,crowd:d?.crowd?.value??z.popularity,comfort:d?.comfort?.value};
+  }).filter(Boolean).sort((a,b)=>hasInterest('funghi')?b.rank-a.rank||compareOutdoor(a,b,state):compareOutdoor(a,b,state));
+}
+function scheduleMapResults(){
+  if(mapResultsQueued)return;mapResultsQueued=true;
+  requestAnimationFrame(()=>{mapResultsQueued=false;renderMapResults();});
+}
+function renderMapResults(){
+  if(!mapExperience||state.view!=='mappa')return;
+  const status=$('#map-weather-status');status.hidden=$('#stale').hidden&&!$('#weather-work').classList.contains('busy');status.querySelector('summary').textContent=!$('#stale').hidden?'Meteo da verificare':'Aggiornamento meteo…';
+  const all=mapCandidates(),visible=map?all.filter(r=>map.getBounds().contains([r.z.lat,r.z.lon])):all;
+  const prefs=PREFS.filter(([key])=>state[key]).map(([,name])=>name.toLowerCase());
+  const order=prefs.length?`Ordinate anche per ${prefs.join(', ')}. L’indice dei funghi non cambia.`:hasInterest('funghi')?'Indice dei funghi e condizioni dell’uscita. Le zone senza indice restano esplorabili.':hasInterest('piante')?'Ambienti e spunti botanici, senza un indice delle piante.':'Zone con i tratti mappati, accessi e condizioni dell’uscita.';
+  mapExperience.render({total:all.length,order,rows:visible.map(r=>({id:r.z.id,name:shortName(r.z),selected:r.z.id===state.zoneId,index:Number.isFinite(r.score)?`${fungusGlyph}${idxDot(r.score)}`:'',meta:[Number.isFinite(r.trip.minutes)?`${r.trip.minutes} min in auto`:'',r.walk?`${r.walk.t.difficulty||'Sentiero'} · ${fmtKm(r.walk.t.in_zone_km)} km nel tratto`:'Scheda della zona',hasInterest('funghi')&&!Number.isFinite(r.score)?'Indice non disponibile':'',state.avoidCrowd&&r.d?.crowd?crowdText(r.d.crowd):''].filter(Boolean).join(' · ')}))});
+}
+function fitMapResults(){
+  const rows=mapCandidates();if(map&&rows.length)map.fitBounds(rows.map(r=>[r.z.lat,r.z.lon]),{paddingTopLeft:[24,$('.map-top').offsetHeight+24],paddingBottomRight:[24,140],maxZoom:11,animate:false});
+}
+function chooseMapZone(id){
+  mapExperience.host.open=false;
+  openSheet(id);
+  const z=(weatherZones||zones).find(z=>z.id===id);
+  if(map&&z){const h=$('#map-sheet').offsetHeight;map.fitBounds(L.latLng(z.lat,z.lon).toBounds(z.radius_m*2.4),{paddingTopLeft:[16,$('.map-top').offsetHeight+16],paddingBottomRight:[16,Math.min(h+24,map.getSize().y*.5)],maxZoom:12,animate:false});}
+}
+function initMapExperience(){
+  if(mapExperience)return;
+  mapExperience=mountMapResults($('.view-map'),{choose:chooseMapZone,fit:fitMapResults,filters:openFullFilters});
+  if(!hasLeaflet())$('#map-results .map-results-body').append($('.legend-box'));
+  const status=$('#map-weather-status');
+  const sync=()=>{if(state.view!=='mappa')return;status.hidden=$('#stale').hidden&&!$('#weather-work').classList.contains('busy');status.querySelector('summary').textContent=!$('#stale').hidden?'Meteo da verificare':'Aggiornamento meteo…';scheduleMapResults();};
+  const observer=new MutationObserver(sync);
+  observer.observe($('#stale'),{attributes:true,childList:true,subtree:true});observer.observe($('#weather-work'),{attributes:true,childList:true,subtree:true});
+  mapExperience.host.addEventListener('toggle',()=>{if(mapExperience.host.open)renderMapResults();});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!document.querySelector('dialog[open]')){const top=$('.map-top');if(top?.classList.contains('days-open')){top.classList.remove('days-open');$('#map-filters [data-days]')?.setAttribute('aria-expanded','false');$('#map-filters [data-days]')?.focus();}}});
+  sync();scheduleMapResults();
+}
+
 function initMap() {
+  initMapExperience();
   const bm = globalThis.FUNGAROLI_DATA?.basemap || globalThis.FUNGAROLI_REVIEW?.basemap;
   if (hasLeaflet() && bm) { initEmbeddedMap(bm); return; }
   if (!hasLeaflet()) { document.querySelector('.view-map')?.classList.add('schematic'); return; } // senza Leaflet: mappa schematica
@@ -1814,7 +1883,7 @@ function initMap() {
   });
   mapControls({ bases: [['Topografica', 'assets/map-thumb-topo.jpg', topo], ['Stradale', 'assets/map-thumb-osm.jpg', osm]], forest });
   map.on('zoomend', () => results && state.view === 'mappa' && renderMap());
-  map.on('moveend',syncCellBackdrop);
+  map.on('moveend',()=>{syncCellBackdrop();scheduleMapResults();});
   // la carta cambia misura (barra in alto che sparisce, rotazione): Leaflet va avvisato
   new ResizeObserver(() => map.invalidateSize()).observe($('#map'));
   initCellInteractions();
@@ -1887,6 +1956,7 @@ function mapControls({ bases = null, forest }) {
         b.setAttribute('aria-label', 'Posizione non disponibile: controlla i permessi del browser');
         b.classList.add('err'); setTimeout(() => b.classList.remove('err'), 2500);
       });
+      const legend=$('.legend-box');if(legend)panel.append(legend);
       return box;
     },
   });
@@ -1903,7 +1973,7 @@ function initEmbeddedMap(bm) {
   map.setView([42.42, 13.03], 10);
   mapControls({ forest });
   map.on('zoomend', () => results && state.view === 'mappa' && renderMap());
-  map.on('moveend',syncCellBackdrop);
+  map.on('moveend',()=>{syncCellBackdrop();scheduleMapResults();});
   // la carta cambia misura (barra in alto che sparisce, rotazione): Leaflet va avvisato
   new ResizeObserver(() => map.invalidateSize()).observe($('#map'));
   initCellInteractions();
@@ -2081,11 +2151,13 @@ function showCellCard(h, preserveTimer = false) {
 }
 
 function renderMap(changed=null) {
+  scheduleMapResults();
+  const mapZones=weatherZones||zones;
   if(state.target!=='funghi'){renderOutdoorMap();return;}
   if (!hasLeaflet()) {
     renderSvgMap($('#map'), {
-      zones, origin,
-      items: zones.filter(z=>matchesInterests(z,dayEntry(z.id,state.dayOffset),walkFor(z,dayEntry(z.id,state.dayOffset)))).map((z) => {
+      zones:mapZones, origin,
+      items: mapZones.filter(z=>matchesInterests(z,dayEntry(z.id,state.dayOffset),walkFor(z,dayEntry(z.id,state.dayOffset)))).map((z) => {
         const d = dayEntry(z.id, state.dayOffset);
         const s = adjusted(z, d?.score ?? null, d);
         return {
@@ -2115,14 +2187,14 @@ function renderMap(changed=null) {
     return;
   }
   const previousHits=cellHits;
-  for(const k in zoneLayers)if(!changed||changed.has(k)||!zones.some(z=>z.id===k)){zoneLayers[k].remove();delete zoneLayers[k];}
+  for(const k in zoneLayers)if(!changed||changed.has(k)||!mapZones.some(z=>z.id===k)){zoneLayers[k].remove();delete zoneLayers[k];}
   cellHits = changed?previousHits.filter(h=>zoneLayers[h.z.id]):[];peekCellBounds=[];mapEl.classList.remove('cells-peek');
   // etichette delle zone in un livello sopra i segnavia e i pin: nome e indice restano sempre leggibili
   if (!map.getPane('zoneLabels')) map.createPane('zoneLabels').style.zIndex = 640;
   // etichette con nome: spostamento verticale greedy (in pixel) per evitare sovrapposizioni
   const placed = [];
   const labelPos = {};
-  for (const z of zones) {
+  for (const z of mapZones) {
     const pt = map.latLngToContainerPoint([z.lat, z.lon]);
     const w = 40 + shortName(z).length * 7 + (hasInterest('piante')?22:0);
     let y = pt.y;
@@ -2131,7 +2203,7 @@ function renderMap(changed=null) {
     placed.push({ x: pt.x, y, w });
     labelPos[z.id] = map.containerPointToLatLng([pt.x, y]);
   }
-  for (const z of zones) {
+  for (const z of mapZones) {
     if(changed&&zoneLayers[z.id])continue;
     const d = dayEntry(z.id, state.dayOffset);
     if(!matchesInterests(z,d,walkFor(z,d)))continue;
@@ -2161,8 +2233,8 @@ function renderMap(changed=null) {
         foot: 'Tocca per aprire la zona' }), { className: 'zone-tt', sticky: true, direction: 'top', offset: [0, -14], opacity: 1 });
     }
     L.marker(labelPos[z.id], {
-      icon: L.divIcon({ className: '', html: `<span class="zone-label${state.zoneId && !selected ? ' zone-label-min' : ''}${selected ? ' zone-label-sel' : ''}">${mapPlantBadge(z,d,walkFor(z,d))}<span class="dot" style="background:${color}"></span> <b class="pc">${formatIndex(s)}</b>${state.zoneId && !selected ? '' : ` <span class="zone-name">${esc(shortName(z))}</span>`}</span>`, iconSize: null }),
-      interactive:hasInterest('piante'),pane:'zoneLabels',title:z.name,
+      icon: L.divIcon({ className: '', html: `<span class="zone-label${state.zoneId && !selected ? ' zone-label-min' : ''}${selected ? ' zone-label-sel' : ''}">${mapPlantBadge(z,d,walkFor(z,d))}<span class="dot" style="background:${color}"></span> ${Number.isFinite(s)?`<b class="pc">${formatIndex(s)}</b>`:''}${state.zoneId && !selected ? '' : ` <span class="zone-name">${esc(shortName(z))}</span>`}</span>`, iconSize: null }),
+      interactive:true,pane:'zoneLabels',title:z.name,
     }).addTo(g).on('click',()=>openSheet(z.id));
     if (selected && d?.best) {
       const tl = trailsFor(z, d.best.species, d.best.band);

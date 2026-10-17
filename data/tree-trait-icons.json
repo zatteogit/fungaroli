@@ -1,5 +1,8 @@
 {
- "note": "Icone dei caratteri degli alberi disegnate con AI (image_gen) a partire dallo schema dei caratteri di data/recognize-trees.json, riviste dal proprietario del progetto. Una icona per valore, non per specie: non sono foto e non servono a identificare.",
+ "note": "Icone dei caratteri degli alberi disegnate con AI (image_gen) a partire dallo schema dei caratteri di data/recognize-trees.json, riviste dal proprietario del progetto, senza opere di terzi. Una icona per valore, non per specie: non sono foto e non servono a identificare.",
+ "author": "Fronda/Fungaroli, rivista dal progetto",
+ "license": "CC BY-SA 4.0",
+ "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.it",
  "path": "assets/tree-traits/<chiave>-<valore>.webp",
  "values": {
   "leaf_kind": [
@@ -27,7 +30,8 @@
   ],
   "leaf_type": [
    "semplice",
-   "composta_pennata"
+   "composta_pennata",
+   "composta_palmata"
   ],
   "leaf_margin": [
    "intero",
@@ -114,6 +118,7 @@
   "leaf_shape-ovale": 4,
   "leaf_shape-tondeggiante": 5,
   "leaf_shape-triangolare": 5,
+  "leaf_type-composta_palmata": 4,
   "leaf_type-composta_pennata": 4,
   "leaf_type-semplice": 5,
   "needle_arrangement-a_ciuffi": 5,

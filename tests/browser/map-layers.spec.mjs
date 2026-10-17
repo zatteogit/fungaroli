@@ -4,6 +4,7 @@ for(const width of [390,1280]) test(`il pannello livelli supera filtri e frecce 
  const context=await browser.newContext({viewport:{width,height:900},serviceWorkers:'block'});
  const page=await preparePage(context,{theme:'dark'});
  await page.goto('/#/mappa/tancia');
+ await expect.poll(()=>page.locator('#map').evaluate(el=>Math.abs(el.getBoundingClientRect().width-innerWidth))).toBeLessThan(1);
  await page.locator('.mapctl [data-act="layers"]').first().click();
  const panel=page.locator('.mapctl-panel');await expect(panel).toBeVisible();
  // Riproduce la sovrapposizione con la barra espansa, indipendentemente dal numero di pillole.
@@ -19,11 +20,10 @@ for(const width of [390,1280]) test(`il pannello livelli supera filtri e frecce 
  await context.close();
 });
 
-for(const width of [390,1280]) test(`interessi prima delle preferenze sulla mappa a ${width}px`,async({browser})=>{
+for(const width of [390,1280]) test(`interessi e preferenze nel filtro compatto della mappa a ${width}px`,async({browser})=>{
  const context=await browser.newContext({viewport:{width,height:900},serviceWorkers:'block'});
  const page=await preparePage(context);await page.goto('/#/mappa/tancia');
  const bar=page.locator('#map-filters');await expect(bar.locator('[data-more]')).toBeVisible();
- const order=await bar.locator('button').evaluateAll(els=>els.map(el=>el.hasAttribute('data-more')?'more':el.hasAttribute('data-p')?'pref':el.hasAttribute('data-intent')?'fungo':'day'));
- expect(order.indexOf('more')).toBeLessThan(order.indexOf('pref'));expect(order.lastIndexOf('fungo')).toBeLessThan(order.indexOf('pref'));
+ await expect(bar.locator(':scope > button')).toHaveCount(2);
  await bar.locator('[data-more]').click();await expect(page.locator('#full-filters[open]')).toBeVisible();await context.close();
 });
