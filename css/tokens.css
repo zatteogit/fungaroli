@@ -89,6 +89,16 @@
   --_ref-shadow-1-dark: 0 1px 2px rgb(0 0 0 / .45);
   --_ref-shadow-2-dark: 0 18px 44px rgb(0 0 0 / .55);
 
+  /* Campiture editoriali: stabili nei due temi, sempre con inchiostro bosco. */
+  --thermal-cool: var(--_ref-fiordaliso);
+  --thermal-range: var(--_ref-accent-dark);
+  --photo-warning: var(--_ref-warn-ink-dark);
+  --story-ink: var(--_ref-night);
+  --story-polline: var(--_ref-polline);
+  --story-calendula: var(--_ref-calendula);
+  --story-fiordaliso: var(--_ref-fiordaliso);
+  --story-germoglio: var(--_ref-germoglio);
+
   /* ruoli pubblici */
   color-scheme: light;
   --font-display: Fraunces, Georgia, 'Times New Roman', serif;

@@ -1,19 +1,13 @@
 import { test, expect } from '@playwright/test';
 import { todayISO } from '../../js/weather.js';
-import {execFileSync} from 'node:child_process';
+import {randomBytes} from 'node:crypto';
 test.use({locale:'it-IT'});
-// Ogni prova ha il proprio budget di registrazioni nel database locale isolato.
-// Le molte passkey virtuali della suite non sono dieci iscrizioni dello stesso utente.
-test.beforeEach(()=>execFileSync('python3',['-c',`
-import pathlib,sqlite3,sys
-for path in pathlib.Path(sys.argv[1]).rglob('*.sqlite'):
- db=sqlite3.connect(path,timeout=20)
- if db.execute("SELECT COUNT(*) FROM sqlite_master WHERE name='rate_limits'").fetchone()[0]:
-  db.execute("DELETE FROM rate_limits WHERE key LIKE 'auth:%'");db.commit()
- db.close()
-`,process.env.FUNGAROLI_BROWSER_PERSIST]));
 
-async function setup(page) {
+async function setup(page,{gust=8}={}) {
+  // Un client locale distinto per ogni contesto mantiene separati i limiti delle
+  // passkey senza scrivere nel file SQLite mentre il Worker lo sta usando.
+  const ip='fd00:'+randomBytes(14).toString('hex').match(/.{4}/g).join(':');
+  await page.context().setExtraHTTPHeaders({'CF-Connecting-IP':ip});
   await page.route('**/*', async (route) => {
     const u = new URL(route.request().url());
     if(u.pathname!=='/api/weather/v1/forecast'&&u.hostname!=='api.open-meteo.com')return u.protocol==='https:'?route.abort():route.fallback();
@@ -21,7 +15,7 @@ async function setup(page) {
     const dates = Array.from({ length: 70 }, (_, i) => todayISO(new Date(Date.now() + (i - 62) * 864e5)));
     const time = dates.flatMap((d) => Array.from({ length: 24 }, (_, h) => `${d}T${String(h).padStart(2, '0')}:00`));
     const fill = (v) => Array(time.length).fill(v);
-    const out = Array.from({ length: count }, () => ({ daily: { time: dates, precipitation_sum: dates.map((_, i) => i % 4 ? 3 : 12), temperature_2m_mean: Array(70).fill(13), temperature_2m_min: Array(70).fill(8), temperature_2m_max: Array(70).fill(18) }, hourly: { time, soil_moisture_3_to_9cm: fill(.3), soil_temperature_6cm: fill(13), precipitation: fill(0), precipitation_probability: fill(0), weather_code: fill(1), wind_gusts_10m: fill(8), temperature_2m: fill(13) } }));
+    const out = Array.from({ length: count }, () => ({ daily: { time: dates, precipitation_sum: dates.map((_, i) => i % 4 ? 3 : 12), temperature_2m_mean: Array(70).fill(13), temperature_2m_min: Array(70).fill(8), temperature_2m_max: Array(70).fill(18) }, hourly: { time, soil_moisture_3_to_9cm: fill(.3), soil_temperature_6cm: fill(13), precipitation: fill(0), precipitation_probability: fill(0), weather_code: fill(1), wind_gusts_10m: fill(gust), temperature_2m: fill(13) } }));
     return route.fulfill({ json: out });
   });
   await page.addInitScript(() => localStorage.setItem('fungaroli:legal-accepted', '32026-10-16'));
@@ -57,7 +51,7 @@ test('base privata del profilo: salvataggio, distanze, navigatori, isolamento e 
     await r.fulfill({json:{base:data.user.base,routes:targets.map(p=>({key:`${p.lat.toFixed(5)},${p.lon.toFixed(5)}`,minutes:111,km:77})),source:'OSRM / OpenStreetMap',traffic:false}});
   });
   await register(page,'Base');const owner=(await api(page,'session')).data.user.id;
-  const score=await page.locator('#hero .ring b').textContent();
+  const score=await page.locator('#hero .cover-index b').textContent();
   await page.locator('[data-community-account]').first().click();const profile=page.locator('dialog.profile-dialog[open]');
   await profile.locator('.base-settings summary').click();expect(await page.evaluate(()=>globalThis.baseGpsCalls)).toBe(0);await profile.locator('[data-base-gps]').click();expect(await page.evaluate(()=>globalThis.baseGpsCalls)).toBe(1);expect((await api(page,'session')).data.user.base).toBe(null);
   await profile.locator('[data-base-query]').fill('Roma');await profile.locator('[data-base-search]').click();
@@ -65,7 +59,7 @@ test('base privata del profilo: salvataggio, distanze, navigatori, isolamento e 
   expect((await api(page,'session')).data.user.base).toEqual(rome);
   for(const width of[320,390,1280]){await page.setViewportSize({width,height:900});expect(await profile.evaluate(el=>el.scrollWidth<=el.clientWidth)).toBe(true);if(width===390)await profile.screenshot({path:'/tmp/fungaroli-profile-base-mobile.png'});}
   await profile.locator('.profile-actions [data-close]').click();await expect(page.locator('#hero .facts')).toContainText('111 min');
-  expect(await page.locator('#hero .ring b').textContent()).toBe(score);
+  expect(await page.locator('#hero .cover-index b').textContent()).toBe(score);
   await page.locator('#hero .cover-link').click();await page.locator('#detail [data-sec="accesso"] summary').click({position:{x:5,y:10}});
   await expect(page.locator('#detail [data-sec="accesso"]')).toContainText('Da Roma 111 min · 77 km');
   const href=await page.locator('#detail a[href*="google.com/maps/dir"]').first().getAttribute('href');expect(new URL(href).searchParams.get('origin')).toBe('41.9028,12.4964');
@@ -243,6 +237,18 @@ for(const width of [320,1280]) test(`tracciato e profilo nello stesso riquadro a
   expect(errors).toEqual([]);
 });
 
+test('Quando ha una sola testata, mantiene gli avvisi meteo e aggiunge solo dettagli',async({page})=>{
+ await page.setViewportSize({width:390,height:900});await page.emulateMedia({reducedMotion:'reduce'});
+ const errors=await setup(page,{gust:46});await page.goto('/#/zona/tancia/0');
+ const section=page.locator('#detail details[data-sec="quando"]'),summary=section.locator(':scope > summary');
+ await expect(summary.locator('.essential-summary')).toHaveCount(1);await expect(summary.locator('.plan-k')).toHaveText('Quando');
+ await expect(summary).toContainText('Arriva');await expect(summary).toContainText('46 km/h');await expect(summary).not.toContainText("Meteo dell'uscita");
+ await summary.click();await expect(section).toHaveAttribute('open','');
+ const body=section.locator(':scope > .sec-body');await expect(body).toContainText('raccolta consentita');await expect(body).toContainText('Partenza da');await expect(body).not.toContainText('Arrivo consigliato');await expect(body.locator('.badge.crowd-basso,.badge.crowd-medio,.badge.crowd-alto')).toHaveCount(0);
+ const method=body.locator('.timing-method');await expect(method).not.toHaveAttribute('open','');await method.locator('summary').click();await expect(method).toContainText('Non misuriamo le presenze');await method.locator('summary').click();
+ await section.screenshot({path:'/tmp/fronda-when-accordion.png'});expect(errors).toEqual([]);
+});
+
 test('riepiloghi essenziali negli accordion sul posto, senza voci duplicate o salti',async({page})=>{
   await page.emulateMedia({reducedMotion:'reduce'});
   const errors=await setup(page);await page.goto('/#/zona/tancia/0');await expect(page.locator('#detail details[data-sec="specie"]')).toBeVisible();
@@ -415,7 +421,7 @@ test('autocomplete dei commestibili, selezione individuale, stagione e persisten
   await page.screenshot({path:'/tmp/fungaroli-species-filter.png',fullPage:true});
   await page.locator('#full-filters [data-close]').first().click();
   await expect(page.locator('#hero')).toContainText('indice di crescita non è ancora disponibile');
-  await expect(page.locator('#hero .ring')).toHaveCount(0);
+  await expect(page.locator('#hero .cover-index')).toHaveCount(0);
   await page.locator('#hero .explore-fallback a').first().click();
   await expect(page.locator('#detail')).toContainText('Indice non ancora disponibile');
   await expect(page.locator('#detail .trails li').first()).toBeVisible();

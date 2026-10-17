@@ -16,24 +16,24 @@ async function start(page,prefs={},offline=false) {
 }
 test('tre intenti: home, filtri, mappa, dettaglio e memoria coerenti',async({page})=>{
  const errors=[];page.on('pageerror',e=>errors.push(e.message));await start(page);
- await expect(page.locator('#hero .ring')).toBeVisible();
- await page.locator('#active-filters [data-intent="passeggiata"]').click();
- await expect(page.locator('#hero .outdoor-hero')).toBeVisible();await expect(page.locator('#hero .ring')).toHaveCount(0);
+ await expect(page.locator('#hero .cover-index')).toBeVisible();
+ await page.locator('#active-filters [data-intent="passeggiata"]').click();await page.locator('#active-filters [data-intent="funghi"]').click();
+ await expect(page.locator('#hero .outdoor-hero')).toBeVisible();await expect(page.locator('#hero .cover-index')).toHaveCount(0);
  await page.locator('#active-filters [data-more]').click();const filters=page.locator('#full-filters[open]');await expect(filters.locator('#species-filter-search')).toHaveCount(0);
  await filters.locator('[data-pref="shortTrails"]').click();await filters.locator('[data-close]').last().click();
  await page.reload();await expect(page.locator('#active-filters [data-intent="passeggiata"]')).toHaveAttribute('aria-pressed','true');
- await page.locator('#hero .outdoor-hero').click();await expect(page.locator('#detail h1')).toBeVisible();await expect(page.locator('#detail .ring')).toHaveCount(0);
- await page.goto('/#/mappa');await expect(page.locator('#legend')).toContainText('senza indice fungino');
- await page.locator('#map-filters [data-intent="piante"]').click();await expect(page.locator('#legend')).toContainText('presenza da verificare');
+ await page.locator('#hero .outdoor-hero').click();await expect(page.locator('#detail h1')).toBeVisible();await expect(page.locator('#detail .hero-indicators > .ring')).toHaveCount(0);await expect(page.locator('#detail .weather-ring')).toHaveCount(1);
+ await page.goto('/#/mappa');await expect(page.locator('#map .pc')).toHaveCount(0);
+ await page.locator('#map-filters [data-intent="piante"]').click();await page.locator('#map-filters [data-intent="passeggiata"]').click();await expect(page.locator('#legend .map-plant-note')).toHaveCount(1);await expect(page.locator('#legend .map-plant-note')).not.toHaveAttribute('open','');
  await page.goto('/#/uscite');await expect(page.locator('#season .outdoor-plant').first()).toBeVisible();
- expect(await page.evaluate(()=>!!(document.querySelector('#season').compareDocumentPosition(document.querySelector('#hero'))&Node.DOCUMENT_POSITION_FOLLOWING))).toBe(true);
+ expect(await page.evaluate(()=>!!(document.querySelector('#hero').compareDocumentPosition(document.querySelector('#season'))&Node.DOCUMENT_POSITION_FOLLOWING))).toBe(true);
  await page.locator('#active-filters [data-more]').click();await expect(page.locator('#species-filter-search')).toBeVisible();await page.keyboard.press('Escape');
  for(const theme of ['light','dark'])for(const width of [320,390,768,1280]){
  await page.setViewportSize({width,height:900});await page.evaluate(t=>document.documentElement.dataset.theme=t,theme);
  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
  if(width===390)await page.screenshot({path:`/tmp/intent-plants-${theme}.png`,fullPage:true});
  }
- await page.locator('#active-filters [data-intent="funghi"]').click();await expect(page.locator('#hero .ring')).toBeVisible();expect(errors).toEqual([]);
+ await page.locator('#active-filters [data-intent="funghi"]').click();await page.locator('#active-filters [data-intent="piante"]').click();await expect(page.locator('#hero .cover-index')).toBeVisible();expect(errors).toEqual([]);
 });
 test('scelta di specie fuori calendario sospesa una volta e ripristinabile',async({page})=>{
  await start(page,{target:'funghi',speciesIds:['morchella-esculenta']});
@@ -57,6 +57,27 @@ for(const intent of ['piante','passeggiata'])test(`mappa Leaflet: ${intent}, sen
  await expect(page.locator('#map .zone-label').first()).toBeVisible();
  await page.setViewportSize({width:390,height:900});await page.locator('#map-filters [data-days]').click();await expect(page.locator('#map-days')).toBeVisible();await page.locator('#map-days [data-day-offset="2"]').click();await expect(page.locator('#map-days')).toBeHidden();await page.setViewportSize({width:1280,height:900});await expect(page.locator('#map .pc')).toHaveCount(0);
  await page.locator('#map .zone-label').first().click();await expect(page.locator('#map-sheet')).toBeVisible();await expect(page.locator('#map-sheet .ring')).toHaveCount(0);
- await page.locator('#map-sheet .sheet-close').click();await page.locator('#map-filters [data-intent="funghi"]').click();await expect(page.locator('#legend')).toContainText('habitat potenziale');
+ await page.locator('#map-sheet .sheet-close').click();await page.locator('#map-filters [data-intent="funghi"]').click();await page.locator(`#map-filters [data-intent="${intent}"]`).click();await expect(page.locator('#legend')).toContainText('habitat potenziale');
  await page.evaluate(()=>{testMap.setZoom(13,{animate:false});});await expect(page.locator('#map')).toHaveClass(/cells-on/);expect(errors).toEqual([]);
+});
+
+for(const intent of ['piante','passeggiata'])test(`copertine ${intent}: ripiego contestuale e foto in errore`,async({page})=>{
+ await page.route('**/api/content/v1/snapshot',r=>r.fulfill({status:503,json:{error:'offline'}}));
+ await page.route('**/data/media-zones.json',r=>r.fulfill({json:{zones:{}}}));
+ await start(page,{target:intent});
+ const hero=page.locator('#hero .outdoor-hero');await expect(hero).toBeVisible();
+ await expect(hero.locator('> img')).toHaveCount(1);
+ const cards=page.locator('#ranking .outdoor-tile');expect(await cards.count()).toBeGreaterThan(0);
+ for(const card of await cards.all())await expect(card.locator('.outdoor-backdrop')).toHaveCount(1);
+ await expect(cards.locator('> img').first()).toHaveCount(1);
+ await hero.locator('> img').evaluate(img=>{img.dataset.imageState='error';img.removeAttribute('src');img.removeAttribute('data-src');});
+ await expect(hero.locator('> img')).toHaveCSS('visibility','hidden');
+ await expect(hero.locator('.outdoor-backdrop svg')).toBeVisible();
+ const failedCard=page.locator('#ranking .outdoor-tile:has(> img)').first();
+ const height=await failedCard.evaluate(e=>e.getBoundingClientRect().height);
+ await failedCard.locator('> img').evaluate(img=>{img.dataset.imageState='error';img.removeAttribute('src');img.removeAttribute('data-src');});
+ await expect(failedCard.locator('.outdoor-backdrop svg')).toBeVisible();
+ expect(Math.abs(await failedCard.evaluate(e=>e.getBoundingClientRect().height)-height)).toBeLessThan(1);
+ await page.setViewportSize({width:390,height:844});
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
 });

@@ -9,7 +9,7 @@ const seen = new WeakSet();
 function update(el, host) {
   const max = el.scrollWidth - el.clientWidth;
   const over = max > 4 && getComputedStyle(el).overflowX !== 'visible';
-  host.style.setProperty('--rail-y', `${el.offsetTop + el.offsetHeight / 2}px`);
+  host.style.setProperty('--rail-y', `${el.getBoundingClientRect().top - host.getBoundingClientRect().top + el.offsetHeight / 2}px`);
   host.querySelector('.rail-prev').hidden = !over || el.scrollLeft <= 2;
   host.querySelector('.rail-next').hidden = !over || el.scrollLeft >= max - 2;
 }

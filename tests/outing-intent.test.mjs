@@ -1,6 +1,6 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
-import {seasonalSelection,matchesWalk,compareOutdoor,validIntent} from '../js/outing-intent.js';
+import {seasonalSelection,matchesWalk,compareOutdoor,validIntent,normalizeInterests,primaryInterest,toggleInterest} from '../js/outing-intent.js';
 test('stagione: sospende solo una scelta interamente fuori da calendari documentati',()=>{
  const cat=[{id:'a',name:'A',months:[4]},{id:'b',name:'B',months:[10]},{id:'c',name:'C',months:null}];
  assert.deepEqual(seasonalSelection(cat,new Set(['a']),['2026-10-16']),{names:['A'],clearSpecies:true,suspendIntent:false});
@@ -24,4 +24,15 @@ test('ordinamento pratico: meteo prima, botanica solo nella modalità piante',()
  b.weatherRank=1;assert.ok(compareOutdoor(a,b,{target:'piante'})>0);
  assert.ok(compareOutdoor(a,b,{target:'passeggiata'})<0);
  assert.equal(validIntent('bad'),'funghi');
+});
+
+test('interessi combinabili: migrazione, aggiunta e rimozione indipendenti',()=>{
+ assert.deepEqual(normalizeInterests(undefined,'piante'),['piante']);
+ assert.deepEqual(normalizeInterests(['piante','funghi','piante','invalid']),['funghi','piante']);
+ const both=toggleInterest(['funghi'],'piante');assert.deepEqual(both,['funghi','piante']);
+ assert.equal(primaryInterest(both),'funghi');
+ assert.deepEqual(toggleInterest(both,'funghi'),['piante']);
+ assert.equal(primaryInterest(['piante','passeggiata']),'piante');
+ assert.deepEqual(toggleInterest(['passeggiata'],'passeggiata'),[]);
+ assert.equal(primaryInterest([]),'passeggiata');
 });

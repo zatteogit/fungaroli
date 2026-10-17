@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-15T22:50:33.209Z",
+  "generatedAt": "2026-10-16T16:26:11.347Z",
   "rules": {
     "inline-hex": {
       "total": 283,
@@ -13,10 +13,10 @@
       }
     },
     "css-colour-fn": {
-      "total": 158,
+      "total": 156,
       "byFile": {
         "css/cms.css": 1,
-        "css/style.css": 154,
+        "css/style.css": 152,
         "js/identify.js": 3
       }
     }

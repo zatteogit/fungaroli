@@ -137,7 +137,7 @@ async function pickDays(page,n) {
   const offsets=await page.locator('#zone-days [data-day-offset]').evaluateAll(els=>els.filter(b=>b.getAttribute('aria-selected')!=='true').map(b=>b.dataset.dayOffset));
   return offsets.slice(0,n).reverse();
 }
-const ringState=page=>page.evaluate(()=>{const r=document.querySelector('#detail .phero > .ring');return{same:r===window.__ring,cover:document.querySelector('#detail .phero')===window.__cover,img:document.querySelector('#detail .phero-img img')===window.__img,text:r.querySelector('b').textContent,p:parseFloat(getComputedStyle(r).getPropertyValue('--p')),focus:document.activeElement?.dataset?.dayOffset||''};});
+const ringState=page=>page.evaluate(()=>{const r=document.querySelector('#detail .phero .hero-indicators > .ring');return{same:r===window.__ring,cover:document.querySelector('#detail .phero')===window.__cover,img:document.querySelector('#detail .phero-img img')===window.__img,text:r.querySelector('b').textContent,p:parseFloat(getComputedStyle(r).getPropertyValue('--p')),focus:document.activeElement?.dataset?.dayOffset||''};});
 for(const width of [390,1280]) test(`cambio di giorno nella zona senza ricreare la copertina a ${width}px`,async({page})=>{
   const errors=await setup(page,width);
   // alone «ambilight»: mai in home (proposta e card), sì dietro la testata della zona, come fratello prima di .phero
@@ -146,8 +146,11 @@ for(const width of [390,1280]) test(`cambio di giorno nella zona senza ricreare 
   await expect(page.locator('#detail > .ambi.on + .phero')).toHaveCount(1);
   await expect(page.locator('#detail > .ambi img')).toHaveCount(1);
   expect(await page.locator('#detail > .ambi').evaluate(a=>getComputedStyle(a).pointerEvents==='none'&&a.getAttribute('aria-hidden')==='true')).toBe(true);
-  await page.evaluate(()=>{window.__ring=document.querySelector('#detail .phero > .ring');window.__cover=document.querySelector('#detail .phero');window.__img=document.querySelector('#detail .phero-img img');window.__ambi=document.querySelector('#detail > .ambi');});
+  await page.evaluate(()=>{window.__ring=document.querySelector('#detail .phero .hero-indicators > .ring');window.__cover=document.querySelector('#detail .phero');window.__img=document.querySelector('#detail .phero-img img');window.__ambi=document.querySelector('#detail > .ambi');});
   const days=await pickDays(page,3);expect(days.length).toBe(3);
+  // Il calendario segue una hero che cresce con il contenuto: da quando è visibile non deve saltare.
+  await page.locator('#zone-days').scrollIntoViewIfNeeded();
+  const initialScroll=await page.evaluate(()=>scrollY);
   for(const o of days) {
     const day=page.locator(`#zone-days [data-day-offset="${o}"]`),expected=await day.locator('.pc').textContent();
     const r=await step(page,()=>day.click());
@@ -160,7 +163,7 @@ for(const width of [390,1280]) test(`cambio di giorno nella zona senza ricreare 
     expect(s.text).toBe(expected);
     expect(Math.abs(s.p-Number(expected.replace(',','.'))*10)).toBeLessThan(.6);
     // il giorno toccato resta col focus, la pagina non scorre
-    expect(s.focus).toBe(o);expect(r.y).toBe(0);
+    expect(s.focus).toBe(o);expect(r.y).toBe(initialScroll);
   }
   expect(page.url()).toContain(`/zona/`);expect(page.url()).toContain(`/${days.at(-1)}`);
   // dopo tre cambi di giorno un'azione della scheda si esegue una volta sola
@@ -174,12 +177,12 @@ for(const width of [390,1280]) test(`cambio di giorno nella zona senza ricreare 
 
 test('cambio di giorno con «riduci movimento»: valori subito finali',async({page})=>{
   const errors=await setup(page,390,{reduced:true});
-  await page.locator('#hero .cover-link').click();await expect(page.locator('#detail .phero > .ring')).toBeVisible();
-  await page.evaluate(()=>{window.__ring=document.querySelector('#detail .phero > .ring');});
+  await page.locator('#hero .cover-link').click();await expect(page.locator('#detail .phero .hero-indicators > .ring')).toBeVisible();
+  await page.evaluate(()=>{window.__ring=document.querySelector('#detail .phero .hero-indicators > .ring');});
   const [o]=await pickDays(page,1),day=page.locator(`#zone-days [data-day-offset="${o}"]`),expected=await day.locator('.pc').textContent();
   await day.click();
   // nessun conteggio e nessuna transizione dell'arco: il valore è già quello finale
-  const s=await page.evaluate(()=>{const r=document.querySelector('#detail .phero > .ring');return{same:r===window.__ring,text:r.querySelector('b').textContent,p:parseFloat(getComputedStyle(r).getPropertyValue('--p')),anims:r.getAnimations().length};});
+  const s=await page.evaluate(()=>{const r=document.querySelector('#detail .phero .hero-indicators > .ring');return{same:r===window.__ring,text:r.querySelector('b').textContent,p:parseFloat(getComputedStyle(r).getPropertyValue('--p')),anims:r.getAnimations().length};});
   expect(s.same).toBe(true);expect(s.text).toBe(expected);expect(s.anims).toBe(0);
   expect(Math.abs(s.p-Number(expected.replace(',','.'))*10)).toBeLessThan(.6);
   expect(errors).toEqual([]);

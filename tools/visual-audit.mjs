@@ -112,7 +112,9 @@ export async function measureHost(page, host, items, { scroll = true } = {}) {
   const geo = await page.evaluate(([h, ids, sc]) => {
     const el = document.querySelector(`[data-la-host="${h}"]`);
     if (!el) return null;
-    if (sc) el.scrollIntoView({ block: 'center', inline: 'nearest' });
+    // Centra la card fuori dalle frecce della riga prima di misurarne il testo.
+    // Lo scorrimento istantaneo mantiene coerenti geometria e schermate.
+    if (sc) el.scrollIntoView({ block: 'center', inline: 'center', behavior: 'instant' });
     const r = el.getBoundingClientRect();
     return { host: { x: r.left, y: r.top, width: r.width, height: r.height }, vw: innerWidth, vh: innerHeight };
   }, [host, items.map((i) => i.id), scroll]);
