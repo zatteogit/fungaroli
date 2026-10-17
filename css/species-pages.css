@@ -387,3 +387,12 @@ body[data-page="mappa"] .view-map { border-radius:0; }
 .fungus-compare .cmp-cell:has(.cmp-part-art img) .cmp-color-dot { display:block; }
 .fungus-compare .cmp-illustration-note { display:none; max-width:65ch; margin:12px 0 16px; color:var(--text-2); font:400 13px/1.55 var(--font-body); }
 .fungus-compare .cmp-slide:has(.cmp-part-art img) .cmp-illustration-note { display:block; }
+
+/* I caratteri compatti si leggono come miniatura + valore, senza una seconda riga. */
+.fungus-compare .cmp-cell-miniature:has(.cmp-part-art img) { display:grid; grid-template-columns:44px minmax(0,1fr); align-items:center; gap:8px; }
+.fungus-compare .cmp-cell-miniature .cmp-part-art { min-height:44px; margin:0; }
+.fungus-compare .cmp-cell-miniature .cmp-part-art img { width:44px; height:44px; }
+.fungus-compare .cmp-cell-miniature .cmp-vals { min-width:0; }
+.fungus-compare .cmp-shape-art { flex:0 0 44px; width:44px; height:44px; align-items:center; justify-content:center; }
+.fungus-compare .cmp-shape-art img { display:block; width:44px; height:44px; object-fit:contain; }
+.fungus-compare .cmp-shape-art svg { width:40px; max-width:40px; height:40px; }

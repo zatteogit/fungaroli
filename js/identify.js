@@ -184,13 +184,25 @@ fetch('data/trait-icons.json').then((r) => (r.ok ? r.json() : null)).then((d) =>
 const illus = (key, part, colour) => `<img class="ts-ill" src="${esc(ASSET(`assets/traits/${key}-${part}${colour ? `-${colour}` : ''}.webp`))}" alt="" width="64" height="64" loading="lazy" decoding="async" data-ill="${part}">`;
 // Nel confronto la parte illustrata è un esempio della specie, non di ogni variante.
 const CMP_PARTS = {
-  cap_color:'cappello', cap_shape:'cappello', cap_size:'cappello', cap_surface:'cappello', cap_veil:'cappello',
+  cap_color:'cappello', cap_size:'cappello', cap_surface:'cappello', cap_veil:'cappello',
   hymenophore:'sotto', hymenophore_color:'sotto', gill_attachment:'sotto',
   stem_ring:'gambo', stem_volva:'gambo', stem_reticulum:'gambo', stem_base:'gambo',
 };
+function comparisonIllustration(key, part, shape) {
+  const record = ICONS?.[key];
+  if (!record) return '';
+  if (shape) {
+    const drawn = record.shapes?.drawn || record.base?.forma;
+    if (shape !== drawn && !record.shapes?.values?.includes(shape)) return '';
+    return illus(key, part, shape === drawn ? '' : shape);
+  }
+  return illus(key, part);
+}
 function refreshComparisonParts() {
   document.querySelectorAll('[data-cmp-ill-key]').forEach(slot => {
-    if (ICONS?.[slot.dataset.cmpIllKey] && !slot.firstElementChild) slot.innerHTML = illus(slot.dataset.cmpIllKey, slot.dataset.cmpIllPart);
+    if (slot.querySelector('img')) return;
+    const image = comparisonIllustration(slot.dataset.cmpIllKey, slot.dataset.cmpIllPart, slot.dataset.cmpIllValue);
+    if (image) slot.innerHTML = image;
   });
 }
 // varianti del cappello (colori e forme descritti dalle fonti): cambiano insieme le tessere Cappello e Gambo.
@@ -784,11 +796,11 @@ function cmpRows(ref, t) {
     // Valori descrittivi con disegno e alternative esplicite, senza sembrare filtri.
     // I valori comuni precedono gli altri, nello stesso ordine sui due lati.
     const say = (v) => (r.bool ? withOut(r.key, v) : r.say ? r.say(v) : String(v));
-    const value = (v, who, common) => `<li class="cmp-option"><span class="cmp-v ${common ? 'common' : 'own'}"><span class="cmp-relation" aria-hidden="true">${common?'=':'≠'}</span>${CMP_PARTS[r.key] && ['cap_color','hymenophore_color'].includes(r.key) && COLORS[v] ? `<i class="cmp-color-dot" style="--cmp-color:${esc(COLORS[v][1])}" aria-hidden="true"></i>` : ''}${r.art ? `<span class="cmp-v-art" aria-hidden="true">${r.art([v], who) || ''}</span>` : ''}<span class="cmp-value-text">${esc(say(v))}</span><span class="sr-only">${common ? ', in comune' : ', valore diverso nel confronto'}</span></span></li>`;
+    const value = (v, who, common) => `<li class="cmp-option"><span class="cmp-v ${common ? 'common' : 'own'}"><span class="cmp-relation" aria-hidden="true">${common?'=':'≠'}</span>${CMP_PARTS[r.key] && ['cap_color','hymenophore_color'].includes(r.key) && COLORS[v] ? `<i class="cmp-color-dot" style="--cmp-color:${esc(COLORS[v][1])}" aria-hidden="true"></i>` : ''}${r.art ? `<span class="cmp-v-art${r.key==='cap_shape'?' cmp-shape-art':''}"${r.key==='cap_shape'?` data-cmp-ill-key="${esc(who.key)}" data-cmp-ill-part="cappello" data-cmp-ill-value="${esc(v)}"`:''} aria-hidden="true">${r.key==='cap_shape' && comparisonIllustration(who.key,'cappello',v) || r.art([v], who) || ''}</span>` : ''}<span class="cmp-value-text">${esc(say(v))}</span><span class="sr-only">${common ? ', in comune' : ', valore diverso nel confronto'}</span></span></li>`;
     const illustration = who => CMP_PARTS[r.key] ? `<span class="cmp-part-art" data-cmp-ill-key="${esc(who.key)}" data-cmp-ill-part="${CMP_PARTS[r.key]}" aria-hidden="true">${ICONS?.[who.key] ? illus(who.key,CMP_PARTS[r.key]) : ''}</span>` : '';
     const cell = (X, Y, who) => r.key === 'season'
       ? `<div class="cmp-cell" role="group" aria-label="${esc(who.name||who.latin)}"><span>${esc(txt(X))}</span></div>`
-      : `<div class="cmp-cell" role="group" aria-label="${esc(who.name||who.latin)}">${r.label ? `<span class="cmp-k">${esc(r.label(who))}</span>` : ''}${illustration(who)}<ul class="cmp-vals">${[...A.filter((v) => Y.includes(v) && X.includes(v)), ...X.filter((v) => !Y.includes(v))].map(v => value(v, who, !differentStructure && Y.includes(v))).join('')}</ul></div>`;
+      : `<div class="cmp-cell${['hymenophore','stem_ring','stem_volva','stem_reticulum','stem_base','gill_attachment','cap_size'].includes(r.key)?' cmp-cell-miniature':''}" role="group" aria-label="${esc(who.name||who.latin)}">${r.label ? `<span class="cmp-k">${esc(r.label(who))}</span>` : ''}${illustration(who)}<ul class="cmp-vals">${[...A.filter((v) => Y.includes(v) && X.includes(v)), ...X.filter((v) => !Y.includes(v))].map(v => value(v, who, !differentStructure && Y.includes(v))).join('')}</ul></div>`;
     return { kind, info:!!r.info, k: r.k, html: `<li class="cmp-row ${kind}" data-trait="${r.key}">${r.label ? '' : `<span class="cmp-k">${esc(r.k)}</span>`}${cell(A, B, ref)}${cell(B, A, t)}</li>` };
   }).filter(Boolean);
 }
