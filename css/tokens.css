@@ -99,6 +99,12 @@
   --story-calendula: var(--_ref-calendula);
   --story-fiordaliso: var(--_ref-fiordaliso);
   --story-germoglio: var(--_ref-germoglio);
+  /* Interfaccia della mappa: pannelli chiari indipendenti dal tema della pagina. */
+  --map-warning-ink: var(--_ref-warn-ink);
+  --map-warning-bg: var(--_ref-warn-bg);
+  --map-error-ink: var(--_ref-crit-ink);
+  --map-error-bg: var(--_ref-crit-bg);
+  --map-selected-edge: var(--_ref-polline-edge);
 
   /* ruoli pubblici */
   color-scheme: light;

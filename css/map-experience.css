@@ -59,3 +59,30 @@ body[data-page="mappa"] #views { padding:0; }
 @media(min-width:761px) { .map-top { margin-inline:0; right:auto; width:430px; } }
 @media(max-width:360px) { .map-top { left:8px; right:8px; } .map-query { padding-inline:8px; } .map-date { padding-inline:10px; } }
 @media(max-height:550px) { .map-results-body { max-height:38svh; } .map-top { max-width:400px; margin-inline:0; } }
+
+/* Sulla carta verde, l'interfaccia usa carta e inchiostro anche nel tema scuro. */
+.view-map :is(.mapctl,.map-top,.map-results,.legend-box,.cell-card,.cell-peek,#map-sheet) {
+  color-scheme:light;
+  color:var(--text);
+  --surface:var(--story-avorio);
+  --surface-2:color-mix(in srgb,var(--story-ink) 6%,var(--story-avorio));
+  --surface-3:color-mix(in srgb,var(--story-ink) 12%,var(--story-avorio));
+  --text:var(--story-ink);
+  --text-2:color-mix(in srgb,var(--story-ink) 78%,var(--story-avorio));
+  --muted:var(--text-2);
+  --link:var(--story-ink);
+  --border:color-mix(in srgb,var(--story-ink) 26%,var(--story-avorio));
+  --hair:color-mix(in srgb,var(--story-ink) 18%,var(--story-avorio));
+  --control-edge:var(--text-2);
+  --focus:var(--story-ink);
+  --warn-ink:var(--map-warning-ink);
+  --warn-bg:var(--map-warning-bg);
+  --crit-ink:var(--map-error-ink);
+  --crit-bg:var(--map-error-bg);
+  --select-edge:var(--map-selected-edge);
+}
+.view-map .mapctl-stack .mapctl-btn { background:var(--surface); color:var(--text); border-color:var(--border); }
+.view-map .mapctl-stack .mapctl-btn:is(.on,[aria-expanded="true"]) { background:var(--select); color:var(--select-ink); border-color:var(--select-edge); }
+.view-map .mapctl-stack .mapctl-btn.err { color:var(--crit-ink); }
+.view-map .map-date[aria-expanded="true"] { background:var(--select); color:var(--select-ink); }
+@media(hover:hover) { .view-map .mapctl-stack .mapctl-btn:hover { background:var(--surface-2); } .view-map .mapctl-stack .mapctl-btn:is(.on,[aria-expanded="true"]):hover { background:var(--select); } }
