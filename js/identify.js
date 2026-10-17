@@ -778,7 +778,9 @@ function cmpRows(ref, t) {
   }).filter(Boolean);
 }
 
+let disposeCompareHeader = () => {};
 function renderCompare(box, ref, pick) {
+  disposeCompareHeader();
   // fungo fisso a sinistra: un commestibile con i suoi sosia, oppure un velenoso con i commestibili con cui si confonde
   const fromToxic = !!ref.lookalike_of?.length;
   const list = sosiaOf(ref);
@@ -815,17 +817,18 @@ function renderCompare(box, ref, pick) {
     <h1 class="sec-title cmp-title">${fromToxic ? `${esc(ref.name || ref.latin)}: con cosa si confonde` : `${esc(ref.name)} o sosia?`}</h1>
     <dialog class="cmp-chooser" aria-labelledby="cmp-chooser-title"><div class="cmp-chooser-head"><h2 id="cmp-chooser-title">Confronta con…</h2><button type="button" data-close-chooser aria-label="Chiudi">×</button></div><div class="cmp-choices">${list.map((t,k)=>`<button type="button" class="cmp-chip ${toxCls(t)}" data-go="${k}" aria-pressed="${k===start}"><span class="cmp-chip-img">${pic(t,true)}</span><span><b>${esc(t.name||t.latin)}</b><small>${esc(t.tox_label||t.toxicity)}</small></span><span class="cmp-choice-check" aria-hidden="true">✓</span></button>`).join('')}</div></dialog>
     <div class="cmp-gallery" role="group" aria-roledescription="carosello" aria-label="Confronti con ${esc(ref.name || ref.latin)}">
-    ${list.length>1?`<div class="cmp-pair-nav" role="group" aria-label="Navigazione del confronto"><button type="button" class="cmp-pair-menu" data-change-lookalike aria-haspopup="dialog"><span>Scegli sosia</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button><span class="cmp-pair-arrows"><button type="button" data-cmp-step="-1" aria-label="Sosia precedente"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 6-6 6 6 6"/></svg></button><span class="cmp-pair-count" data-cmp-count aria-label="Confronto ${start+1} di ${list.length}">${start+1} / ${list.length}</span><button type="button" data-cmp-step="1" aria-label="Sosia successivo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m10 6 6 6-6 6"/></svg></button></span></div>`:''}
+    <div class="cmp-pair-nav${list.length===1?' is-single':''}" role="group" aria-label="Specie a confronto"><div class="cmp-nav-content"><span class="cmp-nav-master">${list.length>1?`<span class="cmp-sosia-total">${list.length} sosia</span>`:''}<b class="cmp-master-name">${esc(ref.name||ref.latin)}</b></span><i class="cmp-nav-vs" aria-hidden="true">vs</i>${list.length>1?`<button type="button" class="cmp-pair-menu" data-change-lookalike aria-haspopup="dialog" aria-label="Scegli il sosia: ${esc(list[start].name||list[start].latin)}"><span data-current-lookalike>${esc(list[start].name||list[start].latin)}</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>`:`<b class="cmp-current-single">${esc(list[0].name||list[0].latin)}</b>`}</div></div>
+    ${list.length>1?`<div class="cmp-edge-arrows"><button type="button" data-cmp-step="-1" aria-label="Coppia precedente"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 6-6 6 6 6"/></svg></button><button type="button" data-cmp-step="1" aria-label="Coppia successiva"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m10 6 6 6-6 6"/></svg></button></div>`:''}
     <div class="cmp-track">${list.map(slide).join('')}</div><p class="sr-only" data-cmp-announcement role="status" aria-atomic="true"></p></div>
     <p><a class="btn primary" href="#/riconosci">Confronta un altro fungo</a></p>`;
 
   const track = box.querySelector('.cmp-track'), chips = [...box.querySelectorAll('[data-go]')];
   const mark = (i) => {
     chips.forEach(c => c.setAttribute('aria-pressed', String(Number(c.dataset.go) === i)));
-    const count = box.querySelector('[data-cmp-count]');
-    if (count) {
-      count.textContent = `${i+1} / ${list.length}`;
-      count.setAttribute('aria-label', `Confronto ${i+1} di ${list.length}`);
+    const currentName = box.querySelector('[data-current-lookalike]');
+    if (currentName) {
+      currentName.textContent = list[i].name || list[i].latin;
+      currentName.closest('button').setAttribute('aria-label', `Scegli il sosia: ${list[i].name || list[i].latin}`);
     }
     for (const [k, slide] of [...track.children].entries()) slide.inert = k !== i;
     history.replaceState(null, '', `#/riconosci/confronta/${ref.key}/${list[i].key}`);
@@ -834,7 +837,31 @@ function renderCompare(box, ref, pick) {
   let cur = start;
   const slides = [...track.children];
   // l'altezza segue la slide visibile: niente vuoto sotto i confronti corti
-  const fit = () => { const h = slides[cur]?.offsetHeight; if (h) track.style.height = `${h}px`; };
+  const gallery = box.querySelector('.cmp-gallery'), header = box.querySelector('.cmp-pair-nav');
+  const syncCompareHeader = () => {
+    if (!gallery.getClientRects().length) return;
+    const top = parseFloat(getComputedStyle(header).top) || 0;
+    header.classList.toggle('is-stuck', gallery.getBoundingClientRect().top < top - 1);
+  };
+  addEventListener('scroll', syncCompareHeader, {passive:true});
+  const headerChanges = new MutationObserver(syncCompareHeader);
+  headerChanges.observe(document.documentElement, {attributes:true, attributeFilter:['class']});
+  const headerSize = new ResizeObserver(syncCompareHeader);
+  headerSize.observe(header);
+  disposeCompareHeader = () => {
+    removeEventListener('scroll', syncCompareHeader);
+    headerChanges.disconnect(); headerSize.disconnect();
+  };
+  const fit = () => {
+    const h = slides[cur]?.offsetHeight;
+    if (h) track.style.height = `${h}px`;
+    const photo = slides[cur]?.querySelector('.cmp-zoom');
+    if (photo) {
+      const rect = photo.getBoundingClientRect();
+      gallery.style.setProperty('--cmp-photo-mid', `${rect.top - gallery.getBoundingClientRect().top + rect.height/2}px`);
+    }
+    syncCompareHeader();
+  };
   // l'altezza segue la slide visibile anche quando cresce dopo (foto caricate, sezioni aperte): mai uno scroll dentro lo scroll
   const ro = new ResizeObserver(() => fit());
   slides.forEach((sl) => ro.observe(sl));
