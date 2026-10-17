@@ -332,7 +332,7 @@ body[data-page="mappa"] .view-map { border-radius:0; }
 .cmp-edge-arrows svg { width:20px; height:20px; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
 .cmp-pair-menu:focus-visible, .cmp-edge-arrows button:focus-visible { outline:3px solid var(--focus); outline-offset:3px; }
 .cmp-pair-nav.is-stuck .cmp-nav-content { position:fixed; top:var(--cmp-header-top); left:var(--cmp-header-left); width:var(--cmp-header-width); box-shadow:0 1px 0 var(--hair); }
-@media(max-width:899px) { .header-away .cmp-pair-nav { --cmp-header-top:0px; } }
+
 @media(hover:hover) { .cmp-edge-arrows button:hover { background:var(--surface-2); } }
 .cmp-chooser { width:min(440px,calc(100% - 32px)); max-height:80svh; margin:auto; padding:20px; border:1px solid var(--hair); border-radius:24px; color:var(--text); background:var(--bg); box-shadow:var(--shadow-2); }
 .cmp-chooser::backdrop { background:rgb(0 0 0 / .45); }
@@ -374,3 +374,6 @@ body[data-page="mappa"] .view-map { border-radius:0; }
 .entity-accordion-root [data-entity-accordion] > summary:focus-visible { outline:3px solid var(--focus); outline-offset:-3px; border-radius:15px; }
 @media(hover:hover) { .entity-accordion-root [data-entity-accordion] > summary:hover { background:var(--surface-2); } }
 @media(prefers-reduced-motion:reduce) { .entity-accordion-root [data-entity-accordion] > summary, .entity-accordion-root [data-entity-accordion] > summary::after { transition:none; } }
+
+/* La fascia sicura sopra i nomi resta coperta anche quando la barra principale è fuori vista. */
+.cmp-pair-nav.is-stuck .cmp-nav-content::before { content:''; position:absolute; bottom:100%; left:0; right:0; height:env(safe-area-inset-top,0px); background:var(--bg); pointer-events:none; }
