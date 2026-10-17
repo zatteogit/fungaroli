@@ -261,7 +261,7 @@ for(const width of [320,1280]) test(`guide in Scopri e taccuino personale distin
   await page.locator('[data-tab="diario"]').click();await expect(page.locator('#journal-h')).toHaveText('Il mio taccuino');
   await expect(page.locator('#journal-storage')).toContainText('Il taccuino');
   await page.goto('/#/info');await expect(page.locator('#legal-sections')).toContainText('Taccuino privato');
-  await page.goto('/');await expect(page.locator('#hero .cover-cta')).toContainText('Vedi l’uscita');
+  await page.goto('/');await expect(page.locator('#hero .cover-cta')).toContainText('Dai uno sguardo');
   await page.locator('#hero .cover-link').click();await page.locator('.walk-focus > summary').click();
   await expect(page.locator('.walk-focus > summary')).not.toContainText('taccuino');
   await expect(page.locator('.walk-focus [data-note-kind="zona"]')).toContainText('Salva il giro nel taccuino');

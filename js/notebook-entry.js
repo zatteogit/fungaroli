@@ -1,3 +1,4 @@
+import {normalizeFieldRecord} from './community-observation.js';
 // Internal phase status absent means searched, not observed; it does not prove absence.
 // Private notes have no forecast/finds payload and cannot become mushroom reports.
 export const PHENO_PHASES=[['young_leaves','Foglie giovani'],['open_flowers','Fiori aperti'],['unripe_fruits','Frutti immaturi'],['ripe_fruits','Frutti maturi'],['dry_fruits','Frutti secchi']];
@@ -19,5 +20,5 @@ export function normalizeNotebookNote(e,{zoneIds,plantIds,now=Date.now()}={}){
     observation={protocolVersion:'fungaroli-phenology-notes-v1',taxonId:o.taxonId,identification:'unreviewed',phases:o.phases.map(p=>({code:p.code,status:p.status})),availability:o.availability,minutes:o.minutes??null,patchLabel:o.patchLabel,locationPrecision:zoneId?'zone':'unspecified',researchConsent:false};
   }
   if(!reference&&!e.note.trim())invalid();
-  return {id:e.id,kind:'note',title:e.title.trim(),category:e.category,date:e.date,zoneId,note:e.note,reference,observation,savedAt:typeof e.savedAt==='string'&&Number.isFinite(Date.parse(e.savedAt))?e.savedAt:new Date().toISOString()};
+  return {...(e.record!=null?{record:normalizeFieldRecord(e.record)}:{}),id:e.id,kind:'note',title:e.title.trim(),category:e.category,date:e.date,zoneId,note:e.note,reference,observation,savedAt:typeof e.savedAt==='string'&&Number.isFinite(Date.parse(e.savedAt))?e.savedAt:new Date().toISOString()};
 }

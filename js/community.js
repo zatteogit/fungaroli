@@ -37,7 +37,8 @@ export async function refreshCommunity({signal} = {}) {
 export function communityStatus() {
   if (!enabled) return 'Condivisione delle osservazioni non ancora attiva.';
   if (!summary) return 'Segnalazioni temporaneamente non disponibili.';
-  return summary.totalReports ? `${summary.totalReports} ${summary.totalReports === 1 ? 'osservazione condivisa' : 'osservazioni condivise'}.`
+  const count=(summary.totalReports||0)+(summary.observations||[]).reduce((n,r)=>n+r.observations,0);
+  return count ? `${count} ${count === 1 ? 'osservazione condivisa' : 'osservazioni condivise'}.`
     : 'Ancora nessuna osservazione condivisa.';
 }
 export function reportBadge(zoneId, speciesId) {
@@ -150,6 +151,14 @@ export async function openAccount() {
   });
 }
 
+export async function shareNotebookNote(entry,{signal}={}){
+  if(!user)throw new Error('Accedi al profilo Fronda per condividere.');
+  await communityRequest('observations/'+entry.id,'PUT',{consent:true},{signal});
+  await refreshCommunity({signal});return true;
+}
+export function communityHasZone(zoneId){return [...(summary?.reports||[]),...(summary?.observations||[])].some(r=>r.zoneId===zoneId);}
+export const communityDataAvailable=()=>!!summary;
+
 export async function shareDiaryEntry(entry, { identificationChecked = false, signal } = {}) {
   if (!entry || entry.kind==='note' || !Object.entries(entry.finds || {}).some(([id, amount]) => speciesCatalog.some((s) => s.id === id) && (amount > 0 || (amount === 0 && entry.searched?.includes(id)))))
     throw new Error('Non ci sono ritrovamenti o ricerche a vuoto esplicite da condividere.');
@@ -173,7 +182,7 @@ export async function openQuickReport(zoneId = '', speciesId = '') {
     addEventListener('hashchange',()=>{if(reportDialog.open)reportDialog.close();});
   }
   const today=todayISO(),yesterday=todayISO(new Date(Date.now()-864e5));
-  reportDialog.setAttribute('aria-label', 'Segnala dal bosco');
+  reportDialog.setAttribute('aria-label', 'Annota un’osservazione nel taccuino');
   reportDialog.innerHTML = `<header class="report-header"><div><p class="eyebrow">Dal bosco al taccuino</p><h2>Osservazione</h2></div><button class="profile-close" type="button" data-report-dismiss aria-label="Chiudi">×</button></header>
     <p class="report-intro">Nel taccuino e nei conteggi collettivi.</p>
     <form class="report-form">

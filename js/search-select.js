@@ -3,6 +3,7 @@ const esc = s => String(s ?? '').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;',
 const norm = s => String(s ?? '').normalize('NFD').replace(/\p{M}/gu,'').toLowerCase().replace(/[^\p{L}\p{N}]+/gu,' ').trim();
 
 export function mountSearchSelect({input, list, options, selectedId = '', onChange, bounds = () => ({top:12,bottom:innerHeight-12}), empty = 'Nessun risultato.'}) {
+  list.classList.add('search-select-options');
   const events = new AbortController(), signal = events.signal;
   let selected = options.find(o=>o.value===selectedId), matches = [], active = -1;
   const close = () => { list.hidden=true; input.setAttribute('aria-expanded','false'); input.removeAttribute('aria-activedescendant'); active=-1; };
@@ -57,5 +58,8 @@ export function mountSearchSelect({input, list, options, selectedId = '', onChan
   list.addEventListener('click',e=>{const b=e.target.closest('[data-option]');if(b)choose(matches[+b.dataset.option]);},{signal});
   addEventListener('resize',position,{signal});
   input.closest('dialog')?.addEventListener('scroll',position,{signal,passive:true});
-  return { destroy:()=>events.abort() };
+  return {
+    clear:()=>{selected=null;input.value='';input.setCustomValidity(input.required?'Scegli un risultato dall’elenco.':'');onChange('');close();},
+    destroy:()=>events.abort()
+  };
 }

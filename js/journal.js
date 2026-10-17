@@ -6,9 +6,10 @@ import { SPECIES } from './species.js';
 import { intornoA } from './human.js';
 import { formatIndex } from './model.js';
 import { todayISO } from './weather.js';
-import { communityReady, communityEnabled, currentUser, communityRequest, shareDiaryEntry } from './community.js';
+import { communityReady, communityEnabled, currentUser, communityRequest, shareDiaryEntry, shareNotebookNote } from './community.js';
 import {PHENO_PHASES,normalizeNotebookNote} from './notebook-entry.js';
-import {mountSearchSelect} from './search-select.js';
+import {sharedObservation} from './community-observation.js';
+import {createNotebookComposer} from './notebook-composer.js';
 
 const KEY = 'fungaroli:diario:v1';
 export const LEVELS = ['', 'Pochi', 'Discreti', 'Tanti'];
@@ -158,7 +159,7 @@ const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&l
 const iso = todayISO;
 const fmt = (s) => new Date(s + 'T12:00:00').toLocaleDateString('it-IT', { weekday: 'short', day: 'numeric', month: 'short', year: 'numeric' });
 
-export function initJournal({ onEntries=()=>{},zones, speciesCatalog = SPECIES, predict, captureForecast, getZoneId, zoneImage = () => '', referenceImage=()=>null }) {
+export function initJournal({ onEntries=()=>{},zones, speciesCatalog = SPECIES, predict, captureForecast, getZoneId, noteCatalogs=()=>({}), zoneImage = () => '', referenceImage=()=>null }) {
   const dlg = document.getElementById('journal-dialog');
   const body = dlg.querySelector('.wiz-body');
   const list = document.getElementById('journal-list');
@@ -176,39 +177,24 @@ export function initJournal({ onEntries=()=>{},zones, speciesCatalog = SPECIES, 
   noteDialog.addEventListener('close',()=>{noteControls.forEach(c=>c.destroy());noteControls=[];noteOrigin?.isConnected&&noteOrigin.focus({preventScroll:true});});
   addEventListener('hashchange',()=>{if(noteDialog.open)noteDialog.close();});
 
+  let noteOwner;
+  const composer=createNotebookComposer({dialog:noteDialog,zones,catalogs:noteCatalogs,canShare:()=>store?.kind==='community'&&!!currentUser(),onOuting:()=>open(),onSave:async(entry,share)=>{
+    const owner=noteOwner;if(owner!==store)throw new Error('Profilo cambiato: riapri la nota.');
+    await owner.put(entry);if(owner!==store)throw new Error('Profilo cambiato: riapri la nota.');
+    entries=[entry,...entries.filter(e=>e.id!==entry.id)];sortEntries();entriesRevision++;renderList('Nota salvata nel taccuino.');
+    if(share){try{await shareNotebookNote(entry);if(owner!==store)throw new Error('Profilo cambiato: riapri il taccuino.');entry.shared=true;renderList('Osservazione condivisa con Fronda. Il testo resta privato.');}catch(error){throw new Error('Nota salvata privata. Condivisione non completata: '+error.message);}}
+    if(!share&&owner.kind==='community')document.dispatchEvent(new CustomEvent('fungaroli:refresh-community'));
+    document.dispatchEvent(new CustomEvent('fungaroli:note-saved',{detail:{title:entry.title}}));
+  }});
   async function openNote(context={},existing=null){
-    await storageReady;
-    if(!store){renderList('Il taccuino sta ancora caricando.');return;}
-    const owner=store;
-    noteOrigin=document.activeElement;
-    const reference=existing?.reference||context.reference||null;
-    const botanical=existing?.category==='botanica'||context.category==='botanica';
-    const observation=existing?.observation;
-    let zoneId=existing?.zoneId||context.zoneId||'';
-    noteControls.forEach(c=>c.destroy());noteControls=[];
-    noteDialog.innerHTML=`<header class="report-header"><div><p class="eyebrow">Nel tuo taccuino · privato</p><h2>${existing?'Modifica appunto':reference?'Annota e conserva':'Nuovo appunto'}</h2></div><button class="profile-close" type="button" data-note-close aria-label="Chiudi">×</button></header><form class="notebook-form"><label>Titolo<input class="wiz-input" name="title" maxlength="120" required value="${esc(existing?.title||reference?.title||'')}"></label><label>Giorno<input class="wiz-input" type="date" name="date" required value="${esc(existing?.date||iso(new Date()))}" ${botanical?`max="${iso(new Date())}"`:''}></label>${reference?`<p class="notebook-reference">${esc(reference.title)} <span class="muted small">· riferimento conservato</span></p>`:''}<label>Appunto<textarea class="wiz-input notebook-paper" name="note" rows="5" maxlength="2000" placeholder="Quello che vuoi ricordare, un’idea per il prossimo giro…" ${reference?'':'required'}>${esc(existing?.note||'')}</textarea></label><details class="notebook-context" ><summary>${botanical?'Fasi della pianta e luogo':'Aggiungi un luogo'}</summary><div class="search-select"><label>Zona (facoltativa)<input class="wiz-input" data-note-zone autocomplete="off" placeholder="Cerca una zona…"></label><ul class="search-select-list" id="notebook-zone-options" hidden></ul></div><button type="button" class="link-btn small" data-clear-note-zone>Togli la zona</button>${botanical?`<p class="small muted">Il nome è un’identificazione proposta, non verificata. Indica solo ciò che hai osservato; più fasi possono essere presenti insieme.</p><div class="phenology-fields">${PHENO_PHASES.map(([code,label])=>`<label>${label}<select class="wiz-input" data-phase="${code}">${[['unsure','Non osservato / non so'],['present','Presente'],['absent','Cercato, non osservato']].map(([v,l])=>`<option value="${v}" ${observation?.phases?.find(p=>p.code===code)?.status===v?'selected':''}>${l}</option>`).join('')}</select></label>`).join('')}</div><label>Frutti maturi ancora presenti<select class="wiz-input" name="availability">${[['unknown','Non osservato / non so'],['none','Nessuno, dopo aver cercato'],['few','Pochi'],['many','Molti']].map(([v,l])=>`<option value="${v}" ${observation?.availability===v?'selected':''}>${l}</option>`).join('')}</select></label><label>Minuti di osservazione (facoltativi)<input type="number" class="wiz-input" min="1" max="1440" name="minutes" value="${observation?.minutes||''}"></label><label>Pianta o gruppo da ritrovare (facoltativo)<input class="wiz-input" name="patchLabel" maxlength="120" value="${esc(observation?.patchLabel||'')}" placeholder="Un nome tuo, per riconoscerlo al prossimo giro"></label>`:''}</details><p class="small muted">Appunto privato. Non viene pubblicato né usato per tarare i modelli. Puoi scegliere nei filtri di usare le fasi annotate per i suggerimenti “Durante il giro”.</p><p data-note-status role="status"></p><div class="notebook-actions"><button type="submit" class="btn primary">${existing?'Salva modifiche':'Salva nel taccuino'}</button><button type="button" class="btn ghost" data-note-close>Annulla</button></div></form>`;
-    const input=noteDialog.querySelector('[data-note-zone]'),options=zones.map(z=>({value:z.id,label:z.title||z.name,detail:z.subtitle||''}));
-    noteControls.push(mountSearchSelect({input,list:noteDialog.querySelector('#notebook-zone-options'),options,selectedId:zoneId,onChange:v=>{zoneId=v;},bounds:()=>{const r=noteDialog.getBoundingClientRect();return {top:r.top+16,bottom:r.bottom-16};}}));
-    input.setCustomValidity('');input.addEventListener('input',()=>{if(!input.value.trim())input.setCustomValidity('');});
-    noteDialog.querySelector('[data-clear-note-zone]').onclick=()=>{input.value='';input.dispatchEvent(new Event('input'));input.blur();input.setCustomValidity('');zoneId='';};
-    noteDialog.querySelectorAll('[data-note-close]').forEach(b=>b.onclick=()=>noteDialog.close());
-    noteDialog.querySelector('form').onsubmit=async ev=>{
-      ev.preventDefault();const form=ev.currentTarget,button=form.querySelector('[type="submit"]'),status=form.querySelector('[data-note-status]');button.disabled=true;
-      try{
-        if(owner!==store)throw new Error('Profilo cambiato: riapri il taccuino.');
-        const entry=normalizeNotebookNote({id:existing?.id||Date.now().toString(36)+crypto.randomUUID().replace(/-/g,'').slice(0,6),kind:'note',title:form.elements.title.value,date:form.elements.date.value,note:form.elements.note.value,category:existing?.category||context.category||'appunto',zoneId,reference,savedAt:existing?.savedAt||new Date().toISOString(),observation:botanical&&([...form.querySelectorAll('[data-phase]')].some(s=>s.value!=='unsure')||form.elements.availability.value!=='unknown'||form.elements.minutes.value||form.elements.patchLabel.value.trim())?{taxonId:reference.href.split('/').at(-1),phases:[...form.querySelectorAll('[data-phase]')].map(s=>({code:s.dataset.phase,status:s.value})),availability:form.elements.availability.value,minutes:form.elements.minutes.value?Number(form.elements.minutes.value):null,patchLabel:form.elements.patchLabel.value}:null});
-        await owner.put(entry);if(owner!==store)return;
-        entries=[entry,...entries.filter(e=>e.id!==entry.id)];sortEntries();renderList('Appunto salvato nel taccuino privato.');noteDialog.close();
-        document.dispatchEvent(new CustomEvent('fungaroli:note-saved',{detail:{title:entry.title}}));
-      }catch(e){status.textContent=`Salvataggio non completato: ${e.message}`;}finally{button.disabled=false;}
-    };
-    noteDialog.showModal();noteDialog.querySelector('[name="title"]').focus({preventScroll:true});
+    await storageReady;if(!store){renderList('Il taccuino sta ancora caricando.');return;}
+    noteOwner=store;noteOrigin=document.activeElement;composer.open(context,existing);
   }
   document.addEventListener('click',e=>{
     const b=e.target.closest('[data-new-note],[data-note-kind]');if(!b)return;
     const kind=b.dataset.noteKind,id=b.dataset.noteId;
     const category={pianta:'botanica',albero:'albero',specie:'fungo',fungo:'fungo',commestibile:'fungo',zona:'percorso',guide:'lettura'}[kind]||'appunto';
-    openNote({category,zoneId:b.dataset.noteZone,reference:kind?{href:b.dataset.noteHref||`#/${kind}/${id}`,title:b.dataset.noteTitle}:null});
+    openNote({...(kind?{category}:{}),zoneId:b.dataset.noteZone,reference:kind?{href:b.dataset.noteHref||`#/${kind}/${id}`,title:b.dataset.noteTitle}:null});
   });
 
   const STEPS = ['dove', 'quando', 'quota', 'ricerca', 'cosa', 'nota'];
@@ -231,10 +217,11 @@ export function initJournal({ onEntries=()=>{},zones, speciesCatalog = SPECIES, 
       ${hint ? `<p class="wiz-hint">${hint}</p>` : ''}
       <div class="wiz-content">${content}</div>
       <div class="wiz-nav">
-        ${step > 0 ? '<button type="button" class="btn ghost" data-act="back">Indietro</button>' : '<span></span>'}
+        ${step > 0 ? '<button type="button" class="btn ghost" data-act="back">Indietro</button>' : '<button type="button" class="btn ghost" data-change-note-type>Cambia tipo</button>'}
         ${canNext ? `<button type="button" class="btn primary" data-act="next">${nextLabel}</button>` : ''}
       </div>`;
     body.querySelector('[data-act="back"]')?.addEventListener('click', back);
+    body.querySelector('[data-change-note-type]')?.addEventListener('click',()=>{dlg.close();openNote();});
     body.querySelector('[data-act="next"]')?.addEventListener('click', step === STEPS.length - 1 ? save : next);
   }
 
@@ -334,12 +321,10 @@ export function initJournal({ onEntries=()=>{},zones, speciesCatalog = SPECIES, 
       shell('Vuoi aggiungere una nota?', 'Facoltativo: esposizione, tipo di bosco, com\'era il terreno…',
         `<p class="wiz-recap"><b>${esc(zone.name)}</b> · ${fmt(draft.date)}${draft.band ? ` · ${draft.band} m` : ''}<br>${esc(recap)}</p>
          <textarea class="wiz-input" rows="3" placeholder="Es. versante nord, faggeta, terreno umido">${esc(draft.note)}</textarea>
-         ${store?.kind === 'community' ? `<fieldset class="share-choice"><legend>Chi vede questa uscita?</legend>
-           <label><input type="radio" name="share" value="0"${draft.share ? '' : ' checked'}><span><b>Solo io</b><small>Resta nel tuo taccuino privato.</small></span></label>
-           <label><input type="radio" name="share" value="1"${draft.share ? ' checked' : ''}><span><b>Anche i conteggi della community</b><small>Solo zona, giorno, specie e quantità, nei conteggi aggregati. Le note restano private.</small></span></label></fieldset>` : '<p class="small muted">Questa uscita resta su questo dispositivo. Puoi creare un profilo per tenere il taccuino privato online e scegliere cosa segnalare.</p>'}`,
+         <section class="composer-sharing"><label class="composer-share-switch"><span><b>Condividi con Fronda</b><small>Zona, giorno, specie, quantità e sforzo di ricerca nei conteggi community. Il testo resta privato.</small></span><input class="switch-input" type="checkbox" role="switch" name="share"${draft.share?' checked':''}${store?.kind==='community'?'':' disabled'}></label><p class="small">${store?.kind==='community'?'Condivisione facoltativa. Puoi ritirare le osservazioni dal taccuino.':'Per condividere serve un profilo Fronda. Puoi salvare intanto l’uscita privata.'}</p></section>`,
         { nextLabel: 'Salva uscita' });
       body.querySelector('textarea').addEventListener('input', (e) => { draft.note = e.target.value; });
-      body.querySelectorAll('[name="share"]').forEach((r) => r.addEventListener('change', (e) => { if (e.target.checked) draft.share = e.target.value === '1'; }));
+      body.querySelectorAll('[name="share"]').forEach((r) => r.addEventListener('change', (e) => { draft.share = e.target.checked; }));
     }
   }
 
@@ -384,16 +369,17 @@ export function initJournal({ onEntries=()=>{},zones, speciesCatalog = SPECIES, 
 
   // dove sta la voce: solo nel taccuino o anche nei conteggi della community (zona, giorno, specie, quantita')
   function privacyTag(entry){
-    const shared=store?.kind==='community'&&entry.kind==='outing'&&entry.shared;
+    const shared=store?.kind==='community'&&entry.shared;
     return shared?`<span class="j-privacy is-shared"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8.5" r="3"/><path d="M3.5 19a5.5 5.5 0 0 1 11 0"/><circle cx="17" cy="9.5" r="2.4"/><path d="M15.5 14.2A4.5 4.5 0 0 1 21 18.5"/></svg>Nei conteggi della community · le note restano private</span>`
       :`<span class="j-privacy"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>Solo per te</span>`;
   }
   function rowActions(entry){
     const state=actionStates.get(String(entry.id))||{},id=esc(entry.id),disabled=state.busy?' disabled':'';
+    let canPublish=entry.kind!=='note';if(entry.kind==='note')try{sharedObservation(entry);canPublish=true;}catch{/* Contesto incompleto: modifica prima di condividere. */}
     return `${privacyTag(entry)}<div class="j-actions" aria-busy="${!!state.busy}">
-      ${entry.kind==='note'?`<button type="button" class="btn notebook-share" data-share-note="${id}"${disabled}><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16V3m-5 5 5-5 5 5M5 13v7h14v-7"/></svg>Condividi appunto</button>`:''}
+      ${entry.kind==='note'?`<button type="button" class="btn notebook-share" data-share-note="${id}"${disabled}><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16V3m-5 5 5-5 5 5M5 13v7h14v-7"/></svg>Invia una copia</button>`:''}
       ${entry.kind==='note'?`<button type="button" class="link-btn small" data-edit-note="${id}"${disabled}>Modifica</button>`:''}
-      ${store.kind==='community'&&!['note','plan'].includes(entry.kind)?(entry.shared?`<button type="button" class="link-btn small" data-withdraw-entry="${id}" aria-label="Ritira le osservazioni dai conteggi"${disabled}>${state.busy==='withdraw'?'Ritiro…':'Ritira dai conteggi'}</button>`:`<button type="button" class="link-btn small" data-share-entry="${id}" aria-label="Condividi osservazioni"${disabled}>${state.busy==='share'?'Condivido…':'Condividi'}</button>`):''}
+      ${store.kind==='community'&&entry.kind!=='plan'&&(entry.shared||canPublish)?(entry.shared?`<button type="button" class="link-btn small" data-withdraw-entry="${id}" aria-label="Ritira le osservazioni dai conteggi"${disabled}>${state.busy==='withdraw'?'Ritiro…':'Ritira dai conteggi'}</button>`:`<button type="button" class="link-btn small" data-share-entry="${id}" aria-label="Condividi con Fronda"${disabled}>${state.busy==='share'?'Condivido…':'Condividi'}</button>`):''}
       <button type="button" class="link-btn small j-delete" data-del="${id}"${disabled}>${state.busy==='delete'?'Elimino…':state.confirmDelete?'Conferma eliminazione':'Elimina'}</button>
       ${state.confirmDelete&&!state.busy?`<button type="button" class="link-btn small" data-cancel-delete="${id}">Annulla</button>`:''}
     </div>${state.message?`<p class="j-action-status${state.error?' is-error':''}" role="${state.error?'alert':'status'}">${esc(state.message)}</p>`:''}`;
@@ -439,19 +425,19 @@ export function initJournal({ onEntries=()=>{},zones, speciesCatalog = SPECIES, 
     try{
       let message;
       if(action==='share'){
-        if(!await shareDiaryEntry(entry,{signal}))throw new Error('Accedi al tuo profilo per condividere questa osservazione.');
+        if(!await (entry.kind==='note'?shareNotebookNote:shareDiaryEntry)(entry,{signal}))throw new Error('Accedi al tuo profilo per condividere questa osservazione.');
         entry.shared=true;
         message='Osservazioni condivise: zona, giorno, specie e quantità. Le note restano private.';
       }else if(action==='withdraw'){
-        await communityRequest('reports','DELETE',{entryId:id},{signal});
+        await communityRequest(entry.kind==='note'?'observations/'+id:'reports','DELETE',entry.kind==='note'?undefined:{entryId:id},{signal});
         entry.shared=false;
         document.dispatchEvent(new CustomEvent('fungaroli:refresh-community'));
-        message='Segnalazioni ritirate. L’uscita resta nel taccuino privato.';
+        message=entry.kind==='note'?'Segnalazioni ritirate. La nota resta privata nel taccuino.':'Segnalazioni ritirate. L’uscita resta nel taccuino privato.';
       }else{
         await target.remove(entry.id,{signal});
         if(!currentStore(target))return;
         entries=entries.filter(e=>String(e.id)!==id);actionStates.delete(id);entriesRevision++;
-        renderList(entry.kind==='note'?'Appunto eliminato.':'Voce e segnalazioni eliminate.');return;
+        renderList(entry.kind==='note'?'Appunto eliminato.':'Voce e segnalazioni eliminate.');if(target.kind==='community')document.dispatchEvent(new CustomEvent('fungaroli:refresh-community'));return;
       }
       if(!currentStore(target))return;
       actionStates.set(id,{message});entriesRevision++;renderList(message);focusAction(id,attr);
@@ -486,7 +472,7 @@ export function initJournal({ onEntries=()=>{},zones, speciesCatalog = SPECIES, 
       const comparison=a?a.species.map(x=>`<p>${esc(speciesCatalog.find(s=>s.id===x.id)?.name||x.id)}: ${x.ok?'concordante':x.said?'indice alto, zero osservato':'trovata con indice basso'}</p>`).join(''):'<p>Osservazione senza confronto prospettico.</p>';
       return `<li class="j-item notebook-page${note?' notebook-entry':''}${photograph?' has-photo':''}" data-journal-id="${esc(e.id)}"><div class="entry-meta"><span class="entry-kind">${kind}</span><time datetime="${esc(e.date)}">${fmt(e.date)}</time></div><div class="j-body">${photograph}<h2 class="entry-title">${esc(title)}</h2>
         ${note?`${e.reference?`<a class="notebook-reference-link" href="${esc(e.reference.href)}" data-entity>${esc(e.reference.title)} <svg class="notebook-reference-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></a>`:''}${e.zoneId?`<p class="entry-place">${esc(z?.name||e.zoneId)}</p>`:''}${noteText(e.note)}`:`<p class="entry-found">${e.kind==='plan'?'Da ritrovare al prossimo giro.':'Trovato: '+esc(found)}</p>${e.band?`<p class="entry-place">${esc(e.band)} m</p>`:''}${noteText(e.note)}`}
-        ${e.observation?`<ul class="notebook-phases">${e.observation.phases.filter(p=>p.status!=='unsure').map(p=>`<li>${esc(PHENO_PHASES.find(([code])=>code===p.code)?.[1]||p.code)}: ${p.status==='present'?'presente':'cercato, non osservato'}</li>`).join('')}</ul>${e.observation.availability!=='unknown'?`<p class="small">Frutti maturi rimasti: ${{none:'nessuno osservato',few:'pochi',many:'molti'}[e.observation.availability]||'non indicato'}</p>`:''}<p class="entry-caution">Identificazione proposta · non verificata</p>`:''}
+        ${e.record?`<p class="composer-field-summary">${esc(({unknown:'Osservazione non indicata',observed:'Osservato',searched_absent:'Cercato, non osservato'})[e.record.presence])}${e.record.amount>0?' · '+LEVELS[e.record.amount]:''}${e.record.minutes?' · '+e.record.minutes+' min':''}</p>`:''}${e.observation?`<ul class="notebook-phases">${e.observation.phases.filter(p=>p.status!=='unsure').map(p=>`<li>${esc(PHENO_PHASES.find(([code])=>code===p.code)?.[1]||p.code)}: ${p.status==='present'?'presente':'cercato, non osservato'}</li>`).join('')}</ul>${e.observation.availability!=='unknown'?`<p class="small">Frutti maturi rimasti: ${{none:'nessuno osservato',few:'pochi',many:'molti'}[e.observation.availability]||'non indicato'}</p>`:''}<p class="entry-caution">Identificazione proposta · non verificata</p>`:''}
         ${!note?`<details class="notebook-analysis"><summary>Condizioni ${e.kind==='plan'?'salvate':'dell’uscita'}</summary>${top?`<p>Indice ${formatIndex(top[1])} · ${esc(speciesCatalog.find(x=>x.id===top[0])?.name||top[0])}</p>`:''}${e.kind==='plan'?'<p>Previsione salvata prima dell’uscita.</p>':comparison}</details>`:''}
         </div><footer class="notebook-page-footer"><div class="notebook-page-actions">${rowActions(e)}</div><span class="notebook-page-number" aria-label="Pagina ${number}">${String(number).padStart(2,'0')}</span></footer></li>`;
     }).join('');
@@ -497,7 +483,7 @@ export function initJournal({ onEntries=()=>{},zones, speciesCatalog = SPECIES, 
     list.querySelectorAll('[data-notebook-filter]').forEach(b=>b.onclick=()=>{listFilter=b.dataset.notebookFilter;renderList();list.querySelector(`[data-notebook-filter="${CSS.escape(listFilter)}"]`)?.focus({preventScroll:true});});
     list.querySelector('#notebook-query')?.addEventListener('input',ev=>{const pos=ev.target.selectionStart;listQuery=ev.target.value;renderList();const input=list.querySelector('#notebook-query');input.focus({preventScroll:true});if(pos!=null)try{input.setSelectionRange(pos,pos);}catch{/* search inputs may not expose selection */}});
     list.querySelector('[data-open-journal-inline]')?.addEventListener('click', open);
-    document.querySelector('[data-open-journal]').hidden = false;
+    const legacyButton=document.querySelector('[data-open-journal]');if(legacyButton)legacyButton.hidden=false;
   }
 
   async function exportFile() {
@@ -532,7 +518,7 @@ export function initJournal({ onEntries=()=>{},zones, speciesCatalog = SPECIES, 
     }
   }
 
-  document.querySelectorAll('[data-open-journal]').forEach((b) => b.addEventListener('click', open));
+  document.querySelectorAll('[data-open-journal]').forEach((b) => b.addEventListener('click',()=>openNote()));
   dlg.querySelector('.wiz-close').addEventListener('click', () => dlg.close());
   document.getElementById('journal-export').addEventListener('click', exportFile);
   const imp = document.getElementById('journal-import');

@@ -16,7 +16,7 @@ for(const width of [320,390,768,1440])for(const theme of ['light','dark'])test(`
   }
   const details=root.locator('.character-details');if(await details.count())await expect(details).not.toHaveAttribute('open');
   if(await details.count()){await details.locator('summary').focus();await page.keyboard.press('Enter');await expect(details).toHaveAttribute('open','');}
-  if(route.startsWith('fungo')){await note.click();await expect(page.locator('dialog[open] .notebook-form [name="title"]')).toHaveValue(/Boleto dal bel piede/i);await page.locator('dialog[open] [data-note-close]').first().click();}
+  if(route.startsWith('fungo')){await note.click();await page.locator('.notebook-dialog[open] [type="submit"]').click();await expect(page.locator('dialog[open] .notebook-form [name="title"]')).toHaveValue(/Boleto dal bel piede/i);await page.locator('dialog[open] [data-note-close]').first().click();}
   expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
  }
  await page.goto('/#/riconosci/confronta/edulis/caloboletus-calopus');

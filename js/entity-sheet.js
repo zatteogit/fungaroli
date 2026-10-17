@@ -78,11 +78,12 @@ function namespaceIds(body) {
   });
 }
 
-export function openEntitySheet(href, trigger = document.activeElement) {
+export function openEntitySheet(href, trigger = document.activeElement, {decorate} = {}) {
   if (!renderEntity || !entityRoute(href)) return false;
   const body = document.createElement('div'); body.className = 'entity-body';
   const title = renderEntity(body, href);
   if (!title) return false;
+  decorate?.(body);
   ensureDialog();
   enhance?.(body); namespaceIds(body);
   if (dialog.open) frames.at(-1).scroll = dialog.scrollTop;

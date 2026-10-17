@@ -5,7 +5,7 @@
 .ui-icon-map { --ui-icon:url('../assets/ui/map.svg'); }
 .ui-icon-leaf { --ui-icon:url('../assets/ui/leaf.svg'); }
 .ui-icon-notebook { --ui-icon:url('../assets/ui/notebook.svg'); }
-.tabbar :is(.ui-icon,.fungus-glyph) { width:24px; height:24px; }
+.tabbar :is(.ui-icon,.fungus-glyph,.nav-glyph) { width:24px; height:24px; }
 .fungus-page { max-width:772px; margin-inline:auto; }
 .fungus-page .phero { display:flex; flex-direction:column; justify-content:flex-end; height:auto; min-height:640px; max-height:none; padding:240px 20px 44px; margin:0; border-radius:24px; }
 .fungus-page .phero-body { position:relative; inset:auto; width:100%; gap:12px; }
@@ -46,6 +46,15 @@
 .fungus-page :is(.sec,.context-note) > summary { min-height:56px; padding-block:16px; font-size:16px; line-height:1.5; }
 .fungus-page :is(.sec,.context-note) > summary::after { width:20px; height:20px; border:0; margin:0; background:currentColor; mask:url('../assets/ui/chevron-right.svg') center / contain no-repeat; -webkit-mask:url('../assets/ui/chevron-right.svg') center / contain no-repeat; transform:none; }
 .fungus-page :is(.sec,.context-note)[open] > summary::after { transform:rotate(90deg); }
+.id-match-summary { display:grid; gap:8px; margin:10px 0 12px; font-size:13px; line-height:1.45; }
+.id-match-summary dt { font-weight:700; color:var(--text); }
+.id-match-summary dd { margin:0; color:var(--text-2); }
+.id-match-summary .id-match-different :is(dt,dd) { color:var(--warn-ink); }
+.id-card .id-more { min-height:44px; padding-top:8px; }
+.id-answer-details { margin-bottom:28px; }
+.id-answer-details h4 { margin:20px 0 8px; }
+.id-answer-details ul { padding-left:20px; }
+.id-answer-details li { margin-block:8px; line-height:1.5; }
 .fungus-compare { max-width:1000px; margin-inline:auto; }
 .fungus-compare .cmp-title { font:600 34px/1.23 var(--font-display); margin:24px 0; }
 .fungus-compare .cmp-lede { font-size:16px; line-height:1.5; margin:0 0 24px; color:var(--text); }

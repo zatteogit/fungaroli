@@ -73,6 +73,18 @@ L’accordion «Quando» ha una sola testata: arrivo consigliato, affollamento e
 
 ### Barra mobile e transizioni iOS
 
+Le quattro icone di navigazione sono SVG inline già presenti nell’HTML, con colore ereditato dal pulsante. Non vengono sostituite all’avvio e non usano maschere CSS esterne. Il cambio di selezione non anima scala o posizione delle icone; la snapshot della barra mantiene opacità piena e composizione normale durante le transizioni della pagina.
+
 La barra mantiene il posizionamento fisso e un proprio livello di composizione. Su iPhone e iPad le transizioni di pagina tramite snapshot sono disabilitate come mitigazione del distacco segnalato dopo lo scroll; restano le microanimazioni CSS. Non vengono aggiunte correzioni manuali al bordo inferiore tramite VisualViewport. La tastiera continua a nascondere la barra durante l’inserimento e a ripristinarla alla chiusura.
 
 I controlli automatici coprono scroll, ridimensionamento, cambio pagina e ciclo tastiera simulato in Chromium. La conferma su Safari reale resta necessaria: nell’ambiente di lavoro il download del motore WebKit è bloccato dal proxy.
+
+### Lettura a colpo d’occhio
+
+Mostrare prima il dato o l’indicazione sintetica; spiegazioni estese solo su richiesta. Sintesi informative distinte dai filtri selezionabili. Per le regole di raccolta, riquadri con valore e contesto breve aprono il testo integrale della singola regola; fonti e norme complete restano in Info. Evitare muri di testo e accordion annidati.
+
+Le sezioni richiuse devono anticipare il contenuto con titolo specifico e dati o elementi principali. Evitare contenitori generici come «La zona»: paesaggio e alberi, accessi e soste, composizione dei boschi e crediti delle foto hanno destinazioni distinte.
+
+### Inquadratura della mappa
+
+Al primo ingresso si inquadrano le zone compatibili con i filtri, comprese le loro aree; un link a una zona inquadra direttamente quella. Cerchi, etichette ed elenco usano lo stesso movimento breve e considerano testata, barra di navigazione e scheda aperta. Niente volo iniziale o ricentratura durante aggiornamenti meteo, filtri, cambio giorno e ritorno alla mappa. «Mostra tutte le zone» ripristina esplicitamente la panoramica. I campioni selezionano la zona di appartenenza; il dettaglio compare a movimento concluso.

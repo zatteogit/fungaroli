@@ -36,7 +36,7 @@ test('il passaggio del mouse mostra solo l’etichetta, il clic apre la scheda',
   const {sample,errors}=await setup(page);const card=page.locator('.cell-card'),peek=page.locator('.cell-peek');
   await page.mouse.move(sample.x,sample.y);await expect(peek).toBeVisible();await expect(peek).toContainText('clic per i dettagli');await expect(card).toHaveCount(0);
   await page.mouse.move(-20,-20);await expect(peek).toHaveCount(0);
-  await page.mouse.click(sample.x,sample.y);await expect(card).toBeVisible();await expect(peek).toHaveCount(0);await expect(page.locator('#map-sheet')).toBeHidden();
+  await page.mouse.click(sample.x,sample.y);await expect(card).toBeVisible();await expect(peek).toHaveCount(0);await expect(page.locator('#map-sheet')).toBeHidden();await expect(page.locator('#map .zone-c.is-selected')).toHaveCount(1);await expect(page.locator('#map .zone-label-sel')).toHaveCount(1);
   await page.mouse.move(-20,-20);await page.waitForTimeout(350);await expect(card).toBeVisible();
   await page.locator('#map').focus();await page.keyboard.press('Escape');await expect(card).toHaveCount(0);expect(errors).toEqual([]);
 });
@@ -57,7 +57,7 @@ for(const width of [320,390])test(`un tap apre un pannello utilizzabile e conten
   try {
     const {sample,errors}=await setup(page,{width});await page.touchscreen.tap(sample.x,sample.y);const card=page.locator('.cell-card');await expect(card).toBeVisible();
     expect(await card.evaluate(el=>{const r=el.getBoundingClientRect();return r.left>=0&&r.right<=innerWidth&&r.top>=0&&r.bottom<=innerHeight;})).toBe(true);
-    await card.locator('[data-term="habitat"]').tap();await expect(page.locator('#learning-sheet[open]')).toBeVisible();await page.locator('[data-learning-close]').tap();await expect(card).toBeVisible();expect(await page.evaluate(()=>testMap.getZoom())).toBe(13);
+    const focusedZoom=await page.evaluate(()=>testMap.getZoom());await card.locator('[data-term="habitat"]').tap();await expect(page.locator('#learning-sheet[open]')).toBeVisible();await page.locator('[data-learning-close]').tap();await expect(card).toBeVisible();expect(await page.evaluate(()=>testMap.getZoom())).toBe(focusedZoom);
     await page.screenshot({path:`/tmp/fungaroli-map-popover-${width}.png`});await card.locator('[data-cell-close]').tap();await expect(card).toHaveCount(0);expect(errors).toEqual([]);
   } finally { await context.close(); }
 });
