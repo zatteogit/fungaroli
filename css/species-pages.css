@@ -312,12 +312,21 @@ body[data-page="mappa"] .view-map { border-radius:0; }
 @media(prefers-reduced-motion:reduce) { #detail .essential-sections > .sec > summary::after, #detail .zone-more > .sec > summary::after { transition:none; } }
 
 /* La scelta appartiene alla specie a destra; le alternative si aprono solo su richiesta. */
-.fungus-compare .cmp-pair-head { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; align-items:center; margin:0 1px 12px; color:var(--text); font:600 15px/1.4 var(--font-body); }
-.cmp-pair-head > b { padding:10px 0; }
-.cmp-pair-head > button { display:grid; gap:5px; width:100%; min-height:60px; padding:10px 12px; border:1px solid var(--hair); border-radius:14px; background:var(--surface); color:var(--text); font:inherit; text-align:left; cursor:pointer; }
-.cmp-pair-head > button > span { display:flex; align-items:center; justify-content:space-between; color:var(--link); font:600 12px/1.3 var(--font-body); }
-.cmp-pair-head > button > span > span { font-size:18px; line-height:12px; }
-.cmp-pair-head > button:focus-visible { outline:3px solid var(--focus); outline-offset:3px; }
+.fungus-compare .cmp-pair-head { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:4px 12px; align-items:start; margin:0 1px 12px; color:var(--text); font:600 15px/1.4 var(--font-body); }
+.cmp-head-reference { grid-column:1; grid-row:1; }
+.cmp-head-selected { grid-column:2; grid-row:1; }
+.cmp-head-reference, .cmp-head-selected { min-width:0; overflow-wrap:anywhere; }
+.cmp-head-change { grid-column:2; grid-row:2; justify-self:start; display:inline-flex; align-items:center; justify-content:flex-start; gap:8px; min-height:44px; margin:0; padding:6px 0; border:0; border-radius:6px; background:transparent; color:var(--link); font:600 12px/1.3 var(--font-body); cursor:pointer; }
+.cmp-head-change svg { width:16px; height:16px; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
+.cmp-head-change:focus-visible, .cmp-desktop-choice:focus-visible { outline:3px solid var(--focus); outline-offset:3px; }
+.cmp-desktop-choices { display:none; }
+@media(min-width:768px) {
+  .cmp-pair-head.has-choices > .cmp-head-selected, .cmp-head-change { display:none; }
+  .cmp-pair-head.has-choices > .cmp-head-reference { padding-block:12px; }
+  .cmp-desktop-choices { grid-column:2; grid-row:1; display:flex; flex-wrap:wrap; gap:8px; min-width:0; }
+  .cmp-desktop-choice { min-height:44px; max-width:100%; padding:10px 14px; border:1px solid var(--hair); border-radius:999px; background:var(--surface); color:var(--text); font:600 14px/1.4 var(--font-body); text-align:left; cursor:pointer; }
+  .cmp-desktop-choice[aria-pressed="true"] { background:var(--select); color:var(--select-ink); border-color:var(--select-edge); }
+}
 .cmp-chooser { width:min(440px,calc(100% - 32px)); max-height:80svh; margin:auto; padding:20px; border:1px solid var(--hair); border-radius:24px; color:var(--text); background:var(--bg); box-shadow:var(--shadow-2); }
 .cmp-chooser::backdrop { background:rgb(0 0 0 / .45); }
 .cmp-chooser-head { display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:16px; }
@@ -326,9 +335,22 @@ body[data-page="mappa"] .view-map { border-radius:0; }
 .cmp-choices { display:grid; gap:8px; }
 .fungus-compare .cmp-choices .cmp-chip { width:100%; padding:10px; border-radius:15px; gap:12px; text-align:left; }
 .fungus-compare .cmp-choices .cmp-chip-img { display:block; width:44px; height:44px; flex:none; }
-.cmp-choices .cmp-chip > span:nth-child(2) { display:grid; gap:4px; flex:1; }
+.cmp-choices .cmp-chip > span:nth-child(2) { display:grid; gap:4px; flex:1; min-width:0; overflow-wrap:anywhere; }
 .cmp-choices .cmp-chip small { font:400 12px/1.4 var(--font-body); }
-.cmp-choices .cmp-choice-check { visibility:hidden; }
+.cmp-choices .cmp-choice-check { visibility:hidden; width:20px; flex:0 0 20px; text-align:center; }
 .fungus-compare .cmp-choices [aria-pressed="true"] { border-color:var(--link); background:var(--surface-2); }
 .cmp-choices [aria-pressed="true"] .cmp-choice-check { visibility:visible; }
 @media(max-width:599px) { .fungus-compare .cmp-pair-head { font-size:13px; } }
+
+/* Le due didascalie condividono le righe: nomi comuni e latini restano allineati. */
+@supports(grid-template-rows:subgrid) {
+  .fungus-compare .cmp-pair { column-gap:12px; row-gap:0; }
+  .fungus-compare .cmp-side { display:grid; grid-template-rows:subgrid; grid-row:span 3; }
+  .fungus-compare .cmp-name { display:contents; }
+  .fungus-compare .cmp-name :is(a,button) { align-self:start; padding:12px 16px 8px; }
+  .fungus-compare .cmp-name i { padding:0 16px 20px; }
+  @media(max-width:599px) {
+    .fungus-compare .cmp-name :is(a,button) { padding:10px 10px 6px; }
+    .fungus-compare .cmp-name i { padding:0 10px 14px; }
+  }
+}
