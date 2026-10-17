@@ -808,6 +808,21 @@ button.cover-index:focus-visible { outline:3px solid var(--focus); outline-offse
   ::view-transition-group(tab-indicator) { animation-duration:.26s; animation-timing-function:var(--ease-out); z-index:11; }
   ::view-transition-old(tab-indicator) { display:none; }
   ::view-transition-new(tab-indicator) { animation:none; mix-blend-mode:normal; }
+  /* La pillola è una snapshot autonoma: il contenuto deve stare nel livello successivo,
+     altrimenti il fondo giallo copre icona e testo fino alla fine della transizione. */
+  html.vt .tabbar a[data-tab="uscite"] { view-transition-name:nav-uscite; }
+  html.vt .tabbar a[data-tab="mappa"] { view-transition-name:nav-mappa; }
+  html.vt .tabbar a[data-tab="specie"] { view-transition-name:nav-scopri; }
+  html.vt .tabbar a[data-tab="diario"] { view-transition-name:nav-taccuino; }
+  ::view-transition-group(nav-uscite), ::view-transition-group(nav-mappa),
+  ::view-transition-group(nav-scopri), ::view-transition-group(nav-taccuino) { animation:none; z-index:12; }
+  ::view-transition-image-pair(nav-uscite), ::view-transition-image-pair(nav-mappa),
+  ::view-transition-image-pair(nav-scopri), ::view-transition-image-pair(nav-taccuino) { isolation:isolate; }
+  ::view-transition-old(nav-uscite), ::view-transition-old(nav-mappa),
+  ::view-transition-old(nav-scopri), ::view-transition-old(nav-taccuino) { animation:vt-fade-out .26s var(--ease-out) both; mix-blend-mode:plus-lighter; }
+  ::view-transition-new(nav-uscite), ::view-transition-new(nav-mappa),
+  ::view-transition-new(nav-scopri), ::view-transition-new(nav-taccuino) { animation:vt-fade-in .26s var(--ease-out) both; mix-blend-mode:plus-lighter; }
+
 }
 
 .community-purpose { max-width:52ch; font-size:16px; line-height:1.6; }
