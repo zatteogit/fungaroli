@@ -334,12 +334,95 @@ function setLimit(f, key, value) {
   if (f[key] !== undefined && f[key] !== value) throw new Error(`Limiti diversi per lo stesso campo: ${f.k}.${key}`);
   f[key] = value;
 }
+const QUESTION_GUIDANCE = Object.freeze({
+  "profile.years": "Conta da quando hai iniziato ad andare a funghi, anche se non ci sei andato tutti gli anni.",
+  "profile.mentor": "Come hai imparato a cercare e conoscere i funghi? Puoi indicare più persone o modi, oppure raccontarlo con parole tue.",
+  "profile.zones": "Indica le aree che frequenti davvero, non quelle di cui hai solo sentito parlare. Per zone fuori elenco usa «Altre zone o località» oppure «Altro / specifica».",
+  "profile.zonesOther": "Puoi scrivere anche zone fuori dal Reatino. Non servono coordinate, sentieri precisi o punti di raccolta.",
+  "profile.tripsGoodYear": "Pensa a un anno in cui per te la stagione è andata bene: quante volte sei uscito apposta a cercare funghi? Una stima va bene.",
+  "profile.tripsBadYear": "Pensa a un anno in cui hai trovato pochi funghi: quante volte sei comunque uscito a cercarli?",
+  "profile.speciesSought": "Indica le specie che vai apposta a cercare, non tutte quelle che riconosci. Puoi aggiungere nomi non presenti con «Altro / specifica».",
+  "profile.attestato": "Mi riferisco all’attestato o titolo richiesto per la raccolta nella zona dove vai. Se la tua situazione è diversa, descrivila in «Altro / specifica».",
+  "profile.aslCheck": "Pensa al controllo del raccolto da parte di un micologo dell’ASL, non alla verifica fatta da amici o parenti.",
+  "profile.notes": "Segni quando esci, dove vai o che cosa trovi? Puoi indicare più strumenti o descriverne uno diverso.",
+  "profile.notesSince": "Indica l’anno in cui hai cominciato a conservare appunti, foto o altre registrazioni delle uscite.",
+  "species.start": "In quale mese inizi di solito a trovare questa specie nelle zone che frequenti? Se ricordi, indica anche inizio, metà o fine mese.",
+  "species.peak": "In quale mese la trovi più spesso o in maggiore quantità? È il periodo migliore della stagione, secondo la tua esperienza.",
+  "species.end": "In quale mese smetti di solito di trovare questa specie, nelle zone che frequenti?",
+  "species.seasonChanged": "Rispetto a quando hai cominciato a cercare questa specie, il periodo in cui la trovi è cambiato? Rispondi in base ai tuoi ricordi.",
+  "species.changed": "Che differenza hai osservato: nel periodo dell’anno, nella durata della stagione o nelle quote? Puoi scegliere più voci o descriverla.",
+  "species.elevMin": "La minore altezza sul livello del mare a cui l’hai trovata personalmente, nelle tue zone. Non chiedo il limite assoluto della specie.",
+  "species.elevMax": "La maggiore altezza sul livello del mare a cui l’hai trovata personalmente, nelle tue zone.",
+  "species.elevMode": "L’altezza sul livello del mare dove, di solito, ne trovi di più. Una quota approssimativa va bene.",
+  "species.forests": "In quali tipi di bosco hai trovato personalmente questa specie? Scegli tutte le voci che descrivono la tua esperienza.",
+  "species.forestsNever": "Indica solo tipi di bosco in cui l’hai cercata senza trovarla. Non includere boschi che non frequenti.",
+  "species.lagMin": "Dopo una pioggia che ritieni favorevole, qual è il minor numero di giorni che ricordi di aver aspettato prima di trovarla?",
+  "species.lagTyp": "Dopo una pioggia favorevole, quanti giorni aspetti normalmente prima di iniziare a trovare questa specie?",
+  "species.lagMax": "Dopo una pioggia favorevole, qual è l’attesa più lunga che ricordi prima di iniziare a trovarla?",
+  "species.flushDays": "Per «buttata» intendo un periodo in cui compaiono molti funghi della stessa specie. Per quanti giorni continui a trovarne di nuovi?",
+  "species.confidence": "Pensa a quanto queste risposte vengono da osservazioni ripetute oppure da ricordi incerti. Non è un voto alla tua competenza.",
+  "rain.goodRain": "Descrivi che tipo di pioggia, secondo la tua esperienza, precede le uscite migliori: intensità, durata o ripetizione nel tempo, se li ricordi.",
+  "rain.drySummer": "Pensa alle stagioni che sono venute dopo estati molto secche: come sono andate le uscite rispetto al solito?",
+  "rain.flushEnd": "Quando smetti di trovare funghi dopo un periodo abbondante, quali cambiamenti hai notato? Puoi anche dire che non hai osservato una causa.",
+  "rain.lowRainSpecies": "Indica le specie che hai trovato anche quando aveva piovuto poco. Non sto chiedendo quali specie dovrebbero farlo in teoria.",
+  "weatherEvents.year": "L’anno in cui è successo l’episodio che stai raccontando.",
+  "weatherEvents.month": "Il mese dell’episodio, se lo ricordi.",
+  "weatherEvents.zone": "La zona dell’episodio: basta un’area o un comune, senza punti di raccolta precisi.",
+  "weatherEvents.kind": "Il cambiamento del tempo che hai osservato in quell’occasione. Se non rientra nell’elenco, descrivilo in «Altro / specifica».",
+  "weatherEvents.effect": "Dopo quel cambiamento, che cosa hai osservato nei funghi che trovavi? Descrivi anche se non hai notato effetti.",
+  "weatherEvents.daysAfter": "Quanti giorni sono passati tra l’episodio meteorologico e il cambiamento nei ritrovamenti?",
+  "weatherEvents.seen": "Serve a distinguere ciò che hai visto tu dai racconti ricevuti da altre persone.",
+  "flushes.year": "L’anno dell’uscita o del periodo abbondante che stai raccontando.",
+  "flushes.month": "Il mese in cui hai fatto quell’uscita.",
+  "flushes.week": "La parte del mese in cui è avvenuta l’uscita. Se non la ricordi, puoi lasciare vuoto.",
+  "flushes.zone": "La zona o il comune dell’uscita, senza indicare i tuoi posti precisi.",
+  "flushes.elev": "L’altezza approssimativa sul livello del mare del bosco in cui cercavi.",
+  "flushes.forest": "Il tipo di bosco in cui si è svolta quell’uscita. Se era misto o diverso dalle voci proposte, descrivilo.",
+  "flushes.species": "La specie di cui ricordi il ritrovamento abbondante. Per un nome fuori elenco usa «Un’altra specie».",
+  "flushes.quantity": "Quanti funghi di quella specie hai trovato in quell’uscita, circa? Non occorre che tu li abbia raccolti.",
+  "flushes.hours": "Il tempo passato effettivamente a cercare durante quell’uscita, senza il viaggio in auto.",
+  "flushes.weatherBefore": "Che tempo ricordi nei giorni precedenti all’uscita? Usa i tuoi ricordi, senza dover ricostruire dati che non hai.",
+  "flushes.dateFrom": "La data è documentata da foto o appunti, oppure la stai ricostruendo a memoria?",
+  "emptyTrips.year": "L’anno dell’uscita in cui non hai trovato ciò che cercavi.",
+  "emptyTrips.month": "Il mese di quell’uscita andata a vuoto.",
+  "emptyTrips.week": "Se lo ricordi, indica in quale parte del mese sei uscito.",
+  "emptyTrips.zone": "La zona o il comune dell’uscita andata a vuoto, senza punti precisi.",
+  "emptyTrips.elev": "L’altezza approssimativa sul livello del mare dove hai cercato.",
+  "emptyTrips.forest": "Il tipo di bosco in cui hai cercato senza trovare i funghi desiderati.",
+  "emptyTrips.speciesSought": "Quali specie speravi di trovare in quell’uscita? Puoi indicarne più di una o specificarne altre.",
+  "emptyTrips.hours": "Quanto tempo hai passato a cercare durante quell’uscita, escluso il viaggio?",
+  "emptyTrips.why": "È la tua interpretazione di quell’uscita: va bene anche non conoscere il motivo.",
+  "emptyTrips.dateFrom": "Distingui una data verificabile su foto o appunti da una data che ricordi a memoria.",
+  "forest.aspect": "Per versante intendo la direzione verso cui guarda il pendio: nord, sud, est o ovest. Indica se cambia la tua scelta tra inizio e fine stagione.",
+  "forest.cutAge": "Pensa al tipo di gestione dei boschi dove trovi i funghi. Nel ceduo i fusti ricrescono dalla base dopo il taglio. Se non conosci questi termini, descrivi il bosco con parole tue.",
+  "forest.microsites": "Pensa ai punti del bosco in cui cerchi per primi. Non servono nomi di luoghi: descrivi solo come sono fatti.",
+  "forest.soil": "Descrivi il terreno dove hai osservato più ritrovamenti. Va bene una descrizione comune, senza classificazioni tecniche.",
+  "forest.reliableSpots": "Ci sono ambienti che, nella tua esperienza, continuano a dare funghi in anni diversi? Non chiedo l’indirizzo del posto.",
+  "forest.indicators": "Racconta che cosa ti fa decidere di uscire a cercare porcini e quante volte ricordi che quel segnale abbia funzionato.",
+  "forest.ranking": "Metti prima i fattori che ritieni più importanti per i ritrovamenti nelle tue zone. Puoi indicarne solo alcuni o aggiungere un fattore diverso.",
+  "access.gates": "Quali problemi di accesso hai incontrato sulle strade usate per le uscite? Descrivi il tipo di impedimento, senza indicazioni precise se non vuoi.",
+  "access.navigators": "Hai avuto indicazioni del navigatore sbagliate o poco praticabili durante un’uscita? Racconta che cosa non tornava.",
+  "access.localRules": "Quali regole o autorizzazioni sai che si applicano alle zone che frequenti? Le tue risposte saranno da verificare, non sostituiscono le regole ufficiali.",
+  "access.parks": "Se frequenti parchi o riserve, quali attenzioni o regole di accesso e raccolta hai incontrato? Se non li frequenti, puoi scegliere «Non pertinente».",
+  "access.crowding": "In quali periodi o giorni noti più o meno cercatori nelle zone che frequenti?",
+  "access.parking": "Racconta se, quando e perché è difficile trovare un posto dove lasciare l’auto per le tue uscite.",
+  "risks.confusions": "Pensa alle specie che hai visto scambiare tra loro o a dubbi ricorrenti sui nomi. Non ti sto chiedendo di identificare un fungo.",
+  "risks.knowsPoisonings": "Sai di episodi legati al consumo di funghi? Non servono nomi né dettagli sanitari: il racconto successivo riguarda solo specie, periodo e zona.",
+  "risks.poisonings": "Se conosci un episodio, descrivi soltanto gli aspetti utili a capire il rischio legato ai funghi.",
+  "risks.beginnerErrors": "Quali errori di raccolta, prudenza o comportamento hai osservato in chi è alle prime uscite?",
+  "risks.avoidsSpecies": "Ci sono funghi che scegli di non raccogliere, per qualsiasi ragione? Dopo «Sì» puoi spiegare quali e perché.",
+  "risks.avoided": "Puoi indicare nomi comuni o scientifici e spiegare la tua scelta, senza dover giustificarla.",
+  "risks.mountainDangers": "Pensa ai pericoli pratici incontrati durante le uscite: descrivi quelli che conosci dalla tua esperienza.",
+  "followUp.knowsOthers": "Se pensi che qualcun altro possa contribuire con la propria esperienza, puoi inoltrargli tu il link."
+});
 function applySpec(fields, prefix) {
   for (const f of fields) {
     if (f.t === 'group') { applySpec(f.fields, prefix); continue; }
     if (!f.k || f.of === 'consent' || f.send === false) continue;
     if (f.of === 'respondent') { setLimit(f, 'max', RESPONDENT[f.k]); continue; }
     const path = `${f.of || prefix}.${f.k}`;
+    const guidance = QUESTION_GUIDANCE[path];
+    if(guidance && !f.hint?.includes(guidance)) f.hint = [f.hint,guidance].filter(Boolean).join(' ');
     const spec = S.fieldSpec(path);
     if (!spec) throw new Error(`Campo assente dallo schema: ${path}`);
     if (spec.t === 'int' || spec.t === 'dec') { setLimit(f, 'min', spec.min); setLimit(f, 'max', spec.max); setLimit(f, 'decimal', spec.t === 'dec'); }
@@ -393,6 +476,51 @@ function renderFields(parent, fields, o, briefAll) {
   }
 }
 function control(f, o, briefAll) {
+  const node = baseControl(f, o, briefAll);
+  if (!f.k || f.t === 'group' || f.of === 'respondent' || f.of === 'consent') return node;
+  o._clarifications ||= {};
+  o._clarificationIds ||= {};
+  const id = o._clarificationIds[f.k] ||= uid('qual');
+  const note = o._clarifications[f.k];
+  const prompt = node.querySelector('legend,label');
+  if(prompt && !prompt.id)prompt.id=uid('question');
+  const notApplicable = note?.kind === 'not_applicable';
+  const body = h('fieldset', {class:'q-answer-body', disabled:notApplicable}, node);
+  const option = chip('checkbox', null, 'Non pertinente per me', notApplicable, (input) => {
+    if (input.checked) {
+      o._previousAnswers ||= {};
+      o._previousAnswers[f.k] = o[f.k];
+      o[f.k] = ['multi','order'].includes(f.t) ? [] : f.t === 'open' ? open0() : f.t === 'text' ? '' : null;
+      o._clarifications[f.k] = {kind:'not_applicable', text:''};
+    } else {
+      if (o._previousAnswers && Object.hasOwn(o._previousAnswers,f.k)) o[f.k] = o._previousAnswers[f.k];
+      delete o._clarifications[f.k];
+    }
+    changed();
+    render();
+    document.getElementById(id)?.focus({preventScroll:true});
+  }, {id,'aria-describedby':prompt?.id});
+  const extras = h('div', {class:'q-clarifications'}, option.el);
+  // Testo libero e domande aperte hanno già uno spazio per specificare una risposta diversa.
+  if (notApplicable || !['open','text','species1'].includes(f.t)) {
+    const textId = uid('detail');
+    const details = h('details', {class:'q-specify', open:!!note?.text});
+    const area = h('textarea', {id:textId, class:'q-input q-area', rows:2, maxlength:600,'aria-describedby':prompt?.id});
+    area.value = note?.text || '';
+    area.addEventListener('input', () => {
+      const text = area.value;
+      if (notApplicable || text.trim()) o._clarifications[f.k] = {kind:notApplicable?'not_applicable':'other',text};
+      else delete o._clarifications[f.k];
+      changed();
+    });
+    details.append(h('summary', {}, notApplicable?'Vuoi spiegare perché?':'Altro / specifica'),
+      h('label', {for:textId,class:'q-sub-q'}, notApplicable?'Perché non è pertinente?':'Specifica una risposta diversa'),
+      h('p',{class:'q-hint'},'Facoltativo. Scrivi con parole tue, senza nomi o dati di altre persone.'),area);
+    extras.append(details);
+  }
+  return h('div',{class:'q-question','data-question':f.k},body,extras);
+}
+function baseControl(f, o, briefAll) {
   switch (f.t) {
     case 'num': return numControl(f, o);
     case 'choice': return choiceControl(f, o);
@@ -803,7 +931,7 @@ function consentControl() {
     changed();
   });
   const box = h('div', { class: 'q-consent' },
-    h('label', { for: id, class: 'q-consent-label' }, input, h('span', {}, 'Acconsento all’uso delle mie risposte per studiare stagioni e condizioni dei funghi nel Reatino, come spiegato nell’informativa. Nei risultati non compariranno il mio nome né il mio contatto.')),
+    h('label', { for: id, class: 'q-consent-label' }, input, h('span', {}, 'Acconsento all’uso delle mie risposte per studiare stagioni e condizioni dei funghi nel Reatino e preparare l’app, come spiegato nell’informativa. Nei risultati non compariranno il mio nome né il mio contatto.')),
     h('p', { id: hid, class: 'q-hint' }, 'Serve per inviare. Titolare: Matteo Sgambato. Non cediamo i dati a nessuno. ', h('a', { href: '#informativa' }, 'Leggi l’informativa'), '.'));
   watch(box, () => { input.checked = !!state.consent.anonymousUse; });
   return box;
@@ -993,6 +1121,7 @@ function openOut(f, o) {
   return quick.length || text ? { quick, text } : undefined;
 }
 function valueOut(f, o) {
+  if (o._clarifications?.[f.k]?.kind === 'not_applicable') return undefined;
   const v = o[f.k];
   switch (f.t) {
     case 'num': return isNum(v) ? v : undefined;
@@ -1006,6 +1135,12 @@ function valueOut(f, o) {
     default: return undefined;
   }
 }
+function clarificationOut(f,o,field=f.k) {
+  const note = o._clarifications?.[f.k];
+  if (!note || !['other','not_applicable'].includes(note.kind)) return null;
+  const text = clean(note.text,600);
+  return note.kind==='not_applicable' || text ? {field,kind:note.kind,text} : null;
+}
 const toRanking = (list) => Object.fromEntries(list.map((k, i) => [k, i + 1]));
 function collectFields(fields, o, briefAll, out = {}) {
   for (const f of fields) {
@@ -1015,6 +1150,8 @@ function collectFields(fields, o, briefAll, out = {}) {
     if (f.t === 'group') { collectFields(f.fields, o, briefAll, out); continue; }
     const v = valueOut(f, o);
     if (v !== undefined) out[f.k] = f.asRanking ? toRanking(v) : v;
+    const note = clarificationOut(f,o);
+    if (note) (out.clarifications ||= []).push(note);
   }
   return out;
 }
@@ -1033,6 +1170,8 @@ const listOut = (arr, fields, lim) => arr.slice(0, lim).map((item) => collectFie
 function collectWeather(answers) {
   const gate = valueOut(WEATHER_FIELD, state.weather);
   if (gate !== undefined) answers.weatherRemembers = gate;
+  const note = clarificationOut(WEATHER_FIELD,state.weather,'weatherRemembers');
+  if (note) (answers.clarifications ||= []).push(note);
   if (gate !== 'sì') return;
   const list = listOut(state.weatherEvents, EVENT_FIELDS, LIMITS.weatherEvents);
   if (list.length) answers.weatherEvents = list;
@@ -1043,12 +1182,14 @@ function collectRecent(answers) {
   if (fl.length) answers.flushes = fl;
   if (em.length) answers.emptyTrips = em;
 }
-function collectFinal(answers) { const v = valueOut(KNOWS_FIELD, state.followUp); if (v !== undefined) answers.followUp = { knowsOthers: v }; }
+function collectFinal(answers) { const v = collectFields([{...KNOWS_FIELD,of:null}],state.followUp,true); if (filled(v)) answers.followUp = v; }
 for (const p of PARTS) if (!p.collect) p.collect = (answers) => collectInto(answers, p.id, p.fields, p.owner(), !!p.briefAll);
 
 function payload() {
   const answers = {};
   for (const p of activeParts()) if (!state.skipped[p.key]) p.collect(answers);
+  const notApplicable = activeParts().filter((p) => state.skipped[p.key] && state.notApplicableParts?.[p.key]).map((p)=>p.key);
+  if (notApplicable.length) answers.notApplicableParts = notApplicable;
   const final = !state.skipped.I;
   const name = final ? clean(state.respondent.name, RESPONDENT.name) : '';
   const contact = final && contactOn() ? clean(state.respondent.contact, RESPONDENT.contact) : '';
@@ -1092,6 +1233,8 @@ function summarizeFields(fields, o, briefAll, rows = []) {
     if (f.t === 'group') { summarizeFields(f.fields, owner, briefAll, rows); continue; }
     const v = valueOut(f, owner);
     if (v !== undefined) rows.push([f.short || f.label, fmtValue(f, v)]);
+    const note = clarificationOut(f,owner);
+    if (note) rows.push([`${f.short || f.label} — ${note.kind==='not_applicable'?'Non pertinente':'Altro'}`,note.text || 'Non pertinente per me.']);
   }
   return rows;
 }
@@ -1101,8 +1244,9 @@ function speciesSummary() {
 const listSummary = (arr, fields, lim, name) => arr.slice(0, lim).map((item, i) => ({ label: `${name} ${i + 1}`, rows: summarizeFields(fields, item, true) })).filter((r) => r.rows.length);
 function weatherSummary() {
   const gate = valueOut(WEATHER_FIELD, state.weather);
-  if (gate === undefined) return [];
-  return [[WEATHER_FIELD.short, fmtValue(WEATHER_FIELD, gate)], ...(gate === 'sì' ? listSummary(state.weatherEvents, EVENT_FIELDS, LIMITS.weatherEvents, 'Episodio') : [])];
+  const note = clarificationOut(WEATHER_FIELD,state.weather);
+  if (gate === undefined) return note ? [[WEATHER_FIELD.short, note.kind==='not_applicable'?'Non pertinente per me.':note.text]] : [];
+  return [[WEATHER_FIELD.short, fmtValue(WEATHER_FIELD, gate)], ...(note?.text ? [['Precisazione',note.text]] : []), ...(gate === 'sì' ? listSummary(state.weatherEvents, EVENT_FIELDS, LIMITS.weatherEvents, 'Episodio') : [])];
 }
 function recentSummary() {
   const brief = state.mode === 'breve';
@@ -1195,11 +1339,11 @@ function readReceipts() { try { const r = JSON.parse(store.get(RECEIPTS_KEY) || 
 function renderIntro(host) {
   const sec = stepSection('Mi dai una mano?');
   sec.append(
-    h('p', {}, 'Sto raccogliendo le esperienze degli amici che vanno a funghi nel Reatino. Mi interessa capire come scegli quando uscire, che cosa trovi e come cambiano le cose con la stagione, la pioggia e il bosco.'),
+    h('p', {}, 'Stiamo preparando un’app che, speriamo, possa aiutare te e gli altri a organizzare le uscite a funghi e conoscere meglio il bosco. Per questo ti chiedo di raccontarmi la tua esperienza nel Reatino: le risposte ci aiuteranno a capire che cosa può essere utile e che cosa dobbiamo approfondire.'),
     h('p', {}, 'Non serve essere esperti: raccontami quello che conosci, anche se vai a funghi solo ogni tanto. Puoi rispondere solo alle domande che vuoi.'),
     h('ul', { class: 'q-points' },
       h('li', {}, 'I tuoi posti restano tuoi: bastano la zona e la quota indicativa.'),
-      h('li', {}, 'Se non ricordi o non sai una cosa, lascia vuoto o tocca «Non so». Nessun problema.'),
+      h('li', {}, 'Puoi usare «Altro / specifica» per aggiungere una risposta diversa, oppure «Non pertinente per me» se la domanda non riguarda la tua esperienza. Se non ricordi, usa «Non so» o lascia vuoto.'),
       h('li', {}, 'Non serve registrarsi. Il nome è facoltativo.'),
       h('li', {}, 'Puoi fermarti e riprendere quando vuoi da questo dispositivo. Ricevo le risposte solo quando premi «Invia», alla fine.')));
   const receipts = readReceipts();
@@ -1210,16 +1354,16 @@ function renderIntro(host) {
   if (resumeAt) sec.append(resumeBox());
   else {
     const vid = uid('v');
-    const big = (mode, title, time, text) => h('button', { type: 'button', class: `q-big${state.mode === mode ? ' q-current' : ''}`, onclick: () => {
+    const big = (mode, title, text) => h('button', { type: 'button', class: `q-big${state.mode === mode ? ' q-current' : ''}`, onclick: () => {
       state.mode = mode;
       go('A');
       announce(`${title}: ${activeParts().length} parti.`);
-    } }, h('span', { class: 'q-big-title' }, title), h('span', { class: 'q-big-time' }, time), h('span', { class: 'q-big-text' }, text),
+    } }, h('span', { class: 'q-big-title' }, title), h('span', { class: 'q-big-text' }, text),
       state.mode === mode ? h('span', { class: 'q-big-text' }, 'È quella che stai usando.') : null);
     sec.append(h('div', { class: 'q-versions', role: 'group', 'aria-labelledby': vid },
-      h('h3', { id: vid }, 'Quanto tempo hai?'),
-      big('breve', 'Versione breve', 'circa 10 minuti', 'La tua esperienza, fino a 3 specie che conosci e qualche uscita da raccontare.'),
-      big('completa', 'Versione completa', 'circa 30–40 minuti', 'Tutte le domande: anche pioggia, freddo e vento, bosco, accessi e rischi.'),
+      h('h3', { id: vid }, 'Come preferisci rispondere?'),
+      big('breve', 'Versione breve', 'La tua esperienza, fino a 3 specie che conosci e qualche uscita da raccontare.'),
+      big('completa', 'Versione completa', 'Tutte le domande: anche pioggia, freddo e vento, bosco, accessi e rischi.'),
       h('p', { class: 'q-hint' }, 'Puoi passare dall’una all’altra quando vuoi, senza perdere niente.')));
   }
   host.append(sec);
@@ -1257,8 +1401,8 @@ function renderPart(host, part) {
   const sec = stepSection(part.title, `Parte ${n} di ${list.length}`);
   for (const t of [].concat(part.intro || [])) sec.append(h('p', { class: 'q-intro' }, t));
   if (state.skipped[part.key]) {
-    sec.append(h('div', { class: 'q-box' }, h('p', {}, 'Hai saltato questa parte: queste risposte non vengono inviate.'),
-      h('button', { type: 'button', class: 'q-btn', onclick: () => { delete state.skipped[part.key]; save(); render(); focusTitle(); } }, 'Compila questa parte')));
+    sec.append(h('div', { class: 'q-box' }, h('p', {}, state.notApplicableParts?.[part.key] ? 'Hai indicato che questa parte non è pertinente per te. Puoi cambiare idea e compilarla.' : 'Hai saltato questa parte: queste risposte non vengono inviate.'),
+      h('button', { type: 'button', class: 'q-btn', onclick: () => { delete state.skipped[part.key]; if(state.notApplicableParts)delete state.notApplicableParts[part.key]; save(); render(); focusTitle(); } }, 'Compila questa parte')));
   } else {
     const body = h('div', { class: 'q-body' });
     if (part.render) part.render(body, part); else renderFields(body, part.fields, part.owner(), !!part.briefAll);
@@ -1270,9 +1414,17 @@ function renderPart(host, part) {
     h('button', { type: 'button', class: 'q-btn q-btn-primary', onclick: () => go(next) }, next === 'riepilogo' ? 'Vai al riepilogo' : 'Avanti')),
   state.skipped[part.key] ? null : h('p', { class: 'q-skip-part' }, linkButton('Salta questa parte', () => {
     state.skipped[part.key] = true;
+    if(state.notApplicableParts)delete state.notApplicableParts[part.key];
     go(next);
     announce(`Hai saltato «${part.title}». Puoi tornarci dal riepilogo.`);
   })));
+  if(part.key!=='I' && !state.skipped[part.key]) sec.append(h('p',{class:'q-skip-part'},
+    linkButton('Questa parte non è pertinente per me',()=>{
+      state.notApplicableParts ||= {};
+      state.notApplicableParts[part.key]=true;
+      state.skipped[part.key]=true;
+      go(next);
+    })));
   host.append(sec);
 }
 
@@ -1286,15 +1438,15 @@ function renderSummary(host) {
     sec.append(h('section', { class: 'q-sum', 'aria-labelledby': id },
       h('div', { class: 'q-sum-head' }, h('h3', { id }, part.title),
         h('button', { type: 'button', class: 'q-btn q-btn-small', 'aria-label': `Modifica: ${part.title}`, onclick: () => go(part.key) }, 'Modifica')),
-      skipped ? h('p', { class: 'q-muted' }, 'Parte saltata: non viene inviata.') : rows.length ? rowsEl(rows) : h('p', { class: 'q-muted' }, 'Nessuna risposta.')));
+      skipped ? h('p', { class: 'q-muted' }, state.notApplicableParts?.[part.key] ? 'Non pertinente per me: questa scelta viene inviata.' : 'Parte saltata: non viene inviata.') : rows.length ? rowsEl(rows) : h('p', { class: 'q-muted' }, 'Nessuna risposta.')));
   }
   const p = payload();
   const who = [p.respondent.name, p.respondent.contact].filter(Boolean);
   sec.append(h('div', { class: 'q-box q-send-what' }, h('h3', {}, 'Cosa inviamo'), h('ul', {},
-    h('li', {}, 'Le risposte qui sopra. Le parti saltate e le domande senza risposta non partono.'),
+    h('li', {}, 'Le risposte qui sopra, comprese le precisazioni e le scelte «Non pertinente». Le domande lasciate vuote non partono.'),
     h('li', {}, who.length ? `Nome e contatto: ${who.join(', ')}.` : 'Nessun nome e nessun contatto.'),
     h('li', {}, `Ricontatto: ${p.consent.recontact ? 'sì' : 'no'}. Taccuino delle uscite: ${p.consent.diary ? 'sì' : 'no'}.`),
-    h('li', {}, 'L’ora in cui hai cominciato: serve solo a sapere quanto tempo hai impiegato.'),
+    h('li', {}, 'I dati tecnici dell’invio descritti nell’informativa.'),
     h('li', {}, 'Non inviamo la tua posizione. L’indirizzo IP non viene salvato.'))));
   sec.append(consentControl());
   const error = h('div', { id: 'q-send-error', class: 'q-box q-box-crit', role: 'alert', hidden: true });
@@ -1500,9 +1652,19 @@ async function main() {
   SPECIES_NAME_MAX = S.fieldSpec('species.name')?.max;
   try {
     if (!loadOptions() || !ZONES.length || !SPECIES.length || !FORESTS.length || !ENDPOINT || !Number.isInteger(SPECIES_NAME_MAX)) throw new Error('Schema incompleto');
+    // Anno, zona e altri campi condivisi hanno indicazioni diverse per episodio e uscita.
+    for (const fields of [EVENT_FIELDS,FLUSH_FIELDS,EMPTY_FIELDS]) fields.forEach((f,i) => {fields[i]={...f};});
     for (const [fields, prefix] of FIELD_GROUPS) applySpec(fields, prefix);
   } catch (e) { console.error(e); failed(); return; }
 
+  const openPrivacy = () => {
+    const details = document.getElementById('informativa');
+    if (details) details.open = true;
+  };
+  document.addEventListener('click', (event) => {
+    if (event.target.closest('a[href="#informativa"]')) openPrivacy();
+  });
+  if(location.hash==='#informativa')openPrivacy();
   const draft = loadDraft();
   if (draft) { state = merge(blank(), draft.state); resumeAt = draft.savedAt || new Date().toISOString(); upgradeDraft(draft.state); }
   const order = state.forest.order;

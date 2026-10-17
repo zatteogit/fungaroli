@@ -8,7 +8,7 @@ Raccogliere le esperienze degli amici che vanno a funghi nel Reatino, anche occa
 
 Tono personale, da Matteo agli amici: titolo «La tua esperienza a funghi nel Reatino», apertura «Mi dai una mano?», nessun requisito di essere esperti. L’esperienza si descrive con le risposte, non si presume. Decisione di Matteo del 17/10/2026.
 
-Il questionario è neutro: non parla dell'app e non chiede di provarla (la prova dell'app verrà dopo). Si compila da soli, anche da telefono, senza login. Il nome è facoltativo. Le risposte restano a noi, nel database D1 del sito.
+L’introduzione spiega lo scopo richiesto da Matteo il 17/10/2026: stiamo preparando un’app che speriamo possa aiutare nelle uscite e nella conoscenza del bosco. Le domande raccolgono l’esperienza personale; non chiedono di provare l’app. Si compila da soli, anche da telefono, senza login. Il nome è facoltativo. Le risposte restano a noi, nel database D1 del sito.
 
 Le risposte sono dichiarazioni di persone esperte, non misure. Nell'analisi vanno tenute distinte da dati verificati. Ogni scheda specie ha un grado di sicurezza (1–5); episodi e buttate dicono se la data viene da foto o appunti o dalla memoria, e se un episodio è stato visto di persona o sentito dire.
 
@@ -161,3 +161,15 @@ npx wrangler deploy --dry-run
 npx playwright test tests/browser/questionario.spec.mjs
 npx playwright test tests/browser/cms.spec.mjs -g "redazione"
 ```
+
+
+## Chiarezza, risposte diverse e non pertinenza — 17 ottobre 2026
+
+- Nessuna durata di compilazione né domanda sul tempo disponibile. Restano versione breve e completa come livelli di approfondimento.
+- Ogni domanda ha indicazioni per rispondere; sono spiegati quota, picco, attesa dopo la pioggia, buttata, versante e provenienza dei ricordi.
+- Le domande con risposte aperte mantengono il testo libero e «Altro…». Le altre domande di ricerca hanno «Altro / specifica», salvo i campi che consentono già una specifica libera. Nome, recapito e consensi mantengono il proprio significato.
+- «Non pertinente per me» esclude la risposta ordinaria di quella domanda; l’eventuale spiegazione è facoltativa. La scelta si conserva in bozza e compare nel riepilogo. Una parte A–H può essere esplicitamente dichiarata non pertinente, distinta da una parte saltata senza risposta.
+- **Contratto compatibile con v1:** ciascun gruppo di risposte o record di specie/episodio/uscita può avere `clarifications: [{field, kind: "other"|"not_applicable", text}]`. Campi ammessi ricavati dallo schema del gruppo; niente doppioni, massimo una nota per domanda, testo massimo 600 caratteri, «other» richiede una spiegazione. Non si accetta «not_applicable» insieme a un valore per la stessa domanda. Le parti non pertinenti sono in `answers.notApplicableParts` (A–H), senza risposte della parte esclusa. Il cancello degli episodi usa `answers.clarifications` con `field: "weatherRemembers"`.
+- Il JSON conserva queste informazioni e il CSV le esporta come colonne `clarifications`/`notApplicableParts` in JSON. Le vecchie risposte restano valide; non sono reinterpretate.
+- Informativa completa in `<details>` nel footer, chiusa inizialmente. I link «Leggi l’informativa» la aprono prima di raggiungerla, anche con tastiera; il testo è già presente nella pagina. Finalità e consenso includono la preparazione dell’app.
+- Le verifiche restano mirate al questionario, come richiesto da Matteo. Shell v104.

@@ -364,3 +364,17 @@ test('versante non conta per fase: combinazioni indipendenti e conflitti della s
     for (const side of ['nord','sud','est','ovest'])
       rejects({forest:{aspect:{quick:[`${phase}: il versante non conta`,`${phase}: meglio a ${side}`],text:''}}}, 'answers.forest.aspect.quick');
 });
+
+
+test('precisazioni: Altro e Non pertinente restano distinti dalle risposte vuote e nello stesso record', () => {
+  const answers={profile:{years:0,clarifications:[{field:'years',kind:'other',text:'Ho iniziato quest’anno.'}]},
+    species:[{id:'edulis',clarifications:[{field:'lagTyp',kind:'not_applicable',text:'Non collego le uscite alla pioggia.'}]}],
+    weatherEvents:[{clarifications:[{field:'seen',kind:'other',text:'Letto nel mio diario.'}]}],notApplicableParts:['G']};
+  assert.deepEqual(accepts(answers),answers);
+  rejects({profile:{years:12,clarifications:[{field:'years',kind:'not_applicable'}]}},'answers.profile.clarifications');
+  rejects({profile:{clarifications:[{field:'unknown',kind:'other',text:'x'}]}},'answers.profile.clarifications[0].field');
+  rejects({profile:{clarifications:[{field:'years',kind:'other',text:' '}]}},'answers.profile.clarifications');
+  rejects({profile:{clarifications:[{field:'years',kind:'other',text:'x'},{field:'years',kind:'not_applicable'}]}},'answers.profile.clarifications');
+  rejects({notApplicableParts:['A'],profile:{years:0}},'answers.notApplicableParts');
+  assert.deepEqual(accepts({notApplicableParts:['B','D']}),{notApplicableParts:['B','D']});
+});

@@ -250,7 +250,7 @@ test('testi della pagina: consenso senza «anonimo», niente dati di salute né 
   const page = readFileSync(new URL('../js/questionario.js', import.meta.url), 'utf8');
   const schema = readFileSync(new URL('../js/survey-schema.js', import.meta.url), 'utf8');
   // le risposte restano legate alla ricevuta e, se dati, a nome e contatto: sono dati personali, non anonimi
-  assert.match(page, /'Acconsento all’uso delle mie risposte per studiare stagioni e condizioni dei funghi nel Reatino, come spiegato nell’informativa\. Nei risultati non compariranno il mio nome né il mio contatto\.'/);
+  assert.match(page, /'Acconsento all’uso delle mie risposte per studiare stagioni e condizioni dei funghi nel Reatino e preparare l’app, come spiegato nell’informativa\. Nei risultati non compariranno il mio nome né il mio contatto\.'/);
   assert.match(page, /'Per inviare serve il tuo consenso: spunta la casella qui sopra\.'/);
   for (const text of [page, schema]) assert.doesNotMatch(text.replace(/^\s*\/\/.*$/gm, ''), /anonim/i);
   assert.equal(validateSurvey(valid({ consent: { anonymousUse: false } })).errors[0].message, 'Per inviare serve il tuo consenso: spunta la casella qui sopra.');
@@ -271,7 +271,7 @@ test('ricevuta dopo l’invio: il contatto è il link dell’informativa, non un
 
 test('informativa (art. 13 GDPR): elementi obbligatori e coerenza con il codice', async () => {
   const html = readFileSync(new URL('../questionario.html', import.meta.url), 'utf8');
-  const info = html.match(/<section id="informativa"[\s\S]*?<\/section>/)?.[0];
+  const info = html.match(/<details id="informativa"[\s\S]*?<\/details>/)?.[0];
   assert.ok(info, 'informativa presente nella pagina');
   const plain = info.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ');
   for (const [what, re] of [
