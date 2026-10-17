@@ -913,3 +913,7 @@ button.cover-index:focus-visible { outline:3px solid var(--focus); outline-offse
   .header-away :is(.cmp-pickbar,.glossary-index) { top:0; }
 }
 @media(prefers-reduced-motion:reduce) { .appbar { transition:none; } }
+
+@media(prefers-reduced-motion:no-preference) {
+  .days .day { transition:background-color .2s ease,color .2s ease,border-color .2s ease,box-shadow .2s ease,transform .18s ease; }
+}

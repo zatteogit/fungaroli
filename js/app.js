@@ -1431,8 +1431,22 @@ function dayChips(box, selected, onPick, { withAll = false } = {}) {
   else box.querySelector('[aria-selected="true"]')?.scrollIntoView({ block: 'nearest', inline: 'center' });
 }
 
+// Un riscontro anche su iOS, dove le View Transitions sono disattivate.
+const dateFeedbackAnimations = new WeakMap();
+function dateChangeFeedback(calendar, content = '') {
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const selected = document.querySelector(calendar);
+  const animate = (el, frames, duration) => {
+    if (!el || !el.getClientRects().length) return;
+    dateFeedbackAnimations.get(el)?.cancel();
+    dateFeedbackAnimations.set(el, el.animate(frames, {duration, easing:'ease-out'}));
+  };
+  animate(selected, [{transform:'scale(.97)'},{transform:'scale(1.025)',offset:.5},{transform:'scale(1)'}], 240);
+  if (content) document.querySelectorAll(content).forEach(el => animate(el, [{opacity:.4,transform:'translateY(4px)'},{opacity:1,transform:'translateY(0)'}], 220));
+}
+
 function renderDays() {
-  dayChips($('#days'), state.homeDay, (o) => soft(() => { state.homeDay = o; checkSavedSeason(); renderAll(); }), { withAll: true });
+  dayChips($('#days'), state.homeDay, (o) => { if (o === state.homeDay) return; soft(() => { state.homeDay = o; checkSavedSeason(); renderAll(); dateChangeFeedback('#days [aria-selected="true"]', '#hero .cover-body, #hero .cover-index'); }); }, { withAll: true });
 }
 
 function combosList() {
@@ -1773,7 +1787,7 @@ function renderMapDays() {
   const box = $('#map-days');
   const html = Array.from({length:AHEAD_DAYS+1}, (_,o) => { const date = outdoorDate(o); return `<button type="button" class="day" role="tab" data-day-offset="${o}" aria-selected="${o === state.dayOffset}" aria-label="${esc(fmtDate(date,{weekday:'long',day:'numeric',month:'long'}))}"><span class="d1">${o===0?'Oggi':o===1?'Domani':esc(fmtDate(date,{weekday:'long'}))}</span><span class="d2">${esc(fmtDate(date,{day:'numeric'}))}</span></button>`; }).join('');
   if (box.innerHTML !== html) box.innerHTML = html;
-  box.querySelectorAll('[data-day-offset]').forEach(b => b.onclick = () => { state.dayOffset=Number(b.dataset.dayOffset);checkSavedSeason();$('.map-top').classList.remove('days-open');renderAll();renderFilterSummary();$('#map-filters [data-days]')?.focus({preventScroll:true}); });
+  box.querySelectorAll('[data-day-offset]').forEach(b => b.onclick = () => { if(state.dayOffset===Number(b.dataset.dayOffset))return;state.dayOffset=Number(b.dataset.dayOffset);checkSavedSeason();$('.map-top').classList.remove('days-open');renderAll();renderFilterSummary();dateChangeFeedback('#map-filters [data-days]', '#map-results');$('#map-filters [data-days]')?.focus({preventScroll:true}); });
 }
 // riquadro della zona aperto: su telefono la barra delle sezioni si toglie di mezzo (come fa Google Maps)
 new MutationObserver(() => document.documentElement.classList.toggle('map-sheet-open', !$('#map-sheet')?.hidden))
@@ -2595,7 +2609,7 @@ $('#detail')?.addEventListener('click', (e) => {
     if (!c || o === state.dayOffset) return;
     history.replaceState(null, '', walkHref(c.z, o, state.trailId ? c.walk?.t : null));
     state.dayOffset = o; detailAnimate = true;
-    try { renderDetail(); } finally { detailAnimate = false; }
+    try { renderDetail(); dateChangeFeedback('#zone-days [aria-selected="true"]'); } finally { detailAnimate = false; }
     return;
   }
   if (e.target.closest('[data-zone-weather-retry]')) { refreshWeather(true); return; }
