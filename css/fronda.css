@@ -382,7 +382,7 @@ a.src-a:active { opacity: 1; text-decoration-style: solid; }
 #hero .cover-editorial .cover-walk > span { font-size:14px; }
 #hero .cover-editorial .cover-sp { font-size:15px; padding-top:12px; border-top:1px solid color-mix(in srgb,var(--story-ink) 24%,transparent); }
 #hero .cover-editorial .cover-sp small { font-size:12px; line-height:1.5; }
-#hero .cover-editorial .sp-also-score i { background:var(--story-ink) !important; }
+#hero .cover-editorial .sp-also-score i { box-shadow:0 0 0 1px color-mix(in srgb,var(--story-ink) 40%,transparent); }
 #hero .cover-editorial .facts { display:flex; flex-wrap:wrap; gap:10px 16px; padding:0; background:none; border:0; color:inherit; backdrop-filter:none; overflow:visible; white-space:normal; }
 #hero .cover-editorial .facts .fact { display:flex; min-height:24px; padding:0; font-size:13px; color:inherit; box-shadow:none; }
 #hero .cover-editorial .facts :is(.fk,.fc,.fx) { display:inline; }
