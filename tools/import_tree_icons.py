@@ -59,7 +59,7 @@ MODES = {
     "alberi": ("data/recognize-trees.json", "assets/tree-traits", "data/tree-trait-icons.json", "degli alberi"),
     "piante": ("data/recognize-plants.json", "assets/plant-traits", "data/plant-trait-icons.json", "delle piante"),
 }
-# chiavi con un'icona per valore: le domande che si pongono, senza taglia, ambiente e segni particolari
+# chiavi con un'icona per valore: le domande che si pongono, senza size degli alberi, ambiente e segni particolari (height_class delle piante è illustrata)
 SKIP = ("size", "habitat", "special")
 
 
@@ -106,7 +106,7 @@ def main(inc, mode="alberi", stato=False, stati=(STATE_OK,)):
         x0, y0, x1, y1 = Image.open(f).getchannel("A").point(lambda a: 255 if a > ALPHA else 0).getbbox()
         margins[f.stem] = min(x0, y0, SIZE - x1, SIZE - y1)
     out = {
-        "note": f"Icone dei caratteri {who} disegnate con AI (image_gen) a partire dallo schema dei caratteri di {src}, riviste dal proprietario del progetto, senza opere di terzi. Una icona per valore, non per specie: non sono foto e non servono a identificare.",
+        "note": f"Icone dei caratteri {who} disegnate con AI (image_gen) a partire dallo schema dei caratteri di {src}, verificate per l’integrazione nel progetto, senza opere di terzi. Una icona per valore, non per specie: non sono foto e non servono a identificare.",
         **LICENSE,
         "path": f"{out_dir}/<chiave>-<valore>.webp",
         "values": {k: [v["id"] for v in schema[k]["values"] if v["id"] in values.get(k, [])] for k in schema if k in values},

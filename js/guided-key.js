@@ -64,20 +64,22 @@ const X_IC = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7l10 10M17
 const MORE_IC = '<svg viewBox="0 0 24 24"><path d="m7 10 5 5 5-5"/></svg>';
 
 export const loadKeyData = load;
-// icone dei caratteri degli alberi: una per valore (data/tree-trait-icons.json); le piante non le hanno
-let TREE_ICONS = null;
-export const loadTreeIcons = () => (TREE_ICONS ||= fetch('data/tree-trait-icons.json').then((r) => (r.ok ? r.json() : null)).then((d) => d?.values || null).catch(() => null));
-const iconSrc = (icons, k, v) => (icons?.[k]?.includes(v) ? `assets/tree-traits/${k}-${v}.webp` : '');
+// Una tavola per ciascun valore documentato: alberi e piante condividono il renderer.
+let TREE_ICONS = null, PLANT_ICONS = null;
+const loadIcons = path => fetch(path).then(r=>r.ok?r.json():null).then(d=>d?.values||null).catch(()=>null);
+export const loadTreeIcons = () => (TREE_ICONS ||= loadIcons('data/tree-trait-icons.json'));
+export const loadPlantIcons = () => (PLANT_ICONS ||= loadIcons('data/plant-trait-icons.json'));
+const iconSrc = (icons, k, v, mode = 'alberi') => icons?.[k]?.includes(v) ? `assets/${mode==='piante'?'plant':'tree'}-traits/${k}-${v}.webp` : '';
 const ill = (src, size, cls = 'ts-ill') => `<img class="${cls}" src="${esc(src)}" alt="" width="${size}" height="${size}" loading="lazy" decoding="async">`;
 // tessere dei caratteri per le schede di piante e alberi: stessi caratteri del percorso guidato, con le loro etichette.
 // I segni particolari stanno in una riga a parte; i valori non verificati (null) non compaiono.
-// Con `icons` (alberi) ogni tessera mostra il disegno del valore sopra il testo: con due o più valori, i primi due
+// Con `icons` (alberi e piante) ogni tessera mostra il disegno del valore sopra il testo: con due o più valori, i primi due
 // affiancati in piccolo e il testo completo sotto. Un valore senza icona resta solo testo.
-export function traitTilesHtml(data, traits, icons = null) {
+export function traitTilesHtml(data, traits, icons = null, mode = 'alberi') {
   if (!data || !traits) return '';
   const tiles = Object.entries(data.schema).filter(([k, q]) => k !== 'special' && q.ask !== false && traits[k] != null && [].concat(traits[k]).length)
     .map(([k, q]) => {
-      const vals = [].concat(traits[k]), srcs = vals.map((v) => iconSrc(icons, k, v)).filter(Boolean).slice(0, 2);
+      const vals = [].concat(traits[k]), srcs = vals.map((v) => iconSrc(icons, k, v, mode)).filter(Boolean).slice(0, 2);
       const art = srcs.length ? `<span class="ts-art${srcs.length > 1 ? ' ts-art-2' : ''}" aria-hidden="true">${srcs.map((s) => ill(s, srcs.length > 1 ? 44 : 64)).join('')}</span>` : '';
       return `<li>${art}<span class="ts-k" data-no-glossary>${esc(q.short)}</span><span class="ts-v">${vals.map((v, i) => termHtml(q, v, i > 0)).join(' o ')}</span></li>`;
     });
@@ -96,7 +98,7 @@ export function tellHtml(c, ids, n) {
 export async function renderGuidedKey(box, mode, { items, thumb, note = '' }) {
   box.dataset.glossaryContext = mode === 'alberi' ? 'Alberi' : 'Piante';
   if (!box.innerHTML.trim()) box.innerHTML = '<p class="small muted">Carico i caratteri…</p>';
-  const [data, icons] = await Promise.all([load(mode), mode === 'alberi' ? loadTreeIcons() : null]);
+  const [data, icons] = await Promise.all([load(mode), mode === 'alberi' ? loadTreeIcons() : loadPlantIcons()]);
   if (!data) { box.innerHTML = '<p class="notice">I caratteri per il percorso guidato non sono disponibili in questo momento. Puoi sfogliare il catalogo.</p>'; return; }
   const st = (STATE[mode] ||= { ans: {}, editing: '' });
   const pool = items.filter((it) => data.items[it.id]).map((it) => ({ ...it, traits: data.items[it.id].traits, confusables: data.items[it.id].confusables || [], note: data.items[it.id].note || '' }));
@@ -107,18 +109,18 @@ export async function renderGuidedKey(box, mode, { items, thumb, note = '' }) {
   // termine botanico in grassetto, sotto la spiegazione in parole semplici (se dice qualcosa in più)
   const optLabelHtml = (v) => v.term && v.term.toLowerCase() !== v.label.toLowerCase()
     ? `<span class="id-opt-l"><b class="gk-term">${esc(v.term)}</b><span class="gk-expl">${esc(v.label)}</span></span>` : `<span class="id-opt-l">${esc(v.label)}</span>`;
-  // una sola carta domanda per volta: la riga sui disegni (alberi) compare quindi una volta per pagina
+  // una sola carta domanda per volta: la riga sui disegni compare quindi una volta per pagina
   const qCard = (k, n) => {
-    const q = data.schema[k], withArt = q.values.some((v) => iconSrc(icons, k, v.id));
+    const q = data.schema[k], withArt = q.values.some((v) => iconSrc(icons, k, v.id, mode));
     return `<section class="id-q id-q-big gk-q">${n ? `<p class="eyebrow">Domanda ${n}</p>` : ''}<h3>${esc(q.question)}</h3><p class="small muted">${esc(q.short)}</p>${withArt ? '<p class="small muted gk-ill-note">Disegni schematici, non foto: confronta con il testo e le foto.</p>' : ''}
-      <div class="id-grid id-grid-txt${withArt ? ' gk-grid-ill' : ''}">${q.values.map((v) => `<button type="button" class="id-opt" data-k="${esc(k)}" data-v="${esc(v.id)}" aria-pressed="${st.ans[k] === v.id}">${withArt ? `<span class="id-art" aria-hidden="true">${iconSrc(icons, k, v.id) ? ill(iconSrc(icons, k, v.id), 56) : ''}</span>` : ''}${optLabelHtml(v)}</button>`).join('')}
+      <div class="id-grid id-grid-txt${withArt ? ' gk-grid-ill' : ''}">${q.values.map((v) => `<button type="button" class="id-opt" data-k="${esc(k)}" data-v="${esc(v.id)}" aria-pressed="${st.ans[k] === v.id}">${withArt ? `<span class="id-art" aria-hidden="true">${iconSrc(icons, k, v.id, mode) ? ill(iconSrc(icons, k, v.id, mode), 56) : ''}</span>` : ''}${optLabelHtml(v)}</button>`).join('')}
       <button type="button" class="id-opt id-opt-dk" data-skip="${esc(k)}"><span class="id-opt-l">non lo vedo</span></button></div></section>`;
   };
   const row = (k) => {
     const q = data.schema[k], v = st.ans[k];
     if (st.editing === k) return `</ul>${qCard(k, 0)}<ul class="id-answers">`;
     return `<li class="id-row${v == null ? ' skipped' : ''}"><button type="button" class="id-row-main" data-edit="${esc(k)}" aria-label="${esc(q.short)}: ${esc(v == null ? 'non lo vedo' : label(q, v))}. Cambia">
-      <span class="id-row-k">${esc(q.short)}</span><span class="id-row-v">${v != null && iconSrc(icons, k, v) ? ill(iconSrc(icons, k, v), 28, 'ts-ill gk-row-ill') : ''}${esc(v == null ? 'non lo vedo' : termOf(q, v))}</span><span class="id-row-edit" aria-hidden="true">${MORE_IC}</span></button>
+      <span class="id-row-k">${esc(q.short)}</span><span class="id-row-v">${v != null && iconSrc(icons, k, v, mode) ? ill(iconSrc(icons, k, v, mode), 28, 'ts-ill gk-row-ill') : ''}${esc(v == null ? 'non lo vedo' : termOf(q, v))}</span><span class="id-row-edit" aria-hidden="true">${MORE_IC}</span></button>
       <button type="button" class="id-row-x" data-clear="${esc(k)}" aria-label="Togli la risposta">${X_IC}</button></li>`;
   };
   const head = answered.length ? `<div class="id-answers-head"><span>${answered.length === 1 ? 'La tua risposta' : `Le tue ${answered.length} risposte`}</span><button type="button" class="af-add" data-gk-reset>Ricomincia</button></div><ul class="id-answers">${answered.map(row).join('')}</ul>`.replaceAll('<ul class="id-answers"></ul>', '') : '';
