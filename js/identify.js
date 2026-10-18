@@ -225,6 +225,10 @@ function comparisonControls(t, trait='cap_color') {
   const fields = `<div class="ts-dots${key==='shape'?' ts-forms':''}" role="group" aria-label="${label}: ${esc(t.name||t.latin)}">${values.map(v=>`<button type="button" class="${key==='shape'?'ts-form':'ts-dot ts-chip'}"${key!=='shape'?` style="--c:${esc(COLORS[v]?.[1] || 'var(--muted)')}"`:''} data-cmp-variant="${key}" data-cmp-variant-key="${esc(t.key)}" value="${esc(v)}" aria-pressed="${chosen[key]===v}">${key==='shape'?shapeHint(v):''}${esc(optLabel(QK(trait),v))}</button>`).join('')}</div>`;
   return `<div class="cmp-variant-fields">${fields}</div><span class="cmp-variant-status" role="status"></span>`;
 }
+const comparisonArtworkJobs = new WeakMap();
+function revealComparisonArtwork(slot) {
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) slot.animate?.([{opacity:.25},{opacity:1}],{duration:180,easing:'ease-out'});
+}
 function updateComparisonVariant(control, gallery) {
   const key = control.dataset.cmpVariantKey, record = ICONS?.[key] || {}, t = TAXA.find(t=>t.key===key);
   if (!t) return;
@@ -248,31 +252,43 @@ function updateComparisonVariant(control, gallery) {
     const part = slot.dataset.cmpIllPart;
     if (slot.dataset.cmpIllKey!==key || slot.dataset.cmpIllValue) return;
     if (part==='sotto') {
-      if (control.dataset.cmpVariant==='underColor') { slot.dataset.variantWanted='schematic'; slot.innerHTML=hymArt([].concat(t.traits?.hymenophore || [])[0],[chosen.underColor]); }
+      if (control.dataset.cmpVariant==='underColor') { slot.dataset.variantWanted='schematic'; slot.innerHTML=hymArt([].concat(t.traits?.hymenophore || [])[0],[chosen.underColor]); revealComparisonArtwork(slot); }
       return;
     }
     if (!['cappello','gambo'].includes(part) || control.dataset.cmpVariant==='underColor') return;
+    const job = Symbol(); comparisonArtworkJobs.set(slot,job);
+    slot.getAnimations().forEach(animation=>animation.cancel());
+    const finish = () => {
+      if (comparisonArtworkJobs.get(slot)!==job) return;
+      slot.classList.remove('is-loading'); slot.removeAttribute('aria-busy');
+      const busy=[...gallery.querySelectorAll('[data-cmp-ill-key][aria-busy="true"]')].some(el=>el.dataset.cmpIllKey===key);
+      controls.forEach(group=>group.setAttribute('aria-busy',String(busy)));
+    };
     slot.dataset.variantWanted='';
     const colorAvailable = !c || c===c0 || record.colors?.values?.includes(c);
     const shapeAvailable = !f || f===f0 || record.shapes?.values?.includes(f);
     if (!ICONS?.[key] || !colorAvailable || !shapeAvailable) {
       if (part==='cappello') slot.innerHTML=capArt([f || [].concat(t.traits?.cap_shape || [])[0]],[c || [].concat(t.traits?.cap_color || [])[0]],t.traits?.cap_veil===true);
       for (const group of controls) group.querySelector('.cmp-variant-status').textContent='Variante mostrata con un disegno schematico.';
+      finish(); revealComparisonArtwork(slot);
       return;
     }
     if (!slot.querySelector('img')) slot.innerHTML=illus(key,part);
     const image = slot.querySelector('img');
-    if (!image) return;
+    if (!image) { finish(); return; }
     const url = ASSET(`assets/traits/${key}-${part}${suffix}.webp`);
     slot.dataset.variantWanted = url;
-    if (image.getAttribute('src')===url) return;
+    if (image.getAttribute('src')===url) { finish(); return; }
+    slot.classList.add('is-loading'); slot.setAttribute('aria-busy','true');
+    controls.forEach(group=>group.setAttribute('aria-busy','true'));
     const pre = new Image(); pre.src = url;
     pre.decode().then(()=>{
-      if (!slot.isConnected || slot.dataset.variantWanted!==url) return;
+      if (!slot.isConnected || comparisonArtworkJobs.get(slot)!==job) return;
       image.src = url;
-      if (!matchMedia('(prefers-reduced-motion: reduce)').matches) image.animate?.([{opacity:.35},{opacity:1}],{duration:180,easing:'ease-out'});
+      finish(); revealComparisonArtwork(slot);
     }).catch(()=>{
-      if (slot.dataset.variantWanted!==url) return;
+      if (comparisonArtworkJobs.get(slot)!==job) return;
+      finish();
       for (const group of controls) group.querySelector('.cmp-variant-status').textContent = 'Disegno non disponibile. Resta visibile l’ultima immagine caricata.';
     });
   });
