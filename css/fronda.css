@@ -981,9 +981,23 @@ button.cover-index:focus-visible { outline:3px solid var(--focus); outline-offse
    Una sola riga resta ancorata: titolo e filtri, senza duplicare il blocco delle scelte. */
 #appbar-home-filters { display:none; }
 @media(max-width:899px) {
-  :root.title-in-bar body .appbar[data-context="home"] :is(.brand,.brand-place) { display:none; }
+  :root.title-in-bar body .appbar[data-context="home"] :is(.brand,.brand-place) { opacity:0; visibility:hidden; pointer-events:none; transition:opacity .24s ease,visibility 0s .24s; }
   :root.title-in-bar body .appbar[data-context="home"] .appbar-title { display:block; left:var(--gutter); right:145px; max-width:none; text-align:left; transform:none; }
   :root.title-in-bar body .appbar[data-context="home"] .appbar-actions > :not(#appbar-home-filters) { display:none; }
   :root.title-in-bar body .appbar[data-context="home"] #appbar-home-filters { display:flex; }
   .appbar[data-context="home"] .home-filter-button { font-size:14px; }
+}
+
+/* Titolo compatto: dissolvenza stabile, senza ricampionare le lettere in verticale. */
+:root body .appbar .appbar-title { transform:translateX(-50%); transition:opacity .24s ease; }
+@media(max-width:899px) {
+  :root body .appbar[data-context="home"] .appbar-title { display:block; left:var(--gutter); right:145px; max-width:none; text-align:left; transform:none; }
+  .appbar[data-context="home"] :is(.brand,.brand-place) { transition:opacity .24s ease,visibility 0s; }
+}
+@media(max-width:760px) {
+  :root body .appbar:not(:has(.appbar-back:not([hidden]))) .appbar-title { transform:none; }
+}
+:root body .appbar[data-context="comparison"] .appbar-title { transform:none; }
+@media(prefers-reduced-motion:reduce) {
+  :root body .appbar[data-context] .appbar-title,:root body .appbar[data-context="home"] :is(.brand,.brand-place),:root.title-in-bar body .appbar[data-context="home"] :is(.brand,.brand-place) { transition:none; }
 }

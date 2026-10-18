@@ -497,7 +497,7 @@ function revealHeader() {
 }
 function updateHeaderScroll() {
   const y = Math.max(0, scrollY);
-  if (!mobileHeader.matches || y < 64 || ['mappa','uscite'].includes(document.body.dataset.page) || document.querySelector('.appbar[data-context="comparison"]') || document.querySelector('.appbar :focus-visible')) {
+  if (!mobileHeader.matches || watchedTitle?.isConnected || y < 64 || ['mappa','uscite'].includes(document.body.dataset.page) || document.querySelector('.appbar[data-context="comparison"]') || document.querySelector('.appbar :focus-visible')) {
     revealHeader();
     return;
   }
@@ -519,11 +519,16 @@ addEventListener('hashchange', revealHeader);
 mobileHeader.addEventListener('change', revealHeader);
 // Sulle pagine con la foto in testata la barra diventa piena solo dopo la foto.
 function onScrollBar() {
+  updateCompactTitle();
   updateHeaderScroll();
   const h = document.querySelector('.view:not([hidden]) .phero');
   document.documentElement.classList.toggle('scrolled', !h || scrollY > h.offsetHeight - 70);
 }
-addEventListener('scroll', onScrollBar, { passive: true });
+let headerFrame=0;
+function scheduleHeader(){if(!headerFrame)headerFrame=requestAnimationFrame(()=>{headerFrame=0;onScrollBar();});}
+addEventListener('scroll',scheduleHeader,{passive:true});
+addEventListener('resize',scheduleHeader,{passive:true});
+globalThis.visualViewport?.addEventListener('resize',scheduleHeader,{passive:true});
 
 // tasto indietro in alto a sinistra: freccia + nome della pagina a cui torni
 const navStack = [];
@@ -563,27 +568,26 @@ function parentOf(r) {
 }
 const PARENT_TITLE = (r) => ({ '#/diario':'Taccuino', '#/diario/esempio':'Diario di prova', '#/scopri': 'Scopri', '#/specie': 'Funghi', '#/alberi': 'Alberi', '#/piante':'Piante e fiori', '#/riconosci': 'Impara a riconoscere', '#/confronta':'Confronta', '#/guide': 'Approfondimenti', '#/sfide': 'Sfide', '#/impara': 'Guide', '#/': 'Uscite' }[parentOf(r)]);
 // Quando il titolo della pagina passa sotto la barra, lo mostriamo compatto al centro su telefono e tablet.
-let titleIO = null;
+let watchedTitle = null, compactTitle = false;
+function updateCompactTitle(initial=false) {
+  const h=watchedTitle,bar=$('.appbar');
+  if(!h?.isConnected||!bar)return;
+  // Altezza di layout: non cambia se un’animazione trasla visivamente la barra.
+  const edge=bar.offsetHeight+(parseFloat(getComputedStyle(bar).top)||0);
+  const rect=h.getBoundingClientRect();
+  // Isteresi spaziale: il titolo deve rientrare davvero prima di togliere il compatto.
+  const next=rect.height>0&&scrollY>0&&(initial?rect.bottom<=edge:compactTitle?rect.bottom<edge+16:rect.bottom<=edge-4);
+  if(next!==compactTitle||initial){compactTitle=next;document.documentElement.classList.toggle('title-in-bar',next);}
+}
 function watchTitle() {
-  const bar = $('.appbar-title');
-  if (!bar) return;
-  titleIO?.disconnect();
-  document.documentElement.classList.remove('title-in-bar');
-  // il titolo del livello in cui sei: prima quello della pagina interna (confronto, scheda), poi quello della sezione
-  const v = $('.view:not([hidden])');
-  const h = v?.querySelector('.cmp-title') || v?.querySelector('.phero-title') || v?.querySelector('.view-title');
-  // Anche la home passa dal titolo grande a quello compatto; il logo lascia spazio.
-  if (!h) return;
-  bar.textContent = h.textContent.trim();
-  const top = $('.appbar').getBoundingClientRect().bottom;
-  // stato iniziale subito (anche tornando a una pagina già scorsa): la barra entra nella transizione già giusta, senza scatto
-  const hr = h.getBoundingClientRect();
-  document.documentElement.classList.toggle('title-in-bar', hr.height > 0 && hr.bottom <= top);
-  titleIO = new IntersectionObserver(([e]) => {
-    // fuori dalla vista ma sopra (scorso via), non sotto (pagina corta o non ancora raggiunto)
-    document.documentElement.classList.toggle('title-in-bar', !e.isIntersecting && e.boundingClientRect.top < top);
-  }, { rootMargin: `-${Math.round(top)}px 0px 0px 0px` });
-  titleIO.observe(h);
+  const bar=$('.appbar-title');if(!bar)return;
+  const v=$('.view:not([hidden])');
+  const h=v?.querySelector('.cmp-title')||v?.querySelector('.phero-title')||v?.querySelector('.view-title');
+  const changed=h!==watchedTitle;watchedTitle=h||null;
+  if(!h){compactTitle=false;document.documentElement.classList.remove('title-in-bar');return;}
+  bar.textContent=h.textContent.trim();
+  updateCompactTitle(changed);
+  revealHeader();
 }
 // Le pagine operative espongono l'azione pertinente al contenuto nella barra.
 function updateHeaderActions(r) {
