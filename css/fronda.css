@@ -1073,3 +1073,7 @@ button.cover-index:focus-visible { outline:3px solid var(--focus); outline-offse
 /* Lo stesso indice della home, anche nella testata del luogo. */
 .hero-indicators > button.ring { border:0; padding:0; font:inherit; cursor:help; }
 .hero-indicators > button.ring:focus-visible { outline:3px solid var(--focus); outline-offset:5px; }
+
+.directions-confirm h2 { margin:0 0 12px; font:600 26px/1.2 var(--font-display); }
+.directions-confirm-actions { display:flex; justify-content:flex-end; flex-wrap:wrap; gap:8px; margin-top:20px; }
+.directions-confirm-actions .btn { min-height:44px; }

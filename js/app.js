@@ -2901,6 +2901,33 @@ const ACCESS_CHECK = 'Verifica transitabilità e divieti sul posto: le piste for
 const driveTo = (ax) => ax.surface === 2 ? 'su sentiero o pista (transito in auto da verificare)' : `in auto ${ax.surface === 0 ? 'su asfalto' : `su ${SURF_LABEL[ax.surface]}`}`;
 const gmaps = directionsTo;
 
+// Tutti gli accessi al navigatore passano dalla stessa conferma, anche nelle schede modali.
+let directionsDialog;
+function confirmDirections(event) {
+  if(event.defaultPrevented || event.button>1)return;
+  const link=event.target.closest?.('a[href]');
+  if(!link || link.hasAttribute('data-confirmed-directions'))return;
+  const url=new URL(link.href,location.href);
+  if(url.protocol!=='https:' || url.hostname!=='www.google.com' || !url.pathname.startsWith('/maps/dir/'))return;
+  event.preventDefault();event.stopImmediatePropagation();
+  if(!directionsDialog){
+    directionsDialog=document.createElement('dialog');
+    directionsDialog.id='directions-confirm';directionsDialog.className='community-dialog directions-confirm';
+    directionsDialog.setAttribute('aria-labelledby','directions-confirm-title');
+    directionsDialog.setAttribute('aria-describedby','directions-confirm-description');
+    directionsDialog.innerHTML='<h2 id="directions-confirm-title">Aprire il navigatore?</h2><p id="directions-confirm-description">Le indicazioni si apriranno in Google Maps.</p><p class="small muted" data-directions-destination></p><div class="directions-confirm-actions"><button type="button" class="btn ghost" data-directions-cancel autofocus>Resta qui</button><a class="btn primary" data-confirmed-directions target="_blank" rel="noopener noreferrer">Apri navigatore</a></div>';
+    document.body.append(directionsDialog);
+    directionsDialog.querySelector('[data-directions-cancel]').onclick=()=>directionsDialog.close();
+    directionsDialog.querySelector('[data-confirmed-directions]').onclick=()=>directionsDialog.close();
+  }
+  directionsDialog.querySelector('[data-confirmed-directions]').href=url.href;
+  directionsDialog.querySelector('[data-directions-destination]').textContent=link.getAttribute('aria-label')||link.textContent.trim();
+  openModal(directionsDialog);
+}
+document.addEventListener('click',confirmDirections,true);
+document.addEventListener('auxclick',confirmDirections,true);
+
+
 function renderWhenWeather(z,d) {
   const w=wxOf(z,d);if(!w)return '';
   const alt=alternativeFor(z,state.dayOffset,d);
