@@ -13,6 +13,10 @@ Il ramo di produzione e i documenti in `docs/` fanno fede. Ciò che sta solo in 
 
 ## Registro
 
+| Lavoro nuovo · 18/10/2026 | Dove | Stato |
+|---|---|---|
+| Sezione Animali: impollinatori, osservazione e prudenza durante le passeggiate | ramo `research/animals-section`; [studio e fonti](animali-2026-10-18/README.md) | **Ipotesi iniziale su richiesta di Matteo**, non integrata. Catalogo ragionato di 18 voci, benchmark, schema e lacune; da valutare prima di implementazione o produzione immagini. |
+
 Rilascio delle parti verificate su richiesta di Matteo del 17/10: [valutazione dei rami sospesi](valutazione-rilascio-2026-10-17.md). Include le PR #93, #60 e #98 nel candidato di rilascio; non adotta i due modelli micologici di ricerca né i pacchetti grezzi delle immagini.
 
 | Lavoro | Dove | Stato (17/10/2026) |
