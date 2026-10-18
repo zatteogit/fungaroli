@@ -1,0 +1,30 @@
+import {test,expect} from '@playwright/test';
+import {preparePage} from '../../tools/visual-audit.mjs';
+for(const width of [320,390])test(`caratteri botanici illustrati nelle schede e nella chiave a ${width}px`,async({browser})=>{
+ const context=await browser.newContext({viewport:{width,height:844},reducedMotion:'reduce',serviceWorkers:'block'}),page=await preparePage(context);
+ await page.addInitScript(()=>localStorage.setItem('fungaroli:install-later',String(Date.now())));
+ await page.goto('/#/pianta/finocchietto');
+ const tiles=page.locator('[data-plant-traits="finocchietto"]');
+ await expect(tiles.locator('img[src$="leaf_type-molto_divisa_fine.webp"]')).toHaveCount(1);
+ await expect(tiles.locator('img[src$="flower_shape-ombrella.webp"]')).toHaveCount(1);
+ await expect(tiles).toContainText('Lacinie filiformi');
+ await tiles.scrollIntoViewIfNeeded();
+ for(const image of await tiles.locator('img').all())await expect.poll(()=>image.evaluate(i=>i.complete&&i.naturalWidth>0)).toBe(true);
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+ await page.goto('/#/riconosci/piante');
+ const question=page.locator('#field-identify .gk-q');await expect(question.locator('img[src*="plant-traits/"]').first()).toBeVisible();
+ const choice=question.locator('button[data-k][data-v]').first(),key=await choice.getAttribute('data-k'),value=await choice.getAttribute('data-v');
+ await choice.click();
+ await expect(page.locator(`.id-answers img[src$="${key}-${value}.webp"]`)).toBeVisible();
+ await page.goto('/#/albero/castagno');
+ await expect(page.locator('[data-tree-traits] img[src$="tree-traits/fruit_type-riccio_spinoso.webp"]')).toHaveCount(1);
+ await context.close();
+});
+test('indice botanico non disponibile: la scheda conserva i dati e non mostra immagini rotte',async({browser})=>{
+ const context=await browser.newContext({viewport:{width:390,height:844},serviceWorkers:'block'}),page=await preparePage(context);
+ await page.addInitScript(()=>localStorage.setItem('fungaroli:install-later',String(Date.now())));
+ await page.route('**/data/plant-trait-icons.json',r=>r.fulfill({status:503,body:'unavailable'}));
+ await page.goto('/#/pianta/finocchietto');
+ const slot=page.locator('[data-plant-traits="finocchietto"]');await expect(slot).toContainText('Lacinie filiformi');
+ await expect(slot.locator('img')).toHaveCount(0);await context.close();
+});

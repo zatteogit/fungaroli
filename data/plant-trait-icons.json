@@ -1,0 +1,131 @@
+{
+ "note": "Icone dei caratteri delle piante disegnate con AI (image_gen) a partire dallo schema dei caratteri di data/recognize-plants.json, verificate per l’integrazione nel progetto, senza opere di terzi. Una icona per valore, non per specie: non sono foto e non servono a identificare.",
+ "author": "Fronda/Fungaroli, rivista dal progetto",
+ "license": "CC BY-SA 4.0",
+ "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.it",
+ "path": "assets/plant-traits/<chiave>-<valore>.webp",
+ "values": {
+  "growth_form": [
+   "erba",
+   "arbusto",
+   "rampicante"
+  ],
+  "height_class": [
+   "bassa",
+   "media",
+   "alta"
+  ],
+  "leaf_arrangement": [
+   "alterne",
+   "opposte",
+   "verticillate",
+   "rosetta_basale"
+  ],
+  "leaf_type": [
+   "semplice",
+   "composta",
+   "molto_divisa_fine",
+   "molto_divisa_larga",
+   "aghiforme"
+  ],
+  "leaf_margin": [
+   "intero",
+   "dentato",
+   "lobato"
+  ],
+  "flower_color": [
+   "bianco",
+   "giallo",
+   "arancio_rosso",
+   "rosa",
+   "viola_blu",
+   "verdastro"
+  ],
+  "flower_shape": [
+   "cinque_petali",
+   "quattro_petali",
+   "sei_tepali",
+   "molti_petali",
+   "ombrella",
+   "capolino",
+   "campanula",
+   "tubo_labbra",
+   "farfalla",
+   "labello",
+   "petali_rovesciati",
+   "spata",
+   "fiori_minuti",
+   "nessun_fiore_vistoso"
+  ],
+  "fruit_type": [
+   "carnoso",
+   "mora",
+   "falso_frutto",
+   "capsula",
+   "baccello",
+   "secco_piccolo",
+   "secco_piumoso"
+  ],
+  "fruit_color": [
+   "rosso",
+   "arancio",
+   "rosa",
+   "nero",
+   "blu_metallico",
+   "bruno"
+  ]
+ },
+ "margins": {
+  "flower_color-arancio_rosso": 4,
+  "flower_color-bianco": 4,
+  "flower_color-giallo": 4,
+  "flower_color-rosa": 4,
+  "flower_color-verdastro": 4,
+  "flower_color-viola_blu": 4,
+  "flower_shape-campanula": 5,
+  "flower_shape-capolino": 4,
+  "flower_shape-cinque_petali": 5,
+  "flower_shape-farfalla": 4,
+  "flower_shape-fiori_minuti": 4,
+  "flower_shape-labello": 4,
+  "flower_shape-molti_petali": 4,
+  "flower_shape-nessun_fiore_vistoso": 4,
+  "flower_shape-ombrella": 4,
+  "flower_shape-petali_rovesciati": 5,
+  "flower_shape-quattro_petali": 4,
+  "flower_shape-sei_tepali": 4,
+  "flower_shape-spata": 4,
+  "flower_shape-tubo_labbra": 4,
+  "fruit_color-arancio": 4,
+  "fruit_color-blu_metallico": 4,
+  "fruit_color-bruno": 4,
+  "fruit_color-nero": 4,
+  "fruit_color-rosa": 4,
+  "fruit_color-rosso": 5,
+  "fruit_type-baccello": 4,
+  "fruit_type-capsula": 4,
+  "fruit_type-carnoso": 5,
+  "fruit_type-falso_frutto": 4,
+  "fruit_type-mora": 4,
+  "fruit_type-secco_piccolo": 4,
+  "fruit_type-secco_piumoso": 5,
+  "growth_form-arbusto": 4,
+  "growth_form-erba": 4,
+  "growth_form-rampicante": 4,
+  "height_class-alta": 4,
+  "height_class-bassa": 4,
+  "height_class-media": 4,
+  "leaf_arrangement-alterne": 4,
+  "leaf_arrangement-opposte": 4,
+  "leaf_arrangement-rosetta_basale": 4,
+  "leaf_arrangement-verticillate": 4,
+  "leaf_margin-dentato": 4,
+  "leaf_margin-intero": 4,
+  "leaf_margin-lobato": 4,
+  "leaf_type-aghiforme": 4,
+  "leaf_type-composta": 4,
+  "leaf_type-molto_divisa_fine": 4,
+  "leaf_type-molto_divisa_larga": 4,
+  "leaf_type-semplice": 4
+ }
+}

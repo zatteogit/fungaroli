@@ -96,7 +96,7 @@ def load_rows(inc, stato=False, stati=(STATE_OK,)):
     Restituisce (righe da importare, tavole saltate con il loro stato, tutte le righe)."""
     inc = Path(inc)
     manifest = json.loads((inc / "manifest.json").read_text(encoding="utf-8"))
-    rows = [r for r in manifest if r["tipo"] == "illustrazione" and r.get("soggetto") != "alberi"]
+    rows = [r for r in manifest if r["tipo"] == "illustrazione" and r.get("soggetto") not in ("alberi", "piante")]
     if not stato:
         return rows, {}, rows
     from sheet_cells import sheet_states

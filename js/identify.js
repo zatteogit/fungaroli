@@ -231,7 +231,7 @@ function updateComparisonVariant(control, gallery) {
     else { suffix = `-${f}`; missing = true; }
   } else if (c && c!==c0) suffix = `-${c}`;
   else if (f && f!==f0) suffix = `-${f}`;
-  const controls = [...gallery.querySelectorAll('[data-cmp-controls]')].filter(el=>el.dataset.cmpControls===key);
+  const controls = [...gallery.querySelectorAll('[data-cmp-controls]')].filter(el=>el.dataset.cmpControls===key && el.querySelector('.cmp-variant-status'));
   for (const group of controls) {
     group.querySelectorAll('[data-cmp-variant]').forEach(button=>button.setAttribute('aria-pressed',String(button.value===chosen[button.dataset.cmpVariant])));
     group.querySelector('.cmp-variant-status').textContent = missing?'Forma illustrata nel colore di base: la combinazione selezionata non è ancora disponibile.':'';

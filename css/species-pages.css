@@ -547,3 +547,10 @@ body[data-page="mappa"] .view-map { border-radius:0; }
   .fungus-page .ts-card-cap > .ts-art { height:auto; min-height:112px; }
   .fungus-page .ts-card-cap .ts-art > .ts-ill { width:104px; height:104px; }
 }
+
+/* Caratteri botanici: testo e immagini condividono la stessa tessera leggibile. */
+[data-plant-traits] .trait-strip { grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }
+[data-plant-traits] .trait-strip > li { padding:14px; gap:8px; border-radius:18px; }
+[data-plant-traits] .ts-k { font:500 12px/1.4 var(--font-body); letter-spacing:0; text-transform:none; }
+[data-plant-traits] .ts-v { font:500 15px/1.5 var(--font-body); }
+@media(min-width:760px) { [data-plant-traits] .trait-strip { grid-template-columns:repeat(3,minmax(0,1fr)); } }
