@@ -25,3 +25,7 @@ Solo validazione diretta dei JSON, rapporto asset, verifica hash/metadati, contr
 ## Esito locale
 
 Integrate 29 nuove schede (12 funghi, 8 piante, 9 animali), 55 fotografie nuove e 2 riusi. Escluse 69 fotografie vecchie dalle gallerie; originali e file restano conservati. Le cinque sostituzioni ulteriori riguardano satanas, virescens, felleus e aereus, con macro separata del reticolo di felleus. Verificati nuovamente gli hash dei 165 export importati e i metadati WebP. Record scientifici preesistenti invariati. Validazione diretta dei quattro documenti riuscita; rapporto asset senza mancanze non elencate, incoerenze o disegni da rifare. Restano dichiarate 36 illustrazioni base future e le pendenze pregresse. Schede Vescia, Viola e Martora osservate nel browser locale, compreso visore del dettaglio dello sperone e crediti. Nessuna suite o dry-run eseguiti.
+
+## Correzione del visore fotografico
+
+Durante il riscontro online della v229 è emerso che la griglia del visore lasciava crescere la riga fino all’altezza intrinseca dell’immagine: fotografia verticale 900×1200 mostrata a 900×1200 dentro una finestra alta 720, con gambo nascosto. La griglia ora limita righe e colonne allo spazio disponibile: la stessa foto è mostrata intera a 540×720. Controllati manualmente nel browser anche zoom/riduzione e una foto orizzontale; nessuna suite. Shell v230.

@@ -669,7 +669,7 @@ body[data-page="mappa"] #views { max-width: none; padding: 0; }
 html.lb-open { overflow: hidden; }
 .lb { border: 0; padding: 0; margin: 0; width: 100vw; height: 100dvh; max-width: none; max-height: none; background: #0b0b0a; color: #f2f0ea; overflow: hidden; }
 .lb::backdrop { background: #0b0b0a; }
-.lb-stage { position: absolute; inset: 0; display: grid; place-items: center; touch-action: none; overflow: hidden; cursor: zoom-in; }
+.lb-stage { position: absolute; inset: 0; display: grid; grid-template: minmax(0, 1fr) / minmax(0, 1fr); place-items: center; touch-action: none; overflow: hidden; cursor: zoom-in; }
 .lb.zoomed .lb-stage { cursor: grab; }
 .lb-stage img { max-width: 100%; max-height: 100%; object-fit: contain; transform-origin: center center; user-select: none; -webkit-user-drag: none; will-change: transform; }
 .lb-top { position: absolute; top: 0; left: 0; right: 0; display: flex; justify-content: space-between; align-items: center; padding: calc(env(safe-area-inset-top, 0px) + 8px) 10px 8px 16px; background: linear-gradient(rgb(0 0 0 / .6), transparent); }
