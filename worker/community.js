@@ -2,6 +2,7 @@ import { generateRegistrationOptions, verifyRegistrationResponse, generateAuthen
 import schema from '../migrations/0001_community.sql';
 import preferencesSchema from '../migrations/0003_account_preferences.sql';
 import observationsSchema from '../migrations/0007_shared_observations.sql';
+import {rankingPolicy} from './admin-dashboard.js';
 import {sharedObservation} from '../js/community-observation.js';
 import treeCatalog from '../data/trees.json';
 import {normalizeNotebookNote} from '../js/notebook-entry.js';
@@ -183,7 +184,8 @@ export async function handleCommunity(request, env, now = Date.now()) {
       const { results } = await db.prepare('SELECT r.zone_id AS zoneId,r.species_id AS speciesId,COUNT(*) AS reports,SUM(r.amount>0) AS sightings,SUM(r.amount=0) AS zeros,COUNT(DISTINCT r.account_id) AS contributors,COUNT(DISTINCT CASE WHEN a.created_at<? THEN r.account_id END) AS establishedContributors,COUNT(DISTINCT day) AS days,MAX(day) AS latestDay,SUM(amount=1) AS few,SUM(amount=2) AS some,SUM(amount=3) AS many FROM reports r JOIN accounts a ON a.id=r.account_id WHERE day>=? GROUP BY zone_id,species_id').bind(now - 864e5, since).all();
       const total = await db.prepare('SELECT COUNT(*) AS n FROM reports').first('n');
       const {results:observations}=await db.prepare('SELECT zone_id AS zoneId, category, taxon_id AS taxonId, COUNT(*) AS observations, MAX(day) AS latestDay FROM shared_observations WHERE day>=? GROUP BY zone_id,category,taxon_id').bind(since).all();
-      return result({ observations, reports: results, totalReports: total, windowDays: 7, validation: 'unvalidated', updatedAt: new Date(now).toISOString() });
+      const policy=await rankingPolicy(db);
+      return result({ policy:{maxPercent:policy.maxPercent,version:policy.version}, observations, reports: results, totalReports: total, windowDays: 7, validation: 'unvalidated', updatedAt: new Date(now).toISOString() });
     }
 
     const user = await signedIn(request, db, now);

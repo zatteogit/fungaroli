@@ -1,3 +1,4 @@
+import {mountAdminDashboard} from './admin-dashboard.js';
 import {openModal} from './modal-flow.js';
 import './modal-scroll.js';
 import { initCommunity, communityReady, currentUser } from './community.js';
@@ -7,6 +8,7 @@ import { SURVEY_ID, SURVEY_ENDPOINT } from './survey-schema.js';
 
 const $=s=>document.querySelector(s);
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+let dashboard;
 let actor,items=[],release='0',doc,published,collection='',record='',dirty=false,opening=0;
 const editor=$('#cms-editor'),status=$('#cms-status');
 const title=k=>FIELD_LABELS[k]||k.replace(/_/g,' ');
@@ -20,18 +22,29 @@ async function api(path,method='GET',data,headers={}) {
 }
 function can(scope){return actor?.scopes?.includes(scope);}
 async function access() {
-  const n=++opening;
+  const n=++opening;dashboard?.dispose();dashboard=null;
   try {
     const me=await api('me');if(n!==opening)return;actor=me.user;
     const allowed=can('read');$('#cms-access').hidden=allowed;$('#cms-workspace').hidden=!allowed;
     if(!allowed){$('#cms-access-status').textContent=`Il profilo ${actor.name} non ha ancora un ruolo di redazione. Il tuo ID è ${actor.id}.`;return;}
     const role={admin:'Amministratore',editor:'Editor'}[actor.role]||'Redazione';
     $('#cms-identity').textContent=`${actor.name} · ${role} · accesso con passkey`;
+    dashboard?.dispose();dashboard=null;
+    $('#cms-dashboard-tab').hidden=!can('admin');
+    if(can('admin'))dashboard=mountAdminDashboard($('#cms-dashboard'),{api,openSurvey:()=>$('#cms-survey').click()});
+    setWorkspace(can('admin'));
     $('#cms-agents').hidden=!can('admin');$('#cms-survey').hidden=!can('admin');
     await refreshItems();
     if(!doc)await openItem(items.find(i=>!i.readonly)?.id);
-  }catch(e){if(n!==opening)return;$('#cms-workspace').hidden=true;$('#cms-access').hidden=false;$('#cms-access-status').textContent=e.status===401?'Accedi con il pulsante in alto.':e.message;}
+  }catch(e){if(n!==opening)return;dashboard?.dispose();dashboard=null;$('#cms-workspace').hidden=true;$('#cms-access').hidden=false;$('#cms-access-status').textContent=e.status===401?'Accedi con il pulsante in alto.':e.message;}
 }
+function setWorkspace(isDashboard){
+ $('#cms-dashboard').hidden=!isDashboard;$('#cms-content').hidden=isDashboard;
+ $('#cms-dashboard-tab').setAttribute('aria-pressed',String(isDashboard));$('#cms-content-tab').setAttribute('aria-pressed',String(!isDashboard));
+ if(isDashboard&&!$('#cms-dashboard').childElementCount)dashboard?.load();
+}
+$('#cms-dashboard-tab').onclick=()=>setWorkspace(true);
+$('#cms-content-tab').onclick=()=>setWorkspace(false);
 async function refreshItems(){const r=await api('items');items=r.items;release=r.release;renderResources();}
 function renderResources(){
   const q=$('#cms-resource-search').value.toLowerCase();let group='';

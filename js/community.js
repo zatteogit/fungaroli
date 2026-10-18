@@ -50,7 +50,7 @@ export function reportBadge(zoneId, speciesId) {
 }
 export function communityRank(zoneId, speciesIds) {
   if (!summary || Date.now() - Date.parse(summary.updatedAt) > 10 * 60e3) return 1;
-  return communityMultiplier((summary.reports || []).filter((r) => r.zoneId === zoneId && speciesIds.includes(r.speciesId)));
+  return communityMultiplier((summary.reports || []).filter((r) => r.zoneId === zoneId && speciesIds.includes(r.speciesId)),summary.policy?.maxPercent ?? 10);
 }
 
 async function session() {
