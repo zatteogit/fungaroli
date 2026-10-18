@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-19",
+  "photos_added": 274,
+  "webp_exports": 822,
+  "scientific_data_unchanged": true,
+  "cms_schemas": [
+    "media",
+    "media-trees",
+    "animals",
+    "plants"
+  ],
+  "unlisted_missing_assets": 0,
+  "incoherences": [],
+  "needs_redrawing": [],
+  "photo_gaps_before": 18,
+  "photo_gaps_after": 0,
+  "ui_review": [
+    "Bombi: due foto, crediti, specie di esempio, visore e navigazione",
+    "Animali: card con foto e 18 schede",
+    "Porcino rosso: nuova foto 3/5, didascalia e credito",
+    "Giglio rosso: nuova foto Dryades 3/4, sottospecie e credito istituzionale",
+    "Sarcodon scabrosus: foto iNaturalist 2/3 e sinonimia in didascalia"
+  ],
+  "viewport_observed": [
+    518,
+    988
+  ],
+  "tests_and_dry_run_started": false,
+  "artifact_build_executed": false,
+  "license_urls": "Dieci URL Creative Commons della fonte erano http: il catalogo usa il corrispondente https; valore originale conservato nella ricevuta."
+}

@@ -1,4 +1,4 @@
-/* Catalogo editoriale senza foto sostitutive o codici di pericolosità. */
+/* Fotografie reali attribuite; nessun codice di pericolosità dedotto dalle immagini. */
 .animal-paths{display:flex;flex-wrap:wrap;gap:8px;margin-block:12px 18px}
 .animal-paths button{min-height:44px}
 .animal-paths [aria-pressed="true"]{background:var(--select);color:var(--select-ink);border-color:var(--select-edge)}
@@ -33,3 +33,14 @@
 .animal-construction h2 { max-width:24ch; }
 .animal-construction p { max-width:60ch; margin-bottom:0; }
 .animal-card { overflow-wrap:anywhere; }
+.animal-card-photo{display:block;aspect-ratio:4/3;overflow:hidden;border-radius:14px;margin-bottom:14px;background:var(--surface-2)}
+.animal-card-photo img{display:block;width:100%;height:100%;object-fit:cover;object-position:var(--op-43,50% 50%)}
+.animal-card .animal-card-example{margin-top:8px}
+.animal-photos{margin-block:0 28px}
+.animal-photo-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.animal-photo-grid figure{min-width:0;margin:0}
+.animal-photo{display:block;width:100%;aspect-ratio:4/3;padding:0;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:var(--surface-2);cursor:zoom-in}
+.animal-photo img{display:block;width:100%;height:100%;object-fit:cover;object-position:var(--op-43,50% 50%)}
+.animal-photo-grid figcaption{font-size:14px;line-height:1.6;color:var(--text-2);margin-top:10px;overflow-wrap:anywhere}
+.animal-photo-grid figcaption small{display:block;font-size:13px;margin-top:6px}
+@media(max-width:520px){.animal-photo-grid{grid-template-columns:1fr;gap:20px}}

@@ -1,0 +1,3413 @@
+{
+  "continue": {
+    "clcontinue": "50656180|Files_uploaded_by_Josve05a_(Dick_Culbert)",
+    "continue": "||imageinfo"
+  },
+  "query": {
+    "pages": {
+      "42235626": {
+        "pageid": 42235626,
+        "ns": 6,
+        "title": "File:'Red-juice Tooth', Hydnellum peckii (9803320956).jpg",
+        "index": 23,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 746050,
+            "width": 1638,
+            "height": 1097,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/f/fe/%27Red-juice_Tooth%27%2C_Hydnellum_peckii_%289803320956%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:%27Red-juice_Tooth%27,_Hydnellum_peckii_(9803320956).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=42235626",
+            "sha1": "1ff4c4801e142a207e2da0c634695259ea5dcd1b",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2015-08-10 17:48:38",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "'Red-juice Tooth', Hydnellum peckii (9803320956)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Hydnellum peckii|Flickr images reviewed by FlickreviewR|Photos in Flickr Explore|Photographs by Scott Darbey|Flickr images missing SDC published in",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "'Red-juice Tooth', Hydnellum peckii",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2013-09-16 20:46",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/scott_darbey/9803320956/\">'Red-juice Tooth', Hydnellum peckii</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/78129892@N05\">Scott Darbey</a> from Canada",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-2.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Flickr images missing SDC published in"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Flickr images reviewed by FlickreviewR"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Hydnellum peckii"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Photographs by Scott Darbey"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Photos in Flickr Explore"
+          }
+        ]
+      },
+      "57172003": {
+        "pageid": 57172003,
+        "ns": 6,
+        "title": "File:2016-08-12 Hydnellum peckii Banker 650030.jpg",
+        "index": 15,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 3174835,
+            "width": 4293,
+            "height": 3187,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/3/3a/2016-08-12_Hydnellum_peckii_Banker_650030.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:2016-08-12_Hydnellum_peckii_Banker_650030.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=57172003",
+            "sha1": "3cfb0c52bc56631fd8e7e313922fd5a94701be9e",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2017-03-17 20:24:07",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "2016-08-12 Hydnellum peckii Banker 650030",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Hydnellum peckii|Images from Mushroom Observer|Files from external sources with reviewed licenses|Pink fungi|Bankeraceae in Kazakhstan|Files with coordinates missing SDC location of creation|Fungi of Kazakhstan in August",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "52.974900",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "70.266900",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "For more information about this, see the <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/show_observation/248938\">observation page</a> at Mushroom Observer.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2016-08-12",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "This image is <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/image/show_image/650030\">Image Number 650030</a> at <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org\">Mushroom Observer</a>, a source for mycological images.",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "This image was created by user <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/show_user/5334\">Igor (Igor_Yevdokimov)</a> at <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org\">Mushroom Observer</a>, a source for mycological images.<br>You can contact this user <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/ask_user_question/5334\">here</a>.",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "198505213": {
+        "pageid": 198505213,
+        "ns": 6,
+        "title": "File:Big Hydnellum peckii in moss with guttation droplets.jpg",
+        "index": 25,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 13435067,
+            "width": 6022,
+            "height": 4024,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/1/1f/Big_Hydnellum_peckii_in_moss_with_guttation_droplets.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Big_Hydnellum_peckii_in_moss_with_guttation_droplets.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=198505213",
+            "sha1": "7d7e957ee1521a6ff2a9c42afc541671073fe591",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2026-08-30 21:04:56",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Big Hydnellum peckii in moss with guttation droplets",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Hydnellum peckii|Gnadenwald|Creative Commons Attribution-Share Alike missing SDC copyright status|Self-published work|Tirol|Nature of Bezirk Innsbruck-Land in August|Creative Commons Attribution-Share Alike 4.0 missing SDC copyright license|Self-published work missing SDC copyright license|Fungi of Tyrol (state)|Files with coordinates missing SDC location of creation|Fungi of Austria in August|Media from WikiDaheim 2026 in Austria needing check|Uploaded via Campaign:WikiDaheim-at|August 2026 in Bezirk Innsbruck-Land|Austria photographs taken on 2026-08-22|Media from WikiDaheim 2026 in Austria/all|Nature of Tyrol (state) in August 2026|Media from WikiDaheim 2026 in Austria/Unspecified",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "47.322500",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "11.587500",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Macro photography of the rare fungus Hydnellum peckii, also known as the \"bleeding tooth fungus,\" on the forest floor among moss. On the snow-white, porous cap, guttation droplets in various shades are visible – from bright scarlet to dark cherry and resinous, formed through the oxidation of the natural pigment atromentin.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2026-08-22",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:LensaCibi&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:LensaCibi (page does not exist)\">LensaCibi</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "82593033": {
+        "pageid": 82593033,
+        "ns": 6,
+        "title": "File:Bleeding tooth fungus (Hydnellum peckii)-2 (48667528893).jpg",
+        "index": 11,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 8490120,
+            "width": 4302,
+            "height": 3751,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/4/48/Bleeding_tooth_fungus_%28Hydnellum_peckii%29-2_%2848667528893%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Bleeding_tooth_fungus_(Hydnellum_peckii)-2_(48667528893).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=82593033",
+            "sha1": "cf62a9e912bc379df56cebe10ec04bf26f486a57",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2019-09-27 16:00:58",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Bleeding tooth fungus (Hydnellum peckii)-2 (48667528893)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Hydnellum peckii|Flickr images reviewed by FlickreviewR 2|Photographs by Will Brown",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Bleeding tooth fungus (Hydnellum peckii)-2",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2019-08-18 05:16",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/37428634@N04/48667528893/\">Bleeding tooth fungus (Hydnellum peckii)-2</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/37428634@N04\">Will Brown</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "86788727": {
+        "pageid": 86788727,
+        "ns": 6,
+        "title": "File:Bluttropfender Korkstacheling, Hydnellum peckii.jpg",
+        "index": 29,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 2856099,
+            "width": 4032,
+            "height": 3024,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/8/89/Bluttropfender_Korkstacheling%2C_Hydnellum_peckii.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Bluttropfender_Korkstacheling,_Hydnellum_peckii.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=86788727",
+            "sha1": "77c7d64732e236dc9928cc3fc8e16624489eb727",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2020-02-08 18:30:37",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Bluttropfender Korkstacheling, Hydnellum peckii",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Fungi|Self-published work|Files with coordinates missing SDC location of creation",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "47.619453",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "11.928886",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Bluttropfender Korkstacheling, Hydnellum peckii, Bavarian Prealps",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2019-08-24 10:17:38",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Wasquewhat&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Wasquewhat (page does not exist)\">Wasquewhat</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "134151541": {
+        "pageid": 134151541,
+        "ns": 6,
+        "title": "File:Devil's Tooth, Hydnellum peckii, Culbin Forest - geograph.org.uk - 5081296.jpg",
+        "index": 30,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 6218722,
+            "width": 3648,
+            "height": 2736,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/a/a3/Devil%27s_Tooth%2C_Hydnellum_peckii%2C_Culbin_Forest_-_geograph.org.uk_-_5081296.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Devil%27s_Tooth,_Hydnellum_peckii,_Culbin_Forest_-_geograph.org.uk_-_5081296.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=134151541",
+            "sha1": "a3ee4f970df50cb96100cec58b869f5943e073d4",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2023-07-08 22:46:08",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Devil's Tooth, Hydnellum peckii, Culbin Forest - geograph.org.uk - 5081296",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Images from Geograph Britain and Ireland|Dyke and Moy",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "57.640786",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "-3.694515",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Devil's Tooth, Hydnellum peckii, Culbin Forest <span class=\"mw-valign-text-top noprint\" typeof=\"mw:File/Frameless\"><a href=\"//commons.wikimedia.org/wiki/File:Devil%27s_Tooth,_Hydnellum_peckii,_Culbin_Forest_-_geograph.org.uk_-_5081296.jpg#ooui-php-4\" title=\"Edit this at Structured Data on Commons\"><img alt=\"Edit this at Structured Data on Commons\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/OOjs_UI_icon_edit-ltr-progressive.svg/20px-OOjs_UI_icon_edit-ltr-progressive.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"10\" height=\"10\" class=\"mw-file-element\" data-file-width=\"20\" data-file-height=\"20\"></a></span>",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2016-08-17",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.geograph.org.uk/photo/5081296\">Geograph Britain and Ireland</a> <span class=\"mw-valign-text-top noprint\" typeof=\"mw:File/Frameless\"><a href=\"//commons.wikimedia.org/wiki/File:Devil%27s_Tooth,_Hydnellum_peckii,_Culbin_Forest_-_geograph.org.uk_-_5081296.jpg#P7482\" title=\"Edit this at Structured Data on Commons\"><img alt=\"Edit this at Structured Data on Commons\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/OOjs_UI_icon_edit-ltr-progressive.svg/20px-OOjs_UI_icon_edit-ltr-progressive.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"10\" height=\"10\" class=\"mw-file-element\" data-file-width=\"20\" data-file-height=\"20\"></a></span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.geograph.org.uk/profile/61750\">Greg Fitchett</a> <span class=\"mw-valign-text-top noprint\" typeof=\"mw:File/Frameless\"><a href=\"//commons.wikimedia.org/wiki/File:Devil%27s_Tooth,_Hydnellum_peckii,_Culbin_Forest_-_geograph.org.uk_-_5081296.jpg#P170\" title=\"Edit this at Structured Data on Commons\"><img alt=\"Edit this at Structured Data on Commons\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/OOjs_UI_icon_edit-ltr-progressive.svg/20px-OOjs_UI_icon_edit-ltr-progressive.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"10\" height=\"10\" class=\"mw-file-element\" data-file-width=\"20\" data-file-height=\"20\"></a></span>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Attribution": {
+                "value": "<i>Devil's Tooth, Hydnellum peckii, Culbin Forest</i> by Greg Fitchett",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "50656180": {
+        "pageid": 50656180,
+        "ns": 6,
+        "title": "File:Hydnellum peckii- the Devil's Tooth Fungus - Flickr - Dick Culbert.jpg",
+        "index": 17,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 356161,
+            "width": 1100,
+            "height": 567,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/7/72/Hydnellum_peckii-_the_Devil%27s_Tooth_Fungus_-_Flickr_-_Dick_Culbert.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Hydnellum_peckii-_the_Devil%27s_Tooth_Fungus_-_Flickr_-_Dick_Culbert.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=50656180",
+            "sha1": "d122ecdfb348ae71e41e0b69d95e22fcd3c1c43b",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2016-08-13 19:42:01",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Hydnellum peckii- the Devil's Tooth Fungus - Flickr - Dick Culbert",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Hydnellum peckii|Flickr images reviewed by FlickreviewR|Photographs by Dick Culbert|Files uploaded by Josve05a (Dick Culbert)|Flickr images missing SDC Flickr photo ID|Flickr images missing SDC published in",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Also known as the Bleeding Tooth or Strawberries and Cream.  The photo shows a young and a mature specimen and a closer view of the teeth.  This is a vase-shaped terrestrial species found under conifers in North America.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2015-11-04 18:07",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/92252798@N07/22768890866/\">Hydnellum peckii-- the Devil's Tooth Fungus</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/92252798@N07\">Dick Culbert</a> from Gibsons, B.C., Canada",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-2.0"
+          }
+        ]
+      },
+      "5804466": {
+        "pageid": 5804466,
+        "ns": 6,
+        "title": "File:Hydnellum peckii.darvin.jpg",
+        "index": 8,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1008871,
+            "width": 2048,
+            "height": 1536,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/5/58/Hydnellum_peckii.darvin.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Hydnellum_peckii.darvin.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=5804466",
+            "sha1": "b5e607b69b2bd51a4e73eaa4d53b4325403973cd",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2009-01-27 14:22:29",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Hydnellum peckii.darvin",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Hydnellum peckii|Taken with Nikon Coolpix 995|Images from Mushroom Observer|Files from external sources with reviewed licenses|Thelephorales in California|Fungi of California in August|Photographs by Alan Rockefeller",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<i>Hydnellum peckii</i>",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2007-08-01",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "This image is <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/image/show_image/5760\">Image Number 5760</a> at <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org\">Mushroom Observer</a>, a source for mycological images.",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "This image was created by user <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/show_user/2\">Darvin DeShazer (darv)</a> at <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org\">Mushroom Observer</a>, a source for mycological images.<br>You can contact this user <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/ask_user_question/2\">here</a>.",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files from external sources with reviewed licenses"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi of California in August"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Hydnellum peckii"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Images from Mushroom Observer"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Photographs by Alan Rockefeller"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Nikon Coolpix 995"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Thelephorales in California"
+          }
+        ]
+      },
+      "4791509": {
+        "pageid": 4791509,
+        "ns": 6,
+        "title": "File:Hydnellum peckii.jpg",
+        "index": 26,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 153279,
+            "width": 800,
+            "height": 600,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Hydnellum_peckii.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Hydnellum_peckii.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=4791509",
+            "sha1": "0c45a8a3ff8d60fd31f16a307aacde278f6abffe",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2008-09-15 14:02:04",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Hydnellum peckii",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Hydnellum peckii|GFDL|FAL|License migration redundant|Self-published work|Fungi of Trentino-South Tyrol",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Fruit body of Hydnellum peckii - Bellamonte (TN) - 08/2007",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2007-08",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Bernypisa&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Bernypisa (page does not exist)\">Bernypisa</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/licenses/by-sa/3.0/",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0-migrated"
+          },
+          {
+            "ns": 14,
+            "title": "Category:FAL"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi of Trentino-South Tyrol"
+          },
+          {
+            "ns": 14,
+            "title": "Category:GFDL"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Hydnellum peckii"
+          },
+          {
+            "ns": 14,
+            "title": "Category:License migration redundant"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          }
+        ]
+      },
+      "48915638": {
+        "pageid": 48915638,
+        "ns": 6,
+        "title": "File:Hydnellum peckii (23455186509).jpg",
+        "index": 13,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 13583387,
+            "width": 5472,
+            "height": 3648,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/7/70/Hydnellum_peckii_%2823455186509%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Hydnellum_peckii_(23455186509).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=48915638",
+            "sha1": "bf33db60722eedadef7e40ed638ec97169d81245",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2016-05-20 21:41:26",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Hydnellum peckii (23455186509)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Hydnellum peckii|Flickr images reviewed by FlickreviewR|Photographs by Tatiana Bulyonkova|Fungi in July|Thelephorales in Russia|Fungi of Khantia-Mansia|Files with coordinates missing SDC location of creation|Russia photographs taken on 2015-07-25|Files uploaded by INeverCry",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "60.368900",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "74.012797",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "the flagship species of the genus - the scarlet drops are unmistakable!",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2015-07-25 11:18",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/ressaure/23455186509/\">Hydnellum peckii</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/41503862@N08\">Tatiana Bulyonkova</a> from Novosibirsk, Russia",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-2.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files uploaded by INeverCry"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with coordinates missing SDC location of creation"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Flickr images reviewed by FlickreviewR"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi in July"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi of Khantia-Mansia"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Hydnellum peckii"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Photographs by Tatiana Bulyonkova"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Russia photographs taken on 2015-07-25"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Thelephorales in Russia"
+          }
+        ]
+      },
+      "61877345": {
+        "pageid": 61877345,
+        "ns": 6,
+        "title": "File:Hydnellum peckii - Karvasorakas C 20160731.jpg",
+        "index": 22,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 827471,
+            "width": 960,
+            "height": 1280,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/d/d5/Hydnellum_peckii_-_Karvasorakas_C_20160731.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Hydnellum_peckii_-_Karvasorakas_C_20160731.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=61877345",
+            "sha1": "f95959c33c96e78c4d77a8af1fd7194cbf41b26f",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2017-08-23 05:29:41",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Hydnellum peckii - Karvasorakas C 20160731",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Hydnellum peckii|Self-published work|Fungi in July|Finland photographs taken on 2016-07-31|Bankeraceae in Finland",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Bleeding Tooth Fungus (Hydnellum peckii) i Tuusula, Finland",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2016-07-31 16:55:06",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Annelis\" title=\"User:Annelis\">Anneli Salo</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "61877349": {
+        "pageid": 61877349,
+        "ns": 6,
+        "title": "File:Hydnellum peckii - Karvasorakas C IMG 7738.jpg",
+        "index": 5,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 5217948,
+            "width": 5184,
+            "height": 3456,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/d/dc/Hydnellum_peckii_-_Karvasorakas_C_IMG_7738.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Hydnellum_peckii_-_Karvasorakas_C_IMG_7738.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=61877349",
+            "sha1": "93a41194f92da1fe8531cbd0345cb39aabc48de3",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2017-08-23 05:29:43",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Hydnellum peckii - Karvasorakas C IMG 7738",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Hydnellum peckii|Self-published work",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Bleeding Tooth Fungus (Hydnellum peckii) i Tuusula, Finland",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2016-07-31 16:01:28",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Annelis\" title=\"User:Annelis\">Anneli Salo</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "61877347": {
+        "pageid": 61877347,
+        "ns": 6,
+        "title": "File:Hydnellum peckii - Karvasorakas C IMG 7751.jpg",
+        "index": 27,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1984370,
+            "width": 2560,
+            "height": 1929,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/e/e1/Hydnellum_peckii_-_Karvasorakas_C_IMG_7751.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Hydnellum_peckii_-_Karvasorakas_C_IMG_7751.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=61877347",
+            "sha1": "0e215cfc8fdd4ef78447edec804380707c2a85f2",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2017-08-23 05:29:43",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Hydnellum peckii - Karvasorakas C IMG 7751",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Hydnellum peckii|Self-published work|Fungi in July|Finland photographs taken on 2016-07-31|Bankeraceae in Finland",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Bleeding Tooth Fungus (Hydnellum peckii) i Tuusula, Finland",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2016-07-31 16:04:56",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Annelis\" title=\"User:Annelis\">Anneli Salo</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "61877344": {
+        "pageid": 61877344,
+        "ns": 6,
+        "title": "File:Hydnellum peckii - Karvasorakas C IMG 7752.jpg",
+        "index": 10,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 3405435,
+            "width": 2528,
+            "height": 2190,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/e/eb/Hydnellum_peckii_-_Karvasorakas_C_IMG_7752.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Hydnellum_peckii_-_Karvasorakas_C_IMG_7752.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=61877344",
+            "sha1": "4eb412a96b17be536ab6ff9693ac77376ace76a9",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2017-08-23 05:29:40",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Hydnellum peckii - Karvasorakas C IMG 7752",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Hydnellum peckii|Self-published work",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Bleeding Tooth Fungus (Hydnellum peckii) i Tuusula, Finland",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2016-07-31 16:05:06",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Annelis\" title=\"User:Annelis\">Anneli Salo</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "61877346": {
+        "pageid": 61877346,
+        "ns": 6,
+        "title": "File:Hydnellum peckii - Karvasorakas C IMG 7754.jpg",
+        "index": 19,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 674426,
+            "width": 1732,
+            "height": 1489,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Hydnellum_peckii_-_Karvasorakas_C_IMG_7754.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Hydnellum_peckii_-_Karvasorakas_C_IMG_7754.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=61877346",
+            "sha1": "753f57aec478df1eecb60d4278d64034bf39a156",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2017-08-23 05:29:43",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Hydnellum peckii - Karvasorakas C IMG 7754",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Hydnellum peckii|Self-published work",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Bleeding Tooth Fungus (Hydnellum peckii) i Tuusula, Finland",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2016-07-31 16:05:28",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Annelis\" title=\"User:Annelis\">Anneli Salo</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "61877350": {
+        "pageid": 61877350,
+        "ns": 6,
+        "title": "File:Hydnellum peckii - Karvasorakas C IMG 7755.jpg",
+        "index": 12,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 389482,
+            "width": 842,
+            "height": 794,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/6/61/Hydnellum_peckii_-_Karvasorakas_C_IMG_7755.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Hydnellum_peckii_-_Karvasorakas_C_IMG_7755.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=61877350",
+            "sha1": "a42d37dd52ca743c387c21717dc3dc21785b90f9",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2017-08-23 05:29:45",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Hydnellum peckii - Karvasorakas C IMG 7755",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Hydnellum peckii|Self-published work",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Bleeding Tooth Fungus (Hydnellum peckii) i Tuusula, Finland",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2016-07-31 16:05:34",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Annelis\" title=\"User:Annelis\">Anneli Salo</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "7842153": {
+        "pageid": 7842153,
+        "ns": 6,
+        "title": "File:Hydnellum peckii 01.JPG",
+        "index": 7,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 2735681,
+            "width": 2816,
+            "height": 2112,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Hydnellum_peckii_01.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Hydnellum_peckii_01.JPG",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=7842153",
+            "sha1": "1ae7537ec12d9e3d79c4689be2af799190c1d4db",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2009-09-18 16:46:46",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Hydnellum peckii 01",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Hydnellum peckii|GFDL|Taken with Sony DSC-W30|License migration redundant|Self-published work|Fungi in August|Thelephorales in Latvia",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Bleeding Tooth Fungus (Hydnellum peckii)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2009-08-30",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Sanja565658\" title=\"User:Sanja565658\">Sanja565658</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi in August"
+          },
+          {
+            "ns": 14,
+            "title": "Category:GFDL"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Hydnellum peckii"
+          },
+          {
+            "ns": 14,
+            "title": "Category:License migration redundant"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Sony DSC-W30"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Thelephorales in Latvia"
+          }
+        ]
+      },
+      "7842158": {
+        "pageid": 7842158,
+        "ns": 6,
+        "title": "File:Hydnellum peckii 02.JPG",
+        "index": 18,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 2868893,
+            "width": 2816,
+            "height": 2112,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/3/35/Hydnellum_peckii_02.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Hydnellum_peckii_02.JPG",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=7842158",
+            "sha1": "38fda2d303030d8d381da113a02635334845255f",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2009-09-18 16:47:29",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Hydnellum peckii 02",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Hydnellum peckii|GFDL|Taken with Sony DSC-W30|License migration redundant|Self-published work|Fungi in August|Thelephorales in Latvia",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Bleeding Tooth Fungus (Hydnellum peckii)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2009-08-30",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Sanja565658\" title=\"User:Sanja565658\">Sanja565658</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi in August"
+          },
+          {
+            "ns": 14,
+            "title": "Category:GFDL"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Hydnellum peckii"
+          },
+          {
+            "ns": 14,
+            "title": "Category:License migration redundant"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Sony DSC-W30"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Thelephorales in Latvia"
+          }
+        ]
+      },
+      "8958179": {
+        "pageid": 8958179,
+        "ns": 6,
+        "title": "File:Hydnellum peckii 378.jpg",
+        "index": 9,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 152675,
+            "width": 1600,
+            "height": 1200,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/6/69/Hydnellum_peckii_378.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Hydnellum_peckii_378.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=8958179",
+            "sha1": "2de5c987a860302acdeed064a958b5a89f82280a",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2010-01-11 05:40:28",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Hydnellum peckii 378",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Hydnellum peckii|Images from Mushroom Observer|Files from external sources with reviewed licenses|Thelephorales in California|Fungi of Santa Cruz County, California|Fungi of California in January",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "The inedible fungus <i>Hydnellum peckii</i> Banker. Photographed in Big Basin State Park, Santa Cruz Co., California, USA.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "1994-01-15",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "This image is <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/image/show_image/378\">Image Number 378</a> at <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org\">Mushroom Observer</a>, a source for mycological images.",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "This image was created by user <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/show_user/1\">Nathan Wilson (nathan)</a> at <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org\">Mushroom Observer</a>, a source for mycological images.<br>You can contact this user <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/ask_user_question/1\">here</a>.",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files from external sources with reviewed licenses"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi of California in January"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi of Santa Cruz County, California"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Hydnellum peckii"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Images from Mushroom Observer"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Thelephorales in California"
+          }
+        ]
+      },
+      "8958240": {
+        "pageid": 8958240,
+        "ns": 6,
+        "title": "File:Hydnellum peckii 61434.jpg",
+        "index": 14,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1946638,
+            "width": 3456,
+            "height": 2592,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/f/f8/Hydnellum_peckii_61434.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Hydnellum_peckii_61434.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=8958240",
+            "sha1": "c51cddc00050f46e082ab4deaab1e785ba2ab2e9",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2010-01-11 06:06:49",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Hydnellum peckii 61434",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Hydnellum peckii|Taken with Canon PowerShot SX110 IS|Images from Mushroom Observer|Files from external sources with reviewed licenses|Thelephorales in California|Fungi of Mendocino County, California|Fungi of California in October",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "The fungus <i>Hynellum peckii</i> Banker. Photographed in Mendocino, Mendocino Co., California, USA.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2009-10-21",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "This image is <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/image/show_image/61434\">Image Number 61434</a> at <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org\">Mushroom Observer</a>, a source for mycological images.",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "This image was created by user <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/show_user/746\">Ryane Snow (snowman)</a> at <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org\">Mushroom Observer</a>, a source for mycological images.<br>You can contact this user <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/ask_user_question/746\">here</a>.",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files from external sources with reviewed licenses"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi of California in October"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi of Mendocino County, California"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Hydnellum peckii"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Images from Mushroom Observer"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Canon PowerShot SX110 IS"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Thelephorales in California"
+          }
+        ]
+      },
+      "8958254": {
+        "pageid": 8958254,
+        "ns": 6,
+        "title": "File:Hydnellum peckii 62842.jpg",
+        "index": 6,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 41258,
+            "width": 640,
+            "height": 480,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/f/f9/Hydnellum_peckii_62842.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Hydnellum_peckii_62842.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=8958254",
+            "sha1": "14217ea1059b0628b7cec5c7b02edb7b22695411",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2010-01-11 06:13:03",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Hydnellum peckii 62842",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Hydnellum peckii|Images from Mushroom Observer|Files from external sources with reviewed licenses|United States photographs taken on 2009-10-30|Fungi of Oregon in October|Bankeraceae in the United States",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "The fungus <i>Hydnellum peckii</i> Banker. Photographed in Near Cape Lookout, Tillamook Co, Oregon, USA.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2009-10-30",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "This image is <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/image/show_image/62842\">Image Number 62842</a> at <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org\">Mushroom Observer</a>, a source for mycological images.",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "This image was created by user <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/show_user/536\">Daniel B. Wheeler (Tuberale)</a> at <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org\">Mushroom Observer</a>, a source for mycological images.<br>You can contact this user <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/ask_user_question/536\">here</a>.",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Bankeraceae in the United States"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files from external sources with reviewed licenses"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi of Oregon in October"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Hydnellum peckii"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Images from Mushroom Observer"
+          },
+          {
+            "ns": 14,
+            "title": "Category:United States photographs taken on 2009-10-30"
+          }
+        ]
+      },
+      "97568886": {
+        "pageid": 97568886,
+        "ns": 6,
+        "title": "File:Hydnellum peckii 98004336.jpg",
+        "index": 4,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 470212,
+            "width": 2048,
+            "height": 1536,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/d/d0/Hydnellum_peckii_98004336.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Hydnellum_peckii_98004336.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=97568886",
+            "sha1": "fe7f0e9ad89b4c85b5704c0339ae2f88a4382f24",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2020-12-14 21:26:35",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Hydnellum peckii 98004336",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Hydnellum peckii|CC-Zero|Media from iNaturalist|Fungi of British Columbia|INaturalist images reviewed by iNaturalistReviewBot|Files with coordinates missing SDC location of creation|Thelephorales in Canada|Uploaded with iNaturalist2Commons|Canada photographs taken on 2020-09-29|Fungi of Canada in September",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "49.922611",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "-125.634513",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Red-juice Tooth (<i>Hydnellum peckii</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2020-09-29",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/98004336\">https://www.inaturalist.org/photos/98004336</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/42119\">Randal</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "97568895": {
+        "pageid": 97568895,
+        "ns": 6,
+        "title": "File:Hydnellum peckii 98004349.jpg",
+        "index": 24,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 455402,
+            "width": 2048,
+            "height": 1536,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/f/f8/Hydnellum_peckii_98004349.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Hydnellum_peckii_98004349.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=97568895",
+            "sha1": "2c86cdf626620b701a5e0618fb345942f4831889",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2020-12-14 21:26:48",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Hydnellum peckii 98004349",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Hydnellum peckii|CC-Zero|Media from iNaturalist|Fungi of British Columbia|INaturalist images reviewed by iNaturalistReviewBot|Files with coordinates missing SDC location of creation|Thelephorales in Canada|Uploaded with iNaturalist2Commons|Canada photographs taken on 2020-09-29|Fungi of Canada in September",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "49.922611",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "-125.634513",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Red-juice Tooth (<i>Hydnellum peckii</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2020-09-29",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/98004349\">https://www.inaturalist.org/photos/98004349</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/42119\">Randal</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "97568908": {
+        "pageid": 97568908,
+        "ns": 6,
+        "title": "File:Hydnellum peckii 98004367.jpg",
+        "index": 20,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 503608,
+            "width": 2048,
+            "height": 1536,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Hydnellum_peckii_98004367.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Hydnellum_peckii_98004367.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=97568908",
+            "sha1": "635d74327c97c26db8886956826c77cf8d8450c6",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2020-12-14 21:27:05",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Hydnellum peckii 98004367",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Hydnellum peckii|CC-Zero|Media from iNaturalist|Fungi of British Columbia|INaturalist images reviewed by iNaturalistReviewBot|Files with coordinates missing SDC location of creation|Thelephorales in Canada|Uploaded with iNaturalist2Commons|Canada photographs taken on 2020-09-29|Fungi of Canada in September",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "49.922611",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "-125.634513",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Red-juice Tooth (<i>Hydnellum peckii</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2020-09-29",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/98004367\">https://www.inaturalist.org/photos/98004367</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/42119\">Randal</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "97568925": {
+        "pageid": 97568925,
+        "ns": 6,
+        "title": "File:Hydnellum peckii 98004391.jpg",
+        "index": 21,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 616441,
+            "width": 2048,
+            "height": 1536,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/c/c9/Hydnellum_peckii_98004391.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Hydnellum_peckii_98004391.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=97568925",
+            "sha1": "e95594dd1801e9ec33e39f4b0abfa20fd8def83c",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2020-12-14 21:27:20",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Hydnellum peckii 98004391",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Hydnellum peckii|CC-Zero|Media from iNaturalist|Fungi of British Columbia|INaturalist images reviewed by iNaturalistReviewBot|Files with coordinates missing SDC location of creation|Thelephorales in Canada|Uploaded with iNaturalist2Commons|Canada photographs taken on 2020-09-29|Fungi of Canada in September",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "49.922611",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "-125.634513",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Red-juice Tooth (<i>Hydnellum peckii</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2020-09-29",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/98004391\">https://www.inaturalist.org/photos/98004391</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/42119\">Randal</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "198505212": {
+        "pageid": 198505212,
+        "ns": 6,
+        "title": "File:Macro of Hydnellum peckii in moss with a large guttation droplet.jpg",
+        "index": 16,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 2415123,
+            "width": 2418,
+            "height": 1612,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/e/ef/Macro_of_Hydnellum_peckii_in_moss_with_a_large_guttation_droplet.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Macro_of_Hydnellum_peckii_in_moss_with_a_large_guttation_droplet.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=198505212",
+            "sha1": "a4f8e5c93f4521eeedf9a432e8e087c8d50b0a95",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2026-08-30 21:04:56",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Macro of Hydnellum peckii in moss with a large guttation droplet",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Hydnellum peckii|Gnadenwald|Creative Commons Attribution-Share Alike missing SDC copyright status|Self-published work|Nature of Bezirk Innsbruck-Land in August|Creative Commons Attribution-Share Alike 4.0 missing SDC copyright license|Self-published work missing SDC copyright license|Fungi of Tyrol (state)|Files with coordinates missing SDC location of creation|Close-up photographs of fungi|Fungi of Austria in August|Media from WikiDaheim 2026 in Austria needing check|Uploaded via Campaign:WikiDaheim-at|August 2026 in Bezirk Innsbruck-Land|Austria photographs taken on 2026-08-22|Media from WikiDaheim 2026 in Austria/all|Nature of Tyrol (state) in August 2026|Media from WikiDaheim 2026 in Austria/Unspecified",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "47.322500",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "11.587500",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Extreme macro close-up of the rare fungus Hydnellum peckii. On the snow-white, velvety surface of the mycelium, a large, perfectly shaped scarlet-red guttation droplet with a light reflection is visible, along with small amber-coloured droplets at the edges. The image clearly demonstrates the high surface tension of the syrupy exudate secreted by the fungus.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2026-08-22",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:LensaCibi&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:LensaCibi (page does not exist)\">LensaCibi</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "26412224": {
+        "pageid": 26412224,
+        "ns": 6,
+        "title": "File:Scharfer Korkstacheling Hydnellum peckii.jpg",
+        "index": 1,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 4299770,
+            "width": 3000,
+            "height": 2015,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/0/0d/Scharfer_Korkstacheling_Hydnellum_peckii.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Scharfer_Korkstacheling_Hydnellum_peckii.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=26412224",
+            "sha1": "fd8f09a5f3d649191ac3f915cc687558dd3c26e5",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2013-05-30 21:08:28",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Scharfer Korkstacheling Hydnellum peckii",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Hydnellum peckii|Taken with Canon EOS 500D|Self-published work|Fungi in Alb-Donau-Kreis|Fungi in Ulm|Nature of Eggingen (Ulm)|Files with coordinates missing SDC location of creation (48° N, 9° E)",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "quality",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "48.356406",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "9.846272",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Bleeding Tooth Fungus, Red-Juice Tooth or Devil's tooth, <i><a href=\"//commons.wikimedia.org/wiki/Hydnellum_peckii\" title=\"Hydnellum peckii\">Hydnellum peckii</a></i>, Family: Bankeraceae, Location: Germany, Ulm, Eggingen",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2012-09-22",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Holleday\" title=\"User:Holleday\">Holger Krisp</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with coordinates missing SDC location of creation (48° N, 9° E)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi in Alb-Donau-Kreis"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi in Ulm"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Hydnellum peckii"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Nature of Eggingen (Ulm)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images missing SDC depicts"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Canon EOS 500D"
+          }
+        ]
+      },
+      "30241591": {
+        "pageid": 30241591,
+        "ns": 6,
+        "title": "File:Scharfer Korkstacheling Hydnellum peckii alt.jpg",
+        "index": 3,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 3980836,
+            "width": 3000,
+            "height": 2045,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/9/97/Scharfer_Korkstacheling_Hydnellum_peckii_alt.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Scharfer_Korkstacheling_Hydnellum_peckii_alt.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=30241591",
+            "sha1": "4dc68f95abe93038322c419a7ec0326f44ec6f77",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2013-12-19 17:55:06",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Scharfer Korkstacheling Hydnellum peckii alt",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Hydnellum peckii|Taken with Canon EOS 500D|Self-published work|Fungi in Alb-Donau-Kreis|Fungi in Ulm|Nature of Eggingen (Ulm)|Files with coordinates missing SDC location of creation (48° N, 9° E)",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "quality",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "48.356406",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "9.846272",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Bleeding Tooth Fungus, Red-Juice Tooth or Devil's tooth (old form), <i><a href=\"//commons.wikimedia.org/wiki/Hydnellum_peckii\" title=\"Hydnellum peckii\">Hydnellum peckii</a></i>, Family: Bankeraceae, Location: Germany, Ulm, Eggingen",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2013-08-29",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Holleday\" title=\"User:Holleday\">Holger Krisp</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with coordinates missing SDC location of creation (48° N, 9° E)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi in Alb-Donau-Kreis"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi in Ulm"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Hydnellum peckii"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Nature of Eggingen (Ulm)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images missing SDC depicts"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Canon EOS 500D"
+          }
+        ]
+      },
+      "30241667": {
+        "pageid": 30241667,
+        "ns": 6,
+        "title": "File:Scharfer Korkstacheling Hydnellum peckii jung.jpg",
+        "index": 2,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 3306069,
+            "width": 3000,
+            "height": 2026,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/f/ff/Scharfer_Korkstacheling_Hydnellum_peckii_jung.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Scharfer_Korkstacheling_Hydnellum_peckii_jung.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=30241667",
+            "sha1": "00d284b217ddcfb5cea8f99dd8fb605fd3fe7dcf",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2013-12-19 18:00:23",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Scharfer Korkstacheling Hydnellum peckii jung",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Hydnellum peckii|Taken with Canon EOS 500D|Self-published work|Fungi in Alb-Donau-Kreis|Fungi in Ulm|Nature of Eggingen (Ulm)|Files with coordinates missing SDC location of creation (48° N, 9° E)",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "quality",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "48.356406",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "9.846272",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Bleeding Tooth Fungus, Red-Juice Tooth or Devil's tooth (young form), <i><a href=\"//commons.wikimedia.org/wiki/Hydnellum_peckii\" title=\"Hydnellum peckii\">Hydnellum peckii</a></i>, Family: Bankeraceae, Location: Germany, Ulm, Eggingen",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2013-08-29",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Holleday\" title=\"User:Holleday\">Holger Krisp</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with coordinates missing SDC location of creation (48° N, 9° E)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi in Alb-Donau-Kreis"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi in Ulm"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Hydnellum peckii"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Nature of Eggingen (Ulm)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images missing SDC depicts"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Canon EOS 500D"
+          }
+        ]
+      },
+      "198505210": {
+        "pageid": 198505210,
+        "ns": 6,
+        "title": "File:Young Hydnellum peckii in moss with guttation droplets 01.jpg",
+        "index": 28,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 6113911,
+            "width": 3618,
+            "height": 2412,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/c/ce/Young_Hydnellum_peckii_in_moss_with_guttation_droplets_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Young_Hydnellum_peckii_in_moss_with_guttation_droplets_01.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=198505210",
+            "sha1": "4b81c64e6a968acbf362dd55e5ffa4c21d3d5206",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2026-08-30 21:04:55",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Young Hydnellum peckii in moss with guttation droplets 01",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Hydnellum peckii|Gnadenwald|Creative Commons Attribution-Share Alike missing SDC copyright status|Self-published work|Tirol|Creative Commons Attribution-Share Alike 4.0 missing SDC copyright license|Self-published work missing SDC copyright license|Fungi of Tyrol (state)|Nature of Bezirk Innsbruck-Land|Files with coordinates missing SDC location of creation|Media from WikiDaheim 2026 in Austria needing check|Uploaded via Campaign:WikiDaheim-at|Media from WikiDaheim 2026 in Austria/all|Media from WikiDaheim 2026 in Austria/Unspecified",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "47.322500",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "11.587500",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Extreme macro photograph of Bleeding Tooth Fungus (Hydnellum peckii) showing red guttation droplets and a translucent amber droplet hanging on its spines in green moss.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2026-08-22",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:LensaCibi&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:LensaCibi (page does not exist)\">LensaCibi</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

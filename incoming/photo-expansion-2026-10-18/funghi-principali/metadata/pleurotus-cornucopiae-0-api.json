@@ -1,0 +1,3144 @@
+{
+  "continue": {
+    "clcontinue": "41593776|Files_from_Internet_Archive_Book_Images_Flickr_stream",
+    "continue": "||imageinfo"
+  },
+  "query": {
+    "pages": {
+      "15724110": {
+        "pageid": 15724110,
+        "ns": 6,
+        "title": "File:2011-06-30 Pleurotus cornucopiae 1 70824.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 151890,
+            "width": 1200,
+            "height": 900,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/0/00/2011-06-30_Pleurotus_cornucopiae_1_70824.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:2011-06-30_Pleurotus_cornucopiae_1_70824.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=15724110",
+            "sha1": "97094d8a9449f05775e6bb50da55effe27528a96",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2011-07-06 22:58:03",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "2011-06-30 Pleurotus cornucopiae 1 70824",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Pleurotus cornucopiae|Images from Mushroom Observer|Files from external sources with reviewed licenses|Fungi in June|Pleurotaceae in Russia",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "For more information about this, see the <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/show_observation/70824\">observation page</a> at Mushroom Observer.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2011-06-30",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "This image is <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/image/show_image/155544\">Image Number 155544</a> at <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org\">Mushroom Observer</a>, a source for mycological images.",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/show_user/3108\">Iv Merlu</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files from external sources with reviewed licenses"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi in June"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Images from Mushroom Observer"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Pleurotaceae in Russia"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Pleurotus cornucopiae"
+          }
+        ]
+      },
+      "15728185": {
+        "pageid": 15728185,
+        "ns": 6,
+        "title": "File:2011-06-30 Pleurotus cornucopiae 2 70824 cropped.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 458614,
+            "width": 778,
+            "height": 570,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/3/36/2011-06-30_Pleurotus_cornucopiae_2_70824_cropped.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:2011-06-30_Pleurotus_cornucopiae_2_70824_cropped.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=15728185",
+            "sha1": "8a5e10b89324154c8e1ea32fd7f7ca2d41bb53e5",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2011-07-07 12:55:25",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "2011-06-30 Pleurotus cornucopiae 2 70824 cropped",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Pleurotus cornucopiae|Retouched pictures|Self-published work|Uploaded with derivativeFX",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "For more information about this, see the <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/show_observation/70824\">observation page</a> at Mushroom Observer.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2011-07-07 12:54",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<ul><li><a href=\"//commons.wikimedia.org/wiki/File:2011-06-30_Pleurotus_cornucopiae_5_70824.jpg\" title=\"File:2011-06-30 Pleurotus cornucopiae 5 70824.jpg\">2011-06-30_Pleurotus_cornucopiae_5_70824.jpg</a></li></ul>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "This image was created by user <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/show_user/3108\">Iv Merlu (Merlu)</a> at <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org\">Mushroom Observer</a>, a source for mycological images.<br>You can contact this user <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/ask_user_question/3108\">here</a>.",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Pleurotus cornucopiae"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Retouched pictures"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Uploaded with derivativeFX"
+          }
+        ]
+      },
+      "15724112": {
+        "pageid": 15724112,
+        "ns": 6,
+        "title": "File:2011-06-30 Pleurotus cornucopiae 2 70824.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 141628,
+            "width": 1200,
+            "height": 900,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/2011-06-30_Pleurotus_cornucopiae_2_70824.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:2011-06-30_Pleurotus_cornucopiae_2_70824.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=15724112",
+            "sha1": "99a12de81946f3a633e0150e2f792ff9d6aa4425",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2011-07-06 22:58:33",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "2011-06-30 Pleurotus cornucopiae 2 70824",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Pleurotus cornucopiae|Images from Mushroom Observer|Files from external sources with reviewed licenses|Fungi in June|Pleurotaceae in Russia",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "For more information about this, see the <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/show_observation/70824\">observation page</a> at Mushroom Observer.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2011-06-30",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "This image is <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/image/show_image/155545\">Image Number 155545</a> at <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org\">Mushroom Observer</a>, a source for mycological images.",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "This image was created by user <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/show_user/%7B%7B%7B1%7D%7D%7D\">{{{2}}}</a> at <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org\">Mushroom Observer</a>, a source for mycological images.<br>You can contact this user <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/ask_user_question/%7B%7B%7B1%7D%7D%7D\">here</a>.",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files from external sources with reviewed licenses"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi in June"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Images from Mushroom Observer"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Pleurotaceae in Russia"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Pleurotus cornucopiae"
+          }
+        ]
+      },
+      "15724115": {
+        "pageid": 15724115,
+        "ns": 6,
+        "title": "File:2011-06-30 Pleurotus cornucopiae 3 70824.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 120914,
+            "width": 1200,
+            "height": 900,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/9/92/2011-06-30_Pleurotus_cornucopiae_3_70824.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:2011-06-30_Pleurotus_cornucopiae_3_70824.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=15724115",
+            "sha1": "5a5060b84d06748d4941ef22f35fb9e254f58dd1",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2011-07-06 22:58:55",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "2011-06-30 Pleurotus cornucopiae 3 70824",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Pleurotus cornucopiae|Images from Mushroom Observer|Files from external sources with reviewed licenses|Fungi in June|Pleurotaceae in Russia",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "For more information about this, see the <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/show_observation/70824\">observation page</a> at Mushroom Observer.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2011-06-30",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "This image is <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/image/show_image/155546\">Image Number 155546</a> at <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org\">Mushroom Observer</a>, a source for mycological images.",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "This image was created by user <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/show_user/3108\">Iv Merlu (Merlu)</a> at <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org\">Mushroom Observer</a>, a source for mycological images.<br>You can contact this user <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/ask_user_question/3108\">here</a>.",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files from external sources with reviewed licenses"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi in June"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Images from Mushroom Observer"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Pleurotaceae in Russia"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Pleurotus cornucopiae"
+          }
+        ]
+      },
+      "15724118": {
+        "pageid": 15724118,
+        "ns": 6,
+        "title": "File:2011-06-30 Pleurotus cornucopiae 4 70824.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 118144,
+            "width": 1200,
+            "height": 900,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/3/35/2011-06-30_Pleurotus_cornucopiae_4_70824.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:2011-06-30_Pleurotus_cornucopiae_4_70824.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=15724118",
+            "sha1": "8366253086eb228253e9339aeefa442335d687bd",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2011-07-06 22:59:17",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "2011-06-30 Pleurotus cornucopiae 4 70824",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Pleurotus cornucopiae|Images from Mushroom Observer|Files from external sources with reviewed licenses|Fungi in June|Pleurotaceae in Russia",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "For more information about this, see the <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/show_observation/70824\">observation page</a> at Mushroom Observer.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2011-06-30",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "This image is <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/image/show_image/155547\">Image Number 155547</a> at <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org\">Mushroom Observer</a>, a source for mycological images.",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "This image was created by user <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/show_user/3108\">Iv Merlu (Merlu)</a> at <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org\">Mushroom Observer</a>, a source for mycological images.<br>You can contact this user <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/ask_user_question/3108\">here</a>.",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files from external sources with reviewed licenses"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi in June"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Images from Mushroom Observer"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Pleurotaceae in Russia"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Pleurotus cornucopiae"
+          }
+        ]
+      },
+      "15728232": {
+        "pageid": 15728232,
+        "ns": 6,
+        "title": "File:2011-06-30 Pleurotus cornucopiae 5 70824 cropped.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 303582,
+            "width": 700,
+            "height": 600,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/3/3e/2011-06-30_Pleurotus_cornucopiae_5_70824_cropped.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:2011-06-30_Pleurotus_cornucopiae_5_70824_cropped.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=15728232",
+            "sha1": "6efdd456a13476b038b59d48f8c4ea11e2e4e109",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2011-07-07 13:02:47",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "2011-06-30 Pleurotus cornucopiae 5 70824 cropped",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Pleurotus cornucopiae|Retouched pictures|Self-published work|Uploaded with derivativeFX",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "For more information about this, see the <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/show_observation/70824\">observation page</a> at Mushroom Observer.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2011-07-07 13:02",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<ul><li><a href=\"//commons.wikimedia.org/wiki/File:2011-06-30_Pleurotus_cornucopiae_5_70824.jpg\" title=\"File:2011-06-30 Pleurotus cornucopiae 5 70824.jpg\">2011-06-30_Pleurotus_cornucopiae_5_70824.jpg</a></li></ul>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "This image was created by user <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/show_user/%7B%7B%7B1%7D%7D%7D\">{{{2}}}</a> at <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org\">Mushroom Observer</a>, a source for mycological images.<br>You can contact this user <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/ask_user_question/%7B%7B%7B1%7D%7D%7D\">here</a>.",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Pleurotus cornucopiae"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Retouched pictures"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Uploaded with derivativeFX"
+          }
+        ]
+      },
+      "15724120": {
+        "pageid": 15724120,
+        "ns": 6,
+        "title": "File:2011-06-30 Pleurotus cornucopiae 5 70824.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 92141,
+            "width": 1200,
+            "height": 900,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/2/2c/2011-06-30_Pleurotus_cornucopiae_5_70824.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:2011-06-30_Pleurotus_cornucopiae_5_70824.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=15724120",
+            "sha1": "04ff26001752cf03561716ed4b5e37769a8cbe63",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2011-07-06 22:59:38",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "2011-06-30 Pleurotus cornucopiae 5 70824",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Pleurotus cornucopiae|Images from Mushroom Observer|Files from external sources with reviewed licenses|Files with derivative versions|Fungi in June|Pleurotaceae in Russia",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "For more information about this, see the <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/show_observation/70824\">observation page</a> at Mushroom Observer.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2011-06-30",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "This image is <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/image/show_image/155548\">Image Number 155548</a> at <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org\">Mushroom Observer</a>, a source for mycological images.",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "This image was created by user <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/show_user/3108\">Iv Merlu (Merlu)</a> at <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org\">Mushroom Observer</a>, a source for mycological images.<br>You can contact this user <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/ask_user_question/3108\">here</a>.",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files from external sources with reviewed licenses"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with derivative versions"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi in June"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Images from Mushroom Observer"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Pleurotaceae in Russia"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Pleurotus cornucopiae"
+          }
+        ]
+      },
+      "41593776": {
+        "pageid": 41593776,
+        "ns": 6,
+        "title": "File:Annual report of the State Botanist of the State of New York\" (1889-1897.) (19179967138).jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1300488,
+            "width": 2214,
+            "height": 2898,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/a/ad/Annual_report_of_the_State_Botanist_of_the_State_of_New_York%22_%281889-1897.%29_%2819179967138%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Annual_report_of_the_State_Botanist_of_the_State_of_New_York%22_(1889-1897.)_(19179967138).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=41593776",
+            "sha1": "e4ded1631f7c3fb0867335751e5f3a615fa81a65",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2015-07-14 22:16:08",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Annual report of the State Botanist of the State of New York\" (1889-1897.) (19179967138)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Pleurotus cornucopiae|Charles Horton Peck (mycologist)|Photos uploaded from Flickr by Fæ using a script|Flickr images reviewed by FlickreviewR|Files from Internet Archive Book Images Flickr stream|Files from Flickr's 'The Commons'|Annual report of the State Botanist",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<b>Title</b>: Annual report of the State Botanist of the State of New York<br>\n<p><b>Identifier</b>: annualreportofst1894peck<br>\n<b>Year</b>: <a rel=\"mw:ExtLink nofollow\" href=\"https://www.flickr.com/search/?tags=bookyear1889-1897.\" class=\"external text\">1889-1897.</a> (<a rel=\"mw:ExtLink nofollow\" href=\"https://www.flickr.com/search/?tags=bookdecade1880\" class=\"external text\">1880s</a>)<br>\n<b>Authors</b>: <a rel=\"mw:ExtLink nofollow\" href=\"https://www.flickr.com/search/?tags=bookauthorPeck_Charles_H_Charles_Horton_1833_1917\" class=\"external text\">Peck, Charles H. (Charles Horton), 1833-1917</a>; <a rel=\"mw:ExtLink nofollow\" href=\"https://www.flickr.com/search/?tags=bookauthorNew_York_State_State_Botanist\" class=\"external text\">New York (State). State Botanist</a><br>\n<b>Subjects</b>: <a rel=\"mw:ExtLink nofollow\" href=\"https://www.flickr.com/search/?tags=booksubjectPlants\" class=\"external text\">Plants</a>; <a rel=\"mw:ExtLink nofollow\" href=\"https://www.flickr.com/search/?tags=booksubjectFungi\" class=\"external text\">Fungi</a><br>\n<b>Publisher</b>: <a rel=\"mw:ExtLink nofollow\" href=\"https://www.flickr.com/search/?tags=bookpublisherAlbany_Troy_Press\" class=\"external text\">Albany<span typeof=\"mw:DisplaySpace\"> </span>: Troy Press</a><br>\n<b>Contributing Library</b>: <a rel=\"mw:ExtLink nofollow\" href=\"https://www.flickr.com/search/?tags=bookcontributorNew_York_Botanical_Garden_LuEsther_T_Mertz_Library\" class=\"external text\">New York Botanical Garden, LuEsther T. Mertz Library</a><br>\n<b>Digitizing Sponsor</b>: <a rel=\"mw:ExtLink nofollow\" href=\"https://www.flickr.com/search/?tags=booksponsorThe_LuEsther_T_Mertz_Library_the_New_York_Botanical_Garden\" class=\"external text\">The LuEsther T Mertz Library, the New York Botanical Garden</a><br>\n<br>\n<b>View Book Page</b>: <a rel=\"mw:ExtLink nofollow\" href=\"https://archive.org/stream/annualreportofst1894peck/#page/n302/mode/1up\" class=\"external text\">Book Viewer</a><br>\n<b>About This Book</b>: <a rel=\"mw:ExtLink nofollow\" href=\"https://archive.org/details/annualreportofst1894peck\" class=\"external text\">Catalog Entry</a><br>\n<b>View All Images</b>: <a rel=\"mw:ExtLink nofollow\" href=\"https://www.flickr.com/search/?tags=bookidannualreportofst1894peck\" class=\"external text\">All Images From Book</a><br>\nClick here to <a rel=\"mw:ExtLink nofollow\" href=\"https://archive.org/stream/annualreportofst1894peck/#page/n302/mode/1up\" class=\"external text\"><b>view book online</b></a> to see this illustration in context in a browseable online version of this book.<br>\n<br>\n<b>Text Appearing Before Image: </b><br>\n<b>EDIBLE FUNGI.</b><br>\n<b>Text Appearing After Image: </b><br>\n<b>M-iUik. I4lli#-1^- PLEUROTUS SAPIDUS Kalchb 8APID PLEUROTUS.</b><br>\n<br>\n<b>Note About Images</b><br></p>\n<b>Please note that these images are extracted from scanned page images that may have been digitally enhanced for readability - coloration and appearance of these illustrations may not perfectly resemble the original work.</b>",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2015-07-02 18:32:09",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"mw:ExtLink nofollow\" href=\"https://www.flickr.com/photos/internetarchivebookimages/19179967138/\" class=\"external free\">https://www.flickr.com/photos/internetarchivebookimages/19179967138/</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"mw:ExtLink nofollow\" href=\"https://www.flickr.com/people/126377022@N07\" class=\"external text\">Internet Archive Book Images</a>",
+                "source": "commons-desc-page"
+              },
+              "Permission": {
+                "value": "At the time of upload, the image license was automatically confirmed using the Flickr <a rel=\"mw:WikiLink/Interwiki\" href=\"https://en.wikipedia.org/wiki/API\" title=\"en:API\" class=\"extiw\">API</a>. For more information see <a rel=\"mw:WikiLink\" href=\"https://commons.wikimedia.org/wiki/User:F%C3%A6/Flickr_API_detail\" title=\"User:Fæ/Flickr API detail\">Flickr API detail</a>.",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseShortName": {
+                "value": "No restrictions",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "No known copyright restrictions",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://www.flickr.com/commons/usage/",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Annual report of the State Botanist"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Charles Horton Peck (mycologist)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files from Flickr's 'The Commons'"
+          }
+        ]
+      },
+      "13863492": {
+        "pageid": 13863492,
+        "ns": 6,
+        "title": "File:Branching Oyster Mushroom (Pleurotus cornucopiae) - geograph.org.uk - 1151726.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 113487,
+            "width": 640,
+            "height": 480,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/1/12/Branching_Oyster_Mushroom_%28Pleurotus_cornucopiae%29_-_geograph.org.uk_-_1151726.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Branching_Oyster_Mushroom_(Pleurotus_cornucopiae)_-_geograph.org.uk_-_1151726.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=13863492",
+            "sha1": "b64cf0fe93be9dbe36c5e43cd7a906582efa0b44",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2011-02-25 09:47:40",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Branching Oyster Mushroom (Pleurotus cornucopiae) - geograph.org.uk - 1151726",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Pleurotus cornucopiae|Images from Geograph Britain and Ireland|Information field template with formatting|Fungi of West Dunbartonshire|Fungi in February|United Kingdom photographs taken on 2009-02-07|Pleurotaceae in the United Kingdom|Images by Lairich Rig|Vale of Leven Industrial Estate",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "55.970190",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "-4.565500",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Branching Oyster Mushroom (Pleurotus cornucopiae). This species is fairly similar to the Oyster Mushroom, Pleurotus ostreatus (for which, see <a rel=\"mw:WikiLink\" href=\"https://commons.wikimedia.org/wiki/File:Oyster_Mushrooms,_Tile_Wood_-_geograph.org.uk_-_643622.jpg\" title=\"File:Oyster Mushrooms, Tile Wood - geograph.org.uk - 643622.jpg\">643622</a>).\n\n<p>While there are differences in colour and cap shape between the Oyster and the Branching Oyster, individual specimens of either species also vary in colour and cap shape as they age, and other features can therefore be a useful aid to identification.</p>\n\n<p>One of the features helping to identify this as Branching Oyster is that several of the stems were fused together at their base; the mushrooms also had an aniseed-like odour that was quite distinctive.</p>\n\n<p>These mushrooms were growing on a short, but broad, section of the trunk of a fallen broad-leaved tree; this was located at the upper (eastern) end of a meadow that slopes up towards a stone wall alongside the A813. The piece of wood is located only a few metres from the wall (in fact, I spotted the mushrooms while walking along the pavement on the other side of the wall).</p>\n\nThis species is less common than the Oyster, P. ostreatus, which is found all year round. The Branching Oyster, P. cornucopiae, is found from spring to autumn (the ones in my image are fairly old specimens) on the cut stumps of deciduous trees; they favour oak and elm.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2009-02-07",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "From <a rel=\"mw:ExtLink nofollow\" href=\"https://www.geograph.org.uk/photo/1151726\" class=\"external text\">geograph.org.uk</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"mw:ExtLink nofollow\" href=\"https://www.geograph.org.uk/profile/22713\" class=\"external text\">Lairich Rig</a>",
+                "source": "commons-desc-page"
+              },
+              "Attribution": {
+                "value": "Lairich Rig",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-2.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi in February"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi of West Dunbartonshire"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Images by Lairich Rig"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Images from Geograph Britain and Ireland"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Information field template with formatting"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Pleurotaceae in the United Kingdom"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Pleurotus cornucopiae"
+          },
+          {
+            "ns": 14,
+            "title": "Category:United Kingdom photographs taken on 2009-02-07"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Vale of Leven Industrial Estate"
+          }
+        ]
+      },
+      "28112573": {
+        "pageid": 28112573,
+        "ns": 6,
+        "title": "File:Branching Oyster Mushroom, Pleurotus conucopiae.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 10549876,
+            "width": 5184,
+            "height": 3456,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/e/e9/Branching_Oyster_Mushroom%2C_Pleurotus_conucopiae.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Branching_Oyster_Mushroom,_Pleurotus_conucopiae.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=28112573",
+            "sha1": "d435c53beee473113435f55e855470f5511e94e5",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2013-09-07 01:06:56",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Branching Oyster Mushroom, Pleurotus conucopiae",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Pleurotus cornucopiae|Taken with Canon EOS 550D|Self-published work|Fungi in September|United Kingdom photographs taken on 2013-09-01|Pleurotaceae in the United Kingdom|Fungi in the London Borough of Enfield|Files with coordinates missing SDC location of creation (51° N, 1° W)",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "51.689678",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "-0.098417",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Branching Oyster Mushroom, <a href=\"https://en.wikipedia.org/wiki/Pleurotus\" class=\"extiw\" title=\"en:Pleurotus\">Pleurotus</a> cornucopiae, taken in <a href=\"https://en.wikipedia.org/wiki/Crews_Hill\" class=\"extiw\" title=\"en:Crews Hill\">Crews Hill</a>,  <a href=\"https://en.wikipedia.org/wiki/London_Borough_of_Enfield\" class=\"extiw\" title=\"en:London Borough of Enfield\">London Borough of Enfield</a>, <a href=\"https://en.wikipedia.org/wiki/UK\" class=\"extiw\" title=\"en:UK\">UK</a>",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2013-09-01 17:20:40",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Stu%27s_Images\" title=\"User:Stu's Images\">Stu's Images</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Attribution": {
+                "value": "Stu's Images",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with coordinates missing SDC location of creation (51° N, 1° W)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi in September"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi in the London Borough of Enfield"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Pleurotaceae in the United Kingdom"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Pleurotus cornucopiae"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Canon EOS 550D"
+          },
+          {
+            "ns": 14,
+            "title": "Category:United Kingdom photographs taken on 2013-09-01"
+          }
+        ]
+      },
+      "130431051": {
+        "pageid": 130431051,
+        "ns": 6,
+        "title": "File:Cespi di funghi Pleurotus cornucopiae.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 4656188,
+            "width": 4608,
+            "height": 3456,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/2/21/Cespi_di_funghi_Pleurotus_cornucopiae.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Cespi_di_funghi_Pleurotus_cornucopiae.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=130431051",
+            "sha1": "29a968d08eeb89fcd017d1622661828babccf1a0",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2023-04-06 14:36:34",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Cespi di funghi Pleurotus cornucopiae",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Pleurotus cornucopiae|Self-published work|Quercus suber in Italy|Fungi of Lazio|Fungus habitat|Fungi in Villa Ada (Rome)",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Cespi di funghi Pleurotus cornucopiae cresciuti sul tronco di una quercia, al Parco urbano di Villa Ada, Roma",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2022-05-21 11:09:28",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Albarubescens&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Albarubescens (page does not exist)\">Albarubescens</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "10700273": {
+        "pageid": 10700273,
+        "ns": 6,
+        "title": "File:JoeKgPleurotus cornucopiae.JPG",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1426738,
+            "width": 2304,
+            "height": 1728,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/a/af/JoeKgPleurotus_cornucopiae.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:JoeKgPleurotus_cornucopiae.JPG",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=10700273",
+            "sha1": "3671d89c5ff07bbeba18c70af884acc47da8e51a",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2010-06-22 11:32:03",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "JoeKgPleurotus cornucopiae",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Pleurotus cornucopiae|GFDL|CC-BY-SA-3.0,2.5,2.0,1.0|Šumadija District|License migration redundant|Self-published work|Fungi of Šumadija|Pleurotaceae in Serbia",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Pleurotus cornucopiae of Šumadija",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2010-06-22",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:%D0%A1%D1%82%D1%80%D1%83%D1%98%D0%B0%D1%98%D0%BE%D0%B5\" title=\"User:Струјајое\">Струјајое</a>",
+                "source": "commons-desc-page"
+              },
+              "Permission": {
+                "value": "No",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0,2.5,2.0,1.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi of Šumadija"
+          },
+          {
+            "ns": 14,
+            "title": "Category:GFDL"
+          },
+          {
+            "ns": 14,
+            "title": "Category:License migration redundant"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Pleurotaceae in Serbia"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Pleurotus cornucopiae"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Šumadija District"
+          }
+        ]
+      },
+      "153608189": {
+        "pageid": 153608189,
+        "ns": 6,
+        "title": "File:Pleurotus cornucopiae 427740334.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 36340036,
+            "width": 9467,
+            "height": 6311,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/c/cc/Pleurotus_cornucopiae_427740334.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Pleurotus_cornucopiae_427740334.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=153608189",
+            "sha1": "141aac0134ef11946883fe6678ada8dca06f219f",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2024-10-06 14:33:06",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Pleurotus cornucopiae 427740334",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Pleurotus cornucopiae|Media from iNaturalist|Files with coordinates missing SDC location of creation|Uploaded with iNaturalist2Commons|INaturalist images reviewed by trusted reviewers",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "45.940176",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "13.676219",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Branching Oyster (<i>Pleurotus cornucopiae</i>) in Slovenia",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2024-09-06",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/427740334\">https://www.inaturalist.org/photos/427740334</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/3522968\">Matej Frančeškin</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "153608102": {
+        "pageid": 153608102,
+        "ns": 6,
+        "title": "File:Pleurotus cornucopiae 427742633.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 16914668,
+            "width": 8516,
+            "height": 5677,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Pleurotus_cornucopiae_427742633.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Pleurotus_cornucopiae_427742633.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=153608102",
+            "sha1": "87dcce96f64e5b5b0841788d4b546573858c8a4f",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2024-10-06 14:31:36",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Pleurotus cornucopiae 427742633",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Pleurotus cornucopiae|Media from iNaturalist|INaturalist images reviewed by iNaturalistReviewBot|Files with coordinates missing SDC location of creation|Uploaded with iNaturalist2Commons",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "45.940176",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "13.676219",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Branching Oyster (<i>Pleurotus cornucopiae</i>) in Slovenia",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2024-09-06",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/427742633\">https://www.inaturalist.org/photos/427742633</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/3522968\">Matej Frančeškin</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "153608253": {
+        "pageid": 153608253,
+        "ns": 6,
+        "title": "File:Pleurotus cornucopiae 427742936.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 3938822,
+            "width": 4439,
+            "height": 4439,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/1/15/Pleurotus_cornucopiae_427742936.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Pleurotus_cornucopiae_427742936.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=153608253",
+            "sha1": "98f5db526d613e8a749630caf0561227b84255eb",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2024-10-06 14:34:27",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Pleurotus cornucopiae 427742936",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Pleurotus cornucopiae|Media from iNaturalist|INaturalist images reviewed by iNaturalistReviewBot|Files with coordinates missing SDC location of creation|Uploaded with iNaturalist2Commons|INaturalist images missing SDC depicts",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "45.940176",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "13.676219",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Branching Oyster (<i>Pleurotus cornucopiae</i>) in Slovenia",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2024-09-06",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/427742936\">https://www.inaturalist.org/photos/427742936</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/3522968\">Matej Frančeškin</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "153608287": {
+        "pageid": 153608287,
+        "ns": 6,
+        "title": "File:Pleurotus cornucopiae 428480848.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 144235,
+            "width": 1792,
+            "height": 1374,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/5/53/Pleurotus_cornucopiae_428480848.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Pleurotus_cornucopiae_428480848.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=153608287",
+            "sha1": "92a0f4ca42fc0ea76a32403bfcb1ec8d3b6761e8",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2024-10-06 14:35:24",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Pleurotus cornucopiae 428480848",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Pleurotus cornucopiae|Media from iNaturalist|INaturalist images reviewed by iNaturalistReviewBot|Files with coordinates missing SDC location of creation|Uploaded with iNaturalist2Commons",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "45.940176",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "13.676219",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Branching Oyster (<i>Pleurotus cornucopiae</i>) spores",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2024-09-06",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/428480848\">https://www.inaturalist.org/photos/428480848</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/3522968\">Matej Frančeškin</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "58858994": {
+        "pageid": 58858994,
+        "ns": 6,
+        "title": "File:Pleurotus cornucopiae a1 (1).jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1749499,
+            "width": 3364,
+            "height": 2523,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/1/1e/Pleurotus_cornucopiae_a1_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Pleurotus_cornucopiae_a1_(1).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=58858994",
+            "sha1": "89593f8c480b084514c703a921481804131d6192",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2017-05-13 18:55:14",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Pleurotus cornucopiae a1 (1)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Pleurotus cornucopiae|Self-published work|Fungi in June|Pleurotus in Poland|Fungi of Kamionna (Beskid Wyspowy)|Pleurotaceae in Lesser Poland Voivodeship",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Pleurotus cornucopiae. Location: Poland, Beskid Wyspowy, Kamionna",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2016-06-04 02:50:31",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Selso\" title=\"User:Selso\">Jerzy Opioła</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "58858993": {
+        "pageid": 58858993,
+        "ns": 6,
+        "title": "File:Pleurotus cornucopiae a1 (2).jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1943527,
+            "width": 3508,
+            "height": 2631,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/3/33/Pleurotus_cornucopiae_a1_%282%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Pleurotus_cornucopiae_a1_(2).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=58858993",
+            "sha1": "562a682eeba0b26450579c5e6e9e075187420d4d",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2017-05-13 18:55:14",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Pleurotus cornucopiae a1 (2)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Pleurotus cornucopiae|Self-published work|Fungi in June|Pleurotus in Poland|Fungi of Kamionna (Beskid Wyspowy)|Pleurotaceae in Lesser Poland Voivodeship",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Pleurotus cornucopiae. Location: Poland, Beskid Wyspowy, Kamionna",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2016-06-04 02:50:31",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"mw:WikiLink\" href=\"https://commons.wikimedia.org/wiki/User:Selso\" title=\"User:Selso\">Jerzy Opioła</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "62914989": {
+        "pageid": 62914989,
+        "ns": 6,
+        "title": "File:Pleurotus cornucopiae a2.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 2227589,
+            "width": 3659,
+            "height": 2744,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/f/f3/Pleurotus_cornucopiae_a2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Pleurotus_cornucopiae_a2.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=62914989",
+            "sha1": "2c762c5939360c2b3b79faef5bc900832362dfc1",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2017-09-30 00:16:04",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Pleurotus cornucopiae a2",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Pleurotus cornucopiae|Self-published work",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<i>Pleurotus cornucopiae</i>. Location: Poland, Puszcza Niepołomicka",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2016-06-04 02:50:31",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Selso\" title=\"User:Selso\">Jerzy Opioła</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "147426314": {
+        "pageid": 147426314,
+        "ns": 6,
+        "title": "File:Pleurotus cornucopiae RP1 (3).jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 2220286,
+            "width": 2712,
+            "height": 2046,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/4/44/Pleurotus_cornucopiae_RP1_%283%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Pleurotus_cornucopiae_RP1_(3).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=147426314",
+            "sha1": "99d903fff20c5924f72f4381dca6a57316c4b4dd",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2024-04-16 05:54:01",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Pleurotus cornucopiae RP1 (3)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Pleurotus cornucopiae|Self-published work",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<i>Pleurotus cornucopiae</i>. Localization: Poland, Roztoczański Park Narodowy. Obszar ochrony ścisłej Bukowa Góra",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2024-04-15",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Selso\" title=\"User:Selso\">Jerzy Opioła</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "18322752": {
+        "pageid": 18322752,
+        "ns": 6,
+        "title": "File:Pleurotus cornucopiae, Branching Oyster, mature, UK.JPG",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 6861980,
+            "width": 5184,
+            "height": 3456,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/6/64/Pleurotus_cornucopiae%2C_Branching_Oyster%2C_mature%2C_UK.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Pleurotus_cornucopiae,_Branching_Oyster,_mature,_UK.JPG",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=18322752",
+            "sha1": "3fe8cd29350c5c9da16f344fe8126998855dd1c4",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2012-02-09 01:41:17",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Pleurotus cornucopiae, Branching Oyster, mature, UK",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Pleurotus cornucopiae|Taken with Canon EOS 550D|Self-published work|Fungi in January|United Kingdom photographs taken on 2012-01-17|Pleurotaceae in the United Kingdom|Fungi in the London Borough of Enfield|Files with coordinates missing SDC location of creation (51° N, 1° W)",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "51.680764",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "-0.077622",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<a href=\"https://en.wikipedia.org/wiki/Pleurotus\" class=\"extiw\" title=\"en:Pleurotus\">Pleurotus</a> cornucopiae, Branching Oyster, taken in Whitewebbs Park, <a href=\"https://en.wikipedia.org/wiki/London_Borough_of_Enfield\" class=\"extiw\" title=\"en:London Borough of Enfield\">Enfield</a>, UK",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2012-01-17",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Stu%27s_Images\" title=\"User:Stu's Images\">Stu's Images</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Attribution": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Stu%27s_Images\" title=\"User:Stu's Images\">Stu's Images</a>",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with coordinates missing SDC location of creation (51° N, 1° W)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi in January"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi in the London Borough of Enfield"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Pleurotaceae in the United Kingdom"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Pleurotus cornucopiae"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Canon EOS 550D"
+          },
+          {
+            "ns": 14,
+            "title": "Category:United Kingdom photographs taken on 2012-01-17"
+          }
+        ]
+      },
+      "18322751": {
+        "pageid": 18322751,
+        "ns": 6,
+        "title": "File:Pleurotus cornucopiae, Branching Oyster, UK.JPG",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 6105156,
+            "width": 5184,
+            "height": 3456,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/2/25/Pleurotus_cornucopiae%2C_Branching_Oyster%2C_UK.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Pleurotus_cornucopiae,_Branching_Oyster,_UK.JPG",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=18322751",
+            "sha1": "2f5fb1649bea942b8b61dae945c9a8cdecd778cd",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2012-02-09 01:41:17",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Pleurotus cornucopiae, Branching Oyster, UK",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Pleurotus cornucopiae|Taken with Canon EOS 550D|Self-published work|Fungi in the London Borough of Enfield|Files with coordinates missing SDC location of creation (51° N, 1° W)",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "quality",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "51.680764",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "-0.077622",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<a href=\"https://en.wikipedia.org/wiki/Pleurotus\" class=\"extiw\" title=\"en:Pleurotus\">Pleurotus</a> cornucopiae, Branching Oyster, taken in Whitewebbs Park, <a href=\"https://en.wikipedia.org/wiki/London_Borough_of_Enfield\" class=\"extiw\" title=\"en:London Borough of Enfield\">Enfield</a>, UK",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2012-01-17",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Stu%27s_Images\" title=\"User:Stu's Images\">Stu's Images</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Attribution": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Stu%27s_Images\" title=\"User:Stu's Images\">Stu's Images</a>",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with coordinates missing SDC location of creation (51° N, 1° W)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi in the London Borough of Enfield"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Pleurotus cornucopiae"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images missing SDC depicts"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images of London"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images of Pleurotus"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images of fungi in the United Kingdom"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Canon EOS 550D"
+          }
+        ]
+      },
+      "73444061": {
+        "pageid": 73444061,
+        "ns": 6,
+        "title": "File:Pleurotus cornucopiae. Oyster Mushroom sp. (39367302981).jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 2042943,
+            "width": 3161,
+            "height": 2880,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/6/67/Pleurotus_cornucopiae._Oyster_Mushroom_sp._%2839367302981%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Pleurotus_cornucopiae._Oyster_Mushroom_sp._(39367302981).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=73444061",
+            "sha1": "8a6cb7ce63ddfbc389881e529c50c26de8b98282",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2018-10-07 09:51:47",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Pleurotus cornucopiae. Oyster Mushroom sp. (39367302981)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Pleurotus cornucopiae|Lochranza|Fungi in June|Flickr images reviewed by FlickreviewR 2|Photographs by gailhampshire|Fungi of the Isle of Arran",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Lochranza, Arran. NR9350",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2017-06-12 13:51",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/gails_pictures/39367302981/\">Pleurotus cornucopiae. Oyster Mushroom sp.</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/43272765@N04\">gailhampshire</a> from Cradley, Malvern, U.K",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "178631615": {
+        "pageid": 178631615,
+        "ns": 6,
+        "title": "File:Pleurotus cornucopiae.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 4366802,
+            "width": 4608,
+            "height": 3456,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/6/6e/Pleurotus_cornucopiae.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Pleurotus_cornucopiae.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=178631615",
+            "sha1": "cf40a273abef1f24d3112003ba2022aadc2559cd",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2025-11-17 17:13:01",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Pleurotus cornucopiae",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Pleurotus cornucopiae|Self-published work|Fungi of Lazio|Uploaded via Campaign:wsc-it|Fungi in Villa Ada (Rome)|Wildlife and nature images from Wiki Science Competition 2025|Images from Wiki Science Competition 2025 in Italy",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Pleurotus cornucopiae fungus, Villa Ada urban Park, Rome",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2025-04-02 10:03:45",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Albarubescens&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Albarubescens (page does not exist)\">Albarubescens</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "7227233": {
+        "pageid": 7227233,
+        "ns": 6,
+        "title": "File:Pleurotus-cornocopiae Brestovaca.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 118304,
+            "width": 640,
+            "height": 774,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/6/62/Pleurotus-cornocopiae_Brestovaca.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Pleurotus-cornocopiae_Brestovaca.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=7227233",
+            "sha1": "bc014eb24e0e5af32e6c8b2d4cef8a5f2a1b7b13",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2009-07-06 16:11:33",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Pleurotus-cornocopiae Brestovaca",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Pleurotus cornucopiae|GFDL|Edible mushrooms|CC-BY-SA-3.0,2.5,2.0,1.0|Šumadija District|License migration redundant|Self-published work|Fungi of Šumadija|Pleurotaceae in Serbia",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Image of Pleurotus cornocopiae, Brestovača",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "6 July 2009 (upload date)",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:%D0%A1%D1%82%D1%80%D1%83%D1%98%D0%B0%D1%98%D0%BE%D0%B5\" title=\"User:Струјајое\">Струјајое</a>",
+                "source": "commons-desc-page"
+              },
+              "Permission": {
+                "value": "No",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0,2.5,2.0,1.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Edible mushrooms"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi of Šumadija"
+          },
+          {
+            "ns": 14,
+            "title": "Category:GFDL"
+          },
+          {
+            "ns": 14,
+            "title": "Category:License migration redundant"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Pleurotaceae in Serbia"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Pleurotus cornucopiae"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Šumadija District"
+          }
+        ]
+      },
+      "54195464": {
+        "pageid": 54195464,
+        "ns": 6,
+        "title": "File:Rolland - Pleurotus cornucopuiae.png",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 3043608,
+            "width": 1275,
+            "height": 2066,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/1/1f/Rolland_-_Pleurotus_cornucopuiae.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Rolland_-_Pleurotus_cornucopuiae.png",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=54195464",
+            "sha1": "d26365bce5a9b05d6bdb82786d12773c5dc646af",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2016-12-17 13:14:03",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Rolland - Pleurotus cornucopuiae",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Pleurotus cornucopiae|Léon Louis Rolland|Author died more than 100 years ago public domain images|CC-PD-Mark|PD-old missing SDC copyright status|Agaricales botanical illustrations",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<i>Pleurotus cornucopiae</i> Rolland und <i>Pleurotus geogenius</i> Gillet",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "1910",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "Atlas des champignons de France, Suisse et Belgique, Editura Paul Klincksieck, Paris 1910, T. 44",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=L%C3%A9on_Louis_Rolland&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"Léon Louis Rolland (page does not exist)\">Léon Louis Rolland</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "Public domain",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Public domain",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Copyrighted": {
+                "value": "False",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "pd",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "51582117": {
+        "pageid": 51582117,
+        "ns": 6,
+        "title": "File:¿ Pleurotus cornucopiae ? (3804798022).jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 5791407,
+            "width": 4000,
+            "height": 3000,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/b/bf/%C2%BF_Pleurotus_cornucopiae_%3F_%283804798022%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:%C2%BF_Pleurotus_cornucopiae_%3F_(3804798022).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=51582117",
+            "sha1": "ae9f142e4393740c9095e3047a9de5543e8df600",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2016-09-20 18:51:48",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "¿ Pleurotus cornucopiae ? (3804798022)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Pleurotus cornucopiae|Flickr images reviewed by FlickreviewR|Fungi in August|Photographs by Dinesh Valke|Fungi of Tungareshwar Wildlife Sanctuary",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "¿ Pleurotus cornucopiae ?",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2009-08-09 13:02",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/dinesh_valke/3804798022/\">¿ Pleurotus cornucopiae ?</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/91314344@N00\">Dinesh Valke</a> from Thane, India",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "51582116": {
+        "pageid": 51582116,
+        "ns": 6,
+        "title": "File:¿ Pleurotus cornucopiae ? (3804800966).jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1598738,
+            "width": 2048,
+            "height": 1536,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/f/f5/%C2%BF_Pleurotus_cornucopiae_%3F_%283804800966%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:%C2%BF_Pleurotus_cornucopiae_%3F_(3804800966).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=51582116",
+            "sha1": "3d2e92043ab65d7a87276fea1571bc6560c0f6e5",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2016-09-20 18:51:42",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "¿ Pleurotus cornucopiae ? (3804800966)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Pleurotus cornucopiae|Flickr images reviewed by FlickreviewR|Fungi in August|Photographs by Dinesh Valke|Fungi of Tungareshwar Wildlife Sanctuary",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "¿ Pleurotus cornucopiae ?",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2009-08-09 13:02",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/dinesh_valke/3804800966/\">¿ Pleurotus cornucopiae ?</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/91314344@N00\">Dinesh Valke</a> from Thane, India",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

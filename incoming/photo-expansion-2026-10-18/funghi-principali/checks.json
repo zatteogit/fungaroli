@@ -1,0 +1,1603 @@
+{
+  "photos": [
+    {
+      "id": "pe2-main-agaricus-arvensis-01",
+      "original_sha256_verified": true,
+      "commons_sha1_verified": true,
+      "files": {
+        "file": {
+          "bytes": 15830,
+          "dimensions": [
+            560,
+            373
+          ],
+          "sha256": "51dcab8fea37a407465bff09f01cd6a1923b3c1619ca8f7234d09475f2144564",
+          "exif_xmp_absent": true
+        },
+        "file_hd": {
+          "bytes": 42028,
+          "dimensions": [
+            1200,
+            799
+          ],
+          "sha256": "12810e8c79bdd63f4663f831583dbc909b97ca2deaa562efec850c7531bf1505",
+          "exif_xmp_absent": true
+        },
+        "thumb": {
+          "bytes": 2054,
+          "dimensions": [
+            160,
+            160
+          ],
+          "sha256": "0f45740b93df4af3222a69537ea0a0320220ec686065ee181a94b909b55715b0",
+          "exif_xmp_absent": true
+        }
+      }
+    },
+    {
+      "id": "pe2-main-agaricus-campestris-01",
+      "original_sha256_verified": true,
+      "commons_sha1_verified": true,
+      "files": {
+        "file": {
+          "bytes": 67454,
+          "dimensions": [
+            560,
+            420
+          ],
+          "sha256": "da28e96926ba7a2307a7fa9dc6fb064373308eec5583797da429e5d3d840098b",
+          "exif_xmp_absent": true
+        },
+        "file_hd": {
+          "bytes": 199524,
+          "dimensions": [
+            1200,
+            900
+          ],
+          "sha256": "e5bd4fac10837eeddc122f2454ede855bacb808e8690da805d9d446bd69fc0a0",
+          "exif_xmp_absent": true
+        },
+        "thumb": {
+          "bytes": 6224,
+          "dimensions": [
+            160,
+            160
+          ],
+          "sha256": "b57e5f8a58d2a948e7f07ebf50542dd5648e1916ef1a91539f239f0c753468e9",
+          "exif_xmp_absent": true
+        }
+      }
+    },
+    {
+      "id": "pe2-main-agaricus-campestris-03",
+      "original_sha256_verified": true,
+      "commons_sha1_verified": true,
+      "files": {
+        "file": {
+          "bytes": 33732,
+          "dimensions": [
+            560,
+            373
+          ],
+          "sha256": "5a5b9d85ed926931bffc0c6f8cda0011e76bb854f228da1ae85f2230df3a8513",
+          "exif_xmp_absent": true
+        },
+        "file_hd": {
+          "bytes": 93238,
+          "dimensions": [
+            1200,
+            800
+          ],
+          "sha256": "018e9c9175bda1075e685c9f9319722d056137c574cad761fee24390df044361",
+          "exif_xmp_absent": true
+        },
+        "thumb": {
+          "bytes": 4364,
+          "dimensions": [
+            160,
+            160
+          ],
+          "sha256": "feb5ef3f3817e6f096ee5a0ae2a4f91f8e10e08534b9a176178b63837c78d7a6",
+          "exif_xmp_absent": true
+        }
+      }
+    },
+    {
+      "id": "pe2-main-calocybe-gambosa-04",
+      "original_sha256_verified": true,
+      "commons_sha1_verified": true,
+      "files": {
+        "file": {
+          "bytes": 48472,
+          "dimensions": [
+            560,
+            287
+          ],
+          "sha256": "5abb0299150f1f11437c972517a8415a5f2468c39a4ed5f9a457d2efb4b50a88",
+          "exif_xmp_absent": true
+        },
+        "file_hd": {
+          "bytes": 140084,
+          "dimensions": [
+            1200,
+            615
+          ],
+          "sha256": "22ae159720ecdf74ac4bf5fa376bfcceb646750cd554cf61320a36b511fdef38",
+          "exif_xmp_absent": true
+        },
+        "thumb": {
+          "bytes": 7236,
+          "dimensions": [
+            160,
+            160
+          ],
+          "sha256": "54cd64d4c6175b1989955abf8312fc3a27f691397cfb92be04b78903728fd712",
+          "exif_xmp_absent": true
+        }
+      }
+    },
+    {
+      "id": "pe2-main-craterellus-lutescens-03",
+      "original_sha256_verified": true,
+      "commons_sha1_verified": true,
+      "files": {
+        "file": {
+          "bytes": 57788,
+          "dimensions": [
+            560,
+            400
+          ],
+          "sha256": "c97d31443b4cb77020d43f6f8ef2f9f4fed66599d280b60b647ff73f9d85e914",
+          "exif_xmp_absent": true
+        },
+        "file_hd": {
+          "bytes": 154724,
+          "dimensions": [
+            1028,
+            735
+          ],
+          "sha256": "23424854cccb03ace9e7a70554f4ccce1dd9dc61b059a43fed6c8d2b217807f2",
+          "exif_xmp_absent": true
+        },
+        "thumb": {
+          "bytes": 6072,
+          "dimensions": [
+            160,
+            160
+          ],
+          "sha256": "1515b45b4b0173a58cdfeb23518b24e03fbc3ec55e57ead6dfffe3dc95bcc8ca",
+          "exif_xmp_absent": true
+        }
+      }
+    },
+    {
+      "id": "pe2-main-hygrophorus-marzuolus-01",
+      "original_sha256_verified": true,
+      "commons_sha1_verified": true,
+      "files": {
+        "file": {
+          "bytes": 70696,
+          "dimensions": [
+            560,
+            420
+          ],
+          "sha256": "6d5810ccc07f27b3d35511159ca463dff657ca47334c505d392a38d500bf622f",
+          "exif_xmp_absent": true
+        },
+        "file_hd": {
+          "bytes": 103286,
+          "dimensions": [
+            700,
+            525
+          ],
+          "sha256": "ff0a8296fd2fc47d0990673ac5507a7154e240f2fb0ca4640e2646b835851683",
+          "exif_xmp_absent": true
+        },
+        "thumb": {
+          "bytes": 7284,
+          "dimensions": [
+            160,
+            160
+          ],
+          "sha256": "03de1c7614b64fb73db583e28ae8847cdef5117b2c01ada8eadf8a3d120463a6",
+          "exif_xmp_absent": true
+        }
+      }
+    },
+    {
+      "id": "pe2-main-pinophilus-01",
+      "original_sha256_verified": true,
+      "commons_sha1_verified": true,
+      "files": {
+        "file": {
+          "bytes": 68820,
+          "dimensions": [
+            560,
+            552
+          ],
+          "sha256": "29277ebec4c16ba6aea8c7126c86ac07fdeb0333fdda944a7de804edb89e2666",
+          "exif_xmp_absent": true
+        },
+        "file_hd": {
+          "bytes": 157818,
+          "dimensions": [
+            800,
+            789
+          ],
+          "sha256": "92f6986f4deb10d10a2b0d85b051ee4f6f0c9ab1fbaf0eafd0056c0b50c1d025",
+          "exif_xmp_absent": true
+        },
+        "thumb": {
+          "bytes": 6274,
+          "dimensions": [
+            160,
+            160
+          ],
+          "sha256": "4177c0e7323bd5057ad839e51ad8e0e644b7c11325882bce57c14b3710ff25e5",
+          "exif_xmp_absent": true
+        }
+      }
+    },
+    {
+      "id": "pe2-main-pinophilus-03",
+      "original_sha256_verified": true,
+      "commons_sha1_verified": true,
+      "files": {
+        "file": {
+          "bytes": 63030,
+          "dimensions": [
+            440,
+            560
+          ],
+          "sha256": "48cbc1ff9d5caeec9c812e0c2f1b40a3214a48f88c39e3f13fda79ba1b004bd1",
+          "exif_xmp_absent": true
+        },
+        "file_hd": {
+          "bytes": 163742,
+          "dimensions": [
+            944,
+            1200
+          ],
+          "sha256": "12bc67458d6b88c6139182c3cc86bcc02ff2eed1d80cfc28700bef2833383e64",
+          "exif_xmp_absent": true
+        },
+        "thumb": {
+          "bytes": 7134,
+          "dimensions": [
+            160,
+            160
+          ],
+          "sha256": "b8013a15e669aa706bba156edf1ed287fa5134154e3ed9b6a5b3cc96762b6ad5",
+          "exif_xmp_absent": true
+        }
+      }
+    },
+    {
+      "id": "pe2-main-pinophilus-04",
+      "original_sha256_verified": true,
+      "commons_sha1_verified": true,
+      "files": {
+        "file": {
+          "bytes": 73154,
+          "dimensions": [
+            560,
+            405
+          ],
+          "sha256": "e991314deefca9edbc25d51382f765bfed1c8548baec35ed11d3753814956c58",
+          "exif_xmp_absent": true
+        },
+        "file_hd": {
+          "bytes": 182118,
+          "dimensions": [
+            1200,
+            869
+          ],
+          "sha256": "59eb972483987ee222c624d1cfed5002b781e432cf087987a16af131120d74a1",
+          "exif_xmp_absent": true
+        },
+        "thumb": {
+          "bytes": 7032,
+          "dimensions": [
+            160,
+            160
+          ],
+          "sha256": "5733736a538365126c738f62cff65a67eb24aaf6f159c2a9f38cdfb73f1ecfae",
+          "exif_xmp_absent": true
+        }
+      }
+    },
+    {
+      "id": "pe2-main-suillus-03",
+      "original_sha256_verified": true,
+      "commons_sha1_verified": true,
+      "files": {
+        "file": {
+          "bytes": 30408,
+          "dimensions": [
+            560,
+            373
+          ],
+          "sha256": "341ffa542415ebb308429e15cc7a923c6a6ab2b36f70b6eed0598dea7ad0927f",
+          "exif_xmp_absent": true
+        },
+        "file_hd": {
+          "bytes": 83626,
+          "dimensions": [
+            1200,
+            800
+          ],
+          "sha256": "62e548935871f91f39051a7276f1208a282d48602f6fbed05262bfb23638c5fb",
+          "exif_xmp_absent": true
+        },
+        "thumb": {
+          "bytes": 3416,
+          "dimensions": [
+            160,
+            160
+          ],
+          "sha256": "63d2ec56359aac57428b406fe3c5e80bdceb932af7585ad28750d4c2c6c40cee",
+          "exif_xmp_absent": true
+        }
+      }
+    },
+    {
+      "id": "pe2-main-suillus-04",
+      "original_sha256_verified": true,
+      "commons_sha1_verified": true,
+      "files": {
+        "file": {
+          "bytes": 54098,
+          "dimensions": [
+            560,
+            373
+          ],
+          "sha256": "3e1bdeabd4151fae03222eedf9b62628a69ae999b699228012b7f49648ca46d2",
+          "exif_xmp_absent": true
+        },
+        "file_hd": {
+          "bytes": 150988,
+          "dimensions": [
+            1200,
+            800
+          ],
+          "sha256": "d4d393aee32b24f72f8992b6353916bae693cb3e22a4899bcc6a8d4111363413",
+          "exif_xmp_absent": true
+        },
+        "thumb": {
+          "bytes": 6012,
+          "dimensions": [
+            160,
+            160
+          ],
+          "sha256": "2f58202a9d9ae6d7188ff1756770bd783a611157dc1101a3f2e3a33b98230123",
+          "exif_xmp_absent": true
+        }
+      }
+    },
+    {
+      "id": "pe2-main-agaricus-bisporus-q01",
+      "original_sha256_verified": true,
+      "commons_sha1_verified": true,
+      "files": {
+        "file": {
+          "bytes": 68354,
+          "dimensions": [
+            560,
+            258
+          ],
+          "sha256": "5019ed5c732d39b9fb25070bd0f60143bd068531473d12417647871765f791ec",
+          "exif_xmp_absent": true
+        },
+        "file_hd": {
+          "bytes": 214896,
+          "dimensions": [
+            1200,
+            553
+          ],
+          "sha256": "3749db0b13bde4123e2e5380209f115546ac0bfc969fd5a2d27927a7fedc59cd",
+          "exif_xmp_absent": true
+        },
+        "thumb": {
+          "bytes": 7570,
+          "dimensions": [
+            160,
+            160
+          ],
+          "sha256": "afba6ae2bf1314e2f71757572ab6db173caafc7985941bd200358a68561619a2",
+          "exif_xmp_absent": true
+        }
+      }
+    },
+    {
+      "id": "pe2-main-agaricus-sylvicola-q01",
+      "original_sha256_verified": true,
+      "commons_sha1_verified": true,
+      "files": {
+        "file": {
+          "bytes": 41378,
+          "dimensions": [
+            560,
+            373
+          ],
+          "sha256": "a55b4b2a4685d564e6455af00e11f879de13653951025e096605802bb1be4cec",
+          "exif_xmp_absent": true
+        },
+        "file_hd": {
+          "bytes": 121878,
+          "dimensions": [
+            1200,
+            800
+          ],
+          "sha256": "fee2927d7f2e7a11a3f716e5b14ee2d66b51cd0ca043c99254a4d701fe37dbba",
+          "exif_xmp_absent": true
+        },
+        "thumb": {
+          "bytes": 4264,
+          "dimensions": [
+            160,
+            160
+          ],
+          "sha256": "a78bef93aef36858ce23dcb9c7504a16895557fc6395fc2d7728f7a8ca2583b9",
+          "exif_xmp_absent": true
+        }
+      }
+    },
+    {
+      "id": "pe2-main-agaricus-sylvicola-inat01",
+      "original_sha256_verified": true,
+      "commons_sha1_verified": false,
+      "files": {
+        "file": {
+          "bytes": 59936,
+          "dimensions": [
+            560,
+            420
+          ],
+          "sha256": "86b45913b2a608e68aba50ca771b739726e0b211de4decddde43e9d0d0969d3d",
+          "exif_xmp_absent": true
+        },
+        "file_hd": {
+          "bytes": 166276,
+          "dimensions": [
+            1200,
+            900
+          ],
+          "sha256": "600bbab6ed92776cb7614b7d5c43734dd9eacf325a142261eaeb8b9791549602",
+          "exif_xmp_absent": true
+        },
+        "thumb": {
+          "bytes": 6500,
+          "dimensions": [
+            160,
+            160
+          ],
+          "sha256": "ce5e70c4f9df9c8da3c101c5eb6531736b4196e505bf3d98b878bdca7eda8c88",
+          "exif_xmp_absent": true
+        }
+      }
+    },
+    {
+      "id": "pe2-main-agaricus-sylvicola-inat02",
+      "original_sha256_verified": true,
+      "commons_sha1_verified": false,
+      "files": {
+        "file": {
+          "bytes": 73114,
+          "dimensions": [
+            481,
+            560
+          ],
+          "sha256": "94e08fbf745342c680ce8e07909fdb1b8d862dd73f97b993abef50896b776e8a",
+          "exif_xmp_absent": true
+        },
+        "file_hd": {
+          "bytes": 202006,
+          "dimensions": [
+            1031,
+            1200
+          ],
+          "sha256": "89082ffdc4fbc6bb555c5c13d77e7161dff422f76be7a8c616b98c3f0a68751d",
+          "exif_xmp_absent": true
+        },
+        "thumb": {
+          "bytes": 8990,
+          "dimensions": [
+            160,
+            160
+          ],
+          "sha256": "da6ab754f25472b6415e7484587580c62fdd4991e608b91c2ec6f1c3db0b4e60",
+          "exif_xmp_absent": true
+        }
+      }
+    },
+    {
+      "id": "pe2-main-cyclocybe-aegerita-inat01",
+      "original_sha256_verified": true,
+      "commons_sha1_verified": false,
+      "files": {
+        "file": {
+          "bytes": 50648,
+          "dimensions": [
+            334,
+            560
+          ],
+          "sha256": "c2684d80fbb1514a4377930642917c05974aabd5b412c94338b8b105360cc63d",
+          "exif_xmp_absent": true
+        },
+        "file_hd": {
+          "bytes": 190076,
+          "dimensions": [
+            716,
+            1200
+          ],
+          "sha256": "415baf3d7e6b5f1136ef109c186cda978ac5b375bece924b7f872e312e4bf1c5",
+          "exif_xmp_absent": true
+        },
+        "thumb": {
+          "bytes": 4882,
+          "dimensions": [
+            160,
+            160
+          ],
+          "sha256": "e5722da3ee6ea0d62cc46203e2e276d135fb3c6b2f3ad71b50b2f5f073622ea5",
+          "exif_xmp_absent": true
+        }
+      }
+    },
+    {
+      "id": "pe2-main-lactarius-deliciosus-inat01",
+      "original_sha256_verified": true,
+      "commons_sha1_verified": false,
+      "files": {
+        "file": {
+          "bytes": 61100,
+          "dimensions": [
+            420,
+            560
+          ],
+          "sha256": "3d0ed857f26d3559475c339b805093271c4b96e0994ae72dce6cfd4f20138a9e",
+          "exif_xmp_absent": true
+        },
+        "file_hd": {
+          "bytes": 184468,
+          "dimensions": [
+            900,
+            1200
+          ],
+          "sha256": "083fa00fded48356a40fe82f2a7f3e1e2fbe3c2213bf4c7cf201e7abea9bd573",
+          "exif_xmp_absent": true
+        },
+        "thumb": {
+          "bytes": 6280,
+          "dimensions": [
+            160,
+            160
+          ],
+          "sha256": "a4b65aa8f143fd9985b7cf380413654755b342bbf3198f036f0c7ec2e9eaab18",
+          "exif_xmp_absent": true
+        }
+      }
+    },
+    {
+      "id": "pe2-main-lactarius-deliciosus-inat02",
+      "original_sha256_verified": true,
+      "commons_sha1_verified": false,
+      "files": {
+        "file": {
+          "bytes": 66646,
+          "dimensions": [
+            560,
+            420
+          ],
+          "sha256": "bbe9d4d9c16da585ecc106cec0debf5504bb8bbb2480909a2bc8421bf4c8e4cd",
+          "exif_xmp_absent": true
+        },
+        "file_hd": {
+          "bytes": 193004,
+          "dimensions": [
+            1200,
+            900
+          ],
+          "sha256": "b97dd1227a4241d8322aa802d2e4c1a5be81370dca85e88ee35754dc41666d61",
+          "exif_xmp_absent": true
+        },
+        "thumb": {
+          "bytes": 6638,
+          "dimensions": [
+            160,
+            160
+          ],
+          "sha256": "6aa32950c9ba74c5b4c1233d94610a8487b556fba54de201ef0531fb4e1b3c9f",
+          "exif_xmp_absent": true
+        }
+      }
+    },
+    {
+      "id": "pe2-main-pleurotus-eryngii-inat01",
+      "original_sha256_verified": true,
+      "commons_sha1_verified": false,
+      "files": {
+        "file": {
+          "bytes": 56720,
+          "dimensions": [
+            560,
+            420
+          ],
+          "sha256": "1ef73475f2966d17dc0d7e56edc054c463b04d8802c3bf524cc4a453a3b0cc7c",
+          "exif_xmp_absent": true
+        },
+        "file_hd": {
+          "bytes": 168054,
+          "dimensions": [
+            1200,
+            900
+          ],
+          "sha256": "8729c543fc259f587ad02c2281d94e84d4e09118d13ee896622f64d2bf8e0674",
+          "exif_xmp_absent": true
+        },
+        "thumb": {
+          "bytes": 6142,
+          "dimensions": [
+            160,
+            160
+          ],
+          "sha256": "532d90fe2614c5b05261050046bca697b0bdad8f5bda8bd576ee4d77d837b1f3",
+          "exif_xmp_absent": true
+        }
+      }
+    },
+    {
+      "id": "pe2-main-pleurotus-eryngii-inat02",
+      "original_sha256_verified": true,
+      "commons_sha1_verified": false,
+      "files": {
+        "file": {
+          "bytes": 67308,
+          "dimensions": [
+            560,
+            420
+          ],
+          "sha256": "3a38a21ac5c5e06ef43921e534d472154213a6c47059c217e1b46cf9a6c3bb43",
+          "exif_xmp_absent": true
+        },
+        "file_hd": {
+          "bytes": 183906,
+          "dimensions": [
+            1200,
+            900
+          ],
+          "sha256": "229b66894ebc7116c2e82a554072fc67e90f80882a85bfa7891abf2f336f0827",
+          "exif_xmp_absent": true
+        },
+        "thumb": {
+          "bytes": 7418,
+          "dimensions": [
+            160,
+            160
+          ],
+          "sha256": "e93122c8692010e0d8f13c8062a02668afd25b284fe0d2be25af1c4bd24b276d",
+          "exif_xmp_absent": true
+        }
+      }
+    },
+    {
+      "id": "pe2-main-pleurotus-ostreatus-inat01",
+      "original_sha256_verified": true,
+      "commons_sha1_verified": false,
+      "files": {
+        "file": {
+          "bytes": 48030,
+          "dimensions": [
+            560,
+            420
+          ],
+          "sha256": "2828d3b1c4ec9b1240fdcb15b7d2979b82842a03e45a6f67fdeea08bf11e2a6c",
+          "exif_xmp_absent": true
+        },
+        "file_hd": {
+          "bytes": 132204,
+          "dimensions": [
+            1200,
+            900
+          ],
+          "sha256": "8921d7591b470f3db7e9aace4f1774dd0c46858ed3e6070075aaf79f248504f0",
+          "exif_xmp_absent": true
+        },
+        "thumb": {
+          "bytes": 5754,
+          "dimensions": [
+            160,
+            160
+          ],
+          "sha256": "bf7bddf901db052d5857f45180002227660fd89a714af3c6cbdf30c9fee6b022",
+          "exif_xmp_absent": true
+        }
+      }
+    },
+    {
+      "id": "pe2-main-pleurotus-ostreatus-inat02",
+      "original_sha256_verified": true,
+      "commons_sha1_verified": false,
+      "files": {
+        "file": {
+          "bytes": 57418,
+          "dimensions": [
+            560,
+            420
+          ],
+          "sha256": "4ee0a00bc90a0bf55f8b604404d5e748db2a7bab183dde0a48d346ae9b669a57",
+          "exif_xmp_absent": true
+        },
+        "file_hd": {
+          "bytes": 171714,
+          "dimensions": [
+            1200,
+            900
+          ],
+          "sha256": "9394402a69c4d2e28db1f37f08a09d01c77adc1fec07652a9dec175a94159d66",
+          "exif_xmp_absent": true
+        },
+        "thumb": {
+          "bytes": 5726,
+          "dimensions": [
+            160,
+            160
+          ],
+          "sha256": "081d4f559832928de616962a0b5d2c6859a137b0e2d019497b1957b604d3e64d",
+          "exif_xmp_absent": true
+        }
+      }
+    },
+    {
+      "id": "pe2-main-amanita-rubescens-q01",
+      "original_sha256_verified": true,
+      "commons_sha1_verified": true,
+      "files": {
+        "file": {
+          "bytes": 62158,
+          "dimensions": [
+            560,
+            474
+          ],
+          "sha256": "d8b8042d64dee0e39b3cc75d64df9a43479768e43333b00ac068ade84038b093",
+          "exif_xmp_absent": true
+        },
+        "file_hd": {
+          "bytes": 191932,
+          "dimensions": [
+            1200,
+            1016
+          ],
+          "sha256": "d1ca9d9ae2e828b2b0b424835aa4f6aded8a1b1c3fbdf4e870e115b622b46d16",
+          "exif_xmp_absent": true
+        },
+        "thumb": {
+          "bytes": 5642,
+          "dimensions": [
+            160,
+            160
+          ],
+          "sha256": "ce92d9ec68c84d9a236042c9ee156fa15cfa2da70ce08d96741f15ec7b2a0cc0",
+          "exif_xmp_absent": true
+        }
+      }
+    },
+    {
+      "id": "pe2-main-fistulina-hepatica-q01",
+      "original_sha256_verified": true,
+      "commons_sha1_verified": true,
+      "files": {
+        "file": {
+          "bytes": 44988,
+          "dimensions": [
+            560,
+            400
+          ],
+          "sha256": "6e2c85f1270f5578bff96150f01f838cb8d7d7f3aef46a522835c84a8d364111",
+          "exif_xmp_absent": true
+        },
+        "file_hd": {
+          "bytes": 103226,
+          "dimensions": [
+            1072,
+            766
+          ],
+          "sha256": "b490309149b63b734dbb8fd7415768279c6f551f15447c026c6b19bcf221f266",
+          "exif_xmp_absent": true
+        },
+        "thumb": {
+          "bytes": 4960,
+          "dimensions": [
+            160,
+            160
+          ],
+          "sha256": "eca9f5867aaf9a73a6516bc18be8ac78d76edd58a4e38bae239b223305450c7d",
+          "exif_xmp_absent": true
+        }
+      }
+    },
+    {
+      "id": "pe2-main-hygrophorus-latitabundus-q01",
+      "original_sha256_verified": true,
+      "commons_sha1_verified": true,
+      "files": {
+        "file": {
+          "bytes": 67632,
+          "dimensions": [
+            560,
+            373
+          ],
+          "sha256": "b0533fbd659c153efddb8f9272f13518812eecfcc9045f425ffb3457ba6d310e",
+          "exif_xmp_absent": true
+        },
+        "file_hd": {
+          "bytes": 181534,
+          "dimensions": [
+            1200,
+            800
+          ],
+          "sha256": "a6c396905f480469173d20708bbe50276f9248eceab6ce2c55e2e7e3549fa523",
+          "exif_xmp_absent": true
+        },
+        "thumb": {
+          "bytes": 7360,
+          "dimensions": [
+            160,
+            160
+          ],
+          "sha256": "2137d86d0059345f31df7f95f8c4366428ef042e4bf580e092f0c10c5e1b3ab9",
+          "exif_xmp_absent": true
+        }
+      }
+    },
+    {
+      "id": "pe2-main-lactarius-deterrimus-inat02",
+      "original_sha256_verified": true,
+      "commons_sha1_verified": false,
+      "files": {
+        "file": {
+          "bytes": 65012,
+          "dimensions": [
+            560,
+            420
+          ],
+          "sha256": "26b81147c25d2268a7bc32dabf6406faac9aa39ca4f43ea501416c58a70d5e41",
+          "exif_xmp_absent": true
+        },
+        "file_hd": {
+          "bytes": 195702,
+          "dimensions": [
+            1200,
+            900
+          ],
+          "sha256": "216f34d56d272057332a9d76279dd9eb356a999c314cc4c73d1d71beeff50a91",
+          "exif_xmp_absent": true
+        },
+        "thumb": {
+          "bytes": 6498,
+          "dimensions": [
+            160,
+            160
+          ],
+          "sha256": "9bfd1a3898fd040eb3bede5f522a0b643f2f2854d972faf6ad370560a1e553f4",
+          "exif_xmp_absent": true
+        }
+      }
+    },
+    {
+      "id": "pe2-main-tricholoma-portentosum-inat01",
+      "original_sha256_verified": true,
+      "commons_sha1_verified": false,
+      "files": {
+        "file": {
+          "bytes": 72790,
+          "dimensions": [
+            560,
+            420
+          ],
+          "sha256": "946a20df122397687becfdb8e0210c2bc603f79cd281e9a13da8d05c08bec74f",
+          "exif_xmp_absent": true
+        },
+        "file_hd": {
+          "bytes": 217912,
+          "dimensions": [
+            1200,
+            900
+          ],
+          "sha256": "86a5742b45cb5cb5332be90f5bb199f7b8f3f45d863f80e6884bae5fdbc9794b",
+          "exif_xmp_absent": true
+        },
+        "thumb": {
+          "bytes": 8934,
+          "dimensions": [
+            160,
+            160
+          ],
+          "sha256": "6d99f2cb93360a4d7262735cfa7796d5f099cca63b88d56427a650976d93a9c0",
+          "exif_xmp_absent": true
+        }
+      }
+    },
+    {
+      "id": "pe2-main-coprinus-comatus-inat01",
+      "original_sha256_verified": true,
+      "commons_sha1_verified": false,
+      "files": {
+        "file": {
+          "bytes": 54670,
+          "dimensions": [
+            560,
+            560
+          ],
+          "sha256": "9e3276f2298bda3662b1b6a2667580823952edae9f22382cab999451867fcf96",
+          "exif_xmp_absent": true
+        },
+        "file_hd": {
+          "bytes": 141520,
+          "dimensions": [
+            1200,
+            1200
+          ],
+          "sha256": "fef03cb9658bc82f9f761a130de105637d7772216ac7ab58501afc4b5d79a87d",
+          "exif_xmp_absent": true
+        },
+        "thumb": {
+          "bytes": 7346,
+          "dimensions": [
+            160,
+            160
+          ],
+          "sha256": "0fc1ab73ca6a9b6eb75a254e23d74decafac41507fc5144790212269e1e016b1",
+          "exif_xmp_absent": true
+        }
+      }
+    },
+    {
+      "id": "pe2-main-coprinus-comatus-inat02",
+      "original_sha256_verified": true,
+      "commons_sha1_verified": false,
+      "files": {
+        "file": {
+          "bytes": 21180,
+          "dimensions": [
+            314,
+            560
+          ],
+          "sha256": "56d011c9fb563078e257e4387c867d22223a2f5c76948132d6e2269da34a670e",
+          "exif_xmp_absent": true
+        },
+        "file_hd": {
+          "bytes": 56306,
+          "dimensions": [
+            674,
+            1200
+          ],
+          "sha256": "9f3dfbd26a9a0b84722a571539c0b3861b79e22c7880640753de96da2e7da802",
+          "exif_xmp_absent": true
+        },
+        "thumb": {
+          "bytes": 3536,
+          "dimensions": [
+            160,
+            160
+          ],
+          "sha256": "335a5fde71ebce7ffd1adb8be66e2526de4b8199423bcd49330ad8b38feb63e3",
+          "exif_xmp_absent": true
+        }
+      }
+    },
+    {
+      "id": "pe2-main-fistulina-hepatica-inat02",
+      "original_sha256_verified": true,
+      "commons_sha1_verified": false,
+      "files": {
+        "file": {
+          "bytes": 73046,
+          "dimensions": [
+            560,
+            373
+          ],
+          "sha256": "8d3e082196d511301ddd0f2e4fd7da4fb66f9abc2a1ef645e18e0d04bc1ac3d1",
+          "exif_xmp_absent": true
+        },
+        "file_hd": {
+          "bytes": 219050,
+          "dimensions": [
+            1200,
+            800
+          ],
+          "sha256": "74695ab9d2c611c11acdb4ae7340b1aef71785cd0f55cf4b7069e4ccbe2d26b7",
+          "exif_xmp_absent": true
+        },
+        "thumb": {
+          "bytes": 7984,
+          "dimensions": [
+            160,
+            160
+          ],
+          "sha256": "7b4277232d06f33ce80e313952060531105187ad6695588db81fc223e8620d53",
+          "exif_xmp_absent": true
+        }
+      }
+    },
+    {
+      "id": "pe2-main-amanita-rubescens-inat02",
+      "original_sha256_verified": true,
+      "commons_sha1_verified": false,
+      "files": {
+        "file": {
+          "bytes": 45422,
+          "dimensions": [
+            420,
+            560
+          ],
+          "sha256": "b5fff0f0728f13dcf770c108d940a092aadd1e7e31bd6dc5e17095fea756849c",
+          "exif_xmp_absent": true
+        },
+        "file_hd": {
+          "bytes": 137624,
+          "dimensions": [
+            900,
+            1200
+          ],
+          "sha256": "02ce46623524ba317d2d87526d5ae06c7618ab9cdb14c36360a0ae98ebcaf74b",
+          "exif_xmp_absent": true
+        },
+        "thumb": {
+          "bytes": 4614,
+          "dimensions": [
+            160,
+            160
+          ],
+          "sha256": "b4282f93118ae301c988950938e921f9cf6f51918621861dacd6f55b65acaa8a",
+          "exif_xmp_absent": true
+        }
+      }
+    },
+    {
+      "id": "pe2-main-russula-aurea-inat02",
+      "original_sha256_verified": true,
+      "commons_sha1_verified": false,
+      "files": {
+        "file": {
+          "bytes": 47178,
+          "dimensions": [
+            560,
+            540
+          ],
+          "sha256": "b8949ab7dbfa9aa461b3ea6bf8dc6c3a6f1d823a00f2910e6b6ccf916eaa5ce6",
+          "exif_xmp_absent": true
+        },
+        "file_hd": {
+          "bytes": 150394,
+          "dimensions": [
+            1200,
+            1157
+          ],
+          "sha256": "41266adb8de27e0bcd3e9b6f459d4c7a82a7347e0288032d4ac69a429ed7b072",
+          "exif_xmp_absent": true
+        },
+        "thumb": {
+          "bytes": 5346,
+          "dimensions": [
+            160,
+            160
+          ],
+          "sha256": "4a5af4ff991ff4f99e6fdfb36253a76c8f1b372c81eea3ce739b4689de2bfd48",
+          "exif_xmp_absent": true
+        }
+      }
+    },
+    {
+      "id": "pe2-main-lactarius-deterrimus-q01",
+      "original_sha256_verified": true,
+      "commons_sha1_verified": true,
+      "files": {
+        "file": {
+          "bytes": 59786,
+          "dimensions": [
+            560,
+            419
+          ],
+          "sha256": "98ef9932684a5dda2f545b0c960240f945eec8ee8c3607b826d6d6e06354a479",
+          "exif_xmp_absent": true
+        },
+        "file_hd": {
+          "bytes": 172940,
+          "dimensions": [
+            1200,
+            898
+          ],
+          "sha256": "edd8c86d04acb0a7d068549eb1b2e5006531330dc008aeae2d06d262c82385bc",
+          "exif_xmp_absent": true
+        },
+        "thumb": {
+          "bytes": 6730,
+          "dimensions": [
+            160,
+            160
+          ],
+          "sha256": "ce1b24eaf6b4004271fb1f48c7017cd3af9d41c481f47eaaa26cc9b94dcd4187",
+          "exif_xmp_absent": true
+        }
+      }
+    },
+    {
+      "id": "pe2-main-morchella-esculenta-q01",
+      "original_sha256_verified": true,
+      "commons_sha1_verified": true,
+      "files": {
+        "file": {
+          "bytes": 52222,
+          "dimensions": [
+            560,
+            436
+          ],
+          "sha256": "7277969f346ab573d1a83d4144aa07d7d7f3d0ff242fd22fbe4b41509a444555",
+          "exif_xmp_absent": true
+        },
+        "file_hd": {
+          "bytes": 154306,
+          "dimensions": [
+            1200,
+            933
+          ],
+          "sha256": "fafa61fd6a2be464488d87fcd77ccfbc9af4db24a6541f944bde1827d61bc6ea",
+          "exif_xmp_absent": true
+        },
+        "thumb": {
+          "bytes": 6498,
+          "dimensions": [
+            160,
+            160
+          ],
+          "sha256": "8143d7eea51f7ad4fe5c2f4b049fe59ff7c3443f423095de952c19acd7566a08",
+          "exif_xmp_absent": true
+        }
+      }
+    },
+    {
+      "id": "pe2-main-pleurotus-cornucopiae-q01",
+      "original_sha256_verified": true,
+      "commons_sha1_verified": true,
+      "files": {
+        "file": {
+          "bytes": 50698,
+          "dimensions": [
+            560,
+            420
+          ],
+          "sha256": "50a2bc52adadb4d385c2b7cba0346d070f8edb110d0382e39ebfa7a18aa1f563",
+          "exif_xmp_absent": true
+        },
+        "file_hd": {
+          "bytes": 151584,
+          "dimensions": [
+            1200,
+            900
+          ],
+          "sha256": "e1dab042efce523cf6318c1b57af4bd921825ed0d64e13723c29e268d92e98c3",
+          "exif_xmp_absent": true
+        },
+        "thumb": {
+          "bytes": 4560,
+          "dimensions": [
+            160,
+            160
+          ],
+          "sha256": "f7aa33c869298cc6fa194081684a05a67717c65d5d3d235898bb5b7d118784a1",
+          "exif_xmp_absent": true
+        }
+      }
+    },
+    {
+      "id": "pe2-main-russula-aurea-q01",
+      "original_sha256_verified": true,
+      "commons_sha1_verified": true,
+      "files": {
+        "file": {
+          "bytes": 51332,
+          "dimensions": [
+            401,
+            560
+          ],
+          "sha256": "606525fdf07285be2fcf9ce4aeb899bf7d597073fe459e42b5b4f47149bfb721",
+          "exif_xmp_absent": true
+        },
+        "file_hd": {
+          "bytes": 109446,
+          "dimensions": [
+            733,
+            1024
+          ],
+          "sha256": "45baa26093516cd8e59a38555fcc31db2ecc92a50554ddafda749c71c6cd209e",
+          "exif_xmp_absent": true
+        },
+        "thumb": {
+          "bytes": 5518,
+          "dimensions": [
+            160,
+            160
+          ],
+          "sha256": "b7aea195d85e600e9bb1e227217b2d18e57a790f20157c6cfe40dfe424157b57",
+          "exif_xmp_absent": true
+        }
+      }
+    },
+    {
+      "id": "pe2-main-tricholoma-portentosum-q01",
+      "original_sha256_verified": true,
+      "commons_sha1_verified": true,
+      "files": {
+        "file": {
+          "bytes": 58180,
+          "dimensions": [
+            560,
+            420
+          ],
+          "sha256": "9dd266d676e3f6e8a3172e9bd0bc98438fa952a2190e97b4c98bf850660f4bd3",
+          "exif_xmp_absent": true
+        },
+        "file_hd": {
+          "bytes": 178244,
+          "dimensions": [
+            1200,
+            900
+          ],
+          "sha256": "cfb15d26d24cdc61b6d93c05e92b1a9255097aaf81f10fcb96882dd8ad1e6cc0",
+          "exif_xmp_absent": true
+        },
+        "thumb": {
+          "bytes": 6770,
+          "dimensions": [
+            160,
+            160
+          ],
+          "sha256": "1c2a5cf9ad36cd97f32da5a6dd4646b31294560e9cc41af9772cedacaa376af6",
+          "exif_xmp_absent": true
+        }
+      }
+    },
+    {
+      "id": "pe2-main-agaricus-sylvicola-q02",
+      "original_sha256_verified": true,
+      "commons_sha1_verified": true,
+      "files": {
+        "file": {
+          "bytes": 27168,
+          "dimensions": [
+            560,
+            420
+          ],
+          "sha256": "faf18ba033573dc81fc57159a5cd124e83f38f690f695f007bb6fe148b5d9b2d",
+          "exif_xmp_absent": true
+        },
+        "file_hd": {
+          "bytes": 144720,
+          "dimensions": [
+            1200,
+            900
+          ],
+          "sha256": "75971ddb4f5060576b2a7e783aa7bf79d797e27cd7c8b3bdb49b8c80231016aa",
+          "exif_xmp_absent": true
+        },
+        "thumb": {
+          "bytes": 2390,
+          "dimensions": [
+            160,
+            160
+          ],
+          "sha256": "75b80f9760986cedae4dee179d71590071b5f9087ca5563ba1e53aceb62a0394",
+          "exif_xmp_absent": true
+        }
+      }
+    },
+    {
+      "id": "pe2-main-amanita-rubescens-q02",
+      "original_sha256_verified": true,
+      "commons_sha1_verified": true,
+      "files": {
+        "file": {
+          "bytes": 50252,
+          "dimensions": [
+            560,
+            552
+          ],
+          "sha256": "b1fdf30c32103ee1ad08582df7855d710b67966e28b8d8a2da3b2f7aa8592fdb",
+          "exif_xmp_absent": true
+        },
+        "file_hd": {
+          "bytes": 137420,
+          "dimensions": [
+            1200,
+            1182
+          ],
+          "sha256": "790ef5efc817c2ea11b9044d90d165140a9ba2c1c3a05feb2175fd0b0a220754",
+          "exif_xmp_absent": true
+        },
+        "thumb": {
+          "bytes": 5450,
+          "dimensions": [
+            160,
+            160
+          ],
+          "sha256": "401dcf559d12b3e3a52da9c5aa8a23969e81a85872059e6ed181a47a8da71ac4",
+          "exif_xmp_absent": true
+        }
+      }
+    },
+    {
+      "id": "pe2-main-coprinus-comatus-q02",
+      "original_sha256_verified": true,
+      "commons_sha1_verified": true,
+      "files": {
+        "file": {
+          "bytes": 43360,
+          "dimensions": [
+            560,
+            373
+          ],
+          "sha256": "f761c3e3e37b2ed5f020f919ad8bb534cdfb0a8f18ac95c0387e34298717f5a5",
+          "exif_xmp_absent": true
+        },
+        "file_hd": {
+          "bytes": 115620,
+          "dimensions": [
+            1200,
+            800
+          ],
+          "sha256": "1ee751a6d72f0a5aec1665ea27b30192139fa3d028fa1fa7550982f1cd10e849",
+          "exif_xmp_absent": true
+        },
+        "thumb": {
+          "bytes": 5840,
+          "dimensions": [
+            160,
+            160
+          ],
+          "sha256": "b1a65e20f155bbcad981a154817d3174ea98dfb35894462d85d49c95a60ce82a",
+          "exif_xmp_absent": true
+        }
+      }
+    },
+    {
+      "id": "pe2-main-marasmius-oreades-r01",
+      "original_sha256_verified": true,
+      "commons_sha1_verified": true,
+      "files": {
+        "file": {
+          "bytes": 45390,
+          "dimensions": [
+            545,
+            560
+          ],
+          "sha256": "bf8b5331f288d19524e155d5be87637ed6bd9e34d4a04bf7006f5333d5cf74d3",
+          "exif_xmp_absent": true
+        },
+        "file_hd": {
+          "bytes": 130604,
+          "dimensions": [
+            1167,
+            1200
+          ],
+          "sha256": "d691148b58a6d76790f05eb7cbf17e6cfbfd59a592936dc027148af444ad5a3e",
+          "exif_xmp_absent": true
+        },
+        "thumb": {
+          "bytes": 5332,
+          "dimensions": [
+            160,
+            160
+          ],
+          "sha256": "839d7aa97f424d6d9b76de5cb0998419698bac2a747479b1235faa08c1d974ed",
+          "exif_xmp_absent": true
+        }
+      }
+    },
+    {
+      "id": "pe2-main-marasmius-oreades-r02",
+      "original_sha256_verified": true,
+      "commons_sha1_verified": true,
+      "files": {
+        "file": {
+          "bytes": 45340,
+          "dimensions": [
+            393,
+            560
+          ],
+          "sha256": "821ed49ace3a3668d90595f5856f486f91f6a8a90d31a233825f2f4c9fbc9e81",
+          "exif_xmp_absent": true
+        },
+        "file_hd": {
+          "bytes": 138656,
+          "dimensions": [
+            842,
+            1200
+          ],
+          "sha256": "f390c5c6ead894f092beb4132cae60f51def7b85ea6f3a4dc682629e3eb3954c",
+          "exif_xmp_absent": true
+        },
+        "thumb": {
+          "bytes": 6202,
+          "dimensions": [
+            160,
+            160
+          ],
+          "sha256": "ff250ef41f25384064e2b3c794ead56cc7f93737219aae09aff5ecf802dcef45",
+          "exif_xmp_absent": true
+        }
+      }
+    },
+    {
+      "id": "pe2-main-hygrophorus-latitabundus-q02",
+      "original_sha256_verified": true,
+      "commons_sha1_verified": true,
+      "files": {
+        "file": {
+          "bytes": 64996,
+          "dimensions": [
+            560,
+            420
+          ],
+          "sha256": "a8789ebc0ae211c883e4600a4d342ae100fefd02ad97e7d4d2065fd69898f02c",
+          "exif_xmp_absent": true
+        },
+        "file_hd": {
+          "bytes": 92412,
+          "dimensions": [
+            700,
+            525
+          ],
+          "sha256": "243b3646b7e65604a47902a6bb2764528932381ec405fb0e111cf29b228006ec",
+          "exif_xmp_absent": true
+        },
+        "thumb": {
+          "bytes": 7512,
+          "dimensions": [
+            160,
+            160
+          ],
+          "sha256": "6ad963d024bf007ea2509889c394fa2bed91d3e3c2de3a23bd4799512429d47f",
+          "exif_xmp_absent": true
+        }
+      }
+    },
+    {
+      "id": "pe2-main-pleurotus-cornucopiae-q02",
+      "original_sha256_verified": true,
+      "commons_sha1_verified": true,
+      "files": {
+        "file": {
+          "bytes": 45632,
+          "dimensions": [
+            560,
+            420
+          ],
+          "sha256": "ae4383e4d5bf184451bf80ff2d29d7784a9a178f6268db3631d5a77ff55ab3b0",
+          "exif_xmp_absent": true
+        },
+        "file_hd": {
+          "bytes": 137658,
+          "dimensions": [
+            1200,
+            900
+          ],
+          "sha256": "9f61d3ac297538135a9c4ef5e6d5e74ff070c283029f562d7c1395c2211c40a5",
+          "exif_xmp_absent": true
+        },
+        "thumb": {
+          "bytes": 5438,
+          "dimensions": [
+            160,
+            160
+          ],
+          "sha256": "4c351cfac4304b3112a24fcc5a62a7b0f6891801cb2aec3c26df9ccad05b2f12",
+          "exif_xmp_absent": true
+        }
+      }
+    },
+    {
+      "id": "pe2-main-russula-aurea-q02",
+      "original_sha256_verified": true,
+      "commons_sha1_verified": true,
+      "files": {
+        "file": {
+          "bytes": 39826,
+          "dimensions": [
+            409,
+            560
+          ],
+          "sha256": "37feca1e0c2a3e4ed4c575796c6ca0b66929c5e4245079d23648fd20fbfcc986",
+          "exif_xmp_absent": true
+        },
+        "file_hd": {
+          "bytes": 81718,
+          "dimensions": [
+            748,
+            1024
+          ],
+          "sha256": "d8417742f1e738f0b54ec1702c3295cad6eaa5c693eed6738991e4d6e504b8e0",
+          "exif_xmp_absent": true
+        },
+        "thumb": {
+          "bytes": 5922,
+          "dimensions": [
+            160,
+            160
+          ],
+          "sha256": "1afcc9c490ca3244831b8df66d0ffd0ea4b205b058fe7dcf78f18a84c91006ec",
+          "exif_xmp_absent": true
+        }
+      }
+    },
+    {
+      "id": "pe2-main-tricholoma-portentosum-q02",
+      "original_sha256_verified": true,
+      "commons_sha1_verified": true,
+      "files": {
+        "file": {
+          "bytes": 46500,
+          "dimensions": [
+            560,
+            420
+          ],
+          "sha256": "9d09e327196f37692e371aa87e73d1122ffbfb9e43edbe2909fd1cda7d2a3196",
+          "exif_xmp_absent": true
+        },
+        "file_hd": {
+          "bytes": 150686,
+          "dimensions": [
+            1200,
+            900
+          ],
+          "sha256": "66d7b1b01fa2a66f5d654b2e1c66565920647a9b2da7183f193b18a8d487a443",
+          "exif_xmp_absent": true
+        },
+        "thumb": {
+          "bytes": 5252,
+          "dimensions": [
+            160,
+            160
+          ],
+          "sha256": "e66521136f28dec504f5938aa5adb9bc96ba101671ec3946e7dd3c8a21e96963",
+          "exif_xmp_absent": true
+        }
+      }
+    },
+    {
+      "id": "pe2-main-morchella-elata-q02",
+      "original_sha256_verified": true,
+      "commons_sha1_verified": true,
+      "files": {
+        "file": {
+          "bytes": 30920,
+          "dimensions": [
+            560,
+            375
+          ],
+          "sha256": "57f6c1f1dd45cb7ffe293b9527bae19077165a3c3679f40f53a8d48459b61c65",
+          "exif_xmp_absent": true
+        },
+        "file_hd": {
+          "bytes": 65522,
+          "dimensions": [
+            1024,
+            685
+          ],
+          "sha256": "3689502e14504fd89d01e57f9942ab992b9151587d232ab1d74e739373ee03b2",
+          "exif_xmp_absent": true
+        },
+        "thumb": {
+          "bytes": 4626,
+          "dimensions": [
+            160,
+            160
+          ],
+          "sha256": "57fc6015eb5f0e9c1eb26591575172396984c58597ca633e206e816c655ed6ca",
+          "exif_xmp_absent": true
+        }
+      }
+    }
+  ],
+  "suites_run": false
+}

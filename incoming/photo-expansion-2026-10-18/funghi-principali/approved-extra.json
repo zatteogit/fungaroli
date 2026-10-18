@@ -1,0 +1,470 @@
+{
+  "pe2-main-agaricus-bisporus-q01": {
+    "punto": [
+      0.53,
+      0.54
+    ],
+    "riquadro": [
+      0.28,
+      0.01,
+      0.77,
+      0.96
+    ],
+    "caption": "Esemplare rovesciato con lamelle, gambo e base visibili."
+  },
+  "pe2-main-agaricus-sylvicola-q01": {
+    "punto": [
+      0.5,
+      0.54
+    ],
+    "riquadro": [
+      0.06,
+      0.15,
+      0.93,
+      0.99
+    ],
+    "caption": "Cappello e superficie lamellare di due esemplari nel bosco."
+  },
+  "pe2-main-agaricus-sylvicola-inat01": {
+    "punto": [
+      0.5,
+      0.53
+    ],
+    "riquadro": [
+      0.02,
+      0.12,
+      0.98,
+      0.9
+    ],
+    "caption": "Due esemplari sul terreno, con cappello e lamelle visibili."
+  },
+  "pe2-main-agaricus-sylvicola-inat02": {
+    "punto": [
+      0.5,
+      0.49
+    ],
+    "riquadro": [
+      0.03,
+      0.06,
+      0.98,
+      0.97
+    ],
+    "caption": "Cappelli chiari osservati dall’alto fra erba e foglie."
+  },
+  "pe2-main-cyclocybe-aegerita-inat01": {
+    "punto": [
+      0.51,
+      0.52
+    ],
+    "riquadro": [
+      0.01,
+      0.05,
+      0.97,
+      0.96
+    ],
+    "caption": "Cappelli di un gruppo osservati dall’alto sul legno."
+  },
+  "pe2-main-lactarius-deliciosus-inat01": {
+    "punto": [
+      0.49,
+      0.5
+    ],
+    "riquadro": [
+      0.01,
+      0.06,
+      0.96,
+      0.98
+    ],
+    "caption": "Cappello aranciato osservato dall’alto."
+  },
+  "pe2-main-lactarius-deliciosus-inat02": {
+    "punto": [
+      0.54,
+      0.51
+    ],
+    "riquadro": [
+      0.04,
+      0.05,
+      0.98,
+      0.96
+    ],
+    "caption": "Esemplare di lato con lamelle e gambo visibili."
+  },
+  "pe2-main-pleurotus-eryngii-inat01": {
+    "punto": [
+      0.52,
+      0.5
+    ],
+    "riquadro": [
+      0.02,
+      0.04,
+      0.99,
+      0.95
+    ],
+    "caption": "Cappello e lamelle di esemplari sostenuti nella mano."
+  },
+  "pe2-main-pleurotus-eryngii-inat02": {
+    "punto": [
+      0.52,
+      0.54
+    ],
+    "riquadro": [
+      0.02,
+      0.22,
+      0.98,
+      0.95
+    ],
+    "caption": "Cappello, lamelle e base di esemplari sul terreno."
+  },
+  "pe2-main-pleurotus-ostreatus-inat01": {
+    "punto": [
+      0.5,
+      0.51
+    ],
+    "riquadro": [
+      0.01,
+      0.01,
+      0.99,
+      0.99
+    ],
+    "caption": "Gruppo sul legno con superficie lamellare visibile."
+  },
+  "pe2-main-pleurotus-ostreatus-inat02": {
+    "punto": [
+      0.54,
+      0.53
+    ],
+    "riquadro": [
+      0.11,
+      0.11,
+      0.91,
+      0.95
+    ],
+    "caption": "Cappelli sovrapposti e lamelle sul tronco."
+  },
+  "pe2-main-amanita-rubescens-q01": {
+    "punto": [
+      0.5,
+      0.49
+    ],
+    "riquadro": [
+      0.03,
+      0.02,
+      0.96,
+      0.96
+    ],
+    "caption": "Dettaglio della superficie del cappello."
+  },
+  "pe2-main-fistulina-hepatica-q01": {
+    "punto": [
+      0.51,
+      0.52
+    ],
+    "riquadro": [
+      0.14,
+      0.1,
+      0.88,
+      0.96
+    ],
+    "caption": "Dettaglio di un piccolo corpo fruttifero sul legno."
+  },
+  "pe2-main-hygrophorus-latitabundus-q01": {
+    "punto": [
+      0.53,
+      0.51
+    ],
+    "riquadro": [
+      0.04,
+      0.03,
+      0.96,
+      0.99
+    ],
+    "caption": "Esemplari sul terreno con gambi e lamelle visibili."
+  },
+  "pe2-main-lactarius-deterrimus-inat02": {
+    "punto": [
+      0.5,
+      0.51
+    ],
+    "riquadro": [
+      0.01,
+      0.01,
+      0.99,
+      0.99
+    ],
+    "caption": "Cappello osservato dall'alto fra erba e aghi."
+  },
+  "pe2-main-tricholoma-portentosum-inat01": {
+    "punto": [
+      0.49,
+      0.52
+    ],
+    "riquadro": [
+      0.1,
+      0.09,
+      0.9,
+      0.84
+    ],
+    "caption": "Cappello, lamelle e gambo di due esemplari sul terreno."
+  },
+  "pe2-main-coprinus-comatus-inat01": {
+    "punto": [
+      0.49,
+      0.5
+    ],
+    "riquadro": [
+      0.17,
+      0.07,
+      0.85,
+      0.99
+    ],
+    "caption": "Esemplare con cappello aperto osservato dall'alto."
+  },
+  "pe2-main-coprinus-comatus-inat02": {
+    "punto": [
+      0.5,
+      0.5
+    ],
+    "riquadro": [
+      0.13,
+      0.03,
+      0.91,
+      0.98
+    ],
+    "caption": "Dettaglio laterale del cappello e della sua superficie."
+  },
+  "pe2-main-fistulina-hepatica-inat02": {
+    "punto": [
+      0.51,
+      0.55
+    ],
+    "riquadro": [
+      0.01,
+      0.15,
+      0.99,
+      0.98
+    ],
+    "caption": "Corpo fruttifero sul tronco e sezione visibile."
+  },
+  "pe2-main-amanita-rubescens-inat02": {
+    "punto": [
+      0.5,
+      0.5
+    ],
+    "riquadro": [
+      0.01,
+      0.01,
+      0.99,
+      0.99
+    ],
+    "caption": "Cappello osservato dall'alto fra fili d'erba."
+  },
+  "pe2-main-russula-aurea-inat02": {
+    "punto": [
+      0.51,
+      0.5
+    ],
+    "riquadro": [
+      0.01,
+      0.01,
+      0.99,
+      0.99
+    ],
+    "caption": "Lamelle gialle e gambo osservati da vicino."
+  },
+  "pe2-main-lactarius-deterrimus-q01": {
+    "punto": [
+      0.51,
+      0.49
+    ],
+    "riquadro": [
+      0.01,
+      0.01,
+      0.99,
+      0.99
+    ],
+    "caption": "Dettaglio ravvicinato delle lamelle aranciate."
+  },
+  "pe2-main-morchella-esculenta-q01": {
+    "punto": [
+      0.51,
+      0.53
+    ],
+    "riquadro": [
+      0.05,
+      0.04,
+      0.96,
+      0.98
+    ],
+    "caption": "Due esemplari con mitra alveolata e gambo visibili."
+  },
+  "pe2-main-pleurotus-cornucopiae-q01": {
+    "punto": [
+      0.5,
+      0.51
+    ],
+    "riquadro": [
+      0.03,
+      0.1,
+      0.98,
+      0.98
+    ],
+    "caption": "Cappelli di un gruppo sul legno coperto di muschio."
+  },
+  "pe2-main-russula-aurea-q01": {
+    "punto": [
+      0.5,
+      0.5
+    ],
+    "riquadro": [
+      0.1,
+      0.04,
+      0.97,
+      0.93
+    ],
+    "caption": "Esemplare rovesciato nel sottobosco con lamelle e gambo visibili."
+  },
+  "pe2-main-tricholoma-portentosum-q01": {
+    "punto": [
+      0.5,
+      0.49
+    ],
+    "riquadro": [
+      0.08,
+      0.08,
+      0.95,
+      0.89
+    ],
+    "caption": "Cappello scuro e margine con lamelle visibili fra le foglie."
+  },
+  "pe2-main-agaricus-sylvicola-q02": {
+    "punto": [
+      0.52,
+      0.5
+    ],
+    "riquadro": [
+      0.01,
+      0.01,
+      0.99,
+      0.99
+    ],
+    "caption": "Dettaglio della superficie inferiore del cappello e del gambo."
+  },
+  "pe2-main-amanita-rubescens-q02": {
+    "punto": [
+      0.51,
+      0.53
+    ],
+    "riquadro": [
+      0.18,
+      0.1,
+      0.91,
+      0.98
+    ],
+    "caption": "Esemplare nel sottobosco, con cappello e gambo visibili."
+  },
+  "pe2-main-coprinus-comatus-q02": {
+    "punto": [
+      0.49,
+      0.48
+    ],
+    "riquadro": [
+      0.11,
+      0.09,
+      0.82,
+      0.82
+    ],
+    "caption": "Gruppo con cappelli e gambi osservati di lato."
+  },
+  "pe2-main-marasmius-oreades-r01": {
+    "punto": [
+      0.52,
+      0.38
+    ],
+    "riquadro": [
+      0.17,
+      0.12,
+      0.76,
+      0.63
+    ],
+    "caption": "Cappelli di un gruppo osservati dall'alto fra erbe e foglie."
+  },
+  "pe2-main-marasmius-oreades-r02": {
+    "punto": [
+      0.58,
+      0.35
+    ],
+    "riquadro": [
+      0.32,
+      0.22,
+      0.82,
+      0.48
+    ],
+    "caption": "Cappello e parte del gambo osservati fra le erbe."
+  },
+  "pe2-main-hygrophorus-latitabundus-q02": {
+    "punto": [
+      0.5,
+      0.49
+    ],
+    "riquadro": [
+      0.03,
+      0.01,
+      0.98,
+      0.94
+    ],
+    "caption": "Esemplari fra gli aghi, con lamelle e gambo in primo piano."
+  },
+  "pe2-main-pleurotus-cornucopiae-q02": {
+    "punto": [
+      0.61,
+      0.52
+    ],
+    "riquadro": [
+      0.11,
+      0.22,
+      0.9,
+      0.88
+    ],
+    "caption": "Gruppi di cappelli sul legno, osservati di lato."
+  },
+  "pe2-main-russula-aurea-q02": {
+    "punto": [
+      0.51,
+      0.34
+    ],
+    "riquadro": [
+      0.12,
+      0.15,
+      0.9,
+      0.57
+    ],
+    "caption": "Cappello aranciato osservato dall'alto nel sottobosco."
+  },
+  "pe2-main-tricholoma-portentosum-q02": {
+    "punto": [
+      0.53,
+      0.55
+    ],
+    "riquadro": [
+      0.2,
+      0.22,
+      0.77,
+      0.79
+    ],
+    "caption": "Cappello e gambo nel bosco, fra aghi e muschio."
+  },
+  "pe2-main-morchella-elata-q02": {
+    "punto": [
+      0.56,
+      0.5
+    ],
+    "riquadro": [
+      0.51,
+      0.26,
+      0.61,
+      0.71
+    ],
+    "caption": "Morchella elata s.l.; foto riferita al gruppo, non delimitazione molecolare. Mitra scura fra il muschio; gambo nascosto."
+  }
+}

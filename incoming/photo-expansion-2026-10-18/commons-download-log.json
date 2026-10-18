@@ -1,0 +1,1396 @@
+{
+  "results": [
+    {
+      "id": "pe2-main-agaricus-bisporus-q01",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-principali/originals/pe2-main-agaricus-bisporus-q01.jpg",
+      "utc": "2026-10-18T21:53:47.084944Z",
+      "status": "downloaded_pending_review",
+      "sha256": "4423810fcedd20cf8404424d339e3a5e59aa0515ae3e65d17eafe52aab38286a",
+      "bytes": 684951
+    },
+    {
+      "id": "pe2-sosia-caloboletus-calopus-68023ab",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-caloboletus-calopus-68023ab.jpg",
+      "utc": "2026-10-18T21:53:55.970031Z",
+      "status": "downloaded_pending_review",
+      "sha256": "98fa8a9f40171d765b7b16c7dbe75f8fd4e5ecdef8bd6e03518697fa46e03d1c",
+      "bytes": 6311180
+    },
+    {
+      "id": "pe2-natura-ape-da-miele-2cfc6536",
+      "original": "incoming/photo-expansion-2026-10-18/natura/originals/pe2-natura-ape-da-miele-2cfc6536.jpg",
+      "utc": "2026-10-18T21:54:05.225593Z",
+      "status": "downloaded_pending_review",
+      "sha256": "e294b40b4653c4fc1c829f0f965b1cfb7dd20b802ed5718769fde7f35183bfc4",
+      "bytes": 3270954
+    },
+    {
+      "id": "pe2-main-agaricus-sylvicola-q01",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-principali/originals/pe2-main-agaricus-sylvicola-q01.jpg",
+      "utc": "2026-10-18T21:54:14.790476Z",
+      "status": "downloaded_pending_review",
+      "sha256": "d27d17782a0fb2f568064b46346c21dee3ce1dad9ce4a055ffa1c8f6c2f122d8",
+      "bytes": 575737
+    },
+    {
+      "id": "pe2-sosia-caloboletus-radicans-fa408fb",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-caloboletus-radicans-fa408fb.jpg",
+      "utc": "2026-10-18T21:54:23.374453Z",
+      "status": "downloaded_pending_review",
+      "sha256": "d0d569ccde94ea82f65c22a63e30ed5e7e320ed0c1896137494518c723365336",
+      "bytes": 8728791
+    },
+    {
+      "id": "pe2-natura-sirfidi-b283e055",
+      "original": "incoming/photo-expansion-2026-10-18/natura/originals/pe2-natura-sirfidi-b283e055.jpg",
+      "utc": "2026-10-18T21:54:32.873291Z",
+      "status": "downloaded_pending_review",
+      "sha256": "f659e525c550af38efb6e7c49a6661c42e95586027b3846c93566f8114225f04",
+      "bytes": 2617979
+    },
+    {
+      "id": "pe2-main-amanita-rubescens-q01",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-principali/originals/pe2-main-amanita-rubescens-q01.jpg",
+      "utc": "2026-10-18T21:54:42.057321Z",
+      "status": "downloaded_pending_review",
+      "sha256": "3d320a8fe0f9d57ed24a506975d2eee91a280a1d8028f67a31df03498e098cd1",
+      "bytes": 4171155
+    },
+    {
+      "id": "pe2-sosia-neoboletus-luridiformis-dd1c6b8",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-neoboletus-luridiformis-dd1c6b8.jpg",
+      "utc": "2026-10-18T21:54:51.359017Z",
+      "status": "downloaded_pending_review",
+      "sha256": "92188fb8562dae2279f8cb8f254066b9e5eae4d2303e3047c495ccc93e1c7165",
+      "bytes": 7101130
+    },
+    {
+      "id": "pe2-natura-farfalle-diurne-52e89a72",
+      "original": "incoming/photo-expansion-2026-10-18/natura/originals/pe2-natura-farfalle-diurne-52e89a72.jpg",
+      "utc": "2026-10-18T21:55:01.092371Z",
+      "status": "downloaded_pending_review",
+      "sha256": "ac3decfed8d67ab1fbd79ec235681c9c5f3fb08134ffebfaeab0261b8e41201d",
+      "bytes": 2798813
+    },
+    {
+      "id": "pe2-main-coprinus-comatus-q01",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-principali/originals/pe2-main-coprinus-comatus-q01.jpg",
+      "utc": "2026-10-18T21:55:09.868377Z",
+      "status": "downloaded_pending_review",
+      "sha256": "1a089d746795edf4b053cf58d774282cdd0904cb577928ebf631f716ab1e6c18",
+      "bytes": 542485
+    },
+    {
+      "id": "pe2-sosia-imleria-badia-ddb9b81",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-imleria-badia-ddb9b81.jpg",
+      "utc": "2026-10-18T21:55:18.423046Z",
+      "status": "downloaded_pending_review",
+      "sha256": "77156d4b2d1839c77d6d8a2c3942a0857eba477634d8fac446f921d98cde0a8e",
+      "bytes": 2048025
+    },
+    {
+      "id": "pe2-natura-cinghiale-aa94ee25",
+      "original": "incoming/photo-expansion-2026-10-18/natura/originals/pe2-natura-cinghiale-aa94ee25.jpg",
+      "utc": "2026-10-18T21:55:27.615955Z",
+      "status": "downloaded_pending_review",
+      "sha256": "fd0b83ef7e044b998dc7c731895c57433c75e6b237f7b654edcb47db518e08fa",
+      "bytes": 3189302
+    },
+    {
+      "id": "pe2-main-cyclocybe-aegerita-q01",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-principali/originals/pe2-main-cyclocybe-aegerita-q01.jpg",
+      "utc": "2026-10-18T21:55:36.435340Z",
+      "status": "downloaded_pending_review",
+      "sha256": "adb36f5b1bca4c103dd9861d4bd8cd88b23326e9fbf02ae94b0d2c14e924ef23",
+      "bytes": 1727660
+    },
+    {
+      "id": "pe2-sosia-amanita-muscaria-6154d1e",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-amanita-muscaria-6154d1e.jpg",
+      "utc": "2026-10-18T21:55:45.348779Z",
+      "status": "downloaded_pending_review",
+      "sha256": "fd24e9920cff813d27cb0201a7acda7d286a4a29e2f4ae9393913887a33a167c",
+      "bytes": 16735375
+    },
+    {
+      "id": "pe2-natura-lupo-673bf6d1",
+      "original": "incoming/photo-expansion-2026-10-18/natura/originals/pe2-natura-lupo-673bf6d1.jpg",
+      "utc": "2026-10-18T21:55:55.878825Z",
+      "status": "downloaded_pending_review",
+      "sha256": "2064ac5f5db9c41d78650ea18e0e590dde789e2e814374f578d8448574531060",
+      "bytes": 1275501
+    },
+    {
+      "id": "pe2-main-fistulina-hepatica-q01",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-principali/originals/pe2-main-fistulina-hepatica-q01.jpg",
+      "utc": "2026-10-18T21:56:05.056682Z",
+      "status": "downloaded_pending_review",
+      "sha256": "9f861c6c2113956baffe7f141a131a2a30d32221bd4655d3e49d14b7702756b6",
+      "bytes": 546127
+    },
+    {
+      "id": "pe2-sosia-amanita-crocea-1ed34b5",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-amanita-crocea-1ed34b5.jpg",
+      "utc": "2026-10-18T21:56:13.640172Z",
+      "status": "downloaded_pending_review",
+      "sha256": "ddc904f04c97fa21cde1475135cf791179addb7988e431db272e879f75fabdb3",
+      "bytes": 3906500
+    },
+    {
+      "id": "pe2-natura-capriolo-580bd0e7",
+      "original": "incoming/photo-expansion-2026-10-18/natura/originals/pe2-natura-capriolo-580bd0e7.jpg",
+      "utc": "2026-10-18T21:56:22.696006Z",
+      "status": "downloaded_pending_review",
+      "sha256": "c720186acad68680f32c70882771ddbf146323ed334afe64539c6a75f76a6127",
+      "bytes": 447400
+    },
+    {
+      "id": "pe2-main-hygrophorus-latitabundus-q01",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-principali/originals/pe2-main-hygrophorus-latitabundus-q01.jpg",
+      "utc": "2026-10-18T21:56:31.245021Z",
+      "status": "downloaded_pending_review",
+      "sha256": "7c20201307dab23ae9bb242a419860706216d3f0561f2a5504108dfbe8fdb824",
+      "bytes": 5762587
+    },
+    {
+      "id": "pe2-sosia-hygrophoropsis-aurantiaca-369ced6",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-hygrophoropsis-aurantiaca-369ced6.jpg",
+      "utc": "2026-10-18T21:56:40.719462Z",
+      "status": "downloaded_pending_review",
+      "sha256": "c2c4c3ee5c11256bb08eef21498a702c67fda22f00f51562cc3c88d0221e4861",
+      "bytes": 4485755
+    },
+    {
+      "id": "pe2-natura-cervo-70931210",
+      "original": "incoming/photo-expansion-2026-10-18/natura/originals/pe2-natura-cervo-70931210.jpg",
+      "utc": "2026-10-18T21:56:49.609038Z",
+      "status": "downloaded_pending_review",
+      "sha256": "adec6742e085357e0ecd4719dd5ed7c19f8fed6948813ad4669a5b29a483675c",
+      "bytes": 3799239
+    },
+    {
+      "id": "pe2-main-lactarius-deliciosus-q01",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-principali/originals/pe2-main-lactarius-deliciosus-q01.jpg",
+      "utc": "2026-10-18T21:56:58.895153Z",
+      "status": "downloaded_pending_review",
+      "sha256": "04a403acaa98ddf41598e47f5cff27e0ee85d604e07ab4db783ad2907fe0d0fa",
+      "bytes": 1233450
+    },
+    {
+      "id": "pe2-sosia-cortinarius-orellanus-a13edc7",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-cortinarius-orellanus-a13edc7.jpg",
+      "utc": "2026-10-18T21:57:07.856743Z",
+      "status": "downloaded_pending_review",
+      "sha256": "56c43781b06121a11e0ed9009873bb5c1a1bb6bceecb44a9d95a42ae7e9d0a90",
+      "bytes": 1801217
+    },
+    {
+      "id": "pe2-natura-cetonia-dorata-1a80f099",
+      "original": "incoming/photo-expansion-2026-10-18/natura/originals/pe2-natura-cetonia-dorata-1a80f099.jpg",
+      "utc": "2026-10-18T21:57:16.928534Z",
+      "status": "downloaded_pending_review",
+      "sha256": "3ba9412a5017a751fdaa15b5f9eada871d777497764f09207204b5fa8911d1c4",
+      "bytes": 1203411
+    },
+    {
+      "id": "pe2-main-lactarius-deterrimus-q01",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-principali/originals/pe2-main-lactarius-deterrimus-q01.jpg",
+      "utc": "2026-10-18T21:57:25.749201Z",
+      "status": "downloaded_pending_review",
+      "sha256": "f5ffbc8242efef2a70f43e19ff9d5a5693a9b0fa92952cc302d4c6f3bbaded4d",
+      "bytes": 2311799
+    },
+    {
+      "id": "pe2-sosia-pseudocraterellus-undulatus-072441e",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-pseudocraterellus-undulatus-072441e.jpg",
+      "utc": "2026-10-18T21:57:34.611382Z",
+      "status": "downloaded_pending_review",
+      "sha256": "83d1a6ba47630152de375d772ddb7e5a56416115087e7753759981400e243ca8",
+      "bytes": 1507784
+    },
+    {
+      "id": "pe2-natura-rosalia-alpina-d4e26cbe",
+      "original": "incoming/photo-expansion-2026-10-18/natura/originals/pe2-natura-rosalia-alpina-d4e26cbe.jpg",
+      "utc": "2026-10-18T21:57:43.426198Z",
+      "status": "downloaded_pending_review",
+      "sha256": "a72c64e79a5b5ac0989808919467205abd79001cf576f23719b862a852afb9fe",
+      "bytes": 405077
+    },
+    {
+      "id": "pe2-main-marasmius-oreades-q01",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-principali/originals/pe2-main-marasmius-oreades-q01.jpg",
+      "utc": "2026-10-18T21:57:51.951182Z",
+      "status": "downloaded_pending_review",
+      "sha256": "c4be20758bc73410b8741584012823d06bedf125211ee1a44afbac336a8528f9",
+      "bytes": 78350
+    },
+    {
+      "id": "pe2-sosia-urnula-craterium-609db64",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-urnula-craterium-609db64.jpg",
+      "utc": "2026-10-18T21:58:00.434059Z",
+      "status": "downloaded_pending_review",
+      "sha256": "25c45aaab5ec322d518a7e2f50b82c14fd27fa60af98a07f86c11ceec660558c",
+      "bytes": 144561
+    },
+    {
+      "id": "pe2-natura-tritone-crestato-italiano-3b27eb65",
+      "original": "incoming/photo-expansion-2026-10-18/natura/originals/pe2-natura-tritone-crestato-italiano-3b27eb65.JPG",
+      "utc": "2026-10-18T21:58:09.024013Z",
+      "status": "downloaded_pending_review",
+      "sha256": "083dd31921a3405d53f3e35787db1eef9b6010470f76b5cced576cca55b6170d",
+      "bytes": 2769471
+    },
+    {
+      "id": "pe2-main-morchella-elata-q01",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-principali/originals/pe2-main-morchella-elata-q01.jpg",
+      "utc": "2026-10-18T21:58:17.773909Z",
+      "status": "downloaded_pending_review",
+      "sha256": "807d1b08f5c43b119bf0dca94be2b467aeac691f331146e5005d7e25d8e6a207",
+      "bytes": 424727
+    },
+    {
+      "id": "pe2-sosia-hydnum-rufescens-179dd41",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-hydnum-rufescens-179dd41.jpg",
+      "utc": "2026-10-18T21:58:26.399666Z",
+      "status": "downloaded_pending_review",
+      "sha256": "579a1c4a4358b6016a3556eddc6ab3c8dadca407f06c33ae10fe72409fbf93df",
+      "bytes": 2631102
+    },
+    {
+      "id": "pe2-natura-salamandra-pezzata-e6c2ed4a",
+      "original": "incoming/photo-expansion-2026-10-18/natura/originals/pe2-natura-salamandra-pezzata-e6c2ed4a.jpg",
+      "utc": "2026-10-18T21:58:35.440375Z",
+      "status": "downloaded_pending_review",
+      "sha256": "506542698a4b8161539f0f69fbca0cc9de4c14c64617c3785487ad7ef8441dcf",
+      "bytes": 463245
+    },
+    {
+      "id": "pe2-main-morchella-esculenta-q01",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-principali/originals/pe2-main-morchella-esculenta-q01.jpg",
+      "utc": "2026-10-18T21:58:44.061221Z",
+      "status": "downloaded_pending_review",
+      "sha256": "c3a33eda48af58fd8ee8911d786cf156a3e5393ff7b70fc90e72792fdf59b8b5",
+      "bytes": 1429344
+    },
+    {
+      "id": "pe2-sosia-sarcodon-imbricatus-4bafdc3",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-sarcodon-imbricatus-4bafdc3.jpg",
+      "utc": "2026-10-18T21:58:53.045926Z",
+      "status": "downloaded_pending_review",
+      "sha256": "76713f7c1f5e5ed850d8d1ead1cda42b77834050455cf91ba9c1b411c6b3c7f6",
+      "bytes": 4631613
+    },
+    {
+      "id": "pe2-natura-riccio-europeo-8a940e60",
+      "original": "incoming/photo-expansion-2026-10-18/natura/originals/pe2-natura-riccio-europeo-8a940e60.jpg",
+      "utc": "2026-10-18T21:59:02.624001Z",
+      "status": "downloaded_pending_review",
+      "sha256": "5544088442877266c89cd951c3069367768ca0a6d08a27eb32573819a1c0d1e9",
+      "bytes": 3317274
+    },
+    {
+      "id": "pe2-main-pleurotus-cornucopiae-q01",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-principali/originals/pe2-main-pleurotus-cornucopiae-q01.jpg",
+      "utc": "2026-10-18T21:59:11.577370Z",
+      "status": "downloaded_pending_review",
+      "sha256": "1dc29d3fd5794a88e708cbaf4d47094299eff1c6b6cc447eac4c80305acf41ff",
+      "bytes": 151890
+    },
+    {
+      "id": "pe2-sosia-hydnellum-peckii-79f1086",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-hydnellum-peckii-79f1086.jpg",
+      "utc": "2026-10-18T21:59:20.147839Z",
+      "status": "downloaded_pending_review",
+      "sha256": "07c72ca1a8df3f8961d81ae32aaa605d71c161d8239c6d8e19f46ef745f78221",
+      "bytes": 827471
+    },
+    {
+      "id": "pe2-natura-volpe-b9a5c0f9",
+      "original": "incoming/photo-expansion-2026-10-18/natura/originals/pe2-natura-volpe-b9a5c0f9.jpg",
+      "utc": "2026-10-18T21:59:29.149341Z",
+      "status": "downloaded_pending_review",
+      "sha256": "74499150805c5a25c740e72088fd5ceaae3af183a3645888c08b7bbaba2bae74",
+      "bytes": 6142363
+    },
+    {
+      "id": "pe2-main-pleurotus-eryngii-q01",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-principali/originals/pe2-main-pleurotus-eryngii-q01.jpg",
+      "utc": "2026-10-18T21:59:38.461227Z",
+      "status": "downloaded_pending_review",
+      "sha256": "d5265187c59ac9ad5c799e69d3eca3653c86aec27f1b27a0dc1b3cb5816032f1",
+      "bytes": 937547
+    },
+    {
+      "id": "pe2-sosia-lepiota-brunneoincarnata-24f1be9",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-lepiota-brunneoincarnata-24f1be9.jpg",
+      "utc": "2026-10-18T21:59:47.058101Z",
+      "status": "downloaded_pending_review",
+      "sha256": "41441901a0203df2e542bd296153c25df4e3105c1520b3169a1a314d98f4406a",
+      "bytes": 393412
+    },
+    {
+      "id": "pe2-natura-istrice-48ad365a",
+      "original": "incoming/photo-expansion-2026-10-18/natura/originals/pe2-natura-istrice-48ad365a.JPG",
+      "utc": "2026-10-18T21:59:55.574497Z",
+      "status": "downloaded_pending_review",
+      "sha256": "d01ee826c50aae1f1040a203a94f03d9c1c64d446d30b6a6a262abc863dcdee4",
+      "bytes": 3897182
+    },
+    {
+      "id": "pe2-main-pleurotus-ostreatus-q01",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-principali/originals/pe2-main-pleurotus-ostreatus-q01.jpg",
+      "utc": "2026-10-18T22:00:04.702818Z",
+      "status": "downloaded_pending_review",
+      "sha256": "d0b78dc2909c5b36acc2a4c9c016ede6602b86b7fe30eaf195eeada3e8c62acd",
+      "bytes": 1279271
+    },
+    {
+      "id": "pe2-sosia-lepiota-subincarnata-0d2f17a",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-lepiota-subincarnata-0d2f17a.jpg",
+      "utc": "2026-10-18T22:00:13.450362Z",
+      "status": "downloaded_pending_review",
+      "sha256": "5a77a314bd0bd6b7dd0cf9f8779c117f11402d8f3109709c79bb3968878f775f",
+      "bytes": 1587485
+    },
+    {
+      "id": "pe2-natura-tasso-556968d2",
+      "original": "incoming/photo-expansion-2026-10-18/natura/originals/pe2-natura-tasso-556968d2.jpg",
+      "utc": "2026-10-18T22:00:22.443715Z",
+      "status": "downloaded_pending_review",
+      "sha256": "70220ca85817fa482d9791ff3b4fa656e0e6dd367d00b3b7907aab8ea66d39ac",
+      "bytes": 21634937
+    },
+    {
+      "id": "pe2-main-russula-aurea-q01",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-principali/originals/pe2-main-russula-aurea-q01.jpg",
+      "utc": "2026-10-18T22:00:33.172341Z",
+      "status": "downloaded_pending_review",
+      "sha256": "628e57a3a1ffa5f059009c8f08292467b2ca7f0ddf6431121ab06d1bcdbfdab7",
+      "bytes": 123403
+    },
+    {
+      "id": "pe2-sosia-lepiota-cristata-000fdb3",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-lepiota-cristata-000fdb3.jpg",
+      "utc": "2026-10-18T22:00:41.875612Z",
+      "status": "downloaded_pending_review",
+      "sha256": "7553d986d3cbe84f080678b6d71e9a6a4bc11823648855850b0cff6f6fd60433",
+      "bytes": 733282
+    },
+    {
+      "id": "pe2-natura-scilla-silvestre-a1ba5801",
+      "original": "incoming/photo-expansion-2026-10-18/natura/originals/pe2-natura-scilla-silvestre-a1ba5801.JPG",
+      "utc": "2026-10-18T22:00:50.682572Z",
+      "status": "downloaded_pending_review",
+      "sha256": "e7037fac1ee4a01c1580d1b1371da70527e758cbdd7759b8f3a1a14efdfd7e25",
+      "bytes": 4770304
+    },
+    {
+      "id": "pe2-main-tricholoma-portentosum-q01",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-principali/originals/pe2-main-tricholoma-portentosum-q01.jpg",
+      "utc": "2026-10-18T22:00:59.831723Z",
+      "status": "downloaded_pending_review",
+      "sha256": "fc37fab5f98fa81a336e8b467d5cf98165edc68895bfd31c73b76659c3f91e50",
+      "bytes": 1945005
+    },
+    {
+      "id": "pe2-sosia-chlorophyllum-rhacodes-42d423f",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-chlorophyllum-rhacodes-42d423f.jpg",
+      "utc": "2026-10-18T22:01:08.626079Z",
+      "status": "downloaded_pending_review",
+      "sha256": "04f9592d17329c045c62b2d008908b6a9d9faf40b6b4c2e51ae43d659092fc09",
+      "bytes": 2179931
+    },
+    {
+      "id": "pe2-natura-scilla-silvestre-6b26b245",
+      "original": "incoming/photo-expansion-2026-10-18/natura/originals/pe2-natura-scilla-silvestre-6b26b245.jpg",
+      "utc": "2026-10-18T22:01:17.560863Z",
+      "status": "downloaded_pending_review",
+      "sha256": "f93dd12e9bd5aaf1b1e36810b4480f429429a86e0bedc8486e50818839fcbc89",
+      "bytes": 1795431
+    },
+    {
+      "id": "pe2-main-agaricus-bisporus-q02",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-principali/originals/pe2-main-agaricus-bisporus-q02.jpg",
+      "utc": "2026-10-18T22:01:26.634206Z",
+      "status": "downloaded_pending_review",
+      "sha256": "35db2f05339c80f5e6770ccc2ac1285c4dc6f6a2116e4482e1fb08bec09910c9",
+      "bytes": 318641
+    },
+    {
+      "id": "pe2-sosia-galerina-marginata-aa8523b",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-galerina-marginata-aa8523b.jpg",
+      "utc": "2026-10-18T22:01:35.275497Z",
+      "status": "downloaded_pending_review",
+      "sha256": "a53a26318d6c9c75b9d5e7aa9b44e22da87fb5c16f5d357fe9abb3268640e099",
+      "bytes": 1668505
+    },
+    {
+      "id": "pe2-natura-narciso-dei-poeti-d63d09f3",
+      "original": "incoming/photo-expansion-2026-10-18/natura/originals/pe2-natura-narciso-dei-poeti-d63d09f3.JPG",
+      "utc": "2026-10-18T22:01:44.936744Z",
+      "status": "downloaded_pending_review",
+      "sha256": "5f38e5b3fa496b71c669d34c1e3faf0a438d1affc4d12c317b547a7226cce419",
+      "bytes": 4327696
+    },
+    {
+      "id": "pe2-main-agaricus-sylvicola-q02",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-principali/originals/pe2-main-agaricus-sylvicola-q02.jpg",
+      "utc": "2026-10-18T22:01:54.848463Z",
+      "status": "downloaded_pending_review",
+      "sha256": "b1046e4e60d71ed54f78beba78a3764c058d27483ba4bdd43c96bad78adef2b2",
+      "bytes": 1731965
+    },
+    {
+      "id": "pe2-sosia-hypholoma-fasciculare-b7c93de",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-hypholoma-fasciculare-b7c93de.jpg",
+      "utc": "2026-10-18T22:02:03.972874Z",
+      "status": "downloaded_pending_review",
+      "sha256": "1b9c805845d8b8fd884b0b439d7f51e3ad2e9788adff42ce3e1982d2a2bb0f00",
+      "bytes": 6222264
+    },
+    {
+      "id": "pe2-natura-narciso-dei-poeti-7cc09b3e",
+      "original": "incoming/photo-expansion-2026-10-18/natura/originals/pe2-natura-narciso-dei-poeti-7cc09b3e.jpg",
+      "utc": "2026-10-18T22:02:13.908770Z",
+      "status": "downloaded_pending_review",
+      "sha256": "4880836d1578d07188bd1bd1529748028b865c18434514e86fe3fb06a6887765",
+      "bytes": 3572119
+    },
+    {
+      "id": "pe2-main-amanita-rubescens-q02",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-principali/originals/pe2-main-amanita-rubescens-q02.jpg",
+      "utc": "2026-10-18T22:02:22.829820Z",
+      "status": "downloaded_pending_review",
+      "sha256": "6feca89425d57c5556e227d2c00c97fdbff6fd5926fa425832abfd06f0e24ec5",
+      "bytes": 1570131
+    },
+    {
+      "id": "pe2-sosia-cortinarius-rubellus-38f9f52",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-cortinarius-rubellus-38f9f52.jpg",
+      "utc": "2026-10-18T22:02:31.642064Z",
+      "status": "downloaded_pending_review",
+      "sha256": "db9516cf6249de232807663f1e676f9160a5ec317de4af1cd3f03603fe89848a",
+      "bytes": 2926778
+    },
+    {
+      "id": "pe2-natura-giglio-martagone-f986fde3",
+      "original": "incoming/photo-expansion-2026-10-18/natura/originals/pe2-natura-giglio-martagone-f986fde3.jpg",
+      "utc": "2026-10-18T22:02:40.459449Z",
+      "status": "downloaded_pending_review",
+      "sha256": "c9a850bd1c5cdfe9c75b79328b3153be8778eecb4c6fef4c5bc8be92cd1c9c7b",
+      "bytes": 2822948
+    },
+    {
+      "id": "pe2-main-coprinus-comatus-q02",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-principali/originals/pe2-main-coprinus-comatus-q02.jpg",
+      "utc": "2026-10-18T22:02:49.453198Z",
+      "status": "downloaded_pending_review",
+      "sha256": "1ba628d141998891821384ade80b6e0b4ee964f88d5ab771a3f333e2f812d2ee",
+      "bytes": 1116502
+    },
+    {
+      "id": "pe2-sosia-gymnopilus-junonius-9c05992",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-gymnopilus-junonius-9c05992.jpg",
+      "utc": "2026-10-18T22:02:58.072272Z",
+      "status": "downloaded_pending_review",
+      "sha256": "a68fd35ff8a5de165c951b843db5feeb793cd66cddc83b5980f9e6426d7ecfdf",
+      "bytes": 219679
+    },
+    {
+      "id": "pe2-natura-giglio-martagone-873468f2",
+      "original": "incoming/photo-expansion-2026-10-18/natura/originals/pe2-natura-giglio-martagone-873468f2.JPG",
+      "utc": "2026-10-18T22:03:06.807380Z",
+      "status": "downloaded_pending_review",
+      "sha256": "491da383430b80dda78a4d0d6c94aab87441382cfc1504574deda5e27838f6df",
+      "bytes": 1741747
+    },
+    {
+      "id": "pe2-main-marasmius-oreades-r01",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-principali/originals/pe2-main-marasmius-oreades-r01.jpg",
+      "utc": "2026-10-18T22:04:04.931420Z",
+      "status": "downloaded_pending_review",
+      "sha256": "9338a5a86367bc311957b4aaaab26c2bdcccf42be04985f573b920e28404c801",
+      "bytes": 6838657
+    },
+    {
+      "id": "pe2-main-marasmius-oreades-r02",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-principali/originals/pe2-main-marasmius-oreades-r02.jpg",
+      "utc": "2026-10-18T22:04:14.761816Z",
+      "status": "downloaded_pending_review",
+      "sha256": "869483599ce2f8a31db1ef5bdbda2a4096a4e0e9718c7401dae21468a9cb1e85",
+      "bytes": 4171396
+    },
+    {
+      "id": "pe2-sosia-pholiota-squarrosa-1f5572a",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-pholiota-squarrosa-1f5572a.jpg",
+      "utc": "2026-10-18T22:04:24.145077Z",
+      "status": "downloaded_pending_review",
+      "sha256": "4541a11be158facf4097ae6b170ccc00c6a0199b16f96fd29ad81df7119b4c13",
+      "bytes": 2220436
+    },
+    {
+      "id": "pe2-natura-orchide-sambucina-0ab7d369",
+      "original": "incoming/photo-expansion-2026-10-18/natura/originals/pe2-natura-orchide-sambucina-0ab7d369.jpg",
+      "utc": "2026-10-18T22:04:33.175476Z",
+      "status": "downloaded_pending_review",
+      "sha256": "0c0a282677e8e435f0d2e42ca63a08d8872b25e8e8585deebea85408ada692ea",
+      "bytes": 1504239
+    },
+    {
+      "id": "pe2-sosia-armillaria-tabescens-72be0c6",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-armillaria-tabescens-72be0c6.jpg",
+      "utc": "2026-10-18T22:04:42.492100Z",
+      "status": "downloaded_pending_review",
+      "sha256": "078436b47b8048707992d0070a02cb555f70fdefa60df9f64b95f5fa640339d1",
+      "bytes": 81124
+    },
+    {
+      "id": "pe2-sosia-russula-heterophylla-ccff72b",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-russula-heterophylla-ccff72b.jpg",
+      "utc": "2026-10-18T22:04:51.077041Z",
+      "status": "downloaded_pending_review",
+      "sha256": "8b2981a216caea1488faabbb67f1196659d338890cfab0540948fd2dc610d0b6",
+      "bytes": 535924
+    },
+    {
+      "id": "pe2-natura-orchide-maschia-6d68f2aa",
+      "original": "incoming/photo-expansion-2026-10-18/natura/originals/pe2-natura-orchide-maschia-6d68f2aa.jpg",
+      "utc": "2026-10-18T22:04:59.868039Z",
+      "status": "downloaded_pending_review",
+      "sha256": "27814d6d3850f201f773ce9815a6d3870da8de7a46dd3aeea2cc72726dfd6ee3",
+      "bytes": 22781505
+    },
+    {
+      "id": "pe2-sosia-russula-olivacea-a350e37",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-russula-olivacea-a350e37.jpg",
+      "utc": "2026-10-18T22:05:11.119514Z",
+      "status": "downloaded_pending_review",
+      "sha256": "4720cbb45cae1066b26f1d2e081817d28f08d45c1f55f5cb6f3749877c798dcf",
+      "bytes": 1105720
+    },
+    {
+      "id": "pe2-sosia-russula-aeruginea-a596adc",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-russula-aeruginea-a596adc.jpg",
+      "utc": "2026-10-18T22:05:20.045969Z",
+      "status": "downloaded_pending_review",
+      "sha256": "2875514d184fbec8b2b7469c6270bff68c9660bf1253297486ac02c622188550",
+      "bytes": 222552
+    },
+    {
+      "id": "pe2-natura-orchide-purpurea-d5c818c3",
+      "original": "incoming/photo-expansion-2026-10-18/natura/originals/pe2-natura-orchide-purpurea-d5c818c3.jpg",
+      "utc": "2026-10-18T22:05:28.725598Z",
+      "status": "downloaded_pending_review",
+      "sha256": "e1fed35d5407826d87eb442baaf076e0cc00e4380f37d7e4e8cd75165fa37df1",
+      "bytes": 6223187
+    },
+    {
+      "id": "pe2-sosia-chalciporus-piperatus-d4b4126",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-chalciporus-piperatus-d4b4126.jpg",
+      "utc": "2026-10-18T22:05:38.377703Z",
+      "status": "downloaded_pending_review",
+      "sha256": "52d6ce82a59aa085b581da2bf8fe4a137446415cb81a5a439efba9f8fdb7557a",
+      "bytes": 245892
+    },
+    {
+      "id": "pe2-sosia-suillus-bovinus-1a2c6d9",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-suillus-bovinus-1a2c6d9.jpg",
+      "utc": "2026-10-18T22:05:47.347236Z",
+      "status": "downloaded_pending_review",
+      "sha256": "8da45b81b12e7ea50cb703b7e4c8732583d8759f6b7adaa37bb1b6afa668df8a",
+      "bytes": 11970004
+    },
+    {
+      "id": "pe2-natura-cefalantera-maggiore-29235d31",
+      "original": "incoming/photo-expansion-2026-10-18/natura/originals/pe2-natura-cefalantera-maggiore-29235d31.jpg",
+      "utc": "2026-10-18T22:05:57.676035Z",
+      "status": "downloaded_pending_review",
+      "sha256": "7a2bdafa40a7b63e4a3d74b0dbcfd2f2e19b22003fcbb6cb25a540ed30ed3419",
+      "bytes": 4186699
+    },
+    {
+      "id": "pe2-sosia-tricholoma-virgatum-c544cb1",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-tricholoma-virgatum-c544cb1.jpg",
+      "utc": "2026-10-18T22:06:07.875975Z",
+      "status": "downloaded_pending_review",
+      "sha256": "17d51cc52f4cdc87a60dbe618803b928902218ac4503591aa3e24ea588632c47",
+      "bytes": 4613274
+    },
+    {
+      "id": "pe2-sosia-tricholoma-sciodes-4cca704",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-tricholoma-sciodes-4cca704.jpg",
+      "utc": "2026-10-18T22:06:17.872398Z",
+      "status": "downloaded_pending_review",
+      "sha256": "e1a1f8d4573a5b8a615cf54c7c3ddd0cd47e5834b2d9493caa2046acef0dc3de",
+      "bytes": 1391095
+    },
+    {
+      "id": "pe2-natura-genziana-primaticcia-a46d7064",
+      "original": "incoming/photo-expansion-2026-10-18/natura/originals/pe2-natura-genziana-primaticcia-a46d7064.JPG",
+      "utc": "2026-10-18T22:06:26.591681Z",
+      "status": "downloaded_pending_review",
+      "sha256": "f9ad1cf5fee98cf9970ca378266d12a3cc1b21f28a4035aa84505e3f39f263b7",
+      "bytes": 3539660
+    },
+    {
+      "id": "pe2-sosia-entoloma-sinuatum-24fcc44",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-entoloma-sinuatum-24fcc44.jpg",
+      "utc": "2026-10-18T22:06:35.547999Z",
+      "status": "downloaded_pending_review",
+      "sha256": "306773cb1cc58fe047e01817805048991ab9351dbf73dd871d64e9d6309b8cd4",
+      "bytes": 1757784
+    },
+    {
+      "id": "pe2-sosia-cortinarius-traganus-97d4004",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-cortinarius-traganus-97d4004.jpg",
+      "utc": "2026-10-18T22:06:44.341114Z",
+      "status": "downloaded_pending_review",
+      "sha256": "2cb9fa645c1b8673e0b7e1c0d23515cd5c41b8ad77bff41d34237c66274ef308",
+      "bytes": 309902
+    },
+    {
+      "id": "pe2-natura-digitale-gialla-8a9715d2",
+      "original": "incoming/photo-expansion-2026-10-18/natura/originals/pe2-natura-digitale-gialla-8a9715d2.JPG",
+      "utc": "2026-10-18T22:06:52.969508Z",
+      "status": "downloaded_pending_review",
+      "sha256": "6bc3c7ae6e1f516c7b8634b731c0ae9f915be88e8bc9c317cedd655f2d81547a",
+      "bytes": 35849
+    },
+    {
+      "id": "pe2-sosia-cortinarius-violaceus-9289cd2",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-cortinarius-violaceus-9289cd2.jpg",
+      "utc": "2026-10-18T22:07:01.440197Z",
+      "status": "downloaded_pending_review",
+      "sha256": "8ff6048ad155ed4e65082b0080c087465f9535d58126563be3fcb26c8c281725",
+      "bytes": 1801572
+    },
+    {
+      "id": "pe2-sosia-mycena-pura-8f6e35f",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-mycena-pura-8f6e35f.jpg",
+      "utc": "2026-10-18T22:07:10.538982Z",
+      "status": "downloaded_pending_review",
+      "sha256": "29c17e9c5f98696dc19d8a76daebedabb1b4895609321033cf2650e4c5d753c7",
+      "bytes": 4338174
+    },
+    {
+      "id": "pe2-sosia-laccaria-amethystina-f9a3281",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-laccaria-amethystina-f9a3281.jpg",
+      "utc": "2026-10-18T22:07:19.826421Z",
+      "status": "downloaded_pending_review",
+      "sha256": "9f3636d25e88746d92d901972c2bc4b9cfb096db2eca6e3b36e7fbcf55cb792b",
+      "bytes": 6429318
+    },
+    {
+      "id": "pe2-natura-bombi-805373f9",
+      "original": "incoming/photo-expansion-2026-10-18/natura/originals/pe2-natura-bombi-805373f9.jpg",
+      "utc": "2026-10-18T22:07:29.424814Z",
+      "status": "downloaded_pending_review",
+      "sha256": "cd9f6d8d8d21a559f363749a092926bb88c97c37661b460622a19b334595ca57",
+      "bytes": 4846911
+    },
+    {
+      "id": "pe2-sosia-agaricus-xanthodermus-bec9f69",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-agaricus-xanthodermus-bec9f69.jpg",
+      "utc": "2026-10-18T22:07:38.597782Z",
+      "status": "downloaded_pending_review",
+      "sha256": "72b7aa360a490e5bb9286abbfe2ac796eb556686ea0f70a46a9660ef548ee330",
+      "bytes": 5072065
+    },
+    {
+      "id": "pe2-sosia-gyromitra-esculenta-a0b4063",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-gyromitra-esculenta-a0b4063.jpg",
+      "utc": "2026-10-18T22:07:47.809660Z",
+      "status": "downloaded_pending_review",
+      "sha256": "946d892d039a0c40f97e4f4ea368c4496de0c9008cf4ed42069b86214a22915d",
+      "bytes": 4269013
+    },
+    {
+      "id": "pe2-sosia-amanita-pantherina-dfae2c8",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-amanita-pantherina-dfae2c8.jpg",
+      "utc": "2026-10-18T22:07:57.136928Z",
+      "status": "downloaded_pending_review",
+      "sha256": "afaddb86ef68b581e811ca73f552256cc843edf8ae7883be626a0477544d97ab",
+      "bytes": 7499500
+    },
+    {
+      "id": "pe2-sosia-tricholoma-equestre-ca6e68f",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-tricholoma-equestre-ca6e68f.jpg",
+      "utc": "2026-10-18T22:08:06.848200Z",
+      "status": "downloaded_pending_review",
+      "sha256": "b24157860d2889f8a14e31ab25cc12d9c6975361d98ac2fe68e142a98993e72c",
+      "bytes": 141030
+    },
+    {
+      "id": "pe2-sosia-clitocybe-rivulosa-13426ab",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-clitocybe-rivulosa-13426ab.jpg",
+      "utc": "2026-10-18T22:08:15.584414Z",
+      "status": "downloaded_pending_review",
+      "sha256": "1f416011ea02ab2bd937485f6161f333708cb8472bcf6bb54030230ac7cb794f",
+      "bytes": 674049
+    },
+    {
+      "id": "pe2-sosia-tricholoma-pardinum-c771fb6",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-tricholoma-pardinum-c771fb6.jpg",
+      "utc": "2026-10-18T22:08:24.157908Z",
+      "status": "downloaded_pending_review",
+      "sha256": "0684894fd83672953dc71518da0fe5ac6be84bec3e98d7a4604a774c794b486f",
+      "bytes": 2155473
+    },
+    {
+      "id": "pe2-natura-zecche-d8f91ccb",
+      "original": "incoming/photo-expansion-2026-10-18/natura/originals/pe2-natura-zecche-d8f91ccb.jpg",
+      "utc": "2026-10-18T22:08:33.279545Z",
+      "status": "downloaded_pending_review",
+      "sha256": "c5237d6919983747716e753d2af6a0b2cde2647d047e284ef61e02549f7771b8",
+      "bytes": 1852837
+    },
+    {
+      "id": "pe2-natura-sorbo-domestico-486bcc17",
+      "original": "incoming/photo-expansion-2026-10-18/natura/originals/pe2-natura-sorbo-domestico-486bcc17.jpg",
+      "utc": "2026-10-18T22:08:42.205537Z",
+      "status": "downloaded_pending_review",
+      "sha256": "2a8eadcf828d475f16e0325526b71a41c68f4e463e5d07539966f8bfcb5c3430",
+      "bytes": 861049
+    },
+    {
+      "id": "pe2-natura-ciliegio-7bfdad7d",
+      "original": "incoming/photo-expansion-2026-10-18/natura/originals/pe2-natura-ciliegio-7bfdad7d.jpg",
+      "utc": "2026-10-18T22:08:50.796243Z",
+      "status": "downloaded_pending_review",
+      "sha256": "80d9eb1e491b13d311594b9fd9706f6151af58388e0022681ece43a5f315f5ae",
+      "bytes": 2977992
+    },
+    {
+      "id": "pe2-natura-noce-e994fe97",
+      "original": "incoming/photo-expansion-2026-10-18/natura/originals/pe2-natura-noce-e994fe97.jpg",
+      "utc": "2026-10-18T22:08:59.547973Z",
+      "status": "downloaded_pending_review",
+      "sha256": "8b6a6e60b4c478eacdc5436770845709e0dc3c760c05db27853f5fa1e730c6d8",
+      "bytes": 13883230
+    },
+    {
+      "id": "pe2-natura-robinia-33d48d18",
+      "original": "incoming/photo-expansion-2026-10-18/natura/originals/pe2-natura-robinia-33d48d18.jpg",
+      "utc": "2026-10-18T22:09:09.761935Z",
+      "status": "downloaded_pending_review",
+      "sha256": "031d42a2b1cb4b8d9dea0a376af1fed61851ffc2a6101c25ffada048148a0f71",
+      "bytes": 1913965
+    },
+    {
+      "id": "pe2-natura-olmo-montano-ddb434ae",
+      "original": "incoming/photo-expansion-2026-10-18/natura/originals/pe2-natura-olmo-montano-ddb434ae.jpg",
+      "utc": "2026-10-18T22:09:18.713437Z",
+      "status": "downloaded_pending_review",
+      "sha256": "b379b08484cb3a5bf294a8198e2e87d558f8873363563bc1106c113a80252b25",
+      "bytes": 11589989
+    },
+    {
+      "id": "pe2-natura-ippocastano-737fc738",
+      "original": "incoming/photo-expansion-2026-10-18/natura/originals/pe2-natura-ippocastano-737fc738.jpg",
+      "utc": "2026-10-18T22:09:28.649238Z",
+      "status": "downloaded_pending_review",
+      "sha256": "2d4ca8b787fe3bc95113086ad2d6bd66f790eb844d3938ae676351fff3630515",
+      "bytes": 14853954
+    },
+    {
+      "id": "pe2-main-cyclocybe-aegerita-q02",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-principali/originals/pe2-main-cyclocybe-aegerita-q02.jpg",
+      "utc": "2026-10-18T22:09:39.163384Z",
+      "status": "downloaded_pending_review",
+      "sha256": "10751ffdf44775a36169a91b997cfb951bc790c8a88de27c850eb51c20d147d8",
+      "bytes": 1790689
+    },
+    {
+      "id": "pe2-main-hygrophorus-latitabundus-q02",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-principali/originals/pe2-main-hygrophorus-latitabundus-q02.jpg",
+      "utc": "2026-10-18T22:09:48.159152Z",
+      "status": "downloaded_pending_review",
+      "sha256": "b5391f3a3cf0591eeaa7c9981b0dd3050dc2749d55e4e7403f37ce6b5c44627b",
+      "bytes": 170538
+    },
+    {
+      "id": "pe2-main-morchella-elata-q02",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-principali/originals/pe2-main-morchella-elata-q02.jpg",
+      "utc": "2026-10-18T22:09:56.782430Z",
+      "status": "downloaded_pending_review",
+      "sha256": "5d21049c4b33ff17582238afb9afc8eaf143f7d565f95c416e36dd8e805156aa",
+      "bytes": 473424
+    },
+    {
+      "id": "pe2-main-pleurotus-cornucopiae-q02",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-principali/originals/pe2-main-pleurotus-cornucopiae-q02.jpg",
+      "utc": "2026-10-18T22:10:05.579951Z",
+      "status": "downloaded_pending_review",
+      "sha256": "4a059dd23bc499eabe923f7336c1d5c07873de4b915653196bd96120ddf17290",
+      "bytes": 141628
+    },
+    {
+      "id": "pe2-main-pleurotus-ostreatus-q02",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-principali/originals/pe2-main-pleurotus-ostreatus-q02.jpg",
+      "utc": "2026-10-18T22:10:14.109249Z",
+      "status": "downloaded_pending_review",
+      "sha256": "15b5f7fbfbdc972a3dacfb5942f29902d4e4afae2b1d614420c99fc66263097c",
+      "bytes": 1039902
+    },
+    {
+      "id": "pe2-main-russula-aurea-q02",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-principali/originals/pe2-main-russula-aurea-q02.jpg",
+      "utc": "2026-10-18T22:10:23.629040Z",
+      "status": "downloaded_pending_review",
+      "sha256": "a45066cea24447f6980c1a5c13be26c8282bf634d6f80a0efc831bc600c890ef",
+      "bytes": 99374
+    },
+    {
+      "id": "pe2-main-tricholoma-portentosum-q02",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-principali/originals/pe2-main-tricholoma-portentosum-q02.jpg",
+      "utc": "2026-10-18T22:10:32.480017Z",
+      "status": "downloaded_pending_review",
+      "sha256": "aa139f69adace6fee4b76345bb098c3f72276b52892749fb621461deac7b1ce6",
+      "bytes": 1914678
+    },
+    {
+      "id": "pe2-natura-ape-da-miele-ad812342",
+      "original": "incoming/photo-expansion-2026-10-18/natura/originals/pe2-natura-ape-da-miele-ad812342.jpg",
+      "utc": "2026-10-18T22:10:41.198229Z",
+      "status": "downloaded_pending_review",
+      "sha256": "9b5fd811f87530e76c145b6ac66643c6f8bb3bc1c2af97f04f3b87134ed0a413",
+      "bytes": 5921704
+    },
+    {
+      "id": "pe2-natura-bombi-7c68ab77",
+      "original": "incoming/photo-expansion-2026-10-18/natura/originals/pe2-natura-bombi-7c68ab77.JPG",
+      "utc": "2026-10-18T22:10:50.860467Z",
+      "status": "downloaded_pending_review",
+      "sha256": "9f3bdf4f10cf4bda1788ef80979f88a89cef5d58ea84bfbae16510419017b86f",
+      "bytes": 2592028
+    },
+    {
+      "id": "pe2-natura-sirfidi-a34056ec",
+      "original": "incoming/photo-expansion-2026-10-18/natura/originals/pe2-natura-sirfidi-a34056ec.jpg",
+      "utc": "2026-10-18T22:10:59.770966Z",
+      "status": "downloaded_pending_review",
+      "sha256": "be6dd9c796577a9afd0439588eb32809685ca9c492edf5066a06542155b0024a",
+      "bytes": 467621
+    },
+    {
+      "id": "pe2-natura-sirfidi-40f19ba6",
+      "original": "incoming/photo-expansion-2026-10-18/natura/originals/pe2-natura-sirfidi-40f19ba6.jpg",
+      "utc": "2026-10-18T22:11:08.445075Z",
+      "status": "downloaded_pending_review",
+      "sha256": "b01e134071088a4ba7a27ca4add86b9837926c33f6668edcb350638d5106f6ef",
+      "bytes": 2109327
+    },
+    {
+      "id": "pe2-natura-farfalle-diurne-3afc37e0",
+      "original": "incoming/photo-expansion-2026-10-18/natura/originals/pe2-natura-farfalle-diurne-3afc37e0.jpg",
+      "utc": "2026-10-18T22:11:17.842948Z",
+      "status": "downloaded_pending_review",
+      "sha256": "a1a20f8880d71d8d431bcf2aaabdca2216d2a6c33c3573eec516fea337269328",
+      "bytes": 3755778
+    },
+    {
+      "id": "pe2-natura-farfalle-diurne-d02afe0d",
+      "original": "incoming/photo-expansion-2026-10-18/natura/originals/pe2-natura-farfalle-diurne-d02afe0d.jpg",
+      "utc": "2026-10-18T22:11:27.241424Z",
+      "status": "downloaded_pending_review",
+      "sha256": "9185dd179c08681734262d3ebe64b8fd75a8fe6189285cafd5d1fe03946e2f9a",
+      "bytes": 6572433
+    },
+    {
+      "id": "pe2-sosia-caloboletus-calopus-9a32b5d",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-caloboletus-calopus-9a32b5d.jpg",
+      "utc": "2026-10-18T22:11:36.486316Z",
+      "status": "downloaded_pending_review",
+      "sha256": "d3a9f05db0bcec562fab044de8b41b9b7d351e095adf922e6ddac4a9ef4c24c6",
+      "bytes": 6303501
+    },
+    {
+      "id": "pe2-natura-zecche-222d7b59",
+      "original": "incoming/photo-expansion-2026-10-18/natura/originals/pe2-natura-zecche-222d7b59.jpg",
+      "utc": "2026-10-18T22:11:45.767235Z",
+      "status": "downloaded_pending_review",
+      "sha256": "7eeb6a0d2471e1dd5f86d2110e90c0661906ae1ee9b1983800dd0a5059a91ab8",
+      "bytes": 1226064
+    },
+    {
+      "id": "pe2-sosia-caloboletus-radicans-55bb970",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-caloboletus-radicans-55bb970.jpg",
+      "utc": "2026-10-18T22:11:54.765062Z",
+      "status": "downloaded_pending_review",
+      "sha256": "3980c0aa3763601804162df672f3ef7d06912343bae118d9c1f93a6b19ec9f6a",
+      "bytes": 4352572
+    },
+    {
+      "id": "pe2-natura-cinghiale-0bf743b6",
+      "original": "incoming/photo-expansion-2026-10-18/natura/originals/pe2-natura-cinghiale-0bf743b6.jpg",
+      "utc": "2026-10-18T22:12:04.249587Z",
+      "status": "downloaded_pending_review",
+      "sha256": "83c48a6805e1675a888ebe6ab7637194fd9ebc4e7233203388dc50b97970af77",
+      "bytes": 3129817
+    },
+    {
+      "id": "pe2-sosia-neoboletus-luridiformis-845378a",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-neoboletus-luridiformis-845378a.jpg",
+      "utc": "2026-10-18T22:12:13.716666Z",
+      "status": "downloaded_pending_review",
+      "sha256": "18b9c6f97691726ee0338e11cc1e1b4b61aea867a88b6d9ff6decc8b88fd3249",
+      "bytes": 1948674
+    },
+    {
+      "id": "pe2-natura-cinghiale-48a3b89d",
+      "original": "incoming/photo-expansion-2026-10-18/natura/originals/pe2-natura-cinghiale-48a3b89d.jpg",
+      "utc": "2026-10-18T22:12:22.768645Z",
+      "status": "downloaded_pending_review",
+      "sha256": "b7f9f3d159b63ab7deb3bc6459029e40b5dc6a7210f423e79c46e1a712eb461f",
+      "bytes": 2352206
+    },
+    {
+      "id": "pe2-sosia-imleria-badia-46da8ef",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-imleria-badia-46da8ef.jpg",
+      "utc": "2026-10-18T22:12:31.626319Z",
+      "status": "downloaded_pending_review",
+      "sha256": "8926d12a40a45ce1fbbe79f191718c8a7d1c360c2342c013939e0ef0e3f52d12",
+      "bytes": 6393894
+    },
+    {
+      "id": "pe2-natura-lupo-d239eabc",
+      "original": "incoming/photo-expansion-2026-10-18/natura/originals/pe2-natura-lupo-d239eabc.jpg",
+      "utc": "2026-10-18T22:12:41.227657Z",
+      "status": "downloaded_pending_review",
+      "sha256": "4a84b40d6964da57720ce43091d244b0cc126bda18588b0a54b5ce5bf9c9cac8",
+      "bytes": 17056498
+    },
+    {
+      "id": "pe2-sosia-amanita-muscaria-978b4c9",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-amanita-muscaria-978b4c9.jpg",
+      "utc": "2026-10-18T22:12:53.546051Z",
+      "status": "downloaded_pending_review",
+      "sha256": "03b30fc5a6d674d0838246b5ace527885c32990284a0dc4c810c1b29ea04ef3f",
+      "bytes": 6796682
+    },
+    {
+      "id": "pe2-natura-lupo-d93dc708",
+      "original": "incoming/photo-expansion-2026-10-18/natura/originals/pe2-natura-lupo-d93dc708.jpg",
+      "utc": "2026-10-18T22:13:02.986256Z",
+      "status": "downloaded_pending_review",
+      "sha256": "02bfc241b51e13b86b01b018d03031e2c5fddd16655eafff76a209af3b5a336e",
+      "bytes": 13009695
+    },
+    {
+      "id": "pe2-sosia-amanita-crocea-742f574",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-amanita-crocea-742f574.jpg",
+      "utc": "2026-10-18T22:13:13.035899Z",
+      "status": "downloaded_pending_review",
+      "sha256": "1d7bb9dc2a6a8d7568d92786af1ae602a0ecb81daf2833f55cc43f46929366ab",
+      "bytes": 5202040
+    },
+    {
+      "id": "pe2-natura-capriolo-df147e99",
+      "original": "incoming/photo-expansion-2026-10-18/natura/originals/pe2-natura-capriolo-df147e99.jpg",
+      "utc": "2026-10-18T22:13:22.236139Z",
+      "status": "downloaded_pending_review",
+      "sha256": "9e1997b1dc03b4acdae1c927f8fd871cf39fcb04d035aca1bf064c804934476b",
+      "bytes": 4936779
+    },
+    {
+      "id": "pe2-sosia-hygrophoropsis-aurantiaca-1dadbca",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-hygrophoropsis-aurantiaca-1dadbca.jpg",
+      "utc": "2026-10-18T22:13:31.576737Z",
+      "status": "downloaded_pending_review",
+      "sha256": "11c8678cc0af8b8d8485bcf9d80ea35137f2f6d314833e2ed7ca0fe0f50cb9bf",
+      "bytes": 371801
+    },
+    {
+      "id": "pe2-natura-cervo-fbfb6aeb",
+      "original": "incoming/photo-expansion-2026-10-18/natura/originals/pe2-natura-cervo-fbfb6aeb.jpg",
+      "utc": "2026-10-18T22:13:40.081501Z",
+      "status": "downloaded_pending_review",
+      "sha256": "cb9ea83d25bef2a9bed85e9027eacba1b70aa046228323a596aa8eccec6a797d",
+      "bytes": 6743433
+    },
+    {
+      "id": "pe2-sosia-cortinarius-orellanus-18e9e40",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-cortinarius-orellanus-18e9e40.jpg",
+      "utc": "2026-10-18T22:13:49.240371Z",
+      "status": "downloaded_pending_review",
+      "sha256": "7514e48cc3a3ebb23290883a0a412aeaf2d7e9170ae2dd3aee9dba87321cbfe3",
+      "bytes": 1381406
+    },
+    {
+      "id": "pe2-natura-cervo-8c64579f",
+      "original": "incoming/photo-expansion-2026-10-18/natura/originals/pe2-natura-cervo-8c64579f.jpg",
+      "utc": "2026-10-18T22:13:58.206609Z",
+      "status": "downloaded_pending_review",
+      "sha256": "6d0b58ae561ca70d2eceef5fb13b6bc7b936c878eef8cade4ea6a04c99272266",
+      "bytes": 6530987
+    },
+    {
+      "id": "pe2-sosia-pseudocraterellus-undulatus-90b1e99",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-pseudocraterellus-undulatus-90b1e99.jpg",
+      "utc": "2026-10-18T22:14:07.927721Z",
+      "status": "downloaded_pending_review",
+      "sha256": "a4e6754f641f369ce9d9c45e552d966e9218ae46d5f86e4318da0ffe293c00dc",
+      "bytes": 3320403
+    },
+    {
+      "id": "pe2-natura-cetonia-dorata-eea302fd",
+      "original": "incoming/photo-expansion-2026-10-18/natura/originals/pe2-natura-cetonia-dorata-eea302fd.jpg",
+      "utc": "2026-10-18T22:14:17.687876Z",
+      "status": "downloaded_pending_review",
+      "sha256": "405fd3dee2bd8880eba9e01c5061a3abd3292fcffc7d370f6e6893320d52dfb7",
+      "bytes": 7838641
+    },
+    {
+      "id": "pe2-sosia-hydnum-rufescens-c29da8d",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-hydnum-rufescens-c29da8d.jpg",
+      "utc": "2026-10-18T22:14:27.504874Z",
+      "status": "downloaded_pending_review",
+      "sha256": "f4946ce6fa159526fd6899a789713d46c5be9e05354f05fb977cd5b15723a664",
+      "bytes": 12801662
+    },
+    {
+      "id": "pe2-natura-cetonia-dorata-1e5dddb7",
+      "original": "incoming/photo-expansion-2026-10-18/natura/originals/pe2-natura-cetonia-dorata-1e5dddb7.jpg",
+      "utc": "2026-10-18T22:14:38.227959Z",
+      "status": "downloaded_pending_review",
+      "sha256": "538d3e52f78cef1086776e675359509bf4db1067d807fa6beb61e6f74cab2976",
+      "bytes": 2280058
+    },
+    {
+      "id": "pe2-sosia-sarcodon-imbricatus-d03816b",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-sarcodon-imbricatus-d03816b.jpg",
+      "utc": "2026-10-18T22:14:47.732277Z",
+      "status": "downloaded_pending_review",
+      "sha256": "f5d0aba1fa948b81e276aa7faf8d11acb2326dc3b803a60b4c9b5684e0c53d6e",
+      "bytes": 2689148
+    },
+    {
+      "id": "pe2-natura-rosalia-alpina-3c5bc091",
+      "original": "incoming/photo-expansion-2026-10-18/natura/originals/pe2-natura-rosalia-alpina-3c5bc091.jpg",
+      "utc": "2026-10-18T22:15:12.356971Z",
+      "status": "downloaded_pending_review",
+      "sha256": "4b7de21d2533b8f7008bc7b12460a8be7469b447a216a120c5138f03306e0da3",
+      "bytes": 10202113
+    },
+    {
+      "id": "pe2-sosia-hydnellum-peckii-3e4b7ae",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-hydnellum-peckii-3e4b7ae.jpg",
+      "utc": "2026-10-18T22:15:22.484230Z",
+      "status": "downloaded_pending_review",
+      "sha256": "dd670de4217777f37fd814ad98aea8ae8e852dba469cacd8539397c453c0a617",
+      "bytes": 5217948
+    },
+    {
+      "id": "pe2-natura-rosalia-alpina-da5be92c",
+      "original": "incoming/photo-expansion-2026-10-18/natura/originals/pe2-natura-rosalia-alpina-da5be92c.jpg",
+      "utc": "2026-10-18T22:15:31.828379Z",
+      "status": "downloaded_pending_review",
+      "sha256": "14b6c619916bdd9b5f183f697bc4d5dd08f2afba34d7ca7ba6ba833d60518313",
+      "bytes": 4114453
+    },
+    {
+      "id": "pe2-sosia-lepiota-brunneoincarnata-e5cc1de",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-lepiota-brunneoincarnata-e5cc1de.jpg",
+      "utc": "2026-10-18T22:15:41.085574Z",
+      "status": "downloaded_pending_review",
+      "sha256": "d78a4893aa6cd1febb1c9bd1b219d7c455ac2bbef065b30b604ac26da74841cf",
+      "bytes": 419019
+    },
+    {
+      "id": "pe2-natura-tritone-crestato-italiano-f236e465",
+      "original": "incoming/photo-expansion-2026-10-18/natura/originals/pe2-natura-tritone-crestato-italiano-f236e465.jpg",
+      "utc": "2026-10-18T22:15:50.008049Z",
+      "status": "downloaded_pending_review",
+      "sha256": "d3538f4a7116fafd04ef11ede74f4aa58c92c668ed7cadd30c812a9b03a26019",
+      "bytes": 4170802
+    },
+    {
+      "id": "pe2-sosia-lepiota-cristata-a810327",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-lepiota-cristata-a810327.jpg",
+      "utc": "2026-10-18T22:15:59.523266Z",
+      "status": "downloaded_pending_review",
+      "sha256": "a2709d0b1c24b833345bb7c4a34188b6a0ca8661313f10d98ba113b2fb3cb532",
+      "bytes": 484666
+    },
+    {
+      "id": "pe2-natura-tritone-crestato-italiano-e4b550c8",
+      "original": "incoming/photo-expansion-2026-10-18/natura/originals/pe2-natura-tritone-crestato-italiano-e4b550c8.JPG",
+      "utc": "2026-10-18T22:16:08.344719Z",
+      "status": "downloaded_pending_review",
+      "sha256": "367ca7147b7954cb8026491c3608f304de66ecac70c1a642cd50338c6ca242e4",
+      "bytes": 1141553
+    },
+    {
+      "id": "pe2-sosia-chlorophyllum-rhacodes-6b6805b",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-chlorophyllum-rhacodes-6b6805b.jpg",
+      "utc": "2026-10-18T22:16:17.108335Z",
+      "status": "downloaded_pending_review",
+      "sha256": "db05ecee4b4f88e0b7135bf3bf02e7c712c4d6fe2d5a50dda1fef09c555e156b",
+      "bytes": 1650676
+    },
+    {
+      "id": "pe2-natura-salamandra-pezzata-6a5e949a",
+      "original": "incoming/photo-expansion-2026-10-18/natura/originals/pe2-natura-salamandra-pezzata-6a5e949a.jpg",
+      "utc": "2026-10-18T22:16:26.215749Z",
+      "status": "downloaded_pending_review",
+      "sha256": "21d6a8ca2a86d6637018c12a97f714ef5064d1150ae1b0fc34509aa4e10d2119",
+      "bytes": 6243845
+    },
+    {
+      "id": "pe2-sosia-galerina-marginata-7af9357",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-galerina-marginata-7af9357.jpg",
+      "utc": "2026-10-18T22:16:35.810747Z",
+      "status": "downloaded_pending_review",
+      "sha256": "439e6f4047d97b7ca9247ebbc1302c6fa3e9571f935cf50a76b5cf79af02680a",
+      "bytes": 1391279
+    },
+    {
+      "id": "pe2-natura-riccio-europeo-9f5a4de0",
+      "original": "incoming/photo-expansion-2026-10-18/natura/originals/pe2-natura-riccio-europeo-9f5a4de0.jpg",
+      "utc": "2026-10-18T22:16:44.861170Z",
+      "status": "downloaded_pending_review",
+      "sha256": "d54b57f7776c549a713d23d177b175aca133a0a6b8f97820c0d2f1b64400c21d",
+      "bytes": 2023884
+    },
+    {
+      "id": "pe2-sosia-hypholoma-fasciculare-b5c5469",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-hypholoma-fasciculare-b5c5469.jpg",
+      "utc": "2026-10-18T22:16:53.877511Z",
+      "status": "downloaded_pending_review",
+      "sha256": "398315aa6cbd88581540f75bb023b81e2d8326f702050877a3416f545847f080",
+      "bytes": 12269252
+    },
+    {
+      "id": "pe2-natura-riccio-europeo-ceee4469",
+      "original": "incoming/photo-expansion-2026-10-18/natura/originals/pe2-natura-riccio-europeo-ceee4469.JPG",
+      "utc": "2026-10-18T22:17:04.004190Z",
+      "status": "downloaded_pending_review",
+      "sha256": "2c4f2982902e6c1f85e74e20c3e122cdfa99306824bab51746b9b8ef5bd1846f",
+      "bytes": 4176957
+    },
+    {
+      "id": "pe2-sosia-cortinarius-rubellus-b633e5a",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-cortinarius-rubellus-b633e5a.jpg",
+      "utc": "2026-10-18T22:17:13.708622Z",
+      "status": "downloaded_pending_review",
+      "sha256": "1674d99b69928e56252a1b452eaac02e496ed85c901197f15a9cfc7dde65749a",
+      "bytes": 1065154
+    },
+    {
+      "id": "pe2-natura-volpe-5de3e848",
+      "original": "incoming/photo-expansion-2026-10-18/natura/originals/pe2-natura-volpe-5de3e848.jpg",
+      "utc": "2026-10-18T22:17:22.471615Z",
+      "status": "downloaded_pending_review",
+      "sha256": "55bd6ef2fb255a3aa0a2963eb1de1c5ffe65b76f0f17faaadaa6850465aa44d3",
+      "bytes": 7306999
+    },
+    {
+      "id": "pe2-sosia-gymnopilus-junonius-c7a3763",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-gymnopilus-junonius-c7a3763.jpg",
+      "utc": "2026-10-18T22:17:31.809182Z",
+      "status": "downloaded_pending_review",
+      "sha256": "4ce1c8643939c28d5adbc9e56a90d0350c8d84d876acb7d9aa201c4d31b76872",
+      "bytes": 1379698
+    },
+    {
+      "id": "pe2-natura-volpe-058efeff",
+      "original": "incoming/photo-expansion-2026-10-18/natura/originals/pe2-natura-volpe-058efeff.jpg",
+      "utc": "2026-10-18T22:17:41.039886Z",
+      "status": "downloaded_pending_review",
+      "sha256": "24beec090e5200e3f896d3c9bb017ea6a4cd09ce4a933d8bb894f061fd375a63",
+      "bytes": 13789254
+    },
+    {
+      "id": "pe2-sosia-pholiota-squarrosa-850e666",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-pholiota-squarrosa-850e666.jpg",
+      "utc": "2026-10-18T22:17:51.020691Z",
+      "status": "downloaded_pending_review",
+      "sha256": "6499530f247a7928d7b0c8875e2cf6b8acabf6324f86ce47241de102df363a6e",
+      "bytes": 5100193
+    },
+    {
+      "id": "pe2-natura-tasso-2ca0b989",
+      "original": "incoming/photo-expansion-2026-10-18/natura/originals/pe2-natura-tasso-2ca0b989.jpg",
+      "utc": "2026-10-18T22:18:00.095449Z",
+      "status": "downloaded_pending_review",
+      "sha256": "3485ebb345a9b839ee529070555a1ab2e9248e26e749e109783231dfe2b38b1a",
+      "bytes": 2834345
+    },
+    {
+      "id": "pe2-sosia-russula-heterophylla-1bf62e7",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-russula-heterophylla-1bf62e7.jpg",
+      "utc": "2026-10-18T22:18:09.041631Z",
+      "status": "downloaded_pending_review",
+      "sha256": "a0be39221bedfcd7f20423e3ca321a4c4bb458a79175a40209ed612c6cd86dea",
+      "bytes": 12836062
+    },
+    {
+      "id": "pe2-sosia-russula-olivacea-d859b5f",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-russula-olivacea-d859b5f.jpg",
+      "utc": "2026-10-18T22:18:20.056975Z",
+      "status": "downloaded_pending_review",
+      "sha256": "c418d1e989c190addfd6ba7cad30649f12546dd768e49e8d182392dc491c1aed",
+      "bytes": 798992
+    },
+    {
+      "id": "pe2-natura-sorbo-domestico-13f8c203",
+      "original": "incoming/photo-expansion-2026-10-18/natura/originals/pe2-natura-sorbo-domestico-13f8c203.jpg",
+      "utc": "2026-10-18T22:18:28.823557Z",
+      "status": "downloaded_pending_review",
+      "sha256": "766e883371b928aef83e9fcd7e6a9372ee0792969d2be5789e4ecda611bd26b6",
+      "bytes": 7544884
+    },
+    {
+      "id": "pe2-sosia-russula-aeruginea-f7ba921",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-russula-aeruginea-f7ba921.jpg",
+      "utc": "2026-10-18T22:18:38.026326Z",
+      "status": "downloaded_pending_review",
+      "sha256": "3c6cb23cec38024986d991aaed0a1d5fbf3fe6daa1fafb41c0842047758ecabd",
+      "bytes": 858727
+    },
+    {
+      "id": "pe2-sosia-chalciporus-piperatus-1e92cc0",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-chalciporus-piperatus-1e92cc0.jpg",
+      "utc": "2026-10-18T22:18:46.772746Z",
+      "status": "downloaded_pending_review",
+      "sha256": "a321d40aea0711dfc926522440a955aa90ae288142f6d2feb09b234ac5ecc733",
+      "bytes": 283239
+    },
+    {
+      "id": "pe2-natura-ciliegio-7b19a058",
+      "original": "incoming/photo-expansion-2026-10-18/natura/originals/pe2-natura-ciliegio-7b19a058.jpg",
+      "utc": "2026-10-18T22:18:55.387676Z",
+      "status": "downloaded_pending_review",
+      "sha256": "0c2e9222ec7f566e13e7e563ab4dda9f14efa11740605891914f3245f4f07bff",
+      "bytes": 361639
+    },
+    {
+      "id": "pe2-sosia-suillus-bovinus-cc16996",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-suillus-bovinus-cc16996.jpg",
+      "utc": "2026-10-18T22:19:03.924839Z",
+      "status": "downloaded_pending_review",
+      "sha256": "42eebe52f01ab070d9bb8439b1df71d3a0de1a99599e7bd9dd127bf75cd9cec2",
+      "bytes": 2522849
+    },
+    {
+      "id": "pe2-sosia-tricholoma-virgatum-84e5de7",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-tricholoma-virgatum-84e5de7.jpg",
+      "utc": "2026-10-18T22:19:12.862960Z",
+      "status": "downloaded_pending_review",
+      "sha256": "f041eeb199fde138f3f7e2750fc1e05f33112dca04bc23873380ae7c4afb6efa",
+      "bytes": 5435686
+    },
+    {
+      "id": "pe2-natura-noce-1ba9ef65",
+      "original": "incoming/photo-expansion-2026-10-18/natura/originals/pe2-natura-noce-1ba9ef65.jpg",
+      "utc": "2026-10-18T22:19:22.018993Z",
+      "status": "downloaded_pending_review",
+      "sha256": "bba67944179f47bea891adc501596bbc989a2181f22b68d8ac8fb2725a5dfddf",
+      "bytes": 2180011
+    },
+    {
+      "id": "pe2-sosia-tricholoma-sciodes-45b8269",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-tricholoma-sciodes-45b8269.jpg",
+      "utc": "2026-10-18T22:19:31.206043Z",
+      "status": "downloaded_pending_review",
+      "sha256": "b7e374b7435733b87132bee1bb29d014a668ecf25db99c9e81edf6a38f2d4537",
+      "bytes": 1684013
+    },
+    {
+      "id": "pe2-sosia-entoloma-sinuatum-aaeda3f",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-entoloma-sinuatum-aaeda3f.jpg",
+      "utc": "2026-10-18T22:19:40.232079Z",
+      "status": "downloaded_pending_review",
+      "sha256": "f9e7cc35863b89ebc3eb83da60b4259101ab0b77043c3a95b510b578752ae67b",
+      "bytes": 1495469
+    },
+    {
+      "id": "pe2-sosia-cortinarius-traganus-77994e4",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-cortinarius-traganus-77994e4.jpg",
+      "utc": "2026-10-18T22:19:49.254638Z",
+      "status": "downloaded_pending_review",
+      "sha256": "3afb2713b780472a70c3451b8d0e0978c10e1b3df545be4aed203843f16309f5",
+      "bytes": 5134777
+    },
+    {
+      "id": "pe2-natura-olmo-montano-dbc95e40",
+      "original": "incoming/photo-expansion-2026-10-18/natura/originals/pe2-natura-olmo-montano-dbc95e40.jpg",
+      "utc": "2026-10-18T22:19:59.411470Z",
+      "status": "downloaded_pending_review",
+      "sha256": "2aee0d3b1ab9f67c2235b92f0f96e1559be3cfde2c96aafdce26c129252cff61",
+      "bytes": 3523977
+    },
+    {
+      "id": "pe2-sosia-cortinarius-violaceus-cd39728",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-cortinarius-violaceus-cd39728.jpg",
+      "utc": "2026-10-18T22:20:08.515992Z",
+      "status": "downloaded_pending_review",
+      "sha256": "ddec6e8d363c8ace107f9aa7497c0eb88a3966284daa4c5fb9260fcd3ae30dc0",
+      "bytes": 1883065
+    },
+    {
+      "id": "pe2-sosia-mycena-pura-727050a",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-mycena-pura-727050a.jpg",
+      "utc": "2026-10-18T22:20:17.477832Z",
+      "status": "downloaded_pending_review",
+      "sha256": "e5bd006d31509ee190fe18ec438b6be1f0ce6cee8a0150549e8a22bbee010ebd",
+      "bytes": 2478093
+    },
+    {
+      "id": "pe2-natura-ippocastano-001a6317",
+      "original": "incoming/photo-expansion-2026-10-18/natura/originals/pe2-natura-ippocastano-001a6317.jpg",
+      "utc": "2026-10-18T22:20:26.513237Z",
+      "status": "downloaded_pending_review",
+      "sha256": "7a03a4221017f3d5f250f5b590ca0ec0bcc694d38878ee92480de3c2049982cb",
+      "bytes": 1458087
+    },
+    {
+      "id": "pe2-sosia-laccaria-amethystina-dd0ac54",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-laccaria-amethystina-dd0ac54.jpg",
+      "utc": "2026-10-18T22:20:35.459928Z",
+      "status": "downloaded_pending_review",
+      "sha256": "df64866a7b62568166da40b627e2cc0866d5ff315189e5ead8de239f0575cad3",
+      "bytes": 13200919
+    },
+    {
+      "id": "pe2-sosia-agaricus-xanthodermus-e1661dd",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-agaricus-xanthodermus-e1661dd.jpg",
+      "utc": "2026-10-18T22:20:45.604050Z",
+      "status": "downloaded_pending_review",
+      "sha256": "bde5c2dfb80905a20aa1f17613aade2ec9088562dbaab159c6ade9d37f2daa26",
+      "bytes": 5030002
+    },
+    {
+      "id": "pe2-sosia-gyromitra-esculenta-68ff585",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-gyromitra-esculenta-68ff585.jpg",
+      "utc": "2026-10-18T22:20:54.685385Z",
+      "status": "downloaded_pending_review",
+      "sha256": "8153358097a6e65723e3e2fa0d94b53db23161b8d583cc490023695256c2a74b",
+      "bytes": 1631476
+    },
+    {
+      "id": "pe2-sosia-amanita-pantherina-8f321b8",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-amanita-pantherina-8f321b8.jpg",
+      "utc": "2026-10-18T22:21:03.937309Z",
+      "status": "downloaded_pending_review",
+      "sha256": "4eee0d911600cf544681056f0a61d0495b4ef30a9574d54a4c7cf87b5f3fd3e8",
+      "bytes": 7188484
+    },
+    {
+      "id": "pe2-sosia-tricholoma-equestre-b0c2bcf",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-tricholoma-equestre-b0c2bcf.jpg",
+      "utc": "2026-10-18T22:21:13.832365Z",
+      "status": "downloaded_pending_review",
+      "sha256": "cbe97694dbabab7af43aafcb07cc2fd873de595625624ce17581f1619cc45cc3",
+      "bytes": 2739959
+    },
+    {
+      "id": "pe2-sosia-clitocybe-rivulosa-2a49f9e",
+      "original": "incoming/photo-expansion-2026-10-18/funghi-sosia/originals/pe2-sosia-clitocybe-rivulosa-2a49f9e.jpg",
+      "utc": "2026-10-18T22:21:23.790305Z",
+      "status": "downloaded_pending_review",
+      "sha256": "210a54b50b36261434876a8775fdc2c9e71abd4bc9abb412431308f17c11c62b",
+      "bytes": 904284
+    }
+  ]
+}

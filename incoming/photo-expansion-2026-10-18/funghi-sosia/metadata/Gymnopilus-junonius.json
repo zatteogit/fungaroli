@@ -1,0 +1,4488 @@
+{
+  "continue": {
+    "clcontinue": "69989023|Files_uploaded_by_Josve05a_(Gail_Hampshire)",
+    "continue": "||imageinfo"
+  },
+  "query": {
+    "pages": {
+      "70114359": {
+        "pageid": 70114359,
+        "ns": 6,
+        "title": "File:Cogumelo (Gymnopilus junonius) - Laughing Gym, (16936399717).jpg",
+        "index": 39,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 3785995,
+            "width": 2400,
+            "height": 1582,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/3/31/Cogumelo_%28Gymnopilus_junonius%29_-_Laughing_Gym%2C_%2816936399717%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Cogumelo_(Gymnopilus_junonius)_-_Laughing_Gym,_(16936399717).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=70114359",
+            "sha1": "e51b27ab6252a7558ab9184d2e0fc7b5ab5a8c61",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2018-06-21 11:18:49",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Cogumelo (Gymnopilus junonius) - Laughing Gym, (16936399717)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Gymnopilus junonius|CC-Zero|Files with coordinates missing SDC location of creation|Photographs by Bernard Spragg|Flickr images reviewed by FlickreviewR 2|New Zealand photographs taken on 2015-04-08|Strophariaceae in New Zealand",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "-43.454663",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "172.691860",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Gymnopilus junonius is a species of mushroom in the family Cortinariaceae. Commonly known as laughing gym, laughing Jim, or the spectacular rustgill, this large orange mushroom is typically found growing on tree stumps, logs, or tree bases. Some subspecies of this mushroom contain the hallucinogenic compound psilocybin.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2015-04-08 10:14",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/volvob12b/16936399717/\">Cogumelo (Gymnopilus junonius) - Laughing Gym,</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/88123769@N02\">Bernard Spragg. NZ</a> from Christchurch, New Zealand",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "70114277": {
+        "pageid": 70114277,
+        "ns": 6,
+        "title": "File:Gymnopilus. junonius. (13883681834).jpg",
+        "index": 21,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 621164,
+            "width": 2400,
+            "height": 1592,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/4/4a/Gymnopilus._junonius._%2813883681834%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Gymnopilus._junonius._(13883681834).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=70114277",
+            "sha1": "e429eae19448742316ae1f747e4847ad75e53df6",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2018-06-21 11:17:07",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Gymnopilus. junonius. (13883681834)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Gymnopilus junonius|CC-Zero|Files with coordinates missing SDC location of creation|Photographs by Bernard Spragg|Flickr images reviewed by FlickreviewR 2|New Zealand photographs taken on 2014-04-15|Strophariaceae in New Zealand",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "-43.452669",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "172.694435",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Gymnopilus junonius is a species of mushroom in the family Cortinariaceae. Commonly known as Laughing Gym, Laughing Cap, Laughing Jim, or the Spectacular Rustgill, this large orange mushroom is typically found growing on tree stumps, logs, or tree bases. Some subspecies of this mushroom contain the neurotoxic oligoisoprenoid gymnopilin.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2014-04-15 15:12",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"mw:ExtLink nofollow\" href=\"https://www.flickr.com/photos/volvob12b/13883681834/\" class=\"external text\">Gymnopilus. junonius.</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"mw:ExtLink nofollow\" href=\"https://www.flickr.com/people/88123769@N02\" class=\"external text\">Bernard Spragg. NZ</a> from Christchurch, New Zealand",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "70114096": {
+        "pageid": 70114096,
+        "ns": 6,
+        "title": "File:Gymnopilus junonius, (25801771953).jpg",
+        "index": 36,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 10306766,
+            "width": 4000,
+            "height": 2885,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/8/83/Gymnopilus_junonius%2C_%2825801771953%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Gymnopilus_junonius,_(25801771953).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=70114096",
+            "sha1": "6cef661730a442b4f7e1dfe00345d2dfdc57a9bf",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2018-06-21 11:12:07",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Gymnopilus junonius, (25801771953)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Gymnopilus junonius|CC-Zero|Files with coordinates missing SDC location of creation|Photographs by Bernard Spragg|Flickr images reviewed by FlickreviewR 2|New Zealand photographs taken on 2016-04-11|Strophariaceae in New Zealand",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "-43.449678",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "172.598991",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "This impressive mushroom is found growing in dense clusters on stumps and logs of both hardwoods and conifers--and a number of associated species names are found growing in a dense cluster, as well. These species (if they are truly distinct), are all fairly large mushrooms that have orange to orangish brown spore prints, bitter taste, and stems that feature rings or ring zones. The central species name is Gymnopilus junonius, which is the correct name for \"Gymnopilus spectabilis,\" according to the most recent taxonomists.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2016-04-11 17:07",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/volvob12b/25801771953/\">Gymnopilus junonius,</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/88123769@N02\">Bernard Spragg. NZ</a> from Christchurch, New Zealand",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "137471408": {
+        "pageid": 137471408,
+        "ns": 6,
+        "title": "File:Gymnopilus junonius, Campus Isla Teja, Universidad Austral de Chile (53137897192).jpg",
+        "index": 19,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 397668,
+            "width": 1024,
+            "height": 768,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/9/91/Gymnopilus_junonius%2C_Campus_Isla_Teja%2C_Universidad_Austral_de_Chile_%2853137897192%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Gymnopilus_junonius,_Campus_Isla_Teja,_Universidad_Austral_de_Chile_(53137897192).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=137471408",
+            "sha1": "18cd018ecd249c6c6a7bfcf21376c217c3a98c65",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2023-09-12 16:36:44",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Gymnopilus junonius, Campus Isla Teja, Universidad Austral de Chile (53137897192)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Flickr images reviewed by FlickreviewR 2",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Gymnopilus junonius, Campus Isla Teja, Universidad Austral de Chile",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2009-05-18 12:08",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/luz_h2o_co2/53137897192/\">Gymnopilus junonius, Campus Isla Teja, Universidad Austral de Chile</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/45967508@N07\">Hector Montero</a> from Chile",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "2194116": {
+        "pageid": 2194116,
+        "ns": 6,
+        "title": "File:Gymnopilus junonius-02.jpg",
+        "index": 3,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 2129568,
+            "width": 2097,
+            "height": 1555,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/9/9d/Gymnopilus_junonius-02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Gymnopilus_junonius-02.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=2194116",
+            "sha1": "32edf467fba3d695fed8aab4e3a970880791017a",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2007-06-03 10:16:04",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Gymnopilus junonius-02",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Gymnopilus junonius|GFDL|Taken with Olympus C-750UZ|License migration redundant|Self-published work|New Zealand photographs taken on 2007-06-02|Strophariaceae in New Zealand|Fungi of New Zealand in June|Photos by User:Tony Wills",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "quality",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Mushroom growing on dead pinus radiata stump, Wellington, New Zealand.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2007-06-02",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "Tony Wills",
+                "source": "commons-desc-page"
+              },
+              "Permission": {
+                "value": "You may select the license of your choice.",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseShortName": {
+                "value": "CC BY 2.5",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 2.5",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Attribution": {
+                "value": "<a rel=\"mw:WikiLink\" href=\"https://commons.wikimedia.org/wiki/User:Tony_Wills\" title=\"User:Tony Wills\">Tony Wills</a>",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/2.5",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-2.5",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-2.5"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi of New Zealand in June"
+          },
+          {
+            "ns": 14,
+            "title": "Category:GFDL"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Gymnopilus junonius"
+          },
+          {
+            "ns": 14,
+            "title": "Category:License migration redundant"
+          },
+          {
+            "ns": 14,
+            "title": "Category:New Zealand photographs taken on 2007-06-02"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Photos by User:Tony Wills"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images missing SDC creator"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images of Agaricales"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images of fungi in New Zealand"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Strophariaceae in New Zealand"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Olympus C-750UZ"
+          }
+        ]
+      },
+      "58301631": {
+        "pageid": 58301631,
+        "ns": 6,
+        "title": "File:Gymnopilus junonius.( Cortinariaceae) (32525464164).jpg",
+        "index": 27,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 12193356,
+            "width": 4624,
+            "height": 2860,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/8/88/Gymnopilus_junonius.%28_Cortinariaceae%29_%2832525464164%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Gymnopilus_junonius.(_Cortinariaceae)_(32525464164).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=58301631",
+            "sha1": "cd3f6c9237de7179c5d4341674a72b2373338549",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2017-04-25 00:24:21",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Gymnopilus junonius.( Cortinariaceae) (32525464164)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Gymnopilus junonius|CC-Zero|Fungi in March|Files with coordinates missing SDC location of creation|Photographs by Bernard Spragg|Flickr images reviewed by FlickreviewR 2|New Zealand photographs taken on 2017-03-11|Strophariaceae in New Zealand",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "-43.458277",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "172.690143",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Gymnopilus junonius is a species of mushroom in the family Cortinariaceae. Commonly known as Laughing Gym, Laughing Cap, Laughing Jim, or the Spectacular Rustgill, this large orange mushroom is typically found growing on tree stumps, logs, or tree bases. Some subspecies of this mushroom contain the neurotoxic oligoisoprenoid gymnopilin.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2017-03-11 10:55",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/volvob12b/32525464164/\">Gymnopilus junonius.( Cortinariaceae)</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/88123769@N02\">Bernard Spragg. NZ</a> from Christchurch, New Zealand",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-Zero"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with coordinates missing SDC location of creation"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Flickr images reviewed by FlickreviewR 2"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi in March"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Gymnopilus junonius"
+          },
+          {
+            "ns": 14,
+            "title": "Category:New Zealand photographs taken on 2017-03-11"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Photographs by Bernard Spragg"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Strophariaceae in New Zealand"
+          }
+        ]
+      },
+      "70114305": {
+        "pageid": 70114305,
+        "ns": 6,
+        "title": "File:Gymnopilus junonius. (21864829263).jpg",
+        "index": 26,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 3661545,
+            "width": 2400,
+            "height": 1655,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Gymnopilus_junonius._%2821864829263%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Gymnopilus_junonius._(21864829263).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=70114305",
+            "sha1": "26efb9c3b821f4ed771144ef04660162bb3f4fdf",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2018-06-21 11:17:34",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Gymnopilus junonius. (21864829263)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Gymnopilus junonius|CC-Zero|Files with coordinates missing SDC location of creation|Photographs by Bernard Spragg|Flickr images reviewed by FlickreviewR 2|New Zealand photographs taken on 2015-04-21|Strophariaceae in New Zealand",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "-43.462840",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "172.701623",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Gymnopilus junonius is a species of mushroom in the family Cortinariaceae. Commonly known as laughing gym, laughing Jim, or the spectacular rustgill, this large orange mushroom is typically found growing on tree stumps, logs, or tree bases. Some subspecies of this mushroom contain the hallucinogenic compound psilocybin.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2015-04-21 10:08",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"mw:ExtLink nofollow\" href=\"https://www.flickr.com/photos/volvob12b/21864829263/\" class=\"external text\">Gymnopilus junonius.</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"mw:ExtLink nofollow\" href=\"https://www.flickr.com/people/88123769@N02\" class=\"external text\">Bernard Spragg. NZ</a> from Christchurch, New Zealand",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "70114158": {
+        "pageid": 70114158,
+        "ns": 6,
+        "title": "File:Gymnopilus junonius. (36132201876).jpg",
+        "index": 6,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 11331986,
+            "width": 4771,
+            "height": 2983,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/0/06/Gymnopilus_junonius._%2836132201876%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Gymnopilus_junonius._(36132201876).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=70114158",
+            "sha1": "704a4e0a97d4a5d2c7cd9cc88350d3418c2101e1",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2018-06-21 11:14:17",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Gymnopilus junonius. (36132201876)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Gymnopilus junonius|CC-Zero|Files with coordinates missing SDC location of creation|Photographs by Bernard Spragg|Flickr images reviewed by FlickreviewR 2|New Zealand photographs taken on 2017-03-28|Strophariaceae in New Zealand",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "-43.449678",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "172.598991",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Gymnopilus junonius is a large and colourful wood-rotting species that occurs in small groups at the bases of dead broad-leaf trees and occasionally conifers from spring through to early winter. When seen in full sunlight, this mushroom deserves the name 'Spectacular'. The cap colour is very variable - sometimes beautiful gold colour, while at other times the dominant colour is deep orange. This fine display of Spectacular Rustgills was growing from the stump of a pine, and the largest cap was nearly 20cm across.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2017-03-28 12:37",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/volvob12b/36132201876/\">Gymnopilus junonius.</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/88123769@N02\">Bernard Spragg. NZ</a> from Christchurch, New Zealand",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "103432737": {
+        "pageid": 103432737,
+        "ns": 6,
+        "title": "File:Gymnopilus junonius. (51017311588).jpg",
+        "index": 9,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 21094185,
+            "width": 5472,
+            "height": 3648,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Gymnopilus_junonius._%2851017311588%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Gymnopilus_junonius._(51017311588).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=103432737",
+            "sha1": "bc16d6bf4d610141fcabd7b8878e29dae8c8e648",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2021-04-11 06:14:45",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Gymnopilus junonius. (51017311588)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Files with coordinates missing SDC location of creation|Photographs by Bernard Spragg|Flickr images reviewed by FlickreviewR 2|New Zealand photographs taken on 2017-03-31|PD-author-FlickrPDM|Flora of Christchurch",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "-43.449893",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "172.606115",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Gymnopilus junonius is a large and colourful wood-rotting species that occurs in small groups at the bases of dead broad-leaf trees and occasionally conifers from spring through to early winter. When seen in full sunlight, this mushroom deserves the name 'Spectacular'. The cap colour is very variable - sometimes beautiful gold colour, while at other times the dominant colour is deep orange, as seen on the left. This fine display of Spectacular Rustgills was growing from the stump of a pine, and the largest cap was nearly 20cm across.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2017-03-31 09:46",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"mw:ExtLink nofollow\" href=\"https://www.flickr.com/photos/volvob12b/51017311588/\" class=\"external text\">Gymnopilus junonius.</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"mw:ExtLink nofollow\" href=\"https://www.flickr.com/people/88123769@N02\" class=\"external text\">Bernard Spragg. NZ</a> from Christchurch, New Zealand",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "Public domain",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Public domain",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Copyrighted": {
+                "value": "False",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "pd",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "128512612": {
+        "pageid": 128512612,
+        "ns": 6,
+        "title": "File:Gymnopilus junonius. (51904347829).jpg",
+        "index": 16,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 6039475,
+            "width": 3895,
+            "height": 2765,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/b/bd/Gymnopilus_junonius._%2851904347829%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Gymnopilus_junonius._(51904347829).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=128512612",
+            "sha1": "af77ea015a21958f1445bb63c1b0297abadba46e",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2023-02-08 06:07:16",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Gymnopilus junonius. (51904347829)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Gymnopilus junonius|Flickr images missing SDC creator|Flickr images missing SDC inception|Files with coordinates missing SDC location of creation|Photographs by Bernard Spragg|Flickr images reviewed by FlickreviewR 2|PD-author-FlickrPDM|Flickr images missing SDC published in",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "-43.431531",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "172.708092",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Gymnopilus junonius is a species of mushroom in the family Cortinariaceae. Commonly known as the spectacular rustgill, this large orange mushroom is typically found growing on tree stumps, logs, or tree bases. Some subspecies of this mushroom contain the neurotoxic oligoisoprenoid gymnopilin.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2022-02-25 13:09",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/volvob12b/51904347829/\">Gymnopilus junonius.</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/88123769@N02\">Bernard Spragg. NZ</a> from Christchurch, New Zealand",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "Public domain",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Public domain",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Copyrighted": {
+                "value": "False",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "pd",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "128512675": {
+        "pageid": 128512675,
+        "ns": 6,
+        "title": "File:Gymnopilus junonius. (51987336851).jpg",
+        "index": 32,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 20284800,
+            "width": 5472,
+            "height": 3648,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Gymnopilus_junonius._%2851987336851%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Gymnopilus_junonius._(51987336851).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=128512675",
+            "sha1": "935879edf3874236226e5e0c288b596c4f937b75",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2023-02-08 06:11:35",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Gymnopilus junonius. (51987336851)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Gymnopilus junonius|Files with coordinates missing SDC location of creation|Photographs by Bernard Spragg|Flickr images reviewed by FlickreviewR 2|PD-author-FlickrPDM",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "-43.462548",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "172.601201",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Gymnopilus junonius is a large and colourful wood-rotting species that occurs in small groups at the bases of dead broad-leaf trees and occasionally conifers from spring through to early winter. When seen in full sunlight, this mushroom deserves the name 'Spectacular'. The cap colour is very variable - sometimes beautiful gold colour, while at other times the dominant colour is deep orange, as seen on the left. This fine display of Spectacular Rustgills was growing from the stump of a pine, and the largest cap was nearly 20cm across.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2022-03-02 13:42",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/volvob12b/51987336851/\">Gymnopilus junonius.</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/88123769@N02\">Bernard Spragg. NZ</a> from Christchurch, New Zealand",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "Public domain",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Public domain",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Copyrighted": {
+                "value": "False",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "pd",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "128512706": {
+        "pageid": 128512706,
+        "ns": 6,
+        "title": "File:Gymnopilus junonius. (52050784046).jpg",
+        "index": 37,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 6997753,
+            "width": 4402,
+            "height": 3200,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/8/8f/Gymnopilus_junonius._%2852050784046%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Gymnopilus_junonius._(52050784046).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=128512706",
+            "sha1": "511cf4ef0fbf6664c97a232801a421724bfe902f",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2023-02-08 06:13:25",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Gymnopilus junonius. (52050784046)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Gymnopilus junonius|Files with coordinates missing SDC location of creation|Photographs by Bernard Spragg|Flickr images reviewed by FlickreviewR 2|PD-author-FlickrPDM",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "-43.431531",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "172.708092",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<p>Laughing gym\n</p>\nGymnopilus junonius is a species of mushroom in the family Cortinariaceae. Commonly known as the Spectacular Rustgill, this large orange mushroom is typically found growing on tree stumps, logs, or tree bases. Some subspecies of this mushroom contain the neurotoxic oligoisoprenoid gymnopilin.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2022-02-25 13:06",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/volvob12b/52050784046/\">Gymnopilus junonius.</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/88123769@N02\">Bernard Spragg. NZ</a> from Christchurch, New Zealand",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "Public domain",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Public domain",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Copyrighted": {
+                "value": "False",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "pd",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "138721883": {
+        "pageid": 138721883,
+        "ns": 6,
+        "title": "File:Gymnopilus junonius. (52745282757).jpg",
+        "index": 38,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 8232056,
+            "width": 4864,
+            "height": 3648,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/e/e0/Gymnopilus_junonius._%2852745282757%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Gymnopilus_junonius._(52745282757).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=138721883",
+            "sha1": "8b765f282b9eb144b9e5b792101d59eb5d87ce49",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2023-10-11 16:42:48",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Gymnopilus junonius. (52745282757)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Gymnopilus junonius|Files with coordinates missing SDC location of creation|Photographs by Bernard Spragg|Flickr images reviewed by FlickreviewR 2|PD-author-FlickrPDM",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "-43.462504",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "172.695063",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Gymnopilus junonius is a species of mushroom-forming fungus in the family Hymenogastraceae. Commonly known as the spectacular rustgill, this large orange mushroom is typically found growing on tree stumps, logs, or tree bases.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2023-03-07 14:24",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/volvob12b/52745282757/\">Gymnopilus junonius.</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/88123769@N02\">Bernard Spragg. NZ</a> from Christchurch, New Zealand",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "Public domain",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Public domain",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Copyrighted": {
+                "value": "False",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "pd",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "147603799": {
+        "pageid": 147603799,
+        "ns": 6,
+        "title": "File:Gymnopilus junonius. (53592070675).jpg",
+        "index": 18,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 9119986,
+            "width": 4000,
+            "height": 2456,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/d/dd/Gymnopilus_junonius._%2853592070675%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Gymnopilus_junonius._(53592070675).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=147603799",
+            "sha1": "2a39bdcf1e00d2f5779b689d366a63b2f95bf0e0",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2024-04-21 21:54:35",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Gymnopilus junonius. (53592070675)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Files with coordinates missing SDC location of creation|Flickr images reviewed by FlickreviewR 2|PD-author-FlickrPDM|Photographs of Hong Kong by Bernard Spragg|Flickr transfer files uploaded by Acabashi",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "-43.437145",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "172.696715",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Gymnopilus junonius is a species of mushroom in the family Cortinariaceae. Commonly known as the Spectacular Rustgill, this large orange mushroom is typically found growing on tree stumps, logs, or tree bases. Some subspecies of this mushroom contain the neurotoxic oligoisoprenoid gymnopilin.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2016-04-04 14:49",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/volvob12b/53592070675/\">Gymnopilus junonius.</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/88123769@N02\">Bernard Spragg. NZ</a> from Christchurch, New Zealand",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "Public domain",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Public domain",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Copyrighted": {
+                "value": "False",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "pd",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "8950305": {
+        "pageid": 8950305,
+        "ns": 6,
+        "title": "File:Gymnopilus junonius.png",
+        "index": 34,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 43467,
+            "width": 1427,
+            "height": 628,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/0/07/Gymnopilus_junonius.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Gymnopilus_junonius.png",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=8950305",
+            "sha1": "ed2cce26e8c987f850d1a4a744604f2d6a939c3b",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2022-03-29 07:46:30",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Gymnopilus junonius",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Gymnopilus junonius|GFDL|License migration redundant|Self-published work|PNG created with GIMP|Fungi distribution maps",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<i><a rel=\"mw:WikiLink\" href=\"https://commons.wikimedia.org/wiki/Gymnopilus_junonius\" title=\"Gymnopilus junonius\">Gymnopilus junonius</a></i> range map (Approximate)<br>\n<p>Created using a blank map from the commons and data from <a rel=\"mw:ExtLink nofollow\" href=\"http://www.magic-mushrooms.net/World_Wide_Distribution_of_Magic_Mushrooms.pdf\" class=\"external text\">A Worldwide Geographic Distribution of the Neurotropic Fungi</a>.</p>\n<div style=\"display:table;width:;vertical-align:middle;direction:ltr;float:left;line-height:22px;height:24px;font-size:.96em;margin:0px;padding:2px 4px 2px 6px;color:var(--color-base,#000);background:var(--background-color-neutral-subtle,#F8F9FA);border:1px solid #BAB;border-collapse:separate;border-spacing:0px;;\"><span typeof=\"mw:File\"><a href=\"https://commons.wikimedia.org/wiki/File:The_GIMP_icon_-_v3.0.svg\" class=\"mw-file-description\"><img resource=\"https://commons.wikimedia.org/wiki/File:The_GIMP_icon_-_v3.0.svg\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/6/67/The_GIMP_icon_-_v3.0.svg/40px-The_GIMP_icon_-_v3.0.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/6/67/The_GIMP_icon_-_v3.0.svg/60px-The_GIMP_icon_-_v3.0.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"97\" data-file-height=\"97\" data-file-type=\"drawing\" height=\"22\" width=\"22\" class=\"mw-file-element\"></a></span><span typeof=\"mw:Entity\"> </span>This <span typeof=\"mw:Entity\"> </span>PNG <a rel=\"mw:WikiLink/Interwiki\" href=\"https://en.wikipedia.org/wiki/Computer%20graphics\" title=\"w:Computer graphics\" class=\"extiw\">graphic</a><span typeof=\"mw:Entity\"> </span>was created with <a rel=\"mw:WikiLink/Interwiki\" href=\"https://en.wikipedia.org/wiki/en:GIMP\" title=\"w:en:GIMP\" class=\"extiw\"><span title=\"image retouching and editing tool\">GIMP</span></a>.</div><span class=\"mw-empty-elt\"><link rel=\"mw:PageProp/Category\" href=\"./Category:PNG_created_with_GIMP#Gymnopilus%20junonius.png\"></span>",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2010-01-09",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"mw:WikiLink\" href=\"https://commons.wikimedia.org/wiki/User:Photohound\" title=\"User:Photohound\">Photohound</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi distribution maps"
+          },
+          {
+            "ns": 14,
+            "title": "Category:GFDL"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Gymnopilus junonius"
+          },
+          {
+            "ns": 14,
+            "title": "Category:License migration redundant"
+          },
+          {
+            "ns": 14,
+            "title": "Category:PNG created with GIMP"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          }
+        ]
+      },
+      "93618053": {
+        "pageid": 93618053,
+        "ns": 6,
+        "title": "File:Gymnopilus junonius (27282878982).jpg",
+        "index": 12,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 4095311,
+            "width": 5456,
+            "height": 3632,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/c/cb/Gymnopilus_junonius_%2827282878982%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Gymnopilus_junonius_(27282878982).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=93618053",
+            "sha1": "89a734499ee181176f12096668c8224a1b16dfa0",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2020-08-28 11:39:25",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Gymnopilus junonius (27282878982)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Gymnopilus junonius|Flickr images reviewed by FlickreviewR 2",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Gymnopilus junonius",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2015-09-23 07:39",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/99278910@N00/27282878982/\">Gymnopilus junonius</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/99278910@N00\">Lukas</a> from London, England",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "70114391": {
+        "pageid": 70114391,
+        "ns": 6,
+        "title": "File:Gymnopilus junonius (30401647445).jpg",
+        "index": 35,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 4536652,
+            "width": 2400,
+            "height": 1558,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/a/a4/Gymnopilus_junonius_%2830401647445%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Gymnopilus_junonius_(30401647445).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=70114391",
+            "sha1": "66ab4dc4a08dd646f9d2f208fc77cd485f1c551e",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2018-06-21 11:19:40",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Gymnopilus junonius (30401647445)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Gymnopilus junonius|CC-Zero|Files with coordinates missing SDC location of creation|Photographs by Bernard Spragg|Flickr images reviewed by FlickreviewR 2|New Zealand photographs taken on 2015-04-21|Strophariaceae in New Zealand",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "-43.463821",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "172.685508",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Gymnopilus junonius is a species of mushroom in the family Cortinariaceae. Commonly known as Laughing Gym, Laughing Cap, Laughing Jim, or the Spectacular Rustgill, this large orange mushroom is typically found growing on tree stumps, logs, or tree bases. Some subspecies of this mushroom contain the neurotoxic oligoisoprenoid gymnopilin.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2015-04-21 10:13",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/volvob12b/30401647445/\">Gymnopilus junonius</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/88123769@N02\">Bernard Spragg. NZ</a> from Christchurch, New Zealand",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "93617655": {
+        "pageid": 93617655,
+        "ns": 6,
+        "title": "File:Gymnopilus junonius (31317186983).jpg",
+        "index": 4,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 4321482,
+            "width": 5456,
+            "height": 3632,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/e/e4/Gymnopilus_junonius_%2831317186983%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Gymnopilus_junonius_(31317186983).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=93617655",
+            "sha1": "99327c2698a7c71a12c2134c8c387c3139ed47bf",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2020-08-28 11:31:30",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Gymnopilus junonius (31317186983)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Gymnopilus junonius|Flickr images reviewed by FlickreviewR 2",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Gymnopilus junonius",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2016-11-08 11:17",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/99278910@N00/31317186983/\">Gymnopilus junonius</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/99278910@N00\">Lukas</a> from London, England",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "93616875": {
+        "pageid": 93616875,
+        "ns": 6,
+        "title": "File:Gymnopilus junonius (42957369710).jpg",
+        "index": 7,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 4430450,
+            "width": 3648,
+            "height": 5472,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/2/2d/Gymnopilus_junonius_%2842957369710%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Gymnopilus_junonius_(42957369710).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=93616875",
+            "sha1": "8ebfc6acef246824b9577eba7e419786a0db10b8",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2020-08-28 11:13:23",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Gymnopilus junonius (42957369710)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Gymnopilus junonius|Flickr images reviewed by FlickreviewR 2|Flickr images missing SDC published in",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Gymnopilus junonius",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2018-09-16 12:23",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/99278910@N00/42957369710/\">Gymnopilus junonius</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/99278910@N00\">Lukas</a> from London, England",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "128512584": {
+        "pageid": 128512584,
+        "ns": 6,
+        "title": "File:Gymnopilus junonius (51867046743).jpg",
+        "index": 40,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 7416553,
+            "width": 4212,
+            "height": 2758,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/3/37/Gymnopilus_junonius_%2851867046743%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Gymnopilus_junonius_(51867046743).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=128512584",
+            "sha1": "fea8d4f39c62e18b5c32794e6c49795548d42eb5",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2023-02-08 06:05:30",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Gymnopilus junonius (51867046743)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Gymnopilus junonius|Files with coordinates missing SDC location of creation|Photographs by Bernard Spragg|Flickr images reviewed by FlickreviewR 2|PD-author-FlickrPDM",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "-43.462311",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "172.602210",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<p>Laughing gym\n</p>\nGymnopilus junonius is a species of mushroom in the family Cortinariaceae. Commonly known as the Spectacular Rustgill, this large orange mushroom is typically found growing on tree stumps, logs, or tree bases. Some subspecies of this mushroom contain the neurotoxic oligoisoprenoid gymnopilin.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2022-02-05 15:43",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/volvob12b/51867046743/\">Gymnopilus junonius</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/88123769@N02\">Bernard Spragg. NZ</a> from Christchurch, New Zealand",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "Public domain",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Public domain",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Copyrighted": {
+                "value": "False",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "pd",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "138722654": {
+        "pageid": 138722654,
+        "ns": 6,
+        "title": "File:Gymnopilus junonius (52201695075).jpg",
+        "index": 22,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 9365942,
+            "width": 4244,
+            "height": 2678,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/6/64/Gymnopilus_junonius_%2852201695075%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Gymnopilus_junonius_(52201695075).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=138722654",
+            "sha1": "a4129b82c19f1ba8d58f8096e5a4dc15d807f7a4",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2023-10-11 16:55:28",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Gymnopilus junonius (52201695075)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Gymnopilus junonius|Files with coordinates missing SDC location of creation|Photographs by Bernard Spragg|Flickr images reviewed by FlickreviewR 2|PD-author-FlickrPDM",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "-43.462615",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "172.601544",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<p>Laughing gym\n</p>\nGymnopilus junonius is a species of mushroom in the family Cortinariaceae. Commonly known as the Spectacular Rustgill, this large orange mushroom is typically found growing on tree stumps, logs, or tree bases. Some subspecies of this mushroom contain the neurotoxic oligoisoprenoid gymnopilin.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2022-02-27 14:00",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/volvob12b/52201695075/\">Gymnopilus junonius</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/88123769@N02\">Bernard Spragg. NZ</a> from Christchurch, New Zealand",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "Public domain",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Public domain",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Copyrighted": {
+                "value": "False",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "pd",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "138722519": {
+        "pageid": 138722519,
+        "ns": 6,
+        "title": "File:Gymnopilus junonius (52285432712).jpg",
+        "index": 30,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 10035364,
+            "width": 4676,
+            "height": 3316,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/a/ab/Gymnopilus_junonius_%2852285432712%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Gymnopilus_junonius_(52285432712).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=138722519",
+            "sha1": "cecd2d030efed32d979399f70fd7bca141915d77",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2023-10-11 16:53:40",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Gymnopilus junonius (52285432712)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Gymnopilus junonius|Flickr images missing SDC creator|Flickr images missing SDC inception|Flickr images missing SDC source of file|Files with coordinates missing SDC location of creation|Photographs by Bernard Spragg|Flickr images reviewed by FlickreviewR 2|PD-author-FlickrPDM|Flickr images missing SDC published in",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "-43.467738",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "172.686174",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<p>Laughing gym</p>\nGymnopilus junonius is a species of mushroom in the family Cortinariaceae. Commonly known as the Spectacular Rustgill, this large orange mushroom is typically found growing on tree stumps, logs, or tree bases. Some subspecies of this mushroom contain the neurotoxic oligoisoprenoid gymnopilin.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2022-02-26 13:19",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"mw:ExtLink nofollow\" href=\"https://www.flickr.com/photos/volvob12b/52285432712/\" class=\"external text\">Gymnopilus junonius</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"mw:ExtLink nofollow\" href=\"https://www.flickr.com/people/88123769@N02\" class=\"external text\">Bernard Spragg. NZ</a> from Christchurch, New Zealand",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "Public domain",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Public domain",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Copyrighted": {
+                "value": "False",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "pd",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "71961275": {
+        "pageid": 71961275,
+        "ns": 6,
+        "title": "File:Gymnopilus junonius (Fr.) P.D. Orton 288709.jpg",
+        "index": 20,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 2229416,
+            "width": 3453,
+            "height": 2590,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/8/8b/Gymnopilus_junonius_%28Fr.%29_P.D._Orton_288709.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Gymnopilus_junonius_(Fr.)_P.D._Orton_288709.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=71961275",
+            "sha1": "5fb0019853c56aff0a798a4ce4a5e82b53c1413d",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2018-08-24 11:59:33",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Gymnopilus junonius (Fr.) P.D. Orton 288709",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Gymnopilus junonius|Images from Mushroom Observer|Files from external sources with reviewed licenses|November 2012 in Portugal|Photographs taken on 2012-11-14|Cortinariaceae in Portugal|Fungi of Parque Florestal de Monsanto",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "For more information about this, see the <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/show_observation/118624\">observation page</a> at Mushroom Observer.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2012-12-02",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "This image is <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/image/show_image/288709\">Image Number 288709</a> at <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org\">Mushroom Observer</a>, a source for mycological images.",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "This image was created by user <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/show_user/2250\">zaca</a> at <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org\">Mushroom Observer</a>, a source for mycological images.<br>You can contact this user <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/ask_user_question/2250\">here</a>.",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "99873297": {
+        "pageid": 99873297,
+        "ns": 6,
+        "title": "File:Gymnopilus junonius (Strophariaceae), Elst (Gld), the Netherlands.jpg",
+        "index": 13,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 219679,
+            "width": 1000,
+            "height": 750,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/9/92/Gymnopilus_junonius_%28Strophariaceae%29%2C_Elst_%28Gld%29%2C_the_Netherlands.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Gymnopilus_junonius_(Strophariaceae),_Elst_(Gld),_the_Netherlands.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=99873297",
+            "sha1": "95749e3fff3944c13318bd027cede9c4f997f6c5",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2021-02-14 22:57:50",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Gymnopilus junonius (Strophariaceae), Elst (Gld), the Netherlands",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Gymnopilus junonius|License review needed|Gymnopilus in the Netherlands|Netherlands photographs taken on 2020-10-26|Images from Waarneming.nl|Files with coordinates missing SDC location of creation (51° N, 5° E)|Fungi of Elst (Gelderland)|Fungi of Gelderland in October",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "51.941884",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "5.847731",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<i>Gymnopilus junonius</i> (<i>Strophariaceae</i>), Elst (Gld) - De Park, the Netherlands",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2020-10-26",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<table style=\"width:100%; border:1px solid #aaa; background:#efd; text-align:center\">\n<tbody><tr>\n<td style=\"text-align: left; padding: 5px 1px 1px 5px;\"><span typeof=\"mw:File\"><a href=\"//commons.wikimedia.org/wiki/File:Obs-logo-waarneming-nl.svg\" class=\"mw-file-description\"><img src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/3/34/Obs-logo-waarneming-nl.svg/250px-Obs-logo-waarneming-nl.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"155\" height=\"19\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/3/34/Obs-logo-waarneming-nl.svg/330px-Obs-logo-waarneming-nl.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"862\" data-file-height=\"103\"></a></span>\n</td>\n<td style=\"text-align: center;\">This image is uploaded as <a rel=\"nofollow\" class=\"external text\" href=\"https://waarneming.nl/foto/view/31795271\">image number 31795271</a> at <a rel=\"nofollow\" class=\"external text\" href=\"https://waarneming.nl/\">Waarneming.nl</a>, a source of nature observations in the Netherlands.<br>This tag does not indicate the copyright status of the attached work. A normal copyright tag is still required. See <a href=\"//commons.wikimedia.org/wiki/Commons:Licensing\" title=\"Commons:Licensing\">Commons:Licensing</a> for more information.\n</td></tr></tbody></table> , This site now requires authentication, however, the same image and copyright information is also available via <a rel=\"nofollow\" class=\"external free\" href=\"https://world.observation.org/foto/view/31795271\">https://world.observation.org/foto/view/31795271</a> since it uses the same data",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<table style=\"width:100%; border:1px solid #aaa; background:#efd; text-align:center\">\n<tbody><tr>\n<td style=\"text-align: left; padding: 5px 1px 1px 5px;\"><span typeof=\"mw:File\"><a href=\"//commons.wikimedia.org/wiki/File:Obs-logo-waarneming-nl.svg\" class=\"mw-file-description\"><img src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/3/34/Obs-logo-waarneming-nl.svg/250px-Obs-logo-waarneming-nl.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"155\" height=\"19\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/3/34/Obs-logo-waarneming-nl.svg/330px-Obs-logo-waarneming-nl.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"862\" data-file-height=\"103\"></a></span>\n</td>\n<td style=\"text-align: center;\">This image is created by user <a rel=\"nofollow\" class=\"external text\" href=\"https://waarneming.nl/users/86595/photos/\">B. Schoenmakers</a> at <a rel=\"nofollow\" class=\"external text\" href=\"https://waarneming.nl/\">Waarneming.nl</a>, a source of nature observations in the Netherlands.\n</td></tr></tbody></table>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "69989016": {
+        "pageid": 69989016,
+        "ns": 6,
+        "title": "File:Gymnopilus junonius - Flickr - gailhampshire.jpg",
+        "index": 14,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1890349,
+            "width": 2519,
+            "height": 2857,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/5/57/Gymnopilus_junonius_-_Flickr_-_gailhampshire.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Gymnopilus_junonius_-_Flickr_-_gailhampshire.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=69989016",
+            "sha1": "420683f6768dbb5a2ebdce504093e8f4db10d322",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2018-06-17 00:00:19",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Gymnopilus junonius - Flickr - gailhampshire",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Gymnopilus junonius|Fungi of Hampshire|Fungi in September|Strophariaceae in the United Kingdom|United Kingdom photographs taken on 2017-09-05|Flickr images reviewed by FlickreviewR 2|Photographs by gailhampshire|Files uploaded by Josve05a (Gail Hampshire)|Nature of Lyndhurst",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "SU274068 Lyndhurst, New Forest, Hants",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2017-09-05 12:34",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/gails_pictures/39308593705/\">Gymnopilus junonius</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/43272765@N04\">gailhampshire</a> from Cradley, Malvern, U.K",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-2.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files uploaded by Josve05a (Gail Hampshire)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Flickr images reviewed by FlickreviewR 2"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi in September"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi of Hampshire"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Gymnopilus junonius"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Nature of Lyndhurst"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Photographs by gailhampshire"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Strophariaceae in the United Kingdom"
+          },
+          {
+            "ns": 14,
+            "title": "Category:United Kingdom photographs taken on 2017-09-05"
+          }
+        ]
+      },
+      "69989022": {
+        "pageid": 69989022,
+        "ns": 6,
+        "title": "File:Gymnopilus junonius - Flickr - gailhampshire (1).jpg",
+        "index": 24,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1379698,
+            "width": 3208,
+            "height": 2520,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/3/30/Gymnopilus_junonius_-_Flickr_-_gailhampshire_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Gymnopilus_junonius_-_Flickr_-_gailhampshire_(1).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=69989022",
+            "sha1": "94e826d9826974c7f32f7391fe0ba77d931fca44",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2018-06-17 00:00:33",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Gymnopilus junonius - Flickr - gailhampshire (1)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Gymnopilus junonius|Fungi of Hampshire|Fungi in September|Strophariaceae in the United Kingdom|United Kingdom photographs taken on 2017-09-05|Flickr images reviewed by FlickreviewR 2|Photographs by gailhampshire|Files uploaded by Josve05a (Gail Hampshire)|Nature of Lyndhurst",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "SU274068 Lyndhurst, New Forest, Hants",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2017-09-05 16:38",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"mw:ExtLink nofollow\" href=\"https://www.flickr.com/photos/gails_pictures/26334223028/\" class=\"external text\">Gymnopilus junonius</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"mw:ExtLink nofollow\" href=\"https://www.flickr.com/people/43272765@N04\" class=\"external text\">gailhampshire</a> from Cradley, Malvern, U.K",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-2.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files uploaded by Josve05a (Gail Hampshire)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Flickr images reviewed by FlickreviewR 2"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi in September"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi of Hampshire"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Gymnopilus junonius"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Nature of Lyndhurst"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Photographs by gailhampshire"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Strophariaceae in the United Kingdom"
+          },
+          {
+            "ns": 14,
+            "title": "Category:United Kingdom photographs taken on 2017-09-05"
+          }
+        ]
+      },
+      "69989023": {
+        "pageid": 69989023,
+        "ns": 6,
+        "title": "File:Gymnopilus junonius - Flickr - gailhampshire (2).jpg",
+        "index": 29,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1084488,
+            "width": 2357,
+            "height": 2491,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/d/df/Gymnopilus_junonius_-_Flickr_-_gailhampshire_%282%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Gymnopilus_junonius_-_Flickr_-_gailhampshire_(2).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=69989023",
+            "sha1": "efb539e66d48da6e51f5c146c4b030a375fbb069",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2018-06-17 00:00:48",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Gymnopilus junonius - Flickr - gailhampshire (2)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Gymnopilus junonius|Fungi of Hampshire|Fungi in September|Strophariaceae in the United Kingdom|United Kingdom photographs taken on 2017-09-05|Flickr images reviewed by FlickreviewR 2|Photographs by gailhampshire|Files uploaded by Josve05a (Gail Hampshire)|Nature of Lyndhurst",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "SU274068 Lyndhurst, New Forest, Hants",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2017-09-05 12:35",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/gails_pictures/40173786872/\">Gymnopilus junonius</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/43272765@N04\">gailhampshire</a> from Cradley, Malvern, U.K",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-2.0"
+          }
+        ]
+      },
+      "70114292": {
+        "pageid": 70114292,
+        "ns": 6,
+        "title": "File:Gymnopilus junonius - Laughing Gym, (17031561249).jpg",
+        "index": 23,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 3538976,
+            "width": 2400,
+            "height": 1655,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Gymnopilus_junonius_-_Laughing_Gym%2C_%2817031561249%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Gymnopilus_junonius_-_Laughing_Gym,_(17031561249).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=70114292",
+            "sha1": "f4659c7e4ee41094face1ecdeb2d597d79543151",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2018-06-21 11:17:19",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Gymnopilus junonius - Laughing Gym, (17031561249)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Gymnopilus junonius|CC-Zero|Flickr images reviewed by trusted users|Files with coordinates missing SDC location of creation|Photographs by Bernard Spragg|New Zealand photographs taken on 2015-04-21|Strophariaceae in New Zealand",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "-43.461423",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "172.692289",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Gymnopilus junonius is a species of mushroom in the family Cortinariaceae. Commonly known as laughing gym, laughing Jim, or the spectacular rustgill, this large orange mushroom is typically found growing on tree stumps, logs, or tree bases. Some subspecies of this mushroom contain the hallucinogenic compound psilocybin.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2015-04-21 10:08",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/volvob12b/17031561249/\">Gymnopilus junonius - Laughing Gym,</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/88123769@N02\">Bernard Spragg. NZ</a> from Christchurch, New Zealand",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "16099752": {
+        "pageid": 16099752,
+        "ns": 6,
+        "title": "File:Gymnopilus junonius 110813w.JPG",
+        "index": 10,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 736883,
+            "width": 2136,
+            "height": 1476,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/4/48/Gymnopilus_junonius_110813w.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Gymnopilus_junonius_110813w.JPG",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=16099752",
+            "sha1": "4915a68a7f12b981ddd3ff59069a9c420d6b2179",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2011-08-14 16:16:01",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Gymnopilus junonius 110813w",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Gymnopilus junonius|GFDL|Taken with Canon EOS 350D|License migration redundant|Self-published work|Fungi in August|Strophariaceae in France|France photographs taken on 2011-08-13|Files with coordinates missing SDC location of creation (48° N, 2° E)",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "48.675000",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "2.275000",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<i>Gymnopilus junonius</i> in a wood near Saulx-les-Chartreux, France.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2011-08-13",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Strobilomyces\" title=\"User:Strobilomyces\">Strobilomyces</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with coordinates missing SDC location of creation (48° N, 2° E)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:France photographs taken on 2011-08-13"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi in August"
+          },
+          {
+            "ns": 14,
+            "title": "Category:GFDL"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Gymnopilus junonius"
+          },
+          {
+            "ns": 14,
+            "title": "Category:License migration redundant"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Strophariaceae in France"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Canon EOS 350D"
+          }
+        ]
+      },
+      "99365886": {
+        "pageid": 99365886,
+        "ns": 6,
+        "title": "File:Gymnopilus junonius 111337367.jpg",
+        "index": 31,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 361501,
+            "width": 2048,
+            "height": 1536,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/3/31/Gymnopilus_junonius_111337367.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Gymnopilus_junonius_111337367.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=99365886",
+            "sha1": "fcfa7ac17742ea038b7377c95e2873bccdc27b16",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2021-01-28 19:57:37",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Gymnopilus junonius 111337367",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Gymnopilus junonius|Media from iNaturalist|INaturalist images reviewed by iNaturalistReviewBot|Gymnopilus in the Netherlands|Uploaded with iNaturalist2Commons|Netherlands photographs taken on 2021-01-27|Fungi of South Holland in January|Photographs by Rudolphous of Nature (Netherlands)|Fungi of Overbosch",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "52.216797",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "4.478161",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Spectacular Rustgill (<i>Gymnopilus junonius</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2021-01-27",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/111337367\">https://www.inaturalist.org/photos/111337367</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/3599717\">Michel Langeveld</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "5336107": {
+        "pageid": 5336107,
+        "ns": 6,
+        "title": "File:Gymnopilus junonius 1prg.jpg",
+        "index": 33,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 2442058,
+            "width": 2024,
+            "height": 1928,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/a/a7/Gymnopilus_junonius_1prg.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Gymnopilus_junonius_1prg.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=5336107",
+            "sha1": "d1c87325b31fe3beb7378787c947060e572bfe95",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2008-12-03 18:00:59",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Gymnopilus junonius 1prg",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Gymnopilus junonius|Self-published work|PD-self|12-th Czech mushroom exhibition (Prague, 2008)|Files with coordinates missing SDC location of creation",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "50.078969",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "14.412994",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<a href=\"https://en.wikipedia.org/wiki/Gymnopilus_junonius\" class=\"extiw\" title=\"en:Gymnopilus junonius\">Gymnopilus junonius</a> <a href=\"//commons.wikimedia.org/wiki/Category:Gymnopilus_junonius\" title=\"Category:Gymnopilus junonius\">Gymnopilus junonius</a> on Prague international <a href=\"//commons.wikimedia.org/wiki/Mushrooms\" class=\"mw-redirect\" title=\"Mushrooms\">mushroom</a> exhibition 2008, <a href=\"//commons.wikimedia.org/wiki/Czech_Republic\" class=\"mw-redirect\" title=\"Czech Republic\">Czech Republic</a>",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2008-09",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\">Self-photographed</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Karelj\" title=\"User:Karelj\">Karelj</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "Public domain",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Public domain",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Copyrighted": {
+                "value": "False",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "pd",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:12-th Czech mushroom exhibition (Prague, 2008)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with coordinates missing SDC location of creation"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Gymnopilus junonius"
+          },
+          {
+            "ns": 14,
+            "title": "Category:PD-self"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          }
+        ]
+      },
+      "5263581": {
+        "pageid": 5263581,
+        "ns": 6,
+        "title": "File:Gymnopilus junonius 20081122wa.JPG",
+        "index": 17,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 811956,
+            "width": 2496,
+            "height": 1664,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/b/b9/Gymnopilus_junonius_20081122wa.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Gymnopilus_junonius_20081122wa.JPG",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=5263581",
+            "sha1": "8b131331ce386dbe15de6779e8f74715f75a9a3a",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2008-11-23 17:29:52",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Gymnopilus junonius 20081122wa",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Gymnopilus junonius|GFDL|Taken with Canon EOS 350D|License migration redundant|Self-published work|France photographs taken on 2008-11-22|Fungi in November|Strophariaceae in France|Files with coordinates missing SDC location of creation (48° N, 2° E)",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "48.683333",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "2.266667",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<i>Gymnopilus junonius</i> in a wood near Saulx-les-Chartreux, France.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2008-11-22",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"mw:WikiLink\" href=\"https://commons.wikimedia.org/wiki/User:Strobilomyces\" title=\"User:Strobilomyces\">Strobilomyces</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with coordinates missing SDC location of creation (48° N, 2° E)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:France photographs taken on 2008-11-22"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi in November"
+          },
+          {
+            "ns": 14,
+            "title": "Category:GFDL"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Gymnopilus junonius"
+          },
+          {
+            "ns": 14,
+            "title": "Category:License migration redundant"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Strophariaceae in France"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Canon EOS 350D"
+          }
+        ]
+      },
+      "200721359": {
+        "pageid": 200721359,
+        "ns": 6,
+        "title": "File:Gymnopilus junonius 742665090.jpg",
+        "index": 28,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1170193,
+            "width": 2048,
+            "height": 1536,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/4/49/Gymnopilus_junonius_742665090.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Gymnopilus_junonius_742665090.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=200721359",
+            "sha1": "bd351bd58e586738b69d75e64af07053ca0f5bf4",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2026-10-01 05:49:02",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Gymnopilus junonius 742665090",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Gymnopilus junonius|Media from iNaturalist|Creative Commons Attribution 4.0 missing SDC copyright license|Creative Commons Attribution missing SDC copyright status|INaturalist images reviewed by iNaturalistReviewBot|Uploaded with iNaturalist2Commons|INaturalist images missing SDC depicts|Files with coordinates missing SDC location of creation (50° N, 2° W)",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "50.854263",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "-1.590900",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Spectacular Rustgill (<i>Gymnopilus junonius</i>) in the United Kingdom",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2026-09-28",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"mw:ExtLink nofollow\" href=\"https://www.inaturalist.org/photos/742665090\" class=\"external free\">https://www.inaturalist.org/photos/742665090</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"mw:ExtLink nofollow\" href=\"https://www.inaturalist.org/users/8661082\" class=\"external text\">lizfrost47</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "182029800": {
+        "pageid": 182029800,
+        "ns": 6,
+        "title": "File:Gymnopilus junonius Aberystwyth gill.jpg",
+        "index": 8,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 14218693,
+            "width": 8064,
+            "height": 6048,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/d/d0/Gymnopilus_junonius_Aberystwyth_gill.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Gymnopilus_junonius_Aberystwyth_gill.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=182029800",
+            "sha1": "df227dedd0f85cc088f15a027b922f737581c7a2",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2026-01-18 13:29:08",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Gymnopilus junonius Aberystwyth gill",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Gymnopilus junonius|Self-published work|Media from iNaturalist|Orange fungi|Fungi of Wales|Agaricales in October|Files with coordinates missing SDC location of creation (52° N, 5° W)|Fungi with Fagus|Wild mushrooms",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "52.418033",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "-4.076903",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Gymnopilus junonius growing from a beech tree stump, Wales, UK.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2025-10-18 12:07:38",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:BioCelt\" title=\"User:BioCelt\">Kieran Roy Powell</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "121427483": {
+        "pageid": 121427483,
+        "ns": 6,
+        "title": "File:Gymnopilus junonius partial veil.jpg",
+        "index": 11,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1586944,
+            "width": 1536,
+            "height": 2048,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/a/aa/Gymnopilus_junonius_partial_veil.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Gymnopilus_junonius_partial_veil.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=121427483",
+            "sha1": "30fa4f2462d688734cca5120cb9792153b3b8f8f",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2022-08-05 16:54:15",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Gymnopilus junonius partial veil",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Gymnopilus junonius|Mushrooms|Media from iNaturalist|New Zealand photographs taken on 2022-05-14|INaturalist images reviewed by iNaturalistReviewBot|Files with coordinates missing SDC location of creation|Omphalotaceae in New Zealand|Point Erin Park",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "-36.839574",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "174.741409",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Gymnopilus junonius displaying partial veil. Photographed in Auckland, New Zealand.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2022-05-14",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"mw:ExtLink nofollow\" href=\"https://www.inaturalist.org/photos/197402010\" class=\"external free\">https://www.inaturalist.org/photos/197402010</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "Tom Saunders (tom_saunders)",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "11712112": {
+        "pageid": 11712112,
+        "ns": 6,
+        "title": "File:Gymnopilus junonius オオワライタケ 大笑茸 A030422.JPG",
+        "index": 25,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 282038,
+            "width": 960,
+            "height": 1280,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/f/fc/Gymnopilus_junonius_%E3%82%AA%E3%82%AA%E3%83%AF%E3%83%A9%E3%82%A4%E3%82%BF%E3%82%B1_%E5%A4%A7%E7%AC%91%E8%8C%B8_A030422.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Gymnopilus_junonius_%E3%82%AA%E3%82%AA%E3%83%AF%E3%83%A9%E3%82%A4%E3%82%BF%E3%82%B1_%E5%A4%A7%E7%AC%91%E8%8C%B8_A030422.JPG",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=11712112",
+            "sha1": "3c0f67dcca6847d4d18926b0caaa5e2cc35d92c7",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2010-10-06 15:25:55",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Gymnopilus junonius オオワライタケ 大笑茸 A030422",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Gymnopilus junonius|Taken with Olympus SP-560UZ|Self-published work|Fungi in October|Agaricales in Japan",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Gymnopilus junonius",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2010-10-03",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"mw:WikiLink/Interwiki\" href=\"https://en.wikipedia.org/wiki/user:%E6%9D%BE%E5%B2%A1%E6%98%8E%E8%8A%B3\" title=\"en:user:松岡明芳\" class=\"extiw\">松岡明芳</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"mw:WikiLink/Interwiki\" href=\"https://zh.wikipedia.org/wiki/user:%E6%9D%BE%E5%B2%A1%E6%98%8E%E8%8A%B3\" title=\"zh:user:松岡明芳\" class=\"extiw\">松岡明芳</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Agaricales in Japan"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi in October"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Gymnopilus junonius"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Olympus SP-560UZ"
+          }
+        ]
+      },
+      "11713492": {
+        "pageid": 11713492,
+        "ns": 6,
+        "title": "File:Gymnopilus junonius オオワライタケ 大笑茸 幼菌 A030424.JPG",
+        "index": 15,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 334762,
+            "width": 1280,
+            "height": 960,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/9/99/Gymnopilus_junonius_%E3%82%AA%E3%82%AA%E3%83%AF%E3%83%A9%E3%82%A4%E3%82%BF%E3%82%B1_%E5%A4%A7%E7%AC%91%E8%8C%B8_%E5%B9%BC%E8%8F%8C_A030424.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Gymnopilus_junonius_%E3%82%AA%E3%82%AA%E3%83%AF%E3%83%A9%E3%82%A4%E3%82%BF%E3%82%B1_%E5%A4%A7%E7%AC%91%E8%8C%B8_%E5%B9%BC%E8%8F%8C_A030424.JPG",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=11713492",
+            "sha1": "364c7f51ab62b5aec5e8bdbcd32cecd16360a7df",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2010-10-06 16:43:52",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Gymnopilus junonius オオワライタケ 大笑茸 幼菌 A030424",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Gymnopilus junonius|Taken with Olympus SP-560UZ|Self-published work|Fungi in October|Agaricales in Japan",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Gymnopilus junonius",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2010-10-03",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"mw:WikiLink/Interwiki\" href=\"https://en.wikipedia.org/wiki/user:%E6%9D%BE%E5%B2%A1%E6%98%8E%E8%8A%B3\" title=\"en:user:松岡明芳\" class=\"extiw\">松岡明芳</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"mw:WikiLink/Interwiki\" href=\"https://zh.wikipedia.org/wiki/user:%E6%9D%BE%E5%B2%A1%E6%98%8E%E8%8A%B3\" title=\"zh:user:松岡明芳\" class=\"extiw\">松岡明芳</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Agaricales in Japan"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi in October"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Gymnopilus junonius"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Olympus SP-560UZ"
+          }
+        ]
+      },
+      "70113030": {
+        "pageid": 70113030,
+        "ns": 6,
+        "title": "File:Laughing Jim (Gymnopilus junonius) (41315372112).jpg",
+        "index": 5,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 11682510,
+            "width": 4557,
+            "height": 2980,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Laughing_Jim_%28Gymnopilus_junonius%29_%2841315372112%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Laughing_Jim_(Gymnopilus_junonius)_(41315372112).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=70113030",
+            "sha1": "4802523da141394cc8ec71dd4473fcc1638f5ceb",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2018-06-21 10:06:29",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Laughing Jim (Gymnopilus junonius) (41315372112)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Gymnopilus junonius|CC-Zero|Files with coordinates missing SDC location of creation|Photographs by Bernard Spragg|Flickr images reviewed by FlickreviewR 2|New Zealand photographs taken on 2018-03-19|Strophariaceae in New Zealand",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "-43.448017",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "172.601222",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<p>POISONOUS\nFamily: Cortinariaceae\n</p>\nDescription: Large, orangish yellow, with a ring on the stalk. Grows in clusters on stumps and trunks, on ground, or over buried wood. August–October. Cap convex; orangish yellow to fawn; texture smooth with minute scales. Gills broad; light yellow to rust; spacing crowded; gills attached. Stalk with equal sides or club-shaped; light yellow to ocher; covered with tiny fibers; has a ring. Partial veil thin and fibrous, pale yellow, leaving a line or zone on the stalk. Spore print orange to rust. Spores magnified are oval to elliptical, wrinkled. Odor like anise; taste (chew on a tiny piece of cap, then spit it out) bitter.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2018-03-19 10:30",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/volvob12b/41315372112/\">Laughing Jim (Gymnopilus junonius)</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/88123769@N02\">Bernard Spragg. NZ</a> from Christchurch, New Zealand",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "53287834": {
+        "pageid": 53287834,
+        "ns": 6,
+        "title": "File:Paddenstoelen rond de restanten van boomstam (prachtvlamhoed Gymnopilus junonius). Locatie, Historisch Park Heremastate.jpg",
+        "index": 2,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 17172843,
+            "width": 4801,
+            "height": 3027,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/b/ba/Paddenstoelen_rond_de_restanten_van_boomstam_%28prachtvlamhoed_Gymnopilus_junonius%29._Locatie%2C_Historisch_Park_Heremastate.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Paddenstoelen_rond_de_restanten_van_boomstam_(prachtvlamhoed_Gymnopilus_junonius)._Locatie,_Historisch_Park_Heremastate.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=53287834",
+            "sha1": "5fd68f31d084052d10a3d187bb04b4667445a488",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2016-12-01 18:22:54",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Paddenstoelen rond de restanten van boomstam (prachtvlamhoed Gymnopilus junonius). Locatie, Historisch Park Heremastate",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Gymnopilus junonius|Tree stumps|Park Heremastate|Self-published work|Gymnopilus in the Netherlands|Netherlands photographs taken on 2016-11-13|Fungi of De Fryske Marren|Fungi of Friesland in November",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "quality",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "52.970000",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "5.788600",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Mushrooms around the remnants of a tree trunk (gymnopilus junonius <i>Gymnopilus junonius</i>). Location, Historical Park Heremastate",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2016-11-13 08:41:58",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Famberhorst\" title=\"User:Famberhorst\">Dominicus Johannes Bergsma</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-4.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi of De Fryske Marren"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi of Friesland in November"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Gymnopilus in the Netherlands"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Gymnopilus junonius"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Netherlands photographs taken on 2016-11-13"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Park Heremastate"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images by Famberhorst"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images missing SDC depicts"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Tree stumps"
+          }
+        ]
+      },
+      "95775904": {
+        "pageid": 95775904,
+        "ns": 6,
+        "title": "File:Prachtvlamhoed (Gymnopilus junonius). 09-10-2020. (actm.).jpg",
+        "index": 1,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 12542235,
+            "width": 3838,
+            "height": 3070,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/6/67/Prachtvlamhoed_%28Gymnopilus_junonius%29._09-10-2020._%28actm.%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Prachtvlamhoed_(Gymnopilus_junonius)._09-10-2020._(actm.).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=95775904",
+            "sha1": "69df6c897a46a6cce345bd946d9208605a03a6db",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2020-11-03 18:29:09",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Prachtvlamhoed (Gymnopilus junonius). 09-10-2020. (actm.)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Gymnopilus junonius|Self-published work|Netherlands photographs taken on 2020-10-09|Fungi of Groningen (province) in October|Fungi of Hortus (Haren, Groningen)|2020 in Haren, Groningen",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "quality",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "53.180185",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "6.603653",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Hortus Haren. <a href=\"https://en.wikipedia.org/wiki/Gymnopilus_junonius\" class=\"extiw\" title=\"en:Gymnopilus junonius\">Gymnopilus junonius</a>.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2020-10-09 14:08:05",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Agnes_Monkelbaan\" title=\"User:Agnes Monkelbaan\">Agnes Monkelbaan</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

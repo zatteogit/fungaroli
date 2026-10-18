@@ -1,0 +1,4421 @@
+{
+  "continue": {
+    "clcontinue": "43828322|CC-Zero",
+    "continue": "||imageinfo"
+  },
+  "query": {
+    "pages": {
+      "18810136": {
+        "pageid": 18810136,
+        "ns": 6,
+        "title": "File:2012-01-28 Hygrophoropsis aurantiaca var. rufa D.A. Reid 197125 crop.jpg",
+        "index": 27,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1032972,
+            "width": 1600,
+            "height": 1100,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/5/54/2012-01-28_Hygrophoropsis_aurantiaca_var._rufa_D.A._Reid_197125_crop.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:2012-01-28_Hygrophoropsis_aurantiaca_var._rufa_D.A._Reid_197125_crop.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=18810136",
+            "sha1": "12fc2eb7d40a4122df1a5ca72dfe8d6c92712594",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2012-03-24 04:46:56",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "2012-01-28 Hygrophoropsis aurantiaca var. rufa D.A. Reid 197125 crop",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Hygrophoropsis rufa|Retouched pictures|Self-published work|Derivative versions|Uploaded with derivativeFX",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<i><b>Hygrophoropsis aurantiaca</b></i> (Wulfen) Maire",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2012-03-24 04:44",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "This file was derived from:  <a href=\"//commons.wikimedia.org/wiki/File:2012-01-28_Hygrophoropsis_aurantiaca_var._rufa_D.A._Reid_197125.jpg\" title=\"File:2012-01-28 Hygrophoropsis aurantiaca var. rufa D.A. Reid 197125.jpg\">2012-01-28 Hygrophoropsis aurantiaca var. rufa D.A. Reid 197125.jpg</a>: <span typeof=\"mw:File\"><a href=\"//commons.wikimedia.org/wiki/File:2012-01-28_Hygrophoropsis_aurantiaca_var._rufa_D.A._Reid_197125.jpg\" class=\"mw-file-description\"><img src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/2012-01-28_Hygrophoropsis_aurantiaca_var._rufa_D.A._Reid_197125.jpg/60px-2012-01-28_Hygrophoropsis_aurantiaca_var._rufa_D.A._Reid_197125.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"50\" height=\"34\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/2012-01-28_Hygrophoropsis_aurantiaca_var._rufa_D.A._Reid_197125.jpg/120px-2012-01-28_Hygrophoropsis_aurantiaca_var._rufa_D.A._Reid_197125.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"2048\" data-file-height=\"1410\"></a></span><br>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "This image was created by user <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/show_user/%7B%7B%7B1%7D%7D%7D\">Copyright ©2012 Byrain</a> at <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org\">Mushroom Observer</a>, a source for mycological images.<br>You can contact this user <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/ask_user_question/%7B%7B%7B1%7D%7D%7D\">here</a>.",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Derivative versions"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Hygrophoropsis rufa"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Retouched pictures"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Uploaded with derivativeFX"
+          }
+        ]
+      },
+      "18815112": {
+        "pageid": 18815112,
+        "ns": 6,
+        "title": "File:2012-01-28 Hygrophoropsis aurantiaca var. rufa D.A. Reid 197127.jpg",
+        "index": 22,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1019679,
+            "width": 2350,
+            "height": 1658,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/b/b3/2012-01-28_Hygrophoropsis_aurantiaca_var._rufa_D.A._Reid_197127.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:2012-01-28_Hygrophoropsis_aurantiaca_var._rufa_D.A._Reid_197127.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=18815112",
+            "sha1": "e66c1b8719537c074da9eba67987a5be47c6ec31",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2012-03-24 13:10:16",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "2012-01-28 Hygrophoropsis aurantiaca var. rufa D.A. Reid 197127",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Hygrophoropsis rufa|Images from Mushroom Observer|Files from external sources with reviewed licenses",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<i><b>Hygrophoropsis aurantiaca</b></i> var. rufa D.A. Reid",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2012-01-28",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "This image is <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/image/show_image/197127\">Image Number 197127</a> at <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org\">Mushroom Observer</a>, a source for mycological images.",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "This image was created by user <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/show_user/%7B%7B%7B1%7D%7D%7D\">Copyright ©2012 Byrain</a> at <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org\">Mushroom Observer</a>, a source for mycological images.<br>You can contact this user <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/ask_user_question/%7B%7B%7B1%7D%7D%7D\">here</a>.",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files from external sources with reviewed licenses"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Hygrophoropsis rufa"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Images from Mushroom Observer"
+          }
+        ]
+      },
+      "18832059": {
+        "pageid": 18832059,
+        "ns": 6,
+        "title": "File:2012-03-19 Hygrophoropsis aurantiaca var. pallida (Cooke) Heykoop & Esteve-Rav 206303.jpg",
+        "index": 21,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1367124,
+            "width": 2048,
+            "height": 1536,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/4/47/2012-03-19_Hygrophoropsis_aurantiaca_var._pallida_%28Cooke%29_Heykoop_%26_Esteve-Rav_206303.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:2012-03-19_Hygrophoropsis_aurantiaca_var._pallida_(Cooke)_Heykoop_%26_Esteve-Rav_206303.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=18832059",
+            "sha1": "d6a2c0117e6409faa6a1a01e02b62a2075f78f7b",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2012-03-25 13:01:06",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "2012-03-19 Hygrophoropsis aurantiaca var. pallida (Cooke) Heykoop & Esteve-Rav 206303",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Hygrophoropsis aurantiaca|Taken with Panasonic Lumix DMC-FX10|Images from Mushroom Observer|Files from external sources with reviewed licenses|Fungi of Lower Austria",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<i><b>Hygrophoropsis aurantiaca</b></i> var. pallida (Cooke) Heykoop &amp; Esteve-Rav.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2012-03-19",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "This image is <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/image/show_image/206303\">Image Number 206303</a> at <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org\">Mushroom Observer</a>, a source for mycological images.",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "This image was created by user <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/show_user/1093\">Gerhard Koller (Gerhard)</a> at <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org\">Mushroom Observer</a>, a source for mycological images.<br>You can contact this user <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/ask_user_question/1093\">here</a>.",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files from external sources with reviewed licenses"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi of Lower Austria"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Hygrophoropsis aurantiaca"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Images from Mushroom Observer"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Panasonic Lumix DMC-FX10"
+          }
+        ]
+      },
+      "73360466": {
+        "pageid": 73360466,
+        "ns": 6,
+        "title": "File:20181003 Fungi in Klein Leeuwenhorst - Valse hanenkam (Hygrophoropsis aurantiaca).jpg",
+        "index": 33,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 2221623,
+            "width": 4032,
+            "height": 3024,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/4/47/20181003_Fungi_in_Klein_Leeuwenhorst_-_Valse_hanenkam_%28Hygrophoropsis_aurantiaca%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:20181003_Fungi_in_Klein_Leeuwenhorst_-_Valse_hanenkam_(Hygrophoropsis_aurantiaca).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=73360466",
+            "sha1": "3e8ef16453dc718d0b59e5abf149544351a0a28f",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2018-10-03 21:10:32",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "20181003 Fungi in Klein Leeuwenhorst - Valse hanenkam (Hygrophoropsis aurantiaca)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Hygrophoropsis aurantiaca|Self-published work|Media from iNaturalist|Netherlands photographs taken on 2018-10-03|Hygrophoropsidaceae in the Netherlands|Fungi of South Holland in October|Photographs by Rudolphous of Nature (Netherlands)|Fungi of Leeuwenhorstbos",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "52.244603",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "4.468489",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Fungi in Klein Leeuwenhorst",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2018-10-03 17:01:59",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Rudolphous\" title=\"User:Rudolphous\">Rudolphous</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "147944412": {
+        "pageid": 147944412,
+        "ns": 6,
+        "title": "File:Falscher Pfifferling (Hygrophoropsis aurantiaca) nahe der Silberquelle an der Straße vom Silberhaus nach Nagel.jpg",
+        "index": 3,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 5374093,
+            "width": 4296,
+            "height": 3520,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/0/0b/Falscher_Pfifferling_%28Hygrophoropsis_aurantiaca%29_nahe_der_Silberquelle_an_der_Stra%C3%9Fe_vom_Silberhaus_nach_Nagel.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Falscher_Pfifferling_(Hygrophoropsis_aurantiaca)_nahe_der_Silberquelle_an_der_Stra%C3%9Fe_vom_Silberhaus_nach_Nagel.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=147944412",
+            "sha1": "adbc45a206190574f01da53f5ee5ad00c43e0687",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2024-05-01 18:35:19",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Falscher Pfifferling (Hygrophoropsis aurantiaca) nahe der Silberquelle an der Straße vom Silberhaus nach Nagel",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Hygrophoropsis aurantiaca|Tröstauer Forst-West|Uploaded with pattypan|Taken with Ricoh GR III|Self-published work|Protected areas with known WDPA-ID|Images from Wiki Loves Earth 2024 in Germany|Photos by Stephan van Helden|Images from Wiki Loves Earth 2024|Images from Wiki Loves Earth 2024, DE detail|Files with coordinates missing SDC location of creation (49° N, 11° E)|Images from Wiki Loves Earth missing SDC location of creation|Photos of protected areas by Stephan van Helden",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "quality",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "49.999130",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "11.899080",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Falscher Pfifferling (Hygrophoropsis aurantiaca) nahe der Silberquelle an der Straße vom Silberhaus nach Nagel",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2023-08-16 07:19",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>  <div style=\"display:table;width:auto;vertical-align:middle;direction:ltr;float:left;line-height:22px;height:24px;font-size:.96em;margin:0px;padding:2px 4px 2px 6px;color:var(--color-base,#000);background:var(--background-color-neutral-subtle,#F8F9FA);border:1px solid #BAB;border-collapse:separate;border-spacing:0px;\"><span typeof=\"mw:File\"><a href=\"//commons.wikimedia.org/wiki/File:Applets-screenshooter.svg\" class=\"mw-file-description\"><img src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0b/Applets-screenshooter.svg/40px-Applets-screenshooter.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"22\" height=\"22\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0b/Applets-screenshooter.svg/60px-Applets-screenshooter.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"64\" data-file-height=\"64\"></a></span> This <a href=\"https://en.wikipedia.org/wiki/photo\" class=\"extiw\" title=\"w:photo\">photo</a> was taken with Ricoh GR III</div>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Plozessor\" title=\"User:Plozessor\">Stephan van Helden</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "67932697": {
+        "pageid": 67932697,
+        "ns": 6,
+        "title": "File:False Chanterelle - Hygrophoropsis aurantiaca (39163338792).jpg",
+        "index": 18,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 4876559,
+            "width": 5184,
+            "height": 3456,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/b/b1/False_Chanterelle_-_Hygrophoropsis_aurantiaca_%2839163338792%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:False_Chanterelle_-_Hygrophoropsis_aurantiaca_(39163338792).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=67932697",
+            "sha1": "ed0e12b9a5ea957e27db9975419ff466167a4fc0",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2018-04-02 05:42:29",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "False Chanterelle - Hygrophoropsis aurantiaca (39163338792)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Hygrophoropsis aurantiaca|Germany photographs taken on 2017-12-17|Fungi in December|Flickr images reviewed by FlickreviewR 2|Boletales in Kreis Recklinghausen|Files with coordinates missing SDC location of creation (51° N, 7° E)|Photographs by Björn Sothmann",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "51.738538",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "7.229252",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "False Chanterelle - Hygrophoropsis aurantiaca",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2017-12-17 12:02",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/40948266@N04/39163338792/\">False Chanterelle - Hygrophoropsis aurantiaca</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/40948266@N04\">Björn S...</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "22625306": {
+        "pageid": 22625306,
+        "ns": 6,
+        "title": "File:False Chanterelle Hygrophoropsis aurantiaca.jpg",
+        "index": 2,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 4485755,
+            "width": 3000,
+            "height": 2075,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/c/c3/False_Chanterelle_Hygrophoropsis_aurantiaca.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:False_Chanterelle_Hygrophoropsis_aurantiaca.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=22625306",
+            "sha1": "c37e9a9f4cf4770fb40af325cb84613e70c68d40",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2012-11-10 22:43:13",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "False Chanterelle Hygrophoropsis aurantiaca",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Hygrophoropsis aurantiaca|Self-published work|Fungi in Alb-Donau-Kreis|Files with coordinates missing SDC location of creation (48° N, 9° E)",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "quality",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "48.344842",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "9.849931",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "False Chanterelle, <i><a href=\"//commons.wikimedia.org/wiki/Hygrophoropsis_aurantiaca\" title=\"Hygrophoropsis aurantiaca\">Hygrophoropsis aurantiaca</a></i>, Family: Hygrophoropsidaceae, Location: Germany, Ringingen",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2012-11-01",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Holleday\" title=\"User:Holleday\">Holger Krisp</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with coordinates missing SDC location of creation (48° N, 9° E)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi in Alb-Donau-Kreis"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Hygrophoropsis aurantiaca"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images missing SDC depicts"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images of Boletales"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images of fungi in Germany"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          }
+        ]
+      },
+      "15956814": {
+        "pageid": 15956814,
+        "ns": 6,
+        "title": "File:Hygrophoropsis-aurantiaca-falscher-pfifferling.jpg",
+        "index": 1,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 4240683,
+            "width": 3000,
+            "height": 2170,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/f/f7/Hygrophoropsis-aurantiaca-falscher-pfifferling.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Hygrophoropsis-aurantiaca-falscher-pfifferling.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=15956814",
+            "sha1": "260d892f45efcb1d43f6b3a1658f952f0c99f19f",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2011-07-31 14:08:39",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Hygrophoropsis-aurantiaca-falscher-pfifferling",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Hygrophoropsis rufa|Taken with Canon EOS 500D|Self-published work|Fungi in Ulm|Nature of Eggingen (Ulm)|Files with coordinates missing SDC location of creation (48° N, 9° E)",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "quality",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "48.358986",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "9.845575",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "False Chanterelle <i><a href=\"//commons.wikimedia.org/wiki/Hygrophoropsis_aurantiaca\" title=\"Hygrophoropsis aurantiaca\">Hygrophoropsis aurantiaca</a> var. rufa</i> or <i>Hygrophoropsis rufa</i>, Family: Hygrophoropsidaceae, Location: Germany, Ulm, Eggingen",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2011-07-23",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Holleday\" title=\"User:Holleday\">Holger Krisp</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with coordinates missing SDC location of creation (48° N, 9° E)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi in Ulm"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Hygrophoropsis rufa"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Nature of Eggingen (Ulm)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images of Boletales"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images of fungi in Germany"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Canon EOS 500D"
+          }
+        ]
+      },
+      "167766": {
+        "pageid": 167766,
+        "ns": 6,
+        "title": "File:Hygrophoropsis aurantiaca.jpg",
+        "index": 28,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 59091,
+            "width": 549,
+            "height": 400,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/9/90/Hygrophoropsis_aurantiaca.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Hygrophoropsis_aurantiaca.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=167766",
+            "sha1": "f234fc2b80c16e96c0f30def620a5003e028ca5e",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2005-05-27 12:40:24",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Hygrophoropsis aurantiaca",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Hygrophoropsis aurantiaca|GFDL|License migration completed|Hygrophoropsidaceae in Bavaria",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Falscher Pfifferling",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "10 March 2004 (original upload date)",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<bdi lang=\"en\" dir=\"ltr\">Transferred from <span class=\"plainlinks\"><a class=\"external text\" data-mw-original-href=\"//de.wikipedia.org\" href=\"https://de.wikipedia.org\">de.wikipedia</a></span> to Commons.</bdi>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "The original uploader was <a href=\"https://en.wikipedia.org/wiki/de:User:W.J.Pilsak\" class=\"extiw\" title=\"w:de:User:W.J.Pilsak\">W.J.Pilsak</a> at <a href=\"https://en.wikipedia.org/wiki/de:\" class=\"extiw\" title=\"w:de:\">German Wikipedia</a>.. Uploaded to Commons by <a href=\"//commons.wikimedia.org/w/index.php?title=User:Koernerbroetchen&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Koernerbroetchen (page does not exist)\">Körnerbrötchen</a>.",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/licenses/by-sa/3.0/",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0-migrated"
+          },
+          {
+            "ns": 14,
+            "title": "Category:GFDL"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Hygrophoropsidaceae in Bavaria"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Hygrophoropsis aurantiaca"
+          },
+          {
+            "ns": 14,
+            "title": "Category:License migration completed"
+          }
+        ]
+      },
+      "50739010": {
+        "pageid": 50739010,
+        "ns": 6,
+        "title": "File:Hygrophoropsis aurantiaca^ (False chanterelle) - Flickr - S. Rae.jpg",
+        "index": 7,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 2673806,
+            "width": 3113,
+            "height": 2569,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/7/7f/Hygrophoropsis_aurantiaca%5E_%28False_chanterelle%29_-_Flickr_-_S._Rae.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Hygrophoropsis_aurantiaca%5E_(False_chanterelle)_-_Flickr_-_S._Rae.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=50739010",
+            "sha1": "6d69ca09ec36796aa476f50c24bbb141d5637012",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2016-08-18 03:23:01",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Hygrophoropsis aurantiaca^ (False chanterelle) - Flickr - S. Rae",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Hygrophoropsis aurantiaca|Flickr images reviewed by FlickreviewR|Flickr images missing SDC creator|Flickr images missing SDC source of file|United Kingdom photographs taken on 2014-09-08|Photographs by S. Rae|Boletales in September|Hygrophoropsidaceae in East Lothian|Files uploaded by Josve05a (S. Rae)|Flickr images missing SDC Flickr photo ID|Flickr images missing SDC published in",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Bolton Muir wood, East Lothian, Scotland",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2014-09-08 10:58",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"mw:ExtLink nofollow\" href=\"https://www.flickr.com/photos/35142635@N05/15232270621/\" class=\"external text\">Hygrophoropsis aurantiaca? (False chanterelle)?</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"mw:ExtLink nofollow\" href=\"https://www.flickr.com/people/35142635@N05\" class=\"external text\">S. Rae</a> from Scotland, UK",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "48672519": {
+        "pageid": 48672519,
+        "ns": 6,
+        "title": "File:Hygrophoropsis aurantiaca (23822624116).jpg",
+        "index": 26,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 3758484,
+            "width": 5760,
+            "height": 3840,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Hygrophoropsis_aurantiaca_%2823822624116%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Hygrophoropsis_aurantiaca_(23822624116).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=48672519",
+            "sha1": "f333d81f961e2e2dfaf7c5558b73414f4ed4f6be",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2016-05-09 20:05:05",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Hygrophoropsis aurantiaca (23822624116)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Hygrophoropsis aurantiaca|PD US FWS|Flickr images reviewed by FlickreviewR|United States photographs taken on 2015-12-19|Boletales in Oregon|Fungi of Oregon in December|Files from the United States Fish and Wildlife Service Pacific Region Flickr stream",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<p>False chanterelle (Hygrophoropsis aurantiaca)\n</p>\nYou are free to use this image with the following photo credit: Peter Pearsall/U.S. Fish and Wildlife Service",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2015-12-19 07:53",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/usfwspacific/23822624116/\">hygrophoropsis_aurantiaca</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/52133016@N08\">USFWS - Pacific Region</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "Public domain",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Public domain",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Copyrighted": {
+                "value": "False",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "pd",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "97668434": {
+        "pageid": 97668434,
+        "ns": 6,
+        "title": "File:Hygrophoropsis aurantiaca (29402917993).jpg",
+        "index": 13,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 3719357,
+            "width": 3872,
+            "height": 2592,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Hygrophoropsis_aurantiaca_%2829402917993%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Hygrophoropsis_aurantiaca_(29402917993).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=97668434",
+            "sha1": "f2cce56a94e5a49de3fd29301b530aae22c6e171",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2020-12-16 20:50:06",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Hygrophoropsis aurantiaca (29402917993)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Hygrophoropsis aurantiaca|Fungi in September|Flickr images reviewed by FlickreviewR 2|Photographs by Hans-Günter Wagner",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Hygrophoropsis aurantiaca",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2008-09-28 23:45",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/145400091@N04/29402917993/\">Hygrophoropsis aurantiaca</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/145400091@N04\">Dr. Hans-Günter Wagner</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "97668756": {
+        "pageid": 97668756,
+        "ns": 6,
+        "title": "File:Hygrophoropsis aurantiaca (29402964143).jpg",
+        "index": 16,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 3556738,
+            "width": 3872,
+            "height": 2592,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/e/e9/Hygrophoropsis_aurantiaca_%2829402964143%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Hygrophoropsis_aurantiaca_(29402964143).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=97668756",
+            "sha1": "04e0c0caaa387f626bd77f1cd158351060f5932c",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2020-12-16 20:57:24",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Hygrophoropsis aurantiaca (29402964143)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Hygrophoropsis aurantiaca|Fungi in October|Flickr images reviewed by FlickreviewR 2|Photographs by Hans-Günter Wagner",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Hygrophoropsis aurantiaca",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2008-10-02 21:21",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/145400091@N04/29402964143/\">Hygrophoropsis aurantiaca</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/145400091@N04\">Dr. Hans-Günter Wagner</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "74133916": {
+        "pageid": 74133916,
+        "ns": 6,
+        "title": "File:Hygrophoropsis aurantiaca (30269258277).jpg",
+        "index": 10,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 6315584,
+            "width": 5184,
+            "height": 3456,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/5/5f/Hygrophoropsis_aurantiaca_%2830269258277%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Hygrophoropsis_aurantiaca_(30269258277).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=74133916",
+            "sha1": "034e8ddaea404b50d3dc8b8cf10a274f2b245b63",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2018-11-04 20:29:22",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Hygrophoropsis aurantiaca (30269258277)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Hygrophoropsis aurantiaca|Flickr images reviewed by FlickreviewR 2|Oberhausen photographs taken on 2018-09-10|Fungi of Oberhausen in September|Hygrophoropsidaceae in Oberhausen|Files with coordinates missing SDC location of creation (51° N, 6° E)|Photographs by Björn Sothmann",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "51.568930",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "6.854283",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "False Chanterelle - Hygrophoropsis aurantiaca",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2018-09-10 11:48",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/40948266@N04/30269258277/\">False Chanterelle - Hygrophoropsis aurantiaca</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/40948266@N04\">Björn S...</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "74097821": {
+        "pageid": 74097821,
+        "ns": 6,
+        "title": "File:Hygrophoropsis aurantiaca (30463836527).jpg",
+        "index": 36,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 7923023,
+            "width": 5184,
+            "height": 3456,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/b/bd/Hygrophoropsis_aurantiaca_%2830463836527%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Hygrophoropsis_aurantiaca_(30463836527).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=74097821",
+            "sha1": "d10a6fc2fa7f2b4605c6288c1febfe55b72e55ba",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2018-11-03 16:45:12",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Hygrophoropsis aurantiaca (30463836527)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Hygrophoropsis aurantiaca|Flickr images reviewed by FlickreviewR 2|Boletales in Haltern am See|Fungi of Kreis Recklinghausen in September|Hygrophoropsidaceae in Kreis Recklinghausen|Haltern am See photographs taken on 2018-09-23|Fungi of Holtwick|Photographs by Björn Sothmann",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "51.763522",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "7.119794",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "False Chanterelle - Hygrophoropsis aurantiaca",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2018-09-23 11:32",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/40948266@N04/30463836527/\">False Chanterelle - Hygrophoropsis aurantiaca</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/40948266@N04\">Björn S...</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "97674075": {
+        "pageid": 97674075,
+        "ns": 6,
+        "title": "File:Hygrophoropsis aurantiaca (30740988126).jpg",
+        "index": 35,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 579468,
+            "width": 2272,
+            "height": 1520,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/d/dc/Hygrophoropsis_aurantiaca_%2830740988126%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Hygrophoropsis_aurantiaca_(30740988126).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=97674075",
+            "sha1": "d1c193919d2d5122084958e45df932b7bd5352a1",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2020-12-16 23:08:22",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Hygrophoropsis aurantiaca (30740988126)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Hygrophoropsis aurantiaca|Fungi in November|Flickr images reviewed by FlickreviewR 2|Photographs by Hans-Günter Wagner",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Hygrophoropsis aurantiaca",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2003-11-18 15:13",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/145400091@N04/30740988126/\">Hygrophoropsis aurantiaca</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/145400091@N04\">Dr. Hans-Günter Wagner</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "93617654": {
+        "pageid": 93617654,
+        "ns": 6,
+        "title": "File:Hygrophoropsis aurantiaca (31978501502).jpg",
+        "index": 14,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 4285122,
+            "width": 5456,
+            "height": 3632,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/8/8b/Hygrophoropsis_aurantiaca_%2831978501502%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Hygrophoropsis_aurantiaca_(31978501502).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=93617654",
+            "sha1": "3b3cd0d369c913a4c509011a1abf9b0b478355e2",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2020-08-28 11:31:29",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Hygrophoropsis aurantiaca (31978501502)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Hygrophoropsis aurantiaca|Flickr images reviewed by FlickreviewR 2",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Hygrophoropsis aurantiaca",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2016-11-07 11:09",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/99278910@N00/31978501502/\">Hygrophoropsis aurantiaca</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/99278910@N00\">Lukas</a> from London, England",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "74133920": {
+        "pageid": 74133920,
+        "ns": 6,
+        "title": "File:Hygrophoropsis aurantiaca (43395376840).jpg",
+        "index": 25,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 6234925,
+            "width": 5184,
+            "height": 3456,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/a/ae/Hygrophoropsis_aurantiaca_%2843395376840%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Hygrophoropsis_aurantiaca_(43395376840).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=74133920",
+            "sha1": "6d7e22f70139a7c2a397de6b9937c0d5d9ee4960",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2018-11-04 20:29:28",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Hygrophoropsis aurantiaca (43395376840)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Hygrophoropsis aurantiaca|Flickr images reviewed by FlickreviewR 2|Oberhausen photographs taken on 2018-09-10|Fungi of Oberhausen in September|Hygrophoropsidaceae in Oberhausen|Files with coordinates missing SDC location of creation (51° N, 6° E)|Photographs by Björn Sothmann",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "51.568930",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "6.854283",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "False Chanterelle - Hygrophoropsis aurantiaca",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2018-09-10 11:48",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/40948266@N04/43395376840/\">False Chanterelle - Hygrophoropsis aurantiaca</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/40948266@N04\">Björn S...</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "74133912": {
+        "pageid": 74133912,
+        "ns": 6,
+        "title": "File:Hygrophoropsis aurantiaca (45154998622).jpg",
+        "index": 30,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 7274817,
+            "width": 5184,
+            "height": 3456,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/b/b6/Hygrophoropsis_aurantiaca_%2845154998622%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Hygrophoropsis_aurantiaca_(45154998622).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=74133912",
+            "sha1": "4d3612bc70cb515383e8766cad1ffecfd7569c0d",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2018-11-04 20:29:16",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Hygrophoropsis aurantiaca (45154998622)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Hygrophoropsis aurantiaca|Flickr images reviewed by FlickreviewR 2|Oberhausen photographs taken on 2018-09-10|Fungi of Oberhausen in September|Hygrophoropsidaceae in Oberhausen|Files with coordinates missing SDC location of creation (51° N, 6° E)|Photographs by Björn Sothmann",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "51.568930",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "6.854283",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "False Chanterelle - Hygrophoropsis aurantiaca",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2018-09-10 11:48",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/40948266@N04/45154998622/\">False Chanterelle - Hygrophoropsis aurantiaca</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/40948266@N04\">Björn S...</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "44458266": {
+        "pageid": 44458266,
+        "ns": 6,
+        "title": "File:Hygrophoropsis aurantiaca (7996996283).jpg",
+        "index": 24,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 4819079,
+            "width": 3264,
+            "height": 2448,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/5/51/Hygrophoropsis_aurantiaca_%287996996283%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Hygrophoropsis_aurantiaca_(7996996283).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=44458266",
+            "sha1": "703783ac3c9f07625468d928f4f9657a981564c9",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2015-10-25 00:13:26",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Hygrophoropsis aurantiaca (7996996283)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Hygrophoropsis|Flickr images reviewed by FlickreviewR|Files uploaded by Josve05a (species)",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Hygrophoropsis aurantiaca chanterelle look a like, similar, confused with chanterelle.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2012-09-15 11:48",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/85775642@N05/7996996283/\">Hygrophoropsis aurantiaca</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/85775642@N05\">natureluvr01</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "3559608": {
+        "pageid": 3559608,
+        "ns": 6,
+        "title": "File:Hygrophoropsis aurantiaca - Lindsey.jpg",
+        "index": 9,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 138932,
+            "width": 640,
+            "height": 426,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/3/35/Hygrophoropsis_aurantiaca_-_Lindsey.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Hygrophoropsis_aurantiaca_-_Lindsey.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=3559608",
+            "sha1": "7b425b97ac9a896e3804a8ba57845bae2cae2efd",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2008-02-15 15:21:42",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Hygrophoropsis aurantiaca - Lindsey",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Hygrophoropsis aurantiaca|Taken with Nikon D200|Self-published work|Items with VRTS permission confirmed|Pictures by James Lindsey|Fungi in July|Verified pictures of mushrooms by James K. Lindsey|Boletales in Belgium|Belgium photographs taken on 2007-07-06|Agaricomycetes in Commanster",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<p><i><a href=\"//commons.wikimedia.org/wiki/Hygrophoropsis_aurantiaca\" title=\"Hygrophoropsis aurantiaca\">Hygrophoropsis aurantiaca</a></i> from Commanster, Belgium.\n</p>\n<small>The determination of the species shown in this picture has been verified.</small>",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2007-07-06",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"http://popgen.unimaas.nl/~jlindsey/commanster.html\">James Lindsey's Ecology of Commanster Site</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "James Lindsey",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Attribution": {
+                "value": "James Lindsey at <a rel=\"nofollow\" class=\"external text\" href=\"http://popgen.unimaas.nl/~jlindsey/commanster.html\">Ecology of Commanster</a>",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Agaricomycetes in Commanster"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Belgium photographs taken on 2007-07-06"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Boletales in Belgium"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-2.5"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi in July"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Hygrophoropsis aurantiaca"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Items with VRTS permission confirmed"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Pictures by James Lindsey"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Nikon D200"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Verified pictures of mushrooms by James K. Lindsey"
+          }
+        ]
+      },
+      "43828322": {
+        "pageid": 43828322,
+        "ns": 6,
+        "title": "File:Hygrophoropsis aurantiaca - Pilzausstellung Rostock 2015.jpg",
+        "index": 23,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 2081854,
+            "width": 2340,
+            "height": 1722,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/6/6e/Hygrophoropsis_aurantiaca_-_Pilzausstellung_Rostock_2015.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Hygrophoropsis_aurantiaca_-_Pilzausstellung_Rostock_2015.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=43828322",
+            "sha1": "ef7b3f49bc4230fc582e1df13c610af2cc9fc405",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2015-09-30 05:44:49",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Hygrophoropsis aurantiaca - Pilzausstellung Rostock 2015",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Hygrophoropsis aurantiaca|Taken with Samsung Galaxy Tab S 8.4|CC-Zero|Self-published work|Fungi of Mecklenburg-Vorpommern|Files with coordinates missing SDC location of creation",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "54.091428",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "12.094339",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Falscher Pfifferling bei der Pilzausstellung Rostock am 27. September 2015.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2015-09-27 17:07:48",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Worstbull&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Worstbull (page does not exist)\">Worstbull</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "180555858": {
+        "pageid": 180555858,
+        "ns": 6,
+        "title": "File:Hygrophoropsis aurantiaca 01.jpg",
+        "index": 15,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1078971,
+            "width": 2048,
+            "height": 1468,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/b/b5/Hygrophoropsis_aurantiaca_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Hygrophoropsis_aurantiaca_01.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=180555858",
+            "sha1": "c829d9e8fe58ed82d9d807bf5b601648cd22ee09",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2025-12-23 17:50:39",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Hygrophoropsis aurantiaca 01",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Hygrophoropsis aurantiaca|Media from iNaturalist|INaturalist images reviewed by iNaturalistReviewBot|Media from GBIF|INaturalist images missing SDC depicts",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Hygrophoropsis aurantiaca",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "25 sept. 2024 · 16:38 CEST",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/observations/244111771\">https://www.inaturalist.org/observations/244111771</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "Lucian Clanet",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "497695": {
+        "pageid": 497695,
+        "ns": 6,
+        "title": "File:Hygrophoropsis aurantiaca 051106w.jpg",
+        "index": 17,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 371801,
+            "width": 1086,
+            "height": 1448,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/d/da/Hygrophoropsis_aurantiaca_051106w.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Hygrophoropsis_aurantiaca_051106w.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=497695",
+            "sha1": "5ef3f61027a5822661e588b3de851a57414f7162",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2006-01-05 20:49:47",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Hygrophoropsis aurantiaca 051106w",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Hygrophoropsis aurantiaca|GFDL|Taken with Canon EOS 350D|License migration redundant|Self-published work|Fungi in November|Hygrophoropsidaceae in France",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<i>Hygrophoropsis aurantiaca</i> (False Chanterelle) in a French wood.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2005-11-06",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"mw:WikiLink\" href=\"https://commons.wikimedia.org/wiki/User:Strobilomyces\" title=\"User:Strobilomyces\">Strobilomyces</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi in November"
+          },
+          {
+            "ns": 14,
+            "title": "Category:GFDL"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Hygrophoropsidaceae in France"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Hygrophoropsis aurantiaca"
+          },
+          {
+            "ns": 14,
+            "title": "Category:License migration redundant"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Canon EOS 350D"
+          }
+        ]
+      },
+      "4844979": {
+        "pageid": 4844979,
+        "ns": 6,
+        "title": "File:Hygrophoropsis aurantiaca 1.jpg",
+        "index": 37,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 163937,
+            "width": 600,
+            "height": 800,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/7/79/Hygrophoropsis_aurantiaca_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Hygrophoropsis_aurantiaca_1.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=4844979",
+            "sha1": "79cc1e859c1039747c83069f61a4a23fbd930c0f",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2008-09-23 11:20:32",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Hygrophoropsis aurantiaca 1",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Hygrophoropsis aurantiaca|GFDL|Taken with Fujifilm FinePix S5600|License migration redundant|Attribution only license|Self-published work|Fungi in September|Boletales in Lithuania",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<i>Hygrophoropsis aurantiaca</i>. Karmėlava forest, Lithuania.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2008-09-05",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Tocekas\" title=\"User:Tocekas\">Tocekas</a>",
+                "source": "commons-desc-page"
+              },
+              "Permission": {
+                "value": "<table class=\"layouttemplate licensetpl\" lang=\"en\" dir=\"ltr\" cellpadding=\"0\" style=\"width: 100%; clear: both; margin: 0.5em auto; background-color: var(--background-color-success-subtle, #dff2eb); color: var(--color-base, #202122); border-width: var(--border-width-thick, 2px); border-style: solid; border-color: var(--border-color-success, #099979); border-spacing: 8px; box-sizing: border-box;\">\n<tbody><tr>\n<td style=\"width:90px;\" rowspan=\"3\"><span typeof=\"mw:File\"><span title=\"©\"><img alt=\"©\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/5/57/Green_copyright.svg/120px-Green_copyright.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"64\" height=\"64\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/5/57/Green_copyright.svg/250px-Green_copyright.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"197\" data-file-height=\"197\"></span></span>\n</td>\n<td>The copyright holder of this file, <a href=\"//commons.wikimedia.org/wiki/User:Tocekas\" title=\"User:Tocekas\">Tomas Čekanavičius</a>, allows anyone to use it <b>for any purpose, provided that</b> the copyright holder is properly attributed. Redistribution, derivative work, commercial use, and all other use is permitted.\n</td></tr>\n<tr style=\"text-align:center;\">\n<td><div style=\"font-weight: bold;display:inline;\">Attribution: <div style=\"font-size: larger;display:inline;\" class=\"licensetpl_attr\">Tomas Čekanavičius</div></div>\n<p><span class=\"licensetpl_short\" style=\"display:none;\">Attribution</span>\n</p>\n</td></tr></tbody></table>",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Attribution only license"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Boletales in Lithuania"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi in September"
+          },
+          {
+            "ns": 14,
+            "title": "Category:GFDL"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Hygrophoropsis aurantiaca"
+          },
+          {
+            "ns": 14,
+            "title": "Category:License migration redundant"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Fujifilm FinePix S5600"
+          }
+        ]
+      },
+      "98502740": {
+        "pageid": 98502740,
+        "ns": 6,
+        "title": "File:Hygrophoropsis aurantiaca 105977130.jpg",
+        "index": 29,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 708535,
+            "width": 1536,
+            "height": 2048,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/6/60/Hygrophoropsis_aurantiaca_105977130.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Hygrophoropsis_aurantiaca_105977130.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=98502740",
+            "sha1": "003d2a7e54efffdf460cbc83764807c978eefbcc",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2021-01-03 22:17:45",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Hygrophoropsis aurantiaca 105977130",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Hygrophoropsis aurantiaca|CC-Zero|Media from iNaturalist|INaturalist images reviewed by iNaturalistReviewBot|Hesse photographs taken on 2020-11-29|Uploaded with iNaturalist2Commons|Fungi of Hesse in November|Hygrophoropsidaceae in Hesse|Files with coordinates missing SDC location of creation (50° N, 8° E)",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "50.569498",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "8.725840",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "False Chanterelle (<i>Hygrophoropsis aurantiaca</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2020-11-29",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/105977130\">https://www.inaturalist.org/photos/105977130</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/1908828\">mangoblatt</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "98502677": {
+        "pageid": 98502677,
+        "ns": 6,
+        "title": "File:Hygrophoropsis aurantiaca 108314595.jpg",
+        "index": 38,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1089659,
+            "width": 2048,
+            "height": 1536,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/0/09/Hygrophoropsis_aurantiaca_108314595.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Hygrophoropsis_aurantiaca_108314595.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=98502677",
+            "sha1": "453f3ddfebd7a3c6f30b2c9f583e6886e7b79c72",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2021-01-03 22:15:21",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Hygrophoropsis aurantiaca 108314595",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Hygrophoropsis aurantiaca|Germany photographs taken on 2020-12-26|Boletales in Germany|Media from iNaturalist|Fungi of Hesse|Fungi in December|INaturalist images reviewed by iNaturalistReviewBot|Uploaded with iNaturalist2Commons|Files with coordinates missing SDC location of creation (51° N, 9° E)",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "51.377893",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "9.113315",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "False Chanterelle (<i>Hygrophoropsis aurantiaca</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2020-12-26",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/108314595\">https://www.inaturalist.org/photos/108314595</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/477431\">carnifex</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "98502692": {
+        "pageid": 98502692,
+        "ns": 6,
+        "title": "File:Hygrophoropsis aurantiaca 108314627.jpg",
+        "index": 39,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1368161,
+            "width": 2048,
+            "height": 1536,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/7/71/Hygrophoropsis_aurantiaca_108314627.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Hygrophoropsis_aurantiaca_108314627.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=98502692",
+            "sha1": "c8af228313ced34ea1955fc00e58c61735a8507c",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2021-01-03 22:15:50",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Hygrophoropsis aurantiaca 108314627",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Hygrophoropsis aurantiaca|Germany photographs taken on 2020-12-26|Boletales in Germany|Media from iNaturalist|Fungi of Hesse|Fungi in December|INaturalist images reviewed by iNaturalistReviewBot|Uploaded with iNaturalist2Commons|Files with coordinates missing SDC location of creation (51° N, 9° E)",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "51.377893",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "9.113315",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "False Chanterelle (<i>Hygrophoropsis aurantiaca</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2020-12-26",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/108314627\">https://www.inaturalist.org/photos/108314627</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/477431\">carnifex</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "98502639": {
+        "pageid": 98502639,
+        "ns": 6,
+        "title": "File:Hygrophoropsis aurantiaca 109003082.jpg",
+        "index": 12,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 210056,
+            "width": 2048,
+            "height": 1536,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/1/1e/Hygrophoropsis_aurantiaca_109003082.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Hygrophoropsis_aurantiaca_109003082.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=98502639",
+            "sha1": "cc7c2dd423ea966ce961e04a67ba1e46f2d03add",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2021-01-03 22:14:03",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Hygrophoropsis aurantiaca 109003082",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Hygrophoropsis aurantiaca|Media from iNaturalist|INaturalist images reviewed by iNaturalistReviewBot|Uploaded with iNaturalist2Commons|Netherlands photographs taken on 2021-01-02|Hygrophoropsidaceae in the Netherlands|Files with coordinates missing SDC location of creation (51° N, 5° E)|Fungi of North Brabant in January|Photographs by Rudolphous of Nature (Netherlands)",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "51.655869",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "5.096342",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "False Chanterelle (<i>Hygrophoropsis aurantiaca</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2021-01-02",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/109003082\">https://www.inaturalist.org/photos/109003082</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/3599717\">Michel Langeveld</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "124658125": {
+        "pageid": 124658125,
+        "ns": 6,
+        "title": "File:Hygrophoropsis aurantiaca 239919986.jpg",
+        "index": 20,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1254144,
+            "width": 2048,
+            "height": 1617,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/4/43/Hygrophoropsis_aurantiaca_239919986.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Hygrophoropsis_aurantiaca_239919986.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=124658125",
+            "sha1": "bbea3e0bccbcc67cb31de2e519213eeb59fc8af5",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2022-10-28 07:53:01",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Hygrophoropsis aurantiaca 239919986",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Hygrophoropsis aurantiaca|Media from iNaturalist|Fungi in October|INaturalist images reviewed by iNaturalistReviewBot|Files with coordinates missing SDC location of creation|Uploaded with iNaturalist2Commons|United States photographs taken on 2022-10-27|Hygrophoropsidaceae in the United States",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "39.146453",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "-77.251755",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "False Chanterelle (<i>Hygrophoropsis aurantiaca</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2022-10-27",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/239919986\">https://www.inaturalist.org/photos/239919986</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/2840714\">Annie Weissman</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "8045185": {
+        "pageid": 8045185,
+        "ns": 6,
+        "title": "File:Hygrophoropsis aurantiaca 52882.jpg",
+        "index": 11,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 5447521,
+            "width": 3264,
+            "height": 2448,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/6/68/Hygrophoropsis_aurantiaca_52882.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Hygrophoropsis_aurantiaca_52882.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=8045185",
+            "sha1": "153e5ec3ee8ac16dbb5cc261124dcbdb8ff41305",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2009-10-12 12:08:15",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Hygrophoropsis aurantiaca 52882",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Hygrophoropsis aurantiaca|Taken with Canon PowerShot SX100 IS|Images from Mushroom Observer|Files from external sources with reviewed licenses|Strouds Run State Park|Fungi uploaded by raeky|Uploaded by raeky|United States photographs taken on 2009-08-06|Boletales in Ohio|Fungi of Ohio in August",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<p><big><b><i>Hygrophoropsis aurantiaca</i> ((Wulfen) Maire)</b></big>\n</p>\n<hr>\nLocation: Strouds Run State Park, Athens, Ohio, USA",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2009-08-06",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "This image is <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/image/show_image/52882\">Image Number 52882</a> at <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org\">Mushroom Observer</a>, a source for mycological images.",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/show_user/439\">Dan Molter (shroomydan)</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Boletales in Ohio"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files from external sources with reviewed licenses"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi of Ohio in August"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi uploaded by raeky"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Hygrophoropsis aurantiaca"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Images from Mushroom Observer"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Strouds Run State Park"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Canon PowerShot SX100 IS"
+          },
+          {
+            "ns": 14,
+            "title": "Category:United States photographs taken on 2009-08-06"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Uploaded by raeky"
+          }
+        ]
+      },
+      "21685421": {
+        "pageid": 21685421,
+        "ns": 6,
+        "title": "File:Hygrophoropsis aurantiaca BŻ5.1.jpg",
+        "index": 34,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1199574,
+            "width": 2215,
+            "height": 1661,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/3/33/Hygrophoropsis_aurantiaca_B%C5%BB5.1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Hygrophoropsis_aurantiaca_B%C5%BB5.1.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=21685421",
+            "sha1": "8406d0b7d48fbd45b8b5e46883cf71ac3c5f5403",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2012-09-27 16:45:28",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Hygrophoropsis aurantiaca BŻ5.1",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Hygrophoropsis aurantiaca|Taken with Sony DSC-HX100V|Self-published work",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<i>Hygrophoropsis aurantiaca</i>",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2012-09-21 05:06:21",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Selso\" title=\"User:Selso\">Jerzy Opioła</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Hygrophoropsis aurantiaca"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Sony DSC-HX100V"
+          }
+        ]
+      },
+      "21685425": {
+        "pageid": 21685425,
+        "ns": 6,
+        "title": "File:Hygrophoropsis aurantiaca BŻ5.JPG",
+        "index": 8,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1105084,
+            "width": 2572,
+            "height": 1904,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/e/ef/Hygrophoropsis_aurantiaca_B%C5%BB5.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Hygrophoropsis_aurantiaca_B%C5%BB5.JPG",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=21685425",
+            "sha1": "23fe1e8ad936007d566e2cb6ca57a271956dc8a9",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2012-09-27 16:45:30",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Hygrophoropsis aurantiaca BŻ5",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Hygrophoropsis aurantiaca|Taken with Sony DSC-HX100V|Self-published work",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<i>Hygrophoropsis aurantiaca</i>",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2012-09-21 05:06:21",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Selso\" title=\"User:Selso\">Jerzy Opioła</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Hygrophoropsis aurantiaca"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Sony DSC-HX100V"
+          }
+        ]
+      },
+      "74198673": {
+        "pageid": 74198673,
+        "ns": 6,
+        "title": "File:Hygrophoropsis aurantiaca Kiev2.jpg",
+        "index": 32,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 3303572,
+            "width": 3000,
+            "height": 4000,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Hygrophoropsis_aurantiaca_Kiev2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Hygrophoropsis_aurantiaca_Kiev2.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=74198673",
+            "sha1": "05434089a9e1aed61b2ea3bf607d39bf2de2f33b",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2018-11-07 03:22:45",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Hygrophoropsis aurantiaca Kiev2",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Hygrophoropsis aurantiaca|CC-Zero|Self-published work|Fungi of Ukraine in October|Fungi of Kyiv|Files with coordinates missing SDC location of creation|Ukraine photographs taken on 2018-10-20",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "50.485724",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "30.358416",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<i>Hygrophoropsis aurantiaca</i> in Novobilychi forest, Kiev, Ukraine",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2018-10-20 09:14:50",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:%D0%90%D0%B8%D0%BC%D0%B0%D0%B8%D0%BD%D0%B0_%D1%85%D0%B8%D0%BA%D0%B0%D1%80%D0%B8\" title=\"User:Аимаина хикари\">Аимаина хикари</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "16680699": {
+        "pageid": 16680699,
+        "ns": 6,
+        "title": "File:Hygrophoropsis aurantiaca Valevahvero IMG 6619 C.jpg",
+        "index": 31,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 2661925,
+            "width": 3640,
+            "height": 2481,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Hygrophoropsis_aurantiaca_Valevahvero_IMG_6619_C.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Hygrophoropsis_aurantiaca_Valevahvero_IMG_6619_C.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=16680699",
+            "sha1": "4894b82170853c0c8de8f1d9fbdb87ac834bd3d1",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2011-09-25 06:22:31",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Hygrophoropsis aurantiaca Valevahvero IMG 6619 C",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Hygrophoropsis aurantiaca|Taken with Canon EOS 450D|Self-published work",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "False Chanterelle (Hygrophoropsis aurantiaca) in Kerava, Finland",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2011-09-23",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Annelis\" title=\"User:Annelis\">Anneli Salo</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Hygrophoropsis aurantiaca"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Canon EOS 450D"
+          }
+        ]
+      },
+      "122481633": {
+        "pageid": 122481633,
+        "ns": 6,
+        "title": "File:Hygrophoropsis aurantiaca in Krajna 39.jpg",
+        "index": 40,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 6157857,
+            "width": 2535,
+            "height": 2535,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/1/18/Hygrophoropsis_aurantiaca_in_Krajna_39.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Hygrophoropsis_aurantiaca_in_Krajna_39.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=122481633",
+            "sha1": "50742c7dc2abd7f585c2df4aee7021d1065d8813",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2022-08-30 19:27:08",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Hygrophoropsis aurantiaca in Krajna 39",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Hygrophoropsis aurantiaca|Krajna Landscape Park|Self-published work|October 2021 Poland photographs|Files with coordinates missing SDC location of creation|Fungi of Kuyavian-Pomeranian Voivodeship|Square photos of Poland|2021 in Kuyavian-Pomeranian Voivodeship|October in Kuyavian-Pomeranian Voivodeship|Square photos of fungi|Určování hub pro Wikipedii 2026",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "53.383265",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "17.278468",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<i>Hygrophoropsis aurantiaca</i> in Krajna Landscape Park, Kuyavian-Pomeranian Voivodeship, Poland",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2021-10-23 09:52:23",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Tournasol7\" title=\"User:Tournasol7\">Krzysztof Golik</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "28863528": {
+        "pageid": 28863528,
+        "ns": 6,
+        "title": "File:Hygrophoropsis rufa syn Hygrophoropsis aurantiaca var. rufa.jpg",
+        "index": 5,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 4630624,
+            "width": 3000,
+            "height": 2001,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/d/d2/Hygrophoropsis_rufa_syn_Hygrophoropsis_aurantiaca_var._rufa.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Hygrophoropsis_rufa_syn_Hygrophoropsis_aurantiaca_var._rufa.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=28863528",
+            "sha1": "ac244f16b28958c891d87cd9a9441ad374260e6b",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2013-10-05 19:38:20",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Hygrophoropsis rufa syn Hygrophoropsis aurantiaca var. rufa",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Hygrophoropsis rufa|Taken with Canon EOS 500D|Self-published work|Files with coordinates missing SDC location of creation (48° N, 9° E)",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "quality",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "48.367739",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "9.784933",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<i>Hygrophoropsis rufa</i> syn. <i><a href=\"//commons.wikimedia.org/wiki/Hygrophoropsis_aurantiaca\" title=\"Hygrophoropsis aurantiaca\">Hygrophoropsis aurantiaca</a> var. rufa</i>, Family: Hygrophoropsidaceae, Location: Germany, Blaubeuren, Pappelau",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2013-09-24",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Holleday\" title=\"User:Holleday\">Holger Krisp</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with coordinates missing SDC location of creation (48° N, 9° E)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Hygrophoropsis rufa"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images missing SDC depicts"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images of Boletales"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Canon EOS 500D"
+          }
+        ]
+      },
+      "97088604": {
+        "pageid": 97088604,
+        "ns": 6,
+        "title": "File:Rebezuelo anaranjado (Hygrophoropsis aurantiaca), Hartelholz, Múnich, Alemania, 2020-11-21, DD 468-522 FS.jpg",
+        "index": 6,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 9293793,
+            "width": 7814,
+            "height": 5209,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/f/f5/Rebezuelo_anaranjado_%28Hygrophoropsis_aurantiaca%29%2C_Hartelholz%2C_M%C3%BAnich%2C_Alemania%2C_2020-11-21%2C_DD_468-522_FS.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Rebezuelo_anaranjado_(Hygrophoropsis_aurantiaca),_Hartelholz,_M%C3%BAnich,_Alemania,_2020-11-21,_DD_468-522_FS.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=97088604",
+            "sha1": "2c9657a05bf830ddd2d6b32d47997a03d93245b0",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2020-11-28 10:28:41",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Rebezuelo anaranjado (Hygrophoropsis aurantiaca), Hartelholz, Múnich, Alemania, 2020-11-21, DD 468-522 FS",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Hygrophoropsis aurantiaca|Images of Germany by User:Poco a poco|Taken with Canon EOS 5DS R|Images by User:Poco a poco|Close-up photographs of mushrooms|Agaricales in Bavaria in November|Munich photographs taken on 2020-11-21|Focus stacking images of mushrooms|Images by User:Poco a poco taken in 2020|Fungi of Hartelholz Wald|Focus stacked image",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "quality",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "False chanterelle (<i>Hygrophoropsis aurantiaca</i>), Hartelholz, Munich",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2020-11-21 12:12:55",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<bdi><a href=\"https://www.wikidata.org/wiki/Q28147777\" class=\"extiw\" title=\"d:Q28147777\"><span title=\"Spanish photographer\">Diego Delso</span></a></bdi>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Attribution": {
+                "value": "Diego Delso",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "97104848": {
+        "pageid": 97104848,
+        "ns": 6,
+        "title": "File:Rebezuelo anaranjado (Hygrophoropsis aurantiaca), Hartelholz, Múnich, Alemania, 2020-11-28, DD 267-332 FS.jpg",
+        "index": 4,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 9660568,
+            "width": 8682,
+            "height": 5788,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/0/09/Rebezuelo_anaranjado_%28Hygrophoropsis_aurantiaca%29%2C_Hartelholz%2C_M%C3%BAnich%2C_Alemania%2C_2020-11-28%2C_DD_267-332_FS.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Rebezuelo_anaranjado_(Hygrophoropsis_aurantiaca),_Hartelholz,_M%C3%BAnich,_Alemania,_2020-11-28,_DD_267-332_FS.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=97104848",
+            "sha1": "f3933822e35b8c95ce780a2bb39be233f77eb385",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2020-11-28 21:08:10",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Rebezuelo anaranjado (Hygrophoropsis aurantiaca), Hartelholz, Múnich, Alemania, 2020-11-28, DD 267-332 FS",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Hygrophoropsis aurantiaca|Images of Germany by User:Poco a poco|Taken with Canon EOS 5DS R|Images by User:Poco a poco|Close-up photographs of mushrooms|Agaricales in Bavaria in November|Munich photographs taken on 2020-11-28|Focus stacking images of mushrooms|Images by User:Poco a poco taken in 2020|Fungi of Hartelholz Wald|Focus stacked image",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "quality",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "False chanterelle (<i>Hygrophoropsis aurantiaca</i>), Hartelholz, Munich",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2020-11-28 14:59:19",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<bdi><a href=\"https://www.wikidata.org/wiki/Q28147777\" class=\"extiw\" title=\"d:Q28147777\"><span title=\"Spanish photographer\">Diego Delso</span></a></bdi>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Attribution": {
+                "value": "Diego Delso",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "94859475": {
+        "pageid": 94859475,
+        "ns": 6,
+        "title": "File:Ruhland, Grenzstr., Wald gegenüber Hausnr. 5, Falscher Pfifferling (Hygrophoropsis aurantiaca), Herbst, 06.jpg",
+        "index": 19,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1183434,
+            "width": 1194,
+            "height": 1086,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/8/8b/Ruhland%2C_Grenzstr.%2C_Wald_gegen%C3%BCber_Hausnr._5%2C_Falscher_Pfifferling_%28Hygrophoropsis_aurantiaca%29%2C_Herbst%2C_06.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Ruhland,_Grenzstr.,_Wald_gegen%C3%BCber_Hausnr._5,_Falscher_Pfifferling_(Hygrophoropsis_aurantiaca),_Herbst,_06.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=94859475",
+            "sha1": "0e0b621b2a4b3e7e0b29db2380e555e293d9e9d2",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2020-10-08 10:35:48",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Ruhland, Grenzstr., Wald gegenüber Hausnr. 5, Falscher Pfifferling (Hygrophoropsis aurantiaca), Herbst, 06",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Self-published work|Files with coordinates missing SDC location of creation|Hygrophoropsis aurantiaca in Ruhland|Fungi of Brandenburg in October",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "51.452862",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "13.847271",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Ruhland, Grenzstraße, Wald gegenüber Hausnr. 5, Falscher Pfifferling (Hygrophoropsis aurantiaca), Herbst",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2019-10-09",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Wilhelm_Zimmerling_PAR\" title=\"User:Wilhelm Zimmerling PAR\">Wilhelm Zimmerling PAR</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

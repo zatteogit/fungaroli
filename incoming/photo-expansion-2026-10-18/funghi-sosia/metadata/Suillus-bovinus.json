@@ -1,0 +1,4349 @@
+{
+  "continue": {
+    "clcontinue": "63534122|Suillus_bovinus",
+    "continue": "||imageinfo"
+  },
+  "query": {
+    "pages": {
+      "179381769": {
+        "pageid": 179381769,
+        "ns": 6,
+        "title": "File:1431. Suillus bovinus 070913.jpg",
+        "index": 17,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 2307370,
+            "width": 4055,
+            "height": 2707,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/3/3d/1431._Suillus_bovinus_070913.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:1431._Suillus_bovinus_070913.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=179381769",
+            "sha1": "433a1eaf1b8390f6bcab5d3ae7398979509dfd33",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2025-12-04 08:03:18",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "1431. Suillus bovinus 070913",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Suillus bovinus",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Suillus bovinus",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2013-09-07T00:00Z",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "cropped from <a rel=\"nofollow\" class=\"external free\" href=\"https://www.gbif.org/fr/occurrence/3441128227\">https://www.gbif.org/fr/occurrence/3441128227</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "Mikko Veräjänkorva",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "178303344": {
+        "pageid": 178303344,
+        "ns": 6,
+        "title": "File:2025-10-15 D500-1045 Achim-Lammerts Suillus-bovinus.jpg",
+        "index": 1,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 11970004,
+            "width": 5566,
+            "height": 3710,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/8/84/2025-10-15_D500-1045_Achim-Lammerts_Suillus-bovinus.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:2025-10-15_D500-1045_Achim-Lammerts_Suillus-bovinus.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=178303344",
+            "sha1": "04c8a469c665abc0e7d4e364c49d52cf9fc02d3a",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2025-11-12 06:07:47",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "2025-10-15 D500-1045 Achim-Lammerts Suillus-bovinus",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Suillus bovinus|Taken with Nikon D500|User custom license tags|Self-published work|Information field template with formatting|Created with Helicon Focus|Boletales in Rhineland-Palatinate in October|Syntaxys/Qualitätsbilder|Taken with Tamron SP AF 60mm F/2 Di II LD IF Macro|Syntaxys/Natur/Pilze|Landkreis Germersheim photographs taken on 2025-10-15|Fungi in Landkreis Germersheim|Syntaxys/Alle Bilder (chronologisch)|Suillus in Rhineland-Palatinate|Focus stacked image",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "quality",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "49.099870",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "8.262602",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<style data-mw-deduplicate=\"TemplateStyles:r1254222110\">.mw-parser-output .messagebox{margin:4px 0;width:auto;border-collapse:collapse;border:2px solid var(--border-color-progressive,#6485d1);background-color:var(--background-color-neutral-subtle,#fbfcff);color:var(--color-base,#202122);box-sizing:border-box;border-inline-start-width:8px}.mw-parser-output .messagebox.mbox-small{font-size:88%;line-height:1.25em}.mw-parser-output .mbox-warning,.mw-parser-output .mbox-speedy{border:2px solid var(--border-color-error,#b22222);background:var(--background-color-error-subtle,#ffdbdb);border-inline-start-width:8px}.mw-parser-output .mbox-serious,.mw-parser-output .mbox-delete,.mw-parser-output .mbox-stop{border:2px solid var(--border-color-error,#b22222);border-inline-start-width:8px}.mw-parser-output .mbox-issue,.mw-parser-output .mbox-content{border:2px solid #f28500;background:var(--background-color-warning-subtle,#ffe);border-inline-start-width:8px}.mw-parser-output .mbox-query,.mw-parser-output .mbox-style{border:2px solid #f4c430;background:var(--background-color-warning-subtle,#ffe);border-inline-start-width:8px}.mw-parser-output .mbox-shit{border:2px solid #960;border-inline-start-width:8px}.mw-parser-output .mbox-license{border:2px solid #88a;border-inline-start-width:initial}.mw-parser-output .mbox-legal{border:2px solid var(--border-color-notice,#666);background:var(--background-color-base,#fff);border-inline-start-width:8px}.mw-parser-output .mbox-honor{border:2px solid #ca3;background:var(--background-color-warning-subtle,#fcf4db);border-inline-start-width:8px}.mw-parser-output .mbox-growth{border:2px solid #8d4;background:var(--background-color-success-subtle,#d5fdf4);border-inline-start-width:8px}.mw-parser-output .mbox-move{border:2px solid #93c;border-inline-start-width:8px}.mw-parser-output .mbox-protection,.mw-parser-output .mbox-message{border:2px solid var(--border-color-base,#aaa);border-inline-start-width:8px}.mw-parser-output .messagebox .mbox-text{border:none;padding:0.25em 0.9em;width:100%}.mw-parser-output .messagebox .mbox-image{border:none;padding-top:2px;padding-bottom:2px;padding-inline-start:0.9em;padding-inline-end:0;text-align:center}.mw-parser-output .messagebox .mbox-imageright{border:none;padding-top:2px;padding-bottom:2px;padding-inline-start:0;padding-inline-end:0.9em;text-align:center}.mw-parser-output .messagebox .mbox-empty-cell{border:none;padding:0;width:1px}.mw-parser-output .messagebox .mbox-invalid-type{text-align:center}@media(min-width:720px){.mw-parser-output .messagebox{margin:4px 10%}.mw-parser-output .messagebox.mbox-small{clear:right;float:right;margin:4px 0 4px 1em;width:238px}}body.skin--responsive .mw-parser-output table.messagebox img{max-width:none!important}</style><table class=\"plainlinks messagebox mbox-message\" role=\"presentation\"><tbody><tr><td class=\"mbox-image\"><span typeof=\"mw:File\"><a href=\"//commons.wikimedia.org/wiki/File:Wikidata-logo.svg\" class=\"mw-file-description\"><img src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Wikidata-logo.svg/40px-Wikidata-logo.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"30\" height=\"17\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Wikidata-logo.svg/60px-Wikidata-logo.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"1050\" data-file-height=\"590\"></a></span></td><td class=\"mbox-text\"><a href=\"https://www.wikidata.org/wiki/Wikidata:Main_page\" class=\"extiw\" title=\"wikidata:Wikidata:Main page\">Wikidata</a> has <a href=\"https://www.wikidata.org/wiki/Q1165762\" class=\"extiw\" title=\"d:Q1165762\">entry Suillus bovinus <small>(Q1165762)</small></a> with data related to this item.</td></tr></tbody></table>\n<p><br><i><b>Place:</b></i> <a href=\"https://en.wikipedia.org/wiki/Jockgrim\" class=\"extiw\" title=\"en:Jockgrim\">Jockgrim district</a>, <a href=\"https://en.wikipedia.org/wiki/Germersheim_(district)\" class=\"extiw\" title=\"en:Germersheim (district)\">District Germersheim</a>, <a href=\"https://en.wikipedia.org/wiki/en:Rhineland-Palatinate\" class=\"extiw\" title=\"w:en:Rhineland-Palatinate\"><span title=\"federal state of Germany\">Rhineland-Palatinate</span></a>, <a href=\"https://en.wikipedia.org/wiki/en:Germany\" class=\"extiw\" title=\"w:en:Germany\"><span title=\"country in Central Europe\">Germany</span></a><br>\n<i><b>Location:</b></i> near <a href=\"https://en.wikipedia.org/wiki/Rheinzabern\" class=\"extiw\" title=\"en:Rheinzabern\">Rheinzabern</a><br>\n<i><b>Image Description:</b></i> A small cluster of Jersey cow mushrooms <i>(Suillus bovinus)</i>; location: mixed forest near Jockgrim; diameter up to 8 cm; height up to 12 cm.<br>\n</p>\n<div style=\"display:table;width:;vertical-align:middle;direction:ltr;float:left;line-height:22px;height:24px;font-size:.96em;margin:0px;padding:2px 4px 2px 6px;color:var(--color-base,#000);background:var(--background-color-neutral-subtle,#F8F9FA);border:1px solid #BAB;border-collapse:separate;border-spacing:0px;;\"><span typeof=\"mw:File\"><a href=\"//commons.wikimedia.org/wiki/File:Helicon_Focus_logo.svg\" class=\"mw-file-description\"><img src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/d/de/Helicon_Focus_logo.svg/40px-Helicon_Focus_logo.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"27\" height=\"22\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/d/de/Helicon_Focus_logo.svg/60px-Helicon_Focus_logo.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"941\" data-file-height=\"781\"></a></span> This  image was created with <a href=\"https://en.wikipedia.org/wiki/en:Helicon_Focus\" class=\"extiw\" title=\"w:en:Helicon Focus\"><span title=\"proprietary and commercial digital image processing software\">Helicon Focus</span></a>.</div>",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "Taken on 15 October 2025, 14:22:10",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<bdi><a href=\"//commons.wikimedia.org/wiki/User:Syntaxys\" title=\"User:Syntaxys\">Achim Lammerts (Syntaxys)</a></bdi>",
+                "source": "commons-desc-page"
+              },
+              "Permission": {
+                "value": "<table class=\"layouttemplate\" style=\"margin:.25em; padding:.25em .5em; background-color:var(--color-inverted, #ffffff); color: inherit; border:1px solid #003399;\">\n<tbody><tr>\n<td><span typeof=\"mw:File\"><span><img src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Flag_of_Germany.svg/40px-Flag_of_Germany.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"24\" height=\"14\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Flag_of_Germany.svg/60px-Flag_of_Germany.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"1000\" data-file-height=\"600\"></span></span>\n</td>\n<td>Dieser Text und viele andere auch sind ebenso in deutscher Sprache verfügbar. Um diese sehen zu können, wähle bitte auf dieser Webseite die Spracheinstellung „Deutsch“.\n</td></tr></tbody></table>\n<figure class=\"mw-halign-right\" typeof=\"mw:File\"><a href=\"//commons.wikimedia.org/wiki/File:HSSection_sign.svg\" class=\"mw-file-description\"><img src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/HSSection_sign.svg/120px-HSSection_sign.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"100\" height=\"100\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/HSSection_sign.svg/250px-HSSection_sign.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"156\" data-file-height=\"156\"></a><figcaption></figcaption></figure><figure class=\"mw-halign-right\" typeof=\"mw:File\"><a href=\"//commons.wikimedia.org/wiki/File:Cc_by-sa_(1).svg\" class=\"mw-file-description\"><img src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1c/Cc_by-sa_%281%29.svg/120px-Cc_by-sa_%281%29.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"100\" height=\"35\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1c/Cc_by-sa_%281%29.svg/250px-Cc_by-sa_%281%29.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"120\" data-file-height=\"42\"></a><figcaption></figcaption></figure>\n<div><b>I. License</b></div>\n<div style=\"margin-top:0.5em;\">This photography is protected by copyright. However, it may be used free of charge by anyone, provided that the conditions of the <b>Creative Commons License <a rel=\"nofollow\" class=\"external text\" href=\"https://creativecommons.org/licenses/by-sa/4.0/deed.en\">“Attribution-ShareAlike 4.0 International”</a></b> (CC BY-SA 4.0) are met. These provide, among other things, the naming of the author and the license as well as the setting of a hyperlink to the license text or its complete reprint. The naming should be set as specified by me, the author:\n</div><div style=\"margin-top:0.5em; text-align:center;\"><i>© <a href=\"//commons.wikimedia.org/wiki/User:Syntaxys\" title=\"User:Syntaxys\">Achim Lammerts</a> / <a href=\"//commons.wikimedia.org/wiki/Main_Page\" title=\"Main Page\">Wikimedia Commons</a> / <span class=\"plainlinks noprint\"><a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/File:2025-10-15_D500-1045_Achim-Lammerts_Suillus-bovinus.jpg\" href=\"https://commons.wikimedia.org/wiki/File:2025-10-15_D500-1045_Achim-Lammerts_Suillus-bovinus.jpg\">“2025-10-15 D500-1045 Achim-Lammerts Suillus-bovinus”</a></span> / <span class=\"plainlinks noprint\"><a rel=\"nofollow\" class=\"external text\" href=\"https://creativecommons.org/licenses/by-sa/4.0/\">CC BY-SA 4.0</a></span></i></div>\n<div style=\"margin-top:0.5em;\">Please read the text of the license carefully before using the photography. If you do not understand the license text or do not agree with the terms, please refrain from using the photography. If you do not comply with the license terms, you do not acquire the right to use the photography. If you need a different license for use, please contact me <b>before</b> use.</div>\n<div style=\"margin-top:0.5em;\">Information about the license can be found in the section <a class=\"mw-selflink-fragment\" href=\"#ImgLic\">Licensing</a> or as <a rel=\"nofollow\" class=\"external text\" href=\"https://creativecommons.org/licenses/by-sa/4.0/deed.en\">generally understandable summary</a> or as <a rel=\"nofollow\" class=\"external text\" href=\"https://creativecommons.org/licenses/by-sa/4.0/legalcode\">complete license text</a> at Creative Commons. When using, in addition to the above information, a hyperlink to the source – so this page with the descriptions and license terms – is desirable. Further information or application examples can be found at <a href=\"//commons.wikimedia.org/wiki/Commons:Reusing_content_outside_Wikimedia\" title=\"Commons:Reusing content outside Wikimedia\">Reusing content outside Wikimedia</a> (with image example).<br>\n<p>The metadata of the file (IPTC / XMP) must not be removed or changed (<a rel=\"nofollow\" class=\"external text\" href=\"http://www.gesetze-im-internet.de/englisch_urhg/englisch_urhg.html#p0869\">§ 95c UrhG</a>, “Protection of rights management information”).<br>\n</p>\nHelpful in questions of licensing is also the <a rel=\"nofollow\" class=\"external text\" href=\"https://lizenzhinweisgenerator.de/?lang=en\">attribution generator</a>.</div>\n<div style=\"margin:0.5em auto 1em;text-align:center;\" class=\"plainlinks\"><span class=\"plainlinks\"><a rel=\"nofollow\" class=\"external text\" href=\"https://lizenzhinweisgenerator.de/?lang=en&amp;url=https://commons.wikimedia.org/wiki/File:2025-10-15_D500-1045_Achim-Lammerts_Suillus-bovinus.jpg\"><span class=\"submit ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-secondary ui-button-blue\" role=\"button\"><span class=\"ui-button-text\">Generate License <b>Attribution</b></span><span class=\"ui-button-icon-secondary ui-icon ui-icon-extlink\"> </span></span></a></span></div>\n<div style=\"margin-top:0.5em;\">As an alternative to the named Creative Commons License <i>CC BY-SA 4.0</i> the <i><a href=\"https://en.wikipedia.org/wiki/Free_Art_License\" class=\"extiw\" title=\"w:Free Art License\">Free Art License</a></i> (<a rel=\"nofollow\" class=\"external text\" href=\"https://artlibre.org/licence/lal/en/\">from Version 1.3</a>) may also be used.</div>\n<div style=\"margin-top:0.75em;\"><b>II. Fairness</b></div>\n<div style=\"margin-top:0.5em;\">From printed matter and other material products that use this photography, the user is asked to send me a copy as a thank you. However, this is not a condition for the use of photography. The postal address can be requested via the contact options.</div>\n<div style=\"margin-top:0.5em;\">Please note that I went to significant effort to produce this photograph and make it available to the general public free of charge. Therefore, it can only be fair to comply with the conditions of the <a href=\"https://en.wikipedia.org/wiki/Free_license\" class=\"extiw\" title=\"w:Free license\">free license</a> listed here. In the event of non-compliance with the license conditions, the rights of use granted will understandably expire automatically.</div>\n<div style=\"margin-top:0.75em; clear: both;\"><b>III. Disclaimer</b></div>\n<div style=\"margin-top:0.5em;\">Please note that the granting of the rights from the license relates exclusively to the photography itself, but not on the rights to the depicted object (e.g. copyright or property rights) or the personality rights of any persons depicted. I do not assume that the further use of photography intended by you is legally possible with regard to the depicted object or the depicted person. You are responsible for checking and observing these rights when publishing in the respective medium or country.</div>\n<div style=\"margin-top:0.5em;\">I do not guarantee the accuracy of the information given here (description, title, etc.). The <a href=\"//commons.wikimedia.org/wiki/Commons:General_disclaimer\" title=\"Commons:General disclaimer\">general disclaimer</a> applies.</div>\n<div style=\"margin-top:0.75em;\"><b>IV. Contact options</b></div>\n<div style=\"margin-top:0.5em;\"><b><span typeof=\"mw:File\"><a href=\"//commons.wikimedia.org/wiki/File:UserIconMail.svg\" class=\"mw-file-description\"><img src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/UserIconMail.svg/40px-UserIconMail.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"24\" height=\"24\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/UserIconMail.svg/60px-UserIconMail.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"700\" data-file-height=\"700\"></a></span> <a rel=\"nofollow\" class=\"external text\" href=\"mailto:spamtrap-wpal65@lammerts.de\">E-mail to the author</a></b> or via the <a href=\"//commons.wikimedia.org/wiki/User_talk:Syntaxys\" title=\"User talk:Syntaxys\">discussion page of the author</a>.</div>",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Attribution": {
+                "value": "© Achim Lammerts (Syntaxys) / Wikimedia Commons",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "199820469": {
+        "pageid": 199820469,
+        "ns": 6,
+        "title": "File:Boiled Suillus bovinus.png",
+        "index": 21,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 16085051,
+            "width": 3213,
+            "height": 3824,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/d/d8/Boiled_Suillus_bovinus.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Boiled_Suillus_bovinus.png",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=199820469",
+            "sha1": "9800af9b5fa88c55917dd7411c0c747d261b5f0d",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2026-09-19 17:51:19",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Boiled Suillus bovinus",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Suillus bovinus|Self-published work|Creative Commons Attribution 4.0 missing SDC copyright license|Creative Commons Attribution missing SDC copyright status|Self-published work missing SDC copyright license",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Плодовые тела Козляков (Suillus bovinus ) после варки в подсоленой воде приобретают сиреневый оттенок",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2026-09-17",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Afanasovich\" title=\"User:Afanasovich\">Afanasovich</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "64618029": {
+        "pageid": 64618029,
+        "ns": 6,
+        "title": "File:Bovine Bolete - Suillus bovinus (26842012429).jpg",
+        "index": 29,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 4713135,
+            "width": 5184,
+            "height": 3456,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/3/37/Bovine_Bolete_-_Suillus_bovinus_%2826842012429%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Bovine_Bolete_-_Suillus_bovinus_(26842012429).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=64618029",
+            "sha1": "bee1ec57c695e04fc3335da0045713536d2b673f",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2017-12-05 19:32:17",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Bovine Bolete - Suillus bovinus (26842012429)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Suillus bovinus|Flickr images reviewed by FlickreviewR 2|Netherlands photographs taken on 2017-11-11|Suillaceae in the Netherlands|Files with coordinates missing SDC location of creation (51° N, 6° E)|Photographs by Björn Sothmann",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "51.373994",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "6.219027",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Bovine Bolete - Suillus bovinus",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2017-11-11 14:45",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/40948266@N04/26842012429/\">Bovine Bolete - Suillus bovinus</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/40948266@N04\">Björn S...</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "64618025": {
+        "pageid": 64618025,
+        "ns": 6,
+        "title": "File:Bovine Bolete - Suillus bovinus (37730505035).jpg",
+        "index": 23,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 5463921,
+            "width": 3456,
+            "height": 5184,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Bovine_Bolete_-_Suillus_bovinus_%2837730505035%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Bovine_Bolete_-_Suillus_bovinus_(37730505035).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=64618025",
+            "sha1": "d947bc64c13b0ca8044ee6efabd59f4edfdc12f2",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2017-12-05 19:32:11",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Bovine Bolete - Suillus bovinus (37730505035)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Suillus bovinus|Flickr images reviewed by FlickreviewR 2|Netherlands photographs taken on 2017-11-11|Suillaceae in the Netherlands|Files with coordinates missing SDC location of creation (51° N, 6° E)|Photographs by Björn Sothmann",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "51.373994",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "6.219027",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Bovine Bolete - Suillus bovinus",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2017-11-11 14:45",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/40948266@N04/37730505035/\">Bovine Bolete - Suillus bovinus</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/40948266@N04\">Björn S...</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "20218510": {
+        "pageid": 20218510,
+        "ns": 6,
+        "title": "File:Modell von Suillus bovinus (Boletus bovinus, Kuhpilz, Ochsenreische, Kuh-Röhrling).jpg",
+        "index": 3,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 4587811,
+            "width": 3052,
+            "height": 2456,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/e/ef/Modell_von_Suillus_bovinus_%28Boletus_bovinus%2C_Kuhpilz%2C_Ochsenreische%2C_Kuh-R%C3%B6hrling%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Modell_von_Suillus_bovinus_(Boletus_bovinus,_Kuhpilz,_Ochsenreische,_Kuh-R%C3%B6hrling).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=20218510",
+            "sha1": "3e793df98f5474ede003a4705d3ee3085b622349",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2012-07-10 23:08:42",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Modell von Suillus bovinus (Boletus bovinus, Kuhpilz, Ochsenreische, Kuh-Röhrling)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Suillus bovinus|Taken with Olympus XZ-1|Botanical Museum Greifswald|Models of fungi",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Model from the collection of the Botanical Museum in Greifswald, Germany. .<br>see also <a rel=\"nofollow\" class=\"external text\" href=\"http://www.universitaetssammlungen.de/modelle\">universitaetssammlungen.de/modelle</a> for more information on the models",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2011-07-11 13:37:50",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "own work at Botanical Museum in Greifswald",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "David Ludwig",
+                "source": "commons-desc-page"
+              },
+              "Permission": {
+                "value": "own work",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Botanical Museum Greifswald"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Models of fungi"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Suillus bovinus"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Olympus XZ-1"
+          }
+        ]
+      },
+      "93311348": {
+        "pageid": 93311348,
+        "ns": 6,
+        "title": "File:Schiermonnikoog - Koeienboleet (Suillus bovinus).jpg",
+        "index": 35,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 3044974,
+            "width": 4515,
+            "height": 3464,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/8/8d/Schiermonnikoog_-_Koeienboleet_%28Suillus_bovinus%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Schiermonnikoog_-_Koeienboleet_(Suillus_bovinus).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=93311348",
+            "sha1": "c709302f81676f199e6134266bddc32139aef430",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2020-08-19 19:45:43",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Schiermonnikoog - Koeienboleet (Suillus bovinus)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Suillus bovinus|Self-published work|Suillaceae in the Netherlands|Netherlands photographs taken on 2020-07-25|Fungi of Schiermonnikoog|Fungi of Friesland in July|Photographs by Rudolphous of Nature (Netherlands)",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Schiermonnikoog - Koeienboleet (Suillus bovinus)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2020-07-25 11:46:40",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Rudolphous\" title=\"User:Rudolphous\">Rudolphous</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "75368372": {
+        "pageid": 75368372,
+        "ns": 6,
+        "title": "File:Setas amarillas - Suillus Bovinus (15733088972).jpg",
+        "index": 19,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 2984102,
+            "width": 3648,
+            "height": 2736,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Setas_amarillas_-_Suillus_Bovinus_%2815733088972%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Setas_amarillas_-_Suillus_Bovinus_(15733088972).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=75368372",
+            "sha1": "ab16cd3e5a511d7022089f6a16e0605ace05c2aa",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2018-12-27 22:27:45",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Setas amarillas - Suillus Bovinus (15733088972)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Suillus bovinus|Files uploaded by User:Discasto|Flickr images reviewed by FlickreviewR 2|Photographs by Jacinta Lluch Valero|Photos uploaded from Flickr by User:Discasto using a script",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "El genero Suillus forma parte de la familia de los boletos \n<p>Suillus bovinus es menos grande ya que no supera los 8 cm. crece fundamentalmente en bosques de pino. La superficie del sombrero suele presentar una clara viscosidad y su color es de un amarillo\n</p><p>Pinares. Suelos silíceos. Suele salir asociado a GOMPHIDIUS ROSEUS.\n</p>\nExperts say that many poisonous mushrooms,  can be mistaken for edible mushrooms.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2014-11-03 17:15:53",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.flickr.com/photos/70626035@N00/15733088972/\">https://www.flickr.com/photos/70626035@N00/15733088972/</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/70626035@N00\">jacilluch</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "29292678": {
+        "pageid": 29292678,
+        "ns": 6,
+        "title": "File:Suillus bovinus & Gomphidius roseus (アミタケとオウギタケ)篠山市盃ヶ岳 DSCF9456.JPG",
+        "index": 30,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 990964,
+            "width": 2304,
+            "height": 1728,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/4/4c/Suillus_bovinus_%26_Gomphidius_roseus_%28%E3%82%A2%E3%83%9F%E3%82%BF%E3%82%B1%E3%81%A8%E3%82%AA%E3%82%A6%E3%82%AE%E3%82%BF%E3%82%B1%29%E7%AF%A0%E5%B1%B1%E5%B8%82%E7%9B%83%E3%83%B6%E5%B2%B3_DSCF9456.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Suillus_bovinus_%26_Gomphidius_roseus_(%E3%82%A2%E3%83%9F%E3%82%BF%E3%82%B1%E3%81%A8%E3%82%AA%E3%82%A6%E3%82%AE%E3%82%BF%E3%82%B1)%E7%AF%A0%E5%B1%B1%E5%B8%82%E7%9B%83%E3%83%B6%E5%B2%B3_DSCF9456.JPG",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=29292678",
+            "sha1": "b2ab06ca6a8eec3f2b883dc1247ea102c5ab053c",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2013-10-30 12:10:49",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Suillus bovinus & Gomphidius roseus (アミタケとオウギタケ)篠山市盃ヶ岳 DSCF9456",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Gomphidius roseus|Suillus bovinus|Taken with Fujifilm FinePix HS20EXR|Self-published work|Mount Sakazuki (Hyogo)",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Suillus bovinus &amp; Gomphidius roseus\n<p>アミタケとオウギタケ\n</p>\n篠山市盃ヶ岳にて",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2013-10-30 08:52:35",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:%E6%9D%BE%E5%B2%A1%E6%98%8E%E8%8A%B3\" title=\"User:松岡明芳\">松岡明芳</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Gomphidius roseus"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Mount Sakazuki (Hyogo)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Suillus bovinus"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Fujifilm FinePix HS20EXR"
+          }
+        ]
+      },
+      "29292676": {
+        "pageid": 29292676,
+        "ns": 6,
+        "title": "File:Suillus bovinus & Gomphidius roseus (アミタケとオウギタケ)篠山市盃ヶ岳 DSCF9457.JPG",
+        "index": 20,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 912746,
+            "width": 2304,
+            "height": 1728,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/3/3f/Suillus_bovinus_%26_Gomphidius_roseus_%28%E3%82%A2%E3%83%9F%E3%82%BF%E3%82%B1%E3%81%A8%E3%82%AA%E3%82%A6%E3%82%AE%E3%82%BF%E3%82%B1%29%E7%AF%A0%E5%B1%B1%E5%B8%82%E7%9B%83%E3%83%B6%E5%B2%B3_DSCF9457.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Suillus_bovinus_%26_Gomphidius_roseus_(%E3%82%A2%E3%83%9F%E3%82%BF%E3%82%B1%E3%81%A8%E3%82%AA%E3%82%A6%E3%82%AE%E3%82%BF%E3%82%B1)%E7%AF%A0%E5%B1%B1%E5%B8%82%E7%9B%83%E3%83%B6%E5%B2%B3_DSCF9457.JPG",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=29292676",
+            "sha1": "77d430e6699e7522c0702a19b1e1e746a8d35e23",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2013-10-30 12:10:50",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Suillus bovinus & Gomphidius roseus (アミタケとオウギタケ)篠山市盃ヶ岳 DSCF9457",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Gomphidius roseus|Suillus bovinus|Taken with Fujifilm FinePix HS20EXR|Self-published work|Mount Sakazuki (Hyogo)",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Suillus bovinus &amp; Gomphidius roseus\n<p>アミタケとオウギタケ\n</p>\n篠山市盃ヶ岳にて",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2013-10-30 08:52:40",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:%E6%9D%BE%E5%B2%A1%E6%98%8E%E8%8A%B3\" title=\"User:松岡明芳\">松岡明芳</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Gomphidius roseus"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Mount Sakazuki (Hyogo)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Suillus bovinus"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Fujifilm FinePix HS20EXR"
+          }
+        ]
+      },
+      "29292685": {
+        "pageid": 29292685,
+        "ns": 6,
+        "title": "File:Suillus bovinus & Gomphidius roseus (アミタケとオウギタケ)篠山市盃ヶ岳 DSCF9459.JPG",
+        "index": 18,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 948885,
+            "width": 2304,
+            "height": 1728,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/1/1b/Suillus_bovinus_%26_Gomphidius_roseus_%28%E3%82%A2%E3%83%9F%E3%82%BF%E3%82%B1%E3%81%A8%E3%82%AA%E3%82%A6%E3%82%AE%E3%82%BF%E3%82%B1%29%E7%AF%A0%E5%B1%B1%E5%B8%82%E7%9B%83%E3%83%B6%E5%B2%B3_DSCF9459.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Suillus_bovinus_%26_Gomphidius_roseus_(%E3%82%A2%E3%83%9F%E3%82%BF%E3%82%B1%E3%81%A8%E3%82%AA%E3%82%A6%E3%82%AE%E3%82%BF%E3%82%B1)%E7%AF%A0%E5%B1%B1%E5%B8%82%E7%9B%83%E3%83%B6%E5%B2%B3_DSCF9459.JPG",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=29292685",
+            "sha1": "c376a2515c7889059993daca8d768a7ad74f28dc",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2013-10-30 12:10:56",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Suillus bovinus & Gomphidius roseus (アミタケとオウギタケ)篠山市盃ヶ岳 DSCF9459",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Gomphidius roseus|Suillus bovinus|Taken with Fujifilm FinePix HS20EXR|Self-published work|Mount Sakazuki (Hyogo)",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Suillus bovinus &amp; Gomphidius roseus\n<p>アミタケとオウギタケ\n</p>\n篠山市盃ヶ岳にて",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2013-10-30 08:52:59",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:%E6%9D%BE%E5%B2%A1%E6%98%8E%E8%8A%B3\" title=\"User:松岡明芳\">松岡明芳</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Gomphidius roseus"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Mount Sakazuki (Hyogo)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Suillus bovinus"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Fujifilm FinePix HS20EXR"
+          }
+        ]
+      },
+      "93891179": {
+        "pageid": 93891179,
+        "ns": 6,
+        "title": "File:Suillus bovinus (26164077898).jpg",
+        "index": 27,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 920223,
+            "width": 2438,
+            "height": 1648,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Suillus_bovinus_%2826164077898%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Suillus_bovinus_(26164077898).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=93891179",
+            "sha1": "3486532c7a00630415cf8875586b2a5ded2ac0f3",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2020-09-06 15:25:03",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Suillus bovinus (26164077898)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Suillus bovinus|Files uploaded by Josve05a (Len Worthington)|Flickr images reviewed by FlickreviewR 2|Photographs by Len Worthington",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<p>Ainsdale\n</p>\nLancashire",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2004-12-25 21:48",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/lennyworthington/26164077898/\">Suillus bovinus</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/60678622@N04\">Len Worthington</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "97667049": {
+        "pageid": 97667049,
+        "ns": 6,
+        "title": "File:Suillus bovinus (30084106112).jpg",
+        "index": 25,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 105601,
+            "width": 1024,
+            "height": 686,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/c/c2/Suillus_bovinus_%2830084106112%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Suillus_bovinus_(30084106112).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=97667049",
+            "sha1": "c5e3cdf8bc3ad34ad11d55460c4571048800d01f",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2020-12-16 20:21:58",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Suillus bovinus (30084106112)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Suillus bovinus|Fungi in October|Flickr images reviewed by FlickreviewR 2|Photographs by Hans-Günter Wagner",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Suillus bovinus",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2016-10-09 00:05",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/145400091@N04/30084106112/\">Suillus bovinus</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/145400091@N04\">Dr. Hans-Günter Wagner</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "63534118": {
+        "pageid": 63534118,
+        "ns": 6,
+        "title": "File:Suillus bovinus (37103538194).jpg",
+        "index": 5,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 4794896,
+            "width": 5184,
+            "height": 3456,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/5/54/Suillus_bovinus_%2837103538194%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Suillus_bovinus_(37103538194).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=63534118",
+            "sha1": "e7e23d19eb0b94578cd213ba0c72030b146b27e3",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2017-10-22 21:50:18",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Suillus bovinus (37103538194)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Suillus bovinus|Fungal morphology and anatomy|Flickr images reviewed by FlickreviewR|Suillaceae in Solingen|Fungi of Solingen in September|Solingen photographs taken on 2017-09-23|Files with coordinates missing SDC location of creation (51° N, 6° E)|Photographs by Björn Sothmann",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "51.161561",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "6.975375",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Bovine Bolete - Suillus bovinus",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2017-09-23 14:05",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/40948266@N04/37103538194/\">Bovine Bolete - Suillus bovinus</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/40948266@N04\">Björn S...</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-2.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with coordinates missing SDC location of creation (51° N, 6° E)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Flickr images reviewed by FlickreviewR"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungal morphology and anatomy"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi of Solingen in September"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Photographs by Björn Sothmann"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Solingen photographs taken on 2017-09-23"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Suillaceae in Solingen"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Suillus bovinus"
+          }
+        ]
+      },
+      "63534122": {
+        "pageid": 63534122,
+        "ns": 6,
+        "title": "File:Suillus bovinus (37103538294).jpg",
+        "index": 4,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 5722896,
+            "width": 5184,
+            "height": 3456,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/e/ee/Suillus_bovinus_%2837103538294%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Suillus_bovinus_(37103538294).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=63534122",
+            "sha1": "638577154cdf19777ba3f57da558ad6fa8c95a1e",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2017-10-22 21:50:25",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Suillus bovinus (37103538294)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Suillus bovinus|Flickr images reviewed by FlickreviewR|Suillaceae in Solingen|Fungi of Solingen in September|Solingen photographs taken on 2017-09-23|Files with coordinates missing SDC location of creation (51° N, 6° E)|Photographs by Björn Sothmann",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "51.161561",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "6.975375",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Bovine Bolete - Suillus bovinus",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2017-09-23 14:05",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/40948266@N04/37103538294/\">Bovine Bolete - Suillus bovinus</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/40948266@N04\">Björn S...</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-2.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with coordinates missing SDC location of creation (51° N, 6° E)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Flickr images reviewed by FlickreviewR"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi of Solingen in September"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Photographs by Björn Sothmann"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Solingen photographs taken on 2017-09-23"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Suillaceae in Solingen"
+          }
+        ]
+      },
+      "64618644": {
+        "pageid": 64618644,
+        "ns": 6,
+        "title": "File:Suillus bovinus (37679535334).jpg",
+        "index": 7,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 6837802,
+            "width": 5184,
+            "height": 3456,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Suillus_bovinus_%2837679535334%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Suillus_bovinus_(37679535334).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=64618644",
+            "sha1": "dc1389637ca92c6a7e9515b16544540a9b4be36f",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2017-12-05 19:55:23",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Suillus bovinus (37679535334)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Suillus bovinus|Flickr images reviewed by FlickreviewR 2|North Rhine-Westphalia photographs taken on 2017-10-28|Suillaceae in Kreis Wesel|Fungi of Kreis Wesel in October|Files with coordinates missing SDC location of creation (51° N, 6° E)|Photographs by Björn Sothmann",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "51.716691",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "6.552322",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Bovine Bolete - Suillus bovinus",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2017-10-28 13:06",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/40948266@N04/37679535334/\">Bovine Bolete - Suillus bovinus</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/40948266@N04\">Björn S...</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "64618642": {
+        "pageid": 64618642,
+        "ns": 6,
+        "title": "File:Suillus bovinus (38338674816).jpg",
+        "index": 32,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 7302928,
+            "width": 3456,
+            "height": 5184,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/1/15/Suillus_bovinus_%2838338674816%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Suillus_bovinus_(38338674816).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=64618642",
+            "sha1": "aba74eb6577fcb30d1e39cae46148dd0f2cfbe86",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2017-12-05 19:55:20",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Suillus bovinus (38338674816)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Suillus bovinus|Flickr images reviewed by FlickreviewR 2|North Rhine-Westphalia photographs taken on 2017-10-28|Suillaceae in Kreis Wesel|Fungi of Kreis Wesel in October|Files with coordinates missing SDC location of creation (51° N, 6° E)|Photographs by Björn Sothmann|Flickr images missing SDC published in",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "51.716691",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "6.552322",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Bovine Bolete - Suillus bovinus",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2017-10-28 13:07",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/40948266@N04/38338674816/\">Bovine Bolete - Suillus bovinus</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/40948266@N04\">Björn S...</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "3559596": {
+        "pageid": 3559596,
+        "ns": 6,
+        "title": "File:Suillus bovinus - Lindsey.jpg",
+        "index": 26,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 175226,
+            "width": 640,
+            "height": 426,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/c/c2/Suillus_bovinus_-_Lindsey.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Suillus_bovinus_-_Lindsey.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=3559596",
+            "sha1": "04d76835fabf7174323336a3fcd5d6cbdfcd7490",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2008-02-15 15:20:22",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Suillus bovinus - Lindsey",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Suillus bovinus|Taken with Nikon D200|Self-published work|Items with VRTS permission confirmed|Pictures by James Lindsey|Fungi in November|Verified pictures of mushrooms by James K. Lindsey|Belgium photographs taken on 2006-11-21|Suillus in Belgium|Boletales in Commanster",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<p><i><a href=\"//commons.wikimedia.org/wiki/Suillus_bovinus\" title=\"Suillus bovinus\">Suillus bovinus</a></i> from Commanster, Belgium.\n</p>\n<small>The determination of the species shown in this picture has been verified.</small>",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2006-11-21",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"http://popgen.unimaas.nl/~jlindsey/commanster.html\">James Lindsey's Ecology of Commanster Site</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "James Lindsey",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Attribution": {
+                "value": "James Lindsey at <a rel=\"nofollow\" class=\"external text\" href=\"http://popgen.unimaas.nl/~jlindsey/commanster.html\">Ecology of Commanster</a>",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Belgium photographs taken on 2006-11-21"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Boletales in Commanster"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-2.5"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi in November"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Items with VRTS permission confirmed"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Pictures by James Lindsey"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Suillus bovinus"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Suillus in Belgium"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Nikon D200"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Verified pictures of mushrooms by James K. Lindsey"
+          }
+        ]
+      },
+      "9553140": {
+        "pageid": 9553140,
+        "ns": 6,
+        "title": "File:Suillus bovinus 1.jpg",
+        "index": 36,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 2543483,
+            "width": 2151,
+            "height": 1917,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/f/fe/Suillus_bovinus_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Suillus_bovinus_1.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=9553140",
+            "sha1": "6087650a9209c4031a85158d3567c39ee1b65975",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2010-02-23 20:07:18",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Suillus bovinus 1",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Suillus bovinus|Taken with Canon EOS 400D|Self-published work|PD-self|12-th Czech mushroom exhibition (Prague, 2008)|Files with coordinates missing SDC location of creation",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "50.078969",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "14.412994",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<a href=\"https://en.wikipedia.org/wiki/Suillus_bovinus\" class=\"extiw\" title=\"en:Suillus bovinus\">Suillus bovinus </a> on Prague international <a href=\"//commons.wikimedia.org/wiki/Mushrooms\" class=\"mw-redirect\" title=\"Mushrooms\">mushroom</a> exhibition 2008, Czech Republic",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2008-09",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Karelj\" title=\"User:Karelj\">Karelj</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "Public domain",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Public domain",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Copyrighted": {
+                "value": "False",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "pd",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:12-th Czech mushroom exhibition (Prague, 2008)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with coordinates missing SDC location of creation"
+          },
+          {
+            "ns": 14,
+            "title": "Category:PD-self"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Suillus bovinus"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Canon EOS 400D"
+          }
+        ]
+      },
+      "44048026": {
+        "pageid": 44048026,
+        "ns": 6,
+        "title": "File:Suillus bovinus 187483.jpg",
+        "index": 15,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 85943,
+            "width": 747,
+            "height": 497,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Suillus_bovinus_187483.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Suillus_bovinus_187483.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=44048026",
+            "sha1": "3ae1bf51e78092ae7c51b51bc78c53afe7e76ef8",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2015-10-09 05:56:49",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Suillus bovinus 187483",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Suillus bovinus|Images from Mushroom Observer|Files from external sources with reviewed licenses|Fungi in December|Boletales in Slovenia|Cross sections of fungi",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "A bisected fruitbody of the bolete fungus <i>Suillus bovinus</i>.Habitat: Mixed wood side, dominant Pinus nigra, Picea abies, Fagus sylvatica and other hardwoods, with some ground vegetation; almost flat terrain, relatively sunny place, exposed to direct rain, average precipitations ~ 3.000 mm/year, average temperature 8-10 deg C, elevation 370 m (1.200 feet), alpine phytogeographical region.\n<p>Substratum: Soil under Pinus nigra.\n</p><p>Place: Bovec basin, west of golf playground, west of Bovec, East Julian Alps, Posočje, Slovenia EC\n</p>\nComments: Growing solitary, a few fruitbodies in the vicinity. Pileus diameter 6-8 cm (2.3-3 inch). Cap yellow-ochre (oac855), pores and pore surface yellow-ochre (oac847), stipe yellow ochre (oac898), darker at the base (oac700), flesh yellow (oac856), no bruising observed, SP faint ocher (oac855); Spore dimensions: 8.4 (SD = 0.5) x 3.3 (SD = 0.1) micr., Q = 2.51 (SD = 0.16), n = 30. Motic B2-211A, magnification 1.000 x, oil, in water.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2011-12-04",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "This image is <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/image/show_image/187483\">Image Number 187483</a> at <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org\">Mushroom Observer</a>, a source for mycological images.",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "amadej trnkoczy (amadej)",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Boletales in Slovenia"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Cross sections of fungi"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files from external sources with reviewed licenses"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi in December"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Images from Mushroom Observer"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Suillus bovinus"
+          }
+        ]
+      },
+      "140662921": {
+        "pageid": 140662921,
+        "ns": 6,
+        "title": "File:Suillus bovinus 2.jpg",
+        "index": 6,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 3290126,
+            "width": 3024,
+            "height": 4032,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/e/e9/Suillus_bovinus_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Suillus_bovinus_2.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=140662921",
+            "sha1": "26cc6fb7053983dd406595b90c4e6b14cf395a1c",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2023-11-12 18:17:11",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Suillus bovinus 2",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Suillus bovinus|Self-published work|Files with coordinates missing SDC location of creation",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "42.976467",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "-2.433414",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Suillus bovinus 2",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2023-11-12",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Jose_Angel_Urquia_Goitia&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Jose Angel Urquia Goitia (page does not exist)\">Jose Angel Urquia Goitia</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "137541488": {
+        "pageid": 137541488,
+        "ns": 6,
+        "title": "File:Suillus bovinus 239868119.jpg",
+        "index": 39,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1024811,
+            "width": 2048,
+            "height": 1365,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Suillus_bovinus_239868119.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Suillus_bovinus_239868119.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=137541488",
+            "sha1": "67756366025392735b8b8e80ccda8a66b59aad9a",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2023-09-13 19:42:29",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Suillus bovinus 239868119",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Suillus bovinus|Germany photographs taken on 2022-10-23|Suillus in Germany|Media from iNaturalist|Fungi in October|INaturalist images reviewed by iNaturalistReviewBot|Uploaded with iNaturalist2Commons|Suillaceae in North Rhine-Westphalia|Files with coordinates missing SDC location of creation (51° N, 7° E)|Photographs by Björn Sothmann",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "51.774401",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "7.290609",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Bovine Jack (<i>Suillus bovinus</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2022-10-23",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/239868119\">https://www.inaturalist.org/photos/239868119</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/1032700\">bjoerns</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "137541502": {
+        "pageid": 137541502,
+        "ns": 6,
+        "title": "File:Suillus bovinus 239868244.jpg",
+        "index": 37,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 987908,
+            "width": 2048,
+            "height": 1365,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Suillus_bovinus_239868244.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Suillus_bovinus_239868244.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=137541502",
+            "sha1": "664ae61b8206a4bb9a25503680ef9a92d0016ff1",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2023-09-13 19:42:47",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Suillus bovinus 239868244",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Suillus bovinus|Germany photographs taken on 2022-10-23|Suillus in Germany|Media from iNaturalist|Fungi in October|INaturalist images reviewed by iNaturalistReviewBot|Uploaded with iNaturalist2Commons|Suillaceae in North Rhine-Westphalia|Files with coordinates missing SDC location of creation (51° N, 7° E)|Photographs by Björn Sothmann",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "51.774401",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "7.290609",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Bovine Jack (<i>Suillus bovinus</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2022-10-23",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/239868244\">https://www.inaturalist.org/photos/239868244</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/1032700\">bjoerns</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "137541532": {
+        "pageid": 137541532,
+        "ns": 6,
+        "title": "File:Suillus bovinus 239868422.jpg",
+        "index": 16,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 987135,
+            "width": 2048,
+            "height": 1365,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/4/40/Suillus_bovinus_239868422.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Suillus_bovinus_239868422.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=137541532",
+            "sha1": "8e8115aa069d5ce0f268fe2ff2b3ca3cb13cb2dd",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2023-09-13 19:43:13",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Suillus bovinus 239868422",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Fungi of Germany in October|Suillus bovinus|Germany photographs taken on 2022-10-23|Suillus in Germany|Media from iNaturalist|INaturalist images reviewed by iNaturalistReviewBot|Uploaded with iNaturalist2Commons|Suillaceae in North Rhine-Westphalia|Files with coordinates missing SDC location of creation (51° N, 7° E)|Photographs by Björn Sothmann",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "51.774401",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "7.290609",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Bovine Jack (<i>Suillus bovinus</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2022-10-23",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/239868422\">https://www.inaturalist.org/photos/239868422</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/1032700\">bjoerns</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "140662962": {
+        "pageid": 140662962,
+        "ns": 6,
+        "title": "File:Suillus bovinus 3.jpg",
+        "index": 10,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 2737475,
+            "width": 3024,
+            "height": 4032,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/4/49/Suillus_bovinus_3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Suillus_bovinus_3.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=140662962",
+            "sha1": "000fd707a497fc45737d9bd05f1aec6ecebcebe5",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2023-11-12 18:17:53",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Suillus bovinus 3",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Suillus bovinus|Self-published work|Files with coordinates missing SDC location of creation",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "42.976475",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "-2.433408",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Suillus bovinus 3",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2023-11-12",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Jose_Angel_Urquia_Goitia&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Jose Angel Urquia Goitia (page does not exist)\">Jose Angel Urquia Goitia</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "155764547": {
+        "pageid": 155764547,
+        "ns": 6,
+        "title": "File:Suillus bovinus 5.jpg",
+        "index": 8,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 340807,
+            "width": 1385,
+            "height": 1061,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/9/97/Suillus_bovinus_5.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Suillus_bovinus_5.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=155764547",
+            "sha1": "8f7e321a9463baf67e4e000ac223878d6a447824",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2024-11-25 14:06:37",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Suillus bovinus 5",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Suillus bovinus|Media from iNaturalist|INaturalist images reviewed by trusted reviewers|Media from GBIF|INaturalist images missing SDC depicts",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Suillus bovinus",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "27 nov. 2023 · 04:33 CET",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "cropped from <a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/observations/192289931\">https://www.inaturalist.org/observations/192289931</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "kristofz",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "155764629": {
+        "pageid": 155764629,
+        "ns": 6,
+        "title": "File:Suillus bovinus 6.jpg",
+        "index": 13,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1293175,
+            "width": 2048,
+            "height": 1365,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/a/a6/Suillus_bovinus_6.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Suillus_bovinus_6.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=155764629",
+            "sha1": "ff699b1e729ff21c0b22b4ce2bd3d4a1d7f36bc9",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2024-11-25 14:08:27",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Suillus bovinus 6",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Suillus bovinus|Media from iNaturalist|INaturalist images reviewed by iNaturalistReviewBot|Media from GBIF",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Suillus bovinus",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "22 oct. 2023 · 19:22 CEST",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/observations/188543301\">https://www.inaturalist.org/observations/188543301</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "bjoerns",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "155764744": {
+        "pageid": 155764744,
+        "ns": 6,
+        "title": "File:Suillus bovinus 8.jpg",
+        "index": 34,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 626746,
+            "width": 1717,
+            "height": 1138,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/1/1d/Suillus_bovinus_8.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Suillus_bovinus_8.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=155764744",
+            "sha1": "c320a203753d86c4511fb532e9804f22d7485830",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2024-11-25 14:11:24",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Suillus bovinus 8",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Suillus bovinus|Media from iNaturalist|INaturalist images reviewed by trusted reviewers|Media from GBIF",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Suillus bovinus",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "29 oct. 2020 · 09:39 CET",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "cropped from <a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/observations/63752103\">https://www.inaturalist.org/observations/63752103</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "bjoerns",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "41292177": {
+        "pageid": 41292177,
+        "ns": 6,
+        "title": "File:Suillus bovinus NO seig kusopp IMG 4577 ersvika.JPG",
+        "index": 22,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 2522849,
+            "width": 2751,
+            "height": 2183,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/9/99/Suillus_bovinus_NO_seig_kusopp_IMG_4577_ersvika.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Suillus_bovinus_NO_seig_kusopp_IMG_4577_ersvika.JPG",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=41292177",
+            "sha1": "11086be63cf051b9cbd87e16dfd40f31330a4e99",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2015-06-30 18:31:05",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Suillus bovinus NO seig kusopp IMG 4577 ersvika",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Suillus bovinus|Self-published work",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Suillus bovinus in Ersvika, Hurum (Buskerud county, Norway)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2010-08-21 19:09:01",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Bjoertvedt\" title=\"User:Bjoertvedt\">Bjoertvedt</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-4.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Suillus bovinus"
+          }
+        ]
+      },
+      "41292176": {
+        "pageid": 41292176,
+        "ns": 6,
+        "title": "File:Suillus bovinus NO seig kusopp IMG 4581 ersvika.JPG",
+        "index": 11,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 4279925,
+            "width": 3888,
+            "height": 2592,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/6/6e/Suillus_bovinus_NO_seig_kusopp_IMG_4581_ersvika.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Suillus_bovinus_NO_seig_kusopp_IMG_4581_ersvika.JPG",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=41292176",
+            "sha1": "c2f0bf384861467ed0de1d28bbed69f70ef8d8fe",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2015-06-30 18:31:04",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Suillus bovinus NO seig kusopp IMG 4581 ersvika",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Suillus bovinus|Self-published work",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Suillus bovinus in Ersvika, Hurum (Buskerud county, Norway)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2010-08-21 19:09:25",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Bjoertvedt\" title=\"User:Bjoertvedt\">Bjoertvedt</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-4.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Suillus bovinus"
+          }
+        ]
+      },
+      "179381756": {
+        "pageid": 179381756,
+        "ns": 6,
+        "title": "File:Suillus bovinus collection.jpg",
+        "index": 33,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 734967,
+            "width": 2258,
+            "height": 1545,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Suillus_bovinus_collection.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Suillus_bovinus_collection.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=179381756",
+            "sha1": "8a14f05a3b7e5fb7a577ef9ebf376d541753f808",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2025-12-04 08:02:09",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Suillus bovinus collection",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Suillus bovinus",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Suillus bovinus",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2020-09-13T00:00Z",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "cropped from <a rel=\"nofollow\" class=\"external free\" href=\"https://www.gbif.org/fr/occurrence/3441154934\">https://www.gbif.org/fr/occurrence/3441154934</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "Päivi Saikkonen",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "74093354": {
+        "pageid": 74093354,
+        "ns": 6,
+        "title": "File:Suillus bovinus in the Spandauer Forst 02.jpg",
+        "index": 2,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 5960704,
+            "width": 5184,
+            "height": 3888,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Suillus_bovinus_in_the_Spandauer_Forst_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Suillus_bovinus_in_the_Spandauer_Forst_02.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=74093354",
+            "sha1": "5786e912d7754a8da28420f0f0bf85bf206ed4d3",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2018-11-03 13:11:48",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Suillus bovinus in the Spandauer Forst 02",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Suillus bovinus|Self-published work|Photographs by Leonhard Lenz|GPSLeo/maintenance/missing-locations|Fungi of Spandauer Forst",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Kuh-Röhrling im Spandauer Forst.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2017-10-01 14:44:06",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:GPSLeo\" title=\"User:GPSLeo\">Leonhard Lenz</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "74093355": {
+        "pageid": 74093355,
+        "ns": 6,
+        "title": "File:Suillus bovinus in the Spandauer Forst 03.jpg",
+        "index": 38,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 7227392,
+            "width": 5184,
+            "height": 3888,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Suillus_bovinus_in_the_Spandauer_Forst_03.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Suillus_bovinus_in_the_Spandauer_Forst_03.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=74093355",
+            "sha1": "7127a6b0a175ee283877b81049fea5fe87360cc3",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2018-11-03 13:11:48",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Suillus bovinus in the Spandauer Forst 03",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Suillus bovinus|Self-published work|Photographs by Leonhard Lenz|GPSLeo/maintenance/missing-locations|Fungi of Spandauer Forst",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Kuh-Röhrling im Spandauer Forst.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2017-10-01 14:44:38",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:GPSLeo\" title=\"User:GPSLeo\">Leonhard Lenz</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "74093357": {
+        "pageid": 74093357,
+        "ns": 6,
+        "title": "File:Suillus bovinus in the Spandauer Forst 04.jpg",
+        "index": 31,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 5319680,
+            "width": 5184,
+            "height": 3888,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/d/d7/Suillus_bovinus_in_the_Spandauer_Forst_04.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Suillus_bovinus_in_the_Spandauer_Forst_04.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=74093357",
+            "sha1": "cff31d4facbdd046f3ab6685edabf924fe17ce01",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2018-11-03 13:11:52",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Suillus bovinus in the Spandauer Forst 04",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Suillus bovinus|Self-published work|Photographs by Leonhard Lenz|GPSLeo/maintenance/missing-locations|Fungi of Spandauer Forst",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Kuh-Röhrling im Spandauer Forst.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2017-10-01 14:45:06",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:GPSLeo\" title=\"User:GPSLeo\">Leonhard Lenz</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "29292665": {
+        "pageid": 29292665,
+        "ns": 6,
+        "title": "File:Suillus bovinus （アミタケ）盃ヶ岳DSCF9451.JPG",
+        "index": 14,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 930596,
+            "width": 2304,
+            "height": 1728,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/f/fe/Suillus_bovinus_%EF%BC%88%E3%82%A2%E3%83%9F%E3%82%BF%E3%82%B1%EF%BC%89%E7%9B%83%E3%83%B6%E5%B2%B3DSCF9451.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Suillus_bovinus_%EF%BC%88%E3%82%A2%E3%83%9F%E3%82%BF%E3%82%B1%EF%BC%89%E7%9B%83%E3%83%B6%E5%B2%B3DSCF9451.JPG",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=29292665",
+            "sha1": "ed89915a730211f07cc759df02761cab8f8cc9fa",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2013-10-30 12:10:39",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Suillus bovinus （アミタケ）盃ヶ岳DSCF9451",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Suillus bovinus|Taken with Fujifilm FinePix HS20EXR|Self-published work|Mount Sakazuki (Hyogo)",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Suillus bovinus\n<p>アミタケ\n</p>\n篠山市盃ヶ岳にて",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2013-10-30 08:50:30",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:%E6%9D%BE%E5%B2%A1%E6%98%8E%E8%8A%B3\" title=\"User:松岡明芳\">松岡明芳</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Mount Sakazuki (Hyogo)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Suillus bovinus"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Fujifilm FinePix HS20EXR"
+          }
+        ]
+      },
+      "29292662": {
+        "pageid": 29292662,
+        "ns": 6,
+        "title": "File:Suillus bovinus （アミタケ）盃ヶ岳DSCF9452.JPG",
+        "index": 12,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 924993,
+            "width": 2304,
+            "height": 1728,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/3/30/Suillus_bovinus_%EF%BC%88%E3%82%A2%E3%83%9F%E3%82%BF%E3%82%B1%EF%BC%89%E7%9B%83%E3%83%B6%E5%B2%B3DSCF9452.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Suillus_bovinus_%EF%BC%88%E3%82%A2%E3%83%9F%E3%82%BF%E3%82%B1%EF%BC%89%E7%9B%83%E3%83%B6%E5%B2%B3DSCF9452.JPG",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=29292662",
+            "sha1": "c919474d821abdab4607149801a9dddefd99f3a0",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2013-10-30 12:10:39",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Suillus bovinus （アミタケ）盃ヶ岳DSCF9452",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Suillus bovinus|Taken with Fujifilm FinePix HS20EXR|Self-published work|Mount Sakazuki (Hyogo)",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Suillus bovinus\n<p>アミタケ\n</p>\n篠山市盃ヶ岳にて",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2013-10-30 08:50:39",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:%E6%9D%BE%E5%B2%A1%E6%98%8E%E8%8A%B3\" title=\"User:松岡明芳\">松岡明芳</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Mount Sakazuki (Hyogo)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Suillus bovinus"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Fujifilm FinePix HS20EXR"
+          }
+        ]
+      },
+      "29292671": {
+        "pageid": 29292671,
+        "ns": 6,
+        "title": "File:Suillus bovinus （アミタケ）盃ヶ岳 DSCF9454.JPG",
+        "index": 40,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 955888,
+            "width": 2304,
+            "height": 1728,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/1/14/Suillus_bovinus_%EF%BC%88%E3%82%A2%E3%83%9F%E3%82%BF%E3%82%B1%EF%BC%89%E7%9B%83%E3%83%B6%E5%B2%B3_DSCF9454.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Suillus_bovinus_%EF%BC%88%E3%82%A2%E3%83%9F%E3%82%BF%E3%82%B1%EF%BC%89%E7%9B%83%E3%83%B6%E5%B2%B3_DSCF9454.JPG",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=29292671",
+            "sha1": "d1e274493ebde0ba9b55d3965cc51837770ba264",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2013-10-30 12:10:45",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Suillus bovinus （アミタケ）盃ヶ岳 DSCF9454",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Suillus bovinus|Taken with Fujifilm FinePix HS20EXR|Self-published work|Mount Sakazuki (Hyogo)",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Suillus bovinus\n<p>アミタケ\n</p>\n篠山市盃ヶ岳にて",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2013-10-30 08:51:52",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:%E6%9D%BE%E5%B2%A1%E6%98%8E%E8%8A%B3\" title=\"User:松岡明芳\">松岡明芳</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Mount Sakazuki (Hyogo)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Suillus bovinus"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Fujifilm FinePix HS20EXR"
+          }
+        ]
+      },
+      "29292669": {
+        "pageid": 29292669,
+        "ns": 6,
+        "title": "File:Suillus bovinus （アミタケ）盃ヶ岳 DSCF9455.JPG",
+        "index": 9,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 954188,
+            "width": 2304,
+            "height": 1728,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/a/ab/Suillus_bovinus_%EF%BC%88%E3%82%A2%E3%83%9F%E3%82%BF%E3%82%B1%EF%BC%89%E7%9B%83%E3%83%B6%E5%B2%B3_DSCF9455.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Suillus_bovinus_%EF%BC%88%E3%82%A2%E3%83%9F%E3%82%BF%E3%82%B1%EF%BC%89%E7%9B%83%E3%83%B6%E5%B2%B3_DSCF9455.JPG",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=29292669",
+            "sha1": "d171c9b46a968b40c9b525b0601cc073e5d4d96c",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2013-10-30 12:10:44",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Suillus bovinus （アミタケ）盃ヶ岳 DSCF9455",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Suillus bovinus|Taken with Fujifilm FinePix HS20EXR|Self-published work|Mount Sakazuki (Hyogo)",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Suillus bovinus\n<p>アミタケ\n</p>\n篠山市盃ヶ岳にて",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2013-10-30 08:52:05",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:%E6%9D%BE%E5%B2%A1%E6%98%8E%E8%8A%B3\" title=\"User:松岡明芳\">松岡明芳</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Mount Sakazuki (Hyogo)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Suillus bovinus"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Fujifilm FinePix HS20EXR"
+          }
+        ]
+      },
+      "29292684": {
+        "pageid": 29292684,
+        "ns": 6,
+        "title": "File:Suillus bovinus （アミタケ）盃ヶ岳 DSCF9461.JPG",
+        "index": 24,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 953537,
+            "width": 2304,
+            "height": 1728,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Suillus_bovinus_%EF%BC%88%E3%82%A2%E3%83%9F%E3%82%BF%E3%82%B1%EF%BC%89%E7%9B%83%E3%83%B6%E5%B2%B3_DSCF9461.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Suillus_bovinus_%EF%BC%88%E3%82%A2%E3%83%9F%E3%82%BF%E3%82%B1%EF%BC%89%E7%9B%83%E3%83%B6%E5%B2%B3_DSCF9461.JPG",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=29292684",
+            "sha1": "b37473429d975a8fd408b84e6c600dd3982f3624",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2013-10-30 12:10:55",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Suillus bovinus （アミタケ）盃ヶ岳 DSCF9461",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Suillus bovinus|Taken with Fujifilm FinePix HS20EXR|Self-published work|Mount Sakazuki (Hyogo)",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Suillus bovinus\n<p>アミタケ\n</p>\n篠山市盃ヶ岳にて",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2013-10-30 08:53:59",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:%E6%9D%BE%E5%B2%A1%E6%98%8E%E8%8A%B3\" title=\"User:松岡明芳\">松岡明芳</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Mount Sakazuki (Hyogo)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Suillus bovinus"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Fujifilm FinePix HS20EXR"
+          }
+        ]
+      },
+      "29292690": {
+        "pageid": 29292690,
+        "ns": 6,
+        "title": "File:Suillus bovinus （アミタケ）盃ヶ岳 DSCF9462.JPG",
+        "index": 28,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 912966,
+            "width": 2304,
+            "height": 1728,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/b/b2/Suillus_bovinus_%EF%BC%88%E3%82%A2%E3%83%9F%E3%82%BF%E3%82%B1%EF%BC%89%E7%9B%83%E3%83%B6%E5%B2%B3_DSCF9462.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Suillus_bovinus_%EF%BC%88%E3%82%A2%E3%83%9F%E3%82%BF%E3%82%B1%EF%BC%89%E7%9B%83%E3%83%B6%E5%B2%B3_DSCF9462.JPG",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=29292690",
+            "sha1": "d5d834253e3f02dc596ee4bde545b527550aab13",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2013-10-30 12:11:01",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Suillus bovinus （アミタケ）盃ヶ岳 DSCF9462",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Suillus bovinus|Taken with Fujifilm FinePix HS20EXR|Self-published work|Mount Sakazuki (Hyogo)",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Suillus bovinus\n<p>アミタケ\n</p>\n篠山市盃ヶ岳にて",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2013-10-30 08:54:34",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:%E6%9D%BE%E5%B2%A1%E6%98%8E%E8%8A%B3\" title=\"User:松岡明芳\">松岡明芳</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Mount Sakazuki (Hyogo)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Suillus bovinus"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Fujifilm FinePix HS20EXR"
+          }
+        ]
+      }
+    }
+  }
+}

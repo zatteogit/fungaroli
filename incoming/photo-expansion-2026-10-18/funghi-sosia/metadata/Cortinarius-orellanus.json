@@ -1,0 +1,1250 @@
+{
+  "batchcomplete": "",
+  "query": {
+    "pages": {
+      "30973327": {
+        "pageid": 30973327,
+        "ns": 6,
+        "title": "File:2013-10-16 Cortinarius orellanus 1a.jpg",
+        "index": 2,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 2662853,
+            "width": 2100,
+            "height": 2500,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/1/1c/2013-10-16_Cortinarius_orellanus_1a.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:2013-10-16_Cortinarius_orellanus_1a.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=30973327",
+            "sha1": "704cd71c6bc69e0a8e79e466cff014af66035ff9",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2014-02-04 02:20:26",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "2013-10-16 Cortinarius orellanus 1a",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Cortinarius orellanus|Accuracy disputes|Self-published work|Photographs by Andreas Kunze|Bavaria photographs taken on 2013-10-16|Agaricales in Bavaria in October|Cortinarius in Landkreis Donau-Ries|Fungi of Mertinger Forst",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Fool's Webcap (<i>Cortinarius orellanus</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "Taken on 16 October 2013",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Ak_ccm&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Ak ccm (page does not exist)\">Andreas Kunze</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Accuracy disputes"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Agaricales in Bavaria in October"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Bavaria photographs taken on 2013-10-16"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Cortinarius in Landkreis Donau-Ries"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Cortinarius orellanus"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi of Mertinger Forst"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Photographs by Andreas Kunze"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          }
+        ]
+      },
+      "30973326": {
+        "pageid": 30973326,
+        "ns": 6,
+        "title": "File:2013-10-16 Cortinarius orellanus 1b.jpg",
+        "index": 3,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1822242,
+            "width": 2500,
+            "height": 1800,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/0/01/2013-10-16_Cortinarius_orellanus_1b.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:2013-10-16_Cortinarius_orellanus_1b.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=30973326",
+            "sha1": "c31ef25422918c76fe61ec59030fe5d2158ac175",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2014-02-04 02:20:26",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "2013-10-16 Cortinarius orellanus 1b",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Cortinarius orellanus|Self-published work|Photographs by Andreas Kunze|Bavaria photographs taken on 2013-10-16|Agaricales in Bavaria in October|Cortinarius in Landkreis Donau-Ries|Fungi of Mertinger Forst",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Fool's Webcap (<i>Cortinarius orellanus</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "Taken on 16 October 2013",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Ak_ccm&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Ak ccm (page does not exist)\">Andreas Kunze</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Agaricales in Bavaria in October"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Bavaria photographs taken on 2013-10-16"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Cortinarius in Landkreis Donau-Ries"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Cortinarius orellanus"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi of Mertinger Forst"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Photographs by Andreas Kunze"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          }
+        ]
+      },
+      "50141848": {
+        "pageid": 50141848,
+        "ns": 6,
+        "title": "File:Bresadola Cortinarius orellanus.png",
+        "index": 4,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1152681,
+            "width": 1073,
+            "height": 1439,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/e/ea/Bresadola_Cortinarius_orellanus.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Bresadola_Cortinarius_orellanus.png",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=50141848",
+            "sha1": "894a0327cc09ffc9abe72123cf842ec9f698f3bd",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2016-07-14 13:33:34",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Bresadola Cortinarius orellanus",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Cortinarius orellanus|Author died more than 80 years ago public domain images|CC-PD-Mark|Iconographia Mycologica, vol. I-XXVI|PD-old missing SDC copyright status",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/Giacomo_Bresadola\" class=\"mw-redirect\" title=\"Giacomo Bresadola\">Giacomo Bresadola</a>: Cortinarius orellanus",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "1930",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "Giacomo Bresadola : „Iconographia Mycologica, vol. XIII, Editura Società Botanica Italiana, Milano 1930, tab. 649",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/Giacomo_Bresadola\" class=\"mw-redirect\" title=\"Giacomo Bresadola\">Giacomo Bresadola</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "Public domain",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Public domain",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Copyrighted": {
+                "value": "False",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "pd",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Author died more than 80 years ago public domain images"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-PD-Mark"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Cortinarius orellanus"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Iconographia Mycologica, vol. I-XXVI"
+          },
+          {
+            "ns": 14,
+            "title": "Category:PD-old missing SDC copyright status"
+          }
+        ]
+      },
+      "184140164": {
+        "pageid": 184140164,
+        "ns": 6,
+        "title": "File:Cortinarius orellanus.jpg",
+        "index": 5,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 571698,
+            "width": 1600,
+            "height": 1200,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/f/ff/Cortinarius_orellanus.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Cortinarius_orellanus.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=184140164",
+            "sha1": "9a58afe410bc8da4916a4a5e02cd15cd73f3435e",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2026-02-15 19:26:49",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Cortinarius orellanus",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Cortinarius orellanus|Files with coordinates missing SDC location of creation",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "58.469200",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "8.723100",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Cortinarius orellanus",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "13.10.2025",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "artsobservasjoner.no <a rel=\"nofollow\" class=\"external free\" href=\"https://mobil.artsobservasjoner.no/sighting/38860239\">https://mobil.artsobservasjoner.no/sighting/38860239</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "Inger-Lise Fonneland",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-4.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Cortinarius orellanus"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with coordinates missing SDC location of creation"
+          }
+        ]
+      },
+      "31657644": {
+        "pageid": 31657644,
+        "ns": 6,
+        "title": "File:Cortinarius orellanus (1).JPG",
+        "index": 7,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1801217,
+            "width": 2304,
+            "height": 1728,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Cortinarius_orellanus_%281%29.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Cortinarius_orellanus_(1).JPG",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=31657644",
+            "sha1": "adcc31e4b237465e81c2fcc405b6879a07189327",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2014-03-17 09:40:42",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Cortinarius orellanus (1)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Cortinarius orellanus|Taken with Panasonic Lumix DMC-FZ10|Self-published work|Supported by Wikimedia Deutschland|Items with VRTS permission confirmed|Photographs by Thomas Pruß",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<table class=\"layouttemplate plainlinks wm-credits\" cellspacing=\"8\" cellpadding=\"0\" style=\"clear: both; margin: .3em 0; background: var(--background-color-neutral-subtle, #F7F8FF); color: var(--color-base, #202122); border: 2px solid var(--background-color-progressive, #6AC); width: 100%\" lang=\"en\" dir=\"ltr\">\n\n<tbody><tr>\n<td><span class=\"skin-invert\" typeof=\"mw:File\"><span title=\"Wikimedia Deutschland\"><img alt=\"Wikimedia Deutschland\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/Wikimedia_Deutschland-Logo.svg/60px-Wikimedia_Deutschland-Logo.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"60\" height=\"60\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/Wikimedia_Deutschland-Logo.svg/120px-Wikimedia_Deutschland-Logo.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"512\" data-file-height=\"512\"></span></span>\n</td>\n<td style=\"width:100%;text-align:center\"><div>The production, editing or release of this file was supported by the <a href=\"https://de.wikipedia.org/wiki/Wikipedia:Community-Budget\" class=\"extiw\" title=\"de:Wikipedia:Community-Budget\">Community-Budget</a> of <b><a href=\"https://meta.wikimedia.org/wiki/Wikimedia_Deutschland\" class=\"extiw\" title=\"m:Wikimedia Deutschland\">Wikimedia Deutschland</a></b>.<br>\nTo see other files made with the support of Wikimedia Deutschland, please see the category <a href=\"//commons.wikimedia.org/wiki/Category:Supported_by_Wikimedia_Deutschland\" title=\"Category:Supported by Wikimedia Deutschland\">Supported by Wikimedia Deutschland</a>.</div><div style=\"border-top:1px solid #6AC\"><span style=\"font-size:small;line-height:1.4\" class=\"plainlinks noprint\"><a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/ar\" href=\"https://commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/ar\"><bdi class=\"language lang-ar\" lang=\"ar\">العربية</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/bn\" href=\"https://commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/bn\"><bdi class=\"language lang-bn\" lang=\"bn\">বাংলা</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/de\" href=\"https://commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/de\"><bdi class=\"language lang-de\" lang=\"de\">Deutsch</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/en\" href=\"https://commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/en\"><bdi class=\"language lang-en\" lang=\"en\">English</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/eo\" href=\"https://commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/eo\"><bdi class=\"language lang-eo\" lang=\"eo\">Esperanto</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/fr\" href=\"https://commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/fr\"><bdi class=\"language lang-fr\" lang=\"fr\">français</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/hi\" href=\"https://commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/hi\"><bdi class=\"language lang-hi\" lang=\"hi\">हिन्दी</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/hu\" href=\"https://commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/hu\"><bdi class=\"language lang-hu\" lang=\"hu\">magyar</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/id\" href=\"https://commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/id\"><bdi class=\"language lang-id\" lang=\"id\">Bahasa Indonesia</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/it\" href=\"https://commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/it\"><bdi class=\"language lang-it\" lang=\"it\">italiano</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/ja\" href=\"https://commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/ja\"><bdi class=\"language lang-ja\" lang=\"ja\">日本語</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/mk\" href=\"https://commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/mk\"><bdi class=\"language lang-mk\" lang=\"mk\">македонски</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/ml\" href=\"https://commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/ml\"><bdi class=\"language lang-ml\" lang=\"ml\">മലയാളം</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/ms\" href=\"https://commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/ms\"><bdi class=\"language lang-ms\" lang=\"ms\">Bahasa Melayu</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/nl\" href=\"https://commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/nl\"><bdi class=\"language lang-nl\" lang=\"nl\">Nederlands</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/pt\" href=\"https://commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/pt\"><bdi class=\"language lang-pt\" lang=\"pt\">português</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/ro\" href=\"https://commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/ro\"><bdi class=\"language lang-ro\" lang=\"ro\">română</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/ru\" href=\"https://commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/ru\"><bdi class=\"language lang-ru\" lang=\"ru\">русский</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/sl\" href=\"https://commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/sl\"><bdi class=\"language lang-sl\" lang=\"sl\">slovenščina</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/sv\" href=\"https://commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/sv\"><bdi class=\"language lang-sv\" lang=\"sv\">svenska</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/ta\" href=\"https://commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/ta\"><bdi class=\"language lang-ta\" lang=\"ta\">தமிழ்</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/uk\" href=\"https://commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/uk\"><bdi class=\"language lang-uk\" lang=\"uk\">українська</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/zh\" href=\"https://commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/zh\"><bdi class=\"language lang-zh\" lang=\"zh\">中文</bdi></a> <b>∙</b> <small class=\"plainlinks\"><a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/w/index.php?title=Template:Supported_by_Wikimedia_Deutschland/lang&amp;action=edit\" href=\"https://commons.wikimedia.org/w/index.php?title=Template:Supported_by_Wikimedia_Deutschland/lang&amp;action=edit\">+/−</a></small></span></div>\n</td></tr></tbody></table>",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2011-08-21 15:16:07",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "Bilderspende von Thomas Pruß in Kooperation mit dem <a href=\"https://de.wikipedia.org/wiki/Wikipedia:WikiProjekt_Pilze\" class=\"extiw\" title=\"de:Wikipedia:WikiProjekt Pilze\">WikiProjekt Pilze</a> und dem <a href=\"https://de.wikipedia.org/wiki/Wikipedia:Bilderschatz\" class=\"extiw\" title=\"de:Wikipedia:Bilderschatz\">Förderprogramm Bilderschatz</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "Thomas Pruß",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Attribution": {
+                "value": "Thomas Pruß",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Cortinarius orellanus"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Items with VRTS permission confirmed"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Photographs by Thomas Pruß"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Supported by Wikimedia Deutschland"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Panasonic Lumix DMC-FZ10"
+          }
+        ]
+      },
+      "31657660": {
+        "pageid": 31657660,
+        "ns": 6,
+        "title": "File:Cortinarius orellanus (2).JPG",
+        "index": 8,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1381406,
+            "width": 2304,
+            "height": 1728,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/0/0b/Cortinarius_orellanus_%282%29.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Cortinarius_orellanus_(2).JPG",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=31657660",
+            "sha1": "9248ad349166e6c212fc1857696710601ca844d7",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2014-03-17 09:40:56",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Cortinarius orellanus (2)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Cortinarius orellanus|Taken with Panasonic Lumix DMC-FZ10|Self-published work|Supported by Wikimedia Deutschland|Items with VRTS permission confirmed|Photographs by Thomas Pruß",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<table class=\"layouttemplate plainlinks wm-credits\" cellspacing=\"8\" cellpadding=\"0\" style=\"clear: both; margin: .3em 0; background: var(--background-color-neutral-subtle, #F7F8FF); color: var(--color-base, #202122); border: 2px solid var(--background-color-progressive, #6AC); width: 100%\" lang=\"en\" dir=\"ltr\">\n\n<tbody><tr>\n<td><span class=\"skin-invert\" typeof=\"mw:File\"><span title=\"Wikimedia Deutschland\"><img alt=\"Wikimedia Deutschland\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/Wikimedia_Deutschland-Logo.svg/60px-Wikimedia_Deutschland-Logo.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"60\" height=\"60\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/Wikimedia_Deutschland-Logo.svg/120px-Wikimedia_Deutschland-Logo.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"512\" data-file-height=\"512\"></span></span>\n</td>\n<td style=\"width:100%;text-align:center\"><div>The production, editing or release of this file was supported by the <a href=\"https://de.wikipedia.org/wiki/Wikipedia:Community-Budget\" class=\"extiw\" title=\"de:Wikipedia:Community-Budget\">Community-Budget</a> of <b><a href=\"https://meta.wikimedia.org/wiki/Wikimedia_Deutschland\" class=\"extiw\" title=\"m:Wikimedia Deutschland\">Wikimedia Deutschland</a></b>.<br>\nTo see other files made with the support of Wikimedia Deutschland, please see the category <a href=\"//commons.wikimedia.org/wiki/Category:Supported_by_Wikimedia_Deutschland\" title=\"Category:Supported by Wikimedia Deutschland\">Supported by Wikimedia Deutschland</a>.</div><div style=\"border-top:1px solid #6AC\"><span style=\"font-size:small;line-height:1.4\" class=\"plainlinks noprint\"><a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/ar\" href=\"https://commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/ar\"><bdi class=\"language lang-ar\" lang=\"ar\">العربية</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/bn\" href=\"https://commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/bn\"><bdi class=\"language lang-bn\" lang=\"bn\">বাংলা</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/de\" href=\"https://commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/de\"><bdi class=\"language lang-de\" lang=\"de\">Deutsch</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/en\" href=\"https://commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/en\"><bdi class=\"language lang-en\" lang=\"en\">English</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/eo\" href=\"https://commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/eo\"><bdi class=\"language lang-eo\" lang=\"eo\">Esperanto</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/fr\" href=\"https://commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/fr\"><bdi class=\"language lang-fr\" lang=\"fr\">français</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/hi\" href=\"https://commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/hi\"><bdi class=\"language lang-hi\" lang=\"hi\">हिन्दी</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/hu\" href=\"https://commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/hu\"><bdi class=\"language lang-hu\" lang=\"hu\">magyar</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/id\" href=\"https://commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/id\"><bdi class=\"language lang-id\" lang=\"id\">Bahasa Indonesia</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/it\" href=\"https://commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/it\"><bdi class=\"language lang-it\" lang=\"it\">italiano</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/ja\" href=\"https://commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/ja\"><bdi class=\"language lang-ja\" lang=\"ja\">日本語</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/mk\" href=\"https://commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/mk\"><bdi class=\"language lang-mk\" lang=\"mk\">македонски</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/ml\" href=\"https://commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/ml\"><bdi class=\"language lang-ml\" lang=\"ml\">മലയാളം</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/ms\" href=\"https://commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/ms\"><bdi class=\"language lang-ms\" lang=\"ms\">Bahasa Melayu</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/nl\" href=\"https://commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/nl\"><bdi class=\"language lang-nl\" lang=\"nl\">Nederlands</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/pt\" href=\"https://commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/pt\"><bdi class=\"language lang-pt\" lang=\"pt\">português</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/ro\" href=\"https://commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/ro\"><bdi class=\"language lang-ro\" lang=\"ro\">română</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/ru\" href=\"https://commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/ru\"><bdi class=\"language lang-ru\" lang=\"ru\">русский</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/sl\" href=\"https://commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/sl\"><bdi class=\"language lang-sl\" lang=\"sl\">slovenščina</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/sv\" href=\"https://commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/sv\"><bdi class=\"language lang-sv\" lang=\"sv\">svenska</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/ta\" href=\"https://commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/ta\"><bdi class=\"language lang-ta\" lang=\"ta\">தமிழ்</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/uk\" href=\"https://commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/uk\"><bdi class=\"language lang-uk\" lang=\"uk\">українська</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/zh\" href=\"https://commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/zh\"><bdi class=\"language lang-zh\" lang=\"zh\">中文</bdi></a> <b>∙</b> <small class=\"plainlinks\"><a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/w/index.php?title=Template:Supported_by_Wikimedia_Deutschland/lang&amp;action=edit\" href=\"https://commons.wikimedia.org/w/index.php?title=Template:Supported_by_Wikimedia_Deutschland/lang&amp;action=edit\">+/−</a></small></span></div>\n</td></tr></tbody></table>",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2011-08-21 15:16:07",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "Bilderspende von Thomas Pruß in Kooperation mit dem <a href=\"https://de.wikipedia.org/wiki/Wikipedia:WikiProjekt_Pilze\" class=\"extiw\" title=\"de:Wikipedia:WikiProjekt Pilze\">WikiProjekt Pilze</a> und dem <a href=\"https://de.wikipedia.org/wiki/Wikipedia:Bilderschatz\" class=\"extiw\" title=\"de:Wikipedia:Bilderschatz\">Förderprogramm Bilderschatz</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "Thomas Pruß",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Attribution": {
+                "value": "Thomas Pruß",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Cortinarius orellanus"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Items with VRTS permission confirmed"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Photographs by Thomas Pruß"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Supported by Wikimedia Deutschland"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Panasonic Lumix DMC-FZ10"
+          }
+        ]
+      },
+      "31657668": {
+        "pageid": 31657668,
+        "ns": 6,
+        "title": "File:Cortinarius orellanus (3).JPG",
+        "index": 1,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1281002,
+            "width": 2304,
+            "height": 1728,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/0/01/Cortinarius_orellanus_%283%29.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Cortinarius_orellanus_(3).JPG",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=31657668",
+            "sha1": "7b627efd1b3ca7818b451fef1fbadd973b8f5e6b",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2014-03-17 09:41:11",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Cortinarius orellanus (3)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Cortinarius orellanus|Taken with Panasonic Lumix DMC-FZ10|Self-published work|Supported by Wikimedia Deutschland|Items with VRTS permission confirmed|Photographs by Thomas Pruß",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<table class=\"layouttemplate plainlinks wm-credits\" cellspacing=\"8\" cellpadding=\"0\" style=\"clear: both; margin: .3em 0; background: var(--background-color-neutral-subtle, #F7F8FF); color: var(--color-base, #202122); border: 2px solid var(--background-color-progressive, #6AC); width: 100%\" lang=\"en\" dir=\"ltr\">\n\n<tbody><tr>\n<td><span class=\"skin-invert\" typeof=\"mw:File\"><span title=\"Wikimedia Deutschland\"><img alt=\"Wikimedia Deutschland\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/Wikimedia_Deutschland-Logo.svg/60px-Wikimedia_Deutschland-Logo.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"60\" height=\"60\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/Wikimedia_Deutschland-Logo.svg/120px-Wikimedia_Deutschland-Logo.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"512\" data-file-height=\"512\"></span></span>\n</td>\n<td style=\"width:100%;text-align:center\"><div>The production, editing or release of this file was supported by the <a href=\"https://de.wikipedia.org/wiki/Wikipedia:Community-Budget\" class=\"extiw\" title=\"de:Wikipedia:Community-Budget\">Community-Budget</a> of <b><a href=\"https://meta.wikimedia.org/wiki/Wikimedia_Deutschland\" class=\"extiw\" title=\"m:Wikimedia Deutschland\">Wikimedia Deutschland</a></b>.<br>\nTo see other files made with the support of Wikimedia Deutschland, please see the category <a href=\"//commons.wikimedia.org/wiki/Category:Supported_by_Wikimedia_Deutschland\" title=\"Category:Supported by Wikimedia Deutschland\">Supported by Wikimedia Deutschland</a>.</div><div style=\"border-top:1px solid #6AC\"><span style=\"font-size:small;line-height:1.4\" class=\"plainlinks noprint\"><a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/ar\" href=\"https://commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/ar\"><bdi class=\"language lang-ar\" lang=\"ar\">العربية</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/bn\" href=\"https://commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/bn\"><bdi class=\"language lang-bn\" lang=\"bn\">বাংলা</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/de\" href=\"https://commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/de\"><bdi class=\"language lang-de\" lang=\"de\">Deutsch</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/en\" href=\"https://commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/en\"><bdi class=\"language lang-en\" lang=\"en\">English</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/eo\" href=\"https://commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/eo\"><bdi class=\"language lang-eo\" lang=\"eo\">Esperanto</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/fr\" href=\"https://commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/fr\"><bdi class=\"language lang-fr\" lang=\"fr\">français</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/hi\" href=\"https://commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/hi\"><bdi class=\"language lang-hi\" lang=\"hi\">हिन्दी</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/hu\" href=\"https://commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/hu\"><bdi class=\"language lang-hu\" lang=\"hu\">magyar</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/id\" href=\"https://commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/id\"><bdi class=\"language lang-id\" lang=\"id\">Bahasa Indonesia</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/it\" href=\"https://commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/it\"><bdi class=\"language lang-it\" lang=\"it\">italiano</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/ja\" href=\"https://commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/ja\"><bdi class=\"language lang-ja\" lang=\"ja\">日本語</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/mk\" href=\"https://commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/mk\"><bdi class=\"language lang-mk\" lang=\"mk\">македонски</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/ml\" href=\"https://commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/ml\"><bdi class=\"language lang-ml\" lang=\"ml\">മലയാളം</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/ms\" href=\"https://commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/ms\"><bdi class=\"language lang-ms\" lang=\"ms\">Bahasa Melayu</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/nl\" href=\"https://commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/nl\"><bdi class=\"language lang-nl\" lang=\"nl\">Nederlands</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/pt\" href=\"https://commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/pt\"><bdi class=\"language lang-pt\" lang=\"pt\">português</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/ro\" href=\"https://commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/ro\"><bdi class=\"language lang-ro\" lang=\"ro\">română</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/ru\" href=\"https://commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/ru\"><bdi class=\"language lang-ru\" lang=\"ru\">русский</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/sl\" href=\"https://commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/sl\"><bdi class=\"language lang-sl\" lang=\"sl\">slovenščina</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/sv\" href=\"https://commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/sv\"><bdi class=\"language lang-sv\" lang=\"sv\">svenska</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/ta\" href=\"https://commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/ta\"><bdi class=\"language lang-ta\" lang=\"ta\">தமிழ்</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/uk\" href=\"https://commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/uk\"><bdi class=\"language lang-uk\" lang=\"uk\">українська</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/zh\" href=\"https://commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/zh\"><bdi class=\"language lang-zh\" lang=\"zh\">中文</bdi></a> <b>∙</b> <small class=\"plainlinks\"><a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/w/index.php?title=Template:Supported_by_Wikimedia_Deutschland/lang&amp;action=edit\" href=\"https://commons.wikimedia.org/w/index.php?title=Template:Supported_by_Wikimedia_Deutschland/lang&amp;action=edit\">+/−</a></small></span></div>\n</td></tr></tbody></table>",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2011-08-21 15:16:20",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "Bilderspende von Thomas Pruß in Kooperation mit dem <a href=\"https://de.wikipedia.org/wiki/Wikipedia:WikiProjekt_Pilze\" class=\"extiw\" title=\"de:Wikipedia:WikiProjekt Pilze\">WikiProjekt Pilze</a> und dem <a href=\"https://de.wikipedia.org/wiki/Wikipedia:Bilderschatz\" class=\"extiw\" title=\"de:Wikipedia:Bilderschatz\">Förderprogramm Bilderschatz</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "Thomas Pruß",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Attribution": {
+                "value": "Thomas Pruß",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Cortinarius orellanus"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Items with VRTS permission confirmed"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Photographs by Thomas Pruß"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Supported by Wikimedia Deutschland"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Panasonic Lumix DMC-FZ10"
+          }
+        ]
+      },
+      "31657673": {
+        "pageid": 31657673,
+        "ns": 6,
+        "title": "File:Cortinarius orellanus (4).JPG",
+        "index": 6,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1521416,
+            "width": 2304,
+            "height": 1728,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/1/1f/Cortinarius_orellanus_%284%29.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Cortinarius_orellanus_(4).JPG",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=31657673",
+            "sha1": "dc8ee384ab5ea62341887ef1877e1f257f3eec96",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2014-03-17 09:41:27",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Cortinarius orellanus (4)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Cortinarius orellanus|Taken with Panasonic Lumix DMC-FZ10|Self-published work|Supported by Wikimedia Deutschland|Items with VRTS permission confirmed|Photographs by Thomas Pruß",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<table class=\"layouttemplate plainlinks wm-credits\" cellspacing=\"8\" cellpadding=\"0\" style=\"clear: both; margin: .3em 0; background: var(--background-color-neutral-subtle, #F7F8FF); color: var(--color-base, #202122); border: 2px solid var(--background-color-progressive, #6AC); width: 100%\" lang=\"en\" dir=\"ltr\">\n\n<tbody><tr>\n<td><span class=\"skin-invert\" typeof=\"mw:File\"><span title=\"Wikimedia Deutschland\"><img alt=\"Wikimedia Deutschland\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/Wikimedia_Deutschland-Logo.svg/60px-Wikimedia_Deutschland-Logo.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"60\" height=\"60\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/Wikimedia_Deutschland-Logo.svg/120px-Wikimedia_Deutschland-Logo.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"512\" data-file-height=\"512\"></span></span>\n</td>\n<td style=\"width:100%;text-align:center\"><div>The production, editing or release of this file was supported by the <a href=\"https://de.wikipedia.org/wiki/Wikipedia:Community-Budget\" class=\"extiw\" title=\"de:Wikipedia:Community-Budget\">Community-Budget</a> of <b><a href=\"https://meta.wikimedia.org/wiki/Wikimedia_Deutschland\" class=\"extiw\" title=\"m:Wikimedia Deutschland\">Wikimedia Deutschland</a></b>.<br>\nTo see other files made with the support of Wikimedia Deutschland, please see the category <a href=\"//commons.wikimedia.org/wiki/Category:Supported_by_Wikimedia_Deutschland\" title=\"Category:Supported by Wikimedia Deutschland\">Supported by Wikimedia Deutschland</a>.</div><div style=\"border-top:1px solid #6AC\"><span style=\"font-size:small;line-height:1.4\" class=\"plainlinks noprint\"><a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/ar\" href=\"https://commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/ar\"><bdi class=\"language lang-ar\" lang=\"ar\">العربية</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/bn\" href=\"https://commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/bn\"><bdi class=\"language lang-bn\" lang=\"bn\">বাংলা</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/de\" href=\"https://commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/de\"><bdi class=\"language lang-de\" lang=\"de\">Deutsch</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/en\" href=\"https://commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/en\"><bdi class=\"language lang-en\" lang=\"en\">English</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/eo\" href=\"https://commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/eo\"><bdi class=\"language lang-eo\" lang=\"eo\">Esperanto</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/fr\" href=\"https://commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/fr\"><bdi class=\"language lang-fr\" lang=\"fr\">français</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/hi\" href=\"https://commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/hi\"><bdi class=\"language lang-hi\" lang=\"hi\">हिन्दी</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/hu\" href=\"https://commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/hu\"><bdi class=\"language lang-hu\" lang=\"hu\">magyar</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/id\" href=\"https://commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/id\"><bdi class=\"language lang-id\" lang=\"id\">Bahasa Indonesia</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/it\" href=\"https://commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/it\"><bdi class=\"language lang-it\" lang=\"it\">italiano</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/ja\" href=\"https://commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/ja\"><bdi class=\"language lang-ja\" lang=\"ja\">日本語</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/mk\" href=\"https://commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/mk\"><bdi class=\"language lang-mk\" lang=\"mk\">македонски</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/ml\" href=\"https://commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/ml\"><bdi class=\"language lang-ml\" lang=\"ml\">മലയാളം</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/ms\" href=\"https://commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/ms\"><bdi class=\"language lang-ms\" lang=\"ms\">Bahasa Melayu</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/nl\" href=\"https://commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/nl\"><bdi class=\"language lang-nl\" lang=\"nl\">Nederlands</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/pt\" href=\"https://commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/pt\"><bdi class=\"language lang-pt\" lang=\"pt\">português</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/ro\" href=\"https://commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/ro\"><bdi class=\"language lang-ro\" lang=\"ro\">română</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/ru\" href=\"https://commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/ru\"><bdi class=\"language lang-ru\" lang=\"ru\">русский</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/sl\" href=\"https://commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/sl\"><bdi class=\"language lang-sl\" lang=\"sl\">slovenščina</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/sv\" href=\"https://commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/sv\"><bdi class=\"language lang-sv\" lang=\"sv\">svenska</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/ta\" href=\"https://commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/ta\"><bdi class=\"language lang-ta\" lang=\"ta\">தமிழ்</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/uk\" href=\"https://commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/uk\"><bdi class=\"language lang-uk\" lang=\"uk\">українська</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/zh\" href=\"https://commons.wikimedia.org/wiki/Template:Supported_by_Wikimedia_Deutschland/zh\"><bdi class=\"language lang-zh\" lang=\"zh\">中文</bdi></a> <b>∙</b> <small class=\"plainlinks\"><a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/w/index.php?title=Template:Supported_by_Wikimedia_Deutschland/lang&amp;action=edit\" href=\"https://commons.wikimedia.org/w/index.php?title=Template:Supported_by_Wikimedia_Deutschland/lang&amp;action=edit\">+/−</a></small></span></div>\n</td></tr></tbody></table>",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2011-08-21 15:17:20",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "Bilderspende von Thomas Pruß in Kooperation mit dem <a href=\"https://de.wikipedia.org/wiki/Wikipedia:WikiProjekt_Pilze\" class=\"extiw\" title=\"de:Wikipedia:WikiProjekt Pilze\">WikiProjekt Pilze</a> und dem <a href=\"https://de.wikipedia.org/wiki/Wikipedia:Bilderschatz\" class=\"extiw\" title=\"de:Wikipedia:Bilderschatz\">Förderprogramm Bilderschatz</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "Thomas Pruß",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Attribution": {
+                "value": "Thomas Pruß",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Cortinarius orellanus"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Items with VRTS permission confirmed"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Photographs by Thomas Pruß"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Supported by Wikimedia Deutschland"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Panasonic Lumix DMC-FZ10"
+          }
+        ]
+      },
+      "333209": {
+        "pageid": 333209,
+        "ns": 6,
+        "title": "File:Cortinarius orellanus 2.JPG",
+        "index": 10,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 278410,
+            "width": 783,
+            "height": 609,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/b/bc/Cortinarius_orellanus_2.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Cortinarius_orellanus_2.JPG",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=333209",
+            "sha1": "2101dd8da01f043c2b6504cfa440155a961c1e7e",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2005-09-20 20:35:15",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Cortinarius orellanus 2",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Cortinarius orellanus|GFDL|Files with no machine-readable source|License migration completed|Self-published work|Assumed own work",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<p><b>Cortinarius orellanus</b> (mortal)<br>\n</p>\nby <a href=\"//commons.wikimedia.org/wiki/User:Archenzo\" title=\"User:Archenzo\">Archenzo</a> at home in September 2005",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "No machine-readable source provided. Own work assumed (based on copyright claims).",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "No machine-readable author provided. <a href=\"//commons.wikimedia.org/wiki/User:Archenzo\" title=\"User:Archenzo\">Archenzo</a> assumed (based on copyright claims).",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/licenses/by-sa/3.0/",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Assumed own work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0-migrated"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Cortinarius orellanus"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with no machine-readable source"
+          },
+          {
+            "ns": 14,
+            "title": "Category:GFDL"
+          },
+          {
+            "ns": 14,
+            "title": "Category:License migration completed"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          }
+        ]
+      },
+      "333210": {
+        "pageid": 333210,
+        "ns": 6,
+        "title": "File:Cortinarius orellanus sezione.jpg",
+        "index": 9,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 386633,
+            "width": 948,
+            "height": 708,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/4/48/Cortinarius_orellanus_sezione.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Cortinarius_orellanus_sezione.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=333210",
+            "sha1": "c43279f4c1648cf5fda1a0bac21a541dd8cd171e",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2005-09-20 20:36:36",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Cortinarius orellanus sezione",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Cortinarius orellanus|GFDL|Images with coins to indicate scale|Files with no machine-readable author|Files with no machine-readable source|License migration completed|Media missing infobox template|Self-published work|One euro coin used for scale|Images of plants with coins to indicate scale",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/licenses/by-sa/3.0/",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0-migrated"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Cortinarius orellanus"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with no machine-readable author"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with no machine-readable source"
+          },
+          {
+            "ns": 14,
+            "title": "Category:GFDL"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Images of plants with coins to indicate scale"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Images with coins to indicate scale"
+          },
+          {
+            "ns": 14,
+            "title": "Category:License migration completed"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Media missing infobox template"
+          },
+          {
+            "ns": 14,
+            "title": "Category:One euro coin used for scale"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          }
+        ]
+      }
+    }
+  }
+}

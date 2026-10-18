@@ -1,0 +1,722 @@
+[
+  {
+    "id": "pe2-sosia-craterellus-cinereus-inat-450210545",
+    "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/450210545/original.jpg",
+    "status": 200,
+    "headers": {
+      "Last-Modified": "Wed, 13 Nov 2024 21:41:39 GMT",
+      "ETag": "\"4f6da603ce04de096a4d5abdc0a853f5\"",
+      "Content-Type": "image/jpeg",
+      "Content-Length": "392690"
+    },
+    "sha256": "31c99f788af6d733a53c7da32c6cb565be9c0ba9e55d2b72fe5554ca72437d90"
+  },
+  {
+    "id": "pe2-sosia-tricholoma-pardinum-inat-241935341",
+    "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/241935341/original.jpg",
+    "status": 200,
+    "headers": {
+      "Last-Modified": "Sun, 06 Nov 2022 10:07:11 GMT",
+      "ETag": "\"72de8ed77f724d0cf9b4dd0ed8029c67\"",
+      "Content-Type": "image/jpeg",
+      "Content-Length": "1031536"
+    },
+    "sha256": "b7cb9a9ec6bd7553bac3f3f507ae66618dcf4a606d98b141a425e7df5af486ab"
+  },
+  {
+    "id": "pe2-sosia-gyromitra-esculenta-inat-34215523",
+    "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/34215523/original.jpg",
+    "status": 200,
+    "headers": {
+      "Last-Modified": "Mon, 22 Feb 2021 03:09:58 GMT",
+      "ETag": "\"6248071c10345df836448f3fac0f8db3\"",
+      "Content-Type": "image/jpeg",
+      "Content-Length": "2736327"
+    },
+    "sha256": "475c9a15ae6b12f8001a703e63597c36c5d79bd7f3fe23f32de31fe8cae871bd"
+  },
+  {
+    "id": "pe2-sosia-laccaria-amethystina-inat-234651121",
+    "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/234651121/original.jpg",
+    "status": 200,
+    "headers": {
+      "Last-Modified": "Mon, 03 Oct 2022 09:47:19 GMT",
+      "ETag": "\"fba2662d31582fc4b184d7e0c2d752fa\"",
+      "Content-Type": "image/jpeg",
+      "Content-Length": "574027"
+    },
+    "sha256": "b008b30303caf4208797a9d6079a1252b949ca901aff159ec82e63808be53598"
+  },
+  {
+    "id": "pe2-sosia-hypholoma-fasciculare-inat-595482721",
+    "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/595482721/original.jpg",
+    "status": 200,
+    "headers": {
+      "Last-Modified": "Fri, 28 Nov 2025 09:25:28 GMT",
+      "ETag": "\"7fda440a99f378234c419400a81954c0\"",
+      "Content-Type": "image/jpeg",
+      "Content-Length": "2764683"
+    },
+    "sha256": "00c6e607b1903a57603bccfdff6db4dc510e6b6010b827ca767d4fc1e40418bf"
+  },
+  {
+    "id": "pe2-sosia-chlorophyllum-rhacodes-inat-163590155",
+    "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/163590155/original.jpg",
+    "status": 200,
+    "headers": {
+      "Last-Modified": "Fri, 15 Oct 2021 14:39:03 GMT",
+      "ETag": "\"3ea8c1abfb5f1c776a21a3261539d284\"",
+      "Content-Type": "image/jpeg",
+      "Content-Length": "2793026"
+    },
+    "sha256": "b9142cc75c759289637d672d3e1961e8a18b0ee14ac5019339292328b0fc992e"
+  },
+  {
+    "id": "pe2-sosia-caloboletus-calopus-inat-524886022",
+    "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/524886022/original.jpg",
+    "status": 200,
+    "headers": {
+      "Last-Modified": "Sun, 24 Aug 2025 17:24:26 GMT",
+      "ETag": "\"1101d09b6f31def1518ab17c89457ad0\"",
+      "Content-Type": "image/jpeg",
+      "Content-Length": "1538857"
+    },
+    "sha256": "bb87febc4fbe7b7f936accf3618687cc255ffa1019d069ca6ed2f4c89ec071c4"
+  },
+  {
+    "id": "pe2-sosia-lepiota-subincarnata-inat-437569789",
+    "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/437569789/original.jpg",
+    "status": 200,
+    "headers": {
+      "Last-Modified": "Wed, 02 Oct 2024 13:59:06 GMT",
+      "ETag": "\"13a0544488f3dfb0ed7090502abf0b23\"",
+      "Content-Type": "image/jpeg",
+      "Content-Length": "779263"
+    },
+    "sha256": "27a16985ed2f7020f75736d957b47e6afd67490849e14f8f07c9e24af3406de7"
+  },
+  {
+    "id": "pe2-sosia-hygrophoropsis-aurantiaca-inat-307121260",
+    "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/307121260/original.jpg",
+    "status": 200,
+    "headers": {
+      "Last-Modified": "Thu, 17 Aug 2023 11:21:54 GMT",
+      "ETag": "\"0017b292d931a6ac5b7af6b90d5ba63d\"",
+      "Content-Type": "image/jpeg",
+      "Content-Length": "1025719"
+    },
+    "sha256": "35bc46ba26bc64ab2c53111564caef9f492018710832161efa28c4ebc3b669b2"
+  },
+  {
+    "id": "pe2-sosia-gymnopilus-junonius-inat-436581083",
+    "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/436581083/original.jpeg",
+    "status": 200,
+    "headers": {
+      "Content-Length": "834817",
+      "Last-Modified": "Sun, 29 Sep 2024 16:33:15 GMT",
+      "ETag": "\"5331eff936e15c5e025e143dd76830ef\"",
+      "Content-Type": "image/jpeg"
+    },
+    "sha256": "e22395d9e5815d1ff735eb6b6b690c4d4afce1e7088a39b5a52cd2f41a2dbaa9"
+  },
+  {
+    "id": "pe2-sosia-agaricus-xanthodermus-inat-533951090",
+    "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/533951090/original.jpg",
+    "status": 200,
+    "headers": {
+      "Last-Modified": "Wed, 09 Jul 2025 16:08:31 GMT",
+      "ETag": "\"74d9fec02f55658071ba13cf153bfc34\"",
+      "Content-Type": "image/jpeg",
+      "Content-Length": "1454364"
+    },
+    "sha256": "8380318aa9427b6e397245822671bc7eaecda81ab6f02f6435dca2df7c5f57b7"
+  },
+  {
+    "id": "pe2-sosia-imleria-badia-inat-169437924",
+    "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/169437924/original.jpg",
+    "status": 200,
+    "headers": {
+      "Last-Modified": "Fri, 19 Nov 2021 07:13:45 GMT",
+      "ETag": "\"b6fe51a2e3dced14ed0a2c366adec74d\"",
+      "Content-Type": "image/jpeg",
+      "Content-Length": "1370088"
+    },
+    "sha256": "d252d555aaf296eb5607c9de4f58836c078485fb0b0b30623e000516dce93ee9"
+  },
+  {
+    "id": "pe2-sosia-pholiota-squarrosa-inat-335689950",
+    "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/335689950/original.jpg",
+    "status": 200,
+    "headers": {
+      "Last-Modified": "Sat, 18 Nov 2023 13:56:49 GMT",
+      "ETag": "\"bb2172ed82aada366a289fc1c54c84ca\"",
+      "Content-Type": "image/jpeg",
+      "Content-Length": "1394832"
+    },
+    "sha256": "8a4c0a91888fc95b0fb81a63936a84169f9d2e508810f0c965508f2e68b361f2"
+  },
+  {
+    "id": "pe2-sosia-cortinarius-rubellus-inat-93384549",
+    "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/93384549/original.jpg",
+    "status": 200,
+    "headers": {
+      "Last-Modified": "Mon, 01 Mar 2021 15:42:04 GMT",
+      "ETag": "\"a02308a338a0037e94a3946ecb988eee\"",
+      "Content-Type": "image/jpeg",
+      "Content-Length": "1605639"
+    },
+    "sha256": "a3d8acd55235b1fb1cc57a751f6ba7e350f79eb9f5b688331a29906ec116dd96"
+  },
+  {
+    "id": "pe2-sosia-amanita-pantherina-inat-165670015",
+    "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/165670015/original.jpg",
+    "status": 200,
+    "headers": {
+      "Last-Modified": "Mon, 25 Oct 2021 21:13:33 GMT",
+      "ETag": "\"b57cd0b800cc6473e9f10ee10cc9636f\"",
+      "Content-Type": "image/jpeg",
+      "Content-Length": "511869"
+    },
+    "sha256": "7fc1383703c18eae778931492815fbc90107caf024dbca2bb1ef2104e0b9382b"
+  },
+  {
+    "id": "pe2-sosia-hydnum-rufescens-inat-256676705",
+    "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/256676705/original.jpg",
+    "status": 200,
+    "headers": {
+      "Content-Length": "704729",
+      "Last-Modified": "Fri, 17 Feb 2023 22:00:54 GMT",
+      "ETag": "\"89f58c20e8b7499a6b5cdd9a6de9d06e\"",
+      "Content-Type": "image/jpeg"
+    },
+    "sha256": "1fdef31fd351ff2163c28a32abed05f41f1f8f7323344578b465dc69e2765131"
+  },
+  {
+    "id": "pe2-sosia-tricholoma-sciodes-inat-238126689",
+    "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/238126689/original.jpeg",
+    "status": 200,
+    "headers": {
+      "Last-Modified": "Tue, 18 Oct 2022 17:16:40 GMT",
+      "ETag": "\"ba9f6dfe5a8129676ad1302d14f9f8b1\"",
+      "Content-Type": "image/jpeg",
+      "Content-Length": "2235721"
+    },
+    "sha256": "f2e36145806f30d889bbbdb3fccb45c2cf7c09eef475f000ae6554d6f4f6f70c"
+  },
+  {
+    "id": "pe2-sosia-cortinarius-violaceus-inat-312582088",
+    "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/312582088/original.jpeg",
+    "status": 200,
+    "headers": {
+      "Last-Modified": "Mon, 21 Aug 2023 15:31:41 GMT",
+      "ETag": "\"6f874642e3a6e946226395badb9d2a6f\"",
+      "Content-Type": "image/jpeg",
+      "Content-Length": "1700074"
+    },
+    "sha256": "6fc03f876e39c4cc695c6d3409b0828ce64ab80fe5069d9136167b3cf969fbde"
+  },
+  {
+    "id": "pe2-sosia-russula-olivacea-inat-428518035",
+    "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/428518035/original.jpeg",
+    "status": 200,
+    "headers": {
+      "Last-Modified": "Sun, 08 Sep 2024 11:17:32 GMT",
+      "ETag": "\"2c50086be45f7e2e580c6b2775829fe1\"",
+      "Content-Type": "image/jpeg",
+      "Content-Length": "2007989"
+    },
+    "sha256": "bf8ebbf95de20ce1f337912bc33c13e379d90a508795643977e4fe62fcb1a79a"
+  },
+  {
+    "id": "pe2-sosia-cortinarius-traganus-inat-428258889",
+    "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/428258889/original.jpeg",
+    "status": 200,
+    "headers": {
+      "Last-Modified": "Sat, 07 Sep 2024 19:14:43 GMT",
+      "ETag": "\"ef12fdb3d62793aaf2308f04ca90a74c\"",
+      "Content-Type": "image/jpeg",
+      "Content-Length": "1548775"
+    },
+    "sha256": "22c75ae10f0d72ce5859d8ce5277ff471e7cc11f79f2faf89cfaef016973c7e1"
+  },
+  {
+    "id": "pe2-sosia-entoloma-sinuatum-inat-236603260",
+    "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/236603260/original.jpeg",
+    "status": 200,
+    "headers": {
+      "Content-Length": "1500868",
+      "Last-Modified": "Tue, 11 Oct 2022 21:08:59 GMT",
+      "ETag": "\"7b6336e6b278cbe381020f58253e7094\"",
+      "Content-Type": "image/jpeg"
+    },
+    "sha256": "cf2e815f0146812116e6dc1034d4e2a04031cb0170cc355a1951e14b2575c792"
+  },
+  {
+    "id": "pe2-sosia-chalciporus-piperatus-inat-736150953",
+    "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/736150953/original.jpg",
+    "status": 200,
+    "headers": {
+      "Content-Length": "530655",
+      "Last-Modified": "Thu, 17 Sep 2026 22:55:17 GMT",
+      "ETag": "\"3e86e841872a9aaae66e073abf24c860\"",
+      "Content-Type": "image/jpeg"
+    },
+    "sha256": "a25348d3e07e2f00a5a10ad9d2de2c67ef594e2e8afa5f665e1fac0a753fe150"
+  },
+  {
+    "id": "pe2-sosia-amanita-muscaria-inat-432197409",
+    "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/432197409/original.jpeg",
+    "status": 200,
+    "headers": {
+      "Last-Modified": "Thu, 24 Oct 2024 00:58:29 GMT",
+      "ETag": "\"b98217c0b31985ee613d7ba95ce32e2c\"",
+      "Content-Type": "image/jpeg",
+      "Content-Length": "1991235"
+    },
+    "sha256": "78047ca4553b0d51767ed007a5a460e645af1872bb11bb78aba6f456f74f9e69"
+  },
+  {
+    "id": "pe2-sosia-caloboletus-radicans-inat-308547841",
+    "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/308547841/original.jpeg",
+    "status": 200,
+    "headers": {
+      "Last-Modified": "Mon, 28 Aug 2023 20:17:12 GMT",
+      "ETag": "\"fae034f5c4d512449d2129d77446aaf8\"",
+      "Content-Type": "image/jpeg",
+      "Content-Length": "2054043"
+    },
+    "sha256": "0e8126545c07f92e6f1a6a45035a549a494ca5d6b0bc89ff8e1e6641adf827c6"
+  },
+  {
+    "id": "pe2-sosia-galerina-marginata-inat-623864941",
+    "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/623864941/original.jpg",
+    "status": 200,
+    "headers": {
+      "Last-Modified": "Thu, 12 Mar 2026 12:23:00 GMT",
+      "ETag": "\"683c961d36ba157c77ce9230d1555a78\"",
+      "Content-Type": "image/jpeg",
+      "Content-Length": "2098997"
+    },
+    "sha256": "395f1b7e4ed4b9311b82d7355e8d3fbc178ce73272a730c572545da6d9712a7e"
+  },
+  {
+    "id": "pe2-sosia-urnula-craterium-inat-480162801",
+    "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/480162801/original.jpeg",
+    "status": 200,
+    "headers": {
+      "Last-Modified": "Thu, 27 Mar 2025 15:06:42 GMT",
+      "ETag": "\"6c782dbf3cea06905d809d194a936191\"",
+      "Content-Type": "image/jpeg",
+      "Content-Length": "1333622"
+    },
+    "sha256": "738d4e8610b35dfad924e047cf8fda7d61c10ef9c5c8b900d1c3964eb5df68f0"
+  },
+  {
+    "id": "pe2-sosia-suillus-bovinus-inat-152741362",
+    "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/152741362/original.jpeg",
+    "status": 200,
+    "headers": {
+      "Content-Length": "2755525",
+      "Last-Modified": "Mon, 23 Aug 2021 18:07:45 GMT",
+      "ETag": "\"a5eaf01cefd139449fd4c368c51587b0\"",
+      "Content-Type": "image/jpeg"
+    },
+    "sha256": "8a1f217b97543939582080a16f51fa9bbfa6801f3f8bfc54dedaa266bbe24029"
+  },
+  {
+    "id": "pe2-sosia-lepiota-brunneoincarnata-inat-436936263",
+    "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/436936263/original.jpeg",
+    "status": 200,
+    "headers": {
+      "Last-Modified": "Mon, 30 Sep 2024 14:37:37 GMT",
+      "ETag": "\"bebc583f3fbcd7452f1838e6ecce67bd\"",
+      "Content-Type": "image/jpeg",
+      "Content-Length": "856760"
+    },
+    "sha256": "838a3ea3b5ff88e1d6f0c080a5ce130e99f37f2a95f77696b19b1a889d8213f7"
+  },
+  {
+    "id": "pe2-sosia-amanita-crocea-inat-320441139",
+    "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/320441139/original.jpg",
+    "status": 200,
+    "headers": {
+      "Last-Modified": "Sun, 17 Sep 2023 12:08:55 GMT",
+      "ETag": "\"b05bba5a0361d1a871ef6897419a2837\"",
+      "Content-Type": "image/jpeg",
+      "Content-Length": "1030285"
+    },
+    "sha256": "97bda17b282661b41fdf20f548c78de2d76f03f2c3c8b31d0a12c11a55aca370"
+  },
+  {
+    "id": "pe2-sosia-sarcodon-imbricatus-inat-158616705",
+    "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/158616705/original.jpeg",
+    "status": 200,
+    "headers": {
+      "Content-Length": "3045046",
+      "Last-Modified": "Mon, 20 Sep 2021 14:12:22 GMT",
+      "ETag": "\"870a34370e0638071d29194139b62e26\"",
+      "Content-Type": "image/jpeg"
+    },
+    "sha256": "29df3e1b8aef8f7dab0bfad72ec56601962cb41c3ea5c2625ce676d39918140a"
+  },
+  {
+    "id": "pe2-sosia-lepiota-cristata-inat-243690990",
+    "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/243690990/original.jpg",
+    "status": 200,
+    "headers": {
+      "Last-Modified": "Wed, 16 Nov 2022 19:23:28 GMT",
+      "ETag": "\"4d6003538b4f34c7c617627daafa22ba\"",
+      "Content-Type": "image/jpeg",
+      "Content-Length": "882003"
+    },
+    "sha256": "202c8fc5447977c0086e296538993c4b0eda99964f0b75ccf77ee8fcad8b0be5"
+  },
+  {
+    "id": "pe2-sosia-mycena-pura-inat-10951579",
+    "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/10951579/original.jpeg",
+    "status": 200,
+    "headers": {
+      "Content-Length": "2356232",
+      "Last-Modified": "Sat, 20 Feb 2021 01:12:04 GMT",
+      "ETag": "\"1b050a77e64948dc044296dde2cf8a32\"",
+      "Content-Type": "image/jpeg"
+    },
+    "sha256": "415a48ba53e47ee5fc743e641277de4c7dd61c034a372209da7cffa5623d6cae"
+  },
+  {
+    "id": "pe2-sosia-tricholoma-virgatum-inat-322237302",
+    "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/322237302/original.jpg",
+    "status": 200,
+    "headers": {
+      "Content-Length": "897643",
+      "Last-Modified": "Sat, 23 Sep 2023 20:53:29 GMT",
+      "ETag": "\"599bc0d8a9961b1d24bb824c433ca809\"",
+      "Content-Type": "image/jpeg"
+    },
+    "sha256": "a16b954cb1fa35c8db86e7c1308b72be958a09fe1a6d0119bbec1d0cad129331"
+  },
+  {
+    "id": "pe2-sosia-cortinarius-orellanus-inat-139699317",
+    "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/139699317/original.jpeg",
+    "status": 200,
+    "headers": {
+      "Content-Length": "1571864",
+      "Last-Modified": "Sun, 24 Aug 2025 16:28:05 GMT",
+      "ETag": "\"fb595a1fd0357951c9bb2a107fbe2ec6\"",
+      "Content-Type": "image/jpeg"
+    },
+    "sha256": "087969a82589b3e05811d0a1227474b6a5556a5eb845898c8c19917e9a76bb7c"
+  },
+  {
+    "id": "pe2-sosia-russula-heterophylla-inat-116426430",
+    "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/116426430/original.jpeg",
+    "status": 200,
+    "headers": {
+      "Last-Modified": "Thu, 18 Mar 2021 19:10:26 GMT",
+      "ETag": "\"1f3bf4bc5d96d954d51929f8e4f49a9f\"",
+      "Content-Type": "image/jpeg",
+      "Content-Length": "776440"
+    },
+    "sha256": "03335c92f1addfab487df4a4db1db3dbc3728304f5a281a4580a36a98100322b"
+  },
+  {
+    "id": "pe2-sosia-russula-aeruginea-inat-368890252",
+    "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/368890252/original.jpg",
+    "status": 200,
+    "headers": {
+      "Content-Length": "858727",
+      "Last-Modified": "Sun, 21 Apr 2024 14:40:55 GMT",
+      "ETag": "\"37660a6d7a0debdea432382eaa22807d\"",
+      "Content-Type": "image/jpeg"
+    },
+    "sha256": "3c6cb23cec38024986d991aaed0a1d5fbf3fe6daa1fafb41c0842047758ecabd"
+  },
+  {
+    "id": "pe2-sosia-hydnellum-peckii-inat-110612066",
+    "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/110612066/original.jpg",
+    "status": 200,
+    "headers": {
+      "Last-Modified": "Thu, 04 Mar 2021 03:15:39 GMT",
+      "ETag": "\"496a992bcb8fe7d090989b19c8e20f42\"",
+      "Content-Type": "image/jpeg",
+      "Content-Length": "645987"
+    },
+    "sha256": "500bfdc29b8bce3f59642b92674461ae5b0594d43b25ad7512e01feb8ad12ab2"
+  },
+  {
+    "id": "pe2-sosia-tricholoma-equestre-inat-320790488",
+    "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/320790488/original.jpeg",
+    "status": 200,
+    "headers": {
+      "Content-Length": "1534204",
+      "Last-Modified": "Mon, 18 Sep 2023 13:15:59 GMT",
+      "ETag": "\"6069ba0bc4ed94e9e34be1584be06896\"",
+      "Content-Type": "image/jpeg"
+    },
+    "sha256": "c2f8a5e0e674ed7ceb720ba6c3dd29410edc02f76d211e5f233541b38f7a6f9b"
+  },
+  {
+    "id": "pe2-sosia-craterellus-cinereus-inat-29157267",
+    "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/29157267/original.jpeg",
+    "status": 200,
+    "headers": {
+      "Content-Length": "1250868",
+      "Last-Modified": "Sun, 21 Feb 2021 15:25:15 GMT",
+      "ETag": "\"903e81d9d71624bb7af5e5532c5ac0cf\"",
+      "Content-Type": "image/jpeg"
+    },
+    "sha256": "96621f54968f9ed1440c9f87a4e911343e966681b4ccfca8282bc6a5c53e5598"
+  },
+  {
+    "id": "pe2-sosia-tricholoma-pardinum-inat-241935355",
+    "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/241935355/original.jpg",
+    "status": 200,
+    "headers": {
+      "Last-Modified": "Sun, 06 Nov 2022 10:07:16 GMT",
+      "ETag": "\"a69f53a6cb608d7759662183d120e55c\"",
+      "Content-Type": "image/jpeg",
+      "Content-Length": "1144996"
+    },
+    "sha256": "0b594ba937ece76b4bb6456d4f53bdad0cdeb0d81a41da20db0e993ab2f6d2da"
+  },
+  {
+    "id": "pe2-sosia-gyromitra-esculenta-inat-34215868",
+    "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/34215868/original.jpg",
+    "status": 200,
+    "headers": {
+      "Content-Length": "2559876",
+      "Last-Modified": "Mon, 22 Feb 2021 03:14:10 GMT",
+      "ETag": "\"355d7de778225d87f1cb6a9d3bc74836\"",
+      "Content-Type": "image/jpeg"
+    },
+    "sha256": "4c969eec1a45df343bf646b8e30c3ad0b6f00fcc22667813fe31bfc1be4a6caa"
+  },
+  {
+    "id": "pe2-sosia-laccaria-amethystina-inat-307803163",
+    "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/307803163/original.jpeg",
+    "status": 200,
+    "headers": {
+      "Last-Modified": "Sun, 06 Aug 2023 17:50:08 GMT",
+      "ETag": "\"507073f01fe9e05eaf45865ea4e0125b\"",
+      "Content-Type": "image/jpeg",
+      "Content-Length": "1738527"
+    },
+    "sha256": "0bc8f1ca1c36983b7b1fbcc753e4e8a8456c87f93b624150a85bf51afe51f28f"
+  },
+  {
+    "id": "pe2-sosia-hypholoma-fasciculare-inat-595482754",
+    "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/595482754/original.jpg",
+    "status": 200,
+    "headers": {
+      "Last-Modified": "Fri, 28 Nov 2025 09:25:42 GMT",
+      "ETag": "\"6e25d15795fdabbf68e6d2869cb8f1db\"",
+      "Content-Type": "image/jpeg",
+      "Content-Length": "3912318"
+    },
+    "sha256": "becaa74ccb92bebb66c87d2e6777ccd42d200584c34062e4a47ddc61d7541acf"
+  },
+  {
+    "id": "pe2-sosia-chlorophyllum-rhacodes-inat-235045234",
+    "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/235045234/original.jpg",
+    "status": 200,
+    "headers": {
+      "Last-Modified": "Wed, 05 Oct 2022 04:55:00 GMT",
+      "ETag": "\"c2f1596bb033a39a0fa5fd4caa8ab5a8\"",
+      "Content-Type": "image/jpeg",
+      "Content-Length": "834528"
+    },
+    "sha256": "b926272499f630bfd14231448c27e20b85b593eb141a8d7e80a7b487f5913215"
+  },
+  {
+    "id": "pe2-sosia-caloboletus-calopus-inat-524886055",
+    "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/524886055/original.jpg",
+    "status": 200,
+    "headers": {
+      "Last-Modified": "Sun, 24 Aug 2025 17:24:27 GMT",
+      "ETag": "\"6e39f5f3d87bcae6522fb8cd4815a209\"",
+      "Content-Type": "image/jpeg",
+      "Content-Length": "1465636"
+    },
+    "sha256": "77e29e1845765aa0fce0b4658aa8dcaa0732996e126c1e01f527040ddadcad08"
+  },
+  {
+    "id": "pe2-sosia-lepiota-subincarnata-inat-437569793",
+    "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/437569793/original.jpg",
+    "status": 200,
+    "headers": {
+      "Last-Modified": "Wed, 02 Oct 2024 13:59:07 GMT",
+      "ETag": "\"f2b00b73ce68f9273f002948bb3350c7\"",
+      "Content-Type": "image/jpeg",
+      "Content-Length": "724702"
+    },
+    "sha256": "92e8d8ce8b90c1b13711e1040aa4f71c061730bd078be83f363f7a65c36180a9"
+  },
+  {
+    "id": "pe2-sosia-hygrophoropsis-aurantiaca-inat-307121285",
+    "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/307121285/original.jpg",
+    "status": 200,
+    "headers": {
+      "Last-Modified": "Thu, 17 Aug 2023 11:21:56 GMT",
+      "ETag": "\"193bfcd000864c1005cf386f09b2ef5c\"",
+      "Content-Type": "image/jpeg",
+      "Content-Length": "1216424"
+    },
+    "sha256": "c1081926d46a563acaa0f1542440b2ece59acf89902ecd9c7d340add013f98e8"
+  },
+  {
+    "id": "pe2-sosia-gymnopilus-junonius-inat-603484663",
+    "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/603484663/original.jpg",
+    "status": 200,
+    "headers": {
+      "Last-Modified": "Mon, 29 Dec 2025 01:01:14 GMT",
+      "ETag": "\"4cb819978df8b701ad4a314f8d0e935d\"",
+      "Content-Type": "image/jpeg",
+      "Content-Length": "728641"
+    },
+    "sha256": "618107f572afc1b6012ec85241763b6875911b8e23acb61665cc580917342924"
+  },
+  {
+    "id": "pe2-sosia-agaricus-xanthodermus-inat-533951128",
+    "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/533951128/original.jpg",
+    "status": 200,
+    "headers": {
+      "Last-Modified": "Wed, 09 Jul 2025 16:08:36 GMT",
+      "ETag": "\"21422a4de958458d9eba436e0fcf5862\"",
+      "Content-Type": "image/jpeg",
+      "Content-Length": "1462338"
+    },
+    "sha256": "33bea7ed458b9e51b2bca39ea0246741780add6b42c53b4b7249b149b419e1df"
+  },
+  {
+    "id": "pe2-sosia-imleria-badia-inat-169437935",
+    "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/169437935/original.jpg",
+    "status": 200,
+    "headers": {
+      "Last-Modified": "Fri, 19 Nov 2021 07:14:01 GMT",
+      "ETag": "\"a286c85b3e7f3370ffa34840191d5777\"",
+      "Content-Type": "image/jpeg",
+      "Content-Length": "1182729"
+    },
+    "sha256": "2b4b243314306ee96149c8b056570d668b7acd6641b7aa06f0a70ed42526cbcf"
+  },
+  {
+    "id": "pe2-sosia-pholiota-squarrosa-inat-335689983",
+    "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/335689983/original.jpg",
+    "status": 200,
+    "headers": {
+      "Last-Modified": "Sat, 18 Nov 2023 13:57:02 GMT",
+      "ETag": "\"a355b50108db898dd304be772330437c\"",
+      "Content-Type": "image/jpeg",
+      "Content-Length": "982001"
+    },
+    "sha256": "ba7df0a2ed61e2f9efc6fb772915ce35dcf654201d362455c518fe87965ece64"
+  },
+  {
+    "id": "pe2-sosia-cortinarius-rubellus-inat-315854468",
+    "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/315854468/original.jpg",
+    "status": 200,
+    "headers": {
+      "Last-Modified": "Fri, 01 Sep 2023 19:45:15 GMT",
+      "ETag": "\"89da1b586360cc6fb25144c47921e873\"",
+      "Content-Type": "image/jpeg",
+      "Content-Length": "1523546"
+    },
+    "sha256": "2dd0663b1a785faab4fb3d64cec9f9c6c1109a755d46eed3839ae9b1513fce57"
+  },
+  {
+    "id": "pe2-sosia-amanita-pantherina-inat-165670038",
+    "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/165670038/original.jpg",
+    "status": 200,
+    "headers": {
+      "Last-Modified": "Mon, 25 Oct 2021 21:13:39 GMT",
+      "ETag": "\"844c543ee314b2ee4809269f40455267\"",
+      "Content-Type": "image/jpeg",
+      "Content-Length": "436233"
+    },
+    "sha256": "4bbc4bab8f3002518bf036ee2474879fc627fa458b071ec912afcc54f8d7ef5f"
+  },
+  {
+    "id": "pe2-sosia-hydnum-rufescens-inat-315157836",
+    "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/315157836/original.jpg",
+    "status": 200,
+    "headers": {
+      "Content-Length": "982653",
+      "Last-Modified": "Wed, 30 Aug 2023 06:32:04 GMT",
+      "ETag": "\"cc1d314a4598459c70e6b8356846028d\"",
+      "Content-Type": "image/jpeg"
+    },
+    "sha256": "76051e95e222e2b0e4593aa278216ecdd229a493478f82ae2942b8e75eca78d0"
+  },
+  {
+    "id": "pe2-sosia-tricholoma-sciodes-inat-238126814",
+    "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/238126814/original.jpeg",
+    "status": 200,
+    "headers": {
+      "Last-Modified": "Tue, 18 Oct 2022 17:17:18 GMT",
+      "ETag": "\"875365a2f91b76bfa888a67266945ed5\"",
+      "Content-Type": "image/jpeg",
+      "Content-Length": "2031053"
+    },
+    "sha256": "65d626dd9915bff2012c2939b1274a790f5d611eec306ed9ccab225fe3597902"
+  },
+  {
+    "id": "pe2-sosia-cortinarius-violaceus-inat-312582142",
+    "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/312582142/original.jpeg",
+    "status": 200,
+    "headers": {
+      "Last-Modified": "Mon, 21 Aug 2023 15:31:50 GMT",
+      "ETag": "\"757c86c0f7017e2a2cec2d6bbaf4ef54\"",
+      "Content-Type": "image/jpeg",
+      "Content-Length": "1390599"
+    },
+    "sha256": "9db0de8598175756a94c7c22d07e1dc262f7e3213ab5853eb522b17996495980"
+  },
+  {
+    "id": "pe2-sosia-russula-olivacea-inat-428518062",
+    "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/428518062/original.jpeg",
+    "status": 200,
+    "headers": {
+      "Content-Length": "1625455",
+      "Last-Modified": "Sun, 08 Sep 2024 11:17:38 GMT",
+      "ETag": "\"010bd5f2cff6b7c1712fda07374940e4\"",
+      "Content-Type": "image/jpeg"
+    },
+    "sha256": "318c33d76a19226b7d2cce2459a1402e8ea38d4a8ad3f0f8f591ca664f932957"
+  },
+  {
+    "id": "pe2-sosia-cortinarius-traganus-inat-428259073",
+    "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/428259073/original.jpeg",
+    "status": 200,
+    "headers": {
+      "Content-Length": "1981742",
+      "Last-Modified": "Sat, 07 Sep 2024 19:15:10 GMT",
+      "ETag": "\"52b15ef624c7c60972ff0dd372836afa\"",
+      "Content-Type": "image/jpeg"
+    },
+    "sha256": "b05bf719e13f3bb4106eb50dda3f46da09293c7301b306647d3095ef5ed56b04"
+  },
+  {
+    "id": "pe2-sosia-entoloma-sinuatum-inat-236603285",
+    "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/236603285/original.jpeg",
+    "status": 200,
+    "headers": {
+      "Last-Modified": "Tue, 11 Oct 2022 21:09:06 GMT",
+      "ETag": "\"0ed964c62a00c495ba7e86a32f5cdbd6\"",
+      "Content-Type": "image/jpeg",
+      "Content-Length": "1327346"
+    },
+    "sha256": "225aeb3cf647cada5c7ef1d004363f9d2dd27c6d4ffd426a4080d6b5ffe70a89"
+  },
+  {
+    "id": "pe2-sosia-chalciporus-piperatus-inat-736150979",
+    "sourceImage": "https://inaturalist-open-data.s3.amazonaws.com/photos/736150979/original.jpg",
+    "status": 200,
+    "headers": {
+      "Last-Modified": "Thu, 17 Sep 2026 22:55:21 GMT",
+      "ETag": "\"c2698c3966e3e1e866591d090e9141a8\"",
+      "Content-Type": "image/jpeg",
+      "Content-Length": "822424"
+    },
+    "sha256": "4038026ab69349a0e7f3e1163aeae42c2373d04e2bda8de2f67f001671eef9f4"
+  }
+]

@@ -1,0 +1,104 @@
+[
+  {
+    "id": "pe2-main-marasmius-oreades-inat01",
+    "reason": "Soggetti troppo piccoli nel prato per una galleria didattica di dettaglio."
+  },
+  {
+    "id": "pe2-main-marasmius-oreades-inat02",
+    "reason": "Illuminazione notturna e fili d’erba riducono la leggibilità; attendere scatti migliori Commons."
+  },
+  {
+    "id": "pe2-main-pleurotus-cornucopiae-inat01",
+    "reason": "Gruppo molto deteriorato e secco, dettagli poco leggibili; mantenere come candidatura scartata."
+  },
+  {
+    "id": "pe2-main-lactarius-deterrimus-inat01",
+    "reason": "Cappello molto danneggiato e visibilita bassa; mantenuta la seconda osservazione piu leggibile."
+  },
+  {
+    "id": "pe2-main-fistulina-hepatica-inat01",
+    "reason": "Illuminazione fortemente arancione e appiattente, non aggiunge dettaglio affidabile rispetto alla sezione inat02."
+  },
+  {
+    "id": "pe2-main-russula-aurea-inat01",
+    "reason": "Soggetti piccoli sul terreno e dettaglio limitato; preferita vista lamellare inat02."
+  },
+  {
+    "id": "pe2-main-amanita-rubescens-inat01",
+    "reason": "Cappello molto coperto dal terreno e dettaglio insufficiente rispetto alle altre nuove viste."
+  },
+  {
+    "id": "pe2-main-cyclocybe-aegerita-inat02",
+    "reason": "Cappello fortemente screpolato e poco rappresentativo per questa galleria; preferite la vista superiore del gruppo e il dettaglio lamellare."
+  },
+  {
+    "id": "pe2-main-lactarius-deliciosus-q01",
+    "reason": "Descrizione fonte Lactarius deliciosus group; non abbastanza precisa per attribuzione della scheda alla specie."
+  },
+  {
+    "id": "pe2-main-marasmius-oreades-q01",
+    "reason": "Conflitto: categoria Marasmius oreades ma descrizione Tricholoma pardinum. Esclusa."
+  },
+  {
+    "id": "pe2-main-morchella-elata-q01",
+    "reason": "Morchella elata group da Ushuaia in Argentina; esclusa per prudenza rispetto al complesso europeo della scheda."
+  },
+  {
+    "id": "pe2-main-pleurotus-eryngii-q01",
+    "reason": "Provenienza Kazakhstan e attribuzione al complesso eryngii non verificata al livello europeo; preferite due osservazioni research italiane esatte."
+  },
+  {
+    "id": "pe2-main-pleurotus-ostreatus-q01",
+    "reason": "Gruppo molto piccolo nella veduta del tronco; vista ambientale gia meglio rappresentata dalle fotografie esistenti."
+  },
+  {
+    "id": "pe2-main-agaricus-bisporus-q02",
+    "reason": "Stesso soggetto e composizione della q01, immagine ritagliata o quasi identica: nessuna vista complementare nuova."
+  },
+  {
+    "id": "pe2-main-coprinus-comatus-q01",
+    "reason": "Vista laterale ridondante; sostituita dalla q02 con gruppo piu leggibile e maggior dettaglio."
+  },
+  {
+    "id": "pe2-main-marasmius-oreades-q02",
+    "acquired": false,
+    "reason": "Descrizione Tricholoma pardinum in conflitto con categoria Marasmius oreades; esclusa prima della acquisizione."
+  },
+  {
+    "id": "pe2-main-morchella-esculenta-q02",
+    "acquired": false,
+    "reason": "Fonte da Illinois per un complesso tassonomico non approfondito; esclusa prima della acquisizione."
+  },
+  {
+    "id": "pe2-main-lactarius-deliciosus-q02",
+    "acquired": false,
+    "reason": "Fonte da Stati Uniti per il complesso deliciosus, determinazione non approfondita; esclusa prima della acquisizione."
+  },
+  {
+    "id": "pe2-main-lactarius-deterrimus-q02",
+    "acquired": false,
+    "reason": "La fonte descrive parassitismo Hypomyces lateritius e foto ritoccata; esclusa prima della acquisizione come riferimento ordinario."
+  },
+  {
+    "id": "pe2-main-pleurotus-eryngii-q02",
+    "acquired": false,
+    "reason": "La fonte specifica var. ferulae; manca una verifica della applicabilita alla scheda corrente, esclusa prima della acquisizione."
+  },
+  {
+    "id": "pe2-main-fistulina-hepatica-q02",
+    "acquired": false,
+    "reason": "Fonte da West Virginia: attribuzione nordamericana non approfondita rispetto alla specie europea, esclusa prima della acquisizione."
+  },
+  {
+    "id": "pe2-main-pleurotus-ostreatus-q02",
+    "reason": "Vista distante del gruppo sul tronco, ridondante e meno leggibile delle fotografie gia presenti e delle nuove osservazioni italiane."
+  },
+  {
+    "id": "pe2-main-cyclocybe-aegerita-q01",
+    "reason": "Fonte Agrocybe cylindrica: equivalenza con Cyclocybe cylindracea non verificata in registro autorevole accessibile in questa revisione."
+  },
+  {
+    "id": "pe2-main-cyclocybe-aegerita-q02",
+    "reason": "Fonte Agrocybe cylindrica: equivalenza con Cyclocybe cylindracea non verificata in registro autorevole accessibile in questa revisione."
+  }
+]

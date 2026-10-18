@@ -1,0 +1,60 @@
+{
+  "total_results": 1,
+  "page": 1,
+  "per_page": 10,
+  "results": [
+    {
+      "id": 895035,
+      "rank": "species",
+      "rank_level": 10,
+      "iconic_taxon_id": 47170,
+      "ancestor_ids": [
+        48460,
+        47170,
+        47169,
+        492000,
+        50814,
+        1094814,
+        47167,
+        785516,
+        55931,
+        895036,
+        895035
+      ],
+      "is_active": true,
+      "name": "Desarmillaria tabescens",
+      "parent_id": 895036,
+      "ancestry": "48460/47170/47169/492000/50814/1094814/47167/785516/55931/895036",
+      "extinct": false,
+      "provisional": false,
+      "default_photo": {
+        "id": 345654444,
+        "license_code": "cc-by-nc",
+        "attribution": "(c) Nicolò Oppicelli, some rights reserved (CC BY-NC), uploaded by Nicolò Oppicelli",
+        "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/345654444/square.jpg",
+        "original_dimensions": {
+          "height": 1516,
+          "width": 2048
+        },
+        "flags": [],
+        "attribution_name": "Nicolò Oppicelli",
+        "square_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/345654444/square.jpg",
+        "medium_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/345654444/medium.jpg"
+      },
+      "taxon_changes_count": 4,
+      "taxon_schemes_count": 1,
+      "observations_count": 1895,
+      "flag_counts": {
+        "resolved": 1,
+        "unresolved": 0
+      },
+      "current_synonymous_taxon_ids": null,
+      "atlas_id": 31230,
+      "complete_species_count": null,
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Desarmillaria_tabescens",
+      "matched_term": "Armillaria tabescens",
+      "iconic_taxon_name": "Fungi",
+      "preferred_common_name": "ringless honey fungus"
+    }
+  ]
+}

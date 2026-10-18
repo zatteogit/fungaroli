@@ -1,0 +1,139 @@
+[
+  {
+    "target_key": "scilla-silvestre",
+    "latin": "Scilla bifolia L.",
+    "source_taxon": "Scilla bifolia L.",
+    "source_page": "https://dryades.units.it/floritaly/index.php?procedure=taxon_page&tipo=all&id=6817",
+    "source_title": "Scilla bifolia L. - Portale della Flora d'Italia / Portal to the Flora of Italy",
+    "source_heading": "Scilla bifolia L.",
+    "binomial_present_after_diacritics_normalization": true
+  },
+  {
+    "target_key": "narciso-dei-poeti",
+    "latin": "Narcissus poeticus L.",
+    "source_taxon": "Narcissus poëticus L.",
+    "source_page": "https://dryades.units.it/floritaly/index.php?procedure=taxon_page&tipo=all&id=7001",
+    "source_title": "Narcissus poëticus L. - Portale della Flora d'Italia / Portal to the Flora of Italy",
+    "source_heading": "Narcissus poëticus L.",
+    "binomial_present_after_diacritics_normalization": true,
+    "orthography_note": "La fonte scrive Narcissus poëticus, il catalogo Narcissus poeticus: differenza diacritica, non variazione del binomio."
+  },
+  {
+    "target_key": "giglio-martagone",
+    "latin": "Lilium martagon L.",
+    "source_taxon": "Lilium martagon L.",
+    "source_page": "https://dryades.units.it/floritaly/index.php?procedure=taxon_page&tipo=all&id=6806",
+    "source_title": "Lilium martagon L. - Portale della Flora d'Italia / Portal to the Flora of Italy",
+    "source_heading": "Lilium martagon L.",
+    "binomial_present_after_diacritics_normalization": true
+  },
+  {
+    "target_key": "orchide-sambucina",
+    "latin": "Dactylorhiza sambucina (L.) Soó",
+    "source_taxon": "Dactylorhiza sambucina (L.) Soó",
+    "source_page": "https://dryades.units.it/floritaly/index.php?procedure=taxon_page&tipo=all&id=8191",
+    "source_title": "Dactylorhiza sambucina (L.) Soó - Portale della Flora d'Italia / Portal to the Flora of Italy",
+    "source_heading": "Dactylorhiza sambucina (L.) Soó",
+    "binomial_present_after_diacritics_normalization": true
+  },
+  {
+    "target_key": "orchide-maschia",
+    "latin": "Orchis mascula (L.) L.",
+    "source_taxon": "Orchis mascula (L.) L. subsp. mascula",
+    "source_page": "https://dryades.units.it/floritaly/index.php?procedure=taxon_page&tipo=all&id=8181",
+    "source_title": "Orchis mascula (L.) L. subsp. mascula - Portale della Flora d'Italia / Portal to the Flora of Italy",
+    "source_heading": "Orchis mascula (L.) L. subsp. mascula",
+    "binomial_present_after_diacritics_normalization": true
+  },
+  {
+    "target_key": "orchide-purpurea",
+    "latin": "Orchis purpurea Huds.",
+    "source_taxon": "Orchis purpurea Huds.",
+    "source_page": "https://dryades.units.it/floritaly/index.php?procedure=taxon_page&tipo=all&id=8176",
+    "source_title": "Orchis purpurea Huds. - Portale della Flora d'Italia / Portal to the Flora of Italy",
+    "source_heading": "Orchis purpurea Huds.",
+    "binomial_present_after_diacritics_normalization": true
+  },
+  {
+    "target_key": "cefalantera-maggiore",
+    "latin": "Cephalanthera longifolia (L.) Fritsch",
+    "source_taxon": "Cephalanthera longifolia (L.) Fritsch",
+    "source_page": "https://dryades.units.it/floritaly/index.php?procedure=taxon_page&tipo=all&id=8246",
+    "source_title": "Cephalanthera longifolia (L.) Fritsch - Portale della Flora d'Italia / Portal to the Flora of Italy",
+    "source_heading": "Cephalanthera longifolia (L.) Fritsch",
+    "binomial_present_after_diacritics_normalization": true
+  },
+  {
+    "target_key": "genziana-primaticcia",
+    "latin": "Gentiana verna L.",
+    "source_taxon": "Gentiana verna L.",
+    "source_page": "https://dryades.units.it/floritaly/index.php?procedure=taxon_page&tipo=all&id=4030",
+    "source_title": "Gentiana verna L. - Portale della Flora d'Italia / Portal to the Flora of Italy",
+    "source_heading": "Gentiana verna L.",
+    "binomial_present_after_diacritics_normalization": true
+  },
+  {
+    "target_key": "digitale-gialla",
+    "latin": "Digitalis micrantha Roth ex Schweigg.",
+    "source_taxon": "Digitalis micrantha Roth ex Schweigg.",
+    "source_page": "https://dryades.units.it/floritaly/index.php?procedure=taxon_page&tipo=all&id=4859",
+    "source_title": "Digitalis micrantha Roth ex Schweigg. - Portale della Flora d'Italia / Portal to the Flora of Italy",
+    "source_heading": "Digitalis micrantha Roth ex Schweigg.",
+    "binomial_present_after_diacritics_normalization": true
+  },
+  {
+    "target_key": "sorbo domestico",
+    "latin": "Sorbus domestica L.",
+    "source_taxon": "Sorbus domestica L.",
+    "source_page": "https://dryades.units.it/Roma/index.php?id=2177&procedure=taxon_page",
+    "source_title": "Sorbus domestica L. - Portale della Flora di Roma",
+    "source_heading": "Portale della Flora di Roma Sorbus domestica L.",
+    "binomial_present_after_diacritics_normalization": true
+  },
+  {
+    "target_key": "ciliegio",
+    "latin": "Prunus avium (L.) L.",
+    "source_taxon": "Prunus avium (L.) L.",
+    "source_page": "https://dryades.units.it/Roma/index.php?id=2229&procedure=taxon_page",
+    "source_title": "Prunus avium (L.) L. - Portale della Flora di Roma",
+    "source_heading": "Portale della Flora di Roma Prunus avium (L.) L.",
+    "binomial_present_after_diacritics_normalization": true
+  },
+  {
+    "target_key": "noce",
+    "latin": "Juglans regia L.",
+    "source_taxon": "Juglans regia L.",
+    "source_page": "https://dryades.units.it/Roma/index.php?id=242&procedure=taxon_page",
+    "source_title": "Juglans regia L. - Portale della Flora di Roma",
+    "source_heading": "Portale della Flora di Roma Juglans regia L.",
+    "binomial_present_after_diacritics_normalization": true
+  },
+  {
+    "target_key": "robinia",
+    "latin": "Robinia pseudoacacia L.",
+    "source_taxon": "Robinia pseudoacacia L.",
+    "source_page": "https://dryades.units.it/Roma/index.php?id=2331&procedure=taxon_page",
+    "source_title": "Robinia pseudoacacia L. - Portale della Flora di Roma",
+    "source_heading": "Portale della Flora di Roma Robinia pseudoacacia L.",
+    "binomial_present_after_diacritics_normalization": true
+  },
+  {
+    "target_key": "olmo montano",
+    "latin": "Ulmus glabra Huds.",
+    "source_taxon": "Ulmus glabra Huds.",
+    "source_page": "https://dryades.units.it/Roma/index.php?id=279&procedure=taxon_page",
+    "source_title": "Ulmus glabra Huds. - Portale della Flora di Roma",
+    "source_heading": "Portale della Flora di Roma Ulmus glabra Huds.",
+    "binomial_present_after_diacritics_normalization": true
+  },
+  {
+    "target_key": "giglio-rosso",
+    "latin": "Lilium bulbiferum L. subsp. croceum (Chaix) Jan",
+    "source_taxon": "Lilium bulbiferum L. subsp. croceum (Chaix) Jan",
+    "source_page": "https://dryades.units.it/floritaly/index.php?procedure=taxon_page&tipo=all&id=6810",
+    "source_title": "Lilium bulbiferum L. subsp. croceum (Chaix) Jan - Portale della Flora d'Italia / Portal to the Flora of Italy",
+    "source_heading": "Lilium bulbiferum L. subsp. croceum (Chaix) Jan",
+    "binomial_present_after_diacritics_normalization": true,
+    "subspecies_explicit_in_title": true
+  }
+]
