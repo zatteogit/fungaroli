@@ -2742,5 +2742,250 @@
     },
     "state": "pronta da integrare",
     "review": "Hygrophorus grigio ombrellato con umbone distinto da bruno/grigio piani, lamelle crema e gambo macchiato preservati, senza anello/volva/reticolo. Alpha e sei celle verificati."
+  },
+  {
+    "file": "incoming/icone/confronto-combinazioni-2026-10-18-52.png",
+    "sha256": "f7bc52cd1d76b5197d875236dc83c9912e0373d46d432ba6ec503be353bff0d5",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "cells": {
+      "1": [
+        438,
+        74,
+        816,
+        368
+      ],
+      "0": [
+        38,
+        168,
+        408,
+        264
+      ],
+      "4": [
+        436,
+        482,
+        818,
+        776
+      ],
+      "3": [
+        40,
+        564,
+        414,
+        664
+      ],
+      "7": [
+        446,
+        848,
+        808,
+        1198
+      ],
+      "6": [
+        44,
+        942,
+        410,
+        1084
+      ]
+    },
+    "state": "pronta da integrare",
+    "review": "Marzuolo bianco/nero piano con lamelle chiare; Lactarius deliciosus verde convesso con chiazze arancio, lamelle arancio e gambo arancio macchiato. Senza anello/volva/reticolo. Alpha e sei celle verificati."
+  },
+  {
+    "file": "incoming/icone/confronto-combinazioni-2026-10-18-53.png",
+    "sha256": "298023a8ae9a3d12e043914d6a6fc26b4969a672feec11a14bbb045101950d3f",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "cells": {
+      "1": [
+        466,
+        80,
+        790,
+        386
+      ],
+      "0": [
+        60,
+        156,
+        398,
+        318
+      ],
+      "4": [
+        464,
+        480,
+        792,
+        790
+      ],
+      "3": [
+        60,
+        554,
+        400,
+        716
+      ],
+      "7": [
+        494,
+        878,
+        758,
+        1190
+      ],
+      "6": [
+        74,
+        948,
+        384,
+        1100
+      ]
+    },
+    "state": "pronta da integrare",
+    "review": "Lattario degli abeti giallo/verde convesso con chiazze, lamelle e gambo arancio liscio; Marasmius bruno convesso con lamelle chiare e gambo sottile. Nessun anello/volva/reticolo. Alpha e sei celle verificati."
+  },
+  {
+    "file": "incoming/icone/confronto-combinazioni-2026-10-18-54.png",
+    "sha256": "69a31e18b4e3d135f18333313ea4fc8ad1e1e20e0a7e0186fb7597c7c8a5afd1",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "cells": {
+      "1": [
+        482,
+        54,
+        772,
+        392
+      ],
+      "0": [
+        64,
+        130,
+        384,
+        320
+      ],
+      "4": [
+        466,
+        474,
+        802,
+        790
+      ],
+      "3": [
+        40,
+        538,
+        424,
+        710
+      ],
+      "7": [
+        470,
+        868,
+        804,
+        1182
+      ],
+      "6": [
+        42,
+        928,
+        424,
+        1102
+      ]
+    },
+    "state": "pronta da integrare",
+    "review": "Pinophilus bruno emisferico con pori gialli e reticolo superiore; eryngii bianco/crema a imbuto con lamelle decorrenti e gambo centrale. Nessun anello/volva aggiunto. Alpha e sei celle verificati."
+  },
+  {
+    "file": "incoming/icone/confronto-combinazioni-2026-10-18-55.png",
+    "sha256": "251b90ee8baf2c0d0cb67d4934ada4568a52a791a7dd90c67d73e80e9d1b0bee",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "cells": {
+      "1": [
+        474,
+        70,
+        812,
+        392
+      ],
+      "0": [
+        56,
+        166,
+        418,
+        318
+      ],
+      "4": [
+        468,
+        504,
+        818,
+        734
+      ],
+      "3": [
+        54,
+        524,
+        418,
+        688
+      ],
+      "7": [
+        470,
+        894,
+        824,
+        1126
+      ],
+      "6": [
+        54,
+        914,
+        420,
+        1080
+      ]
+    },
+    "state": "pronta da integrare",
+    "review": "Eryngii grigio imbuto con gambo centrale, ostreatus bianco/bruno imbuto con gambo laterale corto e lamelle decorrenti; senza anello/volva/reticolo. Alpha e sei celle verificati."
+  },
+  {
+    "file": "incoming/icone/confronto-combinazioni-2026-10-18-56.png",
+    "sha256": "a9a72012b5240d5e6e00339894945c27442b99b5b93145b09dd20ca283851252",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "cells": {
+      "1": [
+        478,
+        106,
+        794,
+        338
+      ],
+      "0": [
+        84,
+        124,
+        410,
+        332
+      ],
+      "4": [
+        490,
+        440,
+        764,
+        794
+      ],
+      "3": [
+        70,
+        502,
+        408,
+        686
+      ],
+      "7": [
+        476,
+        854,
+        804,
+        1176
+      ],
+      "6": [
+        70,
+        908,
+        410,
+        1062
+      ]
+    },
+    "state": "pronta da integrare",
+    "review": "Ostreatus crema imbuto laterale, procera bruno emisferico con squame/anello e gambo fasciato; Pseudocraterellus bruno trombetta aperta senza lamelle vere. Alpha e sei celle verificati."
   }
 ]
