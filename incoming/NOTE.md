@@ -34,3 +34,7 @@ Controllo visivo su forme, colori, anello/volva/reticolo e caratteristiche da no
 Licenza delle illustrazioni: CC BY-SA 4.0, stesso regime delle icone approvate. Il modello è registrato come image_gen integrato: l’identificatore specifico non è esposto.
 
 L’import nell’app resta un passaggio separato, usando `python3 tools/import_trait_icons.py <cartella incoming> --stato`, poi rapporto degli asset e controlli mirati. Le tavole marcate «da rivedere» non vanno importate.
+
+## Revisione semantica finale
+
+Coda completata: 193 combinazioni e sei forme, più quattro sostituzioni delle vecchie icone rosa/violetto del gruppo virescens. Tutti i nuovi raster visionati grandi e a 64/72 px. Due errori ereditati dai riferimenti/lotto iniziale sono stati corretti: Tylopilus crema+piano e mosaico delle alternative rosa/violetto di cyanoxantha. Le bozze e le vecchie approvazioni superate sono bloccate. Vedi `produzione-2026-10-18/REVISIONE-SEMANTICA.md` per prove, fonti e limiti. Importare solo con `--stato`: 402 disegni pronti distinti, non l’intero manifest storico.

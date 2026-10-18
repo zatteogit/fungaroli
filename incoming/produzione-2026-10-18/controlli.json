@@ -291,7 +291,15 @@
       ]
     },
     "state": "pronta da integrare",
-    "review": "Bruno corretto; riferimenti crema emisferico/piano verificati, anello e volva preservati."
+    "review": "Bruno corretto; riferimenti crema emisferico/piano verificati, anello e volva preservati.",
+    "ui_review": {
+      "sizes_px": [
+        64,
+        72
+      ],
+      "result": "Visione diretta delle due icone per variante superata con i limiti descritti in REVISIONE-SEMANTICA.md. Correzioni virescens recepite; nessuna identificazione certificata.",
+      "contact_sheets": "audit-ui-64/72-1..7.png; audit-ui-revisioni-64.png"
+    }
   },
   {
     "file": "incoming/icone/confronto-combinazioni-2026-10-18-02.png",
@@ -340,7 +348,15 @@
       ]
     },
     "state": "pronta da integrare",
-    "review": "Forme conico/piano, rosso e bruno distinti, lamelle brune, gambo crema senza anello, volva o reticolo. Alpha e sei celle verificati."
+    "review": "Forme conico/piano, rosso e bruno distinti, lamelle brune, gambo crema senza anello, volva o reticolo. Alpha e sei celle verificati.",
+    "ui_review": {
+      "sizes_px": [
+        64,
+        72
+      ],
+      "result": "Visione diretta delle due icone per variante superata con i limiti descritti in REVISIONE-SEMANTICA.md. Correzioni virescens recepite; nessuna identificazione certificata.",
+      "contact_sheets": "audit-ui-64/72-1..7.png; audit-ui-revisioni-64.png"
+    }
   },
   {
     "file": "incoming/icone/confronto-combinazioni-2026-10-18-03.png",
@@ -389,7 +405,15 @@
       ]
     },
     "state": "pronta da integrare",
-    "review": "Convesso rosso/bruno e piano bruno coerenti; lamelle brune e gambo crema, nessun anello, volva o reticolo. Alpha e sei celle verificati."
+    "review": "Convesso rosso/bruno e piano bruno coerenti; lamelle brune e gambo crema, nessun anello, volva o reticolo. Alpha e sei celle verificati.",
+    "ui_review": {
+      "sizes_px": [
+        64,
+        72
+      ],
+      "result": "Visione diretta delle due icone per variante superata con i limiti descritti in REVISIONE-SEMANTICA.md. Correzioni virescens recepite; nessuna identificazione certificata.",
+      "contact_sheets": "audit-ui-64/72-1..7.png; audit-ui-revisioni-64.png"
+    }
   },
   {
     "file": "incoming/icone/confronto-combinazioni-2026-10-18-04.png",
@@ -438,7 +462,15 @@
       ]
     },
     "state": "pronta da integrare",
-    "review": "Cortinario rosso senza anello; Galerina bruna/gialla con anello visibile, nessuna volva o reticolo. Piano coerente con riferimento approvato. Alpha e sei celle verificati."
+    "review": "Cortinario rosso senza anello; Galerina bruna/gialla con anello visibile, nessuna volva o reticolo. Piano coerente con riferimento approvato. Alpha e sei celle verificati.",
+    "ui_review": {
+      "sizes_px": [
+        64,
+        72
+      ],
+      "result": "Visione diretta delle due icone per variante superata con i limiti descritti in REVISIONE-SEMANTICA.md. Correzioni virescens recepite; nessuna identificazione certificata.",
+      "contact_sheets": "audit-ui-64/72-1..7.png; audit-ui-revisioni-64.png"
+    }
   },
   {
     "file": "incoming/icone/confronto-combinazioni-2026-10-18-05.png",
@@ -487,7 +519,15 @@
       ]
     },
     "state": "pronta da integrare",
-    "review": "Tre emisferici con lamelle crema, squame piccole e gambo fasciato preservati. Cappelli bruno/crema/rosso distinti, nessun anello o volva aggiunto; alpha e celle verificati."
+    "review": "Tre emisferici con lamelle crema, squame piccole e gambo fasciato preservati. Cappelli bruno/crema/rosso distinti, nessun anello o volva aggiunto; alpha e celle verificati.",
+    "ui_review": {
+      "sizes_px": [
+        64,
+        72
+      ],
+      "result": "Visione diretta delle due icone per variante superata con i limiti descritti in REVISIONE-SEMANTICA.md. Correzioni virescens recepite; nessuna identificazione certificata.",
+      "contact_sheets": "audit-ui-64/72-1..7.png; audit-ui-revisioni-64.png"
+    }
   },
   {
     "file": "incoming/icone/confronto-combinazioni-2026-10-18-06.png",
@@ -536,7 +576,15 @@
       ]
     },
     "state": "pronta da integrare",
-    "review": "Tre ombrellati con umbone distinto, palette bruno/crema/rosso, squame, gambo fasciato e lamelle crema preservati. Nessun anello o volva aggiunto; alpha e sei celle verificati."
+    "review": "Tre ombrellati con umbone distinto, palette bruno/crema/rosso, squame, gambo fasciato e lamelle crema preservati. Nessun anello o volva aggiunto; alpha e sei celle verificati.",
+    "ui_review": {
+      "sizes_px": [
+        64,
+        72
+      ],
+      "result": "Visione diretta delle due icone per variante superata con i limiti descritti in REVISIONE-SEMANTICA.md. Correzioni virescens recepite; nessuna identificazione certificata.",
+      "contact_sheets": "audit-ui-64/72-1..7.png; audit-ui-revisioni-64.png"
+    }
   },
   {
     "file": "incoming/icone/confronto-combinazioni-2026-10-18-07.png",
@@ -585,7 +633,15 @@
       ]
     },
     "state": "pronta da integrare",
-    "review": "Tre cappelli piani privi di umbone, colori bruno/crema/rosso e piccole squame; lamelle crema e gambo fasciato preservati. Nessun anello o volva aggiunto. Alpha e sei celle verificati."
+    "review": "Tre cappelli piani privi di umbone, colori bruno/crema/rosso e piccole squame; lamelle crema e gambo fasciato preservati. Nessun anello o volva aggiunto. Alpha e sei celle verificati.",
+    "ui_review": {
+      "sizes_px": [
+        64,
+        72
+      ],
+      "result": "Visione diretta delle due icone per variante superata con i limiti descritti in REVISIONE-SEMANTICA.md. Correzioni virescens recepite; nessuna identificazione certificata.",
+      "contact_sheets": "audit-ui-64/72-1..7.png; audit-ui-revisioni-64.png"
+    }
   },
   {
     "file": "incoming/icone/confronto-combinazioni-2026-10-18-08.png",
@@ -634,7 +690,15 @@
       ]
     },
     "state": "pronta da integrare",
-    "review": "Lepiota subincarnata con squame e macchie sul gambo, prive di fasce; ombrellati con umbone e piano senza umbone. Colori bruno/crema, lamelle chiare e nessun anello o volva. Alpha e sei celle verificati."
+    "review": "Lepiota subincarnata con squame e macchie sul gambo, prive di fasce; ombrellati con umbone e piano senza umbone. Colori bruno/crema, lamelle chiare e nessun anello o volva. Alpha e sei celle verificati.",
+    "ui_review": {
+      "sizes_px": [
+        64,
+        72
+      ],
+      "result": "Visione diretta delle due icone per variante superata con i limiti descritti in REVISIONE-SEMANTICA.md. Correzioni virescens recepite; nessuna identificazione certificata.",
+      "contact_sheets": "audit-ui-64/72-1..7.png; audit-ui-revisioni-64.png"
+    }
   },
   {
     "file": "incoming/icone/confronto-combinazioni-2026-10-18-09.png",
@@ -683,7 +747,15 @@
       ]
     },
     "state": "pronta da integrare",
-    "review": "Lepiota crema piano con macchie e senza anello; Agaricus bruno/crema emisferici, lamelle rosa e anello preservati senza volva. Alpha e sei celle verificati."
+    "review": "Lepiota crema piano con macchie e senza anello; Agaricus bruno/crema emisferici, lamelle rosa e anello preservati senza volva. Alpha e sei celle verificati.",
+    "ui_review": {
+      "sizes_px": [
+        64,
+        72
+      ],
+      "result": "Visione diretta delle due icone per variante superata con i limiti descritti in REVISIONE-SEMANTICA.md. Correzioni virescens recepite; nessuna identificazione certificata.",
+      "contact_sheets": "audit-ui-64/72-1..7.png; audit-ui-revisioni-64.png"
+    }
   },
   {
     "file": "incoming/icone/confronto-combinazioni-2026-10-18-10.png",
@@ -732,7 +804,15 @@
       ]
     },
     "state": "pronta da integrare",
-    "review": "Agaricus emisferici giallo/grigio e piano bruno con lamelle rosa e anello; senza volva o reticolo, cappelli lisci e gambi bianchi preservati. Alpha e sei celle verificati."
+    "review": "Agaricus emisferici giallo/grigio e piano bruno con lamelle rosa e anello; senza volva o reticolo, cappelli lisci e gambi bianchi preservati. Alpha e sei celle verificati.",
+    "ui_review": {
+      "sizes_px": [
+        64,
+        72
+      ],
+      "result": "Visione diretta delle due icone per variante superata con i limiti descritti in REVISIONE-SEMANTICA.md. Correzioni virescens recepite; nessuna identificazione certificata.",
+      "contact_sheets": "audit-ui-64/72-1..7.png; audit-ui-revisioni-64.png"
+    }
   },
   {
     "file": "incoming/icone/confronto-combinazioni-2026-10-18-11.png",
@@ -781,7 +861,15 @@
       ]
     },
     "state": "pronta da integrare",
-    "review": "Agaricus piani crema/giallo/grigio con lamelle rosa, anello e gambi bianchi invariati. Nessuna volva, reticolo o squame. Alpha e sei celle verificati."
+    "review": "Agaricus piani crema/giallo/grigio con lamelle rosa, anello e gambi bianchi invariati. Nessuna volva, reticolo o squame. Alpha e sei celle verificati.",
+    "ui_review": {
+      "sizes_px": [
+        64,
+        72
+      ],
+      "result": "Visione diretta delle due icone per variante superata con i limiti descritti in REVISIONE-SEMANTICA.md. Correzioni virescens recepite; nessuna identificazione certificata.",
+      "contact_sheets": "audit-ui-64/72-1..7.png; audit-ui-revisioni-64.png"
+    }
   },
   {
     "file": "incoming/icone/confronto-combinazioni-2026-10-18-12.png",
@@ -830,7 +918,15 @@
       ]
     },
     "state": "pronta da integrare",
-    "review": "Crocea gialla emisferica/piana senza anello, con gambo fasciato e volva a sacco; muscaria arancio emisferica con verruche, anello e resti basali. Lamelle bianche, alpha e sei celle verificati."
+    "review": "Crocea gialla emisferica/piana senza anello, con gambo fasciato e volva a sacco; muscaria arancio emisferica con verruche, anello e resti basali. Lamelle bianche, alpha e sei celle verificati.",
+    "ui_review": {
+      "sizes_px": [
+        64,
+        72
+      ],
+      "result": "Visione diretta delle due icone per variante superata con i limiti descritti in REVISIONE-SEMANTICA.md. Correzioni virescens recepite; nessuna identificazione certificata.",
+      "contact_sheets": "audit-ui-64/72-1..7.png; audit-ui-revisioni-64.png"
+    }
   },
   {
     "file": "incoming/icone/confronto-combinazioni-2026-10-18-13.png",
@@ -879,7 +975,15 @@
       ]
     },
     "state": "pronta da integrare",
-    "review": "Muscaria gialla emisferica e arancio/gialla piane, verruche e lamelle bianche, anello e resti basali preservati. Alpha e sei celle verificati."
+    "review": "Muscaria gialla emisferica e arancio/gialla piane, verruche e lamelle bianche, anello e resti basali preservati. Alpha e sei celle verificati.",
+    "ui_review": {
+      "sizes_px": [
+        64,
+        72
+      ],
+      "result": "Visione diretta delle due icone per variante superata con i limiti descritti in REVISIONE-SEMANTICA.md. Correzioni virescens recepite; nessuna identificazione certificata.",
+      "contact_sheets": "audit-ui-64/72-1..7.png; audit-ui-revisioni-64.png"
+    }
   },
   {
     "file": "incoming/icone/confronto-combinazioni-2026-10-18-14.png",
@@ -928,7 +1032,15 @@
       ]
     },
     "state": "pronta da integrare",
-    "review": "Panterina crema/grigia coniche e crema emisferica, verruche, lamelle chiare, anello e residui basali preservati. Distinzione conico/emisferico visibile; alpha e sei celle verificati."
+    "review": "Panterina crema/grigia coniche e crema emisferica, verruche, lamelle chiare, anello e residui basali preservati. Distinzione conico/emisferico visibile; alpha e sei celle verificati.",
+    "ui_review": {
+      "sizes_px": [
+        64,
+        72
+      ],
+      "result": "Visione diretta delle due icone per variante superata con i limiti descritti in REVISIONE-SEMANTICA.md. Correzioni virescens recepite; nessuna identificazione certificata.",
+      "contact_sheets": "audit-ui-64/72-1..7.png; audit-ui-revisioni-64.png"
+    }
   },
   {
     "file": "incoming/icone/confronto-combinazioni-2026-10-18-15.png",
@@ -977,7 +1089,15 @@
       ]
     },
     "state": "pronta da integrare",
-    "review": "Panterina grigia emisferica e crema/grigia piane, verruche, lamelle chiare, anello e resti volvali invariati. Alpha e sei celle verificati."
+    "review": "Panterina grigia emisferica e crema/grigia piane, verruche, lamelle chiare, anello e resti volvali invariati. Alpha e sei celle verificati.",
+    "ui_review": {
+      "sizes_px": [
+        64,
+        72
+      ],
+      "result": "Visione diretta delle due icone per variante superata con i limiti descritti in REVISIONE-SEMANTICA.md. Correzioni virescens recepite; nessuna identificazione certificata.",
+      "contact_sheets": "audit-ui-64/72-1..7.png; audit-ui-revisioni-64.png"
+    }
   },
   {
     "file": "incoming/icone/confronto-combinazioni-2026-10-18-16.png",
@@ -1026,7 +1146,15 @@
       ]
     },
     "state": "pronta da integrare",
-    "review": "Chlorophyllum bruni convessi/emisferico con squame scure, lamelle crema, anello e gambo senza volva o reticolo. Morfologie coerenti con riferimenti. Alpha e sei celle verificati."
+    "review": "Chlorophyllum bruni convessi/emisferico con squame scure, lamelle crema, anello e gambo senza volva o reticolo. Morfologie coerenti con riferimenti. Alpha e sei celle verificati.",
+    "ui_review": {
+      "sizes_px": [
+        64,
+        72
+      ],
+      "result": "Visione diretta delle due icone per variante superata con i limiti descritti in REVISIONE-SEMANTICA.md. Correzioni virescens recepite; nessuna identificazione certificata.",
+      "contact_sheets": "audit-ui-64/72-1..7.png; audit-ui-revisioni-64.png"
+    }
   },
   {
     "file": "incoming/icone/confronto-combinazioni-2026-10-18-17.png",
@@ -1075,7 +1203,15 @@
       ]
     },
     "state": "pronta da integrare",
-    "review": "Clitocybe convessi bruno/crema e piano bruno, lamelle crema leggermente decorrenti e gambo chiaro senza anello/volva/reticolo; alpha e sei celle verificati."
+    "review": "Clitocybe convessi bruno/crema e piano bruno, lamelle crema leggermente decorrenti e gambo chiaro senza anello/volva/reticolo; alpha e sei celle verificati.",
+    "ui_review": {
+      "sizes_px": [
+        64,
+        72
+      ],
+      "result": "Visione diretta delle due icone per variante superata con i limiti descritti in REVISIONE-SEMANTICA.md. Correzioni virescens recepite; nessuna identificazione certificata.",
+      "contact_sheets": "audit-ui-64/72-1..7.png; audit-ui-revisioni-64.png"
+    }
   },
   {
     "file": "incoming/icone/confronto-combinazioni-2026-10-18-18.png",
@@ -1124,7 +1260,15 @@
       ]
     },
     "state": "pronta da integrare",
-    "review": "Clitocybe crema piano senza anello e Entoloma bianco/crema conici con apice evidente e lamelle rosa; gambi chiari privi di anello/volva/reticolo. Alpha e sei celle verificati."
+    "review": "Clitocybe crema piano senza anello e Entoloma bianco/crema conici con apice evidente e lamelle rosa; gambi chiari privi di anello/volva/reticolo. Alpha e sei celle verificati.",
+    "ui_review": {
+      "sizes_px": [
+        64,
+        72
+      ],
+      "result": "Visione diretta delle due icone per variante superata con i limiti descritti in REVISIONE-SEMANTICA.md. Correzioni virescens recepite; nessuna identificazione certificata.",
+      "contact_sheets": "audit-ui-64/72-1..7.png; audit-ui-revisioni-64.png"
+    }
   },
   {
     "file": "incoming/icone/confronto-combinazioni-2026-10-18-19.png",
@@ -1173,7 +1317,15 @@
       ]
     },
     "state": "pronta da integrare",
-    "review": "Entoloma piani bianco/crema con lamelle rosa e nessun anello; Gymnopilus giallo piano con anello e lamelle gialle, texture conforme. Alpha e sei celle verificati."
+    "review": "Entoloma piani bianco/crema con lamelle rosa e nessun anello; Gymnopilus giallo piano con anello e lamelle gialle, texture conforme. Alpha e sei celle verificati.",
+    "ui_review": {
+      "sizes_px": [
+        64,
+        72
+      ],
+      "result": "Visione diretta delle due icone per variante superata con i limiti descritti in REVISIONE-SEMANTICA.md. Correzioni virescens recepite; nessuna identificazione certificata.",
+      "contact_sheets": "audit-ui-64/72-1..7.png; audit-ui-revisioni-64.png"
+    }
   },
   {
     "file": "incoming/icone/confronto-combinazioni-2026-10-18-20.png",
@@ -1222,7 +1374,15 @@
       ]
     },
     "state": "pronta da integrare",
-    "review": "Hypholoma arancio piano con lamelle verdi/gialle; Inocybe bianchi/crema convessi con fibre radiali e lamelle brune. Nessun anello/volva/reticolo aggiunto; alpha e sei celle verificati."
+    "review": "Hypholoma arancio piano con lamelle verdi/gialle; Inocybe bianchi/crema convessi con fibre radiali e lamelle brune. Nessun anello/volva/reticolo aggiunto; alpha e sei celle verificati.",
+    "ui_review": {
+      "sizes_px": [
+        64,
+        72
+      ],
+      "result": "Visione diretta delle due icone per variante superata con i limiti descritti in REVISIONE-SEMANTICA.md. Correzioni virescens recepite; nessuna identificazione certificata.",
+      "contact_sheets": "audit-ui-64/72-1..7.png; audit-ui-revisioni-64.png"
+    }
   },
   {
     "file": "incoming/icone/confronto-combinazioni-2026-10-18-21.png",
@@ -1271,7 +1431,15 @@
       ]
     },
     "state": "pronta da integrare",
-    "review": "Inocybe convessi giallo/grigio/rosa, texture fibrosa e lamelle brune; gambi chiari senza anello/volva/reticolo aggiunto. Alpha e sei celle verificati."
+    "review": "Inocybe convessi giallo/grigio/rosa, texture fibrosa e lamelle brune; gambi chiari senza anello/volva/reticolo aggiunto. Alpha e sei celle verificati.",
+    "ui_review": {
+      "sizes_px": [
+        64,
+        72
+      ],
+      "result": "Visione diretta delle due icone per variante superata con i limiti descritti in REVISIONE-SEMANTICA.md. Correzioni virescens recepite; nessuna identificazione certificata.",
+      "contact_sheets": "audit-ui-64/72-1..7.png; audit-ui-revisioni-64.png"
+    }
   },
   {
     "file": "incoming/icone/confronto-combinazioni-2026-10-18-22.png",
@@ -1320,7 +1488,15 @@
       ]
     },
     "state": "pronta da integrare",
-    "review": "Inocybe violetto convesso con fibre senza anello; Lepiota cristata bruno convesso/piano con squame piccole, anello e lamelle crema. Nessuna volva o reticolo. Alpha e sei celle verificati."
+    "review": "Inocybe violetto convesso con fibre senza anello; Lepiota cristata bruno convesso/piano con squame piccole, anello e lamelle crema. Nessuna volva o reticolo. Alpha e sei celle verificati.",
+    "ui_review": {
+      "sizes_px": [
+        64,
+        72
+      ],
+      "result": "Visione diretta delle due icone per variante superata con i limiti descritti in REVISIONE-SEMANTICA.md. Correzioni virescens recepite; nessuna identificazione certificata.",
+      "contact_sheets": "audit-ui-64/72-1..7.png; audit-ui-revisioni-64.png"
+    }
   },
   {
     "file": "incoming/icone/confronto-combinazioni-2026-10-18-23.png",
@@ -1369,7 +1545,15 @@
       ]
     },
     "state": "pronta da integrare",
-    "review": "Micena convessa bianca/grigia/violetta con lamelle chiare rosate e gambo chiaro, senza anello/volva/reticolo. Alpha e sei celle verificati."
+    "review": "Micena convessa bianca/grigia/violetta con lamelle chiare rosate e gambo chiaro, senza anello/volva/reticolo. Alpha e sei celle verificati.",
+    "ui_review": {
+      "sizes_px": [
+        64,
+        72
+      ],
+      "result": "Visione diretta delle due icone per variante superata con i limiti descritti in REVISIONE-SEMANTICA.md. Correzioni virescens recepite; nessuna identificazione certificata.",
+      "contact_sheets": "audit-ui-64/72-1..7.png; audit-ui-revisioni-64.png"
+    }
   },
   {
     "file": "incoming/icone/confronto-combinazioni-2026-10-18-24.png",
@@ -1418,7 +1602,15 @@
       ]
     },
     "state": "pronta da integrare",
-    "review": "Omphalotus bruno/giallo convessi con lamelle arancio decorrenti e gambo giallo; Boleto satana bianco emisferico con pori rossi e reticolo rosso, senza anello/volva. Alpha e sei celle verificati."
+    "review": "Omphalotus bruno/giallo convessi con lamelle arancio decorrenti e gambo giallo; Boleto satana bianco emisferico con pori rossi e reticolo rosso, senza anello/volva. Alpha e sei celle verificati.",
+    "ui_review": {
+      "sizes_px": [
+        64,
+        72
+      ],
+      "result": "Visione diretta delle due icone per variante superata con i limiti descritti in REVISIONE-SEMANTICA.md. Correzioni virescens recepite; nessuna identificazione certificata.",
+      "contact_sheets": "audit-ui-64/72-1..7.png; audit-ui-revisioni-64.png"
+    }
   },
   {
     "file": "incoming/icone/confronto-combinazioni-2026-10-18-25.png",
@@ -1467,7 +1659,15 @@
       ]
     },
     "state": "pronta da integrare",
-    "review": "Satana grigio emisferico con pori e reticolo rossi; Russula olivacea bruno/rosso a imbuto con centro depresso, lamelle gialle e gambo rosato senza anello/volva/reticolo. Alpha e sei celle verificati."
+    "review": "Satana grigio emisferico con pori e reticolo rossi; Russula olivacea bruno/rosso a imbuto con centro depresso, lamelle gialle e gambo rosato senza anello/volva/reticolo. Alpha e sei celle verificati.",
+    "ui_review": {
+      "sizes_px": [
+        64,
+        72
+      ],
+      "result": "Visione diretta delle due icone per variante superata con i limiti descritti in REVISIONE-SEMANTICA.md. Correzioni virescens recepite; nessuna identificazione certificata.",
+      "contact_sheets": "audit-ui-64/72-1..7.png; audit-ui-revisioni-64.png"
+    }
   },
   {
     "file": "incoming/icone/confronto-combinazioni-2026-10-18-26.png",
@@ -1516,7 +1716,15 @@
       ]
     },
     "state": "pronta da integrare",
-    "review": "Russula olivacea violetta a imbuto e bruna/rossa piane, lamelle gialle e gambi rosati invariati senza anello/volva/reticolo. Alpha e sei celle verificati."
+    "review": "Russula olivacea violetta a imbuto e bruna/rossa piane, lamelle gialle e gambi rosati invariati senza anello/volva/reticolo. Alpha e sei celle verificati.",
+    "ui_review": {
+      "sizes_px": [
+        64,
+        72
+      ],
+      "result": "Visione diretta delle due icone per variante superata con i limiti descritti in REVISIONE-SEMANTICA.md. Correzioni virescens recepite; nessuna identificazione certificata.",
+      "contact_sheets": "audit-ui-64/72-1..7.png; audit-ui-revisioni-64.png"
+    }
   },
   {
     "file": "incoming/icone/confronto-combinazioni-2026-10-18-27.png",
@@ -1565,7 +1773,15 @@
       ]
     },
     "state": "pronta da integrare",
-    "review": "Russula violetta piana e Tricholoma bruno/verde conici, lamelle gialle; gambo Russula rosato e Tricholoma giallo, senza anello/volva/reticolo. Alpha e sei celle verificati."
+    "review": "Russula violetta piana e Tricholoma bruno/verde conici, lamelle gialle; gambo Russula rosato e Tricholoma giallo, senza anello/volva/reticolo. Alpha e sei celle verificati.",
+    "ui_review": {
+      "sizes_px": [
+        64,
+        72
+      ],
+      "result": "Visione diretta delle due icone per variante superata con i limiti descritti in REVISIONE-SEMANTICA.md. Correzioni virescens recepite; nessuna identificazione certificata.",
+      "contact_sheets": "audit-ui-64/72-1..7.png; audit-ui-revisioni-64.png"
+    }
   },
   {
     "file": "incoming/icone/confronto-combinazioni-2026-10-18-28.png",
@@ -1614,7 +1830,15 @@
       ]
     },
     "state": "pronta da integrare",
-    "review": "Tricholoma equestre bruno/verde ombrellati con umbone evidente e bruno piano senza umbone; lamelle e gambi gialli, nessun anello/volva/reticolo. Alpha e sei celle verificati."
+    "review": "Tricholoma equestre bruno/verde ombrellati con umbone evidente e bruno piano senza umbone; lamelle e gambi gialli, nessun anello/volva/reticolo. Alpha e sei celle verificati.",
+    "ui_review": {
+      "sizes_px": [
+        64,
+        72
+      ],
+      "result": "Visione diretta delle due icone per variante superata con i limiti descritti in REVISIONE-SEMANTICA.md. Correzioni virescens recepite; nessuna identificazione certificata.",
+      "contact_sheets": "audit-ui-64/72-1..7.png; audit-ui-revisioni-64.png"
+    }
   },
   {
     "file": "incoming/icone/confronto-combinazioni-2026-10-18-29.png",
@@ -1663,7 +1887,15 @@
       ]
     },
     "state": "pronta da integrare",
-    "review": "Tricholoma equestre verde piano con lamelle/gambo gialli; pardinum bianco/bruno piano con squame scure, lamelle e gambo chiari. Nessun anello/volva/reticolo. Alpha e sei celle verificati."
+    "review": "Tricholoma equestre verde piano con lamelle/gambo gialli; pardinum bianco/bruno piano con squame scure, lamelle e gambo chiari. Nessun anello/volva/reticolo. Alpha e sei celle verificati.",
+    "ui_review": {
+      "sizes_px": [
+        64,
+        72
+      ],
+      "result": "Visione diretta delle due icone per variante superata con i limiti descritti in REVISIONE-SEMANTICA.md. Correzioni virescens recepite; nessuna identificazione certificata.",
+      "contact_sheets": "audit-ui-64/72-1..7.png; audit-ui-revisioni-64.png"
+    }
   },
   {
     "file": "incoming/icone/confronto-combinazioni-2026-10-18-30.png",
@@ -1712,7 +1944,15 @@
       ]
     },
     "state": "pronta da integrare",
-    "review": "Calopus bruno/crema/grigio emisferici, pori gialli e gambo rosso con reticolo bianco invariati; nessun anello/volva. Alpha e sei celle verificati."
+    "review": "Calopus bruno/crema/grigio emisferici, pori gialli e gambo rosso con reticolo bianco invariati; nessun anello/volva. Alpha e sei celle verificati.",
+    "ui_review": {
+      "sizes_px": [
+        64,
+        72
+      ],
+      "result": "Visione diretta delle due icone per variante superata con i limiti descritti in REVISIONE-SEMANTICA.md. Correzioni virescens recepite; nessuna identificazione certificata.",
+      "contact_sheets": "audit-ui-64/72-1..7.png; audit-ui-revisioni-64.png"
+    }
   },
   {
     "file": "incoming/icone/confronto-combinazioni-2026-10-18-31.png",
@@ -1761,7 +2001,15 @@
       ]
     },
     "state": "pronta da integrare",
-    "review": "Radicans bianco/grigio emisferici con pori gialli, reticolo bianco e base radicante; Chalciporus bruno piano con pori bruni e gambo senza reticolo. Nessun anello/volva. Alpha e sei celle verificati."
+    "review": "Radicans bianco/grigio emisferici con pori gialli, reticolo bianco e base radicante; Chalciporus bruno piano con pori bruni e gambo senza reticolo. Nessun anello/volva. Alpha e sei celle verificati.",
+    "ui_review": {
+      "sizes_px": [
+        64,
+        72
+      ],
+      "result": "Visione diretta delle due icone per variante superata con i limiti descritti in REVISIONE-SEMANTICA.md. Correzioni virescens recepite; nessuna identificazione certificata.",
+      "contact_sheets": "audit-ui-64/72-1..7.png; audit-ui-revisioni-64.png"
+    }
   },
   {
     "file": "incoming/icone/confronto-combinazioni-2026-10-18-32.png",
@@ -1810,7 +2058,15 @@
       ]
     },
     "state": "pronta da integrare",
-    "review": "Cortinario nero piano con lamelle/gambo violetti; Hydnellum bruno/rosa convessi con gocce rosse, aculei crema e gambo bruno. Nessun anello/volva/reticolo. Alpha e sei celle verificati."
+    "review": "Cortinario nero piano con lamelle/gambo violetti; Hydnellum bruno/rosa convessi con gocce rosse, aculei crema e gambo bruno. Nessun anello/volva/reticolo. Alpha e sei celle verificati.",
+    "ui_review": {
+      "sizes_px": [
+        64,
+        72
+      ],
+      "result": "Visione diretta delle due icone per variante superata con i limiti descritti in REVISIONE-SEMANTICA.md. Correzioni virescens recepite; nessuna identificazione certificata.",
+      "contact_sheets": "audit-ui-64/72-1..7.png; audit-ui-revisioni-64.png"
+    }
   },
   {
     "file": "incoming/icone/confronto-combinazioni-2026-10-18-33.png",
@@ -1859,7 +2115,15 @@
       ]
     },
     "state": "pronta da integrare",
-    "review": "Hydnellum bruno/rosa a imbuto con gocce rosse e aculei crema; Hygrophoropsis bruno convesso con lamelle arancio decorrenti. Senza anello/volva/reticolo. Alpha e sei celle verificati."
+    "review": "Hydnellum bruno/rosa a imbuto con gocce rosse e aculei crema; Hygrophoropsis bruno convesso con lamelle arancio decorrenti. Senza anello/volva/reticolo. Alpha e sei celle verificati.",
+    "ui_review": {
+      "sizes_px": [
+        64,
+        72
+      ],
+      "result": "Visione diretta delle due icone per variante superata con i limiti descritti in REVISIONE-SEMANTICA.md. Correzioni virescens recepite; nessuna identificazione certificata.",
+      "contact_sheets": "audit-ui-64/72-1..7.png; audit-ui-revisioni-64.png"
+    }
   },
   {
     "file": "incoming/icone/confronto-combinazioni-2026-10-18-34.png",
@@ -1908,7 +2172,15 @@
       ]
     },
     "state": "pronta da integrare",
-    "review": "Hygrophoropsis giallo convesso con lamelle arancio; Pholiota bruna piana con squame e anello; Tricholoma grigio convesso con fibre e senza anello. Nessuna volva/reticolo. Alpha e sei celle verificati."
+    "review": "Hygrophoropsis giallo convesso con lamelle arancio; Pholiota bruna piana con squame e anello; Tricholoma grigio convesso con fibre e senza anello. Nessuna volva/reticolo. Alpha e sei celle verificati.",
+    "ui_review": {
+      "sizes_px": [
+        64,
+        72
+      ],
+      "result": "Visione diretta delle due icone per variante superata con i limiti descritti in REVISIONE-SEMANTICA.md. Correzioni virescens recepite; nessuna identificazione certificata.",
+      "contact_sheets": "audit-ui-64/72-1..7.png; audit-ui-revisioni-64.png"
+    }
   },
   {
     "file": "incoming/icone/confronto-combinazioni-2026-10-18-35.png",
@@ -1957,7 +2229,15 @@
       ]
     },
     "state": "pronta da integrare",
-    "review": "Fiele bruno emisferico/piano con pori rosa e reticolo bruno; Amanita rubescens bruna emisferica con verruche rosa, lamelle chiare e anello, nessuna volva aggiunta. Alpha e sei celle verificati."
+    "review": "Fiele bruno emisferico/piano con pori rosa e reticolo bruno; Amanita rubescens bruna emisferica con verruche rosa, lamelle chiare e anello, nessuna volva aggiunta. Alpha e sei celle verificati.",
+    "ui_review": {
+      "sizes_px": [
+        64,
+        72
+      ],
+      "result": "Visione diretta delle due icone per variante superata con i limiti descritti in REVISIONE-SEMANTICA.md. Correzioni virescens recepite; nessuna identificazione certificata.",
+      "contact_sheets": "audit-ui-64/72-1..7.png; audit-ui-revisioni-64.png"
+    }
   },
   {
     "file": "incoming/icone/confronto-combinazioni-2026-10-18-36.png",
@@ -2006,7 +2286,15 @@
       ]
     },
     "state": "pronta da integrare",
-    "review": "Amanita rubescens bruna piana con anello; tabescens bruno piano senza anello; Cyclocybe crema emisferica con anello, lamelle crema/grigie. Volve/reticoli non aggiunti. Alpha e sei celle verificati."
+    "review": "Amanita rubescens bruna piana con anello; tabescens bruno piano senza anello; Cyclocybe crema emisferica con anello, lamelle crema/grigie. Volve/reticoli non aggiunti. Alpha e sei celle verificati.",
+    "ui_review": {
+      "sizes_px": [
+        64,
+        72
+      ],
+      "result": "Visione diretta delle due icone per variante superata con i limiti descritti in REVISIONE-SEMANTICA.md. Correzioni virescens recepite; nessuna identificazione certificata.",
+      "contact_sheets": "audit-ui-64/72-1..7.png; audit-ui-revisioni-64.png"
+    }
   },
   {
     "file": "incoming/icone/confronto-combinazioni-2026-10-18-37.png",
@@ -2055,7 +2343,15 @@
       ]
     },
     "state": "pronta da integrare",
-    "review": "Cyclocybe crema piano e mellea bruno piano con anelli, lamelle rispettivamente grigie/crema; Neoboletus bruno emisferico con pori rossi e punti rossi sul gambo, non reticolo. Alpha e sei celle verificati."
+    "review": "Cyclocybe crema piano e mellea bruno piano con anelli, lamelle rispettivamente grigie/crema; Neoboletus bruno emisferico con pori rossi e punti rossi sul gambo, non reticolo. Alpha e sei celle verificati.",
+    "ui_review": {
+      "sizes_px": [
+        64,
+        72
+      ],
+      "result": "Visione diretta delle due icone per variante superata con i limiti descritti in REVISIONE-SEMANTICA.md. Correzioni virescens recepite; nessuna identificazione certificata.",
+      "contact_sheets": "audit-ui-64/72-1..7.png; audit-ui-revisioni-64.png"
+    }
   },
   {
     "file": "incoming/icone/confronto-combinazioni-2026-10-18-38.png",
@@ -2104,7 +2400,15 @@
       ]
     },
     "state": "pronta da integrare",
-    "review": "Neoboletus nero emisferico con pori/punti rossi, senza reticolo; Lepista nuda bruno/rosa piane con lamelle violette e gambo chiaro senza anello/volva. Alpha e sei celle verificati."
+    "review": "Neoboletus nero emisferico con pori/punti rossi, senza reticolo; Lepista nuda bruno/rosa piane con lamelle violette e gambo chiaro senza anello/volva. Alpha e sei celle verificati.",
+    "ui_review": {
+      "sizes_px": [
+        64,
+        72
+      ],
+      "result": "Visione diretta delle due icone per variante superata con i limiti descritti in REVISIONE-SEMANTICA.md. Correzioni virescens recepite; nessuna identificazione certificata.",
+      "contact_sheets": "audit-ui-64/72-1..7.png; audit-ui-revisioni-64.png"
+    }
   },
   {
     "file": "incoming/icone/confronto-combinazioni-2026-10-18-39.png",
@@ -2153,7 +2457,15 @@
       ]
     },
     "state": "pronta da integrare",
-    "review": "Suillus arancio/giallo/violetto emisferici con pori gialli, gambi crema e nessun anello/volva/reticolo aggiunto. Alpha e sei celle verificati."
+    "review": "Suillus arancio/giallo/violetto emisferici con pori gialli, gambi crema e nessun anello/volva/reticolo aggiunto. Alpha e sei celle verificati.",
+    "ui_review": {
+      "sizes_px": [
+        64,
+        72
+      ],
+      "result": "Visione diretta delle due icone per variante superata con i limiti descritti in REVISIONE-SEMANTICA.md. Correzioni virescens recepite; nessuna identificazione certificata.",
+      "contact_sheets": "audit-ui-64/72-1..7.png; audit-ui-revisioni-64.png"
+    }
   },
   {
     "file": "incoming/icone/confronto-combinazioni-2026-10-18-40.png",
@@ -2202,7 +2514,15 @@
       ]
     },
     "state": "pronta da integrare",
-    "review": "Suillus arancio/giallo/violetto piani con pori gialli e gambi crema, nessun anello/volva/reticolo aggiunto. Alpha e sei celle verificati."
+    "review": "Suillus arancio/giallo/violetto piani con pori gialli e gambi crema, nessun anello/volva/reticolo aggiunto. Alpha e sei celle verificati.",
+    "ui_review": {
+      "sizes_px": [
+        64,
+        72
+      ],
+      "result": "Visione diretta delle due icone per variante superata con i limiti descritti in REVISIONE-SEMANTICA.md. Correzioni virescens recepite; nessuna identificazione certificata.",
+      "contact_sheets": "audit-ui-64/72-1..7.png; audit-ui-revisioni-64.png"
+    }
   },
   {
     "file": "incoming/icone/confronto-combinazioni-2026-10-18-41.png",
@@ -2251,7 +2571,15 @@
       ]
     },
     "state": "pronta da integrare",
-    "review": "Aereus bruno emisferico/piano con pori chiari e reticolo pallido superiore; aestivalis crema emisferico con pori gialli e reticolo ocra. Nessun anello/volva. Alpha e sei celle verificati."
+    "review": "Aereus bruno emisferico/piano con pori chiari e reticolo pallido superiore; aestivalis crema emisferico con pori gialli e reticolo ocra. Nessun anello/volva. Alpha e sei celle verificati.",
+    "ui_review": {
+      "sizes_px": [
+        64,
+        72
+      ],
+      "result": "Visione diretta delle due icone per variante superata con i limiti descritti in REVISIONE-SEMANTICA.md. Correzioni virescens recepite; nessuna identificazione certificata.",
+      "contact_sheets": "audit-ui-64/72-1..7.png; audit-ui-revisioni-64.png"
+    }
   },
   {
     "file": "incoming/icone/confronto-combinazioni-2026-10-18-42.png",
@@ -2300,7 +2628,15 @@
       ]
     },
     "state": "pronta da integrare",
-    "review": "Arvensis bianco/giallo emisferici e bianco piano con tenue texture, lamelle brune e anello su gambo chiaro, senza volva/reticolo. Alpha e sei celle verificati."
+    "review": "Arvensis bianco/giallo emisferici e bianco piano con tenue texture, lamelle brune e anello su gambo chiaro, senza volva/reticolo. Alpha e sei celle verificati.",
+    "ui_review": {
+      "sizes_px": [
+        64,
+        72
+      ],
+      "result": "Visione diretta delle due icone per variante superata con i limiti descritti in REVISIONE-SEMANTICA.md. Correzioni virescens recepite; nessuna identificazione certificata.",
+      "contact_sheets": "audit-ui-64/72-1..7.png; audit-ui-revisioni-64.png"
+    }
   },
   {
     "file": "incoming/icone/confronto-combinazioni-2026-10-18-43.png",
@@ -2349,7 +2685,15 @@
       ]
     },
     "state": "pronta da integrare",
-    "review": "Arvensis giallo piano e bisporus bianchi emisferico/piano con lamelle brune e anelli; bisporus liscio, nessuna volva/reticolo. Alpha e sei celle verificati."
+    "review": "Arvensis giallo piano e bisporus bianchi emisferico/piano con lamelle brune e anelli; bisporus liscio, nessuna volva/reticolo. Alpha e sei celle verificati.",
+    "ui_review": {
+      "sizes_px": [
+        64,
+        72
+      ],
+      "result": "Visione diretta delle due icone per variante superata con i limiti descritti in REVISIONE-SEMANTICA.md. Correzioni virescens recepite; nessuna identificazione certificata.",
+      "contact_sheets": "audit-ui-64/72-1..7.png; audit-ui-revisioni-64.png"
+    }
   },
   {
     "file": "incoming/icone/confronto-combinazioni-2026-10-18-44.png",
@@ -2398,7 +2742,15 @@
       ]
     },
     "state": "pronta da integrare",
-    "review": "Campestris bruno/crema emisferici e bruno piano, lamelle brune e gambi chiari; profilo superiore del gambo coerente con riferimento senza aggiunta di gonna, nessuna volva/reticolo. Alpha e sei celle verificati."
+    "review": "Campestris bruno/crema emisferici e bruno piano, lamelle brune e gambi chiari; profilo superiore del gambo coerente con riferimento senza aggiunta di gonna, nessuna volva/reticolo. Alpha e sei celle verificati.",
+    "ui_review": {
+      "sizes_px": [
+        64,
+        72
+      ],
+      "result": "Visione diretta delle due icone per variante superata con i limiti descritti in REVISIONE-SEMANTICA.md. Correzioni virescens recepite; nessuna identificazione certificata.",
+      "contact_sheets": "audit-ui-64/72-1..7.png; audit-ui-revisioni-64.png"
+    }
   },
   {
     "file": "incoming/icone/confronto-combinazioni-2026-10-18-45.png",
@@ -2447,7 +2799,15 @@
       ]
     },
     "state": "pronta da integrare",
-    "review": "Campestris crema piano senza gonna aggiunta; sylvicola bianco/giallo emisferici con anello, lamelle brune e gambo chiaro. Senza volva/reticolo. Alpha e sei celle verificati."
+    "review": "Campestris crema piano senza gonna aggiunta; sylvicola bianco/giallo emisferici con anello, lamelle brune e gambo chiaro. Senza volva/reticolo. Alpha e sei celle verificati.",
+    "ui_review": {
+      "sizes_px": [
+        64,
+        72
+      ],
+      "result": "Visione diretta delle due icone per variante superata con i limiti descritti in REVISIONE-SEMANTICA.md. Correzioni virescens recepite; nessuna identificazione certificata.",
+      "contact_sheets": "audit-ui-64/72-1..7.png; audit-ui-revisioni-64.png"
+    }
   },
   {
     "file": "incoming/icone/confronto-combinazioni-2026-10-18-46.png",
@@ -2496,7 +2856,15 @@
       ]
     },
     "state": "pronta da integrare",
-    "review": "Sylvicola bianco/giallo piani con lamelle brune e anello; caesarea gialla emisferica con lamelle/gambo/anello gialli e volva bianca a sacco. Nessun reticolo o verruche aggiunte. Alpha e sei celle verificati."
+    "review": "Sylvicola bianco/giallo piani con lamelle brune e anello; caesarea gialla emisferica con lamelle/gambo/anello gialli e volva bianca a sacco. Nessun reticolo o verruche aggiunte. Alpha e sei celle verificati.",
+    "ui_review": {
+      "sizes_px": [
+        64,
+        72
+      ],
+      "result": "Visione diretta delle due icone per variante superata con i limiti descritti in REVISIONE-SEMANTICA.md. Correzioni virescens recepite; nessuna identificazione certificata.",
+      "contact_sheets": "audit-ui-64/72-1..7.png; audit-ui-revisioni-64.png"
+    }
   },
   {
     "file": "incoming/icone/confronto-combinazioni-2026-10-18-47.png",
@@ -2545,7 +2913,15 @@
       ]
     },
     "state": "pronta da integrare",
-    "review": "Caesarea rossa emisferica e gialla/rossa piane, lamelle/gambo/anello gialli e volva bianca invariati; niente verruche/reticolo. Alpha e sei celle verificati."
+    "review": "Caesarea rossa emisferica e gialla/rossa piane, lamelle/gambo/anello gialli e volva bianca invariati; niente verruche/reticolo. Alpha e sei celle verificati.",
+    "ui_review": {
+      "sizes_px": [
+        64,
+        72
+      ],
+      "result": "Visione diretta delle due icone per variante superata con i limiti descritti in REVISIONE-SEMANTICA.md. Correzioni virescens recepite; nessuna identificazione certificata.",
+      "contact_sheets": "audit-ui-64/72-1..7.png; audit-ui-revisioni-64.png"
+    }
   },
   {
     "file": "incoming/icone/confronto-combinazioni-2026-10-18-48.png",
@@ -2594,7 +2970,15 @@
       ]
     },
     "state": "pronta da integrare",
-    "review": "Calocybe crema emisferico/piano con lamelle fitte crema; finferlo arancio convesso con pieghe grosse decorrenti e gambo giallo. Nessun anello/volva/reticolo. Alpha e sei celle verificati."
+    "review": "Calocybe crema emisferico/piano con lamelle fitte crema; finferlo arancio convesso con pieghe grosse decorrenti e gambo giallo. Nessun anello/volva/reticolo. Alpha e sei celle verificati.",
+    "ui_review": {
+      "sizes_px": [
+        64,
+        72
+      ],
+      "result": "Visione diretta delle due icone per variante superata con i limiti descritti in REVISIONE-SEMANTICA.md. Correzioni virescens recepite; nessuna identificazione certificata.",
+      "contact_sheets": "audit-ui-64/72-1..7.png; audit-ui-revisioni-64.png"
+    }
   },
   {
     "file": "incoming/icone/confronto-combinazioni-2026-10-18-49.png",
@@ -2643,7 +3027,15 @@
       ]
     },
     "state": "pronta da integrare",
-    "review": "Craterellus bruno/nero a imbuto con pieghe grosse e gambo grigio; edulis crema emisferico con pori gialli e reticolo pallido superiore. Nessun anello/volva aggiunto. Alpha e sei celle verificati."
+    "review": "Craterellus bruno/nero a imbuto con pieghe grosse e gambo grigio; edulis crema emisferico con pori gialli e reticolo pallido superiore. Nessun anello/volva aggiunto. Alpha e sei celle verificati.",
+    "ui_review": {
+      "sizes_px": [
+        64,
+        72
+      ],
+      "result": "Visione diretta delle due icone per variante superata con i limiti descritti in REVISIONE-SEMANTICA.md. Correzioni virescens recepite; nessuna identificazione certificata.",
+      "contact_sheets": "audit-ui-64/72-1..7.png; audit-ui-revisioni-64.png"
+    }
   },
   {
     "file": "incoming/icone/confronto-combinazioni-2026-10-18-50.png",
@@ -2692,7 +3084,15 @@
       ]
     },
     "state": "pronta da integrare",
-    "review": "Hydnum bruno imbuto/piano con aculei crema; Hygrophorus bruno ombrellato con umbone, lamelle crema e macchie del gambo preservate. Nessun anello/volva/reticolo. Alpha e sei celle verificati."
+    "review": "Hydnum bruno imbuto/piano con aculei crema; Hygrophorus bruno ombrellato con umbone, lamelle crema e macchie del gambo preservate. Nessun anello/volva/reticolo. Alpha e sei celle verificati.",
+    "ui_review": {
+      "sizes_px": [
+        64,
+        72
+      ],
+      "result": "Visione diretta delle due icone per variante superata con i limiti descritti in REVISIONE-SEMANTICA.md. Correzioni virescens recepite; nessuna identificazione certificata.",
+      "contact_sheets": "audit-ui-64/72-1..7.png; audit-ui-revisioni-64.png"
+    }
   },
   {
     "file": "incoming/icone/confronto-combinazioni-2026-10-18-51.png",
@@ -2741,7 +3141,15 @@
       ]
     },
     "state": "pronta da integrare",
-    "review": "Hygrophorus grigio ombrellato con umbone distinto da bruno/grigio piani, lamelle crema e gambo macchiato preservati, senza anello/volva/reticolo. Alpha e sei celle verificati."
+    "review": "Hygrophorus grigio ombrellato con umbone distinto da bruno/grigio piani, lamelle crema e gambo macchiato preservati, senza anello/volva/reticolo. Alpha e sei celle verificati.",
+    "ui_review": {
+      "sizes_px": [
+        64,
+        72
+      ],
+      "result": "Visione diretta delle due icone per variante superata con i limiti descritti in REVISIONE-SEMANTICA.md. Correzioni virescens recepite; nessuna identificazione certificata.",
+      "contact_sheets": "audit-ui-64/72-1..7.png; audit-ui-revisioni-64.png"
+    }
   },
   {
     "file": "incoming/icone/confronto-combinazioni-2026-10-18-52.png",
@@ -2790,7 +3198,15 @@
       ]
     },
     "state": "pronta da integrare",
-    "review": "Marzuolo bianco/nero piano con lamelle chiare; Lactarius deliciosus verde convesso con chiazze arancio, lamelle arancio e gambo arancio macchiato. Senza anello/volva/reticolo. Alpha e sei celle verificati."
+    "review": "Marzuolo bianco/nero piano con lamelle chiare; Lactarius deliciosus verde convesso con chiazze arancio, lamelle arancio e gambo arancio macchiato. Senza anello/volva/reticolo. Alpha e sei celle verificati.",
+    "ui_review": {
+      "sizes_px": [
+        64,
+        72
+      ],
+      "result": "Visione diretta delle due icone per variante superata con i limiti descritti in REVISIONE-SEMANTICA.md. Correzioni virescens recepite; nessuna identificazione certificata.",
+      "contact_sheets": "audit-ui-64/72-1..7.png; audit-ui-revisioni-64.png"
+    }
   },
   {
     "file": "incoming/icone/confronto-combinazioni-2026-10-18-53.png",
@@ -2839,7 +3255,15 @@
       ]
     },
     "state": "pronta da integrare",
-    "review": "Lattario degli abeti giallo/verde convesso con chiazze, lamelle e gambo arancio liscio; Marasmius bruno convesso con lamelle chiare e gambo sottile. Nessun anello/volva/reticolo. Alpha e sei celle verificati."
+    "review": "Lattario degli abeti giallo/verde convesso con chiazze, lamelle e gambo arancio liscio; Marasmius bruno convesso con lamelle chiare e gambo sottile. Nessun anello/volva/reticolo. Alpha e sei celle verificati.",
+    "ui_review": {
+      "sizes_px": [
+        64,
+        72
+      ],
+      "result": "Visione diretta delle due icone per variante superata con i limiti descritti in REVISIONE-SEMANTICA.md. Correzioni virescens recepite; nessuna identificazione certificata.",
+      "contact_sheets": "audit-ui-64/72-1..7.png; audit-ui-revisioni-64.png"
+    }
   },
   {
     "file": "incoming/icone/confronto-combinazioni-2026-10-18-54.png",
@@ -2888,7 +3312,15 @@
       ]
     },
     "state": "pronta da integrare",
-    "review": "Pinophilus bruno emisferico con pori gialli e reticolo superiore; eryngii bianco/crema a imbuto con lamelle decorrenti e gambo centrale. Nessun anello/volva aggiunto. Alpha e sei celle verificati."
+    "review": "Pinophilus bruno emisferico con pori gialli e reticolo superiore; eryngii bianco/crema a imbuto con lamelle decorrenti e gambo centrale. Nessun anello/volva aggiunto. Alpha e sei celle verificati.",
+    "ui_review": {
+      "sizes_px": [
+        64,
+        72
+      ],
+      "result": "Visione diretta delle due icone per variante superata con i limiti descritti in REVISIONE-SEMANTICA.md. Correzioni virescens recepite; nessuna identificazione certificata.",
+      "contact_sheets": "audit-ui-64/72-1..7.png; audit-ui-revisioni-64.png"
+    }
   },
   {
     "file": "incoming/icone/confronto-combinazioni-2026-10-18-55.png",
@@ -2937,7 +3369,15 @@
       ]
     },
     "state": "pronta da integrare",
-    "review": "Eryngii grigio imbuto con gambo centrale, ostreatus bianco/bruno imbuto con gambo laterale corto e lamelle decorrenti; senza anello/volva/reticolo. Alpha e sei celle verificati."
+    "review": "Eryngii grigio imbuto con gambo centrale, ostreatus bianco/bruno imbuto con gambo laterale corto e lamelle decorrenti; senza anello/volva/reticolo. Alpha e sei celle verificati.",
+    "ui_review": {
+      "sizes_px": [
+        64,
+        72
+      ],
+      "result": "Visione diretta delle due icone per variante superata con i limiti descritti in REVISIONE-SEMANTICA.md. Correzioni virescens recepite; nessuna identificazione certificata.",
+      "contact_sheets": "audit-ui-64/72-1..7.png; audit-ui-revisioni-64.png"
+    }
   },
   {
     "file": "incoming/icone/confronto-combinazioni-2026-10-18-56.png",
@@ -2986,7 +3426,15 @@
       ]
     },
     "state": "pronta da integrare",
-    "review": "Ostreatus crema imbuto laterale, procera bruno emisferico con squame/anello e gambo fasciato; Pseudocraterellus bruno trombetta aperta senza lamelle vere. Alpha e sei celle verificati."
+    "review": "Ostreatus crema imbuto laterale, procera bruno emisferico con squame/anello e gambo fasciato; Pseudocraterellus bruno trombetta aperta senza lamelle vere. Alpha e sei celle verificati.",
+    "ui_review": {
+      "sizes_px": [
+        64,
+        72
+      ],
+      "result": "Visione diretta delle due icone per variante superata con i limiti descritti in REVISIONE-SEMANTICA.md. Correzioni virescens recepite; nessuna identificazione certificata.",
+      "contact_sheets": "audit-ui-64/72-1..7.png; audit-ui-revisioni-64.png"
+    }
   },
   {
     "file": "incoming/icone/confronto-combinazioni-2026-10-18-57.png",
@@ -3035,7 +3483,15 @@
       ]
     },
     "state": "pronta da integrare",
-    "review": "Repandum arancio/crema imbuto e arancio piano, aculei crema distinti da lamelle/pori, gambi chiari invariati senza anello/volva/reticolo. Alpha e sei celle verificati."
+    "review": "Repandum arancio/crema imbuto e arancio piano, aculei crema distinti da lamelle/pori, gambi chiari invariati senza anello/volva/reticolo. Alpha e sei celle verificati.",
+    "ui_review": {
+      "sizes_px": [
+        64,
+        72
+      ],
+      "result": "Visione diretta delle due icone per variante superata con i limiti descritti in REVISIONE-SEMANTICA.md. Correzioni virescens recepite; nessuna identificazione certificata.",
+      "contact_sheets": "audit-ui-64/72-1..7.png; audit-ui-revisioni-64.png"
+    }
   },
   {
     "file": "incoming/icone/confronto-combinazioni-2026-10-18-58.png",
@@ -3084,7 +3540,15 @@
       ]
     },
     "state": "pronta da integrare",
-    "review": "Repandum crema piano con aculei; Russula aurea gialla/rossa emisferiche con lamelle crema/gialle e gambo pallido giallastro. Nessun anello/volva/reticolo. Alpha e sei celle verificati."
+    "review": "Repandum crema piano con aculei; Russula aurea gialla/rossa emisferiche con lamelle crema/gialle e gambo pallido giallastro. Nessun anello/volva/reticolo. Alpha e sei celle verificati.",
+    "ui_review": {
+      "sizes_px": [
+        64,
+        72
+      ],
+      "result": "Visione diretta delle due icone per variante superata con i limiti descritti in REVISIONE-SEMANTICA.md. Correzioni virescens recepite; nessuna identificazione certificata.",
+      "contact_sheets": "audit-ui-64/72-1..7.png; audit-ui-revisioni-64.png"
+    }
   },
   {
     "file": "incoming/icone/confronto-combinazioni-2026-10-18-59.png",
@@ -3133,7 +3597,15 @@
       ]
     },
     "state": "pronta da integrare",
-    "review": "Russula aurea gialla/rossa piane con lamelle/gambi giallastri; heterophylla bruna imbuto con lamelle/gambo crema. Nessun anello/volva/reticolo. Alpha e sei celle verificati."
+    "review": "Russula aurea gialla/rossa piane con lamelle/gambi giallastri; heterophylla bruna imbuto con lamelle/gambo crema. Nessun anello/volva/reticolo. Alpha e sei celle verificati.",
+    "ui_review": {
+      "sizes_px": [
+        64,
+        72
+      ],
+      "result": "Visione diretta delle due icone per variante superata con i limiti descritti in REVISIONE-SEMANTICA.md. Correzioni virescens recepite; nessuna identificazione certificata.",
+      "contact_sheets": "audit-ui-64/72-1..7.png; audit-ui-revisioni-64.png"
+    }
   },
   {
     "file": "incoming/icone/confronto-combinazioni-2026-10-18-60.png",
@@ -3182,7 +3654,15 @@
       ]
     },
     "state": "pronta da integrare",
-    "review": "Russula heterophylla grigia imbuto e bruna/grigia piane, lamelle/gambi crema senza anello/volva/reticolo. Alpha e sei celle verificati."
+    "review": "Russula heterophylla grigia imbuto e bruna/grigia piane, lamelle/gambi crema senza anello/volva/reticolo. Alpha e sei celle verificati.",
+    "ui_review": {
+      "sizes_px": [
+        64,
+        72
+      ],
+      "result": "Visione diretta delle due icone per variante superata con i limiti descritti in REVISIONE-SEMANTICA.md. Correzioni virescens recepite; nessuna identificazione certificata.",
+      "contact_sheets": "audit-ui-64/72-1..7.png; audit-ui-revisioni-64.png"
+    }
   },
   {
     "file": "incoming/icone/confronto-combinazioni-2026-10-18-61.png",
@@ -3231,7 +3711,15 @@
       ]
     },
     "state": "pronta da integrare",
-    "review": "Suillus bovinus bruno piano con pori larghi gialli; terreum bruno convesso/piano con fibre e lamelle chiare, nessun anello aggiunto, senza volva/reticolo. Alpha e sei celle verificati."
+    "review": "Suillus bovinus bruno piano con pori larghi gialli; terreum bruno convesso/piano con fibre e lamelle chiare, nessun anello aggiunto, senza volva/reticolo. Alpha e sei celle verificati.",
+    "ui_review": {
+      "sizes_px": [
+        64,
+        72
+      ],
+      "result": "Visione diretta delle due icone per variante superata con i limiti descritti in REVISIONE-SEMANTICA.md. Correzioni virescens recepite; nessuna identificazione certificata.",
+      "contact_sheets": "audit-ui-64/72-1..7.png; audit-ui-revisioni-64.png"
+    }
   },
   {
     "file": "incoming/icone/confronto-combinazioni-2026-10-18-62.png",
@@ -3280,7 +3768,15 @@
       ]
     },
     "state": "pronta da integrare",
-    "review": "Portentoso bruno/giallo convesso con fibre; virescens grigio emisferico con mosaico, lamelle/gambi chiari senza anello/volva/reticolo. Alpha e sei celle verificati."
+    "review": "Portentoso bruno/giallo convesso con fibre; virescens grigio emisferico con mosaico, lamelle/gambi chiari senza anello/volva/reticolo. Alpha e sei celle verificati.",
+    "ui_review": {
+      "sizes_px": [
+        64,
+        72
+      ],
+      "result": "Visione diretta delle due icone per variante superata con i limiti descritti in REVISIONE-SEMANTICA.md. Correzioni virescens recepite; nessuna identificazione certificata.",
+      "contact_sheets": "audit-ui-64/72-1..7.png; audit-ui-revisioni-64.png"
+    }
   },
   {
     "file": "incoming/icone/confronto-combinazioni-2026-10-18-63.png",
@@ -3328,8 +3824,16 @@
         1116
       ]
     },
-    "state": "pronta da integrare",
-    "review": "Virescens rosa/violetto emisferici e grigio imbuto, mosaico pallido, lamelle/gambi crema senza anello/volva/reticolo. Alpha e sei celle verificati."
+    "state": "da rivedere",
+    "review": "Bloccata: mosaico delle alternative rosa/violetto deriva da virescens, mentre quei colori sono nel gruppo cyanoxantha a cuticola liscia; evitare incrocio visivo non documentato.",
+    "ui_review": {
+      "sizes_px": [
+        64,
+        72
+      ],
+      "method": "Ritagli componenti su sfondo avorio; visione diretta di entrambe le tessere per ciascuna variante, pagine audit-ui-64/72-1..7.png.",
+      "result": "Prima passata: simboli anatomici leggibili; revisione semantica del gruppo virescens rosa/violetto in corso, non certificazione diagnostica."
+    }
   },
   {
     "file": "incoming/icone/confronto-combinazioni-2026-10-18-64.png",
@@ -3365,8 +3869,16 @@
         710
       ]
     },
-    "state": "pronta da integrare",
-    "review": "Virescens rosa/violetto a imbuto con mosaico pallido, lamelle/gambi crema invariati senza anello/volva/reticolo. Alpha e quattro celle verificati, terza riga vuota."
+    "state": "da rivedere",
+    "review": "Bloccata: mosaico delle alternative rosa/violetto deriva da virescens, mentre quei colori sono nel gruppo cyanoxantha a cuticola liscia; evitare incrocio visivo non documentato.",
+    "ui_review": {
+      "sizes_px": [
+        64,
+        72
+      ],
+      "method": "Ritagli componenti su sfondo avorio; visione diretta di entrambe le tessere per ciascuna variante, pagine audit-ui-64/72-1..7.png.",
+      "result": "Prima passata: simboli anatomici leggibili; revisione semantica del gruppo virescens rosa/violetto in corso, non certificazione diagnostica."
+    }
   },
   {
     "file": "incoming/icone/confronto-combinazioni-2026-10-18-65.png",
@@ -3403,6 +3915,332 @@
       ]
     },
     "state": "pronta da integrare",
-    "review": "Morchella bruna/crema emisferiche con alveoli a nido di ape e gambo corto crema, senza lamelle/pori/anello/volva/reticolo. Silhouette arrotondate con identico profilo fra coppie. Alpha e quattro celle verificati."
+    "review": "Morchella bruna/crema emisferiche con alveoli a nido di ape e gambo corto crema, senza lamelle/pori/anello/volva/reticolo. Silhouette arrotondate con identico profilo fra coppie. Alpha e quattro celle verificati.",
+    "ui_review": {
+      "sizes_px": [
+        64,
+        72
+      ],
+      "result": "Visione diretta delle due icone per variante superata con i limiti descritti in REVISIONE-SEMANTICA.md. Correzioni virescens recepite; nessuna identificazione certificata.",
+      "contact_sheets": "audit-ui-64/72-1..7.png; audit-ui-revisioni-64.png"
+    }
+  },
+  {
+    "file": "incoming/icone/confronto-combinazioni-2026-10-18-63-r01.png",
+    "sha256": "c1cc8f86810926bb80a25882dfe00397e287d38cf2193cfcb90d17eb93fe4994",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "cells": {
+      "1": [
+        480,
+        86,
+        788,
+        408
+      ],
+      "0": [
+        90,
+        170,
+        406,
+        366
+      ],
+      "4": [
+        480,
+        482,
+        788,
+        800
+      ],
+      "3": [
+        90,
+        560,
+        406,
+        756
+      ],
+      "7": [
+        456,
+        902,
+        844,
+        1190
+      ],
+      "6": [
+        52,
+        946,
+        450,
+        1118
+      ]
+    },
+    "state": "pronta da integrare",
+    "review": "Rosa/violetto lisci coerenti con cyanoxantha nel gruppo; lamelle crema e gambo chiaro senza anello/volva/reticolo. Mosaico limitato alla variante grigia del gruppo. Audit indipendente vector_production superato, secondo controllo UI64/72 in corso.",
+    "sources": [
+      "https://www.first-nature.com/fungi/russula-cyanoxantha.php",
+      "https://it.wikipedia.org/wiki/Russula_cyanoxantha"
+    ],
+    "independent_review": "vector_production: tre tavole finali visionate; caratteri richiesti coerenti; schema aggregato, non diagnostico.",
+    "ui_review": {
+      "sizes_px": [
+        64,
+        72
+      ],
+      "result": "Visione diretta delle due icone per variante superata con i limiti descritti in REVISIONE-SEMANTICA.md. Correzioni virescens recepite; nessuna identificazione certificata.",
+      "contact_sheets": "audit-ui-64/72-1..7.png; audit-ui-revisioni-64.png"
+    }
+  },
+  {
+    "file": "incoming/icone/confronto-combinazioni-2026-10-18-64-r02.png",
+    "sha256": "5427bc7e74cf47b5683312daee2983a0db3eac08d00f5e1a24eda58ffa0e4094",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "cells": {
+      "1": [
+        452,
+        156,
+        838,
+        432
+      ],
+      "0": [
+        36,
+        170,
+        440,
+        342
+      ],
+      "4": [
+        452,
+        564,
+        838,
+        840
+      ],
+      "3": [
+        36,
+        578,
+        440,
+        750
+      ]
+    },
+    "state": "pronta da integrare",
+    "review": "Rosa/violetto lisci coerenti con cyanoxantha nel gruppo; lamelle crema e gambo chiaro senza anello/volva/reticolo. Mosaico limitato alla variante grigia del gruppo. Audit indipendente vector_production superato, secondo controllo UI64/72 in corso.",
+    "sources": [
+      "https://www.first-nature.com/fungi/russula-cyanoxantha.php",
+      "https://it.wikipedia.org/wiki/Russula_cyanoxantha"
+    ],
+    "independent_review": "vector_production: tre tavole finali visionate; caratteri richiesti coerenti; schema aggregato, non diagnostico.",
+    "ui_review": {
+      "sizes_px": [
+        64,
+        72
+      ],
+      "result": "Visione diretta delle due icone per variante superata con i limiti descritti in REVISIONE-SEMANTICA.md. Correzioni virescens recepite; nessuna identificazione certificata.",
+      "contact_sheets": "audit-ui-64/72-1..7.png; audit-ui-revisioni-64.png"
+    }
+  },
+  {
+    "file": "incoming/icone/virescens-colore-liscio-2026-10-18-r03.png",
+    "sha256": "680fa52705c98c5e56e316a7cfa9d1ddb1a0bab951cf830a96a68fc7864f7a3a",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "cells": {
+      "1": [
+        446,
+        106,
+        804,
+        412
+      ],
+      "0": [
+        38,
+        166,
+        408,
+        340
+      ],
+      "4": [
+        446,
+        502,
+        804,
+        814
+      ],
+      "3": [
+        38,
+        562,
+        408,
+        738
+      ]
+    },
+    "state": "pronta da integrare",
+    "review": "Rosa/violetto lisci coerenti con cyanoxantha nel gruppo; lamelle crema e gambo chiaro senza anello/volva/reticolo. Mosaico limitato alla variante grigia del gruppo. Audit indipendente vector_production superato, secondo controllo UI64/72 in corso.",
+    "sources": [
+      "https://www.first-nature.com/fungi/russula-cyanoxantha.php",
+      "https://it.wikipedia.org/wiki/Russula_cyanoxantha"
+    ],
+    "independent_review": "vector_production: tre tavole finali visionate; caratteri richiesti coerenti; schema aggregato, non diagnostico.",
+    "ui_review": {
+      "sizes_px": [
+        64,
+        72
+      ],
+      "result": "Visione diretta delle due icone per variante superata con i limiti descritti in REVISIONE-SEMANTICA.md. Correzioni virescens recepite; nessuna identificazione certificata.",
+      "contact_sheets": "audit-ui-64/72-1..7.png; audit-ui-revisioni-64.png"
+    }
+  },
+  {
+    "file": "incoming/icone/confronto-combinazioni-2026-10-18-64-r01.png",
+    "sha256": "3ee457c2ee95733e5d2aeb9fe24a9b5b6651042c17520a0cdfce12be0ca7daec",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "state": "da rivedere",
+    "review": "Superficie corretta ma griglia errata: whole nelle celle2/5 invece1/4. Superata da r02."
+  },
+  {
+    "file": "incoming/icone/virescens-colore-liscio-2026-10-18-r01.png",
+    "sha256": "607ea037eea53bcb1674000679ea4342f42258fcd6f010a2911d852d58b7f1ea",
+    "size": [
+      1388,
+      1133
+    ],
+    "mode": "RGBA",
+    "state": "da rivedere",
+    "review": "Forma depressa anziché convessa e due whole per riga. Superata da r03."
+  },
+  {
+    "file": "incoming/icone/virescens-colore-liscio-2026-10-18-r02.png",
+    "sha256": "b1fdbe86836df016d7dda291a0eb2fd9f09dd1d87db085c13731a1f20738abc6",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "state": "da rivedere",
+    "review": "Lamelle isolate brune anziché crema per contaminazione del riferimento stilistico. Superata da r03."
+  },
+  {
+    "file": "incoming/icone/confronto-forme-2026-10-18-02-r01.png",
+    "sha256": "295e025829b3a260e5f15dfc2dae67e281ac56d273b9bc8c854c94980213e605",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "cells": {
+      "1": [
+        460,
+        56,
+        798,
+        412
+      ],
+      "0": [
+        42,
+        158,
+        428,
+        308
+      ],
+      "4": [
+        458,
+        460,
+        798,
+        808
+      ],
+      "3": [
+        48,
+        532,
+        422,
+        714
+      ],
+      "7": [
+        476,
+        900,
+        780,
+        1210
+      ],
+      "6": [
+        78,
+        934,
+        400,
+        1122
+      ]
+    },
+    "state": "da rivedere",
+    "review": "Bloccata per Tylopilus crema+piano ocra e ancora convesso. Amanita/Morchella selezionate separatamente nelle celle approvate; Tylopilus sostituito dalla r03."
+  },
+  {
+    "file": "incoming/icone/confronto-forme-2026-10-18-02-r01-celle-approvate.png",
+    "sha256": "295e025829b3a260e5f15dfc2dae67e281ac56d273b9bc8c854c94980213e605",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "cells": {
+      "1": [
+        460,
+        56,
+        798,
+        412
+      ],
+      "0": [
+        42,
+        158,
+        428,
+        308
+      ],
+      "4": [
+        458,
+        460,
+        798,
+        808
+      ],
+      "3": [
+        48,
+        532,
+        422,
+        714
+      ],
+      "7": [
+        476,
+        900,
+        780,
+        1210
+      ],
+      "6": [
+        78,
+        934,
+        400,
+        1122
+      ]
+    },
+    "state": "pronta da integrare",
+    "review": "Copia integra della sorgente r01, selezionate SOLO celle0/1 Amanita e6/7 Morchella. Celle3/4 Tylopilus NON approvate né importate."
+  },
+  {
+    "file": "incoming/icone/tylopilus-crema-piano-2026-10-18-r03.png",
+    "sha256": "fc15ded91ceec234664d3cd1f7a27e81c7c40599f06b6ece4c538498afee3b1a",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "cells": {
+      "0": [
+        38,
+        198,
+        412,
+        316
+      ],
+      "1": [
+        434,
+        198,
+        820,
+        490
+      ]
+    },
+    "state": "pronta da integrare",
+    "review": "Tylopilus crema+piano corretto: due corone spianate, pori rosa, gambo clavato con reticolo bruno grossolano, senza anello/volva. Review indipendente e64px superate."
   }
 ]

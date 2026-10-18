@@ -2081,9 +2081,10 @@
         "assets/traits/virescens-gambo-imbuto.webp"
       ],
       "prompt": "Use case: precise-object-edit. Produce a Fronda production sprite sheet using the attached approved species icons as exact style and morphology references. Square 1254x1254, transparent alpha, invisible 3x3 grid. Each row: left cell cap-alone side view, middle cell whole mushroom with exactly the same cap; right cell empty transparent. Occupied cells [0, 1, 3, 4, 6, 7]. At least 15% margin within every cell; no outlines touching another cell or canvas edge. Exact approved flat warm palette, thick dark-brown contours, light simple highlights. NO text, environment or shadows. Change ONLY the documented cap color and cap shape; retain gills/pores, stem, ring, volva, reticulum and proportions of the species. Null traits are unknown: do not invent visible features. Color applies to the cap, never automatically to the stem. Shape terms: emisferico=rounded half-globe, width about 2x crown height; conico=clear cone/apex; convesso=rounded shallow dome; piano=flat horizontally spread low crown; imbuto=depressed funnel; ombrellato=umbrella with central umbo. ROW 1, Colombina verde (Russula virescens; Russula cyanoxantha, key virescens): cap color rosa, cap shape emisferico. Preserve all other anatomy from the matching reference. DOCUMENTED TRAITS: {\"hymenophore\": [\"lamelle\"], \"hymenophore_color\": [\"bianco\", \"crema\"], \"cap_color\": [\"verde\", \"violetto\", \"grigio\", \"rosa\"], \"cap_shape\": [\"emisferico\", \"convesso\", \"imbuto\"], \"cap_size\": [\"medio\", \"grande\"], \"stem_ring\": false, \"stem_volva\": false, \"stem_reticulum\": false, \"flesh_change\": [\"nessuno\"], \"smell\": [\"nessuno\"], \"habitat\": [\"latifoglie\"], \"growth\": [\"singolo\", \"gregario\"], \"season\": [6, 7, 8, 9, 10], \"spore_print\": [\"bianco\", \"crema\"], \"cap_veil\": false, \"latex\": false, \"flesh_texture\": [\"gessosa\", \"soda\"], \"cap_surface\": [\"asciutta\", \"vellutata/feltrata\", \"viscida\", \"liscia\", \"squamosa\"], \"gill_attachment\": [\"libere\", \"adnate\", \"decorrenti\"], \"stem_base\": [\"assottigliata\", \"normale\"]}\nROW 2, Colombina verde (Russula virescens; Russula cyanoxantha, key virescens): cap color violetto, cap shape emisferico. Preserve all other anatomy from the matching reference. DOCUMENTED TRAITS: {\"hymenophore\": [\"lamelle\"], \"hymenophore_color\": [\"bianco\", \"crema\"], \"cap_color\": [\"verde\", \"violetto\", \"grigio\", \"rosa\"], \"cap_shape\": [\"emisferico\", \"convesso\", \"imbuto\"], \"cap_size\": [\"medio\", \"grande\"], \"stem_ring\": false, \"stem_volva\": false, \"stem_reticulum\": false, \"flesh_change\": [\"nessuno\"], \"smell\": [\"nessuno\"], \"habitat\": [\"latifoglie\"], \"growth\": [\"singolo\", \"gregario\"], \"season\": [6, 7, 8, 9, 10], \"spore_print\": [\"bianco\", \"crema\"], \"cap_veil\": false, \"latex\": false, \"flesh_texture\": [\"gessosa\", \"soda\"], \"cap_surface\": [\"asciutta\", \"vellutata/feltrata\", \"viscida\", \"liscia\", \"squamosa\"], \"gill_attachment\": [\"libere\", \"adnate\", \"decorrenti\"], \"stem_base\": [\"assottigliata\", \"normale\"]}\nROW 3, Colombina verde (Russula virescens; Russula cyanoxantha, key virescens): cap color grigio, cap shape imbuto. Preserve all other anatomy from the matching reference. DOCUMENTED TRAITS: {\"hymenophore\": [\"lamelle\"], \"hymenophore_color\": [\"bianco\", \"crema\"], \"cap_color\": [\"verde\", \"violetto\", \"grigio\", \"rosa\"], \"cap_shape\": [\"emisferico\", \"convesso\", \"imbuto\"], \"cap_size\": [\"medio\", \"grande\"], \"stem_ring\": false, \"stem_volva\": false, \"stem_reticulum\": false, \"flesh_change\": [\"nessuno\"], \"smell\": [\"nessuno\"], \"habitat\": [\"latifoglie\"], \"growth\": [\"singolo\", \"gregario\"], \"season\": [6, 7, 8, 9, 10], \"spore_print\": [\"bianco\", \"crema\"], \"cap_veil\": false, \"latex\": false, \"flesh_texture\": [\"gessosa\", \"soda\"], \"cap_surface\": [\"asciutta\", \"vellutata/feltrata\", \"viscida\", \"liscia\", \"squamosa\"], \"gill_attachment\": [\"libere\", \"adnate\", \"decorrenti\"], \"stem_base\": [\"assottigliata\", \"normale\"]}",
-      "generated_file": "incoming/icone/confronto-combinazioni-2026-10-18-63.png",
-      "actual_prompt_file": "incoming/produzione-2026-10-18/prompt-combo-63.txt",
-      "review": "Virescens rosa/violetto emisferici e grigio imbuto, mosaico pallido, lamelle/gambi crema senza anello/volva/reticolo. Alpha e sei celle verificati."
+      "generated_file": "incoming/icone/confronto-combinazioni-2026-10-18-63-r01.png",
+      "actual_prompt_file": "incoming/produzione-2026-10-18/prompt-combo-63-r01.txt",
+      "review": "Rosa/violetto lisci coerenti con cyanoxantha nel gruppo; lamelle crema e gambo chiaro senza anello/volva/reticolo. Mosaico limitato alla variante grigia del gruppo. Audit indipendente vector_production superato, secondo controllo UI64/72 in corso.",
+      "crop_directory": "incoming/produzione-2026-10-18/ritagli/combo-63-r01"
     },
     {
       "id": "combo-64",
@@ -2107,9 +2108,10 @@
         "assets/traits/virescens-gambo-imbuto.webp"
       ],
       "prompt": "Use case: precise-object-edit. Produce a Fronda production sprite sheet using the attached approved species icons as exact style and morphology references. Square 1254x1254, transparent alpha, invisible 3x3 grid. Each row: left cell cap-alone side view, middle cell whole mushroom with exactly the same cap; right cell empty transparent. Occupied cells [0, 1, 3, 4]. At least 15% margin within every cell; no outlines touching another cell or canvas edge. Exact approved flat warm palette, thick dark-brown contours, light simple highlights. NO text, environment or shadows. Change ONLY the documented cap color and cap shape; retain gills/pores, stem, ring, volva, reticulum and proportions of the species. Null traits are unknown: do not invent visible features. Color applies to the cap, never automatically to the stem. Shape terms: emisferico=rounded half-globe, width about 2x crown height; conico=clear cone/apex; convesso=rounded shallow dome; piano=flat horizontally spread low crown; imbuto=depressed funnel; ombrellato=umbrella with central umbo. ROW 1, Colombina verde (Russula virescens; Russula cyanoxantha, key virescens): cap color rosa, cap shape imbuto. Preserve all other anatomy from the matching reference. DOCUMENTED TRAITS: {\"hymenophore\": [\"lamelle\"], \"hymenophore_color\": [\"bianco\", \"crema\"], \"cap_color\": [\"verde\", \"violetto\", \"grigio\", \"rosa\"], \"cap_shape\": [\"emisferico\", \"convesso\", \"imbuto\"], \"cap_size\": [\"medio\", \"grande\"], \"stem_ring\": false, \"stem_volva\": false, \"stem_reticulum\": false, \"flesh_change\": [\"nessuno\"], \"smell\": [\"nessuno\"], \"habitat\": [\"latifoglie\"], \"growth\": [\"singolo\", \"gregario\"], \"season\": [6, 7, 8, 9, 10], \"spore_print\": [\"bianco\", \"crema\"], \"cap_veil\": false, \"latex\": false, \"flesh_texture\": [\"gessosa\", \"soda\"], \"cap_surface\": [\"asciutta\", \"vellutata/feltrata\", \"viscida\", \"liscia\", \"squamosa\"], \"gill_attachment\": [\"libere\", \"adnate\", \"decorrenti\"], \"stem_base\": [\"assottigliata\", \"normale\"]}\nROW 2, Colombina verde (Russula virescens; Russula cyanoxantha, key virescens): cap color violetto, cap shape imbuto. Preserve all other anatomy from the matching reference. DOCUMENTED TRAITS: {\"hymenophore\": [\"lamelle\"], \"hymenophore_color\": [\"bianco\", \"crema\"], \"cap_color\": [\"verde\", \"violetto\", \"grigio\", \"rosa\"], \"cap_shape\": [\"emisferico\", \"convesso\", \"imbuto\"], \"cap_size\": [\"medio\", \"grande\"], \"stem_ring\": false, \"stem_volva\": false, \"stem_reticulum\": false, \"flesh_change\": [\"nessuno\"], \"smell\": [\"nessuno\"], \"habitat\": [\"latifoglie\"], \"growth\": [\"singolo\", \"gregario\"], \"season\": [6, 7, 8, 9, 10], \"spore_print\": [\"bianco\", \"crema\"], \"cap_veil\": false, \"latex\": false, \"flesh_texture\": [\"gessosa\", \"soda\"], \"cap_surface\": [\"asciutta\", \"vellutata/feltrata\", \"viscida\", \"liscia\", \"squamosa\"], \"gill_attachment\": [\"libere\", \"adnate\", \"decorrenti\"], \"stem_base\": [\"assottigliata\", \"normale\"]}",
-      "generated_file": "incoming/icone/confronto-combinazioni-2026-10-18-64.png",
-      "actual_prompt_file": "incoming/produzione-2026-10-18/prompt-combo-64.txt",
-      "review": "Virescens rosa/violetto a imbuto con mosaico pallido, lamelle/gambi crema invariati senza anello/volva/reticolo. Alpha e quattro celle verificati, terza riga vuota."
+      "generated_file": "incoming/icone/confronto-combinazioni-2026-10-18-64-r02.png",
+      "actual_prompt_file": "incoming/produzione-2026-10-18/prompt-combo-64-r02.txt",
+      "review": "Rosa/violetto lisci coerenti con cyanoxantha nel gruppo; lamelle crema e gambo chiaro senza anello/volva/reticolo. Mosaico limitato alla variante grigia del gruppo. Audit indipendente vector_production superato, secondo controllo UI64/72 in corso.",
+      "crop_directory": "incoming/produzione-2026-10-18/ritagli/combo-64-r02"
     },
     {
       "id": "combo-65",
@@ -2138,6 +2140,24 @@
       "generated_file": "incoming/icone/confronto-combinazioni-2026-10-18-65.png",
       "actual_prompt_file": "incoming/produzione-2026-10-18/prompt-combo-65.txt",
       "review": "Morchella bruna/crema emisferiche con alveoli a nido di ape e gambo corto crema, senza lamelle/pori/anello/volva/reticolo. Silhouette arrotondate con identico profilo fra coppie. Alpha e quattro celle verificati."
+    }
+  ],
+  "color_corrections": [
+    {
+      "key": "virescens",
+      "colors": [
+        "rosa",
+        "violetto"
+      ],
+      "generated_file": "incoming/icone/virescens-colore-liscio-2026-10-18-r03.png",
+      "status": "pronta da integrare",
+      "replaces": [
+        "assets/traits/virescens-cappello-rosa.webp",
+        "assets/traits/virescens-cappello-violetto.webp",
+        "assets/traits/virescens-gambo-rosa.webp",
+        "assets/traits/virescens-gambo-violetto.webp"
+      ],
+      "reason": "Mosaico di virescens non va trasferito ai colori cyanoxantha; alternative lisce nei dati e fonti. Nessun dato scientifico modificato."
     }
   ]
 }
