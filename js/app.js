@@ -536,7 +536,7 @@ function titleOf(r) {
   if (r.view === 'glossario' && r.termId) return glossaryTitle(r.termId);
   if (r.view === 'pianta') return plantName(r.plantId)||'Pianta';
   if (r.view === 'albero') return treesData?.trees?.[r.treeId]?.name || 'Albero';
-  if (r.view === 'riconosci' && (r.compare || r.compareStart)) return r.compareStart?'Confronta funghi':'Confronto';
+  if (r.view === 'riconosci' && (r.compare || r.compareStart)) return 'Confronta';
   if (r.view === 'sfide' && r.challengeId) return challengeTitle(r.challengeId) || 'Sfida';
   return TITLES[r.view] || '';
 }
@@ -557,7 +557,7 @@ function parentOf(r) {
   if (['specie','alberi','piante','riconosci','glossario','guide-list','sfide'].includes(r.view)) return '#/scopri';
   return '#/';
 }
-const PARENT_TITLE = (r) => ({ '#/diario':'Taccuino', '#/diario/esempio':'Diario di prova', '#/scopri': 'Scopri', '#/specie': 'Funghi', '#/alberi': 'Alberi', '#/piante':'Piante e fiori', '#/riconosci': 'Impara a riconoscere', '#/confronta':'Confronta funghi', '#/guide': 'Approfondimenti', '#/sfide': 'Sfide', '#/impara': 'Guide', '#/': 'Uscite' }[parentOf(r)]);
+const PARENT_TITLE = (r) => ({ '#/diario':'Taccuino', '#/diario/esempio':'Diario di prova', '#/scopri': 'Scopri', '#/specie': 'Funghi', '#/alberi': 'Alberi', '#/piante':'Piante e fiori', '#/riconosci': 'Impara a riconoscere', '#/confronta':'Confronta', '#/guide': 'Approfondimenti', '#/sfide': 'Sfide', '#/impara': 'Guide', '#/': 'Uscite' }[parentOf(r)]);
 // Quando il titolo della pagina passa sotto la barra, lo mostriamo compatto al centro su telefono e tablet.
 let titleIO = null;
 function watchTitle() {
@@ -700,7 +700,7 @@ function routeNow(r, nav) {
   if (r.view === 'sfide') { if (r.challengeId) renderChallenge($('#challenges'), r.challengeId); else renderChallengeList($('#challenges')); }
   paintScopriNav(r);
   if (r.view === 'riconosci') {
-    const rt = r.compareStart?['Confronta funghi','Scegli due specie e guarda differenze e somiglianze, una accanto all’altra.']:RECOGNIZE_HEAD[r.recognizeMode];
+    const rt = r.compareStart?['Confronta','Scegli due specie e guarda differenze e somiglianze, una accanto all’altra.']:RECOGNIZE_HEAD[r.recognizeMode];
     $('[data-recognize-title]').textContent = rt[0]; $('[data-recognize-sub]').textContent = rt[1];
     $('#identify').hidden = r.recognizeMode !== 'funghi';
     $('#field-identify').hidden = r.recognizeMode === 'funghi';
