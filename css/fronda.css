@@ -1069,3 +1069,7 @@ button.cover-index:focus-visible { outline:3px solid var(--focus); outline-offse
 }
 .rail-host:has(> .seg-nav) > .rail-prev { left:4px; }
 .rail-host:has(> .seg-nav) > .rail-next { right:4px; }
+
+/* Lo stesso indice della home, anche nella testata del luogo. */
+.hero-indicators > button.ring { border:0; padding:0; font:inherit; cursor:help; }
+.hero-indicators > button.ring:focus-visible { outline:3px solid var(--focus); outline-offset:5px; }

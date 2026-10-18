@@ -1203,7 +1203,7 @@ function weatherIndicator(w,key) {
 }
 function heroIndicators(z,d,score=null) {
   const weather=weatherIndicator(wxOf(z,d),z.id);
-  return weather||Number.isFinite(score)?`<div class="hero-indicators">${weather}${Number.isFinite(score)?ring(score):''}</div>`:'';
+  return weather||Number.isFinite(score)?`<div class="hero-indicators">${weather}${Number.isFinite(score)?ring(score,true,true):''}</div>`:'';
 }
 
 const selectedSpecies = () => { const ids = new Set(selectedCatalog().map(s=>s.modelId).filter(Boolean)); return (state.target==='piante'?plantModels:SPECIES).filter(s=>ids.has(s.id)); };
@@ -1677,7 +1677,7 @@ function coverOf(z, spId, d) {
   const p = speciesPhoto(spId);
   return p ? { hd: p.file_hd || p.file, small: p.file, credit: p, alt: '' } : null;
 }
-const ring = (s, big = true) => `<span data-weather-key="fungi-indicator" class="ring${big ? '' : ' ring-sm'}" style="--c:var(${scoreVar(s).replace('--s', '--ps')});--p:${s ?? 0}" aria-label="Indice funghi ${formatIndex(s)} su 10, ${scoreLabel(s)}">${progressCircle(s)}${fungusGlyph}<b>${scoreText(s)}</b>${big ? `<span class="ring-caption">Condizioni<br>${scoreShortLabel(s)}</span>` : ''}</span>`;
+const ring = (s, big = true, interactive = false) => `<${interactive?'button type="button" data-index-tip aria-expanded="false"':'span'} data-weather-key="fungi-indicator" class="ring${big ? '' : ' ring-sm'}" style="--c:var(${scoreVar(s).replace('--s', '--ps')});--p:${s ?? 0}" aria-label="Indice funghi ${formatIndex(s)} su 10, ${scoreLabel(s)}${interactive?': come leggerlo':''}">${progressCircle(s)}${fungusGlyph}<b>${scoreText(s)}</b>${big ? `<span class="ring-caption">Condizioni<br>${scoreShortLabel(s)}</span>` : ''}</${interactive?'button':'span'}>`;
 const IC = {
   home: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7M5 9v12h5v-7h4v7h5V9"/></svg>',
   book: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v15M12 5C8 3 5 3 3 4v14c3-1 6-1 9 2 3-3 6-3 9-2V4c-2-1-5-1-9 1Z"/></svg>',
