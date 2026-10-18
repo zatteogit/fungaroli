@@ -9,3 +9,7 @@ I suggerimenti di `search-select.js` intersecano i limiti del chiamante con il v
 Verifiche mirate: quattro test esistenti di ricerca/selezione/salvataggio a 320/1280 px nei due temi; nuovo scenario con layout viewport invariato (844 px), visual viewport a 390 px, poi 330 px con offset 80 px, poi 440 px. Controllati limiti di modale, chiusura, campo attivo e suggerimenti, selezione da tastiera, documento fermo e ripristino alla chiusura della tastiera e del dialog.
 
 Lo scenario del visual viewport è simulato in Chromium: non sostituisce una verifica della tastiera nativa su un iPhone fisico.
+
+## Accesso con passkey
+
+Il dialog di accesso ha ora un’intestazione sticky con X e autofocus sulla chiusura (nessuna apertura automatica della tastiera sul nome facoltativo). Il contenuto scorre sotto l’header; l’input rimane a 16 px, i due pulsanti sono a tutta larghezza e alti almeno 44 px, privacy e recupero conservano il testo completo. Il limite del campo attivo considera anche `.account-header`. Test mirati a 320/390 px con visual viewport a 390 px e poi 330 px con offset70, scroll fino al fondo e X ancora visibile; status/session isolati come fixture nei test di layout. Registrazione/passkey e pubblicazione di una nota verificate separatamente sul server con origine locale esplicita.

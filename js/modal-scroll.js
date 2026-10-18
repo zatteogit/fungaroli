@@ -39,7 +39,7 @@ function fitViewport() {
   root.classList.toggle('modal-viewport-constrained', !!modal && (top > 1 || height < innerHeight - 1));
   const field = document.activeElement;
   if (modal && field?.matches('input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),textarea,[contenteditable="true"]') && modal.contains(field)) {
-    const box = modal.getBoundingClientRect(), header = modal.querySelector('.report-header,.cmp-chooser-head')?.getBoundingClientRect();
+    const box = modal.getBoundingClientRect(), header = modal.querySelector('.report-header,.cmp-chooser-head,.account-header')?.getBoundingClientRect();
     const upper = Math.max(top + 12, box.top + 12, header?.bottom || 0) + 8;
     const lower = Math.min(top + height - 12, box.bottom - 12), rect = field.getBoundingClientRect();
     const delta = rect.top < upper ? rect.top - upper : rect.bottom > lower ? rect.bottom - lower : 0;
