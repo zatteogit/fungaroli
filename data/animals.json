@@ -1,0 +1,766 @@
+{
+  "version": 1,
+  "reviewedOn": "2026-10-18",
+  "sources": [
+    {
+      "id": "ISS-Z",
+      "title": "Zecche",
+      "url": "https://www.epicentro.iss.it/zecche/",
+      "publisher": "ISS · EpiCentro",
+      "checkedOn": "2026-10-18"
+    },
+    {
+      "id": "ISS-P",
+      "title": "Punture di vespe, api e calabroni",
+      "url": "https://www.issalute.it/index.php/la-salute-dalla-a-alla-z-menu/p/punture-di-vespe-api-e-calabroni",
+      "publisher": "ISS · ISSalute",
+      "checkedOn": "2026-10-18"
+    },
+    {
+      "id": "ISPRA-I",
+      "title": "Impollinatori",
+      "url": "https://www.isprambiente.gov.it/it/attivita/biodiversita/ispra-e-la-biodiversita/impollinatori/impollinatori",
+      "publisher": "ISPRA",
+      "checkedOn": "2026-10-18"
+    },
+    {
+      "id": "ISPRA-S",
+      "title": "I Sirfidi (Ditteri): biodiversità e conservazione. Manuale operativo",
+      "url": "https://www.isprambiente.gov.it/it/pubblicazioni/manuali-e-linee-guida/i-sirfidi-ditteri-biodiversita-e-conservazione.-manuale-operativo",
+      "publisher": "ISPRA",
+      "checkedOn": "2026-10-18"
+    },
+    {
+      "id": "LAZ-C",
+      "title": "Il Cinghiale [Sus scrofa]",
+      "url": "https://www.parchilazio.it/cammino_naturale_dei_parchi-schede-862-il_cinghiale_sus_scrofa",
+      "publisher": "Parchi Lazio · Cammino Naturale dei Parchi",
+      "checkedOn": "2026-10-18"
+    },
+    {
+      "id": "DUCH",
+      "title": "Montagne della Duchessa · Natura",
+      "url": "https://www.parchilazio.it/duchessa-natura",
+      "publisher": "Parchi Lazio",
+      "checkedOn": "2026-10-18"
+    },
+    {
+      "id": "ISPRA-L",
+      "title": "Le interazioni tra uomo e lupo",
+      "url": "https://www.isprambiente.gov.it/it/attivita/biodiversita/monitoraggio-nazionale-del-lupo/notizie/le-interazioni-tra-uomo-e-lupo",
+      "publisher": "ISPRA / Life Wild Wolf",
+      "checkedOn": "2026-10-18"
+    },
+    {
+      "id": "UNIBO-A",
+      "title": "Le api dell’Orto · Apis",
+      "url": "https://sma.unibo.it/it/il-sistema-museale/orto-botanico-ed-erbario/Guida-digitale-agli-apoidei-dell-Orto-Botanico/giugno/apis",
+      "publisher": "Università di Bologna · Sistema Museale di Ateneo",
+      "checkedOn": "2026-10-18"
+    },
+    {
+      "id": "UNIBO-B",
+      "title": "Le api dell’Orto · Bombus",
+      "url": "https://sma.unibo.it/it/il-sistema-museale/orto-botanico-ed-erbario/Guida-digitale-agli-apoidei-dell-Orto-Botanico/giugno/bombus",
+      "publisher": "Università di Bologna · Sistema Museale di Ateneo",
+      "checkedOn": "2026-10-18"
+    },
+    {
+      "id": "UNIBO-G",
+      "title": "Le api dell’Orto · Guida digitale",
+      "url": "https://sma.unibo.it/it/il-sistema-museale/orto-botanico-ed-erbario/Guida-digitale-agli-apoidei-dell-Orto-Botanico",
+      "publisher": "Università di Bologna · Sistema Museale di Ateneo",
+      "checkedOn": "2026-10-18"
+    },
+    {
+      "id": "RER-V",
+      "title": "Vespe e calabroni",
+      "url": "https://agricoltura.regione.emilia-romagna.it/fitosanitario/difesa-sostenibile/protezione-del-verde/difesa-ecocompatibile/qualita-del-verde/manuale/ospiti-molesti/vespe-e-calabroni",
+      "publisher": "Regione Emilia-Romagna · Servizio fitosanitario",
+      "checkedOn": "2026-10-18"
+    },
+    {
+      "id": "LAZ-V",
+      "title": "Vipera comune",
+      "url": "https://www.parchilazio.it/schede-92-vipera_comune",
+      "publisher": "Parchi Lazio",
+      "checkedOn": "2026-10-18"
+    },
+    {
+      "id": "LAZ-CR",
+      "title": "Calabroni asiatici a Grottaferrata, l’allarme rientra",
+      "url": "https://www.parchilazio.it/schede-5262-calabroni_asiatici_a_grottaferrata_l_allarme_rientra",
+      "publisher": "Parchi Lazio · Parco dei Castelli Romani",
+      "checkedOn": "2026-10-18"
+    },
+    {
+      "id": "BCT-B",
+      "title": "Bumblebee species guide",
+      "url": "https://www.bumblebeeconservation.org/learn-about-bumblebees/species-guide/",
+      "publisher": "Bumblebee Conservation Trust",
+      "checkedOn": "2026-10-18"
+    },
+    {
+      "id": "APAM-F",
+      "title": "Morfologia della farfalla",
+      "url": "https://www.areeprotettealpimarittime.it/citizen-science/effetto-farfalla/morfologia-della-farfalla",
+      "publisher": "Ente Aree Protette Alpi Marittime",
+      "checkedOn": "2026-10-18"
+    },
+    {
+      "id": "MAD-F",
+      "title": "Farfalle diurne",
+      "url": "https://www.parcodellemadonie.it/farfalle-diurne/",
+      "publisher": "Ente Parco delle Madonie",
+      "checkedOn": "2026-10-18"
+    },
+    {
+      "id": "ERSA-P",
+      "title": "Thaumetopoea pityocampa · Processionaria del pino",
+      "url": "https://www.ersa.fvg.it/cms/aziende/monitoraggi/organismi/schede/38_Thaumetopoea-pityocampa-Processionaria-del-pino.html",
+      "publisher": "ERSA · Agenzia regionale per lo sviluppo rurale del Friuli Venezia Giulia",
+      "checkedOn": "2026-10-18"
+    },
+    {
+      "id": "PNALM-L",
+      "title": "Lupo",
+      "url": "https://www.parcoabruzzo.it/fauna.schede.dettaglio.php?id=21",
+      "publisher": "Parco Nazionale d’Abruzzo, Lazio e Molise",
+      "checkedOn": "2026-10-18"
+    },
+    {
+      "id": "LAZ-L",
+      "title": "Il Lupo",
+      "url": "https://www.parchilazio.it/cammino_naturale_dei_parchi-schede-863-il_lupo",
+      "publisher": "Parchi Lazio · Cammino Naturale dei Parchi",
+      "checkedOn": "2026-10-18"
+    }
+  ],
+  "items": [
+    {
+      "id": "ape-da-miele",
+      "name": "Ape da miele",
+      "latin": "Apis mellifera",
+      "rank": "species",
+      "groupLabel": "Insetti",
+      "paths": [
+        "flowers",
+        "care"
+      ],
+      "summary": "L’ape allevata dagli apicoltori è una delle molte specie di api che visitano i fiori.",
+      "observe": [],
+      "habitat": [],
+      "behavior": [
+        {
+          "text": "Vive in colonie organizzate in caste e costruisce favi di cera.",
+          "sourceIds": [
+            "UNIBO-G"
+          ]
+        }
+      ],
+      "ecology": [
+        {
+          "text": "Contribuisce all’impollinazione delle piante da fiore.",
+          "sourceIds": [
+            "ISPRA-I"
+          ]
+        }
+      ],
+      "cautions": [
+        {
+          "text": "In presenza di api, vespe o calabroni mantieni la calma e muoviti lentamente.",
+          "sourceIds": [
+            "ISS-P"
+          ]
+        }
+      ],
+      "sourceIds": [
+        "UNIBO-A",
+        "UNIBO-G",
+        "ISPRA-I",
+        "ISS-P"
+      ],
+      "photos": [],
+      "knownGaps": [
+        "Fotografie con licenza verificata ancora da acquisire.",
+        "Nessuna sottospecie attribuita dall’aspetto.",
+        "Caratteri morfologici distintivi non ancora strutturati."
+      ],
+      "publicationStatus": "ready"
+    },
+    {
+      "id": "bombi",
+      "name": "Bombi",
+      "latin": "Bombus",
+      "rank": "genus",
+      "groupLabel": "Insetti",
+      "paths": [
+        "flowers",
+        "trail"
+      ],
+      "summary": "Api pelose dai colori variabili: il genere comprende molte specie.",
+      "observe": [
+        {
+          "text": "Il corpo è ricoperto di peli; colori e disegni variano tra le specie.",
+          "sourceIds": [
+            "BCT-B"
+          ]
+        }
+      ],
+      "habitat": [],
+      "behavior": [
+        {
+          "text": "Gli adulti visitano i fiori.",
+          "sourceIds": [
+            "UNIBO-B"
+          ]
+        }
+      ],
+      "ecology": [],
+      "cautions": [],
+      "sourceIds": [
+        "UNIBO-B",
+        "BCT-B"
+      ],
+      "photos": [],
+      "knownGaps": [
+        "Fotografie con licenza verificata ancora da acquisire.",
+        "La scheda non distingue le specie del genere.",
+        "Nessuna lista, frequenza o stagione britannica trasferita al Lazio."
+      ],
+      "publicationStatus": "ready"
+    },
+    {
+      "id": "altre-api-selvatiche",
+      "name": "Altre api selvatiche",
+      "latin": "",
+      "rank": "editorial_group",
+      "groupLabel": "Insetti",
+      "paths": [
+        "flowers",
+        "trail"
+      ],
+      "summary": "Un gruppo editoriale da precisare: le api selvatiche non sono tutte solitarie.",
+      "observe": [],
+      "habitat": [],
+      "behavior": [],
+      "ecology": [
+        {
+          "text": "Molte specie di api selvatiche visitano i fiori e contribuiscono all’impollinazione.",
+          "sourceIds": [
+            "UNIBO-G"
+          ]
+        }
+      ],
+      "cautions": [],
+      "sourceIds": [
+        "UNIBO-G"
+      ],
+      "photos": [],
+      "knownGaps": [
+        "Il gruppo richiede criteri di inclusione e sottogruppi documentati, senza duplicare i bombi.",
+        "Non sono ancora disponibili caratteri osservabili validi per questo raggruppamento.",
+        "Fotografie con licenza verificata ancora da acquisire."
+      ],
+      "publicationStatus": "draft"
+    },
+    {
+      "id": "sirfidi",
+      "name": "Sirfidi",
+      "latin": "Syrphidae",
+      "rank": "family",
+      "groupLabel": "Insetti",
+      "paths": [
+        "flowers",
+        "trail"
+      ],
+      "summary": "Mosche visitatrici dei fiori; alcune somigliano a piccole vespe.",
+      "observe": [
+        {
+          "text": "Gli adulti hanno un solo paio di ali.",
+          "sourceIds": [
+            "RER-V"
+          ]
+        },
+        {
+          "text": "Alcuni hanno forma e colori simili a quelli delle vespe.",
+          "sourceIds": [
+            "RER-V"
+          ]
+        }
+      ],
+      "habitat": [],
+      "behavior": [
+        {
+          "text": "Possono restare sospesi in volo e frequentano i fiori.",
+          "sourceIds": [
+            "RER-V"
+          ]
+        }
+      ],
+      "ecology": [
+        {
+          "text": "Gli adulti contribuiscono all’impollinazione.",
+          "sourceIds": [
+            "ISPRA-S"
+          ]
+        }
+      ],
+      "cautions": [],
+      "sourceIds": [
+        "ISPRA-S",
+        "RER-V"
+      ],
+      "photos": [],
+      "knownGaps": [
+        "Fotografie con licenza verificata ancora da acquisire.",
+        "La scheda riguarda una famiglia: non permette di determinare la specie."
+      ],
+      "publicationStatus": "ready"
+    },
+    {
+      "id": "farfalle-diurne",
+      "name": "Farfalle diurne",
+      "latin": "",
+      "rank": "editorial_group",
+      "groupLabel": "Insetti",
+      "paths": [
+        "flowers",
+        "trail"
+      ],
+      "summary": "Ali, antenne e apparato boccale raccontano la vita dell’insetto adulto.",
+      "observe": [
+        {
+          "text": "Le ali degli adulti sono rivestite di minuscole squame.",
+          "sourceIds": [
+            "APAM-F"
+          ]
+        },
+        {
+          "text": "Nelle farfalle diurne le antenne terminano generalmente con un rigonfiamento a clava.",
+          "sourceIds": [
+            "APAM-F"
+          ]
+        },
+        {
+          "text": "La spirotromba è un apparato boccale avvolgibile usato per aspirare liquidi.",
+          "sourceIds": [
+            "APAM-F"
+          ]
+        }
+      ],
+      "habitat": [],
+      "behavior": [
+        {
+          "text": "Il ciclo comprende uovo, bruco, crisalide e adulto: fasi dall’aspetto molto diverso.",
+          "sourceIds": [
+            "MAD-F"
+          ]
+        }
+      ],
+      "ecology": [
+        {
+          "text": "Gli adulti che visitano i fiori possono contribuire all’impollinazione.",
+          "sourceIds": [
+            "APAM-F"
+          ]
+        }
+      ],
+      "cautions": [
+        {
+          "text": "Maneggiare una farfalla può danneggiarne le ali.",
+          "sourceIds": [
+            "APAM-F"
+          ]
+        }
+      ],
+      "sourceIds": [
+        "APAM-F",
+        "MAD-F"
+      ],
+      "photos": [],
+      "knownGaps": [
+        "Fotografie con licenza verificata ancora da acquisire.",
+        "Raggruppamento editoriale, non singola specie; nessun calendario comune.",
+        "La fonte delle Madonie sostiene il ciclo generale, non presenza o specie locali nel Lazio."
+      ],
+      "publicationStatus": "ready"
+    },
+    {
+      "id": "vespe-sociali",
+      "name": "Vespe sociali",
+      "latin": "",
+      "rank": "editorial_group",
+      "groupLabel": "Insetti",
+      "paths": [
+        "trail",
+        "care"
+      ],
+      "summary": "Vespe cartonaie e vespe di terra: nidi e abitudini diversi richiedono contesto.",
+      "observe": [],
+      "habitat": [],
+      "behavior": [
+        {
+          "text": "Le vespe cartonaie costruiscono nidi di materiale cartaceo; le vespe di terra possono nidificare in cavità del terreno.",
+          "sourceIds": [
+            "RER-V"
+          ]
+        }
+      ],
+      "ecology": [],
+      "cautions": [
+        {
+          "text": "In presenza di api, vespe o calabroni mantieni la calma e muoviti lentamente.",
+          "sourceIds": [
+            "ISS-P"
+          ]
+        }
+      ],
+      "sourceIds": [
+        "RER-V",
+        "ISS-P"
+      ],
+      "photos": [],
+      "knownGaps": [
+        "Il raggruppamento deve essere circoscritto con i taxa inclusi: non descrive tutte le vespe.",
+        "Caratteri comparabili e differenze fra generi non ancora strutturati.",
+        "Fotografie con licenza verificata ancora da acquisire."
+      ],
+      "publicationStatus": "draft"
+    },
+    {
+      "id": "calabrone-europeo",
+      "name": "Calabrone europeo",
+      "latin": "Vespa crabro",
+      "rank": "species",
+      "groupLabel": "Insetti",
+      "paths": [
+        "trail",
+        "care"
+      ],
+      "summary": "Una vespa sociale che può costruire il nido anche nelle cavità degli alberi.",
+      "observe": [],
+      "habitat": [
+        {
+          "text": "Può nidificare in alberi cavi e cavità di edifici.",
+          "sourceIds": [
+            "RER-V"
+          ]
+        }
+      ],
+      "behavior": [
+        {
+          "text": "Vive in colonie che costruiscono nidi di materiale cartaceo.",
+          "sourceIds": [
+            "RER-V"
+          ]
+        }
+      ],
+      "ecology": [],
+      "cautions": [
+        {
+          "text": "Non avvicinarti ai nidi per osservarli o tentare di distruggerli.",
+          "sourceIds": [
+            "LAZ-CR"
+          ]
+        },
+        {
+          "text": "In presenza di api, vespe o calabroni mantieni la calma e muoviti lentamente.",
+          "sourceIds": [
+            "ISS-P"
+          ]
+        }
+      ],
+      "sourceIds": [
+        "LAZ-CR",
+        "RER-V",
+        "ISS-P"
+      ],
+      "photos": [],
+      "knownGaps": [
+        "Fotografie con licenza verificata ancora da acquisire.",
+        "Morfologia comparata con altre specie non ancora strutturata.",
+        "Le fonti territoriali citate non indicano la presenza attuale nel luogo della passeggiata."
+      ],
+      "publicationStatus": "ready"
+    },
+    {
+      "id": "zecche",
+      "name": "Zecche",
+      "latin": "Ixodida",
+      "rank": "editorial_group",
+      "groupLabel": "Aracnidi",
+      "paths": [
+        "trail",
+        "care"
+      ],
+      "summary": "Piccoli parassiti: prevenire il contatto e controllarsi al ritorno dalla passeggiata.",
+      "observe": [
+        {
+          "text": "Il corpo è compatto e tondeggiante; aspetto e dimensioni cambiano con la specie e lo stadio.",
+          "sourceIds": [
+            "ISS-Z"
+          ]
+        }
+      ],
+      "habitat": [
+        {
+          "text": "Vegetazione erbosa e arbustiva. Le preferenze ambientali variano tra le specie.",
+          "sourceIds": [
+            "ISS-Z"
+          ]
+        }
+      ],
+      "behavior": [
+        {
+          "text": "Molte zecche attendono sull’erba o sui cespugli il passaggio di un ospite al quale aggrapparsi.",
+          "sourceIds": [
+            "ISS-Z"
+          ]
+        }
+      ],
+      "ecology": [],
+      "cautions": [
+        {
+          "text": "Indossa pantaloni lunghi ed evita lo sfregamento contro l’erba alta ai margini dei sentieri.",
+          "sourceIds": [
+            "ISS-Z"
+          ]
+        },
+        {
+          "text": "Al ritorno controlla attentamente pelle e indumenti.",
+          "sourceIds": [
+            "ISS-Z"
+          ]
+        },
+        {
+          "text": "Le infezioni possono essere trasmesse da zecche infette: una puntura non prova un’infezione.",
+          "sourceIds": [
+            "ISS-Z"
+          ]
+        }
+      ],
+      "sourceIds": [
+        "ISS-Z"
+      ],
+      "photos": [],
+      "knownGaps": [
+        "Fotografie con licenza verificata ancora da acquisire.",
+        "Nessuna procedura di rimozione riprodotta: indicazioni operative da riconciliare e validare.",
+        "Non sono disponibili dati di rischio infettivo del singolo sentiero."
+      ],
+      "publicationStatus": "ready"
+    },
+    {
+      "id": "processionaria-del-pino",
+      "name": "Processionaria del pino",
+      "latin": "Thaumetopoea pityocampa",
+      "rank": "species",
+      "groupLabel": "Insetti",
+      "paths": [
+        "trail",
+        "care"
+      ],
+      "summary": "Larva e adulto hanno aspetti diversi: i peli urticanti riguardano gli stadi larvali.",
+      "observe": [
+        {
+          "text": "Gli adulti sono falene grigie; le larve costruiscono nidi sericei sugli alberi ospiti.",
+          "sourceIds": [
+            "ERSA-P"
+          ]
+        }
+      ],
+      "habitat": [
+        {
+          "text": "È legata a diverse specie di pino e può interessare anche altre conifere.",
+          "sourceIds": [
+            "ERSA-P"
+          ]
+        }
+      ],
+      "behavior": [
+        {
+          "text": "Le larve mature possono spostarsi in fila per raggiungere il terreno, dove si trasformano in crisalidi.",
+          "sourceIds": [
+            "ERSA-P"
+          ]
+        }
+      ],
+      "ecology": [],
+      "cautions": [
+        {
+          "text": "I peli urticanti delle larve possono disperdersi nell’aria e provocare reazioni anche senza toccare il bruco.",
+          "sourceIds": [
+            "ERSA-P"
+          ]
+        }
+      ],
+      "sourceIds": [
+        "ERSA-P"
+      ],
+      "photos": [],
+      "knownGaps": [
+        "Indicazioni pratiche di prevenzione da completare con una fonte ufficiale dedicata.",
+        "Fonte biologica del Friuli Venezia Giulia: calendario e frequenza non trasferiti al Lazio.",
+        "Fotografie distinte di adulto, larva e nido con licenza verificata ancora da acquisire."
+      ],
+      "publicationStatus": "draft"
+    },
+    {
+      "id": "vipera-comune",
+      "name": "Vipera comune",
+      "latin": "Vipera aspis",
+      "rank": "species",
+      "groupLabel": "Rettili",
+      "paths": [
+        "trail",
+        "care"
+      ],
+      "summary": "Colore e disegno del corpo sono variabili: nessun singolo particolare conferma la specie.",
+      "observe": [
+        {
+          "text": "Il colore di fondo e le macchie sul corpo sono variabili.",
+          "sourceIds": [
+            "LAZ-V"
+          ]
+        }
+      ],
+      "habitat": [],
+      "behavior": [],
+      "ecology": [
+        {
+          "text": "La dieta cambia con l’età: include piccoli vertebrati.",
+          "sourceIds": [
+            "LAZ-V"
+          ]
+        }
+      ],
+      "cautions": [],
+      "sourceIds": [
+        "LAZ-V"
+      ],
+      "photos": [],
+      "knownGaps": [
+        "Indicazioni pratiche per incontro e sospetto morso da validare con fonti competenti prima della pubblicazione.",
+        "Le fonti citate non certificano una presenza sul sentiero.",
+        "Nessuna chiave di identificazione fondata sulla sola forma della testa.",
+        "Fotografie con licenza verificata ancora da acquisire."
+      ],
+      "publicationStatus": "draft"
+    },
+    {
+      "id": "cinghiale",
+      "name": "Cinghiale",
+      "latin": "Sus scrofa",
+      "rank": "species",
+      "groupLabel": "Mammiferi",
+      "paths": [
+        "trail",
+        "care"
+      ],
+      "summary": "Un onnivoro del bosco: anche il terreno smosso racconta il suo passaggio.",
+      "observe": [
+        {
+          "text": "Corpo robusto e compatto.",
+          "sourceIds": [
+            "LAZ-C"
+          ]
+        },
+        {
+          "text": "Buchi e solchi nel terreno possono essere lasciati dalla ricerca del cibo con il muso.",
+          "sourceIds": [
+            "LAZ-C"
+          ]
+        }
+      ],
+      "habitat": [
+        {
+          "text": "Boschi di querce e faggete, con acqua, cibo e copertura vegetale.",
+          "sourceIds": [
+            "LAZ-C"
+          ]
+        }
+      ],
+      "behavior": [],
+      "ecology": [
+        {
+          "text": "Si nutre di alimenti vegetali, invertebrati e piccoli vertebrati.",
+          "sourceIds": [
+            "LAZ-C"
+          ]
+        }
+      ],
+      "cautions": [],
+      "sourceIds": [
+        "LAZ-C",
+        "DUCH"
+      ],
+      "photos": [],
+      "knownGaps": [
+        "Fotografie con licenza verificata ancora da acquisire.",
+        "Le tracce descritte non costituiscono una determinazione certa.",
+        "Indicazioni specifiche per gli incontri da validare con una fonte ufficiale dedicata.",
+        "Le fonti descrivono ambienti e aree protette, non una presenza attuale sul sentiero."
+      ],
+      "publicationStatus": "ready"
+    },
+    {
+      "id": "lupo",
+      "name": "Lupo",
+      "latin": "Canis lupus",
+      "rank": "species",
+      "groupLabel": "Mammiferi",
+      "paths": [
+        "trail",
+        "care"
+      ],
+      "summary": "Un canide che vive anche in gruppi familiari e si adatta ad ambienti diversi.",
+      "observe": [],
+      "habitat": [
+        {
+          "text": "Può frequentare boschi e praterie: la fonte del Parco d’Abruzzo ne descrive l’adattabilità a questi ambienti.",
+          "sourceIds": [
+            "PNALM-L"
+          ]
+        }
+      ],
+      "behavior": [
+        {
+          "text": "Si muove anche in coppia o in gruppi familiari.",
+          "sourceIds": [
+            "LAZ-L"
+          ]
+        },
+        {
+          "text": "L’ululato ha funzioni territoriali e di comunicazione tra membri del gruppo.",
+          "sourceIds": [
+            "PNALM-L"
+          ]
+        }
+      ],
+      "ecology": [
+        {
+          "text": "La dieta comprende ungulati come cinghiali, caprioli e cervi.",
+          "sourceIds": [
+            "PNALM-L"
+          ]
+        }
+      ],
+      "cautions": [],
+      "sourceIds": [
+        "LAZ-L",
+        "PNALM-L",
+        "ISPRA-L",
+        "DUCH"
+      ],
+      "photos": [],
+      "knownGaps": [
+        "Fotografie con licenza verificata ancora da acquisire.",
+        "Nessuna sottospecie assegnata: le fonti consultate adottano interpretazioni differenti.",
+        "Le fonti non documentano un avvistamento attuale nel luogo della passeggiata.",
+        "Indicazioni operative per gli incontri da completare con una fonte dedicata al visitatore."
+      ],
+      "publicationStatus": "ready"
+    }
+  ]
+}
