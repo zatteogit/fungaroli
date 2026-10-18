@@ -1,0 +1,369 @@
+{
+  "status": "prebrief_blocked_photo_review",
+  "createdOn": "2026-10-18",
+  "sourceCatalog": {
+    "path": "data/animals.json",
+    "sha256": "65373517b2f1fdbe6a6e8ca3875e2d61eee95250879580501ff07e9c889d01f9",
+    "publicIds": [
+      "ape-da-miele",
+      "bombi",
+      "sirfidi",
+      "farfalle-diurne",
+      "calabrone-europeo",
+      "zecche",
+      "cinghiale",
+      "lupo"
+    ]
+  },
+  "productionSequence": [
+    "verified_text_and_real_photo_review",
+    "raster_generation",
+    "strict_visual_review_and_correction",
+    "semantic_vector_after_approval"
+  ],
+  "readyForRaster": false,
+  "readyForVector": false,
+  "blockers": [
+    "No real animal photograph is locally available for visual review.",
+    "Ordinary download of Commons original returned HTTP 403.",
+    "Web connector returns text placeholders, not inspectable image content in this session."
+  ],
+  "sources": [
+    {
+      "id": "TREJA-C",
+      "title": "Il cinghiale",
+      "publisher": "Parco Valle del Treja / Parchi Lazio",
+      "url": "https://www.parchilazio.it/valledeltreja-schede-527-il_cinghiale",
+      "consultedOn": "2026-10-18",
+      "locator": "IDENTIFICAZIONE",
+      "supports": [
+        "robust body",
+        "short neck and relatively short/slender legs",
+        "dense bristly coat",
+        "long conical snout",
+        "longitudinal stripes in juveniles",
+        "tusk differences between sexes"
+      ],
+      "notUsed": [
+        "distribution claims",
+        "breeding calendar",
+        "population genetics",
+        "numeric measurements"
+      ]
+    },
+    {
+      "id": "VDA-CR",
+      "title": "Vespa velutina",
+      "publisher": "Regione Autonoma Valle d’Aosta",
+      "url": "https://www.regione.vda.it/agricoltura/per_gli_agricoltori/apicoltura/vespa_velutina_i.aspx",
+      "consultedOn": "2026-10-18",
+      "locator": "Come riconoscerla, bullet about V. crabro (source spells V. cabro)",
+      "supports": [
+        "Vespa crabro: pale yellow abdomen with dark brown bands",
+        "front of head yellow and top reddish",
+        "thorax and legs black/reddish brown"
+      ],
+      "notUsed": [
+        "distribution",
+        "surveillance",
+        "trapping instructions",
+        "relative size as unique diagnostic"
+      ]
+    },
+    {
+      "id": "APAM-M",
+      "title": "Morfologia della farfalla",
+      "publisher": "Ente Aree Protette Alpi Marittime",
+      "url": "https://www.areeprotettealpimarittime.it/citizen-science/effetto-farfalla/morfologia-della-farfalla",
+      "consultedOn": "2026-10-18",
+      "locator": "Aspetto / Origine del nome",
+      "supports": [
+        "adult wing scales",
+        "two wing pairs",
+        "club-shaped antennae in day butterflies",
+        "coiled proboscis"
+      ],
+      "notUsed": [
+        "species-specific patterns",
+        "universal resting-wing position",
+        "color-based toxicity deductions",
+        "specific host plants"
+      ]
+    },
+    {
+      "id": "AMNH-I",
+      "title": "What is Entomology?",
+      "publisher": "American Museum of Natural History",
+      "url": "https://www.amnh.org/explore/ology/entomology/what-is-entomology",
+      "consultedOn": "2026-10-18",
+      "locator": "All insects have certain things in common",
+      "supports": [
+        "six legs in adult insects",
+        "three main body regions",
+        "two antennae"
+      ],
+      "notUsed": [
+        "all arachnid stages having eight legs",
+        "wing count for individual insect taxa"
+      ]
+    },
+    {
+      "id": "UNIBO-A",
+      "title": "Le api dell’Orto · Apis",
+      "publisher": "Università di Bologna, Sistema Museale di Ateneo",
+      "url": "https://sma.unibo.it/it/il-sistema-museale/orto-botanico-ed-erbario/Guida-digitale-agli-apoidei-dell-Orto-Botanico/giugno/apis",
+      "consultedOn": "2026-10-18",
+      "locator": "Specie di Apis presenti in Orto Botanico",
+      "supports": [
+        "Apis mellifera taxon association"
+      ],
+      "notUsed": [
+        "castes of illustrated specimen",
+        "subspecies",
+        "detailed venation",
+        "calendar in Lazio"
+      ]
+    }
+  ],
+  "briefs": [
+    {
+      "id": "cinghiale",
+      "title": "Cinghiale · Sus scrofa",
+      "rank": "species",
+      "stage": "adult, sex not assigned",
+      "claims": [
+        {
+          "field": "body_shape",
+          "value": "robust_compact",
+          "sourceIds": [
+            "TREJA-C"
+          ]
+        },
+        {
+          "field": "coat_texture",
+          "value": "dense_bristly",
+          "sourceIds": [
+            "TREJA-C"
+          ]
+        },
+        {
+          "field": "snout_shape",
+          "value": "long_conical",
+          "sourceIds": [
+            "TREJA-C"
+          ]
+        }
+      ],
+      "anatomyToPreserve": [
+        "Preserve compact trunk, short neck, long tapered snout and bristly silhouette.",
+        "Adult specimen only; exact profile and occluded limbs must be checked against the acquired photo."
+      ],
+      "mustNotInvent": [
+        "No piglet stripes on adult.",
+        "Do not invent conspicuous tusks or a male diagnosis.",
+        "No domestic-pig curly tail, pink smooth coat, aggressive charge or attack scene.",
+        "No red danger badge, bite marks or local-presence background."
+      ],
+      "photoCandidates": [
+        {
+          "page": "https://commons.wikimedia.org/wiki/File:Wild_boar_%28Sus_scrofa%29.jpg",
+          "author": "Bramans",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "metadataRead": true,
+          "visualReview": false,
+          "status": "candidate_not_acquired"
+        },
+        {
+          "page": "https://www.parchilazio.it/cammino_naturale_dei_parchi-schede-862-il_cinghiale_sus_scrofa",
+          "caption": "Il Cinghiale · P. Papa",
+          "visualReview": false,
+          "license": "not_assessed",
+          "status": "candidate_page_only"
+        }
+      ],
+      "photosActuallyReviewed": [],
+      "readyForRaster": false,
+      "readyForVector": false,
+      "blockers": [
+        "Real photographic pixels not yet inspected.",
+        "Coat coloration, foot detail and posture need photo comparison before a prompt can be issued."
+      ]
+    },
+    {
+      "id": "calabrone-europeo",
+      "title": "Calabrone europeo · Vespa crabro",
+      "rank": "species",
+      "stage": "adult; caste/sex not assigned",
+      "claims": [
+        {
+          "field": "abdomen_color",
+          "value": "pale_yellow_with_dark_brown_bands",
+          "sourceIds": [
+            "VDA-CR"
+          ]
+        },
+        {
+          "field": "head_color",
+          "value": "front_yellow_upper_reddish",
+          "sourceIds": [
+            "VDA-CR"
+          ]
+        },
+        {
+          "field": "thorax_legs_color",
+          "value": "black_and_reddish_brown",
+          "sourceIds": [
+            "VDA-CR"
+          ]
+        },
+        {
+          "field": "adult_body_plan",
+          "value": "three_regions_six_legs_two_antennae",
+          "sourceIds": [
+            "AMNH-I"
+          ]
+        }
+      ],
+      "anatomyToPreserve": [
+        "Do not mix colors/patterns of V. crabro with V. velutina or V. orientalis.",
+        "Maintain six legs anatomically attached to thoracic region, two antennae and three main regions. Visible/occluded counts follow the actual reference."
+      ],
+      "mustNotInvent": [
+        "No cartoon black/yellow bee-only stripes substituted for crabro pattern.",
+        "No uniform single orange terminal band or yellow leg tips borrowed from V. velutina.",
+        "No exposed sting, venom drop, threatening face or invented queen diagnosis.",
+        "Wing venation and number of visibly separated wings must not be invented from the common name."
+      ],
+      "photoCandidates": [
+        {
+          "page": "https://commons.wikimedia.org/wiki/File:Vespa_crabro_%28%22European_hornet%22%29.jpg",
+          "author": "Andrea Bonifazi",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "metadataRead": true,
+          "visualReview": false,
+          "status": "candidate_not_acquired"
+        },
+        {
+          "page": "https://www.regione.vda.it/agricoltura/per_gli_agricoltori/apicoltura/vespa_velutina_i.aspx",
+          "visualReview": false,
+          "license": "not_assessed",
+          "status": "comparative_page_only"
+        }
+      ],
+      "photosActuallyReviewed": [],
+      "readyForRaster": false,
+      "readyForVector": false,
+      "blockers": [
+        "Real photographic pixels not yet inspected.",
+        "Must inspect a species-specific real image and verify wing arrangement, band geometry and view."
+      ]
+    },
+    {
+      "id": "farfalle-diurne",
+      "title": "Farfalla diurna · schema anatomico di esempio",
+      "rank": "editorial_group",
+      "stage": "adult",
+      "claims": [
+        {
+          "field": "wing_pairs",
+          "value": 2,
+          "sourceIds": [
+            "APAM-M"
+          ]
+        },
+        {
+          "field": "antenna_shape",
+          "value": "clubbed",
+          "sourceIds": [
+            "APAM-M"
+          ]
+        },
+        {
+          "field": "mouthpart",
+          "value": "coiled_proboscis",
+          "sourceIds": [
+            "APAM-M"
+          ]
+        }
+      ],
+      "anatomyToPreserve": [
+        "Four wings attached in two pairs; club-shaped antenna ends; proboscis coiled in resting close-up.",
+        "Choose one explicit example specimen only after reference review; label as anatomy example, not a summary of all species."
+      ],
+      "mustNotInvent": [
+        "No invented real-species wing pattern.",
+        "No universal morphology/host/season inferred for every day butterfly.",
+        "No anatomy copied from moths with feathered antennae.",
+        "No color-to-danger meaning.",
+        "Do not combine multiple species into a photorealistic chimera."
+      ],
+      "photoCandidates": [
+        {
+          "page": "https://www.areeprotettealpimarittime.it/citizen-science/effetto-farfalla/morfologia-della-farfalla",
+          "visualReview": false,
+          "license": "not_assessed",
+          "status": "page_has_credited_photos_but_pixels_unavailable"
+        }
+      ],
+      "photosActuallyReviewed": [],
+      "readyForRaster": false,
+      "readyForVector": false,
+      "blockers": [
+        "Real photographic pixels not yet inspected.",
+        "Select a real, explicitly named example and verify its photographic view before generation."
+      ]
+    },
+    {
+      "id": "ape-da-miele",
+      "title": "Ape da miele · Apis mellifera",
+      "rank": "species",
+      "stage": "adult worker proposed, not yet validated",
+      "claims": [
+        {
+          "field": "taxon",
+          "value": "Apis mellifera",
+          "sourceIds": [
+            "UNIBO-A"
+          ]
+        },
+        {
+          "field": "adult_body_plan",
+          "value": "three_regions_six_legs_two_antennae",
+          "sourceIds": [
+            "AMNH-I"
+          ]
+        }
+      ],
+      "anatomyToPreserve": [
+        "Preserve head, thorax, abdomen, six legs and two antennae in a physically coherent pose.",
+        "Worker caste and any pollen basket must be supported by the actual acquired photo and a suitable anatomical source."
+      ],
+      "mustNotInvent": [
+        "No subspecies assignment from yellow/orange coloration.",
+        "No mixing worker/regina/fuco proportions or compound eyes.",
+        "No automatic huge yellow pollen baskets.",
+        "No protruding sting, smile, anthropomorphic hands or invented wing venation."
+      ],
+      "photoCandidates": [
+        {
+          "page": "https://commons.wikimedia.org/wiki/File:Apis_mellifera_Western_honey_bee.jpg",
+          "author": "Andreas Trepte",
+          "license": "CC BY-SA 2.5",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5/",
+          "metadataRead": true,
+          "visualReview": false,
+          "status": "page_metadata_only_original_download_403"
+        }
+      ],
+      "photosActuallyReviewed": [],
+      "readyForRaster": false,
+      "readyForVector": false,
+      "blockers": [
+        "Real photographic pixels not yet inspected.",
+        "Need actual photographic inspection and dedicated anatomy source for wings, hair/color distribution and worker caste."
+      ]
+    }
+  ]
+}
