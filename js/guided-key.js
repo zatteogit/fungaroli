@@ -74,8 +74,8 @@ const iconSrc = (icons, k, v, mode = 'alberi') => icons?.[k]?.includes(v) ? `ass
 const ill = (src, size, cls = 'ts-ill') => `<img class="${cls}" src="${esc(src)}" alt="" width="${size}" height="${size}" loading="lazy" decoding="async">`;
 // Il colore non deve suggerire la forma di una bacca o di un fiore estranei alla specie.
 const PLANT_SWATCHES = {
-  fruit_color: {rosso:'#cb2735',arancio:'#e58c32',rosa:'#d88d9f',nero:'#252d38',blu_metallico:'#467692',bruno:'#886344'},
-  flower_color: {bianco:'#f4efda',giallo:'#edcc35',arancio_rosso:'linear-gradient(90deg,#e58c32 50%,#cb2735 50%)',rosa:'#d88d9f',viola_blu:'linear-gradient(90deg,#955f9e 33%,#baa0c9 33% 66%,#81abd0 66%)',verdastro:'linear-gradient(90deg,#899267 50%,#886344 50%)'}
+  fruit_color: {rosso:'var(--botanical-red)',arancio:'var(--botanical-orange)',rosa:'var(--botanical-pink)',nero:'var(--botanical-black)',blu_metallico:'var(--botanical-blue)',bruno:'var(--botanical-brown)'},
+  flower_color: {bianco:'var(--botanical-white)',giallo:'var(--botanical-yellow)',arancio_rosso:'linear-gradient(90deg,var(--botanical-orange) 50%,var(--botanical-red) 50%)',rosa:'var(--botanical-pink)',viola_blu:'linear-gradient(90deg,var(--botanical-violet) 33%,var(--botanical-lilac) 33% 66%,var(--botanical-sky) 66%)',verdastro:'linear-gradient(90deg,var(--botanical-green) 50%,var(--botanical-brown) 50%)'}
 };
 // Queste categorie includono anatomie diverse: l'esempio della chiave non è
 // automaticamente una raffigurazione valida per ogni specie della categoria.
