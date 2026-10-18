@@ -1,0 +1,32 @@
+/* Catalogo editoriale senza foto sostitutive o codici di pericolosità. */
+.animal-paths{display:flex;flex-wrap:wrap;gap:8px;margin-block:12px 18px}
+.animal-paths button{min-height:44px}
+.animal-paths [aria-pressed="true"]{background:var(--select);color:var(--select-ink);border-color:var(--select-edge)}
+.animal-intro,.animal-limit{color:var(--text-2);font-size:14px;line-height:1.65;max-width:65ch}
+.animal-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:16px}
+.animal-card{display:flex;flex-direction:column;min-width:0;padding:22px;border:1px solid var(--line);border-radius:22px;background:var(--surface);color:var(--text);text-decoration:none}
+.animal-card small{font-size:13px;color:var(--text-2)}
+.animal-card h2{font-family:var(--font-display);font-size:26px;line-height:1.15;margin:12px 0 6px}
+.animal-card i{font-size:14px;color:var(--text-2)}
+.animal-card p{font-size:16px;line-height:1.6;margin:14px 0 20px}
+.animal-card-open{margin-top:auto;font-size:14px;font-weight:600;display:flex;justify-content:space-between}
+.animal-card:hover{border-color:var(--text-2)}
+.animal-page{max-width:920px;margin-inline:auto;padding-bottom:28px}
+.animal-page-head{max-width:65ch;margin-bottom:28px}
+.animal-latin{color:var(--text-2);font-size:18px;margin-top:8px}
+.animal-summary{font-size:18px;line-height:1.65}
+.animal-fact-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 30px}
+.animal-fact-section{border-top:1px solid var(--line);padding-block:22px}
+.animal-page h2{font-family:var(--font-display);font-size:25px;line-height:1.25;margin:0 0 14px}
+.animal-facts{padding-left:20px;margin:0;display:grid;gap:12px;font-size:16px;line-height:1.65}
+.animal-cites{white-space:normal;font-size:13px}
+.animal-cites a{display:inline-flex;align-items:center;justify-content:center;min-width:24px;min-height:24px;padding-inline:3px;vertical-align:middle;text-underline-offset:3px}
+.animal-caution{border-left:3px solid var(--warn-ink);background:var(--warn-bg);padding:20px 22px;border-radius:0 18px 18px 0;margin-bottom:26px}
+.animal-sources{border-top:1px solid var(--line);padding-top:24px;margin-top:24px}
+.animal-sources ol{padding-left:22px;display:grid;gap:18px}
+.animal-sources li{scroll-margin-top:120px;font-size:14px;line-height:1.6;overflow-wrap:anywhere}
+.animal-sources small{display:block;font-size:13px;color:var(--text-2)}
+@media(max-width:520px){.animal-grid{grid-template-columns:1fr;gap:12px}.animal-card{padding:20px}.animal-fact-grid{grid-template-columns:1fr}.animal-page h2{font-size:24px}.animal-paths{gap:6px}.animal-paths button{font-size:13px;padding-inline:12px}}
+/* Ciascuna delle cinque sezioni resta leggibile e raggiungibile a 320 px. */
+.seg-nav:has([data-section="animali"]) a{flex:1 0 auto;min-height:44px;display:flex;align-items:center;justify-content:center;padding-inline:14px;font-size:14px}
+.seg-nav:has([data-section="animali"]){scroll-padding-inline:4px;overscroll-behavior-inline:contain}

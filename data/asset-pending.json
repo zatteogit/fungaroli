@@ -594,6 +594,20 @@
         "terminillo-ovest:primavera-pioggia",
         "terminillo-ovest:primavera-sereno"
       ]
+    },
+    {
+      "categoria": "animali-foto",
+      "motivo": "Primo catalogo Animali: foto reali con licenze verificabili da acquisire. Le schede testuali usano superfici neutre, senza immagini generate in sostituzione.",
+      "voci": [
+        "ape-da-miele (nessuna foto)",
+        "bombi (nessuna foto)",
+        "sirfidi (nessuna foto)",
+        "farfalle-diurne (nessuna foto)",
+        "calabrone-europeo (nessuna foto)",
+        "zecche (nessuna foto)",
+        "cinghiale (nessuna foto)",
+        "lupo (nessuna foto)"
+      ]
     }
   ],
   "eccezioni": [

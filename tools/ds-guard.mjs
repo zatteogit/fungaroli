@@ -49,7 +49,7 @@ const CONFIG = {
   },
   entries: [],
   // perimetro Fronda: il livello di componenti condivisi, solo ruoli pubblici
-  entriesDirect: ["css/fronda.css", "css/species-pages.css", "css/map-experience.css"],
+  entriesDirect: ["css/fronda.css", "css/species-pages.css", "css/map-experience.css", "css/animals.css"],
   aliases: {},
   exclude: ["node_modules/", "docs/", "incoming/", "assets/", "tests/", "tools/", "worker/", "data/", ".wrangler/", "test-results/", "playwright-report/", "css/tokens.css", "css/fonts.css"],
   patterns: [

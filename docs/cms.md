@@ -128,3 +128,18 @@ Il primo passo per aumentare il numero di redattori o importare cataloghi molto 
 ## Dashboard amministrativa
 
 Gli amministratori aprono ora la redazione sulla **Dashboard**; **Contenuti** conserva l’editor esistente. La dashboard mostra questionari, segnalazioni e annotazioni condivise aggregate, con finestra di sette giorni e stato effettivo dell’uso nel modello. Il limite dell’influenza delle segnalazioni sull’ordine delle uscite è regolabile fra 0 e 10%, con motivo, controllo della versione e storico. I questionari e le altre annotazioni non hanno un peso automatico. API `GET/PATCH /api/cms/v1/dashboard`, solo amministratori. Dettagli, tempi di applicazione e limiti: [Dashboard di amministrazione](dashboard-amministrazione.md).
+
+## Catalogo Animali
+
+La risorsa `animals` contiene fonti con ID e schede in `items`. Ogni frase delle
+liste osservazione, ambiente, abitudini, ecologia e cautele cita almeno una fonte
+presente nella scheda. `publicationStatus: draft` esclude la voce da catalogo,
+ricerca e collegamenti diretti; `ready` espone soltanto i dati verificati presenti.
+Ogni modifica richiede revisione scientifica nel normale flusso del CMS.
+
+Le note `knownGaps` sono il registro editoriale delle lacune e non vengono esposte
+come lista di attività nell’app. Non aggiungere avvistamenti, punteggi di rischio,
+probabilità o procedure sanitarie per completare una scheda. Foto reali soltanto,
+con fonte, autore e licenza; le foto mancanti stanno in `asset-pending.json`.
+Il seed della nuova risorsa entra nello snapshot; gli aggiornamenti del repository
+rispettano bozze e contenuti modificati dagli autori.
