@@ -1,0 +1,352 @@
+{
+  "schema_version": 3,
+  "taxon_key": "tylopilus-felleus",
+  "variant": {
+    "cap_color": "crema",
+    "cap_shape": "piano",
+    "hymenophore_color": "rosa"
+  },
+  "documented_traits": {
+    "hymenophore": [
+      "pori"
+    ],
+    "hymenophore_color": [
+      "bianco",
+      "rosa"
+    ],
+    "cap_color": [
+      "bruno",
+      "crema"
+    ],
+    "cap_shape": [
+      "emisferico",
+      "convesso",
+      "piano"
+    ],
+    "cap_size": [
+      "medio",
+      "grande"
+    ],
+    "stem_ring": false,
+    "stem_volva": false,
+    "stem_reticulum": true,
+    "flesh_change": [
+      "nessuno"
+    ],
+    "smell": [
+      "nessuno"
+    ],
+    "habitat": [
+      "conifere",
+      "latifoglie"
+    ],
+    "growth": [
+      "singolo",
+      "gregario"
+    ],
+    "season": [
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "spore_print": [
+      "rosa",
+      "bruno"
+    ],
+    "cap_veil": false,
+    "latex": false,
+    "flesh_texture": [
+      "soda"
+    ],
+    "cap_surface": [
+      "asciutta",
+      "vellutata/feltrata",
+      "liscia"
+    ],
+    "gill_attachment": null,
+    "stem_base": [
+      "bulbosa",
+      "normale"
+    ]
+  },
+  "documented_traits_sha256": "a2149f75008184cb691c4935d6967706c36069392106f68d7fa20d4e6eee5d18",
+  "source": {
+    "sheet": "incoming/vettoriali/revisioni-raster/tylopilus-crema-piano-r03.png",
+    "branch": "images/semantic-svg-prototype",
+    "sheet_sha256": "fc15ded91ceec234664d3cd1f7a27e81c7c40599f06b6ece4c538498afee3b1a",
+    "cell": 0,
+    "crop_box": [
+      38,
+      198,
+      412,
+      316
+    ],
+    "padding": 8,
+    "crop_sha256": "b2374e7a6e023453788d0ba09de5cda9f5cf83e0daf002db1eb33e5cad3b2d11",
+    "tile": "cappello"
+  },
+  "raster_first": true,
+  "raster_semantic_review": {
+    "status": "passed-independent-species-review",
+    "review_file": "incoming/vettoriali/revisioni-raster/review.json",
+    "review_sha256": "62d1afb2fcb1491ef51770d688fbd5a76a7e70829952a324a2b69440111f3f24",
+    "reviewer": "/root/raster_production"
+  },
+  "trace_sha256": "36f17991800b3e7a6389035bd89dda91bab426985d9b6c80f634acb13fbdbd31",
+  "license": "CC BY-SA4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "author": "Fronda/Fungaroli",
+  "layers": [
+    {
+      "id": "cap",
+      "label": "Cappello",
+      "trait_fields": [
+        "cap_color",
+        "cap_shape"
+      ]
+    },
+    {
+      "id": "hymenophore",
+      "label": "Pori",
+      "trait_fields": [
+        "hymenophore",
+        "hymenophore_color"
+      ]
+    }
+  ],
+  "recolor_profiles": {
+    "cap": {
+      "field": "cap_color",
+      "source_value": "crema",
+      "anchor_rgb": [
+        246,
+        228,
+        205
+      ],
+      "targets": {
+        "crema": [
+          246,
+          228,
+          205
+        ],
+        "bruno": [
+          150,
+          100,
+          55
+        ]
+      }
+    },
+    "hymenophore": {
+      "field": "hymenophore_color",
+      "source_value": "rosa",
+      "anchor_rgb": [
+        249,
+        195,
+        190
+      ],
+      "targets": {
+        "rosa": [
+          249,
+          195,
+          190
+        ],
+        "bianco": [
+          249,
+          247,
+          239
+        ]
+      }
+    }
+  },
+  "geometry_model": "Independent traced path intersections and reviewed ellipse fits for depicted pore marks; no clips, bitmap embeds or hidden whole-mushroom copies.",
+  "anatomical_annotations": "Corrected raster r03 passed independent species and64px review before tracing. Cap/pores border manually placed inside dark contour; stem neck separated. Detail masks are source-pixel extraction within manually assigned parts, not automatic biological recognition. Polygon trace chosen after spline mode produced a spurious diagonal cap edge; no raster content changed.",
+  "paint_plan": {
+    "trace_sha256": "36f17991800b3e7a6389035bd89dda91bab426985d9b6c80f634acb13fbdbd31",
+    "parts": {
+      "cap": [
+        {
+          "source_paths": [
+            0
+          ],
+          "expected_fills": {
+            "0": "#F8BDBA"
+          },
+          "fill": "#F6E3CD",
+          "role": "material"
+        },
+        {
+          "source_paths": [
+            1
+          ],
+          "expected_fills": {
+            "1": "#F6E3CD"
+          },
+          "fill": "#F6E3CD",
+          "role": "material"
+        },
+        {
+          "source_paths": [
+            3,
+            4
+          ],
+          "expected_fills": {
+            "3": "#F4D6B4",
+            "4": "#F4D5B3"
+          },
+          "fill": "#F4D6B4",
+          "role": "material"
+        },
+        {
+          "source_paths": [
+            2
+          ],
+          "expected_fills": {
+            "2": "#351503"
+          },
+          "fill": "#351503",
+          "role": "outline"
+        }
+      ],
+      "hymenophore": [
+        {
+          "source_paths": [
+            0
+          ],
+          "expected_fills": {
+            "0": "#F8BDBA"
+          },
+          "fill": "#F8BDBA",
+          "role": "material"
+        },
+        {
+          "source_paths": [
+            2
+          ],
+          "expected_fills": {
+            "2": "#351503"
+          },
+          "fill": "#351503",
+          "role": "outline"
+        }
+      ]
+    },
+    "pore_ellipses": {
+      "centers": [
+        [
+          156,
+          73
+        ],
+        [
+          121,
+          77
+        ],
+        [
+          260,
+          77
+        ],
+        [
+          228,
+          78
+        ],
+        [
+          298,
+          78
+        ],
+        [
+          188,
+          79
+        ],
+        [
+          90,
+          85
+        ],
+        [
+          327,
+          87
+        ],
+        [
+          63,
+          88
+        ],
+        [
+          141,
+          90
+        ],
+        [
+          210,
+          90
+        ],
+        [
+          245,
+          91
+        ],
+        [
+          175,
+          93
+        ],
+        [
+          112,
+          95
+        ],
+        [
+          277,
+          97
+        ],
+        [
+          314,
+          98
+        ],
+        [
+          77,
+          102
+        ],
+        [
+          223,
+          105
+        ],
+        [
+          159,
+          106
+        ],
+        [
+          188,
+          107
+        ],
+        [
+          260,
+          108
+        ]
+      ],
+      "radii": [
+        5.8,
+        5.8
+      ],
+      "fill": "#FCA6A1",
+      "review_status": "manually-matched-one-to-one-to-raster-spots",
+      "method": "Local contrast candidates manually reviewed in enlarged overlay against corrected raster; ellipse primitives fit the depicted round marks. The count describes drawn marks, not a biological pore-density trait."
+    },
+    "palette_simplification": "Primary raster material colors retained; minor gradient quantization patches omitted. No feature type, shape or color value invented."
+  },
+  "occluded_tissue_reconstruction": null,
+  "layer_hiding_caveat": "Layer visibility is for inspection only; no new biological variants are created.",
+  "editable_operations": [
+    "recolor-documented-cap-material",
+    "recolor-documented-pore-surface",
+    "inspect-layer",
+    "inspect-individual-depicted-pore-ellipse"
+  ],
+  "unsupported_operations": [
+    "automatic cap-shape morphing",
+    "automatic anatomical recognition",
+    "creating undocumented variants"
+  ],
+  "review_status": "passed-independent-svg-fidelity-review",
+  "svg_fidelity_review": {
+    "file": "incoming/vettoriali/campione-tylopilus-cappello/svg-review.json",
+    "sha256": "0aaf79373095609cd4269ba9b2eea77a416f3983beeca844bdf5bcb33b8914d2",
+    "reviewer": "/root/raster_production"
+  }
+}

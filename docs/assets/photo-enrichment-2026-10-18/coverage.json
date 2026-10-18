@@ -1,0 +1,2858 @@
+{
+  "date": "2026-10-18",
+  "summary": {
+    "species": {
+      "1": 2,
+      "2": 23,
+      "3": 1,
+      "4": 10
+    },
+    "lookalikes": {
+      "1": 51
+    },
+    "unillustrated_taxa": {
+      "0": 1
+    },
+    "plants": {
+      "2": 13,
+      "3": 53,
+      "4": 2,
+      "5": 2
+    },
+    "trees": {
+      "3": 20,
+      "4": 11,
+      "5": 8
+    },
+    "zones": {
+      "0": 6,
+      "1": 9
+    }
+  },
+  "records": [
+    {
+      "catalog": "media-zones.json",
+      "group": "zones",
+      "key": "domo",
+      "latin": null,
+      "photos": 0,
+      "existing_files": 0,
+      "missing_license_url": 0,
+      "files": []
+    },
+    {
+      "catalog": "media-zones.json",
+      "group": "zones",
+      "key": "leonessa",
+      "latin": null,
+      "photos": 0,
+      "existing_files": 0,
+      "missing_license_url": 0,
+      "files": []
+    },
+    {
+      "catalog": "media-zones.json",
+      "group": "zones",
+      "key": "malito",
+      "latin": null,
+      "photos": 0,
+      "existing_files": 0,
+      "missing_license_url": 0,
+      "files": []
+    },
+    {
+      "catalog": "media-zones.json",
+      "group": "zones",
+      "key": "pescorocchiano",
+      "latin": null,
+      "photos": 0,
+      "existing_files": 0,
+      "missing_license_url": 0,
+      "files": []
+    },
+    {
+      "catalog": "media-zones.json",
+      "group": "zones",
+      "key": "sangiovanni",
+      "latin": null,
+      "photos": 0,
+      "existing_files": 0,
+      "missing_license_url": 0,
+      "files": []
+    },
+    {
+      "catalog": "media-zones.json",
+      "group": "zones",
+      "key": "terminillo-est",
+      "latin": null,
+      "photos": 0,
+      "existing_files": 0,
+      "missing_license_url": 0,
+      "files": []
+    },
+    {
+      "catalog": "species-traits.json",
+      "group": "unillustrated_taxa",
+      "key": "inocybe",
+      "latin": "Inocybe spp.",
+      "photos": 0,
+      "existing_files": 0,
+      "missing_license_url": 0,
+      "files": [],
+      "note": "Eccezione documentata: genere intero; non sostituire con foto di una specie."
+    },
+    {
+      "catalog": "media-zones.json",
+      "group": "zones",
+      "key": "antrodoco",
+      "latin": null,
+      "photos": 1,
+      "existing_files": 1,
+      "missing_license_url": 1,
+      "files": [
+        "assets/zones/antrodoco.webp"
+      ]
+    },
+    {
+      "catalog": "media-zones.json",
+      "group": "zones",
+      "key": "cicolano",
+      "latin": null,
+      "photos": 1,
+      "existing_files": 1,
+      "missing_license_url": 1,
+      "files": [
+        "assets/zones/cicolano.webp"
+      ]
+    },
+    {
+      "catalog": "media-zones.json",
+      "group": "zones",
+      "key": "cittareale",
+      "latin": null,
+      "photos": 1,
+      "existing_files": 1,
+      "missing_license_url": 0,
+      "files": [
+        "assets/zones/cittareale.webp"
+      ]
+    },
+    {
+      "catalog": "media-zones.json",
+      "group": "zones",
+      "key": "laga",
+      "latin": null,
+      "photos": 1,
+      "existing_files": 1,
+      "missing_license_url": 1,
+      "files": [
+        "assets/zones/laga.webp"
+      ]
+    },
+    {
+      "catalog": "media-zones.json",
+      "group": "zones",
+      "key": "poggio-cantalice",
+      "latin": null,
+      "photos": 1,
+      "existing_files": 1,
+      "missing_license_url": 1,
+      "files": [
+        "assets/zones/poggio-cantalice.webp"
+      ]
+    },
+    {
+      "catalog": "media-zones.json",
+      "group": "zones",
+      "key": "rascino",
+      "latin": null,
+      "photos": 1,
+      "existing_files": 1,
+      "missing_license_url": 1,
+      "files": [
+        "assets/zones/rascino.webp"
+      ]
+    },
+    {
+      "catalog": "media-zones.json",
+      "group": "zones",
+      "key": "tancia",
+      "latin": null,
+      "photos": 1,
+      "existing_files": 1,
+      "missing_license_url": 1,
+      "files": [
+        "assets/zones/tancia.webp"
+      ]
+    },
+    {
+      "catalog": "media-zones.json",
+      "group": "zones",
+      "key": "terminillo-ovest",
+      "latin": null,
+      "photos": 1,
+      "existing_files": 1,
+      "missing_license_url": 0,
+      "files": [
+        "assets/zones/terminillo-ovest.webp"
+      ]
+    },
+    {
+      "catalog": "media-zones.json",
+      "group": "zones",
+      "key": "vallonina",
+      "latin": null,
+      "photos": 1,
+      "existing_files": 1,
+      "missing_license_url": 1,
+      "files": [
+        "assets/zones/vallonina.webp"
+      ]
+    },
+    {
+      "catalog": "media.json",
+      "group": "lookalikes",
+      "key": "Agaricus xanthodermus",
+      "latin": "Agaricus xanthodermus",
+      "photos": 1,
+      "existing_files": 1,
+      "missing_license_url": 0,
+      "files": [
+        "assets/species/agaricus-xanthodermus-inat1.webp"
+      ]
+    },
+    {
+      "catalog": "media.json",
+      "group": "lookalikes",
+      "key": "Amanita crocea",
+      "latin": "Amanita crocea",
+      "photos": 1,
+      "existing_files": 1,
+      "missing_license_url": 1,
+      "files": [
+        "assets/species/amanita-crocea-inat1.webp"
+      ]
+    },
+    {
+      "catalog": "media.json",
+      "group": "lookalikes",
+      "key": "Amanita muscaria",
+      "latin": "Amanita muscaria",
+      "photos": 1,
+      "existing_files": 1,
+      "missing_license_url": 1,
+      "files": [
+        "assets/species/amanita-muscaria-inat1.webp"
+      ]
+    },
+    {
+      "catalog": "media.json",
+      "group": "lookalikes",
+      "key": "Amanita pantherina",
+      "latin": "Amanita pantherina",
+      "photos": 1,
+      "existing_files": 1,
+      "missing_license_url": 0,
+      "files": [
+        "assets/species/amanita-pantherina-inat1.webp"
+      ]
+    },
+    {
+      "catalog": "media.json",
+      "group": "lookalikes",
+      "key": "Amanita phalloides",
+      "latin": "Amanita phalloides",
+      "photos": 1,
+      "existing_files": 1,
+      "missing_license_url": 1,
+      "files": [
+        "assets/species/amanita-phalloides-inat1.webp"
+      ]
+    },
+    {
+      "catalog": "media.json",
+      "group": "lookalikes",
+      "key": "Amanita verna",
+      "latin": "Amanita verna",
+      "photos": 1,
+      "existing_files": 1,
+      "missing_license_url": 1,
+      "files": [
+        "assets/species/amanita-verna-inat1.webp"
+      ]
+    },
+    {
+      "catalog": "media.json",
+      "group": "lookalikes",
+      "key": "Amanita virosa",
+      "latin": "Amanita virosa",
+      "photos": 1,
+      "existing_files": 1,
+      "missing_license_url": 1,
+      "files": [
+        "assets/species/amanita-virosa-inat1.webp"
+      ]
+    },
+    {
+      "catalog": "media.json",
+      "group": "lookalikes",
+      "key": "Armillaria tabescens",
+      "latin": "Armillaria tabescens",
+      "photos": 1,
+      "existing_files": 1,
+      "missing_license_url": 1,
+      "files": [
+        "assets/species/armillaria-tabescens-ref.webp"
+      ]
+    },
+    {
+      "catalog": "media.json",
+      "group": "lookalikes",
+      "key": "Caloboletus calopus",
+      "latin": "Caloboletus calopus",
+      "photos": 1,
+      "existing_files": 1,
+      "missing_license_url": 1,
+      "files": [
+        "assets/species/caloboletus-calopus-inat1.webp"
+      ]
+    },
+    {
+      "catalog": "media.json",
+      "group": "lookalikes",
+      "key": "Caloboletus radicans",
+      "latin": "Caloboletus radicans",
+      "photos": 1,
+      "existing_files": 1,
+      "missing_license_url": 1,
+      "files": [
+        "assets/species/caloboletus-radicans-inat1.webp"
+      ]
+    },
+    {
+      "catalog": "media.json",
+      "group": "lookalikes",
+      "key": "Chalciporus piperatus",
+      "latin": "Chalciporus piperatus",
+      "photos": 1,
+      "existing_files": 1,
+      "missing_license_url": 1,
+      "files": [
+        "assets/species/chalciporus-piperatus-inat1.webp"
+      ]
+    },
+    {
+      "catalog": "media.json",
+      "group": "lookalikes",
+      "key": "Chlorophyllum rhacodes",
+      "latin": "Chlorophyllum rhacodes",
+      "photos": 1,
+      "existing_files": 1,
+      "missing_license_url": 1,
+      "files": [
+        "assets/species/chlorophyllum-rhacodes-inat1.webp"
+      ]
+    },
+    {
+      "catalog": "media.json",
+      "group": "lookalikes",
+      "key": "Chlorophyllum venenatum",
+      "latin": "Chlorophyllum venenatum",
+      "photos": 1,
+      "existing_files": 1,
+      "missing_license_url": 1,
+      "files": [
+        "assets/species/chlorophyllum-venenatum-ref.webp"
+      ]
+    },
+    {
+      "catalog": "media.json",
+      "group": "lookalikes",
+      "key": "Clitocybe rivulosa",
+      "latin": "Clitocybe rivulosa",
+      "photos": 1,
+      "existing_files": 1,
+      "missing_license_url": 0,
+      "files": [
+        "assets/species/clitocybe-rivulosa-inat1.webp"
+      ]
+    },
+    {
+      "catalog": "media.json",
+      "group": "lookalikes",
+      "key": "Cortinarius orellanus",
+      "latin": "Cortinarius orellanus",
+      "photos": 1,
+      "existing_files": 1,
+      "missing_license_url": 1,
+      "files": [
+        "assets/species/cortinarius-orellanus-inat1.webp"
+      ]
+    },
+    {
+      "catalog": "media.json",
+      "group": "lookalikes",
+      "key": "Cortinarius rubellus",
+      "latin": "Cortinarius rubellus",
+      "photos": 1,
+      "existing_files": 1,
+      "missing_license_url": 1,
+      "files": [
+        "assets/species/cortinarius-rubellus-inat1.webp"
+      ]
+    },
+    {
+      "catalog": "media.json",
+      "group": "lookalikes",
+      "key": "Cortinarius traganus",
+      "latin": "Cortinarius traganus",
+      "photos": 1,
+      "existing_files": 1,
+      "missing_license_url": 1,
+      "files": [
+        "assets/species/cortinarius-traganus-inat1.webp"
+      ]
+    },
+    {
+      "catalog": "media.json",
+      "group": "lookalikes",
+      "key": "Cortinarius violaceus",
+      "latin": "Cortinarius violaceus",
+      "photos": 1,
+      "existing_files": 1,
+      "missing_license_url": 1,
+      "files": [
+        "assets/species/cortinarius-violaceus-inat1.webp"
+      ]
+    },
+    {
+      "catalog": "media.json",
+      "group": "lookalikes",
+      "key": "Craterellus cinereus",
+      "latin": "Craterellus cinereus",
+      "photos": 1,
+      "existing_files": 1,
+      "missing_license_url": 1,
+      "files": [
+        "assets/species/craterellus-cinereus-inat1.webp"
+      ]
+    },
+    {
+      "catalog": "media.json",
+      "group": "lookalikes",
+      "key": "Entoloma sinuatum",
+      "latin": "Entoloma sinuatum",
+      "photos": 1,
+      "existing_files": 1,
+      "missing_license_url": 1,
+      "files": [
+        "assets/species/entoloma-sinuatum-inat1.webp"
+      ]
+    },
+    {
+      "catalog": "media.json",
+      "group": "lookalikes",
+      "key": "Galerina marginata",
+      "latin": "Galerina marginata",
+      "photos": 1,
+      "existing_files": 1,
+      "missing_license_url": 1,
+      "files": [
+        "assets/species/galerina-marginata-inat1.webp"
+      ]
+    },
+    {
+      "catalog": "media.json",
+      "group": "lookalikes",
+      "key": "Gymnopilus junonius",
+      "latin": "Gymnopilus junonius",
+      "photos": 1,
+      "existing_files": 1,
+      "missing_license_url": 1,
+      "files": [
+        "assets/species/gymnopilus-junonius-inat1.webp"
+      ]
+    },
+    {
+      "catalog": "media.json",
+      "group": "lookalikes",
+      "key": "Gyromitra esculenta",
+      "latin": "Gyromitra esculenta",
+      "photos": 1,
+      "existing_files": 1,
+      "missing_license_url": 0,
+      "files": [
+        "assets/species/gyromitra-esculenta-inat1.webp"
+      ]
+    },
+    {
+      "catalog": "media.json",
+      "group": "lookalikes",
+      "key": "Hydnellum peckii",
+      "latin": "Hydnellum peckii",
+      "photos": 1,
+      "existing_files": 1,
+      "missing_license_url": 1,
+      "files": [
+        "assets/species/hydnellum-peckii-inat1.webp"
+      ]
+    },
+    {
+      "catalog": "media.json",
+      "group": "lookalikes",
+      "key": "Hydnum rufescens",
+      "latin": "Hydnum rufescens",
+      "photos": 1,
+      "existing_files": 1,
+      "missing_license_url": 1,
+      "files": [
+        "assets/species/hydnum-rufescens-inat1.webp"
+      ]
+    },
+    {
+      "catalog": "media.json",
+      "group": "lookalikes",
+      "key": "Hygrophoropsis aurantiaca",
+      "latin": "Hygrophoropsis aurantiaca",
+      "photos": 1,
+      "existing_files": 1,
+      "missing_license_url": 1,
+      "files": [
+        "assets/species/hygrophoropsis-aurantiaca-inat1.webp"
+      ]
+    },
+    {
+      "catalog": "media.json",
+      "group": "lookalikes",
+      "key": "Hypholoma fasciculare",
+      "latin": "Hypholoma fasciculare",
+      "photos": 1,
+      "existing_files": 1,
+      "missing_license_url": 1,
+      "files": [
+        "assets/species/hypholoma-fasciculare-inat1.webp"
+      ]
+    },
+    {
+      "catalog": "media.json",
+      "group": "lookalikes",
+      "key": "Imleria badia",
+      "latin": "Imleria badia",
+      "photos": 1,
+      "existing_files": 1,
+      "missing_license_url": 1,
+      "files": [
+        "assets/species/imleria-badia-inat1.webp"
+      ]
+    },
+    {
+      "catalog": "media.json",
+      "group": "lookalikes",
+      "key": "Inocybe lilacina",
+      "latin": "Inocybe lilacina",
+      "photos": 1,
+      "existing_files": 1,
+      "missing_license_url": 1,
+      "files": [
+        "assets/species/inocybe-lilacina-inat1.webp"
+      ]
+    },
+    {
+      "catalog": "media.json",
+      "group": "lookalikes",
+      "key": "Laccaria amethystina",
+      "latin": "Laccaria amethystina",
+      "photos": 1,
+      "existing_files": 1,
+      "missing_license_url": 1,
+      "files": [
+        "assets/species/laccaria-amethystina-inat1.webp"
+      ]
+    },
+    {
+      "catalog": "media.json",
+      "group": "lookalikes",
+      "key": "Lepiota brunneoincarnata",
+      "latin": "Lepiota brunneoincarnata",
+      "photos": 1,
+      "existing_files": 1,
+      "missing_license_url": 1,
+      "files": [
+        "assets/species/lepiota-brunneoincarnata-inat1.webp"
+      ]
+    },
+    {
+      "catalog": "media.json",
+      "group": "lookalikes",
+      "key": "Lepiota cristata",
+      "latin": "Lepiota cristata",
+      "photos": 1,
+      "existing_files": 1,
+      "missing_license_url": 1,
+      "files": [
+        "assets/species/lepiota-cristata-inat1.webp"
+      ]
+    },
+    {
+      "catalog": "media.json",
+      "group": "lookalikes",
+      "key": "Lepiota subincarnata",
+      "latin": "Lepiota subincarnata",
+      "photos": 1,
+      "existing_files": 1,
+      "missing_license_url": 1,
+      "files": [
+        "assets/species/lepiota-subincarnata-inat1.webp"
+      ]
+    },
+    {
+      "catalog": "media.json",
+      "group": "lookalikes",
+      "key": "Mycena pura",
+      "latin": "Mycena pura",
+      "photos": 1,
+      "existing_files": 1,
+      "missing_license_url": 1,
+      "files": [
+        "assets/species/mycena-pura-inat1.webp"
+      ]
+    },
+    {
+      "catalog": "media.json",
+      "group": "lookalikes",
+      "key": "Neoboletus luridiformis",
+      "latin": "Neoboletus luridiformis",
+      "photos": 1,
+      "existing_files": 1,
+      "missing_license_url": 1,
+      "files": [
+        "assets/species/neoboletus-luridiformis-ref.webp"
+      ]
+    },
+    {
+      "catalog": "media.json",
+      "group": "lookalikes",
+      "key": "Omphalotus olearius",
+      "latin": "Omphalotus olearius",
+      "photos": 1,
+      "existing_files": 1,
+      "missing_license_url": 1,
+      "files": [
+        "assets/species/omphalotus-olearius-inat1.webp"
+      ]
+    },
+    {
+      "catalog": "media.json",
+      "group": "lookalikes",
+      "key": "Pholiota squarrosa",
+      "latin": "Pholiota squarrosa",
+      "photos": 1,
+      "existing_files": 1,
+      "missing_license_url": 1,
+      "files": [
+        "assets/species/pholiota-squarrosa-inat1.webp"
+      ]
+    },
+    {
+      "catalog": "media.json",
+      "group": "lookalikes",
+      "key": "Pseudocraterellus undulatus",
+      "latin": "Pseudocraterellus undulatus",
+      "photos": 1,
+      "existing_files": 1,
+      "missing_license_url": 1,
+      "files": [
+        "assets/species/pseudocraterellus-undulatus-ref.webp"
+      ]
+    },
+    {
+      "catalog": "media.json",
+      "group": "lookalikes",
+      "key": "Rubroboletus satanas",
+      "latin": "Rubroboletus satanas",
+      "photos": 1,
+      "existing_files": 1,
+      "missing_license_url": 1,
+      "files": [
+        "assets/species/rubroboletus-satanas-inat1.webp"
+      ]
+    },
+    {
+      "catalog": "media.json",
+      "group": "lookalikes",
+      "key": "Russula aeruginea",
+      "latin": "Russula aeruginea",
+      "photos": 1,
+      "existing_files": 1,
+      "missing_license_url": 1,
+      "files": [
+        "assets/species/russula-aeruginea-inat1.webp"
+      ]
+    },
+    {
+      "catalog": "media.json",
+      "group": "lookalikes",
+      "key": "Russula heterophylla",
+      "latin": "Russula heterophylla",
+      "photos": 1,
+      "existing_files": 1,
+      "missing_license_url": 1,
+      "files": [
+        "assets/species/russula-heterophylla-inat1.webp"
+      ]
+    },
+    {
+      "catalog": "media.json",
+      "group": "lookalikes",
+      "key": "Russula olivacea",
+      "latin": "Russula olivacea",
+      "photos": 1,
+      "existing_files": 1,
+      "missing_license_url": 1,
+      "files": [
+        "assets/species/russula-olivacea-inat1.webp"
+      ]
+    },
+    {
+      "catalog": "media.json",
+      "group": "lookalikes",
+      "key": "Sarcodon imbricatus",
+      "latin": "Sarcodon imbricatus",
+      "photos": 1,
+      "existing_files": 1,
+      "missing_license_url": 1,
+      "files": [
+        "assets/species/sarcodon-imbricatus-inat1.webp"
+      ]
+    },
+    {
+      "catalog": "media.json",
+      "group": "lookalikes",
+      "key": "Sarcodon scabrosus",
+      "latin": "Sarcodon scabrosus",
+      "photos": 1,
+      "existing_files": 1,
+      "missing_license_url": 1,
+      "files": [
+        "assets/species/sarcodon-scabrosus-ref.webp"
+      ]
+    },
+    {
+      "catalog": "media.json",
+      "group": "lookalikes",
+      "key": "Suillus bovinus",
+      "latin": "Suillus bovinus",
+      "photos": 1,
+      "existing_files": 1,
+      "missing_license_url": 1,
+      "files": [
+        "assets/species/suillus-bovinus-inat1.webp"
+      ]
+    },
+    {
+      "catalog": "media.json",
+      "group": "lookalikes",
+      "key": "Tricholoma equestre",
+      "latin": "Tricholoma equestre",
+      "photos": 1,
+      "existing_files": 1,
+      "missing_license_url": 0,
+      "files": [
+        "assets/species/tricholoma-equestre-inat1.webp"
+      ]
+    },
+    {
+      "catalog": "media.json",
+      "group": "lookalikes",
+      "key": "Tricholoma pardinum",
+      "latin": "Tricholoma pardinum",
+      "photos": 1,
+      "existing_files": 1,
+      "missing_license_url": 1,
+      "files": [
+        "assets/species/tricholoma-pardinum-inat1.webp"
+      ]
+    },
+    {
+      "catalog": "media.json",
+      "group": "lookalikes",
+      "key": "Tricholoma sciodes",
+      "latin": "Tricholoma sciodes",
+      "photos": 1,
+      "existing_files": 1,
+      "missing_license_url": 1,
+      "files": [
+        "assets/species/tricholoma-sciodes-inat1.webp"
+      ]
+    },
+    {
+      "catalog": "media.json",
+      "group": "lookalikes",
+      "key": "Tricholoma virgatum",
+      "latin": "Tricholoma virgatum",
+      "photos": 1,
+      "existing_files": 1,
+      "missing_license_url": 1,
+      "files": [
+        "assets/species/tricholoma-virgatum-inat1.webp"
+      ]
+    },
+    {
+      "catalog": "media.json",
+      "group": "lookalikes",
+      "key": "Tylopilus felleus",
+      "latin": "Tylopilus felleus",
+      "photos": 1,
+      "existing_files": 1,
+      "missing_license_url": 1,
+      "files": [
+        "assets/species/tylopilus-felleus-inat1.webp"
+      ]
+    },
+    {
+      "catalog": "media.json",
+      "group": "lookalikes",
+      "key": "Urnula craterium",
+      "latin": "Urnula craterium",
+      "photos": 1,
+      "existing_files": 1,
+      "missing_license_url": 1,
+      "files": [
+        "assets/species/urnula-craterium-inat1.webp"
+      ]
+    },
+    {
+      "catalog": "media.json",
+      "group": "species",
+      "key": "aestivalis",
+      "latin": "Boletus aestivalis",
+      "photos": 1,
+      "existing_files": 1,
+      "missing_license_url": 1,
+      "files": [
+        "assets/species/aestivalis-ref.webp"
+      ]
+    },
+    {
+      "catalog": "media.json",
+      "group": "species",
+      "key": "nuda",
+      "latin": "Lepista nuda",
+      "photos": 1,
+      "existing_files": 1,
+      "missing_license_url": 1,
+      "files": [
+        "assets/species/nuda-ref.webp"
+      ]
+    },
+    {
+      "catalog": "media.json",
+      "group": "species",
+      "key": "agaricus-arvensis",
+      "latin": "Agaricus arvensis",
+      "photos": 2,
+      "existing_files": 2,
+      "missing_license_url": 0,
+      "files": [
+        "assets/species/agaricus-arvensis-ref.webp",
+        "assets/species/agaricus-arvensis-inat1.webp"
+      ]
+    },
+    {
+      "catalog": "media.json",
+      "group": "species",
+      "key": "agaricus-bisporus",
+      "latin": "Agaricus bisporus",
+      "photos": 2,
+      "existing_files": 2,
+      "missing_license_url": 0,
+      "files": [
+        "assets/species/agaricus-bisporus-ref.webp",
+        "assets/species/agaricus-bisporus-inat1.webp"
+      ]
+    },
+    {
+      "catalog": "media.json",
+      "group": "species",
+      "key": "agaricus-campestris",
+      "latin": "Agaricus campestris",
+      "photos": 2,
+      "existing_files": 2,
+      "missing_license_url": 0,
+      "files": [
+        "assets/species/agaricus-campestris-ref.webp",
+        "assets/species/agaricus-campestris-inat1.webp"
+      ]
+    },
+    {
+      "catalog": "media.json",
+      "group": "species",
+      "key": "agaricus-sylvicola",
+      "latin": "Agaricus sylvicola",
+      "photos": 2,
+      "existing_files": 2,
+      "missing_license_url": 0,
+      "files": [
+        "assets/species/agaricus-sylvicola-ref.webp",
+        "assets/species/agaricus-sylvicola-inat1.webp"
+      ]
+    },
+    {
+      "catalog": "media.json",
+      "group": "species",
+      "key": "amanita-rubescens",
+      "latin": "Amanita rubescens",
+      "photos": 2,
+      "existing_files": 2,
+      "missing_license_url": 0,
+      "files": [
+        "assets/species/amanita-rubescens-ref.webp",
+        "assets/species/amanita-rubescens-inat1.webp"
+      ]
+    },
+    {
+      "catalog": "media.json",
+      "group": "species",
+      "key": "calocybe-gambosa",
+      "latin": "Calocybe gambosa",
+      "photos": 2,
+      "existing_files": 2,
+      "missing_license_url": 0,
+      "files": [
+        "assets/species/calocybe-gambosa-ref.webp",
+        "assets/species/calocybe-gambosa-inat1.webp"
+      ]
+    },
+    {
+      "catalog": "media.json",
+      "group": "species",
+      "key": "coprinus-comatus",
+      "latin": "Coprinus comatus",
+      "photos": 2,
+      "existing_files": 2,
+      "missing_license_url": 0,
+      "files": [
+        "assets/species/coprinus-comatus-ref.webp",
+        "assets/species/coprinus-comatus-inat1.webp"
+      ]
+    },
+    {
+      "catalog": "media.json",
+      "group": "species",
+      "key": "craterellus-lutescens",
+      "latin": "Craterellus lutescens",
+      "photos": 2,
+      "existing_files": 2,
+      "missing_license_url": 0,
+      "files": [
+        "assets/species/craterellus-lutescens-ref.webp",
+        "assets/species/craterellus-lutescens-inat1.webp"
+      ]
+    },
+    {
+      "catalog": "media.json",
+      "group": "species",
+      "key": "cyclocybe-aegerita",
+      "latin": "Cyclocybe cylindracea (= Cyclocybe aegerita)",
+      "photos": 2,
+      "existing_files": 2,
+      "missing_license_url": 0,
+      "files": [
+        "assets/species/cyclocybe-aegerita-ref.webp",
+        "assets/species/cyclocybe-aegerita-inat1.webp"
+      ]
+    },
+    {
+      "catalog": "media.json",
+      "group": "species",
+      "key": "fistulina-hepatica",
+      "latin": "Fistulina hepatica",
+      "photos": 2,
+      "existing_files": 2,
+      "missing_license_url": 0,
+      "files": [
+        "assets/species/fistulina-hepatica-ref.webp",
+        "assets/species/fistulina-hepatica-inat1.webp"
+      ]
+    },
+    {
+      "catalog": "media.json",
+      "group": "species",
+      "key": "hygrophorus-latitabundus",
+      "latin": "Hygrophorus latitabundus",
+      "photos": 2,
+      "existing_files": 2,
+      "missing_license_url": 0,
+      "files": [
+        "assets/species/hygrophorus-latitabundus-ref.webp",
+        "assets/species/hygrophorus-latitabundus-inat1.webp"
+      ]
+    },
+    {
+      "catalog": "media.json",
+      "group": "species",
+      "key": "hygrophorus-marzuolus",
+      "latin": "Hygrophorus marzuolus",
+      "photos": 2,
+      "existing_files": 2,
+      "missing_license_url": 0,
+      "files": [
+        "assets/species/hygrophorus-marzuolus-ref.webp",
+        "assets/species/hygrophorus-marzuolus-inat1.webp"
+      ]
+    },
+    {
+      "catalog": "media.json",
+      "group": "species",
+      "key": "lactarius-deliciosus",
+      "latin": "Lactarius deliciosus",
+      "photos": 2,
+      "existing_files": 2,
+      "missing_license_url": 0,
+      "files": [
+        "assets/species/lactarius-deliciosus-ref.webp",
+        "assets/species/lactarius-deliciosus-inat1.webp"
+      ]
+    },
+    {
+      "catalog": "media.json",
+      "group": "species",
+      "key": "lactarius-deterrimus",
+      "latin": "Lactarius deterrimus",
+      "photos": 2,
+      "existing_files": 2,
+      "missing_license_url": 0,
+      "files": [
+        "assets/species/lactarius-deterrimus-ref.webp",
+        "assets/species/lactarius-deterrimus-inat1.webp"
+      ]
+    },
+    {
+      "catalog": "media.json",
+      "group": "species",
+      "key": "marasmius-oreades",
+      "latin": "Marasmius oreades",
+      "photos": 2,
+      "existing_files": 2,
+      "missing_license_url": 0,
+      "files": [
+        "assets/species/marasmius-oreades-ref.webp",
+        "assets/species/marasmius-oreades-inat1.webp"
+      ]
+    },
+    {
+      "catalog": "media.json",
+      "group": "species",
+      "key": "morchella-elata",
+      "latin": "Morchella elata s.l.",
+      "photos": 2,
+      "existing_files": 2,
+      "missing_license_url": 0,
+      "files": [
+        "assets/species/morchella-elata-ref.webp",
+        "assets/species/morchella-elata-inat1.webp"
+      ]
+    },
+    {
+      "catalog": "media.json",
+      "group": "species",
+      "key": "morchella-esculenta",
+      "latin": "Morchella esculenta s.l.",
+      "photos": 2,
+      "existing_files": 2,
+      "missing_license_url": 0,
+      "files": [
+        "assets/species/morchella-esculenta-ref.webp",
+        "assets/species/morchella-esculenta-inat1.webp"
+      ]
+    },
+    {
+      "catalog": "media.json",
+      "group": "species",
+      "key": "pinophilus",
+      "latin": "Boletus pinophilus",
+      "photos": 2,
+      "existing_files": 2,
+      "missing_license_url": 2,
+      "files": [
+        "assets/species/pinophilus-ref.webp",
+        "assets/species/pinophilus-inat1.webp"
+      ]
+    },
+    {
+      "catalog": "media.json",
+      "group": "species",
+      "key": "pleurotus-cornucopiae",
+      "latin": "Pleurotus cornucopiae",
+      "photos": 2,
+      "existing_files": 2,
+      "missing_license_url": 0,
+      "files": [
+        "assets/species/pleurotus-cornucopiae-ref.webp",
+        "assets/species/pleurotus-cornucopiae-inat1.webp"
+      ]
+    },
+    {
+      "catalog": "media.json",
+      "group": "species",
+      "key": "pleurotus-eryngii",
+      "latin": "Pleurotus eryngii",
+      "photos": 2,
+      "existing_files": 2,
+      "missing_license_url": 0,
+      "files": [
+        "assets/species/pleurotus-eryngii-ref.webp",
+        "assets/species/pleurotus-eryngii-inat1.webp"
+      ]
+    },
+    {
+      "catalog": "media.json",
+      "group": "species",
+      "key": "pleurotus-ostreatus",
+      "latin": "Pleurotus ostreatus",
+      "photos": 2,
+      "existing_files": 2,
+      "missing_license_url": 0,
+      "files": [
+        "assets/species/pleurotus-ostreatus-ref.webp",
+        "assets/species/pleurotus-ostreatus-inat1.webp"
+      ]
+    },
+    {
+      "catalog": "media.json",
+      "group": "species",
+      "key": "russula-aurea",
+      "latin": "Russula aurea",
+      "photos": 2,
+      "existing_files": 2,
+      "missing_license_url": 0,
+      "files": [
+        "assets/species/russula-aurea-ref.webp",
+        "assets/species/russula-aurea-inat1.webp"
+      ]
+    },
+    {
+      "catalog": "media.json",
+      "group": "species",
+      "key": "tricholoma-portentosum",
+      "latin": "Tricholoma portentosum",
+      "photos": 2,
+      "existing_files": 2,
+      "missing_license_url": 0,
+      "files": [
+        "assets/species/tricholoma-portentosum-ref.webp",
+        "assets/species/tricholoma-portentosum-inat1.webp"
+      ]
+    },
+    {
+      "catalog": "plants.json",
+      "group": "plants",
+      "key": "aristolochia",
+      "latin": "Aristolochia clematitis L.",
+      "photos": 2,
+      "existing_files": 2,
+      "missing_license_url": 0,
+      "files": [
+        "assets/plants/aristolochia-1.webp",
+        "assets/plants/aristolochia-2.webp"
+      ]
+    },
+    {
+      "catalog": "plants.json",
+      "group": "plants",
+      "key": "bucaneve",
+      "latin": "Galanthus nivalis L.",
+      "photos": 2,
+      "existing_files": 2,
+      "missing_license_url": 0,
+      "files": [
+        "assets/plants/bucaneve-1.webp",
+        "assets/plants/bucaneve-2.webp"
+      ]
+    },
+    {
+      "catalog": "plants.json",
+      "group": "plants",
+      "key": "cefalantera-maggiore",
+      "latin": "Cephalanthera longifolia (L.) Fritsch",
+      "photos": 2,
+      "existing_files": 2,
+      "missing_license_url": 0,
+      "files": [
+        "assets/plants/cefalantera-maggiore-1.webp",
+        "assets/plants/cefalantera-maggiore-2.webp"
+      ]
+    },
+    {
+      "catalog": "plants.json",
+      "group": "plants",
+      "key": "digitale-gialla",
+      "latin": "Digitalis micrantha Roth ex Schweigg.",
+      "photos": 2,
+      "existing_files": 2,
+      "missing_license_url": 0,
+      "files": [
+        "assets/plants/digitale-gialla-1.webp",
+        "assets/plants/digitale-gialla-3.webp"
+      ]
+    },
+    {
+      "catalog": "plants.json",
+      "group": "plants",
+      "key": "erba-trinita",
+      "latin": "Hepatica nobilis Schreb.",
+      "photos": 2,
+      "existing_files": 2,
+      "missing_license_url": 0,
+      "files": [
+        "assets/plants/erba-trinita-1.webp",
+        "assets/plants/erba-trinita-2.webp"
+      ]
+    },
+    {
+      "catalog": "plants.json",
+      "group": "plants",
+      "key": "genziana-primaticcia",
+      "latin": "Gentiana verna L.",
+      "photos": 2,
+      "existing_files": 2,
+      "missing_license_url": 0,
+      "files": [
+        "assets/plants/genziana-primaticcia-1.webp",
+        "assets/plants/genziana-primaticcia-2.webp"
+      ]
+    },
+    {
+      "catalog": "plants.json",
+      "group": "plants",
+      "key": "giglio-martagone",
+      "latin": "Lilium martagon L.",
+      "photos": 2,
+      "existing_files": 2,
+      "missing_license_url": 0,
+      "files": [
+        "assets/plants/giglio-martagone-1.webp",
+        "assets/plants/giglio-martagone-2.webp"
+      ]
+    },
+    {
+      "catalog": "plants.json",
+      "group": "plants",
+      "key": "giglio-rosso",
+      "latin": "Lilium bulbiferum L. subsp. croceum (Chaix) Jan",
+      "photos": 2,
+      "existing_files": 2,
+      "missing_license_url": 0,
+      "files": [
+        "assets/plants/giglio-rosso-1.webp",
+        "assets/plants/giglio-rosso-2.webp"
+      ]
+    },
+    {
+      "catalog": "plants.json",
+      "group": "plants",
+      "key": "narciso-dei-poeti",
+      "latin": "Narcissus poeticus L.",
+      "photos": 2,
+      "existing_files": 2,
+      "missing_license_url": 0,
+      "files": [
+        "assets/plants/narciso-dei-poeti-1.webp",
+        "assets/plants/narciso-dei-poeti-2.webp"
+      ]
+    },
+    {
+      "catalog": "plants.json",
+      "group": "plants",
+      "key": "orchide-maschia",
+      "latin": "Orchis mascula (L.) L.",
+      "photos": 2,
+      "existing_files": 2,
+      "missing_license_url": 0,
+      "files": [
+        "assets/plants/orchide-maschia-1.webp",
+        "assets/plants/orchide-maschia-2.webp"
+      ]
+    },
+    {
+      "catalog": "plants.json",
+      "group": "plants",
+      "key": "orchide-purpurea",
+      "latin": "Orchis purpurea Huds.",
+      "photos": 2,
+      "existing_files": 2,
+      "missing_license_url": 0,
+      "files": [
+        "assets/plants/orchide-purpurea-1.webp",
+        "assets/plants/orchide-purpurea-2.webp"
+      ]
+    },
+    {
+      "catalog": "plants.json",
+      "group": "plants",
+      "key": "orchide-sambucina",
+      "latin": "Dactylorhiza sambucina (L.) Soó",
+      "photos": 2,
+      "existing_files": 2,
+      "missing_license_url": 0,
+      "files": [
+        "assets/plants/orchide-sambucina-1.webp",
+        "assets/plants/orchide-sambucina-2.webp"
+      ]
+    },
+    {
+      "catalog": "plants.json",
+      "group": "plants",
+      "key": "scilla-silvestre",
+      "latin": "Scilla bifolia L.",
+      "photos": 2,
+      "existing_files": 2,
+      "missing_license_url": 0,
+      "files": [
+        "assets/plants/scilla-silvestre-1.webp",
+        "assets/plants/scilla-silvestre-2.webp"
+      ]
+    },
+    {
+      "catalog": "media-trees.json",
+      "group": "trees",
+      "key": "abete bianco",
+      "latin": "Abies alba",
+      "photos": 3,
+      "existing_files": 3,
+      "missing_license_url": 0,
+      "files": [
+        "assets/species/tree-abete-bianco-inat1.webp",
+        "assets/species/tree-abete-bianco-inat2.webp",
+        "assets/species/tree-abete-bianco-inat3.webp"
+      ]
+    },
+    {
+      "catalog": "media-trees.json",
+      "group": "trees",
+      "key": "acero campestre",
+      "latin": "Acer campestre",
+      "photos": 3,
+      "existing_files": 3,
+      "missing_license_url": 0,
+      "files": [
+        "assets/species/tree-acero-campestre-inat1.webp",
+        "assets/species/tree-acero-campestre-inat2.webp",
+        "assets/species/tree-acero-campestre-inat3.webp"
+      ]
+    },
+    {
+      "catalog": "media-trees.json",
+      "group": "trees",
+      "key": "acero di montpellier",
+      "latin": "Acer monspessulanum L. subsp. monspessulanum",
+      "photos": 3,
+      "existing_files": 3,
+      "missing_license_url": 0,
+      "files": [
+        "assets/trees/acero-di-montpellier-1.webp",
+        "assets/trees/acero-di-montpellier-2.webp",
+        "assets/trees/acero-di-montpellier-3.webp"
+      ]
+    },
+    {
+      "catalog": "media-trees.json",
+      "group": "trees",
+      "key": "agrifoglio",
+      "latin": "Ilex aquifolium L.",
+      "photos": 3,
+      "existing_files": 3,
+      "missing_license_url": 0,
+      "files": [
+        "assets/trees/agrifoglio-1.webp",
+        "assets/trees/agrifoglio-2.webp",
+        "assets/trees/agrifoglio-3.webp"
+      ]
+    },
+    {
+      "catalog": "media-trees.json",
+      "group": "trees",
+      "key": "betulla",
+      "latin": "Betula pendula",
+      "photos": 3,
+      "existing_files": 3,
+      "missing_license_url": 0,
+      "files": [
+        "assets/species/tree-betulla-inat1.webp",
+        "assets/species/tree-betulla-inat2.webp",
+        "assets/species/tree-betulla-inat3.webp"
+      ]
+    },
+    {
+      "catalog": "media-trees.json",
+      "group": "trees",
+      "key": "carpino bianco",
+      "latin": "Carpinus betulus",
+      "photos": 3,
+      "existing_files": 3,
+      "missing_license_url": 0,
+      "files": [
+        "assets/species/tree-carpino-bianco-inat1.webp",
+        "assets/species/tree-carpino-bianco-inat2.webp",
+        "assets/species/tree-carpino-bianco-inat3.webp"
+      ]
+    },
+    {
+      "catalog": "media-trees.json",
+      "group": "trees",
+      "key": "carpino nero",
+      "latin": "Ostrya carpinifolia",
+      "photos": 3,
+      "existing_files": 3,
+      "missing_license_url": 0,
+      "files": [
+        "assets/species/tree-carpino-nero-inat1.webp",
+        "assets/species/tree-carpino-nero-inat2.webp",
+        "assets/species/tree-carpino-nero-inat3.webp"
+      ]
+    },
+    {
+      "catalog": "media-trees.json",
+      "group": "trees",
+      "key": "ciliegio",
+      "latin": "Prunus avium (L.) L.",
+      "photos": 3,
+      "existing_files": 3,
+      "missing_license_url": 0,
+      "files": [
+        "assets/trees/ciliegio-1.webp",
+        "assets/trees/ciliegio-2.webp",
+        "assets/trees/ciliegio-3.webp"
+      ]
+    },
+    {
+      "catalog": "media-trees.json",
+      "group": "trees",
+      "key": "farnetto",
+      "latin": "Quercus frainetto",
+      "photos": 3,
+      "existing_files": 3,
+      "missing_license_url": 0,
+      "files": [
+        "assets/species/tree-farnetto-inat1.webp",
+        "assets/species/tree-farnetto-inat2.webp",
+        "assets/species/tree-farnetto-inat3.webp"
+      ]
+    },
+    {
+      "catalog": "media-trees.json",
+      "group": "trees",
+      "key": "leccio",
+      "latin": "Quercus ilex",
+      "photos": 3,
+      "existing_files": 3,
+      "missing_license_url": 0,
+      "files": [
+        "assets/species/tree-leccio-inat1.webp",
+        "assets/species/tree-leccio-inat2.webp",
+        "assets/species/tree-leccio-inat3.webp"
+      ]
+    },
+    {
+      "catalog": "media-trees.json",
+      "group": "trees",
+      "key": "nocciolo",
+      "latin": "Corylus avellana",
+      "photos": 3,
+      "existing_files": 3,
+      "missing_license_url": 0,
+      "files": [
+        "assets/species/tree-nocciolo-inat1.webp",
+        "assets/species/tree-nocciolo-inat2.webp",
+        "assets/species/tree-nocciolo-inat3.webp"
+      ]
+    },
+    {
+      "catalog": "media-trees.json",
+      "group": "trees",
+      "key": "noce",
+      "latin": "Juglans regia L.",
+      "photos": 3,
+      "existing_files": 3,
+      "missing_license_url": 0,
+      "files": [
+        "assets/trees/noce-1.webp",
+        "assets/trees/noce-2.webp",
+        "assets/trees/noce-3.webp"
+      ]
+    },
+    {
+      "catalog": "media-trees.json",
+      "group": "trees",
+      "key": "olivo",
+      "latin": "Olea europaea",
+      "photos": 3,
+      "existing_files": 3,
+      "missing_license_url": 0,
+      "files": [
+        "assets/species/tree-olivo-inat1.webp",
+        "assets/species/tree-olivo-inat2.webp",
+        "assets/species/tree-olivo-inat3.webp"
+      ]
+    },
+    {
+      "catalog": "media-trees.json",
+      "group": "trees",
+      "key": "olmo campestre",
+      "latin": "Ulmus minor Mill. subsp. minor",
+      "photos": 3,
+      "existing_files": 3,
+      "missing_license_url": 0,
+      "files": [
+        "assets/trees/olmo-campestre-1.webp",
+        "assets/trees/olmo-campestre-2.webp",
+        "assets/trees/olmo-campestre-3.webp"
+      ]
+    },
+    {
+      "catalog": "media-trees.json",
+      "group": "trees",
+      "key": "olmo montano",
+      "latin": "Ulmus glabra Huds.",
+      "photos": 3,
+      "existing_files": 3,
+      "missing_license_url": 0,
+      "files": [
+        "assets/trees/olmo-montano-1.webp",
+        "assets/trees/olmo-montano-2.webp",
+        "assets/trees/olmo-montano-3.webp"
+      ]
+    },
+    {
+      "catalog": "media-trees.json",
+      "group": "trees",
+      "key": "pino domestico",
+      "latin": "Pinus pinea",
+      "photos": 3,
+      "existing_files": 3,
+      "missing_license_url": 0,
+      "files": [
+        "assets/species/tree-pino-domestico-inat1.webp",
+        "assets/species/tree-pino-domestico-inat2.webp",
+        "assets/species/tree-pino-domestico-inat3.webp"
+      ]
+    },
+    {
+      "catalog": "media-trees.json",
+      "group": "trees",
+      "key": "pino nero",
+      "latin": "Pinus nigra",
+      "photos": 3,
+      "existing_files": 3,
+      "missing_license_url": 0,
+      "files": [
+        "assets/species/tree-pino-nero-inat1.webp",
+        "assets/species/tree-pino-nero-inat2.webp",
+        "assets/species/tree-pino-nero-inat3.webp"
+      ]
+    },
+    {
+      "catalog": "media-trees.json",
+      "group": "trees",
+      "key": "robinia",
+      "latin": "Robinia pseudoacacia L.",
+      "photos": 3,
+      "existing_files": 3,
+      "missing_license_url": 0,
+      "files": [
+        "assets/trees/robinia-1.webp",
+        "assets/trees/robinia-2.webp",
+        "assets/trees/robinia-3.webp"
+      ]
+    },
+    {
+      "catalog": "media-trees.json",
+      "group": "trees",
+      "key": "salice",
+      "latin": "Salix spp.",
+      "photos": 3,
+      "existing_files": 3,
+      "missing_license_url": 0,
+      "files": [
+        "assets/species/tree-salice-inat1.webp",
+        "assets/species/tree-salice-inat2.webp",
+        "assets/species/tree-salice-inat3.webp"
+      ]
+    },
+    {
+      "catalog": "media-trees.json",
+      "group": "trees",
+      "key": "sorbo domestico",
+      "latin": "Sorbus domestica L.",
+      "photos": 3,
+      "existing_files": 3,
+      "missing_license_url": 0,
+      "files": [
+        "assets/trees/sorbo-domestico-1.webp",
+        "assets/trees/sorbo-domestico-2.webp",
+        "assets/trees/sorbo-domestico-3.webp"
+      ]
+    },
+    {
+      "catalog": "media.json",
+      "group": "species",
+      "key": "suillus",
+      "latin": "Suillus luteus",
+      "photos": 3,
+      "existing_files": 3,
+      "missing_license_url": 3,
+      "files": [
+        "assets/species/suillus-inat2.webp",
+        "assets/species/suillus-inat1.webp",
+        "assets/species/suillus-inat3.webp"
+      ]
+    },
+    {
+      "catalog": "plants.json",
+      "group": "plants",
+      "key": "achillea-ligure",
+      "latin": "Achillea ligustica All.",
+      "photos": 3,
+      "existing_files": 3,
+      "missing_license_url": 0,
+      "files": [
+        "assets/plants/achillea-ligure-1.webp",
+        "assets/plants/achillea-ligure-2.webp",
+        "assets/plants/achillea-ligure-3.webp"
+      ]
+    },
+    {
+      "catalog": "plants.json",
+      "group": "plants",
+      "key": "alliaria",
+      "latin": "Alliaria petiolata (M.Bieb.) Cavara & Grande",
+      "photos": 3,
+      "existing_files": 3,
+      "missing_license_url": 0,
+      "files": [
+        "assets/plants/alliaria-1.webp",
+        "assets/plants/alliaria-2.webp",
+        "assets/plants/alliaria-3.webp"
+      ]
+    },
+    {
+      "catalog": "plants.json",
+      "group": "plants",
+      "key": "anemone-appennini",
+      "latin": "Anemone apennina L.",
+      "photos": 3,
+      "existing_files": 3,
+      "missing_license_url": 0,
+      "files": [
+        "assets/plants/anemone-appennini-1.webp",
+        "assets/plants/anemone-appennini-2.webp",
+        "assets/plants/anemone-appennini-3.webp"
+      ]
+    },
+    {
+      "catalog": "plants.json",
+      "group": "plants",
+      "key": "asfodelo",
+      "latin": "Asphodelus ramosus L. subsp. ramosus",
+      "photos": 3,
+      "existing_files": 3,
+      "missing_license_url": 0,
+      "files": [
+        "assets/plants/asfodelo-1.webp",
+        "assets/plants/asfodelo-2.webp",
+        "assets/plants/asfodelo-3.webp"
+      ]
+    },
+    {
+      "catalog": "plants.json",
+      "group": "plants",
+      "key": "asparago-selvatico",
+      "latin": "Asparagus acutifolius L.",
+      "photos": 3,
+      "existing_files": 3,
+      "missing_license_url": 0,
+      "files": [
+        "assets/plants/asparago-selvatico-1.webp",
+        "assets/plants/asparago-selvatico-2.webp",
+        "assets/plants/asparago-selvatico-3.webp"
+      ]
+    },
+    {
+      "catalog": "plants.json",
+      "group": "plants",
+      "key": "biancospino",
+      "latin": "Crataegus monogyna Jacq.",
+      "photos": 3,
+      "existing_files": 3,
+      "missing_license_url": 0,
+      "files": [
+        "assets/plants/biancospino-1.webp",
+        "assets/plants/biancospino-2.webp",
+        "assets/plants/biancospino-3.webp"
+      ]
+    },
+    {
+      "catalog": "plants.json",
+      "group": "plants",
+      "key": "borragine",
+      "latin": "Borago officinalis L.",
+      "photos": 3,
+      "existing_files": 3,
+      "missing_license_url": 0,
+      "files": [
+        "assets/plants/borragine-1.webp",
+        "assets/plants/borragine-2.webp",
+        "assets/plants/borragine-3.webp"
+      ]
+    },
+    {
+      "catalog": "plants.json",
+      "group": "plants",
+      "key": "ciclamino-autunnale",
+      "latin": "Cyclamen hederifolium Aiton subsp. hederifolium",
+      "photos": 3,
+      "existing_files": 3,
+      "missing_license_url": 0,
+      "files": [
+        "assets/plants/ciclamino-autunnale-1.webp",
+        "assets/plants/ciclamino-autunnale-2.webp",
+        "assets/plants/ciclamino-autunnale-3.webp"
+      ]
+    },
+    {
+      "catalog": "plants.json",
+      "group": "plants",
+      "key": "ciclamino-primaverile",
+      "latin": "Cyclamen repandum Sm. subsp. repandum",
+      "photos": 3,
+      "existing_files": 3,
+      "missing_license_url": 0,
+      "files": [
+        "assets/plants/ciclamino-primaverile-1.webp",
+        "assets/plants/ciclamino-primaverile-2.webp",
+        "assets/plants/ciclamino-primaverile-3.webp"
+      ]
+    },
+    {
+      "catalog": "plants.json",
+      "group": "plants",
+      "key": "cicoria",
+      "latin": "Cichorium intybus L.",
+      "photos": 3,
+      "existing_files": 3,
+      "missing_license_url": 0,
+      "files": [
+        "assets/plants/cicoria-1.webp",
+        "assets/plants/cicoria-2.webp",
+        "assets/plants/cicoria-3.webp"
+      ]
+    },
+    {
+      "catalog": "plants.json",
+      "group": "plants",
+      "key": "cicuta",
+      "latin": "Conium maculatum L. subsp. maculatum",
+      "photos": 3,
+      "existing_files": 3,
+      "missing_license_url": 0,
+      "files": [
+        "assets/plants/cicuta-1.webp",
+        "assets/plants/cicuta-2.webp",
+        "assets/plants/cicuta-3.webp"
+      ]
+    },
+    {
+      "catalog": "plants.json",
+      "group": "plants",
+      "key": "cisto-montpellier",
+      "latin": "Cistus monspeliensis L.",
+      "photos": 3,
+      "existing_files": 3,
+      "missing_license_url": 0,
+      "files": [
+        "assets/plants/cisto-montpellier-1.webp",
+        "assets/plants/cisto-montpellier-2.webp",
+        "assets/plants/cisto-montpellier-3.webp"
+      ]
+    },
+    {
+      "catalog": "plants.json",
+      "group": "plants",
+      "key": "cisto-salvia",
+      "latin": "Cistus salviifolius L.",
+      "photos": 3,
+      "existing_files": 3,
+      "missing_license_url": 0,
+      "files": [
+        "assets/plants/cisto-salvia-1.webp",
+        "assets/plants/cisto-salvia-2.webp",
+        "assets/plants/cisto-salvia-3.webp"
+      ]
+    },
+    {
+      "catalog": "plants.json",
+      "group": "plants",
+      "key": "colchico",
+      "latin": "Colchicum lusitanum Brot.",
+      "photos": 3,
+      "existing_files": 3,
+      "missing_license_url": 0,
+      "files": [
+        "assets/plants/colchico-1.webp",
+        "assets/plants/colchico-2.webp",
+        "assets/plants/colchico-3.webp"
+      ]
+    },
+    {
+      "catalog": "plants.json",
+      "group": "plants",
+      "key": "corbezzolo",
+      "latin": "Arbutus unedo L.",
+      "photos": 3,
+      "existing_files": 3,
+      "missing_license_url": 0,
+      "files": [
+        "assets/plants/corbezzolo-1.webp",
+        "assets/plants/corbezzolo-2.webp",
+        "assets/plants/corbezzolo-3.webp"
+      ]
+    },
+    {
+      "catalog": "plants.json",
+      "group": "plants",
+      "key": "corniolo",
+      "latin": "Cornus mas L.",
+      "photos": 3,
+      "existing_files": 3,
+      "missing_license_url": 0,
+      "files": [
+        "assets/plants/corniolo-1.webp",
+        "assets/plants/corniolo-2.webp",
+        "assets/plants/corniolo-3.webp"
+      ]
+    },
+    {
+      "catalog": "plants.json",
+      "group": "plants",
+      "key": "dafne-laureola",
+      "latin": "Daphne laureola L.",
+      "photos": 3,
+      "existing_files": 3,
+      "missing_license_url": 0,
+      "files": [
+        "assets/plants/dafne-laureola-1.webp",
+        "assets/plants/dafne-laureola-2.webp",
+        "assets/plants/dafne-laureola-3.webp"
+      ]
+    },
+    {
+      "catalog": "plants.json",
+      "group": "plants",
+      "key": "ebbio",
+      "latin": "Sambucus ebulus L.",
+      "photos": 3,
+      "existing_files": 3,
+      "missing_license_url": 0,
+      "files": [
+        "assets/plants/ebbio-1.webp",
+        "assets/plants/ebbio-2.webp",
+        "assets/plants/ebbio-3.webp"
+      ]
+    },
+    {
+      "catalog": "plants.json",
+      "group": "plants",
+      "key": "edera",
+      "latin": "Hedera helix L. subsp. helix",
+      "photos": 3,
+      "existing_files": 3,
+      "missing_license_url": 0,
+      "files": [
+        "assets/plants/edera-1.webp",
+        "assets/plants/edera-2.webp",
+        "assets/plants/edera-3.webp"
+      ]
+    },
+    {
+      "catalog": "plants.json",
+      "group": "plants",
+      "key": "elleboro",
+      "latin": "Helleborus foetidus L. subsp. foetidus",
+      "photos": 3,
+      "existing_files": 3,
+      "missing_license_url": 0,
+      "files": [
+        "assets/plants/elleboro-1.webp",
+        "assets/plants/elleboro-2.webp",
+        "assets/plants/elleboro-3.webp"
+      ]
+    },
+    {
+      "catalog": "plants.json",
+      "group": "plants",
+      "key": "erica-arborea",
+      "latin": "Erica arborea L.",
+      "photos": 3,
+      "existing_files": 3,
+      "missing_license_url": 0,
+      "files": [
+        "assets/plants/erica-arborea-1.webp",
+        "assets/plants/erica-arborea-2.webp",
+        "assets/plants/erica-arborea-3.webp"
+      ]
+    },
+    {
+      "catalog": "plants.json",
+      "group": "plants",
+      "key": "finocchietto",
+      "latin": "Anethum foeniculum L.",
+      "photos": 3,
+      "existing_files": 3,
+      "missing_license_url": 0,
+      "files": [
+        "assets/plants/finocchietto-1.webp",
+        "assets/plants/finocchietto-2.webp",
+        "assets/plants/finocchietto-3.webp"
+      ]
+    },
+    {
+      "catalog": "plants.json",
+      "group": "plants",
+      "key": "fragolina",
+      "latin": "Fragaria vesca L. subsp. vesca",
+      "photos": 3,
+      "existing_files": 3,
+      "missing_license_url": 0,
+      "files": [
+        "assets/plants/fragolina-1.webp",
+        "assets/plants/fragolina-2.webp",
+        "assets/plants/fragolina-3.webp"
+      ]
+    },
+    {
+      "catalog": "plants.json",
+      "group": "plants",
+      "key": "fusaggine",
+      "latin": "Euonymus europaeus L.",
+      "photos": 3,
+      "existing_files": 3,
+      "missing_license_url": 0,
+      "files": [
+        "assets/plants/fusaggine-1.webp",
+        "assets/plants/fusaggine-2.webp",
+        "assets/plants/fusaggine-3.webp"
+      ]
+    },
+    {
+      "catalog": "plants.json",
+      "group": "plants",
+      "key": "gigaro",
+      "latin": "Arum italicum Mill. subsp. italicum",
+      "photos": 3,
+      "existing_files": 3,
+      "missing_license_url": 0,
+      "files": [
+        "assets/plants/gigaro-1.webp",
+        "assets/plants/gigaro-2.webp",
+        "assets/plants/gigaro-3.webp"
+      ]
+    },
+    {
+      "catalog": "plants.json",
+      "group": "plants",
+      "key": "ginepro",
+      "latin": "Juniperus communis L.",
+      "photos": 3,
+      "existing_files": 3,
+      "missing_license_url": 0,
+      "files": [
+        "assets/plants/ginepro-1.webp",
+        "assets/plants/ginepro-2.webp",
+        "assets/plants/ginepro-3.webp"
+      ]
+    },
+    {
+      "catalog": "plants.json",
+      "group": "plants",
+      "key": "ginestra-carbonai",
+      "latin": "Cytisus scoparius (L.) Link subsp. scoparius",
+      "photos": 3,
+      "existing_files": 3,
+      "missing_license_url": 0,
+      "files": [
+        "assets/plants/ginestra-carbonai-1.webp",
+        "assets/plants/ginestra-carbonai-2.webp",
+        "assets/plants/ginestra-carbonai-3.webp"
+      ]
+    },
+    {
+      "catalog": "plants.json",
+      "group": "plants",
+      "key": "ginestra-odorosa",
+      "latin": "Spartium junceum L.",
+      "photos": 3,
+      "existing_files": 3,
+      "missing_license_url": 0,
+      "files": [
+        "assets/plants/ginestra-odorosa-1.webp",
+        "assets/plants/ginestra-odorosa-2.webp",
+        "assets/plants/ginestra-odorosa-3.webp"
+      ]
+    },
+    {
+      "catalog": "plants.json",
+      "group": "plants",
+      "key": "iperico",
+      "latin": "Hypericum perforatum L. subsp. perforatum",
+      "photos": 3,
+      "existing_files": 3,
+      "missing_license_url": 0,
+      "files": [
+        "assets/plants/iperico-1.webp",
+        "assets/plants/iperico-2.webp",
+        "assets/plants/iperico-3.webp"
+      ]
+    },
+    {
+      "catalog": "plants.json",
+      "group": "plants",
+      "key": "lentaggine",
+      "latin": "Viburnum tinus L. subsp. tinus",
+      "photos": 3,
+      "existing_files": 3,
+      "missing_license_url": 0,
+      "files": [
+        "assets/plants/lentaggine-1.webp",
+        "assets/plants/lentaggine-2.webp",
+        "assets/plants/lentaggine-3.webp"
+      ]
+    },
+    {
+      "catalog": "plants.json",
+      "group": "plants",
+      "key": "ligustro",
+      "latin": "Ligustrum vulgare L.",
+      "photos": 3,
+      "existing_files": 3,
+      "missing_license_url": 0,
+      "files": [
+        "assets/plants/ligustro-1.webp",
+        "assets/plants/ligustro-2.webp",
+        "assets/plants/ligustro-3.webp"
+      ]
+    },
+    {
+      "catalog": "plants.json",
+      "group": "plants",
+      "key": "malva",
+      "latin": "Malva sylvestris L.",
+      "photos": 3,
+      "existing_files": 3,
+      "missing_license_url": 0,
+      "files": [
+        "assets/plants/malva-1.webp",
+        "assets/plants/malva-2.webp",
+        "assets/plants/malva-3.webp"
+      ]
+    },
+    {
+      "catalog": "plants.json",
+      "group": "plants",
+      "key": "margherita",
+      "latin": "Leucanthemum vulgare (Vaill.) Lam. subsp. vulgare",
+      "photos": 3,
+      "existing_files": 3,
+      "missing_license_url": 0,
+      "files": [
+        "assets/plants/margherita-1.webp",
+        "assets/plants/margherita-2.webp",
+        "assets/plants/margherita-3.webp"
+      ]
+    },
+    {
+      "catalog": "plants.json",
+      "group": "plants",
+      "key": "melissa",
+      "latin": "Melissa officinalis L. subsp. officinalis",
+      "photos": 3,
+      "existing_files": 3,
+      "missing_license_url": 0,
+      "files": [
+        "assets/plants/melissa-1.webp",
+        "assets/plants/melissa-2.webp",
+        "assets/plants/melissa-3.webp"
+      ]
+    },
+    {
+      "catalog": "plants.json",
+      "group": "plants",
+      "key": "menta-acquatica",
+      "latin": "Mentha aquatica L. subsp. aquatica",
+      "photos": 3,
+      "existing_files": 3,
+      "missing_license_url": 0,
+      "files": [
+        "assets/plants/menta-acquatica-1.webp",
+        "assets/plants/menta-acquatica-2.webp",
+        "assets/plants/menta-acquatica-3.webp"
+      ]
+    },
+    {
+      "catalog": "plants.json",
+      "group": "plants",
+      "key": "menta-longifolia",
+      "latin": "Mentha longifolia (L.) L.",
+      "photos": 3,
+      "existing_files": 3,
+      "missing_license_url": 0,
+      "files": [
+        "assets/plants/menta-longifolia-1.webp",
+        "assets/plants/menta-longifolia-2.webp",
+        "assets/plants/menta-longifolia-3.webp"
+      ]
+    },
+    {
+      "catalog": "plants.json",
+      "group": "plants",
+      "key": "origano",
+      "latin": "Origanum vulgare L. subsp. vulgare",
+      "photos": 3,
+      "existing_files": 3,
+      "missing_license_url": 0,
+      "files": [
+        "assets/plants/origano-1.webp",
+        "assets/plants/origano-2.webp",
+        "assets/plants/origano-3.webp"
+      ]
+    },
+    {
+      "catalog": "plants.json",
+      "group": "plants",
+      "key": "ortica",
+      "latin": "Urtica dioica L.",
+      "photos": 3,
+      "existing_files": 3,
+      "missing_license_url": 0,
+      "files": [
+        "assets/plants/ortica-1.webp",
+        "assets/plants/ortica-2.webp",
+        "assets/plants/ortica-3.webp"
+      ]
+    },
+    {
+      "catalog": "plants.json",
+      "group": "plants",
+      "key": "piantaggine",
+      "latin": "Plantago lanceolata L.",
+      "photos": 3,
+      "existing_files": 3,
+      "missing_license_url": 0,
+      "files": [
+        "assets/plants/piantaggine-1.webp",
+        "assets/plants/piantaggine-2.webp",
+        "assets/plants/piantaggine-3.webp"
+      ]
+    },
+    {
+      "catalog": "plants.json",
+      "group": "plants",
+      "key": "primula",
+      "latin": "Primula vulgaris Huds. subsp. vulgaris",
+      "photos": 3,
+      "existing_files": 3,
+      "missing_license_url": 0,
+      "files": [
+        "assets/plants/primula-1.webp",
+        "assets/plants/primula-2.webp",
+        "assets/plants/primula-3.webp"
+      ]
+    },
+    {
+      "catalog": "plants.json",
+      "group": "plants",
+      "key": "prugnolo",
+      "latin": "Prunus spinosa L. subsp. spinosa",
+      "photos": 3,
+      "existing_files": 3,
+      "missing_license_url": 0,
+      "files": [
+        "assets/plants/prugnolo-1.webp",
+        "assets/plants/prugnolo-2.webp",
+        "assets/plants/prugnolo-3.webp"
+      ]
+    },
+    {
+      "catalog": "plants.json",
+      "group": "plants",
+      "key": "pungitopo",
+      "latin": "Ruscus aculeatus L.",
+      "photos": 3,
+      "existing_files": 3,
+      "missing_license_url": 0,
+      "files": [
+        "assets/plants/pungitopo-1.webp",
+        "assets/plants/pungitopo-2.webp",
+        "assets/plants/pungitopo-3.webp"
+      ]
+    },
+    {
+      "catalog": "plants.json",
+      "group": "plants",
+      "key": "raponzolo",
+      "latin": "Campanula rapunculus L.",
+      "photos": 3,
+      "existing_files": 3,
+      "missing_license_url": 0,
+      "files": [
+        "assets/plants/raponzolo-1.webp",
+        "assets/plants/raponzolo-2.webp",
+        "assets/plants/raponzolo-3.webp"
+      ]
+    },
+    {
+      "catalog": "plants.json",
+      "group": "plants",
+      "key": "rosa-canina",
+      "latin": "Rosa canina L.",
+      "photos": 3,
+      "existing_files": 3,
+      "missing_license_url": 0,
+      "files": [
+        "assets/plants/rosa-canina-1.webp",
+        "assets/plants/rosa-canina-2.webp",
+        "assets/plants/rosa-canina-3.webp"
+      ]
+    },
+    {
+      "catalog": "plants.json",
+      "group": "plants",
+      "key": "rovo",
+      "latin": "Rubus ulmifolius Schott",
+      "photos": 3,
+      "existing_files": 3,
+      "missing_license_url": 0,
+      "files": [
+        "assets/plants/rovo-1.webp",
+        "assets/plants/rovo-2.webp",
+        "assets/plants/rovo-3.webp"
+      ]
+    },
+    {
+      "catalog": "plants.json",
+      "group": "plants",
+      "key": "salsapariglia",
+      "latin": "Smilax aspera L.",
+      "photos": 3,
+      "existing_files": 3,
+      "missing_license_url": 0,
+      "files": [
+        "assets/plants/salsapariglia-1.webp",
+        "assets/plants/salsapariglia-2.webp",
+        "assets/plants/salsapariglia-3.webp"
+      ]
+    },
+    {
+      "catalog": "plants.json",
+      "group": "plants",
+      "key": "sambuco",
+      "latin": "Sambucus nigra L.",
+      "photos": 3,
+      "existing_files": 3,
+      "missing_license_url": 0,
+      "files": [
+        "assets/plants/sambuco-1.webp",
+        "assets/plants/sambuco-2.webp",
+        "assets/plants/sambuco-3.webp"
+      ]
+    },
+    {
+      "catalog": "plants.json",
+      "group": "plants",
+      "key": "sanguinello",
+      "latin": "Cornus sanguinea L. subsp. sanguinea",
+      "photos": 3,
+      "existing_files": 3,
+      "missing_license_url": 0,
+      "files": [
+        "assets/plants/sanguinello-1.webp",
+        "assets/plants/sanguinello-2.webp",
+        "assets/plants/sanguinello-3.webp"
+      ]
+    },
+    {
+      "catalog": "plants.json",
+      "group": "plants",
+      "key": "silene",
+      "latin": "Silene vulgaris (Moench) Garcke subsp. vulgaris",
+      "photos": 3,
+      "existing_files": 3,
+      "missing_license_url": 0,
+      "files": [
+        "assets/plants/silene-1.webp",
+        "assets/plants/silene-2.webp",
+        "assets/plants/silene-3.webp"
+      ]
+    },
+    {
+      "catalog": "plants.json",
+      "group": "plants",
+      "key": "stramonio",
+      "latin": "Datura stramonium L.",
+      "photos": 3,
+      "existing_files": 3,
+      "missing_license_url": 0,
+      "files": [
+        "assets/plants/stramonio-1.webp",
+        "assets/plants/stramonio-2.webp",
+        "assets/plants/stramonio-3.webp"
+      ]
+    },
+    {
+      "catalog": "plants.json",
+      "group": "plants",
+      "key": "tarassaco",
+      "latin": "Taraxacum sect. Taraxacum",
+      "photos": 3,
+      "existing_files": 3,
+      "missing_license_url": 0,
+      "files": [
+        "assets/plants/tarassaco-1.webp",
+        "assets/plants/tarassaco-2.webp",
+        "assets/plants/tarassaco-3.webp"
+      ]
+    },
+    {
+      "catalog": "plants.json",
+      "group": "plants",
+      "key": "viola-mammola",
+      "latin": "Viola odorata L.",
+      "photos": 3,
+      "existing_files": 3,
+      "missing_license_url": 0,
+      "files": [
+        "assets/plants/viola-mammola-1.webp",
+        "assets/plants/viola-mammola-2.webp",
+        "assets/plants/viola-mammola-3.webp"
+      ]
+    },
+    {
+      "catalog": "plants.json",
+      "group": "plants",
+      "key": "vitalba",
+      "latin": "Clematis vitalba L.",
+      "photos": 3,
+      "existing_files": 3,
+      "missing_license_url": 0,
+      "files": [
+        "assets/plants/vitalba-1.webp",
+        "assets/plants/vitalba-2.webp",
+        "assets/plants/vitalba-3.webp"
+      ]
+    },
+    {
+      "catalog": "media-trees.json",
+      "group": "trees",
+      "key": "acero opalo",
+      "latin": "Acer opalus subsp. obtusatum",
+      "photos": 4,
+      "existing_files": 4,
+      "missing_license_url": 0,
+      "files": [
+        "assets/species/tree-acero-opalo-inat1.webp",
+        "assets/species/tree-acero-opalo-inat2.webp",
+        "assets/species/tree-acero-opalo-inat3.webp",
+        "assets/species/tree-acero-opalo-inat4.webp"
+      ]
+    },
+    {
+      "catalog": "media-trees.json",
+      "group": "trees",
+      "key": "castagno",
+      "latin": "Castanea sativa",
+      "photos": 4,
+      "existing_files": 4,
+      "missing_license_url": 0,
+      "files": [
+        "assets/species/tree-castagno-free1.webp",
+        "assets/species/tree-castagno-inat1.webp",
+        "assets/species/tree-castagno-inat2.webp",
+        "assets/species/tree-castagno-inat3.webp"
+      ]
+    },
+    {
+      "catalog": "media-trees.json",
+      "group": "trees",
+      "key": "cerro",
+      "latin": "Quercus cerris",
+      "photos": 4,
+      "existing_files": 4,
+      "missing_license_url": 0,
+      "files": [
+        "assets/species/tree-cerro-free1.webp",
+        "assets/species/tree-cerro-inat1.webp",
+        "assets/species/tree-cerro-inat2.webp",
+        "assets/species/tree-cerro-inat3.webp"
+      ]
+    },
+    {
+      "catalog": "media-trees.json",
+      "group": "trees",
+      "key": "faggio",
+      "latin": "Fagus sylvatica",
+      "photos": 4,
+      "existing_files": 4,
+      "missing_license_url": 0,
+      "files": [
+        "assets/species/tree-faggio-free1.webp",
+        "assets/species/tree-faggio-inat1.webp",
+        "assets/species/tree-faggio-inat2.webp",
+        "assets/species/tree-faggio-inat3.webp"
+      ]
+    },
+    {
+      "catalog": "media-trees.json",
+      "group": "trees",
+      "key": "ontano",
+      "latin": "Alnus glutinosa",
+      "photos": 4,
+      "existing_files": 4,
+      "missing_license_url": 0,
+      "files": [
+        "assets/species/tree-ontano-free1.webp",
+        "assets/species/tree-ontano-inat1.webp",
+        "assets/species/tree-ontano-inat2.webp",
+        "assets/species/tree-ontano-inat3.webp"
+      ]
+    },
+    {
+      "catalog": "media-trees.json",
+      "group": "trees",
+      "key": "orniello",
+      "latin": "Fraxinus ornus",
+      "photos": 4,
+      "existing_files": 4,
+      "missing_license_url": 0,
+      "files": [
+        "assets/species/tree-orniello-free1.webp",
+        "assets/species/tree-orniello-inat1.webp",
+        "assets/species/tree-orniello-inat2.webp",
+        "assets/species/tree-orniello-inat3.webp"
+      ]
+    },
+    {
+      "catalog": "media-trees.json",
+      "group": "trees",
+      "key": "pino d'aleppo",
+      "latin": "Pinus halepensis",
+      "photos": 4,
+      "existing_files": 4,
+      "missing_license_url": 0,
+      "files": [
+        "assets/species/tree-pino-d-aleppo-free1.webp",
+        "assets/species/tree-pino-d-aleppo-inat1.webp",
+        "assets/species/tree-pino-d-aleppo-inat2.webp",
+        "assets/species/tree-pino-d-aleppo-inat3.webp"
+      ]
+    },
+    {
+      "catalog": "media-trees.json",
+      "group": "trees",
+      "key": "pino silvestre",
+      "latin": "Pinus sylvestris",
+      "photos": 4,
+      "existing_files": 4,
+      "missing_license_url": 0,
+      "files": [
+        "assets/species/tree-pino-silvestre-free1.webp",
+        "assets/species/tree-pino-silvestre-inat1.webp",
+        "assets/species/tree-pino-silvestre-inat2.webp",
+        "assets/species/tree-pino-silvestre-inat3.webp"
+      ]
+    },
+    {
+      "catalog": "media-trees.json",
+      "group": "trees",
+      "key": "pioppo",
+      "latin": "Populus spp.",
+      "photos": 4,
+      "existing_files": 4,
+      "missing_license_url": 0,
+      "files": [
+        "assets/species/tree-pioppo-free1.webp",
+        "assets/species/tree-pioppo-inat1.webp",
+        "assets/species/tree-pioppo-inat2.webp",
+        "assets/species/tree-pioppo-inat3.webp"
+      ]
+    },
+    {
+      "catalog": "media-trees.json",
+      "group": "trees",
+      "key": "roverella",
+      "latin": "Quercus pubescens",
+      "photos": 4,
+      "existing_files": 4,
+      "missing_license_url": 0,
+      "files": [
+        "assets/species/tree-roverella-free1.webp",
+        "assets/species/tree-roverella-inat1.webp",
+        "assets/species/tree-roverella-inat2.webp",
+        "assets/species/tree-roverella-inat3.webp"
+      ]
+    },
+    {
+      "catalog": "media-trees.json",
+      "group": "trees",
+      "key": "tiglio nostrano",
+      "latin": "Tilia platyphyllos Scop. subsp. platyphyllos",
+      "photos": 4,
+      "existing_files": 4,
+      "missing_license_url": 0,
+      "files": [
+        "assets/species/tree-tiglio-nostrano-free1.webp",
+        "assets/trees/tiglio-nostrano-1.webp",
+        "assets/trees/tiglio-nostrano-2.webp",
+        "assets/trees/tiglio-nostrano-3.webp"
+      ]
+    },
+    {
+      "catalog": "media.json",
+      "group": "species",
+      "key": "aereus",
+      "latin": "Boletus aereus",
+      "photos": 4,
+      "existing_files": 4,
+      "missing_license_url": 4,
+      "files": [
+        "assets/species/aereus-ref.webp",
+        "assets/species/aereus-inat1.webp",
+        "assets/species/aereus-inat2.webp",
+        "assets/species/aereus-inat3.webp"
+      ]
+    },
+    {
+      "catalog": "media.json",
+      "group": "species",
+      "key": "caesarea",
+      "latin": "Amanita caesarea",
+      "photos": 4,
+      "existing_files": 4,
+      "missing_license_url": 4,
+      "files": [
+        "assets/species/caesarea-ref.webp",
+        "assets/species/caesarea-inat1.webp",
+        "assets/species/caesarea-inat2.webp",
+        "assets/species/caesarea-inat3.webp"
+      ]
+    },
+    {
+      "catalog": "media.json",
+      "group": "species",
+      "key": "cibarius",
+      "latin": "Cantharellus cibarius",
+      "photos": 4,
+      "existing_files": 4,
+      "missing_license_url": 4,
+      "files": [
+        "assets/species/cibarius-ref.webp",
+        "assets/species/cibarius-inat1.webp",
+        "assets/species/cibarius-inat2.webp",
+        "assets/species/cibarius-inat3.webp"
+      ]
+    },
+    {
+      "catalog": "media.json",
+      "group": "species",
+      "key": "cornucopioides",
+      "latin": "Craterellus cornucopioides",
+      "photos": 4,
+      "existing_files": 4,
+      "missing_license_url": 4,
+      "files": [
+        "assets/species/cornucopioides-ref.webp",
+        "assets/species/cornucopioides-inat1.webp",
+        "assets/species/cornucopioides-inat2.webp",
+        "assets/species/cornucopioides-inat3.webp"
+      ]
+    },
+    {
+      "catalog": "media.json",
+      "group": "species",
+      "key": "edulis",
+      "latin": "Boletus edulis",
+      "photos": 4,
+      "existing_files": 4,
+      "missing_license_url": 4,
+      "files": [
+        "assets/species/edulis-ref.webp",
+        "assets/species/edulis-inat1.webp",
+        "assets/species/edulis-inat2.webp",
+        "assets/species/edulis-inat3.webp"
+      ]
+    },
+    {
+      "catalog": "media.json",
+      "group": "species",
+      "key": "mellea",
+      "latin": "Armillaria mellea",
+      "photos": 4,
+      "existing_files": 4,
+      "missing_license_url": 4,
+      "files": [
+        "assets/species/mellea-ref.webp",
+        "assets/species/mellea-inat1.webp",
+        "assets/species/mellea-inat2.webp",
+        "assets/species/mellea-inat3.webp"
+      ]
+    },
+    {
+      "catalog": "media.json",
+      "group": "species",
+      "key": "procera",
+      "latin": "Macrolepiota procera",
+      "photos": 4,
+      "existing_files": 4,
+      "missing_license_url": 4,
+      "files": [
+        "assets/species/procera-ref.webp",
+        "assets/species/procera-inat1.webp",
+        "assets/species/procera-inat2.webp",
+        "assets/species/procera-inat3.webp"
+      ]
+    },
+    {
+      "catalog": "media.json",
+      "group": "species",
+      "key": "repandum",
+      "latin": "Hydnum repandum",
+      "photos": 4,
+      "existing_files": 4,
+      "missing_license_url": 4,
+      "files": [
+        "assets/species/repandum-ref.webp",
+        "assets/species/repandum-inat1.webp",
+        "assets/species/repandum-inat2.webp",
+        "assets/species/repandum-inat3.webp"
+      ]
+    },
+    {
+      "catalog": "media.json",
+      "group": "species",
+      "key": "terreum",
+      "latin": "Tricholoma terreum",
+      "photos": 4,
+      "existing_files": 4,
+      "missing_license_url": 4,
+      "files": [
+        "assets/species/terreum-ref.webp",
+        "assets/species/terreum-inat1.webp",
+        "assets/species/terreum-inat2.webp",
+        "assets/species/terreum-inat3.webp"
+      ]
+    },
+    {
+      "catalog": "media.json",
+      "group": "species",
+      "key": "virescens",
+      "latin": "Russula virescens",
+      "photos": 4,
+      "existing_files": 4,
+      "missing_license_url": 4,
+      "files": [
+        "assets/species/virescens-ref.webp",
+        "assets/species/virescens-inat1.webp",
+        "assets/species/virescens-inat2.webp",
+        "assets/species/virescens-inat3.webp"
+      ]
+    },
+    {
+      "catalog": "plants.json",
+      "group": "plants",
+      "key": "croco",
+      "latin": "Crocus neapolitanus (Ker Gawl.) Loisel.",
+      "photos": 4,
+      "existing_files": 4,
+      "missing_license_url": 0,
+      "files": [
+        "assets/plants/croco-1.webp",
+        "assets/plants/croco-2.webp",
+        "assets/plants/croco-3.webp",
+        "assets/plants/croco-4.webp"
+      ]
+    },
+    {
+      "catalog": "plants.json",
+      "group": "plants",
+      "key": "genziana-maggiore",
+      "latin": "Gentiana lutea L. subsp. lutea",
+      "photos": 4,
+      "existing_files": 4,
+      "missing_license_url": 0,
+      "files": [
+        "assets/plants/genziana-maggiore-1.webp",
+        "assets/plants/genziana-maggiore-2.webp",
+        "assets/plants/genziana-maggiore-3.webp",
+        "assets/plants/genziana-maggiore-4.webp"
+      ]
+    },
+    {
+      "catalog": "media-trees.json",
+      "group": "trees",
+      "key": "abete rosso",
+      "latin": "Picea abies",
+      "photos": 5,
+      "existing_files": 5,
+      "missing_license_url": 0,
+      "files": [
+        "assets/species/tree-abete-rosso-inat1.webp",
+        "assets/species/tree-abete-rosso-inat2.webp",
+        "assets/species/tree-abete-rosso-inat3.webp",
+        "assets/species/tree-abete-rosso-inat4.webp",
+        "assets/species/tree-abete-rosso-inat5.webp"
+      ]
+    },
+    {
+      "catalog": "media-trees.json",
+      "group": "trees",
+      "key": "carpinella",
+      "latin": "Carpinus orientalis",
+      "photos": 5,
+      "existing_files": 5,
+      "missing_license_url": 0,
+      "files": [
+        "assets/species/tree-carpinella-inat1.webp",
+        "assets/species/tree-carpinella-inat2.webp",
+        "assets/species/tree-carpinella-inat3.webp",
+        "assets/species/tree-carpinella-inat4.webp",
+        "assets/species/tree-carpinella-commons5.webp"
+      ]
+    },
+    {
+      "catalog": "media-trees.json",
+      "group": "trees",
+      "key": "frassino maggiore",
+      "latin": "Fraxinus excelsior",
+      "photos": 5,
+      "existing_files": 5,
+      "missing_license_url": 0,
+      "files": [
+        "assets/species/tree-frassino-maggiore-inat1.webp",
+        "assets/species/tree-frassino-maggiore-inat2.webp",
+        "assets/species/tree-frassino-maggiore-inat3.webp",
+        "assets/species/tree-frassino-maggiore-inat4.webp",
+        "assets/species/tree-frassino-maggiore-inat5.webp"
+      ]
+    },
+    {
+      "catalog": "media-trees.json",
+      "group": "trees",
+      "key": "ippocastano",
+      "latin": "Aesculus hippocastanum",
+      "photos": 5,
+      "existing_files": 5,
+      "missing_license_url": 0,
+      "files": [
+        "assets/species/tree-ippocastano-commons1.webp",
+        "assets/species/tree-ippocastano-commons2.webp",
+        "assets/species/tree-ippocastano-commons3.webp",
+        "assets/species/tree-ippocastano-commons4.webp",
+        "assets/species/tree-ippocastano-commons5.webp"
+      ]
+    },
+    {
+      "catalog": "media-trees.json",
+      "group": "trees",
+      "key": "ontano napoletano",
+      "latin": "Alnus cordata",
+      "photos": 5,
+      "existing_files": 5,
+      "missing_license_url": 0,
+      "files": [
+        "assets/species/tree-ontano-napoletano-inat1.webp",
+        "assets/species/tree-ontano-napoletano-inat2.webp",
+        "assets/species/tree-ontano-napoletano-inat3.webp",
+        "assets/species/tree-ontano-napoletano-inat4.webp",
+        "assets/species/tree-ontano-napoletano-inat5.webp"
+      ]
+    },
+    {
+      "catalog": "media-trees.json",
+      "group": "trees",
+      "key": "pino marittimo",
+      "latin": "Pinus pinaster",
+      "photos": 5,
+      "existing_files": 5,
+      "missing_license_url": 0,
+      "files": [
+        "assets/species/tree-pino-marittimo-inat1.webp",
+        "assets/species/tree-pino-marittimo-inat2.webp",
+        "assets/species/tree-pino-marittimo-inat3.webp",
+        "assets/species/tree-pino-marittimo-inat4.webp",
+        "assets/species/tree-pino-marittimo-inat5.webp"
+      ]
+    },
+    {
+      "catalog": "media-trees.json",
+      "group": "trees",
+      "key": "sorbo degli uccellatori",
+      "latin": "Sorbus aucuparia",
+      "photos": 5,
+      "existing_files": 5,
+      "missing_license_url": 0,
+      "files": [
+        "assets/species/tree-sorbo-degli-uccellatori-inat1.webp",
+        "assets/species/tree-sorbo-degli-uccellatori-inat2.webp",
+        "assets/species/tree-sorbo-degli-uccellatori-inat3.webp",
+        "assets/species/tree-sorbo-degli-uccellatori-inat4.webp",
+        "assets/species/tree-sorbo-degli-uccellatori-inat5.webp"
+      ]
+    },
+    {
+      "catalog": "media-trees.json",
+      "group": "trees",
+      "key": "tasso",
+      "latin": "Taxus baccata",
+      "photos": 5,
+      "existing_files": 5,
+      "missing_license_url": 0,
+      "files": [
+        "assets/species/tree-tasso-inat1.webp",
+        "assets/species/tree-tasso-inat2.webp",
+        "assets/species/tree-tasso-inat3.webp",
+        "assets/species/tree-tasso-inat4.webp",
+        "assets/species/tree-tasso-inat5.webp"
+      ]
+    },
+    {
+      "catalog": "plants.json",
+      "group": "plants",
+      "key": "aglio-orsino",
+      "latin": "Allium ursinum L.",
+      "photos": 5,
+      "existing_files": 5,
+      "missing_license_url": 0,
+      "files": [
+        "assets/plants/aglio-orsino-1.webp",
+        "assets/plants/aglio-orsino-2.webp",
+        "assets/plants/aglio-orsino-3.webp",
+        "assets/plants/aglio-orsino-4.webp",
+        "assets/plants/aglio-orsino-5.webp"
+      ]
+    },
+    {
+      "catalog": "plants.json",
+      "group": "plants",
+      "key": "veratro",
+      "latin": "Veratrum lobelianum Bernh.",
+      "photos": 5,
+      "existing_files": 5,
+      "missing_license_url": 0,
+      "files": [
+        "assets/plants/veratro-1.webp",
+        "assets/plants/veratro-2.webp",
+        "assets/plants/veratro-3.webp",
+        "assets/plants/veratro-4.webp",
+        "assets/plants/veratro-5.webp"
+      ]
+    }
+  ]
+}

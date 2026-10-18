@@ -1,5 +1,5 @@
 {
- "note": "Schemi dei valori botanici generati con AI (image_gen) dai dati di recognize-plants.json. Le icone generiche sono esempi della categoria per la chiave guidata, non ritratti delle specie. Nelle schede forme dei fiori, tipi dei frutti e foglie composte richiedono una revisione registrata in species; i colori sono campioni cromatici. Fonti, riferimenti fotografici e limiti delle correzioni: docs/assets/fragolina-2026-10-18/README.md.",
+ "note": "Schemi dei valori botanici generati con AI (image_gen) dai dati di recognize-plants.json. Le icone generiche sono esempi della categoria per la chiave guidata, non ritratti delle specie. Nelle schede forme dei fiori, tipi dei frutti e foglie composte richiedono una revisione registrata in species; i colori sono campioni cromatici. Fonti, riferimenti fotografici e limiti delle correzioni: docs/assets/fragolina-2026-10-18/README.md. Correzioni finocchietto e rosa canina: docs/assets/correzioni-botaniche-2026-10-18/README.md.",
  "author": "Fronda/Fungaroli, rivista dal progetto",
  "license": "CC BY-SA 4.0",
  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.it",
@@ -150,6 +150,26 @@
      "src": "assets/plant-traits/flower_shape-cinque_petali.webp",
      "source": "https://dryades.units.it/Roma/index.php?id=2073&procedure=taxon_page",
      "review": "Cinque petali bianco-crema e centro giallo coerenti con foto e testo della fragolina; schema di dettaglio, non ritratto integrale della pianta."
+    }
+   }
+  },
+  "finocchietto": {
+   "flower_shape": {
+    "ombrella": {
+     "src": "assets/plant-traits/finocchietto-flower_shape-ombrella.webp",
+     "source": "https://dryades.units.it/Roma/index.php?id=3527&procedure=taxon_page",
+     "referencePhoto": "assets/plants/finocchietto-1.webp",
+     "review": "docs/assets/correzioni-botaniche-2026-10-18/REVISIONE.md"
+    }
+   }
+  },
+  "rosa-canina": {
+   "fruit_type": {
+    "falso_frutto": {
+     "src": "assets/plant-traits/rosa-canina-fruit_type-falso_frutto.webp",
+     "source": "https://dryades.units.it/Roma/index.php?id=1972&procedure=taxon_page",
+     "referencePhoto": "assets/plants/rosa-canina-1.webp",
+     "review": "docs/assets/correzioni-botaniche-2026-10-18/REVISIONE.md"
     }
    }
   }

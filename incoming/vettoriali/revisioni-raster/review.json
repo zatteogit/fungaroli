@@ -1,0 +1,99 @@
+{
+  "taxon_key": "tylopilus-felleus",
+  "expected_variant": {
+    "cap_color": "crema",
+    "cap_shape": "piano",
+    "hymenophore_color": "rosa"
+  },
+  "data_source": "data/species-traits.json",
+  "data_sha256": "a2149f75008184cb691c4935d6967706c36069392106f68d7fa20d4e6eee5d18",
+  "sources": [
+    {
+      "title": "Tylopilus felleus, Wikipedia (it)",
+      "url": "https://it.wikipedia.org/wiki/Tylopilus_felleus"
+    },
+    {
+      "title": "Wikidata Q633503 (Tylopilus felleus)",
+      "url": "https://www.wikidata.org/wiki/Q633503"
+    },
+    {
+      "title": "Tylopilus felleus - Wikipedia en",
+      "url": "https://en.wikipedia.org/wiki/Tylopilus_felleus"
+    },
+    {
+      "title": "Tylopilus felleus - first-nature.com",
+      "url": "https://www.first-nature.com/fungi/tylopilus-felleus.php"
+    },
+    {
+      "title": "Tylopilus felleus - MushroomExpert",
+      "url": "https://www.mushroomexpert.com/tylopilus_felleus.html"
+    }
+  ],
+  "generations": [
+    {
+      "file": "incoming/vettoriali/revisioni-raster/tylopilus-crema-piano-r03.png",
+      "sha256": "fc15ded91ceec234664d3cd1f7a27e81c7c40599f06b6ece4c538498afee3b1a",
+      "size": [
+        1254,
+        1254
+      ],
+      "state": "awaiting-independent-species-review"
+    }
+  ],
+  "author_visual_review": {
+    "status": "passed-for-independent-audit-only",
+    "observations": [
+      "Both caps are pale cream with shallow spread profile, unlike tan convex originals.",
+      "Pink pore surface and separate pore openings, not gills.",
+      "Cream clavate stem with coarse contrasting brown polygonal reticulum.",
+      "No ring or volva.",
+      "Isolated and whole cap profiles now visually coherent."
+    ],
+    "limits": [
+      "This review compares the illustration to documented species traits; it does not identify an organism.",
+      "Independent species/source audit and64px review requested from raster_production before any new SVG.",
+      "Connected drawing in cell1 extends into empty lower-row space but is assigned intact to cell1; no cutoff/overlap."
+    ]
+  },
+  "independent_review": {
+    "status": "passed-independent-species-review",
+    "reviewer": "/root/raster_production",
+    "source": "Coordination message received18Oct2026",
+    "observations": [
+      "Caps both light cream and spread flat, coherent between isolated and whole.",
+      "Pink punctiform pores visible, not lamellae.",
+      "Coarse contrasting brown reticulum on clavate stem.",
+      "No ring or volva.",
+      "Documented adult stage is flat cap with pink pores; cap cream is documented.",
+      "64px thumbnail reviewed; no extraneous species features detected."
+    ],
+    "limit": "Schematic documented variant, not a diagnostic portrait or organism identification."
+  },
+  "technical_review": {
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "cells": {
+      "0": [
+        38,
+        198,
+        412,
+        316
+      ],
+      "1": [
+        434,
+        198,
+        820,
+        490
+      ]
+    },
+    "source_not_vector_recolored": true
+  },
+  "license": "CC BY-SA4.0",
+  "author": "Fronda/Fungaroli",
+  "model": "image_gen integrated; specific identifier not exposed",
+  "selected_source": "incoming/vettoriali/revisioni-raster/tylopilus-crema-piano-r03.png",
+  "selected_sha256": "fc15ded91ceec234664d3cd1f7a27e81c7c40599f06b6ece4c538498afee3b1a"
+}

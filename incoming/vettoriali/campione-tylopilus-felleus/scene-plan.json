@@ -1,0 +1,289 @@
+{
+  "trace_sha256": "8d77eabc6553ec7f41c7869052484d0d15c5943389b78514e270bb84d5a3f33d",
+  "parts": {
+    "cap": [
+      {
+        "source_paths": [
+          0
+        ],
+        "expected_fills": {
+          "0": "#381703"
+        },
+        "fill": "#381703",
+        "role": "outline"
+      },
+      {
+        "source_paths": [
+          2
+        ],
+        "expected_fills": {
+          "2": "#F6E4CD"
+        },
+        "fill": "#F6E4CD",
+        "role": "material"
+      },
+      {
+        "source_paths": [
+          10,
+          11
+        ],
+        "expected_fills": {
+          "10": "#F6D7AC",
+          "11": "#F5D6AE"
+        },
+        "fill": "#F6D7AC",
+        "role": "material"
+      },
+      {
+        "source_paths": [
+          4
+        ],
+        "expected_fills": {
+          "4": "#381703"
+        },
+        "fill": "#381703",
+        "role": "outline"
+      }
+    ],
+    "hymenophore": [
+      {
+        "source_paths": [
+          0
+        ],
+        "expected_fills": {
+          "0": "#381703"
+        },
+        "fill": "#381703",
+        "role": "outline"
+      },
+      {
+        "source_paths": [
+          3
+        ],
+        "expected_fills": {
+          "3": "#F9C3BE"
+        },
+        "fill": "#F9C3BE",
+        "role": "material"
+      },
+      {
+        "source_paths": [
+          4
+        ],
+        "expected_fills": {
+          "4": "#381703"
+        },
+        "fill": "#381703",
+        "role": "outline"
+      }
+    ],
+    "stem": [
+      {
+        "source_paths": [
+          0
+        ],
+        "expected_fills": {
+          "0": "#381703"
+        },
+        "fill": "#381703",
+        "role": "outline"
+      },
+      {
+        "source_paths": [
+          1,
+          5,
+          6,
+          7,
+          8,
+          9,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          26,
+          27,
+          28,
+          30,
+          31,
+          33,
+          34,
+          35,
+          36,
+          39,
+          40,
+          42,
+          44,
+          46,
+          54,
+          56,
+          58,
+          60,
+          64,
+          66,
+          70,
+          73,
+          74,
+          76,
+          78,
+          79,
+          81,
+          84
+        ],
+        "expected_fills": {
+          "1": "#673906",
+          "5": "#663905",
+          "6": "#F5D6AD",
+          "7": "#6A3C07",
+          "8": "#683B07",
+          "9": "#663906",
+          "12": "#6B3F0E",
+          "13": "#663906",
+          "14": "#F6D7AE",
+          "15": "#F6D7AC",
+          "16": "#F5D5AB",
+          "17": "#F5D5AC",
+          "19": "#F5D5AB",
+          "20": "#F5D5AA",
+          "21": "#F5D6AC",
+          "22": "#F4D4AA",
+          "23": "#F4D4A9",
+          "24": "#F5D5AA",
+          "26": "#F4D3A9",
+          "27": "#F3D1A5",
+          "28": "#F4D4AB",
+          "30": "#643705",
+          "31": "#F4D3AA",
+          "33": "#673905",
+          "34": "#653805",
+          "35": "#F2D0A6",
+          "36": "#F1CEA5",
+          "39": "#F4D3AA",
+          "40": "#7E5221",
+          "42": "#F3D1A6",
+          "44": "#F0CCA5",
+          "46": "#F4D3A8",
+          "54": "#EFCCAA",
+          "56": "#EFCBA4",
+          "58": "#A37C51",
+          "60": "#F6D8B0",
+          "64": "#643705",
+          "66": "#EBC7AB",
+          "70": "#6A3C08",
+          "73": "#F5D9B7",
+          "74": "#70410B",
+          "76": "#F6DBB7",
+          "78": "#F4D2A6",
+          "79": "#F3D0A4",
+          "81": "#EBC6AB",
+          "84": "#F5D7B1"
+        },
+        "fill": "#F5D6AD",
+        "role": "material",
+        "reconstructed_underpaint": true
+      },
+      {
+        "source_paths": [
+          4
+        ],
+        "expected_fills": {
+          "4": "#381703"
+        },
+        "fill": "#381703",
+        "role": "outline"
+      }
+    ]
+  },
+  "pore_ellipses": {
+    "centers": [
+      [
+        168,
+        71
+      ],
+      [
+        131,
+        72
+      ],
+      [
+        238,
+        72
+      ],
+      [
+        202,
+        74
+      ],
+      [
+        273,
+        74
+      ],
+      [
+        304,
+        76
+      ],
+      [
+        99,
+        78
+      ],
+      [
+        61,
+        81
+      ],
+      [
+        339,
+        82
+      ],
+      [
+        258,
+        83
+      ],
+      [
+        187,
+        84
+      ],
+      [
+        217,
+        84
+      ],
+      [
+        292,
+        85
+      ],
+      [
+        152,
+        86
+      ],
+      [
+        80,
+        88
+      ],
+      [
+        119,
+        89
+      ],
+      [
+        317,
+        90
+      ],
+      [
+        270,
+        96
+      ]
+    ],
+    "radii": [
+      5.6,
+      5.6
+    ],
+    "fill": "#FCA6A1",
+    "review_status": "manually-matched-one-to-one-to-raster-spots",
+    "method": "Local contrast candidates manually reviewed in enlarged overlay against corrected raster; ellipse primitives fit the depicted round marks. The count describes drawn marks, not a biological pore-density trait."
+  },
+  "palette_simplification": "Primary raster material colors retained; minor gradient quantization patches omitted. No feature type, shape or color value invented.",
+  "occluded_tissue_reconstruction": "Only hidden stem substrate beneath the extracted network: cream taken from visible source paint6, support geometry is the union of manually annotated original inner-stem paint paths. This is an illustration underpaint, not observed tissue or a new no-reticulum variant."
+}

@@ -25,6 +25,8 @@ test('fragolina e rosa usano anatomie distinte; i colori non suggeriscono una fo
  assert.match(strawberry,/src="assets\/plant-traits\/fragolina-fruit_type-falso_frutto.webp"/);
  assert.doesNotMatch(strawberry,/src="assets\/plant-traits\/fruit_type-falso_frutto.webp"/);
  assert.doesNotMatch(render('rosa-canina'),/src="assets\/plant-traits\/fruit_type-falso_frutto.webp"/);
+ assert.match(render('rosa-canina'),/src="assets\/plant-traits\/rosa-canina-fruit_type-falso_frutto.webp"/);
+ assert.match(render('finocchietto'),/src="assets\/plant-traits\/finocchietto-flower_shape-ombrella.webp"/);
  assert.match(strawberry,/src="assets\/plant-traits\/fragolina-leaf_type-composta.webp"/);
  assert.doesNotMatch(strawberry,/src="assets\/plant-traits\/leaf_type-composta.webp"/);
  for(const id of Object.keys(plants.items))assert.doesNotMatch(render(id),/src="[^"]*(?:flower_color|fruit_color)-/);

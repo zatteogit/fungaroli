@@ -1,0 +1,167 @@
+{
+  "trace_sha256": "36f17991800b3e7a6389035bd89dda91bab426985d9b6c80f634acb13fbdbd31",
+  "parts": {
+    "cap": [
+      {
+        "source_paths": [
+          0
+        ],
+        "expected_fills": {
+          "0": "#F8BDBA"
+        },
+        "fill": "#F6E3CD",
+        "role": "material"
+      },
+      {
+        "source_paths": [
+          1
+        ],
+        "expected_fills": {
+          "1": "#F6E3CD"
+        },
+        "fill": "#F6E3CD",
+        "role": "material"
+      },
+      {
+        "source_paths": [
+          3,
+          4
+        ],
+        "expected_fills": {
+          "3": "#F4D6B4",
+          "4": "#F4D5B3"
+        },
+        "fill": "#F4D6B4",
+        "role": "material"
+      },
+      {
+        "source_paths": [
+          2
+        ],
+        "expected_fills": {
+          "2": "#351503"
+        },
+        "fill": "#351503",
+        "role": "outline"
+      }
+    ],
+    "hymenophore": [
+      {
+        "source_paths": [
+          0
+        ],
+        "expected_fills": {
+          "0": "#F8BDBA"
+        },
+        "fill": "#F8BDBA",
+        "role": "material"
+      },
+      {
+        "source_paths": [
+          2
+        ],
+        "expected_fills": {
+          "2": "#351503"
+        },
+        "fill": "#351503",
+        "role": "outline"
+      }
+    ]
+  },
+  "pore_ellipses": {
+    "centers": [
+      [
+        156,
+        73
+      ],
+      [
+        121,
+        77
+      ],
+      [
+        260,
+        77
+      ],
+      [
+        228,
+        78
+      ],
+      [
+        298,
+        78
+      ],
+      [
+        188,
+        79
+      ],
+      [
+        90,
+        85
+      ],
+      [
+        327,
+        87
+      ],
+      [
+        63,
+        88
+      ],
+      [
+        141,
+        90
+      ],
+      [
+        210,
+        90
+      ],
+      [
+        245,
+        91
+      ],
+      [
+        175,
+        93
+      ],
+      [
+        112,
+        95
+      ],
+      [
+        277,
+        97
+      ],
+      [
+        314,
+        98
+      ],
+      [
+        77,
+        102
+      ],
+      [
+        223,
+        105
+      ],
+      [
+        159,
+        106
+      ],
+      [
+        188,
+        107
+      ],
+      [
+        260,
+        108
+      ]
+    ],
+    "radii": [
+      5.8,
+      5.8
+    ],
+    "fill": "#FCA6A1",
+    "review_status": "manually-matched-one-to-one-to-raster-spots",
+    "method": "Local contrast candidates manually reviewed in enlarged overlay against corrected raster; ellipse primitives fit the depicted round marks. The count describes drawn marks, not a biological pore-density trait."
+  },
+  "palette_simplification": "Primary raster material colors retained; minor gradient quantization patches omitted. No feature type, shape or color value invented."
+}
