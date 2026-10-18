@@ -13,6 +13,8 @@ Il ramo di produzione e i documenti in `docs/` fanno fede. Ciò che sta solo in 
 
 ## Registro
 
+Ampliamento autorizzato il 18/10: [integrazione dei materiali](integrazione-materiali-2026-10-18.md), con [fasi fungine](integrazione-fasi-funghi-2026-10-18.md), [raster botanici](integrazione-raster-botanici-2026-10-18.md), [sorgenti vettoriali](revisione-svg-2026-10-18.md) e [schede animali](../animali-arricchimento-2026-10-18.md). I conteggi distinguono copertura visibile e sorgenti editabili; scarti e pendenze restano documentati.
+
 Consegne dei cinque agenti del 18/10: [valutazione e integrazione selettiva](valutazione-consegne-agenti-2026-10-18.md). Raster e correzioni botaniche adottati dopo controllo; SVG come prototipo tecnico; animali come studio e fotografie come pipeline senza nuovi file acquisiti.
 
 Rilascio delle parti verificate su richiesta di Matteo del 17/10: [valutazione dei rami sospesi](valutazione-rilascio-2026-10-17.md). Include le PR #93, #60 e #98 nel candidato di rilascio; non adotta i due modelli micologici di ricerca né i pacchetti grezzi delle immagini.
