@@ -31,6 +31,9 @@ def main():
    for p in (dest,big):
     with Image.open(p) as cm:crops['files'][str(p.relative_to(ROOT))]={**mod.positions(cm.size,anchors[z]),'dubbio':False}
    records.append(dict(zone=z,season=s,weather=w,source=base['file_hd'],source_sha256=digest(ROOT/base['file_hd']),master=str(master.relative_to(ROOT)),master_sha256=digest(master),file=item['file'],sha256=digest(dest),file_hd=item['file_hd'],hd_sha256=digest(big),generated=True,sourceAuthor=base['author'],license=base['license'],licenseUrl=base['licenseUrl'],sourcePage=base['page'],model='image_gen.imagegen',provenance='Derivazione illustrativa stagionale e meteo AI della foto locale, non nuova fotografia né osservazione delle condizioni attuali',review='Revisione interna su master e tavole; revisione indipendente separata con hash. Nessun nuovo oggetto o modifica significativa ai crinali ammessa.'))
+   if w!='sereno' and s!='estate':
+    ref=BUNDLE/'masters'/f'{z}-{s}-sereno.png'
+    records[-1].update(referenceMaster=str(ref.relative_to(ROOT)),referenceMasterSha256=digest(ref))
   # Foto reali: aggiungere soltanto coordinate UI, senza mutare attribuzione o stato generated.
   for f in (base['file'],base['file_hd']):
    with Image.open(ROOT/f) as im:crops['files'][f]={**mod.positions(im.size,anchors[z]),'dubbio':False}
