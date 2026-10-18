@@ -374,7 +374,7 @@ function initShell() {
 // Scopri: tre cataloghi con riconoscimento in pannello; Guide raccoglie i contenuti sul bosco.
 const SCOPRI = [['funghi', '#/specie', 'Funghi'], ['piante', '#/piante', 'Piante e fiori'], ['alberi', '#/alberi', 'Alberi'], ['impara', '#/impara', 'Guide']];
 const SCOPRI_SUB = {
-  funghi: [['#/specie', 'Sfoglia'], ['#/riconosci', 'Impara a riconoscere'], ['#/confronta','Confronta funghi']],
+  funghi: [['#/specie', 'Sfoglia'], ['#/riconosci', 'Impara a riconoscere'], ['#/confronta','Confronta']],
   piante: [['#/piante', 'Sfoglia'], ['#/riconosci/piante', 'Impara a riconoscere']],
   alberi: [['#/alberi', 'Sfoglia'], ['#/riconosci/alberi', 'Impara a riconoscere']],
   impara: [['#/glossario', 'Glossario'], ['#/guide', 'Approfondimenti'], ['#/riconosci/bosco', 'Bosco e sentiero'], ['#/sfide', 'Sfide']],
@@ -404,7 +404,7 @@ function paintScopriNav(r) {
     const catalog = ['specie','piante','alberi'].includes(r.view);
     sub.classList.toggle('recognize-entry', catalog);
     sub.innerHTML = catalog ? `<button type="button" class="btn ghost" data-open-recognition="${sec}" aria-haspopup="dialog"><svg class="recognize-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="7"/><path d="m15 15 6 6"/>${sec === 'funghi' ? '<path d="M6 11c0-5 8-5 8 0ZM9 11v3h2v-3"/>' : '<path d="M7 13c-2-4 0-7 6-7 0 6-2 8-6 7Zm0 0 4-4"/>'}</svg><span>Impara a riconoscere</span><span aria-hidden="true">→</span></button>` : sec !== 'impara' || r.view === 'impara' ? '' : SCOPRI_SUB[sec].map(([href, label]) => `<a href="${href}"${cur(href === here)}>${label}</a>`).join('');
-    if(catalog && sec==='funghi') sub.insertAdjacentHTML('beforeend','<a class="btn ghost compare-entry" href="#/confronta">Confronta funghi <span aria-hidden="true">↔</span></a>');
+    if(catalog && sec==='funghi') sub.insertAdjacentHTML('beforeend','<a class="btn ghost compare-entry" href="#/confronta">Confronta <span aria-hidden="true">↔</span></a>');
   }
 }
 
@@ -1615,7 +1615,7 @@ function buildSearch(idj, trj, embedded) {
     items.push({ kind: 'sentiero', title: `${t.ref ? `Sentiero ${t.ref}` : 'Sentiero'}${t.name ? ` · ${t.name}` : ''}`, sub: zs.map((z) => splitName(z)[0]).join(', '), hay: `${(t.itinerary || []).join(' ')} ${t.operator || ''} cai segnavia`, href: walkHref(zs[0], 0, t), img: segnavia(t) });
   }
   const pages = [
-    ['Confronta funghi','Scegli due specie dal catalogo','confronto sosia differenze comparare funghi riferimento master','#/confronta'],
+    ['Confronta','Scegli due specie dal catalogo','confronto sosia differenze comparare funghi riferimento master','#/confronta'],
     ['Impara a riconoscere i funghi', 'Descrivi quello che vedi, anche se è velenoso', 'identificare trovato velenoso sosia caratteri lamelle pori volva anello sporata', '#/riconosci'],
     ['Emergenza e intossicazione', 'Cosa fare, chi chiamare', 'emergenza intossicazione avvelenamento centro antiveleni 118 112 pronto soccorso sintomi', '#/info'],
     ['Regole di raccolta nel Lazio', 'Attestato, contributo, limiti, orari', 'regole legge tesserino attestato contributo 3 kg limite orari divieti parchi aree protette', '#/info'],

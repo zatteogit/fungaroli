@@ -483,3 +483,16 @@ body[data-page="mappa"] .view-map { border-radius:0; }
 /* La forma selezionata è già illustrata sopra i controlli: evita una seconda
    serie di miniature, che mescolerebbe i simboli storici alle nuove varianti. */
 .fungus-compare .cmp-cell:has(.cmp-part-art:not(:empty)) .cmp-shape-art { display:none; }
+
+/* Accessi al catalogo: azioni secondarie sulla stessa riga, anche sul telefono. */
+@media(max-width:899px) {
+  .sub-nav.recognize-entry { gap:8px; overflow:visible; }
+  .sub-nav.recognize-entry:has(.compare-entry) { flex-wrap:nowrap; }
+  .sub-nav.recognize-entry > .btn.ghost { flex:0 1 auto; min-width:0; min-height:44px; margin:0; padding:6px 8px; gap:6px; border:1px solid var(--hair); border-radius:12px; background:var(--surface); color:var(--link); font:600 13px/1.35 var(--font-body); white-space:nowrap; box-shadow:none; }
+  .sub-nav.recognize-entry .recognize-icon { width:18px; height:18px; flex-basis:18px; }
+  .sub-nav.recognize-entry [data-open-recognition] > span:last-child { display:none; }
+  .sub-nav.recognize-entry > .btn.ghost:hover { background:var(--surface-2); box-shadow:none; }
+}
+@media(max-width:359px) {
+  .sub-nav.recognize-entry > .btn.ghost { font-size:12px; }
+}
