@@ -537,5 +537,250 @@
     },
     "state": "pronta da integrare",
     "review": "Tre ombrellati con umbone distinto, palette bruno/crema/rosso, squame, gambo fasciato e lamelle crema preservati. Nessun anello o volva aggiunto; alpha e sei celle verificati."
+  },
+  {
+    "file": "incoming/icone/confronto-combinazioni-2026-10-18-07.png",
+    "sha256": "2a48c19f996de4924b035e26e68920ee13edf83a0d4b5d2d7f4d0a6c76724517",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "cells": {
+      "1": [
+        476,
+        98,
+        834,
+        388
+      ],
+      "0": [
+        46,
+        128,
+        436,
+        256
+      ],
+      "4": [
+        476,
+        484,
+        834,
+        776
+      ],
+      "3": [
+        46,
+        520,
+        436,
+        646
+      ],
+      "7": [
+        476,
+        876,
+        834,
+        1168
+      ],
+      "6": [
+        46,
+        908,
+        436,
+        1036
+      ]
+    },
+    "state": "pronta da integrare",
+    "review": "Tre cappelli piani privi di umbone, colori bruno/crema/rosso e piccole squame; lamelle crema e gambo fasciato preservati. Nessun anello o volva aggiunto. Alpha e sei celle verificati."
+  },
+  {
+    "file": "incoming/icone/confronto-combinazioni-2026-10-18-08.png",
+    "sha256": "a9bc00294d491721d7098cfbbb647fe8e00a11d5506461d3e61114cc24bc95d6",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "cells": {
+      "1": [
+        464,
+        76,
+        822,
+        406
+      ],
+      "0": [
+        62,
+        168,
+        436,
+        364
+      ],
+      "4": [
+        464,
+        454,
+        820,
+        790
+      ],
+      "3": [
+        62,
+        556,
+        438,
+        746
+      ],
+      "7": [
+        464,
+        876,
+        826,
+        1156
+      ],
+      "6": [
+        62,
+        944,
+        436,
+        1072
+      ]
+    },
+    "state": "pronta da integrare",
+    "review": "Lepiota subincarnata con squame e macchie sul gambo, prive di fasce; ombrellati con umbone e piano senza umbone. Colori bruno/crema, lamelle chiare e nessun anello o volva. Alpha e sei celle verificati."
+  },
+  {
+    "file": "incoming/icone/confronto-combinazioni-2026-10-18-09.png",
+    "sha256": "7191c0d468aacb307aa7045415f484f7b591491f05522282229ab6377cb8fec2",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "cells": {
+      "1": [
+        458,
+        100,
+        796,
+        358
+      ],
+      "0": [
+        78,
+        150,
+        402,
+        264
+      ],
+      "4": [
+        482,
+        448,
+        772,
+        790
+      ],
+      "3": [
+        78,
+        504,
+        398,
+        686
+      ],
+      "7": [
+        480,
+        854,
+        772,
+        1194
+      ],
+      "6": [
+        78,
+        914,
+        398,
+        1092
+      ]
+    },
+    "state": "pronta da integrare",
+    "review": "Lepiota crema piano con macchie e senza anello; Agaricus bruno/crema emisferici, lamelle rosa e anello preservati senza volva. Alpha e sei celle verificati."
+  },
+  {
+    "file": "incoming/icone/confronto-combinazioni-2026-10-18-10.png",
+    "sha256": "8cbcc9b84778eb44c6f44cd51371756b4aeeea2ed9a2d7fffcc33b381b49ae25",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "cells": {
+      "1": [
+        478,
+        62,
+        774,
+        398
+      ],
+      "0": [
+        80,
+        140,
+        384,
+        314
+      ],
+      "4": [
+        478,
+        470,
+        774,
+        806
+      ],
+      "3": [
+        80,
+        548,
+        384,
+        722
+      ],
+      "7": [
+        450,
+        906,
+        804,
+        1180
+      ],
+      "6": [
+        56,
+        950,
+        410,
+        1068
+      ]
+    },
+    "state": "pronta da integrare",
+    "review": "Agaricus emisferici giallo/grigio e piano bruno con lamelle rosa e anello; senza volva o reticolo, cappelli lisci e gambi bianchi preservati. Alpha e sei celle verificati."
+  },
+  {
+    "file": "incoming/icone/confronto-combinazioni-2026-10-18-11.png",
+    "sha256": "db3665047fe3e874b6f27170612aca460f735d34e37cdf0beaff56928b7c1077",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "cells": {
+      "1": [
+        448,
+        118,
+        816,
+        390
+      ],
+      "0": [
+        32,
+        158,
+        418,
+        272
+      ],
+      "4": [
+        448,
+        512,
+        816,
+        788
+      ],
+      "3": [
+        32,
+        556,
+        418,
+        672
+      ],
+      "7": [
+        448,
+        904,
+        816,
+        1180
+      ],
+      "6": [
+        34,
+        944,
+        418,
+        1058
+      ]
+    },
+    "state": "pronta da integrare",
+    "review": "Agaricus piani crema/giallo/grigio con lamelle rosa, anello e gambi bianchi invariati. Nessuna volva, reticolo o squame. Alpha e sei celle verificati."
   }
 ]
