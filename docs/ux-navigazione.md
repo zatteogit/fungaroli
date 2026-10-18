@@ -213,3 +213,13 @@ indice o nuova osservazione nel Taccuino: il backend non gestisce ancora animali
 Le quattro bozze restano escluse anche dalla ricerca globale e dall’URL diretto.
 Nella ricerca precedono i nomi; in assenza di risultati per nome si suggeriscono
 caratteri documentati con il relativo motivo.
+
+
+### Ricerca a tutta superficie (18 ottobre 2026)
+
+La ricerca globale si apre come layer opaco a tutta superficie, anche nel browser.
+Campo, Annulla e filtri restano sopra i risultati, che scorrono nel proprio spazio.
+Altezza e posizione seguono il visual viewport con tastiera, barre del browser e zoom;
+il fondo copre la pagina sottostante anche fuori dall’area del dialog. Su desktop
+il layer occupa lo schermo e i contenuti mantengono una misura di lettura limitata.
+L’apertura da una scheda usa lo stesso coordinatore: Indietro torna alla scheda.

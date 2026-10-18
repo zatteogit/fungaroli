@@ -35,6 +35,8 @@ let viewportFrame = 0;
 function fitViewport() {
   const viewport = window.visualViewport, top = viewport?.offsetTop || 0, height = viewport?.height || innerHeight;
   root.style.setProperty('--modal-visible-top', `${top}px`);
+  root.style.setProperty('--modal-visible-left', `${viewport?.offsetLeft || 0}px`);
+  root.style.setProperty('--modal-visible-width', `${viewport?.width || innerWidth}px`);
   root.style.setProperty('--modal-visible-height', `${height}px`);
   const modal = topModal();
   root.classList.toggle('modal-viewport-constrained', !!modal && (top > 1 || height < innerHeight - 1));
