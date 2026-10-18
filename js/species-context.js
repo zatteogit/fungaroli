@@ -1,3 +1,4 @@
+import {notebookGlyph} from './ui-icons.js';
 import {factCards,monthCalendar} from './content-ui.js';
 // Shared presentation for factual context and expandable notes on fungus pages.
 const esc = value => String(value ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
@@ -30,5 +31,5 @@ export function speciesSafetyNote(copy = '') {
 
 export function speciesObservationContext(speciesId) {
   return `${contextNote({icon:'calendar', title:'Periodo indicativo', preview:'Non ancora validato nel Reatino', body:'<p>Clima e quota possono anticipare o ritardare la stagione indicata.</p>'})}
-    <section class="species-observations" aria-label="Le tue osservazioni"><div class="species-observations-heading">${glyph('notebook')}<h3>Le tue osservazioni</h3></div><p>Anche una ricerca senza ritrovamenti è utile.</p><button class="btn ghost" type="button" data-report data-species="${esc(speciesId)}">Annota nel taccuino <span aria-hidden="true">→</span></button><small>Appunti privati. Scegli tu se condividere le osservazioni.</small></section>`;
+    <section class="species-observations" aria-label="Le tue osservazioni"><div class="species-observations-heading">${notebookGlyph}<h3>Le tue osservazioni</h3></div><p>Anche una ricerca senza ritrovamenti è utile.</p><button class="btn ghost" type="button" data-report data-species="${esc(speciesId)}">${notebookGlyph}<span>Annota nel taccuino</span> <span aria-hidden="true">→</span></button><small>Appunti privati. Scegli tu se condividere le osservazioni.</small></section>`;
 }

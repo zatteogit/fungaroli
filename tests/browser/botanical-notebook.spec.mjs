@@ -4,7 +4,7 @@ async function start(page,hash='#/piante',width=390){
  await page.setViewportSize({width,height:900});await page.emulateMedia({reducedMotion:'reduce'});
  await page.route('**/api/weather/v1/forecast*',r=>r.fulfill({status:503,json:{error:'test'}}));
  await page.route('https://**',r=>r.abort());
- await page.addInitScript(()=>localStorage.setItem('fungaroli:legal-accepted','32026-10-16'));
+ await page.addInitScript(()=>localStorage.setItem('fungaroli:legal-accepted','42026-10-16'));
  const errors=[];page.on('pageerror',e=>errors.push(e.message));await page.goto('/'+hash);
  await expect(page.locator('#plant-grid [data-plant-results]')).toBeVisible();return errors;
 }
@@ -43,7 +43,7 @@ test('botanical layouts, global search and short note form in both themes',async
   }
  }
  await page.goto('/#/pianta/cicuta');await expect(page.locator('#plant-detail img').first()).toHaveAttribute('data-image-state','ready');await page.screenshot({path:'/tmp/fungaroli-cicuta-dark-stable.png',fullPage:true});
- await page.locator('#plant-detail a[href="#/pianta/finocchietto"]').click();const sheet=page.locator('#entity-sheet[open]');await sheet.locator('[data-note-kind]').click();await page.locator('.notebook-dialog[open] [type="submit"]').click();await page.locator('.notebook-dialog[open] [type="submit"]').click();await expect(sheet.locator('.app-toast.on')).toContainText('Salvato nel taccuino');await sheet.locator('[data-entity-close]').click();expect(new URL(page.url()).hash).toBe('#/pianta/cicuta');
+ await page.locator('#plant-detail a[href="#/pianta/finocchietto"]').click();const sheet=page.locator('#entity-sheet[open]');await sheet.locator('[data-note-kind]').click();await page.locator('.notebook-dialog[open] [type="submit"]').click();await page.locator('.notebook-dialog[open] [type="submit"]').click();await expect(sheet.locator('.app-toast.on')).toBeVisible();await expect(sheet.locator('.app-toast.on')).toContainText('Salvato nel taccuino');await sheet.locator('[data-entity-close]').click();expect(new URL(page.url()).hash).toBe('#/pianta/cicuta');
  await page.goto('/#/pianta/corbezzolo');await page.setViewportSize({width:390,height:900});await page.locator('#plant-detail [data-note-kind]').click();const dialog=page.locator('.notebook-dialog[open]');await expect(dialog.locator('[type="submit"]')).toBeInViewport();await expect(dialog.locator('.notebook-context')).not.toHaveAttribute('open','');await dialog.screenshot({path:'/tmp/fungaroli-note-short-dark.png'});await dialog.locator('[data-note-close]').first().click();
  expect(errors).toEqual([]);
 });

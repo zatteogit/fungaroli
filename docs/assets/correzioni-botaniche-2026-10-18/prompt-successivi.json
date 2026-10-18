@@ -1,0 +1,18 @@
+[
+  {
+    "key": "finocchietto",
+    "prompt": "Generate one botanical teaching raster illustration on a truly transparent background: a YELLOW COMPOUND UMBEL of wild fennel (Anethum foeniculum / Foeniculum vulgare). Anatomy reference is the FIRST photograph, use it to understand the tiny yellow curled petals, green-yellow centers and many small pedicels spreading from shared points. Style reference SECOND image is ONLY thick dark brown outlines, flat friendly simple colors, not its anatomy or white flowers. Show a small isolated compound umbel in slightly side view: several green primary rays from one shared point, each ending in its own tiny umbrella of multiple very small YELLOW flowers, flattened to shallow convex collective silhouette. Fine but clear separation of primary and secondary rays. No white petals anywhere; no oversized daisy-like flowers or yellow central daisy disc; no leaves, fruit, insect, root or whole plant. Use 2-3 flat yellows and greens, limited highlights, no gradients, no shadow, no texture, no text. Entire object centered with generous clean margin. It must stay readable at64pixels, with several tiny yellow flower clusters clearly forming a compound umbel. Do not copy photo composition; render only the isolated botanical diagram in the style family.",
+    "refs": [
+      "/workspace/fronda-plant-corrections/assets/plants/finocchietto-1.webp",
+      "/workspace/fronda-plant-corrections/assets/plant-traits/flower_shape-ombrella.webp"
+    ]
+  },
+  {
+    "key": "rosa-canina",
+    "prompt": "Generate one isolated botanical teaching raster illustration on a truly transparent background: ONE whole EXTERNAL uncut red-orange ROSE HIP, Rosa canina. FIRST reference photograph controls anatomy: elongated oval red-orange smooth hip, a short green peduncle at its base, small DRIED DARK BROWN calyx remnant/irregular scar at the opposite apex. SECOND image controls ONLY the thick dark brown outline and simple flat cartoon-botanical color style, NEVER the shape of that generic berry. Keep the same orientation as the photograph: green stalk emerging from below, dried brown calyx remnant on top. Red-orange oval body, widest below middle then narrowing slightly to the dried top. Entire intact closed exterior. Do NOT show a cutaway, interior, seeds, cavity, hair, flesh section. No strawberry seeds on outside, no attached leaves, no apple/cherry stalk from top, no multiple fruit, no thorn, no text. Few flat red and orange tones, one restrained highlight, no gradients, no texture, no shadow. Center the fruit with short stalk, generous margins, visually clear at64pixels. A real woodland rose hip shape, not a generic round cherry.",
+    "refs": [
+      "/workspace/fronda-plant-corrections/assets/plants/rosa-canina-1.webp",
+      "/workspace/fronda-plant-corrections/assets/plant-traits/fruit_type-carnoso.webp"
+    ]
+  }
+]

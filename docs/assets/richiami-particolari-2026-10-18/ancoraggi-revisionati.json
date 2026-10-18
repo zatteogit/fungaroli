@@ -1,0 +1,3122 @@
+{
+  "version": 1,
+  "coordinateSpace": {
+    "width": 128,
+    "height": 128,
+    "unit": "raster pixels",
+    "origin": "top-left"
+  },
+  "method": "Ogni raster ispezionato nel contact sheet; punti scelti manualmente per specie e zona. Nessun raster ridisegnato. Il punto indica zona da osservare anche quando il valore è false, mai esistenza organo. Null se dato ignoto o zona non raffigurata. Proposta da validare nella UI con raster invariato.",
+  "sourceDatasetSha256": "a2149f75008184cb691c4935d6967706c36069392106f68d7fa20d4e6eee5d18",
+  "species": {
+    "edulis": {
+      "image": "assets/traits/edulis-gambo.webp",
+      "sha256": "79e204a935c3ab77f01d71cff604f6036efbc9052f7ebbdb98411e5491478cf6",
+      "dataPath": "data/species-traits.json#/taxa/edulis/traits",
+      "fields": {
+        "stem_ring": {
+          "point": {
+            "x": 83,
+            "y": 69
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_volva": {
+          "point": {
+            "x": 93,
+            "y": 108
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_reticulum": {
+          "point": {
+            "x": 85,
+            "y": 73
+          },
+          "value": true,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        }
+      },
+      "review": "contact-sheet e controllo del raster; posizioni scelte manualmente",
+      "unavailableReason": null,
+      "presenceCheck": {
+        "stem_reticulum": "raffigurato; il richiamo indica zona osservabile"
+      },
+      "artDataOmissions": []
+    },
+    "pinophilus": {
+      "image": "assets/traits/pinophilus-gambo.webp",
+      "sha256": "fea349fb6dec20cfd2ee5ed880fac4d3b51f9d6bda16931b18366e50d8950e53",
+      "dataPath": "data/species-traits.json#/taxa/pinophilus/traits",
+      "fields": {
+        "stem_ring": {
+          "point": {
+            "x": 84,
+            "y": 69
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_volva": {
+          "point": {
+            "x": 94,
+            "y": 108
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_reticulum": {
+          "point": {
+            "x": 85,
+            "y": 73
+          },
+          "value": true,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        }
+      },
+      "review": "contact-sheet e controllo del raster; posizioni scelte manualmente",
+      "unavailableReason": null,
+      "presenceCheck": {
+        "stem_reticulum": "raffigurato; il richiamo indica zona osservabile"
+      },
+      "artDataOmissions": []
+    },
+    "aereus": {
+      "image": "assets/traits/aereus-gambo.webp",
+      "sha256": "2189284a14c434506ef610da87e532cda309494ba4905cdea3d8cdc32cc0c900",
+      "dataPath": "data/species-traits.json#/taxa/aereus/traits",
+      "fields": {
+        "stem_ring": {
+          "point": {
+            "x": 83,
+            "y": 69
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_volva": {
+          "point": {
+            "x": 93,
+            "y": 108
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_reticulum": {
+          "point": {
+            "x": 85,
+            "y": 73
+          },
+          "value": true,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        }
+      },
+      "review": "contact-sheet e controllo del raster; posizioni scelte manualmente",
+      "unavailableReason": null,
+      "presenceCheck": {
+        "stem_reticulum": "raffigurato; il richiamo indica zona osservabile"
+      },
+      "artDataOmissions": []
+    },
+    "aestivalis": {
+      "image": "assets/traits/aestivalis-gambo.webp",
+      "sha256": "75e7ca365fc567c413e4a9dc5598d32f230add0d55793582f32b8cf9c8ce7766",
+      "dataPath": "data/species-traits.json#/taxa/aestivalis/traits",
+      "fields": {
+        "stem_ring": {
+          "point": {
+            "x": 78,
+            "y": 69
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_volva": {
+          "point": {
+            "x": 86,
+            "y": 111
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_reticulum": {
+          "point": {
+            "x": 84,
+            "y": 85
+          },
+          "value": true,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        }
+      },
+      "review": "contact-sheet e controllo del raster; posizioni scelte manualmente",
+      "unavailableReason": null,
+      "presenceCheck": {
+        "stem_reticulum": "raffigurato; il richiamo indica zona osservabile"
+      },
+      "artDataOmissions": []
+    },
+    "caesarea": {
+      "image": "assets/traits/caesarea-gambo.webp",
+      "sha256": "c2ef7ab983ab73a961fa3028d0ff3edc3b982b9a7c14d56bb970607206533456",
+      "dataPath": "data/species-traits.json#/taxa/caesarea/traits",
+      "fields": {
+        "stem_ring": {
+          "point": {
+            "x": 81,
+            "y": 65
+          },
+          "value": true,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_volva": {
+          "point": {
+            "x": 87,
+            "y": 104
+          },
+          "value": true,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_reticulum": {
+          "point": {
+            "x": 83,
+            "y": 86
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        }
+      },
+      "review": "contact-sheet e controllo del raster; posizioni scelte manualmente",
+      "unavailableReason": null,
+      "presenceCheck": {
+        "stem_ring": "raffigurato; il richiamo indica zona osservabile",
+        "stem_volva": "raffigurato; il richiamo indica zona osservabile"
+      },
+      "artDataOmissions": []
+    },
+    "cibarius": {
+      "image": "assets/traits/cibarius-gambo.webp",
+      "sha256": "4456b9e83fc390026c87fe150a5eb0c766508f407b289ccd1105155d7c5770c0",
+      "dataPath": "data/species-traits.json#/taxa/cibarius/traits",
+      "fields": {
+        "stem_ring": {
+          "point": {
+            "x": 83,
+            "y": 61
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_volva": {
+          "point": {
+            "x": 78,
+            "y": 109
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_reticulum": {
+          "point": {
+            "x": 76,
+            "y": 83
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        }
+      },
+      "review": "contact-sheet e controllo del raster; posizioni scelte manualmente",
+      "unavailableReason": null,
+      "presenceCheck": {},
+      "artDataOmissions": []
+    },
+    "cornucopioides": {
+      "image": "assets/traits/cornucopioides-gambo.webp",
+      "sha256": "6f5c2ab78bfb0b0872f68e1c48550e79b2e21a39276321f24fdcf176b8c7f3f6",
+      "dataPath": "data/species-traits.json#/taxa/cornucopioides/traits",
+      "fields": {
+        "stem_ring": {
+          "point": {
+            "x": 81,
+            "y": 67
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_volva": {
+          "point": {
+            "x": 75,
+            "y": 112
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_reticulum": {
+          "point": {
+            "x": 76,
+            "y": 88
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        }
+      },
+      "review": "contact-sheet e controllo del raster; posizioni scelte manualmente",
+      "unavailableReason": null,
+      "presenceCheck": {},
+      "artDataOmissions": []
+    },
+    "repandum": {
+      "image": "assets/traits/repandum-gambo.webp",
+      "sha256": "39abfe890172447e85bd230459d0e8aa4bef5e736b637d0f7b3fd5e099a1510e",
+      "dataPath": "data/species-traits.json#/taxa/repandum/traits",
+      "fields": {
+        "stem_ring": {
+          "point": {
+            "x": 79,
+            "y": 74
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_volva": {
+          "point": {
+            "x": 81,
+            "y": 103
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_reticulum": {
+          "point": {
+            "x": 77,
+            "y": 84
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        }
+      },
+      "review": "contact-sheet e controllo del raster; posizioni scelte manualmente",
+      "unavailableReason": null,
+      "presenceCheck": {},
+      "artDataOmissions": []
+    },
+    "procera": {
+      "image": "assets/traits/procera-gambo.webp",
+      "sha256": "bf88e3f3584ed1e9308fa9f8d5e6f1049e76a337699bdb8989e68e2cc03e1f6a",
+      "dataPath": "data/species-traits.json#/taxa/procera/traits",
+      "fields": {
+        "stem_ring": {
+          "point": {
+            "x": 79,
+            "y": 66
+          },
+          "value": true,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_volva": {
+          "point": {
+            "x": 82,
+            "y": 111
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_reticulum": {
+          "point": {
+            "x": 76,
+            "y": 88
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        }
+      },
+      "review": "contact-sheet e controllo del raster; posizioni scelte manualmente",
+      "unavailableReason": null,
+      "presenceCheck": {
+        "stem_ring": "raffigurato; il richiamo indica zona osservabile"
+      },
+      "artDataOmissions": []
+    },
+    "mellea": {
+      "image": "assets/traits/mellea-gambo.webp",
+      "sha256": "386eb16ae6470ec4ffa4018793532aaeda10761fba8806e1d2286023f8a07693",
+      "dataPath": "data/species-traits.json#/taxa/mellea/traits",
+      "fields": {
+        "stem_ring": {
+          "point": {
+            "x": 81,
+            "y": 73
+          },
+          "value": true,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_volva": {
+          "point": {
+            "x": 79,
+            "y": 111
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_reticulum": {
+          "point": {
+            "x": 76,
+            "y": 91
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        }
+      },
+      "review": "contact-sheet e controllo del raster; posizioni scelte manualmente",
+      "unavailableReason": null,
+      "presenceCheck": {
+        "stem_ring": "raffigurato; il richiamo indica zona osservabile"
+      },
+      "artDataOmissions": []
+    },
+    "virescens": {
+      "image": "assets/traits/virescens-gambo.webp",
+      "sha256": "7cd96d2370b4cecc5d4c0c87d69911fc475b9181c7034896a4e5adfcc1750587",
+      "dataPath": "data/species-traits.json#/taxa/virescens/traits",
+      "fields": {
+        "stem_ring": {
+          "point": {
+            "x": 77,
+            "y": 72
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_volva": {
+          "point": {
+            "x": 80,
+            "y": 101
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_reticulum": {
+          "point": {
+            "x": 79,
+            "y": 88
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        }
+      },
+      "review": "contact-sheet e controllo del raster; posizioni scelte manualmente",
+      "unavailableReason": null,
+      "presenceCheck": {},
+      "artDataOmissions": []
+    },
+    "suillus": {
+      "image": "assets/traits/suillus-gambo.webp",
+      "sha256": "aafc5e0a215a6ddcb15b402977952a3ce1abffc1a602d1df166862d238dd7e6f",
+      "dataPath": "data/species-traits.json#/taxa/suillus/traits",
+      "fields": {
+        "stem_ring": {
+          "point": null,
+          "value": null,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_volva": {
+          "point": {
+            "x": 83,
+            "y": 111
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_reticulum": {
+          "point": {
+            "x": 80,
+            "y": 86
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        }
+      },
+      "review": "contact-sheet e controllo del raster; posizioni scelte manualmente",
+      "unavailableReason": null,
+      "presenceCheck": {},
+      "artDataOmissions": []
+    },
+    "terreum": {
+      "image": "assets/traits/terreum-gambo.webp",
+      "sha256": "32bb4672ab11f3878831b38402a2bd5422c6d589c14cdb37fba0ccc91e09d313",
+      "dataPath": "data/species-traits.json#/taxa/terreum/traits",
+      "fields": {
+        "stem_ring": {
+          "point": null,
+          "value": null,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_volva": {
+          "point": {
+            "x": 82,
+            "y": 110
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_reticulum": {
+          "point": {
+            "x": 78,
+            "y": 86
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        }
+      },
+      "review": "contact-sheet e controllo del raster; posizioni scelte manualmente",
+      "unavailableReason": null,
+      "presenceCheck": {},
+      "artDataOmissions": []
+    },
+    "nuda": {
+      "image": "assets/traits/nuda-gambo.webp",
+      "sha256": "298516966aa94478d8b5f3180799cdb6e7fbbb23b75dc469c8ef289a7e53d492",
+      "dataPath": "data/species-traits.json#/taxa/nuda/traits",
+      "fields": {
+        "stem_ring": {
+          "point": {
+            "x": 79,
+            "y": 68
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_volva": {
+          "point": {
+            "x": 84,
+            "y": 105
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_reticulum": {
+          "point": {
+            "x": 83,
+            "y": 89
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        }
+      },
+      "review": "contact-sheet e controllo del raster; posizioni scelte manualmente",
+      "unavailableReason": null,
+      "presenceCheck": {},
+      "artDataOmissions": []
+    },
+    "tylopilus-felleus": {
+      "image": "assets/traits/tylopilus-felleus-gambo.webp",
+      "sha256": "c2d6023f345d3cd834de24e8f70f09cb822abf1ac44d6c22fc50902caa494519",
+      "dataPath": "data/species-traits.json#/taxa/tylopilus-felleus/traits",
+      "fields": {
+        "stem_ring": {
+          "point": {
+            "x": 79,
+            "y": 69
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_volva": {
+          "point": {
+            "x": 87,
+            "y": 110
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_reticulum": {
+          "point": {
+            "x": 85,
+            "y": 86
+          },
+          "value": true,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        }
+      },
+      "review": "contact-sheet e controllo del raster; posizioni scelte manualmente",
+      "unavailableReason": null,
+      "presenceCheck": {
+        "stem_reticulum": "raffigurato; il richiamo indica zona osservabile"
+      },
+      "artDataOmissions": []
+    },
+    "rubroboletus-satanas": {
+      "image": "assets/traits/rubroboletus-satanas-gambo.webp",
+      "sha256": "84139e373b83853d5697f84a7b369b064c61b26c522857c10b451fe013b308f9",
+      "dataPath": "data/species-traits.json#/taxa/rubroboletus-satanas/traits",
+      "fields": {
+        "stem_ring": {
+          "point": {
+            "x": 86,
+            "y": 71
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_volva": {
+          "point": {
+            "x": 92,
+            "y": 111
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_reticulum": {
+          "point": {
+            "x": 95,
+            "y": 88
+          },
+          "value": true,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        }
+      },
+      "review": "contact-sheet e controllo del raster; posizioni scelte manualmente",
+      "unavailableReason": null,
+      "presenceCheck": {
+        "stem_reticulum": "raffigurato; il richiamo indica zona osservabile"
+      },
+      "artDataOmissions": []
+    },
+    "caloboletus-calopus": {
+      "image": "assets/traits/caloboletus-calopus-gambo.webp",
+      "sha256": "f217c894833909e48e0d65b4ad5f39168108c5239883088c636907737f57be82",
+      "dataPath": "data/species-traits.json#/taxa/caloboletus-calopus/traits",
+      "fields": {
+        "stem_ring": {
+          "point": {
+            "x": 78,
+            "y": 69
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_volva": {
+          "point": {
+            "x": 86,
+            "y": 112
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_reticulum": {
+          "point": {
+            "x": 86,
+            "y": 89
+          },
+          "value": true,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        }
+      },
+      "review": "contact-sheet e controllo del raster; posizioni scelte manualmente",
+      "unavailableReason": null,
+      "presenceCheck": {
+        "stem_reticulum": "raffigurato; il richiamo indica zona osservabile"
+      },
+      "artDataOmissions": []
+    },
+    "caloboletus-radicans": {
+      "image": "assets/traits/caloboletus-radicans-gambo.webp",
+      "sha256": "388c2fbee17c23be6164a65200aa5e4bd7ff19439f5a3967f6bb2267c1dfe9c8",
+      "dataPath": "data/species-traits.json#/taxa/caloboletus-radicans/traits",
+      "fields": {
+        "stem_ring": {
+          "point": {
+            "x": 84,
+            "y": 60
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_volva": {
+          "point": {
+            "x": 69,
+            "y": 111
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_reticulum": {
+          "point": {
+            "x": 88,
+            "y": 77
+          },
+          "value": true,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        }
+      },
+      "review": "contact-sheet e controllo del raster; posizioni scelte manualmente",
+      "unavailableReason": null,
+      "presenceCheck": {
+        "stem_reticulum": "raffigurato; il richiamo indica zona osservabile"
+      },
+      "artDataOmissions": []
+    },
+    "neoboletus-luridiformis": {
+      "image": "assets/traits/neoboletus-luridiformis-gambo.webp",
+      "sha256": "de7ffe172f93dd3e2f4c141b2eb8bf73a7a2b679b25f90d0b1039af68b2ddf96",
+      "dataPath": "data/species-traits.json#/taxa/neoboletus-luridiformis/traits",
+      "fields": {
+        "stem_ring": {
+          "point": {
+            "x": 79,
+            "y": 62
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_volva": {
+          "point": {
+            "x": 86,
+            "y": 111
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_reticulum": {
+          "point": {
+            "x": 87,
+            "y": 88
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        }
+      },
+      "review": "contact-sheet e controllo del raster; posizioni scelte manualmente",
+      "unavailableReason": null,
+      "presenceCheck": {},
+      "artDataOmissions": []
+    },
+    "imleria-badia": {
+      "image": "assets/traits/imleria-badia-gambo.webp",
+      "sha256": "a659cb7dbb09c3ad350c282930ea692690d6b8045755d16e815c1a2592865123",
+      "dataPath": "data/species-traits.json#/taxa/imleria-badia/traits",
+      "fields": {
+        "stem_ring": {
+          "point": {
+            "x": 79,
+            "y": 65
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_volva": {
+          "point": {
+            "x": 83,
+            "y": 110
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_reticulum": {
+          "point": {
+            "x": 80,
+            "y": 88
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        }
+      },
+      "review": "contact-sheet e controllo del raster; posizioni scelte manualmente",
+      "unavailableReason": null,
+      "presenceCheck": {},
+      "artDataOmissions": []
+    },
+    "amanita-phalloides": {
+      "image": "assets/traits/amanita-phalloides-gambo.webp",
+      "sha256": "6cfdad237af99b061db7c0ad4c0c8c5cb4463ba3408f59098c83d1cf718e36b0",
+      "dataPath": "data/species-traits.json#/taxa/amanita-phalloides/traits",
+      "fields": {
+        "stem_ring": {
+          "point": {
+            "x": 77,
+            "y": 59
+          },
+          "value": true,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_volva": {
+          "point": {
+            "x": 87,
+            "y": 105
+          },
+          "value": true,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_reticulum": {
+          "point": {
+            "x": 74,
+            "y": 77
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        }
+      },
+      "review": "contact-sheet e controllo del raster; posizioni scelte manualmente",
+      "unavailableReason": null,
+      "presenceCheck": {
+        "stem_ring": "raffigurato; il richiamo indica zona osservabile",
+        "stem_volva": "raffigurato; il richiamo indica zona osservabile"
+      },
+      "artDataOmissions": []
+    },
+    "amanita-verna": {
+      "image": "assets/traits/amanita-verna-gambo.webp",
+      "sha256": "e30045be34d43f630a684485476503aa6b74e2d9aa732f59139e3b77cb179623",
+      "dataPath": "data/species-traits.json#/taxa/amanita-verna/traits",
+      "fields": {
+        "stem_ring": {
+          "point": {
+            "x": 77,
+            "y": 59
+          },
+          "value": true,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_volva": {
+          "point": {
+            "x": 88,
+            "y": 105
+          },
+          "value": true,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_reticulum": {
+          "point": {
+            "x": 74,
+            "y": 77
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        }
+      },
+      "review": "contact-sheet e controllo del raster; posizioni scelte manualmente",
+      "unavailableReason": null,
+      "presenceCheck": {
+        "stem_ring": "raffigurato; il richiamo indica zona osservabile",
+        "stem_volva": "raffigurato; il richiamo indica zona osservabile"
+      },
+      "artDataOmissions": []
+    },
+    "amanita-virosa": {
+      "image": "assets/traits/amanita-virosa-gambo.webp",
+      "sha256": "47c02b74688982dc5de578be7193320360987d751e8879b1e76f75c4c791bdcb",
+      "dataPath": "data/species-traits.json#/taxa/amanita-virosa/traits",
+      "fields": {
+        "stem_ring": {
+          "point": {
+            "x": 74,
+            "y": 63
+          },
+          "value": true,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_volva": {
+          "point": {
+            "x": 83,
+            "y": 108
+          },
+          "value": true,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_reticulum": {
+          "point": {
+            "x": 72,
+            "y": 78
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        }
+      },
+      "review": "contact-sheet e controllo del raster; posizioni scelte manualmente",
+      "unavailableReason": null,
+      "presenceCheck": {
+        "stem_ring": "raffigurato; il richiamo indica zona osservabile",
+        "stem_volva": "raffigurato; il richiamo indica zona osservabile"
+      },
+      "artDataOmissions": []
+    },
+    "amanita-muscaria": {
+      "image": "assets/traits/amanita-muscaria-gambo.webp",
+      "sha256": "3f15483503319aaf34f4622582e4cc3cb9602128a19c8d4c85ce2fe1e93947a0",
+      "dataPath": "data/species-traits.json#/taxa/amanita-muscaria/traits",
+      "fields": {
+        "stem_ring": {
+          "point": {
+            "x": 79,
+            "y": 64
+          },
+          "value": true,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_volva": {
+          "point": {
+            "x": 86,
+            "y": 101
+          },
+          "value": true,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_reticulum": {
+          "point": {
+            "x": 75,
+            "y": 80
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        }
+      },
+      "review": "contact-sheet e controllo del raster; posizioni scelte manualmente",
+      "unavailableReason": null,
+      "presenceCheck": {
+        "stem_ring": "raffigurato; il richiamo indica zona osservabile",
+        "stem_volva": "raffigurato; il richiamo indica zona osservabile"
+      },
+      "artDataOmissions": []
+    },
+    "amanita-crocea": {
+      "image": "assets/traits/amanita-crocea-gambo.webp",
+      "sha256": "897462d6e19dc51df95b6880ca35228f230c8f445f5bfacf4642e9538f1afd8b",
+      "dataPath": "data/species-traits.json#/taxa/amanita-crocea/traits",
+      "fields": {
+        "stem_ring": {
+          "point": {
+            "x": 76,
+            "y": 62
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_volva": {
+          "point": {
+            "x": 90,
+            "y": 105
+          },
+          "value": true,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_reticulum": {
+          "point": {
+            "x": 83,
+            "y": 77
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        }
+      },
+      "review": "contact-sheet e controllo del raster; posizioni scelte manualmente",
+      "unavailableReason": null,
+      "presenceCheck": {
+        "stem_volva": "raffigurato; il richiamo indica zona osservabile"
+      },
+      "artDataOmissions": []
+    },
+    "omphalotus-olearius": {
+      "image": "assets/traits/omphalotus-olearius-gambo.webp",
+      "sha256": "e3d889bd39daa1a629f55a81465316a1d06d2de36c50491a5f547d8ba10eeb2f",
+      "dataPath": "data/species-traits.json#/taxa/omphalotus-olearius/traits",
+      "fields": {
+        "stem_ring": {
+          "point": {
+            "x": 79,
+            "y": 66
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_volva": {
+          "point": {
+            "x": 76,
+            "y": 109
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_reticulum": {
+          "point": {
+            "x": 75,
+            "y": 87
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        }
+      },
+      "review": "contact-sheet e controllo del raster; posizioni scelte manualmente",
+      "unavailableReason": null,
+      "presenceCheck": {},
+      "artDataOmissions": []
+    },
+    "hygrophoropsis-aurantiaca": {
+      "image": "assets/traits/hygrophoropsis-aurantiaca-gambo.webp",
+      "sha256": "3877e0d85f225b80480befa0317d0111ac5bbfb35492832ab377dc0efebbe2d3",
+      "dataPath": "data/species-traits.json#/taxa/hygrophoropsis-aurantiaca/traits",
+      "fields": {
+        "stem_ring": {
+          "point": {
+            "x": 80,
+            "y": 68
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_volva": {
+          "point": {
+            "x": 78,
+            "y": 104
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_reticulum": {
+          "point": {
+            "x": 76,
+            "y": 87
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        }
+      },
+      "review": "contact-sheet e controllo del raster; posizioni scelte manualmente",
+      "unavailableReason": null,
+      "presenceCheck": {},
+      "artDataOmissions": []
+    },
+    "cortinarius-orellanus": {
+      "image": "assets/traits/cortinarius-orellanus-gambo.webp",
+      "sha256": "1b86a6be64b4f30edc76cb8fe135160396bf8dc47b4f06c4155d7b8f51fee06c",
+      "dataPath": "data/species-traits.json#/taxa/cortinarius-orellanus/traits",
+      "fields": {
+        "stem_ring": {
+          "point": {
+            "x": 76,
+            "y": 62
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_volva": {
+          "point": {
+            "x": 79,
+            "y": 108
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_reticulum": {
+          "point": {
+            "x": 79,
+            "y": 85
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        }
+      },
+      "review": "contact-sheet e controllo del raster; posizioni scelte manualmente",
+      "unavailableReason": null,
+      "presenceCheck": {},
+      "artDataOmissions": []
+    },
+    "craterellus-cinereus": {
+      "image": "assets/traits/craterellus-cinereus-gambo.webp",
+      "sha256": "adfcc0d418b5cac80947dac59ce788ec363682f8fe819f6969fa94b6a3d9839b",
+      "dataPath": "data/species-traits.json#/taxa/craterellus-cinereus/traits",
+      "fields": {
+        "stem_ring": {
+          "point": {
+            "x": 79,
+            "y": 65
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_volva": {
+          "point": {
+            "x": 74,
+            "y": 108
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_reticulum": {
+          "point": {
+            "x": 73,
+            "y": 87
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        }
+      },
+      "review": "contact-sheet e controllo del raster; posizioni scelte manualmente",
+      "unavailableReason": null,
+      "presenceCheck": {},
+      "artDataOmissions": []
+    },
+    "pseudocraterellus-undulatus": {
+      "image": "assets/traits/pseudocraterellus-undulatus-gambo.webp",
+      "sha256": "7f6b41e87e5d61479fef33f6dbf1a48b14f001e247f215a6ae010a10a2492eba",
+      "dataPath": "data/species-traits.json#/taxa/pseudocraterellus-undulatus/traits",
+      "fields": {
+        "stem_ring": {
+          "point": {
+            "x": 70,
+            "y": 69
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_volva": {
+          "point": {
+            "x": 72,
+            "y": 108
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_reticulum": {
+          "point": {
+            "x": 70,
+            "y": 88
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        }
+      },
+      "review": "contact-sheet e controllo del raster; posizioni scelte manualmente",
+      "unavailableReason": null,
+      "presenceCheck": {},
+      "artDataOmissions": []
+    },
+    "urnula-craterium": {
+      "image": "assets/traits/urnula-craterium-gambo.webp",
+      "sha256": "b1ade89dd56fdf072c0c7b19ea585d0a5e814ccad82120edeb639dd80e133fa0",
+      "dataPath": "data/species-traits.json#/taxa/urnula-craterium/traits",
+      "fields": {
+        "stem_ring": {
+          "point": {
+            "x": 74,
+            "y": 85
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_volva": {
+          "point": {
+            "x": 78,
+            "y": 109
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_reticulum": {
+          "point": {
+            "x": 75,
+            "y": 96
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        }
+      },
+      "review": "contact-sheet e controllo del raster; posizioni scelte manualmente",
+      "unavailableReason": null,
+      "presenceCheck": {},
+      "artDataOmissions": []
+    },
+    "hydnum-rufescens": {
+      "image": "assets/traits/hydnum-rufescens-gambo.webp",
+      "sha256": "69b2e25742a286eb8d008b49685b80841485c6582699ace48460c08114d2c861",
+      "dataPath": "data/species-traits.json#/taxa/hydnum-rufescens/traits",
+      "fields": {
+        "stem_ring": {
+          "point": {
+            "x": 76,
+            "y": 70
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_volva": {
+          "point": {
+            "x": 78,
+            "y": 105
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_reticulum": {
+          "point": {
+            "x": 76,
+            "y": 88
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        }
+      },
+      "review": "contact-sheet e controllo del raster; posizioni scelte manualmente",
+      "unavailableReason": null,
+      "presenceCheck": {},
+      "artDataOmissions": []
+    },
+    "sarcodon-imbricatus": {
+      "image": "assets/traits/sarcodon-imbricatus-gambo.webp",
+      "sha256": "e17aebdc8d03876d06a368cb880c7e53921ee444223ac1837bea3556fa04a5d5",
+      "dataPath": "data/species-traits.json#/taxa/sarcodon-imbricatus/traits",
+      "fields": {
+        "stem_ring": {
+          "point": {
+            "x": 82,
+            "y": 69
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_volva": {
+          "point": {
+            "x": 81,
+            "y": 101
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_reticulum": {
+          "point": {
+            "x": 78,
+            "y": 86
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        }
+      },
+      "review": "contact-sheet e controllo del raster; posizioni scelte manualmente",
+      "unavailableReason": null,
+      "presenceCheck": {},
+      "artDataOmissions": []
+    },
+    "sarcodon-scabrosus": {
+      "image": "assets/traits/sarcodon-scabrosus-gambo.webp",
+      "sha256": "772565b82e88f1e7f64b92f9a9d617ef8cc7f4fe588f5991c2096d6fc1a635f2",
+      "dataPath": "data/species-traits.json#/taxa/sarcodon-scabrosus/traits",
+      "fields": {
+        "stem_ring": {
+          "point": {
+            "x": 79,
+            "y": 69
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_volva": {
+          "point": {
+            "x": 66,
+            "y": 108
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_reticulum": {
+          "point": {
+            "x": 71,
+            "y": 89
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        }
+      },
+      "review": "contact-sheet e controllo del raster; posizioni scelte manualmente",
+      "unavailableReason": null,
+      "presenceCheck": {},
+      "artDataOmissions": []
+    },
+    "hydnellum-peckii": {
+      "image": "assets/traits/hydnellum-peckii-gambo.webp",
+      "sha256": "0f9dc07450b62858c197142bee2977c452c8779db16163d84d6325be67c16af4",
+      "dataPath": "data/species-traits.json#/taxa/hydnellum-peckii/traits",
+      "fields": {
+        "stem_ring": {
+          "point": {
+            "x": 79,
+            "y": 64
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_volva": {
+          "point": {
+            "x": 84,
+            "y": 106
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_reticulum": {
+          "point": {
+            "x": 79,
+            "y": 87
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        }
+      },
+      "review": "contact-sheet e controllo del raster; posizioni scelte manualmente",
+      "unavailableReason": null,
+      "presenceCheck": {},
+      "artDataOmissions": []
+    },
+    "lepiota-brunneoincarnata": {
+      "image": "assets/traits/lepiota-brunneoincarnata-gambo.webp",
+      "sha256": "bea699b23a327aaba7cf70fbdaa73c4752f2a3e8bd1ae11cfeb23eb214cb2531",
+      "dataPath": "data/species-traits.json#/taxa/lepiota-brunneoincarnata/traits",
+      "fields": {
+        "stem_ring": {
+          "point": null,
+          "value": null,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_volva": {
+          "point": {
+            "x": 83,
+            "y": 110
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_reticulum": {
+          "point": {
+            "x": 80,
+            "y": 84
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        }
+      },
+      "review": "contact-sheet e controllo del raster; posizioni scelte manualmente",
+      "unavailableReason": null,
+      "presenceCheck": {},
+      "artDataOmissions": []
+    },
+    "lepiota-subincarnata": {
+      "image": "assets/traits/lepiota-subincarnata-gambo.webp",
+      "sha256": "3188420868f7d25a712f002379e83433dc0e616b1cf5ac6476cde5b9580af267",
+      "dataPath": "data/species-traits.json#/taxa/lepiota-subincarnata/traits",
+      "fields": {
+        "stem_ring": {
+          "point": null,
+          "value": null,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_volva": {
+          "point": {
+            "x": 83,
+            "y": 110
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_reticulum": {
+          "point": {
+            "x": 80,
+            "y": 84
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        }
+      },
+      "review": "contact-sheet e controllo del raster; posizioni scelte manualmente",
+      "unavailableReason": null,
+      "presenceCheck": {},
+      "artDataOmissions": []
+    },
+    "lepiota-cristata": {
+      "image": "assets/traits/lepiota-cristata-gambo.webp",
+      "sha256": "00a6ec26eec9f8d98714bbc625c4607c915bb42236f569a8ee64a6cedcde1bab",
+      "dataPath": "data/species-traits.json#/taxa/lepiota-cristata/traits",
+      "fields": {
+        "stem_ring": {
+          "point": {
+            "x": 77,
+            "y": 74
+          },
+          "value": true,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_volva": {
+          "point": {
+            "x": 77,
+            "y": 113
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_reticulum": {
+          "point": {
+            "x": 73,
+            "y": 92
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        }
+      },
+      "review": "contact-sheet e controllo del raster; posizioni scelte manualmente",
+      "unavailableReason": null,
+      "presenceCheck": {
+        "stem_ring": "raffigurato; il richiamo indica zona osservabile"
+      },
+      "artDataOmissions": []
+    },
+    "chlorophyllum-rhacodes": {
+      "image": "assets/traits/chlorophyllum-rhacodes-gambo.webp",
+      "sha256": "310d98e482d71d212153403e76aed5b336082dbf64032c07907366cd873f1a2d",
+      "dataPath": "data/species-traits.json#/taxa/chlorophyllum-rhacodes/traits",
+      "fields": {
+        "stem_ring": {
+          "point": {
+            "x": 81,
+            "y": 68
+          },
+          "value": true,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_volva": {
+          "point": {
+            "x": 84,
+            "y": 111
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_reticulum": {
+          "point": {
+            "x": 77,
+            "y": 87
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        }
+      },
+      "review": "contact-sheet e controllo del raster; posizioni scelte manualmente",
+      "unavailableReason": null,
+      "presenceCheck": {
+        "stem_ring": "raffigurato; il richiamo indica zona osservabile"
+      },
+      "artDataOmissions": []
+    },
+    "chlorophyllum-venenatum": {
+      "image": "assets/traits/chlorophyllum-venenatum-gambo.webp",
+      "sha256": "c22f3e7abd889e71227c6ff3f8156fdf246ef95412cfc4f8f98d0eec25a755c0",
+      "dataPath": "data/species-traits.json#/taxa/chlorophyllum-venenatum/traits",
+      "fields": {
+        "stem_ring": {
+          "point": {
+            "x": 79,
+            "y": 70
+          },
+          "value": true,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_volva": {
+          "point": {
+            "x": 86,
+            "y": 105
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_reticulum": {
+          "point": {
+            "x": 77,
+            "y": 85
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        }
+      },
+      "review": "contact-sheet e controllo del raster; posizioni scelte manualmente",
+      "unavailableReason": null,
+      "presenceCheck": {
+        "stem_ring": "raffigurato; il richiamo indica zona osservabile"
+      },
+      "artDataOmissions": []
+    },
+    "galerina-marginata": {
+      "image": "assets/traits/galerina-marginata-gambo.webp",
+      "sha256": "88129fdc30ea023d5703972eb50118491f5c86a8e72e557a161b7098ea05305e",
+      "dataPath": "data/species-traits.json#/taxa/galerina-marginata/traits",
+      "fields": {
+        "stem_ring": {
+          "point": {
+            "x": 77,
+            "y": 63
+          },
+          "value": true,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_volva": {
+          "point": {
+            "x": 79,
+            "y": 111
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_reticulum": {
+          "point": {
+            "x": 76,
+            "y": 84
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        }
+      },
+      "review": "contact-sheet e controllo del raster; posizioni scelte manualmente",
+      "unavailableReason": null,
+      "presenceCheck": {
+        "stem_ring": "raffigurato; il richiamo indica zona osservabile"
+      },
+      "artDataOmissions": []
+    },
+    "hypholoma-fasciculare": {
+      "image": "assets/traits/hypholoma-fasciculare-gambo.webp",
+      "sha256": "f69ae3b750b47ca197cb53e3c9f82747aa605936d17f3a43ce5a0d4559bcdc03",
+      "dataPath": "data/species-traits.json#/taxa/hypholoma-fasciculare/traits",
+      "fields": {
+        "stem_ring": {
+          "point": {
+            "x": 76,
+            "y": 69
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_volva": {
+          "point": {
+            "x": 81,
+            "y": 109
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_reticulum": {
+          "point": {
+            "x": 77,
+            "y": 88
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        }
+      },
+      "review": "contact-sheet e controllo del raster; posizioni scelte manualmente",
+      "unavailableReason": null,
+      "presenceCheck": {},
+      "artDataOmissions": []
+    },
+    "cortinarius-rubellus": {
+      "image": "assets/traits/cortinarius-rubellus-gambo.webp",
+      "sha256": "66f98e82d76bd3d13d0e097aa422f7bce9e3e1985ce56186e149fc49f31e011f",
+      "dataPath": "data/species-traits.json#/taxa/cortinarius-rubellus/traits",
+      "fields": {
+        "stem_ring": {
+          "point": {
+            "x": 77,
+            "y": 69
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_volva": {
+          "point": {
+            "x": 86,
+            "y": 109
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_reticulum": {
+          "point": {
+            "x": 81,
+            "y": 87
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        }
+      },
+      "review": "contact-sheet e controllo del raster; posizioni scelte manualmente",
+      "unavailableReason": null,
+      "presenceCheck": {},
+      "artDataOmissions": []
+    },
+    "gymnopilus-junonius": {
+      "image": "assets/traits/gymnopilus-junonius-gambo.webp",
+      "sha256": "93d16c7e7c3a2da4979fa53bebb5fab4681d72f69766bb0f275b8ef93ae9ae48",
+      "dataPath": "data/species-traits.json#/taxa/gymnopilus-junonius/traits",
+      "fields": {
+        "stem_ring": {
+          "point": {
+            "x": 83,
+            "y": 74
+          },
+          "value": true,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_volva": {
+          "point": {
+            "x": 81,
+            "y": 112
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_reticulum": {
+          "point": {
+            "x": 79,
+            "y": 91
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        }
+      },
+      "review": "contact-sheet e controllo del raster; posizioni scelte manualmente",
+      "unavailableReason": null,
+      "presenceCheck": {
+        "stem_ring": "raffigurato; il richiamo indica zona osservabile"
+      },
+      "artDataOmissions": []
+    },
+    "pholiota-squarrosa": {
+      "image": "assets/traits/pholiota-squarrosa-gambo.webp",
+      "sha256": "1c48754e5b983b5d6183ec53e65b1026ef7b771fdb00e87b79578482ac4daf4e",
+      "dataPath": "data/species-traits.json#/taxa/pholiota-squarrosa/traits",
+      "fields": {
+        "stem_ring": {
+          "point": {
+            "x": 82,
+            "y": 74
+          },
+          "value": true,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_volva": {
+          "point": {
+            "x": 81,
+            "y": 112
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_reticulum": {
+          "point": {
+            "x": 77,
+            "y": 88
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        }
+      },
+      "review": "contact-sheet e controllo del raster; posizioni scelte manualmente",
+      "unavailableReason": null,
+      "presenceCheck": {
+        "stem_ring": "raffigurato; il richiamo indica zona osservabile"
+      },
+      "artDataOmissions": []
+    },
+    "armillaria-tabescens": {
+      "image": "assets/traits/armillaria-tabescens-gambo.webp",
+      "sha256": "5d0a523ee327281913e05a0c7ff8e05d5f6c942f2c8e6cbbaee8786262905ffd",
+      "dataPath": "data/species-traits.json#/taxa/armillaria-tabescens/traits",
+      "fields": {
+        "stem_ring": {
+          "point": {
+            "x": 73,
+            "y": 62
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_volva": {
+          "point": {
+            "x": 77,
+            "y": 112
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_reticulum": {
+          "point": {
+            "x": 76,
+            "y": 88
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        }
+      },
+      "review": "contact-sheet e controllo del raster; posizioni scelte manualmente",
+      "unavailableReason": null,
+      "presenceCheck": {},
+      "artDataOmissions": []
+    },
+    "russula-heterophylla": {
+      "image": "assets/traits/russula-heterophylla-gambo.webp",
+      "sha256": "e654ebf3f52b2488a75fa9230673e388dc95cd34c15fc7868e992bb112f1a949",
+      "dataPath": "data/species-traits.json#/taxa/russula-heterophylla/traits",
+      "fields": {
+        "stem_ring": {
+          "point": {
+            "x": 78,
+            "y": 70
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_volva": {
+          "point": {
+            "x": 81,
+            "y": 105
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_reticulum": {
+          "point": {
+            "x": 81,
+            "y": 88
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        }
+      },
+      "review": "contact-sheet e controllo del raster; posizioni scelte manualmente",
+      "unavailableReason": null,
+      "presenceCheck": {},
+      "artDataOmissions": []
+    },
+    "russula-olivacea": {
+      "image": "assets/traits/russula-olivacea-gambo.webp",
+      "sha256": "83581d44d7d65ce33adfdcca06977b8e613d4a630c4124ab6cce8fb8bcdd79ec",
+      "dataPath": "data/species-traits.json#/taxa/russula-olivacea/traits",
+      "fields": {
+        "stem_ring": {
+          "point": {
+            "x": 79,
+            "y": 63
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_volva": {
+          "point": {
+            "x": 82,
+            "y": 107
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_reticulum": {
+          "point": {
+            "x": 81,
+            "y": 85
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        }
+      },
+      "review": "contact-sheet e controllo del raster; posizioni scelte manualmente",
+      "unavailableReason": null,
+      "presenceCheck": {},
+      "artDataOmissions": []
+    },
+    "russula-aeruginea": {
+      "image": "assets/traits/russula-aeruginea-gambo.webp",
+      "sha256": "63ffe59ceb1f0bf7b8cf3d93feff834f95e45d4dd23becda92de6ae930ac7198",
+      "dataPath": "data/species-traits.json#/taxa/russula-aeruginea/traits",
+      "fields": {
+        "stem_ring": {
+          "point": {
+            "x": 78,
+            "y": 69
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_volva": {
+          "point": {
+            "x": 79,
+            "y": 103
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_reticulum": {
+          "point": {
+            "x": 79,
+            "y": 87
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        }
+      },
+      "review": "contact-sheet e controllo del raster; posizioni scelte manualmente",
+      "unavailableReason": null,
+      "presenceCheck": {},
+      "artDataOmissions": []
+    },
+    "chalciporus-piperatus": {
+      "image": "assets/traits/chalciporus-piperatus-gambo.webp",
+      "sha256": "f780238844a6956c770dbd9062db2fa65b1813d801cd7887aeaa2229b6a4e951",
+      "dataPath": "data/species-traits.json#/taxa/chalciporus-piperatus/traits",
+      "fields": {
+        "stem_ring": {
+          "point": {
+            "x": 76,
+            "y": 62
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_volva": {
+          "point": {
+            "x": 82,
+            "y": 111
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_reticulum": {
+          "point": {
+            "x": 78,
+            "y": 87
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        }
+      },
+      "review": "contact-sheet e controllo del raster; posizioni scelte manualmente",
+      "unavailableReason": null,
+      "presenceCheck": {},
+      "artDataOmissions": []
+    },
+    "suillus-bovinus": {
+      "image": "assets/traits/suillus-bovinus-gambo.webp",
+      "sha256": "834c943d16c400dd4f58b2c5e565b4105e516c92e5d56b0b4929f9775897be2b",
+      "dataPath": "data/species-traits.json#/taxa/suillus-bovinus/traits",
+      "fields": {
+        "stem_ring": {
+          "point": {
+            "x": 81,
+            "y": 65
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_volva": {
+          "point": {
+            "x": 85,
+            "y": 109
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_reticulum": {
+          "point": {
+            "x": 84,
+            "y": 88
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        }
+      },
+      "review": "contact-sheet e controllo del raster; posizioni scelte manualmente",
+      "unavailableReason": null,
+      "presenceCheck": {},
+      "artDataOmissions": []
+    },
+    "tricholoma-pardinum": {
+      "image": "assets/traits/tricholoma-pardinum-gambo.webp",
+      "sha256": "8d1d1c1a1a89812958efe2fced22d403140226b8028d4ffb57520fd678489cc5",
+      "dataPath": "data/species-traits.json#/taxa/tricholoma-pardinum/traits",
+      "fields": {
+        "stem_ring": {
+          "point": {
+            "x": 79,
+            "y": 71
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_volva": {
+          "point": {
+            "x": 82,
+            "y": 111
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_reticulum": {
+          "point": {
+            "x": 85,
+            "y": 88
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        }
+      },
+      "review": "contact-sheet e controllo del raster; posizioni scelte manualmente",
+      "unavailableReason": null,
+      "presenceCheck": {},
+      "artDataOmissions": []
+    },
+    "tricholoma-virgatum": {
+      "image": "assets/traits/tricholoma-virgatum-gambo.webp",
+      "sha256": "b78afb6c934823754c7a8549123034827b2756887c804dc268ffe36b01934449",
+      "dataPath": "data/species-traits.json#/taxa/tricholoma-virgatum/traits",
+      "fields": {
+        "stem_ring": {
+          "point": {
+            "x": 78,
+            "y": 73
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_volva": {
+          "point": {
+            "x": 82,
+            "y": 111
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_reticulum": {
+          "point": {
+            "x": 78,
+            "y": 87
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        }
+      },
+      "review": "contact-sheet e controllo del raster; posizioni scelte manualmente",
+      "unavailableReason": null,
+      "presenceCheck": {},
+      "artDataOmissions": []
+    },
+    "tricholoma-sciodes": {
+      "image": "assets/traits/tricholoma-sciodes-gambo.webp",
+      "sha256": "2ea6afaf6750e0b5c463d0d8a45de586d2a701510cdf115de2893ca15d2f2d27",
+      "dataPath": "data/species-traits.json#/taxa/tricholoma-sciodes/traits",
+      "fields": {
+        "stem_ring": {
+          "point": {
+            "x": 78,
+            "y": 74
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_volva": {
+          "point": {
+            "x": 82,
+            "y": 110
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_reticulum": {
+          "point": {
+            "x": 78,
+            "y": 87
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        }
+      },
+      "review": "contact-sheet e controllo del raster; posizioni scelte manualmente",
+      "unavailableReason": null,
+      "presenceCheck": {},
+      "artDataOmissions": []
+    },
+    "entoloma-sinuatum": {
+      "image": "assets/traits/entoloma-sinuatum-gambo.webp",
+      "sha256": "657dd5b4755794d7c1d154429801f54b0883b2cc9ef99eebd9000490fe7426d9",
+      "dataPath": "data/species-traits.json#/taxa/entoloma-sinuatum/traits",
+      "fields": {
+        "stem_ring": {
+          "point": {
+            "x": 76,
+            "y": 66
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_volva": {
+          "point": {
+            "x": 86,
+            "y": 105
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_reticulum": {
+          "point": {
+            "x": 78,
+            "y": 85
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        }
+      },
+      "review": "contact-sheet e controllo del raster; posizioni scelte manualmente",
+      "unavailableReason": null,
+      "presenceCheck": {},
+      "artDataOmissions": []
+    },
+    "inocybe": {
+      "image": "assets/traits/inocybe-gambo.webp",
+      "sha256": "a901ae4d187182f5531f7f021cce6c6607e4185f81713666ad5e27b7963dfa01",
+      "dataPath": "data/species-traits.json#/taxa/inocybe/traits",
+      "fields": {
+        "stem_ring": {
+          "point": null,
+          "value": null,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_volva": {
+          "point": {
+            "x": 80,
+            "y": 111
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_reticulum": {
+          "point": {
+            "x": 78,
+            "y": 89
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        }
+      },
+      "review": "contact-sheet e controllo del raster; posizioni scelte manualmente",
+      "unavailableReason": null,
+      "presenceCheck": {},
+      "artDataOmissions": []
+    },
+    "cortinarius-traganus": {
+      "image": "assets/traits/cortinarius-traganus-gambo.webp",
+      "sha256": "4373358edf03d38942fe5d23dac0f650466e7078495515f7ebddd35a18e94ab3",
+      "dataPath": "data/species-traits.json#/taxa/cortinarius-traganus/traits",
+      "fields": {
+        "stem_ring": {
+          "point": {
+            "x": 77,
+            "y": 64
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_volva": {
+          "point": {
+            "x": 87,
+            "y": 106
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_reticulum": {
+          "point": {
+            "x": 86,
+            "y": 86
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        }
+      },
+      "review": "contact-sheet e controllo del raster; posizioni scelte manualmente",
+      "unavailableReason": null,
+      "presenceCheck": {},
+      "artDataOmissions": []
+    },
+    "cortinarius-violaceus": {
+      "image": "assets/traits/cortinarius-violaceus-gambo.webp",
+      "sha256": "7ba0a5c703223256366b0414872e30bec7130148446975c660d9a13e8bd78f44",
+      "dataPath": "data/species-traits.json#/taxa/cortinarius-violaceus/traits",
+      "fields": {
+        "stem_ring": {
+          "point": {
+            "x": 76,
+            "y": 73
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_volva": {
+          "point": {
+            "x": 84,
+            "y": 108
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_reticulum": {
+          "point": {
+            "x": 82,
+            "y": 88
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        }
+      },
+      "review": "contact-sheet e controllo del raster; posizioni scelte manualmente",
+      "unavailableReason": null,
+      "presenceCheck": {},
+      "artDataOmissions": []
+    },
+    "inocybe-lilacina": {
+      "image": "assets/traits/inocybe-lilacina-gambo.webp",
+      "sha256": "cfd0beda867a8e50abb2c41b40f90d17c8d59fed32c4188942502ca0248cc763",
+      "dataPath": "data/species-traits.json#/taxa/inocybe-lilacina/traits",
+      "fields": {
+        "stem_ring": {
+          "point": {
+            "x": 78,
+            "y": 78
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_volva": {
+          "point": {
+            "x": 81,
+            "y": 112
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_reticulum": {
+          "point": {
+            "x": 78,
+            "y": 91
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        }
+      },
+      "review": "contact-sheet e controllo del raster; posizioni scelte manualmente",
+      "unavailableReason": null,
+      "presenceCheck": {},
+      "artDataOmissions": []
+    },
+    "mycena-pura": {
+      "image": "assets/traits/mycena-pura-gambo.webp",
+      "sha256": "6287bfa92bcb9840b6d367c462e645c311b4cf999a14bcf0bb5668fc07930f9f",
+      "dataPath": "data/species-traits.json#/taxa/mycena-pura/traits",
+      "fields": {
+        "stem_ring": {
+          "point": {
+            "x": 75,
+            "y": 64
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_volva": {
+          "point": {
+            "x": 78,
+            "y": 112
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_reticulum": {
+          "point": {
+            "x": 75,
+            "y": 85
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        }
+      },
+      "review": "contact-sheet e controllo del raster; posizioni scelte manualmente",
+      "unavailableReason": null,
+      "presenceCheck": {},
+      "artDataOmissions": []
+    },
+    "laccaria-amethystina": {
+      "image": "assets/traits/laccaria-amethystina-gambo.webp",
+      "sha256": "7703f1584dae7016c1114748aa8747e44f8f8481761a091b171b8a95bd360db9",
+      "dataPath": "data/species-traits.json#/taxa/laccaria-amethystina/traits",
+      "fields": {
+        "stem_ring": {
+          "point": {
+            "x": 81,
+            "y": 64
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_volva": {
+          "point": {
+            "x": 83,
+            "y": 106
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_reticulum": {
+          "point": {
+            "x": 80,
+            "y": 87
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        }
+      },
+      "review": "contact-sheet e controllo del raster; posizioni scelte manualmente",
+      "unavailableReason": null,
+      "presenceCheck": {},
+      "artDataOmissions": []
+    },
+    "agaricus-campestris": {
+      "image": "assets/traits/agaricus-campestris-gambo.webp",
+      "sha256": "023f78c952607fa7717b76b0d2530297c8d1973ebc3187bd4d24d8e82fee49f5",
+      "dataPath": "data/species-traits.json#/taxa/agaricus-campestris/traits",
+      "fields": {
+        "stem_ring": {
+          "point": null,
+          "value": null,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_volva": {
+          "point": {
+            "x": 83,
+            "y": 107
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_reticulum": {
+          "point": {
+            "x": 80,
+            "y": 87
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        }
+      },
+      "review": "contact-sheet e controllo del raster; posizioni scelte manualmente",
+      "unavailableReason": null,
+      "presenceCheck": {},
+      "artDataOmissions": []
+    },
+    "agaricus-arvensis": {
+      "image": "assets/traits/agaricus-arvensis-gambo.webp",
+      "sha256": "9407aff2168ec9034746a638a201ad20442505ee826b3f470faa290b843395c9",
+      "dataPath": "data/species-traits.json#/taxa/agaricus-arvensis/traits",
+      "fields": {
+        "stem_ring": {
+          "point": {
+            "x": 85,
+            "y": 75
+          },
+          "value": true,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_volva": {
+          "point": {
+            "x": 83,
+            "y": 107
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_reticulum": {
+          "point": {
+            "x": 79,
+            "y": 87
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        }
+      },
+      "review": "contact-sheet e controllo del raster; posizioni scelte manualmente",
+      "unavailableReason": null,
+      "presenceCheck": {
+        "stem_ring": "raffigurato; il richiamo indica zona osservabile"
+      },
+      "artDataOmissions": []
+    },
+    "agaricus-bisporus": {
+      "image": "assets/traits/agaricus-bisporus-gambo.webp",
+      "sha256": "9f0c165a4c2e06abc3a050b8d004726794f8ac5986a85917a9c4a44f8445501c",
+      "dataPath": "data/species-traits.json#/taxa/agaricus-bisporus/traits",
+      "fields": {
+        "stem_ring": {
+          "point": {
+            "x": 84,
+            "y": 75
+          },
+          "value": true,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_volva": {
+          "point": {
+            "x": 82,
+            "y": 107
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_reticulum": {
+          "point": {
+            "x": 79,
+            "y": 87
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        }
+      },
+      "review": "contact-sheet e controllo del raster; posizioni scelte manualmente",
+      "unavailableReason": null,
+      "presenceCheck": {
+        "stem_ring": "raffigurato; il richiamo indica zona osservabile"
+      },
+      "artDataOmissions": []
+    },
+    "agaricus-sylvicola": {
+      "image": "assets/traits/agaricus-sylvicola-gambo.webp",
+      "sha256": "1e01aa4af7803ba8bc9cbeeeb35430d84013ab9f987c6f925d4d5ad65cab4271",
+      "dataPath": "data/species-traits.json#/taxa/agaricus-sylvicola/traits",
+      "fields": {
+        "stem_ring": {
+          "point": {
+            "x": 78,
+            "y": 69
+          },
+          "value": true,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_volva": {
+          "point": {
+            "x": 82,
+            "y": 109
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_reticulum": {
+          "point": {
+            "x": 76,
+            "y": 90
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        }
+      },
+      "review": "contact-sheet e controllo del raster; posizioni scelte manualmente",
+      "unavailableReason": null,
+      "presenceCheck": {
+        "stem_ring": "raffigurato; il richiamo indica zona osservabile"
+      },
+      "artDataOmissions": []
+    },
+    "cyclocybe-aegerita": {
+      "image": "assets/traits/cyclocybe-aegerita-gambo.webp",
+      "sha256": "05f19164389a3d9788675cfaeb26fd21036e56d53f1d7e2cfad186cbc25281b7",
+      "dataPath": "data/species-traits.json#/taxa/cyclocybe-aegerita/traits",
+      "fields": {
+        "stem_ring": {
+          "point": {
+            "x": 82,
+            "y": 68
+          },
+          "value": true,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_volva": {
+          "point": {
+            "x": 80,
+            "y": 111
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_reticulum": {
+          "point": {
+            "x": 77,
+            "y": 89
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        }
+      },
+      "review": "contact-sheet e controllo del raster; posizioni scelte manualmente",
+      "unavailableReason": null,
+      "presenceCheck": {
+        "stem_ring": "raffigurato; il richiamo indica zona osservabile"
+      },
+      "artDataOmissions": []
+    },
+    "pleurotus-ostreatus": {
+      "image": "assets/traits/pleurotus-ostreatus-gambo.webp",
+      "sha256": "921c07cdefd2a7ba2915d9a4e84d9b1cee30f2cc77e795135691c421a681e4de",
+      "dataPath": "data/species-traits.json#/taxa/pleurotus-ostreatus/traits",
+      "fields": {
+        "stem_ring": {
+          "point": null,
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_volva": {
+          "point": null,
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_reticulum": {
+          "point": null,
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        }
+      },
+      "review": "contact-sheet e controllo del raster; posizioni scelte manualmente",
+      "unavailableReason": "nessuna zona di gambo distinta osservabile nel raster",
+      "presenceCheck": {},
+      "artDataOmissions": []
+    },
+    "pleurotus-eryngii": {
+      "image": "assets/traits/pleurotus-eryngii-gambo.webp",
+      "sha256": "67fdc1147d1bea20b08b5fa5609aa2e5e38a842ff951b0533d856d3ee14b6aa2",
+      "dataPath": "data/species-traits.json#/taxa/pleurotus-eryngii/traits",
+      "fields": {
+        "stem_ring": {
+          "point": {
+            "x": 90,
+            "y": 62
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_volva": {
+          "point": {
+            "x": 94,
+            "y": 108
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_reticulum": {
+          "point": {
+            "x": 93,
+            "y": 88
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        }
+      },
+      "review": "contact-sheet e controllo del raster; posizioni scelte manualmente",
+      "unavailableReason": null,
+      "presenceCheck": {},
+      "artDataOmissions": []
+    },
+    "pleurotus-cornucopiae": {
+      "image": "assets/traits/pleurotus-cornucopiae-gambo.webp",
+      "sha256": "8f82d101d232df1d4c9cb66bed4e698c72919afbca4bac9e01e7d7a6a3d0c5d2",
+      "dataPath": "data/species-traits.json#/taxa/pleurotus-cornucopiae/traits",
+      "fields": {
+        "stem_ring": {
+          "point": {
+            "x": 85,
+            "y": 72
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_volva": {
+          "point": {
+            "x": 90,
+            "y": 105
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_reticulum": {
+          "point": {
+            "x": 88,
+            "y": 87
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        }
+      },
+      "review": "contact-sheet e controllo del raster; posizioni scelte manualmente",
+      "unavailableReason": null,
+      "presenceCheck": {},
+      "artDataOmissions": []
+    },
+    "morchella-esculenta": {
+      "image": "assets/traits/morchella-esculenta-gambo.webp",
+      "sha256": "93b3a956848e1dea7116a3a821fe5b34f08fa0fabf888554e3b4812153e56d6b",
+      "dataPath": "data/species-traits.json#/taxa/morchella-esculenta/traits",
+      "fields": {
+        "stem_ring": {
+          "point": {
+            "x": 76,
+            "y": 80
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_volva": {
+          "point": {
+            "x": 83,
+            "y": 112
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_reticulum": {
+          "point": {
+            "x": 77,
+            "y": 98
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        }
+      },
+      "review": "contact-sheet e controllo del raster; posizioni scelte manualmente",
+      "unavailableReason": null,
+      "presenceCheck": {},
+      "artDataOmissions": []
+    },
+    "morchella-elata": {
+      "image": "assets/traits/morchella-elata-gambo.webp",
+      "sha256": "0a3ae822c45ba71d305adecf045f5b947053c338c71e2ad73bf88932fdcac919",
+      "dataPath": "data/species-traits.json#/taxa/morchella-elata/traits",
+      "fields": {
+        "stem_ring": {
+          "point": {
+            "x": 78,
+            "y": 82
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_volva": {
+          "point": {
+            "x": 82,
+            "y": 111
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_reticulum": {
+          "point": {
+            "x": 77,
+            "y": 98
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        }
+      },
+      "review": "contact-sheet e controllo del raster; posizioni scelte manualmente",
+      "unavailableReason": null,
+      "presenceCheck": {},
+      "artDataOmissions": []
+    },
+    "calocybe-gambosa": {
+      "image": "assets/traits/calocybe-gambosa-gambo.webp",
+      "sha256": "480f8b2fd3067c005c14255d13a2416aee5cefedd6ca8073f555372825dc72e9",
+      "dataPath": "data/species-traits.json#/taxa/calocybe-gambosa/traits",
+      "fields": {
+        "stem_ring": {
+          "point": {
+            "x": 80,
+            "y": 72
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_volva": {
+          "point": {
+            "x": 85,
+            "y": 109
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_reticulum": {
+          "point": {
+            "x": 84,
+            "y": 87
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        }
+      },
+      "review": "contact-sheet e controllo del raster; posizioni scelte manualmente",
+      "unavailableReason": null,
+      "presenceCheck": {},
+      "artDataOmissions": []
+    },
+    "marasmius-oreades": {
+      "image": "assets/traits/marasmius-oreades-gambo.webp",
+      "sha256": "28e0e4a883744ce321ca3acd5a5313fbcb1931a2917a38e5ab6cf025f50128f9",
+      "dataPath": "data/species-traits.json#/taxa/marasmius-oreades/traits",
+      "fields": {
+        "stem_ring": {
+          "point": {
+            "x": 72,
+            "y": 70
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_volva": {
+          "point": {
+            "x": 72,
+            "y": 110
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_reticulum": {
+          "point": {
+            "x": 73,
+            "y": 85
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        }
+      },
+      "review": "contact-sheet e controllo del raster; posizioni scelte manualmente",
+      "unavailableReason": null,
+      "presenceCheck": {},
+      "artDataOmissions": []
+    },
+    "craterellus-lutescens": {
+      "image": "assets/traits/craterellus-lutescens-gambo.webp",
+      "sha256": "ccc832d3c8aebee74b89867dddbb63beb7afa957f741ce9ab662b5e42f7bb555",
+      "dataPath": "data/species-traits.json#/taxa/craterellus-lutescens/traits",
+      "fields": {
+        "stem_ring": {
+          "point": {
+            "x": 76,
+            "y": 69
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_volva": {
+          "point": {
+            "x": 78,
+            "y": 110
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_reticulum": {
+          "point": {
+            "x": 77,
+            "y": 89
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        }
+      },
+      "review": "contact-sheet e controllo del raster; posizioni scelte manualmente",
+      "unavailableReason": null,
+      "presenceCheck": {},
+      "artDataOmissions": []
+    },
+    "lactarius-deliciosus": {
+      "image": "assets/traits/lactarius-deliciosus-gambo.webp",
+      "sha256": "20957cc5acf37bb531075fb44db067ad484cd24404b0c51d40ef2b1e630c57ab",
+      "dataPath": "data/species-traits.json#/taxa/lactarius-deliciosus/traits",
+      "fields": {
+        "stem_ring": {
+          "point": {
+            "x": 80,
+            "y": 72
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_volva": {
+          "point": {
+            "x": 83,
+            "y": 103
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_reticulum": {
+          "point": {
+            "x": 80,
+            "y": 88
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        }
+      },
+      "review": "contact-sheet e controllo del raster; posizioni scelte manualmente",
+      "unavailableReason": null,
+      "presenceCheck": {},
+      "artDataOmissions": []
+    },
+    "lactarius-deterrimus": {
+      "image": "assets/traits/lactarius-deterrimus-gambo.webp",
+      "sha256": "25202810fb9f99670dabcbe6d95bf87af59074b33d635d4321e16c430bfc54f0",
+      "dataPath": "data/species-traits.json#/taxa/lactarius-deterrimus/traits",
+      "fields": {
+        "stem_ring": {
+          "point": {
+            "x": 79,
+            "y": 72
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_volva": {
+          "point": {
+            "x": 80,
+            "y": 103
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_reticulum": {
+          "point": {
+            "x": 78,
+            "y": 88
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        }
+      },
+      "review": "contact-sheet e controllo del raster; posizioni scelte manualmente",
+      "unavailableReason": null,
+      "presenceCheck": {},
+      "artDataOmissions": []
+    },
+    "hygrophorus-marzuolus": {
+      "image": "assets/traits/hygrophorus-marzuolus-gambo.webp",
+      "sha256": "15a44119ef3fb1a6ea5d66bd8d14b574f17d5e379601987822e3f16e04b59ce6",
+      "dataPath": "data/species-traits.json#/taxa/hygrophorus-marzuolus/traits",
+      "fields": {
+        "stem_ring": {
+          "point": {
+            "x": 78,
+            "y": 68
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_volva": {
+          "point": {
+            "x": 81,
+            "y": 108
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_reticulum": {
+          "point": {
+            "x": 81,
+            "y": 89
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        }
+      },
+      "review": "contact-sheet e controllo del raster; posizioni scelte manualmente",
+      "unavailableReason": null,
+      "presenceCheck": {},
+      "artDataOmissions": []
+    },
+    "hygrophorus-latitabundus": {
+      "image": "assets/traits/hygrophorus-latitabundus-gambo.webp",
+      "sha256": "ba16c6f44d2e57a104e1842ab62fe97a5b4f6fbdfac805cfd9565ebe9e6c08c9",
+      "dataPath": "data/species-traits.json#/taxa/hygrophorus-latitabundus/traits",
+      "fields": {
+        "stem_ring": {
+          "point": {
+            "x": 74,
+            "y": 64
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_volva": {
+          "point": {
+            "x": 77,
+            "y": 109
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_reticulum": {
+          "point": {
+            "x": 80,
+            "y": 88
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        }
+      },
+      "review": "contact-sheet e controllo del raster; posizioni scelte manualmente",
+      "unavailableReason": null,
+      "presenceCheck": {},
+      "artDataOmissions": []
+    },
+    "tricholoma-portentosum": {
+      "image": "assets/traits/tricholoma-portentosum-gambo.webp",
+      "sha256": "b12faeebb7d4791fce8ecfaad619ad658e15acbe7775f166e2e628b42c18afc6",
+      "dataPath": "data/species-traits.json#/taxa/tricholoma-portentosum/traits",
+      "fields": {
+        "stem_ring": {
+          "point": {
+            "x": 76,
+            "y": 74
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_volva": {
+          "point": {
+            "x": 80,
+            "y": 110
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_reticulum": {
+          "point": {
+            "x": 79,
+            "y": 89
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        }
+      },
+      "review": "contact-sheet e controllo del raster; posizioni scelte manualmente",
+      "unavailableReason": null,
+      "presenceCheck": {},
+      "artDataOmissions": []
+    },
+    "coprinus-comatus": {
+      "image": "assets/traits/coprinus-comatus-gambo.webp",
+      "sha256": "675a34d16b0c35b54041b026106f40194132e68317fafae04ce0c605a70ad7e5",
+      "dataPath": "data/species-traits.json#/taxa/coprinus-comatus/traits",
+      "fields": {
+        "stem_ring": {
+          "point": {
+            "x": 75,
+            "y": 100
+          },
+          "value": true,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_volva": {
+          "point": {
+            "x": 75,
+            "y": 117
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_reticulum": {
+          "point": {
+            "x": 75,
+            "y": 109
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        }
+      },
+      "review": "contact-sheet e controllo del raster; posizioni scelte manualmente",
+      "unavailableReason": null,
+      "presenceCheck": {
+        "stem_ring": "raffigurato; il richiamo indica zona osservabile"
+      },
+      "artDataOmissions": []
+    },
+    "fistulina-hepatica": {
+      "image": "assets/traits/fistulina-hepatica-gambo.webp",
+      "sha256": "c064e549a2cef51b79f60815130dfa7b5ee8897f3aad304787df4ddd30674880",
+      "dataPath": "data/species-traits.json#/taxa/fistulina-hepatica/traits",
+      "fields": {
+        "stem_ring": {
+          "point": null,
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_volva": {
+          "point": null,
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_reticulum": {
+          "point": null,
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        }
+      },
+      "review": "contact-sheet e controllo del raster; posizioni scelte manualmente",
+      "unavailableReason": "nessuna zona di gambo distinta osservabile nel raster",
+      "presenceCheck": {},
+      "artDataOmissions": []
+    },
+    "amanita-rubescens": {
+      "image": "assets/traits/amanita-rubescens-gambo.webp",
+      "sha256": "0e3b711fa95a7c4ec945781ece5710a601ddd1624eb6ea0a082c5eeee81026b4",
+      "dataPath": "data/species-traits.json#/taxa/amanita-rubescens/traits",
+      "fields": {
+        "stem_ring": {
+          "point": {
+            "x": 79,
+            "y": 66
+          },
+          "value": true,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_volva": {
+          "point": null,
+          "value": null,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_reticulum": {
+          "point": {
+            "x": 76,
+            "y": 88
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        }
+      },
+      "review": "contact-sheet e controllo del raster; posizioni scelte manualmente",
+      "unavailableReason": null,
+      "presenceCheck": {
+        "stem_ring": "raffigurato; il richiamo indica zona osservabile"
+      },
+      "artDataOmissions": []
+    },
+    "russula-aurea": {
+      "image": "assets/traits/russula-aurea-gambo.webp",
+      "sha256": "98e8234c1aa62ce94aa3645eb253072987e0636f28a2c3690ce861089b6cfaae",
+      "dataPath": "data/species-traits.json#/taxa/russula-aurea/traits",
+      "fields": {
+        "stem_ring": {
+          "point": {
+            "x": 79,
+            "y": 69
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_volva": {
+          "point": {
+            "x": 82,
+            "y": 106
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_reticulum": {
+          "point": {
+            "x": 80,
+            "y": 87
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        }
+      },
+      "review": "contact-sheet e controllo del raster; posizioni scelte manualmente",
+      "unavailableReason": null,
+      "presenceCheck": {},
+      "artDataOmissions": []
+    },
+    "agaricus-xanthodermus": {
+      "image": "assets/traits/agaricus-xanthodermus-gambo.webp",
+      "sha256": "d7682bd40d4d23f0ee7db913b2d95a52c45dc9063d4d3315b9ae067c0700b839",
+      "dataPath": "data/species-traits.json#/taxa/agaricus-xanthodermus/traits",
+      "fields": {
+        "stem_ring": {
+          "point": {
+            "x": 82,
+            "y": 72
+          },
+          "value": true,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_volva": {
+          "point": {
+            "x": 82,
+            "y": 105
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_reticulum": {
+          "point": {
+            "x": 76,
+            "y": 88
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        }
+      },
+      "review": "contact-sheet e controllo del raster; posizioni scelte manualmente",
+      "unavailableReason": null,
+      "presenceCheck": {
+        "stem_ring": "raffigurato; il richiamo indica zona osservabile"
+      },
+      "artDataOmissions": []
+    },
+    "gyromitra-esculenta": {
+      "image": "assets/traits/gyromitra-esculenta-gambo.webp",
+      "sha256": "2305feb0cc16e9189c44e057faa05c36db6f68487ac45f48c74254dcc037bf3b",
+      "dataPath": "data/species-traits.json#/taxa/gyromitra-esculenta/traits",
+      "fields": {
+        "stem_ring": {
+          "point": {
+            "x": 88,
+            "y": 86
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_volva": {
+          "point": {
+            "x": 85,
+            "y": 109
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_reticulum": {
+          "point": {
+            "x": 82,
+            "y": 97
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        }
+      },
+      "review": "contact-sheet e controllo del raster; posizioni scelte manualmente",
+      "unavailableReason": null,
+      "presenceCheck": {},
+      "artDataOmissions": []
+    },
+    "amanita-pantherina": {
+      "image": "assets/traits/amanita-pantherina-gambo.webp",
+      "sha256": "5e62d7c94520bf019706ef2cf10f834b9edc9d0394987bad5260d3f43327e28b",
+      "dataPath": "data/species-traits.json#/taxa/amanita-pantherina/traits",
+      "fields": {
+        "stem_ring": {
+          "point": {
+            "x": 80,
+            "y": 66
+          },
+          "value": true,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_volva": {
+          "point": {
+            "x": 84,
+            "y": 105
+          },
+          "value": true,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_reticulum": {
+          "point": {
+            "x": 76,
+            "y": 82
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        }
+      },
+      "review": "contact-sheet e controllo del raster; posizioni scelte manualmente",
+      "unavailableReason": null,
+      "presenceCheck": {
+        "stem_ring": "raffigurato; il richiamo indica zona osservabile",
+        "stem_volva": "raffigurato; il richiamo indica zona osservabile"
+      },
+      "artDataOmissions": []
+    },
+    "tricholoma-equestre": {
+      "image": "assets/traits/tricholoma-equestre-gambo.webp",
+      "sha256": "66fad06681f30bb09bd7df8fd134a98590c6e448e17b693a19845b22f9175043",
+      "dataPath": "data/species-traits.json#/taxa/tricholoma-equestre/traits",
+      "fields": {
+        "stem_ring": {
+          "point": {
+            "x": 75,
+            "y": 68
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_volva": {
+          "point": {
+            "x": 80,
+            "y": 106
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_reticulum": {
+          "point": {
+            "x": 79,
+            "y": 88
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        }
+      },
+      "review": "contact-sheet e controllo del raster; posizioni scelte manualmente",
+      "unavailableReason": null,
+      "presenceCheck": {},
+      "artDataOmissions": []
+    },
+    "clitocybe-rivulosa": {
+      "image": "assets/traits/clitocybe-rivulosa-gambo.webp",
+      "sha256": "527c387373a205df97ad7a4dafa989502c398efea3fb36a89ec76ababd26f256",
+      "dataPath": "data/species-traits.json#/taxa/clitocybe-rivulosa/traits",
+      "fields": {
+        "stem_ring": {
+          "point": {
+            "x": 79,
+            "y": 70
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_volva": {
+          "point": {
+            "x": 79,
+            "y": 103
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        },
+        "stem_reticulum": {
+          "point": {
+            "x": 78,
+            "y": 87
+          },
+          "value": false,
+          "meaning": "bordo della zona da osservare; non afferma presenza del carattere"
+        }
+      },
+      "review": "contact-sheet e controllo del raster; posizioni scelte manualmente",
+      "unavailableReason": null,
+      "presenceCheck": {},
+      "artDataOmissions": []
+    }
+  },
+  "reviewNote": "88 raster ispezionati nelle5tavole;6dubbie ispezionate singolarmente (ostreatus, cornucopiae, cinereus, comatus, hepatica, rubescens); corretti punti dopo seconda lettura delle5anteprime annotate. Nessun tratto presente nei dati risulta grossolanamente omesso nei rasterbase annotati; non equivale a revisione micologica.",
+  "coordinateMethod": "Quota y e zona anatomica scelte manualmente dopo ispezione di ciascun raster; ascissa misurata sul margine destro visibile della stessa riga (alpha>128). Non viene calcolata una posizione generica in funzione del campo o del valore."
+}

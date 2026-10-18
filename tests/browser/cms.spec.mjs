@@ -34,9 +34,10 @@ test('ruoli del profilo: utente, editor delle bozze e amministratore',async({bro
     page.on('pageerror',e=>errors.push(e.message));
     await page.route('https://**/*',r=>r.abort());
   await page.route('**/api/weather/v1/forecast?**',r=>r.fulfill({status:503,json:{error:'Meteo non disponibile nella prova CMS.'}}));
-    await page.addInitScript(()=>localStorage.setItem('fungaroli:legal-accepted','32026-10-16'));
+    await page.addInitScript(()=>localStorage.setItem('fungaroli:legal-accepted','42026-10-16'));
     await loginFixture(page,id);await page.goto('/');
     const me=await cms(page,'me');expect(me.status).toBe(200);expect(me.data.user.role).toBe(role);
+    expect((await api(page,'/api/community/session')).data.user.role).toBe(role);
     if(role==='member'){
       expect(me.data.user.scopes).toEqual([]);expect((await cms(page,'items')).status).toBe(403);
       expect((await cms(page,'items/ui-copy','PATCH',{role:'admin',data:{}},{'if-match':'"0"'})).status).toBe(403);
@@ -69,7 +70,8 @@ test('ruoli del profilo: utente, editor delle bozze e amministratore',async({bro
       await dialog.locator('.profile-actions [data-close]').click();await expect(dialog).toHaveCount(0);
     }
     if(role==='editor'){
-      await page.goto('/redazione');await expect(page.locator('#cms-workspace')).toBeVisible();await expect(page.locator('#cms-identity')).toContainText('Editor');
+      await page.goto('/redazione');await expect(page.locator('#cms-workspace')).toBeVisible();
+  await page.locator('#cms-content-tab').click();await expect(page.locator('#cms-identity')).toContainText('Editor');
       await expect(page.locator('[data-save]')).toBeEnabled();await expect(page.locator('[data-publish]')).toBeDisabled();await expect(page.locator('#cms-agents')).toBeHidden();await expect(page.locator('#cms-survey')).toBeHidden();
       await page.locator('[data-resource="species-traits"]').click();await expect(page.locator('[data-reviewed]')).toHaveCount(0);
     }
@@ -81,7 +83,7 @@ test('redazione, bozze, pubblicazione, conflitti, agenti e catalogo condiviso',a
   const errors=[];page.on('pageerror',e=>errors.push(e.message));
   await page.route('https://**/*',r=>r.abort());
   await page.route('**/api/weather/v1/forecast?**',r=>r.fulfill({status:503,json:{error:'Meteo non disponibile nella prova CMS.'}}));
-  await page.addInitScript(()=>localStorage.setItem('fungaroli:legal-accepted','32026-10-16'));
+  await page.addInitScript(()=>localStorage.setItem('fungaroli:legal-accepted','42026-10-16'));
   await page.goto('/redazione');
   await expect(page.locator('#cms-access-status')).toContainText('Accedi');
   expect((await cms(page,'items')).status).toBe(401);
@@ -89,6 +91,7 @@ test('redazione, bozze, pubblicazione, conflitti, agenti e catalogo condiviso',a
   expect((await cms(reader,'me')).data.user.scopes).toEqual([]);expect((await cms(reader,'me')).data.user.role).toBe('member');expect((await cms(reader,'items')).status).toBe(403);await other.close();
   await loginFixture(page);await page.reload();
   await expect(page.locator('#cms-workspace')).toBeVisible();
+  await page.locator('#cms-content-tab').click();
   await expect(page.locator('[data-profile-label]')).toHaveText('Matteo');
   await expect(page.locator('[data-resource]')).toHaveCount(21);
   // Risposte al questionario: pannello solo per gli amministratori (conteggio, esportazione, ricerca e cancellazione per ricevuta).
@@ -162,7 +165,7 @@ test('redazione, bozze, pubblicazione, conflitti, agenti e catalogo condiviso',a
   expect((await cms(page,'releases','POST',{baseRelease:list.release,items:[{id:'glossary',version:glossaryDraft.data.version}]})).status).toBe(422);
   expect((await api(page,'/api/content/v1/snapshot')).data.resources.glossary).toEqual(original.resources.glossary);
   expect((await cms(page,'releases','POST',{baseRelease:list.release,items:[{id:'glossary',version:glossaryDraft.data.version}],reviewed:true})).status).toBe(201);
-  await page.goto('/redazione');await page.locator('[data-resource="media-glossary"]').click();
+  await page.goto('/redazione');await page.locator('#cms-content-tab').click();await page.locator('[data-resource="media-glossary"]').click();
   await page.locator('[data-record]').selectOption('pliche');
   await page.locator('details.cms-fieldset > summary',{hasText:'Illustrazioni'}).click();
   await expect(page.getByLabel('Immagine generata',{exact:true})).toBeEnabled();
@@ -181,7 +184,7 @@ test('redazione, bozze, pubblicazione, conflitti, agenti e catalogo condiviso',a
   expect((await api(page,'/api/content/v1/snapshot')).data.resources.guides).toEqual(original.resources.guides);
   const readonly=(await cms(page,'items/habitat')).data;
   expect((await cms(page,'items/habitat','PATCH',{data:readonly.data},{'if-match':'"0"'})).status).toBe(403);
-  await page.setViewportSize({width:390,height:844});await page.goto('/redazione');
+  await page.setViewportSize({width:390,height:844});await page.goto('/redazione');await page.locator('#cms-content-tab').click();
   await page.locator('[data-resource="glossary"]').click();await page.locator('[data-record]').selectOption({label:'Volva'});await expect(page.getByRole('textbox',{name:'Definizione',exact:true})).toHaveValue(/velo generale/);await expect(page.getByRole('combobox',{name:'Categoria',exact:true})).toHaveValue('Funghi');
   await page.locator('[data-resource="guides"]').click();
   await expect(page.locator('#cms-editor > h2')).toHaveText('Articoli e taccuini');

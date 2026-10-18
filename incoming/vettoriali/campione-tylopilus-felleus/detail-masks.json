@@ -1,0 +1,37 @@
+{
+  "reticulum": {
+    "source_sha256": "6a509a9ade5dcd273a5ee470ec8cd1597b355f743be10feced4d14e545283177",
+    "config": {
+      "part": "reticulum",
+      "thresholds": {
+        "r_min": 70,
+        "r_max": 200,
+        "g_min": 30,
+        "g_max": 160,
+        "b_max": 100
+      },
+      "min_component_area": 10,
+      "selection": "largest",
+      "role": "reticulum",
+      "review_note": "Source-pixel extraction within manually annotated stem; largest connected component manually reviewed as full coarse network, excluding separate neck/edge fragments.",
+      "region": "stem"
+    },
+    "component_count": 1,
+    "selected_area_pixels": 9325,
+    "color_from_source_median": "#693b04",
+    "components": [
+      {
+        "label": 15,
+        "area": 9325,
+        "centroid_xy": [
+          200.22,
+          207.19
+        ]
+      }
+    ],
+    "mask_sha256": "d2cf5dd9e2ac4d94c138deeae22b449d32722e35733cc384c3de270a7dcc116f",
+    "svg_sha256": "14b19f769ae4da5323ab4956c0338e25857f80a57f81ca70d2dc6d947718786a",
+    "review_status": "visually-matched-to-raster-network",
+    "visual_notes": "Isolated largest connected brown source-pixel component matches the full coarse stem lattice; excludes separate neck/border traces. Confirmed no cap, pores, ring or volva included."
+  }
+}

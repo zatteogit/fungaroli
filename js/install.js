@@ -1,3 +1,4 @@
+import {openModal} from './modal-flow.js';
 // Modalita' app: installazione (Android/Chrome/Edge con il prompt del browser, iPhone con le istruzioni),
 // service worker per l'uso senza rete e classi sull'<html> per adattare l'interfaccia al dispositivo.
 const ua = navigator.userAgent;
@@ -131,6 +132,7 @@ function guide() {
 }
 
 export function initInstall() {
+  addEventListener('fronda:legal-access',render);
   if ('serviceWorker' in navigator && (location.protocol === 'https:' || ['localhost', '127.0.0.1'].includes(location.hostname)) && !globalThis.FUNGAROLI_REVIEW && !globalThis.FUNGAROLI_DATA) {
     const register = () => navigator.serviceWorker.register('sw.js').then((reg) => {
       // l'app installata spesso viene solo ripresa dalla memoria, senza ricaricarsi: si controlla se c'e' una versione nuova
@@ -150,7 +152,7 @@ export function initInstall() {
 const LATER = 'fungaroli:install-later';
 const embedded = () => !globalThis.FUNGAROLI_TEST_INSTALL && !!(globalThis.FUNGAROLI_REVIEW || globalThis.FUNGAROLI_DATA); // nelle copie di revisione niente invito (salvo test)
 const dismissed = () => { try { return Date.now() - (+localStorage.getItem(KEY) || 0) < 30 * 864e5; } catch { return false; } };
-const canOffer = () => !standalone() && !embedded() && (!!deferred || !!guide());
+const canOffer = () => !document.body.hasAttribute('data-legal-pending') && !standalone() && !embedded() && (!!deferred || !!guide());
 
 function render() {
   const banner = document.getElementById('install-banner');
@@ -185,7 +187,7 @@ export function maybeInvite() {
 }
 
 function openInvite(fromButton) {
-  if (!canOffer()) return;
+  if (!canOffer()||document.querySelector('#onboarding[open]')||(!fromButton&&document.querySelector('dialog[open]:modal'))) return;
   let dlg = document.getElementById('install-invite');
   if (!dlg) { dlg = document.createElement('dialog'); dlg.id = 'install-invite'; dlg.className = 'install-invite'; dlg.setAttribute('aria-labelledby', 'iv-title'); document.body.append(dlg); }
   const g = guide();
@@ -219,7 +221,7 @@ function openInvite(fromButton) {
   };
   dlg.querySelectorAll('[data-later]').forEach(button => button.addEventListener('click', dismiss));
   dlg.oncancel = event => { event.preventDefault(); dismiss(); };
-  if (!dlg.open) dlg.showModal();
+  if (!dlg.open) openModal(dlg);
   trackViewport();
   dlg.querySelector('.iv-scroll').scrollTop = 0;
   dlg.querySelector('.iv-close').focus({ preventScroll: true });

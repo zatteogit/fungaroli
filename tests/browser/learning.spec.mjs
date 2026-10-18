@@ -12,7 +12,7 @@ async function setup(page,width,heroSelector='#hero .cover-link') {
     const out=Array.from({length:u.searchParams.get('latitude').split(',').length},()=>({daily:{time:dates,precipitation_sum:dates.map((_,i)=>i%4?3:12),temperature_2m_mean:Array(70).fill(13),temperature_2m_min:Array(70).fill(8),temperature_2m_max:Array(70).fill(18)},hourly:{time,soil_moisture_3_to_9cm:fill(.3),soil_temperature_6cm:fill(13),precipitation:fill(0),precipitation_probability:fill(0),weather_code:fill(1),wind_gusts_10m:fill(8),temperature_2m:fill(13)}}));
     await route.fulfill({json:out});
   });
-  await page.addInitScript(()=>localStorage.setItem('fungaroli:legal-accepted','32026-10-16'));
+  await page.addInitScript(()=>localStorage.setItem('fungaroli:legal-accepted','42026-10-16'));
   await page.goto('/');await expect(page.locator(heroSelector)).toBeVisible();return errors;
 }
 
@@ -55,9 +55,9 @@ for(const width of [320,1280]) test(`spiegazioni contestuali, glossario e ricono
   await expect(keyword).toBeVisible();await keyword.click();await expect(panel.locator('h2')).toHaveText('Volva');
   await panel.locator('.learning-related [data-term="anello"]').click();await expect(panel.locator('h2')).toHaveText('Anello');
   await page.keyboard.press('Escape');await expect(panel).toBeHidden();await expect(keyword).toBeFocused();
-  await expect(page.locator('#taxon-detail .trait-strip a.glossary-link')).toHaveCount(0);
+  await expect(page.locator('#taxon-detail .trait-strip .glossary-heading')).toHaveCount(5);
   await page.goto('/#/specie/edulis');await expect(page.locator('#species-detail')).toBeVisible();
-  await expect(page.locator('#species-detail .trait-strip a.glossary-link')).toHaveCount(0);
+  await expect(page.locator('#species-detail .trait-strip .glossary-heading')).toHaveCount(5);
   const attention=page.locator('#species-detail .attention');
   await expect(attention.locator('summary .att-h')).toHaveText('Attenzione');await expect(attention.locator('summary .att-index li').first()).toHaveText(/^\d+ (sosia|caratter|regol|cautel|risch|avvis)/);
   await expect(attention.locator(':scope > ul')).toBeHidden();
@@ -137,7 +137,8 @@ for(const width of [320,1280]) test(`schede contestuali complete, ritorno e navi
   const sheet=page.locator('#entity-sheet'),panel=page.locator(width<700?'#learning-sheet':'#learning-popover');
   await expect(sheet).toBeVisible();await expect(sheet.locator('h1')).toBeVisible();
   await expect(sheet.locator('summary', {hasText:'Foglia, corteccia, frutto'})).toBeVisible();
-  expect(await page.evaluate(()=>({hash:location.hash,scroll:scrollY,history:history.length}))).toEqual(before);
+  expect(await page.evaluate(()=>({hash:location.hash,scroll:scrollY}))).toEqual({hash:before.hash,scroll:before.scroll});
+  expect(await page.evaluate(()=>history.length)).toBeGreaterThan(before.history);
   expect(await sheet.evaluate(el=>{const r=el.getBoundingClientRect();return r.left>=0&&r.right<=innerWidth&&r.top>=0&&r.bottom<=innerHeight;})).toBe(true);
   await page.evaluate(()=>document.fonts.ready);
   await page.screenshot({path:`/tmp/fungaroli-contextual-tree-${width}.png`});
@@ -161,7 +162,7 @@ for(const width of [320,1280]) test(`schede contestuali complete, ritorno e navi
   expect(await sheet.evaluate(el=>el.scrollTop)).toBeCloseTo(treeScroll,0);
   await sheet.locator('[data-entity-close]').click();await expect(sheet).toBeHidden();await expect(tree).toBeFocused();
   await expect(page.locator('.walk-focus')).toHaveAttribute('open','');
-  expect(await page.evaluate(()=>({hash:location.hash,scroll:scrollY,history:history.length}))).toEqual(before);
+  expect(await page.evaluate(()=>({hash:location.hash,scroll:scrollY}))).toEqual({hash:before.hash,scroll:before.scroll});
   // Ridimensionare non chiude la scheda; aprire come pagina è una scelta esplicita.
   await tree.click();await page.setViewportSize({width:width===320?768:600,height:900});await expect(sheet).toBeVisible();
   await sheet.locator('[data-entity-page]').click();await expect(sheet).toBeHidden();
@@ -177,7 +178,7 @@ for(const width of [320,1280]) test(`schede contestuali complete, ritorno e navi
   await sheet.locator('[data-entity-back]').click();
   await sheet.locator('.tree-fungi a[href="#/specie/mellea"]').click();
   await sheet.locator('[data-jump-k]').click();await expect(sheet.locator('.kitchen')).toBeInViewport();
-  await page.keyboard.press('Escape');await expect(relatedTree).toBeFocused();
+  await page.keyboard.press('Escape');await expect(sheet).toBeVisible();await page.keyboard.press('Escape');await expect(relatedTree).toBeFocused();
   // I risultati di Riconosci aprono la scheda completa, mantenendo i caratteri scelti.
   await page.goto('/#/riconosci');await page.locator('#identify [data-mode="all"]').click();
   const candidate=page.locator('#identify [data-taxon]').first();await candidate.click();
@@ -295,9 +296,10 @@ for(const width of [320,1280]) test(`illustrazioni del glossario, fonti e ingran
   expect(errors).toEqual([]);
 });
 
-for(const width of [320,1280]) test(`titoletti senza link e keyword complete nel testo a ${width}px`,async({page})=>{
+for(const width of [320,1280]) test(`glossario distinto nei titoletti e keyword complete nel testo a ${width}px`,async({page})=>{
   const errors=await setup(page,width);await page.goto('/#/specie/caesarea');
-  await expect(page.locator('#species-detail .trait-strip .ts-k a')).toHaveCount(0);
+  const headings=page.locator('#species-detail .trait-strip .ts-k a');await expect(headings).toHaveCount(5);
+  for(const heading of await headings.all()){await expect(heading).toContainText('?');expect(await heading.evaluate(e=>getComputedStyle(e).textDecorationLine)).toBe('none');}
   await page.locator('#species-detail .character-details > summary').click();
   const cap=page.locator('#species-detail .keys [data-term="cappello"]').first(),stem=page.locator('#species-detail .keys [data-term="gambo"]').first();
   await expect(cap).toBeVisible();await expect(stem).toBeVisible();
@@ -368,7 +370,7 @@ for(const width of [320,1280])test(`funghi al centro, scoperte contestuali e tac
  await expect(page.locator('#full-filters [data-botanical-personalize]')).toHaveCount(0);
  await page.goto('/#/diario');await page.locator('#notebook-storage-panel > summary').click();const notesToggle=page.locator('[data-botanical-personalize]');await expect(notesToggle).not.toBeChecked();await notesToggle.check();
  await page.goto('/#/');await expect(page.locator('#hero .cover-link')).toBeVisible();
- await page.locator('#active-filters [data-more]').click();await page.locator('[data-discoveries-toggle]').uncheck();await page.locator('#full-filters [data-close]').first().click();await expect(page.locator('#during-walk')).toBeHidden();await expect(page.locator('#hero .cover-link')).toHaveAttribute('href',hero);await expect(page.locator('#hero .cover-index b')).toHaveText(index);
+ await page.locator('#appbar-home-filters [data-more]:visible,#home-filter-action [data-more]:visible').first().click();await page.locator('[data-discoveries-toggle]').uncheck();await page.locator('#full-filters [data-close]').first().click();await expect(page.locator('#during-walk')).toBeHidden();await expect(page.locator('#hero .cover-link')).toHaveAttribute('href',hero);await expect(page.locator('#hero .cover-index b')).toHaveText(index);
  await page.reload();await expect(page.locator('#during-walk')).toBeHidden();await expect(page.locator('#hero .cover-link')).toHaveAttribute('href',hero);
  await page.goto('/#/pianta/ortica');await expect(page.locator('#plant-detail [data-botanical-discover]')).toHaveCount(0);await page.locator('[data-botanical-method]>summary').click();await expect(page.locator('[data-botanical-method]')).toContainText('non confermano presenza, maturità o quantità');
  await page.goto('/#/scopri');await expect(page.locator('[data-tab="specie"]')).toContainText('Scopri');await expect(page.locator('#species-grid .sp-card').first()).toBeVisible();
@@ -406,7 +408,8 @@ for(const width of [390,1280]) test(`Scopri: tre cataloghi più Impara e ricerca
   for(const [route,section,mode] of places){
     await page.goto(route);const view=page.locator('.view:not([hidden])');
     await expect(view.locator('.seg-nav [aria-current="page"]')).toHaveText(section);
-    await expect(view.locator('.sub-nav a')).toHaveCount(0);
+    await expect(view.locator('.sub-nav a')).toHaveCount(route==='/#/specie'?1:0);
+    if(route==='/#/specie')await expect(view.locator('.sub-nav a')).toHaveAttribute('href','#/confronta');
     if(mode==='Sfoglia'){
       const trigger=view.locator('[data-open-recognition]');await expect(trigger).toBeVisible();const before=page.url();
       await trigger.click();const panel=page.locator('.recognition-sheet[open]');await expect(panel).toBeVisible();
@@ -454,7 +457,7 @@ test('confronto: colore etichettato per struttura in ciascuna colonna',async({pa
   await expect(row.locator('.cmp-cell > .cmp-k')).toHaveText(labels);
   for(const cell of await row.locator('.cmp-cell').all()){
    const values=await cell.locator('.cmp-v').count();
-   await expect(cell.locator('.cmp-or')).toHaveCount(Math.max(0,values-1));
+   await expect(cell.locator('.cmp-or,.cmp-v-art')).toHaveCount(0);await expect(cell.locator('.cmp-color-dot')).toHaveCount(values);
   }
   if(ref==='cibarius'){await expect(row).toHaveClass(/diff/);await expect(row.locator('.cmp-v.common')).toHaveCount(0);}
  }

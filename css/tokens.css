@@ -37,15 +37,15 @@
   --_ref-line: #326820;
   --_ref-grid: #e6dfd3;
   --_ref-s0: #cfcabf;
-  --_ref-s1: #c2dea8;
-  --_ref-s2: #9fcb7a;
-  --_ref-s3: #7ab553;
+  --_ref-s1: #e0d5c5;
+  --_ref-s2: #dec18a;
+  --_ref-s3: #c7a445;
   --_ref-s4: #5a9c37;
   --_ref-s5: #3f8424;
   --_ref-ps0: #8d8a82;
-  --_ref-ps1: #8a9e7c;
-  --_ref-ps2: #8fb66c;
-  --_ref-ps3: #93cb57;
+  --_ref-ps1: #bba68c;
+  --_ref-ps2: #d6aa6c;
+  --_ref-ps3: #e6c35a;
   --_ref-ps4: #98dc43;
   --_ref-ps5: #a2ec33;
   --_ref-warn-bg: #faeecf;
@@ -75,9 +75,9 @@
   --_ref-line-dark: #9fd07a;
   --_ref-grid-dark: #1e3128;
   --_ref-s0-dark: #3c4a42;
-  --_ref-s1-dark: #3f6a43;
-  --_ref-s2-dark: #4f8c45;
-  --_ref-s3-dark: #64aa49;
+  --_ref-s1-dark: #6b5b49;
+  --_ref-s2-dark: #94723f;
+  --_ref-s3-dark: #b69a44;
   --_ref-s4-dark: #7fc84e;
   --_ref-s5-dark: #9be34c;
   --_ref-warn-bg-dark: #3a3214;
@@ -88,6 +88,32 @@
   --_ref-crit-ink-dark: #f8d0ca;
   --_ref-shadow-1-dark: 0 1px 2px rgb(0 0 0 / .45);
   --_ref-shadow-2-dark: 0 18px 44px rgb(0 0 0 / .55);
+
+  /* Campioni botanici descrittivi: colori stabili, non stati dell’interfaccia. */
+  --_ref-botanical-red: #cb2735;
+  --botanical-red: var(--_ref-botanical-red);
+  --_ref-botanical-orange: #e58c32;
+  --botanical-orange: var(--_ref-botanical-orange);
+  --_ref-botanical-pink: #d88d9f;
+  --botanical-pink: var(--_ref-botanical-pink);
+  --_ref-botanical-black: #252d38;
+  --botanical-black: var(--_ref-botanical-black);
+  --_ref-botanical-blue: #467692;
+  --botanical-blue: var(--_ref-botanical-blue);
+  --_ref-botanical-brown: #886344;
+  --botanical-brown: var(--_ref-botanical-brown);
+  --_ref-botanical-white: #f4efda;
+  --botanical-white: var(--_ref-botanical-white);
+  --_ref-botanical-yellow: #edcc35;
+  --botanical-yellow: var(--_ref-botanical-yellow);
+  --_ref-botanical-violet: #955f9e;
+  --botanical-violet: var(--_ref-botanical-violet);
+  --_ref-botanical-lilac: #baa0c9;
+  --botanical-lilac: var(--_ref-botanical-lilac);
+  --_ref-botanical-sky: #81abd0;
+  --botanical-sky: var(--_ref-botanical-sky);
+  --_ref-botanical-green: #899267;
+  --botanical-green: var(--_ref-botanical-green);
 
   /* Campiture editoriali: stabili nei due temi, sempre con inchiostro bosco. */
   --thermal-cool: var(--_ref-fiordaliso);
@@ -133,7 +159,7 @@
   --calendula: var(--_ref-calendula); --calendula-soft: var(--_ref-accent-soft); --calendula-ink: var(--_ref-calendula-ink);
   --fiordaliso: var(--_ref-fiordaliso); --fiordaliso-soft: var(--_ref-fiordaliso-soft); --fiordaliso-ink: var(--_ref-fiordaliso-ink);
   --germoglio: var(--_ref-germoglio); --germoglio-soft: var(--_ref-germoglio-soft); --germoglio-ink: var(--_ref-germoglio-ink);
-  --focus: var(--_ref-fiordaliso-ink);
+  --focus: var(--_ref-forest);
   /* semantica dei colori: interazione (link, indietro) in bosco; selezione («scelto») e azione principale in polline;
      informazione (occhielli, etichette) in calendula; l'indice resta verde (anello, pallini, scala --s*) */
   --link: var(--_ref-forest);

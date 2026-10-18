@@ -18,9 +18,9 @@ async function setup(page,{gust=8}={}) {
     const out = Array.from({ length: count }, () => ({ daily: { time: dates, precipitation_sum: dates.map((_, i) => i % 4 ? 3 : 12), temperature_2m_mean: Array(70).fill(13), temperature_2m_min: Array(70).fill(8), temperature_2m_max: Array(70).fill(18) }, hourly: { time, soil_moisture_3_to_9cm: fill(.3), soil_temperature_6cm: fill(13), precipitation: fill(0), precipitation_probability: fill(0), weather_code: fill(1), wind_gusts_10m: fill(gust), temperature_2m: fill(13) } }));
     return route.fulfill({ json: out });
   });
-  await page.addInitScript(() => localStorage.setItem('fungaroli:legal-accepted', '32026-10-16'));
+  await page.addInitScript(() => localStorage.setItem('fungaroli:legal-accepted', '42026-10-16'));
   const errors=[]; page.on('pageerror', (e) => errors.push(e.message));
-  await page.goto('/');
+  await page.goto('/');await expect(page.locator('body')).not.toHaveAttribute('data-legal-pending','');
   await expect(page.locator('#editorial')).toBeHidden();
   await page.goto('/#/guide');await expect(page.locator('#editorial a')).toHaveCount(3);
   await page.goto('/');await expect(page.locator('#hero .cover-link')).toBeVisible();
@@ -65,7 +65,7 @@ test('base privata del profilo: salvataggio, distanze, navigatori, isolamento e 
   const href=await page.locator('#detail a[href*="google.com/maps/dir"]').first().getAttribute('href');expect(new URL(href).searchParams.get('origin')).toBe('41.9028,12.4964');
   await page.reload();await expect(page.locator('#detail [data-sec="accesso"] > summary')).toContainText('da Roma');
   expect((await api(page,'profile','PUT',{accountId:owner,base:{name:'Errata',lat:91,lon:0}})).status).toBe(422);
-  expect((await page.request.post('/api/community/travel',{headers:{origin:'http://localhost:8788'},data:{targets:[]}})).status()).toBe(422);
+  expect((await page.request.post('/api/community/travel',{headers:{origin:new URL(page.url()).origin},data:{targets:[]}})).status()).toBe(422);
   const csrf=await page.request.put('/api/community/profile',{headers:{origin:'https://evil.example'},data:{accountId:owner,base:null}});expect(csrf.status()).toBe(403);
   const second=await browser.newContext({serviceWorkers:'block'}),other=await second.newPage();await setup(other);await register(other,'Secondo');
   expect((await api(other,'session')).data.user.base).toBe(null);
@@ -155,9 +155,9 @@ test('tratto locale distinto dal percorso intero, segmenti separati e imbocco ma
   await expect(focus).toContainText('più segmenti separati');
   await focus.getByRole('tab',{name:'Tracciato',exact:true}).click();
   await expect(focus.locator('.walk-sketch polyline')).toHaveCount(2);
-  await focus.getByRole('tab',{name:'Profilo',exact:true}).click();
-  await expect(focus.getByRole('tabpanel',{name:'Profilo',exact:true})).toContainText('Non costituiscono un profilo continuo');
-  await expect(focus.getByRole('tabpanel',{name:'Profilo',exact:true}).locator('svg')).toHaveCount(0);
+  await focus.getByRole('tab',{name:'Quote',exact:true}).click();
+  await expect(focus.getByRole('tabpanel',{name:'Quote',exact:true})).toContainText('Non costituiscono un profilo continuo');
+  await expect(focus.getByRole('tabpanel',{name:'Quote',exact:true}).locator('svg')).toHaveCount(0);
   const values = await focus.locator('.walk-facts dd').allTextContents();
   await expect(focus.locator('summary .walk-stats li').first()).toContainText('4,1 km');
   expect(values).toHaveLength(1);
@@ -190,12 +190,14 @@ test('un itinerario con lunghezza intera incoerente mostra «n.d.» e il titolo 
 });
 
 for(const width of [320,1280]) test(`tracciato e profilo nello stesso riquadro a ${width}px`,async({page})=>{
+  // La prova modifica il file locale al reload: mantiene la stessa fonte anche per gli avvisi.
+  await page.route('**/api/content/v1/snapshot',r=>r.fulfill({status:503,json:{error:'local trail fixture'}}));
   await page.setViewportSize({width,height:900});await page.emulateMedia({reducedMotion:'reduce'});
   const errors=await setup(page);await page.goto('/#/zona/tancia/0/sentiero/12313366');
   const focus=page.locator('#detail .walk-focus'),summary=focus.locator(':scope > summary');
   await expect(summary.locator('.walk-entrance').first()).toBeVisible();
   await expect(summary.locator('.tprof,.ws-forest')).toHaveCount(0);
-  await summary.click();
+  await summary.locator('.walk-title').click();
   await expect(summary.locator('.walk-entrance').first()).toBeHidden();
   await expect(summary.locator('.walk-title')).toBeVisible();
   await expect(focus.locator('.sec-body > .ws-forest')).toBeVisible();
@@ -236,13 +238,14 @@ for(const width of [320,1280]) test(`tracciato e profilo nello stesso riquadro a
   await page.route('**/api/content/v1/snapshot',r=>r.fulfill({status:503,json:{error:'test'}}));
   await page.route('**/data/trails.json',r=>r.fulfill({json:data}));
   await page.evaluate(()=>{localStorage.removeItem('fungaroli:content:v1');localStorage.removeItem('fungaroli:prefs:v2');});await page.reload();
-  await focus.locator(':scope > summary').click();await profile.click();
-  await expect(visual.getByRole('tabpanel',{name:'Profilo',exact:true})).toContainText('mancano quote sufficienti');
-  await expect(visual.getByRole('tabpanel',{name:'Profilo',exact:true}).locator('svg')).toHaveCount(0);
+  await focus.locator(':scope > summary').click();await visual.getByRole('tab',{name:'Quote',exact:true}).click();
+  await expect(visual.getByRole('tabpanel',{name:'Quote',exact:true})).toContainText('mancano quote sufficienti');
+  await expect(visual.getByRole('tabpanel',{name:'Quote',exact:true}).locator('svg')).toHaveCount(0);
   expect(errors).toEqual([]);
 });
 
 test('Quando ha una sola testata, mantiene gli avvisi meteo e aggiunge solo dettagli',async({page})=>{
+ await page.clock.setFixedTime(new Date(new Date().setUTCHours(0,0,0,0)));
  await page.setViewportSize({width:390,height:900});await page.emulateMedia({reducedMotion:'reduce'});
  const errors=await setup(page,{gust:46});await page.goto('/#/zona/tancia/0');
  const section=page.locator('#detail details[data-sec="quando"]'),summary=section.locator(':scope > summary');
@@ -272,7 +275,7 @@ test('riepiloghi essenziali negli accordion sul posto, senza voci duplicate o sa
 test('editoriale, filtri completi, passkey, isolamento e condivisione revocabile', async ({ browser, page }) => {
   const errors = await setup(page);
   await expect(page.locator('#community-intro')).toContainText('Ancora nessuna osservazione condivisa.');
-  await page.locator('#active-filters [data-more]').click();
+  await page.locator('#appbar-home-filters [data-more]:visible,#home-filter-action [data-more]:visible').first().click();
   await expect(page.locator('#full-filters [data-group]')).toHaveCount(11);
   // «Azzera» compare solo quando qualcosa è cambiato e riporta ai valori di partenza
   await expect(page.locator('#full-filters [data-reset]')).toHaveCount(0);
@@ -380,39 +383,30 @@ test('taccuini e community restano accessibili senza dati meteo', async ({ page 
   await expect(page.locator('[data-register]')).toBeVisible();
 });
 
-test('migrazione esplicita del diario con codice senza pubblicare osservazioni', async ({ page }) => {
-  await setup(page); await register(page,'Test migrazione');
-  await page.route('**/api/diario',r=>{
-    expect(r.request().headers().authorization).toBe('Bearer codice-di-test');
-    return r.fulfill({json:{entries:[{id:'legacy123',date:todayISO(),zoneId:'tancia',finds:{edulis:2},note:'nota del vecchio diario',predicted:{edulis:72},savedAt:new Date().toISOString()}]}});
-  });
-  await page.goto('/#/diario');
-  await page.locator('#notebook-storage-panel > summary').click();await page.locator('#journal-storage details summary').click();
-  await page.locator('[data-legacy-code]').fill('codice-di-test'); await page.locator('[data-import-legacy] [type="submit"]').click();
-  await expect(page.locator('[data-legacy-status]')).toContainText('1 voci importate');
-  expect((await api(page,'entries')).data.entries[0].note).toBe('nota del vecchio diario');
-  expect((await api(page,'summary')).data.totalReports).toBe(0);
-  await api(page,'account','DELETE');
+test('taccuino: gestione profilo senza importazione o esportazione',async({page})=>{
+ const errors=await setup(page);await page.goto('/#/diario');
+ const panel=page.locator('#notebook-storage-panel');await panel.locator(':scope > summary').click();
+ await expect(panel.locator('#journal-export,#journal-import,[data-import-local],[data-import-legacy]')).toHaveCount(0);
+ await expect(panel).not.toContainText(/Importa|Esporta|vecchio taccuino/);await expect(panel.locator('[data-community-account]')).toBeVisible();
+ await register(page,'Profilo senza copie');await expect(panel.locator('[data-community-account]')).toHaveText('Gestisci il profilo');
+ await expect(panel).not.toContainText(/Importa|Esporta|vecchio taccuino/);await expect(panel).toContainText('sincronizzato con la passkey');
+ expect(errors).toEqual([]);await api(page,'account','DELETE');
 });
 
-test('i campi del diario importato vengono visualizzati come testo', async ({ page }) => {
-  // Import while the archive is still opening: this must not reject a valid JSON file.
-  await page.route('**/api/community/session', async route => {
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    await route.continue();
-  });
-  await setup(page); await page.goto('/#/diario');
-  const payload={id:'x123"><img src=x onerror="window.injected=1">',date:todayISO(),zoneId:'tancia',band:'<img src=x onerror="window.injected=1">',note:'<svg onload="window.injected=1">',finds:{},predicted:{},savedAt:new Date().toISOString()};
-  await page.locator('#journal-import').setInputFiles({name:'diario.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify({entries:[payload]}))});
-  await expect(page.locator('#journal-list')).toContainText(payload.note);
-  expect(await page.evaluate(()=>window.injected)).toBeUndefined();
-  expect(await page.locator('#journal-list [onerror], #journal-list [onload]').count()).toBe(0);
+test('i campi del diario locale vengono visualizzati come testo',async({page})=>{
+ const payload={id:'x123"><img src=x onerror="window.injected=1">',date:todayISO(),zoneId:'tancia',band:'<img src=x onerror="window.injected=1">',note:'<svg onload="window.injected=1">',finds:{},predicted:{},savedAt:new Date().toISOString()};
+ await page.addInitScript(payload=>localStorage.setItem('fungaroli:diario:v1',JSON.stringify([payload])),payload);
+ await setup(page);await page.goto('/#/diario');
+ await expect(page.locator('#journal-list')).toContainText(payload.note);
+ expect(await page.evaluate(()=>window.injected)).toBeUndefined();
+ expect(await page.locator('#journal-list [onerror],#journal-list [onload]').count()).toBe(0);
+ expect(await page.evaluate(()=>JSON.parse(localStorage.getItem('fungaroli:diario:v1'))[0].note)).toBe(payload.note);
 });
 
 test('autocomplete dei commestibili, selezione individuale, stagione e persistenza', async ({page})=>{
   await page.setViewportSize({width:390,height:844}); const errors=await setup(page);
   const baseline=await page.locator('#hero .pc').first().textContent();
-  await page.locator('#active-filters [data-more]').click();
+  await page.locator('#appbar-home-filters [data-more]:visible,#home-filter-action [data-more]:visible').first().click();
   const input=page.locator('#species-filter-search'), options=page.locator('#species-filter-options');
   await input.fill('phalloides'); await expect(options.getByRole('option')).toHaveCount(0);
   await input.fill('agrocybe aegerita'); await expect(options.getByRole('option')).toHaveCount(1);
@@ -435,14 +429,14 @@ test('autocomplete dei commestibili, selezione individuale, stagione e persisten
   await page.locator('#sp-cards').getByRole('link',{name:'Pioppino',exact:true}).click();
   await expect(page.locator('#edible-detail')).toContainText('Pioppino');
   await expect(page.locator('#edible-detail')).toContainText('Indice non ancora disponibile');
-  await page.goto('/'); await page.locator('#active-filters [data-more]').click();
+  await page.goto('/'); await page.locator('#appbar-home-filters [data-more]:visible,#home-filter-action [data-more]:visible').first().click();
   await input.fill('Boletus pinophilus'); await input.press('Enter');
   const pref=await page.evaluate(()=>JSON.parse(localStorage.getItem('fungaroli:prefs:v2')));
   expect(pref.speciesIds).toContain('pinophilus'); expect(pref.speciesIds).not.toContain('edulis');
   await page.locator('#full-filters [data-close]').first().click();
   await expect(page.locator('#hero')).toContainText('Porcino rosso');
   await page.goto('/'); await expect(page.locator('#followed-species')).toHaveCount(0);
-  await page.locator('#active-filters [data-more]').click();
+  await page.locator('#appbar-home-filters [data-more]:visible,#home-filter-action [data-more]:visible').first().click();
   await expect(page.locator('#full-filters [data-remove-species]')).toHaveCount(3);
   await expect(page.locator('#full-filters [data-remove-species] .season-badge')).toHaveCount(3);
   await page.locator('#full-filters [data-all]').click();
@@ -586,4 +580,26 @@ test('accordion: riepilogo e dettaglio si completano senza duplicare tratto, imb
  // L'avviso sul sosia rimane nel riepilogo anche quando è aperto.
  if(await species.locator('summary .plan-crit').count())await expect(species.locator('summary .plan-crit')).toBeVisible();
  expect(errors).toEqual([]);
+});
+
+for(const theme of ['light','dark'])test(`cosa osservare: riepilogo compatto e dettagli distinti in ${theme}`,async({page})=>{
+ await page.setViewportSize({width:390,height:844});await page.emulateMedia({reducedMotion:'reduce'});
+ await page.addInitScript(theme=>{localStorage.setItem('fungaroli:theme',theme);localStorage.setItem('fungaroli:install-later',String(Date.now()));},theme);
+ const errors=await setup(page);await page.goto('/#/zona/tancia/0');
+ const section=page.locator('#detail .essential-sections [data-sec="specie"]'),summary=section.locator(':scope > summary'),body=section.locator(':scope > .sec-body');
+ await expect(summary).toBeVisible();await expect(section).not.toHaveAttribute('open','');
+ await expect(summary.locator('.observation-expand')).toBeVisible();await expect(summary.locator('.plan-where,.ent-chips')).toHaveCount(0);
+ const warning=summary.locator('.plan-crit');await expect(warning).toBeVisible();const warningText=await warning.innerText();
+ await expect(body.locator('.plan-where')).toBeHidden();
+ const closed=(await section.boundingBox()).height;
+ await summary.scrollIntoViewIfNeeded();await section.screenshot({path:`/tmp/fronda-observation-closed-${theme}.png`});
+ await summary.focus();await page.keyboard.press('Enter');await expect(section).toHaveAttribute('open','');
+ await expect(summary.locator('.observation-collapse')).toBeVisible();await expect(summary.locator('.observation-expand')).toBeHidden();
+ await expect(body.locator('.plan-where')).toBeVisible();await expect(body.locator('.zsp')).toBeVisible();
+ await expect(body.locator('.plan-crit')).toBeVisible();await expect(body.locator('.plan-crit')).toContainText('non certifica');
+ await expect(warning).toBeVisible();expect(await warning.innerText()).toBe(warningText);
+ expect((await section.boundingBox()).height).toBeGreaterThan(closed+100);
+ await page.screenshot({path:`/tmp/fronda-observation-open-${theme}.png`});
+ await summary.press('Enter');await expect(body).toBeHidden();await expect(warning).toBeVisible();
+ expect(Math.abs((await section.boundingBox()).height-closed)).toBeLessThan(2);expect(errors).toEqual([]);
 });

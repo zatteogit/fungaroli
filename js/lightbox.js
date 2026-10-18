@@ -1,3 +1,4 @@
+import {openModal} from './modal-flow.js';
 // Visore a schermo intero per foto e infografiche: pizzico/doppio tocco/rotellina per lo zoom,
 // trascinamento per spostarsi, swipe o frecce per passare da un'immagine all'altra.
 // Nessuna dipendenza esterna.
@@ -162,7 +163,7 @@ export function openLightbox(list, start = 0, {container=document.body} = {}) {
   items = list;
   show(start);
   document.documentElement.classList.add('lb-open');
-  if (!dlg.open) dlg.showModal();
+  if (!dlg.open) openModal(dlg);
 }
 
 export const captionHtml = ({ title, text, credit }) =>

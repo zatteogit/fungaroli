@@ -29,9 +29,9 @@ for(const width of [320,390,768,1440])for(const theme of ['light','dark'])test(`
  await expect.poll(()=>slide.evaluate(el=>Math.abs(el.getBoundingClientRect().left-el.parentElement.getBoundingClientRect().left))).toBeLessThan(2);
  const same=slide.locator('[data-cmp-panel="same"]');await expect(same).toBeHidden();await slide.getByRole('tab',{name:'In comune',exact:true}).click();await expect(same.locator('.cmp-rows')).toBeVisible();
  await slide.locator('.cmp-sources > summary').click();await expect(slide.locator('.cmp-sources a').first()).toBeVisible();
- const currentTab=page.locator('.cmp-chip[aria-selected="true"]');await currentTab.focus();await page.keyboard.press('ArrowRight');
- await expect.poll(()=>page.locator('.cmp-slide:not([inert])').count()).toBe(1);
- const chip=page.locator('.cmp-chip[aria-selected="false"]').first(),go=await chip.getAttribute('data-go');await chip.click();await expect(page.locator(`.cmp-chip[data-go="${go}"]`)).toHaveAttribute('aria-selected','true');
+ const next=page.locator('[data-cmp-step="1"]');await next.focus();await page.keyboard.press('Enter');
+ await expect(page.locator('.cmp-slide:not([inert])')).toHaveCount(1);await expect(page.locator('.cmp-slide:not([inert])')).not.toHaveAttribute('id','cmp-caloboletus-calopus');
+ await page.locator('[data-cmp-step="-1"]').click();await expect(slide).toBeVisible();
  await page.goto('/#/riconosci');await expect(page.locator('.fungus-compare')).toHaveCount(0);
  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
  expect(errors).toEqual([]);await context.close();

@@ -259,6 +259,7 @@ body[data-page="mappa"] .view-map { border-radius:0; }
 #detail .zone-secondary-action small { font:400 11px/1.4 var(--font-body); color:var(--text-2); }
 #detail .zone-secondary-actions > :only-child { grid-column:1/-1; }
 #detail .zone-actions > p { margin:0; font-size:12px; line-height:1.6; }
+#detail .zone-actions > .zone-note-hint { font-size:14px; }
 #detail [data-plan-status]:empty { display:none; }
 #detail .zone-more { margin:32px 0 12px; padding:20px; border:1px solid var(--hair); border-radius:20px; background:var(--surface); }
 #detail .zone-more > .outing-section-title { margin:0 0 6px; }
@@ -336,7 +337,7 @@ body[data-page="mappa"] .view-map { border-radius:0; }
 
 @media(hover:hover) { .cmp-edge-arrows button:hover { background:var(--surface-2); } }
 .cmp-chooser { width:min(440px,calc(100% - 32px)); max-height:80svh; margin:auto; padding:20px; border:1px solid var(--hair); border-radius:24px; color:var(--text); background:var(--bg); box-shadow:var(--shadow-2); }
-.cmp-chooser::backdrop { background:rgb(0 0 0 / .45); }
+.cmp-chooser::backdrop { background:color-mix(in srgb,var(--scrim) 45%,transparent); }
 .cmp-chooser-head { display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:16px; }
 .cmp-chooser-head h2 { margin:0; font:600 24px/1.3 var(--font-display); }
 .cmp-chooser-head button { min-width:44px; min-height:44px; border:0; border-radius:50%; background:var(--surface-2); color:var(--text); font-size:24px; cursor:pointer; }
@@ -394,6 +395,22 @@ body[data-page="mappa"] .view-map { border-radius:0; }
 .fungus-compare .cmp-cell-miniature .cmp-part-art { min-height:44px; margin:0; }
 .fungus-compare .cmp-cell-miniature .cmp-part-art img { width:44px; height:44px; }
 .fungus-compare .cmp-cell-miniature .cmp-vals { min-width:0; }
+.fungus-compare .cmp-part-art:has(.cmp-callout) { position:relative; width:44px; }
+.fungus-compare .cmp-cell-miniature:has(.cmp-part-art .cmp-callout) { grid-template-columns:56px minmax(0,1fr); column-gap:12px; }
+.fungus-compare .cmp-part-art > .cmp-callout { position:absolute; left:0; top:0; width:125%; height:100%; max-width:none; overflow:visible; pointer-events:none; fill:none; stroke:var(--text-2); stroke-width:1.1; stroke-linecap:round; stroke-linejoin:round; }
+.fungus-compare .cmp-callout path { vector-effect:non-scaling-stroke; }
+.fungus-compare .cmp-callout circle { fill:var(--text); stroke:none; }
+.fungus-compare .cmp-part-art { position:relative; }
+.fungus-compare .cmp-part-art.is-loading > :is(img,svg) { opacity:.25; }
+.fungus-compare .cmp-part-art.is-loading > .cmp-callout { visibility:hidden; }
+.fungus-compare .cmp-part-art.is-loading::after { content:''; position:absolute; left:36px; top:50%; width:18px; height:18px; margin:-9px 0 0 -9px; box-sizing:border-box; border:2px solid var(--hair); border-top-color:var(--link); border-radius:50%; }
+.fungus-compare .cmp-cell-miniature .cmp-part-art.is-loading::after { left:22px; }
+@media(prefers-reduced-motion:no-preference) {
+  .fungus-compare .cmp-part-art.is-loading::after { animation:cmp-artwork-spin .75s linear infinite; }
+}
+@keyframes cmp-artwork-spin { to { transform:rotate(360deg); } }
+.cmp-callout-note { display:none; }
+.cmp-slide:has(.cmp-callout) .cmp-callout-note { display:inline; }
 .fungus-compare .cmp-shape-art { flex:0 0 44px; width:44px; height:44px; align-items:center; justify-content:center; }
 .fungus-compare .cmp-shape-art img { display:block; width:44px; height:44px; object-fit:contain; }
 .fungus-compare .cmp-shape-art svg { width:40px; max-width:40px; height:40px; }
@@ -525,6 +542,8 @@ body[data-page="mappa"] .view-map { border-radius:0; }
 .fungus-page .ts-card .ts-controls .ts-chip[aria-pressed="true"]::before { box-shadow:0 0 0 2px var(--surface),0 0 0 3px var(--text); }
 .fungus-page .ts-card .ts-controls button:focus-visible { outline:2px solid var(--focus); outline-offset:3px; border-radius:4px; }
 .ts-choice-label { display:grid; gap:1px; text-align:left; }
+.ts-form { display:inline-flex; align-items:center; justify-content:center; gap:5px; }
+.ts-form .ts-shape-hint { width:24px; height:20px; flex:none; fill:none; stroke:currentColor; stroke-width:3; stroke-linecap:round; stroke-linejoin:round; }
 .ts-choice-label small { color:var(--muted); font:400 12px/1.4 var(--font-body); }
 .fungus-page .ts-controls .ts-note { margin:0; font-size:12px; line-height:1.5; }
 .ts-facts { display:grid; gap:7px; width:100%; }
@@ -554,3 +573,22 @@ body[data-page="mappa"] .view-map { border-radius:0; }
 [data-plant-traits] .ts-k { font:500 12px/1.4 var(--font-body); letter-spacing:0; text-transform:none; }
 [data-plant-traits] .ts-v { font:500 15px/1.5 var(--font-body); }
 @media(min-width:760px) { [data-plant-traits] .trait-strip { grid-template-columns:repeat(3,minmax(0,1fr)); } }
+[data-plant-traits] .ts-color { width:32px; height:32px; border-radius:50%; border:1px solid var(--control-edge); flex:none; }
+
+/* Gli avvisi hanno già una cornice e un proprio comando: niente cornici annidate. */
+.attention .att-more { border-top:0; padding-top:0; }
+.attention .att-item { border-top:0; padding-block:14px; }
+.attention .att-item:first-child { padding-top:8px; }
+.entity-accordion-root .attention[data-entity-accordion] { padding:18px 20px; background:var(--crit-bg); border-color:color-mix(in srgb,var(--crit) 22%,transparent); }
+.entity-accordion-root .attention[data-entity-accordion] > summary { display:block; min-height:0; padding:0; border:0; background:transparent; color:inherit; }
+.entity-accordion-root .attention[data-entity-accordion] > summary::after { content:none; }
+.entity-accordion-root .attention[data-entity-accordion] > .att-list { margin:0; padding:0; }
+.attention .att-more::after { width:20px; height:20px; flex:0 0 20px; border:0; background:currentColor; mask:url('../assets/ui/chevron-right.svg') center / 20px no-repeat; -webkit-mask:url('../assets/ui/chevron-right.svg') center / 20px no-repeat; transform:rotate(90deg); }
+.attention[open] .att-more::after { transform:rotate(-90deg); }
+
+/* Il colore della sporata è il dato: tutti i valori, senza un’impronta di specie inventata. */
+.spore-color-list { display:grid; gap:12px; width:100%; }
+.spore-color-row { display:flex; align-items:center; gap:9px; font:400 14px/1.45 var(--font-body); }
+.spore-color-dot { display:inline-block; width:20px; height:20px; flex:0 0 20px; border-radius:50%; background:var(--spore-color); border:1px solid color-mix(in srgb,var(--text) 30%,transparent); }
+.fungus-page .ts-card-spores { align-content:start; }
+.fungus-page .ts-card-spores > .ts-v { margin-top:4px; width:100%; }

@@ -1,3 +1,7 @@
+import {configureLegalAccess,acceptLegalNotice,hasLegalAcceptance} from './legal-access.js';
+import {currentLegalNotice,legalNoticeVersion,legalNoticeFingerprint} from './legal-notice.js';
+import {rememberNavigationContext,recordNavigationPage,restoreNavigationContext,contextualBackTitle,returningNavigation,restoredNavigationScroll,backNavigation} from './navigation-context.js';
+import {openModal} from './modal-flow.js';
 import {speciesFeatures} from './species-search.js';
 import './modal-scroll.js';
 import {factCards,enhanceContentReading} from './content-ui.js';
@@ -6,7 +10,7 @@ import {plannedDeparture, recommendedStartAvailable, calendarDate} from './plann
 import {speciesObservationContext} from './species-context.js';
 import { mapQuery, mountMapResults, compactMapFilters } from './map-experience.js';
 import './index-tip.js';
-import { leafGlyph, notebookGlyph } from './ui-icons.js';
+import { leafGlyph, notebookGlyph, carGlyph } from './ui-icons.js';
 import {fungusGlyph, progressCircle, weatherGlyphs} from './indicators.js';
 import { INTENTS, validIntent, normalizeInterests, primaryInterest, toggleInterest, seasonalSelection, matchesWalk, compareOutdoor } from './outing-intent.js';
 import './rails.js';
@@ -57,7 +61,7 @@ const PREFS_KEY = 'fungaroli:prefs:v2'; // v2: si parte con tutti i gruppi
 
 const $ = (s) => document.querySelector(s);
 
-function addNotebookReference(box,kind,id,title){if(!box||!title||box.querySelector('[data-note-kind]'))return;const button=box.querySelector('.notebook-context-action')||document.createElement('button');button.type='button';button.className='btn ghost notebook-context-action';button.dataset.noteKind=kind;button.dataset.noteId=id;button.dataset.noteTitle=title;button.textContent='＋ '+({fungo:'Annota questo fungo nel taccuino',specie:'Annota questo fungo nel taccuino',commestibile:'Annota questo fungo nel taccuino',pianta:'Annota questa pianta nel taccuino',albero:'Annota questo albero nel taccuino',guide:'Salva questa lettura nel taccuino'}[kind]||'Aggiungi una nota al taccuino');const hero=box.querySelector('.phero-body'),target=box.querySelector('.pbody'),lead=box.querySelector('.article-lede');if(hero){button.classList.add('notebook-hero-action');hero.append(button);}else if(target)target.prepend(button);else if(lead)lead.after(button);else box.append(button);}
+function addNotebookReference(box,kind,id,title){if(!box||!title||box.querySelector('[data-note-kind]'))return;const button=box.querySelector('.notebook-context-action')||document.createElement('button');button.type='button';button.className='btn ghost notebook-context-action';button.dataset.noteKind=kind;button.dataset.noteId=id;button.dataset.noteTitle=title;button.innerHTML=notebookGlyph+'<span>'+esc(({fungo:'Annota questo fungo nel taccuino',specie:'Annota questo fungo nel taccuino',commestibile:'Annota questo fungo nel taccuino',pianta:'Annota questa pianta nel taccuino',albero:'Annota questo albero nel taccuino',guide:'Salva questa lettura nel taccuino'}[kind]||'Aggiungi una nota al taccuino'))+'</span>';const hero=box.querySelector('.phero-body'),target=box.querySelector('.pbody'),lead=box.querySelector('.article-lede');if(hero){button.classList.add('notebook-hero-action');hero.append(button);}else if(target)target.prepend(button);else if(lead)lead.after(button);else box.append(button);}
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const cssVar = (name) => getComputedStyle(document.documentElement).getPropertyValue(name).trim();
 const scoreVar = (score) => Number.isFinite(score) ? `--s${5 - classOf(score)}` : '--muted';
@@ -242,7 +246,7 @@ async function init() {
   contentCopy = embedded?.contentCopy || await load('ui-copy') || {};
   initGuideContent(embedded?.guides || await load('guides'),contentCopy,embedded?(f)=>embedded.assets?.[f]||'':null);
   for(const[selector,key]of [['#home-h','homeTitle'],['#others-h','otherPlacesTitle'],['#season-h','speciesTitle']])if(contentCopy[key]&&$(selector))$(selector).textContent=contentCopy[key];
-  legal = embedded ? embedded.legal : await load('legal');
+  legal = currentLegalNotice(embedded ? embedded.legal : await load('legal'));
   const [zj, hj, aj, tj, idj, mj, ij, trj, stj, mtj, mzj, prj, thj, ecj] = embedded
     ? [embedded.zones, embedded.habitat, embedded.access, embedded.trails, embedded.speciesId, embedded.media, embedded.infographics, embedded.trees, embedded.traits, null, null, embedded.preparation, embedded.trailheads, embedded.edibleCatalog]
     : await Promise.all(['zones', 'habitat', 'access', 'trails', 'species-id', 'media', 'infografiche', 'trees', 'species-traits', 'media-trees', 'media-zones', 'preparation', 'trailheads', 'edible-catalog'].map(load));
@@ -282,7 +286,7 @@ async function init() {
     potential: (sid, zid) => { const sp = SPECIES.find((x) => x.id === sid); const z = zones.find((x) => x.id === zid); return sp && z ? potentialOf(sp, z) : null; },
   });
   renderSpeciesGrid();
-  applyLegal();
+  await applyLegal();
   initTrees({ trees: trj, media: mj, assetUrl: embedded ? (f) => embedded.assets?.[f] || '' : (f) => f, zones, habitat, thumb });
   const plantData=embedded?.plants||await load('plants');plantModels=botanicalModels(embedded?.botanicalModels||await load('botanical-models'),plantData);
   if(state.plantIds!==null){state.plantIds=new Set([...state.plantIds].filter(id=>plantModels.some(p=>p.id===id)));if(!state.plantIds.size)state.plantIds=null;}
@@ -366,7 +370,7 @@ function initShell() {
     if (tab && tab.getAttribute('href') === (location.hash || '#/')) { e.preventDefault(); scrollTo({ top: 0, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' }); return; }
     if (!e.target.closest('[data-back]')) return;
     // indietro vero se la pagina precedente e' nell'app, altrimenti la pagina "madre"
-    if (navStack.length > 1) history.back(); else location.hash = parentOf(prev);
+    if (!backNavigation()) location.hash = parentOf(prev);
   });
   renderFilterSummary();
 }
@@ -428,7 +432,7 @@ document.addEventListener('click', e => {
   if(mode==='funghi'){setCompare('','');renderIdentify(box);}
   else if(mode==='piante')renderGuidedKey(box,'piante',{items:plants().map(p=>({id:p.id,name:p.name,latin:cardLatin(p.latin),href:`#/pianta/${encodeURIComponent(p.id)}`,danger:p.category==='Pericolose'})),thumb:plantThumb});
   else renderGuidedKey(box,'alberi',{items:Object.entries(treesData?.trees||{}).map(([id,t])=>({id,name:t.name,latin:cardLatin(t.latin),href:`#/albero/${encodeURIComponent(id)}`})),thumb:treeThumb});
-  recognitionDialog.showModal();document.documentElement.classList.add('recognition-open');enhanceGlossary(box);
+  openModal(recognitionDialog);document.documentElement.classList.add('recognition-open');enhanceGlossary(box);
 });
 
 function parseRoute(hash = location.hash) {
@@ -496,7 +500,7 @@ function revealHeader() {
 }
 function updateHeaderScroll() {
   const y = Math.max(0, scrollY);
-  if (!mobileHeader.matches || y < 64 || ['mappa','uscite'].includes(document.body.dataset.page) || document.querySelector('.appbar[data-context="comparison"]') || document.querySelector('.appbar :focus-visible')) {
+  if (!mobileHeader.matches || watchedTitle?.isConnected || y < 64 || ['mappa','uscite'].includes(document.body.dataset.page) || document.querySelector('.appbar[data-context="comparison"]') || document.querySelector('.appbar :focus-visible')) {
     revealHeader();
     return;
   }
@@ -518,14 +522,18 @@ addEventListener('hashchange', revealHeader);
 mobileHeader.addEventListener('change', revealHeader);
 // Sulle pagine con la foto in testata la barra diventa piena solo dopo la foto.
 function onScrollBar() {
+  updateCompactTitle();
   updateHeaderScroll();
   const h = document.querySelector('.view:not([hidden]) .phero');
   document.documentElement.classList.toggle('scrolled', !h || scrollY > h.offsetHeight - 70);
 }
-addEventListener('scroll', onScrollBar, { passive: true });
+let headerFrame=0;
+function scheduleHeader(){if(!headerFrame)headerFrame=requestAnimationFrame(()=>{headerFrame=0;onScrollBar();});}
+addEventListener('scroll',scheduleHeader,{passive:true});
+addEventListener('resize',scheduleHeader,{passive:true});
+globalThis.visualViewport?.addEventListener('resize',scheduleHeader,{passive:true});
 
 // tasto indietro in alto a sinistra: freccia + nome della pagina a cui torni
-const navStack = [];
 const TITLES = { piante:'Piante e fiori', uscite: 'Uscite', mappa: 'Mappa', specie: 'Funghi', alberi: 'Alberi', riconosci: 'Riconosci', impara: 'Guide', glossario: 'Glossario', 'guide-list': 'Approfondimenti', sfide: 'Sfide', diario: 'Taccuino', info: 'Regole e metodo', metodo: 'Come funziona' };
 function titleOf(r) {
   if (!r) return '';
@@ -562,27 +570,26 @@ function parentOf(r) {
 }
 const PARENT_TITLE = (r) => ({ '#/diario':'Taccuino', '#/diario/esempio':'Diario di prova', '#/scopri': 'Scopri', '#/specie': 'Funghi', '#/alberi': 'Alberi', '#/piante':'Piante e fiori', '#/riconosci': 'Impara a riconoscere', '#/confronta':'Confronta', '#/guide': 'Approfondimenti', '#/sfide': 'Sfide', '#/impara': 'Guide', '#/': 'Uscite' }[parentOf(r)]);
 // Quando il titolo della pagina passa sotto la barra, lo mostriamo compatto al centro su telefono e tablet.
-let titleIO = null;
+let watchedTitle = null, compactTitle = false;
+function updateCompactTitle(initial=false) {
+  const h=watchedTitle,bar=$('.appbar');
+  if(!h?.isConnected||!bar)return;
+  // Altezza di layout: non cambia se un’animazione trasla visivamente la barra.
+  const edge=bar.offsetHeight+(parseFloat(getComputedStyle(bar).top)||0);
+  const rect=h.getBoundingClientRect();
+  // Isteresi spaziale: il titolo deve rientrare davvero prima di togliere il compatto.
+  const next=rect.height>0&&scrollY>0&&(initial?rect.bottom<=edge:compactTitle?rect.bottom<edge+16:rect.bottom<=edge-4);
+  if(next!==compactTitle||initial){compactTitle=next;document.documentElement.classList.toggle('title-in-bar',next);}
+}
 function watchTitle() {
-  const bar = $('.appbar-title');
-  if (!bar) return;
-  titleIO?.disconnect();
-  document.documentElement.classList.remove('title-in-bar');
-  // il titolo del livello in cui sei: prima quello della pagina interna (confronto, scheda), poi quello della sezione
-  const v = $('.view:not([hidden])');
-  const h = v?.querySelector('.cmp-title') || v?.querySelector('.phero-title') || v?.querySelector('.view-title');
-  // Anche la home passa dal titolo grande a quello compatto; il logo lascia spazio.
-  if (!h) return;
-  bar.textContent = h.textContent.trim();
-  const top = $('.appbar').getBoundingClientRect().bottom;
-  // stato iniziale subito (anche tornando a una pagina già scorsa): la barra entra nella transizione già giusta, senza scatto
-  const hr = h.getBoundingClientRect();
-  document.documentElement.classList.toggle('title-in-bar', hr.height > 0 && hr.bottom <= top);
-  titleIO = new IntersectionObserver(([e]) => {
-    // fuori dalla vista ma sopra (scorso via), non sotto (pagina corta o non ancora raggiunto)
-    document.documentElement.classList.toggle('title-in-bar', !e.isIntersecting && e.boundingClientRect.top < top);
-  }, { rootMargin: `-${Math.round(top)}px 0px 0px 0px` });
-  titleIO.observe(h);
+  const bar=$('.appbar-title');if(!bar)return;
+  const v=$('.view:not([hidden])');
+  const h=v?.querySelector('.cmp-title')||v?.querySelector('.phero-title')||v?.querySelector('.view-title');
+  const changed=h!==watchedTitle;watchedTitle=h||null;
+  if(!h){compactTitle=false;document.documentElement.classList.remove('title-in-bar');return;}
+  bar.textContent=h.textContent.trim();
+  updateCompactTitle(changed);
+  revealHeader();
 }
 // Le pagine operative espongono l'azione pertinente al contenuto nella barra.
 function updateHeaderActions(r) {
@@ -602,16 +609,9 @@ function updateHeaderActions(r) {
 }
 function updateBack(r, nav) {
   updateHeaderActions(r);
-  if (nav === 'pop') { while (navStack.length && navStack[navStack.length - 1].hash !== r.hash) navStack.pop(); }
-  if (navStack[navStack.length - 1]?.hash !== r.hash) {
-    if (nav === 'left' || nav === 'right' || navStack.length && navStack[navStack.length - 1].tab !== r.tab && !navStack[navStack.length - 1].level) navStack.length = 0; // cambio di scheda dalla radice di un'altra: si riparte
-    // tra pagine sorelle dello stesso livello si sostituisce: «indietro» porta al genitore, non alla sorella
-    if (nav === 'none' && navStack.length && levelOf(r) > 0) navStack.pop();
-    navStack.push({ hash: r.hash, title: titleOf(r), tab: r.tab, level: levelOf(r) });
-  }
   const deep = levelOf(r) > 0;
   // stesso «indietro» in due posti: nella barra su telefono, sopra il titolo della pagina su desktop (la barra tiene le sezioni)
-  const back = navStack.length > 1 ? navStack[navStack.length - 2].title : PARENT_TITLE(r);
+  const back = contextualBackTitle() || PARENT_TITLE(r);
   for (const b of document.querySelectorAll('.appbar-back, .page-back')) {
     b.hidden = !deep;
     b.querySelector('span').textContent = back || 'Indietro';
@@ -623,18 +623,21 @@ function updateBack(r, nav) {
   if (brand) brand.hidden = r.view !== 'uscite';
 }
 
+addEventListener('fronda:navigation-context',()=>{if(prev)updateBack(prev,'none');});
+
 function route() {
   // un ridisegno del meteo in sospeso (in home aspetta fino a 6 s) non deve cadere sulla pagina nuova: questa si disegna gia' con i dati aggiornati
   if (weatherPaintTimer) { clearTimeout(weatherPaintTimer.handle); weatherPaintTimer = null; }
   const r = parseRoute();
   r.tab = { impara: 'specie', piante:'specie', pianta:'specie', zona: 'uscite', glossario: 'specie', 'specie-dettaglio': 'specie', alberi: 'specie', albero: 'specie', riconosci: 'specie', info: '', metodo: '', guide: 'specie', 'guide-list': 'specie', sfide: 'specie', fungo: 'specie', commestibile: 'specie' }[r.view] ?? r.view;
   r.hash = location.hash || '#/';
-  const nav = navKind(prev, r), back = prev?.hash || '';
+  const nav = returningNavigation()?'pop':navKind(prev,r), back = prev?.hash || '';
+  rememberNavigationContext();
   if (prev) scrollMem.set(prev.hash, scrollY);
   prev = r;
   const user = performance.now() - userNavAt < 1500 && (userNavTo === 'back' || userNavTo === r.hash);
   userNavAt = -1e9;
-  navigate(() => { muteLive(); routeNow(r, nav); updateBack(r, nav); watchTitle(); document.title = pageTitle(r); focusPage(nav, back, user); }, { nav, back });
+  navigate(() => { muteLive(); recordNavigationPage(titleOf(r)); routeNow(r, nav); updateBack(r, nav); watchTitle(); document.title = pageTitle(r); focusPage(nav, back, user); restoreNavigationContext(); }, { nav, back });
 }
 
 // Le regioni live (#hero, #detail) annunciano gli aggiornamenti del meteo dentro la pagina. Cambiando pagina il
@@ -736,8 +739,8 @@ function routeNow(r, nav) {
   // Avviene dentro l'aggiornamento della transizione: la pagina nuova entra già nella posizione giusta.
   if (r.view !== 'mappa') {
     // Il glossario riparte dall’inizio; un termine esplicito resta una destinazione precisa.
-    const keep = r.view !== 'glossario' && (nav === 'pop' || nav === 'left' || nav === 'right');
-    scrollTo({ top: keep ? (scrollMem.get(r.hash) || 0) : 0, behavior: 'instant' });
+    const keep = r.view !== 'glossario' && (restoredNavigationScroll() !== undefined || nav === 'pop' || nav === 'left' || nav === 'right');
+    scrollTo({ top: keep ? (restoredNavigationScroll() ?? scrollMem.get(r.hash) ?? 0) : 0, behavior: 'instant' });
     if (r.view === 'glossario' && r.termId) document.getElementById(`glossary-term-${r.termId}`)?.scrollIntoView({ block: 'center', behavior: 'instant' });
   }
 }
@@ -786,7 +789,7 @@ function checkSavedSeason() {
     if(document.querySelector('dialog[open]')){setTimeout(show,500);return;}
     const dlg=document.createElement('dialog');dlg.className='full-filters season-dialog';dlg.setAttribute('aria-labelledby','season-dialog-title');
     dlg.innerHTML=`<div class="fp-body"><h2 id="season-dialog-title">La stagione è cambiata</h2><p>${decision.suspendIntent?'Abbiamo sospeso la scelta salvata e aperto Sentieri.':'Abbiamo tolto il filtro salvato sulle specie, lasciando la tua attività.'}</p><p>${esc(decision.names.slice(0,4).join(', '))}${decision.names.length>4?' e altre specie':''}: fuori dal calendario indicativo di ${esc(fmtDate(filterDate(),{month:'long'}))}. Clima e quota possono spostarlo: questo non dimostra assenza.</p><p>La scelta precedente resta recuperabile.</p><div class="fp-head-actions"><button type="button" class="btn ghost" data-restore-season>Ripristina la mia scelta</button><button type="button" class="btn primary" data-accept-season>Continua</button></div></div>`;
-    document.body.append(dlg);dlg.querySelector('[data-restore-season]').onclick=()=>{restoreSeason();dlg.close();};dlg.querySelector('[data-accept-season]').onclick=()=>dlg.close();dlg.onclose=()=>{dlg.remove();$('#home-filter-action [data-more]')?.focus();};dlg.showModal();
+    document.body.append(dlg);dlg.querySelector('[data-restore-season]').onclick=()=>{restoreSeason();dlg.close();};dlg.querySelector('[data-accept-season]').onclick=()=>dlg.close();dlg.onclose=()=>{dlg.remove();$('#home-filter-action [data-more]')?.focus();};openModal(dlg);
   };
   setTimeout(show,0);
 }
@@ -953,7 +956,7 @@ function renderOutdoorMap() {
 }
 
 // Tre intenti sempre esposti, preferenze e specie nel pannello avanzato.
-const PREFS = [['avoidCrowd', 'Poca gente', 'Poca gente'], ['preferComfort', 'Accesso comodo', 'Comodo'], ['distancePenalty', 'Vicino a casa', 'A casa']];
+const PREFS = [['avoidCrowd', 'Poca gente', 'Poca gente'], ['preferComfort', 'Accesso comodo', 'Comodo'], ['distancePenalty', 'Vicino a me', 'Vicino a me']];
 const mapToolbarObserver=new ResizeObserver(entries=>{
   for(const {target} of entries)target.closest('.view-map')?.style.setProperty('--map-toolbar-bottom',`${target.offsetTop+target.offsetHeight+12}px`);
 });
@@ -1052,7 +1055,7 @@ function openFullFilters() {
     const selector=state.view==='mappa'?'#map-filters [data-more]':mobileHeader.matches && document.documentElement.classList.contains('title-in-bar')?'#appbar-home-filters [data-more]':'#home-filter-action [data-more]';
     $(selector)?.focus({preventScroll:true});
   };
-  paint(); dlg.showModal();
+  paint(); openModal(dlg);
 }
 
 let weatherUnavailable=false;
@@ -1285,7 +1288,7 @@ function prepGeneralHtml(rules) {
 }
 const adjParts = (zone, d) => {
   const out = [];
-  if (state.distancePenalty) out.push({ label: 'vicino a casa', mult: proximityMultiplier(zone) });
+  if (state.distancePenalty) out.push({ label: 'vicino a me', mult: proximityMultiplier(zone) });
   if (state.avoidCrowd && d?.crowd) out.push({ label: 'poca gente', mult: 1 - 0.45 * d.crowd.value });
   if (state.preferComfort && d?.comfort) out.push({ label: 'accesso comodo', mult: 0.55 + 0.45 * d.comfort.value });
   return out;
@@ -1663,7 +1666,7 @@ const IC = {
   copy: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V4H4v12h4"/></svg>',
   unknown: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9 8a3 3 0 0 1 6 0c0 2-3 2-3 5M12 17h.01"/></svg>',
   clock: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>',
-  car: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 16v-4.5L7 7h10l2 4.5V16"/><path d="M3.5 16h17"/><circle cx="8" cy="17" r="1.6"/><circle cx="16" cy="17" r="1.6"/></svg>',
+  car: carGlyph,
   people: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8.5" r="3"/><path d="M3.5 19a5.5 5.5 0 0 1 11 0"/><circle cx="17" cy="9.5" r="2.4"/><path d="M15.5 14.2A4.5 4.5 0 0 1 21 18.5"/></svg>',
   walk: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="13" cy="4.5" r="1.8"/><path d="m9 21 2.5-6.5L14 17v4M8 11l3-3.5 3 1.5 2 3M11.5 14.5l1-5"/></svg>',
   back: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5 8 12l7 7"/></svg>',
@@ -1811,7 +1814,7 @@ function renderHome() {
 
 function renderCommunityIntro() {
   const box = $('#community-intro');
-  if (box) box.innerHTML = `<span class="community-leaf" aria-hidden="true">${leafGlyph}</span><h2>${esc(contentCopy.communityTitle || 'Condividi dal bosco')}</h2><p class="community-purpose">Aiuta Fronda a verificare le previsioni con ciò che osservi nel bosco. Anche una ricerca a vuoto è utile.</p><p class="small muted">${esc(communityStatus())}</p><div class="community-actions">${state.target==='funghi'?'<button class="btn primary" type="button" data-report>Annota un’osservazione nel taccuino</button>':'<button class="btn primary" type="button" data-new-note>＋ Aggiungi una nota al taccuino</button>'}</div>`;
+  if (box) box.innerHTML = `<span class="community-leaf" aria-hidden="true">${leafGlyph}</span><h2>${esc(contentCopy.communityTitle || 'Condividi dal bosco')}</h2><p class="community-purpose">Aiuta Fronda a verificare le previsioni con ciò che osservi nel bosco. Anche una ricerca a vuoto è utile.</p><p class="small muted">${esc(communityStatus())}</p><div class="community-actions">${state.target==='funghi'?`<button class="btn primary" type="button" data-report>${notebookGlyph}<span>Annota un’osservazione nel taccuino</span></button>`:`<button class="btn primary" type="button" data-new-note>${notebookGlyph}<span>Aggiungi una nota al taccuino</span></button>`}</div>`;
 }
 
 // barra delle info: se non ci sta, toglie prima "entro le", poi "min", poi il testo del meteo quando e' bello (resta l'icona)
@@ -1878,7 +1881,7 @@ function renderMapDays() {
   const box = $('#map-days');
   const html = Array.from({length:AHEAD_DAYS+1}, (_,o) => { const date = outdoorDate(o); return `<button type="button" class="day" role="tab" data-day-offset="${o}" aria-selected="${o === state.dayOffset}" aria-label="${esc(fmtDate(date,{weekday:'long',day:'numeric',month:'long'}))}"><span class="d1">${o===0?'Oggi':o===1?'Domani':esc(fmtDate(date,{weekday:'long'}))}</span><span class="d2">${esc(fmtDate(date,{day:'numeric'}))}</span></button>`; }).join('');
   if (box.innerHTML !== html) box.innerHTML = html;
-  box.querySelectorAll('[data-day-offset]').forEach(b => b.onclick = () => { mapDateManual=true;if(state.dayOffset===Number(b.dataset.dayOffset))return;state.dayOffset=Number(b.dataset.dayOffset);checkSavedSeason();$('.map-top').classList.remove('days-open');renderAll();renderFilterSummary();dateChangeFeedback('#map-filters [data-days]', '#map-results');$('#map-filters [data-days]')?.focus({preventScroll:true}); });
+  box.querySelectorAll('[data-day-offset]').forEach(b => b.onclick = () => { mapDateManual=true;$('.map-top').classList.remove('days-open');if(state.dayOffset===Number(b.dataset.dayOffset)){$('#map-filters [data-days]')?.setAttribute('aria-expanded','false');$('#map-filters [data-days]')?.focus({preventScroll:true});return;}state.dayOffset=Number(b.dataset.dayOffset);checkSavedSeason();renderAll();renderFilterSummary();dateChangeFeedback('#map-filters [data-days]', '#map-results');$('#map-filters [data-days]')?.focus({preventScroll:true}); });
 }
 // riquadro della zona aperto: su telefono la barra delle sezioni si toglie di mezzo (come fa Google Maps)
 new MutationObserver(() => document.documentElement.classList.toggle('map-sheet-open', !$('#map-sheet')?.hidden))
@@ -2564,7 +2567,7 @@ const ICON = {
   ext: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v6H4V6h6"/></svg>',
   find: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 6 0 0 1 16 0z"/><path d="M10 12v6a2 2 0 0 0 4 0v-6"/></svg>',
   when: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg>',
-  car: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 16V11l2-4h10l2 4v5"/><path d="M4 16h16"/><circle cx="8" cy="17" r="1.5"/><circle cx="16" cy="17" r="1.5"/></svg>',
+  car: carGlyph,
   trail: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 20c2-4 8-3 8-7s-6-3-6-7"/><circle cx="17" cy="5" r="1.5"/></svg>',
 };
 
@@ -2607,7 +2610,7 @@ function renderWalkFocus(z, d, walk) {
     ${t.mainCat ? `<p class="small" data-glossary="${d?.best?.kind==='plant'?'Piante':'Funghi'}">Lungo il tracciato: ${linkTrees(t.mainCat.toLowerCase())} nei campioni tra circa ${Math.floor(t.lo / 25) * 25} e ${Math.ceil(t.hi / 25) * 25} m${d?.best?.species ? `, ${d.best.kind==='plant'?'proxy di paesaggio per':'compatibili con l’habitat di'} ${speciesLink(d.best.species, d.best.species.name.toLowerCase())}` : ''}.</p>` : ''}
     ${trailVisual(z, t, d, headsOf(z,t), 'focus')}
     ${walkForest(z,t)}
-    <button type="button" class="btn ghost" data-note-kind="zona" data-note-id="${z.id}" data-note-zone="${z.id}" data-note-href="${esc(walkHref(z,state.dayOffset,t))}" data-note-title="${esc(trailName(t))}">＋ Salva il giro nel taccuino</button>
+    <button type="button" class="btn ghost" data-note-kind="zona" data-note-id="${z.id}" data-note-zone="${z.id}" data-note-href="${esc(walkHref(z,state.dayOffset,t))}" data-note-title="${esc(trailName(t))}">${notebookGlyph}<span>Salva il giro nel taccuino</span></button>
     ${trailLinks(z, t)}
     <p class="small muted">Verifica accesso, sosta e stato del sentiero prima di partire.</p>
     <details class="context-note walk-data"><summary>Tracciato e limiti dei dati</summary><p>Il GPX contiene solo il tratto nella zona. Tempi e dislivello, quando disponibili, riguardano l’itinerario completo.</p><p>Tracciato OpenStreetMap / Waymarked Trails · imbocchi ricavati dalla rete stradale mappata.${state.target==='funghi'?' L’indice e le segnalazioni riguardano la zona, non questo singolo sentiero.':''}</p></details>
@@ -2617,12 +2620,13 @@ function renderWalkFocus(z, d, walk) {
 
 function essentialSections(z, d, walk) {
   const best = d.best, hostNote = pineHostNote(z, best.species, best.band);
+  const observationRule = criticalRuleOf(best.species.id);
+  // Gli avvisi brevi restano completi; quelli lunghi mantengono il titolo
+  // nel riepilogo e il testo integrale nel dettaglio, senza riscrivere i dati.
+  const expandedWarning = observationRule?.title && observationRule.text?.length > 120;
   const rows = [];
   rows.push({ sec: 'specie', icon: 'find', thumb: best.species.id, k: 'Cosa osservare', v: `<span class="primary-species"><button type="button" class="sp-inline" data-species="${best.species.id}">${esc(best.species.name)}</button>${best.kind!=='plant'&&Number.isFinite(best.score)?idxDot(best.score):''}</span> ${intornoA(best.band)} <b>${best.band} m</b>`,
-    sub: [whereSummary(best.species.id) && `<span class="plan-where">${linkTrees(whereSummary(best.species.id))}</span>`,
-      hostNote && `<span class="plan-host">${esc(hostNote)}</span>`,
-      attentionLine(criticalRuleOf(best.species.id)),
-      (() => { const more = d.perSpecies.slice(1, 3).map((p) => [p, spScore(z, d, p)]).filter(([, sc]) => sc >= 20); return more.length ? `<span class="ent-chips">${more.map(([p, sc]) => `<a class="ent-chip" href="${p.species.kind==='plant'?p.species.href:'#/specie/'+encodeURIComponent(p.species.id)}">${thumb(p.species.id,28)}<span>${esc(p.species.name)}</span>${idxDot(sc)}</a>`).join('')}</span>` : ''; })()].filter(Boolean).join('') || esc(best.species.latin) });
+    sub: attentionLine(expandedWarning ? {...observationRule, text:observationRule.title, title:''} : observationRule) });
   if (d.crowd &&state.target==='funghi') {
     const t = timingAdvice({ dateStr: d.date, lat: z.lat, lon: z.lon, crowd: d.crowd });
     rows.push({ sec: 'quando', icon: 'when', k: 'Quando', v: `<span>${practicalTiming(z,d,walk).available?`Arriva <b>entro le ${fmtRough(t.arrive,15,'floor')}</b>`:'<b>Orario consigliato superato</b>'}</span><span class="badge crowd-${d.crowd.level}">${crowdText(d.crowd)}</span>` });
@@ -2643,10 +2647,11 @@ function essentialSections(z, d, walk) {
       sub: `${a0 ? `<span class="plan-travel">${esc(travelText(zoneTrip(z,walk)))} da ${esc(currentBase().name)}${customBase()?'':unp}</span>` : ''}${walk?.h ? actPill(gmaps(walk.h.lat, walk.h.lon),'nav','Indicazioni',true) : ax ? actPill(gmaps(ax.rlat, ax.rlon),'nav','Navigatore',true) : ''}`,
       badge: d.comfort ? `<span class="badge comfort-${d.comfort.level}">${d.comfort.level}</span>` : '' });
   }
-  const bodies={specie:()=>zoneSpecies(z,d)+discoverySection(z,d,walk,true),quando:()=>renderHuman(z,d)||renderWhenWeather(z,d),accesso:()=>renderAccess(z,d,{summarized:true,walk})};
+  const observationContext = [expandedWarning && attentionLine({...observationRule,title:''}), whereSummary(best.species.id) && `<p class="plan-where">${linkTrees(whereSummary(best.species.id))}</p>`, hostNote && `<p class="plan-host">${esc(hostNote)}</p>`].filter(Boolean).join('');
+  const bodies={specie:()=>`<div class="observation-context">${observationContext}</div>`+zoneSpecies(z,d)+discoverySection(z,d,walk,true),quando:()=>renderHuman(z,d)||renderWhenWeather(z,d),accesso:()=>renderAccess(z,d,{summarized:true,walk})};
   return `<div class="essential-sections"><h2 class="outing-section-title">Il piano in breve</h2>${Object.keys(bodies).map(id=>{
     const group=rows.filter(r=>r.sec===id);if(!group.length)return '';
-    const summary=group.map(r=>`<span class="essential-summary"><span class="plan-ic${r.thumb?' has-thumb':''}">${r.thumb?thumb(r.thumb,48):r.svg||ICON[r.icon]}</span><span class="plan-body"><span class="plan-k">${r.k}${r.badge?' '+r.badge:''}</span><span class="plan-v">${r.v}</span>${r.sub?`<span class="plan-sub">${r.sub}</span>`:''}</span></span>`).join('');
+    const summary=group.map(r=>`<span class="essential-summary"><span class="plan-ic${r.thumb?' has-thumb':''}">${r.thumb?thumb(r.thumb,48):r.svg||ICON[r.icon]}</span><span class="plan-body"><span class="plan-k">${r.k}${r.badge?' '+r.badge:''}</span><span class="plan-v">${r.v}</span>${r.sub?`<span class="plan-sub">${r.sub}</span>`:''}${id==='specie'?'<span class="observation-toggle" aria-hidden="true"><span class="observation-expand">Esplora specie e habitat</span><span class="observation-collapse">Chiudi dettagli</span></span>':''}</span></span>`).join('');
     return section(id,summary,bodies[id]()||'<p class="small muted">Verifica le previsioni aggiornate e le condizioni del percorso prima di partire.</p>');
   }).join('')}</div>`;
 }
@@ -2707,15 +2712,7 @@ $('#detail')?.addEventListener('click', (e) => {
   const c = detailCtx;
   if (!c) return;
   if (e.target.closest('[data-cover]') && c.cov) { openLightbox([{ src: c.cov.hd, alt: c.cov.alt, caption: captionHtml({ title: esc(c.z.name), credit: creditLine(c.cov.credit) }) }]); return; }
-  const save = e.target.closest('[data-save-plan]');
-  if (save && !save.disabled) {
-    const status = e.currentTarget.querySelector('[data-plan-status]');
-    save.disabled = true;
-    journal.savePlan(c.z.id, c.d.date, c.best.band)
-      .then(() => { if (status) status.textContent = 'Previsione e dati salvati nel taccuino. Dopo l’uscita registra specie cercate, orario e ritrovamenti.'; })
-      .catch((err) => { if (status) status.textContent = err.message; })
-      .finally(() => { save.disabled = false; });
-  }
+
 });
 function updateDetailInPlace(box, html, cov) {
   const ring = box.querySelector(':scope > .phero .hero-indicators > .ring'), before = ring?.querySelector('b')?.textContent;
@@ -2839,11 +2836,11 @@ function renderDetail() {
     <section class="zone-actions" aria-label="Taccuino e mappa">
       <h2 class="outing-section-title">Taccuino e mappa</h2>
       ${best.kind==='plant'?`<button type="button" class="btn primary zone-note-action" data-note-kind="pianta" data-note-id="${best.species.plantId}" data-note-zone="${z.id}" data-note-title="${esc(best.species.name)}">${notebookGlyph}<span>Annota la fase nel taccuino</span><span aria-hidden="true">→</span></button>`:`<div class="zone-community"><button type="button" class="btn primary zone-note-action" data-report data-zone="${z.id}" data-species="${best.species.id}">${notebookGlyph}<span>Annota nel taccuino</span><span aria-hidden="true">→</span></button>${reportBadge(z.id, best.species.id)}</div>`}
+      <p class="zone-note-hint">${best.kind==='plant'?'Nel taccuino puoi annotare le fasi della pianta e le ricerche a vuoto, con luogo e giorno dell’osservazione.':'Nel taccuino puoi registrare specie cercate, ritrovamenti e ricerche a vuoto, con luogo e giorno dell’uscita.'}</p>
       <div class="zone-secondary-actions">
-        ${best.kind==='plant'?'':`<button type="button" class="zone-secondary-action" data-save-plan aria-label="Salva le condizioni nel taccuino"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4h10v17l-5-3.5L7 21z"/></svg><span><b>Salva condizioni</b><small>Nel taccuino</small></span></button>`}
         <a class="zone-secondary-action" href="#/mappa/${z.id}" aria-label="Sentieri e accessi sulla mappa">${IC.map}<span><b>Apri la mappa</b><small>Sentieri e accessi</small></span></a>
       </div>
-      ${best.kind==='plant'?'<p class="small muted">Confronta la pianta e verifica regole, tutela e permessi prima della raccolta.</p>':'<p class="small muted" data-plan-status role="status"></p>'}
+      ${best.kind==='plant'?'<p class="small muted">Confronta la pianta e verifica regole, tutela e permessi prima della raccolta.</p>':''}
     </section>
     ${z.protection ? `<div class="notice">${esc(z.protection)}</div>` : ''}
     <section class="zone-more" aria-label="Approfondimenti sulla zona"><h2 class="outing-section-title">Approfondimenti</h2>
@@ -2968,7 +2965,7 @@ function headX(t, h) {
 function trailProfile(zid, t, sp, band, heads = [], visualId = '') {
   const sm = t.samples || [];
   if (sm.length < 4 || sm.some(x => !Number.isFinite(x[0]))) return '';
-  if (t.lines?.length > 1) return `<p class="small muted">Quote campionate tra ${Math.min(...sm.map(x => x[0]))} e ${Math.max(...sm.map(x => x[0]))} m su segmenti separati. Non costituiscono un profilo continuo.</p>`;
+  if (t.lines?.length > 1) return '';
   const cats = trails[zid]?.sample_categories || [];
   const es = sm.map((x) => x[0]);
   const lo = Math.min(...es), hi = Math.max(...es);
@@ -2994,11 +2991,14 @@ function trailVisual(z, t, d, heads = [], where = 'list') {
   const id = `trail-visual-${where}-${`${z.id}-${t.id}`.replace(/[^\w-]/g, '_')}`, key = `${z.id}/${t.id}`;
   const view = trailViews.get(key) || 'profile', sketch = trailSketch(t, heads[0], heads.slice(1));
   const trace = sketch ? `<figure class="walk-sketch"><span class="trail-north" aria-hidden="true">N ↑</span><svg viewBox="${sketch.viewBox.map(n=>n.toFixed(1)).join(' ')}" role="img" aria-label="Schema del tratto locale orientato a nord${heads.length ? ', con accessi mappati numerati' : ''}">${sketch.paths.map(p => `<polyline points="${p}"/>`).join('')}${sketch.heads.map((p,k) => `<g class="trail-access" data-trail-head="${k}" aria-hidden="true"><circle cx="${p[0].toFixed(1)}" cy="${p[1].toFixed(1)}" r="8"/><text x="${p[0].toFixed(1)}" y="${p[1].toFixed(1)}" text-anchor="middle" dominant-baseline="central">${k+1}</text></g>`).join('')}</svg><figcaption><details class="trail-sketch-info"><summary>Info sul tracciato</summary><p>${sketch.paths.length > 1 ? 'Segmenti separati. ' : ''}${heads.length ? 'I numeri indicano gli imbocchi mappati. ' : ''}Schema orientato a nord: per orientarti usa la mappa del sentiero.</p></details></figcaption></figure>` : '<p class="small muted">Tracciato non disponibile per questo tratto.</p>';
-  const profile = trailProfile(z.id, t, d?.best?.species, d?.best?.band, heads,id) || '<p class="small muted">Profilo altimetrico non disponibile: mancano quote sufficienti per questo tratto.</p>';
+  const profile = trailProfile(z.id, t, d?.best?.species, d?.best?.band, heads,id);
+  const elevations=(t.samples||[]).map(sample=>sample[0]).filter(Number.isFinite);
+  const quotes=elevations.length?`<dl class="trail-elevation-summary"><div><dt>Quota minima</dt><dd>${Math.min(...elevations).toLocaleString('it-IT')} <span>m</span></dd></div><div><dt>Quota massima</dt><dd>${Math.max(...elevations).toLocaleString('it-IT')} <span>m</span></dd></div></dl><p class="small muted">${t.lines?.length>1?'Quote campionate su segmenti separati. Non costituiscono un profilo continuo.':'Quote campionate nel tratto della zona; mancano campioni sufficienti per un profilo continuo.'}</p>`:'<p class="small muted">Quote non disponibili: mancano quote sufficienti per questo tratto.</p>';
+  const elevationLabel=profile?'Profilo':'Quote';
   return `<div class="trail-visual" data-trail-view-key="${esc(key)}">
-    <div class="trail-view-tabs" role="tablist" aria-label="Vista del tratto di ${esc(trailName(t))}">${[['profile','Profilo'],['trace','Tracciato']].map(([v,label]) => `<button type="button" role="tab" id="${id}-${v}-tab" data-trail-view="${v}" aria-selected="${view===v}" aria-controls="${id}-${v}" tabindex="${view===v?0:-1}">${label}</button>`).join('')}</div>
+    <div class="trail-view-tabs" role="tablist" aria-label="Vista del tratto di ${esc(trailName(t))}">${[['profile',elevationLabel],['trace','Tracciato']].map(([v,label]) => `<button type="button" role="tab" id="${id}-${v}-tab" data-trail-view="${v}" aria-selected="${view===v}" aria-controls="${id}-${v}" tabindex="${view===v?0:-1}">${label}</button>`).join('')}</div>
     <div class="trail-visual-panel" role="tabpanel" id="${id}-trace" data-trail-panel="trace" aria-labelledby="${id}-trace-tab" tabindex="0"${view!=='trace'?' hidden':''}>${trace}</div>
-    <div class="trail-visual-panel" role="tabpanel" id="${id}-profile" data-trail-panel="profile" aria-labelledby="${id}-profile-tab" tabindex="0"${view!=='profile'?' hidden':''}>${profile}</div>
+    <div class="trail-visual-panel${profile?'':' trail-visual-panel--quotes'}" role="tabpanel" id="${id}-profile" data-trail-panel="profile" aria-labelledby="${id}-profile-tab" tabindex="0"${view!=='profile'?' hidden':''}>${profile||quotes}</div>
     ${heads.length ? `<div class="th-row"><span class="th-k">Imbocchi</span><div class="th-list">${heads.map((h,k)=>`<a class="th-chip" id="${id}-head-${k}" data-trail-head="${k}" data-trail-head-chip href="${gmaps(h.lat,h.lon)}" target="_blank" rel="noopener" aria-label="Indicazioni stradali per l’imbocco ${k+1}${h.ele!=null?`, a ${h.ele} metri`:''}"><i class="th-n">${k+1}</i>${h.kind==='strada'?IC.car:ICON.track}<span><b>${h.ele!=null?`${h.ele.toLocaleString('it-IT')} m`:'Imbocco'}</b><small>${esc(h.road||(h.kind==='strada'?'su strada':'su sterrata'))}</small></span></a>`).join('')}</div></div>` : ''}
   </div>`;
 }
@@ -3106,7 +3106,6 @@ function trailLinks(z, t) {
 }
 
 // --- testi legali e di sicurezza (data/legal.json, con ripiego prudente) ------
-const LEGAL_KEY = 'fungaroli:legal-accepted';
 function notebookPrivacyHtml(html) {
   // Solo testo editoriale: URL e identificativi dei vecchi diari restano validi.
   const template=document.createElement('template');template.innerHTML=String(html||'');
@@ -3123,7 +3122,7 @@ function privacyHtml(html) {
   return end < 0 ? `${out}<p>${esc(BASE_PRIVACY_TEXT)}</p>` : `${out.slice(0, end)}<li>${esc(BASE_PRIVACY_TEXT)}</li>${out.slice(end)}`;
 }
 
-function applyLegal() {
+async function applyLegal() {
   const L = legal || {};
   if (L.home_strip) $('#home-legal .ar-s').textContent = L.home_strip;
   // emergenza e sezioni legali nella pagina Info
@@ -3136,18 +3135,19 @@ function applyLegal() {
   // preparazione e conservazione: regole per tutti i funghi (obbligatorie prima)
   if (prep?.general?.length && $('#prep-general')) $('#prep-general').innerHTML = prepGeneralHtml(prep.general);
   // versione pilota: la stessa frase dell'avviso iniziale, in cima a Regole e metodo (ci porta l'etichetta «Rieti» della testata)
-  const pilot = $('#info-pilot'); if (pilot) { pilot.textContent = L.onboarding?.subtitle || ''; pilot.hidden = !pilot.textContent; }
+  const pilot = $('#info-pilot'); if (pilot) { pilot.textContent = [L.onboarding?.prototype_notice,L.onboarding?.subtitle].filter(Boolean).join(' '); pilot.hidden = !pilot.textContent; }
   $('#legal-sections').innerHTML = (L.info_sections || []).map((x) => `<details><summary><h2>${esc(x.title)}</h2></summary><div class="method">${x.id==='normativa'?zoneLegal({}):''}${x.id==='privacy'?privacyHtml(x.html):x.html}</div></details>`).join('');
   $('#legal-sections').querySelectorAll('.method').forEach(enhanceContentReading);
   enhanceEntityAccordions($('#legal-sections'));
   // primo avvio: avviso da confermare (si ripresenta se cambia la versione dei testi)
-  const ver = String(L.version || 0) + (L.verified_on || '');
-  let accepted = null;
-  try { accepted = localStorage.getItem(LEGAL_KEY); } catch { /* ignora */ }
-  if (accepted !== ver) {
+  const ver=legalNoticeVersion(L),accepted=await configureLegalAccess(ver,legalNoticeFingerprint(L));
+  if (!accepted) {
     const dlg = $('#onboarding');
     dlg.querySelector('h2').textContent = L.onboarding?.title || 'Prima di usare l\'app';
     const sub = $('#ob-sub'); if (sub) { sub.textContent = L.onboarding?.subtitle || ''; sub.hidden = !sub.textContent; }
+    $('#ob-prototype').textContent=L.onboarding.prototype_notice;
+    $('#ob-cookie-summary').textContent=L.onboarding.cookie_summary;
+    $('#ob-cookie-policy').innerHTML=(L.info_sections||[]).find(section=>section.id==='cookie')?.html||'';
     dlg.querySelector('.ob-points').innerHTML = (L.onboarding?.points || [
       'Le previsioni sono stime: non garantiscono che troverai funghi.',
       'Schede e ricerca aiutano a orientarsi ma non sono un\'identificazione: prima di mangiare fai controllare i funghi all\'Ispettorato Micologico ASL.',
@@ -3155,13 +3155,18 @@ function applyLegal() {
       'In montagna la sicurezza e il rispetto delle regole di parchi e riserve sono tua responsabilità.',
     ]).map((x) => `<li>${esc(x)}</li>`).join('');
     $('#ob-accept').textContent = L.onboarding?.accept || 'Ho capito';
-    $('#ob-accept').onclick = () => { try { localStorage.setItem(LEGAL_KEY, ver); } catch { /* ignora */ } dlg.close(); };
-    $('#ob-more').onclick = () => dlg.close();
+    $('#ob-legal-details').innerHTML=(L.info_sections||[]).filter(section=>section.id!=='cookie').map(section=>`<section><h3>${esc(section.title)}</h3>${section.id==='privacy'?privacyHtml(section.html):section.html}</section>`).join('');
+    $('#ob-accept').onclick=async()=>{
+      const button=$('#ob-accept');button.disabled=true;
+      try{const {persisted}=await acceptLegalNotice();dlg.close();if(!persisted){const note=document.createElement('div');note.className='app-toast on';note.setAttribute('role','status');note.textContent='Conferma valida per questa apertura. Il browser non permette di conservarla.';document.body.append(note);setTimeout(()=>note.remove(),7000);}}catch{$('#ob-status').textContent='Non riesco a registrare la conferma. Riprova.';}finally{button.disabled=false;}
+    };
     dlg.addEventListener('cancel', (e) => e.preventDefault());
-    dlg.addEventListener('close', maybeInvite, { once: true }); // dopo l'avviso, l'invito a installare
-    dlg.showModal();
+    dlg.onclose=()=>{if(hasLegalAcceptance())maybeInvite();else queueMicrotask(()=>{if(!dlg.open&&!hasLegalAcceptance())openModal(dlg);});};
+    openModal(dlg);dlg.scrollTop=0;dlg.querySelector('h2').focus({preventScroll:true});
   } else maybeInvite();
 }
+addEventListener('fronda:legal-required',()=>{if(legal)applyLegal();});
+addEventListener('fronda:legal-access',event=>{if(event.detail.accepted&&$('#onboarding')?.open)$('#onboarding').close();});
 
 function zoneLegal(z) {
   const L = legal || {};
@@ -3190,7 +3195,7 @@ document.addEventListener('click',event=>{
   legalRuleDialog.querySelector('.legal-rule-text').textContent=button.dataset.legalText;
   legalRuleDialog.querySelector('[data-legal-close]').onclick=()=>legalRuleDialog.close();
   legalRuleDialog.onclose=()=>button.isConnected&&button.focus({preventScroll:true});
-  legalRuleDialog.showModal();
+  openModal(legalRuleDialog);
 });
 
 // Dove trovare una specie: idoneita' dell'habitat per zona + indice di oggi (se il meteo e' caricato).
@@ -3294,6 +3299,7 @@ function captureForecast(zoneId, date, band) {
 init().catch((e) => {
   console.error('Avvio di Fronda non riuscito', e);
   const message = '<div class="error boot-error" role="alert"><p>Fronda non è riuscita a caricare boschi, sentieri e funghi. Controlla la connessione e riprova.</p><button type="button" class="btn primary" data-boot-retry>Riprova</button></div>';
+  $('#legal-loading').innerHTML=message;
   $('#hero').innerHTML = message;
   $('#detail').innerHTML = message;
   document.querySelectorAll('[data-boot-retry]').forEach((b) => b.addEventListener('click', () => location.reload()));

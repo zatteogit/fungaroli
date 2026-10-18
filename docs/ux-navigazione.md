@@ -15,7 +15,7 @@ Ridondanze tenute di proposito:
 
 ## Interessi dell’uscita — decisione del 16 ottobre 2026
 
-Nella home la barra espone **Alla ricerca di… › Funghi / Piante / Sentieri**: sono interessi indipendenti, combinabili e ricordati tra home e mappa. «Alla ricerca di…» apre i filtri avanzati. Sotto compaiono **Poca gente / Accesso comodo / Vicino a casa**, con icona sostituita dalla spunta quando selezionati. «Poca gente» mantiene un testo fisso, come richiesto nella revisione finale. La navigazione Uscite, Mappa, Scopri e Taccuino resta la stessa.
+Nella home la barra espone **Alla ricerca di… › Funghi / Piante / Sentieri**: sono interessi indipendenti, combinabili e ricordati tra home e mappa. «Alla ricerca di…» apre i filtri avanzati. Sotto compaiono **Poca gente / Accesso comodo / Vicino a me**, con icona sostituita dalla spunta quando selezionati. «Poca gente» mantiene un testo fisso, come richiesto nella revisione finale. La navigazione Uscite, Mappa, Scopri e Taccuino resta la stessa.
 
 Con Funghi attivo l’indice e l’ordine biologico restano esclusivamente fungini. Piante aggiunge gli spunti botanici nella stessa proposta e nella fascia delle specie; una selezione esplicita di piante restringe i percorsi a quelli con ambienti compatibili. Sentieri richiede un tratto mappato e abilita la ricerca pratica insieme agli altri interessi. Senza interessi selezionati si esplorano le proposte pratiche, senza indice. Non si sommano punteggi biologici diversi.
 
@@ -49,7 +49,7 @@ Test unitari dedicati a calendari parziali/sconosciuti e finestre tra mesi, filt
 
 Funghi, Piante e Passeggiata usano `homeCover` per la stessa struttura della hero. Quando Funghi è selezionato compare l’anello dell’indice; Piante mostra lo spunto e il periodo indicativo, senza attribuire presenza certa. Le card delle alternative riportano giorno, luogo, difficoltà e km del tratto mappato; i dettagli sono nella scheda. Le eventuali allerte meteo restano visibili. Le etichette degli interessi restano Funghi/Piante/Sentieri anche su schermi stretti.
 
-Calendario centrato quando non scorre; bordi delle righe sfumati sul contenuto; pannello livelli sopra i filtri della mappa. Il glossario riparte dall’inizio, salvo link a un termine preciso. La ricerca mostra Cmd+K su Mac e Ctrl+K sulle altre piattaforme. Senza scelta del tema si segue il dispositivo.
+Calendario centrato quando non scorre; bordi delle righe sfumati sul contenuto; pannello livelli sopra i filtri della mappa. Il glossario riparte dall’inizio, salvo link a un termine preciso. La ricerca mostra Cmd+K su Mac e Ctrl+K sulle altre piattaforme. Senza scelta del tema si segue il dispositivo. Il ciclo del pulsante parte dal tema visibile all’avvio: chiaro → scuro → automatico → chiaro; partendo da scuro: scuro → chiaro → automatico → scuro. Anche con Automatico iniziale il primo tocco cambia aspetto. Se il sistema cambia mentre è attivo Automatico, il ciclo riparte dal nuovo tema visibile. Le icone dell’header hanno area tattile minima 44 × 44 px anche a 320 px, con nome accessibile che anticipa il prossimo tema.
 
 Se manca una foto del luogo, Piante e Passeggiata usano come ripiego la foto di una specie associata al percorso (prima una pianta o un albero, secondo l’intento). La foto non è attribuita al luogo. Un segnaposto neutro copre anche l’assenza di immagini e gli errori di caricamento, senza spostare testi o controlli.
 
@@ -107,7 +107,7 @@ pagina. Sul desktop restano navigazione e testata estese.
 
 Scopri usa un libro aperto come icona: rappresenta cataloghi, caratteri e guide di
 funghi, piante e alberi. La foglia è riservata ai contenuti botanici; il Taccuino
-usa una stilo con pennino per richiamare la scrittura, la Mappa una carta ripiegata.
+usa una penna d’oca per richiamare la scrittura, la Mappa una carta ripiegata.
 
 ### Tavola illustrata dei caratteri dei funghi
 
@@ -120,3 +120,80 @@ pieno segnala la variante selezionata. Anello, volva e reticolo si leggono in ri
 presente/assente esclusivamente quando il relativo dato è booleano documentato.
 Le fasi di crescita mantengono la propria galleria. Benchmark e motivazioni in
 [griglia-caratteri-2026-10-18.md](griglia-caratteri-2026-10-18.md).
+
+Il diario di prova viene proposto nel Taccuino soltanto agli amministratori e agli editor: sia il collegamento nell’intestazione sia l’invito in fondo all’elenco. Il ruolo arriva dalla sessione verificata dal server, non da preferenze locali; in assenza di ruolo verificato le proposte restano nascoste, anche durante il caricamento. Il logout le rimuove. Il collegamento diretto alla dimostrazione rimane consultabile: i contenuti sono inventati e pubblici, non dati riservati.
+
+Nelle viste con titolo, la barra superiore resta ancorata anche scendendo: il vecchio nascondimento direzionale non deve annullare il titolo sticky. Il passaggio al titolo compatto usa una dissolvenza di 240 ms, senza traslazioni delle lettere; chi preferisce movimento ridotto non ha animazione. La soglia usa l’altezza di layout della barra (compresa la safe area), con 16 px di margine per il rientro del titolo grande: piccoli movimenti inversi non cambiano subito lo stato. Scroll e resize aggiornano insieme lo stato, una volta per frame; il cambio pagina sceglie subito quello corretto senza spegnimenti intermedi.
+
+Il focus non rappresenta una selezione o un errore. Nel tema chiaro il colore del focus è bosco, nel tema scuro resta polline; il fiordaliso rimane un colore informativo. Il puntatore/tocco non disegna l’outline sui comandi, anche se una modale ne riceve automaticamente il focus. Il focus DOM resta attivo, e la navigazione da tastiera ripristina subito l’indicatore visibile. I campi di testo conservano il segnale di editing anche al tocco. La distinzione è condivisa fra app e redazione (`js/focus.js`).
+
+Aprendo o chiudendo un approfondimento principale di una scheda si mantiene la posizione visiva del summary scelto, anche quando il gruppo chiude un pannello precedente molto lungo. La compensazione riguarda il contenitore effettivo (pagina o modale), senza spostare lo sfondo del dialog e senza scorrimenti animati. Tiene conto dell’header e del visual viewport e rispetta i limiti di scroll disponibili. I dettagli annidati mantengono il comportamento indipendente.
+
+Le CTA per annotare, salvare o aprire il Taccuino usano `notebookGlyph` di `js/ui-icons.js`: la stessa geometria della penna d’oca della navbar, decorativa (`aria-hidden`), con testo esplicito e colore ereditato. Vale per schede, piante, alberi, letture, uscite, sfide e ritorni al taccuino. Il simbolo “+” o il vecchio quaderno non sostituiscono più questa icona nelle CTA.
+
+Il riquadro Attenzione conserva una sola cornice esterna. Titolo, comando di apertura/chiusura e singoli avvisi si distinguono con tipografia e spaziatura, senza separatori sovrapposti. Le regole generiche degli accordion non aggiungono un secondo sfondo, bordo o chevron a questo componente. Testi, severità, fonti e comportamento restano completi.
+
+Nelle tessere dei funghi il titolo tecnico apre il glossario tramite un link senza sottolineatura, accompagnato da un piccolo «?» decorativo: è cliccabile l’intero titolo, con altezza minima 44 px. I termini nei contenuti restano collegamenti con sottolineatura puntinata; il titolo non consuma l’unica occorrenza automatica collegabile del termine nel testo. Il primo esempio comprende Cappello, imenoforo, Gambo, Viraggio e Sporata e le voci Anello/Volva/Reticolo nei dati del gambo.
+
+La tessera Sporata mostra tutti i colori documentati del deposito come campioni cromatici etichettati, senza selezione, senza inventare una forma dell’impronta e senza mostrare soltanto il primo valore. Anche nel confronto ogni colore usa un campione, accanto al testo esistente. Si riusa la tavolozza UI preesistente; i campioni sono indicativi. Il diagramma del foglio resta nel percorso didattico per caratteri, dove il metodo è spiegato. Il glossario Sporata conserva la definizione e la precisazione sulla distinzione dal colore di lamelle/pori e sulla commestibilità, con la fonte esistente.
+
+
+### Ritorno lungo il percorso effettivo (decisione del 18/10)
+
+Nel percorso nota del Taccuino → scheda contestuale → luogo, Indietro torna alla
+scheda modale e poi alla nota. Vale sia per la freccia dell’app sia per Indietro
+del browser; Avanti ripercorre gli stessi passaggi. La gerarchia (per esempio
+luogo → Uscite) rimane il ripiego per una pagina aperta direttamente. Il nome
+accanto alla freccia descrive la destinazione reale, anche attraversando sezioni.
+La direzione visiva della transizione non determina più la cronologia.
+
+Le schede contestuali aperte da una pagina o da un’altra scheda aggiungono un
+passo alla cronologia senza cambiare URL. Indietro/Escape risalgono di un passo;
+la X chiude l’intero percorso delle schede e torna alla pagina di partenza.
+Aprire un luogo chiude la scheda; tornare dal luogo riattiva il suo DOM originale,
+con dettagli aperti, selettori e scroll conservati. Rientrando nella nota il focus
+torna al collegamento di origine, distinguendo eventuali link con lo stesso URL.
+«Apri come pagina» crea una destinazione esplicita: Indietro torna alla scheda.
+
+Il registro `js/navigation-context.js` tiene DOM e titoli soltanto in memoria;
+`history.state` contiene riferimenti casuali di sessione, senza note o dati di
+profilo. Si conservano i DOM delle 16 visite contestuali più recenti; più indietro
+la scheda viene ricostruita dai renderer correnti, senza garanzia dei controlli
+precedenti. Reload e cambio account non ripristinano questi contenuti privati.
+Moduli di annotazione, glossario e visori continuano a usare il coordinatore
+modale: conservano il proprio ritorno interno, ma non diventano tutti nuove
+voci della cronologia browser. Una scheda aperta da una modale generica resta
+nel suo percorso interno. Un solo dialog modale rimane visibile.
+
+Verifiche browser dedicate: nota/scheda/Valle di Malito a 320 e 390 px, Indietro
+app e browser, Avanti, identità del DOM, accordion e posizione, focus, schede
+concatenate, X, link diretto e ricostruzione dopo l’evizione del DOM. Restano da
+verificare sul dispositivo fisico i gesti di navigazione di Safari.
+
+
+### Quote quando manca il profilo (decisione del 18/10)
+
+La prima tab del tratto si chiama «Profilo» soltanto quando il renderer può
+mostrare un profilo continuo. Per segmenti separati o campioni insufficienti
+diventa «Quote»: quota minima e massima dei campioni validi del tratto locale,
+con una breve spiegazione del limite. Nessuna linea unisce segmenti separati,
+nessun dislivello viene dedotto dall’intervallo di quote. Senza campioni resta
+un messaggio compatto. La tab «Tracciato» e gli imbocchi rimangono disponibili.
+Il riepilogo Quote ha altezza naturale, anche nelle anteprime; il grafico e il
+tracciato conservano il proprio spazio. Selezione e tastiera restano condivise
+fra le viste dello stesso tratto.
+
+L’auto delle indicazioni stradali e degli imbocchi usa un unico glyph frontale
+in `js/ui-icons.js`, con parabrezza, fari e ruote riconoscibili a 18 px. È
+decorativo, eredita il colore e conserva testo, destinazione e area del comando.
+
+
+Nella sezione «Taccuino e mappa» della zona compare una sola CTA per annotare,
+con la penna d’oca. Un testo breve spiega specie cercate, ritrovamenti e ricerche
+a vuoto (oppure fasi della pianta), luogo e giorno. «Apri la mappa» rimane
+un’azione distinta. Rimosso «Salva condizioni», che richiedeva una previsione
+completa e aggiornata: non si promette una cattura automatica delle previsioni
+attraverso il comando di annotazione. Le condizioni già salvate nei taccuini
+restano leggibili. Il percorso esistente di annotazione non viene modificato.
+
+L’avviso iniziale presenta Fronda come esperimento personale, usato esclusivamente per provare e migliorare il prototipo. Cookie policy e privacy si consultano nello stesso pannello; un solo pulsante conferma la lettura. Prima della conferma l’interfaccia resta inerte, anche cambiando hash o chiudendo il dialog. Versione, impronta e data vengono conservate sul dispositivo e, con un profilo, registrate sul server; le vecchie date sconosciute non vengono inventate. Il tutorial di installazione è successivo e facoltativo; la sua chiusura non revoca la conferma. Nella PWA si riusa la ricevuta solo se disponibile. Dettagli, limiti e migrazione in [accettazione-condizioni.md](accettazione-condizioni.md).

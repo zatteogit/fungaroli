@@ -18,6 +18,7 @@ for(const width of [320,390,768,1280])for(const theme of ['light','dark'])test(`
  await p.locator('#map-filters [data-days]').click();await expect(p.locator('#map-days [data-day-offset]')).toHaveCount(8);
  await expect(p.locator('#map-days .pc,#map-days .d-weather')).toHaveCount(0);
  await p.locator('#map-days [data-day-offset="1"]').click();await expect(p.locator('#map-days')).toBeHidden();await expect(p.locator('#map-filters [data-days]')).toContainText('Domani');
+ await p.locator('#map-filters [data-days]').click();await p.locator('#map-days [data-day-offset="1"]').click();await expect(p.locator('#map-days')).toBeHidden();await expect(p.locator('#map-filters [data-days]')).toHaveAttribute('aria-expanded','false');
  await p.locator('#map-results > summary').click();const first=p.locator('[data-map-zone]').first(),name=await first.locator('.map-result-name').innerText();await first.click();
  await expect(p.locator('#map-sheet')).toBeVisible();await expect(p.locator('#map-sheet .sheet-title')).toContainText(name);
  await expect(p.locator('#map-results')).toBeHidden();await p.locator('#map-sheet .sheet-close').click();await expect(p.locator('#map-results')).toBeVisible();
@@ -34,7 +35,7 @@ test('preferenze leggibili nell’elenco, senza cambiare indice né posizione de
  const before=await read(),camera=await p.evaluate(()=>auditMap.getCenter());
  await p.locator('#map-filters [data-more]').click();await p.locator('#full-filters [data-pref="distancePenalty"]').click();await p.locator('#full-filters [data-close]').last().click();
  await expect.poll(read).not.toEqual(before);const after=await read();expect(new Map(after.map(r=>[r.id,r.index]))).toEqual(new Map(before.map(r=>[r.id,r.index])));expect(await p.evaluate(()=>auditMap.getCenter())).toEqual(camera);
- await p.locator('#map-results > summary').click();await expect(p.locator('[data-map-order]')).toContainText('vicino a casa');
+ await p.locator('#map-results > summary').click();await expect(p.locator('[data-map-order]')).toContainText('vicino a me');
  expect(errors).toEqual([]);await c.close();
 });
 test('difficoltà e lunghezza restringono le zone anche senza interesse Sentieri',async({browser})=>{
@@ -58,4 +59,22 @@ for(const theme of ['light','dark'])test(`contrasto e stati interattivi della ma
  test.setTimeout(120000);const {c,p}=await start(browser,390,theme);await p.locator('#map-results > summary').click();
  for(const state of ['default','hover','focus']){const button=p.locator('[data-map-zone]').first();if(state==='hover')await button.hover();if(state==='focus')await button.focus();const records=await auditState(p,{root:'#map-results'});expect(records.filter(r=>!r.decorative&&!r.disabled&&r.ratio<r.threshold).map(r=>({text:r.text,ratio:r.ratio}))).toEqual([]);}
  const records=await auditState(p,{root:'.map-top'});expect(records.filter(r=>!r.decorative&&!r.disabled&&r.ratio<r.threshold)).toEqual([]);await c.close();
+});
+
+for(const theme of ['light','dark'])for(const inset of [0,54])test(`barra mappa opaca e safe area protetta: ${theme}, inset ${inset}px`,async({browser})=>{
+ const {c,p,errors}=await start(browser,390,theme);
+ const session=await c.newCDPSession(p);await session.send('Emulation.setSafeAreaInsetsOverride',{insets:{top:inset,left:0,right:0,bottom:34}});
+ const toolbar=p.locator('.map-top');await expect(toolbar).toHaveCSS('backdrop-filter','none');
+ const state=await toolbar.evaluate(el=>{
+  const style=getComputedStyle(el),shield=getComputedStyle(document.body,'::before'),r=el.getBoundingClientRect();
+  const canvas=document.createElement('canvas'),ctx=canvas.getContext('2d');ctx.fillStyle=style.backgroundColor;ctx.fillRect(0,0,1,1);
+  return {filter:style.getPropertyValue('-webkit-backdrop-filter')||style.backdropFilter,alpha:ctx.getImageData(0,0,1,1).data[3],top:r.top,shieldHeight:parseFloat(shield.height),shieldPosition:shield.position,shieldPointer:shield.pointerEvents};
+ });
+ expect(state.filter).toBe('none');expect(state.alpha).toBe(255);expect(state.shieldHeight).toBe(inset);expect(state.shieldPosition).toBe('fixed');expect(state.shieldPointer).toBe('none');expect(state.top).toBeGreaterThanOrEqual(inset);
+ for(const button of await toolbar.locator('#map-filters > button').all()){
+  expect(await button.evaluate(el=>{const r=el.getBoundingClientRect();return el.contains(document.elementFromPoint(r.left+r.width/2,r.top+r.height/2));})).toBe(true);
+ }
+ await toolbar.locator('[data-days]').click();await expect(toolbar).toHaveClass(/days-open/);await expect(toolbar).toHaveCSS('backdrop-filter','none');
+ await toolbar.locator('[data-days]').click();await expect(toolbar).not.toHaveClass(/days-open/);
+ await p.screenshot({path:`/tmp/fronda-map-safe-${theme}-${inset}.png`});expect(errors).toEqual([]);await c.close();
 });

@@ -4,21 +4,21 @@
 // - meteo Open-Meteo: gestito dall'app con data di acquisizione e limite d'età
 // - mappe: dalla cache se gia' viste, con un limite di tessere
 // - diario (/api/): mai in cache
-const SHELL = 'fungaroli-shell-v175';
+const SHELL = 'fungaroli-shell-v212';
 const RUNTIME = 'fungaroli-runtime-v1';
 const TILES = 'fungaroli-tiles-v1';
 const MAX_TILES = 1500;
 const PRECACHE = [
   'js/outing-intent.js', 'js/planning-time.js', 'js/base-location.js', 'js/travel-model.js',
-  'js/modal-scroll.js', 'js/compare-picker.js', 'js/entity-sheet.js', 'js/entity-accordions.js', 'js/content-ui.js', 'js/ambilight.js', 'js/ui-icons.js', 'js/map-experience.js',
+  'js/legal-access.js', 'js/legal-notice.js', 'js/navigation-context.js', 'js/focus.js', 'js/modal-scroll.js', 'js/modal-flow.js', 'js/compare-picker.js', 'js/entity-sheet.js', 'js/entity-accordions.js', 'js/content-ui.js', 'js/ambilight.js', 'js/ui-icons.js', 'js/map-experience.js',
   'assets/ui/chevron-right.svg', 'assets/ui/alert-triangle.svg', 'assets/ui/map.svg', 'assets/ui/leaf.svg', 'assets/ui/notebook.svg',
   'js/search-select.js', 'js/species-search.js',
   'js/weather-request.js', 'js/weather-cache.js', 'js/weather-data.js', 'js/weather-dom.js',
   'js/images.js', 'js/plants.js','js/botanical-model.js','js/outing-discoveries.js','js/botanical-explanation.js','data/botanical-models.json', 'js/plant-catalog.js', 'js/catalog-search.js', 'js/guided-key.js', 'data/recognize-trees.json', 'data/recognize-plants.json', 'js/notebook-entry.js', 'data/plants.json', 'js/challenges.js', 'data/challenges.json',
-  'data/media-glossary.json', 'data/crop-points.json', 'data/trait-icons.json', 'data/tree-trait-icons.json', 'data/plant-trait-icons.json',
+  'data/media-glossary.json', 'data/crop-points.json', 'data/trait-icons.json', 'data/trait-callouts.json', 'data/tree-trait-icons.json', 'data/plant-trait-icons.json',
   './', 'index.html', 'manifest.webmanifest', 'css/tokens.css', 'css/style.css', 'css/fronda.css', 'css/species-pages.css', 'css/content-ui.css', 'css/map-experience.css', 'css/fonts.css',
   'js/learning.js','js/glossary-context.js', 'js/species-link.js', 'js/content-schema.js', 'js/walks.js', 'js/edible-catalog.js', 'js/species-autocomplete.js', 'js/app.js', 'js/indicators.js', 'js/index-tip.js', 'js/notebook-view.js', 'js/notebook-demo.js', 'css/notebook.css', 'js/notebook-composer.js', 'js/community-observation.js', 'js/community.js', 'js/community-signal.js', 'js/guides.js', 'js/vendor/webauthn.js', 'js/model.js', 'js/species.js', 'js/weather.js', 'js/journal.js', 'js/svgmap.js',
-  'js/species-context.js', 'js/speciescard.js', 'js/identify.js', 'js/fungus-stages.js', 'js/identify-model.js', 'js/trees.js', 'js/human.js', 'js/lightbox.js', 'js/install.js', 'js/outing.js', 'js/motion.js', 'js/rails.js', 'js/theme.js', 'js/refresh.js', 'js/names.js', 'js/zone-cover.js', 'js/forest-legend.js', 'js/search.js', 'js/science.js', 'js/viz.js', 'docs/metodo-scientifico.md',
+  'js/species-context.js', 'js/speciescard.js', 'js/identify.js', 'js/trait-callouts.js', 'js/fungus-stages.js', 'js/identify-model.js', 'js/trees.js', 'js/human.js', 'js/lightbox.js', 'js/install.js', 'js/outing.js', 'js/motion.js', 'js/rails.js', 'js/theme.js', 'js/refresh.js', 'js/names.js', 'js/zone-cover.js', 'js/forest-legend.js', 'js/search.js', 'js/science.js', 'js/viz.js', 'docs/metodo-scientifico.md',
   'data/glossary.json', 'data/guides.json', 'data/ui-copy.json', 'data/edible-catalog.json', 'data/zones.json', 'data/habitat.json', 'data/access.json', 'data/trails.json', 'data/species-id.json', 'data/media.json',
   'data/infografiche.json', 'data/trees.json', 'data/species-traits.json', 'data/media-trees.json', 'data/media-zones.json', 'data/legal.json', 'data/preparation.json', 'data/trailheads.json',
   'assets/fronda-icon-192.png', 'assets/fronda-icon.svg', 'assets/map-thumb-topo.jpg', 'assets/map-thumb-osm.jpg', 'assets/map-thumb-forest.jpg',
