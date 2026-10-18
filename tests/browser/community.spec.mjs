@@ -190,6 +190,8 @@ test('un itinerario con lunghezza intera incoerente mostra «n.d.» e il titolo 
 });
 
 for(const width of [320,1280]) test(`tracciato e profilo nello stesso riquadro a ${width}px`,async({page})=>{
+  // La prova modifica il file locale al reload: mantiene la stessa fonte anche per gli avvisi.
+  await page.route('**/api/content/v1/snapshot',r=>r.fulfill({status:503,json:{error:'local trail fixture'}}));
   await page.setViewportSize({width,height:900});await page.emulateMedia({reducedMotion:'reduce'});
   const errors=await setup(page);await page.goto('/#/zona/tancia/0/sentiero/12313366');
   const focus=page.locator('#detail .walk-focus'),summary=focus.locator(':scope > summary');
@@ -243,7 +245,7 @@ for(const width of [320,1280]) test(`tracciato e profilo nello stesso riquadro a
 });
 
 test('Quando ha una sola testata, mantiene gli avvisi meteo e aggiunge solo dettagli',async({page})=>{
- await page.clock.setFixedTime(new Date(new Date().setUTCHours(5,0,0,0)));
+ await page.clock.setFixedTime(new Date(new Date().setUTCHours(0,0,0,0)));
  await page.setViewportSize({width:390,height:900});await page.emulateMedia({reducedMotion:'reduce'});
  const errors=await setup(page,{gust:46});await page.goto('/#/zona/tancia/0');
  const section=page.locator('#detail details[data-sec="quando"]'),summary=section.locator(':scope > summary');
@@ -273,7 +275,7 @@ test('riepiloghi essenziali negli accordion sul posto, senza voci duplicate o sa
 test('editoriale, filtri completi, passkey, isolamento e condivisione revocabile', async ({ browser, page }) => {
   const errors = await setup(page);
   await expect(page.locator('#community-intro')).toContainText('Ancora nessuna osservazione condivisa.');
-  await page.locator('html.title-in-bar #appbar-home-filters [data-more],html:not(.title-in-bar) #home-filter-action [data-more]').click();
+  await page.locator('#appbar-home-filters [data-more]:visible,#home-filter-action [data-more]:visible').first().click();
   await expect(page.locator('#full-filters [data-group]')).toHaveCount(11);
   // «Azzera» compare solo quando qualcosa è cambiato e riporta ai valori di partenza
   await expect(page.locator('#full-filters [data-reset]')).toHaveCount(0);
@@ -413,7 +415,7 @@ test('i campi del diario importato vengono visualizzati come testo', async ({ pa
 test('autocomplete dei commestibili, selezione individuale, stagione e persistenza', async ({page})=>{
   await page.setViewportSize({width:390,height:844}); const errors=await setup(page);
   const baseline=await page.locator('#hero .pc').first().textContent();
-  await page.locator('html.title-in-bar #appbar-home-filters [data-more],html:not(.title-in-bar) #home-filter-action [data-more]').click();
+  await page.locator('#appbar-home-filters [data-more]:visible,#home-filter-action [data-more]:visible').first().click();
   const input=page.locator('#species-filter-search'), options=page.locator('#species-filter-options');
   await input.fill('phalloides'); await expect(options.getByRole('option')).toHaveCount(0);
   await input.fill('agrocybe aegerita'); await expect(options.getByRole('option')).toHaveCount(1);
@@ -436,14 +438,14 @@ test('autocomplete dei commestibili, selezione individuale, stagione e persisten
   await page.locator('#sp-cards').getByRole('link',{name:'Pioppino',exact:true}).click();
   await expect(page.locator('#edible-detail')).toContainText('Pioppino');
   await expect(page.locator('#edible-detail')).toContainText('Indice non ancora disponibile');
-  await page.goto('/'); await page.locator('html.title-in-bar #appbar-home-filters [data-more],html:not(.title-in-bar) #home-filter-action [data-more]').click();
+  await page.goto('/'); await page.locator('#appbar-home-filters [data-more]:visible,#home-filter-action [data-more]:visible').first().click();
   await input.fill('Boletus pinophilus'); await input.press('Enter');
   const pref=await page.evaluate(()=>JSON.parse(localStorage.getItem('fungaroli:prefs:v2')));
   expect(pref.speciesIds).toContain('pinophilus'); expect(pref.speciesIds).not.toContain('edulis');
   await page.locator('#full-filters [data-close]').first().click();
   await expect(page.locator('#hero')).toContainText('Porcino rosso');
   await page.goto('/'); await expect(page.locator('#followed-species')).toHaveCount(0);
-  await page.locator('html.title-in-bar #appbar-home-filters [data-more],html:not(.title-in-bar) #home-filter-action [data-more]').click();
+  await page.locator('#appbar-home-filters [data-more]:visible,#home-filter-action [data-more]:visible').first().click();
   await expect(page.locator('#full-filters [data-remove-species]')).toHaveCount(3);
   await expect(page.locator('#full-filters [data-remove-species] .season-badge')).toHaveCount(3);
   await page.locator('#full-filters [data-all]').click();

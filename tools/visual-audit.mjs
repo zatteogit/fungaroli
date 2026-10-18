@@ -278,7 +278,7 @@ export const VIEWS = [
     }, root: 'dialog.community-dialog[open]' },
   { id: 'info', path: '/#/info', wait: '#info-h', act: openAllSections },
   { id: 'ricerca', path: '/#/glossario', wait: '#glossary .glossary-alphabet', act: async page => { await page.keyboard.press('/'); await page.locator('.search-dlg input').fill('porcino'); }, root: '.search-dlg[open]' },
-  { id: 'filtri-home', path: '/', wait: '#hero .cover-link', act: async page => { await page.locator('html.title-in-bar #appbar-home-filters [data-more],html:not(.title-in-bar) #home-filter-action [data-more]').click(); }, root: '#full-filters[open]' },
+  { id: 'filtri-home', path: '/', wait: '#hero .cover-link', act: async page => { await page.locator('#appbar-home-filters [data-more]:visible,#home-filter-action [data-more]:visible').first().click(); }, root: '#full-filters[open]' },
   { id: 'filtri-caratteri', path: '/#/riconosci', wait: '#identify [data-mode]', act: async page => { await page.locator('#identify [data-mode="all"]').click(); await page.locator('#identify [data-idf-open]').click(); }, root: '#identify-filters[open]' },
   { id: 'osservazione', path: '/', wait: '#hero .cover-link', act: async page => { await page.locator('#community-intro [data-report]').click(); await page.locator('.report-dialog[open]').waitFor(); }, root: '.report-dialog[open]' },
   { id: 'appunto', path: '/#/diario', wait: '#journal-h', act: async page => { await page.locator('[data-new-note]').first().click(); await page.locator('.notebook-dialog[open]').waitFor(); }, root: '.notebook-dialog[open]' },

@@ -11,7 +11,7 @@ for(const width of [390,1280]) test(`hero comune e filtro piante persistente a $
   .filter(e=>['hero','others-h','ranking','during-walk','season-h','season'].includes(e.id)).map(e=>e.id));
  const order=await sectionOrder();
  const structure=await page.locator('#hero .cover').evaluate(e=>[...e.children].filter(c=>!c.classList.contains('outdoor-backdrop')).map(c=>c.className));
- await page.locator('html.title-in-bar #appbar-home-filters [data-more],html:not(.title-in-bar) #home-filter-action [data-more]').click();await page.locator('#full-filters [data-intent="piante"]').click();await page.locator('#full-filters [data-intent="funghi"]').click();
+ await page.locator('#appbar-home-filters [data-more]:visible,#home-filter-action [data-more]:visible').first().click();await page.locator('#full-filters [data-intent="piante"]').click();await page.locator('#full-filters [data-intent="funghi"]').click();
  await page.locator('#full-filters [data-close]').first().click();
  await expect(page.locator('#hero .cover-sp')).toContainText('Da osservare');await expect(page.locator('#hero .cover-sp')).toContainText('Periodo indicativo:');
  expect(await page.locator('#hero .cover').evaluate(e=>[...e.children].filter(c=>!c.classList.contains('outdoor-backdrop')).map(c=>c.className))).toEqual(structure);
@@ -24,7 +24,7 @@ for(const width of [390,1280]) test(`hero comune e filtro piante persistente a $
  await page.locator('#season').screenshot({path:`/tmp/fronda-plant-cards-${width}.png`});
  await page.locator('#hero .cover').screenshot({path:`/tmp/fronda-home-plants-${width}.png`});
  await page.reload();await expect(page.locator('#hero .cover-sp')).toContainText('Da osservare');
- await page.locator('html.title-in-bar #appbar-home-filters [data-more],html:not(.title-in-bar) #home-filter-action [data-more]').click();await expect(page.locator('#full-filters [data-intent="piante"]')).toHaveAttribute('aria-pressed','true');
+ await page.locator('#appbar-home-filters [data-more]:visible,#home-filter-action [data-more]:visible').first().click();await expect(page.locator('#full-filters [data-intent="piante"]')).toHaveAttribute('aria-pressed','true');
  await page.locator('#full-filters [data-intent="funghi"]').click();await page.locator('#full-filters [data-intent="piante"]').click();await page.locator('#full-filters [data-close]').first().click();
  await expect(page.locator('#hero .cover-sp')).toContainText('Da conoscere');expect(await sectionOrder()).toEqual(order);expect(errors).toEqual([]);await context.close();
 });

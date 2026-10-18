@@ -34,7 +34,7 @@ for(const width of [320,768,1280])test(`confronto sticky: riferimento completo e
  const context=await browser.newContext({viewport:{width,height:900},reducedMotion:'reduce',serviceWorkers:'block'});
  const page=await preparePage(context);await page.goto('/#/riconosci/confronta/edulis/tylopilus-felleus');const bar=page.locator('.cmp-pair-nav'),content=bar.locator('.cmp-nav-content'),master=bar.locator('[data-change-master]');
  await expect(master).toHaveText('Porcino');await expect(bar.locator('.cmp-nav-vs')).toHaveText('vs');
- await page.evaluate(()=>scrollTo(0,900));await expect(bar).toHaveClass(/is-stuck/);
+ await page.locator('.cmp-slide:not([inert])').evaluate(slide=>{const head=slide.querySelector('.cmp-panel:not([hidden]) .cmp-column-head')||slide.querySelector('.cmp-kind-tabs');scrollTo(0,head.getBoundingClientRect().bottom+scrollY-document.querySelector('.appbar').offsetHeight+24);});await expect(bar).toHaveClass(/is-stuck/);
  await expect.poll(()=>content.evaluate(e=>Math.abs(e.getBoundingClientRect().top-parseFloat(getComputedStyle(e).top)))).toBeLessThan(2);
  expect(await master.evaluate(e=>e.scrollWidth<=e.clientWidth+1)).toBe(true);await expect(master).toBeInViewport();
  const reference=await master.innerText();await page.locator('[data-cmp-step="1"]').click();await expect(master).toHaveText(reference,{useInnerText:true});expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);await context.close();
