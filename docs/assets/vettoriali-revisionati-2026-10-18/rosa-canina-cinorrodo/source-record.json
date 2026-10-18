@@ -1,0 +1,91 @@
+{
+  "id": "rosa-canina-cinorrodo",
+  "name": "Rosa canina · cinorrodo",
+  "species": "rosa-canina",
+  "field": "fruit_type",
+  "value": "falso_frutto",
+  "source": {
+    "master": "master.png",
+    "master_sha256": "15bf4ba1f5abe321ccc2cfc1cd758ba590df36c4215836f9bd7c925b93158899",
+    "crop_bbox": [
+      231,
+      72,
+      798,
+      1470
+    ],
+    "crop_resized_size": [
+      260,
+      640
+    ],
+    "padding": 8,
+    "crop_sha256": "c3aa8cbe07527d63213713054a1d170c28636494e691c06ff3c5af2a2062ff74",
+    "original_path": "/workspace/fronda-plant-corrections/incoming/correzioni-piante-2026-10-18/originali/rosa-canina-cinorrodo.png"
+  },
+  "raster_review": {
+    "reviewer": "illustration_corrections",
+    "scope": "independent editorial species-specific raster review; original source and 64px thumbnails; not botanical certification",
+    "record": "raster-review.md",
+    "master_sha256": "15bf4ba1f5abe321ccc2cfc1cd758ba590df36c4215836f9bd7c925b93158899",
+    "status": "passed-independent-species-raster-review",
+    "record_sha256": "b80d7d851c16ddb7768e92d5fe96ee142d2ef0d4a60dcb8d0fdadeb3ce420948"
+  },
+  "provenance": {
+    "species": "rosa-canina",
+    "latin": "Rosa canina L.",
+    "key": "fruit_type",
+    "value": "falso_frutto",
+    "asset": {
+      "file": "incoming/correzioni-piante-2026-10-18/approvati/rosa-canina-cinorrodo.webp",
+      "source": "incoming/correzioni-piante-2026-10-18/originali/rosa-canina-cinorrodo.png",
+      "sourceSha256": "15bf4ba1f5abe321ccc2cfc1cd758ba590df36c4215836f9bd7c925b93158899",
+      "sha256": "bf8271ecee2a54eac15c2280d5ae426b1a5e576a8821036e5a1be4a3d9a8d1ee",
+      "bbox": [
+        41,
+        8,
+        87,
+        120
+      ],
+      "size": [
+        128,
+        128
+      ],
+      "alphaThreshold": 16,
+      "reviewedAtSizes": [
+        128,
+        64
+      ]
+    },
+    "source": {
+      "title": "Università di Trieste · Portale della Flora di Roma",
+      "url": "https://dryades.units.it/Roma/index.php?id=1972&procedure=taxon_page"
+    },
+    "photoReference": {
+      "file": "assets/plants/rosa-canina-1.webp",
+      "thumb": "assets/plants/rosa-canina-1-t.webp",
+      "alt": "Rosa canina: fotografia della specie",
+      "caption": "Fotografia originale della specie; i caratteri vanno confrontati insieme.",
+      "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "page": "https://dryades.units.it/Roma/index.php?id=1972&procedure=taxon_page",
+      "sourceImage": "https://dryades.units.it/dryades/plants/foto/TSB30255jpg1669722706.jpg",
+      "sourceCaption": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Andrea Moro · Comune di San Dorligo della Valle, nei pressi della chiesetta di San Lorenzo, TS, Friuli Venezia Giulia, Italia · 27/09/2005 · Distributed under CC BY-SA 4.0 license."
+    },
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "model": "image_gen",
+    "method": "raster prima del vettore",
+    "status": "revisione editoriale visiva limitata, non certificazione",
+    "review": "REVISIONE.md",
+    "vectorStatus": "non avviato"
+  },
+  "trace_sha256": "8d4c3396d5e0d42e7bd2df76e55cc1d675eeaf319e9d9e541fba7dd390297d13",
+  "trace_settings": {
+    "palette_colors": "source RGB; no prequantization",
+    "alpha_threshold": 220,
+    "vtracer": "0.6.15",
+    "filter_speckle": 4,
+    "color_precision": 6,
+    "layer_difference": 12
+  }
+}

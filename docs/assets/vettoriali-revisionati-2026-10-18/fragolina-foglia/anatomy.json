@@ -1,0 +1,42 @@
+{
+  "canvas": [
+    655,
+    656
+  ],
+  "description": "Foglia composta trifogliata di fragolina: tre foglioline dentate su picciolo comune; nervature schematiche, nessuna scala o pelosità dedotta.",
+  "parts": [
+    {
+      "id": "petiole",
+      "label": "Picciolo e raccordi",
+      "meaning": "Picciolo comune e brevi raccordi visibili alle tre foglioline.",
+      "region": "M305 350H347V422L371 432V459H366V658H289V459L280 448V425L306 433Z"
+    },
+    {
+      "id": "leaflet-terminal",
+      "label": "Fogliolina terminale",
+      "region": "M-2-2H657V280H430L405 315L373 344L343 363H310L280 345L249 320L225 283L-2 280Z",
+      "meaning": "Una delle tre foglioline; lamina, dentatura e nervature visibili nel raster."
+    },
+    {
+      "id": "leaflet-left",
+      "label": "Fogliolina sinistra",
+      "region": "M-2-2H328V658H-2Z",
+      "meaning": "Fogliolina laterale sinistra, con dentatura e venature già disegnate."
+    },
+    {
+      "id": "leaflet-right",
+      "label": "Fogliolina destra",
+      "meaning": "Fogliolina laterale destra, senza ricostruzione di superfici nascoste.",
+      "remainder": true
+    }
+  ],
+  "status": "manually-annotated-from-reviewed-raster",
+  "raster_review_sha256": "b80d7d851c16ddb7768e92d5fe96ee142d2ef0d4a60dcb8d0fdadeb3ce420948",
+  "annotation_method": "Manual anatomical region drawing on exact cropped raster; boolean intersections of visible paints, no automatic taxonomic interpretation.",
+  "limitations": [
+    "Part visibility is inspection only, not a new biological specimen.",
+    "Material tint is a technical illustration demo, not an approved biological color variant.",
+    "No hidden tissue is reconstructed; moving a part can expose a transparent gap."
+  ],
+  "trace_sha256": "d86aee35eb2953e88f6446de9968d9b56bf93643700edb405b4686c2c6a2ab13"
+}
