@@ -1,0 +1,35 @@
+{
+  "status": "technical-checks-passed-awaiting-independent-svg-review",
+  "parts": [
+    "petiole",
+    "leaflet-terminal",
+    "leaflet-left",
+    "leaflet-right"
+  ],
+  "path_count": 43,
+  "bitmap_count": 0,
+  "clip_count": 0,
+  "renders": [
+    {
+      "width": 64,
+      "silhouette_iou": 0.947437,
+      "raster_rgb_mae_255": 4.479378,
+      "trace_rgb_mae_255": 0.116218
+    },
+    {
+      "width": 128,
+      "silhouette_iou": 0.971229,
+      "raster_rgb_mae_255": 3.198549,
+      "trace_rgb_mae_255": 0.075885
+    },
+    {
+      "width": 656,
+      "silhouette_iou": 0.993437,
+      "raster_rgb_mae_255": 2.425682,
+      "trace_rgb_mae_255": 0.019692
+    }
+  ],
+  "meaning": "Fidelity/edit checks do not establish botanical correctness. Prior species-specific raster review is recorded; SVG needs coordinator review.",
+  "all_part_tints_confined": true,
+  "svg_sha256": "fb7aaac7d0a8ab05d994c74c9f5c096111725fd09f079f304670e68731aa5c78"
+}

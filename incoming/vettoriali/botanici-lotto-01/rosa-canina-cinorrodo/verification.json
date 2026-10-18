@@ -1,0 +1,34 @@
+{
+  "status": "technical-checks-passed-awaiting-independent-svg-review",
+  "parts": [
+    "calyx-remnant",
+    "hip-body",
+    "peduncle"
+  ],
+  "path_count": 77,
+  "bitmap_count": 0,
+  "clip_count": 0,
+  "renders": [
+    {
+      "width": 64,
+      "silhouette_iou": 0.9833,
+      "raster_rgb_mae_255": 3.457739,
+      "trace_rgb_mae_255": 0.078697
+    },
+    {
+      "width": 128,
+      "silhouette_iou": 0.988972,
+      "raster_rgb_mae_255": 2.613196,
+      "trace_rgb_mae_255": 0.041757
+    },
+    {
+      "width": 656,
+      "silhouette_iou": 0.995067,
+      "raster_rgb_mae_255": 2.319482,
+      "trace_rgb_mae_255": 0.009615
+    }
+  ],
+  "meaning": "Fidelity/edit checks do not establish botanical correctness. Prior species-specific raster review is recorded; SVG needs coordinator review.",
+  "all_part_tints_confined": true,
+  "svg_sha256": "aa62cfb5d8b004fa113bfd98fccc0c4edee077fb8d2100972240cc6793cd9dac"
+}

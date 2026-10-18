@@ -1,0 +1,35 @@
+{
+  "status": "technical-checks-passed-awaiting-independent-svg-review",
+  "parts": [
+    "achenes",
+    "peduncle",
+    "calyx",
+    "receptacle"
+  ],
+  "path_count": 885,
+  "bitmap_count": 0,
+  "clip_count": 0,
+  "renders": [
+    {
+      "width": 64,
+      "silhouette_iou": 0.977241,
+      "raster_rgb_mae_255": 5.680066,
+      "trace_rgb_mae_255": 1.244625
+    },
+    {
+      "width": 128,
+      "silhouette_iou": 0.990196,
+      "raster_rgb_mae_255": 4.375742,
+      "trace_rgb_mae_255": 0.653863
+    },
+    {
+      "width": 656,
+      "silhouette_iou": 0.993823,
+      "raster_rgb_mae_255": 3.812844,
+      "trace_rgb_mae_255": 0.142105
+    }
+  ],
+  "meaning": "Fidelity/edit checks do not establish botanical correctness. Prior species-specific raster review is recorded; SVG needs coordinator review.",
+  "all_part_tints_confined": true,
+  "svg_sha256": "6648d8aff140f51b9edbd314c0a3d6387537eaffe1a66ee977406639d73ab08a"
+}

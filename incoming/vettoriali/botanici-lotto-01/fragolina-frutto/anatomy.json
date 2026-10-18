@@ -1,0 +1,89 @@
+{
+  "canvas": [
+    331,
+    656
+  ],
+  "description": "Falso frutto intero schematico di fragolina. Acheni sulla superficie esterna del ricettacolo rosso, calice e peduncolo verdi. Nessuna sezione o semi interni.",
+  "parts": [
+    {
+      "id": "achenes",
+      "label": "Acheni esterni raffigurati",
+      "region_svg": "achenes-region.svg",
+      "meaning": "Superfici e contorni visibili dei piccoli frutti esterni; il conteggio dei segni non è un dato biologico quantitativo.",
+      "region_sha256": "c1fe937ab7176545f30ab571c17a7fe886bd485ab8fada2f7a8b0648eb2e95cb"
+    },
+    {
+      "id": "peduncle",
+      "label": "Peduncolo",
+      "region": "M140-2H333V204L202 240L182 270L153 273L147 257L140 240Z",
+      "meaning": "Peduncolo verde curvo già raffigurato nel raster."
+    },
+    {
+      "id": "calyx",
+      "label": "Calice",
+      "region": "M-2-2H333V385L303 384L290 371L277 350L271 333L259 328L269 369L255 371L222 348L199 319L185 301L170 302L156 296L151 303L128 321L98 341L81 344L87 321L97 304L73 308L51 310L-2 311Z",
+      "meaning": "Parti verdi del calice osservabili, senza ricostruire il tessuto coperto.",
+      "region_plus_source_paths": [
+        3,
+        6,
+        7,
+        9,
+        10,
+        11,
+        14,
+        15,
+        16,
+        18,
+        19,
+        21,
+        40,
+        45,
+        46,
+        47,
+        50,
+        57,
+        59,
+        67,
+        100,
+        111,
+        185,
+        194,
+        231,
+        236,
+        242,
+        333,
+        334,
+        365,
+        379,
+        415,
+        428,
+        441,
+        464,
+        466,
+        485,
+        493,
+        494,
+        495,
+        496,
+        514,
+        515
+      ],
+      "source_path_selection_note": "All explicitly inspected green paints belong to the calyx/peduncle in this raster. Add their actual geometry to recover narrow green tips missed by the hand polygon; earlier peduncle region retains priority."
+    },
+    {
+      "id": "receptacle",
+      "label": "Ricettacolo esterno",
+      "remainder": true,
+      "meaning": "Superficie rossa del falso frutto e riflessi grafici. Le cavità lasciate dagli acheni nascosti sono di ispezione, non anatomia nuova."
+    }
+  ],
+  "status": "manually-annotated-from-reviewed-raster",
+  "raster_review_sha256": "b80d7d851c16ddb7768e92d5fe96ee142d2ef0d4a60dcb8d0fdadeb3ce420948",
+  "annotation_method": "Manual botanical regions and source-pixel detail boundaries; detail candidates checked on overlay, no automatic anatomy recognition.",
+  "limitations": [
+    "No hidden tissue reconstruction. Hiding parts may leave transparent gaps.",
+    "Tint changes are technical inspection only, not approved biological variants.",
+    "Illustrative detail marks are not quantitative organ counts."
+  ],
+  "trace_sha256": "ac84184695a13826a6e24681473cec802f5f8e01614f326efe32c7b0693765c9"
+}

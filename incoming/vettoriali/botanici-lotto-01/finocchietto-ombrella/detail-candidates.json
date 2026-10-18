@@ -1,0 +1,483 @@
+{
+  "method": "Source-color connected components within explicitly assigned raster; candidates require manual one-to-one review, not anatomy recognition.",
+  "items": [
+    {
+      "bbox": [
+        309,
+        14,
+        339,
+        46
+      ],
+      "pixels": 463
+    },
+    {
+      "bbox": [
+        331,
+        22,
+        362,
+        49
+      ],
+      "pixels": 425
+    },
+    {
+      "bbox": [
+        292,
+        23,
+        308,
+        39
+      ],
+      "pixels": 199
+    },
+    {
+      "bbox": [
+        262,
+        33,
+        279,
+        48
+      ],
+      "pixels": 206
+    },
+    {
+      "bbox": [
+        370,
+        33,
+        386,
+        48
+      ],
+      "pixels": 186
+    },
+    {
+      "bbox": [
+        283,
+        41,
+        300,
+        57
+      ],
+      "pixels": 219
+    },
+    {
+      "bbox": [
+        354,
+        42,
+        371,
+        58
+      ],
+      "pixels": 218
+    },
+    {
+      "bbox": [
+        386,
+        49,
+        402,
+        66
+      ],
+      "pixels": 223
+    },
+    {
+      "bbox": [
+        246,
+        51,
+        262,
+        66
+      ],
+      "pixels": 180
+    },
+    {
+      "bbox": [
+        263,
+        52,
+        279,
+        67
+      ],
+      "pixels": 190
+    },
+    {
+      "bbox": [
+        184,
+        66,
+        213,
+        94
+      ],
+      "pixels": 406
+    },
+    {
+      "bbox": [
+        162,
+        73,
+        190,
+        108
+      ],
+      "pixels": 570
+    },
+    {
+      "bbox": [
+        472,
+        75,
+        487,
+        90
+      ],
+      "pixels": 182
+    },
+    {
+      "bbox": [
+        415,
+        79,
+        439,
+        101
+      ],
+      "pixels": 331
+    },
+    {
+      "bbox": [
+        444,
+        79,
+        461,
+        96
+      ],
+      "pixels": 226
+    },
+    {
+      "bbox": [
+        143,
+        84,
+        159,
+        99
+      ],
+      "pixels": 189
+    },
+    {
+      "bbox": [
+        217,
+        84,
+        233,
+        99
+      ],
+      "pixels": 184
+    },
+    {
+      "bbox": [
+        498,
+        85,
+        514,
+        100
+      ],
+      "pixels": 181
+    },
+    {
+      "bbox": [
+        461,
+        89,
+        475,
+        104
+      ],
+      "pixels": 173
+    },
+    {
+      "bbox": [
+        480,
+        92,
+        497,
+        109
+      ],
+      "pixels": 226
+    },
+    {
+      "bbox": [
+        120,
+        93,
+        136,
+        108
+      ],
+      "pixels": 192
+    },
+    {
+      "bbox": [
+        137,
+        100,
+        152,
+        115
+      ],
+      "pixels": 180
+    },
+    {
+      "bbox": [
+        514,
+        100,
+        530,
+        115
+      ],
+      "pixels": 191
+    },
+    {
+      "bbox": [
+        499,
+        106,
+        513,
+        121
+      ],
+      "pixels": 176
+    },
+    {
+      "bbox": [
+        122,
+        111,
+        138,
+        126
+      ],
+      "pixels": 180
+    },
+    {
+      "bbox": [
+        103,
+        115,
+        120,
+        131
+      ],
+      "pixels": 220
+    },
+    {
+      "bbox": [
+        514,
+        119,
+        546,
+        135
+      ],
+      "pixels": 390
+    },
+    {
+      "bbox": [
+        548,
+        173,
+        563,
+        188
+      ],
+      "pixels": 177
+    },
+    {
+      "bbox": [
+        97,
+        175,
+        114,
+        205
+      ],
+      "pixels": 364
+    },
+    {
+      "bbox": [
+        73,
+        180,
+        89,
+        195
+      ],
+      "pixels": 183
+    },
+    {
+      "bbox": [
+        524,
+        180,
+        553,
+        204
+      ],
+      "pixels": 357
+    },
+    {
+      "bbox": [
+        117,
+        182,
+        132,
+        197
+      ],
+      "pixels": 183
+    },
+    {
+      "bbox": [
+        556,
+        187,
+        579,
+        210
+      ],
+      "pixels": 327
+    },
+    {
+      "bbox": [
+        508,
+        188,
+        523,
+        204
+      ],
+      "pixels": 197
+    },
+    {
+      "bbox": [
+        57,
+        191,
+        73,
+        205
+      ],
+      "pixels": 174
+    },
+    {
+      "bbox": [
+        585,
+        192,
+        601,
+        207
+      ],
+      "pixels": 179
+    },
+    {
+      "bbox": [
+        36,
+        197,
+        52,
+        213
+      ],
+      "pixels": 191
+    },
+    {
+      "bbox": [
+        78,
+        198,
+        95,
+        213
+      ],
+      "pixels": 202
+    },
+    {
+      "bbox": [
+        606,
+        202,
+        622,
+        218
+      ],
+      "pixels": 212
+    },
+    {
+      "bbox": [
+        573,
+        205,
+        589,
+        219
+      ],
+      "pixels": 178
+    },
+    {
+      "bbox": [
+        47,
+        207,
+        75,
+        231
+      ],
+      "pixels": 369
+    },
+    {
+      "bbox": [
+        590,
+        212,
+        606,
+        228
+      ],
+      "pixels": 195
+    },
+    {
+      "bbox": [
+        14,
+        215,
+        44,
+        245
+      ],
+      "pixels": 507
+    },
+    {
+      "bbox": [
+        626,
+        219,
+        642,
+        236
+      ],
+      "pixels": 208
+    },
+    {
+      "bbox": [
+        608,
+        224,
+        625,
+        241
+      ],
+      "pixels": 223
+    },
+    {
+      "bbox": [
+        33,
+        240,
+        49,
+        255
+      ],
+      "pixels": 195
+    },
+    {
+      "bbox": [
+        617,
+        243,
+        633,
+        260
+      ],
+      "pixels": 223
+    }
+  ],
+  "review_status": "manually-reviewed-candidate-overlay",
+  "accepted_items": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46
+  ],
+  "rejected_items": [],
+  "meaning": "Depicted surface details only; connected color patches do not establish a biological organ count.",
+  "region_file": "minute-flowers-region.svg",
+  "region_sha256": "76fa55c8f84ce8364cfa473b7d3572cf86ce7eb51d0f420eae5bb8f4fa71f83a",
+  "limitation": "Source-pixel boundary fitting within manually inspected local boxes; preserves visible details, not hidden anatomy. A few touching outline pixels at joins are illustrative boundaries."
+}

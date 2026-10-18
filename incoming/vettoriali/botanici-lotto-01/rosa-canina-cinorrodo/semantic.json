@@ -1,0 +1,85 @@
+{
+  "schema_version": "botanical-semantic-1",
+  "id": "rosa-canina-cinorrodo",
+  "species": "rosa-canina",
+  "field": "fruit_type",
+  "value": "falso_frutto",
+  "source": {
+    "master": "master.png",
+    "master_sha256": "15bf4ba1f5abe321ccc2cfc1cd758ba590df36c4215836f9bd7c925b93158899",
+    "crop_bbox": [
+      231,
+      72,
+      798,
+      1470
+    ],
+    "crop_resized_size": [
+      260,
+      640
+    ],
+    "padding": 8,
+    "crop_sha256": "c3aa8cbe07527d63213713054a1d170c28636494e691c06ff3c5af2a2062ff74",
+    "original_path": "/workspace/fronda-plant-corrections/incoming/correzioni-piante-2026-10-18/originali/rosa-canina-cinorrodo.png"
+  },
+  "raster_review": {
+    "reviewer": "illustration_corrections",
+    "scope": "independent editorial species-specific raster review; original source and 64px thumbnails; not botanical certification",
+    "record": "raster-review.md",
+    "master_sha256": "15bf4ba1f5abe321ccc2cfc1cd758ba590df36c4215836f9bd7c925b93158899",
+    "status": "passed-independent-species-raster-review",
+    "record_sha256": "b80d7d851c16ddb7768e92d5fe96ee142d2ef0d4a60dcb8d0fdadeb3ce420948"
+  },
+  "trace_sha256": "8d4c3396d5e0d42e7bd2df76e55cc1d675eeaf319e9d9e541fba7dd390297d13",
+  "anatomy": {
+    "canvas": [
+      276,
+      656
+    ],
+    "description": "Esterno intero schematico del cinorrodo di rosa canina. Residuo calicino secco all’apice, opposto al peduncolo verde. Nessuna sezione o anatomia interna.",
+    "parts": [
+      {
+        "id": "calyx-remnant",
+        "label": "Residuo calicino",
+        "region": "M-2-2H278V108L216 113L192 111L174 117L149 113L119 110L94 108H-2Z",
+        "meaning": "Residuo esterno secco visibile nel raster; non semi o peli interni."
+      },
+      {
+        "id": "hip-body",
+        "label": "Corpo esterno del cinorrodo",
+        "region": "M-2-2H278V464L181 471L155 469L130 468L105 462H-2Z",
+        "meaning": "Superficie esterna rossa/aranciata del falso frutto; riflessi mantenuti come dettaglio grafico."
+      },
+      {
+        "id": "peduncle",
+        "label": "Peduncolo e breve tratto di fusto",
+        "remainder": true,
+        "meaning": "Tratto verde inferiore visibile e cicatrice superficiale già presente nella sorgente; non carattere diagnostico aggiunto."
+      }
+    ],
+    "status": "manually-annotated-from-reviewed-raster",
+    "raster_review_sha256": "b80d7d851c16ddb7768e92d5fe96ee142d2ef0d4a60dcb8d0fdadeb3ce420948",
+    "annotation_method": "Manual anatomical region drawing on exact cropped raster; boolean intersections of visible paints, no automatic taxonomic interpretation.",
+    "limitations": [
+      "Part visibility is inspection only, not a new biological specimen.",
+      "Material tint is a technical illustration demo, not an approved biological color variant.",
+      "No hidden tissue is reconstructed; moving a part can expose a transparent gap."
+    ],
+    "trace_sha256": "8d4c3396d5e0d42e7bd2df76e55cc1d675eeaf319e9d9e541fba7dd390297d13"
+  },
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "author": "Fronda/Fungaroli",
+  "geometry": "Source paint stacks intersected into actual anatomical part geometries; no raster, masks, clips or complete-object copies. Graphic underpaint retained inside each part to preserve antialiasing, not reconstructed hidden tissue.",
+  "operations": [
+    "inspect-part",
+    "toggle-part",
+    "technical-material-tint-within-part"
+  ],
+  "unsupported": [
+    "anatomical morphing",
+    "new biological color variants",
+    "automatic anatomy recognition",
+    "quantitative organ counts from illustrative marks"
+  ],
+  "review_status": "svg-awaiting-coordinator-review"
+}

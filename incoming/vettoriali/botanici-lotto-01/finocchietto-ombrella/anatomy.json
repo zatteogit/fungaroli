@@ -1,0 +1,37 @@
+{
+  "canvas": [
+    656,
+    470
+  ],
+  "description": "Schema dell’ombrella composta gialla del finocchietto. Raggi principali e secondari visibili; segni gialli per i fiori minuti, senza rappresentare o contare i singoli organi fiorali.",
+  "parts": [
+    {
+      "id": "minute-flowers",
+      "label": "Gruppi dei fiori minuti",
+      "region_svg": "minute-flowers-region.svg",
+      "meaning": "Segni gialli dei fiori minuti con il contorno e i brevissimi raccordi grafici ai pedicelli, come visibili nel raster. Non si rappresentano né contano organi fiorali individuali.",
+      "region_sha256": "76fa55c8f84ce8364cfa473b7d3572cf86ce7eb51d0f420eae5bb8f4fa71f83a"
+    },
+    {
+      "id": "umbel-rays",
+      "label": "Raggi dell’ombrella composta",
+      "region": "M-2-2H658V306L353 310L311 309H-2Z",
+      "meaning": "Raggi principali e secondari visibili nel raster; geometria di ramificazione mantenuta."
+    },
+    {
+      "id": "peduncle",
+      "label": "Peduncolo",
+      "remainder": true,
+      "meaning": "Supporto inferiore dell’infiorescenza, senza foglie, frutti o portamento della pianta aggiunti."
+    }
+  ],
+  "status": "manually-annotated-from-reviewed-raster",
+  "raster_review_sha256": "b80d7d851c16ddb7768e92d5fe96ee142d2ef0d4a60dcb8d0fdadeb3ce420948",
+  "annotation_method": "Manual botanical regions and source-pixel detail boundaries; detail candidates checked on overlay, no automatic anatomy recognition.",
+  "limitations": [
+    "No hidden tissue reconstruction. Hiding parts may leave transparent gaps.",
+    "Tint changes are technical inspection only, not approved biological variants.",
+    "Illustrative detail marks are not quantitative organ counts."
+  ],
+  "trace_sha256": "05717e0f4276042b265a9ff7c42276621744ff5580716699453a8735945622f0"
+}
