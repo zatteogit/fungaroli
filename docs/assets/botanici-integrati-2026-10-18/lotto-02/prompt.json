@@ -1,0 +1,50 @@
+[
+  {
+    "id": "sambuco-infiorescenza",
+    "refs": [
+      "/workspace/fungaroli/assets/plants/sambuco-1.webp",
+      "/workspace/fungaroli/assets/plant-traits/flower_shape-ombrella.webp"
+    ],
+    "prompt": "Produce one isolated botanical icon of the actual ELDER Sambucus nigra inflorescence in the FIRST real photograph, not fennel. SECOND reference controls ONLY thick dark brown outline flat green/ivory Fronda icon style. Depict one broad dense, shallow flattened CORYMB of many TINY creamy-white FIVE-PETALLED flowers, carried on short green repeatedly branched pedicels from a short central green stalk. Branching is corymbose/repeated at different heights, not every long primary ray from a single umbel point. Many small white flowers make a flat broad irregular cloud at the top. Because final icon is64px, simplify the tiny fivepetal flowers into small offwhite scalloped florets, centers tiny pale yellow, do not enlarge them into daisies. Match dense broad white flower clusters photographed. No leaves, berry, whole tree, roots, contrasting pink petals, purple dots, labels, text, ground or shadows. No artificial exact count of total flowers, natural unequal branching. Flat colors, heavy brown outer contours, true transparent background, entire inflorescence centered with generous margins."
+  },
+  {
+    "id": "ebbio-foglia",
+    "refs": [
+      "/workspace/fungaroli/assets/plants/ebbio-3.webp",
+      "/workspace/fronda-plant-corrections/incoming/correzioni-piante-2026-10-18/originali/fragolina-foglia.png"
+    ],
+    "prompt": "Create one isolated botanical icon of the single COMPOUND LEAF of dwarf elder Sambucus ebulus from FIRST real photograph. SECOND reference is ONLY the established flat green thick darkbrown-outlined illustration style, NOT strawberry anatomy. One long green central rachis with numerous distinct NARROW LANCEOLATE serrated leaflets, long pointed tips. Show one terminal long leaflet and FOUR pairs of lateral long narrow leaflets, nine principal blades total as a schematic sample of the photographed numerous leaflets, not claim a fixed species leaflet count. Upper pairs incline upwards; lower pairs incline outwards; each leaflet separately attaches to rachis, no additional branchy stem. Follow the photographed long pointed blades, distinctly elongated compared to broad oval Sambucus nigra or strawberry leaflets. Margins finely serrated, simple central pale vein per leaflet, optional few lateral veins. Whole leaf centered, petiole ends below, no stipules or organ whose identity is uncertain, no flowers/fruits/roots/trunk/soil/text. True transparent background, flat greens and minimal shade, darkbrown outlines, readable at64pixels. Do not draw a trifoliate leaf, fern divided lobes, separate simple leaves on a branching woody shoot."
+  },
+  {
+    "id": "sambuco-portamento",
+    "refs": [
+      "/workspace/fungaroli/assets/plants/sambuco-3.webp",
+      "/workspace/fronda-plant-corrections/incoming/correzioni-piante-2026-10-18/originali/fragolina-foglia.png"
+    ],
+    "prompt": "Generate a small botanical habit icon of ELDER SHRUB / SMALL TREE Sambucus nigra, using FIRST real photograph for silhouette, trunk and flowering crown. SECOND image controls only flat green darkbrown-outlined botanical style. Show one short sturdy brown WOODY trunk with irregular branching under a broad uneven green crown, as observed in photo, several small creamy white flattened flower clusters spread across crown. At final64px this is a whole-plant silhouette: represent dense compound foliage by small green clustered lobed masses, DO NOT draw individual large simple leaves on branches or assert exact leaflet counts. Keep the unmistakable woody short trunk visible and branched crown, not a herbaceous green central stalk. No roots, bark microdetails, black berries, red berries, fruit, ground, photo background, other trees, skyline, labels, ruler or exact height. Entire aboveground shrub shown, isolated on true transparent background, flat green/brown/cream palette, thick darkbrown perimeter, minimal shading. The important documented character is WOODY habit. Natural irregular crown, not perfectly circular fruit tree."
+  },
+  {
+    "id": "ebbio-portamento",
+    "refs": [
+      "/workspace/fungaroli/assets/plants/ebbio-1.webp",
+      "/workspace/fungaroli/assets/plants/ebbio-3.webp"
+    ],
+    "prompt": "Produce a small botanical habit raster icon of DWARF ELDER Sambucus ebulus from FIRST actual species photograph, using SECOND photograph for long narrow serrated compound-leaf anatomy. Render in Fronda botanical icon style: darkbrown outlines, flat green fill, very limited shading, transparent background. Depict ONE erect green NONWOODY HERBACEOUS stem, as in photo1, with two or three levels of OPPOSITE compound leaves and small pale-green/cream terminal inflorescence as visibly observed. Compound leaves have numerous narrow pointed serrated leaflets on a common rachis, miniature and simplified at whole-plant scale; never large simple leaves attached singly. Keep stem slender green from base to apex; no brown trunk, no woody bark or spreading tree crown. Aboveground only, base is simple cut green stem without invented roots. No black mature fruits, no large flowers, no ruler, labels, ground, rock wall, other plants. Flower cluster is secondary; match observed pale bud/flower cluster without inventing detailed organ counts. Center full plant with generous margins. Must show herbaceous habit clearly at64pixels. Do not copy the stone wall background."
+  },
+  {
+    "id": "sambuco-portamento-r01",
+    "refs": [
+      "/workspace/generated_images/exec-5618391d-ed0e-4775-8dbe-050ba0308ece.png",
+      "/workspace/fungaroli/assets/plants/sambuco-3.webp"
+    ],
+    "prompt": "Correct FIRST candidate's BOTANICAL ERROR: its visible palmate maple-like five-lobed leaves are WRONG for Sambucus nigra. Real SECOND photo shows COMPOUND pinnate foliage. Keep short woody brown trunk and broad irregular flowering crown seen in actualphoto. Replace every large maple/palmate leaf silhouette with small clearly PINNATE COMPOUND LEAF SPRIGS: each green rachis carries two pairs of separate pointed oval serrated leaflets and one terminal leaflet as schematic examples, not fixed count. If full leaf detail too tiny, render overlapping rounded green crown masses WITHOUT explicit maple/palmate leaf lobes. Avoid any leaf shape that is one continuous palmate blade. Draw visible compound leaves around outer crown edge only, simplify inner crown to flat green masses; this allows64pixel reading. Keep several small creamy white flat flower clusters, brown woody branching trunk. Entire plant isolated true transparent background, thick darkbrown outline flat colors, no landscape, roots or text. Important: DO NOT DRAW MAPLE LEAVES, single divided palmate blades, star-lobed greenery. Native elder habit and pinnate leaf pattern, no fruit."
+  },
+  {
+    "id": "ebbio-portamento-r01",
+    "refs": [
+      "/workspace/generated_images/exec-4abc61fa-d072-4bd7-ad0c-368bcfdcce8d.png",
+      "/workspace/generated_images/exec-dab6408f-2b8b-427e-b61f-82dd7b982b53.png"
+    ],
+    "prompt": "Revise FIRST whole dwarf elder Sambucus ebulus icon for clarity and flat Fronda style. SECOND image is the correct anatomy/style of one narrow serrated PINNATE COMPOUND leaf; use miniature versions of it for foliage. Keep one straight slender GREEN nonwoody main stem. Draw EXACTLY TWO main levels of OPPOSITE compound leaves, one leaf on left and one on right at EACH level, four whole compound leaves total. Each whole compound leaf is a small short green rachis with several pairs of separate long narrow serrated pointed leaflets and one terminal leaflet. All leaflets distinct; the leaf's rachis joins mainstem through petiole at a node, not many single leaves attaching directly to mainstem. Remove confusing extra central leaves and foliage clutter. A tiny terminal creamy-white/green flower cluster remains small and secondary. Bold DARK BROWN outlines and flat clean green blades like SECOND reference; no photographic texture, fine hatching or muddy shading. No brown woody trunk, no roots, black fruits, ruler, labels or backdrop. Entire aboveground herb centered with generous margin on truly transparent background. The teaching point is erect herbaceous green stem versus woody elder shrub, with opposite compound leaf pairs. Clear at64px."
+  }
+]

@@ -1,0 +1,36 @@
+[
+  {
+    "master": "incoming/lotto-botanico-02-2026-10-18/originali/sambuco-infiorescenza-r00.png",
+    "masterHash": "8ae38cfec9f729ef0829aae4c32454db57fe73af8b67d92349d85ae4ecf79fb3",
+    "asset": "incoming/lotto-botanico-02-2026-10-18/approvati/sambuco-infiorescenza.webp",
+    "assetHash": "2be9e94af12e7c073bdb1e1cc5f34d56192d38538b37dae873d72e62b9eeb8c3",
+    "size": [
+      128,
+      128
+    ],
+    "alphaThreshold": 16,
+    "bbox": [
+      8,
+      14,
+      120,
+      113
+    ]
+  },
+  {
+    "master": "incoming/lotto-botanico-02-2026-10-18/originali/ebbio-foglia-r00.png",
+    "masterHash": "58373244cfc195c6a1c7a34c048509b7c8a04b71fec3d07bd1d74ac2fac1a420",
+    "asset": "incoming/lotto-botanico-02-2026-10-18/approvati/ebbio-foglia.webp",
+    "assetHash": "e72c0f69823c01a4709c82d8fe40ee5b7bf0c26da5d0d4de2d147a16b44f926c",
+    "size": [
+      128,
+      128
+    ],
+    "alphaThreshold": 16,
+    "bbox": [
+      15,
+      8,
+      112,
+      120
+    ]
+  }
+]

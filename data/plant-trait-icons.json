@@ -1,5 +1,5 @@
 {
- "note": "Schemi dei valori botanici generati con AI (image_gen) dai dati di recognize-plants.json. Le icone generiche sono esempi della categoria per la chiave guidata, non ritratti delle specie. Nelle schede forme dei fiori, tipi dei frutti e foglie composte richiedono una revisione registrata in species; i colori sono campioni cromatici. Fonti, riferimenti fotografici e limiti delle correzioni: docs/assets/fragolina-2026-10-18/README.md. Correzioni finocchietto e rosa canina: docs/assets/correzioni-botaniche-2026-10-18/README.md.",
+ "note": "Schemi dei valori botanici generati con AI (image_gen) dai dati di recognize-plants.json. Le icone generiche sono esempi della categoria per la chiave guidata, non ritratti delle specie. Nelle schede forme dei fiori, tipi dei frutti e foglie composte richiedono una revisione registrata in species; i colori sono campioni cromatici. Fonti, riferimenti fotografici e limiti delle correzioni: docs/assets/fragolina-2026-10-18/README.md. Correzioni finocchietto e rosa canina: docs/assets/correzioni-botaniche-2026-10-18/README.md. Raster specifici aggiuntivi e limiti: docs/ipotesi/integrazione-raster-botanici-2026-10-18.md.",
  "author": "Fronda/Fungaroli, rivista dal progetto",
  "license": "CC BY-SA 4.0",
  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.it",
@@ -151,6 +151,26 @@
      "source": "https://dryades.units.it/Roma/index.php?id=2073&procedure=taxon_page",
      "review": "Cinque petali bianco-crema e centro giallo coerenti con foto e testo della fragolina; schema di dettaglio, non ritratto integrale della pianta."
     }
+   },
+   "growth_form": {
+    "erba": {
+     "src": "assets/plant-traits/fragolina-growth_form-erba.webp",
+     "source": "https://dryades.units.it/Roma/index.php?id=2073&procedure=taxon_page",
+     "referencePhoto": "assets/plants/fragolina-3.webp",
+     "sha256": "fc70456703527e5c6d9759daa6bd19f3c4140dfbc07808c1180861577d611f5f",
+     "review": "docs/ipotesi/integrazione-raster-botanici-2026-10-18.md",
+     "scope": "Tre foglie trifogliate su piccioli convergenti alla corona basale; esempio della rosetta, non numero fisso di foglie. Nessuno stolone o apparato radicale rappresentato."
+    }
+   },
+   "leaf_arrangement": {
+    "rosetta_basale": {
+     "src": "assets/plant-traits/fragolina-growth_form-erba.webp",
+     "source": "https://dryades.units.it/Roma/index.php?id=2073&procedure=taxon_page",
+     "referencePhoto": "assets/plants/fragolina-3.webp",
+     "sha256": "fc70456703527e5c6d9759daa6bd19f3c4140dfbc07808c1180861577d611f5f",
+     "review": "docs/ipotesi/integrazione-raster-botanici-2026-10-18.md",
+     "scope": "Tre foglie trifogliate su piccioli convergenti alla corona basale; esempio della rosetta, non numero fisso di foglie. Nessuno stolone o apparato radicale rappresentato."
+    }
    }
   },
   "finocchietto": {
@@ -170,6 +190,63 @@
      "source": "https://dryades.units.it/Roma/index.php?id=1972&procedure=taxon_page",
      "referencePhoto": "assets/plants/rosa-canina-1.webp",
      "review": "docs/assets/correzioni-botaniche-2026-10-18/REVISIONE.md"
+    }
+   },
+   "leaf_type": {
+    "composta": {
+     "src": "assets/plant-traits/rosa-canina-leaf_type-composta.webp",
+     "source": "https://dryades.units.it/Roma/index.php?id=1972&procedure=taxon_page",
+     "referencePhoto": "assets/plants/rosa-canina-2.webp",
+     "sha256": "5bc837260e111bcf25b3d037fec0ee166fd44f7fc4846497915455a7c1dcb3df",
+     "review": "docs/ipotesi/integrazione-raster-botanici-2026-10-18.md",
+     "scope": "Foglia imparipennata a sette foglioline ovali dentate; esempio nell’intervallo5–7 documentato dalle due fonti istituzionali aggiuntive. Foto locale mostra margine/forma, non la foglia completa.",
+     "productionSources": [
+      "https://www.parcocastelliromani.it/s/content/92003020580/1658828918.182",
+      "https://www.sardegnaforeste.it/flora/rosa-canina"
+     ]
+    }
+   },
+   "flower_shape": {
+    "cinque_petali": {
+     "src": "assets/plant-traits/flower_shape-cinque_petali.webp",
+     "source": "https://dryades.units.it/Roma/index.php?id=1972&procedure=taxon_page",
+     "referencePhoto": "assets/plants/rosa-canina-2.webp",
+     "review": "docs/ipotesi/integrazione-raster-botanici-2026-10-18.md",
+     "scope": "Solo schema dei cinque petali chiari, valore documentato bianco; stami/colore rosa e ritratto completo non rappresentati."
+    }
+   }
+  },
+  "sambuco": {
+   "flower_shape": {
+    "ombrella": {
+     "src": "assets/plant-traits/sambuco-flower_shape-ombrella.webp",
+     "source": "https://dryades.units.it/Roma/index.php?id=5142&procedure=taxon_page",
+     "referencePhoto": "assets/plants/sambuco-1.webp",
+     "sha256": "2be9e94af12e7c073bdb1e1cc5f34d56192d38538b37dae873d72e62b9eeb8c3",
+     "review": "docs/ipotesi/integrazione-raster-botanici-2026-10-18.md",
+     "scope": "Corimbo visto frontalmente: ramificazioni a quote diverse e piccoli fiori chiari; non raggi tutti dal medesimo punto. Il conteggio dei petali è semplificato a64px."
+    }
+   }
+  },
+  "ebbio": {
+   "leaf_type": {
+    "composta": {
+     "src": "assets/plant-traits/ebbio-leaf_type-composta.webp",
+     "source": "https://dryades.units.it/Roma/index.php?id=5141&procedure=taxon_page",
+     "referencePhoto": "assets/plants/ebbio-3.webp",
+     "sha256": "e72c0f69823c01a4709c82d8fe40ee5b7bf0c26da5d0d4de2d147a16b44f926c",
+     "review": "docs/ipotesi/integrazione-raster-botanici-2026-10-18.md",
+     "scope": "Foglia imparipennata con foglioline strette dentate su rachide; nove foglioline come esempio, non numero invariabile. Dentatura semplificata a64px."
+    }
+   },
+   "growth_form": {
+    "erba": {
+     "src": "assets/plant-traits/ebbio-growth_form-erba.webp",
+     "source": "https://dryades.units.it/Roma/index.php?id=5141&procedure=taxon_page",
+     "referencePhoto": "assets/plants/ebbio-1.webp",
+     "sha256": "b2f9e1a82766f800ab307ac07638da53e02f2eee21dcec9288c41ef332b000b4",
+     "review": "docs/ipotesi/integrazione-raster-botanici-2026-10-18.md",
+     "scope": "Fusto centrale verde non legnoso, foglie composte contrapposte e infiorescenza chiara; esempio del portamento erbaceo. Nessun organo sotterraneo o frutto maturo dedotto."
     }
    }
   }
