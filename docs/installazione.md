@@ -30,3 +30,24 @@ A tutto schermo sul telefono (finestra su desktop) dopo l'avviso iniziale, a ogn
 
 ## Da ricontrollare a ogni nuova versione di iOS/Chrome
 Posizione del primo bottone (la freccia nell'invito), nomi delle voci di menu, default di "Apri come app web".
+
+
+## Barra di stato iOS e sfocatura dell’header (18 ottobre 2026)
+
+La PWA usa `apple-mobile-web-app-status-bar-style=default`. Il precedente
+`black-translucent` consentiva al contenuto di estendersi dietro la barra di stato:
+la testata opaca e l’assenza di `backdrop-filter` CSS non bastano a escludere
+un effetto applicato dal sistema sopra la pagina.
+
+La [documentazione Apple sui meta tag](https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html)
+distingue esplicitamente i due comportamenti: `default` colloca il contenuto sotto
+la barra di stato, `black-translucent` lo estende sotto di essa. Manteniamo i colori
+`theme-color` già gestiti dal tema e gli inset CSS forniti dal browser, senza
+aggiungere distanze fisse basate su un modello di iPhone.
+
+Verifica necessaria su dispositivo: aprire la versione aggiornata dall’icona Home,
+controllare la nitidezza della testata sia all’avvio sia dopo scroll e navigazione,
+in tema chiaro e scuro. Se la sessione installata conserva la configurazione vecchia,
+chiuderla completamente e riaprirla. Non rimuovere l’app o cancellare i dati locali
+per questa verifica. L’eliminazione del filtro nativo non è verificabile con Chromium
+né con la sola emulazione del viewport iPhone.
