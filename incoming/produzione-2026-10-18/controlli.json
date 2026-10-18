@@ -1272,5 +1272,250 @@
     },
     "state": "pronta da integrare",
     "review": "Inocybe convessi giallo/grigio/rosa, texture fibrosa e lamelle brune; gambi chiari senza anello/volva/reticolo aggiunto. Alpha e sei celle verificati."
+  },
+  {
+    "file": "incoming/icone/confronto-combinazioni-2026-10-18-22.png",
+    "sha256": "74b8777481dd4f98ee1bf2d1c88226a8ad1f728c3ab6fd68332e94cce2be0ec5",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "cells": {
+      "1": [
+        462,
+        70,
+        790,
+        408
+      ],
+      "0": [
+        66,
+        150,
+        402,
+        322
+      ],
+      "4": [
+        462,
+        474,
+        790,
+        814
+      ],
+      "3": [
+        62,
+        544,
+        400,
+        732
+      ],
+      "7": [
+        450,
+        896,
+        808,
+        1190
+      ],
+      "6": [
+        50,
+        956,
+        418,
+        1080
+      ]
+    },
+    "state": "pronta da integrare",
+    "review": "Inocybe violetto convesso con fibre senza anello; Lepiota cristata bruno convesso/piano con squame piccole, anello e lamelle crema. Nessuna volva o reticolo. Alpha e sei celle verificati."
+  },
+  {
+    "file": "incoming/icone/confronto-combinazioni-2026-10-18-23.png",
+    "sha256": "63ab84c92efa1e30982a52d607d7d6ccafb4e19e9a15ab37202c64d815e314cd",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "cells": {
+      "1": [
+        486,
+        68,
+        766,
+        382
+      ],
+      "0": [
+        82,
+        146,
+        404,
+        312
+      ],
+      "4": [
+        486,
+        478,
+        764,
+        792
+      ],
+      "3": [
+        82,
+        556,
+        402,
+        722
+      ],
+      "7": [
+        486,
+        888,
+        766,
+        1200
+      ],
+      "6": [
+        84,
+        966,
+        402,
+        1132
+      ]
+    },
+    "state": "pronta da integrare",
+    "review": "Micena convessa bianca/grigia/violetta con lamelle chiare rosate e gambo chiaro, senza anello/volva/reticolo. Alpha e sei celle verificati."
+  },
+  {
+    "file": "incoming/icone/confronto-combinazioni-2026-10-18-24.png",
+    "sha256": "5ba5e31cc77235350baf5b19a58edb76fbfe176da253fd159943e3a39d9cd54b",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "cells": {
+      "1": [
+        468,
+        62,
+        788,
+        390
+      ],
+      "0": [
+        50,
+        138,
+        394,
+        312
+      ],
+      "4": [
+        468,
+        456,
+        788,
+        788
+      ],
+      "3": [
+        50,
+        536,
+        394,
+        712
+      ],
+      "7": [
+        468,
+        848,
+        782,
+        1198
+      ],
+      "6": [
+        56,
+        922,
+        390,
+        1100
+      ]
+    },
+    "state": "pronta da integrare",
+    "review": "Omphalotus bruno/giallo convessi con lamelle arancio decorrenti e gambo giallo; Boleto satana bianco emisferico con pori rossi e reticolo rosso, senza anello/volva. Alpha e sei celle verificati."
+  },
+  {
+    "file": "incoming/icone/confronto-combinazioni-2026-10-18-25.png",
+    "sha256": "18009e98c5c7577df1a44c14ff4614ae5a2d8599968a5e2370b44f0057693895",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "cells": {
+      "1": [
+        470,
+        62,
+        782,
+        408
+      ],
+      "0": [
+        62,
+        142,
+        400,
+        348
+      ],
+      "4": [
+        450,
+        480,
+        806,
+        792
+      ],
+      "3": [
+        46,
+        534,
+        416,
+        698
+      ],
+      "7": [
+        446,
+        870,
+        806,
+        1178
+      ],
+      "6": [
+        46,
+        922,
+        416,
+        1086
+      ]
+    },
+    "state": "pronta da integrare",
+    "review": "Satana grigio emisferico con pori e reticolo rossi; Russula olivacea bruno/rosso a imbuto con centro depresso, lamelle gialle e gambo rosato senza anello/volva/reticolo. Alpha e sei celle verificati."
+  },
+  {
+    "file": "incoming/icone/confronto-combinazioni-2026-10-18-26.png",
+    "sha256": "e2590b573f3539d5aea73f4cec1321703f8e0659646fb4e861da59bb78595026",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "cells": {
+      "1": [
+        456,
+        80,
+        822,
+        382
+      ],
+      "0": [
+        50,
+        152,
+        436,
+        316
+      ],
+      "4": [
+        458,
+        506,
+        832,
+        786
+      ],
+      "3": [
+        50,
+        556,
+        436,
+        696
+      ],
+      "7": [
+        452,
+        892,
+        834,
+        1174
+      ],
+      "6": [
+        48,
+        946,
+        438,
+        1088
+      ]
+    },
+    "state": "pronta da integrare",
+    "review": "Russula olivacea violetta a imbuto e bruna/rossa piane, lamelle gialle e gambi rosati invariati senza anello/volva/reticolo. Alpha e sei celle verificati."
   }
 ]
