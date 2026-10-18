@@ -55,9 +55,9 @@ test('fungal words never link in plant zones; shared ecological words link every
  for(const s of GLOSSARY_SCOPES){assert.equal(link('habitat',s),'habitat');assert.equal(link('dislivello',s),'dislivello');}
 });
 test('every declared glossary zone in the app uses a known scope',()=>{
- const dir=new URL('../js/',import.meta.url);let zones=0;
+ const dir=new URL('../js/',import.meta.url),scopes=new Set();
  for(const f of readdirSync(dir).filter(f=>f.endsWith('.js')))for(const m of readFileSync(new URL(f,dir),'utf8').matchAll(/data-glossary="([^"$<]*)"/g)){
-  zones++;assert.ok(m[1]===''||GLOSSARY_SCOPES.includes(m[1]),`${f}: ${m[1]}`);
+  scopes.add(m[1]||'Generale');assert.ok(m[1]===''||GLOSSARY_SCOPES.includes(m[1]),`${f}: ${m[1]}`);
  }
- assert.ok(zones>=15,`zone dichiarate: ${zones}`);
+ assert.deepEqual([...scopes].sort(),[...GLOSSARY_SCOPES].sort(),'tutti gli ambiti devono avere una zona esplicita, senza dipendere dal numero di template');
 });

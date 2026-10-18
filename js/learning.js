@@ -86,9 +86,9 @@ export function enhanceGlossary(root) {
   const nodes = []; while(walker.nextNode()) nodes.push(walker.currentNode);
   // ogni parola si collega una volta sola nella pagina, e mai due link a ridosso: è un'app, non un ipertesto
   // il testo dentro una sezione chiusa ha il suo conteggio: la prima occorrenza deve essere quella che si vede
-  const linked = new Set([...root.querySelectorAll('a.glossary-link')].filter((a) => !a.closest('details:not([open])')).map((a) => a.dataset.term));
+  const linked = new Set([...root.querySelectorAll('a.glossary-link')].filter((a) => !a.classList.contains('glossary-heading')&&!a.closest('details:not([open])')).map((a) => a.dataset.term));
   const hidden = new Map();
-  const seenFor = (node) => { const d = node.parentElement.closest('details:not([open])'); if (!d) return linked; if (!hidden.has(d)) hidden.set(d, new Set([...d.querySelectorAll('a.glossary-link')].map((a) => a.dataset.term))); return hidden.get(d); };
+  const seenFor = (node) => { const d = node.parentElement.closest('details:not([open])'); if (!d) return linked; if (!hidden.has(d)) hidden.set(d, new Set([...d.querySelectorAll('a.glossary-link:not(.glossary-heading)')].map((a) => a.dataset.term))); return hidden.get(d); };
   for(const node of nodes) {
     const seen = seenFor(node);
     const scope=glossaryScopeOf(node.parentElement.closest('[data-glossary]'));

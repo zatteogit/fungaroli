@@ -574,3 +574,10 @@ body[data-page="mappa"] .view-map { border-radius:0; }
 .entity-accordion-root .attention[data-entity-accordion] > .att-list { margin:0; padding:0; }
 .attention .att-more::after { width:20px; height:20px; flex:0 0 20px; border:0; background:currentColor; mask:url('../assets/ui/chevron-right.svg') center / 20px no-repeat; -webkit-mask:url('../assets/ui/chevron-right.svg') center / 20px no-repeat; transform:rotate(90deg); }
 .attention[open] .att-more::after { transform:rotate(-90deg); }
+
+/* Il colore della sporata è il dato: tutti i valori, senza un’impronta di specie inventata. */
+.spore-color-list { display:grid; gap:12px; width:100%; }
+.spore-color-row { display:flex; align-items:center; gap:9px; font:400 14px/1.45 var(--font-body); }
+.spore-color-dot { display:inline-block; width:20px; height:20px; flex:0 0 20px; border-radius:50%; background:var(--spore-color); border:1px solid color-mix(in srgb,var(--text) 30%,transparent); }
+.fungus-page .ts-card-spores { align-content:start; }
+.fungus-page .ts-card-spores > .ts-v { margin-top:4px; width:100%; }

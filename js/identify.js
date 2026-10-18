@@ -1,3 +1,4 @@
+import {glossaryHeading} from './content-ui.js';
 import {openModal} from './modal-flow.js';
 import {matchSpecies} from './species-search.js';
 import {initTraitCallouts} from './trait-callouts.js';
@@ -94,6 +95,7 @@ const SHAPE = {
 const SIZE = (k) => `<svg viewBox="0 0 64 64"><g transform="translate(32 58) scale(${k}) translate(-32 -58)">${SST.replace('stroke-width="2"', `stroke-width="${2 / k}"`)}<path d="M8 34 C10 16 54 16 56 34 Z" fill="currentColor" opacity=".25" stroke="currentColor" stroke-width="${2 / k}"/></g><path d="M6 61 H58" stroke="currentColor" stroke-width="1.5" stroke-dasharray="2 3"/></svg>`;
 // sporata, attaccatura delle lamelle, velo, lattice, superficie, carne, base del gambo
 const SPORE = { bianco: '#f7f5ef', crema: '#ecdcb8', giallo: '#e2c35a', rosa: '#e3a99c', ocra: '#c99a4e', ruggine: '#a65a2a', bruno: '#6e4a2e', 'bruno-violaceo': '#4f3a46', nero: '#26221f', 'verde-oliva': '#7d7040' };
+const sporeDot = v => SPORE[v] ? `<i class="spore-color-dot" style="--spore-color:${SPORE[v]}" aria-hidden="true"></i>` : '';
 const sporeArt = (v) => `<svg viewBox="0 0 64 64"><rect x="6" y="8" width="52" height="48" rx="5" fill="#fbfaf6" stroke="currentColor" stroke-opacity=".35"/><rect x="32" y="8" width="26" height="48" rx="0" fill="#2b2826" opacity=".9"/><path d="M32 8 H53 a5 5 0 0 1 5 5 V51 a5 5 0 0 1 -5 5 H32 Z" fill="#2b2826"/><g opacity=".92">${Array.from({ length: 18 }, (_, i) => { const a = (i / 18) * Math.PI * 2; return `<path d="M32 32 L${(32 + Math.cos(a) * 19).toFixed(1)} ${(32 + Math.sin(a) * 19).toFixed(1)}" stroke="${SPORE[v]}" stroke-width="2.6" stroke-linecap="round"/>`; }).join('')}</g><circle cx="32" cy="32" r="4" fill="${SPORE[v]}"/></svg>`;
 const GILL_CAP = '<path d="M4 22 Q32 2 60 22 Z" fill="currentColor" opacity=".22" stroke="currentColor" stroke-width="2"/><path d="M28 22 V60 M36 22 V60" stroke="currentColor" stroke-width="2"/>';
 const gillArt = (pts) => `<svg viewBox="0 0 64 64">${GILL_CAP}<g fill="currentColor" opacity=".7"><path d="${pts}"/><path d="${pts}" transform="translate(64 0) scale(-1 1)"/></g></svg>`;
@@ -522,7 +524,8 @@ function diffs(ref, t) {
 export function traitStrip(edibleId, t = refOf(edibleId)) {
   if (!t) return '';
   const tr = t.traits || {};
-  const tile = (art, k, v, sub = '', extra = '', kind = '', facts = '') => `<li class="ts-card${kind ? ` ts-card-${kind}` : ''}"><span class="ts-k" data-no-glossary>${esc(k)}</span><span class="ts-art" aria-hidden="true">${art}</span>${v || facts ? `<span class="ts-v">${facts || esc(v)}</span>` : ''}${sub ? `<span class="ts-sub">${esc(sub)}</span>` : ''}${extra ? `<span class="ts-controls">${extra}</span>` : ''}</li>`;
+  const titleTerms={Cappello:'cappello',Lamelle:'lamelle',Pori:'pori',Aculei:'aculei',Pliche:'pliche','Sotto il cappello':'imenoforo',Gambo:'gambo','Al taglio':'viraggio',Sporata:'sporata'};
+  const tile = (art, k, v, sub = '', extra = '', kind = '', facts = '') => `<li class="ts-card${kind ? ` ts-card-${kind}` : ''}"><span class="ts-k" data-no-glossary>${glossaryHeading(titleTerms[k],k)}</span>${art?`<span class="ts-art" aria-hidden="true">${art}</span>`:''}${v || facts ? `<span class="ts-v">${facts || esc(v)}</span>` : ''}${sub ? `<span class="ts-sub">${esc(sub)}</span>` : ''}${extra ? `<span class="ts-controls">${extra}</span>` : ''}</li>`;
   const out = [];
   const one = (q, v) => optLabel(q, v);
   const Q = (k) => QUESTIONS.find((q) => q.key === k);
@@ -561,12 +564,12 @@ export function traitStrip(edibleId, t = refOf(edibleId)) {
     const base = [].concat(tr.stem_base || ['normale'])[0];
     const bits = [tr.stem_ring === true ? 'con anello' : tr.stem_ring === false ? 'senza anello' : 'anello variabile',
       tr.stem_volva === true ? 'con volva' : tr.stem_volva === false ? 'senza volva' : null, tr.stem_reticulum === true ? 'con reticolo' : null].filter(Boolean);
-    const facts=[['Anello',tr.stem_ring],['Volva',tr.stem_volva],['Reticolo',tr.stem_reticulum]].filter(([,v])=>typeof v==='boolean').map(([label,value])=>`<span class="ts-fact"><span>${label}</span><b>${value?'presente':'assente'}</b></span>`).join('');
+    const facts=[['Anello',tr.stem_ring],['Volva',tr.stem_volva],['Reticolo',tr.stem_reticulum]].filter(([,v])=>typeof v==='boolean').map(([label,value])=>`<span class="ts-fact"><span><a class="glossary-link" data-term="${{Anello:'anello',Volva:'volva',Reticolo:'reticolo'}[label]}" href="#/glossario/${{Anello:'anello',Volva:'volva',Reticolo:'reticolo'}[label]}" aria-haspopup="dialog">${label}</a></span><b>${value?'presente':'assente'}</b></span>`).join('');
     out.push(tile(ic ? illus(t.key, 'gambo') : stemArt2(base, tr.stem_ring, tr.stem_volva, tr.stem_reticulum, [].concat(tr.cap_color || [])[0], [].concat(tr.cap_shape || [])[0]), 'Gambo', bits.join(', '),
       tr.stem_base?.length ? `Base ${orList(tr.stem_base.map((v) => optLabel(Q('stem_base'), v)))}` : '', '', 'stem', facts ? `<span class="ts-facts">${facts}</span>` : ''));
   }
   if (tr.flesh_change) { const f = [].concat(tr.flesh_change); out.push(tile(fleshArt(f), 'Al taglio', orList(f.map(fleshSay)), '', '', 'flesh')); }
-  if (tr.spore_print?.length) out.push(tile(sporeArt(tr.spore_print[0]), 'Sporata', orList(tr.spore_print.map((v) => Q('spore_print').labels?.[v] || agree(v, 'fs'))), '', '', 'spores'));
+  if (tr.spore_print?.length) out.push(tile('', 'Sporata', '', 'Colore del deposito', '', 'spores', `<span class="spore-color-list">${tr.spore_print.map(v=>`<span class="spore-color-row">${sporeDot(v)}<span>${esc(Q('spore_print').labels?.[v]||agree(v,'fs'))}</span></span>`).join('')}</span>`));
   // le tessere di cappello, sotto e gambo sono disegni AI (assets/traits): detto una volta, sotto la fila
   const ai = out.some((h) => h.includes('class="ts-ill"')) ? '<p class="small muted ts-ai">Disegni schematici fatti con AI, non foto: confronta con le foto e con il testo.</p>' : '';
   return `<ul class="trait-strip" aria-label="Caratteri principali">${out.join('')}</ul>${ai}`;
@@ -860,7 +863,7 @@ const CMP = [
   { key: 'cap_shape', k: 'Forma del cappello', art: (a) => SHAPE[a[0]], say: (v) => optLabel(QK('cap_shape'), v) },
   { key: 'cap_size', k: 'Diametro del cappello', say: (v) => optLabel(QK('cap_size'), v) },
   { key: 'trees', k: 'Alberi', get: (t) => t.trees, say: (v) => v },
-  { key: 'spore_print', k: 'Sporata', art: (a) => sporeArt(a[0]), say: (v) => optLabel(QK('spore_print'), v) },
+  { key: 'spore_print', k: 'Sporata', art: (a) => sporeDot(a[0]), say: (v) => optLabel(QK('spore_print'), v) },
   { key: 'gill_attachment', k: 'Attaccatura delle lamelle', art: (a) => ATTACH[a[0]], say: (v) => optLabel(QK('gill_attachment'), v) },
   { key: 'cap_veil', k: 'Verruche sul cappello', bool: true, art: (a) => VEIL[a[0]] },
   { key: 'cap_surface', k: 'Superficie del cappello', art: (a) => SURF[a[0]], say: (v) => optLabel(QK('cap_surface'), v) },

@@ -1005,3 +1005,9 @@ button.cover-index:focus-visible { outline:3px solid var(--focus); outline-offse
 /* Il focus automatico delle modali non disegna anelli sui comandi dopo un tap.
    I campi di testo conservano il segnale di editing; Tab ripristina subito gli anelli. */
 :root[data-focus-input="pointer"] :is(button,a,summary,[role="button"]):focus { outline:none !important; }
+
+/* Glossario: il titolo ha un richiamo discreto, i termini nel testo una sottolineatura. */
+.glossary-link.glossary-heading { display:inline-flex; align-items:center; gap:6px; min-height:44px; max-width:100%; color:inherit; text-decoration:none; box-shadow:none; border:0; }
+.glossary-heading-mark { display:inline-grid; place-items:center; width:13px; height:13px; flex:0 0 13px; border:1px solid var(--muted); border-radius:50%; color:var(--muted); font:600 9px/1 var(--font-body); }
+.glossary-link:not(.glossary-heading),.trait-strip .ts-v .glossary-link:not(.glossary-heading) { text-decoration:underline dotted; text-decoration-thickness:1px; text-underline-offset:.2em; box-shadow:none; }
+@media(hover:hover) { .glossary-heading:hover .glossary-heading-mark { color:var(--link); border-color:var(--link); } }
