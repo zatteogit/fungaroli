@@ -34,6 +34,39 @@
     "asciutta"
    ]
   },
+  "aereus-cappello-fase-adulto": {
+   "tiles": [
+    "cappello",
+    "sotto",
+    "gambo"
+   ],
+   "cap_shape": "convesso",
+   "hymenophore_color": [
+    "giallo"
+   ]
+  },
+  "aereus-cappello-fase-giovane": {
+   "tiles": [
+    "cappello",
+    "sotto",
+    "gambo"
+   ],
+   "cap_shape": "emisferico",
+   "hymenophore_color": [
+    "bianco"
+   ]
+  },
+  "aereus-cappello-fase-maturo": {
+   "tiles": [
+    "cappello",
+    "sotto",
+    "gambo"
+   ],
+   "cap_shape": "piano",
+   "hymenophore_color": [
+    "giallo"
+   ]
+  },
   "aereus-cappello-piano": {
    "cap_veil": false,
    "cap_surface": [
@@ -86,6 +119,39 @@
     "bulbosa"
    ]
   },
+  "aereus-gambo-fase-adulto": {
+   "tiles": [
+    "cappello",
+    "sotto",
+    "gambo"
+   ],
+   "cap_shape": "convesso",
+   "hymenophore_color": [
+    "giallo"
+   ]
+  },
+  "aereus-gambo-fase-giovane": {
+   "tiles": [
+    "cappello",
+    "sotto",
+    "gambo"
+   ],
+   "cap_shape": "emisferico",
+   "hymenophore_color": [
+    "bianco"
+   ]
+  },
+  "aereus-gambo-fase-maturo": {
+   "tiles": [
+    "cappello",
+    "sotto",
+    "gambo"
+   ],
+   "cap_shape": "piano",
+   "hymenophore_color": [
+    "giallo"
+   ]
+  },
   "aereus-gambo-piano": {
    "stem_ring": false,
    "stem_volva": false,
@@ -102,6 +168,39 @@
    "stem_base": [
     "normale",
     "bulbosa"
+   ]
+  },
+  "aereus-sotto-fase-adulto": {
+   "tiles": [
+    "cappello",
+    "sotto",
+    "gambo"
+   ],
+   "cap_shape": "convesso",
+   "hymenophore_color": [
+    "giallo"
+   ]
+  },
+  "aereus-sotto-fase-giovane": {
+   "tiles": [
+    "cappello",
+    "sotto",
+    "gambo"
+   ],
+   "cap_shape": "emisferico",
+   "hymenophore_color": [
+    "bianco"
+   ]
+  },
+  "aereus-sotto-fase-maturo": {
+   "tiles": [
+    "cappello",
+    "sotto",
+    "gambo"
+   ],
+   "cap_shape": "piano",
+   "hymenophore_color": [
+    "giallo"
    ]
   },
   "aereus-sotto": {
@@ -134,6 +233,28 @@
    "cap_surface": [
     "asciutta",
     "vellutata/feltrata"
+   ]
+  },
+  "aestivalis-cappello-fase-adulto": {
+   "tiles": [
+    "cappello",
+    "sotto",
+    "gambo"
+   ],
+   "cap_shape": "convesso",
+   "hymenophore_color": [
+    "giallo"
+   ]
+  },
+  "aestivalis-cappello-fase-giovane": {
+   "tiles": [
+    "cappello",
+    "sotto",
+    "gambo"
+   ],
+   "cap_shape": "emisferico",
+   "hymenophore_color": [
+    "bianco"
    ]
   },
   "aestivalis-cappello": {
@@ -170,6 +291,28 @@
     "bulbosa"
    ]
   },
+  "aestivalis-gambo-fase-adulto": {
+   "tiles": [
+    "cappello",
+    "sotto",
+    "gambo"
+   ],
+   "cap_shape": "convesso",
+   "hymenophore_color": [
+    "giallo"
+   ]
+  },
+  "aestivalis-gambo-fase-giovane": {
+   "tiles": [
+    "cappello",
+    "sotto",
+    "gambo"
+   ],
+   "cap_shape": "emisferico",
+   "hymenophore_color": [
+    "bianco"
+   ]
+  },
   "aestivalis-gambo": {
    "stem_ring": false,
    "stem_volva": false,
@@ -177,6 +320,38 @@
    "stem_base": [
     "normale",
     "bulbosa"
+   ]
+  },
+  "aestivalis-sotto-fase-adulto": {
+   "tiles": [
+    "cappello",
+    "sotto",
+    "gambo"
+   ],
+   "cap_shape": "convesso",
+   "hymenophore_color": [
+    "giallo"
+   ]
+  },
+  "aestivalis-sotto-fase-giovane": {
+   "tiles": [
+    "cappello",
+    "sotto",
+    "gambo"
+   ],
+   "cap_shape": "emisferico",
+   "hymenophore_color": [
+    "bianco"
+   ]
+  },
+  "aestivalis-sotto-fase-maturo": {
+   "tiles": [
+    "sotto"
+   ],
+   "cap_shape": null,
+   "hymenophore_color": [
+    "giallo",
+    "verde"
    ]
   },
   "aestivalis-sotto": {
@@ -216,6 +391,17 @@
    "cap_surface": [
     "liscia",
     "squamosa"
+   ]
+  },
+  "agaricus-arvensis-cappello-fase-adulto": {
+   "tiles": [
+    "cappello",
+    "sotto",
+    "gambo"
+   ],
+   "cap_shape": "piano",
+   "hymenophore_color": [
+    "bruno"
    ]
   },
   "agaricus-arvensis-cappello-fase-giovane": {
@@ -300,6 +486,17 @@
     "bulbosa"
    ]
   },
+  "agaricus-arvensis-gambo-fase-adulto": {
+   "tiles": [
+    "cappello",
+    "sotto",
+    "gambo"
+   ],
+   "cap_shape": "piano",
+   "hymenophore_color": [
+    "bruno"
+   ]
+  },
   "agaricus-arvensis-gambo-fase-giovane": {
    "tiles": [
     "cappello",
@@ -356,6 +553,17 @@
     "bulbosa"
    ]
   },
+  "agaricus-arvensis-sotto-fase-adulto": {
+   "tiles": [
+    "cappello",
+    "sotto",
+    "gambo"
+   ],
+   "cap_shape": "piano",
+   "hymenophore_color": [
+    "bruno"
+   ]
+  },
   "agaricus-arvensis-sotto-fase-giovane": {
    "tiles": [
     "cappello",
@@ -392,6 +600,28 @@
    "cap_veil": false,
    "cap_surface": null
   },
+  "agaricus-bisporus-cappello-fase-adulto": {
+   "tiles": [
+    "cappello",
+    "sotto",
+    "gambo"
+   ],
+   "cap_shape": "piano",
+   "hymenophore_color": [
+    "bruno"
+   ]
+  },
+  "agaricus-bisporus-cappello-fase-giovane": {
+   "tiles": [
+    "cappello",
+    "sotto",
+    "gambo"
+   ],
+   "cap_shape": "emisferico",
+   "hymenophore_color": [
+    "rosa"
+   ]
+  },
   "agaricus-bisporus-cappello-piano": {
    "cap_veil": false,
    "cap_surface": null
@@ -424,6 +654,28 @@
    "stem_reticulum": false,
    "stem_base": null
   },
+  "agaricus-bisporus-gambo-fase-adulto": {
+   "tiles": [
+    "cappello",
+    "sotto",
+    "gambo"
+   ],
+   "cap_shape": "piano",
+   "hymenophore_color": [
+    "bruno"
+   ]
+  },
+  "agaricus-bisporus-gambo-fase-giovane": {
+   "tiles": [
+    "cappello",
+    "sotto",
+    "gambo"
+   ],
+   "cap_shape": "emisferico",
+   "hymenophore_color": [
+    "rosa"
+   ]
+  },
   "agaricus-bisporus-gambo-piano": {
    "stem_ring": true,
    "stem_volva": false,
@@ -435,6 +687,28 @@
    "stem_volva": false,
    "stem_reticulum": false,
    "stem_base": null
+  },
+  "agaricus-bisporus-sotto-fase-adulto": {
+   "tiles": [
+    "cappello",
+    "sotto",
+    "gambo"
+   ],
+   "cap_shape": "piano",
+   "hymenophore_color": [
+    "bruno"
+   ]
+  },
+  "agaricus-bisporus-sotto-fase-giovane": {
+   "tiles": [
+    "cappello",
+    "sotto",
+    "gambo"
+   ],
+   "cap_shape": "emisferico",
+   "hymenophore_color": [
+    "rosa"
+   ]
   },
   "agaricus-bisporus-sotto": {
    "hymenophore": [
@@ -675,6 +949,40 @@
    "cap_veil": false,
    "cap_surface": null
   },
+  "agaricus-sylvicola-cappello-fase-adulto": {
+   "tiles": [
+    "cappello",
+    "sotto",
+    "gambo"
+   ],
+   "cap_shape": "convesso",
+   "hymenophore_color": [
+    "grigio",
+    "rosa"
+   ]
+  },
+  "agaricus-sylvicola-cappello-fase-giovane": {
+   "tiles": [
+    "cappello",
+    "sotto",
+    "gambo"
+   ],
+   "cap_shape": "emisferico",
+   "hymenophore_color": [
+    "bianco"
+   ]
+  },
+  "agaricus-sylvicola-cappello-fase-maturo": {
+   "tiles": [
+    "cappello",
+    "sotto",
+    "gambo"
+   ],
+   "cap_shape": "piano",
+   "hymenophore_color": [
+    "bruno"
+   ]
+  },
   "agaricus-sylvicola-cappello-giallo-emisferico": {
    "cap_veil": false,
    "cap_surface": null
@@ -727,6 +1035,40 @@
     "bulbosa"
    ]
   },
+  "agaricus-sylvicola-gambo-fase-adulto": {
+   "tiles": [
+    "cappello",
+    "sotto",
+    "gambo"
+   ],
+   "cap_shape": "convesso",
+   "hymenophore_color": [
+    "grigio",
+    "rosa"
+   ]
+  },
+  "agaricus-sylvicola-gambo-fase-giovane": {
+   "tiles": [
+    "cappello",
+    "sotto",
+    "gambo"
+   ],
+   "cap_shape": "emisferico",
+   "hymenophore_color": [
+    "bianco"
+   ]
+  },
+  "agaricus-sylvicola-gambo-fase-maturo": {
+   "tiles": [
+    "cappello",
+    "sotto",
+    "gambo"
+   ],
+   "cap_shape": "piano",
+   "hymenophore_color": [
+    "bruno"
+   ]
+  },
   "agaricus-sylvicola-gambo-giallo-emisferico": {
    "stem_ring": true,
    "stem_volva": false,
@@ -765,6 +1107,40 @@
    "stem_reticulum": false,
    "stem_base": [
     "bulbosa"
+   ]
+  },
+  "agaricus-sylvicola-sotto-fase-adulto": {
+   "tiles": [
+    "cappello",
+    "sotto",
+    "gambo"
+   ],
+   "cap_shape": "convesso",
+   "hymenophore_color": [
+    "grigio",
+    "rosa"
+   ]
+  },
+  "agaricus-sylvicola-sotto-fase-giovane": {
+   "tiles": [
+    "cappello",
+    "sotto",
+    "gambo"
+   ],
+   "cap_shape": "emisferico",
+   "hymenophore_color": [
+    "bianco"
+   ]
+  },
+  "agaricus-sylvicola-sotto-fase-maturo": {
+   "tiles": [
+    "cappello",
+    "sotto",
+    "gambo"
+   ],
+   "cap_shape": "piano",
+   "hymenophore_color": [
+    "bruno"
    ]
   },
   "agaricus-sylvicola-sotto": {
@@ -832,6 +1208,30 @@
     "liscia",
     "asciutta",
     "squamosa"
+   ]
+  },
+  "agaricus-xanthodermus-cappello-fase-adulto": {
+   "tiles": [
+    "cappello",
+    "sotto",
+    "gambo"
+   ],
+   "cap_shape": "convesso",
+   "hymenophore_color": [
+    "grigio",
+    "bruno"
+   ]
+  },
+  "agaricus-xanthodermus-cappello-fase-giovane": {
+   "tiles": [
+    "cappello",
+    "sotto",
+    "gambo"
+   ],
+   "cap_shape": "emisferico",
+   "hymenophore_color": [
+    "bianco",
+    "rosa"
    ]
   },
   "agaricus-xanthodermus-cappello-giallo-emisferico": {
@@ -954,6 +1354,30 @@
     "bulbosa"
    ]
   },
+  "agaricus-xanthodermus-gambo-fase-adulto": {
+   "tiles": [
+    "cappello",
+    "sotto",
+    "gambo"
+   ],
+   "cap_shape": "convesso",
+   "hymenophore_color": [
+    "grigio",
+    "bruno"
+   ]
+  },
+  "agaricus-xanthodermus-gambo-fase-giovane": {
+   "tiles": [
+    "cappello",
+    "sotto",
+    "gambo"
+   ],
+   "cap_shape": "emisferico",
+   "hymenophore_color": [
+    "bianco",
+    "rosa"
+   ]
+  },
   "agaricus-xanthodermus-gambo-giallo-emisferico": {
    "stem_ring": true,
    "stem_volva": false,
@@ -1016,6 +1440,30 @@
    "stem_reticulum": false,
    "stem_base": [
     "bulbosa"
+   ]
+  },
+  "agaricus-xanthodermus-sotto-fase-adulto": {
+   "tiles": [
+    "cappello",
+    "sotto",
+    "gambo"
+   ],
+   "cap_shape": "convesso",
+   "hymenophore_color": [
+    "grigio",
+    "bruno"
+   ]
+  },
+  "agaricus-xanthodermus-sotto-fase-giovane": {
+   "tiles": [
+    "cappello",
+    "sotto",
+    "gambo"
+   ],
+   "cap_shape": "emisferico",
+   "hymenophore_color": [
+    "bianco",
+    "rosa"
    ]
   },
   "agaricus-xanthodermus-sotto": {
@@ -3329,6 +3777,22 @@
     "asciutta"
    ]
   },
+  "cibarius-cappello-fase-adulto": {
+   "tiles": [
+    "cappello",
+    "gambo"
+   ],
+   "cap_shape": "imbuto",
+   "hymenophore_color": null
+  },
+  "cibarius-cappello-fase-giovane": {
+   "tiles": [
+    "cappello",
+    "gambo"
+   ],
+   "cap_shape": "convesso",
+   "hymenophore_color": null
+  },
   "cibarius-cappello": {
    "cap_veil": false,
    "cap_surface": [
@@ -3362,6 +3826,22 @@
     "assottigliata",
     "normale"
    ]
+  },
+  "cibarius-gambo-fase-adulto": {
+   "tiles": [
+    "cappello",
+    "gambo"
+   ],
+   "cap_shape": "imbuto",
+   "hymenophore_color": null
+  },
+  "cibarius-gambo-fase-giovane": {
+   "tiles": [
+    "cappello",
+    "gambo"
+   ],
+   "cap_shape": "convesso",
+   "hymenophore_color": null
   },
   "cibarius-gambo": {
    "stem_ring": false,
@@ -3514,6 +3994,39 @@
     "squamosa"
    ]
   },
+  "coprinus-comatus-cappello-fase-giovane": {
+   "tiles": [
+    "cappello",
+    "sotto",
+    "gambo"
+   ],
+   "cap_shape": "conico",
+   "hymenophore_color": [
+    "bianco"
+   ]
+  },
+  "coprinus-comatus-cappello-fase-maturo": {
+   "tiles": [
+    "cappello",
+    "sotto",
+    "gambo"
+   ],
+   "cap_shape": "conico",
+   "hymenophore_color": [
+    "rosa"
+   ]
+  },
+  "coprinus-comatus-cappello-fase-sciolto": {
+   "tiles": [
+    "cappello",
+    "sotto",
+    "gambo"
+   ],
+   "cap_shape": "conico",
+   "hymenophore_color": [
+    "nero"
+   ]
+  },
   "coprinus-comatus-cappello-nero": {
    "cap_veil": null,
    "cap_surface": [
@@ -3534,6 +4047,39 @@
     "normale"
    ]
   },
+  "coprinus-comatus-gambo-fase-giovane": {
+   "tiles": [
+    "cappello",
+    "sotto",
+    "gambo"
+   ],
+   "cap_shape": "conico",
+   "hymenophore_color": [
+    "bianco"
+   ]
+  },
+  "coprinus-comatus-gambo-fase-maturo": {
+   "tiles": [
+    "cappello",
+    "sotto",
+    "gambo"
+   ],
+   "cap_shape": "conico",
+   "hymenophore_color": [
+    "rosa"
+   ]
+  },
+  "coprinus-comatus-gambo-fase-sciolto": {
+   "tiles": [
+    "cappello",
+    "sotto",
+    "gambo"
+   ],
+   "cap_shape": "conico",
+   "hymenophore_color": [
+    "nero"
+   ]
+  },
   "coprinus-comatus-gambo-nero": {
    "stem_ring": true,
    "stem_volva": false,
@@ -3548,6 +4094,39 @@
    "stem_reticulum": false,
    "stem_base": [
     "normale"
+   ]
+  },
+  "coprinus-comatus-sotto-fase-giovane": {
+   "tiles": [
+    "cappello",
+    "sotto",
+    "gambo"
+   ],
+   "cap_shape": "conico",
+   "hymenophore_color": [
+    "bianco"
+   ]
+  },
+  "coprinus-comatus-sotto-fase-maturo": {
+   "tiles": [
+    "cappello",
+    "sotto",
+    "gambo"
+   ],
+   "cap_shape": "conico",
+   "hymenophore_color": [
+    "rosa"
+   ]
+  },
+  "coprinus-comatus-sotto-fase-sciolto": {
+   "tiles": [
+    "cappello",
+    "sotto",
+    "gambo"
+   ],
+   "cap_shape": "conico",
+   "hymenophore_color": [
+    "nero"
    ]
   },
   "coprinus-comatus-sotto": {
@@ -4364,6 +4943,29 @@
    "cap_veil": false,
    "cap_surface": null
   },
+  "cyclocybe-aegerita-cappello-fase-adulto": {
+   "tiles": [
+    "cappello",
+    "sotto",
+    "gambo"
+   ],
+   "cap_shape": "piano",
+   "hymenophore_color": [
+    "grigio",
+    "bruno"
+   ]
+  },
+  "cyclocybe-aegerita-cappello-fase-giovane": {
+   "tiles": [
+    "cappello",
+    "sotto",
+    "gambo"
+   ],
+   "cap_shape": "emisferico",
+   "hymenophore_color": [
+    "crema"
+   ]
+  },
   "cyclocybe-aegerita-cappello-piano": {
    "cap_veil": false,
    "cap_surface": null
@@ -4396,6 +4998,29 @@
    "stem_reticulum": false,
    "stem_base": null
   },
+  "cyclocybe-aegerita-gambo-fase-adulto": {
+   "tiles": [
+    "cappello",
+    "sotto",
+    "gambo"
+   ],
+   "cap_shape": "piano",
+   "hymenophore_color": [
+    "grigio",
+    "bruno"
+   ]
+  },
+  "cyclocybe-aegerita-gambo-fase-giovane": {
+   "tiles": [
+    "cappello",
+    "sotto",
+    "gambo"
+   ],
+   "cap_shape": "emisferico",
+   "hymenophore_color": [
+    "crema"
+   ]
+  },
   "cyclocybe-aegerita-gambo-piano": {
    "stem_ring": true,
    "stem_volva": false,
@@ -4407,6 +5032,29 @@
    "stem_volva": false,
    "stem_reticulum": false,
    "stem_base": null
+  },
+  "cyclocybe-aegerita-sotto-fase-adulto": {
+   "tiles": [
+    "cappello",
+    "sotto",
+    "gambo"
+   ],
+   "cap_shape": "piano",
+   "hymenophore_color": [
+    "grigio",
+    "bruno"
+   ]
+  },
+  "cyclocybe-aegerita-sotto-fase-giovane": {
+   "tiles": [
+    "cappello",
+    "sotto",
+    "gambo"
+   ],
+   "cap_shape": "emisferico",
+   "hymenophore_color": [
+    "crema"
+   ]
   },
   "cyclocybe-aegerita-sotto": {
    "hymenophore": [
@@ -4440,6 +5088,28 @@
     "liscia",
     "asciutta",
     "viscida"
+   ]
+  },
+  "edulis-cappello-fase-adulto": {
+   "tiles": [
+    "cappello",
+    "sotto",
+    "gambo"
+   ],
+   "cap_shape": "convesso",
+   "hymenophore_color": [
+    "giallo"
+   ]
+  },
+  "edulis-cappello-fase-giovane": {
+   "tiles": [
+    "cappello",
+    "sotto",
+    "gambo"
+   ],
+   "cap_shape": "emisferico",
+   "hymenophore_color": [
+    "bianco"
    ]
   },
   "edulis-cappello": {
@@ -4477,6 +5147,28 @@
     "bulbosa"
    ]
   },
+  "edulis-gambo-fase-adulto": {
+   "tiles": [
+    "cappello",
+    "sotto",
+    "gambo"
+   ],
+   "cap_shape": "convesso",
+   "hymenophore_color": [
+    "giallo"
+   ]
+  },
+  "edulis-gambo-fase-giovane": {
+   "tiles": [
+    "cappello",
+    "sotto",
+    "gambo"
+   ],
+   "cap_shape": "emisferico",
+   "hymenophore_color": [
+    "bianco"
+   ]
+  },
   "edulis-gambo": {
    "stem_ring": false,
    "stem_volva": false,
@@ -4484,6 +5176,37 @@
    "stem_base": [
     "normale",
     "bulbosa"
+   ]
+  },
+  "edulis-sotto-fase-adulto": {
+   "tiles": [
+    "cappello",
+    "sotto",
+    "gambo"
+   ],
+   "cap_shape": "convesso",
+   "hymenophore_color": [
+    "giallo"
+   ]
+  },
+  "edulis-sotto-fase-giovane": {
+   "tiles": [
+    "cappello",
+    "sotto",
+    "gambo"
+   ],
+   "cap_shape": "emisferico",
+   "hymenophore_color": [
+    "bianco"
+   ]
+  },
+  "edulis-sotto-fase-maturo": {
+   "tiles": [
+    "sotto"
+   ],
+   "cap_shape": null,
+   "hymenophore_color": [
+    "verde"
    ]
   },
   "edulis-sotto": {
@@ -4558,6 +5281,28 @@
     "viscida",
     "liscia",
     "squamosa"
+   ]
+  },
+  "entoloma-sinuatum-cappello-fase-adulto": {
+   "tiles": [
+    "cappello",
+    "sotto",
+    "gambo"
+   ],
+   "cap_shape": "piano",
+   "hymenophore_color": [
+    "rosa"
+   ]
+  },
+  "entoloma-sinuatum-cappello-fase-giovane": {
+   "tiles": [
+    "cappello",
+    "sotto",
+    "gambo"
+   ],
+   "cap_shape": "conico",
+   "hymenophore_color": [
+    "giallo"
    ]
   },
   "entoloma-sinuatum-cappello-piano": {
@@ -4641,6 +5386,28 @@
     "bulbosa"
    ]
   },
+  "entoloma-sinuatum-gambo-fase-adulto": {
+   "tiles": [
+    "cappello",
+    "sotto",
+    "gambo"
+   ],
+   "cap_shape": "piano",
+   "hymenophore_color": [
+    "rosa"
+   ]
+  },
+  "entoloma-sinuatum-gambo-fase-giovane": {
+   "tiles": [
+    "cappello",
+    "sotto",
+    "gambo"
+   ],
+   "cap_shape": "conico",
+   "hymenophore_color": [
+    "giallo"
+   ]
+  },
   "entoloma-sinuatum-gambo-piano": {
    "stem_ring": false,
    "stem_volva": false,
@@ -4657,6 +5424,28 @@
    "stem_base": [
     "normale",
     "bulbosa"
+   ]
+  },
+  "entoloma-sinuatum-sotto-fase-adulto": {
+   "tiles": [
+    "cappello",
+    "sotto",
+    "gambo"
+   ],
+   "cap_shape": "piano",
+   "hymenophore_color": [
+    "rosa"
+   ]
+  },
+  "entoloma-sinuatum-sotto-fase-giovane": {
+   "tiles": [
+    "cappello",
+    "sotto",
+    "gambo"
+   ],
+   "cap_shape": "conico",
+   "hymenophore_color": [
+    "giallo"
    ]
   },
   "entoloma-sinuatum-sotto": {
@@ -5621,6 +6410,33 @@
    "stem_base": [
     "normale",
     "assottigliata"
+   ]
+  },
+  "hypholoma-fasciculare-sotto-fase-adulto": {
+   "tiles": [
+    "sotto"
+   ],
+   "cap_shape": null,
+   "hymenophore_color": [
+    "verde"
+   ]
+  },
+  "hypholoma-fasciculare-sotto-fase-giovane": {
+   "tiles": [
+    "sotto"
+   ],
+   "cap_shape": null,
+   "hymenophore_color": [
+    "giallo"
+   ]
+  },
+  "hypholoma-fasciculare-sotto-fase-maturo": {
+   "tiles": [
+    "sotto"
+   ],
+   "cap_shape": null,
+   "hymenophore_color": [
+    "nero"
    ]
   },
   "hypholoma-fasciculare-sotto": {
@@ -6895,6 +7711,22 @@
     "viscida"
    ]
   },
+  "mellea-cappello-fase-adulto": {
+   "tiles": [
+    "cappello",
+    "gambo"
+   ],
+   "cap_shape": "piano",
+   "hymenophore_color": null
+  },
+  "mellea-cappello-fase-giovane": {
+   "tiles": [
+    "cappello",
+    "gambo"
+   ],
+   "cap_shape": "convesso",
+   "hymenophore_color": null
+  },
   "mellea-cappello-piano": {
    "cap_veil": false,
    "cap_surface": [
@@ -6932,6 +7764,22 @@
     "normale",
     "bulbosa"
    ]
+  },
+  "mellea-gambo-fase-adulto": {
+   "tiles": [
+    "cappello",
+    "gambo"
+   ],
+   "cap_shape": "piano",
+   "hymenophore_color": null
+  },
+  "mellea-gambo-fase-giovane": {
+   "tiles": [
+    "cappello",
+    "gambo"
+   ],
+   "cap_shape": "convesso",
+   "hymenophore_color": null
   },
   "mellea-gambo-piano": {
    "stem_ring": true,
@@ -7690,6 +8538,25 @@
     "bulbosa"
    ]
   },
+  "pinophilus-sotto-fase-adulto": {
+   "tiles": [
+    "sotto"
+   ],
+   "cap_shape": null,
+   "hymenophore_color": [
+    "giallo",
+    "verde"
+   ]
+  },
+  "pinophilus-sotto-fase-giovane": {
+   "tiles": [
+    "sotto"
+   ],
+   "cap_shape": null,
+   "hymenophore_color": [
+    "bianco"
+   ]
+  },
   "pinophilus-sotto": {
    "hymenophore": [
     "pori"
@@ -7876,6 +8743,22 @@
    "cap_veil": false,
    "cap_surface": null
   },
+  "pleurotus-ostreatus-cappello-fase-adulto": {
+   "tiles": [
+    "cappello",
+    "gambo"
+   ],
+   "cap_shape": "imbuto",
+   "hymenophore_color": null
+  },
+  "pleurotus-ostreatus-cappello-fase-giovane": {
+   "tiles": [
+    "cappello",
+    "gambo"
+   ],
+   "cap_shape": "convesso",
+   "hymenophore_color": null
+  },
   "pleurotus-ostreatus-cappello-imbuto": {
    "cap_veil": false,
    "cap_surface": null
@@ -7931,6 +8814,22 @@
    "stem_base": [
     "assottigliata"
    ]
+  },
+  "pleurotus-ostreatus-gambo-fase-adulto": {
+   "tiles": [
+    "cappello",
+    "gambo"
+   ],
+   "cap_shape": "imbuto",
+   "hymenophore_color": null
+  },
+  "pleurotus-ostreatus-gambo-fase-giovane": {
+   "tiles": [
+    "cappello",
+    "gambo"
+   ],
+   "cap_shape": "convesso",
+   "hymenophore_color": null
   },
   "pleurotus-ostreatus-gambo-imbuto": {
    "stem_ring": false,
@@ -8297,6 +9196,29 @@
     "viscida"
    ]
   },
+  "rubroboletus-satanas-cappello-fase-adulto": {
+   "tiles": [
+    "cappello",
+    "sotto",
+    "gambo"
+   ],
+   "cap_shape": "convesso",
+   "hymenophore_color": [
+    "arancio",
+    "rosso"
+   ]
+  },
+  "rubroboletus-satanas-cappello-fase-giovane": {
+   "tiles": [
+    "cappello",
+    "sotto",
+    "gambo"
+   ],
+   "cap_shape": "emisferico",
+   "hymenophore_color": [
+    "giallo"
+   ]
+  },
   "rubroboletus-satanas-cappello-grigio-emisferico": {
    "cap_veil": false,
    "cap_surface": [
@@ -8351,6 +9273,29 @@
     "normale"
    ]
   },
+  "rubroboletus-satanas-gambo-fase-adulto": {
+   "tiles": [
+    "cappello",
+    "sotto",
+    "gambo"
+   ],
+   "cap_shape": "convesso",
+   "hymenophore_color": [
+    "arancio",
+    "rosso"
+   ]
+  },
+  "rubroboletus-satanas-gambo-fase-giovane": {
+   "tiles": [
+    "cappello",
+    "sotto",
+    "gambo"
+   ],
+   "cap_shape": "emisferico",
+   "hymenophore_color": [
+    "giallo"
+   ]
+  },
   "rubroboletus-satanas-gambo-grigio-emisferico": {
    "stem_ring": false,
    "stem_volva": false,
@@ -8376,6 +9321,29 @@
    "stem_base": [
     "bulbosa",
     "normale"
+   ]
+  },
+  "rubroboletus-satanas-sotto-fase-adulto": {
+   "tiles": [
+    "cappello",
+    "sotto",
+    "gambo"
+   ],
+   "cap_shape": "convesso",
+   "hymenophore_color": [
+    "arancio",
+    "rosso"
+   ]
+  },
+  "rubroboletus-satanas-sotto-fase-giovane": {
+   "tiles": [
+    "cappello",
+    "sotto",
+    "gambo"
+   ],
+   "cap_shape": "emisferico",
+   "hymenophore_color": [
+    "giallo"
    ]
   },
   "rubroboletus-satanas-sotto": {
@@ -9315,6 +10283,28 @@
     "vellutata/feltrata"
    ]
   },
+  "terreum-cappello-fase-adulto": {
+   "tiles": [
+    "cappello",
+    "sotto",
+    "gambo"
+   ],
+   "cap_shape": "piano",
+   "hymenophore_color": [
+    "grigio"
+   ]
+  },
+  "terreum-cappello-fase-giovane": {
+   "tiles": [
+    "cappello",
+    "sotto",
+    "gambo"
+   ],
+   "cap_shape": "conico",
+   "hymenophore_color": [
+    "bianco"
+   ]
+  },
   "terreum-cappello-piano": {
    "cap_veil": false,
    "cap_surface": [
@@ -9363,6 +10353,28 @@
     "normale"
    ]
   },
+  "terreum-gambo-fase-adulto": {
+   "tiles": [
+    "cappello",
+    "sotto",
+    "gambo"
+   ],
+   "cap_shape": "piano",
+   "hymenophore_color": [
+    "grigio"
+   ]
+  },
+  "terreum-gambo-fase-giovane": {
+   "tiles": [
+    "cappello",
+    "sotto",
+    "gambo"
+   ],
+   "cap_shape": "conico",
+   "hymenophore_color": [
+    "bianco"
+   ]
+  },
   "terreum-gambo-piano": {
    "stem_ring": null,
    "stem_volva": false,
@@ -9377,6 +10389,28 @@
    "stem_reticulum": false,
    "stem_base": [
     "normale"
+   ]
+  },
+  "terreum-sotto-fase-adulto": {
+   "tiles": [
+    "cappello",
+    "sotto",
+    "gambo"
+   ],
+   "cap_shape": "piano",
+   "hymenophore_color": [
+    "grigio"
+   ]
+  },
+  "terreum-sotto-fase-giovane": {
+   "tiles": [
+    "cappello",
+    "sotto",
+    "gambo"
+   ],
+   "cap_shape": "conico",
+   "hymenophore_color": [
+    "bianco"
    ]
   },
   "terreum-sotto": {
@@ -9950,6 +10984,28 @@
     "liscia"
    ]
   },
+  "tylopilus-felleus-cappello-fase-adulto": {
+   "tiles": [
+    "cappello",
+    "sotto",
+    "gambo"
+   ],
+   "cap_shape": "piano",
+   "hymenophore_color": [
+    "rosa"
+   ]
+  },
+  "tylopilus-felleus-cappello-fase-giovane": {
+   "tiles": [
+    "cappello",
+    "sotto",
+    "gambo"
+   ],
+   "cap_shape": "emisferico",
+   "hymenophore_color": [
+    "bianco"
+   ]
+  },
   "tylopilus-felleus-cappello-piano": {
    "cap_veil": false,
    "cap_surface": [
@@ -10002,6 +11058,28 @@
     "normale"
    ]
   },
+  "tylopilus-felleus-gambo-fase-adulto": {
+   "tiles": [
+    "cappello",
+    "sotto",
+    "gambo"
+   ],
+   "cap_shape": "piano",
+   "hymenophore_color": [
+    "rosa"
+   ]
+  },
+  "tylopilus-felleus-gambo-fase-giovane": {
+   "tiles": [
+    "cappello",
+    "sotto",
+    "gambo"
+   ],
+   "cap_shape": "emisferico",
+   "hymenophore_color": [
+    "bianco"
+   ]
+  },
   "tylopilus-felleus-gambo-piano": {
    "stem_ring": false,
    "stem_volva": false,
@@ -10018,6 +11096,28 @@
    "stem_base": [
     "bulbosa",
     "normale"
+   ]
+  },
+  "tylopilus-felleus-sotto-fase-adulto": {
+   "tiles": [
+    "cappello",
+    "sotto",
+    "gambo"
+   ],
+   "cap_shape": "piano",
+   "hymenophore_color": [
+    "rosa"
+   ]
+  },
+  "tylopilus-felleus-sotto-fase-giovane": {
+   "tiles": [
+    "cappello",
+    "sotto",
+    "gambo"
+   ],
+   "cap_shape": "emisferico",
+   "hymenophore_color": [
+    "bianco"
    ]
   },
   "tylopilus-felleus-sotto": {

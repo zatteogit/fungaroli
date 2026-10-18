@@ -29,6 +29,11 @@
     "bruno|emisferico",
     "bruno|piano"
    ],
+   "stages": [
+    "giovane",
+    "adulto",
+    "maturo"
+   ],
    "base": {
     "colore": "nero",
     "forma": "convesso"
@@ -51,6 +56,11 @@
    },
    "combos": [
     "crema|emisferico"
+   ],
+   "stages": [
+    "giovane",
+    "adulto",
+    "maturo"
    ],
    "base": {
     "colore": "bruno",
@@ -81,7 +91,8 @@
     "giallo|piano"
    ],
    "stages": [
-    "giovane"
+    "giovane",
+    "adulto"
    ],
    "base": {
     "colore": "crema",
@@ -107,6 +118,10 @@
    "combos": [
     "bianco|emisferico",
     "bianco|piano"
+   ],
+   "stages": [
+    "giovane",
+    "adulto"
    ],
    "base": {
     "colore": "bruno",
@@ -168,6 +183,11 @@
     "giallo|emisferico",
     "giallo|piano"
    ],
+   "stages": [
+    "giovane",
+    "adulto",
+    "maturo"
+   ],
    "base": {
     "colore": "crema",
     "forma": "convesso"
@@ -201,6 +221,10 @@
     "giallo|piano",
     "grigio|emisferico",
     "grigio|piano"
+   ],
+   "stages": [
+    "giovane",
+    "adulto"
    ],
    "base": {
     "colore": "bianco",
@@ -650,6 +674,10 @@
    "combos": [
     "arancio|convesso"
    ],
+   "stages": [
+    "giovane",
+    "adulto"
+   ],
    "base": {
     "colore": "giallo",
     "forma": "imbuto"
@@ -692,6 +720,11 @@
      "nero"
     ]
    },
+   "stages": [
+    "giovane",
+    "maturo",
+    "sciolto"
+   ],
    "base": {
     "colore": "bianco",
     "forma": "conico"
@@ -869,6 +902,10 @@
     "crema|emisferico",
     "crema|piano"
    ],
+   "stages": [
+    "giovane",
+    "adulto"
+   ],
    "base": {
     "colore": "bruno",
     "forma": "convesso"
@@ -891,6 +928,11 @@
    },
    "combos": [
     "crema|emisferico"
+   ],
+   "stages": [
+    "giovane",
+    "adulto",
+    "maturo"
    ],
    "base": {
     "colore": "bruno",
@@ -919,6 +961,10 @@
     "bianco|piano",
     "crema|conico",
     "crema|piano"
+   ],
+   "stages": [
+    "giovane",
+    "adulto"
    ],
    "base": {
     "colore": "grigio",
@@ -1149,6 +1195,11 @@
    },
    "combos": [
     "arancio|piano"
+   ],
+   "stages": [
+    "giovane",
+    "adulto",
+    "maturo"
    ],
    "base": {
     "colore": "giallo",
@@ -1406,6 +1457,10 @@
    "combos": [
     "bruno|piano"
    ],
+   "stages": [
+    "giovane",
+    "adulto"
+   ],
    "base": {
     "colore": "giallo",
     "forma": "convesso"
@@ -1592,6 +1647,10 @@
    "combos": [
     "bruno|emisferico"
    ],
+   "stages": [
+    "giovane",
+    "adulto"
+   ],
    "base": {
     "colore": "rosso",
     "forma": "convesso"
@@ -1658,6 +1717,10 @@
     "bianco|imbuto",
     "bruno|imbuto",
     "crema|imbuto"
+   ],
+   "stages": [
+    "giovane",
+    "adulto"
    ],
    "base": {
     "colore": "grigio",
@@ -1761,6 +1824,10 @@
    "combos": [
     "bianco|emisferico",
     "grigio|emisferico"
+   ],
+   "stages": [
+    "giovane",
+    "adulto"
    ],
    "base": {
     "colore": "crema",
@@ -1968,6 +2035,10 @@
     "bruno|convesso",
     "bruno|piano"
    ],
+   "stages": [
+    "giovane",
+    "adulto"
+   ],
    "base": {
     "colore": "grigio",
     "forma": "conico"
@@ -2110,6 +2181,10 @@
     "bruno|emisferico",
     "bruno|piano"
    ],
+   "stages": [
+    "giovane",
+    "adulto"
+   ],
    "base": {
     "colore": "crema",
     "forma": "convesso"
@@ -2166,28 +2241,45 @@
   "aereus-cappello-bruno-emisferico": 4,
   "aereus-cappello-bruno-piano": 4,
   "aereus-cappello-emisferico": 5,
+  "aereus-cappello-fase-adulto": 4,
+  "aereus-cappello-fase-giovane": 4,
+  "aereus-cappello-fase-maturo": 4,
   "aereus-cappello-piano": 4,
   "aereus-gambo": 4,
   "aereus-gambo-bruno": 4,
   "aereus-gambo-bruno-emisferico": 4,
   "aereus-gambo-bruno-piano": 4,
   "aereus-gambo-emisferico": 4,
+  "aereus-gambo-fase-adulto": 4,
+  "aereus-gambo-fase-giovane": 4,
+  "aereus-gambo-fase-maturo": 4,
   "aereus-gambo-piano": 4,
   "aereus-sotto": 4,
+  "aereus-sotto-fase-adulto": 4,
+  "aereus-sotto-fase-giovane": 4,
+  "aereus-sotto-fase-maturo": 4,
   "aestivalis-cappello": 4,
   "aestivalis-cappello-crema": 6,
   "aestivalis-cappello-crema-emisferico": 4,
   "aestivalis-cappello-emisferico": 4,
+  "aestivalis-cappello-fase-adulto": 4,
+  "aestivalis-cappello-fase-giovane": 5,
   "aestivalis-gambo": 4,
   "aestivalis-gambo-crema": 5,
   "aestivalis-gambo-crema-emisferico": 4,
   "aestivalis-gambo-emisferico": 4,
+  "aestivalis-gambo-fase-adulto": 4,
+  "aestivalis-gambo-fase-giovane": 4,
   "aestivalis-sotto": 4,
+  "aestivalis-sotto-fase-adulto": 4,
+  "aestivalis-sotto-fase-giovane": 4,
+  "aestivalis-sotto-fase-maturo": 4,
   "agaricus-arvensis-cappello": 4,
   "agaricus-arvensis-cappello-bianco": 5,
   "agaricus-arvensis-cappello-bianco-emisferico": 4,
   "agaricus-arvensis-cappello-bianco-piano": 4,
   "agaricus-arvensis-cappello-emisferico": 4,
+  "agaricus-arvensis-cappello-fase-adulto": 4,
   "agaricus-arvensis-cappello-fase-giovane": 4,
   "agaricus-arvensis-cappello-giallo": 5,
   "agaricus-arvensis-cappello-giallo-emisferico": 4,
@@ -2198,26 +2290,34 @@
   "agaricus-arvensis-gambo-bianco-emisferico": 4,
   "agaricus-arvensis-gambo-bianco-piano": 4,
   "agaricus-arvensis-gambo-emisferico": 4,
+  "agaricus-arvensis-gambo-fase-adulto": 4,
   "agaricus-arvensis-gambo-fase-giovane": 4,
   "agaricus-arvensis-gambo-giallo": 4,
   "agaricus-arvensis-gambo-giallo-emisferico": 4,
   "agaricus-arvensis-gambo-giallo-piano": 4,
   "agaricus-arvensis-gambo-piano": 4,
   "agaricus-arvensis-sotto": 4,
+  "agaricus-arvensis-sotto-fase-adulto": 4,
   "agaricus-arvensis-sotto-fase-giovane": 4,
   "agaricus-bisporus-cappello": 4,
   "agaricus-bisporus-cappello-bianco": 5,
   "agaricus-bisporus-cappello-bianco-emisferico": 4,
   "agaricus-bisporus-cappello-bianco-piano": 4,
   "agaricus-bisporus-cappello-emisferico": 4,
+  "agaricus-bisporus-cappello-fase-adulto": 4,
+  "agaricus-bisporus-cappello-fase-giovane": 4,
   "agaricus-bisporus-cappello-piano": 4,
   "agaricus-bisporus-gambo": 4,
   "agaricus-bisporus-gambo-bianco": 4,
   "agaricus-bisporus-gambo-bianco-emisferico": 4,
   "agaricus-bisporus-gambo-bianco-piano": 4,
   "agaricus-bisporus-gambo-emisferico": 4,
+  "agaricus-bisporus-gambo-fase-adulto": 4,
+  "agaricus-bisporus-gambo-fase-giovane": 4,
   "agaricus-bisporus-gambo-piano": 4,
   "agaricus-bisporus-sotto": 4,
+  "agaricus-bisporus-sotto-fase-adulto": 4,
+  "agaricus-bisporus-sotto-fase-giovane": 4,
   "agaricus-campestris-cappello": 4,
   "agaricus-campestris-cappello-bruno": 6,
   "agaricus-campestris-cappello-bruno-emisferico": 4,
@@ -2248,6 +2348,9 @@
   "agaricus-sylvicola-cappello-bianco-emisferico": 4,
   "agaricus-sylvicola-cappello-bianco-piano": 4,
   "agaricus-sylvicola-cappello-emisferico": 5,
+  "agaricus-sylvicola-cappello-fase-adulto": 4,
+  "agaricus-sylvicola-cappello-fase-giovane": 4,
+  "agaricus-sylvicola-cappello-fase-maturo": 4,
   "agaricus-sylvicola-cappello-giallo": 5,
   "agaricus-sylvicola-cappello-giallo-emisferico": 4,
   "agaricus-sylvicola-cappello-giallo-piano": 4,
@@ -2257,11 +2360,17 @@
   "agaricus-sylvicola-gambo-bianco-emisferico": 4,
   "agaricus-sylvicola-gambo-bianco-piano": 4,
   "agaricus-sylvicola-gambo-emisferico": 4,
+  "agaricus-sylvicola-gambo-fase-adulto": 4,
+  "agaricus-sylvicola-gambo-fase-giovane": 4,
+  "agaricus-sylvicola-gambo-fase-maturo": 4,
   "agaricus-sylvicola-gambo-giallo": 5,
   "agaricus-sylvicola-gambo-giallo-emisferico": 5,
   "agaricus-sylvicola-gambo-giallo-piano": 4,
   "agaricus-sylvicola-gambo-piano": 4,
   "agaricus-sylvicola-sotto": 4,
+  "agaricus-sylvicola-sotto-fase-adulto": 4,
+  "agaricus-sylvicola-sotto-fase-giovane": 4,
+  "agaricus-sylvicola-sotto-fase-maturo": 4,
   "agaricus-xanthodermus-cappello": 4,
   "agaricus-xanthodermus-cappello-bruno": 5,
   "agaricus-xanthodermus-cappello-bruno-emisferico": 4,
@@ -2270,6 +2379,8 @@
   "agaricus-xanthodermus-cappello-crema-emisferico": 4,
   "agaricus-xanthodermus-cappello-crema-piano": 4,
   "agaricus-xanthodermus-cappello-emisferico": 4,
+  "agaricus-xanthodermus-cappello-fase-adulto": 4,
+  "agaricus-xanthodermus-cappello-fase-giovane": 4,
   "agaricus-xanthodermus-cappello-giallo": 5,
   "agaricus-xanthodermus-cappello-giallo-emisferico": 4,
   "agaricus-xanthodermus-cappello-giallo-piano": 4,
@@ -2285,6 +2396,8 @@
   "agaricus-xanthodermus-gambo-crema-emisferico": 4,
   "agaricus-xanthodermus-gambo-crema-piano": 4,
   "agaricus-xanthodermus-gambo-emisferico": 4,
+  "agaricus-xanthodermus-gambo-fase-adulto": 4,
+  "agaricus-xanthodermus-gambo-fase-giovane": 4,
   "agaricus-xanthodermus-gambo-giallo": 4,
   "agaricus-xanthodermus-gambo-giallo-emisferico": 4,
   "agaricus-xanthodermus-gambo-giallo-piano": 4,
@@ -2293,6 +2406,8 @@
   "agaricus-xanthodermus-gambo-grigio-piano": 4,
   "agaricus-xanthodermus-gambo-piano": 5,
   "agaricus-xanthodermus-sotto": 4,
+  "agaricus-xanthodermus-sotto-fase-adulto": 4,
+  "agaricus-xanthodermus-sotto-fase-giovane": 4,
   "amanita-crocea-cappello": 5,
   "amanita-crocea-cappello-emisferico": 4,
   "amanita-crocea-cappello-fase-adulto": 4,
@@ -2577,10 +2692,14 @@
   "cibarius-cappello-arancio": 6,
   "cibarius-cappello-arancio-convesso": 4,
   "cibarius-cappello-convesso": 4,
+  "cibarius-cappello-fase-adulto": 4,
+  "cibarius-cappello-fase-giovane": 4,
   "cibarius-gambo": 4,
   "cibarius-gambo-arancio": 5,
   "cibarius-gambo-arancio-convesso": 4,
   "cibarius-gambo-convesso": 4,
+  "cibarius-gambo-fase-adulto": 4,
+  "cibarius-gambo-fase-giovane": 4,
   "cibarius-sotto": 4,
   "clitocybe-rivulosa-cappello": 4,
   "clitocybe-rivulosa-cappello-bruno": 4,
@@ -2603,11 +2722,20 @@
   "clitocybe-rivulosa-sotto": 5,
   "coprinus-comatus-cappello": 4,
   "coprinus-comatus-cappello-bruno": 4,
+  "coprinus-comatus-cappello-fase-giovane": 4,
+  "coprinus-comatus-cappello-fase-maturo": 4,
+  "coprinus-comatus-cappello-fase-sciolto": 4,
   "coprinus-comatus-cappello-nero": 4,
   "coprinus-comatus-gambo": 4,
   "coprinus-comatus-gambo-bruno": 4,
+  "coprinus-comatus-gambo-fase-giovane": 4,
+  "coprinus-comatus-gambo-fase-maturo": 4,
+  "coprinus-comatus-gambo-fase-sciolto": 4,
   "coprinus-comatus-gambo-nero": 4,
   "coprinus-comatus-sotto": 4,
+  "coprinus-comatus-sotto-fase-giovane": 4,
+  "coprinus-comatus-sotto-fase-maturo": 4,
+  "coprinus-comatus-sotto-fase-sciolto": 4,
   "cornucopioides-cappello": 4,
   "cornucopioides-cappello-bruno": 4,
   "cornucopioides-cappello-grigio": 4,
@@ -2702,23 +2830,36 @@
   "cyclocybe-aegerita-cappello-crema-emisferico": 4,
   "cyclocybe-aegerita-cappello-crema-piano": 4,
   "cyclocybe-aegerita-cappello-emisferico": 5,
+  "cyclocybe-aegerita-cappello-fase-adulto": 4,
+  "cyclocybe-aegerita-cappello-fase-giovane": 4,
   "cyclocybe-aegerita-cappello-piano": 4,
   "cyclocybe-aegerita-gambo": 4,
   "cyclocybe-aegerita-gambo-crema": 4,
   "cyclocybe-aegerita-gambo-crema-emisferico": 4,
   "cyclocybe-aegerita-gambo-crema-piano": 4,
   "cyclocybe-aegerita-gambo-emisferico": 4,
+  "cyclocybe-aegerita-gambo-fase-adulto": 4,
+  "cyclocybe-aegerita-gambo-fase-giovane": 4,
   "cyclocybe-aegerita-gambo-piano": 5,
   "cyclocybe-aegerita-sotto": 5,
+  "cyclocybe-aegerita-sotto-fase-adulto": 4,
+  "cyclocybe-aegerita-sotto-fase-giovane": 4,
   "edulis-cappello": 4,
   "edulis-cappello-crema": 4,
   "edulis-cappello-crema-emisferico": 4,
   "edulis-cappello-emisferico": 4,
+  "edulis-cappello-fase-adulto": 4,
+  "edulis-cappello-fase-giovane": 4,
   "edulis-gambo": 4,
   "edulis-gambo-crema": 4,
   "edulis-gambo-crema-emisferico": 4,
   "edulis-gambo-emisferico": 4,
+  "edulis-gambo-fase-adulto": 4,
+  "edulis-gambo-fase-giovane": 4,
   "edulis-sotto": 4,
+  "edulis-sotto-fase-adulto": 4,
+  "edulis-sotto-fase-giovane": 4,
+  "edulis-sotto-fase-maturo": 4,
   "entoloma-sinuatum-cappello": 4,
   "entoloma-sinuatum-cappello-bianco": 4,
   "entoloma-sinuatum-cappello-bianco-conico": 5,
@@ -2727,6 +2868,8 @@
   "entoloma-sinuatum-cappello-crema": 4,
   "entoloma-sinuatum-cappello-crema-conico": 4,
   "entoloma-sinuatum-cappello-crema-piano": 4,
+  "entoloma-sinuatum-cappello-fase-adulto": 4,
+  "entoloma-sinuatum-cappello-fase-giovane": 4,
   "entoloma-sinuatum-cappello-piano": 4,
   "entoloma-sinuatum-gambo": 4,
   "entoloma-sinuatum-gambo-bianco": 4,
@@ -2736,8 +2879,12 @@
   "entoloma-sinuatum-gambo-crema": 4,
   "entoloma-sinuatum-gambo-crema-conico": 4,
   "entoloma-sinuatum-gambo-crema-piano": 4,
+  "entoloma-sinuatum-gambo-fase-adulto": 4,
+  "entoloma-sinuatum-gambo-fase-giovane": 4,
   "entoloma-sinuatum-gambo-piano": 4,
   "entoloma-sinuatum-sotto": 5,
+  "entoloma-sinuatum-sotto-fase-adulto": 4,
+  "entoloma-sinuatum-sotto-fase-giovane": 4,
   "fistulina-hepatica-cappello": 4,
   "fistulina-hepatica-cappello-bruno": 6,
   "fistulina-hepatica-cappello-rosa": 5,
@@ -2862,6 +3009,9 @@
   "hypholoma-fasciculare-gambo-arancio-piano": 4,
   "hypholoma-fasciculare-gambo-piano": 4,
   "hypholoma-fasciculare-sotto": 4,
+  "hypholoma-fasciculare-sotto-fase-adulto": 4,
+  "hypholoma-fasciculare-sotto-fase-giovane": 4,
+  "hypholoma-fasciculare-sotto-fase-maturo": 4,
   "imleria-badia-cappello": 4,
   "imleria-badia-cappello-piano": 4,
   "imleria-badia-gambo": 4,
@@ -3013,10 +3163,14 @@
   "mellea-cappello": 4,
   "mellea-cappello-bruno": 4,
   "mellea-cappello-bruno-piano": 4,
+  "mellea-cappello-fase-adulto": 4,
+  "mellea-cappello-fase-giovane": 4,
   "mellea-cappello-piano": 4,
   "mellea-gambo": 4,
   "mellea-gambo-bruno": 4,
   "mellea-gambo-bruno-piano": 4,
+  "mellea-gambo-fase-adulto": 4,
+  "mellea-gambo-fase-giovane": 4,
   "mellea-gambo-piano": 4,
   "mellea-sotto": 4,
   "morchella-elata-cappello": 4,
@@ -3111,6 +3265,8 @@
   "pinophilus-gambo-bruno-emisferico": 4,
   "pinophilus-gambo-emisferico": 4,
   "pinophilus-sotto": 4,
+  "pinophilus-sotto-fase-adulto": 4,
+  "pinophilus-sotto-fase-giovane": 4,
   "pleurotus-cornucopiae-cappello": 4,
   "pleurotus-cornucopiae-cappello-convesso": 4,
   "pleurotus-cornucopiae-gambo": 4,
@@ -3140,6 +3296,8 @@
   "pleurotus-ostreatus-cappello-bruno-imbuto": 4,
   "pleurotus-ostreatus-cappello-crema": 6,
   "pleurotus-ostreatus-cappello-crema-imbuto": 4,
+  "pleurotus-ostreatus-cappello-fase-adulto": 4,
+  "pleurotus-ostreatus-cappello-fase-giovane": 4,
   "pleurotus-ostreatus-cappello-imbuto": 4,
   "pleurotus-ostreatus-gambo": 4,
   "pleurotus-ostreatus-gambo-bianco": 5,
@@ -3148,6 +3306,8 @@
   "pleurotus-ostreatus-gambo-bruno-imbuto": 4,
   "pleurotus-ostreatus-gambo-crema": 5,
   "pleurotus-ostreatus-gambo-crema-imbuto": 4,
+  "pleurotus-ostreatus-gambo-fase-adulto": 4,
+  "pleurotus-ostreatus-gambo-fase-giovane": 4,
   "pleurotus-ostreatus-gambo-imbuto": 5,
   "pleurotus-ostreatus-sotto": 4,
   "procera-cappello": 4,
@@ -3195,15 +3355,21 @@
   "rubroboletus-satanas-cappello-bianco": 4,
   "rubroboletus-satanas-cappello-bianco-emisferico": 4,
   "rubroboletus-satanas-cappello-emisferico": 4,
+  "rubroboletus-satanas-cappello-fase-adulto": 4,
+  "rubroboletus-satanas-cappello-fase-giovane": 4,
   "rubroboletus-satanas-cappello-grigio": 4,
   "rubroboletus-satanas-cappello-grigio-emisferico": 4,
   "rubroboletus-satanas-gambo": 4,
   "rubroboletus-satanas-gambo-bianco": 4,
   "rubroboletus-satanas-gambo-bianco-emisferico": 4,
   "rubroboletus-satanas-gambo-emisferico": 4,
+  "rubroboletus-satanas-gambo-fase-adulto": 4,
+  "rubroboletus-satanas-gambo-fase-giovane": 4,
   "rubroboletus-satanas-gambo-grigio": 4,
   "rubroboletus-satanas-gambo-grigio-emisferico": 4,
   "rubroboletus-satanas-sotto": 4,
+  "rubroboletus-satanas-sotto-fase-adulto": 4,
+  "rubroboletus-satanas-sotto-fase-giovane": 4,
   "russula-aeruginea-cappello": 4,
   "russula-aeruginea-cappello-imbuto": 5,
   "russula-aeruginea-cappello-piano": 4,
@@ -3323,14 +3489,20 @@
   "terreum-cappello-bruno-convesso": 4,
   "terreum-cappello-bruno-piano": 4,
   "terreum-cappello-convesso": 4,
+  "terreum-cappello-fase-adulto": 4,
+  "terreum-cappello-fase-giovane": 4,
   "terreum-cappello-piano": 4,
   "terreum-gambo": 4,
   "terreum-gambo-bruno": 4,
   "terreum-gambo-bruno-convesso": 4,
   "terreum-gambo-bruno-piano": 4,
   "terreum-gambo-convesso": 4,
+  "terreum-gambo-fase-adulto": 4,
+  "terreum-gambo-fase-giovane": 4,
   "terreum-gambo-piano": 4,
   "terreum-sotto": 4,
+  "terreum-sotto-fase-adulto": 4,
+  "terreum-sotto-fase-giovane": 4,
   "tricholoma-equestre-cappello": 4,
   "tricholoma-equestre-cappello-bruno": 4,
   "tricholoma-equestre-cappello-bruno-conico": 4,
@@ -3401,14 +3573,20 @@
   "tylopilus-felleus-cappello-bruno-emisferico": 4,
   "tylopilus-felleus-cappello-bruno-piano": 4,
   "tylopilus-felleus-cappello-emisferico": 4,
+  "tylopilus-felleus-cappello-fase-adulto": 4,
+  "tylopilus-felleus-cappello-fase-giovane": 4,
   "tylopilus-felleus-cappello-piano": 4,
   "tylopilus-felleus-gambo": 4,
   "tylopilus-felleus-gambo-bruno": 4,
   "tylopilus-felleus-gambo-bruno-emisferico": 4,
   "tylopilus-felleus-gambo-bruno-piano": 4,
   "tylopilus-felleus-gambo-emisferico": 4,
+  "tylopilus-felleus-gambo-fase-adulto": 4,
+  "tylopilus-felleus-gambo-fase-giovane": 4,
   "tylopilus-felleus-gambo-piano": 4,
   "tylopilus-felleus-sotto": 4,
+  "tylopilus-felleus-sotto-fase-adulto": 4,
+  "tylopilus-felleus-sotto-fase-giovane": 4,
   "urnula-craterium-cappello": 4,
   "urnula-craterium-cappello-bruno": 5,
   "urnula-craterium-gambo": 4,
