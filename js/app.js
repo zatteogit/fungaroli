@@ -591,10 +591,10 @@ function updateCompactTitle(initial=false) {
 function watchTitle() {
   const bar=$('.appbar-title');if(!bar)return;
   const v=$('.view:not([hidden])');
-  const h=v?.querySelector('.cmp-title')||v?.querySelector('.phero-title')||v?.querySelector('.view-title');
+  const h=(state.view==='uscite'?v?.querySelector('#active-filters'):null)||v?.querySelector('.cmp-title')||v?.querySelector('.phero-title')||v?.querySelector('.view-title');
   const changed=h!==watchedTitle;watchedTitle=h||null;
   if(!h){compactTitle=false;document.documentElement.classList.remove('title-in-bar');return;}
-  bar.textContent=h.textContent.trim();
+  bar.textContent=state.view==='uscite'?'Dove andare':h.textContent.trim();
   updateCompactTitle(changed);
   revealHeader();
 }
@@ -987,8 +987,8 @@ function renderFilterBox(box, onMap = false) {
   const sliders='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="M3 7h5m4 0h9M3 17h9m4 0h5"/><circle cx="10" cy="7" r="2"/><circle cx="14" cy="17" r="2"/></svg>';
   const more=`<button type="button" class="home-filter-button" data-more aria-haspopup="dialog" aria-label="Filtri avanzati${count?`, ${count} attivi`:``}"${count?` title="${count} filtri attivi"`:''}>${sliders}<span>Filtri</span>${count?`<span class="af-filter-count" aria-hidden="true">${count}</span>`:''}</button>`;
   const icons={avoidCrowd:IC.people,preferComfort:IC.walk,distancePenalty:IC.home};
-  const prefs=PREFS.map(([k,label,short])=>`<button type="button" class="chip pref" data-p="${k}" aria-label="${esc(k==='avoidCrowd'?'Poca gente':label)}" title="${esc(label)}" aria-pressed="${!!state[k]}"><span class="pref-icon" aria-hidden="true">${icons[k]}</span><span class="pref-label-full">${esc(label)}</span><span class="pref-label-short" aria-hidden="true">${esc(short)}</span></button>`).join('');
-  box.innerHTML=`<div class="af-group-row intent-row" role="group" aria-label="Cosa cerchi">${intentButtons()}</div><div class="af-pref-row" role="group" aria-label="Preferenze dell’uscita">${prefs}</div>`;
+  const prefs=PREFS.filter(([k])=>state[k]).map(([k,label,short])=>`<button type="button" class="chip pref" data-p="${k}" aria-label="${esc(k==='avoidCrowd'?'Poca gente':label)}" title="${esc(label)}" aria-pressed="${!!state[k]}"><span class="pref-icon" aria-hidden="true">${icons[k]}</span><span class="pref-label-full">${esc(label)}</span><span class="pref-label-short" aria-hidden="true">${esc(short)}</span></button>`).join('');
+  box.innerHTML=`<div class="af-group-row intent-row" role="group" aria-label="Cosa cerchi">${intentButtons()}</div><span id="home-filter-action">${more}</span>${prefs?`<div class="af-pref-row" role="group" aria-label="Preferenze attive, tocca per rimuovere">${prefs}</div>`:''}`;
   box.querySelectorAll('[data-intent]').forEach(b=>b.onclick=()=>changeIntent(b.dataset.intent));
   box.querySelectorAll('[data-p]').forEach(b=>b.onclick=()=>soft(()=>{state[b.dataset.p]=!state[b.dataset.p];savePrefs();outCache.clear();renderFilterSummary();renderAll();}));
   for (const action of document.querySelectorAll('#home-filter-action, #appbar-home-filters')) {
