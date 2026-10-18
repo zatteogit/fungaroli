@@ -297,6 +297,7 @@ body[data-page="mappa"] .view-map { border-radius:0; }
 .fungus-compare .cmp-value-text { overflow-wrap:anywhere; }
 .fungus-compare .cmp-or { color:var(--text-2); font-size:11px; }
 .fungus-compare .cmp-panel { margin-top:20px; }
+.fungus-compare .cmp-season { margin-top:28px; }
 .fungus-compare .cmp-kind-tabs { margin-bottom:0; }
 @media(max-width:599px) {
   .fungus-compare .cmp-column-head { gap:16px; padding-inline:12px; font-size:12px; }
@@ -404,10 +405,10 @@ body[data-page="mappa"] .view-map { border-radius:0; }
 .fungus-compare .cmp-variant-status { display:block; margin-top:8px; color:var(--text-2); font:400 12px/1.5 var(--font-body); }
 .fungus-compare .cmp-variant-status:empty { display:none; }
 @supports(grid-template-rows:subgrid) {
-  .fungus-compare .cmp-row[data-trait="cap_color"]:has(.cmp-variant-fields) > .cmp-cell { display:grid; grid-template-rows:subgrid; grid-row:span 3; row-gap:0; }
-  .fungus-compare .cmp-row[data-trait="cap_color"]:has(.cmp-variant-fields) > .cmp-cell > .cmp-part-art { grid-row:1; }
-  .fungus-compare .cmp-row[data-trait="cap_color"]:has(.cmp-variant-fields) > .cmp-cell > .cmp-variant-controls { grid-row:2; }
-  .fungus-compare .cmp-row[data-trait="cap_color"]:has(.cmp-variant-fields) > .cmp-cell > .cmp-vals { grid-row:3; align-self:start; }
+  .fungus-compare .cmp-row:is([data-trait="cap_color"],[data-trait="cap_shape"]):has(.cmp-variant-fields) > .cmp-cell { display:grid; grid-template-rows:subgrid; grid-row:span 3; row-gap:0; }
+  .fungus-compare .cmp-row:is([data-trait="cap_color"],[data-trait="cap_shape"]):has(.cmp-variant-fields) > .cmp-cell > .cmp-part-art { grid-row:1; }
+  .fungus-compare .cmp-row:is([data-trait="cap_color"],[data-trait="cap_shape"]):has(.cmp-variant-fields) > .cmp-cell > .cmp-variant-controls { grid-row:2; }
+  .fungus-compare .cmp-row:is([data-trait="cap_color"],[data-trait="cap_shape"]):has(.cmp-variant-fields) > .cmp-cell > .cmp-vals { grid-row:3; align-self:start; }
 }
 
 .fungus-compare .cmp-variant-fields .ts-dots { min-width:0; flex-wrap:wrap; }
@@ -416,8 +417,6 @@ body[data-page="mappa"] .view-map { border-radius:0; }
 
 /* Il confronto può partire dalla scelta di due specie, anche fuori dai sosia documentati. */
 .sub-nav.recognize-entry:has(.compare-entry) { flex-wrap:wrap; gap:8px; }
-.cmp-edit-line { display:flex; justify-content:flex-end; margin:-12px 0 12px; }
-.cmp-edit-line .btn { min-height:40px; padding:8px 12px; font-size:13px; }
 .cmp-picker-all { display:flex; align-items:center; justify-content:space-between; gap:12px; width:100%; min-height:48px; margin-top:16px; padding:12px 0 0; border:0; border-top:1px solid var(--border); background:none; color:var(--link); font:600 14px/1.5 var(--font-body); cursor:pointer; text-align:left; }
 .cmp-free-note { display:grid; gap:5px; padding:14px 16px; margin:20px 0; border-inline-start:3px solid var(--fiordaliso-ink); border-radius:0 12px 12px 0; background:var(--fiordaliso-soft); font:400 14px/1.6 var(--font-body); }
 .cmp-free-note b { color:var(--fiordaliso-ink); font-weight:650; }
@@ -468,3 +467,12 @@ body[data-page="mappa"] .view-map { border-radius:0; }
   .cmp-start-choice > i { grid-row:4; }
   .cmp-start-change { grid-row:5; }
 }
+
+/* La coppia si sceglie sempre nei due menu, anche quando non sono sosia. */
+.cmp-edge-arrows[hidden] { display:none; }
+.fungus-compare .cmp-related-badge { display:table; margin:16px 0; padding:6px 10px; border-radius:999px; background:var(--surface-2); color:var(--link); font:600 12px/1.5 var(--font-body); }
+
+/* Sopra le foto conta i sosia; nella barra scorsa identifica la coppia corrente. */
+.cmp-pair-nav .cmp-sosia-count[hidden],
+.cmp-pair-nav.is-stuck .cmp-sosia-count { display:none; }
+.cmp-pair-nav:not(.is-stuck) .cmp-pair-menu:has(.cmp-sosia-count:not([hidden])) [data-current-lookalike] { display:none; }
