@@ -563,3 +563,14 @@ body[data-page="mappa"] .view-map { border-radius:0; }
 [data-plant-traits] .ts-v { font:500 15px/1.5 var(--font-body); }
 @media(min-width:760px) { [data-plant-traits] .trait-strip { grid-template-columns:repeat(3,minmax(0,1fr)); } }
 [data-plant-traits] .ts-color { width:32px; height:32px; border-radius:50%; border:1px solid #716d61; flex:none; }
+
+/* Gli avvisi hanno già una cornice e un proprio comando: niente cornici annidate. */
+.attention .att-more { border-top:0; padding-top:0; }
+.attention .att-item { border-top:0; padding-block:14px; }
+.attention .att-item:first-child { padding-top:8px; }
+.entity-accordion-root .attention[data-entity-accordion] { padding:18px 20px; background:var(--crit-bg); border-color:color-mix(in srgb,var(--crit) 22%,transparent); }
+.entity-accordion-root .attention[data-entity-accordion] > summary { display:block; min-height:0; padding:0; border:0; background:transparent; color:inherit; }
+.entity-accordion-root .attention[data-entity-accordion] > summary::after { content:none; }
+.entity-accordion-root .attention[data-entity-accordion] > .att-list { margin:0; padding:0; }
+.attention .att-more::after { width:20px; height:20px; flex:0 0 20px; border:0; background:currentColor; mask:url('../assets/ui/chevron-right.svg') center / 20px no-repeat; -webkit-mask:url('../assets/ui/chevron-right.svg') center / 20px no-repeat; transform:rotate(90deg); }
+.attention[open] .att-more::after { transform:rotate(-90deg); }
