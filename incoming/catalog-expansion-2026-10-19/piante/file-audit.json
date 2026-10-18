@@ -1,0 +1,584 @@
+{
+  "photos": [
+    {
+      "id": "ce1-piante-bugola-9",
+      "original_sha256_verified": true,
+      "source_icc": null,
+      "color_conversion": false,
+      "files": {
+        "file": {
+          "bytes": 31114,
+          "width": 391,
+          "height": 560,
+          "sha256": "cc99781f708f7c81440757262b36a0705d945835877e9bd65fc0d25e44534e83",
+          "metadata_clean": true
+        },
+        "file_hd": {
+          "bytes": 81118,
+          "width": 838,
+          "height": 1200,
+          "sha256": "e8be4de55856a4dd962091533e2e5bc3192e38c2b002ab0c655798aa420bdd9e",
+          "metadata_clean": true
+        },
+        "thumb": {
+          "bytes": 5242,
+          "width": 160,
+          "height": 160,
+          "sha256": "3a079f4e96d713be09d13e0dfa77d88c914a941d0882ab4266ce999907a7243a",
+          "metadata_clean": true
+        }
+      }
+    },
+    {
+      "id": "ce1-piante-bugola-13",
+      "original_sha256_verified": true,
+      "source_icc": null,
+      "color_conversion": false,
+      "files": {
+        "file": {
+          "bytes": 20634,
+          "width": 560,
+          "height": 479,
+          "sha256": "db46446eb884975ae77e56463bff12d87107392193ec4a5a759bacb14a35fbbd",
+          "metadata_clean": true
+        },
+        "file_hd": {
+          "bytes": 95766,
+          "width": 1200,
+          "height": 1025,
+          "sha256": "d71c5cae2be4c6b56151e84f47508fd19a78af0799f389f4dc073c81e6ccaaaa",
+          "metadata_clean": true
+        },
+        "thumb": {
+          "bytes": 1616,
+          "width": 160,
+          "height": 160,
+          "sha256": "5f1f05d83fe814bd04fdd65600d6156a680b6c799c148c3c7f8916839d6803c7",
+          "metadata_clean": true
+        }
+      }
+    },
+    {
+      "id": "ce1-piante-bugola-22",
+      "original_sha256_verified": true,
+      "source_icc": null,
+      "color_conversion": false,
+      "files": {
+        "file": {
+          "bytes": 50528,
+          "width": 560,
+          "height": 373,
+          "sha256": "b80847cb26b74dfc4c3310783ba9abbbe5108fb4a7551bae1a8aafa56ab24704",
+          "metadata_clean": true
+        },
+        "file_hd": {
+          "bytes": 196692,
+          "width": 1200,
+          "height": 800,
+          "sha256": "9c9770c082bf13948917da74a4570a3031d76b7e50c798c073f21caf5254c7ce",
+          "metadata_clean": true
+        },
+        "thumb": {
+          "bytes": 6074,
+          "width": 160,
+          "height": 160,
+          "sha256": "2597790e8629d5c6c47a1ea32f32dd45708d2c0527fa8a6c11006f3a93c42cb5",
+          "metadata_clean": true
+        }
+      }
+    },
+    {
+      "id": "ce1-piante-acetosella-0",
+      "original_sha256_verified": true,
+      "source_icc": null,
+      "color_conversion": false,
+      "files": {
+        "file": {
+          "bytes": 36240,
+          "width": 546,
+          "height": 560,
+          "sha256": "8c93ec2171ba1fd008ceb1392a7932a15e8a87495560561e343f770cd1a9c488",
+          "metadata_clean": true
+        },
+        "file_hd": {
+          "bytes": 97028,
+          "width": 1169,
+          "height": 1200,
+          "sha256": "0e4d357e76a6323dd045fed50293179bbb208de6e33758d59fe5910d15118e4f",
+          "metadata_clean": true
+        },
+        "thumb": {
+          "bytes": 5446,
+          "width": 160,
+          "height": 160,
+          "sha256": "e18a7060f993bc8f4b36c4ab4dadba5ec9bc56dc496efd22db87dde06d513103",
+          "metadata_clean": true
+        }
+      }
+    },
+    {
+      "id": "ce1-piante-acetosella-8",
+      "original_sha256_verified": true,
+      "source_icc": null,
+      "color_conversion": false,
+      "files": {
+        "file": {
+          "bytes": 75914,
+          "width": 560,
+          "height": 494,
+          "sha256": "61f9607f26c15fdde02b753df7f56fd3030e4f528d1c311be7213180245063c4",
+          "metadata_clean": true
+        },
+        "file_hd": {
+          "bytes": 208788,
+          "width": 1200,
+          "height": 1058,
+          "sha256": "c02153792e6984c7a9e2d328b611f3d437a6b70036d8f33abbd17d8d89dcdc61",
+          "metadata_clean": true
+        },
+        "thumb": {
+          "bytes": 8520,
+          "width": 160,
+          "height": 160,
+          "sha256": "961e76ee069c0c2e34356e72492308153e77b5d140b30aeb41d024fc9dc8c605",
+          "metadata_clean": true
+        }
+      }
+    },
+    {
+      "id": "ce1-piante-geranio-robertiano-40",
+      "original_sha256_verified": true,
+      "source_icc": null,
+      "color_conversion": false,
+      "files": {
+        "file": {
+          "bytes": 12848,
+          "width": 560,
+          "height": 457,
+          "sha256": "f71385e67306d70468c6a879b9ffaf8b2b961f091fc769b362d65c80a1ac809a",
+          "metadata_clean": true
+        },
+        "file_hd": {
+          "bytes": 40012,
+          "width": 1200,
+          "height": 979,
+          "sha256": "cc8e9b3805435de47ec39f3c392f8af894f14876dc8984e6506c9d1ace37f7ef",
+          "metadata_clean": true
+        },
+        "thumb": {
+          "bytes": 2114,
+          "width": 160,
+          "height": 160,
+          "sha256": "1d4ed08680eca2f57b6e33fdbbd3ad47309cc3f7a2e85ebcc40e2411b04f8daa",
+          "metadata_clean": true
+        }
+      }
+    },
+    {
+      "id": "ce1-piante-geranio-robertiano-56",
+      "original_sha256_verified": true,
+      "source_icc": null,
+      "color_conversion": false,
+      "files": {
+        "file": {
+          "bytes": 33444,
+          "width": 560,
+          "height": 555,
+          "sha256": "e2f9509df58e3b66048e51fb9b9814c2d5140f601fb5f76ab803a853b59c1787",
+          "metadata_clean": true
+        },
+        "file_hd": {
+          "bytes": 112610,
+          "width": 1200,
+          "height": 1189,
+          "sha256": "b260930bf3116dd6fd009c24b53596f16950be839dd58cebda6a7034c79d8199",
+          "metadata_clean": true
+        },
+        "thumb": {
+          "bytes": 4206,
+          "width": 160,
+          "height": 160,
+          "sha256": "3732566fba6216e468a1ec8e0abb9c5a46537ddeaa448d61c8b0db28aa1dd0c4",
+          "metadata_clean": true
+        }
+      }
+    },
+    {
+      "id": "ce1-piante-geranio-robertiano-80",
+      "original_sha256_verified": true,
+      "source_icc": null,
+      "color_conversion": false,
+      "files": {
+        "file": {
+          "bytes": 10632,
+          "width": 430,
+          "height": 560,
+          "sha256": "14c6e25ed552c3bdd53b66960fe95f16bbd8bb5f5452c251009f9719674da154",
+          "metadata_clean": true
+        },
+        "file_hd": {
+          "bytes": 38722,
+          "width": 922,
+          "height": 1200,
+          "sha256": "41561e80b813bc061186328acb7afc265e5e547833fd22b412b4d5a261b6cd3c",
+          "metadata_clean": true
+        },
+        "thumb": {
+          "bytes": 1156,
+          "width": 160,
+          "height": 160,
+          "sha256": "4f188ace6ee7b16dc4a889de3f0211e4bb00f2f0664cf98bd7559deccafe5bf3",
+          "metadata_clean": true
+        }
+      }
+    },
+    {
+      "id": "ce1-piante-sanicola-5",
+      "original_sha256_verified": true,
+      "source_icc": null,
+      "color_conversion": false,
+      "files": {
+        "file": {
+          "bytes": 17514,
+          "width": 552,
+          "height": 560,
+          "sha256": "2878028a3e8e7723e1f2b398035f17a98ed89f344575413a2b90a7b2684997c2",
+          "metadata_clean": true
+        },
+        "file_hd": {
+          "bytes": 47460,
+          "width": 1183,
+          "height": 1200,
+          "sha256": "d81ccbcb3f1a85e52a904cfb89aeae2f2d5a21d64e0aad46cd222946c6501c9b",
+          "metadata_clean": true
+        },
+        "thumb": {
+          "bytes": 2378,
+          "width": 160,
+          "height": 160,
+          "sha256": "73240835f803249276733644c9960d0ed6d965aacbbd8be52898a7640a4df573",
+          "metadata_clean": true
+        }
+      }
+    },
+    {
+      "id": "ce1-piante-sanicola-3",
+      "original_sha256_verified": true,
+      "source_icc": null,
+      "color_conversion": false,
+      "files": {
+        "file": {
+          "bytes": 34718,
+          "width": 560,
+          "height": 485,
+          "sha256": "5be00fd6324069c771ce3773efe75e64ac39bb8d47305e23a6893476fc474e8f",
+          "metadata_clean": true
+        },
+        "file_hd": {
+          "bytes": 99812,
+          "width": 1200,
+          "height": 1039,
+          "sha256": "164b95e35ce42700e68798430e1ef6891381cf15f5037543a709791ab9225cbd",
+          "metadata_clean": true
+        },
+        "thumb": {
+          "bytes": 4426,
+          "width": 160,
+          "height": 160,
+          "sha256": "943a6b1a93fe4872911b16010f68068fc5668b2b4e34cc1e23a71c2725b76355",
+          "metadata_clean": true
+        }
+      }
+    },
+    {
+      "id": "ce1-piante-viola-silvestre-17",
+      "original_sha256_verified": true,
+      "source_icc": null,
+      "color_conversion": false,
+      "files": {
+        "file": {
+          "bytes": 16496,
+          "width": 560,
+          "height": 559,
+          "sha256": "0114aa07880a1b44eda5ed60a3352ead3c5b3b56db908e1dcd130213c1677beb",
+          "metadata_clean": true
+        },
+        "file_hd": {
+          "bytes": 58026,
+          "width": 1200,
+          "height": 1197,
+          "sha256": "b64ebc90f5319e8b884ea1858e5090b2dc7961982bfd22fc62cfea586977dbb9",
+          "metadata_clean": true
+        },
+        "thumb": {
+          "bytes": 1932,
+          "width": 160,
+          "height": 160,
+          "sha256": "614838b450cf986d38cf20d64651ab0df80e4e83f3b44182ce40debf41f1ae99",
+          "metadata_clean": true
+        }
+      }
+    },
+    {
+      "id": "ce1-piante-viola-silvestre-50",
+      "original_sha256_verified": true,
+      "source_icc": null,
+      "color_conversion": false,
+      "files": {
+        "file": {
+          "bytes": 12798,
+          "width": 560,
+          "height": 544,
+          "sha256": "572937aae28d3987fd17b6c5a38ad15c6b0bb08f6272d3d853e356760f4c96a3",
+          "metadata_clean": true
+        },
+        "file_hd": {
+          "bytes": 50356,
+          "width": 1200,
+          "height": 1166,
+          "sha256": "d4b3d1bdaebfe49c5c1a5a809b5d9ebcd085eb58e28cfe7ac1decac079acf1df",
+          "metadata_clean": true
+        },
+        "thumb": {
+          "bytes": 1444,
+          "width": 160,
+          "height": 160,
+          "sha256": "013569be001e5364517ec0c80824dccbd287e505cd61c339ddf8e6aaecd53f9b",
+          "metadata_clean": true
+        }
+      }
+    },
+    {
+      "id": "ce1-piante-viola-silvestre-44",
+      "original_sha256_verified": true,
+      "source_icc": null,
+      "color_conversion": false,
+      "files": {
+        "file": {
+          "bytes": 26032,
+          "width": 560,
+          "height": 534,
+          "sha256": "9761cf5123630179aed758e944be5e8d1778e632fa507b16a1aeb113c53a4a66",
+          "metadata_clean": true
+        },
+        "file_hd": {
+          "bytes": 125266,
+          "width": 1200,
+          "height": 1144,
+          "sha256": "2989f57e3f3c85dca8f4cf287cca30a76d82f246e3950ab1064a146f32b9caad",
+          "metadata_clean": true
+        },
+        "thumb": {
+          "bytes": 2300,
+          "width": 160,
+          "height": 160,
+          "sha256": "b9331f36ccbafcebf1596fe7accfbe9398b586b686dbdcd436d2cb4ecbe433cb",
+          "metadata_clean": true
+        }
+      }
+    },
+    {
+      "id": "ce1-piante-pervinca-minore-60",
+      "original_sha256_verified": true,
+      "source_icc": null,
+      "color_conversion": false,
+      "files": {
+        "file": {
+          "bytes": 37526,
+          "width": 560,
+          "height": 469,
+          "sha256": "05a5ca1c91c8f5dad0491a4be250d47c34a976857bd5a47cca1d239eb1087739",
+          "metadata_clean": true
+        },
+        "file_hd": {
+          "bytes": 109360,
+          "width": 1200,
+          "height": 1006,
+          "sha256": "83c099c671230d7c4bb9f2f5424ef6e2d1645f9ca25fd95d0025f59e83717de7",
+          "metadata_clean": true
+        },
+        "thumb": {
+          "bytes": 5646,
+          "width": 160,
+          "height": 160,
+          "sha256": "dd4587c8f278933de0a9d9ce8d6cc2aa6d64384661cb3a3e3df444c12005bf93",
+          "metadata_clean": true
+        }
+      }
+    },
+    {
+      "id": "ce1-piante-pervinca-minore-30",
+      "original_sha256_verified": true,
+      "source_icc": null,
+      "color_conversion": false,
+      "files": {
+        "file": {
+          "bytes": 15746,
+          "width": 486,
+          "height": 560,
+          "sha256": "65a469b4a48aa35cb6bebe261f7976be16b2f6e9f3356bb4214e41414182dff8",
+          "metadata_clean": true
+        },
+        "file_hd": {
+          "bytes": 50894,
+          "width": 1041,
+          "height": 1200,
+          "sha256": "503ee899a331f180a334477e10ee19d480289e0e6e8b1eebac633b765d3ff230",
+          "metadata_clean": true
+        },
+        "thumb": {
+          "bytes": 2544,
+          "width": 160,
+          "height": 160,
+          "sha256": "35b0861c5a05049d9f557a2e5ed67d3b40e749fcc90f4a7c2383ec5b633c046a",
+          "metadata_clean": true
+        }
+      }
+    },
+    {
+      "id": "ce1-piante-cariofillata-11",
+      "original_sha256_verified": true,
+      "source_icc": null,
+      "color_conversion": false,
+      "files": {
+        "file": {
+          "bytes": 12890,
+          "width": 560,
+          "height": 542,
+          "sha256": "59aed7731720e2e5ddbef0aa3106ab245d5de63c54bd893b9f6c9ddd89ba948e",
+          "metadata_clean": true
+        },
+        "file_hd": {
+          "bytes": 37744,
+          "width": 1200,
+          "height": 1161,
+          "sha256": "6dcc247a1f0d11b902bbb6283b15e31302742f84d303aeadfd9f7e11fead2651",
+          "metadata_clean": true
+        },
+        "thumb": {
+          "bytes": 1892,
+          "width": 160,
+          "height": 160,
+          "sha256": "d78cd5cd804663c240cc60d22d29e981c3be18fc25d74ee5accee953da768b2e",
+          "metadata_clean": true
+        }
+      }
+    },
+    {
+      "id": "ce1-piante-cariofillata-0",
+      "original_sha256_verified": true,
+      "source_icc": null,
+      "color_conversion": false,
+      "files": {
+        "file": {
+          "bytes": 22238,
+          "width": 414,
+          "height": 560,
+          "sha256": "0b6f61239bbec3bfcab1d43e47f8c8fb64bddb87346184c701c204008f0d994d",
+          "metadata_clean": true
+        },
+        "file_hd": {
+          "bytes": 103198,
+          "width": 887,
+          "height": 1200,
+          "sha256": "b6ff8900c5820dafa5bca3fc92b17245016d73445893794248def73b69137cac",
+          "metadata_clean": true
+        },
+        "thumb": {
+          "bytes": 2528,
+          "width": 160,
+          "height": 160,
+          "sha256": "fef2fa4a0e185a0a74db7fdda2703962e6d8ee0b3b16690b7e0936b49d2655d3",
+          "metadata_clean": true
+        }
+      }
+    },
+    {
+      "id": "ce1-piante-stellina-odorosa-5",
+      "original_sha256_verified": true,
+      "source_icc": null,
+      "color_conversion": false,
+      "files": {
+        "file": {
+          "bytes": 7772,
+          "width": 560,
+          "height": 409,
+          "sha256": "4921ff2fe6f715d4bb6a5f7fe68f5c0e8bb48abbe8e8c666c0583ea9aa9027c6",
+          "metadata_clean": true
+        },
+        "file_hd": {
+          "bytes": 23002,
+          "width": 1200,
+          "height": 877,
+          "sha256": "4243f4e5a8022cfb6b9094e809091c7ce105a851012b91d299fc6308946b937f",
+          "metadata_clean": true
+        },
+        "thumb": {
+          "bytes": 1610,
+          "width": 160,
+          "height": 160,
+          "sha256": "d0df31f47135626af4b3146333a66772d4450b984072f42e621133192b1b33f2",
+          "metadata_clean": true
+        }
+      }
+    },
+    {
+      "id": "ce1-piante-stellina-odorosa-6",
+      "original_sha256_verified": true,
+      "source_icc": null,
+      "color_conversion": false,
+      "files": {
+        "file": {
+          "bytes": 32948,
+          "width": 560,
+          "height": 451,
+          "sha256": "7825cfd4e9e2654c4e280cf797118f96fd05db4c299732d263e5d9587c046e82",
+          "metadata_clean": true
+        },
+        "file_hd": {
+          "bytes": 105824,
+          "width": 1200,
+          "height": 967,
+          "sha256": "e04e9b13a1f91f647ae859261f07d7899fbf1527a0929c39d90ddf1398962e9e",
+          "metadata_clean": true
+        },
+        "thumb": {
+          "bytes": 4036,
+          "width": 160,
+          "height": 160,
+          "sha256": "6ea95184623d9a3a8d9f9605c7ab1e4ddfcd665c73644e618ef28ecb2f5ca29d",
+          "metadata_clean": true
+        }
+      }
+    },
+    {
+      "id": "ce1-piante-stellina-odorosa-4",
+      "original_sha256_verified": true,
+      "source_icc": null,
+      "color_conversion": false,
+      "files": {
+        "file": {
+          "bytes": 24228,
+          "width": 560,
+          "height": 525,
+          "sha256": "f2c8aefecb8f3c5479c159ebb2f71438720ec829fd3a9afa1cc71b9df82651f4",
+          "metadata_clean": true
+        },
+        "file_hd": {
+          "bytes": 67890,
+          "width": 1200,
+          "height": 1126,
+          "sha256": "57915ca4bd107b1bf416e46587532cceabc11cefa6e05957d080f7e14d645c0e",
+          "metadata_clean": true
+        },
+        "thumb": {
+          "bytes": 3644,
+          "width": 160,
+          "height": 160,
+          "sha256": "93f9d623e7f978c1fcca0ab3173c530bca6ca1f3c6c1db5b3a5363c8841ff88f",
+          "metadata_clean": true
+        }
+      }
+    }
+  ]
+}

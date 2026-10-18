@@ -1,0 +1,2743 @@
+{
+  "continue": {
+    "clcontinue": "44732828|Martes_martes_at_Naturalis_from_the_Rijksmuseum_van_Natuurlijke_Historie",
+    "continue": "||imageinfo"
+  },
+  "query": {
+    "pages": {
+      "193263691": {
+        "pageid": 193263691,
+        "ns": 6,
+        "title": "File:European pine marten (Martes martes) Drenthe.jpg",
+        "index": 2,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 16036437,
+            "width": 6069,
+            "height": 4046,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/a/ac/European_pine_marten_%28Martes_martes%29_Drenthe.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:European_pine_marten_(Martes_martes)_Drenthe.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=193263691",
+            "sha1": "b2e787a4e7701748cd8af05eca63e98e7d0bf73d",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2026-06-02 15:45:56",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "European pine marten (Martes martes) Drenthe",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Martes martes|Mammals of the Netherlands|Photographs by Charlesjsharp|Self-published work|Animals of Drenthe|Files with coordinates missing SDC location of creation (52° N, 6° E)",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "quality",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "52.860000",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "6.180000",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "European pine marten (<i>Martes martes</i>), Drenthe, Netherlands",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2026-04-09 23:38:00",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>, from <a rel=\"nofollow\" class=\"external text\" href=\"https://www.sharpphotography.co.uk/\">Sharp Photography, sharpphotography.co.uk</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<bdi><a href=\"https://www.wikidata.org/wiki/Q54800218\" class=\"extiw\" title=\"d:Q54800218\"><span title=\"Scottish wildlife photographer\">Charles J. Sharp</span></a></bdi>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "193263686": {
+        "pageid": 193263686,
+        "ns": 6,
+        "title": "File:European pine marten (Martes martes) Drenthe 2.jpg",
+        "index": 1,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 16042691,
+            "width": 6238,
+            "height": 4158,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/3/37/European_pine_marten_%28Martes_martes%29_Drenthe_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:European_pine_marten_(Martes_martes)_Drenthe_2.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=193263686",
+            "sha1": "8d8566f6d2dc44fa33774760453e8c764b5153fe",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2026-06-02 15:45:52",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "European pine marten (Martes martes) Drenthe 2",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Martes martes|Photographs by Charlesjsharp|Self-published work|Featured pictures of Mustelidae|Featured pictures by Charlesjsharp|Animals of Drenthe|Files with Assessments template missing SDC Commons quality assessment|Mustelidae of the Netherlands|Files with coordinates missing SDC location of creation (52° N, 6° E)|Featured pictures of animals in the Netherlands|Featured pictures on English Wikipedia by Charlesjsharp|Featured pictures of mammals by Charlesjsharp|Featured pictures by Charlesjsharp/Netherlands|Focus stacked image",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "quality|featured|valued",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "52.860000",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "6.180000",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "European pine marten (<i>Martes martes</i>), Drenthe, Netherlands",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2026-04-09 23:38:49",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>, from <a rel=\"nofollow\" class=\"external text\" href=\"https://www.sharpphotography.co.uk/\">Sharp Photography, sharpphotography.co.uk</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<bdi><a href=\"https://www.wikidata.org/wiki/Q54800218\" class=\"extiw\" title=\"d:Q54800218\"><span title=\"Scottish wildlife photographer\">Charles J. Sharp</span></a></bdi>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "193263689": {
+        "pageid": 193263689,
+        "ns": 6,
+        "title": "File:European pine marten (Martes martes) Drenthe 3.jpg",
+        "index": 3,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 47626766,
+            "width": 10608,
+            "height": 7072,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/5/5d/European_pine_marten_%28Martes_martes%29_Drenthe_3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:European_pine_marten_(Martes_martes)_Drenthe_3.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=193263689",
+            "sha1": "334c6531336f521f163cbd65d03c0fe3918aac42",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2026-06-02 15:45:53",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "European pine marten (Martes martes) Drenthe 3",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Martes martes|Mammals of the Netherlands|Photographs by Charlesjsharp|Self-published work|Animals of Drenthe|Files with coordinates missing SDC location of creation (52° N, 6° E)",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "quality",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "52.860000",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "6.180000",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "European pine marten (<i>Martes martes</i>), Drenthe, Netherlands",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2026-04-09 23:57:55",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>, from <a rel=\"nofollow\" class=\"external text\" href=\"https://www.sharpphotography.co.uk/\">Sharp Photography, sharpphotography.co.uk</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<bdi><a href=\"https://www.wikidata.org/wiki/Q54800218\" class=\"extiw\" title=\"d:Q54800218\"><span title=\"Scottish wildlife photographer\">Charles J. Sharp</span></a></bdi>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "193263687": {
+        "pageid": 193263687,
+        "ns": 6,
+        "title": "File:European pine marten (Martes martes) Drenthe 4.jpg",
+        "index": 4,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 12112628,
+            "width": 5434,
+            "height": 3623,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/5/53/European_pine_marten_%28Martes_martes%29_Drenthe_4.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:European_pine_marten_(Martes_martes)_Drenthe_4.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=193263687",
+            "sha1": "1ebb13c6299049446e2dac6bb82693a3f66981b3",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2026-06-02 15:45:52",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "European pine marten (Martes martes) Drenthe 4",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Martes martes|Mammals of the Netherlands|Photographs by Charlesjsharp|Self-published work|Animals of Drenthe|Files with coordinates missing SDC location of creation (52° N, 6° E)",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "quality",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "52.860000",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "6.180000",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "European pine marten (<i>Martes martes</i>), Drenthe, Netherlands",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2026-04-09 23:56:58",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>, from <a rel=\"nofollow\" class=\"external text\" href=\"https://www.sharpphotography.co.uk/\">Sharp Photography, sharpphotography.co.uk</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<bdi><a href=\"https://www.wikidata.org/wiki/Q54800218\" class=\"extiw\" title=\"d:Q54800218\"><span title=\"Scottish wildlife photographer\">Charles J. Sharp</span></a></bdi>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "44520131": {
+        "pageid": 44520131,
+        "ns": 6,
+        "title": "File:Naturalis Biodiversity Center - RMNH.MAM.20304 pal - Martes martes martes (Linnaeus, 1758) - skull.jpeg",
+        "index": 8,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 212509,
+            "width": 1920,
+            "height": 1250,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/9/90/Naturalis_Biodiversity_Center_-_RMNH.MAM.20304_pal_-_Martes_martes_martes_%28Linnaeus%2C_1758%29_-_skull.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Naturalis_Biodiversity_Center_-_RMNH.MAM.20304_pal_-_Martes_martes_martes_(Linnaeus,_1758)_-_skull.jpeg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=44520131",
+            "sha1": "964d27ef9d1b43f7299b8ce9ea284db5aeb38f70",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2015-10-26 23:48:51",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Naturalis Biodiversity Center - RMNH.MAM.20304 pal - Martes martes martes (Linnaeus, 1758) - skull",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "CC-Zero|Media donated by Naturalis Biodiversity Center|Information field template with formatting|GWToolset Batch Upload|Martes martes skulls at Naturalis from the Rijksmuseum van Natuurlijke Historie",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<span class=\"mw-empty-elt\"><link rel=\"mw:PageProp/Category\" href=\"./Category:Information_field_template_with_formatting\"></span>Martes martes martes (Linnaeus, 1758)",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<span class=\"mw-empty-elt\"><link rel=\"mw:PageProp/Category\" href=\"./Category:Information_field_template_with_formatting\"></span>(Linnaeus, 1758)",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<bdi><a rel=\"mw:WikiLink/Interwiki\" href=\"https://en.wikipedia.org/wiki/en:Naturalis%20Biodiversity%20Center\" title=\"w:en:Naturalis Biodiversity Center\" class=\"extiw\"><span title=\"natural history museum and research center in the Leiden, The Netherlands\">Naturalis Biodiversity Center</span></a>\n</bdi>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-Zero"
+          },
+          {
+            "ns": 14,
+            "title": "Category:GWToolset Batch Upload"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Information field template with formatting"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Martes martes skulls at Naturalis from the Rijksmuseum van Natuurlijke Historie"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Media donated by Naturalis Biodiversity Center"
+          }
+        ]
+      },
+      "44557747": {
+        "pageid": 44557747,
+        "ns": 6,
+        "title": "File:Naturalis Biodiversity Center - RMNH.MAM.29712.a lat - Martes martes martes (Linnaeus) - skeleton (whole).jpeg",
+        "index": 11,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 204807,
+            "width": 1920,
+            "height": 1280,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Naturalis_Biodiversity_Center_-_RMNH.MAM.29712.a_lat_-_Martes_martes_martes_%28Linnaeus%29_-_skeleton_%28whole%29.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Naturalis_Biodiversity_Center_-_RMNH.MAM.29712.a_lat_-_Martes_martes_martes_(Linnaeus)_-_skeleton_(whole).jpeg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=44557747",
+            "sha1": "ce49a973ade65afb5f29a9bc3c8f4e13baa54538",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2015-10-28 04:05:27",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Naturalis Biodiversity Center - RMNH.MAM.29712.a lat - Martes martes martes (Linnaeus) - skeleton (whole)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "CC-Zero|Media donated by Naturalis Biodiversity Center|Information field template with formatting|GWToolset Batch Upload|Martes martes skulls at Naturalis from the Rijksmuseum van Natuurlijke Historie",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Martes martes martes (Linnaeus)",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "(Linnaeus)",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<bdi><a href=\"https://en.wikipedia.org/wiki/en:Naturalis_Biodiversity_Center\" class=\"extiw\" title=\"w:en:Naturalis Biodiversity Center\"><span title=\"natural history museum and research center in the Leiden, The Netherlands\">Naturalis Biodiversity Center</span></a>\n</bdi>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-Zero"
+          },
+          {
+            "ns": 14,
+            "title": "Category:GWToolset Batch Upload"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Information field template with formatting"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Martes martes skulls at Naturalis from the Rijksmuseum van Natuurlijke Historie"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Media donated by Naturalis Biodiversity Center"
+          }
+        ]
+      },
+      "44557749": {
+        "pageid": 44557749,
+        "ns": 6,
+        "title": "File:Naturalis Biodiversity Center - RMNH.MAM.29718.a lat - Martes martes martes (Linnaeus) - skeleton (whole).jpeg",
+        "index": 6,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 227167,
+            "width": 1920,
+            "height": 1554,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Naturalis_Biodiversity_Center_-_RMNH.MAM.29718.a_lat_-_Martes_martes_martes_%28Linnaeus%29_-_skeleton_%28whole%29.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Naturalis_Biodiversity_Center_-_RMNH.MAM.29718.a_lat_-_Martes_martes_martes_(Linnaeus)_-_skeleton_(whole).jpeg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=44557749",
+            "sha1": "06eb943db5321fc520b853862b4ea5cc3a7f5668",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2015-10-28 04:05:27",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Naturalis Biodiversity Center - RMNH.MAM.29718.a lat - Martes martes martes (Linnaeus) - skeleton (whole)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "CC-Zero|Media donated by Naturalis Biodiversity Center|Information field template with formatting|GWToolset Batch Upload|Martes martes skulls at Naturalis from the Rijksmuseum van Natuurlijke Historie",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Martes martes martes (Linnaeus)",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "(Linnaeus)",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<bdi><a href=\"https://en.wikipedia.org/wiki/en:Naturalis_Biodiversity_Center\" class=\"extiw\" title=\"w:en:Naturalis Biodiversity Center\"><span title=\"natural history museum and research center in the Leiden, The Netherlands\">Naturalis Biodiversity Center</span></a>\n</bdi>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-Zero"
+          },
+          {
+            "ns": 14,
+            "title": "Category:GWToolset Batch Upload"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Information field template with formatting"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Martes martes skulls at Naturalis from the Rijksmuseum van Natuurlijke Historie"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Media donated by Naturalis Biodiversity Center"
+          }
+        ]
+      },
+      "44557750": {
+        "pageid": 44557750,
+        "ns": 6,
+        "title": "File:Naturalis Biodiversity Center - RMNH.MAM.29762.a reg - Martes martes martes (Linnaeus, 1758) - skull.jpeg",
+        "index": 15,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 153412,
+            "width": 1920,
+            "height": 1030,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/3/36/Naturalis_Biodiversity_Center_-_RMNH.MAM.29762.a_reg_-_Martes_martes_martes_%28Linnaeus%2C_1758%29_-_skull.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Naturalis_Biodiversity_Center_-_RMNH.MAM.29762.a_reg_-_Martes_martes_martes_(Linnaeus,_1758)_-_skull.jpeg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=44557750",
+            "sha1": "82764284fcabc95042a823561f7fb8f0a475fbd6",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2015-10-28 04:05:27",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Naturalis Biodiversity Center - RMNH.MAM.29762.a reg - Martes martes martes (Linnaeus, 1758) - skull",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "CC-Zero|Media donated by Naturalis Biodiversity Center|Information field template with formatting|GWToolset Batch Upload|Martes martes at Naturalis from the Rijksmuseum van Natuurlijke Historie|Martes martes mandibles",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Martes martes martes (Linnaeus, 1758)",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "(Linnaeus, 1758)",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<bdi><a href=\"https://en.wikipedia.org/wiki/en:Naturalis_Biodiversity_Center\" class=\"extiw\" title=\"w:en:Naturalis Biodiversity Center\"><span title=\"natural history museum and research center in the Leiden, The Netherlands\">Naturalis Biodiversity Center</span></a>\n</bdi>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-Zero"
+          },
+          {
+            "ns": 14,
+            "title": "Category:GWToolset Batch Upload"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Information field template with formatting"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Martes martes at Naturalis from the Rijksmuseum van Natuurlijke Historie"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Martes martes mandibles"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Media donated by Naturalis Biodiversity Center"
+          }
+        ]
+      },
+      "44632429": {
+        "pageid": 44632429,
+        "ns": 6,
+        "title": "File:Naturalis Biodiversity Center - RMNH.MAM.35152.a pal - Martes martes martes (Linnaeus, 1758) - skull.jpeg",
+        "index": 25,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 158277,
+            "width": 1920,
+            "height": 1161,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Naturalis_Biodiversity_Center_-_RMNH.MAM.35152.a_pal_-_Martes_martes_martes_%28Linnaeus%2C_1758%29_-_skull.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Naturalis_Biodiversity_Center_-_RMNH.MAM.35152.a_pal_-_Martes_martes_martes_(Linnaeus,_1758)_-_skull.jpeg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=44632429",
+            "sha1": "6e157d1b2f3a34371ae68781aca430fef1bef06b",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2015-10-30 15:09:08",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Naturalis Biodiversity Center - RMNH.MAM.35152.a pal - Martes martes martes (Linnaeus, 1758) - skull",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "CC-Zero|Media donated by Naturalis Biodiversity Center|Information field template with formatting|GWToolset Batch Upload|Martes martes skulls at Naturalis from the Rijksmuseum van Natuurlijke Historie",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Martes martes martes (Linnaeus, 1758)",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "(Linnaeus, 1758)",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<bdi><a href=\"https://en.wikipedia.org/wiki/en:Naturalis_Biodiversity_Center\" class=\"extiw\" title=\"w:en:Naturalis Biodiversity Center\"><span title=\"natural history museum and research center in the Leiden, The Netherlands\">Naturalis Biodiversity Center</span></a>\n</bdi>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-Zero"
+          },
+          {
+            "ns": 14,
+            "title": "Category:GWToolset Batch Upload"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Information field template with formatting"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Martes martes skulls at Naturalis from the Rijksmuseum van Natuurlijke Historie"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Media donated by Naturalis Biodiversity Center"
+          }
+        ]
+      },
+      "44650993": {
+        "pageid": 44650993,
+        "ns": 6,
+        "title": "File:Naturalis Biodiversity Center - RMNH.MAM.36614.a lat - Martes martes martes (Linnaeus, 1758) - skull.jpeg",
+        "index": 21,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 172877,
+            "width": 1920,
+            "height": 1250,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/4/4f/Naturalis_Biodiversity_Center_-_RMNH.MAM.36614.a_lat_-_Martes_martes_martes_%28Linnaeus%2C_1758%29_-_skull.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Naturalis_Biodiversity_Center_-_RMNH.MAM.36614.a_lat_-_Martes_martes_martes_(Linnaeus,_1758)_-_skull.jpeg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=44650993",
+            "sha1": "a9fa8b8e8df905db927864e8246bf9a554c1bda4",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2015-10-31 07:37:10",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Naturalis Biodiversity Center - RMNH.MAM.36614.a lat - Martes martes martes (Linnaeus, 1758) - skull",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "CC-Zero|Media donated by Naturalis Biodiversity Center|Information field template with formatting|GWToolset Batch Upload|Martes martes skulls at Naturalis from the Rijksmuseum van Natuurlijke Historie",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Martes martes martes (Linnaeus, 1758)",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "(Linnaeus, 1758)",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<bdi><a href=\"https://en.wikipedia.org/wiki/en:Naturalis_Biodiversity_Center\" class=\"extiw\" title=\"w:en:Naturalis Biodiversity Center\"><span title=\"natural history museum and research center in the Leiden, The Netherlands\">Naturalis Biodiversity Center</span></a>\n</bdi>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-Zero"
+          },
+          {
+            "ns": 14,
+            "title": "Category:GWToolset Batch Upload"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Information field template with formatting"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Martes martes skulls at Naturalis from the Rijksmuseum van Natuurlijke Historie"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Media donated by Naturalis Biodiversity Center"
+          }
+        ]
+      },
+      "44650994": {
+        "pageid": 44650994,
+        "ns": 6,
+        "title": "File:Naturalis Biodiversity Center - RMNH.MAM.36614.a pal - Martes martes martes (Linnaeus, 1758) - skull.jpeg",
+        "index": 17,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 169018,
+            "width": 1920,
+            "height": 1250,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/5/59/Naturalis_Biodiversity_Center_-_RMNH.MAM.36614.a_pal_-_Martes_martes_martes_%28Linnaeus%2C_1758%29_-_skull.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Naturalis_Biodiversity_Center_-_RMNH.MAM.36614.a_pal_-_Martes_martes_martes_(Linnaeus,_1758)_-_skull.jpeg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=44650994",
+            "sha1": "e2c1d77b4603cf6f84631eec4aa111ba3194c922",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2015-10-31 07:37:10",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Naturalis Biodiversity Center - RMNH.MAM.36614.a pal - Martes martes martes (Linnaeus, 1758) - skull",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "CC-Zero|Media donated by Naturalis Biodiversity Center|Information field template with formatting|GWToolset Batch Upload|Martes martes skulls at Naturalis from the Rijksmuseum van Natuurlijke Historie",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Martes martes martes (Linnaeus, 1758)",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "(Linnaeus, 1758)",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<bdi><a href=\"https://en.wikipedia.org/wiki/en:Naturalis_Biodiversity_Center\" class=\"extiw\" title=\"w:en:Naturalis Biodiversity Center\"><span title=\"natural history museum and research center in the Leiden, The Netherlands\">Naturalis Biodiversity Center</span></a>\n</bdi>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-Zero"
+          },
+          {
+            "ns": 14,
+            "title": "Category:GWToolset Batch Upload"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Information field template with formatting"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Martes martes skulls at Naturalis from the Rijksmuseum van Natuurlijke Historie"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Media donated by Naturalis Biodiversity Center"
+          }
+        ]
+      },
+      "44676257": {
+        "pageid": 44676257,
+        "ns": 6,
+        "title": "File:Naturalis Biodiversity Center - RMNH.MAM.41372.a lat - Martes martes martes (Linnaeus, 1758) - skull.jpeg",
+        "index": 9,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 146739,
+            "width": 1920,
+            "height": 1161,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/0/05/Naturalis_Biodiversity_Center_-_RMNH.MAM.41372.a_lat_-_Martes_martes_martes_%28Linnaeus%2C_1758%29_-_skull.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Naturalis_Biodiversity_Center_-_RMNH.MAM.41372.a_lat_-_Martes_martes_martes_(Linnaeus,_1758)_-_skull.jpeg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=44676257",
+            "sha1": "0d61e9e6eeac33041b1531ac20ab7acdb77b64aa",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2015-11-01 03:17:42",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Naturalis Biodiversity Center - RMNH.MAM.41372.a lat - Martes martes martes (Linnaeus, 1758) - skull",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "CC-Zero|Media donated by Naturalis Biodiversity Center|Information field template with formatting|GWToolset Batch Upload|Martes martes skulls at Naturalis from the Rijksmuseum van Natuurlijke Historie",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Martes martes martes (Linnaeus, 1758)",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "(Linnaeus, 1758)",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<bdi><a href=\"https://en.wikipedia.org/wiki/en:Naturalis_Biodiversity_Center\" class=\"extiw\" title=\"w:en:Naturalis Biodiversity Center\"><span title=\"natural history museum and research center in the Leiden, The Netherlands\">Naturalis Biodiversity Center</span></a>\n</bdi>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-Zero"
+          },
+          {
+            "ns": 14,
+            "title": "Category:GWToolset Batch Upload"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Information field template with formatting"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Martes martes skulls at Naturalis from the Rijksmuseum van Natuurlijke Historie"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Media donated by Naturalis Biodiversity Center"
+          }
+        ]
+      },
+      "44677533": {
+        "pageid": 44677533,
+        "ns": 6,
+        "title": "File:Naturalis Biodiversity Center - RMNH.MAM.43378.a gen - Martes martes martes (Linnaeus, 1758) - skeleton (part).jpeg",
+        "index": 12,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 173641,
+            "width": 1920,
+            "height": 1030,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/0/0d/Naturalis_Biodiversity_Center_-_RMNH.MAM.43378.a_gen_-_Martes_martes_martes_%28Linnaeus%2C_1758%29_-_skeleton_%28part%29.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Naturalis_Biodiversity_Center_-_RMNH.MAM.43378.a_gen_-_Martes_martes_martes_(Linnaeus,_1758)_-_skeleton_(part).jpeg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=44677533",
+            "sha1": "1c39d16fbedf304e86e2452a4b1cf790b5819229",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2015-11-01 04:37:42",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Naturalis Biodiversity Center - RMNH.MAM.43378.a gen - Martes martes martes (Linnaeus, 1758) - skeleton (part)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "CC-Zero|Media donated by Naturalis Biodiversity Center|Information field template with formatting|GWToolset Batch Upload|Martes martes skulls at Naturalis from the Rijksmuseum van Natuurlijke Historie",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Martes martes martes (Linnaeus, 1758)",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "(Linnaeus, 1758)",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<bdi><a href=\"https://en.wikipedia.org/wiki/en:Naturalis_Biodiversity_Center\" class=\"extiw\" title=\"w:en:Naturalis Biodiversity Center\"><span title=\"natural history museum and research center in the Leiden, The Netherlands\">Naturalis Biodiversity Center</span></a>\n</bdi>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-Zero"
+          },
+          {
+            "ns": 14,
+            "title": "Category:GWToolset Batch Upload"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Information field template with formatting"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Martes martes skulls at Naturalis from the Rijksmuseum van Natuurlijke Historie"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Media donated by Naturalis Biodiversity Center"
+          }
+        ]
+      },
+      "44677530": {
+        "pageid": 44677530,
+        "ns": 6,
+        "title": "File:Naturalis Biodiversity Center - RMNH.MAM.43378.a reg - Martes martes martes (Linnaeus, 1758) - skeleton (part).jpeg",
+        "index": 24,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 156643,
+            "width": 1920,
+            "height": 1030,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Naturalis_Biodiversity_Center_-_RMNH.MAM.43378.a_reg_-_Martes_martes_martes_%28Linnaeus%2C_1758%29_-_skeleton_%28part%29.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Naturalis_Biodiversity_Center_-_RMNH.MAM.43378.a_reg_-_Martes_martes_martes_(Linnaeus,_1758)_-_skeleton_(part).jpeg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=44677530",
+            "sha1": "4d993eed617e32e8edb788025e666a37a4851f66",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2015-11-01 04:37:42",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Naturalis Biodiversity Center - RMNH.MAM.43378.a reg - Martes martes martes (Linnaeus, 1758) - skeleton (part)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "CC-Zero|Media donated by Naturalis Biodiversity Center|Information field template with formatting|GWToolset Batch Upload|Martes martes skulls at Naturalis from the Rijksmuseum van Natuurlijke Historie",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Martes martes martes (Linnaeus, 1758)",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "(Linnaeus, 1758)",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<bdi><a href=\"https://en.wikipedia.org/wiki/en:Naturalis_Biodiversity_Center\" class=\"extiw\" title=\"w:en:Naturalis Biodiversity Center\"><span title=\"natural history museum and research center in the Leiden, The Netherlands\">Naturalis Biodiversity Center</span></a>\n</bdi>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-Zero"
+          },
+          {
+            "ns": 14,
+            "title": "Category:GWToolset Batch Upload"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Information field template with formatting"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Martes martes skulls at Naturalis from the Rijksmuseum van Natuurlijke Historie"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Media donated by Naturalis Biodiversity Center"
+          }
+        ]
+      },
+      "44677966": {
+        "pageid": 44677966,
+        "ns": 6,
+        "title": "File:Naturalis Biodiversity Center - RMNH.MAM.43385.a lat - Martes martes martes (Linnaeus, 1758) - skeleton (whole).jpeg",
+        "index": 14,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 198178,
+            "width": 1920,
+            "height": 1339,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/1/13/Naturalis_Biodiversity_Center_-_RMNH.MAM.43385.a_lat_-_Martes_martes_martes_%28Linnaeus%2C_1758%29_-_skeleton_%28whole%29.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Naturalis_Biodiversity_Center_-_RMNH.MAM.43385.a_lat_-_Martes_martes_martes_(Linnaeus,_1758)_-_skeleton_(whole).jpeg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=44677966",
+            "sha1": "776831a2ae30c11b783a00e93ace354ee0e663ea",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2015-11-01 05:08:04",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Naturalis Biodiversity Center - RMNH.MAM.43385.a lat - Martes martes martes (Linnaeus, 1758) - skeleton (whole)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "CC-Zero|Media donated by Naturalis Biodiversity Center|Information field template with formatting|GWToolset Batch Upload|Martes martes skulls at Naturalis from the Rijksmuseum van Natuurlijke Historie",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Martes martes martes (Linnaeus, 1758)",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "(Linnaeus, 1758)",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<bdi><a href=\"https://en.wikipedia.org/wiki/en:Naturalis_Biodiversity_Center\" class=\"extiw\" title=\"w:en:Naturalis Biodiversity Center\"><span title=\"natural history museum and research center in the Leiden, The Netherlands\">Naturalis Biodiversity Center</span></a>\n</bdi>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-Zero"
+          },
+          {
+            "ns": 14,
+            "title": "Category:GWToolset Batch Upload"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Information field template with formatting"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Martes martes skulls at Naturalis from the Rijksmuseum van Natuurlijke Historie"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Media donated by Naturalis Biodiversity Center"
+          }
+        ]
+      },
+      "44683987": {
+        "pageid": 44683987,
+        "ns": 6,
+        "title": "File:Naturalis Biodiversity Center - RMNH.MAM.43394.a lat - Martes martes martes (Linnaeus, 1758) - skeleton (part).jpeg",
+        "index": 20,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 171602,
+            "width": 1920,
+            "height": 1124,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/8/89/Naturalis_Biodiversity_Center_-_RMNH.MAM.43394.a_lat_-_Martes_martes_martes_%28Linnaeus%2C_1758%29_-_skeleton_%28part%29.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Naturalis_Biodiversity_Center_-_RMNH.MAM.43394.a_lat_-_Martes_martes_martes_(Linnaeus,_1758)_-_skeleton_(part).jpeg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=44683987",
+            "sha1": "d69feddec04cc9801a3ed538fee84af7faba7df8",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2015-11-01 11:26:08",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Naturalis Biodiversity Center - RMNH.MAM.43394.a lat - Martes martes martes (Linnaeus, 1758) - skeleton (part)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "CC-Zero|Media donated by Naturalis Biodiversity Center|Information field template with formatting|GWToolset Batch Upload|Martes martes skulls at Naturalis from the Rijksmuseum van Natuurlijke Historie",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Martes martes martes (Linnaeus, 1758)",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "(Linnaeus, 1758)",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<bdi><a href=\"https://en.wikipedia.org/wiki/en:Naturalis_Biodiversity_Center\" class=\"extiw\" title=\"w:en:Naturalis Biodiversity Center\"><span title=\"natural history museum and research center in the Leiden, The Netherlands\">Naturalis Biodiversity Center</span></a>\n</bdi>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-Zero"
+          },
+          {
+            "ns": 14,
+            "title": "Category:GWToolset Batch Upload"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Information field template with formatting"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Martes martes skulls at Naturalis from the Rijksmuseum van Natuurlijke Historie"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Media donated by Naturalis Biodiversity Center"
+          }
+        ]
+      },
+      "44683991": {
+        "pageid": 44683991,
+        "ns": 6,
+        "title": "File:Naturalis Biodiversity Center - RMNH.MAM.43396.a gen - Martes martes martes (Linnaeus, 1758) - skeleton (part).jpeg",
+        "index": 19,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 182532,
+            "width": 1920,
+            "height": 1339,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/7/71/Naturalis_Biodiversity_Center_-_RMNH.MAM.43396.a_gen_-_Martes_martes_martes_%28Linnaeus%2C_1758%29_-_skeleton_%28part%29.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Naturalis_Biodiversity_Center_-_RMNH.MAM.43396.a_gen_-_Martes_martes_martes_(Linnaeus,_1758)_-_skeleton_(part).jpeg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=44683991",
+            "sha1": "ae016b6a9e9f307a46c61e966632b5126997303d",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2015-11-01 11:26:09",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Naturalis Biodiversity Center - RMNH.MAM.43396.a gen - Martes martes martes (Linnaeus, 1758) - skeleton (part)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "CC-Zero|Media donated by Naturalis Biodiversity Center|Information field template with formatting|GWToolset Batch Upload|Martes martes skulls at Naturalis from the Rijksmuseum van Natuurlijke Historie",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Martes martes martes (Linnaeus, 1758)",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "(Linnaeus, 1758)",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<bdi><a href=\"https://en.wikipedia.org/wiki/en:Naturalis_Biodiversity_Center\" class=\"extiw\" title=\"w:en:Naturalis Biodiversity Center\"><span title=\"natural history museum and research center in the Leiden, The Netherlands\">Naturalis Biodiversity Center</span></a>\n</bdi>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-Zero"
+          },
+          {
+            "ns": 14,
+            "title": "Category:GWToolset Batch Upload"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Information field template with formatting"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Martes martes skulls at Naturalis from the Rijksmuseum van Natuurlijke Historie"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Media donated by Naturalis Biodiversity Center"
+          }
+        ]
+      },
+      "44683992": {
+        "pageid": 44683992,
+        "ns": 6,
+        "title": "File:Naturalis Biodiversity Center - RMNH.MAM.43396.a reg - Martes martes martes (Linnaeus, 1758) - skeleton (part).jpeg",
+        "index": 23,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 173980,
+            "width": 1920,
+            "height": 1339,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/1/1e/Naturalis_Biodiversity_Center_-_RMNH.MAM.43396.a_reg_-_Martes_martes_martes_%28Linnaeus%2C_1758%29_-_skeleton_%28part%29.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Naturalis_Biodiversity_Center_-_RMNH.MAM.43396.a_reg_-_Martes_martes_martes_(Linnaeus,_1758)_-_skeleton_(part).jpeg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=44683992",
+            "sha1": "c02057cbf1e73c4ab5463102795d1e6518664afc",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2015-11-01 11:26:09",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Naturalis Biodiversity Center - RMNH.MAM.43396.a reg - Martes martes martes (Linnaeus, 1758) - skeleton (part)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "CC-Zero|Media donated by Naturalis Biodiversity Center|Information field template with formatting|GWToolset Batch Upload|Martes martes skulls at Naturalis from the Rijksmuseum van Natuurlijke Historie",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Martes martes martes (Linnaeus, 1758)",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "(Linnaeus, 1758)",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<bdi><a href=\"https://en.wikipedia.org/wiki/en:Naturalis_Biodiversity_Center\" class=\"extiw\" title=\"w:en:Naturalis Biodiversity Center\"><span title=\"natural history museum and research center in the Leiden, The Netherlands\">Naturalis Biodiversity Center</span></a>\n</bdi>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-Zero"
+          },
+          {
+            "ns": 14,
+            "title": "Category:GWToolset Batch Upload"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Information field template with formatting"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Martes martes skulls at Naturalis from the Rijksmuseum van Natuurlijke Historie"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Media donated by Naturalis Biodiversity Center"
+          }
+        ]
+      },
+      "44693273": {
+        "pageid": 44693273,
+        "ns": 6,
+        "title": "File:Naturalis Biodiversity Center - RMNH.MAM.4745 pal - Martes martes martes (Linnaeus, 1758) - skull.jpeg",
+        "index": 16,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 162085,
+            "width": 1920,
+            "height": 1161,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Naturalis_Biodiversity_Center_-_RMNH.MAM.4745_pal_-_Martes_martes_martes_%28Linnaeus%2C_1758%29_-_skull.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Naturalis_Biodiversity_Center_-_RMNH.MAM.4745_pal_-_Martes_martes_martes_(Linnaeus,_1758)_-_skull.jpeg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=44693273",
+            "sha1": "db2ec714575db1b9e51b3509a1e7bb2ae581c732",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2015-11-01 18:13:13",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Naturalis Biodiversity Center - RMNH.MAM.4745 pal - Martes martes martes (Linnaeus, 1758) - skull",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "CC-Zero|Media donated by Naturalis Biodiversity Center|Information field template with formatting|GWToolset Batch Upload|Martes martes skulls at Naturalis from the Rijksmuseum van Natuurlijke Historie",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Martes martes martes (Linnaeus, 1758)",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "(Linnaeus, 1758)",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<bdi><a href=\"https://en.wikipedia.org/wiki/en:Naturalis_Biodiversity_Center\" class=\"extiw\" title=\"w:en:Naturalis Biodiversity Center\"><span title=\"natural history museum and research center in the Leiden, The Netherlands\">Naturalis Biodiversity Center</span></a>\n</bdi>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-Zero"
+          },
+          {
+            "ns": 14,
+            "title": "Category:GWToolset Batch Upload"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Information field template with formatting"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Martes martes skulls at Naturalis from the Rijksmuseum van Natuurlijke Historie"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Media donated by Naturalis Biodiversity Center"
+          }
+        ]
+      },
+      "44695275": {
+        "pageid": 44695275,
+        "ns": 6,
+        "title": "File:Naturalis Biodiversity Center - RMNH.MAM.51895 lab - Martes martes martes (Linnaeus, 1758) - skull.jpeg",
+        "index": 18,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 153555,
+            "width": 1920,
+            "height": 1161,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/3/3c/Naturalis_Biodiversity_Center_-_RMNH.MAM.51895_lab_-_Martes_martes_martes_%28Linnaeus%2C_1758%29_-_skull.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Naturalis_Biodiversity_Center_-_RMNH.MAM.51895_lab_-_Martes_martes_martes_(Linnaeus,_1758)_-_skull.jpeg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=44695275",
+            "sha1": "df62ba237fa78a61cabf7640629f1c1b1c22deb7",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2015-11-01 19:28:38",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Naturalis Biodiversity Center - RMNH.MAM.51895 lab - Martes martes martes (Linnaeus, 1758) - skull",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "CC-Zero|Media donated by Naturalis Biodiversity Center|Information field template with formatting|GWToolset Batch Upload|Martes martes skulls at Naturalis from the Rijksmuseum van Natuurlijke Historie",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Martes martes martes (Linnaeus, 1758)",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "(Linnaeus, 1758)",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<bdi><a href=\"https://en.wikipedia.org/wiki/en:Naturalis_Biodiversity_Center\" class=\"extiw\" title=\"w:en:Naturalis Biodiversity Center\"><span title=\"natural history museum and research center in the Leiden, The Netherlands\">Naturalis Biodiversity Center</span></a>\n</bdi>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-Zero"
+          },
+          {
+            "ns": 14,
+            "title": "Category:GWToolset Batch Upload"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Information field template with formatting"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Martes martes skulls at Naturalis from the Rijksmuseum van Natuurlijke Historie"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Media donated by Naturalis Biodiversity Center"
+          }
+        ]
+      },
+      "44695280": {
+        "pageid": 44695280,
+        "ns": 6,
+        "title": "File:Naturalis Biodiversity Center - RMNH.MAM.51896.a pal - Martes martes martes (Linnaeus, 1758) - skull.jpeg",
+        "index": 13,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 266859,
+            "width": 1920,
+            "height": 1707,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Naturalis_Biodiversity_Center_-_RMNH.MAM.51896.a_pal_-_Martes_martes_martes_%28Linnaeus%2C_1758%29_-_skull.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Naturalis_Biodiversity_Center_-_RMNH.MAM.51896.a_pal_-_Martes_martes_martes_(Linnaeus,_1758)_-_skull.jpeg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=44695280",
+            "sha1": "ed2ed4b8c56a86f475da29f4e2e3e40e907010b8",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2015-11-01 19:28:38",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Naturalis Biodiversity Center - RMNH.MAM.51896.a pal - Martes martes martes (Linnaeus, 1758) - skull",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "CC-Zero|Media donated by Naturalis Biodiversity Center|Information field template with formatting|GWToolset Batch Upload|Martes martes skulls at Naturalis from the Rijksmuseum van Natuurlijke Historie",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Martes martes martes (Linnaeus, 1758)",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "(Linnaeus, 1758)",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<bdi><a href=\"https://en.wikipedia.org/wiki/en:Naturalis_Biodiversity_Center\" class=\"extiw\" title=\"w:en:Naturalis Biodiversity Center\"><span title=\"natural history museum and research center in the Leiden, The Netherlands\">Naturalis Biodiversity Center</span></a>\n</bdi>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-Zero"
+          },
+          {
+            "ns": 14,
+            "title": "Category:GWToolset Batch Upload"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Information field template with formatting"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Martes martes skulls at Naturalis from the Rijksmuseum van Natuurlijke Historie"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Media donated by Naturalis Biodiversity Center"
+          }
+        ]
+      },
+      "44726144": {
+        "pageid": 44726144,
+        "ns": 6,
+        "title": "File:Naturalis Biodiversity Center - RMNH.MAM.628.a pal - Martes martes martes (Linnaeus, 1758) - skull.jpeg",
+        "index": 7,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 248563,
+            "width": 1920,
+            "height": 1339,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/2/23/Naturalis_Biodiversity_Center_-_RMNH.MAM.628.a_pal_-_Martes_martes_martes_%28Linnaeus%2C_1758%29_-_skull.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Naturalis_Biodiversity_Center_-_RMNH.MAM.628.a_pal_-_Martes_martes_martes_(Linnaeus,_1758)_-_skull.jpeg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=44726144",
+            "sha1": "6d7776bd0eb1534500a455c5a2fdf5ef421d038a",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2015-11-02 20:33:23",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Naturalis Biodiversity Center - RMNH.MAM.628.a pal - Martes martes martes (Linnaeus, 1758) - skull",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "CC-Zero|Media donated by Naturalis Biodiversity Center|Information field template with formatting|GWToolset Batch Upload|Martes martes skulls at Naturalis from the Rijksmuseum van Natuurlijke Historie",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Martes martes martes (Linnaeus, 1758)",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "(Linnaeus, 1758)",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<bdi><a href=\"https://en.wikipedia.org/wiki/en:Naturalis_Biodiversity_Center\" class=\"extiw\" title=\"w:en:Naturalis Biodiversity Center\"><span title=\"natural history museum and research center in the Leiden, The Netherlands\">Naturalis Biodiversity Center</span></a>\n</bdi>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-Zero"
+          },
+          {
+            "ns": 14,
+            "title": "Category:GWToolset Batch Upload"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Information field template with formatting"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Martes martes skulls at Naturalis from the Rijksmuseum van Natuurlijke Historie"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Media donated by Naturalis Biodiversity Center"
+          }
+        ]
+      },
+      "44732622": {
+        "pageid": 44732622,
+        "ns": 6,
+        "title": "File:Naturalis Biodiversity Center - RMNH.MAM.7643.a lat - Martes martes martes (Linnaeus, 1758) - skeleton (part).jpeg",
+        "index": 22,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 156844,
+            "width": 1920,
+            "height": 1124,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Naturalis_Biodiversity_Center_-_RMNH.MAM.7643.a_lat_-_Martes_martes_martes_%28Linnaeus%2C_1758%29_-_skeleton_%28part%29.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Naturalis_Biodiversity_Center_-_RMNH.MAM.7643.a_lat_-_Martes_martes_martes_(Linnaeus,_1758)_-_skeleton_(part).jpeg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=44732622",
+            "sha1": "fdf788eb1e2798a9eb19231bfdff374633f57dfd",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2015-11-03 00:35:32",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Naturalis Biodiversity Center - RMNH.MAM.7643.a lat - Martes martes martes (Linnaeus, 1758) - skeleton (part)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "CC-Zero|Media donated by Naturalis Biodiversity Center|Information field template with formatting|GWToolset Batch Upload|Martes martes skulls at Naturalis from the Rijksmuseum van Natuurlijke Historie",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Martes martes martes (Linnaeus, 1758)",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "(Linnaeus, 1758)",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<bdi><a href=\"https://en.wikipedia.org/wiki/en:Naturalis_Biodiversity_Center\" class=\"extiw\" title=\"w:en:Naturalis Biodiversity Center\"><span title=\"natural history museum and research center in the Leiden, The Netherlands\">Naturalis Biodiversity Center</span></a>\n</bdi>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-Zero"
+          },
+          {
+            "ns": 14,
+            "title": "Category:GWToolset Batch Upload"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Information field template with formatting"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Martes martes skulls at Naturalis from the Rijksmuseum van Natuurlijke Historie"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Media donated by Naturalis Biodiversity Center"
+          }
+        ]
+      },
+      "44732828": {
+        "pageid": 44732828,
+        "ns": 6,
+        "title": "File:Naturalis Biodiversity Center - RMNH.MAM.7643.a reg - Martes martes martes (Linnaeus, 1758) - skeleton (part).jpeg",
+        "index": 5,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 268142,
+            "width": 1551,
+            "height": 1920,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/f/f3/Naturalis_Biodiversity_Center_-_RMNH.MAM.7643.a_reg_-_Martes_martes_martes_%28Linnaeus%2C_1758%29_-_skeleton_%28part%29.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Naturalis_Biodiversity_Center_-_RMNH.MAM.7643.a_reg_-_Martes_martes_martes_(Linnaeus,_1758)_-_skeleton_(part).jpeg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=44732828",
+            "sha1": "77a7ac04207a93052286c5071f6bb1f511ae5964",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2015-11-03 00:50:43",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Naturalis Biodiversity Center - RMNH.MAM.7643.a reg - Martes martes martes (Linnaeus, 1758) - skeleton (part)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "CC-Zero|Media donated by Naturalis Biodiversity Center|Information field template with formatting|GWToolset Batch Upload|Martes martes anatomy|Martes martes at Naturalis from the Rijksmuseum van Natuurlijke Historie",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Martes martes martes (Linnaeus, 1758)",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "(Linnaeus, 1758)",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<bdi><a href=\"https://en.wikipedia.org/wiki/en:Naturalis_Biodiversity_Center\" class=\"extiw\" title=\"w:en:Naturalis Biodiversity Center\"><span title=\"natural history museum and research center in the Leiden, The Netherlands\">Naturalis Biodiversity Center</span></a>\n</bdi>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-Zero"
+          },
+          {
+            "ns": 14,
+            "title": "Category:GWToolset Batch Upload"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Information field template with formatting"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Martes martes anatomy"
+          }
+        ]
+      },
+      "44732837": {
+        "pageid": 44732837,
+        "ns": 6,
+        "title": "File:Naturalis Biodiversity Center - RMNH.MAM.787.a pal - Martes martes martes (Linnaeus, 1758) - skull.jpeg",
+        "index": 10,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 248517,
+            "width": 1920,
+            "height": 1339,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/b/b2/Naturalis_Biodiversity_Center_-_RMNH.MAM.787.a_pal_-_Martes_martes_martes_%28Linnaeus%2C_1758%29_-_skull.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Naturalis_Biodiversity_Center_-_RMNH.MAM.787.a_pal_-_Martes_martes_martes_(Linnaeus,_1758)_-_skull.jpeg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=44732837",
+            "sha1": "23a5a53814f1e59f17eaca2b503eb7c7bbc3ff87",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2015-11-03 00:50:44",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Naturalis Biodiversity Center - RMNH.MAM.787.a pal - Martes martes martes (Linnaeus, 1758) - skull",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "CC-Zero|Media donated by Naturalis Biodiversity Center|Information field template with formatting|GWToolset Batch Upload|Martes martes skulls at Naturalis from the Rijksmuseum van Natuurlijke Historie",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Martes martes martes (Linnaeus, 1758)",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "(Linnaeus, 1758)",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<bdi><a href=\"https://en.wikipedia.org/wiki/en:Naturalis_Biodiversity_Center\" class=\"extiw\" title=\"w:en:Naturalis Biodiversity Center\"><span title=\"natural history museum and research center in the Leiden, The Netherlands\">Naturalis Biodiversity Center</span></a>\n</bdi>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

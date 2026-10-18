@@ -1,0 +1,50 @@
+[
+  {
+    "key": "bugola",
+    "expected": "Ajuga reptans L.",
+    "page_taxon": "Ajuga reptans L.",
+    "match": true
+  },
+  {
+    "key": "acetosella",
+    "expected": "Oxalis acetosella L.",
+    "page_taxon": "Oxalis acetosella L.",
+    "match": true
+  },
+  {
+    "key": "geranio-robertiano",
+    "expected": "Geranium robertianum L.",
+    "page_taxon": "Geranium robertianum L.",
+    "match": true
+  },
+  {
+    "key": "sanicola",
+    "expected": "Sanicula europaea L.",
+    "page_taxon": "Sanicula europaea L.",
+    "match": true
+  },
+  {
+    "key": "viola-silvestre",
+    "expected": "Viola reichenbachiana Jord. ex Boreau",
+    "page_taxon": "Viola reichenbachiana Jord. ex Boreau",
+    "match": true
+  },
+  {
+    "key": "pervinca-minore",
+    "expected": "Vinca minor L.",
+    "page_taxon": "Vinca minor L.",
+    "match": true
+  },
+  {
+    "key": "cariofillata",
+    "expected": "Geum urbanum L.",
+    "page_taxon": "Geum urbanum L.",
+    "match": true
+  },
+  {
+    "key": "stellina-odorosa",
+    "expected": "Galium odoratum (L.) Scop.",
+    "page_taxon": "Galium odoratum (L.) Scop.",
+    "match": true
+  }
+]

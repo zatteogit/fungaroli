@@ -1,0 +1,29 @@
+[
+  {
+    "id": "ispra-vol2-2019",
+    "url": "https://www.isprambiente.gov.it/it/pubblicazioni/manuali-e-linee-guida/resolveuid/feae7f92afd54c53bddf4116b1bda545",
+    "file": "/tmp/fronda-catalog-funghi-20261019/ispra-vol2-2019.pdf",
+    "sha256": "7f45c209f69238aa8ac2ac9c364f760d2502e3105c26e3b62351f8a13b53d6b0",
+    "status": 200,
+    "pages": 258,
+    "redistributed": false
+  },
+  {
+    "id": "campania-atlante",
+    "url": "https://funghietartufi.regione.campania.it/docfunghietartufi/doc/funghi_campania.pdf",
+    "file": "/tmp/fronda-catalog-funghi-20261019/campania-atlante.pdf",
+    "sha256": "42efe28aac49d252de0d09ae458a3f8ffd6e91222ba5624decb7cebb267af604",
+    "status": 200,
+    "pages": 321,
+    "redistributed": false
+  },
+  {
+    "id": "piemonte-2021",
+    "url": "https://www.regione.piemonte.it/web/media/24510/download",
+    "file": "/tmp/fronda-catalog-funghi-20261019/piemonte-2021.pdf",
+    "sha256": "437a1cb683e9331c4dcc1a6ed8c23f7405240bc397bbb67fde38d94cf9c160dc",
+    "status": 200,
+    "pages": 182,
+    "redistributed": false
+  }
+]

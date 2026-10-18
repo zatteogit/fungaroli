@@ -1,0 +1,219 @@
+{
+  "review": [
+    {
+      "index": 2,
+      "file": "assets/species/aereus-inat2.webp",
+      "decision": "exclude",
+      "reason": "Soggetti piccoli, sfocati; gambi nascosti, sfondo dominante."
+    },
+    {
+      "index": 8,
+      "file": "assets/species/aestivalis-anro3.webp",
+      "decision": "exclude",
+      "reason": "Dominante ciano e controluce forte, lettura cromatica inaffidabile; disponibile vista dal basso migliore."
+    },
+    {
+      "index": 11,
+      "file": "assets/species/edulis-inat2.webp",
+      "decision": "exclude",
+      "reason": "Soggetti relativamente piccoli, base sporca rivolta verso camera e sfondo ingombro; ridondante rispetto a immagini più chiare."
+    },
+    {
+      "index": 19,
+      "file": "assets/species/pe2-sosia-agaricus-xanthodermus-e1661dd.webp",
+      "decision": "exclude",
+      "reason": "Vista pressoché duplicata della foto precedente: stessa disposizione, aggiunge poco."
+    },
+    {
+      "index": 24,
+      "file": "assets/species/pe2-sosia-amanita-crocea-742f574.webp",
+      "decision": "retain",
+      "reason": "Controllo HD: dettaglio sufficientemente leggibile e complementare; mantenuto come vista di supporto, senza dedurre una fase."
+    },
+    {
+      "index": 39,
+      "file": "assets/species/verna-commons3.webp",
+      "decision": "exclude",
+      "reason": "Dominante magenta marcata, scansione datata, particolari poco leggibili."
+    },
+    {
+      "index": 41,
+      "file": "assets/species/virosa-commons10099268.webp",
+      "decision": "retain",
+      "reason": "Controllo HD: dettaglio sufficientemente leggibile e complementare; mantenuto come vista di supporto, senza dedurre una fase."
+    },
+    {
+      "index": 43,
+      "file": "assets/species/pe2-sosia-armillaria-tabescens-72be0c6.webp",
+      "decision": "retain",
+      "reason": "Controllo HD: dettaglio sufficientemente leggibile e complementare; mantenuto come vista di supporto, senza dedurre una fase."
+    },
+    {
+      "index": 47,
+      "file": "assets/species/pe2-sosia-caloboletus-calopus-inat-524886055.webp",
+      "decision": "exclude",
+      "reason": "Sfocatura e dettaglio limitato; cappello coperto da foglia, ridondanza con viste migliori."
+    },
+    {
+      "index": 50,
+      "file": "assets/species/pe2-sosia-caloboletus-radicans-55bb970.webp",
+      "decision": "retain",
+      "reason": "Controllo HD: dettaglio sufficientemente leggibile e complementare; mantenuto come vista di supporto, senza dedurre una fase."
+    },
+    {
+      "index": 57,
+      "file": "assets/species/chlorophyllum-rhacodes-inat1.webp",
+      "decision": "exclude",
+      "reason": "Soggetto piccolo e ombra, gambo coperto; sostituibile dalle viste più chiare presenti."
+    },
+    {
+      "index": 66,
+      "file": "assets/species/pe2-sosia-cortinarius-orellanus-inat-139699317.webp",
+      "decision": "exclude",
+      "reason": "Dominante verde e nitidezza scarsa; esemplari scuri poco separati dallo sfondo."
+    },
+    {
+      "index": 69,
+      "file": "assets/species/pe2-sosia-cortinarius-rubellus-inat-93384549.webp",
+      "decision": "exclude",
+      "reason": "Soggetti piccoli, sfocati e sparsi in sfondo dominante."
+    },
+    {
+      "index": 70,
+      "file": "assets/species/pe2-sosia-cortinarius-rubellus-inat-315854468.webp",
+      "decision": "exclude",
+      "reason": "Cappello e lamelle non nitidi; vista in mano con molto sfondo."
+    },
+    {
+      "index": 81,
+      "file": "assets/species/craterellus-cinereus-inat1.webp",
+      "decision": "exclude",
+      "reason": "Esposizione scura e luce non uniforme; viste dei particolari migliori disponibili."
+    },
+    {
+      "index": 86,
+      "file": "assets/species/pe2-sosia-entoloma-sinuatum-aaeda3f.webp",
+      "decision": "exclude",
+      "reason": "Cappello molto danneggiato e sporco, dettaglio scuro; nessuna informazione aggiuntiva affidabile."
+    },
+    {
+      "index": 88,
+      "file": "assets/species/pe2-sosia-entoloma-sinuatum-inat-236603285.webp",
+      "decision": "retain",
+      "reason": "Controllo HD: dettaglio sufficientemente leggibile e complementare; mantenuto come vista di supporto, senza dedurre una fase."
+    },
+    {
+      "index": 90,
+      "file": "assets/species/pe2-sosia-galerina-marginata-aa8523b.webp",
+      "decision": "retain",
+      "reason": "Controllo HD: dettaglio sufficientemente leggibile e complementare; mantenuto come vista di supporto, senza dedurre una fase."
+    },
+    {
+      "index": 92,
+      "file": "assets/species/gymnopilus-junonius-inat1.webp",
+      "decision": "exclude",
+      "reason": "Esemplari danneggiati ripresi da lontano, albero e contesto prevalgono."
+    },
+    {
+      "index": 96,
+      "file": "assets/species/gyromitra-esculenta-inat1.webp",
+      "decision": "exclude",
+      "reason": "Luce slavata e contrasto basso rispetto alle tre alternative più leggibili."
+    },
+    {
+      "index": 103,
+      "file": "assets/species/hydnum-rufescens-inat1.webp",
+      "decision": "retain",
+      "reason": "Controllo HD: dettaglio sufficientemente leggibile e complementare; mantenuto come vista di supporto, senza dedurre una fase."
+    },
+    {
+      "index": 104,
+      "file": "assets/species/pe2-sosia-hydnum-rufescens-179dd41.webp",
+      "decision": "retain",
+      "reason": "Controllo HD: dettaglio sufficientemente leggibile e complementare; mantenuto come vista di supporto, senza dedurre una fase."
+    },
+    {
+      "index": 105,
+      "file": "assets/species/pe2-sosia-hydnum-rufescens-c29da8d.webp",
+      "decision": "exclude",
+      "reason": "Dominante cromatica forte e riflesso sul cappello."
+    },
+    {
+      "index": 108,
+      "file": "assets/species/hygrophoropsis-aurantiaca-inat1.webp",
+      "decision": "exclude",
+      "reason": "Immagine morbida e soggetti danneggiati, dettagli meno leggibili delle alternative."
+    },
+    {
+      "index": 110,
+      "file": "assets/species/pe2-sosia-hygrophoropsis-aurantiaca-1dadbca.webp",
+      "decision": "exclude",
+      "reason": "Luce dura e alte luci sul cappello; vista ridondante con le alternative migliori."
+    },
+    {
+      "index": 113,
+      "file": "assets/species/hypholoma-fasciculare-inat1.webp",
+      "decision": "exclude",
+      "reason": "Soggetto piccolo o poco nitido, oppure inquadratura confusa; confrontare con alternative più leggibili della stessa scheda."
+    },
+    {
+      "index": 116,
+      "file": "assets/species/pe2-sosia-hypholoma-fasciculare-inat-595482754.webp",
+      "decision": "exclude",
+      "reason": "Soggetto piccolo o poco nitido, oppure inquadratura confusa; confrontare con alternative più leggibili della stessa scheda."
+    },
+    {
+      "index": 117,
+      "file": "assets/species/imleria-badia-inat1.webp",
+      "decision": "exclude",
+      "reason": "Soggetto piccolo o poco nitido, oppure inquadratura confusa; confrontare con alternative più leggibili della stessa scheda."
+    },
+    {
+      "index": 121,
+      "file": "assets/species/pe2-sosia-imleria-badia-inat-169437935.webp",
+      "decision": "exclude",
+      "reason": "Esemplare deteriorato, coperto o mal inquadrato; particolari poco leggibili e vista già meglio coperta dalle alternative."
+    },
+    {
+      "index": 123,
+      "file": "assets/species/laccaria-amethystina-inat1.webp",
+      "decision": "exclude",
+      "reason": "Soggetto piccolo o poco nitido, oppure inquadratura confusa; confrontare con alternative più leggibili della stessa scheda."
+    },
+    {
+      "index": 126,
+      "file": "assets/species/pe2-sosia-laccaria-amethystina-inat-234651121.webp",
+      "decision": "exclude",
+      "reason": "Soggetto piccolo o poco nitido, oppure inquadratura confusa; confrontare con alternative più leggibili della stessa scheda."
+    },
+    {
+      "index": 131,
+      "file": "assets/species/pe2-sosia-lepiota-brunneoincarnata-inat-436936263.webp",
+      "decision": "exclude",
+      "reason": "Esemplare deteriorato, coperto o mal inquadrato; particolari poco leggibili e vista già meglio coperta dalle alternative."
+    },
+    {
+      "index": 132,
+      "file": "assets/species/lepiota-cristata-inat1.webp",
+      "decision": "exclude",
+      "reason": "Soggetto piccolo o poco nitido, oppure inquadratura confusa; confrontare con alternative più leggibili della stessa scheda."
+    },
+    {
+      "index": 137,
+      "file": "assets/species/pe2-sosia-lepiota-subincarnata-inat-437569789.webp",
+      "decision": "retain",
+      "reason": "Controllo HD: dettaglio sufficientemente leggibile e complementare; mantenuto come vista di supporto, senza dedurre una fase."
+    },
+    {
+      "index": 138,
+      "file": "assets/species/pe2-sosia-lepiota-subincarnata-inat-437569793.webp",
+      "decision": "retain",
+      "reason": "Controllo HD: dettaglio sufficientemente leggibile e complementare; mantenuto come vista di supporto, senza dedurre una fase."
+    }
+  ],
+  "cover_promotions": [
+    14,
+    82,
+    118
+  ]
+}

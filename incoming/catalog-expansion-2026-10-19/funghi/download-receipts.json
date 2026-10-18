@@ -1,0 +1,184 @@
+[
+  {
+    "id": "ce-funghi-amanita-citrina-1144171",
+    "http_status": 200,
+    "bytes": 1564241,
+    "sha1": "b629e5b4c1e4a6fbac26820af1ad1e45063374bc",
+    "sha256": "0242ec2f8bb605b157e81110fc000026bd6b5be31e0300e3004f995a536d5b31"
+  },
+  {
+    "id": "ce-funghi-paxillus-involutus-16097960",
+    "http_status": 200,
+    "bytes": 5337769,
+    "sha1": "ac72374085516d1acbfa19c5404d1609a0c27233",
+    "sha256": "951ee57b6108a3377c5a054606d214e40b2cfa6c2777dbeb94794a8163c2cad8"
+  },
+  {
+    "id": "ce-funghi-coprinopsis-atramentaria-35546872",
+    "http_status": 200,
+    "bytes": 3935831,
+    "sha1": "42e4f154a00ce3c6a7462f427412b5026689cc3f",
+    "sha256": "e61f93e4dcab01f1f822ae3ff0b2a1d94a97ad965d600c700aee5d9b02fe3e15"
+  },
+  {
+    "id": "ce-funghi-clitocybe-nebularis-99481471",
+    "http_status": 200,
+    "bytes": 10704146,
+    "sha1": "2602dbf1082dae9e8f482b3079bd775197786ee3",
+    "sha256": "460eee41a752cc9ef74bcf9e75f3ab3678b98130502c7230fa71df1d9268f137"
+  },
+  {
+    "id": "ce-funghi-russula-emetica-404973",
+    "http_status": 200,
+    "bytes": 971577,
+    "sha1": "679580ae9099e3395999a8308f35fff3d0507f45",
+    "sha256": "256f357dafb0d60c87f6105ddebbe008adc6f4d01729cf0fb37dbb013df4a467"
+  },
+  {
+    "id": "ce-funghi-lycoperdon-perlatum-84478911",
+    "http_status": 200,
+    "bytes": 6196525,
+    "sha1": "34c60e7be44b645f014675230ccfab9a5905ac20",
+    "sha256": "ff342d38c7b82371c518e415f150ac00ca294ee0bb6c001b67c034790fc6139a"
+  },
+  {
+    "id": "ce-funghi-auricularia-auricula-judae-145517351",
+    "http_status": 200,
+    "bytes": 17167501,
+    "sha1": "ec604895b0ff94a998911bd33a41182ad69f27d6",
+    "sha256": "e3ce870ad2ef702b2b2cc8ce4474763040af27c9b12526f4fe39ba5afc1668e0"
+  },
+  {
+    "id": "ce-funghi-fomes-fomentarius-79262934",
+    "http_status": 200,
+    "bytes": 3288116,
+    "sha1": "47c6d702ae52bde264279fb1778bdbc74028b202",
+    "sha256": "a5bce7d720c8edb41e8b4d1c689d2cdba469ddf81e656baaa2656d8c0013ffac"
+  },
+  {
+    "id": "ce-funghi-trametes-versicolor-132597918",
+    "http_status": 200,
+    "bytes": 1863520,
+    "sha1": "e99a095a3d314b9bab494491e19596e99a4c66ce",
+    "sha256": "6a099731fbfdc78d3416960bd216a7cda70598eca7d8e05d728f74bafa9752df"
+  },
+  {
+    "id": "ce-funghi-hygrophorus-russula-84179972",
+    "http_status": 200,
+    "bytes": 2382671,
+    "sha1": "da14d5992c090a35b21639d0f7bf52df9b8452a7",
+    "sha256": "5e1e2b8831bc8814d230240051650c46151b6364a3e1e2fd145d756081118303"
+  },
+  {
+    "id": "ce-funghi-lactarius-sanguifluus-95428903",
+    "http_status": 200,
+    "bytes": 1602446,
+    "sha1": "205db1862cc62a37829220ada6686ed8d7e3f181",
+    "sha256": "e3bad962274dc389cfbc9f90825a56eea2995b89cc904af0f696b732fb7def0e"
+  },
+  {
+    "id": "ce-funghi-russula-vesca-121831228",
+    "http_status": 200,
+    "bytes": 695764,
+    "sha1": "e98bd293b4004041b66d2a8c904b5c802725ce2b",
+    "sha256": "5b8c6e08d248fde0bdf95f6501d2d5af40b4f4d12993fa9317490cc1c98320f1"
+  },
+  {
+    "id": "ce-funghi-amanita-citrina-35484839",
+    "http_status": 200,
+    "bytes": 7553860,
+    "sha1": "bb3013966b986ad26bb81dc35fed20446a0fc594",
+    "sha256": "599436db1ab85f6d9ad595850f0f34bfe582b3fc6806ff012f7b348dee86ad6b"
+  },
+  {
+    "id": "ce-funghi-paxillus-involutus-4558768",
+    "http_status": 200,
+    "bytes": 2947347,
+    "sha1": "38b0f9c3713b1d4e08d2133ae44ca827d8e03d9b",
+    "sha256": "705478ee4e51224ff2b4bbb22aa869f71ae9aff1e9e31fb91bc2db63082072fb"
+  },
+  {
+    "id": "ce-funghi-coprinopsis-atramentaria-22502531",
+    "http_status": 200,
+    "bytes": 6067438,
+    "sha1": "3fed3723856570e216c23138bb60151579517675",
+    "sha256": "974ab8104950eabe81cbaf3cd334e0d3f98074484461455fd7a16c3a9f3a5100"
+  },
+  {
+    "id": "ce-funghi-clitocybe-nebularis-84242752",
+    "http_status": 200,
+    "bytes": 15380503,
+    "sha1": "3c4b5f371e1f4b39fb4dc4af5a4e9bfb60c742fa",
+    "sha256": "afdb641014c2d7200efc838c8464bc4ea802e7200a5cdb170749d440c87ff71c"
+  },
+  {
+    "id": "ce-funghi-russula-emetica-63737437",
+    "http_status": 200,
+    "bytes": 1509476,
+    "sha1": "e4bbfd95ba723beff1fe1fa8f6c62066f92d5570",
+    "sha256": "be0dd25df80c6fb20fd7be486f4e9d5f61aa9d0b1def4b8e51219706866d13d4"
+  },
+  {
+    "id": "ce-funghi-lycoperdon-perlatum-372210",
+    "http_status": 200,
+    "bytes": 549727,
+    "sha1": "632a8e13e6ce588722144a5e522558680ee6f5a8",
+    "sha256": "72c2bf10e70d8d89072279abf436c109f07281b3156ea426fa759cf396f05b0b"
+  },
+  {
+    "id": "ce-funghi-auricularia-auricula-judae-124675179",
+    "http_status": 200,
+    "bytes": 10833960,
+    "sha1": "adee35615a88f62635208a744c284a472307fccf",
+    "sha256": "a0abad0faf70c227eb084855115434a8c707705f6e47afc5af445738f63b5010"
+  },
+  {
+    "id": "ce-funghi-fomes-fomentarius-129874400",
+    "http_status": 200,
+    "bytes": 6338468,
+    "sha1": "b84b9fc954f720b773df2d31af8a35aaef8b9f53",
+    "sha256": "8907c497a61cb472fc02d5527eefa76629828097505589fcaca284f10a9cd855"
+  },
+  {
+    "id": "ce-funghi-trametes-versicolor-3891548",
+    "http_status": 200,
+    "bytes": 1044269,
+    "sha1": "950764737af1de4c3256664581d0967712a5cf5c",
+    "sha256": "b006055c304e3d5cd456857bd2f2eb7501b818c316d45da20cc59144d2928206"
+  },
+  {
+    "id": "ce-funghi-hygrophorus-russula-93766111",
+    "http_status": 200,
+    "bytes": 338811,
+    "sha1": "592702c0371f2df5c58ac0b11d6fc2294da5d1bb",
+    "sha256": "97f919fc25582a4d2341aed33981f2187dd80082b9afdf4701e2e3339b90342f"
+  },
+  {
+    "id": "ce-funghi-lactarius-sanguifluus-95428891",
+    "http_status": 200,
+    "bytes": 1530208,
+    "sha1": "1875f82cafe38e90052c90a8a71651d3ac6ba18b",
+    "sha256": "5f13bdb6f6607e0aba60be22d1bab444d5220f116c5271c88aa2251ad734dd02"
+  },
+  {
+    "id": "ce-funghi-russula-vesca-156995528",
+    "http_status": 200,
+    "bytes": 5014510,
+    "sha1": "dca036e2a10ce1f73ddd6d6cb7cb11cf078c33d5",
+    "sha256": "061b5df9b3981020add334d59202dc722fac8e79b144aad743df527360b33ca9"
+  },
+  {
+    "id": "ce-funghi-amanita-citrina-63054929",
+    "http_status": 200,
+    "bytes": 1019425,
+    "sha1": "60d4c031ec204df6ac16096e27ee528ed5a75bfd",
+    "sha256": "7b163cc80233a05086f1fbba633e9b71e18338a9a394bc74147b17159307721c"
+  },
+  {
+    "id": "ce-funghi-clitocybe-nebularis-53537315",
+    "http_status": 200,
+    "bytes": 606272,
+    "sha1": "5e2de68221f5275b77474ca80df0441ab532c054",
+    "sha256": "f36a6c403709916731c07f65dfd19fef2e3ed9837ef82fdda6d37755c480bf02"
+  }
+]

@@ -60,7 +60,7 @@ def all_photos(value):
             yield from all_photos(child)
 
 
-def import_photos(manifests, assessment_path):
+def import_photos(manifests, assessment_path, receipt_path=None):
     assessment = read(assessment_path)
     assessment_reference = str(assessment_path.relative_to(ROOT)) if assessment_path.is_relative_to(ROOT) else str(assessment_path)
     approved = set(assessment['approved_ids'])
@@ -83,7 +83,7 @@ def import_photos(manifests, assessment_path):
             if row.get('licenseUrl', '').startswith('http://creativecommons.org/'):
                 row['licenseUrlOriginal'] = row['licenseUrl']
                 row['licenseUrl'] = 'https://' + row['licenseUrl'][7:]
-            if not re.fullmatch(r'pe2-[a-z0-9-]{1,100}', row['id']):
+            if not re.fullmatch(r'(?:pe2|ce[0-9]*)-[a-z0-9-]{1,100}', row['id']):
                 raise ValueError('ID non valido: ' + row['id'])
             if row['id'] in seen_ids:
                 raise ValueError('ID ripetuto nei manifest: ' + row['id'])
@@ -183,7 +183,8 @@ def import_photos(manifests, assessment_path):
             entry['voci'] = [value for value in entry['voci'] if value.removesuffix(' (nessuna foto)') not in animals_with_photos]
     pending['pendenze'] = [entry for entry in pending['pendenze'] if entry['voci']]
     pending_path.write_text(json.dumps(pending, ensure_ascii=False, indent=1) + '\n')
-    out = ROOT / 'incoming/photo-expansion-2026-10-18/integration.json'
+    out = receipt_path or ROOT / 'incoming/photo-expansion-2026-10-18/integration.json'
+    out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(json.dumps({'assessment': assessment_reference, 'photos': receipt}, ensure_ascii=False, indent=2) + '\n')
     print('Integrate', len(receipt), 'fotografie distinte')
 
@@ -191,6 +192,7 @@ def import_photos(manifests, assessment_path):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--assessment', required=True, type=Path)
+    parser.add_argument('--receipt', type=Path, help='Ricevuta separata per il lotto corrente; non sovrascrivere lotti già integrati.')
     parser.add_argument('manifests', nargs='+', type=Path)
     args = parser.parse_args()
-    import_photos(args.manifests, args.assessment.resolve())
+    import_photos(args.manifests, args.assessment.resolve(), args.receipt.resolve() if args.receipt else None)

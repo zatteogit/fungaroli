@@ -1,0 +1,1123 @@
+{
+  "batchcomplete": "",
+  "continue": {
+    "gsroffset": 8,
+    "continue": "gsroffset||"
+  },
+  "query": {
+    "pages": {
+      "157889269": {
+        "pageid": 157889269,
+        "ns": 6,
+        "title": "File:Jamur Ekor Kalkun.jpg",
+        "index": 6,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 3092761,
+            "width": 2296,
+            "height": 4080,
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d2/Jamur_Ekor_Kalkun.jpg/960px-Jamur_Ekor_Kalkun.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 640,
+            "thumbheight": 1137,
+            "responsiveUrls": {
+              "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d2/Jamur_Ekor_Kalkun.jpg/1280px-Jamur_Ekor_Kalkun.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d2/Jamur_Ekor_Kalkun.jpg/960px-Jamur_Ekor_Kalkun.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 640,
+              "height": 1137,
+              "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d2/Jamur_Ekor_Kalkun.jpg/1280px-Jamur_Ekor_Kalkun.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/d/d2/Jamur_Ekor_Kalkun.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Jamur_Ekor_Kalkun.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=157889269",
+            "sha1": "779ca7045f03fe60d9cb484d5f6ff66b4cc89ec7",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2025-01-13 16:29:23",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Jamur Ekor Kalkun",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Trametes versicolor|Self-published work|Files with coordinates missing SDC location of creation|Pelatihan SPT 2025",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "-7.641694",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "112.908584",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Jamur Ekor Kalkun ini ditemukan tumbuh di atas kayu yang sudah ditebang. Jamur ini dikenal dengan pola warna-warni seperti ekor kalkun dan sering ditemukan pada kayu yang telah mati atau membusuk.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2025-01-13",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Nurchasanah.94&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Nurchasanah.94 (page does not exist)\">Nurchasanah.94</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-4.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with coordinates missing SDC location of creation"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Pelatihan SPT 2025"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Trametes versicolor"
+          }
+        ]
+      },
+      "132597918": {
+        "pageid": 132597918,
+        "ns": 6,
+        "title": "File:Schmetterlings-Tramete auf Moos.jpg",
+        "index": 8,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1863520,
+            "width": 6000,
+            "height": 4000,
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/Schmetterlings-Tramete_auf_Moos.jpg/960px-Schmetterlings-Tramete_auf_Moos.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 640,
+            "thumbheight": 427,
+            "responsiveUrls": {
+              "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/Schmetterlings-Tramete_auf_Moos.jpg/1280px-Schmetterlings-Tramete_auf_Moos.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/Schmetterlings-Tramete_auf_Moos.jpg/960px-Schmetterlings-Tramete_auf_Moos.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 640,
+              "height": 427,
+              "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/Schmetterlings-Tramete_auf_Moos.jpg/1280px-Schmetterlings-Tramete_auf_Moos.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/4/42/Schmetterlings-Tramete_auf_Moos.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Schmetterlings-Tramete_auf_Moos.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=132597918",
+            "sha1": "e99a095a3d314b9bab494491e19596e99a4c66ce",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2023-06-02 14:20:43",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Schmetterlings-Tramete auf Moos",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Trametes versicolor|Landschaftsschutzgebiet Augsburg - Westliche Wälder|Images from Wiki Loves Earth 2023 in Germany|Self-published work|Uploaded via Campaign:wle-de|Images from Wiki Loves Earth 2023|Images from Wiki Loves Earth 2023, DE detail|Images from Wiki Loves Earth missing SDC location of creation",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Schmetterlings-Tramete (Trametes versicolor, Syn.: Coriolus versicolor) auf Moos im Landschaftsschutzgebiet \"Augsburg – Westliche Wälder\" zwischen Waldberg und Mickhausen",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2022-12-28",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Lord_Protector_Otto&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Lord Protector Otto (page does not exist)\">Lord Protector Otto</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-4.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Images from Wiki Loves Earth 2023"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Images from Wiki Loves Earth 2023, DE detail"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Images from Wiki Loves Earth 2023 in Germany"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Images from Wiki Loves Earth missing SDC location of creation"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Landschaftsschutzgebiet Augsburg - Westliche Wälder"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Trametes versicolor"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Uploaded via Campaign:wle-de"
+          }
+        ]
+      },
+      "3891548": {
+        "pageid": 3891548,
+        "ns": 6,
+        "title": "File:Schmetterlingstramete Trametes versicolor 004.jpg",
+        "index": 7,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1044269,
+            "width": 2000,
+            "height": 1500,
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/56/Schmetterlingstramete_Trametes_versicolor_004.jpg/960px-Schmetterlingstramete_Trametes_versicolor_004.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 640,
+            "thumbheight": 480,
+            "responsiveUrls": {
+              "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/56/Schmetterlingstramete_Trametes_versicolor_004.jpg/1280px-Schmetterlingstramete_Trametes_versicolor_004.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/56/Schmetterlingstramete_Trametes_versicolor_004.jpg/960px-Schmetterlingstramete_Trametes_versicolor_004.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 640,
+              "height": 480,
+              "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/56/Schmetterlingstramete_Trametes_versicolor_004.jpg/1280px-Schmetterlingstramete_Trametes_versicolor_004.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/5/56/Schmetterlingstramete_Trametes_versicolor_004.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Schmetterlingstramete_Trametes_versicolor_004.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=3891548",
+            "sha1": "950764737af1de4c3256664581d0967712a5cf5c",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2008-04-16 15:35:08",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Schmetterlingstramete Trametes versicolor 004",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Trametes versicolor|Taken with Olympus E-3",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<i>Trametes versicolor</i> Schmetterlingstramete Picture taken in Bavaria/Germany",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2008-03-23",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:OhWeh\" title=\"User:OhWeh\">OhWeh</a>",
+                "source": "commons-desc-page"
+              },
+              "Permission": {
+                "value": "<div class=\"responsive-license-cc layouttemplate licensetpl\" dir=\"ltr\" lang=\"en\"><div class=\"rlicense-icons\"><span class=\"skin-invert\" typeof=\"mw:File\"><span title=\"w:en:Creative Commons\"><img alt=\"w:en:Creative Commons\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/CC_some_rights_reserved.svg/120px-CC_some_rights_reserved.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"90\" height=\"36\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/CC_some_rights_reserved.svg/250px-CC_some_rights_reserved.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"744\" data-file-height=\"300\"></span></span><br>\n<span class=\"skin-invert\" typeof=\"mw:File\"><span title=\"attribution\"><img alt=\"attribution\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/Cc-by_new_white.svg/40px-Cc-by_new_white.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"24\" height=\"24\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/Cc-by_new_white.svg/60px-Cc-by_new_white.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"64\" data-file-height=\"64\"></span></span> <span class=\"skin-invert\" typeof=\"mw:File\"><span title=\"share alike\"><img alt=\"share alike\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/Cc-sa_white.svg/40px-Cc-sa_white.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"24\" height=\"24\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/Cc-sa_white.svg/60px-Cc-sa_white.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"64\" data-file-height=\"64\"></span></span></div><div class=\"rlicense-text\"><div class=\"rlicense-declaration\">This file is licensed under the <a href=\"https://en.wikipedia.org/wiki/en:Creative_Commons\" class=\"extiw\" title=\"w:en:Creative Commons\">Creative Commons</a> <a href=\"//creativecommons.org/licenses/by-sa/2.5/deed.en\" class=\"extiw\" title=\"creativecommons:by-sa/2.5/deed.en\">Attribution-Share Alike 2.5 Generic</a> license.</div><div class=\"rlicense-desc\" style=\"text-align:start;\" lang=\"en\">\n<dl><dd>You are free:\n<ul><li><b>to share</b> – to copy, distribute and transmit the work</li>\n<li><b>to remix</b> – to adapt the work</li></ul></dd>\n<dd>Under the following conditions:\n<ul><li><b>attribution</b> – You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.</li>\n<li><b>share alike</b> – If you remix, transform, or build upon the material, you must distribute your contributions under the <a href=\"https://creativecommons.org/share-your-work/licensing-considerations/compatible-licenses\" class=\"extiw\" title=\"ccorg:share-your-work/licensing-considerations/compatible-licenses\">same or compatible license</a> as the original.</li></ul></dd></dl></div><span class=\"licensetpl_link\" style=\"display:none;\">https://creativecommons.org/licenses/by-sa/2.5</span><span class=\"licensetpl_short\" style=\"display:none;\">CC BY-SA 2.5 </span><span class=\"licensetpl_long\" style=\"display:none;\">Creative Commons Attribution-Share Alike 2.5 </span><span class=\"licensetpl_link_req\" style=\"display:none;\">true</span><span class=\"licensetpl_attr_req\" style=\"display:none;\">true</span></div></div>",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 2.5",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 2.5",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/2.5",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-2.5",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-2.5"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Olympus E-3"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Trametes versicolor"
+          }
+        ]
+      },
+      "16986891": {
+        "pageid": 16986891,
+        "ns": 6,
+        "title": "File:Stumpfungus.jpg",
+        "index": 1,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 206597,
+            "width": 768,
+            "height": 576,
+            "thumburl": "https://upload.wikimedia.org/wikipedia/commons/5/5d/Stumpfungus.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "thumbwidth": 640,
+            "thumbheight": 480,
+            "thumbattribs": {
+              "src": "https://upload.wikimedia.org/wikipedia/commons/5/5d/Stumpfungus.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 640,
+              "height": 480
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/5/5d/Stumpfungus.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Stumpfungus.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=16986891",
+            "sha1": "c390e4c8d5e981f51ad1fecbb4d0eaf188116cae",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2011-10-15 01:24:37",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Stumpfungus",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Trametes versicolor|PD-user",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Very colorful example of shelf fungus on a South Carolina stump, most likely <i><a href=\"https://en.wikipedia.org/wiki/Trametes_versicolor\" class=\"extiw\" title=\"en:Trametes versicolor\">Trametes versicolor</a></i>.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "28 November 2006 (original upload date)",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "Transferred from <a class=\"external text\" data-mw-original-href=\"http://en.wikipedia.org\" href=\"https://en.wikipedia.org\">en.wikipedia</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"https://en.wikipedia.org/wiki/User:Ecornerdropshop\" class=\"extiw\" title=\"en:User:Ecornerdropshop\">Ecornerdropshop</a> at <a class=\"external text\" data-mw-original-href=\"http://en.wikipedia.org\" href=\"https://en.wikipedia.org\">en.wikipedia</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "Public domain",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Public domain",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Copyrighted": {
+                "value": "False",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "pd",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:PD-user"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Trametes versicolor"
+          }
+        ]
+      },
+      "3565096": {
+        "pageid": 3565096,
+        "ns": 6,
+        "title": "File:Trametes.versicolor.-.lindsey.jpg",
+        "index": 5,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 112965,
+            "width": 640,
+            "height": 425,
+            "thumburl": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Trametes.versicolor.-.lindsey.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "thumbwidth": 640,
+            "thumbheight": 425,
+            "thumbattribs": {
+              "src": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Trametes.versicolor.-.lindsey.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 640,
+              "height": 425
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Trametes.versicolor.-.lindsey.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Trametes.versicolor.-.lindsey.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=3565096",
+            "sha1": "e77d3d3ea5c5dc9010cd8327c90cac3235f39745",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2008-02-16 14:27:48",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Trametes.versicolor.-.lindsey",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Trametes versicolor|Taken with Nikon D100|Self-published work|Items with VRTS permission confirmed|Pictures by James Lindsey|Fungi in November|Verified pictures of mushrooms by James K. Lindsey|Belgium photographs taken on 2002-11-27|Trametes versicolor in Belgium|Polyporales in Commanster",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<p><i><a href=\"//commons.wikimedia.org/wiki/Trametes_versicolor\" title=\"Trametes versicolor\">Trametes versicolor</a></i> from Commanster, Belgium.\n</p>\n<small>The determination of the species shown in this picture has been verified.</small>",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2002-11-27",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"http://popgen.unimaas.nl/~jlindsey/commanster.html\">James Lindsey's Ecology of Commanster Site</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "James Lindsey",
+                "source": "commons-desc-page"
+              },
+              "Permission": {
+                "value": "You may select the license of your choice.",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Attribution": {
+                "value": "James Lindsey at <a rel=\"nofollow\" class=\"external text\" href=\"http://popgen.unimaas.nl/~jlindsey/commanster.html\">Ecology of Commanster</a>",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Belgium photographs taken on 2002-11-27"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-2.5"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi in November"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Items with VRTS permission confirmed"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Pictures by James Lindsey"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Polyporales in Commanster"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Nikon D100"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Trametes versicolor"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Trametes versicolor in Belgium"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Verified pictures of mushrooms by James K. Lindsey"
+          }
+        ]
+      },
+      "3127861": {
+        "pageid": 3127861,
+        "ns": 6,
+        "title": "File:TrametesversicolorJI1.jpg",
+        "index": 4,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 5884378,
+            "width": 3000,
+            "height": 2252,
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/TrametesversicolorJI1.jpg/960px-TrametesversicolorJI1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 640,
+            "thumbheight": 480,
+            "responsiveUrls": {
+              "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/TrametesversicolorJI1.jpg/1280px-TrametesversicolorJI1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/TrametesversicolorJI1.jpg/960px-TrametesversicolorJI1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 640,
+              "height": 480,
+              "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/TrametesversicolorJI1.jpg/1280px-TrametesversicolorJI1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/8/88/TrametesversicolorJI1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:TrametesversicolorJI1.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=3127861",
+            "sha1": "e71d3713f54316dd7b6ba5dc75a79fdc68ed69b4",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2007-11-22 05:22:32",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "TrametesversicolorJI1",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Trametes versicolor|Flickr images uploaded by Flickr upload bot|Information field template with formatting|Photographs by Jōichi Itō|Nature of unidentified locations",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "quality",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Probably a Trametes versicolor<br>Polypore action on stump",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2007-11-22 14:05:28",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/35034362831@N01/2054428536\">Flickr</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/35034362831@N01\">Joi Ito</a>",
+                "source": "commons-desc-page"
+              },
+              "Permission": {
+                "value": "<table id=\"FlickrReview\" style=\"width:100%; margin:0.3em auto; text-align:start; background-color:var(--background-color-success-subtle,#d5fdf4); padding: 3px; border:1px solid var(--border-color-base,#a2a9b1); color:inherit;\" dir=\"ltr\" lang=\"en\">\n\n<tbody><tr>\n<td><span typeof=\"mw:File\"><span><img src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/9/95/Checked_copyright_icon.svg/60px-Checked_copyright_icon.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"50\" height=\"48\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/9/95/Checked_copyright_icon.svg/120px-Checked_copyright_icon.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"160\" data-file-height=\"153\"></span></span>\n</td>\n<td>This image, which was originally posted to <b><a href=\"https://en.wikipedia.org/wiki/Flickr\" class=\"extiw\" title=\"en:Flickr\">Flickr</a></b>, was uploaded to Commons using <b><a href=\"//commons.wikimedia.org/wiki/User:Flickr_upload_bot\" title=\"User:Flickr upload bot\">Flickr upload bot</a></b> on 22 November 2007, 05:21 by <span id=\"flickr_upload_bot_reviewer\"><b><a href=\"//commons.wikimedia.org/wiki/User:Joi\" title=\"User:Joi\">Joi</a></b></span>. On that date, it was confirmed to be licensed under the terms of the license indicated.\n</td>\n<td><span typeof=\"mw:File\"><span><img src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/Flickr_dots.svg/60px-Flickr_dots.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"50\" height=\"50\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/Flickr_dots.svg/120px-Flickr_dots.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"512\" data-file-height=\"512\"></span></span>\n</td></tr></tbody></table>\n<div class=\"responsive-license-cc layouttemplate licensetpl\" dir=\"ltr\" lang=\"en\"><div class=\"rlicense-icons\"><span class=\"skin-invert\" typeof=\"mw:File\"><span title=\"w:en:Creative Commons\"><img alt=\"w:en:Creative Commons\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/CC_some_rights_reserved.svg/120px-CC_some_rights_reserved.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"90\" height=\"36\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/CC_some_rights_reserved.svg/250px-CC_some_rights_reserved.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"744\" data-file-height=\"300\"></span></span><br>\n<span class=\"skin-invert\" typeof=\"mw:File\"><span title=\"attribution\"><img alt=\"attribution\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/Cc-by_new_white.svg/40px-Cc-by_new_white.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"24\" height=\"24\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/Cc-by_new_white.svg/60px-Cc-by_new_white.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"64\" data-file-height=\"64\"></span></span></div><div class=\"rlicense-text\"><div class=\"rlicense-declaration\">This file is licensed under the <a href=\"https://en.wikipedia.org/wiki/en:Creative_Commons\" class=\"extiw\" title=\"w:en:Creative Commons\">Creative Commons</a> <a href=\"//creativecommons.org/licenses/by/2.0/deed.en\" class=\"extiw\" title=\"creativecommons:by/2.0/deed.en\">Attribution 2.0 Generic</a> license.</div><div class=\"rlicense-desc\" style=\"text-align:start;\" dir=\"ltr\" lang=\"en\">\n<dl><dd>You are free:\n<ul><li><b>to share</b> – to copy, distribute and transmit the work</li>\n<li><b>to remix</b> – to adapt the work</li></ul></dd>\n<dd>Under the following conditions:\n<ul><li><b>attribution</b> – You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.</li></ul></dd></dl>\n</div><span class=\"licensetpl_link\" style=\"display:none;\">https://creativecommons.org/licenses/by/2.0</span><span class=\"licensetpl_short\" style=\"display:none;\">CC BY 2.0 </span><span class=\"licensetpl_long\" style=\"display:none;\">Creative Commons Attribution 2.0 </span><span class=\"licensetpl_link_req\" style=\"display:none;\">true</span><span class=\"licensetpl_attr_req\" style=\"display:none;\">true</span></div></div>",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseShortName": {
+                "value": "CC BY 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-2.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Flickr images uploaded by Flickr upload bot"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Information field template with formatting"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Nature of unidentified locations"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Photographs by Jōichi Itō"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images of fungi"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Trametes versicolor"
+          }
+        ]
+      },
+      "3128155": {
+        "pageid": 3128155,
+        "ns": 6,
+        "title": "File:TrametesversicolorJI2.jpg",
+        "index": 3,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 5904681,
+            "width": 3000,
+            "height": 2468,
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/TrametesversicolorJI2.jpg/960px-TrametesversicolorJI2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 640,
+            "thumbheight": 527,
+            "responsiveUrls": {
+              "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/TrametesversicolorJI2.jpg/1280px-TrametesversicolorJI2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/TrametesversicolorJI2.jpg/960px-TrametesversicolorJI2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 640,
+              "height": 527,
+              "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/TrametesversicolorJI2.jpg/1280px-TrametesversicolorJI2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/e/e8/TrametesversicolorJI2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:TrametesversicolorJI2.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=3128155",
+            "sha1": "e6695c34856a9c0eb15f73452744eb140e42e6c4",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2007-11-22 08:40:53",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "TrametesversicolorJI2",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Trametes versicolor|GFDL|License migration redundant|Self-published work|Photographs by Jōichi Itō|Nature of unidentified locations",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "quality",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<i>Trametes versicolor</i> cropped",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2007-11-22",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Joi\" title=\"User:Joi\">Joi</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:GFDL"
+          },
+          {
+            "ns": 14,
+            "title": "Category:License migration redundant"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Nature of unidentified locations"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Photographs by Jōichi Itō"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images of fungi"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Trametes versicolor"
+          }
+        ]
+      },
+      "364884": {
+        "pageid": 364884,
+        "ns": 6,
+        "title": "File:Velvet Revolver.jpg",
+        "index": 2,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1403184,
+            "width": 2048,
+            "height": 1286,
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1b/Velvet_Revolver.jpg/960px-Velvet_Revolver.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 640,
+            "thumbheight": 402,
+            "responsiveUrls": {
+              "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1b/Velvet_Revolver.jpg/1280px-Velvet_Revolver.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1b/Velvet_Revolver.jpg/960px-Velvet_Revolver.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 640,
+              "height": 402,
+              "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1b/Velvet_Revolver.jpg/1280px-Velvet_Revolver.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/1/1b/Velvet_Revolver.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Velvet_Revolver.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=364884",
+            "sha1": "f74a3f51e847363667b69712e22ae4c1bdf6b6f7",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2005-10-11 12:56:39",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Velvet Revolver",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Trametes versicolor|Flickr images reviewed by FlickreviewR|Photographs by Steve Jurvetson|Information field template with formatting|FlickrLickr images",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<i>Trametes versicolor</i><br>Velvet Revolver",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2004-12-25 12:51:23",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/44124348109@N01/3594101\">Flickr</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/44124348109@N01\">Steve Jurvetson</a> from Menlo Park, USA",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-2.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:FlickrLickr images"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Flickr images reviewed by FlickreviewR"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Information field template with formatting"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Photographs by Steve Jurvetson"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Trametes versicolor"
+          }
+        ]
+      }
+    }
+  },
+  "limits": {
+    "categories": 500
+  }
+}

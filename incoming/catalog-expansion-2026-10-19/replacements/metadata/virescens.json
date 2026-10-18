@@ -1,0 +1,3482 @@
+{
+  "continue": {
+    "clcontinue": "25777553|Russula_-_botanical_illustrations",
+    "continue": "||imageinfo"
+  },
+  "query": {
+    "pages": {
+      "58850650": {
+        "pageid": 58850650,
+        "ns": 6,
+        "title": "File:2017-05-12 Russula virescens (Schaeff.) Fr 737440.jpg",
+        "index": 18,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1010767,
+            "width": 1456,
+            "height": 2592,
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3c/2017-05-12_Russula_virescens_%28Schaeff.%29_Fr_737440.jpg/960px-2017-05-12_Russula_virescens_%28Schaeff.%29_Fr_737440.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 700,
+            "thumbheight": 1246,
+            "responsiveUrls": {
+              "2": "https://upload.wikimedia.org/wikipedia/commons/3/3c/2017-05-12_Russula_virescens_%28Schaeff.%29_Fr_737440.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3c/2017-05-12_Russula_virescens_%28Schaeff.%29_Fr_737440.jpg/960px-2017-05-12_Russula_virescens_%28Schaeff.%29_Fr_737440.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 700,
+              "height": 1246,
+              "srcset": "https://upload.wikimedia.org/wikipedia/commons/3/3c/2017-05-12_Russula_virescens_%28Schaeff.%29_Fr_737440.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/3/3c/2017-05-12_Russula_virescens_%28Schaeff.%29_Fr_737440.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:2017-05-12_Russula_virescens_(Schaeff.)_Fr_737440.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=58850650",
+            "sha1": "b89723ff4508acaa8580ab3137a8dee9c8a56e64",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2017-05-21 09:33:14",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "2017-05-12 Russula virescens (Schaeff.) Fr 737440",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Russula virescens|Images from Mushroom Observer|Files from external sources with reviewed licenses|Fungi of Laos|Files with coordinates missing SDC location of creation",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "19.562100",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "103.184300",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "For more information about this, see the <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/show_observation/276347\">observation page</a> at Mushroom Observer.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2017-05-12",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "This image is <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/image/show_image/737440\">Image Number 737440</a> at <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org\">Mushroom Observer</a>, a source for mycological images.",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "This image was created by user <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/show_user/8963\">Vihane (wihane)</a> at <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org\">Mushroom Observer</a>, a source for mycological images.<br>You can contact this user <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/ask_user_question/8963\">here</a>.",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "44504308": {
+        "pageid": 44504308,
+        "ns": 6,
+        "title": "File:Atlas des champignons comestibles et vénéneux (Planche 30) BHL3270620.jpg",
+        "index": 21,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 435245,
+            "width": 2288,
+            "height": 3254,
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/87/Atlas_des_champignons_comestibles_et_v%C3%A9n%C3%A9neux_%28Planche_30%29_BHL3270620.jpg/960px-Atlas_des_champignons_comestibles_et_v%C3%A9n%C3%A9neux_%28Planche_30%29_BHL3270620.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 700,
+            "thumbheight": 996,
+            "responsiveUrls": {
+              "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/87/Atlas_des_champignons_comestibles_et_v%C3%A9n%C3%A9neux_%28Planche_30%29_BHL3270620.jpg/1920px-Atlas_des_champignons_comestibles_et_v%C3%A9n%C3%A9neux_%28Planche_30%29_BHL3270620.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/87/Atlas_des_champignons_comestibles_et_v%C3%A9n%C3%A9neux_%28Planche_30%29_BHL3270620.jpg/960px-Atlas_des_champignons_comestibles_et_v%C3%A9n%C3%A9neux_%28Planche_30%29_BHL3270620.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 700,
+              "height": 996,
+              "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/87/Atlas_des_champignons_comestibles_et_v%C3%A9n%C3%A9neux_%28Planche_30%29_BHL3270620.jpg/1920px-Atlas_des_champignons_comestibles_et_v%C3%A9n%C3%A9neux_%28Planche_30%29_BHL3270620.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/8/87/Atlas_des_champignons_comestibles_et_v%C3%A9n%C3%A9neux_%28Planche_30%29_BHL3270620.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Atlas_des_champignons_comestibles_et_v%C3%A9n%C3%A9neux_(Planche_30)_BHL3270620.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=44504308",
+            "sha1": "b75bf0bb23f274f8c4195dde90efcfa0422765c0",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2015-10-26 13:11:44",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Atlas des champignons comestibles et vénéneux (Planche 30) BHL3270620",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Russula virescens|Russula nigricans|Atlas des champignons comestibles et vénéneux|PD-old-70-expired|Images uploaded by Fæ|PD-scan (PD-old-70-expired)|Files from the Biodiversity Heritage Library|CC-PD-Mark|PD-old missing SDC copyright status|Biodiversity Heritage Library maintenance missing date|Russula - botanical illustrations",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Atlas des champignons comestibles et vénéneux.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.biodiversitylibrary.org/pageimage/3270620\">https://www.biodiversitylibrary.org/pageimage/3270620</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "Dufour, L.",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "Public domain",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Public domain",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Copyrighted": {
+                "value": "False",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "pd",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "34672551": {
+        "pageid": 34672551,
+        "ns": 6,
+        "title": "File:Golčubača 2.JPG",
+        "index": 14,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1835913,
+            "width": 2592,
+            "height": 1944,
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/95/Gol%C4%8Duba%C4%8Da_2.JPG/960px-Gol%C4%8Duba%C4%8Da_2.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 700,
+            "thumbheight": 525,
+            "responsiveUrls": {
+              "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/95/Gol%C4%8Duba%C4%8Da_2.JPG/1920px-Gol%C4%8Duba%C4%8Da_2.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/95/Gol%C4%8Duba%C4%8Da_2.JPG/960px-Gol%C4%8Duba%C4%8Da_2.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 700,
+              "height": 525,
+              "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/95/Gol%C4%8Duba%C4%8Da_2.JPG/1920px-Gol%C4%8Duba%C4%8Da_2.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/9/95/Gol%C4%8Duba%C4%8Da_2.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Gol%C4%8Duba%C4%8Da_2.JPG",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=34672551",
+            "sha1": "02a9df37fc16391f3eb50f12b143af08b741f0c7",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2014-08-11 17:24:06",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Golčubača 2",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Russula virescens|Taken with Canon PowerShot A460|Self-published work|Fungi in July|Russulaceae in Serbia",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "RUSSULA VIRESCENS. Found in Serbia.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2014-07-26 11:58:03",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Bubbah63&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Bubbah63 (page does not exist)\">Bubbah63</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "63640105": {
+        "pageid": 63640105,
+        "ns": 6,
+        "title": "File:Green-cracking Russula - Russula virescens (37221098980).jpg",
+        "index": 16,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 5844792,
+            "width": 5184,
+            "height": 3456,
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c3/Green-cracking_Russula_-_Russula_virescens_%2837221098980%29.jpg/960px-Green-cracking_Russula_-_Russula_virescens_%2837221098980%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 700,
+            "thumbheight": 467,
+            "responsiveUrls": {
+              "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c3/Green-cracking_Russula_-_Russula_virescens_%2837221098980%29.jpg/1920px-Green-cracking_Russula_-_Russula_virescens_%2837221098980%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c3/Green-cracking_Russula_-_Russula_virescens_%2837221098980%29.jpg/960px-Green-cracking_Russula_-_Russula_virescens_%2837221098980%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 700,
+              "height": 467,
+              "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c3/Green-cracking_Russula_-_Russula_virescens_%2837221098980%29.jpg/1920px-Green-cracking_Russula_-_Russula_virescens_%2837221098980%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Green-cracking_Russula_-_Russula_virescens_%2837221098980%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Green-cracking_Russula_-_Russula_virescens_(37221098980).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=63640105",
+            "sha1": "bad5fd843294dd7248b31d8d79d1da518326c964",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2017-10-27 00:43:41",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Green-cracking Russula - Russula virescens (37221098980)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Russula virescens|Germany photographs taken on 2017-08-27|Flickr images reviewed by FlickreviewR|Files with coordinates missing SDC location of creation (51° N, 7° E)|Photographs by Björn Sothmann",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "51.242116",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "7.657702",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Green-cracking Russula - Russula virescens<br>",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2017-08-27 14:03",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/40948266@N04/37221098980/\">Green-cracking Russula - Russula virescens</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/40948266@N04\">Björn S...</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "63640090": {
+        "pageid": 63640090,
+        "ns": 6,
+        "title": "File:Green-cracking Russula - Russula virescens (37449179992).jpg",
+        "index": 19,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 5399286,
+            "width": 5184,
+            "height": 3456,
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c6/Green-cracking_Russula_-_Russula_virescens_%2837449179992%29.jpg/960px-Green-cracking_Russula_-_Russula_virescens_%2837449179992%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 700,
+            "thumbheight": 467,
+            "responsiveUrls": {
+              "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c6/Green-cracking_Russula_-_Russula_virescens_%2837449179992%29.jpg/1920px-Green-cracking_Russula_-_Russula_virescens_%2837449179992%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c6/Green-cracking_Russula_-_Russula_virescens_%2837449179992%29.jpg/960px-Green-cracking_Russula_-_Russula_virescens_%2837449179992%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 700,
+              "height": 467,
+              "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c6/Green-cracking_Russula_-_Russula_virescens_%2837449179992%29.jpg/1920px-Green-cracking_Russula_-_Russula_virescens_%2837449179992%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/c/c6/Green-cracking_Russula_-_Russula_virescens_%2837449179992%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Green-cracking_Russula_-_Russula_virescens_(37449179992).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=63640090",
+            "sha1": "8a9f789f0ee808ca95fe2baaab16b183662546b2",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2017-10-27 00:43:16",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Green-cracking Russula - Russula virescens (37449179992)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Russula virescens|Germany photographs taken on 2017-08-27|Flickr images reviewed by FlickreviewR|Files with coordinates missing SDC location of creation (51° N, 7° E)|Photographs by Björn Sothmann",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "51.242452",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "7.658391",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Green-cracking Russula - Russula virescens<br>",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2017-08-27 14:16",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/40948266@N04/37449179992/\">Green-cracking Russula - Russula virescens</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/40948266@N04\">Björn S...</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "50388723": {
+        "pageid": 50388723,
+        "ns": 6,
+        "title": "File:Grzybowo kolo Skokow, grzyby.jpg",
+        "index": 26,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1320818,
+            "width": 3648,
+            "height": 2736,
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/44/Grzybowo_kolo_Skokow%2C_grzyby.jpg/960px-Grzybowo_kolo_Skokow%2C_grzyby.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 700,
+            "thumbheight": 525,
+            "responsiveUrls": {
+              "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/44/Grzybowo_kolo_Skokow%2C_grzyby.jpg/1920px-Grzybowo_kolo_Skokow%2C_grzyby.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/44/Grzybowo_kolo_Skokow%2C_grzyby.jpg/960px-Grzybowo_kolo_Skokow%2C_grzyby.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 700,
+              "height": 525,
+              "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/44/Grzybowo_kolo_Skokow%2C_grzyby.jpg/1920px-Grzybowo_kolo_Skokow%2C_grzyby.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/4/44/Grzybowo_kolo_Skokow%2C_grzyby.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Grzybowo_kolo_Skokow,_grzyby.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=50388723",
+            "sha1": "469e63efab15dcd6554ce363c3b1af0935506b9d",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2016-07-29 13:18:55",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Grzybowo kolo Skokow, grzyby",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Russula virescens|Self-published work|Nature in Gmina Skoki",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Grzyby z lasów koło Grzybowa (rejon Skoków).",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2016-07-23 17:03:17",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:MOs810\" title=\"User:MOs810\">MOs810</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "34840684": {
+        "pageid": 34840684,
+        "ns": 6,
+        "title": "File:Holubinka nazelenalá Podkomorské lesy.JPG",
+        "index": 28,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 8326080,
+            "width": 4535,
+            "height": 2473,
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/Holubinka_nazelenal%C3%A1_Podkomorsk%C3%A9_lesy.JPG/960px-Holubinka_nazelenal%C3%A1_Podkomorsk%C3%A9_lesy.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 700,
+            "thumbheight": 382,
+            "responsiveUrls": {
+              "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/Holubinka_nazelenal%C3%A1_Podkomorsk%C3%A9_lesy.JPG/1920px-Holubinka_nazelenal%C3%A1_Podkomorsk%C3%A9_lesy.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/Holubinka_nazelenal%C3%A1_Podkomorsk%C3%A9_lesy.JPG/960px-Holubinka_nazelenal%C3%A1_Podkomorsk%C3%A9_lesy.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 700,
+              "height": 382,
+              "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/Holubinka_nazelenal%C3%A1_Podkomorsk%C3%A9_lesy.JPG/1920px-Holubinka_nazelenal%C3%A1_Podkomorsk%C3%A9_lesy.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Holubinka_nazelenal%C3%A1_Podkomorsk%C3%A9_lesy.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Holubinka_nazelenal%C3%A1_Podkomorsk%C3%A9_lesy.JPG",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=34840684",
+            "sha1": "9d5923e5fc987789f0d7666013c31f46645769af",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2014-08-20 03:54:46",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Holubinka nazelenalá Podkomorské lesy",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Russula virescens|Russula in the Czech Republic|Taken with Sony DSC-W125|CC-Zero|Self-published work|Fungi in August|Fungi of Podkomorské lesy|Week 32-33 in Podkomorské lesy|Week 33-34 in Podkomorské lesy",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Houba  z Podkomorských lesů, Česká republika, jižní Morava",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2014-08-10 14:12:15",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Dendrofil\" title=\"User:Dendrofil\">Dendrofil</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "43050677": {
+        "pageid": 43050677,
+        "ns": 6,
+        "title": "File:I funghi mangerecci e velenosi dell'Europa media (Tav. LXIX) (8573792519).jpg",
+        "index": 25,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 375557,
+            "width": 1225,
+            "height": 2013,
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/08/I_funghi_mangerecci_e_velenosi_dell%27Europa_media_%28Tav._LXIX%29_%288573792519%29.jpg/960px-I_funghi_mangerecci_e_velenosi_dell%27Europa_media_%28Tav._LXIX%29_%288573792519%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 700,
+            "thumbheight": 1150,
+            "responsiveUrls": {
+              "2": "https://upload.wikimedia.org/wikipedia/commons/0/08/I_funghi_mangerecci_e_velenosi_dell%27Europa_media_%28Tav._LXIX%29_%288573792519%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/08/I_funghi_mangerecci_e_velenosi_dell%27Europa_media_%28Tav._LXIX%29_%288573792519%29.jpg/960px-I_funghi_mangerecci_e_velenosi_dell%27Europa_media_%28Tav._LXIX%29_%288573792519%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 700,
+              "height": 1150,
+              "srcset": "https://upload.wikimedia.org/wikipedia/commons/0/08/I_funghi_mangerecci_e_velenosi_dell%27Europa_media_%28Tav._LXIX%29_%288573792519%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/0/08/I_funghi_mangerecci_e_velenosi_dell%27Europa_media_%28Tav._LXIX%29_%288573792519%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:I_funghi_mangerecci_e_velenosi_dell%27Europa_media_(Tav._LXIX)_(8573792519).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=43050677",
+            "sha1": "3e2ca24681e19f96688cc0a75680f4c29b248a03",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2015-09-09 22:21:57",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "I funghi mangerecci e velenosi dell'Europa media (Tav. LXIX) (8573792519)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Russula virescens|PD-old-70-expired|Photos uploaded from Flickr by Fæ using a script|PD-scan (PD-old-70-expired)|Flickr images reviewed by FlickreviewR|Files from the Biodiversity Heritage Library|CC-PD-Mark|I funghi mangerecci e velenosi dell'Europa media|Biodiversity Heritage Library maintenance missing collection|Russula - botanical illustrations",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<p>rn <br>\nFav. LXIX <br>\nRiistiiila virBsrpiis Sr.haeff. .Verdone <br>\nIti'i'^inhilét ths. <br>\n</p>\nt,^M.'i'kpf*i<i>i Vffulo.</i>",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "1906",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.flickr.com/photos/biodivlibrary/8573792519\">https://www.flickr.com/photos/biodivlibrary/8573792519</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "Bresadola, Giacomo",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "Public domain",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Public domain",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Copyrighted": {
+                "value": "False",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "pd",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "9640664": {
+        "pageid": 9640664,
+        "ns": 6,
+        "title": "File:Přírodní park Baba499.jpg",
+        "index": 12,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 90225,
+            "width": 605,
+            "height": 806,
+            "thumburl": "https://upload.wikimedia.org/wikipedia/commons/d/d2/P%C5%99%C3%ADrodn%C3%AD_park_Baba499.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "thumbwidth": 700,
+            "thumbheight": 933,
+            "thumbattribs": {
+              "src": "https://upload.wikimedia.org/wikipedia/commons/d/d2/P%C5%99%C3%ADrodn%C3%AD_park_Baba499.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 700,
+              "height": 933
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/d/d2/P%C5%99%C3%ADrodn%C3%AD_park_Baba499.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:P%C5%99%C3%ADrodn%C3%AD_park_Baba499.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=9640664",
+            "sha1": "785823238500383bf5226cab0cbe9d4ec39de499",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2010-03-03 13:50:54",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Přírodní park Baba499",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Russula virescens|Self-published work|PD-self|Přírodní park Baba - fungi",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Přírodní park Baba",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:I.S%C3%A1%C4%8Dek,_senior\" title=\"User:I.Sáček, senior\">I.Sáček, senior</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "Public domain",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Public domain",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Copyrighted": {
+                "value": "False",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "pd",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:PD-self"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Přírodní park Baba - fungi"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Russula virescens"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          }
+        ]
+      },
+      "1750071": {
+        "pageid": 1750071,
+        "ns": 6,
+        "title": "File:Russula virescens.jpg",
+        "index": 2,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 995868,
+            "width": 2560,
+            "height": 1920,
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Russula_virescens.jpg/960px-Russula_virescens.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 700,
+            "thumbheight": 525,
+            "responsiveUrls": {
+              "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Russula_virescens.jpg/1920px-Russula_virescens.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Russula_virescens.jpg/960px-Russula_virescens.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 700,
+              "height": 525,
+              "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Russula_virescens.jpg/1920px-Russula_virescens.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Russula_virescens.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Russula_virescens.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=1750071",
+            "sha1": "e2f86a283c9a30ca31e43f737c764e2c44ed79b1",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2007-03-06 06:51:29",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Russula virescens",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Russula virescens|Taken with Nikon Coolpix 5700|Files with no machine-readable author|Files with no machine-readable source|Images from Mushroom Observer|Files from external sources with reviewed licenses|Media missing infobox template|Russulales in North Carolina|Russula in the United States|Fungi of North Carolina in July",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files from external sources with reviewed licenses"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with no machine-readable author"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with no machine-readable source"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi of North Carolina in July"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Images from Mushroom Observer"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Media missing infobox template"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Russula in the United States"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Russula virescens"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Russulales in North Carolina"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Nikon Coolpix 5700"
+          }
+        ]
+      },
+      "7004407": {
+        "pageid": 7004407,
+        "ns": 6,
+        "title": "File:Russula virescens3.JPG",
+        "index": 1,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 642896,
+            "width": 2048,
+            "height": 1536,
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/Russula_virescens3.JPG/960px-Russula_virescens3.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 700,
+            "thumbheight": 525,
+            "responsiveUrls": {
+              "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/Russula_virescens3.JPG/1920px-Russula_virescens3.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/Russula_virescens3.JPG/960px-Russula_virescens3.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 700,
+              "height": 525,
+              "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/Russula_virescens3.JPG/1920px-Russula_virescens3.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/7/79/Russula_virescens3.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Russula_virescens3.JPG",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=7004407",
+            "sha1": "e668caf447934afcff22fafbf614afefdb2552f2",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2011-10-05 00:09:03",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Russula virescens3",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Russula virescens|GFDL|Taken with Olympus X-450 / D-535Z / C-370Z|License migration redundant|Self-published work|Russulaceae in Bulgaria",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Russula virescens from oak woodland in western Bulgaria.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "Summer 2006<div style=\"display: none;\">date QS:P,+2006-00-00T00:00:00Z/9,P4241,Q40720564</div>",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Paffka\" title=\"User:Paffka\">Paffka</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:GFDL"
+          },
+          {
+            "ns": 14,
+            "title": "Category:License migration redundant"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Russula virescens"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Russulaceae in Bulgaria"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Olympus X-450 / D-535Z / C-370Z"
+          }
+        ]
+      },
+      "10958209": {
+        "pageid": 10958209,
+        "ns": 6,
+        "title": "File:Russula virescens4.JPG",
+        "index": 13,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 2214616,
+            "width": 1536,
+            "height": 2048,
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/Russula_virescens4.JPG/960px-Russula_virescens4.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 700,
+            "thumbheight": 933,
+            "responsiveUrls": {
+              "2": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Russula_virescens4.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/Russula_virescens4.JPG/960px-Russula_virescens4.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 700,
+              "height": 933,
+              "srcset": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Russula_virescens4.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Russula_virescens4.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Russula_virescens4.JPG",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=10958209",
+            "sha1": "9c4dccc8d82d89413df0fb58c9a14773bf8289c2",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2010-07-20 17:17:07",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Russula virescens4",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Russula virescens|GFDL|Taken with Olympus X-450 / D-535Z / C-370Z|License migration redundant|Self-published work|Russulaceae in Bulgaria|Fungi of Bulgaria in July",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<i>Russula virescens</i> in deciduous forest in western Stara Planina mountains, Bulgaria.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2010-07-20",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Paffka\" title=\"User:Paffka\">Paffka</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi of Bulgaria in July"
+          },
+          {
+            "ns": 14,
+            "title": "Category:GFDL"
+          },
+          {
+            "ns": 14,
+            "title": "Category:License migration redundant"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Russula virescens"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Russulaceae in Bulgaria"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Olympus X-450 / D-535Z / C-370Z"
+          }
+        ]
+      },
+      "63554228": {
+        "pageid": 63554228,
+        "ns": 6,
+        "title": "File:Russula virescens (36875570716).jpg",
+        "index": 17,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 6220797,
+            "width": 5184,
+            "height": 3456,
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/Russula_virescens_%2836875570716%29.jpg/960px-Russula_virescens_%2836875570716%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 700,
+            "thumbheight": 467,
+            "responsiveUrls": {
+              "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/Russula_virescens_%2836875570716%29.jpg/1920px-Russula_virescens_%2836875570716%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/Russula_virescens_%2836875570716%29.jpg/960px-Russula_virescens_%2836875570716%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 700,
+              "height": 467,
+              "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/Russula_virescens_%2836875570716%29.jpg/1920px-Russula_virescens_%2836875570716%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/3/36/Russula_virescens_%2836875570716%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Russula_virescens_(36875570716).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=63554228",
+            "sha1": "60c87a4be135eaad23f8103aae011e795eca4ab6",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2017-10-23 20:45:07",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Russula virescens (36875570716)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Russula virescens|Germany photographs taken on 2017-07-26|Flickr images reviewed by FlickreviewR|Fungi in July|Russula in North Rhine-Westphalia|Files with coordinates missing SDC location of creation (51° N, 6° E)|Photographs by Björn Sothmann|Russulales in Duisburger Stadtwald",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "51.413152",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "6.804025",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Green-cracking Russula - Russula virescens",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2017-07-26 19:42",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/40948266@N04/36875570716/\">Green-cracking Russula - Russula virescens</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/40948266@N04\">Björn S...</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "63554209": {
+        "pageid": 63554209,
+        "ns": 6,
+        "title": "File:Russula virescens (36875573026).jpg",
+        "index": 23,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 6481531,
+            "width": 5184,
+            "height": 3456,
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/60/Russula_virescens_%2836875573026%29.jpg/960px-Russula_virescens_%2836875573026%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 700,
+            "thumbheight": 467,
+            "responsiveUrls": {
+              "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/60/Russula_virescens_%2836875573026%29.jpg/1920px-Russula_virescens_%2836875573026%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/60/Russula_virescens_%2836875573026%29.jpg/960px-Russula_virescens_%2836875573026%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 700,
+              "height": 467,
+              "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/60/Russula_virescens_%2836875573026%29.jpg/1920px-Russula_virescens_%2836875573026%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/6/60/Russula_virescens_%2836875573026%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Russula_virescens_(36875573026).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=63554209",
+            "sha1": "023500fd734394a1bcee30e20e5fc6c10d308dc0",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2017-10-23 20:44:46",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Russula virescens (36875573026)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Russula virescens|Germany photographs taken on 2017-07-26|Flickr images reviewed by FlickreviewR|Fungi in July|Russula in North Rhine-Westphalia|Files with coordinates missing SDC location of creation (51° N, 6° E)|Photographs by Björn Sothmann|Russulales in Duisburger Stadtwald",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "51.413152",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "6.804025",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Green-cracking Russula - Russula virescens",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2017-07-26 19:41",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/40948266@N04/36875573026/\">Green-cracking Russula - Russula virescens</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/40948266@N04\">Björn S...</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "63553958": {
+        "pageid": 63553958,
+        "ns": 6,
+        "title": "File:Russula virescens (37020258971).jpg",
+        "index": 30,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 6697505,
+            "width": 3456,
+            "height": 5184,
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/Russula_virescens_%2837020258971%29.jpg/960px-Russula_virescens_%2837020258971%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 700,
+            "thumbheight": 1050,
+            "responsiveUrls": {
+              "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/Russula_virescens_%2837020258971%29.jpg/1920px-Russula_virescens_%2837020258971%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/Russula_virescens_%2837020258971%29.jpg/960px-Russula_virescens_%2837020258971%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 700,
+              "height": 1050,
+              "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/Russula_virescens_%2837020258971%29.jpg/1920px-Russula_virescens_%2837020258971%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/c/cf/Russula_virescens_%2837020258971%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Russula_virescens_(37020258971).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=63553958",
+            "sha1": "70979e266dc5c451d1377aa17e7f6368fb2609f1",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2017-10-23 20:34:46",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Russula virescens (37020258971)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Russula virescens|Germany photographs taken on 2017-07-29|Flickr images reviewed by FlickreviewR|Green fungi|Fungi in July|Russulales in Solingen|Russula in North Rhine-Westphalia|Files with coordinates missing SDC location of creation (51° N, 7° E)|Photographs by Björn Sothmann",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "51.129477",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "7.127933",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Green-cracking Russula - Russula virescens",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2017-07-29 10:20",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/40948266@N04/37020258971/\">Green-cracking Russula - Russula virescens</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/40948266@N04\">Björn S...</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "63553953": {
+        "pageid": 63553953,
+        "ns": 6,
+        "title": "File:Russula virescens (37162696945).jpg",
+        "index": 15,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 6779689,
+            "width": 3456,
+            "height": 5184,
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/Russula_virescens_%2837162696945%29.jpg/960px-Russula_virescens_%2837162696945%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 700,
+            "thumbheight": 1050,
+            "responsiveUrls": {
+              "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/Russula_virescens_%2837162696945%29.jpg/1920px-Russula_virescens_%2837162696945%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/Russula_virescens_%2837162696945%29.jpg/960px-Russula_virescens_%2837162696945%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 700,
+              "height": 1050,
+              "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/Russula_virescens_%2837162696945%29.jpg/1920px-Russula_virescens_%2837162696945%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/2/28/Russula_virescens_%2837162696945%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Russula_virescens_(37162696945).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=63553953",
+            "sha1": "984d41205b748ced88dc40e20248d9d8bb243436",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2017-10-23 20:34:36",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Russula virescens (37162696945)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Russula virescens|Germany photographs taken on 2017-07-29|Flickr images reviewed by FlickreviewR|Fungi in July|Russulales in Solingen|Russula in North Rhine-Westphalia|Files with coordinates missing SDC location of creation (51° N, 7° E)|Photographs by Björn Sothmann",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "51.129477",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "7.127933",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Green-cracking Russula - Russula virescens",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2017-07-29 10:20",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"mw:ExtLink nofollow\" href=\"https://www.flickr.com/photos/40948266@N04/37162696945/\" class=\"external text\">Green-cracking Russula - Russula virescens</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"mw:ExtLink nofollow\" href=\"https://www.flickr.com/people/40948266@N04\" class=\"external text\">Björn S...</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "119236101": {
+        "pageid": 119236101,
+        "ns": 6,
+        "title": "File:Russula virescens 03 DG.jpg",
+        "index": 7,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1124469,
+            "width": 1555,
+            "height": 1133,
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/Russula_virescens_03_DG.jpg/960px-Russula_virescens_03_DG.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 700,
+            "thumbheight": 510,
+            "responsiveUrls": {
+              "2": "https://upload.wikimedia.org/wikipedia/commons/2/28/Russula_virescens_03_DG.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/Russula_virescens_03_DG.jpg/960px-Russula_virescens_03_DG.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 700,
+              "height": 510,
+              "srcset": "https://upload.wikimedia.org/wikipedia/commons/2/28/Russula_virescens_03_DG.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/2/28/Russula_virescens_03_DG.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Russula_virescens_03_DG.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=119236101",
+            "sha1": "b39488df42b46e278a9a661948dcc7545a52d4dc",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2022-06-13 09:10:44",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Russula virescens 03 DG",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Mushrooms",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Russula virescens",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2016-07-23 11:12:51",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "The uploader on Wikimedia Commons received this from the author/copyright holder.",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "Dieter Gewalt",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "126895298": {
+        "pageid": 126895298,
+        "ns": 6,
+        "title": "File:Russula virescens 1.jpg",
+        "index": 4,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 93896,
+            "width": 375,
+            "height": 500,
+            "thumburl": "https://upload.wikimedia.org/wikipedia/commons/e/e2/Russula_virescens_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "thumbwidth": 700,
+            "thumbheight": 933,
+            "thumbattribs": {
+              "src": "https://upload.wikimedia.org/wikipedia/commons/e/e2/Russula_virescens_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 700,
+              "height": 933
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/e/e2/Russula_virescens_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Russula_virescens_1.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=126895298",
+            "sha1": "dab0cd7d80a2bf9793b88ce22f05968602010636",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2022-12-22 18:55:42",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Russula virescens 1",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Russula virescens",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Rutekremle (Russula virescens)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2008-08-27",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.artsobservasjoner.no/Image/67999\">https://www.artsobservasjoner.no/Image/67999</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "Reidun Braathen",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "26054571": {
+        "pageid": 26054571,
+        "ns": 6,
+        "title": "File:Russula virescens 107410.jpg",
+        "index": 22,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1494517,
+            "width": 2832,
+            "height": 2128,
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/Russula_virescens_107410.jpg/960px-Russula_virescens_107410.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 700,
+            "thumbheight": 526,
+            "responsiveUrls": {
+              "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/Russula_virescens_107410.jpg/1920px-Russula_virescens_107410.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/Russula_virescens_107410.jpg/960px-Russula_virescens_107410.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 700,
+              "height": 526,
+              "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/Russula_virescens_107410.jpg/1920px-Russula_virescens_107410.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/8/83/Russula_virescens_107410.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Russula_virescens_107410.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=26054571",
+            "sha1": "fb03b12c7dee4f2b2b821a1b36b47784b470d827",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2013-05-12 21:39:07",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Russula virescens 107410",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Russula virescens|Taken with Fujifilm FinePix F700|Images from Mushroom Observer|Files from external sources with reviewed licenses|Russula in the United States|Fungi of New Jersey in September",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "A fruit body of the fungus <i>Russula virescens</i> (Schaeff.) Fr. Photographed in Pattenburg, Hunterdon Co., New Jersey, USA.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2010-09-25",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "This image is <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/image/show_image/107410\">Image Number 107410</a> at <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org\">Mushroom Observer</a>, a source for mycological images.",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/show_user/1539\">I. G. Safonov (IGSafonov)</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "7733943": {
+        "pageid": 7733943,
+        "ns": 6,
+        "title": "File:Russula virescens 2.JPG",
+        "index": 10,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1593027,
+            "width": 3264,
+            "height": 2448,
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/Russula_virescens_2.JPG/960px-Russula_virescens_2.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 700,
+            "thumbheight": 525,
+            "responsiveUrls": {
+              "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/Russula_virescens_2.JPG/1920px-Russula_virescens_2.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/Russula_virescens_2.JPG/960px-Russula_virescens_2.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 700,
+              "height": 525,
+              "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/Russula_virescens_2.JPG/1920px-Russula_virescens_2.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/8/83/Russula_virescens_2.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Russula_virescens_2.JPG",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=7733943",
+            "sha1": "195e95e71c53140f3cd38940f6d364f30f655686",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2009-09-04 18:21:11",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Russula virescens 2",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Russula virescens|GFDL|License migration redundant|Fungi of Hungary|Self-published work",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Russula virescens",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2009",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "saját",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "Szabi237",
+                "source": "commons-desc-page"
+              },
+              "Permission": {
+                "value": "saját",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseShortName": {
+                "value": "CC BY 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi of Hungary"
+          },
+          {
+            "ns": 14,
+            "title": "Category:GFDL"
+          },
+          {
+            "ns": 14,
+            "title": "Category:License migration redundant"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Russula virescens"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          }
+        ]
+      },
+      "126895296": {
+        "pageid": 126895296,
+        "ns": 6,
+        "title": "File:Russula virescens 3.jpg",
+        "index": 6,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 77723,
+            "width": 500,
+            "height": 375,
+            "thumburl": "https://upload.wikimedia.org/wikipedia/commons/f/ff/Russula_virescens_3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "thumbwidth": 700,
+            "thumbheight": 525,
+            "thumbattribs": {
+              "src": "https://upload.wikimedia.org/wikipedia/commons/f/ff/Russula_virescens_3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 700,
+              "height": 525
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/f/ff/Russula_virescens_3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Russula_virescens_3.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=126895296",
+            "sha1": "7fc5e58ab8dc1baf1814b0dcd8999d4ff56c86d6",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2022-12-22 18:55:41",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Russula virescens 3",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Russula virescens",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Rutekremle (Russula virescens)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2019-08-23",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.artsobservasjoner.no/Image/67999\">https://www.artsobservasjoner.no/Image/67999</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "Reidun Braathen",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "126895297": {
+        "pageid": 126895297,
+        "ns": 6,
+        "title": "File:Russula virescens 4.jpg",
+        "index": 3,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 2899,
+            "width": 100,
+            "height": 80,
+            "thumburl": "https://upload.wikimedia.org/wikipedia/commons/1/1b/Russula_virescens_4.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "thumbwidth": 700,
+            "thumbheight": 560,
+            "thumbattribs": {
+              "src": "https://upload.wikimedia.org/wikipedia/commons/1/1b/Russula_virescens_4.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 700,
+              "height": 560
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/1/1b/Russula_virescens_4.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Russula_virescens_4.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=126895297",
+            "sha1": "faacb8486257f49436249aede512eff8f478efe9",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2022-12-22 18:55:41",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Russula virescens 4",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Russula virescens",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Rutekremle (Russula virescens)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2016-08-08",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.artsobservasjoner.no/Image/669250\">https://www.artsobservasjoner.no/Image/669250</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "Bjørn Eidhammer",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "60963081": {
+        "pageid": 60963081,
+        "ns": 6,
+        "title": "File:Russula virescens 5.jpg",
+        "index": 27,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 2769303,
+            "width": 4608,
+            "height": 2592,
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/Russula_virescens_5.jpg/960px-Russula_virescens_5.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 700,
+            "thumbheight": 394,
+            "responsiveUrls": {
+              "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/Russula_virescens_5.jpg/1920px-Russula_virescens_5.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/Russula_virescens_5.jpg/960px-Russula_virescens_5.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 700,
+              "height": 394,
+              "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/Russula_virescens_5.jpg/1920px-Russula_virescens_5.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/8/83/Russula_virescens_5.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Russula_virescens_5.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=60963081",
+            "sha1": "66234c90145be423f97e923325da9db27abd2dd6",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2017-07-12 15:29:22",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Russula virescens 5",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Russula virescens|Self-published work|Fungi in July|Russulaceae in Serbia|Jestive ili ne upoznajmo ih sve",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Russula virescens",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2017-07-12",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Megalogena&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Megalogena (page does not exist)\">Megalogena</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "126895299": {
+        "pageid": 126895299,
+        "ns": 6,
+        "title": "File:Russula virescens 6.jpg",
+        "index": 5,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 200773,
+            "width": 640,
+            "height": 480,
+            "thumburl": "https://upload.wikimedia.org/wikipedia/commons/b/ba/Russula_virescens_6.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "thumbwidth": 700,
+            "thumbheight": 525,
+            "thumbattribs": {
+              "src": "https://upload.wikimedia.org/wikipedia/commons/b/ba/Russula_virescens_6.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 700,
+              "height": 525
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/b/ba/Russula_virescens_6.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Russula_virescens_6.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=126895299",
+            "sha1": "ea9b88d097af70902f6a2dbbe70a6d0154f43134",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2022-12-22 18:55:44",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Russula virescens 6",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Russula virescens",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Rutekremle (Russula virescens)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2011-07-29",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.artsobservasjoner.no/Image/202231\">https://www.artsobservasjoner.no/Image/202231</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "Inger-Lise Fonneland",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "24630741": {
+        "pageid": 24630741,
+        "ns": 6,
+        "title": "File:Russula virescens BŻ2.1.jpg",
+        "index": 11,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1351318,
+            "width": 2516,
+            "height": 1887,
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/Russula_virescens_B%C5%BB2.1.jpg/960px-Russula_virescens_B%C5%BB2.1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 700,
+            "thumbheight": 525,
+            "responsiveUrls": {
+              "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/Russula_virescens_B%C5%BB2.1.jpg/1920px-Russula_virescens_B%C5%BB2.1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/Russula_virescens_B%C5%BB2.1.jpg/960px-Russula_virescens_B%C5%BB2.1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 700,
+              "height": 525,
+              "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/Russula_virescens_B%C5%BB2.1.jpg/1920px-Russula_virescens_B%C5%BB2.1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/d/d6/Russula_virescens_B%C5%BB2.1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Russula_virescens_B%C5%BB2.1.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=24630741",
+            "sha1": "f945455d8be617cb3c4d57eda4c0ae3422f4892d",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2013-02-13 11:21:37",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Russula virescens BŻ2.1",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Russula virescens|Taken with Sony DSC-HX100V|Self-published work",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Russula virescens",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2012-07-15 09:06:05",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Selso\" title=\"User:Selso\">Jerzy Opioła</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Russula virescens"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Sony DSC-HX100V"
+          }
+        ]
+      },
+      "165843194": {
+        "pageid": 165843194,
+        "ns": 6,
+        "title": "File:Russula virescens duo.jpg",
+        "index": 9,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 211762,
+            "width": 1160,
+            "height": 870,
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/Russula_virescens_duo.jpg/960px-Russula_virescens_duo.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 700,
+            "thumbheight": 525,
+            "responsiveUrls": {
+              "2": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Russula_virescens_duo.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/Russula_virescens_duo.jpg/960px-Russula_virescens_duo.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 700,
+              "height": 525,
+              "srcset": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Russula_virescens_duo.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Russula_virescens_duo.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Russula_virescens_duo.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=165843194",
+            "sha1": "f8d4f62363f128577db5d56a90ba5b37e9ca0968",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2025-05-23 06:32:48",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Russula virescens duo",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Russula virescens|Media from iNaturalist|INaturalist images reviewed by trusted reviewers",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Russula virescens",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "10 sept. 2022 · 14:48 CEST",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "cropped from <a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/observations/134413554\">https://www.inaturalist.org/observations/134413554</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "xulescu_g",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "25777553": {
+        "pageid": 25777553,
+        "ns": 6,
+        "title": "File:Russula virescens illustration 1898.jpg",
+        "index": 20,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 482002,
+            "width": 611,
+            "height": 829,
+            "thumburl": "https://upload.wikimedia.org/wikipedia/commons/3/3c/Russula_virescens_illustration_1898.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "thumbwidth": 700,
+            "thumbheight": 950,
+            "thumbattribs": {
+              "src": "https://upload.wikimedia.org/wikipedia/commons/3/3c/Russula_virescens_illustration_1898.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 700,
+              "height": 950
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/3/3c/Russula_virescens_illustration_1898.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Russula_virescens_illustration_1898.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=25777553",
+            "sha1": "99d4240fa38001766360ec4c0444d04701956187",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2013-04-27 07:17:36",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Russula virescens illustration 1898",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Russula virescens|PD-old-70-expired|CC-PD-Mark|PD-old missing SDC copyright status|Russula - botanical illustrations",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Source: Thomas Taylor. (1898). \"Student's hand-book of mushrooms of America edible and poisonous\". Washington, D.C. :A.R. Taylor. Plate I. \"Fig. 1, the immature plant; Fig. 2, advanced stage of growth, cap expanded or plane; Fig. 3, section showing the unequal length of the gills and manner of their atttachment to the stem; Fig. 4, surface view of the cap showing the epidermis split in characteristic regular patches; Fig. 5, spores, white.\"",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "1898",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.biodiversitylibrary.org/page/3903804\">https://www.biodiversitylibrary.org/page/3903804</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "Book: Thomas Taylor; Artwork: Louis Charles Christopher Krieger (1873-1940)",
+                "source": "commons-desc-page"
+              },
+              "Permission": {
+                "value": "<table class=\"licensetpl\" style=\"display:none\">\n<tbody><tr>\n<td><span class=\"licensetpl_short\">Public domain</span><span class=\"licensetpl_long\">Public domain</span><span class=\"licensetpl_link_req\">false</span><span class=\"licensetpl_attr_req\">false</span>\n</td></tr></tbody></table>\n<table style=\"width: 100%; clear: both; margin: 0.5em auto; background-color: var(--background-color-progressive-subtle, #f7f8ff); color: var(--color-base, #202122); border: var(--border-subtle, 2px solid #8888aa); border-spacing: 8px; padding: 0px;\" dir=\"ltr\" class=\"layouttemplate\" lang=\"en\">\n<tbody><tr>\n<td><span typeof=\"mw:File\"><span title=\"Public domain\"><img alt=\"Public domain\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/PD-icon.svg/120px-PD-icon.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"64\" height=\"64\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/PD-icon.svg/250px-PD-icon.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"196\" data-file-height=\"196\"></span></span>\n</td>\n<td>\n<p>This work is in the <b><a href=\"https://en.wikipedia.org/wiki/public_domain\" class=\"extiw\" title=\"en:public domain\">public domain</a></b> in its country of origin and other countries and areas where the <a href=\"https://en.wikipedia.org/wiki/List_of_countries%27_copyright_lengths\" class=\"extiw\" title=\"w:List of countries' copyright lengths\">copyright term</a> is the author's <b>life plus 70 years or fewer</b>.\n</p>\n<hr>\n<p>This work is in the <b><a href=\"https://en.wikipedia.org/wiki/public_domain\" class=\"extiw\" title=\"en:public domain\">public domain</a></b> in the <a href=\"https://en.wikipedia.org/wiki/United_States\" class=\"extiw\" title=\"en:United States\">United States</a> because it was <a href=\"//commons.wikimedia.org/wiki/Commons:Publication\" title=\"Commons:Publication\">published</a> (or registered with the <a href=\"https://en.wikipedia.org/wiki/United_States_Copyright_Office\" class=\"extiw\" title=\"en:United States Copyright Office\">U.S. Copyright Office</a>) before January 1, 1931.\n</p>\n</td></tr>\n<tr>\n<td colspan=\"2\" style=\"text-align:center;font-size:x-small;line-height:140%;\"><a href=\"https://creativecommons.org/publicdomain/mark/1.0/deed.en\" class=\"extiw\" title=\"ccorg:publicdomain/mark/1.0/deed.en\">This file has been identified as being free of known restrictions under copyright law, including all related and neighboring rights.</a>\n</td></tr></tbody></table><span class=\"licensetpl_link\" style=\"display:none;\">https://creativecommons.org/publicdomain/mark/1.0/</span><span class=\"licensetpl_short\" style=\"display:none;\">PDM</span><span class=\"licensetpl_long\" style=\"display:none;\">Creative Commons Public Domain Mark 1.0</span><span class=\"licensetpl_link_req\" style=\"display:none;\">false</span><span class=\"licensetpl_attr_req\" style=\"display:none;\">false</span>",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseShortName": {
+                "value": "Public domain",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Public domain",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Copyrighted": {
+                "value": "False",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "pd",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-PD-Mark"
+          },
+          {
+            "ns": 14,
+            "title": "Category:PD-old-70-expired"
+          },
+          {
+            "ns": 14,
+            "title": "Category:PD-old missing SDC copyright status"
+          }
+        ]
+      },
+      "89965160": {
+        "pageid": 89965160,
+        "ns": 6,
+        "title": "File:Russula viridirubrolimbata DG1990 0706.jpg",
+        "index": 8,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 897604,
+            "width": 1488,
+            "height": 1012,
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/Russula_viridirubrolimbata_DG1990_0706.jpg/960px-Russula_viridirubrolimbata_DG1990_0706.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 700,
+            "thumbheight": 476,
+            "responsiveUrls": {
+              "2": "https://upload.wikimedia.org/wikipedia/commons/a/a3/Russula_viridirubrolimbata_DG1990_0706.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/Russula_viridirubrolimbata_DG1990_0706.jpg/960px-Russula_viridirubrolimbata_DG1990_0706.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 700,
+              "height": 476,
+              "srcset": "https://upload.wikimedia.org/wikipedia/commons/a/a3/Russula_viridirubrolimbata_DG1990_0706.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/a/a3/Russula_viridirubrolimbata_DG1990_0706.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Russula_viridirubrolimbata_DG1990_0706.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=89965160",
+            "sha1": "ad14b24babdafdb03e1acc1580a01a400d25d90c",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2020-05-07 09:54:21",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Russula viridirubrolimbata DG1990 0706",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Self-published work|Russula viridirubrolimbata",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Récolté à Kyôto. Palomet bicolore (フタイロベニタケ). Russula virescens f. erythrocephala Hongo (1966) \nRussula viridirubrolimbata J.Z. Ying (1983)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "1990-07-06",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Japonica\" title=\"User:Japonica\">Japonica</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "15943127": {
+        "pageid": 15943127,
+        "ns": 6,
+        "title": "File:Stamp of Moldova 238.png",
+        "index": 24,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 24139,
+            "width": 236,
+            "height": 386,
+            "thumburl": "https://upload.wikimedia.org/wikipedia/commons/e/ec/Stamp_of_Moldova_238.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "thumbwidth": 700,
+            "thumbheight": 1145,
+            "thumbattribs": {
+              "src": "https://upload.wikimedia.org/wikipedia/commons/e/ec/Stamp_of_Moldova_238.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 700,
+              "height": 1145
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/e/ec/Stamp_of_Moldova_238.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Stamp_of_Moldova_238.png",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=15943127",
+            "sha1": "cec9e67cac3fee296ed36ae42cbfa55e405ea9b4",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2011-07-30 03:13:23",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Stamp of Moldova 238",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Russula virescens|Retouched pictures|1995 stamps of Moldova|Uploaded with derivativeFX|Fungi on stamps of Moldova|PD-MD-exempt (stamps)|Russula on stamps",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Russula. <i>Russula virescens</i>",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2011-07-30 03:12",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<ul><li><a href=\"//commons.wikimedia.org/wiki/File:Stamp_of_Moldova_238.gif\" class=\"mw-redirect\" title=\"File:Stamp of Moldova 238.gif\">Stamp_of_Moldova_238.gif</a></li></ul>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<ul><li><a href=\"//commons.wikimedia.org/wiki/File:Stamp_of_Moldova_238.gif\" class=\"mw-redirect\" title=\"File:Stamp of Moldova 238.gif\">Stamp_of_Moldova_238.gif</a>: Post of Moldova</li>\n<li>derivative work: <a href=\"//commons.wikimedia.org/w/index.php?title=User:Natr&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Natr (page does not exist)\">Natr</a> (<a href=\"//commons.wikimedia.org/wiki/User_talk:Natr\" title=\"User talk:Natr\"><span class=\"signature-talk\">talk</span></a>)</li></ul>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "Public domain",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Public domain",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Copyrighted": {
+                "value": "False",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "pd",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:1995 stamps of Moldova"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi on stamps of Moldova"
+          },
+          {
+            "ns": 14,
+            "title": "Category:PD-MD-exempt (stamps)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Retouched pictures"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Russula on stamps"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Russula virescens"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Uploaded with derivativeFX"
+          }
+        ]
+      },
+      "78558820": {
+        "pageid": 78558820,
+        "ns": 6,
+        "title": "File:Катюжанський Сироїжка луската DSC 0002.jpg",
+        "index": 29,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 12299593,
+            "width": 6000,
+            "height": 4000,
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/90/%D0%9A%D0%B0%D1%82%D1%8E%D0%B6%D0%B0%D0%BD%D1%81%D1%8C%D0%BA%D0%B8%D0%B9_%D0%A1%D0%B8%D1%80%D0%BE%D1%97%D0%B6%D0%BA%D0%B0_%D0%BB%D1%83%D1%81%D0%BA%D0%B0%D1%82%D0%B0_DSC_0002.jpg/960px-%D0%9A%D0%B0%D1%82%D1%8E%D0%B6%D0%B0%D0%BD%D1%81%D1%8C%D0%BA%D0%B8%D0%B9_%D0%A1%D0%B8%D1%80%D0%BE%D1%97%D0%B6%D0%BA%D0%B0_%D0%BB%D1%83%D1%81%D0%BA%D0%B0%D1%82%D0%B0_DSC_0002.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 700,
+            "thumbheight": 467,
+            "responsiveUrls": {
+              "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/90/%D0%9A%D0%B0%D1%82%D1%8E%D0%B6%D0%B0%D0%BD%D1%81%D1%8C%D0%BA%D0%B8%D0%B9_%D0%A1%D0%B8%D1%80%D0%BE%D1%97%D0%B6%D0%BA%D0%B0_%D0%BB%D1%83%D1%81%D0%BA%D0%B0%D1%82%D0%B0_DSC_0002.jpg/1920px-%D0%9A%D0%B0%D1%82%D1%8E%D0%B6%D0%B0%D0%BD%D1%81%D1%8C%D0%BA%D0%B8%D0%B9_%D0%A1%D0%B8%D1%80%D0%BE%D1%97%D0%B6%D0%BA%D0%B0_%D0%BB%D1%83%D1%81%D0%BA%D0%B0%D1%82%D0%B0_DSC_0002.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/90/%D0%9A%D0%B0%D1%82%D1%8E%D0%B6%D0%B0%D0%BD%D1%81%D1%8C%D0%BA%D0%B8%D0%B9_%D0%A1%D0%B8%D1%80%D0%BE%D1%97%D0%B6%D0%BA%D0%B0_%D0%BB%D1%83%D1%81%D0%BA%D0%B0%D1%82%D0%B0_DSC_0002.jpg/960px-%D0%9A%D0%B0%D1%82%D1%8E%D0%B6%D0%B0%D0%BD%D1%81%D1%8C%D0%BA%D0%B8%D0%B9_%D0%A1%D0%B8%D1%80%D0%BE%D1%97%D0%B6%D0%BA%D0%B0_%D0%BB%D1%83%D1%81%D0%BA%D0%B0%D1%82%D0%B0_DSC_0002.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 700,
+              "height": 467,
+              "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/90/%D0%9A%D0%B0%D1%82%D1%8E%D0%B6%D0%B0%D0%BD%D1%81%D1%8C%D0%BA%D0%B8%D0%B9_%D0%A1%D0%B8%D1%80%D0%BE%D1%97%D0%B6%D0%BA%D0%B0_%D0%BB%D1%83%D1%81%D0%BA%D0%B0%D1%82%D0%B0_DSC_0002.jpg/1920px-%D0%9A%D0%B0%D1%82%D1%8E%D0%B6%D0%B0%D0%BD%D1%81%D1%8C%D0%BA%D0%B8%D0%B9_%D0%A1%D0%B8%D1%80%D0%BE%D1%97%D0%B6%D0%BA%D0%B0_%D0%BB%D1%83%D1%81%D0%BA%D0%B0%D1%82%D0%B0_DSC_0002.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/9/90/%D0%9A%D0%B0%D1%82%D1%8E%D0%B6%D0%B0%D0%BD%D1%81%D1%8C%D0%BA%D0%B8%D0%B9_%D0%A1%D0%B8%D1%80%D0%BE%D1%97%D0%B6%D0%BA%D0%B0_%D0%BB%D1%83%D1%81%D0%BA%D0%B0%D1%82%D0%B0_DSC_0002.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:%D0%9A%D0%B0%D1%82%D1%8E%D0%B6%D0%B0%D0%BD%D1%81%D1%8C%D0%BA%D0%B8%D0%B9_%D0%A1%D0%B8%D1%80%D0%BE%D1%97%D0%B6%D0%BA%D0%B0_%D0%BB%D1%83%D1%81%D0%BA%D0%B0%D1%82%D0%B0_DSC_0002.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=78558820",
+            "sha1": "7f0a5e5bee827cf6cefd66b7fc07eae5e36aa493",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2019-05-01 14:16:51",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Катюжанський Сироїжка луската DSC 0002",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Russula virescens|Katyujanske (Gidrological Preserve)|Self-published work|Fungi in July|Natural heritage sites in Ukraine with known IDs|Images from Wiki Loves Earth 2019 in Ukraine|Fungi of Kyiv Oblast|Uploaded via Campaign:wle-ua|Files with coordinates missing SDC location of creation|Ukraine photographs taken on 2018-07-28|Images from Wiki Loves Earth 2019|Images from Wiki Loves Earth missing SDC depicts|Images from Wiki Loves Earth missing SDC location of creation",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "50.836355",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "30.168742",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<a href=\"https://uk.wikipedia.org/wiki/%D0%9A%D0%B0%D1%82%D1%8E%D0%B6%D0%B0%D0%BD%D1%81%D1%8C%D0%BA%D0%B8%D0%B9_%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D0%BD%D0%B8%D0%BA\" class=\"extiw\" title=\"uk:Катюжанський заказник\">Катюжанський</a>, <a href=\"https://uk.wikipedia.org/wiki/%D0%92%D0%B8%D1%88%D0%B3%D0%BE%D1%80%D0%BE%D0%B4%D1%81%D1%8C%D0%BA%D0%B8%D0%B9_%D1%80%D0%B0%D0%B9%D0%BE%D0%BD\" class=\"extiw\" title=\"uk:Вишгородський район\">Вишгородський район</a>, Катюжанська сільська рада",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2018-07-28 14:27:00",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:%D0%A1%D0%B0%D1%80%D0%B0%D0%BF%D1%83%D0%BB%D0%BE%D0%B2\" title=\"User:Сарапулов\">Сарапулов</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

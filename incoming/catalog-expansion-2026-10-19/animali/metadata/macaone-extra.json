@@ -1,0 +1,1802 @@
+{
+  "continue": {
+    "clcontinue": "74591930|CC-BY-SA-2.0",
+    "continue": "||imageinfo"
+  },
+  "query": {
+    "pages": {
+      "43270915": {
+        "pageid": 43270915,
+        "ns": 6,
+        "title": "File:British and European butterflies and moths (Macrolepidoptera) (Plate I) (6466285995).jpg",
+        "index": 4,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 872114,
+            "width": 2286,
+            "height": 3307,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/b/b3/British_and_European_butterflies_and_moths_%28Macrolepidoptera%29_%28Plate_I%29_%286466285995%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:British_and_European_butterflies_and_moths_(Macrolepidoptera)_(Plate_I)_(6466285995).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=43270915",
+            "sha1": "0a419c25e3af422e2c89d35d22812745ddb4f5af",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2015-09-15 14:46:43",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "British and European butterflies and moths (Macrolepidoptera) (Plate I) (6466285995)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "PD-old-70-expired|Photos uploaded from Flickr by Fæ using a script|Papilio machaon illustrations|PD-scan (PD-old-70-expired)|Flickr images reviewed by FlickreviewR|Files from the Biodiversity Heritage Library|CC-PD-Mark|Biodiversity Heritage Library maintenance missing collection|Iphiclides podalirius illustrations|Zerynthia polyxena illustrations|Parnassius apollo illustrations|Parnassius mnemosyne illustrations|Things named after Apollo|British and European butterflies and moths (Macrolepidoptera)|Illustrations of caterpillars|Lepidoptera pupae illustrations",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<p>PLATE I. <br>\nI. Papilio podalirius, la. Larva, ib. Pupa. 2. Papilio machaon, 2a. Larva, 2b. Pupa. <br>\n3. Thais polyxena. 4. Parnassius apoUo, 4a. Larva. 5. Parnassius mnemosyne. <br>\n</p>\nBritish and European Buttrrjlies and Moths.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "1895",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.flickr.com/photos/biodivlibrary/6466285995\">https://www.flickr.com/photos/biodivlibrary/6466285995</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "Deuchert, H.; Kappel, August Wilhelm.; Kirby, William Egmont.; Slocombe, Shirley.",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "Public domain",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Public domain",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Copyrighted": {
+                "value": "False",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "pd",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Biodiversity Heritage Library maintenance missing collection"
+          },
+          {
+            "ns": 14,
+            "title": "Category:British and European butterflies and moths (Macrolepidoptera)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-2.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-PD-Mark"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files from the Biodiversity Heritage Library"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Flickr images reviewed by FlickreviewR"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Illustrations of caterpillars"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Iphiclides podalirius illustrations"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Lepidoptera pupae illustrations"
+          },
+          {
+            "ns": 14,
+            "title": "Category:PD-old-70-expired"
+          },
+          {
+            "ns": 14,
+            "title": "Category:PD-scan (PD-old-70-expired)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Papilio machaon illustrations"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Parnassius apollo illustrations"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Parnassius mnemosyne illustrations"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Photos uploaded from Flickr by Fæ using a script"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Things named after Apollo"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Zerynthia polyxena illustrations"
+          }
+        ]
+      },
+      "29589518": {
+        "pageid": 29589518,
+        "ns": 6,
+        "title": "File:HorsfieldMoorCatalogueEastIndiaCompanyLepidopteraPlateIV.jpg",
+        "index": 7,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 181387,
+            "width": 962,
+            "height": 1601,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/5/5b/HorsfieldMoorCatalogueEastIndiaCompanyLepidopteraPlateIV.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:HorsfieldMoorCatalogueEastIndiaCompanyLepidopteraPlateIV.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=29589518",
+            "sha1": "3de0fa403f1159bf8bf2d62ea7395c0ec0511620",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2013-11-12 21:47:04",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "HorsfieldMoorCatalogueEastIndiaCompanyLepidopteraPlateIV",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Papilio xuthus|Euploea midamus|Ideopsis juventa|Ideopsis gaura|Idea hypermnestra|PD US|Papilio machaon (pupae)|Papilio (caterpillar)|Danaus plexippus (caterpillar)|Danaus plexippus illustrations|Tirumala limniace illustrations|Danaus plexippus (pupae)|Euploea core illustrations|Danaus chrysippus illustrations|Danaus affinis illustrations|Danaus (caterpillar)|Euploea phaenareta illustrations|Illustrations of caterpillars|Euploea - illustrations|Lepidoptera pupae illustrations|Catalogue of lepidopterous insects in the Museum of the Hon. East-India company",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Thomas Horsfield and Frederic Moore. A catalogue of the lepidopterous insects in the Museum of the Hon. East-India Company. Alternative Title:Catalogue of the lepidopterous insects in the Museum of Natural History at the East-India House. Multiple dates 1857 - 1859; 1857-1859. Plate III <a href=\"//commons.wikimedia.org/wiki/File:HorsfieldMoorCatalogueEastIndiaCompanyLepidopteraPlateIIItext.jpg\" title=\"File:HorsfieldMoorCatalogueEastIndiaCompanyLepidopteraPlateIIItext.jpg\">text</a>\n<ul><li>figure 1 Papilio xuthus Linnaeus, 1767 larva</li>\n<li>figure 2 Papilio machaon Linnaeus, 1758 2 larva, 2a pupa</li>\n<li>figure 3 Danais limnieae synonym for Tirumala limniace Cramer, 1775 3 larva, 3a pupa</li>\n<li>figure 4 Danais juventa synonym for Ideopsis juventa (Cramer, [1777]) 4 larva, 4a pupa</li>\n<li>figure 5 Danais philene synonym for Danaus affinis Fabricius, 1775 5 larva, 5a pupa</li>\n<li>figure 6 Danais plexippus synonym for Danaus plexippus(Linnaeus, 1758) 6 larva, 6a pupa</li>\n<li>figure 7 Danais chrysippus synonym for Danaus chrysippus (Linnaeus, 1758)7 larva, 7a pupa</li>\n<li>figure 8 Euploea prothoe synonym for Euploea phaenareta (Schaller, 1785)8 larva, 8a pupa</li>\n<li>figure 9 Euploea core (Cramer, 1780)9 larva, 9a pupa</li>\n<li>figure 10 Euploea midamus (Linnaeus, 1758) 10 larva, 10a pupa</li>\n<li>figure 11 Ideopsis daos synonym for Ideopsis gaura daos (Boisduval, [1836])11 larva, 11a pupa</li>\n<li>figure 12 Hestia belia synonym for Idea hypermnestra (Westwood, 1848) pupa</li></ul>",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2013-11-12 21:46:05",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "Horsfield Moore",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://archive.org/stream/catalogueoflepid01east#page/n334/mode/1up\">https://archive.org/stream/catalogueoflepid01east#page/n334/mode/1up</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "Public domain",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Public domain",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Copyrighted": {
+                "value": "False",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "pd",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Catalogue of lepidopterous insects in the Museum of the Hon. East-India company"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Danaus (caterpillar)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Danaus affinis illustrations"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Danaus chrysippus illustrations"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Danaus plexippus (caterpillar)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Danaus plexippus (pupae)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Danaus plexippus illustrations"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Euploea - illustrations"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Euploea core illustrations"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Euploea midamus"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Euploea phaenareta illustrations"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Idea hypermnestra"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Ideopsis gaura"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Ideopsis juventa"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Illustrations of caterpillars"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Lepidoptera pupae illustrations"
+          },
+          {
+            "ns": 14,
+            "title": "Category:PD US"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Papilio (caterpillar)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Papilio machaon (pupae)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Papilio xuthus"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Tirumala limniace illustrations"
+          }
+        ]
+      },
+      "74591930": {
+        "pageid": 74591930,
+        "ns": 6,
+        "title": "File:Papilio machaon - Common yellow swallowtail (pupa) - Махаон (куколка) (26302947457).jpg",
+        "index": 10,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 131997,
+            "width": 1024,
+            "height": 768,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/b/b1/Papilio_machaon_-_Common_yellow_swallowtail_%28pupa%29_-_%D0%9C%D0%B0%D1%85%D0%B0%D0%BE%D0%BD_%28%D0%BA%D1%83%D0%BA%D0%BE%D0%BB%D0%BA%D0%B0%29_%2826302947457%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Papilio_machaon_-_Common_yellow_swallowtail_(pupa)_-_%D0%9C%D0%B0%D1%85%D0%B0%D0%BE%D0%BD_(%D0%BA%D1%83%D0%BA%D0%BE%D0%BB%D0%BA%D0%B0)_(26302947457).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=74591930",
+            "sha1": "8fe98d50a8ba7f6662801c67ae44dcffd781f883",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2018-11-23 11:03:00",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Papilio machaon - Common yellow swallowtail (pupa) - Махаон (куколка) (26302947457)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Papilionidae of Russia|Files with coordinates missing SDC location of creation|Flickr images reviewed by FlickreviewR 2|Papilio machaon (pupae)|Russia photographs taken on 2018-04-01|Photographs by Ilia Ustyantsev",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "55.670475",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "36.821150",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<p>Exemplar found: Russia, Moscow Oblast, Odintsovsky District, near village Pestovo, 10.07.2011, days\n</p>\nМО, Одинцовский р-н, окрестности деревни Пестово, 10.07.2011, днём",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2018-04-01 22:16",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/155939562@N05/26302947457/\">Papilio machaon - Common yellow swallowtail (pupa) - Махаон (куколка)</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/155939562@N05\">Ilia Ustyantsev</a> from Russia",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "74591931": {
+        "pageid": 74591931,
+        "ns": 6,
+        "title": "File:Papilio machaon - Common yellow swallowtail (pupa) - Махаон (куколка) (26302947677).jpg",
+        "index": 12,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 195848,
+            "width": 1024,
+            "height": 768,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Papilio_machaon_-_Common_yellow_swallowtail_%28pupa%29_-_%D0%9C%D0%B0%D1%85%D0%B0%D0%BE%D0%BD_%28%D0%BA%D1%83%D0%BA%D0%BE%D0%BB%D0%BA%D0%B0%29_%2826302947677%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Papilio_machaon_-_Common_yellow_swallowtail_(pupa)_-_%D0%9C%D0%B0%D1%85%D0%B0%D0%BE%D0%BD_(%D0%BA%D1%83%D0%BA%D0%BE%D0%BB%D0%BA%D0%B0)_(26302947677).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=74591931",
+            "sha1": "7cb40f48b294f0e28195d9dc4b7955216e40e97f",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2018-11-23 11:03:02",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Papilio machaon - Common yellow swallowtail (pupa) - Махаон (куколка) (26302947677)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Papilionidae of Russia|Files with coordinates missing SDC location of creation|Russia photographs taken on 2016-08-23|Flickr images reviewed by FlickreviewR 2|Papilio machaon (pupae)|Photographs by Ilia Ustyantsev",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "55.792644",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "39.056696",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<p>Exemplar found: Russia, Moscow Oblast, Orekhovo-Zuyevsky District, near settlement Topoliny, 23.08.2016, on dill (Anethum graveolens), days\n</p>\nМО, Орехово-Зуевский р-н, окрестности посёлка Тополиный, 23.08.2016, на укропе, днём",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2016-08-23 16:45",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/155939562@N05/26302947677/\">Papilio machaon - Common yellow swallowtail (pupa) - Махаон (куколка)</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/155939562@N05\">Ilia Ustyantsev</a> from Russia",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "16268194": {
+        "pageid": 16268194,
+        "ns": 6,
+        "title": "File:Papilio machaon - eclosion A - 02 - pupal exuvia.jpg",
+        "index": 14,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 165610,
+            "width": 1113,
+            "height": 808,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/d/db/Papilio_machaon_-_eclosion_A_-_02_-_pupal_exuvia.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Papilio_machaon_-_eclosion_A_-_02_-_pupal_exuvia.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=16268194",
+            "sha1": "35b03ff19feedc71be3c0553e349bdb35a4d73fc",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2011-08-29 20:45:59",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Papilio machaon - eclosion A - 02 - pupal exuvia",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Attribution only license|Entomart|Uploaded with Commonist|Papilio machaon eclosing from pupa",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "A Papilio machaon pupal exuvia.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2006-05-09",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"http://www.entomart.be/\">http://www.entomart.be/</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "entomart",
+                "source": "commons-desc-page"
+              },
+              "Permission": {
+                "value": "<table class=\"layouttemplate licensetpl\" lang=\"en\" dir=\"ltr\" cellpadding=\"0\" style=\"width: 100%; clear: both; margin: 0.5em auto; background-color: var(--background-color-success-subtle, #dff2eb); color: var(--color-base, #202122); border-width: var(--border-width-thick, 2px); border-style: solid; border-color: var(--border-color-success, #099979); border-spacing: 8px; box-sizing: border-box;\">\n<tbody><tr>\n<td style=\"width:90px;\" rowspan=\"3\"><span typeof=\"mw:File\"><span title=\"©\"><img alt=\"©\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/5/57/Green_copyright.svg/120px-Green_copyright.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"64\" height=\"64\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/5/57/Green_copyright.svg/250px-Green_copyright.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"197\" data-file-height=\"197\"></span></span>\n</td>\n<td>The copyright holder of this file, Entomart, allows anyone to use it <b>for any purpose, provided that</b> the copyright holder is properly attributed. Redistribution, derivative work, commercial use, and all other use is permitted.\n</td></tr>\n<tr style=\"text-align:center;\">\n<td><div style=\"font-weight: bold;display:inline;\">Attribution: <div style=\"font-size: larger;display:inline;\" class=\"licensetpl_attr\">© entomart\n<hr>\n<span style=\"font-size: small;\">In case of publication or commercial use, Entomart wishes then to be warned (<a rel=\"nofollow\" class=\"external free\" href=\"http://www.entomart.be/contact.html\">http://www.entomart.be/contact.html</a>), but this without obligation. Thank you.</span></div></div>\n<p><span class=\"licensetpl_short\" style=\"display:none;\">Attribution</span>\n</p>\n</td></tr></tbody></table>",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseShortName": {
+                "value": "Attribution",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Attribution": {
+                "value": "© entomart\n<hr>\n<span style=\"font-size: small;\">In case of publication or commercial use, Entomart wishes then to be warned (<a rel=\"nofollow\" class=\"external free\" href=\"http://www.entomart.be/contact.html\">http://www.entomart.be/contact.html</a>), but this without obligation. Thank you.</span>",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Attribution only license"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Entomart"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Papilio machaon eclosing from pupa"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Uploaded with Commonist"
+          }
+        ]
+      },
+      "16268195": {
+        "pageid": 16268195,
+        "ns": 6,
+        "title": "File:Papilio machaon - eclosion A - 03 - only just out of the chrysalis.jpg",
+        "index": 11,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 138565,
+            "width": 1300,
+            "height": 986,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Papilio_machaon_-_eclosion_A_-_03_-_only_just_out_of_the_chrysalis.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Papilio_machaon_-_eclosion_A_-_03_-_only_just_out_of_the_chrysalis.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=16268195",
+            "sha1": "2a19f2258389a8b357642ae120fe9d93a83585af",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2011-08-29 20:46:04",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Papilio machaon - eclosion A - 03 - only just out of the chrysalis",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Attribution only license|Entomart|Uploaded with Commonist|Papilio machaon eclosing from pupa",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "A Papilio machaon that only just eclose. Its wings are crumpled.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2006-05-09",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"http://www.entomart.be/\">http://www.entomart.be/</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "entomart",
+                "source": "commons-desc-page"
+              },
+              "Permission": {
+                "value": "<table class=\"layouttemplate licensetpl\" lang=\"en\" dir=\"ltr\" cellpadding=\"0\" style=\"width: 100%; clear: both; margin: 0.5em auto; background-color: var(--background-color-success-subtle, #dff2eb); color: var(--color-base, #202122); border-width: var(--border-width-thick, 2px); border-style: solid; border-color: var(--border-color-success, #099979); border-spacing: 8px; box-sizing: border-box;\">\n<tbody><tr>\n<td style=\"width:90px;\" rowspan=\"3\"><span typeof=\"mw:File\"><span title=\"©\"><img alt=\"©\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/5/57/Green_copyright.svg/120px-Green_copyright.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"64\" height=\"64\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/5/57/Green_copyright.svg/250px-Green_copyright.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"197\" data-file-height=\"197\"></span></span>\n</td>\n<td>The copyright holder of this file, Entomart, allows anyone to use it <b>for any purpose, provided that</b> the copyright holder is properly attributed. Redistribution, derivative work, commercial use, and all other use is permitted.\n</td></tr>\n<tr style=\"text-align:center;\">\n<td><div style=\"font-weight: bold;display:inline;\">Attribution: <div style=\"font-size: larger;display:inline;\" class=\"licensetpl_attr\">© entomart\n<hr>\n<span style=\"font-size: small;\">In case of publication or commercial use, Entomart wishes then to be warned (<a rel=\"nofollow\" class=\"external free\" href=\"http://www.entomart.be/contact.html\">http://www.entomart.be/contact.html</a>), but this without obligation. Thank you.</span></div></div>\n<p><span class=\"licensetpl_short\" style=\"display:none;\">Attribution</span>\n</p>\n</td></tr></tbody></table>",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseShortName": {
+                "value": "Attribution",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Attribution": {
+                "value": "© entomart\n<hr>\n<span style=\"font-size: small;\">In case of publication or commercial use, Entomart wishes then to be warned (<a rel=\"nofollow\" class=\"external free\" href=\"http://www.entomart.be/contact.html\">http://www.entomart.be/contact.html</a>), but this without obligation. Thank you.</span>",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Attribution only license"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Entomart"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Papilio machaon eclosing from pupa"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Uploaded with Commonist"
+          }
+        ]
+      },
+      "16268199": {
+        "pageid": 16268199,
+        "ns": 6,
+        "title": "File:Papilio machaon - eclosion A - 05 - smoothing out its wings.jpg",
+        "index": 15,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 162288,
+            "width": 1300,
+            "height": 999,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/9/95/Papilio_machaon_-_eclosion_A_-_05_-_smoothing_out_its_wings.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Papilio_machaon_-_eclosion_A_-_05_-_smoothing_out_its_wings.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=16268199",
+            "sha1": "062fd5ef75f2d59c2fc482513ad36daea677eb16",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2011-08-29 20:46:14",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Papilio machaon - eclosion A - 05 - smoothing out its wings",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Attribution only license|Entomart|Uploaded with Commonist|Papilio machaon eclosing from pupa",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "A Papilio machaon that only just eclose. Its wings are now smoothed out, but not hardened enough.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2006-05-09",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"http://www.entomart.be/\">http://www.entomart.be/</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "entomart",
+                "source": "commons-desc-page"
+              },
+              "Permission": {
+                "value": "<table class=\"layouttemplate licensetpl\" lang=\"en\" dir=\"ltr\" cellpadding=\"0\" style=\"width: 100%; clear: both; margin: 0.5em auto; background-color: var(--background-color-success-subtle, #dff2eb); color: var(--color-base, #202122); border-width: var(--border-width-thick, 2px); border-style: solid; border-color: var(--border-color-success, #099979); border-spacing: 8px; box-sizing: border-box;\">\n<tbody><tr>\n<td style=\"width:90px;\" rowspan=\"3\"><span typeof=\"mw:File\"><span title=\"©\"><img alt=\"©\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/5/57/Green_copyright.svg/120px-Green_copyright.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"64\" height=\"64\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/5/57/Green_copyright.svg/250px-Green_copyright.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"197\" data-file-height=\"197\"></span></span>\n</td>\n<td>The copyright holder of this file, Entomart, allows anyone to use it <b>for any purpose, provided that</b> the copyright holder is properly attributed. Redistribution, derivative work, commercial use, and all other use is permitted.\n</td></tr>\n<tr style=\"text-align:center;\">\n<td><div style=\"font-weight: bold;display:inline;\">Attribution: <div style=\"font-size: larger;display:inline;\" class=\"licensetpl_attr\">© entomart\n<hr>\n<span style=\"font-size: small;\">In case of publication or commercial use, Entomart wishes then to be warned (<a rel=\"nofollow\" class=\"external free\" href=\"http://www.entomart.be/contact.html\">http://www.entomart.be/contact.html</a>), but this without obligation. Thank you.</span></div></div>\n<p><span class=\"licensetpl_short\" style=\"display:none;\">Attribution</span>\n</p>\n</td></tr></tbody></table>",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseShortName": {
+                "value": "Attribution",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Attribution": {
+                "value": "© entomart\n<hr>\n<span style=\"font-size: small;\">In case of publication or commercial use, Entomart wishes then to be warned (<a rel=\"nofollow\" class=\"external free\" href=\"http://www.entomart.be/contact.html\">http://www.entomart.be/contact.html</a>), but this without obligation. Thank you.</span>",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Attribution only license"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Entomart"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Papilio machaon eclosing from pupa"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Uploaded with Commonist"
+          }
+        ]
+      },
+      "3992794": {
+        "pageid": 3992794,
+        "ns": 6,
+        "title": "File:Papilio machaon caterpillar by Nemos.jpg",
+        "index": 2,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 205024,
+            "width": 1562,
+            "height": 1188,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/0/00/Papilio_machaon_caterpillar_by_Nemos.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Papilio_machaon_caterpillar_by_Nemos.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=3992794",
+            "sha1": "bc7f03755e11844942523d05b56841c496d22d53",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2008-05-04 20:14:28",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Papilio machaon caterpillar by Nemos",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "PD Old|Papilio machaon (caterpillar)|Papilio machaon illustrations|Extracted images|CC-PD-Mark|Papilio machaon (pupae)|PD-old missing SDC copyright status|Illustrations of caterpillars|Lepidoptera pupae illustrations",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<i><a href=\"//commons.wikimedia.org/wiki/Papilio_machaon\" title=\"Papilio machaon\">Papilio machaon</a></i> caterpillar and larva",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "This image has been <b>extracted</b> from another file",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "Dr. F. Nemos",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "Public domain",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Public domain",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Copyrighted": {
+                "value": "False",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "pd",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-PD-Mark"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Extracted images"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Illustrations of caterpillars"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Lepidoptera pupae illustrations"
+          },
+          {
+            "ns": 14,
+            "title": "Category:PD-old missing SDC copyright status"
+          },
+          {
+            "ns": 14,
+            "title": "Category:PD Old"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Papilio machaon (caterpillar)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Papilio machaon (pupae)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Papilio machaon illustrations"
+          }
+        ]
+      },
+      "5653790": {
+        "pageid": 5653790,
+        "ns": 6,
+        "title": "File:Papilio machaon chrysalis.jpg",
+        "index": 13,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 128096,
+            "width": 1000,
+            "height": 1500,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/9/9d/Papilio_machaon_chrysalis.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Papilio_machaon_chrysalis.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=5653790",
+            "sha1": "1dfa1035c30f556de22b66172b1a12c6dc27df1c",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2009-01-06 13:12:30",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Papilio machaon chrysalis",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Items with VRTS permission confirmed|Papilio machaon (pupae)",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<a href=\"https://en.wikipedia.org/wiki/Old_World_Swallowtail\" class=\"extiw\" title=\"en:Old World Swallowtail\">Old World Swallowtail</a> (Papilio machaon) chrysalis",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2006",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"http://www.bund-nrw-naturschutzstiftung.de/schmetterling2006.htm\">http://www.bund-nrw-naturschutzstiftung.de/schmetterling2006.htm</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "Wolfgang Girnus",
+                "source": "commons-desc-page"
+              },
+              "Permission": {
+                "value": "<p><span class=\"layouttemplateargs\" style=\"display:none;speak:none;\" title=\"template=PermissionTicket 1%3Dhttps%3A%2F%2Fticket.wikimedia.org%2Fotrs%2Findex.pl%3FAction%3DAgentTicketZoom%26TicketNumber%3D2008121810010963 2%3D2008121810010963\"> </span>\n</p>\n<style data-mw-deduplicate=\"TemplateStyles:r1254222110\">.mw-parser-output .messagebox{margin:4px 0;width:auto;border-collapse:collapse;border:2px solid var(--border-color-progressive,#6485d1);background-color:var(--background-color-neutral-subtle,#fbfcff);color:var(--color-base,#202122);box-sizing:border-box;border-inline-start-width:8px}.mw-parser-output .messagebox.mbox-small{font-size:88%;line-height:1.25em}.mw-parser-output .mbox-warning,.mw-parser-output .mbox-speedy{border:2px solid var(--border-color-error,#b22222);background:var(--background-color-error-subtle,#ffdbdb);border-inline-start-width:8px}.mw-parser-output .mbox-serious,.mw-parser-output .mbox-delete,.mw-parser-output .mbox-stop{border:2px solid var(--border-color-error,#b22222);border-inline-start-width:8px}.mw-parser-output .mbox-issue,.mw-parser-output .mbox-content{border:2px solid #f28500;background:var(--background-color-warning-subtle,#ffe);border-inline-start-width:8px}.mw-parser-output .mbox-query,.mw-parser-output .mbox-style{border:2px solid #f4c430;background:var(--background-color-warning-subtle,#ffe);border-inline-start-width:8px}.mw-parser-output .mbox-shit{border:2px solid #960;border-inline-start-width:8px}.mw-parser-output .mbox-license{border:2px solid #88a;border-inline-start-width:initial}.mw-parser-output .mbox-legal{border:2px solid var(--border-color-notice,#666);background:var(--background-color-base,#fff);border-inline-start-width:8px}.mw-parser-output .mbox-honor{border:2px solid #ca3;background:var(--background-color-warning-subtle,#fcf4db);border-inline-start-width:8px}.mw-parser-output .mbox-growth{border:2px solid #8d4;background:var(--background-color-success-subtle,#d5fdf4);border-inline-start-width:8px}.mw-parser-output .mbox-move{border:2px solid #93c;border-inline-start-width:8px}.mw-parser-output .mbox-protection,.mw-parser-output .mbox-message{border:2px solid var(--border-color-base,#aaa);border-inline-start-width:8px}.mw-parser-output .messagebox .mbox-text{border:none;padding:0.25em 0.9em;width:100%}.mw-parser-output .messagebox .mbox-image{border:none;padding-top:2px;padding-bottom:2px;padding-inline-start:0.9em;padding-inline-end:0;text-align:center}.mw-parser-output .messagebox .mbox-imageright{border:none;padding-top:2px;padding-bottom:2px;padding-inline-start:0;padding-inline-end:0.9em;text-align:center}.mw-parser-output .messagebox .mbox-empty-cell{border:none;padding:0;width:1px}.mw-parser-output .messagebox .mbox-invalid-type{text-align:center}@media(min-width:720px){.mw-parser-output .messagebox{margin:4px 10%}.mw-parser-output .messagebox.mbox-small{clear:right;float:right;margin:4px 0 4px 1em;width:238px}}body.skin--responsive .mw-parser-output table.messagebox img{max-width:none!important}</style><table class=\"plainlinks messagebox mbox-notice layouttemplate\" role=\"presentation\" style=\"margin:0.3em 0;width:100%;\"><tbody><tr><td class=\"mbox-image\"><span typeof=\"mw:File\"><span title=\"VRT Wikimedia\"><img alt=\"VRT Wikimedia\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f0/Permission_logo_2021.svg/120px-Permission_logo_2021.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"75\" height=\"48\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f0/Permission_logo_2021.svg/250px-Permission_logo_2021.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"935\" data-file-height=\"600\"></span></span></td><td class=\"mbox-text\">This work is <a href=\"https://freedomdefined.org/Definition\" class=\"extiw\" title=\"freedomdefined:Definition\">free</a> and may be used by anyone for any purpose. If you wish to <b><a href=\"//commons.wikimedia.org/wiki/Commons:Reusing_content_outside_Wikimedia\" title=\"Commons:Reusing content outside Wikimedia\">use this content</a></b>, you do not need to request permission as long as you follow any licensing requirements mentioned on this page.\n<p>The Wikimedia Foundation has received an e-mail confirming that the copyright holder has approved publication under the terms mentioned on this page. This correspondence has been <b><span style=\"background:transparent;color:#0f7f1f;font-weight:400;\" title=\"transparent\">reviewed</span></b> by a <a href=\"//commons.wikimedia.org/wiki/Template:PermissionTicket/Users\" title=\"Template:PermissionTicket/Users\">Volunteer Response Team (VRT) member</a> and stored in our <a href=\"//commons.wikimedia.org/wiki/Commons:Volunteer_Response_Team\" title=\"Commons:Volunteer Response Team\">permission archive</a>. The correspondence is available to trusted volunteers as <b><a href=\"https://ticket.wikimedia.org/otrs/index.pl?Action=AgentTicketZoom&amp;TicketNumber=2008121810010963\" class=\"extiw\" title=\"ticket:2008121810010963\">ticket #2008121810010963</a></b>.\n</p><p><small>If you have questions about the archived correspondence, please use the <a href=\"//commons.wikimedia.org/wiki/Commons:Volunteer_Response_Team/Noticeboard\" title=\"Commons:Volunteer Response Team/Noticeboard\">VRT noticeboard</a>.</small>\n<small>Ticket link: <a class=\"external free\" href=\"https://ticket.wikimedia.org/otrs/index.pl?Action=AgentTicketZoom&amp;TicketNumber=2008121810010963\">https://ticket.wikimedia.org/otrs/index.pl?Action=AgentTicketZoom&amp;TicketNumber=2008121810010963</a></small>\n<br><small>Find other files from the same ticket:</small> <span typeof=\"mw:File\"><a href=\"https://wcqs-beta.wmflabs.org/#%23defaultView%3AImageGrid%09%0ASELECT%20%3Fimage%20%20%20%7B%0A%20%20%3Ffile%20wdt%3AP6305%20%222008121810010963%22%20.%0A%20%20%3Ffile%20schema%3Aurl%20%3Fimage.%0A%7D%20%0A\" title=\"SDC query (SPARQL)\" rel=\"nofollow\"><img alt=\"SDC query (SPARQL)\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/Wikimedia_Commons_Query_Service_Logo.svg/20px-Wikimedia_Commons_Query_Service_Logo.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"15\" height=\"20\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/Wikimedia_Commons_Query_Service_Logo.svg/40px-Wikimedia_Commons_Query_Service_Logo.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"512\" data-file-height=\"688\"></a></span>\n</p>\n<span id=\"field-otrs\" title=\"https://ticket.wikimedia.org/otrs/index.pl?Action=AgentTicketZoom&amp;TicketNumber=2008121810010963\"></span></td></tr></tbody></table>",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0 de",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0 de",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0-de",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0-DE"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Items with VRTS permission confirmed"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Papilio machaon (pupae)"
+          }
+        ]
+      },
+      "11889776": {
+        "pageid": 11889776,
+        "ns": 6,
+        "title": "File:Papilio machaon chrysalis 01.jpg",
+        "index": 9,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 14363616,
+            "width": 3124,
+            "height": 4688,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/a/af/Papilio_machaon_chrysalis_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Papilio_machaon_chrysalis_01.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=11889776",
+            "sha1": "35ff021eb02bc1c7270c75eb067056c0f8f54673",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2010-10-26 19:59:52",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Papilio machaon chrysalis 01",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "GFDL|Taken with Pentax K20D|CC-BY-SA-3.0,2.5,2.0,1.0|License migration redundant|Self-published work|Papilio machaon (pupae)",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Émergence imminente de l'imago Papilio machaon laissant apparaître par transparence les couleurs du papillon.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2010-08-09",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Entomolo\" title=\"User:Entomolo\">hamon jp</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0,2.5,2.0,1.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:GFDL"
+          },
+          {
+            "ns": 14,
+            "title": "Category:License migration redundant"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Papilio machaon (pupae)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Pentax K20D"
+          }
+        ]
+      },
+      "73686048": {
+        "pageid": 73686048,
+        "ns": 6,
+        "title": "File:Picture Natural History - No 250 - The Chrysalis, Swallow-tail Butterfly.png",
+        "index": 1,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 448909,
+            "width": 709,
+            "height": 372,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/a/a3/Picture_Natural_History_-_No_250_-_The_Chrysalis%2C_Swallow-tail_Butterfly.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Picture_Natural_History_-_No_250_-_The_Chrysalis,_Swallow-tail_Butterfly.png",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=73686048",
+            "sha1": "25d23aec6549973d2a44dc1fba2a21c967f5424c",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2018-10-17 22:09:55",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Picture Natural History - No 250 - The Chrysalis, Swallow-tail Butterfly",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Papilio machaon illustrations|PD US expired|Papilio machaon (pupae)|Picture Natural History|Lepidoptera pupae illustrations",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Illustration from \"Picture Natural History\" - No 250 - The Chrysalis, Swallow-tail Butterfly  <a class=\"external free\" href=\"https://en.wikipedia.org/wiki/Swallowtail_butterfly\">https://en.wikipedia.org/wiki/Swallowtail_butterfly</a>",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "1869",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "Picture Natural History <a rel=\"nofollow\" class=\"external autonumber\" href=\"https://archive.org/details/PictureNaturalHistory\">[1]</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "Mary E. C. Boutell",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "Public domain",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Public domain",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Copyrighted": {
+                "value": "False",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "pd",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Lepidoptera pupae illustrations"
+          },
+          {
+            "ns": 14,
+            "title": "Category:PD US expired"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Papilio machaon (pupae)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Papilio machaon illustrations"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Picture Natural History"
+          }
+        ]
+      },
+      "67537895": {
+        "pageid": 67537895,
+        "ns": 6,
+        "title": "File:Shaw et al 2015 Figs 1-10.jpg",
+        "index": 5,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 2358825,
+            "width": 1512,
+            "height": 2143,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/a/a0/Shaw_et_al_2015_Figs_1-10.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Shaw_et_al_2015_Figs_1-10.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=67537895",
+            "sha1": "b7e9ecf1fe7a3886c3c7b77afbde9a1e0635885f",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2018-03-20 21:47:35",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Shaw et al 2015 Figs 1-10",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Apatura iris|Trogus lapidator|Amblyjoppa proteus|Psilomastax pyramidalis|Images with extracted images|Papilio machaon (pupae)|Montages of Lepidoptera|Lepidoptera pupae with parasites|Deilephila elpenor (pupae)|Diseases and disorders of Papilio machaon|Ichneumonidae as parasites of Lepidoptera",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "\"\n<p>1–4 Sequence in the emergence process of Trogus lapidator (Fabricius) from Papilio machaon Linnaeus (Papilionidae).<br>\n5–10 Host pupa following emergence of parasitoid.<br>\n5–7 Trogus lapidator from Papilio machaon<br> \n8, 9 Psilomastax pyramidalis Tischbein from Apatura iris (Linnaeus) (Nymphalidae)<br>\n</p>\n10 Amblyjoppa proteus (Christ) from Deilephila elpenor (Linnaeus) (Sphingidae).\"",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2015-12-22",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "Shaw MR, Kan P, Kan-van Limburg Stirum B (2015) Emergence behaviour of adult Trogus lapidator (Fabricius) (Hymenoptera, Ichneumonidae, Ichneumoninae, Heresiarchini) from pupa of its host Papilio machaon L. (Lepidoptera, Papilionidae), with a comparative overview of emergence of Ichneumonidae from Lepidoptera pupae in Europe. Journal of Hymenoptera Research 47: 65-85. <a rel=\"nofollow\" class=\"external free\" href=\"https://doi.org/10.3897/JHR.47.6508\">https://doi.org/10.3897/JHR.47.6508</a> <style data-mw-deduplicate=\"TemplateStyles:r1150004437\">@media screen{html.skin-theme-clientpref-night .mw-parser-output .inline-quote-talk{color:#00B785}}@media screen and (prefers-color-scheme:dark){html.skin-theme-clientpref-os .mw-parser-output .inline-quote-talk{color:#00B785}}.mw-parser-output .inline-quote-talk{font-family:Georgia,\"DejaVu Serif\",serif;color:#008560;quotes:none}.mw-parser-output .inline-quote-talk-italic{font-family:inherit;font-style:italic}.mw-parser-output .inline-quote-talk-marks{quotes:\"\\\"\"\"\\\"\"}</style><q class=\"inline-quote-talk\">This is an open access article distributed under the terms of the Creative Commons Attribution License (CC BY 4.0), which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.</q>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "Mark Robert Shaw, Pieter Kan, Brigitte Kan-van Limburg Stirum",
+                "source": "commons-desc-page"
+              },
+              "Permission": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://jhr.pensoft.net/about\">https://jhr.pensoft.net/about</a>",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseShortName": {
+                "value": "CC BY 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Amblyjoppa proteus"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Apatura iris"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-4.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Deilephila elpenor (pupae)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Diseases and disorders of Papilio machaon"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Ichneumonidae as parasites of Lepidoptera"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Images with extracted images"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Lepidoptera pupae with parasites"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Montages of Lepidoptera"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Papilio machaon (pupae)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Psilomastax pyramidalis"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Trogus lapidator"
+          }
+        ]
+      },
+      "67537932": {
+        "pageid": 67537932,
+        "ns": 6,
+        "title": "File:Shaw et al 2015 Figs 1-4.jpg",
+        "index": 3,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 856859,
+            "width": 1512,
+            "height": 852,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/5/5d/Shaw_et_al_2015_Figs_1-4.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Shaw_et_al_2015_Figs_1-4.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=67537932",
+            "sha1": "a65dd23cd0fdd1d0d641f0ce73bcb345cd2e4ca1",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2018-03-20 21:50:26",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Shaw et al 2015 Figs 1-4",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Trogus lapidator|Images with extracted images|Extracted images|Papilio machaon (pupae)|Lepidoptera pupae with parasites|Diseases and disorders of Papilio machaon|Ichneumonidae as parasites of Lepidoptera",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "\"1–4 Sequence in the emergence process of Trogus lapidator (Fabricius) from Papilio machaon Linnaeus (Papilionidae).\"",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2015-12-22",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "Shaw MR, Kan P, Kan-van Limburg Stirum B (2015) Emergence behaviour of adult Trogus lapidator (Fabricius) (Hymenoptera, Ichneumonidae, Ichneumoninae, Heresiarchini) from pupa of its host Papilio machaon L. (Lepidoptera, Papilionidae), with a comparative overview of emergence of Ichneumonidae from Lepidoptera pupae in Europe. Journal of Hymenoptera Research 47: 65-85. <a rel=\"nofollow\" class=\"external free\" href=\"https://doi.org/10.3897/JHR.47.6508\">https://doi.org/10.3897/JHR.47.6508</a> <style data-mw-deduplicate=\"TemplateStyles:r1150004437\">@media screen{html.skin-theme-clientpref-night .mw-parser-output .inline-quote-talk{color:#00B785}}@media screen and (prefers-color-scheme:dark){html.skin-theme-clientpref-os .mw-parser-output .inline-quote-talk{color:#00B785}}.mw-parser-output .inline-quote-talk{font-family:Georgia,\"DejaVu Serif\",serif;color:#008560;quotes:none}.mw-parser-output .inline-quote-talk-italic{font-family:inherit;font-style:italic}.mw-parser-output .inline-quote-talk-marks{quotes:\"\\\"\"\"\\\"\"}</style><q class=\"inline-quote-talk\">This is an open access article distributed under the terms of the Creative Commons Attribution License (CC BY 4.0), which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.</q>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "Mark Robert Shaw, Pieter Kan, Brigitte Kan-van Limburg Stirum",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-4.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Diseases and disorders of Papilio machaon"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Extracted images"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Ichneumonidae as parasites of Lepidoptera"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Images with extracted images"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Lepidoptera pupae with parasites"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Papilio machaon (pupae)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Trogus lapidator"
+          }
+        ]
+      },
+      "68331532": {
+        "pageid": 68331532,
+        "ns": 6,
+        "title": "File:Shaw et al 2015 Figs 1-4 (cropped).jpg",
+        "index": 6,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 134979,
+            "width": 453,
+            "height": 404,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Shaw_et_al_2015_Figs_1-4_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Shaw_et_al_2015_Figs_1-4_(cropped).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=68331532",
+            "sha1": "99686401fc22a2f4114a45c56f2ae9582ec195e2",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2018-04-14 19:29:24",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Shaw et al 2015 Figs 1-4 (cropped)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Trogus lapidator|Extracted images|Papilio machaon (pupae)|Lepidoptera pupae with parasites|Diseases and disorders of Papilio machaon|Ichneumonidae as parasites of Lepidoptera",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "\"1–4 Sequence in the emergence process of Trogus lapidator (Fabricius) from Papilio machaon Linnaeus (Papilionidae).\" [Cropped to just Fig 4]",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2015-12-22",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "Shaw MR, Kan P, Kan-van Limburg Stirum B (2015) Emergence behaviour of adult Trogus lapidator (Fabricius) (Hymenoptera, Ichneumonidae, Ichneumoninae, Heresiarchini) from pupa of its host Papilio machaon L. (Lepidoptera, Papilionidae), with a comparative overview of emergence of Ichneumonidae from Lepidoptera pupae in Europe. Journal of Hymenoptera Research 47: 65-85. <a rel=\"nofollow\" class=\"external free\" href=\"https://doi.org/10.3897/JHR.47.6508\">https://doi.org/10.3897/JHR.47.6508</a> <style data-mw-deduplicate=\"TemplateStyles:r1150004437\">@media screen{html.skin-theme-clientpref-night .mw-parser-output .inline-quote-talk{color:#00B785}}@media screen and (prefers-color-scheme:dark){html.skin-theme-clientpref-os .mw-parser-output .inline-quote-talk{color:#00B785}}.mw-parser-output .inline-quote-talk{font-family:Georgia,\"DejaVu Serif\",serif;color:#008560;quotes:none}.mw-parser-output .inline-quote-talk-italic{font-family:inherit;font-style:italic}.mw-parser-output .inline-quote-talk-marks{quotes:\"\\\"\"\"\\\"\"}</style><q class=\"inline-quote-talk\">This is an open access article distributed under the terms of the Creative Commons Attribution License (CC BY 4.0), which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.</q>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "Mark Robert Shaw, Pieter Kan, Brigitte Kan-van Limburg Stirum",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-4.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Diseases and disorders of Papilio machaon"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Extracted images"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Ichneumonidae as parasites of Lepidoptera"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Lepidoptera pupae with parasites"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Papilio machaon (pupae)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Trogus lapidator"
+          }
+        ]
+      },
+      "90513586": {
+        "pageid": 90513586,
+        "ns": 6,
+        "title": "File:Svensk zoologi vol I 1806 165.jpg",
+        "index": 8,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1302783,
+            "width": 975,
+            "height": 1848,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/f/f8/Svensk_zoologi_vol_I_1806_165.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Svensk_zoologi_vol_I_1806_165.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=90513586",
+            "sha1": "6a68928ef9afaf8c58f8759621ec35d9dc260875",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2020-06-20 15:11:35",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Svensk zoologi vol I 1806 165",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "PD-old-70-expired|Papilio machaon (caterpillar)|Papilio machaon illustrations|Illustrations from Conrad Quensel's Svensk zoologi|CC-PD-Mark|Papilio machaon (pupae)|PD-old missing SDC copyright status|Illustrations of caterpillars|Lepidoptera pupae illustrations",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Illustration from Conrad Quensel's <i>Svensk Zoologi. Första bandet.</i>. Published in Stockholm 1806.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "1806",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/File:Svensk_Zoologi.djvu\" title=\"File:Svensk Zoologi.djvu\">File:Svensk Zoologi.djvu</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<bdi><a href=\"https://en.wikipedia.org/wiki/en:Johan_Wilhelm_Palmstruch\" class=\"extiw\" title=\"w:en:Johan Wilhelm Palmstruch\"><span title=\"Swedish naturalist (1770-1811)\">Johan Wilhelm Palmstruch</span></a></bdi>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "Public domain",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Public domain",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Copyrighted": {
+                "value": "False",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "pd",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

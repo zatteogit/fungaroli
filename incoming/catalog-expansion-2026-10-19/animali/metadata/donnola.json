@@ -1,0 +1,2728 @@
+{
+  "continue": {
+    "clcontinue": "44783941|Mustela_nivalis_jaws",
+    "continue": "||imageinfo"
+  },
+  "query": {
+    "pages": {
+      "27065573": {
+        "pageid": 27065573,
+        "ns": 6,
+        "title": "File:Mammals of northern Alaska on the Arctic slope (1956) Mustela nivalis rixosa skull.png",
+        "index": 10,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 97735,
+            "width": 271,
+            "height": 295,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/3/34/Mammals_of_northern_Alaska_on_the_Arctic_slope_%281956%29_Mustela_nivalis_rixosa_skull.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Mammals_of_northern_Alaska_on_the_Arctic_slope_(1956)_Mustela_nivalis_rixosa_skull.png",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=27065573",
+            "sha1": "524719d96237faaec6d1684b1c67a65a4a1e1897",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2013-07-04 22:23:00",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Mammals of northern Alaska on the Arctic slope (1956) Mustela nivalis rixosa skull",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Mustela nivalis skulls|Mammals of northern Alaska on the Arctic slope",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Sketch of least weasel skull.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "1956",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "James W. Bee, et al. (1956) <a rel=\"nofollow\" class=\"external text\" href=\"https://archive.org/details/mammalsofnorther00beej\">Mammals of northern Alaska on the Arctic slope</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "James W Bee and E. Raymond Hall",
+                "source": "commons-desc-page"
+              },
+              "Permission": {
+                "value": "Usage Restrictions: None (\"<i>Not in copyright. The BHL knows of no copyright restrictions on this item.</i>\")",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseShortName": {
+                "value": "CC BY 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Mammals of northern Alaska on the Arctic slope"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Mustela nivalis skulls"
+          }
+        ]
+      },
+      "32628056": {
+        "pageid": 32628056,
+        "ns": 6,
+        "title": "File:Mustela-nivalis.jpg",
+        "index": 19,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 78313,
+            "width": 800,
+            "height": 600,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/c/c9/Mustela-nivalis.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Mustela-nivalis.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=32628056",
+            "sha1": "6be19d289bffb86e5b88d4a4292e1629849e3f59",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2014-05-06 21:09:20",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Mustela-nivalis",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Mustela nivalis|Self-published work|Images with extracted images",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Mustela-nivalis",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2014-05-07 01:08:08",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:%D5%8D%D5%A5%D6%80%D5%A3%D5%A5%D5%B5_%D4%B6%D5%A1%D5%AC%D5%AB%D5%B6%D5%B5%D5%A1%D5%B6&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Սերգեյ Զալինյան (page does not exist)\">Սերգեյ Զալինյան</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Images with extracted images"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Mustela nivalis"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          }
+        ]
+      },
+      "24729509": {
+        "pageid": 24729509,
+        "ns": 6,
+        "title": "File:Mustela nivalis. January. Mogilev region of Belarus 2.JPG",
+        "index": 16,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 2606307,
+            "width": 2592,
+            "height": 1944,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Mustela_nivalis._January._Mogilev_region_of_Belarus_2.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Mustela_nivalis._January._Mogilev_region_of_Belarus_2.JPG",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=24729509",
+            "sha1": "a6dbf966eeb5abe5684077a31594393039ab6d74",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2013-02-18 13:06:03",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Mustela nivalis. January. Mogilev region of Belarus 2",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Taken with Sony DSC-H55|CC-Zero|Mustela nivalis in Belarus|Mogilev Region|Self-published work|Mustelids in snow|Mustela nivalis - winter form",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Ласка. Лес близ Тараново под Могилёвом",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2013-01-29 10:17:43",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:%D0%90%D0%BD%D0%B4%D1%80%D0%B5%D0%B9_%D0%9F%D0%B5%D1%80%D1%86%D0%B5%D0%B2_1967\" class=\"mw-redirect\" title=\"User:Андрей Перцев 1967\">Андрей Перцев 1967</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-Zero"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Mogilev Region"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Mustela nivalis - winter form"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Mustela nivalis in Belarus"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Mustelids in snow"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Sony DSC-H55"
+          }
+        ]
+      },
+      "33369040": {
+        "pageid": 33369040,
+        "ns": 6,
+        "title": "File:Mustela nivalis - Museo Civico di Storia Naturale Giacomo Doria - Genoa, Italy - DSC02627.JPG",
+        "index": 12,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 2093917,
+            "width": 3729,
+            "height": 2546,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Mustela_nivalis_-_Museo_Civico_di_Storia_Naturale_Giacomo_Doria_-_Genoa%2C_Italy_-_DSC02627.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Mustela_nivalis_-_Museo_Civico_di_Storia_Naturale_Giacomo_Doria_-_Genoa,_Italy_-_DSC02627.JPG",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=33369040",
+            "sha1": "2c53fd15d10c669f3ffad1883dd6dca4a82f8400",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2014-06-13 10:39:00",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Mustela nivalis - Museo Civico di Storia Naturale Giacomo Doria - Genoa, Italy - DSC02627",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Taken with Sony DSC-RX100|CC-Zero|Self-published work|Files uploaded by Daderot|Mustela nivalis (museum specimens)|Mustelidae in the Museo Civico di Storia Naturale di Genova",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Exhibit in the Museo Civico di Storia Naturale di Genova, Via Brigata Liguria, 9, 16121, Genoa, Italy. Photography was permitted in the museum without restriction.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2013-09-26 06:00:54",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Daderot\" title=\"User:Daderot\">Daderot</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-Zero"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files uploaded by Daderot"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Mustela nivalis (museum specimens)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Mustelidae in the Museo Civico di Storia Naturale di Genova"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Sony DSC-RX100"
+          }
+        ]
+      },
+      "146116597": {
+        "pageid": 146116597,
+        "ns": 6,
+        "title": "File:Mustela nivalis 234942641.jpg",
+        "index": 13,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 3456014,
+            "width": 2048,
+            "height": 1536,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/8/82/Mustela_nivalis_234942641.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Mustela_nivalis_234942641.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=146116597",
+            "sha1": "c70290fc730aea7815aaa39fa918cf3f09a06988",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2024-03-06 09:41:20",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Mustela nivalis 234942641",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Mustela nivalis|Media from iNaturalist|Mammals of Norfolk, England|INaturalist images reviewed by iNaturalistReviewBot|Mustelidae of the United Kingdom|Uploaded with iNaturalist2Commons|United Kingdom photographs taken on 2022-07-23|Animals of Trimingham|Media from GBIF|Oryctolagus cuniculus in the United Kingdom|Files with coordinates missing SDC location of creation (52° N, 1° E)|Mammals hunting",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "52.893666",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "1.393256",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Least Weasel (<i>Mustela nivalis</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2022-07-23",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/234942641\">https://www.inaturalist.org/photos/234942641</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/4930252\">gwynmwilliams</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "134307706": {
+        "pageid": 134307706,
+        "ns": 6,
+        "title": "File:Mustela nivalis 258018044.jpg",
+        "index": 11,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 2108967,
+            "width": 2048,
+            "height": 1536,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/1/1e/Mustela_nivalis_258018044.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Mustela_nivalis_258018044.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=134307706",
+            "sha1": "d1c9cd56ae67819bfcc2ec6ca2001ca1b3e30251",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2023-07-12 09:21:28",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Mustela nivalis 258018044",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Mustela nivalis|Animals of Gilan Province|Kelachay|Images with extracted images|Media from iNaturalist|Carnivora of Iran|INaturalist images reviewed by iNaturalistReviewBot|Files with coordinates missing SDC location of creation|Uploaded with iNaturalist2Commons|Iran photographs taken on 2021-05-24|Lying Carnivora",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "37.079068",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "50.385759",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Least Weasel (<i>Mustela nivalis</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2021-05-24",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/258018044\">https://www.inaturalist.org/photos/258018044</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/4227203\">Emad Tahaei</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "160035969": {
+        "pageid": 160035969,
+        "ns": 6,
+        "title": "File:Mustela nivalis MHNT.ZOO.2010.11.236.19.jpg",
+        "index": 1,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 6978415,
+            "width": 4913,
+            "height": 3307,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/c/cd/Mustela_nivalis_MHNT.ZOO.2010.11.236.19.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Mustela_nivalis_MHNT.ZOO.2010.11.236.19.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=160035969",
+            "sha1": "7d78b5edfe4e5b20726a605e1558a3d43d518587",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2025-03-01 09:37:55",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Mustela nivalis MHNT.ZOO.2010.11.236.19",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Self-published work|Supported by Projet Phoebus|Media supported by Wikimedia France|Files with coordinates missing SDC location of creation|Specimen missing SDC depicts|Mammal bones in the Muséum de Toulouse|Animal bones on black background|Mustela nivalis skulls|Images by Ercé Zoologie",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "quality|valued",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "43.593897",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "1.449230",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Artist": {
+                "value": "<div class=\"fn value\">\n<a rel=\"mw:WikiLink\" href=\"https://commons.wikimedia.org/wiki/User:Erc%C3%A9\" title=\"User:Ercé\">Roger Culos</a></div>",
+                "source": "commons-desc-page"
+              },
+              "ImageDescription": {
+                "value": "Skull of <a rel=\"mw:WikiLink/Interwiki\" href=\"https://en.wikipedia.org/wiki/Mustela%20nivalis\" title=\"w:Mustela nivalis\" class=\"extiw\">least weasel</a><span typeof=\"mw:DisplaySpace\"> </span>; collection of Jacques Perrin de Brichambaut.",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Permission": {
+                "value": "I, the copyright holder of this work, hereby publish it under the following license:",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "44352090": {
+        "pageid": 44352090,
+        "ns": 6,
+        "title": "File:Naturalis Biodiversity Center - RMNH.MAM.10693 lat - Mustela nivalis - skeleton (whole).jpeg",
+        "index": 6,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 256592,
+            "width": 1920,
+            "height": 1600,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/b/b1/Naturalis_Biodiversity_Center_-_RMNH.MAM.10693_lat_-_Mustela_nivalis_-_skeleton_%28whole%29.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Naturalis_Biodiversity_Center_-_RMNH.MAM.10693_lat_-_Mustela_nivalis_-_skeleton_(whole).jpeg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=44352090",
+            "sha1": "f5879ad599cbc4c794eceb177e860fba93fc22c6",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2015-10-20 15:09:14",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Naturalis Biodiversity Center - RMNH.MAM.10693 lat - Mustela nivalis - skeleton (whole)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "CC-Zero|Files with no machine-readable author|Media donated by Naturalis Biodiversity Center|Information field template with formatting|GWToolset Batch Upload|Mustela nivalis skulls|Mustela nivalis at Naturalis from the Rijksmuseum van Natuurlijke Historie",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Mustela nivalis",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<bdi><a href=\"https://en.wikipedia.org/wiki/en:Naturalis_Biodiversity_Center\" class=\"extiw\" title=\"w:en:Naturalis Biodiversity Center\"><span title=\"natural history museum and research center in the Leiden, The Netherlands\">Naturalis Biodiversity Center</span></a>\n</bdi>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-Zero"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with no machine-readable author"
+          },
+          {
+            "ns": 14,
+            "title": "Category:GWToolset Batch Upload"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Information field template with formatting"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Media donated by Naturalis Biodiversity Center"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Mustela nivalis at Naturalis from the Rijksmuseum van Natuurlijke Historie"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Mustela nivalis skulls"
+          }
+        ]
+      },
+      "44546556": {
+        "pageid": 44546556,
+        "ns": 6,
+        "title": "File:Naturalis Biodiversity Center - RMNH.MAM.27728 lat - Mustela nivalis - skeleton (whole).jpeg",
+        "index": 18,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 280519,
+            "width": 1920,
+            "height": 1680,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/d/da/Naturalis_Biodiversity_Center_-_RMNH.MAM.27728_lat_-_Mustela_nivalis_-_skeleton_%28whole%29.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Naturalis_Biodiversity_Center_-_RMNH.MAM.27728_lat_-_Mustela_nivalis_-_skeleton_(whole).jpeg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=44546556",
+            "sha1": "6c70a9e7411e8056b8ce009bae4f3ff2299a350a",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2015-10-27 19:24:17",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Naturalis Biodiversity Center - RMNH.MAM.27728 lat - Mustela nivalis - skeleton (whole)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "CC-Zero|Files with no machine-readable author|Media donated by Naturalis Biodiversity Center|Information field template with formatting|GWToolset Batch Upload|Mustela nivalis skulls|Mustela nivalis at Naturalis from the Rijksmuseum van Natuurlijke Historie",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Mustela nivalis",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<bdi><a href=\"https://en.wikipedia.org/wiki/en:Naturalis_Biodiversity_Center\" class=\"extiw\" title=\"w:en:Naturalis Biodiversity Center\"><span title=\"natural history museum and research center in the Leiden, The Netherlands\">Naturalis Biodiversity Center</span></a>\n</bdi>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-Zero"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with no machine-readable author"
+          },
+          {
+            "ns": 14,
+            "title": "Category:GWToolset Batch Upload"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Information field template with formatting"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Media donated by Naturalis Biodiversity Center"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Mustela nivalis at Naturalis from the Rijksmuseum van Natuurlijke Historie"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Mustela nivalis skulls"
+          }
+        ]
+      },
+      "44547316": {
+        "pageid": 44547316,
+        "ns": 6,
+        "title": "File:Naturalis Biodiversity Center - RMNH.MAM.27908.a gen - Mustela nivalis - skull.jpeg",
+        "index": 4,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 256151,
+            "width": 1920,
+            "height": 1600,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/6/6e/Naturalis_Biodiversity_Center_-_RMNH.MAM.27908.a_gen_-_Mustela_nivalis_-_skull.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Naturalis_Biodiversity_Center_-_RMNH.MAM.27908.a_gen_-_Mustela_nivalis_-_skull.jpeg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=44547316",
+            "sha1": "aefcd30cfe05460795afae3c03dde34931cc63ef",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2015-10-27 19:53:03",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Naturalis Biodiversity Center - RMNH.MAM.27908.a gen - Mustela nivalis - skull",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "CC-Zero|Files with no machine-readable author|Media donated by Naturalis Biodiversity Center|Information field template with formatting|GWToolset Batch Upload|Mustela nivalis skulls|Mustela nivalis at Naturalis from the Rijksmuseum van Natuurlijke Historie",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Mustela nivalis",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<bdi><a href=\"https://en.wikipedia.org/wiki/en:Naturalis_Biodiversity_Center\" class=\"extiw\" title=\"w:en:Naturalis Biodiversity Center\"><span title=\"natural history museum and research center in the Leiden, The Netherlands\">Naturalis Biodiversity Center</span></a>\n</bdi>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-Zero"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with no machine-readable author"
+          },
+          {
+            "ns": 14,
+            "title": "Category:GWToolset Batch Upload"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Information field template with formatting"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Media donated by Naturalis Biodiversity Center"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Mustela nivalis at Naturalis from the Rijksmuseum van Natuurlijke Historie"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Mustela nivalis skulls"
+          }
+        ]
+      },
+      "44547315": {
+        "pageid": 44547315,
+        "ns": 6,
+        "title": "File:Naturalis Biodiversity Center - RMNH.MAM.27908.a pal - Mustela nivalis - skull.jpeg",
+        "index": 21,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 242160,
+            "width": 1920,
+            "height": 1344,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/e/e9/Naturalis_Biodiversity_Center_-_RMNH.MAM.27908.a_pal_-_Mustela_nivalis_-_skull.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Naturalis_Biodiversity_Center_-_RMNH.MAM.27908.a_pal_-_Mustela_nivalis_-_skull.jpeg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=44547315",
+            "sha1": "086ec3974d9e17ffa98f09ea6a7b9ab203e35131",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2015-10-27 19:53:03",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Naturalis Biodiversity Center - RMNH.MAM.27908.a pal - Mustela nivalis - skull",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "CC-Zero|Files with no machine-readable author|Media donated by Naturalis Biodiversity Center|Information field template with formatting|GWToolset Batch Upload|Mustela nivalis skulls|Mustela nivalis at Naturalis from the Rijksmuseum van Natuurlijke Historie",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Mustela nivalis",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<bdi><a href=\"https://en.wikipedia.org/wiki/en:Naturalis_Biodiversity_Center\" class=\"extiw\" title=\"w:en:Naturalis Biodiversity Center\"><span title=\"natural history museum and research center in the Leiden, The Netherlands\">Naturalis Biodiversity Center</span></a>\n</bdi>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-Zero"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with no machine-readable author"
+          },
+          {
+            "ns": 14,
+            "title": "Category:GWToolset Batch Upload"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Information field template with formatting"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Media donated by Naturalis Biodiversity Center"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Mustela nivalis at Naturalis from the Rijksmuseum van Natuurlijke Historie"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Mustela nivalis skulls"
+          }
+        ]
+      },
+      "44548559": {
+        "pageid": 44548559,
+        "ns": 6,
+        "title": "File:Naturalis Biodiversity Center - RMNH.MAM.27908.a reg - Mustela nivalis - skull.jpeg",
+        "index": 7,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 251792,
+            "width": 1920,
+            "height": 1600,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/f/f3/Naturalis_Biodiversity_Center_-_RMNH.MAM.27908.a_reg_-_Mustela_nivalis_-_skull.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Naturalis_Biodiversity_Center_-_RMNH.MAM.27908.a_reg_-_Mustela_nivalis_-_skull.jpeg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=44548559",
+            "sha1": "7d211cd0ad6105428a0635117467aeba182cee2e",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2015-10-27 20:36:57",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Naturalis Biodiversity Center - RMNH.MAM.27908.a reg - Mustela nivalis - skull",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "CC-Zero|Files with no machine-readable author|Media donated by Naturalis Biodiversity Center|Information field template with formatting|GWToolset Batch Upload|Mustela nivalis skulls|Mustela nivalis at Naturalis from the Rijksmuseum van Natuurlijke Historie",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Mustela nivalis",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<bdi><a href=\"https://en.wikipedia.org/wiki/en:Naturalis_Biodiversity_Center\" class=\"extiw\" title=\"w:en:Naturalis Biodiversity Center\"><span title=\"natural history museum and research center in the Leiden, The Netherlands\">Naturalis Biodiversity Center</span></a>\n</bdi>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-Zero"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with no machine-readable author"
+          },
+          {
+            "ns": 14,
+            "title": "Category:GWToolset Batch Upload"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Information field template with formatting"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Media donated by Naturalis Biodiversity Center"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Mustela nivalis at Naturalis from the Rijksmuseum van Natuurlijke Historie"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Mustela nivalis skulls"
+          }
+        ]
+      },
+      "44548560": {
+        "pageid": 44548560,
+        "ns": 6,
+        "title": "File:Naturalis Biodiversity Center - RMNH.MAM.27908.b reg - Mustela nivalis - skin.jpeg",
+        "index": 25,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 163251,
+            "width": 1920,
+            "height": 921,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/2/20/Naturalis_Biodiversity_Center_-_RMNH.MAM.27908.b_reg_-_Mustela_nivalis_-_skin.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Naturalis_Biodiversity_Center_-_RMNH.MAM.27908.b_reg_-_Mustela_nivalis_-_skin.jpeg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=44548560",
+            "sha1": "c24a74548cc27d17e045349a7bd77acebadcd575",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2015-10-27 20:36:57",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Naturalis Biodiversity Center - RMNH.MAM.27908.b reg - Mustela nivalis - skin",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "CC-Zero|Files with no machine-readable author|Media donated by Naturalis Biodiversity Center|Information field template with formatting|GWToolset Batch Upload|Mustela nivalis at Naturalis from the Rijksmuseum van Natuurlijke Historie",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Mustela nivalis",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<bdi><a href=\"https://en.wikipedia.org/wiki/en:Naturalis_Biodiversity_Center\" class=\"extiw\" title=\"w:en:Naturalis Biodiversity Center\"><span title=\"natural history museum and research center in the Leiden, The Netherlands\">Naturalis Biodiversity Center</span></a>\n</bdi>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-Zero"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with no machine-readable author"
+          },
+          {
+            "ns": 14,
+            "title": "Category:GWToolset Batch Upload"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Information field template with formatting"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Media donated by Naturalis Biodiversity Center"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Mustela nivalis at Naturalis from the Rijksmuseum van Natuurlijke Historie"
+          }
+        ]
+      },
+      "44783941": {
+        "pageid": 44783941,
+        "ns": 6,
+        "title": "File:Naturalis Biodiversity Center - ZMA.MAM.12857 pal - Mustela nivalis Linnaeus - skeleton (part).jpeg",
+        "index": 3,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 283705,
+            "width": 1920,
+            "height": 1280,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/f/f8/Naturalis_Biodiversity_Center_-_ZMA.MAM.12857_pal_-_Mustela_nivalis_Linnaeus_-_skeleton_%28part%29.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Naturalis_Biodiversity_Center_-_ZMA.MAM.12857_pal_-_Mustela_nivalis_Linnaeus_-_skeleton_(part).jpeg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=44783941",
+            "sha1": "27a25feed0aeaf2af0dc67552dac8571f2c261ae",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2015-11-04 22:59:23",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Naturalis Biodiversity Center - ZMA.MAM.12857 pal - Mustela nivalis Linnaeus - skeleton (part)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "CC-Zero|Media donated by Naturalis Biodiversity Center|Information field template with formatting|GWToolset Batch Upload|Mustela nivalis at Naturalis from the Zoölogisch Museum Amsterdam|Mustela nivalis jaws",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Mustela nivalis  Linnaeus",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "Linnaeus",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<bdi><a href=\"https://en.wikipedia.org/wiki/en:Naturalis_Biodiversity_Center\" class=\"extiw\" title=\"w:en:Naturalis Biodiversity Center\"><span title=\"natural history museum and research center in the Leiden, The Netherlands\">Naturalis Biodiversity Center</span></a>\n</bdi>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-Zero"
+          },
+          {
+            "ns": 14,
+            "title": "Category:GWToolset Batch Upload"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Information field template with formatting"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Media donated by Naturalis Biodiversity Center"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Mustela nivalis at Naturalis from the Zoölogisch Museum Amsterdam"
+          }
+        ]
+      },
+      "44964136": {
+        "pageid": 44964136,
+        "ns": 6,
+        "title": "File:Naturalis Biodiversity Center - ZMA.MAM.2017.a lat - Mustela nivalis Linnaeus - skull.jpeg",
+        "index": 24,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 253290,
+            "width": 1242,
+            "height": 1920,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/4/48/Naturalis_Biodiversity_Center_-_ZMA.MAM.2017.a_lat_-_Mustela_nivalis_Linnaeus_-_skull.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Naturalis_Biodiversity_Center_-_ZMA.MAM.2017.a_lat_-_Mustela_nivalis_Linnaeus_-_skull.jpeg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=44964136",
+            "sha1": "aa1b4beb5df3fdb1bd072d400c52b73786e330de",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2015-11-12 16:10:29",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Naturalis Biodiversity Center - ZMA.MAM.2017.a lat - Mustela nivalis Linnaeus - skull",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "CC-Zero|Media donated by Naturalis Biodiversity Center|Information field template with formatting|GWToolset Batch Upload|Mustela nivalis skulls at Naturalis from the Zoölogisch Museum Amsterdam",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Mustela nivalis  Linnaeus",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "Linnaeus",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<bdi><a href=\"https://en.wikipedia.org/wiki/en:Naturalis_Biodiversity_Center\" class=\"extiw\" title=\"w:en:Naturalis Biodiversity Center\"><span title=\"natural history museum and research center in the Leiden, The Netherlands\">Naturalis Biodiversity Center</span></a>\n</bdi>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "44711464": {
+        "pageid": 44711464,
+        "ns": 6,
+        "title": "File:Naturalis Biodiversity Center - ZMA.MAM.23318 lab - Mustela nivalis Linnaeus - skeleton (part).jpeg",
+        "index": 5,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 344850,
+            "width": 1664,
+            "height": 1920,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/c/c6/Naturalis_Biodiversity_Center_-_ZMA.MAM.23318_lab_-_Mustela_nivalis_Linnaeus_-_skeleton_%28part%29.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Naturalis_Biodiversity_Center_-_ZMA.MAM.23318_lab_-_Mustela_nivalis_Linnaeus_-_skeleton_(part).jpeg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=44711464",
+            "sha1": "87e02dec9c8ccadd3df2fa2a66e26185c2920b6f",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2015-11-02 11:27:38",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Naturalis Biodiversity Center - ZMA.MAM.23318 lab - Mustela nivalis Linnaeus - skeleton (part)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "CC-Zero|Media donated by Naturalis Biodiversity Center|Information field template with formatting|GWToolset Batch Upload|Mustela nivalis bones|Carnivora penis bones|Mustela nivalis at Naturalis from the Zoölogisch Museum Amsterdam",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Mustela nivalis  Linnaeus",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "Linnaeus",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<bdi><a href=\"https://en.wikipedia.org/wiki/en:Naturalis_Biodiversity_Center\" class=\"extiw\" title=\"w:en:Naturalis Biodiversity Center\"><span title=\"natural history museum and research center in the Leiden, The Netherlands\">Naturalis Biodiversity Center</span></a>\n</bdi>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-Zero"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Carnivora penis bones"
+          },
+          {
+            "ns": 14,
+            "title": "Category:GWToolset Batch Upload"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Information field template with formatting"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Media donated by Naturalis Biodiversity Center"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Mustela nivalis at Naturalis from the Zoölogisch Museum Amsterdam"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Mustela nivalis bones"
+          }
+        ]
+      },
+      "44734103": {
+        "pageid": 44734103,
+        "ns": 6,
+        "title": "File:Naturalis Biodiversity Center - ZMA.MAM.24761.a gen - Mustela nivalis Linnaeus - skull.jpeg",
+        "index": 8,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 374185,
+            "width": 1772,
+            "height": 1920,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/2/26/Naturalis_Biodiversity_Center_-_ZMA.MAM.24761.a_gen_-_Mustela_nivalis_Linnaeus_-_skull.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Naturalis_Biodiversity_Center_-_ZMA.MAM.24761.a_gen_-_Mustela_nivalis_Linnaeus_-_skull.jpeg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=44734103",
+            "sha1": "328c2c1118679eb4c672021eaabcbac0e13670c6",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2015-11-03 02:40:44",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Naturalis Biodiversity Center - ZMA.MAM.24761.a gen - Mustela nivalis Linnaeus - skull",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "CC-Zero|Media donated by Naturalis Biodiversity Center|Information field template with formatting|GWToolset Batch Upload|Mustela nivalis at Naturalis from the Zoölogisch Museum Amsterdam|Mustela nivalis mandibles",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Mustela nivalis  Linnaeus",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "Linnaeus",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<bdi><a href=\"https://en.wikipedia.org/wiki/en:Naturalis_Biodiversity_Center\" class=\"extiw\" title=\"w:en:Naturalis Biodiversity Center\"><span title=\"natural history museum and research center in the Leiden, The Netherlands\">Naturalis Biodiversity Center</span></a>\n</bdi>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-Zero"
+          },
+          {
+            "ns": 14,
+            "title": "Category:GWToolset Batch Upload"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Information field template with formatting"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Media donated by Naturalis Biodiversity Center"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Mustela nivalis at Naturalis from the Zoölogisch Museum Amsterdam"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Mustela nivalis mandibles"
+          }
+        ]
+      },
+      "44734104": {
+        "pageid": 44734104,
+        "ns": 6,
+        "title": "File:Naturalis Biodiversity Center - ZMA.MAM.24761.a lab - Mustela nivalis Linnaeus - skull.jpeg",
+        "index": 2,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 368071,
+            "width": 1772,
+            "height": 1920,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/7/7f/Naturalis_Biodiversity_Center_-_ZMA.MAM.24761.a_lab_-_Mustela_nivalis_Linnaeus_-_skull.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Naturalis_Biodiversity_Center_-_ZMA.MAM.24761.a_lab_-_Mustela_nivalis_Linnaeus_-_skull.jpeg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=44734104",
+            "sha1": "4147843cca295a0aa2f45256be95e371ac977fb5",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2015-11-03 02:40:45",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Naturalis Biodiversity Center - ZMA.MAM.24761.a lab - Mustela nivalis Linnaeus - skull",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "CC-Zero|Media donated by Naturalis Biodiversity Center|Information field template with formatting|GWToolset Batch Upload|Mustela nivalis at Naturalis from the Zoölogisch Museum Amsterdam|Mustela nivalis mandibles",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Mustela nivalis  Linnaeus",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "Linnaeus",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<bdi><a href=\"https://en.wikipedia.org/wiki/en:Naturalis_Biodiversity_Center\" class=\"extiw\" title=\"w:en:Naturalis Biodiversity Center\"><span title=\"natural history museum and research center in the Leiden, The Netherlands\">Naturalis Biodiversity Center</span></a>\n</bdi>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-Zero"
+          },
+          {
+            "ns": 14,
+            "title": "Category:GWToolset Batch Upload"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Information field template with formatting"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Media donated by Naturalis Biodiversity Center"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Mustela nivalis at Naturalis from the Zoölogisch Museum Amsterdam"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Mustela nivalis mandibles"
+          }
+        ]
+      },
+      "44761155": {
+        "pageid": 44761155,
+        "ns": 6,
+        "title": "File:Naturalis Biodiversity Center - ZMA.MAM.2832.a lat - Mustela nivalis Linnaeus - skull.jpeg",
+        "index": 23,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 339477,
+            "width": 1760,
+            "height": 1920,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/a/a0/Naturalis_Biodiversity_Center_-_ZMA.MAM.2832.a_lat_-_Mustela_nivalis_Linnaeus_-_skull.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Naturalis_Biodiversity_Center_-_ZMA.MAM.2832.a_lat_-_Mustela_nivalis_Linnaeus_-_skull.jpeg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=44761155",
+            "sha1": "6b84be7924b5f76dd1f5b9e81f2bb813f4499c6f",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2015-11-04 02:36:55",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Naturalis Biodiversity Center - ZMA.MAM.2832.a lat - Mustela nivalis Linnaeus - skull",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "CC-Zero|Media donated by Naturalis Biodiversity Center|Information field template with formatting|GWToolset Batch Upload|Mustela nivalis skulls at Naturalis from the Zoölogisch Museum Amsterdam",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Mustela nivalis  Linnaeus",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "Linnaeus",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<bdi><a href=\"https://en.wikipedia.org/wiki/en:Naturalis_Biodiversity_Center\" class=\"extiw\" title=\"w:en:Naturalis Biodiversity Center\"><span title=\"natural history museum and research center in the Leiden, The Netherlands\">Naturalis Biodiversity Center</span></a>\n</bdi>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-Zero"
+          },
+          {
+            "ns": 14,
+            "title": "Category:GWToolset Batch Upload"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Information field template with formatting"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Media donated by Naturalis Biodiversity Center"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Mustela nivalis skulls at Naturalis from the Zoölogisch Museum Amsterdam"
+          }
+        ]
+      },
+      "44775832": {
+        "pageid": 44775832,
+        "ns": 6,
+        "title": "File:Naturalis Biodiversity Center - ZMA.MAM.2869.a lat - Mustela nivalis Linnaeus - skull.jpeg",
+        "index": 20,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 348582,
+            "width": 1920,
+            "height": 1760,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/8/8f/Naturalis_Biodiversity_Center_-_ZMA.MAM.2869.a_lat_-_Mustela_nivalis_Linnaeus_-_skull.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Naturalis_Biodiversity_Center_-_ZMA.MAM.2869.a_lat_-_Mustela_nivalis_Linnaeus_-_skull.jpeg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=44775832",
+            "sha1": "45b4556ae93a76b820509cce29b8f3ba1f93aae7",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2015-11-04 16:55:12",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Naturalis Biodiversity Center - ZMA.MAM.2869.a lat - Mustela nivalis Linnaeus - skull",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "CC-Zero|Media donated by Naturalis Biodiversity Center|Information field template with formatting|GWToolset Batch Upload|Mustela nivalis skulls at Naturalis from the Zoölogisch Museum Amsterdam",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Mustela nivalis  Linnaeus",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "Linnaeus",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<bdi><a href=\"https://en.wikipedia.org/wiki/en:Naturalis_Biodiversity_Center\" class=\"extiw\" title=\"w:en:Naturalis Biodiversity Center\"><span title=\"natural history museum and research center in the Leiden, The Netherlands\">Naturalis Biodiversity Center</span></a>\n</bdi>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-Zero"
+          },
+          {
+            "ns": 14,
+            "title": "Category:GWToolset Batch Upload"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Information field template with formatting"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Media donated by Naturalis Biodiversity Center"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Mustela nivalis skulls at Naturalis from the Zoölogisch Museum Amsterdam"
+          }
+        ]
+      },
+      "44778702": {
+        "pageid": 44778702,
+        "ns": 6,
+        "title": "File:Naturalis Biodiversity Center - ZMA.MAM.2962.a pal - Mustela nivalis Linnaeus - skull.jpeg",
+        "index": 22,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 324869,
+            "width": 1408,
+            "height": 1920,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/9/95/Naturalis_Biodiversity_Center_-_ZMA.MAM.2962.a_pal_-_Mustela_nivalis_Linnaeus_-_skull.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Naturalis_Biodiversity_Center_-_ZMA.MAM.2962.a_pal_-_Mustela_nivalis_Linnaeus_-_skull.jpeg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=44778702",
+            "sha1": "b722554861e5b10e0abf570889d98cf2cbdefd91",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2015-11-04 18:41:04",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Naturalis Biodiversity Center - ZMA.MAM.2962.a pal - Mustela nivalis Linnaeus - skull",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "CC-Zero|Media donated by Naturalis Biodiversity Center|Information field template with formatting|GWToolset Batch Upload|Mustela nivalis skulls at Naturalis from the Zoölogisch Museum Amsterdam",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Mustela nivalis  Linnaeus",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "Linnaeus",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<bdi><a href=\"https://en.wikipedia.org/wiki/en:Naturalis_Biodiversity_Center\" class=\"extiw\" title=\"w:en:Naturalis Biodiversity Center\"><span title=\"natural history museum and research center in the Leiden, The Netherlands\">Naturalis Biodiversity Center</span></a>\n</bdi>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-Zero"
+          },
+          {
+            "ns": 14,
+            "title": "Category:GWToolset Batch Upload"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Information field template with formatting"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Media donated by Naturalis Biodiversity Center"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Mustela nivalis skulls at Naturalis from the Zoölogisch Museum Amsterdam"
+          }
+        ]
+      },
+      "44791499": {
+        "pageid": 44791499,
+        "ns": 6,
+        "title": "File:Naturalis Biodiversity Center - ZMA.MAM.4935.a gen - Mustela nivalis Linnaeus - skeleton (part).jpeg",
+        "index": 17,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 345136,
+            "width": 1760,
+            "height": 1920,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Naturalis_Biodiversity_Center_-_ZMA.MAM.4935.a_gen_-_Mustela_nivalis_Linnaeus_-_skeleton_%28part%29.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Naturalis_Biodiversity_Center_-_ZMA.MAM.4935.a_gen_-_Mustela_nivalis_Linnaeus_-_skeleton_(part).jpeg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=44791499",
+            "sha1": "249f37aeb6cfbedd036a6b43fdb09db90f71365b",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2015-11-05 08:42:49",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Naturalis Biodiversity Center - ZMA.MAM.4935.a gen - Mustela nivalis Linnaeus - skeleton (part)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "CC-Zero|Media donated by Naturalis Biodiversity Center|Information field template with formatting|GWToolset Batch Upload|Mustela nivalis at Naturalis from the Zoölogisch Museum Amsterdam|Mustela nivalis jaws",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Mustela nivalis  Linnaeus",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "Linnaeus",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<bdi><a href=\"https://en.wikipedia.org/wiki/en:Naturalis_Biodiversity_Center\" class=\"extiw\" title=\"w:en:Naturalis Biodiversity Center\"><span title=\"natural history museum and research center in the Leiden, The Netherlands\">Naturalis Biodiversity Center</span></a>\n</bdi>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "44985927": {
+        "pageid": 44985927,
+        "ns": 6,
+        "title": "File:Naturalis Biodiversity Center - ZMA.MAM.9246.a pal - Mustela nivalis Linnaeus - skeleton (part).jpeg",
+        "index": 15,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 330465,
+            "width": 1920,
+            "height": 1920,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/0/06/Naturalis_Biodiversity_Center_-_ZMA.MAM.9246.a_pal_-_Mustela_nivalis_Linnaeus_-_skeleton_%28part%29.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Naturalis_Biodiversity_Center_-_ZMA.MAM.9246.a_pal_-_Mustela_nivalis_Linnaeus_-_skeleton_(part).jpeg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=44985927",
+            "sha1": "b5051969253309b83d87e947056532bfa555a294",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2015-11-13 17:31:55",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Naturalis Biodiversity Center - ZMA.MAM.9246.a pal - Mustela nivalis Linnaeus - skeleton (part)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "CC-Zero|Media donated by Naturalis Biodiversity Center|Information field template with formatting|GWToolset Batch Upload|Mustela nivalis at Naturalis from the Zoölogisch Museum Amsterdam|Mustela nivalis jaws",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Mustela nivalis  Linnaeus",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "Linnaeus",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<bdi><a href=\"https://en.wikipedia.org/wiki/en:Naturalis_Biodiversity_Center\" class=\"extiw\" title=\"w:en:Naturalis Biodiversity Center\"><span title=\"natural history museum and research center in the Leiden, The Netherlands\">Naturalis Biodiversity Center</span></a>\n</bdi>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "98460237": {
+        "pageid": 98460237,
+        "ns": 6,
+        "title": "File:Stamp of Belarus - 2020 - Colnect 967492 - Least Weasel Mustela nivalis in Winter.jpeg",
+        "index": 14,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 27949,
+            "width": 279,
+            "height": 279,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/7/7d/Stamp_of_Belarus_-_2020_-_Colnect_967492_-_Least_Weasel_Mustela_nivalis_in_Winter.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Stamp_of_Belarus_-_2020_-_Colnect_967492_-_Least_Weasel_Mustela_nivalis_in_Winter.jpeg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=98460237",
+            "sha1": "b309b5d7703f2957c9b867c68b7cf8f5fbbc9a06",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2021-01-03 04:02:48",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Stamp of Belarus - 2020 - Colnect 967492 - Least Weasel Mustela nivalis in Winter",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "PD-BY-exempt|Mustela nivalis in Belarus|Mammals on stamps of Belarus|2020 stamps of Belarus|Mustela nivalis on stamps|Mustela nivalis - winter form|Belarus stamps rate N",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Initial value:1.50 r",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2020",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://colnect.com/en/stamps/stamp/967492-Least_Weasel_Mustela_nivalis_in_Winter-Wildlife_With_Seasonal_Variability_2020-Belarus\">https://colnect.com/en/stamps/stamp/967492-Least_Weasel_Mustela_nivalis_in_Winter-Wildlife_With_Seasonal_Variability_2020-Belarus</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "Post of Belarus",
+                "source": "commons-desc-page"
+              },
+              "Permission": {
+                "value": "<table class=\"licensetpl\" style=\"display:none\">\n<tbody><tr>\n<td><span class=\"licensetpl_short\">Public domain</span><span class=\"licensetpl_long\">Public domain</span><span class=\"licensetpl_link_req\">false</span><span class=\"licensetpl_attr_req\">false</span>\n</td></tr></tbody></table>\n<table style=\"width: 100%; clear: both; margin: 0.5em auto; background-color: var(--background-color-progressive-subtle, #f7f8ff); color: var(--color-base, #202122); border: var(--border-subtle, 2px solid #8888aa); border-spacing: 8px; padding: 0px;\" dir=\"ltr\" class=\"layouttemplate\" lang=\"en\">\n<tbody><tr>\n<td><span typeof=\"mw:File\"><span title=\"Public domain\"><img alt=\"Public domain\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/PD-icon.svg/120px-PD-icon.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"64\" height=\"64\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/PD-icon.svg/250px-PD-icon.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"196\" data-file-height=\"196\"></span></span>\n</td>\n<td><b>This work is not an object of copyright</b> according to the Law of the <b><a href=\"//commons.wikimedia.org/wiki/%D0%91%D0%B5%D0%BB%D0%B0%D1%80%D1%83%D1%81%D1%8C\" title=\"Беларусь\">Belarus</a></b> No. 370-XIII of May 16, 1996 on Copyright and Neighbouring Rights.\n<p><b>Article 8.</b> Works that are not Objects of Copyright\n</p>\n<ol><li>Shall not be objects of copyright:\n<ul><li>formal documents (laws, judgements, other texts of legal, administrative and judicial nature), and also their official translations;</li>\n<li>state symbols and signs (flag, coat of arms, anthem, awards, banknotes and other signs<sup id=\"cite_ref-1\" class=\"reference\"><a href=\"#cite_note-1\"><span class=\"cite-bracket\">[</span>1<span class=\"cite-bracket\">]</span></a></sup>);</li>\n<li>works of folk arts, authors of which are not known.</li></ul></li>\n<li>Copyright does not cover ideas, processes, systems, methods of operation, concepts, principles, discoveries or simply information as such, even if they are expressed, reflected, explained or embodied in the work.</li></ol>\n<hr>\n<p>Full text of the Law: <a rel=\"nofollow\" class=\"external text\" href=\"http://www.medialaw.ru/publications/books/book46/03.html\">in Russian</a>, <a rel=\"nofollow\" class=\"external text\" href=\"http://www.law.by/work/EnglPortal.nsf/6e1a652fbefce34ac2256d910056d559/7e18184c14ae0e6bc2256dec0042400c?OpenDocument\">in English</a>.\n</p>\n<ol class=\"references\">\n<li id=\"cite_note-1\"><span class=\"mw-cite-backlink\"><a href=\"#cite_ref-1\">↑</a></span> <span class=\"reference-text\">Postage stamps are state signs according to the Article 1 of  the <a rel=\"nofollow\" class=\"external text\" href=\"http://www.pravo.by/webnpa/text.asp?RN=h10300258\">Law of the Republic of Belarus No. 258-З of December 15, 2003 on Mail Service</a> (<b>ru</b>) почтовая марка – государственный знак почтовой оплаты, отпечатанный на бумаге и имеющий художественное изображение, а также надписи «БЕЛАРУСЬ», «BELARUS», год выпуска (арабскими цифрами) и номинальную стоимость (арабскими цифрами). Допускается литерное обозначение номинальной стоимости почтовой марки;</span>\n</li>\n</ol>\n</td>\n<td><figure class=\"mw-halign-right\" typeof=\"mw:File\"><span><img src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/4/48/Coat_of_arms_of_Belarus_%282020%E2%80%93present%29.svg/120px-Coat_of_arms_of_Belarus_%282020%E2%80%93present%29.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"64\" height=\"63\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/4/48/Coat_of_arms_of_Belarus_%282020%E2%80%93present%29.svg/250px-Coat_of_arms_of_Belarus_%282020%E2%80%93present%29.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"647\" data-file-height=\"641\"></span><figcaption></figcaption></figure>\n</td></tr>\n<tr>\n<td colspan=\"3\">\n<hr>\n<p><b>Comment</b> – According to interstate and international compacts the <i><a href=\"https://en.wikipedia.org/wiki/Belarus\" class=\"extiw\" title=\"w:Belarus\">Republic of Belarus</a></i> is the legal successor of the <i><a href=\"https://en.wikipedia.org/wiki/Byelorussian_Soviet_Socialist_Republic\" class=\"extiw\" title=\"w:Byelorussian Soviet Socialist Republic\">Byelorussian Soviet Socialist Republic</a></i>, therefore this license tag is also applicable to official symbols and formal documents of the Byelorussian SSR.\n</p><p><b>Warning</b> – This license tag cannot be applied to proposed official symbols and drafts of the formal documents, which can be copyrighted.\n</p>\n<hr>\n<p><span style=\"font-size:small;line-height:1.4\" class=\"plainlinks noprint\"><a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:PD-BY-exempt/be\" href=\"https://commons.wikimedia.org/wiki/Template:PD-BY-exempt/be\"><bdi class=\"language lang-be\" lang=\"be\">беларуская</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:PD-BY-exempt/be-tarask\" href=\"https://commons.wikimedia.org/wiki/Template:PD-BY-exempt/be-tarask\"><bdi class=\"language lang-be-tarask\" lang=\"be-tarask\">беларуская (тарашкевіца)</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:PD-BY-exempt/de\" href=\"https://commons.wikimedia.org/wiki/Template:PD-BY-exempt/de\"><bdi class=\"language lang-de\" lang=\"de\">Deutsch</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:PD-BY-exempt/en\" href=\"https://commons.wikimedia.org/wiki/Template:PD-BY-exempt/en\"><bdi class=\"language lang-en\" lang=\"en\">English</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:PD-BY-exempt/ja\" href=\"https://commons.wikimedia.org/wiki/Template:PD-BY-exempt/ja\"><bdi class=\"language lang-ja\" lang=\"ja\">日本語</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:PD-BY-exempt/mk\" href=\"https://commons.wikimedia.org/wiki/Template:PD-BY-exempt/mk\"><bdi class=\"language lang-mk\" lang=\"mk\">македонски</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:PD-BY-exempt/ru\" href=\"https://commons.wikimedia.org/wiki/Template:PD-BY-exempt/ru\"><bdi class=\"language lang-ru\" lang=\"ru\">русский</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:PD-BY-exempt/uk\" href=\"https://commons.wikimedia.org/wiki/Template:PD-BY-exempt/uk\"><bdi class=\"language lang-uk\" lang=\"uk\">українська</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:PD-BY-exempt/zh\" href=\"https://commons.wikimedia.org/wiki/Template:PD-BY-exempt/zh\"><bdi class=\"language lang-zh\" lang=\"zh\">中文</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:PD-BY-exempt/zh-hans\" href=\"https://commons.wikimedia.org/wiki/Template:PD-BY-exempt/zh-hans\"><bdi class=\"language lang-zh-hans\" lang=\"zh-hans\">中文（简体）</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:PD-BY-exempt/zh-hant\" href=\"https://commons.wikimedia.org/wiki/Template:PD-BY-exempt/zh-hant\"><bdi class=\"language lang-zh-hant\" lang=\"zh-hant\">中文（繁體）</bdi></a> <b>∙</b> <small class=\"plainlinks\"><a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/w/index.php?title=Template:PD-BY-exempt/lang&amp;action=edit\" href=\"https://commons.wikimedia.org/w/index.php?title=Template:PD-BY-exempt/lang&amp;action=edit\">+/−</a></small></span>\n</p>\n</td></tr></tbody></table>",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseShortName": {
+                "value": "Public domain",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Public domain",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Copyrighted": {
+                "value": "False",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "pd",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "98460240": {
+        "pageid": 98460240,
+        "ns": 6,
+        "title": "File:Stamp of Belarus - 2020 - Colnect 967493 - Least Weasel Mustela nivalis in Summer.jpeg",
+        "index": 9,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 31251,
+            "width": 281,
+            "height": 281,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/4/41/Stamp_of_Belarus_-_2020_-_Colnect_967493_-_Least_Weasel_Mustela_nivalis_in_Summer.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Stamp_of_Belarus_-_2020_-_Colnect_967493_-_Least_Weasel_Mustela_nivalis_in_Summer.jpeg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=98460240",
+            "sha1": "6bddd37bba324d3c1f9786cf556ed3838c4732d9",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2021-01-03 04:02:56",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Stamp of Belarus - 2020 - Colnect 967493 - Least Weasel Mustela nivalis in Summer",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "PD-BY-exempt|Mustela nivalis in Belarus|Summer on stamps|Mammals on stamps of Belarus|2020 stamps of Belarus|Mustela nivalis on stamps|Belarus stamps rate M",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Initial value: 1.74 r",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2020",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://colnect.com/en/stamps/stamp/967493-Least_Weasel_Mustela_nivalis_in_Summer-Wildlife_With_Seasonal_Variability_2020-Belarus\">https://colnect.com/en/stamps/stamp/967493-Least_Weasel_Mustela_nivalis_in_Summer-Wildlife_With_Seasonal_Variability_2020-Belarus</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "Post of Belarus",
+                "source": "commons-desc-page"
+              },
+              "Permission": {
+                "value": "<table class=\"licensetpl\" style=\"display:none\">\n<tbody><tr>\n<td><span class=\"licensetpl_short\">Public domain</span><span class=\"licensetpl_long\">Public domain</span><span class=\"licensetpl_link_req\">false</span><span class=\"licensetpl_attr_req\">false</span>\n</td></tr></tbody></table>\n<table style=\"width: 100%; clear: both; margin: 0.5em auto; background-color: var(--background-color-progressive-subtle, #f7f8ff); color: var(--color-base, #202122); border: var(--border-subtle, 2px solid #8888aa); border-spacing: 8px; padding: 0px;\" dir=\"ltr\" class=\"layouttemplate\" lang=\"en\">\n<tbody><tr>\n<td><span typeof=\"mw:File\"><span title=\"Public domain\"><img alt=\"Public domain\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/PD-icon.svg/120px-PD-icon.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"64\" height=\"64\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/PD-icon.svg/250px-PD-icon.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"196\" data-file-height=\"196\"></span></span>\n</td>\n<td><b>This work is not an object of copyright</b> according to the Law of the <b><a href=\"//commons.wikimedia.org/wiki/%D0%91%D0%B5%D0%BB%D0%B0%D1%80%D1%83%D1%81%D1%8C\" title=\"Беларусь\">Belarus</a></b> No. 370-XIII of May 16, 1996 on Copyright and Neighbouring Rights.\n<p><b>Article 8.</b> Works that are not Objects of Copyright\n</p>\n<ol><li>Shall not be objects of copyright:\n<ul><li>formal documents (laws, judgements, other texts of legal, administrative and judicial nature), and also their official translations;</li>\n<li>state symbols and signs (flag, coat of arms, anthem, awards, banknotes and other signs<sup id=\"cite_ref-1\" class=\"reference\"><a href=\"#cite_note-1\"><span class=\"cite-bracket\">[</span>1<span class=\"cite-bracket\">]</span></a></sup>);</li>\n<li>works of folk arts, authors of which are not known.</li></ul></li>\n<li>Copyright does not cover ideas, processes, systems, methods of operation, concepts, principles, discoveries or simply information as such, even if they are expressed, reflected, explained or embodied in the work.</li></ol>\n<hr>\n<p>Full text of the Law: <a rel=\"nofollow\" class=\"external text\" href=\"http://www.medialaw.ru/publications/books/book46/03.html\">in Russian</a>, <a rel=\"nofollow\" class=\"external text\" href=\"http://www.law.by/work/EnglPortal.nsf/6e1a652fbefce34ac2256d910056d559/7e18184c14ae0e6bc2256dec0042400c?OpenDocument\">in English</a>.\n</p>\n<ol class=\"references\">\n<li id=\"cite_note-1\"><span class=\"mw-cite-backlink\"><a href=\"#cite_ref-1\">↑</a></span> <span class=\"reference-text\">Postage stamps are state signs according to the Article 1 of  the <a rel=\"nofollow\" class=\"external text\" href=\"http://www.pravo.by/webnpa/text.asp?RN=h10300258\">Law of the Republic of Belarus No. 258-З of December 15, 2003 on Mail Service</a> (<b>ru</b>) почтовая марка – государственный знак почтовой оплаты, отпечатанный на бумаге и имеющий художественное изображение, а также надписи «БЕЛАРУСЬ», «BELARUS», год выпуска (арабскими цифрами) и номинальную стоимость (арабскими цифрами). Допускается литерное обозначение номинальной стоимости почтовой марки;</span>\n</li>\n</ol>\n</td>\n<td><figure class=\"mw-halign-right\" typeof=\"mw:File\"><span><img src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/4/48/Coat_of_arms_of_Belarus_%282020%E2%80%93present%29.svg/120px-Coat_of_arms_of_Belarus_%282020%E2%80%93present%29.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"64\" height=\"63\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/4/48/Coat_of_arms_of_Belarus_%282020%E2%80%93present%29.svg/250px-Coat_of_arms_of_Belarus_%282020%E2%80%93present%29.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"647\" data-file-height=\"641\"></span><figcaption></figcaption></figure>\n</td></tr>\n<tr>\n<td colspan=\"3\">\n<hr>\n<p><b>Comment</b> – According to interstate and international compacts the <i><a href=\"https://en.wikipedia.org/wiki/Belarus\" class=\"extiw\" title=\"w:Belarus\">Republic of Belarus</a></i> is the legal successor of the <i><a href=\"https://en.wikipedia.org/wiki/Byelorussian_Soviet_Socialist_Republic\" class=\"extiw\" title=\"w:Byelorussian Soviet Socialist Republic\">Byelorussian Soviet Socialist Republic</a></i>, therefore this license tag is also applicable to official symbols and formal documents of the Byelorussian SSR.\n</p><p><b>Warning</b> – This license tag cannot be applied to proposed official symbols and drafts of the formal documents, which can be copyrighted.\n</p>\n<hr>\n<p><span style=\"font-size:small;line-height:1.4\" class=\"plainlinks noprint\"><a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:PD-BY-exempt/be\" href=\"https://commons.wikimedia.org/wiki/Template:PD-BY-exempt/be\"><bdi class=\"language lang-be\" lang=\"be\">беларуская</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:PD-BY-exempt/be-tarask\" href=\"https://commons.wikimedia.org/wiki/Template:PD-BY-exempt/be-tarask\"><bdi class=\"language lang-be-tarask\" lang=\"be-tarask\">беларуская (тарашкевіца)</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:PD-BY-exempt/de\" href=\"https://commons.wikimedia.org/wiki/Template:PD-BY-exempt/de\"><bdi class=\"language lang-de\" lang=\"de\">Deutsch</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:PD-BY-exempt/en\" href=\"https://commons.wikimedia.org/wiki/Template:PD-BY-exempt/en\"><bdi class=\"language lang-en\" lang=\"en\">English</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:PD-BY-exempt/ja\" href=\"https://commons.wikimedia.org/wiki/Template:PD-BY-exempt/ja\"><bdi class=\"language lang-ja\" lang=\"ja\">日本語</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:PD-BY-exempt/mk\" href=\"https://commons.wikimedia.org/wiki/Template:PD-BY-exempt/mk\"><bdi class=\"language lang-mk\" lang=\"mk\">македонски</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:PD-BY-exempt/ru\" href=\"https://commons.wikimedia.org/wiki/Template:PD-BY-exempt/ru\"><bdi class=\"language lang-ru\" lang=\"ru\">русский</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:PD-BY-exempt/uk\" href=\"https://commons.wikimedia.org/wiki/Template:PD-BY-exempt/uk\"><bdi class=\"language lang-uk\" lang=\"uk\">українська</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:PD-BY-exempt/zh\" href=\"https://commons.wikimedia.org/wiki/Template:PD-BY-exempt/zh\"><bdi class=\"language lang-zh\" lang=\"zh\">中文</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:PD-BY-exempt/zh-hans\" href=\"https://commons.wikimedia.org/wiki/Template:PD-BY-exempt/zh-hans\"><bdi class=\"language lang-zh-hans\" lang=\"zh-hans\">中文（简体）</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:PD-BY-exempt/zh-hant\" href=\"https://commons.wikimedia.org/wiki/Template:PD-BY-exempt/zh-hant\"><bdi class=\"language lang-zh-hant\" lang=\"zh-hant\">中文（繁體）</bdi></a> <b>∙</b> <small class=\"plainlinks\"><a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/w/index.php?title=Template:PD-BY-exempt/lang&amp;action=edit\" href=\"https://commons.wikimedia.org/w/index.php?title=Template:PD-BY-exempt/lang&amp;action=edit\">+/−</a></small></span>\n</p>\n</td></tr></tbody></table>",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseShortName": {
+                "value": "Public domain",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Public domain",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Copyrighted": {
+                "value": "False",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "pd",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

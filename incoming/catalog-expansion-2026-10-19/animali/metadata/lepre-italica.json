@@ -1,0 +1,1465 @@
+{
+  "batchcomplete": "",
+  "query": {
+    "pages": {
+      "66515727": {
+        "pageid": 66515727,
+        "ns": 6,
+        "title": "File:Lepus corsicanus.jpeg",
+        "index": 5,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 504267,
+            "width": 1269,
+            "height": 1269,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/c/cb/Lepus_corsicanus.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Lepus_corsicanus.jpeg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=66515727",
+            "sha1": "c8e5af7973732e1bc921c56f4ff272f193b76a91",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2018-02-17 11:15:06",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Lepus corsicanus",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Lepus corsicanus|GFDL|CC-BY-SA-3.0,2.5,2.0,1.0|License migration redundant|Self-published work|Images with extracted images",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Marco Scalisi 2007\n<p>Opera propria\nLepre italica nella R.N.R. Monterano (RM)\n©\n</p>\n-",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "31 October 2012 (original upload date)",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<bdi lang=\"en\" dir=\"ltr\">Transferred from <span class=\"plainlinks\"><a class=\"external text\" data-mw-original-href=\"//it.wikipedia.org\" href=\"https://it.wikipedia.org\">it.wikipedia</a></span> to Commons.</bdi>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"https://en.wikipedia.org/wiki/it:User:Marcosca\" class=\"extiw\" title=\"w:it:User:Marcosca\">Marcosca</a> at <a href=\"https://en.wikipedia.org/wiki/it:\" class=\"extiw\" title=\"w:it:\">Italian Wikipedia</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Attribution": {
+                "value": "<a href=\"https://en.wikipedia.org/wiki/it:User:Marcosca\" class=\"extiw\" title=\"w:it:User:Marcosca\">Marcosca</a> at <a href=\"https://en.wikipedia.org/wiki/it:\" class=\"extiw\" title=\"w:it:\">Italian Wikipedia</a>",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0,2.5,2.0,1.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:GFDL"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Images with extracted images"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Lepus corsicanus"
+          },
+          {
+            "ns": 14,
+            "title": "Category:License migration redundant"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          }
+        ]
+      },
+      "189062143": {
+        "pageid": 189062143,
+        "ns": 6,
+        "title": "File:Lepus corsicanus.jpg",
+        "index": 6,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 518163,
+            "width": 1101,
+            "height": 831,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/c/cc/Lepus_corsicanus.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Lepus_corsicanus.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=189062143",
+            "sha1": "e518a228554d3346322d8736652edf07b90f4aa7",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2026-04-20 17:17:23",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Lepus corsicanus",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Lepus corsicanus|Extracted images|Media from iNaturalist|Files with coordinates missing SDC location of creation|Uploaded with iNaturalist2Commons|Media from GBIF",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "42.098052",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "9.444840",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Apennine Hare (<i>Lepus corsicanus</i>) in France",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2013-05-07",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/88166717\">https://www.inaturalist.org/photos/88166717</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/280011\">Thomas Galewski</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-4.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Extracted images"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with coordinates missing SDC location of creation"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Lepus corsicanus"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Media from GBIF"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Media from iNaturalist"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Uploaded with iNaturalist2Commons"
+          }
+        ]
+      },
+      "71950612": {
+        "pageid": 71950612,
+        "ns": 6,
+        "title": "File:Lepus corsicanus (cropped).jpeg",
+        "index": 2,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 145342,
+            "width": 536,
+            "height": 424,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/f/f3/Lepus_corsicanus_%28cropped%29.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Lepus_corsicanus_(cropped).jpeg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=71950612",
+            "sha1": "8351dd52f61aa9851fac1b1bc1d542ff647551ca",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2018-08-24 01:21:41",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Lepus corsicanus (cropped)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Lepus corsicanus|GFDL|CC-BY-SA-3.0,2.5,2.0,1.0|License migration redundant|Self-published work|Extracted images",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Marco Scalisi 2007\n<p>Opera propria\nLepre italica nella R.N.R. Monterano (RM)\n©\n</p>\n-",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "31 October 2012 (original upload date)",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<bdi lang=\"en\" dir=\"ltr\">Transferred from <span class=\"plainlinks\"><a class=\"external text\" data-mw-original-href=\"//it.wikipedia.org\" href=\"https://it.wikipedia.org\">it.wikipedia</a></span> to Commons.</bdi>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"https://en.wikipedia.org/wiki/it:User:Marcosca\" class=\"extiw\" title=\"w:it:User:Marcosca\">Marcosca</a> at <a href=\"https://en.wikipedia.org/wiki/it:\" class=\"extiw\" title=\"w:it:\">Italian Wikipedia</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Attribution": {
+                "value": "<a href=\"https://en.wikipedia.org/wiki/it:User:Marcosca\" class=\"extiw\" title=\"w:it:User:Marcosca\">Marcosca</a> at <a href=\"https://en.wikipedia.org/wiki/it:\" class=\"extiw\" title=\"w:it:\">Italian Wikipedia</a>",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0,2.5,2.0,1.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Extracted images"
+          },
+          {
+            "ns": 14,
+            "title": "Category:GFDL"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Lepus corsicanus"
+          },
+          {
+            "ns": 14,
+            "title": "Category:License migration redundant"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          }
+        ]
+      },
+      "160001204": {
+        "pageid": 160001204,
+        "ns": 6,
+        "title": "File:Lepus corsicanus 138346092.jpg",
+        "index": 1,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1692529,
+            "width": 922,
+            "height": 2048,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Lepus_corsicanus_138346092.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Lepus_corsicanus_138346092.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=160001204",
+            "sha1": "7b0b9497ab0c760bc4b1107358869ac4c84b3bd3",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2025-02-18 21:03:18",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Lepus corsicanus 138346092",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Lepus corsicanus|Media from iNaturalist|INaturalist images reviewed by iNaturalistReviewBot|Files with coordinates missing SDC location of creation|Uploaded with iNaturalist2Commons|Media from GBIF",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "42.059884",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "12.898122",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Apennine Hare (<i>Lepus corsicanus</i>) in Italy",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2021-06-22",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/138346092\">https://www.inaturalist.org/photos/138346092</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/1641854\">Vincenzo Lattanzi</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-4.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with coordinates missing SDC location of creation"
+          },
+          {
+            "ns": 14,
+            "title": "Category:INaturalist images reviewed by iNaturalistReviewBot"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Lepus corsicanus"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Media from GBIF"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Media from iNaturalist"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Uploaded with iNaturalist2Commons"
+          }
+        ]
+      },
+      "160001210": {
+        "pageid": 160001210,
+        "ns": 6,
+        "title": "File:Lepus corsicanus 138346121.jpg",
+        "index": 7,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1640938,
+            "width": 922,
+            "height": 2048,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/4/41/Lepus_corsicanus_138346121.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Lepus_corsicanus_138346121.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=160001210",
+            "sha1": "58a7103fb64b3dd021efb0d21899df6261703663",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2025-02-18 21:03:27",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Lepus corsicanus 138346121",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Lepus corsicanus|Media from iNaturalist|INaturalist images reviewed by iNaturalistReviewBot|Files with coordinates missing SDC location of creation|Uploaded with iNaturalist2Commons|Media from GBIF",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "42.059884",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "12.898122",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Apennine Hare (<i>Lepus corsicanus</i>) in Italy",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2021-06-22",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/138346121\">https://www.inaturalist.org/photos/138346121</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/1641854\">Vincenzo Lattanzi</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-4.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with coordinates missing SDC location of creation"
+          },
+          {
+            "ns": 14,
+            "title": "Category:INaturalist images reviewed by iNaturalistReviewBot"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Lepus corsicanus"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Media from GBIF"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Media from iNaturalist"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Uploaded with iNaturalist2Commons"
+          }
+        ]
+      },
+      "160001226": {
+        "pageid": 160001226,
+        "ns": 6,
+        "title": "File:Lepus corsicanus 138346151.jpg",
+        "index": 8,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1308967,
+            "width": 922,
+            "height": 2048,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/c/c9/Lepus_corsicanus_138346151.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Lepus_corsicanus_138346151.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=160001226",
+            "sha1": "407d586feca48693cffb04e820450aee29a97200",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2025-02-18 21:03:49",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Lepus corsicanus 138346151",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Lepus corsicanus|Media from iNaturalist|INaturalist images reviewed by iNaturalistReviewBot|Files with coordinates missing SDC location of creation|Uploaded with iNaturalist2Commons|Media from GBIF|INaturalist images missing SDC depicts",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "42.059884",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "12.898122",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Apennine Hare (<i>Lepus corsicanus</i>) in Italy",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2021-06-22",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/138346151\">https://www.inaturalist.org/photos/138346151</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/1641854\">Vincenzo Lattanzi</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-4.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with coordinates missing SDC location of creation"
+          },
+          {
+            "ns": 14,
+            "title": "Category:INaturalist images missing SDC depicts"
+          },
+          {
+            "ns": 14,
+            "title": "Category:INaturalist images reviewed by iNaturalistReviewBot"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Lepus corsicanus"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Media from GBIF"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Media from iNaturalist"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Uploaded with iNaturalist2Commons"
+          }
+        ]
+      },
+      "103561131": {
+        "pageid": 103561131,
+        "ns": 6,
+        "title": "File:Lepus corsicanus 14816270.jpg",
+        "index": 11,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 366417,
+            "width": 737,
+            "height": 488,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/7/76/Lepus_corsicanus_14816270.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Lepus_corsicanus_14816270.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=103561131",
+            "sha1": "f6a1fa5d562b85fd35384b4a2e57e48587aae81d",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2021-04-13 11:53:34",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Lepus corsicanus 14816270",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Lepus corsicanus|Media from iNaturalist|Mammals of Haute-Corse|INaturalist images reviewed by iNaturalistReviewBot|Files with coordinates missing SDC location of creation|Uploaded with iNaturalist2Commons|Corsica photographs taken on 2018-03-17",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "42.012400",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "9.577267",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Apennine Hare (<i>Lepus corsicanus</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2018-03-17",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/14816270\">https://www.inaturalist.org/photos/14816270</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/175009\">Julien Renoult</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-4.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Corsica photographs taken on 2018-03-17"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with coordinates missing SDC location of creation"
+          },
+          {
+            "ns": 14,
+            "title": "Category:INaturalist images reviewed by iNaturalistReviewBot"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Lepus corsicanus"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Mammals of Haute-Corse"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Media from iNaturalist"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Uploaded with iNaturalist2Commons"
+          }
+        ]
+      },
+      "191143621": {
+        "pageid": 191143621,
+        "ns": 6,
+        "title": "File:Lepus corsicanus 2.jpg",
+        "index": 10,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 385132,
+            "width": 771,
+            "height": 844,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/d/dd/Lepus_corsicanus_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Lepus_corsicanus_2.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=191143621",
+            "sha1": "fcb021ec3ec4717717c348bc9fc13d3749ba7c7a",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2026-05-04 02:49:36",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Lepus corsicanus 2",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Lepus corsicanus|Extracted images|Media from iNaturalist|Creative Commons Attribution 4.0 missing SDC copyright license|Creative Commons Attribution missing SDC copyright status|Files with coordinates missing SDC location of creation|Uploaded with iNaturalist2Commons|Media from GBIF",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "42.098052",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "9.444840",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Apennine Hare (<i>Lepus corsicanus</i>) in France",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2013-05-07",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/88166717\">https://www.inaturalist.org/photos/88166717</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/280011\">Thomas Galewski</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-4.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Creative Commons Attribution 4.0 missing SDC copyright license"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Creative Commons Attribution missing SDC copyright status"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Extracted images"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with coordinates missing SDC location of creation"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Lepus corsicanus"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Media from GBIF"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Media from iNaturalist"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Uploaded with iNaturalist2Commons"
+          }
+        ]
+      },
+      "103561163": {
+        "pageid": 103561163,
+        "ns": 6,
+        "title": "File:Lepus corsicanus 41063662.jpg",
+        "index": 3,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 2080931,
+            "width": 1536,
+            "height": 2048,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/2/25/Lepus_corsicanus_41063662.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Lepus_corsicanus_41063662.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=103561163",
+            "sha1": "380d4394389291e3d63b734771a249ca4ce1ae07",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2021-04-13 11:54:26",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Lepus corsicanus 41063662",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Lepus corsicanus|Media from iNaturalist|INaturalist images reviewed by iNaturalistReviewBot|Uploaded with iNaturalist2Commons|Media from iNaturalist with obscured location",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Apennine Hare (<i>Lepus corsicanus</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2019-06-05",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/41063662\">https://www.inaturalist.org/photos/41063662</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/466724\">andrea ungaro</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-4.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:INaturalist images reviewed by iNaturalistReviewBot"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Lepus corsicanus"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Media from iNaturalist"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Media from iNaturalist with obscured location"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Uploaded with iNaturalist2Commons"
+          }
+        ]
+      },
+      "103561175": {
+        "pageid": 103561175,
+        "ns": 6,
+        "title": "File:Lepus corsicanus 41120238.jpg",
+        "index": 9,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1973528,
+            "width": 1536,
+            "height": 2048,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/3/39/Lepus_corsicanus_41120238.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Lepus_corsicanus_41120238.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=103561175",
+            "sha1": "a90d603a55a85b4bc92f5240f05f074880c29c0d",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2021-04-13 11:54:37",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Lepus corsicanus 41120238",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Lepus corsicanus|Media from iNaturalist|INaturalist images reviewed by iNaturalistReviewBot|Uploaded with iNaturalist2Commons|Media from iNaturalist with obscured location",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Apennine Hare (<i>Lepus corsicanus</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2019-06-05",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/41120238\">https://www.inaturalist.org/photos/41120238</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/466724\">andrea ungaro</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-4.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:INaturalist images reviewed by iNaturalistReviewBot"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Lepus corsicanus"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Media from iNaturalist"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Media from iNaturalist with obscured location"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Uploaded with iNaturalist2Commons"
+          }
+        ]
+      },
+      "159304026": {
+        "pageid": 159304026,
+        "ns": 6,
+        "title": "File:Lepus corsicanus 88166717.jpg",
+        "index": 4,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1400657,
+            "width": 2048,
+            "height": 1260,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/a/a8/Lepus_corsicanus_88166717.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Lepus_corsicanus_88166717.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=159304026",
+            "sha1": "2ae34819941c107e2e7ff4078d35d03417bbc125",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2025-02-07 17:47:10",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Lepus corsicanus 88166717",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Lepus corsicanus|Images with extracted images|Media from iNaturalist|INaturalist images reviewed by iNaturalistReviewBot|Files with coordinates missing SDC location of creation|Uploaded with iNaturalist2Commons|Media from GBIF",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "42.098052",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "9.444840",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Apennine Hare (<i>Lepus corsicanus</i>) in France",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2013-05-07",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/88166717\">https://www.inaturalist.org/photos/88166717</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/280011\">Thomas Galewski</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-4.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with coordinates missing SDC location of creation"
+          },
+          {
+            "ns": 14,
+            "title": "Category:INaturalist images reviewed by iNaturalistReviewBot"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Images with extracted images"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Lepus corsicanus"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Media from GBIF"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Media from iNaturalist"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Uploaded with iNaturalist2Commons"
+          }
+        ]
+      }
+    }
+  }
+}

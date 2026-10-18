@@ -1,0 +1,182 @@
+[
+  {
+    "id": "ce1-replace-satanas-1",
+    "sha1_matches_commons": true,
+    "sha256_verified": true,
+    "icc_profile": "IEC 61966-2.1 Default RGB colour space - sRGB",
+    "color_conversion": false,
+    "files": {
+      "file": {
+        "bytes": 57360,
+        "size": [
+          560,
+          367
+        ],
+        "sha256": "92265447dc89215f6f2cd48d75532b246ce9c048056d2322fc5f4cf875245643",
+        "metadata_clean": true
+      },
+      "file_hd": {
+        "bytes": 177852,
+        "size": [
+          1200,
+          786
+        ],
+        "sha256": "39043103df9cc70b1b3de7bbd92196a6064a921ef8d7bc1d2b2edf8a5ae83253",
+        "metadata_clean": true
+      },
+      "thumb": {
+        "bytes": 7016,
+        "size": [
+          160,
+          160
+        ],
+        "sha256": "47be648a3cbd0ee454d2006cdae6941063a0544c4317600d5938079ba92f3147",
+        "metadata_clean": true
+      }
+    }
+  },
+  {
+    "id": "ce1-replace-virescens-2",
+    "sha1_matches_commons": true,
+    "sha256_verified": true,
+    "icc_profile": null,
+    "color_conversion": false,
+    "files": {
+      "file": {
+        "bytes": 40468,
+        "size": [
+          560,
+          420
+        ],
+        "sha256": "da30646cba89214b3cc19e98a999b59e3fbd5d05632dac7dbe532d56d07ed2b5",
+        "metadata_clean": true
+      },
+      "file_hd": {
+        "bytes": 104642,
+        "size": [
+          1160,
+          870
+        ],
+        "sha256": "67f4e880bf180ac5fa408ac4e11ad65872720cb6eeae43593d9a9ae22ffe8482",
+        "metadata_clean": true
+      },
+      "thumb": {
+        "bytes": 5012,
+        "size": [
+          160,
+          160
+        ],
+        "sha256": "bd376a3693679f3b693c65a59df5af73b363b5da275cf7f160b77499dcb96094",
+        "metadata_clean": true
+      }
+    }
+  },
+  {
+    "id": "ce1-replace-felleus-extra19",
+    "sha1_matches_commons": true,
+    "sha256_verified": true,
+    "icc_profile": null,
+    "color_conversion": false,
+    "files": {
+      "file": {
+        "bytes": 48968,
+        "size": [
+          420,
+          560
+        ],
+        "sha256": "f1f7f4b4dcb5caa5a464b9639412ec7f667c3ee4154cb16e07efb9af5862cb2d",
+        "metadata_clean": true
+      },
+      "file_hd": {
+        "bytes": 151550,
+        "size": [
+          900,
+          1200
+        ],
+        "sha256": "5fb7588cddd3495fc2f899f13b7ffb4d216108ba28f32026aea3332b2bcce854",
+        "metadata_clean": true
+      },
+      "thumb": {
+        "bytes": 5214,
+        "size": [
+          160,
+          160
+        ],
+        "sha256": "2f05ac0bf09ed207146728588882c967aeac0d216749f2d83b539dfd3986c45d",
+        "metadata_clean": true
+      }
+    }
+  },
+  {
+    "id": "ce1-replace-felleus-extra20",
+    "sha1_matches_commons": true,
+    "sha256_verified": true,
+    "icc_profile": null,
+    "color_conversion": false,
+    "files": {
+      "file": {
+        "bytes": 58376,
+        "size": [
+          524,
+          560
+        ],
+        "sha256": "53bcf08a66db0a556ecb00262464f612daf986afc9cdc8d7d9b6eabc2fa09329",
+        "metadata_clean": true
+      },
+      "file_hd": {
+        "bytes": 164808,
+        "size": [
+          1123,
+          1200
+        ],
+        "sha256": "13e968365516595ec40c2df7ef30bced9de182aa66d0d4e79d3d443088d7c141",
+        "metadata_clean": true
+      },
+      "thumb": {
+        "bytes": 6830,
+        "size": [
+          160,
+          160
+        ],
+        "sha256": "8b0fd9a0594e23b5bcae5aa3f5a9120a4799591eaadfdbff6dd1e3f58dc2399d",
+        "metadata_clean": true
+      }
+    }
+  },
+  {
+    "id": "ce1-replace-aereus-15",
+    "sha1_matches_commons": true,
+    "sha256_verified": true,
+    "icc_profile": null,
+    "color_conversion": false,
+    "files": {
+      "file": {
+        "bytes": 47522,
+        "size": [
+          420,
+          560
+        ],
+        "sha256": "b7cf57ea6380ddbb8c316d198b6482c65d9f870d603877d688da88a3bfcc81b6",
+        "metadata_clean": true
+      },
+      "file_hd": {
+        "bytes": 139422,
+        "size": [
+          900,
+          1200
+        ],
+        "sha256": "48342a9b2ae37b7459e7174a80bddd8ca1e19c844c25435b507b99a12561bd17",
+        "metadata_clean": true
+      },
+      "thumb": {
+        "bytes": 5642,
+        "size": [
+          160,
+          160
+        ],
+        "sha256": "6d359cb3c264847ffc37b06e99ed7be71ac73204ae01963122b2e2233610473b",
+        "metadata_clean": true
+      }
+    }
+  }
+]

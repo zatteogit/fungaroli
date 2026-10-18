@@ -445,6 +445,48 @@
     "virescens:cap_shape:emisferico",
     "virescens:cap_shape:imbuto"
    ]
+  },
+  {
+   "categoria": "funghi-base",
+   "motivo": "Dodici nuove schede documentate il 19 ottobre 2026. Fotografie e osservazioni testuali disponibili; vocabolario morfologico e illustrazioni base da redigere con fonti specifiche. Nessuna immagine inferita dai nomi della specie; il renderer non richiede questi file per le schede fotografiche.",
+   "voci": [
+    "amanita-citrina-cappello",
+    "amanita-citrina-gambo",
+    "amanita-citrina-sotto",
+    "auricularia-auricula-judae-cappello",
+    "auricularia-auricula-judae-gambo",
+    "auricularia-auricula-judae-sotto",
+    "clitocybe-nebularis-cappello",
+    "clitocybe-nebularis-gambo",
+    "clitocybe-nebularis-sotto",
+    "coprinopsis-atramentaria-cappello",
+    "coprinopsis-atramentaria-gambo",
+    "coprinopsis-atramentaria-sotto",
+    "fomes-fomentarius-cappello",
+    "fomes-fomentarius-gambo",
+    "fomes-fomentarius-sotto",
+    "hygrophorus-russula-cappello",
+    "hygrophorus-russula-gambo",
+    "hygrophorus-russula-sotto",
+    "lactarius-sanguifluus-cappello",
+    "lactarius-sanguifluus-gambo",
+    "lactarius-sanguifluus-sotto",
+    "lycoperdon-perlatum-cappello",
+    "lycoperdon-perlatum-gambo",
+    "lycoperdon-perlatum-sotto",
+    "paxillus-involutus-cappello",
+    "paxillus-involutus-gambo",
+    "paxillus-involutus-sotto",
+    "russula-emetica-cappello",
+    "russula-emetica-gambo",
+    "russula-emetica-sotto",
+    "russula-vesca-cappello",
+    "russula-vesca-gambo",
+    "russula-vesca-sotto",
+    "trametes-versicolor-cappello",
+    "trametes-versicolor-gambo",
+    "trametes-versicolor-sotto"
+   ]
   }
  ],
  "eccezioni": [
@@ -452,9 +494,7 @@
    "categoria": "foto-dettagli",
    "motivo": "Soggetto incerto nella foto («selezione dubbia», «impossibile delimitare»): resta al centro per scelta (tools/import_crop_points.py, UNCERTAIN).",
    "voci": [
-    "assets/species/aereus-inat2.webp (ritaglio)",
     "assets/species/cyclocybe-aegerita-inat1.webp (ritaglio)",
-    "assets/species/lepiota-cristata-inat1.webp (ritaglio)",
     "assets/species/procera-inat2.webp (ritaglio)"
    ]
   },

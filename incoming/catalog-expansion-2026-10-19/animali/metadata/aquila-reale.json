@@ -1,0 +1,2990 @@
+{
+  "continue": {
+    "clcontinue": "20748721|Images_by_User:Poco_a_poco",
+    "continue": "||imageinfo"
+  },
+  "query": {
+    "pages": {
+      "18422948": {
+        "pageid": 18422948,
+        "ns": 6,
+        "title": "File:Aquila Chrysaetos.jpg",
+        "index": 12,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 2737735,
+            "width": 2919,
+            "height": 2017,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Aquila_Chrysaetos.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Aquila_Chrysaetos.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=18422948",
+            "sha1": "fdf122414e76970244e110d257e62243fc146556",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2012-02-18 20:26:48",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Aquila Chrysaetos",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Taken with Canon EOS-1D Mark IV|Self-published work|Brown birds|Birds of Castile and León|Accipitriformes of Spain|Files with coordinates missing SDC location of creation",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "quality",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "40.604024",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "-4.493226",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Free wild bird standing on top of a granitic boulder. La Cañada, Ávila, Spain.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2012-02-18",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Juan_lacruz\" class=\"mw-redirect\" title=\"User:Juan lacruz\">Juan Lacruz</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Accipitriformes of Spain"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Birds of Castile and León"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Brown birds"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with coordinates missing SDC location of creation"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images missing SDC depicts"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Canon EOS-1D Mark IV"
+          }
+        ]
+      },
+      "109345974": {
+        "pageid": 109345974,
+        "ns": 6,
+        "title": "File:Aquila chrysaetos (Golden Eagle) (48719295091).jpg",
+        "index": 20,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1845006,
+            "width": 2560,
+            "height": 1707,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/b/ba/Aquila_chrysaetos_%28Golden_Eagle%29_%2848719295091%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Aquila_chrysaetos_(Golden_Eagle)_(48719295091).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=109345974",
+            "sha1": "f1aae369aaec9b12e4904d2f3fb7ed35d07771b8",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2021-08-27 00:20:03",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Aquila chrysaetos (Golden Eagle) (48719295091)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Images from Auckland Museum|Flickr images reviewed by FlickreviewR 2|Files from the Auckland Museum Flickr stream|Aquila chrysaetos (museum specimens)|Accipitriformes in Auckland Museum",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<p>Taxonomic Name : <i>Aquila chrysaetos</i> \n</p><p>Common Name : Golden Eagle \n</p><p>Accession Number : LB8460\n</p><p>Part of the birds/land vertebrates collection\n</p>\n For more details visit &lt;a href=\"<a rel=\"nofollow\" class=\"external free\" href=\"https://www.aucklandmuseum.com/collections-research/collections/record/am_naturalsciences-object-121465\">https://www.aucklandmuseum.com/collections-research/collections/record/am_naturalsciences-object-121465</a>\" rel=\"noreferrer nofollow\"&gt;www.aucklandmuseum.com/collections&lt;/a&gt; Images released under a CC-BY licence. Auckland Museum 2019",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2017-04-11 10:24",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/aucklandmuseum_collections/48719295091/\">Aquila chrysaetos (Golden Eagle)</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/182826961@N04\">Auckland Museum  Collections</a> from Auckland, Aotearoa New Zealand",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "17733499": {
+        "pageid": 17733499,
+        "ns": 6,
+        "title": "File:Aquila chrysaetos (Linnaeus 1758).jpg",
+        "index": 2,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 7031137,
+            "width": 3260,
+            "height": 2300,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/8/88/Aquila_chrysaetos_%28Linnaeus_1758%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Aquila_chrysaetos_(Linnaeus_1758).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=17733499",
+            "sha1": "4a3cdf121c48563015861a52440827e16ab4a9a6",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2011-12-20 21:12:42",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Aquila chrysaetos (Linnaeus 1758)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Taken with Nikon D300|Taken with AF-S Micro Nikkor 60mm f/2.8G ED|Self-published work|Aves heads in right lateral aspect|Featured pictures by Michael Gäbler|Files with coordinates missing SDC location of creation (52° N, 9° E)|Photographs by Michael Gäbler|Aquila chrysaetos heads|Birds in Wisentgehege Springe|Featured pictures of Springe",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "quality|featured|potd",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "52.188967",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "9.608103",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<a href=\"https://en.wikipedia.org/wiki/Golden_Eagle\" class=\"extiw\" title=\"en:Golden Eagle\">Golden Eagle</a> in the <a href=\"https://de.wikipedia.org/wiki/Wisentgehege_Springe\" class=\"extiw\" title=\"de:Wisentgehege Springe\">Wisentgehege Springe game park</a> near <a href=\"https://en.wikipedia.org/wiki/Springe\" class=\"extiw\" title=\"en:Springe\">Springe</a>, <a href=\"https://en.wikipedia.org/wiki/Hanover_(district)\" class=\"extiw\" title=\"en:Hanover (district)\">Hanover</a>, Germany",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2010-12-28",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Michael_G%C3%A4bler\" title=\"User:Michael Gäbler\">Michael Gäbler</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Attribution": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Michael_G%C3%A4bler\" title=\"User:Michael Gäbler\">Michael Gäbler</a>",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Aquila chrysaetos heads"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Aves heads in right lateral aspect"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Birds in Wisentgehege Springe"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Featured pictures by Michael Gäbler"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Featured pictures of Springe"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Featured pictures on Wikimedia Commons"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with coordinates missing SDC location of creation (52° N, 9° E)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Photographs by Michael Gäbler"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Pictures of the day (2012)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images by Michael Gäbler"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with AF-S Micro Nikkor 60mm f/2.8G ED"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Nikon D300"
+          }
+        ]
+      },
+      "35046058": {
+        "pageid": 35046058,
+        "ns": 6,
+        "title": "File:Aquila chrysaetos 03 head.jpg",
+        "index": 18,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 5099008,
+            "width": 4000,
+            "height": 3000,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/4/4a/Aquila_chrysaetos_03_head.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Aquila_chrysaetos_03_head.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=35046058",
+            "sha1": "b713baf41d5568e34ad39303016c7c2c1f2206de",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2014-08-31 19:37:24",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Aquila chrysaetos 03 head",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Taken with Panasonic Lumix DMC-TZ25|Self-published work|Uploaded by Salix|Aquila chrysaetos heads",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Aigle royal (<i>Aquila chrysaetos</i>). Détail. Spécimen captif. Sud de la France.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2014-07-26 19:09:34",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Salix\" title=\"User:Salix\">Salix</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "18145560": {
+        "pageid": 18145560,
+        "ns": 6,
+        "title": "File:Aquila chrysaetos La Canada 2012-01-14.jpg",
+        "index": 11,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 3965376,
+            "width": 2695,
+            "height": 2695,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/7/72/Aquila_chrysaetos_La_Canada_2012-01-14.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Aquila_chrysaetos_La_Canada_2012-01-14.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=18145560",
+            "sha1": "8fe777d6d68cf293d44e1039fb1155db95ec17ad",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2012-02-04 19:55:20",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Aquila chrysaetos La Canada 2012-01-14",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Taken with Canon EOS-1D Mark IV|Self-published work|Birds of Castile and León|Aquila chrysaetos in flight|January 2012 in the province of Ávila|Photographs taken on 2012-01-14|Accipitriformes of Spain|Files with coordinates missing SDC location of creation",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "quality",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "40.604024",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "-4.493226",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Flying golden eagle, La Cañada, Avila, Spain",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2012-01-14",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Juan_lacruz\" class=\"mw-redirect\" title=\"User:Juan lacruz\">Juan Lacruz</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Accipitriformes of Spain"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Aquila chrysaetos in flight"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Birds of Castile and León"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with coordinates missing SDC location of creation"
+          },
+          {
+            "ns": 14,
+            "title": "Category:January 2012 in the province of Ávila"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Photographs taken on 2012-01-14"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images missing SDC depicts"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Canon EOS-1D Mark IV"
+          }
+        ]
+      },
+      "84993843": {
+        "pageid": 84993843,
+        "ns": 6,
+        "title": "File:Aquila chrysaetos MHNT.ZOO.2010.11.88.3.jpg",
+        "index": 5,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 4502330,
+            "width": 4252,
+            "height": 3307,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/0/04/Aquila_chrysaetos_MHNT.ZOO.2010.11.88.3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Aquila_chrysaetos_MHNT.ZOO.2010.11.88.3.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=84993843",
+            "sha1": "31b06ada4b1548daab7bdfd9dd1d0b3c12a42e83",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2019-12-17 19:39:18",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Aquila chrysaetos MHNT.ZOO.2010.11.88.3",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Self-published work|Taxon without category|Supported by Projet Phoebus|Media supported by Wikimedia France|Files with coordinates missing SDC location of creation|Bird eggs on black background|Aquila chrysaetos (museum specimens)|Accipitriformes eggs of the Muséum de Toulouse|Images by Ercé Ornithology|Aquila chrysaetos eggs",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "quality|valued",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "43.593897",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "1.449230",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Artist": {
+                "value": "<div class=\"fn value\">\n<a href=\"//commons.wikimedia.org/wiki/User:Erc%C3%A9\" title=\"User:Ercé\">Roger Culos</a></div>",
+                "source": "commons-desc-page"
+              },
+              "ImageDescription": {
+                "value": "Eggs of <a href=\"https://en.wikipedia.org/wiki/Aquila_chrysaetos\" class=\"extiw\" title=\"w:Aquila chrysaetos\">golden eagle</a> Two specimens of the same spawn ; collection of Jacques Perrin de Brichambaut.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "12 December 2019",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Permission": {
+                "value": "I, the copyright holder of this work, hereby publish it under the following license:",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "85531335": {
+        "pageid": 85531335,
+        "ns": 6,
+        "title": "File:Aquila chrysaetos chrysaetos MHNT.ZOO.2010.11.92.2.jpg",
+        "index": 4,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 4717882,
+            "width": 3307,
+            "height": 3307,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/8/83/Aquila_chrysaetos_chrysaetos_MHNT.ZOO.2010.11.92.2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Aquila_chrysaetos_chrysaetos_MHNT.ZOO.2010.11.92.2.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=85531335",
+            "sha1": "213f8985520d6270aacda370e99026b0d63efa20",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2020-01-02 10:46:59",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Aquila chrysaetos chrysaetos MHNT.ZOO.2010.11.92.2",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "René de Naurois|Self-published work|Taxon without category|Supported by Projet Phoebus|Media supported by Wikimedia France|Files with coordinates missing SDC location of creation|Bird eggs on black background|Aquila chrysaetos (museum specimens)|Accipitriformes eggs of the Muséum de Toulouse|Images by Ercé Ornithology|Aquila chrysaetos eggs",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "quality|valued",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "43.593897",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "1.449230",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Artist": {
+                "value": "<div class=\"fn value\">\n<a href=\"//commons.wikimedia.org/wiki/User:Erc%C3%A9\" title=\"User:Ercé\">Roger Culos</a></div>",
+                "source": "commons-desc-page"
+              },
+              "ImageDescription": {
+                "value": "Eggs of <a href=\"https://en.wikipedia.org/wiki/Aquila_chrysaetos_chrysaetos\" class=\"extiw\" title=\"w:Aquila chrysaetos chrysaetos\">Aquila chrysaetos chrysaetos</a> collection of Jacques Perrin de Brichambaut.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "12 December 2019",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Permission": {
+                "value": "I, the copyright holder of this work, hereby publish it under the following license:",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "84993724": {
+        "pageid": 84993724,
+        "ns": 6,
+        "title": "File:Aquila chrysaetos homeyeri MHNT.ZOO.2010.11.88.1.jpg",
+        "index": 6,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 10330375,
+            "width": 5197,
+            "height": 3780,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/0/0a/Aquila_chrysaetos_homeyeri_MHNT.ZOO.2010.11.88.1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Aquila_chrysaetos_homeyeri_MHNT.ZOO.2010.11.88.1.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=84993724",
+            "sha1": "bacbbde085bc6230ff4acdad0907ee52e1559d3b",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2019-12-17 19:35:57",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Aquila chrysaetos homeyeri MHNT.ZOO.2010.11.88.1",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Self-published work|Taxon without category|Supported by Projet Phoebus|Media supported by Wikimedia France|Files with coordinates missing SDC location of creation|Bird eggs on black background|Aquila chrysaetos (museum specimens)|Accipitriformes eggs of the Muséum de Toulouse|Images by Ercé Ornithology|Aquila chrysaetos eggs",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "quality|valued",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "43.593897",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "1.449230",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Artist": {
+                "value": "<div class=\"fn value\">\n<a href=\"//commons.wikimedia.org/wiki/User:Erc%C3%A9\" title=\"User:Ercé\">Roger Culos</a></div>",
+                "source": "commons-desc-page"
+              },
+              "ImageDescription": {
+                "value": "Eggs of <a href=\"https://en.wikipedia.org/wiki/Aquila_chrysaetos_homeyeri\" class=\"extiw\" title=\"w:Aquila chrysaetos homeyeri\">Aquila chrysaetos homeyeri</a> Two specimens of the same spawn ; collection of Jacques Perrin de Brichambaut.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "12 December 2019",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Permission": {
+                "value": "I, the copyright holder of this work, hereby publish it under the following license:",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "11556309": {
+        "pageid": 11556309,
+        "ns": 6,
+        "title": "File:Aquila chrysaetos qtl1.jpg",
+        "index": 7,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 5273513,
+            "width": 3840,
+            "height": 2644,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/0/07/Aquila_chrysaetos_qtl1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Aquila_chrysaetos_qtl1.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=11556309",
+            "sha1": "baf0fd4affe3ca5654563b58fe57909c8525f997",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2010-09-21 20:10:45",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Aquila chrysaetos qtl1",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Taken with Nikon D90|Self-published work|Falkenhof Feldberg|Files with coordinates missing SDC location of creation (50° N, 8° E)|Aquila chrysaetos heads",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "quality",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "50.231221",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "8.457401",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Golden Eagle (<i><a href=\"//commons.wikimedia.org/wiki/Aquila_chrysaetos\" title=\"Aquila chrysaetos\">Aquila chrysaetos</a></i>) in the falconry Falkenhof Feldberg, Germany.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2010-09-21",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Quartl\" title=\"User:Quartl\">Quartl</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Aquila chrysaetos heads"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Falkenhof Feldberg"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with coordinates missing SDC location of creation (50° N, 8° E)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images by Quartl"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images missing SDC depicts"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images of Aquila chrysaetos"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Nikon D90"
+          }
+        ]
+      },
+      "46450035": {
+        "pageid": 46450035,
+        "ns": 6,
+        "title": "File:Busardo mixto (Parabuteo unicinctus), Arcos de la Frontera, Cádiz, España, 2015-12-08, DD 06.jpg",
+        "index": 1,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 8019671,
+            "width": 6496,
+            "height": 4444,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/0/04/Busardo_mixto_%28Parabuteo_unicinctus%29%2C_Arcos_de_la_Frontera%2C_C%C3%A1diz%2C_Espa%C3%B1a%2C_2015-12-08%2C_DD_06.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Busardo_mixto_(Parabuteo_unicinctus),_Arcos_de_la_Frontera,_C%C3%A1diz,_Espa%C3%B1a,_2015-12-08,_DD_06.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=46450035",
+            "sha1": "df3f47b785bb1fa0405229a025564570d64f5bd2",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2016-02-14 15:40:30",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Busardo mixto (Parabuteo unicinctus), Arcos de la Frontera, Cádiz, España, 2015-12-08, DD 06",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Taken with Canon EOS 5DS R|Images of Spain by User:Poco a poco|Featured pictures of Andalusia|Featured pictures on Wikipedia, Persian|Featured pictures on Wikipedia, Turkish|Featured pictures by User:Poco a poco|Images by User:Poco a poco|Featured pictures of Spain by User:Poco a poco|Featured pictures on Commons by User:Poco a poco|Featured pictures of others by User:Poco a poco|Featured pictures of wildlife by User:Poco a poco|Featured pictures on Wikipedia, Bengali|December 2015 in the province of Cádiz|Featured pictures of the province of Cádiz|Aves heads in right lateral aspect|Spain photographs taken on 2015-12-08|Parabuteo unicinctus (captive, heads)|Birds of Spain (captive)|Featured pictures in Bengali language Wikipedia by User:Poco a poco|Featured pictures in Persian language Wikipedia by User:Poco a poco|Featured pictures in Turkish language Wikipedia by User:Poco a poco|Images by User:Poco a poco taken in 2015|Featured pictures of Parabuteo unicinctus",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "quality|featured|potd",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Close-up of an exemplar of a captive <a href=\"https://en.wikipedia.org/wiki/Harris_Hawk\" class=\"extiw\" title=\"en:Harris Hawk\">Harris Hawk</a> (<i>Parabuteo unicinctus</i>) in <a href=\"https://en.wikipedia.org/wiki/Arcos_de_la_Frontera\" class=\"extiw\" title=\"en:Arcos de la Frontera\">Arcos de la Frontera</a>, province of Cádiz, Spain.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2015-12-08 13:44:02",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<bdi><a href=\"https://www.wikidata.org/wiki/Q28147777\" class=\"extiw\" title=\"d:Q28147777\"><span title=\"Spanish photographer\">Diego Delso</span></a></bdi>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Attribution": {
+                "value": "Diego Delso",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "18043726": {
+        "pageid": 18043726,
+        "ns": 6,
+        "title": "File:Cypron-Range Aquila chrysaetos.svg",
+        "index": 19,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1522469,
+            "width": 440,
+            "height": 230,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/e/e8/Cypron-Range_Aquila_chrysaetos.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Cypron-Range_Aquila_chrysaetos.svg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=18043726",
+            "sha1": "a17a07b7fe8ef38537ea208dd7dfaf305f89ba44",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2025-04-20 08:19:24",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Cypron-Range Aquila chrysaetos",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Self-published work|Cypron|SVG created with Inkscape and Adobe Illustrator|Valid SVG created with Adobe Illustrator:Maps|Aquila chrysaetos (distribution maps)",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Range of golden eagle (<i>Aquila chrysaetos</i>).",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2012-01-14",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<ul><li><a href=\"//commons.wikimedia.org/wiki/File:Aquila_chrysaetos_dis(Aiger).png\" class=\"mw-redirect\" title=\"File:Aquila chrysaetos dis(Aiger).png\">Aquila chrysaetos dis(Aiger).png</a></li></ul>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<figure class=\"noresize\" typeof=\"mw:File\"><a href=\"//commons.wikimedia.org/wiki/User:The_Emirr/MapLab\" title=\"User:The Emirr/MapLab\"><img src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/Maplab-logo.svg/60px-Maplab-logo.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"50\" height=\"15\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/Maplab-logo.svg/120px-Maplab-logo.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"200\" data-file-height=\"60\"></a><figcaption></figcaption></figure>",
+                "source": "commons-desc-page"
+              },
+              "Permission": {
+                "value": "<figure class=\"noresize\" typeof=\"mw:File\"><a href=\"//commons.wikimedia.org/wiki/User:The_Emirr/MapLab/Cypron\" title=\"User:The Emirr/MapLab/Cypron\"><img src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/Cypron-licence.svg/960px-Cypron-licence.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"900\" height=\"82\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/Cypron-licence.svg/1920px-Cypron-licence.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"658\" data-file-height=\"60\"></a><figcaption></figcaption></figure>",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Aquila chrysaetos (distribution maps)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Cypron"
+          },
+          {
+            "ns": 14,
+            "title": "Category:SVG created with Inkscape and Adobe Illustrator"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Valid SVG created with Adobe Illustrator:Maps"
+          }
+        ]
+      },
+      "81860723": {
+        "pageid": 81860723,
+        "ns": 6,
+        "title": "File:Golden Eagle (Aquila chrysaetos) (22503131008).jpg",
+        "index": 22,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 2192656,
+            "width": 2000,
+            "height": 1500,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Golden_Eagle_%28Aquila_chrysaetos%29_%2822503131008%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Golden_Eagle_(Aquila_chrysaetos)_(22503131008).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=81860723",
+            "sha1": "569d771b7209dfd0bd607b48099a126d41f6238f",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2019-09-04 06:46:42",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Golden Eagle (Aquila chrysaetos) (22503131008)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Aquila chrysaetos in flight|Files with coordinates missing SDC location of creation|Pakistan photographs taken on 2015-10-24|Flickr images reviewed by FlickreviewR 2|Birds of Gilgit-Baltistan|Aquila chrysaetos in Pakistan|Photographs by Imran Shah",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "35.876855",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "74.339011",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Golden Eagle (Aquila chrysaetos) captured at Jutial, Gilgit, Gilgit-Baltistan, Pakistan with Canon EOS 70D",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2015-10-24 13:42",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/gilgit2/22503131008/\">Golden Eagle (Aquila chrysaetos)</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/68466173@N02\">Imran Shah</a> from Islamabad, Pakistan",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "74677641": {
+        "pageid": 74677641,
+        "ns": 6,
+        "title": "File:Golden Eagle (Aquila chrysaetos) (24752164928).jpg",
+        "index": 16,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 504312,
+            "width": 2000,
+            "height": 1500,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/1/16/Golden_Eagle_%28Aquila_chrysaetos%29_%2824752164928%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Golden_Eagle_(Aquila_chrysaetos)_(24752164928).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=74677641",
+            "sha1": "672f2bfbaf29f35832ed1e51fb1f5f8c63985aaa",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2018-11-26 10:55:02",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Golden Eagle (Aquila chrysaetos) (24752164928)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Aquila chrysaetos in flight|Files with coordinates missing SDC location of creation|Flickr images reviewed by FlickreviewR 2|Birds of Gilgit-Baltistan|Pakistan photographs taken on 2017-03-19|Aquila chrysaetos in Pakistan|Photographs by Imran Shah",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "36.434402",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "74.862513",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Golden Eagle (Aquila chrysaetos) captured at Borit, Gojal, Gilgit-Baltistan, Pakistan with Canon EOS 7D Mark II",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2017-03-19 07:46",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/gilgit2/24752164928/\">Golden Eagle (Aquila chrysaetos)</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/68466173@N02\">Imran Shah</a> from Islamabad, Pakistan",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "81863073": {
+        "pageid": 81863073,
+        "ns": 6,
+        "title": "File:Golden Eagle (Aquila chrysaetos) (27149411982).jpg",
+        "index": 23,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1413391,
+            "width": 2000,
+            "height": 1500,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/0/04/Golden_Eagle_%28Aquila_chrysaetos%29_%2827149411982%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Golden_Eagle_(Aquila_chrysaetos)_(27149411982).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=81863073",
+            "sha1": "9e393a3c83882ed9ccd0db10e38c79bb75e8fbca",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2019-09-04 08:26:02",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Golden Eagle (Aquila chrysaetos) (27149411982)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Pakistan photographs taken on 2016-05-18|Aquila chrysaetos in flight|Files with coordinates missing SDC location of creation|Flickr images reviewed by FlickreviewR 2|Birds of Gilgit-Baltistan|Aquila chrysaetos in Pakistan|Photographs by Imran Shah|Flickr images missing SDC published in",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "36.330850",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "74.722205",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Golden Eagle (Aquila chrysaetos) captured at Khuwat, Altit, Hunza, Gilgit-Baltistan, Pakistan with Canon EOS 7D Mark II",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2016-05-18 13:06",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/gilgit2/27149411982/\">Golden Eagle (Aquila chrysaetos)</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/68466173@N02\">Imran Shah</a> from Islamabad, Pakistan",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "74681826": {
+        "pageid": 74681826,
+        "ns": 6,
+        "title": "File:Golden Eagle (Aquila chrysaetos) (38084153572).jpg",
+        "index": 17,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1718407,
+            "width": 2000,
+            "height": 1500,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/6/67/Golden_Eagle_%28Aquila_chrysaetos%29_%2838084153572%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Golden_Eagle_(Aquila_chrysaetos)_(38084153572).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=74681826",
+            "sha1": "acb5bd73f9678ed930d38858b3479d7dd80a090e",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2018-11-26 14:54:45",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Golden Eagle (Aquila chrysaetos) (38084153572)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Aquila chrysaetos in flight|Files with coordinates missing SDC location of creation|Flickr images reviewed by FlickreviewR 2|Birds of Gilgit-Baltistan|Pakistan photographs taken on 2017-04-08|Aquila chrysaetos in Pakistan|Photographs by Imran Shah",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "36.433886",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "74.860752",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Golden Eagle (Aquila chrysaetos) captured at Borit, Gojal, Gilgit-Baltistan, Pakistan with Canon EOS 7D Mark II",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2017-04-08 13:30",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/gilgit2/38084153572/\">Golden Eagle (Aquila chrysaetos)</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/68466173@N02\">Imran Shah</a> from Islamabad, Pakistan",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "57627508": {
+        "pageid": 57627508,
+        "ns": 6,
+        "title": "File:Golden eagle (Aquila chrysaetos) in flight while himalayan tahr looking JEG9446.jpg",
+        "index": 24,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 9797490,
+            "width": 4928,
+            "height": 3264,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/8/84/Golden_eagle_%28Aquila_chrysaetos%29_in_flight_while_himalayan_tahr_looking_JEG9446.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Golden_eagle_(Aquila_chrysaetos)_in_flight_while_himalayan_tahr_looking_JEG9446.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=57627508",
+            "sha1": "522e647dff803c6d1609c16f8f0815e5e7aec6dd",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2017-04-01 17:49:53",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Golden eagle (Aquila chrysaetos) in flight while himalayan tahr looking JEG9446",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Hemitragus jemlahicus|Media contributed by NCF|Self-published work|WikiProject Nature and conservation in India|Photos by PJ|Aquila chrysaetos in flight|NCF photos|Accipitriformes of India|India photographs taken on 2014-05-19|Birds of Kedarnath Wildlife Sanctuary",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Golden eagle (Aquila chrysaetos) in flight in Kedarnath Wildlife Sanctuary in the high altitude grassland habitat. Note the Himalayan tahr (Hemitragus jemlahicus) on top of the hill.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2014-05-19 18:03:26",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:PJeganathan\" title=\"User:PJeganathan\">PJeganathan</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "20748721": {
+        "pageid": 20748721,
+        "ns": 6,
+        "title": "File:Halcón sacre (Falco cherrug), Tierpark Hellabrunn, Múnich, Alemania, 2012-06-17, DD 02.jpg",
+        "index": 15,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 10211559,
+            "width": 4202,
+            "height": 3729,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Halc%C3%B3n_sacre_%28Falco_cherrug%29%2C_Tierpark_Hellabrunn%2C_M%C3%BAnich%2C_Alemania%2C_2012-06-17%2C_DD_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Halc%C3%B3n_sacre_(Falco_cherrug),_Tierpark_Hellabrunn,_M%C3%BAnich,_Alemania,_2012-06-17,_DD_02.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=20748721",
+            "sha1": "2136ebb8e5051ac019565c4078043ad73009ae9a",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2019-04-18 19:07:42",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Halcón sacre (Falco cherrug), Tierpark Hellabrunn, Múnich, Alemania, 2012-06-17, DD 02",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Images of Germany by User:Poco a poco|Taken with Canon EOS 5D Mark II|People of Munich|Images by User:Poco a poco|Munich photographs taken on 2012-06-17|2012 in Tierpark Hellabrunn|Images by User:Poco a poco taken in 2012|Falco cherrug in Tierpark Hellabrunn",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "quality",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Saker falcon (<i>Falco cherrug</i>), Tierpark Hellabrunn, Munich, Germany",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2012-06-17",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<bdi><a href=\"https://www.wikidata.org/wiki/Q28147777\" class=\"extiw\" title=\"d:Q28147777\"><span title=\"Spanish photographer\">Diego Delso</span></a></bdi>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Attribution": {
+                "value": "Diego Delso",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:2012 in Tierpark Hellabrunn"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Falco cherrug in Tierpark Hellabrunn"
+          }
+        ]
+      },
+      "87566348": {
+        "pageid": 87566348,
+        "ns": 6,
+        "title": "File:Pigargo europeo (Haliaeetus albicilla), Svolvær, Lofoten, Noruega, 2019-09-05, DD 55.jpg",
+        "index": 13,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1273558,
+            "width": 3126,
+            "height": 2084,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/4/42/Pigargo_europeo_%28Haliaeetus_albicilla%29%2C_Svolv%C3%A6r%2C_Lofoten%2C_Noruega%2C_2019-09-05%2C_DD_55.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Pigargo_europeo_(Haliaeetus_albicilla),_Svolv%C3%A6r,_Lofoten,_Noruega,_2019-09-05,_DD_55.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=87566348",
+            "sha1": "f539a8336c36c77770e537721ed3fba8f4475d63",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2020-04-19 15:37:58",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Pigargo europeo (Haliaeetus albicilla), Svolvær, Lofoten, Noruega, 2019-09-05, DD 55",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Taken with Canon EOS 5DS R|Images of Norway by User:Poco a poco|Images by User:Poco a poco|Haliaeetus albicilla in flight|Norway photographs taken on 2019-09-05|Birds of Lofoten|Images by User:Poco a poco taken in 2019",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "quality",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "White-tailed Eagle (<i>Haliaeetus albicilla</i>), immature, Svolvær, Lofoten, Norway",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2019-09-05 14:24:45",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<bdi><a href=\"https://www.wikidata.org/wiki/Q28147777\" class=\"extiw\" title=\"d:Q28147777\"><span title=\"Spanish photographer\">Diego Delso</span></a></bdi>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Attribution": {
+                "value": "Diego Delso",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "87566356": {
+        "pageid": 87566356,
+        "ns": 6,
+        "title": "File:Pigargo europeo (Haliaeetus albicilla), Svolvær, Lofoten, Noruega, 2019-09-05, DD 56.jpg",
+        "index": 14,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1015799,
+            "width": 3233,
+            "height": 2155,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/8/85/Pigargo_europeo_%28Haliaeetus_albicilla%29%2C_Svolv%C3%A6r%2C_Lofoten%2C_Noruega%2C_2019-09-05%2C_DD_56.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Pigargo_europeo_(Haliaeetus_albicilla),_Svolv%C3%A6r,_Lofoten,_Noruega,_2019-09-05,_DD_56.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=87566356",
+            "sha1": "8159a96b5d3bd67e1c754cd23bb81b3b3c37e791",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2020-02-29 18:08:36",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Pigargo europeo (Haliaeetus albicilla), Svolvær, Lofoten, Noruega, 2019-09-05, DD 56",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Taken with Canon EOS 5DS R|Images of Norway by User:Poco a poco|Images by User:Poco a poco|Haliaeetus albicilla in flight|Norway photographs taken on 2019-09-05|Birds of Lofoten|Images by User:Poco a poco taken in 2019",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "quality",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "White-tailed Eagle (<i>Haliaeetus albicilla</i>), immature, Svolvær, Lofoten, Norway",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2019-09-05 14:25:20",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<bdi><a href=\"https://www.wikidata.org/wiki/Q28147777\" class=\"extiw\" title=\"d:Q28147777\"><span title=\"Spanish photographer\">Diego Delso</span></a></bdi>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Attribution": {
+                "value": "Diego Delso",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "193536432": {
+        "pageid": 193536432,
+        "ns": 6,
+        "title": "File:Skull of golden eagle (Aquila chrysaetos) in the Alaska Raptor Center.jpg",
+        "index": 25,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 328216,
+            "width": 1370,
+            "height": 2545,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/9/93/Skull_of_golden_eagle_%28Aquila_chrysaetos%29_in_the_Alaska_Raptor_Center.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Skull_of_golden_eagle_(Aquila_chrysaetos)_in_the_Alaska_Raptor_Center.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=193536432",
+            "sha1": "422cb8e899267327874e859050d3431b488d1fe2",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2026-06-07 21:06:06",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Skull of golden eagle (Aquila chrysaetos) in the Alaska Raptor Center",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "CC-Zero|Self-published work|Aquila chrysaetos heads|Aquila chrysaetos bones|Alaska Raptor Center",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Skull of golden eagle (Aquila chrysaetos) in the Alaska Raptor Center",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2026",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Hiart&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Hiart (page does not exist)\">Hiart</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "115768270": {
+        "pageid": 115768270,
+        "ns": 6,
+        "title": "File:Stamp of Moldova - 2019 - Colnect 857986 - Golden Eagle Aquila chrysaetos.jpeg",
+        "index": 21,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 87212,
+            "width": 689,
+            "height": 350,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/1/13/Stamp_of_Moldova_-_2019_-_Colnect_857986_-_Golden_Eagle_Aquila_chrysaetos.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Stamp_of_Moldova_-_2019_-_Colnect_857986_-_Golden_Eagle_Aquila_chrysaetos.jpeg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=115768270",
+            "sha1": "b11db4246bd20854bd3cf24f2a23ac59f8d4bc38",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2022-03-04 16:01:13",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Stamp of Moldova - 2019 - Colnect 857986 - Golden Eagle Aquila chrysaetos",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "PD-MD-exempt|Birds on stamps of Moldova|2019 stamps of Moldova|Aquila chrysaetos on stamps",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Stamp",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2019",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://colnect.com/en/stamps/stamp/857986-Golden_Eagle_Aquila_chrysaetos-Europa_CEPT_2019_-_National_Birds-Moldova\">https://colnect.com/en/stamps/stamp/857986-Golden_Eagle_Aquila_chrysaetos-Europa_CEPT_2019_-_National_Birds-Moldova</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "Post of Moldova",
+                "source": "commons-desc-page"
+              },
+              "Permission": {
+                "value": "<table class=\"licensetpl\" style=\"display:none\">\n<tbody><tr>\n<td><span class=\"licensetpl_short\">Public domain</span><span class=\"licensetpl_long\">Public domain</span><span class=\"licensetpl_link_req\">false</span><span class=\"licensetpl_attr_req\">false</span>\n</td></tr></tbody></table>\n<table style=\"width: 100%; clear: both; margin: 0.5em auto; background-color: var(--background-color-progressive-subtle, #f7f8ff); color: var(--color-base, #202122); border: var(--border-subtle, 2px solid #8888aa); border-spacing: 8px; padding: 0px;\" dir=\"ltr\" class=\"layouttemplate\" lang=\"en\">\n<tbody><tr>\n<td><span typeof=\"mw:File\"><span title=\"Public domain\"><img alt=\"Public domain\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/PD-icon.svg/120px-PD-icon.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"64\" height=\"64\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/PD-icon.svg/250px-PD-icon.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"196\" data-file-height=\"196\"></span></span>\n</td>\n<td><i>LAW OF THE <b><a href=\"//commons.wikimedia.org/wiki/Moldova\" title=\"Moldova\">REPUBLIC OF MOLDOVA</a></b></i>\n<p><i>ON COPYRIGHT AND NEIGHBOURING RIGHTS no. 139 of July 2, 2010 - <a rel=\"nofollow\" class=\"external text\" href=\"http://www.agepi.md/sites/default/files/law/national/l_139_2010-en.pdf\">full text</a></i>\n</p><p><b>Article 8. Works Not Protected by Copyright</b>\n</p>\n<ul><li>Copyright shall not extend to:\n<ul><li>a) Official documents (laws, court decisions, etc.) or to the official translations thereof;</li>\n<li>b) State emblems and official signs (flags, armorial bearings, decorations, monetary signs, etc.);</li>\n<li>c) Folklore expressions;</li>\n<li>d) Daily news and facts of simple informational nature.</li></ul></li></ul>\n<hr>\n<p><span style=\"font-size:small;line-height:1.4\" class=\"plainlinks noprint\"><a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:PD-MD-exempt/be-tarask\" href=\"https://commons.wikimedia.org/wiki/Template:PD-MD-exempt/be-tarask\"><bdi class=\"language lang-be-tarask\" lang=\"be-tarask\">беларуская (тарашкевіца)</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:PD-MD-exempt/de\" href=\"https://commons.wikimedia.org/wiki/Template:PD-MD-exempt/de\"><bdi class=\"language lang-de\" lang=\"de\">Deutsch</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:PD-MD-exempt/en\" href=\"https://commons.wikimedia.org/wiki/Template:PD-MD-exempt/en\"><bdi class=\"language lang-en\" lang=\"en\">English</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:PD-MD-exempt/es\" href=\"https://commons.wikimedia.org/wiki/Template:PD-MD-exempt/es\"><bdi class=\"language lang-es\" lang=\"es\">Español</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:PD-MD-exempt/ja\" href=\"https://commons.wikimedia.org/wiki/Template:PD-MD-exempt/ja\"><bdi class=\"language lang-ja\" lang=\"ja\">日本語</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:PD-MD-exempt/ro\" href=\"https://commons.wikimedia.org/wiki/Template:PD-MD-exempt/ro\"><bdi class=\"language lang-ro\" lang=\"ro\">română</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:PD-MD-exempt/ru\" href=\"https://commons.wikimedia.org/wiki/Template:PD-MD-exempt/ru\"><bdi class=\"language lang-ru\" lang=\"ru\">русский</bdi></a> <b>∙</b> <a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/wiki/Template:PD-MD-exempt/uk\" href=\"https://commons.wikimedia.org/wiki/Template:PD-MD-exempt/uk\"><bdi class=\"language lang-uk\" lang=\"uk\">українська</bdi></a> <b>∙</b> <small class=\"plainlinks\"><a class=\"external text\" data-mw-original-href=\"//commons.wikimedia.org/w/index.php?title=Template:PD-MD-exempt/lang&amp;action=edit\" href=\"https://commons.wikimedia.org/w/index.php?title=Template:PD-MD-exempt/lang&amp;action=edit\">+/−</a></small></span>\n</p>\n</td>\n<td><figure class=\"mw-halign-right\" typeof=\"mw:File\"><a href=\"//commons.wikimedia.org/wiki/File:Coat_of_arms_of_Moldova.svg\" class=\"mw-file-description\"><img src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/Coat_of_arms_of_Moldova.svg/120px-Coat_of_arms_of_Moldova.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"80\" height=\"101\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/Coat_of_arms_of_Moldova.svg/250px-Coat_of_arms_of_Moldova.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"477\" data-file-height=\"601\"></a><figcaption></figcaption></figure>\n</td></tr></tbody></table>",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseShortName": {
+                "value": "Public domain",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Public domain",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Copyrighted": {
+                "value": "False",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "pd",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      },
+      "12869681": {
+        "pageid": 12869681,
+        "ns": 6,
+        "title": "File:Steinadler, Aquila chrysaetos 01.JPG",
+        "index": 8,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 4741018,
+            "width": 2846,
+            "height": 2846,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/6/60/Steinadler%2C_Aquila_chrysaetos_01.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Steinadler,_Aquila_chrysaetos_01.JPG",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=12869681",
+            "sha1": "dff91ed43bff51ce80d8d2bcf5161222d7f94d11",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2011-01-31 20:16:27",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Steinadler, Aquila chrysaetos 01",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Taken with Nikon D300s|Self-published work|Photos by Böhringer|User:Böhringer - Quality images Gallery|Files with coordinates missing SDC location of creation|Austria photographs taken on 2011-01-15|Aquila chrysaetos heads|Aquila chrysaetos in Wildpark Feldkirch (Vorarlberg)",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "quality",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "47.246361",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "9.598125",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "The Golden Eagle <i>Aquila chrysaetos</i> is one of the best known birds of prey in the Northern Hemisphere. Like all eagles, it belongs to the family Accipitridae.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2011-01-15",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:B%C3%B6hringer\" title=\"User:Böhringer\">Böhringer Friedrich</a>",
+                "source": "commons-desc-page"
+              },
+              "Permission": {
+                "value": "I, the copyright holder of this work, hereby publish it under the following license:",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 2.5",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 2.5",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/2.5",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-2.5",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Aquila chrysaetos heads"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Aquila chrysaetos in Wildpark Feldkirch (Vorarlberg)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Austria photographs taken on 2011-01-15"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-2.5"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with coordinates missing SDC location of creation"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Photos by Böhringer"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images missing SDC depicts"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images of Aquila chrysaetos"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images of birds in Austria"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Nikon D300s"
+          },
+          {
+            "ns": 14,
+            "title": "Category:User:Böhringer - Quality images Gallery"
+          }
+        ]
+      },
+      "2888542": {
+        "pageid": 2888542,
+        "ns": 6,
+        "title": "File:Steinadler Aquila chrysaetos closeup1 Richard Bartz.jpg",
+        "index": 9,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 433241,
+            "width": 1379,
+            "height": 1800,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/5/58/Steinadler_Aquila_chrysaetos_closeup1_Richard_Bartz.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Steinadler_Aquila_chrysaetos_closeup1_Richard_Bartz.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=2888542",
+            "sha1": "47ae78fe45ffb4fb64258d3eda2ce74a0c1866bf",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2007-10-09 14:41:00",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Steinadler Aquila chrysaetos closeup1 Richard Bartz",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Taken with Canon EOS 400D|Photographs by User:Richard Bartz|Aquila chrysaetos heads",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "quality",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<b>Description:</b> The Golden Eagle <i>Aquila chrysaetos</i> is one of the best known birds of prey in the Northern Hemisphere. Like all eagles, it belongs to the family Accipitridae",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "9 October 2007 (upload date)",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Richard_Bartz\" title=\"User:Richard Bartz\">Richard Bartz</a>, Munich aka <a href=\"//commons.wikimedia.org/wiki/User:Makro_Freak\" title=\"User:Makro Freak\">Makro Freak</a> <span class=\"mw-default-size\" typeof=\"mw:File\"><a href=\"//commons.wikimedia.org/wiki/File:Makro_Freak_bar.jpg\" class=\"mw-file-description\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/8/8b/Makro_Freak_bar.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail_unscaled\" decoding=\"async\" loading=\"lazy\" width=\"80\" height=\"15\" class=\"mw-file-element\" data-file-width=\"80\" data-file-height=\"15\"></a></span>",
+                "source": "commons-desc-page"
+              },
+              "Permission": {
+                "value": "<div class=\"responsive-license-cc layouttemplate licensetpl\" dir=\"ltr\" lang=\"en\"><div class=\"rlicense-icons\"><span class=\"skin-invert\" typeof=\"mw:File\"><span title=\"w:en:Creative Commons\"><img alt=\"w:en:Creative Commons\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/CC_some_rights_reserved.svg/120px-CC_some_rights_reserved.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"90\" height=\"36\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/CC_some_rights_reserved.svg/250px-CC_some_rights_reserved.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"744\" data-file-height=\"300\"></span></span><br>\n<span class=\"skin-invert\" typeof=\"mw:File\"><span title=\"attribution\"><img alt=\"attribution\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/Cc-by_new_white.svg/40px-Cc-by_new_white.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"24\" height=\"24\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/Cc-by_new_white.svg/60px-Cc-by_new_white.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"64\" data-file-height=\"64\"></span></span> <span class=\"skin-invert\" typeof=\"mw:File\"><span title=\"share alike\"><img alt=\"share alike\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/Cc-sa_white.svg/40px-Cc-sa_white.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"24\" height=\"24\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/Cc-sa_white.svg/60px-Cc-sa_white.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"64\" data-file-height=\"64\"></span></span></div><div class=\"rlicense-text\"><div class=\"rlicense-declaration\">This file is licensed under the <a href=\"https://en.wikipedia.org/wiki/en:Creative_Commons\" class=\"extiw\" title=\"w:en:Creative Commons\">Creative Commons</a> <a href=\"//creativecommons.org/licenses/by-sa/2.5/deed.en\" class=\"extiw\" title=\"creativecommons:by-sa/2.5/deed.en\">Attribution-Share Alike 2.5 Generic</a> license.</div><div class=\"rlicense-desc\" style=\"text-align:start;\" lang=\"en\">\n<dl><dd>You are free:\n<ul><li><b>to share</b> – to copy, distribute and transmit the work</li>\n<li><b>to remix</b> – to adapt the work</li></ul></dd>\n<dd>Under the following conditions:\n<ul><li><b>attribution</b> – You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.</li>\n<li><b>share alike</b> – If you remix, transform, or build upon the material, you must distribute your contributions under the <a href=\"https://creativecommons.org/share-your-work/licensing-considerations/compatible-licenses\" class=\"extiw\" title=\"ccorg:share-your-work/licensing-considerations/compatible-licenses\">same or compatible license</a> as the original.</li></ul></dd></dl></div><span class=\"licensetpl_link\" style=\"display:none;\">https://creativecommons.org/licenses/by-sa/2.5</span><span class=\"licensetpl_short\" style=\"display:none;\">CC BY-SA 2.5 </span><span class=\"licensetpl_long\" style=\"display:none;\">Creative Commons Attribution-Share Alike 2.5 </span><span class=\"licensetpl_link_req\" style=\"display:none;\">true</span><span class=\"licensetpl_attr_req\" style=\"display:none;\">true</span></div></div>",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 2.5",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 2.5",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/2.5",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-2.5",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Aquila chrysaetos heads"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-2.5"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Photographs by User:Richard Bartz"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images by User:Richard Bartz"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images missing SDC depicts"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images of Aquila chrysaetos"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Canon EOS 400D"
+          }
+        ]
+      },
+      "2888551": {
+        "pageid": 2888551,
+        "ns": 6,
+        "title": "File:Steinadler Aquila chrysaetos closeup2 Richard Bartz.jpg",
+        "index": 3,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1545057,
+            "width": 2000,
+            "height": 1333,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/e/eb/Steinadler_Aquila_chrysaetos_closeup2_Richard_Bartz.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Steinadler_Aquila_chrysaetos_closeup2_Richard_Bartz.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=2888551",
+            "sha1": "77326535815fe8bd7b65c9b13a55a0f96c6def84",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2007-10-15 12:15:07",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Steinadler Aquila chrysaetos closeup2 Richard Bartz",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Taken with Canon EOS 400D|Retouched pictures|Featured pictures by User:Richard Bartz|Photographs by User:Richard Bartz|Featured pictures on Wikipedia, German|Featured pictures on Wikipedia, Persian|Featured pictures of Tyrol (state)|Birds of Tyrol (state)|Files with coordinates missing SDC location of creation|Aquila chrysaetos heads|Featured pictures of Aquila",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "quality|featured|poty",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "47.375556",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "11.195278",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "The Golden Eagle <i>Aquila chrysaetos</i> is one of the best known birds of prey in the Northern Hemisphere. Like all eagles, it belongs to the family Accipitridae.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2007-10-09",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Richard_Bartz\" title=\"User:Richard Bartz\">Richard Bartz</a>, Munich aka <a href=\"//commons.wikimedia.org/wiki/User:Makro_Freak\" title=\"User:Makro Freak\">Makro Freak</a> <span class=\"mw-default-size\" typeof=\"mw:File\"><a href=\"//commons.wikimedia.org/wiki/File:Makro_Freak_bar.jpg\" class=\"mw-file-description\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/8/8b/Makro_Freak_bar.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail_unscaled\" decoding=\"async\" loading=\"lazy\" width=\"80\" height=\"15\" class=\"mw-file-element\" data-file-width=\"80\" data-file-height=\"15\"></a></span>",
+                "source": "commons-desc-page"
+              },
+              "Permission": {
+                "value": "<div class=\"responsive-license-cc layouttemplate licensetpl\" dir=\"ltr\" lang=\"en\"><div class=\"rlicense-icons\"><span class=\"skin-invert\" typeof=\"mw:File\"><span title=\"w:en:Creative Commons\"><img alt=\"w:en:Creative Commons\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/CC_some_rights_reserved.svg/120px-CC_some_rights_reserved.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"90\" height=\"36\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/CC_some_rights_reserved.svg/250px-CC_some_rights_reserved.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"744\" data-file-height=\"300\"></span></span><br>\n<span class=\"skin-invert\" typeof=\"mw:File\"><span title=\"attribution\"><img alt=\"attribution\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/Cc-by_new_white.svg/40px-Cc-by_new_white.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"24\" height=\"24\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/Cc-by_new_white.svg/60px-Cc-by_new_white.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"64\" data-file-height=\"64\"></span></span> <span class=\"skin-invert\" typeof=\"mw:File\"><span title=\"share alike\"><img alt=\"share alike\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/Cc-sa_white.svg/40px-Cc-sa_white.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"24\" height=\"24\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/Cc-sa_white.svg/60px-Cc-sa_white.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"64\" data-file-height=\"64\"></span></span></div><div class=\"rlicense-text\"><div class=\"rlicense-declaration\">This file is licensed under the <a href=\"https://en.wikipedia.org/wiki/en:Creative_Commons\" class=\"extiw\" title=\"w:en:Creative Commons\">Creative Commons</a> <a href=\"//creativecommons.org/licenses/by-sa/2.5/deed.en\" class=\"extiw\" title=\"creativecommons:by-sa/2.5/deed.en\">Attribution-Share Alike 2.5 Generic</a> license.</div><div class=\"rlicense-desc\" style=\"text-align:start;\" lang=\"en\">\n<dl><dd>You are free:\n<ul><li><b>to share</b> – to copy, distribute and transmit the work</li>\n<li><b>to remix</b> – to adapt the work</li></ul></dd>\n<dd>Under the following conditions:\n<ul><li><b>attribution</b> – You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.</li>\n<li><b>share alike</b> – If you remix, transform, or build upon the material, you must distribute your contributions under the <a href=\"https://creativecommons.org/share-your-work/licensing-considerations/compatible-licenses\" class=\"extiw\" title=\"ccorg:share-your-work/licensing-considerations/compatible-licenses\">same or compatible license</a> as the original.</li></ul></dd></dl></div><span class=\"licensetpl_link\" style=\"display:none;\">https://creativecommons.org/licenses/by-sa/2.5</span><span class=\"licensetpl_short\" style=\"display:none;\">CC BY-SA 2.5 </span><span class=\"licensetpl_long\" style=\"display:none;\">Creative Commons Attribution-Share Alike 2.5 </span><span class=\"licensetpl_link_req\" style=\"display:none;\">true</span><span class=\"licensetpl_attr_req\" style=\"display:none;\">true</span></div></div>",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 2.5",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 2.5",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/2.5",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-2.5",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Aquila chrysaetos heads"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Birds of Tyrol (state)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-2.5"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Featured pictures by User:Richard Bartz"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Featured pictures of Aquila"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Featured pictures of Tyrol (state)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Featured pictures on Wikimedia Commons"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Featured pictures on Wikipedia, German"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Featured pictures on Wikipedia, Persian"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with coordinates missing SDC location of creation"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Photographs by User:Richard Bartz"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Pictures of the Year (2007)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Pictures of the Year (candidate)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images by User:Richard Bartz"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images of birds in Austria"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Retouched pictures"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Canon EOS 400D"
+          }
+        ]
+      },
+      "2888559": {
+        "pageid": 2888559,
+        "ns": 6,
+        "title": "File:Steinadler Aquila chrysaetos frontal Richard Bartz.jpg",
+        "index": 10,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1045016,
+            "width": 1545,
+            "height": 2000,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/2/2d/Steinadler_Aquila_chrysaetos_frontal_Richard_Bartz.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Steinadler_Aquila_chrysaetos_frontal_Richard_Bartz.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=2888559",
+            "sha1": "7885f2aee832d19f68c8b8e605f01ab7736aed14",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2007-10-09 19:10:08",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Steinadler Aquila chrysaetos frontal Richard Bartz",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Taken with Canon EOS 400D|Photographs by User:Richard Bartz|Aquila chrysaetos (captive)",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "quality",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<b>Description:</b> The Golden Eagle <i>Aquila chrysaetos</i> is one of the best known birds of prey in the Northern Hemisphere. Like all eagles, it belongs to the family Accipitridae",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "9 October 2007 (upload date)",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Richard_Bartz\" title=\"User:Richard Bartz\">Richard Bartz</a>, Munich aka <a href=\"//commons.wikimedia.org/wiki/User:Makro_Freak\" title=\"User:Makro Freak\">Makro Freak</a> <span class=\"mw-default-size\" typeof=\"mw:File\"><a href=\"//commons.wikimedia.org/wiki/File:Makro_Freak_bar.jpg\" class=\"mw-file-description\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/8/8b/Makro_Freak_bar.jpg?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail_unscaled\" decoding=\"async\" loading=\"lazy\" width=\"80\" height=\"15\" class=\"mw-file-element\" data-file-width=\"80\" data-file-height=\"15\"></a></span>",
+                "source": "commons-desc-page"
+              },
+              "Permission": {
+                "value": "<div class=\"responsive-license-cc layouttemplate licensetpl\" dir=\"ltr\" lang=\"en\"><div class=\"rlicense-icons\"><span class=\"skin-invert\" typeof=\"mw:File\"><span title=\"w:en:Creative Commons\"><img alt=\"w:en:Creative Commons\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/CC_some_rights_reserved.svg/120px-CC_some_rights_reserved.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"90\" height=\"36\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/CC_some_rights_reserved.svg/250px-CC_some_rights_reserved.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"744\" data-file-height=\"300\"></span></span><br>\n<span class=\"skin-invert\" typeof=\"mw:File\"><span title=\"attribution\"><img alt=\"attribution\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/Cc-by_new_white.svg/40px-Cc-by_new_white.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"24\" height=\"24\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/Cc-by_new_white.svg/60px-Cc-by_new_white.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"64\" data-file-height=\"64\"></span></span> <span class=\"skin-invert\" typeof=\"mw:File\"><span title=\"share alike\"><img alt=\"share alike\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/Cc-sa_white.svg/40px-Cc-sa_white.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"24\" height=\"24\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/Cc-sa_white.svg/60px-Cc-sa_white.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"64\" data-file-height=\"64\"></span></span></div><div class=\"rlicense-text\"><div class=\"rlicense-declaration\">This file is licensed under the <a href=\"https://en.wikipedia.org/wiki/en:Creative_Commons\" class=\"extiw\" title=\"w:en:Creative Commons\">Creative Commons</a> <a href=\"//creativecommons.org/licenses/by-sa/2.5/deed.en\" class=\"extiw\" title=\"creativecommons:by-sa/2.5/deed.en\">Attribution-Share Alike 2.5 Generic</a> license.</div><div class=\"rlicense-desc\" style=\"text-align:start;\" lang=\"en\">\n<dl><dd>You are free:\n<ul><li><b>to share</b> – to copy, distribute and transmit the work</li>\n<li><b>to remix</b> – to adapt the work</li></ul></dd>\n<dd>Under the following conditions:\n<ul><li><b>attribution</b> – You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.</li>\n<li><b>share alike</b> – If you remix, transform, or build upon the material, you must distribute your contributions under the <a href=\"https://creativecommons.org/share-your-work/licensing-considerations/compatible-licenses\" class=\"extiw\" title=\"ccorg:share-your-work/licensing-considerations/compatible-licenses\">same or compatible license</a> as the original.</li></ul></dd></dl></div><span class=\"licensetpl_link\" style=\"display:none;\">https://creativecommons.org/licenses/by-sa/2.5</span><span class=\"licensetpl_short\" style=\"display:none;\">CC BY-SA 2.5 </span><span class=\"licensetpl_long\" style=\"display:none;\">Creative Commons Attribution-Share Alike 2.5 </span><span class=\"licensetpl_link_req\" style=\"display:none;\">true</span><span class=\"licensetpl_attr_req\" style=\"display:none;\">true</span></div></div>",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 2.5",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 2.5",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/2.5",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-2.5",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Aquila chrysaetos (captive)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-2.5"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Photographs by User:Richard Bartz"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images by User:Richard Bartz"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images missing SDC depicts"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Canon EOS 400D"
+          }
+        ]
+      }
+    }
+  }
+}

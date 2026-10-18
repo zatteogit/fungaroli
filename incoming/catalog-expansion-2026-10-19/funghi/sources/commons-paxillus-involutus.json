@@ -1,0 +1,1301 @@
+{
+  "batchcomplete": "",
+  "continue": {
+    "gsroffset": 8,
+    "continue": "gsroffset||"
+  },
+  "query": {
+    "pages": {
+      "17635646": {
+        "pageid": 17635646,
+        "ns": 6,
+        "title": "File:0006 Paxillus involutus (Copy).jpg",
+        "index": 2,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 83550,
+            "width": 531,
+            "height": 348,
+            "thumburl": "https://upload.wikimedia.org/wikipedia/commons/4/47/0006_Paxillus_involutus_%28Copy%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "thumbwidth": 640,
+            "thumbheight": 419,
+            "thumbattribs": {
+              "src": "https://upload.wikimedia.org/wikipedia/commons/4/47/0006_Paxillus_involutus_%28Copy%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 640,
+              "height": 419
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/4/47/0006_Paxillus_involutus_%28Copy%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:0006_Paxillus_involutus_(Copy).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=17635646",
+            "sha1": "0d87b26efa0fb142f782ca0a01351e70089e0ec6",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2011-12-13 17:18:21",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "0006 Paxillus involutus (Copy)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Paxillus involutus|Self-published work",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Paxillus involutus",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2008-03-27",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Joansfr&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Joansfr (page does not exist)\">JoanS-Fortún Ripoll</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Paxillus involutus"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          }
+        ]
+      },
+      "112419989": {
+        "pageid": 112419989,
+        "ns": 6,
+        "title": "File:De gewone krulzoom (Paxillus involutus). Locatie, Paddenstoelenreservaat. 11-10-2021. (actm.) 02.jpg",
+        "index": 5,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 12719921,
+            "width": 4440,
+            "height": 3330,
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/De_gewone_krulzoom_%28Paxillus_involutus%29._Locatie%2C_Paddenstoelenreservaat._11-10-2021._%28actm.%29_02.jpg/960px-De_gewone_krulzoom_%28Paxillus_involutus%29._Locatie%2C_Paddenstoelenreservaat._11-10-2021._%28actm.%29_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 640,
+            "thumbheight": 480,
+            "responsiveUrls": {
+              "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/De_gewone_krulzoom_%28Paxillus_involutus%29._Locatie%2C_Paddenstoelenreservaat._11-10-2021._%28actm.%29_02.jpg/1280px-De_gewone_krulzoom_%28Paxillus_involutus%29._Locatie%2C_Paddenstoelenreservaat._11-10-2021._%28actm.%29_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/De_gewone_krulzoom_%28Paxillus_involutus%29._Locatie%2C_Paddenstoelenreservaat._11-10-2021._%28actm.%29_02.jpg/960px-De_gewone_krulzoom_%28Paxillus_involutus%29._Locatie%2C_Paddenstoelenreservaat._11-10-2021._%28actm.%29_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 640,
+              "height": 480,
+              "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/De_gewone_krulzoom_%28Paxillus_involutus%29._Locatie%2C_Paddenstoelenreservaat._11-10-2021._%28actm.%29_02.jpg/1280px-De_gewone_krulzoom_%28Paxillus_involutus%29._Locatie%2C_Paddenstoelenreservaat._11-10-2021._%28actm.%29_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/c/c8/De_gewone_krulzoom_%28Paxillus_involutus%29._Locatie%2C_Paddenstoelenreservaat._11-10-2021._%28actm.%29_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:De_gewone_krulzoom_(Paxillus_involutus)._Locatie,_Paddenstoelenreservaat._11-10-2021._(actm.)_02.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=112419989",
+            "sha1": "adb179ec34a191d3dd84be638c84589cb69912a5",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2021-11-10 17:50:55",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "De gewone krulzoom (Paxillus involutus). Locatie, Paddenstoelenreservaat. 11-10-2021. (actm.) 02",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Paxillus involutus|Self-published work|Paxillaceae in the Netherlands|Netherlands photographs taken on 2021-10-11|Fungi of Noordoostpolder|Fungi of Flevoland in October|2021 in Paddenstoelenreservaat",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "quality",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "52.670208",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "5.885771",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<a href=\"https://en.wikipedia.org/wiki/Paxillus_involutus\" class=\"extiw\" title=\"en:Paxillus involutus\"> <i>Paxillus involutus</i>, Brown roll-rim</a>",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2021-10-11 15:26:10",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Agnes_Monkelbaan\" title=\"User:Agnes Monkelbaan\">Agnes Monkelbaan</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:2021 in Paddenstoelenreservaat"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-4.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi of Flevoland in October"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi of Noordoostpolder"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Netherlands photographs taken on 2021-10-11"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Paxillaceae in the Netherlands"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Paxillus involutus"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images by Agnes Monkelbaan"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images of Boletales"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images of Flevoland"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images of fungi in the Netherlands"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images of mushrooms"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          }
+        ]
+      },
+      "112419991": {
+        "pageid": 112419991,
+        "ns": 6,
+        "title": "File:De gewone krulzoom (Paxillus involutus). Locatie, Paddenstoelenreservaat. 11-10-2021. (actm.) 03.jpg",
+        "index": 3,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 12487117,
+            "width": 3320,
+            "height": 3320,
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/De_gewone_krulzoom_%28Paxillus_involutus%29._Locatie%2C_Paddenstoelenreservaat._11-10-2021._%28actm.%29_03.jpg/960px-De_gewone_krulzoom_%28Paxillus_involutus%29._Locatie%2C_Paddenstoelenreservaat._11-10-2021._%28actm.%29_03.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 640,
+            "thumbheight": 640,
+            "responsiveUrls": {
+              "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/De_gewone_krulzoom_%28Paxillus_involutus%29._Locatie%2C_Paddenstoelenreservaat._11-10-2021._%28actm.%29_03.jpg/1280px-De_gewone_krulzoom_%28Paxillus_involutus%29._Locatie%2C_Paddenstoelenreservaat._11-10-2021._%28actm.%29_03.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/De_gewone_krulzoom_%28Paxillus_involutus%29._Locatie%2C_Paddenstoelenreservaat._11-10-2021._%28actm.%29_03.jpg/960px-De_gewone_krulzoom_%28Paxillus_involutus%29._Locatie%2C_Paddenstoelenreservaat._11-10-2021._%28actm.%29_03.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 640,
+              "height": 640,
+              "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/De_gewone_krulzoom_%28Paxillus_involutus%29._Locatie%2C_Paddenstoelenreservaat._11-10-2021._%28actm.%29_03.jpg/1280px-De_gewone_krulzoom_%28Paxillus_involutus%29._Locatie%2C_Paddenstoelenreservaat._11-10-2021._%28actm.%29_03.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/e/e7/De_gewone_krulzoom_%28Paxillus_involutus%29._Locatie%2C_Paddenstoelenreservaat._11-10-2021._%28actm.%29_03.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:De_gewone_krulzoom_(Paxillus_involutus)._Locatie,_Paddenstoelenreservaat._11-10-2021._(actm.)_03.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=112419991",
+            "sha1": "f1d5970321c08b7751cf91271ae1abd9e0f62835",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2021-11-10 17:50:57",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "De gewone krulzoom (Paxillus involutus). Locatie, Paddenstoelenreservaat. 11-10-2021. (actm.) 03",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Paxillus involutus|Self-published work|Paxillaceae in the Netherlands|Netherlands photographs taken on 2021-10-11|Fungi of Noordoostpolder|Fungi of Flevoland in October|2021 in Paddenstoelenreservaat",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "quality",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "52.670208",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "5.885771",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<a href=\"https://en.wikipedia.org/wiki/Paxillus_involutus\" class=\"extiw\" title=\"en:Paxillus involutus\"> <i>Paxillus involutus</i>, Brown roll-rim</a>",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2021-10-11 15:00:45",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Agnes_Monkelbaan\" title=\"User:Agnes Monkelbaan\">Agnes Monkelbaan</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:2021 in Paddenstoelenreservaat"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-4.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi of Flevoland in October"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi of Noordoostpolder"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Netherlands photographs taken on 2021-10-11"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Paxillaceae in the Netherlands"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Paxillus involutus"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images by Agnes Monkelbaan"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images of Boletales"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images of Flevoland"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images of fungi in the Netherlands"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images of mushrooms"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          }
+        ]
+      },
+      "112419990": {
+        "pageid": 112419990,
+        "ns": 6,
+        "title": "File:De gewone krulzoom (Paxillus involutus). Locatie, Paddenstoelenreservaat. 11-10-2021. (actm.) 04.jpg",
+        "index": 6,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 10811150,
+            "width": 4185,
+            "height": 3348,
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7f/De_gewone_krulzoom_%28Paxillus_involutus%29._Locatie%2C_Paddenstoelenreservaat._11-10-2021._%28actm.%29_04.jpg/960px-De_gewone_krulzoom_%28Paxillus_involutus%29._Locatie%2C_Paddenstoelenreservaat._11-10-2021._%28actm.%29_04.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 640,
+            "thumbheight": 512,
+            "responsiveUrls": {
+              "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7f/De_gewone_krulzoom_%28Paxillus_involutus%29._Locatie%2C_Paddenstoelenreservaat._11-10-2021._%28actm.%29_04.jpg/1280px-De_gewone_krulzoom_%28Paxillus_involutus%29._Locatie%2C_Paddenstoelenreservaat._11-10-2021._%28actm.%29_04.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7f/De_gewone_krulzoom_%28Paxillus_involutus%29._Locatie%2C_Paddenstoelenreservaat._11-10-2021._%28actm.%29_04.jpg/960px-De_gewone_krulzoom_%28Paxillus_involutus%29._Locatie%2C_Paddenstoelenreservaat._11-10-2021._%28actm.%29_04.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 640,
+              "height": 512,
+              "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7f/De_gewone_krulzoom_%28Paxillus_involutus%29._Locatie%2C_Paddenstoelenreservaat._11-10-2021._%28actm.%29_04.jpg/1280px-De_gewone_krulzoom_%28Paxillus_involutus%29._Locatie%2C_Paddenstoelenreservaat._11-10-2021._%28actm.%29_04.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/7/7f/De_gewone_krulzoom_%28Paxillus_involutus%29._Locatie%2C_Paddenstoelenreservaat._11-10-2021._%28actm.%29_04.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:De_gewone_krulzoom_(Paxillus_involutus)._Locatie,_Paddenstoelenreservaat._11-10-2021._(actm.)_04.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=112419990",
+            "sha1": "3b8ca36ca52034213f8215f0414249386f370985",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2021-11-10 17:50:56",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "De gewone krulzoom (Paxillus involutus). Locatie, Paddenstoelenreservaat. 11-10-2021. (actm.) 04",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Paxillus involutus|Self-published work|Netherlands photographs taken on 2021-10-11|Fungi of Noordoostpolder|Fungi of Flevoland in October|2021 in Paddenstoelenreservaat",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "quality",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "52.670208",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "5.885771",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<a href=\"https://en.wikipedia.org/wiki/Paxillus_involutus\" class=\"extiw\" title=\"en:Paxillus involutus\"> <i>Paxillus involutus</i>, Brown roll-rim</a>",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2021-10-11 15:24:53",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Agnes_Monkelbaan\" title=\"User:Agnes Monkelbaan\">Agnes Monkelbaan</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:2021 in Paddenstoelenreservaat"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-4.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi of Flevoland in October"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi of Noordoostpolder"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Netherlands photographs taken on 2021-10-11"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Paxillus involutus"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images by Agnes Monkelbaan"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images of Boletales"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images of Flevoland"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images of fungi in the Netherlands"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images of mushrooms"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          }
+        ]
+      },
+      "112364778": {
+        "pageid": 112364778,
+        "ns": 6,
+        "title": "File:Hortus Haren 18-10-2021. (actm.) 02.jpg",
+        "index": 4,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 12673372,
+            "width": 4401,
+            "height": 3303,
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/81/Hortus_Haren_18-10-2021._%28actm.%29_02.jpg/960px-Hortus_Haren_18-10-2021._%28actm.%29_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 640,
+            "thumbheight": 480,
+            "responsiveUrls": {
+              "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/81/Hortus_Haren_18-10-2021._%28actm.%29_02.jpg/1280px-Hortus_Haren_18-10-2021._%28actm.%29_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/81/Hortus_Haren_18-10-2021._%28actm.%29_02.jpg/960px-Hortus_Haren_18-10-2021._%28actm.%29_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 640,
+              "height": 480,
+              "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/81/Hortus_Haren_18-10-2021._%28actm.%29_02.jpg/1280px-Hortus_Haren_18-10-2021._%28actm.%29_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/8/81/Hortus_Haren_18-10-2021._%28actm.%29_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Hortus_Haren_18-10-2021._(actm.)_02.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=112364778",
+            "sha1": "989dfc7f15261c43e0cc4316de755a47be0588dc",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2021-11-08 06:45:58",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Hortus Haren 18-10-2021. (actm.) 02",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Self-published work|Paxillaceae in the Netherlands|Netherlands photographs taken on 2021-10-18|2021 in Groningen (municipality)|Fungi of Groningen (province) in October|Unidentified Agaricales|Fungi of Hortus (Haren, Groningen)",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "quality",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "53.180185",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "6.603653",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Hortus Haren. Unidentified Agaricales (perhaps a <i>Melanoleuca</i>).",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2021-10-18 12:39:27",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Agnes_Monkelbaan\" title=\"User:Agnes Monkelbaan\">Agnes Monkelbaan</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:2021 in Groningen (municipality)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-4.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi of Groningen (province) in October"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi of Hortus (Haren, Groningen)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Netherlands photographs taken on 2021-10-18"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Paxillaceae in the Netherlands"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images by Agnes Monkelbaan"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images of Boletales"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images of Groningen (municipality)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images of fungi in the Netherlands"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images of mushrooms"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Unidentified Agaricales"
+          }
+        ]
+      },
+      "16097960": {
+        "pageid": 16097960,
+        "ns": 6,
+        "title": "File:Kahler-Krempling-Paxillus-involutus.jpg",
+        "index": 7,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 5337769,
+            "width": 3000,
+            "height": 2128,
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e0/Kahler-Krempling-Paxillus-involutus.jpg/960px-Kahler-Krempling-Paxillus-involutus.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 640,
+            "thumbheight": 454,
+            "responsiveUrls": {
+              "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e0/Kahler-Krempling-Paxillus-involutus.jpg/1280px-Kahler-Krempling-Paxillus-involutus.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e0/Kahler-Krempling-Paxillus-involutus.jpg/960px-Kahler-Krempling-Paxillus-involutus.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 640,
+              "height": 454,
+              "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e0/Kahler-Krempling-Paxillus-involutus.jpg/1280px-Kahler-Krempling-Paxillus-involutus.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/e/e0/Kahler-Krempling-Paxillus-involutus.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Kahler-Krempling-Paxillus-involutus.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=16097960",
+            "sha1": "ac72374085516d1acbfa19c5404d1609a0c27233",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2011-08-14 14:07:05",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Kahler-Krempling-Paxillus-involutus",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Paxillaceae in Germany|Paxillus involutus|Taken with Canon EOS 500D|Self-published work|Fungi in Ulm|Nature of Eggingen (Ulm)|Files with coordinates missing SDC location of creation (48° N, 9° E)",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "quality",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "48.356136",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "9.853533",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Brown Roll-Rim, Common Roll-Rim or Poison Pax <i><a href=\"//commons.wikimedia.org/wiki/Paxillus_involutus\" title=\"Paxillus involutus\">Paxillus involutus</a></i>, Family: Paxillaceae, Location: Germany, Ulm, Eggingen",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2011-08-05",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Holleday\" title=\"User:Holleday\">Holger Krisp</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with coordinates missing SDC location of creation (48° N, 9° E)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi in Ulm"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Nature of Eggingen (Ulm)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Paxillaceae in Germany"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Paxillus involutus"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images of Boletales"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images of fungi in Germany"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Canon EOS 500D"
+          }
+        ]
+      },
+      "109915150": {
+        "pageid": 109915150,
+        "ns": 6,
+        "title": "File:Paxillus Involutus LO (img1).jpg",
+        "index": 8,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 15071251,
+            "width": 6016,
+            "height": 4016,
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3d/Paxillus_Involutus_LO_%28img1%29.jpg/960px-Paxillus_Involutus_LO_%28img1%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 640,
+            "thumbheight": 427,
+            "responsiveUrls": {
+              "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3d/Paxillus_Involutus_LO_%28img1%29.jpg/1280px-Paxillus_Involutus_LO_%28img1%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3d/Paxillus_Involutus_LO_%28img1%29.jpg/960px-Paxillus_Involutus_LO_%28img1%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 640,
+              "height": 427,
+              "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3d/Paxillus_Involutus_LO_%28img1%29.jpg/1280px-Paxillus_Involutus_LO_%28img1%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Paxillus_Involutus_LO_%28img1%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Paxillus_Involutus_LO_(img1).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=109915150",
+            "sha1": "d0e85235e9be5f454ce9d0dd23280e1fd08d1ffe",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2021-09-10 19:35:35",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Paxillus Involutus LO (img1)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Paxillus involutus|FAL|Self-published work|Fungi of Leningrad Oblast|Leningrad Oblast photographs taken on 2021-08-30|Taken with Nikon Z 5|Photos by Florstein taken in 2021",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "quality",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Paxillus Involutus in the Forest of Leningrad Oblast, Russia",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "Taken on 30 August 2021",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<b><a href=\"//commons.wikimedia.org/wiki/User:Florstein\" title=\"User:Florstein\">Florstein</a></b> (<i><b>Telegram:<span class=\"plainlinks\"><a rel=\"nofollow\" class=\"external text\" href=\"https://t.me/wikiphotospace\">WikiPhoto.Space</a></span></b></i>)",
+                "source": "commons-desc-page"
+              },
+              "Permission": {
+                "value": "You may select the license of your choice.",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Attribution": {
+                "value": "Alex 'Florstein' Fedorov",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-4.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:FAL"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi of Leningrad Oblast"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Leningrad Oblast photographs taken on 2021-08-30"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Paxillus involutus"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Photos by Florstein taken in 2021"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images missing SDC creator"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images of Boletales"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images of fungi in Germany"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images of mushrooms"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images of nature in Leningrad Oblast"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Nikon Z 5"
+          }
+        ]
+      },
+      "4558768": {
+        "pageid": 4558768,
+        "ns": 6,
+        "title": "File:Čechratka podvinutá 1.jpg",
+        "index": 1,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 2947347,
+            "width": 2500,
+            "height": 1635,
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a1/%C4%8Cechratka_podvinut%C3%A1_1.jpg/960px-%C4%8Cechratka_podvinut%C3%A1_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 640,
+            "thumbheight": 419,
+            "responsiveUrls": {
+              "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a1/%C4%8Cechratka_podvinut%C3%A1_1.jpg/1280px-%C4%8Cechratka_podvinut%C3%A1_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a1/%C4%8Cechratka_podvinut%C3%A1_1.jpg/960px-%C4%8Cechratka_podvinut%C3%A1_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 640,
+              "height": 419,
+              "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a1/%C4%8Cechratka_podvinut%C3%A1_1.jpg/1280px-%C4%8Cechratka_podvinut%C3%A1_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/a/a1/%C4%8Cechratka_podvinut%C3%A1_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:%C4%8Cechratka_podvinut%C3%A1_1.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=4558768",
+            "sha1": "38b0f9c3713b1d4e08d2133ae44ca827d8e03d9b",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2008-08-14 16:17:27",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Čechratka podvinutá 1",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Paxillaceae in the Czech Republic|Paxillus involutus|Self-published work|PD-self",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/Paxillus_involutus\" title=\"Paxillus involutus\">Paxillus involutus</a>, found in South Bohemia, <a href=\"https://en.wikipedia.org/wiki/Czech_Republic\" class=\"extiw\" title=\"en:Czech Republic\">Czech Republic</a>",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2008-08",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\">Self-photographed</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Karelj\" title=\"User:Karelj\">Karelj</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "Public domain",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Public domain",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Copyrighted": {
+                "value": "False",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "pd",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:PD-self"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Paxillaceae in the Czech Republic"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Paxillus involutus"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          }
+        ]
+      }
+    }
+  },
+  "limits": {
+    "categories": 500
+  }
+}

@@ -1,0 +1,1127 @@
+{
+  "batchcomplete": "",
+  "continue": {
+    "gsroffset": 8,
+    "continue": "gsroffset||"
+  },
+  "query": {
+    "pages": {
+      "121831228": {
+        "pageid": 121831228,
+        "ns": 6,
+        "title": "File:Bare-toothed Russula (Russula vesca) in Tychy (Paprocany), Silesian Voivodeship, Poland, August 2022.jpg",
+        "index": 1,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 695764,
+            "width": 3000,
+            "height": 3000,
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/Bare-toothed_Russula_%28Russula_vesca%29_in_Tychy_%28Paprocany%29%2C_Silesian_Voivodeship%2C_Poland%2C_August_2022.jpg/960px-Bare-toothed_Russula_%28Russula_vesca%29_in_Tychy_%28Paprocany%29%2C_Silesian_Voivodeship%2C_Poland%2C_August_2022.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 640,
+            "thumbheight": 640,
+            "responsiveUrls": {
+              "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/Bare-toothed_Russula_%28Russula_vesca%29_in_Tychy_%28Paprocany%29%2C_Silesian_Voivodeship%2C_Poland%2C_August_2022.jpg/1280px-Bare-toothed_Russula_%28Russula_vesca%29_in_Tychy_%28Paprocany%29%2C_Silesian_Voivodeship%2C_Poland%2C_August_2022.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/Bare-toothed_Russula_%28Russula_vesca%29_in_Tychy_%28Paprocany%29%2C_Silesian_Voivodeship%2C_Poland%2C_August_2022.jpg/960px-Bare-toothed_Russula_%28Russula_vesca%29_in_Tychy_%28Paprocany%29%2C_Silesian_Voivodeship%2C_Poland%2C_August_2022.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 640,
+              "height": 640,
+              "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/Bare-toothed_Russula_%28Russula_vesca%29_in_Tychy_%28Paprocany%29%2C_Silesian_Voivodeship%2C_Poland%2C_August_2022.jpg/1280px-Bare-toothed_Russula_%28Russula_vesca%29_in_Tychy_%28Paprocany%29%2C_Silesian_Voivodeship%2C_Poland%2C_August_2022.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/c/cf/Bare-toothed_Russula_%28Russula_vesca%29_in_Tychy_%28Paprocany%29%2C_Silesian_Voivodeship%2C_Poland%2C_August_2022.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Bare-toothed_Russula_(Russula_vesca)_in_Tychy_(Paprocany),_Silesian_Voivodeship,_Poland,_August_2022.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=121831228",
+            "sha1": "e98bd293b4004041b66d2a8c904b5c802725ce2b",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2022-08-16 15:17:51",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Bare-toothed Russula (Russula vesca) in Tychy (Paprocany), Silesian Voivodeship, Poland, August 2022",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Russula vesca|Self-published work",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Bare-toothed Russula (Russula vesca) in Tychy (Paprocany), Silesian Voivodeship, Poland, August 2022",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2022-08-15 08:10:45",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:MichalPL&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:MichalPL (page does not exist)\">MichalPL</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-4.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Russula vesca"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          }
+        ]
+      },
+      "10501846": {
+        "pageid": 10501846,
+        "ns": 6,
+        "title": "File:Russ.ves.jpg",
+        "index": 4,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 684463,
+            "width": 1264,
+            "height": 830,
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fe/Russ.ves.jpg/960px-Russ.ves.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 640,
+            "thumbheight": 420,
+            "responsiveUrls": {
+              "2": "https://upload.wikimedia.org/wikipedia/commons/f/fe/Russ.ves.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fe/Russ.ves.jpg/960px-Russ.ves.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 640,
+              "height": 420,
+              "srcset": "https://upload.wikimedia.org/wikipedia/commons/f/fe/Russ.ves.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/f/fe/Russ.ves.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Russ.ves.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=10501846",
+            "sha1": "868876dd27771eb66581f37ced4ce619e6fc24e4",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2010-05-30 23:10:29",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Russ.ves",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Russula vesca|Self-published work",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "This image is the work of photographer Zonda Grattus, aka User:luridiformis. He is the sole owner and copyright holder of this photograph, and holds the original 35mm slide. He agrees to publish it under the Own Work, Creative Commons Attribution 3.0 License.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2 September 2008 (original upload date)",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<bdi lang=\"en\" dir=\"ltr\">Transferred from <span class=\"plainlinks\"><a class=\"external text\" data-mw-original-href=\"//en.wikipedia.org\" href=\"https://en.wikipedia.org\">en.wikipedia</a></span> to Commons by <a href=\"//commons.wikimedia.org/w/index.php?title=User:Tirithel&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Tirithel (page does not exist)\">Tirithel</a>.</bdi>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"https://en.wikipedia.org/wiki/User:Luridiformis\" class=\"extiw\" title=\"wikipedia:User:Luridiformis\">Luridiformis</a> at <a href=\"https://en.wikipedia.org/wiki/\" class=\"extiw\" title=\"wikipedia:\">English Wikipedia</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Attribution": {
+                "value": "<a href=\"https://en.wikipedia.org/wiki/User:Luridiformis\" class=\"extiw\" title=\"wikipedia:User:Luridiformis\">Luridiformis</a> at <a href=\"https://en.wikipedia.org/wiki/\" class=\"extiw\" title=\"wikipedia:\">English Wikipedia</a>",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Russula vesca"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          }
+        ]
+      },
+      "167774": {
+        "pageid": 167774,
+        "ns": 6,
+        "title": "File:Russula vesca.jpg",
+        "index": 2,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 62526,
+            "width": 356,
+            "height": 267,
+            "thumburl": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Russula_vesca.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "thumbwidth": 640,
+            "thumbheight": 480,
+            "thumbattribs": {
+              "src": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Russula_vesca.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 640,
+              "height": 480
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Russula_vesca.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Russula_vesca.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=167774",
+            "sha1": "95669bd2dbab3650f20a4ad098d840424d924e20",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2005-05-27 12:44:39",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Russula vesca",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Russula vesca|GFDL|Files with no machine-readable author|Files with no machine-readable source|License migration completed|Media missing infobox template",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/licenses/by-sa/3.0/",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0-migrated"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with no machine-readable author"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with no machine-readable source"
+          },
+          {
+            "ns": 14,
+            "title": "Category:GFDL"
+          },
+          {
+            "ns": 14,
+            "title": "Category:License migration completed"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Media missing infobox template"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Russula vesca"
+          }
+        ]
+      },
+      "114117113": {
+        "pageid": 114117113,
+        "ns": 6,
+        "title": "File:Russula vesca 144463604.jpg",
+        "index": 7,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 829318,
+            "width": 1536,
+            "height": 2048,
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/Russula_vesca_144463604.jpg/960px-Russula_vesca_144463604.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 640,
+            "thumbheight": 853,
+            "responsiveUrls": {
+              "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/Russula_vesca_144463604.jpg/1280px-Russula_vesca_144463604.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/Russula_vesca_144463604.jpg/960px-Russula_vesca_144463604.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 640,
+              "height": 853,
+              "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/Russula_vesca_144463604.jpg/1280px-Russula_vesca_144463604.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Russula_vesca_144463604.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Russula_vesca_144463604.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=114117113",
+            "sha1": "e0736dedb79c25ae3915dd4454d06654114d3d29",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2022-01-08 20:33:05",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Russula vesca 144463604",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Russulaceae in Germany|Germany photographs taken on 2021-07-18|Russula vesca|Media from iNaturalist|Fungi in July|INaturalist images reviewed by iNaturalistReviewBot|Files with coordinates missing SDC location of creation|Uploaded with iNaturalist2Commons",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "51.184028",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "14.066900",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "The Flirt (<i>Russula vesca</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2021-07-18",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"mw:ExtLink nofollow\" href=\"https://www.inaturalist.org/photos/144463604\" class=\"external free\">https://www.inaturalist.org/photos/144463604</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"mw:ExtLink nofollow\" href=\"https://www.inaturalist.org/users/1880699\" class=\"external text\">Enrico Tomschke</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-4.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with coordinates missing SDC location of creation"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi in July"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Germany photographs taken on 2021-07-18"
+          },
+          {
+            "ns": 14,
+            "title": "Category:INaturalist images reviewed by iNaturalistReviewBot"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Media from iNaturalist"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Russula vesca"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Russulaceae in Germany"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Uploaded with iNaturalist2Commons"
+          }
+        ]
+      },
+      "114117081": {
+        "pageid": 114117081,
+        "ns": 6,
+        "title": "File:Russula vesca 149899631.jpg",
+        "index": 6,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1811091,
+            "width": 1536,
+            "height": 2048,
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/44/Russula_vesca_149899631.jpg/960px-Russula_vesca_149899631.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 640,
+            "thumbheight": 853,
+            "responsiveUrls": {
+              "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/44/Russula_vesca_149899631.jpg/1280px-Russula_vesca_149899631.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/44/Russula_vesca_149899631.jpg/960px-Russula_vesca_149899631.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 640,
+              "height": 853,
+              "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/44/Russula_vesca_149899631.jpg/1280px-Russula_vesca_149899631.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/4/44/Russula_vesca_149899631.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Russula_vesca_149899631.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=114117081",
+            "sha1": "2a9132ba9e37d5b4aab7ec9a03a9341e36ba37a0",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2022-01-08 20:32:18",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Russula vesca 149899631",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Russula vesca|CC-Zero|Media from iNaturalist|Fungi in August|INaturalist images reviewed by iNaturalistReviewBot|Russulaceae in Finland|Uploaded with iNaturalist2Commons|Media from iNaturalist with obscured location",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "The Flirt (<i>Russula vesca</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2021-08-10",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/149899631\">https://www.inaturalist.org/photos/149899631</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/4836698\">muukalainen</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-Zero"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi in August"
+          },
+          {
+            "ns": 14,
+            "title": "Category:INaturalist images reviewed by iNaturalistReviewBot"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Media from iNaturalist"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Media from iNaturalist with obscured location"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Russula vesca"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Russulaceae in Finland"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Uploaded with iNaturalist2Commons"
+          }
+        ]
+      },
+      "114117171": {
+        "pageid": 114117171,
+        "ns": 6,
+        "title": "File:Russula vesca 24553297.jpg",
+        "index": 5,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 882075,
+            "width": 1536,
+            "height": 2048,
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/08/Russula_vesca_24553297.jpg/960px-Russula_vesca_24553297.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 640,
+            "thumbheight": 853,
+            "responsiveUrls": {
+              "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/08/Russula_vesca_24553297.jpg/1280px-Russula_vesca_24553297.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/08/Russula_vesca_24553297.jpg/960px-Russula_vesca_24553297.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 640,
+              "height": 853,
+              "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/08/Russula_vesca_24553297.jpg/1280px-Russula_vesca_24553297.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/0/08/Russula_vesca_24553297.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Russula_vesca_24553297.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=114117171",
+            "sha1": "184c6020ac1b975e29e5b0752f6f168347df97a6",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2022-01-08 20:34:08",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Russula vesca 24553297",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Russula vesca|Media from iNaturalist|Fungi in July|INaturalist images reviewed by iNaturalistReviewBot|Files with coordinates missing SDC location of creation|United States photographs taken on 2014-07-19|Uploaded with iNaturalist2Commons|Russulaceae in the United States",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "44.979050",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "-67.109550",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "The Flirt (<i>Russula vesca</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2014-07-19",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/24553297\">https://www.inaturalist.org/photos/24553297</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/676480\">pinonbistro</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-4.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with coordinates missing SDC location of creation"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi in July"
+          },
+          {
+            "ns": 14,
+            "title": "Category:INaturalist images reviewed by iNaturalistReviewBot"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Media from iNaturalist"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Russula vesca"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Russulaceae in the United States"
+          },
+          {
+            "ns": 14,
+            "title": "Category:United States photographs taken on 2014-07-19"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Uploaded with iNaturalist2Commons"
+          }
+        ]
+      },
+      "156995528": {
+        "pageid": 156995528,
+        "ns": 6,
+        "title": "File:Russula vesca 438665349.jpg",
+        "index": 3,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 5014510,
+            "width": 4005,
+            "height": 4005,
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Russula_vesca_438665349.jpg/960px-Russula_vesca_438665349.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 640,
+            "thumbheight": 640,
+            "responsiveUrls": {
+              "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Russula_vesca_438665349.jpg/1280px-Russula_vesca_438665349.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Russula_vesca_438665349.jpg/960px-Russula_vesca_438665349.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 640,
+              "height": 640,
+              "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Russula_vesca_438665349.jpg/1280px-Russula_vesca_438665349.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/f/ff/Russula_vesca_438665349.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Russula_vesca_438665349.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=156995528",
+            "sha1": "dca036e2a10ce1f73ddd6d6cb7cb11cf078c33d5",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2024-12-22 09:58:10",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Russula vesca 438665349",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Russula vesca|Media from iNaturalist|INaturalist images reviewed by iNaturalistReviewBot|Files with coordinates missing SDC location of creation|Uploaded with iNaturalist2Commons",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "45.845329",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "13.657197",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "The Flirt (<i>Russula vesca</i>) in Slovenia",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2024-10-05",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/438665349\">https://www.inaturalist.org/photos/438665349</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/3522968\">Matej Frančeškin</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-4.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with coordinates missing SDC location of creation"
+          },
+          {
+            "ns": 14,
+            "title": "Category:INaturalist images reviewed by iNaturalistReviewBot"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Media from iNaturalist"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Russula vesca"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Uploaded with iNaturalist2Commons"
+          }
+        ]
+      },
+      "156995558": {
+        "pageid": 156995558,
+        "ns": 6,
+        "title": "File:Russula vesca 438665353.jpg",
+        "index": 8,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 6171503,
+            "width": 4467,
+            "height": 4467,
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/81/Russula_vesca_438665353.jpg/960px-Russula_vesca_438665353.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 640,
+            "thumbheight": 640,
+            "responsiveUrls": {
+              "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/81/Russula_vesca_438665353.jpg/1280px-Russula_vesca_438665353.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/81/Russula_vesca_438665353.jpg/960px-Russula_vesca_438665353.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 640,
+              "height": 640,
+              "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/81/Russula_vesca_438665353.jpg/1280px-Russula_vesca_438665353.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/8/81/Russula_vesca_438665353.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Russula_vesca_438665353.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=156995558",
+            "sha1": "602d3146029b1ae0681b50ce93a613c87bea93ac",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2024-12-22 09:59:29",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Russula vesca 438665353",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Russula vesca|Media from iNaturalist|INaturalist images reviewed by iNaturalistReviewBot|Files with coordinates missing SDC location of creation|Uploaded with iNaturalist2Commons",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "45.845329",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "13.657197",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "The Flirt (<i>Russula vesca</i>) in Slovenia",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2024-10-05",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/438665353\">https://www.inaturalist.org/photos/438665353</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/3522968\">Matej Frančeškin</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-4.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with coordinates missing SDC location of creation"
+          },
+          {
+            "ns": 14,
+            "title": "Category:INaturalist images reviewed by iNaturalistReviewBot"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Media from iNaturalist"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Russula vesca"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Uploaded with iNaturalist2Commons"
+          }
+        ]
+      }
+    }
+  },
+  "limits": {
+    "categories": 500
+  }
+}

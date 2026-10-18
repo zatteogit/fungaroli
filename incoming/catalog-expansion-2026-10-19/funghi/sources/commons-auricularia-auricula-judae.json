@@ -1,0 +1,1432 @@
+{
+  "batchcomplete": "",
+  "continue": {
+    "gsroffset": 8,
+    "continue": "gsroffset||"
+  },
+  "query": {
+    "pages": {
+      "1448464": {
+        "pageid": 1448464,
+        "ns": 6,
+        "title": "File:Auricularia auricula-judae (xndr).jpg",
+        "index": 1,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 720402,
+            "width": 1351,
+            "height": 1900,
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/73/Auricularia_auricula-judae_%28xndr%29.jpg/960px-Auricularia_auricula-judae_%28xndr%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 640,
+            "thumbheight": 900,
+            "responsiveUrls": {
+              "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/73/Auricularia_auricula-judae_%28xndr%29.jpg/1280px-Auricularia_auricula-judae_%28xndr%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/73/Auricularia_auricula-judae_%28xndr%29.jpg/960px-Auricularia_auricula-judae_%28xndr%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 640,
+              "height": 900,
+              "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/73/Auricularia_auricula-judae_%28xndr%29.jpg/1280px-Auricularia_auricula-judae_%28xndr%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/7/73/Auricularia_auricula-judae_%28xndr%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Auricularia_auricula-judae_(xndr).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=1448464",
+            "sha1": "c29518ab5290d3cd6263280424412834c24d5b12",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2006-12-10 17:08:17",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Auricularia auricula-judae (xndr)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Auricularia auricula-judae|GFDL|Taken with Canon EOS 350D|Files with no machine-readable source|License migration redundant|Self-published work|Assumed own work|Fungi in December|Auricularia in the Netherlands|Netherlands photographs taken on 2006-12-10",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "quality",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<p><i><a href=\"//commons.wikimedia.org/wiki/Auricularia_auricula-judae\" title=\"Auricularia auricula-judae\">Auricularia auricula-judae</a></i>\n</p>\n10 december 2006, the Netherlands",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "10 December 2006 (according to <span lang=\"en\" dir=\"ltr\"><a href=\"https://en.wikipedia.org/wiki/Exif\" class=\"extiw\" title=\"en:Exif\">Exif</a></span> data)",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "No machine-readable source provided. Own work assumed (based on copyright claims).",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "No machine-readable author provided. <a href=\"//commons.wikimedia.org/wiki/User:Svdmolen\" title=\"User:Svdmolen\">Svdmolen</a> assumed (based on copyright claims).",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 2.5",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 2.5",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/2.5",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-2.5",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Assumed own work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Auricularia auricula-judae"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Auricularia in the Netherlands"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-2.5"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0-migrated"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with no machine-readable source"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi in December"
+          },
+          {
+            "ns": 14,
+            "title": "Category:GFDL"
+          },
+          {
+            "ns": 14,
+            "title": "Category:License migration redundant"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Netherlands photographs taken on 2006-12-10"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images missing SDC creator"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images missing SDC depicts"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images missing SDC source of file"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images of Auriculariales"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Canon EOS 350D"
+          }
+        ]
+      },
+      "97119989": {
+        "pageid": 97119989,
+        "ns": 6,
+        "title": "File:Auricularia auricula-judae 105301108.jpg",
+        "index": 7,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1391119,
+            "width": 995,
+            "height": 2048,
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/76/Auricularia_auricula-judae_105301108.jpg/960px-Auricularia_auricula-judae_105301108.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 640,
+            "thumbheight": 1317,
+            "responsiveUrls": {
+              "2": "https://upload.wikimedia.org/wikipedia/commons/7/76/Auricularia_auricula-judae_105301108.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/76/Auricularia_auricula-judae_105301108.jpg/960px-Auricularia_auricula-judae_105301108.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 640,
+              "height": 1317,
+              "srcset": "https://upload.wikimedia.org/wikipedia/commons/7/76/Auricularia_auricula-judae_105301108.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/7/76/Auricularia_auricula-judae_105301108.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Auricularia_auricula-judae_105301108.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=97119989",
+            "sha1": "8a3fcd20cc2c5237f3141ae0ea8169493806bb87",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2020-11-29 10:08:02",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Auricularia auricula-judae 105301108",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Auricularia auricula-judae|Media from iNaturalist|Fungi of Derbyshire|Fungi in November|INaturalist images reviewed by iNaturalistReviewBot|United Kingdom photographs taken on 2020-11-22|Auricularia in the United Kingdom|Uploaded with iNaturalist2Commons|Files with coordinates missing SDC location of creation (53° N, 2° W)",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "53.228927",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "-1.747220",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Jelly Ear (<i>Auricularia auricula-judae</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2020-11-22",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/105301108\">https://www.inaturalist.org/photos/105301108</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/3587744\">Helen Waterman</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Auricularia auricula-judae"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Auricularia in the United Kingdom"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-4.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with coordinates missing SDC location of creation (53° N, 2° W)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi in November"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi of Derbyshire"
+          },
+          {
+            "ns": 14,
+            "title": "Category:INaturalist images reviewed by iNaturalistReviewBot"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Media from iNaturalist"
+          },
+          {
+            "ns": 14,
+            "title": "Category:United Kingdom photographs taken on 2020-11-22"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Uploaded with iNaturalist2Commons"
+          }
+        ]
+      },
+      "102113622": {
+        "pageid": 102113622,
+        "ns": 6,
+        "title": "File:Auricularia auricula-judae 116521101.jpg",
+        "index": 8,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 864051,
+            "width": 1536,
+            "height": 2048,
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/Auricularia_auricula-judae_116521101.jpg/960px-Auricularia_auricula-judae_116521101.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 640,
+            "thumbheight": 853,
+            "responsiveUrls": {
+              "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/Auricularia_auricula-judae_116521101.jpg/1280px-Auricularia_auricula-judae_116521101.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/Auricularia_auricula-judae_116521101.jpg/960px-Auricularia_auricula-judae_116521101.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 640,
+              "height": 853,
+              "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/Auricularia_auricula-judae_116521101.jpg/1280px-Auricularia_auricula-judae_116521101.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/6/6c/Auricularia_auricula-judae_116521101.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Auricularia_auricula-judae_116521101.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=102113622",
+            "sha1": "5798dd6810574963622cdc3f649baf79b066cdc1",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2021-03-22 06:55:47",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Auricularia auricula-judae 116521101",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Auricularia auricula-judae|Germany photographs taken on 2021-03-19|CC-Zero|Media from iNaturalist|Fungi in March|INaturalist images reviewed by iNaturalistReviewBot|Auricularia in Hesse|Uploaded with iNaturalist2Commons|Files with coordinates missing SDC location of creation (50° N, 8° E)",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "50.642462",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "8.708487",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Jelly Ear (<i>Auricularia auricula-judae</i>)",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2021-03-19",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.inaturalist.org/photos/116521101\">https://www.inaturalist.org/photos/116521101</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.inaturalist.org/users/1908828\">mangoblatt</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Auricularia auricula-judae"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Auricularia in Hesse"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-Zero"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with coordinates missing SDC location of creation (50° N, 8° E)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi in March"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Germany photographs taken on 2021-03-19"
+          },
+          {
+            "ns": 14,
+            "title": "Category:INaturalist images reviewed by iNaturalistReviewBot"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Media from iNaturalist"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Uploaded with iNaturalist2Commons"
+          }
+        ]
+      },
+      "11339745": {
+        "pageid": 11339745,
+        "ns": 6,
+        "title": "File:Auricularia auricula-judae 64485.JPG",
+        "index": 6,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 2335845,
+            "width": 3648,
+            "height": 2736,
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/35/Auricularia_auricula-judae_64485.JPG/960px-Auricularia_auricula-judae_64485.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 640,
+            "thumbheight": 480,
+            "responsiveUrls": {
+              "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/35/Auricularia_auricula-judae_64485.JPG/1280px-Auricularia_auricula-judae_64485.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/35/Auricularia_auricula-judae_64485.JPG/960px-Auricularia_auricula-judae_64485.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 640,
+              "height": 480,
+              "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/35/Auricularia_auricula-judae_64485.JPG/1280px-Auricularia_auricula-judae_64485.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/3/35/Auricularia_auricula-judae_64485.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Auricularia_auricula-judae_64485.JPG",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=11339745",
+            "sha1": "55100871e188856c7f68df670914ff0b0fa80d05",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2010-08-30 18:01:50",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Auricularia auricula-judae 64485",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Auricularia auricula-judae|Images from Mushroom Observer|Files from external sources with reviewed licenses|Fungi of Lancashire|Auricularia in the United Kingdom",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "For more information about this, see the <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/show_observation/28157\">observation page</a> at Mushroom Observer.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2009-11-12",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "This image is <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/image/show_image/64485\">Image Number 64485</a> at <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org\">Mushroom Observer</a>, a source for mycological images.",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "This image was created by user <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/show_user/1401\">Josh Milburn (J Milburn)</a> at <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org\">Mushroom Observer</a>, a source for mycological images.<br>You can contact this user <a rel=\"nofollow\" class=\"external text\" href=\"https://mushroomobserver.org/observer/ask_user_question/1401\">here</a>.",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Auricularia auricula-judae"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Auricularia in the United Kingdom"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-3.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files from external sources with reviewed licenses"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi of Lancashire"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Images from Mushroom Observer"
+          }
+        ]
+      },
+      "86885922": {
+        "pageid": 86885922,
+        "ns": 6,
+        "title": "File:Auricularia auricula-judae Bytom 2020.jpg",
+        "index": 5,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 13458537,
+            "width": 3276,
+            "height": 4942,
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/Auricularia_auricula-judae_Bytom_2020.jpg/960px-Auricularia_auricula-judae_Bytom_2020.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 640,
+            "thumbheight": 965,
+            "responsiveUrls": {
+              "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/Auricularia_auricula-judae_Bytom_2020.jpg/1280px-Auricularia_auricula-judae_Bytom_2020.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/Auricularia_auricula-judae_Bytom_2020.jpg/960px-Auricularia_auricula-judae_Bytom_2020.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 640,
+              "height": 965,
+              "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/Auricularia_auricula-judae_Bytom_2020.jpg/1280px-Auricularia_auricula-judae_Bytom_2020.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/4/42/Auricularia_auricula-judae_Bytom_2020.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Auricularia_auricula-judae_Bytom_2020.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=86885922",
+            "sha1": "38141ce5ac3d8708c6cf02daf64f564d236064ed",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2020-02-10 19:38:23",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Auricularia auricula-judae Bytom 2020",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Auricularia auricula-judae|Self-published work|Fungi in February|2020 in Bytom|Auricularia in Poland|Taken with Rikenon 50mm f/1.7|Fungi of Bytom|Images by Gower",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "quality",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "owocnik uszaka bzowego (Auricularia auricula-judae), Bytom, os. Arki Bożka",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2020-02-07 16:23:39",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Gower\" title=\"User:Gower\">Adrian Tync</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:2020 in Bytom"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Auricularia auricula-judae"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Auricularia in Poland"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-4.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi in February"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi of Bytom"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Images by Gower"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images by Gower"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images missing SDC Commons quality assessment"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images of Auriculariales"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images of Bytom"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images of fungi in Poland"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Taken with Rikenon 50mm f/1.7"
+          }
+        ]
+      },
+      "178862859": {
+        "pageid": 178862859,
+        "ns": 6,
+        "title": "File:Echt judasoor (Auricularia auricula-judae). 20-11-2025. (d.j.b.).jpg",
+        "index": 4,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 16771049,
+            "width": 4608,
+            "height": 3304,
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/Echt_judasoor_%28Auricularia_auricula-judae%29._20-11-2025._%28d.j.b.%29.jpg/960px-Echt_judasoor_%28Auricularia_auricula-judae%29._20-11-2025._%28d.j.b.%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 640,
+            "thumbheight": 459,
+            "responsiveUrls": {
+              "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/Echt_judasoor_%28Auricularia_auricula-judae%29._20-11-2025._%28d.j.b.%29.jpg/1280px-Echt_judasoor_%28Auricularia_auricula-judae%29._20-11-2025._%28d.j.b.%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/Echt_judasoor_%28Auricularia_auricula-judae%29._20-11-2025._%28d.j.b.%29.jpg/960px-Echt_judasoor_%28Auricularia_auricula-judae%29._20-11-2025._%28d.j.b.%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 640,
+              "height": 459,
+              "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/Echt_judasoor_%28Auricularia_auricula-judae%29._20-11-2025._%28d.j.b.%29.jpg/1280px-Echt_judasoor_%28Auricularia_auricula-judae%29._20-11-2025._%28d.j.b.%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/5/53/Echt_judasoor_%28Auricularia_auricula-judae%29._20-11-2025._%28d.j.b.%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Echt_judasoor_(Auricularia_auricula-judae)._20-11-2025._(d.j.b.).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=178862859",
+            "sha1": "af5d9d79cad9701700de68def98d1ae7c07b3f4c",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2025-11-23 05:53:26",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Echt judasoor (Auricularia auricula-judae). 20-11-2025. (d.j.b.)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Auricularia auricula-judae|Images with annotations|Self-published work|Close-up photographs of mushrooms|Featured Images by Famberhorst|2025 in De Fryske Marren|POTD Notification by Famberhorst|Files with coordinates missing SDC location of creation (52° N, 5° E)|Netherlands photographs taken on 2025-11-20|Fungi of Friesland in November|Focus stacking images by User:Famberhorst|Focus stacking images of mushrooms|Fungi of De Famberhorst|Featured pictures of the Netherlands by User:Famberhorst|Files with Assessments template missing SDC Commons quality image assessment|Focus stacked image|Featured pictures of fungi in the Netherlands",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "quality|featured|potd",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "52.969900",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "5.785300",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<a href=\"https://en.wikipedia.org/wiki/Auricularia_auricula-judae\" class=\"extiw\" title=\"en:Auricularia auricula-judae\"> <i>Auricularia auricula-judae</i></a> on an old beech tree at the base of a previously cut branch. Focus stack of 23 photos.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2025-11-20 14:40:32",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Famberhorst\" title=\"User:Famberhorst\"> Dominicus Johannes Bergsma.</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:2025 in De Fryske Marren"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Auricularia auricula-judae"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-4.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Close-up photographs of mushrooms"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Featured Images by Famberhorst"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Featured pictures of fungi in the Netherlands"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Featured pictures of the Netherlands by User:Famberhorst"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Featured pictures on Wikimedia Commons"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with Assessments template missing SDC Commons quality image assessment"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with coordinates missing SDC location of creation (52° N, 5° E)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Focus stacked image"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Focus stacking images by User:Famberhorst"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Focus stacking images of mushrooms"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi of De Famberhorst"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi of Friesland in November"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Images with annotations"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Netherlands photographs taken on 2025-11-20"
+          },
+          {
+            "ns": 14,
+            "title": "Category:POTD Notification by Famberhorst"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Pictures of the day (2027)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images by Famberhorst"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images of Auriculariales"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images of Friesland"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images of fungi in the Netherlands"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images of mushrooms"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          }
+        ]
+      },
+      "145517351": {
+        "pageid": 145517351,
+        "ns": 6,
+        "title": "File:Echt judasoor (Auricularia auricula-judae) op een stam van een vlier. 15-02-2024. (actm.) 15-02-2024. (actm.).jpg",
+        "index": 2,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 17167501,
+            "width": 4868,
+            "height": 3244,
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/Echt_judasoor_%28Auricularia_auricula-judae%29_op_een_stam_van_een_vlier._15-02-2024._%28actm.%29_15-02-2024._%28actm.%29.jpg/960px-Echt_judasoor_%28Auricularia_auricula-judae%29_op_een_stam_van_een_vlier._15-02-2024._%28actm.%29_15-02-2024._%28actm.%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 640,
+            "thumbheight": 426,
+            "responsiveUrls": {
+              "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/Echt_judasoor_%28Auricularia_auricula-judae%29_op_een_stam_van_een_vlier._15-02-2024._%28actm.%29_15-02-2024._%28actm.%29.jpg/1280px-Echt_judasoor_%28Auricularia_auricula-judae%29_op_een_stam_van_een_vlier._15-02-2024._%28actm.%29_15-02-2024._%28actm.%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/Echt_judasoor_%28Auricularia_auricula-judae%29_op_een_stam_van_een_vlier._15-02-2024._%28actm.%29_15-02-2024._%28actm.%29.jpg/960px-Echt_judasoor_%28Auricularia_auricula-judae%29_op_een_stam_van_een_vlier._15-02-2024._%28actm.%29_15-02-2024._%28actm.%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 640,
+              "height": 426,
+              "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/Echt_judasoor_%28Auricularia_auricula-judae%29_op_een_stam_van_een_vlier._15-02-2024._%28actm.%29_15-02-2024._%28actm.%29.jpg/1280px-Echt_judasoor_%28Auricularia_auricula-judae%29_op_een_stam_van_een_vlier._15-02-2024._%28actm.%29_15-02-2024._%28actm.%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/8/84/Echt_judasoor_%28Auricularia_auricula-judae%29_op_een_stam_van_een_vlier._15-02-2024._%28actm.%29_15-02-2024._%28actm.%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Echt_judasoor_(Auricularia_auricula-judae)_op_een_stam_van_een_vlier._15-02-2024._(actm.)_15-02-2024._(actm.).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=145517351",
+            "sha1": "ec604895b0ff94a998911bd33a41182ad69f27d6",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2024-02-18 17:51:55",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Echt judasoor (Auricularia auricula-judae) op een stam van een vlier. 15-02-2024. (actm.) 15-02-2024. (actm.)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Sambucus|Auricularia auricula-judae|Images with annotations|Self-published work|Close-up photographs of mushrooms|Featured Images by Agnes Monkelbaan|2024 in De Fryske Marren|Netherlands photographs taken on 2024-02-15|POTD Notification by Agnes Monkelbaan|Files with coordinates missing SDC location of creation (52° N, 5° E)|Bokeh photographs of fungi|Fungi of Friesland in February|Auricularia in Friesland|Focus stacking images by User:Agnes Monkelbaan|Sambucus nigra (bark)|Diseases and disorders of Sambucus nigra|Focus stacking images of mushrooms|Fungi of De Famberhorst|Featured pictures of the Netherlands by User:Agnes Monkelbaan|Focus stacked image|Featured pictures of fungi in the Netherlands",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "quality|featured|potd",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "52.969900",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "5.785300",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "A rain-soaked jelly ear (<a rel=\"mw:WikiLink/Interwiki\" href=\"https://en.wikipedia.org/wiki/Auricularia%20auricula-judae\" title=\"en:Auricularia auricula-judae\" class=\"extiw\"><i>Auricularia auricula-judae</i></a>), family <i>Auriculariaceae</i>, on a stem of a <a rel=\"mw:WikiLink/Interwiki\" href=\"https://en.wikipedia.org/wiki/Sambucus\" title=\"en:Sambucus\" class=\"extiw\">Sambucus</a>. Focus stack of 20 photos.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2024-02-15 13:37:53",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"mw:WikiLink\" href=\"https://commons.wikimedia.org/wiki/User:Agnes_Monkelbaan\" title=\"User:Agnes Monkelbaan\">Agnes Monkelbaan</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:2024 in De Fryske Marren"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Auricularia auricula-judae"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Auricularia in Friesland"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Bokeh photographs of fungi"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-4.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Close-up photographs of mushrooms"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Diseases and disorders of Sambucus nigra"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Featured Images by Agnes Monkelbaan"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Featured pictures of fungi in the Netherlands"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Featured pictures of the Netherlands by User:Agnes Monkelbaan"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Featured pictures on Wikimedia Commons"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with coordinates missing SDC location of creation (52° N, 5° E)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Focus stacked image"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Focus stacking images by User:Agnes Monkelbaan"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Focus stacking images of mushrooms"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi of De Famberhorst"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Fungi of Friesland in February"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Images with annotations"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Netherlands photographs taken on 2024-02-15"
+          },
+          {
+            "ns": 14,
+            "title": "Category:POTD Notification by Agnes Monkelbaan"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Pictures of the day (2024)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images by Agnes Monkelbaan"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images of Auriculariales"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images of fungi in the Netherlands"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images of mushrooms"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Sambucus"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Sambucus nigra (bark)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          }
+        ]
+      },
+      "124675179": {
+        "pageid": 124675179,
+        "ns": 6,
+        "title": "File:Jelly Ear, Auricularia auricula-judae, UK 2.jpg",
+        "index": 3,
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 10833960,
+            "width": 5760,
+            "height": 3840,
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/Jelly_Ear%2C_Auricularia_auricula-judae%2C_UK_2.jpg/960px-Jelly_Ear%2C_Auricularia_auricula-judae%2C_UK_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 640,
+            "thumbheight": 427,
+            "responsiveUrls": {
+              "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/Jelly_Ear%2C_Auricularia_auricula-judae%2C_UK_2.jpg/1280px-Jelly_Ear%2C_Auricularia_auricula-judae%2C_UK_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/Jelly_Ear%2C_Auricularia_auricula-judae%2C_UK_2.jpg/960px-Jelly_Ear%2C_Auricularia_auricula-judae%2C_UK_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 640,
+              "height": 427,
+              "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/Jelly_Ear%2C_Auricularia_auricula-judae%2C_UK_2.jpg/1280px-Jelly_Ear%2C_Auricularia_auricula-judae%2C_UK_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/2/21/Jelly_Ear%2C_Auricularia_auricula-judae%2C_UK_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Jelly_Ear,_Auricularia_auricula-judae,_UK_2.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=124675179",
+            "sha1": "adee35615a88f62635208a744c284a472307fccf",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2022-11-15 01:41:07",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Jelly Ear, Auricularia auricula-judae, UK 2",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Auricularia auricula-judae|Self-published work|Featured pictures on Wikipedia, English|Files with coordinates missing SDC location of creation (51° N, 1° W)",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "quality|featured",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "51.680260",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "-0.085724",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<a href=\"https://en.wikipedia.org/wiki/Auricularia_auricula-judae\" class=\"extiw\" title=\"en:Auricularia auricula-judae\">Auricularia auricula-judae</a>, Jelly Ear, taken in <a href=\"https://en.wikipedia.org/wiki/London_Borough_of_Enfield\" class=\"extiw\" title=\"en:London Borough of Enfield\">Enfield</a>, <a href=\"https://en.wikipedia.org/wiki/UK\" class=\"extiw\" title=\"en:UK\">UK</a>",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2022-10-24 14:53:23",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Stu%27s_Images\" title=\"User:Stu's Images\">Stu's Images</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Attribution": {
+                "value": "Stu's Images",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ],
+        "categories": [
+          {
+            "ns": 14,
+            "title": "Category:Auricularia auricula-judae"
+          },
+          {
+            "ns": 14,
+            "title": "Category:CC-BY-SA-4.0"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Featured pictures on Wikimedia Commons"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Featured pictures on Wikipedia, English"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Files with coordinates missing SDC location of creation (51° N, 1° W)"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Quality images"
+          },
+          {
+            "ns": 14,
+            "title": "Category:Self-published work"
+          }
+        ]
+      }
+    }
+  },
+  "limits": {
+    "categories": 500
+  }
+}
