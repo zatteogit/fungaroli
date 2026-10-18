@@ -87,3 +87,9 @@ export function emphasizeContent(root, phrases = []) {
     }
   }
 }
+
+// Titoli tecnici: un accesso discreto al glossario, distinto dai termini nel testo.
+export function glossaryHeading(id,label) {
+  if(!/^[a-z0-9-]+$/.test(id||''))return esc(label);
+  return `<a class="glossary-link glossary-heading" data-term="${id}" href="#/glossario/${id}" aria-haspopup="dialog" aria-label="${esc(label)}: apri il glossario">${esc(label)}<span class="glossary-heading-mark" aria-hidden="true">?</span></a>`;
+}

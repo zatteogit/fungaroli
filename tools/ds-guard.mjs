@@ -51,7 +51,7 @@ const CONFIG = {
   // perimetro Fronda: il livello di componenti condivisi, solo ruoli pubblici
   entriesDirect: ["css/fronda.css", "css/species-pages.css", "css/map-experience.css"],
   aliases: {},
-  exclude: ["node_modules/", "docs/", "assets/", "tests/", "tools/", "worker/", "data/", ".wrangler/", "test-results/", "playwright-report/", "css/tokens.css", "css/fonts.css"],
+  exclude: ["node_modules/", "docs/", "incoming/", "assets/", "tests/", "tools/", "worker/", "data/", ".wrangler/", "test-results/", "playwright-report/", "css/tokens.css", "css/fonts.css"],
   patterns: [
     { id: "inline-hex", label: "literal hex colour", re: /#[0-9a-fA-F]{3,8}\b(?![\w-])/g },
     { id: "css-colour-fn", label: "rgb()/hsl()/oklch() literal", re: /\b(?:rgba?|hsla?|oklch)\([^)]*\)/g },

@@ -3,6 +3,7 @@ import { CONTENT_RESOURCES, CONTENT_SCHEMA_VERSION, resourceOf } from '../js/con
 import { readCommunityUser } from './community.js';
 import { validateContent } from './content-validation.js';
 import {glossaryContextSeedUpdate,repositorySeedUpdate} from './seed-update.js';
+import {adminDashboard,saveRankingPolicy} from './admin-dashboard.js';
 import { weatherMetrics } from './weather-metrics.js';
 
 const initialized=new WeakMap(), enc=new TextEncoder();
@@ -115,6 +116,12 @@ export async function handleCms(req,env,now=Date.now()) {
     if(req.method!=='GET' && (actor.kind==='human'?origin!==expected:origin&&origin!==expected)) failure('Origine non autorizzata.',403);
     if(path==='me'&&req.method==='GET')return response({user:actor,configured:!!(env.CMS_ADMIN_IDS||env.CMS_EDITOR_IDS)});
     permit(actor,'read');await rate(db,actor,now);
+    if(path==='dashboard'){
+      permit(actor,'admin');
+      if(req.method==='GET')return response(await adminDashboard(env.COMMUNITY_DB,now,db));
+      if(req.method==='PATCH')return response(await saveRankingPolicy(env.COMMUNITY_DB,await json(req),actor.id,now));
+      failure('Metodo non consentito.',405);
+    }
     if(path==='schemas'&&req.method==='GET')return response({schemaVersion:CONTENT_SCHEMA_VERSION,resources:CONTENT_RESOURCES.map(r=>({...r,schema:{type:'object',required:r.required,additionalProperties:true}})),operations:['read','write','publish','review'],maxBytes:1500000});
     if(path==='items'&&req.method==='GET') {
       const rows=(await db.prepare('SELECT id,version,published_version,updated_at,updated_by FROM cms_documents').all()).results;

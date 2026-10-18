@@ -1,3 +1,5 @@
+import {notebookGlyph} from './ui-icons.js';
+import {openModal} from './modal-flow.js';
 import {renderNotebook, notebookRoute, notebookTitle} from './notebook-view.js';
 import {notebookDemo} from './notebook-demo.js';
 // Diario delle uscite: procedura guidata a passi + elenco con confronto previsto/trovato.
@@ -176,7 +178,12 @@ export function initJournal({ onEntries=()=>{},zones, speciesCatalog = SPECIES, 
   const sortEntries = () => entries.sort((a, b) => String(b.date||'').localeCompare(String(a.date||'')) || String(b.savedAt||'').localeCompare(String(a.savedAt||'')));
   const noteDialog=document.createElement('dialog');noteDialog.className='wiz notebook-dialog';noteDialog.setAttribute('aria-label','Appunto privato');document.body.append(noteDialog);
   const savedNotice=document.createElement('div');savedNotice.className='app-toast';savedNotice.setAttribute('role','status');document.body.append(savedNotice);let noticeTimer;
-  document.addEventListener('fungaroli:note-saved',()=>{clearTimeout(noticeTimer);(noteOrigin?.closest('dialog[open]')||document.body).append(savedNotice);savedNotice.innerHTML='Salvato nel taccuino <a href="#/diario" class="link-btn">Apri →</a>';savedNotice.classList.add('on');noticeTimer=setTimeout(()=>savedNotice.classList.remove('on'),5000);});
+  document.addEventListener('fungaroli:note-saved',()=>{
+    const origin=noteOrigin;
+    const showSavedNotice=()=>{clearTimeout(noticeTimer);(origin?.closest('dialog[open]')||document.body).append(savedNotice);savedNotice.innerHTML=`Salvato nel taccuino <a href="#/diario" class="link-btn">${notebookGlyph}Apri →</a>`;savedNotice.classList.add('on');noticeTimer=setTimeout(()=>savedNotice.classList.remove('on'),5000);};
+    // Il coordinatore riapre la scheda al close: prima il suo dialog è sospeso.
+    if(noteDialog.open)noteDialog.addEventListener('close',showSavedNotice,{once:true});else showSavedNotice();
+  });
   let noteOrigin=null;
   noteDialog.addEventListener('close',()=>{noteControls.forEach(c=>c.destroy());noteControls=[];noteOrigin?.isConnected&&noteOrigin.focus({preventScroll:true});});
   addEventListener('hashchange',()=>{if(noteDialog.open)noteDialog.close();});
@@ -207,7 +214,7 @@ export function initJournal({ onEntries=()=>{},zones, speciesCatalog = SPECIES, 
     draft = { zoneId: getZoneId(), date: iso(new Date()), band: undefined, finds: {}, searched: [], effort: {}, note: '' };
     step = 0;
     render();
-    dlg.showModal();
+    openModal(dlg);
   }
 
   function next() { step = Math.min(STEPS.length - 1, step + 1); render(); }
@@ -410,7 +417,7 @@ export function initJournal({ onEntries=()=>{},zones, speciesCatalog = SPECIES, 
       const status=shareDialog.querySelector('[data-copy-status]');
       try{await navigator.clipboard.writeText(text);status.textContent='Appunto copiato. Incollalo nella chat o nel messaggio che preferisci.';}catch{shareDialog.querySelector('textarea').select();status.textContent='Seleziona e copia il testo, poi incollalo nel tuo messaggio.';}
     });
-    shareDialog.showModal();
+    openModal(shareDialog);
   });
   list.addEventListener('click',async event=>{
     const button=event.target.closest('[data-share-entry],[data-withdraw-entry],[data-del],[data-cancel-delete]');
@@ -465,14 +472,14 @@ export function initJournal({ onEntries=()=>{},zones, speciesCatalog = SPECIES, 
       const a=agreement(e),top=Object.entries(e.predicted||{}).filter(([,v])=>Number.isFinite(v)).sort((x,y)=>y[1]-x[1])[0];
       return `<details class="notebook-analysis"><summary>Condizioni ${e.kind==='plan'?'salvate':'dell’uscita'}</summary>${top?`<p>Indice salvato ${formatIndex(top[1])} · ${esc(speciesCatalog.find(x=>x.id===top[0])?.name||top[0])}</p><p class="small muted">Valore storico: non descrive le condizioni attuali.</p>`:''}${e.kind==='plan'?'<p>Previsione salvata prima dell’uscita.</p>':a?a.species.map(x=>`<p>${esc(speciesCatalog.find(s=>s.id===x.id)?.name||x.id)}: ${x.ok?'concordante':x.said?'indice alto, zero osservato':'trovata con indice basso'}</p>`).join(''):'<p>Osservazione senza confronto prospettico.</p>'}</details>`;
     };
-    const result=renderNotebook({entries:route.demo?getDemoEntries():entries,zones,species:speciesCatalog,zoneImage,referenceImage,route,filter:listFilter,query:listQuery,actions:rowActions,analysis,shared:e=>store?.kind==='community'&&e.shared});
+    const result=renderNotebook({entries:route.demo?getDemoEntries():entries,zones,species:speciesCatalog,zoneImage,referenceImage,route,filter:listFilter,query:listQuery,canPreview:['admin','editor'].includes(currentUser()?.role),actions:rowActions,analysis,shared:e=>store?.kind==='community'&&e.shared});
     const heading=document.querySelector('.notebook-heading');
     heading.querySelector('h1').textContent=result.title;
     heading.querySelector('.kicker').textContent=result.kicker;
     heading.querySelector('.view-sub').textContent=result.subtitle;
     heading.querySelector('.diary-header-actions').hidden=route.demo||result.detail;
     heading.querySelector('[data-new-note]').hidden=route.demo||result.detail;
-    heading.querySelector('.diary-demo-link').hidden=route.demo||result.detail;
+    heading.querySelector('.diary-demo-link').hidden=!['admin','editor'].includes(currentUser()?.role)||route.demo||result.detail;
     document.querySelector('.notebook-view').classList.toggle('is-detail',result.detail);
     document.querySelector('.notebook-view').classList.toggle('is-demo',route.demo);
     document.getElementById('notebook-storage-panel').hidden=route.demo||result.detail;

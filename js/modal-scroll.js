@@ -1,4 +1,6 @@
-// Blocco condiviso per tutti i dialog modali, anche sovrapposti o rimossi dalla rotta.
+import './focus.js';
+import './modal-flow.js';
+// Blocco condiviso per il dialog attivo e i passaggi conservati dal percorso.
 // Nessun position:fixed sul body: intestazione e navigazione mantengono il viewport.
 const root = document.documentElement;
 let saved = null, opening = null, touch = null;
@@ -26,7 +28,40 @@ function sync() {
     if (position.hash === location.hash) scrollTo({left:position.x, top:position.y, behavior:'instant'});
   }
   opening = null;
+  fitViewport();
 }
+
+let viewportFrame = 0;
+function fitViewport() {
+  const viewport = window.visualViewport, top = viewport?.offsetTop || 0, height = viewport?.height || innerHeight;
+  root.style.setProperty('--modal-visible-top', `${top}px`);
+  root.style.setProperty('--modal-visible-height', `${height}px`);
+  const modal = topModal();
+  root.classList.toggle('modal-viewport-constrained', !!modal && (top > 1 || height < innerHeight - 1));
+  const field = document.activeElement;
+  if (modal && field?.matches('input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),textarea,[contenteditable="true"]') && modal.contains(field)) {
+    const box = modal.getBoundingClientRect(), header = modal.querySelector('.report-header,.cmp-chooser-head,.account-header')?.getBoundingClientRect();
+    const upper = Math.max(top + 12, box.top + 12, header?.bottom || 0) + 8;
+    const lower = Math.min(top + height - 12, box.bottom - 12), rect = field.getBoundingClientRect();
+    const delta = rect.top < upper ? rect.top - upper : rect.bottom > lower ? rect.bottom - lower : 0;
+    // Scorre soltanto il contenuto della modale, mai il documento sottostante.
+    if (delta) for (let node = field.parentElement; node; node = node.parentElement) {
+      if (/(auto|scroll)/.test(getComputedStyle(node).overflowY) && node.scrollHeight > node.clientHeight) {
+        node.scrollTop += delta; break;
+      }
+      if (node === modal) break;
+    }
+  }
+  window.dispatchEvent(new Event('modalviewportchange'));
+}
+function scheduleViewport() {
+  cancelAnimationFrame(viewportFrame);
+  viewportFrame = requestAnimationFrame(fitViewport);
+}
+window.visualViewport?.addEventListener('resize', scheduleViewport, {passive:true});
+window.visualViewport?.addEventListener('scroll', scheduleViewport, {passive:true});
+window.addEventListener('resize', scheduleViewport, {passive:true});
+document.addEventListener('focusin', scheduleViewport);
 
 document.addEventListener('beforetoggle', event => {
   if (!(event.target instanceof HTMLDialogElement)) return;

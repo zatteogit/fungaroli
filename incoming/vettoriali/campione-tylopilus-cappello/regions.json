@@ -1,0 +1,118 @@
+{
+  "taxon_key": "tylopilus-felleus",
+  "variant": {
+    "cap_color": "crema",
+    "cap_shape": "piano",
+    "hymenophore_color": "rosa"
+  },
+  "canvas": [
+    390,
+    134
+  ],
+  "source": {
+    "sheet": "incoming/vettoriali/revisioni-raster/tylopilus-crema-piano-r03.png",
+    "branch": "images/semantic-svg-prototype",
+    "sheet_sha256": "fc15ded91ceec234664d3cd1f7a27e81c7c40599f06b6ece4c538498afee3b1a",
+    "cell": 0,
+    "crop_box": [
+      38,
+      198,
+      412,
+      316
+    ],
+    "padding": 8,
+    "crop_sha256": "b2374e7a6e023453788d0ba09de5cda9f5cf83e0daf002db1eb33e5cad3b2d11",
+    "tile": "cappello"
+  },
+  "raster_semantic_review": {
+    "status": "passed-independent-species-review",
+    "review_file": "incoming/vettoriali/revisioni-raster/review.json",
+    "review_sha256": "62d1afb2fcb1491ef51770d688fbd5a76a7e70829952a324a2b69440111f3f24",
+    "reviewer": "/root/raster_production"
+  },
+  "review": "Corrected raster r03 passed independent species and64px review before tracing. Cap/pores border manually placed inside dark contour; stem neck separated. Detail masks are source-pixel extraction within manually assigned parts, not automatic biological recognition. Polygon trace chosen after spline mode produced a spurious diagonal cap edge; no raster content changed.",
+  "trace_sha256": "36f17991800b3e7a6389035bd89dda91bab426985d9b6c80f634acb13fbdbd31",
+  "required_traits": {},
+  "region_definitions": {
+    "full": {
+      "d": "M-10-10H400V144H-10Z"
+    },
+    "cap": {
+      "d": "M-10-10H400V89H382C288 44 99 44 9 89H-10Z"
+    },
+    "hymenophore": {
+      "difference": [
+        "full",
+        "cap"
+      ]
+    }
+  },
+  "part_regions": [
+    "cap",
+    "hymenophore"
+  ],
+  "layers": [
+    {
+      "id": "cap",
+      "label": "Cappello",
+      "trait_fields": [
+        "cap_color",
+        "cap_shape"
+      ]
+    },
+    {
+      "id": "hymenophore",
+      "label": "Pori",
+      "trait_fields": [
+        "hymenophore",
+        "hymenophore_color"
+      ]
+    }
+  ],
+  "recolor_profiles": {
+    "cap": {
+      "field": "cap_color",
+      "source_value": "crema",
+      "anchor_rgb": [
+        246,
+        228,
+        205
+      ],
+      "targets": {
+        "crema": [
+          246,
+          228,
+          205
+        ],
+        "bruno": [
+          150,
+          100,
+          55
+        ]
+      }
+    },
+    "hymenophore": {
+      "field": "hymenophore_color",
+      "source_value": "rosa",
+      "anchor_rgb": [
+        249,
+        195,
+        190
+      ],
+      "targets": {
+        "rosa": [
+          249,
+          195,
+          190
+        ],
+        "bianco": [
+          249,
+          247,
+          239
+        ]
+      }
+    }
+  },
+  "detail_masks": {},
+  "vectorizer_mode": "polygon"
+}

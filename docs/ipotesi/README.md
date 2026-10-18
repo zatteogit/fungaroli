@@ -13,6 +13,8 @@ Il ramo di produzione e i documenti in `docs/` fanno fede. Ciò che sta solo in 
 
 ## Registro
 
+Consegne dei cinque agenti del 18/10: [valutazione e integrazione selettiva](valutazione-consegne-agenti-2026-10-18.md). Raster e correzioni botaniche adottati dopo controllo; SVG come prototipo tecnico; animali come studio e fotografie come pipeline senza nuovi file acquisiti.
+
 Rilascio delle parti verificate su richiesta di Matteo del 17/10: [valutazione dei rami sospesi](valutazione-rilascio-2026-10-17.md). Include le PR #93, #60 e #98 nel candidato di rilascio; non adotta i due modelli micologici di ricerca né i pacchetti grezzi delle immagini.
 
 | Lavoro | Dove | Stato (17/10/2026) |

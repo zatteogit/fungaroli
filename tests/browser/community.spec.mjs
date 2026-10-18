@@ -18,9 +18,9 @@ async function setup(page,{gust=8}={}) {
     const out = Array.from({ length: count }, () => ({ daily: { time: dates, precipitation_sum: dates.map((_, i) => i % 4 ? 3 : 12), temperature_2m_mean: Array(70).fill(13), temperature_2m_min: Array(70).fill(8), temperature_2m_max: Array(70).fill(18) }, hourly: { time, soil_moisture_3_to_9cm: fill(.3), soil_temperature_6cm: fill(13), precipitation: fill(0), precipitation_probability: fill(0), weather_code: fill(1), wind_gusts_10m: fill(gust), temperature_2m: fill(13) } }));
     return route.fulfill({ json: out });
   });
-  await page.addInitScript(() => localStorage.setItem('fungaroli:legal-accepted', '32026-10-16'));
+  await page.addInitScript(() => localStorage.setItem('fungaroli:legal-accepted', '42026-10-16'));
   const errors=[]; page.on('pageerror', (e) => errors.push(e.message));
-  await page.goto('/');
+  await page.goto('/');await expect(page.locator('body')).not.toHaveAttribute('data-legal-pending','');
   await expect(page.locator('#editorial')).toBeHidden();
   await page.goto('/#/guide');await expect(page.locator('#editorial a')).toHaveCount(3);
   await page.goto('/');await expect(page.locator('#hero .cover-link')).toBeVisible();
@@ -65,7 +65,7 @@ test('base privata del profilo: salvataggio, distanze, navigatori, isolamento e 
   const href=await page.locator('#detail a[href*="google.com/maps/dir"]').first().getAttribute('href');expect(new URL(href).searchParams.get('origin')).toBe('41.9028,12.4964');
   await page.reload();await expect(page.locator('#detail [data-sec="accesso"] > summary')).toContainText('da Roma');
   expect((await api(page,'profile','PUT',{accountId:owner,base:{name:'Errata',lat:91,lon:0}})).status).toBe(422);
-  expect((await page.request.post('/api/community/travel',{headers:{origin:'http://localhost:8788'},data:{targets:[]}})).status()).toBe(422);
+  expect((await page.request.post('/api/community/travel',{headers:{origin:new URL(page.url()).origin},data:{targets:[]}})).status()).toBe(422);
   const csrf=await page.request.put('/api/community/profile',{headers:{origin:'https://evil.example'},data:{accountId:owner,base:null}});expect(csrf.status()).toBe(403);
   const second=await browser.newContext({serviceWorkers:'block'}),other=await second.newPage();await setup(other);await register(other,'Secondo');
   expect((await api(other,'session')).data.user.base).toBe(null);
@@ -155,9 +155,9 @@ test('tratto locale distinto dal percorso intero, segmenti separati e imbocco ma
   await expect(focus).toContainText('più segmenti separati');
   await focus.getByRole('tab',{name:'Tracciato',exact:true}).click();
   await expect(focus.locator('.walk-sketch polyline')).toHaveCount(2);
-  await focus.getByRole('tab',{name:'Profilo',exact:true}).click();
-  await expect(focus.getByRole('tabpanel',{name:'Profilo',exact:true})).toContainText('Non costituiscono un profilo continuo');
-  await expect(focus.getByRole('tabpanel',{name:'Profilo',exact:true}).locator('svg')).toHaveCount(0);
+  await focus.getByRole('tab',{name:'Quote',exact:true}).click();
+  await expect(focus.getByRole('tabpanel',{name:'Quote',exact:true})).toContainText('Non costituiscono un profilo continuo');
+  await expect(focus.getByRole('tabpanel',{name:'Quote',exact:true}).locator('svg')).toHaveCount(0);
   const values = await focus.locator('.walk-facts dd').allTextContents();
   await expect(focus.locator('summary .walk-stats li').first()).toContainText('4,1 km');
   expect(values).toHaveLength(1);
@@ -190,12 +190,14 @@ test('un itinerario con lunghezza intera incoerente mostra «n.d.» e il titolo 
 });
 
 for(const width of [320,1280]) test(`tracciato e profilo nello stesso riquadro a ${width}px`,async({page})=>{
+  // La prova modifica il file locale al reload: mantiene la stessa fonte anche per gli avvisi.
+  await page.route('**/api/content/v1/snapshot',r=>r.fulfill({status:503,json:{error:'local trail fixture'}}));
   await page.setViewportSize({width,height:900});await page.emulateMedia({reducedMotion:'reduce'});
   const errors=await setup(page);await page.goto('/#/zona/tancia/0/sentiero/12313366');
   const focus=page.locator('#detail .walk-focus'),summary=focus.locator(':scope > summary');
   await expect(summary.locator('.walk-entrance').first()).toBeVisible();
   await expect(summary.locator('.tprof,.ws-forest')).toHaveCount(0);
-  await summary.click();
+  await summary.locator('.walk-title').click();
   await expect(summary.locator('.walk-entrance').first()).toBeHidden();
   await expect(summary.locator('.walk-title')).toBeVisible();
   await expect(focus.locator('.sec-body > .ws-forest')).toBeVisible();
@@ -236,13 +238,14 @@ for(const width of [320,1280]) test(`tracciato e profilo nello stesso riquadro a
   await page.route('**/api/content/v1/snapshot',r=>r.fulfill({status:503,json:{error:'test'}}));
   await page.route('**/data/trails.json',r=>r.fulfill({json:data}));
   await page.evaluate(()=>{localStorage.removeItem('fungaroli:content:v1');localStorage.removeItem('fungaroli:prefs:v2');});await page.reload();
-  await focus.locator(':scope > summary').click();await profile.click();
-  await expect(visual.getByRole('tabpanel',{name:'Profilo',exact:true})).toContainText('mancano quote sufficienti');
-  await expect(visual.getByRole('tabpanel',{name:'Profilo',exact:true}).locator('svg')).toHaveCount(0);
+  await focus.locator(':scope > summary').click();await visual.getByRole('tab',{name:'Quote',exact:true}).click();
+  await expect(visual.getByRole('tabpanel',{name:'Quote',exact:true})).toContainText('mancano quote sufficienti');
+  await expect(visual.getByRole('tabpanel',{name:'Quote',exact:true}).locator('svg')).toHaveCount(0);
   expect(errors).toEqual([]);
 });
 
 test('Quando ha una sola testata, mantiene gli avvisi meteo e aggiunge solo dettagli',async({page})=>{
+ await page.clock.setFixedTime(new Date(new Date().setUTCHours(0,0,0,0)));
  await page.setViewportSize({width:390,height:900});await page.emulateMedia({reducedMotion:'reduce'});
  const errors=await setup(page,{gust:46});await page.goto('/#/zona/tancia/0');
  const section=page.locator('#detail details[data-sec="quando"]'),summary=section.locator(':scope > summary');
@@ -272,7 +275,7 @@ test('riepiloghi essenziali negli accordion sul posto, senza voci duplicate o sa
 test('editoriale, filtri completi, passkey, isolamento e condivisione revocabile', async ({ browser, page }) => {
   const errors = await setup(page);
   await expect(page.locator('#community-intro')).toContainText('Ancora nessuna osservazione condivisa.');
-  await page.locator('#active-filters [data-more]').click();
+  await page.locator('#appbar-home-filters [data-more]:visible,#home-filter-action [data-more]:visible').first().click();
   await expect(page.locator('#full-filters [data-group]')).toHaveCount(11);
   // «Azzera» compare solo quando qualcosa è cambiato e riporta ai valori di partenza
   await expect(page.locator('#full-filters [data-reset]')).toHaveCount(0);
@@ -412,7 +415,7 @@ test('i campi del diario importato vengono visualizzati come testo', async ({ pa
 test('autocomplete dei commestibili, selezione individuale, stagione e persistenza', async ({page})=>{
   await page.setViewportSize({width:390,height:844}); const errors=await setup(page);
   const baseline=await page.locator('#hero .pc').first().textContent();
-  await page.locator('#active-filters [data-more]').click();
+  await page.locator('#appbar-home-filters [data-more]:visible,#home-filter-action [data-more]:visible').first().click();
   const input=page.locator('#species-filter-search'), options=page.locator('#species-filter-options');
   await input.fill('phalloides'); await expect(options.getByRole('option')).toHaveCount(0);
   await input.fill('agrocybe aegerita'); await expect(options.getByRole('option')).toHaveCount(1);
@@ -435,14 +438,14 @@ test('autocomplete dei commestibili, selezione individuale, stagione e persisten
   await page.locator('#sp-cards').getByRole('link',{name:'Pioppino',exact:true}).click();
   await expect(page.locator('#edible-detail')).toContainText('Pioppino');
   await expect(page.locator('#edible-detail')).toContainText('Indice non ancora disponibile');
-  await page.goto('/'); await page.locator('#active-filters [data-more]').click();
+  await page.goto('/'); await page.locator('#appbar-home-filters [data-more]:visible,#home-filter-action [data-more]:visible').first().click();
   await input.fill('Boletus pinophilus'); await input.press('Enter');
   const pref=await page.evaluate(()=>JSON.parse(localStorage.getItem('fungaroli:prefs:v2')));
   expect(pref.speciesIds).toContain('pinophilus'); expect(pref.speciesIds).not.toContain('edulis');
   await page.locator('#full-filters [data-close]').first().click();
   await expect(page.locator('#hero')).toContainText('Porcino rosso');
   await page.goto('/'); await expect(page.locator('#followed-species')).toHaveCount(0);
-  await page.locator('#active-filters [data-more]').click();
+  await page.locator('#appbar-home-filters [data-more]:visible,#home-filter-action [data-more]:visible').first().click();
   await expect(page.locator('#full-filters [data-remove-species]')).toHaveCount(3);
   await expect(page.locator('#full-filters [data-remove-species] .season-badge')).toHaveCount(3);
   await page.locator('#full-filters [data-all]').click();

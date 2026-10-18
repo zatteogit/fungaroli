@@ -124,3 +124,7 @@ L’app carica un singolo snapshot completo. Il backend delle segnalazioni legge
 Per un backup esportare D1 con gli strumenti Cloudflare: l’export pubblico conserva il sito pubblicato, ma non sostituisce il backup di bozze, revisioni e audit. D1 Time Travel dipende dal piano disponibile. Per aggiornare la versione Artifact, esportare i contenuti pubblici, sostituire i JSON della copia di build e rigenerarla; il build incorpora anche articoli e testi della home.
 
 Il primo passo per aumentare il numero di redattori o importare cataloghi molto grandi è separare i documenti in record individuali, mantenendo gli stessi ID e le release coerenti. Seguono upload R2, ricerca editoriale più ricca e pubblicazioni programmate. Un eventuale server MCP può adattare le API esistenti: non serve un secondo percorso di scrittura.
+
+## Dashboard amministrativa
+
+Gli amministratori aprono ora la redazione sulla **Dashboard**; **Contenuti** conserva l’editor esistente. La dashboard mostra questionari, segnalazioni e annotazioni condivise aggregate, con finestra di sette giorni e stato effettivo dell’uso nel modello. Il limite dell’influenza delle segnalazioni sull’ordine delle uscite è regolabile fra 0 e 10%, con motivo, controllo della versione e storico. I questionari e le altre annotazioni non hanno un peso automatico. API `GET/PATCH /api/cms/v1/dashboard`, solo amministratori. Dettagli, tempi di applicazione e limiti: [Dashboard di amministrazione](dashboard-amministrazione.md).

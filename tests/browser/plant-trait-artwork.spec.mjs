@@ -1,12 +1,32 @@
 import {test,expect} from '@playwright/test';
 import {preparePage} from '../../tools/visual-audit.mjs';
+test('fragolina: falso frutto pertinente alla specie e colori senza bacche generiche',async({browser})=>{
+ const context=await browser.newContext({viewport:{width:390,height:844},reducedMotion:'reduce',serviceWorkers:'block'}),page=await preparePage(context);
+ await page.addInitScript(()=>localStorage.setItem('fungaroli:install-later',String(Date.now())));
+ await page.goto('/#/pianta/fragolina');
+ const slot=page.locator('[data-plant-traits="fragolina"]');
+ const fruit=slot.locator('img[src$="fragolina-fruit_type-falso_frutto.webp"]');
+ await expect(fruit).toHaveCount(1);
+ await fruit.scrollIntoViewIfNeeded();
+ await expect.poll(()=>fruit.evaluate(i=>i.complete&&i.naturalWidth===128)).toBe(true);
+ await expect(slot.locator('img[src$="/fruit_type-falso_frutto.webp"]')).toHaveCount(0);
+ await expect(slot.locator('img[src$="fragolina-leaf_type-composta.webp"]')).toHaveCount(1);
+ await expect(slot.locator('img[src*="fruit_color-"]')).toHaveCount(0);
+ await expect(slot.locator('img[src*="flower_color-"]')).toHaveCount(0);
+ await expect(slot.locator('.ts-color')).toHaveCount(2);
+ await expect(slot).toContainText('Falso frutto');await expect(slot).toContainText('Rosso');
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+ await context.close();
+});
 for(const width of [320,390])test(`caratteri botanici illustrati nelle schede e nella chiave a ${width}px`,async({browser})=>{
  const context=await browser.newContext({viewport:{width,height:844},reducedMotion:'reduce',serviceWorkers:'block'}),page=await preparePage(context);
  await page.addInitScript(()=>localStorage.setItem('fungaroli:install-later',String(Date.now())));
  await page.goto('/#/pianta/finocchietto');
  const tiles=page.locator('[data-plant-traits="finocchietto"]');
  await expect(tiles.locator('img[src$="leaf_type-molto_divisa_fine.webp"]')).toHaveCount(1);
- await expect(tiles.locator('img[src$="flower_shape-ombrella.webp"]')).toHaveCount(1);
+ await expect(tiles.locator('img[src$="/flower_shape-ombrella.webp"]')).toHaveCount(0);
+ await expect(tiles.locator('img[src$="finocchietto-flower_shape-ombrella.webp"]')).toHaveCount(1);
+ await expect(tiles).toContainText('Ombrella');
  await expect(tiles).toContainText('Lacinie filiformi');
  await tiles.scrollIntoViewIfNeeded();
  for(const image of await tiles.locator('img').all())await expect.poll(()=>image.evaluate(i=>i.complete&&i.naturalWidth>0)).toBe(true);

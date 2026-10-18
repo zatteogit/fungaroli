@@ -1,3 +1,4 @@
+import {openModal} from './modal-flow.js';
 import {matchSpecies} from './species-search.js';
 // Cerca: un solo campo per tutto. Zone, funghi, velenosi e sosia, alberi, sentieri, pagine e regole.
 // Le voci arrivano da app.js gia' pronte (titolo, sottotitolo, testo in cui cercare, link o azione, miniatura).
@@ -176,6 +177,6 @@ export function openSearch(q = '', sc = '') {
   input.placeholder = PLACEHOLDER[context] || 'Cerca zone, funghi, alberi, sentieri…';
   input.value = typeof q === 'string' ? q : '';
   render(input.value);
-  dlg.showModal();
+  openModal(dlg);
   input.focus();
 }

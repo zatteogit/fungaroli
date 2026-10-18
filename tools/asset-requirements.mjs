@@ -246,7 +246,13 @@ export function coherence(d = load()) {
   // piante: indice e file delle icone, quando arrivano
   const askedP = new Set(TREE_KEYS(d.recPlants.schema).flatMap(([k, q]) => q.values.map((v) => `${k}-${v.id}`)));
   for (const [k, vs] of Object.entries(d.plantIcons?.values || {})) for (const v of vs) if (!askedP.has(`${k}-${v}`)) err.push(`plant-trait-icons: ${k}-${v} non è un valore dello schema`);
-  if (has('assets/plant-traits/')) for (const f of readdirSync(new URL('assets/plant-traits/', ROOT))) if (!askedP.has(f.replace(/\.webp$/, ''))) err.push(`assets/plant-traits/${f}: valore non nello schema`);
+  const speciesArtwork = new Set();
+  for (const [id, traits] of Object.entries(d.plantIcons?.species || {})) for (const [k, values] of Object.entries(traits)) for (const [v, art] of Object.entries(values)) {
+    if (!list(d.recPlants?.items?.[id]?.traits?.[k]).includes(v)) err.push(`plant-trait-icons: ${id}/${k}/${v} non documentato per la specie`);
+    if (!art.source || !art.review || !has(art.src)) err.push(`plant-trait-icons: ${id}/${k}/${v} senza fonte, revisione o asset`);
+    speciesArtwork.add(art.src);
+  }
+  if (has('assets/plant-traits/')) for (const f of readdirSync(new URL('assets/plant-traits/', ROOT))) if (!askedP.has(f.replace(/\.webp$/, '')) && !speciesArtwork.has(`assets/plant-traits/${f}`)) err.push(`assets/plant-traits/${f}: valore non nello schema`);
   // citazioni per valore: valori esistenti
   for (const [key, t] of Object.entries(taxa)) for (const [field, m] of Object.entries(t.trait_cites || {})) for (const v of Object.keys(m)) if (!list(t.traits?.[field]).includes(v)) err.push(`species-traits: ${key} citazione per ${field} ${v} non nei dati`);
   // schede di riconoscimento: valori dentro lo schema

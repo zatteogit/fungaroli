@@ -1,3 +1,5 @@
+import {notebookGlyph} from './ui-icons.js';
+import {openModal} from './modal-flow.js';
 import { SPECIES } from './species.js';
 import { todayISO } from './weather.js';
 import { mountSearchSelect } from './search-select.js';
@@ -49,7 +51,7 @@ export function reportBadge(zoneId, speciesId) {
 }
 export function communityRank(zoneId, speciesIds) {
   if (!summary || Date.now() - Date.parse(summary.updatedAt) > 10 * 60e3) return 1;
-  return communityMultiplier((summary.reports || []).filter((r) => r.zoneId === zoneId && speciesIds.includes(r.speciesId)));
+  return communityMultiplier((summary.reports || []).filter((r) => r.zoneId === zoneId && speciesIds.includes(r.speciesId)),summary.policy?.maxPercent ?? 10);
 }
 
 async function session() {
@@ -86,9 +88,10 @@ export async function openAccount() {
   await ready;
   if (!authDialog) { authDialog = document.createElement('dialog'); authDialog.className = 'community-dialog'; document.body.appendChild(authDialog); }
   authDialog.classList.toggle('profile-dialog', !!user);
+  authDialog.classList.toggle('auth-dialog', !user && enabled);
   if (!enabled) {
     authDialog.innerHTML = '<h2>Il taccuino è già tuo</h2><p>Puoi usarlo su questo dispositivo. Profili e segnalazioni collettive saranno disponibili quando il servizio è attivo.</p><button class="btn primary" type="button">Continua</button>';
-    authDialog.querySelector('button').onclick = () => authDialog.close(); authDialog.showModal(); return null;
+    authDialog.querySelector('button').onclick = () => authDialog.close(); openModal(authDialog); return null;
   }
   return new Promise((resolve) => {
     authDialog.innerHTML = user ? `<div class="profile-header"><div><h2>${esc(user.handle || 'Il tuo profilo')}</h2><p class="small muted profile-role" data-account-role>Profilo personale</p></div><button type="button" class="profile-close" data-close aria-label="Chiudi il profilo">×</button></div>
@@ -97,12 +100,12 @@ export async function openAccount() {
       <div class="profile-editorial" data-cms-link hidden></div>
       <div class="profile-actions" role="group" aria-label="Azioni del profilo"><button type="button" class="btn ghost" data-logout>Esci dal profilo</button><button type="button" class="btn primary" data-close autofocus>Chiudi</button></div>
       <div class="profile-data"><button type="button" class="link-btn" data-delete-account>Elimina profilo e dati</button></div><p class="profile-status" role="status" data-status></p>`
-      : `<h2>Unisciti a Fronda</h2><p>Accedi con la passkey del dispositivo, senza password o email.</p>
+      : `<header class="account-header"><h2>Unisciti a Fronda</h2><button type="button" class="profile-close" data-close aria-label="Chiudi l’accesso" autofocus>×</button></header><div class="auth-content"><p class="auth-intro">Accedi con la passkey del dispositivo, senza password o email.</p>
       <label>Nome facoltativo <input class="wiz-input" maxlength="32" autocomplete="nickname" data-handle placeholder="Un nome, anche inventato"></label>
-      <button type="button" class="btn primary big" data-register>Crea profilo con passkey</button><button type="button" class="btn ghost big" data-login>Ho già una passkey</button>
-      <p class="small muted">Il taccuino rimane tuo. Zona, specie, giorno e quantità diventano pubblici solo in forma aggregata quando scegli di segnalarli. <a href="#/info">Privacy e condizioni</a></p>
+      <div class="auth-actions"><button type="button" class="btn primary" data-register>Crea profilo con passkey</button><button type="button" class="btn ghost" data-login>Ho già una passkey</button></div>
+      <p class="small muted auth-privacy">Il taccuino rimane tuo. Zona, specie, giorno e quantità diventano pubblici solo in forma aggregata quando scegli di segnalarli. <a href="#/info">Privacy e condizioni</a></p>
       <details class="context-note"><summary>Come ritrovare il profilo</summary><p>Usa la stessa passkey, anche sincronizzata fra i tuoi dispositivi. Se la perdi, non possiamo recuperarla tramite email. Il nome non appare nelle segnalazioni.</p></details>
-      <p role="status" data-status></p><button type="button" class="btn ghost" data-close>Continua senza profilo</button>`;
+      <p role="status" data-status></p><button type="button" class="link-btn auth-dismiss" data-close>Continua senza profilo</button></div>`;
     authDialog.setAttribute('aria-label', user ? 'Il tuo profilo' : 'Accedi o crea un profilo');
     const status = authDialog.querySelector('[data-status]');
     if(user){
@@ -147,7 +150,7 @@ export async function openAccount() {
       try { await communityRequest('account', 'DELETE'); user = null; changed(); await refreshCommunity(); authDialog.close(); }
       catch (err) { status.textContent = err.message; }
     });
-    authDialog.showModal();
+    openModal(authDialog);
   });
 }
 
@@ -227,13 +230,13 @@ export async function openQuickReport(zoneId = '', speciesId = '') {
       reportControls.forEach(c=>c.destroy());reportControls=[];
       const zone=zones.find(z=>z.id===data.get('zone')),species=speciesCatalog.find(s=>s.id===data.get('species'));
       reportDialog.querySelector('.report-intro').remove();
-      form.innerHTML=`<div class="report-done"><span class="report-done-mark" aria-hidden="true">✓</span><h3>Osservazione salvata</h3><p><b>${esc(species.name)}</b> · ${esc(zone.title||zone.name)}<br>${esc(new Date(data.get('day')+'T12:00:00').toLocaleDateString('it-IT',{day:'numeric',month:'long'}))}</p><p role="status" class="report-status" data-status>È nel tuo taccuino e nei conteggi collettivi.</p><a class="btn primary" href="#/diario">Apri il taccuino →</a><button class="btn ghost" type="button" data-close>Chiudi</button></div>`;
+      form.innerHTML=`<div class="report-done"><span class="report-done-mark" aria-hidden="true">✓</span><h3>Osservazione salvata</h3><p><b>${esc(species.name)}</b> · ${esc(zone.title||zone.name)}<br>${esc(new Date(data.get('day')+'T12:00:00').toLocaleDateString('it-IT',{day:'numeric',month:'long'}))}</p><p role="status" class="report-status" data-status>È nel tuo taccuino e nei conteggi collettivi.</p><a class="btn primary" href="#/diario">${notebookGlyph}<span>Apri il taccuino →</span></a><button class="btn ghost" type="button" data-close>Chiudi</button></div>`;
       form.querySelector('[data-close]').onclick=dismiss;
       reportDialog.scrollTop=0;form.querySelector('a').focus({preventScroll:true});
     } catch(err) {status.textContent=err.message;}
     finally {if(submit.isConnected){submit.disabled=false;submit.textContent='Condividi';}}
   };
-  if(!reportDialog.open)reportDialog.showModal();
+  if(!reportDialog.open)openModal(reportDialog);
   // Nessuna ricerca aperta automaticamente quando si arriva da una scheda già selezionata.
   reportDialog.querySelector('[data-report-dismiss]').focus({preventScroll:true});
   reportDialog.scrollTop=0;

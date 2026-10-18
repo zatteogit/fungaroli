@@ -25,6 +25,10 @@
      "piano"
     ]
    },
+   "combos": [
+    "bruno|emisferico",
+    "bruno|piano"
+   ],
    "base": {
     "colore": "nero",
     "forma": "convesso"
@@ -45,6 +49,9 @@
      "convesso"
     ]
    },
+   "combos": [
+    "crema|emisferico"
+   ],
    "base": {
     "colore": "bruno",
     "forma": "convesso"
@@ -67,6 +74,12 @@
      "piano"
     ]
    },
+   "combos": [
+    "bianco|emisferico",
+    "bianco|piano",
+    "giallo|emisferico",
+    "giallo|piano"
+   ],
    "stages": [
     "giovane"
    ],
@@ -91,6 +104,10 @@
      "piano"
     ]
    },
+   "combos": [
+    "bianco|emisferico",
+    "bianco|piano"
+   ],
    "base": {
     "colore": "bruno",
     "forma": "convesso"
@@ -113,6 +130,12 @@
      "piano"
     ]
    },
+   "combos": [
+    "bruno|emisferico",
+    "bruno|piano",
+    "crema|emisferico",
+    "crema|piano"
+   ],
    "stages": [
     "giovane",
     "adulto"
@@ -139,6 +162,12 @@
      "piano"
     ]
    },
+   "combos": [
+    "bianco|emisferico",
+    "bianco|piano",
+    "giallo|emisferico",
+    "giallo|piano"
+   ],
    "base": {
     "colore": "crema",
     "forma": "convesso"
@@ -434,6 +463,12 @@
      "piano"
     ]
    },
+   "combos": [
+    "giallo|emisferico",
+    "giallo|piano",
+    "rosso|emisferico",
+    "rosso|piano"
+   ],
    "stages": [
     "uovo",
     "apertura",
@@ -513,6 +548,10 @@
      "piano"
     ]
    },
+   "combos": [
+    "crema|emisferico",
+    "crema|piano"
+   ],
    "base": {
     "colore": "bianco",
     "forma": "convesso"
@@ -608,6 +647,9 @@
      "imbuto"
     ]
    },
+   "combos": [
+    "arancio|convesso"
+   ],
    "base": {
     "colore": "giallo",
     "forma": "imbuto"
@@ -785,6 +827,10 @@
      "imbuto"
     ]
    },
+   "combos": [
+    "bruno|imbuto",
+    "nero|imbuto"
+   ],
    "base": {
     "colore": "grigio",
     "forma": "trombetta"
@@ -820,7 +866,8 @@
     ]
    },
    "combos": [
-    "crema|emisferico"
+    "crema|emisferico",
+    "crema|piano"
    ],
    "base": {
     "colore": "bruno",
@@ -842,6 +889,9 @@
      "convesso"
     ]
    },
+   "combos": [
+    "crema|emisferico"
+   ],
    "base": {
     "colore": "bruno",
     "forma": "convesso"
@@ -995,6 +1045,10 @@
      "imbuto"
     ]
    },
+   "combos": [
+    "bruno|imbuto",
+    "bruno|piano"
+   ],
    "base": {
     "colore": "arancio",
     "forma": "convesso"
@@ -1042,6 +1096,12 @@
      "ombrellato"
     ]
    },
+   "combos": [
+    "bruno|ombrellato",
+    "bruno|piano",
+    "grigio|ombrellato",
+    "grigio|piano"
+   ],
    "base": {
     "colore": "nero",
     "forma": "convesso"
@@ -1063,6 +1123,10 @@
      "piano"
     ]
    },
+   "combos": [
+    "bianco|piano",
+    "nero|piano"
+   ],
    "base": {
     "colore": "grigio",
     "forma": "convesso"
@@ -1172,6 +1236,9 @@
      "imbuto"
     ]
    },
+   "combos": [
+    "verde|convesso"
+   ],
    "base": {
     "colore": "arancio",
     "forma": "imbuto"
@@ -1193,6 +1260,10 @@
      "imbuto"
     ]
    },
+   "combos": [
+    "giallo|convesso",
+    "verde|convesso"
+   ],
    "base": {
     "colore": "arancio",
     "forma": "imbuto"
@@ -1309,6 +1380,9 @@
      "ombrellato"
     ]
    },
+   "combos": [
+    "bruno|convesso"
+   ],
    "base": {
     "colore": "crema",
     "forma": "ombrellato"
@@ -1329,6 +1403,9 @@
      "piano"
     ]
    },
+   "combos": [
+    "bruno|piano"
+   ],
    "base": {
     "colore": "giallo",
     "forma": "convesso"
@@ -1363,6 +1440,10 @@
      "emisferico"
     ]
    },
+   "combos": [
+    "bruno|emisferico",
+    "crema|emisferico"
+   ],
    "base": {
     "colore": "giallo",
     "forma": "conico"
@@ -1411,6 +1492,10 @@
      "convesso"
     ]
    },
+   "combos": [
+    "bruno|emisferico",
+    "nero|emisferico"
+   ],
    "base": {
     "colore": "rosso",
     "forma": "convesso"
@@ -1432,6 +1517,10 @@
      "piano"
     ]
    },
+   "combos": [
+    "bruno|piano",
+    "rosa|piano"
+   ],
    "base": {
     "colore": "violetto",
     "forma": "convesso"
@@ -1500,6 +1589,9 @@
      "convesso"
     ]
    },
+   "combos": [
+    "bruno|emisferico"
+   ],
    "base": {
     "colore": "rosso",
     "forma": "convesso"
@@ -1535,6 +1627,11 @@
      "imbuto"
     ]
    },
+   "combos": [
+    "bianco|imbuto",
+    "crema|imbuto",
+    "grigio|imbuto"
+   ],
    "base": {
     "colore": "bruno",
     "forma": "convesso"
@@ -1557,6 +1654,11 @@
      "imbuto"
     ]
    },
+   "combos": [
+    "bianco|imbuto",
+    "bruno|imbuto",
+    "crema|imbuto"
+   ],
    "base": {
     "colore": "grigio",
     "forma": "convesso"
@@ -1577,6 +1679,9 @@
      "emisferico"
     ]
    },
+   "combos": [
+    "bruno|emisferico"
+   ],
    "stages": [
     "giovane",
     "adulto"
@@ -1601,6 +1706,9 @@
      "imbuto"
     ]
    },
+   "combos": [
+    "bruno|trombetta"
+   ],
    "base": {
     "colore": "grigio",
     "forma": "imbuto"
@@ -1623,6 +1731,12 @@
      "imbuto"
     ]
    },
+   "combos": [
+    "arancio|imbuto",
+    "arancio|piano",
+    "crema|imbuto",
+    "crema|piano"
+   ],
    "base": {
     "colore": "giallo",
     "forma": "convesso"
@@ -1684,6 +1798,12 @@
      "piano"
     ]
    },
+   "combos": [
+    "giallo|emisferico",
+    "giallo|piano",
+    "rosso|emisferico",
+    "rosso|piano"
+   ],
    "base": {
     "colore": "arancio",
     "forma": "convesso"
@@ -1706,6 +1826,12 @@
      "imbuto"
     ]
    },
+   "combos": [
+    "bruno|imbuto",
+    "bruno|piano",
+    "grigio|imbuto",
+    "grigio|piano"
+   ],
    "base": {
     "colore": "verde",
     "forma": "convesso"
@@ -1786,6 +1912,14 @@
      "piano"
     ]
    },
+   "combos": [
+    "arancio|emisferico",
+    "arancio|piano",
+    "giallo|emisferico",
+    "giallo|piano",
+    "violetto|emisferico",
+    "violetto|piano"
+   ],
    "base": {
     "colore": "bruno",
     "forma": "convesso"
@@ -1806,6 +1940,9 @@
      "piano"
     ]
    },
+   "combos": [
+    "bruno|piano"
+   ],
    "base": {
     "colore": "arancio",
     "forma": "convesso"
@@ -1827,6 +1964,10 @@
      "piano"
     ]
    },
+   "combos": [
+    "bruno|convesso",
+    "bruno|piano"
+   ],
    "base": {
     "colore": "grigio",
     "forma": "conico"
@@ -1904,6 +2045,10 @@
      "ombrellato"
     ]
    },
+   "combos": [
+    "bruno|convesso",
+    "giallo|convesso"
+   ],
    "base": {
     "colore": "grigio",
     "forma": "ombrellato"
@@ -2001,6 +2146,14 @@
      "imbuto"
     ]
    },
+   "combos": [
+    "grigio|emisferico",
+    "grigio|imbuto",
+    "rosa|emisferico",
+    "rosa|imbuto",
+    "violetto|emisferico",
+    "violetto|imbuto"
+   ],
    "base": {
     "colore": "verde",
     "forma": "convesso"
@@ -2010,53 +2163,79 @@
  "margins": {
   "aereus-cappello": 4,
   "aereus-cappello-bruno": 4,
+  "aereus-cappello-bruno-emisferico": 4,
+  "aereus-cappello-bruno-piano": 4,
   "aereus-cappello-emisferico": 5,
   "aereus-cappello-piano": 4,
   "aereus-gambo": 4,
   "aereus-gambo-bruno": 4,
+  "aereus-gambo-bruno-emisferico": 4,
+  "aereus-gambo-bruno-piano": 4,
   "aereus-gambo-emisferico": 4,
   "aereus-gambo-piano": 4,
   "aereus-sotto": 4,
   "aestivalis-cappello": 4,
   "aestivalis-cappello-crema": 6,
+  "aestivalis-cappello-crema-emisferico": 4,
   "aestivalis-cappello-emisferico": 4,
   "aestivalis-gambo": 4,
   "aestivalis-gambo-crema": 5,
+  "aestivalis-gambo-crema-emisferico": 4,
   "aestivalis-gambo-emisferico": 4,
   "aestivalis-sotto": 4,
   "agaricus-arvensis-cappello": 4,
   "agaricus-arvensis-cappello-bianco": 5,
+  "agaricus-arvensis-cappello-bianco-emisferico": 4,
+  "agaricus-arvensis-cappello-bianco-piano": 4,
   "agaricus-arvensis-cappello-emisferico": 4,
   "agaricus-arvensis-cappello-fase-giovane": 4,
   "agaricus-arvensis-cappello-giallo": 5,
+  "agaricus-arvensis-cappello-giallo-emisferico": 4,
+  "agaricus-arvensis-cappello-giallo-piano": 4,
   "agaricus-arvensis-cappello-piano": 4,
   "agaricus-arvensis-gambo": 5,
   "agaricus-arvensis-gambo-bianco": 5,
+  "agaricus-arvensis-gambo-bianco-emisferico": 4,
+  "agaricus-arvensis-gambo-bianco-piano": 4,
   "agaricus-arvensis-gambo-emisferico": 4,
   "agaricus-arvensis-gambo-fase-giovane": 4,
   "agaricus-arvensis-gambo-giallo": 4,
+  "agaricus-arvensis-gambo-giallo-emisferico": 4,
+  "agaricus-arvensis-gambo-giallo-piano": 4,
   "agaricus-arvensis-gambo-piano": 4,
   "agaricus-arvensis-sotto": 4,
   "agaricus-arvensis-sotto-fase-giovane": 4,
   "agaricus-bisporus-cappello": 4,
   "agaricus-bisporus-cappello-bianco": 5,
+  "agaricus-bisporus-cappello-bianco-emisferico": 4,
+  "agaricus-bisporus-cappello-bianco-piano": 4,
   "agaricus-bisporus-cappello-emisferico": 4,
   "agaricus-bisporus-cappello-piano": 4,
   "agaricus-bisporus-gambo": 4,
   "agaricus-bisporus-gambo-bianco": 4,
+  "agaricus-bisporus-gambo-bianco-emisferico": 4,
+  "agaricus-bisporus-gambo-bianco-piano": 4,
   "agaricus-bisporus-gambo-emisferico": 4,
   "agaricus-bisporus-gambo-piano": 4,
   "agaricus-bisporus-sotto": 4,
   "agaricus-campestris-cappello": 4,
   "agaricus-campestris-cappello-bruno": 6,
+  "agaricus-campestris-cappello-bruno-emisferico": 4,
+  "agaricus-campestris-cappello-bruno-piano": 4,
   "agaricus-campestris-cappello-crema": 7,
+  "agaricus-campestris-cappello-crema-emisferico": 5,
+  "agaricus-campestris-cappello-crema-piano": 4,
   "agaricus-campestris-cappello-emisferico": 4,
   "agaricus-campestris-cappello-fase-adulto": 4,
   "agaricus-campestris-cappello-fase-giovane": 4,
   "agaricus-campestris-cappello-piano": 4,
   "agaricus-campestris-gambo": 4,
   "agaricus-campestris-gambo-bruno": 4,
+  "agaricus-campestris-gambo-bruno-emisferico": 4,
+  "agaricus-campestris-gambo-bruno-piano": 4,
   "agaricus-campestris-gambo-crema": 4,
+  "agaricus-campestris-gambo-crema-emisferico": 4,
+  "agaricus-campestris-gambo-crema-piano": 4,
   "agaricus-campestris-gambo-emisferico": 4,
   "agaricus-campestris-gambo-fase-adulto": 4,
   "agaricus-campestris-gambo-fase-giovane": 4,
@@ -2066,13 +2245,21 @@
   "agaricus-campestris-sotto-fase-giovane": 4,
   "agaricus-sylvicola-cappello": 4,
   "agaricus-sylvicola-cappello-bianco": 4,
+  "agaricus-sylvicola-cappello-bianco-emisferico": 4,
+  "agaricus-sylvicola-cappello-bianco-piano": 4,
   "agaricus-sylvicola-cappello-emisferico": 5,
   "agaricus-sylvicola-cappello-giallo": 5,
+  "agaricus-sylvicola-cappello-giallo-emisferico": 4,
+  "agaricus-sylvicola-cappello-giallo-piano": 4,
   "agaricus-sylvicola-cappello-piano": 4,
   "agaricus-sylvicola-gambo": 4,
   "agaricus-sylvicola-gambo-bianco": 4,
+  "agaricus-sylvicola-gambo-bianco-emisferico": 4,
+  "agaricus-sylvicola-gambo-bianco-piano": 4,
   "agaricus-sylvicola-gambo-emisferico": 4,
   "agaricus-sylvicola-gambo-giallo": 5,
+  "agaricus-sylvicola-gambo-giallo-emisferico": 5,
+  "agaricus-sylvicola-gambo-giallo-piano": 4,
   "agaricus-sylvicola-gambo-piano": 4,
   "agaricus-sylvicola-sotto": 4,
   "agaricus-xanthodermus-cappello": 4,
@@ -2287,8 +2474,12 @@
   "caesarea-cappello-fase-giovane": 4,
   "caesarea-cappello-fase-uovo": 4,
   "caesarea-cappello-giallo": 5,
+  "caesarea-cappello-giallo-emisferico": 4,
+  "caesarea-cappello-giallo-piano": 4,
   "caesarea-cappello-piano": 4,
   "caesarea-cappello-rosso": 4,
+  "caesarea-cappello-rosso-emisferico": 4,
+  "caesarea-cappello-rosso-piano": 4,
   "caesarea-gambo": 4,
   "caesarea-gambo-emisferico": 4,
   "caesarea-gambo-fase-adulto": 4,
@@ -2296,8 +2487,12 @@
   "caesarea-gambo-fase-giovane": 4,
   "caesarea-gambo-fase-uovo": 4,
   "caesarea-gambo-giallo": 4,
+  "caesarea-gambo-giallo-emisferico": 4,
+  "caesarea-gambo-giallo-piano": 4,
   "caesarea-gambo-piano": 4,
   "caesarea-gambo-rosso": 4,
+  "caesarea-gambo-rosso-emisferico": 4,
+  "caesarea-gambo-rosso-piano": 4,
   "caesarea-sotto": 4,
   "caesarea-taglio-fase-uovo": 4,
   "caloboletus-calopus-cappello": 4,
@@ -2332,10 +2527,14 @@
   "caloboletus-radicans-sotto": 4,
   "calocybe-gambosa-cappello": 4,
   "calocybe-gambosa-cappello-crema": 4,
+  "calocybe-gambosa-cappello-crema-emisferico": 4,
+  "calocybe-gambosa-cappello-crema-piano": 4,
   "calocybe-gambosa-cappello-emisferico": 4,
   "calocybe-gambosa-cappello-piano": 4,
   "calocybe-gambosa-gambo": 4,
   "calocybe-gambosa-gambo-crema": 5,
+  "calocybe-gambosa-gambo-crema-emisferico": 4,
+  "calocybe-gambosa-gambo-crema-piano": 4,
   "calocybe-gambosa-gambo-emisferico": 4,
   "calocybe-gambosa-gambo-piano": 4,
   "calocybe-gambosa-sotto": 4,
@@ -2376,9 +2575,11 @@
   "chlorophyllum-venenatum-sotto": 4,
   "cibarius-cappello": 4,
   "cibarius-cappello-arancio": 6,
+  "cibarius-cappello-arancio-convesso": 4,
   "cibarius-cappello-convesso": 4,
   "cibarius-gambo": 4,
   "cibarius-gambo-arancio": 5,
+  "cibarius-gambo-arancio-convesso": 4,
   "cibarius-gambo-convesso": 4,
   "cibarius-sotto": 4,
   "clitocybe-rivulosa-cappello": 4,
@@ -2480,12 +2681,16 @@
   "cortinarius-violaceus-sotto": 4,
   "craterellus-cinereus-cappello": 4,
   "craterellus-cinereus-cappello-bruno": 4,
+  "craterellus-cinereus-cappello-bruno-imbuto": 4,
   "craterellus-cinereus-cappello-imbuto": 4,
   "craterellus-cinereus-cappello-nero": 4,
+  "craterellus-cinereus-cappello-nero-imbuto": 4,
   "craterellus-cinereus-gambo": 4,
   "craterellus-cinereus-gambo-bruno": 4,
+  "craterellus-cinereus-gambo-bruno-imbuto": 4,
   "craterellus-cinereus-gambo-imbuto": 4,
   "craterellus-cinereus-gambo-nero": 4,
+  "craterellus-cinereus-gambo-nero-imbuto": 4,
   "craterellus-cinereus-sotto": 5,
   "craterellus-lutescens-cappello": 4,
   "craterellus-lutescens-cappello-giallo": 4,
@@ -2495,19 +2700,23 @@
   "cyclocybe-aegerita-cappello": 4,
   "cyclocybe-aegerita-cappello-crema": 6,
   "cyclocybe-aegerita-cappello-crema-emisferico": 4,
+  "cyclocybe-aegerita-cappello-crema-piano": 4,
   "cyclocybe-aegerita-cappello-emisferico": 5,
   "cyclocybe-aegerita-cappello-piano": 4,
   "cyclocybe-aegerita-gambo": 4,
   "cyclocybe-aegerita-gambo-crema": 4,
   "cyclocybe-aegerita-gambo-crema-emisferico": 4,
+  "cyclocybe-aegerita-gambo-crema-piano": 4,
   "cyclocybe-aegerita-gambo-emisferico": 4,
   "cyclocybe-aegerita-gambo-piano": 5,
   "cyclocybe-aegerita-sotto": 5,
   "edulis-cappello": 4,
   "edulis-cappello-crema": 4,
+  "edulis-cappello-crema-emisferico": 4,
   "edulis-cappello-emisferico": 4,
   "edulis-gambo": 4,
   "edulis-gambo-crema": 4,
+  "edulis-gambo-crema-emisferico": 4,
   "edulis-gambo-emisferico": 4,
   "edulis-sotto": 4,
   "entoloma-sinuatum-cappello": 4,
@@ -2588,10 +2797,14 @@
   "hydnellum-peckii-sotto": 4,
   "hydnum-rufescens-cappello": 4,
   "hydnum-rufescens-cappello-bruno": 6,
+  "hydnum-rufescens-cappello-bruno-imbuto": 4,
+  "hydnum-rufescens-cappello-bruno-piano": 4,
   "hydnum-rufescens-cappello-imbuto": 4,
   "hydnum-rufescens-cappello-piano": 4,
   "hydnum-rufescens-gambo": 4,
   "hydnum-rufescens-gambo-bruno": 5,
+  "hydnum-rufescens-gambo-bruno-imbuto": 4,
+  "hydnum-rufescens-gambo-bruno-piano": 4,
   "hydnum-rufescens-gambo-imbuto": 4,
   "hydnum-rufescens-gambo-piano": 4,
   "hydnum-rufescens-sotto": 4,
@@ -2610,22 +2823,34 @@
   "hygrophoropsis-aurantiaca-sotto": 4,
   "hygrophorus-latitabundus-cappello": 4,
   "hygrophorus-latitabundus-cappello-bruno": 4,
+  "hygrophorus-latitabundus-cappello-bruno-ombrellato": 4,
+  "hygrophorus-latitabundus-cappello-bruno-piano": 4,
   "hygrophorus-latitabundus-cappello-grigio": 7,
+  "hygrophorus-latitabundus-cappello-grigio-ombrellato": 4,
+  "hygrophorus-latitabundus-cappello-grigio-piano": 4,
   "hygrophorus-latitabundus-cappello-ombrellato": 4,
   "hygrophorus-latitabundus-cappello-piano": 4,
   "hygrophorus-latitabundus-gambo": 4,
   "hygrophorus-latitabundus-gambo-bruno": 4,
+  "hygrophorus-latitabundus-gambo-bruno-ombrellato": 4,
+  "hygrophorus-latitabundus-gambo-bruno-piano": 4,
   "hygrophorus-latitabundus-gambo-grigio": 4,
+  "hygrophorus-latitabundus-gambo-grigio-ombrellato": 4,
+  "hygrophorus-latitabundus-gambo-grigio-piano": 4,
   "hygrophorus-latitabundus-gambo-ombrellato": 4,
   "hygrophorus-latitabundus-gambo-piano": 5,
   "hygrophorus-latitabundus-sotto": 4,
   "hygrophorus-marzuolus-cappello": 5,
   "hygrophorus-marzuolus-cappello-bianco": 6,
+  "hygrophorus-marzuolus-cappello-bianco-piano": 4,
   "hygrophorus-marzuolus-cappello-nero": 6,
+  "hygrophorus-marzuolus-cappello-nero-piano": 4,
   "hygrophorus-marzuolus-cappello-piano": 4,
   "hygrophorus-marzuolus-gambo": 4,
   "hygrophorus-marzuolus-gambo-bianco": 4,
+  "hygrophorus-marzuolus-gambo-bianco-piano": 4,
   "hygrophorus-marzuolus-gambo-nero": 4,
+  "hygrophorus-marzuolus-gambo-nero-piano": 4,
   "hygrophorus-marzuolus-gambo-piano": 4,
   "hygrophorus-marzuolus-sotto": 4,
   "hypholoma-fasciculare-cappello": 4,
@@ -2684,18 +2909,24 @@
   "lactarius-deliciosus-cappello": 4,
   "lactarius-deliciosus-cappello-convesso": 4,
   "lactarius-deliciosus-cappello-verde": 4,
+  "lactarius-deliciosus-cappello-verde-convesso": 4,
   "lactarius-deliciosus-gambo": 4,
   "lactarius-deliciosus-gambo-convesso": 4,
   "lactarius-deliciosus-gambo-verde": 4,
+  "lactarius-deliciosus-gambo-verde-convesso": 4,
   "lactarius-deliciosus-sotto": 4,
   "lactarius-deterrimus-cappello": 4,
   "lactarius-deterrimus-cappello-convesso": 4,
   "lactarius-deterrimus-cappello-giallo": 4,
+  "lactarius-deterrimus-cappello-giallo-convesso": 4,
   "lactarius-deterrimus-cappello-verde": 5,
+  "lactarius-deterrimus-cappello-verde-convesso": 4,
   "lactarius-deterrimus-gambo": 5,
   "lactarius-deterrimus-gambo-convesso": 4,
   "lactarius-deterrimus-gambo-giallo": 4,
+  "lactarius-deterrimus-gambo-giallo-convesso": 4,
   "lactarius-deterrimus-gambo-verde": 4,
+  "lactarius-deterrimus-gambo-verde-convesso": 4,
   "lactarius-deterrimus-sotto": 4,
   "lepiota-brunneoincarnata-cappello": 4,
   "lepiota-brunneoincarnata-cappello-bruno": 7,
@@ -2772,16 +3003,20 @@
   "lepiota-subincarnata-sotto": 4,
   "marasmius-oreades-cappello": 4,
   "marasmius-oreades-cappello-bruno": 5,
+  "marasmius-oreades-cappello-bruno-convesso": 4,
   "marasmius-oreades-cappello-convesso": 4,
   "marasmius-oreades-gambo": 5,
   "marasmius-oreades-gambo-bruno": 4,
+  "marasmius-oreades-gambo-bruno-convesso": 4,
   "marasmius-oreades-gambo-convesso": 4,
   "marasmius-oreades-sotto": 4,
   "mellea-cappello": 4,
   "mellea-cappello-bruno": 4,
+  "mellea-cappello-bruno-piano": 4,
   "mellea-cappello-piano": 4,
   "mellea-gambo": 4,
   "mellea-gambo-bruno": 4,
+  "mellea-gambo-bruno-piano": 4,
   "mellea-gambo-piano": 4,
   "mellea-sotto": 4,
   "morchella-elata-cappello": 4,
@@ -2791,11 +3026,15 @@
   "morchella-elata-sotto": 5,
   "morchella-esculenta-cappello": 5,
   "morchella-esculenta-cappello-bruno": 4,
+  "morchella-esculenta-cappello-bruno-emisferico": 4,
   "morchella-esculenta-cappello-crema": 4,
+  "morchella-esculenta-cappello-crema-emisferico": 4,
   "morchella-esculenta-cappello-emisferico": 4,
   "morchella-esculenta-gambo": 4,
   "morchella-esculenta-gambo-bruno": 4,
+  "morchella-esculenta-gambo-bruno-emisferico": 4,
   "morchella-esculenta-gambo-crema": 4,
+  "morchella-esculenta-gambo-crema-emisferico": 4,
   "morchella-esculenta-gambo-emisferico": 4,
   "morchella-esculenta-sotto": 4,
   "mycena-pura-cappello": 5,
@@ -2817,21 +3056,29 @@
   "mycena-pura-sotto": 4,
   "neoboletus-luridiformis-cappello": 4,
   "neoboletus-luridiformis-cappello-bruno": 5,
+  "neoboletus-luridiformis-cappello-bruno-emisferico": 4,
   "neoboletus-luridiformis-cappello-emisferico": 4,
   "neoboletus-luridiformis-cappello-nero": 5,
+  "neoboletus-luridiformis-cappello-nero-emisferico": 4,
   "neoboletus-luridiformis-gambo": 4,
   "neoboletus-luridiformis-gambo-bruno": 4,
+  "neoboletus-luridiformis-gambo-bruno-emisferico": 4,
   "neoboletus-luridiformis-gambo-emisferico": 4,
   "neoboletus-luridiformis-gambo-nero": 4,
+  "neoboletus-luridiformis-gambo-nero-emisferico": 4,
   "neoboletus-luridiformis-sotto": 4,
   "nuda-cappello": 4,
   "nuda-cappello-bruno": 4,
+  "nuda-cappello-bruno-piano": 4,
   "nuda-cappello-piano": 4,
   "nuda-cappello-rosa": 5,
+  "nuda-cappello-rosa-piano": 4,
   "nuda-gambo": 4,
   "nuda-gambo-bruno": 4,
+  "nuda-gambo-bruno-piano": 4,
   "nuda-gambo-piano": 5,
   "nuda-gambo-rosa": 4,
+  "nuda-gambo-rosa-piano": 4,
   "nuda-sotto": 4,
   "omphalotus-olearius-cappello": 4,
   "omphalotus-olearius-cappello-bruno": 4,
@@ -2857,9 +3104,11 @@
   "pholiota-squarrosa-sotto": 4,
   "pinophilus-cappello": 4,
   "pinophilus-cappello-bruno": 4,
+  "pinophilus-cappello-bruno-emisferico": 4,
   "pinophilus-cappello-emisferico": 4,
   "pinophilus-gambo": 4,
   "pinophilus-gambo-bruno": 4,
+  "pinophilus-gambo-bruno-emisferico": 4,
   "pinophilus-gambo-emisferico": 4,
   "pinophilus-sotto": 4,
   "pleurotus-cornucopiae-cappello": 4,
@@ -2869,52 +3118,76 @@
   "pleurotus-cornucopiae-sotto": 4,
   "pleurotus-eryngii-cappello": 5,
   "pleurotus-eryngii-cappello-bianco": 4,
+  "pleurotus-eryngii-cappello-bianco-imbuto": 4,
   "pleurotus-eryngii-cappello-crema": 4,
+  "pleurotus-eryngii-cappello-crema-imbuto": 4,
   "pleurotus-eryngii-cappello-grigio": 4,
+  "pleurotus-eryngii-cappello-grigio-imbuto": 4,
   "pleurotus-eryngii-cappello-imbuto": 5,
   "pleurotus-eryngii-gambo": 4,
   "pleurotus-eryngii-gambo-bianco": 4,
+  "pleurotus-eryngii-gambo-bianco-imbuto": 4,
   "pleurotus-eryngii-gambo-crema": 4,
+  "pleurotus-eryngii-gambo-crema-imbuto": 4,
   "pleurotus-eryngii-gambo-grigio": 4,
+  "pleurotus-eryngii-gambo-grigio-imbuto": 4,
   "pleurotus-eryngii-gambo-imbuto": 4,
   "pleurotus-eryngii-sotto": 4,
   "pleurotus-ostreatus-cappello": 4,
   "pleurotus-ostreatus-cappello-bianco": 6,
+  "pleurotus-ostreatus-cappello-bianco-imbuto": 4,
   "pleurotus-ostreatus-cappello-bruno": 6,
+  "pleurotus-ostreatus-cappello-bruno-imbuto": 4,
   "pleurotus-ostreatus-cappello-crema": 6,
+  "pleurotus-ostreatus-cappello-crema-imbuto": 4,
   "pleurotus-ostreatus-cappello-imbuto": 4,
   "pleurotus-ostreatus-gambo": 4,
   "pleurotus-ostreatus-gambo-bianco": 5,
+  "pleurotus-ostreatus-gambo-bianco-imbuto": 4,
   "pleurotus-ostreatus-gambo-bruno": 5,
+  "pleurotus-ostreatus-gambo-bruno-imbuto": 4,
   "pleurotus-ostreatus-gambo-crema": 5,
+  "pleurotus-ostreatus-gambo-crema-imbuto": 4,
   "pleurotus-ostreatus-gambo-imbuto": 5,
   "pleurotus-ostreatus-sotto": 4,
   "procera-cappello": 4,
   "procera-cappello-bruno": 6,
+  "procera-cappello-bruno-emisferico": 4,
   "procera-cappello-emisferico": 4,
   "procera-cappello-fase-adulto": 4,
   "procera-cappello-fase-giovane": 4,
   "procera-gambo": 4,
   "procera-gambo-bruno": 4,
+  "procera-gambo-bruno-emisferico": 4,
   "procera-gambo-emisferico": 4,
   "procera-gambo-fase-adulto": 4,
   "procera-gambo-fase-giovane": 4,
   "procera-sotto": 4,
   "pseudocraterellus-undulatus-cappello": 4,
   "pseudocraterellus-undulatus-cappello-bruno": 5,
+  "pseudocraterellus-undulatus-cappello-bruno-trombetta": 4,
   "pseudocraterellus-undulatus-cappello-trombetta": 4,
   "pseudocraterellus-undulatus-gambo": 4,
   "pseudocraterellus-undulatus-gambo-bruno": 4,
+  "pseudocraterellus-undulatus-gambo-bruno-trombetta": 5,
   "pseudocraterellus-undulatus-gambo-trombetta": 5,
   "pseudocraterellus-undulatus-sotto": 4,
   "repandum-cappello": 4,
   "repandum-cappello-arancio": 6,
+  "repandum-cappello-arancio-imbuto": 4,
+  "repandum-cappello-arancio-piano": 4,
   "repandum-cappello-crema": 6,
+  "repandum-cappello-crema-imbuto": 4,
+  "repandum-cappello-crema-piano": 4,
   "repandum-cappello-imbuto": 5,
   "repandum-cappello-piano": 4,
   "repandum-gambo": 4,
   "repandum-gambo-arancio": 4,
+  "repandum-gambo-arancio-imbuto": 4,
+  "repandum-gambo-arancio-piano": 4,
   "repandum-gambo-crema": 4,
+  "repandum-gambo-crema-imbuto": 4,
+  "repandum-gambo-crema-piano": 4,
   "repandum-gambo-imbuto": 4,
   "repandum-gambo-piano": 4,
   "repandum-sotto": 4,
@@ -2941,22 +3214,38 @@
   "russula-aurea-cappello": 4,
   "russula-aurea-cappello-emisferico": 4,
   "russula-aurea-cappello-giallo": 6,
+  "russula-aurea-cappello-giallo-emisferico": 4,
+  "russula-aurea-cappello-giallo-piano": 4,
   "russula-aurea-cappello-piano": 4,
   "russula-aurea-cappello-rosso": 6,
+  "russula-aurea-cappello-rosso-emisferico": 4,
+  "russula-aurea-cappello-rosso-piano": 4,
   "russula-aurea-gambo": 4,
   "russula-aurea-gambo-emisferico": 4,
   "russula-aurea-gambo-giallo": 4,
+  "russula-aurea-gambo-giallo-emisferico": 4,
+  "russula-aurea-gambo-giallo-piano": 4,
   "russula-aurea-gambo-piano": 4,
   "russula-aurea-gambo-rosso": 4,
+  "russula-aurea-gambo-rosso-emisferico": 4,
+  "russula-aurea-gambo-rosso-piano": 4,
   "russula-aurea-sotto": 4,
   "russula-heterophylla-cappello": 4,
   "russula-heterophylla-cappello-bruno": 6,
+  "russula-heterophylla-cappello-bruno-imbuto": 4,
+  "russula-heterophylla-cappello-bruno-piano": 4,
   "russula-heterophylla-cappello-grigio": 5,
+  "russula-heterophylla-cappello-grigio-imbuto": 4,
+  "russula-heterophylla-cappello-grigio-piano": 4,
   "russula-heterophylla-cappello-imbuto": 4,
   "russula-heterophylla-cappello-piano": 4,
   "russula-heterophylla-gambo": 4,
   "russula-heterophylla-gambo-bruno": 4,
+  "russula-heterophylla-gambo-bruno-imbuto": 4,
+  "russula-heterophylla-gambo-bruno-piano": 4,
   "russula-heterophylla-gambo-grigio": 4,
+  "russula-heterophylla-gambo-grigio-imbuto": 4,
+  "russula-heterophylla-gambo-grigio-piano": 4,
   "russula-heterophylla-gambo-imbuto": 4,
   "russula-heterophylla-gambo-piano": 4,
   "russula-heterophylla-sotto": 4,
@@ -2997,30 +3286,48 @@
   "sarcodon-scabrosus-sotto": 4,
   "suillus-bovinus-cappello": 4,
   "suillus-bovinus-cappello-bruno": 5,
+  "suillus-bovinus-cappello-bruno-piano": 4,
   "suillus-bovinus-cappello-piano": 4,
   "suillus-bovinus-gambo": 4,
   "suillus-bovinus-gambo-bruno": 4,
+  "suillus-bovinus-gambo-bruno-piano": 5,
   "suillus-bovinus-gambo-piano": 4,
   "suillus-bovinus-sotto": 4,
   "suillus-cappello": 5,
   "suillus-cappello-arancio": 5,
+  "suillus-cappello-arancio-emisferico": 4,
+  "suillus-cappello-arancio-piano": 4,
   "suillus-cappello-emisferico": 4,
   "suillus-cappello-giallo": 5,
+  "suillus-cappello-giallo-emisferico": 4,
+  "suillus-cappello-giallo-piano": 4,
   "suillus-cappello-piano": 5,
   "suillus-cappello-violetto": 5,
+  "suillus-cappello-violetto-emisferico": 4,
+  "suillus-cappello-violetto-piano": 4,
   "suillus-gambo": 4,
   "suillus-gambo-arancio": 5,
+  "suillus-gambo-arancio-emisferico": 4,
+  "suillus-gambo-arancio-piano": 4,
   "suillus-gambo-emisferico": 4,
   "suillus-gambo-giallo": 4,
+  "suillus-gambo-giallo-emisferico": 4,
+  "suillus-gambo-giallo-piano": 4,
   "suillus-gambo-piano": 4,
   "suillus-gambo-violetto": 5,
+  "suillus-gambo-violetto-emisferico": 4,
+  "suillus-gambo-violetto-piano": 4,
   "suillus-sotto": 5,
   "terreum-cappello": 4,
   "terreum-cappello-bruno": 6,
+  "terreum-cappello-bruno-convesso": 4,
+  "terreum-cappello-bruno-piano": 4,
   "terreum-cappello-convesso": 4,
   "terreum-cappello-piano": 4,
   "terreum-gambo": 4,
   "terreum-gambo-bruno": 4,
+  "terreum-gambo-bruno-convesso": 4,
+  "terreum-gambo-bruno-piano": 4,
   "terreum-gambo-convesso": 4,
   "terreum-gambo-piano": 4,
   "terreum-sotto": 4,
@@ -3064,12 +3371,16 @@
   "tricholoma-pardinum-sotto": 4,
   "tricholoma-portentosum-cappello": 5,
   "tricholoma-portentosum-cappello-bruno": 5,
+  "tricholoma-portentosum-cappello-bruno-convesso": 4,
   "tricholoma-portentosum-cappello-convesso": 5,
   "tricholoma-portentosum-cappello-giallo": 7,
+  "tricholoma-portentosum-cappello-giallo-convesso": 4,
   "tricholoma-portentosum-gambo": 4,
   "tricholoma-portentosum-gambo-bruno": 5,
+  "tricholoma-portentosum-gambo-bruno-convesso": 4,
   "tricholoma-portentosum-gambo-convesso": 4,
   "tricholoma-portentosum-gambo-giallo": 5,
+  "tricholoma-portentosum-gambo-giallo-convesso": 4,
   "tricholoma-portentosum-sotto": 4,
   "tricholoma-sciodes-cappello": 4,
   "tricholoma-sciodes-cappello-convesso": 5,
@@ -3106,15 +3417,27 @@
   "virescens-cappello": 4,
   "virescens-cappello-emisferico": 4,
   "virescens-cappello-grigio": 5,
+  "virescens-cappello-grigio-emisferico": 4,
+  "virescens-cappello-grigio-imbuto": 4,
   "virescens-cappello-imbuto": 4,
-  "virescens-cappello-rosa": 7,
-  "virescens-cappello-violetto": 5,
+  "virescens-cappello-rosa": 4,
+  "virescens-cappello-rosa-emisferico": 4,
+  "virescens-cappello-rosa-imbuto": 4,
+  "virescens-cappello-violetto": 4,
+  "virescens-cappello-violetto-emisferico": 4,
+  "virescens-cappello-violetto-imbuto": 4,
   "virescens-gambo": 4,
   "virescens-gambo-emisferico": 4,
   "virescens-gambo-grigio": 4,
+  "virescens-gambo-grigio-emisferico": 4,
+  "virescens-gambo-grigio-imbuto": 4,
   "virescens-gambo-imbuto": 4,
   "virescens-gambo-rosa": 4,
+  "virescens-gambo-rosa-emisferico": 4,
+  "virescens-gambo-rosa-imbuto": 4,
   "virescens-gambo-violetto": 4,
+  "virescens-gambo-violetto-emisferico": 4,
+  "virescens-gambo-violetto-imbuto": 4,
   "virescens-sotto": 4
  }
 }

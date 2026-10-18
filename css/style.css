@@ -43,7 +43,7 @@ code { background: var(--surface-2); padding: 1px 5px; border-radius: 6px; font-
 .muted { color: var(--muted); }
 .small { font-size: 13px; }
 button { font: inherit; color: inherit; }
-:focus-visible { outline: 2.5px solid var(--accent); outline-offset: 2px; border-radius: 6px; }
+:focus-visible { outline: 2.5px solid var(--focus); outline-offset: 2px; border-radius: 6px; }
 /* titolo che riceve il focus a ogni cambio di pagina (lettori di schermo): non è un comando, niente anello */
 [data-nav-focus]:focus { outline: none; }
 @media (prefers-reduced-motion: no-preference) {
@@ -1423,6 +1423,27 @@ html.is-offline #updated { color: var(--warn-ink); font-weight: 600; }
 html.modal-scroll-locked { overflow:hidden; overscroll-behavior:none; }
 html { scrollbar-gutter: stable; }
 dialog { overscroll-behavior: contain; }
+.modal-flow-back { display:inline-flex; align-items:center; justify-content:center; flex:0 0 44px; width:44px; min-height:44px; padding:8px; border:0; border-radius:50%; background:transparent; color:inherit; cursor:pointer; }
+.modal-flow-back svg { width:24px; height:24px; fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
+.modal-flow-back:focus-visible { outline:2px solid var(--focus); outline-offset:2px; }
+.modal-flow-header > :is(div,h2,span):not(.lb-tools) { min-width:0; }
+.modal-flow-header.report-header > div { flex:1; }
+.modal-flow-nav { position:sticky; top:0; z-index:20; display:flex; padding:4px 12px; background:var(--surface); }
+/* Nessun pannello precedente o backdrop resta visibile durante il cambio di passo. */
+dialog:is([data-modal-suspended],[data-modal-flow-leaving]) { display:none !important; transition:none !important; animation:none !important; }
+dialog:is([data-modal-suspended],[data-modal-flow-leaving])::backdrop { display:none; transition:none !important; }
+/* Safari riduce il visual viewport con la tastiera senza ridurre il layout viewport. */
+html.modal-viewport-constrained :is(.wiz,.sheet-dlg,.community-dialog,.cmp-chooser,.cms-dialog)[open]:modal {
+  position:fixed;
+  inset-block-start:calc(var(--modal-visible-top) + 12px);
+  inset-block-end:calc(100% - var(--modal-visible-top) - var(--modal-visible-height) + 12px);
+  margin-block:auto;
+  block-size:fit-content;
+  max-block-size:calc(var(--modal-visible-height) - 24px);
+  min-block-size:0;
+  box-sizing:border-box;
+  overflow-y:auto;
+}
 
 /* pannello del velenoso: anteprima che si trascina su per aprire la scheda completa */
 .tx-handle { position: absolute; top: 0; left: 0; right: 0; height: 26px; z-index: 3; display: grid; place-items: center; touch-action: none; }
@@ -2100,6 +2121,21 @@ html.theme-swap, html.theme-swap *, html.theme-swap *::before, html.theme-swap *
 .community-dialog .seg label { display: flex; align-items: center; gap: 6px; min-height: 44px; padding: 10px; border: 1px solid var(--hair); border-radius: 10px; margin: 0; }
 .community-dialog .btn { margin: 8px 0; }
 .community-dialog fieldset { border: 0; padding: 0; margin: 14px 0; }
+.community-dialog.auth-dialog { box-sizing:border-box; width:min(480px,calc(100% - 24px)); padding:0; }
+.auth-dialog .account-header { position:sticky; top:0; z-index:20; display:flex; align-items:center; justify-content:space-between; gap:12px; padding:16px 20px; border-bottom:1px solid var(--hair); background:var(--surface); }
+.auth-dialog .account-header h2 { flex:1; min-width:0; margin:0; font:600 25px/1.2 var(--font-display); }
+.auth-dialog .account-header .profile-close { flex:0 0 44px; }
+.auth-content { display:grid; gap:16px; padding:20px; }
+.auth-dialog .auth-intro { margin:0; font-size:16px; line-height:1.5; }
+.auth-dialog .auth-content label { display:grid; gap:8px; margin:0; font-size:14px; }
+.auth-dialog [data-handle] { box-sizing:border-box; width:100%; min-width:0; min-height:48px; padding:12px; border:1px solid var(--control-edge); border-radius:12px; background:var(--surface-2); color:var(--text); font:400 16px/1.4 var(--font-body); }
+.auth-actions { display:grid; gap:8px; }
+.auth-dialog .auth-actions .btn { width:100%; min-height:44px; margin:0; padding:11px 14px; font-size:14px; line-height:1.4; }
+.auth-dialog .auth-privacy { margin:0; font-size:13px; line-height:1.5; }
+.auth-dialog .context-note { margin:0; font-size:13px; line-height:1.5; }
+.auth-dialog [data-status] { margin:0; font-size:14px; line-height:1.5; }
+.auth-dialog [data-status]:empty { display:none; }
+.auth-dialog .auth-dismiss { justify-self:start; min-height:44px; padding:8px 0; font-size:14px; }
 .community-dialog.report-dialog { box-sizing: border-box; width: min(560px,calc(100% - 24px)); max-width: none; padding: 20px; }
 .report-header { position: sticky; top: 0; z-index: 20; background: var(--surface); display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
 .report-header h2 { margin: 4px 0 0; font-family: var(--font-display); font-size: 28px; line-height: 1.15; }
@@ -2325,6 +2361,14 @@ html.entity-open { overflow: hidden; }
 .pt-preview .trail-visual-panel, .sheet .trail-visual-panel { height: 144px; }
 .pt-preview .trail-visual-panel .tprof svg, .sheet .trail-visual-panel .tprof svg { height: 78px; }
 
+/* Senza profilo, i dati di quota occupano soltanto lo spazio necessario. */
+.trail-visual-panel.trail-visual-panel--quotes { height:auto; padding:16px; gap:12px; }
+.trail-elevation-summary { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; margin:0; }
+.trail-elevation-summary dt { font-size:13px; color:var(--text-2); }
+.trail-elevation-summary dd { margin:4px 0 0; font-size:22px; line-height:1.3; font-weight:600; font-variant-numeric:tabular-nums; }
+.trail-elevation-summary dd span { font-size:14px; font-weight:400; }
+.trail-visual-panel--quotes p { margin:0; }
+
 /* Botanical sheets and a private notebook: readable paper, including dark mode. */
 .botanical-tools { display:grid; gap:12px; margin-bottom:16px; }
 .botanical-tools label,.notebook-form label { display:grid; gap:6px; font-size:14px; }
@@ -2373,7 +2417,7 @@ html.entity-open { overflow: hidden; }
 .botanical-factors p { margin:8px 0; }
 .botanical-factors small { color:var(--muted); }
 
-@media(max-width:359px) { .appbar { gap:6px; } .appbar .brand-logo { height:26px; } .appbar-actions .icon-btn { width:36px; } }
+@media(max-width:359px) { .appbar { gap:6px; } .appbar .brand-logo { height:26px; } }
 .botanical-personalize { display:flex; gap:10px; align-items:flex-start; margin-top:18px; }
 .botanical-personalize input { margin-top:4px; flex:none; }
 
@@ -3177,8 +3221,6 @@ div.tx-look-main { cursor: default; }
 :is(.k-more, .legend-box, .notebook-storage, .fp-more, .k-src-d) > summary::-webkit-details-marker { display: none; }
 :is(.k-more, .legend-box, .notebook-storage) > summary::after { content: ''; flex: none; width: 7px; height: 7px; margin-left: auto; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: rotate(45deg) translate(-2px, -2px); opacity: .7; transition: transform .2s; }
 :is(.k-more, .legend-box, .notebook-storage)[open] > summary::after { transform: rotate(225deg); }
-.zone-actions [data-save-plan] svg { width: 17px; height: 17px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linejoin: round; }
-.zone-actions [data-save-plan] { display: inline-flex; align-items: center; gap: 6px; }
 /* profilo: da ospite un'icona tonda come le altre, con il nome solo quando hai un profilo */
 .profile-entry:not(.is-user) { width: 40px; height: 40px; padding: 0; justify-content: center; }
 .profile-entry:not(.is-user) [data-profile-label] { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
@@ -3262,7 +3304,7 @@ summary .plan-crit { cursor: auto; -webkit-user-select: text; user-select: text;
 .ts-dot.ts-chip { width: auto; height: auto; min-height: 36px; padding: 4px 12px 4px 8px; border: 1px solid var(--hair); border-radius: 999px; display: inline-flex; align-items: center; gap: 6px; font: inherit; font-size: 12.5px; color: var(--text-2); background: none; }
 .ts-dot.ts-chip::before { width: 14px; height: 14px; flex: none; }
 .ts-dot.ts-chip[aria-pressed="true"] { border-color: var(--text); color: var(--text); font-weight: 600; background: var(--surface-2); }
-.ts-dot.ts-chip[aria-pressed="true"]::before { box-shadow: inset 0 0 0 1px rgb(0 0 0 / .18); }
+.ts-dot.ts-chip[aria-pressed="true"]::before { box-shadow: inset 0 0 0 1px color-mix(in srgb,var(--scrim) 18%,transparent); }
 .ts-form { min-height: 36px; padding: 4px 12px; }
 .trait-strip li:has(.ts-dots) .ts-art { cursor: pointer; }
 .ts-form[aria-pressed="true"] { background: var(--surface-2); color: var(--text); border-color: var(--text); font-weight: 600; }
@@ -3394,3 +3436,25 @@ details.context-note { margin: 12px 0 16px; padding: 0; border: 0; border-radius
 .pref-icon { display: inline-flex; width: 15px; height: 15px; flex: none; }
 .pref-icon svg { width: 100%; height: 100%; fill: none; stroke: currentColor; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; }
 .chip.pref[aria-pressed="true"] .pref-icon { display: none; }
+
+/* Area tattile costante anche negli header più stretti; il simbolo resta discreto. */
+.appbar-actions .icon-btn { width:44px; min-width:44px; height:44px; min-height:44px; flex:none; padding:0; touch-action:manipulation; }
+.appbar-actions .theme-btn { border-radius:8px; }
+.appbar-actions .icon-btn:focus-visible { outline:2px solid var(--link); outline-offset:2px; }
+@media(prefers-reduced-motion:reduce) { .theme-btn svg { transition:none; } .theme-btn.spin svg { transform:none; } }
+
+.notebook-glyph { display:inline-block; width:20px; height:20px; flex:0 0 20px; vertical-align:middle; }
+:is(.diary-demo-banner a,.app-toast .link-btn):has(>.notebook-glyph) { display:inline-flex; align-items:center; gap:6px; }
+
+/* Informative consultabili nell’unico avviso iniziale. */
+.onboarding .ob-prototype { padding:12px 14px; border-left:3px solid var(--link); background:var(--surface-2); font-size:15px; line-height:1.6; }
+.onboarding .ob-data { margin:16px 0; font-size:14px; line-height:1.6; }
+.onboarding .ob-data p { margin:10px 0; }
+.onboarding .ob-data summary { min-height:44px; display:flex; align-items:center; color:var(--link); text-decoration:underline dotted; text-underline-offset:3px; cursor:pointer; }
+.onboarding .ob-data ul { padding-left:20px; display:grid; gap:10px; }
+
+#legal-loading { position:fixed; inset:0; z-index:10000; display:grid; place-content:center; padding:24px; background:var(--bg); color:var(--text); text-align:center; }
+#ob-h:focus { outline:none; }
+.onboarding .ob-more { margin:16px 0; font-size:14px; line-height:1.6; }
+.onboarding .ob-more > summary { min-height:44px; display:flex; align-items:center; color:var(--link); text-decoration:underline dotted; text-underline-offset:3px; cursor:pointer; }
+.onboarding .ob-more h3 { margin-top:20px; }

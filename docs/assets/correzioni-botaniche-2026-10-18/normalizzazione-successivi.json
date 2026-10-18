@@ -1,0 +1,44 @@
+[
+  {
+    "file": "incoming/correzioni-piante-2026-10-18/approvati/finocchietto-ombrella.webp",
+    "source": "incoming/correzioni-piante-2026-10-18/originali/finocchietto-ombrella.png",
+    "sourceSha256": "bca5e65ab082c4d3f0561348e07626cda9c3eb27a7b5a62d25e57415b7e1cae7",
+    "sha256": "8ed16ff1b655c5dac1008fecdff6333944126d0ea661461cb824fcd0f64677fa",
+    "bbox": [
+      8,
+      24,
+      120,
+      104
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "alphaThreshold": 16,
+    "reviewedAtSizes": [
+      128,
+      64
+    ]
+  },
+  {
+    "file": "incoming/correzioni-piante-2026-10-18/approvati/rosa-canina-cinorrodo.webp",
+    "source": "incoming/correzioni-piante-2026-10-18/originali/rosa-canina-cinorrodo.png",
+    "sourceSha256": "15bf4ba1f5abe321ccc2cfc1cd758ba590df36c4215836f9bd7c925b93158899",
+    "sha256": "bf8271ecee2a54eac15c2280d5ae426b1a5e576a8821036e5a1be4a3d9a8d1ee",
+    "bbox": [
+      41,
+      8,
+      87,
+      120
+    ],
+    "size": [
+      128,
+      128
+    ],
+    "alphaThreshold": 16,
+    "reviewedAtSizes": [
+      128,
+      64
+    ]
+  }
+]

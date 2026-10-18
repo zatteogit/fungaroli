@@ -18,6 +18,7 @@ for(const width of [320,390,768,1280])for(const theme of ['light','dark'])test(`
  await p.locator('#map-filters [data-days]').click();await expect(p.locator('#map-days [data-day-offset]')).toHaveCount(8);
  await expect(p.locator('#map-days .pc,#map-days .d-weather')).toHaveCount(0);
  await p.locator('#map-days [data-day-offset="1"]').click();await expect(p.locator('#map-days')).toBeHidden();await expect(p.locator('#map-filters [data-days]')).toContainText('Domani');
+ await p.locator('#map-filters [data-days]').click();await p.locator('#map-days [data-day-offset="1"]').click();await expect(p.locator('#map-days')).toBeHidden();await expect(p.locator('#map-filters [data-days]')).toHaveAttribute('aria-expanded','false');
  await p.locator('#map-results > summary').click();const first=p.locator('[data-map-zone]').first(),name=await first.locator('.map-result-name').innerText();await first.click();
  await expect(p.locator('#map-sheet')).toBeVisible();await expect(p.locator('#map-sheet .sheet-title')).toContainText(name);
  await expect(p.locator('#map-results')).toBeHidden();await p.locator('#map-sheet .sheet-close').click();await expect(p.locator('#map-results')).toBeVisible();
@@ -34,7 +35,7 @@ test('preferenze leggibili nell’elenco, senza cambiare indice né posizione de
  const before=await read(),camera=await p.evaluate(()=>auditMap.getCenter());
  await p.locator('#map-filters [data-more]').click();await p.locator('#full-filters [data-pref="distancePenalty"]').click();await p.locator('#full-filters [data-close]').last().click();
  await expect.poll(read).not.toEqual(before);const after=await read();expect(new Map(after.map(r=>[r.id,r.index]))).toEqual(new Map(before.map(r=>[r.id,r.index])));expect(await p.evaluate(()=>auditMap.getCenter())).toEqual(camera);
- await p.locator('#map-results > summary').click();await expect(p.locator('[data-map-order]')).toContainText('vicino a casa');
+ await p.locator('#map-results > summary').click();await expect(p.locator('[data-map-order]')).toContainText('vicino a me');
  expect(errors).toEqual([]);await c.close();
 });
 test('difficoltà e lunghezza restringono le zone anche senza interesse Sentieri',async({browser})=>{

@@ -1,0 +1,166 @@
+{
+  "taxon_key": "tylopilus-felleus",
+  "variant": {
+    "cap_color": "crema",
+    "cap_shape": "piano",
+    "hymenophore_color": "rosa"
+  },
+  "canvas": [
+    402,
+    308
+  ],
+  "source": {
+    "sheet": "incoming/vettoriali/revisioni-raster/tylopilus-crema-piano-r03.png",
+    "branch": "images/semantic-svg-prototype",
+    "sheet_sha256": "fc15ded91ceec234664d3cd1f7a27e81c7c40599f06b6ece4c538498afee3b1a",
+    "cell": 1,
+    "crop_box": [
+      434,
+      198,
+      820,
+      490
+    ],
+    "padding": 8,
+    "crop_sha256": "6a509a9ade5dcd273a5ee470ec8cd1597b355f743be10feced4d14e545283177",
+    "tile": "gambo"
+  },
+  "raster_semantic_review": {
+    "status": "passed-independent-species-review",
+    "review_file": "incoming/vettoriali/revisioni-raster/review.json",
+    "review_sha256": "62d1afb2fcb1491ef51770d688fbd5a76a7e70829952a324a2b69440111f3f24",
+    "reviewer": "/root/raster_production"
+  },
+  "review": "Corrected raster r03 passed independent species and64px review before tracing. Cap/pores border manually placed inside dark contour; stem neck separated. Detail masks are source-pixel extraction within manually assigned parts, not automatic biological recognition.",
+  "trace_sha256": "8d77eabc6553ec7f41c7869052484d0d15c5943389b78514e270bb84d5a3f33d",
+  "required_traits": {
+    "stem_reticulum": true,
+    "stem_ring": false,
+    "stem_volva": false
+  },
+  "region_definitions": {
+    "full": {
+      "d": "M-10-10H412V318H-10Z"
+    },
+    "cap": {
+      "d": "M-10-10H412V90H394C302 44 102 44 9 90H-10Z"
+    },
+    "neck": {
+      "d": "M149 128L154 104C154 89 244 89 247 104L251 128Z"
+    },
+    "upper": {
+      "d": "M-10-10H412V120H-10Z"
+    },
+    "hymenophore": {
+      "difference": [
+        "upper",
+        "cap",
+        "neck"
+      ]
+    },
+    "stem": {
+      "difference": [
+        "full",
+        "cap",
+        "hymenophore"
+      ]
+    }
+  },
+  "part_regions": [
+    "cap",
+    "hymenophore",
+    "stem"
+  ],
+  "layers": [
+    {
+      "id": "cap",
+      "label": "Cappello",
+      "trait_fields": [
+        "cap_color",
+        "cap_shape"
+      ]
+    },
+    {
+      "id": "hymenophore",
+      "label": "Pori",
+      "trait_fields": [
+        "hymenophore",
+        "hymenophore_color"
+      ]
+    },
+    {
+      "id": "stem",
+      "label": "Gambo",
+      "trait_fields": [
+        "stem_base"
+      ]
+    },
+    {
+      "id": "reticulum",
+      "label": "Reticolo",
+      "trait_fields": [
+        "stem_reticulum"
+      ]
+    }
+  ],
+  "recolor_profiles": {
+    "cap": {
+      "field": "cap_color",
+      "source_value": "crema",
+      "anchor_rgb": [
+        246,
+        228,
+        205
+      ],
+      "targets": {
+        "crema": [
+          246,
+          228,
+          205
+        ],
+        "bruno": [
+          150,
+          100,
+          55
+        ]
+      }
+    },
+    "hymenophore": {
+      "field": "hymenophore_color",
+      "source_value": "rosa",
+      "anchor_rgb": [
+        249,
+        195,
+        190
+      ],
+      "targets": {
+        "rosa": [
+          249,
+          195,
+          190
+        ],
+        "bianco": [
+          249,
+          247,
+          239
+        ]
+      }
+    }
+  },
+  "detail_masks": {
+    "reticulum": {
+      "part": "reticulum",
+      "thresholds": {
+        "r_min": 70,
+        "r_max": 200,
+        "g_min": 30,
+        "g_max": 160,
+        "b_max": 100
+      },
+      "min_component_area": 10,
+      "selection": "largest",
+      "role": "reticulum",
+      "review_note": "Source-pixel extraction within manually annotated stem; largest connected component manually reviewed as full coarse network, excluding separate neck/edge fragments.",
+      "region": "stem"
+    }
+  }
+}

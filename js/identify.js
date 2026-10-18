@@ -1,4 +1,8 @@
+import {glossaryHeading} from './content-ui.js';
+import {openModal} from './modal-flow.js';
 import {matchSpecies} from './species-search.js';
+import {initTraitCallouts} from './trait-callouts.js';
+initTraitCallouts();
 import {mountCompareStart,openComparePicker} from './compare-picker.js';
 import {enhanceEntityAccordions} from './entity-accordions.js';
 import {speciesHabitat, speciesSafetyNote} from './species-context.js';
@@ -76,6 +80,9 @@ const SHAPE_D = {
   conico: 'M32 8 C36 16 46 26 50 34 H14 C18 26 28 16 32 8 Z', ombrellato: 'M4 32 C14 26 22 22 27 17 Q32 9 37 17 C42 22 50 26 60 32 L60 34 H4 Z',
   imbuto: 'M6 20 Q32 36 58 20 L46 34 H18 Z', trombetta: 'M12 10 Q32 22 52 10 L38 54 H26 Z',
 };
+// Microprofili neutri del solo contorno: riusano le geometrie didattiche,
+// senza colore, gambo o dettagli che possano sembrare un ritratto della specie.
+const shapeHint = v => SHAPE_D[v] ? `<svg class="ts-shape-hint" viewBox="0 0 64 ${v==='trombetta'?60:40}" aria-hidden="true" focusable="false"><path d="${SHAPE_D[v]}"/></svg>` : '';
 const SHAPE = {
   convesso: sh('M8 34 C10 16 54 16 56 34 Z'),
   piano: sh('M6 30 C8 25 56 25 58 30 L58 34 H6 Z'),
@@ -88,6 +95,7 @@ const SHAPE = {
 const SIZE = (k) => `<svg viewBox="0 0 64 64"><g transform="translate(32 58) scale(${k}) translate(-32 -58)">${SST.replace('stroke-width="2"', `stroke-width="${2 / k}"`)}<path d="M8 34 C10 16 54 16 56 34 Z" fill="currentColor" opacity=".25" stroke="currentColor" stroke-width="${2 / k}"/></g><path d="M6 61 H58" stroke="currentColor" stroke-width="1.5" stroke-dasharray="2 3"/></svg>`;
 // sporata, attaccatura delle lamelle, velo, lattice, superficie, carne, base del gambo
 const SPORE = { bianco: '#f7f5ef', crema: '#ecdcb8', giallo: '#e2c35a', rosa: '#e3a99c', ocra: '#c99a4e', ruggine: '#a65a2a', bruno: '#6e4a2e', 'bruno-violaceo': '#4f3a46', nero: '#26221f', 'verde-oliva': '#7d7040' };
+const sporeDot = v => SPORE[v] ? `<i class="spore-color-dot" style="--spore-color:${SPORE[v]}" aria-hidden="true"></i>` : '';
 const sporeArt = (v) => `<svg viewBox="0 0 64 64"><rect x="6" y="8" width="52" height="48" rx="5" fill="#fbfaf6" stroke="currentColor" stroke-opacity=".35"/><rect x="32" y="8" width="26" height="48" rx="0" fill="#2b2826" opacity=".9"/><path d="M32 8 H53 a5 5 0 0 1 5 5 V51 a5 5 0 0 1 -5 5 H32 Z" fill="#2b2826"/><g opacity=".92">${Array.from({ length: 18 }, (_, i) => { const a = (i / 18) * Math.PI * 2; return `<path d="M32 32 L${(32 + Math.cos(a) * 19).toFixed(1)} ${(32 + Math.sin(a) * 19).toFixed(1)}" stroke="${SPORE[v]}" stroke-width="2.6" stroke-linecap="round"/>`; }).join('')}</g><circle cx="32" cy="32" r="4" fill="${SPORE[v]}"/></svg>`;
 const GILL_CAP = '<path d="M4 22 Q32 2 60 22 Z" fill="currentColor" opacity=".22" stroke="currentColor" stroke-width="2"/><path d="M28 22 V60 M36 22 V60" stroke="currentColor" stroke-width="2"/>';
 const gillArt = (pts) => `<svg viewBox="0 0 64 64">${GILL_CAP}<g fill="currentColor" opacity=".7"><path d="${pts}"/><path d="${pts}" transform="translate(64 0) scale(-1 1)"/></g></svg>`;
@@ -214,7 +222,7 @@ function comparisonControls(t, trait='cap_color') {
   const values = [].concat(t.traits?.[trait] || []);
   if (values.length < 2) return '';
   if (!values.includes(chosen[key])) chosen[key]=values[0];
-  const fields = `<div class="ts-dots${key==='shape'?' ts-forms':''}" role="group" aria-label="${label}: ${esc(t.name||t.latin)}">${values.map(v=>`<button type="button" class="${key==='shape'?'ts-form':'ts-dot ts-chip'}"${key!=='shape'?` style="--c:${esc(COLORS[v]?.[1] || 'var(--muted)')}"`:''} data-cmp-variant="${key}" data-cmp-variant-key="${esc(t.key)}" value="${esc(v)}" aria-pressed="${chosen[key]===v}">${esc(optLabel(QK(trait),v))}</button>`).join('')}</div>`;
+  const fields = `<div class="ts-dots${key==='shape'?' ts-forms':''}" role="group" aria-label="${label}: ${esc(t.name||t.latin)}">${values.map(v=>`<button type="button" class="${key==='shape'?'ts-form':'ts-dot ts-chip'}"${key!=='shape'?` style="--c:${esc(COLORS[v]?.[1] || 'var(--muted)')}"`:''} data-cmp-variant="${key}" data-cmp-variant-key="${esc(t.key)}" value="${esc(v)}" aria-pressed="${chosen[key]===v}">${key==='shape'?shapeHint(v):''}${esc(optLabel(QK(trait),v))}</button>`).join('')}</div>`;
   return `<div class="cmp-variant-fields">${fields}</div><span class="cmp-variant-status" role="status"></span>`;
 }
 function updateComparisonVariant(control, gallery) {
@@ -516,7 +524,8 @@ function diffs(ref, t) {
 export function traitStrip(edibleId, t = refOf(edibleId)) {
   if (!t) return '';
   const tr = t.traits || {};
-  const tile = (art, k, v, sub = '', extra = '', kind = '', facts = '') => `<li class="ts-card${kind ? ` ts-card-${kind}` : ''}"><span class="ts-k" data-no-glossary>${esc(k)}</span><span class="ts-art" aria-hidden="true">${art}</span>${v || facts ? `<span class="ts-v">${facts || esc(v)}</span>` : ''}${sub ? `<span class="ts-sub">${esc(sub)}</span>` : ''}${extra ? `<span class="ts-controls">${extra}</span>` : ''}</li>`;
+  const titleTerms={Cappello:'cappello',Lamelle:'lamelle',Pori:'pori',Aculei:'aculei',Pliche:'pliche','Sotto il cappello':'imenoforo',Gambo:'gambo','Al taglio':'viraggio',Sporata:'sporata'};
+  const tile = (art, k, v, sub = '', extra = '', kind = '', facts = '') => `<li class="ts-card${kind ? ` ts-card-${kind}` : ''}"><span class="ts-k" data-no-glossary>${glossaryHeading(titleTerms[k],k)}</span>${art?`<span class="ts-art" aria-hidden="true">${art}</span>`:''}${v || facts ? `<span class="ts-v">${facts || esc(v)}</span>` : ''}${sub ? `<span class="ts-sub">${esc(sub)}</span>` : ''}${extra ? `<span class="ts-controls">${extra}</span>` : ''}</li>`;
   const out = [];
   const one = (q, v) => optLabel(q, v);
   const Q = (k) => QUESTIONS.find((q) => q.key === k);
@@ -527,7 +536,7 @@ export function traitStrip(edibleId, t = refOf(edibleId)) {
     return `<span class="ts-variant-group"><span class="ts-control-label">${dot?'Colore':'Forma'}</span><span class="ts-dots${dot ? '' : ' ts-forms'}" role="group" aria-label="${label}">${g.values.map((v) => {
       const name = esc(one(Q(q), v)), frequency=t.trait_freq?.[q]?.[v];
       // pillola con il colore e il suo nome: su telefono un pallino da solo è un bersaglio troppo piccolo e muto
-      return `<button type="button" class="${dot ? 'ts-dot ts-chip' : 'ts-form'}"${dot ? ` style="--c:${COLORS[v]?.[1] || '#999'}"` : ''} aria-pressed="${v === g.drawn}" data-ill-key="${esc(t.key)}" data-ill-v="${esc(v)}" data-ill-drawn="${esc(g.drawn)}">${dot ? `<span class="ts-choice-label">${name}${frequency ? `<small>${esc(frequency)}</small>` : ''}</span>` : name}</button>`;
+      return `<button type="button" class="${dot ? 'ts-dot ts-chip' : 'ts-form'}"${dot ? ` style="--c:${COLORS[v]?.[1] || '#999'}"` : ''} aria-pressed="${v === g.drawn}" data-ill-key="${esc(t.key)}" data-ill-v="${esc(v)}" data-ill-drawn="${esc(g.drawn)}">${dot ? `<span class="ts-choice-label">${name}${frequency ? `<small>${esc(frequency)}</small>` : ''}</span>` : shapeHint(v)+name}</button>`;
     }).join('')}</span></span>`;
   };
   const dots = pick('colors', 'cap_color', 'Colori del cappello descritti dalle fonti', true) + pick('shapes', 'cap_shape', 'Forme del cappello descritte dalle fonti', false);
@@ -555,12 +564,12 @@ export function traitStrip(edibleId, t = refOf(edibleId)) {
     const base = [].concat(tr.stem_base || ['normale'])[0];
     const bits = [tr.stem_ring === true ? 'con anello' : tr.stem_ring === false ? 'senza anello' : 'anello variabile',
       tr.stem_volva === true ? 'con volva' : tr.stem_volva === false ? 'senza volva' : null, tr.stem_reticulum === true ? 'con reticolo' : null].filter(Boolean);
-    const facts=[['Anello',tr.stem_ring],['Volva',tr.stem_volva],['Reticolo',tr.stem_reticulum]].filter(([,v])=>typeof v==='boolean').map(([label,value])=>`<span class="ts-fact"><span>${label}</span><b>${value?'presente':'assente'}</b></span>`).join('');
+    const facts=[['Anello',tr.stem_ring],['Volva',tr.stem_volva],['Reticolo',tr.stem_reticulum]].filter(([,v])=>typeof v==='boolean').map(([label,value])=>`<span class="ts-fact"><span><a class="glossary-link" data-term="${{Anello:'anello',Volva:'volva',Reticolo:'reticolo'}[label]}" href="#/glossario/${{Anello:'anello',Volva:'volva',Reticolo:'reticolo'}[label]}" aria-haspopup="dialog">${label}</a></span><b>${value?'presente':'assente'}</b></span>`).join('');
     out.push(tile(ic ? illus(t.key, 'gambo') : stemArt2(base, tr.stem_ring, tr.stem_volva, tr.stem_reticulum, [].concat(tr.cap_color || [])[0], [].concat(tr.cap_shape || [])[0]), 'Gambo', bits.join(', '),
       tr.stem_base?.length ? `Base ${orList(tr.stem_base.map((v) => optLabel(Q('stem_base'), v)))}` : '', '', 'stem', facts ? `<span class="ts-facts">${facts}</span>` : ''));
   }
   if (tr.flesh_change) { const f = [].concat(tr.flesh_change); out.push(tile(fleshArt(f), 'Al taglio', orList(f.map(fleshSay)), '', '', 'flesh')); }
-  if (tr.spore_print?.length) out.push(tile(sporeArt(tr.spore_print[0]), 'Sporata', orList(tr.spore_print.map((v) => Q('spore_print').labels?.[v] || agree(v, 'fs'))), '', '', 'spores'));
+  if (tr.spore_print?.length) out.push(tile('', 'Sporata', '', 'Colore del deposito', '', 'spores', `<span class="spore-color-list">${tr.spore_print.map(v=>`<span class="spore-color-row">${sporeDot(v)}<span>${esc(Q('spore_print').labels?.[v]||agree(v,'fs'))}</span></span>`).join('')}</span>`));
   // le tessere di cappello, sotto e gambo sono disegni AI (assets/traits): detto una volta, sotto la fila
   const ai = out.some((h) => h.includes('class="ts-ill"')) ? '<p class="small muted ts-ai">Disegni schematici fatti con AI, non foto: confronta con le foto e con il testo.</p>' : '';
   return `<ul class="trait-strip" aria-label="Caratteri principali">${out.join('')}</ul>${ai}`;
@@ -854,7 +863,7 @@ const CMP = [
   { key: 'cap_shape', k: 'Forma del cappello', art: (a) => SHAPE[a[0]], say: (v) => optLabel(QK('cap_shape'), v) },
   { key: 'cap_size', k: 'Diametro del cappello', say: (v) => optLabel(QK('cap_size'), v) },
   { key: 'trees', k: 'Alberi', get: (t) => t.trees, say: (v) => v },
-  { key: 'spore_print', k: 'Sporata', art: (a) => sporeArt(a[0]), say: (v) => optLabel(QK('spore_print'), v) },
+  { key: 'spore_print', k: 'Sporata', art: (a) => sporeDot(a[0]), say: (v) => optLabel(QK('spore_print'), v) },
   { key: 'gill_attachment', k: 'Attaccatura delle lamelle', art: (a) => ATTACH[a[0]], say: (v) => optLabel(QK('gill_attachment'), v) },
   { key: 'cap_veil', k: 'Verruche sul cappello', bool: true, art: (a) => VEIL[a[0]] },
   { key: 'cap_surface', k: 'Superficie del cappello', art: (a) => SURF[a[0]], say: (v) => optLabel(QK('cap_surface'), v) },
@@ -876,7 +885,7 @@ function cmpRows(ref, t) {
     // Valori descrittivi con disegno e alternative esplicite, senza sembrare filtri.
     // I valori comuni precedono gli altri, nello stesso ordine sui due lati.
     const say = (v) => (r.bool ? withOut(r.key, v) : r.say ? r.say(v) : String(v));
-    const value = (v, who, common) => `<li class="cmp-option"><span class="cmp-v ${common ? 'common' : 'own'}"><span class="cmp-relation" aria-hidden="true">${common?'=':'≠'}</span>${CMP_PARTS[r.key] && ['cap_color','hymenophore_color'].includes(r.key) && COLORS[v] ? `<i class="cmp-color-dot" style="--cmp-color:${esc(COLORS[v][1])}" aria-hidden="true"></i>` : ''}${r.art ? `<span class="cmp-v-art${r.key==='cap_shape'?' cmp-shape-art':''}"${r.key==='cap_shape'?` data-cmp-ill-key="${esc(who.key)}" data-cmp-ill-part="cappello" data-cmp-ill-value="${esc(v)}"`:''} aria-hidden="true">${r.key==='cap_shape' && comparisonIllustration(who.key,'cappello',v) || r.art([v], who) || ''}</span>` : ''}<span class="cmp-value-text">${esc(say(v))}</span><span class="sr-only">${common ? ', in comune' : ', valore diverso nel confronto'}</span></span></li>`;
+    const value = (v, who, common) => `<li class="cmp-option"><span class="cmp-v ${common ? 'common' : 'own'}"><span class="cmp-relation" aria-hidden="true">${common?'=':'≠'}</span>${CMP_PARTS[r.key] && ['cap_color','hymenophore_color'].includes(r.key) && COLORS[v] ? `<i class="cmp-color-dot" style="--cmp-color:${esc(COLORS[v][1])}" aria-hidden="true"></i>` : ''}${r.art && !CMP_PARTS[r.key] && r.key!=='cap_shape' ? `<span class="cmp-v-art" aria-hidden="true">${r.art([v], who) || ''}</span>` : ''}<span class="cmp-value-text">${esc(say(v))}</span><span class="sr-only">${common ? ', in comune' : ', valore diverso nel confronto'}</span></span></li>`;
     const illustration = who => r.key==='cap_shape' ? `<span class="cmp-part-art" data-cmp-ill-key="${esc(who.key)}" data-cmp-ill-part="cappello" aria-hidden="true">${comparisonIllustration(who.key,'cappello',comparisonVariantState(who.key).shape) || capArt([comparisonVariantState(who.key).shape],[comparisonVariantState(who.key).color],who.traits?.cap_veil===true)}</span>` : CMP_PARTS[r.key] ? `<span class="cmp-part-art" data-cmp-ill-key="${esc(who.key)}" data-cmp-ill-part="${CMP_PARTS[r.key]}" aria-hidden="true">${r.key==='hymenophore_color' && [].concat(who.traits?.hymenophore_color || []).length>1 ? hymArt([].concat(who.traits?.hymenophore || [])[0],[comparisonVariantState(who.key).underColor]) : ICONS?.[who.key] ? illus(who.key,CMP_PARTS[r.key]) : ''}</span>` : '';
     const cell = (X, Y, who) => r.key === 'season'
       ? `<div class="cmp-cell" role="group" aria-label="${esc(who.name||who.latin)}"><span>${esc(txt(X))}</span></div>`
@@ -922,7 +931,7 @@ function renderCompare(box, ref, pick) {
       </div>
       ${how ? `<p class="cmp-how" data-glossary="Funghi"><b>Differenze descritte.</b> ${esc(how)}</p>` : ''}
       <div class="cmp-kind-tabs" role="tablist" aria-label="Caratteri da confrontare">${groups.map(g=>`<button type="button" role="tab" id="cmp-${esc(t.key)}-tab-${g.kind}" data-cmp-group="${g.kind}" aria-controls="cmp-${esc(t.key)}-panel-${g.kind}" aria-selected="${g.kind==='diff'}" tabindex="${g.kind==='diff'?0:-1}">${g.label}</button>`).join('')}</div>
-      <p class="cmp-illustration-note">Disegni schematici generati con AI: mostrano un esempio. Leggi tutte le varianti elencate e confronta con le foto.</p>
+      <p class="cmp-illustration-note">Disegni schematici generati con AI: mostrano un esempio. Leggi tutte le varianti elencate e confronta con le foto.<span class="cmp-callout-note"> Le frecce indicano la zona da osservare, anche quando il carattere è assente.</span></p>
       <p class="cmp-legend" hidden><span><span class="cmp-relation" aria-hidden="true">=</span> Valore in comune</span><span><span class="cmp-relation" aria-hidden="true">≠</span> Valore diverso</span></p>
       ${groups.map(g=>{const items=rows.filter(r=>!r.info&&r.kind===g.kind);return `<section class="cmp-panel" id="cmp-${esc(t.key)}-panel-${g.kind}" data-cmp-panel="${g.kind}" role="tabpanel" aria-labelledby="cmp-${esc(t.key)}-tab-${g.kind}" tabindex="0"${g.kind==='diff'?'':' hidden'}>${items.length?`<div class="cmp-column-head" aria-hidden="true"><span>${esc(ref.name||ref.latin)}</span><span>${esc(t.name||t.latin)}</span></div><ul class="cmp-rows">${items.map(r=>r.html).join('')}</ul>`:`<p class="cmp-none">${g.empty}</p>`}</section>`;}).join('')}
       ${info.length?`<div class="cmp-season"><ul class="cmp-rows">${info.map(r=>r.html).join('')}</ul></div>`:''}
@@ -1190,7 +1199,7 @@ function openFilterSheet(box) {
   };
   idfSheet._paint = paint;
   paint();
-  if (!idfSheet.open) idfSheet.showModal();
+  if (!idfSheet.open) openModal(idfSheet);
 }
 function focusFilter(root, selector) {
   (root.querySelector(selector) || root.querySelector('[data-idf-open],[data-idf-close]'))?.focus({preventScroll:true});

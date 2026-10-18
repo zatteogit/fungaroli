@@ -1,3 +1,4 @@
+import {openModal} from './modal-flow.js';
 import {matchSpecies} from './species-search.js';
 // Scelta esplicita di due specie del catalogo: non crea nuove relazioni di sosia.
 const esc = value => String(value ?? '').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -38,7 +39,7 @@ export function openComparePicker({taxa,photo,asset,title='Scegli un fungo',curr
   const leave=()=>dialog.close();
   addEventListener('hashchange',leave);
   dialog.addEventListener('close',()=>{removeEventListener('hashchange',leave);dialog.remove();if(location.hash===initialHash&&origin?.isConnected)origin.focus({preventScroll:true});},{once:true});
-  paint();dialog.showModal();
+  paint();openModal(dialog);
 }
 
 export function mountCompareStart(box,{taxa,photo,asset,related,left='',right=''}) {

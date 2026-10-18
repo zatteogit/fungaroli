@@ -1,0 +1,54 @@
+[
+  {
+    "file": "incoming/vettoriali/revisioni-raster/tylopilus-crema-piano-r03.png",
+    "tipo": "illustrazione",
+    "soggetto": "tylopilus-felleus",
+    "tessera": "cappello",
+    "cella": 0,
+    "variante": "forma:piano",
+    "base": {
+      "colore": "crema",
+      "forma": "convesso"
+    },
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Edit ONLY the upper cap in TOP-CENTER CELL1 of this1254x1254 square transparent sheet. The isolated cap in CELL0 is the correct PALE CREAM FLAT/SPREAD shape. In CELL1 the generator incorrectly drew a CONVEX DOME. Replace the entire CELL1 cap (upper cap and pore underside) with the EXACT SAME SHALLOW FLAT cap geometry as CELL0, translated above the existing stem. COPY CELL0 cap silhouette and cream material, not merely its color: broad almost-horizontal plateau, very low cap crown, rounded shallow edges. Both caps should have identical aspect ratio and curvature (cell1 cap can be samewidth ascell0). Do NOT preserve any convex dome in CELL1. Keep PINK PORI visible underneath, with pink round pore openings, attaching stem naturally at center underside. Keep existing CELL1 cream clavate stem and coarse brown reticulum, no ring/volva. Keep CELL0 COMPLETELY UNCHANGED. Every other cell2-8 EMPTY TRANSPARENT. No cropping, square1254x1254, NO background/text/grid/arrows/shadows. This is a strict scientific morphology correction: PIANO means spread-flat top, not the still convex upper arch currently in cell1. Keep the top center60% of cap nearly straight horizontal. All artwork safely within owncell withmargins.",
+    "autore": "Fronda/Fungaroli",
+    "licenza": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.it",
+    "sha256": "fc15ded91ceec234664d3cd1f7a27e81c7c40599f06b6ece4c538498afee3b1a",
+    "crop_box": [
+      38,
+      198,
+      412,
+      316
+    ],
+    "review_file": "incoming/vettoriali/revisioni-raster/review.json",
+    "nota": "Import separato: non aggiunto al manifest app. Cella1 supera il confine della riga vuota inferiore; usare component crop preservando intero disegno."
+  },
+  {
+    "file": "incoming/vettoriali/revisioni-raster/tylopilus-crema-piano-r03.png",
+    "tipo": "illustrazione",
+    "soggetto": "tylopilus-felleus",
+    "tessera": "gambo",
+    "cella": 1,
+    "variante": "forma:piano",
+    "base": {
+      "colore": "crema",
+      "forma": "convesso"
+    },
+    "modello": "image_gen (modello integrato, identificatore non esposto)",
+    "prompt": "Edit ONLY the upper cap in TOP-CENTER CELL1 of this1254x1254 square transparent sheet. The isolated cap in CELL0 is the correct PALE CREAM FLAT/SPREAD shape. In CELL1 the generator incorrectly drew a CONVEX DOME. Replace the entire CELL1 cap (upper cap and pore underside) with the EXACT SAME SHALLOW FLAT cap geometry as CELL0, translated above the existing stem. COPY CELL0 cap silhouette and cream material, not merely its color: broad almost-horizontal plateau, very low cap crown, rounded shallow edges. Both caps should have identical aspect ratio and curvature (cell1 cap can be samewidth ascell0). Do NOT preserve any convex dome in CELL1. Keep PINK PORI visible underneath, with pink round pore openings, attaching stem naturally at center underside. Keep existing CELL1 cream clavate stem and coarse brown reticulum, no ring/volva. Keep CELL0 COMPLETELY UNCHANGED. Every other cell2-8 EMPTY TRANSPARENT. No cropping, square1254x1254, NO background/text/grid/arrows/shadows. This is a strict scientific morphology correction: PIANO means spread-flat top, not the still convex upper arch currently in cell1. Keep the top center60% of cap nearly straight horizontal. All artwork safely within owncell withmargins.",
+    "autore": "Fronda/Fungaroli",
+    "licenza": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.it",
+    "sha256": "fc15ded91ceec234664d3cd1f7a27e81c7c40599f06b6ece4c538498afee3b1a",
+    "crop_box": [
+      434,
+      198,
+      820,
+      490
+    ],
+    "review_file": "incoming/vettoriali/revisioni-raster/review.json",
+    "nota": "Import separato: non aggiunto al manifest app. Cella1 supera il confine della riga vuota inferiore; usare component crop preservando intero disegno."
+  }
+]

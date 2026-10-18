@@ -1,0 +1,12 @@
+[
+  {
+    "file": "/workspace/fronda-image-production/incoming/icone/confronto-forme-2026-10-18-02-r01.png",
+    "sha256": "295e025829b3a260e5f15dfc2dae67e281ac56d273b9bc8c854c94980213e605",
+    "cells": [
+      3,
+      4
+    ],
+    "taxon_key": "tylopilus-felleus",
+    "reason": "Labeled crema+piano but tan/ochre convex outline. Replaced by independently reviewed local r03 before SVG conversion."
+  }
+]

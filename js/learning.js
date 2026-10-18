@@ -1,3 +1,4 @@
+import {openModal} from './modal-flow.js';
 // Lessico di campo e spiegazioni contestuali: i link restano utilizzabili senza popover.
 import {buildGlossaryIndex,relatedGlossaryTerms,linkableGlossaryTerm,normalizeGlossaryScope,GLOSSARY_CONTEXTS} from './glossary-context.js';
 import { openEntitySheet } from './entity-sheet.js';
@@ -85,9 +86,9 @@ export function enhanceGlossary(root) {
   const nodes = []; while(walker.nextNode()) nodes.push(walker.currentNode);
   // ogni parola si collega una volta sola nella pagina, e mai due link a ridosso: è un'app, non un ipertesto
   // il testo dentro una sezione chiusa ha il suo conteggio: la prima occorrenza deve essere quella che si vede
-  const linked = new Set([...root.querySelectorAll('a.glossary-link')].filter((a) => !a.closest('details:not([open])')).map((a) => a.dataset.term));
+  const linked = new Set([...root.querySelectorAll('a.glossary-link')].filter((a) => !a.classList.contains('glossary-heading')&&!a.closest('details:not([open])')).map((a) => a.dataset.term));
   const hidden = new Map();
-  const seenFor = (node) => { const d = node.parentElement.closest('details:not([open])'); if (!d) return linked; if (!hidden.has(d)) hidden.set(d, new Set([...d.querySelectorAll('a.glossary-link')].map((a) => a.dataset.term))); return hidden.get(d); };
+  const seenFor = (node) => { const d = node.parentElement.closest('details:not([open])'); if (!d) return linked; if (!hidden.has(d)) hidden.set(d, new Set([...d.querySelectorAll('a.glossary-link:not(.glossary-heading)')].map((a) => a.dataset.term))); return hidden.get(d); };
   for(const node of nodes) {
     const seen = seenFor(node);
     const scope=glossaryScopeOf(node.parentElement.closest('[data-glossary]'));
@@ -111,6 +112,7 @@ export function enhanceGlossary(root) {
 
 function closePanel(restore = true) {
   if (!active) return;
+  if (active.hasAttribute('data-modal-suspended')) return;
   const panel = active; active = null;
   if(panel.tagName === 'DIALOG') panel.close(); else if(panel.matches(':popover-open')) panel.hidePopover();
   opener?.setAttribute('aria-expanded','false');
@@ -127,7 +129,7 @@ function ensurePanel(mobile) {
   panel.addEventListener('click', e => {
     if(e.target.closest('dialog.lb'))return;
     if(e.target.closest('[data-learning-close]')) closePanel();
-    else if(e.target.closest('a:not(.glossary-link)')) closePanel(false);
+    else if(e.target.closest('a:not(.glossary-link):not([data-entity]):not(.species-link):not(.tree-link)')) closePanel(false);
     else if(mobile && e.target === panel) { const r=panel.getBoundingClientRect(); if(e.clientX<r.left || e.clientX>r.right || e.clientY<r.top || e.clientY>r.bottom) closePanel(); }
   });
   const dismissed = () => { if(active === panel) { active=null; opener?.setAttribute('aria-expanded','false'); const focus=document.activeElement; if(opener?.isConnected && (focus===document.body || panel.contains(focus))) opener.focus({preventScroll:true}); } };
@@ -152,7 +154,7 @@ function openPanel(link, title, body, href, label, context) {
   panel.innerHTML = `<header><h2 id="${panel.id}-title">${esc(title)}</h2><button type="button" class="icon-btn" data-learning-close aria-label="Chiudi la spiegazione">×</button></header><div class="learning-panel-body">${body}</div><footer><a class="btn ghost" href="${esc(href)}">${esc(label)} →</a></footer>`;
   panel.scrollTop = 0;
   opener?.setAttribute('aria-expanded','true'); opener?.setAttribute('aria-controls',panel.id);
-  if(mobile) {if(!panel.open)panel.showModal();else panel.querySelector('[data-learning-close]').focus({preventScroll:true});}
+  if(mobile) {if(!panel.open)openModal(panel);else panel.querySelector('[data-learning-close]').focus({preventScroll:true});}
   else {
     if(!panel.matches(':popover-open'))panel.showPopover();
     positionPopover(panel);
