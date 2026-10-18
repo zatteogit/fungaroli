@@ -84,9 +84,9 @@ export function missing(d = load()) {
       const gaps = ['cappello', 'gambo'].filter((p) => !has(traitFile(`${key}-${p}-${c}`)));
       if (gaps.length) add('funghi-colore', `${key}:${c}`);
     }
-    // forme: dove ci sono le fasi di crescita, le fasi sostituiscono le varianti di forma
+    // Il confronto offre tutte le forme, anche per le specie con fasi di crescita.
     const shapes = list(tr.cap_shape);
-    if (!t.stages?.length) {
+    if (shapes.length) {
       if (shapes.length > 1 && !base.forma) { need('funghi-forma'); add('funghi-forma', `${key}`, 'forma del disegno base non dichiarata'); }
       for (const f of shapes) if (f !== base.forma && base.forma) {
         need('funghi-forma');

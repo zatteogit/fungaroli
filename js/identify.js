@@ -221,6 +221,7 @@ function updateComparisonVariant(control, gallery) {
   const key = control.dataset.cmpVariantKey, record = ICONS?.[key] || {}, t = TAXA.find(t=>t.key===key);
   if (!t) return;
   const chosen = comparisonVariantState(key);
+  chosen.userSelected=true;
   chosen[control.dataset.cmpVariant] = control.value;
   const c0 = record.colors?.drawn || record.base?.colore, f0 = record.shapes?.drawn || record.base?.forma;
   const c = chosen.color, f = chosen.shape;
@@ -233,7 +234,7 @@ function updateComparisonVariant(control, gallery) {
   const controls = [...gallery.querySelectorAll('[data-cmp-controls]')].filter(el=>el.dataset.cmpControls===key);
   for (const group of controls) {
     group.querySelectorAll('[data-cmp-variant]').forEach(button=>button.setAttribute('aria-pressed',String(button.value===chosen[button.dataset.cmpVariant])));
-    group.querySelector('.cmp-variant-status').textContent = '';
+    group.querySelector('.cmp-variant-status').textContent = missing?'Forma illustrata nel colore di base: la combinazione selezionata non è ancora disponibile.':'';
   }
   gallery.querySelectorAll('[data-cmp-ill-key]').forEach(slot=>{
     const part = slot.dataset.cmpIllPart;
@@ -246,7 +247,7 @@ function updateComparisonVariant(control, gallery) {
     slot.dataset.variantWanted='';
     const colorAvailable = !c || c===c0 || record.colors?.values?.includes(c);
     const shapeAvailable = !f || f===f0 || record.shapes?.values?.includes(f);
-    if (!ICONS?.[key] || !colorAvailable || !shapeAvailable || missing) {
+    if (!ICONS?.[key] || !colorAvailable || !shapeAvailable) {
       if (part==='cappello') slot.innerHTML=capArt([f || [].concat(t.traits?.cap_shape || [])[0]],[c || [].concat(t.traits?.cap_color || [])[0]],t.traits?.cap_veil===true);
       for (const group of controls) group.querySelector('.cmp-variant-status').textContent='Variante mostrata con un disegno schematico.';
       return;
@@ -269,16 +270,22 @@ function updateComparisonVariant(control, gallery) {
   });
 }
 function refreshComparisonParts() {
+  // Se il catalogo arriva dopo il primo disegno, aggiorna le anteprime provvisorie.
+  for(const [key,chosen] of comparisonVariants)if(!chosen.userSelected)comparisonVariants.delete(key);
   document.querySelectorAll('[data-cmp-controls]').forEach(slot=>{
-    if (slot.firstElementChild) return;
     const t = TAXA.find(t=>t.key===slot.dataset.cmpControls);
     if (t) slot.innerHTML = comparisonControls(t,slot.dataset.cmpTrait);
   });
   document.querySelectorAll('[data-cmp-ill-key]').forEach(slot => {
-    if (slot.querySelector('img') || slot.dataset.variantWanted!==undefined || slot.querySelector('svg')&&!slot.dataset.cmpIllValue) return;
-    const image = comparisonIllustration(slot.dataset.cmpIllKey, slot.dataset.cmpIllPart, slot.dataset.cmpIllValue);
+    if (slot.dataset.variantWanted!==undefined || slot.dataset.cmpIllPart==='sotto'&&slot.querySelector('svg')) return;
+    const shape=slot.dataset.cmpIllValue || (slot.closest('[data-trait]')?.dataset.trait==='cap_shape'?comparisonVariantState(slot.dataset.cmpIllKey).shape:undefined);
+    const image = comparisonIllustration(slot.dataset.cmpIllKey, slot.dataset.cmpIllPart, shape);
     if (image) slot.innerHTML = image;
   });
+  for(const [key,chosen] of comparisonVariants)if(chosen.userSelected){
+    const control=[...document.querySelectorAll('[data-cmp-variant-key][aria-pressed="true"]')].find(b=>b.dataset.cmpVariantKey===key&&b.dataset.cmpVariant!=='underColor');
+    if(control)updateComparisonVariant(control,control.closest('.cmp-track'));
+  }
 }
 // varianti del cappello (colori e forme descritti dalle fonti): cambiano insieme le tessere Cappello e Gambo.
 // Colore e forma non si combinano: scegliere un colore riporta la forma a quella del disegno, e viceversa.

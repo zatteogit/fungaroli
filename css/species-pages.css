@@ -479,3 +479,7 @@ body[data-page="mappa"] .view-map { border-radius:0; }
 @media(prefers-reduced-motion:no-preference) {
   .cmp-pair-nav.is-stuck .cmp-nav-content { transition:top .22s var(--ease-out); }
 }
+
+/* La forma selezionata è già illustrata sopra i controlli: evita una seconda
+   serie di miniature, che mescolerebbe i simboli storici alle nuove varianti. */
+.fungus-compare .cmp-cell:has(.cmp-part-art:not(:empty)) .cmp-shape-art { display:none; }
