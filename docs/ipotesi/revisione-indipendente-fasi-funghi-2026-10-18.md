@@ -1,19 +1,19 @@
-# Revisione indipendente delle103 tessere di fase dei funghi
+# Revisione indipendente delle 103 tessere di fase dei funghi
 
-18 ottobre2026 · agente `illustration_corrections` · rapporto editoriale, non certificazione micologica.
+18 ottobre 2026 · agente `illustration_corrections` · rapporto editoriale, non certificazione micologica.
 
 ## Esito
 
-**98 tessere approvate per i caratteri di fase indicati;5 approvate con riserva di leggibilità del reticolo a64px;0 blocchi anatomici netti rilevati nei file finali selezionati.** L’approvazione riguarda le rappresentazioni e le fasi elencate sotto, non identificazione della specie, commestibilità o tutti i caratteri della scheda. Le5 riserve sono interi di aereus (tre fasi) ed edulis (due fasi): la rete esiste nel master ma ha contrasto ridotto a64px. Non diventano per questo gambo «senza reticolo». Il coordinatore deve verificare la resa nella UI prima dell’import, che questo agente non ha eseguito.
+**98 tessere approvate per i caratteri di fase indicati; 5 approvate con riserva di leggibilità del reticolo a 64 px; 0 blocchi anatomici netti rilevati nei file finali selezionati.** L’approvazione riguarda le rappresentazioni e le fasi elencate sotto, non identificazione della specie, commestibilità o tutti i caratteri della scheda. Le 5 riserve sono interi di aereus (tre fasi) ed edulis (due fasi): la rete esiste nel master ma ha contrasto ridotto a 64 px. Non diventano per questo gambo «senza reticolo». Il coordinatore deve verificare la resa nella UI prima dell’import, che questo agente non ha eseguito.
 
 ## Campione immutabile e controlli
 
 - Consegna esaminata: worktree `/workspace/fronda-image-production`, commit `e1d4aa59f169e2f7d18a59483c80e212c506db2f`.
 - Ricevuta: `incoming/produzione-fasi-2026-10-18/ricevuta-finale-103.json`, SHA-256 `98968ae7cc4bb98d842ba35d54471d3fd0d066c4c4cf29a80fd9b7da8f7f7daa`.
 - Dataset confrontato: `/workspace/fungaroli/data/species-traits.json`, SHA-256 `a2149f75008184cb691c4935d6967706c36069392106f68d7fa20d4e6eee5d18`; coincide con il dataset della ricevuta.
-- Verificati i103 hash delle sorgenti e dei103 WebP tecnici attesi: nessuna discordanza. Gli hash dimostrano identità dei file, non correttezza anatomica.
-- Visionate tutte le18 tavole sorgente finali a piena risoluzione e tutte le103 rese64px in `finale-fit64-{1,2,3}.png`. Le celle scartate eventualmente visibili nella stessa tavola sono escluse dall’approvazione.
-- Letti stages, traits e fonti già registrate per tutti i18taxa; confronto con fotografie reali locali in `assets/species/`, incluse le tavole di riferimenti recupero/porcini e un montaggio di controllo dei restanti nove taxa. Cibarius confrontato con `cibarius-inat3-hd.webp` per le pliche; Coprinus con `coprinus-comatus-inat1-hd.webp` per squame e bordo che annerisce; Pleurotus con `pleurotus-ostreatus-inat1-hd.webp` per inserzione laterale e lamelle decorrenti.
+- Verificati i 103 hash delle sorgenti e dei 103 WebP tecnici attesi: nessuna discordanza. Gli hash dimostrano identità dei file, non correttezza anatomica.
+- Visionate tutte le 18 tavole sorgente finali a piena risoluzione e tutte le 103 rese a 64 px in `finale-fit64-{1,2,3}.png`. Le celle scartate eventualmente visibili nella stessa tavola sono escluse dall’approvazione.
+- Letti stages, traits e fonti già registrate per tutti i 18 taxa; confronto con fotografie reali locali in `assets/species/`, incluse le tavole di riferimenti recupero/porcini e un montaggio di controllo dei restanti nove taxa. Cibarius confrontato con `cibarius-inat3-hd.webp` per le pliche; Coprinus con `coprinus-comatus-inat1-hd.webp` per squame e bordo che annerisce; Pleurotus con `pleurotus-ostreatus-inat1-hd.webp` per inserzione laterale e lamelle decorrenti.
 - Le foto locali non coprono ogni età: per le transizioni non fotografate si usa la descrizione di fase con la fonte già citata nel dataset. Non è stata effettuata una nuova verifica online di FirstNature/Wikipedia né una verifica micologica esterna. Nessuna fonte aggiunta o dato biologico modificato.
 - Nessun asset, master, runtime o dato modificato. Nessun import o SVG prodotto; raster revisionato prima di qualsiasi eventuale vettore.
 
@@ -23,13 +23,13 @@ Pori rappresentati da piccoli fori; lamelle da strutture radiali; pliche da rili
 
 **Dischi lamellari:** approvati per tipo di imenoforo e colore di fase; il centro schematico non permette di verificare inserzione libera/adnata/smarginata. Non utilizzare questi dischi come illustrazione autonoma del campo `gill_attachment`. **Dati null:** non diventano conclusioni negative; in particolare anello del terreum, superficie del pleuroto, superficie/base del bisporus e superficie/base del pioppino restano sconosciuti nei rispettivi dati. Le leggere campiture pittoriche non autorizzano etichette di viscosità, pelosità o fibrillosità.
 
-Le5 riserve non richiedono di rigenerare l’intero lotto. Se la UI richiede che la rete sia il particolare principale leggibile, servirà una successiva correzione raster mirata o una presentazione con dettaglio revisionato, prima di riusare queste tessere a tale scopo. Non aumentarne contrasto o colore programmaticamente trasformando la rete pallida in una rete bruna.
+Le 5 riserve non richiedono di rigenerare l’intero lotto. Se la UI richiede che la rete sia il particolare principale leggibile, servirà una successiva correzione raster mirata o una presentazione con dettaglio revisionato, prima di riusare queste tessere a tale scopo. Non aumentarne contrasto o colore programmaticamente trasformando la rete pallida in una rete bruna.
 
 ## Esito per specie e per gruppo di fase
 
 ### aereus · Boletus aereus · 9 tessere
 
-Cappelli nero-bruni: emisferico giovane, convesso adulto, spianato maturo. I dischi sono pori, bianchi poi gialli e giallo sporco; il maturo NON richiede verde secondo la fase corrente. Interi senza anello o volva, gambo chiaro clavato con rete pallida superiore. La rete è effettivamente presente nel master ma poco contrastata a64px: riserva specifica per i tre interi, non omissione totale del disegno.
+Cappelli nero-bruni: emisferico giovane, convesso adulto, spianato maturo. I dischi sono pori, bianchi poi gialli e giallo sporco; il maturo NON richiede verde secondo la fase corrente. Interi senza anello o volva, gambo chiaro clavato con rete pallida superiore. La rete è effettivamente presente nel master ma poco contrastata a 64 px: riserva specifica per i tre interi, non omissione totale del disegno.
 
 - Fase **adulto**: Cappello convesso. Pori giallastri. Fonte registrata: https://it.wikipedia.org/wiki/Boletus_aereus
 - Fase **giovane**: Cappello emisferico. Tubuli e pori bianchi. Fonte registrata: https://it.wikipedia.org/wiki/Boletus_aereus
@@ -73,7 +73,7 @@ Cupola giovane bianco-crema con sotto rosa molto pallido, adulto convesso con so
 
 ### cibarius · Cantharellus cibarius · 4 tessere
 
-Quattro finali: cappelli giovane convesso e adulto avvallato/ondulato; interi esclusivamente dal master cibarius-r02 celle0,1. Pliche spesse, irregolari, biforcate e decorrenti, non fasci di lamelle sottili regolari. Colore giallo/arancio e gambo continuo senza anello/volva/rete. Confronto diretto con foto inat3: differenza pliche/lamelle rimane percepibile anche a64px. Scarti delle tavole40/41 esclusi.
+Quattro finali: cappelli giovane convesso e adulto avvallato/ondulato; interi esclusivamente dal master cibarius-r02 celle 0,1. Pliche spesse, irregolari, biforcate e decorrenti, non fasci di lamelle sottili regolari. Colore giallo/arancio e gambo continuo senza anello/volva/rete. Confronto diretto con foto inat3: differenza pliche/lamelle rimane percepibile anche a 64 px. Scarti delle tavole40/41 esclusi.
 
 - Fase **adulto**: Cappello piano e avvallato, a imbuto. Fonte registrata: https://it.wikipedia.org/wiki/Cantharellus_cibarius
 - Fase **giovane**: Cappello convesso. Fonte registrata: https://it.wikipedia.org/wiki/Cantharellus_cibarius
@@ -95,7 +95,7 @@ Giovane emisferico bruno con lamelle crema; adulto aperto, ondulato e più scuro
 
 ### edulis · Boletus edulis · 7 tessere
 
-Sette tessere: giovane emisferico e adulto piano-convesso bruni, interi con gambo chiaro clavato; sotto bianco→giallo→verde. Il giovane intero mostra un sottocappello crema quasi uniforme alla scala piccola, ma il disco dedicato ha pori leggibili: non si trasferisce una conclusione di imenoforo liscio all’immagine intera. La rete pallida superiore è presente nel master dei due interi ma poco leggibile a64px: riserva specifica, non anello o volva aggiunti.
+Sette tessere: giovane emisferico e adulto piano-convesso bruni, interi con gambo chiaro clavato; sotto bianco → giallo → verde. Il giovane intero mostra un sottocappello crema quasi uniforme alla scala piccola, ma il disco dedicato ha pori leggibili: non si trasferisce una conclusione di imenoforo liscio all’immagine intera. La rete pallida superiore è presente nel master dei due interi ma poco leggibile a 64 px: riserva specifica, non anello o volva aggiunti.
 
 - Fase **adulto**: Cappello piano-convesso. Tubuli giallastri. Fonte registrata: https://it.wikipedia.org/wiki/Boletus_edulis
 - Fase **giovane**: Cappello emisferico, a volte piccolo rispetto al gambo. Tubuli bianchi. Fonte registrata: https://it.wikipedia.org/wiki/Boletus_edulis
@@ -153,14 +153,14 @@ Sei tessere: giovane conico e adulto quasi piatto con piccolo umbone, cappelli g
 
 ### tylopilus-felleus · Tylopilus felleus · 6 tessere
 
-Sei tessere: giovane emisferico e adulto piatto bruno-crema; pori bianchi→rosa, non lamelle. Gambo con rete bruna grossolana chiaramente distinta dalla rete chiara dei porcini e dalla rossa del satana, nessun anello/volva. I dettagli sotto finali sono solo dischi36-r02 celle0,6, senza gambo intero nei dischi. Restanti quattro tessere selezionate da36-r01; escluse celle1,4 superate.
+Sei tessere: giovane emisferico e adulto piatto bruno-crema; pori bianchi→rosa, non lamelle. Gambo con rete bruna grossolana chiaramente distinta dalla rete chiara dei porcini e dalla rossa del satana, nessun anello/volva. I dettagli sotto finali sono solo dischi36-r02 celle 0,6, senza gambo intero nei dischi. Restanti quattro tessere selezionate da36-r01; escluse celle 1,4 superate.
 
 - Fase **adulto**: Cappello spianato. Pori rosati. Fonte registrata: https://it.wikipedia.org/wiki/Tylopilus_felleus
 - Fase **giovane**: Cappello emisferico. Tubuli e pori bianchi. Fonte registrata: https://it.wikipedia.org/wiki/Tylopilus_felleus
 
-## Registro puntuale dei103 target
+## Registro puntuale dei 103 target
 
-A = approvata per la fase con i limiti sopra; R = approvata con riserva di leggibilità del reticolo a64px. Numerazione coincide con le tavole `finale-fit64`. Ogni decisione si applica soltanto alla cella selezionata e al WebP con hash indicato; gli scarti non sono approvati per vicinanza nella tavola.
+A = approvata per la fase con i limiti sopra; R = approvata con riserva di leggibilità del reticolo a 64 px. Numerazione coincide con le tavole `finale-fit64`. Ogni decisione si applica soltanto alla cella selezionata e al WebP con hash indicato; gli scarti non sono approvati per vicinanza nella tavola.
 
 | N | Target | Tavola/cella | Esito | SHA-256 output |
 |---:|---|---|---|---|
@@ -268,7 +268,7 @@ A = approvata per la fase con i limiti sopra; R = approvata con riserva di leggi
 | 102 | `tylopilus-felleus-gambo-fase-giovane.webp` | `fasi-36-r01.png` / 2 | A | `82426ee5120ddbc2edc5ea66887213656ad7eaeabe6c691401cf8db8f063b890` |
 | 103 | `tylopilus-felleus-sotto-fase-giovane.webp` | `fasi-36-r02.png` / 0 | A | `0b56ecf09e68f189daedc48816f6c47fb353def6fa4529d97fbee2b54ad21f98` |
 
-## Identità delle18 sorgenti selezionate
+## Identità delle 18 sorgenti selezionate
 
 | Tavola | SHA-256 |
 |---|---|
