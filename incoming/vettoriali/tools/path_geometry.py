@@ -37,8 +37,12 @@ def union(first, second):
     return operation(first, second, pathops.PathOp.UNION)
 
 
-def svg_path(geometry):
-    pen = SVGPathPen(None)
+def svg_path(geometry, precision=None):
+    def number(value):
+        text=f'{value:.{precision}f}'
+        if '.'in text:text=text.rstrip('0').rstrip('.')
+        return '0'if text in['-0','']else text
+    pen = SVGPathPen(None, ntos=number)if precision is not None else SVGPathPen(None)
     geometry.draw(pen)
     return pen.getCommands()
 

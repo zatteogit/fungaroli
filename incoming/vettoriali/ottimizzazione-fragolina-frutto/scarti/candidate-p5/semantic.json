@@ -1,0 +1,124 @@
+{
+  "schema_version": "botanical-semantic-1",
+  "id": "fragolina-frutto",
+  "species": "fragolina",
+  "field": "fruit_type",
+  "value": "falso_frutto",
+  "source": {
+    "master": "master.png",
+    "master_sha256": "723d40d266049122b4065db9080a51af687db4e054b2d93214615197e8ea0bb3",
+    "crop_bbox": [
+      373,
+      65,
+      907,
+      1151
+    ],
+    "crop_resized_size": [
+      315,
+      640
+    ],
+    "padding": 8,
+    "crop_sha256": "51b32127947ee3cf1dc4b662a31425f998f45029e263bb5c2ce9c261363aff2c",
+    "original_path": "/workspace/fronda-plant-corrections/incoming/correzioni-piante-2026-10-18/originali/fragolina-frutto.png"
+  },
+  "raster_review": {
+    "reviewer": "illustration_corrections",
+    "scope": "independent editorial species-specific raster review; original source and 64px thumbnails; not botanical certification",
+    "record": "raster-review.md",
+    "master_sha256": "723d40d266049122b4065db9080a51af687db4e054b2d93214615197e8ea0bb3",
+    "status": "passed-independent-species-raster-review",
+    "record_sha256": "b80d7d851c16ddb7768e92d5fe96ee142d2ef0d4a60dcb8d0fdadeb3ce420948"
+  },
+  "trace_sha256": "d8213e096627254ebaaaa8169751e82948c147403db0115f05e68f2e85538a0d",
+  "anatomy": {
+    "canvas": [
+      331,
+      656
+    ],
+    "description": "Falso frutto intero schematico di fragolina. Acheni sulla superficie esterna del ricettacolo rosso, calice e peduncolo verdi. Nessuna sezione o semi interni.",
+    "parts": [
+      {
+        "id": "achenes",
+        "label": "Acheni esterni raffigurati",
+        "region_svg": "achenes-region.svg",
+        "meaning": "Superfici e contorni visibili dei piccoli frutti esterni; il conteggio dei segni non è un dato biologico quantitativo.",
+        "region_sha256": "c1fe937ab7176545f30ab571c17a7fe886bd485ab8fada2f7a8b0648eb2e95cb"
+      },
+      {
+        "id": "peduncle",
+        "label": "Peduncolo",
+        "region": "M140-2H333V204L202 240L182 270L153 273L147 257L140 240Z",
+        "meaning": "Peduncolo verde curvo già raffigurato nel raster."
+      },
+      {
+        "id": "calyx",
+        "label": "Calice",
+        "region": "M-2-2H333V385L303 384L290 371L277 350L271 333L259 328L269 369L255 371L222 348L199 319L185 301L170 302L156 296L151 303L128 321L98 341L81 344L87 321L97 304L73 308L51 310L-2 311Z",
+        "meaning": "Parti verdi del calice osservabili, senza ricostruire il tessuto coperto.",
+        "region_plus_source_paths": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          11,
+          13,
+          14,
+          36,
+          43,
+          45,
+          47,
+          60,
+          250,
+          313,
+          315,
+          318,
+          319
+        ],
+        "source_path_selection_note": "All explicitly inspected green paints belong to the calyx/peduncle in this raster. Add their actual geometry to recover narrow green tips missed by the hand polygon; earlier peduncle region retains priority."
+      },
+      {
+        "id": "receptacle",
+        "label": "Ricettacolo esterno",
+        "remainder": true,
+        "meaning": "Superficie rossa del falso frutto e riflessi grafici. Le cavità lasciate dagli acheni nascosti sono di ispezione, non anatomia nuova."
+      }
+    ],
+    "status": "manually-annotated-from-reviewed-raster",
+    "raster_review_sha256": "b80d7d851c16ddb7768e92d5fe96ee142d2ef0d4a60dcb8d0fdadeb3ce420948",
+    "annotation_method": "Manual botanical regions and source-pixel detail boundaries; detail candidates checked on overlay, no automatic anatomy recognition.",
+    "limitations": [
+      "No hidden tissue reconstruction. Hiding parts may leave transparent gaps.",
+      "Tint changes are technical inspection only, not approved biological variants.",
+      "Illustrative detail marks are not quantitative organ counts."
+    ],
+    "trace_sha256": "d8213e096627254ebaaaa8169751e82948c147403db0115f05e68f2e85538a0d",
+    "coordinate_precision": 2,
+    "optimization": {
+      "source_svg_sha256": "6648d8aff140f51b9edbd314c0a3d6387537eaffe1a66ee977406639d73ab08a",
+      "source_folder": "incoming/vettoriali/botanici-lotto-01/fragolina-frutto",
+      "status": "candidate-awaiting-visual-review",
+      "method": "Retrace same approved raster RGB input with lower trace color precision, then serialize boolean-intersection coordinates to 0.01 source pixel. No redraw or invented anatomy."
+    }
+  },
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "author": "Fronda/Fungaroli",
+  "geometry": "Source paint stacks intersected into actual anatomical part geometries; no raster, masks, clips or complete-object copies. Graphic underpaint retained inside each part to preserve antialiasing, not reconstructed hidden tissue.",
+  "operations": [
+    "inspect-part",
+    "toggle-part",
+    "technical-material-tint-within-part"
+  ],
+  "unsupported": [
+    "anatomical morphing",
+    "new biological color variants",
+    "automatic anatomy recognition",
+    "quantitative organ counts from illustrative marks"
+  ],
+  "review_status": "rejected-optimization-visual-color-drift",
+  "optimization_rejection_reason": "Less aggressive retrace retains broad colors but changes shadows/highlights and increases raster RGB error; not selected because a conservative alternative preserves the original paint attributes."
+}

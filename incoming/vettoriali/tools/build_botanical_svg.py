@@ -54,7 +54,7 @@ def build(folder):
             r,bg,b=[int(color[i:i+2],16)for i in [1,3,5]]
             role='outline'if max(r,bg,b)<100 else 'material'
             if record['id']=='fragolina-foglia'and r>135:role='vein-detail'
-            g.append(element('path',{'id':f'{key}-paint-{index:03}','d':svg_path(clipped),'fill':color,'fill-rule':'nonzero','data-original-fill':color,'data-paint-role':role,'data-source-path':str(index)}))
+            g.append(element('path',{'id':f'{key}-paint-{index:03}','d':svg_path(clipped,ann.get('coordinate_precision')),'fill':color,'fill-rule':'nonzero','data-original-fill':color,'data-paint-role':role,'data-source-path':str(index)}))
     ET.indent(root);ET.ElementTree(root).write(folder/'semantic.svg',encoding='utf-8',xml_declaration=True);(folder/'semantic.json').write_text(json.dumps(meta,ensure_ascii=False,indent=2)+'\n')
     print('Built',record['id'],len(root.findall(f'.//{{{SVG}}}path')),'paths')
 

@@ -1,0 +1,147 @@
+{
+  "id": "fragolina-frutto",
+  "name": "Fragolina · falso frutto",
+  "species": "fragolina",
+  "field": "fruit_type",
+  "value": "falso_frutto",
+  "source": {
+    "master": "master.png",
+    "master_sha256": "723d40d266049122b4065db9080a51af687db4e054b2d93214615197e8ea0bb3",
+    "crop_bbox": [
+      373,
+      65,
+      907,
+      1151
+    ],
+    "crop_resized_size": [
+      315,
+      640
+    ],
+    "padding": 8,
+    "crop_sha256": "51b32127947ee3cf1dc4b662a31425f998f45029e263bb5c2ce9c261363aff2c",
+    "original_path": "/workspace/fronda-plant-corrections/incoming/correzioni-piante-2026-10-18/originali/fragolina-frutto.png"
+  },
+  "raster_review": {
+    "reviewer": "illustration_corrections",
+    "scope": "independent editorial species-specific raster review; original source and 64px thumbnails; not botanical certification",
+    "record": "raster-review.md",
+    "master_sha256": "723d40d266049122b4065db9080a51af687db4e054b2d93214615197e8ea0bb3",
+    "status": "passed-independent-species-raster-review",
+    "record_sha256": "b80d7d851c16ddb7768e92d5fe96ee142d2ef0d4a60dcb8d0fdadeb3ce420948"
+  },
+  "provenance": {
+    "date": "2026-10-18",
+    "species": "fragolina",
+    "latin": "Fragaria vesca L. subsp. vesca",
+    "status": "revisione editoriale visiva limitata, non certificazione",
+    "method": "raster prima di vettore",
+    "model": "image_gen",
+    "generationBy": "agente coordinatore /root; revisione indipendente illustration_corrections",
+    "source": {
+      "title": "Università di Trieste · Portale della Flora di Roma",
+      "url": "https://dryades.units.it/Roma/index.php?id=2073&procedure=taxon_page"
+    },
+    "photoReferences": [
+      {
+        "file": "assets/plants/fragolina-1.webp",
+        "thumb": "assets/plants/fragolina-1-t.webp",
+        "alt": "Fragolina di bosco: fotografia della specie",
+        "caption": "Fotografia originale della specie; i caratteri vanno confrontati insieme.",
+        "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "page": "https://dryades.units.it/Roma/index.php?id=2073&procedure=taxon_page",
+        "sourceImage": "https://dryades.units.it/dryades/plants/foto/IMG1452JPG1593600975.jpg",
+        "sourceCaption": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Andrea Moro · Comune di Serle, località Calamor, radura in bosco ceduo, BS, Lombardia, Italia · 22/06/2020 · Distributed under CC BY-SA 4.0 license."
+      },
+      {
+        "file": "assets/plants/fragolina-2.webp",
+        "thumb": "assets/plants/fragolina-2-t.webp",
+        "alt": "Fragolina di bosco: fotografia della specie",
+        "caption": "Fotografia originale della specie; i caratteri vanno confrontati insieme.",
+        "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "page": "https://dryades.units.it/Roma/index.php?id=2073&procedure=taxon_page",
+        "sourceImage": "https://dryades.units.it/dryades/plants/foto/IMG0699JPG1707743932.jpg",
+        "sourceCaption": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Andrea Moro · Comune di Trieste, Civico Orto Botanico, TS, Friuli Venezia Giulia, Italia · 01/05/2023 · Distributed under CC BY-SA 4.0 license."
+      },
+      {
+        "file": "assets/plants/fragolina-3.webp",
+        "thumb": "assets/plants/fragolina-3-t.webp",
+        "alt": "Fragolina di bosco: fotografia della specie",
+        "caption": "Fotografia originale della specie; i caratteri vanno confrontati insieme.",
+        "author": "Andrea Moro · Dipartimento di Scienze della Vita, Università di Trieste",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "page": "https://dryades.units.it/Roma/index.php?id=2073&procedure=taxon_page",
+        "sourceImage": "https://dryades.units.it/dryades/plants/foto/IMG2745JPG1701878169.jpg",
+        "sourceCaption": "© Dipartimento di Scienze della Vita, Università degli Studi di Trieste · Andrea Moro · Comune di Trieste, Civico Orto botanico, TS, Friuli Venezia Giulia, Italia · 07/04/2023 · Distributed under CC BY-SA 4.0 license."
+      }
+    ],
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "review": "REVISIONE.md",
+    "assets": [
+      {
+        "file": "incoming/correzioni-piante-2026-10-18/approvati/fragolina-frutto.webp",
+        "source": "incoming/correzioni-piante-2026-10-18/originali/fragolina-frutto.png",
+        "sourceSha256": "723d40d266049122b4065db9080a51af687db4e054b2d93214615197e8ea0bb3",
+        "sha256": "93ef06ec726efa49e2e0733b600344c31f9f9875cd7b0b054a65074c36e890dd",
+        "alphaThreshold": 16,
+        "bbox": [
+          36,
+          8,
+          91,
+          120
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "key": "fruit_type",
+        "value": "falso_frutto",
+        "prompt": "incoming/correzioni-piante-2026-10-18/prompt-frutto.txt",
+        "reviewedAtSizes": [
+          128,
+          64
+        ],
+        "vectorStatus": "non avviato"
+      },
+      {
+        "file": "incoming/correzioni-piante-2026-10-18/approvati/fragolina-foglia.webp",
+        "source": "incoming/correzioni-piante-2026-10-18/originali/fragolina-foglia.png",
+        "sourceSha256": "4c6003efba1f4720e792764a8bbd66db1ac2a49073ffe48524f19b830b0b4a32",
+        "sha256": "25ba316b1327b622ef92cdf54b19c6d3cc3ce10c1351479afcaea030d1c57d73",
+        "alphaThreshold": 16,
+        "bbox": [
+          8,
+          8,
+          120,
+          120
+        ],
+        "size": [
+          128,
+          128
+        ],
+        "key": "leaf_type",
+        "value": "composta",
+        "prompt": "incoming/correzioni-piante-2026-10-18/prompt-foglia.txt",
+        "reviewedAtSizes": [
+          128,
+          64
+        ],
+        "vectorStatus": "non avviato"
+      }
+    ]
+  },
+  "trace_sha256": "d8213e096627254ebaaaa8169751e82948c147403db0115f05e68f2e85538a0d",
+  "trace_settings": {
+    "palette_colors": "source RGB; no prequantization",
+    "alpha_threshold": 220,
+    "vtracer": "0.6.15",
+    "filter_speckle": 4,
+    "color_precision": 5,
+    "layer_difference": 16
+  }
+}

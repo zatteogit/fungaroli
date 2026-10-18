@@ -86,3 +86,7 @@ Dopo il checkpoint di Tylopilus sono stati prodotti altri **8 SVG da raster già
 Tutti gli otto hanno geometrie reali senza bitmap o clip, render a 64/128/656 px e prove di tinta confinata/parti isolate. **Stato: `svg-awaiting-coordinator-review`**, non automaticamente aggiunti ai due SVG revisionati precedenti. La revisione indipendente degli otto nuovi vettori resta del coordinatore. Nessuna sostituzione runtime o integrazione nell’app effettuata da questa produzione.
 
 Verificati anche la rigenerazione esatta degli otto crop dai rispettivi master e due ricalchi rappresentativi riprodotti con hash identico (foglia a 16 colori e fungo intero da RGB diretto). Gli inspector dei due lotti hanno superato selezione di tutti i campioni, livelli, tinta tecnica, reset e temi chiaro/scuro senza errori JavaScript.
+
+## Alleggerimento del prototipo Fragolina
+
+La proposta in [ottimizzazione-fragolina-frutto](ottimizzazione-fragolina-frutto/README.md) riduce lo SVG del frutto da 1.452.053 a 576.986 byte (−60,3%), con ricalco riprodotto identico dal medesimo raster approvato. Restano gli stessi 885 path, colori, ID e parti: cambia soltanto la precisione di serializzazione, con scarto massimo di 0,05 px sorgente per componente. Confronti mirati a lato maggiore 64/128/656 px, originale e due ricalchi cromaticamente peggiori conservati. Stato ancora **proposta in attesa del coordinatore**; non è una nuova specie/variante SVG e non modifica il conteggio dei candidati o il runtime.

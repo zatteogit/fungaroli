@@ -1,0 +1,36 @@
+{
+  "status": "technical-checks-completed-but-visually-rejected",
+  "parts": [
+    "achenes",
+    "peduncle",
+    "calyx",
+    "receptacle"
+  ],
+  "path_count": 312,
+  "bitmap_count": 0,
+  "clip_count": 0,
+  "renders": [
+    {
+      "width": 64,
+      "silhouette_iou": 0.993488,
+      "raster_rgb_mae_255": 11.962168,
+      "trace_rgb_mae_255": 2.00754
+    },
+    {
+      "width": 128,
+      "silhouette_iou": 0.993445,
+      "raster_rgb_mae_255": 11.518777,
+      "trace_rgb_mae_255": 1.087458
+    },
+    {
+      "width": 656,
+      "silhouette_iou": 0.993959,
+      "raster_rgb_mae_255": 11.21905,
+      "trace_rgb_mae_255": 0.246124
+    }
+  ],
+  "meaning": "Fidelity/edit checks do not establish botanical correctness. Prior species-specific raster review is recorded; SVG needs coordinator review.",
+  "all_part_tints_confined": true,
+  "svg_sha256": "47c2cf44472b9bf4f74bf1092b11ceacf0f812696fb8c9a4921a7c9b7f378226",
+  "visual_rejection": "Coarse trace changes brown outlines into red and flattens the body palette; visual fidelity rejected despite passing broad geometric thresholds."
+}

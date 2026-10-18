@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "species": "fragolina",
+  "field": "fruit_type",
+  "value": "falso_frutto",
+  "approved_raster_master_sha256": "723d40d266049122b4065db9080a51af687db4e054b2d93214615197e8ea0bb3",
+  "raster_unchanged": true,
+  "runtime_import": false,
+  "coordinator_vector_approval": false,
+  "items": [
+    {
+      "file": "original-v1.svg",
+      "status": "preserved-original-candidate",
+      "sha256": "6648d8aff140f51b9edbd314c0a3d6387537eaffe1a66ee977406639d73ab08a",
+      "bytes": 1452053,
+      "path_count": 885
+    },
+    {
+      "file": "control-rounding-only.svg",
+      "status": "control-not-selected",
+      "sha256": "57537b68e2d7a110033f03efe6e2b23cd4ff3f0c9b6595e7e35a61cb28459103",
+      "bytes": 652392,
+      "path_count": 885
+    },
+    {
+      "file": "optimized/semantic.svg",
+      "status": "proposed-awaiting-coordinator-review",
+      "sha256": "a3e34006acbfb1c4acd4b7f6babaab213aa32fabbb2e221179c1f951a8a27ab1",
+      "bytes": 576986,
+      "path_count": 885
+    },
+    {
+      "file": "scarti/candidate-p4/semantic.svg",
+      "status": "rejected-color-drift",
+      "sha256": "47c2cf44472b9bf4f74bf1092b11ceacf0f812696fb8c9a4921a7c9b7f378226",
+      "bytes": 284572,
+      "path_count": 312
+    },
+    {
+      "file": "scarti/candidate-p5/semantic.svg",
+      "status": "not-selected-shadow-drift",
+      "sha256": "2cd1be79f48c31eaf7a0cd8a0b507a937536600a60149fc66146ac3a3e59679b",
+      "bytes": 465927,
+      "path_count": 574
+    }
+  ]
+}

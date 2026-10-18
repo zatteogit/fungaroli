@@ -1,0 +1,77 @@
+{
+  "status": "proposed-awaiting-coordinator-review",
+  "source_master_sha256": "723d40d266049122b4065db9080a51af687db4e054b2d93214615197e8ea0bb3",
+  "source_crop_sha256": "51b32127947ee3cf1dc4b662a31425f998f45029e263bb5c2ce9c261363aff2c",
+  "trace_sha256": "ac84184695a13826a6e24681473cec802f5f8e01614f326efe32c7b0693765c9",
+  "original_svg_sha256": "6648d8aff140f51b9edbd314c0a3d6387537eaffe1a66ee977406639d73ab08a",
+  "proposed_svg_sha256": "a3e34006acbfb1c4acd4b7f6babaab213aa32fabbb2e221179c1f951a8a27ab1",
+  "paths_before": 885,
+  "paths_after": 885,
+  "all_paint_ids_colors_roles_and_source_references_identical": true,
+  "coordinate_components": 81238,
+  "maximum_component_rounding_error_source_px": 0.05000000000001137,
+  "bytes_before": 1452053,
+  "bytes_after": 576986,
+  "reduction_percent": 60.26412259056659,
+  "gzip9_bytes_before": 459792,
+  "gzip9_bytes_after": 164865,
+  "gzip_note": "Controlled compression comparison, not a claim about deployed server settings.",
+  "size_convention": "Portrait asset: max side is export height, not width; 64/128/656px compare actual icon sizes.",
+  "renders": [
+    {
+      "max_side": 64,
+      "render_size": [
+        32,
+        64
+      ],
+      "before": {
+        "silhouette_iou": 0.9728555917480999,
+        "raster_rgb_mae_255": 6.9701491013071895
+      },
+      "after": {
+        "silhouette_iou": 0.9728555917480999,
+        "raster_rgb_mae_255": 6.9758291207107845
+      },
+      "before_after_rgb_mae_255": 0.12897326899509812,
+      "before_after_pixels_over12_rgb_fraction": 0.00048828125,
+      "rounding_only_0_01px_rgb_mae_255": 0.024452997344771254
+    },
+    {
+      "max_side": 128,
+      "render_size": [
+        65,
+        128
+      ],
+      "before": {
+        "silhouette_iou": 0.9809937550909584,
+        "raster_rgb_mae_255": 5.519737933634993
+      },
+      "after": {
+        "silhouette_iou": 0.9807274701411509,
+        "raster_rgb_mae_255": 5.518436714429362
+      },
+      "before_after_rgb_mae_255": 0.11052130467571641,
+      "before_after_pixels_over12_rgb_fraction": 0.0001201923076923077,
+      "rounding_only_0_01px_rgb_mae_255": 0.02177491830065359
+    },
+    {
+      "max_side": 656,
+      "render_size": [
+        331,
+        656
+      ],
+      "before": {
+        "silhouette_iou": 0.9931511901124258,
+        "raster_rgb_mae_255": 3.687111291474564
+      },
+      "after": {
+        "silhouette_iou": 0.9931095518047917,
+        "raster_rgb_mae_255": 3.6853333990732833
+      },
+      "before_after_rgb_mae_255": 0.09146367952039215,
+      "before_after_pixels_over12_rgb_fraction": 0.0005204111708790804,
+      "rounding_only_0_01px_rgb_mae_255": 0.01716340663939783
+    }
+  ],
+  "path_command_sequences_identical": true
+}

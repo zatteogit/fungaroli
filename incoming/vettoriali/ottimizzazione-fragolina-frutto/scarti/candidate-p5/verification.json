@@ -1,0 +1,36 @@
+{
+  "status": "technical-checks-completed-but-visually-rejected",
+  "parts": [
+    "achenes",
+    "peduncle",
+    "calyx",
+    "receptacle"
+  ],
+  "path_count": 574,
+  "bitmap_count": 0,
+  "clip_count": 0,
+  "renders": [
+    {
+      "width": 64,
+      "silhouette_iou": 0.977512,
+      "raster_rgb_mae_255": 7.593854,
+      "trace_rgb_mae_255": 1.576992
+    },
+    {
+      "width": 128,
+      "silhouette_iou": 0.990196,
+      "raster_rgb_mae_255": 6.478706,
+      "trace_rgb_mae_255": 0.815498
+    },
+    {
+      "width": 656,
+      "silhouette_iou": 0.99381,
+      "raster_rgb_mae_255": 6.040214,
+      "trace_rgb_mae_255": 0.185021
+    }
+  ],
+  "meaning": "Fidelity/edit checks do not establish botanical correctness. Prior species-specific raster review is recorded; SVG needs coordinator review.",
+  "all_part_tints_confined": true,
+  "svg_sha256": "2cd1be79f48c31eaf7a0cd8a0b507a937536600a60149fc66146ac3a3e59679b",
+  "visual_rejection": "Less aggressive retrace retains broad colors but changes shadows/highlights and increases raster RGB error; not selected because a conservative alternative preserves the original paint attributes."
+}
