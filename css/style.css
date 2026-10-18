@@ -534,7 +534,6 @@ li.crit { font-weight: 600; }
 .j-top { display: flex; justify-content: space-between; gap: 8px; align-items: baseline; flex-wrap: wrap; }
 .j-top b { font-size: 15.5px; }
 .j-item .tag { margin-left: 0; }
-.journal-actions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 16px; }
 #journal-storage { margin-top: 14px; }
 .j-connect { display: grid; gap: 6px; margin-top: 4px; color: var(--text-2); }
 .j-connect-row { display: flex; gap: 8px; max-width: 420px; }

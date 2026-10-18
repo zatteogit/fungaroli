@@ -4,14 +4,14 @@ import {renderNotebook, notebookRoute, notebookTitle} from './notebook-view.js';
 import {notebookDemo} from './notebook-demo.js';
 // Diario delle uscite: procedura guidata a passi + elenco con confronto previsto/trovato.
 // Archivio: nella versione Artifact usa il db privato dell'utente (persistente, leggibile
-// da Claude per la taratura); altrove localStorage del browser, da esportare ogni tanto.
+// da Claude per la taratura); altrove localStorage del browser.
 
 import { SPECIES } from './species.js';
 import { intornoA } from './human.js';
 import { formatIndex } from './model.js';
 import { todayISO } from './weather.js';
 import { communityReady, communityEnabled, currentUser, communityRequest, shareDiaryEntry, shareNotebookNote } from './community.js';
-import {PHENO_PHASES,normalizeNotebookNote} from './notebook-entry.js';
+import {PHENO_PHASES} from './notebook-entry.js';
 import {sharedObservation} from './community-observation.js';
 import {createNotebookComposer} from './notebook-composer.js';
 
@@ -492,43 +492,8 @@ export function initJournal({ onEntries=()=>{},zones, speciesCatalog = SPECIES, 
     list.querySelector('#notebook-query')?.addEventListener('input',ev=>{const pos=ev.target.selectionStart;listQuery=ev.target.value;renderList();const input=list.querySelector('#notebook-query');input.focus({preventScroll:true});if(pos!=null)try{input.setSelectionRange(pos,pos);}catch{/* Search inputs may not expose selection. */}});
   }
 
-  async function exportFile() {
-    const json = JSON.stringify({ version: 2, internalScoreScale: '0–100', displayScoreScale: '0–10', entries }, null, 1);
-    const filename = `taccuino-fungaroli-${iso(new Date())}.json`;
-    const downloads = typeof globalThis.claude?.use === 'function' ? await globalThis.claude.use('downloads') : null;
-    if (downloads) {
-      try { await downloads.save({ filename, data: json }); } catch (e) { if (e?.code !== 'declined') renderList('Esportazione non disponibile qui.'); }
-      return;
-    }
-    const blob = new Blob([json], { type: 'application/json' });
-    const a = document.createElement('a');
-    a.href = URL.createObjectURL(blob);
-    a.download = filename;
-    a.click();
-    setTimeout(() => URL.revokeObjectURL(a.href), 1000);
-  }
-
-  async function importFile(file) {
-    try {
-      const data = JSON.parse(await file.text());
-      const incoming = (Array.isArray(data) ? data : data.entries).filter((e) => e && e.id && e.date && (e.zoneId||e.kind==='note')).map(e=>e.kind==='note'?normalizeNotebookNote(e):e);
-      await storageReady;
-      const ids = new Set(entries.map((e) => e.id));
-      const fresh = incoming.filter((e) => !ids.has(e.id));
-      for (const e of fresh) await store.put(e);
-      entries = [...entries, ...fresh];
-      sortEntries();
-      renderList(`Importate ${fresh.length} voci.`);
-    } catch {
-      renderList('File non valido: serve un taccuino esportato da questa app.');
-    }
-  }
-
   document.querySelectorAll('[data-open-journal]').forEach((b) => b.addEventListener('click',()=>openNote()));
   dlg.querySelector('.wiz-close').addEventListener('click', () => dlg.close());
-  document.getElementById('journal-export').addEventListener('click', exportFile);
-  const imp = document.getElementById('journal-import');
-  imp.addEventListener('change', () => { if (imp.files[0]) importFile(imp.files[0]); imp.value = ''; });
   renderList();
   const storageBox = document.getElementById('journal-storage');
 
@@ -560,29 +525,7 @@ export function initJournal({ onEntries=()=>{},zones, speciesCatalog = SPECIES, 
 
   function renderStorage(remote) {
     if (store.kind === 'community') {
-      storageBox.innerHTML = `<p>Taccuino privato di <b>${esc(currentUser()?.handle || 'questo profilo')}</b>, sincronizzato con la passkey. Le condivisioni sono facoltative.</p><button type="button" class="btn ghost" data-community-account>Gestisci il profilo</button><button type="button" class="btn ghost" data-import-local>Importa il taccuino di questo dispositivo</button>
-        <details><summary>Hai il vecchio taccuino con codice?</summary><p>Importalo nel profilo privato. La copia originale resta nel taccuino di famiglia; nessuna segnalazione viene pubblicata.</p>
-        <form data-import-legacy><label>Codice del vecchio taccuino <input type="password" class="wiz-input" data-legacy-code autocomplete="off" required></label><button type="submit" class="btn ghost">Importa nel mio profilo</button><p role="status" data-legacy-status></p></form></details>`;
-      storageBox.querySelector('[data-legacy-code]').value = getToken();
-      storageBox.querySelector('[data-import-legacy]').onsubmit = async (ev) => {
-        ev.preventDefault(); const form = ev.currentTarget, btn = form.querySelector('button'), status = form.querySelector('[data-legacy-status]'), target = store;
-        btn.disabled = true;
-        try {
-          const old = await remoteStore(form.querySelector('[data-legacy-code]').value.trim()).list();
-          const ids = new Set((await target.list()).map((e) => e.id)); let n = 0;
-          for (const e of old) if (!ids.has(e.id)) { await target.put(e); n++; }
-          if (target !== store) return;
-          entries = await target.list(); sortEntries(); renderList();
-          status.textContent = `${n} voci importate nel profilo privato. Nessuna osservazione pubblicata.`;
-          form.querySelector('[data-legacy-code]').value = '';
-        } catch (e) { status.textContent = e.status === 401 ? 'Codice non valido o sessione scaduta.' : 'Importazione incompleta. Il vecchio taccuino resta disponibile: puoi riprovare.'; }
-        finally { btn.disabled = false; }
-      };
-      storageBox.querySelector('[data-import-local]').onclick = async () => {
-        const local = await localStore().list(), ids = new Set(entries.map((e) => e.id));
-        try { for (const e of local) if (!ids.has(e.id)) await store.put(e); entries = await store.list(); sortEntries(); renderList('Taccuino importato nel profilo privato. Nessuna osservazione è stata condivisa automaticamente.'); }
-        catch { renderList('Importazione incompleta. La copia su questo dispositivo resta disponibile.'); }
-      };
+      storageBox.innerHTML = `<p>Taccuino privato di <b>${esc(currentUser()?.handle || 'questo profilo')}</b>, sincronizzato con la passkey. Le condivisioni sono facoltative.</p><button type="button" class="btn ghost" data-community-account>Gestisci il profilo</button>`;
     } else if (communityEnabled() && store.kind === 'local') {
       storageBox.innerHTML = '<p>Il taccuino resta su questo dispositivo. Con una passkey puoi tenerlo privato online e scegliere quali osservazioni condividere.</p><button type="button" class="btn primary" data-community-account>Crea profilo o accedi</button>';
     } else if (store.kind === 'db') {
@@ -624,7 +567,7 @@ export function initJournal({ onEntries=()=>{},zones, speciesCatalog = SPECIES, 
         await connect(inp.value.trim(), storageBox.querySelector('.j-connect-msg'));
       });
     } else {
-      storageBox.innerHTML = 'Il taccuino resta solo in questo browser. Esporta ogni tanto il file per non perderlo o per spostarlo su un altro dispositivo.';
+      storageBox.innerHTML = 'Il taccuino resta solo in questo browser.';
     }
   }
 
