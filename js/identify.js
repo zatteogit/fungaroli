@@ -892,7 +892,6 @@ function renderCompare(box, ref, pick) {
   const list = selected && !documentedKeys.has(selected.key) ? [...documented,selected] : documented;
   if (!list.length) { location.hash=`#/confronta/${encodeURIComponent(ref.key)}`; return; }
   const heading = () => 'Confronta';
-  const editHref = t => `#/confronta/${encodeURIComponent(ref.key)}/${encodeURIComponent(t.key)}`;
   const pic = (t, small = false) => { const ph = photoOf(t); return ph ? `<img data-src="${ASSET(small ? ph.thumb || ph.file : ph.file)}" alt="" loading="lazy" decoding="async">` : '<span class="look-ph">senza foto</span>'; };
   const toxCls = (t) => `tox-${String(t.toxicity || '').replace(/\s/g, '-')}`;
   const nameBtn = (t) => `<button type="button" data-taxon="${esc(t.key)}">${esc(t.name || t.latin)}</button>`; // nel confronto: anteprima, per tutti
@@ -939,7 +938,7 @@ function renderCompare(box, ref, pick) {
   const mark = (i) => {
     box.querySelector('.cmp-title').textContent=heading(list[i]);
     const headerAction=document.querySelector('[data-appbar-action]');
-    if(headerAction) headerAction.href=editHref(list[i]);
+    if(headerAction) headerAction.href='#/confronta';
     const arrows=box.querySelector('.cmp-edge-arrows');
     if(arrows)arrows.hidden=documented.length<2&&documentedKeys.has(list[i].key);
     box.querySelector('.cmp-sosia-count').hidden=!(documented.length>1&&documentedKeys.has(list[i].key));

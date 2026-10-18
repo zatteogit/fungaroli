@@ -46,19 +46,18 @@ export function mountCompareStart(box,{taxa,photo,asset,related,left='',right=''
   if(a?.key===b?.key)b=null;
   const paint=()=>{
     const field=(t,side,label)=>`<button type="button" class="cmp-start-choice${t?' is-filled':''}" data-pick-side="${side}" aria-haspopup="dialog">${t?`${image(t,photo,asset,true)}<span class="cmp-start-label">${label}</span><b>${esc(name(t))}</b><i>${esc(t.latin||'')}</i><span class="cmp-start-change">Cambia fungo <span aria-hidden="true">↗</span></span>`:`<span class="cmp-start-empty" aria-hidden="true">＋</span><span class="cmp-start-label">${label}</span><b>Scegli un fungo</b><span class="cmp-start-change">Sfoglia o cerca nel catalogo</span>`}</button>`;
-    const documented=a&&b&&related(a).some(t=>t.key===b.key);
     box.innerHTML=`<div class="cmp-start-pair">${field(a,'left','1 · Riferimento')}<span class="cmp-start-vs" aria-hidden="true"><i>vs</i></span>${field(b,'right','2 · Da confrontare')}</div>
-      <div class="cmp-start-actions"><button type="button" class="btn ghost" data-swap-pair${a&&b?'':' disabled'}>Inverti i due funghi</button><button type="button" class="btn primary" data-start-compare${a&&b?'':' disabled'}>Confronta i caratteri <span aria-hidden="true">→</span></button></div>
-      <p class="cmp-start-context" role="status">${a&&b?(documented?'Sosia documentati nel catalogo.':'Confronto libero: relazione di sosia non documentata nel catalogo.'):'Puoi scegliere due specie diverse, anche fuori dalle relazioni di sosia.'}</p>
+      <p class="cmp-start-context" role="status">Scegli due specie diverse: il confronto dei caratteri si apre subito.</p>
       <aside class="cmp-start-note"><b>Confrontare per osservare meglio</b><p>Vedrai differenze e somiglianze nei caratteri documentati per entrambe le specie. Il confronto non identifica un esemplare né ne certifica la commestibilità.</p></aside>`;
     box.querySelectorAll('[data-pick-side]').forEach(button=>button.onclick=()=>{
       const side=button.dataset.pickSide;
       openComparePicker({taxa,photo,asset,title:side==='left'?'Scegli il fungo di riferimento':'Confronta con…',current:(side==='left'?a:b)?.key,exclude:(side==='left'?b:a)?.key,related:(side==='right'?a:b)?related(side==='right'?a:b):[],onSelect:t=>{
-        if(side==='left')a=t;else b=t;paint();box.querySelector(`[data-pick-side="${side}"]`).focus({preventScroll:true});
+        if(side==='left')a=t;else b=t;
+        if(a&&b&&a.key!==b.key){location.hash=`#/riconosci/confronta/${encodeURIComponent(a.key)}/${encodeURIComponent(b.key)}`;return;}
+        paint();box.querySelector(`[data-pick-side="${side}"]`).focus({preventScroll:true});
       }});
     });
-    box.querySelector('[data-swap-pair]').onclick=()=>{[a,b]=[b,a];paint();box.querySelector('[data-swap-pair]').focus({preventScroll:true});};
-    box.querySelector('[data-start-compare]').onclick=()=>{if(a&&b&&a.key!==b.key)location.hash=`#/riconosci/confronta/${encodeURIComponent(a.key)}/${encodeURIComponent(b.key)}`;};
+
   };
   paint();
 }

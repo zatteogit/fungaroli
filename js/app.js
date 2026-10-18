@@ -444,7 +444,9 @@ function parseRoute(hash = location.hash) {
   if (a === 'piante') return {view:'piante'};
   if (a === 'pianta' && b) return {view:'pianta',plantId:b};
   if (a === 'alberi') return { view: 'alberi' };
-  if (a === 'confronta') return {view:'riconosci',recognizeMode:'funghi',compareStart:true,compareLeft:b,compareRight:c};
+  if (a === 'confronta') return b&&c&&b!==c
+    ? {view:'riconosci',recognizeMode:'funghi',compare:b,pick:c}
+    : {view:'riconosci',recognizeMode:'funghi',compareStart:true,compareLeft:b,compareRight:c};
   if (a === 'riconosci') return { view: 'riconosci', recognizeMode: ['alberi','piante','bosco'].includes(b) ? b : 'funghi', compareStart:b==='confronta'&&!c, compare: b === 'confronta' ? c : '', pick: b === 'confronta' ? parts[3] : '' };
   if (a === 'guide') return b ? { view: 'guide', guideId: b } : { view: 'guide-list' };
   if (a === 'sfide') return { view: 'sfide', challengeId: b || '' };
@@ -591,8 +593,7 @@ function updateHeaderActions(r) {
   if (comparison) {
     action.textContent='Cambia';
     action.setAttribute('aria-label','Cambia i due funghi del confronto');
-    const current=r.pick || document.querySelector('.cmp-slide:not([hidden])')?.id.replace(/^cmp-/, '') || '';
-    action.href=`#/confronta/${encodeURIComponent(r.compare)}/${encodeURIComponent(current)}`;
+    action.href='#/confronta';
   } else {
     action.removeAttribute('href');
     action.removeAttribute('aria-label');
